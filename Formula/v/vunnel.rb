@@ -3,24 +3,25 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/15/b0/420c7bb64398930781406d08d64807afaad2fa964bf03897169057ba465d/vunnel-0.55.0.tar.gz"
-  sha256 "0645171e61f2699b4a50f03cdfb12e095fb46953ce5dd317968453462d5096ad"
+  url "https://files.pythonhosted.org/packages/3b/ca/db3a354e216b237a2ef895e2e354da0cf250398c25859487b726d329177e/vunnel-0.55.1.tar.gz"
+  sha256 "f7722e317e2c65195500ef8dfe94eb30c1b97518c49c11f7446d8b8d5b960857"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5fb5c0a541fa7f8fbd0c379967e3383b0ede4966d21adc2e31530fad76b7ab45"
-    sha256 cellar: :any,                 arm64_sequoia: "30bf244e7de3e84be2b8241a0f734c4e22c61ef4b74f91a773da3ff405beb2d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "cd05a5c388678012bd61664f0354bf5b1bcf17fe5b357bdeba8770392a19cdaa"
-    sha256 cellar: :any,                 sonoma:        "c1094a2b2c6b8e5201633ff251b8822a7c0f7371a54750d7eca0dbd9e10eae26"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4bf41e965157fcf6d9fee9cf8237f0f16be24084059cb37fd92738b22b1df4ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b807ced89201e330f83d67bd70e3adbd79bbca6f5262e9d722679e1c52b96863"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ee32fb242a74fe369a828256e569c3591b6f49dc1d0d73f9b7feaa38fe331d2d"
+    sha256 cellar: :any,                 arm64_sequoia: "9b1a15f138c2c69540d24b3a177082d45d9e1601076bba670d7c7ec438d1d9e6"
+    sha256 cellar: :any,                 arm64_sonoma:  "791739507fbbce771cdd80a970f0f689eee6b287a62abc6a5ff69f05c9afc1b0"
+    sha256 cellar: :any,                 sonoma:        "a748af84d70b5a6215631701aeacc2e3c4d0f356ca8a23e2aa55c196ed528697"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "987af1c7cab1da0c1c756ee19e8ee739cf476b3f88749cc7d8df912d2a7de966"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c0d970977a5b7d3b47d0e37c8a970cc43027cd451917fd7d6ba299477ee7bb4"
   end
 
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13" # requires-python = "<3.14,>=3.13", https://github.com/anchore/vunnel/issues/952
+  depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libxml2", since: :ventura
@@ -56,11 +57,6 @@ class Vunnel < Formula
   resource "defusedxml" do
     url "https://files.pythonhosted.org/packages/0f/d5/c66da9b79e5bdb124974bfe172b4daf3c984ebd9c2a06e2b8a4dc7331c72/defusedxml-0.7.1.tar.gz"
     sha256 "1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69"
-  end
-
-  resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/8a/99/1cd3411c56a410994669062bd73dd58270c00cc074cac15f385a1fd91f8a/greenlet-3.3.1.tar.gz"
-    sha256 "41848f3230b58c08bb43dee542e74a2a2e34d3c59dc3076cec9151aeeedcae98"
   end
 
   resource "idna" do
@@ -124,8 +120,8 @@ class Vunnel < Formula
   end
 
   resource "oras" do
-    url "https://files.pythonhosted.org/packages/d0/79/804ad8eb314929aa37a4d88f1dcfb683fc0d93f6e270739d07da4d8f5dee/oras-0.2.39.tar.gz"
-    sha256 "cf6103f35ae59227e6a5185479b5eda319aae57c6b8bacc35218ee551db647c3"
+    url "https://files.pythonhosted.org/packages/bb/a9/9f5c54c31093773929bf717b0fa1dfe80f6245182477994fdd514bb5d98d/oras-0.2.40.tar.gz"
+    sha256 "72cc9ea4a89085909b39d7a55338f76cbf9179bd5f41904b27c8e4ed4f3da8e2"
   end
 
   resource "orjson" do
@@ -214,8 +210,8 @@ class Vunnel < Formula
   end
 
   resource "xsdata" do
-    url "https://files.pythonhosted.org/packages/24/9f/c1b0fa54f2b3f43989015668daddd8bd50d3bf3461ba8b79fdeb8000b27d/xsdata-26.1.tar.gz"
-    sha256 "dcae2c0e5f329f1b4e09a2d148c96941c9556616bb5e3418970a63c5eb2cd831"
+    url "https://files.pythonhosted.org/packages/2f/c9/71e9e8eac669091fd434ed494d806c8cc37614aecb34ce4c62c283f99abf/xsdata-26.2.tar.gz"
+    sha256 "c631af71aaa75734f8ce92a08fcf8389d905dee2aab0b5032c9032e9071009a6"
   end
 
   resource "xxhash" do
@@ -237,11 +233,6 @@ class Vunnel < Formula
     # hatch does not support a SOURCE_DATE_EPOCH before 1980.
     # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
-
-    # Fix compilation of ijson native extensions, note:
-    # This would not be needed if latest ijson version is used upstream, but there are reasons it is
-    # currently held back: https://github.com/anchore/vunnel/pull/103
-    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     virtualenv_install_with_resources
 

@@ -6,18 +6,21 @@ class Libre < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9e1ec091c8bda61d0a8848d078f519fc66852bf5be67ace00163f8ced60c5cc2"
-    sha256 cellar: :any,                 arm64_sequoia: "2b775c95e27bb0efbbab252db37c78dbc4ed47a1c96dfe7e867d77a6b40d04c4"
-    sha256 cellar: :any,                 arm64_sonoma:  "d4f532cf113353710686a29adb131d3b366c3506426589f9f5504584e2fd37b4"
-    sha256 cellar: :any,                 sonoma:        "4a06200d20f6cb554366026649ea83f001736718a792443e5f5e196b99b0f34a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9f873587a29add341a2721846e801fbcb4a5965dc6c04dba61251a0c8cd2bb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8d9563cdb9d0ea9e2d9f6e2093685eb207177628b384ee75999bc68710596f6"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "b518ed44afbdaa37daa04f240c4be3e0e505e5589781d3c18d9da0e64cd73f39"
+    sha256 cellar: :any,                 arm64_sequoia: "60959942a578bab8cc5232f3d682621c6f5b940521b57ccd9c9f1d584bbdc54a"
+    sha256 cellar: :any,                 arm64_sonoma:  "16c9765bd2ff85b33b109a768b705dfbeff5247409d2c075451b38e19e401a8b"
+    sha256 cellar: :any,                 sonoma:        "049fdad9327623dc477a3ba297cd85b6e51d59048e19aa81a79f45b592e8ca05"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e41770d8e0635911c6d837ff71b7134795c4b6b7a984d145e03fca44dbafcfaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e1675c3c544dcd00fae0667a438761a7835d93f088cb785bbe1ad734f68b1af"
   end
 
   depends_on "cmake" => :build
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-B", "build", *std_cmake_args

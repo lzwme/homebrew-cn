@@ -12,11 +12,12 @@ class DotnetAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8330ebc9805fb01e4ac69f1ba1e9ddf1cbf6c0447db11ef6cbf1df8b6eb7f861"
-    sha256 cellar: :any,                 arm64_sequoia: "ddc75bf4e60ab46f28088926c27af8d56ef30dea2e786081c7d2aa70845b02ca"
-    sha256 cellar: :any,                 arm64_sonoma:  "08e4f33fec7df8aea84cf524375bc2981282d25528e45896866310cb0dd735bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ef76cd34b689472f52dc71753823be77bd5c4749f0bde8ebcaae9823e8217f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "354f98ecb4e4010e60136b82f9ae6d33c0cef0c50c2513c9c4fec4af130ff736"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "50e5d6ac16668d2e2370f7e6fddb5ee0feee7af9a05bb5bcdaaee66b593a785a"
+    sha256 cellar: :any,                 arm64_sequoia: "e26df00d52f8fc06fc495cbc7883295f3adeec4166425d2029a89c117e1c12e0"
+    sha256 cellar: :any,                 arm64_sonoma:  "f9424d03cd1809f5b1c6f8b439838600ad10d881bb13e9031027b1c4905b5b93"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "09c86f9e4b131b207c2530a071ff7e09db5dd538bda9353397a272fbd70ceb02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d649a95936a1f590112e3f3c6863e15cb61a36e0cc0ba20053180cf6123cca2"
   end
 
   keg_only :versioned_formula
@@ -31,7 +32,6 @@ class DotnetAT8 < Formula
 
   uses_from_macos "python" => :build
   uses_from_macos "krb5"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "grep" => :build # grep: invalid option -- P
@@ -40,6 +40,7 @@ class DotnetAT8 < Formula
   on_linux do
     depends_on "libunwind"
     depends_on "lttng-ust"
+    depends_on "zlib-ng-compat"
   end
 
   on_intel do

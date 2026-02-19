@@ -1,8 +1,8 @@
 class Doltgres < Formula
   desc "Dolt for Postgres"
   homepage "https://github.com/dolthub/doltgresql"
-  url "https://ghfast.top/https://github.com/dolthub/doltgresql/archive/refs/tags/v0.55.2.tar.gz"
-  sha256 "20a974d49cd9a56ce3dfe2f92946f11275700d1d272eb8675802a271cb422655"
+  url "https://ghfast.top/https://github.com/dolthub/doltgresql/archive/refs/tags/v0.55.3.tar.gz"
+  sha256 "4d33955dbd80adc7ad2aedca7de7579a50307dad3b1a08d424ad04cd6d0ce13a"
   license "Apache-2.0"
   head "https://github.com/dolthub/doltgresql.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Doltgres < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c0a893a5670aaf55ee48c417de411af98c1bfc37cdb6b74a8a1f68fc75f75860"
-    sha256 cellar: :any,                 arm64_sequoia: "d214011e49d4c16057022ce60620b15ee40e570fba0a2d992313165cbe5471d8"
-    sha256 cellar: :any,                 arm64_sonoma:  "e92652ac9cc007735ce39032d237cdd9602ca668b662945e014d78f4cb02909b"
-    sha256 cellar: :any,                 sonoma:        "79091e9434e859dcc55b84b668c437ae4dc3af20fb875468c2b35d5eea537ae8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cc0ef9606bfaa6b8e2816cf7a3d3d862fc8d38940d8b95671bab2bab233e2da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d7742e82e8a21c737742b1a375769e1158ef16b9ebd6b6eb65eb5dca7f3f493"
+    sha256 cellar: :any,                 arm64_tahoe:   "b9c17a7fd96c1bb9cf756ed266f768cbda8af077bfa6c05b69d608110ab9d2d6"
+    sha256 cellar: :any,                 arm64_sequoia: "d70551f2c9bf66f982315550ea7b02f056e6496671af1e9e916af0dbf6bf57e2"
+    sha256 cellar: :any,                 arm64_sonoma:  "d4e35752bfe2f7ad3da27d1c4e8148c3971f0d87b167cc7add0afcbea9887bf7"
+    sha256 cellar: :any,                 sonoma:        "4c19ef563d411ce341ffdce299cc406b9aee102742e8f3a05b38d122da58f6b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c51b5fdbf89fc379e7ef38807a3d5c519bea7abbba8c84ca0d4c854d4f7b5950"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17e2e1661b41419523c1f980d43b9c44c34f7e8e0be1a2fc2fd913d1535c4c6b"
   end
 
   depends_on "go" => :build

@@ -16,12 +16,13 @@ class Snort < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b5ea4ec2c944d022f49454ea08aea7e32faf0d3ed8cf459ed8a4f1ab08a3338d"
-    sha256 cellar: :any,                 arm64_sequoia: "2f3ec7818592c46f77975bf34cb751c57358aacee480709fdd9ed1ed39d2ba27"
-    sha256 cellar: :any,                 arm64_sonoma:  "90587667808a08737e8a5110de9842e2b63bd84894178e85553ee7ae4188b9c7"
-    sha256 cellar: :any,                 sonoma:        "14e454a7b6f2d209671d9a64062dcae131ade36796ae00d3c07895a62808019e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5efa60d40bc98aa779f8e7829f5dcaca3cd90b24a9301baa13355c05f4898430"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1586bfdd5322fb184ba798d9956e933fcb2510a2bc78ef18a1b9e6a56e9ddb2d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "4e7a5762332205de04c1ab435f7a425d464ed084dce0ce98572ee3764015eade"
+    sha256 cellar: :any,                 arm64_sequoia: "26559b090fc7b578b290114f6b718760a8577285f8f05ad1a7b1da08a53cab44"
+    sha256 cellar: :any,                 arm64_sonoma:  "0527a08b1d28cae435e1c9727c04702e7a4fcc81ea204b7720de4d551dbd62c6"
+    sha256 cellar: :any,                 sonoma:        "1724476f05cea9b12516ddf55695c5291b5fe64b36b0e4d7365df386c138bfba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcdaf8978a1d11f7aa271bd783c70e932e092b7f34e4993a84d3929ae92287f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7edd050479ff302b7473237bd109a3804786b01c69845d00b69b037e0a0faa2c"
   end
 
   depends_on "cmake" => :build
@@ -38,10 +39,9 @@ class Snort < Formula
   depends_on "vectorscan"
   depends_on "xz" # for lzma.h
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "libunwind"
+    depends_on "zlib-ng-compat"
   end
 
   def install

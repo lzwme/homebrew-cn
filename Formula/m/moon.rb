@@ -1,8 +1,8 @@
 class Moon < Formula
   desc "Task runner and repo management tool for the web ecosystem, written in Rust"
   homepage "https://moonrepo.dev/moon"
-  url "https://ghfast.top/https://github.com/moonrepo/moon/archive/refs/tags/v1.41.8.tar.gz"
-  sha256 "ff308cc372fa8a161fdd0ff55766c763d2114fb41f47bb11990a56c84b6f769e"
+  url "https://ghfast.top/https://github.com/moonrepo/moon/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "7f1d168b64ddc9bd86e4d4c4d6f779b1e2044a397a4726b4cd1db6364b15ba9e"
   license "MIT"
   head "https://github.com/moonrepo/moon.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Moon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f80dce15c1166b85ef7b4cb567eba32469d18b730427678bb0cc42575bdb6fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d9002136205625510e6c4490a2065d55974c697c2304617232fc19a4e336cf7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "264fdcf210c8ed446d9ca772cfc7659a96f0f766c573e847501c72658cba2bc4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0f8a16f77472ff6c28261d760cb61e38015fef9d8e47238199e7707125eddcd9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc282b8ec3738d5841e83c6995401227453bb7328c969d02b68ee083f529c33c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c040a6f788e750a2ee28b3b8950fc538484416bcb27751e045f3a776b7c4761a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c0612386adf5839ae5171bef811e95ab21d20e481b2cd107b378eb68d397348"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "862eb2baba2ee42bd6c2189afe78d9d32b40b3b3c482bfdf8f7f3cf132280cb7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a10d5c774ac56e6e0ac9f37f88e29db83b2e7f422964f3c27407450ee58e54c3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "927b4f587c7ddf96367cb8108704c249b4967ccef29aa284b8d7b5ceaabb38bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4b49edb9cbe8c10d93d54ad30365f521ccd0316a4ad06664de95f469c702b72"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25c0ac7518a8718eddc34f075be5ca8c4f179c1964077d4f2110f482656acdb9"
   end
 
   depends_on "pkgconf" => :build
@@ -46,7 +46,6 @@ class Moon < Formula
     assert_match version.to_s, shell_output("#{bin}/moon --version")
 
     system bin/"moon", "init", "--minimal", "--yes", "--force"
-    assert_path_exists testpath/".moon/id"
     assert_path_exists testpath/".moon/workspace.yml"
   end
 end

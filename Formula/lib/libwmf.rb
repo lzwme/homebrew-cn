@@ -12,14 +12,13 @@ class Libwmf < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "605434c1ac87dd6e0a72de4e8d74a6e2701f1048c3da2ebbe6af570c18dd3ee6"
-    sha256 arm64_sequoia: "8349a368a01bc74f298eb1f7ba3a7b66ce7807d4fd32957c7713caaa52107317"
-    sha256 arm64_sonoma:  "ba24f0c59a437bf0e82d7cb946b841894544cd1c23e2c867a0d171cdfd2ea672"
-    sha256 arm64_ventura: "9e85223008fa0b081256f5c6e94200dfb4610394be5dc25b782125c36b69417a"
-    sha256 sonoma:        "b85946372c5e9a9f13d1a8299553ab0e5b4ffed45429b785fe5281175d62e3ba"
-    sha256 ventura:       "a889684fd9d5bf65349b30808ae820014a2f72650b23d35e8f7a01cb887f3aef"
-    sha256 arm64_linux:   "80bbb71aed983052b36b9ca4de431ff2269e68b0e0549f70450bb16d21b9a5cb"
-    sha256 x86_64_linux:  "486038114925fd4a2e2203ae86931276b4b82fda8e47f39772a123c3adffa37a"
+    rebuild 1
+    sha256 arm64_tahoe:   "19feff47e82f7eff2624ec04a9a1b5c72d1df746d27f19a4c578f834ee8aa32c"
+    sha256 arm64_sequoia: "a4cf16a67d3ee2bdf43066b5f6e160c7c217bb468606e8c820ccd5ec5fed53d9"
+    sha256 arm64_sonoma:  "14cb4bd3113ffb89a0a18078e2b21ff3bb9f2a77effadd4d118492ab09c4caef"
+    sha256 sonoma:        "bf0bef3b212b37300cdbd211d3dbc117ee26b2a34c741b469a58c74bf3d68e24"
+    sha256 arm64_linux:   "8fcd07ccd736bd5c250f275e210a91e67676c5967d9c145f830d35fa5542dddc"
+    sha256 x86_64_linux:  "4f18bbf891a0527c1dbcf305d43425b9d52b9d19250c8f1382121947d305cc1c"
   end
 
   depends_on "pkgconf" => :build
@@ -29,7 +28,10 @@ class Libwmf < Formula
   depends_on "libpng"
 
   uses_from_macos "expat"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Backport fix for macOS
   patch do

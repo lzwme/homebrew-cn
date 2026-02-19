@@ -12,12 +12,13 @@ class Node < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3e636813b7281ab0b9ba80b1a9ed8c853d6798ed179dcd375beb577cbcf8e322"
-    sha256 cellar: :any,                 arm64_sequoia: "5e0a909c42eebd43eed998775b3aac6736b1ec65e5c6d0ed7292c799eae5ca0d"
-    sha256 cellar: :any,                 arm64_sonoma:  "bf9d20c7ef7e877d31451a2328a7ceeaaea84197c1291b1c42385efac5a25f79"
-    sha256 cellar: :any,                 sonoma:        "4974fad549b1f2e1759b66b3f4538746c321c370f6cf1f37a8afe4ceca93ae64"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81ae9e6814e46c1b5bb1ffeb23ae607cec564dfedd72f4628ec6f5395a40dec4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebe6bf446cd12f312564d674fe8cd26e0c5728fca5773233d4aad05d559d74b9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e7295cc3040363be0eb71214f19ea3aab25ab237ec85f13b73541f31fd91b563"
+    sha256 cellar: :any,                 arm64_sequoia: "bcadbb3efb9c3a8ba6134d6619fb8f77f72ab9ecd4f21676a0e27c8cfb1b39bd"
+    sha256 cellar: :any,                 arm64_sonoma:  "d27f3fd754db6e2c201eec1eb0cb48495ca61c1181afe905609d5dc1d3eac4fb"
+    sha256 cellar: :any,                 sonoma:        "a3d99d4706dc2e46a41542d38cff09f2df62bc14945ec4c04c1d5b8ce014a6f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82e7e34217d1a2eb7aa495da89710a4cacd9c37dd23292cf2749d9e75f421a7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "defaccaabce374bbbde8100e9826059732a47f67faf1b6d359b03239ac40bdb9"
   end
 
   depends_on "pkgconf" => :build
@@ -39,10 +40,13 @@ class Node < Formula
   depends_on "zstd"
 
   uses_from_macos "python"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   link_overwrite "bin/npm", "bin/npx"
@@ -117,7 +121,7 @@ class Node < Formula
       "simdjson"      => ["simdjson",        "simdjson"],
       "sqlite"        => ["sqlite",          "sqlite"],
       "uvwasi"        => ["uvwasi",          "uvwasi"],
-      "zlib"          => ["zlib",            ("zlib" unless OS.mac?)],
+      "zlib"          => ["zlib",            ("zlib-ng-compat" unless OS.mac?)],
       "zstd"          => ["zstd",            "zstd"],
     }.each do |flag, (subdir, formula)|
       rm_r(buildpath/"deps"/subdir)

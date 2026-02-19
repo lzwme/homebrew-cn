@@ -1,10 +1,9 @@
 class Nss < Formula
   desc "Libraries for security-enabled client and server applications"
   homepage "https://firefox-source-docs.mozilla.org/security/nss/index.html"
-  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_120_RTM/src/nss-3.120.tar.gz"
-  sha256 "7ce5f5b3a172a41539ffc118d8ef4834974d0a6a782743e4a05a4e208dd6d22f"
+  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_120_1_RTM/src/nss-3.120.1.tar.gz"
+  sha256 "a98f002d20bfe719f50f81824a64c9e6f067f4da3c6a1f0455e97e6d79240512"
   license "MPL-2.0"
-  revision 1
 
   livecheck do
     url "https://ftp.mozilla.org/pub/security/nss/releases/"
@@ -17,12 +16,12 @@ class Nss < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cd6e39b6b9bcb4cce7ac194470553b98f96e5c96cd876f8f868da498d205911b"
-    sha256 cellar: :any,                 arm64_sequoia: "f4828243b94e3bceaf6db994fd64dbe0fde344fd62effe903ed1602437821f5f"
-    sha256 cellar: :any,                 arm64_sonoma:  "5447470e50bf12f0e00c83fbc8f57434da17e630ce80ff74acea528f61f3fbca"
-    sha256 cellar: :any,                 sonoma:        "95c1ac376f33068db0199619ac48ff462613985986c13beffb36b4c9512cd61c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f5bdf5a320736e2f21d703dfade98fdc145eb9493ac730cf005b0afe34c9c57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c721ecbd527c0da2556d33b7e82ae126bcdc0fd68d981e743fc16eede873845"
+    sha256 cellar: :any,                 arm64_tahoe:   "0ccab1b285478cea8b57c67c03ea91be278580894de4b11c1fccb32f91269af6"
+    sha256 cellar: :any,                 arm64_sequoia: "61af8101574903b8220f5ea62a7750a6a7f02295e2aac73e3d49b734ac98ecf8"
+    sha256 cellar: :any,                 arm64_sonoma:  "14d060678807098dd4fc477f5c7f95dc5ac51b738018c51714523335078fa050"
+    sha256 cellar: :any,                 sonoma:        "df68ff9edebd4d64ec9860ced8761f3388b3c24c06c41b1eb939e5746abc5ab4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "690bc813f54549790bdc51860ea59f89d60ddc9b05346d4f8846285074485e52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b81004cd7731de26f11baadbaec8ed5ab68f88f451ad91537a9669f9bef7ece"
   end
 
   depends_on "nspr"

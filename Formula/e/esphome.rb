@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/5a/f5/1fbddf378d3c702c3d68eea082d049937e1e9190b355e96c73872dcbbf38/esphome-2026.1.5.tar.gz"
-  sha256 "2fdea91b7bcdf7f8064ec7d8933b387bbfd0fb9af8f8b82a1478ee97b6c866fe"
+  url "https://files.pythonhosted.org/packages/d3/55/5627d15b4e3fa20a1ca33b2ef1cb5b427e20006d57fac1f5e5c86eeaa24f/esphome-2026.2.0.tar.gz"
+  sha256 "118de618035aec4086dfeb59d5924a4a909f43038aeae7087594255a453ae757"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -12,12 +12,12 @@ class Esphome < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a35084ef44f70fd695ad80ae8ad46d42b3086266995978a010e88daf4a48bf22"
-    sha256 cellar: :any,                 arm64_sequoia: "1403554ebae2a66797cd100dbf6b043cf105620c902dc6f908c99f19ad64ddcb"
-    sha256 cellar: :any,                 arm64_sonoma:  "e08ab06b67d5eba92387167279d94d0571bc32370ae651d09939d44fec9699b1"
-    sha256 cellar: :any,                 sonoma:        "16b7f24d5210958483a1f7a9f5f6476e6f4e988ca647e7e61df84d8a3e8a691e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15293c51b497fc0f8b709da276411201067303187147263c4399bfde55fa1330"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc17acaa8ed6864d1fa56198ac34c5c669dc95bb1513dfa1c270b1d42dab57b1"
+    sha256 cellar: :any,                 arm64_tahoe:   "2120a4f3200d9f7c76a4cb984e069552dc63af8c7737f096eebfd0573192b903"
+    sha256 cellar: :any,                 arm64_sequoia: "ecbafc21a7779607a37cec3e77f3001dec80b045f2821469b03668364f929a56"
+    sha256 cellar: :any,                 arm64_sonoma:  "5f2561e97828dfa03e3ce729d22a3e440f943c9481a53b89fb62ab9acbd66d91"
+    sha256 cellar: :any,                 sonoma:        "87522b555f6db8c81f3044ee7efb07d2aa379e26ad563c0cbd04cfb9dea91a52"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a394a0aeafc1d7d4a9562e9f9c39c87effd71a1a51e4712312f118cfbe7fd870"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c90e52138556a3253636828df7f07a933263c5afddfb353125fefb292850383"
   end
 
   depends_on "rust" => :build
@@ -25,7 +25,7 @@ class Esphome < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pillow" => :no_linkage
-  depends_on "python@3.13" # <3.14 was added by upstream due to https://github.com/esphome/esphome/issues/11502
+  depends_on "python@3.14"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
@@ -40,8 +40,8 @@ class Esphome < Formula
                 extra_packages:   %w[chardet dbus-fast pyobjc-framework-corebluetooth pyobjc-framework-libdispatch]
 
   resource "aioesphomeapi" do
-    url "https://files.pythonhosted.org/packages/da/fb/11ac1af34fa3712edb8aad1af081571606779eac9a448e05d49d19ba9c67/aioesphomeapi-43.13.0.tar.gz"
-    sha256 "d4d473bc5c945b0fdc83d36b1b16b2c0d4d22d8ea25ab18cbf0b1f903c4510a4"
+    url "https://files.pythonhosted.org/packages/d8/74/604454608aea492361f659f98ec8bf6feb956edc21d540af2e90c2c85a30/aioesphomeapi-44.0.0.tar.gz"
+    sha256 "5a1af9694b97cb293c3ee7f7e00d0d5bfda2396b2915d124c29e5add062f20c5"
   end
 
   resource "aiohappyeyeballs" do
@@ -120,8 +120,8 @@ class Esphome < Formula
   end
 
   resource "esphome-dashboard" do
-    url "https://files.pythonhosted.org/packages/9d/6d/2db7a90a793a831908feea9ffd9c2b4afddff2761b5ecf64289dccc1820c/esphome_dashboard-20260110.0.tar.gz"
-    sha256 "1e2291d5eb09af44145f346a1b7cb2f7eba80025eedaa2ce1075b841d5e92d13"
+    url "https://files.pythonhosted.org/packages/62/36/ae27687b3137097131e445f8d862549ee5be335a05fc1a561230dfe99ca4/esphome_dashboard-20260210.0.tar.gz"
+    sha256 "371adc02349f0cd0d57ed5729cff1847b6aa5558f3cc82471385651cd31caf5d"
   end
 
   resource "esphome-glyphsets" do
@@ -205,8 +205,8 @@ class Esphome < Formula
   end
 
   resource "platformio" do
-    url "https://files.pythonhosted.org/packages/2f/c5/ba3c1ba120b0466bb621615e4075a5c4752400c6adbf2a15edd91b9aefe9/platformio-6.1.18.tar.gz"
-    sha256 "6ea19c66fba3c5272378afa6ae11abbf883243dd8e503ac5f4ff8ac277ccc7c6"
+    url "https://files.pythonhosted.org/packages/3d/a8/e5a87ead3e0c25c054fa9dbfcc5e3ad3bca5b830f691fea820ca618fcc3e/platformio-6.1.19.tar.gz"
+    sha256 "7b53eaa36fcba554411b669eab845626da7c4b90fa6aaee9fe9f1875d82f5f54"
   end
 
   resource "protobuf" do
@@ -275,8 +275,8 @@ class Esphome < Formula
   end
 
   resource "resvg-py" do
-    url "https://files.pythonhosted.org/packages/9b/2d/b4b55db4a6c71dee1d1dfbed7674f5c89777e4bbbc10e74b997aaa06ce35/resvg_py-0.2.5.tar.gz"
-    sha256 "15267aa58b183db37951e8942d6542fe79c1278ba8dbb102f5a547d063e3e31a"
+    url "https://files.pythonhosted.org/packages/f4/36/f5c34bc62a3574e5cd6a80a7699f2a78c3bd012ab268f7702ecc70cf4333/resvg_py-0.2.6.tar.gz"
+    sha256 "dd8942159cbefd3f43389816e90065637dd1e89094f62bc9bd52e62513523444"
   end
 
   resource "rich" do
@@ -305,8 +305,8 @@ class Esphome < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/ce/20/08dfcd9c983f6a6f4a1000d934b9e6d626cff8d2eeb77a89a68eef20a2b7/starlette-0.46.2.tar.gz"
-    sha256 "7f7361f34eed179294600af672f565727419830b54b7b084efe44bb82d2fccd5"
+    url "https://files.pythonhosted.org/packages/c4/68/79977123bb7be889ad680d79a40f339082c1978b5cfcf62c2d8d196873ac/starlette-0.52.1.tar.gz"
+    sha256 "834edd1b0a23167694292e94f597773bc3f89f362be6effee198165a35d62933"
   end
 
   resource "tabulate" do
@@ -335,8 +335,8 @@ class Esphome < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/de/ad/713be230bcda622eaa35c28f0d328c3675c371238470abdea52417f17a8e/uvicorn-0.34.3.tar.gz"
-    sha256 "35919a9a979d7a59334b6b10e05d77c1d0d574c50e0fc98b8b1a0f165708b55a"
+    url "https://files.pythonhosted.org/packages/c3/d1/8f3c683c9561a4e6689dd3b1d345c815f10f86acd044ee1fb9a4dcd0b8c5/uvicorn-0.40.0.tar.gz"
+    sha256 "839676675e87e73694518b5574fd0f24c9d97b46bea16df7b8c05ea1a51071ea"
   end
 
   resource "voluptuous" do
@@ -355,10 +355,8 @@ class Esphome < Formula
   end
 
   def install
-    if OS.mac?
-      # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
-      ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
-    end
+    # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
+    ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}" if OS.mac?
 
     without = if OS.mac?
       ["dbus-fast"]

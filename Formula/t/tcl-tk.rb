@@ -12,24 +12,24 @@ class TclTk < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "2932f581d51e82b77a24d330c6943aaf8014026b10c64ece0382e742c2bcfd18"
-    sha256 arm64_sequoia: "02bcb6d65d5e7975771dcfed9fbc5b6a96c3885602e9d649242554cc040c319e"
-    sha256 arm64_sonoma:  "306b1721101fe8026b5db1c441235c4f781189e8589042151e3d00c3b318cc1c"
-    sha256 sonoma:        "7b9a8bb4ee8f4b0019dcfa7366b20180e2cfcce8a15a29e70b1fd16542108f78"
-    sha256 arm64_linux:   "91a52c6e39e7c6cf960a8ffdef66cf74a76a9b6027de1481702d701f72536a25"
-    sha256 x86_64_linux:  "dfd7b56503cf9a306f03b354d869995073218da58eb5a332eaf0104c57a01e60"
+    rebuild 1
+    sha256 arm64_tahoe:   "05f176d9255ff98aa4910a30500bfe8cc5611fd592aa8a6a7cd0e0aaddda0b70"
+    sha256 arm64_sequoia: "7d27d0c09cc27867aa39cb6351cafcb3b5517ced408d551cc932bc10126b8905"
+    sha256 arm64_sonoma:  "61c6ca9792c1d870741bfa23dd56f35067bfd307fa39097e61013a4e344d203d"
+    sha256 sonoma:        "7b56375c63b3e3c7d43e1354cc77ab4e36a28dc34884589c6b6575cf3dacf3ab"
+    sha256 arm64_linux:   "7a36d991f2cdbcd843741c25892821f4b855fe5ddfd81254a8231737bab7ccee"
+    sha256 x86_64_linux:  "40e4c170b60a470cc659b19958c3b0ff3d478fcdf87a4164062bc2d3cfdd7f5a"
   end
 
   depends_on "libtommath"
   depends_on "openssl@3"
-
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "freetype" => :build
     depends_on "pkgconf" => :build
     depends_on "libx11"
     depends_on "libxext"
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "page", because: "both install `page` binaries"

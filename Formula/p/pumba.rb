@@ -1,8 +1,8 @@
 class Pumba < Formula
   desc "Chaos testing tool for Docker"
   homepage "https://github.com/alexei-led/pumba"
-  url "https://ghfast.top/https://github.com/alexei-led/pumba/archive/refs/tags/0.12.2.tar.gz"
-  sha256 "39cf30af98c3cc62a3baf5ceced2f9c8a88004b452d7fb707707972170e9c624"
+  url "https://ghfast.top/https://github.com/alexei-led/pumba/archive/refs/tags/0.12.3.tar.gz"
+  sha256 "e9907dc43091b85683a4c3b52b0e4bf94ca821618ab21dda212e069ce455b19e"
   license "Apache-2.0"
   head "https://github.com/alexei-led/pumba.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Pumba < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a115eeab3e511113488707fdc179198f69ce8b4594fba80551428ec17aaa793"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a115eeab3e511113488707fdc179198f69ce8b4594fba80551428ec17aaa793"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a115eeab3e511113488707fdc179198f69ce8b4594fba80551428ec17aaa793"
-    sha256 cellar: :any_skip_relocation, sonoma:        "02e0ceb817e411db6e89445a04afc365ad9199d97b63f0ffd7c182bd51b23279"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67bfb439dc81d921481e80767d622f212924d72dfa6a40dd0074863cb248c410"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99f0b22f7259cc314af699a38fb6270ca66578541a41d4a2ed784a40931c8a88"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a42af0ee4975bca958446f5f5419e0fb8beec1002f3328f595463ac60a43fdd6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a42af0ee4975bca958446f5f5419e0fb8beec1002f3328f595463ac60a43fdd6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a42af0ee4975bca958446f5f5419e0fb8beec1002f3328f595463ac60a43fdd6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5cb51fa8fda981688358a958e0ccf339a5ee0d5f1eac710690d6cbc7d7da982b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "607a178c9d132d30fd32312d2c3496d610c82a31edd6967e0dbfc69d9098d88f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9d3646d3aaa93dc34d9864723976e598eb03415dfcf1b881f7c64e4eab58b61"
   end
 
   depends_on "go" => :build

@@ -13,8 +13,6 @@ class ClickhouseOdbc < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "24340d0d9b841fd0bdaa2b0261b5be6c63d6ed0fff2269cfdf97702cc55eecf7"
     sha256 cellar: :any,                 arm64_sequoia: "64c30b61391ed43703997644c17a10a6cb33c27c8c8c9afa60fa833424ee2979"
@@ -23,6 +21,8 @@ class ClickhouseOdbc < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "6a6d304500e39a9444f36115d271b0cc9b457634f118febbd6ab4cb77f9383c0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b447c4e651aab4472356cb0569bfc4e060088ec60ab54deed5433ab626569d9"
   end
+
+  deprecate! date: "2026-02-18", because: :does_not_build
 
   depends_on "cmake" => :build
   depends_on "folly" => :build

@@ -8,12 +8,13 @@ class Mpd < Formula
   head "https://github.com/MusicPlayerDaemon/MPD.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "48adaadf76fee63d22d4cd324e0540cca33f49af0bb6715c66f7a8a7876e9dfe"
-    sha256 cellar: :any, arm64_sequoia: "8e24774d1adb5593e55df9fbc93316bccf825873dfec55a3467cd5faa09eff78"
-    sha256 cellar: :any, arm64_sonoma:  "125f36cb3f4a4122910c9a7c97bc10f3993b8dec7dcc1667459e163e1886b52c"
-    sha256 cellar: :any, sonoma:        "09c3131b758cde14b10573d686e11c6f23fb75939bb97a24dd47b12279140ae8"
-    sha256               arm64_linux:   "5a62794aa22a0811c84141337a55f7df19241df5a3a3f734f54d318c730d3efd"
-    sha256               x86_64_linux:  "bf96764c3f811f8550a1aa82b72dcdc253366a2fd9194336d3f00797838f390f"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "39b1019ffa4607191c7a2ee7f4efd9ecc80ec52b84bef0dc4b03247f932dafcf"
+    sha256 cellar: :any, arm64_sequoia: "b61ada79723d1a66cd1f1b9edd7622c011dc610a4dcd35cb5f2b0d43aa640afb"
+    sha256 cellar: :any, arm64_sonoma:  "02a0592397db4c21258f69d3cfc66e05f34bdcf058468f4b2f80e978c9ca380b"
+    sha256 cellar: :any, sonoma:        "c0cb496d9eabe140bca15f819a8bdc6ebd5f20539afebfdbc6d712fc6bd4df3d"
+    sha256               arm64_linux:   "1564b3e496d627b86828ff555084ab6753977c881cb73e8a7508c4a4498556d0"
+    sha256               x86_64_linux:  "fb7fba4df84c9ef971b43cc2cc93ea7ee31a40773c567d290c8248519e845f91"
   end
 
   depends_on "meson" => :build
@@ -51,7 +52,6 @@ class Mpd < Formula
   uses_from_macos "bzip2"
   uses_from_macos "curl"
   uses_from_macos "expat"
-  uses_from_macos "zlib"
 
   on_ventura :or_older do
     depends_on "llvm"
@@ -68,6 +68,7 @@ class Mpd < Formula
     depends_on "jack"
     depends_on "pulseaudio"
     depends_on "systemd"
+    depends_on "zlib-ng-compat"
   end
 
   # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.

@@ -187,6 +187,7 @@ Homebrew-homebrew-core/Formula/a/apache-geode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-opennlp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-polaris.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apache-pulsar.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/apache-serf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-spark.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apachetop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apcupsd.rb, Homebrew/homebrew-core, 0
@@ -2749,6 +2750,7 @@ Homebrew-homebrew-core/Formula/g/gradle@8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/grafana-agent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grafana-alloy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grafana.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/grafanactl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grails.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/granted.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grantlee.rb, Homebrew/homebrew-core, 1
@@ -3351,7 +3353,7 @@ Homebrew-homebrew-core/Formula/j/jreleaser.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jrnl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jrsonnet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jrtplib.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/j/jruby.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/j/jruby.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/js-beautify.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jsawk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jsbeautifier.rb, Homebrew/homebrew-core, 0
@@ -5613,7 +5615,7 @@ Homebrew-homebrew-core/Formula/p/pidcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pidgin.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pidof.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pie.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pieces-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pieces-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pigz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pike.rb, Homebrew/homebrew-core, 0
@@ -8745,6 +8747,7 @@ Homebrew-homebrew-cask/Casks/b/breitbandmessung.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brewlet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/brewservicesmenubar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/brewtarget.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/b/brewy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bria.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bricklink-partdesigner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bricklink-studio.rb, Homebrew/homebrew-cask, 0
@@ -12663,6 +12666,7 @@ Homebrew-homebrew-cask/Casks/i/iina+.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/iina.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ijhttp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ik-product-manager.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/iloader.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/ilok-license-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ilspy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/ilya-birman-typography-layout.rb, Homebrew/homebrew-cask, 0
@@ -14322,7 +14326,7 @@ Homebrew-homebrew-cask/Casks/r/raindropio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rambox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rancher.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/random-mouse-clicker.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/r/ransomwhere.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/ransomwhere.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rapidapi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rapidweaver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rar.rb, Homebrew/homebrew-cask, 0

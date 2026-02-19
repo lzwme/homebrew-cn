@@ -7,12 +7,13 @@ class Nmail < Formula
   head "https://github.com/d99kris/nmail.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "46b3ef34316bbd33256de94bf836e737ac6d1bec2c41e09a4e3f2bcc02071b91"
-    sha256 cellar: :any,                 arm64_sequoia: "29367f33eab52385d437e11234c6a706b2f9b6d2265fbb7e3e4fece95e99dd1e"
-    sha256 cellar: :any,                 arm64_sonoma:  "054bd0f632586cf4c82c3920db190db6c049d350d6f27456b03ebef703b5934e"
-    sha256 cellar: :any,                 sonoma:        "67cb8f33fbf8b77a83eaf0d5a79d0ad0ca07535f271a24dce8430a67c4b3123a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "790c50dc346004a73cddf5cf8ebd4d50084af3646920cd45a18f300d0d61bafa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca405942305b204a1c228c66408f9b48ccd9a49a2edb53dddc2cd8034336eec3"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ab8842a446c108d251f2703b15f39a2680fb666d2e5be3458d68cc6300d28671"
+    sha256 cellar: :any,                 arm64_sequoia: "8b1a19b7785b3e2d283b770f0b1cea4f99123804ebcb2b10b1e5436b3f1f49ea"
+    sha256 cellar: :any,                 arm64_sonoma:  "5ec98d78eecdb0766dc68ac1350562c14dee447ae6ae1d664b8d22486f46cf6a"
+    sha256 cellar: :any,                 sonoma:        "e63a9dfd5c1f01d7b22ba846dc8f1fe7c95080f188bed76d02acb31ed5ab0eb5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "199a038d63b5e75286b8f1c28d991aed2f729ffb7185ef8c4a4b8a48cd825c71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "539c2cefd4b992ecb09274f59cfebab58b6ca2d907f1d455fa1c411aa08b2bfb"
   end
 
   depends_on "cmake" => :build
@@ -25,10 +26,10 @@ class Nmail < Formula
   uses_from_macos "cyrus-sasl"
   uses_from_macos "expat"
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "util-linux" # for libuuid
+    depends_on "zlib-ng-compat"
   end
 
   def install

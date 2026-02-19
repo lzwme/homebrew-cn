@@ -6,12 +6,13 @@ class Libgsf < Formula
   license "LGPL-2.1-only"
 
   bottle do
-    sha256 arm64_tahoe:   "a9493cdffa72b2416a94d0652a33114b46b84f980a826f2498ede178a13f2f35"
-    sha256 arm64_sequoia: "b38fc2e609bfede820912b20981be32f4b2f1f1a5cf611b6d86ef669da5e6f13"
-    sha256 arm64_sonoma:  "7403bf4a01064a3f27ed7a565fc704454261368e45954c15a42fd35b14ed9bb6"
-    sha256 sonoma:        "0bc620a92e8217401152938b301be407b34af8777aff52b3878107f729d3b517"
-    sha256 arm64_linux:   "ed0ed9d3d77838c08b4cf98f920c16eb3ebea97a19f9ba109be5b1e6dfc04487"
-    sha256 x86_64_linux:  "972749d47f4077fe959f6160bd91696efc9e4f9bc349abd717e94f68b659adf1"
+    rebuild 1
+    sha256 arm64_tahoe:   "a9cfe6cb82653598ac70d6c9e5a2dc57fa7aba7a98b00c5e569060249f34f4bc"
+    sha256 arm64_sequoia: "b55c750532e3a3e6e267430e646b82eaf03d4159aeab007d864a27fc971a2fa2"
+    sha256 arm64_sonoma:  "1792763d1149ee6277d7b63b5f90c07a908bc90502871eb79118cd611013df67"
+    sha256 sonoma:        "9308632b66afba70ba6f921c6593ffb211198840ba7c0ad0e8750208c496bb46"
+    sha256 arm64_linux:   "b5b939a5637e13461288b498171b4b123947d91e6a002f9aa42fa35c8b341113"
+    sha256 x86_64_linux:  "2c5517b9203ac2e8af0c698a7c164adfdacf4f248daa174d7784bbd74d46a6d3"
   end
 
   head do
@@ -28,10 +29,13 @@ class Libgsf < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install

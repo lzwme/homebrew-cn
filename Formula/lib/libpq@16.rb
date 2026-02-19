@@ -11,12 +11,13 @@ class LibpqAT16 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f63f89c9626bbc0c91b0ea3553634666757db4dac596387872015d894f4ad35a"
-    sha256 arm64_sequoia: "010f8dde876f50f5b6d05b118069c7270bb61ca88a9cce40c7b03afc2328341e"
-    sha256 arm64_sonoma:  "65fde631e72adddc277a1453c439c25bd8ca71352c92566469b6559635849a55"
-    sha256 sonoma:        "1868998fde277300a6f62c46e7bf46322208ef150f6eab09d66653a39832321a"
-    sha256 arm64_linux:   "568b6634381f5384d478b0f1cda0f88c2fa7a4e6808e9446e1e01734bc82f793"
-    sha256 x86_64_linux:  "81718fb468d96c0826fc62788e844f9841c1cdd583f50651ee798807dfa6c4d2"
+    rebuild 1
+    sha256 arm64_tahoe:   "f6f6ab2c5b292cad4dc3ca7e419cf06f8810dd818609a0ff568418705a53c4c9"
+    sha256 arm64_sequoia: "31f6ec19bdf6fda6d559ab5aa06f6f3841a282f0c6bfd00e9aea2cabc6fd7e46"
+    sha256 arm64_sonoma:  "5ace23b0bb53502bccb9808e854409ebb444c89fb033b24319378a2d879c3294"
+    sha256 sonoma:        "d63b6ad4cfd68672e7ad6bc8e3227820ad2072694a1578b992743b5c2d2a516c"
+    sha256 arm64_linux:   "4bc5e5364c2aa1ed10bd126f32961a667daebbef8a45f3aeef410cd7a524d36e"
+    sha256 x86_64_linux:  "5ef819a331cd170cff84a07714c7a16de135879a26c400fde1e1e97dee749c71"
   end
 
   keg_only :versioned_formula
@@ -31,10 +32,9 @@ class LibpqAT16 < Formula
   depends_on "krb5"
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "readline"
+    depends_on "zlib-ng-compat"
   end
 
   def install

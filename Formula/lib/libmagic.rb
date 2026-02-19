@@ -12,18 +12,20 @@ class Libmagic < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "fe356bfc03bc9d5eaeee4acdd54d1c0c13edf3645c6da7ea61831ba030a283ff"
-    sha256 arm64_sequoia: "72bb18819cf63d14cdc3c830d586bd93e542f5cf2cdbbc579bfcd5170017fff1"
-    sha256 arm64_sonoma:  "6c1bf60aeb9742e5c8c6973cbcc6ac970fbed9e255e6bbd479bd2f77513c0b46"
-    sha256 arm64_ventura: "c619199785eaf8dda4ef65c9451fa7ca0fb5bab4452d108cb3d8669d53bec5fd"
-    sha256 sonoma:        "76b116dbfc458b9c62623df89acb3b220500710823a18b604bd2add76c3ec6f6"
-    sha256 ventura:       "b40e88d1e403b33e3544bac60b4ceda2524ae0ef0127c4c676211b83bffaa04f"
-    sha256 arm64_linux:   "7654c8792fa33aece638f2b8efb56e33a6b86d2aa64c43bd65c39b0651e0e703"
-    sha256 x86_64_linux:  "ad618acdc2587bb3d3e5d0c6022fff1c37c6c91b1c818ade50a026bf79469c73"
+    rebuild 1
+    sha256 arm64_tahoe:   "60c4369478387e3bba7bc67a482f8e88afc652fd34862cda457dfe9654f64227"
+    sha256 arm64_sequoia: "51ee0b5206fbbae1221e925cc365d62c41924533391e9bcd74fbb85c26903318"
+    sha256 arm64_sonoma:  "6a577d4cfa044db8d2591f9b018fc84124ae033356147ac635c9566000950c17"
+    sha256 sonoma:        "807ceb6299673e99147e9cb7314fe88aeda5da6d74caabab710b626c10d3a58f"
+    sha256 arm64_linux:   "e7e76d51ea86c02ad1ede72958e3a132799ae8674aa115101f8190dd4fe663e2"
+    sha256 x86_64_linux:  "ea3faa725738b000ec5e1be6b41b8f139b38b2205f2a0849a8b5bc92f5e2f16d"
   end
 
   depends_on "pkgconf" => :test
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--disable-silent-rules",

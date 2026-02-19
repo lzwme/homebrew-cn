@@ -16,12 +16,14 @@ class GccAT12 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 2
-    sha256                               arm64_tahoe:  "121d1e1d67b1888295afb2b4bf70462ea6c4ea463eaa348d660c262f1af1b31e"
-    sha256                               arm64_sonoma: "1353f50ebf74f089cce988339ddc829659763e6ec7ca6f6bb59d1e14d6e08227"
-    sha256                               sonoma:       "6704c981da00d008481eb0b5f28b25b94e41fc658f05820b95b49ba8f38041cc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "9a0052fd91cc298b1cd3b18c9e107470b4131187980cb744514ce6d8ff4d36a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e4d0fd3bea4b3fef919188847d7e62129749e1fb88f62aba8f99a0e9d1af38d3"
+    rebuild 3
+    sha256                               arm64_tahoe:  "68b256e75d6c49bf3e9244c6bcfd00755d42094fab747d15611e4e21fedbafec"
+    sha256                               arm64_sonoma: "1fe9d445c7033c6ff42ae66c840412842a021d8ef4129a75e98fcd453cfba670"
+    sha256                               tahoe:        "f7148bf5706ad7da1b16e11bf97e485ff8695abb031fa87c18289958b4dba670"
+    sha256                               sequoia:      "e41f059f88c2af52760f1ba9f75f36dfd3a493bcf596479227e7dae3d8a32c74"
+    sha256                               sonoma:       "578d37003a6a9f1351aebee3d256a3b87041a03d82d6d583e0f37310a9c1515b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "323b47654f5bf99815d13c45d3cea0e591d2140dd3477060da34b20f98dfd63d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1b10234a336bdf22bacdb79045a3b9e37322e3f3ee0dda9525a51e68ce134682"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -34,10 +36,9 @@ class GccAT12 < Formula
   depends_on "mpfr"
   depends_on "zstd"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "binutils"
+    depends_on "zlib-ng-compat"
   end
 
   # Branch from the Darwin maintainer of GCC, with a few generic fixes and
@@ -110,8 +111,8 @@ class GccAT12 < Formula
       inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64="
       inreplace "gcc/config/aarch64/t-aarch64-linux", "lp64=../lib64", "lp64="
 
-      ENV.append_path "CPATH", Formula["zlib"].opt_include
-      ENV.append_path "LIBRARY_PATH", Formula["zlib"].opt_lib
+      ENV.append_path "CPATH", Formula["zlib-ng-compat"].opt_include
+      ENV.append_path "LIBRARY_PATH", Formula["zlib-ng-compat"].opt_lib
     end
 
     mkdir "build" do

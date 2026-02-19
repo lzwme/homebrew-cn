@@ -1,8 +1,8 @@
 class Yutu < Formula
   desc "MCP server and CLI for YouTube"
   homepage "https://github.com/eat-pray-ai/yutu"
-  url "https://ghfast.top/https://github.com/eat-pray-ai/yutu/archive/refs/tags/v0.10.4.tar.gz"
-  sha256 "7d0b4f69b75119f619cdbb4fe565a7c22c0b178de5d2a132fbe05ad80d3ccc14"
+  url "https://ghfast.top/https://github.com/eat-pray-ai/yutu/archive/refs/tags/v0.10.5.tar.gz"
+  sha256 "c7ac15310a94583ffb8b499c03f88a23eaaf1f3bf183dd522ecbf4b6537299dc"
   license "Apache-2.0"
   head "https://github.com/eat-pray-ai/yutu.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Yutu < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1477d1f88d423ed9deca2dd76dbbb2b259757818822a08b4d0ff1d86a6689a93"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1477d1f88d423ed9deca2dd76dbbb2b259757818822a08b4d0ff1d86a6689a93"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1477d1f88d423ed9deca2dd76dbbb2b259757818822a08b4d0ff1d86a6689a93"
-    sha256 cellar: :any_skip_relocation, sonoma:        "08074111931e8fb7cc8e16a58a9f6eef91af13c02e69f12cc2f58b64408490f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe30adec402612d7536fd90cd3e6d922e86d3c1d837f2271387f202146dc198a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b49e6b9de9d3bb5248fc0f1c4438fe6f21de0a4a0c59f297132faf9db8887844"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "820c1390195b6f8f750580caf516393588d4479a79418316b73c25006e9fcf41"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "820c1390195b6f8f750580caf516393588d4479a79418316b73c25006e9fcf41"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "820c1390195b6f8f750580caf516393588d4479a79418316b73c25006e9fcf41"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5df0209db749c58589349db54fac90e5b8dda1c6b08c42628c93cee6dd9706d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ef736d678702ba1ff0efbfd35b976ff59cd12888b77269554f5c316246b396a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fabda05f164aac34a1efe6d3310ad9817b1265290c6b421472d29e8b09708f31"
   end
 
   depends_on "go" => :build

@@ -18,24 +18,23 @@ class Libid3tag < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:    "bf039c13ec5c83ddad086ffc8d351ceab2c7424d7ee91804de65c736787ca07c"
-    sha256 cellar: :any,                 arm64_sequoia:  "511a214c725978fd5596e7bb1a4c1b9846d3f95a59c1da05aa49ac687d997d07"
-    sha256 cellar: :any,                 arm64_sonoma:   "ddcf954105ff32bf933c7989b29b275c73eff81c6f036aae28646aa282b2d693"
-    sha256 cellar: :any,                 arm64_ventura:  "cb4c5b313fafc30aa641a61fb0aa8b84b8c7232d7eea9e6d55c486664d129dc2"
-    sha256 cellar: :any,                 arm64_monterey: "1dc3d797b3838163199a5496cad1018c204c87559292dd716b309acd33b780d5"
-    sha256 cellar: :any,                 sonoma:         "09c2bb42b12b186cce68cc20388585b26452eb75a39caebaaefd7c36beb9460e"
-    sha256 cellar: :any,                 ventura:        "2fea4c1d71287947cf0bbb995782f610c671608f811bebcd2f1f80e5a137705a"
-    sha256 cellar: :any,                 monterey:       "1569b5187d5108de0a9fa10ff46c87634e5a6164dcff622aa5b46d0084db50ab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "238671fe5e115d97846ea8b1d07d23970451659d2fd169b26f6854eec2cbf858"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9833f57ba6eec9cc19fdc34e93077cd21ec11636320aad4d9945196a7cd69f7b"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "f14fb9815e7191eb7631d5d03761f1122efcc28b49cd90f1901ad87b96604a85"
+    sha256 cellar: :any,                 arm64_sequoia: "ddd9d3a16e0104ee19c3e1a0f11e7d2a7e40149806bbef63e54fa2e55b37935b"
+    sha256 cellar: :any,                 arm64_sonoma:  "ce8716f0aaf0aa3712ecdfc1ad7b9c9e6de2a49a2ba61855d4f9e8e0fb0e9c6c"
+    sha256 cellar: :any,                 sonoma:        "2de45c6c013d4babde517aa9898d8de242b6a2446ef29c86989fd274927b9094"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "04cbb9cfd78a7d37b1a48898e4f6a96bbb669d09e1629955d78bac408a610fe0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e865efc2afa8b3a3e14b8379b885ac2148a553de5ba18b5db228cde3dbe0587c"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :test
 
   uses_from_macos "gperf" => :build
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

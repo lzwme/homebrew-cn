@@ -3,18 +3,18 @@ class McpScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/invariantlabs-ai/mcp-scan"
-  url "https://files.pythonhosted.org/packages/b7/90/600ec22e49f4f7fac9458ec045f0383f191ede19167f81f81fc9b06e3e58/mcp_scan-0.4.1.tar.gz"
-  sha256 "b061b054aec7660c7794b86c7dd73661873b9df2d2d7d3a67ccb82eaeffebea6"
+  url "https://files.pythonhosted.org/packages/9d/ff/1ab49f2b1e3b8bdf114d442f6b49a3f703b9e6d01b0083bd6f9389fc4f7d/mcp_scan-0.4.2.tar.gz"
+  sha256 "b7b71bcb5f8137e5c1176be9a5b176b5cd3ddf668718ab38e5261d3a325a0e17"
   license "Apache-2.0"
   head "https://github.com/invariantlabs-ai/mcp-scan.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2be59524001ddf100d8716ff77c5a17bab71a2669ae88908f3ff73525254cace"
-    sha256 cellar: :any,                 arm64_sequoia: "4b105a13fd65827e13ba8bf6ef049dc2767637acc0694396c5059b3663a466ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd42ad0c455ab4ef7853154f12b1567b9b2795b7a5deafbe3c4070c23c3e3564"
-    sha256 cellar: :any,                 sonoma:        "f25163d8be4d18b356931985b7f1bc17608ae5e51bb9b2140dd692fb29e99732"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b4da206d26f463ee54725579702a7feaf24c502578466ff51be2a8a72e64e1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ed5bb16f7d8eed32a4b2bb7cc162a0f65055d78f9b21b33064980a323f60e7c"
+    sha256 cellar: :any,                 arm64_tahoe:   "47c0c6112aaed4eeb2940eea3367994f8f64863e83b1345e701c98be85555dc3"
+    sha256 cellar: :any,                 arm64_sequoia: "53fdd65edf420cbf044f55a881ebc4c75deaf875197d8936e744970f5228851e"
+    sha256 cellar: :any,                 arm64_sonoma:  "47227fa86ffb2d394057b3d9e7569ab98906f1830b959d08ae3f29e7004f3b21"
+    sha256 cellar: :any,                 sonoma:        "872696384a0a25cb8ede46ad9a303ace04a0aa2d70f3a4dae83e6af9a977e383"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8029c3cb040fae7f50bb646de8123528a5b5441adf269cd96c72536a6c60b72c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86bdb17df51e99fd4416266279c6278433888e9a03e5916f45feed8bed78db05"
   end
 
   depends_on "certifi" => :no_linkage

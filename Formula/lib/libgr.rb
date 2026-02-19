@@ -6,12 +6,13 @@ class Libgr < Formula
   license "MIT"
 
   bottle do
-    sha256 arm64_tahoe:   "85b081742b70d8f9d5a386419678cbbfa1c2acf537421c5ac5cda79427c56497"
-    sha256 arm64_sequoia: "cfce776a1fa94b9e3562c940cf7d6fa6209a50e57f99f4a7dc5dc3d290014ebc"
-    sha256 arm64_sonoma:  "a26d35055f23d1a38f638a57a737206bf8b0fd9a3f772f2a81815862e21c7bac"
-    sha256 sonoma:        "471139272541ade0255a18423d57a8bc094e962c62fd751c76503f77eef7d481"
-    sha256 arm64_linux:   "26746198cf92945b7dbd2100d02543ef90f5261f21fed37d5ef46033b8474bd4"
-    sha256 x86_64_linux:  "c3823b892c93e98765afff93df8ead2bb6dbff0daddd74de17205caae376af69"
+    rebuild 1
+    sha256 arm64_tahoe:   "d7dc038e293663cee2a5990ca42166e39867635adb9e4dc3883f71a565475cb9"
+    sha256 arm64_sequoia: "9dce0ae2d6360be21b8d584e85b033974ec52dec147b4ba77e8c038339666195"
+    sha256 arm64_sonoma:  "541b3104205a8a15bb0b087ed0cad19c1f8b6da30ad4d01fe91f3641169bce4c"
+    sha256 sonoma:        "383cd0f10a50823f81e880aef13c53c29010844d0114deb796d83aafccd7a63e"
+    sha256 arm64_linux:   "91a6e07a239d15244be9cba1dd5036090d7d3e172096a66274afb933f2f27e2c"
+    sha256 x86_64_linux:  "1fa9efb8a2260fc116e848f6996bf8b6699d65bee20537a02c7716d3ddd37d28"
   end
 
   depends_on "cmake" => :build
@@ -27,12 +28,11 @@ class Libgr < Formula
   depends_on "qtbase"
   depends_on "zeromq"
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "libx11"
     depends_on "libxt"
     depends_on "mesa"
+    depends_on "zlib-ng-compat"
   end
 
   def install

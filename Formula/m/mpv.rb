@@ -8,12 +8,13 @@ class Mpv < Formula
   head "https://github.com/mpv-player/mpv.git", branch: "master"
 
   bottle do
-    sha256               arm64_tahoe:   "04dde613c87e0f026283b953049e1d3e7fd37c0713af31cd8b315a22bd8af84b"
-    sha256               arm64_sequoia: "17c2e3766ca63fa7f46d1724b43f7c418e161c0860ba1ad0cdceb295a9a72cdd"
-    sha256               arm64_sonoma:  "cedfde7fd4aed30fa551b219f17bc17281b88edcac1c27300f3a5ac37b73b410"
-    sha256 cellar: :any, sonoma:        "017708198069e69a629a2fadcdfb1c5d6752e147a0e90c89ba2348e874be6863"
-    sha256               arm64_linux:   "fd6309a98b2e0a8aa717c8bdeebaef885bcc86b50f93802fefa91bc72c242024"
-    sha256               x86_64_linux:  "75977051139de1bb9314f046ab05ae6e47a1e7571f5f0fbd15b5993dc276fa43"
+    rebuild 1
+    sha256               arm64_tahoe:   "c4e88d99d6fb973d7b4a37271aa94cc96a5bb4610dddf61a302e9624f783efdd"
+    sha256               arm64_sequoia: "fda0a0aa036dd78a6681e67ab7bf0862013f2fd50ad259a6094200a70eb84978"
+    sha256               arm64_sonoma:  "cf36050eb12507950007c31e3ed3d888eef58a2d7e1df1ac095f931df8d7e9ad"
+    sha256 cellar: :any, sonoma:        "942485f66d360df1a8380a65ba036b37a98de9aff006db6f676845f2b2c6aef8"
+    sha256               arm64_linux:   "0592ed38cf24ca73435b1d981f0527b47b6fc98edec0dc3e5ca63383ef8fe5fc"
+    sha256               x86_64_linux:  "7b82c482920827364ba2a698073f897bc5c6532179fa08e1a59768ee65ecb6ad"
   end
 
   depends_on "docutils" => :build
@@ -37,8 +38,6 @@ class Mpv < Formula
   depends_on "yt-dlp"
   depends_on "zimg"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "molten-vk"
   end
@@ -59,6 +58,7 @@ class Mpv < Formula
     depends_on "pulseaudio"
     depends_on "wayland"
     depends_on "wayland-protocols" => :no_linkage # needed by mpv.pc
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with cask: "stolendata-mpv", because: "both install `mpv` binaries"

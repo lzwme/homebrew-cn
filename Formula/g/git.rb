@@ -66,8 +66,8 @@ class Git < Formula
 
   # https://lore.kernel.org/git/pull.2046.v2.git.1770775169908.gitgitgadget@gmail.com/
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/46d746f92167fd0559af22f4ccb79c9ff35fbe33/Patches/git/2.53.0-osxkeychain-top-level-makefile.patch"
-    sha256 "d640f0105be66631634123de1a2cd6d950efe62b4d51c7c889fa57521a0a60cd"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/532a668f0f725a69342cbac3414475a28bd0575d/Patches/git/2.53.0-osxkeychain-top-level-makefile.patch"
+    sha256 "ef3f390f940e080548474950380edb008f31e5fd500c8ad1d470fc764b6e65ac"
   end
 
   def install

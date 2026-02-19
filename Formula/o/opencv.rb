@@ -24,12 +24,13 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7509e5aab7a68f202b6ea35b6d5ec06b36192d6008fc1820dc610ca68d069381"
-    sha256 arm64_sequoia: "3288d1924eb14507d69289c3fe3418f3bb8ae320f848f85f809bff44a44a27bd"
-    sha256 arm64_sonoma:  "fe502f7d3171c7e81a38811317b9a4bbd407aa560b2d9b4c308b9522ef359eef"
-    sha256 sonoma:        "eae7edc0cb7d77c144d0b13e927c396205c8709a514ef9eea4fa0feff01bc30b"
-    sha256 arm64_linux:   "2e2586e3977315aca77e69d171b005e550158578e332bb832d75eb583488711b"
-    sha256 x86_64_linux:  "358ede10a74e16651e00de9fc10dbe6e75393f60be7d9280ebe488031f6d2278"
+    rebuild 1
+    sha256 arm64_tahoe:   "b389b86870c2e9732ddb357493035589945666e4065546bc3e610273bf88f008"
+    sha256 arm64_sequoia: "252a384d566f3781df2e3517eabe91a03f2cf372d5ade117ee43757f849990dd"
+    sha256 arm64_sonoma:  "a223315ca70b678fba04eeb40487480e82610d5503fb2ccb6830c05e11c77b96"
+    sha256 sonoma:        "e70f475c1d60ef8b3b68d832128bf48b2b540f604d9aa8ab0f86a7cfa002eac1"
+    sha256 arm64_linux:   "3cd0c38ad37d46e57172514e6d8e51d70e2dde4b613b5111fb1e366b8d87b86f"
+    sha256 x86_64_linux:  "12a205362ee78560b219409443be72c83d9e2d3e0379c40455aa1451f2de3a23"
   end
 
   head do
@@ -67,8 +68,6 @@ class Opencv < Formula
   depends_on "vtk"
   depends_on "webp"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "glew"
     depends_on "imath"
@@ -80,6 +79,7 @@ class Opencv < Formula
     depends_on "gdk-pixbuf"
     depends_on "glib"
     depends_on "gtk+3"
+    depends_on "zlib-ng-compat"
   end
 
   def python3
@@ -153,7 +153,7 @@ class Opencv < Formula
         -DPROTOBUF_PROTOC_EXECUTABLE=#{Formula["protobuf"].bin}/protoc
         -DTIFF_LIBRARY=#{Formula["libtiff"].opt_lib}/libtiff.so
         -DWITH_V4L=OFF
-        -DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.so
+        -DZLIB_LIBRARY=#{Formula["zlib-ng-compat"].opt_lib}/libz.so
       ]
     end
 

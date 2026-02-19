@@ -1,18 +1,18 @@
 class Openapi < Formula
   desc "CLI tools for working with OpenAPI, Arazzo and Overlay specifications"
   homepage "https://github.com/speakeasy-api/openapi"
-  url "https://ghfast.top/https://github.com/speakeasy-api/openapi/archive/refs/tags/v1.19.0.tar.gz"
-  sha256 "7ec2201c6d2c70a1cb2cd448c19083e2d3a5aaa67d407f8fbeddc6fb18501ff5"
+  url "https://ghfast.top/https://github.com/speakeasy-api/openapi/archive/refs/tags/v1.19.2.tar.gz"
+  sha256 "b17ba7de181cc135d2318a6c06edec3b8e8b23e8d08fb30f419303b1310092a6"
   license "MIT"
   head "https://github.com/speakeasy-api/openapi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ef9a95708e5a168bbc7699519c691718f97961e1d98d93a5058c31be8fd10f4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ef9a95708e5a168bbc7699519c691718f97961e1d98d93a5058c31be8fd10f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ef9a95708e5a168bbc7699519c691718f97961e1d98d93a5058c31be8fd10f4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f6cacdd9765fbedd363f88963112336b0965cfd4801013b5ba59d93a5c7386b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5dedffe4b0ec702e60902d648e454658be203df70033eccca65d4442ceb74ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38ff38b27805c8ee77c14499131ffbf3638324092a502ff3796b6d170a56690f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a342056d8415028845a95fc46c4ecade737671be3af45fed8ea1f3324392f67d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a342056d8415028845a95fc46c4ecade737671be3af45fed8ea1f3324392f67d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a342056d8415028845a95fc46c4ecade737671be3af45fed8ea1f3324392f67d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ae15580ce0295e9046903e23a22095e7eb2b38320757b80a950f520e02cb6f0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7292abbcbba838f8291a571412ed4b15879cbe6bd53311c8a4f3dfcbac2f6ae2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51577816bcc15dea5901f85d1ba23ad29982c7e075e9d085af1f0776e915b9b1"
   end
 
   depends_on "go" => :build

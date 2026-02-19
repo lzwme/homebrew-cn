@@ -11,8 +11,6 @@ class ArmNoneEabiGdb < Formula
     formula "gdb"
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "493c701535ef53e4243eb5e516f6d94f667c277f0a60b7d8e0eb5d8b8ba6a42f"

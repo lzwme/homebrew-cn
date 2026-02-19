@@ -12,12 +12,13 @@ class Qemu < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a4e392c573fef9d264f58ae506e04e5167b8f888aa70b7cc97b80eb7cd29c88d"
-    sha256 arm64_sequoia: "70f9503631496e63671f856fff9bd40f54400596fa19aecff562fb16f9da2f37"
-    sha256 arm64_sonoma:  "51042c5a320cf5ce1e8b2eeef66e6038e6b967ca13682c333836b41a7e098e2d"
-    sha256 sonoma:        "b884eb5afcc88f0d4f51958665e750ec02e509567c70f2481c4b0b67bb0c3211"
-    sha256 arm64_linux:   "e3dabfab19dd201d8f3bdb863230017935a29f6cf89b4d74f2b1fd1311753625"
-    sha256 x86_64_linux:  "a663e1e14ccb800f6be843e6b2eed834035fb83acb44d90b4bdbce179dd5790e"
+    rebuild 1
+    sha256 arm64_tahoe:   "033d2157dda25d3ec6ec98b0bffbc81d803b3a2a0d3a2e89c2fd7611454f73f6"
+    sha256 arm64_sequoia: "0be43d2a38948699ab3095502de37a4f55f368d01a188e468f7c71166d2d5dc8"
+    sha256 arm64_sonoma:  "a2083a7304601a5adcc8981cda2e8787515c06eedc6f13e8e0db4701f389d576"
+    sha256 sonoma:        "da5b6999f71b0bc28abf0b0baa08d7f98ea5b5f819ebeb2eae3298803f694c0e"
+    sha256 arm64_linux:   "6b2ed879ce16cd8ec1d76a79b76feb7002f998c0e4badc8fe7392dd3b2b7d11e"
+    sha256 x86_64_linux:  "b0fd9931793b9d15843dd2fba7dbcd21b739fc6d874a73bcc0e248791242c03b"
   end
 
   depends_on "libtool" => :build
@@ -46,7 +47,6 @@ class Qemu < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "attr"
@@ -61,6 +61,7 @@ class Qemu < Formula
     depends_on "libxkbcommon"
     depends_on "mesa"
     depends_on "systemd"
+    depends_on "zlib-ng-compat"
   end
 
   def install

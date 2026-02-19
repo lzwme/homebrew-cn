@@ -25,6 +25,9 @@ class DockerLs < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0002977a8ff7a2a2607098a743ec898e1aec0efee43095c06b56b873fbfcda15"
   end
 
+  deprecate! date: "2026-02-17", because: :repo_archived
+  disable! date: "2027-02-17", because: :repo_archived
+
   depends_on "go" => :build
 
   def install

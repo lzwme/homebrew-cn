@@ -6,14 +6,15 @@ class Libbpf < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "421a520e8a32f1ec6649ecee40143990cda2930a3dedad72185ab4ef053489a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d1a7b1021a6678f835fa3b9f07bd265884674862c2ec6a324e70c0e01ac398ce"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "c6434f21ee8213728fa2282fa9c7212576b6b930c04fb89080184693d597cca9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "82f1148d37fd262f39b42d8a3edb7f152e2028c6fd39efad34117b8a10b2a3d0"
   end
 
   depends_on "pkgconf" => :build
   depends_on "elfutils"
   depends_on :linux
-  depends_on "zlib"
+  depends_on "zlib-ng-compat"
 
   def install
     system "make", "-C", "src"

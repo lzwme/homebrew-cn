@@ -3,18 +3,17 @@ class Backgroundremover < Formula
 
   desc "Remove background from images and video using AI"
   homepage "https://github.com/nadermx/backgroundremover"
-  url "https://files.pythonhosted.org/packages/b9/4a/18deace4c210d722e4dde75a7f445f105d96d190f767b9132d789b1503dd/backgroundremover-0.3.8.tar.gz"
-  sha256 "0f6c25e500eab0268fdc3f50574e5f8aca1f5f47fcad86f4b52ea2af814a7434"
+  url "https://files.pythonhosted.org/packages/f5/8d/ebc742ef2c427bfec9047096b28ed380d390a566bf294fe0772a2b044940/backgroundremover-0.4.1.tar.gz"
+  sha256 "3afa098d4538f44fd0bb44f9b77b63c29716fe7860dc79a3d51053d8cba2f753"
   license "MIT"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "69e37dcd7efe1a106eb9ed92f75b1a44761e8991df4b9c19c66e7d795288a48e"
-    sha256 cellar: :any,                 arm64_sequoia: "70a153a6e2a876ee70469504219063b6bdad259c9694be44c70f5bd244000ed7"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd6232c5c2d6e44a35f4aa23c601cd568072e3bddb614654165d3394460ef8b9"
-    sha256 cellar: :any,                 sonoma:        "2aef3bc9f546365b02f1ea0b172da7ea8a4187a527fa311ea36a00485c4bed94"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb04fd6b8986e4f01974dad5efe8806b0fa080d6f25b62b68515ffa1637e026b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3616674f766effd0d2d82a44c4367e971701d2f656ef31a9a2b4149dbc84967"
+    sha256 cellar: :any,                 arm64_tahoe:   "ed3edd08873bd85bbe5c231dcb4ae1ace46f1b199cd29d1cbe385132a4811c94"
+    sha256 cellar: :any,                 arm64_sequoia: "39d31fe2ef258c44005243e4301e3a916752fb2f6840cc6f4f6aa525dd6858c6"
+    sha256 cellar: :any,                 arm64_sonoma:  "221720246f865645f42869a69fe8b0fccaa60b1c6a76f6959fd320eedfd3af90"
+    sha256 cellar: :any,                 sonoma:        "65185edc7ee12493e96b17dfd0c40fae4206580ec5ec930dd540688bf9660ed5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "848dd4d918b8b3603faab0ad5f9528e6ce357aa3296f5de515d424cbb40c68e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b96a22abb204ab20a9e996bf73d288ad6ce93f1557b4fb5c43c8377aea2ed68"
   end
 
   depends_on "cmake" => :build
@@ -111,6 +110,13 @@ class Backgroundremover < Formula
   resource "llvmlite" do
     url "https://files.pythonhosted.org/packages/74/cd/08ae687ba099c7e3d21fe2ea536500563ef1943c5105bf6ab4ee3829f68e/llvmlite-0.46.0.tar.gz"
     sha256 "227c9fd6d09dce2783c18b754b7cd9d9b3b3515210c46acc2d3c5badd9870ceb"
+
+    # Fix for setuptools error > 81
+    # PR ref: https://github.com/numba/llvmlite/pull/1400
+    patch do
+      url "https://github.com/numba/llvmlite/commit/e6a4cf1bd9b1ac213124ef125cae44896ed9885c.patch?full_index=1"
+      sha256 "9d23e9490600eb9076a12c808e3222a5b5c25fef200b4e97703d8fea069fd6d3"
+    end
   end
 
   resource "more-itertools" do
@@ -134,8 +140,8 @@ class Backgroundremover < Formula
   end
 
   resource "pillow-heif" do
-    url "https://files.pythonhosted.org/packages/64/65/77284daf2a8a2849b9040889bd8e1b845e693ed97973a28ba2122b8922ad/pillow_heif-1.1.1.tar.gz"
-    sha256 "f60e8c8a8928556104cec4fff39d43caa1da105625bdb53b11ce3c89d09b6bde"
+    url "https://files.pythonhosted.org/packages/12/96/e4bf7bde1de9908bb509212c2861bff857eb4be845ebf80f6b0b02b8650d/pillow_heif-1.2.0.tar.gz"
+    sha256 "dd5c818dfb4ec39a5093127f8c07bbb32ca81dbbd29c4ebeffd23222ccc76aa9"
   end
 
   resource "proglog" do
@@ -144,8 +150,8 @@ class Backgroundremover < Formula
   end
 
   resource "pymatting" do
-    url "https://files.pythonhosted.org/packages/35/43/cd7a82913dfde95dfb653efd09c7b394a76b3865570050b674a36fc0078c/pymatting-1.1.14.tar.gz"
-    sha256 "75e2ec1e346dbd564c9a2cc8229b134ec939f49008fa570025db30003d0c46fc"
+    url "https://files.pythonhosted.org/packages/9a/f5/83955aa915ea5e04cecb32612d419e8341604d0b898c2ebe4277adbc4c6b/pymatting-1.1.15.tar.gz"
+    sha256 "67cbadd68d04696357461ad1861bcb3c2adc9ec5fcd38d524db606addabe745a"
   end
 
   resource "pysocks" do
@@ -169,8 +175,8 @@ class Backgroundremover < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
-    sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
+    url "https://files.pythonhosted.org/packages/09/a9/6ba95a270c6f1fbcd8dac228323f2777d886cb206987444e4bce66338dd4/tqdm-4.67.3.tar.gz"
+    sha256 "7d825f03f89244ef73f1d4ce193cb1774a8179fd96f31d7e1dcde62092b960bb"
   end
 
   resource "urllib3" do

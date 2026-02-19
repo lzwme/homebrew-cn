@@ -1,8 +1,8 @@
 class SwiProlog < Formula
   desc "ISO/Edinburgh-style Prolog interpreter"
   homepage "https://www.swi-prolog.org/"
-  url "https://www.swi-prolog.org/download/stable/src/swipl-10.0.0.tar.gz"
-  sha256 "98c552c48fc8b44dcd4440abbfed632cceb75055fde267be12f340bea8106590"
+  url "https://www.swi-prolog.org/download/stable/src/swipl-10.0.1.tar.gz"
+  sha256 "a9504745310e36195cf8cee9ad9164a7aa99e389c669ca6d279e321efc2ad9d4"
   license "BSD-2-Clause"
   head "https://github.com/SWI-Prolog/swipl-devel.git", branch: "master"
 
@@ -12,12 +12,12 @@ class SwiProlog < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3eb2ed1fa8a93f498210382896da6ca918c489cace86665db420f07b7ea0316d"
-    sha256 arm64_sequoia: "066cc4c305cd8820c725b68e084d8eec5d56f556c6b3304ab3632e717af1997f"
-    sha256 arm64_sonoma:  "517dcd86d7a0aa124e79a20970db315d5c11d2acae59235b8a606312ea563d24"
-    sha256 sonoma:        "f77b39ec026c93f25242d419eafcedff13fed918391b8898b4fdb7c6e21b570b"
-    sha256 arm64_linux:   "ced37bbbbdb1d01221253f4b644b4c8edaf2d3ceff1b2da5139cef9986bbec00"
-    sha256 x86_64_linux:  "b533ea5641a7bb74e8734ba66a48036edc1fb28adaf2643d0ae993822e422eb3"
+    sha256 arm64_tahoe:   "ec138c06b1b609386119a1a01de26d4a2d13c220b35087772f3f617cb6757f82"
+    sha256 arm64_sequoia: "8097c8070826fc200a90f7f5275133520bb06b188b220ced7b91cf60972aef8e"
+    sha256 arm64_sonoma:  "3150968bdca7001398fbcbe8fa440c49257ac6ffe107df2a177c33ead61081f6"
+    sha256 sonoma:        "10a5ebed010d3892c549e2a2bf614dd943698f60f67209f272573e2e350c0b0d"
+    sha256 arm64_linux:   "d63fb5ffd077083e93a2c3de24bcbcb6720ca6d05249c0eb373f3fd38591f2ec"
+    sha256 x86_64_linux:  "9822768754b2e7fb206050ab4b3c9950768920477166e142dd8441f8451e97ba"
   end
 
   depends_on "cmake" => :build
@@ -33,7 +33,10 @@ class SwiProlog < Formula
   uses_from_macos "libedit"
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Remove bundled libraries

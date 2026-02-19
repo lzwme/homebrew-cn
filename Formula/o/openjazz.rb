@@ -1,19 +1,18 @@
 class Openjazz < Formula
   desc "Open source Jazz Jackrabit engine"
   homepage "https://www.alister.eu/jazz/oj/"
-  url "https://ghfast.top/https://github.com/AlisterT/openjazz/archive/refs/tags/20240919.tar.gz"
-  sha256 "c50193b630c375840026d729bb9dda6c7210b1523e62d7ae019ce2e37f806627"
+  url "https://ghfast.top/https://github.com/AlisterT/openjazz/archive/refs/tags/20260218.tar.gz"
+  sha256 "5d1bb606aae0d007e70a5258734fd43872fba950a9ccb282db4c21f1e1436e33"
   license "GPL-2.0-only"
   head "https://github.com/AlisterT/openjazz.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "bc2094b29109b45a5eb6ae8a371497d725561aae932718ff4d051cd99318d3b7"
-    sha256 arm64_sequoia: "2b3e94c863d4274b62301bd23d3be3ff1178080b4e8d6e009c79b6ca21b0f71c"
-    sha256 arm64_sonoma:  "3bbaed46d4ff6ed830405c129fa0bf7c1af5849ffbdfae0bd06f21e8c90fa774"
-    sha256 sonoma:        "49f6764a2ade0727fbbcab9785c8c1c6e7e5fd975325115ed2425a1a7ffbecb2"
-    sha256 arm64_linux:   "aa661bad9d6a7343909105993e09393ea87da33cd18c2a3d8f39d658014f2403"
-    sha256 x86_64_linux:  "e11ba77658b99c4844292e2656ac702c350419cbe7fbf0c3564b2d150a1a73de"
+    sha256 arm64_tahoe:   "92e19619a1da8b5c0e505c3cf23b2f568b4e73b91e5ec8216a0dec9f9c964f65"
+    sha256 arm64_sequoia: "726bfea73e75f930ea74aed371bea7d8b37af13a27a22d2a6cae7f4680128451"
+    sha256 arm64_sonoma:  "255d0d962a17c73707c7a915e392d29869e9e3922292082763cd7f2a2accdc7d"
+    sha256 sonoma:        "bdebeaabc57bc79b387ac5a5a17d6c185a7f5b34655aa85497961fb9cc89e36e"
+    sha256 arm64_linux:   "8292638d63fec35e0d046abbbf5c8b13bb413e2ff719b1f9e63053f512fda4e6"
+    sha256 x86_64_linux:  "bf10bef174a78b2ee05f8ca4f65b80504ed93763fe33c010d0950fb3d7dac6e6"
   end
 
   depends_on "cmake" => :build

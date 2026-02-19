@@ -11,12 +11,13 @@ class LibtorrentRakshasa < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "224396746f0270c596c1ef9627aaddc8536343f610d733172ede785f995676d8"
-    sha256 cellar: :any,                 arm64_sequoia: "7fc34274e145db980ed8e5055be7b4b81c5ec89f5c2ea4f31f4ac5fe929c5397"
-    sha256 cellar: :any,                 arm64_sonoma:  "753a34d3b2231c11d89da6e22025b26aebb535752420deed00471480d2cd9f50"
-    sha256 cellar: :any,                 sonoma:        "6f1b4093c3912a4b89fcf83cc794bd857d4dd68abb01eb4040f4223050afdb7c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "54165fb0cde133016dcae15efa7933e5aeb18002f07d2349bf3e4954d06b0105"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c72ea44910be342bf57a858b69e9644d82e84def3a2a81dd3d696f0965326d6e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "32f199169d09f60740c6b495534ef0ec45f493d38a4209179848ea4455355742"
+    sha256 cellar: :any,                 arm64_sequoia: "14aeb86e15ba1cc8316fd2d734b876fe93a29c3a3f8206eb0edfd66c02f341cf"
+    sha256 cellar: :any,                 arm64_sonoma:  "45ec40e48b21cd1ff1a7b6149ea1552ff9b826fca58a5e49411dabb09b88d1ca"
+    sha256 cellar: :any,                 sonoma:        "048e234f7bd34d5b022b0d88bb9e454912d82bb1d6f9b16483a7973433992a2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "182c7dca98244fb607648b1c30c968a3869052b6e1b964cad6da9cc1ef88859f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b57703654e39e6c55e7210679e621cd01c5969056af7018ee748dc3455ff27f"
   end
 
   depends_on "autoconf" => :build
@@ -26,7 +27,10 @@ class LibtorrentRakshasa < Formula
   depends_on "openssl@3"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "libtorrent-rasterbar", because: "both use the same libname"
 

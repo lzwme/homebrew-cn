@@ -11,12 +11,13 @@ class LibpqAT17 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5b3493ba48939127b35c9fcee95e49fcfcbc94c8adde6049ce0386145fcdd579"
-    sha256 arm64_sequoia: "b15acd88a84a331b473abfd0ae1b102dbb43c33989535cfcbfbcba0183d31c20"
-    sha256 arm64_sonoma:  "a0bb49a5b8a2e2810e6a580a0b70e42c0d2a16d180a51b3da31f78a19e766f01"
-    sha256 sonoma:        "6a651b2d024f986f4de69897d0356e0ba83c098cbfc118c6f3867b4a31f341b1"
-    sha256 arm64_linux:   "7957bd47758273bb2084177ad0c6adf5798f73e1c292eafc5b78d176ac4b185d"
-    sha256 x86_64_linux:  "7f70b2b48d05f08ca9dbc978ee124ceb670f986e3d7c65ea77776214c615ab61"
+    rebuild 1
+    sha256 arm64_tahoe:   "66812059c33a5600f9d1404167ae3e29327e2097269723e44c8d7aedd43effb0"
+    sha256 arm64_sequoia: "82535974613b4967aca063cede5067d1e9be9fc2effe5a1687776050c99ff26f"
+    sha256 arm64_sonoma:  "913e40cbe1b0f81588048b93673a8d175758df3bc5aa7be50f30db15e2febf98"
+    sha256 sonoma:        "bbd4efedb27fdc948179a27681af1df6411d03d0f1e1a625b7089c580b098f69"
+    sha256 arm64_linux:   "0c55c8c500858515b01e234982316d01c3c9473f1b42e531c7571e17e85ae765"
+    sha256 x86_64_linux:  "3b6c89c321064d2f7e68a88b27b29f9dc81441c5c5d31da920bc43f7837c51c7"
   end
 
   keg_only :versioned_formula
@@ -34,10 +35,10 @@ class LibpqAT17 < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "libxml2" => :build
   uses_from_macos "libxslt" => :build # for xsltproc
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "readline"
+    depends_on "zlib-ng-compat"
   end
 
   def install

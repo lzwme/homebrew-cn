@@ -25,12 +25,13 @@ class Libspatialite < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ec71d022fb73c458f7cffae0653b47966afedfd983505dc3f258de7cee10ae69"
-    sha256 cellar: :any,                 arm64_sequoia: "f8fce6ef602c6ba94ba50021c98ef28d4f229e2a1b68c67af847c72cc3f86340"
-    sha256 cellar: :any,                 arm64_sonoma:  "e6cdb74bf39ad03b1cbee89f33d2e0c1995e996c54b15ba616cf45035ee0a38e"
-    sha256 cellar: :any,                 sonoma:        "1ba1a71a2e5f482de9dea30d398ef7848313d2012dce11233c6d66b20bd9df40"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a76a81771f5568851ce32fbf406a060b4d7f9946f7c8e11ce99c52439bc076b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3a454cd563efc53e1636abd085bea6cbba2b5dd7c95727cb496ea8881966deb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "81744f6dc5c16d0d6e3001ec150b116f2cb06096722e021057bc7c2d303a099c"
+    sha256 cellar: :any,                 arm64_sequoia: "2229f70bb0ee3ec72a6cd2df2f735b87f5d9367e42322f00779939213f02e13e"
+    sha256 cellar: :any,                 arm64_sonoma:  "fbaac75c00134238127cbceae3b846c4c565fd8fb0bc4c5f3754ab5dc3d49551"
+    sha256 cellar: :any,                 sonoma:        "e6a24737afbf73a3817d786f7754b6df9b9dc4a14aa4e1873d6f43dc5cb28d85"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c99aff6aba220be5c976b1504445a5ff896365eec7dba405308ddc92cbbe436"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ac67e83fa3917d6a49b5a3a580be1da3a03286a3ff5f826fb07257e47ac9a4a"
   end
 
   head do
@@ -48,7 +49,10 @@ class Libspatialite < Formula
   depends_on "minizip"
   depends_on "proj"
   depends_on "sqlite"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Apply Debian patch to allow disabling the usage of removed libxml2 HTTP API.
   # Ref: https://groups.google.com/g/spatialite-users/c/nyT4iAJbttY

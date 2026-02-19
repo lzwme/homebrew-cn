@@ -6,8 +6,6 @@ class Camlpdf < Formula
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
   revision 2
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "11905e6ecf963dd498f8375ed474be764b50922044fc210d660376d250c49f98"
     sha256 cellar: :any,                 arm64_sequoia: "aefadfc9531ad433514d250c0ded7c4ff496682302e30157f253ed8e90ef2bfd"

@@ -1,18 +1,18 @@
 class Janet < Formula
   desc "Dynamic language and bytecode vm"
   homepage "https://janet-lang.org"
-  url "https://ghfast.top/https://github.com/janet-lang/janet/archive/refs/tags/v1.41.1.tar.gz"
-  sha256 "f35dfe8198ead4aca27415a43f2e16f419f3a4c9666999211a552b196ab0b253"
+  url "https://ghfast.top/https://github.com/janet-lang/janet/archive/refs/tags/v1.41.2.tar.gz"
+  sha256 "168e97e1b790f6e9d1e43685019efecc4ee473d6b9f8c421b49c195336c0b725"
   license "MIT"
   head "https://github.com/janet-lang/janet.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0a5aa8e46c94f32d5dc36d7513783f45e5dd9c6f88fe92491256bf192bca84bb"
-    sha256 cellar: :any,                 arm64_sequoia: "b9cdab3d58e9bd73ddc76bba05dd03ddb51612f066e38226d9560a4e88c7f040"
-    sha256 cellar: :any,                 arm64_sonoma:  "c887671cf1e762cdc8ae1202b101d9c6d65ed7fdebbbac5118d15d7cbc13606c"
-    sha256 cellar: :any,                 sonoma:        "99c273ee1251a7392252bb1051ca1d732c229615e1f0e13a38046d0bdc1780e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "07f89626ee4e292e6bd7d645730c35aa83427fcac33797d54560ac8a65a4dfa9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "416409e008f6e237546aa1baee60f19cd180e61be7f898a10008baaab41c776e"
+    sha256 cellar: :any,                 arm64_tahoe:   "95713b9d30546fdaab9f6f1f5f519f1cbc80089fe98afca9862639e7736ba51d"
+    sha256 cellar: :any,                 arm64_sequoia: "1e161621c9e8774fdaba026fcf56a1cd8ef71ab988182784aa06a486f11a2f2f"
+    sha256 cellar: :any,                 arm64_sonoma:  "7b9915ba7cdab2c07954cd308505e608c96cf88560e32998a138d54b78d6b1d4"
+    sha256 cellar: :any,                 sonoma:        "dbd1061f7b9eb25f476d1f8f1c1e0a3dee4b38bfe779c78a61af65d47c0beec1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b93f65debdf478e42ade08470c501b78f89c9c4bfa759d228eb91bf9a412426c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "355439f1ee0ff6b1c47e00fb2ab241bc3d584cc9409c28b8978981095d08dd36"
   end
 
   resource "jpm" do

@@ -1,17 +1,17 @@
 class OpenclawCli < Formula
   desc "Your own personal AI assistant"
   homepage "https://openclaw.ai/"
-  url "https://registry.npmjs.org/openclaw/-/openclaw-2026.2.15.tgz"
-  sha256 "653a3f32ac8beeb38da77a763851694ff96146433234170c590584842e0a985a"
+  url "https://registry.npmjs.org/openclaw/-/openclaw-2026.2.17.tgz"
+  sha256 "42e083bfa6ba27b5ca5ceff256d26396542b7f5c4ba41fa5fef3b8387d2aa811"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0d959523d4a8f73f1348bc30e0d1eab5f1ac6e5d1710baa6c6bac6473c435b36"
-    sha256 cellar: :any,                 arm64_sequoia: "1532abfa3ad909d7cad54f259b3c7e98b77e53d0f7b6038554d2e529178bd244"
-    sha256 cellar: :any,                 arm64_sonoma:  "1532abfa3ad909d7cad54f259b3c7e98b77e53d0f7b6038554d2e529178bd244"
-    sha256 cellar: :any,                 sonoma:        "11f0e5ef4b4849da4b0098123acb98b06e9c1514d7ed41cca719cd47485bef17"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb1e28663bad51b2648764d6f42a5206377634e58d36d8c370e72dd5e861f0cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dba259f482f88d0d5b89b32339c10a5c71cb254c477695bafffa97edf3923b50"
+    sha256 cellar: :any,                 arm64_tahoe:   "1cbb10e48feaaaf2b2f5b69de3707c43456204357d7946872ff65d000ee1d993"
+    sha256 cellar: :any,                 arm64_sequoia: "cbdf0d6ffdc05e147cee4398f920d51dbba799a5b6c6160bfb82d283deabdcb6"
+    sha256 cellar: :any,                 arm64_sonoma:  "cbdf0d6ffdc05e147cee4398f920d51dbba799a5b6c6160bfb82d283deabdcb6"
+    sha256 cellar: :any,                 sonoma:        "00708d796daade0dedc01c5eb51e8a42424e29878a4ec7aea9aaf10f0ea7e290"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db20cca50d324b234ce1c06b2bf9d4ee1c6534147809a224eb391217a0c24053"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "801d372cefd7416b3a83a43d926f662f284823ba2b370eca144238688752afa8"
   end
 
   depends_on "node"
@@ -35,6 +35,12 @@ class OpenclawCli < Formula
               basename.exclude?("vulkan")
 
       rm_r(dir)
+    end
+
+    os = OS.linux? ? "linux" : "darwin"
+    node_modules.glob("koffi/build/koffi/*").each do |dir|
+      basename = dir.basename.to_s
+      rm_r(dir) if basename != "#{os}_#{arch}"
     end
   end
 

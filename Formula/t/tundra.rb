@@ -29,6 +29,9 @@ class Tundra < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fad1cea39ec00029ac59d256942a16e6e1d7fca077ad817e312257335bf32858"
   end
 
+  deprecate! date: "2026-02-17", because: :repo_archived
+  disable! date: "2027-02-17", because: :repo_archived
+
   depends_on "googletest" => :build
 
   def install

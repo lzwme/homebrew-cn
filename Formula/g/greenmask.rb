@@ -1,8 +1,8 @@
 class Greenmask < Formula
   desc "PostgreSQL dump and obfuscation tool"
   homepage "https://www.greenmask.io/"
-  url "https://ghfast.top/https://github.com/GreenmaskIO/greenmask/archive/refs/tags/v0.2.15.tar.gz"
-  sha256 "d9cc46c66caf3610abe35feda46cb3e341faaf8b7b3503dfc964357da9def21c"
+  url "https://ghfast.top/https://github.com/GreenmaskIO/greenmask/archive/refs/tags/v0.2.16.tar.gz"
+  sha256 "552ac3d56bea6c4f6a3a9008afcdcc0ad739170a8313ae1789be22703947ce81"
   license "Apache-2.0"
   head "https://github.com/GreenmaskIO/greenmask.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Greenmask < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6566ad58caea4006f873235d0f016a243c93c1ad99a4b17d5ab5051cdd264482"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6566ad58caea4006f873235d0f016a243c93c1ad99a4b17d5ab5051cdd264482"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6566ad58caea4006f873235d0f016a243c93c1ad99a4b17d5ab5051cdd264482"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8ca0a8491c68f12ffdbb48ea4bd34a38d9c0ca247969aebde5405db32e27884e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dcb3e75cefbab8ba63885b06bc585e45dc115751ffb0e4e73523be0387ae36c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82b797ee59e812456347e03bc649c0e5a1460d80e435006f00f90c787e8b3ecc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9de54eb221e7365acebf3c36e2418f8a77b2a271313edddeb8659fa9ade39b7b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9de54eb221e7365acebf3c36e2418f8a77b2a271313edddeb8659fa9ade39b7b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9de54eb221e7365acebf3c36e2418f8a77b2a271313edddeb8659fa9ade39b7b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2ae06d47899e6715671b666aac8d2c492785051d7eaf8474832e2b969c287369"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f886926b62ddace9bc9febfa81578ee27ed1d05eb5402ee181d613673c18a1aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31ca8501447b8187e578105f3ab608217b46dc5acadb416295be64eecbea56e9"
   end
 
   depends_on "go" => :build

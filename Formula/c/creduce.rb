@@ -56,8 +56,6 @@ class Creduce < Formula
     regex(/^(?:creduce[._-])?v?(\d+(?:\.\d+)+)$/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "ef5fc676679f474e69748993a5a795c53eb1eabea3ac94e8901002cfb43475df"
     sha256 cellar: :any,                 arm64_sequoia: "752bcd060b5ab5d04efc96dfd67d9128e6fd66a2d9b14b5e59735ba758d2d61b"

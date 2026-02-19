@@ -7,12 +7,13 @@ class Yosys < Formula
   head "https://github.com/YosysHQ/yosys.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "68bb2e98560e4758e7e68aec0d4489117cb57b289d7f828efdbaa6b7cd40c1d2"
-    sha256 arm64_sequoia: "1c23f823d7d6b7d3d89e8d44708a755b7413b6b291f95586c86ef34d88f4052c"
-    sha256 arm64_sonoma:  "368260bb3909510558fcd18e31329d25b203b6308271f4c6cf47a86e23ebef86"
-    sha256 sonoma:        "3646547dd398121291841753eb5538fc3ade3fc87e1a693c8f37fb3aa00e19c6"
-    sha256 arm64_linux:   "8d5f7e013216904b8eba5527cf097cb1e46fe524d4069611100490bc04a3e494"
-    sha256 x86_64_linux:  "5c6e0ff389d38e9bae6aecc82738c9686dffb529afe5933b8140a88f66bf3e32"
+    rebuild 1
+    sha256 arm64_tahoe:   "9c953538b088eb90322b5b71fb12b02d03f892d361fe661e0e673974f84fddde"
+    sha256 arm64_sequoia: "a9a5085d79e9720e23bfccfbd27f5391bd4cdf55e50b5c193e37230e3a8dc9af"
+    sha256 arm64_sonoma:  "a19079c500f3718df1c3e5f310d2869f419de5ef2fe7c7ddd359782bea9dd259"
+    sha256 sonoma:        "a9e8c673275f34e1bf4effc870833fae52537f7b8193a790b4ba92c2d8aacf69"
+    sha256 arm64_linux:   "3f43cd74fefea7acc8fbd2bfa4bbffff17e1699f5f82c18357c23a55740f97dc"
+    sha256 x86_64_linux:  "0f098ef63b458cabb78f4963eb3feacda31cace6bcf287eb5df7baabc0819ea5"
   end
 
   depends_on "bison" => :build
@@ -24,7 +25,10 @@ class Yosys < Formula
 
   uses_from_macos "libffi"
   uses_from_macos "python"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV.append "LINKFLAGS", "-L#{Formula["readline"].opt_lib}"

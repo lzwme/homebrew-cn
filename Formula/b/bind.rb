@@ -6,8 +6,8 @@ class Bind < Formula
   # or buggy. They are not suitable for general deployment. We have to use
   # "version_scheme" because someone upgraded to 9.15.0, and required a
   # downgrade.
-  url "https://downloads.isc.org/isc/bind9/9.20.18/bind-9.20.18.tar.xz"
-  sha256 "dfc546c990ac4515529cd45c4dd995862b18ae8a2d0cb29208e8896a5d325331"
+  url "https://downloads.isc.org/isc/bind9/9.20.19/bind-9.20.19.tar.xz"
+  sha256 "42aea9a07497ce99d6b896c4a4859c966dd74da0fefb47426f21a22b111a44b5"
   license "MPL-2.0"
   version_scheme 1
   head "https://gitlab.isc.org/isc-projects/bind9.git", branch: "main"
@@ -20,13 +20,12 @@ class Bind < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "41526aae277a56fd32af3b773992ee326b101bc4997bca6c0c68778c242ebcf5"
-    sha256 arm64_sequoia: "59d0e3d9a291cce24197a1a079463f08bbfb06db9f19afa65173827e5a260b20"
-    sha256 arm64_sonoma:  "02ab3b661e031f8ea95c90e28a96e1f9fbc57040c8478df9651d6c38bce9df8f"
-    sha256 sonoma:        "4f635d2ceb59a87e58494111db7374d26cecea26dc974d4fc52c45e6dad62803"
-    sha256 arm64_linux:   "85990575a52070350c5a0606639a10074da27925ee7f8efd7975c3e700fd40ab"
-    sha256 x86_64_linux:  "be24c7af686e268da38bd2e3c65c9446c28d4c960d20255e7c9ef1d5fa34ff5f"
+    sha256 arm64_tahoe:   "38506ef40849d9bbd420a909bc6fd0f9409f215188127c3f758f53bb1e1649f0"
+    sha256 arm64_sequoia: "a5c004378b36fd807e831782b25afe26a00da72cd0b9701cf6e30d7036a90ccd"
+    sha256 arm64_sonoma:  "f360cc02c5eeb2fafb3b18d1f1169a5bf868fd6bbd09404887f0c4215af10cab"
+    sha256 sonoma:        "f2d38558ca9b4eacc218fc15be7a7a8eeb097d668d88f820b840e6d9cb878fb5"
+    sha256 arm64_linux:   "a85b4e2293cb52123fef3b1bf9a369ae73f7c45078a2894c5884d2ffb8ce668a"
+    sha256 x86_64_linux:  "0e8bd172d410873a83054c9e79ee30921d38d248270bab30f269f63b1b6ba165"
   end
 
   depends_on "pkgconf" => :build

@@ -3,33 +3,28 @@ class PiecesCli < Formula
 
   desc "Command-line tool for Pieces.app"
   homepage "https://docs.pieces.app/products/cli"
-  url "https://files.pythonhosted.org/packages/f8/bb/48f95f63ca1c5b86564e6569f2e7bed542d351002dbc49702e1235bd7d1c/pieces_cli-1.19.0.tar.gz"
-  sha256 "0bfea482de3eada8d3612f7c107f02ba38d5f54e056e86743cad41f6cb9576c9"
+  # TODO: restore PyPI URL after fixed: https://github.com/pieces-app/cli-agent/issues/430
+  url "https://ghfast.top/https://github.com/pieces-app/cli-agent/releases/download/1.20.0/pieces_cli-1.20.0.tar.gz"
+  sha256 "ebd706ee5deb987412f828b36b034bcf47c50555d4f186cd5c88ee4f79487106"
   license "MIT"
-  revision 4
   head "https://github.com/pieces-app/cli-agent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "aac3b89548fd8ed4c7f0e54c0da0d2dd606cd799965eb3804e391354832030ff"
-    sha256 cellar: :any,                 arm64_sequoia: "d3ada9e055faa44e9a0ff64c0244b49628478128c47896c3c1ec19a20fb0d68e"
-    sha256 cellar: :any,                 arm64_sonoma:  "2d46588fbdfc3167df114775fc52bacf0d08bdc31df3e615a9547baa6a51e4c0"
-    sha256 cellar: :any,                 sonoma:        "3cf7d6c886641d73c252cd20dfb0b647d5dc382db97dfde010150784a43d69fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d39fb91c897d0467c30189f1f3aa9d989565f06c54b414cf93e65f9930fff1a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d49dad80909d0be0f84a2eb77b1c75ec73416bb351d70c1a100f06f408a783c3"
+    sha256 cellar: :any,                 arm64_tahoe:   "98a067754d9de571cc3c841b057015b1b4648fc205bd737e4d74415a30949a9a"
+    sha256 cellar: :any,                 arm64_sequoia: "4b28208d0694268b31d62852d1f2516e13d1a4bb9a7b74af187effb234d64911"
+    sha256 cellar: :any,                 arm64_sonoma:  "320772ff8078be39492aa168c309698df00ee07e878e347a9762efdb86d9a8e3"
+    sha256 cellar: :any,                 sonoma:        "3613ba56a11de78828563ac721331d7515b452e7ae5d99a680f9ea2c5341b8d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4bea4e88576beffbd6109c64724077d77a52e883e5adb40e162c3bec6ce79138"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e39f46b875d094ad014c9aaec999f7a89a3360c9a72cdf1580c3155bff2e3b5"
   end
 
   depends_on "rust" => :build # for pydantic-core
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13" # Pydantic v1 is incompatible with Python 3.14, issue ref: https://github.com/pieces-app/cli-agent/issues/430
+  depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages exclude_packages: %w[certifi rpds-py]
-
-  resource "aenum" do
-    url "https://files.pythonhosted.org/packages/09/7a/61ed58e8be9e30c3fe518899cc78c284896d246d51381bab59b5db11e1f3/aenum-3.1.16.tar.gz"
-    sha256 "bfaf9589bdb418ee3a986d85750c7318d9d2839c1b1a1d6fe8fc53ec201cf140"
-  end
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -102,8 +97,8 @@ class PiecesCli < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
-    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
+    url "https://files.pythonhosted.org/packages/1b/04/fea538adf7dbbd6d186f551d595961e564a3b6715bdf276b477460858672/platformdirs-4.9.2.tar.gz"
+    sha256 "9a33809944b9db043ad67ca0db94b14bf452cc6aeaac46a88ea55b26e2e9d291"
   end
 
   resource "prompt-toolkit" do
@@ -122,8 +117,8 @@ class PiecesCli < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/43/4b/ac7e0aae12027748076d72a8764ff1c9d82ca75a7a52622e67ed3f765c54/pydantic_settings-2.12.0.tar.gz"
-    sha256 "005538ef951e3c2a68e1c08b292b5f2e71490def8589d4221b95dab00dafcfd0"
+    url "https://files.pythonhosted.org/packages/96/a1/ae859ffac5a3338a66b74c5e29e244fd3a3cc483c89feaf9f56c39898d75/pydantic_settings-2.13.0.tar.gz"
+    sha256 "95d875514610e8595672800a5c40b073e99e4aae467fa7c8f9c263061ea2e1fe"
   end
 
   resource "pygments" do
@@ -162,13 +157,13 @@ class PiecesCli < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/a1/84/4831f881aa6ff3c976f6d6809b58cdfa350593ffc0dc3c58f5f6586780fb/rich-14.3.1.tar.gz"
-    sha256 "b8c5f568a3a749f9290ec6bddedf835cec33696bfc1e48bcfecb276c7386e4b8"
+    url "https://files.pythonhosted.org/packages/74/99/a4cab2acbb884f80e558b0771e97e21e939c5dfb460f488d19df485e8298/rich-14.3.2.tar.gz"
+    sha256 "e712f11c1a562a11843306f5ed999475f09ac31ffb64281f73ab29ffdda8b3b8"
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/15/8a/3c4f53d32c21012e9870913544e56bfa9e931aede080779a0f177513f534/sentry_sdk-2.50.0.tar.gz"
-    sha256 "873437a989ee1b8b25579847bae8384515bf18cfed231b06c591b735c1781fe3"
+    url "https://files.pythonhosted.org/packages/d3/06/66c8b705179bc54087845f28fd1b72f83751b6e9a195628e2e9af9926505/sentry_sdk-2.53.0.tar.gz"
+    sha256 "6520ef2c4acd823f28efc55e43eb6ce2e6d9f954a95a3aa96b6fd14871e92b77"
   end
 
   resource "six" do
@@ -202,13 +197,13 @@ class PiecesCli < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/c3/d1/8f3c683c9561a4e6689dd3b1d345c815f10f86acd044ee1fb9a4dcd0b8c5/uvicorn-0.40.0.tar.gz"
-    sha256 "839676675e87e73694518b5574fd0f24c9d97b46bea16df7b8c05ea1a51071ea"
+    url "https://files.pythonhosted.org/packages/32/ce/eeb58ae4ac36fe09e3842eb02e0eb676bf2c53ae062b98f1b2531673efdd/uvicorn-0.41.0.tar.gz"
+    sha256 "09d11cf7008da33113824ee5a1c6422d89fbc2ff476540d69a34c87fab8b571a"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/64/6e/62daec357285b927e82263a81f3b4c1790215bc77c42530ce4a69d501a43/wcwidth-0.5.0.tar.gz"
-    sha256 "f89c103c949a693bf563377b2153082bf58e309919dfb7f27b04d862a0089333"
+    url "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz"
+    sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
   end
 
   resource "websocket-client" do
@@ -217,6 +212,8 @@ class PiecesCli < Formula
   end
 
   def install
+    # hatch does not support a SOURCE_DATE_EPOCH before 1980.
+    # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
     virtualenv_install_with_resources
@@ -224,24 +221,12 @@ class PiecesCli < Formula
     generate_completions_from_executable(bin/"pieces", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
   test do
-    require "open3"
-    ## Most of the commands depends on PiecesOS so let's test the others
-    # Test the CLI version
     assert_match version.to_s, shell_output("#{bin}/pieces --version --ignore-onboarding")
 
-    # Try the list command (should ask to open PiecesOS)
-    stdin, stdout, _stderr, _wait_thr = Open3.popen3("#{bin}/pieces --ignore-onboarding list")
-    stdin.puts "n"
-    stdin.close
-    assert_match("Pieces OS is required but wasn’t found or couldn’t be launched.", stdout.read)
+    output = pipe_output("#{bin}/pieces --ignore-onboarding list", "n")
+    assert_match "Pieces OS is required but wasn’t found or couldn’t be launched.", output
 
-    ### Test the feedback command
-    stdin, stdout, _stderr, _wait_thr = Open3.popen3("#{bin}/pieces --ignore-onboarding feedback")
-    stdin.puts "n"
-    stdin.close
-
-    # Collect output
-    feedback_output = stdout.read
-    assert_match("Thank you for using Pieces CLI!", feedback_output)
+    output = pipe_output("#{bin}/pieces --ignore-onboarding feedback", "n")
+    assert_match "Thank you for using Pieces CLI!", output
   end
 end

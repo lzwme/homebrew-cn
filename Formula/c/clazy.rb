@@ -1,8 +1,8 @@
 class Clazy < Formula
   desc "Qt oriented static code analyzer"
   homepage "https://www.kdab.com/"
-  url "https://download.kde.org/stable/clazy/1.16/src/clazy-v1.16.tar.xz"
-  sha256 "0fa9e9ce54969edfb2c831815b724be9ab89c41ac3a40c0033c558173c4c302b"
+  url "https://download.kde.org/stable/clazy/1.17/src/clazy-1.17.tar.xz"
+  sha256 "8d7e97a056b1bfbfc730e69855857866729686b8c7e66a22aee81f1baeaab1ec"
   license "LGPL-2.0-or-later"
   head "https://invent.kde.org/sdk/clazy.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Clazy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8a19faeb9438b17329f1c3829f3cb12d0e3720d010058a89b77fcc4abe562c90"
-    sha256 cellar: :any,                 arm64_sequoia: "0f644f8ed45cbee439c6256069cfd000a0a647849d0bb85360ee9cc146c1393f"
-    sha256 cellar: :any,                 arm64_sonoma:  "e1b4f955c628acad175164de46e37ae7650352f9a73c61b196de1b053ba7827e"
-    sha256 cellar: :any,                 sonoma:        "ddf864213bdf7e98ebceac758c0bc39e6b8bcbb59a1da457fd37c2ef5c2adcd8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "770a1edc126d86489983a0a70f77919d14c278edc173d5ead3f9ea86b675b856"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a029a850e25a88d11d416e23720f8f5607e9837afab8570efd061f951fe3fc8"
+    sha256 cellar: :any,                 arm64_tahoe:   "51018c5113b905459b9c81f91903601b170b5fe335fd3d8ab63474f80388ef9e"
+    sha256 cellar: :any,                 arm64_sequoia: "d9fd8c26e803383386d2ee00d7e4b92ea40490d88a2770578ca3a9170db053ad"
+    sha256 cellar: :any,                 arm64_sonoma:  "08c5b3ffc58b5f97ca134b1d444600d1fad257be9ca665259530f4c93f82fa84"
+    sha256 cellar: :any,                 sonoma:        "cd730358029561b5250b7b7893de72cad9cb5ff0ff9111ceabfe55156637a2a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "611c52be863d8b9d58943b5f90412bf52ebe65accbacf7e989fa0acc356feeaf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3449881c3dfe22f07d840adc35c433f362ff73d59298014e9fb0325c4ab2b5fd"
   end
 
   depends_on "cmake" => [:build, :test]

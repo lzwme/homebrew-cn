@@ -1,8 +1,8 @@
 class Scarb < Formula
   desc "Cairo package manager"
   homepage "https://docs.swmansion.com/scarb/"
-  url "https://ghfast.top/https://github.com/software-mansion/scarb/archive/refs/tags/v2.15.2.tar.gz"
-  sha256 "612c9a5167b8d089101a63923731f07d02cf07072c6438ce54388f7aeb3c86fe"
+  url "https://ghfast.top/https://github.com/software-mansion/scarb/archive/refs/tags/v2.16.0.tar.gz"
+  sha256 "c848e4d8cf0451595266d56f94c1ae06b3c650642d3978e85745b73645fac043"
   license "MIT"
   head "https://github.com/software-mansion/scarb.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Scarb < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68dabecb501f79fa80e40354902c0fb86662c9bfcc35bb64576d566b5b13d253"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25ec7cacb19d7c42f68436acbd58a39bf1987994ef0e56b4c932d78c3e777c96"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f3df0b9dc1ef19a436db3272dc126aa84af5a6386d6aa7364b9e73b01df3bbe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a74de971be362170ad6d527bd48cedf113388e7e7abb90f6f1209f139feb46ab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a87af999b32d029378ea56005bcd8e3ddce613121bab2c73b4b4a485efcf08f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66e9da25510c689f19d576f1d9a98708e484ba67db0baae49774cd1649058efe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd770a555c858af63e4dfa2c9ff0dbc7adb369312ab341b8e8909b9b9e818152"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "650118751a4207421a74b6902d32f7da0553792498d19c54c29f81baab14e438"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5ec964dc1632994e23a0d75df915ec9230105a1d811a447e9d9b849d64b8314"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f26817c53ac5e05a2825e6234cecebd915f028970c77034504c33e79a60700e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d432bff6034e4d5157eddeeb288fa8f863060342ad4c1dd2e8241ec7bb95d43a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f52994e88de648e61558a7d64c7a3517cbc51930c7a63c3ef5cd0cc3028e4f62"
   end
 
   depends_on "rust" => :build

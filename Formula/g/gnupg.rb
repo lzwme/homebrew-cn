@@ -13,12 +13,13 @@ class Gnupg < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "8790cc919901b54d98374e720e1cfe11bd736349ed3b257022877cbbf28b7936"
-    sha256 arm64_sequoia: "204bfd8654292c46f1d352443d0a63e1d96a666b20cf12540b2259a4a2718062"
-    sha256 arm64_sonoma:  "ffbcb73787a436eb4e589fe9cf0c3d9dec783219496a8e32f185fc2835f29f21"
-    sha256 sonoma:        "58b2c24d50feab827f59e9ff39dfc24abc556ce215362af2e748b5b649dd7179"
-    sha256 arm64_linux:   "3fc62b49819678650756ab690b94ad8c93b560cbfc37f6e60ad76856d047d652"
-    sha256 x86_64_linux:  "d827c95a23f01c17c582082ec7b4d470ab4af3f44e95d6ffcdf1a076f3c62a35"
+    rebuild 1
+    sha256 arm64_tahoe:   "47d45361318ca8b6bc9cef4fceed6acb413cfcad60ae0c4192febb71f0434a6c"
+    sha256 arm64_sequoia: "5598e7e627cffa2d2c257d99d750cde86dee92e8686eb219a3900e8647047f8d"
+    sha256 arm64_sonoma:  "c4635c39f826faa9edbbcd9b381f9741f633348cc8e935e5323a8f16ffae7cb6"
+    sha256 sonoma:        "86a3a059839b4a29bc6401545c1f7967e0c8d7af6be7f5f7c2674bea27297239"
+    sha256 arm64_linux:   "fae6d9cc07ed9f8fd42f393cfe935ca328ad6b4ec13d5fb0ab065f62b7ff45bf"
+    sha256 x86_64_linux:  "4b68cf17af9be7503b62e9c7220065ac59211ceaaa2ca23705b5f95156847183"
   end
 
   depends_on "pkgconf" => :build
@@ -35,10 +36,13 @@ class Gnupg < Formula
   uses_from_macos "bzip2"
   uses_from_macos "openldap"
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with cask: "gpg-suite"

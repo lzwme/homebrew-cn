@@ -11,8 +11,6 @@ class ArxLibertatis < Formula
     regex(%r{href=["']?arx-libertatis[._-]v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "d56d81aaee01fa139752c15b0fbc8332ed44443c94a9826771be22cc2544a77f"

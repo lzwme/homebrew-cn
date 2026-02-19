@@ -1,19 +1,18 @@
 class Taglib < Formula
   desc "Audio metadata library"
   homepage "https://taglib.org/"
-  url "https://taglib.github.io/releases/taglib-2.1.1.tar.gz"
-  sha256 "3716d31f7c83cbf17b67c8cf44dd82b2a2f17e6780472287a16823e70305ddba"
+  url "https://taglib.github.io/releases/taglib-2.2.tar.gz"
+  sha256 "c89e7ebd450535e77c9230fac3985fcdce7bee05e06c9cd0bc36d50184e9c9dd"
   license all_of: ["LGPL-2.1-only", "MPL-1.1"]
-  revision 1
   head "https://github.com/taglib/taglib.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1104d4550d75753c90fef5f64fbe61afe73a52a8909c68f86f32c83583e54dfe"
-    sha256 cellar: :any,                 arm64_sequoia: "a2a37c1d46e2914e486aac6db04e5a002f39359eaecba7e31acef9b165301c4e"
-    sha256 cellar: :any,                 arm64_sonoma:  "56b61a971bb3f45143768196600e48296af6da5eec28197aaffdb64a9306987a"
-    sha256 cellar: :any,                 sonoma:        "05cc31b0d792a43d48dc5b19bb7167f4b559b3f28502c5808d4d5efb18798293"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "39b0b35f4f92cab882f35af6fb70d82a26034235f40a9e8bbce5abc5d6349e34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f1c8b79bd81b63549f7ec5ff4bf226f02130c93ab95baeca6e613fed68959ca"
+    sha256 cellar: :any,                 arm64_tahoe:   "d0044355186d153ad651115e26d09394ddc11239309fa0fb0c7c95aeb8e4240a"
+    sha256 cellar: :any,                 arm64_sequoia: "aba6369a993f148591a3e714bc470f4ada52e63837fc188a383ba1f7d113e8de"
+    sha256 cellar: :any,                 arm64_sonoma:  "e84e807e6890ba7bb3ad27334c6973ff82733a29b380031dd30c03105c878ec8"
+    sha256 cellar: :any,                 sonoma:        "e76523d01007ea5b5009701443c70f718c74a7e35c564ece10dc691b9ec9395e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4018c10b274e6b50c87c2fd733a78394f84e26f5ac76978231124f90c733c1fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d173f67508c1856472128df632dbae773ad1035da34c728d9166b6f6753c46e"
   end
 
   depends_on "cmake" => :build

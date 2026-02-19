@@ -3,13 +3,13 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https://domainaware.github.io/checkdmarc/"
-  url "https://files.pythonhosted.org/packages/5d/85/a9ad6ec88771f6087a78a9664b069ae9fa1246667a14f64978467121c7b4/checkdmarc-5.13.3.tar.gz"
-  sha256 "f5888fc6ca9221fd9e72f49606edc893c30370d2e7cf03a3381244d4a7c56588"
+  url "https://files.pythonhosted.org/packages/03/2a/b36e197c26c23c9c6668e5cc5f7366dd1ee48f1cbe66080c25e2b79b50e2/checkdmarc-5.13.4.tar.gz"
+  sha256 "bd64268470b0d33453cee684cae88e46efb42c0df3a5a61d5a3de6a88080a698"
   license "Apache-2.0"
   head "https://github.com/domainaware/checkdmarc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "381be60d14e387cf07281de169763a3ec3d6ce01948c2dcacb4269cf12842f47"
+    sha256 cellar: :any_skip_relocation, all: "ccd796cbb402f9d9f3fce3880a8f59b17fd96af3baf140018a5c29b4dc2470bf"
   end
 
   depends_on "certifi" => :no_linkage
@@ -49,8 +49,8 @@ class Checkdmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/db/a0/df4d9eb48b7e6359bd66e2ba28cdc191bf602f8db0fd9f54e0aa622c142d/publicsuffixlist-1.0.2.20260117.tar.gz"
-    sha256 "24e11230db4fe4d7e68bb43203f80bf527f614c0625a7dc2749d7b0444d858e5"
+    url "https://files.pythonhosted.org/packages/78/df/05b878a3ccc93cad2c03a65e8594c109aaf122cb3182060670439c98e055/publicsuffixlist-1.0.2.20260218.tar.gz"
+    sha256 "674defc9ca0ad568666e35b9bb1fca61560a0bcefa87ab6bec3fa1d259ca0cf1"
   end
 
   resource "pyleri" do
@@ -79,8 +79,8 @@ class Checkdmarc < Formula
   end
 
   resource "xmltodict" do
-    url "https://files.pythonhosted.org/packages/6a/aa/917ceeed4dbb80d2f04dbd0c784b7ee7bba8ae5a54837ef0e5e062cd3cfb/xmltodict-1.0.2.tar.gz"
-    sha256 "54306780b7c2175a3967cad1db92f218207e5bc1aba697d887807c0fb68b7649"
+    url "https://files.pythonhosted.org/packages/a9/66/d1242ce8748c698e0036837dfbb530480e31f11d3ecf7101cd4e30d29913/xmltodict-1.0.3.tar.gz"
+    sha256 "3bf1f49c7836df34cf6d9cc7e690c4351f7dfff2ab0b8a1988bba4a9b9474909"
   end
 
   def install

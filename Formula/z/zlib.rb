@@ -1,13 +1,12 @@
 class Zlib < Formula
   desc "General-purpose lossless data-compression library"
   homepage "https://zlib.net/"
-  url "https://zlib.net/zlib-1.3.1.tar.gz"
-  mirror "https://downloads.sourceforge.net/project/libpng/zlib/1.3.1/zlib-1.3.1.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/zlib-1.3.1.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/legacy/zlib-1.3.1.tar.gz"
-  sha256 "9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23"
+  url "https://zlib.net/zlib-1.3.2.tar.gz"
+  mirror "https://downloads.sourceforge.net/project/libpng/zlib/1.3.2/zlib-1.3.2.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/zlib-1.3.2.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/legacy/zlib-1.3.2.tar.gz"
+  sha256 "bb329a0a2cd0274d05519d61c667c062e06990d72e125ee2dfa8de64f0119d16"
   license "Zlib"
-  revision 1
   head "https://github.com/madler/zlib.git", branch: "develop"
 
   livecheck do
@@ -16,12 +15,12 @@ class Zlib < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d02341630db7995cc3fbab2fbc4c972a5f3234e06e2ea7d66befe77b648af7a4"
-    sha256 cellar: :any,                 arm64_sequoia: "a9c3e660b585126eeb798217e9974f8657224cc48c4e7ea7bc76fae95ab04a14"
-    sha256 cellar: :any,                 arm64_sonoma:  "93836f9d2dd4d0e28f09d616fb64e6890d3fdf8644d6134915134da0dca283f2"
-    sha256 cellar: :any,                 sonoma:        "d8486be76c60648958734b10999fefa078e094738734e20594d3c654f44bf5be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c3c57e35dd35f2ae6443cd03dbf5962a6f347c8943b39091410a66f1d2f6c38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2dc996403a69700b568d92d9283a02b530e9349e5771019f226ee35505d26bd9"
+    sha256 cellar: :any,                 arm64_tahoe:   "5457abac7b01f56603e06b1cbc17fbca5cc34fb82c78bf503cee99e5028a1bc3"
+    sha256 cellar: :any,                 arm64_sequoia: "c43efaa12e3d22914f41882679ad8c86b58958660852f1edd7b305daee5860f0"
+    sha256 cellar: :any,                 arm64_sonoma:  "ca032109db39a64b5eeb8d90a179c7d873f2de3f8b298f9546430d7b8cddc09f"
+    sha256 cellar: :any,                 sonoma:        "14940211b29d719bcabe03e43d7c06086c9c436c391c5b33f273763c3110f8e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e606565d4ae9f860a4d15992140a8cb48fc33408d65d4e5d061d5ef2715069e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "352c7d94d5b64b31b636b3d0b3252a1a8ca82e1020a5b71c7be829667e278dcf"
   end
 
   keg_only :provided_by_macos

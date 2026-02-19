@@ -1,8 +1,8 @@
 class Minizip < Formula
   desc "C library for zip/unzip via zLib"
   homepage "https://www.winimage.com/zLibDll/minizip.html"
-  url "https://zlib.net/zlib-1.3.1.tar.gz"
-  sha256 "9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23"
+  url "https://zlib.net/zlib-1.3.2.tar.gz"
+  sha256 "bb329a0a2cd0274d05519d61c667c062e06990d72e125ee2dfa8de64f0119d16"
   license "Zlib"
 
   livecheck do
@@ -10,16 +10,12 @@ class Minizip < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "071d707964738d0320bbbab807f7e47a7fe3e2ef8e4f32ef71d969f98d5cda0b"
-    sha256 cellar: :any,                 arm64_sequoia:  "3641776397e76574fcfe89466a78fd4dfedf9318a3c773fbfaffb0f0ec696547"
-    sha256 cellar: :any,                 arm64_sonoma:   "3bc53490be71be5fcf8c018ba2db9b061dbedf50a12c6f6fabcc9f4df003cfc5"
-    sha256 cellar: :any,                 arm64_ventura:  "d60c0678b1ac599448e1dd216aa3e44a9b9f11c00bfd7271eaa5c9e4296a3ad4"
-    sha256 cellar: :any,                 arm64_monterey: "437e23f93e1777d4b4f4d849bc6026361ba46591ba8081d8ab289a3d6dba45c3"
-    sha256 cellar: :any,                 sonoma:         "927f46afb50e1cef0f6c7024cea807025835379984c786d8a17ceef071a2367f"
-    sha256 cellar: :any,                 ventura:        "17ea4d0486f352f08d526f54149cc61351456325a2f49cd2a5e85f43a5c8180a"
-    sha256 cellar: :any,                 monterey:       "fda3b687c8bf4b06f369ec2c43e2fba4fa08d0a8d80ca46b605cf79e18ea0c50"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "7c65b8c1da154f8f300b063166a03dbef658a3f118536476240447c28cc81e18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "031048178895f72541584dabaa7b5606b9fbbbdeaf4dfcc7aeccfe0a05fcf4ee"
+    sha256 cellar: :any,                 arm64_tahoe:   "3509b7ae862640d8bcae8521f6cc61dc447fa8d7580d1961003e6acbb6c903db"
+    sha256 cellar: :any,                 arm64_sequoia: "3eda928b42efb194e416849e203248ecb77f19c48949d51b51a6d84abe3d4fda"
+    sha256 cellar: :any,                 arm64_sonoma:  "3091cdc788c421ef511c69266932980b2c1b7a24decab9b8f4ae515877f5ae86"
+    sha256 cellar: :any,                 sonoma:        "0d279991a7e3862b3d7373443e1fd7ab10601a658853cf09dc0cfca011bcade0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5052a45efd323052f2e691347a6dee347a1e31d919dff449c42afbce8b38f05b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3937e8c842000776fa84a4c741d6dddd077680d693f25ba7a6097fe56b14ac38"
   end
 
   depends_on "autoconf" => :build
@@ -28,7 +24,10 @@ class Minizip < Formula
 
   uses_from_macos "unzip" => :test
   uses_from_macos "zip" => :test
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--prefix=#{prefix}"
@@ -46,6 +45,10 @@ class Minizip < Formula
       system "autoreconf", "--force", "--install", "--verbose"
       system "./configure", *std_configure_args
       system "make", "install"
+      # `ints.h` is required by `ioapi.h` but is not installed in zlib 1.3.2.
+      # Remove once upstream includes it in releases:
+      # https://github.com/madler/zlib/pull/1165
+      (include/"minizip").install "ints.h"
     end
   end
 

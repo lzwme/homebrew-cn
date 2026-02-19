@@ -9,12 +9,13 @@ class Librcsc < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "14821ef86b343dc13f61e7a28dff448a4bfba5cca8112bd1b0bfbdeaa8930a46"
-    sha256 cellar: :any,                 arm64_sequoia: "831081261a2182dc77ddc719e6e866f2727fa8f53a3c6d0d3a912de5aa1d992c"
-    sha256 cellar: :any,                 arm64_sonoma:  "e59bff03cd7e217bfb281e868cc4ed37ddd8ce0835e98309279b9bdb37b2a014"
-    sha256 cellar: :any,                 sonoma:        "d397df043bf01f98110c40648d768f82431ec36694995d4476036e093ce51821"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa07658ee323916191ce7fa2761674da291d85ab76219d70c3f04f9c76d55416"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e69464a5e81e618e7c66b0ab37cf77fe61f31860c64ef40974b9cd257079742"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "a20cee1adaa0278ef3ce5a74606d817cb4b7bd6abb89361f614b9fe81be00294"
+    sha256 cellar: :any,                 arm64_sequoia: "4d80e9427a40d0826f626863e36ee0b7e12ae9fbe97e4fd7836f7a6891751ade"
+    sha256 cellar: :any,                 arm64_sonoma:  "38f735148b9b5c929383466a30e2cfe3a101d01a8db625c2442723a346001af1"
+    sha256 cellar: :any,                 sonoma:        "80c70269e579dd196e1ef8ab412f81193f2e1b923acf712f6572cdc6a96f42fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e285a61d2b8e1330ae4a9a9e730cec351f120521e965224e20797aed6cc9e34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33c93e87177779c7eda1780874343bc89b07898f4d1fc04622802afc270ca9c3"
   end
 
   depends_on "autoconf" => :build
@@ -24,7 +25,9 @@ class Librcsc < Formula
   depends_on "nlohmann-json" => :build
   depends_on "simdjson"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Add missing header to fix build on Monterey
   # Issue ref: https://github.com/helios-base/librcsc/issues/88
