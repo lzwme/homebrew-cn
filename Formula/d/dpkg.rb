@@ -14,12 +14,13 @@ class Dpkg < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3a5ff8c8769fc17bab371884bbbd027a73c1f7c67d686c21c3a59093e230b7d2"
-    sha256 arm64_sequoia: "92b124b0bebfda4faca387d14f19fb1ee4c72b032d438793a5425dd781bdcdce"
-    sha256 arm64_sonoma:  "d62b7c7785dd620612b70194a2f307527b6856e991bf16543f93c209867c1f6d"
-    sha256 sonoma:        "f8aec8a2512b4a6315cb6ff93ee8562db02fcbe6fb0b9385d96e91166bca1a15"
-    sha256 arm64_linux:   "a56258cb8b8ccc388da5b8c89bb281a97015f66f1bda88da32ed229218e7bb1c"
-    sha256 x86_64_linux:  "268b34678610c92fa78c501399fd623134554eadd55a9b2687879b1737af1de1"
+    rebuild 1
+    sha256 arm64_tahoe:   "df50eda809dda8cd72e8669490f250b80c97afddc9973ebf4a5c13deaed62757"
+    sha256 arm64_sequoia: "ef461eaa0c84540f1be0142a994aee25af684002f23f8d82df6a6744db719463"
+    sha256 arm64_sonoma:  "a2066f0edf488854ccad6d73090ff8dfbfec7fe3b82e1ee4786b91989f304a47"
+    sha256 sonoma:        "0b204d255f9f42f5b72aa2b55925253350ec816dffd61af4d036f2a8b573ecb4"
+    sha256 arm64_linux:   "cf392514dd37597e85f41ccab06e515dc2c5915d83accfb129acd89693e26678"
+    sha256 x86_64_linux:  "3cdc80afdb28507ab9830c06b8f5dd50cdfa3876585cf2974db4123a586f977b"
   end
 
   depends_on "pkgconf" => :build
@@ -32,10 +33,11 @@ class Dpkg < Formula
   depends_on "xz" # For LZMA
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   on_linux do
     keg_only "it conflicts with system dpkg"
+
+    depends_on "zlib-ng-compat"
   end
 
   patch :DATA

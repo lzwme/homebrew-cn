@@ -12,14 +12,13 @@ class Pypy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fe02ce959245ac0b015c388b1c86a542ae9d873a26c8c577cef72e55141747ed"
-    sha256 cellar: :any,                 arm64_sequoia: "46e4b322006b665c0e5d7f5d99dc14ed77456a815c52d3f61fc4bb31cb9ed4ee"
-    sha256 cellar: :any,                 arm64_sonoma:  "2eec3f57f8559d7f294bb0bba5f4ccc15481688e7bb08ae9ef55b4424eca489f"
-    sha256 cellar: :any,                 arm64_ventura: "3c743dd76590b1f95e0c13bc1448731cbeae3d5dcb3c6aa9c6ef98eb683873e9"
-    sha256 cellar: :any,                 sonoma:        "bb2157324648efdf4ac18d98f2222bda06a5cec3864997d5bc83df36784d003f"
-    sha256 cellar: :any,                 ventura:       "d734256266802ccafb1555fab97e36f15d48d68de1316efe217a1df638fb567a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "db99059aacdb6edfd8bb74e19ed4c495d3acdb5f561572156cf01a9b32164e5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4c768850fbb4013133edcf053c1d11d3250255f52c2dba0ef2f491e181b06dd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "0ba3805b81f3079a7f8362fb14944c44c06ee75533b02920612b63b9a86d5ea7"
+    sha256 cellar: :any,                 arm64_sequoia: "5fdce3f674d0231b60194b117508689c95414c1952db55c94433ad0e5eedc2e3"
+    sha256 cellar: :any,                 arm64_sonoma:  "4d37b0fc2c757189f5a03e03dd065cfb2f07cb477eee673aaea26b8b7fa1e87f"
+    sha256 cellar: :any,                 sonoma:        "5a378a0858c9e944998f86d10362213e339fd070fa6ce6acea9a75dbb9dd5f7f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "45a456f6c09456d006c6c7657ab117ab8d7abe683d8debf8c7ff1c12bd452ab1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52d94f4fba547ad493d023b2a263404e2916295c7c1c4f025cc02e2ee5ad6a02"
   end
 
   depends_on "pkgconf" => :build
@@ -33,7 +32,10 @@ class Pypy < Formula
   uses_from_macos "libffi"
   uses_from_macos "ncurses"
   uses_from_macos "unzip"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   resource "bootstrap" do
     on_macos do

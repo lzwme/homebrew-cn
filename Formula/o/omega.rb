@@ -11,12 +11,13 @@ class Omega < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7aa6af0cfb692a25f14504b9e8f5e69654b3a691062fbaa037d1a8c6cd8ea046"
-    sha256 arm64_sequoia: "873754a7c8613e0e08bdcab01c073da2f315e6261ca954e35ce28c07f6501d56"
-    sha256 arm64_sonoma:  "dc6cbb76c35f2c43f313464c99a44e37ffecfc5356688b985bed86d8222596fb"
-    sha256 sonoma:        "71b0d508818d4988be38202ea2c02b3c35a2ae33a7776542e73b06e2b6dc518b"
-    sha256 arm64_linux:   "adea94d92b0dac8f962d4e16b9397a4a53c6417966a1c13d561e258a9d44e7ca"
-    sha256 x86_64_linux:  "6963d3aa476e5656db149aa9c9b74cc68a9ef286be161c0cf9ce460ab706917c"
+    rebuild 1
+    sha256 arm64_tahoe:   "803f81e690028cf1de1902b9cbf954ac74e6f3a37c233b434fd0881566c34747"
+    sha256 arm64_sequoia: "28fe15440fa53256606bdb030327d28f2775b14bf919a7352cb593e98c92b3dd"
+    sha256 arm64_sonoma:  "440ec8353cd04731afa0cf87d51293a41f69e69a47ab66696131117fe5bb2c67"
+    sha256 sonoma:        "6e1a3fa8ff0443306b714b94116c44e6cfa4abc7f73bf73671bbfe6a7c58a7a8"
+    sha256 arm64_linux:   "b86d3b158214226ae5821c64b05e7f7e5909fe66bf983219fc1254fd5c6ad30b"
+    sha256 x86_64_linux:  "79ae5a5c21480dada9df6b412f5b7c8fecce5e43568223c7f32cede95aeb24b4"
   end
 
   depends_on "pkgconf" => :build
@@ -24,7 +25,9 @@ class Omega < Formula
   depends_on "pcre2"
   depends_on "xapian"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "./configure", "--disable-silent-rules", *std_configure_args

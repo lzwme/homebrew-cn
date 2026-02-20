@@ -13,12 +13,13 @@ class GitAnnex < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f03e470a46dcf4c413ccc0cedb38f653f4839591f01039f0ffe73eec4f212465"
-    sha256 cellar: :any,                 arm64_sequoia: "7ada5ecd373307a9644baa3b40fc8e3f74a499cac24959140fc450d1e377587a"
-    sha256 cellar: :any,                 arm64_sonoma:  "23005c9e62a76eb9034cee86c0b3769a16df1aa0fd66da325521b19dc88d030e"
-    sha256 cellar: :any,                 sonoma:        "50f8efdd164d9eb6771af6f8dcbe3f84b5f6735b1a8046bad2ba0b1393e941db"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e7839b8616cbc0d0b9725691dc0d8d83c6bbb90a6c21add12b3cf994258aa1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d385045683bf4c0d168a54a348da1be87efb86043f2a5a34f62db5ab051886c0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "133f887edec6af6025775e9b5692669fe710723114114fa802c1ff24278e0b3c"
+    sha256 cellar: :any,                 arm64_sequoia: "d88e9f9354df8e9459ffd62e3269fd585a12b4e76a6d12be29535b936fccec66"
+    sha256 cellar: :any,                 arm64_sonoma:  "d8f01e5e8530aed41ce23fe823e36da3098182a5b35f5c1284ad4b91fe21b3bb"
+    sha256 cellar: :any,                 sonoma:        "249df57bcd23d86943945123ccac7e7418a3545150370732063d31b07f734502"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28fa86ade1fb88466d5f6b45f5e650ffb4a3e9f9e860434a9ed7ffcaa9e06b8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d64f896bc2bb1e588293d88dd0adf8d2b9f48c84ac62a7313c1a74306c5d1be"
   end
 
   depends_on "cabal-install" => :build
@@ -28,7 +29,10 @@ class GitAnnex < Formula
   depends_on "libmagic"
 
   uses_from_macos "libffi"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155

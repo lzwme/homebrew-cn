@@ -1,17 +1,17 @@
 class Beads < Formula
   desc "Memory upgrade for your coding agent"
   homepage "https://github.com/steveyegge/beads"
-  url "https://ghfast.top/https://github.com/steveyegge/beads/archive/refs/tags/v0.52.0.tar.gz"
-  sha256 "02ceb28cb249275c7a153d49a2a0b835580d8ae8bda0b5673d8fe49a4fc798d3"
+  url "https://ghfast.top/https://github.com/steveyegge/beads/archive/refs/tags/v0.54.0.tar.gz"
+  sha256 "729833efe66a404221df1e8921d48c88ce98c888d0f03700bc321c096a2c1358"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fbd23348ef33aed3fb221f2379400070f52d4591a5329b8a6b6440ad94137560"
-    sha256 cellar: :any,                 arm64_sequoia: "42135b0e332381c32e41998676653d48dc4933719b9122a7e831ea2d31e6b63c"
-    sha256 cellar: :any,                 arm64_sonoma:  "9082b1e9382d0b922dd57ccdc50fa6e9bbf1a03f93cb7a5bfec1fc205c1d01d2"
-    sha256 cellar: :any,                 sonoma:        "9e60df7418f8ffe43c0fce862146907c7eaa55a28b10b02ed52c11829aba2f11"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aac500ad860d33d130cc8957bb70e09cd43a4716b5300b23009a797c5fa3d1db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31df70d3253a770a9d77577cc1c12901ad7c990ea80ce3360e5fb1d10500707c"
+    sha256 cellar: :any,                 arm64_tahoe:   "0d003f20d3a32aca184951a538a71881a27717191812234769c43a7f13b96fc7"
+    sha256 cellar: :any,                 arm64_sequoia: "69ceac00f0020baeb06f6b97135beb6767e3dcd0012e5d5678ce71263e2256d5"
+    sha256 cellar: :any,                 arm64_sonoma:  "7bee78e8e6930c550a12bf57b3791ff0cfe41541c73cc2a1d2907e4729ce34ce"
+    sha256 cellar: :any,                 sonoma:        "c4a37ce145654d595faab3fd3904ba69984495d755cee2e6a5ed1729ab7786e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d57454874a866799331d512a7389eddc1adc6e5b3a45eda34d3c822df1cda56e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc5785b9264840c9ac8a2462422c5c0d2e52b0c3175828ec325022639ba6877e"
   end
 
   depends_on "go" => :build

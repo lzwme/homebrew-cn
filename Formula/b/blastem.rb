@@ -39,8 +39,6 @@ class Blastem < Formula
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 sonoma:       "06f0bb0d5d0e04267ab21bfa35f2146be7cf7c6acf85d8bd1a9141679c3741a1"

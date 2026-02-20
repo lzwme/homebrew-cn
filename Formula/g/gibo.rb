@@ -6,8 +6,6 @@ class Gibo < Formula
   license "Unlicense"
   head "https://github.com/simonwhitaker/gibo.git", branch: "main"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a67d83a8d370d32de6f47fa97210e972c0949caaf232cd98a15fe3a1e4249318"

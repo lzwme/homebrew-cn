@@ -8,12 +8,13 @@ class Fbthrift < Formula
   head "https://github.com/facebook/fbthrift.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5557025b35e85a1850fe98a108d644e76c573db0267fa2ff2f5177dded5a2d44"
-    sha256 cellar: :any,                 arm64_sequoia: "d16ecf932afc4778395160ca5d449598d3de81bf7079334d67f43c820af1cb3d"
-    sha256 cellar: :any,                 arm64_sonoma:  "47080649521f2d605f334c7bf7daa3162e80c9b386530b26cea16675740878f3"
-    sha256 cellar: :any,                 sonoma:        "3665a5e8f4a496d4c1772cdaf27ff337d9aee21970a6d392f613867077eed64d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "77703882dd4fe73a554e0877993ea316f668aca4efc6334283790ba21811dff4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c44299e18015b33964ea19c315c360ee02ddfcfc21540697c72e608f5fb788e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "f136b31674b82b47aff7794c165390da31d9ca42c54b3d4298c459ded8bdb028"
+    sha256 cellar: :any,                 arm64_sequoia: "e6714731357eecc01079dc715a6443b2aad8be219506d42bdb5587cc6c0f65fc"
+    sha256 cellar: :any,                 arm64_sonoma:  "b67e3f1bcf63e2d691a34028e4cce8a014a5c3517788d59fa223d1d13de267cc"
+    sha256 cellar: :any,                 sonoma:        "07d365f2daf208bb44e41ae03b69204d820684e0fe18f129696e5c75c815c760"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34804d936b450fc20820db783992c8b188a9e0dbaec05b46e2e021766c069caa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b455f3610ea9d15687037e6e6cae87a7fdfafad586891205b331143075a44a1"
   end
 
   depends_on "bison" => :build # Needs Bison 3.1+
@@ -32,7 +33,6 @@ class Fbthrift < Formula
 
   uses_from_macos "flex" => :build
   uses_from_macos "python" => :build
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "llvm" if DevelopmentTools.clang_build_version <= 1100
@@ -40,6 +40,7 @@ class Fbthrift < Formula
 
   on_linux do
     depends_on "boost"
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :clang do

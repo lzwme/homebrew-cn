@@ -15,8 +15,6 @@ class Deheader < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, all: "2caa30192b0b43e4892d9742d759b65d3cee8109c87e7169fd371a896cfd424e"
   end

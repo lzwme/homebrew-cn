@@ -12,12 +12,13 @@ class Objfw < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "48f224124e67190e5e1c909ad41ae81ac9cbb55a21a4d96812528f73e72a5352"
-    sha256 arm64_sequoia: "0127762013d41a99644f45fd5e884ed6e0cae1defb9005c2d121b5448f1afdec"
-    sha256 arm64_sonoma:  "09c89cdbd46941bbbdf9b4e22a13d30c3f8c62a0da20d2cd2adf8f87535a42de"
-    sha256 sonoma:        "fd8e544f9c42f56edf89b6be2634b96332dd7c057d594a896e592a8dbf933242"
-    sha256 arm64_linux:   "9e1c182fb4c30f658c1dcfb0e124d60cfcd9091c99efa84fd97312018408a1cb"
-    sha256 x86_64_linux:  "0490b4997febc80efa4d6491671a83bd48ed6c9fb3ea4c56031ad784992c2c60"
+    rebuild 1
+    sha256 arm64_tahoe:   "45f4f5d3227b081c1a2fe94ff70eab4e9e51f89075c6a113aeb99abf5b2b5a83"
+    sha256 arm64_sequoia: "8f9fb867c93506b886f145c912f1c3598dca85af940a1309f72c31da5c623482"
+    sha256 arm64_sonoma:  "73c9f9dc9f8c06802bec9dfde55e30190be8147f95c3fccb3bf84dd6f9a03a3f"
+    sha256 sonoma:        "b9b86fb20abc1cd665af334cd236f203aff4b4c454f089223de30b171886c1c0"
+    sha256 arm64_linux:   "dd1f5a5e1f0752c235ecc447ffa27345df2a59eaa3be95a9dd186eb1b2df9742"
+    sha256 x86_64_linux:  "a33ee673da916e23f878ebe9b3556d2c0e0c0266e1e193091134108fe364f91d"
   end
 
   depends_on "autoconf" => :build
@@ -26,7 +27,7 @@ class Objfw < Formula
   on_linux do
     depends_on "llvm"
     depends_on "openssl@3"
-    depends_on "zlib"
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :gcc

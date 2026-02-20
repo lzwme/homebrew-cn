@@ -4,6 +4,7 @@ class Commandbox < Formula
   url "https://downloads.ortussolutions.com/ortussolutions/commandbox/6.3.2/commandbox-bin-6.3.2.zip"
   sha256 "f1f271a15d4c2281c6adb145972d963d44f4624ab52fce44dad326f32f283e56"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :homepage
@@ -11,10 +12,11 @@ class Commandbox < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4095dd421f363b85ed73ace5321c56f6a8a6054b53eb2c93d1b78cf0e8cda19a"
+    sha256 cellar: :any_skip_relocation, all: "d480d8d137307a6345253304e5f9f3a4d862350aefdeb89ca0ba990ea65e6759"
   end
 
-  depends_on "openjdk"
+  # Keep pinned to Java 21 until https://ortussolutions.atlassian.net/browse/COMMANDBOX-1685 is resolved
+  depends_on "openjdk@21"
 
   resource "apidocs" do
     url "https://downloads.ortussolutions.com/ortussolutions/commandbox/6.3.2/commandbox-apidocs-6.3.2.zip"
@@ -29,7 +31,7 @@ class Commandbox < Formula
     odie "apidocs resource needs to be updated" if version != resource("apidocs").version
 
     (libexec/"bin").install "box"
-    (bin/"box").write_env_script libexec/"bin/box", Language::Java.java_home_env
+    (bin/"box").write_env_script libexec/"bin/box", Language::Java.java_home_env("21")
     doc.install resource("apidocs")
   end
 

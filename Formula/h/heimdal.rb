@@ -17,8 +17,6 @@ class Heimdal < Formula
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 3
     sha256 arm64_tahoe:   "494784674bf30f21015e779c12e571f66e440951a5d837a9b9fd3ed33454775b"

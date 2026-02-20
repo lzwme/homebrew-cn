@@ -15,12 +15,13 @@ class Spidermonkey < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b50f89babca1f54467b19e5af54d58da32cdb7671a7954aa784ea32ebc1f34ec"
-    sha256 cellar: :any, arm64_sequoia: "508036c91544cec63f066762ed6673907c8a067a2184359ac06edbd2e2645a87"
-    sha256 cellar: :any, arm64_sonoma:  "80c4d145aab40c694266e0ee8213c4435a1c8ec397d9de3c7b7399c1a8d780b7"
-    sha256 cellar: :any, sonoma:        "3d13347a5cdf8726e53fdc7b0a1a7446800d2ed4d8cb1bc30b06f3a240f5b407"
-    sha256               arm64_linux:   "3eb9a8983a83d2bc01168dfda25bb4b451c76e8086a3cd24d0c1851d3a93fbba"
-    sha256               x86_64_linux:  "7f862773314edc83e91a8e74ef4648cdacabfe2461dcf9156a8a986fde9e9ce2"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "7a48b96f3e68cdd1fcd3aaf07735ac10e05cc294e3b6044ed60852d3d9b4efaf"
+    sha256 cellar: :any, arm64_sequoia: "e85b5943cd77e8022df2b251b10ed65081cc75e3f78037930cfe88e66fd9e479"
+    sha256 cellar: :any, arm64_sonoma:  "5e9f8e6c8f5cfbf8e1aa6578e59e6eb81f81811ac05bfc26f8794a54f99d2cd6"
+    sha256 cellar: :any, sonoma:        "0467b4bbdc0afbf8cfd616df001147f9046815d185b2edd4df0c8d5674a443a7"
+    sha256               arm64_linux:   "9f9762f5682a651f33ceeebf026c9063f0861cf55d53a8a5b261e689558e4b36"
+    sha256               x86_64_linux:  "1034254f4968ba3a66bdb8bb4275efb5cc278b87f669b9d5faa9252e1a3a59ff"
   end
 
   depends_on "cbindgen" => :build
@@ -33,7 +34,10 @@ class Spidermonkey < Formula
 
   uses_from_macos "llvm" => :build # for llvm-objdump
   uses_from_macos "m4" => :build
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # From python/mozbuild/mozbuild/test/configure/test_toolchain_configure.py
   fails_with :gcc do

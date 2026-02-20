@@ -24,12 +24,13 @@ class Root < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5a992f54d975118772cc746423cc7f8dab276da8536875c264b5b5d1782d0275"
-    sha256 arm64_sequoia: "b4b12afa8c917a556448a0c18800b1fbf8474266dff2e71a36eb5a366fbf9503"
-    sha256 arm64_sonoma:  "f860cb8f0d403d27c55272959d6474ea5d86690b1a22054c25a287a05e5dc7a3"
-    sha256 sonoma:        "6553143bd8a1a836400bd7faccada821f9969f07889dc2e315ce1cc393e748ba"
-    sha256 arm64_linux:   "4c478faefa2c52cb52dcfea1752abeb86cdc55d2dea6b3faa15930ac194a2432"
-    sha256 x86_64_linux:  "e7e25242a663c9b1ee9dabfcb2e20aa63f3d33fbf1f70cea38e864d8cb1cfe08"
+    rebuild 1
+    sha256 arm64_tahoe:   "e4fa2a6a166fab5feae1e163417681d56f1a44cfac15ec44d98fa060585f71f5"
+    sha256 arm64_sequoia: "03977f51fddf36e4a98294b6040612573f8c64456c00c620b695da0fecc1ae3c"
+    sha256 arm64_sonoma:  "354c530dc08ca88b9c41a8b9023bc7912c0710936a83293381567a15c900a31f"
+    sha256 sonoma:        "3bc7555215720458719c6db42319f4e9b06a872b03da2f8833336dbe23f353c2"
+    sha256 arm64_linux:   "9ba4afaae49f25c19a509ceeadf382b31cad0e33c99e7463fb1f2b321fada7d2"
+    sha256 x86_64_linux:  "fdf4819f429634a91e679db2f24bd4fb2ce25a13e806a4d4f713a37d7b0ba83c"
   end
 
   depends_on "cmake" => :build
@@ -66,7 +67,6 @@ class Root < Formula
   uses_from_macos "libxcrypt"
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_ventura :or_older do
     depends_on :xcode
@@ -79,6 +79,7 @@ class Root < Formula
     depends_on "libxpm"
     depends_on "mesa"
     depends_on "mesa-glu"
+    depends_on "zlib-ng-compat"
   end
 
   skip_clean "bin"

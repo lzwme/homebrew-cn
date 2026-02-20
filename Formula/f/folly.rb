@@ -8,12 +8,13 @@ class Folly < Formula
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "19d24f150c417129b27859ace4bf1df8d6ad172c023fba94ae6441b8cc36913f"
-    sha256 cellar: :any,                 arm64_sequoia: "b6e44fafe17172ff6c6b5c56d418c5398f62e955afe2c1ceee495e85083e892a"
-    sha256 cellar: :any,                 arm64_sonoma:  "049bf35605d3c63de1ecc52e9edc54d0bfc86bf8ff8a83a382e316749f2447de"
-    sha256 cellar: :any,                 sonoma:        "d7fb1a29690e2c55e12c4eab17e7b3b44a676c75ee30f081f29e0ef0e1fae2de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "986806c063944919a737b183716136353a58bb54f505066184f1e75360b1196a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b76db3e95e8d8dab92a27c5b38d165ffcf71826eaab0460316fbc7cd723ec762"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e89c848f5ecc2b582cd6f0de58c6408060632a29ee7908eba2a95370888dd4b2"
+    sha256 cellar: :any,                 arm64_sequoia: "a3a9644c73a7d11089769aca129156f1622bf2a69fae833f8ce4c4c54d0cb7fb"
+    sha256 cellar: :any,                 arm64_sonoma:  "c060c7012cd759ba23000fef82d5ce4ead9dd767df8427f2e58cb2779d126c24"
+    sha256 cellar: :any,                 sonoma:        "30a872cf363d30f97c1d7a5fb76b292f3876cafce2e17c4a0eeae4ba49b9f9ee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7956a6a6fc872211b52e4f9833e92c90fbf9e475ee167997ad3366605c982dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e01ad159525b43279d1ec39d2340d5ddf6e78acb4c6a542f5d7a6bf310d0407"
   end
 
   depends_on "cmake" => :build
@@ -33,10 +34,13 @@ class Folly < Formula
   depends_on "zstd"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "llvm" if DevelopmentTools.clang_build_version <= 1100
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :clang do

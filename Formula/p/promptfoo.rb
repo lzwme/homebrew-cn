@@ -1,17 +1,17 @@
 class Promptfoo < Formula
   desc "Test your LLM app locally"
   homepage "https://promptfoo.dev/"
-  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.120.24.tgz"
-  sha256 "8c850c1071a7f1e4ee5d62f8d685756e6467cf6d70a31a7111ac990e4e54951f"
+  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.120.25.tgz"
+  sha256 "3170b2be72127a5f24485631ee45ddc4642eaa685edb497d26b0453fbbfaa2aa"
   license "MIT"
 
   bottle do
-    sha256                               arm64_tahoe:   "78a50317e86c525a2967118519357810c282c02ea08687136a1415ddedbc3ba9"
-    sha256                               arm64_sequoia: "81f8760604d5e7048b18eecfc1757a501c181f7f75a8c5f94cb39794b5add157"
-    sha256                               arm64_sonoma:  "0a358c1ad1f53eb21a9b78fc99f54faea6fc0e709b7e36bf676aa088a4451c86"
-    sha256                               sonoma:        "fe09f7479d9a1e896c47ec0445b777d38d99f8992410e1c7faf50bbb2224a29a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "57f44ec1354096a1af9f3f10e6bf544956a4dfa06adb69c8b6b3802de9078a5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31a4a51eeff117c6ba64e827f5c84d25e05ab42c63f1399466f07c3cd1f3e46c"
+    sha256                               arm64_tahoe:   "6cf678e962eb8e0d94060ab7109d7aa63e4e8e70caccedcf0e153ce46edb36b7"
+    sha256                               arm64_sequoia: "fe7085de6badd42b934ce70a1112453c74de3e9bca0445b78ee17a860ce27eb3"
+    sha256                               arm64_sonoma:  "f0c55c51eac434a8c85326dbc2ff6697972cf4f71683ad0b6c488e9ad0c9c26a"
+    sha256                               sonoma:        "bfc9e28a677f30e350f4b356d1c62e5972a76c81c53a7cc199e0d36311943ff9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "66dae4ef0d65a3af9fa82004d244fdcfc4ed5a92b3c1952379711021844eae6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6af9db6ce84f69a3711341a0e29a28ff3dad1d00fb1080f1040aec84072b712"
   end
 
   depends_on "glib"
@@ -21,6 +21,7 @@ class Promptfoo < Formula
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version < 1700
     depends_on "gettext"
+    depends_on "pcre2"
   end
 
   fails_with :clang do
@@ -45,15 +46,9 @@ class Promptfoo < Formula
     system "npm", "install", *std_npm_args(ignore_scripts: false), *resources.map(&:cached_download)
     bin.install_symlink libexec.glob("bin/*")
 
-    os = OS.mac? ? "apple-darwin" : "unknown-linux-musl"
-    arch = Hardware::CPU.arm? ? "aarch64" : "x86_64"
-
     # Remove incompatible pre-built binaries
     node_modules = libexec/"lib/node_modules/promptfoo/node_modules"
     rm_r(node_modules/"@anthropic-ai/claude-agent-sdk/vendor/ripgrep")
-    codex_vendor = node_modules/"@openai/codex-sdk/vendor"
-    codex_vendor.children.each { |dir| rm_r dir if dir.basename.to_s != "#{arch}-#{os}" }
-
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     keep = node_modules.glob("onnxruntime-node/bin/napi-v*/#{OS.kernel_name.downcase}/#{arch}")
     rm_r(node_modules.glob("onnxruntime-node/bin/napi-v*/*/*") - keep)

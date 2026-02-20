@@ -1,17 +1,17 @@
 class Openapv < Formula
   desc "Open Advanced Professional Video Codec"
   homepage "https://github.com/AcademySoftwareFoundation/openapv"
-  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/openapv/archive/refs/tags/v0.2.1.0.tar.gz"
-  sha256 "60da432ba2727d5ec7bcf7f2d251eecdec14ced31e07deddb584b38719a691d5"
+  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/openapv/archive/refs/tags/v0.2.1.1.tar.gz"
+  sha256 "ee9004f49e5f5a29e52ce43c0571f15b99478aeab8f77431e4c935795117fcd5"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f6cac7ea29cfb653a50ab6926d2a74d8cbd0ee4e4f1aacf7f22316020faed722"
-    sha256 cellar: :any,                 arm64_sequoia: "28190c26f6a8241d3f75606bef0113710f085797f20707c73a375957232bdf20"
-    sha256 cellar: :any,                 arm64_sonoma:  "c9550db5a4894a4823a38f4ff1fabd5a873a3eb1fbf2ace282330ff55b4d995d"
-    sha256 cellar: :any,                 sonoma:        "76fb3305b9beb9b93866ecf26029c35e6e01c72bbb6edc06ff6a9c9519f9699d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea15079f40204998267c142b301cf889e26179328005c9751a6e79a165507010"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c4dac2715c16ada32ebb1be8df2bd28c27a3b09ee05311e4cfa82be9dcc9633"
+    sha256 cellar: :any,                 arm64_tahoe:   "4a6c585200d7e1323b982173c4f72edccb5722c65feefcd42352151772945aee"
+    sha256 cellar: :any,                 arm64_sequoia: "efacc8eb05cf853eeb637b68dfc432619094c2831736fbaccf57ebeb64176d56"
+    sha256 cellar: :any,                 arm64_sonoma:  "6b5cfe06092a3ec1dfb99dd9c11325fd15bbf0eac5c2ae25987356fae55a4000"
+    sha256 cellar: :any,                 sonoma:        "30c7c42bc17f4e2fafcf5b27180087a129e57af8e7a4526736071aec42e55054"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ec43aabc25d72134b80e4e9acae9337a2dd15f4679cfdef8df9f3eedc053512"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fc155ac224a648b4c78b9d179f69029d629815fef8b8aa556dec0f212a5f2a0"
   end
 
   depends_on "cmake" => :build

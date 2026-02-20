@@ -3,18 +3,18 @@ class MistralVibe < Formula
 
   desc "Minimal CLI coding agent"
   homepage "https://github.com/mistralai/mistral-vibe"
-  url "https://files.pythonhosted.org/packages/87/76/c91f4ef636d330ca09031ee166119d2c374fe94eabb76c25b21ae19a590f/mistral_vibe-2.2.0.tar.gz"
-  sha256 "d85dd1ab8bb06685914f737149cb7ef476d0da9d60613517e8d6680615984429"
+  url "https://files.pythonhosted.org/packages/0d/68/c4e0361fe62d65bef06016375393e8d61da5fd7e6ea39d07fc9d855ce6a1/mistral_vibe-2.2.1.tar.gz"
+  sha256 "a6319171fdd9929bda2e541b2fbee7d6071952e0b40e4c70cb2c694b09c7db6b"
   license "Apache-2.0"
   head "https://github.com/mistralai/mistral-vibe.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "eabf28e11e4fd324f30b51c3c6756d5353b474ec5faa87b9d5878905ab47d735"
-    sha256 cellar: :any,                 arm64_sequoia: "f12afefe7469356ce97bda3a2e6407ab595d02c98a13d71dc8eb5dfbc37b3227"
-    sha256 cellar: :any,                 arm64_sonoma:  "b280657c1701aea8bc1d4cf6e659a0a57747762ff734c6b83660f59058974c3b"
-    sha256 cellar: :any,                 sonoma:        "179d6f4d9acc33db7f0aa7b699a2eb36a56004d70ee740ac851ffd1acdbd3626"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ba7f77fffef90c1379c1635fc020dc8d009f63e21823be6896019c921d01bf5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b244d9d3f556f49c13c748723ad13fc4426db1063ca463266f4ffbf2c932ac77"
+    sha256 cellar: :any,                 arm64_tahoe:   "1b72e3ad601d68d87301c7a29a56a37edbab2f29f1d6a0a74e9d748c360d5616"
+    sha256 cellar: :any,                 arm64_sequoia: "807ad1b0e86ea249239e9ff97a9c9cb738c6c964f8df460237eb5fde96c47226"
+    sha256 cellar: :any,                 arm64_sonoma:  "0714b26f8815e1ce7262aaf941e65ebb8500d94a464d5a0bdd16d7cefe85de3c"
+    sha256 cellar: :any,                 sonoma:        "3b44b7961086b076017dcc33dde76bc1250f2d67af8b9a42849d2bb93d206406"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1fed974cb39f4f8adc1bac292a12d3cceaaa8e86c04c32994c1a7771f0636a1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3a0e140b98009865f3f8c0b1c65d38b498a49a67fd9b3ce160885ecb03f30b6"
   end
 
   depends_on "rust" => :build

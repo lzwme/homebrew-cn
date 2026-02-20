@@ -12,12 +12,13 @@ class Fastfetch < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "cf19f8b537f2edfd9eef4a0c7c4f88148c8ba0ff2791bb03f76413e281d93536"
-    sha256               arm64_sequoia: "b67cca15482b45bc6d8eec61d18407552515d96e830fcabd786b1c1237ae364b"
-    sha256               arm64_sonoma:  "dfb6a82dbbcf13734af0db620e73735b23cc8b324a483ed59daab62a5d9de391"
-    sha256 cellar: :any, sonoma:        "e60fbe6c051052f358c0c191161243ea28b18e7ab0de62ce3f51d91c75afefbd"
-    sha256               arm64_linux:   "52da3472c89ffcdd5694a1c4552d7cf126c3fac3bdc11f1c7ea39d2d8c0a1971"
-    sha256               x86_64_linux:  "bc947bc56057c10772fa4290ba54d7d60e92f0326bc8154f77cf7e9b03ebf85f"
+    rebuild 1
+    sha256               arm64_tahoe:   "e0a153f48041011f22f9095962194bc0c5627ec05312950e1dfcb46b8b8f0daa"
+    sha256               arm64_sequoia: "b22f89b23aeec917df0c03fd7f100a36a99772d65b32d8f3eeb9c44d05d0ea0c"
+    sha256               arm64_sonoma:  "f6b96cbbec06e3854acb177875cdfd26bd6c46a716398798d042c2511df92a97"
+    sha256 cellar: :any, sonoma:        "738b09fd02758024961ee64d9e0a9e09ce97ab700aa8f4690371a148edca20bc"
+    sha256               arm64_linux:   "27b344de5bc3dc97a97806b964367c78d6fe5386af8c978ad5189d287b4d2836"
+    sha256               x86_64_linux:  "0a701de14f8e0b75dc9de1fa635bf8285a862579aac6dca80d75667b2bad22f5"
   end
 
   depends_on "chafa" => :build
@@ -30,7 +31,6 @@ class Fastfetch < Formula
   depends_on "yyjson"
 
   uses_from_macos "sqlite" => :build
-  uses_from_macos "zlib" => :build
 
   on_linux do
     depends_on "dbus" => :build
@@ -45,6 +45,7 @@ class Fastfetch < Formula
     depends_on "pulseaudio" => :build
     depends_on "rpm" => :build
     depends_on "wayland" => :build
+    depends_on "zlib-ng-compat" => :build
   end
 
   def install

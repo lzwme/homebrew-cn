@@ -1,8 +1,8 @@
 class HaskellStack < Formula
   desc "Cross-platform program for developing Haskell projects"
   homepage "https://haskellstack.org/"
-  url "https://ghfast.top/https://github.com/commercialhaskell/stack/archive/refs/tags/v3.9.1.tar.gz"
-  sha256 "9e3a40df6bcf3ca012d5b924eaf3b5b24563bfe07a6b4ed20098b73b15870c54"
+  url "https://ghfast.top/https://github.com/commercialhaskell/stack/archive/refs/tags/v3.9.3.tar.gz"
+  sha256 "144bc7eaaf384228f6b0f960ced130b503dc4945ffa42f3ca2037abbc8136c05"
   license "BSD-3-Clause"
   head "https://github.com/commercialhaskell/stack.git", branch: "master"
 
@@ -12,13 +12,12 @@ class HaskellStack < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "5a6210196dee0e200e43a9c96606b57e12bcd8e05f9b796054a5211dbd083e84"
-    sha256 cellar: :any,                 arm64_sequoia: "bfb374b171dbb31a919feb4277b0c275240f91864b2be5ae93e7ad4edcca4704"
-    sha256 cellar: :any,                 arm64_sonoma:  "a14d7b05ef2da34ca9d67e61fd156f855eba8797f6ce85201feaea808b1fc401"
-    sha256 cellar: :any,                 sonoma:        "a875b5c498abac130f39b8c761f72e17939ef20b62aa43d644514c7ae152c98f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "715b1de3a4287fae76ef766a48a18368506a0e9a492972c04c4e874d180005b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "437c747e37c7bbecdbd63b829c2cd8de19d260560a4917091a7851472a55a78a"
+    sha256 cellar: :any,                 arm64_tahoe:   "966bac3da41b3141075c09addb159676fbb19da6d720a277e892504d465336ea"
+    sha256 cellar: :any,                 arm64_sequoia: "3e73b1dbc050a2df69198f99cb120138947f69e8a4c97afb8d5a6494e525fa5c"
+    sha256 cellar: :any,                 arm64_sonoma:  "ed684089667e38615fc512b86cada8061f76d5e5068b056bd9956dba54d148a3"
+    sha256 cellar: :any,                 sonoma:        "8e4b8ace611090ae24e80d33046f7603d523bc66b2407e4ee44843e03a5ea6c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "af0742873c1d14df060eb3e3efce2ffb20356838c6ca48c1676febd4bdcb63e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b6589ec069f26a6b7ff4cc21a94284d8a0c1c3df37ba74cbdec5f76c2b4b1db"
   end
 
   depends_on "cabal-install" => :build

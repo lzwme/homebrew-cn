@@ -17,12 +17,13 @@ class Sysdig < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "0d2f02b82f704ff4d13dc4122d8185d022abf43a0529ab2e2e5ead9da4dac1b9"
-    sha256                               arm64_sequoia: "d2dcba7389df884dd6bd576e85ce6c92532c4587164a952a82cbd1dca62dc1e4"
-    sha256                               arm64_sonoma:  "166d4684387fd3b9ac7e6bc0b056958ff3ad3883943cc0fcb6ba73d2db47339a"
-    sha256                               sonoma:        "0976e9be70d49e09679f372d99c388194ec0505fd579cd1beae491325b686be1"
-    sha256                               arm64_linux:   "3170c0b4897d93e0b9e01220c97a34b7ba4e51df962cd9094e901641cb471e0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39a1f4f559c1bb6490b007fb8ce7c935d58f730d2e834ce446357caa9151193c"
+    rebuild 1
+    sha256                               arm64_tahoe:   "55890f899728967586c8a3a486f87fa2805a684b6cbf4f3ae69ddea62b348c60"
+    sha256                               arm64_sequoia: "c5ab3d2ea30dcc47d3372083e11f84d240d7a6255c114bc224cbe730f2b0fd30"
+    sha256                               arm64_sonoma:  "6e7ec5c225ffaf96a9bd6b35b73edde26681cfcffd0de060ddcc5a93ba174e96"
+    sha256                               sonoma:        "ff1e925489e9228538f00457f8b378d8d41495f7d05cbf47dfe75f50a74c8046"
+    sha256                               arm64_linux:   "17f38255802db21d7a788f6e77ebcffda53a4f0a5a1c8b5afe6193ac0769fd13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1ef41b6b7661e8a4f92644ed1f1e6891cec62e6967a5d88d21b1d3ec36c98f0"
   end
 
   # FIXME: switch to brewed `falcosecurity-libs`
@@ -39,8 +40,6 @@ class Sysdig < Formula
   depends_on "uthash" # for `falcosecurity-libs`
   depends_on "yaml-cpp"
 
-  uses_from_macos "zlib" # for `falcosecurity-libs`
-
   # for `falcosecurity-libs`
   on_linux do
     depends_on "abseil"
@@ -48,6 +47,7 @@ class Sysdig < Formula
     depends_on "elfutils"
     depends_on "grpc"
     depends_on "protobuf"
+    depends_on "zlib-ng-compat" # for `falcosecurity-libs`
   end
 
   link_overwrite "etc/bash_completion.d/sysdig"

@@ -1,17 +1,17 @@
 class FreshEditor < Formula
   desc "Text editor for your terminal: easy, powerful and fast"
   homepage "https://sinelaw.github.io/fresh/"
-  url "https://ghfast.top/https://github.com/sinelaw/fresh/archive/refs/tags/v0.2.4.tar.gz"
-  sha256 "31b2b32311a8b45939f5510b51c0dcb29c181691903ad6a0284ab5afaeab2936"
+  url "https://ghfast.top/https://github.com/sinelaw/fresh/archive/refs/tags/v0.2.5.tar.gz"
+  sha256 "d26e70c6d15b4ae2c9962346e711fe089bca5aac7642821dd8de169cede15714"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1485c62587134200427268e2a274b46a5ebb5f639729834434cfd70f51c75c0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd1f1d6cf7550e3fbb98ec11a47be82d42ea88a638499b842de6c2ec17eb5966"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43d075305d45d7d4e3681442b874b21f6681c861afbaec0411f6a732db310e5d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "86743a31409fe5fc90f2f0518a8895180b9d9d4a7c06b18e28c1bd35d235c9c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ec5e3b1e01608e187e3ceb3e73bc4e86906033d75093e132cb6a2f96d173c6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e5b18cefa6c944dbf3831a76c4960d07c320469a64cc1e2c25d594a346571ae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a55cb97c35b38dbf8112408ea4ab084c85f1c0b7dcd89207e7c78fb2656f43d7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "016f99d4bc644c90136362a8377e8f9c7e9734595470e6061dd5da482a1cf496"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07c224a2471098deb65aa26e5d6268825ac7369042b7f70633fc62263682737b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ccc4e0ecb6157c9e77b91c3a1ce1e7453405697ffe9b508a6fd6e30e802d4e4f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc7489a9bf7ca33c341cdd5bbab28f250a6d5e036fb46f40f4fcc920e8e67fc3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05e194ce89fc50ff2f793739d3760216e46d7907ee8e5f00c6254b001cfcdc23"
   end
 
   depends_on "rust" => :build

@@ -12,8 +12,6 @@ class Epinio < Formula
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "631eae6549319558ae0cb9d2f8431d75288d631f0ff0c9ee120f12abee7bc8ff"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee059124aa9e92d99b864c1835ea607940f767dc16ef814915b4c3a923fc17c9"

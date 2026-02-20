@@ -6,8 +6,6 @@ class H2o < Formula
   license "MIT"
   revision 3
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "7052d31aee99253193fa7e7bdbdff7c1c1d838783c5f3bf01eb60303cadfcccb"
@@ -17,6 +15,10 @@ class H2o < Formula
     sha256 arm64_linux:   "a8f570c2dc1dec9d24cd097b6b2b0c1ebb6d5186e6d7e8937248713a2250531a"
     sha256 x86_64_linux:  "3610f00d45e27f430806f37e64f1038864d821c7cf622b572492f046398b3bc0"
   end
+
+  # See https://github.com/h2o/h2o/releases/tag/tag-no-more-releases
+  deprecate! date: "2026-02-19", because: "upstream does not provide tagged versions anymore"
+  disable! date: "2027-02-19", because: "upstream does not provide tagged versions anymore"
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build

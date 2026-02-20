@@ -19,12 +19,13 @@ class Swift < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "07898aef3209bbd38dbeaf5644a39ec63c778f1610a1c2383719486d574c1fa6"
-    sha256 cellar: :any, arm64_sequoia: "b978aa81c16cad852e2d6ccf7ecf502ee32cbec88aff1c4ed3216eaab91c65df"
-    sha256 cellar: :any, arm64_sonoma:  "640cd8d8f585816e076bace6c0e2f56931c1ddb28a9a1d3bf05916f523b24ee8"
-    sha256 cellar: :any, sonoma:        "6fd2a69663a3aecb4363a892f83e2223943cb91107c644c73e341fe43f45a42a"
-    sha256               arm64_linux:   "d7aa21f9206ed4b645aa0318db80623efd7d4d7d8acb0b4d2bd3b9b16f84c5ca"
-    sha256               x86_64_linux:  "701ec69ee5d9d7773ebe904e7a76d821b13a0dfb423dee7a776f8816ce881b1a"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "c9daabdf3c5011c41c359b674bb472e11479d762d42cb9dc94b71105b6d08b21"
+    sha256 cellar: :any, arm64_sequoia: "2a41a8632685ccfcf13565099d9a3cd27ac5c617895dd3d847ff1d42048e68d6"
+    sha256 cellar: :any, arm64_sonoma:  "bdaf071126459a481a756bb1478403bd65c484d2b03a22d9f4ac642688dc6ab0"
+    sha256 cellar: :any, sonoma:        "ee9a9809ae1b300bf4bd4bb3c41fc35473ba999c3cc21c94556aab19235ebe4c"
+    sha256               arm64_linux:   "3119352a7b2d18035b32f40a7810bff518ec9ef9882666b9a59002bbbe4f6e17"
+    sha256               x86_64_linux:  "b01eb99c65407b2a2787124a0695682d8dfd7cee160920cfa89065dedbed5fa4"
   end
 
   keg_only :provided_by_macos
@@ -48,12 +49,12 @@ class Swift < Formula
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "lld" => :build
     depends_on "python-setuptools" => :build # for distutils in lldb build
     depends_on "util-linux"
+    depends_on "zlib-ng-compat"
 
     # Doesn't have to be in sync but does need to be no older than X.(Y - 1).0
     resource "bootstrap" do

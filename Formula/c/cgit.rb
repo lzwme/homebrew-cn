@@ -11,8 +11,6 @@ class Cgit < Formula
     regex(/href=.*?cgit[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "be548ed68df6c0f5be5a264f52cd1a5625e34b562ff27086b95b222339179b18"

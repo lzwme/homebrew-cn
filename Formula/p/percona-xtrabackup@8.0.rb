@@ -20,12 +20,13 @@ class PerconaXtrabackupAT80 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5baac7ce55ea30ca98e9696f1a76924b40106b55006a24a956de0899f4c1d3dd"
-    sha256 arm64_sequoia: "b9ddf43cdca247b4dcf1f17c3e7fc572875bad1cbdf271a35a0e0713b537cdd5"
-    sha256 arm64_sonoma:  "24f46d69039a9695f07bf12d490e368e9aa5501f03a8b3d71f0c3daa671d1071"
-    sha256 sonoma:        "fc28ce5443261b2855828753d0bb4363995314a8a05dd56d8d5911e29e64025e"
-    sha256 arm64_linux:   "ed6c4af9b187246f1595290b3d102f70158ace4250bd6283c3f254412df3ff9c"
-    sha256 x86_64_linux:  "7df6427067e245c068af7c80de9ed38a10099928e7a2f018e45aae4650f7a243"
+    rebuild 1
+    sha256 arm64_tahoe:   "4351b09a661500dcb961e282a613c1f690f9bc66cd2272019943a71f634c6838"
+    sha256 arm64_sequoia: "54fd58fb5a60de4004e382a4ee778bc3a4742d3e2610f9df887c591f2b29ea76"
+    sha256 arm64_sonoma:  "3641079f58027cecf48f80a8cdf1dc0d738feb0c9b9072edb4ad459f18d0fd0b"
+    sha256 sonoma:        "fc7bc80446461639deef238dd12a35754f0bb3b02863f9671ba06940b45fde23"
+    sha256 arm64_linux:   "e1e54c2b3a31a29b94c789b5de1abc8d2bd21cd4a52634201a43e68c0c6a80ed"
+    sha256 x86_64_linux:  "5dcb9dc888ef16f2d40a7b177da2847654002b1a872f40c0db65120dd1b6bda3"
   end
 
   keg_only :versioned_formula
@@ -46,7 +47,7 @@ class PerconaXtrabackupAT80 < Formula
   depends_on "openssl@3"
   depends_on "perl-dbd-mysql"
   depends_on "protobuf"
-  depends_on "zlib"
+  depends_on "zlib-ng-compat" # Zlib 1.2.13+
   depends_on "zstd"
 
   uses_from_macos "cyrus-sasl" => :build

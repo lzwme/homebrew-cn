@@ -23,12 +23,13 @@ class PerconaServer < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_tahoe:   "7e4184b0a72ed049af7ea761067de23f74a80e8d35aca11b510accc6cad80c77"
-    sha256 arm64_sequoia: "df70d98d6ca3f4e15d6cafd4edf554de265aec8c299bd32006a1723406249373"
-    sha256 arm64_sonoma:  "5efce6732b61660083fcd35a9eb6022fb232fbdf33c8ba95d7206762a5237bf0"
-    sha256 sonoma:        "e9514dba3931501d5f65a7200f2734f41b42c78c36e37a0e67ada56151aa366b"
-    sha256 arm64_linux:   "c32354c3a110ceb3183a1c9944077857fbf33607b2aec0be182de5bf9acbd029"
-    sha256 x86_64_linux:  "dac26f725eefc0d3ccf7ca033a0b1949a6f0d0229c99d38f24f98ab313fb80da"
+    rebuild 1
+    sha256 arm64_tahoe:   "8b10551d5389b349f5e2b74f4824f05bd5d0b58384e244302f170ddf21d632d9"
+    sha256 arm64_sequoia: "696e21d8bd9e5d49c30887dc2e4f211297796ca0cb5c564f9cabfc7ea20922be"
+    sha256 arm64_sonoma:  "63644bf00b52532827dcd062d02bd2d957e681a627b44b4edd4d38fff6e87dea"
+    sha256 sonoma:        "23ef2eced1b7879f2a703b3acc66eb2946109058facbc70c3fe1c2000662dfc7"
+    sha256 arm64_linux:   "8a0740d309ed09f46157f0db24e1451b4a4a4c2937662b650c5d6383a2598284"
+    sha256 x86_64_linux:  "1d6af147e9c30a376912642756bbba3e8997fe2d463de8ecbf5bcb8771b09b3b"
   end
 
   depends_on "bison" => :build
@@ -41,7 +42,7 @@ class PerconaServer < Formula
   depends_on "openldap" # Needs `ldap_set_urllist_proc`, not provided by LDAP.framework
   depends_on "openssl@3"
   depends_on "protobuf"
-  depends_on "zlib" # Zlib 1.2.13+
+  depends_on "zlib-ng-compat" # Zlib 1.2.13+
   depends_on "zstd"
 
   uses_from_macos "curl"

@@ -16,8 +16,6 @@ class Hashlink < Formula
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "fec6262dd3d0fd5fd4b193897f7fc621d43c15566d857ce63bdee05ea1011898"

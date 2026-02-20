@@ -15,12 +15,13 @@ class MysqlAT84 < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "6cdfe342dc41fbd745c2852632b06066615d0cdfee7d1203d08d713e8e6fe420"
-    sha256 arm64_sequoia: "25a0f96b86fa0e45209498f8adbb8219024bd5e0efdd53efe8dc06efa427879a"
-    sha256 arm64_sonoma:  "1a650a3cff377ab30924bd2a9d67dc3ff598a1c22898fe719b42457a14c98320"
-    sha256 sonoma:        "c9de140d9777cd3e240d9872829321a44f4d5da0da12bedef4eabc034ea9fa9b"
-    sha256 arm64_linux:   "58064211c9d12d5a76ee4dffa23b0170f759013573365156eb26b6ee699380db"
-    sha256 x86_64_linux:  "21e98dfa0aeb46d7590ec7c68f678fceba70652c80e9319f0e7a9498948e79f5"
+    rebuild 1
+    sha256 arm64_tahoe:   "cd614beaa2b81a1460e4bfb26de2efabb44ad81a0a2abe39c345b2b9fc135a88"
+    sha256 arm64_sequoia: "085e4e10e454417cae8dffeab4a44f660dc4af3ed1d66a4a1b766dab2f57983c"
+    sha256 arm64_sonoma:  "a87e7eb79cce7a15d998a567d425f2938a7eb462738c33b33bf2fa09b6fcfa73"
+    sha256 sonoma:        "f1bbb285b01a65f6c1a7ea4fbf2bc627e9f4a20485ef54598c68198070c39d86"
+    sha256 arm64_linux:   "4d0d7066ebf8fa14804096c32c3e0c48b6b3f5db3ed0150d94f908b3ff310e2d"
+    sha256 x86_64_linux:  "2f929bd06a4af729f0649d3bc4306ecab8b4388f622e4bb6fd81f9795f7858cf"
   end
 
   keg_only :versioned_formula
@@ -36,7 +37,7 @@ class MysqlAT84 < Formula
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "protobuf"
-  depends_on "zlib" # Zlib 1.2.13+
+  depends_on "zlib-ng-compat" # Zlib 1.2.13+
   depends_on "zstd"
 
   uses_from_macos "curl"
@@ -78,17 +79,8 @@ class MysqlAT84 < Formula
     keep = %w[boost libbacktrace libcno lz4 rapidjson unordered_dense xxhash]
     (buildpath/"extra").each_child { |dir| rm_r(dir) unless keep.include?(dir.basename.to_s) }
 
-    if OS.linux?
-      # Disable ABI checking
-      inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
-    elsif DevelopmentTools.clang_build_version <= 1400
-      ENV.llvm_clang
-      # Work around failure mixing newer `llvm` headers with older Xcode's libc++:
-      # Undefined symbols for architecture arm64:
-      #   "std::exception_ptr::__from_native_exception_pointer(void*)", referenced from:
-      #       std::exception_ptr std::make_exception_ptr[abi:ne180100]<std::runtime_error>(std::runtime_error) ...
-      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib/"c++"
-    end
+    # Disable ABI checking
+    inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0" if OS.linux?
 
     icu4c = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
                 .to_formula

@@ -15,8 +15,6 @@ class BbftpClient < Formula
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18d463140dea6d3abd1361442b054a2cd01020e40c55ca2e6046c5760944d689"

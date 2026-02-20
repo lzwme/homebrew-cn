@@ -11,12 +11,13 @@ class RubyAT34 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3b0ed1b56645ded18c4ab1ed955b858f6450c203748e7c5e68c4f617be3f227f"
-    sha256 arm64_sequoia: "0b5e493658e419377f090ec5b2eebc9367f3f17c5357ecba86a95f7aaaefc7ae"
-    sha256 arm64_sonoma:  "037460ae5af98e5f8f4c1114554d2715bac05763116e758dfd5adbf76db53733"
-    sha256 sonoma:        "13a288d9444f7a471fcad02ff523f28b6dcd229773fd04034ed3f29e66ef4abc"
-    sha256 arm64_linux:   "123560dbe2a0329f88fe8c3dbf4eee6dce5b5f0eef9dc9f7303d438612678252"
-    sha256 x86_64_linux:  "ebc5b7784c4b6b816d21f479ef7060c2c2c7ba0eb6f6418ce8c16b320aafd122"
+    rebuild 1
+    sha256 arm64_tahoe:   "409b025b3b21185bd1c28f38d0223a2b86dda40119d0ada9bc757b3b2080612f"
+    sha256 arm64_sequoia: "aa5fd138be309ec4ff254e2ffa303a061ac8beeaec0386285311e2621fe0a940"
+    sha256 arm64_sonoma:  "6bdf5e97ca990e740b6c8cd2824aeb3daca02bba26f1942531fdcbf81b636662"
+    sha256 sonoma:        "825f4d8c4026e2b326d69081233294eeed9c15dbeeafe0bc280d7de007d8e507"
+    sha256 arm64_linux:   "c25fa11da95ac93b19562930e94500500398caf5598e0691b00161ef80efe2a9"
+    sha256 x86_64_linux:  "9535eb45c07db0e35f004d12e694e8879e2843e88456f06b38a33bc92fa48c0e"
   end
 
   keg_only :versioned_formula
@@ -30,7 +31,10 @@ class RubyAT34 < Formula
   uses_from_macos "gperf"
   uses_from_macos "libffi"
   uses_from_macos "libxcrypt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # Should be updated only when Ruby is updated (if an update is available).
   # The exception is Rubygem security fixes, which mandate updating this

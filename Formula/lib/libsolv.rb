@@ -11,13 +11,13 @@ class Libsolv < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "b1d4aadeb9b8572bf351d0c07806f964666efa0cd12c3573ff6c96e8540a4ba1"
-    sha256 cellar: :any,                 arm64_sequoia: "ae33d25d26ff710352a06a38a421fd0216c30eb55827e0ce5681912aa91459a0"
-    sha256 cellar: :any,                 arm64_sonoma:  "3a55a375e654f3ddfb7e6f4f5cfa981a69de84fc08ab44a3e0baf5f39e4580bc"
-    sha256 cellar: :any,                 sonoma:        "fdb5677bef312a9dd7a2209dfed282cf68cbdaa3274ec023a2f5c28aecf02000"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbb660601132e01fb609156195711da39e07a7a825aaec07b0e5791c8a9163b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1561ca87a5a76167c49b46f6682c99cf46ea90bfd20262ad7aa78067790636aa"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "72baee113a3ee720b1ece1944fa2ed5eed559e86255287929dd2b53ffff028e2"
+    sha256 cellar: :any,                 arm64_sequoia: "a425f21b81b1df18f797a4c21a88c1a5783673ffe9de0310dffcf2129cbc7d09"
+    sha256 cellar: :any,                 arm64_sonoma:  "0b3016f7c6dd93632c2d53355bd4fc775af5b40b13e59ba9f93ce4d5905cf408"
+    sha256 cellar: :any,                 sonoma:        "2d99b3f6594519bcace1fbba7f3f3bc5ba22a38e544861be43cf5e893bbdbce2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8628bcc2dece4bccbb2ebb973bd957655a08e4c309240f981818d35380cb0a2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3c71e6ba50b6473113475af7a26884aa1b8314d6c6f5ddff2c1bed3e2fe5bb6"
   end
 
   depends_on "cmake" => :build
@@ -27,7 +27,10 @@ class Libsolv < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "expat"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = %W[

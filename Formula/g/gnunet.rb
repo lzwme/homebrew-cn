@@ -3,16 +3,17 @@ class Gnunet < Formula
   homepage "https://gnunet.org/"
   url "https://ftpmirror.gnu.org/gnu/gnunet/gnunet-0.26.2.tar.gz"
   mirror "https://ftp.gnu.org/gnu/gnunet/gnunet-0.26.2.tar.gz"
-  sha256 "8fd2dc4e6eaac0dc8d828d4e2a5afc271bd77d2b820de2f0cba7589ab30ce46e"
+  sha256 "77b7e370cd84037f5792d812536bc5a1035409e6a34aa068d08c9e81be809389"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "745b60dc91143a7bf3bf54910b06812b4e97d97a05123ea8416a00d8bb345c22"
-    sha256 cellar: :any, arm64_sequoia: "42a83e9648276a12e3bd4636fdc96a86b1841ec5ff5e9789a6eb7e0fd312409e"
-    sha256 cellar: :any, arm64_sonoma:  "2f43e93423c6c685429847b8acdcc255164b7be93419c429d950cc3db510e0e5"
-    sha256 cellar: :any, sonoma:        "2f5cfe3cded73e0b021088c75650cf12b89e89599d1ad7a5d91be9672d7c0291"
-    sha256               arm64_linux:   "c2d3eabe9e8c33588504e61e462c7df1104447de37641b7c966bec2e7445c0ce"
-    sha256               x86_64_linux:  "7bd8dec99aad1a7e10c9a88935715f929819d59c5ec3955216400d1dfa52cd5c"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "0099b68cd02f69fa642e104d27056897daa0d38a58c1f30b8036b18068388c65"
+    sha256 cellar: :any, arm64_sequoia: "e6ba5830a7e9131c0bdb8c8678aa1271b3bed1a95dfed4ac4c9e2fb8c865c24b"
+    sha256 cellar: :any, arm64_sonoma:  "b76c47e1652724f8f8dc4b5db8dbbd112249e31e6be9fc5dde9b47ae29a84196"
+    sha256 cellar: :any, sonoma:        "1d8203547ab28301c849c6538ed54b84903b0fc49073a59e13fc487d6727641c"
+    sha256               arm64_linux:   "c1d5ea4893427f4f7e76fdb70f53e948af231fc1c3289e68a71e716c1fc9976b"
+    sha256               x86_64_linux:  "39d321f4c6a0b161dda0108d6f8f54f51ac246f130124894c4575ba9987ebadb"
   end
 
   depends_on "meson" => :build
@@ -32,10 +33,13 @@ class Gnunet < Formula
 
   uses_from_macos "curl", since: :ventura # needs curl >= 7.85.0
   uses_from_macos "sqlite"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libgpg-error"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install

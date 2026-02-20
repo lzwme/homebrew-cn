@@ -10,8 +10,6 @@ class Fits < Formula
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any, arm64_tahoe:    "d71b24d9369f9b5737617ae4573432b87c30e8a465f433f6e99af6a78375cc09"
     sha256 cellar: :any, arm64_sequoia:  "34bbd71f26444e39865a8ae104c8371e2b549eba524b039fe08e69037063fe6e"

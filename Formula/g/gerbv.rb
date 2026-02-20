@@ -6,8 +6,6 @@ class Gerbv < Formula
   license "GPL-2.0-or-later"
   revision 1
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 arm64_tahoe:    "16ddd7d1212886648901aef5bd32548cda6180e8ea9ac2bd0092733453b20947"
     sha256 arm64_sequoia:  "2cec6e703cf8900a47542fbbf627d938289b09b1344dd25c7a1f4920c5210d50"

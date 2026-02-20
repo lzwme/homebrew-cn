@@ -12,12 +12,13 @@ class Vips < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b806822f928a2678f4d29538c0c73e806ede8a6ae7d7ecf82f0e96e6d05f30e5"
-    sha256 arm64_sequoia: "a70e8caf492541c7772935b9f199cd07ce63266ca634352fa195bd2052a9e837"
-    sha256 arm64_sonoma:  "660f84803d688867e2024c50be97a30c2be6cf671bb2a0d08173fd90422e9c04"
-    sha256 sonoma:        "fc3d79657db2b998bbc323c3c3d1da206efed83758ecdfe280d9ca4e08bba6ec"
-    sha256 arm64_linux:   "a52f472c33e9a099d4aac73cb0eff64c6d04d42cb92b76ad1bd385ccba6d7f62"
-    sha256 x86_64_linux:  "e507a55b10673f0fd6679203d1d30b7d5cb9e8898e5552846039a3447ec33e9f"
+    rebuild 1
+    sha256 arm64_tahoe:   "689d37ea624080ec415c9c84a98a9f372367a3bba5bace54825df4cb63742a3a"
+    sha256 arm64_sequoia: "f657ae55aef6b377b4dc5c08fa6e23217ea80e2fd530d504df6ab427685f7754"
+    sha256 arm64_sonoma:  "0c734907acec118c93fe7a228c8ba399a58c5d0102af9e0befbfe45250539d15"
+    sha256 sonoma:        "c7a91bd09a35e5cd6ffee7870923cc78fbca06315e58951009b5d508dbece754"
+    sha256 arm64_linux:   "fe9c9c0f423ae78c7b6eb21a3b6421d6a897f47dc6b8afe874e1cf2330d83875"
+    sha256 x86_64_linux:  "29bb7ce9cf3af9949a67116db831534d7d5b9d12d0d190fb9ceae03da8d9c5a5"
   end
 
   depends_on "gobject-introspection" => :build
@@ -55,7 +56,10 @@ class Vips < Formula
 
   uses_from_macos "python" => :build
   uses_from_macos "expat"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # mozjpeg needs to appear before libjpeg, otherwise it's not used

@@ -21,12 +21,13 @@ class PerconaXtrabackup < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "96024bb8409bcff42ddfbc9aa4bccd7c390986bf2fdb4fa57b6b297631e2151d"
-    sha256 arm64_sequoia: "5c6db8e6389ca3aa4ac9524ff91fb6fa3270691e08a5fd96fc93ff605db71aa7"
-    sha256 arm64_sonoma:  "49606f5d2e2e023251d7dd61621259b6fbf76e0eed4d58f090c5ed9eeeb56440"
-    sha256 sonoma:        "7c4e93b24453175ece99e7bdce34b6a1086de6c40df73046f30054d575c9c790"
-    sha256 arm64_linux:   "3ebe5fd44fbb59db104d2db26e69cdc30a8f94b01f91c5f1d0ba0a83030fe543"
-    sha256 x86_64_linux:  "9ed8e667ef9fe9cd72e013e96f74e3d2f6c2eb3b8ee049b4f73cf853b107015a"
+    rebuild 1
+    sha256 arm64_tahoe:   "7005933d8b52ea0a79bf7aa62397c5180278619ed3f4f38f51ad90d8fc814782"
+    sha256 arm64_sequoia: "4c95dfa6bc1e5e1a0a7215c3fd7ab96cda188c13aaf932b80b3ccb8870a07c50"
+    sha256 arm64_sonoma:  "206c52d0e65f66e7da3d4ab05a810e861b09582fe822f11c4d1506f9b546700f"
+    sha256 sonoma:        "93a27f1e1c76e5515b75756423456a3f048f86dad6069ad8c1ceaf72f025bdee"
+    sha256 arm64_linux:   "78979070b9f183237e80e6064a43b8a55640815c8286306fa4d281168ab8955f"
+    sha256 x86_64_linux:  "12ecf13358239be94e537bdee9cf84bd4d83055a857a409b384f12a625f5f169"
   end
 
   depends_on "bison" => :build # needs bison >= 3.0.4
@@ -40,7 +41,7 @@ class PerconaXtrabackup < Formula
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "protobuf"
-  depends_on "zlib"
+  depends_on "zlib-ng-compat" # Zlib 1.2.13+
   depends_on "zstd"
 
   uses_from_macos "cyrus-sasl" => :build

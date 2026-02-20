@@ -1,12 +1,20 @@
 cask "brewy" do
-  version "0.2.0"
-  sha256 "fc79db8c3e05038adb1b181d6dc5681f8d9e522320d4dd6696408ea3bf13c23c"
+  version "0.5.2"
+  sha256 "7ba60a744ae01454f3159c88b14c999f5040daa56e8473aa7e1b12bba8b3b179"
 
   url "https://ghfast.top/https://github.com/p-linnane/Brewy/releases/download/#{version}/Brewy-#{version}.zip"
   name "Brewy"
-  desc "Native app for managing Homebrew packages"
+  desc "Simple Homebrew GUI"
   homepage "https://github.com/p-linnane/Brewy"
 
+  livecheck do
+    url "https://ghfast.top/https://raw.githubusercontent.com/p-linnane/Brewy/appcast/appcast.xml"
+    strategy :sparkle, &:short_version
+  end
+
+  no_autobump! because: :bumped_by_upstream
+
+  auto_updates true
   depends_on arch: :arm64
   depends_on macos: ">= :sequoia"
 
@@ -16,6 +24,7 @@ cask "brewy" do
     "~/Library/Application Scripts/com.linnane.Brewy",
     "~/Library/Application Support/Brewy",
     "~/Library/Containers/com.linnane.Brewy",
+    "~/Library/HTTPStorages/io.linnane.brewy",
     "~/Library/Preferences/Brewy.plist",
     "~/Library/Preferences/io.linnane.Brewy.plist",
   ]
