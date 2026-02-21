@@ -2,7 +2,7 @@ class Libspatialite < Formula
   desc "Adds spatial SQL capabilities to SQLite"
   homepage "https://www.gaia-gis.it/fossil/libspatialite/index"
   license any_of: ["MPL-1.1", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 3
+  revision 4
 
   stable do
     url "https://www.gaia-gis.it/gaia-sins/libspatialite-sources/libspatialite-5.1.0.tar.gz"
@@ -25,13 +25,12 @@ class Libspatialite < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "81744f6dc5c16d0d6e3001ec150b116f2cb06096722e021057bc7c2d303a099c"
-    sha256 cellar: :any,                 arm64_sequoia: "2229f70bb0ee3ec72a6cd2df2f735b87f5d9367e42322f00779939213f02e13e"
-    sha256 cellar: :any,                 arm64_sonoma:  "fbaac75c00134238127cbceae3b846c4c565fd8fb0bc4c5f3754ab5dc3d49551"
-    sha256 cellar: :any,                 sonoma:        "e6a24737afbf73a3817d786f7754b6df9b9dc4a14aa4e1873d6f43dc5cb28d85"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c99aff6aba220be5c976b1504445a5ff896365eec7dba405308ddc92cbbe436"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ac67e83fa3917d6a49b5a3a580be1da3a03286a3ff5f826fb07257e47ac9a4a"
+    sha256 cellar: :any,                 arm64_tahoe:   "ec3bff2150de386d746181a90e8a9a706a5cd0abba9fff83b982f31cec916a93"
+    sha256 cellar: :any,                 arm64_sequoia: "587bf2902aaa3908a1dcc76dda6fe5ab38ead02dad6e6bd8f4521c28c0174686"
+    sha256 cellar: :any,                 arm64_sonoma:  "d726dbbc340c60fa4aeb0e64f7d84869af74e3ca7a3d0d536b4af8eb53760a51"
+    sha256 cellar: :any,                 sonoma:        "ea4844a4718e87cf6dab3f3216fd17f2b227c0f848a91fac80f35ce01c311a64"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "03d04b1c9c2e9383f2149bbd1fbc9c6374cdabd8b72887f0d02e17819e06ffdf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9080a06cdd748903d3da061c4b50adf0435bf41fd316daf4e86ba145ac9fe47a"
   end
 
   head do

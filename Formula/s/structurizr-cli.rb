@@ -10,7 +10,7 @@ class StructurizrCli < Formula
   end
 
   deprecate! date: "2026-02-17", because: :repo_archived
-  disable! date: "2027-02-17", because: :repo_archived
+  disable! date: "2027-02-17", because: :repo_archived, replacement_formula: "structurizr"
 
   depends_on "openjdk"
 

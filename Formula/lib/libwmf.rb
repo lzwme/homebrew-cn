@@ -9,8 +9,6 @@ class Libwmf < Formula
     "GD", # src/extra/gd
   ]
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "19feff47e82f7eff2624ec04a9a1b5c72d1df746d27f19a4c578f834ee8aa32c"

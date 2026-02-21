@@ -12,8 +12,6 @@ class LlvmAT16 < Formula
     regex(/^llvmorg[._-]v?(16(?:\.\d+)+)$/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "5e7fbf091d4da41cf9aca178cbb32549f290c2792af2efb24586f42809f95f5a"

@@ -13,12 +13,13 @@ class Suricata < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a7270d7f8591f295f5d45e4cfd8ef0a120ee152fead5d77bda7817b0a51c980c"
-    sha256 arm64_sequoia: "d05219eca5939a7eb37f315e21f58112d2fdd3d63ed045099278a640d79b7ea0"
-    sha256 arm64_sonoma:  "40294c5405914c5a4c6d0973ed435a2c66bb1f5436a03ffb2b05393e384a35fc"
-    sha256 sonoma:        "e43ee63ce2a506e1fd6d169433c50feaa4e8ad5c14248e1d6e1c82e121257692"
-    sha256 arm64_linux:   "3cfd748d919b674a512579b2ab70857a8280bdf382364746d53339ad082bae67"
-    sha256 x86_64_linux:  "c6c5e19187809d9d0a83510e863008c0b0399b875b12d24bbc6405f5f3875ca7"
+    rebuild 1
+    sha256 arm64_tahoe:   "fd5e6e2522356ca02512d0313ae32dd7b3b8800cb141d426c0fdfcb735d65fb0"
+    sha256 arm64_sequoia: "98bccff6e59f4ef9c6b7241283b68db17d99fe5c328c134190788d1301119328"
+    sha256 arm64_sonoma:  "f952114027b49737c0536809ca90cdd033e1c5b8c99ce620e1a400f253c26fd9"
+    sha256 sonoma:        "e7f6f3864cf9e57fac55d523d17ab819d66e3ed0f53694dcc2bc384d2070bce9"
+    sha256 arm64_linux:   "f77e2862a4778fa6ee94d785167a0153e70b2dc2cf42728661f445aec085c677"
+    sha256 x86_64_linux:  "13fe942b3e209cc0d3b60903385abde8088398dba900a632f3199e05a7946c0b"
   end
 
   depends_on "pkgconf" => :build
@@ -32,7 +33,10 @@ class Suricata < Formula
   depends_on "python@3.14"
 
   uses_from_macos "libpcap"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"

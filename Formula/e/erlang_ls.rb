@@ -17,7 +17,7 @@ class ErlangLs < Formula
   end
 
   deprecate! date: "2026-02-17", because: :repo_archived
-  disable! date: "2027-02-17", because: :repo_archived
+  disable! date: "2027-02-17", because: :repo_archived, replacement_formula: "erlang-language-platform"
 
   depends_on "erlang"
   depends_on "rebar3"

@@ -6,8 +6,6 @@ class Libkml < Formula
   license "BSD-3-Clause"
   revision 1
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 3
     sha256 cellar: :any,                 arm64_tahoe:   "3ebb7ff52e177135e9778b32bced8bed361a34ac4558ad2c4f822a40c41e21ae"

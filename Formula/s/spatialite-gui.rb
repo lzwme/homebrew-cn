@@ -14,12 +14,13 @@ class SpatialiteGui < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "782748b1e6ece36b5560a2ffa6836b0da857043b4efcf082b584cd511cdd3a50"
-    sha256 cellar: :any,                 arm64_sequoia: "b92666f875dcc542493852bea5f97b7f648d464b1e90d8600981f357d015635d"
-    sha256 cellar: :any,                 arm64_sonoma:  "806b6c27347cdc00a4cff996cedbdb5a32ce7ee0b240ec16e52794bf02a9dbb5"
-    sha256 cellar: :any,                 sonoma:        "3e2f7422622873db4de5ce22db8b401687d818b6b290fb1bfdebc1d2e16f0887"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e83802a531c27070cbc1efc71269720d4959e996902f69de9cc89d236c69a33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4806bbbd650761eeaced5a47e7648e452585ad5a361fb0f7023e5df17177bff"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "fc7bd66aa674d6a6be9b8e3fd3ebfb66174e26941b0c23edd79fcd89210556fb"
+    sha256 cellar: :any,                 arm64_sequoia: "7118ea0e87598b25d60e396039fddfcbd76cd8333379e6e23af1474c4643139d"
+    sha256 cellar: :any,                 arm64_sonoma:  "05d29c133d991792119783e90852092d4d6e60bf4c878524e5aadb46fa420bed"
+    sha256 cellar: :any,                 sonoma:        "cbf91ebe3e83a75378d9f2844e64adf8730b5084d804fd12e7f7ef29b1ea281e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ffead0740acde972358bbb12362614791ec773ffd9107864407011e59c74208"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6175b8a99adbeee02593f9fcdc855b2f2d15e8fb073cf05b242441ae317cc47"
   end
 
   depends_on "pkgconf" => :build
@@ -44,7 +45,10 @@ class SpatialiteGui < Formula
   depends_on "zstd"
 
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Link flags for sqlite don't seem to get passed to make, which

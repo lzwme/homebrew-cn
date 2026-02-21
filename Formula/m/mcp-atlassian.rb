@@ -3,17 +3,18 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/8d/52/1cd163b7b2bbf4b62b8f42bf54c62062c9682a5784e3db561f6e3bdb8079/mcp_atlassian-0.14.1.tar.gz"
-  sha256 "1d984dd0ffbf122c4961f16dc85bf93cd3ef34c8846ff35e466d3b7127af36ff"
+  url "https://files.pythonhosted.org/packages/c2/23/7935ac9fbc026f3e085b90fa563ed26a38bddbe32beba66413b9ecfd37fd/mcp_atlassian-0.15.0.tar.gz"
+  sha256 "0cf4ebd6d0cb3ccae02166e4a981ddb961fc6324a37228df02cd4542bc750678"
   license "MIT"
+  head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1cac4e1d39a73332f33d0d5293acdd3114fd2891124b8cc24546e4e59cca0549"
-    sha256 cellar: :any,                 arm64_sequoia: "8469339df46e00dd0e6947ac08d4127db4c2c2c00d5965f5fd169adc5beb6560"
-    sha256 cellar: :any,                 arm64_sonoma:  "c237d732704dddbfc23325259e0d42de8d8edf61c3a743c62d07538da0c90aec"
-    sha256 cellar: :any,                 sonoma:        "fbcd4a8024e72f385f7fa01908143d70cea1a636ba352e29c1d397cb8e65b9bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d09a5a83fe5023727cbfe207ffab6783f0b96fe0bdd416990638726c0d39c69d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f7cdb29d40297af5ac42e60a945f4a045137c6434ffcc3b7d608b980308c06c"
+    sha256 cellar: :any,                 arm64_tahoe:   "f78446efb6783c5a52261b3bea2171d46c94a63d8d5245172f7f4384769f2883"
+    sha256 cellar: :any,                 arm64_sequoia: "fcd572a6b291b636c1da49449c7bc84b3cb9b245c7d7ff592de6e26cb143fe94"
+    sha256 cellar: :any,                 arm64_sonoma:  "2c8a272287592dcdbd2e545307cc598497260ed600e93d1ee3df4eb5649503ad"
+    sha256 cellar: :any,                 sonoma:        "d9b03819848cd9ed1d5170e6b33cc0d258e49f2358e9786f2fe13bef721e5339"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4fadf6a3f6ded34a84c6aaf486e554c9c012a88c800c727c500e6e06c7cccb7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f4616573a22b7c91cad23644be085c36eea7040f3ff1623e0960a0af6c72aa4"
   end
 
   depends_on "rust" => :build # for py_key_value_aio > uv_build > maturin
@@ -21,7 +22,7 @@ class McpAtlassian < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libxml2", since: :ventura
@@ -96,8 +97,8 @@ class McpAtlassian < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/a5/16/06e35c217334930ff7c476ce1c8e74ed786fa3ef6742e59a1458e2412290/cyclopts-4.5.3.tar.gz"
-    sha256 "35fa70971204c450d9668646a6ca372eb5fa3070fbe8dd51c5b4b31e65198f2d"
+    url "https://files.pythonhosted.org/packages/3b/d2/f37df900b163f51b4faacdb01bf4895c198906d67c5b2a85c2522de85459/cyclopts-4.5.4.tar.gz"
+    sha256 "eed4d6c76d4391aa796d8fcaabd50e5aad7793261792beb19285f62c5c456c8b"
   end
 
   resource "deprecated" do
@@ -211,8 +212,8 @@ class McpAtlassian < Formula
   end
 
   resource "jsonschema-path" do
-    url "https://files.pythonhosted.org/packages/6e/45/41ebc679c2a4fced6a722f624c18d658dee42612b83ea24c1caf7c0eb3a8/jsonschema_path-0.3.4.tar.gz"
-    sha256 "8365356039f16cc65fddffafda5f58766e34bebab7d6d105616ab52bc4297001"
+    url "https://files.pythonhosted.org/packages/a8/8d/4b2e648cf643d19e1f76260d9cb002d242e38b4298d6da110bd3c3d8d0d2/jsonschema_path-0.4.1.tar.gz"
+    sha256 "ffca3bd37f66364ae3afeaa2804d6078a9ab3b9359ade4dd9923aabbbd475e71"
   end
 
   resource "jsonschema-specifications" do
@@ -296,8 +297,8 @@ class McpAtlassian < Formula
   end
 
   resource "pathable" do
-    url "https://files.pythonhosted.org/packages/67/93/8f2c2075b180c12c1e9f6a09d1a985bc2036906b13dff1d8917e395f2048/pathable-0.4.4.tar.gz"
-    sha256 "6905a3cd17804edfac7875b5f6c9142a218c7caef78693c2dbbbfbac186d88b2"
+    url "https://files.pythonhosted.org/packages/72/55/b748445cb4ea6b125626f15379be7c96d1035d4fa3e8fee362fa92298abf/pathable-0.5.0.tar.gz"
+    sha256 "d81938348a1cacb525e7c75166270644782c0fb9c8cecc16be033e71427e0ef1"
   end
 
   resource "pathvalidate" do
@@ -326,8 +327,8 @@ class McpAtlassian < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/96/a1/ae859ffac5a3338a66b74c5e29e244fd3a3cc483c89feaf9f56c39898d75/pydantic_settings-2.13.0.tar.gz"
-    sha256 "95d875514610e8595672800a5c40b073e99e4aae467fa7c8f9c263061ea2e1fe"
+    url "https://files.pythonhosted.org/packages/52/6d/fffca34caecc4a3f97bda81b2098da5e8ab7efc9a66e819074a11955d87e/pydantic_settings-2.13.1.tar.gz"
+    sha256 "b4c11847b15237fb0171e1462bf540e294affb9b86db4d9aa5c01730bdbe4025"
   end
 
   resource "pydocket" do
@@ -401,8 +402,8 @@ class McpAtlassian < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
-    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
+    url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
+    sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
   end
 
   resource "requests" do
@@ -416,8 +417,8 @@ class McpAtlassian < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/74/99/a4cab2acbb884f80e558b0771e97e21e939c5dfb460f488d19df485e8298/rich-14.3.2.tar.gz"
-    sha256 "e712f11c1a562a11843306f5ed999475f09ac31ffb64281f73ab29ffdda8b3b8"
+    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
+    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
   end
 
   resource "rich-rst" do
@@ -561,7 +562,7 @@ class McpAtlassian < Formula
     assert_match version.to_s, shell_output("#{bin}/mcp-atlassian --version")
 
     json = <<~JSON
-      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{}}}
+      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"homebrew","version":"1.0"}}}
       {"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
       {"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}
     JSON

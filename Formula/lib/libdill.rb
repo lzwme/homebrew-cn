@@ -5,8 +5,6 @@ class Libdill < Formula
   sha256 "ebba0e5b433ec123b74a57d49b89dfa673aa258e03e6a452959e556b4c4529b9"
   license "MIT"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "7a6b319ff538280ed829e03970bc0c70b273080bb71a26bc83ff62bf396dd608"
     sha256 cellar: :any,                 arm64_sequoia:  "cfe256a0ada19b9c8405be0b3b95885137548fe38e0f3938f28bb50b8245b561"

@@ -15,12 +15,13 @@ class Octave < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "489022e9222a73eae12511661e5fbcf9eb648dbbc8eb38382c9b628e897bdc39"
-    sha256 arm64_sequoia: "784bf2de8e4cdd7b627910bea13fe36fd9a416c5d87b9543531a22e49132fbd1"
-    sha256 arm64_sonoma:  "389ceaced13256a12a704dfc7fa3cae68f3beeeaa22528b4a7d869dea95c5ede"
-    sha256 sonoma:        "450a61ac6b1c52781de453ac55fb1d327974244c2a2c5032844d1bafd06fcb76"
-    sha256 arm64_linux:   "a2bc05f2f9da8f2da5553d11c048849873a7e7aa1c81ae8777ad36f16cac991a"
-    sha256 x86_64_linux:  "1e69fe82b287d5328e570fc9e58328b8b10db8fe4b91d0094382e2a1c262f1b2"
+    rebuild 1
+    sha256 arm64_tahoe:   "bc72a6fae25257c3529422faab3a7072b5f9d0ac1da1d53225bc375520f06a4e"
+    sha256 arm64_sequoia: "cc44f99823fdcd9a6a9f15b6c3761e1332ade8eaa0577c261b9b97e677c4c440"
+    sha256 arm64_sonoma:  "49b571eb942008a866a2f0ca9f9f19c8b7d29cb31158fc6c72485a0ab9eec6a3"
+    sha256 sonoma:        "e4161f3c605cbea2e9d8da9583b7f0c82e33df93866ba9cb79310d561ec9ef74"
+    sha256 arm64_linux:   "54a0bd0dbe1a2569e782e43926412786b621eef4a9f14a0a91c5f5437a571edc"
+    sha256 x86_64_linux:  "2f604287dba19e890b668ce5625552f1199eb8ff52ec3770bc311d84eacf4a22"
   end
 
   head do
@@ -70,7 +71,6 @@ class Octave < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "little-cms2"
@@ -81,6 +81,7 @@ class Octave < Formula
     depends_on "automake"
     depends_on "mesa"
     depends_on "mesa-glu"
+    depends_on "zlib-ng-compat"
   end
 
   def install

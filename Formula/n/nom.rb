@@ -1,18 +1,18 @@
 class Nom < Formula
   desc "RSS reader for the terminal"
   homepage "https://github.com/guyfedwards/nom"
-  url "https://ghfast.top/https://github.com/guyfedwards/nom/archive/refs/tags/v3.2.0.tar.gz"
-  sha256 "d0c337e508ecfe6014043ef54502f6cce86b1e20ab58b9f89be84d8a4940eb16"
+  url "https://ghfast.top/https://github.com/guyfedwards/nom/archive/refs/tags/v3.2.5.tar.gz"
+  sha256 "f12c6f8429808a64db46cc3530454d9bd131e3bd4027c57720ab096853cca2e0"
   license "GPL-3.0-only"
   head "https://github.com/guyfedwards/nom.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ced6ddc02be488d8e9388493bb83b5de22104ed76be92feb93b9581337c358d7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66ce0a31c51651de8192ce50784291c4319fce96422a3e280c4e9d9ddf8814bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e76d14432a9cd90dc6bebf83ccd03ff42b9b298959b4b55e4cd8d46736bdfb2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "812fa0213e890148e6b4a67cc832ffd8f279d1e1e48c07f16370a1df0cc609e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8310e0b869d96bdb42177cc4e1daacde35992ce7ef9ec3a6ce1db4bc9ff6c9dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a13ed53d3dc93a7f5581e34c4207c07e6229c41655b06fbb77b2658e0f4ad55"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9441b757550dadf45e97e6be12608e0caee7c9f2ba32456329369d88e9491dd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1e889b6f1e4cb858550245e9695a50fabbebc55e93a469d3da428eebc194705"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ef3cadf6462d7720dffbae0a9ed195ae661009d0b1435999f7a067d2a82d648"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b19fdd05a834b74dee81f0103ba6fce376fc2e88d20f28527d36fb1a8e24f4f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb77836c2ed82709e2d52a1055443fe314e0aaaa3fa3a5937181c910c319709c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0265f8176c39d0be22c4309143da9b93a7695674a50c194fe49fb09087255a5c"
   end
 
   depends_on "go" => :build

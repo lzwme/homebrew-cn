@@ -1,8 +1,8 @@
 class Sui < Formula
   desc "Next-generation smart contract platform powered by the Move programming language"
   homepage "https://sui.io"
-  url "https://ghfast.top/https://github.com/MystenLabs/sui/archive/refs/tags/testnet-v1.65.2.tar.gz"
-  sha256 "05f9b2c5c725266fc3d89724a8ef3d29d74871d00479fc5b0c55a8e94bc8e72a"
+  url "https://ghfast.top/https://github.com/MystenLabs/sui/archive/refs/tags/testnet-v1.66.1.tar.gz"
+  sha256 "86447f812d4c44504a2fe063fcbb0c7b9962ab8036445faaf6844c1fb60be406"
   license "Apache-2.0"
 
   livecheck do
@@ -13,12 +13,12 @@ class Sui < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c305b5ae9901fdc19e8813956202c2530fac7e842188bc856dbdd66ff1bd14e6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76bae5623b17bb9a4915cc617945c207aa247ab56f4edd0a371f32fc06f3ca58"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb28120beabcc8dfdd631364960c4acdfeae0c6fb44209d12f9e0841d19f016e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bab2c0956e78a8234d48dc7989e5310691adc13fb31d0d18b6cb8e37861b0059"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "398483db85b45fe5ffbf9d5cb3d1022565789f92121deb26912d09fa472bfe98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2631d41d4f84e1a0919334da666ac7997d40688fdd6c33cfe67d85fe5a68e71"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1aaf6cd211cf0c3d9c28ec00fbb24e4f17cbcce6a09fea5a60b918aa98a22dd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "864fdfec09c670ef539f7182579038efc6baa8e45b0d0814b838d7c8af9c047a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ffdd586ccbe5e945ceb4d7fdc5b8451a92bb248201f6bd4f23fe2c4235c7dbbf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "256164b891f7dda891b4c75dcf4c5da9fb57fd400a701f0d14c23682c36997de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "48e9c68a70ad606b2cb46ee3c850414cb7fd22243badcb362b7d7f777fe47aea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1f144d8f59c1200346fcd86cb6c0eac717d3bc240d76354763f7fc13e6d358d"
   end
 
   depends_on "cmake" => :build
@@ -37,12 +37,24 @@ class Sui < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/sui --version")
 
-    (testpath/"testing.keystore").write <<~EOS
+    ENV["SUI_CONFIG_DIR"] = testpath
+
+    (testpath/"testing.keystore").write <<~JSON
       [
         "AOLe60VN7M+X7H3ZVEdfNt8Zzsj1mDJ7FlAhPFWSen41"
       ]
-    EOS
-    keystore_output = shell_output("#{bin}/sui keytool --keystore-path testing.keystore list")
+    JSON
+    (testpath/"client.yaml").write <<~YAML
+      ---
+      keystore:
+        File: "#{testpath}/testing.keystore"
+      external_keys: ~
+      envs: []
+      active_env: ~
+      active_address: ~
+    YAML
+
+    keystore_output = shell_output("#{bin}/sui keytool list")
     assert_match "0xd52f9cae5db1f8ab2cb0ac437cbcdda47900e92ee0a0c06906ffc84e26f999ce", keystore_output
   end
 end

@@ -1,8 +1,8 @@
 class FleetCli < Formula
   desc "Manage large fleets of Kubernetes clusters"
   homepage "https://github.com/rancher/fleet"
-  url "https://ghfast.top/https://github.com/rancher/fleet/archive/refs/tags/v0.14.2.tar.gz"
-  sha256 "cd2019c5db15f0b37c9f97113869c0b08368af4fecf8ad69a1862cbf6ea41368"
+  url "https://ghfast.top/https://github.com/rancher/fleet/archive/refs/tags/v0.14.3.tar.gz"
+  sha256 "9ed7701f9925fba3cd8907671d458a248138cfecbc28a02d1da5120d4709b552"
   license "Apache-2.0"
   head "https://github.com/rancher/fleet.git", branch: "main"
 
@@ -12,12 +12,12 @@ class FleetCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34607fd1793e96234ed825e6b2341e0afbb9dd2fd93f2932e08eef73d514e200"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f61b43b88591e1cce74645247396d4b9d809cb878942fd2c89dfeab72d8ecc99"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f971779a94b94d7e43f03a7b43d23a952b7558d9663552ae07401b507ee9749"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5b8b1aa3bc3a739580772e922b89fa18e5ddab2d2bee4f877cdda9e883582e98"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c97cfe45ed92053ee10476933831a1fab53509f354c6ac0944cfa6f9a9007875"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74783dc1b1a980be2c00bd3c21c4543cada6185bb576e05f0f6693e1279277ca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8fe5b9b3a9cd99bba491b6589c0cbbc131138f6265d00ee426f9d4cfb46c5976"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a02a5d0b06e139e760dff29980d40dcc2173339a4ba9d2365fd3b45240af5a0d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2add2a9d0cb5e6d0651b78513e22bc662d441ff4c4f48e5b7c691a65eacc02a8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "42af301c6895557ef3e7a96cedb26710e09b754ae64126b014661265f2c43076"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "526f121f230320dcd7574dea90c0e3fc03204d7a5d1bb40bed7990702e15ac9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6acbd21a792fa330fd32b397792c6a51c61e8c19617d81b79301b203c1c3461"
   end
 
   depends_on "go" => :build

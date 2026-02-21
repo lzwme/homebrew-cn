@@ -18,6 +18,11 @@ class Bsc < Formula
     end
   end
 
+  livecheck do
+    url :stable
+    strategy :github_releases
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "5a8e4ab5547aa47dfd38ebce591d09be2608ae9cbad646f812840a806d68bcf4"

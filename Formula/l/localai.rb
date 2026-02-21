@@ -1,18 +1,18 @@
 class Localai < Formula
   desc "OpenAI alternative"
   homepage "https://localai.io"
-  url "https://ghfast.top/https://github.com/mudler/LocalAI/archive/refs/tags/v3.11.0.tar.gz"
-  sha256 "c26e7ff1d104e6a99437cdbc4bc1592eddc8ff4dd56c2474ff9a4576841e8fde"
+  url "https://ghfast.top/https://github.com/mudler/LocalAI/archive/refs/tags/v3.12.0.tar.gz"
+  sha256 "200b8275fe179cb3faa60f8ba34155002d3ffebcf21ee8d1e7e7567ceae6c869"
   license "MIT"
   head "https://github.com/mudler/LocalAI.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c548fb9266fedc27b4b980568a0d9761b85ec3b21acd39facd3e8b905ee391d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb8bf80a3650f90433b58da15e9d6ebb92c39361c8ca7eac5fbdf9a7fbd0a8e6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50b832debc0a4ba58bcc1846a7eabd9ddd338bf49f605ee583b52a94661a1bb4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d57d68b54158c6d6d3194e71ebd8c5a59055d76309431645aa05963d21fce66c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d393dda48eae1f03ad41323920238695c69aeedb8a796968a4f0cf6667b115be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bd6d1b70f3a61c7f0160d66697f7abafd2d490063aa2de1b1366d8fbb2f4b19"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff4d1d65b2389972c1245242318cd8f186079c683a2772fc5b9c941261b1bc9b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b82e5103318ecbc3de7acc3e741edcd80a39d6e75ea2fcdb366c380bfe1431cc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d53b22682c00b9e222d4c637bd7acf19f869e36957cb9d6c5d3b62dbfeaf4311"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ecdeee114383207b7d55e25f864ad75eb2a1e2e092965277dc0d7e8a74370c53"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7eed1811243803131fc26e282a1914f7fee4b5c0a7fa65e028ba77fc60e52ef5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ed9a5fa50d9d1e51de7eb3dbcdf3427929c36e890aec3c91b6a1b9f80527c2a"
   end
 
   depends_on "go" => :build

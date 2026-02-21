@@ -5,8 +5,6 @@ class Libspng < Formula
   sha256 "47ec02be6c0a6323044600a9221b049f63e1953faf816903e7383d4dc4234487"
   license "BSD-2-Clause"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any, arm64_tahoe:   "b7021367db7d381734cae9e0f63d0306a59ebb9cf2483550882e1c944ffd28ba"

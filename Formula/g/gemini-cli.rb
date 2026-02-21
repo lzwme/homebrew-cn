@@ -28,10 +28,12 @@ class GeminiCli < Formula
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     node_modules = libexec/"lib/node_modules/@google/gemini-cli/node_modules"
-    (node_modules/"tree-sitter-bash/prebuilds").glob("*")
-      .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
-    (node_modules/"node-pty/prebuilds").glob("*")
-      .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+    (node_modules/"tree-sitter-bash/prebuilds").glob("*").each do |dir|
+      rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}"
+    end
+    (node_modules/"node-pty/prebuilds").glob("*").each do |dir|
+      rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}"
+    end
 
     clipboardy_fallbacks_dir = libexec/"lib/node_modules/@google/#{name}/node_modules/clipboardy/fallbacks"
     rm_r(clipboardy_fallbacks_dir) # remove pre-built binaries

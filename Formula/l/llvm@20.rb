@@ -12,13 +12,13 @@ class LlvmAT20 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "8fa8c1997152175f6a9acf246de927257de7732b6e0dc660241fad3553ef8eb9"
-    sha256 cellar: :any,                 arm64_sequoia: "e29da2ee12076cc82d1ecab3541b5c70b3d63e369487be4ea6a549e8fb801cbf"
-    sha256 cellar: :any,                 arm64_sonoma:  "4615ce2cb54d2c1b17e90f3cf3ec4726158013c0b855115500a6576bd3f9e524"
-    sha256 cellar: :any,                 sonoma:        "ae9479857a791340803a48d756b64cda33f8f0a1eb80ae73c4343958fa3794d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4aa530e390aec930a738bc54e1be97f68278310fb6061ec297f833a17bc21137"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85d4e657dccd5f95355a75266eda3fac4d755ceece78cf56b0cb33aee261195e"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "b95ac9e58b54a35797d89b3ac9ec2d56411b47d3942851567a6eb169e5dc9c09"
+    sha256 cellar: :any,                 arm64_sequoia: "f58e2963c383af35064c7aa47790799a0ca0974a471727c7b5f0b278fd4e1247"
+    sha256 cellar: :any,                 arm64_sonoma:  "1fefd983fc606f81c1715af4dbecfa8fbe2967196e06bcac6d63baad878c511d"
+    sha256 cellar: :any,                 sonoma:        "62c1cbffed8c724ef4201147e6bc80830e25456f465b09ec904731256741be09"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "73197c8ca4e845ec81c221c8f4138fd12b2b0b307e2b75448a75553cb85e1af1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e163127510058e535bb522054238cdf928f676b7c83aa1c4a224726e2225a50c"
   end
 
   keg_only :versioned_formula
@@ -34,12 +34,12 @@ class LlvmAT20 < Formula
   uses_from_macos "libedit"
   uses_from_macos "libffi"
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "pkgconf" => :build
     depends_on "binutils" # needed for gold
     depends_on "elfutils" # openmp requires <gelf.h>
+    depends_on "zlib-ng-compat"
   end
 
   # Fix triple config loading for clang-cl

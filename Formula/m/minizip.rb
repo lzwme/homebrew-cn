@@ -4,18 +4,20 @@ class Minizip < Formula
   url "https://zlib.net/zlib-1.3.2.tar.gz"
   sha256 "bb329a0a2cd0274d05519d61c667c062e06990d72e125ee2dfa8de64f0119d16"
   license "Zlib"
+  revision 1
+  compatibility_version 1
 
   livecheck do
     formula "zlib"
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3509b7ae862640d8bcae8521f6cc61dc447fa8d7580d1961003e6acbb6c903db"
-    sha256 cellar: :any,                 arm64_sequoia: "3eda928b42efb194e416849e203248ecb77f19c48949d51b51a6d84abe3d4fda"
-    sha256 cellar: :any,                 arm64_sonoma:  "3091cdc788c421ef511c69266932980b2c1b7a24decab9b8f4ae515877f5ae86"
-    sha256 cellar: :any,                 sonoma:        "0d279991a7e3862b3d7373443e1fd7ab10601a658853cf09dc0cfca011bcade0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5052a45efd323052f2e691347a6dee347a1e31d919dff449c42afbce8b38f05b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3937e8c842000776fa84a4c741d6dddd077680d693f25ba7a6097fe56b14ac38"
+    sha256 cellar: :any,                 arm64_tahoe:   "16451e526b90dcd6380df6003dec30796b9ebcc7fe8e62b9778a583e5b72cb47"
+    sha256 cellar: :any,                 arm64_sequoia: "f90adff7167a19f53ef85ce23d46c5b5d016f58b9db126b02dc91c76a0fe744a"
+    sha256 cellar: :any,                 arm64_sonoma:  "3e3f68961e5480e0d314a8db8978029bbd1315e6c00b909669456fa3693b1914"
+    sha256 cellar: :any,                 sonoma:        "f6f4577f2f7c5d04fde8384f0ca43ee1cece548aa6abe0ae99b387058e79bbd3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1d6d57105aa286c0347bc6a0dc3d80e86843e7c7b325467b8c1f76efd8a5dcf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8405db317fdfa195ffad20c51f5af22a0cc49c2076dd8f0b79f39ed5d5807222"
   end
 
   depends_on "autoconf" => :build
@@ -30,18 +32,7 @@ class Minizip < Formula
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}"
-    system "make"
-
     cd "contrib/minizip" do
-      if OS.mac?
-        # edits to statically link to libz.a
-        inreplace "Makefile.am" do |s|
-          s.sub! "-L$(zlib_top_builddir)", "$(zlib_top_builddir)/libz.a"
-          s.sub! "-version-info 1:0:0 -lz", "-version-info 1:0:0"
-          s.sub! "libminizip.la -lz", "libminizip.la"
-        end
-      end
       system "autoreconf", "--force", "--install", "--verbose"
       system "./configure", *std_configure_args
       system "make", "install"
@@ -50,13 +41,6 @@ class Minizip < Formula
       # https://github.com/madler/zlib/pull/1165
       (include/"minizip").install "ints.h"
     end
-  end
-
-  def caveats
-    <<~EOS
-      Minizip headers installed in 'minizip' subdirectory, since they conflict
-      with the venerable 'unzip' library.
-    EOS
   end
 
   test do

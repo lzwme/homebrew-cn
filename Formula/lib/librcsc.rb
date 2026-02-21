@@ -6,8 +6,6 @@ class Librcsc < Formula
   license "LGPL-3.0-or-later"
   revision 3
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "a20cee1adaa0278ef3ce5a74606d817cb4b7bd6abb89361f614b9fe81be00294"

@@ -6,8 +6,6 @@ class Libsbol < Formula
   license "Apache-2.0"
   revision 3
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "e1691af94f34be58995e9226038f9c446fc50a2f8222825df323085c1a7200a9"
     sha256 cellar: :any,                 arm64_sequoia: "b09a89a225eb9340d711c26788bc531b1ca5e3f37fc7be1dcc1419124210fd7f"

@@ -40,6 +40,9 @@ class GitFlow < Formula
   end
 
   deprecate! date: "2025-12-19", because: :repo_archived
+  disable! date: "2026-12-19", because: :repo_archived, replacement_formula: "git-flow-next"
+
+  conflicts_with "git-flow-next", because: "both install the same binaries"
 
   def install
     (buildpath/"shFlags").install resource("shFlags")

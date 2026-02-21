@@ -5,6 +5,11 @@ class Fracturedjson < Formula
   sha256 "af9a33c1c054bf6cc363e57f07aacf4b712483346301862301da408e6e399d97"
   license "MIT"
 
+  livecheck do
+    url :stable
+    regex(/cli[._-]v?(\d+(?:\.\d+)+)/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "912aa35255a79a37bd765a4e430cb99be8d876f195bdc819b3959d302f16e16e"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b62b8481d7ad91c69ba73ac39ca7efeb9f6fa22e13f4e862264e977cc4e3db57"

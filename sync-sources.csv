@@ -590,6 +590,7 @@ Homebrew-homebrew-core/Formula/b/bitrise.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bittwist.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bitwarden-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bitwise.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bitwuzla.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bkcrack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bkmr.rb, Homebrew/homebrew-core, 1
@@ -2428,6 +2429,7 @@ Homebrew-homebrew-core/Formula/g/git-extras.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-filter-repo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-fixup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-flow-avh.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/git-flow-next.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-flow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-fresh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-ftp.rb, Homebrew/homebrew-core, 1
@@ -6988,6 +6990,7 @@ Homebrew-homebrew-core/Formula/s/stripe-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stripe-mock.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/strongswan.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/structurizr-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/structurizr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sttr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stubby.rb, Homebrew/homebrew-core, 1
@@ -8931,6 +8934,7 @@ Homebrew-homebrew-cask/Casks/c/clash-verge-rev.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/classicftp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/classroom-mode-for-minecraft.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/claude-code.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/claude-devtools.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/claude-island.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/claude.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/claudebar.rb, Homebrew/homebrew-cask, 1
@@ -10288,7 +10292,6 @@ Homebrew-homebrew-cask/Casks/font/font-d/font-danfo.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/font/font-d/font-dangrek.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-d/font-darker-grotesque.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-d/font-darumadrop-one.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/font/font-d/font-dashicons.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-d/font-david-clm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-d/font-david-libre.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-d/font-dawning-of-a-new-day.rb, Homebrew/homebrew-cask, 0
@@ -10546,21 +10549,6 @@ Homebrew-homebrew-cask/Casks/font/font-g/font-glegoo.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/font/font-g/font-gloock.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-gloria-hallelujah.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-glory.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/font/font-g/font-glow-sans-j-compressed.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-g/font-glow-sans-j-condensed.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-g/font-glow-sans-j-extended.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-g/font-glow-sans-j-normal.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-g/font-glow-sans-j-wide.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-g/font-glow-sans-sc-compressed.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-g/font-glow-sans-sc-condensed.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-g/font-glow-sans-sc-extended.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-g/font-glow-sans-sc-normal.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-g/font-glow-sans-sc-wide.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-g/font-glow-sans-tc-compressed.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-g/font-glow-sans-tc-condensed.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-g/font-glow-sans-tc-extended.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-g/font-glow-sans-tc-normal.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-g/font-glow-sans-tc-wide.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-gluten.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-gnu-unifont.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-go-mono-nerd-font.rb, Homebrew/homebrew-cask, 1
@@ -11019,7 +11007,6 @@ Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-wenkai-lite.rb, Homebrew/home
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-wenkai-mono-tc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-wenkai-tc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-wenkai.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-zhenkai.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-m+-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-m-plus-1-code.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-m-plus-1.rb, Homebrew/homebrew-cask, 0
@@ -13715,7 +13702,6 @@ Homebrew-homebrew-cask/Casks/n/nvidia-nsight-systems.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/n/nvs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nwjs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nx-studio.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/n/nzbget-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nzbvortex.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/objectivesharpie.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/objektiv.rb, Homebrew/homebrew-cask, 1
@@ -14209,6 +14195,7 @@ Homebrew-homebrew-cask/Casks/p/prudent.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/prusaslicer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/psi-plus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/psi.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/psiphon-conduit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/psst.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/psychopy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/ptpwebcam.rb, Homebrew/homebrew-cask, 1
