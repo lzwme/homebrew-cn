@@ -1,8 +1,8 @@
 class Fracturedjson < Formula
   desc "JSON formatter that produces highly readable but fairly compact output"
   homepage "https://github.com/j-brooke/FracturedJson"
-  url "https://ghfast.top/https://github.com/j-brooke/FracturedJson/archive/refs/tags/cli-v1.0.0.tar.gz"
-  sha256 "af9a33c1c054bf6cc363e57f07aacf4b712483346301862301da408e6e399d97"
+  url "https://ghfast.top/https://github.com/j-brooke/FracturedJson/archive/refs/tags/cli-v1.0.1.tar.gz"
+  sha256 "9da9a09e1e512b114b220620cc2bdfe2db491eb8094d87a0b773d88a855e16c0"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Fracturedjson < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "912aa35255a79a37bd765a4e430cb99be8d876f195bdc819b3959d302f16e16e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b62b8481d7ad91c69ba73ac39ca7efeb9f6fa22e13f4e862264e977cc4e3db57"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1af08c8ca1a9eb776ca48f46cf378b38873aa33be57648a4db9d8102cd67668b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d0eee561941c585634651f2c51a11f6f8bef39fa07731a1986a95f7bca11dba6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f533887a298e7fd15af4f044aab1dbe5d359d01d1da31cf92c89358e78b38c3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43886998520da5802beccbc38d8265f675d59479b60ddcd320d24617dd88305d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1dd71fb03ea6e15ff2b4b34255d76f7fb64a29e5b0098351b761ba1510cb74c7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2332fa83fc6098c1a04abd37f49e5be41e25005bc602ed039d77eee1496e19eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa6cd255c0057de51c05083eab084469b33d58ed125d2c2991cfede101facf06"
+    sha256 cellar: :any_skip_relocation, sonoma:        "31a5bd6552911fa0189e96031aac99bb82002fde4542118a7c95eeb852c247c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb23fe5446b5e3aa8990fee78c14ec5c98ef5a4d47ae47da812cd17b3fc9d286"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53d0d41ec51fb341e160e8b01756124139cf983c118bdb7001d3023f5acc5cec"
   end
 
   depends_on "dotnet" => :build

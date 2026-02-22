@@ -25,6 +25,9 @@ class Planck < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "52ba1633a236729c1ef9108e169c8bbf1bc4ca262a5cd05f67f7a2dc4f70ae37"
   end
 
+  deprecate! date: "2026-02-21", because: :does_not_build
+  disable! date: "2027-02-21", because: :does_not_build
+
   depends_on "clojure" => :build
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build

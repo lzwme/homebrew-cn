@@ -1,18 +1,18 @@
 class Gnmic < Formula
   desc "GNMI CLI client and collector"
   homepage "https://gnmic.openconfig.net"
-  url "https://ghfast.top/https://github.com/openconfig/gnmic/archive/refs/tags/v0.44.0.tar.gz"
-  sha256 "4d3488bdcd49e38249d52e299724cb981fb4266258b931a78cc026be952650dc"
+  url "https://ghfast.top/https://github.com/openconfig/gnmic/archive/refs/tags/v0.44.1.tar.gz"
+  sha256 "35c49ebfa50a6f55514ffca5f73fbdd24015a5c7e2745303f64661860fee50df"
   license "Apache-2.0"
   head "https://github.com/openconfig/gnmic.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb844704d1792a9bbc064e45d08161664f336d1adced43ed586c20e3db959148"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d18070ea49922eac2566afac8b74076c5ed8b026d0bb5d2a21b1fc5c80bce456"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ffdb5e94464aace6b7f78002da311ee8ef3bc5de4e8ec5621cd06f4d4618e1a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "969c81b20b71c0739cedd234b5b7a591556682a8f8a8ea85cfa89afe043135b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6bc581bbc18bcc1e4cc4d4d2bb2d19307478fb32a97a1ade73c0d366dadddda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "759a2b2db33ba1af3c0f05732f303740028b4ccc5341c6b2afc1985f92473b45"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0500bfbe6e22fd5711d2f1d704b26b50a23a44d09df64fa8844afab6b728cdb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d13a773831af1281f089a4bb76188b4ce028adfdabd011a7ddec00ef57defd3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85cee375129158bb584106fe50582ce50d43584b8a84aac36717df481170fbfc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "10eab81215c9d2ef2dc203b3f705e036f94271b3d078ddea19e44d07341c9327"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92db539f5bfccae7d75663c86b1eb61aa44e9e1f4aa59cd90d2373953b8b9088"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fae64ecd7e3f18fe9f92cd1e0d6a6f76c814549f959b389c5007a077236e90a"
   end
 
   depends_on "go" => :build

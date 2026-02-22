@@ -16,20 +16,7 @@ class Libaegis < Formula
 
   depends_on "cmake" => :build
 
-  on_arm do
-    on_linux do
-      depends_on "llvm" => :build
-    end
-
-    fails_with :gcc do
-      version "12"
-      cause "error: inlining failed in call to 'always_inline' 'veor3q_u8'"
-    end
-  end
-
   def install
-    ENV.llvm_clang if OS.linux? && Hardware::CPU.arm?
-
     # The library contains multiple implementations, from which the most optimal is
     # selected at runtime, see https://github.com/aegis-aead/libaegis/blob/main/src/common/cpu.c
     ENV.runtime_cpu_detection

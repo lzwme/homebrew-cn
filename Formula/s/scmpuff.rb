@@ -1,20 +1,18 @@
 class Scmpuff < Formula
   desc "Adds numbered shortcuts for common git commands"
   homepage "https://mroth.github.io/scmpuff/"
-  url "https://ghfast.top/https://github.com/mroth/scmpuff/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "4478a53ff16d70ca433d21a66f7e3532631f43ecd64a1fbaf0a933aa7cbd2df4"
+  url "https://ghfast.top/https://github.com/mroth/scmpuff/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "3733e5af8608331835affb7530c1baf88066e80e72bf78becdaa090a26cfc5f0"
   license "MIT"
   head "https://github.com/mroth/scmpuff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d9335d31cb6a4eaf7629c3d66e7af096efa7a255ce07ca45980b8c6ead74ac3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5cb1859e64a1c7d5ed9865ef08504813424a0d372720f165f22eb8cdcf9d28c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5cb1859e64a1c7d5ed9865ef08504813424a0d372720f165f22eb8cdcf9d28c0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5cb1859e64a1c7d5ed9865ef08504813424a0d372720f165f22eb8cdcf9d28c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0cb10c56e24bf596383ce3c2221b14cd37f70d886563b873073a0b7e49300f97"
-    sha256 cellar: :any_skip_relocation, ventura:       "0cb10c56e24bf596383ce3c2221b14cd37f70d886563b873073a0b7e49300f97"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b259cbbf0237281e162eb941a0457b9fa17cceb5bc8ab5d8459fce85fbe77d25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23567d3e31ff884250b533cbf175f24cdb22265d3b42bde108fe3722aa99a302"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "268d35b9474a9c66f4ef2026bc10dad07840a138e220ce5e1e5a27ebf3d4c543"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "268d35b9474a9c66f4ef2026bc10dad07840a138e220ce5e1e5a27ebf3d4c543"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "268d35b9474a9c66f4ef2026bc10dad07840a138e220ce5e1e5a27ebf3d4c543"
+    sha256 cellar: :any_skip_relocation, sonoma:        "007a8e74d69b60156364e70bbb98dfd3357eec896466958bf308d914ce2c1faa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cab3c3476b3a1a11a9c9cdedc7d6fbefcc29b21374f956ebdd497f3c3efcf03b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c91c5b365e2d273de4667653d0112a3a7f5b9e5426b382cf026df8e796c47417"
   end
 
   depends_on "go" => :build

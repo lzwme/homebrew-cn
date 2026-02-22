@@ -22,6 +22,10 @@ class Odin < Formula
   depends_on "llvm"
   depends_on "raylib"
 
+  fails_with :gcc do
+    cause "requires Clang"
+  end
+
   resource "raygui" do
     url "https://ghfast.top/https://github.com/raysan5/raygui/archive/refs/tags/4.0.tar.gz"
     sha256 "299c8fcabda68309a60dc858741b76c32d7d0fc533cdc2539a55988cee236812"
@@ -29,7 +33,6 @@ class Odin < Formula
 
   def install
     llvm = deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+(\.\d+)*)?$/) }
-    ENV.llvm_clang if OS.linux?
     ENV["LLVM_CONFIG"] = (llvm.opt_bin/"llvm-config").to_s
     ENV.append "LDFLAGS", "-Wl,-rpath,#{llvm.opt_lib}" if OS.linux?
 

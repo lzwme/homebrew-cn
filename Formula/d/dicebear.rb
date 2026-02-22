@@ -1,17 +1,17 @@
 class Dicebear < Formula
   desc "CLI for DiceBear - An avatar library for designers and developers"
   homepage "https://github.com/dicebear/dicebear"
-  url "https://registry.npmjs.org/dicebear/-/dicebear-9.3.1.tgz"
-  sha256 "7a40cf4d738a6af316c99c3da362c3cb5a78533a4ad1149e3c743a4fcc6cd7f0"
+  url "https://registry.npmjs.org/dicebear/-/dicebear-9.3.2.tgz"
+  sha256 "d700e8a6fcced026b4118bcf77f4bab41c843d804fbbdec0b1cce24ad8030d4d"
   license "MIT"
 
   bottle do
-    sha256                               arm64_tahoe:   "2d5ee46cf65d1eb6ef46da43fa6e1238c2eace5aefd170d90ac0128bdc61ab3b"
-    sha256                               arm64_sequoia: "c31306aec607575a24b5556321a908bc582112e9c70657989a9f885a6b2adff3"
-    sha256                               arm64_sonoma:  "d9950382ea3c4285094b20e258f702348e2ef9fabddf4994cfd0bcefacbbb6b4"
-    sha256                               sonoma:        "8a30f942c5c108fcde545de589925a80ea4dd63d62b324202384c946e1c30b31"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "283028b6c943843197d6a502e929ffa3e9a82f815978de6ff95feccb876104e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0920a24a23355b16c54b7af5ad07df0e4c567243c64cb44e53fec48ade5fc7e8"
+    sha256                               arm64_tahoe:   "5dbb477d32ada5b7786bd208c5851d82276f1c1321ac67fa07cac29221801553"
+    sha256                               arm64_sequoia: "1220b1055c921941bdd2e6030c2a849a055bd32cf05aa999ded4d86eebc5c77c"
+    sha256                               arm64_sonoma:  "b9a3c8495601160710cb07195b7934d2b092c64f1c0e967ffa743cbdffa807c2"
+    sha256                               sonoma:        "3988e84e91ebd760447afe77612ed1a6e4206574397fd418d8a2eb8a697bbed7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "64d047a513acb032107cd43d871fb3746e82806025eff993e716466ab97b3a7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a38d94d8ddf385f2cc990ac1783ee5194f991513effa0ca55b131402351e48b4"
   end
 
   depends_on "pkgconf" => :build
@@ -31,8 +31,8 @@ class Dicebear < Formula
   end
 
   resource "node-gyp" do
-    url "https://registry.npmjs.org/node-gyp/-/node-gyp-12.0.0.tgz"
-    sha256 "bbe606e43a53869933de6129c5158e9b67e43952bc769986bcd877070e85fd1c"
+    url "https://registry.npmjs.org/node-gyp/-/node-gyp-12.2.0.tgz"
+    sha256 "8689bbeb45a3219dfeb5b05a08d000d3b2492e12db02d46c81af0bee5c085fec"
   end
 
   def install

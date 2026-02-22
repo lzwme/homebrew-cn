@@ -10,12 +10,13 @@ class GimmeAwsCreds < Formula
   head "https://github.com/Nike-Inc/gimme-aws-creds.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "62555a563b379757033077605ecd2719e0a1cb26f3a066dd39b9cde85133edb1"
-    sha256 cellar: :any,                 arm64_sequoia: "b5dfed573cb8a62b5ecf8c50e0c4454c3d75521b0973163d17f74d3849e488cc"
-    sha256 cellar: :any,                 arm64_sonoma:  "24e8ad5e1378c813e8f65ebbbb91bd3e4751360e9c4cd74582d2a9ffd0eb266e"
-    sha256 cellar: :any,                 sonoma:        "5fedd866d8c812815e0313c1b693381416665de99eab826bd5fcec2d3092dae9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "575a9ad47a2af2acbd4d84be30f1f11fde44302ebf19a9aa6a4b8d5c6d84ec30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d64002ce757fd568af9ba7e0f48e91cb20b8d03be71becc4af2bb0b0af51078"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "6d5b602a3e658ba05973fae0430ee9578f6a1323609ee1c745ad63928392ccf4"
+    sha256 cellar: :any,                 arm64_sequoia: "c395e544028142429bc23b9f7a75f376e16bbb497cf895abb5d320a46c63fd0c"
+    sha256 cellar: :any,                 arm64_sonoma:  "cd9f51814f6afa6286021b36d7c1a9a7b094ad4d294071e3ba5ef4b96b2db150"
+    sha256 cellar: :any,                 sonoma:        "78a52fe44060b7e6d817e8c233c67d12016b65be0f42ceac7bd949f855dca9f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c75159fa799a086c2dee047c48697627cd7f8e618a61342c0d62d77dbe0647b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a3f8a0229adde3063cfa50d1c4a3801024c77855cc83660839231685dd0a98c"
   end
 
   depends_on "certifi"
@@ -80,13 +81,13 @@ class GimmeAwsCreds < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/68/73/2a8065918dcc9f07046f7e87e17f54a62914a8b7f1f9e506799ec533d2e9/boto3-1.42.32.tar.gz"
-    sha256 "0ba535985f139cf38455efd91f3801fe72e5cce6ded2df5aadfd63177d509675"
+    url "https://files.pythonhosted.org/packages/4f/53/2e0a325e080bd83f5dfd8f964b70b93badc284bcb5680bee75327771ad4a/boto3-1.42.54.tar.gz"
+    sha256 "fe3d8ec586c39a0c96327fd317c77ca601ec5f991e9ba7211cacae8db4c07a73"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/21/5e/84404e094be8e2145c7f6bb8b3709193bc4488c385edffc6cc6890b5c88b/botocore-1.42.32.tar.gz"
-    sha256 "4c0a9fe23e060c019e327cd5e4ea1976a1343faba74e5301ebfc9549cc584ccb"
+    url "https://files.pythonhosted.org/packages/be/9a/5ab14330e5d1c3489e91f32f6ece40f3b58cf82d2aafe1e4a61711f616b0/botocore-1.42.54.tar.gz"
+    sha256 "ab203d4e57d22913c8386a695d048e003b7508a8a4a7a46c9ddf4ebd67a20b69"
   end
 
   resource "charset-normalizer" do
@@ -105,8 +106,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "flatdict" do
-    url "https://files.pythonhosted.org/packages/3e/0d/424de6e5612f1399ff69bf86500d6a62ff0a4843979701ae97f120c7f1fe/flatdict-4.0.1.tar.gz"
-    sha256 "cd32f08fd31ed21eb09ebc76f06b6bd12046a24f77beb1fd0281917e47f26742"
+    url "https://files.pythonhosted.org/packages/1f/ba/e0461697020839f60741e493fc42b20a4cd3f91594ed3228f65ae9a50aee/flatdict-4.1.0.tar.gz"
+    sha256 "63bcd906a0859d91d0aace44b327178706c7fcf85a88c7ccf0825628376ad66b"
   end
 
   resource "frozenlist" do
@@ -128,6 +129,13 @@ class GimmeAwsCreds < Formula
     patch do
       url "https://github.com/html5lib/html5lib-python/commit/b90dafff1bf342d34d539098013d0b9f318c7641.patch?full_index=1"
       sha256 "779f8bab52308792b7ac2f01c3cd61335587640f98812c88cb074dce9fe8162d"
+    end
+
+    # Remove pkg_resources for setuptools 81+ compatibility
+    # https://github.com/html5lib/html5lib-python/pull/592
+    patch do
+      url "https://github.com/html5lib/html5lib-python/commit/1dbc19cd6db72cb919885827bc4883423e0cb647.patch?full_index=1"
+      sha256 "5951b823f353dd70806ad6e163ab8f46899496c1e8bb53970c99abe8d1df1a78"
     end
   end
 
@@ -157,8 +165,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "jmespath" do
-    url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
-    sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
+    url "https://files.pythonhosted.org/packages/d3/59/322338183ecda247fb5d1763a6cbe46eff7222eaeebafd9fa65d4bf5cb11/jmespath-1.1.0.tar.gz"
+    sha256 "472c87d80f36026ae83c6ddd0f1d05d4e510134ed462851fd5f754c8c3cbb88d"
   end
 
   resource "jwcrypto" do
@@ -177,8 +185,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/80/1e/5492c365f222f907de1039b91f922b93fa4f764c713ee858d235495d8f50/multidict-6.7.0.tar.gz"
-    sha256 "c6e99d9a65ca282e578dfea819cfa9c0a62b2499d8677392e09feaf305e9e6f5"
+    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
+    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
   end
 
   resource "okta" do
@@ -207,8 +215,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/e7/46/bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726/pyjwt-2.10.1.tar.gz"
-    sha256 "3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"
+    url "https://files.pythonhosted.org/packages/5c/5a/b46fa56bf322901eee5b0454a34343cdbdae202cd421775a8ee4e42fd519/pyjwt-2.11.0.tar.gz"
+    sha256 "35f95c1f0fbe5d5ba6e43f00271c275f7a1a4db1dab27bf708073b75318ea623"
   end
 
   resource "pyobjc-core" do
@@ -282,8 +290,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "xmltodict" do
-    url "https://files.pythonhosted.org/packages/6a/aa/917ceeed4dbb80d2f04dbd0c784b7ee7bba8ae5a54837ef0e5e062cd3cfb/xmltodict-1.0.2.tar.gz"
-    sha256 "54306780b7c2175a3967cad1db92f218207e5bc1aba697d887807c0fb68b7649"
+    url "https://files.pythonhosted.org/packages/a9/66/d1242ce8748c698e0036837dfbb530480e31f11d3ecf7101cd4e30d29913/xmltodict-1.0.3.tar.gz"
+    sha256 "3bf1f49c7836df34cf6d9cc7e690c4351f7dfff2ab0b8a1988bba4a9b9474909"
   end
 
   resource "yarl" do
@@ -292,12 +300,6 @@ class GimmeAwsCreds < Formula
   end
 
   def install
-    # Workaround until new flatdict release with
-    # https://github.com/gmr/flatdict/commit/011dd124f158cd9a7d2d0b35dcecab8e3da23436
-    odie "Check if setuptools workaround can be removed!" if resource("flatdict").version > "4.0.1"
-    (buildpath/"build-constraints.txt").write "setuptools<82\n"
-    ENV["PIP_BUILD_CONSTRAINT"] = buildpath/"build-constraints.txt"
-
     if OS.mac?
       # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
       ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"

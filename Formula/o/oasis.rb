@@ -7,12 +7,13 @@ class Oasis < Formula
   head "https://github.com/oasisprotocol/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b982e50723c6016ef59e6db9fdf0cb1ddf537ab577f88fa53ca8a140627defb6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ab9c4eac4d8ffb574fb21b9725c7ef7c8f4223f781f6a75eb1cb022ac54573f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3819c779b1e76e3551353e2f4551c774ee50f1fc4f468e7e46210d54960c8f1a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "534e7647c208c6bee42d6bbe6857f0065b3abf1f113bce98a149da7f30f68c25"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a690519770595018b3f856d2823dc5a34a7d6abff7a430e317ce2c12321503f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfb090c4ccc359e3785658125bc0844e2069ecedb39ce9668a69f5668b4e7b8f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "64084c58a254efa4ee65cca0ce85da5077108f260ae11026d1e2671c6b702fa8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab2e03f7f23391e08f11d7e3d931f9581f12db7f669f9caa8d2a4954a61a212e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19c5c1148840be6aafe3690bc4ff89eb0d8271d2e9dfb74cbdce8763bb7d9334"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8b1fd40a83e07b223d510d671c557a3496f535b7542a229122ef4dc8d9f8c85b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a82e0e7359489d61ab8c99ba531eb46aa99bd736ed6be1fb7ede3f5dd2debb36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c62e6eea739061fa3fbd6404f0bff990649d364e45681f77ba4137db6e58b0f"
   end
 
   depends_on "go" => :build
@@ -25,6 +26,7 @@ class Oasis < Formula
     ]
 
     system "go", "build", *std_go_args(ldflags:)
+    generate_completions_from_executable(bin/"oasis", shell_parameter_format: :cobra)
   end
 
   test do

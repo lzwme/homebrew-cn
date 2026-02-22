@@ -1,18 +1,18 @@
 class Maturin < Formula
   desc "Build and publish Rust crates as Python packages"
   homepage "https://github.com/PyO3/maturin"
-  url "https://ghfast.top/https://github.com/PyO3/maturin/archive/refs/tags/v1.12.3.tar.gz"
-  sha256 "7fef666d3f91ddb91743a6a96cd4aec69654b7e9cb570c988890f147c27c11d1"
+  url "https://ghfast.top/https://github.com/PyO3/maturin/archive/refs/tags/v1.12.4.tar.gz"
+  sha256 "a6db86fe870d200ba7492107540e49dd512bc0add1f9a2b910b9b5d4a42baa76"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/PyO3/maturin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fb2d2024c4109c7198897096b4e11454a2d80528a249f936d9d1f54378ee85b8"
-    sha256 cellar: :any,                 arm64_sequoia: "1038454e535328b27326566fcbb7740268efa09d8aa2954051f9afbc56fb5806"
-    sha256 cellar: :any,                 arm64_sonoma:  "022ea96688bb1ef077b59f1e937ddf90a6e747589f3c784608e8c48d0d062ace"
-    sha256 cellar: :any,                 sonoma:        "362c1f0cc8a5ecf0aeeb82cab9e99a1a369fa91c606dadcaacc046f8776b04e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f47891384e2f20b6845597f9170dbcd3f73f01887e37fb51cf1a83d4c528267"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e04a5e4e39f493dd8cf866b3a57d52e472c5623ff1a6cc3589e15cee20f042fd"
+    sha256 cellar: :any,                 arm64_tahoe:   "4deefa7afcabce1839e4a93c40e0641fe12e94007f6ecea38a3c987b61ec4704"
+    sha256 cellar: :any,                 arm64_sequoia: "b55406a9e1d6843d17b8a66639514ba916653c54e3586e72d2dc4d3a6cb680f8"
+    sha256 cellar: :any,                 arm64_sonoma:  "f67b488ce1f8c5daa5708b74e44e58fb4e1cf9462240a63e27c47fb844a15d85"
+    sha256 cellar: :any,                 sonoma:        "fd16bf31c045db428cca3a1437da6692042996c49feac9aaa84ebac1a10293f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5b7b105c789c0aa405ad51ce727f021b0adc9d266f3de6bf7081209772305a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e80a820530e5342fb37da7e8e878810f5f71c3e69f04bca9ce793d9c6eefa0ec"
   end
 
   depends_on "pkgconf" => :build

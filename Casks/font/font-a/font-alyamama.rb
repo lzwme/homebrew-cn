@@ -2,9 +2,10 @@ cask "font-alyamama" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/alyamama/Alyamama%5Bwght%5D.ttf"
+  url "https://github.com/google/fonts/raw/main/ofl/alyamama/Alyamama%5Bwght%5D.ttf",
+      verified: "github.com/google/fonts/"
   name "Alyamama"
-  homepage "https://github.com/Mestaratype/AlYamama"
+  homepage "https://fonts.google.com/specimen/Alyamama"
 
   font "Alyamama[wght].ttf"
 

@@ -23,19 +23,7 @@ class Turso < Formula
   depends_on "rust" => :build
   uses_from_macos "sqlite" => :test
 
-  on_arm do
-    on_linux do
-      depends_on "llvm" => :build
-    end
-
-    fails_with :gcc do
-      version "12"
-      cause "error: inlining failed in call to 'always_inline' 'veor3q_u8'"
-    end
-  end
-
   def install
-    ENV.llvm_clang if OS.linux? && Hardware::CPU.arm?
     system "cargo", "install", *std_cargo_args(path: "cli")
   end
 

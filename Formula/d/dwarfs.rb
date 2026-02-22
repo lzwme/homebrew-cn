@@ -128,9 +128,6 @@ class Dwarfs < Formula
       }
     CPP
 
-    # ENV.llvm_clang doesn't work in the test block
-    ENV["CXX"] = Formula["llvm"].opt_bin/"clang++" if OS.mac? && DevelopmentTools.clang_build_version <= 1500
-
     system ENV.cxx, "-std=c++20", "test.cpp", "-I#{include}", "-L#{lib}", "-o", "test", "-ldwarfs_common"
 
     assert_equal version.to_s, shell_output("./test").chomp

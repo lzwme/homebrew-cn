@@ -1,19 +1,18 @@
 class Nmail < Formula
   desc "Terminal-based email client for Linux and macOS"
   homepage "https://github.com/d99kris/nmail"
-  url "https://ghfast.top/https://github.com/d99kris/nmail/archive/refs/tags/v5.9.2.tar.gz"
-  sha256 "349217973622ee7d3d3b1ad6e7108efa4926d0f9324839b04a8d22f52e3e6a8d"
+  url "https://ghfast.top/https://github.com/d99kris/nmail/archive/refs/tags/v5.10.3.tar.gz"
+  sha256 "a667b410a865eef7fb08ca9afceebf6a9a85c61850df875005255a88960c5158"
   license "MIT"
   head "https://github.com/d99kris/nmail.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ab8842a446c108d251f2703b15f39a2680fb666d2e5be3458d68cc6300d28671"
-    sha256 cellar: :any,                 arm64_sequoia: "8b1a19b7785b3e2d283b770f0b1cea4f99123804ebcb2b10b1e5436b3f1f49ea"
-    sha256 cellar: :any,                 arm64_sonoma:  "5ec98d78eecdb0766dc68ac1350562c14dee447ae6ae1d664b8d22486f46cf6a"
-    sha256 cellar: :any,                 sonoma:        "e63a9dfd5c1f01d7b22ba846dc8f1fe7c95080f188bed76d02acb31ed5ab0eb5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "199a038d63b5e75286b8f1c28d991aed2f729ffb7185ef8c4a4b8a48cd825c71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "539c2cefd4b992ecb09274f59cfebab58b6ca2d907f1d455fa1c411aa08b2bfb"
+    sha256 cellar: :any,                 arm64_tahoe:   "2e9d07e160b98ddd1f0bbc113de3b91460ed9515754ed07d80777bf46592507d"
+    sha256 cellar: :any,                 arm64_sequoia: "e182f0e1323992af8ddc83fd5dac87565d29d454de9200a3b36f584eab7ade07"
+    sha256 cellar: :any,                 arm64_sonoma:  "4636c97fafd045eef26b33f72a3a22406f4fd53c5f32b72148d6c8f4d6dfdb2d"
+    sha256 cellar: :any,                 sonoma:        "1923bcc5a6e28f585f4c23f158415865e9b49ce970423fd16a4104d734d7dc96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "edc6b2f46d42887d69bd9566b022ccf4548d664cb932844ac354d53b3aad0fce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20a755e09c43cc399166abfcc3993840c0fb064244d2444c53c2b5605e3a227d"
   end
 
   depends_on "cmake" => :build

@@ -32,17 +32,13 @@ class Morse < Formula
     sha256 "ae37ff290eba510fd52fe8babbe86c3ab56755b3ad5a9b7f9949b6a899b06288"
   end
 
-  patch :DATA
-
   def install
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
-
-    ENV["CC"] = "#{ENV.cc} -Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     # Build can fail if morse.1 and QSO.1 run simultaneously
     ENV.deparallelize
 
-    system "make", "all"
+    system "make", "all", "DEVICE=PA"
     bin.install %w[morse QSO]
     man1.install %w[morse.1 QSO.1]
   end
@@ -56,19 +52,3 @@ class Morse < Formula
     end
   end
 end
-
-__END__
-diff --git a/Makefile b/Makefile
-index 8bdf1f6..df39baa 100644
---- a/Makefile
-+++ b/Makefile
-@@ -28,8 +28,8 @@
- #DEVICE = X11
- #DEVICE = Linux
- #DEVICE = OSS
--DEVICE = ALSA
--#DEVICE = PA
-+#DEVICE = ALSA
-+DEVICE = PA
-
- VERSION=$(shell sed -n <NEWS '/^[0-9]/s/:.*//p' | head -1)

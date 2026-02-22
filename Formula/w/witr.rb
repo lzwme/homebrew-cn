@@ -1,17 +1,17 @@
 class Witr < Formula
   desc "Why is this running?"
   homepage "https://github.com/pranshuparmar/witr"
-  url "https://ghfast.top/https://github.com/pranshuparmar/witr/archive/refs/tags/v0.2.7.tar.gz"
-  sha256 "f95bfa6f03a465d7862ac3a49461dc6f24ae379e4a81153975e51e08af6ff4d6"
+  url "https://ghfast.top/https://github.com/pranshuparmar/witr/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "dce5f0fe15a6de590f44b6c2d09e282300e30cb52eaff3e44c6643c960203cee"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cda3926698fe171974b679a75ab02967c7298ded2923ddfb70ce82fbc8d8e39a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4d7f6ad2ceb0af6480d98b2f2107be480a93e711b25cbab3066093878dbd65f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0383b101bd33da0e184dae3a777207769c0215a3795e70e4db8d8d1499989b90"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ec7ca2b3e13ac11dc140370420d99a709973207eb38d073d05115dcc1c88dbe5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "84e465d86c24d3035ee5437a55528a5b2e0d97a6d7da451e068d736d2884b97d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b792b938f6ca503f648def594733191407140f956371bcee8b99aa41d1491741"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0c7f34d3243aa23a756901cf3f4ffc831d586e19f30e1f43908c6a3d1e591907"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ff4cff6554dc662703b3d395c6dd78332c7d34f3d4901628490f40c615a5e87"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "caee8a7bbf5cdcb36749337259190709ccafe0617d824f94082426ee1d4fbefa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "31051b50229f4a47c603f5dd29a9fe43b389ab93df3a0a7cb0d7b5fbb9ddc206"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "96449d0c78d48ff58e5749643ddc933be3bfba70ae21e583b44c0a54747c368d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc65750ef8b21a137a65c098cf33fa15a8c5290829d78a711accdb38636ce68c"
   end
 
   depends_on "go" => :build

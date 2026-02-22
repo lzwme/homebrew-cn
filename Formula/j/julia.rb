@@ -17,25 +17,27 @@ class Julia < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "feef88cb70100baa2590929b22b78f987ed65e9f9163d34db73e165a2246a33c"
-    sha256 cellar: :any,                 arm64_sequoia: "8b812081b747b27a623bb47183ed01521441c05901e6da33083184f7a0cf116f"
-    sha256 cellar: :any,                 arm64_sonoma:  "c64e6b0aaa3d1f86cedcaf072a80133f9814892817e1c41f5ba71757a85f3ff4"
-    sha256 cellar: :any,                 sonoma:        "bed02eb37d9abe525a52e3fc2d6eaffe9f9f11ee8b4a2e601a1e3ddf80bb88f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc0e76b47a5fefdbac7febad14795a43d72ca937a8463e24c687a2394a166042"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "9785857320c7d661ee4658ebdf4b3e3983904beca996c081222ec8ec50b6ebc2"
+    sha256 cellar: :any,                 arm64_sequoia: "7d67a46ec8794767598055582bb4e3cd3117239dc43e697de49abec822e7385e"
+    sha256 cellar: :any,                 arm64_sonoma:  "f6a777fb6382ec79c96627769bed728b22f752e46ee672e38051f9ce890de2f0"
+    sha256 cellar: :any,                 sonoma:        "ecb8100fb9924dbfe8ae53aaba483542b8cba21d3afe53a14bb667cea5b35f23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ff47b0a140358b3ccfa2891f41b8a2cc97a2d68853f7e2d96c54417adb15bd8"
   end
 
   depends_on "cmake" => :build # Needed to build LLVM
-  depends_on "gcc" => :build # for gfortran
-  depends_on "ca-certificates"
+
+  depends_on "ca-certificates" => :no_linkage
   depends_on "curl"
-  depends_on "gmp"
-  depends_on "libblastrampoline"
+  depends_on "gcc" # for gfortran
+  depends_on "gmp" => :no_linkage
+  depends_on "libblastrampoline" => :no_linkage
   depends_on "libgit2"
-  depends_on "libnghttp2"
-  depends_on "libssh2"
-  depends_on "mpfr"
-  depends_on "openblas64"
-  depends_on "openlibm"
+  depends_on "libnghttp2" => :no_linkage
+  depends_on "libssh2" => :no_linkage
+  depends_on "mpfr" => :no_linkage
+  depends_on "openblas64" => :no_linkage
+  depends_on "openlibm" => :no_linkage
   depends_on "openssl@3"
   depends_on "p7zip"
   depends_on "pcre2"
@@ -46,10 +48,10 @@ class Julia < Formula
   uses_from_macos "perl" => :build
   uses_from_macos "python" => :build
   uses_from_macos "ncurses" # for terminfo
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "patchelf" => :build
+    depends_on "zlib-ng-compat"
   end
 
   conflicts_with "juliaup", because: "both install `julia` binaries"

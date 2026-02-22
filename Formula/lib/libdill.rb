@@ -1,6 +1,6 @@
 class Libdill < Formula
   desc "Structured concurrency in C"
-  homepage "https://libdill.org/"
+  homepage "https://github.com/sustrik/libdill"
   url "https://ghfast.top/https://github.com/sustrik/libdill/archive/refs/tags/2.14.tar.gz"
   sha256 "ebba0e5b433ec123b74a57d49b89dfa673aa258e03e6a452959e556b4c4529b9"
   license "MIT"

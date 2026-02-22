@@ -16,17 +16,12 @@ class Glaze < Formula
     args = %w[
       -Dglaze_DEVELOPER_MODE=OFF
     ]
-    args << "-Dglaze_ENABLE_AVX2=#{(!build.bottle? && Hardware::CPU.intel?) ? "ON" : "OFF"}"
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
-    # Issue ref: https://github.com/stephenberry/glaze/issues/1500
-    ENV.append_to_cflags "-stdlib=libc++" if OS.linux?
-
     (testpath/"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.16)
       project(GlazeTest LANGUAGES CXX)
@@ -53,6 +48,7 @@ class Glaze < Formula
       }
     CPP
 
+    ENV.append_to_cflags "-DGLZ_USE_STD_FORMAT_FLOAT=0" if OS.linux?
     system "cmake", "-S", ".", "-B", "build", "-Dglaze_DIR=#{share}/glaze"
     system "cmake", "--build", "build"
     system "./build/glaze_test"

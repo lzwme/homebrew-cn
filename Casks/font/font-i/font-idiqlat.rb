@@ -3,10 +3,11 @@ cask "font-idiqlat" do
   sha256 :no_check
 
   url "https://github.com/google/fonts.git",
+      verified:  "github.com/google/fonts",
       branch:    "main",
       only_path: "ofl/idiqlat"
   name "Idiqlat"
-  homepage "https://github.com/silnrsi/font-idiqlat"
+  homepage "https://fonts.google.com/specimen/Idiqlat"
 
   font "Idiqlat-ExtraLight.ttf"
   font "Idiqlat-Light.ttf"

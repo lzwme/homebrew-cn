@@ -10,12 +10,13 @@ class Maigret < Formula
   head "https://github.com/soxoj/maigret.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "25afd7de361b9a5876ffbc1542763da2d9ba9c65efa199698746ba361db70408"
-    sha256 cellar: :any,                 arm64_sequoia: "50bcd32ceef6a6080b072b3aca4141d5091d7c38d2097e48669f071b1249638c"
-    sha256 cellar: :any,                 arm64_sonoma:  "7feb79aa0c9b2f816528020e979e49456a3f12afd2c14c4dd0dfd506c817fff9"
-    sha256 cellar: :any,                 sonoma:        "175fff46f1ac1fc679e128f57342808bfab142bd7d81aca57c4cb6dbb7b76296"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7a2eeab23ade2089b6ac86c68a166d3201376ae569afc6378623137aab34015"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "509f7b9aaba9c03c30fbf54a2b1492a0ee112a4f0b1362c77478bd9437c3cfd4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "d72d6b15302dd2fbdc8cc36e19b020236267fc6b91c73a59e1b009c8b0bc52c2"
+    sha256 cellar: :any,                 arm64_sequoia: "b125d78c8db20ce9a876fee9836a9af67ed6e480e2cbfd2885915a0ec84bb8b2"
+    sha256 cellar: :any,                 arm64_sonoma:  "6849a29aec51fb5113a13cbc735180b612ef17eabe25ace52d68993343f856a7"
+    sha256 cellar: :any,                 sonoma:        "13caf29435077713967125849c217d98b77854c3d76d36c53ec2f7abae525eee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c81de97208e76560ad084ed231c8523718cf6dfb254a220b137402bf980d314d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd4cd6f1747395d41696894d41ef028ad9ef86e4f3fede79d1005f294f761a9c"
   end
 
   depends_on "rust" => :build
@@ -27,7 +28,10 @@ class Maigret < Formula
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   pypi_packages exclude_packages: ["certifi", "cryptography", "pillow"]
 
@@ -481,6 +485,11 @@ class Maigret < Formula
   def install
     # ZIP does not support timestamps before 1980
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
+
+    # Workaround for https://github.com/html5lib/html5lib-python/issues/593
+    odie "Check if setuptools workaround can be removed!" if resource("html5lib").version > "1.1.0"
+    (buildpath/"build-constraints.txt").write "setuptools<82\n"
+    ENV["PIP_BUILD_CONSTRAINT"] = buildpath/"build-constraints.txt"
 
     virtualenv_install_with_resources
   end

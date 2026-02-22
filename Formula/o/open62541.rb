@@ -1,8 +1,8 @@
 class Open62541 < Formula
   desc "Open source implementation of OPC UA"
   homepage "https://open62541.org/"
-  url "https://ghfast.top/https://github.com/open62541/open62541/archive/refs/tags/v1.5.1.tar.gz"
-  sha256 "da029a0960be24b8f7c157a5d373b50ebf7d238a5a33eca0820c7c04f47946c9"
+  url "https://ghfast.top/https://github.com/open62541/open62541/archive/refs/tags/v1.5.2.tar.gz"
+  sha256 "61110a51c4f00a70a6e47882ea92550b667eede62e66c64431fdc37ff660361c"
   license "MPL-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Open62541 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "92a3bb6c03051c00621eeb6d466d7ef0c7f44f37f5c157cb7f77388408b52cb8"
-    sha256 cellar: :any,                 arm64_sequoia: "2b55146485987c5c541ea19d2245f25ceceeb71392cd87f12ea60043f12d094e"
-    sha256 cellar: :any,                 arm64_sonoma:  "88c7c7c869959936991faebd47f67d77106aa844815a979a2508c82599363354"
-    sha256 cellar: :any,                 sonoma:        "145f4305fdf0db0df90aacfc36b8bbf54b6e2b404162a8067558ff8e436a6f58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de51e47f11c8297c63971c5b7191db777c7c178f2c8533baa49f9fcedd3d0bde"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29481f277538b6ffca39e94b8d057c8e8e07da7f705ed891addafed10bba66a1"
+    sha256 cellar: :any,                 arm64_tahoe:   "862ec700c9dad58ae068dc6e5dea456952b4a46ed57fd1e49ef12b0e8513ae45"
+    sha256 cellar: :any,                 arm64_sequoia: "4c13d352d37e7f5fdf6c7e4d36b6eaa0b3ddabeae3ec3e3ee598507d0212bc7a"
+    sha256 cellar: :any,                 arm64_sonoma:  "f7fff78f07c80fd152c1becef7d81b5988445e02f20748bd8b6c810c6579930e"
+    sha256 cellar: :any,                 sonoma:        "4ff42c6a421287b4216d35f7a1ea54e111e2419e16b99cf23e875128e834fb54"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "faa0cb5f57982d5f6e6439de7bd690c881325af59ae67b98bc9b559e0a7c5f0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f6c54ee337fecee8ad6195c0b80d12382c86abbb1c4de268fb84f7214807871"
   end
 
   depends_on "cmake" => :build

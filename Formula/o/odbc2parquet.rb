@@ -7,12 +7,13 @@ class Odbc2parquet < Formula
   head "https://github.com/pacman82/odbc2parquet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "179853e390c07f6657e1a39a7f495ca4bff961ed3e8b297186d79d4d1d7c8701"
-    sha256 cellar: :any,                 arm64_sequoia: "4d7a48b840b255bd946da7546fde74ae02dd2628a518fe6722032cf2903b92ca"
-    sha256 cellar: :any,                 arm64_sonoma:  "ef82f56b718e9600c6acf2a852171f891096e69e5614f908a71598fff10f6338"
-    sha256 cellar: :any,                 sonoma:        "049561614d6ce7e7b7dfb94bdcba4c6bc04234b2885a568c1adb0b0f0254fd9c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebfeff3a52faf0e9751cb4aad896c2b48995a6e512aa08add52d3c1943ba6a62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c63235b7cb24d9cbd60efb253a2da63a78ff09b17f28cedf6c067e666ed3629"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "8571d2e2a5871d261c512038e1ce024e12905aa04f1385badb5261659a3e6a9e"
+    sha256 cellar: :any,                 arm64_sequoia: "b973ab6e5a6899645a492fbcf654a8104350d6523b07095376eb7e4cfc1f8655"
+    sha256 cellar: :any,                 arm64_sonoma:  "a943d3f56de3746d77be2e57eff3face7fe217ffdd026f9a55ae91db530c0a6d"
+    sha256 cellar: :any,                 sonoma:        "df5c05c02627d273ba68e883ff2c7aaaa332c68745ba01bd24406a44df4563bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d1e8053f06692557a9d33f5f11538865cfc0b8c9d4d4a1c4a3b0d1981ea20b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c46145c58b33f8956f9690853dc34c5b52af7015b784dc04d38b34fa0b1520f"
   end
 
   depends_on "pkgconf" => :build
@@ -21,6 +22,7 @@ class Odbc2parquet < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+    generate_completions_from_executable(bin/"odbc2parquet", "completions", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

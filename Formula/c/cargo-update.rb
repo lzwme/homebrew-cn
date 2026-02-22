@@ -1,19 +1,18 @@
 class CargoUpdate < Formula
   desc "Cargo subcommand for checking and applying updates to installed executables"
   homepage "https://github.com/nabijaczleweli/cargo-update"
-  url "https://ghfast.top/https://github.com/nabijaczleweli/cargo-update/archive/refs/tags/v18.0.0.tar.gz"
-  sha256 "cfa56d6c5fb2d7d1536efb4765031731fe70bf1a8246757a7a9d6a4a046e640f"
+  url "https://ghfast.top/https://github.com/nabijaczleweli/cargo-update/archive/refs/tags/v18.1.0.tar.gz"
+  sha256 "bea4c83f689756b8483faa3b32de1fb2a7730955717df72ee6ebf01cfd8ca4ea"
   license "MIT"
   head "https://github.com/nabijaczleweli/cargo-update.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "789aabcffbe092ce47d9ec1f2f1da1f2d5bde575df3500ac1753da3fccba174b"
-    sha256 cellar: :any,                 arm64_sequoia: "4095a439b598d9c0576a920c8152e604965816bfee96d6d0a9ce899b64bea724"
-    sha256 cellar: :any,                 arm64_sonoma:  "0e47ffa9b7457d3522b8581166eb1624d50e8048a7950aacad8d5fbe117fff45"
-    sha256 cellar: :any,                 sonoma:        "5225e1e62f91b7ee2d496f0892789aee7ff69934c75de0047ead6c330fa64b07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4bdf5129e7fce8bb7674fcc1328dc9308c8e1a97b0b0764261e95b497e3622c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26f7420561d07c9bfae1019447e8a1cc713c4a094d3e37e43c75d009153c99df"
+    sha256 cellar: :any,                 arm64_tahoe:   "e13f395b961b1bc9ccff775f2d36a744b6d8fa92980be44143391f5acaf9d87b"
+    sha256 cellar: :any,                 arm64_sequoia: "2670019f43c7967407156c65cd12977c3575c713847275f336ba06254301186f"
+    sha256 cellar: :any,                 arm64_sonoma:  "fb22189534df4de341181f41c3d09172ad57030c3b9dd33d81cfe03039acae73"
+    sha256 cellar: :any,                 sonoma:        "4ee36a18a1db17ff2ba0784a0c8b132e24f16c1169c16a4a2a8d47c07561fe03"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba4055d1bac857963d67d4cf590a89d615862a1b7b797c01f6b758e31e8ef318"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "123ffaa1e55d375731036778b1082dd62a7e04856821f7e24687c06a764e12b2"
   end
 
   depends_on "pkgconf" => :build

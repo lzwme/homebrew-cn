@@ -12,12 +12,13 @@ class Joern < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28d5c25b8122e2d5b75e7c9eab1c8b93da0bc070277f453b3a9d2ac94ab595b8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14f4b780335a2c3cdde3bffcf286291c06cafc97a431c3c4377b2024a13a287d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14f4b780335a2c3cdde3bffcf286291c06cafc97a431c3c4377b2024a13a287d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f530d02a8590bae34605761800799bdf8c706fd689ba0e0c48fdd70c7b88998d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "61bf8ff152bcbef8abfc248fc816b10cc5bad54a753de63dd0653a6fb648e517"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe9269be807fe7539742fbbc28f273a04f0e6d8c40bfe077cd00a77583ad37fc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6de7b8205d579804b299fe7f3fea51329f79344e674aab378bb965f1c9a110dd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b436ca2d69423771d102f66dda3fac8852420c6d7ca543aedafac0a673b935a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13b495f3c4eee250063b364f3b0ba2116be46a963242c6af1c0da81d2eaf1f56"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d07bd2a5e58022d9bb64a09db572acc59f622c70ed71b7d8d5b88e47b93c423b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "52353842426b865232095cc92830dedf0461599b7d4711bb4e1be0618d1311e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8667203af136a789c23991e8ab577c7705cc7da094722ac2be1c54bfc8e4e058"
   end
 
   depends_on "sbt" => :build
@@ -26,7 +27,9 @@ class Joern < Formula
   depends_on "openjdk"
   depends_on "php"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "sbt", "stage"

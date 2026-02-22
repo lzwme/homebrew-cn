@@ -2,7 +2,7 @@ class R < Formula
   desc "Software environment for statistical computing"
   homepage "https://www.r-project.org/"
   url "https://cran.r-project.org/src/base/R-4/R-4.5.2.tar.gz"
-  sha256 "87a41ce9b50e096dd2c4282f48efea30c9916fcb7b167fa2bc988c9cf3cb6642"
+  sha256 "0d71ff7106ec69cd7c67e1e95ed1a3cee355880931f2eb78c530014a9e379f20"
   license "GPL-2.0-or-later"
   revision 1
 
@@ -12,12 +12,13 @@ class R < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "07e479b7f8297bc4149646b412a57dff589f55d500b2949505ef0e0c280869e5"
-    sha256 arm64_sequoia: "12f81758f59c0752462640f86030664aae22fe92f0c9ee484ed3134165571fb1"
-    sha256 arm64_sonoma:  "cffb5c40a7e38c485df712a74c27f50c9cc85f414fb392594941edf7eeaa3986"
-    sha256 sonoma:        "9ba7fd1de76c5c0f910c68ece11b18298100c01225cacc3a2095c3a4ae41e9a2"
-    sha256 arm64_linux:   "bb318a83d2bb9854ccabb52af2315138199c771a2a5cde91b40d8a79503d308e"
-    sha256 x86_64_linux:  "9cd4b3c692a957f501ebb0f89ceab1f2d05e3c416f992accedd5d95f49529a38"
+    rebuild 1
+    sha256 arm64_tahoe:   "2474ff7f168e955586e0ca6862f8620674fc6769813bdcc85ce288c4d049bf91"
+    sha256 arm64_sequoia: "a2b2f093fbe6f74c02d856b4fa710eff504ce9c614b8971927273196ae9f0789"
+    sha256 arm64_sonoma:  "6c2c04227d75b4b29d0e50d7039d7f5ba112e19a289ff850af52bc579debf3e3"
+    sha256 sonoma:        "ba81d8ee1aeb933f14886be2847c8c1be95a6ed4824d18e4d99d5dccb6106574"
+    sha256 arm64_linux:   "c877730f839b18e156b9a14c92207cdb456ae457cec0454d9820dd669cc8f2b0"
+    sha256 x86_64_linux:  "38363e959c0d47027fa1f6a02c33e33e625cf078175658ad7c1425bf24948623"
   end
 
   depends_on "pkgconf" => :build
@@ -37,7 +38,6 @@ class R < Formula
   uses_from_macos "bzip2"
   uses_from_macos "curl"
   uses_from_macos "libffi"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "fontconfig"
@@ -60,6 +60,7 @@ class R < Formula
     depends_on "libx11"
     depends_on "libxt"
     depends_on "pango"
+    depends_on "zlib-ng-compat"
   end
 
   # needed to preserve executable permissions on files without shebangs

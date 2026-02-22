@@ -1,20 +1,19 @@
 class Goredo < Formula
   desc "Go implementation of djb's redo, a Makefile replacement that sucks less"
-  homepage "http://www.goredo.cypherpunks.su/"
+  homepage "https://goredo.dabase.com/"
   url "https://goredo.dabase.com/download/goredo-2.8.0.tar.zst"
   sha256 "7aaab717697b1c15f24164122f80e769a82a6a157b01a6590365c749d326bd06"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a9b1660695595402615e05a83aa7fdb7542387dffad6fdc251bfd7b1569e3d7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a9b1660695595402615e05a83aa7fdb7542387dffad6fdc251bfd7b1569e3d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a9b1660695595402615e05a83aa7fdb7542387dffad6fdc251bfd7b1569e3d7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2d1379cfc82524903f892c4108535ac3eb74577adef265275df880f0d7ba44bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d427a1c2fb0cbab8edb36e9378324d938e09c00e214ad0aac0eca221ee3ad1c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e538694b61f3e59d986cdc13616c9f3388d44ca6be1dd063a2d4fba5452d9ec9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f9d2a3e709efbaadeb550814853f9837ece0092071bd8a3d575c1f0d223214c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f9d2a3e709efbaadeb550814853f9837ece0092071bd8a3d575c1f0d223214c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f9d2a3e709efbaadeb550814853f9837ece0092071bd8a3d575c1f0d223214c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d979f5ba93d0235c34781c18594ca1e828e430587eccd5407bdf2e12a830c60b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bfdb027bb5f913d5eaf326ba4fabed0a61b14dc7cea6bea9419480f8c487a747"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5780fe19c35cda4fb5c2d884c4154488848f3d843be8734859637501e829d31d"
   end
-
-  deprecate! date: "2026-01-05", because: "is not available via HTTPS"
 
   depends_on "go" => :build
 

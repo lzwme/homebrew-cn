@@ -11,13 +11,13 @@ class Lighthouse < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75acd27820e92a7159497bac26119b2bbf4ce24bfd5d05768c81f4ed961e07f3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b87d64fbbdd48fd7ce3d3c15a25b2b56c87f7e5234d8303e8c7a061e11b55ce3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0685c616147f4298d3970366d7d7fe45523c8982a85590a6613a78ec5aaffb61"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7765689ba2c89428b4a5e043b5d1536b81dbb42541fd4dce6c2c355e493e3c4e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c17883fa73e5042943f40a0838c65b07ff91479a563bc854166d83877723f29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "725fe63ee9b6b0217185a7125341ae70d7f0ee0b47bf746f4698ebfb1221df62"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9fab8bb11936c7f242540f4c4f1f99f5c137e64d82b65eaca32ca3151601e996"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a37963e36dc7100b83f8fd8f8b7db4bcbd444239090729b058105139a5201f76"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb5aaf5770e8819e0fe2a74a8182bbee260c8898d7b3ec9a1a42f81646e056ec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "75cb4b9e6060d459ecd7dbd776a2dc2185e01f193a90dd98a5d211fb7c59e6e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a12805e2a91dfd1e2f85d252ba14d7595f1fd46d017ef3c348a4c0abf04ea8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e93036cd2ab3da45efa1bb6fb125cda9df8308b120206f9efa1c82817e56ecb7"
   end
 
   depends_on "cmake" => :build
@@ -37,8 +37,6 @@ class Lighthouse < Formula
     # Ensure that the `openssl` crate picks up the intended library.
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
-    # Use correct compiler to prevent blst from enabling AVX support on macOS
-    ENV["CC"] = Formula["llvm"].opt_bin/"clang" if OS.mac?
 
     system "cargo", "install", "--no-default-features", *std_cargo_args(path: "./lighthouse")
   end

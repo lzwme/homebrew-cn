@@ -1,18 +1,18 @@
 class Gup < Formula
   desc "Update binaries installed by go install"
   homepage "https://github.com/nao1215/gup"
-  url "https://ghfast.top/https://github.com/nao1215/gup/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "3b321e8ca9bd3b2d217bf3a2530d9ffb063a747caf616456fa925d511765b2ae"
+  url "https://ghfast.top/https://github.com/nao1215/gup/archive/refs/tags/v1.1.2.tar.gz"
+  sha256 "0756d1780197dfa66763084969272a37ada578acd9428a6e63b62ed4bdf8dd66"
   license "Apache-2.0"
   head "https://github.com/nao1215/gup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bdfddd3bc17f51fca9c03c504d345137b454c9275b01538fdb645c50be0d10b6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bdfddd3bc17f51fca9c03c504d345137b454c9275b01538fdb645c50be0d10b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdfddd3bc17f51fca9c03c504d345137b454c9275b01538fdb645c50be0d10b6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4b1aa94c98f4edb7ad88bb7194f3ad9f135ef908c4edba72ed880ac5b68d1a4a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1cd5cc64177ae49c30deafaec77ec92f9b9bd5acbc591e4e67db2e02696ca9ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da487ed6075b10c502fe4ab273e279c5c4efd2b6b41e4d7e1344c58aabd8f444"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e24799e76c5285b1e3d411cead819b29f9df318b1c299b12f9986447d85a99df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e24799e76c5285b1e3d411cead819b29f9df318b1c299b12f9986447d85a99df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e24799e76c5285b1e3d411cead819b29f9df318b1c299b12f9986447d85a99df"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3ffa0f2ef48a2fb757c6e550df59e18c226fabf19088d9c6a81404182f0938e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f87bfc461bbc23061b8e3aa7ae0e559463585e8db558dc5c8443e180352c030"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "720959564658bb8d3cf501337f80fc8fe6ec2cb0f3146488e69f3d3090b9632a"
   end
 
   depends_on "go"

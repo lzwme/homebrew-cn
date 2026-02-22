@@ -2,9 +2,10 @@ cask "font-ramsina" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/ramsina/Ramsina-Regular.ttf"
+  url "https://github.com/google/fonts/raw/main/ofl/ramsina/Ramsina-Regular.ttf",
+      verified: "github.com/google/fonts/"
   name "Ramsina"
-  homepage "https://github.com/silnrsi/font-ramsina"
+  homepage "https://fonts.google.com/specimen/Ramsina"
 
   font "Ramsina-Regular.ttf"
 
