@@ -1,8 +1,8 @@
 class Watchexec < Formula
   desc "Execute commands when watched files change"
   homepage "https://watchexec.github.io/"
-  url "https://ghfast.top/https://github.com/watchexec/watchexec/archive/refs/tags/v2.3.3.tar.gz"
-  sha256 "8d897bc79d6e6a381ad9b3abf2a4967b58bc376bdc0aa418bb99829660d74aff"
+  url "https://ghfast.top/https://github.com/watchexec/watchexec/archive/refs/tags/v2.4.1.tar.gz"
+  sha256 "4d39adf3c9b7e4a0e2647bdfede330b9be709b4d5e3fcb3b847fcaa761b3daf8"
   license "Apache-2.0"
   head "https://github.com/watchexec/watchexec.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Watchexec < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75be379c9aa8871b4ce898fd521096d0a5a6d7fc9bced2cabe3ec50befc570db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37e4f94d48e8aabd6b059c80a4409f1d8027802c2b4c0e420aadef139d40eb3d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5543ac335fd13f470bfd5f9358f3fb8489214c842af681f694f1e3ac173c229d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "849422c3aab90635ee80292dd4009d318e024e01af1d50474234b87553e2fc00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aed30ad1caa5855cb2201813ce45fd9c073115e69ac9ee2a7d94dd0a9d24e612"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ce8ba4c24a30e15a5f1bc7ee98a6bbafa952324136936d841bacd60f46c11e9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1520409cd88b192d6eca86f1fa385a63681d3f9e27d82fbfb505a985f1c28c19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c2c9e70de7a05f23ad9316acdaa6e24ad59c67d7efa875394e25ef5ac5e9829"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7dd796da15efd243818f5afa8d622bdaa70af26a63d32436c5b04f382289c62d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "25f84b6022616f40f4a789890775a2e9f1d263361abadc78af37687fa597efaa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "04b88ed5bac1d93c5690ebeec90cabb22f4afbe3e4c3b4aba928b88a6e96bf53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28dd45cbeeb37c366bc2891adbd5ffcdd78b212aa0722efd966125845a96fa8d"
   end
 
   depends_on "rust" => :build

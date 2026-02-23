@@ -28,8 +28,6 @@ class Povray < Formula
     regex(/^v?(\d+(?:\.\d+)+\.\d{1,4})$/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "55cd4d67cca78d36e98a6997489de220f80403bac07a1747732cdf5c5649ad56"

@@ -12,8 +12,6 @@ class Pgloader < Formula
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_tahoe:   "f5baa53cabbdcdba97c61a8734543b06ffecf1edfb6a072fffe33673b6adda14"

@@ -12,8 +12,6 @@ class Geomview < Formula
     regex(/href=.*?geomview[._-]v?(\d+(?:\.\d+)+)(?:\.orig)?\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 sonoma:       "4abe048bc7d51440a13c37b0909f86e3f31156e60c3b46d9bad15d89d443e963"

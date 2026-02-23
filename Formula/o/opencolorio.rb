@@ -8,12 +8,13 @@ class Opencolorio < Formula
   head "https://github.com/AcademySoftwareFoundation/OpenColorIO.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "006995bd26f4b71e3d39e04353981e4e9b4832ef46fc9999474e8e1dc5d8e427"
-    sha256 cellar: :any,                 arm64_sequoia: "da0da49493e904545c2d9cc5b21093ac2b52a5b15ff7ceead7e30f3c8bcfd6b1"
-    sha256 cellar: :any,                 arm64_sonoma:  "a961bd718fa4ab9c3d175597f390b56453cbf80681e9fdcd3b8c1a69d39ad443"
-    sha256 cellar: :any,                 sonoma:        "92ab8f5361784f731e5271ccc5c536c54c10ab7150a09fa499fa19809d161716"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b876fb97492d71189ae6184e2e588d1d8ae4acb7e9ef14aeeaede4d3f9b6f59a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4561d65b746de89abd8838962c0e49c5b0095cf2c1cd467876adeaf311672d91"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "f96d8659cb4d97651e4b3f8e5e3adc624092a5c859e95d025bbd24bdf5ec41ad"
+    sha256 cellar: :any,                 arm64_sequoia: "a20e9815ceace0fb0c920a41a67559f8bc7c8a153c5bab6e826e5d4ba9f99701"
+    sha256 cellar: :any,                 arm64_sonoma:  "1bab9ea155f94659264e5b94791f74952ecdf9e7320974cb6cf8cb5686fa6b0c"
+    sha256 cellar: :any,                 sonoma:        "705119ea11a5f5d0c67f73c762c6bda3808238a32be0438f8d4503ff42f2bea9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ded7252eabd0991f0f02740033554ca7c08dd77b97adf6971987317f2d744ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44df1e47cada73f84b80225d7d3d6f4420c4c25b33d9d558519c4643c2e172e1"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +27,7 @@ class Opencolorio < Formula
   depends_on "openexr"
   depends_on "pystring"
   depends_on "yaml-cpp"
-  depends_on "zlib"
+  depends_on "zlib-ng-compat"
 
   on_arm do
     depends_on "sse2neon" => :build

@@ -23,8 +23,6 @@ class Ola < Formula
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "21263841e47b3744fccad6eada26ceef92076de81ec6b4c5a31072539c00a66d"

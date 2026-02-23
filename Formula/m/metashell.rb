@@ -5,8 +5,6 @@ class Metashell < Formula
   sha256 "028e37be072ec4e85d18ead234a208d07225cf335c0bb1c98d4d4c3e30c71f0e"
   license "GPL-3.0-or-later"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_tahoe:   "31ffe3eacbb6ebd7186612d278f5df4fac34eb2d5efe844e7413ada10a59ce3c"

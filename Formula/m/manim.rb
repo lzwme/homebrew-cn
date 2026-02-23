@@ -3,8 +3,8 @@ class Manim < Formula
 
   desc "Animation engine for explanatory math videos"
   homepage "https://www.manim.community"
-  url "https://files.pythonhosted.org/packages/6b/be/39066e0f1ad3c12532ee4f1dcfd02088b0aa0de9d38ba266a198ab1c09e9/manim-0.19.2.tar.gz"
-  sha256 "7cf74d7c012f19e278fcff58651e5b486a23391aa115582a24c6a0e318cd243e"
+  url "https://files.pythonhosted.org/packages/25/a2/84871307cab8b135378a810fc10fe0493600511e54c9ea36ee55b04fef4b/manim-0.20.0.tar.gz"
+  sha256 "9ab10520c431872109aa8dfaa48aeb9872849efdbe2db65d2cc043ba77062938"
   license "MIT"
   head "https://github.com/manimCommunity/manim.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Manim < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "397cbfb8d34e8d2297b569fb4128b5d70aef4ce852bc4c1ca9189d4b1deae3dc"
-    sha256 cellar: :any,                 arm64_sequoia: "11479f24bdd72bcefbaf75930d20172c4af0b4831b5bee347b7ab73c49254d8f"
-    sha256 cellar: :any,                 arm64_sonoma:  "c9f63f8550f77dfd804839fc57c95ba9ddf980e4b79b3a2d0d06596717dd10bc"
-    sha256 cellar: :any,                 sonoma:        "83d40bd31e373cc3259546934ce847f90240d136c72568e180151cecac634c99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd58a0a7d7a0c665d49a27a2eb54d15529b066f869b5f0327d3042d65704a586"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6080aa6bc77054ea8cd01a9f2f1f621cfc9d67be787f1fb4241ba45ba491c15f"
+    sha256 cellar: :any,                 arm64_tahoe:   "e8d2bf24e266eba8654bddef49bfb24986bea5c2f35678d21fc22c2616ce0877"
+    sha256 cellar: :any,                 arm64_sequoia: "eb04014294c4b1de2c629c913f3b185e2e56b8866143f3dd08b0f37d4a0f53e4"
+    sha256 cellar: :any,                 arm64_sonoma:  "1ba3acaca8f38782df7c3b7fca612e4aa403259968baeaa14d303dac5f35c36d"
+    sha256 cellar: :any,                 sonoma:        "770d194be1c52aff056f878f4dbff36f6649175aa4f9b52967d2d17221d4add5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd7d09203141072aec6ccda14f38ccf55126386721ce2e2c71bba9d5f3944cf6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "028c69afe9c5ef3f9a0361abf307a63148bca3b5342a4d05683b8ea5b9bc7773"
   end
 
   depends_on "cmake" => :build # for mapbox_earcut
@@ -165,8 +164,8 @@ class Manim < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/74/99/a4cab2acbb884f80e558b0771e97e21e939c5dfb460f488d19df485e8298/rich-14.3.2.tar.gz"
-    sha256 "e712f11c1a562a11843306f5ed999475f09ac31ffb64281f73ab29ffdda8b3b8"
+    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
+    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
   end
 
   resource "screeninfo" do

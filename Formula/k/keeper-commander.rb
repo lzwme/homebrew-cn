@@ -3,20 +3,20 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/fd/5c/25d9ca8ba2eb21e34d4ef3daf441cfa95d4123e9576e8bc40811e29a4e80/keepercommander-17.2.7.tar.gz"
-  sha256 "a113233ce5882110560b08bdb76426a5869c9a1a18a59df331e589bdc28ef1e2"
+  url "https://files.pythonhosted.org/packages/76/2d/b7c07714770360d801071a50e60cc01fa41b7d5313e0a4f347f58f8e577f/keepercommander-17.2.8.tar.gz"
+  sha256 "5ef70b1354d14e35b7ce4edc3654263893bc9dff314639898299e2a74590d936"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "32373137c4bc951cdd176ec612233fcd26178bbded6efad995cd9ff6a76c331b"
-    sha256 cellar: :any,                 arm64_sequoia: "b03649b1d09138b16df09137b4fc6abe9d7f13357b57f4b4f68dee74a82900d3"
-    sha256 cellar: :any,                 arm64_sonoma:  "641cce37a7574b2edf823d1e4451e764a670c05e88677adca6c60a911160e008"
-    sha256 cellar: :any,                 sonoma:        "a5b0791b572bc9edea791c6447ec721263d67d56c8a4251c75849aa256bee4dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6d0a6652e806a83f28cd423b28a17dcd2be580b4fda1cfa59064fe8e1a10adc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5e22878c93a941b4dbd529dc9201ce9bd4d81f370d783fa414b74800b5d75db"
+    sha256 cellar: :any,                 arm64_tahoe:   "b54a3deadcd294ff62777a8f87e06b165c2ee0c232d25ffa61a5e1b63afa1bb9"
+    sha256 cellar: :any,                 arm64_sequoia: "730fd747baf4258d09ea531154a5867fa8372ba4d9a90d34fa4fe5b0a7a65da1"
+    sha256 cellar: :any,                 arm64_sonoma:  "490baec85632e46f76226045d51dc0e31f588a85e339f3009876d9ae0e4f3f9b"
+    sha256 cellar: :any,                 sonoma:        "051d02f0ba9fe148689efffbddd4627f689085eaebaa383292323e15b4c0ac68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a03c582fa2e5b1a0a445e5f05f9c947eb974469cb0e603a34ed41d44d3c4f05"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99186b80bd7e31af99ecd2857cf987697610b83f57eb4944b3f942e4aaac7af6"
   end
 
   depends_on "pkgconf" => :build
@@ -102,8 +102,8 @@ class KeeperCommander < Formula
   end
 
   resource "flask" do
-    url "https://files.pythonhosted.org/packages/dc/6d/cfe3c0fcc5e477df242b98bfe186a4c34357b4847e87ecaef04507332dab/flask-3.1.2.tar.gz"
-    sha256 "bf656c15c80190ed628ad08cdfd3aaa35beb087855e2f494910aa3774cc4fd87"
+    url "https://files.pythonhosted.org/packages/26/00/35d85dcce6c57fdc871f3867d465d780f302a175ea360f62533f12b27e2b/flask-3.1.3.tar.gz"
+    sha256 "0ef0e52b8a9cd932855379197dd8f94047b359ca0a78695144304cb45f87c9eb"
   end
 
   resource "flask-limiter" do
@@ -117,8 +117,8 @@ class KeeperCommander < Formula
   end
 
   resource "fpdf2" do
-    url "https://files.pythonhosted.org/packages/e9/c0/784b130a28f4ed612e9aff26d1118e1f91005713dcd0a35e60b54d316b56/fpdf2-2.8.5.tar.gz"
-    sha256 "af4491ef2e0a5fe476f9d61362925658949c995f7e804438c0e81008f1550247"
+    url "https://files.pythonhosted.org/packages/74/3f/b23cf3a1943905645f44df95de8289770e69f85c9442abf89f93dc5c4a74/fpdf2-2.8.6.tar.gz"
+    sha256 "5132f26bbeee69a7ca6a292e4da1eb3241147b5aea9348b35e780ecd02bf5fc2"
   end
 
   resource "idna" do
@@ -147,11 +147,8 @@ class KeeperCommander < Formula
   end
 
   resource "keeper-pam-webrtc-rs" do
-    url "https://files.pythonhosted.org/packages/41/54/89e01bb5e5235c091a39b84f16f690bf2a9a01c9e8616b35a1ae98f5b682/keeper_pam_webrtc_rs-1.2.5.tar.gz"
-    sha256 "6e07dd2982aedaca5df67bfe33e14b51435cb92dcd139c2cc47663c822c9f342"
-
-    # Remove `readme` field to avoid build error for missing file
-    patch :DATA
+    url "https://files.pythonhosted.org/packages/7c/3a/86148829fc1067f87b6361090d6c128bea9f44f30ffaa9c9986437d3c0bb/keeper_pam_webrtc_rs-2.0.1.tar.gz"
+    sha256 "61dfd906a6ec5bf6f3c366c3e7577690111c2edd3fbc3a3c0d8c7c019a38c684"
   end
 
   resource "keeper-secrets-manager-core" do
@@ -160,8 +157,8 @@ class KeeperCommander < Formula
   end
 
   resource "limits" do
-    url "https://files.pythonhosted.org/packages/bb/e5/c968d43a65128cd54fb685f257aafb90cd5e4e1c67d084a58f0e4cbed557/limits-5.6.0.tar.gz"
-    sha256 "807fac75755e73912e894fdd61e2838de574c5721876a19f7ab454ae1fffb4b5"
+    url "https://files.pythonhosted.org/packages/71/69/826a5d1f45426c68d8f6539f8d275c0e4fcaa57f0c017ec3100986558a41/limits-5.8.0.tar.gz"
+    sha256 "c9e0d74aed837e8f6f50d1fcebcf5fd8130957287206bc3799adaee5092655da"
   end
 
   resource "linkify-it-py" do
@@ -200,8 +197,8 @@ class KeeperCommander < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
-    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
+    url "https://files.pythonhosted.org/packages/1b/04/fea538adf7dbbd6d186f551d595961e564a3b6715bdf276b477460858672/platformdirs-4.9.2.tar.gz"
+    sha256 "9a33809944b9db043ad67ca0db94b14bf452cc6aeaac46a88ea55b26e2e9d291"
   end
 
   resource "prompt-toolkit" do
@@ -275,8 +272,8 @@ class KeeperCommander < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/a1/84/4831f881aa6ff3c976f6d6809b58cdfa350593ffc0dc3c58f5f6586780fb/rich-14.3.1.tar.gz"
-    sha256 "b8c5f568a3a749f9290ec6bddedf835cec33696bfc1e48bcfecb276c7386e4b8"
+    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
+    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
   end
 
   resource "tabulate" do
@@ -285,8 +282,8 @@ class KeeperCommander < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/9f/38/7d169a765993efde5095c70a668bf4f5831bb7ac099e932f2783e9b71abf/textual-7.5.0.tar.gz"
-    sha256 "c730cba1e3d704e8f1ca915b6a3af01451e3bca380114baacf6abf87e9dac8b6"
+    url "https://files.pythonhosted.org/packages/f7/08/1e1f705825359590ddfaeda57653bd518c4ff7a96bb2c3239ba1b6fc4c51/textual-8.0.0.tar.gz"
+    sha256 "ce48f83a3d686c0fac0e80bf9136e1f8851c653aa6a4502e43293a151df18809"
   end
 
   resource "uc-micro-py" do
@@ -300,8 +297,8 @@ class KeeperCommander < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/c2/62/a7c072fbfefb2980a00f99ca994279cb9ecf310cb2e6b2a4d2a28fe192b3/wcwidth-0.5.3.tar.gz"
-    sha256 "53123b7af053c74e9fe2e92ac810301f6139e64379031f7124574212fb3b4091"
+    url "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz"
+    sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
   end
 
   resource "websockets" do
@@ -310,13 +307,13 @@ class KeeperCommander < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
-    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
+    url "https://files.pythonhosted.org/packages/61/f1/ee81806690a87dab5f5653c1f146c92bc066d7f4cebc603ef88eb9e13957/werkzeug-3.1.6.tar.gz"
+    sha256 "210c6bede5a420a913956b4791a7f4d6843a43b6fcee4dfa08a65e93007d0d25"
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/49/2a/6de8a50cb435b7f42c46126cf1a54b2aab81784e74c8595c8e025e8f36d3/wrapt-2.0.1.tar.gz"
-    sha256 "9c9c635e78497cacb81e84f8b11b23e0aacac7a136e73b8e5b2109a1d9fc468f"
+    url "https://files.pythonhosted.org/packages/f7/37/ae31f40bec90de2f88d9597d0b5281e23ffe85b893a47ca5d9c05c63a4f6/wrapt-2.1.1.tar.gz"
+    sha256 "5fdcb09bf6db023d88f312bd0767594b414655d58090fc1c46b3414415f67fac"
   end
 
   resource "zipp" do
@@ -348,17 +345,3 @@ class KeeperCommander < Formula
     assert_match "keepersecurity.com", shell_output("#{bin}/keeper server")
   end
 end
-
-__END__
-diff --git a/Cargo.toml b/Cargo.toml
-index 6bdce2f..3106404 100644
---- a/Cargo.toml
-+++ b/Cargo.toml
-@@ -4,7 +4,6 @@ version = "1.2.4"
- edition = "2021"
- description = "Keeper PAM WebRTC for Python - A secure, stable, and high-performance Tube API for Python, providing WebRTC-based secure tunneling with enterprise-grade security and reliability optimizations."
- license = "MIT"
--readme = "README.md"
- 
- [lib]
- name = "keeper_pam_webrtc_rs"

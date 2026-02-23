@@ -1,18 +1,18 @@
 class Dyff < Formula
   desc "Diff tool for YAML files, and sometimes JSON"
   homepage "https://github.com/homeport/dyff"
-  url "https://ghfast.top/https://github.com/homeport/dyff/archive/refs/tags/v1.10.4.tar.gz"
-  sha256 "eb0df6175ff66cc3494c856c2d70b980811bf3202b71be444209951458427ebf"
+  url "https://ghfast.top/https://github.com/homeport/dyff/archive/refs/tags/v1.10.5.tar.gz"
+  sha256 "cdbf4aeb725e8134b2bf2e923fd192e599f57dd220f4f07ef48a0e7e76dc749d"
   license "MIT"
   head "https://github.com/homeport/dyff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca47694a87199dfc061233eac092100098bf724ec12f8ced0c02e390cc36f447"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca47694a87199dfc061233eac092100098bf724ec12f8ced0c02e390cc36f447"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca47694a87199dfc061233eac092100098bf724ec12f8ced0c02e390cc36f447"
-    sha256 cellar: :any_skip_relocation, sonoma:        "13fc775ce170ed86b11a5ebd7fe5b7be96c97ecb1f4b7c37d4ced1706711adfe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "83349132787b8b7ec5ad5dcc0766debbcfa04d3f27b46cdf105c0fe82861dd00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98c6e2859997601c66a0b1602f7bbb9c32e06acec7d75c13b934841230b5759f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd8444f9567cdd51eb68b4a2fdbd2637b49a04c7e10739466a7b0ba29045e5ca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd8444f9567cdd51eb68b4a2fdbd2637b49a04c7e10739466a7b0ba29045e5ca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd8444f9567cdd51eb68b4a2fdbd2637b49a04c7e10739466a7b0ba29045e5ca"
+    sha256 cellar: :any_skip_relocation, sonoma:        "06c1ff4710e1e70e556c2b8c755a7ca9a9e454eb968fa2655c681cfa4e6ad782"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57371e02454e167edbbae1dcfc575f1723b097048982aa12192859a207d85a7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d55443f246ca34d4a85d6fa6b2dd1a2c1a8f39e5e383b1c3a1e57c68a71ba465"
   end
 
   depends_on "go" => :build

@@ -10,8 +10,6 @@ class Gzrt < Formula
     regex(/href=.*?gzrt[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "670cc86444773ca0a6a1b37c47b02eedb11a330d9ee4a002be567f4721dce63b"

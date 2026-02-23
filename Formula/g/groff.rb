@@ -7,8 +7,6 @@ class Groff < Formula
   license "GPL-3.0-or-later"
   revision 1
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 arm64_tahoe:    "7684d4604e213bf74894799b38f98153e743c504c493d7cedff5c25109d46854"
     sha256 arm64_sequoia:  "46fa52805546514d174798f2a8723a84827c13c2c7c106e246c9ff77b43eb4cf"

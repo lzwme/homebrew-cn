@@ -6,8 +6,6 @@ class Peco < Formula
   license "MIT"
   head "https://github.com/peco/peco.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "76327c2446971946d8fc58cfe5afe6bfbb4c6e6115fcc069a6c9801b950420d7"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c7a5fa08c2aa3ad21a733a5523c4fb5fc7217258bebcaaf33e0d61cf11cbefa3"

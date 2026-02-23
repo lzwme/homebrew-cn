@@ -14,8 +14,6 @@ class Gabedit < Formula
     regex(/current stable version of gabedit is v?(\d+(?:\.\d+)+)/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "d50f949dc32c409c6bc33b00840ceb7f85a31490b62155d6ea2a1788395e77bc"
     sha256 cellar: :any,                 arm64_sequoia:  "4218b43130e1be48172b6935ac53abd245973a5a30f46d700b3bb848fed1791a"

@@ -52,8 +52,6 @@ class MoltenVk < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "c582142652134e00fcddb2b15491492020469d0efc497873b017c45b2ba21a3b"
     sha256 cellar: :any, arm64_sequoia: "9b8177214626a66d3f3d437263fdb5b90617ebabc58a72748eda09024c139c38"

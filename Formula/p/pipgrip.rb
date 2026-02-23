@@ -3,14 +3,13 @@ class Pipgrip < Formula
 
   desc "Lightweight pip dependency resolver"
   homepage "https://github.com/ddelange/pipgrip"
-  url "https://files.pythonhosted.org/packages/94/01/e58522e56df8f4b977202b60284d9963195a9380e81b0894612173be746d/pipgrip-0.12.0.tar.gz"
-  sha256 "ededa399a5cc9f98c84155945a59faf3b20e49639586a8d181a539c3ca88acca"
+  url "https://files.pythonhosted.org/packages/c9/19/98d11e877fb1c13d1f0d66cd584db57acc4da35312f7cd4625374a31ef01/pipgrip-0.13.0.tar.gz"
+  sha256 "d1ccbd1147a658b1ff8ba77d4c9f4151f2deb0637be07a86cb0e74fb21da73b5"
   license "BSD-3-Clause"
   head "https://github.com/ddelange/pipgrip.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "d680b414e9eaf5b116df91f7a15ebcdf4d3827934c8a56a905f910183aca6ed6"
+    sha256 cellar: :any_skip_relocation, all: "aed6724ce03888fa70a34aac483962d7314edbdf3bb2c6a992e967f2496dddbe"
   end
 
   depends_on "python@3.14"
@@ -28,11 +27,6 @@ class Pipgrip < Formula
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
     sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
-  end
-
-  resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/0d/1c/73e719955c59b8e424d015ab450f51c0af856ae46ea2da83eba51cc88de1/setuptools-81.0.0.tar.gz"
-    sha256 "487b53915f52501f0a79ccfd0c02c165ffe06631443a886740b91af4b7a5845a"
   end
 
   resource "wheel" do

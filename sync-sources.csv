@@ -3422,6 +3422,7 @@ Homebrew-homebrew-core/Formula/k/k3sup.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/k6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/k8sgpt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/k9s.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kaf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kafka.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kafkactl-aws-plugin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kafkactl-azure-plugin.rb, Homebrew/homebrew-core, 1
@@ -3692,6 +3693,7 @@ Homebrew-homebrew-core/Formula/l/leptonica.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lerna.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/less.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lesspipe.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/letta-code.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/levant.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/leveldb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lexbor.rb, Homebrew/homebrew-core, 1
@@ -3728,6 +3730,7 @@ Homebrew-homebrew-core/Formula/l/links.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/linode-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/linux-headers@4.4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/linux-headers@5.15.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/linux-headers@6.8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/linux-pam.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/liqoctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/liquibase.rb, Homebrew/homebrew-core, 1
@@ -3757,6 +3760,7 @@ Homebrew-homebrew-core/Formula/l/lldpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/llgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llhttp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llm.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/llmfit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llnode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@12.rb, Homebrew/homebrew-core, 1
@@ -5941,6 +5945,7 @@ Homebrew-homebrew-core/Formula/p/pympress.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pymupdf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyoxidizer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pyperformance.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pypy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pypy3.10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pypy3.9.rb, Homebrew/homebrew-core, 1
@@ -7423,6 +7428,8 @@ Homebrew-homebrew-core/Formula/t/tre.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trec_eval.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tree-sitter-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tree-sitter-go.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tree-sitter-python.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tree-sitter-ruby.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tree-sitter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tree-sitter@0.25.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tree.rb, Homebrew/homebrew-core, 1
@@ -8817,6 +8824,7 @@ Homebrew-homebrew-cask/Casks/c/calcservice.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/caldigit-docking-utility.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/caldigit-thunderbolt-charging.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/calendar-366.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/calendr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/calhash.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/calibre.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/calibrite-profiler.rb, Homebrew/homebrew-cask, 1
@@ -9541,6 +9549,7 @@ Homebrew-homebrew-cask/Casks/e/expo-orbit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/expressions.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/expressscribe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/expressvpn.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/e/extradock.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/extraterm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/f-bar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fabfilter-micro.rb, Homebrew/homebrew-cask, 0
@@ -9584,6 +9593,7 @@ Homebrew-homebrew-cask/Casks/f/feem.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/feishu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fellow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/ferdium.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/f/ferdium@nightly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fertigt-slate.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fetch-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/ff-works.rb, Homebrew/homebrew-cask, 0

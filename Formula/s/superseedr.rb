@@ -1,18 +1,18 @@
 class Superseedr < Formula
   desc "BitTorrent Client in your Terminal"
   homepage "https://github.com/Jagalite/superseedr"
-  url "https://ghfast.top/https://github.com/Jagalite/superseedr/archive/refs/tags/v0.9.39.tar.gz"
-  sha256 "c5b0aace7bf24952aba1e4f635ba8c64d28423c5e87b51e88a73d7ca237f33e2"
+  url "https://ghfast.top/https://github.com/Jagalite/superseedr/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "03d47c6e37e00491ef263879f8023104f2f0025ec3cac8fbc0f887f853f4ad67"
   license "GPL-3.0-or-later"
   head "https://github.com/Jagalite/superseedr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3d01f3566fe805b433dafde9443f20967d7b5807e27a9a5fc38bb4623b066464"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40d6924f5d30c522887c7a2a3c61f50f450a34489d2a64e9b96df9fa8d29afe4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7104c73ab9674c991b34ee9d6360249319373ec47d70ced9d345fbda7bc3c8b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6ef64181ecf9ded9977afc9d147c6e819815e0454795900e8719f3b3a8cd0596"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e98cf7351b13a2fe3b41685da1852bbf77b9a1e227adee142c96762ec957a01e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16e360ae85b9139e46f97fd3bb10bfb44dbdbd28395d064aef0210ced2bda2de"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16f9e755e87ed41d14060cb5895ec3d11d2a2d70b270762f3df22322f911571a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be611c99d41f891639c056fa997b4e6194b0d62e1bbdd612e3695913482b2ade"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04566f4987fa8f25e998cd04c90f2f97b63ce3f9a011446ffebd7248cc0c75c1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "37bdf98e2de003966503922c37be17297e0a5811893d892c2da29233cc515411"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbc7cfae5432989863bf8150b55dbd69eb1bb8692e490b041411b7ec1b8c3819"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fd6b28e8b04d68223aa2940d09b455243ef1ec9fb090dee3a75bb607aeaee43"
   end
 
   depends_on "pkgconf" => :build

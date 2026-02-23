@@ -6,6 +6,11 @@ class Solana < Formula
   license "Apache-2.0"
   version_scheme 1
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "147c7426b3fe385342475c4a7491441bcec15e9f73557cb26005c9c7505f677d"
     sha256 cellar: :any,                 arm64_sequoia: "ef22b3b53fdfceef8df23d81709a8ef534d0d38f97e1e2d2455140f4caddd69a"

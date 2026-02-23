@@ -1,18 +1,18 @@
 class Ktea < Formula
   desc "Kafka TUI client"
   homepage "https://github.com/jonas-grgt/ktea"
-  url "https://ghfast.top/https://github.com/jonas-grgt/ktea/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "3c57e32ffd159975ddd745476966dd8e1d65450d309efc46f7f5ef3a8c38fc37"
+  url "https://ghfast.top/https://github.com/jonas-grgt/ktea/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "f6bcee401fcee6a7fa1cea82364cae54832ca9fc76258085330790ac92ee158a"
   license "Apache-2.0"
   head "https://github.com/jonas-grgt/ktea.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2c686cf4405c7e37429cb80d07c90d7c14dfcafe7b2aca85b772b8944b09a664"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c686cf4405c7e37429cb80d07c90d7c14dfcafe7b2aca85b772b8944b09a664"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c686cf4405c7e37429cb80d07c90d7c14dfcafe7b2aca85b772b8944b09a664"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aa1629422d0be09cabe893bbd35716aaf60c646b4af6264a02dbe543cc7f1779"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "abecac10133b436d9cd5b6b7afc881311fe9958bfe9fbc3719089ec325a703b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc7618264ddaffefdee60d2089683e02f8b41c546eecdc9c43efffa94f2ca8a3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f80a264b2f3d284a903d4d84a9e8a69ceb276234c2612ee2a2220e001cd58651"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f80a264b2f3d284a903d4d84a9e8a69ceb276234c2612ee2a2220e001cd58651"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f80a264b2f3d284a903d4d84a9e8a69ceb276234c2612ee2a2220e001cd58651"
+    sha256 cellar: :any_skip_relocation, sonoma:        "41bdade549bfdb588b2f5e628008906c7de69e4b509c69a6bb8cd27419904e42"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e10a3c9059ad237d3e997a29a47eae25874a60471021069afaa62f51010b23f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0817cb2ae89f71835c4e840616f017e23e297858a37b247aa77822fd045c525d"
   end
 
   depends_on "go" => :build

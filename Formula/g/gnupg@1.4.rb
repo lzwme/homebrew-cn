@@ -12,8 +12,6 @@ class GnupgAT14 < Formula
     regex(/href=.*?gnupg[._-]v?(1\.4(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "4ca96fcb6e85fd587e3716a10c8aadc3117fd1055e368627efb8eb8ecbbd486f"

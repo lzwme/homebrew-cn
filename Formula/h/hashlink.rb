@@ -17,13 +17,13 @@ class Hashlink < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "fec6262dd3d0fd5fd4b193897f7fc621d43c15566d857ce63bdee05ea1011898"
-    sha256 cellar: :any,                 arm64_sequoia: "66da51020a5d2c176526de2f58ac48c2441d2cbe96015eccba24d9bae04ffaf5"
-    sha256 cellar: :any,                 arm64_sonoma:  "5255cb6165cc8da050a92300ba4ff31799b66a2946a6c0e64e113d936285585a"
-    sha256 cellar: :any,                 sonoma:        "edbce7ca0eb456f8bf1d24de717897d368a7d353cc581edf30a218e368c8c2bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "332b1aaba5e901a3bc4a0b2598a64bcb6cfed54743d29071c3326c85ace4a974"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a9d6651f89c3b934532d246176249522e8aaf42658dea4bd09d67f3a5c2107f"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "63eb38d4dbc69ab9f8c71ecfd3c8b1f81673ddf015454e0141289747c0ac4269"
+    sha256 cellar: :any,                 arm64_sequoia: "f81bd39b0a2962b274cad50e95190e5c86d4f9da5cbd27b8b5a7a3c807e3af00"
+    sha256 cellar: :any,                 arm64_sonoma:  "454fec90a208dd51f0a65bb848be96e8f343c2c1b038c7f26a7805cae6c74dbb"
+    sha256 cellar: :any,                 sonoma:        "8e5ebb95cd5752506bef4698f51e476d7de12aa64ed962a0664a48ffc63d60d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "48372fc177336412549a92467756268d1da1ca27718ef3b68b2b4824bee10a8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d7d71f666e42bc1e991d8376470e7755653ec6b1629b4d080e2a5d3bb541b4d"
   end
 
   depends_on "haxe" => :test
@@ -49,10 +49,7 @@ class Hashlink < Formula
     # These appear to be renamed shared libraries specifically used by HashLink.
     args = ["PREFIX=#{prefix}"]
 
-    if OS.mac?
-      # make file doesn't set rpath on mac yet
-      args << "EXTRA_LFLAGS=-Wl,-rpath,#{rpath}"
-    else
+    if OS.linux?
       args << "ARCH=arm64" if Hardware::CPU.arm?
       # On Linux, also set RPATH in LIBFLAGS, so that the linker will also add the RPATH to .hdll files.
       inreplace "Makefile", "LIBFLAGS =", "LIBFLAGS = -Wl,-rpath,${INSTALL_LIB_DIR}"

@@ -197,15 +197,8 @@ end
 
 __END__
 diff --git a/bindings/python/sigrok/core/classes.i b/bindings/python/sigrok/core/classes.i
-index a00efff..5fe45eb 100644
 --- a/bindings/python/sigrok/core/classes.i
 +++ b/bindings/python/sigrok/core/classes.i
-@@ -85,7 +85,7 @@ typedef guint pyg_flags_type;
-     if (!GLib) {
-         fprintf(stderr, "Import of gi.repository.GLib failed.\n");
- #if PY_VERSION_HEX >= 0x03000000
+@@ -85,1 +85,1 @@ typedef guint pyg_flags_type;
 -        return nullptr;
 +        return 0;
- #else
-         return;
- #endif

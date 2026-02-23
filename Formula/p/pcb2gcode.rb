@@ -7,8 +7,6 @@ class Pcb2gcode < Formula
   revision 11
   head "https://github.com/pcb2gcode/pcb2gcode.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "d61829e13e6a6a9b43e1e6c50792af67569b848002bcdff37010ee0d30919b6f"
     sha256 cellar: :any,                 arm64_sequoia: "62c9eac391af2f8d19f488ccb9ae7f4e54c64e2800800e5f41c076f50dc82083"

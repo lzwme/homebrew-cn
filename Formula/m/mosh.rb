@@ -6,8 +6,6 @@ class Mosh < Formula
   license "GPL-3.0-or-later"
   revision 36
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "0fe164cae9fd64589583178509a1fd4cee81a4e9883992484128c6eefbaea27e"

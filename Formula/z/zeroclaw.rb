@@ -1,18 +1,18 @@
 class Zeroclaw < Formula
   desc "Rust-first autonomous agent runtime"
   homepage "https://github.com/zeroclaw-labs/zeroclaw"
-  url "https://ghfast.top/https://github.com/zeroclaw-labs/zeroclaw/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "2373223b178ea1f7e9b62df2839d26fe38a28fcbcab6ccf19235e969b1173745"
-  license "MIT"
+  url "https://ghfast.top/https://github.com/zeroclaw-labs/zeroclaw/archive/refs/tags/v0.1.6.tar.gz"
+  sha256 "e4536eafb945e1a80ce6616197521a0be3267075ac9916be45232ba7448989d9"
+  license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/zeroclaw-labs/zeroclaw.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6db9835aef789e139089449e8686216132c7633b0f7222dae8bd392b79171940"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "486f3566bb1cbd004443bb89060cead705ae5a8c9d4c671bbd9beab4519aaa35"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "520491ae609b1242ff08e0a88b46c0f432ba159c32e4babdd171c1827cfcff60"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3e2693c1cb6090bc680b7b785c260c10ad0cd77d3bc752387c9767cab275661f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "505944b58eb1c4acd55a26317f3a91b0ca4bd15f988833b930f8559c14c028fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f507a02012dff8d2f60659ed860b6a6cf1b21d3471762c2a027d7b85fe8dd194"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f61f1c9b336b2139bbe433dbb15b23435ae7387757886bd914dfb9ff16e30f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ccd7216773b0071236998998dcf77b5f82def10fbe81cff2018155bed7fa3fab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "706f51e08df2a5eb5ad52a45adb7071ee4c4ad5403387634b680eb89b235f494"
+    sha256 cellar: :any_skip_relocation, sonoma:        "630614a79ca9bcc1beed4016a66f67a2317f63d9c47fc826a817171240e4573d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e06e587f7fea740d1cd668c03868511ef4d60aeef58677642ed3526329f59fd7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c403b172342c910cffdecf9f5d879b660e66193e34321a861296cd3b63c39c3"
   end
 
   depends_on "rust" => :build

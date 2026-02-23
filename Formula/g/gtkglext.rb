@@ -6,8 +6,6 @@ class Gtkglext < Formula
   license "LGPL-2.1-or-later"
   revision 4
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "764e97c887571389641f45ef171ca06af71ac4bc5fcaaff56e85c9d663cad92a"
     sha256 cellar: :any,                 arm64_sequoia:  "c7d1eb4cd50853e471d11db5256550eb6eea8d0b66424e66bf4662f54bbcfc64"
