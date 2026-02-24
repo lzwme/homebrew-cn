@@ -3,8 +3,8 @@ class V8 < Formula
   homepage "https://v8.dev/docs"
   # Track V8 version from Chrome stable: https://chromiumdash.appspot.com/releases?platform=Mac
   # Check `brew livecheck --resources v8` for any resource updates
-  url "https://ghfast.top/https://github.com/v8/v8/archive/refs/tags/14.5.201.9.tar.gz"
-  sha256 "6d5bf28a8278adc068cd6293ab362b5bc11ee2fab9f2d09547cda8b2b3ceba78"
+  url "https://ghfast.top/https://github.com/v8/v8/archive/refs/tags/14.5.201.12.tar.gz"
+  sha256 "455e9142a174f09a4ab3bb80bb53ab81438d6d4d7a6971e4fa14e801eac769d9"
   license "BSD-3-Clause"
 
   livecheck do
@@ -24,12 +24,12 @@ class V8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "69dd021844b566d16493cb7d94edb4e8b5abfa5f988e613ed2edad1a13e8e7fc"
-    sha256 cellar: :any,                 arm64_sequoia: "8e784359d1290675e78fa396b6d97b34257448d945fd6e73f3f647cdd9c50fa0"
-    sha256 cellar: :any,                 arm64_sonoma:  "167c5167ec10073e634b6d373cee762a0fdeecb457750581d2c86abd5c8255da"
-    sha256 cellar: :any,                 sonoma:        "3003d39ee17c74010df35812f5640e7cc6e5af32f9dc75cfcbade7025acbe525"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "04f6e8c82ae8101c64bb6a0a3b7d4cb6ee77a0ff91a7a85e37320e121f9afa34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de82c96b8f517caa3ad427b3609338f1a5055aa19e04d64f706b9177bac345a2"
+    sha256 cellar: :any,                 arm64_tahoe:   "e1b4ca0e6f5b675142f7dd88502b30c0d5d79f5d14ec176dd8d250fa70812203"
+    sha256 cellar: :any,                 arm64_sequoia: "61232fe018021f82356ef83c6be620c9a1a1b9a72dec6a290a2729f7e80c6ae9"
+    sha256 cellar: :any,                 arm64_sonoma:  "a23c1f34b4bd0250f8098c4f88db798a4820b8c6bd80ab5889d8de2df63af581"
+    sha256 cellar: :any,                 sonoma:        "1bf9304846cd82549656f3324770bfa5114450b3fbd40e578b80f970e8672785"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e484fa398677ea6fd0800e602cf1106980bd1f3d93a0ce1a852fefdbc07c066"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "baa6fe578988162ccbf505d3d1d07ba012b3cf8e0178b104b20bf590c7626075"
   end
 
   depends_on "llvm" => :build
@@ -42,6 +42,14 @@ class V8 < Formula
     depends_on "lld" => :build
     depends_on "pkgconf" => :build
     depends_on "glib"
+  end
+
+  fails_with :clang do
+    cause "Apple Clang frequently breaks as upstream often uses features from newer Clang"
+  end
+
+  fails_with :gcc do
+    cause "requires Clang"
   end
 
   # Look up the correct resource revisions in the DEP file of the specific releases tag
@@ -245,7 +253,6 @@ class V8 < Formula
     }
 
     # workaround to use shim to compile v8
-    ENV.llvm_clang
     llvm = Formula["llvm"]
     clang_base_path = buildpath/"clang"
     clang_base_path.install_symlink (llvm.opt_prefix.children - [llvm.opt_bin])

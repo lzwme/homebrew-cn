@@ -6,15 +6,16 @@ class Prowler < Formula
   url "https://files.pythonhosted.org/packages/53/ee/1f72ed4bde6c781ae542618a5caa9fdb9e6e32861600c402fa1d97ae625f/prowler-5.18.3.tar.gz"
   sha256 "f0098fdf8f7ebcad7497b0c0659207cf992b04f54d9f3d6b3f991059571b9227"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d4e2f558b598d53c1fbe2616dd7d63bdc31b0d8db865f55321cfa400546ea854"
-    sha256 cellar: :any,                 arm64_sequoia: "32f119dc2ca62bfc1e1d77ecaa6514bd5c58a26dbf64102f190dca5da38c8ef1"
-    sha256 cellar: :any,                 arm64_sonoma:  "1e8a61f668509543ce0bf25cc50b0c65f72946bd0cc233a5b568e13dbf3b19e5"
-    sha256 cellar: :any,                 sonoma:        "74aff473e62e56149a24dbec1b7ccffd9c0c9708ea4a3cc8ccd444ed99c9e9a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1322c1911292c5e79df89ed8132963c997190d5abcb35645e53f31dc873f5efc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "742e3eb546567a8f0818c54b1d4b5175c9194b7a27aef5555a3e7b8fa2ee81f7"
+    sha256 cellar: :any,                 arm64_tahoe:   "2376deb39334471132def63d9e1b3d2e7cd335ca5a48381975651d008949d91b"
+    sha256 cellar: :any,                 arm64_sequoia: "96ccad44402b195ede5adb35cacd05fdbd76ebd0c6e29decc0904e9a765b8d20"
+    sha256 cellar: :any,                 arm64_sonoma:  "5c07cea544f9757cba2f48500209154fe5b8c2497865f708f9747aac9b46f831"
+    sha256 cellar: :any,                 sonoma:        "b47b3419924d2817dd1835bf483b87eaf6cdaa1c004ee67a1e257aabfb4580e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "adb2d6caa2c228f200e0788e67103ef8c59f091f63b3dfa434b20de84a455432"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "169e4b4d6c3901c5bd6ae090b4de57d339933b418447075b637f389720b7e50c"
   end
 
   depends_on "cmake" => :build
@@ -254,8 +255,8 @@ class Prowler < Formula
   end
 
   resource "azure-core" do
-    url "https://files.pythonhosted.org/packages/53/9b/23893febea484ad8183112c9419b5eb904773adb871492b5fa8ff7b21e09/azure_core-1.38.1.tar.gz"
-    sha256 "9317db1d838e39877eb94a2240ce92fa607db68adf821817b723f0d679facbf6"
+    url "https://files.pythonhosted.org/packages/00/fe/5c7710bc611a4070d06ba801de9a935cc87c3d4b689c644958047bdf2cba/azure_core-1.38.2.tar.gz"
+    sha256 "67562857cb979217e48dc60980243b61ea115b77326fa93d83b729e7ff0482e7"
   end
 
   resource "azure-identity" do
@@ -519,13 +520,13 @@ class Prowler < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/02/a8/dae62680be63cbb3ff87cfa2f51cf766269514ea5488479d42fec5aa6f3a/filelock-3.24.2.tar.gz"
-    sha256 "c22803117490f156e59fafce621f0550a7a853e2bbf4f87f112b11d469b6c81b"
+    url "https://files.pythonhosted.org/packages/73/92/a8e2479937ff39185d20dd6a851c1a63e55849e447a55e798cc2e1f49c65/filelock-3.24.3.tar.gz"
+    sha256 "011a5644dc937c22699943ebbfc46e969cdde3e171470a6e40b9533e5a72affa"
   end
 
   resource "flask" do
-    url "https://files.pythonhosted.org/packages/dc/6d/cfe3c0fcc5e477df242b98bfe186a4c34357b4847e87ecaef04507332dab/flask-3.1.2.tar.gz"
-    sha256 "bf656c15c80190ed628ad08cdfd3aaa35beb087855e2f494910aa3774cc4fd87"
+    url "https://files.pythonhosted.org/packages/26/00/35d85dcce6c57fdc871f3867d465d780f302a175ea360f62533f12b27e2b/flask-3.1.3.tar.gz"
+    sha256 "0ef0e52b8a9cd932855379197dd8f94047b359ca0a78695144304cb45f87c9eb"
   end
 
   resource "frozenlist" do
@@ -534,8 +535,8 @@ class Prowler < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/0d/10/05572d33273292bac49c2d1785925f7bc3ff2fe50e3044cf1062c1dde32e/google_api_core-2.29.0.tar.gz"
-    sha256 "84181be0f8e6b04006df75ddfe728f24489f0af57c96a529ff7cf45bc28797f7"
+    url "https://files.pythonhosted.org/packages/22/98/586ec94553b569080caef635f98a3723db36a38eac0e3d7eb3ea9d2e4b9a/google_api_core-2.30.0.tar.gz"
+    sha256 "02edfa9fab31e17fc0befb5f161b3bf93c9096d99aed584625f38065c511ad9b"
   end
 
   resource "google-api-python-client" do
@@ -599,8 +600,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/a2/a3/faa70396c6e569421dcf31f03a03f62749393b5a14c5ffa8c729ce8a599c/iamdata-0.1.202602181.tar.gz"
-    sha256 "8df299a1e033e3b80dc7267a37a29ad8d49bcc90086867b8969a9ba5bbfa2b29"
+    url "https://files.pythonhosted.org/packages/a0/27/ec0de130220e029ab828318d67238309c48cc82ae895748b0ca2f5d369d1/iamdata-0.1.202602231.tar.gz"
+    sha256 "1293d110ef239542aad9535495cb1ba5183cf33a8eaf69623b95cf0668f8cd6f"
   end
 
   resource "idna" do
@@ -659,8 +660,8 @@ class Prowler < Formula
   end
 
   resource "keystoneauth1" do
-    url "https://files.pythonhosted.org/packages/e5/2b/5a08163c8e878811f11dc8c78c041c2384cd424c71f75fb7a6b19969047f/keystoneauth1-5.13.0.tar.gz"
-    sha256 "57c9ca407207899b50d8ff1ca8abb4a4e7427461bfc1877eb8519c3989ce63ec"
+    url "https://files.pythonhosted.org/packages/f3/bc/d99872ca0bc8bf5f248b50e3d7386dedec5278f8dd989a2a981d329a8069/keystoneauth1-5.13.1.tar.gz"
+    sha256 "e011e47ac3f3c671ffae33505c095548650cc19dab7f6af3b2ea5bd18c98f0c9"
   end
 
   resource "kubernetes" do
@@ -1000,8 +1001,8 @@ class Prowler < Formula
   end
 
   resource "stevedore" do
-    url "https://files.pythonhosted.org/packages/96/5b/496f8abebd10c3301129abba7ddafd46c71d799a70c44ab080323987c4c9/stevedore-5.6.0.tar.gz"
-    sha256 "f22d15c6ead40c5bbfa9ca54aa7e7b4a07d59b36ae03ed12ced1a54cf0b51945"
+    url "https://files.pythonhosted.org/packages/a2/6d/90764092216fa560f6587f83bb70113a8ba510ba436c6476a2b47359057c/stevedore-5.7.0.tar.gz"
+    sha256 "31dd6fe6b3cbe921e21dcefabc9a5f1cf848cf538a1f27543721b8ca09948aa3"
   end
 
   resource "tabulate" do
@@ -1050,8 +1051,8 @@ class Prowler < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
-    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
+    url "https://files.pythonhosted.org/packages/61/f1/ee81806690a87dab5f5653c1f146c92bc066d7f4cebc603ef88eb9e13957/werkzeug-3.1.6.tar.gz"
+    sha256 "210c6bede5a420a913956b4791a7f4d6843a43b6fcee4dfa08a65e93007d0d25"
   end
 
   resource "wrapt" do

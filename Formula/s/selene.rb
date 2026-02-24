@@ -7,21 +7,19 @@ class Selene < Formula
   head "https://github.com/Kampfkarren/selene.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3dda5bb5c452a76baf591c09cb261ac305eb454092b38c0c4bf6c7e55a089137"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7a74a8cf951217daa515c208c4f40068ddebdae5aaf9951ec0d6436bc3fecf6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac4825a8aeb601c537936187ce01cb0ee8b52d6058d0d8ea7a4bbc74711678f7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c4f7769cb4798c52295fe8a9832d8800d27d6f5f211f9da41294a3a6b31fb0ae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c27f717bc98db91664c1125f224bf52b74b250c1218d83b931f3219940739829"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e557d22a1a4bfbaaa14fd1c7fd9cd05e4154b9390a488e256cde521efea7106"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "335e48a736314eeb33836273c91e26734509abd4b5d246ef552a4961dc6ab7b2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3af72430d846eff1f783096666508708b76a1537d43005bf5f36673999d3919a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "afb85979512627975c42d1049281d6ce78547151b3a8aa7e7b78ce129694e367"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4d67cbb0a229ccb041d4965c87af5c059c711d89071687ace7fea0ebfabd5c40"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "03a36f5ac7dfc7a63d8097091531ace07145ce085a34679aa4d60a98642b1393"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "507d2ffbdba0be10049b46bfa6fd26be6c11b28eb72f940e7290debb40a50fd7"
   end
 
-  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   def install
-    cd "selene" do
-      system "cargo", "install", "--bin", "selene", *std_cargo_args
-    end
+    system "cargo", "install", *std_cargo_args(path: "selene")
   end
 
   test do

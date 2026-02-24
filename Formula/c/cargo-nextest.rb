@@ -23,8 +23,8 @@ class CargoNextest < Formula
   depends_on "rustup" => :test
 
   def install
-    system "cargo", "install", "--no-default-features", "--features", "default-no-update",
-                    *std_cargo_args(path: "cargo-nextest")
+    features = "default-no-update"
+    system "cargo", "install", "--no-default-features", *std_cargo_args(path: "cargo-nextest", features:)
   end
 
   test do

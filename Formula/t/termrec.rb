@@ -11,8 +11,6 @@ class Termrec < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_tahoe:   "83130b80ca5853bcb36c51451cf600c22c5fa8138cd525723cd8e9b960ff9791"

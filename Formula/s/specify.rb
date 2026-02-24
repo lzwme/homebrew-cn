@@ -3,17 +3,17 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.com/github/spec-kit"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.1.5.tar.gz"
-  sha256 "1eac4c4a9b168a576a6feac7e9376da74c1ea7c7e46b755211d6b7f71e9c1d55"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.1.6.tar.gz"
+  sha256 "9624df468bd703021bb85eb55a7ead7e616b877c28f3673247008daf7ce341d8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d0d4797c2ccc9ab12280774d4fbbd3c1c7c834f53b0b1eb2155ac68e4f47d965"
-    sha256 cellar: :any,                 arm64_sequoia: "bda7f9f7c1c43c94824d0ac38abb658a4df05a46487e49a7ff7429521c181dd6"
-    sha256 cellar: :any,                 arm64_sonoma:  "2348f6df369031584d6bb60b496274307ba875010a407d9b80fd8bf2e10a31ce"
-    sha256 cellar: :any,                 sonoma:        "97b1454b973c906dd74d8628093694006789e76fa02c3f07e9ee724cbfdf776d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "78fef2d09777cc7ab35044bdb768f8f586705f4d16cfde9d5c689ee5641ea941"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d9f19a4f23d35bbb6e4288c3e7eb06679aabbb6c9cf680747d5044014b6ea1a"
+    sha256 cellar: :any,                 arm64_tahoe:   "b44822cb971554d99f4875889ec2f0432f20911106b912096cdb500911a63fcf"
+    sha256 cellar: :any,                 arm64_sequoia: "aab951c401f866940063274b18f04ccd00a55ccec5ffe28a7c01d81162ca55cf"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd492a517d543ac3799f8e9c66cb0c873274af4d1a10257a26cfa3bd3751698b"
+    sha256 cellar: :any,                 sonoma:        "90f664c7bfb721215d37ca7f10c2449525c7f8d6c1f80711629478ebf1a4c71e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "940e2fd0decafa4ff92e71bec6a987834356af53dec71e6293ab891b36b41328"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5345730cbf8fbf07b5c943e2a643cac0b9c552f06cec9238a4512fc22b8cf4e4"
   end
 
   depends_on "certifi" => :no_linkage
@@ -119,8 +119,8 @@ class Specify < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/5a/b6/3e681d3b6bb22647509bdbfdd18055d5adc0dce5c5585359fa46ff805fdc/typer-0.24.0.tar.gz"
-    sha256 "f9373dc4eff901350694f519f783c29b6d7a110fc0dcc11b1d7e353b85ca6504"
+    url "https://files.pythonhosted.org/packages/f5/24/cb09efec5cc954f7f9b930bf8279447d24618bb6758d4f6adf2574c41780/typer-0.24.1.tar.gz"
+    sha256 "e39b4732d65fbdcde189ae76cf7cd48aeae72919dea1fdfc16593be016256b45"
   end
 
   def install

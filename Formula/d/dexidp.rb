@@ -1,19 +1,17 @@
 class Dexidp < Formula
   desc "OpenID Connect Identity and OAuth 2.0 Provider"
   homepage "https://dexidp.io"
-  url "https://ghfast.top/https://github.com/dexidp/dex/archive/refs/tags/v2.44.0.tar.gz"
-  sha256 "e0599817d14dd1a99f0c7b967b8801751f90b42ad56d8f1aaa4afa2565d76288"
+  url "https://ghfast.top/https://github.com/dexidp/dex/archive/refs/tags/v2.45.0.tar.gz"
+  sha256 "69bed527e7821e4d11195a4ea035399ffb3c95764af3108edce5fff43ce20e36"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd3a79c12a65cf0c632bbb7610431b24be1627dc712465b5105d1f59c299f356"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df23a6fb031357ae2c3095c00e6713a98b74485859d3db36ad8340436309c77c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f610bf0613e8446cc7173fb3af3ed417d90c0b3b53743d4e4480ae2670798378"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9685e4b7b7b4eba901c45fd435fe84ce00cd579c17fc6661ddeadf6f4407ee2f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "65718792e94096b13180875a6ab75bacea96fc24ab490e91bfe86b4b48cc6669"
-    sha256 cellar: :any_skip_relocation, ventura:       "a69bbc18f7b28a1a5f5bcf149ed40512ff7a9315212b2cf6c6655e93ef19c47d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "986f3525707d3f29dd1ef9e360d45224e9235d784391e48c0b278a635e58f409"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e523b97e9dd193df39c627600f460e33331dd0df30f49beb2e20548eaacf12bd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4964c18164ff3f375a91f84bf967e9ca92cef043bdac01617c4d6cf06ce6dfc7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b511620e4ed6385ab4a6d0fe3e797c258daaae9da9f31512bf26dfb1cfffb909"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8f3bbc89f304109a11dc81595fe1ed8d1714380909bb4bee45045074b992958"
+    sha256 cellar: :any_skip_relocation, sonoma:        "222f4bdcc84e6fd60be58ff93f81e451d991e91ddb0130bc91dc636abe736c14"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2d2ab272845c14ce9e5d1e26bc6fd1f79a3ff5c977209ff43bf67a3eb70b0d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01681fd9e8a1e0a7a7549d6afedcaccee7943259964ecd284a6745bd08f9de5e"
   end
 
   depends_on "go" => :build

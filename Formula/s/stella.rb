@@ -7,8 +7,6 @@ class Stella < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/stella-emu/stella.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_tahoe:   "41e3a16e64aaf77fe123ddbd981aeeba3e994390c7d89c0c65f1c2925e7b7e9a"

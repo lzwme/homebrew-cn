@@ -6,14 +6,15 @@ class Moto < Formula
   url "https://files.pythonhosted.org/packages/55/f8/81e2ee90f47a6ae1e475a961bd6a1a1569b04999ba941897b87101b0d5af/moto-5.1.21.tar.gz"
   sha256 "713dde46e71e2714fa9a29eec513ec618d35e1d84c256331b5aab3f30692feeb"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e95b191f8c21f52ef95be24bd29c207bc0079f94f3640bee4fbfe9eb11d6c3ef"
-    sha256 cellar: :any,                 arm64_sequoia: "28266708740d297790dba23755507f98ea091a93142e33d7ab55c52193381856"
-    sha256 cellar: :any,                 arm64_sonoma:  "9eb556d303a70c2c6d20c7079dae9f6bc3a3ddeab9f2bd55020c0ffa3c262056"
-    sha256 cellar: :any,                 sonoma:        "855632cfed39ac92d49676d24a01bb79b31513462b793439237ee48b5cad42fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed766539b2c29879fa8546719ec0d142cab1be153a1d217edbe53e4d6ea57148"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "459aef05b0c7c50e4632dfe61f05e064dac3566bd63c795d34282a607712660b"
+    sha256 cellar: :any,                 arm64_tahoe:   "d1448ed9f6f4aa97c96b3ba113d803c7f7f79cc123e1d13b12536893359daf6e"
+    sha256 cellar: :any,                 arm64_sequoia: "19b8dffcb9700934731665e85adabd7fc85941cf6deff190c1ac4cf55f5c5189"
+    sha256 cellar: :any,                 arm64_sonoma:  "44c50ee523cc0670771730d72e2e089651b3888b4954950377ea1197e5a521ec"
+    sha256 cellar: :any,                 sonoma:        "1eff4cf7de2eb11d5bcd2d0b40bd0f1b147052a863672700d3c21f963c2820ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7a84790113d285d7ec574b0f83d7b7e07293b39e7ddc408f77a5b51ec014359"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84bcb685ae3cb8102a6f07ef95e1b628ef7006413bac73aec39f0a2e348d507c"
   end
 
   depends_on "certifi" => :no_linkage
@@ -52,13 +53,13 @@ class Moto < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/1d/88/de5c2a0ce069973345f9fac81200de5b58f503e231dbd566357a5b8c9109/boto3-1.42.44.tar.gz"
-    sha256 "d5601ea520d30674c1d15791a1f98b5c055e973c775e1d9952ccc09ee5913c4e"
+    url "https://files.pythonhosted.org/packages/4f/53/2e0a325e080bd83f5dfd8f964b70b93badc284bcb5680bee75327771ad4a/boto3-1.42.54.tar.gz"
+    sha256 "fe3d8ec586c39a0c96327fd317c77ca601ec5f991e9ba7211cacae8db4c07a73"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/29/ff/54cef2c5ff4e1c77fabc0ed68781e48eb36f33433f82bba3605e9c0e45ce/botocore-1.42.44.tar.gz"
-    sha256 "47ba27360f2afd2c2721545d8909217f7be05fdee16dd8fc0b09589535a0701c"
+    url "https://files.pythonhosted.org/packages/be/9a/5ab14330e5d1c3489e91f32f6ece40f3b58cf82d2aafe1e4a61711f616b0/botocore-1.42.54.tar.gz"
+    sha256 "ab203d4e57d22913c8386a695d048e003b7508a8a4a7a46c9ddf4ebd67a20b69"
   end
 
   resource "cfn-lint" do
@@ -82,8 +83,8 @@ class Moto < Formula
   end
 
   resource "flask" do
-    url "https://files.pythonhosted.org/packages/dc/6d/cfe3c0fcc5e477df242b98bfe186a4c34357b4847e87ecaef04507332dab/flask-3.1.2.tar.gz"
-    sha256 "bf656c15c80190ed628ad08cdfd3aaa35beb087855e2f494910aa3774cc4fd87"
+    url "https://files.pythonhosted.org/packages/26/00/35d85dcce6c57fdc871f3867d465d780f302a175ea360f62533f12b27e2b/flask-3.1.3.tar.gz"
+    sha256 "0ef0e52b8a9cd932855379197dd8f94047b359ca0a78695144304cb45f87c9eb"
   end
 
   resource "flask-cors" do
@@ -117,8 +118,8 @@ class Moto < Formula
   end
 
   resource "joserfc" do
-    url "https://files.pythonhosted.org/packages/c7/3d/82375487dcc2bcdf136a68e1a8543165feccbbc8833dfc451f87a5f83b81/joserfc-1.6.1.tar.gz"
-    sha256 "7759a14d732d93503317468c0dd258510c4f64b30759cf42e96016c97b38c4b7"
+    url "https://files.pythonhosted.org/packages/03/7a/c5bfcb971e5d330e21ae26935cc798dcf928a68c4e42a6990d0d6f1e83d6/joserfc-1.6.2.tar.gz"
+    sha256 "fd666ee075dbc4889b8b0353437847644777c1045c394838feeadb5aaecd72ab"
   end
 
   resource "jsonpatch" do
@@ -222,8 +223,8 @@ class Moto < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/0b/86/07d5056945f9ec4590b518171c4254a5925832eb727b56d3c38a7476f316/regex-2026.1.15.tar.gz"
-    sha256 "164759aa25575cbc0651bef59a0b18353e54300d79ace8084c818ad8ac72b7d5"
+    url "https://files.pythonhosted.org/packages/ff/c0/d8079d4f6342e4cec5c3e7d7415b5cd3e633d5f4124f7a4626908dbe84c7/regex-2026.2.19.tar.gz"
+    sha256 "6fb8cb09b10e38f3ae17cc6dc04a1df77762bd0351b6ba9041438e7cc85ec310"
   end
 
   resource "requests" do
@@ -232,8 +233,8 @@ class Moto < Formula
   end
 
   resource "responses" do
-    url "https://files.pythonhosted.org/packages/0e/95/89c054ad70bfef6da605338b009b2e283485835351a9935c7bfbfaca7ffc/responses-0.25.8.tar.gz"
-    sha256 "9374d047a575c8f781b94454db5cab590b6029505f488d12899ddb10a4af1cf4"
+    url "https://files.pythonhosted.org/packages/9f/b4/b7e040379838cc71bf5aabdb26998dfbe5ee73904c92c1c161faf5de8866/responses-0.26.0.tar.gz"
+    sha256 "c7f6923e6343ef3682816ba421c006626777893cb0d5e1434f674b649bac9eb4"
   end
 
   resource "rfc3339-validator" do
@@ -267,8 +268,8 @@ class Moto < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
-    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
+    url "https://files.pythonhosted.org/packages/61/f1/ee81806690a87dab5f5653c1f146c92bc066d7f4cebc603ef88eb9e13957/werkzeug-3.1.6.tar.gz"
+    sha256 "210c6bede5a420a913956b4791a7f4d6843a43b6fcee4dfa08a65e93007d0d25"
   end
 
   resource "wrapt" do
@@ -277,8 +278,8 @@ class Moto < Formula
   end
 
   resource "xmltodict" do
-    url "https://files.pythonhosted.org/packages/6a/aa/917ceeed4dbb80d2f04dbd0c784b7ee7bba8ae5a54837ef0e5e062cd3cfb/xmltodict-1.0.2.tar.gz"
-    sha256 "54306780b7c2175a3967cad1db92f218207e5bc1aba697d887807c0fb68b7649"
+    url "https://files.pythonhosted.org/packages/19/70/80f3b7c10d2630aa66414bf23d210386700aa390547278c789afa994fd7e/xmltodict-1.0.4.tar.gz"
+    sha256 "6d94c9f834dd9e44514162799d344d815a3a4faec913717a9ecbfa5be1bb8e61"
   end
 
   def python3

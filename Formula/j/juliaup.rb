@@ -26,7 +26,7 @@ class Juliaup < Formula
 
   def install
     system "cargo", "install", "--bin", "juliaup", *std_cargo_args
-    system "cargo", "install", "--bin", "julialauncher", "--features", "binjulialauncher", *std_cargo_args
+    system "cargo", "install", "--bin", "julialauncher", *std_cargo_args(features: "binjulialauncher")
 
     bin.install_symlink "julialauncher" => "julia"
 

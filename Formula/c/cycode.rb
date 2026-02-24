@@ -3,18 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/fc/f4/6ad9db6ecc718309b8bec751389e57fe4f5d8935b334b9a171d912c24b3c/cycode-3.10.1.tar.gz"
-  sha256 "fe3ca5f83b3abd425e7af91caf51b3ba45705f6f3da371802e68876e3e9d9d95"
+  url "https://files.pythonhosted.org/packages/f4/6e/1bec390f20812df70a3d93f3605ef454c65e02ec00ad51d3b523a4f19b51/cycode-3.10.2.tar.gz"
+  sha256 "35b0ba08a8546eeb2f925590f707402ae3d4dbaa01c3d779795b6c341e80e6e9"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0359a2090c24a2d970655a54d7e5207ef9d7c9a4ec44af2f8de9e3ae7b6998b2"
-    sha256 cellar: :any,                 arm64_sequoia: "827868765dd96681a619c0909ad39b372617afc70c24d642a5caf5a7df1efcaf"
-    sha256 cellar: :any,                 arm64_sonoma:  "a3745177e6fa19553f4ae4aab51727d68bf6cb165142335c245ae861b173d810"
-    sha256 cellar: :any,                 sonoma:        "90feab1c69c0d8342236fa121af4fb5aaa914e3cbb03478c0fdda36dfa0f2733"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "203ec2aaf020fbbfc1cebfe2b54f827527ebf377c177139802dfd212826969bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7fe2cde94bb48a82a7b2ee0a2272c92ade2fad42088fc201da08d25ad2ee6da"
+    sha256 cellar: :any,                 arm64_tahoe:   "3dd1a6afce4da89edd742b958a015be66aec3759c1975cc5692495b88ce6d695"
+    sha256 cellar: :any,                 arm64_sequoia: "2bfa96b55e03940080101c2ab7733931d0aa08682bb62f4654b71764b132cdd6"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe84bdb1ef8bc6e12db21b899d35a9ca5a60bc2e5764b4ce461cb99f52a9fb24"
+    sha256 cellar: :any,                 sonoma:        "19ffb5fd8659908e53c318f2fffd70f795ca7ed8ec9d3f1076fd2025be635d7c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e03ae3189f97c61d0b72ed2870b9aa30f9e811f809fe8a6f81ed6dbf8cab56c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb191c5b552c96e8b810397d5ad2a0fbc41a9bc1b99f10f2d8410feeb3d095a2"
   end
 
   depends_on "certifi" => :no_linkage
@@ -47,8 +47,8 @@ class Cycode < Formula
   end
 
   resource "chardet" do
-    url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
-    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
+    url "https://files.pythonhosted.org/packages/7f/42/fb9436c103a881a377e34b9f58d77b5f503461c702ff654ebe86151bcfe9/chardet-6.0.0.post1.tar.gz"
+    sha256 "6b78048c3c97c7b2ed1fbad7a18f76f5a6547f7d34dbab536cc13887c9a92fa4"
   end
 
   resource "charset-normalizer" do
@@ -147,8 +147,8 @@ class Cycode < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/96/a1/ae859ffac5a3338a66b74c5e29e244fd3a3cc483c89feaf9f56c39898d75/pydantic_settings-2.13.0.tar.gz"
-    sha256 "95d875514610e8595672800a5c40b073e99e4aae467fa7c8f9c263061ea2e1fe"
+    url "https://files.pythonhosted.org/packages/52/6d/fffca34caecc4a3f97bda81b2098da5e8ab7efc9a66e819074a11955d87e/pydantic_settings-2.13.1.tar.gz"
+    sha256 "b4c11847b15237fb0171e1462bf540e294affb9b86db4d9aa5c01730bdbe4025"
   end
 
   resource "pygments" do

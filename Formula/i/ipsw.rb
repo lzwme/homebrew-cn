@@ -1,8 +1,8 @@
 class Ipsw < Formula
   desc "Research tool for iOS & macOS devices"
   homepage "https://blacktop.github.io/ipsw"
-  url "https://ghfast.top/https://github.com/blacktop/ipsw/archive/refs/tags/v3.1.654.tar.gz"
-  sha256 "db1233ba5f11ecb12f13c7e9494d1fa4083f6324e476bf043524eb94b19163af"
+  url "https://ghfast.top/https://github.com/blacktop/ipsw/archive/refs/tags/v3.1.656.tar.gz"
+  sha256 "af1ea4070dd2e9b0e244f7d98f63bfbf473a03eea6f437c7820095a86c37b0c4"
   license "MIT"
   head "https://github.com/blacktop/ipsw.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Ipsw < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe0dafd0d3c58919019fc9b61b91f429e3bf41091a11e34788e54f1e493f14a1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b990863ee1f03327d5f0c10a7a91a90d365d71441672cced8ee98e41d2c08c48"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c7a52cdf7d80b18639181fd8db9672f0f0e25d3d4ef33af75ce0b33285765b7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fd8debc27e6c89be04f1175ad58a6fbeb214f4ab7c8a8af0decb98f6e58daf0f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "edac9f143450b1de86f979c81c8df4215665d4496018bdbfb859ccdb412fc3ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c2462a03df4ade89408377afb5a62519a4aa8082669bf3d43da5aae65b5e692"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90b9bf7e5a6c76490867e811af21e66dd6b72383d3de2e5771a6f18f0f192b96"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd63081674dbb69e062d0e2eac001943fdbef11985ef1522588ec9e884dcb8f6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df96e6aed8d36a4342ed4cbd5c0d673c07ee8efa1cfa262b4a755f44ac7b699d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b08c0904476326a7736c3cf13a263e3f45278c7d3efb7f17c79b65e065d56b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "abc97d81aa0649ffb3bef98e1a3c8066cdc43a3fb103cbf0d674fbdad53a803c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3dbe7722e221922fb1d2550d5434c39e59ee5386c4ecf013f9010d15615d6842"
   end
 
   depends_on "go" => :build

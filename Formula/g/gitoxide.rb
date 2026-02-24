@@ -30,7 +30,7 @@ class Gitoxide < Formula
 
   def install
     features = %w[max-control gitoxide-core-blocking-client http-client-curl]
-    system "cargo", "install", "--no-default-features", "--features=#{features.join(",")}", *std_cargo_args
+    system "cargo", "install", "--no-default-features", *std_cargo_args(features:)
     generate_completions_from_executable(bin/"gix", "completions", "-s")
     generate_completions_from_executable(bin/"ein", "completions", "-s")
   end

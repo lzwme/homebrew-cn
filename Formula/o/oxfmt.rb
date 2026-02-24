@@ -1,17 +1,17 @@
 class Oxfmt < Formula
   desc "High-performance formatting tool for JavaScript and TypeScript"
   homepage "https://oxc.rs/"
-  url "https://registry.npmjs.org/oxfmt/-/oxfmt-0.34.0.tgz"
-  sha256 "0e2f62ff6d6e59e82446bb3609bf2825957ac1fe565482547e6a96fa536176bc"
+  url "https://registry.npmjs.org/oxfmt/-/oxfmt-0.35.0.tgz"
+  sha256 "ab48e388e7b3cea3b68fe4d54f51a0bd96fb56bea3a222505e4f4b78f42c5643"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e31a237557eb496e01236d9e27b34ded50700108f0202b749f722851b5a447e2"
-    sha256 cellar: :any,                 arm64_sequoia: "4fcee7f4f8dc878c3bedb54d776a0fdcf3bae1eee4d6051ca43c756f6ef5d7e0"
-    sha256 cellar: :any,                 arm64_sonoma:  "4fcee7f4f8dc878c3bedb54d776a0fdcf3bae1eee4d6051ca43c756f6ef5d7e0"
-    sha256 cellar: :any,                 sonoma:        "6a51887dd03887f861628fd51244cd39428c40d8ad7de8b5c1cca2299d402057"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ff84251d82d5ed9188102e99e00d06664028064f77767d570da7b4d09ccbe09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12f739fbdf947a3ea8d0c713c2d05a61e79330edda47d61cfac9d096d931d778"
+    sha256 cellar: :any,                 arm64_tahoe:   "f0511faaff4326b8318493fd0f447dff283f7fb64885e57a8c31fc27eb8802d5"
+    sha256 cellar: :any,                 arm64_sequoia: "431693ce94a52390bc5cef65d259feb80e5d15009f634f4d79e50bf0ccd1fa6d"
+    sha256 cellar: :any,                 arm64_sonoma:  "431693ce94a52390bc5cef65d259feb80e5d15009f634f4d79e50bf0ccd1fa6d"
+    sha256 cellar: :any,                 sonoma:        "64defbfbb0558d21785e01fa0e3218681f7767b8200e93cf622494566ed73362"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28afe7a071ae2841d5d9b25c1f3240e20183ec6d0e70c0f0d5e321727ebc95be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "568721e420f7dc195603c44a656d5d19a1d93aa22d30ec8ea326d153df821c4f"
   end
 
   depends_on "node"

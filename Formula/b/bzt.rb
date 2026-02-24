@@ -3,18 +3,18 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https://gettaurus.org/"
-  url "https://files.pythonhosted.org/packages/f1/9d/24c3ba99f424f1c4db484d0e0b88c09d1ed02295c9ac0826a7c9d596de4c/bzt-1.16.48.tar.gz"
-  sha256 "3420a155d832f944a0325afe99a12e689a865696a6787eb370d3e17bd742ff4f"
+  url "https://files.pythonhosted.org/packages/e1/5d/4372f76a9a483247538138d84ad21e303f88c35c630b9745c1c69bec05f1/bzt-1.16.49.tar.gz"
+  sha256 "827408e83f8ae07a42982bf7541fd5b1f8f9162a09cfc342ba8f0d4bfd8f65e2"
   license "Apache-2.0"
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4ed4fc69476e44820bbee599a553e9a10b9eee6a23d51ba41e13e388f4659e9d"
-    sha256 cellar: :any,                 arm64_sequoia: "982192ef1233d3fe1ab88fb1c9c86c4ec54d5bf816b06bf24750a5116895c684"
-    sha256 cellar: :any,                 arm64_sonoma:  "7ada046d8f551bff0aa84e18d18b91dd5717d73b744fcc409efaf2ea585f4a0f"
-    sha256 cellar: :any,                 sonoma:        "ae4d3e2ff06112e63f79ba8af7e7789f85c98058bd732443240a678f385f4544"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dcb563b6382e4bcc3d061bd77e0143fb70a57de8b13204a4c2caa1a9b5feb822"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "005cbdc21ce7cd86f1edee49caac3bf279ce1086e6f9c83c418556d3106e2d1a"
+    sha256 cellar: :any,                 arm64_tahoe:   "7ad1b12359501161d3bd2a28112d3942f483bea42462e9b4f3da61ef29f99e85"
+    sha256 cellar: :any,                 arm64_sequoia: "efd20a68a5f8eedf36af8c9e453e73f4cc11169f0e582107cab406b7432c156a"
+    sha256 cellar: :any,                 arm64_sonoma:  "f7d70cd5e558c5150405acb147b90b8b0482f631f75aec398c46b41b27803f80"
+    sha256 cellar: :any,                 sonoma:        "ade5075d6d808cd94c9798297f79be18be82f21237406a591328b1b0d44ea9db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7a281decd80852429aa87588c4dbd4ee01c77c1becc43896cc00e1e284af063"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d94381e3756ed90282d763eb25671e1ca5560a3a7357f399d30d488e5ef2e93"
   end
 
   depends_on "cmake" => :build
@@ -170,8 +170,8 @@ class Bzt < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
-    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
+    url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
+    sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
   end
 
   resource "python-dateutil" do

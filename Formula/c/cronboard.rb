@@ -3,17 +3,17 @@ class Cronboard < Formula
 
   desc "Terminal-based dashboard for managing cron jobs locally and on servers"
   homepage "https://github.com/antoniorodr/cronboard"
-  url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v0.4.2.tar.gz"
-  sha256 "c4b34e107488a02df21c6447062f452bb5f987866d721fd9e229cee3f49df079"
+  url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v0.4.3.tar.gz"
+  sha256 "e2a05bea70a70f78f8a4a7023ed1f68ee456a129b31f0e86f8677bd0fe75103e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bab261646cf6bea102ead7dc7af02972ebe5e04804299a4706960f483409193e"
-    sha256 cellar: :any,                 arm64_sequoia: "875d360220eba18efa51b61414edf65697f55741c54b922eff8435944ed75f96"
-    sha256 cellar: :any,                 arm64_sonoma:  "db705cb277ceccca33decbcce10d97922e44ae3c8b88ab63472b1014d2ef5e29"
-    sha256 cellar: :any,                 sonoma:        "05d20a3347bd4864bd3289a7bfab1c0ab67bf9098133e6db6f135465d37f99dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c82730a5f2fcbf6ae3281c5e7b6ace000a52c3fecda5ddae54afcca75f891e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1c88aefe439ef856047422497c3703dcde7e6d9ea40de06fee2039ce893ac52"
+    sha256 cellar: :any,                 arm64_tahoe:   "4b7d8d5b107428ac9ba3e84c955aba928e37050dc73898ec1b33b6a5a92e0ff2"
+    sha256 cellar: :any,                 arm64_sequoia: "d54cc057afcbc294cbfd859a679e1f82e7c776d2cb8459a77c5bd797d0d411a7"
+    sha256 cellar: :any,                 arm64_sonoma:  "1d2b8acb8451f5e709a7573c5389031e5cfc374cb2a6efb1804fe32592f49b9d"
+    sha256 cellar: :any,                 sonoma:        "169bbca9c4db9d2d305a0a4b3dba355e76caaebb886420546f0cb7b08330e3e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fc3f29a8456c5fba04043f3b9bd4f350a75426c9dcad12b0a6ad5225ac278d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "171f02b20bb21c7db22d2f32888cd2006bb2544d49a367231583c77828b6f65a"
   end
 
   depends_on "rust" => :build
@@ -194,8 +194,8 @@ class Cronboard < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/74/99/a4cab2acbb884f80e558b0771e97e21e939c5dfb460f488d19df485e8298/rich-14.3.2.tar.gz"
-    sha256 "e712f11c1a562a11843306f5ed999475f09ac31ffb64281f73ab29ffdda8b3b8"
+    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
+    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
   end
 
   resource "six" do

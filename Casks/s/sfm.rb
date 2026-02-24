@@ -10,11 +10,11 @@ cask "sfm" do
 
   # Upstream is unable to publish the standalone version of the macOS client, so
   # we have to temporarily check all releases to find the newest version with an
-  # SFM dmg. TODO: Remove this `livecheck` block or switch to `GithubLatest`
-  # once this is resolved.
+  # SFM file for macOS. TODO: Remove this `livecheck` block or switch to
+  # `GithubLatest` once this is resolved.
   livecheck do
     url :url
-    regex(/SFM[._-]v?(\d+(?:\.\d+)+)(?:[._-]universal)?\.dmg/i)
+    regex(/SFM[._-]v?(\d+(?:\.\d+)+)(?:[._-]universal)?\.(?:dmg|pkg)/i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"] || release["prerelease"]

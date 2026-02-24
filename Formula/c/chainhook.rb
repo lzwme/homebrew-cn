@@ -27,8 +27,8 @@ class Chainhook < Formula
   uses_from_macos "llvm" => :build # for libclang
 
   def install
-    system "cargo", "install", "--features", "cli,debug", "--no-default-features",
-                                *std_cargo_args(path: "components/chainhook-cli")
+    features = ["cli", "debug"]
+    system "cargo", "install", "--no-default-features", *std_cargo_args(path: "components/chainhook-cli", features:)
   end
 
   test do

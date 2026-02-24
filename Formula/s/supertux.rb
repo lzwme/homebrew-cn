@@ -26,8 +26,6 @@ class Supertux < Formula
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "f30e013af1d8f3bb1d2b99c0ac72b98fa0c9a46840814b97a0c8890eb999dc5b"

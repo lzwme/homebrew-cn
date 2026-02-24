@@ -5,8 +5,6 @@ class Sd < Formula
   sha256 "2adc1dec0d2c63cbffa94204b212926f2735a59753494fca72c3cfe4001d472f"
   license "MIT"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "1538e29545abba000fbd4f6f00092a4e5343e280ffaf5a97aa37b316bb4519f2"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3cf7ab4495f622a4f245bb1c7c30225ef881dc390ee5edc59a1d3c4381cecca1"

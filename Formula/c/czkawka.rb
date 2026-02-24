@@ -38,8 +38,9 @@ class Czkawka < Formula
   end
 
   def install
+    features = %w[heif libraw libavif]
     %w[czkawka_cli czkawka_gui krokiet].each do |cmd|
-      system "cargo", "install", "--features", "heif,libraw,libavif", *std_cargo_args(path: cmd)
+      system "cargo", "install", *std_cargo_args(path: cmd, features:)
     end
   end
 

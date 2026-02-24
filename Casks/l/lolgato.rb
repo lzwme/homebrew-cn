@@ -1,6 +1,6 @@
 cask "lolgato" do
-  version "1.7.0"
-  sha256 "ca64bdfdf7e62409e56d3fc08afd65e6cea40d6eb90751f2c69d5fcb62115395"
+  version "1.7.1"
+  sha256 "954cc947850440a42e197c5daf3a63a78b4506c96766bc9425de9375063be3c7"
 
   url "https://ghfast.top/https://github.com/raine/Lolgato/releases/download/v#{version}/Lolgato.dmg"
   name "Lolgato"

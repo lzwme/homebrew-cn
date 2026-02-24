@@ -1,9 +1,9 @@
 cask "soundanchor" do
-  version "1.6.0"
-  sha256 "035065faf2fdd3e5e9b2c7e43d09f17254cf637c6882d34b78d8c0f4d81868cb"
+  version "1.6.1"
+  sha256 "90872e7cd66aeed0b9cf3ecab132be4f5b27743d485d5dc60903d5d0c9567444"
 
-  url "https://kopiro.s3.eu-west-1.amazonaws.com/soundanchor/SoundAnchor-#{version}.dmg",
-      verified: "kopiro.s3.eu-west-1.amazonaws.com/soundanchor/"
+  url "https://kopiro.s3.amazonaws.com/soundanchor/soundanchor-#{version}.dmg",
+      verified: "kopiro.s3.amazonaws.com/soundanchor/"
   name "SoundAnchor"
   desc "Audio device utility"
   homepage "https://apps.kopiro.me/soundanchor/"

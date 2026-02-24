@@ -6,14 +6,15 @@ class Backgroundremover < Formula
   url "https://files.pythonhosted.org/packages/f5/8d/ebc742ef2c427bfec9047096b28ed380d390a566bf294fe0772a2b044940/backgroundremover-0.4.1.tar.gz"
   sha256 "3afa098d4538f44fd0bb44f9b77b63c29716fe7860dc79a3d51053d8cba2f753"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ed3edd08873bd85bbe5c231dcb4ae1ace46f1b199cd29d1cbe385132a4811c94"
-    sha256 cellar: :any,                 arm64_sequoia: "39d31fe2ef258c44005243e4301e3a916752fb2f6840cc6f4f6aa525dd6858c6"
-    sha256 cellar: :any,                 arm64_sonoma:  "221720246f865645f42869a69fe8b0fccaa60b1c6a76f6959fd320eedfd3af90"
-    sha256 cellar: :any,                 sonoma:        "65185edc7ee12493e96b17dfd0c40fae4206580ec5ec930dd540688bf9660ed5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "848dd4d918b8b3603faab0ad5f9528e6ce357aa3296f5de515d424cbb40c68e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b96a22abb204ab20a9e996bf73d288ad6ce93f1557b4fb5c43c8377aea2ed68"
+    sha256 cellar: :any,                 arm64_tahoe:   "2f293e0f99f0f0ae2376f32bea8f72fe4e6f2f0347c2cb93afc4c842ac60fd02"
+    sha256 cellar: :any,                 arm64_sequoia: "9db62418e0867329a8b8b619ada2e1a3aded456232ee472e8612a3a74274f550"
+    sha256 cellar: :any,                 arm64_sonoma:  "44b77280cc522562207685c93cacafdf362e2184b47a77de745c3bdf506bc922"
+    sha256 cellar: :any,                 sonoma:        "8b6e59b504ff16296e83555d8b2a01bbe45da6820812067c1906d8951bc755f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37b2c30408aa2af453c1d10fea7168bf7ac09bda1c9641c8e1b9115e4af2bc8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce448dd479031fc5b446ff962a85f82039a4b9d4c6aac0b37a638369e99631fb"
   end
 
   depends_on "cmake" => :build
@@ -73,8 +74,8 @@ class Backgroundremover < Formula
   end
 
   resource "flask" do
-    url "https://files.pythonhosted.org/packages/dc/6d/cfe3c0fcc5e477df242b98bfe186a4c34357b4847e87ecaef04507332dab/flask-3.1.2.tar.gz"
-    sha256 "bf656c15c80190ed628ad08cdfd3aaa35beb087855e2f494910aa3774cc4fd87"
+    url "https://files.pythonhosted.org/packages/26/00/35d85dcce6c57fdc871f3867d465d780f302a175ea360f62533f12b27e2b/flask-3.1.3.tar.gz"
+    sha256 "0ef0e52b8a9cd932855379197dd8f94047b359ca0a78695144304cb45f87c9eb"
   end
 
   resource "future" do
@@ -130,18 +131,18 @@ class Backgroundremover < Formula
   end
 
   resource "numba" do
-    url "https://files.pythonhosted.org/packages/dc/60/0145d479b2209bd8fdae5f44201eceb8ce5a23e0ed54c71f57db24618665/numba-0.63.1.tar.gz"
-    sha256 "b320aa675d0e3b17b40364935ea52a7b1c670c9037c39cf92c49502a75902f4b"
+    url "https://files.pythonhosted.org/packages/23/c9/a0fb41787d01d621046138da30f6c2100d80857bf34b3390dd68040f27a3/numba-0.64.0.tar.gz"
+    sha256 "95e7300af648baa3308127b1955b52ce6d11889d16e8cfe637b4f85d2fca52b1"
   end
 
   resource "numpy" do
-    url "https://files.pythonhosted.org/packages/76/65/21b3bc86aac7b8f2862db1e808f1ea22b028e30a225a34a5ede9bf8678f2/numpy-2.3.5.tar.gz"
-    sha256 "784db1dcdab56bf0517743e746dfb0f885fc68d948aba86eeec2cba234bdf1c0"
+    url "https://files.pythonhosted.org/packages/57/fd/0005efbd0af48e55eb3c7208af93f2862d4b1a56cd78e84309a2d959208d/numpy-2.4.2.tar.gz"
+    sha256 "659a6107e31a83c4e33f763942275fd278b21d095094044eb35569e86a21ddae"
   end
 
   resource "pillow-heif" do
-    url "https://files.pythonhosted.org/packages/12/96/e4bf7bde1de9908bb509212c2861bff857eb4be845ebf80f6b0b02b8650d/pillow_heif-1.2.0.tar.gz"
-    sha256 "dd5c818dfb4ec39a5093127f8c07bbb32ca81dbbd29c4ebeffd23222ccc76aa9"
+    url "https://files.pythonhosted.org/packages/22/f4/68bd0465dc0494c22e23334dde0a9c52dec5afe98cf5a40abb47f75e1b08/pillow_heif-1.2.1.tar.gz"
+    sha256 "29be44d636269e2d779b4aec629bc056ec7260b734a16b4d3bb284c49c200274"
   end
 
   resource "proglog" do
@@ -190,8 +191,8 @@ class Backgroundremover < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
-    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
+    url "https://files.pythonhosted.org/packages/61/f1/ee81806690a87dab5f5653c1f146c92bc066d7f4cebc603ef88eb9e13957/werkzeug-3.1.6.tar.gz"
+    sha256 "210c6bede5a420a913956b4791a7f4d6843a43b6fcee4dfa08a65e93007d0d25"
   end
 
   def install

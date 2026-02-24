@@ -15,8 +15,6 @@ class Tundra < Formula
     strategy :github_releases
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e1bb8df7048132f46b74c03364a0b546e27f608eb9868ddfe780678001ab5b2"

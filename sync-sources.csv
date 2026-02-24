@@ -305,6 +305,7 @@ Homebrew-homebrew-core/Formula/a/astroterm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/astyle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asuka.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asymptote.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/async-profiler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/async_simple.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asyncapi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asyncplusplus.rb, Homebrew/homebrew-core, 1
@@ -5131,6 +5132,7 @@ Homebrew-homebrew-core/Formula/n/nudoku.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nuget.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nuitka.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nullclaw.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/nuls.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/num-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/numactl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/numbat.rb, Homebrew/homebrew-core, 1
@@ -5630,7 +5632,7 @@ Homebrew-homebrew-core/Formula/p/pidcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pidgin.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pidof.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pie.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pieces-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pieces-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pigz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pike.rb, Homebrew/homebrew-core, 0
@@ -6487,7 +6489,7 @@ Homebrew-homebrew-core/Formula/s/scamper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/scarb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sccache.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/scdl.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/scdl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scdoc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sceptre.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/schema-evolution-manager.rb, Homebrew/homebrew-core, 1
@@ -14034,6 +14036,7 @@ Homebrew-homebrew-cask/Casks/p/pieces-os.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pieces.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/piezo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pika.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/p/pika@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pikopixel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pikpak.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pile.rb, Homebrew/homebrew-cask, 1
@@ -15386,7 +15389,6 @@ Homebrew-homebrew-cask/Casks/u/uvtools.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/uxprotect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/v2ray-unofficial.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/v2rayu.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/v/v2rayx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vagrant-manager.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vagrant-vmware-utility.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vagrant.rb, Homebrew/homebrew-cask, 0
@@ -15575,7 +15577,6 @@ Homebrew-homebrew-cask/Casks/w/whalebird.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/whatroute.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/whatsapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/whatsapp@beta.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/w/whatsapp@legacy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/whatsize.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/whatsyoursign.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/whichspace.rb, Homebrew/homebrew-cask, 1

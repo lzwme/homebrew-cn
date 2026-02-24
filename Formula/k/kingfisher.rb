@@ -22,7 +22,7 @@ class Kingfisher < Formula
   uses_from_macos "bzip2"
 
   def install
-    system "cargo", "install", "--features", "system-alloc", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(features: "system-alloc")
   end
 
   test do

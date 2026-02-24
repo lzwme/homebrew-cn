@@ -1,17 +1,17 @@
 class Patchpal < Formula
   desc "AI Assisted Patch Backporting Tool Frontend"
   homepage "https://gitlab.com/patchpal-ai/patchpal-gui"
-  url "https://gitlab.com/patchpal-ai/patchpal-gui/-/archive/v0.7.0/patchpal-gui-v0.7.0.tar.bz2"
-  sha256 "71244017fee6dfa9505603f2ccbb2c534d9211bcb73a3d8dd30745d3958e5a22"
+  url "https://gitlab.com/patchpal-ai/patchpal-gui/-/archive/v0.7.1/patchpal-gui-v0.7.1.tar.bz2"
+  sha256 "cfc7ac868a7ad917aacd362b04b0bda10d5dcf83cf92f1a5171cc30f8e877609"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "055cdb0726c7dc7620604fafd76c77b4bbf9fae9e009a525b7243e5e8123981f"
-    sha256 cellar: :any,                 arm64_sequoia: "e9e594b44c02bf79b28ee96a044a485f18ea02a1640b6e32804bfeb77565ac5e"
-    sha256 cellar: :any,                 arm64_sonoma:  "81d7fc5d1f1599eb351b8ec15763d95873398d408af3630dba3ee8b72652de85"
-    sha256 cellar: :any,                 sonoma:        "0882305ca6ff530fdb837aa847be76582c7fc4e4e65134cada5002d9c7c1445f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1646ccdaeaab2024043823220db3cff8264ad0df7df1af2913809b27fe9ffd91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41690899f331b5fcc072b6c066fbb79e10e7d30aaca80fc2d19d9c802d95ae33"
+    sha256 cellar: :any,                 arm64_tahoe:   "e9a475810e8411ec3754d137282cb6a95f0b38b4a941f9f964f8bf74c973f692"
+    sha256 cellar: :any,                 arm64_sequoia: "3373399d757e5e9085d5c835fc28c92c0bdc15a07b627704a6efd6730a74d9dc"
+    sha256 cellar: :any,                 arm64_sonoma:  "51077fe5336f64606f9dfd1152dcb2c2935fe145bb811efc981300876953e80d"
+    sha256 cellar: :any,                 sonoma:        "064c1542ebff12a3b0e787da2e76f4ce8a48cf1c0c6987939813cf54ba629899"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5313d5e3b77ee9a60037f850d081dba81d9904b5ea655e3f75f8d19f9c4ba13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1111812901527caac9bae653b5520fab630c98d971ed1e4983b6feab240b03c4"
   end
 
   depends_on "pkgconf" => :build

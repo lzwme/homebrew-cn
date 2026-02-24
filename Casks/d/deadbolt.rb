@@ -1,9 +1,9 @@
 cask "deadbolt" do
   arch arm: "-arm64"
 
-  version "2.0.2"
-  sha256 arm:   "d5ede4239f0474124bfa11310938d5657d1fc6d550b32fabe1672506ca6e60a7",
-         intel: "7ef2584d67b102944da8ec823811488b6a4137f83a4ff8c30d50685e996385f7"
+  version "2.1.0"
+  sha256 arm:   "0469c775850f3199a0b34394aaa5af5f46766420b341e27eee698ac0c0d3dde7",
+         intel: "6ce5e4bab48ae0eb48523b9c00f76b5cf7c89eeb60bf43d1be7fb570126e790a"
 
   url "https://ghfast.top/https://github.com/alichtman/deadbolt/releases/download/v#{version}/Deadbolt-#{version}#{arch}.dmg"
   name "Deadbolt"

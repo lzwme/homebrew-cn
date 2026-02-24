@@ -39,7 +39,7 @@ class ElanInit < Formula
   def install
     ENV["RELEASE_TARGET_NAME"] = "homebrew-build"
 
-    system "cargo", "install", "--features", "no-self-update", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(features: "no-self-update")
 
     %w[lean leanpkg leanchecker leanc leanmake lake elan].each do |link|
       bin.install_symlink "elan-init" => link

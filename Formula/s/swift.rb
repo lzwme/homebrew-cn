@@ -16,8 +16,6 @@ class Swift < Formula
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any, arm64_tahoe:   "c9daabdf3c5011c41c359b674bb472e11479d762d42cb9dc94b71105b6d08b21"
