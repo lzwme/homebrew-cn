@@ -34,6 +34,8 @@ class Deno < Formula
     depends_on "zlib-ng-compat"
   end
 
+  conflicts_with "dxpy", because: "both install `dx` binaries"
+
   def llvm
     Formula["llvm"]
   end

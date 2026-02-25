@@ -44,6 +44,8 @@ class Dxpy < Formula
     depends_on "s2n"
   end
 
+  conflicts_with "deno", because: "both install `dx` binaries"
+
   pypi_packages exclude_packages: %w[cryptography certifi]
 
   resource "argcomplete" do

@@ -1,27 +1,24 @@
 class GccAT12 < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
-  url "https://ftpmirror.gnu.org/gnu/gcc/gcc-12.4.0/gcc-12.4.0.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/gcc/gcc-12.4.0/gcc-12.4.0.tar.xz"
-  sha256 "704f652604ccbccb14bdabf3478c9511c89788b12cb3bbffded37341916a9175"
+  url "https://ftpmirror.gnu.org/gnu/gcc/gcc-12.5.0/gcc-12.5.0.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/gcc/gcc-12.5.0/gcc-12.5.0.tar.xz"
+  sha256 "71cd373d0f04615e66c5b5b14d49c1a4c1a08efa7b30625cd240b11bab4062b3"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   # https://gcc.gnu.org/gcc-12/
-  # TODO: skip livecheck after 12.5.0
   livecheck do
-    url :stable
-    regex(%r{href=["']?gcc[._-]v?(12(?:\.\d+)+)(?:/?["' >]|\.t)}i)
+    skip "No longer developed or maintained"
   end
 
   bottle do
-    rebuild 3
-    sha256                               arm64_tahoe:  "68b256e75d6c49bf3e9244c6bcfd00755d42094fab747d15611e4e21fedbafec"
-    sha256                               arm64_sonoma: "1fe9d445c7033c6ff42ae66c840412842a021d8ef4129a75e98fcd453cfba670"
-    sha256                               tahoe:        "f7148bf5706ad7da1b16e11bf97e485ff8695abb031fa87c18289958b4dba670"
-    sha256                               sequoia:      "e41f059f88c2af52760f1ba9f75f36dfd3a493bcf596479227e7dae3d8a32c74"
-    sha256                               sonoma:       "578d37003a6a9f1351aebee3d256a3b87041a03d82d6d583e0f37310a9c1515b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "323b47654f5bf99815d13c45d3cea0e591d2140dd3477060da34b20f98dfd63d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1b10234a336bdf22bacdb79045a3b9e37322e3f3ee0dda9525a51e68ce134682"
+    sha256                               arm64_tahoe:  "d8adb7354a111d55e61c661379749d99cb6d0cbaac40b2552e471071cb38c1a6"
+    sha256                               arm64_sonoma: "ca7a9e949ae62998f413a0068cd3eba834297669f92043da35548766246ef6cf"
+    sha256                               tahoe:        "45b46f68b0f409889443043fdb529e484c858c2a9abfa165d97c6ec118089bfc"
+    sha256                               sequoia:      "93386ba3329d06cb4288e10f7fef54e606103bf940bf5be87dc099119364f22c"
+    sha256                               sonoma:       "60e80d01ab1801326bf3e3919f7c883109daa056a5d52d496707d2ce75280ab7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "2b65fe2eb9ddd411fbaa0eae6d8470aca65d60d956843df26921b3e3619f6c89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9c1bcaa7819147a8539e81064d9f34d4cc9746d70e14b0ece9a80d81818ebec8"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -42,15 +39,21 @@ class GccAT12 < Formula
   # Branch from the Darwin maintainer of GCC, with a few generic fixes and
   # Apple Silicon support, located at https://github.com/iains/gcc-12-branch
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/gcc/gcc-12.4.0.diff"
-    sha256 "c0e8e94fbf65a6ce13286e7f13beb5a1d84b182a610489026ce3e2420fc3d45c"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/8ce16876120a7c9b08682f6128e24aca41ebac60/Patches/gcc/gcc-12.4.0.diff"
+    sha256 "6178f6473bd2c225ed80745834d584e1c3beff9597f5afa982f249efb39ca084"
   end
   # Backport commits to build on Sonoma/Sequoia to allow rebottling.
-  # TODO: merge into above patch when updating to 12.5.0.
+  # TODO: create merged patch if https://github.com/iains/gcc-12-branch is synced to 12.5.0
   patch do
     on_macos do
-      url "https://github.com/iains/gcc-12-branch/compare/e300c1337a48cf772b09e7136601fd7f9f09d6f1..99533d94172ed7a24c0e54c4ea97e6ae2260409e.patch"
-      sha256 "f01bf173c1980cef680e407a5cc4f34af13a3e54cd644138735ec35adc5c6e40"
+      url "https://github.com/iains/gcc-12-branch/compare/e300c1337a48cf772b09e7136601fd7f9f09d6f1..914cec39148b1c8a697976275629aa8526ea1050.patch"
+      sha256 "f622b8fb9d36d679bed2c98adc47c46029d40923646410704eb8e04cd672de96"
+    end
+  end
+  patch do
+    on_macos do
+      url "https://github.com/iains/gcc-12-branch/compare/f0f9d56ffca2da2cab9af21c0c378ffe4d9cf908...99533d94172ed7a24c0e54c4ea97e6ae2260409e.patch"
+      sha256 "7aa45104e32a4fd288a8f3b931848dc5c306d0b295ca28c8bf60a048edd8d2a5"
     end
   end
 

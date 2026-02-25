@@ -36,7 +36,7 @@ class RattlerBuild < Formula
   end
 
   def install
-    system "cargo", "install", "--features", "tui", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(features: "tui")
 
     generate_completions_from_executable(bin/"rattler-build", "completion", "--shell")
   end

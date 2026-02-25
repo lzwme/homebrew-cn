@@ -19,6 +19,8 @@ class Gastown < Formula
   depends_on "beads"
   depends_on "icu4c@78"
 
+  conflicts_with "genometools", "libslax", because: "both install `gt` binaries"
+
   def install
     ldflags = %W[
       -s -w

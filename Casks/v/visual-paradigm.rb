@@ -1,9 +1,9 @@
 cask "visual-paradigm" do
   arch arm: "AArch64", intel: "WithJRE"
 
-  version "18.0,20260201"
-  sha256 arm:   "474c0f5af861987986de197aa23a6a5f3fd7dd292be58b878039dd162dbcad16",
-         intel: "b491699ca883ae20e903bdf820e9eaf082d8213a62e58630444bdc06ed468063"
+  version "18.0,20260202"
+  sha256 arm:   "cc95a37ba93c9259b0c5c4dd30de7f50aeccd9595d02c7d8d0f33c564856ed17",
+         intel: "3ce34a68cb5f28029b1b078852497dc879b17d0c9cf92f6fb6b1daef9c9e25ec"
 
   url "https://www.visual-paradigm.com/downloads/vp#{version.csv.first}/#{version.csv.second}/Visual_Paradigm_#{version.csv.first.dots_to_underscores}_#{version.csv.second}_OSX_#{arch}.dmg"
   name "Visual Paradigm"

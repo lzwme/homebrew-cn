@@ -3,18 +3,18 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/bc/0c/e5efd266e04e78e0883e7c98a36b21b81b98750ebd46e0c742b3ad4c7314/mcp_atlassian-0.16.1.tar.gz"
-  sha256 "79c8cbdff8dc884f41672dace715dae09ed9d2c0cbd2154a69f523b0908bd3f2"
+  url "https://files.pythonhosted.org/packages/5f/01/43affc74fb7e89616642b2f2de4754edd8a61f183c5fca1ac49a3c770eb2/mcp_atlassian-0.17.0.tar.gz"
+  sha256 "d4ee09e691a0bd212d64193d83389c628ae6347075706de0a22ce6a2307f7fed"
   license "MIT"
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "011f8b8384cb412c29753756ac102a38682ee946fe2b4f013fb735973e808497"
-    sha256 cellar: :any,                 arm64_sequoia: "9381a9b16c8d4cbdc532706cf616ae9a243f4b2ad19974d850c52fbbaab34353"
-    sha256 cellar: :any,                 arm64_sonoma:  "24193a2f54624936ffa4fe90c85fbf61ce321d81d92aed0a3678738d202013bc"
-    sha256 cellar: :any,                 sonoma:        "df3e73486f476626e28020500fb025ed6e163b507e83a53ca754aa63b71496ba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3087ba2743722b08b2c5fe17dbe5cdfbc73bab05ab20e79c8b505698665f3af9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e194aaf9b1333f23f1110cc46ee147c1c5c8b981f7aef48a4a2756385d6958f"
+    sha256 cellar: :any,                 arm64_tahoe:   "ae56ddab013440267088cce4ca667d304af4d03a31774f9240b84bea50a351c5"
+    sha256 cellar: :any,                 arm64_sequoia: "c1576179fdfc8b073058f522896e7b007b78e52343cbab434e17e799b0d14d3b"
+    sha256 cellar: :any,                 arm64_sonoma:  "6e1f8a999642ab87399280ec9b8a183452134e0ff668a04c071902a014884b2e"
+    sha256 cellar: :any,                 sonoma:        "436b590dfea9683941862cb2e728a061524eb75441bfcf425d2f3f728b47c07e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "87cf13183954f2c3bb20633bb33a283ccf8becfebe2d09b98fff740e76ca8e51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e20970a138b7f283fb77aa3239e662d9b83e9f353b4537eabd594e084b2d43a"
   end
 
   depends_on "rust" => :build # for py_key_value_aio > uv_build > maturin
@@ -97,8 +97,8 @@ class McpAtlassian < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/3b/d2/f37df900b163f51b4faacdb01bf4895c198906d67c5b2a85c2522de85459/cyclopts-4.5.4.tar.gz"
-    sha256 "eed4d6c76d4391aa796d8fcaabd50e5aad7793261792beb19285f62c5c456c8b"
+    url "https://files.pythonhosted.org/packages/49/5c/88a4068c660a096bbe87efc5b7c190080c9e86919c36ec5f092cb08d852f/cyclopts-4.6.0.tar.gz"
+    sha256 "483c4704b953ea6da742e8de15972f405d2e748d19a848a4d61595e8e5360ee5"
   end
 
   resource "deprecated" do
@@ -212,8 +212,8 @@ class McpAtlassian < Formula
   end
 
   resource "jsonschema-path" do
-    url "https://files.pythonhosted.org/packages/a8/8d/4b2e648cf643d19e1f76260d9cb002d242e38b4298d6da110bd3c3d8d0d2/jsonschema_path-0.4.1.tar.gz"
-    sha256 "ffca3bd37f66364ae3afeaa2804d6078a9ab3b9359ade4dd9923aabbbd475e71"
+    url "https://files.pythonhosted.org/packages/b3/da/1ebeb1c0ff579c330e200e8b06e6200653e3d0758136d8bd86762d63e7de/jsonschema_path-0.4.2.tar.gz"
+    sha256 "5f5ff183150030ea24bb51cf1ddac9bf5dbf030272e2792a7ffe8262f7eea2a5"
   end
 
   resource "jsonschema-specifications" do

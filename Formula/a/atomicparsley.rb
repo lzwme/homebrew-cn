@@ -13,8 +13,6 @@ class Atomicparsley < Formula
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70e708c09ef763d61b8bba8195426c515a20408adbb3addb3c9e96316ad6f769"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "09957d7903f650b1f90891fe07b25109750396b1879ecc93427cef1d141a512d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec3992fb93db9d6927cc5261cadb7b4e03f3802136c0c5fefefa0ac96fe934b5"
-    sha256 cellar: :any_skip_relocation, tahoe:         "73023ae7c2237fdddd0966b6fefc4374167fc240ad8690ed67ab8a2438ce028b"
-    sha256 cellar: :any_skip_relocation, sequoia:       "8412b774a3cfdc2c88d1f24fd63cb1b9c54cef0c6d25c7eeed355b466d3debbf"
     sha256 cellar: :any_skip_relocation, sonoma:        "5c590c6fdb51209e2b36b6bf290d72215cf768c6816da58f483021af4c8df5c0"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "598edb090c4b9222ca0ebb0f6514acf735f9311e8fc03f3afcb0eb8a92210a3d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "05df26f40020528cbc1df0b9338257fd3bb2b2085c125985015be4b276e59b01"

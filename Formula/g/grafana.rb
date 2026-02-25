@@ -1,8 +1,8 @@
 class Grafana < Formula
   desc "Gorgeous metric visualizations and dashboards for timeseries databases"
   homepage "https://grafana.com"
-  url "https://ghfast.top/https://github.com/grafana/grafana/archive/refs/tags/v12.3.3.tar.gz"
-  sha256 "b6414bd5e093c5e6457f691e700675b8d48faf4aee9e74e887fc7ae40037f25e"
+  url "https://ghfast.top/https://github.com/grafana/grafana/archive/refs/tags/v12.3.4.tar.gz"
+  sha256 "0dc6d1d562b2b02a58f6692da316dd1591b89db7962db42d6da714801a2f8643"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/grafana.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Grafana < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db78c69ea8e7b034bcf44bd17163a48e609cdefa335b731bb19bb4d6bc469361"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2d15f49f2d3f0d0fe0620e757fc023474f430c68e323e1535250912af8bfd7f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b5a94bf1ba4f000ec78e7bb6ea1b0cbe8cb81256ea37aa18a4896a55a4b3190"
-    sha256 cellar: :any_skip_relocation, sonoma:        "18f671ffe8301a242422c211a3c231799d887baf061e35d65d4bc05b0a02e778"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0afe747d34baeaccbd0fbba34e53f050ef41801c9a3bdbdbea6d1c990f005a84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50325ffdf9990b6f4c98667a7d315cbaa3833f2730febb9ad24371bc51bc4bc3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5f4cd29db239455544e8fca90b95ab8d9f42e9f6534a658118ef38884a9ef5f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f2fb67150cab7fdd7b81143e9afe6a06079267bd4abee14cadfb4a48dcd1f4c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdd509884d5bf5cb4c9961b8e7e934930bbf78df2edc81b0a66d9fb16a34f646"
+    sha256 cellar: :any_skip_relocation, sonoma:        "174b285d5e9d53db07d47020849705b8615fd20ad24ec868b314bdd8bceb30c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57f16e763a7f619517e2b8386ffc986f1c3b16aca39b32d145076af7cf987702"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "563a0d360d668518f938dcb4e55edd90303db6aeafe305d63333a57ac4070208"
   end
 
   depends_on "go" => :build

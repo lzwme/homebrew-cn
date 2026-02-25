@@ -1,6 +1,6 @@
 cask "alt-tab" do
-  version "10.2.0"
-  sha256 "6aa0090bcd316c5cedea84b392251c3960dee0478d4b6da375d0ba0840df78c2"
+  version "10.3.0"
+  sha256 "f3c7f7d53aed156563627e649083017a2a653ebd2ba587c46eee4b03d26811e4"
 
   url "https://ghfast.top/https://github.com/lwouis/alt-tab-macos/releases/download/v#{version}/AltTab-#{version}.zip",
       verified: "github.com/lwouis/alt-tab-macos/"
@@ -17,7 +17,8 @@ cask "alt-tab" do
 
   app "AltTab.app"
 
-  uninstall quit: "com.lwouis.alt-tab-macos"
+  uninstall quit:       "com.lwouis.alt-tab-macos",
+            on_upgrade: :quit
 
   zap trash: [
     "~/Library/Application Support/com.lwouis.alt-tab-macos",

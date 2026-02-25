@@ -3,24 +3,10 @@ class SyslogNg < Formula
 
   desc "Log daemon with advanced processing pipeline and a wide range of I/O methods"
   homepage "https://www.syslog-ng.com"
+  url "https://ghfast.top/https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.11.0/syslog-ng-4.11.0.tar.gz"
+  sha256 "37ea0d4588533316de122df4e1b249867b0a0575f646c7478d0cc4d747462943"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  revision 1
   head "https://github.com/syslog-ng/syslog-ng.git", branch: "develop"
-
-  stable do
-    url "https://ghfast.top/https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.10.2/syslog-ng-4.10.2.tar.gz"
-    sha256 "841503de6c2486e66fd08f0c62ac2568fc8ed1021297f855e8acd58ad7caff76"
-
-    # Backport Python dependency updates to avoid vulnerable packages
-    patch do
-      url "https://github.com/syslog-ng/syslog-ng/commit/89c1dcfb411e3c5611629fe99561f3106eb19b0f.patch?full_index=1"
-      sha256 "eb42508fa0a1b716ef8967151f10fe86b427e21fc50ef2f160c14bbd35a89291"
-    end
-    patch do
-      url "https://github.com/syslog-ng/syslog-ng/commit/dc070981e726ca1babb8e48bc368d0429eac9223.patch?full_index=1"
-      sha256 "1d7bb9994f0aff742fec24a038df90d199fa2e43aae28a396dc51a892fe7a95b"
-    end
-  end
 
   livecheck do
     url :stable
@@ -28,13 +14,12 @@ class SyslogNg < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "83f4f02c60b04ad1436a9c880088632b9dea01b90ecc752e36d29e8ee7c4445d"
-    sha256 arm64_sequoia: "8eace38656103e1fb3f36bd98450bd097424645e82045dd7f81989488868c51c"
-    sha256 arm64_sonoma:  "9bccf4f0a4f4382bedf8e4d7db712c6e9be88907e4023674f36cddf0e0d19bd5"
-    sha256 sonoma:        "b87c62c80bc837a4fa18ac4aaad75cd4a3d35904705ae3f75058fd2fff23dc26"
-    sha256 arm64_linux:   "1285001349fef143798a9276f085cd3aa5f004ef3aad7d422526e4cc8e49d408"
-    sha256 x86_64_linux:  "e7218c309918d694c1889fa18d593ef9cce3716208fac52476f5cfef00b3ab22"
+    sha256 arm64_tahoe:   "cfff726297ce0fe9fcd19af534980c14b73ee042cde5921862a28572ea97b222"
+    sha256 arm64_sequoia: "e3c94d0d7984017e8dc2448bc0efd6de46aa293ff81a4df27bdf5a501f2ffefd"
+    sha256 arm64_sonoma:  "0083abe736d3f49a1f8951d45faab176baba9d34bda95e0d2cae3506394a512f"
+    sha256 sonoma:        "ec1a01a388d0dbd51dde507b53afc9df56964d9902cfa8d52aa0620ed490a2e7"
+    sha256 arm64_linux:   "e91f8660b5e3aa12a4385bea255a6d4c418fbe38821a58a1abe89d12d731629d"
+    sha256 x86_64_linux:  "d18740bec7ea7fb7cb9b0462e9e230d44f0655829925f9ff8521d8b98f4575cf"
   end
 
   depends_on "pkgconf" => :build

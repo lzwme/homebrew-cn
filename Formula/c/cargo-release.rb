@@ -1,18 +1,18 @@
 class CargoRelease < Formula
   desc "Cargo subcommand `release`: everything about releasing a rust crate"
   homepage "https://github.com/crate-ci/cargo-release"
-  url "https://ghfast.top/https://github.com/crate-ci/cargo-release/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "ee2f40875c2f9abc647c9c074cc88a06a093ffde98d95154de38db656551c393"
+  url "https://ghfast.top/https://github.com/crate-ci/cargo-release/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "c380a3db83142791b6408132aa60c0226e3f67c84d9e7403e5ad5987901f3adf"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/crate-ci/cargo-release.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c77baae485291ed6b422eb914108a74e94ca8c967eea0c7a2a54ad7b521d0826"
-    sha256 cellar: :any,                 arm64_sequoia: "2fa219505d89d8cdd0232e13326f6dc2926f2a1304cc590f4a3d9183d59c9929"
-    sha256 cellar: :any,                 arm64_sonoma:  "29e92454046463a08885e10d3bb9a6656b7b5ab847b229210b959ac0c3483a02"
-    sha256 cellar: :any,                 sonoma:        "99fee4971fed8bf6fe7d1abb358d634861c902bc6a2eefdeedf73324370e7854"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "65bd9ede6339d92e2e2d125cf8649e13043b7d06ac9d1524e5aeb3978c8010fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a81710c07eb5fc14bf9bd94defe8e0afd59d54b69cf9059938363168d01ecc7"
+    sha256 cellar: :any,                 arm64_tahoe:   "95170088deb94fe7a3aedefe7e1f2018d7d09c9168a148f6f4e00daf80aa7b0f"
+    sha256 cellar: :any,                 arm64_sequoia: "6cc876f034603c29d2088eaf09f9b39f65d1d3c4eb68d1ba4e7afecaeabc6526"
+    sha256 cellar: :any,                 arm64_sonoma:  "7c7360839aef8a4c403533dfaad7d05a3450b1c7c54550428c34a83235f35fc7"
+    sha256 cellar: :any,                 sonoma:        "b8cd67e9e59557bea93f9d2d119e585f185c05481ba1debbf3a94a2f1c0cb376"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "99b52ccfe05e6faa4247fa7acf67a5ef30b7cd01b6838d83742931dabeb4bece"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ca81471ef75b0f160b1277cb805cdfb31e3ae728176a90f0ec61d4cbca9651c"
   end
 
   depends_on "pkgconf" => :build

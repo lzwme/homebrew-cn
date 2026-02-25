@@ -1,12 +1,12 @@
 class OhdearCli < Formula
   desc "Tool to manage your Oh Dear sites"
   homepage "https://github.com/ohdearapp/ohdear-cli"
-  url "https://ghfast.top/https://github.com/ohdearapp/ohdear-cli/releases/download/v4.5.2/ohdear.phar"
-  sha256 "fa2e0e84d47adefea1a3f5e23274c245285957208e33d2e143f0ddb617b60112"
+  url "https://ghfast.top/https://github.com/ohdearapp/ohdear-cli/releases/download/v5.0.0/ohdear.phar"
+  sha256 "3a20dba5890edeebb09a62addf654fc41180bcea525fc8eb82802f01ea33870e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f610a110de9f9bf223b8107dd9bd718c53d20d97fcf1962ccd6cea4a972c1327"
+    sha256 cellar: :any_skip_relocation, all: "820bb0c739cd2635ed99a13e7f04d20780f2109b37515f33b5b5b87c1881ce4a"
   end
 
   depends_on "php"
@@ -19,6 +19,6 @@ class OhdearCli < Formula
   end
 
   test do
-    assert_match "Unauthorised", shell_output("#{bin}/ohdear me", 1)
+    assert_match "Your API token is invalid or expired.", shell_output("#{bin}/ohdear get-me", 1)
   end
 end

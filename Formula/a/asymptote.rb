@@ -2,8 +2,8 @@ class Asymptote < Formula
   desc "Powerful descriptive vector graphics language"
   homepage "https://asymptote.sourceforge.io"
   # Keep version in sync with manual below
-  url "https://downloads.sourceforge.net/project/asymptote/3.07/asymptote-3.07.src.tgz"
-  sha256 "e02a9c1b0fdedd5589d5408f08eb13329de6793425a4cb745290510dc98f832d"
+  url "https://downloads.sourceforge.net/project/asymptote/3.08/asymptote-3.08.src.tgz"
+  sha256 "7f2f641e1f8fede4e997d032cb6f88ca3b200f0f1b9f1ab92998387163a196f8"
   license "LGPL-3.0-only"
 
   livecheck do
@@ -12,12 +12,12 @@ class Asymptote < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0be3384178dc06f22f4dcc80cca1ea2e2969662bf7e6ff7511676c4e72bc0d3d"
-    sha256 arm64_sequoia: "5d00ea83f694dc8e83b65a4857e54fcb750aafacdfb38eb185721ce69bf89499"
-    sha256 arm64_sonoma:  "64e0c80c40164bd8e88883e54691da11b1615187b8e15438fc5859795bd1bbe3"
-    sha256 sonoma:        "325a2acc92fd9a483bf597ad9c1c82852c5d8e66883b8bb0b4c3d16972f04195"
-    sha256 arm64_linux:   "ff42820774fbdf9459593aa9f131d01edabfb289c2b020da820e5b9dfb63e768"
-    sha256 x86_64_linux:  "4132aa7ca1f2c1191a22a4f55b1fbf9398c56776967429ab4692ef341afd2691"
+    sha256 arm64_tahoe:   "09fab4527ab0dcd353195263195bc46e69a4a64cea23decbd2e6983db79907c2"
+    sha256 arm64_sequoia: "6c01df74f803bc3e6058d6d72dc8f963f604ae67cbe4d43fcc6b5425d50cbc40"
+    sha256 arm64_sonoma:  "b734a898bc7653f6dc65306f2ba7a885c7a631d7ae916f6aef41fab68b1ced50"
+    sha256 sonoma:        "8f87baed503376e2e032e99a972aab176fa2a498ca295197a13bd35ba87bcfc0"
+    sha256 arm64_linux:   "efd1751463dd421684e826846537c1a5e686f91c8e159f812d86bb9930a7fae4"
+    sha256 x86_64_linux:  "368f7410c9dc8abd932a79872862668b982210f04ce60918a319a52b5e686688"
   end
 
   depends_on "cmake" => :build
@@ -42,8 +42,8 @@ class Asymptote < Formula
   end
 
   resource "manual" do
-    url "https://downloads.sourceforge.net/project/asymptote/3.07/asymptote.pdf"
-    sha256 "f5b5c30975eb39462138612ac449902e0cfa8423fe9becf3500f9d2115bfb8ee"
+    url "https://downloads.sourceforge.net/project/asymptote/3.08/asymptote.pdf"
+    sha256 "0772487ab9cf1e9488d7788352fad5ae215b06c34cc14688b7491f2ae2003405"
 
     livecheck do
       formula :parent
@@ -58,6 +58,7 @@ class Asymptote < Formula
     # Avoid use of LaTeX with these commands (instead of `make all && make install`)
     # Also workaround to override bundled bdw-gc. Upstream is not willing to add configure option.
     # Ref: https://github.com/vectorgraphics/asymptote/issues/521#issuecomment-2644549764
+    touch "doc/asy-latex.pdf"
     system "make", "install-asy", "GCLIB=#{Formula["bdw-gc"].opt_lib/shared_library("libgc")}"
 
     doc.install resource("manual")

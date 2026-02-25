@@ -19,6 +19,8 @@ class Runit < Formula
     sha256                               x86_64_linux:  "291aed06b55caca42f5af93eec0143d85d2e96db8556a53eb4f9e62b6a84045c"
   end
 
+  conflicts_with "sandvault", because: "both install `sv` binaries"
+
   def install
     # Runit untars to 'admin/runit-VERSION'
     cd "runit-#{version}" do

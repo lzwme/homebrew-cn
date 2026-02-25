@@ -482,9 +482,6 @@ class Maigret < Formula
   end
 
   def install
-    # ZIP does not support timestamps before 1980
-    ENV["SOURCE_DATE_EPOCH"] = "1451574000"
-
     # Workaround for https://github.com/html5lib/html5lib-python/issues/593
     odie "Check if setuptools workaround can be removed!" if resource("html5lib").version > "1.1.0"
     (buildpath/"build-constraints.txt").write "setuptools<82\n"

@@ -20,7 +20,7 @@ class RvR < Formula
   conflicts_with "rv", because: "both install `rv` binary"
 
   def install
-    system "cargo", "install", "--features", "cli", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(features: "cli")
   end
 
   test do

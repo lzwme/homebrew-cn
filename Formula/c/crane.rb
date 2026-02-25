@@ -1,18 +1,18 @@
 class Crane < Formula
   desc "Tool for interacting with remote images and registries"
   homepage "https://github.com/google/go-containerregistry"
-  url "https://ghfast.top/https://github.com/google/go-containerregistry/archive/refs/tags/v0.21.0.tar.gz"
-  sha256 "fa3472a765b031636ba79efdd1068012794a5a83679364136d456fcde0519fa3"
+  url "https://ghfast.top/https://github.com/google/go-containerregistry/archive/refs/tags/v0.21.1.tar.gz"
+  sha256 "4fb8e2b4517cbd2324c0053eb368da51c730f6514a2b51abc37676b861f7955c"
   license "Apache-2.0"
   head "https://github.com/google/go-containerregistry.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed7d1541b4d0bbecc9df608d4b53153d02ab6a8a9873c0d7ee578f0946dd7866"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed7d1541b4d0bbecc9df608d4b53153d02ab6a8a9873c0d7ee578f0946dd7866"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed7d1541b4d0bbecc9df608d4b53153d02ab6a8a9873c0d7ee578f0946dd7866"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cac3509f522acdf8149cdbe7242fc9b0fd38c03268ff557f88c966094f96e1fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2caa5d7ac64bd3c72554f0e48764eb36659e06e2d4896d97d1c34cc2dbeabea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "199dee8968b3f43ce7b9dd5c044f18cc7c9a4f6ce52a96b99077afd3e18f0c9e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d277dd958813eb4effd94b232314cec31ceaf34e082545b09c3553687ce486ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d277dd958813eb4effd94b232314cec31ceaf34e082545b09c3553687ce486ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d277dd958813eb4effd94b232314cec31ceaf34e082545b09c3553687ce486ff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e0787d0f1bd29563a0573397662cde8b7786cfd489902772dcde108991a5dc3f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "481b3ce1a79397faec8825f8e758b3a701945e3be78563150f0ad15a5f608be6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "125167071247cc372e694166ee487415089b026b6d0295cf898f487e06481869"
   end
 
   depends_on "go" => :build

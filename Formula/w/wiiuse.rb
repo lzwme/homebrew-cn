@@ -5,8 +5,6 @@ class Wiiuse < Formula
   sha256 "a3babe5eb284606090af706b356f1a0476123598f680094b1799670ec1780a44"
   license "GPL-3.0-or-later"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:    "a4bf56429e997f9499a8966ab71e338be19e17918a5ff113bd3dee17ef3a370d"

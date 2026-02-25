@@ -296,10 +296,6 @@ class Bbot < Formula
   end
 
   def install
-    # hatch does not support a SOURCE_DATE_EPOCH before 1980.
-    # Remove after https://github.com/pypa/hatch/pull/1999 is released.
-    ENV["SOURCE_DATE_EPOCH"] = "1451574000"
-
     # Workaround for https://github.com/omry/omegaconf/issues/1234
     odie "Check if setuptools workaround can be removed!" if resource("omegaconf").version > "2.3.0"
     (buildpath/"build-constraints.txt").write "setuptools<82\n"

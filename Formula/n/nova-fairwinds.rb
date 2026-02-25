@@ -1,19 +1,18 @@
 class NovaFairwinds < Formula
   desc "Find outdated or deprecated Helm charts running in your cluster"
   homepage "https://github.com/FairwindsOps/nova"
-  url "https://ghfast.top/https://github.com/FairwindsOps/nova/archive/refs/tags/v3.11.10.tar.gz"
-  sha256 "a32f1b00ba808d906648e806f9d1e1102d4e7118230dbbd3ece5c7511b3ae84f"
+  url "https://ghfast.top/https://github.com/FairwindsOps/nova/archive/refs/tags/v3.11.11.tar.gz"
+  sha256 "d238a9e3f5a872b472295253c5c2d62f8f7a29786f1e67436bddf086ef90e42b"
   license "Apache-2.0"
   head "https://github.com/FairwindsOps/nova.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9a8371117343ad5dad1dadf33befe46d71b1f5a400d34d259a31c92509f1c52"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9a8371117343ad5dad1dadf33befe46d71b1f5a400d34d259a31c92509f1c52"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9a8371117343ad5dad1dadf33befe46d71b1f5a400d34d259a31c92509f1c52"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d7945efad0e489a138f84c3896ee384dbe8b8b5630b0704b70c82adfbbf80a01"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfa6fbf3378c1d774334ec67707f1bfe0e731909443f985613d2f61a75a75665"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c69045eeba0272760f9783cca577b96672741e734777125bed68aaa23174afc0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "88f5d41ada41956bef24e1159c07ea45616dc0b5ce610c81962f2129fc985237"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88f5d41ada41956bef24e1159c07ea45616dc0b5ce610c81962f2129fc985237"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88f5d41ada41956bef24e1159c07ea45616dc0b5ce610c81962f2129fc985237"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1135c8692cada34603d8f9c6682ead80b44de167a6a62a605d262df6e2200e7a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "79c6a88677c10c86882fd451f3b1ed9723cd312e13ab7cfd8d414ac33b931117"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1908a0616d6b9b8fe109d2e0b77f68d1e4b7a43533cde1996a4bbe4b974237b1"
   end
 
   depends_on "go" => :build

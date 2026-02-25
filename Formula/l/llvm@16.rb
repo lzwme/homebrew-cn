@@ -18,6 +18,7 @@ class LlvmAT16 < Formula
     sha256 cellar: :any,                 arm64_sequoia: "72e974bb3fc659063c90a66cf6b22c18b0d861230fed5b3e020e1c47a6a9a23e"
     sha256 cellar: :any,                 arm64_sonoma:  "8f12acd71d106e55c0148324222e24b7dddc3810e8760ad14e301484888c180e"
     sha256 cellar: :any,                 tahoe:         "733a0105a82360673318f3eb2f1d9414b5be983398be136562b1f764d4160ec9"
+    sha256 cellar: :any,                 sequoia:       "e240f9c95cc324d6b36296ac05e0e6993ef33a14b78aa8bb3e6345f85862918d"
     sha256 cellar: :any,                 sonoma:        "cf5af69ab448081f9fd83eeb25572eb5796508196e28325181a6c1bcda0a2bbc"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "c0e0ead92d47d078643b89d944d97a036695b0783e950b37ec8d4e6123a7ca10"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ebc8a0e2d3d18b121568cec215e3d2a65b0a5f52072d54c92ac139fea8f08e2"

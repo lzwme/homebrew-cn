@@ -30,7 +30,7 @@ class Rustup < Formula
   end
 
   def install
-    system "cargo", "install", "--features=no-self-update", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(features: "no-self-update")
 
     %w[cargo cargo-clippy cargo-fmt cargo-miri clippy-driver rls rust-analyzer
        rust-gdb rust-gdbgui rust-lldb rustc rustdoc rustfmt rustup].each do |name|

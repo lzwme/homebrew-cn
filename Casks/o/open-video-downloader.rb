@@ -1,9 +1,9 @@
 cask "open-video-downloader" do
   arch arm: "aarch64", intel: "x64"
 
-  version "3.1.2"
-  sha256 arm:   "391537bcc77f01691faf7e1fd585dca9f82d271c19da9349996e50e07fe2e160",
-         intel: "38cd0e6da462d0c1b62bfed2e475400bc33d0930867eb66a697f587f5e72dfc1"
+  version "3.1.3"
+  sha256 arm:   "9d39a7b650582fb68e4d649341bdbd4a8eaf3c92880168e59fd95d15c8dd9d02",
+         intel: "49a831e97a6236a3be786ad6f585f626f083507650fdae6732b63aec95050c1c"
 
   url "https://ghfast.top/https://github.com/jely2002/youtube-dl-gui/releases/download/app-v#{version}/Open.Video.Downloader_#{version}_#{arch}.dmg"
   name "Open Video Downloader"

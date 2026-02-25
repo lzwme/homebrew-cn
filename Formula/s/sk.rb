@@ -25,7 +25,7 @@ class Sk < Formula
   def install
     # Restore default features when frizbee supports stable Rust
     # Issue ref: https://github.com/skim-rs/skim/issues/905
-    system "cargo", "install", "--no-default-features", "--features", "cli", *std_cargo_args
+    system "cargo", "install", "--no-default-features", *std_cargo_args(features: "cli")
 
     generate_completions_from_executable(bin/"sk", "--shell")
     bash_completion.install "shell/key-bindings.bash"

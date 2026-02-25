@@ -30,8 +30,8 @@ class AutoEditor < Formula
     ENV["DISABLE_VPL"] = "1"
     ENV["DISABLE_WHISPER"] = "1"
     system "nimble", "make"
-    generate_completions_from_executable("nimble", "zshcomplete", "--silent", shells: [:zsh])
     bin.install "auto-editor"
+    generate_completions_from_executable(bin/"auto-editor", "completion", "-s", shells: [:zsh])
   end
 
   test do

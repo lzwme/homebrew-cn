@@ -24,12 +24,11 @@ class Nmstatectl < Formula
 
   def install
     cd "rust" do
-      args = if OS.mac?
-        ["--no-default-features", "--features", "gen_conf"]
-      else
-        []
+      if OS.mac?
+        args = ["--no-default-features"]
+        features = ["gen_conf"]
       end
-      system "cargo", "install", *args, *std_cargo_args(path: "src/cli")
+      system "cargo", "install", *args, *std_cargo_args(path: "src/cli", features:)
     end
   end
 

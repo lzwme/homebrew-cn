@@ -22,8 +22,8 @@ cask "microsoft-outlook" do
     end
   end
   on_sonoma :or_newer do
-    version "16.106.26021521"
-    sha256 "d42693892cd8a87cadc1c1d83a89e93adf3a91e9a6419a6863875b655b6bd8a4"
+    version "16.106.26022219"
+    sha256 "d89814b122a79fe154bc815e7bdf0f8a5982aaf5bf8ce6e183679e9fc233385c"
 
     livecheck do
       url "https://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/0409OPIM2019.xml"
