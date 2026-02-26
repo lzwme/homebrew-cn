@@ -1,19 +1,10 @@
 class Root < Formula
   desc "Analyzing petabytes of data, scientifically"
   homepage "https://root.cern"
+  url "https://root.cern/download/root_v6.38.02.source.tar.gz"
+  sha256 "77d34d2bca0ea720acfd43798bcb5d09a28584013b4d0a2910823c867d4bfa42"
   license "LGPL-2.1-or-later"
   head "https://github.com/root-project/root.git", branch: "master"
-
-  stable do
-    url "https://root.cern/download/root_v6.38.00.source.tar.gz"
-    sha256 "a4429422c460f832cde514a580dd202b1d3c96e8919c24363c3d42f8cf5accdc"
-
-    # Backport fix for RPATHs
-    patch do
-      url "https://github.com/root-project/root/commit/f646e520a5dc0b2e50b708c3d757bcf2abe618fd.patch?full_index=1"
-      sha256 "aa08b4dfe0274fd2b163d1b5eeb617864452337ff63d571264d17fe7f5d05f70"
-    end
-  end
 
   livecheck do
     url "https://root.cern/install/all_releases/"
@@ -24,13 +15,12 @@ class Root < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "e4fa2a6a166fab5feae1e163417681d56f1a44cfac15ec44d98fa060585f71f5"
-    sha256 arm64_sequoia: "03977f51fddf36e4a98294b6040612573f8c64456c00c620b695da0fecc1ae3c"
-    sha256 arm64_sonoma:  "354c530dc08ca88b9c41a8b9023bc7912c0710936a83293381567a15c900a31f"
-    sha256 sonoma:        "3bc7555215720458719c6db42319f4e9b06a872b03da2f8833336dbe23f353c2"
-    sha256 arm64_linux:   "9ba4afaae49f25c19a509ceeadf382b31cad0e33c99e7463fb1f2b321fada7d2"
-    sha256 x86_64_linux:  "fdf4819f429634a91e679db2f24bd4fb2ce25a13e806a4d4f713a37d7b0ba83c"
+    sha256 arm64_tahoe:   "dc5804d3fb1aacc801416f265c41b4f23ff75ed70d3a37bc1d37ce6959aa38e0"
+    sha256 arm64_sequoia: "9fcbc7c74e1e49d56bcb523677f3cd472e034759f67f49fb7a900a01c294a228"
+    sha256 arm64_sonoma:  "01fde1db6b4910c33aa57adce570bc47890ed0d86c1fb245f146ed01703809e9"
+    sha256 sonoma:        "cbb4d9b423eceae4278ac7ea45ef7a1c9308bd01e54063bfb6ed409005216aca"
+    sha256 arm64_linux:   "80eb13ae4e941555aa690f73f0f1c6739a4aee5fe257df03d3624d1adaeac587"
+    sha256 x86_64_linux:  "9a7de2121374fd7dd930933ce480d88e40434fef7495d04a12e500c8514f831c"
   end
 
   depends_on "cmake" => :build

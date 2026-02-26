@@ -1,19 +1,18 @@
 class Jadx < Formula
   desc "Dex to Java decompiler"
   homepage "https://github.com/skylot/jadx"
-  url "https://ghfast.top/https://github.com/skylot/jadx/archive/refs/tags/v1.5.4.tar.gz"
-  sha256 "6ae2e92532f3df58b2caf340b26ebb5502b5557a82a905d06249f69a6e9e1396"
+  url "https://ghfast.top/https://github.com/skylot/jadx/archive/refs/tags/v1.5.5.tar.gz"
+  sha256 "8c1af4a9aebd5334367d5d60c8d56b02755b2027f9f8bc6633b5c3afdc273e1a"
   license "Apache-2.0"
   head "https://github.com/skylot/jadx.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "541d59a6f5ce07cb96cd9af180271ddf7a33e0b99bc9e2fca7343bfc5098209c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "541d59a6f5ce07cb96cd9af180271ddf7a33e0b99bc9e2fca7343bfc5098209c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "541d59a6f5ce07cb96cd9af180271ddf7a33e0b99bc9e2fca7343bfc5098209c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "541d59a6f5ce07cb96cd9af180271ddf7a33e0b99bc9e2fca7343bfc5098209c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d285501b24c38def6d142fcb016927df6a5786b83bcf34fd10fe2e85a00a7b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d285501b24c38def6d142fcb016927df6a5786b83bcf34fd10fe2e85a00a7b0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "056438b2c1a698a28a6989a8ae959b1374c3830a706b46f79ed3e7bee0f12bf0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "056438b2c1a698a28a6989a8ae959b1374c3830a706b46f79ed3e7bee0f12bf0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "056438b2c1a698a28a6989a8ae959b1374c3830a706b46f79ed3e7bee0f12bf0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "056438b2c1a698a28a6989a8ae959b1374c3830a706b46f79ed3e7bee0f12bf0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a2825b8b309e071bed53f619a343dae20959dd2bcc5fe196d62ff2a80b9799a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a2825b8b309e071bed53f619a343dae20959dd2bcc5fe196d62ff2a80b9799a"
   end
 
   depends_on "gradle" => :build

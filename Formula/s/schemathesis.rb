@@ -6,17 +6,18 @@ class Schemathesis < Formula
   url "https://files.pythonhosted.org/packages/c6/ac/08b0a0ce60069db74e708e4a91c4255829ad5b0fdc87e5154086049ca117/schemathesis-4.10.2.tar.gz"
   sha256 "ad69508a9dd1a5b6fd6f4891abe86a9fc5f3f0d7a1133353359aadfd9522ac1f"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "494b41269c89ee33e2a4354c7e1b10b1893c9caca3328acc11fe0e40b795e3d4"
-    sha256 cellar: :any,                 arm64_sequoia: "b4ef7b9a95545aaa4f9832d53df31cc63e08a41784b0f3b9eefaa6be3f45ec9b"
-    sha256 cellar: :any,                 arm64_sonoma:  "d77e53316d2c39b57ca94328362a75362f4630481a8dc82332f0b1326da1affe"
-    sha256 cellar: :any,                 sonoma:        "62667e6ad7e7405ca8a04fb3c519f9e1574e69562880420ca50c3940e9778602"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a066a5ac19e53f826954f42839c0deaf06dbb1ef4ac91a1b4d7b640a75d9e65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a11007fe62667f3375df86b4597294c03e1ab5dd7e686e55eb0d3afeece939b0"
+    sha256 cellar: :any,                 arm64_tahoe:   "88faf193ff1c1ef538b3fd3869158cb5b255f03fc9841b07659168e03f875fc0"
+    sha256 cellar: :any,                 arm64_sequoia: "4820e75b653570a8adbd5143465bad4c40ad2418d20088e653fb5c030b75fdd1"
+    sha256 cellar: :any,                 arm64_sonoma:  "1507c79982cfe42c745461bd73392a5bdd9e6f916b0721bf9980d3b5963bda39"
+    sha256 cellar: :any,                 sonoma:        "aaf708f5e85ef7f1071b6c2ecfa07430b95a659fd33ec5c53856f6b4c4223c54"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a1823aa79a47d867ef4173eef89550bafa33da9a2b986adc084c49ce02dd84e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff13a9f8b8d879b9aaefed0bf1179dfec07ff2a5cbffaa45accdd002a0967450"
   end
 
-  depends_on "rust" => :build # for jsonschema-py
+  depends_on "rust" => :build # for jsonschema-rs
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.14"
@@ -87,8 +88,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/00/5b/039c095977004f2316225559d591c5a4c62b2e4d7a429db2dd01d37c3ec2/hypothesis-6.151.6.tar.gz"
-    sha256 "755decfa326c8c97a4c8766fe40509985003396442138554b0ae824f9584318f"
+    url "https://files.pythonhosted.org/packages/19/e1/ef365ff480903b929d28e057f57b76cae51a30375943e33374ec9a165d9c/hypothesis-6.151.9.tar.gz"
+    sha256 "2f284428dda6c3c48c580de0e18470ff9c7f5ef628a647ee8002f38c3f9097ca"
   end
 
   resource "hypothesis-graphql" do
@@ -127,8 +128,8 @@ class Schemathesis < Formula
   end
 
   resource "jsonschema-rs" do
-    url "https://files.pythonhosted.org/packages/54/00/12eeb070f19d29ada6c43aa2c039c4bbd507ad893ae450846577ac7b3fba/jsonschema_rs-0.41.0.tar.gz"
-    sha256 "8f58b5208f368b8abe39191030f33af0309a084469a06bc8a399f83120613ce3"
+    url "https://files.pythonhosted.org/packages/ad/44/da58fe3b9622a89d8a14cfa0b8f4ba34a773f2719c1d1fdf96577e605e23/jsonschema_rs-0.42.1.tar.gz"
+    sha256 "4144cd351d39ce457f2c7d45111e7225eb5ed1791e0226dec5b9099d78651e32"
   end
 
   resource "jsonschema-specifications" do
@@ -217,8 +218,8 @@ class Schemathesis < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/74/99/a4cab2acbb884f80e558b0771e97e21e939c5dfb460f488d19df485e8298/rich-14.3.2.tar.gz"
-    sha256 "e712f11c1a562a11843306f5ed999475f09ac31ffb64281f73ab29ffdda8b3b8"
+    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
+    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
   end
 
   resource "six" do
@@ -272,12 +273,20 @@ class Schemathesis < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/5a/70/1469ef1d3542ae7c2c7b72bd5e3a4e6ee69d7978fa8a3af05a38eca5becf/werkzeug-3.1.5.tar.gz"
-    sha256 "6a548b0e88955dd07ccb25539d7d0cc97417ee9e179677d22c7041c8f078ce67"
+    url "https://files.pythonhosted.org/packages/61/f1/ee81806690a87dab5f5653c1f146c92bc066d7f4cebc603ef88eb9e13957/werkzeug-3.1.6.tar.gz"
+    sha256 "210c6bede5a420a913956b4791a7f4d6843a43b6fcee4dfa08a65e93007d0d25"
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources without: "jsonschema-rs"
+    resource("jsonschema-rs").stage do
+      # Use ring instead since building bundled aws-lc is tricky to do indirectly within superenv.
+      # Can consider switching if system copy is supported https://github.com/aws/aws-lc-rs/issues/936
+      inreplace "crates/jsonschema-py/Cargo.toml",
+                /^(jsonschema = .*), features = \[/,
+                '\1, default-features = false, features = ["resolve-http", "resolve-file", "tls-ring",'
+      venv.pip_install Pathname.pwd
+    end
 
     generate_completions_from_executable(bin/"st", shell_parameter_format: :click)
   end

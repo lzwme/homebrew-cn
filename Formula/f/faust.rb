@@ -4,6 +4,7 @@ class Faust < Formula
   url "https://ghfast.top/https://github.com/grame-cncm/faust/releases/download/2.83.1/faust-2.83.1.tar.gz"
   sha256 "6ca3d749296191c41e9fd24ce7e5b37f58022d4320acb1c7343fec2df82d5551"
   license "GPL-2.0-or-later"
+  revision 1
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -14,19 +15,19 @@ class Faust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d2a55eacd796dbfb88cb6255a8620e092e77e333fa8404eeb1cd438ed440ecd1"
-    sha256 cellar: :any,                 arm64_sequoia: "219a3d5ec634c88c84ddd71d547ef00408626906165694abf3a82209f6879cd1"
-    sha256 cellar: :any,                 arm64_sonoma:  "44aca203784d43d61fd808f6bd388f7f557846a613aa7d1fcf3354d09e292fdc"
-    sha256                               sonoma:        "12c0f1f3d9cbab7c0ff14adc151b17b10ef4487f225eedd475fa545e98188e15"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e73f78c0325a8b989539959a6a57ab825789b613d701a52c536a2ee2c128fdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e50c6f304965d4b01d466322b1cd907d88038bd961683ecbb04ee7facb0cff23"
+    sha256 cellar: :any,                 arm64_tahoe:   "23fd223a04bb0bcaa8f267ede0c4d6fdb1e652397630a4884819c315a826f945"
+    sha256 cellar: :any,                 arm64_sequoia: "daa6e2b0b2cf00b94ab1c9425f5f0574644587f1db4f74ea91c0139ba914e842"
+    sha256 cellar: :any,                 arm64_sonoma:  "f902b3f47ffff01283038b634ea8dedc0358e1d8f55658e1d7cd7cd5355d8736"
+    sha256                               sonoma:        "6fb6edd3547409c296ad3094449e67c8ca5bd43bc10f83be3f676eda8abc2718"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29e2ad51550d125bc9a66a19e5e2303b19c184e551361aa88628c3fccf23b2eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "566dd33a528deba71d0bdda151bcb37d4bc4bf3a0da53780f8527bfa93ff1dbf"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "libmicrohttpd"
   depends_on "libsndfile"
-  depends_on "llvm"
+  depends_on "llvm@21"
 
   def install
     # `brew linkage` doesn't like the pre-built Android libsndfile.so for faust2android.

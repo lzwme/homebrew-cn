@@ -3,12 +3,12 @@ class StrandsAgentsSops < Formula
 
   desc "Standard Operating Procedures for AI agents using natural language"
   homepage "https://github.com/strands-agents/agent-sop"
-  url "https://files.pythonhosted.org/packages/da/a8/32c318cd0c03989eb1b8fb7da66606e0b19c5ccc9be41b8ca671666accdf/strands_agents_sops-1.0.6.tar.gz"
-  sha256 "ecc934ce5f048343db563d90c08ddf700f9e7b4439fbe5a0678565f1e62ebe38"
+  url "https://files.pythonhosted.org/packages/f4/c1/b15d73617717953af2dac9f2ceb9c1c882c74a5d9f93b9f58c7e0bcacc5f/strands_agents_sops-1.0.7.tar.gz"
+  sha256 "50694cb75d9b522715c94cc0d3bc56e5b2160b058bd87bcf471f0fd6ba577866"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f88f818c814a425ff6962833c0d5359db9f9e99f5c77c603f7b341a6309f5037"
+    sha256 cellar: :any_skip_relocation, all: "5b32223d7ed471a1df5f7d07986bb39aea6ee0874cab784f03995db408305248"
   end
 
   depends_on "certifi" => :no_linkage
@@ -75,8 +75,8 @@ class StrandsAgentsSops < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/43/4b/ac7e0aae12027748076d72a8764ff1c9d82ca75a7a52622e67ed3f765c54/pydantic_settings-2.12.0.tar.gz"
-    sha256 "005538ef951e3c2a68e1c08b292b5f2e71490def8589d4221b95dab00dafcfd0"
+    url "https://files.pythonhosted.org/packages/52/6d/fffca34caecc4a3f97bda81b2098da5e8ab7efc9a66e819074a11955d87e/pydantic_settings-2.13.1.tar.gz"
+    sha256 "b4c11847b15237fb0171e1462bf540e294affb9b86db4d9aa5c01730bdbe4025"
   end
 
   resource "pyjwt" do
@@ -110,8 +110,8 @@ class StrandsAgentsSops < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/c3/d1/8f3c683c9561a4e6689dd3b1d345c815f10f86acd044ee1fb9a4dcd0b8c5/uvicorn-0.40.0.tar.gz"
-    sha256 "839676675e87e73694518b5574fd0f24c9d97b46bea16df7b8c05ea1a51071ea"
+    url "https://files.pythonhosted.org/packages/32/ce/eeb58ae4ac36fe09e3842eb02e0eb676bf2c53ae062b98f1b2531673efdd/uvicorn-0.41.0.tar.gz"
+    sha256 "09d11cf7008da33113824ee5a1c6422d89fbc2ff476540d69a34c87fab8b571a"
   end
 
   def install

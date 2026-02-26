@@ -1368,6 +1368,7 @@ Homebrew-homebrew-core/Formula/c/cvs-fast-export.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cvs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cvsutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cvsync.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/cwalk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cwb3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cweb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cxgo.rb, Homebrew/homebrew-core, 1
@@ -3753,6 +3754,7 @@ Homebrew-homebrew-core/Formula/l/llama.cpp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lld.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lld@19.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lld@20.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lld@21.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lldpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/llgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llhttp.rb, Homebrew/homebrew-core, 1
@@ -3768,6 +3770,7 @@ Homebrew-homebrew-core/Formula/l/llvm@17.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@18.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@19.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@20.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/llvm@21.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lm-sensors.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lm4tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lmdb.rb, Homebrew/homebrew-core, 0
@@ -6601,6 +6604,7 @@ Homebrew-homebrew-core/Formula/s/sh4d0wup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sha1dc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sha2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sha3sum.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/shadcn.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shaderc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shadowenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shadowsocks-libev.rb, Homebrew/homebrew-core, 1
@@ -13207,6 +13211,7 @@ Homebrew-homebrew-cask/Casks/m/mactex-no-gui.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mactex.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mactracker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macupdater.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/macusb.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macvim-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macwhisper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macwinzipper.rb, Homebrew/homebrew-cask, 0

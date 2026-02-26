@@ -1,6 +1,6 @@
 cask "openaudible" do
-  version "4.7.3"
-  sha256 "d7d3db86763015c92a4042c305130a6ec52bedf7f8cd92cb6a04246369380ec3"
+  version "4.7.4"
+  sha256 "adfd3fa198f3dff417e76d21d65a349fad4a62dceac67ddd5b95c9d47df829b0"
 
   url "https://ghfast.top/https://github.com/openaudible/openaudible/releases/download/v#{version}/OpenAudible_#{version}.dmg",
       verified: "github.com/openaudible/openaudible/"

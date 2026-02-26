@@ -3,18 +3,18 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/5f/01/43affc74fb7e89616642b2f2de4754edd8a61f183c5fca1ac49a3c770eb2/mcp_atlassian-0.17.0.tar.gz"
-  sha256 "d4ee09e691a0bd212d64193d83389c628ae6347075706de0a22ce6a2307f7fed"
+  url "https://files.pythonhosted.org/packages/9c/0b/d13b5191af29b6f8587604a5698716a9699cf98e15b8a5eec199eb4cc234/mcp_atlassian-0.18.1.tar.gz"
+  sha256 "447d3cc8e06148108ab966f31f69d5ddfaf2fed7ef9beee2bf0d0035d97a569a"
   license "MIT"
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ae56ddab013440267088cce4ca667d304af4d03a31774f9240b84bea50a351c5"
-    sha256 cellar: :any,                 arm64_sequoia: "c1576179fdfc8b073058f522896e7b007b78e52343cbab434e17e799b0d14d3b"
-    sha256 cellar: :any,                 arm64_sonoma:  "6e1f8a999642ab87399280ec9b8a183452134e0ff668a04c071902a014884b2e"
-    sha256 cellar: :any,                 sonoma:        "436b590dfea9683941862cb2e728a061524eb75441bfcf425d2f3f728b47c07e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "87cf13183954f2c3bb20633bb33a283ccf8becfebe2d09b98fff740e76ca8e51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e20970a138b7f283fb77aa3239e662d9b83e9f353b4537eabd594e084b2d43a"
+    sha256 cellar: :any,                 arm64_tahoe:   "a6ec3b0ad8fbb8093512fe21a1238a6ea107cfbf6dca7615fbb355661f3b3bd2"
+    sha256 cellar: :any,                 arm64_sequoia: "db332ca54455cd67a7a8fc7a2bb50a45060e56f4589463f0870038c52c95c67b"
+    sha256 cellar: :any,                 arm64_sonoma:  "29ac996d2835b5d8e2edcf825c0cb748f7c2ffc660f175396db9db3c01b62718"
+    sha256 cellar: :any,                 sonoma:        "df9e5d8591d8629f0f4774009591898c687104aef0ef31c0ee57749110e2b0e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "395ce0380b5faa8c1cd22bafd6fa65c4f453ca7763a89bdb47bd9398748380b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f863e54de9caea74248fcf419239e0689e12bec6426859aa406306a72bebb74"
   end
 
   depends_on "rust" => :build # for py_key_value_aio > uv_build > maturin
@@ -137,8 +137,8 @@ class McpAtlassian < Formula
   end
 
   resource "fakeredis" do
-    url "https://files.pythonhosted.org/packages/d8/44/c403963727d707e03f49a417712b0a23e853d33ae50729679040b6cfe281/fakeredis-2.34.0.tar.gz"
-    sha256 "72bc51a7ab39bedf5004f0cf1b5206822619c1be8c2657fd878d1f4250256c57"
+    url "https://files.pythonhosted.org/packages/11/40/fd09efa66205eb32253d2b2ebc63537281384d2040f0a88bcd2289e120e4/fakeredis-2.34.1.tar.gz"
+    sha256 "4ff55606982972eecce3ab410e03d746c11fe5deda6381d913641fbd8865ea9b"
   end
 
   resource "fastmcp" do

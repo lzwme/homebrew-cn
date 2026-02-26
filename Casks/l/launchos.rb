@@ -1,6 +1,6 @@
 cask "launchos" do
-  version "1.5.1,162"
-  sha256 "88c46ec5cd14c26409a7d62fb61e44d3bb856ddab4d50d54f52396588c309aca"
+  version "1.5.2,174"
+  sha256 "a5b6e829d99484969093c264dfe25389a295347e05ca52e8d9ab5c6738137945"
 
   url "https://static.remixdesign.app/launchos/LaunchOS-#{version.csv.first}-#{version.csv.second}.dmg",
       verified: "static.remixdesign.app/launchos/"

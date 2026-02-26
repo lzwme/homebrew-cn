@@ -4,6 +4,7 @@ class C3c < Formula
   url "https://ghfast.top/https://github.com/c3lang/c3c/archive/refs/tags/v0.7.9.tar.gz"
   sha256 "d9867c80e9dea5a96badd7c88937e155ead31f3dc6aa0758010ce0734877d17b"
   license "LGPL-3.0-only"
+  revision 1
   head "https://github.com/c3lang/c3c.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -15,23 +16,23 @@ class C3c < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bb9c2b45c04628b7c78e977610af4e6dea6809dbdeaee4ae7cb269f8967ab580"
-    sha256 cellar: :any,                 arm64_sequoia: "2accf9471d9628de0b288aec01d2b98b1fd7bd620d29ad0725432a1af450e71e"
-    sha256 cellar: :any,                 arm64_sonoma:  "884941b1705c4a6239276d1b9e2c835636a42a4c742bb5690bded30fb9d05422"
-    sha256 cellar: :any,                 sonoma:        "74668d3f7a88a779a36469fc77d2f7f85deeb910bbb217ff7588ee5c83c879b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63e9cecbe430a0ea1bff4f085e98a3df3a2ea9da5d0b9881f005857308ebfcdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06be78cae0c8f890d2af424b39e92f3192fb183da32c182570fef11d7fe9edb7"
+    sha256 cellar: :any,                 arm64_tahoe:   "75db4fd26a35a994b38fdc355687c178a2534b91b29aee1c4ebcaf2cccae5631"
+    sha256 cellar: :any,                 arm64_sequoia: "c29ed6db61145bfecd814f0282c714d535ecfe137059b81470a90f35500378a2"
+    sha256 cellar: :any,                 arm64_sonoma:  "1b337ce43b666888056594646bfa5bb2b43b4e7f9ad928626ee813d16b89a2e7"
+    sha256 cellar: :any,                 sonoma:        "1ca708ab4d74fb62f739843a96b3f7cee84218fa3753be5f08682a9417fbe879"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f1113d1e81e0fd414418dc37b9d52378c66c7107aea48a678e4da1cd1819c7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5a17aec2c7421b8342f6ba2e58f271d689e947350bf60eaa818f79481a39f8a"
   end
 
   depends_on "cmake" => :build
-  depends_on "lld"
-  depends_on "llvm"
+  depends_on "lld@21"
+  depends_on "llvm@21"
 
   uses_from_macos "curl"
 
   def install
-    lld = Formula["lld"]
-    llvm = Formula["llvm"]
+    lld = Formula["lld@21"]
+    llvm = Formula["llvm@21"]
 
     args = [
       "-DC3_LINK_DYNAMIC=ON",

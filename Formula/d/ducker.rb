@@ -1,17 +1,17 @@
 class Ducker < Formula
   desc "Slightly quackers Docker TUI based on k9s"
   homepage "https://github.com/robertpsoane/ducker"
-  url "https://ghfast.top/https://github.com/robertpsoane/ducker/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "e9e92a6d5684d327dbc07d005a20da101dc044d52cc094cf8ab4883eb87a768f"
+  url "https://ghfast.top/https://github.com/robertpsoane/ducker/archive/refs/tags/v0.6.3.tar.gz"
+  sha256 "263cc295df1781693cbd87fbe165f2b5ba6680a01f533d1b49346eda0b4f3c2c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5f016a60865df4c08968328d36e6a315e83af5f224d6ac519a4eaaec72258c7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a4d66014d8b66e55291daa4dc0bd701f630789529bc7271906c1ccf23aa7532"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd32634a7c73b66eba7346773b47f5a05c891448da60fa574c9ed79c30255947"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe2d895e4ff41671bfc0e0cbbee3371f5b39bac0510b89f622d05786c8932e27"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "20b8c248fe8a165a64d9bb2be4e59162697375869b4b68173622338db1ddbbfe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "437df3ec38b3fec9eaccf73167b215ddb3ddfaef8402a9b9254472aa8e57e44c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9db28cc2473d24211b9b23b2084b8883edba3e2681bd31c41247723b22dacb56"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f04ad71bdef7753fcdb1f10f00c117287b943db79ad78c6a5e2cf2ca8134267"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e2d63155b374921f045bc5d06a6ab6293cc9d12af7b224f307964f60a0c4401"
+    sha256 cellar: :any_skip_relocation, sonoma:        "54cc2d496c75fab7905f898d50cf1d1b2d0f5aaabb1ff31024ba812889d8a46f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d08fed4d8100da2b24066e015c65b0e6b8484db18e77519066d38ffa666d65a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58be72cfc69cbd4a656d4628a0ec11836411bf28c0fed2c08f00f4024e0cb3f6"
   end
 
   depends_on "rust" => :build

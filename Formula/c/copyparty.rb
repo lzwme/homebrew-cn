@@ -3,17 +3,17 @@ class Copyparty < Formula
 
   desc "Portable file server"
   homepage "https://github.com/9001/copyparty"
-  url "https://files.pythonhosted.org/packages/0e/17/595ba299cfec72a01db9ccad5ba3b26b270b18b5ac1591eb711f7669e4f5/copyparty-1.20.8.tar.gz"
-  sha256 "b185418b59ff3071439e1cea660bb641dde34786f8af33c779d869eaa5997c00"
+  url "https://files.pythonhosted.org/packages/62/f7/634581e256d1a01f6871da4e7dc5ee6819d5fa3f198437b93c8146dd5f2d/copyparty-1.20.10.tar.gz"
+  sha256 "f725380f1ca6aea04a6fc14da71a3687a2eb53b7d68b8b35d9bd281dc0a8a8b5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f6910c34b51da52b4dab5e96cc9343b09c310d6e353df5d4f43c05409acc0a6e"
-    sha256 cellar: :any,                 arm64_sequoia: "4f9cdf081ea246f3b1515e290830c4fdd4de9efa1618affc7eb607de959fd98d"
-    sha256 cellar: :any,                 arm64_sonoma:  "6c9ff357357d7f5a277cad5de6af564cff9e12a74c0b83322294765913f6567b"
-    sha256 cellar: :any,                 sonoma:        "177a9071ff193b6a4b990006c88f73f312740c8400b8040cf45923a6c0913765"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e40f737913d8d682c6b459fa97b3fa6db0d5b58b7e9e5ecf479099a9f6d148b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33e67d1d7e59c2be006b3f1439000074cb2bbf658cfc3a251e10c603ca92e915"
+    sha256 cellar: :any,                 arm64_tahoe:   "9f64fccbd7b72288aa74a1513f659f94dc501b867131dd5630b950757b138b20"
+    sha256 cellar: :any,                 arm64_sequoia: "202457a64a62a105f0ff8f7410e01a5d1e41f6c50701f9716e00c867d5735ec9"
+    sha256 cellar: :any,                 arm64_sonoma:  "a9e814b61b16c2af0d37eb369fc8fb346babc62ee332ca18d2f366037815f6aa"
+    sha256 cellar: :any,                 sonoma:        "fa4c5c66297270acd26c3ecd9a4c917f6978e61c769c7dc0eee8c287d38f7cd4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd421f58dc2b8102fad0a8c0a90aeb716084a2a9c7320d8a30f22f83c7496954"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bae7e12f69ad27378ec1297eac7231f74607be640ec7cf68ff96dbdad4ff999"
   end
 
   depends_on "cmake" => :build

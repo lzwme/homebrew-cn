@@ -3,18 +3,18 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://files.pythonhosted.org/packages/02/2e/a6539fbf525dafd73e7a43df6a678da7bc456ca1ef0fe646cf5afbe844ed/conan-2.25.2.tar.gz"
-  sha256 "3a5214a095cee5c3d21ed45ea31139705703e49fa9c4bb45c4c73f5ee17a1031"
+  url "https://files.pythonhosted.org/packages/99/a2/ce288c6c5ff28b766f39702bbac2caf9eef16400c87ebf64330fc12a5490/conan-2.26.0.tar.gz"
+  sha256 "43e3cad85dfa7fecee67e4c1c8a6e5058ab51fe03178b7ce7a2f9788bbc18107"
   license "MIT"
   head "https://github.com/conan-io/conan.git", branch: "develop2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0a5de6e78f8a33c526ad5d558870af755b72bf8fdeae68ad5d96b097fe8fa6a0"
-    sha256 cellar: :any,                 arm64_sequoia: "80556c45c868edb8e058e79c8d4675b5d970726ca4c2c6ce8dab52fea869ca3d"
-    sha256 cellar: :any,                 arm64_sonoma:  "2b79f08d904a182b6126b881ca7b91ccc7d470c8c3e13c19fa2bcf0126eb0996"
-    sha256 cellar: :any,                 sonoma:        "a91c07743a74377679fdca6c7eb0c3eb3f58637b3a0f40f19f74411f55746048"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac3b8225aa20af1e09221d4d89c5afa23d29456c2a7d994f2122b13048fee091"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfd8a338dce5808ac89ac913c7a8adb4bee62f2877ba94de70128d70b4030b3f"
+    sha256 cellar: :any,                 arm64_tahoe:   "ce30168873d885223f640cbeff82afe0fdd0e89a006d427ce692998a30f89e95"
+    sha256 cellar: :any,                 arm64_sequoia: "1fffeb8a9c3eed49492a185887c674876be80b02b7c92a9dc8f234c30dba090c"
+    sha256 cellar: :any,                 arm64_sonoma:  "6779cf77472eebcdfd7210ec2893778406e9ffd91fb3a082169d5784fabb0538"
+    sha256 cellar: :any,                 sonoma:        "2b0ae5837877e19907aefcb51574a5bffe4922afef8d12ab283586aeef4b17b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "809b18fa5115e410220043335fa022ef4e57cc6f2abe6aaa75869956f98764ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0d8b89d6a15da25ecd45f3906c6b4323872150d8612580827c16c82e9300490"
   end
 
   depends_on "pkgconf" => :build

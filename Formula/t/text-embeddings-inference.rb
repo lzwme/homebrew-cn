@@ -1,17 +1,17 @@
 class TextEmbeddingsInference < Formula
   desc "Blazing fast inference solution for text embeddings models"
   homepage "https://huggingface.co/docs/text-embeddings-inference/quick_tour"
-  url "https://ghfast.top/https://github.com/huggingface/text-embeddings-inference/archive/refs/tags/v1.9.1.tar.gz"
-  sha256 "68876328e38cc1be97d6327acfa359496843f0513bcf626f8b3d6749c5818b5d"
+  url "https://ghfast.top/https://github.com/huggingface/text-embeddings-inference/archive/refs/tags/v1.9.2.tar.gz"
+  sha256 "92c289f2ce51a9df6e69d7cf4adf17e13d7c3fb561168b74fab2be4224c38b29"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ac9966a2a6232bf3326fdee03aa20dcc803a40bcfbb566efb66149b8ed5ec88"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2052d3641d11957d92b13014c63cf1633ce042e81d4684df0f3422a6ed4e614b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "efd0d073bbbee9c3064ac61d9fcdcb4676f27b5c66c95091b20b69dcbb558594"
-    sha256 cellar: :any_skip_relocation, sonoma:        "666538621fef38fd6236bff4898d0f4cdba292360713cd07c2c1b201d88a8455"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1cafae0d476f91dbb5a341113dbac99b27c7bbd4efa323f6af6f1137ce1deaac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbc8913326b9a6193939c854776b3a7d655b6a52cd4d0adaafd54bc443834675"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d0544b700a55278610a4f3405875107822d2b801fbb7ab5b4ca3e47f6782f9a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "173d036aa4cb307a502fbb98b1436419409e94992a55e9f91052b1bf12577074"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f30e82669f79e24aefe425950543f1d8db8870aedd8c45db51c3ded78169fc3e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "599e42486ac079dcfb7826fc15faa7174ba7647715e299f986181e095a1ea68d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d627908ede29b0544ebf52d3e32495106bdd9511e048a392fb2aee55591f6c61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8eb15c2cf8a11731239a3a09d1871042d40890462affc90a921ff449ff8e4037"
   end
 
   depends_on "pkgconf" => :build

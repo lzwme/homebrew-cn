@@ -11,8 +11,6 @@ class I386ElfGdb < Formula
     formula "gdb"
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "a956c80bc7b8f5684e35879dbda8d3151fbeea1120aadfdabc87d32703807041"

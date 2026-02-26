@@ -21,8 +21,6 @@ class Innoextract < Formula
     regex(/href=.*?innoextract[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "1150222eb02fdb776418d3253e62ba75592481225b162026bf45ad687784d730"
     sha256 cellar: :any,                 arm64_sequoia: "9231e79c53ec988162f3173dad48d1e9a3d104af8b21e10f6837c922d4d12d99"
