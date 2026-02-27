@@ -1,9 +1,9 @@
 cask "capacities" do
   arch arm: "-arm64"
 
-  version "1.58.53"
-  sha256 arm:   "ec6c492d24c0c25cc50e48cb9bed2ca11baf259221dc5fd52c919b2ef6f4f563",
-         intel: "6856bfd3c8c342be334d3714a0e3859f3f59f54e864edddde53900df8739af6f"
+  version "1.58.71"
+  sha256 arm:   "ef004ba3610156033443ccbb4c311f6f588371e0f386fd020c97d2b163b05b71",
+         intel: "05f63a3919d8a9d9e8ba1f43a1b0f365d807c63262163d450dea48506f7f297d"
 
   url "https://capacities-desktop-app.fra1.cdn.digitaloceanspaces.com/Capacities-#{version}#{arch}.dmg",
       verified: "capacities-desktop-app.fra1.cdn.digitaloceanspaces.com/"
@@ -16,7 +16,7 @@ cask "capacities" do
     strategy :electron_builder
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :monterey"
 
   app "Capacities.app"
 

@@ -1,18 +1,18 @@
 class Ironclaw < Formula
   desc "Security-first personal AI assistant with WASM sandbox channels"
   homepage "https://github.com/nearai/ironclaw"
-  url "https://ghfast.top/https://github.com/nearai/ironclaw/archive/refs/tags/v0.11.1.tar.gz"
-  sha256 "343105586d03b8791bd9b0cada70c0967ab7651c1008d93b7aca91704eca6c53"
+  url "https://ghfast.top/https://github.com/nearai/ironclaw/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "f8b7fd74bef8adc467448922d5f84c2f78db4f554886dd074fb2eafd8d5b4807"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/nearai/ironclaw.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75d85bfb5e39937d107fcb180e20ca8e5a9a45ccea2a174e57bf2f179ce8f770"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbb40565bcf16a755bfa0d841821c87683c62935a7fe8434bb3f6581c0a49c9f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d475013f99af865c3ba77f471d3f6016a7f73b1a3b63cd412720700b5a7f3a79"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cc89ae3533af7ecfb7f239c269c7df44fc31b7b752707d960fe4063ab51f5f54"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "646d7c3fa8b8e219708a4298b7deae7702442c1d6709b0f98ad58543950b7b26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9798c9811bbfbb418a899cf53ad434977d89691cc36cbc9da48fe5bb84e6de00"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b9fe80bfcbb1c3cb6cb357ad4f36dc0d1e0035071a6b8e60361b77d24c23fd0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa894ef92305a14e24699485d542f5a6ee92d0cf6b83a0a3eabd37e69ef63307"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "56ee18c1a8924c9699b96d3636ab32b43aeefaedc6da57f32c83b509c71eea1a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dbb56a8bc360be7bc28db1708c9dcac2f6840848c73ea66d52d1394635edca55"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "32053b0906add469e4bb9d60bb907372096e93e7f79c239752113928b613474d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e23b0057f8625599801a6fdf253b4419c97b2c8ce7e70751d86457f092f1c7b3"
   end
 
   depends_on "pkgconf" => :build

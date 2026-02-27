@@ -546,6 +546,7 @@ Homebrew-homebrew-core/Formula/b/berkeley-db.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/berkeley-db@4.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/berkeley-db@5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bettercap.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/betterleaks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/betty.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bfg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bfs.rb, Homebrew/homebrew-core, 1
@@ -1161,7 +1162,6 @@ Homebrew-homebrew-core/Formula/c/coffeescript.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cogapp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/coin3d.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/cointop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coinutils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/colfer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/colima.rb, Homebrew/homebrew-core, 0
@@ -5579,7 +5579,7 @@ Homebrew-homebrew-core/Formula/p/pget.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgformatter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgloader.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgpdump.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pgpool-ii.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pgpool-ii.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pgrok.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgroll.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgroonga.rb, Homebrew/homebrew-core, 0
@@ -6102,6 +6102,7 @@ Homebrew-homebrew-core/Formula/q/qwen-code.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qwt-qt5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qwt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qxmpp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/r-rig.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/r.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/r3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rabbitmq-c.rb, Homebrew/homebrew-core, 1
@@ -6278,7 +6279,6 @@ Homebrew-homebrew-core/Formula/r/richgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/riemann-client.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/riemann.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/riff.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/rig-r.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rinetd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ringojs.rb, Homebrew/homebrew-core, 1
@@ -15862,7 +15862,6 @@ nicerloop-homebrew-nicerloop/Casks/peazip.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/replaywebpage.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/rescribe.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Casks/scantailor-advanced.rb, nicerloop/homebrew-nicerloop, 1
-nicerloop-homebrew-nicerloop/Casks/sourcegit.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/synology-ds-manager.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/tccplus-gui.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/virtualbox-menulet.rb, nicerloop/homebrew-nicerloop, 1

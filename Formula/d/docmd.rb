@@ -1,17 +1,17 @@
 class Docmd < Formula
   desc "Minimal Markdown documentation generator"
   homepage "https://docmd.mgks.dev/"
-  url "https://registry.npmjs.org/@docmd/core/-/core-0.4.7.tgz"
-  sha256 "6c733d0c94bc93f7ab917df935a64df57b1d0b2480362ac880df0a96b606c5b7"
+  url "https://registry.npmjs.org/@docmd/core/-/core-0.4.9.tgz"
+  sha256 "0c80fe7712b31acb402e18da6d82d16d3c255ed51ab5f50159b29db7581a109a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "211d4b356b50daac7ebf6af2f1fa737e19060919ddcb0a67f81604dde1e0ab11"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76f85d46467eb895b93da8263aaf4871855099a979316d61e5e90ec8ad2337cc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76f85d46467eb895b93da8263aaf4871855099a979316d61e5e90ec8ad2337cc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9b6f478f9da14cfd87376acda1e6da9dc67f3d9f900b219076db6ad47676f472"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "64ef6bac683d4f4a277b1160ec6184f0b434b487071d6b220a309170ea9cd74c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9afa1ff7afe8d212d1b5d0ce5df70f40bcf2a2caf931dcfa9ef588f7c83a1976"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1bf718395805658706562fce9249caa360174ba4332e2b777b0554815a30e802"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "478da2d0d0d82a2c7349a4e50218218b99c12b23a35ab8b0771c22d49f598778"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "478da2d0d0d82a2c7349a4e50218218b99c12b23a35ab8b0771c22d49f598778"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dde61d949e7d1cf20e0321ac92d9b364a0e93976bdd83c0aa8521ab0ef1df497"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "13136784da7f48798d8fa3fb9b1430c66f443f0c9ce55d16d80be5d862e4c8e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13136784da7f48798d8fa3fb9b1430c66f443f0c9ce55d16d80be5d862e4c8e2"
   end
 
   depends_on "esbuild" # for prebuilt binaries
@@ -27,14 +27,6 @@ class Docmd < Formula
 
     node_modules = libexec/"lib/node_modules/@docmd/core/node_modules"
     deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
-
-    clipboardy_fallbacks_dir = node_modules/"clipboardy/fallbacks"
-    rm_r(clipboardy_fallbacks_dir)
-    if OS.linux?
-      linux_dir = clipboardy_fallbacks_dir/"linux"
-      linux_dir.mkpath
-      ln_sf Formula["xsel"].opt_bin/"xsel", linux_dir/"xsel"
-    end
 
     # Remove pre-built binaries
     rm_r(libexec/"lib/node_modules/@docmd/core/node_modules/@esbuild")

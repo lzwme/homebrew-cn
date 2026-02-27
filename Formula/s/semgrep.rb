@@ -9,8 +9,8 @@ class Semgrep < Formula
   # 2. run `brew update-python-resources semgrep`
   # 3. uncomment `pcre` resource
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.152.0",
-      revision: "2b6338b86f4846cb8dd09ef47c9d8537f7626b52"
+      tag:      "v1.153.0",
+      revision: "a4a84e81e8cde78eb4893def4b971f8597a0aed8"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -22,12 +22,12 @@ class Semgrep < Formula
   no_autobump! because: "contains non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "cab7780b77674fc459c75be59c932cb6256f15152f221246fb33531899b3ee80"
-    sha256 cellar: :any, arm64_sequoia: "2be4efd2d4f3da177ec4dfb46ce324b27cbdd36639f2215839995f3efdd907f7"
-    sha256 cellar: :any, arm64_sonoma:  "a0d9de8209c862a84e025d4369c513dce35b9a30239850b833d7a6f5cb1051ae"
-    sha256 cellar: :any, sonoma:        "b56745f857ac04ace7c730038f3482ba9e2ce20fcac044936326689609a03f58"
-    sha256               arm64_linux:   "631b5ea80ce3ab1561e17e089221856bc9c932ceb05ee14f8e65f1dc08467c95"
-    sha256               x86_64_linux:  "710955b4100b1ca59260d82ca9739d457cf6c425f668adbff654d1ed5151d73c"
+    sha256 cellar: :any, arm64_tahoe:   "569aef0ef041e30ad992d3f9d2233de252cee58023a9a6720e4d9bd5232ae25c"
+    sha256 cellar: :any, arm64_sequoia: "9dd8b6d5f5b4aecfac9e31d7b16d3e193a201f5582e6da947f820b0e7499700d"
+    sha256 cellar: :any, arm64_sonoma:  "4cc688d9459b8e29b0e979e32615c02262015eef88898d3ced36c646d4e28a36"
+    sha256 cellar: :any, sonoma:        "1ab1e8f35d431aea740fa7cb04644cfe7165804db876446d79fe3e50cb060bc6"
+    sha256               arm64_linux:   "23336f1b66ebf9be7cddeda86917b3ab11cf2aab1675853bc1f98c61e827fea7"
+    sha256               x86_64_linux:  "05665774932d5147cd818cd0fc9040ade561530043ae9fc9e83093dad110701b"
   end
 
   depends_on "ocaml" => :build
@@ -238,8 +238,8 @@ class Semgrep < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/96/a1/ae859ffac5a3338a66b74c5e29e244fd3a3cc483c89feaf9f56c39898d75/pydantic_settings-2.13.0.tar.gz"
-    sha256 "95d875514610e8595672800a5c40b073e99e4aae467fa7c8f9c263061ea2e1fe"
+    url "https://files.pythonhosted.org/packages/52/6d/fffca34caecc4a3f97bda81b2098da5e8ab7efc9a66e819074a11955d87e/pydantic_settings-2.13.1.tar.gz"
+    sha256 "b4c11847b15237fb0171e1462bf540e294affb9b86db4d9aa5c01730bdbe4025"
   end
 
   resource "pygments" do

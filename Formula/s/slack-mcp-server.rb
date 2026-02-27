@@ -1,18 +1,18 @@
 class SlackMcpServer < Formula
   desc "Powerful MCP Slack Server with multiple transports and smart history fetch logic"
   homepage "https://github.com/korotovsky/slack-mcp-server"
-  url "https://ghfast.top/https://github.com/korotovsky/slack-mcp-server/archive/refs/tags/v1.1.28.tar.gz"
-  sha256 "71d6a6de907d4bc2a9927d434dc1a686ec4ccfda2730fb3d3fac58b0126e5114"
+  url "https://ghfast.top/https://github.com/korotovsky/slack-mcp-server/archive/refs/tags/v1.2.2.tar.gz"
+  sha256 "efac7f244c45250fd8165cd25c77559805d6c24dabaaa7d8f4e1b8ddc09f195b"
   license "MIT"
   head "https://github.com/korotovsky/slack-mcp-server.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78a87170e1df64c8b57a289c9fa2d69163f812ae37ce0927c409c9c3969ec81b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78a87170e1df64c8b57a289c9fa2d69163f812ae37ce0927c409c9c3969ec81b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78a87170e1df64c8b57a289c9fa2d69163f812ae37ce0927c409c9c3969ec81b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "779bcdae54a60e8b029f5d2d08c5bbf79677064f73e3257a28e5a56669143f72"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd9f99985af803e963d4e0bf1d066df16827429eb8918513ec57b7d9e3e51998"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e661e69d4fd69416c4854cf539f12006e1074d204e4b917688c399c112a5ce3e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0bb4eaa736ce2d4e036907b0e0c29e5106ddd8f96e3b078815348745bf448332"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0bb4eaa736ce2d4e036907b0e0c29e5106ddd8f96e3b078815348745bf448332"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0bb4eaa736ce2d4e036907b0e0c29e5106ddd8f96e3b078815348745bf448332"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e424325e147a2bb97d335e93ebfc653e25326b3096ed4c8653addc821909a1c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3240e93fae2b81f8b7f52769663eee2b32f5e93364e30c1403697e08e01b7b27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32a60e7a7e1d7aaa740f2b9922219971747f910e78d4413427e800ff66b91b3a"
   end
 
   depends_on "go" => :build
@@ -24,6 +24,7 @@ class SlackMcpServer < Formula
   test do
     # User OAuth token
     ENV["SLACK_MCP_XOXP_TOKEN"] = "xoxp-test-token"
-    assert_match "Failed to create MCP Slack client", shell_output("#{bin}/slack-mcp-server 2>&1", 1)
+    output = shell_output("#{bin}/slack-mcp-server 2>&1", 1)
+    assert_match(/Failed to create MCP Slack client|Authentication failed - check your Slack tokens/, output)
   end
 end

@@ -2,8 +2,8 @@ class Influxdb < Formula
   desc "Time series, events, and metrics database"
   homepage "https://influxdata.com/time-series-platform/influxdb/"
   url "https://github.com/influxdata/influxdb.git",
-      tag:      "v3.8.2",
-      revision: "fd553065392840604fd65abe03556ad44bd1fc91"
+      tag:      "v3.8.3",
+      revision: "73f689bb31d5ca13c4f950fefb40d5f6e6163019"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/influxdata/influxdb.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Influxdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "00162adb81c94901660e4af99e4ee887be9561aea34fe9a501ad6d97be3a1177"
-    sha256 cellar: :any,                 arm64_sequoia: "1c13d58ae65496de21f2c7e7f0d9d920f591f7119ca00a8e99f7622e4fb5229b"
-    sha256 cellar: :any,                 arm64_sonoma:  "dc7818ddecaf48d6f51ae274eca4e026b0c6e6343949593586cb1ed8abc3a042"
-    sha256 cellar: :any,                 sonoma:        "7d970bdd263f4e9067b3999b4a0ce154e09e3b8b53a3a8ab47f9b90c36865603"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0500b5b8f6b3c5fcfffaf9637cf88477fb204fb74ce510c11ed2ca8935c6d85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "675b6ee14aaa82d0bbd298a8a3cfc0158a54afc3ce443e7b41b632a7cafb5d63"
+    sha256 cellar: :any,                 arm64_tahoe:   "e9a8c8dc7d8c743e5c5dd8328ef482bf92c4b862a94307fcc6a422170c027d88"
+    sha256 cellar: :any,                 arm64_sequoia: "9989f3b5c32d501341a5ebcff4e2517bd87c87b6140de7767dd37a9b4c74582c"
+    sha256 cellar: :any,                 arm64_sonoma:  "7116f4d542cfc9aabd21056356f04839e7d1b3d4692acb32c082f8e878eb8f1b"
+    sha256 cellar: :any,                 sonoma:        "0bdd5b3b9d68e1fe85e14080dfdbf5fcf7e86e69bd0704fa657297de2c8e570a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6471a254035e432890393bcf29020f4842887346a117838a406308b69911a2c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acb4a0113469c90bd15a95407a66c914874fad6c9ba6fef379655be62795218f"
   end
 
   depends_on "pkgconf" => :build

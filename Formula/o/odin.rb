@@ -6,20 +6,21 @@ class Odin < Formula
       revision: "b942f72cb085f79b214a596c0628984298358eaa"
   version "2026-02"
   license "Zlib"
+  revision 1
   head "https://github.com/odin-lang/Odin.git", branch: "master"
 
   bottle do
-    sha256                               arm64_tahoe:   "bdddd67e340c2eb9a69b0ed711355ee14f3982b514b3a91bcbda3ca442255206"
-    sha256                               arm64_sequoia: "19c0382f874ebd0553cbbd9739a1ceb5894af4cb147816dc866657ff7527c9a0"
-    sha256                               arm64_sonoma:  "44a01895295a2b0ad862f4a8980bc69c9ffaef0260d98ae913220fef75c3368a"
-    sha256 cellar: :any,                 sonoma:        "bd7832607e2df2f94897dc401a934b4721f925c5421ddbe2709fc3c66f9b7979"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "09760dbdf59dc13ba044ce5a46e7b2a8505130e308943f12339316b604c6aba8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a1baf0ddff3efcd44a3bd7ae741974ec8ba554e42abb7ec924ee76f1730fbbc"
+    sha256                               arm64_tahoe:   "71371bb5a630ff67e002784dd17ade7b106884c8c1eebf88058008b4cca8e858"
+    sha256                               arm64_sequoia: "5b1c31c16efe5baab8e72ad0e074deb359c062ec611e1db0977b2e5b6f55a8bf"
+    sha256                               arm64_sonoma:  "3081a4a1ba6d8b9a976727e372a14d9279cf2829376cfbc763a929729c14f33b"
+    sha256 cellar: :any,                 sonoma:        "38808a738ad295fc0a82e86184c5a7de8c5bd3a71082de4e5b7f0e2f9c1a9358"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0286a416dd61df807d4d018364e0eb1ef8918f1ce69f1a76b8b6a214fe559a29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a90c0d1e7517f10b61d69f5727e033304ffe5834e8de6b176999ec2d4711949"
   end
 
   depends_on "glfw" => :no_linkage
-  depends_on "lld"
-  depends_on "llvm"
+  depends_on "lld@21"
+  depends_on "llvm@21"
   depends_on "raylib"
 
   fails_with :gcc do

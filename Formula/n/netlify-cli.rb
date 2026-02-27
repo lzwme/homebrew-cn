@@ -1,17 +1,17 @@
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https://www.netlify.com/docs/cli"
-  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-24.0.0.tgz"
-  sha256 "be77667484a0d7ead83966376221b145fe1cc0f4545defc6b0edcef90eea7654"
+  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-24.0.1.tgz"
+  sha256 "e8f1c4a1c5e471e3ded5cf648c4e87cbf97ac9629158010702538cd6b501d329"
   license "MIT"
 
   bottle do
-    sha256                               arm64_tahoe:   "91c11ab65f001bf5820ea793e6bcb353fdbf28dbb8178b556ed883d2a5f464db"
-    sha256                               arm64_sequoia: "f87c6770053c3e794071ebfafd41d7887b9d2c2682af831b2edcd411bb4c0945"
-    sha256                               arm64_sonoma:  "edb6cc8f9ec5b6d8f9ebc5d63cd8e4ca2bff967d29289333cb223807dd6d7dad"
-    sha256                               sonoma:        "cc4264c34139b59373c0f5b7d8acf3cbe43d4e6eb6de864503f8b6ef4b8f35b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a90c317c2eeaae06681badd1bc6e14145def216aac446af82807fcdffac0226f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "536ad1a062c3679fb5ec7c10b8fd2861c852899ce9cb0e5b349ba7a943504350"
+    sha256                               arm64_tahoe:   "c4126d82ce321e22554b2dbdc610f865b5fb651be9aeb32b67247b6a7ec86bd3"
+    sha256                               arm64_sequoia: "335320ce6706720a3629a71b2b7be99993da61141b08aaa16944f065fcbdd7db"
+    sha256                               arm64_sonoma:  "645ba998fcfef20ca6fa44cde9687ebc96f90b305abb7b1ee1c842b4f4a07469"
+    sha256                               sonoma:        "adf0b3e91f288e22fc1f7cbe5f6e9f538474fe2a4462e73de4e50a3dbddd2a11"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e333d66bc521baa982c5f1c28bfcb4e4875a530dc04ee91175d10e52b1a683b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cffc784420d0029efae49b1aeb3c6ce5c832c9d4753946a6d257974c16da37dd"
   end
 
   depends_on "pkgconf" => :build

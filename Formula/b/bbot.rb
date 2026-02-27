@@ -3,17 +3,17 @@ class Bbot < Formula
 
   desc "OSINT automation tool"
   homepage "https://github.com/blacklanternsecurity/bbot"
-  url "https://files.pythonhosted.org/packages/72/71/1e19d9be6e6ad7aa52fe466efbf1063a5c43303a579cd34538a5e96052ac/bbot-2.8.2.tar.gz"
-  sha256 "4a518440637614daccd056468fa4828dcc8f83cdb7f36391471dfa592c9ad8b3"
+  url "https://files.pythonhosted.org/packages/a8/f2/0d6ac012ad60575a706d3723db206206847c227aa3bffbcc8d0e9957a4ed/bbot-2.8.3.tar.gz"
+  sha256 "ed7a607f8d3bf313e617eb3dda156d6cb6b2bb96fc390099fe0db53a50f7ec80"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "89e9b1be3eacfbf15cae16a784fc250949b344b8329dc62cc1652aa0c509a88a"
-    sha256 cellar: :any,                 arm64_sequoia: "b811a07de79fa605ef0f9b95aa2042550a2a2b1a5bf44f098409e6598a9a577f"
-    sha256 cellar: :any,                 arm64_sonoma:  "2762a09e746035911abf355cfc7dc59c3eef635ca24c73cc8cd2a5a04b944843"
-    sha256 cellar: :any,                 sonoma:        "1785403278d1ad93fc8fb14ca6a533bbf1b00aa619b6343092d29157a3e80663"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b070b16d57fa32bb5df9a8baad2877dbeea2353f51ba73c98101333474ca6f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26a831f34599008a9e38dcd5f29ef9fa54e72223ccebf1e1f1124c3dfa4c52ee"
+    sha256 cellar: :any,                 arm64_tahoe:   "af6afbb81852e0c8e281508dde9c53601ce939681641f9752def1a7eb45d7cbe"
+    sha256 cellar: :any,                 arm64_sequoia: "1eb0bf04445ca6c6ef42bc19c4b43ae18ce02a0ec57d3637294efe03ac30a19e"
+    sha256 cellar: :any,                 arm64_sonoma:  "d1b4a3faafb9cff864fd135a0e9db4186c9fccff728ee7c770fe32aa1657dd2f"
+    sha256 cellar: :any,                 sonoma:        "42b8f9a8d13841f3733a2e8180f100686dfdeb6a4eb2de11e8e9aea2fa67f6c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be789e834ad736ff868fe59a7bb516a66e1f4669d18dba739e593195edba70a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7cc6f6169d9f8e36897a9b8b53d21731a8d232081b40f41a07e24ee5ed5fce9"
   end
 
   depends_on "cmake" => :build
@@ -35,8 +35,8 @@ class Bbot < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pydantic]
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/22/56/a76adc20dee854b52a3e20fcb9c01280bbac52ef54308e5b1c7bc67ade76/ansible_core-2.20.2.tar.gz"
-    sha256 "75e19a3ad8cf659579ea182cdf948ee0900d700e564802e92876de53dbd9715d"
+    url "https://files.pythonhosted.org/packages/03/d6/2a1fda59f9bab7519f2e94a7bec8416e080dd2e17af4f4fb5d1e3d0c997d/ansible_core-2.20.3.tar.gz"
+    sha256 "38670ab2d2ffd67ee7e9e562f7c94e0927c8b7b4b0eb69233bc008c29e32d591"
   end
 
   resource "ansible-runner" do
@@ -85,8 +85,8 @@ class Bbot < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/00/cd/fa3ab025a8f9772e8a9146d8fd8eef6d62649274d231ca84249f54a0de4a/filelock-3.24.0.tar.gz"
-    sha256 "aeeab479339ddf463a1cdd1f15a6e6894db976071e5883efc94d22ed5139044b"
+    url "https://files.pythonhosted.org/packages/73/92/a8e2479937ff39185d20dd6a851c1a63e55849e447a55e798cc2e1f49c65/filelock-3.24.3.tar.gz"
+    sha256 "011a5644dc937c22699943ebbfc46e969cdde3e171470a6e40b9533e5a72affa"
   end
 
   resource "h11" do
@@ -205,8 +205,8 @@ class Bbot < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/0b/86/07d5056945f9ec4590b518171c4254a5925832eb727b56d3c38a7476f316/regex-2026.1.15.tar.gz"
-    sha256 "164759aa25575cbc0651bef59a0b18353e54300d79ace8084c818ad8ac72b7d5"
+    url "https://files.pythonhosted.org/packages/ff/c0/d8079d4f6342e4cec5c3e7d7415b5cd3e633d5f4124f7a4626908dbe84c7/regex-2026.2.19.tar.gz"
+    sha256 "6fb8cb09b10e38f3ae17cc6dc04a1df77762bd0351b6ba9041438e7cc85ec310"
   end
 
   resource "requests" do

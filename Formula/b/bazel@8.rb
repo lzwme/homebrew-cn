@@ -1,8 +1,8 @@
 class BazelAT8 < Formula
   desc "Google's own build tool"
   homepage "https://bazel.build/"
-  url "https://ghfast.top/https://github.com/bazelbuild/bazel/releases/download/8.5.1/bazel-8.5.1-dist.zip"
-  sha256 "bf66a1cbaaafec32e1e103d0e07343082f1f0f3f20ad4c6b66c4eda3f690ed4d"
+  url "https://ghfast.top/https://github.com/bazelbuild/bazel/releases/download/8.6.0/bazel-8.6.0-dist.zip"
+  sha256 "13a84586429b6084b13bd5040d78deda58d523012151e71e7d4be0c63dd831f9"
   license "Apache-2.0"
 
   livecheck do
@@ -11,19 +11,20 @@ class BazelAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c2ca5ecd479bc7700cdee5b54445f0c06e071d47f9b9093f0756a4a217018364"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2ca5ecd479bc7700cdee5b54445f0c06e071d47f9b9093f0756a4a217018364"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2a97ce7ffb1fd4c5fc47079f445078e2d6e2c774a1fd8ab6ee994f0de179f6c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ef5d0ec7ca342fa6823de0f8331a31092be780243a9bebe270795d58a5bbee99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0aa0ef542f6bde4c8848982b15477f8099cec7a5c967f28bc19dc58ebabdb457"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa5b616836cf85ab4b2780fd856ae72233fdaf77d5d6cdb7862c895aebf68819"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81a6389bfb8f18a73451c71bf803988a9af10cf314322ca4a24cc4a8e4efd7ce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81a6389bfb8f18a73451c71bf803988a9af10cf314322ca4a24cc4a8e4efd7ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "414ba53e76fe28d73df0fbffa32b7d356a1dc51663e875fb1b2b2360268e6249"
+    sha256 cellar: :any_skip_relocation, sonoma:        "56b08b7f4e9abd62c948fd0971dae2c7a0366cb9ef54305cf90aa1715b11b2c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a01a2bfaeac3406f7419f20cdae4543b13f8a157a78a6f889c8690443a5ed52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a2e519aa69573ba0bc59fc73208990f9786a0e07efd07ae395eebf863b35fc1"
   end
 
   keg_only :versioned_formula
 
   # https://bazel.build/release#support-matrix
   deprecate! date: "2028-01-01", because: :unsupported
-  disable! date: "2029-01-01", because: :unsupported
+  # FIXME: brew currently cannot handle `disable!` on future deprecation
+  # disable! date: "2029-01-01", because: :unsupported
 
   depends_on "openjdk@21"
 

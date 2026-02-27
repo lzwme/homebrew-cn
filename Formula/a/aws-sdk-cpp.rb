@@ -1,22 +1,32 @@
 class AwsSdkCpp < Formula
   desc "AWS SDK for C++"
   homepage "https://github.com/aws/aws-sdk-cpp"
-  url "https://ghfast.top/https://github.com/aws/aws-sdk-cpp/archive/refs/tags/1.11.750.tar.gz"
-  sha256 "053d1f9a166e1614bef2691d652c800e5a0546f6fdf7676047ae62fb2ee12b64"
   license "Apache-2.0"
   head "https://github.com/aws/aws-sdk-cpp.git", branch: "main"
+
+  stable do
+    url "https://ghfast.top/https://github.com/aws/aws-sdk-cpp/archive/refs/tags/1.11.750.tar.gz"
+    sha256 "053d1f9a166e1614bef2691d652c800e5a0546f6fdf7676047ae62fb2ee12b64"
+
+    # Backport fix for missing headers
+    patch do
+      url "https://github.com/aws/aws-sdk-cpp/commit/175e80312cba3d2aa8d6ac0069d2a19161b1f273.patch?full_index=1"
+      sha256 "e30e650e724023a852b6f7169babb5d323c3de85e75394cfc02bd10650167df9"
+    end
+  end
 
   livecheck do
     throttle 15
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "849dd3096032b267a151db934f3364d52f0012cc030e58528718848770476996"
-    sha256                               arm64_sequoia: "dc0eb3f3284afeac68c2b1232086dc40f74341a37699ad16a9afa86871cfe5be"
-    sha256                               arm64_sonoma:  "392f755022f2f2c115b5e9735e80c5f3580b4f09c3847651a4bef3a3a51007cb"
-    sha256 cellar: :any,                 sonoma:        "a5a348a2b4dd2220f0a7770bc99204727db14e2f81a31c795eac4bee6e99081d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3012d980d9a14dec06a8cd8bbba281a0869b7954995d6c0e6b24e6f21986d535"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfd771f0434b98b50e2f4976c36e93d0bb0242e02947701360411a1485e4dca8"
+    rebuild 1
+    sha256                               arm64_tahoe:   "bf22d8e6396b6f3fb60be214207e84e0c5b80b11bd3525b600a5c62fe261785a"
+    sha256                               arm64_sequoia: "9bf737ddb7b2adc41765db96251589ef72284e56ef7008b5e986c64082b9db36"
+    sha256                               arm64_sonoma:  "66c2d06aec56ba3ea073212bdb1130bfa0bf1ec2e9b7815428a3b5f3c0331871"
+    sha256 cellar: :any,                 sonoma:        "b738f5bb473c0d2b4fde59d0f871337845b519563821715e86d7b698c934a3c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "43e1b495c8fead310585c3b44ddc25b890853034102c6987c86350a77061a4f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bc3bacedc9060ade38b5d33dab97dfc38b4cbe15d8d3897971ee61c07e3b260"
   end
 
   depends_on "cmake" => :build

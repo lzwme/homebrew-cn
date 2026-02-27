@@ -1,6 +1,6 @@
 cask "openrefine" do
-  version "3.9.5"
-  sha256 "54b41c4e61bc1f2c9ceb55315b4a4e0f7f1a25ae22e87d1f7949b64343591f36"
+  version "3.10.0"
+  sha256 "7dacf4c664470e2e2dadf5d6e442ea4d2b575f5aad0b9b65b2852bfcd028077b"
 
   url "https://ghfast.top/https://github.com/OpenRefine/OpenRefine/releases/download/#{version}/openrefine-mac-#{version}.dmg",
       verified: "github.com/OpenRefine/OpenRefine/"
@@ -12,6 +12,8 @@ cask "openrefine" do
     url :url
     strategy :github_latest
   end
+
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "OpenRefine.app"
 

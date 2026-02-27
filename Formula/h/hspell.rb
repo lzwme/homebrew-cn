@@ -11,8 +11,6 @@ class Hspell < Formula
     strategy :page_match
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 arm64_tahoe:   "c2f0ea64af6987d36f42b5f53aa51e781ff98cee49ea71b3f19d4137a8c4191b"

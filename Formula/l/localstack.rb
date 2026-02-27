@@ -3,17 +3,17 @@ class Localstack < Formula
 
   desc "Fully functional local AWS cloud stack"
   homepage "https://localstack.cloud/"
-  url "https://files.pythonhosted.org/packages/5c/44/bd7aad22852d5139bcb79af7f8d2630c48d20216d9ced284430d037d7a7d/localstack-4.13.1.tar.gz"
-  sha256 "8627e9ad779654447287986c35ee79e6c8826748a1394541374de0df168509cf"
+  url "https://files.pythonhosted.org/packages/e5/a5/ad352fa626de1514500abf6ec002e479cf854d9a250e254ca2a1925bbbb6/localstack-4.14.0.tar.gz"
+  sha256 "68f27e2c30a0e9b476eb5ee9b76cb8d78a1871031d9842d6b6d79cc0c182df90"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ef8c630057ff158e2a761ed912a6a9bc6ad0f72f22c222469cce4ace7000341e"
-    sha256 cellar: :any,                 arm64_sequoia: "240d947e55386404daf899f11a46be7392541273cda0647d8e66f9bec668b3a0"
-    sha256 cellar: :any,                 arm64_sonoma:  "a05ddddc0c8a297d816950adcbfd7919c6191043288739896f0d1f944f627a24"
-    sha256 cellar: :any,                 sonoma:        "6683dce494f409b7698d5c6fe6306b78facf7741c358bb0362e2558f8ab88838"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f952e7dcb34316f92b6810c8f332e7b459291000905f280b383e124c635246fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a27cedd86cf53bc6c201b83ac63a2e25e803e3b495f480f41fa325e73df20b3"
+    sha256 cellar: :any,                 arm64_tahoe:   "ccd113f27ad95facbc3c18e2bc237397fb4ed6aed0cb0c6bb111c0c5dd6dddc7"
+    sha256 cellar: :any,                 arm64_sequoia: "663e85a4fbde1669d17c67b4f078587bfc2603f8a5f58e4caaf52fcdcb7dbfd7"
+    sha256 cellar: :any,                 arm64_sonoma:  "4b183c74b442ff96e4da482cb8d3e10a4ffbf00708bed9d6ece86f9887ec0267"
+    sha256 cellar: :any,                 sonoma:        "fcea2f0dc077e255d9a92625247017f3e9012bb830803f19374d2c8b745e72e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d96448b1abde830f51459eb00fd91d4047088781a9ea3af41593cf5eb72f2e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2dcded7c7e98d93a4957888804eeb9b49109b6e375cd82aba1adb803ba472c03"
   end
 
   depends_on "pkgconf" => :build # for localstack_ext
@@ -33,8 +33,8 @@ class Localstack < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/98/af/df70e9b65bc77a1cbe0768c0aa4617147f30f8306ded98c1744bcdc0ae1e/cachetools-7.0.0.tar.gz"
-    sha256 "a9abf18ff3b86c7d05b27ead412e235e16ae045925e531fae38d5fada5ed5b08"
+    url "https://files.pythonhosted.org/packages/d4/07/56595285564e90777d758ebd383d6b0b971b87729bbe2184a849932a3736/cachetools-7.0.1.tar.gz"
+    sha256 "e31e579d2c5b6e2944177a0397150d312888ddf4e16e12f1016068f0c03b8341"
   end
 
   resource "charset-normalizer" do
@@ -57,19 +57,14 @@ class Localstack < Formula
     sha256 "181d3c6996452cb1189c4046c61599b84a5a86e099562ffde77d26984ff26d0f"
   end
 
+  resource "docker" do
+    url "https://files.pythonhosted.org/packages/91/9b/4a2ea29aeba62471211598dac5d96825bb49348fa07e906ea930394a83ce/docker-7.1.0.tar.gz"
+    sha256 "ad8c70e6e3f8926cb8a92619b832b4ea5299e2831c14284663184e200546fa6c"
+  end
+
   resource "idna" do
     url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
     sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
-  end
-
-  resource "localstack-core" do
-    url "https://files.pythonhosted.org/packages/b1/ea/98036b2963668a76416dec6f8ef2e6f8ffd152ce8f06ab2950dedf1beee2/localstack_core-4.13.1.tar.gz"
-    sha256 "45b57e1c82f30f949e2f9a018e999b1c08525ce2655afcf4416850a2e1bd2324"
-  end
-
-  resource "localstack-ext" do
-    url "https://files.pythonhosted.org/packages/22/c2/949a2e4306ade243d6fa63f55739798c0646c154a2790bbae4799773eb0c/localstack_ext-4.13.1.tar.gz"
-    sha256 "9a2e1e6dd66dcf4b8636f587aaacadda591d3fdf4dd4828bd63935ead59751b3"
   end
 
   resource "markdown-it-py" do
@@ -133,8 +128,8 @@ class Localstack < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/74/99/a4cab2acbb884f80e558b0771e97e21e939c5dfb460f488d19df485e8298/rich-14.3.2.tar.gz"
-    sha256 "e712f11c1a562a11843306f5ed999475f09ac31ffb64281f73ab29ffdda8b3b8"
+    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
+    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
   end
 
   resource "semver" do

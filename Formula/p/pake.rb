@@ -32,17 +32,17 @@ class Pake < Formula
   end
 
   def install
-        ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
+    ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
 
-        system "npm", "install", *std_npm_args, *resources.map(&:cached_download)
-        bin.install_symlink libexec.glob("bin/*")
+    system "npm", "install", *std_npm_args, *resources.map(&:cached_download)
+    bin.install_symlink libexec.glob("bin/*")
 
-        node_modules = libexec/"lib/node_modules/pake-cli/node_modules"
-        rm_r(libexec.glob("#{node_modules}/icon-gen/node_modules/@img/sharp-*"))
+    node_modules = libexec/"lib/node_modules/pake-cli/node_modules"
+    rm_r(libexec.glob("#{node_modules}/icon-gen/node_modules/@img/sharp-*"))
 
-        libexec.glob("#{node_modules}/.pnpm/fsevents@*/node_modules/fsevents/fsevents.node").each do |f|
-          deuniversalize_machos f
-        end
+    libexec.glob("#{node_modules}/.pnpm/fsevents@*/node_modules/fsevents/fsevents.node").each do |f|
+      deuniversalize_machos f
+    end
   end
 
   test do
@@ -57,8 +57,8 @@ class Pake < Formula
       io = IO.popen("#{bin}/pake index.html --use-local-file --iterative-build --name test")
       sleep 5
     ensure
-          Process.kill("TERM", io.pid)
-          Process.wait(io.pid)
+      Process.kill("TERM", io.pid)
+      Process.wait(io.pid)
     end
 
     assert_match "No icon provided, using default icon.", io.read

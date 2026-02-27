@@ -2,6 +2,7 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   stable do
     url "https://static.rust-lang.org/dist/rustc-1.93.1-src.tar.gz"
@@ -15,12 +16,12 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "22eba019b2b9bae6dd48f55cfca723d8122a1eb631e49d14f79c52d410bd3351"
-    sha256 cellar: :any,                 arm64_sequoia: "f53982d1be4190181096b716fe9a18ec2667443ee32f1f0da1ba69079fe65069"
-    sha256 cellar: :any,                 arm64_sonoma:  "a32f3952e9b2620a88f51011b0aadec67abb181bc22a14960a88ae8a8bc6f3c7"
-    sha256 cellar: :any,                 sonoma:        "c958642401c86b019b0483b7b1fd60e23f62c9ed839dc6f2692dd1edbe87b481"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee373f439dd8c0f5350587f7b5184092fed02b602e79834ef8cb9fdbb096dbc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae94638192e6d82e68fa56c0aa47562502b22941a423c009b8eae2f47f66726f"
+    sha256 cellar: :any,                 arm64_tahoe:   "6cc0c90642591826abb1c90fc90ef9c4f0ef4af9011478362a360fa8cb711de9"
+    sha256 cellar: :any,                 arm64_sequoia: "1ec9051c282a5ac7cca94eeb10b6bc2095ed81b66a6f50239e58a54757bfc8a5"
+    sha256 cellar: :any,                 arm64_sonoma:  "dc7acf3b2728cefe939dec012471e97b12df127f464aa888a7a90e99386c9fe3"
+    sha256 cellar: :any,                 sonoma:        "0e1175aa104716ee4bf06481c72205db3c7a3c32954cdf3e70d3991c93473b2c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37223e74a88b5c23ebc0a2202777506a325881feac112e36d457657090c646d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fc9c113b90b648c072467484182307d8a94ec7545d61935c256fc88c92c343e"
   end
 
   head do
@@ -33,7 +34,7 @@ class Rust < Formula
 
   depends_on "libgit2"
   depends_on "libssh2"
-  depends_on "llvm"
+  depends_on "llvm@21"
   depends_on "openssl@3"
   depends_on "pkgconf"
   depends_on "zstd"
@@ -124,7 +125,7 @@ class Rust < Formula
   end
 
   def llvm
-    Formula["llvm"]
+    Formula["llvm@21"]
   end
 
   def install

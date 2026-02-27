@@ -18,7 +18,7 @@ class Sq < Formula
 
   uses_from_macos "sqlite" => :test
 
-  conflicts_with "squirrel-lang", because: "both install `sq` binaries"
+  conflicts_with "sequoia-sq", "squirrel-lang", because: "both install `sq` binaries"
 
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?

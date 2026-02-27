@@ -7,8 +7,6 @@ class Help2man < Formula
   license "GPL-3.0-or-later"
   revision 4
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "d2e8018036792d9b999b50c7230443eececc319f3e51b780f6f10f2228c4641e"
     sha256 cellar: :any,                 arm64_sequoia: "b4559a8766dc2105a09add4cdc05f1c2d80258adca8bdbbacddd48ae53366ffd"

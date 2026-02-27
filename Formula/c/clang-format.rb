@@ -1,42 +1,12 @@
 class ClangFormat < Formula
   desc "Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript"
   homepage "https://clang.llvm.org/docs/ClangFormat.html"
+  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.0/llvm-project-22.1.0.src.tar.xz"
+  sha256 "25d2e2adc4356d758405dd885fcfd6447bce82a90eb78b6b87ce0934bd077173"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   version_scheme 1
   head "https://github.com/llvm/llvm-project.git", branch: "main"
-
-  stable do
-    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.8/llvm-21.1.8.src.tar.xz"
-    sha256 "d9022ddadb40a15015f6b27e6549a7144704ded8828ba036ffe4b8165707de21"
-
-    resource "clang" do
-      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.8/clang-21.1.8.src.tar.xz"
-      sha256 "6090e3f23720d003cdd84483a47d0eec6d01adbb5e0c714ac0c8b58de546aa62"
-
-      livecheck do
-        formula :parent
-      end
-    end
-
-    resource "cmake" do
-      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.8/cmake-21.1.8.src.tar.xz"
-      sha256 "85735f20fd8c81ecb0a09abb0c267018475420e93b65050cc5b7634eab744de9"
-
-      livecheck do
-        formula :parent
-      end
-    end
-
-    resource "third-party" do
-      url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.8/third-party-21.1.8.src.tar.xz"
-      sha256 "7fe99424384aea529ffaeec9cc9dfb8b451fd1852c03fc109e426fe208a1f1a7"
-
-      livecheck do
-        formula :parent
-      end
-    end
-  end
 
   livecheck do
     url :stable
@@ -45,12 +15,12 @@ class ClangFormat < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26dc592e1f1a8d9dd7923e12c7b080228f273f9eaca9032d7a259e72c4f6c227"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "242cf67bb85e7d28a372a94cc60419c6b9f76833ab5a89a23c068b5cad14ce83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d23e383f618a00829edcdefcf5dba6ed540ebd6b5da0c6760aebeff6f13625ae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "299fb37203ee17a13e20d11a10a7796ec25ba96f64819f9cbef62dfe44a154c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "104f6d0e6e8b740b897ebbb60b7cd3ecc6f725f65169c49f8abeb7ad61d125ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30bcb264a642475ac34734670e548874eaaa46ba1204a0f276befe835b510559"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3927b91e36ce8733514f11724dd53e08dec7f174f6eaa3452aceeb510e95f9e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ffc928625d715fa8040c12dab444784b5308b28fc2e70f10df44869c730dd48"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "617036a81389380d114834171ee653a1554cf6500e71a753d4eec1e2f71d06f8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93adcbc5f4b845e66cd724239111c679226e9b8de71757da9f4f2a708b98813b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6e32603c3123e4674b4fe75aa706c97be5c3491751e2499ec7e32aacd76e988"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3dab00459beb4c81b0593c969bad7a18ddf8a2d51a7e9f404847abb639b3260"
   end
 
   depends_on "cmake" => :build
@@ -62,32 +32,12 @@ class ClangFormat < Formula
   end
 
   def install
-    odie "clang resource needs to be updated" if build.stable? && version != resource("clang").version
-    odie "cmake resource needs to be updated" if build.stable? && version != resource("cmake").version
-    odie "third-party resource needs to be updated" if build.stable? && version != resource("third-party").version
-
-    llvmpath = if build.head?
-      ln_s buildpath/"clang", buildpath/"llvm/tools/clang"
-
-      buildpath/"llvm"
-    else
-      (buildpath/"src").install buildpath.children
-      (buildpath/"src/tools/clang").install resource("clang")
-      (buildpath/"cmake").install resource("cmake")
-      (buildpath/"third-party").install resource("third-party")
-
-      buildpath/"src"
-    end
-
-    system "cmake", "-S", llvmpath, "-B", "build",
-                    "-DLLVM_EXTERNAL_PROJECTS=clang",
+    system "cmake", "-S", "llvm", "-B", "build",
+                    "-DLLVM_ENABLE_PROJECTS=clang",
                     "-DLLVM_INCLUDE_BENCHMARKS=OFF",
                     *std_cmake_args
     system "cmake", "--build", "build", "--target", "clang-format"
-
-    bin.install "build/bin/clang-format"
-    bin.install llvmpath/"tools/clang/tools/clang-format/git-clang-format"
-    (share/"clang").install llvmpath.glob("tools/clang/tools/clang-format/clang-format*")
+    system "cmake", "--install", "build", "--component", "clang-format"
   end
 
   test do
@@ -100,8 +50,9 @@ class ClangFormat < Formula
     C
     system "git", "add", "test.c"
 
-    assert_equal "int main(char* args) { printf(\"hello\"); }\n",
-        shell_output("#{bin}/clang-format -style=Google test.c")
+    assert_equal <<~C, shell_output("#{bin}/clang-format -style=Google test.c")
+      int main(char* args) { printf("hello"); }
+    C
 
     ENV.prepend_path "PATH", bin
     assert_match "test.c", shell_output("git clang-format", 1)

@@ -5,15 +5,16 @@ class ApacheArrow < Formula
   mirror "https://archive.apache.org/dist/arrow/arrow-23.0.1/apache-arrow-23.0.1.tar.gz"
   sha256 "bd09adb4feac11fe49d1604f296618866702be610c86e2d513b561d877de6b18"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/apache/arrow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "06690602b06dae05b84feb5bf35cb6697cbde007650a31d094641c0fdd663525"
-    sha256 cellar: :any, arm64_sequoia: "c50dea4c901425c183cf9ed123d6ed8a4ed494cd36a97899ae639f633254cefd"
-    sha256 cellar: :any, arm64_sonoma:  "301baba08481b8802f23d06c583e9acec3505b51ba2f6467d38b856fdae04a1a"
-    sha256 cellar: :any, sonoma:        "d488dd1183d6011ccd01bcbdc420a7d6e3cf8d9be659fabafa92de049ce53eeb"
-    sha256               arm64_linux:   "c9fa9dc9798ac1fb6b1f9e8dbf2ffe65a681f1eb4fb8d6c5e06d7216e6352bf2"
-    sha256               x86_64_linux:  "3da8ad666d51d5f8918471b540cddf8f434e002f06c82cbf8d5a42a5aa669edf"
+    sha256 cellar: :any, arm64_tahoe:   "c22fe0f6233b8249ad8d2ac9e6f792c11715a2b8f700dc32e814becc3a744179"
+    sha256 cellar: :any, arm64_sequoia: "3b53a0644996494587816b18e02a2ac271cf4fc87a970d4f2311278cf2aab500"
+    sha256 cellar: :any, arm64_sonoma:  "d8c6e62c238cfa860c5aad35fba9bf54ed52f8e78b1626956d75e3e67831811c"
+    sha256 cellar: :any, sonoma:        "00cc969a7b4d564589ced87afeda6b5dd2372ed6690eeb9c33dd29105a22b7ec"
+    sha256               arm64_linux:   "086fcd6489fbdb87210c0f839eedab7b14626f8987aa3db36e6f65360b2c24fb"
+    sha256               x86_64_linux:  "8c3e2221229b0b4bcd178b8716beb753eca9dae02262859bf6dda846c83d920b"
   end
 
   depends_on "boost" => :build
@@ -26,7 +27,7 @@ class ApacheArrow < Formula
   depends_on "aws-sdk-cpp"
   depends_on "brotli"
   depends_on "grpc"
-  depends_on "llvm"
+  depends_on "llvm@21"
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "protobuf"
@@ -47,7 +48,7 @@ class ApacheArrow < Formula
     # We set `ARROW_ORC=OFF` because it fails to build with Protobuf 27.0
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
-      -DLLVM_ROOT=#{Formula["llvm"].opt_prefix}
+      -DLLVM_ROOT=#{Formula["llvm@21"].opt_prefix}
       -DARROW_DEPENDENCY_SOURCE=SYSTEM
       -DARROW_ACERO=ON
       -DARROW_COMPUTE=ON

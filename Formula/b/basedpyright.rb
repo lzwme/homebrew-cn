@@ -1,12 +1,12 @@
 class Basedpyright < Formula
   desc "Pyright fork with various improvements and built-in pylance features"
   homepage "https://github.com/DetachHead/basedpyright"
-  url "https://registry.npmjs.org/basedpyright/-/basedpyright-1.38.1.tgz"
-  sha256 "73bda982b9d4a9cd3dd17955d33e094a73e9e990b632f79dfc81f099c3534c04"
+  url "https://registry.npmjs.org/basedpyright/-/basedpyright-1.38.2.tgz"
+  sha256 "ba0f0cd33f2be7c62785201acc11f29e8e7adc2bcded669de8f7d123e7780827"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "78200751814fec0cb10c75406db70be454feec0284e22115a357c440f69cc093"
+    sha256 cellar: :any_skip_relocation, all: "9a4a03be0f21a4fa5c58ab2f66e8f1bb6f726d28d69f5cd5a76ce6209a8cbc74"
   end
 
   depends_on "node"

@@ -2,16 +2,15 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 2
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.0/gstreamer-1.28.0.tar.bz2"
-    sha256 "f1ab0903c789ee153e116963b8dbc02d40d7bf5e8bc25c70777585b5b61f5a15"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.1/gstreamer-1.28.1.tar.bz2"
+    sha256 "86ec0179104664a1ca6de57d7c886d3a8aa0491d1a243d02514b306885272b91"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.0/gst-plugins-rs-gstreamer-1.28.0.tar.bz2"
-      sha256 "00c3e13cf2aeb5340159c046f01e6d41690157fc93a643727b03f32ac955197d"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.1/gst-plugins-rs-gstreamer-1.28.1.tar.bz2"
+      sha256 "5488965db0fbb491810188ff144ec5a43055a6a5fc3412bef6b7a81cb504e60d"
 
       livecheck do
         formula :parent
@@ -25,13 +24,12 @@ class Gstreamer < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "90967275d5dcb8bcc7996eadec5f9a392f83cafde2306ae40baea84308e4c67d"
-    sha256 arm64_sequoia: "f4ed55c7ccbeb49a9db1dcdafaad8adae25f8ac56f2967e63fc872dc11b04c5f"
-    sha256 arm64_sonoma:  "4ac1532abb13a71cf2917f9c1418fd2d4d51527ba5041dbb807ee5eeab3b6f05"
-    sha256 sonoma:        "934b07d28f639bf651c6d91da8f0e13cf85af82d8d566fac4bf704559e0cfa2c"
-    sha256 arm64_linux:   "2c50054f5e6f868e1c8bada59aef7dea4d6e31e52e23a05be3152a1f5dde4e0c"
-    sha256 x86_64_linux:  "e474f01d3ac220855a0904774338a676f574afa40b0e1deb481b006736c2ddeb"
+    sha256 arm64_tahoe:   "75331c0fab7d9d309a3ea234cc52c9c32e05d32e7ea8ba1254217eceb1394b2e"
+    sha256 arm64_sequoia: "e33e1f7f50a707189c99bb1178844b5d5d405b2385a8044417e9f369dc45ad5a"
+    sha256 arm64_sonoma:  "77ed98f4de4486ef2ecbc4c5035c286f49d875716772060015f77255d3414e93"
+    sha256 sonoma:        "d7d8f73d695687a768bb01eee7a772199bed980dae59a9f7ec7ccb117be5753c"
+    sha256 arm64_linux:   "b4cf93110905bce375158be2d16b5f09ec89998f81a8a4e338f7f98f531dcc4f"
+    sha256 x86_64_linux:  "65838c00ee5ef28889fd6aab631dfed1fe2efbd6dd588bc1a65d30a58c115d6e"
   end
 
   head do
@@ -44,6 +42,7 @@ class Gstreamer < Formula
 
   depends_on "bison" => :build
   depends_on "cargo-c" => :build
+  depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
@@ -138,7 +137,7 @@ class Gstreamer < Formula
   end
 
   def python3
-    which("python3.14")
+    Formula["python@3.14"].opt_bin/"python3.14"
   end
 
   skip_clean "lib/gstreamer-1.0/libgstnice.dylib", "lib/gstreamer-1.0/libgstnice.so"
@@ -214,6 +213,12 @@ class Gstreamer < Formula
     # Prevent the build from downloading an x86-64 version of bison.
     args << "-Dbuild-tools-source=system"
 
+    # TODO: Remove when gst-plugin-whisper builds on Linux arm64 again.
+    # Whisper was added in 1.28.1 and currently fails in CI with Rust type
+    # mismatches (*const i8 vs *const u8).
+    # Ref: https://gstreamer.freedesktop.org/releases/1.28/#1.28.1
+    args << "-Dgst-plugins-rs:whisper=disabled" if OS.linux? && Hardware::CPU.arm?
+
     # Set `RPATH` since `cargo-c` doesn't seem to.
     # https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/issues/279
     plugin_dir = lib/"gstreamer-1.0"
@@ -267,7 +272,10 @@ class Gstreamer < Formula
     skip_plugins = OS.mac? && Hardware::CPU.intel? && ENV["HOMEBREW_GITHUB_ACTIONS"]
     ENV["GST_PLUGIN_SYSTEM_PATH"] = testpath if skip_plugins
 
-    assert_match(/^Total count: \d+ plugin/, shell_output(bin/"gst-inspect-1.0"))
+    ENV["LC_ALL"] = "C"
+    ENV["LANG"] = "C"
+    gst_inspect_output = shell_output(bin/"gst-inspect-1.0")
+    assert_match(/Total count: \d+ plugins?/, gst_inspect_output)
     return if skip_plugins
 
     system bin/"ges-launch-1.0", "--ges-version"

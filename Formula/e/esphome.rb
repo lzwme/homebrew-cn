@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/58/8e/ec4726b7e0868bcd9132417787e60184ba851835998fc45f87b01cd82a60/esphome-2026.2.1.tar.gz"
-  sha256 "8c24a75095aeb0b75085eff6d6763a2a11a9bc5fcdfbc741ecde02e95f044598"
+  url "https://files.pythonhosted.org/packages/19/a3/fdc0c0bc33bd7757e8c185c64297dd6f7b4277bd19e8b4344264611c09d0/esphome-2026.2.2.tar.gz"
+  sha256 "6f389a439396498e65265b2273c4ff11ba356363c14fa02973046b0e9b63a1a2"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -12,12 +12,12 @@ class Esphome < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "329c1236d9ed7cb688797fb855f43c57994bab120eff2707057a113ff86c8244"
-    sha256 cellar: :any,                 arm64_sequoia: "c853138d0811ed3c6ebde3847f91a5cb108c7323554e4c38a50f6b03a06ac6c5"
-    sha256 cellar: :any,                 arm64_sonoma:  "7a36004bb61e31803f4c8c93f47c16b47a7ce736666e6731ede38db605b6daa7"
-    sha256 cellar: :any,                 sonoma:        "f09e71f73a84ee1a83cfdc98ddd667c53c504c41e2dfa737b5b951dc6f25d93d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "03f972f6f6ddf86ac079cffc8533e2065100c141314b41aebd3ca6b669a321dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3901ba8a563323f8abe33fbfe1802acef6d3ae65cf1c080496396ba158778a7"
+    sha256 cellar: :any,                 arm64_tahoe:   "a0fdda1fd03e9ac43b7bf98b5b8b8e3590d717cc4936a69788a2f639427d05cc"
+    sha256 cellar: :any,                 arm64_sequoia: "d0d355c107a9bb790c56533f2c6767e501c74030178a44c294640fd787eaabaf"
+    sha256 cellar: :any,                 arm64_sonoma:  "459fb06e00fa420c3e0f165f9b215970444dd05e231b2afce614a140413d3dc1"
+    sha256 cellar: :any,                 sonoma:        "75d4636396e71368fb941f5a2240157de54d4141baf63d0153aeb7cf85fa3dc4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "abc83d16c4f66dd00e3414ffd858d85b4dac733cba2c7aea6b237b8763d12e89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "361d534ba0ee52795488bed1f86bf03f42c82e28c946f58f21db443cb89ff6a6"
   end
 
   depends_on "rust" => :build

@@ -27,7 +27,7 @@ class SquirrelLang < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9107cb3585f85f4bed3a63a5f0ab579c559b805b316e955c4e1ee6e8fa23685"
   end
 
-  conflicts_with "sq", because: "both install `sq` binaries"
+  conflicts_with "sequoia-sq", "sq", because: "both install `sq` binaries"
 
   def install
     # The tarball files are in a subdirectory, unlike the upstream repository.
