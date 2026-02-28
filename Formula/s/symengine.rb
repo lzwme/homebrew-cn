@@ -4,16 +4,15 @@ class Symengine < Formula
   url "https://ghfast.top/https://github.com/symengine/symengine/archive/refs/tags/v0.14.0.tar.gz"
   sha256 "11c5f64e9eec998152437f288b8429ec001168277d55f3f5f1df78e3cf129707"
   license "MIT"
-  revision 5
+  revision 6
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "e243f21786ba3bc3805f8380e945326946a3ffac29c12687dd502db5a94e4f01"
-    sha256 cellar: :any,                 arm64_sequoia: "a0acada4f3c463042fc246aa4639e0766985e7752672866b1f6ac3709eb7cc76"
-    sha256 cellar: :any,                 arm64_sonoma:  "fc4e06c10863cb7622deff1930039588f85e36707815bd07dd0f7c08148ff27e"
-    sha256 cellar: :any,                 sonoma:        "94ccb5e8ee69a585599c0eff75027a8d94832c866489c2a803ab166a1ee54fe6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fbb496d756a6433d29ec226bfcf8ecda59eea22a2d8960e356480f88acb8396"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac61e019a0c4f7ec72371bea505bc48fb9d20d43ff61e87b332c147fba63f1c2"
+    sha256 cellar: :any,                 arm64_tahoe:   "823eb038dbf1ba5e9e85ef64ff2fc302b524680193cf1dbed61751a13088fd8a"
+    sha256 cellar: :any,                 arm64_sequoia: "6b132faf393f9b5b732cc1572df20ed1c4f2ba4efd630fbf7e9a232f46d8e3c8"
+    sha256 cellar: :any,                 arm64_sonoma:  "074b1aaaf904ae345b67bbe47247ce96a8192cd3a252b8c9634ebfbbf139541c"
+    sha256 cellar: :any,                 sonoma:        "60c3b1a39dc2ab5a9bec741d8554279d9483d7c1e6cfe387cedfbefb80183833"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b515cc936113c8f47356744b9164c0baae4ada6fc43150d89a4ecb5d7e4853f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6439720c2e9e2b1553a81125a3985f7bcf9d9cff430bf5e85372c84762d0a36"
   end
 
   depends_on "cereal" => :build
@@ -33,6 +32,20 @@ class Symengine < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Backport support for LLVM 22
+  patch do
+    url "https://github.com/symengine/symengine/commit/a498ff2eadac2032d7a3982fc6dc3f69c4cca319.patch?full_index=1"
+    sha256 "308abb8a03d8d132937f0340741030f6e8148030eef7fcfea12ab3e80b03d569"
+  end
+  patch do
+    url "https://github.com/symengine/symengine/commit/de7305e5e2fee97d80c25164a8f8c9f7ecfc9953.patch?full_index=1"
+    sha256 "09a5acf3043de18d5f09b2e28a6dc4edc127fe7e4b66e2656e3a0db4c26a5e6d"
+  end
+  patch do
+    url "https://github.com/symengine/symengine/commit/ea9868e64ced2cd2abb9cdc3ae97d965b892b974.patch?full_index=1"
+    sha256 "2a94699984ead1db45c024458783d13d70aa3b250bb72b1141502fb2287344ec"
   end
 
   def install

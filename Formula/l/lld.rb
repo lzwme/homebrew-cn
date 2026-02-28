@@ -1,10 +1,11 @@
 class Lld < Formula
   desc "LLVM Project Linker"
   homepage "https://lld.llvm.org/"
-  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.8/llvm-project-21.1.8.src.tar.xz"
-  sha256 "4633a23617fa31a3ea51242586ea7fb1da7140e426bd62fc164261fe036aa142"
+  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.0/llvm-project-22.1.0.src.tar.xz"
+  sha256 "25d2e2adc4356d758405dd885fcfd6447bce82a90eb78b6b87ce0934bd077173"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
+  compatibility_version 1
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   livecheck do
@@ -12,13 +13,12 @@ class Lld < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ee6021f18c65bd9c67f2ba0a188c2a796583ffc439e20cea0356c5f8899c78b6"
-    sha256 cellar: :any,                 arm64_sequoia: "66648e121e9d933d6a3031d4c6d225040eb03354de208eedd58cf00e60040a6b"
-    sha256 cellar: :any,                 arm64_sonoma:  "aa388a6affee2fa0976ab7bc01523c35de19f92c63ea33b49012a252af20e32b"
-    sha256 cellar: :any,                 sonoma:        "5a96d8a685ec6867cc255309c1d65eccb9992caef2812c9750029e58f0cfd8bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dce3956018f5c2d7c1da74f4017f81ca3f7772d54ba381e05f142d5631001695"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34685381209fee6d3cd7dfd480aa8a0f03c5c1cb3356fc35ae5e151cea6aaa6d"
+    sha256 cellar: :any,                 arm64_tahoe:   "49565c7e4d982be4966f463ce52546149c90c8d5a62d13999934d9c4a4e821dd"
+    sha256 cellar: :any,                 arm64_sequoia: "5e68faa8c606e5ece080b7f5a36643b345c2a8eb4a606b0ae5bb4fdfd6ee1798"
+    sha256 cellar: :any,                 arm64_sonoma:  "ca5593f907c479971209a7e7187a89083199a2a63149cdc3fdf0d3e4a680c550"
+    sha256 cellar: :any,                 sonoma:        "c6301b7e626d8aa24bddcc666783c626dcd27d0cace4ff156f777fe66128b40f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e14e53340d90a11af6c8620fc4682b16e87934e3050fc6cbbfd5c00f1833f33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "811ee6904c5c5aa95070e3df114ab4a64da348652e5cd3f5474c796d8ecee237"
   end
 
   depends_on "cmake" => :build

@@ -1,6 +1,6 @@
 cask "codex-app" do
-  version "26.226.940"
-  sha256 "d9c511845a27a2c0255aab54d2ce6dd75c97d80c4b8a2a8fdad8d194fa8cd545"
+  version "26.227.1448"
+  sha256 "e5a86a8bdb4b8bb913a8ad587366d5e68dc41a71d64d0e06c205b3a14252ff3f"
 
   url "https://persistent.oaistatic.com/codex-app-prod/Codex-darwin-arm64-#{version}.zip",
       verified: "persistent.oaistatic.com/codex-app-prod/"

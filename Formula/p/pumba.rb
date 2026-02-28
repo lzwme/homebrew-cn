@@ -1,8 +1,8 @@
 class Pumba < Formula
   desc "Chaos testing tool for Docker"
   homepage "https://github.com/alexei-led/pumba"
-  url "https://ghfast.top/https://github.com/alexei-led/pumba/archive/refs/tags/1.0.1.tar.gz"
-  sha256 "e1bf9c03b05e2c6d1d599028cd93d0887299a629ad76793426d4ba6971e48b0b"
+  url "https://ghfast.top/https://github.com/alexei-led/pumba/archive/refs/tags/1.0.3.tar.gz"
+  sha256 "47cb64cfcb9198157bc6879a40fde2089ab968f19ce7fdeb98621aa68e86793a"
   license "Apache-2.0"
   head "https://github.com/alexei-led/pumba.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Pumba < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "643558d2de5a92aabd416d2b485e2888214c7a8052381a272e4fdc9701ea9d9e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "643558d2de5a92aabd416d2b485e2888214c7a8052381a272e4fdc9701ea9d9e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "643558d2de5a92aabd416d2b485e2888214c7a8052381a272e4fdc9701ea9d9e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9c2e178cd5a1e679955d498161e96fbdf3b8a8be6db3690e18b2be0dd66e69d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1992976b8fad3ffe24044ef0bf707a1f399759b4b4c049c73f36a864d64779f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "361664ca08eeb0b2eeb1d576c7ef0e38056045e52069ca492052994e6e04fa45"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4148f0a2768eeaf1b623a03d7f405a00a0426a56d38d377db75020ed3c90bc34"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4148f0a2768eeaf1b623a03d7f405a00a0426a56d38d377db75020ed3c90bc34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4148f0a2768eeaf1b623a03d7f405a00a0426a56d38d377db75020ed3c90bc34"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6557912f0ae32e49e0c13f94267a1b588c3141cdee652c62d7e2e0679222f89e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c09b05bf8af901885831e95c1c53028522dd91e316eec933333a5b359c2022fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d92af76d982b313af715d7dc542ab4785fc2f764afed4ba538efbf36f142902d"
   end
 
   depends_on "go" => :build

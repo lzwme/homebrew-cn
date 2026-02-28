@@ -1,12 +1,12 @@
 class Shiki < Formula
   desc "Beautiful yet powerful syntax highlighter"
   homepage "https://shiki.style/"
-  url "https://registry.npmjs.org/@shikijs/cli/-/cli-3.23.0.tgz"
-  sha256 "8f237bba062ebb2052fa8c33b53a696cd295b5f3ff67d524f631dda50b66d13a"
+  url "https://registry.npmjs.org/@shikijs/cli/-/cli-4.0.0.tgz"
+  sha256 "4550d1d970792a68391b36481085a5a444f3a466101de58d656829fe6c34ad52"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "eb36a4318b5ffb9eec9df39e24d8bcc6a7a911693f7caf34bd7f90e4e1e8f2ef"
+    sha256 cellar: :any_skip_relocation, all: "0e0e82322496bcce948883ddb3b6ed2f4ce5018d5bdfa5b3c5ccbaa546e377ee"
   end
 
   depends_on "node"

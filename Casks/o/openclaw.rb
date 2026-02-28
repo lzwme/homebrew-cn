@@ -1,6 +1,6 @@
 cask "openclaw" do
-  version "2026.2.25"
-  sha256 "dfaa86a72e7154212a76b12800110949bb827a5b5d621cc80bc26913996e833b"
+  version "2026.2.26"
+  sha256 "b6b06d41f2c1d6dfa9d4d6ef6c555bf3522ed010f731d1030bce0712a737736c"
 
   url "https://ghfast.top/https://github.com/openclaw/openclaw/releases/download/v#{version}/OpenClaw-#{version}.dmg",
       verified: "github.com/openclaw/openclaw/"
@@ -12,6 +12,8 @@ cask "openclaw" do
     url :url
     strategy :github_latest
   end
+
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   depends_on macos: ">= :sequoia"
 

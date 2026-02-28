@@ -4,14 +4,15 @@ class Nvc < Formula
   url "https://ghfast.top/https://github.com/nickg/nvc/releases/download/r1.19.2/nvc-1.19.2.tar.gz"
   sha256 "328ffbf4dea1fc2087eedd713ba92af2dfabed88bb6f8428635bfd12bb479674"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_tahoe:   "4ff41dc327ae109878df24148d5a7d6eedd45ad417acabb5b430ad766613cb70"
-    sha256 arm64_sequoia: "d68dbe9133256f1674ae140d89a839709984f89cb68fdc3c6ced766e2ddeb9af"
-    sha256 arm64_sonoma:  "8b72c0af468ad633ec65bbb4f5c84ecf4cd31b1d865475f596dab7efc9784f44"
-    sha256 sonoma:        "3f40d4f7824a6ce19069c5b58fe6930ae123178849abdbae053cfe55dab0331e"
-    sha256 arm64_linux:   "ee9aa4fcb5988b6a846462562934266290ed2187d41cc2e2466d804267ee782e"
-    sha256 x86_64_linux:  "3fc7befa222792ed438216154dd41ee813596f98ecb49acdd92e73ffd9e2503a"
+    sha256 arm64_tahoe:   "b467e19b0d2a785bc36db0827b31651b09d23f9ea8948288c269c505d600ed40"
+    sha256 arm64_sequoia: "17ec8b075946b514ce8e0b70fdafd12c29ea8f285084d2a33e4953a44e5d8d26"
+    sha256 arm64_sonoma:  "84565a9babab0b70971b66b5ad97f3381669521da844fb093c6d76d3c37983a1"
+    sha256 sonoma:        "ebecb69c5eaf66b60cc71be0b902385ca9d67bb7ba76330db5acdcdf9cf91106"
+    sha256 arm64_linux:   "fd734fb5f10ad512c18b2def8382e848e0c1e3b09013ef7eda3e28075686cf12"
+    sha256 x86_64_linux:  "6146b9b03cf106559cd206051ea76f4556baa6a74b240c6f5016b298a8c0f7b1"
   end
 
   head do

@@ -3,18 +3,18 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/9c/0b/d13b5191af29b6f8587604a5698716a9699cf98e15b8a5eec199eb4cc234/mcp_atlassian-0.18.1.tar.gz"
-  sha256 "447d3cc8e06148108ab966f31f69d5ddfaf2fed7ef9beee2bf0d0035d97a569a"
+  url "https://files.pythonhosted.org/packages/d6/9d/ea79ac007e82f3dfe076f986002b9429860d6ee9a7824d28186dca75a0db/mcp_atlassian-0.20.1.tar.gz"
+  sha256 "a20abbd8b68b7551f2c2d3394c84bd7740121f3af0dbbb1de9ef267c71dbdda0"
   license "MIT"
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a6ec3b0ad8fbb8093512fe21a1238a6ea107cfbf6dca7615fbb355661f3b3bd2"
-    sha256 cellar: :any,                 arm64_sequoia: "db332ca54455cd67a7a8fc7a2bb50a45060e56f4589463f0870038c52c95c67b"
-    sha256 cellar: :any,                 arm64_sonoma:  "29ac996d2835b5d8e2edcf825c0cb748f7c2ffc660f175396db9db3c01b62718"
-    sha256 cellar: :any,                 sonoma:        "df9e5d8591d8629f0f4774009591898c687104aef0ef31c0ee57749110e2b0e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "395ce0380b5faa8c1cd22bafd6fa65c4f453ca7763a89bdb47bd9398748380b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f863e54de9caea74248fcf419239e0689e12bec6426859aa406306a72bebb74"
+    sha256 cellar: :any,                 arm64_tahoe:   "280fcbe4d9533dcfbe60fb4eab70c728187cfc89806e607beb6a61cf96103afa"
+    sha256 cellar: :any,                 arm64_sequoia: "f54cf977621303ac169f14a71b3dfde53910645b9129c57cec3fd147b7887926"
+    sha256 cellar: :any,                 arm64_sonoma:  "db31c5dccbc1ddb5e0c4742e26bb4696cc2f5ad10f61b9c15563ae8536d2b172"
+    sha256 cellar: :any,                 sonoma:        "f6d831040c8800c2957a40d847b8a237cfb27d79168c351a0040467be59214c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70b7da5be368474fa24d18085b545deb6572b9f6c56f39bf2cff26b0c216c256"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9d342a87c9ebb5b6614e751ccba764982654cbea283ef50fcd164dd10ce7e96"
   end
 
   depends_on "rust" => :build # for py_key_value_aio > uv_build > maturin
@@ -397,8 +397,8 @@ class McpAtlassian < Formula
   end
 
   resource "redis" do
-    url "https://files.pythonhosted.org/packages/9f/32/6fac13a11e73e1bc67a2ae821a72bfe4c2d8c4c48f0267e4a952be0f1bae/redis-7.2.0.tar.gz"
-    sha256 "4dd5bf4bd4ae80510267f14185a15cba2a38666b941aff68cccf0256b51c1f26"
+    url "https://files.pythonhosted.org/packages/e9/31/1476f206482dd9bc53fdbbe9f6fbd5e05d153f18e54667ce839df331f2e6/redis-7.2.1.tar.gz"
+    sha256 "6163c1a47ee2d9d01221d8456bc1c75ab953cbda18cfbc15e7140e9ba16ca3a5"
   end
 
   resource "referencing" do
@@ -474,6 +474,11 @@ class McpAtlassian < Formula
   resource "trio" do
     url "https://files.pythonhosted.org/packages/52/b6/c744031c6f89b18b3f5f4f7338603ab381d740a7f45938c4607b2302481f/trio-0.33.0.tar.gz"
     sha256 "a29b92b73f09d4b48ed249acd91073281a7f1063f09caba5dc70465b5c7aa970"
+  end
+
+  resource "truststore" do
+    url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
+    sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
   end
 
   resource "typer" do

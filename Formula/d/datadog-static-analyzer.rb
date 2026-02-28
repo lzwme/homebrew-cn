@@ -1,18 +1,18 @@
 class DatadogStaticAnalyzer < Formula
   desc "Static analysis tool for code quality and security"
   homepage "https://docs.datadoghq.com/security/code_security/static_analysis/"
-  url "https://ghfast.top/https://github.com/DataDog/datadog-static-analyzer/archive/refs/tags/0.7.6.tar.gz"
-  sha256 "cab958276640697a65cb88dfa224cc69f4669d978e9dbd422a9313d50cf02724"
+  url "https://ghfast.top/https://github.com/DataDog/datadog-static-analyzer/archive/refs/tags/0.7.7.tar.gz"
+  sha256 "7f9064739bcaa7dc1db932bb72aaf83ff50847fe31ea96bf44b3e804386719b4"
   license "Apache-2.0"
   head "https://github.com/DataDog/datadog-static-analyzer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3e7e0fe12fc4440795b2f0a7e4d3f67371def5349bc80bd6bb144c5d7740ca2b"
-    sha256 cellar: :any,                 arm64_sequoia: "d33302f3fdeefa37d45d13afcecd45c9c53d6777eff62f42bcba9be81e2a9545"
-    sha256 cellar: :any,                 arm64_sonoma:  "88455552a7d4210a0dba6cf31a2801c90bf44048eddb4c5a5953e54db1e992ed"
-    sha256 cellar: :any,                 sonoma:        "7ab823aa091c6b283c2159655e45cc504e974f3485ee7e348bcbe35c0961ddb4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81352ad9152a31e51c0c22f310e1c3866ce03c26540a4138b1016f11debe252e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7b550abab33dfe89ca08e1a2bc7fab855335640d531945831dcfd1686cc27c3"
+    sha256 cellar: :any,                 arm64_tahoe:   "16daf8e44fd5e05856faf2e0cfa7350934eae9b733ad00e417633fb892b6cd93"
+    sha256 cellar: :any,                 arm64_sequoia: "002b5c7c3fcc4244046885ace5dd414a8c028f00be55c8f6f42f6d589a0780c2"
+    sha256 cellar: :any,                 arm64_sonoma:  "fefc99983e399a275ea07a380fc9b92dcdbc80a8e8498b7b55a555a75777d754"
+    sha256 cellar: :any,                 sonoma:        "ab72baaec23c16728bbd5272552a33bb64f9a7e5e212ddd8f9b550e5de36c65c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "90ea32fd009a51dfe82cbccde3a424e34b018d12845322110f1ac0c597436b3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8759faef6f60112a2dd132b60e9cfbb2b7e411625d17ce0a7bb8c99a16777ad"
   end
 
   depends_on "pkgconf" => :build

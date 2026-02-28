@@ -1,18 +1,18 @@
 class ClaudeAgentAcp < Formula
   desc "Use Claude Code from any ACP client such as Zed!"
   homepage "https://github.com/zed-industries/claude-agent-acp"
-  url "https://registry.npmjs.org/@zed-industries/claude-agent-acp/-/claude-agent-acp-0.18.0.tgz"
-  sha256 "8618836b675d11a67f1b4f024c0f9c1ae881f9aa14dacb330d848ba596d2ac52"
+  url "https://registry.npmjs.org/@zed-industries/claude-agent-acp/-/claude-agent-acp-0.19.2.tgz"
+  sha256 "0f12911e763ffb63e40d904c4a66cba47a5b1a5d73a0f7b80a7a9ab0246cff95"
   license "Apache-2.0"
   head "https://github.com/zed-industries/claude-agent-acp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "74a33be94e694aa12c47a289b762e14c51cb087fdaa69061f1799f3d09057be8"
-    sha256 cellar: :any,                 arm64_sequoia: "97a2edfddde00f957ed0680528f0ab9c4e0dbaf2dbc861fae2359e0b648994f3"
-    sha256 cellar: :any,                 arm64_sonoma:  "97a2edfddde00f957ed0680528f0ab9c4e0dbaf2dbc861fae2359e0b648994f3"
-    sha256 cellar: :any,                 sonoma:        "fca800a82b3f625518471825561ee89f20282c241d61c3da0134a27b57131535"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67e4e8a44e55d5e4f9e26c69bc771a000adaa8b5c09be4813e55369680c695e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6b83503585083c5af8c10e3ddcaca856f9e6918e9cc086145391d351fbdf4f0"
+    sha256 cellar: :any,                 arm64_tahoe:   "766bcaa98c189d22a9e46066468d5d47d0d5a87bd213072861d8fa520d427c63"
+    sha256 cellar: :any,                 arm64_sequoia: "79e10069adae41b68e68e276081312a00492accb770b92600773116acf687d4a"
+    sha256 cellar: :any,                 arm64_sonoma:  "79e10069adae41b68e68e276081312a00492accb770b92600773116acf687d4a"
+    sha256 cellar: :any,                 sonoma:        "93ca7c61a4c710d9757b7750d3325559b1ab5eb038a9f2c4cd8582516728720b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f51e69ccec32ef9f6c59d0b52338ecdd70a264689dafb22cd21a7f85a9947085"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4532a815c1e196619cf75ff6e42cb012503a2e3cb8f3f5f2cfa4312c55615dfb"
   end
 
   depends_on "node"

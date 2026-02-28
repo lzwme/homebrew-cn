@@ -1,18 +1,18 @@
 class CodexAcp < Formula
   desc "Use Codex from ACP-compatible clients such as Zed!"
   homepage "https://github.com/zed-industries/codex-acp"
-  url "https://ghfast.top/https://github.com/zed-industries/codex-acp/archive/refs/tags/v0.9.4.tar.gz"
-  sha256 "dd95109710733ad1f837aa18accb2a61b1cae47be2caeef2a76fde7e647e8e26"
+  url "https://ghfast.top/https://github.com/zed-industries/codex-acp/archive/refs/tags/v0.9.5.tar.gz"
+  sha256 "fdda3b8b8e37cbfc8ca2046acc3a9f491c70cee2ed7a52624b1c550b3ba260b1"
   license "Apache-2.0"
   head "https://github.com/zed-industries/codex-acp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fcb5be0985835baccf4b19225f1b1e5ce02f1f2f41f0c5118c7667b60061fdea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92a02f272413ba4ccc4ac61d1768d5a156c3583acc35126edc849113b3654231"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0df056eb8c39d9c3edf0830f6c3c4d100ce7eb68176f60d089ff4bf10f69ee57"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f9e2bdef250bfc00cf02d8187aa10a017508e66bc2038e5b666cb861a20f7176"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b85c5771707f4d8af1860e94f709302d725791a7cacd350ccc02481103dfe72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e251c75b866da65aa6505142530a5d4fd6f3f6030ff51e2fa0eeb5a93b03a99"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "72ccd5d313035da642ff75d0f4af9112a2a737f03885f2fa1d5723754803d9dd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bc6db23a2575fafbf16ab0413451fa2c6464cdb51f1c2c0f666391dd4707ebe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9952daea6771cded9646ffc4ff10f43069dfcd271d8569fb3941d61f25ccc04"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0dc7296382b976e519fb39a3ecf1d121d8df4d1d2f5fcb0947bd368d92a9cb8d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49cd30cfa6ca6393ee03e5724ecd472ca9de94e69ebf2795b19f7b764b873709"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ad7f4dcf3de465e7098e076693d40da0e91370516d11a9bf17a804b57f00c53"
   end
 
   depends_on "pkgconf" => :build

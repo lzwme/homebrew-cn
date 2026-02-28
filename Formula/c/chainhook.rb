@@ -22,6 +22,9 @@ class Chainhook < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "540c3aa91b988100dbe13c53b58ce83e9a5719e33aaa0abc006f6634079d3a97"
   end
 
+  deprecate! date: "2026-02-27", because: :repo_archived
+  disable! date: "2027-02-27", because: :repo_archived
+
   depends_on "rust" => :build
 
   uses_from_macos "llvm" => :build # for libclang

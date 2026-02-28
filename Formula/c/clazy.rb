@@ -4,6 +4,7 @@ class Clazy < Formula
   url "https://download.kde.org/stable/clazy/1.17/src/clazy-1.17.tar.xz"
   sha256 "8d7e97a056b1bfbfc730e69855857866729686b8c7e66a22aee81f1baeaab1ec"
   license "LGPL-2.0-or-later"
+  revision 1
   head "https://invent.kde.org/sdk/clazy.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class Clazy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "51018c5113b905459b9c81f91903601b170b5fe335fd3d8ab63474f80388ef9e"
-    sha256 cellar: :any,                 arm64_sequoia: "d9fd8c26e803383386d2ee00d7e4b92ea40490d88a2770578ca3a9170db053ad"
-    sha256 cellar: :any,                 arm64_sonoma:  "08c5b3ffc58b5f97ca134b1d444600d1fad257be9ca665259530f4c93f82fa84"
-    sha256 cellar: :any,                 sonoma:        "cd730358029561b5250b7b7893de72cad9cb5ff0ff9111ceabfe55156637a2a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "611c52be863d8b9d58943b5f90412bf52ebe65accbacf7e989fa0acc356feeaf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3449881c3dfe22f07d840adc35c433f362ff73d59298014e9fb0325c4ab2b5fd"
+    sha256 cellar: :any,                 arm64_tahoe:   "5bcb2600e1302c815509fc3e454cca551fb47dfa51a28db508f24bd695c1de59"
+    sha256 cellar: :any,                 arm64_sequoia: "221da1944debc0c0d614aeee305556abce3bad5ccddd6c2bee6b48aa394a45ce"
+    sha256 cellar: :any,                 arm64_sonoma:  "de271713dc02508e7ae1ae7275123ea71c7c250a94e4b6b65df6b361d067ba11"
+    sha256 cellar: :any,                 sonoma:        "941b9d823264678dca2c87ec94dd8411d176e04e33fec83b14ddbad604f81f86"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "696507d8a2bfe111ad00e871b55c77113c3527b27d529ef781a98915b5971bc3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a5b96d9b276dd91bab3efb833365892be64a8101888f528375b980178561f8e"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -1,8 +1,8 @@
 class Flang < Formula
   desc "LLVM Fortran Frontend"
   homepage "https://flang.llvm.org/"
-  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.8/llvm-project-21.1.8.src.tar.xz"
-  sha256 "4633a23617fa31a3ea51242586ea7fb1da7140e426bd62fc164261fe036aa142"
+  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.0/llvm-project-22.1.0.src.tar.xz"
+  sha256 "25d2e2adc4356d758405dd885fcfd6447bce82a90eb78b6b87ce0934bd077173"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/llvm/llvm-project.git", branch: "main"
@@ -12,12 +12,12 @@ class Flang < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1257a15dd91280992c350fb2f27bfde0c7d6dfe923055dfc5555dc98a9853c5a"
-    sha256 cellar: :any,                 arm64_sequoia: "81ef3da9226fdfcb8234f392c708fab42b75d0b22a1d5a195eb26d3336590196"
-    sha256 cellar: :any,                 arm64_sonoma:  "3be4de9db7779e1aeac48f5d1d7162602ffba1b28ce84394b3160a4265434fb7"
-    sha256 cellar: :any,                 sonoma:        "2418058569d2c56608f37d8a5e035e0ec2193354abece741404a1a23fe482a83"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcf0deb706c3c79007451b5419407e6983632dcf3827fdc0933a8b5abd84e49d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a0f28b417f2eb772f859826f6cccf11e5c1426df0d0d34cf3373b476a1586dd"
+    sha256 cellar: :any,                 arm64_tahoe:   "4ec2c6f9135acd3461e17adc6d15bd309649cb32d8ed9e1a863b7fda9daf0ae2"
+    sha256 cellar: :any,                 arm64_sequoia: "0ebfbca00b5acf930b23560087576c2354079cdcf4b9ee9c3b0df16762c9f631"
+    sha256 cellar: :any,                 arm64_sonoma:  "e39ad8a4ee9760f06bf85574d228d07124326ff7c40f269e287b25554eeaf639"
+    sha256 cellar: :any,                 sonoma:        "a42320867afd81644bfd901f1de6471cbc55d7dfc17eafc9cb80586a3c7485a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "48a3416cacd9086226940b19d33b435a07844cab5293eade75727f07e24da001"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61a01b8eb5924ffa7e5c68fbfa290b667fe3e91c5bd27ff2bd39d877007c3ed0"
   end
 
   depends_on "cmake" => :build
@@ -71,6 +71,7 @@ class Flang < Formula
 
     # Generate omp_lib.h and omp_lib.F90 to be used by flang build
     system "cmake", "-S", "openmp", "-B", "build/projects/openmp", *std_cmake_args
+    mv "build/projects/openmp/module/omp_lib.F90", "build/projects/openmp/runtime/src/omp_lib.F90"
 
     system "cmake", "-S", "flang", "-B", "build", *flang_args, *common_args, *std_cmake_args
     system "cmake", "--build", "build"

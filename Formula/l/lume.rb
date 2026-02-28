@@ -2,7 +2,7 @@ class Lume < Formula
   desc "Create and manage Apple Silicon-native virtual machines"
   homepage "https://github.com/trycua/cua"
   url "https://ghfast.top/https://github.com/trycua/cua/archive/refs/tags/lume-v0.2.84.tar.gz"
-  sha256 "643026a3986aab302bb993312f552e2ad536e33f1ad6004ae702300ab3e3712d"
+  sha256 "d889792db5de5840258784c912a0e6810e9834b8289c6c5c086d1ea7dba98191"
   license "MIT"
   head "https://github.com/trycua/cua.git", branch: "main"
 
@@ -12,9 +12,10 @@ class Lume < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79bb25d9a4c2ca51d4b49103b6ab51a3f7da168fc65c22883b3da85f95f6179b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1d126d976dd2c3b93dcd5a586d25b0aeaf382c3e9d01870c7960d2d8a5a2e2f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4763a2d898c5f73567bd29c64be09dc6a4f1f33abaad9f8782dc49924a4e1b40"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db793661b3318568314aff910564b6154c60926ba4089dbb93b4c2dc19005fe4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81fae2987bdd6d35f2201b364665107d6ee8e2ade47578932497becbbda5fa5b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bcf0e902e16b64fa7eb4a1c5f8a7caf75873187c27506cc14cb4eceeacd9916d"
   end
 
   depends_on xcode: ["16.0", :build]
@@ -27,7 +28,8 @@ class Lume < Formula
       system "/usr/bin/codesign", "-f", "-s", "-",
              "--entitlements", "resources/lume.local.entitlements", # Avoid SIGKILL with ad-hoc signing.
              ".build/release/lume"
-      bin.install ".build/release/lume"
+      libexec.install ".build/release/lume", ".build/release/lume_lume.bundle"
+      bin.write_exec_script libexec/"lume"
     end
   end
 
@@ -40,6 +42,11 @@ class Lume < Formula
   end
 
   test do
+    # `setup --unattended` loads presets from `lume_lume.bundle`.
+    # It should fail because the VM doesn't exist, not crash on missing resources.
+    output = shell_output("#{bin}/lume setup does-not-exist --unattended tahoe 2>&1", 1)
+    assert_match "Virtual machine not found", output
+
     # Test ipsw command
     assert_match "Found latest IPSW URL", shell_output("#{bin}/lume ipsw")
 

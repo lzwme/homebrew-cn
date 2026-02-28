@@ -3,12 +3,12 @@ class StrandsAgentsSops < Formula
 
   desc "Standard Operating Procedures for AI agents using natural language"
   homepage "https://github.com/strands-agents/agent-sop"
-  url "https://files.pythonhosted.org/packages/f4/c1/b15d73617717953af2dac9f2ceb9c1c882c74a5d9f93b9f58c7e0bcacc5f/strands_agents_sops-1.0.7.tar.gz"
-  sha256 "50694cb75d9b522715c94cc0d3bc56e5b2160b058bd87bcf471f0fd6ba577866"
+  url "https://files.pythonhosted.org/packages/37/6a/c2212f248bbbe6e7c3698d5af6d0a98ba6644805e6c3e3e881c7be3c4e9b/strands_agents_sops-1.1.0.tar.gz"
+  sha256 "551bd1861f0b1e631687f8823e5e97664c293d13bb9f07d20d332072501c37fa"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5b32223d7ed471a1df5f7d07986bb39aea6ee0874cab784f03995db408305248"
+    sha256 cellar: :any_skip_relocation, all: "2d95dbf7246f6b394187da594b8a915f3d47d49e6e4d8be752badec2034daf25"
   end
 
   depends_on "certifi" => :no_linkage

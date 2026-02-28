@@ -6396,6 +6396,7 @@ Homebrew-homebrew-core/Formula/r/rulesync.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rumdl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/run-kit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/run.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/runc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rune.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/runit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/runitor.rb, Homebrew/homebrew-core, 1
@@ -9004,6 +9005,7 @@ Homebrew-homebrew-cask/Casks/c/cmd-eikana.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cmd.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cmdtap.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cmpxat.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/cmux.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cncjs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cncnet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/coccinellida.rb, Homebrew/homebrew-cask, 0
@@ -12779,6 +12781,7 @@ Homebrew-homebrew-cask/Casks/i/ithoughtsx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itk-snap.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itraffic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/itsycal.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/itsytv.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/itunes-producer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ivacy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ivideonserver.rb, Homebrew/homebrew-cask, 0
@@ -12969,6 +12972,7 @@ Homebrew-homebrew-cask/Casks/k/konica-minolta-bizhub-c759-c658-c368-c287-c3851-d
 Homebrew-homebrew-cask/Casks/k/kontur-talk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/koodo-reader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kopiaui.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/k/kotlin-lsp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kotlin-native.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kreya.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/krisp.rb, Homebrew/homebrew-cask, 0

@@ -4,6 +4,7 @@ class Imagemagick < Formula
   url "https://imagemagick.org/archive/releases/ImageMagick-7.1.2-15.tar.xz"
   sha256 "ccb9913bba578daa582b73b2a97e55db49765d926cbb8ebf54e4e79b458e6679"
   license "ImageMagick"
+  revision 1
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
 
   livecheck do
@@ -12,12 +13,12 @@ class Imagemagick < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3f8a65ffca7d6c8c229be73441105060a5d2bbb8b7e6b66cb1c141949fa6f53c"
-    sha256 arm64_sequoia: "d660afd66d51bd27373da99d769e2c60021360cbce2a696040c8527cf14222c5"
-    sha256 arm64_sonoma:  "926ff70af93c557b2deb96294e1d5496b178dab8dc730864910abddd16174ce1"
-    sha256 sonoma:        "280a35fe63318e4fcbf4cf6cdefc4d9ddad2dfe14944ffd7319375ea73f4a8e4"
-    sha256 arm64_linux:   "1b2a3c907b1ee82c4d9ab5c408cf1c578b9a054f649f2b3c9ca9b7cc36096b8d"
-    sha256 x86_64_linux:  "da60f81da0dfde56720f93e9ecf175a59b9487c63d7d243aeeb5a354f08efc80"
+    sha256 arm64_tahoe:   "8561a40bcd9f85b38593d3f0fa20ffa44106f1e95a77706930d6a79540d2bb0d"
+    sha256 arm64_sequoia: "4dc5a4725b071ba89a33fbbcf736d41e457bdcf6a8636b8de4e6cb9ed78e0f8b"
+    sha256 arm64_sonoma:  "9c7e42c0c6b1a1a95c70f9a6649a7d3735d7ae295237f05cbda83395cd49e166"
+    sha256 sonoma:        "099e49f2dfa96540d8c3a733cc4fa2200b063e5428f1905023bb9ce7e06f87e7"
+    sha256 arm64_linux:   "7fb6d81ff60f0cc49468105fff3947bf9ad8e6e9ae27040e265a4465fc53d7e3"
+    sha256 x86_64_linux:  "870a33b37d18cff41ce32fe0b42ca9dafc567c4379a2c793f4c360bf994f57f5"
   end
 
   depends_on "pkgconf" => :build
@@ -27,6 +28,7 @@ class Imagemagick < Formula
   # current year (2026).
   # Add other dependencies to imagemagick-full formula or consider making
   # formulae dependent on imagemagick-full.
+  depends_on "freetype"
   depends_on "glib"
   depends_on "jpeg-turbo"
   depends_on "libheif"

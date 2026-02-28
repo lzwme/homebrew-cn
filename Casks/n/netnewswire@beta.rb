@@ -1,6 +1,6 @@
 cask "netnewswire@beta" do
-  version "7.0.1b3"
-  sha256 "f7f8faa23c622553837a108135a8b2ef25b929ea59bc246af8afa42b70f1d77f"
+  version "7.0.1b4"
+  sha256 "6f7605893c0f5c63c5d026c3e38b0b455b865bec8109912d63517a0b3848c6c9"
 
   url "https://ghfast.top/https://github.com/brentsimmons/NetNewsWire/releases/download/mac-#{version}/NetNewsWire#{version}.zip",
       verified: "github.com/brentsimmons/NetNewsWire/"
@@ -15,7 +15,7 @@ cask "netnewswire@beta" do
 
   auto_updates true
   conflicts_with cask: "netnewswire"
-  depends_on macos: ">= :tahoe"
+  depends_on macos: ">= :sequoia"
 
   app "NetNewsWire.app"
 

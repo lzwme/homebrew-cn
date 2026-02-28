@@ -1,17 +1,17 @@
 class Kalign < Formula
   desc "Fast multiple sequence alignment program for biological sequences"
   homepage "https://github.com/TimoLassmann/kalign"
-  url "https://ghfast.top/https://github.com/TimoLassmann/kalign/archive/refs/tags/v3.4.9.tar.gz"
-  sha256 "d13b1b44b0215b67990cef60a92e14acc4664b480730f18f39ef116773a58d33"
-  license "GPL-3.0-or-later"
+  url "https://ghfast.top/https://github.com/TimoLassmann/kalign/archive/refs/tags/v3.5.1.tar.gz"
+  sha256 "983bfd7da76010d59c3de3bae3d977cac78642c5eb061009dd12b11b9db5190d"
+  license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0d71de68f07c21e649985f010cef7502dd29b256700ded8efc908aa564f3b608"
-    sha256 cellar: :any,                 arm64_sequoia: "668f2d470103b6aa249f1133630e554fdfe07a0afd268dae82eea4332ff9185e"
-    sha256 cellar: :any,                 arm64_sonoma:  "0ac67fb6153ed206da0482c45964252ee16265ec714d623428aa87dd246f997a"
-    sha256 cellar: :any,                 sonoma:        "9e6198fa0dac0f702eb876485821097b110264d67a4837f0877196d0c1d5421b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e32bc0eaf913eb0271cd7c115b968b2759b4bb509120836e58765226cc53eedf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5c8d89f32862749a8f4085514e16aab7a3a52fe67c092dec6e15e66fd2eed06"
+    sha256 cellar: :any,                 arm64_tahoe:   "8f71e40d9b45732086ee415ec130e03e09db751f393cffb319bc842992ea28b2"
+    sha256 cellar: :any,                 arm64_sequoia: "2358d378a572b07517447d5211684f215a6b6f5b406c976c1b4db4cbc5a78379"
+    sha256 cellar: :any,                 arm64_sonoma:  "9e6edbd6b9e00a838c9ab9183cd9a0664c2ba097d3beffc7b8d5389f77ecea58"
+    sha256 cellar: :any,                 sonoma:        "10acec6e6df25811d99e0719a143a5a7c7bba1e1c223baf2e249b942c3dfb0f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "86fb9adacf8e8c08495cf7c8673618272540df6c7b26cc4d584d850b066b1d64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f797b66afe74876d22fb87c3e59b2d0ba9f004873d2127e631a4026178409e5f"
   end
 
   depends_on "cmake" => :build

@@ -3,8 +3,8 @@ class Manim < Formula
 
   desc "Animation engine for explanatory math videos"
   homepage "https://www.manim.community"
-  url "https://files.pythonhosted.org/packages/25/a2/84871307cab8b135378a810fc10fe0493600511e54c9ea36ee55b04fef4b/manim-0.20.0.tar.gz"
-  sha256 "9ab10520c431872109aa8dfaa48aeb9872849efdbe2db65d2cc043ba77062938"
+  url "https://files.pythonhosted.org/packages/dc/3b/ad54ce02f3e95d17d016cb1254708ae3795b60d5661f3b2085655940a565/manim-0.20.1.tar.gz"
+  sha256 "1e9747fb2fc1bde58ad09bcbd77d141793ce4b61811726a7fce537193d92e16b"
   license "MIT"
   head "https://github.com/manimCommunity/manim.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Manim < Formula
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e8d2bf24e266eba8654bddef49bfb24986bea5c2f35678d21fc22c2616ce0877"
-    sha256 cellar: :any,                 arm64_sequoia: "eb04014294c4b1de2c629c913f3b185e2e56b8866143f3dd08b0f37d4a0f53e4"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ba3acaca8f38782df7c3b7fca612e4aa403259968baeaa14d303dac5f35c36d"
-    sha256 cellar: :any,                 sonoma:        "770d194be1c52aff056f878f4dbff36f6649175aa4f9b52967d2d17221d4add5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd7d09203141072aec6ccda14f38ccf55126386721ce2e2c71bba9d5f3944cf6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "028c69afe9c5ef3f9a0361abf307a63148bca3b5342a4d05683b8ea5b9bc7773"
+    sha256 cellar: :any,                 arm64_tahoe:   "1146698c3f5898d4f39f6e6ccbe86f934d6098d4a38340457bdbf6530dbb99eb"
+    sha256 cellar: :any,                 arm64_sequoia: "6932594897fec81b58a4b4656ffa25670a63007a2f737bec0e83506dd69e4042"
+    sha256 cellar: :any,                 arm64_sonoma:  "97296a0f2ed9a52bc0e568c6c3d1d8d0fb0431ad1b4a350922a17c0a145d8476"
+    sha256 cellar: :any,                 sonoma:        "ca8e1507b9e599a1fe30689f0acc4433297487dcdd81cbf420311bf343b9b16b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "40347e0a6f413b4a0b5ddb9c2f4bed311e885e66cbfcb57199fea25ecbd375ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eebc67284d7012862e7d5d896bbcaa2b1edef42092477ae74a3a917afa208638"
   end
 
   depends_on "cmake" => :build # for mapbox_earcut

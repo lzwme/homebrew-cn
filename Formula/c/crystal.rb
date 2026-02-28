@@ -2,6 +2,7 @@ class Crystal < Formula
   desc "Fast and statically typed, compiled language with Ruby-like syntax"
   homepage "https://crystal-lang.org/"
   license "Apache-2.0"
+  revision 1
 
   stable do
     url "https://ghfast.top/https://github.com/crystal-lang/crystal/archive/refs/tags/1.19.1.tar.gz"
@@ -11,6 +12,12 @@ class Crystal < Formula
       url "https://ghfast.top/https://github.com/crystal-lang/shards/archive/refs/tags/v0.20.0.tar.gz"
       sha256 "8655b87761016409e4411056e350b24e7fe79eae3f227b3354b181a03f14d5da"
     end
+
+    # Backport support for LLVM 22
+    patch do
+      url "https://github.com/crystal-lang/crystal/commit/710d9a5eabd99a23534aa9c9cfde8e1c119d8730.patch?full_index=1"
+      sha256 "e9a8c66d2de582cf85f4ff713592cd58a2e772cc8764857fab74aa2a57cd44bb"
+    end
   end
 
   livecheck do
@@ -19,12 +26,12 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "28eba8c046a2bb6c1f2bfa252f99dcd67eaad3428acd3a04382e89b9fd809cde"
-    sha256 cellar: :any,                 arm64_sequoia: "285222d936413178369b5686322c1aa9d421258619f5859820a1e35841163a75"
-    sha256 cellar: :any,                 arm64_sonoma:  "13727a6d440a2f01376bd769a7aac299bc1887ead824c66980244377068ce499"
-    sha256 cellar: :any,                 sonoma:        "d0148d76dbac3e08745fb5e5efc16f538867e485f8ef98a054aa9cbc878b5250"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1105dfd02063ba433d5820eb75ba652c06c89775896d5a55b282033113320a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f86b5e9d76756f4f3c28994d00f4038f4212cb984ee501757bc59e56241df628"
+    sha256 cellar: :any,                 arm64_tahoe:   "1e12ff8299d252518e4124e56ecc4cdb48ef0153d08c75715f7bcb076c8a2a0b"
+    sha256 cellar: :any,                 arm64_sequoia: "731fd73bd657516829c34e0228066ccec8563a55543ee3e2cb2bcef38facbaa3"
+    sha256 cellar: :any,                 arm64_sonoma:  "85a87d697edec5fcfeb78bfa899e213079e9de377de5b7cef7a416ad39e9e937"
+    sha256 cellar: :any,                 sonoma:        "44a252cb01c1de8c5f7d22119ecaee4dbecc6b62d550364d5c3ee3d43a72971a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23fb74f2869d8a7a111c32490076c5042d6307ce85bf4eb540ea32e9cc8a13eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6114a8ba26bcae0bd6fc50468f9eeb217df1a245be1a2ee49eadf634e3f27e82"
   end
 
   head do

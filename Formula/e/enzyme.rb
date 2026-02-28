@@ -4,15 +4,16 @@ class Enzyme < Formula
   url "https://ghfast.top/https://github.com/EnzymeAD/Enzyme/archive/refs/tags/v0.0.249.tar.gz"
   sha256 "0842c14bd3953502bda6e8bdff22e94f3d49b042839f2ae5c3d502a7686ab969"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   head "https://github.com/EnzymeAD/Enzyme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "13619744bb57d6a5fc8261e92a25f17fb198b4c11e7265f9eeb8e872fdf7a126"
-    sha256 cellar: :any,                 arm64_sequoia: "56d36ac253ea485940f6a4da708013d2e1adbddee9f8aedb6708b05d0dd4a820"
-    sha256 cellar: :any,                 arm64_sonoma:  "8dd0c684bb330396a058a5d9a50b1016568abb4bc413e063aed2be847c6f4351"
-    sha256 cellar: :any,                 sonoma:        "c5b086143227155b21808e6c4fd987931c0d24cdb0b295c9b733a83cce1bcbfc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9937e0fa2b77ee9b4b080d8c03205169feb948b5602c520035cf0dfa547c6135"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc8d6562e1a6ccd1ba16680fc65e1371ed0c3f721824577f58feaa1761325557"
+    sha256 cellar: :any,                 arm64_tahoe:   "7c70941d1aa03eba0bd23b1023338b31f5fc41cbaee2d916be3273818c8b5b15"
+    sha256 cellar: :any,                 arm64_sequoia: "c459a1f0413fdb0f5d0af21f2df6be756dd792bd15680dab9326d2519569e1c4"
+    sha256 cellar: :any,                 arm64_sonoma:  "e82722cb35e92f77eafcf4166a34ef8c833d3e9f2ebef32dec2d856c097305e8"
+    sha256 cellar: :any,                 sonoma:        "cd3253f2ae95f21edcf479592a33cfe4ab9577c1f86859de4da3240966306ad6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7bee47e733bd4fe5a87335cdca295f0858b6bd1af4ba24e06c807b2fb07658c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7227e6a02c56eb2a91d7779e82db1fef6f0847a64c744904c1087d01514dfa4"
   end
 
   depends_on "cmake" => :build
@@ -40,16 +41,14 @@ class Enzyme < Formula
       }
       int main() {
         double i = 21.0;
-        printf("square(%.0f)=%.0f, dsquare(%.0f)=%.0f\\n", i, square(i), i, dsquare(i));
+        printf("square(%.0f)=%.0f, dsquare(%.0f)=%.0f", i, square(i), i, dsquare(i));
       }
     C
 
     ENV["CC"] = llvm.opt_bin/"clang"
 
-    system ENV.cc, testpath/"test.c",
-                        "-fplugin=#{lib/shared_library("ClangEnzyme-#{llvm.version.major}")}",
-                        "-O1", "-o", "test"
-
-    assert_equal "square(21)=441, dsquare(21)=42\n", shell_output("./test")
+    plugin = lib/shared_library("ClangEnzyme-#{llvm.version.major}")
+    system ENV.cc, "test.c", "-fplugin=#{plugin}", "-O1", "-o", "test"
+    assert_equal "square(21)=441, dsquare(21)=42", shell_output("./test")
   end
 end

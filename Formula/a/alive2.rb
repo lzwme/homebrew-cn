@@ -1,21 +1,29 @@
 class Alive2 < Formula
   desc "Automatic verification of LLVM optimizations"
   homepage "https://github.com/AliveToolkit/alive2"
-  url "https://github.com/AliveToolkit/alive2.git",
-      tag:      "v21.0",
-      revision: "913e1556032ee70a9ebf147b5a0c7e10086b7490"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/AliveToolkit/alive2.git", branch: "master"
 
+  stable do
+    url "https://github.com/AliveToolkit/alive2.git",
+        tag:      "v21.0",
+        revision: "913e1556032ee70a9ebf147b5a0c7e10086b7490"
+
+    # Backport fix for LLVM 22
+    patch do
+      url "https://github.com/AliveToolkit/alive2/commit/a86aaa0ea44c5671ce3e998ec6d422feaa95b236.patch?full_index=1"
+      sha256 "6645b59d29e7a4bbe45e91f57391cf9d4e5dbc27ba99a93c89ad13b14d57a7c4"
+    end
+  end
+
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "8c3935783048daac8c011062c238153f53f64c8e50d85740e4ddbf305e854e5e"
-    sha256 cellar: :any,                 arm64_sequoia: "852de8acba9d16303ff13d423c9d0f4402062335644e1bbcff815d8179c82a5b"
-    sha256 cellar: :any,                 arm64_sonoma:  "83982b721000e6cd17b97f25d1c587af19da13e09036ca12445bb6b0f000863e"
-    sha256 cellar: :any,                 sonoma:        "7746e44ad80366a730364e270921a2c159d40cd743e72d14891e0e253f0d5b6c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0888016b2365edd46b00dfcfc9cda77dd473d98cc47de8f57dd5ee5cc5d4202d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edf39546561dddd3d45aee2f365e92ede4a60622ccc8e47154d1f4cf0d3fb3f8"
+    sha256 cellar: :any,                 arm64_tahoe:   "2e00cec934b19e6e0782c0cb50f5bc1e99700d05d30c303306cef3290e477cbc"
+    sha256 cellar: :any,                 arm64_sequoia: "564aceec0c207995bdf1a7c52af3c85d294520a241dc9a640fcedd7987be9cce"
+    sha256 cellar: :any,                 arm64_sonoma:  "f29e72693a3db068ad2d63c04008c12a304d03e96beded350fee908f129b9296"
+    sha256 cellar: :any,                 sonoma:        "c1bc73895f64d8c25d4c5b91e18787cc2d02ef0aafd18f0c87b60ec2ab8363fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c77e368b62bbd426c27ebaad1666c6aaa5d7aa75dd0ca7c75d1103c419113de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53d1bf9e90e54266e4d36fb5193dba3f668b826f3bbc0363e012c2f31f6e1029"
   end
 
   depends_on "cmake" => :build
