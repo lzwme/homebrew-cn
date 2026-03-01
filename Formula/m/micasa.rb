@@ -1,17 +1,17 @@
 class Micasa < Formula
   desc "TUI for tracking home projects, maintenance schedules, appliances and quotes"
   homepage "https://micasa.dev"
-  url "https://ghfast.top/https://github.com/cpcloud/micasa/archive/refs/tags/v1.55.0.tar.gz"
-  sha256 "dba12316cf3e517894511c45650d583a28b464b7a2a7df657d02b0d1d63af0a9"
+  url "https://ghfast.top/https://github.com/cpcloud/micasa/archive/refs/tags/v1.57.0.tar.gz"
+  sha256 "98767e52f543541357315155f9229fe2b8b35e8b4cda01cfb5ba061a1e155f12"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbb18cf80351d20bf1b8f33bc3e5c47228b1a001a585271571a2b3bcfeebb988"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbb18cf80351d20bf1b8f33bc3e5c47228b1a001a585271571a2b3bcfeebb988"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbb18cf80351d20bf1b8f33bc3e5c47228b1a001a585271571a2b3bcfeebb988"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ae6b8342d05ed4225338686f68869b8566ffeca3d29f544f34241da0c5051fd9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1cb43747b62c5edddf81aa12ae56835d627ca2a96aaffed7822287e8b0a3d7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0ed58353ea6690203f38b1d5891a8f6779b823dad1f4d3c48281140fcd3a5de"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abcdda5e96ca1ae7546c7b2ead017edfe213e5f2760c8a11e9cb9cd5ca011834"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "abcdda5e96ca1ae7546c7b2ead017edfe213e5f2760c8a11e9cb9cd5ca011834"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abcdda5e96ca1ae7546c7b2ead017edfe213e5f2760c8a11e9cb9cd5ca011834"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4efa53e13a3276f786e42f9b2754cd98037dfc20afc1de140948e7b437ad3c79"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "52c82c47e1bba93d1edcc8d9502f8ea9b5e5126e6f719b8eb5a45c1bfc0844a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bba07596bfc240d12385ce25ee071d393633e0b1817f98d12000e43321e29fef"
   end
 
   depends_on "go" => :build

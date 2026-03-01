@@ -4,15 +4,16 @@ class Brpc < Formula
   url "https://dlcdn.apache.org/brpc/1.16.0/apache-brpc-1.16.0-src.tar.gz"
   sha256 "4d5e84048e12512c008d24e52c9e0baa876b5f3f9b06f0aead38b55ea248fdc3"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9f749085a9ffc7bdbc37df38a1026a5c633aacd51972da257caa744ef06635b6"
-    sha256 cellar: :any, arm64_sequoia: "a0cf0ef8d126ffea67d0366cfbb0d039987b2a54c0872271e24a6231153fdd65"
-    sha256 cellar: :any, arm64_sonoma:  "e28fc3fbcd68781d861023b747078f09cbb9e4b968f8ef4b389459d2575b28ad"
-    sha256 cellar: :any, sonoma:        "766c971326938d129d6ead09bd4fdacdad6e55c6816a5935b9467d55be843ded"
-    sha256               arm64_linux:   "c9e0a00bc92e3cd7cb8a0a60de88ef65757627646baa4b1a2510e181a2453ce9"
-    sha256               x86_64_linux:  "17a192f07db661c8dde442fe7a87f18bf28f6fb340ab6ea29178c28159f88c4d"
+    sha256 cellar: :any, arm64_tahoe:   "938c07ac932b5f32be2d95cb031ccdc6fb46c4e9be8314e3da673963866a7416"
+    sha256 cellar: :any, arm64_sequoia: "558bdcea59410890c8e5b57c9220d7a97b16facaa3c903f9bdeaa93bfa5cb060"
+    sha256 cellar: :any, arm64_sonoma:  "02d37b4c99058ed78f471c4ca6d0ffa5e345a0d4430ecb86455c1a8d34e21c72"
+    sha256 cellar: :any, sonoma:        "8d694fdf5ff72dd9f4e964f697331fd1f6c5b55cc36dfc62952d7be6ace4e4b2"
+    sha256               arm64_linux:   "a0a5fe537237d544e5304b878f9c8c834d24a41c89d7d9f3ba7174f073401957"
+    sha256               x86_64_linux:  "ac476089bf5b946e877158494c93c45cc3c73b68d3c3bdcac9cc7faebfd9643b"
   end
 
   depends_on "cmake" => :build
@@ -20,7 +21,7 @@ class Brpc < Formula
   depends_on "gflags"
   depends_on "leveldb"
   depends_on "openssl@3"
-  depends_on "protobuf"
+  depends_on "protobuf@33"
 
   on_linux do
     depends_on "pkgconf" => :test
@@ -71,7 +72,7 @@ class Brpc < Formula
       }
     CPP
 
-    protobuf = Formula["protobuf"]
+    protobuf = Formula["protobuf@33"]
     flags = %W[
       -I#{include}
       -I#{protobuf.opt_include}

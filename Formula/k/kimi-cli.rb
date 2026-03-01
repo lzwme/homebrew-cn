@@ -3,20 +3,20 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/31/51/5e03700a83013df678b599c683a3c728b677e0afcc54520e6b5759d1d743/kimi_cli-1.15.0.tar.gz"
-  sha256 "c7578f7f9b54a28e17f6b38da41b830c790900535f84765b3c903980358d3c6b"
+  url "https://files.pythonhosted.org/packages/df/4d/3898e636f110d6c10c62c34047cb65937f90ecd982f70b8f4381ecadf194/kimi_cli-1.16.0.tar.gz"
+  sha256 "34d6fa903b082d93a8fe6f193724edb18fef997a6b2fd4a890a19c6860ca2f09"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f3e1b095902985f40705edc3a23eed11a62d37d7ba740a8cacdac0275d495f51"
-    sha256 cellar: :any,                 arm64_sequoia: "97c62236b54bb1373187d3427c7abb29ed08543c165eb42cbd09905598696f45"
-    sha256 cellar: :any,                 arm64_sonoma:  "ef0c6d96bca04fc1bc9d8abd6b8ee4aa5f4f58ed3c0b9dbb4a1a8bca87310bb4"
-    sha256 cellar: :any,                 sonoma:        "521d46fa7b50c522cea187c13c167dd7ca78aeff9aed08a849dba207c4914190"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a63b8e19cfeb2783dfe808fbc884353a0b758711fb93c7a32162c4334ebaa51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03c73c91161948dc353cd0896aea36c9ad894679f6a42bde97a6f5f20ac22542"
+    sha256 cellar: :any,                 arm64_tahoe:   "23f02d86ba33768bf9a7cc776da7444b3524e5cf0f40803326bfb8c6f317d0be"
+    sha256 cellar: :any,                 arm64_sequoia: "31f27b42ac0c903a65228d1f6f0dcac9ed489ae8ecee42a761bdca049fe2c729"
+    sha256 cellar: :any,                 arm64_sonoma:  "9940fd4cbffd194c1fd21918f842fe3c6e171ed8d23c3b28dfd0a047911793df"
+    sha256 cellar: :any,                 sonoma:        "fcae9ea60dc2452396065c406777bb6696a9de5fb5c420d4e899386f3a1d7f80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbc42cef0ed9cafb9b5cd0268022960515971ff24d2a73d47a131ecbc17e4c96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c84732130d09bbe645979b3b32bfea85180faed1f2f873d339caff45f6b6fa44"
   end
 
   depends_on "pkgconf" => :build
@@ -178,8 +178,8 @@ class KimiCli < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/22/6f/0eafed8349eea1fa462238b54a624c8b408cd1ba2795c8e64aa6c34f8ab7/fastapi-0.133.1.tar.gz"
-    sha256 "ed152a45912f102592976fde6cbce7dae1a8a1053da94202e51dd35d184fadd6"
+    url "https://files.pythonhosted.org/packages/96/15/647ea81cb73b55b48fb095158a9cd64e42e9e4f1d34dbb5cc4a4939779d6/fastapi-0.134.0.tar.gz"
+    sha256 "3122b1ea0dbeaab48b5976e80b99ca7eda02be154bf03e126a33220e73255a9a"
   end
 
   resource "fastmcp" do
@@ -338,8 +338,8 @@ class KimiCli < Formula
   end
 
   resource "lxml-html-clean" do
-    url "https://files.pythonhosted.org/packages/d9/cb/c9c5bb2a9c47292e236a808dd233a03531f53b626f36259dcd32b49c76da/lxml_html_clean-0.4.3.tar.gz"
-    sha256 "c9df91925b00f836c807beab127aac82575110eacff54d0a75187914f1bd9d8c"
+    url "https://files.pythonhosted.org/packages/9a/a4/5c62acfacd69ff4f5db395100f5cfb9b54e7ac8c69a235e4e939fd13f021/lxml_html_clean-0.4.4.tar.gz"
+    sha256 "58f39a9d632711202ed1d6d0b9b47a904e306c85de5761543b90e3e3f736acfb"
   end
 
   resource "markdown-it-py" do
@@ -508,8 +508,8 @@ class KimiCli < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/ff/c0/d8079d4f6342e4cec5c3e7d7415b5cd3e633d5f4124f7a4626908dbe84c7/regex-2026.2.19.tar.gz"
-    sha256 "6fb8cb09b10e38f3ae17cc6dc04a1df77762bd0351b6ba9041438e7cc85ec310"
+    url "https://files.pythonhosted.org/packages/8b/71/41455aa99a5a5ac1eaf311f5d8efd9ce6433c03ac1e0962de163350d0d97/regex-2026.2.28.tar.gz"
+    sha256 "a729e47d418ea11d03469f321aaf67cdee8954cde3ff2cf8403ab87951ad10f2"
   end
 
   resource "requests" do

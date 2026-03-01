@@ -11,8 +11,6 @@ class Jigdo < Formula
     regex(/href=.*?jigdo[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "e8dc3605b3abe08d1608a08a2c30309226c58b6497848e43ba3332ecc2d463f7"

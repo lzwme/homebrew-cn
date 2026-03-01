@@ -26,8 +26,8 @@ cask "coteditor" do
     end
   end
   on_sequoia :or_newer do
-    version "6.2.3"
-    sha256 "82a6623aaf1794a535eeffbc7e42dca067f048e457f47bfab6b020798418ca39"
+    version "6.2.4"
+    sha256 "3647429cbed1fd9bf1d74ca5997dfb287ba55d79aaec9302d57b331f1b1a363f"
 
     livecheck do
       url "https://coteditor.com/appcast.xml"

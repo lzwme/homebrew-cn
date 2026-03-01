@@ -34,8 +34,9 @@ class WasiLibc < Formula
   depends_on "ninja" => :build
   depends_on "wasm-micro-runtime" => :test
 
-  # Needs clang
-  fails_with :gcc
+  fails_with :gcc do
+    cause "requires Clang, see https://github.com/WebAssembly/wasi-libc/blob/main/README.md#building-from-source"
+  end
 
   def install
     resource("WASI").stage buildpath/"tools/wasi-headers/WASI" if build.stable?

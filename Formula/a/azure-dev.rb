@@ -1,24 +1,29 @@
 class AzureDev < Formula
   desc "Developer CLI that provides commands for working with Azure resources"
   homepage "https://aka.ms/azd"
-  url "https://ghfast.top/https://github.com/Azure/azure-dev/archive/refs/tags/azure-dev-cli_1.23.6.tar.gz"
-  sha256 "94d8542080c16eee2132d79c98334bbe3b6fc1068b53f6bd4525c732e93dc6c1"
+  url "https://ghfast.top/https://github.com/Azure/azure-dev/archive/refs/tags/azure-dev-cli_1.23.7.tar.gz"
+  sha256 "7ff8848120861b702377172f63961f3d89f615b3d72b867d60dabd6b4ffdd536"
   license "MIT"
   head "https://github.com/Azure/azure-dev.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3083b2f3821024efde47559c6074ab11a3f084ef4fb3a87302dedd8a1e0d5367"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3083b2f3821024efde47559c6074ab11a3f084ef4fb3a87302dedd8a1e0d5367"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3083b2f3821024efde47559c6074ab11a3f084ef4fb3a87302dedd8a1e0d5367"
-    sha256 cellar: :any_skip_relocation, sonoma:        "81110f5d1d5ec7bd27fa8d73e35f2987544e7d218c7e686ccb25cf8419619af8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "36278451bbf3e278501da4cce9eff2a6dbe5c47c2f3a01029407dafc5a6ed623"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e0ba7034d8c3c032fbe1d9701efefc9c85f673aaae94e5161c4dc47ddae3436"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c52bfa8582687fa8f9ca6dc957ccbc0a908a54e82ff6f9f3333140add061cbf2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c52bfa8582687fa8f9ca6dc957ccbc0a908a54e82ff6f9f3333140add061cbf2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c52bfa8582687fa8f9ca6dc957ccbc0a908a54e82ff6f9f3333140add061cbf2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b6579469687d630e690069e354a2181f402b86161f68a8f39d777791dd91dd10"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2064e01c76dfad9c3506ea49e86e77b56b6f3cd2ee615dfaa6303b3d5654cbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "929b26cdf3a919e8bf506296b91dd1dc9abf29332127532bef743f13d72a42fb"
   end
 
   depends_on "go" => :build
 
   def install
-    (buildpath/".installed-by.txt").write "brew"
+    # install file to be used to determine if azd was installed by brew
+    (libexec/".installed-by.txt").write "brew"
+    inreplace "cli/azd/pkg/installer/installed_by.go",
+              'Join(exeDir, ".installed-by.txt")',
+              'Join(exeDir, "..", "libexec", ".installed-by.txt")'
 
     # Version should be in the format "<version> (commit <commit_hash>)"
     azd_version = "#{version} (commit 0000000000000000000000000000000000000000)"

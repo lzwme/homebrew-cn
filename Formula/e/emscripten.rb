@@ -29,8 +29,6 @@ class Emscripten < Formula
   depends_on "python@3.14"
   depends_on "yuicompressor"
 
-  uses_from_macos "llvm" => :build
-
   # OpenJDK is needed as a dependency on Linux and ARM64 for google-closure-compiler,
   # an emscripten dependency, because the native GraalVM image will not work.
   on_macos do
@@ -40,18 +38,8 @@ class Emscripten < Formula
   end
 
   on_linux do
-    depends_on "lld" => :build
     depends_on "openjdk"
     depends_on "zlib-ng-compat"
-  end
-
-  # We use LLVM to work around an error while building bundled `google-benchmark` with GCC
-  fails_with :gcc do
-    cause <<~EOS
-      .../third-party/benchmark/src/thread_manager.h:50:31: error: expected ‘)’ before ‘(’ token
-         50 |   GUARDED_BY(GetBenchmarkMutex()) Result results;
-            |                               ^
-    EOS
   end
 
   # Use emscripten's recommended binaryen revision to avoid build failures.
@@ -140,9 +128,6 @@ class Emscripten < Formula
         WebAssembly
       ]
 
-      # Apple's libstdc++ is too old to build LLVM
-      ENV.libcxx if ENV.compiler == :clang
-
       # See upstream configuration in `src/build.py` at
       # https://chromium.googlesource.com/emscripten-releases/
       args = %W[
@@ -163,6 +148,7 @@ class Emscripten < Formula
         -DLLVM_INSTALL_UTILS=OFF
         -DLLVM_ENABLE_ZSTD=OFF
         -DLLVM_ENABLE_Z3_SOLVER=OFF
+        -DLLVM_INCLUDE_BENCHMARKS=OFF
       ]
       args << "-DLLVM_ENABLE_LIBEDIT=OFF" if OS.linux?
 

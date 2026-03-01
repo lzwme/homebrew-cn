@@ -1,6 +1,6 @@
 cask "miaoyan" do
-  version "2.5.2"
-  sha256 "70f1c001911b7b7ecbb4404b68ca33a76200c61ea99a14f719016d2e285656d2"
+  version "2.7.0"
+  sha256 "4f7874a15db0f826712fb5abf9e976c29c507aca2723805a8fae89418fdd2bcb"
 
   url "https://miaoyan.app/Release/MiaoYan_V#{version}.zip"
   name "MiaoYan"
@@ -13,8 +13,6 @@ cask "miaoyan" do
       items.map(&:nice_version)
     end
   end
-
-  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   auto_updates true
   depends_on macos: ">= :big_sur"

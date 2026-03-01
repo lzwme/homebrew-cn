@@ -8,7 +8,10 @@ cask "font-dejavu-sans" do
 
   livecheck do
     url :url
-    strategy :github_latest
+    regex(/^(?:version[._-])?v?(\d+(?:[._]\d+)+)$/i)
+    strategy :github_latest do |json, regex|
+      json["tag_name"]&.[](regex, 1)&.tr("_", ".")
+    end
   end
 
   conflicts_with cask: "font-dejavu"

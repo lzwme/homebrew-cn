@@ -1,18 +1,17 @@
 class Teslamate < Formula
   desc "Self-hosted data logger for your Tesla"
   homepage "https://docs.teslamate.org"
-  url "https://ghfast.top/https://github.com/teslamate-org/teslamate/archive/refs/tags/v2.2.0.tar.gz"
-  sha256 "9e2b9fca03186ecd2e303d01b4f3810c5e5518d6110ab6f786c60590d4ae1f91"
-  license "MIT"
+  url "https://ghfast.top/https://github.com/teslamate-org/teslamate/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "a4a7267df27982cf5844e453d59ff866c6daf3ae126bcda05c0abe87dee43b45"
+  license "AGPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "c3230a3bb12da339cd54b82e78d1243229c7c3c80ae3d7537e2d7f47b7cb19af"
-    sha256 cellar: :any,                 arm64_sequoia: "bb2edaeb4f9f5776301e6b17aef20454c766709d4daa40325f0325edb2b2501b"
-    sha256 cellar: :any,                 arm64_sonoma:  "5e11bce0b760a92fc3a968a725d3742ab28f38613d770575e6754ff411f4e488"
-    sha256 cellar: :any,                 sonoma:        "772f2a3d67f6b02d903e6c8fe63682a6ad2fa19d0425d2369be425070ab0cd44"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "71f47a0ea08520dff99b427004d9ed90d10485cd2971e47eca36db4a54d3aee6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5243e5a161d252d0684ea87313227d6f9a2e869229b0151513a93c0fa9e7084"
+    sha256 cellar: :any,                 arm64_tahoe:   "365e32212184579cd3ad2e8645994e88d5a2d19e5bf46ac32ebcab53ff0f1b99"
+    sha256 cellar: :any,                 arm64_sequoia: "a009b56e79cab4ad8ab6cc93a724009b905fedc6c16b719ab99355105d7be9bd"
+    sha256 cellar: :any,                 arm64_sonoma:  "051fee5157e21481b9365da64058189babfb80efe0f53a15110244734b42913d"
+    sha256 cellar: :any,                 sonoma:        "c761eaccdc2122fb4544aa9521e9b7d5d4e411a34907228fd60c13e8966cf03e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44b5037040201b926c88283fa5f582fbd638f78744fbd66586aa3b4b477097d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15897cb1032f908f271565db40062499ee6fb30b4793a657600c559470ec242b"
   end
 
   depends_on "node" => :build

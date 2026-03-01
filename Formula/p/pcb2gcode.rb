@@ -1,19 +1,18 @@
 class Pcb2gcode < Formula
   desc "Command-line tool for isolation, routing and drilling of PCBs"
   homepage "https://github.com/pcb2gcode/pcb2gcode"
-  url "https://ghfast.top/https://github.com/pcb2gcode/pcb2gcode/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "96f1b1b4fd58e86f152b691202a15593815949dc9250fab9ab02f2346f5c2c52"
+  url "https://ghfast.top/https://github.com/pcb2gcode/pcb2gcode/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "d39b713c432e9536d075caa5e11065f73b5894a6907645bcd08a0e60ef740e06"
   license "GPL-3.0-or-later"
-  revision 11
   head "https://github.com/pcb2gcode/pcb2gcode.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d61829e13e6a6a9b43e1e6c50792af67569b848002bcdff37010ee0d30919b6f"
-    sha256 cellar: :any,                 arm64_sequoia: "62c9eac391af2f8d19f488ccb9ae7f4e54c64e2800800e5f41c076f50dc82083"
-    sha256 cellar: :any,                 arm64_sonoma:  "9762896bae8cc1c9e702de028e845babb22ef2bf42c1fa9fe1dd58cd253cbbdb"
-    sha256 cellar: :any,                 sonoma:        "def45c121938993698c91f804c91c41cafa3403346ffe533f29eb60dc9f9be02"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c43f17e52e97ca5ad9e4b616a5a3c79dc321df6452a25d5e756fd5d02729ecd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb2dee5690b95bf05bb41b11d875cd546a68902aa1d36f39ee516b9f5e218e81"
+    sha256 cellar: :any,                 arm64_tahoe:   "09418fbb8655886d52a1150f0d33d1c73c3ab7e4bb95b8ae708cf420fb17cc1b"
+    sha256 cellar: :any,                 arm64_sequoia: "d24764d5577c95188e266dc534fd622936aae7836c9da34b415b95d2f6e4f229"
+    sha256 cellar: :any,                 arm64_sonoma:  "f052802b280466e8d93afe75a1424ee95b3d1dc8cb74946d314ce5b5956ab4d2"
+    sha256 cellar: :any,                 sonoma:        "e32f2ac93824f32ce8fa039f62558ec45a8368e384d73a9dd39ca59f370632ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc5b89e0fa97b5258a00e06dc216997b7e367c91850d0ffefa3666b3541f6100"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69b7470df5a463a3dc9ca4ac3cbf518d4e859ecbd227749ba4ea553d130390e2"
   end
 
   depends_on "autoconf" => :build

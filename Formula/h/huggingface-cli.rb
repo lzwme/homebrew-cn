@@ -3,18 +3,18 @@ class HuggingfaceCli < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/c4/fc/eb9bc06130e8bbda6a616e1b80a7aa127681c448d6b49806f61db2670b61/huggingface_hub-1.4.1.tar.gz"
-  sha256 "b41131ec35e631e7383ab26d6146b8d8972abc8b6309b963b306fbcca87f5ed5"
+  url "https://files.pythonhosted.org/packages/ae/76/b5efb3033d8499b17f9386beaf60f64c461798e1ee16d10bc9c0077beba5/huggingface_hub-1.5.0.tar.gz"
+  sha256 "f281838db29265880fb543de7a23b0f81d3504675de82044307ea3c6c62f799d"
   license "Apache-2.0"
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f2aa32dc0d0583693bc6655746d40572c68ed3b397d9e6f171a2b699e516cbc1"
-    sha256 cellar: :any,                 arm64_sequoia: "43ec35b4f4e60df7351e4d2b0ec98ad934c406e4b5f8bbc085e6aab3d39516e9"
-    sha256 cellar: :any,                 arm64_sonoma:  "3e2c36f802733365f267c7bdf7a98e4e2922307e7ffcae12c53d7af145efe7a9"
-    sha256 cellar: :any,                 sonoma:        "dcd21ad262ccdcef451c6b11a20d8cec6bee994bb23e50c7a7223e37f0be906f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "64095b34248c3d8c3c53f342817565a36de423af52c1a44d7854c967d08e107d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c311f33a7dfcac7e6a23e9d8c0dd43abbe4ab4e0667645ff091aae25671ca9f6"
+    sha256 cellar: :any,                 arm64_tahoe:   "bc9e90a6ac7efc0e2eeccc9be1f86eb5cee5e4efdf640e89960d763ee0443967"
+    sha256 cellar: :any,                 arm64_sequoia: "9a1e3de3720df325c7add30a7f0311f4494bfc8e3974db2718d16d069086f89f"
+    sha256 cellar: :any,                 arm64_sonoma:  "1dcd079ae04550a65434178644de1a97c9cd627bcdf3ba8a011d3df767066083"
+    sha256 cellar: :any,                 sonoma:        "e5e04dede23f4918d4a446efd174c7c4d96a2fbff39edb79bee5d6d6fb26608f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0154d4eb2eb907fddec8600eeb016aae33e65ccfc872116b53032f761fe2c9bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a4dc0e1ff1e01bdd72ed15c63a79b3dcd8b01f38729ed19531385377c487c2c"
   end
 
   depends_on "pkgconf" => :build
@@ -32,6 +32,11 @@ class HuggingfaceCli < Formula
   pypi_packages package_name:     "huggingface_hub[cli]",
                 exclude_packages: "certifi"
 
+  resource "annotated-doc" do
+    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
+    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+  end
+
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
     sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
@@ -43,8 +48,8 @@ class HuggingfaceCli < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/1d/65/ce7f1b70157833bf3cb851b556a37d4547ceafc158aa9b34b36782f23696/filelock-3.20.3.tar.gz"
-    sha256 "18c57ee915c7ec61cff0ecf7f0f869936c7c30191bb0cf406f1341778d0834e1"
+    url "https://files.pythonhosted.org/packages/73/92/a8e2479937ff39185d20dd6a851c1a63e55849e447a55e798cc2e1f49c65/filelock-3.24.3.tar.gz"
+    sha256 "011a5644dc937c22699943ebbfc46e969cdde3e171470a6e40b9533e5a72affa"
   end
 
   resource "fsspec" do
@@ -58,8 +63,8 @@ class HuggingfaceCli < Formula
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/5e/6e/0f11bacf08a67f7fb5ee09740f2ca54163863b07b70d579356e9222ce5d8/hf_xet-1.2.0.tar.gz"
-    sha256 "a8c27070ca547293b6890c4bf389f713f80e8c478631432962bb7f4bc0bd7d7f"
+    url "https://files.pythonhosted.org/packages/8b/cb/9bb543bd987ffa1ee48202cc96a756951b734b79a542335c566148ade36c/hf_xet-1.3.2.tar.gz"
+    sha256 "e130ee08984783d12717444e538587fa2119385e5bd8fc2bb9f930419b73a7af"
   end
 
   resource "httpcore" do
@@ -77,14 +82,34 @@ class HuggingfaceCli < Formula
     sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
+  resource "markdown-it-py" do
+    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
+    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+  end
+
+  resource "mdurl" do
+    url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
+    sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
     sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
+  resource "pygments" do
+    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+  end
+
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
+  end
+
+  resource "rich" do
+    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
+    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
   end
 
   resource "shellingham" do
@@ -97,9 +122,9 @@ class HuggingfaceCli < Formula
     sha256 "7d825f03f89244ef73f1d4ce193cb1774a8179fd96f31d7e1dcde62092b960bb"
   end
 
-  resource "typer-slim" do
-    url "https://files.pythonhosted.org/packages/17/d4/064570dec6358aa9049d4708e4a10407d74c99258f8b2136bb8702303f1a/typer_slim-0.21.1.tar.gz"
-    sha256 "73495dd08c2d0940d611c5a8c04e91c2a0a98600cbd4ee19192255a233b6dbfd"
+  resource "typer" do
+    url "https://files.pythonhosted.org/packages/f5/24/cb09efec5cc954f7f9b930bf8279447d24618bb6758d4f6adf2574c41780/typer-0.24.1.tar.gz"
+    sha256 "e39b4732d65fbdcde189ae76cf7cd48aeae72919dea1fdfc16593be016256b45"
   end
 
   resource "typing-extensions" do
@@ -111,8 +136,9 @@ class HuggingfaceCli < Formula
     venv = virtualenv_install_with_resources(without: "hf-xet")
 
     resource("hf-xet").stage do
-      # `hf-xet` sdist has an invalid Python source path in `pyproject.toml`.
-      inreplace "pyproject.toml", 'python-source = "hf_xet/python"', 'python-source = "."'
+      # Use native-tls instead since building bundled aws-lc is tricky to do indirectly within superenv.
+      # Can consider switching if system copy is supported https://github.com/aws/aws-lc-rs/issues/936
+      inreplace "cas_client/Cargo.toml", 'default = ["rustls-tls"]', 'default = ["native-tls"]'
 
       if ENV.effective_arch == :armv8
         # Disable sha2-asm which requires a minimum of -march=armv8-a+crypto

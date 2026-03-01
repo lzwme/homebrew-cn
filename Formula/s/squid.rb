@@ -5,11 +5,15 @@ class Squid < Formula
   sha256 "821f875575b042537a72ab4f0260496f447ccaf2c55dfd40a995f3ad238f616d"
   license "GPL-2.0-or-later"
 
-  # The Git repository contains tags for a higher major version that isn't the
-  # current release series yet, so we check the latest GitHub release instead.
+  # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
+  # but are labeled as "pre-release" on GitHub, so it's necessary to use the
+  # `GithubLatest` strategy.
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(/^SQUID[._-]v?(\d+(?:[._]\d+)+)$/i)
+    strategy :github_latest do |json, regex|
+      json["tag_name"]&.[](regex, 1)&.tr("_", ".")
+    end
   end
 
   no_autobump! because: :incompatible_version_format

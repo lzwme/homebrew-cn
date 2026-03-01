@@ -23,7 +23,6 @@ class Libomp < Formula
   keg_only "it can override GCC headers and result in broken builds"
 
   depends_on "cmake" => :build
-  depends_on "lit" => :build
   uses_from_macos "llvm" => :build
 
   on_linux do
@@ -33,16 +32,20 @@ class Libomp < Formula
   def install
     # Disable LIBOMP_INSTALL_ALIASES, otherwise the library is installed as
     # libgomp alias which can conflict with GCC's libgomp.
-    args = ["-DLIBOMP_INSTALL_ALIASES=OFF"]
+    args = %w[
+      -DLIBOMP_INSTALL_ALIASES=OFF
+      -DLLVM_ENABLE_RUNTIMES=openmp
+      -DOPENMP_ENABLE_OMPT_TOOLS=OFF
+    ]
     args << "-DOPENMP_ENABLE_LIBOMPTARGET=OFF" if OS.linux?
 
-    system "cmake", "-S", "openmp", "-B", "build/shared", *std_cmake_args, *args
+    system "cmake", "-S", "runtimes", "-B", "build/shared", *args, *std_cmake_args
     system "cmake", "--build", "build/shared"
     system "cmake", "--install", "build/shared"
 
-    system "cmake", "-S", "openmp", "-B", "build/static",
+    system "cmake", "-S", "runtimes", "-B", "build/static",
                     "-DLIBOMP_ENABLE_SHARED=OFF",
-                    *std_cmake_args, *args
+                    *args, *std_cmake_args
     system "cmake", "--build", "build/static"
     system "cmake", "--install", "build/static"
   end

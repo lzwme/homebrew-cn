@@ -1,18 +1,18 @@
 class Ktea < Formula
   desc "Kafka TUI client"
   homepage "https://github.com/jonas-grgt/ktea"
-  url "https://ghfast.top/https://github.com/jonas-grgt/ktea/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "f6bcee401fcee6a7fa1cea82364cae54832ca9fc76258085330790ac92ee158a"
+  url "https://ghfast.top/https://github.com/jonas-grgt/ktea/archive/refs/tags/v0.7.2.tar.gz"
+  sha256 "fa25ed15becb24f29d9ebf1e0a750fa236c81d429e06cf2fc8bc66620491642a"
   license "Apache-2.0"
   head "https://github.com/jonas-grgt/ktea.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f80a264b2f3d284a903d4d84a9e8a69ceb276234c2612ee2a2220e001cd58651"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f80a264b2f3d284a903d4d84a9e8a69ceb276234c2612ee2a2220e001cd58651"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f80a264b2f3d284a903d4d84a9e8a69ceb276234c2612ee2a2220e001cd58651"
-    sha256 cellar: :any_skip_relocation, sonoma:        "41bdade549bfdb588b2f5e628008906c7de69e4b509c69a6bb8cd27419904e42"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e10a3c9059ad237d3e997a29a47eae25874a60471021069afaa62f51010b23f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0817cb2ae89f71835c4e840616f017e23e297858a37b247aa77822fd045c525d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07540d7089615eeb3f97bf0eb989890a6efbfe56d8d87833cdd12d2e8d94c7f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07540d7089615eeb3f97bf0eb989890a6efbfe56d8d87833cdd12d2e8d94c7f1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07540d7089615eeb3f97bf0eb989890a6efbfe56d8d87833cdd12d2e8d94c7f1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "20f1492aae675fab6dbb95f711b06ba088555e946cb56dd4cfb4448b2760af3d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab24d442f899462eecdaf9a6c06827cd0c2e0ea7be61c5cb7455d46a0a948b8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "424f5760e4440f45cde15e14c1414b53fd4943f6ad24aba63fe98dfd2ac3a3e8"
   end
 
   depends_on "go" => :build

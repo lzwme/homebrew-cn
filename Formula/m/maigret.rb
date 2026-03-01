@@ -6,16 +6,16 @@ class Maigret < Formula
   url "https://files.pythonhosted.org/packages/3d/29/ef75d365917075a72ad88b7b1027bc6f93d6e45f27aec1ee6410607eb5f6/maigret-0.5.0.tar.gz"
   sha256 "d85c7f799cce51b6edf7179dda36019d0081bba528ce77284925499b07a49be7"
   license "MIT"
-  revision 6
+  revision 7
   head "https://github.com/soxoj/maigret.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "19fa40346eaeed888282b82272f784e163a855bd89d1d76150c67a9a2eb7a32c"
-    sha256 cellar: :any,                 arm64_sequoia: "647f9bece80bf2894a7f0a8135dded32955047e57ba026827c16403c86ef40d1"
-    sha256 cellar: :any,                 arm64_sonoma:  "a25450b820a293a56a3b25cbb8e90d33307bd8fd7f579ee63164b7acdee08073"
-    sha256 cellar: :any,                 sonoma:        "bb34a11972d8c3a3c15b88bee10e665028c575d773a61e831b305972accbe12e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0beb3e28af0e249188471c200c0dd76f5b1b38044352d9482da7aebddb1c924c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5759efff7012ec07b5c3f3d934adc266e595ea0072c91e3a8c91e2193eed3750"
+    sha256 cellar: :any,                 arm64_tahoe:   "da2687edf0474d394f3fbc8739304f37cd892562dc35087623deb8b24e1e349c"
+    sha256 cellar: :any,                 arm64_sequoia: "c3127711c9d30d5050c789ed1f301b733e32ac128ae4d3284edd73e17d4cc4dc"
+    sha256 cellar: :any,                 arm64_sonoma:  "6b4b621ad006de2701561c28dbc9d14a0b78d6cab7879d02aa303c76a8aa903a"
+    sha256 cellar: :any,                 sonoma:        "362b03d83a09a7990d728c92adefcf762858d3b6bec91a95eee33ea45dabf8b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1fbdce7f89e2d87344f77571688e753b7abdbdf36fdb887cca82c1dbc0b2895c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e19c7bb5ba489ab8c8a9c51f07c9f2ff87dcc36c6b3e33df8b041765cf8340e"
   end
 
   depends_on "rust" => :build
@@ -322,8 +322,8 @@ class Maigret < Formula
   end
 
   resource "pypdf" do
-    url "https://files.pythonhosted.org/packages/53/9b/63e767042fc852384dc71e5ff6f990ee4e1b165b1526cf3f9c23a4eebb47/pypdf-6.7.3.tar.gz"
-    sha256 "eca55c78d0ec7baa06f9288e2be5c4e8242d5cbb62c7a4b94f2716f8e50076d2"
+    url "https://files.pythonhosted.org/packages/09/dc/f52deef12797ad58b88e4663f097a343f53b9361338aef6573f135ac302f/pypdf-6.7.4.tar.gz"
+    sha256 "9edd1cd47938bb35ec87795f61225fd58a07cfaf0c5699018ae1a47d6f8ab0e3"
   end
 
   resource "pypdf2" do

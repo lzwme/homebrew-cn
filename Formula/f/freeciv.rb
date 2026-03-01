@@ -1,8 +1,8 @@
 class Freeciv < Formula
   desc "Free and Open Source empire-building strategy game"
   homepage "https://freeciv.org/"
-  url "https://downloads.sourceforge.net/project/freeciv/Freeciv%203.2/3.2.2/freeciv-3.2.2.tar.xz"
-  sha256 "ed230084e885d19d82170a8b39e43e3291ec446c37239bf2bee8e11245c88960"
+  url "https://downloads.sourceforge.net/project/freeciv/Freeciv%203.2/3.2.3/freeciv-3.2.3.tar.xz"
+  sha256 "989d6d58bd4cd97a4899e7e25afdee6c35fd03f87a379428a6e196d600d8d307"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Freeciv < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d14025dbf33952ef5a2e92961ce2636c92cfde6da720b08d5707c8ce1d958058"
-    sha256 arm64_sequoia: "0974803415c4a238ab169728669c411e9248ed4d6211f054a1564614877131e1"
-    sha256 arm64_sonoma:  "b6f14af71baef5372e9ab1ca1c503cf6c3a70da311a51f13691bd27e306f317c"
-    sha256 sonoma:        "80d3934731265d703dcc0fe41adee6521f9933e70cd27285d0a5a16ec9eb46ba"
-    sha256 arm64_linux:   "107059c5368d6e5234e8edaa8e231af3c9d23e0f862df580bbe5886e2ca2669c"
-    sha256 x86_64_linux:  "d01d3978b1e60f7f12cd7bded74ac0122f70591dc5beec0014f17bf011533fe4"
+    sha256 arm64_tahoe:   "3cbe6eaa8f40c6e4644eb1bb7d5af97f3425fd1f3378ff7d133c6673780c6e18"
+    sha256 arm64_sequoia: "fd63a5fddf2683709aa2a2303827e79bdc6950744c854fa4d2159cd90bc19815"
+    sha256 arm64_sonoma:  "e447325fce7a9bab451204a62204b8e783417b66ceeac2f3ad3a272789af1974"
+    sha256 sonoma:        "f34c1a025f36b55ac16f1790b6f9e282c299a61bf4fc1f19cad9d55f16a8852f"
+    sha256 arm64_linux:   "f926a11483072bd11599bfe1fead4d63a6a42955b217139f5d48e31b431ac468"
+    sha256 x86_64_linux:  "9a114b68ec923737b713e617b4cc19c5ad25113ca27ccda5beb382dae48a1cae"
   end
 
   head do
@@ -48,7 +48,10 @@ class Freeciv < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["ac_cv_lib_lzma_lzma_code"] = "no"

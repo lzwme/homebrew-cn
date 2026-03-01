@@ -1,21 +1,28 @@
 class KubernetesMcpServer < Formula
   desc "MCP server for Kubernetes"
   homepage "https://github.com/containers/kubernetes-mcp-server"
-  url "https://ghfast.top/https://github.com/containers/kubernetes-mcp-server/archive/refs/tags/v0.0.57.tar.gz"
-  sha256 "e08698ba6279efe51ea0d17d830c7706efacfecf5581db62951e8159669bc0f5"
+  url "https://ghfast.top/https://github.com/containers/kubernetes-mcp-server/archive/refs/tags/v0.0.58.tar.gz"
+  sha256 "aadafd17a8a9818cc07454ad3de8ce3e4ead80696d12f384ef4a63e3f48e69b0"
   license "Apache-2.0"
   head "https://github.com/containers/kubernetes-mcp-server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30b1fd2000be0ad853be033cca51101ec0ce09a89c146a2229febbac88938296"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42edc37fcf5979f3bea35cee4d568d25c10244cfd36cca4f5da3436afc8d7c8f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "259bf4cf85f54f672471348cf98e730a5883854947875c78c2eca7837d6d7a46"
-    sha256 cellar: :any_skip_relocation, sonoma:        "229b50e48a9b025b620600eac047162648baf851af3ce760e52eb58961b4cd41"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a06fffa6ade10219eb6ee51813ee9dfb0e7fb1d5641a73add36e0dd351dda7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33afccd8a11eb3669ee3cfb241dc466b0424c0ec42e7a795ecde942196a4b680"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5876098354693e497008da87290c1e4d70ec063a11f7014f3850a84d4061d6dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6acb250fdd86af09f3e0bb84541ed46213ff69e774f5f42fd8b07f7c5add6f2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1abe224e44671062cce45490395d4a2a9ac304e72879ccd0e8f75d295d407880"
+    sha256 cellar: :any_skip_relocation, sonoma:        "29a920cc2e0bf7c9c72804088c55a4a9efbd2a131286c63536c5096868630505"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5a54d4fa9442c0d397aec67ac5109662603a721a1b457d0968edff967f82afc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c1e2dfe485cddc95bd4de0a7b4a28c316e1e3338c0f5d3636536edcf469a1e0"
   end
 
   depends_on "go" => :build
+
+  # Fix for runtime SIGSEGV during MCP initialize/tools flow, remove in next release
+  # PR ref: https://github.com/containers/kubernetes-mcp-server/pull/844
+  patch do
+    url "https://github.com/containers/kubernetes-mcp-server/commit/1adbaecaa8b2b894190727afff17db7c92b68a9f.patch?full_index=1"
+    sha256 "697cbc18ba04632918d4e1b958db6c6406c0ccd366ca137d04db9165aa4cda8d"
+  end
 
   def install
     ldflags = %W[
