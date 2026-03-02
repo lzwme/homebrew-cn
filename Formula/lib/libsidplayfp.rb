@@ -5,6 +5,11 @@ class Libsidplayfp < Formula
   sha256 "ace0f73c2ef8645ab069ce1b298b10e31e36af7b5996109983b2b67ad60ff3ca"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "b4e8bd9e2d458c17ce895240352279188cb802ca03d28557f85f1e6045eb81cb"
     sha256 cellar: :any,                 arm64_sequoia: "0e1f398dcdfdd193e2e85c820f5549918b48e9b8d71e1313c059f0dea8136ae5"

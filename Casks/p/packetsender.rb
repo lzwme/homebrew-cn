@@ -1,6 +1,6 @@
 cask "packetsender" do
-  version "8.10.3"
-  sha256 "7dfc914fccfa998b695b9fe0f97040b08557710d79caca94c420d6c32c61f125"
+  version "8.10.4"
+  sha256 "eabf44386f87e87aa4ed02266c0718b288dc6f64a67637be4be902ee72b16023"
 
   url "https://ghfast.top/https://github.com/dannagle/PacketSender/releases/download/v#{version}/PacketSender_v#{version}.dmg",
       verified: "github.com/dannagle/PacketSender/"

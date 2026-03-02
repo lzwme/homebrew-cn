@@ -1,18 +1,18 @@
 class DashMpdCli < Formula
   desc "Download media content from a DASH-MPEG or DASH-WebM MPD manifest"
   homepage "https://emarsden.github.io/dash-mpd-cli/"
-  url "https://ghfast.top/https://github.com/emarsden/dash-mpd-cli/archive/refs/tags/v0.2.30.tar.gz"
-  sha256 "7e917bf7187e1dfd45e5c77ad388809513ddf255c8130ca665c5801c0a1d8a1b"
+  url "https://ghfast.top/https://github.com/emarsden/dash-mpd-cli/archive/refs/tags/v0.2.31.tar.gz"
+  sha256 "25b3f689a899ec2926f3aaa44a6cdd6e7ac22ca304be37e92a4af492396502f8"
   license "MIT"
   head "https://github.com/emarsden/dash-mpd-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d4d8586708ca81d161d982e5bbc81bb0e179092493fd004c90f2aef0f206da0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d764395193ca40560c1eab2af6276cc22d1224c884c790c0347f678f8a11bfc5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "154033db33172ae3ff71a93400bee3ee2ca176e0ffa79f3d4f23213124bfe3c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "72af24e2378b26ff327f1bf8adc0bccaaf3eff85efb8064e998ee37c8c219976"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "855a93729ac7ef08af58d70db7fac7b949f2972066f4747dfc185f662ab599d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe3b0879acf0652c897668abc3295f1e672a72b3c342c130f55dfac698caf824"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7e5ce5092895a70e250727833537afeb98a946313ac89d2eb62256e30ae94c6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "657ea55ee75f6d2b2cb19ba0397c8c7e251c8d5f3aed5a6299d69d3edcaa2618"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46a482c9cfbddd19a465843ed79ee471d339b2a7b3096767a8d57e77467fccfe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "43bda6e2da1acebb3336ee5d0189f6a2c7f07345e31b7c51aa2f358a8a6a4442"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bcf2dda8f1573f8491820b55ef2da78239d5b5d700c5cf46fc56f74ce06b7c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfb4300b1ee16a004beaf625c765d1c8d3912981d82c35914e2c8303958ee55b"
   end
 
   depends_on "protobuf" => :build

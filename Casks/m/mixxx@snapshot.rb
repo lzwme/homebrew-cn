@@ -1,9 +1,9 @@
 cask "mixxx@snapshot" do
   arch arm: "arm", intel: "intel"
 
-  version "2.7-alpha-176-geeb11b8d07"
-  sha256 arm:   "99c55b09a9907b91153cf8a33651927c574ce976a0594eb7ad81101be62ad6f1",
-         intel: "3a08706b9e860d66739a8d10bdaf5b13224239640e0e153ce622183bd71358ba"
+  version "2.7-alpha-178-g8837b44a87"
+  sha256 arm:   "42f0cc80e3eb6825b799f552b8f5a5f631deb1e12ba92e53155a087178825dec",
+         intel: "01ddd9c36e1b988603b1c18b505e72e46bfedf65be462ce01e00360c31c00425"
 
   url "https://downloads.mixxx.org/snapshots/main/mixxx-#{version}-macos#{arch}.dmg"
   name "Mixxx"

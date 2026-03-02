@@ -6,7 +6,7 @@ class Openvino < Formula
   url "https://ghfast.top/https://github.com/openvinotoolkit/openvino/archive/refs/tags/2025.4.1.tar.gz"
   sha256 "9926c8a8188d0baa9730623efaeb9f0bccf7059f5e4e957a8d238c3226c2b19b"
   license "Apache-2.0"
-  revision 3
+  revision 4
   head "https://github.com/openvinotoolkit/openvino.git", branch: "master"
 
   livecheck do
@@ -15,24 +15,23 @@ class Openvino < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b7895df6f9ee49841183ca7abee864afd873a0551f8ce670c63fd5a2233721cb"
-    sha256 cellar: :any, arm64_sequoia: "7c35f852dd76bb733c65c0cdd03697e4d15302d26a06d3bf3a26076c7fe06383"
-    sha256 cellar: :any, arm64_sonoma:  "c77e0be7587b288bf16e5c16841d7a9596f6df42ce25b05b04d12ff42759c221"
-    sha256 cellar: :any, sonoma:        "6cb024e7254ef5c1d8e8383a886bf6b08f46d18baf1a16141f46d3fe86e63f2c"
-    sha256               arm64_linux:   "d92af382c49e55fb26cb62dc75e5d83b7b4acc88def02fbe24ddc10a72e1a06c"
-    sha256               x86_64_linux:  "bc3a2cfc540d30861b2d4a0979c7c4dfd975490ca091c87c0a807582141e4643"
+    sha256 cellar: :any, arm64_tahoe:   "8c0fe2a0bc0db3ab47867cfc3f37cdaf4d2d3446cda3312c83f1c8c6c605cfd4"
+    sha256 cellar: :any, arm64_sequoia: "de5b13a5c717972f847e6c744e9eaa6c72eca15d914be89d52f318b5ce0791ca"
+    sha256 cellar: :any, arm64_sonoma:  "93fdb075511351a6f75ec2709d5e1c87486da5d3565b22e8144ddd8416d41869"
+    sha256 cellar: :any, sonoma:        "7721daebc284000b0fb60268cf4fe3863c01fffd7af96dbc63f55c3cf302a9a7"
+    sha256               arm64_linux:   "951efa3500788bc31628d44ea3820a43812f3c0494c1f2da8c9d3cbafe4aca47"
+    sha256               x86_64_linux:  "ed8b1fef6635aacc86109fd2f127fdca6913521cd6248477f4a10ae0b2512874"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "flatbuffers" => :build
   depends_on "pkgconf" => [:build, :test]
-  depends_on "pybind11" => :build
   depends_on "python@3.14" => [:build, :test]
   depends_on "abseil"
   depends_on "nlohmann-json"
   depends_on "numpy"
   depends_on "onnx"
-  depends_on "protobuf"
+  depends_on "protobuf@33"
   depends_on "pugixml"
   depends_on "snappy"
   depends_on "tbb"
@@ -62,6 +61,16 @@ class Openvino < Formula
       url "https://ghfast.top/https://github.com/ARM-software/kleidiai/archive/eaf63a6ae9a903fb4fa8a4d004a974995011f444.tar.gz"
       sha256 "756fa3040ff23f78a4c3f4c1984a3814d78d302b0b5dc3f0b255322368aefc58"
     end
+  end
+
+  # FIXME: depends_on "pybind11" => :build
+  #
+  # error: static assertion failed due to requirement '0 == detail::constexpr_sum(
+  # detail::is_instantiation<pybind11::call_guard, pybind11::is_method>::value, ...)':
+  # def_property family does not currently support call_guard. Use a py::cpp_function instead
+  resource "pybind11" do
+    url "https://ghfast.top/https://github.com/pybind/pybind11/archive/refs/tags/v3.0.1.tar.gz"
+    sha256 "741633da746b7c738bb71f1854f957b9da660bcd2dce68d71949037f0969d0ca"
   end
 
   # FIXME: depends_on "xbyak" => :build
@@ -137,6 +146,7 @@ class Openvino < Formula
     resource("mlas").stage buildpath/"src/plugins/intel_cpu/thirdparty/mlas"
     resource("onednn_cpu").stage buildpath/"src/plugins/intel_cpu/thirdparty/onednn"
     resource("onednn_gpu").stage buildpath/"src/plugins/intel_gpu/thirdparty/onednn_gpu" if OS.linux?
+    resource("pybind11").stage buildpath/"src/bindings/python/thirdparty/pybind11"
 
     if Hardware::CPU.arm?
       resource("arm_compute").stage buildpath/"src/plugins/intel_cpu/thirdparty/ComputeLibrary"
@@ -171,8 +181,11 @@ class Openvino < Formula
       ENV["MACOSX_DEPLOYMENT_TARGET"] = "#{MacOS.version}.0"
     end
 
-    # Fix linking failure of certain binaries.
-    cmake_args << "-DCMAKE_BUILD_RPATH=#{HOMEBREW_PREFIX}/lib" if OS.linux? && Hardware::CPU.arm?
+    # Fix linking failure of certain binaries as Scons disables superenv
+    if OS.linux? && Hardware::CPU.arm?
+      cmake_args << "-DCMAKE_BUILD_RPATH=#{HOMEBREW_PREFIX}/lib"
+      cmake_args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-rpath,#{Formula["protobuf@33"].opt_lib}"
+    end
 
     openvino_binary_dir = "#{buildpath}/build"
     system "cmake", "-S", ".", "-B", openvino_binary_dir, *cmake_args, *std_cmake_args

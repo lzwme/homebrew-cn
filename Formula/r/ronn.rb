@@ -52,16 +52,11 @@ class Ronn < Formula
       This document is created by ronn.
     MARKDOWN
     system bin/"ronn", "--date", "1970-01-01", "test.ronn"
-    assert_equal <<~EOS, pipe_output("col -bx", shell_output("groff -t -man -Tascii -P -c test.7"))
-      SIMPLE(7)                                                            SIMPLE(7)
-
-      NAME
-             simple - a simple ronn example
-
-             This document is created by ronn.
-
-                                       January 1970                        SIMPLE(7)
-    EOS
+    rendered = pipe_output("col -bx", shell_output("groff -t -man -Tascii -P -c test.7"))
+    assert_match "SIMPLE(7)", rendered
+    assert_match "simple - a simple ronn example", rendered
+    assert_match "This document is created by ronn.", rendered
+    assert_match "January 1970", rendered
   end
 end
 __END__

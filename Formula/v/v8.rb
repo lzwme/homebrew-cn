@@ -3,8 +3,8 @@ class V8 < Formula
   homepage "https://v8.dev/docs"
   # Track V8 version from Chrome stable: https://chromiumdash.appspot.com/releases?platform=Mac
   # Check `brew livecheck --resources v8` for any resource updates
-  url "https://ghfast.top/https://github.com/v8/v8/archive/refs/tags/14.5.201.12.tar.gz"
-  sha256 "455e9142a174f09a4ab3bb80bb53ab81438d6d4d7a6971e4fa14e801eac769d9"
+  url "https://ghfast.top/https://github.com/v8/v8/archive/refs/tags/14.6.202.6.tar.gz"
+  sha256 "5eff8d1bcdbbd562882732afea5ff899dd52b8ba4a084423ce319d0df7b1840c"
   license "BSD-3-Clause"
 
   livecheck do
@@ -24,12 +24,12 @@ class V8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e1b4ca0e6f5b675142f7dd88502b30c0d5d79f5d14ec176dd8d250fa70812203"
-    sha256 cellar: :any,                 arm64_sequoia: "61232fe018021f82356ef83c6be620c9a1a1b9a72dec6a290a2729f7e80c6ae9"
-    sha256 cellar: :any,                 arm64_sonoma:  "a23c1f34b4bd0250f8098c4f88db798a4820b8c6bd80ab5889d8de2df63af581"
-    sha256 cellar: :any,                 sonoma:        "1bf9304846cd82549656f3324770bfa5114450b3fbd40e578b80f970e8672785"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e484fa398677ea6fd0800e602cf1106980bd1f3d93a0ce1a852fefdbc07c066"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "baa6fe578988162ccbf505d3d1d07ba012b3cf8e0178b104b20bf590c7626075"
+    sha256 cellar: :any,                 arm64_tahoe:   "94b94ae7fcb05a8b6301cc97e66f6c1b5d9889f6edf9f9f5dddd07e0a613cf89"
+    sha256 cellar: :any,                 arm64_sequoia: "aa21ae6fd4daf2f6ce0684def791cb48a344ed45f5191c88452f0b918072f670"
+    sha256 cellar: :any,                 arm64_sonoma:  "0afdef5ec84914be1f38c37e2849c45d02b6d054e1966744c098a02b56eba6e9"
+    sha256 cellar: :any,                 sonoma:        "5faf16b12f0baf8fcfc97799e6e7b51e93aba6692bba04816b2ba03197147944"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3696028da7cf166f7c35c9451499bf3f56799dc9b98b50232331c91207104e42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf13af6dea1e1ce90c57f9f9a5cda9e794577d4b695ffd156f726ad352c27215"
   end
 
   depends_on "llvm" => :build
@@ -56,8 +56,8 @@ class V8 < Formula
   # e.g. for CIPD dependency gn: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/<version>/DEPS#74
   resource "gn" do
     url "https://gn.googlesource.com/gn.git",
-        revision: "5550ba0f4053c3cbb0bff3d60ded9d867b6fa371"
-    version "5550ba0f4053c3cbb0bff3d60ded9d867b6fa371"
+        revision: "103f8b437f5e791e0aef9d5c372521a5d675fabb"
+    version "103f8b437f5e791e0aef9d5c372521a5d675fabb"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -67,8 +67,8 @@ class V8 < Formula
 
   resource "build" do
     url "https://chromium.googlesource.com/chromium/src/build.git",
-        revision: "d747365c051153cc89f25e6adc95538aabcdd319"
-    version "d747365c051153cc89f25e6adc95538aabcdd319"
+        revision: "483cecced32ce8b098d65eb08eb77925afa90bec"
+    version "483cecced32ce8b098d65eb08eb77925afa90bec"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -78,8 +78,8 @@ class V8 < Formula
 
   resource "buildtools" do
     url "https://chromium.googlesource.com/chromium/src/buildtools.git",
-        revision: "4dc32b3f510b330137385e2b3a631ca8e13a8e22"
-    version "4dc32b3f510b330137385e2b3a631ca8e13a8e22"
+        revision: "6a18683f555b4ac8b05ac8395c29c84483ac9588"
+    version "6a18683f555b4ac8b05ac8395c29c84483ac9588"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -89,8 +89,8 @@ class V8 < Formula
 
   resource "third_party/abseil-cpp" do
     url "https://chromium.googlesource.com/chromium/src/third_party/abseil-cpp.git",
-        revision: "1597226b825a16493de66c1732171efe89b271d9"
-    version "1597226b825a16493de66c1732171efe89b271d9"
+        revision: "6d5ac0f7d3f0af5d13b78044fc31c793aa3549f8"
+    version "6d5ac0f7d3f0af5d13b78044fc31c793aa3549f8"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -188,8 +188,8 @@ class V8 < Formula
 
   resource "third_party/partition_alloc" do
     url "https://chromium.googlesource.com/chromium/src/base/allocator/partition_allocator.git",
-        revision: "b2155fca494c5b6266d42f9129ae3a7b85482c95"
-    version "b2155fca494c5b6266d42f9129ae3a7b85482c95"
+        revision: "936619c71ecb17c0e2482cf86be3f3f417b2f683"
+    version "936619c71ecb17c0e2482cf86be3f3f417b2f683"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -199,8 +199,8 @@ class V8 < Formula
 
   resource "third_party/simdutf" do
     url "https://chromium.googlesource.com/chromium/src/third_party/simdutf.git",
-        revision: "75bea7342fdac6b57f7e3099ddf4dc84d77384f6"
-    version "75bea7342fdac6b57f7e3099ddf4dc84d77384f6"
+        revision: "93b35aec29256f705c97f675fe4623578bd7a395"
+    version "93b35aec29256f705c97f675fe4623578bd7a395"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -210,8 +210,8 @@ class V8 < Formula
 
   resource "third_party/zlib" do
     url "https://chromium.googlesource.com/chromium/src/third_party/zlib.git",
-        revision: "2182f37a0861358faa9f6b8e0dacce32142c3a33"
-    version "2182f37a0861358faa9f6b8e0dacce32142c3a33"
+        revision: "980253c1cc835c893c57b5cfc10c5b942e10bc46"
+    version "980253c1cc835c893c57b5cfc10c5b942e10bc46"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
@@ -220,6 +220,9 @@ class V8 < Formula
   end
 
   def install
+    # Workaround for an error: no member named 'powl' in namespace 'std'
+    inreplace "src/objects/js-duration-format.cc", "std::powl", "powl"
+
     resources.each { |r| r.stage(buildpath/r.name) }
 
     # Build gn from source and add it to the PATH

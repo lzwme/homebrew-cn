@@ -3615,6 +3615,7 @@ Homebrew-homebrew-core/Formula/l/lakekeeper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lame.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lammps.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lando-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/landrun.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/langgraph-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/languagetool-rust.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/languagetool.rb, Homebrew/homebrew-core, 0
@@ -6704,6 +6705,7 @@ Homebrew-homebrew-core/Formula/s/skani.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skeema.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/ski.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/skills.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/skillshare.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skinny.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skktools.rb, Homebrew/homebrew-core, 1
@@ -7199,6 +7201,7 @@ Homebrew-homebrew-core/Formula/t/tere.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termbg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termbox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termcolor.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/termframe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terminal-notifier.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terminalimageviewer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terminator.rb, Homebrew/homebrew-core, 1
@@ -8648,6 +8651,7 @@ Homebrew-homebrew-cask/Casks/b/betaflight-configurator.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask/Casks/b/betelguese.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/better-window-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/betterandbetter.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/bettercapture.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/betterdiscord-installer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/betterdisplay.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bettermouse.rb, Homebrew/homebrew-cask, 0
@@ -9571,6 +9575,7 @@ Homebrew-homebrew-cask/Casks/f/fabfilter-simplon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fabfilter-timeless.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fabfilter-twin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fabfilter-volcano.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/fabric-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/factor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fake.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/falcon-sql-client.rb, Homebrew/homebrew-cask, 1
@@ -10574,6 +10579,7 @@ Homebrew-homebrew-cask/Casks/font/font-g/font-gloock.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/font/font-g/font-gloria-hallelujah.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-glory.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-gluten.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-g/font-gmarket-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-gnu-unifont.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-go-mono-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-go.rb, Homebrew/homebrew-cask, 0

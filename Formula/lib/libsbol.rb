@@ -17,6 +17,10 @@ class Libsbol < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ef4f70407b40a1c4791f08309df2075a15cac5a038f0085ecfa23ff0d460258"
   end
 
+  # Last release on 2019-07-06
+  deprecate! date: "2026-03-01", because: :unmaintained
+  disable! date: "2027-03-01", because: :unmaintained
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "jsoncpp"
@@ -29,7 +33,12 @@ class Libsbol < Formula
   on_macos do
     # Fails with Apple Clang 1700+ / LLVM Clang 19+
     # include/sbol/property.h:135:71: error: member access into incomplete type 'SBOLObject'
+    # And cannot use GCC as has C++ dependencies so need to use libc++
     depends_on "llvm@18" => [:build, :test] if DevelopmentTools.clang_build_version >= 1700
+  end
+
+  fails_with :llvm_clang do
+    cause "include/sbol/property.h:135:71: error: member access into incomplete type 'SBOLObject'"
   end
 
   def install

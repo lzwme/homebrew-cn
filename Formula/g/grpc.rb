@@ -5,6 +5,7 @@ class Grpc < Formula
       tag:      "v1.78.1",
       revision: "5b6492ea90b2b867a6adad1b10a6edda28e860d1"
   license "Apache-2.0"
+  revision 1
   compatibility_version 1
   head "https://github.com/grpc/grpc.git", branch: "master"
 
@@ -20,12 +21,12 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5def1df59ea6fecd20f3a4f1082d8ff3badafece0510ff498ee7fd3b5a0e1fc6"
-    sha256 cellar: :any, arm64_sequoia: "a56e4ec1760eb5dc2a715d246b3cad1b158c96d181b361252765293195cf279b"
-    sha256 cellar: :any, arm64_sonoma:  "538bdd2ee34e8ecd51ba2adec54351f2bca263dad81c744cc56489108a840811"
-    sha256 cellar: :any, sonoma:        "0f90b8cdd7d6a9b5e44a63d17c756765fd5c71ee45e1bf7579a3e7919e2b381b"
-    sha256               arm64_linux:   "240bf31b99c4f4f1121f43452ff5cbec6f68eb70954f868aa68e4b83aab1d50f"
-    sha256               x86_64_linux:  "0cdc078ea1a542d5675dfbe524643d9c1ed81d5a08f0545f69a1af07ae0c9de4"
+    sha256 cellar: :any, arm64_tahoe:   "dfde9b2bdd706c7dd90e8b552edbcced92afb8a42f54a7e39aff102e2b1755ef"
+    sha256 cellar: :any, arm64_sequoia: "792d3130e725f3f02b9a57f85c6e688adf7af362e57b14aa631ecc48e22b60a7"
+    sha256 cellar: :any, arm64_sonoma:  "e89bdc77b95eafe184629c8e3e233e0469cee2ac34f68d934b6cbf2ff19ab21a"
+    sha256 cellar: :any, sonoma:        "959919be7e85ad43e06dae7d5b76ec91b5bae106c758d71f3a3911bf44837e98"
+    sha256               arm64_linux:   "faa60f8447dbe3ff42fb2ac86e93b29ec3df1025e1af70d4b2d06eed3c9c8dee"
+    sha256               x86_64_linux:  "6e923857c20dcef6b434051e27126a4eddd17aefcbec0818d67126ef2e25bddd"
   end
 
   depends_on "cmake" => :build
@@ -33,7 +34,7 @@ class Grpc < Formula
   depends_on "abseil"
   depends_on "c-ares"
   depends_on "openssl@3"
-  depends_on "protobuf"
+  depends_on "protobuf@33" # https://github.com/grpc/grpc/issues/41755
   depends_on "re2"
 
   on_macos do
@@ -104,6 +105,7 @@ class Grpc < Formula
     CPP
 
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["protobuf@33"].opt_lib/"pkgconfig"
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["zlib-ng-compat"].opt_lib/"pkgconfig" if OS.linux?
     flags = shell_output("pkgconf --cflags --libs libcares protobuf re2 grpc++").chomp.split
     system ENV.cc, "test.cpp", "-L#{Formula["abseil"].opt_lib}", *flags, "-o", "test"

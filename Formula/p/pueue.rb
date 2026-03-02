@@ -1,18 +1,18 @@
 class Pueue < Formula
   desc "Command-line tool for managing long-running shell commands"
   homepage "https://github.com/Nukesor/pueue"
-  url "https://ghfast.top/https://github.com/Nukesor/pueue/archive/refs/tags/v4.0.2.tar.gz"
-  sha256 "059ee9688cb8b1ce46284f5ad58de21911b6af50098d29598085d2b9dbd432ab"
+  url "https://ghfast.top/https://github.com/Nukesor/pueue/archive/refs/tags/v4.0.3.tar.gz"
+  sha256 "4c1acbdbd5260b0b7f76aae7ad142665de664745a7ed63425190e06c0c7478b1"
   license "MIT"
   head "https://github.com/Nukesor/pueue.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bcd3cc2c551e3ada35ce6f835138fe512f64271640fb0c6147e0cd88a734f192"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a35916296584183f4825f3e406b1c100b439b8ba1c9ef640c9b28b6d5a895146"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52cdf7b5563f7aeff4ce6c755dde08edf718a9f152ff328deb5bf553dee9bd8e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "109ba87c2e2e91321198f9e99915e947013158a2af8098d240973a247c5b66c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e4a478c998e4a6f3d6664adc7c6e1631e9205c0f24b14c5f074d079a5d91418"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c9c2feea36abd35a6453c8f98741c318f4cac57810ae13746da76fbf5fdfc5a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e1dcb7ea68b64e8831cadd514d6e520b25eaab9b011ded7f4850f564bc60031"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7159ab05aafcf80f708cd75cea82cb04c0b3957dd9e9437e59f1923f4e31d6b6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75c57f43ef0ac53793fc370d87ed6360d35f7c4b996f5cffef4a522a32f5314a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bfe81c17d789b872302f351fcdd1b5dcd384de3e6d2485f459aad21fa5d95f0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0034a5aa5720bb557ac2e6f30bc9ae9f42c4dec8236fc2ab72940687fcbfd6bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77ef12625be1fcba0b4307a6b18b4c79919b634ecb914731c507efd230818a19"
   end
 
   depends_on "rust" => :build

@@ -1,20 +1,22 @@
 class Beads < Formula
   desc "Memory upgrade for your coding agent"
   homepage "https://github.com/steveyegge/beads"
-  url "https://ghfast.top/https://github.com/steveyegge/beads/archive/refs/tags/v0.55.4.tar.gz"
-  sha256 "aef59d95f42dd9f13712411faffc02840871e43060fababc80d7f70b06b4d2c4"
+  url "https://ghfast.top/https://github.com/steveyegge/beads/archive/refs/tags/v0.57.0.tar.gz"
+  sha256 "4f2c3ea960fbc2d8f5a4cb97cd0191c1f0afb66bcfad725a998089ff0c30dd21"
   license "MIT"
+  compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f3482a9aaa978f62f8db069c23f5517a273f06676bd3ddee0fb819531c24d2d1"
-    sha256 cellar: :any,                 arm64_sequoia: "a44f06fe740b31860bb9e2b7612921388753962e3f8964062267440f6c31d680"
-    sha256 cellar: :any,                 arm64_sonoma:  "f002e8216b5e53d4b7a38e87dd203f9cabf8cfe11695fb083daf50a5d0bbc39c"
-    sha256 cellar: :any,                 sonoma:        "c2565e957f7ce6ee69d5bd094b1db0985db99a4908129ca63af8ddd07340f6ef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d58368a795948119e9c6b9369aceaec2af3edd5fdb49beba66cc0873576741e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a7ab626cf106dfb4a7190c7890c535b565c1886600707c8b703ed61e649f7d2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0da4e0d97fe4fd471f285c47347ad1304e2f62d2ea808637945fe0367b7ee035"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0da4e0d97fe4fd471f285c47347ad1304e2f62d2ea808637945fe0367b7ee035"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0da4e0d97fe4fd471f285c47347ad1304e2f62d2ea808637945fe0367b7ee035"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9fbc5a10d2908fbe8845d6c228b0b88f42d85c6cde450a9b285c17e90da3c9f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "913349e23c37cd02f1d7e85c4e548d4f77affec93b54bb83c5a7547b4d338887"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9ae4944050bc9ed7c728a45831977bbc2d9bbf541acb5cfc294a0670e647655"
   end
 
   depends_on "go" => :build
+  depends_on "dolt"
   depends_on "icu4c@78"
 
   def install

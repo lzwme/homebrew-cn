@@ -12,36 +12,33 @@ class Plzip < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "6ba7db43465095e0bfb4b8a117f14bda8588fafc7dc605a2ada4035e81cfdb37"
-    sha256 cellar: :any,                 arm64_sequoia: "fa68bcaa48dd0802050154c8d55a806cdb2438147002937446900a25f252d386"
-    sha256 cellar: :any,                 arm64_sonoma:  "f1170578b9745c5eea571dbafe958f3fdcdf455e3e2e60a8e2ced6cb7bf0b1b4"
-    sha256 cellar: :any,                 sonoma:        "c8ca22b92ad54aa1ead0e792d0f34731d24b288d18968ae47f31a136d994434d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8bc9d28a291384c6be41a8db706e57f5fe186d65fcab884ce351651e6439abf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1ca5446b35b910a59409dcde145db4957a80fcf1a65d6b5cb0903476070eb6b"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "87bd7ffcf85a0d9cbf1ed155a5514e45867d84768ddaae9fad6bd4573f33a8b5"
+    sha256 cellar: :any,                 arm64_sequoia: "8dfc51f42cbb49c2d4b2a845fa7c8e16d1336344494472dad00e9aea1c8ff445"
+    sha256 cellar: :any,                 arm64_sonoma:  "c8de2539897f2006b34d24215dafcebec16f54533dc69c532eb3d6a42c2ef2d8"
+    sha256 cellar: :any,                 sonoma:        "e97fc21b0ca62568f80f5271108b7df9e4c75b5a4684675c616648a385a52659"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f889ea88d7b79ae7a9b23d8a81f7beee6758003716a8f7399d769c06aa971c5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3199f435251873f53c8830e73bf813bcdbfc920cab72d6d6fa5170df4998e3e1"
   end
 
   depends_on "lzlib"
 
-  # `make check` fails with "(stdin): Not enough memory" since Apple Clang 1700 / LLVM Clang 18
-  on_macos do
-    depends_on "llvm@17" => :build if DevelopmentTools.clang_build_version >= 1700
+  on_sequoia :or_newer do
+    depends_on "gcc"
+
+    # Binaries created by Apple Clang 1700+ are broken
+    fails_with :clang do
+      cause "'make check' fails with '(stdin): Not enough memory'"
+    end
+  end
+
+  fails_with :llvm_clang do
+    cause "'make check' fails with '(stdin): Not enough memory'"
   end
 
   def install
-    args = ["--prefix=#{prefix}"]
-
-    # `make check` fails with "(stdin): Not enough memory" since Apple Clang 1700 / LLVM Clang 18
-    if ENV.compiler == :clang && DevelopmentTools.clang_build_version >= 1700
-      ENV.append_to_cflags "-I#{Formula["lzlib"].opt_include}"
-      args += %W[
-        CC=#{Formula["llvm@17"].opt_bin}/clang
-        CXX=#{Formula["llvm@17"].opt_bin}/clang++
-        CXXFLAGS=#{ENV.cxxflags}
-      ]
-    end
-
-    system "./configure", *args
+    # Not an autotools configure script
+    system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "check"
     ENV.deparallelize

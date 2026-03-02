@@ -23,7 +23,7 @@ class Libunicode < Formula
   end
 
   on_linux do
-    depends_on "gcc" if DevelopmentTools.gcc_version < 13
+    depends_on "gcc" # TODO: remove and rebuild bottle on Ubuntu 24.04
   end
 
   fails_with :clang do

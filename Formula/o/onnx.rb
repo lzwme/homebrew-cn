@@ -4,20 +4,20 @@ class Onnx < Formula
   url "https://ghfast.top/https://github.com/onnx/onnx/archive/refs/tags/v1.20.1.tar.gz"
   sha256 "9bcd6473c689b1ac3aeba8df572891756e01c1a151ae788df5cbc7a4499e5db5"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bbf1df574852d99a3f963757bb9a40cb323efc459a63b071fba3412bc2541135"
-    sha256 cellar: :any,                 arm64_sequoia: "95d12d398aec1782ca39311a292f734bfb019972e3b201b8f5e72f2b8c6c80ca"
-    sha256 cellar: :any,                 arm64_sonoma:  "9d8cd9e111b67a6a9a787190efc5b08141516b06c1ca27d6b629c33a0abf6667"
-    sha256 cellar: :any,                 sonoma:        "67a9dbc10663c920dfaaab5dca20aa6a154f6ecc4f109283b0b7fcddcd29ee06"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc8ce399f13a465255d52932e60efdc2166bfb65fe1409f639c6cb2ff47ec1b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3c26bae98f2aa1e494f51af11ab7378d8db403c249727a0e99f76011cf357e8"
+    sha256 cellar: :any,                 arm64_tahoe:   "b08d78e17d7651c14a03f45716f396e5e2db5b0e4355392bf79cdd98193b49bd"
+    sha256 cellar: :any,                 arm64_sequoia: "405c64fd31fb22ea7fb132ad34b9d5736a64883d4b6bed870b7318bec02cbab6"
+    sha256 cellar: :any,                 arm64_sonoma:  "b5a301469be377ac3aef704060467854cdbd659e9dd5cc0d70ab240216e1d24b"
+    sha256 cellar: :any,                 sonoma:        "e7316ce7f9ce23c18ff031accb61510c68602090c9fba7f21b7ac021b19e6d3a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4142c13244b3816b27182512e0e5ed0ee26a22579ae97d4e783235c63e775e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ea571f18d6bcc08c93fdb76a0f9b14eca57b2d61b7473268a9125dada50c2a1"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "abseil"
-  depends_on "protobuf"
+  depends_on "protobuf@33"
 
   uses_from_macos "python" => :build
 
@@ -110,6 +110,7 @@ class Onnx < Formula
     CMAKE
 
     ENV.delete "CPATH"
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@33"].opt_prefix
     args = ["-DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON"]
     args << "-DCMAKE_BUILD_RPATH=#{lib};#{HOMEBREW_PREFIX}/lib" if OS.linux?
     system "cmake", "-S", ".", "-B", "build", *args

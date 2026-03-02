@@ -15,19 +15,26 @@ class Faust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "23fd223a04bb0bcaa8f267ede0c4d6fdb1e652397630a4884819c315a826f945"
-    sha256 cellar: :any,                 arm64_sequoia: "daa6e2b0b2cf00b94ab1c9425f5f0574644587f1db4f74ea91c0139ba914e842"
-    sha256 cellar: :any,                 arm64_sonoma:  "f902b3f47ffff01283038b634ea8dedc0358e1d8f55658e1d7cd7cd5355d8736"
-    sha256                               sonoma:        "6fb6edd3547409c296ad3094449e67c8ca5bd43bc10f83be3f676eda8abc2718"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29e2ad51550d125bc9a66a19e5e2303b19c184e551361aa88628c3fccf23b2eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "566dd33a528deba71d0bdda151bcb37d4bc4bf3a0da53780f8527bfa93ff1dbf"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "a97c75e474df98e3b419f0cfbf2cf9b2247b33de4e23fc9856508a6d2c90013c"
+    sha256 cellar: :any,                 arm64_sequoia: "36ddd63d6e09b68c39098ab01efbcae1b1b0b103b97b9f66fa7edc5ab2447714"
+    sha256 cellar: :any,                 arm64_sonoma:  "01dc8eead738c4d8f5065537b67b23dd3b73152e7f3384d3b8ebddf2592e08ff"
+    sha256                               sonoma:        "9f72314e797fe96dc84196bd009c8aaf62247d1ea57aaf7a8cdb58469fd7e9aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18f6c7b28186cd4acaf5a40140575ceecc495100cee531f49d18d2a0cdf101e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7dcb7a3a9474c2f40132b7b19ced339b85fbfc468c84a806e2a0e9ce277b73e5"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "libmicrohttpd"
   depends_on "libsndfile"
-  depends_on "llvm@21"
+  depends_on "llvm"
+
+  # Backport support for LLVM 22
+  patch do
+    url "https://github.com/grame-cncm/faust/commit/cb26e3a4afba8e766611046d5be3075016fe3f1c.patch?full_index=1"
+    sha256 "1a868637d80263c99dc7aa0128e847d82994eb559abd10a6cd037869853b2079"
+  end
 
   def install
     # `brew linkage` doesn't like the pre-built Android libsndfile.so for faust2android.
@@ -76,10 +83,10 @@ class Faust < Formula
   end
 
   test do
-    (testpath/"noise.dsp").write <<~EOS
+    (testpath/"noise.dsp").write <<~FAUST
       import("stdfaust.lib");
       process = no.noise;
-    EOS
+    FAUST
 
     system bin/"faust", "noise.dsp"
   end

@@ -1,19 +1,18 @@
 class ClaudeSquad < Formula
   desc "Manage multiple AI agents like Claude Code, Aider and Codex in your terminal"
   homepage "https://smtg-ai.github.io/claude-squad/"
-  url "https://ghfast.top/https://github.com/smtg-ai/claude-squad/archive/refs/tags/v1.0.14.tar.gz"
-  sha256 "19951f70917aef7fda3810b47e3e2dc3110fb04027ff5dbbe3f3c502999b9610"
+  url "https://ghfast.top/https://github.com/smtg-ai/claude-squad/archive/refs/tags/v1.0.16.tar.gz"
+  sha256 "f663667a65dd4e456e49caa67f6998feab4ad56c804ecea024af90afd899084c"
   license "AGPL-3.0-only"
   head "https://github.com/smtg-ai/claude-squad.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f606b288872a5a8f339b9b8ef1115ba7c31c65ad6bef10dab79064c491008d2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f606b288872a5a8f339b9b8ef1115ba7c31c65ad6bef10dab79064c491008d2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f606b288872a5a8f339b9b8ef1115ba7c31c65ad6bef10dab79064c491008d2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4125914a8f0352ed054fbd8f71571441254b425312bd7ef099205686936e7d1a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5ddb361d0f9cb157da039b658ec4cab15750ce3a5a18b1b3d60a95e4c9fc0d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a07e72ba58d582321b8a502e817df5bf0b0a39faae4b316972163445b0ba82d8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c91b57567f1775130a2c84e6a6320ec64204695268e9f762f9017620d29a08c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c91b57567f1775130a2c84e6a6320ec64204695268e9f762f9017620d29a08c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c91b57567f1775130a2c84e6a6320ec64204695268e9f762f9017620d29a08c1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "be2ed5b4b1b392bbbc6593defdef15b991896ca91459e52aa68b765687392387"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4b4219e375b35dcf60822db199ffe0b091969d6bcd6dbecba66310a5d6c870a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8819ca1f84628e9be60d3a9d45b68690af27a34345cb4688038b520eaf738372"
   end
 
   depends_on "go" => :build

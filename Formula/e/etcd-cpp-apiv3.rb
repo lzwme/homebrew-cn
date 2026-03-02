@@ -4,15 +4,15 @@ class EtcdCppApiv3 < Formula
   url "https://ghfast.top/https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/archive/refs/tags/v0.15.4.tar.gz"
   sha256 "4516ecfa420826088c187efd42dad249367ca94ea6cdfc24e3030c3cf47af7b4"
   license "BSD-3-Clause"
-  revision 41
+  revision 42
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "257a7b928df96196bd0ac2ef5a05620142e35084dc4b2ccb009b10567c2e6df8"
-    sha256 cellar: :any, arm64_sequoia: "10ec0d4250b55364c88ff5cc3b4b94d5a9cb07066f38afe09ed1ed051b3ce8a0"
-    sha256 cellar: :any, arm64_sonoma:  "db1305a8e453a68f60f946f8ed46de7d7c9e6ab5dd162799cb2a06eff091ebee"
-    sha256 cellar: :any, sonoma:        "6c2ff46ea6575503c4de390b5aa3500f7b46b6941344c77671c84d55456c10e3"
-    sha256               arm64_linux:   "9f3d06f33451e9373b2ab3606ee433a92c65b809721ab6dd5016024a81401a7d"
-    sha256               x86_64_linux:  "317ec2c59e01a11e2a94ce2c8dac1d2b2f0b79134264f45b58ff06750ef5bb10"
+    sha256 cellar: :any, arm64_tahoe:   "86e44fefa84f9e1e00217e1ddfe920d6bf8f730d230c6a05eb795937f8067bba"
+    sha256 cellar: :any, arm64_sequoia: "235622bc6670f294ef38e48025cb9ecef618b4c990b785572ecb2b24efdfa10b"
+    sha256 cellar: :any, arm64_sonoma:  "23ef8616d69de294e8e2b73dc954a2e2d954c1417de4a193fa3f6bccb2500454"
+    sha256 cellar: :any, sonoma:        "54af114e7dc476af95e2e7f78ef1a5bd677413c170ff8481b251bdd783738ecf"
+    sha256               arm64_linux:   "cdb20b2b05599d68eeef2346a838965a3c0d15562958f6b1d21f1624f0020dae"
+    sha256               x86_64_linux:  "3eba3362b3badc575942733642743a5964702329b4b195d532b2f569898d6c7f"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -23,7 +23,7 @@ class EtcdCppApiv3 < Formula
   depends_on "cpprestsdk"
   depends_on "grpc"
   depends_on "openssl@3"
-  depends_on "protobuf"
+  depends_on "protobuf@33"
   depends_on "re2"
 
   # Fix for removal of GPR_ASSERT macro in grpc.
@@ -89,6 +89,7 @@ class EtcdCppApiv3 < Formula
     args = %W[
       -Wno-dev
       -DCMAKE_BUILD_RPATH=#{HOMEBREW_PREFIX}/lib
+      -DCMAKE_PREFIX_PATH=#{Formula["protobuf@33"].opt_prefix}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args

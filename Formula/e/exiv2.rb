@@ -1,8 +1,8 @@
 class Exiv2 < Formula
   desc "EXIF and IPTC metadata manipulation library and tools"
   homepage "https://exiv2.org/"
-  url "https://ghfast.top/https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.7.tar.gz"
-  sha256 "5e292b02614dbc0cee40fe1116db2f42f63ef6b2ba430c77b614e17b8d61a638"
+  url "https://ghfast.top/https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.8.tar.gz"
+  sha256 "ea51b0609f58a9afa063b60daa1539948b62247721e154f4fff0ad3aec9f9756"
   license "GPL-2.0-or-later"
   head "https://github.com/Exiv2/exiv2.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Exiv2 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "aff08c1f30eda5208eb797a28238026813df658a4830e9e2b95ab32333628c20"
-    sha256 cellar: :any,                 arm64_sequoia: "50d6bf55ab060290299502ebc58d92d382a04000ad0d2bfe6e2f2e45621d2d3b"
-    sha256 cellar: :any,                 arm64_sonoma:  "7f7fc05fcec0eee47505ad62eb759376937ea3720c1d32eaaa5287ae44cc18b4"
-    sha256 cellar: :any,                 sonoma:        "93837fc48d5ea4e6b10e59cfc5e2026b013c84e9558871abc51c2ffbd6b72d3e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "86b452e488a4d74d6e4c0cb4d6503b8bb01e24f1e102a5797d38035644dbe377"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59b92f813973165479b40d6baa57fd16710ddc89e36a84d249ec82b0f226d6a9"
+    sha256 cellar: :any,                 arm64_tahoe:   "cb8893ed6691191316d9a49d154225d21de757100cba6ee4a4c7085ff42b4265"
+    sha256 cellar: :any,                 arm64_sequoia: "e3203c49dce1e55609cd9d5f4d31e6cdf884b705b087082a2a0d8f76b2e4db5b"
+    sha256 cellar: :any,                 arm64_sonoma:  "10cccfbeebc55c69140eb1d6649d7011696f349006ccaa05811d51c244067a8e"
+    sha256 cellar: :any,                 sonoma:        "f14d137e2dd33f271cfa714f180451f32eb6a7d3f9391b71ae8a374e96e538af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "189b9457b0482eff75f5896e5494649796d576b6b723707360acd328b17b8ea6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dce70243b7ae3edfb4b097810add3ec263dbec8254bcb1210445728f4af4edd2"
   end
 
   depends_on "cmake" => :build

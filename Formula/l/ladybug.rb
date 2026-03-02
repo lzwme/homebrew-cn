@@ -1,24 +1,37 @@
 class Ladybug < Formula
   desc "Embedded graph database built for query speed and scalability"
   homepage "https://ladybugdb.com/"
-  url "https://ghfast.top/https://github.com/LadybugDB/ladybug/archive/refs/tags/v0.14.3.tar.gz"
-  sha256 "9fcae7c52640ea11dd58c1424552dcd34bdb835e10b1c812fdd361a7a1b30377"
+  url "https://ghfast.top/https://github.com/LadybugDB/ladybug/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "f297634b8bc981f36f11b43b041f867e8d91a48e0a21a42f7f3cc41fe3e35623"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85118d8cbe0dd171baf10824103f938fd139bd971fdf74864c63a7ef92e43d6c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "241757fc482e3679056b74e344a3c0c58d9050df013bdba3457f8418db5726a9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e1764e7e275ddd54c4b3caacc1ecfdd2b0977adfbff989fb78832b33c428e36"
-    sha256 cellar: :any_skip_relocation, sonoma:        "136df9ec9fb7b9d0f7973b617372cb1d5b5e994461156f9a2280ac96540d1933"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b897b41a46b517b2c1fc857a7f67fcd016f2de8decbb7f10ac0bf6fa6cf576c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c090dfae861eafd229be01fa76d6b47562ce97bae6fa4d9cf51f5e7422f57ea"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ff67d637ca2e4770cbef316dbe9b6a6e306840a6c35ac369a0009847eb03e6e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8483342f343d7e8d85f3e593d8cf8a4159630d696d2471f1f2b80da7ff9c8aad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c711c66f1bbda846a066c936928b41feb391a21fedec0fd20d15f0101b0a552"
+    sha256 cellar: :any_skip_relocation, sonoma:        "792b476abadc9d359fd0cd4135b9cfd3238c0b91372f8289eeb90e313732b670"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63765cb37d7becd2ac32bdf75f44db2385a1ac71c53751db5b848ad8f916841b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c31ba028034b7e30265ad07f73e871c327d610b2e8b1fb0e245e6aacfda77500"
   end
 
   depends_on "cmake" => :build
   uses_from_macos "python" => :build
 
+  on_linux do
+    depends_on "gcc"
+  end
+
+  fails_with :gcc do
+    version "12"
+    cause "Requires C++20 std::format, https://gcc.gnu.org/gcc-13/changes.html#libstdcxx"
+  end
+
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    args = %W[
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     bin.install "build/tools/shell/lbug"
   end

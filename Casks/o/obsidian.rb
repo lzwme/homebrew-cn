@@ -19,6 +19,7 @@ cask "obsidian" do
   depends_on macos: ">= :monterey"
 
   app "Obsidian.app"
+  binary "#{appdir}/Obsidian.app/Contents/MacOS/Obsidian", target: "obsidian"
 
   zap trash: [
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/md.obsidian.sfl*",

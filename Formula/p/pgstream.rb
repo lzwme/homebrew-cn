@@ -6,12 +6,13 @@ class Pgstream < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "879971f4e0b6b26b40b56230f01be59427d2b3db377042c94f032b2577e6601b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "879971f4e0b6b26b40b56230f01be59427d2b3db377042c94f032b2577e6601b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "879971f4e0b6b26b40b56230f01be59427d2b3db377042c94f032b2577e6601b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "42383fa97b55cbdff1edb9a1ccc80e97d6c0f64526f322a42316b8e272735698"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9be5ed041995bb5b91de46ed13db4cac83b7054ccfba5391584f5ab5c640bf7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30a0cd97a8e3de921dde13032de6857fc133040c27a467d70813cd924ff8d37e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3e4f5b593556edbb40dfcc90ecde3df1495c0e74cb85f561c0114d239c746d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3e4f5b593556edbb40dfcc90ecde3df1495c0e74cb85f561c0114d239c746d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3e4f5b593556edbb40dfcc90ecde3df1495c0e74cb85f561c0114d239c746d3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8574a2194f1914bb1a05f0b12a70c2c967a249387c5e1d4b409c9c828aa1c5bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ba3e4464b803af28dd02061ddc1cbacf75222dab31c348838a9a02dc4ca9cd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b374394b5710faffeef8f70e46e8cc0bbd8b23566bf3715a9814ac1eea8962f"
   end
 
   depends_on "go" => :build
@@ -21,6 +22,8 @@ class Pgstream < Formula
   def install
     ldflags = "-s -w -X github.com/xataio/pgstream/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
+
+    generate_completions_from_executable(bin/"pgstream", shell_parameter_format: :cobra)
   end
 
   test do

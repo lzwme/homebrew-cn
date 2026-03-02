@@ -32,12 +32,7 @@ class Pgloader < Formula
 
   on_linux do
     # Patchelf will corrupt the SBCL core which is appended to binary.
-    on_arm do
-      pour_bottle? only_if: :default_prefix
-    end
-    on_intel do
-      pour_bottle? only_if: :default_prefix
-    end
+    pour_bottle? only_if: :default_prefix
   end
 
   def install

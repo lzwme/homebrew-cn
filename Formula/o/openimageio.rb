@@ -1,8 +1,8 @@
 class Openimageio < Formula
   desc "Library for reading, processing and writing images"
   homepage "https://openimageio.readthedocs.io/en/stable/"
-  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v3.1.10.0.tar.gz"
-  sha256 "6b62ceb83c8131ec49a999e0008750b52d98162d79265af47430cf83ed03ec0b"
+  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v3.1.11.0.tar.gz"
+  sha256 "992269ed9b24b17d283a2a05dd11dce582886e97b13b1793eca63b96251b095b"
   license "Apache-2.0"
   head "https://github.com/AcademySoftwareFoundation/OpenImageIO.git", branch: "main"
 
@@ -13,13 +13,12 @@ class Openimageio < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "c0fe7a3910d86662a4b13e02a046a450b4ce5a533d9fd1f961726d0442fb70a4"
-    sha256 cellar: :any,                 arm64_sequoia: "553da001ceeae99dcb1db55e6da0a2c1148f7212e1c29aa8e4903d150856cacb"
-    sha256 cellar: :any,                 arm64_sonoma:  "c96354641b2eec4d04d3bbc9170679642e7a4e5c285020850bb1f1594e2cf36b"
-    sha256 cellar: :any,                 sonoma:        "6bf04ff674f441d3de22963a27af0560da4fe793fe42a4381d2a122c93f84f48"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "79faeb78c7959084ca13a11e3d8c9ed7b67e5e25a42c479d0e333adfa4509ac0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "339d7067b0daa476731b87d02b798bd621268e903d7727beb7ee6939c3d9cac4"
+    sha256 cellar: :any,                 arm64_tahoe:   "1841d41e94680e93b40a7a4a604778148b82c21f3b2696013d73158bf61c6c9f"
+    sha256 cellar: :any,                 arm64_sequoia: "101efb5b6e72261d72977fdc001de863615f0a67c4947ed78f614f2bde3f3e00"
+    sha256 cellar: :any,                 arm64_sonoma:  "ebcaf3681f6e6d323ea39a5689523d5a1f1f758c3c23315cdc4830727530f4c2"
+    sha256 cellar: :any,                 sonoma:        "1113a4b5ae372e4fa72f38528db152e2f8633504c6e57022199def059b590fc1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8865337317ec459f4299cf212aed77fc77c377aff06968a09009c9fad62fb1c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48ef109ad6fb1b89f2d6745660208808833465c0ae0ef3920aeaa5f411ebf5ac"
   end
 
   depends_on "cmake" => :build

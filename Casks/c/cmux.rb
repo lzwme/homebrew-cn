@@ -17,6 +17,7 @@ cask "cmux" do
   depends_on macos: ">= :sonoma"
 
   app "cmux.app"
+  binary "#{appdir}/cmux.app/Contents/Resources/bin/cmux"
 
   zap trash: [
     "~/Library/Application Support/cmux",
