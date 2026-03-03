@@ -10,8 +10,6 @@ class Libdsk < Formula
     regex(/Stable version.*?href=.*?libdsk[._-]v?(\d+(?:\.\d+)+)\.t/im)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "feb56e14f0d05e880c42e25c4780cba7eb930b9e1aa4a313045accd8abdf4e49"

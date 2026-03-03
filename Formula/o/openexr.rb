@@ -1,17 +1,17 @@
 class Openexr < Formula
   desc "High dynamic-range image file format"
   homepage "https://www.openexr.com/"
-  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.4.5.tar.gz"
-  sha256 "b10f21d3f8ff3211eb1687a2e2bf7a79d361aec8dfaca1f9b79f3d70755b4f48"
+  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.4.6.tar.gz"
+  sha256 "f8cfe743a81c8cc1dd3cbaafa7fa76f75ad31456b0fc45a42b086d12530a4e35"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e2c7a731a33246bc190e6cb065ad315cd6d8f14fdf92e5a6115b5247ddc1df8d"
-    sha256 cellar: :any,                 arm64_sequoia: "87fdf424951a35592f7b93f2b8d0b470270e23c356f11053591bda69e2791649"
-    sha256 cellar: :any,                 arm64_sonoma:  "e7007bd0c636b2cbb56692a4e4f2892dc6d604272d996ffd7ba7eadf6bf3bd19"
-    sha256 cellar: :any,                 sonoma:        "e075f6626b78592d5c8304eca600d7763b592ef06f0735bd334c6943d70c726b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29bf1829a95d305c46de3ee59b78c7ae1d3ac3f9edf60f58e5311c5d11f71acd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08d476a542722036076a61bfc7982a9ed9149d2e004b50d7130cf31552e03c9c"
+    sha256 cellar: :any,                 arm64_tahoe:   "09aa9122bfb7a93265cf66ca507baaab4e4679ddae079b4922688fccaca7ee61"
+    sha256 cellar: :any,                 arm64_sequoia: "fb2231bb584eb5aa789f6c4240b4aed018b5bfd63b693e9d0f11a15de644c5d3"
+    sha256 cellar: :any,                 arm64_sonoma:  "423446d4a6fc6f94d344e6af73156f3052edcd4a67ce11b3e64c40142f273740"
+    sha256 cellar: :any,                 sonoma:        "80049c068ebce6eae9b1d7d2fa185123909b89fd4eee9239d3c47b67f00f8833"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "93ef00632a5fc266b17fded26b4c84a25770f1951cb9df59a2a40c4239aade29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1285e286c7f7c9cfe0ba311dbabe169b92541219f917362419641b0b2c5b6a58"
   end
 
   depends_on "cmake" => :build

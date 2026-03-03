@@ -10,8 +10,6 @@ class Log4cpp < Formula
     regex(%r{url=.*?/log4cpp[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "2d325eaadac7646b1f637bcd8277bc4bd8a29b57da84a40541064b8008b1fc21"
     sha256 cellar: :any,                 arm64_sequoia: "92bbf1c1329d4f149a42f2fb278e8ae25776b1f7cdddda05fb4e9194646606ef"

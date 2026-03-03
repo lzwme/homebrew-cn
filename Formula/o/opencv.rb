@@ -2,7 +2,7 @@ class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   stable do
     url "https://ghfast.top/https://github.com/opencv/opencv/archive/refs/tags/4.13.0.tar.gz"
@@ -24,12 +24,12 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4514d92a8d50c4d40b9a579b12080c6173170b64e4fe1d612c5b7f232cfe14bf"
-    sha256 arm64_sequoia: "78689b4764e23825ec0bde48316fc8c1b0443f194588e698399e35555b51dbe2"
-    sha256 arm64_sonoma:  "610de0c37edf8414823d2f6b2fbd2ebc52fca03c7fc3f8a4451e776103be674d"
-    sha256 sonoma:        "87de54e2c3975520e53de31ac56ec85cbc5a9d70d898f78bed2da07550d592c7"
-    sha256 arm64_linux:   "b173c68165bd6fc782ed96941973288766dc19b690a1e89bc564c4b850994225"
-    sha256 x86_64_linux:  "19913343a0eed3eaa54c2e2659a4488b58fad3d67288de038e7c6b219a51978f"
+    sha256 arm64_tahoe:   "5c2e4b59a294599914b71cfe295d00f2e2f7f1e2fb092371e8989f87fc3b6e9c"
+    sha256 arm64_sequoia: "7e089efbe7ff9c3596cffca40a54a81a45045b6b28f358dc87ef2e2aaa9c7b31"
+    sha256 arm64_sonoma:  "7712a5e310369ab1b0fa2ee34e929cdce90dea587bbc3827c57564429eed0278"
+    sha256 sonoma:        "08fd84dfb978d2ee062d00b86d3f5b90a1c3a2527489f6db065c41848cffdcd5"
+    sha256 arm64_linux:   "0115f8488bb9b3ff8835fe110700bfafa9fc3875eb4abd378d0cf673d85af122"
+    sha256 x86_64_linux:  "b5246e45e8dd8cfb619724726a3d80d03346dbe6a42109da09abe188305e841e"
   end
 
   head do
@@ -94,6 +94,11 @@ class Opencv < Formula
     # Remove bundled libraries to make sure formula dependencies are used
     libdirs = %w[ffmpeg libjasper libjpeg libjpeg-turbo libpng libtiff libwebp openexr openjpeg protobuf tbb zlib]
     libdirs.each { |l| rm_r(buildpath/"3rdparty"/l) }
+
+    # Fix OpenVINO 2026 Tensor::data() constness mismatch, upstream bug report, https://github.com/opencv/opencv/issues/28586
+    inreplace "modules/dnn/src/op_inf_engine.cpp",
+              "return Mat(size, type, blob.data());",
+              "return Mat(size, type, const_cast<void*>(blob.data()));"
 
     args = %W[
       -DCMAKE_CXX_STANDARD=17

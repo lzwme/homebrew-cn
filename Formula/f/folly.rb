@@ -1,20 +1,18 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
   homepage "https://github.com/facebook/folly"
-  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2026.01.12.00.tar.gz"
-  sha256 "4b694698c773a3236d6379316f67872db77070d56ea256bec5759964712f9c34"
+  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2026.03.02.00.tar.gz"
+  sha256 "f2a9bbd4bd36256d4554f9917fcefa9ec356cec637d2a743e01a6a1d569224dc"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "e89c848f5ecc2b582cd6f0de58c6408060632a29ee7908eba2a95370888dd4b2"
-    sha256 cellar: :any,                 arm64_sequoia: "a3a9644c73a7d11089769aca129156f1622bf2a69fae833f8ce4c4c54d0cb7fb"
-    sha256 cellar: :any,                 arm64_sonoma:  "c060c7012cd759ba23000fef82d5ce4ead9dd767df8427f2e58cb2779d126c24"
-    sha256 cellar: :any,                 sonoma:        "30a872cf363d30f97c1d7a5fb76b292f3876cafce2e17c4a0eeae4ba49b9f9ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7956a6a6fc872211b52e4f9833e92c90fbf9e475ee167997ad3366605c982dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e01ad159525b43279d1ec39d2340d5ddf6e78acb4c6a542f5d7a6bf310d0407"
+    sha256 cellar: :any,                 arm64_tahoe:   "1cb23b2dda767c57c67f9af304c8b024f2e20915899f67a337babe2adcd6c439"
+    sha256 cellar: :any,                 arm64_sequoia: "4fa29e77619fb5cc9e7254e153bf33286facdd664055ea6a086f8dba10126d4f"
+    sha256 cellar: :any,                 arm64_sonoma:  "c6229c9457a9a12dd26b3ffee0bd6ad11b82a9ce98c0f253684946cbebcf0d76"
+    sha256 cellar: :any,                 sonoma:        "1bb078819c030ca11558a371a4a256d75937ad8633fbdf55d831f4df8506794a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8887b0f37d7b75d7e0a92b07f3d23afdc742edd62c5562033e37b068bc43888"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd64c8ea8cecfe6f2787fb9885d862efca2827f427a38bc93ee8f00d9eb47fad"
   end
 
   depends_on "cmake" => :build
@@ -52,15 +50,12 @@ class Folly < Formula
     EOS
   end
 
-  # Workaround to build with glog >= 0.7
-  # ref: https://github.com/facebook/folly/issues/2171
-  # ref: https://github.com/facebook/folly/pull/2320
-  # ref: https://github.com/facebook/folly/pull/2474
+  # Workaround for arm64 Linux error on duplicate symbols
+  # Based on https://github.com/facebook/folly/pull/2562
   patch :DATA
 
   def install
-    args = %W[
-      -DCMAKE_LIBRARY_ARCHITECTURE=#{Hardware::CPU.arch}
+    args = %w[
       -DFOLLY_USE_JEMALLOC=OFF
     ]
 
@@ -79,9 +74,6 @@ class Folly < Formula
   end
 
   test do
-    # Force use of Clang rather than LLVM Clang
-    ENV.clang if OS.mac?
-
     (testpath/"test.cc").write <<~CPP
       #include <folly/FBVector.h>
       int main() {
@@ -94,36 +86,40 @@ class Folly < Formula
         return 0;
       }
     CPP
-    system ENV.cxx, "-std=c++17", "test.cc", "-I#{include}", "-L#{lib}",
-                    "-lfolly", "-o", "test"
+    system ENV.cxx, "-std=c++17", "test.cc", "-I#{include}", "-L#{lib}", "-lfolly", "-o", "test"
     system "./test"
   end
 end
 
 __END__
-diff --git a/CMake/folly-config.cmake.in b/CMake/folly-config.cmake.in
-index 957ae5c56..fe811d7d9 100644
---- a/CMake/folly-config.cmake.in
-+++ b/CMake/folly-config.cmake.in
-@@ -30,6 +30,7 @@ set(FOLLY_LIBRARIES Folly::folly)
+diff --git a/folly/external/aor/CMakeLists.txt b/folly/external/aor/CMakeLists.txt
+index e07e58745..1429f54e9 100644
+--- a/folly/external/aor/CMakeLists.txt
++++ b/folly/external/aor/CMakeLists.txt
+@@ -20,6 +20,10 @@
+ # Linux ELF directives (.size, etc.) that Darwin's assembler doesn't support
+ if(IS_AARCH64_ARCH)
  
- # Find folly's dependencies
- find_dependency(fmt)
-+find_dependency(glog CONFIG)
++if(BUILD_SHARED_LIBS)
++  set(CMAKE_ASM_CREATE_SHARED_LIBRARY ${CMAKE_C_CREATE_SHARED_LIBRARY})
++endif()
++
+ folly_add_library(
+   NAME memcpy_aarch64
+   SRCS
+@@ -34,6 +38,7 @@ folly_add_library(
  
- set(Boost_USE_STATIC_LIBS "@FOLLY_BOOST_LINK_STATIC@")
- find_package(Boost 1.69.0 REQUIRED
-diff --git a/CMake/folly-deps.cmake b/CMake/folly-deps.cmake
-index 2ca5cfec7..a284a91fe 100644
---- a/CMake/folly-deps.cmake
-+++ b/CMake/folly-deps.cmake
-@@ -62,7 +62,8 @@ if(LIBGFLAGS_FOUND)
-   set(FOLLY_LIBGFLAGS_INCLUDE ${LIBGFLAGS_INCLUDE_DIR})
- endif()
+ folly_add_library(
+   NAME memcpy_aarch64-use
++  EXCLUDE_FROM_MONOLITH
+   SRCS
+     memcpy-advsimd.S
+     memcpy-armv8.S
+@@ -58,6 +63,7 @@ folly_add_library(
  
--find_package(Glog MODULE)
-+find_package(GLOG NAMES glog CONFIG REQUIRED)
-+set(GLOG_LIBRARY glog::glog)
- set(FOLLY_HAVE_LIBGLOG ${GLOG_FOUND})
- list(APPEND FOLLY_LINK_LIBRARIES ${GLOG_LIBRARY})
- list(APPEND FOLLY_INCLUDE_DIRECTORIES ${GLOG_INCLUDE_DIR})
+ folly_add_library(
+   NAME memset_aarch64-use
++  EXCLUDE_FROM_MONOLITH
+   SRCS
+     memset-advsimd.S
+     memset-mops.S

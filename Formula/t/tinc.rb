@@ -1,9 +1,9 @@
 class Tinc < Formula
   desc "Virtual Private Network (VPN) tool"
   homepage "https://www.tinc-vpn.org/"
-  url "https://tinc-vpn.org/packages/tinc-1.0.36.tar.gz"
-  mirror "http://tinc-vpn.org/packages/tinc-1.0.36.tar.gz"
-  sha256 "40f73bb3facc480effe0e771442a706ff0488edea7a5f2505d4ccb2aa8163108"
+  url "https://tinc-vpn.org/packages/tinc-1.0.37.tar.gz"
+  mirror "http://tinc-vpn.org/packages/tinc-1.0.37.tar.gz"
+  sha256 "f63b7e21c32c4c637576d85f36bdd28ea678b5aa17fad02427645dea30e52ac7"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
 
   livecheck do
@@ -11,16 +11,13 @@ class Tinc < Formula
     regex(/href=.*?tinc[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_tahoe:   "fec5d5550d6c34b8ed4a77e0df8a9eb507057df30076f9806e1dab5f10cf797a"
-    sha256 cellar: :any,                 arm64_sequoia: "557684567c679c553dd157dbe92f4740160e2f2a0521d4910e3e40d7578c613d"
-    sha256 cellar: :any,                 arm64_sonoma:  "d17dfcc53d3d26a6168cfb5a1630653308b853801f7495568a9f341d59c5ddc3"
-    sha256 cellar: :any,                 sonoma:        "f40c710167e11b42b729de6be12b8dbda24caa4b238739d4e3176a8ac7e00eb8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "badc117b77ec0ad57a0954ac307698fa34223beb9406a210a30c6f64b0d5e08e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6929dbbd4bc0cbc6e790bedd9be5a92493e1b3810bc7b93c421200eac3c046ef"
+    sha256 cellar: :any,                 arm64_tahoe:   "897c1713ce7c66a1d3f86969cc83533f95698b45329b69b433960455956dc381"
+    sha256 cellar: :any,                 arm64_sequoia: "5b7c292388af7f65cea0c8a21857d7009015dc77f4ba3d00ca62e58c3f0e4e59"
+    sha256 cellar: :any,                 arm64_sonoma:  "a1ac53e02128200442cce3bf8c64254e333f3bbb2a9adfbb7dda354c90208682"
+    sha256 cellar: :any,                 sonoma:        "491fc00a0fefb950612e107b07aad81cb0d181609f091d4286fc775411f1468e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "850d77178d63e341487866033023e8616b199932fc8debfea28cb9eaa4ad1d2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42b16b3f616da81e4f7b8311c4746bb60d73a14c8544308c52181bd241766f03"
   end
 
   depends_on "lzo"

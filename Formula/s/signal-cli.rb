@@ -1,25 +1,25 @@
 class SignalCli < Formula
   desc "CLI and dbus interface for WhisperSystems/libsignal-service-java"
   homepage "https://github.com/AsamK/signal-cli"
-  url "https://ghfast.top/https://github.com/AsamK/signal-cli/archive/refs/tags/v0.13.24.tar.gz"
-  sha256 "c76e290f5ae5f0490eaf7b1d5fe6089d1d1305ee2bebe836cb405f976dd8dbf1"
+  url "https://ghfast.top/https://github.com/AsamK/signal-cli/archive/refs/tags/v0.14.0.tar.gz"
+  sha256 "fe45bf77a3dd735aa677b24c88c5b6d6af653ed9d844d5bd79e5a1f264cd2d32"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8b2ee12323eac268a1cdc3b1d611b60e4a29137b049b151cc97d04dbaa186b4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f58ebaf088e1ea205115aa61466964fb7f48cbfd23ed069770ff8f68d7684b8d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31e1168bb0750efe27c29976a78dee301397141d0d7d96cd224bfeda1708da8f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4f2411058f467e49584287824cb1257e831d05d728acdcd9fe8c52eb4df14d8a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "31370a70af92a50540bc39c3233c268b802f08fb19c8b7eb27034db0a839ccc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8f765d9f1ba3e62277df7e05b21de196562088db69e45ba90c8ef3602471275"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "39e28036bb03d792b0a3f891c2eab7d74e8632a8fdbae1c59e4793ccabaa18e4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f4230823f30d45571c8bc4f6ccbae6403d54f68f22c3799cc02c5ff29972090"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74d0f1975626cee7d735830b4fb25089824d837f63a4a8ad9d89be2f0ee05000"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9021362c064898007458cda647a9b4cced36317e0fc8763b43765b433e650390"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1d5baed4fb49796eda01801b3e58e7dffe787108d89872e815c848b5a2ad026"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bad8ffc1d4bf6af50552f5bbdc01e520961f55c8c8038465fb02236cda422184"
   end
 
   depends_on "cmake" => :build # For `boring-sys` crate in `libsignal-client`
-  depends_on "gradle@8" => :build # older version needed for `libsignal-client`
+  depends_on "gradle" => :build
   depends_on "protobuf" => :build
   depends_on "rust" => :build
 
-  depends_on "openjdk@21"
+  depends_on "openjdk"
 
   uses_from_macos "llvm" => :build # For `libclang`, used by `boring-sys` crate
   uses_from_macos "zip" => :build
@@ -29,16 +29,23 @@ class SignalCli < Formula
   # url=https://ghfast.top/https://github.com/AsamK/signal-cli/releases/download/v$version/signal-cli-$version.tar.gz
   # curl -fsSL $url | tar -tz | grep libsignal-client
   resource "libsignal-client" do
-    url "https://ghfast.top/https://github.com/signalapp/libsignal/archive/refs/tags/v0.87.0.tar.gz"
-    sha256 "bfa6415dfc05cd578b0428605d57ae2474b4c7f85236122a55ffce29bc7de2d9"
+    url "https://ghfast.top/https://github.com/signalapp/libsignal/archive/refs/tags/v0.87.4.tar.gz"
+    sha256 "76b7e851475846e33c1dd0a95d60806a7db001c0911f28ff8903843a22ea8adf"
+
+    # Workaround for gradle 9.x
+    # PR ref: https://github.com/signalapp/libsignal/pull/653
+    patch do
+      url "https://github.com/signalapp/libsignal/commit/88cd7aa21e1d8db12188c8126f87d47182ae4d6c.patch?full_index=1"
+      sha256 "2c37d16b01cfc4bb62a56c6e8c3ba762c47affdcfc983bb33f5510eb99124d72"
+    end
   end
 
   def install
-    java_version = "21"
+    java_version = "25"
     ENV["JAVA_HOME"] = Language::Java.java_home(java_version)
 
     # FIXME: find a better way to handle resource version check as this can easily break
-    regexp = /^## \[#{Regexp.escape(version.to_s)}\].*\s+Requires libsignal-client version (\d+(?:\.\d+)+)/i
+    regexp = /^## \[#{Regexp.escape(version.to_s)}\](?:.*\s+){1,2}Requires libsignal-client version (\d+(?:\.\d+)+)/i
     libsignal_client_version = File.read("CHANGELOG.md")[regexp, 1]
     odie "Could not find libsignal-client version in CHANGELOG.md" if libsignal_client_version.blank?
 

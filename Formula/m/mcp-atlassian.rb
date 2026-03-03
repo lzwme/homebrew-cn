@@ -3,18 +3,18 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/d6/9d/ea79ac007e82f3dfe076f986002b9429860d6ee9a7824d28186dca75a0db/mcp_atlassian-0.20.1.tar.gz"
-  sha256 "a20abbd8b68b7551f2c2d3394c84bd7740121f3af0dbbb1de9ef267c71dbdda0"
+  url "https://files.pythonhosted.org/packages/8c/dd/c086f89ed69b1968a59a3c4d25e4d83b446a0f78a3876bbda30f94957a6a/mcp_atlassian-0.21.0.tar.gz"
+  sha256 "a7dc462c63cbb168c2b3497a1021e47fd7778cfd7e88d55a889e376a6c75fc4c"
   license "MIT"
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "280fcbe4d9533dcfbe60fb4eab70c728187cfc89806e607beb6a61cf96103afa"
-    sha256 cellar: :any,                 arm64_sequoia: "f54cf977621303ac169f14a71b3dfde53910645b9129c57cec3fd147b7887926"
-    sha256 cellar: :any,                 arm64_sonoma:  "db31c5dccbc1ddb5e0c4742e26bb4696cc2f5ad10f61b9c15563ae8536d2b172"
-    sha256 cellar: :any,                 sonoma:        "f6d831040c8800c2957a40d847b8a237cfb27d79168c351a0040467be59214c1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "70b7da5be368474fa24d18085b545deb6572b9f6c56f39bf2cff26b0c216c256"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9d342a87c9ebb5b6614e751ccba764982654cbea283ef50fcd164dd10ce7e96"
+    sha256 cellar: :any,                 arm64_tahoe:   "539c56e80800b146c9079411606780baded82ba549bd88d558e1a7d7a16cbb2d"
+    sha256 cellar: :any,                 arm64_sequoia: "2a92544551c88ea766ae247f91475ff669ecb813f7d87956a94ed35f6ca136c7"
+    sha256 cellar: :any,                 arm64_sonoma:  "a16217e9b0b70b15219eae60ca482285e5f0016afafb208f8bfabd246be3fdd0"
+    sha256 cellar: :any,                 sonoma:        "37deb4bc15f28092d163a27ef863ed171532680bf53b79b9ec68382bf14f2ec8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1e2f1ded395242f4f4fafffb03f9a4f11203fca8fca027f2602b69fefe5e4a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9048504e84a5d35cd69d7a398677f2b9ab55823dae2ba86cd0bcfb390304de0"
   end
 
   depends_on "rust" => :build # for py_key_value_aio > uv_build > maturin
@@ -52,8 +52,8 @@ class McpAtlassian < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/6b/6c/c88eac87468c607f88bc24df1f3b31445ee6fc9ba123b09e666adf687cd9/authlib-1.6.8.tar.gz"
-    sha256 "41ae180a17cf672bc784e4a518e5c82687f1fe1e98b0cafaeda80c8e4ab2d1cb"
+    url "https://files.pythonhosted.org/packages/af/98/00d3dd826d46959ad8e32af2dbb2398868fd9fd0683c26e56d0789bd0e68/authlib-1.6.9.tar.gz"
+    sha256 "d8f2421e7e5980cc1ddb4e32d3f5fa659cfaf60d8eaf3281ebed192e4ab74f04"
   end
 
   resource "beartype" do
@@ -212,8 +212,8 @@ class McpAtlassian < Formula
   end
 
   resource "jsonschema-path" do
-    url "https://files.pythonhosted.org/packages/b3/da/1ebeb1c0ff579c330e200e8b06e6200653e3d0758136d8bd86762d63e7de/jsonschema_path-0.4.2.tar.gz"
-    sha256 "5f5ff183150030ea24bb51cf1ddac9bf5dbf030272e2792a7ffe8262f7eea2a5"
+    url "https://files.pythonhosted.org/packages/4e/b4/41315eea8301a5353bca3578792767135b8edbc081b20618a3f0b4d78307/jsonschema_path-0.4.4.tar.gz"
+    sha256 "4c55842890fc384262a59fb63a25c86cc0e2b059e929c18b851c1d19ef612026"
   end
 
   resource "jsonschema-specifications" do
@@ -367,8 +367,8 @@ class McpAtlassian < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
-    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
+    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
+    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
   end
 
   resource "python-json-logger" do
@@ -457,8 +457,8 @@ class McpAtlassian < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/8b/8d/00d280c03ffd39aaee0e86ec81e2d3b9253036a0f93f51d10503adef0e65/sse_starlette-3.2.0.tar.gz"
-    sha256 "8127594edfb51abe44eac9c49e59b0b01f1039d0c7461c6fd91d4e03b70da422"
+    url "https://files.pythonhosted.org/packages/5a/9f/c3695c2d2d4ef70072c3a06992850498b01c6bc9be531950813716b426fa/sse_starlette-3.3.2.tar.gz"
+    sha256 "678fca55a1945c734d8472a6cad186a55ab02840b4f6786f5ee8770970579dcd"
   end
 
   resource "starlette" do
@@ -507,8 +507,8 @@ class McpAtlassian < Formula
   end
 
   resource "types-python-dateutil" do
-    url "https://files.pythonhosted.org/packages/fe/41/4f8eb1ce08688a9e3e23709ed07089ccdeaf95b93745bfb768c6da71197d/types_python_dateutil-2.9.0.20260124.tar.gz"
-    sha256 "7d2db9f860820c30e5b8152bfe78dbdf795f7d1c6176057424e8b3fdd1f581af"
+    url "https://files.pythonhosted.org/packages/06/7d/4eb84ea2d4ea72b14f180ed2a5c2e7ac3c8e9fd425f7d69a6516cf127f3b/types_python_dateutil-2.9.0.20260302.tar.gz"
+    sha256 "05a3580c790e6ccad228411ed45245ed739c81e78ba49b1cfdbeb075f42bcab0"
   end
 
   resource "types-pyyaml" do

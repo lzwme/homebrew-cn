@@ -1,20 +1,18 @@
 class VowpalWabbit < Formula
   desc "Online learning algorithm"
   homepage "https://github.com/VowpalWabbit/vowpal_wabbit"
-  url "https://ghfast.top/https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.10.0.tar.gz"
-  sha256 "9f4ec5cddf67af2c7aa9b380b23fe22c4b11e2109f2cbaa1314bdf3570749a4d"
+  url "https://ghfast.top/https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.11.0.tar.gz"
+  sha256 "ccf3810413bcf35314ebfacced3e2186b05d9d8fa6e4dfa9d2ef34ed7d9b50a5"
   license "BSD-3-Clause"
-  revision 2
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ff869cf19aa55a6aa7d3433e576680be52cb95ff6f80062ab53da763eb39200b"
-    sha256 cellar: :any,                 arm64_sequoia: "79cdb8d2ee6df0fe49582194dc69a310a5491ac0602e27c54b75b182fa8e8973"
-    sha256 cellar: :any,                 arm64_sonoma:  "2a8d8216335c12f14f3285f3fc0193c0b1b72a6ba2987c4da3a5aeb34e0fc978"
-    sha256 cellar: :any,                 sonoma:        "f550eacee245b32b6079af6f4e5625ace1791940bf00b062c9ce98121ca7e564"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5329e9fb644bf34ed2ec521ebfbddb67339d7574d0021fefa5ab163a25834a5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09f5fe1db04b31f5e63c071b9071f9e8bf843f8ddcea109c95a6d5f2c7ec9748"
+    sha256 cellar: :any,                 arm64_tahoe:   "e2ff8f22307a79867dd56be776acf475b456cfbf8482f84171101dc8c77715f4"
+    sha256 cellar: :any,                 arm64_sequoia: "7664e0852d72f41c2b654ff0d404b41311b0bd10d3ace4a809b63e00f5ef7910"
+    sha256 cellar: :any,                 arm64_sonoma:  "a455448d067774b0b9a88796635b8c324818d7563f81e4fe1a6af64c4ab51050"
+    sha256 cellar: :any,                 sonoma:        "79823d664081e3df84177e2862661288636bf611f113c1ec920276100f8675c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "04d0763c7cbf9fda0076e8c0984900cb037c108d0e55a5ca02c9c7cf8038bba9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50b384ea12769e4fb6d23f37416387d9fbbbe46a90ca0bf190152403657196dc"
   end
 
   depends_on "boost" => :build
@@ -32,17 +30,11 @@ class VowpalWabbit < Formula
     depends_on "sse2neon" => :build
   end
 
-  # Reported at https://github.com/VowpalWabbit/vowpal_wabbit/issues/4700
+  # Fix system RapidJSON packages that export include dirs but no CMake target.
+  # Upstream PR ref: https://github.com/VowpalWabbit/vowpal_wabbit/pull/4902
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/vowpal-wabbit/fmt11.diff"
-    sha256 "15f6f9013715bd1dc33456394b3f464aed863ef726479bb272a2f92db2ee7ea0"
-  end
-
-  # Apply open PR to support eigen 5.0.0
-  # PR ref: https://github.com/VowpalWabbit/vowpal_wabbit/pull/4720
-  patch do
-    url "https://github.com/VowpalWabbit/vowpal_wabbit/commit/1c8a86786f415d44a001e64ba823c5f3e80f48a0.patch?full_index=1"
-    sha256 "035973d7b49ac3cf266700c4777950b2b0ded095114873110b75467bfe3c2199"
+    url "https://github.com/VowpalWabbit/vowpal_wabbit/commit/887a1fdf2d3443b615bd8b4d066518eb84fbb693.patch?full_index=1"
+    sha256 "1204402159a276d31f0883dbdb3191ad6e5e084dcf90e7d8cd3d349c89f70ef5"
   end
 
   def install

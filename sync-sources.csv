@@ -1206,6 +1206,7 @@ Homebrew-homebrew-core/Formula/c/container-compose.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/container-diff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/container-structure-test.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/container.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/containerd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/contentful-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/context7-mcp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/convco.rb, Homebrew/homebrew-core, 1
@@ -2460,6 +2461,7 @@ Homebrew-homebrew-core/Formula/g/git-octopus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-open.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-pages-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/git-pages.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/git-pkgs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-plus.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/git-quick-stats.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-recent.rb, Homebrew/homebrew-core, 1
@@ -3657,7 +3659,7 @@ Homebrew-homebrew-core/Formula/l/lcm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lcov.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lcs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/ld-find-code-refs.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/l/ldapvi.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/ldapvi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ldc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ldcli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ldeep.rb, Homebrew/homebrew-core, 0
@@ -4558,7 +4560,6 @@ Homebrew-homebrew-core/Formula/m/mcp-grafana.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcp-inspector.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-proxy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-publisher.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mcp-scan.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-server-chart.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-server-kubernetes.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-toolbox.rb, Homebrew/homebrew-core, 1
@@ -6777,6 +6778,7 @@ Homebrew-homebrew-core/Formula/s/snowflake-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/snowflake.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snownews.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sntop.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/snyk-agent-scan.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snyk-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snzip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/so.rb, Homebrew/homebrew-core, 1
@@ -7210,6 +7212,7 @@ Homebrew-homebrew-core/Formula/t/termscp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termshark.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termshot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termsvg.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/termusic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tern.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/terracognita.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform-cleaner.rb, Homebrew/homebrew-core, 1
@@ -7715,7 +7718,6 @@ Homebrew-homebrew-core/Formula/v/vint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vips.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vipsdisp.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/v/virgil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/virt-manager.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/virtctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/virtualenv.rb, Homebrew/homebrew-core, 0
@@ -13332,9 +13334,9 @@ Homebrew-homebrew-cask/Casks/m/melodics.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/melonds.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mem.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memo.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/memory-clean-3.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memory-cleaner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memory-map.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/memory-meter-3.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memory.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memoryanalyzer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mendeley-reference-manager.rb, Homebrew/homebrew-cask, 0

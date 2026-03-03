@@ -3,17 +3,17 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.com/github/spec-kit"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.1.10.tar.gz"
-  sha256 "2a3fa0d49939d552b9eaa2ebdbbc4956fde9a5de9d7b3f2f064d5f5fbc4c14d3"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.1.12.tar.gz"
+  sha256 "fcac799349b044a149784c1e9b4cb3084bcdbca6fcf5fad83be0ecbb5db27fe9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f76377c5f1667c1df94604c09f0364ad294f5ffe3b5e10c4afbfc8f7af6b7896"
-    sha256 cellar: :any,                 arm64_sequoia: "dfb8c817991691f5d6411cc3fda64cd44b6acf16082aacb50068cb0446734d94"
-    sha256 cellar: :any,                 arm64_sonoma:  "80e3135b3fc8029c9adbce5979efc1864ca277951b73318d78efa22e50acc879"
-    sha256 cellar: :any,                 sonoma:        "475e5baffb2c13b5a9ab2441a02ccca72eae793b721154b1f0deb88dd005f383"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b78e0f7b47974a7db3945ae1983fc38b398b872400111dff1930cd4295949531"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a7b65076c484e336392f78e133f11696d438b0fa28e7909045630796ed2f1ba"
+    sha256 cellar: :any,                 arm64_tahoe:   "8cbfce3d46df6b4640de291465cc0ed430917b26bba63970412b701dc84dbd6f"
+    sha256 cellar: :any,                 arm64_sequoia: "94b05f7bc9651286acb44c068811c6de1b62bf7fb4a74c711ca07f1ad9841b0a"
+    sha256 cellar: :any,                 arm64_sonoma:  "67eea56156f7312cbf7cff5c5b85fc5ac846d270284e39f5ad3f1eb13a899530"
+    sha256 cellar: :any,                 sonoma:        "50f323d8761e0ed16b1d2af4761081fea614fa1319072267319ded36890e71d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "595e23f37e918c2b61fe6a6c55b0b0bbb666160eb2b5287d467954f4d9d973d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0908292ad62166c9c631a2aaceb9da9da4916b405a17c93dcee14a63631b5fe2"
   end
 
   depends_on "certifi" => :no_linkage

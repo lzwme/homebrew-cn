@@ -12,8 +12,6 @@ class MysqlAT84 < Formula
     regex(/href=.*?mysql[._-](?:boost[._-])?v?(8\.4(?:\.\d+)*)\.t/i)
   end
 
-  no_autobump! because: :incompatible_version_format
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "cd614beaa2b81a1460e4bfb26de2efabb44ad81a0a2abe39c345b2b9fc135a88"

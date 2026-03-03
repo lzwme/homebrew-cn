@@ -1,20 +1,18 @@
 class Proxygen < Formula
   desc "Collection of C++ HTTP libraries"
   homepage "https://github.com/facebook/proxygen"
-  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2026.01.12.00/proxygen-v2026.01.12.00.tar.gz"
-  sha256 "66364e2119618a98f5c3ad62765b53d8bc2c34a9e51e0e861345aa7a5e87414f"
+  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2026.03.02.00/proxygen-v2026.03.02.00.tar.gz"
+  sha256 "9a6bfc54ad2adebd7dd2d1a9afc6c659601425a9abcbab0727fa22112b235106"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256                               arm64_tahoe:   "c795501b553107f1119136850f2637d4a73766a1335cb027afe21753eeae8aca"
-    sha256                               arm64_sequoia: "42756f17eadc76638812f064948122a4929fa439ebe3b2c88c1ee2857b7ee788"
-    sha256                               arm64_sonoma:  "d923df709994fa94e8af6ffc042690f3cfe872ccc1fe237a7fcd5c10f104dc3c"
-    sha256 cellar: :any,                 sonoma:        "af5664751e313c72bbfa6c91d53386acb2769551239cd18428a8cdf739ba6c3a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fd50ecf74c1dfe45f735951779d4d5a7533ab58dbbe48a0b46dd21706c41e8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0e659f828f8cd2c4a1007dedd088e6d9cbc28eb1106f64ce7664be2b65d127a"
+    sha256 cellar: :any,                 arm64_tahoe:   "7f323df59ac682cc6a7b558de220ce75837d424a8e3cc109a6764e2a045038bc"
+    sha256 cellar: :any,                 arm64_sequoia: "debfba1e2124b57808f06886cdf165be4b4cc0198a7463b7144dbf9cf06156ff"
+    sha256 cellar: :any,                 arm64_sonoma:  "4694ca6c802537294c94a11f0d7c82552753188a5c5c9fed4f5aa955f5c17abe"
+    sha256 cellar: :any,                 sonoma:        "1cab9eb2c970cf375ae6397ef9c635cf5f2c08452d63982de7ddb2f90d66a103"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "12b39578f021d4606cade97a008bf3ec7c7edee645196ce1aa5a8b4ffbf9739c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "235dbcc4827eb09c4eb19ce7b414fffec8964e541a80c63de18fd1f9d3287f56"
   end
 
   depends_on "cmake" => :build
@@ -40,15 +38,10 @@ class Proxygen < Formula
 
   conflicts_with "hq", because: "both install `hq` binaries"
 
-  # Fix name of `liblibhttperf2`.
-  # https://github.com/facebook/proxygen/pull/574
-  patch do
-    url "https://github.com/facebook/proxygen/commit/415ed3320f3d110f1d8c6846ca0582a4db7d225a.patch?full_index=1"
-    sha256 "4ea28c2f87732526afad0f2b2b66be330ad3d4fc18d0f20eb5e1242b557a6fcf"
-  end
-
   def install
-    args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
+    # FIXME: shared libraries are currently broken. Unlikely to get much upstream
+    # support given `BUILD_SHARED_LIBS` says: "This is generally discouraged".
+    args = ["-DBUILD_SHARED_LIBS=OFF", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
     if OS.mac?
       args += [
         "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-dead_strip_dylibs",

@@ -10,6 +10,7 @@ cask "donut@nightly" do
   desc "Anti-detect web browser"
   homepage "https://donutbrowser.com/"
 
+  conflicts_with cask: "donut"
   depends_on macos: ">= :big_sur"
 
   app "Donut.app"

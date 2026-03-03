@@ -5,6 +5,7 @@ class Beads < Formula
   sha256 "4f2c3ea960fbc2d8f5a4cb97cd0191c1f0afb66bcfad725a998089ff0c30dd21"
   license "MIT"
   compatibility_version 1
+  head "https://github.com/steveyegge/beads.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0da4e0d97fe4fd471f285c47347ad1304e2f62d2ea808637945fe0367b7ee035"
@@ -30,8 +31,7 @@ class Beads < Formula
       -s -w
       -X main.Version=#{version}
       -X main.Build=#{tap.user}
-      -X main.Commit=#{tap.user}
-      -X main.Branch=v#{version}
+      -X main.Branch=#{build.head? ? "HEAD" : "v#{version}"}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/bd"
     bin.install_symlink "beads" => "bd"

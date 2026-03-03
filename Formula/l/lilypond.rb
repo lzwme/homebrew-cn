@@ -19,8 +19,6 @@ class Lilypond < Formula
     regex(/href=.*?lilypond[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 arm64_tahoe:   "08e195be137c3be99594e3277083e3a87a1ddb795770df30a2c87054b5a8994f"

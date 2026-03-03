@@ -6,8 +6,6 @@ class Vroom < Formula
       revision: "1fd711bc8c20326dd8e9538e2c7e4cb1ebd67bdb"
   license "BSD-2-Clause"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "603f9db571c5a11951f2d2f7a07e4a1108c07798cd1f347dbf4736e6baf6d7b3"
     sha256 cellar: :any,                 arm64_sequoia: "e6cb0a6729f091b1d219c0ba4bfb995dfd3e2e2a445091550743ed273e1c5812"

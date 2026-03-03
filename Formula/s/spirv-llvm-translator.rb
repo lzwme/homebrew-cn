@@ -1,23 +1,24 @@
 class SpirvLlvmTranslator < Formula
   desc "Tool and a library for bi-directional translation between SPIR-V and LLVM IR"
   homepage "https://github.com/KhronosGroup/SPIRV-LLVM-Translator"
-  url "https://ghfast.top/https://github.com/KhronosGroup/SPIRV-LLVM-Translator/archive/refs/tags/v21.1.5.tar.gz"
-  sha256 "704fb1d0244a688b97decafbb51deb11774a081d5ef31652245a2527b658e0a7"
+  url "https://ghfast.top/https://github.com/KhronosGroup/SPIRV-LLVM-Translator/archive/refs/tags/v22.1.0.tar.gz"
+  sha256 "a5d476404ab88ac0d148211da50428178c89caef8af8042a3ca8e71e58ed9427"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "13fbb287c6deb77ab112b8baadd5d5a53eb86d5ddaa9c60baa3f9bc8c0cf0508"
-    sha256 cellar: :any,                 arm64_sequoia: "aaedaf76eac2316de5e1c630dced5606a6b898c7ca60ceb2e2f5f4c5f3d0a19a"
-    sha256 cellar: :any,                 arm64_sonoma:  "a15920a16fbc726935ac4282c65f22378d5df3f836a373f614f95b3fce1e83e9"
-    sha256 cellar: :any,                 sonoma:        "98d0fee4adc63ba039e2aeb27ca713a5e75584803ee871ccb1f661b4d517c774"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e40c1c035b59f6646f5c16ee9454c71efcadd5ac58ea0b17a5d6f82d9f35524"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1c2ec77f8a9a15558eaae584dff3851b8a835ea383aa49cb802197ad3cf3b54"
+    sha256 cellar: :any,                 arm64_tahoe:   "966dcbc340c5a1dde90684f6bd65e50df47ac69d832b992384ac0667170748d4"
+    sha256 cellar: :any,                 arm64_sequoia: "91c12287f7da19448667091bc486fa8802bc3935f1a0c36fa83fe462910bb14c"
+    sha256 cellar: :any,                 arm64_sonoma:  "73b8c0b86c44d643b9561b0d0f42163bb96b50f0db2b9f9414f10a85a98547ff"
+    sha256 cellar: :any,                 sonoma:        "24eb73763db6e832ea4fcc7199ebf4ddd60993adca15ed5e142bef2031c1966c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "905eb3db62ca27e026f8cfc7ca931ebaf1fcca40478ecda51f5a8db6c9a58420"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "896dfc92eca87a325b98b440482f32948bba02ec80a6101631091d344ffee1da"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "spirv-headers" => :build
-  depends_on "llvm@21"
+  depends_on "llvm"
 
   def llvm
     deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }

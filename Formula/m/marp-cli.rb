@@ -4,19 +4,20 @@ class MarpCli < Formula
   url "https://registry.npmjs.org/@marp-team/marp-cli/-/marp-cli-4.2.3.tgz"
   sha256 "e5851716df96b0d5fbe3216e38b1f0ce8f7c6ea0bd1c00e712e77d9da56a2bc8"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7af2e65036c931e145ac5239ceb623be4c743d0304fb30845d4299bdcce010af"
-    sha256 cellar: :any,                 arm64_sequoia: "afe20fa2d2bc1e72cab303a06aa1764a261b3f277af69754c2fbb364e8c0f682"
-    sha256 cellar: :any,                 arm64_sonoma:  "afe20fa2d2bc1e72cab303a06aa1764a261b3f277af69754c2fbb364e8c0f682"
-    sha256 cellar: :any,                 arm64_ventura: "afe20fa2d2bc1e72cab303a06aa1764a261b3f277af69754c2fbb364e8c0f682"
-    sha256 cellar: :any,                 sonoma:        "97c290b4a650c3b421a60e2fce7dd52e9afbc302032e0b01ad232f9c42f3c3da"
-    sha256 cellar: :any,                 ventura:       "97c290b4a650c3b421a60e2fce7dd52e9afbc302032e0b01ad232f9c42f3c3da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "db42f2fae93fcc70faab4be230c1c1a8dcdf1d625bcafa6e9db9c3adda32c06f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c18593d51a84e812d5bdba8784633a0a80f2e7cac84db0f915a7b7804fdcae7d"
+    sha256 cellar: :any,                 arm64_tahoe:   "7e9ceb263b61d6f55746ab7c5ab6f4e12ce5bb749a618b17912e49ae7315e417"
+    sha256 cellar: :any,                 arm64_sequoia: "17bc3847ffd84cf69b128b48a2220f0610e4715a45f76d9809bf376156a0083b"
+    sha256 cellar: :any,                 arm64_sonoma:  "17bc3847ffd84cf69b128b48a2220f0610e4715a45f76d9809bf376156a0083b"
+    sha256 cellar: :any,                 sonoma:        "b62c5e31eff56dae8f99b73947a2d343a32f321797b559d1eac71e6127776b34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "17b66788e0faf313b438502fd14fa066c6c589073c7c2f4df78b3556b2cc7869"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ea40b743d6849ed00af718af64ce987ca7564569eb42f6fda93430ca64566db"
   end
 
-  depends_on "node"
+  # Remove when Node 25 is fixed upstream: https://github.com/nodejs/node/issues/61971
+  # Formula-specific tracking: https://github.com/marp-team/marp-cli/issues/708
+  depends_on "node@24"
 
   def install
     system "npm", "install", *std_npm_args

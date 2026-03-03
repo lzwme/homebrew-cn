@@ -11,8 +11,6 @@ class Libabw < Formula
     regex(/href=.*?libabw[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "94f750ee7bbbf84e58e7673ab8c00d6f5ac7805e3866887ef3a598f10465d555"

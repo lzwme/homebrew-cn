@@ -1,18 +1,18 @@
 class ZlibRs < Formula
   desc "C API for zlib-rs"
   homepage "https://github.com/trifectatechfoundation/zlib-rs/tree/main/libz-rs-sys-cdylib#libz-rs-sys-cdylib"
-  url "https://ghfast.top/https://github.com/trifectatechfoundation/zlib-rs/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "b811e5de0e8bd43607b164a88f6bae063dd2f19b7d25e588e47f3c32e983322e"
+  url "https://ghfast.top/https://github.com/trifectatechfoundation/zlib-rs/archive/refs/tags/v0.6.3.tar.gz"
+  sha256 "a705fba2e98dc82fc2993a6572d3a200d41cbd070a52d33897927a4cce17d793"
   license "Zlib"
   head "https://github.com/trifectatechfoundation/zlib-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "05608689e545409cfdb2ef017f5d5dbf76a48fbcde892cf4af8fa876b90e3259"
-    sha256 cellar: :any,                 arm64_sequoia: "bacd733a5f7e9a6f643b8657811e9aad01e4db23ea403818feda82bc7ba6d543"
-    sha256 cellar: :any,                 arm64_sonoma:  "b7650499f87fece075c77f0c364078b87b5d2119b6a04fc3aa2d9b26e0d8065e"
-    sha256 cellar: :any,                 sonoma:        "13e5403c4a0516b071e267ae161745392accbfcf611e52f5c81e3d993d550b51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "12f44a228025a10f47f0814c3d58dae3ddc1ce53fbb1cbdf7108ef223bbca417"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00d99066b0e9df517527dd4b0e0c7f669886e485fb879ca864c9fdafd15840ac"
+    sha256 cellar: :any,                 arm64_tahoe:   "93f8170aa05a16177d7a9b9e82935e1a6f4d821ee8a21c50ac75b9dcd390ffc1"
+    sha256 cellar: :any,                 arm64_sequoia: "c449fe85176de2ae96715abfc2cc9c873314ecb781e6daf54072f5c5e38db1fa"
+    sha256 cellar: :any,                 arm64_sonoma:  "26dc11f0ed9e39e02d334b0522033bdff751cc4e6951a9e7700f8646689e6ed7"
+    sha256 cellar: :any,                 sonoma:        "adf8703625fe9399c277e0ec25f4d847b33454e1c70041cc8ed1325c32aed43b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "64bdb816774fae459ba97b7929253c33c2fd143bb02cc63acf09ba51ecff7c32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b759889976a07c698067025d0eb02d3cea042f433497645349566a7d4c0dffed"
   end
 
   depends_on "cargo-c" => :build

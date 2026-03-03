@@ -1,18 +1,18 @@
 class Gabo < Formula
   desc "Generates GitHub Actions boilerplate"
   homepage "https://github.com/ashishb/gabo"
-  url "https://ghfast.top/https://github.com/ashishb/gabo/archive/refs/tags/v1.7.4.tar.gz"
-  sha256 "00d8b1aa07903d332ea975c0ca7d51b994d6de24c8040180420d97d6617b3735"
+  url "https://ghfast.top/https://github.com/ashishb/gabo/archive/refs/tags/v1.7.5.tar.gz"
+  sha256 "e17835e38a2cfca5da86bf074c0b3560e3eec3ba69d8fc19cbd1e40407a7adeb"
   license "Apache-2.0"
   head "https://github.com/ashishb/gabo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cc0e3b223c52e1dfaf1f870ec503de90af117f5eab6257936ce20b7fce783a8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cc0e3b223c52e1dfaf1f870ec503de90af117f5eab6257936ce20b7fce783a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6cc0e3b223c52e1dfaf1f870ec503de90af117f5eab6257936ce20b7fce783a8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e007346058969d960c25813bf9839b7566861fd7c226c054672286c6906b5a05"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dad4472e05ce112acdb4d1a440a52c5154ab9595c14509e9265e6c3bb48c1870"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34a7285ac70de59019ff8d46f5f398133f86d2a72751c6420213f576770b43f9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42453a67c26248d3b55a58152ff3381659f926dca19327b45107e2a8805a328a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42453a67c26248d3b55a58152ff3381659f926dca19327b45107e2a8805a328a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42453a67c26248d3b55a58152ff3381659f926dca19327b45107e2a8805a328a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7a82ab26a00b1557723a04baee1fa95dc0acb9cade4519d33bdfd8bac879b711"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f43ca873e3e561865e6198280ddeda55d93855302c5dc6297c3e1db4383f852"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a0ca45601beb77b6ef440cab41af9f8a4d6dec79b04ed2362bd68e528710bc2"
   end
 
   depends_on "go" => :build

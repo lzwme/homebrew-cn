@@ -5,8 +5,6 @@ class SimpleScan < Formula
   sha256 "9ae8d4151ecaf95845eb9f99b436d579c838f2cf02763fba3bc03780251be334"
   license "GPL-3.0-or-later"
 
-  no_autobump! because: :incompatible_version_format
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "e4ff2b33c03720942a9e4c85ad6a67aab642a4c0cf4e2610b9d2bdf61ef666a3"

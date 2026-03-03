@@ -1,8 +1,8 @@
 class Victoriametrics < Formula
   desc "Cost-effective and scalable monitoring solution and time series database"
   homepage "https://victoriametrics.com/"
-  url "https://ghfast.top/https://github.com/VictoriaMetrics/VictoriaMetrics/archive/refs/tags/v1.136.0.tar.gz"
-  sha256 "8b40ec53d043d6b87a9b1b962ebf64093196da5baed99509c7636213b5204b18"
+  url "https://ghfast.top/https://github.com/VictoriaMetrics/VictoriaMetrics/archive/refs/tags/v1.137.0.tar.gz"
+  sha256 "70a71f414dd83cfb97efe2ad819fc8707be4222ec8c11900d68da11de6456afc"
   license "Apache-2.0"
 
   # There are tags like `pmm-6401-v1.89.1` in the upstream repo. They don't
@@ -14,12 +14,12 @@ class Victoriametrics < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "813ebf08a3287d63a9c17a7035c52c14665f52357a8268b3f6649a1a3f0a7114"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "297775dd3ba53eb42a71e7da5449305c28a270e141f5819816aebc317fd326f1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99b01f5d0372087dc6a146ce20405ec22babce465634a338aa8afe5ac2344b6e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b411f7c9a18cbdaec361543292abe2592745db9cb50ac0da35ad22367c76dbe6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7000a0d47ed345e45116c1672a1c89eddc1188218c18edd1205428b7dd70ef5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f172a47e948d09c2327ed8ea65dda96d42ac915216760f774e27d53cee30435c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a30c010ea1330feb011770cec4ffe37b55d80ec77f28197423774d7ae49bf3cf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c51952b0dfc2c6d64df20453d3d84252947a567834138a90d72a5e67869e44e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28d3dd6233c0508eac79fa3c99f4ca6f53f41899095906f1d5ba8370592e2a3b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5e94f7912d0fe772ef4169bd8e6ddb590fb8d8ccc5c09c2adbe45b599b5c94ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c781c9d2da15874cf03daa0986d9ff4ddfcdba3a62e551fb1ad184089340a96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3beec68412f1cbb4f5fdf9b190a624bf66b9a58b8580ab1b1005af7d4fbd0fbb"
   end
 
   depends_on "go" => :build

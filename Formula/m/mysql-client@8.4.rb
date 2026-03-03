@@ -11,8 +11,6 @@ class MysqlClientAT84 < Formula
     formula "mysql@8.4"
   end
 
-  no_autobump! because: :incompatible_version_format
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "ee47f0ba74c6ea94c43e214e89450bd07194d02acf4c19a3f578536958096d0c"

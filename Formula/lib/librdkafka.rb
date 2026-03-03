@@ -1,8 +1,8 @@
 class Librdkafka < Formula
   desc "Apache Kafka C/C++ library"
   homepage "https://github.com/confluentinc/librdkafka"
-  url "https://ghfast.top/https://github.com/confluentinc/librdkafka/archive/refs/tags/v2.13.0.tar.gz"
-  sha256 "3bd351601d8ebcbc99b9a1316cae1b83b00edbcf9411c34287edf1791c507600"
+  url "https://ghfast.top/https://github.com/confluentinc/librdkafka/archive/refs/tags/v2.13.2.tar.gz"
+  sha256 "14972092e4115f6e99f798a7cb420cbf6daa0c73502b3c52ae42fb5b418eea8f"
   license "BSD-2-Clause"
   head "https://github.com/confluentinc/librdkafka.git", branch: "master"
 
@@ -12,13 +12,12 @@ class Librdkafka < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ef4ed6a6b8703b96f1c1cff9b37a7fd9fd04aec3b84a99a970592901da5fde8d"
-    sha256 cellar: :any,                 arm64_sequoia: "2f92c7d40926bcd61bc07b3f203501b47dc4251022349f91e07b8724fd897a3a"
-    sha256 cellar: :any,                 arm64_sonoma:  "630d6b598109306eb4443d3be91a31730fad218cf23379fb6dd10eb61cd1e19b"
-    sha256 cellar: :any,                 sonoma:        "b51d0131288d7786d316d109d716945c56f6f9e0a0b7b8cdce5c558d3d1d0840"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9660ccc2351c20768bc5c021a33e9adcedcea5a7e0341dd1c41057ab5dff5965"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5be2944c5b1c1c8b9c6f649d8e0b0cc2cdd62b65ef0f1b04d07b3ca893fceea4"
+    sha256 cellar: :any,                 arm64_tahoe:   "ed7480ac09e99c670809a37826aca6ce9458fb1d2d7a43f4c172b067c124cb16"
+    sha256 cellar: :any,                 arm64_sequoia: "26a3075e506e326388f19563e8babd2ac004b4ead23cd7abf2e304459ea993ab"
+    sha256 cellar: :any,                 arm64_sonoma:  "157db5c6848b6682b6d1ef262dfe64ed91b9722470fe29ed7c924ef0e8caa5b8"
+    sha256 cellar: :any,                 sonoma:        "f65151bb56ee1164112b68cecf98583cfa0205d2d7e6ca2aa2ee858a95124190"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5aa9bfb034918440e2c41542b24d203cf500f96ddb5f3497c275941c51e2318"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "988d1ca1076135373173eafce5be84c1fec7917409351f0c9a2fc9bc3e11e47f"
   end
 
   depends_on "pkgconf" => :build

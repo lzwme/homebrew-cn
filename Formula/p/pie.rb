@@ -1,17 +1,17 @@
 class Pie < Formula
   desc "PHP Installer for Extensions"
   homepage "https://github.com/php/pie"
-  url "https://ghfast.top/https://github.com/php/pie/releases/download/1.3.8/pie.phar"
-  sha256 "f522f45507170b940a0003bc72a15a29d25bbf094ff85260ffe687aca3f319da"
+  url "https://ghfast.top/https://github.com/php/pie/releases/download/1.3.9/pie.phar"
+  sha256 "b36a28d67e78a0ae3f9ae3329d0dacacd19f1b4bbaf31f057d45446329833e57"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81e4ca23746edf20e285230b29b89bf4eaf62808fd8998c990cfdb975d35a59c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81e4ca23746edf20e285230b29b89bf4eaf62808fd8998c990cfdb975d35a59c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81e4ca23746edf20e285230b29b89bf4eaf62808fd8998c990cfdb975d35a59c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6510e7f3a9d5664eb5115a72645e194e3d548a23bd814784787e8d9a1ddda892"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6510e7f3a9d5664eb5115a72645e194e3d548a23bd814784787e8d9a1ddda892"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6510e7f3a9d5664eb5115a72645e194e3d548a23bd814784787e8d9a1ddda892"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "74a3ca0b28cf951f4963c8aaf4a7cc7c84614313f5da62628c34e17c62d13bfc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74a3ca0b28cf951f4963c8aaf4a7cc7c84614313f5da62628c34e17c62d13bfc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74a3ca0b28cf951f4963c8aaf4a7cc7c84614313f5da62628c34e17c62d13bfc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2b74bc0022eb7b26a1c9227d098cc1dff2eb4dc70c7ee5f4965610e770854903"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b74bc0022eb7b26a1c9227d098cc1dff2eb4dc70c7ee5f4965610e770854903"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b74bc0022eb7b26a1c9227d098cc1dff2eb4dc70c7ee5f4965610e770854903"
   end
 
   depends_on "php"

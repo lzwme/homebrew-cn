@@ -1,17 +1,17 @@
 class Gerbv < Formula
   desc "Gerber (RS-274X) viewer"
   homepage "https://gerbv.github.io/"
-  url "https://ghfast.top/https://github.com/gerbv/gerbv/archive/refs/tags/v2.11.0.tar.gz"
-  sha256 "907ee7764e2d048b09ddcd8291bdb48d7b407056d558f5bf7164a09b6e68895f"
+  url "https://ghfast.top/https://github.com/gerbv/gerbv/archive/refs/tags/v2.11.1.tar.gz"
+  sha256 "b9a01ed892702f21f78b6ef4ec701e2db3220b5702d1cf93b10e843cad1e69a1"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "adb953bf525d27778a9656331a20868a53debea7e97c90a938bd4554e28a2fc8"
-    sha256 arm64_sequoia: "b068bdd2f8b5424eb9d4f0f813a5c8401d681259bc6faeb0ce762fc65eb9c1a9"
-    sha256 arm64_sonoma:  "3280fbfe1826a221a92435df889a15b678764702ff1bdce7e39f6827d770c356"
-    sha256 sonoma:        "662c7d8bd218050a8ba39e3d8f61c8507b98e2425870d63a70762ce9d5459157"
-    sha256 arm64_linux:   "0e7e2d92256b3d69ba3b997d248c33de94899c46d33a1aa991fe7f4981383851"
-    sha256 x86_64_linux:  "ce936699c7897c12a68c39422650f26b79a7d48053f23a1e6f5b1b1754557d99"
+    sha256 arm64_tahoe:   "4dc6433925aeac44a2a626ba71738c2e34758a19f4f50cad7a194e61f8052fa4"
+    sha256 arm64_sequoia: "359c1d89dffeabd88988af8a7c8d76d0decc38b25b34adeabd9b98d1e7b0dd71"
+    sha256 arm64_sonoma:  "721a75cbe5f39991039fe5a30fe70897f9054da0690f7bf9013b3d88642e7900"
+    sha256 sonoma:        "7520ca2ae7c43b1c466c3d150403cffd43815ad79c0ccfcca1d611ba8cbffdef"
+    sha256 arm64_linux:   "31c9be5a7194ec14a38eb81f4eb60ac0d8e7cef0bca37852a286d0a3c261790f"
+    sha256 x86_64_linux:  "1552e7fc822f0fb03a3768d7aa095d70c7b1bd9ebee8dfa4d6efa79b8e2155a7"
   end
 
   depends_on "cmake" => :build

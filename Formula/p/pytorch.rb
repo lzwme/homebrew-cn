@@ -3,9 +3,11 @@ class Pytorch < Formula
 
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
+  # TODO: Restore pybind11 dependency after https://github.com/pytorch/pytorch/pull/175115
   url "https://ghfast.top/https://github.com/pytorch/pytorch/releases/download/v2.10.0/pytorch-v2.10.0.tar.gz"
   sha256 "fa8ccbe87f83f48735505371c1c313b4aa6db400b0ae4f8a02844d1e150c695f"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,12 +15,12 @@ class Pytorch < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1fdb982bd44569c59eee93c00b077f176faf85fc34c5d6ff139a3619c843fce9"
-    sha256 cellar: :any, arm64_sequoia: "e35118ea4fd3d74157f5aa9572809e3129c79cec5f3220294893891a9612189c"
-    sha256 cellar: :any, arm64_sonoma:  "7ae1f37acbb2c43e1b8f21eb8325f4bd68bbdca58ce5d9a51bbe5372138ef8c2"
-    sha256 cellar: :any, sonoma:        "619c5aabd0994910640f9657de0c3be693af529081db9fcb578e157b8654ce8a"
-    sha256               arm64_linux:   "b2d6d3495d201287fa31984f4b2c5b0f7413b9edbcc26f860051216707be41f8"
-    sha256               x86_64_linux:  "b14466e5f1aa3de2b11cc726556472d49edb3085a8dd8b6158f95881b36abc95"
+    sha256 cellar: :any, arm64_tahoe:   "fc4848bff7f991a53387ade0642c0341a282c7d4291332455aa5e204fce30293"
+    sha256 cellar: :any, arm64_sequoia: "9e24409f44e6878e2e1fba8a7c5f7f387cb2e91e0d22604b03e1adc7424c1561"
+    sha256 cellar: :any, arm64_sonoma:  "8abe7cb674f40dbeb3421e6439d2fc44ce1bb59a67d3dc4e478dc08d68b17715"
+    sha256 cellar: :any, sonoma:        "b277be1a6767a2caa89e99ca851f9b683132f7d8e3ebc52ca73fcfa61af3281a"
+    sha256               arm64_linux:   "f72661c64aaec806f3ef2c8d420ac81eb578d59d63d8001544dc5917fe881cf0"
+    sha256               x86_64_linux:  "61f51339313f84a808c9db871738ab9abd956f4e3e31af7ab2556ba15b18cd8c"
   end
 
   depends_on "cmake" => :build
@@ -32,8 +34,8 @@ class Pytorch < Formula
   depends_on macos: :monterey # MPS backend only supports 12.3 and above
   depends_on "numpy"
   depends_on "openblas"
-  depends_on "protobuf"
-  depends_on "pybind11"
+  depends_on "protobuf@33"
+  # TODO: depends_on "pybind11"
   depends_on "sleef"
 
   on_macos do
@@ -134,7 +136,7 @@ class Pytorch < Formula
     ENV["USE_NNPACK"] = "OFF"
     ENV["USE_OPENMP"] = "ON"
     ENV["USE_SYSTEM_EIGEN_INSTALL"] = "ON"
-    ENV["USE_SYSTEM_PYBIND11"] = "ON"
+    ENV["USE_SYSTEM_PYBIND11"] = "OFF"
     ENV["USE_SYSTEM_SLEEF"] = "ON"
     ENV["USE_MPS"] = "ON" if OS.mac?
     ENV["USE_KLEIDIAI"] = "OFF"
@@ -156,7 +158,7 @@ class Pytorch < Formula
 
     # Expose C++ API
     torch = venv.site_packages/"torch"
-    include.install_symlink ((torch/"include").children - [torch/"include/fmt"])
+    include.install_symlink ((torch/"include").children - [torch/"include/fmt", torch/"include/pybind11"])
     lib.install_symlink (torch/"lib").children
     (share/"cmake").install_symlink (torch/"share/cmake").children
   end

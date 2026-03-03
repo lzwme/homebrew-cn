@@ -11,8 +11,6 @@ class Lpeg < Formula
     regex(/href=.*?lpeg[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:    "23fa0a2aba7c78631a3a0116d17f97998069884af257cd741e08da9097802d65"

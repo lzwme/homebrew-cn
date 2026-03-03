@@ -1,18 +1,18 @@
 class Scmpuff < Formula
   desc "Adds numbered shortcuts for common git commands"
   homepage "https://mroth.github.io/scmpuff/"
-  url "https://ghfast.top/https://github.com/mroth/scmpuff/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "2bfb7fe070a4c6e9bf7303cf7cb4c4aa8f5db4d3734cc571a924d1d9bf1d0d39"
+  url "https://ghfast.top/https://github.com/mroth/scmpuff/archive/refs/tags/v0.6.3.tar.gz"
+  sha256 "6a889718563dd3fbcccb49684acb628a9d3edb1f0e00dcb66502e2ee76c69f60"
   license "MIT"
   head "https://github.com/mroth/scmpuff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8cd803fd3930682c127f9abe30cf15fd2c669689a63591e6a092f910e757a37a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8cd803fd3930682c127f9abe30cf15fd2c669689a63591e6a092f910e757a37a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8cd803fd3930682c127f9abe30cf15fd2c669689a63591e6a092f910e757a37a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fa96baddca0819d0381f6bb05c5ae54bed66f00804db6f778cb93ffe4a381cfe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab36d84c0f8b218b9cf7ca1aec1bf695aee059285aa163ac854a0c05b3b24c93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4308a8b0b1dbdc20f970ce80475bcc16248bab5bcc9f1bc98bf276aa83a4f20d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d061291901d6dc2590b41057db86ac0df085bac9d0e2c2b070338842e8cecd0d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d061291901d6dc2590b41057db86ac0df085bac9d0e2c2b070338842e8cecd0d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d061291901d6dc2590b41057db86ac0df085bac9d0e2c2b070338842e8cecd0d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "42790a15d7d8d2cd061e50259c72f3519ecb9399e006cd5a9f010b527f1f934e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "52e4a90f2c030af2626d5783003364c3fb19758368cb2aeaf006674265d756b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d40c99d18f64198dbb270be8f38bc1b9594c59263d49e283ecbb3269b0fe6066"
   end
 
   depends_on "go" => :build

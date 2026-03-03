@@ -8,6 +8,7 @@ class WxwidgetsAT32 < Formula
   livecheck do
     url :stable
     regex(/^v?(3\.2(?:\.\d+)+)$/i)
+    strategy :github_releases
   end
 
   bottle do

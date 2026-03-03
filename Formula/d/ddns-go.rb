@@ -1,18 +1,18 @@
 class DdnsGo < Formula
   desc "Simple and easy-to-use DDNS"
   homepage "https://github.com/jeessy2/ddns-go"
-  url "https://ghfast.top/https://github.com/jeessy2/ddns-go/archive/refs/tags/v6.15.0.tar.gz"
-  sha256 "f4443c44c7247fee49bfbd8e06b7c03b2f59cb99968e685b5655017cbd8dabf8"
+  url "https://ghfast.top/https://github.com/jeessy2/ddns-go/archive/refs/tags/v6.16.0.tar.gz"
+  sha256 "eb2f8f924e649c71057ef5745ee8f52d27ef72064a2391bf5b90ef51a8ee0293"
   license "MIT"
   head "https://github.com/jeessy2/ddns-go.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c45e9ebe59496971e513fca7599a45c2e70e3d6d2fe38f7d85ae9bdfe98ad7d0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c45e9ebe59496971e513fca7599a45c2e70e3d6d2fe38f7d85ae9bdfe98ad7d0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c45e9ebe59496971e513fca7599a45c2e70e3d6d2fe38f7d85ae9bdfe98ad7d0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7d7f1d5f8c6b430062170e1d91252a85e03bfd97a6790568d95e7f220fed9194"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7148a47ac865a65eb1dbea0ab3cad735374f7536663fb9d30a8bb116a2fd01eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c829999be69ff3b5ca2b7531e32e8aa1ce3e9606c4bdfa36ab063d400b4b27a7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "29ffed50f6d58140e91362e0dca71a8dc62d6c4a5b02ffcb51a870ef889df76f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29ffed50f6d58140e91362e0dca71a8dc62d6c4a5b02ffcb51a870ef889df76f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29ffed50f6d58140e91362e0dca71a8dc62d6c4a5b02ffcb51a870ef889df76f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "54db5105c1bce13bb1a7a69086aac561c3c51e5189ad2730f229882b7dbb5d1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "67d1a413eb59af04c3089dbf339398ae973b86934a495f6a13373daf0e6174a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d2cbd818d1da4b7c67dd7c18a0814a7a284d728cd1c6f2154394d3d7f259f53"
   end
 
   depends_on "go" => :build
