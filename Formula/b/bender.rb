@@ -1,18 +1,18 @@
 class Bender < Formula
   desc "Dependency management tool for hardware projects"
   homepage "https://github.com/pulp-platform/bender"
-  url "https://ghfast.top/https://github.com/pulp-platform/bender/archive/refs/tags/v0.30.0.tar.gz"
-  sha256 "cabfdbf0fb7282986f1c6adc82587cc70095bbb2a93f8f1dce4d6ed2c47c8470"
+  url "https://ghfast.top/https://github.com/pulp-platform/bender/archive/refs/tags/v0.31.0.tar.gz"
+  sha256 "7b03dc86a8dcd43b278f84758af287eeb3194bdb707f30ddf9f879e05ab10b7c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/pulp-platform/bender.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ddae8775a5202d5acc255d528e717166de1c36f80040e5522593a24849de756"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebc2e044386ee8b4e497d53a340c5a6397409b6238e083d9a312dd4117fc2d7d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9336cf5ea1f3577717dbc742759b3c1ff16e1d7c2478a715a2efbd71234edd89"
-    sha256 cellar: :any_skip_relocation, sonoma:        "80ea1b27c303c42a27a66d1bba02fd6d92efc0e03d2671faf4772af2b1309f24"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cea136581b5a725c19d09660df1e6ca56f88d9da6a4a9c836102c7a63d19192e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ec8cd1d821cd400726bbc84c4acfd4db2bd2e17f0b482952658ada3466b8bfe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "65085211d2ab9229701cdd216eb917708b6963f98d3301acecb9d51674d257a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f59c1b0625267c5526dd6cb5ae13eb0fa1e05bf5bdcdc8a48d4470ffe4b4f61"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9d3d2c7818fea85741ddab32f1b15b2dcca2cb013a0d5200c8c5e77ce707516"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b1d60f88ea984716d828cdb133c94209a9e805526a25b92a3842ba91e4da23b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0aeee5275f1ff86d5b488ec25ff0bc1af62573ffc87813ab88429c5d75dd77bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9488f4a1f1321757d1ef2e1b4ff00194b00898d40049a5580191f2665aa5c54c"
   end
 
   depends_on "rust" => :build

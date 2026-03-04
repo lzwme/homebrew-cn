@@ -3,18 +3,18 @@ class Fastmcp < Formula
 
   desc "Fast, Pythonic way to build MCP servers and clients"
   homepage "https://gofastmcp.com/getting-started/welcome"
-  url "https://files.pythonhosted.org/packages/11/6b/1a7ec89727797fb07ec0928e9070fa2f45e7b35718e1fe01633a34c35e45/fastmcp-3.0.2.tar.gz"
-  sha256 "6bd73b4a3bab773ee6932df5249dcbcd78ed18365ed0aeeb97bb42702a7198d7"
+  url "https://files.pythonhosted.org/packages/0a/70/862026c4589441f86ad3108f05bfb2f781c6b322ad60a982f40b303b47d7/fastmcp-3.1.0.tar.gz"
+  sha256 "e25264794c734b9977502a51466961eeecff92a0c2f3b49c40c070993628d6d0"
   license "Apache-2.0"
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d5fb682c98eae2e228f74875c96fb70d4017a352ec53b1eec1d7538ce0e00c8c"
-    sha256 cellar: :any,                 arm64_sequoia: "54ecd7dfee8b527a6b2eee5ed138600279c9535ecf8ae11791232097b1312df9"
-    sha256 cellar: :any,                 arm64_sonoma:  "23aa5a893f6b4e4941c131a430ae2d71ca436dd8a1c53c55acc6a7c58ca9e506"
-    sha256 cellar: :any,                 sonoma:        "8a45bbf3f1f67af7c05445745d77500ab018ba46da6c3763e8703dcd2ca29b16"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "91d7b3ee80f18b76c0a0ca42ad18df5ab408e4c6656be5ea77babc197d1867fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d1a299ff29de017fffcb453132a8b4d75ba0af8d0042b854f899cb2b44533fd"
+    sha256 cellar: :any,                 arm64_tahoe:   "5423d98df666af4eaca666fce138bb999378173d9a9f5fa093eccb43512dd9ee"
+    sha256 cellar: :any,                 arm64_sequoia: "83ceb76fb46b2c3328ce9bce1ef80ac95bdce7d9bf96317783f56892a2701b28"
+    sha256 cellar: :any,                 arm64_sonoma:  "112d72a00666ea4598060baa4f0a3f7c16f2444ad7f9ddf5d50f31ee8208c29b"
+    sha256 cellar: :any,                 sonoma:        "c77fd37f519f31c64317a0e99039db9c3838583d2fa7c1164c22b796ee33fcbe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65be8571a6b623a5442a2dda4236b2044e4e49a87ebf47f191f2d2d62fc2d848"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a86361afddbcb7699fe301178aaeb348543e68e397a36ce6b7b15f57a08e0e00"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -45,8 +45,8 @@ class Fastmcp < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/6b/6c/c88eac87468c607f88bc24df1f3b31445ee6fc9ba123b09e666adf687cd9/authlib-1.6.8.tar.gz"
-    sha256 "41ae180a17cf672bc784e4a518e5c82687f1fe1e98b0cafaeda80c8e4ab2d1cb"
+    url "https://files.pythonhosted.org/packages/af/98/00d3dd826d46959ad8e32af2dbb2398868fd9fd0683c26e56d0789bd0e68/authlib-1.6.9.tar.gz"
+    sha256 "d8f2421e7e5980cc1ddb4e32d3f5fa659cfaf60d8eaf3281ebed192e4ab74f04"
   end
 
   resource "beartype" do
@@ -55,8 +55,8 @@ class Fastmcp < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/d4/07/56595285564e90777d758ebd383d6b0b971b87729bbe2184a849932a3736/cachetools-7.0.1.tar.gz"
-    sha256 "e31e579d2c5b6e2944177a0397150d312888ddf4e16e12f1016068f0c03b8341"
+    url "https://files.pythonhosted.org/packages/6c/c7/342b33cc6877eebc6c9bb45cb9f78e170e575839699f6f3cc96050176431/cachetools-7.0.2.tar.gz"
+    sha256 "7e7f09a4ca8b791d8bb4864afc71e9c17e607a28e6839ca1a644253c97dbeae0"
   end
 
   resource "caio" do
@@ -70,8 +70,8 @@ class Fastmcp < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/3b/d2/f37df900b163f51b4faacdb01bf4895c198906d67c5b2a85c2522de85459/cyclopts-4.5.4.tar.gz"
-    sha256 "eed4d6c76d4391aa796d8fcaabd50e5aad7793261792beb19285f62c5c456c8b"
+    url "https://files.pythonhosted.org/packages/49/5c/88a4068c660a096bbe87efc5b7c190080c9e86919c36ec5f092cb08d852f/cyclopts-4.6.0.tar.gz"
+    sha256 "483c4704b953ea6da742e8de15972f405d2e748d19a848a4d61595e8e5360ee5"
   end
 
   resource "dnspython" do
@@ -160,8 +160,8 @@ class Fastmcp < Formula
   end
 
   resource "jsonschema-path" do
-    url "https://files.pythonhosted.org/packages/a8/8d/4b2e648cf643d19e1f76260d9cb002d242e38b4298d6da110bd3c3d8d0d2/jsonschema_path-0.4.1.tar.gz"
-    sha256 "ffca3bd37f66364ae3afeaa2804d6078a9ab3b9359ade4dd9923aabbbd475e71"
+    url "https://files.pythonhosted.org/packages/4e/b4/41315eea8301a5353bca3578792767135b8edbc081b20618a3f0b4d78307/jsonschema_path-0.4.4.tar.gz"
+    sha256 "4c55842890fc384262a59fb63a25c86cc0e2b059e929c18b851c1d19ef612026"
   end
 
   resource "jsonschema-specifications" do
@@ -245,8 +245,8 @@ class Fastmcp < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
-    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
+    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
+    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
   end
 
   resource "python-multipart" do
@@ -280,13 +280,18 @@ class Fastmcp < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/8b/8d/00d280c03ffd39aaee0e86ec81e2d3b9253036a0f93f51d10503adef0e65/sse_starlette-3.2.0.tar.gz"
-    sha256 "8127594edfb51abe44eac9c49e59b0b01f1039d0c7461c6fd91d4e03b70da422"
+    url "https://files.pythonhosted.org/packages/5a/9f/c3695c2d2d4ef70072c3a06992850498b01c6bc9be531950813716b426fa/sse_starlette-3.3.2.tar.gz"
+    sha256 "678fca55a1945c734d8472a6cad186a55ab02840b4f6786f5ee8770970579dcd"
   end
 
   resource "starlette" do
     url "https://files.pythonhosted.org/packages/c4/68/79977123bb7be889ad680d79a40f339082c1978b5cfcf62c2d8d196873ac/starlette-0.52.1.tar.gz"
     sha256 "834edd1b0a23167694292e94f597773bc3f89f362be6effee198165a35d62933"
+  end
+
+  resource "uncalled-for" do
+    url "https://files.pythonhosted.org/packages/02/7c/b5b7d8136f872e3f13b0584e576886de0489d7213a12de6bebf29ff6ebfc/uncalled_for-0.2.0.tar.gz"
+    sha256 "b4f8fdbcec328c5a113807d653e041c5094473dd4afa7c34599ace69ccb7e69f"
   end
 
   resource "uvicorn" do

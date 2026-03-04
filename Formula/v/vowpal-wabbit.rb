@@ -1,18 +1,18 @@
 class VowpalWabbit < Formula
   desc "Online learning algorithm"
   homepage "https://github.com/VowpalWabbit/vowpal_wabbit"
-  url "https://ghfast.top/https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.11.0.tar.gz"
-  sha256 "ccf3810413bcf35314ebfacced3e2186b05d9d8fa6e4dfa9d2ef34ed7d9b50a5"
+  url "https://ghfast.top/https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.11.1.tar.gz"
+  sha256 "de404fc500fadec3195cd0a38094056571f1c8065c26e64df40b49ac643c8a8b"
   license "BSD-3-Clause"
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e2ff8f22307a79867dd56be776acf475b456cfbf8482f84171101dc8c77715f4"
-    sha256 cellar: :any,                 arm64_sequoia: "7664e0852d72f41c2b654ff0d404b41311b0bd10d3ace4a809b63e00f5ef7910"
-    sha256 cellar: :any,                 arm64_sonoma:  "a455448d067774b0b9a88796635b8c324818d7563f81e4fe1a6af64c4ab51050"
-    sha256 cellar: :any,                 sonoma:        "79823d664081e3df84177e2862661288636bf611f113c1ec920276100f8675c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "04d0763c7cbf9fda0076e8c0984900cb037c108d0e55a5ca02c9c7cf8038bba9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50b384ea12769e4fb6d23f37416387d9fbbbe46a90ca0bf190152403657196dc"
+    sha256 cellar: :any,                 arm64_tahoe:   "9bd0589d1b2682b7eb6fd9b89830b6bd780b2e3b3c68b24dd387657c03a70453"
+    sha256 cellar: :any,                 arm64_sequoia: "faaee5a127239bdf71a7fae41429b3debdb23b9c7fade391a487ade189a31257"
+    sha256 cellar: :any,                 arm64_sonoma:  "3647359849dd33874a2dc73c5093a187243f3cca0e288284435eaa158c6d5666"
+    sha256 cellar: :any,                 sonoma:        "f2fec4927139cf65848148c7567ca03db85ffeb5d64311e39a63ffd46a398746"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "df6bbda91aa1af735a2ba5f7bc330da7c0a7474fa57eb446b25b0aba3aba5f20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ece7a125e69bd4edb477f5c6bda2e2cde024bc9d507dc76a6fd97fbd49cff952"
   end
 
   depends_on "boost" => :build
@@ -28,13 +28,6 @@ class VowpalWabbit < Formula
 
   on_arm do
     depends_on "sse2neon" => :build
-  end
-
-  # Fix system RapidJSON packages that export include dirs but no CMake target.
-  # Upstream PR ref: https://github.com/VowpalWabbit/vowpal_wabbit/pull/4902
-  patch do
-    url "https://github.com/VowpalWabbit/vowpal_wabbit/commit/887a1fdf2d3443b615bd8b4d066518eb84fbb693.patch?full_index=1"
-    sha256 "1204402159a276d31f0883dbdb3191ad6e5e084dcf90e7d8cd3d349c89f70ef5"
   end
 
   def install

@@ -1,18 +1,18 @@
 class Pixlet < Formula
   desc "App runtime and UX toolkit for pixel-based apps"
   homepage "https://github.com/tronbyt/pixlet"
-  url "https://ghfast.top/https://github.com/tronbyt/pixlet/archive/refs/tags/v0.50.2.tar.gz"
-  sha256 "ffe0384889a25636a021f7a9971b493fc807efb05a23f9f802a9b1c564f35a95"
+  url "https://ghfast.top/https://github.com/tronbyt/pixlet/archive/refs/tags/v0.51.0.tar.gz"
+  sha256 "360cfbd92fa9c49fa0bb8b04327c01e9860528c826e7bbe640cf541aae9fa25b"
   license "Apache-2.0"
   head "https://github.com/tronbyt/pixlet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fc71de5b1b6acb24a8168146ef42be52957c7f55400b1c29ae033abac17aabf8"
-    sha256 cellar: :any,                 arm64_sequoia: "256dbbf76d07dc801cdbba61b9e37ac6b92ee3f0bef2cc9e053eedb9fdcf2471"
-    sha256 cellar: :any,                 arm64_sonoma:  "e24896d17e89280dc805b75a09e896b0c45953ef47d304e9f8e508297e757746"
-    sha256 cellar: :any,                 sonoma:        "0dbd99fdd83f1136457c6f7b9ef3fbe23acda0ebc7d13d4a68084ba28391c28f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2448607713d9e93eb30e360bb2e616a0f2a73d3e5896c3f72781a3bd4c99d4b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14c56231a19f351baced89816d726080cea7680c035bb1ce4a0a3efee6e2c149"
+    sha256 cellar: :any,                 arm64_tahoe:   "32cff6f28932c6339f428642581a86c69ffdbf4725269d2bfbdc01709e280fc0"
+    sha256 cellar: :any,                 arm64_sequoia: "57a75331d791fd3dbf97d97115cee8c00809a7d0c74e5f7586eb02f732f2c5ef"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac8d07ed27035442670cb35cf35541e8921465fb24e108888574da7ea2888ab7"
+    sha256 cellar: :any,                 sonoma:        "c5998d34207824c18ae7db70bd985ac30dc38c1f3a21e0073792d650646bf6e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0577d87c437e33d3ca01a52ba7d263b5239168ec5a8a1ff2ed244cd164ddc4e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75f93d0e126879b8b178eb6339e55b8ca6635e8acaab940991fd557973ad313e"
   end
 
   depends_on "go" => :build

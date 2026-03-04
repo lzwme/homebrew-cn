@@ -1,19 +1,18 @@
 class Odbc2parquet < Formula
   desc "CLI to query an ODBC data source and write the result into a Parquet file"
   homepage "https://github.com/pacman82/odbc2parquet"
-  url "https://ghfast.top/https://github.com/pacman82/odbc2parquet/archive/refs/tags/v8.1.5.tar.gz"
-  sha256 "c54a8f8127238ee1034301a75af6cc505f2f64b0167fce44f2e7a3dabffb3aa0"
+  url "https://ghfast.top/https://github.com/pacman82/odbc2parquet/archive/refs/tags/v8.1.6.tar.gz"
+  sha256 "12922a7fb10ab5745b20cd9020f47f518f85601545f9bb38d9264d0c3d769125"
   license "MIT"
   head "https://github.com/pacman82/odbc2parquet.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "8571d2e2a5871d261c512038e1ce024e12905aa04f1385badb5261659a3e6a9e"
-    sha256 cellar: :any,                 arm64_sequoia: "b973ab6e5a6899645a492fbcf654a8104350d6523b07095376eb7e4cfc1f8655"
-    sha256 cellar: :any,                 arm64_sonoma:  "a943d3f56de3746d77be2e57eff3face7fe217ffdd026f9a55ae91db530c0a6d"
-    sha256 cellar: :any,                 sonoma:        "df5c05c02627d273ba68e883ff2c7aaaa332c68745ba01bd24406a44df4563bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d1e8053f06692557a9d33f5f11538865cfc0b8c9d4d4a1c4a3b0d1981ea20b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c46145c58b33f8956f9690853dc34c5b52af7015b784dc04d38b34fa0b1520f"
+    sha256 cellar: :any,                 arm64_tahoe:   "1f08f2f96ba5ce06636afe5ca933ee6c7b95b072e09989a9ad17a108ff51a217"
+    sha256 cellar: :any,                 arm64_sequoia: "606448e550fa27032ec23344a2ee4c921559479146e979087774e8eae7f4f7fb"
+    sha256 cellar: :any,                 arm64_sonoma:  "120328018415246c2904c07833112f52d5958f9c267838673e36889393a6da13"
+    sha256 cellar: :any,                 sonoma:        "556f7be800b8124db0dde42557f70533e4ad90f951eed3b8832fdae3626680ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5aaba4bc94196bf33fd8abb0c8bee9e700ec52cacb8fcf00e8411e8ebb444968"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "204fdde3ae62dc2805f0272f8dc67a16003dc35cad39f4610bb10bae73972e99"
   end
 
   depends_on "pkgconf" => :build

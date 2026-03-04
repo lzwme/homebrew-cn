@@ -1,8 +1,8 @@
 class ErofsUtils < Formula
   desc "Utilities for Enhanced Read-Only File System"
   homepage "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git"
-  url "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/snapshot/erofs-utils-1.9.tar.gz"
-  sha256 "d1bc84b5d60bcae121a7f57ea97d4155189087e178f8127f30846d9f537c9d73"
+  url "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/snapshot/erofs-utils-1.9.1.tar.gz"
+  sha256 "a9ef5ab67c4b8d2d3e9ed71f39cd008bda653142a720d8a395a36f1110d0c432"
   license "GPL-2.0-or-later"
   head "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git", branch: "master"
 
@@ -12,12 +12,12 @@ class ErofsUtils < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a916cd001c0fcaf18ab406be3bc5f36ab70071b713b68d3723894ec9ff90c463"
-    sha256 cellar: :any,                 arm64_sequoia: "b47bd89556906816b6856d8f667bf4605e5468449a0e93231e350152a07f886b"
-    sha256 cellar: :any,                 arm64_sonoma:  "ac12581ea1602490eb5c43ad1571233f369769e2ba31af5cd991ad584e049f03"
-    sha256 cellar: :any,                 sonoma:        "71725266d4f0c47f0bfff4ac28522995233ae1741ff87a0e70e073c09a971aa2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1444389f8180d566d48b21c9250fa2670c4da35fb42be672515352672fb4db37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8d97e506dfa4fb9158f5e01c4054f4b50b1349b82bb03e087281896d0771dc4"
+    sha256 cellar: :any,                 arm64_tahoe:   "fcd98111d3eaf796ebb28e1714fca383c2b750c75aa7a692991d2b1abaeec321"
+    sha256 cellar: :any,                 arm64_sequoia: "fc05f424e0cac372e60490b710d30184ee92faaee899de8759c4f2f3b6e12ca9"
+    sha256 cellar: :any,                 arm64_sonoma:  "d35a4cdbd72dd9b04bf33ec14f2d786da070606eca70c93a9c3040a507a09c46"
+    sha256 cellar: :any,                 sonoma:        "781c2d8a935ba8e8c7b8a5f2721d3a1cfbe695927c1afe67da0392d462f19229"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec5a0c1d3922c42c26d84c5b3f2cfe8ceaa0e18db0256da169fa8722a1fce6d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7635fad4505da693bfa9b47be3669fb7bffcbd70425e04c099b48dfb868d5d2c"
   end
 
   depends_on "autoconf" => :build

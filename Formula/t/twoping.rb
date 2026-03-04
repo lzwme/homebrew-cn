@@ -3,13 +3,13 @@ class Twoping < Formula
 
   desc "Ping utility to determine directional packet loss"
   homepage "https://www.finnie.org/software/2ping/"
-  url "https://www.finnie.org/software/2ping/2ping-4.6.tar.gz"
-  sha256 "b678738716e9070d37af31ce12aff1709b22978f05059f194b71a1964829708f"
+  url "https://www.finnie.org/software/2ping/2ping-4.6.1.tar.gz"
+  sha256 "c8352b6653c3194af1f869107655df3f98ab18b560e8bce86eabac08d73c72eb"
   license "MPL-2.0"
   head "https://github.com/rfinnie/2ping.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c6210baa0212b0e3ac32c90590585882617d4172783eadba5e8dda0793f1bcbe"
+    sha256 cellar: :any_skip_relocation, all: "dffea297eab0918d416048efafdfb69f32c7d1f56b740a1455d80853b8755550"
   end
 
   depends_on "python@3.14"

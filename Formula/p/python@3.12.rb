@@ -1,10 +1,9 @@
 class PythonAT312 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.12.12/Python-3.12.12.tgz"
-  sha256 "487c908ddf4097a1b9ba859f25fe46d22ccaabfb335880faac305ac62bffb79b"
+  url "https://www.python.org/ftp/python/3.12.13/Python-3.12.13.tgz"
+  sha256 "0816c4761c97ecdb3f50a3924de0a93fd78cb63ee8e6c04201ddfaedca500b0b"
   license "Python-2.0"
-  revision 2
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,15 +11,14 @@ class PythonAT312 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "a52a55b8504d94cb2e251485a2af7562db5c374d436283b665d4fb8766b94ac3"
-    sha256 arm64_sequoia: "0525a146dc792c478884d9d01355d5f168f60da4c37440e9598f36cf5f553a5d"
-    sha256 arm64_sonoma:  "0d9c288e026e3c308ee89f8c2dddbf6a0b88fc913a3af53d158dcbfb438a657b"
-    sha256 tahoe:         "1fce5b88a986aa414118f4d876fa3cb40c48ebbb2d8d4f663a709aa32492630c"
-    sha256 sequoia:       "eb50ae97d4bb4b41711e12b0d10523063dad3505024c475afe70aaa9cc3025ba"
-    sha256 sonoma:        "ac0195ffa0fdff7dc8bbd2232132b8db42ab79f2e1ab7dbfa94e0bb4e87846ee"
-    sha256 arm64_linux:   "b686d29642433b9c416dc568596a78d8b134581c08bfac359d43380c439e6be8"
-    sha256 x86_64_linux:  "b9f86cf166d77e2e11d19db95108cc0da56aeaeb4fff61b1f7d0a360afadbad1"
+    sha256 arm64_tahoe:   "eefd96ed3d09bcd4e68738a5f9371fc556898213666c5b409076fffff3d30e80"
+    sha256 arm64_sequoia: "2bcb6421ac5fd3ab14afb3efd4dbe4c96a9d3871bcdd26111ee2720314a3146d"
+    sha256 arm64_sonoma:  "37d87494379061f60e5c66034a3ec10081be450e2686af5906be495923a74737"
+    sha256 tahoe:         "4caa81999441c5614c1e078f64168c7219beec50bda62258959f53a2256c2b6b"
+    sha256 sequoia:       "8fc3ef5abb89e6f4e362d6c851f1a0881595d3ed7474250a0a189bdd55eb5d67"
+    sha256 sonoma:        "784bd05a485dee17d962b8119160f0266f7f30500d2b3c7a7c6e1cde0b9c9e78"
+    sha256 arm64_linux:   "e7abc557c2250e41230de7ca532da5c225dcf81003007eb22f767c76eeb95a11"
+    sha256 x86_64_linux:  "358961dc503e414a99acd2593ea2a82f839bcf84c3af66bea7f07a23b37cfa9a"
   end
 
   depends_on "pkgconf" => :build
@@ -30,7 +28,7 @@ class PythonAT312 < Formula
   depends_on "xz"
 
   uses_from_macos "bzip2"
-  uses_from_macos "expat"
+  uses_from_macos "expat", since: :sequoia
   uses_from_macos "libedit"
   uses_from_macos "libffi"
   uses_from_macos "libxcrypt"

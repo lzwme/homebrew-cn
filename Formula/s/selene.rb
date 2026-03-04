@@ -1,19 +1,18 @@
 class Selene < Formula
   desc "Blazing-fast modern Lua linter"
   homepage "https://kampfkarren.github.io/selene"
-  url "https://ghfast.top/https://github.com/Kampfkarren/selene/archive/refs/tags/0.30.0.tar.gz"
-  sha256 "2cb62ef165012f062208fbc906af0f390a60f2adcf0cba9f1d60c12feccf8d23"
+  url "https://ghfast.top/https://github.com/Kampfkarren/selene/archive/refs/tags/0.30.1.tar.gz"
+  sha256 "61c66d7e40d8d00fe8364a2696c7f87bcb976d838bd681fd802d427c7675a872"
   license "MPL-2.0"
   head "https://github.com/Kampfkarren/selene.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "335e48a736314eeb33836273c91e26734509abd4b5d246ef552a4961dc6ab7b2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3af72430d846eff1f783096666508708b76a1537d43005bf5f36673999d3919a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "afb85979512627975c42d1049281d6ce78547151b3a8aa7e7b78ce129694e367"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4d67cbb0a229ccb041d4965c87af5c059c711d89071687ace7fea0ebfabd5c40"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "03a36f5ac7dfc7a63d8097091531ace07145ce085a34679aa4d60a98642b1393"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "507d2ffbdba0be10049b46bfa6fd26be6c11b28eb72f940e7290debb40a50fd7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cbcf7c178fa11c1afbdd4e8b6774a63f59548f83271c410459e8ab880ad657d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8125a29586e52cd90876de09eab14a84971c9373d2b6c6e56c5d04cf3870cdf2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e714599b1be78018752f5a906ad1a4f274bb7305a16ee18b4010f4f076bea247"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b80ff59bc0699f7a96ccef7827855fefb8a4753989c0486ae095bec7b82b8edc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "89bcf20592930998bea9b22b5356d469999997747ddbbf9247421be333389113"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fd0ce6b395be9edd863fcfa1323417a4f22d8d853ea82edcb7974defe81cd40"
   end
 
   depends_on "rust" => :build

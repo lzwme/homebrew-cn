@@ -1,17 +1,17 @@
 class BazelDiff < Formula
   desc "Performs Bazel Target Diffing between two revisions in Git"
   homepage "https://github.com/Tinder/bazel-diff/"
-  url "https://ghfast.top/https://github.com/Tinder/bazel-diff/releases/download/16.0.0/release.tar.gz"
-  sha256 "6baf16fee77f36f9a69fe972e28bf600cc92f28d01850a97ee9f39a23b5d7534"
+  url "https://ghfast.top/https://github.com/Tinder/bazel-diff/releases/download/17.0.1/release.tar.gz"
+  sha256 "1854ba4ce402b900e4d9fb0ecb8a3b7f7744919090d37bf93d7502a6339f3a84"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f7e1f48189b485e03ba2dd2e4ed918330c48d6aecd5917b2c9d037ac0092bca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f7e1f48189b485e03ba2dd2e4ed918330c48d6aecd5917b2c9d037ac0092bca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f7e1f48189b485e03ba2dd2e4ed918330c48d6aecd5917b2c9d037ac0092bca"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9ca6acad2d8e668632a1fd9a625dbee24d01b3557285dfae3c3979c17c613ef4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed9dfd934f9081c812898ef3ad6a6a4e2ec5d2a3d43e926fea418cffcff81031"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bceacdd3c64531039366a63f61dd4cf725569139367402d655a282fbce92346d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e4a30bac1f4f331f7e64a61c0bd3669c7034656402eba8eee9c52b6497855f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e4a30bac1f4f331f7e64a61c0bd3669c7034656402eba8eee9c52b6497855f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e4a30bac1f4f331f7e64a61c0bd3669c7034656402eba8eee9c52b6497855f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d43e46094e8f59010f4f16bb6d7250b7e922b9ac55fc2c75132652ce32f92671"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "409dbc2c3ce7ff09bc4b5357daf851d4c020d76eb9f18b01bb5c055ecee1b01f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d9cfbe5ff4a627d86aea5afcf932206da2f8cc132ed56c5c8973c854ebc4ceb"
   end
 
   depends_on "bazel" => [:build, :test]

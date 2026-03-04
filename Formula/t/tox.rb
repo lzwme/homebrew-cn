@@ -3,19 +3,19 @@ class Tox < Formula
 
   desc "Generic Python virtualenv management and test command-line tool"
   homepage "https://tox.wiki/en/latest/"
-  url "https://files.pythonhosted.org/packages/30/4a/6ea2602afe685f842ff9b5e07196e693f1aba885164d171af4807075cb30/tox-4.47.0.tar.gz"
-  sha256 "db08368214f6f44b3e9b6c6e937140e25a4b0cea63f8489bf1c9b6b34d3e42e3"
+  url "https://files.pythonhosted.org/packages/48/4a/205c929d77d280eb3f557bbb24a84a84698501c3097eb07c6e282e11fa9f/tox-4.47.2.tar.gz"
+  sha256 "eaf01d7f1887a9399298e9d13ccca6cd0bbcf6d44bd6029136df284894288a6c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e2c3bbe2c6938357b5819d12104e956fa70bf50d30f54f95eea085512b4ae631"
+    sha256 cellar: :any_skip_relocation, all: "55b8dcf2fcc6195f421887f8eb0fefa4268df64b3831040b09556207bd382813"
   end
 
   depends_on "python@3.14"
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/d4/07/56595285564e90777d758ebd383d6b0b971b87729bbe2184a849932a3736/cachetools-7.0.1.tar.gz"
-    sha256 "e31e579d2c5b6e2944177a0397150d312888ddf4e16e12f1016068f0c03b8341"
+    url "https://files.pythonhosted.org/packages/6c/c7/342b33cc6877eebc6c9bb45cb9f78e170e575839699f6f3cc96050176431/cachetools-7.0.2.tar.gz"
+    sha256 "7e7f09a4ca8b791d8bb4864afc71e9c17e607a28e6839ca1a644253c97dbeae0"
   end
 
   resource "colorama" do

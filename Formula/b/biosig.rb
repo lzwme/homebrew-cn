@@ -1,8 +1,8 @@
 class Biosig < Formula
   desc "Tools for biomedical signal processing and data conversion"
   homepage "https://biosig.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-3.9.3.src.tar.xz"
-  sha256 "5173aa4c8c513ee1bd0ab1ab3f39bc4979f6d78d57c2abfffb507d1124f348e0"
+  url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-3.9.4.src.tar.xz"
+  sha256 "4895c6f39fad85693e4aae36352a4b34f5a16e64c1feeade08c80bf1b3bb1a42"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Biosig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5405b5e4b13988142d6db7c9144f71529d26555a4050ab6e9e5ccb2f1710b93c"
-    sha256 cellar: :any,                 arm64_sequoia: "e33a85c2c2c77e28c41039d419bf587d512a545defab44e8caa2d3a66993b264"
-    sha256 cellar: :any,                 arm64_sonoma:  "19d4654b105a9532d3021180b78486ee64c33176de76c04dde85f619d100e678"
-    sha256 cellar: :any,                 sonoma:        "c391b7b35fa1ddc42df3e735832b637285371235e04060ff7c7917c797fb82f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fc868c8a0302f4c1c6bed87614317ed8c186dd11a4bac6d012bf50a2766910d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cba858086af774cc69cb73ade9e1584cf78a8e5195ccef9a16bb3836054d6d8"
+    sha256 cellar: :any,                 arm64_tahoe:   "f7be3b912dd5e0e7b69f1e5efd69a6aaf4f620741e102ff2acf3a3d827885634"
+    sha256 cellar: :any,                 arm64_sequoia: "679db8676974d3a15f13984045c14090e256a2ff07443aa5684480902f8e89a2"
+    sha256 cellar: :any,                 arm64_sonoma:  "3041c1746953c98c82c1180e9129bb012413815b4dfbd083e9428391058ccc31"
+    sha256 cellar: :any,                 sonoma:        "77439da5eeafa68458b1a8b2ba661857f582e73ba826e17ff0a09089c090c570"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49adde08cd6082bc6cafd69db23947e1a9684ad0d9a080360f5243667da73391"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7e362367ead115c1d7beb79d9fa2125abffdadf5b96a6faf2a8052564c6d062"
   end
 
   depends_on "gawk" => :build

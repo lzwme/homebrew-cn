@@ -1,18 +1,18 @@
 class Keploy < Formula
   desc "Testing Toolkit creates test-cases and data mocks from API calls, DB queries"
   homepage "https://keploy.io"
-  url "https://ghfast.top/https://github.com/keploy/keploy/archive/refs/tags/v3.3.33.tar.gz"
-  sha256 "9d35eb9982fae6ecdb3035875220ae7dccf53205c6ebbc34983221c12f94b06c"
+  url "https://ghfast.top/https://github.com/keploy/keploy/archive/refs/tags/v3.3.34.tar.gz"
+  sha256 "3a588a52b7ac8f5addd68de08721742793f0056686a63cf82a778b5bfea16f79"
   license "Apache-2.0"
   head "https://github.com/keploy/keploy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "066409105baf9fa7c2cf5e743d1b1300f17ff30fb37c682a19dc8d291b9c5fa2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "066409105baf9fa7c2cf5e743d1b1300f17ff30fb37c682a19dc8d291b9c5fa2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "066409105baf9fa7c2cf5e743d1b1300f17ff30fb37c682a19dc8d291b9c5fa2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "438f398c1258cefc2aeb1309f0eff8a9d771f4aa4c898b57904f9194693742ac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "34356f14d4d19f6ae28aaef280a52016667b5709d7a1a53462aa5e33f809f998"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fb04ebb7d3f38591cff35db13c1cf9fae9a5df8aac694058544651279cc3f39"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41c9b00943ee2e4753e7860d3935b3179aa61c50a49dcd1b2cf1ea3201cec023"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41c9b00943ee2e4753e7860d3935b3179aa61c50a49dcd1b2cf1ea3201cec023"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41c9b00943ee2e4753e7860d3935b3179aa61c50a49dcd1b2cf1ea3201cec023"
+    sha256 cellar: :any_skip_relocation, sonoma:        "26a4091976a178a43632c89bf8f1a1b0c98c3acfecdf92404943ff7363df4d6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "24a5928b51d17c0650219775718fddcb448ca8e3ec971f031cf9cdf16e499f04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbedf13d3b32c416c53240b363403561c485bd71f12214439fb5713485eb5eda"
   end
 
   # Unpin Go when Keploy supports Go 1.26

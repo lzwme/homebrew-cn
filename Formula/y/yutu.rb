@@ -1,8 +1,8 @@
 class Yutu < Formula
   desc "MCP server and CLI for YouTube"
   homepage "https://github.com/eat-pray-ai/yutu"
-  url "https://ghfast.top/https://github.com/eat-pray-ai/yutu/archive/refs/tags/v0.10.5.tar.gz"
-  sha256 "c7ac15310a94583ffb8b499c03f88a23eaaf1f3bf183dd522ecbf4b6537299dc"
+  url "https://ghfast.top/https://github.com/eat-pray-ai/yutu/archive/refs/tags/v0.10.6.tar.gz"
+  sha256 "fbbb870bbf5708598b8e4cbba020b5f6898bd972a719aa27ee8cc4d876af41ad"
   license "Apache-2.0"
   head "https://github.com/eat-pray-ai/yutu.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Yutu < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "820c1390195b6f8f750580caf516393588d4479a79418316b73c25006e9fcf41"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "820c1390195b6f8f750580caf516393588d4479a79418316b73c25006e9fcf41"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "820c1390195b6f8f750580caf516393588d4479a79418316b73c25006e9fcf41"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5df0209db749c58589349db54fac90e5b8dda1c6b08c42628c93cee6dd9706d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ef736d678702ba1ff0efbfd35b976ff59cd12888b77269554f5c316246b396a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fabda05f164aac34a1efe6d3310ad9817b1265290c6b421472d29e8b09708f31"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b5e8b70c3ec1fa226913cf5965077d8be5cb753331a8af505816fcdda3b955b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b5e8b70c3ec1fa226913cf5965077d8be5cb753331a8af505816fcdda3b955b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b5e8b70c3ec1fa226913cf5965077d8be5cb753331a8af505816fcdda3b955b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a429ffe40db462eec7b475c0b62e424f69b2149f0603f33e08fc0d6cd7a29f27"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "343969f6301f743b73c23d0dbea8ce9949e62a848e409a77dc19ab37786caa04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "205f43f3037a8107b528e93fc1eb9a20f2a15035c1f03835fcd5c16df27f5cfe"
   end
 
   depends_on "go" => :build

@@ -3,17 +3,17 @@ class MkdocsMaterial < Formula
 
   desc "Material Design theme for MkDocs"
   homepage "https://squidfunk.github.io/mkdocs-material/"
-  url "https://files.pythonhosted.org/packages/8a/b4/f900fcb8e6f510241e334ca401eddcb61ed880fb6572f7f32e4228472ca1/mkdocs_material-9.7.3.tar.gz"
-  sha256 "e5f0a18319699da7e78c35e4a8df7e93537a888660f61a86bd773a7134798f22"
+  url "https://files.pythonhosted.org/packages/36/ce/a1cd02ac7448763f0bb56aaf5f23fa2527944ac6df335080c38c2f253165/mkdocs_material-9.7.4.tar.gz"
+  sha256 "711b0ee63aca9a8c7124d4c73e83a25aa996e27e814767c3a3967df1b9e56f32"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "050be9ce3bf5481d545f39c5ce670c4317cd2ed10649ddaa88e0406ba25eb697"
-    sha256 cellar: :any,                 arm64_sequoia: "65b4cefa1c0b660fe75268372f17b1b6494a5bedbcfc3229c48d908674e36187"
-    sha256 cellar: :any,                 arm64_sonoma:  "5160d035da01b7905ca1534bab1288ff6705fe04b21ea44250846bb1b2d12e86"
-    sha256 cellar: :any,                 sonoma:        "609e44f044c7c2e4e27f0f36b2685eb3688ab91727b047e821ff956584fffa1b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "92cde4d84e4bf0e966542cc1d8a281ce7eaff073c31f2dd4e147ef66ce4dc84d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "854d288430f95b7926efb0f94cba82efb608fbad495b09d46c446af2fd31d2ab"
+    sha256 cellar: :any,                 arm64_tahoe:   "2bdd174307dc1ba054af73100e86a195b413ff3b801504fda61ea102c85db332"
+    sha256 cellar: :any,                 arm64_sequoia: "ad51abfe15a41160cfcbf127360e27d24d02b99f76bccb27dcf4a7758bf3a8cc"
+    sha256 cellar: :any,                 arm64_sonoma:  "92a4acb65910f920b691b9a2ba033b3774a81f821aa93695d91fcad55092e021"
+    sha256 cellar: :any,                 sonoma:        "735fe45acd67437c8073104138d40bac1a8efe7cc7568371fe7fe10546e4d9fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa7c3d43ac785a532c988fbe3f00d20b7ee5e8a512fb339edd1d3324ec6a6959"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c09fcd8f07994330f45f780064c3fbdc714a3818ccfdea79d4e43e9916ee5f6d"
   end
 
   depends_on "certifi" => :no_linkage

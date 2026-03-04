@@ -40,6 +40,7 @@ class TclTk < Formula
     sha256 "d970a06ae1cdee7854ca1bc571e8b5fe7189788dc5a806bce67e24bbadbe7ae2"
 
     livecheck do
+      url :url
       regex(/^v?(\d+(?:\.\d+)+)$/i)
     end
   end
@@ -47,6 +48,11 @@ class TclTk < Formula
   resource "tcllib" do
     url "https://downloads.sourceforge.net/project/tcllib/tcllib/2.0/tcllib-2.0.tar.xz"
     sha256 "642c2c679c9017ab6fded03324e4ce9b5f4292473b62520e82aacebb63c0ce20"
+
+    livecheck do
+      url "https://sourceforge.net/projects/tcllib/rss?path=/tcllib"
+      regex(%r{url=.*?/tcllib[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    end
   end
 
   # There is no tcltls release compatible with TCL 9 and upstream Fossil repo
@@ -57,6 +63,11 @@ class TclTk < Formula
   resource "tcltls" do
     url "https://deb.debian.org/debian/pool/main/t/tcltls/tcltls_1.8.0.orig.tar.gz"
     sha256 "720a9e0bed3ba41b1ad141443c8651b7d0dc8fc9087f2077accb1ba9a5736489"
+
+    livecheck do
+      url "https://deb.debian.org/debian/pool/main/t/tcltls/"
+      regex(/href=.*?tcltls[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
+    end
   end
 
   resource "tk" do
@@ -77,6 +88,14 @@ class TclTk < Formula
     url "https://ghfast.top/https://github.com/tcltk/itk/archive/refs/tags/itk-4-2-3.tar.gz"
     version "4.2.3"
     sha256 "bc5ed347212fce403e04d3161cd429319af98da47effd3e32e20d2f04293b036"
+
+    livecheck do
+      url :url
+      regex(/^itk[._-]v?(\d+(?:[._-]\d+)+)$/i)
+      strategy :git do |tags, regex|
+        tags.filter_map { |tag| tag[regex, 1]&.tr("_-", ".") }
+      end
+    end
   end
 
   def install

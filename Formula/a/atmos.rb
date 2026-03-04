@@ -1,8 +1,8 @@
 class Atmos < Formula
   desc "Universal Tool for DevOps and Cloud Automation"
   homepage "https://github.com/cloudposse/atmos"
-  url "https://ghfast.top/https://github.com/cloudposse/atmos/archive/refs/tags/v1.207.0.tar.gz"
-  sha256 "0c001b452b4ba16f47fb10ff317002921213216b7b2b063a0e54c93cf417ff08"
+  url "https://ghfast.top/https://github.com/cloudposse/atmos/archive/refs/tags/v1.208.0.tar.gz"
+  sha256 "666f437e9e6aee9adb2215ed98c32013849e979508c1b76f1d00339c6c3536a6"
   license "Apache-2.0"
   head "https://github.com/cloudposse/atmos.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Atmos < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd5dddee0391103d1a5eb663f612124ee9c63f8ead73fedfbc9736ea32e9f259"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "068c95d7f8ff5c7b1fae2c6d148ef904596c8d5402ce2de9d0cd7f4fdff22e7a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37e114c190937f695253c4316e1135bcf82efd1c217a7494aa77bb90645dc218"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9d38a71669e2368edc03980f7c13bae51cab913dfdc908e0c949bd44cc7e5b60"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ffc30de8e92fc305f988d88137bc637e335c4484a6dc08f2c96b79906a95743"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf6438ffaad09c599ac2f6a747d1c2455308c0177a5c15946d9b2dabf83a32bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c44ca2f47d6b2b15d2dbbfac627a51612a88c20f5bcb6fada47bac2b2fe5da9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea4e9284a09d198446e8965014376751cdab0a6a10ccb5da8ec6bc0cc9f5734a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a28425ef5abc61b3766e582525992a03dc1adf0b64baf55de71e30135812e821"
+    sha256 cellar: :any_skip_relocation, sonoma:        "71ffe3d3b365ebe07d58b64118bc08779d7d320475f8858e288116bf2b82c8b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd24f1f07df464cc35de018806d80b9975f2680814428257e195006c1fc9a3bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d70a26220fc853730b55119002c1598c1e8ba2eba7c759cb0c903dd7e13aee82"
   end
 
   depends_on "go" => :build

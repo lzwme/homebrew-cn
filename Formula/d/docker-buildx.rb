@@ -1,18 +1,18 @@
 class DockerBuildx < Formula
   desc "Docker CLI plugin for extended build capabilities with BuildKit"
   homepage "https://docs.docker.com/buildx/working-with-buildx/"
-  url "https://ghfast.top/https://github.com/docker/buildx/archive/refs/tags/v0.31.1.tar.gz"
-  sha256 "2f2069554305c9659dd4a2b4eb10c7aeab97e52e89cfeeda07f0c0c43d19ee80"
+  url "https://ghfast.top/https://github.com/docker/buildx/archive/refs/tags/v0.32.0.tar.gz"
+  sha256 "37066119b8673590dda39a0fd578e1d886b447f4871fa948cb7009045d8eea4b"
   license "Apache-2.0"
   head "https://github.com/docker/buildx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b87538d4e185a90bce14837d486d5caab60fc1776cca3c36840b007ad95aecd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d553c2095622bc3a7c042d73aeb3e42c198409c7fc4c19fa94736354fc987e75"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0d573f4ec445ed3a9ec7ff6426e8656523b632d58e755babffc77653c6d71e1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "568c280eaa1d45eb2a0bd52754d9d5a175153015bc66e1692f19475b8fc9ce42"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b956d09fc479026441d8ec631b886fb1a4b20dd8f7352872f8d888c6c3c626f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81b902315f0904e4639060f164c56d3c12b3a93d571c80540b326ffb5d046b5d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2f9d974e3bdea10c8a74980881832ba96f48d83bb985702457c4fafc504207af"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fff26bd87c516aa44ff30d731ef6e08ef408c4a3c63c4beccfc760e79da442af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d9b2f796f4d2ed58365ed44f33f28009e0f481d28cfbd02bbb7d144289acfc3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "040e8a26b67d678d2950662eb5462219a3e4d131d17499f248fe76d6a8c1cdc9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b81d37318cb14fc8797a791d0a42575bba1130de6aed9dad35cbd62afa910cfb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1162de41d82dbb1b94511901d54581d7d3acb2dc5086a499b163b67ee445d76"
   end
 
   depends_on "go" => :build

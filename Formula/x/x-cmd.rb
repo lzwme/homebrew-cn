@@ -20,6 +20,8 @@ class XCmd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2e4d89e83068fe95f9fc89dc4a052f8abefd332ef615333a659706360b86181"
   end
 
+  conflicts_with "xorg-server", "x-cli", because: "both provide an `x` binary"
+
   def install
     prefix.install Dir.glob("*")
     prefix.install Dir.glob(".x-cmd")

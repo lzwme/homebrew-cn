@@ -4,7 +4,7 @@ class PerconaXtrabackup < Formula
   url "https://downloads.percona.com/downloads/Percona-XtraBackup-8.4/Percona-XtraBackup-8.4.0-5/source/tarball/percona-xtrabackup-8.4.0-5.tar.gz"
   sha256 "fadcf27efd2a2596f689388659e2ff5c36debcc051a55974ac8bb4a83c015f57"
   license "GPL-2.0-only"
-  revision 2
+  revision 3
 
   livecheck do
     url "https://www.percona.com/products-api.php", post_form: {
@@ -21,13 +21,12 @@ class PerconaXtrabackup < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "7005933d8b52ea0a79bf7aa62397c5180278619ed3f4f38f51ad90d8fc814782"
-    sha256 arm64_sequoia: "4c95dfa6bc1e5e1a0a7215c3fd7ab96cda188c13aaf932b80b3ccb8870a07c50"
-    sha256 arm64_sonoma:  "206c52d0e65f66e7da3d4ab05a810e861b09582fe822f11c4d1506f9b546700f"
-    sha256 sonoma:        "93a27f1e1c76e5515b75756423456a3f048f86dad6069ad8c1ceaf72f025bdee"
-    sha256 arm64_linux:   "78979070b9f183237e80e6064a43b8a55640815c8286306fa4d281168ab8955f"
-    sha256 x86_64_linux:  "12ecf13358239be94e537bdee9cf84bd4d83055a857a409b384f12a625f5f169"
+    sha256 arm64_tahoe:   "7c1bdb2a4cc6685ad4ad924c4b42d1ca0176ddde5f1fe61809b24c2a27cad160"
+    sha256 arm64_sequoia: "19b76752a0862b3dd123724f3762d3a5f66becc0c754615c62f4bbd39424afab"
+    sha256 arm64_sonoma:  "9a4acf0a925ad3759e887d302e972c41f26ea8a01e7e93fd37b84b0ed08c61c0"
+    sha256 sonoma:        "f29e217f41d60e805428968dedfee6944c6046fd992cfc2b5ad89dfc75e9d8e7"
+    sha256 arm64_linux:   "d48f2ad703fd2e61ee05938764e83e17a306c887782479dd880a58e59869fdd3"
+    sha256 x86_64_linux:  "753164264d57312a744dc0b7c86d27f4890c519de16640cab524eb6613b2f46f"
   end
 
   depends_on "bison" => :build # needs bison >= 3.0.4

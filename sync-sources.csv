@@ -6420,6 +6420,7 @@ Homebrew-homebrew-core/Formula/r/rustledger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustls-ffi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustscan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustup.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rustypaste-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustypaste.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustywind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rv-r.rb, Homebrew/homebrew-core, 1
@@ -6956,7 +6957,7 @@ Homebrew-homebrew-core/Formula/s/st.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stackql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stanc3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/standard.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/standardebooks.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/standardebooks.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/standardese.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stanford-corenlp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/stanford-ner.rb, Homebrew/homebrew-core, 0
@@ -7958,6 +7959,7 @@ Homebrew-homebrew-core/Formula/w/wxwidgets.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wxwidgets@3.2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wy60.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wzprof.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/x/x-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/x-cmd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/x11vnc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/x264.rb, Homebrew/homebrew-core, 0
@@ -15423,6 +15425,7 @@ Homebrew-homebrew-cask/Casks/v/vb-cable.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vbrokers.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vcam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vcamapp.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/v/vcmi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vcv-rack.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/ved.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/veepn.rb, Homebrew/homebrew-cask, 0
