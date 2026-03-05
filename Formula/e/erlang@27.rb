@@ -6,6 +6,7 @@ class ErlangAT27 < Formula
   url "https://ghfast.top/https://github.com/erlang/otp/releases/download/OTP-27.3.4.8/otp_src_27.3.4.8.tar.gz"
   sha256 "354243af8095a5e567931490b7b0ffe7b22cf12ee49b65c36e9187501ca03e8e"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,12 +14,12 @@ class ErlangAT27 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "05ab601b208ed7ffece64571e9850055cc8d87c022adf8f66556945fb0c7bfb6"
-    sha256 cellar: :any,                 arm64_sequoia: "a2e4398a8a2f93f1b7cd49ec7c0a8fad9e034672e43b493abd7d6888f6644036"
-    sha256 cellar: :any,                 arm64_sonoma:  "9488cd7ee3b67d5dcfa6918bc02b70bc10d0e8df416745bd194554d97b3e8e07"
-    sha256 cellar: :any,                 sonoma:        "61c5cc5c98f78e0c2dadeb83597beef20eba3394ede7d9c6af43cf66f6f58afa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f35bebf8f5e9e8bb0e6f6dde248beb92fab74576b1e5e3cdf9e88ab8b58de43a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a9bf1392dcf9de1cd6f9fa9b00081e8bcfad4e22c1d88001075bbc76eb408a7"
+    sha256 cellar: :any,                 arm64_tahoe:   "bfbeabd6428c8fe299360b089a3720df2543bdb09eedd9edcd3535805ccb60a0"
+    sha256 cellar: :any,                 arm64_sequoia: "cb2f5172cb288cad23fcd447f994f4aea0c836c93affa18c0e91992045e5468a"
+    sha256 cellar: :any,                 arm64_sonoma:  "48b116bf5a53d4828dd07de2e17791a65ca7a360a4cbb992178a510bbf8af1c2"
+    sha256 cellar: :any,                 sonoma:        "f86381f58af6df07f778dbcb2cc24cb377b80db6d679a1efd923c2c2d984e99f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "441a38419723fd9422eb2db742aedd7cc18b930c14901927e9acd7d460971b99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32fc9609de0274b0b25ee19c88e04a4a0c4b82cdb128fd80eb28356a80ac9a2e"
   end
 
   keg_only :versioned_formula

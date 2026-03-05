@@ -1,8 +1,8 @@
 class HyperMcp < Formula
   desc "MCP server that extends its capabilities through WebAssembly plugins"
   homepage "https://github.com/hyper-mcp-rs/hyper-mcp"
-  url "https://ghfast.top/https://github.com/hyper-mcp-rs/hyper-mcp/archive/refs/tags/v0.4.3.tar.gz"
-  sha256 "6da23d30d38e0be0b07711f1562b378ab7bc3f679e3470822ee81a86f9a40362"
+  url "https://ghfast.top/https://github.com/hyper-mcp-rs/hyper-mcp/archive/refs/tags/v0.4.5.tar.gz"
+  sha256 "b5feadaeaff294cf3dfe5dd2c35f1ad2aaf65204114fb6af23c1696a09e321d2"
   license "Apache-2.0"
   head "https://github.com/hyper-mcp-rs/hyper-mcp.git", branch: "main"
 
@@ -12,12 +12,12 @@ class HyperMcp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6dcdd293bad6b385d5ee9bf27000417f5ca362545d8c6be71bb90667fb3bc0ba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e37e98ad72dfbf7f50093d19c79367e58b75272ee5271709b00bca88cc59006"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "860db71140622a6f2fe97279ccd2ae853d9a7c3476fb46a8703be013abe513c1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2e27e76dfc2878da946253a7318a2c9234de700a944126a6eb5c703883bedd6f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "26f20af0062d0bc060e613efd577c8240e2fdae9a5e2b05a058e294e0bb4a5b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd593b60696bcd0e7d05902849bbe600aa7c7978962979d0029537ce7efa4aec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "627b89b734c6709ee17773ec84eb754e838f09b92ff3da54903efa33292992b4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a22888e20daf54e2362317765def59ac2840c380c2c2dfe9ac50719a6b266f5d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e3d91591c5fd17c2a7fe28f3d8168ee6cca102939dd49928258f525c7f248a0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f147c84a6d34a5c0abe146562c5e404118ca4b92dd7ea126133ae599f0f22efb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "823e4d44f180d8c2578ecf8c873f6bf51bbd6e984fc0d24e70b0203ffec63821"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cc4d0335811967e0bd2af8578c30c700980daf2e290d5d161f7f001a1977c29"
   end
 
   depends_on "rust" => :build

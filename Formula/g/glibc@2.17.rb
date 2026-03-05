@@ -67,7 +67,9 @@ class GlibcAT217 < Formula
   sha256 "a3b2086d5414e602b4b3d5a8792213feb3be664ffc1efe783a829818d3fca37a"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    skip "versioned formula is pinned to specific version"
+  end
 
   bottle do
     rebuild 1

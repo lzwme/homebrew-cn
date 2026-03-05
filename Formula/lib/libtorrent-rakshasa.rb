@@ -1,8 +1,8 @@
 class LibtorrentRakshasa < Formula
   desc "BitTorrent library with a focus on high performance"
   homepage "https://github.com/rakshasa/libtorrent"
-  url "https://ghfast.top/https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.16.6.tar.gz"
-  sha256 "720ff411ef0627a928141cad7f60b171a2fc44fb8700b0914e0072eab1a7be1b"
+  url "https://ghfast.top/https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.16.7.tar.gz"
+  sha256 "621bdf0036d4ad9a2beaf30c0ae0fdb0b3b44e5240e5c99ee4cfb93c8b18b906"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,12 @@ class LibtorrentRakshasa < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "32f199169d09f60740c6b495534ef0ec45f493d38a4209179848ea4455355742"
-    sha256 cellar: :any,                 arm64_sequoia: "14aeb86e15ba1cc8316fd2d734b876fe93a29c3a3f8206eb0edfd66c02f341cf"
-    sha256 cellar: :any,                 arm64_sonoma:  "45ec40e48b21cd1ff1a7b6149ea1552ff9b826fca58a5e49411dabb09b88d1ca"
-    sha256 cellar: :any,                 sonoma:        "048e234f7bd34d5b022b0d88bb9e454912d82bb1d6f9b16483a7973433992a2a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "182c7dca98244fb607648b1c30c968a3869052b6e1b964cad6da9cc1ef88859f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b57703654e39e6c55e7210679e621cd01c5969056af7018ee748dc3455ff27f"
+    sha256 cellar: :any,                 arm64_tahoe:   "389d700ee0cbd9994b41794a63f8895cffd3c68889a1589d8914e620b56db526"
+    sha256 cellar: :any,                 arm64_sequoia: "78a0f68edb57cfe5109bc72e653082222892292a517734defd6ba4197fe14aee"
+    sha256 cellar: :any,                 arm64_sonoma:  "2878490a0456f461def92f6aad0176edad8d99ac4b325dd8171d200feaca5a87"
+    sha256 cellar: :any,                 sonoma:        "e69ddf97106d81f85926aa3ce2c570d8d27b149baec0ff29a54b7b580f92f14c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f68dbe1d18c450f714b6cfa27b2afb7ada922c0a7a8ea495b804799ba4b8e423"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd9b33ac40ba506dfc3e1a3d9dae667fc9a74e8718a4388f4c6e47528bf07942"
   end
 
   depends_on "autoconf" => :build

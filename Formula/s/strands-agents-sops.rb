@@ -3,12 +3,12 @@ class StrandsAgentsSops < Formula
 
   desc "Standard Operating Procedures for AI agents using natural language"
   homepage "https://github.com/strands-agents/agent-sop"
-  url "https://files.pythonhosted.org/packages/37/6a/c2212f248bbbe6e7c3698d5af6d0a98ba6644805e6c3e3e881c7be3c4e9b/strands_agents_sops-1.1.0.tar.gz"
-  sha256 "551bd1861f0b1e631687f8823e5e97664c293d13bb9f07d20d332072501c37fa"
+  url "https://files.pythonhosted.org/packages/c6/d6/efa19f4e061820c7d5e3ac8de8bd3716adaad6678209b16eb7a03ecee875/strands_agents_sops-1.1.1.tar.gz"
+  sha256 "e36a72cfb806b20099856b28bbf6f6c317d1caa318608bb302e6467ed33c1361"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2d95dbf7246f6b394187da594b8a915f3d47d49e6e4d8be752badec2034daf25"
+    sha256 cellar: :any_skip_relocation, all: "f44f75acb7943451d6c0e5b002974aee94c7e747e541348ec6b0d668a3fa05cd"
   end
 
   depends_on "certifi" => :no_linkage
@@ -85,8 +85,8 @@ class StrandsAgentsSops < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
-    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
+    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
+    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
   end
 
   resource "python-multipart" do
@@ -100,8 +100,8 @@ class StrandsAgentsSops < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/8b/8d/00d280c03ffd39aaee0e86ec81e2d3b9253036a0f93f51d10503adef0e65/sse_starlette-3.2.0.tar.gz"
-    sha256 "8127594edfb51abe44eac9c49e59b0b01f1039d0c7461c6fd91d4e03b70da422"
+    url "https://files.pythonhosted.org/packages/5a/9f/c3695c2d2d4ef70072c3a06992850498b01c6bc9be531950813716b426fa/sse_starlette-3.3.2.tar.gz"
+    sha256 "678fca55a1945c734d8472a6cad186a55ab02840b4f6786f5ee8770970579dcd"
   end
 
   resource "starlette" do

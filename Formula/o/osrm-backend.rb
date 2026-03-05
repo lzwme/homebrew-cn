@@ -4,7 +4,7 @@ class OsrmBackend < Formula
   url "https://ghfast.top/https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v6.0.0.tar.gz"
   sha256 "369192672c0041600740c623ce961ef856e618878b7d28ae5e80c9f6c2643031"
   license "BSD-2-Clause"
-  revision 2
+  revision 3
   head "https://github.com/Project-OSRM/osrm-backend.git", branch: "master"
 
   livecheck do
@@ -13,20 +13,19 @@ class OsrmBackend < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "edfb58fb08cdb110fbe738784b979f256da6e7f34af49fc6d667669fc41d3f4a"
-    sha256 cellar: :any,                 arm64_sequoia: "99d0f1dd0fe21b15366c661cdbb8716fa5753a0b2b1e5473c485e80a372518a2"
-    sha256 cellar: :any,                 arm64_sonoma:  "7002b90376549c85c6b5d7beca1d1afa39cbe9cbdcb0f904cb825e611d0c1ca1"
-    sha256 cellar: :any,                 sonoma:        "a7df306403150d35d66ce2a2fa96a3ea12cbd9021468cbdefe6b30560398af46"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e68d7ae70beae95b5aeef1840affbac9d0774000bb6014791e4262b0eedf208e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fed92de2c0585e16bb7a1c2d2cc8b9538d935b93814aa4f800732ca26a60062"
+    sha256 cellar: :any,                 arm64_tahoe:   "76bd0da5a56b544df81cbd42bc0bba572a775fe10fe6b4dbfd5dfcf80d95ef6e"
+    sha256 cellar: :any,                 arm64_sequoia: "507bf33a4c3bb6d89d9bea789f250300aadc97c2bc92e8a58846cd93ef2f9413"
+    sha256 cellar: :any,                 arm64_sonoma:  "f27477bc686b81eb309652e8714b734674f0731e7f409710a829a0d88e97915c"
+    sha256 cellar: :any,                 sonoma:        "4a75a8fda88275a5bf8323858bb3b7ddb45aa3fa7b11fa7ad7ed96950cf7238f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "32f90d63085f4ff4682b74a7767685581ca66eda545b3769dedffd1d00e54f1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f80f0719350479cfb231cae9f47e4ee866792157c32216a33b8cffc8907961b1"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 
   depends_on "boost"
-  depends_on "lua"
+  depends_on "lua@5.4" # https://github.com/Project-OSRM/osrm-backend/blob/v6.0.0/third_party/sol2/include/sol/sol.hpp#L3540
   depends_on "tbb"
 
   uses_from_macos "bzip2"
@@ -53,7 +52,7 @@ class OsrmBackend < Formula
   end
 
   def install
-    lua = Formula["lua"]
+    lua = Formula["lua@5.4"]
     luaversion = lua.version.major_minor
 
     system "cmake", "-S", ".", "-B", "build",

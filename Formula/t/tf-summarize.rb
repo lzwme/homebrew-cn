@@ -1,18 +1,18 @@
 class TfSummarize < Formula
   desc "CLI to print the summary of the terraform plan"
   homepage "https://github.com/dineshba/tf-summarize"
-  url "https://ghfast.top/https://github.com/dineshba/tf-summarize/archive/refs/tags/v0.3.19.tar.gz"
-  sha256 "51f734fa9d76c8a8a40705ad9606134cb3626f907b225e90281b732cb8a2a05f"
+  url "https://ghfast.top/https://github.com/dineshba/tf-summarize/archive/refs/tags/v0.3.20.tar.gz"
+  sha256 "e2e6d173581109e155e86690738a85780947d886c7c3236187467ff2174f62b1"
   license "MIT"
   head "https://github.com/dineshba/tf-summarize.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d23074156cdec5e1b0560d0bdd30f37423cf6ac6b92ecf1f6567b1ebacd553f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d23074156cdec5e1b0560d0bdd30f37423cf6ac6b92ecf1f6567b1ebacd553f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d23074156cdec5e1b0560d0bdd30f37423cf6ac6b92ecf1f6567b1ebacd553f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1b50ab805fe60a99d6bc19b17d918776a5fbd50f138981c0d8f61c323c3c5c55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "af79a23b1c33102bd0ec90ac230bfc01ad01c41fb24b657d90eff54239e0e628"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd412601c856b1b3de489bd87814b9f1632468a4575a713c2345aa5a674a4fd8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2334652999366aa46838b87e1f3f5f2a07130a26268707f29898fe216e4bbef6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2334652999366aa46838b87e1f3f5f2a07130a26268707f29898fe216e4bbef6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2334652999366aa46838b87e1f3f5f2a07130a26268707f29898fe216e4bbef6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "58861206aaff1656dcf4ce76441d734c233ad6a30742edc2e4eb39b001a5fd04"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "748e71928987b8a3dc5a2bb6917de52ad01637b66eb08a748f2565f0b249721f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e06d54a3fa8a91d5a9e3e006ec589d0f2fb9c8be2236b5ca39a7c713ee20dccc"
   end
 
   depends_on "go" => :build

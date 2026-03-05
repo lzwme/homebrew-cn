@@ -1,8 +1,8 @@
 class Jruby < Formula
   desc "Ruby implementation in pure Java"
   homepage "https://www.jruby.org/"
-  url "https://search.maven.org/remotecontent?filepath=org/jruby/jruby-dist/10.0.3.0/jruby-dist-10.0.3.0-src.zip"
-  sha256 "9209a9f0ed7d585e63e408e229cb629a3a18f04428373b8e8d9ed74c1e51abc2"
+  url "https://search.maven.org/remotecontent?filepath=org/jruby/jruby-dist/10.0.4.0/jruby-dist-10.0.4.0-src.zip"
+  sha256 "14970303abd383e5cbdd62fc12240fc500ca56ac67043fdab12acd12c0bc33e1"
   license any_of: ["EPL-2.0", "GPL-2.0-only", "LGPL-2.1-only"]
 
   livecheck do
@@ -11,13 +11,12 @@ class Jruby < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "46f065b8ac8e48e9226822e83c9fca0813e34ed04bc50139e8162e54782870b5"
-    sha256 cellar: :any,                 arm64_sequoia: "b2621d483a2e365c44867ebda7e0ddfa78f590544fd51bb13e14b0c7f8084677"
-    sha256 cellar: :any,                 arm64_sonoma:  "184d5f384bf3fd2fa14f2c58fe2f6ab4e37fdf0ba2fc6f251ee59a12b07e0d43"
-    sha256 cellar: :any,                 sonoma:        "9fc51da0a640b5794ac1ccc6108dc4f0bccd93c56cd77efdeb0b870db715ccbe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "40af39ab7240ac8f92b961aadb31937fdadc4136764ec2acc5bacb1cf7b7bce6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fe0cbe6b54d86edcd954e610cf8d7f90b84226d0c55b6cd54a78e10a7d802ea"
+    sha256 cellar: :any,                 arm64_tahoe:   "6bb65182d298172002cf8f395d0608edefa6222e827575e5849e1ad51dee865a"
+    sha256 cellar: :any,                 arm64_sequoia: "c933a215eb77587117a4bfa0b7c47aa4cd12add469ddbd195c4707d6860369e8"
+    sha256 cellar: :any,                 arm64_sonoma:  "15a760ae69f18d4ab4e802803bcedc4660696345e0a9cddf2ccd9db51809a5c0"
+    sha256 cellar: :any,                 sonoma:        "cd35107cc3ba2df332a350399a2c1ee6c591ca3f138efd22bc1679829ef83b48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0139a9da688e5abf02eeb8bad825e4d41649c8178aa6a15f960e5ec4383ec57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd5d25230676021c5e8cf6d7ed6854122a9d132ec297b07974255d93ea71c083"
   end
 
   depends_on "ant" => :build # for jffi

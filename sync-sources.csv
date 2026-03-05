@@ -1354,7 +1354,7 @@ Homebrew-homebrew-core/Formula/c/cubejs-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cubelib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cucumber-cpp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cucumber-ruby.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/cue.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cue.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cuetools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cunit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cups.rb, Homebrew/homebrew-core, 1
@@ -1874,7 +1874,6 @@ Homebrew-homebrew-core/Formula/e/epubcheck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eralchemy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erdtree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erg.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/e/erigon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang-language-platform.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/erlang.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang@24.rb, Homebrew/homebrew-core, 1
@@ -2432,7 +2431,6 @@ Homebrew-homebrew-core/Formula/g/git-delta.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-extras.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-filter-repo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-fixup.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/git-flow-avh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-flow-next.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-flow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-fresh.rb, Homebrew/homebrew-core, 1
@@ -2482,7 +2480,6 @@ Homebrew-homebrew-core/Formula/g/git-subrepo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-svn-abandon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-svn.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/git-sync.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/git-test.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-town.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-tracker.rb, Homebrew/homebrew-core, 1
@@ -3837,6 +3834,7 @@ Homebrew-homebrew-core/Formula/l/ltl2ba.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lttng-ust.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lua-language-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lua.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lua@5.4.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/luacheck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/luajit-openresty.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/luajit.rb, Homebrew/homebrew-core, 1
@@ -6614,7 +6612,7 @@ Homebrew-homebrew-core/Formula/s/sha3sum.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shadcn.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shaderc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shadowenv.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/shadowsocks-libev.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/shadowsocks-libev.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shadowsocks-rust.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shairport-sync.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shallow-backup.rb, Homebrew/homebrew-core, 0
@@ -7573,7 +7571,7 @@ Homebrew-homebrew-core/Formula/u/unciv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uncover.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uncrustify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/undercutf1.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/u/ungit.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/u/ungit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uni-algo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uni.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uni2ascii.rb, Homebrew/homebrew-core, 1
@@ -7877,7 +7875,6 @@ Homebrew-homebrew-core/Formula/w/wgetpaste.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wgpu-native.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/whalebrew.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/w/whatmask.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/whatmp3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/when.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/whisper-cpp.rb, Homebrew/homebrew-core, 1
@@ -14854,6 +14851,7 @@ Homebrew-homebrew-cask/Casks/s/splayer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/splice.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spline.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/splitshow.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/spokenly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spotify-now-playing.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spotify.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spotify4bigsur.rb, Homebrew/homebrew-cask, 1

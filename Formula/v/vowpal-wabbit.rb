@@ -1,18 +1,18 @@
 class VowpalWabbit < Formula
   desc "Online learning algorithm"
   homepage "https://github.com/VowpalWabbit/vowpal_wabbit"
-  url "https://ghfast.top/https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.11.1.tar.gz"
-  sha256 "de404fc500fadec3195cd0a38094056571f1c8065c26e64df40b49ac643c8a8b"
+  url "https://ghfast.top/https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.11.2.tar.gz"
+  sha256 "21352230bf0e4c01fb4da1959a7338e21a3150ca5641eb2328abfc749fd32e77"
   license "BSD-3-Clause"
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9bd0589d1b2682b7eb6fd9b89830b6bd780b2e3b3c68b24dd387657c03a70453"
-    sha256 cellar: :any,                 arm64_sequoia: "faaee5a127239bdf71a7fae41429b3debdb23b9c7fade391a487ade189a31257"
-    sha256 cellar: :any,                 arm64_sonoma:  "3647359849dd33874a2dc73c5093a187243f3cca0e288284435eaa158c6d5666"
-    sha256 cellar: :any,                 sonoma:        "f2fec4927139cf65848148c7567ca03db85ffeb5d64311e39a63ffd46a398746"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "df6bbda91aa1af735a2ba5f7bc330da7c0a7474fa57eb446b25b0aba3aba5f20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ece7a125e69bd4edb477f5c6bda2e2cde024bc9d507dc76a6fd97fbd49cff952"
+    sha256 cellar: :any,                 arm64_tahoe:   "b0aa875aad744729cb35b5d07e6d4f114fdfa56d547a671ca89b37f83f2aa2bc"
+    sha256 cellar: :any,                 arm64_sequoia: "b2481c1fc9bff8698b47cd14f04758fd3d692bb910fbf5d04bca98edc1ff3663"
+    sha256 cellar: :any,                 arm64_sonoma:  "8e4910e79afc071a151ae018453987b45aa19ca4b45df8bf68417d010043ab48"
+    sha256 cellar: :any,                 sonoma:        "1860be73a277dd90ac3761230de3c903df37bbcc37e19fc7f4391c56a31dec21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0059589a36a2a7bec959346f8ce478586c06a5d8bf6303fa845d87498cf069ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b464231f8052b9d51d4b3da74de076e5a93981dc60298c13cb2cac0c00ab1fd1"
   end
 
   depends_on "boost" => :build

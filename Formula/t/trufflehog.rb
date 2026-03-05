@@ -1,19 +1,19 @@
 class Trufflehog < Formula
   desc "Find and verify credentials"
   homepage "https://trufflesecurity.com/"
-  url "https://ghfast.top/https://github.com/trufflesecurity/trufflehog/archive/refs/tags/v3.93.6.tar.gz"
-  sha256 "f2dec39ae56633e7c94f31e05c7a5ec51907946249e5ce11f81e35b525abdc64"
+  url "https://ghfast.top/https://github.com/trufflesecurity/trufflehog/archive/refs/tags/v3.93.7.tar.gz"
+  sha256 "7d879582a1ddfb56c7dc9193ad2c416478a2310b9d942a127bf52f8b36a87c75"
   # upstream license ask, https://github.com/trufflesecurity/trufflehog/issues/1446
   license "AGPL-3.0-only"
   head "https://github.com/trufflesecurity/trufflehog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b0b591aecbe25c0d0ea9b0008d5a914caf35a1e8e32320aa195d87ad7f58d7a3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42b4d9257d2e9c3fd973a1ad5fc3a45370e8f43c129adc9b00ea4a717722671f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd2aab450d39351db488c4c2213f9b81fe69e01dbf1fb4623e8b2333441678a9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "60642ba8d2d9f2213c424347fc46ece43efd8c734dec840aef49c3e58cac0117"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7604fd5f7a9c6eb445300ca62ce174fa8bd20f53a0f6b973e47993da4a8e961"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e967013c6130461229e5b7e5dab9bac884ade408443e5132c79e656204bddd5d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77f2381cd18e1a83d514e9d8bf7a6bd75812b9a8f56d60703b28c6b7cbed4813"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cdcd19f9c85ab079debf92c917bd6557ffd1dce22b5403985b49b8d63d68f5c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f1ecf820e98ced4dc7ce324eacdb8ec1192effa7407e140c33bc935e76d46c6e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "16cf515a8fabdf574367b45ecd24546ce2dcee0b38412e4c6316cbdff65d5adc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fdaddb1022ad1e4b8065a907427e858e47d059ee8a373d8b34b1aef7917378e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33896ca2e69bda1b7be61ec8ea01a3d13600a72f192a6e0b59a7c64e9940ecdd"
   end
 
   depends_on "go" => :build

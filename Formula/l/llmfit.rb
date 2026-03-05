@@ -1,18 +1,18 @@
 class Llmfit < Formula
   desc "Find what models run on your hardware"
   homepage "https://github.com/AlexsJones/llmfit"
-  url "https://ghfast.top/https://github.com/AlexsJones/llmfit/archive/refs/tags/v0.5.8.tar.gz"
-  sha256 "5fe594eabdbee3a4bf622a999e823be756c77b7065bb9029794b0625530ff21c"
+  url "https://ghfast.top/https://github.com/AlexsJones/llmfit/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "bf1fa15e97c10760ee26ced68817e8611e00f435498899f33c0f48fd5b90c374"
   license "MIT"
   head "https://github.com/AlexsJones/llmfit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "744c545bb0f5e4f92c6dba6d2849543bfd73bce9f3a586584d2c5d6695b7db61"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df441591270a60c644667a64b916b8ba89564450d73b42c4b40283efcb07e472"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52260806b8ee08d6cc9cc5a1336c3e41c83b87e97591ae62599d8489e908228c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "366752cc22ff00b904ec31fc855859716c7dc779f756a479f661c7a280d8fd92"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b1f469943870cbfce1da077e0b73ba3dbe7106ba402faf3b1cb17005bb1f053"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "935d258c6b23f508d5c09086fc006f12763d54c0005799b9b85d620063af2d3b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b3d2bc52d3e6e81d7f4a753c7fd271db12e9e2217f120b7918fe3132989cf3e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fe7fb32ffc6c0dddd2b463249b351b3982965d7b9509b7004ce69055b11f065"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2d19b580cd807c9f1eaf4062758f1a255af510ec684898e69c5069e2be1fdf3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b979b6b03fa0e65a61ac89c62d539f5f4e0d654a10caeaf1ca5bfd73e3639ade"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a1440797f2c13718f9208f42a921e3a25c0f1c8d1a8cdca31b0883007f57514"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0549dd7a9aded4b5d840f4f3b50efc433339ea05aa474908798e777b0729e460"
   end
 
   depends_on "rust" => :build

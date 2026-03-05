@@ -1,17 +1,17 @@
 class Yamlresume < Formula
   desc "Resumes as code in YAML"
   homepage "https://github.com/yamlresume/yamlresume"
-  url "https://registry.npmjs.org/yamlresume/-/yamlresume-0.11.1.tgz"
-  sha256 "eecf19120041bedfa4027bf3d95e98cc6cd82b8822816907db991286c4e8c490"
+  url "https://registry.npmjs.org/yamlresume/-/yamlresume-0.11.2.tgz"
+  sha256 "47f4c069732fd88b9d7ed7698e6cfdee98c9685cd897ab5ac118202d54134de3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3526e6790c2f04d77fe11d51388cc48f0fa802c8746203548368f1838a1fa24"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa77e1c051270179890c7a9b623b3308cd8cabcaf1bd3e39a1a9c12a36a416bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa77e1c051270179890c7a9b623b3308cd8cabcaf1bd3e39a1a9c12a36a416bb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "69536254f372ffc76d7d67e7491260e734cfda95a1e7e1e4b68fb4786c0e8798"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0be2248bf3e1254c6f3fc055bb131c94a6cdc7c96ec365bc6a7360dcdbe117c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0be2248bf3e1254c6f3fc055bb131c94a6cdc7c96ec365bc6a7360dcdbe117c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7076936c6fdb278f1d0c2f68aeeab156c562ca3d2ae09a9078c524ff177de4e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fcc2a155609630fa9d4e1e788e06eacc598d72abc6542af5537e1e516d968ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8fcc2a155609630fa9d4e1e788e06eacc598d72abc6542af5537e1e516d968ba"
+    sha256 cellar: :any_skip_relocation, sonoma:        "12c1e1a96f047a3eda1c7d59619b98136f6f70802bfb5845911fa899aff312a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fdaf75d00dec84a8890a351e25460f2690a2dbaa48fb28f19b1e0e5c41637b54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdaf75d00dec84a8890a351e25460f2690a2dbaa48fb28f19b1e0e5c41637b54"
   end
 
   depends_on "node"

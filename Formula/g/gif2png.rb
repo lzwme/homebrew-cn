@@ -15,8 +15,6 @@ class Gif2png < Formula
     regex(/href=.*?gif2png[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "9ffa76192c9c581c3fd4aa8d8f56da708f1799dc9122379b34d1ad9240d937ba"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7ba18868f7931d35e5ea59235cd76fdda07273197bd933f070b5f569691cbad2"

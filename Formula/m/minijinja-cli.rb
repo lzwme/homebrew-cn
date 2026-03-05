@@ -1,8 +1,8 @@
 class MinijinjaCli < Formula
   desc "Render Jinja2 templates directly from the command-line to stdout"
   homepage "https://docs.rs/minijinja/latest/minijinja/"
-  url "https://ghfast.top/https://github.com/mitsuhiko/minijinja/archive/refs/tags/2.17.0.tar.gz"
-  sha256 "33bdf1d6fc5c33b9664cf14d97289ae79d1c0fb9c9f93293cf38d3c71bcaa4f8"
+  url "https://ghfast.top/https://github.com/mitsuhiko/minijinja/archive/refs/tags/2.17.1.tar.gz"
+  sha256 "917d7cc981ed1615d735570ef813c70825567b78ed7345925b56dc7f12fd218e"
   license "Apache-2.0"
   head "https://github.com/mitsuhiko/minijinja.git", branch: "main"
 
@@ -11,12 +11,12 @@ class MinijinjaCli < Formula
     strategy :github_latest
   end
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f41364074758f511125a52646cd4cb5d0af9ffe1d871e5344c454b716b9e2a0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d816462eff471792cde7c73d6adbf497658eebcb22cfa8ba48211fefcd4c85c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b2b8df0c53ca2b870d1b09e0b1eafe80a017d04541ce90a8951b34139d01a73"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dc8f390986fc8e27b12a27d29178f07f5780e752d38a8ac122bda2a8cc28f366"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d468912fa5c3f6cd1af567adc6c250ba26f31caede1761da789127bcfe2021f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "869aa0cbd64ed6e5ec848c2966597964e0e709ba8351db784ede52c0b476e87c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8d83d5a52c756a8321857672951ea6878eb06867c1681c549ddf863801d8fc3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab07eee60d59f2f34e1049f8655d2b3afebbe22720eefd68b0816fdf67635645"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35e32ca3d7d14381ace03ce68a39fb725cbae7680eb13d19007b6bf6b3cb7d37"
+    sha256 cellar: :any_skip_relocation, sonoma:        "59961e269021576edeab0ac83dcac06244add5f71a88c637befed90e5942aee0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "faddbabef2ee53c128ff4ae06ff08e47322d50b74f0e1f31a11d3f6fa91ff589"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9304848f3a1526c0f5ff4efe73ef818edb01bd94c1e6cb7e3d314724557a3ac3"
   end
 
   depends_on "rust" => :build

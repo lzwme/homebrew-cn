@@ -1,18 +1,18 @@
 class Nullclaw < Formula
   desc "Tiny autonomous AI assistant infrastructure written in Zig"
   homepage "https://nullclaw.github.io"
-  url "https://ghfast.top/https://github.com/nullclaw/nullclaw/archive/refs/tags/v2026.3.2.tar.gz"
-  sha256 "b225a0f3c1331e2ccb3c2661c24cbfde1d162ac8e74a24d80940b5f8ae9d95e4"
+  url "https://ghfast.top/https://github.com/nullclaw/nullclaw/archive/refs/tags/v2026.3.3.tar.gz"
+  sha256 "3cf156197cf2ae5a25aab697dc5f83477f3ae30b81764c9ce343e0a632daf9ab"
   license "MIT"
   head "https://github.com/nullclaw/nullclaw.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12de60bcd4aa8e0cb6e6b843211b9e632a10fd438767ca1e8d34ffd7ee249524"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "147dff847bc1275c39f57604cf4bd604c02fe34df81ec03b58e1409d8f9bb548"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc7e2c2a6e2ccd70d4905be4fa23ffe7bf7f5aa0906dfb97f888288e80a7dd6a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2ed34a9070f8ec8c8a900e257a874aaf02bdc1fda74a46695f98b63df677503b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "221c84a18cdd9a04a20e82d3b912c4a1fdf08cedf85fe965cde16f7c288c74cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "119b8a58cc1a92ee145706181a8780439707091ec105e1510f81da1b7b5126b8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd532e8b35b992fa2175670476d06aadc87b634afa2d8920328228d6b5e69e86"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47a92dc24e451db2c85b5f7e521f20b60ed2d79a95c649a6afd163fc100539c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fcd755243a06db6a2fa4bbf93c35fada0ae43e455882f24fa2f43bf361bbecbc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "10d3f9332755704d178fa96cbbfb9085d0eca30364daedcf55b1773a1d75245d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f28708e896c60ed04fc35a6b377dd1211961775dc9a521e84f9351abeb33b39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76e85a58ca199279c912e5f3bc3e22f9f74c5b99ee4633ad8ffd99a76bc72b35"
   end
 
   depends_on "zig" => :build

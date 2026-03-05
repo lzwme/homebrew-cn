@@ -1,18 +1,17 @@
 class Libre < Formula
   desc "Toolkit library for asynchronous network I/O with protocol stacks"
   homepage "https://github.com/baresip/re"
-  url "https://ghfast.top/https://github.com/baresip/re/archive/refs/tags/v4.5.0.tar.gz"
-  sha256 "be6bc1adb74bac8ea866e7fff655f9c9bcd9dbceebf7337649c7ac834c7028dd"
+  url "https://ghfast.top/https://github.com/baresip/re/archive/refs/tags/v4.6.0.tar.gz"
+  sha256 "811f19ed3df60f75070c07fc0eb5f767574e5b6dc2f12a679df04df381a43d88"
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "b518ed44afbdaa37daa04f240c4be3e0e505e5589781d3c18d9da0e64cd73f39"
-    sha256 cellar: :any,                 arm64_sequoia: "60959942a578bab8cc5232f3d682621c6f5b940521b57ccd9c9f1d584bbdc54a"
-    sha256 cellar: :any,                 arm64_sonoma:  "16c9765bd2ff85b33b109a768b705dfbeff5247409d2c075451b38e19e401a8b"
-    sha256 cellar: :any,                 sonoma:        "049fdad9327623dc477a3ba297cd85b6e51d59048e19aa81a79f45b592e8ca05"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e41770d8e0635911c6d837ff71b7134795c4b6b7a984d145e03fca44dbafcfaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e1675c3c544dcd00fae0667a438761a7835d93f088cb785bbe1ad734f68b1af"
+    sha256 cellar: :any,                 arm64_tahoe:   "7f6ffa21771c5db9fd4c727a14086581e7774b3fee41374c5a2a3a73d449cbb2"
+    sha256 cellar: :any,                 arm64_sequoia: "8687b9526581bbfaf1ffb4ecc5267bfa8631223eb8ebdc832136005247ef678f"
+    sha256 cellar: :any,                 arm64_sonoma:  "f1de37b2d090a86287bd28c7f9dd8b6d23715226344885689422e4743cb58b9b"
+    sha256 cellar: :any,                 sonoma:        "dd6626b910acaed136424c8b96934c433ac0c94b0d4b2bac23e3f46d4fd98d9e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "73ea09f512b0b3c0dc4f3a1d8c1caee5cc4793aa8495ad32c6b036266356c330"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c225de4a857fcdcbc4fe7081afe56212154156e52134e955bd0fd3ee68b3345d"
   end
 
   depends_on "cmake" => :build

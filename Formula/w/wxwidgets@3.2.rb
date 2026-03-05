@@ -1,9 +1,10 @@
 class WxwidgetsAT32 < Formula
   desc "Cross-platform C++ GUI toolkit"
   homepage "https://www.wxwidgets.org"
-  url "https://ghfast.top/https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.9/wxWidgets-3.2.9.tar.bz2"
-  sha256 "fb90f9538bffd6a02edbf80037a0c14c2baf9f509feac8f76ab2a5e4321f112b"
+  url "https://ghfast.top/https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.10/wxWidgets-3.2.10.tar.bz2"
+  sha256 "d66e929569947a4a5920699539089a9bda83a93e5f4917fb313a61f0c344b896"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
+  compatibility_version 1
 
   livecheck do
     url :stable
@@ -12,13 +13,12 @@ class WxwidgetsAT32 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "def241df0ed45b686ecede437f05914fc118411adfc4cef1f5e39dfc2b455b4a"
-    sha256 cellar: :any,                 arm64_sequoia: "fddafc373a90a222d5da80c8cab4ccb0ebd66a3d80cc9d5b91c792a384a9c086"
-    sha256 cellar: :any,                 arm64_sonoma:  "7ee82e1e66b3e3b8c83a69db5665ca824398883057d2d1ad564cc52b4515ec81"
-    sha256 cellar: :any,                 sonoma:        "e91475236162815043f5d88b3eec56df9b1d76fd4187d1e77d68e9ace2e0f8f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "57c5ea5d0c19561f052695d2100708e071a8d8eeddf8f697179d2d900b9c1b1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a917897d830f7bb5d489f2b560abe255fe03efd846760a7dfed916c595ea20e"
+    sha256 cellar: :any,                 arm64_tahoe:   "74d1a1c9bcf676f71f37091d5dc8070c0582dee03507d0d8cb49a7be43cbd225"
+    sha256 cellar: :any,                 arm64_sequoia: "087534b47e6145c177e14b283e4aa481275e24cd5434d373fa7568560862ce6f"
+    sha256 cellar: :any,                 arm64_sonoma:  "2496f42ac6c200388af114193b96d61f47b911460bee0c1a273ebdcd166e543a"
+    sha256 cellar: :any,                 sonoma:        "6fdcb464921d5f8c6e6970af6cc0cecfce808492b5ee527162f1c155593d873c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d37fc9e718dc139fdc289f4bd24d496d857f92c93195cfb82ca0a625e6e5317"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77e184af60c727675b07335acaa9aaaaa2c2029512c62a56026592faffe6d74e"
   end
 
   depends_on "pkgconf" => :build
