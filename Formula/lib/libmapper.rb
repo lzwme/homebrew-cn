@@ -1,18 +1,17 @@
 class Libmapper < Formula
   desc "Distributed system for media control mapping"
   homepage "http://www.libmapper.org"
-  url "https://ghfast.top/https://github.com/libmapper/libmapper/releases/download/2.5.1/libmapper-2.5.1.tar.gz"
-  sha256 "ce46ede6443b5c9c2d986d77e6eab901da4537394f14220f3102df2af7652495"
+  url "https://ghfast.top/https://github.com/libmapper/libmapper/releases/download/2.5.2/libmapper-2.5.2.tar.gz"
+  sha256 "aff1aa623eada922a428b730dacbe9523016600d1db9a9a53212833a6bd31ddc"
   license "LGPL-2.1-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "c18622efe48c4000baf732c9675a1c893d047dfb67c0b56294a822227d392de2"
-    sha256 cellar: :any,                 arm64_sequoia: "801c922e7eac1db92bfd883855145d2e862895e877e19162a28e9b806eade6b4"
-    sha256 cellar: :any,                 arm64_sonoma:  "3203a45d5d0c78d43b8f25991a603f76fc6a6cb8e84f0c12c81148c5211a49b3"
-    sha256 cellar: :any,                 sonoma:        "68512b57f16cc4bf33a742933ccd4662d4a2a13800409101c67c940e81914ed2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "38784f68909c9976766e5355ff92dcd38a2f197f8020480960b513a009fbabbd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94bfc2ec392a9efdfab9212c6a3bd07de234278975daa884d49210b90ae276cd"
+    sha256 cellar: :any,                 arm64_tahoe:   "eebd88eb97dd64c5e05b8f19adbb3cb69a47fe99993f39007b3f812580e5f8e3"
+    sha256 cellar: :any,                 arm64_sequoia: "82d939b92a88017d0a579d916f0f35a10ed9d0c5df4bcb2cbf04f0622bf9ac2e"
+    sha256 cellar: :any,                 arm64_sonoma:  "bd99ce2671baa099d735a048187d541e2cdc4104f5fa0e705d767d8563031212"
+    sha256 cellar: :any,                 sonoma:        "b602930e4d2ffc1950c9b947f8bae65bc6f769ba5eb0d5bfa58403d4dcd2f38c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f864aea23dafa21f4226ab0e2695fd5165e54af46892f164eff4fe5309f9af59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55c64edc6dadf0ad8f870a78960aa9b58c3d7f3a88f85249ce0d0f1da844d46d"
   end
 
   depends_on "autoconf" => :build

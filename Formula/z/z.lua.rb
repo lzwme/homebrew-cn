@@ -1,13 +1,23 @@
 class ZLua < Formula
   desc "New cd command that helps you navigate faster by learning your habits"
   homepage "https://github.com/skywind3000/z.lua"
-  url "https://ghfast.top/https://github.com/skywind3000/z.lua/archive/refs/tags/1.8.24.tar.gz"
-  sha256 "ed749f4cdc9ca4315a74dca0918b1e12d5961b9c16754907ef492c4ae0bfccd3"
   license "MIT"
+  revision 1
   head "https://github.com/skywind3000/z.lua.git", branch: "master"
 
+  stable do
+    url "https://ghfast.top/https://github.com/skywind3000/z.lua/archive/refs/tags/1.8.24.tar.gz"
+    sha256 "ed749f4cdc9ca4315a74dca0918b1e12d5961b9c16754907ef492c4ae0bfccd3"
+
+    # Backport fix for Lua 5.5
+    patch do
+      url "https://github.com/skywind3000/z.lua/commit/e1eb7a2104a258d575b0217009ad63e10fd2339b.patch?full_index=1"
+      sha256 "3da693f9937aa3aefb958ab4814705ec3db712b0b36b40a8d3c763c073dc8ee1"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "66504ee0f41ff9a6094a3fe33f1ebaf4bc57be6d7f1b6dfe7340c0b5bf962c57"
+    sha256 cellar: :any_skip_relocation, all: "76b13c19325cf268b89ab38c5d79d36f9d5506f1a5e8dc7c038a491fa593ebfd"
   end
 
   depends_on "lua"

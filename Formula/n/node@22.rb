@@ -1,10 +1,9 @@
 class NodeAT22 < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v22.22.0/node-v22.22.0.tar.xz"
-  sha256 "4c138012bb5352f49822a8f3e6d1db71e00639d0c36d5b6756f91e4c6f30b683"
+  url "https://registry.npmmirror.com/-/binary/node/v22.22.1/node-v22.22.1.tar.xz"
+  sha256 "87104b07e7acee748bcc5391e1bc69cf3571caa0fdfb8b1d6b5fd3f9599b7849"
   license "MIT"
-  revision 1
 
   livecheck do
     url "https://registry.npmmirror.com/-/binary/node/"
@@ -12,12 +11,12 @@ class NodeAT22 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ae28ea75afc3c1d64c322d77c440b627901da1ebce2fda8c73fe97d6fdec2472"
-    sha256 cellar: :any,                 arm64_sequoia: "d67d788700fe772ea5c683c86cb24645df400852d186a56140ede04e94689b4c"
-    sha256 cellar: :any,                 arm64_sonoma:  "26b41fccca027e1457e9a6da207409b63cf2dd3a3e35d975e57f0d3ec2580c55"
-    sha256 cellar: :any,                 sonoma:        "a4fd33cb79db5114678f616d8d41322ba63305e76d29ff5fc5d9dd90f09bd62e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "826035827fa6e894db775e08be1f3415793c9737667e6bfa97513dbe5584bd35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "199ee1223973a6cff8a275b0287e17f98e71a712d20fb4e1285373c71dc91839"
+    sha256 cellar: :any,                 arm64_tahoe:   "f06d89db78b5e7d903bc8c71198f18af6204637c41578cd6d0c7a040dacb61e2"
+    sha256 cellar: :any,                 arm64_sequoia: "466149878d11d077c621fdf37a1ee53bcadf1f6d7813f907e0f920c843418308"
+    sha256 cellar: :any,                 arm64_sonoma:  "b398928b13bfafdde99be1e2f5b9dff4a20ec4a3639e2a9858311356e99413df"
+    sha256 cellar: :any,                 sonoma:        "686cbc91e46463704c84fb39aa84c52acfd8f1b4248c358eed56609e1503fd4b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56ee43c6e316846be33ca8e4beea898e1186531b481c3f9eb9b54416d528eb29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "725b5b4c7c8a23a2261e9ba66acddfd7696cfe26dcba93a7e7887d544d4974f0"
   end
 
   keg_only :versioned_formula

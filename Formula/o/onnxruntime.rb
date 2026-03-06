@@ -2,10 +2,9 @@ class Onnxruntime < Formula
   desc "Cross-platform, high performance scoring engine for ML models"
   homepage "https://github.com/microsoft/onnxruntime"
   url "https://github.com/microsoft/onnxruntime.git",
-      tag:      "v1.24.2",
-      revision: "058787ceead760166e3c50a0a4cba8a833a6f53f"
+      tag:      "v1.24.3",
+      revision: "3a728b75062256951b6e19ce718907cf1a1d4cf0"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,12 +12,12 @@ class Onnxruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "34d3d30fa55d8e94477694ad6ad06fa3c70fbd9ecb51147f28ab673855ba5a0c"
-    sha256 cellar: :any,                 arm64_sequoia: "6a7e8a3a39d75331d0aadda9fc1d62d9c7e79134b68536bcdab04e06f9ff57d8"
-    sha256 cellar: :any,                 arm64_sonoma:  "05ab7de043662455bf8ef58c73ad37f930e90095cb5e4d19af0c5e5c5b9218f5"
-    sha256 cellar: :any,                 sonoma:        "d997b48ba4bf3e16d2b4bebd699a42d0c1725ac1a3277b090f2f89ea61261de1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "161d33b78882d35be3f2a2e2c86b9c8f4620d87e5dc70742a332a207d6e80e6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cb0faaa63046b5de2c2b3021a54f0b8f63cc5430d81f69e2acf781ff23fba88"
+    sha256 cellar: :any,                 arm64_tahoe:   "f9b842d60a3481701173b86968999757599e4b49471196acf45c5002a84adfda"
+    sha256 cellar: :any,                 arm64_sequoia: "61c5a9f081073481c885168c34d62757bedcaba07719e23b76fc2f2009a50445"
+    sha256 cellar: :any,                 arm64_sonoma:  "9e4c2a9a6f6493b2bbd5e940d8d5b5d0e4c75d36761dceecd4ef11cac4e6637f"
+    sha256 cellar: :any,                 sonoma:        "44953690c61dd811b06860b917872f353c22e896d539733a9cfe4321e5ce4ab7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a850263512d3319b4ec364c8fc5c48be1cce62aa8de4f87c54205e8c0f60f571"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3f9bae89bc75aab7df601363e0cc6332531923caee21ed1acd7c23c11f3ea3f"
   end
 
   depends_on "boost" => :build

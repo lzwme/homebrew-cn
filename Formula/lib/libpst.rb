@@ -10,8 +10,6 @@ class Libpst < Formula
     regex(/href=.*?libpst[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "fd7349c417348d0e83213928612500c662ae584e15e66310898c9f49118d6a40"

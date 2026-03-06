@@ -2,17 +2,18 @@ class Cloudfox < Formula
   desc "Automating situational awareness for cloud penetration tests"
   homepage "https://github.com/BishopFox/cloudfox"
   url "https://ghfast.top/https://github.com/BishopFox/cloudfox/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "4a013f1bf8f79517f3dc660128520bb9a36a10c78a1b6f87cc1c2a797874a6e6"
+  sha256 "41b95f0d80c5e142f56f498eff94e109a5b6528184a18c0feaa0b6d394398bbb"
   license "MIT"
   head "https://github.com/BishopFox/cloudfox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ead04a919711474a7b3a9363df9340bc8bb85e2c3fd7a0e63f51a6a533b6235"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ead04a919711474a7b3a9363df9340bc8bb85e2c3fd7a0e63f51a6a533b6235"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ead04a919711474a7b3a9363df9340bc8bb85e2c3fd7a0e63f51a6a533b6235"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8a81f06ab4851042af2af7d68a25746e4d2388c0e43cff304948ed9df03baa7d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "637e800050a1864fa57739572aff43bde77e2ec29d1a75e27cce5c2e5c59f6a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f0207d3be754f77166cb0d3c34a5c778572e003c0a614a83148d11c592b4e09"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78f58ed261a29e27825858cd4b99b200d68927589f1fc591c84e986d9286d91e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78f58ed261a29e27825858cd4b99b200d68927589f1fc591c84e986d9286d91e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78f58ed261a29e27825858cd4b99b200d68927589f1fc591c84e986d9286d91e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b44ac8a7e14b3c0bfa0f1be104220fd8e0cd965bcba200984892c7dc2a07e3c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9220bf69db639a1c07eb534963b6ee780b56a7547ad182ed6bacda9487f90fd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b5ae1d70456eb61bca41051b6541a577e9834f76a57641b14f8f69c964ebda9"
   end
 
   depends_on "go" => :build

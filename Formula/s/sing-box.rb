@@ -1,18 +1,18 @@
 class SingBox < Formula
   desc "Universal proxy platform"
   homepage "https://sing-box.sagernet.org"
-  url "https://ghfast.top/https://github.com/SagerNet/sing-box/archive/refs/tags/v1.13.0.tar.gz"
-  sha256 "6ddc71596dc937873c5aba15a4f2b395c5434265efdc1bd21f4c03d8c5b7f641"
+  url "https://ghfast.top/https://github.com/SagerNet/sing-box/archive/refs/tags/v1.13.1.tar.gz"
+  sha256 "62624d4c11e318606b0dc181d1da4b2b4d7e110f67c6fb15e1ba14bb88377f69"
   license "GPL-3.0-or-later"
-  head "https://github.com/SagerNet/sing-box.git", branch: "dev-next"
+  head "https://github.com/SagerNet/sing-box.git", branch: "testing"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2879e6ac62aa2fc2ad291a8ff5dabf9c78c03a5bff3686960d461e837180bcb9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36094fc9c1374d3acea46ce376981d4dcb10a3e6d7cfd241cbf443ea67fef447"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a21d5945d569bc8d9e412183e3c8f81d3819e59a8b74500560fc92e39a6f12e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4dc32baba1c7677ee7208b2d6a41b6ab5b0c8a5ea544ae04dfff963d745b9bac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eef8bcd13d5e5754a0294930fb137e3937bf8e88797588a4902e6086e99c5dfa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ab6e25d612b8849bd090a2add59c4ef0d8159bdc533da090a446ad8ba430c27"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2789166c37110e165d876a6a878565d2d2a7eaf9dd85b1714b2c9ae226b8fc17"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9fac28ba18f21c7bb3dd6e7d35fcfabe6052689f4d10c45105594058ffce544"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "56c60f8958d5a51d8c781b56c3eee13df515c16a7c857216f2e6a0d719f0de55"
+    sha256 cellar: :any_skip_relocation, sonoma:        "696bd5e0e7c3ab7a80c3a67fb4145dc39c8120e8f25d75faf1e22c4944a39f25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fb274d5613d23efcc6392ff6ab1b58c16301cfe5840f1bd9c5e9bdce18e8cae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7e962cb6b0e313cba97e25fb1d80cb407c8713aadefee8f767debe1f9c0acf7"
   end
 
   depends_on "go" => :build

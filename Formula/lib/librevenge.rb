@@ -10,8 +10,6 @@ class Librevenge < Formula
     regex(%r{url=.*?/librevenge[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "facf55a083cd1ced9b8d830f69bc324721fec9fd04ae71c39c8cb86bd0e2d6e1"

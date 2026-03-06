@@ -6,8 +6,6 @@ class Openmotif < Formula
   license "LGPL-2.1-or-later"
   revision 3
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 arm64_tahoe:    "371bb9f35979b5035726d70d03b8e5fee6cf8993b95f5328a77c8423f934c1b7"
     sha256 arm64_sequoia:  "a8bc176639f8fb38b41aab636e20c407232203d408d07098042a68e3f4ed610f"

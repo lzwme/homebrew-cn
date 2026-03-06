@@ -19,13 +19,19 @@ class Vis < Formula
   depends_on "pkgconf" => :build
   depends_on "libtermkey"
   depends_on "lpeg"
-  depends_on "lua@5.4"
+  depends_on "lua@5.4" # https://github.com/martanne/vis/commit/b8fea9bcb14ea10e618c539c400139dd43d90e02
   depends_on "tre"
 
   uses_from_macos "unzip" => :build
   uses_from_macos "ncurses"
 
+  on_linux do
+    depends_on "acl"
+  end
+
   def install
+    odie 'Switch to `depends_on "lua"`!' if build.stable? && version > "0.9"
+
     system "./configure", "--enable-lua", "--enable-lpeg-static=no", *std_configure_args
     system "make", "install"
 

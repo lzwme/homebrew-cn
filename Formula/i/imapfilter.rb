@@ -4,16 +4,15 @@ class Imapfilter < Formula
   url "https://ghfast.top/https://github.com/lefcha/imapfilter/archive/refs/tags/v2.8.3.tar.gz"
   sha256 "a28ee90ac20a996e2fc19cbc36a36c152483085011f3b2ec8dfd913b7a6d9804"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 arm64_tahoe:   "e936161f2b81aadf392a28ce2c0fac7e1df84542ba5e820369078d2520b00398"
-    sha256 arm64_sequoia: "70c757de93288ef4e4367aa3fe55cd42f764a5ce18750bc71dddf21049ea2f42"
-    sha256 arm64_sonoma:  "ca4b34e7d186953097c449ba67f55596aca8e8f4a69afb60c6d5314f3dc7d433"
-    sha256 arm64_ventura: "f15d485165819dd296961c167070e2e516dc728859e4b163bc339f9000f5215c"
-    sha256 sonoma:        "ea24e234a4966f529e93c36bc66c664b725bf616a5a2b286d87410d28ef6ebe8"
-    sha256 ventura:       "1325382fbd71289a23633f2c51b7da08308b933635fd4168aa624397cbea66e1"
-    sha256 arm64_linux:   "cef5702c2ca63d9a2a2d0b6ce8637bc8d9be9f9203a5465a42dc83294d2e0da0"
-    sha256 x86_64_linux:  "fe050a935bffa0600d9a50adaed8f253886d32bbb18e8350b6596e5e3b83b8b3"
+    sha256 arm64_tahoe:   "47761fad4ebad9ad9c7b5c17bd214cf02c15c18b4d1492a29847aba4c0b8e333"
+    sha256 arm64_sequoia: "88707a8aef9727bb63d1120fd20a109245d94b0816afc2089792af61e60b5784"
+    sha256 arm64_sonoma:  "bd25a128c213b1e367d34728410bdd8ba288f923963041218ad7e65988b8c76e"
+    sha256 sonoma:        "64dd0149be56e395778e96ec0499c0f5c2d14f9d31f96149f7f64abb7c1fe2c4"
+    sha256 arm64_linux:   "4d72341c4d5d36d13b7f0e79fbe1fda910b9efd35e63b857325fbd764933b765"
+    sha256 x86_64_linux:  "554b1a712c5f12e863f46a6235d6a8afc58832c801de3913165271968de6652a"
   end
 
   depends_on "lua"

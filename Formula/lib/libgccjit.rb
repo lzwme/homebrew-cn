@@ -23,8 +23,6 @@ class Libgccjit < Formula
     formula "gcc"
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "e25a101a9c694e6414fd821fb92081c9eee03f23de41cc1ad691ac06369f6e70"

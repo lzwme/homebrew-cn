@@ -1,6 +1,6 @@
 cask "ghostty@tip" do
-  version "14995,0797b281ec0268f2df65399b1aede85eaea0d31a"
-  sha256 "e2b1e0fd610e14e5dd3702101c18be6f1dffb1f6e27dc13b637a1808ec0e965d"
+  version "15037,3e220ab3757243c45bbb999c185ae33de8f70da7"
+  sha256 "9ae29929d8ccb3731195ee91646314438154170115d624916a3b50768316f09a"
 
   url "https://tip.files.ghostty.org/#{version.csv.second}/Ghostty.dmg"
   name "Ghostty"
@@ -16,6 +16,7 @@ cask "ghostty@tip" do
 
       "#{item.version},#{match[1]}"
     end
+    throttle 5
   end
 
   auto_updates true

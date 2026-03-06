@@ -6,15 +6,15 @@ class Pdfly < Formula
   url "https://files.pythonhosted.org/packages/48/ae/70f161c80b3f39d8fe4ff784c78045225820d10375c81c2097c0e85ac0fc/pdfly-0.5.1.tar.gz"
   sha256 "636e9736ca3296ed69ad7e14d997813ea5a662ba7a86c77d155e343494dcc3d7"
   license "BSD-3-Clause"
-  revision 9
+  revision 10
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2ba9ac903d568570fb3508494c207640db9bc35e0fe968b835d230c392bfe18e"
-    sha256 cellar: :any,                 arm64_sequoia: "41f5d9b8ded777f8b221626f538330837c7a9f68c192831b302925d3d393ae47"
-    sha256 cellar: :any,                 arm64_sonoma:  "3254a0f305877fc71caea3cd2d68f7c9d969409dd763acac42e9eba828ee9cb8"
-    sha256 cellar: :any,                 sonoma:        "62a92fdc05ae769940af9f46433cf82c7d3158599e34029f23e5ee75d55fe3c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "58dffcceb6900de7d41bde94be09e7d832ba9a764f7dc093e6b173f2ca30e135"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce683b456a5d9f5fe26b5d5cee0b62f6bbd857428c6eb4062bd5eda1da710860"
+    sha256 cellar: :any,                 arm64_tahoe:   "4ea44d78881d375b45a39b23b9acae8830750f59cc915832b188a639f2b3c61b"
+    sha256 cellar: :any,                 arm64_sequoia: "1b5ea2ae8d4c3fe60ad9e3c52e7ac2af6dbc7021eb47e192d853f61eb66118c2"
+    sha256 cellar: :any,                 arm64_sonoma:  "fb7112ffb5cc243f30a333a74135f9e883871c7e0b78daedcfdb72166fd49b78"
+    sha256 cellar: :any,                 sonoma:        "a7e6500812b02a7c5023404c7fcd91a467d389143e79642bab6eddfe95695173"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce1f7d78d6e744f7567c6c0e879cba4628c01fff6cc1a5795aa88dd4cb5016aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06d6eaf42fce1264346ad1386555d31bf75c78e8c7e5b03f1beb29c1f97765ef"
   end
 
   depends_on "pkgconf" => :build
@@ -124,8 +124,8 @@ class Pdfly < Formula
   end
 
   resource "pypdf" do
-    url "https://files.pythonhosted.org/packages/09/dc/f52deef12797ad58b88e4663f097a343f53b9361338aef6573f135ac302f/pypdf-6.7.4.tar.gz"
-    sha256 "9edd1cd47938bb35ec87795f61225fd58a07cfaf0c5699018ae1a47d6f8ab0e3"
+    url "https://files.pythonhosted.org/packages/f6/52/37cc0aa9e9d1bf7729a737a0d83f8b3f851c8eb137373d9f71eafb0a3405/pypdf-6.7.5.tar.gz"
+    sha256 "40bb2e2e872078655f12b9b89e2f900888bb505e88a82150b64f9f34fa25651d"
   end
 
   resource "requests" do

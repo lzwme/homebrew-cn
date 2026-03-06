@@ -3,17 +3,17 @@ class Copier < Formula
 
   desc "Utility for rendering projects templates"
   homepage "https://copier.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/6b/e0/5187c63a9020e84cfbb3cc52b52d7fc15aab73fd1e9106ae33167116a3f9/copier-9.12.0.tar.gz"
-  sha256 "87986637205a0443dbf7e5946502e5c71962a559c25f436642a08203cf61ef54"
+  url "https://files.pythonhosted.org/packages/9a/5a/3ee4562d77cf1214193bfd080bdf64c86395182e852822395a9bb5be1340/copier-9.13.0.tar.gz"
+  sha256 "5dd6efba8ea3d2d6c05d36574d50087c6b824e55e36146d7369c15f171442134"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c3f4fa7cb0596c416b29e2111da50d848a540bc18d422d1255fc50147c82fe05"
-    sha256 cellar: :any,                 arm64_sequoia: "d13b2e586c102803643fd7c2b28075cbbc6fa372a9993a1ec1991c981aafe0a7"
-    sha256 cellar: :any,                 arm64_sonoma:  "1a40ff6cb646bd525e0c764553179efaf6e0a9f2a863868be67067ef711eafe0"
-    sha256 cellar: :any,                 sonoma:        "0cac15c5d580984aba5160d2632da34bda463e9b815135765a4d9c682d688bdd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d7afcfa2c237106af1e16ff0cdc91ca5916bb21b4aa047b12c0a4a2e6fb9e18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2755f72b5ea1b07e3c28b4a3ed35faf4b3e40a4b2984a0a95fbb56d924ec00c8"
+    sha256 cellar: :any,                 arm64_tahoe:   "e01c90a1c8cb763177516919f029c4e1eec90880c51ca8ce88dddf73b43e3b7d"
+    sha256 cellar: :any,                 arm64_sequoia: "d301a265212532d3c17afd66f94ebf79dd6ef4d1b5b9185d311c98ce0b546a45"
+    sha256 cellar: :any,                 arm64_sonoma:  "e949b68a48c58be3bb92de0d020c74637749255b2c5c51f21c4b10386cb3caf1"
+    sha256 cellar: :any,                 sonoma:        "ee703752714d7270617227ba7c10622225af275bfdaa73aa3e61f9183c3e02ca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db968217926d755e6e02946d45a78fbc5ca69c2b40afac95df51e64cc39709c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc6e9c33603369d965e2990372c3e94dc5a2a81a3e8f5b14625f08b654929959"
   end
 
   depends_on "libyaml"
@@ -63,8 +63,8 @@ class Copier < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/1b/04/fea538adf7dbbd6d186f551d595961e564a3b6715bdf276b477460858672/platformdirs-4.9.2.tar.gz"
-    sha256 "9a33809944b9db043ad67ca0db94b14bf452cc6aeaac46a88ea55b26e2e9d291"
+    url "https://files.pythonhosted.org/packages/19/56/8d4c30c8a1d07013911a8fdbd8f89440ef9f08d07a1b50ab8ca8be5a20f9/platformdirs-4.9.4.tar.gz"
+    sha256 "1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934"
   end
 
   resource "plumbum" do

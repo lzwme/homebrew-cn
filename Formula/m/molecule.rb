@@ -3,17 +3,17 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/bf/dd/25f2cbd2b78f470edd22ad8a898a2be3785ba11a537367bc56d25c14759b/molecule-26.2.0.tar.gz"
-  sha256 "646a70899073aa6db89c374229a884b969a2b552dd8e5bdc187a4d10847bc32e"
+  url "https://files.pythonhosted.org/packages/ec/a4/29f1738fa03ad997b07e8d48bdbcef0a35ee5aecee780d817711519b1f0b/molecule-26.3.0.tar.gz"
+  sha256 "e48c92383be5e580545dcc7d115b3f3559d6d5f28e1ab151a35dc780b7400a66"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "382a333ed7f147a79140bfbebccd2ab2fd6df820ac602897cbe3777077ea8697"
-    sha256 cellar: :any,                 arm64_sequoia: "a39f59b01a2e7015fced637f2f62981e9738b53800977da370ac6e12e179cc77"
-    sha256 cellar: :any,                 arm64_sonoma:  "09f4abc1694a9377006f79dd08a4ea249e40e5c45173878924cda1091499c5e1"
-    sha256 cellar: :any,                 sonoma:        "8b647b35a56539f5c99e554b2eaf2428cd10087f2650e46256a3e445f89f38e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fcbf847024c7244be755d2d598d8f74c1c09fa2e16d39fded2a0e3ce0d681c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a000a8624a7adaf437cb11a5cdf1590291238617323fe7971e797016c9e3b8df"
+    sha256 cellar: :any,                 arm64_tahoe:   "65458a4484d79d54f90e56f8a154bcdd49b877765b38c4c1083b525eb6dbd538"
+    sha256 cellar: :any,                 arm64_sequoia: "4b48bb93395eb080c2732efe4e5208ba5387d735f06eed935ca48b63daa820c3"
+    sha256 cellar: :any,                 arm64_sonoma:  "94aec544bc379c8c23a5509ced6ac803665ea7f6a2238524c06f284f00b28b8a"
+    sha256 cellar: :any,                 sonoma:        "79b554c71c1d18cc32053e430b523d0772521f5d8be05e93d702abf6142c6c61"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b082be99b7255a5dc38b7029d97c593cdd4c06ddebb10b17ffc84ca178842e56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59d141710b1f88b8609ab95257e1d7704ff01f64dbc653bd0f820955966c36a7"
   end
 
   depends_on "ansible"

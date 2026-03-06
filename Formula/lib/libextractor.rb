@@ -6,8 +6,6 @@ class Libextractor < Formula
   sha256 "bb8f312c51d202572243f113c6b62d8210301ab30cbaee604f9837d878cdf755"
   license "GPL-3.0-or-later"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "c2fd159149aca1a534cbfefa4d19fc9247eeb7c1884ec184d02b51abc1a10104"

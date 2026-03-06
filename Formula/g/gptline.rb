@@ -6,16 +6,16 @@ class Gptline < Formula
   url "https://files.pythonhosted.org/packages/5b/28/d15a9a5b349c77a051a633e13141151314f352067ec7d516220bd6b20fcf/gptline-1.0.8.tar.gz"
   sha256 "4a0a0b5fa4f23e5f2ad7ac5bf44a9143e5de3757b0b8eefe5d78a7757d1d34bb"
   license "GPL-3.0-only"
-  revision 14
+  revision 15
   head "https://github.com/gnachman/gptline.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "619bde3ea93d2fe3d17334ea539c88216c792d71c0269294d1132be57fa95933"
-    sha256 cellar: :any,                 arm64_sequoia: "74586d031095494908de0260128a386fc51bc3c6c23c5dddc8782d6f38b1b065"
-    sha256 cellar: :any,                 arm64_sonoma:  "f4cda55a35531a505d58dbc3ca5aca97d9a66ba318ff866113984a1214f4cd15"
-    sha256 cellar: :any,                 sonoma:        "6ca35a0a70efe88c7c802d06c55b28f16a1e16505e6c23d78395303ac7ed96f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "668eb40fc1cc0d4d4dbb6b0aa1099ca2e44585a71ec068748ce91c91cdee398f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5d22501c7a8657c3032f88824f838fe0b9f8a3a37934e45424754e2d9690cf6"
+    sha256 cellar: :any,                 arm64_tahoe:   "3b68546847da50b9cece4ddc6d89203926bff1815c1192bcc34b56286ac9835a"
+    sha256 cellar: :any,                 arm64_sequoia: "cd33bf6d5d0fca122cc23530a058f39756adb8715c0a169baff596f8c135c85f"
+    sha256 cellar: :any,                 arm64_sonoma:  "a6e26036f0a80a114564c0553a6f15846efa76905ab45cf5dd7505d8b68e97bf"
+    sha256 cellar: :any,                 sonoma:        "2462048f5ac6f6b4f51a46c996f693f48fa1a05183a2d847658f47cf80b30f57"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4cc843c66b7e36e99927aaadcef9ccc6c5decec168b312a1085704e52ebee57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9858d23587a9ea0dd2033d3ea7433e8e7eb99537851175f2883375aa6ed123e"
   end
 
   depends_on "pkgconf" => :build
@@ -88,8 +88,8 @@ class Gptline < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/73/92/a8e2479937ff39185d20dd6a851c1a63e55849e447a55e798cc2e1f49c65/filelock-3.24.3.tar.gz"
-    sha256 "011a5644dc937c22699943ebbfc46e969cdde3e171470a6e40b9533e5a72affa"
+    url "https://files.pythonhosted.org/packages/77/18/a1fd2231c679dcb9726204645721b12498aeac28e1ad0601038f94b42556/filelock-3.25.0.tar.gz"
+    sha256 "8f00faf3abf9dc730a1ffe9c354ae5c04e079ab7d3a683b7c32da5dd05f26af3"
   end
 
   resource "h11" do
@@ -138,8 +138,8 @@ class Gptline < Formula
   end
 
   resource "lxml-html-clean" do
-    url "https://files.pythonhosted.org/packages/d9/cb/c9c5bb2a9c47292e236a808dd233a03531f53b626f36259dcd32b49c76da/lxml_html_clean-0.4.3.tar.gz"
-    sha256 "c9df91925b00f836c807beab127aac82575110eacff54d0a75187914f1bd9d8c"
+    url "https://files.pythonhosted.org/packages/9a/a4/5c62acfacd69ff4f5db395100f5cfb9b54e7ac8c69a235e4e939fd13f021/lxml_html_clean-0.4.4.tar.gz"
+    sha256 "58f39a9d632711202ed1d6d0b9b47a904e306c85de5761543b90e3e3f736acfb"
   end
 
   resource "newspaper3k" do
@@ -178,8 +178,8 @@ class Gptline < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/ff/c0/d8079d4f6342e4cec5c3e7d7415b5cd3e633d5f4124f7a4626908dbe84c7/regex-2026.2.19.tar.gz"
-    sha256 "6fb8cb09b10e38f3ae17cc6dc04a1df77762bd0351b6ba9041438e7cc85ec310"
+    url "https://files.pythonhosted.org/packages/8b/71/41455aa99a5a5ac1eaf311f5d8efd9ce6433c03ac1e0962de163350d0d97/regex-2026.2.28.tar.gz"
+    sha256 "a729e47d418ea11d03469f321aaf67cdee8954cde3ff2cf8403ab87951ad10f2"
   end
 
   resource "requests" do

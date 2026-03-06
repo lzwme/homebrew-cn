@@ -7,18 +7,21 @@ class RedTldr < Formula
   head "https://github.com/Rvn0xsy/red-tldr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81973eb326023f9ff32b1adbf523013bc59ec1552cc794a67d3970e4ccbe35f7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81973eb326023f9ff32b1adbf523013bc59ec1552cc794a67d3970e4ccbe35f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81973eb326023f9ff32b1adbf523013bc59ec1552cc794a67d3970e4ccbe35f7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b97908983365601abe6511e29e92281306984911972b494d654d2d1284336021"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "83d91b69685d26318c3c8498957abd433fa3d7d7ecb7cdae398bf5969118d63a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9da5ac0199cdec6df642a32b0687950c1b13662a8304b7243313fe5c54b476ac"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b899f36c60a21b05cc3e16a051e0db36d90a60882864f149b812204a7e427652"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b899f36c60a21b05cc3e16a051e0db36d90a60882864f149b812204a7e427652"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b899f36c60a21b05cc3e16a051e0db36d90a60882864f149b812204a7e427652"
+    sha256 cellar: :any_skip_relocation, sonoma:        "18d4aca22446fbd71994dc3eeca8abd0b492760fd3148d2fa170e1cfbbf4ae82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92cf80e291015b87bdfeb91ac777b62b5d09e8a4ab2e120e23275d149473b52b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6458162f5cf6ce365bb6a4f3688e7867fff6c8af0ab5e31386d9bfbfa4232e4e"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
+
+    generate_completions_from_executable(bin/"red-tldr", shell_parameter_format: :cobra)
   end
 
   test do

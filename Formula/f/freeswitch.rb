@@ -2,6 +2,7 @@ class Freeswitch < Formula
   desc "Telephony platform to route various communication protocols"
   homepage "https://freeswitch.org"
   license "MPL-1.1"
+  revision 1
   head "https://github.com/signalwire/freeswitch.git", branch: "master"
 
   stable do
@@ -69,13 +70,12 @@ class Freeswitch < Formula
   end
 
   bottle do
-    rebuild 4
-    sha256 arm64_tahoe:   "9cb8409408cc01cc8e19a512f9eda755f265a04f206a73d8e4f1603fb83f6952"
-    sha256 arm64_sequoia: "26ad3b1d0473455bc8de23fb19319039bba987ccd691cf6f056a4bd2f287fc03"
-    sha256 arm64_sonoma:  "e10676bb9b427165069892057a399218500dba99b5f8ab6830ef425cb88d6dfe"
-    sha256 sonoma:        "86246d29684a3845246c201c54ab73c3b521b7a9cbd690cd98e649f4efc38b47"
-    sha256 arm64_linux:   "7ac4e295edcb214731c6f0acbf463e44828b33e2ebd773dbc78611cac146f75b"
-    sha256 x86_64_linux:  "c38b84dcd8b19b037354c7924ed564b942b517f1634844075b2e37d307aaf1d0"
+    sha256 arm64_tahoe:   "b286c2b3c74a917b36e09864502f009bfb081ea0de083904ae598e28face567c"
+    sha256 arm64_sequoia: "5e8a51c20e33a2ae4dd16d75c488f02f6ff6ba40f542b3a7a12b8d909d848a2f"
+    sha256 arm64_sonoma:  "6d953dfd37983cfb386b66b77bace9493f762f40823e0f37e9e344fbb8266156"
+    sha256 sonoma:        "ca349fae6d174f73f3adbfd3a63cd057f56dd8dc7ceae9ff0abe07d566832634"
+    sha256 arm64_linux:   "705bf06d87ee2f4e46d2fa6fb6665dd45fcf2be054bc1351aa3bda2cd71980d5"
+    sha256 x86_64_linux:  "6edd236baa6e161b412388f9f374aac174c53b65adf7822f86f768fed363ac00"
   end
 
   depends_on "autoconf" => :build

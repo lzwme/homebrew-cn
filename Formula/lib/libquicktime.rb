@@ -6,8 +6,6 @@ class Libquicktime < Formula
   license "LGPL-2.1-or-later"
   revision 5
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "5f0134430e06269fcef851532addb2e837cf60ef41c44ad3dd9155c1d5df6b50"

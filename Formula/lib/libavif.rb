@@ -1,18 +1,17 @@
 class Libavif < Formula
   desc "Library for encoding and decoding .avif files"
   homepage "https://github.com/AOMediaCodec/libavif"
-  url "https://ghfast.top/https://github.com/AOMediaCodec/libavif/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "0a545e953cc049bf5bcf4ee467306a2f113a75110edf59e61248873101cd26c1"
+  url "https://ghfast.top/https://github.com/AOMediaCodec/libavif/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "713e2b998ca0bf5473fe4624afdbc7fa9f6e4799dd414020fe67d56f6997bf4e"
   license "BSD-2-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cfe93d3c3bae786d4756d578f7cfd290c078d9e83ca551bab704001597f007b6"
-    sha256 cellar: :any,                 arm64_sequoia: "18885d98641d2a82e4afeab3c4d19d87aa367a37772cf7609615ab0b56ed0e12"
-    sha256 cellar: :any,                 arm64_sonoma:  "c5f3be4aede27d832004090fbfe18144df6cf1c061836fa9f6f314ef0bc9dcf5"
-    sha256 cellar: :any,                 sonoma:        "7721ab3bb40cc69b00fac770dbeffe9789a9f395ca6b1a4433f0922a5096a6f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6075a5a2124cc8f238b082022b35ad0e4b23088095fe263f3bac8109c9de2cf0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdbe3f050ec448e524343c4bbe29302e542fd8089ffd62d968bd860a20d9147d"
+    sha256 cellar: :any,                 arm64_tahoe:   "1c56406e359dde4df0875ff0a4436d8e86b85cc98c6210c2348c9b2283be1f9d"
+    sha256 cellar: :any,                 arm64_sequoia: "e98f3ffa71916de475d6684f10099613836a2aa8fd1940c85a3a8aefef9c0b50"
+    sha256 cellar: :any,                 arm64_sonoma:  "957d39eb29ccafd6809b8cd443889d3e262431807b15b4132c7be7b854e48b1f"
+    sha256 cellar: :any,                 sonoma:        "b2fd0142c91bec58b5fe63a2b026de94662483ac6684c5798f34c9e156c19ed3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d97e73d516ef3802aced612e98fd3c853cbba5f0aae22ed52c71e2626e138c2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e6b10839fd213f70c6c64f1e9458a0b0e530455c8e053de2966d1f938f213a1"
   end
 
   depends_on "cmake" => :build

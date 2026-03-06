@@ -1,17 +1,17 @@
 class Ttdl < Formula
   desc "Terminal Todo List Manager"
   homepage "https://github.com/VladimirMarkelov/ttdl"
-  url "https://ghfast.top/https://github.com/VladimirMarkelov/ttdl/archive/refs/tags/v4.24.1.tar.gz"
-  sha256 "f396b384ba3cc77882ec27e88af55e15da9685838485627fcbbda7b106160294"
+  url "https://ghfast.top/https://github.com/VladimirMarkelov/ttdl/archive/refs/tags/v4.24.4.tar.gz"
+  sha256 "40ad51b8e5f2ca63f22cdabaeaaca662fc9ed68dbc5d85b0aa84807ca8a2d20a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fa3c1cfff30a48e27cbb79a3aea1d637f8a56f22349f4ffa8d69611486dbb2ef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "625bfe4204c555fd1b2fcd010214e2ceb447526fd5f4de67ca2a5d1c99655f26"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2988a8def865b81da419dc3d4f7b53bce49d969e9d201da669ff6921aafd71a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a67a7af1e8e53e09386f99be51a31df61783ea5c67c8d7f72b6e28f9c0b9b6c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d78016b1ba5c9eb5cb8d3020d6b605d8258a09e639f1c10160aab02abd851c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d14ecd93740c1b9f6cf37a496445ba2d189db0f4552097105de9f1f23734224e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "495bbd7616c2f8a22ce4b38785da0500197d2ae04d2c827fc09089fd00298a4b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a54051e5436cfed4f798fd943ca6ddbf7a263f59236d999220d92caf1937409"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4dba77c30cf502d2c62aad88137ec3c6453ec37fb963b6b7f0ef399a609d01c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "36cb6fd3092789884521e82755894b84eabb69e802433850e95647555c221c72"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a1df4418151fbd6d3ed1c3c423eb953baa87f5e4ec228c43cfc1b7ccb2d6709"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b55c0af61127e3d715859a8596a7b34dfa8e94b0b2ea11177ceda0d42617032"
   end
 
   depends_on "rust" => :build

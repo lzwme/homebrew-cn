@@ -5,6 +5,7 @@ class Vim < Formula
   url "https://ghfast.top/https://github.com/vim/vim/archive/refs/tags/v9.2.0100.tar.gz"
   sha256 "0f35dbb9bcebc00d97b06aa229129f1a707960b64f064f65c7bcb8b424fe129b"
   license "Vim"
+  revision 1
   head "https://github.com/vim/vim.git", branch: "master"
 
   # The Vim repository contains thousands of tags and the `Git` strategy isn't
@@ -25,12 +26,12 @@ class Vim < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "812dc4a9975e50bafde8cd3c0080b50bb7d93da16910d33c2675c70079e3ab27"
-    sha256 arm64_sequoia: "e92bebfbfbfeaa95dfdc228934239e046e6232e80f7a58512ff704a35b923817"
-    sha256 arm64_sonoma:  "39f690061d9214032288afff94770093a63253b2c2decf0cfcf42eb997e8abf8"
-    sha256 sonoma:        "ff4d113744d871e57265ff925c414e4863e0973ea54355725d7b1e5b2271c349"
-    sha256 arm64_linux:   "5d20745184617e98fc6f328f9e951857eeee49b03e75e9ccb402dd269429db36"
-    sha256 x86_64_linux:  "249c5b8e98e704f12d2c1ff7cd015299516da64cbf47075c7dda150a0eb96fee"
+    sha256 arm64_tahoe:   "c6549b3ee92c0e1501d1bdaaec0fe1f3b81b7ad9a08f8af2bfd4e60a98e130ab"
+    sha256 arm64_sequoia: "f222049866f0f2e3f8d4cd3b54f085b31340934cf630b75a04152f7b5939ea0c"
+    sha256 arm64_sonoma:  "26cca0293b0d8ca6d6e706759b3e53993ed1b84c80f4b6db29deced84263246e"
+    sha256 sonoma:        "f7465509d2b837dc611c507e8ed5d550c4101c4f413b6b8d0acfa4b25fd9a6ec"
+    sha256 arm64_linux:   "f96f2aa54d3620a49e192353b0d90ab35a96b192a906c48f477ab46b06cfc1f9"
+    sha256 x86_64_linux:  "dae43f6d823e90481aacf24a1bccc1ce7a5016813d85daae120a85f31077cbb1"
   end
 
   depends_on "gettext" => :build

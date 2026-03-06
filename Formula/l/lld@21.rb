@@ -5,18 +5,19 @@ class LldAT21 < Formula
   sha256 "4633a23617fa31a3ea51242586ea7fb1da7140e426bd62fc164261fe036aa142"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
 
   livecheck do
     formula "llvm@21"
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "adbc47c9a735cd5c28c485a7bedbf9bef7af2652a6d89d1e8f78dab9367625c6"
-    sha256 cellar: :any,                 arm64_sequoia: "12509c3c0027577824b6d98a5e4265c4016f6f311b47975cb4d39ae7373620bf"
-    sha256 cellar: :any,                 arm64_sonoma:  "62db801951b3822a19dda273b12317654b03bfe56b9113f50cc4f69331a4ea06"
-    sha256 cellar: :any,                 sonoma:        "15fa1536fec1ead5d2f4e29b3ccc947dcba8285277bc00a6f312986e147b4535"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "020c5bb5b9a9d50f5aa1a38a6357f10b0d44f7ad4dc82f9fab3ae5c5fec54e6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f28a6087b19e81177061fd9fe7dfb181216863e145731ebade85cfa37e9001bb"
+    sha256 cellar: :any,                 arm64_tahoe:   "ac2b17659f0a2434c6ed399b3a0fe31c8d052f7433568020a692dfe6a213a1f4"
+    sha256 cellar: :any,                 arm64_sequoia: "196025bea4256271e57d59adb230f8b99f2d153cfe027b2d3af863006f7fc08d"
+    sha256 cellar: :any,                 arm64_sonoma:  "661c8726f564040c92e7711eb3cf2349bae47d2b61fb685d9660226541fe3a26"
+    sha256 cellar: :any,                 sonoma:        "925d4df8fea1bf6e676095415ce8165ac5e539cd8bb1f3b143f3b480780c76b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9511e2c80b6ac5de3a96d368c432d49b0902eab978240684747222a33f825dba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9d32932ed2c077ba0243f2b797a0e6e3ef30a983a81a52032d42f14d68fd74e"
   end
 
   keg_only :versioned_formula
@@ -38,6 +39,7 @@ class LldAT21 < Formula
                     "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
                     "-DLLD_BUILT_STANDALONE=ON",
                     "-DLLD_VENDOR=#{tap&.user}",
+                    "-DLLVM_CMAKE_DIR=#{Formula["llvm@21"].opt_lib}/cmake/llvm",
                     "-DLLVM_ENABLE_LTO=ON",
                     "-DLLVM_INCLUDE_TESTS=OFF",
                     "-DLLVM_USE_SYMLINKS=ON",
@@ -47,6 +49,8 @@ class LldAT21 < Formula
   end
 
   test do
+    assert_match(/LLD 21\./, shell_output("#{bin}/wasm-ld --version"))
+
     (testpath/"bin/lld").write <<~SHELL
       #!/bin/bash
       exit 1

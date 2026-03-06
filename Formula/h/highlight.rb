@@ -4,6 +4,7 @@ class Highlight < Formula
   url "https://gitlab.com/saalen/highlight/-/archive/v4.19/highlight-v4.19.tar.gz"
   sha256 "0f243a9fb72da88148db473c9411c92c4988bf940bff32eef939bc1efa0017c8"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://gitlab.com/saalen/highlight.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class Highlight < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e75d5c1ddfc038f7de37299e4438ecee09cf7e4605fbb56476e2dc9534495a05"
-    sha256 arm64_sequoia: "1481a98880db38fcf0941b1b6dceb09e9a2b22f55a2aff36e4dd052472ea54b6"
-    sha256 arm64_sonoma:  "4c9d1d55742adfb4bd11f6819b274ec61aa62d255471c316a1abea9938a4f5dc"
-    sha256 sonoma:        "3e10d7a454c39701ea70ecdffe29847a8f3d567e03861c16f5e979b450a161f9"
-    sha256 arm64_linux:   "188f28db47d9b11f15fd3ce4065d5ab7df0c906c64e0d8bc396a24da5ca4d45c"
-    sha256 x86_64_linux:  "5dfd49a9add8995bd7fe319f8b06dd4a0674775268c5032c66fa7953cbe67763"
+    sha256 arm64_tahoe:   "09dad42718a031b6011aba60b8bbda5be24c7dcc4223fd7a7bb829cea0cd8958"
+    sha256 arm64_sequoia: "bfdea43d9d24a24049cc36c5661c390b7f6dbf9b1951fda6fcfab22cc96208b7"
+    sha256 arm64_sonoma:  "91b1d3a9793acd5acca691df1257cf79a382a74a4034b0e3d182bea835e7c1b4"
+    sha256 sonoma:        "bad596ecf324c720b426eac935f1ae9658bd05a445bbf6589630169841466673"
+    sha256 arm64_linux:   "0264064075facd93f54f6c58932e47a31462282923b8fd3c6735a9306464fbc2"
+    sha256 x86_64_linux:  "4355a199df0f0bf391283a5917a1fe505ace3cfbcf72649862d6dd0432b5c063"
   end
 
   depends_on "boost" => :build

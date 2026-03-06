@@ -1,17 +1,17 @@
 class Beakerlib < Formula
   desc "Shell-level integration testing library"
   homepage "https://github.com/beakerlib/beakerlib"
-  url "https://ghfast.top/https://github.com/beakerlib/beakerlib/archive/refs/tags/1.33.1.tar.gz"
-  sha256 "a18cecff44e3f1a2982dd2810e712cea2ebdb9f7dad6e7fd11026ca8d340e284"
+  url "https://ghfast.top/https://github.com/beakerlib/beakerlib/archive/refs/tags/1.33.2.tar.gz"
+  sha256 "e13f4df8ad055c05bcca2226d92e298156eb9ea6de81415c844e567e4e7ab117"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c98627853c190e4eacb3dfb72224cc303cae4a5f8a4354f1782a2968a3ad609e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c88c7aa63a57d52cb1fab07a0aeb6c7019c65397c780740e82dd47d838af1426"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7fa081f07b3f4d65c338ef022fdc26529ea953db88f068db7f10771fbd71e16f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a197a40cb531101f6d3be46fc87cd835bc7989d1be6a5063275544ef3a59aae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "88a452286772868aa75d7100c4e19b3edbf74ae7fa8328c460676e34aecab83e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4548bd4c493ebbf02fb4ce34dc3c930c849634c7d168fe2ea1ffd9aff816764"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4729c40211eb3f12feaad75e38c1ff947bfcb513005e8cf8e154d3e734f137bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f480c7030f43289613ac3761ef28eb548ce526a788fb3b3da7c462fba5d3a05"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d62cdf165cb1e28665c10d7396f4d3768d46a3d51c8347ed22f00804b0741f9c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6ecddac5a81ead7fcc40956ce114301d9dba6b383022aef8d877656dcc610e53"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56de7cf183eb5bac857cd3826e4d55773dd4a58d5b697159f5568090fcd58546"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bb712c0defd08955d01485c42f990c072b076c631d8c5fa2a003973dd110c1b"
   end
 
   on_macos do

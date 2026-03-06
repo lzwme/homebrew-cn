@@ -6,8 +6,6 @@ class Libtar < Formula
       revision: "0907a9034eaf2a57e8e4a9439f793f3f05d446cd"
   license "NCSA"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 3
     sha256 cellar: :any,                 arm64_tahoe:   "23ceb454b2f6611082364f55c92c573111df507f73b3d19ca69555bc4ebac48a"

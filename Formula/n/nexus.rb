@@ -14,8 +14,6 @@ class Nexus < Formula
     regex(/^(?:release[._-])?v?(\d+(?:[.-]\d+)+)$/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cbdb021da2cc6066138e09589e806d1a07ca47626d99c9f4a3ae2f6fb0c778e7"

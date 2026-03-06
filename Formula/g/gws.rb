@@ -14,6 +14,8 @@ class Gws < Formula
     depends_on "bash"
   end
 
+  conflicts_with "googleworkspace-cli", because: "both install a `gws` binary"
+
   def install
     bin.install "src/gws"
 

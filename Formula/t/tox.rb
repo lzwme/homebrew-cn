@@ -3,19 +3,19 @@ class Tox < Formula
 
   desc "Generic Python virtualenv management and test command-line tool"
   homepage "https://tox.wiki/en/latest/"
-  url "https://files.pythonhosted.org/packages/87/62/182ae37b7472072086184e2246e01c6fb8399b87d76e0c79636774ee7117/tox-4.47.3.tar.gz"
-  sha256 "57643508d4c218ad312457a3b0ce3135c50fa1f9f1e4d40867683d880cad1c37"
+  url "https://files.pythonhosted.org/packages/00/0c/0b5c618618a9322663f275138ddc753bc87a6a1fcf535b65efc0a988c616/tox-4.48.0.tar.gz"
+  sha256 "73f4e5e3b87ea0a8c79bbc42287f14f728023a3c1e209ed151fcfdff349ea1cc"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e92062496d4e6aba6eef7951bbd8a9a349de21c13ffefb8908e1faadc1494c20"
+    sha256 cellar: :any_skip_relocation, all: "e00235cdcbd3454b68dae2fce54cecee5a284c8e9734538514efc2406605c2e1"
   end
 
   depends_on "python@3.14"
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/6c/c7/342b33cc6877eebc6c9bb45cb9f78e170e575839699f6f3cc96050176431/cachetools-7.0.2.tar.gz"
-    sha256 "7e7f09a4ca8b791d8bb4864afc71e9c17e607a28e6839ca1a644253c97dbeae0"
+    url "https://files.pythonhosted.org/packages/48/5c/3b882b82e9af737906539a2eafb62f96a229f1fa80255bede0c7b554cbc4/cachetools-7.0.3.tar.gz"
+    sha256 "8c246313b95849964e54a909c03b327a87ab0428b068fac10da7b105ca275ef6"
   end
 
   resource "colorama" do
@@ -39,8 +39,8 @@ class Tox < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/1b/04/fea538adf7dbbd6d186f551d595961e564a3b6715bdf276b477460858672/platformdirs-4.9.2.tar.gz"
-    sha256 "9a33809944b9db043ad67ca0db94b14bf452cc6aeaac46a88ea55b26e2e9d291"
+    url "https://files.pythonhosted.org/packages/19/56/8d4c30c8a1d07013911a8fdbd8f89440ef9f08d07a1b50ab8ca8be5a20f9/platformdirs-4.9.4.tar.gz"
+    sha256 "1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934"
   end
 
   resource "pluggy" do
@@ -56,6 +56,11 @@ class Tox < Formula
   resource "python-discovery" do
     url "https://files.pythonhosted.org/packages/82/bb/93a3e83bdf9322c7e21cafd092e56a4a17c4d8ef4277b6eb01af1a540a6f/python_discovery-1.1.0.tar.gz"
     sha256 "447941ba1aed8cc2ab7ee3cb91be5fc137c5bdbb05b7e6ea62fbdcb66e50b268"
+  end
+
+  resource "tomli-w" do
+    url "https://files.pythonhosted.org/packages/19/75/241269d1da26b624c0d5e110e8149093c759b7a286138f4efd61a60e75fe/tomli_w-1.2.0.tar.gz"
+    sha256 "2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021"
   end
 
   resource "virtualenv" do

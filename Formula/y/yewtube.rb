@@ -3,14 +3,13 @@ class Yewtube < Formula
 
   desc "Terminal based YouTube player and downloader"
   homepage "https://github.com/mps-youtube/yewtube"
-  url "https://ghfast.top/https://github.com/mps-youtube/yewtube/archive/refs/tags/v2.12.1.tar.gz"
-  sha256 "012c1a8a185dd4ef81074631bca91e327ac4e634b36301a50ffbcd67838b847f"
+  url "https://ghfast.top/https://github.com/mps-youtube/yewtube/archive/refs/tags/v2.13.1.tar.gz"
+  sha256 "cfff2f05a403b26807dd9000457bd339aff33fc437b79609b2454c0903c97895"
   license "GPL-3.0-or-later"
-  revision 6
   head "https://github.com/mps-youtube/yewtube.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9b315eefc0d1b31049a939a277feba988959625930ff4a329739ecf6671abca0"
+    sha256 cellar: :any_skip_relocation, all: "69aa6429f5fb977d20ef38d79bd6eeed2e1573bc5d7c20cfade94ef357e4764e"
   end
 
   depends_on "certifi"
@@ -75,14 +74,14 @@ class Yewtube < Formula
     sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
-  resource "youtube-search-python" do
-    url "https://files.pythonhosted.org/packages/91/3c/dc669b0308e49f294df67bddbb16ff3eefe5b5da6fa37ead922a8301926b/youtube-search-python-1.6.6.tar.gz"
-    sha256 "4568d1d769ecd7eb4bb8365f04eec6e364c5f70eec7b3765f543daebb135fcf5"
+  resource "yewtube-search-python" do
+    url "https://files.pythonhosted.org/packages/3a/7a/8ed3133214207ff95f503e9c20a69b469a28d47f7a9bdf274b044e0f5b95/yewtube_search_python-1.6.7.tar.gz"
+    sha256 "87d0d728f8ed5a929570c061b5e7335767d04497e2141371da94744c3327506e"
   end
 
   resource "yt-dlp" do
-    url "https://files.pythonhosted.org/packages/58/d9/55ffff25204733e94a507552ad984d5a8a8e4f9d1f0d91763e6b1a41c79b/yt_dlp-2026.2.21.tar.gz"
-    sha256 "4407dfc1a71fec0dee5ef916a8d4b66057812939b509ae45451fa8fb4376b539"
+    url "https://files.pythonhosted.org/packages/66/6f/7427d23609353e5ef3470ff43ef551b8bd7b166dd4fef48957f0d0e040fe/yt_dlp-2026.3.3.tar.gz"
+    sha256 "3db7969e3a8964dc786bdebcffa2653f31123bf2a630f04a17bdafb7bbd39952"
   end
 
   def install

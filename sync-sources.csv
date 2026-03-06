@@ -329,6 +329,7 @@ Homebrew-homebrew-core/Formula/a/atop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ats2-postiats.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/attempt-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/attr.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/atuin-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/atuin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aubio.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/audacious.rb, Homebrew/homebrew-core, 0
@@ -2679,6 +2680,7 @@ Homebrew-homebrew-core/Formula/g/google-benchmark.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/google-java-format.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/google-sparsehash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/googletest.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/googleworkspace-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goolabs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/goose.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gopass-jsonapi.rb, Homebrew/homebrew-core, 1
@@ -7399,6 +7401,7 @@ Homebrew-homebrew-core/Formula/t/topiary.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/topydo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/torchvision.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/torf-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/torrra.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/torsocks.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/totp-cli.rb, Homebrew/homebrew-core, 1
@@ -12569,7 +12572,6 @@ Homebrew-homebrew-cask/Casks/h/hapigo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/happymac.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/haptic-touch-bar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/haptickey.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/h/harbor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/haroopad.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hashbackup.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hazel.rb, Homebrew/homebrew-cask, 0

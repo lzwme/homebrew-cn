@@ -7,8 +7,6 @@ class Osmfilter < Formula
   license "AGPL-3.0-only"
   head "https://gitlab.com/osm-c-tools/osmctools.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "64388c3368efe673234fd5d7990c0f791df04fb1622c27f347332e56d3fc44ea"

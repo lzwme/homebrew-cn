@@ -4,14 +4,15 @@ class Iccdev < Formula
   url "https://ghfast.top/https://github.com/InternationalColorConsortium/iccDEV/archive/refs/tags/v2.3.1.4.tar.gz"
   sha256 "7889fd4544e1d224700aa68659a83847b24a8adaa130db1d64e8577098b8700a"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f3a2415a4004ff4b359ecf3f8d02590bc5ff2e2bcab94b0120c9003cc93dce06"
-    sha256 cellar: :any,                 arm64_sequoia: "64b39503c5f5c1ed2d9c148fdc4d82752234148f4a0a70679bffee5e4572d158"
-    sha256 cellar: :any,                 arm64_sonoma:  "c0641832a827aff9e6a2fc803ddb1a8b38287557d3afde36cbd493f02c96d53f"
-    sha256 cellar: :any,                 sonoma:        "a8acfce3879fc2e83240518bd41b3ca10a019c9af9a355f030cc21f95586b62d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc4233afbc41f83d2da1f490701f93a4298538e2d23b7f6e9ff72bf59a06d725"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30f50e82cb25584e2e3450f8cff4d9fe88c4ad829a9a4cfd1ea11786f873bce7"
+    sha256 cellar: :any,                 arm64_tahoe:   "512cc2ef21bcf40910b09257ee0fa9160cc783da05b4d4054635e4962e433b4a"
+    sha256 cellar: :any,                 arm64_sequoia: "087929b684f50466c2904de9831675dbe073973d082704d485509345c318f9a8"
+    sha256 cellar: :any,                 arm64_sonoma:  "727c9e6edef0bc6f3a48078aad30683f05c9f4eff21f6b0a4b6a39bf79ff0bd2"
+    sha256 cellar: :any,                 sonoma:        "14a7bd885e583a20db5d9277750be36d173fcd3d604061cfeb4be136019955f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f754aa2086576c3a0d66df64db78c0762370492490efcb451d4382b7528e6d25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c6075c1c8907b1f0c37a8e313e1d54341122a7f9ec94e501a37f7f50b377006"
   end
 
   depends_on "cmake" => :build

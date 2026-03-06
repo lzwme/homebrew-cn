@@ -1,18 +1,18 @@
 class Ignite < Formula
   desc "Build, launch, and maintain any crypto application with Ignite CLI"
   homepage "https://docs.ignite.com/"
-  url "https://ghfast.top/https://github.com/ignite/cli/archive/refs/tags/v29.8.0.tar.gz"
-  sha256 "c5fd0ce010272e7b1677c99f0e60c75b70f3795c414e6ab4e5a65dfeb6eb5458"
+  url "https://ghfast.top/https://github.com/ignite/cli/archive/refs/tags/v29.9.0.tar.gz"
+  sha256 "0469b7e34a3df49659e9ec8b5d3e311a85b02dd91b5e6180a8084385ce08e734"
   license "Apache-2.0"
   head "https://github.com/ignite/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b774a29241db3fcf464b6700bedec1120a173de5c53fc814caf88ec91fd25e1d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea00aa2f775064ac1995e05d4b529148b9d033308982f2e015c499431e73c7c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6112ec34ad6b27887b4d33237e9262a8afa795aea880f546dcfc2e81dd3d260b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0ff6017888c87eb1d44eb80565b886c2af4852169cb1eaeb01c153c2b8bc77e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4179a3684a9ad8fdef3914a35e09edbe31116a414d920d0374dc237fd5086171"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "796c244de0d829efe894e1ceb6254975d13fc3c29f6d7e24dc3cc76f8377ae53"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8668cd6f8b2a5b259ce16fa9791620a2c868be5b054e1e8f9825db96b059d655"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "156d210b52fb47d7ab3aa50e1eab293c8514af6ad50e0f7f94835b3c39ff67bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1fa37308c14214013be261966d49affecf11ec850c5b36595e0b8562ce911df"
+    sha256 cellar: :any_skip_relocation, sonoma:        "140ec7994e5e7c68b94734bc1f5fc574edec101571ece00617dbd863241330ca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd23adfd4c5068b094b6ff9d7b3f7cb408691d50ea8434d6c627eea3ee9d3e67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aae2953f3295a41721a40db05e4965b4d7aa82233da3c2045a0904677310afde"
   end
 
   depends_on "go"
