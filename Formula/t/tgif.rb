@@ -6,8 +6,6 @@ class Tgif < Formula
   license "QPL-1.0"
   revision 1
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "ba92789379368bb14652f941fc7381ef677fc5bd0b6dea2232d9b85dd4df22b4"

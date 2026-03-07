@@ -7,8 +7,6 @@ class Teem < Formula
   license :cannot_represent
   head "https://svn.code.sf.net/p/teem/code/teem/trunk"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "ef2e584274fd5642063c5d7bf9d7703f53dddff875dda63bec93dd02494adbae"

@@ -1,18 +1,18 @@
 class CargoSort < Formula
   desc "Tool to check that your Cargo.toml dependencies are sorted alphabetically"
   homepage "https://github.com/devinr528/cargo-sort"
-  url "https://ghfast.top/https://github.com/DevinR528/cargo-sort/archive/refs/tags/v2.1.0.tar.gz"
-  sha256 "95bc564567b753fb61ee241ee75a2bbd5f44b72af513d394a9ea7ecaa5bf82fd"
+  url "https://ghfast.top/https://github.com/DevinR528/cargo-sort/archive/refs/tags/v2.1.1.tar.gz"
+  sha256 "b36cbb05b8142794e1bb791eed543d282eff438d1422d3388da4fcaa32cd7585"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/devinr528/cargo-sort.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2301cdea0d63cbcc8ca9d5927a4111d7124eb5d6e80e3697ca3733222e4d070f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99444c00d59aafca88e76b2013820f9563e603e4865f8e070415a6e6960d3200"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba667c5a5d9a7cfd42be5edd537b02844cbf2076a38556ebc6a9ccb3c6a193c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "51e7e9da0ba771bb6ef2194f2c1554e1c4f9f30a21ea8e7b387ab62c927aee91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a582c8f5132b564f104c6a0367a8a42f8fc9a522e1694f8d64201f529078b80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdd48e893976664bdd1a934c864f64ff9d6f26e56d92258c272d117e10ed145c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92b609950f97e55e01fadfc2deb660d04e15a0eeb973092533bd287612d90b82"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b74a3bb546c2295b3d9895ae81ba1e1ed396298c2d4d6b9da7f4d9da0204c367"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85fb728ab33be820ba5a17210b0fd432e4c0c92337806d6bf72a2410e9850159"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8b118e54e7e2b79b86af18f12075cc4aa244d4d717071dc2f8ffa9d91c320eea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20ffa4ba5526e0c79cf0d0e601994708be93ce606926d8c858e85757dcc338d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c271ac992f25e0f72783f34724658784671d69b941cb2cb65123cf6ba8e219c"
   end
 
   depends_on "rust" => :build

@@ -11,8 +11,6 @@ class TokyoCabinet < Formula
     regex(/href=.*?tokyocabinet[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 arm64_tahoe:   "4443340968f13e90acfd2e0491be08daf43624bb64554b72d8f36997013650de"

@@ -1,17 +1,17 @@
 class AwsCrtCpp < Formula
   desc "C++ wrapper around the aws-c-* libraries"
   homepage "https://github.com/awslabs/aws-crt-cpp"
-  url "https://ghfast.top/https://github.com/awslabs/aws-crt-cpp/archive/refs/tags/v0.37.3.tar.gz"
-  sha256 "8cbe1dbfa0aac9fae835f2fb1f36617c39f618f3d69445e9f504ba56ef2e8df1"
+  url "https://ghfast.top/https://github.com/awslabs/aws-crt-cpp/archive/refs/tags/v0.37.4.tar.gz"
+  sha256 "2bada1b314dcf6f4acbc1db648088bd4933445b02c13d8580ae1ed4f85d6ab84"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3b3409e029b35460f93634bbb9845cb381f93d649ee975114a8efa900f81ad7f"
-    sha256 cellar: :any,                 arm64_sequoia: "ea35c3896698142286f3ad5370616345d9fb69308536a9569749cdc3856441fd"
-    sha256 cellar: :any,                 arm64_sonoma:  "02e4b9b803bee9247c1aa8eb6df682ad1d33173e6a2cbb7b14310166b16e7435"
-    sha256 cellar: :any,                 sonoma:        "ca89b7d8f9c2e35bde2dacb756c5c6f6222bc42ab521f2b62e284663b9c9066d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b787070ca8d5477f935db1a91ad33240a670de01877f1f5a54ce14e860fd916"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "484373a5b5fab08a206feca4cf4cf1dd927d3b1c6f548348f877897d0fa238dd"
+    sha256 cellar: :any,                 arm64_tahoe:   "a5ec3c7015a0fdbeed7aa66bdfce1871dac09456fcf27000e0f45612ee39a929"
+    sha256 cellar: :any,                 arm64_sequoia: "90fe205d9c07be63f62d27a4ba5e8ab62e433546cb5dbe2bc7cbe6364f73d7bf"
+    sha256 cellar: :any,                 arm64_sonoma:  "550a624614356e1673d50ec0360b72334763eeded428d5ac3b89d0cf391490a1"
+    sha256 cellar: :any,                 sonoma:        "fd426c688d715d5273a7bce93c02ddd7b3e845e7af7feabfb864b6ea376775e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5a1f1d27195c348e662a1e182772a053bb7bb6a4b69a1470acbfaf1c37f6b42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70496ffa35c4aa52fe9b7c088c93e2d41f40df810d9c5f9c2d778e61d5b32316"
   end
 
   depends_on "cmake" => :build

@@ -2,8 +2,8 @@ class Fortio < Formula
   desc "HTTP and gRPC load testing and visualization tool and server"
   homepage "https://fortio.org/"
   url "https://github.com/fortio/fortio.git",
-      tag:      "v1.74.0",
-      revision: "5e8726d193ae6cdda257320411aa1c4eb890db45"
+      tag:      "v1.75.0",
+      revision: "f935cb6d2d87d954f18ba692144e8f731e891cf8"
   license "Apache-2.0"
   head "https://github.com/fortio/fortio.git", branch: "master"
 
@@ -16,12 +16,12 @@ class Fortio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02ac622031a875c66b580bace7536a329d17cdd43cb471410cb5d7d833e4dc2c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "02ac622031a875c66b580bace7536a329d17cdd43cb471410cb5d7d833e4dc2c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02ac622031a875c66b580bace7536a329d17cdd43cb471410cb5d7d833e4dc2c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a2bf13857791fc4aab8165f9859e6c394c19e01c0171311c723871e7e6016571"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "38d39b0995271882402fbbce912c34f629fef2a374f14cc58a1276d1310cab40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d0210fb98bab882a6f2de83edb766d368fbfdc7ff39c0515d617ab35216a722"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac3178279e4fd5fa406bc4382fde16b136d1880410c07ab002d473a7ee9c6047"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac3178279e4fd5fa406bc4382fde16b136d1880410c07ab002d473a7ee9c6047"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac3178279e4fd5fa406bc4382fde16b136d1880410c07ab002d473a7ee9c6047"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a1c8c2d24180bff857df056d94d1f7c24438ccad3f6c127e2fa3183ebc6520e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1a33f9749fec2e3d3e2f25886fcbe92ed60e8e3010c46a396861baa9db1213c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c971f274734f9c8e78809277b2bc28564083771f555b6f2ef66424daf368131"
   end
 
   depends_on "go" => :build

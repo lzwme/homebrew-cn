@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/b1/a4/a37b851ff9fed0b6731884a6b4a67878621088d412382e81d3a9cda0e1e6/schemathesis-4.11.1.tar.gz"
-  sha256 "538d2947f5dce472d9b104cba050653381233a16317afe0ac7aa08de4f06cc16"
+  url "https://files.pythonhosted.org/packages/88/49/4d162c3dbb9ab3cf24b1984388b7c89c36d9c2812015b4015f6087477a0a/schemathesis-4.11.2.tar.gz"
+  sha256 "58a349be770d419c332a26edad377b5dd414de580b77e84ebe2ead1a4935bc7b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2386021d4c24643d35aa361f23b4d578f7c985acdfd8e0efa6077f02e678f6b4"
-    sha256 cellar: :any,                 arm64_sequoia: "84d1c80053c15030b3a46fb60cdb3110a90b90e26ee14bb6831a95d345f70d18"
-    sha256 cellar: :any,                 arm64_sonoma:  "4eef0dc2240066f67ba69102caad6bd549c5c11b46cdf00168debf8af3efbef1"
-    sha256 cellar: :any,                 sonoma:        "72b6cbaa294c4d9e63bec1da39095c4268acb4c122775b0ce7a9e86476760bec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "209cd50728cb7d85c4b1362611a86265df561b39d7c8a4c151e5082b7ea0e99a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d9a9d81708f62bae0977b40db554c1b091d552ba6f84d635d21ca1e890c7ed0"
+    sha256 cellar: :any,                 arm64_tahoe:   "c9fc9a6c2b008b330f1bca39407d0eddd8097c1a64e9d6f8601098e0a8b63d76"
+    sha256 cellar: :any,                 arm64_sequoia: "2cdddc7fce1fb191377c9173f0ee9e742beb9491423d1cd36ed2146ed2da1dfa"
+    sha256 cellar: :any,                 arm64_sonoma:  "33d1440a4da9b70a824ad50229ee84f6342771ade59f1b3dc81a43f2b810f89b"
+    sha256 cellar: :any,                 sonoma:        "941a879e44df5c882c6ceafc196ebb84e785192f827b438cb43f46b5b2ebcde1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92b363f9b2ae8efcf457001924d20a2ee883f96784b063c7bef5d50245f22190"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a3c07ea3a843b151fdbf9963868f78db0bc4d7d5f7e1b943165d423781346d1"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
@@ -37,8 +37,8 @@ class Schemathesis < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
+    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
   end
 
   resource "click" do

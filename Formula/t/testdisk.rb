@@ -10,8 +10,6 @@ class Testdisk < Formula
     regex(/href=.*?testdisk[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e329a6e62f3a3a45d211f502f2d9286e1f33740bae6b63777166f18b2051138c"

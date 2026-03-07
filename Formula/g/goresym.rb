@@ -1,18 +1,18 @@
 class Goresym < Formula
   desc "Go symbol recovery tool"
   homepage "https://github.com/mandiant/GoReSym"
-  url "https://ghfast.top/https://github.com/mandiant/GoReSym/archive/refs/tags/v3.2.tar.gz"
-  sha256 "2751ee41d9864982747ffa34d787a1465a0f547db6b2464f24109cb089382183"
+  url "https://ghfast.top/https://github.com/mandiant/GoReSym/archive/refs/tags/v3.3.tar.gz"
+  sha256 "e0afe3faaf824460b611a1ef6e93015341cfea999a6237516c15b59f8936d3f0"
   license "MIT"
   head "https://github.com/mandiant/GoReSym.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92a9cbd4568cf0c24b7efd08925d682b9d97979b979fd37df7b647df74dc32f5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92a9cbd4568cf0c24b7efd08925d682b9d97979b979fd37df7b647df74dc32f5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92a9cbd4568cf0c24b7efd08925d682b9d97979b979fd37df7b647df74dc32f5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c58f83dcafdeb17f8674276892c7d236c17c7331781ea2d1137da341e67dc1f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "93acb0e2901d05130ed6e59a711a69ea593f938511817e3b26e055bf29b4a6ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f5ae6ccbca1ed390f82e8d67ccf1f8b4a2ca4ead1bf066dc275e6d38c1d14d9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "af273cd572590e674ed4e1f6b46dabdea6dfc5b145a788c371f526a640bd8b48"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af273cd572590e674ed4e1f6b46dabdea6dfc5b145a788c371f526a640bd8b48"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af273cd572590e674ed4e1f6b46dabdea6dfc5b145a788c371f526a640bd8b48"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4a30484f5167d0a9f066a9b7a3472541644c5952566177f7781575ee27ad3d9b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfbdb148c231c39227cc587681bfdc3c63057e646b158203b498d981d24ad6a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94e43efb77993fb2b917d19cc1422fbdee17fc32b3a16b901f90087c158b1118"
   end
 
   # Unpin Go when GoReSym supports Go 1.26, ref: https://github.com/mandiant/GoReSym/issues/80

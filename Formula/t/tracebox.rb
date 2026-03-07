@@ -11,8 +11,6 @@ class Tracebox < Formula
   revision 4
   head "https://github.com/tracebox/tracebox.git", branch: "master"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "432ecef65439685b42ec4ca64303631cf4aec005e044ef86d18cfc290df88a29"
     sha256 cellar: :any,                 arm64_sequoia: "a236c267cffde3f5e896d9796858a36440deb2c762ac165c4eb69fa7abcf5053"

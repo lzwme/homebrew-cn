@@ -1,8 +1,8 @@
 class JfrogCli < Formula
   desc "Command-line interface for JFrog products"
   homepage "https://www.jfrog.com/confluence/display/CLI/JFrog+CLI"
-  url "https://ghfast.top/https://github.com/jfrog/jfrog-cli/archive/refs/tags/v2.94.0.tar.gz"
-  sha256 "b48544b9975254e2318faa3d8889f8becb014524dc51a8874e6a4b9ed06959e3"
+  url "https://ghfast.top/https://github.com/jfrog/jfrog-cli/archive/refs/tags/v2.95.0.tar.gz"
+  sha256 "83e78e42f3b3603d29c15442dec380073d56c786929c4511f140e721bcf99576"
   license "Apache-2.0"
   head "https://github.com/jfrog/jfrog-cli.git", branch: "master"
 
@@ -15,12 +15,12 @@ class JfrogCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a8ee77b0c5452c145bf58db127501df465589a1ec488d267611ca6ce394e810"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a8ee77b0c5452c145bf58db127501df465589a1ec488d267611ca6ce394e810"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a8ee77b0c5452c145bf58db127501df465589a1ec488d267611ca6ce394e810"
-    sha256 cellar: :any_skip_relocation, sonoma:        "011db4daee289686248962a11714480b92b3adc9624a3edc824cbcc300ee54ae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed2703db339a155311c5073a9316701453f3ece99d891b3e3e11dee42fc7093c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9130991115959915f2fa776da69b7ea0d01abae82e775c97b985732ecedef7a2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9a518bb47f0b331ec19fab4f2ec63d9a6481c11ff9a1f712ef5c82c64456050"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9a518bb47f0b331ec19fab4f2ec63d9a6481c11ff9a1f712ef5c82c64456050"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9a518bb47f0b331ec19fab4f2ec63d9a6481c11ff9a1f712ef5c82c64456050"
+    sha256 cellar: :any_skip_relocation, sonoma:        "da39013829e40e0889e90e6268a300886299a4d7f93c0d5cb509c0db41fd8b3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2dd28ab5843b8cd15597f59df1b9be2bed9927263e35234f0cd48771a23b5479"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad2ee8b8f64e4f935d9d87227d14aea79d6607a5ae771231a4ed22f330240743"
   end
 
   depends_on "go" => :build

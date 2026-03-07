@@ -37,6 +37,6 @@ class Prog8 < Formula
 
   test do
     system bin/"prog8c", "-target", "c64", "#{pkgshare}/examples/primes.p8"
-    assert_match "; 6502 assembly code for 'primes'", File.open(testpath/"primes.asm").first
+    assert_match "; 6502 assembly code for 'primes'", (testpath/"primes.asm").readlines.first
   end
 end

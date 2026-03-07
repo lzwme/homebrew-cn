@@ -38,7 +38,7 @@ class St < Formula
   end
 
   test do
-    (testpath/"test.txt").write((1..100).map(&:to_s).join("\n"))
+    (testpath/"test.txt").write((1..100).join("\n"))
     assert_equal "5050", pipe_output("#{bin}/st --sum test.txt").chomp
   end
 end

@@ -1,18 +1,18 @@
 class Gastown < Formula
   desc "Multi-agent workspace manager"
   homepage "https://github.com/steveyegge/gastown"
-  url "https://ghfast.top/https://github.com/steveyegge/gastown/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "56474db2d120df51306bdc61ba4624e26c05409e4a2941ab19661508f0299038"
+  url "https://ghfast.top/https://github.com/steveyegge/gastown/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "5e9290ae33fdc9fb3436e11a1152d9ccbdafdaa44ce239935df3fd1cdefb1f13"
   license "MIT"
   head "https://github.com/steveyegge/gastown.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81f5153ffcb5c70cb5108837b98409cf72980b681a5c15ab2653df077e522fbd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81f5153ffcb5c70cb5108837b98409cf72980b681a5c15ab2653df077e522fbd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81f5153ffcb5c70cb5108837b98409cf72980b681a5c15ab2653df077e522fbd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a37833ec7fe9a00e87ce57079527f0e2d4328bb083400a3e6bb767595ff21179"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "543bb8483a952dad843d48f623f35f7acb7836d461028219985467b87ed2ad19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "766c646ff0ea8d0fc4283a8717a48a3fb7d44266ad64caf97300dc3863451a6c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3784b3598bfcbeee5ae44110ac86cf6c0dea678a89dbae7b05fad797dfced360"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3784b3598bfcbeee5ae44110ac86cf6c0dea678a89dbae7b05fad797dfced360"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3784b3598bfcbeee5ae44110ac86cf6c0dea678a89dbae7b05fad797dfced360"
+    sha256 cellar: :any_skip_relocation, sonoma:        "35ac62230bee9e0767236f73a4ea31a5cd6dd5b11c36a7f47617617651484e00"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf1521a2ceb9e6eaa3648f86408b4fcac3f90370c095f9ed9d0b720d36878101"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5631e014075213cc2c5fbd416896461f1f953d3a462b3cdf78117e51897a816"
   end
 
   depends_on "go" => :build

@@ -15,8 +15,6 @@ class Tcpflow < Formula
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 3
     sha256 cellar: :any,                 arm64_tahoe:   "dad7f4b569f0c8e74af53589c23537d577f58717c07662496902d2feb152638c"

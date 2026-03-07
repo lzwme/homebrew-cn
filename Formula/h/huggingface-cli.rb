@@ -3,18 +3,18 @@ class HuggingfaceCli < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/ae/76/b5efb3033d8499b17f9386beaf60f64c461798e1ee16d10bc9c0077beba5/huggingface_hub-1.5.0.tar.gz"
-  sha256 "f281838db29265880fb543de7a23b0f81d3504675de82044307ea3c6c62f799d"
+  url "https://files.pythonhosted.org/packages/d5/7a/304cec37112382c4fe29a43bcb0d5891f922785d18745883d2aa4eb74e4b/huggingface_hub-1.6.0.tar.gz"
+  sha256 "d931ddad8ba8dfc1e816bf254810eb6f38e5c32f60d4184b5885662a3b167325"
   license "Apache-2.0"
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bc9e90a6ac7efc0e2eeccc9be1f86eb5cee5e4efdf640e89960d763ee0443967"
-    sha256 cellar: :any,                 arm64_sequoia: "9a1e3de3720df325c7add30a7f0311f4494bfc8e3974db2718d16d069086f89f"
-    sha256 cellar: :any,                 arm64_sonoma:  "1dcd079ae04550a65434178644de1a97c9cd627bcdf3ba8a011d3df767066083"
-    sha256 cellar: :any,                 sonoma:        "e5e04dede23f4918d4a446efd174c7c4d96a2fbff39edb79bee5d6d6fb26608f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0154d4eb2eb907fddec8600eeb016aae33e65ccfc872116b53032f761fe2c9bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a4dc0e1ff1e01bdd72ed15c63a79b3dcd8b01f38729ed19531385377c487c2c"
+    sha256 cellar: :any,                 arm64_tahoe:   "0a4cfed093b4a03e36ddfed2e6e958bd38bed93d7f5a28cb986da2219f469849"
+    sha256 cellar: :any,                 arm64_sequoia: "777aa4e12a9c49ed01773d3f02640124747c8901f7b3980359475251e6d8b701"
+    sha256 cellar: :any,                 arm64_sonoma:  "c98a8a87883dbfec1b41134d34cec93824f886d9430e52e89001d46c41ced6b4"
+    sha256 cellar: :any,                 sonoma:        "8363f935ff7aa9b634316db691b0086c1ad3032005805134f80a09d01850dbb5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44e35d6f4a7a78bc1bcf7bf56749287ea8769ba9e78ef0a9c00437f5b0b9deb7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2003277875c3ac6c426d4a97f5c3d653356c7160e0deba890e895e8be4262e07"
   end
 
   depends_on "pkgconf" => :build
@@ -48,8 +48,8 @@ class HuggingfaceCli < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/73/92/a8e2479937ff39185d20dd6a851c1a63e55849e447a55e798cc2e1f49c65/filelock-3.24.3.tar.gz"
-    sha256 "011a5644dc937c22699943ebbfc46e969cdde3e171470a6e40b9533e5a72affa"
+    url "https://files.pythonhosted.org/packages/77/18/a1fd2231c679dcb9726204645721b12498aeac28e1ad0601038f94b42556/filelock-3.25.0.tar.gz"
+    sha256 "8f00faf3abf9dc730a1ffe9c354ae5c04e079ab7d3a683b7c32da5dd05f26af3"
   end
 
   resource "fsspec" do
