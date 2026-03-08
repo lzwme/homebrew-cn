@@ -5,6 +5,7 @@ class Libopenmpt < Formula
   version "0.8.4"
   sha256 "627f9bf11aacae615a1f2c982c7e88cb21f11b2d6f0267946f7c82c5eae4943b"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url "https://lib.openmpt.org/files/libopenmpt/src/"
@@ -12,13 +13,12 @@ class Libopenmpt < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "e09315408f5be893af14c0d36d2e3a8d5e5aa9443e97d8acdcae39d9b22c1dd4"
-    sha256 cellar: :any,                 arm64_sequoia: "ec71c6ec24216db99b40adaa1e1fb4dfbd1404aececa2647b24cb775de74ec4d"
-    sha256 cellar: :any,                 arm64_sonoma:  "4acb4e48c93f334f90546da9925decd431f794e54bcf746966ed024f631474d2"
-    sha256 cellar: :any,                 sonoma:        "3eb20b31542271030cbaa404eb33b268b405deac211fcf9f2d4e3e558efdcb7a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d878406b38aa781f2f2db18fd061bf3b92a594e2cd179366f1517ad25de49156"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74e45d0330a851a48b800b669fc813b22ed5cb977623be03c13fb82122303a3e"
+    sha256 cellar: :any,                 arm64_tahoe:   "90eb85d01cb0b35f70fc70888edde939013c407f859a36b9f5716005d4c6f0f9"
+    sha256 cellar: :any,                 arm64_sequoia: "4cd9991a4e1e79edf673ba45fbf3bba240dd24988a933a0d93dd960d76374a84"
+    sha256 cellar: :any,                 arm64_sonoma:  "20c555a5bb1e0683a8961a0c3dac5661f9ec3852d2998ed45b81205a3466172e"
+    sha256 cellar: :any,                 sonoma:        "347c430a3d323e1df2aac0fbf23c35fb8b39b8ab74c41fd150d1c6b409147377"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c512c665eabc47c68eb9d855d401b549bee65be4594980c7e6a5680f3d571b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfc09063e376c43530eac84aabd7ddc04e06f1c1945ce2ca6544742862f60da0"
   end
 
   depends_on "pkgconf" => :build
@@ -37,7 +37,6 @@ class Libopenmpt < Formula
 
   def install
     system "./configure", "--disable-silent-rules",
-                          "--without-vorbisfile",
                           *std_configure_args
     system "make"
     system "make", "install"

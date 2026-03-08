@@ -10,8 +10,6 @@ class Sqliteodbc < Formula
     regex(/href=.*?sqliteodbc[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "ef7576d687d514cf3e6691537bee8e66eaca106ef598ad5cf07c4e20d520aecb"

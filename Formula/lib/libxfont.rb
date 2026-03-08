@@ -5,8 +5,6 @@ class Libxfont < Formula
   sha256 "1a7f7490774c87f2052d146d1e0e64518d32e6848184a18654e8d0bb57883242"
   license "MIT"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "e67ab6488122aaf72e62534722893856d438840f8c2be91950e922f6b2aa509c"

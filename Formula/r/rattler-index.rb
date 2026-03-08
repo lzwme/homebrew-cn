@@ -12,12 +12,13 @@ class RattlerIndex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4edd893e982cd1c3e7dc6e15733fd73ed481c0780aaf404a0de04dd06b870bd6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4baf42cfa69d21fa4815a5c96f7ca8eea1f8704cc4eee0e0838f59637a480174"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "927481ddedde17e6b0cab9c18c054aad4037fb85e969468aff9529eb2a3e7128"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c0bcee96a8e1c5a4e9a04289a484c3628045d1e32aa1de8328921689bb82e5ad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c49a522af7847bf01707fdd90969f1d59a3435f35ee365caf7b984b597f3501a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eaa67a09428c31470246794d8eb7b945c4fd8726f13bd1581bc70ea538a54761"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7425788ed27fb9eb459f0afd7f9d28430b569265653c5de3ccff908c2f51ae0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53e5ded0de4b208a5bb2d78fb650137a2113e04470d53387257dd87423b52b86"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c682b54397234ad80a25e5e6123e964fb4584ba62f054eff3d29e2de43977176"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9554078fa9252b2cd160e49f3a3cd2a7d0cf904c452f43e4ceae841272a51105"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "621f203274e94e71a9f5e6bf02e56e6b9448fe99c9fe1b5758fa03b80c129f53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9207b7ae7f5f3257f77dd67e98588fc6be26bb5194298cb6819b2df609e1992"
   end
 
   depends_on "pkgconf" => :build
@@ -28,7 +29,7 @@ class RattlerIndex < Formula
   end
 
   def install
-    features = ["native-tls", "rattler_config"]
+    features = %w[native-tls rattler_config s3]
     system "cargo", "install", "--no-default-features", *std_cargo_args(path: "crates/rattler_index", features:)
   end
 

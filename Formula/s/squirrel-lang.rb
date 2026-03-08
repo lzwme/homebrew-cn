@@ -14,7 +14,7 @@ class SquirrelLang < Formula
     end
   end
 
-  no_autobump! because: :requires_manual_review
+  no_autobump! because: :incompatible_version_format
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a6f3d550f92933219ee049367a983388c573214b498782f3b53b78b1d0b4aaa4"

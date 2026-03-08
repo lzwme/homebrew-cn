@@ -18,6 +18,7 @@ class Tarantool < Formula
     sha256 cellar: :any,                 arm64_tahoe:   "1c2347f82df86f84d570b975d2d5ad55160a1840583b70019f69211361a6d4bc"
     sha256 cellar: :any,                 arm64_sequoia: "f983e673bc4d5dda9a91fe64a85e44d81a5ff67af8e981d300d417840b213057"
     sha256 cellar: :any,                 arm64_sonoma:  "c3a4a8d067a2366a72c9e201ed23baa3072612466cdb0976a0aa98e92b42959d"
+    sha256 cellar: :any,                 sonoma:        "805fc0af3f0df03cab242970d3933136f0514dc22dfe7156e09018178a7d66e5"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "c244bc5235b092aab6a807de1fe7d32c9b0f81b86a95897314eafcf7a624118b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "63b6a3b25c08ad62a323bf867183d10d5bc985ac1ce5dd58683139e4993ab3c0"
   end

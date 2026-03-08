@@ -11,8 +11,6 @@ class SpatialiteGui < Formula
     regex(/href=.*?spatialite[._-]gui[._-]v?(\d+(?:\.\d+)+(?:[._-]\w+\d*)?)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "0575abdec10abefd35c1f3a62fe8037f2dfbd0da69a1da730803d5c2ece3f14c"
     sha256 cellar: :any,                 arm64_sequoia: "e77cf85404843dc7d2ea822f7a6713f3b8a4a987d245ef2b5e770a1cd8a7d396"

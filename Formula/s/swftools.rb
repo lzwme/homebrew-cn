@@ -12,8 +12,6 @@ class Swftools < Formula
     regex(/^v?(\d+(?:\.\d+)+):/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 arm64_tahoe:   "31fb92ff926fc96545a474c61befc91c622e4cfc4651bfc73b05f2872e12a869"

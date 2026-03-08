@@ -1,18 +1,18 @@
 class CargoMsrv < Formula
   desc "Find the minimum supported Rust version (MSRV) for your project"
   homepage "https://foresterre.github.io/cargo-msrv"
-  url "https://ghfast.top/https://github.com/foresterre/cargo-msrv/archive/refs/tags/v0.19.1.tar.gz"
-  sha256 "d287d3d88194c209c30476accfa5074196f28996d14f53126218e90670a78890"
+  url "https://ghfast.top/https://github.com/foresterre/cargo-msrv/archive/refs/tags/v0.19.2.tar.gz"
+  sha256 "d8f49750341ef780d9799892921a2db46f309ffcf3f957c28cb6e1e65d73549f"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/foresterre/cargo-msrv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ecc1d1091f2142b0b0075d5357c457e01ee7cbaa1d2db305720d339795b02c2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87ec80dea02a1c1bc67189892d3955d9f2fd66b44342b43bf6f4ea018adc5fbb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3bf6ae4369f7e3df94b885841edc5c1c1944aea0de8a1652be7c911f16366d9a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8021066101bf31ca784029352d94c543ad868f36b5aaa342a95b60f925a92926"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "322a1490459e7bf51385b639ac1e6679b0a82e52fea97d7d6cf4a9afe69f2277"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37505e01e0b6e535f8f52cb00f80667a7bc416671bbb0ca767da85cd8b6bd78e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f189ee5f9b655754234e7812eaa143e44bd98592397b9554bb8479e0b4e90ccd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1de216a97f13ef67ad3e5a2cd2f1723e17e34101f9638b387ab430048a705513"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7055c7c672f29e25cb4b5be9cfbe432a1c59dc41f2b64ac99be0af7215d75f0b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "13e2dc40edc1d775eeca96af7af28ecfd753d50e61e3e054acc7d1ad74a0bbd7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "906f3a07a6fa42a61c9916c85887238da5634db462f9e72364820bb7f47149ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e415f199164c50d0fde49c29bca746785fa77a68578723dba57aeb4be478417"
   end
 
   depends_on "rust" => :build

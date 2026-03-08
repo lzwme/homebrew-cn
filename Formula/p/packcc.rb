@@ -6,19 +6,30 @@ class Packcc < Formula
   license "MIT"
   head "https://github.com/arithy/packcc.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 arm64_tahoe:   "5a0b8081546ebc891881680469460587fe18fe82d4944f6308f187b6d672dc8b"
-    sha256 arm64_sequoia: "61b42e61dbc2cda04bb7ca832d1f984052a3a82cbf15017bddccb3b28722ce7b"
-    sha256 arm64_sonoma:  "668064191d76831155eee117191faa4ab1299bb896e3fac830ecf9f9c2eabdba"
-    sha256 sonoma:        "5e0b79858e62c36cc8073deb46c73b4fcd72d3ae29e6e68aa5e8b4ba3c8b0126"
-    sha256 arm64_linux:   "dab45b60bb8c17f1234c2050a1c4bd53955a7278612fd116bf5627cd5e81e7a0"
-    sha256 x86_64_linux:  "c7cf28c0ae4f5ff529ee87dca10372ad67742882ec92a72207131a085688a6e0"
+    rebuild 1
+    sha256 arm64_tahoe:   "54055b2cfa7a1cfc71b4577a6675f81086f0dbc4c103e304786d1621c3a14bec"
+    sha256 arm64_sequoia: "9c902b3c71cbfe12ab67936ab985053ea7c7edadbbb24b1ea5a714aaed627ebc"
+    sha256 arm64_sonoma:  "7f116411aa3402af32ce7c676d8648300a1c61808530dcc449965680fc2d9610"
+    sha256 sonoma:        "c8540a200bed0a98772951daf21d62eea6ce37d9b8845abeca161e9305a3f3c1"
+    sha256 arm64_linux:   "376367fd3650589901aefe3b0217dba2c7f153f71bcd7dbff04b1b52d34a9780"
+    sha256 x86_64_linux:  "cc760b6612827f5c33e191d7d5102a1d8f48a80ee1ee8ff38ba2e31abaa6521a"
   end
 
   depends_on "cmake" => :build
 
   def install
-    inreplace "src/packcc.c", "/usr/share/packcc/", "#{prefix}/"
+    import_path = if build.head?
+      pkgshare
+    else
+      prefix
+    end
+    inreplace "src/packcc.c", "/usr/share/packcc/", "#{import_path}/"
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

@@ -5,8 +5,6 @@ class Rig < Formula
   sha256 "00bfc970d5c038c1e68bc356c6aa6f9a12995914b7d4fda69897622cb5b77ab8"
   license "GPL-2.0-or-later"
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "dad2501e03504d0b5bbb423d2c9ef324aadf56f790f696c0a46ae04c6dab206f"

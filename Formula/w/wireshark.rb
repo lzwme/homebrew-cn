@@ -20,6 +20,7 @@ class Wireshark < Formula
     sha256                               arm64_sequoia: "cfd9015fb7a9e4498df537c69ac395b5d8b4b53b0887cff0241114286cb199ea"
     sha256                               arm64_sonoma:  "5f368a3253b16c5419f9c904524106aeb55a2d4af492c5faed3b9623eebef54f"
     sha256                               sonoma:        "d4571034a1f8e53852cc728a41f36240139d3b14c81413468c8cef09d8a73ce6"
+    sha256                               arm64_linux:   "c102409ccfabafdb24cde73b68690a7c75fdfcd784960b8ee30d09bf12819352"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f50e9cf5822d3baf7a521c0a70d3148297d4ccf0e56a67bab31cd197b451603c"
   end
 

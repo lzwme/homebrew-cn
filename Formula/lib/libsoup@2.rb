@@ -6,8 +6,6 @@ class LibsoupAT2 < Formula
   license "LGPL-2.0-or-later"
   revision 1
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "3843052f79eaa80401b387d1a0c3092c87530d4d3b8990c62a850be37e70c379"

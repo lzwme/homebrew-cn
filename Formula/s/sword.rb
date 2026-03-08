@@ -10,8 +10,6 @@ class Sword < Formula
     regex(%r{href=.*?sword[._-]v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 arm64_tahoe:   "152cbcfdc848a2a2b963b31b8dfb29c11c93178dbb234aa5e7d6469ec802e12e"

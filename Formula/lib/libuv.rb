@@ -1,8 +1,8 @@
 class Libuv < Formula
   desc "Multi-platform support library with a focus on asynchronous I/O"
   homepage "https://libuv.org/"
-  url "https://dist.libuv.org/dist/v1.52.0/libuv-v1.52.0.tar.gz"
-  sha256 "19fd091a582c39c7ea26dcbb40a7d2e7cf095b070a757b3c32c05de6cfed6638"
+  url "https://dist.libuv.org/dist/v1.52.1/libuv-v1.52.1.tar.gz"
+  sha256 "66d511b9e6e334c0e62279eb234fbfb2b3110b1479c09b95b44c7afca8cff9e7"
   license "MIT"
   head "https://github.com/libuv/libuv.git", branch: "v1.x"
 
@@ -12,12 +12,12 @@ class Libuv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6a96aec35787e6f9e8e3b999a04687a5331655d32d5c93ac47f7f4fa8c907d0c"
-    sha256 cellar: :any,                 arm64_sequoia: "2ffa6012899f49b54c0e561deab4781cedc2f933c526bccb58a4b64e75a5169f"
-    sha256 cellar: :any,                 arm64_sonoma:  "10219f371a41c37c4e252804759ecca9571986d30a46896b265f555f0405d4ee"
-    sha256 cellar: :any,                 sonoma:        "48d8a4231c7b1aff74abc49b5aceb41cdc337b1773d7235fe763ba21eeb013e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "96dc73df2ad0952ae92074ab66762308e1d6b29a8ba081b59f1a95c508b32985"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ceac8ca799cb1970dc17812ddb75a60f973723043221a504bc39fdc31e0aa44c"
+    sha256 cellar: :any,                 arm64_tahoe:   "6e8478545dc49bd505a4fac61617cd15d8fec4475d2add5ea1cc92f7281818bf"
+    sha256 cellar: :any,                 arm64_sequoia: "495b7322c4b9d0a2e5ceb96de24f5cc10d781e99179f94ca5e31d350547a235d"
+    sha256 cellar: :any,                 arm64_sonoma:  "6300ab64e5d20aa145fe987c40f65f994a54f571cf113d96100c07feb98e0c10"
+    sha256 cellar: :any,                 sonoma:        "4630cfebfbc75d75a085568e7e6183cc805271871aa8d70f5fa515b05141f641"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "601a1e2db4efec5d8464aba357970310183925c80fe32c7b449fbfc8b8d71b19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae4d9ac18871f6a4f4250be25da29e904755fb3067c8fb08d48fdc71311c623b"
   end
 
   depends_on "cmake" => :build

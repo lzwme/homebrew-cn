@@ -9,6 +9,7 @@ class CloudflareWrangler < Formula
     sha256 cellar: :any,                 arm64_tahoe:   "c3500db82ad8ce6d276d30e54a42bd05bcd9d9db7e8b84fb9ec2fb4bda9d5f62"
     sha256 cellar: :any,                 arm64_sequoia: "0f45fad29ef3b1c7f991ef0222b45bf51596ab7824b4a842196d7cb7fddfc4e2"
     sha256 cellar: :any,                 arm64_sonoma:  "0f45fad29ef3b1c7f991ef0222b45bf51596ab7824b4a842196d7cb7fddfc4e2"
+    sha256 cellar: :any,                 sonoma:        "18507d95d11b721d67bb5a969464b66dc39f8742d176064b9184b4af96a66eca"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "3414aa8c4df02979c601cfade19cf6f7b8a961738d75aa1f699f53b2f6bde171"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "061cdc97b4c5edab836a59023554b5a8382975abf7be2792f78032fd6f9205c0"
   end

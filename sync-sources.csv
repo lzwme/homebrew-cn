@@ -3008,7 +3008,7 @@ Homebrew-homebrew-core/Formula/h/hotbuild.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hoverfly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/howard-hinnant-date.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/howdoi.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/h/hpack.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/hpack.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hqx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hr.rb, Homebrew/homebrew-core, 1
@@ -7653,6 +7653,7 @@ Homebrew-homebrew-core/Formula/v/vals.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vamp-plugin-sdk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vampire.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vapor.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vapoursynth-bestsource.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vapoursynth-imwri.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vapoursynth-ocr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vapoursynth-sub.rb, Homebrew/homebrew-core, 1
@@ -11162,6 +11163,7 @@ Homebrew-homebrew-cask/Casks/font/font-m/font-mina.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-mingzat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-miniver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-miracode.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-miranda-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-miriam-libre.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-miriam-mono-clm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-mirza.rb, Homebrew/homebrew-cask, 0
@@ -13977,6 +13979,7 @@ Homebrew-homebrew-cask/Casks/p/pareto-security.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/parsec.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parsehub.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parsify.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/p/paseo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pashua.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/passepartout.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/password-gorilla.rb, Homebrew/homebrew-cask, 0
@@ -15035,6 +15038,7 @@ Homebrew-homebrew-cask/Casks/t/tableau.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tablecruncher.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tableflip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tableplus.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/tablepro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tabtab.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tabtopus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tabula.rb, Homebrew/homebrew-cask, 1

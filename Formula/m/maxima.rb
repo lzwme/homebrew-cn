@@ -21,13 +21,17 @@ class Maxima < Formula
   end
 
   depends_on "gawk" => :build
-  depends_on "gnu-sed" => :build
-  depends_on "perl" => :build
   depends_on "texinfo" => :build
   depends_on "gettext"
   depends_on "gnuplot"
   depends_on "rlwrap"
   depends_on "sbcl"
+
+  uses_from_macos "perl" => :build
+
+  on_macos do
+    depends_on "gnu-sed" => :build
+  end
 
   def install
     ENV["LANG"] = "C" # per build instructions

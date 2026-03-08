@@ -1,9 +1,10 @@
 class Lowdown < Formula
   desc "Simple markdown translator"
   homepage "https://kristaps.bsd.lv/lowdown"
-  url "https://kristaps.bsd.lv/lowdown/snapshots/lowdown-2.0.4.tar.gz"
-  sha256 "37412340bc3d87dc53f2be1a161bcd8da3c1ac974f5be305b5781a56e2d02595"
+  url "https://kristaps.bsd.lv/lowdown/snapshots/lowdown-3.0.0.tar.gz"
+  sha256 "c47b7208c941fadc6e646939bc548cc9a11f8bb22975b568c0249f78e78813b8"
   license "ISC"
+  compatibility_version 1
   head "https://github.com/kristapsdz/lowdown.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,12 @@ class Lowdown < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "c04236bd938c39a042b3570751ce59bcd785e639446e5bad12f2682d9d53a0f7"
-    sha256 cellar: :any,                 arm64_sequoia: "554dac119f3961941d60f4fce5ee6b1b94843c1cd7bc498613f89aa5859b2da2"
-    sha256 cellar: :any,                 arm64_sonoma:  "d93128c49c43b3ba64218da11bbe9cad58a7fd26dc2d67ec4feb52b80721c68f"
-    sha256 cellar: :any,                 sonoma:        "e3b7f897174e501b6f8b21e1f745ae303046ee58fff9d4e08f56223f6f9e6e5f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "908dd645e5624d1078b782df0e3fe0ca7743e2b4e72ad0e6d1e394ee0da71b19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "823e5e1c662198ca5437cbe9aa0425456cbf6bf49ad1c4ecda0c042bdacb0cae"
+    sha256 cellar: :any,                 arm64_tahoe:   "b31c45d3fd47ce40727517ceb3be4e8a0c3ded7a57b33dae452a730ee7369a6b"
+    sha256 cellar: :any,                 arm64_sequoia: "2765c13d56937d87a46ac8305e16a54d78b3e8b7e0b15b9e6fe0c747e6d98a1b"
+    sha256 cellar: :any,                 arm64_sonoma:  "c5c5f738954c801f39054208bb25212a1122a4e395847b9d352fa7758a601f85"
+    sha256 cellar: :any,                 sonoma:        "fdbf9691d65225e2bd1bd906064fd2431782f60310a7f3f453ef00ce6bd6baf5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8e9e45beb17138e199b30b319c1697b7eaa156b64d9305ace914539be08968a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec94ee3c2483ab063257dc8438f5024805ce871ba5687eb51e1b32aa5e139dd7"
   end
 
   depends_on "bmake" => :build

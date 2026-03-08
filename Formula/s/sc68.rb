@@ -10,8 +10,6 @@ class Sc68 < Formula
     regex(%r{url=.*?/sc68[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "53d85d767390195f2981d328f9454b5df20000eedb86dba469cb3c2283f44362"

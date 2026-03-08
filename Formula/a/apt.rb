@@ -50,6 +50,11 @@ class Apt < Formula
   resource "triehash" do
     url "https://ghfast.top/https://github.com/julian-klode/triehash/archive/refs/tags/v0.3.tar.gz"
     sha256 "289a0966c02c2008cd263d3913a8e3c84c97b8ded3e08373d63a382c71d2199c"
+
+    livecheck do
+      url :url
+      regex(/^v?(\d+(?:\.\d+)+)$/i)
+    end
   end
 
   def install

@@ -1,20 +1,20 @@
 class Lefthook < Formula
   desc "Fast and powerful Git hooks manager for any type of projects"
   homepage "https://github.com/evilmartians/lefthook"
-  url "https://ghfast.top/https://github.com/evilmartians/lefthook/archive/refs/tags/v2.1.2.tar.gz"
-  sha256 "7bb7598e01de4832f3a0f33d50707b2f92c5c34d82eb7ba5e17676fc571ce1a5"
+  url "https://ghfast.top/https://github.com/evilmartians/lefthook/archive/refs/tags/v2.1.3.tar.gz"
+  sha256 "3d49f786ecb5b21a78d864528570f224a0ceaaacc27ee1289bdf7d73f0ed2dbd"
   license "MIT"
   head "https://github.com/evilmartians/lefthook.git", branch: "master"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8449fafd00d4f4ac70b2caaa2cbe3a1353a9c5c087f0a2008ab25f8213c8e1d5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8449fafd00d4f4ac70b2caaa2cbe3a1353a9c5c087f0a2008ab25f8213c8e1d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8449fafd00d4f4ac70b2caaa2cbe3a1353a9c5c087f0a2008ab25f8213c8e1d5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "65d9f9154f4a4435757fd44e1ee99670ba7c6c06f7856b11a6d0b3ffc7693ba6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5ca58f7d3c57f4075fde83b3b24a0d6da05d8ac1d427ed1a16d61c084818190"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14a902b3ec49be34693763a6c7f888f0a23ab9d8d79ba4795bb40d593ac34fef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db508d30aecdcdbd06cd97854f73cc6d96882a8cd8596f931172fb5cf7ba9ccc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db508d30aecdcdbd06cd97854f73cc6d96882a8cd8596f931172fb5cf7ba9ccc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db508d30aecdcdbd06cd97854f73cc6d96882a8cd8596f931172fb5cf7ba9ccc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b931116e566382b11aabb7fffa7bcb72a4889065b35ab4a149671d2aa2577c61"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3297183848f29d80aac0ef25baa5b756d78440700391dd082a13650d7fefb59e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1dc134c5a80a86606a9a961e914d95c899a86d36437ca03fb6dff425db0e1ab"
   end
 
   depends_on "go" => :build

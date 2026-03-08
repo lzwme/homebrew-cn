@@ -3,18 +3,18 @@ class Glances < Formula
 
   desc "Alternative to top/htop"
   homepage "https://nicolargo.github.io/glances/"
-  url "https://files.pythonhosted.org/packages/6d/98/1675b9eaaa4717ece363d69a32976ddb29558578a462559579093ef82fc2/glances-4.5.0.5.tar.gz"
-  sha256 "64b407e725103bb748962975dbbd0b7738b45d5d67d878ce939d6764d79271a5"
+  url "https://files.pythonhosted.org/packages/5a/43/6823f434bb296133553269ee971ff981ad1bf877ee56a9e9b878a7ebdb2e/glances-4.5.1.tar.gz"
+  sha256 "82fc569af1ff59ac198a594104f314a69212838edefb44d84b8f76023fb199e1"
   license "LGPL-3.0-or-later"
   head "https://github.com/nicolargo/glances.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "40a7f7bfba4dbbef475ae6573b606fdbb5da445c0f2a326fdd6ceabda6381ccc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7adef460b3f92b667e83a51aa43dba75cc6c42b4f7f27a67206459bf6e884142"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f1f602578012026328dfa35f41f5d1307d460ac9b275c74ee69b489d9963fb28"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1c42297492a5906a3e2b5965a1f794ff463bf2174452f21844c02d63f18bdc49"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "931612c2168be92c25d1f1e3e4bcfceb9e785014c4b35be2a03c5ac785e4ff3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8abf372592f1754a3d12b9dd5eaae36ae915539be6ab4c3c930d76a53da1a59b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77ee09dc0e6e62fa937cea8b35ba052577b6ff5474960c89eb9e0f0bbc85e9e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b5873e5d88e1e6539793b79fcc0997adbc33a8ba6a933b55e8aeebc515d7a40"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a93a86abee83d8ca038af9edf670243fb75661dc9937008197209ff449d5032c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6c95f980f361a48efb2b9a568be2940c14e1ff126cb907873dd10fe58216a8ed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39748a57f1fd3e1ac713392a40580bca633c84b3c0345f1606edc73efeed7961"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5c252a25a83451a5b55e889e2dddd2e0c0ce5d3299d7fee70fe3e16fcb8c5c6"
   end
 
   depends_on "rust" => :build # for annotated-docs
@@ -38,8 +38,8 @@ class Glances < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
+    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
   end
 
   resource "click" do
@@ -63,8 +63,8 @@ class Glances < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/48/47/75f6bea02e797abff1bca968d5997793898032d9923c1935ae2efdece642/fastapi-0.129.0.tar.gz"
-    sha256 "61315cebd2e65df5f97ec298c888f9de30430dd0612d59d6480beafbc10655af"
+    url "https://files.pythonhosted.org/packages/e7/7b/f8e0211e9380f7195ba3f3d40c292594fd81ba8ec4629e3854c353aaca45/fastapi-0.135.1.tar.gz"
+    sha256 "d04115b508d936d254cea545b7312ecaa58a7b3a0f84952535b4c9afae7668cd"
   end
 
   resource "h11" do

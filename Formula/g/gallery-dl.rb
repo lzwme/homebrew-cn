@@ -3,18 +3,18 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https://github.com/mikf/gallery-dl"
-  url "https://files.pythonhosted.org/packages/5f/ff/0282bff875ccdcad0cc751f64a38ecf8de29da728e2ca3ae8a501fc74490/gallery_dl-1.31.7.tar.gz"
-  sha256 "d599cbe22326fdb74c4b398f83bbd3a37855be79efaf54a05f450deab3ad1d90"
+  url "https://files.pythonhosted.org/packages/a5/d5/e3568062a097ebc5f5d60b7485d3678c5a46402a07e2bbf7621c9b51ae18/gallery_dl-1.31.8.tar.gz"
+  sha256 "27f0c96928d4084124b0d98a674b0ef9fd2cbed6353ae9a61bd1ba27f9ee9682"
   license "GPL-2.0-only"
   head "https://github.com/mikf/gallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "61aba2ca0a12d21bf306d8be5ae5dff18ab9a9d7751d8621e2aafc2c78e66afe"
-    sha256 cellar: :any,                 arm64_sequoia: "9c6fc29817d17742c873c0495a061c778a9e9c32fa6119d9d285d50d466b6eca"
-    sha256 cellar: :any,                 arm64_sonoma:  "43c70b3044405f192a034da5d4bbd233346d3dbca9043cbd32639eaa19113a06"
-    sha256 cellar: :any,                 sonoma:        "573f2d96a97ac788e4ae882e4bd49feda4cf6d3b3527085bffa92ce78b594666"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "017f070f87b987b8eb3a9713eef79a3f6364366f55d6cc610fddf8d50bf0b64d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aaa1680f2db7223bcf413d346309394268b48d080e26589caa65fae27bd54038"
+    sha256 cellar: :any,                 arm64_tahoe:   "74f2a2c9021a5294dd3d1ce2759541c6e2149dded839af1c98837bf5cd9442d7"
+    sha256 cellar: :any,                 arm64_sequoia: "c4f08c0a78d53cc64b9e134bce226f26dbef81a1a5aeca0d75f91c88deb450ac"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd8b9086af38dd356a93a11d5869beab6e157cf13b229420150d3a74f8ca8d95"
+    sha256 cellar: :any,                 sonoma:        "40b3ceb26dbd77fababbcadd3b78debe849db25140207daeb44cb41555dfc57e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f3e125420013936bed65ee7177dba0c0cb45e401de404a5b3a3812255a8f034"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "071c6b0f2c97874f029a7765b3d6d36ca3c899130c517f709b12d75b1ea44cee"
   end
 
   depends_on "certifi" => :no_linkage
@@ -33,8 +33,8 @@ class GalleryDl < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
+    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
   end
 
   resource "idna" do

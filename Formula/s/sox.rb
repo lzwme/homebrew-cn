@@ -6,8 +6,6 @@ class Sox < Formula
   license all_of: ["LGPL-2.0-only", "GPL-2.0-only"]
   revision 6
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "7cadfa60a83a3b9f4474f7fad9ce3a98ae3ddf76025ac24a2aa4d4c3c3e6def9"

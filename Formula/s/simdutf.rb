@@ -1,9 +1,10 @@
 class Simdutf < Formula
   desc "Unicode conversion routines, fast"
   homepage "https://simdutf.github.io/simdutf/"
-  url "https://ghfast.top/https://github.com/simdutf/simdutf/archive/refs/tags/v8.0.0.tar.gz"
-  sha256 "a21c34c52d91a229591e4ebc8822a876604cf2fffeac9ec065bfda7cbfb9d680"
+  url "https://ghfast.top/https://github.com/simdutf/simdutf/archive/refs/tags/v8.1.0.tar.gz"
+  sha256 "64851568d57899f6f8dbc237e184e215ef9f464e6e7ebfb1c5785d19eaddbeb5"
   license any_of: ["Apache-2.0", "MIT"]
+  compatibility_version 1
   head "https://github.com/simdutf/simdutf.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class Simdutf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "59500b21743758c045a90e8a329ee2da10f252380780dc17e8e0ec9d55d00234"
-    sha256 cellar: :any,                 arm64_sequoia: "2d43bb23e7154e345015e7197b5fdc79a196d3ce3642cef631fb1f53dee94f84"
-    sha256 cellar: :any,                 arm64_sonoma:  "5128dbaffa8ffdb1721655a951697381da10b3199b1acbb19cc18526af0b4175"
-    sha256 cellar: :any,                 sonoma:        "927affb7b2cedfa230dfa19b2d7fa03961b0b2dc672ded12f82e03348df63423"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4ffb74e6fa33a85b0b954552feee9f0b3220de6df9259884e193f8db1b4949e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba31e56086959853739982e74a18823808f8ea5b9d43dd246ff7e3c63a9f0880"
+    sha256 cellar: :any,                 arm64_tahoe:   "8bafee0245351d11c88f9439d2e17a872ae9c36bef7cbe3130e48f1687efdea1"
+    sha256 cellar: :any,                 arm64_sequoia: "6f8a8c871423701346a5203349987c8ecfbec4b0aefa4693135bd1d84745ea4b"
+    sha256 cellar: :any,                 arm64_sonoma:  "6f636e1a322ab0bf46b74082485ab33caca0abf0a94e1023538acbca7660d4cf"
+    sha256 cellar: :any,                 sonoma:        "cef3b171225c4b6c471830baf8e797709dfda6cdbe129d23e5719820bd365ab6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "faefd84f4b4cc89ffe7b04ce57a5ebf91e8c0849f87848646011b071e9c03c1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c00641461c4ecca00b0c5c8204ad62870f25fa76ff565a095ef98d4e2a8a7b61"
   end
 
   depends_on "aklomp-base64" => :build

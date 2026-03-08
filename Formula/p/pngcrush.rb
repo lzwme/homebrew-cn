@@ -12,8 +12,6 @@ class Pngcrush < Formula
     regex(%r{url=.*?/pngcrush[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_tahoe:   "d480e8fcafb2cce34d273a2142d1db3513fb094e2e1c6b638b67d2114b75a91f"

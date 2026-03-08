@@ -11,8 +11,6 @@ class Sproxy < Formula
     regex(/href=.*?sproxy[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2bc3a894dd3aabe0118dfd0af15f13d0fa9279aa28eaab848da92c98380a2ca0"
