@@ -9,12 +9,13 @@ class Dvc < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e3fc6e47cb7da5475a358742a7c53a33b21526fcd2759c05ea9c7fd3b65b2f5c"
-    sha256 cellar: :any,                 arm64_sequoia: "82d1a29d3e4feb9c363279d79e6f6e547963953d6a4d0cf82881dd42f0022dbb"
-    sha256 cellar: :any,                 arm64_sonoma:  "ce99ccca163b68390b4e0014f1f22537c9eb9d88930c4e7e0f8e033395334d75"
-    sha256 cellar: :any,                 sonoma:        "09a96be77127a01ddfa022db5cf245720345acb645ca9a391c2c4e63b30bd00f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "db909212d5f52d98262bd0b89c2bd88c9ef0f1bbe3551bf9ef35870dd8a7fd94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f6d8dfe14d400a693dfabf882b145e37ea0ccc80d3cc8185e7034653644b89e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "a0480cb1159504d900bb7011236139814d21ce6ebd28342d74b3a90229fb4a8f"
+    sha256 cellar: :any,                 arm64_sequoia: "fe29f2a5ad538718824a2cda17a78682f7b421928990c081b6acc1e728057ba9"
+    sha256 cellar: :any,                 arm64_sonoma:  "ca26f2c95b7428dad8341d93998c9387b6d9ac624006eb3d1d280e8bc9ad3ae3"
+    sha256 cellar: :any,                 sonoma:        "a2b2c2648307413597a3540b1423b068c850bf13ae181e2027be479c6d75bdc0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc5285b925a005d7504f4cdfb5fb8afb6459f2a5212e65b22ca9644a2e3bdfce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c102d8daf4b640c612837abf258711647f7599a2a91879c9131434af7a52f3f2"
   end
 
   depends_on "cmake" => :build # for pyarrow
@@ -839,6 +840,11 @@ class Dvc < Formula
   end
 
   def install
+    # Workaround for https://github.com/facebookresearch/hydra/issues/3131
+    odie "Check if setuptools workaround can be removed!" if resource("hydra-core").version > "1.3.2"
+    (buildpath/"build-constraints.txt").write "setuptools<82\n"
+    ENV["PIP_BUILD_CONSTRAINT"] = buildpath/"build-constraints.txt"
+
     # dvc-hdfs uses fsspec.implementations.arrow.HadoopFileSystem which is
     # a wrapper on top of pyarrow.fs.HadoopFileSystem.
     ENV["PYARROW_WITH_HDFS"] = "1"

@@ -1,15 +1,15 @@
 class Sandvault < Formula
   desc "Run AI agents isolated in a sandboxed macOS user account"
   homepage "https://github.com/webcoyote/sandvault"
-  url "https://ghfast.top/https://github.com/webcoyote/sandvault/archive/refs/tags/v1.1.26.tar.gz"
-  sha256 "8fab751b233aa2de0606b240681ea27fcd5481e43d6ee3aacf643ac7ccd6ff9a"
+  url "https://ghfast.top/https://github.com/webcoyote/sandvault/archive/refs/tags/v1.1.27.tar.gz"
+  sha256 "6ab4732630fdd736242fc163a2798fe05dccc5a45e47efaa58bdc5e13e3a99ac"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21d91885e31c1f169456f3daacc92eb5e0104f5f1724c872710696bf23f7017d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21d91885e31c1f169456f3daacc92eb5e0104f5f1724c872710696bf23f7017d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21d91885e31c1f169456f3daacc92eb5e0104f5f1724c872710696bf23f7017d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e4716223873027f454f3b57c2b7da6ea4eee1262897067dc28dbd2a698ba82ca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ce237b252d1b16f0e351fe5119eb2c53197042d986567447c5a6aad68e204875"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce237b252d1b16f0e351fe5119eb2c53197042d986567447c5a6aad68e204875"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce237b252d1b16f0e351fe5119eb2c53197042d986567447c5a6aad68e204875"
+    sha256 cellar: :any_skip_relocation, sonoma:        "da4430b1138fbbb88691cf54a18308f9689ec97dadbd83fa71daa2f9788d5f2c"
   end
 
   depends_on :macos

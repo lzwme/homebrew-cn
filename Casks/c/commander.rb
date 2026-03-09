@@ -1,18 +1,18 @@
 cask "commander" do
-  version "0.6.795"
-  sha256 "10b76a8bfc4292eb8dfb1877607be269e3899ecc25b16321f0b029b5308bb8bb"
+  version "0.6.816"
+  sha256 "3336608903db8415ad6a066dadfdcad50ba9f09874fd5aded1a084f6a976c44c"
 
-  url "https://download.commanderai.app/release/Commander-#{version}.zip"
+  url "https://download.thecommander.app/release/Commander-#{version}.zip"
   name "Commander"
   desc "AI agent operator"
-  homepage "https://commanderai.app/"
+  homepage "https://thecommander.app/"
 
   # Upstream typically creates several releases per day and there isn't always
   # a release for every version increase. This manually throttles versions to
   # one in every five versions (not releases), aiming for roughly one update per
   # day. This may need to be adjusted if the release cadence changes.
   livecheck do
-    url "https://softwareupdate.commanderai.app/appcast/commanderai-appcast.xml"
+    url "https://softwareupdate.thecommander.app/appcast/commanderai-appcast.xml"
     strategy :sparkle do |items|
       versions = items.filter_map do |item|
         short_version = item.short_version

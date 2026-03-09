@@ -1,18 +1,18 @@
 class Gopeed < Formula
   desc "Modern download manager that supports all platform"
   homepage "https://gopeed.com"
-  url "https://ghfast.top/https://github.com/GopeedLab/gopeed/archive/refs/tags/v1.9.1.tar.gz"
-  sha256 "2309e15c2f83ab8bd67a9f268fc36feec633aec1bad7ecf2888be26d7f233b7b"
+  url "https://ghfast.top/https://github.com/GopeedLab/gopeed/archive/refs/tags/v1.9.2.tar.gz"
+  sha256 "6fe338f933fc361cd924b0e14a4973532461520bb5664520928e0c4e34f0f5c0"
   license "GPL-3.0-or-later"
   head "https://github.com/GopeedLab/gopeed.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb2603abe43db5588aabf5917f8644f72e5e28970b3de6db3962ed43e776c69e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74c7c8dd529326775e8df35af9538d0ad9ba582bcd669ab3a4378f388e380785"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d9b8b8169c13168c6ee2bbca3c62a8e0ba8694b646d4215e449aee52eaf7fd8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6b5f7c025b7584a43655942abbee5760a95b637ba3685164bf6364f8f191851f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22772f0e15a20aec1cc2a24c269e0c11adea5cca2804db99db12592c3ecaf706"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "debb1dfe749930277304410cc2e34610aa1526e12fc1cef84403f94e425b5ce2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63bd804cb83bf64f439045dd44b7214f218d20a67f7a3724c182be2b12786f02"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d4d5b4f4605d55a802506bf26f905d1d6f3892edc696fc6bbf25d2ace2ef155"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd86636304d11d4b81e3da4a0106def1592b1974dde20254295ee430c854acc7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d6436da8681fd9f1b68803fc3a51a0f0d6400680ced289886b2c5032e2866078"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2a74a19f1cbab6f1ae81ea5b89395e03982d90430b954b0eca8115b2bac19e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "343207f3b95eb3fd5f8eacffd3bc4a9f89f9441671173a87c740d48b3784439e"
   end
 
   depends_on "go" => :build

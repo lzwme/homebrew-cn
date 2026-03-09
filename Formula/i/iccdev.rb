@@ -1,18 +1,17 @@
 class Iccdev < Formula
   desc "Developer tools for interacting with and manipulating ICC profiles"
   homepage "https://github.com/InternationalColorConsortium/iccDEV"
-  url "https://ghfast.top/https://github.com/InternationalColorConsortium/iccDEV/archive/refs/tags/v2.3.1.4.tar.gz"
-  sha256 "7889fd4544e1d224700aa68659a83847b24a8adaa130db1d64e8577098b8700a"
+  url "https://ghfast.top/https://github.com/InternationalColorConsortium/iccDEV/archive/refs/tags/v2.3.1.5.tar.gz"
+  sha256 "b475e0f42b41a53689d0e67d86eddb902156183fd4de3742c6a5c18f5b065048"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "512cc2ef21bcf40910b09257ee0fa9160cc783da05b4d4054635e4962e433b4a"
-    sha256 cellar: :any,                 arm64_sequoia: "087929b684f50466c2904de9831675dbe073973d082704d485509345c318f9a8"
-    sha256 cellar: :any,                 arm64_sonoma:  "727c9e6edef0bc6f3a48078aad30683f05c9f4eff21f6b0a4b6a39bf79ff0bd2"
-    sha256 cellar: :any,                 sonoma:        "14a7bd885e583a20db5d9277750be36d173fcd3d604061cfeb4be136019955f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f754aa2086576c3a0d66df64db78c0762370492490efcb451d4382b7528e6d25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c6075c1c8907b1f0c37a8e313e1d54341122a7f9ec94e501a37f7f50b377006"
+    sha256 cellar: :any,                 arm64_tahoe:   "bd74477116a0e2c2e0e842c6650f9d27fedf3a3ac3dc1ceb8d62063031f7d34c"
+    sha256 cellar: :any,                 arm64_sequoia: "93ae485471749e3bd7bda7973b103e2b24737d9265d0b715e6d8373bb040f1ed"
+    sha256 cellar: :any,                 arm64_sonoma:  "337d4907871bea4d95bd52e0f65c9ac8da54339bcec876930562eba762e26e77"
+    sha256 cellar: :any,                 sonoma:        "f597aa258193d6774f669818a4503fe0c857e462e679b8b8a8d9943109a961e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "38021eddee86c800e712d71279d507941a40bc6df4d4f9541f174024782c78a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e54aa6f7fae5b7bc4b14c07ceca75f81ba83aecf957641ede12552a02ca53cf8"
   end
 
   depends_on "cmake" => :build

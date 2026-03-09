@@ -3,18 +3,17 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/55/f8/81e2ee90f47a6ae1e475a961bd6a1a1569b04999ba941897b87101b0d5af/moto-5.1.21.tar.gz"
-  sha256 "713dde46e71e2714fa9a29eec513ec618d35e1d84c256331b5aab3f30692feeb"
+  url "https://files.pythonhosted.org/packages/b2/3d/1765accbf753dc1ae52f26a2e2ed2881d78c2eb9322c178e45312472e4a0/moto-5.1.22.tar.gz"
+  sha256 "e5b2c378296e4da50ce5a3c355a1743c8d6d396ea41122f5bb2a40f9b9a8cc0e"
   license "Apache-2.0"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0b91708567915c97c41bf9ad51ea0668dc4d4cbe9a1b71f82d52def1ae48444b"
-    sha256 cellar: :any,                 arm64_sequoia: "07aef8ad2971e46b1a9a7b0a4a90d6141b7bb7c6e68a4dff26374089c801b32c"
-    sha256 cellar: :any,                 arm64_sonoma:  "3f26a08fcdebda047271b9fc111aa1979312ef8a81deb9acdc845f65e29b281b"
-    sha256 cellar: :any,                 sonoma:        "2f81502ea8ad4c57ad3086a40182ac5831408f9b4be362fe4d9462a419516804"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3041acca84ab4111d2ec9c9ec9c81b0be3b97f4e23e6f16d0cf53b6d4ddb9af8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c15907714ceb3baed50d1c57d8c28237ba12f9a5d6adee4fd60e08c1e57bdae0"
+    sha256 cellar: :any,                 arm64_tahoe:   "799b96283400a8a204f6337b5c0498e5ea389d6049c06103f8e401268d9e81e2"
+    sha256 cellar: :any,                 arm64_sequoia: "9ea4552a4ec2bd5d4b9364b22d8d611c291cd1ebfe5c73beb9989bd7f50cb933"
+    sha256 cellar: :any,                 arm64_sonoma:  "1965205f212cf6e1a31c6298e92a532366eb7cbe787b18d74a16149145a32916"
+    sha256 cellar: :any,                 sonoma:        "9d6a0e1acddd66215423feaead5d3667b4d5fb3c832b24dc668aab3f0026e079"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4189a8e1a2d14542162abf2ccdacca0aebdbc514b20d990fb77b9edac4ad6c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cad47180114b7c7c700c39a7d529a340455b0d0a9e003dc49353bee77a49ee8"
   end
 
   depends_on "certifi" => :no_linkage
@@ -53,13 +52,13 @@ class Moto < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/58/15/356d38280ce3fce37a8e2b44e2ead81240d933f64411e86415a2ed4c0bd5/boto3-1.42.61.tar.gz"
-    sha256 "117ebfc597c95bfb64c6d37ba77bd1c2a97a1885c1dcac2a8be1a14e2139a76d"
+    url "https://files.pythonhosted.org/packages/7f/2a/33d5d4b16fd97dfd629421ebed2456392eae1553cc401d9f86010c18065e/boto3-1.42.63.tar.gz"
+    sha256 "cd008cfd0d7ea30f1c5e22daf0998c55b7c6c68cb68eea05110e33fe641173d5"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/d1/6a/27836dde004717c496f69f4fe28fa2f3f3762d04859a9292681944a45a36/botocore-1.42.61.tar.gz"
-    sha256 "702d6011ace2b5b652a0dbb45053d4d9f79da2c5b184463042434e1754bdd601"
+    url "https://files.pythonhosted.org/packages/af/eb/a1c042f6638ada552399a9977335a6de2668a85bf80bece193c953531236/botocore-1.42.63.tar.gz"
+    sha256 "1fdfc33cff58d21e8622cf620ba2bba3cff324557932aaf935b5374e4610f059"
   end
 
   resource "cfn-lint" do
@@ -68,8 +67,8 @@ class Moto < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
+    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
   end
 
   resource "click" do
@@ -93,8 +92,8 @@ class Moto < Formula
   end
 
   resource "graphql-core" do
-    url "https://files.pythonhosted.org/packages/ac/9b/037a640a2983b09aed4a823f9cf1729e6d780b0671f854efa4727a7affbe/graphql_core-3.2.7.tar.gz"
-    sha256 "27b6904bdd3b43f2a0556dad5d579bdfdeab1f38e8e8788e555bdcb586a6f62c"
+    url "https://files.pythonhosted.org/packages/68/c5/36aa96205c3ecbb3d34c7c24189e4553c7ca2ebc7e1dd07432339b980272/graphql_core-3.2.8.tar.gz"
+    sha256 "015457da5d996c924ddf57a43f4e959b0b94fb695b85ed4c29446e508ed65cf3"
   end
 
   resource "idna" do
@@ -278,8 +277,8 @@ class Moto < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/f7/37/ae31f40bec90de2f88d9597d0b5281e23ffe85b893a47ca5d9c05c63a4f6/wrapt-2.1.1.tar.gz"
-    sha256 "5fdcb09bf6db023d88f312bd0767594b414655d58090fc1c46b3414415f67fac"
+    url "https://files.pythonhosted.org/packages/2e/64/925f213fdcbb9baeb1530449ac71a4d57fc361c053d06bf78d0c5c7cd80c/wrapt-2.1.2.tar.gz"
+    sha256 "3996a67eecc2c68fd47b4e3c564405a5777367adfd9b8abb58387b63ee83b21e"
   end
 
   resource "xmltodict" do

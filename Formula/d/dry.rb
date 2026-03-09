@@ -1,18 +1,18 @@
 class Dry < Formula
   desc "Terminal application to manage Docker and Docker Swarm"
   homepage "https://moncho.github.io/dry/"
-  url "https://ghfast.top/https://github.com/moncho/dry/archive/refs/tags/v0.12.1.tar.gz"
-  sha256 "60fbedd4c416b96c87ecd2c88c9a509433be53bdd6737345c9d1c62f024d4684"
+  url "https://ghfast.top/https://github.com/moncho/dry/archive/refs/tags/v0.12.2.tar.gz"
+  sha256 "0fe1a152f318f63e99816b444e8317e3d35749e84ee050530651fa62b863efca"
   license "MIT"
   head "https://github.com/moncho/dry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9e54dcd0b3f732bf29cc3499f4be6d21e1c6f25d01b78852945eb6cff355965"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9e54dcd0b3f732bf29cc3499f4be6d21e1c6f25d01b78852945eb6cff355965"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9e54dcd0b3f732bf29cc3499f4be6d21e1c6f25d01b78852945eb6cff355965"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5346f0731d3baa4110e54010fb80399500cb512bd9fd4945559bd04b42319ea2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2339bd2ad48b74725e9e3f04b2028d04384c0f35b61960646df115d5083fb6ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca3b2a9b9b7589770258064a3769f7a5df2e05bd37cf581a068a50db1ffbac63"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "99e4a794987918b7279f407918d9233aa2da279f7c5358a7e4e296772632e7b3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99e4a794987918b7279f407918d9233aa2da279f7c5358a7e4e296772632e7b3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99e4a794987918b7279f407918d9233aa2da279f7c5358a7e4e296772632e7b3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b6b2a335ddd33be8bfb95b4838b609f20ca24fd6f91aab5c7a6ce0cfe2333406"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "154efb5300c2de79d9afc216e32d61f1cdfac5ce25f2706776a3a6876b555918"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e92f6e0308d21101d9dc965f9af80fe05575232bea0b4aa06301dfb22eb6f0db"
   end
 
   depends_on "go" => :build

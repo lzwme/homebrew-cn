@@ -1,18 +1,17 @@
 class Nvc < Formula
   desc "VHDL compiler and simulator"
   homepage "https://www.nickg.me.uk/nvc/"
-  url "https://ghfast.top/https://github.com/nickg/nvc/releases/download/r1.19.2/nvc-1.19.2.tar.gz"
-  sha256 "328ffbf4dea1fc2087eedd713ba92af2dfabed88bb6f8428635bfd12bb479674"
+  url "https://ghfast.top/https://github.com/nickg/nvc/releases/download/r1.19.3/nvc-1.19.3.tar.gz"
+  sha256 "ce2c2d48e097928170489c4193194a51fb97ae9b5d8828de88b279ae02672021"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 arm64_tahoe:   "b467e19b0d2a785bc36db0827b31651b09d23f9ea8948288c269c505d600ed40"
-    sha256 arm64_sequoia: "17ec8b075946b514ce8e0b70fdafd12c29ea8f285084d2a33e4953a44e5d8d26"
-    sha256 arm64_sonoma:  "84565a9babab0b70971b66b5ad97f3381669521da844fb093c6d76d3c37983a1"
-    sha256 sonoma:        "ebecb69c5eaf66b60cc71be0b902385ca9d67bb7ba76330db5acdcdf9cf91106"
-    sha256 arm64_linux:   "fd734fb5f10ad512c18b2def8382e848e0c1e3b09013ef7eda3e28075686cf12"
-    sha256 x86_64_linux:  "6146b9b03cf106559cd206051ea76f4556baa6a74b240c6f5016b298a8c0f7b1"
+    sha256 arm64_tahoe:   "2cdbb1f94e69bc27c5f24f2930cd76ea99852a592ebc2a3f6c1d22026df2d136"
+    sha256 arm64_sequoia: "b0bef2ccd32347faefe149940dee2ce53b5bde4a47c604718d1f88c66e5600e5"
+    sha256 arm64_sonoma:  "a76845ff90a3f4d7cabc3b31904ff13b532748440614eefdd7775a9c313ec9ac"
+    sha256 sonoma:        "233a646700ec2c69d01cad557b91973552d702eb49f24a69139dad7616fa74e7"
+    sha256 arm64_linux:   "63acb3ca9c7c8df8d326abd1f24f91cd71372e94d45f3d6eddafd6b01befb3aa"
+    sha256 x86_64_linux:  "cc47f5559b9a9753da327230e580b872303c99ef46f5bda1982ccfdd316ad885"
   end
 
   head do

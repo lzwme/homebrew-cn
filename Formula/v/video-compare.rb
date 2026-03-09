@@ -1,17 +1,17 @@
 class VideoCompare < Formula
   desc "Split screen video comparison tool using FFmpeg and SDL2"
   homepage "https://github.com/pixop/video-compare"
-  url "https://ghfast.top/https://github.com/pixop/video-compare/archive/refs/tags/20260214.tar.gz"
-  sha256 "f7a9232c94814f4b796ed0ca88786cc6f9aa8c9e46d11ed9eea2ce1279e588c2"
+  url "https://ghfast.top/https://github.com/pixop/video-compare/archive/refs/tags/20260308.tar.gz"
+  sha256 "9e25b2a72f0c745637903cf1d3df71f32c040a610b64cb3d049831cafe1e2941"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5c41f5c842cb6567fef3b2154d5cdd9d4a10c563b7a01b58322c28d0e2f6453d"
-    sha256 cellar: :any,                 arm64_sequoia: "d08623273c95110d928f1bd57e613f09c15ad5764593b8fb3ee68e5dabd3d005"
-    sha256 cellar: :any,                 arm64_sonoma:  "4eee5a0b2cd44dd5ff48c96774f955be19cc02457ba8111ec2807fc63764c992"
-    sha256 cellar: :any,                 sonoma:        "1181845ab67d5049456f91e6bafc417846a7feb943c1ec321b4bdadbb04e1808"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4f980acf1739beb513ce8714e94e931bf8aa1044dff63c615dad82636201160"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "396cd7cb97832f0b6b6c909a3c11bc4375b829023d30ccadea7d440a1cbdad9f"
+    sha256 cellar: :any,                 arm64_tahoe:   "c8fddd93d8610b423d4e89de72db1cfcef64133e2c40db3bb94d627587efe37e"
+    sha256 cellar: :any,                 arm64_sequoia: "06a84854a6f3208fb2cf73abec3b33d922176491bb078b774434a6b12fa6bc5f"
+    sha256 cellar: :any,                 arm64_sonoma:  "bd66d5c35e4ffc84c0fba88c014ee5750f6397799978f34f89222c1319591e3a"
+    sha256 cellar: :any,                 sonoma:        "f27d5c558c11528c41d769b6444ae604a1b4904e25c363fd8720ad0484440c77"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "458fee5ace31fbe713ff4c84d5b09eab2be7b94475a9d12300f850e6c5b3956a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb906b7486530a942c8b605c3cb1005b157a1a8c09158e36479474c7fb51b79d"
   end
 
   depends_on "ffmpeg"

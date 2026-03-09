@@ -1,18 +1,18 @@
 class Appium < Formula
   desc "Automation for Apps"
   homepage "https://appium.io/"
-  url "https://registry.npmjs.org/appium/-/appium-3.2.0.tgz"
-  sha256 "02ac874baff8634b47e78d2c7f5bf67c540b773270699b3cef7a31274db23cdb"
+  url "https://registry.npmjs.org/appium/-/appium-3.2.1.tgz"
+  sha256 "4c08aa76150c006aed1a9db03added23b9ce733c30fb1f263fb02244fd208fb0"
   license "Apache-2.0"
   head "https://github.com/appium/appium.git", branch: "master"
 
   bottle do
-    sha256                               arm64_tahoe:   "62bc8fc89786cd840fab1884b9961b57b2aee6d6bb06a39a9b1c3e51212c0507"
-    sha256                               arm64_sequoia: "5b7970624b640fd96921a480fdedc80214a1d0f4e9eeeb2aaef26b51a5d37a26"
-    sha256                               arm64_sonoma:  "1ca41083bb4e3e77781e8c784ab5659136f618f018914e2b734fb521448e0ea4"
-    sha256                               sonoma:        "8282f33ffa607ac199bb7bb8a7c51f9130511a0b24c0e4a4f8505e3e93dc6f40"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "967c32df5d242dfdee30ad2d058259fa68e15cb38ca3c9a37c8df5f7bf80927d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9727bc83f8b9374c356cb911b82d822f9f7d022b0226cce1069b3a833b9f9efe"
+    sha256                               arm64_tahoe:   "d9f6e37e13cf0cd478534e0eb67b0c263c2e3faf4aec8c2b819c3d812ea3f386"
+    sha256                               arm64_sequoia: "7e23022522afdc19e6f8c719a34611b560bac6203fc4fb8d06b8295d5c833e4f"
+    sha256                               arm64_sonoma:  "6173d968b05b059515b1e930f7bf84cc17204728f23db5545122d7b0baacfb1d"
+    sha256                               sonoma:        "b59abfeab137af536d676b544cbd5dc9a4ecb020e1b5bb36d9bb3cdd6b850664"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "76ce933de6e17f39f75c6d18dc07154fcb44a1e518d01bd5ee7e8902ec44b42b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29170269791458dd4636fb3c12b3abc64035d275cd96a76c477a5db40b6b402e"
   end
 
   depends_on "pkgconf" => :build
@@ -45,6 +45,7 @@ class Appium < Formula
 
     # Remove prebuilts which still get installed as optional dependencies
     rm_r(libexec.glob("lib/node_modules/appium/node_modules/@img/sharp-*"))
+    rm_r(libexec.glob("lib/node_modules/appium/node_modules/bare-{fs,os,url}/prebuilds/*"))
   end
 
   service do

@@ -2,9 +2,15 @@ class Proj < Formula
   desc "Cartographic Projections Library"
   homepage "https://proj.org/"
   url "https://ghfast.top/https://github.com/OSGeo/PROJ/releases/download/9.8.0/proj-9.8.0.tar.gz"
+  mirror "https://download.osgeo.org/proj/proj-9.8.0.tar.gz"
   sha256 "a8b493b00cf4d08b712b9e063ed5e53e2be90fcde46770e9dbd773341f378f43"
   license "MIT"
   head "https://github.com/OSGeo/proj.git", branch: "master"
+
+  livecheck do
+    url "https://download.osgeo.org/proj/"
+    regex(/href=.*?proj[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     sha256 arm64_tahoe:   "defaf305951c06d26473ea55fa96451d530e82a74d0dd11911e6ad53e3acf50f"

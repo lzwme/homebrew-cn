@@ -25,6 +25,8 @@ class Rpm < Formula
     regex(/RPM\s+v?(\d+(?:\.\d+)+)/i)
   end
 
+  no_autobump! because: :incompatible_version_format
+
   bottle do
     sha256 arm64_tahoe:   "9c214ce074bddb955970b60106ebc155f0783a04e2af65080268ccecf7bd499b"
     sha256 arm64_sequoia: "ec075b7ef916195ac245a831715ca4305641d607f5c82e9f81b437aa20d5ab8e"

@@ -13,8 +13,6 @@ class QtAT5 < Formula
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "4ce6952f894ddae8cc4b0d7532b580884a2a8604d848eceb7e32d4dbbf97db5f"
