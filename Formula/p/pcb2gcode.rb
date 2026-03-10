@@ -6,6 +6,11 @@ class Pcb2gcode < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/pcb2gcode/pcb2gcode.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "1bbc11859080838a33d817b7e21424967a7f074315b7da188d68a54f2842d6f3"
     sha256 cellar: :any,                 arm64_sequoia: "d87848faa361ecf2e7660fdaf47745210bd14cf8072d6ed705c9c400c06e5527"

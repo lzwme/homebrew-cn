@@ -13,12 +13,13 @@ class Docker < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1963de2ef73d3d1ba3805f222538030ef179a820e89582e69767da68cd8a5857"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cee4d656fe3c1c499a3a39cc2e1b88b650af31082bad1ae25572a5be475be4c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78ad89275e39b7777662754a971ee64593d8bd6cfa41c3af1bc70abad0444f53"
-    sha256 cellar: :any_skip_relocation, sonoma:        "99a03c201bd092892f62c68908126f5cff6f16b191eec5cb55f9c4002d7bd6c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ec0c8b58470dc0867d1ec8c82b5c4826184fca43d943f6a84a6461ea4cb6d3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c428bc08700a2b54d031b9483975a24bc0babde7661c31c447b03ed6f3015647"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a61c924104b1240b53cfcb88ec04ed228f460d0df17f3c258d8294b7a50bd0d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce00d76977f8c24e643f8c39f4427065225be9861802b465dbaf374c885df6bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78e1b23e4e97cb523b5a6ee159e47234e1fcc50d42392ab041e86217c167def3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f59f2171dfd46f5313ae2b348444b321cba92a4549c5e367fdf9eb5342e41b90"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "25f3bd5f4112b0eb6b82350b72a32440bbbd52d220549753671eda1501fb1cf5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "083413e120d3181155bd0d13f509b56383eed5d673664c713d38c67bdb0bd44a"
   end
 
   depends_on "go" => :build
@@ -48,6 +49,15 @@ class Docker < Formula
       section = md.to_s[/\.(\d+)\.md\Z/, 1]
       (man/"man#{section}").mkpath
       system "go-md2man", "-in=#{md}", "-out=#{man}/man#{section}/#{md.stem}"
+    end
+  end
+
+  def caveats
+    on_linux do
+      <<~EOS
+        The daemon component is provided in a separate formula:
+          brew install docker-engine
+      EOS
     end
   end
 

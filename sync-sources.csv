@@ -714,7 +714,8 @@ Homebrew-homebrew-core/Formula/b/buffrs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/build2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/buildapp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buildifier.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/b/buildkit.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/buildkit.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/buildkitd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buildozer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buildpulse-test-reporter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buku.rb, Homebrew/homebrew-core, 1
@@ -4766,6 +4767,7 @@ Homebrew-homebrew-core/Formula/m/mockery.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mockolo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mockserver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/moco.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/models.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/modman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mods.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/modsecurity.rb, Homebrew/homebrew-core, 1
@@ -7857,6 +7859,7 @@ Homebrew-homebrew-core/Formula/w/wdc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wdfs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wdiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/weasyprint.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/weave.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/weaver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/weaviate-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/weaviate.rb, Homebrew/homebrew-core, 1

@@ -3,17 +3,17 @@ class Tmuxp < Formula
 
   desc "Tmux session manager. Built on libtmux"
   homepage "https://tmuxp.git-pull.com/"
-  url "https://files.pythonhosted.org/packages/9b/62/5c4347025896a91cedfce3814a098f441eb0aaef4dd86f44cdfca3531e9d/tmuxp-1.66.0.tar.gz"
-  sha256 "0aa29db0da41ba3ce3bf5d2df84c00b72226c69f234d6d8b69bd68f4edb3f543"
+  url "https://files.pythonhosted.org/packages/3a/c9/43b63b5f0ddc53c25052de75945dc4adc6b14984a38e1dea72c34cf398d7/tmuxp-1.67.0.tar.gz"
+  sha256 "990720d9fa5a6f4758790aecc201d2d29af0ad9ad8c47b58ac20acb0e8a94f12"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4b8e9ee341c13e90568c4069b002cd7fca3e30a4a57abc0f343e687795029ba2"
-    sha256 cellar: :any,                 arm64_sequoia: "29acc5784191a7e8ee7824523b9f94128ccece36759a5ec1b30f96d3f6f3628c"
-    sha256 cellar: :any,                 arm64_sonoma:  "4786add0cb6d7b2c1d2847b9e4bb1d26b529cb28ac37697bb46216a2b16e472b"
-    sha256 cellar: :any,                 sonoma:        "56745ef5db1b8d672f811903545b8aa7a45446c267143969e84c129731e6c42b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "88a4351a5fd6ee9623c059a3d7d00c7150fe645a89ae221c65ebc702393b9a04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d273949c3cc6e9a926b68b0ade6274d32033acc4ca72bfa6891705d9e886b7ac"
+    sha256 cellar: :any,                 arm64_tahoe:   "440fbe888734beaf3d2432a68d2012b53b6f5d0889c08958c661f925cea71dab"
+    sha256 cellar: :any,                 arm64_sequoia: "b161800ea7e7fa3c485306336152f082c7d51ec95a5bc92dd607f66208bf75b2"
+    sha256 cellar: :any,                 arm64_sonoma:  "8a6a36d6a4402c70b4a05436ff0c44af7b7ac9d84b013d05654794ba89151afc"
+    sha256 cellar: :any,                 sonoma:        "fb4668abcf46149e82ddc110852ab2ac50c19e8c5f3e6144430bf14dd790dc9d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b346469666a047b31b4b1de3fc169f8bcfb2177db44f6786b39ba5a81d1606da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcd56bb77e096df7254446408d3a05ec550176fd915c31684615a52e863bdfeb"
   end
 
   depends_on "libyaml"
