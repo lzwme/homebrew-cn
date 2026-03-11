@@ -1,18 +1,18 @@
 class Gittuf < Formula
   desc "Security layer for Git repositories"
   homepage "https://gittuf.dev/"
-  url "https://ghfast.top/https://github.com/gittuf/gittuf/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "9a9e4578b7246ba3051329c7f780ba58208defbb0c157a2b353d889d1057c633"
+  url "https://ghfast.top/https://github.com/gittuf/gittuf/archive/refs/tags/v0.13.1.tar.gz"
+  sha256 "d58203e781a03eb1578f4d5fd411bdbb7d6cb71e4abe5beb577333ac4ac7a578"
   license "Apache-2.0"
   head "https://github.com/gittuf/gittuf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e09513abecbd1ffe1a71e0ae1445dbca4fcd079c7b01dfff81d53aed3d6ecc7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e09513abecbd1ffe1a71e0ae1445dbca4fcd079c7b01dfff81d53aed3d6ecc7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e09513abecbd1ffe1a71e0ae1445dbca4fcd079c7b01dfff81d53aed3d6ecc7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "854bc48c4e811614d1bff212df4e513e496a337c05b9e463eb4dd7fc0f5917a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f6bf02fadce3597bef198b92def02902f580c6f7e627d1e2a7e5b420218de52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a61aa84c0e5238451165c9c55aca2111c72af2ba6ddd77895aa898d71441118"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b0cbca8a270e3e763b60c2fdf7b08d2c9d8ecfd967d4814265cb390c3760b522"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0cbca8a270e3e763b60c2fdf7b08d2c9d8ecfd967d4814265cb390c3760b522"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0cbca8a270e3e763b60c2fdf7b08d2c9d8ecfd967d4814265cb390c3760b522"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ff7cab3e7c45a9750e6203f2f777c26e3b7b29bebd39670dbedc80d3fe29b5f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b72685135a684f60f2b26fca40f0ff15420cb2aca892d0ccfc8bb11640274481"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c0d7606659829363965dea99cc65fe5be2422268950f4b0455ac932f4cf0c79"
   end
 
   depends_on "go" => :build

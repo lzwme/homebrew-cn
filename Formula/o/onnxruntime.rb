@@ -5,6 +5,7 @@ class Onnxruntime < Formula
       tag:      "v1.24.3",
       revision: "3a728b75062256951b6e19ce718907cf1a1d4cf0"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,12 +13,12 @@ class Onnxruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f9b842d60a3481701173b86968999757599e4b49471196acf45c5002a84adfda"
-    sha256 cellar: :any,                 arm64_sequoia: "61c5a9f081073481c885168c34d62757bedcaba07719e23b76fc2f2009a50445"
-    sha256 cellar: :any,                 arm64_sonoma:  "9e4c2a9a6f6493b2bbd5e940d8d5b5d0e4c75d36761dceecd4ef11cac4e6637f"
-    sha256 cellar: :any,                 sonoma:        "44953690c61dd811b06860b917872f353c22e896d539733a9cfe4321e5ce4ab7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a850263512d3319b4ec364c8fc5c48be1cce62aa8de4f87c54205e8c0f60f571"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3f9bae89bc75aab7df601363e0cc6332531923caee21ed1acd7c23c11f3ea3f"
+    sha256 cellar: :any,                 arm64_tahoe:   "eb7d97471327f116b326dd48cd4853094fe36eb6c45d9184776d2ed6feab21b2"
+    sha256 cellar: :any,                 arm64_sequoia: "eab7fe26c9d1a574d7b17165485193a9264491517a7ef6bc3bfdc589f78c22b7"
+    sha256 cellar: :any,                 arm64_sonoma:  "1c8292e91ffb0751784e71eaec76f5561d5d5b39ac8a8cdcaee0048e67c68fbe"
+    sha256 cellar: :any,                 sonoma:        "29c90430e44116f3f4a5b19f2fe0c144d39adc422806f4467b2bf5a648a87883"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10108caddd2eef5b5b753f7694ef78ba16fcaec172ff832b63f0a36287e216b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c47f4cab31a73cbbd926d386adbda26524374cdccadf5c36a80504bd5792ffd7"
   end
 
   depends_on "boost" => :build
@@ -31,7 +32,7 @@ class Onnxruntime < Formula
   depends_on "safeint" => :build
   depends_on "abseil"
   depends_on "onnx"
-  depends_on "protobuf@33"
+  depends_on "protobuf"
   depends_on "re2"
 
   resource "pytorch_cpuinfo" do
@@ -68,7 +69,7 @@ class Onnxruntime < Formula
       -DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS
       -DFETCHCONTENT_SOURCE_DIR_MP11=#{Formula["boost"].opt_prefix}
       -DPython_EXECUTABLE=#{python3}
-      -DONNX_CUSTOM_PROTOC_EXECUTABLE=#{Formula["protobuf@33"].opt_bin}/protoc
+      -DONNX_CUSTOM_PROTOC_EXECUTABLE=#{Formula["protobuf"].opt_bin}/protoc
       -Donnxruntime_BUILD_SHARED_LIB=ON
       -Donnxruntime_BUILD_UNIT_TESTS=OFF
       -Donnxruntime_GENERATE_TEST_REPORTS=OFF

@@ -1,9 +1,9 @@
 cask "dotnet-sdk@preview" do
   arch arm: "arm64", intel: "x64"
 
-  version "10.0.103"
-  sha256 arm:   "b0ffba0c7bd785e79f5c22ede3d77322188c15a7403eb53bd7a394f7c7b250d1",
-         intel: "e38e49b39d439ecc7f863341f7ae76e0ba7816951511b57e797b8949164d8eb7"
+  version "11.0.100-preview.2.26159.112"
+  sha256 arm:   "14843284bbee7a5a2b1fa814e2d6809404e5746789fac6151a2a8fd07bed786d",
+         intel: "7a03a5d3c210b9f567433b350834965ac8e81365f3069e7a8d888fe189e77e3c"
 
   url "https://builds.dotnet.microsoft.com/dotnet/Sdk/#{version}/dotnet-sdk-#{version}-osx-#{arch}.pkg"
   name ".NET SDK"

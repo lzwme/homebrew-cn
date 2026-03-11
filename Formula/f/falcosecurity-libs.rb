@@ -8,7 +8,7 @@ class FalcosecurityLibs < Formula
     { any_of: ["GPL-2.0-only", "MIT"] }, # driver/
     { "GPL-2.0-only" => { with: "Linux-syscall-note" } }, # userspace/libscap/compat/
   ]
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -16,12 +16,12 @@ class FalcosecurityLibs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4925bb362b14157eb0750a6d5c69d8b09a1a102760a9d36e9b59e093ce07e2d6"
-    sha256 cellar: :any,                 arm64_sequoia: "2ab0d6417bac8f9b12aeedcfb055f369fffffed0add628e472e356102c9b24a6"
-    sha256 cellar: :any,                 arm64_sonoma:  "aeecb5be6dce400386271a9dc631724c80ea82baaffc248e25c6d2669cf5020f"
-    sha256 cellar: :any,                 sonoma:        "c9681e7dbf9e916d319a11f772d34042c120b9ac8150714ddf79c875f330f8ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "11390b6046ad8354663b45ee30f9a892f418e5e34ae5b0757259ffa84e382289"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a48407bee28bf27da13bef17b80fa5961bcc1dac74969c57bb97d1fe2d9487ec"
+    sha256 cellar: :any,                 arm64_tahoe:   "27b747d3d3084ac979f783188fa9e26341f278181196f48dace42bb72bb72399"
+    sha256 cellar: :any,                 arm64_sequoia: "276bc934131bae13ebca0401a490e5ab6688e9f5e51b129ee61a096a0468b3ed"
+    sha256 cellar: :any,                 arm64_sonoma:  "773301a5bf953dc35076d8ef5b2fccf9a439827ce3ff266f4d1941bb55570fab"
+    sha256 cellar: :any,                 sonoma:        "6e14e2e1c9085c510659349eacfab620b147f64a99f538d98425c487abb89aea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a08a7a0cbf1962a41ba265dffc4d647f84e8f70932b3be709d8d67d8c2b88122"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d95433c52e96ee4ee8548237e427e9a6e581f95c6f80aaa128dc54876ed3ad7"
   end
 
   depends_on "cmake" => :build
@@ -37,7 +37,7 @@ class FalcosecurityLibs < Formula
     depends_on "curl"
     depends_on "elfutils"
     depends_on "grpc"
-    depends_on "protobuf@33"
+    depends_on "protobuf"
     depends_on "zlib-ng-compat"
   end
 

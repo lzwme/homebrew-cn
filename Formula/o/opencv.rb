@@ -2,7 +2,7 @@ class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
   license "Apache-2.0"
-  revision 5
+  revision 6
 
   stable do
     url "https://ghfast.top/https://github.com/opencv/opencv/archive/refs/tags/4.13.0.tar.gz"
@@ -24,12 +24,12 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5c2e4b59a294599914b71cfe295d00f2e2f7f1e2fb092371e8989f87fc3b6e9c"
-    sha256 arm64_sequoia: "7e089efbe7ff9c3596cffca40a54a81a45045b6b28f358dc87ef2e2aaa9c7b31"
-    sha256 arm64_sonoma:  "7712a5e310369ab1b0fa2ee34e929cdce90dea587bbc3827c57564429eed0278"
-    sha256 sonoma:        "08fd84dfb978d2ee062d00b86d3f5b90a1c3a2527489f6db065c41848cffdcd5"
-    sha256 arm64_linux:   "0115f8488bb9b3ff8835fe110700bfafa9fc3875eb4abd378d0cf673d85af122"
-    sha256 x86_64_linux:  "b5246e45e8dd8cfb619724726a3d80d03346dbe6a42109da09abe188305e841e"
+    sha256 arm64_tahoe:   "e00fe961f213d9e2791e4426c46919c5081cfba52049c1518c5a69e4ad9b7037"
+    sha256 arm64_sequoia: "39504dc4ec536518b690c34e4a092dca90488a3ad963d1b1268f7579a124f578"
+    sha256 arm64_sonoma:  "8d38b4106f9eca5fe2debe2713250d6e43ed9b6068729b0189c3d857eb3e33f5"
+    sha256 sonoma:        "078ec9dd621481986944ea96941e26b04660513ec3afd800c88988ad22086a61"
+    sha256 arm64_linux:   "b488fc41be5e68da70dba34d259b5a04c3f0cbfac57fc4ecb0d2bcc5805b7645"
+    sha256 x86_64_linux:  "380efa4da184cc5276e93b30aece3a9479ccc90025b7725ac07effb7cc7b8f06"
   end
 
   head do
@@ -60,7 +60,7 @@ class Opencv < Formula
   depends_on "openexr"
   depends_on "openjpeg"
   depends_on "openvino"
-  depends_on "protobuf@33"
+  depends_on "protobuf"
   depends_on "python@3.14"
   depends_on "tbb"
   depends_on "tesseract"
@@ -152,9 +152,9 @@ class Opencv < Formula
         -DOPENEXR_ILMIMF_LIBRARY=#{Formula["openexr"].opt_lib}/libIlmImf.so
         -DOPENEXR_ILMTHREAD_LIBRARY=#{Formula["openexr"].opt_lib}/libIlmThread.so
         -DPNG_LIBRARY=#{Formula["libpng"].opt_lib}/libpng.so
-        -DPROTOBUF_LIBRARY=#{Formula["protobuf@33"].opt_lib}/libprotobuf.so
-        -DPROTOBUF_INCLUDE_DIR=#{Formula["protobuf@33"].include}
-        -DPROTOBUF_PROTOC_EXECUTABLE=#{Formula["protobuf@33"].bin}/protoc
+        -DPROTOBUF_LIBRARY=#{Formula["protobuf"].opt_lib}/libprotobuf.so
+        -DPROTOBUF_INCLUDE_DIR=#{Formula["protobuf"].include}
+        -DPROTOBUF_PROTOC_EXECUTABLE=#{Formula["protobuf"].bin}/protoc
         -DTIFF_LIBRARY=#{Formula["libtiff"].opt_lib}/libtiff.so
         -DWITH_V4L=OFF
         -DZLIB_LIBRARY=#{Formula["zlib-ng-compat"].opt_lib}/libz.so

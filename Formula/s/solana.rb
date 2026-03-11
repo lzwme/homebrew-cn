@@ -1,8 +1,8 @@
 class Solana < Formula
   desc "Web-Scale Blockchain for decentralized apps and marketplaces"
   homepage "https://www.anza.xyz/"
-  url "https://ghfast.top/https://github.com/anza-xyz/agave/archive/refs/tags/v3.1.9.tar.gz"
-  sha256 "7b025d4f341c9ec5a611ff7f9c159770df33b79f5936fef53ce87f83b5068aaf"
+  url "https://ghfast.top/https://github.com/anza-xyz/agave/archive/refs/tags/v3.1.10.tar.gz"
+  sha256 "e505012477de3072902d349b2f1df3aa2dbc840ae0449beec976d2fc82206c31"
   license "Apache-2.0"
   version_scheme 1
 
@@ -12,12 +12,12 @@ class Solana < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "39bf27dc2595c7810a9c1d6fc46e692f89e4c998ad012c17c1440581c17c2420"
-    sha256 cellar: :any,                 arm64_sequoia: "18824ed0e51219508b2416146cbddc6f0290d4642fde82fdf2238a342b6a48fd"
-    sha256 cellar: :any,                 arm64_sonoma:  "814c06b1f721b4ec8414c3557278f3610d3f2b63d3b8798b5c72b452bcc5cddf"
-    sha256 cellar: :any,                 sonoma:        "96ec435bef33a52c8d9c9776212239cef06cfb4bc47b9604739b8cfa73a802ef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "73213d63cf965fac72eaf681809ccdba9224a22071921e52ae71aeba001be9bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93d61f9989c4571fc9f81537f03040c00a4ff5fad5f5cbdbdd5f5b82c8812b78"
+    sha256 cellar: :any,                 arm64_tahoe:   "f15062527e8d37c20e52bce400a6f41b4f2acd1ae230016d7229f12968d859da"
+    sha256 cellar: :any,                 arm64_sequoia: "10ff3f59234ba5ce6a3dd2fd7716de3c441525a56e5d9b800a48e451820ba586"
+    sha256 cellar: :any,                 arm64_sonoma:  "c83bf7927d1d60c38572f31fd5d9cf7d59383f88c67dca0a1e54cafece4a9664"
+    sha256 cellar: :any,                 sonoma:        "34667b6c1efe64357bc423176bbf4b38641d22fa7000721d49c529acc6010dbd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ddc05c70235cad0f163a4b9b2e598a6a02a7e61bc6b4666539fa6491dfe85d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff8d08288cb0e42f4316749c2d635013a5076203ea6ffc7afe7c04e1046596da"
   end
 
   depends_on "llvm" => :build # for libclang
@@ -47,7 +47,7 @@ class Solana < Formula
 
   def install
     # Work around until new release as fixed upstream but commits do not cleanly apply
-    ENV.append_to_rustflags "--allow unused-imports"
+    ENV.append_to_rustflags "--allow unused-imports --allow unused_unsafe"
 
     # Work around librocksdb-sys build failure with Apple libclang, "Library not loaded: @rpath/libclang.dylib"
     ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib.to_s if OS.mac?

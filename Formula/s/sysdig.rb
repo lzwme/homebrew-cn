@@ -8,7 +8,7 @@ class Sysdig < Formula
     { any_of: ["GPL-2.0-only", "MIT"] },                  # `falcosecurity-libs`, driver/
     { "GPL-2.0-only" => { with: "Linux-syscall-note" } }, # `falcosecurity-libs`, userspace/libscap/compat/
   ]
-  revision 2
+  revision 3
   head "https://github.com/draios/sysdig.git", branch: "dev"
 
   livecheck do
@@ -17,12 +17,12 @@ class Sysdig < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "5fe1ce14148a8b284543bd91bc5f24d43ceab356dfc3c16c09bd6f859e0d5827"
-    sha256                               arm64_sequoia: "919cc77494c74118b6735dc4d2ca6f54d57fb4ac69953652d4efc2188338e8ab"
-    sha256                               arm64_sonoma:  "dcfb03bd23974f547f81f39cd9ca8314375561b50d7a936e5494e26964e6fcb1"
-    sha256                               sonoma:        "621d58241ed0c17c5cb0bfaa81be88515d79f8bd13c49e1d4f4ad46960105a08"
-    sha256                               arm64_linux:   "b6b755a7075808d1ec446e11af7316d6aa1de2182a220e058cbe75ac6e4186e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7091b67446ccc09c8d533abbe98b7e64db38168c896aa53dd9a8594f2631fce1"
+    sha256                               arm64_tahoe:   "0df639333fcb8267f4b3aabc636628b81a86b3f6a7cfd6a212dff1431c96c01e"
+    sha256                               arm64_sequoia: "f99c3a2bad7e30fd826eed8334fdd6dd99bc6dd2216484130d06478902554668"
+    sha256                               arm64_sonoma:  "64b07554879b8518142aa760be752743e0cf6281d923d34e58a27734db17aa7e"
+    sha256                               sonoma:        "c77d4eec59ed75ac419c498bcfa4073762ecafd94b05ea53bb281a59c94b3530"
+    sha256                               arm64_linux:   "c63e9595260f137127823df077646dd767eedea322d614545d04a0d69d0d15d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40f2bbe5313b0d1729873662d54224cee2637437d0b12bb8db458b8f4ee33a21"
   end
 
   # FIXME: switch to brewed `falcosecurity-libs`
@@ -45,7 +45,7 @@ class Sysdig < Formula
     depends_on "curl"
     depends_on "elfutils"
     depends_on "grpc"
-    depends_on "protobuf@33"
+    depends_on "protobuf"
     depends_on "zlib-ng-compat" # for `falcosecurity-libs`
   end
 

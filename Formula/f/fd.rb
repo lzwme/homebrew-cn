@@ -1,18 +1,18 @@
 class Fd < Formula
   desc "Simple, fast and user-friendly alternative to find"
   homepage "https://github.com/sharkdp/fd"
-  url "https://ghfast.top/https://github.com/sharkdp/fd/archive/refs/tags/v10.4.1.tar.gz"
-  sha256 "59ab83e56743e28eaa92c5497b3998a35744db6d8d574f389456481f2af1cb00"
+  url "https://ghfast.top/https://github.com/sharkdp/fd/archive/refs/tags/v10.4.2.tar.gz"
+  sha256 "3a7e027af8c8e91c196ac259c703d78cd55c364706ddafbc66d02c326e57a456"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/sharkdp/fd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "56fdf12cdc4647c84ca021c9664e45175cecb3e7a4fc194ccb831f2dbe1ebc97"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36792068f68abb85ca1275ec9ac4769a81133b411512857ff5cc5d6ca62e7cb6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a804daacb4a815d31fd57b5a0fde24b636c976e1b67e6920a96b2926e788074a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "45928fb33bf08553e332f04057a01ef664236dfcac5374b1ce6eb6d835733179"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1402cdba22461e7466df78e1022f1b0d303550e32ae1952b702fb1a77e9b7c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0589a8f23683607004b922a8499a4af735eb43711e0f55d937d4611bb4b2ce37"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83d0c8ab8a95c83b6feccc78865996a865a6c4dd43b475e6dad4624faca0fbc7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "702a6d8e88ca21cb61fb0a05f6cc08bc5238ebf8cc5c3f52e4836f742fe7f5c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c582c3e0ad24abcad44108598822fe746b4c3859b45e85a0be5c4ccdd786c76"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f5ef209dd97a44f0adb952af33c3bf88b76cdb716cd52c1c172f798aa5890cb3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a481618eccb1c59d8350fc0ab4bd1099f7646c04f9eaaa8d139d95445ca77769"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebfd9404fcc55cd20fed3bd149fc948fd6f127abdae785f0b9b786054571b615"
   end
 
   depends_on "rust" => :build

@@ -3,17 +3,17 @@ class LanggraphCli < Formula
 
   desc "Command-line interface for deploying apps to the LangGraph platform"
   homepage "https://www.github.com/langchain-ai/langgraph"
-  url "https://files.pythonhosted.org/packages/a3/6a/c9e73635933b722e4fca31fbf49dbe23eb06efde459b3aabf5a2a6d192e5/langgraph_cli-0.4.14.tar.gz"
-  sha256 "ba6bc715651d85ba94d14d6c53db87b4bf478cf45d61a28af9c8dee629f3cf1f"
+  url "https://files.pythonhosted.org/packages/16/0c/eecfcc44bd45860dda9cf879e459e8e61cfe48abdc066e9aaa14dcf734fc/langgraph_cli-0.4.15.tar.gz"
+  sha256 "4705f53d060e31b2fb8d70bb3663a14ff89e4cb14bf3a05222547a95356645d7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7362bd763f52e05a01ef2e33776aa8cba6b1a7dba2be927a82f5f35a9f294c9a"
-    sha256 cellar: :any,                 arm64_sequoia: "b177d2220af9c453f14541250595c9edad0abceec68d30254b025e6940ba25b1"
-    sha256 cellar: :any,                 arm64_sonoma:  "ecc3c54f2d2b8d66ecca449eae1f32e412d93913a881e949c8b6e89db1065543"
-    sha256 cellar: :any,                 sonoma:        "f29cbe9360c32170a3de1aeb5c625df8a2e5f5e554e5e542ee97eabee2c70715"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b7eda3e9f04fce06708571881833348ed2f8214a24656ccc1a0d9c4d66577a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d60f510d16a0c5e94dbc892cc8b449765a49164cf35618268189a9af76e55017"
+    sha256 cellar: :any,                 arm64_tahoe:   "d92f1080b08d17a594ad8e9b80d7dc85b7fe15c36a747c513149127ae927a2b5"
+    sha256 cellar: :any,                 arm64_sequoia: "985109e7fbe94a6680cdc912c5ea6bc2450035c8113703db9f8203a083d18394"
+    sha256 cellar: :any,                 arm64_sonoma:  "8402f58b3739bc221e37f505046811acada9285c5e2f381a9d280c07cea45da1"
+    sha256 cellar: :any,                 sonoma:        "3bbaef69280d12709e32d3568ca7ba79f664f7a3b134c87070f1cd8df69d19ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "987514fae985d7d9d5b1eb545f3acaa6684874dbd8a742b7d0e9227fb3e6cd1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "561163e58b465105bb1cb7cf612f8b46be1c5760f03f96d7968e198faaf377e9"
   end
 
   depends_on "rust" => :build # for orjson
@@ -53,13 +53,18 @@ class LanggraphCli < Formula
   end
 
   resource "langgraph-sdk" do
-    url "https://files.pythonhosted.org/packages/3a/bd/ca8ae5c6a34be6d4f7aa86016e010ff96b3a939456041565797952e3014d/langgraph_sdk-0.3.9.tar.gz"
-    sha256 "8be8958529b3f6d493ec248fdb46e539362efda75784654a42a7091d22504e0e"
+    url "https://files.pythonhosted.org/packages/4b/fd/634ea850ff850f098229e06d577ab165b1a9b232911e47b06b0dc1d9247d/langgraph_sdk-0.3.10.tar.gz"
+    sha256 "e8829d618a8c3e1402dc3415dced07423878c3914fb68ddbeabe8657402f7f0f"
   end
 
   resource "orjson" do
     url "https://files.pythonhosted.org/packages/53/45/b268004f745ede84e5798b48ee12b05129d19235d0e15267aa57dcdb400b/orjson-3.11.7.tar.gz"
     sha256 "9b1a67243945819ce55d24a30b59d6a168e86220452d2c96f4d1f093e71c0c49"
+  end
+
+  resource "python-dotenv" do
+    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
+    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
   end
 
   def install

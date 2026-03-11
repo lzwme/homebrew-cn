@@ -3,18 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/fe/6b/936abb56424841dbc7007e44e0de22337f5d4a063e38c47684009bfb27a1/cycode-3.11.1.tar.gz"
-  sha256 "5738fec15f015e834508a1f5e46c2369a2ceb61754ff43819f034b4c079c4d58"
+  url "https://files.pythonhosted.org/packages/ba/38/1d9e1f7b677afbaea7c357b16cdb7ab151bf6fc0de1bf691cf259ae2a0f5/cycode-3.11.2.tar.gz"
+  sha256 "a43adc864638801458c81414baa0f0f92b31dd53c78df0f1d9cf68c5aa628813"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dcced40281b8bd06e023032a9cc44f422dc3f3217a5149aa7a516f83c067417a"
-    sha256 cellar: :any,                 arm64_sequoia: "dfe56652afbe332bfde91772d3e1d7d1190abe9753e42660f9baf47d529729ac"
-    sha256 cellar: :any,                 arm64_sonoma:  "e93b4feb1c3f54d68a6fbf76dda7d35a6ab496695e684ce61a551c7bee734b91"
-    sha256 cellar: :any,                 sonoma:        "184923a62764772618d1e03e552e1abbf3a6e329a3614b5dc8d41da550c6b6e4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d8c4c1fda1fc3db95829ce277b338351801122a11a3c88e76f7aa42c25b77de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d8c74def9a9f41122b9761f6ee78555219d98656136d33c3ef4f07886e777f1"
+    sha256 cellar: :any,                 arm64_tahoe:   "e01a8f427511454c7e03627c19b481328d6638892d3c9d63b3617ed47f3afa8a"
+    sha256 cellar: :any,                 arm64_sequoia: "7a2867629d57069f6474db5c88e803666eb50b2080465173d7d79564d8d0b0ba"
+    sha256 cellar: :any,                 arm64_sonoma:  "bced6b9baf4958bb2bb210d257ea497d97a8f1c095a98d74e48c364b23af53ca"
+    sha256 cellar: :any,                 sonoma:        "e899dea6e1a1fc8d302efc062b461b94f45353676c20ff5ef6103f5df127a52e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa6a2902baf8d79eb692002eea2540fc72fa698f9d47da7461dac3166be4b11b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9e8fe9fb33fa00dde4aefda1b6f278322a0d8907c1a484b9ca717300927218a"
   end
 
   depends_on "certifi" => :no_linkage
@@ -32,8 +32,8 @@ class Cycode < Formula
   end
 
   resource "arrow" do
-    url "https://files.pythonhosted.org/packages/2e/00/0f6e8fcdb23ea632c866620cc872729ff43ed91d284c866b515c6342b173/arrow-1.3.0.tar.gz"
-    sha256 "d4540617648cb5f895730f1ad8c82a65f2dad0166f57b75f3ca54759c4d67a85"
+    url "https://files.pythonhosted.org/packages/b9/33/032cdc44182491aa708d06a68b62434140d8c50820a087fac7af37703357/arrow-1.4.0.tar.gz"
+    sha256 "ed0cc050e98001b8779e84d461b0098c4ac597e88704a655582b21d116e526d7"
   end
 
   resource "attrs" do
@@ -41,19 +41,9 @@ class Cycode < Formula
     sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
   end
 
-  resource "binaryornot" do
-    url "https://files.pythonhosted.org/packages/a7/fe/7ebfec74d49f97fc55cd38240c7a7d08134002b1e14be8c3897c0dd5e49b/binaryornot-0.4.4.tar.gz"
-    sha256 "359501dfc9d40632edc9fac890e19542db1a287bbcfa58175b66658392018061"
-  end
-
-  resource "chardet" do
-    url "https://files.pythonhosted.org/packages/7f/42/fb9436c103a881a377e34b9f58d77b5f503461c702ff654ebe86151bcfe9/chardet-6.0.0.post1.tar.gz"
-    sha256 "6b78048c3c97c7b2ed1fbad7a18f76f5a6547f7d34dbab536cc13887c9a92fa4"
-  end
-
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
+    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
   end
 
   resource "click" do
@@ -137,8 +127,8 @@ class Cycode < Formula
   end
 
   resource "patch-ng" do
-    url "https://files.pythonhosted.org/packages/ee/c0/53a2f017ac5b5397a7064c2654b73c3334ac8461315707cbede6c12199eb/patch-ng-1.18.1.tar.gz"
-    sha256 "52fd46ee46f6c8667692682c1fd7134edc65a2d2d084ebec1d295a6087fc0291"
+    url "https://files.pythonhosted.org/packages/65/bb/ebd7c6058dcfbf634986f9a8b3fb638f3269501c73701a48b7530042da5b/patch-ng-1.19.0.tar.gz"
+    sha256 "27484792f4ac1c15fe2f3e4cecf74bb9833d33b75c715b71d199f7e1e7d1f786"
   end
 
   resource "pathvalidate" do
@@ -207,8 +197,8 @@ class Cycode < Formula
   end
 
   resource "smmap" do
-    url "https://files.pythonhosted.org/packages/44/cd/a040c4b3119bbe532e5b0732286f805445375489fceaec1f48306068ee3b/smmap-5.0.2.tar.gz"
-    sha256 "26ea65a03958fa0c8a1c7e8c7a58fdc77221b8910f6be2131affade476898ad5"
+    url "https://files.pythonhosted.org/packages/1f/ea/49c993d6dfdd7338c9b1000a0f36817ed7ec84577ae2e52f890d1a4ff909/smmap-5.0.3.tar.gz"
+    sha256 "4d9debb8b99007ae47165abc08670bd74cb74b5227dda7f643eccc4e9eb5642c"
   end
 
   resource "sse-starlette" do
@@ -231,9 +221,9 @@ class Cycode < Formula
     sha256 "89507b104f9b6a0730354f27c39fae5b63ccd0c95b1ce1f1a6ba0cfd329997c3"
   end
 
-  resource "types-python-dateutil" do
-    url "https://files.pythonhosted.org/packages/06/7d/4eb84ea2d4ea72b14f180ed2a5c2e7ac3c8e9fd425f7d69a6516cf127f3b/types_python_dateutil-2.9.0.20260302.tar.gz"
-    sha256 "05a3580c790e6ccad228411ed45245ed739c81e78ba49b1cfdbeb075f42bcab0"
+  resource "tzdata" do
+    url "https://files.pythonhosted.org/packages/5e/a7/c202b344c5ca7daf398f3b8a477eeb205cf3b6f32e7ec3a6bac0629ca975/tzdata-2025.3.tar.gz"
+    sha256 "de39c2ca5dc7b0344f2eba86f49d614019d29f060fc4ebc8a417896a620b56a7"
   end
 
   resource "urllib3" do

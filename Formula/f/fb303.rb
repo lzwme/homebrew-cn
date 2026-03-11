@@ -1,18 +1,18 @@
 class Fb303 < Formula
   desc "Thrift functions for querying information from a service"
   homepage "https://github.com/facebook/fb303"
-  url "https://ghfast.top/https://github.com/facebook/fb303/archive/refs/tags/v2026.03.02.00.tar.gz"
-  sha256 "194c458684b68cc51aec63b44fd7bd41f3260390fa181cc35ece07988a4d37f4"
+  url "https://ghfast.top/https://github.com/facebook/fb303/archive/refs/tags/v2026.03.09.00.tar.gz"
+  sha256 "181667e31f10171053da03ea568e40f5cf90582c153b29e6d7cda62d527a1624"
   license "Apache-2.0"
   head "https://github.com/facebook/fb303.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "cd3e338c6362d32d5d3c72c9c03feb6a78b418538ca91491d7e7e15aec44d398"
-    sha256                               arm64_sequoia: "cb0104b9d7db2343afe11d1d9081650306fddd35dc2ec81340b93c40c6597bd9"
-    sha256                               arm64_sonoma:  "5ad7f1d83b6ac5c81f4f5b84c61ad861fa1303f1ebf18d9f3da579ee24c13fe9"
-    sha256 cellar: :any,                 sonoma:        "9b3b7f7b3d29f8fd16cf21b328ebb6501f02ea5d69492e484c99f92fcfddaeeb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6fb7641331aeab62e009b5be31fabaaac0f41948529aed129a121acbf634d18f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca440f3fc101e8d966857dca4199d0775fd8b07276edd7dab6e204e8434dae63"
+    sha256                               arm64_tahoe:   "0a808a63ee60b931f4828e10d41bea0179c9a0cd46100f527db74f4cd5aa853b"
+    sha256                               arm64_sequoia: "d6b593c2bc4e3b5d397e9544dfaa48b44767d8b67538c99a0288d91998a8c046"
+    sha256                               arm64_sonoma:  "0cb82ffd341653b7012e4dc2cb97b363fc6f8df315bd55bc550bd563a1e77f96"
+    sha256 cellar: :any,                 sonoma:        "4f70f5d6b91a15945fbe168d3eabea982a1c219d8482595026602cb9a1a2fad9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e341af852c1f86f706ba9f9c8184e42bbfe8c112f244ddfa724994c953eda76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18b4fc0525c76bcdb701bb160313e59b16a9ab9605b502361e70274f2026b163"
   end
 
   depends_on "cmake" => [:build, :test]

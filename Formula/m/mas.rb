@@ -2,8 +2,8 @@ class Mas < Formula
   desc "Mac App Store command-line interface"
   homepage "https://github.com/mas-cli/mas"
   url "https://github.com/mas-cli/mas.git",
-      tag:      "v5.2.0",
-      revision: "e84c0658e1dfff2fd1eaf0fc8ef338a2a99b8f67"
+      tag:      "v6.0.1",
+      revision: "535562b304eb110700eb57f289317f7b5c41cb2d"
   license "MIT"
   head "https://github.com/mas-cli/mas.git", branch: "main"
 
@@ -13,10 +13,10 @@ class Mas < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04aad750ca8ffcd7e7f5b6fe13788380ba7ca5bb7e2eb76371b406a2737f2131"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "059e622a8c2e1357d848b20e3588574ff6cba20cada084538a4ad100a319127e"
-    sha256 cellar: :any,                 arm64_sonoma:  "592f44233706e97cef40c4e90717a1bb47a5e44a48c13f93d7c34a7034a57e90"
-    sha256 cellar: :any,                 sonoma:        "13938399be5ecf773beb77258b39ac95af336a1bf9e84fc0ae750acad7f19d51"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "230f3f2b181f34401a690183ffe7ae26b038252b7a43a07bf49941fdcfaa4f56"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40865540d35bab88be3b08906cbad8c529b519c4fe424f4584ff1740d6f781cb"
+    sha256 cellar: :any,                 arm64_sonoma:  "3b8df47fd3a3cc15e81475337e767a779a505692e169c09a8f556cd12f8473de"
+    sha256 cellar: :any,                 sonoma:        "127de59def45b51dae56f74280a21c807e7c4a670e2c8ae00c4559f2c21fdaec"
   end
 
   depends_on :macos

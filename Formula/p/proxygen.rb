@@ -1,18 +1,18 @@
 class Proxygen < Formula
   desc "Collection of C++ HTTP libraries"
   homepage "https://github.com/facebook/proxygen"
-  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2026.03.02.00/proxygen-v2026.03.02.00.tar.gz"
-  sha256 "9a6bfc54ad2adebd7dd2d1a9afc6c659601425a9abcbab0727fa22112b235106"
+  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2026.03.09.00/proxygen-v2026.03.09.00.tar.gz"
+  sha256 "e0fbc19c7f47b4d75d2b70a08c6d7dbd27f402dd3439d06a3c6e507cecc10c88"
   license "BSD-3-Clause"
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7f323df59ac682cc6a7b558de220ce75837d424a8e3cc109a6764e2a045038bc"
-    sha256 cellar: :any,                 arm64_sequoia: "debfba1e2124b57808f06886cdf165be4b4cc0198a7463b7144dbf9cf06156ff"
-    sha256 cellar: :any,                 arm64_sonoma:  "4694ca6c802537294c94a11f0d7c82552753188a5c5c9fed4f5aa955f5c17abe"
-    sha256 cellar: :any,                 sonoma:        "1cab9eb2c970cf375ae6397ef9c635cf5f2c08452d63982de7ddb2f90d66a103"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "12b39578f021d4606cade97a008bf3ec7c7edee645196ce1aa5a8b4ffbf9739c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "235dbcc4827eb09c4eb19ce7b414fffec8964e541a80c63de18fd1f9d3287f56"
+    sha256 cellar: :any,                 arm64_tahoe:   "64ca0831030dca00ca5a433ae57fb270932d958ed0173884d78cc3db363c5f8a"
+    sha256 cellar: :any,                 arm64_sequoia: "fa6624ef678829d571cc98288c4da4eaf8981b76fd9cf6850170b1e2f2432984"
+    sha256 cellar: :any,                 arm64_sonoma:  "f59b509627842010d3d2e91f8efdacdbba22aa071fe07e67e608e5edcd2b4959"
+    sha256 cellar: :any,                 sonoma:        "6e2ebf39e556767563cc417f4ebd0a6891ac66d7bcc592215522d04f269a1b34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0690ab9d5f9f063a063fc33e95eb3a9ae80eadc8b547ea7214a294b9d0d1371e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65bd7adefa9778bd591fdfc404eac66ac4d78d57da2878cd1ed784efc74a0a25"
   end
 
   depends_on "cmake" => :build
@@ -39,8 +39,8 @@ class Proxygen < Formula
   conflicts_with "hq", because: "both install `hq` binaries"
 
   def install
-    # FIXME: shared libraries are currently broken. Unlikely to get much upstream
-    # support given `BUILD_SHARED_LIBS` says: "This is generally discouraged".
+    # FIXME: shared libraries are currently broken
+    # Issue ref: https://github.com/facebook/proxygen/issues/599
     args = ["-DBUILD_SHARED_LIBS=OFF", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
     if OS.mac?
       args += [
