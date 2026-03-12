@@ -3,18 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/ba/38/1d9e1f7b677afbaea7c357b16cdb7ab151bf6fc0de1bf691cf259ae2a0f5/cycode-3.11.2.tar.gz"
-  sha256 "a43adc864638801458c81414baa0f0f92b31dd53c78df0f1d9cf68c5aa628813"
+  url "https://files.pythonhosted.org/packages/a3/9f/6dcc9a3d35d6afc344b88a2ba89c870e48dd3ccaa19ec2d2ff2b79a8b2d6/cycode-3.11.3.tar.gz"
+  sha256 "fdee0ce807806cabe8a85489e55f7358e4d9f13322328431e7347ea2b616781e"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e01a8f427511454c7e03627c19b481328d6638892d3c9d63b3617ed47f3afa8a"
-    sha256 cellar: :any,                 arm64_sequoia: "7a2867629d57069f6474db5c88e803666eb50b2080465173d7d79564d8d0b0ba"
-    sha256 cellar: :any,                 arm64_sonoma:  "bced6b9baf4958bb2bb210d257ea497d97a8f1c095a98d74e48c364b23af53ca"
-    sha256 cellar: :any,                 sonoma:        "e899dea6e1a1fc8d302efc062b461b94f45353676c20ff5ef6103f5df127a52e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa6a2902baf8d79eb692002eea2540fc72fa698f9d47da7461dac3166be4b11b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9e8fe9fb33fa00dde4aefda1b6f278322a0d8907c1a484b9ca717300927218a"
+    sha256 cellar: :any,                 arm64_tahoe:   "f156c02780404f170d3dfe23b1794e5b237bf86afd970c9cca8a887929e3611f"
+    sha256 cellar: :any,                 arm64_sequoia: "e6769ac284e1a23caad6f375c25fa128058a95f5cbc05351892633caf1cbe659"
+    sha256 cellar: :any,                 arm64_sonoma:  "b1776d918a9a989cb3b8452d4941844e1e84945f1f611d4b707426c967fce9ed"
+    sha256 cellar: :any,                 sonoma:        "a30e5aeff6ad5de7e7d1b4457c02eafe281bd2b78beed61998bb3e792f98ddde"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "335e8388961a08ed043a75ab0ecea6c23cea64b860d42d853df44b2b69226ce3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96a2f96d6b00a940a39c6005839f300b1667858823df45eda38959dfe66760d8"
   end
 
   depends_on "certifi" => :no_linkage

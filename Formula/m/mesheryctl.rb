@@ -2,20 +2,20 @@ class Mesheryctl < Formula
   desc "Command-line utility for Meshery, the cloud native management plane"
   homepage "https://meshery.io"
   url "https://github.com/meshery/meshery.git",
-      tag:      "v0.8.213",
-      revision: "729e80486909c3facfd08f972946f35258277b1b"
+      tag:      "v0.8.214",
+      revision: "6161f0b1dada5a4ca9b88da25b553cb5e653436f"
   license "Apache-2.0"
   head "https://github.com/meshery/meshery.git", branch: "master"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "720fef80dda34b0cd4a47e504ffc3e5e6bab70de066aca12c27b77dcb6241518"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f914bc74f93bd346d2e21b54ced7539ced960e33051713677472f23402cd0e26"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "618a5de708a45ab0bcad7f88ce56d8b46671ca95a96ca0ec7d8e6e15c8fbf7a9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df43ae20779ebc53124e01b9d381333873fb4b711a31af4dde05882b5c0bde52"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6509fb6474657b6d0cd9c0fcdbe9dbbe225d5e7e10ae81579fa1c010776bf916"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2108b325361bff4f447939d5f8ddb3247f91325500b077d5abb94e509205955c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a6f09de9909723ade959c86c73a636e0f2c5fcf1b3921fd195c5a02a99681a40"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b090a2d89052539f2dbd8a81be32da008bd34799e18a35f520561c03c98be0a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8313393dfcf88966ab415cdcd415360ccb82c11dbbcb055e7a90e49405f14242"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ce3cc9a81bb37205eaf01ef2db84bb0877d168377f6cf265395a47031bb8964c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e08436ca1212300a48f482e9f29152af4229826a9c68f107de7166a50cd3fed1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e5ca66aa5b92af26419907266e3f67c604f540edabd18eb6dd28fdbeae73f59"
   end
 
   depends_on "go" => :build

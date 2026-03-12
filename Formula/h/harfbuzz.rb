@@ -1,18 +1,18 @@
 class Harfbuzz < Formula
   desc "OpenType text shaping engine"
   homepage "https://github.com/harfbuzz/harfbuzz"
-  url "https://ghfast.top/https://github.com/harfbuzz/harfbuzz/releases/download/13.0.1/harfbuzz-13.0.1.tar.xz"
-  sha256 "3553d943401c34ab9b8c75f35cdb8452ca660233b0e9d4a22395ce5245484bd7"
+  url "https://ghfast.top/https://github.com/harfbuzz/harfbuzz/releases/download/13.1.0/harfbuzz-13.1.0.tar.xz"
+  sha256 "a9959a0db77554d266803e1e524249ed4504695fef63524aebca749ac6260a7f"
   license "MIT"
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "12b132c9f3922090644c06959103f2a392ca93c483d4df0e08f9934eb85e6c37"
-    sha256 cellar: :any, arm64_sequoia: "16aca123c1c3f13478590b9b885a109bfbe06998e19c9b8a56691a239721cfbb"
-    sha256 cellar: :any, arm64_sonoma:  "8191cf2b352d0706a4019928d89efb41adef807e7b0bc14600f21710de6e8e04"
-    sha256 cellar: :any, sonoma:        "1114809a07a4425f230b388289637f64b1b1464078ea85d050ed7a04c9380a19"
-    sha256               arm64_linux:   "faee826c2d8815bd2dcdaa8ab35e0b3ed398eaf1ba80b681b7176fdd5c89ae28"
-    sha256               x86_64_linux:  "1a4adc654714b5a0a44c0c68b3869b20f04d84d4f3d8938b2fde77e9b7565dc0"
+    sha256 cellar: :any, arm64_tahoe:   "987d5e6fe5f482087049e5bff3db9883eda79da47e54697ba519ce09976952c4"
+    sha256 cellar: :any, arm64_sequoia: "b5b9aee1e46362283d2edae809606b750e95b5caa0f5f2db571c09af9643d8b5"
+    sha256 cellar: :any, arm64_sonoma:  "24930f4e86049212cd64f03120e8746b19f5e530f2222d49f24325aadc447cc2"
+    sha256 cellar: :any, sonoma:        "a9f9f3e58710a6a3831f3bf5e94466984d3005fe6593333e560da6af0437e3c8"
+    sha256               arm64_linux:   "71c557fd6b2e059181795747dd71722688172c25d9128d41c42a3e06067d16c7"
+    sha256               x86_64_linux:  "efccaf938c20749ca788bc74bc9c950837dd7ab4a0cb82d2ab552947de7ade12"
   end
 
   depends_on "gobject-introspection" => :build
@@ -26,6 +26,7 @@ class Harfbuzz < Formula
   depends_on "glib"
   depends_on "graphite2"
   depends_on "icu4c@78"
+  depends_on "libpng"
 
   def install
     args = %w[

@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v25.8.0/node-v25.8.0.tar.xz"
-  sha256 "5d00429cb856cc72200ec6c08e8cdda75ea9618256de8d899fa049c23f4a2eee"
+  url "https://registry.npmmirror.com/-/binary/node/v25.8.1/node-v25.8.1.tar.xz"
+  sha256 "0b25b2b5fab80ea8b43fdaa7451f50065571e0bfda2524ca42bde8b98fe4d2d9"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Node < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d60d6a4faadca08c65f3473d7894f778993a049174e91974cc54b432ffb94e54"
-    sha256 cellar: :any,                 arm64_sequoia: "fbc2190f68851b7a78b661d51d2c926c6d0c3058d4ccc3874dece3f311ab0538"
-    sha256 cellar: :any,                 arm64_sonoma:  "6753c86f76d306dff4217fe97dfac43ef8884483b73ac918be367a0080f80974"
-    sha256 cellar: :any,                 sonoma:        "6cdd9d6bb52228180e7c51e4b53789c7138d65ccd81484a3747c1cd9d6909847"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2326452e4357c39e352844ca111c13195f2059a4d09c3c39cb930eb7489adc0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6de763a44e54fd5e6e5051c97f521640903694be6167f68a6831d54e36794d13"
+    sha256 cellar: :any,                 arm64_tahoe:   "6f804a5a90ec9deccff716e4cfc11203b92812f6f62d10d8f777ce52ed2ed6f5"
+    sha256 cellar: :any,                 arm64_sequoia: "a5631695be363f30be1e708d818014336b8820bcb7093152f0eab06b5b2c1bd0"
+    sha256 cellar: :any,                 arm64_sonoma:  "948b50c4ac926691c046c8118d2f9d1bccebbed2251051ca1b40b260757b7088"
+    sha256 cellar: :any,                 sonoma:        "63c61eff20235008ecdd58d6c03406a0819a6f2797fb630d5aeea6a301799238"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da864d01a6bc05f8b870a278e320cd676b807aa04a2b3c44a791faab3cd14165"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d12b7ae03f26d9723f40f74269169455040617b8c46b215e9a981f2b9bb598e0"
   end
 
   depends_on "pkgconf" => :build

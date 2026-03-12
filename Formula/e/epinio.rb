@@ -9,7 +9,8 @@ class Epinio < Formula
   # considered released until they create the GitHub release.
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases
   end
 
   bottle do

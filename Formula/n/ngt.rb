@@ -1,8 +1,8 @@
 class Ngt < Formula
   desc "Neighborhood graph and tree for indexing high-dimensional data"
   homepage "https://github.com/yahoojapan/NGT"
-  url "https://ghfast.top/https://github.com/yahoojapan/NGT/archive/refs/tags/v2.6.0.tar.gz"
-  sha256 "6c3cb11fb62f4ab52a3b6c47ea057a444e2d71506114fbaac83fd8fa3db5f193"
+  url "https://ghfast.top/https://github.com/yahoojapan/NGT/archive/refs/tags/v2.7.0.tar.gz"
+  sha256 "6c1348c752be952caefb70b876c9dc7e2afeb48b669d14caa8be4e4e9403f35b"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Ngt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3f96824a9cf45270fd9e239582c5033b5c0b5577591fe2b8e0367f7084193202"
-    sha256 cellar: :any,                 arm64_sequoia: "27d97eaa69a854fb329e5d3588b3bf2cfd661af1593b57d54c35a670bfb2e148"
-    sha256 cellar: :any,                 arm64_sonoma:  "9939521d4c748e85c4126950a476947f70b733db2052573d804d7e065c170283"
-    sha256 cellar: :any,                 sonoma:        "1d6ba107a62a6df04d776860ca9e12aa48356a08f66d5d3268b2007e94fb87b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "07e78a9ba2d08e7c477d6841b9cf901b85f2a1c87731133142490ffb1344921b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d78c262b4baf0078ddbf14783945d1adddf4b75dc19de7bc0795dbc49d6fb31"
+    sha256 cellar: :any,                 arm64_tahoe:   "e3f5322627f18710c12fddf3027aea02fd3675eef2c1291787335ab9f15f15c8"
+    sha256 cellar: :any,                 arm64_sequoia: "154238c27c7661aad2c04589a32fa02810217478442b71ef040de28894d2e766"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe96266291ebc386eddc91edfdc8d19496482ad33bc40cc0b16c81a6334e54e3"
+    sha256 cellar: :any,                 sonoma:        "2f33b5434183fc0b97a6ea6cc7b3445a1230de5f3c81d4d636ff0cba4a1e61ca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdc5ff88401c9d5cf67a08f39cfa934d6cec31fdeb1b9a663d8f2d7529d3623a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75871eedf74f0ffe93256e6bfc87e76272befd3d4586f805f2e3f3c681d2b259"
   end
 
   depends_on "cmake" => :build

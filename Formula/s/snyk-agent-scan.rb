@@ -3,17 +3,17 @@ class SnykAgentScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/snyk/agent-scan"
-  url "https://files.pythonhosted.org/packages/63/ce/98e6be50739a884218d9a100dae90b1a21452a8e7250b380d9688b98248f/snyk_agent_scan-0.4.5.tar.gz"
-  sha256 "ff16520b0ccc780e3d881141fccf9ea2415d5927638aec8350bbe9ddc450213c"
+  url "https://files.pythonhosted.org/packages/73/59/36d3fbfa59a03206f8bcfc2e494fe3e5d65dbb81805c550908d1056dd0ec/snyk_agent_scan-0.4.6.tar.gz"
+  sha256 "a5553a23b879f45c8a8701182043318b1aa20fced4572d87eb5fd1c05bb42c14"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1d60092f73cc21887d08add441cf0fa04a971d6a22ce8435c16e2f77d8fac066"
-    sha256 cellar: :any,                 arm64_sequoia: "708cf866e0bde327b376aeae7ed81140244bf03bc511308190502298a7345fef"
-    sha256 cellar: :any,                 arm64_sonoma:  "57bf08ca1ccc9fae0894e1fe17fd57e5474d80a1397d766a42b0856c076cdd07"
-    sha256 cellar: :any,                 sonoma:        "62f2ad84d3f40d58d95a2adf1c68aec242fdf694c51d8ccec6265adf9bd1ebd4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5812d9e5408bdca8e8063b64869b33fd7e43f5ad1c89f897b546f0c014af04c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71de70e4be81f44fc23e7301857fd4c9443e25fe38ce37541df13927f67ff9a9"
+    sha256 cellar: :any,                 arm64_tahoe:   "3f2b7a8147ce9ec7a9d7f00d57914b40ec8cf9e24907dc2d301e084b8521131f"
+    sha256 cellar: :any,                 arm64_sequoia: "c36b21ecd9b1f8e5d2ea1f78e04a8bc42f40ed46f1c1de332923ad70fec6c481"
+    sha256 cellar: :any,                 arm64_sonoma:  "97eb2c6b094796ec7494a01f6b8b0bb3cf60d43a92b97aa0705dd552367eba05"
+    sha256 cellar: :any,                 sonoma:        "22478a62f981b407e67447f445b12554df585f57357eb861535d1ebf2398eb19"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4116b16e24f67394923869b163506f7d429a4c4a764995c880ecb4f733e0b530"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "491329de7a2c6b252123ed41d6d898dfeb30f801ad35ade7a24161199aff3958"
   end
 
   depends_on "certifi" => :no_linkage
@@ -66,8 +66,8 @@ class SnykAgentScan < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/77/18/a1fd2231c679dcb9726204645721b12498aeac28e1ad0601038f94b42556/filelock-3.25.0.tar.gz"
-    sha256 "8f00faf3abf9dc730a1ffe9c354ae5c04e079ab7d3a683b7c32da5dd05f26af3"
+    url "https://files.pythonhosted.org/packages/b3/8b/4c32ecde6bea6486a2a5d05340e695174351ff6b06cf651a74c005f9df00/filelock-3.25.1.tar.gz"
+    sha256 "b9a2e977f794ef94d77cdf7d27129ac648a61f585bff3ca24630c1629f701aa9"
   end
 
   resource "frozenlist" do
@@ -240,9 +240,8 @@ class SnykAgentScan < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/snyk-agent-scan --opt-out", 1)
-
-    output = shell_output("#{bin}/snyk-agent-scan scan --opt-out", 1)
+    output = shell_output("#{bin}/snyk-agent-scan scan", 1)
+    assert_match "Snyk Agent Scan v#{version}", output
     assert_match "To use Agent Scan, set the SNYK_TOKEN environment variable", output
   end
 end

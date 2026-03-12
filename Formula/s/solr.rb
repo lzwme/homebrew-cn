@@ -7,7 +7,8 @@ class Solr < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "297252ed50fda7a37fcb61cdd77431b7508fa338cc1c2ddf59d279251630729e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "0325be6c048e10ef7a3dc6d7e782ad9b1d12cf7f53a87d9f68d84bf7de01bd2c"
   end
 
   # Can be updated after https://github.com/apache/solr/pull/3153
@@ -31,7 +32,7 @@ class Solr < Formula
   end
 
   service do
-    run [opt_bin/"solr", "start", "-f", "-s", HOMEBREW_PREFIX/"var/lib/solr"]
+    run [opt_bin/"solr", "start", "-f", "--solr-home", HOMEBREW_PREFIX/"var/lib/solr"]
     working_dir HOMEBREW_PREFIX
   end
 

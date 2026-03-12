@@ -6,8 +6,8 @@ class ClickhouseOdbc < Formula
 
   stable do
     # Git modules are all for bundled libraries so can use tarball without them
-    url "https://ghfast.top/https://github.com/ClickHouse/clickhouse-odbc/archive/refs/tags/v1.5.2.20260217.tar.gz"
-    sha256 "fd2832bc98c5592681ad58c44ddd1138d4e5549c17194806c23bdddc9ce2dbba"
+    url "https://ghfast.top/https://github.com/ClickHouse/clickhouse-odbc/archive/refs/tags/v1.5.3.20260311.tar.gz"
+    sha256 "bb9311b48ddcd499ed2222a72a07f168f3d4909bd77ec69a78c665784b81c1c1"
 
     # TODO: Consider adding formula for https://github.com/nanodbc/nanodbc
     resource "nanodbc" do
@@ -30,12 +30,12 @@ class ClickhouseOdbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "89296c91b32113125e5ac2c219a7aacbd6bb11478bd3524cc83d11be62e7b571"
-    sha256 cellar: :any,                 arm64_sequoia: "55dc45a774571d7c45d34c68a8c071e2e8ef9e379fbbe07a3d9ca55a5885c68a"
-    sha256 cellar: :any,                 arm64_sonoma:  "bfe88c879baa323facf285bebad7908d7a39cfe145f933d00edd874898464f6f"
-    sha256 cellar: :any,                 sonoma:        "ebbec4eea87bac088c76e1b289809e1250ea11499af1fd80d5fd6dd5033fc3a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "df4fef12b3548774f912114e8808c566bf3db708a8c9df15e6f6d70038a10cb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96cfd281e3e8d81bd8430a6d9afa1a4c4ad032bd6a88ef2bb1634caa3003159e"
+    sha256 cellar: :any,                 arm64_tahoe:   "1df9cf15a855b47086b80a385370b3ef22f14774e00ed0331e3c88a8a8903644"
+    sha256 cellar: :any,                 arm64_sequoia: "147b475605d4ac0c15f1771dbb69288166cfafbe62e63b99615981d28daaf21c"
+    sha256 cellar: :any,                 arm64_sonoma:  "17447a50428f93393df7a4323e833e1ce764de04080dd308dc89a5756b241b2c"
+    sha256 cellar: :any,                 sonoma:        "21214053e2d879a639eda76e026496a4124f96ac232989d135839ff518f60425"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3da5879f8430d83a25b9d32ddb1996f311088f8f0bc04cde08c4114c443a76a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c2c3d6cfa04a1e0fc9c6ce0d34a3dd6d59ded916928aa0be17d33b4b407fbf1"
   end
 
   depends_on "cmake" => :build

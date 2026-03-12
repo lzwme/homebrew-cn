@@ -2041,6 +2041,7 @@ Homebrew-homebrew-core/Formula/f/fetch-crl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fetch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fetchmail.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fex.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/ffc.h.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffind.rb, Homebrew/homebrew-core, 1
@@ -2282,6 +2283,7 @@ Homebrew-homebrew-core/Formula/g/gammaray.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gammu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/garage.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/garble.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/garden.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/garmintools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/garnet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gastown.rb, Homebrew/homebrew-core, 1
@@ -3404,7 +3406,7 @@ Homebrew-homebrew-core/Formula/j/jthread.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/judy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/juicefs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/juise.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/j/juju.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/j/juju.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/julia.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/juliaup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/julius.rb, Homebrew/homebrew-core, 1
@@ -5811,6 +5813,7 @@ Homebrew-homebrew-core/Formula/p/powerlevel10k.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/powerline-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/powerman-dockerize.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/powerman.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/powershell.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/ppl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/ppss.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/ppsspp.rb, Homebrew/homebrew-core, 1
@@ -6496,6 +6499,7 @@ Homebrew-homebrew-core/Formula/s/sbuild.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sby.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sc-im.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sc68.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/scala-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/scala.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scala@2.12.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scala@2.13.rb, Homebrew/homebrew-core, 1
@@ -7386,7 +7390,7 @@ Homebrew-homebrew-core/Formula/t/tock.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/todo-txt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/todoist-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/todoman.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/t/tofrodos.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tofrodos.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tofu-ls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tofuenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/toilet.rb, Homebrew/homebrew-core, 0
@@ -14186,7 +14190,6 @@ Homebrew-homebrew-cask/Casks/p/powder.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/power-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/powerpanel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/powerphotos.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/powershell.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/powershell@preview.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/ppduck.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pppc-utility.rb, Homebrew/homebrew-cask, 1

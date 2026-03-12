@@ -15,12 +15,13 @@ class Pytorch < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fc4848bff7f991a53387ade0642c0341a282c7d4291332455aa5e204fce30293"
-    sha256 cellar: :any, arm64_sequoia: "9e24409f44e6878e2e1fba8a7c5f7f387cb2e91e0d22604b03e1adc7424c1561"
-    sha256 cellar: :any, arm64_sonoma:  "8abe7cb674f40dbeb3421e6439d2fc44ce1bb59a67d3dc4e478dc08d68b17715"
-    sha256 cellar: :any, sonoma:        "b277be1a6767a2caa89e99ca851f9b683132f7d8e3ebc52ca73fcfa61af3281a"
-    sha256               arm64_linux:   "f72661c64aaec806f3ef2c8d420ac81eb578d59d63d8001544dc5917fe881cf0"
-    sha256               x86_64_linux:  "61f51339313f84a808c9db871738ab9abd956f4e3e31af7ab2556ba15b18cd8c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "63bef9653ffea52b0418406343673d61d137edd56c75ab52bd9247a504203544"
+    sha256 cellar: :any,                 arm64_sequoia: "acbec880dbd2f7398a36d0e7de30b1b88fabc2a41e96aa44c1b59c859cbe74de"
+    sha256 cellar: :any,                 arm64_sonoma:  "25ba8700f37898762be52667f3d31e0f485fa8d11b8a1646a21b856017b01d54"
+    sha256 cellar: :any,                 sonoma:        "ba21766bc8fcf614d323ff14c7062565938d0143051a399f6e372567e53ef28b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2c0ff7a4af0ee81ec4f2bab2deab20d477694608ad5394adc7d491348b75199"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb6e20482b80d3e090f09861c09a6ba2f311bb5645f4ad309e1ddac891716f54"
   end
 
   depends_on "cmake" => :build
@@ -33,8 +34,9 @@ class Pytorch < Formula
   depends_on "libyaml"
   depends_on macos: :monterey # MPS backend only supports 12.3 and above
   depends_on "numpy"
+  depends_on "onnx"
   depends_on "openblas"
-  depends_on "protobuf@33"
+  depends_on "protobuf"
   # TODO: depends_on "pybind11"
   depends_on "sleef"
 
@@ -136,6 +138,7 @@ class Pytorch < Formula
     ENV["USE_NNPACK"] = "OFF"
     ENV["USE_OPENMP"] = "ON"
     ENV["USE_SYSTEM_EIGEN_INSTALL"] = "ON"
+    ENV["USE_SYSTEM_ONNX"] = "ON"
     ENV["USE_SYSTEM_PYBIND11"] = "OFF"
     ENV["USE_SYSTEM_SLEEF"] = "ON"
     ENV["USE_MPS"] = "ON" if OS.mac?

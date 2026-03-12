@@ -1,18 +1,18 @@
 class Sdb < Formula
   desc "Ondisk/memory hashtable based on CDB"
   homepage "https://www.radare.org/"
-  url "https://ghfast.top/https://github.com/radareorg/sdb/archive/refs/tags/2.3.8.tar.gz"
-  sha256 "39cf803f2eb52d3c0d2dbbb7b48023a8ef0ddef97ca6295fd4471bf987e07491"
+  url "https://ghfast.top/https://github.com/radareorg/sdb/archive/refs/tags/2.4.2.tar.gz"
+  sha256 "4b5c1c387307759aeeb76704d130a9bbe98bf68ae7bbab796efeb052e5e25e47"
   license "MIT"
   head "https://github.com/radareorg/sdb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a240de3672649f6c72b00364523fd62ad43b58975c411f6ed49540c21a28dbf1"
-    sha256 cellar: :any,                 arm64_sequoia: "819cd41698fe626bb8f055a17937e6ec35905bf91ffb8d01fc38b6c4c63ab5c9"
-    sha256 cellar: :any,                 arm64_sonoma:  "68bfac9a8bf93b639305e0227b5d2742caceb6034482c60cd949a557847b0c54"
-    sha256 cellar: :any,                 sonoma:        "05fc0c0772d4f58d613f83067567f8fb222411339b8c64cb13845b4eef6161ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b64248b444d2695c607f055b1a8b0359643569a1d3ccd2ce2eadf6b49b34777"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94cfe4fa5c817b21a2bc4e0ce8e8634471b6149fd1a5f4bdd2569a87eb0efa13"
+    sha256 cellar: :any,                 arm64_tahoe:   "4af94e6653f3b456b749f2f545ffe63e0f99553ab645cab9c5f7811fc33a74a1"
+    sha256 cellar: :any,                 arm64_sequoia: "0f45bd45d169121dcf9b6749eaab1b62163fad8c44848458c125c4b551a1dc41"
+    sha256 cellar: :any,                 arm64_sonoma:  "090254bae8959c6c519d3da1aed26058f594563af78560ee0bfa9ca20022a893"
+    sha256 cellar: :any,                 sonoma:        "9bc15183746966b8280bfa577e6dd81e232441dc6b9c4cd22fed099686f36477"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "267a5a3b9a20139f936cb95a2ecb1f1a660d2d886cd7f3e45babd2120c76f96d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9034e5f06a9692dbc708521e226cf319c995c0511765322c9ee600fdf86237de"
   end
 
   depends_on "meson" => :build

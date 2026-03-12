@@ -3,12 +3,12 @@ class Chardet < Formula
 
   desc "Python character encoding detector"
   homepage "https://chardet.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/6c/80/4684035f1a2a3096506bc377276a815ccf0be3c3316eab35d589e82d9f3c/chardet-7.0.1.tar.gz"
-  sha256 "6fce895c12c5495bb598e59ae3cd89306969b4464ec7b6dd609b9c86e3397fe3"
+  url "https://files.pythonhosted.org/packages/0d/84/e72ea5c06e687db591283474b8442ab95665fc6bae7b06043b2a6f0eaf6c/chardet-7.1.0.tar.gz"
+  sha256 "8f47bc4accac17bd9accbb4acc1d563acc024a783806c0a43c3a583f5285690b"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "103902e99ed75c301930256522261c48fbd5913df8bec9643bb65b471cdd4df9"
+    sha256 cellar: :any_skip_relocation, all: "fbc60599ea100aea3d528c2d0feb47b25d2c551d9b7768465230330815f3e614"
   end
 
   depends_on "python@3.14"

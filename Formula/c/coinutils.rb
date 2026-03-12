@@ -1,10 +1,9 @@
 class Coinutils < Formula
   desc "COIN-OR utilities"
   homepage "https://github.com/coin-or/CoinUtils"
-  url "https://ghfast.top/https://github.com/coin-or/CoinUtils/archive/refs/tags/releases/2.11.12.tar.gz"
-  sha256 "eef1785d78639b228ae2de26b334129fe6a7d399c4ac6f8fc5bb9054ba00de64"
+  url "https://ghfast.top/https://github.com/coin-or/CoinUtils/archive/refs/tags/releases/2.11.13.tar.gz"
+  sha256 "ddfea48e10209215748bc9f90a8c04abbb912b662c1aefaf280018d0a181ef79"
   license "EPL-2.0"
-  revision 1
   head "https://github.com/coin-or/CoinUtils.git", branch: "master"
 
   livecheck do
@@ -13,12 +12,12 @@ class Coinutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e7d81a41d6e627c20590a2274ddff867ef0cb374ada54382d4f42ac9c1aaf60a"
-    sha256 cellar: :any,                 arm64_sequoia: "a71671fe93e3f64ddc1945014df439ae62a4ce1f34b06297493ab098d325ab80"
-    sha256 cellar: :any,                 arm64_sonoma:  "8fa54d2944aab6397aee50ebd474ff6f6528bfe6db74a168c3582c21af877f38"
-    sha256 cellar: :any,                 sonoma:        "e5294294a0e779ca3d0144f2868ff1a07fe442ccd409c33e1ef8472490b42866"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbaef1db6779987275e5c6033bce45ce08e578868b86fb0a6c2a9c79a06670ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59a8562a21f95781aab014c8b5dd4001a0443e4b9dd2c8ae22d28879d6e9d75d"
+    sha256 cellar: :any,                 arm64_tahoe:   "ad87df5a27c8e124b3260c1e983fa5da10ed53d7163b57c73019cb86149ed093"
+    sha256 cellar: :any,                 arm64_sequoia: "0e1eabc6d0990ce5351eee3e3449735467426875d78468024bc0f0f6f7e0da3a"
+    sha256 cellar: :any,                 arm64_sonoma:  "1e1a816bf97f985c52f40c2938c4838634937f721893fb5a13d69cdac5a69769"
+    sha256 cellar: :any,                 sonoma:        "b7c552ecc7d2953871f7ed4f0d7a4b38d5bd1cf7d7616597479944df06762817"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c99bd8b45aefa801e5c7f942da9e533a0eaf2fab3d071afb05bddac7f468886"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce972d87938a492c24644cecc6a5f91cacfd09acd7f2a2b873c1650f30e3b892"
   end
 
   depends_on "pkgconf" => :build

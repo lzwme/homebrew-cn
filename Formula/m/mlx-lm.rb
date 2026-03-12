@@ -3,15 +3,15 @@ class MlxLm < Formula
 
   desc "Run LLMs with MLX"
   homepage "https://github.com/ml-explore/mlx-lm"
-  url "https://ghfast.top/https://github.com/ml-explore/mlx-lm/archive/refs/tags/v0.31.0.tar.gz"
-  sha256 "c8f8643baa0da1f266438894886b7ab7798b026ffb26e717578c8fe896b1e281"
+  url "https://ghfast.top/https://github.com/ml-explore/mlx-lm/archive/refs/tags/v0.31.1.tar.gz"
+  sha256 "ec0525928f3c8a2b2f6e730345f321a2a769955986711b38163667dc0b025057"
   license "MIT"
   head "https://github.com/ml-explore/mlx-lm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e8674296aaaf7de75865ed88150860fd86fc1bd6859a175d1c77b433869dfb79"
-    sha256 cellar: :any, arm64_sequoia: "4b4cbfdc8b746119b891d6bf1ee7203137db24b6f189de9de5546da00713b417"
-    sha256 cellar: :any, arm64_sonoma:  "533086a6c888bd6cc8b884f52772225cfa1bc7cf7bad70458e58090fe97c78f3"
+    sha256 cellar: :any, arm64_tahoe:   "2f14018c3f00af8d2246e4c34b2dad308371dabd590da391697e415b2e8e0ebd"
+    sha256 cellar: :any, arm64_sequoia: "7a7a143d65b20501dc325306b18532ec3cfc5b750a9fd093de055966fca775ee"
+    sha256 cellar: :any, arm64_sonoma:  "f4b8f42f77cb83da38b6d41019facd9ac80f7803dd3270664740606515289541"
   end
 
   depends_on "pkgconf" => :build
@@ -44,8 +44,8 @@ class MlxLm < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/77/18/a1fd2231c679dcb9726204645721b12498aeac28e1ad0601038f94b42556/filelock-3.25.0.tar.gz"
-    sha256 "8f00faf3abf9dc730a1ffe9c354ae5c04e079ab7d3a683b7c32da5dd05f26af3"
+    url "https://files.pythonhosted.org/packages/b3/8b/4c32ecde6bea6486a2a5d05340e695174351ff6b06cf651a74c005f9df00/filelock-3.25.1.tar.gz"
+    sha256 "b9a2e977f794ef94d77cdf7d27129ac648a61f585bff3ca24630c1629f701aa9"
   end
 
   resource "fsspec" do

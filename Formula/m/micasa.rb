@@ -1,17 +1,17 @@
 class Micasa < Formula
   desc "TUI for tracking home projects, maintenance schedules, appliances and quotes"
   homepage "https://micasa.dev"
-  url "https://ghfast.top/https://github.com/cpcloud/micasa/archive/refs/tags/v1.80.0.tar.gz"
-  sha256 "d58e2d0a4ed5e83e01d1a736b00d263d44ce7ac673504e2f1068f059d57a1e95"
+  url "https://ghfast.top/https://github.com/cpcloud/micasa/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "5c33962b3e7670f37ea25606e7f60d672faa2b095868c1d28896731d2805203d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aee089fc0871b93ed04cb8583d9877fd64733c0e4fc7bd1e3dd224a7801d89dd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aee089fc0871b93ed04cb8583d9877fd64733c0e4fc7bd1e3dd224a7801d89dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aee089fc0871b93ed04cb8583d9877fd64733c0e4fc7bd1e3dd224a7801d89dd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a6bd0682a1a080c59d80262c599f4792f4da6a3bb10df8d37de7863d902ef3f4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "feff4e037cecd7c36e4f32e1b593877f1d67f45171e610e5b6d831af780c9162"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2211c6ed9ca82bec52f7b6012da795efac1bf297b08ce6b9fd903a875632ae35"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ab62206c59ad58bb2c5e397c0125a3ba97d8a8bb92844a150c79fd3380b8c60e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab62206c59ad58bb2c5e397c0125a3ba97d8a8bb92844a150c79fd3380b8c60e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab62206c59ad58bb2c5e397c0125a3ba97d8a8bb92844a150c79fd3380b8c60e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1d7db8bb376dc3716a188d75dee3c81cb2d55e94a2162f8dc606685e4373ae54"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "510190ddf685b6d7f92f1117f0fbd7b73b53008fa66286af21c778da4bc24af5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fab2ffb324ca01ae80043126830151189df19b252ca9142b19fd90ff361adc55"
   end
 
   depends_on "go" => :build

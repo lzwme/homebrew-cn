@@ -1,11 +1,26 @@
 class OsrmBackend < Formula
   desc "High performance routing engine"
   homepage "https://project-osrm.org/"
-  url "https://ghfast.top/https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v6.0.0.tar.gz"
-  sha256 "369192672c0041600740c623ce961ef856e618878b7d28ae5e80c9f6c2643031"
   license "BSD-2-Clause"
   revision 3
   head "https://github.com/Project-OSRM/osrm-backend.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v6.0.0.tar.gz"
+    sha256 "369192672c0041600740c623ce961ef856e618878b7d28ae5e80c9f6c2643031"
+
+    # Backport support for Boost 1.89.0
+    patch do
+      url "https://github.com/Project-OSRM/osrm-backend/commit/a2e159d0d4f6b3922ee0cb058a800230cf90642e.patch?full_index=1"
+      sha256 "296e924268436847b941e287f8c46d0b98e829e723b310d96ff587b51940b653"
+    end
+
+    # Backport support for Lua 5.5
+    patch do
+      url "https://github.com/Project-OSRM/osrm-backend/commit/314c566cd63da80b2a9ced6a71bbb36610113fb9.patch?full_index=1"
+      sha256 "5e259e4ff3ab48cff4ce1a947fde14de8bf5f0d99d79ac407804af4637e871ad"
+    end
+  end
 
   livecheck do
     url :stable
@@ -13,19 +28,20 @@ class OsrmBackend < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "76bd0da5a56b544df81cbd42bc0bba572a775fe10fe6b4dbfd5dfcf80d95ef6e"
-    sha256 cellar: :any,                 arm64_sequoia: "507bf33a4c3bb6d89d9bea789f250300aadc97c2bc92e8a58846cd93ef2f9413"
-    sha256 cellar: :any,                 arm64_sonoma:  "f27477bc686b81eb309652e8714b734674f0731e7f409710a829a0d88e97915c"
-    sha256 cellar: :any,                 sonoma:        "4a75a8fda88275a5bf8323858bb3b7ddb45aa3fa7b11fa7ad7ed96950cf7238f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "32f90d63085f4ff4682b74a7767685581ca66eda545b3769dedffd1d00e54f1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f80f0719350479cfb231cae9f47e4ee866792157c32216a33b8cffc8907961b1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e74008d49cd71d3efd5b7006a2809848ca73f15c923be180ef4f6de6edc79f59"
+    sha256 cellar: :any,                 arm64_sequoia: "ea5588b2c7e83b37fa376b43b2ce3f9b62b614ebdb55bc826dce885cad7c7797"
+    sha256 cellar: :any,                 arm64_sonoma:  "0a82e6177cf9cd25b69d0e1eb9e5ba8c1468af67e7595e91bc2d7a6d5e7f13a1"
+    sha256 cellar: :any,                 sonoma:        "91283bc8dd2b37363db095c04c025354b0f7869a2e316eb8f7e49ea5b56145be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b1cd90a2989c42e0f000e10480d15ff2d4dd86ac1ecf790722dd63064891b62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef5a80bc12c171d942fc5a74153b0d7a0a4c47f2b1eb5ba33374ab2bc2f1bc94"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 
   depends_on "boost"
-  depends_on "lua@5.4" # https://github.com/Project-OSRM/osrm-backend/blob/v6.0.0/third_party/sol2/include/sol/sol.hpp#L3540
+  depends_on "lua"
   depends_on "tbb"
 
   uses_from_macos "bzip2"
@@ -45,14 +61,8 @@ class OsrmBackend < Formula
     CAUSE
   end
 
-  # Fix build with Boost 1.89.0, pr ref: https://github.com/Project-OSRM/osrm-backend/pull/7220
-  patch do
-    url "https://github.com/Project-OSRM/osrm-backend/commit/5cea5057eb766a19fbecb68e7392e42589ce1d46.patch?full_index=1"
-    sha256 "51f4f089e6e29264e905661e8cf78e4707af6e004de4a2fba22c914d1c399ff5"
-  end
-
   def install
-    lua = Formula["lua@5.4"]
+    lua = Formula["lua"]
     luaversion = lua.version.major_minor
 
     system "cmake", "-S", ".", "-B", "build",

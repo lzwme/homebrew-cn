@@ -1,8 +1,8 @@
 class AwsCMqtt < Formula
   desc "C99 implementation of the MQTT 3.1.1 specification"
   homepage "https://github.com/awslabs/aws-c-mqtt"
-  url "https://ghfast.top/https://github.com/awslabs/aws-c-mqtt/archive/refs/tags/v0.14.0.tar.gz"
-  sha256 "d7b881f3154a4d7282aca1aab9926b2ff9a67de3a07b2eee3c229629520e492d"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-mqtt/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "8e7c22673939f733fed21e9ed6e90a6512d869adb2bbbd5c05173ce332e006e0"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class AwsCMqtt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fdfdad7161f18bf2c39885ace11fbe8e05a423d09860e2c8a27663fec51aaa9a"
-    sha256 cellar: :any,                 arm64_sequoia: "4fdc81e34ee250d5c3bb4e8165c54175d97d3dfc3b21ac9bb60ca72e128a9ed2"
-    sha256 cellar: :any,                 arm64_sonoma:  "1a0ccdb68ae55d0fe54b9f3ab8b13027111ccc183f4f4afab4073c6748dbcf8f"
-    sha256 cellar: :any,                 sonoma:        "0ab5f253bc3a5f981b62939c0d56b9854423525b9d02e2a1e814a14e19e82a11"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d484cd3999b3b977ad2071f9af337936769e8fd6f520eae072423cc6c335a83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e490ad8f531a51cdb4cd8f8bc6151c83084042b1fa93ebc0de99c8574292680"
+    sha256 cellar: :any,                 arm64_tahoe:   "bfe9ae812698ddae32597c1f12244f7b4ba6b243eeadb6469fe3a3646f80e2db"
+    sha256 cellar: :any,                 arm64_sequoia: "d11f915d78b47a5cc0e355753e98590cccc60b276b61823f10e4ef0eb546dd0e"
+    sha256 cellar: :any,                 arm64_sonoma:  "2f198eedd56cf297b1309211e6db3b6554c6c6c08f8a76ec236309b2338ff205"
+    sha256 cellar: :any,                 sonoma:        "a1a9aa450820e63711902d9b6a310e52a1dc57138a633de968e0e7e68128f75d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4036e67de5baf31acffce7151d1800e2057f8480abe4b98a53c7be68b2402c1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffd168e47f614acb6244d479bc7709e615afa9783b648920e8f6a842fa9ddba1"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class Melange < Formula
   desc "Build APKs from source code"
   homepage "https://github.com/chainguard-dev/melange"
-  url "https://ghfast.top/https://github.com/chainguard-dev/melange/archive/refs/tags/v0.45.2.tar.gz"
-  sha256 "04d1ddc658a8e7acc928ae08252ba753e886e1bbf5dc2fc495eb83d2a366dfa0"
+  url "https://ghfast.top/https://github.com/chainguard-dev/melange/archive/refs/tags/v0.45.3.tar.gz"
+  sha256 "11e31953de3a7f63733c62c94ed00db584d43081fd6c4b3b74ed16dc8f7f2021"
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/melange.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Melange < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c45917f1b41c4d4ccc2796842401eeb9675ffea7c1910273dd572e1fe8bb346"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b512d18a878b5ed7c0e4898dc55d7359219145e59fd1236720bf245cf2f76a4c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a49e9182fdfcc3a65d3cc0f673ced115b823053d55f3bc506637a55e96976ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "61ceb458685709b55e57afb490f3ef58418740d233492a743e96785f2fd71662"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "91d23036f984af376e200916351dd2f2c5e529be38f4cbffd25d83e9712f4d12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0549f0c9027dc9a3b73782d971aa38deffc1f094844efcf33b6455af3ccefda3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5682e125c50753dba447a64978f4be0a89d065d822462a2b8517e1f0c27459ca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "821cb60ecdffde19b72299f47b07f92fafebda61001570a2884c04733bb2a9a0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d78250e9354845512a241867f435261cc0a195195ac47094f5cc01aa632efca"
+    sha256 cellar: :any_skip_relocation, sonoma:        "58fed513f26eb8ab4348019aa05e464f279e550e69477bd587569e8fe66a6bb8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5ec27d59e83ee7f3dcc28cf8896dab91c6ac774637f52449470f86281035664"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "114bfb90d1589d9d042abfff5eb15284cc9d8dcc5e8eb4f8989defbc7eebb988"
   end
 
   depends_on "go" => :build

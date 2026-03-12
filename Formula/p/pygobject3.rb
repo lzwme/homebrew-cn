@@ -1,17 +1,17 @@
 class Pygobject3 < Formula
   desc "GNOME Python bindings (based on GObject Introspection)"
   homepage "https://pygobject.gnome.org"
-  url "https://download.gnome.org/sources/pygobject/3.56/pygobject-3.56.0.tar.gz"
-  sha256 "4fbb5bf47524e01026f8e309dd54233eb0f75f2281392c5bf0df5d9041cc7891"
+  url "https://download.gnome.org/sources/pygobject/3.56/pygobject-3.56.1.tar.gz"
+  sha256 "2ec1cc8c55c7ffeebb97e58a9bba7aa1e74611f1173628084685446804a8881a"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ac853e2459fd94b982895b8b0f56e24357c5516cac34189bab95016bc6021681"
-    sha256 cellar: :any, arm64_sequoia: "b01dd23737b74361e0d3297aaafcd9fdd290b2ee7bb4b76d2b845c2c73c8e9d6"
-    sha256 cellar: :any, arm64_sonoma:  "f0bd8d765862d9d268054af5b86b0e8797190cedee60201ab349e3a1f21b54bd"
-    sha256 cellar: :any, sonoma:        "c7ef0cee4bb5aabf15887c355eb28c258150eb8d0641b731e4af39d8ff779a55"
-    sha256               arm64_linux:   "0c63bb35ab8d2193cb731c1e1554e6f8963adf6065bc23e5ab815c0f9f62a247"
-    sha256               x86_64_linux:  "040e872cb57fb5603dca08688b6d3f211efc3d3b21973ec0e55b0e2d2ba97c09"
+    sha256 cellar: :any, arm64_tahoe:   "71463d786a2c092be821002478ede1418b63816367aa85b63801ff884ef7388e"
+    sha256 cellar: :any, arm64_sequoia: "2738ab144fdd30aa615a2ef184683495dda3adceec96cb955d1440cefe004e6a"
+    sha256 cellar: :any, arm64_sonoma:  "0842af882d7c66ec1f03f5888afccf018139c95d104cbbe0a733a9ba25e790d2"
+    sha256 cellar: :any, sonoma:        "beb1e2b8a01f338cfcd5d46728e7581a1c311550fcdf968d42336e7eefedfac6"
+    sha256               arm64_linux:   "7684146c5d4b0522950f88f011293d12495b2643e59b71211cb3cc2fd72231eb"
+    sha256               x86_64_linux:  "241f466211a72a45aa16c6a1e616b2c68bf689805defdeb87320c94ed3ad723e"
   end
 
   depends_on "meson" => :build

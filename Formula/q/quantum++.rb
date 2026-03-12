@@ -12,7 +12,6 @@ class Quantumxx < Formula
   end
 
   depends_on "cmake" => [:build, :test]
-  depends_on "googletest" => :build
   depends_on "eigen"
   depends_on "pybind11"
 
@@ -24,8 +23,10 @@ class Quantumxx < Formula
   end
 
   def install
+    # Skip fetching googletest since we don't build/run tests
+    (buildpath/"build/_deps/googletest-src").mkpath
     args = %w[
-      -DFETCHCONTENT_FULLY_DISCONNECTED=OFF
+      -DFETCHCONTENT_FULLY_DISCONNECTED=ON
       -DHOMEBREW_ALLOW_FETCHCONTENT=ON
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

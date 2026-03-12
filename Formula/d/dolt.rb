@@ -1,10 +1,9 @@
 class Dolt < Formula
   desc "Git for Data"
   homepage "https://github.com/dolthub/dolt"
-  url "https://ghfast.top/https://github.com/dolthub/dolt/archive/refs/tags/v1.83.4.tar.gz"
-  sha256 "7a9386c61d8c7e5cf135911786c1c0bd407c7ab63655cb71dd4208a7afb79e0b"
+  url "https://ghfast.top/https://github.com/dolthub/dolt/archive/refs/tags/v1.83.5.tar.gz"
+  sha256 "9032cb0b884c14b5868f2224ce218f76d3a073ccfcd0389877b3b521cdf4f1a8"
   license "Apache-2.0"
-  revision 1
   version_scheme 1
   head "https://github.com/dolthub/dolt.git", branch: "main"
 
@@ -14,13 +13,12 @@ class Dolt < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "a6467f69f1862c150303a9e395edb31da59b2148198f7ec3f44fb1da6c5f0bdb"
-    sha256 cellar: :any,                 arm64_sequoia: "8a22d6009c6d7719871f3b5d697fbe89d0b9306a3fe062f63f424690312b337a"
-    sha256 cellar: :any,                 arm64_sonoma:  "b2676b705f940013a2187927285e6296b3d8dd78695d515ff56e57d2f44fda92"
-    sha256 cellar: :any,                 sonoma:        "95d27a498452bd4af35c63adcc5172b101fafc2a42a4cd76421e19cd9dabf452"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "df99d69ac1bbf93841b755eb9bab44a63117023d379f4851ef8a23dd559a6d00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d12aebcafba4e8d07bec819e44b3d3683ed3b01fc73a82bb32451073e28231b3"
+    sha256 cellar: :any,                 arm64_tahoe:   "b393e98e29dda3f80ed95750eb55b07d313e723d9322da46c55987cb533b8012"
+    sha256 cellar: :any,                 arm64_sequoia: "240a00514a81038e5a854bb1b2cc4c5de3557fedda22bf447982a5f19bc91b3a"
+    sha256 cellar: :any,                 arm64_sonoma:  "c3837bff278b57c42d28d4cf32ea0fdd3149fbccb061fb5837f3cdb8e5e68402"
+    sha256 cellar: :any,                 sonoma:        "2c4fe586dd289fcbcdd3f0b26d148a36ee7864a312f85fe12bdc0538eb05e2d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a1140332f426692200003f2e7fedb4f0e103740ac03e5c40ce55f00ee60c318"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a377744c15b317b7355c8674ac06cfab095e5d2c09572241bfa7476ace1bc447"
   end
 
   depends_on "go" => :build

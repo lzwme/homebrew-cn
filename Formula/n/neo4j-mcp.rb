@@ -1,18 +1,18 @@
 class Neo4jMcp < Formula
   desc "Neo4j official Model Context Protocol server for AI tools"
   homepage "https://neo4j.com/docs/mcp/current/"
-  url "https://ghfast.top/https://github.com/neo4j/mcp/archive/refs/tags/v1.4.5.tar.gz"
-  sha256 "b4a869343e75ba9db3d006d25df5513a709c72cf981e5a1a3f414c0035c5c9ab"
+  url "https://ghfast.top/https://github.com/neo4j/mcp/archive/refs/tags/v1.4.6.tar.gz"
+  sha256 "97e0d0788c2c8d6ced72f56d6b6bbf8fa12f9375b6f9cd88b7acc429bb5f27cf"
   license "GPL-3.0-or-later"
   head "https://github.com/neo4j/mcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bdd3c959de552f1b368121b0b78e14ee64ee42077a2497d1e14ef3a6464aa468"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bdd3c959de552f1b368121b0b78e14ee64ee42077a2497d1e14ef3a6464aa468"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdd3c959de552f1b368121b0b78e14ee64ee42077a2497d1e14ef3a6464aa468"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0b95ac371e974f249f0f48973ede44eb52c4e224f0d7374673cf3cf604c7c21e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "973d7008f4af960574a8d367afebf2e46ceba9e24c1f1785964beffbaebd109d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55461d132e2cfe6d9d8fd266f3cd323d73f3c93dc4f54016d66494db98d817e6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92d841cbeaa0454ac7c7b222cc8542a80c5e2b420bcd5e255fc8229d19cd2bfc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92d841cbeaa0454ac7c7b222cc8542a80c5e2b420bcd5e255fc8229d19cd2bfc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92d841cbeaa0454ac7c7b222cc8542a80c5e2b420bcd5e255fc8229d19cd2bfc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b202e6d534ff483effc5a9ee122e6ab8a93680378896f3676fb5eb43d82f32aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c7ebf7644b5ca32e99985731da9168df7966923384bb7a0cb4450669f3dfe58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49a3d4011abeef8b3a37590cc1819f720a4f302d2445e566e5e6653c360d531c"
   end
 
   depends_on "go" => :build

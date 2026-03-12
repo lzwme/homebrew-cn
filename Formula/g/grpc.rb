@@ -21,12 +21,13 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0e038f5d2011cd2137127575f52fa6dfbf8b6ddbc2164cf0afde1164c96821be"
-    sha256 cellar: :any, arm64_sequoia: "7b681a7940837bc74828d1c73517523d2c4af9f6b79d51c30dfedfc5a461493d"
-    sha256 cellar: :any, arm64_sonoma:  "959b9a8e59bc5361aae85f578c119aa199575d621b1f356f332aa0cc629d27b2"
-    sha256 cellar: :any, sonoma:        "70c1654edef0ad5b1f4368c2530f6425ece01a1b48bf1372ef46204448be474c"
-    sha256               arm64_linux:   "3cab1f5d80b7c7a05e8d2a6652e1703a0a7aaa9ebedcf312a85596267ce5f937"
-    sha256               x86_64_linux:  "b4e44d69a0b72bcb2417c3de120568a8a4d1f99eafeab8a54b268fa711904d49"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "aec56e6c00c9e2731b076fa474af1c72d38f930a31b42beafc7c605f3900f97c"
+    sha256 cellar: :any, arm64_sequoia: "aa6173766eadbec001d8668f241b9f538a0288b874f8f367d9d5c13b58cdcfbe"
+    sha256 cellar: :any, arm64_sonoma:  "05fff1a84df10fdf2aad256c09812dd2aee481ff4c1872a03533dcdc035ee735"
+    sha256 cellar: :any, sonoma:        "f83adaee52b346e32500691541cab06c8b798d67d9f33ceb26c6600028257b49"
+    sha256               arm64_linux:   "e8cb24e7983383547590a5bfd28b1e5e756c81bfc9041669f13f9a0b60f4cdd5"
+    sha256               x86_64_linux:  "2a0b0a024984e29d57386574b10009e6f6e3b452d32fad6687983fe37b4bdb4f"
   end
 
   depends_on "cmake" => :build
@@ -76,6 +77,7 @@ class Grpc < Formula
 
     # `grpc_cli` fails to build on Linux. In any case, it looks like it isn't meant to be installed.
     # TODO: consider dropping this on macOS too.
+    odie "Remove grpc_cli!" if build.stable? && version >= "1.80.0"
     return unless OS.mac?
 
     # The following are installed manually, so need to use CMAKE_*_LINKER_FLAGS
@@ -88,8 +90,19 @@ class Grpc < Formula
     ]
     system "cmake", "-S", ".", "-B", "_build-grpc_cli", *args, *grpc_cli_args, *std_cmake_args
     system "cmake", "--build", "_build-grpc_cli", "--target", "grpc_cli"
-    bin.install "_build-grpc_cli/grpc_cli"
     lib.install (buildpath/"_build-grpc_cli").glob(shared_library("libgrpc++_test_config", "*"))
+    libexec.install "_build-grpc_cli/grpc_cli"
+    (bin/"grpc_cli").write <<~SHELL
+      #!/bin/bash
+      echo "WARNING: grpc_cli will be removed from grpc formula in version 1.80.0" >&2
+      exec "#{libexec}/grpc_cli" "$@"
+    SHELL
+  end
+
+  def caveats
+    on_macos do
+      "grpc_cli will be removed from grpc formula in 1.80.0"
+    end
   end
 
   test do

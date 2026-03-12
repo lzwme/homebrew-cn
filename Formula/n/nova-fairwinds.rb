@@ -1,18 +1,18 @@
 class NovaFairwinds < Formula
   desc "Find outdated or deprecated Helm charts running in your cluster"
   homepage "https://github.com/FairwindsOps/nova"
-  url "https://ghfast.top/https://github.com/FairwindsOps/nova/archive/refs/tags/v3.11.12.tar.gz"
-  sha256 "bf8c659236680a563af798048d43bad7cf60e910efec3bee3d230c6c147a09aa"
+  url "https://ghfast.top/https://github.com/FairwindsOps/nova/archive/refs/tags/v3.11.13.tar.gz"
+  sha256 "eba92fc698e0e8947b7956711041c72be564ce0d6e34ba8ef1bad5050a2e09d5"
   license "Apache-2.0"
   head "https://github.com/FairwindsOps/nova.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "58db29d7e5b261f1372912d03ae8950eb3016933292ac513e2affbc38db4d8e8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58db29d7e5b261f1372912d03ae8950eb3016933292ac513e2affbc38db4d8e8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58db29d7e5b261f1372912d03ae8950eb3016933292ac513e2affbc38db4d8e8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "50259248be9f362ac6890552b3b8e1128efaaf43d1d76de65912f7f4aa806b26"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c5317d0a151ea24f45a2268279a0e7ce0452f8eff84e1fd08688392492a7199"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f972a9877d83030eec040552ab05729b7cf6e0059ed23852a17ad084e144683"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "39bc1c4d17a4dd29d082dd3e517b55e1d42646e498a4f483afa16d0af22f4d53"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39bc1c4d17a4dd29d082dd3e517b55e1d42646e498a4f483afa16d0af22f4d53"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39bc1c4d17a4dd29d082dd3e517b55e1d42646e498a4f483afa16d0af22f4d53"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fb1d2af7a86f66eba7c76baffe485d2f72eafdfbf3cceea05de0efb4c5604ddf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "df59d55ff95570965a36a6db50dc04b1e5e151316e2e9733b4a9196826fa8764"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "816541627ad4f242d41fb85b0199aeeb152a47ccec134a69c1f5f50f86c510ec"
   end
 
   depends_on "go" => :build
