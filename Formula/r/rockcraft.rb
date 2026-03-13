@@ -5,8 +5,8 @@ class Rockcraft < Formula
   homepage "https://documentation.ubuntu.com/rockcraft/"
   # git checkout needed for setuptools-scm
   url "https://github.com/canonical/rockcraft.git",
-      tag:      "1.17.1",
-      revision: "311130078f0f11688c0d15f66fe82ab41d126930"
+      tag:      "1.17.2",
+      revision: "272fa0c8deeef92ad97ba9b29ad187ad0c68a50f"
   license "GPL-3.0-only"
   head "https://github.com/canonical/rockcraft.git", branch: "main"
 
@@ -16,12 +16,12 @@ class Rockcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "209da74f49478a7fe6cc96653ac10f6dc4297ec088e159eb859614025befee98"
-    sha256 cellar: :any,                 arm64_sequoia: "6c314ed8645688e6ccba3913458b3899389c0a82dce09086fd5b04729f00b07a"
-    sha256 cellar: :any,                 arm64_sonoma:  "ef84c49db5da9fdbf7ae7e07487742def7c11bf332abd0ddb8786feccde3c1a3"
-    sha256 cellar: :any,                 sonoma:        "0e96a80a206a858cef4fab9a11c28f3286e91a49c5f4d20bb27b516cd971d486"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "59a21cd15f8c3bacc20484d9dbf66af6e462b9300322479faadd97469815d1a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cc007e608ca23cf4a71eb61507550ae9cc90ff75f77c8e9ed5c40d45054686d"
+    sha256 cellar: :any,                 arm64_tahoe:   "4962f0d2c5310347f204b5ae1909fd596f862ce35d133e7aaef6a2836671bc61"
+    sha256 cellar: :any,                 arm64_sequoia: "8423d21002c6661bf5dc47547e77bc6cd0b3b07e7b79483dd70ad26851cdbf7c"
+    sha256 cellar: :any,                 arm64_sonoma:  "2d86337c9387379b0cb49659672767836f48441035b3554d493a64aecd448fa8"
+    sha256 cellar: :any,                 sonoma:        "19618c1216d63ec68c8d2d0fecd091c512c29f46a34ab60c0ef4e88d442e6560"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c00467d1189c92c534531c9d72acf3443bfd5564961bbadf861106132ca49ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "adf3e53d291f2c20b2f9fb718bc58fbdf04185882ec8727aea68b5aa933866fb"
   end
 
   depends_on "certifi" => :no_linkage
@@ -46,13 +46,13 @@ class Rockcraft < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
+    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
   end
 
   resource "craft-application" do
-    url "https://files.pythonhosted.org/packages/81/86/4ee23f43b5b28d4bda940a441bd4fb599bd264ddd9f9d420d6c0673be92d/craft_application-6.2.0.tar.gz"
-    sha256 "ad89335d42afc74d5ab78ee9450b0d4c4abc4b88ec6cbe37b033f27378027e43"
+    url "https://files.pythonhosted.org/packages/ec/df/72c6e7265bcc312bc9156387bb15293ee8572cbf0e20f463502bdf132f7e/craft_application-6.2.1.tar.gz"
+    sha256 "ae08c2f879757372841b0be49b669f3b24fd7b69374bf0516c462c92a4058f4d"
   end
 
   resource "craft-archives" do

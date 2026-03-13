@@ -3,18 +3,18 @@ class CoboCli < Formula
 
   desc "Build, test, and manage your integration with Cobo Wallet-as-a-Service"
   homepage "https://github.com/CoboGlobal/cobo-cli"
-  url "https://files.pythonhosted.org/packages/b1/75/7884f64cef6079ab8c7c57d3b379e6f5b865e5ee4ea72343345f73c10da1/cobo_cli-0.1.2.tar.gz"
-  sha256 "a804516f1a2705069143ff327a07dbce59cc71acc81606a98ad191bb568d882e"
+  url "https://files.pythonhosted.org/packages/72/ec/6d82b7501a8963b97612c7b98f97fab6ff2c623a2141c0e20f12ce19d8e3/cobo_cli-0.1.4.tar.gz"
+  sha256 "6efe88cc06f9309159df569e4a7fa00dc54181dc70957913e2573a2a0aef4556"
   license "MIT"
   head "https://github.com/CoboGlobal/cobo-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "80b3cf43b80682ae3ff069c0ad8017f9fd5fdc4953aec17601c9db7a41228498"
-    sha256 cellar: :any,                 arm64_sequoia: "7193af90de4a766da214fb40a65bd7e45781df2f094e3b871412a54f61a9db91"
-    sha256 cellar: :any,                 arm64_sonoma:  "2d36f5dd312916d97264c7be3ff1d411d7499ab3114d2065681287d99d8a96f3"
-    sha256 cellar: :any,                 sonoma:        "60e2f2589e0db86a663cd574623b1c50ca47c0321ac291630b580f645ab0a035"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "311b88712f470a217cd52875cc92a66892ea79abc7c08a9d2e99a61546f510bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8198bb96d01a8935ba1340dfe6311d0c085a58bfdae29035e2014eccaa4152c"
+    sha256 cellar: :any,                 arm64_tahoe:   "0c25b54c897a0ee913b2882b61ace933140d4bc2d7d7d3e9bedffe7df0178ea3"
+    sha256 cellar: :any,                 arm64_sequoia: "4bd576619dc7922e62f49d0b8c07654b67f1555c3d18c9941c629bbb9c364efb"
+    sha256 cellar: :any,                 arm64_sonoma:  "2eb07c867a1854d4edefe488df8dc5f0a2fd72eecd6db228aaccc64ac027d57f"
+    sha256 cellar: :any,                 sonoma:        "130573e781b4796de1c6db6e3b84f6eaafb39256b5248489c7523498c92e4f4e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d7765826d96cfd36522ba92845915ce57d11f27a283fe5519d4a48c53c02aeb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94916b91943b0cb389c4eb49705b56c9229b40bbd9c988f1e977caa3d6514761"
   end
 
   depends_on "certifi" => :no_linkage
@@ -33,8 +33,8 @@ class CoboCli < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
+    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
   end
 
   resource "click" do
@@ -93,8 +93,8 @@ class CoboCli < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/43/4b/ac7e0aae12027748076d72a8764ff1c9d82ca75a7a52622e67ed3f765c54/pydantic_settings-2.12.0.tar.gz"
-    sha256 "005538ef951e3c2a68e1c08b292b5f2e71490def8589d4221b95dab00dafcfd0"
+    url "https://files.pythonhosted.org/packages/52/6d/fffca34caecc4a3f97bda81b2098da5e8ab7efc9a66e819074a11955d87e/pydantic_settings-2.13.1.tar.gz"
+    sha256 "b4c11847b15237fb0171e1462bf540e294affb9b86db4d9aa5c01730bdbe4025"
   end
 
   resource "pynacl" do
@@ -103,8 +103,8 @@ class CoboCli < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
-    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
+    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
+    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
   end
 
   resource "pyyaml" do
@@ -118,8 +118,8 @@ class CoboCli < Formula
   end
 
   resource "smmap" do
-    url "https://files.pythonhosted.org/packages/44/cd/a040c4b3119bbe532e5b0732286f805445375489fceaec1f48306068ee3b/smmap-5.0.2.tar.gz"
-    sha256 "26ea65a03958fa0c8a1c7e8c7a58fdc77221b8910f6be2131affade476898ad5"
+    url "https://files.pythonhosted.org/packages/1f/ea/49c993d6dfdd7338c9b1000a0f36817ed7ec84577ae2e52f890d1a4ff909/smmap-5.0.3.tar.gz"
+    sha256 "4d9debb8b99007ae47165abc08670bd74cb74b5227dda7f643eccc4e9eb5642c"
   end
 
   resource "tomli" do

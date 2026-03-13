@@ -7,8 +7,8 @@ class Solr < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "0325be6c048e10ef7a3dc6d7e782ad9b1d12cf7f53a87d9f68d84bf7de01bd2c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "5acd947f8767a29eebf0748639ab369d30c981170b8211082d987aab0c351180"
   end
 
   # Can be updated after https://github.com/apache/solr/pull/3153
@@ -32,7 +32,7 @@ class Solr < Formula
   end
 
   service do
-    run [opt_bin/"solr", "start", "-f", "--solr-home", HOMEBREW_PREFIX/"var/lib/solr"]
+    run [opt_bin/"solr", "start", "-f", "--user-managed", "--solr-home", HOMEBREW_PREFIX/"var/lib/solr"]
     working_dir HOMEBREW_PREFIX
   end
 
@@ -43,11 +43,11 @@ class Solr < Formula
     assert_match "No Solr nodes are running", shell_output("#{bin}/solr status")
 
     # Start a Solr node => exit code 0
-    shell_output("#{bin}/solr start -p #{port} -Djava.io.tmpdir=/tmp")
+    shell_output("#{bin}/solr start --user-managed -p #{port} -Djava.io.tmpdir=/tmp")
     assert_match(/Solr process \d+ running on port #{port}/, shell_output("#{bin}/solr status"))
 
     # Impossible to start a second Solr node on the same port => exit code 1
-    shell_output("#{bin}/solr start -p #{port}", 1)
+    shell_output("#{bin}/solr start --user-managed -p #{port}", 1)
     # Stop a Solr node => exit code 0
     # Exit code is 1 without init process in a docker container
     shell_output("#{bin}/solr stop -p #{port}", (OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]) ? 1 : 0)

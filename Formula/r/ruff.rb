@@ -1,18 +1,18 @@
 class Ruff < Formula
   desc "Extremely fast Python linter, written in Rust"
   homepage "https://docs.astral.sh/ruff/"
-  url "https://ghfast.top/https://github.com/astral-sh/ruff/archive/refs/tags/0.15.5.tar.gz"
-  sha256 "248dece1157347eade855b663ef0eef4b1797e29779c2cce7fc769f51c05c298"
+  url "https://ghfast.top/https://github.com/astral-sh/ruff/archive/refs/tags/0.15.6.tar.gz"
+  sha256 "98197d22d940f7c62349ed9a683937ba75e03990ad094bb8ae0004eae37cfc30"
   license "MIT"
   head "https://github.com/astral-sh/ruff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6711848886baa880103208fe8a2cd604cd78efc00ddb49d0a79dcefefbc0b879"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "936b048bb1fd7da9f9d4440ae252126b0ef91089891cbdf60f62b47ce6881151"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0be5faa6aedaf1ff3661fffcf269f03bd9a021f77e72eccf04dc2236b9ff59c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d24ebf462901c8362729ee3f9d1f1891b89852abedbf5f84d8838a956485df9c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a09a46a2372949e1dfc8b43efb4cb7a2de4745c8b720f49b1106a7bb68a7aa1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5aa14fba034934213be5b9d958f4526fe03514b154c29a254a35cad6de1c3b9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a6fc57ce0491558c9425235d092ab6e89c91cb147f94c767c76996ac32cabe7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5189dc2d8779b033e3394efc5333b1bb0a6b784147fcc1eeadd699f28e895ce0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fba0cc7ad239e513ed20298201b9681112347a4136a6cd3adb99073c60bc6874"
+    sha256 cellar: :any_skip_relocation, sonoma:        "62adadfcd01fb774104b5a0f2029a19d69ad3b2fd90fdc5d7638a3ebb4de7e23"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da87449cc8ecbb01c6ca2bfca768bac51a1c566510e1c2494404618a4ad4d1e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3bff77ea800d94b9f46caf2fe636c6f7961d6a29d3b50c4105b7aefc821d7c5"
   end
 
   depends_on "rust" => :build

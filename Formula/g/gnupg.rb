@@ -1,25 +1,28 @@
 class Gnupg < Formula
   desc "GNU Privacy Guard (OpenPGP)"
   homepage "https://gnupg.org/"
-  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.4.9.tar.bz2"
-  sha256 "dd17ab2e9a04fd79d39d853f599cbc852062ddb9ab52a4ddeb4176fd8b302964"
+  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.18.tar.bz2"
+  sha256 "0dbd64e0322fe1a4813360d46539d5f8daf4a8fa235cf5fce464e8b0214a7e4f"
   license "GPL-3.0-or-later"
 
-  # GnuPG appears to indicate stable releases with an even-numbered minor
-  # (https://gnupg.org/download/#end-of-life).
+  # GnuPG usually indicates stable releases with an even-numbered minor but
+  # can declare an odd-numbered minor stable. e.g. 2.5 was stable since 2.5.16,
+  # see https://lists.gnupg.org/pipermail/gnupg-announce/2025q4/000500.html.
+  # The livecheck scrapes the version from the templated homepage which is
+  # manually updated by upstream when a new release series is stable, e.g.
+  # https://dev.gnupg.org/rD18a889b403c7a5934d5080be140a4d79e1c83332
   livecheck do
-    url "https://gnupg.org/ftp/gcrypt/gnupg/"
-    regex(/href=.*?gnupg[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.t/i)
+    url :homepage
+    regex(/The current version of GnuPG is v?(\d+(?:\.\d+)+)\. /i)
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "47d45361318ca8b6bc9cef4fceed6acb413cfcad60ae0c4192febb71f0434a6c"
-    sha256 arm64_sequoia: "5598e7e627cffa2d2c257d99d750cde86dee92e8686eb219a3900e8647047f8d"
-    sha256 arm64_sonoma:  "c4635c39f826faa9edbbcd9b381f9741f633348cc8e935e5323a8f16ffae7cb6"
-    sha256 sonoma:        "86a3a059839b4a29bc6401545c1f7967e0c8d7af6be7f5f7c2674bea27297239"
-    sha256 arm64_linux:   "fae6d9cc07ed9f8fd42f393cfe935ca328ad6b4ec13d5fb0ab065f62b7ff45bf"
-    sha256 x86_64_linux:  "4b68cf17af9be7503b62e9c7220065ac59211ceaaa2ca23705b5f95156847183"
+    sha256 arm64_tahoe:   "de9a802a2424e4cd6b38af7bf22e7d0cc8e4108d67821964365ef876cf17a2f3"
+    sha256 arm64_sequoia: "2bd6c837d6774a56415b439e4c7f34cf3a7749c739011e597d9e73ceb6744fad"
+    sha256 arm64_sonoma:  "9834b4a5f1c8ff84649a40a7473bdaa00415b8a503a68550b44914ae480d3a54"
+    sha256 sonoma:        "5028ba5fa794629b43828c4a1ce943ffa303855370e8f400cdec97cba83d8b80"
+    sha256 arm64_linux:   "cbcb3a7d64be37264d6fa879a343381539efd9d1c7785e6823dc554a933cf8c5"
+    sha256 x86_64_linux:  "cd6acef446405bdb6c91ef38a7058b2a66f515ded877d4853d865ac22167bae8"
   end
 
   depends_on "pkgconf" => :build

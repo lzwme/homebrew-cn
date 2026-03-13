@@ -1,22 +1,26 @@
 class CppPeglib < Formula
   desc "Header-only PEG (Parsing Expression Grammars) library for C++"
   homepage "https://github.com/yhirose/cpp-peglib"
-  url "https://ghfast.top/https://github.com/yhirose/cpp-peglib/archive/refs/tags/v1.9.1.tar.gz"
-  sha256 "f57aa0f14372cbb772af29e3a4549a8033ea07eb25c39949cba6178e0e2ba9cc"
+  url "https://ghfast.top/https://github.com/yhirose/cpp-peglib/archive/refs/tags/v1.10.0.tar.gz"
+  sha256 "f2f29a90cd3681bdf3a7cfdf6a0b7dc00386dbf3183cd803c68babc5db9f3343"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1faee0c9bfafa9d959755e07b3b67d7cd6cdd6d90044ea73d39b00a85b139dca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e8a5a22292f52bfe919d39d201e60dc711526eae0022c8fc304f6007448fdc3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc7e6670b936f8d5c3b876ad586274c5368087d430e8cc025d48c4984fd73bee"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5b7c05e469149aa8d2e58804ee8077848a568e4b0fa04464b834df1da72c8e03"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c792060f2dc7c50971f47fced6a91ad21ce4b2716370b310f30a152c6ee7336c"
-    sha256 cellar: :any_skip_relocation, ventura:       "bcac68f110273496870596a4b0cdaac43759abc62c03332c5242c938c16d95fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3dba6d295fb60a0018b6cb8618de1bcc9f0e76560c0b43d63e57f62e9a7a72c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76d939b93adb7280e5a2a7632acb1341317f6a243656e51be439b5d5cb0566a0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f388819f643eed2ec19c0f72c0956ce873650b8b57fc760fa9de2140132e881e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2adf6db9243b037dcd391497f6b56a51b62f93e5e0bd8c2f220727f0ced0c0d4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a65f38fc370659a6642bc0b42763b474b97e80e166f8545d1f0b5c505fb4b54"
+    sha256 cellar: :any_skip_relocation, sonoma:        "866816c90861842a2821700d1b4dab40af057047ed898f8905f5c0158626382b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "14854993c65a12b9ba6f0e94e289fe5d1b26aa9312f3ed123404ff77068b4645"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54979d6dc73c76d89cf92f43fbd2a47275d2b422c4c8fb8090570eacc472621a"
   end
 
   depends_on "cmake" => :build
+
+  # add missing direct <optional> include for GCC, upstream pr ref, https://github.com/yhirose/cpp-peglib/pull/337
+  patch do
+    url "https://github.com/yhirose/cpp-peglib/commit/033ea18345af05064ebe971bb283932ff92b2f12.patch?full_index=1"
+    sha256 "8815a23bbf10fa3609fed764fde45d32cbc680d7530d111886d4728a6f5e882e"
+  end
 
   def install
     args = %w[

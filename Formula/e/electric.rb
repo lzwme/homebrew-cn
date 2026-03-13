@@ -20,7 +20,7 @@ class Electric < Formula
   end
 
   depends_on "elixir" => :build
-  depends_on "postgresql@17" => :test
+  depends_on "postgresql@18" => :test
   depends_on "erlang"
   depends_on "openssl@3"
 
@@ -53,33 +53,38 @@ class Electric < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/electric version")
 
-    ENV["LC_ALL"] = "C"
-
-    postgresql = Formula["postgresql@17"]
+    postgresql = Formula["postgresql@18"]
     pg_ctl = postgresql.opt_bin/"pg_ctl"
     port = free_port
 
-    system pg_ctl, "initdb", "-D", testpath/"test"
-    (testpath/"test/postgresql.conf").write <<~EOS, mode: "a+"
-      port = #{port}
-      wal_level = logical
-    EOS
-    system pg_ctl, "start", "-D", testpath/"test", "-l", testpath/"log"
+    ENV["DATABASE_URL"] = "postgres://#{ENV["USER"]}:@localhost:#{port}/postgres?sslmode=disable"
+    ENV["ELECTRIC_INSECURE"] = "true"
+    ENV["ELECTRIC_PORT"] = free_port.to_s
+    ENV["LC_ALL"] = "C"
+    ENV["PGDATA"] = testpath/"test"
+
+    system pg_ctl, "initdb", "--options=-c port=#{port} -c wal_level=logical"
+    system pg_ctl, "start", "-l", testpath/"log"
 
     begin
-      ENV["DATABASE_URL"] = "postgres://#{ENV["USER"]}:@localhost:#{port}/postgres?sslmode=disable"
-      ENV["ELECTRIC_INSECURE"] = "true"
-      ENV["ELECTRIC_PORT"] = free_port.to_s
-
-      mkdir_p testpath/"persistent/shapes/single_stack/.meta/backups/shape_status_backups"
+      (testpath/"persistent/shapes/single_stack/.meta/backups/shape_status_backups").mkpath
 
       spawn bin/"electric", "start"
       sleep 5 if OS.mac? && Hardware::CPU.intel?
 
-      output = shell_output("curl -s --retry 5 --retry-connrefused localhost:#{ENV["ELECTRIC_PORT"]}/v1/health")
-      assert_match "active", output
+      tries = 0
+      begin
+        output = shell_output("curl -s --retry 5 --retry-connrefused localhost:#{ENV["ELECTRIC_PORT"]}/v1/health")
+        assert_match "active", output
+      rescue Minitest::Assertion
+        # https://github.com/electric-sql/electric/blob/main/website/docs/guides/deployment.md#health-checks
+        raise if !output&.match?(/starting|waiting/) || (tries += 1) >= 3
+
+        sleep 10
+        retry
+      end
     ensure
-      system pg_ctl, "stop", "-D", testpath/"test"
+      system pg_ctl, "stop"
     end
   end
 end

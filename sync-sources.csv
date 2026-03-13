@@ -3224,6 +3224,7 @@ Homebrew-homebrew-core/Formula/i/ios-sim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ios-webkit-debug-proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iowow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ip_relay.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/i/ipapatch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ipatool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ipbt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ipcalc.rb, Homebrew/homebrew-core, 1
@@ -6580,6 +6581,7 @@ Homebrew-homebrew-core/Formula/s/seexpr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/selecta.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/selene.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/selenium-server.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sem-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/semgrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/semtag.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/semver.rb, Homebrew/homebrew-core, 1
@@ -7494,6 +7496,7 @@ Homebrew-homebrew-core/Formula/t/tscriptify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tsduck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tsnet-serve.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tssh.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tsshd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tsui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tsung.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tt.rb, Homebrew/homebrew-core, 1
@@ -7818,7 +7821,7 @@ Homebrew-homebrew-core/Formula/v/vvdec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vvenc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/w-calc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/w3m.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/w/wabt.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/wabt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/waffle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wagyu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wails.rb, Homebrew/homebrew-core, 1
@@ -8255,6 +8258,7 @@ Homebrew-homebrew-core/Formula/z/zsh-vi-mode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsh-you-should-use.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zshdb.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/z/zsign.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zssh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zstd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsv.rb, Homebrew/homebrew-core, 1
@@ -14175,7 +14179,7 @@ Homebrew-homebrew-cask/Casks/p/positron.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/post-haste.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/postbird.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/postbox.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/postgres-unofficial.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/p/postgres-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/postgrespreferencepane.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/postico.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/postico@1.rb, Homebrew/homebrew-cask, 0
@@ -15699,6 +15703,7 @@ Homebrew-homebrew-cask/Casks/w/workspaces.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/worldpainter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wormhole.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wowmatrix.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/wowup-cf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wowup.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wpsoffice-cn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wpsoffice.rb, Homebrew/homebrew-cask, 0

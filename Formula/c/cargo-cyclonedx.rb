@@ -1,8 +1,8 @@
 class CargoCyclonedx < Formula
   desc "Creates CycloneDX Software Bill of Materials (SBOM) from Rust (Cargo) projects"
   homepage "https://cyclonedx.org/"
-  url "https://ghfast.top/https://github.com/CycloneDX/cyclonedx-rust-cargo/archive/refs/tags/cargo-cyclonedx-0.5.7.tar.gz"
-  sha256 "3ac7058fba657f8cfd56c6e1cfb47ad024fa76070a6286ecf26a16f0d88e3ce2"
+  url "https://ghfast.top/https://github.com/CycloneDX/cyclonedx-rust-cargo/archive/refs/tags/cargo-cyclonedx-0.5.8.tar.gz"
+  sha256 "101e3592a378c2f8591f5836fb7b235393032bcda84442217c239b4ebd80dba9"
   license "Apache-2.0"
   head "https://github.com/CycloneDX/cyclonedx-rust-cargo.git", branch: "main"
 
@@ -12,14 +12,12 @@ class CargoCyclonedx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68b837ec5f02542da6437fa257ea5be3b4d673c476a153aae8a7abf10fa2e664"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0929e7f65dd40618265f765e8018119e9b782336f723cdcab119a3e424264edd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "783adfef5d79bf8f14dc6f3f667a3188c390fc58e58765fe129ef4b566e1b0f0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "16cf33f5551919b50f72a9e1908a8acc903340ffa0807d07129bf8dda445d64b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "994e07617590f95137b4263cbe94e447f206a29e8407990f3aa61dadc001bde5"
-    sha256 cellar: :any_skip_relocation, ventura:       "7eeb9c86c8531c6d8db94687704e5ddba41fb66b925ddff16242d6a79f92cc1c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb031e5cd29ab00b10ed9979a9483256da08b39350505fc935221814ce743bdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f69b0e972207579b8a06176252815648a3b6b33c43a468f66c919118bd72462a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6873c5063435091be5114554b7d35ab766bc7ed874f82bc31a8141e309364d6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "846c71363a75d011baf2368c25afa26444f8c3f5a90a20e44431b23cf25ba502"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "adee4f88af3b63d0b60e3b557a1d7423740e301b4a99154555f729e51408f451"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a444dd8b4fd4a0a7c1f6ee8b0c0c654f64a77e23115216040cdb3a3f7d3a130b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca9dca958c65b3fcbf35c9dbf502a45c9ac6fb14166780c904de279c247bce1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e717e9d9b04e3fbff87862793e96d8abdde79541b8589187bd3d2127eaaf2e0a"
   end
 
   depends_on "rust" => :build

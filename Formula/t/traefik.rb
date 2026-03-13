@@ -6,6 +6,11 @@ class Traefik < Formula
   license "MIT"
   head "https://github.com/traefik/traefik.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "279c1fa036193a6abcd05f5e1230cc75e2621f5ef32f941c516c28f9f02dac2d"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5324d4e93fa062e62c19e42f27b450015cdd2d839f91ece6967e5912ce11ee22"

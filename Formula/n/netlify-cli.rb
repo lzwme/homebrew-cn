@@ -1,17 +1,17 @@
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https://www.netlify.com/docs/cli"
-  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-24.0.1.tgz"
-  sha256 "e8f1c4a1c5e471e3ded5cf648c4e87cbf97ac9629158010702538cd6b501d329"
+  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-24.2.0.tgz"
+  sha256 "fc4370b5b4e9c7de8c40f6ab5663896d64f2a4669f7d29a3f4d6090872ef8bc4"
   license "MIT"
 
   bottle do
-    sha256                               arm64_tahoe:   "c4126d82ce321e22554b2dbdc610f865b5fb651be9aeb32b67247b6a7ec86bd3"
-    sha256                               arm64_sequoia: "335320ce6706720a3629a71b2b7be99993da61141b08aaa16944f065fcbdd7db"
-    sha256                               arm64_sonoma:  "645ba998fcfef20ca6fa44cde9687ebc96f90b305abb7b1ee1c842b4f4a07469"
-    sha256                               sonoma:        "adf0b3e91f288e22fc1f7cbe5f6e9f538474fe2a4462e73de4e50a3dbddd2a11"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e333d66bc521baa982c5f1c28bfcb4e4875a530dc04ee91175d10e52b1a683b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cffc784420d0029efae49b1aeb3c6ce5c832c9d4753946a6d257974c16da37dd"
+    sha256                               arm64_tahoe:   "f3c1b77a6e9a03f71622c283a720bec68d2f4fb80eb30d219bdaedd73b7ec08a"
+    sha256                               arm64_sequoia: "7995e8789544adfe51f5796aa2b9f52280b01caa42ee275f413ef34f6c4ad1bf"
+    sha256                               arm64_sonoma:  "974de25d027515ce76987fc28c51e241d4945bd02a2fd93da967c89f1a9cbe08"
+    sha256                               sonoma:        "65c353bae9df20017ad9370eedecfbe48ad40f969be311484137e1f927bf56fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f057e9b1daa1969a5038d8361558ce835d433b52d654ec4eaba806da7da4af31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78e141d2372851594140dfc07be6f641802f9e2b3974e071458a81b6339b479d"
   end
 
   depends_on "pkgconf" => :build
@@ -53,6 +53,12 @@ class NetlifyCli < Formula
       # Replace the vendored pre-built xsel with one we build ourselves
       ln_sf (Formula["xsel"].opt_bin/"xsel").relative_path_from(linux_dir), linux_dir
     end
+
+    # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-url` binaries
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
+                .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
   end
 
   test do

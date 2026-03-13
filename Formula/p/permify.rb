@@ -1,18 +1,18 @@
 class Permify < Formula
   desc "Open-source authorization service & policy engine based on Google Zanzibar"
   homepage "https://github.com/Permify/permify"
-  url "https://ghfast.top/https://github.com/Permify/permify/archive/refs/tags/v1.6.5.tar.gz"
-  sha256 "e98e516629183b6b00150a28b582304bd7b14ff76bebb4dc11db503540db3c38"
+  url "https://ghfast.top/https://github.com/Permify/permify/archive/refs/tags/v1.6.6.tar.gz"
+  sha256 "7fc3368b04ad7ea1c22508150f0ba0402b5931bf845b1509b0e0e8d27c366d26"
   license "AGPL-3.0-only"
   head "https://github.com/Permify/permify.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d8b86fce73b29bf16759c2e9480b49d7d02aa2554530409994f65601b55d6b3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1f0c84a0a30bad55fd4735f07aa32bd9b1c534a0db6e9c562d388656f11d429"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73c2bf17c22a6f8f676e345c6e7c41bdb7c4a13594cddb0dfa29e7638bc25ada"
-    sha256 cellar: :any_skip_relocation, sonoma:        "994c2f4a02b918d479e3061009018fcf3d3308cd5ed2e731b9b067ec7d4bea4f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef74f5500b434a7279e79111a9d77d12bf1a9e7b6e0abee1a48de40753457df6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b51e531f006ef5f875e7d506f9415389d143ed5f153cf919237bab9291fdcffc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77280e38674c8b158305911520cbd5510688f73d55ddbf3a70a662e75e4eddca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fcc4c4f6c7c9f5e28a4e64c0b04938754775cb4b5121f82dc64e3fc3b61a3a1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b40cd11a252a1d5ea1241f281373179773f33b83ccdbbcddb8526b5992afe177"
+    sha256 cellar: :any_skip_relocation, sonoma:        "672d1a746df2962b451b234c14fd20ac193574782ab67c9856dadc94be2268da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6bff4d27857e9fc76f08971333612fdd0a9cf97ed4adfe25a13eb492523e7906"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2e897be17dbefc5e5b5289eb16a947acfff8eb761aade19b3a37d9d674e02bf"
   end
 
   depends_on "go" => :build

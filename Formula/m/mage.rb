@@ -2,18 +2,18 @@ class Mage < Formula
   desc "Make/rake-like build tool using Go"
   homepage "https://magefile.org"
   url "https://github.com/magefile/mage.git",
-      tag:      "v1.16.0",
-      revision: "69e6f824732575e57977f68f8f3dd78313d666e5"
+      tag:      "v1.16.1",
+      revision: "b94953dd0f45774ee618484152549dc0742f2ba4"
   license "Apache-2.0"
   head "https://github.com/magefile/mage.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc7a3a161b8620c4098e9459958996359d2414db32d93a98d3339e1650ae0010"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc7a3a161b8620c4098e9459958996359d2414db32d93a98d3339e1650ae0010"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc7a3a161b8620c4098e9459958996359d2414db32d93a98d3339e1650ae0010"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c2b67b59c849c82196b5e8631504bbe8b2efaf0ad2ee18cf4d61e7da5bfeea92"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bda7776df944c802818ecca7ffe744db260b2e305dadd64c1aa18afec03fbbf2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a307d65c8ccb27c881c3335eabaea3dc92a17380e1da648bb6e7b3c190dcd9a4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "852f1940a3b6e1ab1ddb2f133f9560344ef58f41f26bf2c51737aa218e2ea2e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "852f1940a3b6e1ab1ddb2f133f9560344ef58f41f26bf2c51737aa218e2ea2e7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "852f1940a3b6e1ab1ddb2f133f9560344ef58f41f26bf2c51737aa218e2ea2e7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9a0c461581c9c72035993106184814e693e994ee0945f70845daee18f62e9c5a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6881f54bbdfcd0db6f6dcb8005bb7261eb5141b2ec8aea41f3b04c748b8ec8de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "891a6580acdd7bbb8f814ca60068acee05b50bf0dd0ec8fc5e2c6f03ff11ed59"
   end
 
   depends_on "go"

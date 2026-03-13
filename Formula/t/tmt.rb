@@ -3,17 +3,17 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https://tmt.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/3f/47/e1a69519e50c59a5630b019624b98aecad99d8e0a320a14cab5567d44b77/tmt-1.68.0.tar.gz"
-  sha256 "470d17f9bbe6927c261433e00ee644dc5b79c83a0ab16b365942851ed4afeed4"
+  url "https://files.pythonhosted.org/packages/27/0f/3b2ceb25a8c7b41cc93761e8103af5d5f3c4d77a05363dfcd4b2dcf3fba4/tmt-1.69.0.tar.gz"
+  sha256 "0d33a128ee684fe38752dc75984efd010a727313da662be417380b20c9a1934e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee3ee4c60435e2885b64e67629be554233cba9aeac3bcd3acdf2d722d304c5e7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75c1271845b6a4932085248d840d315341bf37d123042da9590b7cfd8c96629d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80ead483b10191009ff6357639be4430dec536c9e38a8174a54174c8f0bd86d7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "155417c833d499adf04e5be469dd9d7d02d6c237005bf427720c0eee14c4132a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb12031e2f989fef31cc13819578b52db7500c5b7c8eea9a9b434a2af5171e6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d48f057efaf86a9a43488b9ad20ab66939a79191d45665a25f9ba9e4e0af9ee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5ce4dcf0eb18b35ac253c77574e531cff6dd42ed334d4c291062630443ea7c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ebb2e8eecc93c30ba1fc720d96e52d5d987c87a19ae56eeab71ecd32ab5e26d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c1e113c3d4a4549b4ac8cc14f95eef89bcda84396854d54fe00dfead4f80a69"
+    sha256 cellar: :any_skip_relocation, sonoma:        "82b5a7c12d3670d66fbf9854c79f2ffb9338fdbe89fb7ed805ecbbcd6a9d696e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b5b8902e6e59c625b6a7f7c4af3a0b1f5ce19f16a3b62f9a39ec3ab5830cb9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "265ab86e92f99ee76ca8ea19cfe23166b703905aeda03be783cd8ae3ab270d04"
   end
 
   depends_on "beakerlib"
@@ -30,8 +30,8 @@ class Tmt < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
+    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
   end
 
   resource "click" do
@@ -45,8 +45,8 @@ class Tmt < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/73/92/a8e2479937ff39185d20dd6a851c1a63e55849e447a55e798cc2e1f49c65/filelock-3.24.3.tar.gz"
-    sha256 "011a5644dc937c22699943ebbfc46e969cdde3e171470a6e40b9533e5a72affa"
+    url "https://files.pythonhosted.org/packages/94/b8/00651a0f559862f3bb7d6f7477b192afe3f583cc5e26403b44e59a55ab34/filelock-3.25.2.tar.gz"
+    sha256 "b64ece2b38f4ca29dd3e810287aa8c48182bbecd1ae6e9ae126c9b35f1382694"
   end
 
   resource "flexcache" do
@@ -100,8 +100,8 @@ class Tmt < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/1b/04/fea538adf7dbbd6d186f551d595961e564a3b6715bdf276b477460858672/platformdirs-4.9.2.tar.gz"
-    sha256 "9a33809944b9db043ad67ca0db94b14bf452cc6aeaac46a88ea55b26e2e9d291"
+    url "https://files.pythonhosted.org/packages/19/56/8d4c30c8a1d07013911a8fdbd8f89440ef9f08d07a1b50ab8ca8be5a20f9/platformdirs-4.9.4.tar.gz"
+    sha256 "1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934"
   end
 
   resource "pygments" do

@@ -1,8 +1,8 @@
 class Clarinet < Formula
   desc "Command-line tool and runtime for the Clarity smart contract language"
   homepage "https://stackslabs.com/"
-  url "https://ghfast.top/https://github.com/stx-labs/clarinet/archive/refs/tags/v3.14.1.tar.gz"
-  sha256 "35ed02faec2cb37a3898a89280359031d22d78c45692eb1cf100c68aaff9f525"
+  url "https://ghfast.top/https://github.com/stx-labs/clarinet/archive/refs/tags/v3.15.0.tar.gz"
+  sha256 "20107913a64ee434c3c946ea72cee7b05d87b06b2ef304432c20e7c854bfab94"
   license "GPL-3.0-only"
   head "https://github.com/stx-labs/clarinet.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Clarinet < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e3941d768095bc5dc2f37bcde92c070572f1c617e9835fac8176e3c5c48f22d0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f73f2a2686bb403ae48b1677b65cc1ad450345ff4bf03675923e871567b3bbdf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f4cc7a18bff87e09a42e9f06c71aa5ae24b48de1623bb99cec084265edb8d13"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8d60873c3a1746930be801dacae40a5e48435d85f09c7d66caf2bb37ff5db6b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea3a5783f1cf1f0a1c5a95dc93a48840e4c937e66ae724c8b049fb11545428b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9bb69f8daf2b5f2123dae3590777ae484d08279b082cfcdb8e2f0804b4355b3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f70e95074fb8d6afc7e78e7bf13e28377d3528feaffef2daae6a89c5408e294f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aed6464edce8c5918cd44f475b0c7bc7f15ed5ae21dccfef578cd997a09e0f2c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d413e97d45d7e150834da6ee0ce4c97daa6693596623886a976dbc636e945b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d14ae020fad882db3895eee342e790af7354a1691fd9bbc92bdddd102192cfe9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b9f31deefa61dbf9953aec5125eda10100ea0f617c086e92be6c6ffb4b334cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85a26166b08ee4302b757ceea439bc995f10bccd7f5fcb89c9818e6088fb9052"
   end
 
   depends_on "rust" => :build

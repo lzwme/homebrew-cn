@@ -3,19 +3,18 @@ class Black < Formula
 
   desc "Python code formatter"
   homepage "https://black.readthedocs.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/11/5f/25b7b149b8b7d3b958efa4faa56446560408c0f2651108a517526de0320a/black-26.3.0.tar.gz"
-  sha256 "4d438dfdba1c807c6c7c63c4f15794dda0820d2222e7c4105042ac9ddfc5dd0b"
+  url "https://files.pythonhosted.org/packages/e1/c5/61175d618685d42b005847464b8fb4743a67b1b8fdb75e50e5a96c31a27a/black-26.3.1.tar.gz"
+  sha256 "2c50f5063a9641c7eed7795014ba37b0f5fa227f3d408b968936e24bc0566b07"
   license "MIT"
-  revision 1
   head "https://github.com/psf/black.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4ed455847f5364f7fd9dd318a1250d27d72a398e1674bc57375729e22a94b71"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5295a2171114654a31ecb70c981c3b328f9caed29ab21df50e97c71af40b4752"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b6cfdd94f6d372648d5964606869ca670b16eb5886303b16e6cf9fc37115d8d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "61c2fe3d29f9cc27fcc23c35ed67ed3ecd9d5da9a4109bde77f9a393c8d23196"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "382028dc46694e98dd268f459003fbd1ec16713fe86f2a7d3db56f344a5df6ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d441e5baecf7ab6dbfc98407a742647b589eb187ad64e7745f629b9c2301e237"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "96118b6e32413b7879c394752f3cb3ef4fd4efc3035daf0da144c063c0e942ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea8f271ff0f113fd2fd82903d2f87b9ebc0631a9eeff0451a9f01611bfe2530c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6fe48c23c3e5998e647b6f945bdfb55fe8a1cb6e8ad1f6bff911ceae087a61b1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "87884189df4bed87a8799a9859be0ae31478ed1a0063c43e7e53f7491c4a27b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e963e008be247360d59d8f9d7a6de2fd1286ea987fef75ae351cde29f32292ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9d28b297fc52782fda080508702a900e4f1b1de5dac0d1d2cf0178bd385ed8e"
   end
 
   depends_on "python@3.14"
