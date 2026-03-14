@@ -7,12 +7,12 @@ class Dotnet < Formula
 
   stable do
     # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-    url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.103.tar.gz"
-    sha256 "92fbc35b1b7ede2f4995e32aaa354c7d227e99179aaaa4661282a9d0ec977e4e"
+    url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.105.tar.gz"
+    sha256 "c634e849db52424b75c82c010116cb8290bc952431b7ccf6078ed7365d57b90e"
 
     resource "release.json" do
-      url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v10.0.103/release.json"
-      sha256 "05154d070eebb81ef7b1eff89466956db93ee42f9d03059a9eb91c0f2bd745ba"
+      url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v10.0.105/release.json"
+      sha256 "e8f1ccc6f7f1e2f5b2265bcab5a5351535288c9c5261ac7c677e865a6a547dcd"
 
       livecheck do
         formula :parent
@@ -20,19 +20,22 @@ class Dotnet < Formula
     end
   end
 
+  # Upstream has unstable tags that use the same scheme as release tags so we cannot use git strategy.
+  # Also, we currently only support building 1xx band since 2xx/3xx/4xx bands require additional work:
+  # https://github.com/dotnet/source-build/blob/main/Documentation/feature-band-source-building.md
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(/^v?(\d+\.\d+\.1\d\d)$/i)
+    strategy :github_releases
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "c7a20890580a32e135b5e72329962ed04b74bf308ceca4a945a4d562f91ff3ca"
-    sha256 cellar: :any,                 arm64_sequoia: "fb22c42da98af7d630e941fb91c0f966040ec212cea269159546b2b1d2ef85d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "660b026358811e6c4f12853ddda218f24f8bf905f825147cf0d4d12b10d9e5a3"
-    sha256 cellar: :any,                 sonoma:        "96556ea4496f6e3fa7d2657f55697ae816ed7805d84afb2cc1bd2e18f4202dd3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85bc4fb6a26d2e9205ff544afea190088a8ac6bd1c89f25e15cf70585dcb7cdc"
-    sha256                               x86_64_linux:  "f115905c3bb05f74489b893f6d05792171d531ece66bd2bcefb93c6914498673"
+    sha256 cellar: :any,                 arm64_tahoe:   "7a473a10c5f4b75cc5c4ded89263cfeb5c9d50e2520935cce75be400f5b14ffa"
+    sha256 cellar: :any,                 arm64_sequoia: "3dc28e3e729add4029a3b0b2b302c449a4321bdd1e189091d1d5cd2ee912420a"
+    sha256 cellar: :any,                 arm64_sonoma:  "410db18a7f83def7d657cd67f5e8e79e5d54d3f55226bf2ed44196d8fa55a710"
+    sha256 cellar: :any,                 sonoma:        "28ea46ab7b6fffced27292dc10790063a2d426c1792170a863fdc0704127044e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e72ff8fed4f6b10b62f78dd62fc996d3d5c3c1dde9b2c3f6eadf5b09f1c0a9a6"
+    sha256                               x86_64_linux:  "bdab4c1a8a2cd86ac784ba1d95d18ff9b9bc796c159f86655b6929e9befabee2"
   end
 
   depends_on "cmake" => :build
@@ -106,13 +109,12 @@ class Dotnet < Formula
     end
 
     args = %w[
-      --branding release
       --clean-while-building
       --source-build
       --with-system-libs all
     ]
     if build.stable?
-      args += ["--release-manifest", "release.json"]
+      args += %w[--release-manifest release.json]
       odie "Update release.json resource!" if resource("release.json").version != version
       buildpath.install resource("release.json")
     end

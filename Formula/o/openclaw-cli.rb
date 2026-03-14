@@ -1,17 +1,17 @@
 class OpenclawCli < Formula
   desc "Your own personal AI assistant"
   homepage "https://openclaw.ai/"
-  url "https://registry.npmjs.org/openclaw/-/openclaw-2026.3.11.tgz"
-  sha256 "4c6641bac62ce2ccb86d8df2d0252dc2a4769fe3ddca12c1f1ee1013ebd65dba"
+  url "https://registry.npmjs.org/openclaw/-/openclaw-2026.3.12.tgz"
+  sha256 "2ee324fc0d378deb13cf24be16a3996aec35e27f44d1a58ba9a1ded3afce3d37"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ad8c937f5a8d34ac03a47bec92d3e6186af2982d8364cb97ac8791a8ec62e460"
-    sha256 cellar: :any,                 arm64_sequoia: "73e8331ad8bcfc10c74b641ba856274dbce65bfb5eece65adc3f72682a63979b"
-    sha256 cellar: :any,                 arm64_sonoma:  "73e8331ad8bcfc10c74b641ba856274dbce65bfb5eece65adc3f72682a63979b"
-    sha256 cellar: :any,                 sonoma:        "b79abd1d0b2eb34bd8259717a3357c9c408115ab5b13ac2a529cd1adfd5628bc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "01d66ac2905acb8987daf10c9b7ed6ae34b97a1f496189159b39322f70b3784f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddf7cfb8c8610aaeab91164977a64aac6e3a7539d9197684b7c3e4f002072629"
+    sha256 cellar: :any,                 arm64_tahoe:   "7e363b80c868c3fe286b27a67c38a8d18cc8368cd0966c37333dd34e3d92aeab"
+    sha256 cellar: :any,                 arm64_sequoia: "888a48022b43564969845ef9c59067d31629afb9204c409a5f1d9558912b8da0"
+    sha256 cellar: :any,                 arm64_sonoma:  "888a48022b43564969845ef9c59067d31629afb9204c409a5f1d9558912b8da0"
+    sha256 cellar: :any,                 sonoma:        "3d3623ecafb07a111d528cfe0f69af9dae9c333ef4876f01e2b2c76e8890944e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "21263023bc0ffb366677f087f31e3aca99418070df23a800a694764a278d6b29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "875d17d4f66874d0b024fedec316d9eed0a941a77ae2fad31499f410a4cc0310"
   end
 
   depends_on "node"

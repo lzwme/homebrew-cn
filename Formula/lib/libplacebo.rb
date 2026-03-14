@@ -3,19 +3,19 @@ class Libplacebo < Formula
 
   desc "Reusable library for GPU-accelerated image/video processing primitives"
   homepage "https://code.videolan.org/videolan/libplacebo"
-  url "https://code.videolan.org/videolan/libplacebo/-/archive/v7.360.0/libplacebo-v7.360.0.tar.bz2"
-  sha256 "265a8888d4bc169b39c53315f1ba682249f2b0917e0438c1bb241aef822d8744"
+  url "https://code.videolan.org/videolan/libplacebo/-/archive/v7.360.1/libplacebo-v7.360.1.tar.bz2"
+  sha256 "937aa5eeea596798b3274d362de2e3bd32bc537a66d149dd85043349c74dffb6"
   license "LGPL-2.1-or-later"
   compatibility_version 1
   head "https://code.videolan.org/videolan/libplacebo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3a8a35fa1ce671eb7ecde3d044478fdffe1a724e6b55b90695dccac207b82a12"
-    sha256 cellar: :any, arm64_sequoia: "cace166b191b70d9f47458f466d91814794740ee4cc16f18065d37d8f34ad9b8"
-    sha256 cellar: :any, arm64_sonoma:  "2affe81d27e8caa4195f5dd2a9a3b283a3ed8f724b0c844f60be9c1314322c6a"
-    sha256 cellar: :any, sonoma:        "11a39dfcee3c05beae26cb9261889b72f0a64724bd767328e75a5d248c676065"
-    sha256               arm64_linux:   "114537ce5349b2e56931efca33b271eb56977c6b427d32cf503c5c628b77dc5a"
-    sha256               x86_64_linux:  "b89112434adccbf8ca2e86554949afdd652f3c41b8a3b96438ac7b9fd4927b1e"
+    sha256 cellar: :any, arm64_tahoe:   "6575f7e22f75c946f5c831d2ff130b89aa275a2cdd4dbe7a0204590513b87b25"
+    sha256 cellar: :any, arm64_sequoia: "1fd6531a9de50d0121d1ff4ec67163dfb1dcb8c682d96c6587b960f04be0fe34"
+    sha256 cellar: :any, arm64_sonoma:  "8b89e9ee2c276bded52d69bbfc3b645625c975e9edc3ba93873c18d661ef241c"
+    sha256 cellar: :any, sonoma:        "a6a5f1fefe34a81d3fde35cdab8481899afc47b90efff12b912b0b1675f90861"
+    sha256               arm64_linux:   "b87acf6094dc3a89d9a942259ae453fec22a770aa3fab05dba2e3c2c71702558"
+    sha256               x86_64_linux:  "145b3ac56e39a1a925671872f5ec1176c568d518c643cf689ae66f33494d43b7"
   end
 
   depends_on "fast_float" => :build

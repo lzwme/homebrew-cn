@@ -2,17 +2,17 @@ class Openfast < Formula
   desc "NREL-supported OpenFAST whole-turbine simulation code"
   homepage "https://openfast.readthedocs.io"
   url "https://github.com/openfast/openfast.git",
-      tag:      "v4.2.1",
-      revision: "2daa99a0f9f573642816d6f52c07a2e3b77a85f1"
+      tag:      "v5.0.0",
+      revision: "2895884d2be01862173c88d70f86b358d2f1a50a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1b295f67e5403346dbb3201edc351f6d7cb42b8f009b8d32289d6ce67e6d9363"
-    sha256 cellar: :any,                 arm64_sequoia: "ef3c569e64e2fa7434ce860d14049bf812183d38d469a4c9c2bed1a4f04aca5b"
-    sha256 cellar: :any,                 arm64_sonoma:  "4ea0f3e90275a85defa503e43f2377d1cce3ecc433a6f56289ec4aad90abefae"
-    sha256 cellar: :any,                 sonoma:        "c5f83e3a2e0f29ad18ed0b85ba3a31702756dcc56361e66435881a54599bd663"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6fd69afc4c9184ecf7e3ed13d022745b411e10eb76e9264d6769e6198cb17930"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c18fe3227898853f6490992b2cd7138a0f0b743d893b595c9805a4a56e3b504a"
+    sha256 cellar: :any,                 arm64_tahoe:   "6ecde78845e6ac56c38f2fa722a7c87704836d010bf68bc97126cf18ca2684fd"
+    sha256 cellar: :any,                 arm64_sequoia: "56d2e317f70a8aa4127817299328a11e0372badb8fbde48d61c5cbcdb9a9231c"
+    sha256 cellar: :any,                 arm64_sonoma:  "35f2cc68a1471ae5441ce13202359fdd9425e3427a1eb906fcaf3b6cc33bd339"
+    sha256 cellar: :any,                 sonoma:        "5a606d97ad7687766f227121be94676b5d0b9f3e46f8ee4bee95ccf28d69d815"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b3ab5b1825081dab92545f3b2d80592e4adc400e6df581fdd9e76e8ea354aa2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24eb63f4b4eb5324399d775bd67938af304d1f92c1e26cbad2ff418c00c6c7eb"
   end
 
   depends_on "cmake" => :build

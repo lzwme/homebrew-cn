@@ -3,18 +3,18 @@ class Hf < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/d5/7a/304cec37112382c4fe29a43bcb0d5891f922785d18745883d2aa4eb74e4b/huggingface_hub-1.6.0.tar.gz"
-  sha256 "d931ddad8ba8dfc1e816bf254810eb6f38e5c32f60d4184b5885662a3b167325"
+  url "https://files.pythonhosted.org/packages/b4/a8/94ccc0aec97b996a3a68f3e1fa06a4bd7185dd02bf22bfba794a0ade8440/huggingface_hub-1.7.1.tar.gz"
+  sha256 "be38fe66e9b03c027ad755cb9e4b87ff0303c98acf515b5d579690beb0bf3048"
   license "Apache-2.0"
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5d451bec59c74b5a3ddc10fa438968d8fd3f1c26054c84fc1def01fc313bcddf"
-    sha256 cellar: :any,                 arm64_sequoia: "3aaaf3c6261a02f471df2cf5fcff02a0488b22c40d929f93a8638b3b9e65e415"
-    sha256 cellar: :any,                 arm64_sonoma:  "56349b0e9a551d13b4163c7e7737745c51a0038f50cc8b5fc343b3380823506e"
-    sha256 cellar: :any,                 sonoma:        "9e9b944d705a82b309b260a508cfc413080fc80ad06edc4bb2048e38451d88a5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c82f3a54293940560e2473d0cea1b32aa76d2c48c39134866d21c2f86e171da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7df20bcc8703a84ce0d77579cf03daf91f2d7dae93e9b47f5ba5c47638b2119"
+    sha256 cellar: :any,                 arm64_tahoe:   "48c25735721308a20159ebbe177f288c40ad1dee16caf200b34ae116278eef51"
+    sha256 cellar: :any,                 arm64_sequoia: "373d96a7d6128938f9f9d665d8062d84a8d95d8ea6f0e09f12163463a7c469dc"
+    sha256 cellar: :any,                 arm64_sonoma:  "4ec744071a830ba87dcfacad35f6341fc9e81ba2d06dd14b20b0cc0faa17701b"
+    sha256 cellar: :any,                 sonoma:        "ff16f14fa39f1d150311917fab0fd73021e54afc58935f29c636b3f9b0249446"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0161912e344b4149b6fde14f2a9a377833f70ab25b02eff3bc2c4dbb092de398"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03a30467a96d609c3923a83242b6e8fe1b8767b798f4f920a5416c94bf2f17c8"
   end
 
   depends_on "pkgconf" => :build
@@ -48,8 +48,8 @@ class Hf < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/77/18/a1fd2231c679dcb9726204645721b12498aeac28e1ad0601038f94b42556/filelock-3.25.0.tar.gz"
-    sha256 "8f00faf3abf9dc730a1ffe9c354ae5c04e079ab7d3a683b7c32da5dd05f26af3"
+    url "https://files.pythonhosted.org/packages/94/b8/00651a0f559862f3bb7d6f7477b192afe3f583cc5e26403b44e59a55ab34/filelock-3.25.2.tar.gz"
+    sha256 "b64ece2b38f4ca29dd3e810287aa8c48182bbecd1ae6e9ae126c9b35f1382694"
   end
 
   resource "fsspec" do
@@ -63,8 +63,8 @@ class Hf < Formula
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/8b/cb/9bb543bd987ffa1ee48202cc96a756951b734b79a542335c566148ade36c/hf_xet-1.3.2.tar.gz"
-    sha256 "e130ee08984783d12717444e538587fa2119385e5bd8fc2bb9f930419b73a7af"
+    url "https://files.pythonhosted.org/packages/09/08/23c84a26716382c89151b5b447b4beb19e3345f3a93d3b73009a71a57ad3/hf_xet-1.4.2.tar.gz"
+    sha256 "b7457b6b482d9e0743bd116363239b1fa904a5e65deede350fbc0c4ea67c71ea"
   end
 
   resource "httpcore" do
@@ -138,11 +138,11 @@ class Hf < Formula
     resource("hf-xet").stage do
       # Use native-tls instead since building bundled aws-lc is tricky to do indirectly within superenv.
       # Can consider switching if system copy is supported https://github.com/aws/aws-lc-rs/issues/936
-      inreplace "cas_client/Cargo.toml", 'default = ["rustls-tls"]', 'default = ["native-tls"]'
+      inreplace "xet_client/Cargo.toml", 'default = ["rustls-tls"]', 'default = ["native-tls"]'
 
       if ENV.effective_arch == :armv8
         # Disable sha2-asm which requires a minimum of -march=armv8-a+crypto
-        inreplace "data/Cargo.toml",
+        inreplace "xet_data/Cargo.toml",
                   'sha2 = { workspace = true, features = ["asm"] }',
                   "sha2 = { workspace = true }"
       end

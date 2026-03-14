@@ -150,21 +150,6 @@ class Powershell < Formula
     rm publish_path/diasym_file, force: true
   end
 
-  def caveats
-    <<~EOS
-      CurrentUser configs are at:
-        ~/.local/share/powershell/
-      CurrentUserAllHosts configs are at:
-        ~/.config/powershell/
-
-      To use Homebrew in PowerShell, run:
-        New-Item -Path (Split-Path -Parent -Path $PROFILE.CurrentUserAllHosts) -ItemType Directory -Force
-        Add-Content -Path $PROFILE.CurrentUserAllHosts -Value '$(#{HOMEBREW_PREFIX}/bin/brew shellenv) | Invoke-Expression'
-
-      To add Homebrew pwsh completions see: https://docs.brew.sh/Shell-Completion#configuring-completions-in-pwsh
-    EOS
-  end
-
   test do
     version_output = shell_output("#{bin}/pwsh -NoLogo -NoProfile -c '$PSVersionTable.PSVersion.ToString()'").chomp
     pwsh_version_output = shell_output("#{bin}/pwsh -Version")

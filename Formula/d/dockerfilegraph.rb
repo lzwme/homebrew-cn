@@ -1,18 +1,18 @@
 class Dockerfilegraph < Formula
   desc "Visualize your multi-stage Dockerfiles"
   homepage "https://github.com/patrickhoefler/dockerfilegraph"
-  url "https://ghfast.top/https://github.com/patrickhoefler/dockerfilegraph/archive/refs/tags/v0.20.0.tar.gz"
-  sha256 "5841ab981e1062f508198aa728a2dd5a63f0c8608d2894509a086f7206c1bafb"
+  url "https://ghfast.top/https://github.com/patrickhoefler/dockerfilegraph/archive/refs/tags/v0.21.0.tar.gz"
+  sha256 "7593483acf26aefb42b2bc9eeea1d42d2262732d4c88298d1dff78c52278c48f"
   license "MIT"
   head "https://github.com/patrickhoefler/dockerfilegraph.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41a6f66125b4968b3f277c8ebbe939e8a8b15472a6b246136302bee3ed6d399a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41a6f66125b4968b3f277c8ebbe939e8a8b15472a6b246136302bee3ed6d399a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41a6f66125b4968b3f277c8ebbe939e8a8b15472a6b246136302bee3ed6d399a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "35f33ceb147afe595ce93bb38c3cefa254113f5827d0bdbb2145a88eb9594476"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "388ada6c3f5a6a2c5d2673c8d77d4917ee508fc85d32cc97eccc6fb2f085c3bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab0280b441c10a2326e7097f0fcfcbe39a9c1cf801c08856b26c4baab99e5743"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ffb6f777419e29eaaa18813927f69177c44783ab45883fc1580f6e62d2a4db7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ffb6f777419e29eaaa18813927f69177c44783ab45883fc1580f6e62d2a4db7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ffb6f777419e29eaaa18813927f69177c44783ab45883fc1580f6e62d2a4db7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b26d495598088cb22b7149734a9f5714d22da02edc921dc0d57c4d4a7ef85b31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56434b1d10e42f97edbe1cd176786fd86f91307f8a468d2c46425f16a688ba58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "693ecc915aec2a80cb833d2ee5d0975f302e147bdbf2dcafcc7a11c85df9e5cd"
   end
 
   depends_on "go" => :build

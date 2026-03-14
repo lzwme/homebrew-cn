@@ -6,7 +6,7 @@ class Macvim < Formula
   version "9.1.1887"
   sha256 "82148b9f7fa4c83e18ba7fea3f65289b1eb3e2775a4d17a4c3e0fe16087e0e53"
   license "Vim"
-  revision 2
+  revision 3
   head "https://github.com/macvim-dev/macvim.git", branch: "master"
 
   # The stable Git tags use a `release-123` format and it's necessary to check
@@ -26,17 +26,17 @@ class Macvim < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7892d48385e201d848071dc0e16420e817650997b6307f3eaabfc8c82135b18f"
-    sha256 cellar: :any, arm64_sequoia: "24d923d34a00e2b4ba031371360c7ada65ca9747465916d0dc00e17d7932c614"
-    sha256 cellar: :any, arm64_sonoma:  "ad593644232acef1857e7e062d1dab04d2a676eac941b81574803cce470dd529"
-    sha256 cellar: :any, sonoma:        "2ad9efbba6e6e08a7f1dd9bfec31f4dc81929b3cef33da92a17142631e3b1426"
+    sha256 cellar: :any, arm64_tahoe:   "26fcaa0a6d63f8b95e7c6f944db2549b109bcb10f0bad9c1b1c73435323e7ae6"
+    sha256 cellar: :any, arm64_sequoia: "57c3bbef456973f473b27a88a91bb46bc938beb8361cad3a0b840d5542518cae"
+    sha256 cellar: :any, arm64_sonoma:  "53685fddc743df4384d6c5eee1d7d3de91b4c3fa28e1cb75021e790ce0f552b0"
+    sha256 cellar: :any, sonoma:        "f7ad54cdbcbbf6c825a07529fc388c6dba70373be6c528d66c1ef748258c4907"
   end
 
   depends_on "gettext" => :build
   depends_on "libsodium" => :build
   depends_on xcode: :build # for xcodebuild
   depends_on "cscope"
-  depends_on "lua"
+  depends_on "lua@5.4" # Lua 5.5 doesn't work for now, see https://github.com/vim/vim/issues/19639
   depends_on :macos
   depends_on "python@3.14"
   depends_on "ruby"
@@ -70,7 +70,7 @@ class Macvim < Formula
                           "--with-local-dir=#{HOMEBREW_PREFIX}",
                           "--enable-cscope",
                           "--enable-luainterp",
-                          "--with-lua-prefix=#{Formula["lua"].opt_prefix}",
+                          "--with-lua-prefix=#{Formula["lua@5.4"].opt_prefix}",
                           "--enable-luainterp",
                           "--enable-python3interp",
                           "--disable-sparkle",

@@ -3,20 +3,20 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/70/f1/4af4528dabb4b81b4defc51c020b1ca2d49887637cfc333dc059111ffd85/kimi_cli-1.19.0.tar.gz"
-  sha256 "69ade237d56c8e3534495f09b5014105344c73d0d0df61027a5572a6e1ea4e5a"
+  url "https://files.pythonhosted.org/packages/79/3f/002077b60d6ec3257f4aef0c2dc76a4f72c528575e32d3f3bbc4abf49a7a/kimi_cli-1.21.0.tar.gz"
+  sha256 "104a6889da00518aaba90c425a9771691383ea19a8ddeb0c36432338e3eb6363"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "135092e97cfb22dc151713e1a677b9ef7043730a365a172cc2a239215650b3be"
-    sha256 cellar: :any,                 arm64_sequoia: "d2c1bc4631d545e98ec5f54848cae2b14f32a35bd82079da66c9f32ba7320d37"
-    sha256 cellar: :any,                 arm64_sonoma:  "292c71d318c414bfe7644793a295f7dd6ef333f411df9f05fd8c55090fb3f410"
-    sha256 cellar: :any,                 sonoma:        "9c3e23d270a96776e06a676fd13c2ebc004467bddcfff6cf3a189378f4f929c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c1b9461b31491c4876327aac0934000dac46469f924444155a5ee4394de6a63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9782eeeddfd91b116e4db5edf55686236aa8bf61e98dd10eb6d6fbe2c180d6c4"
+    sha256 cellar: :any,                 arm64_tahoe:   "a0043d50e4e57e52f4019026482d83ebb16ea3f63a72e95122b35235f8ebc703"
+    sha256 cellar: :any,                 arm64_sequoia: "04893c8eb1bb0e2328777671a1f7800331bfbd990b53b70e4d7af8350a6204cf"
+    sha256 cellar: :any,                 arm64_sonoma:  "a0da65c2a3b6a217ac752acc075a3e61446bc0ece544c9ae2c72904d23d3c0c4"
+    sha256 cellar: :any,                 sonoma:        "3e30511f6c11f64e190553c8476cd6f7bc066cb0be3a36860a61b28ef1777333"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "157cb84f06d8898dc9647d69cc54c4a159d8a4a84a909296101d71be68369ad1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fdc0f27e18f4996998a1915155cfa7c0b285c99f61cdb5dc53d420a8e647957"
   end
 
   depends_on "pkgconf" => :build
@@ -203,13 +203,13 @@ class KimiCli < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/7d/59/7371175bfd949abfb1170aa076352131d7281bd9449c0f978604fc4431c3/google_auth-2.49.0.tar.gz"
-    sha256 "9cc2d9259d3700d7a257681f81052db6737495a1a46b610597f4b8bafe5286ae"
+    url "https://files.pythonhosted.org/packages/ea/80/6a696a07d3d3b0a92488933532f03dbefa4a24ab80fb231395b9a2a1be77/google_auth-2.49.1.tar.gz"
+    sha256 "16d40da1c3c5a0533f57d268fe72e0ebb0ae1cc3b567024122651c045d879b64"
   end
 
   resource "google-genai" do
-    url "https://files.pythonhosted.org/packages/9b/ba/0b343b0770d4710ad2979fd9301d7caa56c940174d5361ed4a7cc4979241/google_genai-1.66.0.tar.gz"
-    sha256 "ffc01647b65046bca6387320057aa51db0ad64bcc72c8e3e914062acfa5f7c49"
+    url "https://files.pythonhosted.org/packages/a2/07/59a498f81f2c7b0649eacda2ea470b7fd8bd7149f20caba22962081bdd51/google_genai-1.67.0.tar.gz"
+    sha256 "897195a6a9742deb6de240b99227189ada8b2d901d61bdfba836c3092021eab6"
   end
 
   resource "google-re2" do
@@ -313,8 +313,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/7a/90/e1e4afe8737f3ee9f201b1f94e40a284cbdcc8085d0edb87701beb25b643/kosong-0.44.0.tar.gz"
-    sha256 "354d4d3bbfb13e5483ffb706a1641e94428c8a9da583e9d8b9f7eaed83139fff"
+    url "https://files.pythonhosted.org/packages/85/3e/95d4becea029073234299e602ac229e1852118a3946a2c559475f08dbad1/kosong-0.45.0.tar.gz"
+    sha256 "a7d9cb945af29f2ae12d6d18f10eb2f2feee1bc620454b63f1d2e6854c24fb8b"
   end
 
   resource "lazy-object-proxy" do
@@ -535,11 +535,6 @@ class KimiCli < Formula
   resource "ripgrepy" do
     url "https://files.pythonhosted.org/packages/80/8a/023e7c432634a6090a26ace319a37a2a73aac8fa6a7bf142fd7b3ec8fd3b/ripgrepy-2.2.0.tar.gz"
     sha256 "4c43c61384f257660007acd271a5d8e4abe9be0b069c418d091f7299e080ca9d"
-  end
-
-  resource "rsa" do
-    url "https://files.pythonhosted.org/packages/da/8a/22b7beea3ee0d44b1916c0c1cb0ee3af23b700b6da9f04991899d0c555d4/rsa-4.9.1.tar.gz"
-    sha256 "e7bdbfdb5497da4c07dfd35530e1a902659db6ff241e39d9953cad06ebd0ae75"
   end
 
   resource "scalar-fastapi" do

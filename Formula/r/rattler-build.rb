@@ -1,8 +1,8 @@
 class RattlerBuild < Formula
   desc "Universal conda package builder"
   homepage "https://rattler.build"
-  url "https://ghfast.top/https://github.com/prefix-dev/rattler-build/archive/refs/tags/v0.58.4.tar.gz"
-  sha256 "5011a395a745de0b9881317766c077f3c27923215a6561e3a468b4913899b348"
+  url "https://ghfast.top/https://github.com/prefix-dev/rattler-build/archive/refs/tags/v0.59.0.tar.gz"
+  sha256 "7f5bbd1052c7f79f793d03ec7c0b9e100c36be4776dedcc6adb0ac8729bf84de"
   license "BSD-3-Clause"
   head "https://github.com/prefix-dev/rattler-build.git", branch: "main"
 
@@ -15,12 +15,12 @@ class RattlerBuild < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec96f21febc718f7b9d16f6fb2a9c385237335d06c9f1467e3c626143bed6b44"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6820187948c7dc26be0f7f3854da04e54961b342790b5bd6cf5eb40f43fc534c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d81fe7da6e14d1f5dd14a0a394dccdce31567bbc385aa702a6b6ea34c29e63ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "edfe3cce2db8be57cb06a450cc3236c19939c25a4d510a9184a9800d0e7c1582"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4033fa766121cf62f3646f8d50b569b67f253e4104c0606ab2912b4ef9c323b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26b0f16f1b875ab95df55db0c9d638b5e363efcaab670123fd9b79890baa366b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a2668cf4ad0ad754a39a4c943552bdf3cd391e7edbbd1371d5cf177f9b20c0b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c65e34b2a8da7fdb91738e5aefac3a16e97ba8b50ec8bf44b38ad00df4c2a4c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0152749e089743e06b2dd5339bf1f65a8bed37813ac4c1a1387aa569b523cbe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "62a4041e486635826620db347d4f21de6081794d0217864acef9a0105751ea04"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f31bf726df733c5728524dc7ef09d76c07f76fbab6bd2b7d8af6c1700185a598"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5817083f981a748b73c1662e5413da11a30f7c371d0011c2f23bbd68b07d4e83"
   end
 
   depends_on "pkgconf" => :build

@@ -1,8 +1,8 @@
 class Pypy < Formula
   desc "Highly performant implementation of Python 2 in Python"
   homepage "https://pypy.org/"
-  url "https://downloads.python.org/pypy/pypy2.7-v7.3.20-src.tar.bz2"
-  sha256 "bf958498445f7bf78338723c8d86bd6711e8792461725d2481df77a9566a3e62"
+  url "https://downloads.python.org/pypy/pypy2.7-v7.3.21-src.tar.bz2"
+  sha256 "23537c62e875ad1a3e675c64d4435eff392ea20843e20d690fd1400b79363d64"
   license "MIT"
   head "https://github.com/pypy/pypy.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Pypy < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "0ba3805b81f3079a7f8362fb14944c44c06ee75533b02920612b63b9a86d5ea7"
-    sha256 cellar: :any,                 arm64_sequoia: "5fdce3f674d0231b60194b117508689c95414c1952db55c94433ad0e5eedc2e3"
-    sha256 cellar: :any,                 arm64_sonoma:  "4d37b0fc2c757189f5a03e03dd065cfb2f07cb477eee673aaea26b8b7fa1e87f"
-    sha256 cellar: :any,                 sonoma:        "5a378a0858c9e944998f86d10362213e339fd070fa6ce6acea9a75dbb9dd5f7f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45a456f6c09456d006c6c7657ab117ab8d7abe683d8debf8c7ff1c12bd452ab1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52d94f4fba547ad493d023b2a263404e2916295c7c1c4f025cc02e2ee5ad6a02"
+    sha256 cellar: :any,                 arm64_tahoe:   "36d9cf694cfd593c6e7bee6062749b88bc13b585e8ae3e9db8fc5e3eb4dd4a31"
+    sha256 cellar: :any,                 arm64_sequoia: "c9efcb91aa406ca6c2c618712013655bb873f18047dee6b7af9ac4a0d716d26d"
+    sha256 cellar: :any,                 arm64_sonoma:  "d15a72ab63690f79f685a78f6f9a5fa4b8a1c77f85d014431ae5e48f210806d9"
+    sha256 cellar: :any,                 sonoma:        "40d7a665ea9dcf3f56738d213659dfeb14b9bd7f1db70bc5f729577e368f1e5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1056baf16f2311a1b2ac1b3a6cffaf5974133d1e83b3bb0cf222689689348cd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6eca856704967e468bdb8b64ccb32bf27996ca91565cbe1a088cd8064714e45c"
   end
 
   depends_on "pkgconf" => :build
@@ -78,8 +77,8 @@ class Pypy < Formula
   # - Disable Linux tcl-tk detection since the build script only searches system paths.
   #   When tcl-tk is not found, it uses unversioned `-ltcl -ltk`, which breaks build.
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/pypy/tcl-tk.diff"
-    sha256 "d17725c11842d83b5432312348715241b1b402173cd68166620c1b6bd8162fbd"
+    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/f3c99d21d0b8fe79a579ef1a7405f10fa18ccde8/Patches/pypy/tcl-tk.diff"
+    sha256 "ed10c9fc9d3a5b8f43ef51c23224605e0ac7bca07aa2e8dc20335b69d13a082f"
   end
 
   def install
@@ -94,8 +93,8 @@ class Pypy < Formula
     tcltk = Formula["tcl-tk@8"]
     inreplace "lib_pypy/_tkinter/tklib_build.py" do |s|
       s.gsub! "['/usr/local/opt/tcl-tk/include']", "[]"
-      s.gsub! "(homebrew + '/include')", "('#{tcltk.opt_include}/tcl-tk')"
-      s.gsub! "(homebrew + '/opt/tcl-tk/lib')", "('#{tcltk.opt_lib}')"
+      s.gsub! "(homebrew + '/opt/tcl-tk@8/include/tcl-tk')", "('#{tcltk.opt_include}/tcl-tk')"
+      s.gsub! "(homebrew + '/opt/tcl-tk@8/lib')", "('#{tcltk.opt_lib}')"
     end
 
     if OS.mac?

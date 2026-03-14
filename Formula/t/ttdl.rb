@@ -1,17 +1,17 @@
 class Ttdl < Formula
   desc "Terminal Todo List Manager"
   homepage "https://github.com/VladimirMarkelov/ttdl"
-  url "https://ghfast.top/https://github.com/VladimirMarkelov/ttdl/archive/refs/tags/v4.25.1.tar.gz"
-  sha256 "90ce00a3b4c83f1e856e006680f8f48de4ac548d39ec6334358974e62c55078d"
+  url "https://ghfast.top/https://github.com/VladimirMarkelov/ttdl/archive/refs/tags/v5.0.0.tar.gz"
+  sha256 "7b35b6c14382ae1e26d92242373fbf3201bf0c6cb3df56f03ab3b99c14c20784"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "413f156a0732fb22fecca5321b9ad6e0975f5dcfffedfb4d550739a53ef6b56f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6c4ff793cbc49c76f4ded175b7c8d82b7e9492764de8bf869a1eb0c82f87442"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67bf45fe11ba675e91cd2855833ee074c54b4f652344ea174b9218c4e3e5c75c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4ed7694a387beac509b1747d65d6347114294f7b5edaa5d1affbd61f3938cc14"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "59abbe175ad8e77431144a8beea7166913182be8e1d6d4d704a5e56e57822abc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8023f9077ff272e0e4866b5e1928cdd184ac2a5d86c7dc672d2ad397a025484f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "946e4221f76fb54c558347fa62ee85542abfc555f58e75205c47ac4a84f5510e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a94e54e51e6d3df3678616d9ec8aac3d9da3a0d05ab817291eaabc53218c5ae8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e4987b0a2f5c4e0b2153b98a23931684d2282cfd3d5d15aba24488435e157de4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f332a6d6b1ad96582ff657f8efceed66fde5ba2672d62f7db25f1084a8a6b35f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "54b5e82f3aa323d539d0f9d1286857d4069fae510afcb12abcd72b9fd1896844"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6286f5112b9f4ea60c7dbd966d64c4d7744971fd3d266bd67421ebb86950a69"
   end
 
   depends_on "rust" => :build

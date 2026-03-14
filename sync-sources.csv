@@ -977,7 +977,7 @@ Homebrew-homebrew-core/Formula/c/checkbashisms.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/checkdmarc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/checkmake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/checkov.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/c/checkpwn.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/checkpwn.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/checkstyle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cheops.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cherrytree.rb, Homebrew/homebrew-core, 0
@@ -8269,6 +8269,7 @@ Homebrew-homebrew-core/Formula/z/zug.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zurl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zvbi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zx.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/z/zxc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zxcc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zxing-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zydis.rb, Homebrew/homebrew-core, 0
@@ -15715,6 +15716,7 @@ Homebrew-homebrew-cask/Casks/w/writerside.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wrkspace.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wwdc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wxmacmolplt.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/x/x-air-edit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/x-moto.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/x-swiftformat.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/x2goclient.rb, Homebrew/homebrew-cask, 0

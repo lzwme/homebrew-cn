@@ -1,9 +1,9 @@
 class Plzip < Formula
   desc "Data compressor"
   homepage "https://www.nongnu.org/lzip/plzip.html"
-  url "https://download.savannah.gnu.org/releases/lzip/plzip/plzip-1.12.tar.gz"
-  mirror "https://download-mirror.savannah.gnu.org/releases/lzip/plzip/plzip-1.12.tar.gz"
-  sha256 "50d71aad6fa154ad8c824279e86eade4bcf3bb4932d757d8f281ac09cfadae30"
+  url "https://download.savannah.gnu.org/releases/lzip/plzip/plzip-1.13.tar.gz"
+  mirror "https://download-mirror.savannah.gnu.org/releases/lzip/plzip/plzip-1.13.tar.gz"
+  sha256 "64d49dde20daa5fdff2b3ff28e3348082de10dd54eb10df6da7d1bc6c7a6db64"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,13 +12,12 @@ class Plzip < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "87bd7ffcf85a0d9cbf1ed155a5514e45867d84768ddaae9fad6bd4573f33a8b5"
-    sha256 cellar: :any,                 arm64_sequoia: "8dfc51f42cbb49c2d4b2a845fa7c8e16d1336344494472dad00e9aea1c8ff445"
-    sha256 cellar: :any,                 arm64_sonoma:  "c8de2539897f2006b34d24215dafcebec16f54533dc69c532eb3d6a42c2ef2d8"
-    sha256 cellar: :any,                 sonoma:        "e97fc21b0ca62568f80f5271108b7df9e4c75b5a4684675c616648a385a52659"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f889ea88d7b79ae7a9b23d8a81f7beee6758003716a8f7399d769c06aa971c5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3199f435251873f53c8830e73bf813bcdbfc920cab72d6d6fa5170df4998e3e1"
+    sha256 cellar: :any,                 arm64_tahoe:   "7e9a39d0c7a76d4dfc59bf8c4a57ef23f7fc5dec279cfbda606ab6d29c4ee524"
+    sha256 cellar: :any,                 arm64_sequoia: "a359a880525cbbdecf7b43d17beb3063e4d143708739cc656fc55d51799fbb43"
+    sha256 cellar: :any,                 arm64_sonoma:  "bc9d8f45b2c08cd119591fe7c2238d4f943eaa70f6abc269d6c58d26439a4e98"
+    sha256 cellar: :any,                 sonoma:        "9a63b775274a845dc0ef78d08c50dc1f8888892067da217c7b8ece851b3fb408"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "53d5184e928ac968868bb2cb8cf1c490cacc9e1761f68810285d9b05d3f8cfef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57747a3638e54f01df731df623f5f63495fbdfe219067a37cda1807e0ff665f6"
   end
 
   depends_on "lzlib"

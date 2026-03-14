@@ -1,8 +1,8 @@
 class Threadweaver < Formula
   desc "Helper for multithreaded programming"
   homepage "https://api.kde.org/threadweaver-index.html"
-  url "https://download.kde.org/stable/frameworks/6.23/threadweaver-6.23.0.tar.xz"
-  sha256 "d4826e0d8faf135655d15969b27d0fe6fc746a6d308ea34f04bed3de60518b0b"
+  url "https://download.kde.org/stable/frameworks/6.24/threadweaver-6.24.0.tar.xz"
+  sha256 "aa7608961397e7cdbdc8362ae9d1eaba6c5ba9dae3a84c11830fce155e5ed46f"
   license "LGPL-2.0-or-later"
   head "https://invent.kde.org/frameworks/threadweaver.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Threadweaver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b07a83177d4c7a50aa4d7a3575cdffb81e0456a1fb894d92b81728c7b774a2da"
-    sha256 cellar: :any,                 arm64_sequoia: "ccdb0ff45dc1d7b6bcbed844930e2cabd91d0fac00946c4d1cc0da4852d1726a"
-    sha256 cellar: :any,                 arm64_sonoma:  "0e8e038c0434ba92ab78c415c6c349a2651109daca230947ab4270a675e24615"
-    sha256 cellar: :any,                 sonoma:        "b0b1b3ce4036ae4ea595d704812e874bfad03013d5c3f0ef3d082e232d77982f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "185be95814862b75174d056b0fb92dcb2e701a04107b10441554b82aef21d4f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5d241174d7680fbd8de5b7ba5294e92b9d4f00dd734de6283d03add35e8560c"
+    sha256 cellar: :any,                 arm64_tahoe:   "96634fc1797cfdf0009c510fb658d620def83bba93ec617ff53669ce3e304ac4"
+    sha256 cellar: :any,                 arm64_sequoia: "3a4817cbd6068e9f9d75baf1d8530d02a266a207d65867119857e231a19437cc"
+    sha256 cellar: :any,                 arm64_sonoma:  "e889bd2f4a2add16aadde384dd0dc10a980bb2b83dbded04117e5af9a60f3bf3"
+    sha256 cellar: :any,                 sonoma:        "3a8a7a60b486730a83767e823365a9696acd3a3f0c9b91d5f6dbd3b41ce640da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5e67903a8c3b5ded64f362ad9f007f6c5b7700bf86fad6d792840de6c63aa57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9444de633eeba91a47b674fd6b4be945e59559783aa7c2cba16eaf5028fe7fee"
   end
 
   depends_on "cmake" => [:build, :test]
