@@ -1,6 +1,6 @@
 cask "ghostty@tip" do
-  version "15218,e75f8956c576ea8acf6ee4e70d45f918738e7512"
-  sha256 "89a9ae04400691be66e9bd23cad848b6f422bdc6bbc53eaed1853edbfdcbc642"
+  version "15238,952fbce0e50ded8fd8e6ee5f64e9650af962cd19"
+  sha256 "cb1106d54095acef0d27eb597419e4a6384a233d21498d98b999a7de3d8d956f"
 
   url "https://tip.files.ghostty.org/#{version.csv.second}/Ghostty.dmg"
   name "Ghostty"
@@ -47,7 +47,8 @@ cask "ghostty@tip" do
   zsh_completion "#{appdir}/Ghostty.app/Contents/Resources/zsh/site-functions/_ghostty"
 
   zap trash: [
-    "~/.config/ghostty/",
+    "~/.cache/ghostty",
+    "~/.config/ghostty",
     "~/Library/Application Support/com.mitchellh.ghostty",
     "~/Library/Caches/com.mitchellh.ghostty",
     "~/Library/HTTPStorages/com.mitchellh.ghostty",

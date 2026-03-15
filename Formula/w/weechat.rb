@@ -7,21 +7,21 @@ class Weechat < Formula
   head "https://github.com/weechat/weechat.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "0c43de78771adcbc792ba4da4af78a915def6cc272b557c1f80016f63e700077"
-    sha256 arm64_sequoia: "c1e9debdd1af7dc7e3c1300a59bbc9a68ec6aa53996c87153994a8b45bb69279"
-    sha256 arm64_sonoma:  "1e602b4f506a84cb7067739b4d77726357531abca288943f606d9aba7240634a"
-    sha256 sonoma:        "5796454f3891b552099d995d147ea429419a673cc6cce016dfac65c2a852c454"
-    sha256 arm64_linux:   "0c3dceb38f9465bba564acbd6587af01b9f6c33289f942f6bb25f9f26aa4d71f"
-    sha256 x86_64_linux:  "2d336a88c9e9c221c572d5d44e2684ed0dce4d7868835f71c2b0c3aeafcb6fc8"
+    rebuild 2
+    sha256 arm64_tahoe:   "6c54eb0323414f6cffc92dee72eee51b25d748747298ec2f1d451393d7888c49"
+    sha256 arm64_sequoia: "116ac23fe6e3f3f74b1d8236b9be73294f73421aea4175110b9a69251456a5f4"
+    sha256 arm64_sonoma:  "40cc10aa0c20c2490d66d5040a6c3e4f0190e0b38cf538f88cdd78921403f0ae"
+    sha256 sonoma:        "7f80e8578ad21f50127e991556392b8f300a063e6a508e00a5b670d1c055eab1"
+    sha256 arm64_linux:   "cbfd2a909f72770e8aa95315d37fb4b1e0c8911e4b1ecc8bfba92430217889ce"
+    sha256 x86_64_linux:  "2bc33dc30ba07196534b3db48bfc655404da909a733c309a493c600d3b5c86bb"
   end
 
   depends_on "asciidoctor" => :build
   depends_on "cmake" => :build
   depends_on "gettext" => :build # for xgettext
   depends_on "pkgconf" => :build
-  depends_on "aspell"
   depends_on "cjson"
+  depends_on "enchant"
   depends_on "gnutls"
   depends_on "libgcrypt"
   depends_on "lua"
@@ -46,6 +46,7 @@ class Weechat < Formula
   def install
     tcltk = Formula["tcl-tk"]
     args = %W[
+      -DENABLE_ENCHANT=ON
       -DENABLE_GUILE=OFF
       -DENABLE_JAVASCRIPT=OFF
       -DENABLE_MAN=ON
@@ -60,7 +61,10 @@ class Weechat < Formula
     if OS.mac?
       perl = DevelopmentTools.locate("perl")
       perl_archlib = Utils.safe_popen_read(perl.to_s, "-MConfig", "-e", "print $Config{archlib}")
-      args << "-DPERL_INCLUDE_PATH=#{MacOS.sdk_path}/#{perl_archlib}/CORE"
+      args += %W[
+        -DPERL_EXECUTABLE=#{perl}
+        -DPERL_INCLUDE_PATH=#{MacOS.sdk_path}/#{perl_archlib}/CORE
+      ]
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

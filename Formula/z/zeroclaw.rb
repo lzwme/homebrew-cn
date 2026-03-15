@@ -1,18 +1,18 @@
 class Zeroclaw < Formula
   desc "Rust-first autonomous agent runtime"
   homepage "https://github.com/zeroclaw-labs/zeroclaw"
-  url "https://ghfast.top/https://github.com/zeroclaw-labs/zeroclaw/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "8253e16b5832422e613e0f0e089688cc20346ee297fa51737e9dd12e6dd75662"
+  url "https://ghfast.top/https://github.com/zeroclaw-labs/zeroclaw/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "18a6800803672d7e3064c1a541e53b7ab409b001490c71a5d7ea64baf2040442"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/zeroclaw-labs/zeroclaw.git", branch: "main"
+  head "https://github.com/zeroclaw-labs/zeroclaw.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "808e83cbc45fb453c34ebd1445ae3c99c821790023a6dd348ba4129dd6348fa8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79fc764aa11d15d77d122791fffcf1420a292d0028f9b338455562e429ddb5c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51127da676bb2d8a2fd1f2321bda1e9fb275323551daa8f35fd1de409a42de75"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0b2a74ec6f052c1147dbf78fbd5df8648a099188a44b6f8692be16ed1e845744"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c434dc5e3f371891d5a5f3683606cb157186673e940844dfadf0c4432487f06e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "520199f56f386b4b84e7b4d973abd4183664a89601ae2c5bab1d2ac9c7a32bfe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0b2fc7de4db71cb2ce795f7f036056e6d9d8e7a4685955787c0bbcb87f74153"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5946c3b7d9ccb176afa479771291f55f2b7ca87acbb72a7beec89e05fd6d2d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd2d377a6cce5f29244be2f3253c93e728a5c6079ce62a527eac66bb7cc9e9d8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b26e7466eb1614dcb101285fbf62f922f4c14bd84121dd3de0356f2fc1e3947d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "056547a7a3b883ad4e5e5b0e0968f0cf3949a5d71dbb3c3ea1c4e712a411bbc2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ab498c02687dee7ff9459a8201b0f7700479cabb1b3be8d48cec0019a666b29"
   end
 
   depends_on "rust" => :build

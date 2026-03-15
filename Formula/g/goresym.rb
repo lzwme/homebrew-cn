@@ -15,15 +15,14 @@ class Goresym < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "94e43efb77993fb2b917d19cc1422fbdee17fc32b3a16b901f90087c158b1118"
   end
 
-  # Unpin Go when GoReSym supports Go 1.26, ref: https://github.com/mandiant/GoReSym/issues/80
-  depends_on "go@1.25" => :build
+  depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    json_output = JSON.parse(shell_output("#{bin}/goresym '#{bin}/goresym'"))
-    assert_equal json_output["BuildInfo"]["Main"]["Path"], "github.com/mandiant/GoReSym"
+    output = JSON.parse(shell_output("#{bin}/goresym '#{bin}/goresym'"))
+    assert_equal output["BuildInfo"]["Main"]["Path"], "github.com/mandiant/GoReSym"
   end
 end

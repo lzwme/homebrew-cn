@@ -44,8 +44,16 @@ class Gedit < Formula
   end
 
   resource "libgd" do
-    url "https://gitlab.gnome.org/GNOME/libgd.git",
-      revision: "3cccf99234288a6121b3945a25cd4ec3b7445c74"
+    url "https://gitlab.gnome.org/GNOME/libgd/-/archive/c7c7ff4e05d3fe82854219091cf116cce6b19de0.tar.bz2"
+    version "c7c7ff4e05d3fe82854219091cf116cce6b19de0"
+    sha256 "343abb090461d011dfb1bce5b5da1dfbc9f6c7b6b3223a1b322adb33675212c1"
+
+    livecheck do
+      url "https://gitlab.gnome.org/api/v4/projects/World%2Fgedit%2Fgedit/repository/files/subprojects%2Flibgd?ref=#{LATEST_VERSION}"
+      strategy :json do |json|
+        json["blob_id"]
+      end
+    end
   end
 
   def install

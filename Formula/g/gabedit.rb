@@ -27,6 +27,9 @@ class Gabedit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "85b9f31c8d4f0b7daf320543f5da7d50a20212535bf1c753eca37aaa579c737d"
   end
 
+  deprecate! date: "2026-03-14", because: "uses deprecated `gtkglext`"
+  disable! date: "2027-03-14", because: "uses deprecated `gtkglext`"
+
   depends_on "pkgconf" => :build
 
   depends_on "cairo"

@@ -9,27 +9,24 @@ class Snakemake < Formula
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "20894cd940a2643bd0170499d5a61d7e2f39e2858c6cf4ebefc2ff074102ada3"
-    sha256 cellar: :any,                 arm64_sequoia: "a2bbc5d3bcf5e5b273a2df19acec6f23a0bfd222bc6adf65fba7605407ea7fd5"
-    sha256 cellar: :any,                 arm64_sonoma:  "64306c66b79a612836877d28473f8d4ebc55cb562efbd21399effafcc38847fa"
-    sha256 cellar: :any,                 sonoma:        "f9cb3bccb1a686e9ed9cf40df2b731b96a7bbf3de9c6f921c8a2b6440b5ac9d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c83d38870edb52ec41b3d8bf8ad2f1276273e7a2d30c64fb19b83c6f6b7f69e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57cd652f66cd0efef125aeb13eb7541d86bdb7bd2b3ec94c983c9b22a11cd49a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "3a1b0d19fb894ed136971b24e69f68e03e7ea0ebb1dc2c1fb73f91b441c5769f"
+    sha256 cellar: :any,                 arm64_sequoia: "c52052fae505967fafa3e918a23e98cfb5c43511d7c662e612744c6d68fa654f"
+    sha256 cellar: :any,                 arm64_sonoma:  "0a926af850f1f89610fb84ec8aacd645867d4dffdb82c46e505aca1689df90d1"
+    sha256 cellar: :any,                 sonoma:        "14b7872cd3319954d294cad0f161c1adb093dd7e6bf3832d4743d393524f1019"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b42f55d5942d4f7311d9aa721456a5b087cddf5da4243e635bb735abcc9fd7b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2620e6efbd15519446539eb34d43087c3910203d46faa5215157ec183b092250"
   end
 
   depends_on "rust" => :build # for appdirs
   depends_on "cbc"
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
-  pypi_packages exclude_packages: %w[certifi rpds-py]
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
+  pypi_packages exclude_packages: %w[certifi pydantic rpds-py]
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
@@ -89,11 +86,6 @@ class Snakemake < Formula
   resource "gitpython" do
     url "https://files.pythonhosted.org/packages/df/b5/59d16470a1f0dfe8c793f9ef56fd3826093fc52b3bd96d6b9d6c26c7e27b/gitpython-3.1.46.tar.gz"
     sha256 "400124c7d0ef4ea03f7310ac2fbf7151e09ff97f2a3288d64a440c584a29c37f"
-  end
-
-  resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/a3/51/1664f6b78fc6ebbd98019a1fd730e83fa78f2db7058f72b1463d3612b8db/greenlet-3.3.2.tar.gz"
-    sha256 "2eaf067fc6d886931c7962e8c6bede15d2f01965560f3359b27c80bde2d151f2"
   end
 
   resource "humanfriendly" do
@@ -159,16 +151,6 @@ class Snakemake < Formula
   resource "pulp" do
     url "https://files.pythonhosted.org/packages/16/1c/d880b739b841a8aa81143091c9bdda5e72e226a660aa13178cb312d4b27f/pulp-3.3.0.tar.gz"
     sha256 "7eb99b9ce7beeb8bbb7ea9d1c919f02f003ab7867e0d1e322f2f2c26dd31c8ba"
-  end
-
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/69/44/36f1a6e523abc58ae5f928898e4aca2e0ea509b5aa6f6f392a5d882be928/pydantic-2.12.5.tar.gz"
-    sha256 "4d351024c75c0f085a9febbb665ce8c0c6ec5d30e903bdb6394b7ede26aebb49"
-  end
-
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/71/70/23b021c950c2addd24ec408e9ab05d59b035b39d97cdc1130e1bce647bb6/pydantic_core-2.41.5.tar.gz"
-    sha256 "08daa51ea16ad373ffd5e7606252cc32f07bc72b28284b6bc9c6df804816476e"
   end
 
   resource "pyyaml" do
@@ -259,16 +241,6 @@ class Snakemake < Formula
   resource "traitlets" do
     url "https://files.pythonhosted.org/packages/eb/79/72064e6a701c2183016abbbfedaba506d81e30e232a68c9f0d6f6fcd1574/traitlets-5.14.3.tar.gz"
     sha256 "9ed0579d3502c94b4b3732ac120375cda96f923114522847de4b3bb98b96b6b7"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "urllib3" do

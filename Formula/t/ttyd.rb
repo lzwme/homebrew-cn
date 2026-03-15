@@ -4,16 +4,16 @@ class Ttyd < Formula
   url "https://ghfast.top/https://github.com/tsl0922/ttyd/archive/refs/tags/1.7.7.tar.gz"
   sha256 "039dd995229377caee919898b7bd54484accec3bba49c118e2d5cd6ec51e3650"
   license "MIT"
-  revision 8
+  revision 9
   head "https://github.com/tsl0922/ttyd.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "4ba588d78a1d3766248e1442db108477c3351ca8a7afae101ea68b1518a62a15"
-    sha256 arm64_sequoia: "db754de2302d0cbc84ad7f53fe1420de2cf97b2ed2651861f2bd32d1453369c6"
-    sha256 arm64_sonoma:  "ede2b07fa5ea636df9739978929cd7e004446024f3b28156b5e53af9c3ecd0fc"
-    sha256 sonoma:        "377d9fab121e18e4a92ec95b7fb625cd96d00e9dfa61698ce4b9ff4c7e4adc37"
-    sha256 arm64_linux:   "c4152dff96aed5cb76ca0a2b5a9aadd1281445165039f44de462188204a7f5df"
-    sha256 x86_64_linux:  "339e9e8741a339589cb8af7d7cf391881a459691b6d1505e457c3e96f46f2586"
+    sha256 arm64_tahoe:   "7166e8513b95f5c06e7fb778c5bfd7ba3758609e30a45777e42a4a1121c1441f"
+    sha256 arm64_sequoia: "17c2a244deb6508040e5151ae79e42dafe6f3e7af9784a121d61fea31f676873"
+    sha256 arm64_sonoma:  "458b69434d234bdef696fb310ad9c2b798b172229a32bd759cc4849e68290e5a"
+    sha256 sonoma:        "fae6b4ba2689822e9570a510bfcc4e0a2e4983d75c2cffd68f6e312fdc7674a8"
+    sha256 arm64_linux:   "34780d7f45409871a92c99e3811592584b431129cfecbfe7088a710775aae614"
+    sha256 x86_64_linux:  "f534e0b04dbb1dd1c25adba55cf9578b03f774e6972bf5cfde23db221fb5e999"
   end
 
   depends_on "cmake" => :build

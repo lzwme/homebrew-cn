@@ -19,6 +19,9 @@ class Gtkglext < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bea86597c739ebbf55d551970dee174085bfc3d0c4d70f06f0cce969979ef2af"
   end
 
+  deprecate! date: "2026-03-14", because: :repo_archived
+  disable! date: "2027-03-14", because: :repo_archived
+
   depends_on "pkgconf" => [:build, :test]
   depends_on "glib"
   depends_on "gtk+"

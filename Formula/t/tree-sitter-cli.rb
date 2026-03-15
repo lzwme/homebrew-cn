@@ -1,8 +1,8 @@
 class TreeSitterCli < Formula
   desc "Parser generator tool"
   homepage "https://tree-sitter.github.io"
-  url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.26.6.tar.gz"
-  sha256 "b4218185a48a791d4022ab3969709e271a70a0253e94792abbcf18d7fcf4291c"
+  url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.26.7.tar.gz"
+  sha256 "4343107ad1097a35e106092b79e5dd87027142c6fba5e4486b1d1d44d5499f84"
   license "MIT"
   head "https://github.com/tree-sitter/tree-sitter.git", branch: "master"
 
@@ -11,12 +11,12 @@ class TreeSitterCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77ccdff066d27a117e1700bd004de38290fd9e73610ff67ee3b0745520fc65e3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5021922d801a428223bdad80c03218ff78324b7e1cb6b6838bbab602b3522ad0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f6c9b09e2490ce819e9ffb79cac0575caf3f5983d5118d36fbceb2a07fa4832"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0511253f3446d0b9f6124ccf7e51de1b33b642827abd4737ccec6071e6ee3313"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbe6de912b8e10fb3c791d0c05ba1240641ba41d68cc67ddfd9139d1f4f40f80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "789d325c2bc2ab197f5ebc972dd16bac2e81de93587ed76ef36c7f4240ce0396"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "624bb6d7a207dabe007ed2a969472996ca13b3abeecb1f0c4ac0c26df4069b0d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2cc3e06528c6677461d28a3c9b6066592cca698762c292d8eb87775e84649ba2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2d732527598e565e482628c0ca51000325c9bc510259edfd9cfd5470063ec1e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6b370e144960aff313056418f983ed8d1323e4792dab1a3d164417f1593adcaf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f0e4b1842b051f7ce18ca9deb23d657c45042d28d187c7eeba6dd4d69e7f1e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d0a74ad1d5ec86a25b068228b9f1e22777e3bf8e2bc1adea0f27cbee14321b3"
   end
 
   depends_on "rust" => :build

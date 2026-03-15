@@ -1,18 +1,23 @@
 class Flowrs < Formula
   desc "TUI application for Apache Airflow"
   homepage "https://github.com/jvanbuel/flowrs"
-  url "https://ghfast.top/https://github.com/jvanbuel/flowrs/archive/refs/tags/v0.10.1.tar.gz"
-  sha256 "2880165ff505c0e3be26827c49c1c07e5cfdd26565caeb287710d02375b8c728"
+  url "https://ghfast.top/https://github.com/jvanbuel/flowrs/archive/refs/tags/flowrs-tui-v0.12.0.tar.gz"
+  sha256 "a1408586c4c00270692bde14270046faee16e3d9ae0bb6600f78d76d083ae659"
   license "MIT"
   head "https://github.com/jvanbuel/flowrs.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^flowrs-tui-v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "128d27eb3466dd9162d3d0be6b575e3d5665509754e480f22ea3a5e14a7e3667"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e1aa89ef7de9d086e1ff3eb05e0e0072e4e81c76afc71e1df90c781450248ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "214e6e83a7fdefe80808515d70c6dc929f4afc091e2297f134713ecf6314a98d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c54c6c432d5e58ec984d02b6d5b4ec93158df6ee4c37e7c66a87f5cc11cb98d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b597d7b137c044c41893955b612d69d5d68320f7251f5e7ff8892282207f628d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d328c5362232dd3f352ba0494735d70694da7d5b2b88d8c3edeefd0a63fbb30"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f8d7e41e5b7d4d1dca0b4927728bef2b92434014f237bd403f8bbf416d1dc3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "137777f4bb43a55f072aeaff50f8688455f693ad5b2ce0f94b4d01a5bf56f812"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e19057e1cd151f545e00bdd84938be85b3606cc48c7cee3a318a4526a25a703f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3d6859ded265cdaa4b2ea0f6cc1a3ef61b3f67ab65ddb703e3dca595749a7c4d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf77573999a09dbadf3702806c90c78b97465bba13e39863680ac4dbef98334d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca7616df4f6a7549e2a6c741a91f9a2ff5e2dfb749a1f85cdaad1e38acecff17"
   end
 
   depends_on "pkgconf" => :build

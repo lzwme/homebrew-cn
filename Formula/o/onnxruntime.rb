@@ -13,12 +13,13 @@ class Onnxruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "eb7d97471327f116b326dd48cd4853094fe36eb6c45d9184776d2ed6feab21b2"
-    sha256 cellar: :any,                 arm64_sequoia: "eab7fe26c9d1a574d7b17165485193a9264491517a7ef6bc3bfdc589f78c22b7"
-    sha256 cellar: :any,                 arm64_sonoma:  "1c8292e91ffb0751784e71eaec76f5561d5d5b39ac8a8cdcaee0048e67c68fbe"
-    sha256 cellar: :any,                 sonoma:        "29c90430e44116f3f4a5b19f2fe0c144d39adc422806f4467b2bf5a648a87883"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10108caddd2eef5b5b753f7694ef78ba16fcaec172ff832b63f0a36287e216b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c47f4cab31a73cbbd926d386adbda26524374cdccadf5c36a80504bd5792ffd7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ace689891419766dbc22341b010c68aadd95811d0119776bfa0d868e3efcb6e2"
+    sha256 cellar: :any,                 arm64_sequoia: "23dae1769a801e7cb363fed140734e5e2cbed6fca6af395fbb99d1e3082495b9"
+    sha256 cellar: :any,                 arm64_sonoma:  "c40165e97a6aff57fbc372d0939643063b6779f65e03dffaf2257aa7bb1f961a"
+    sha256 cellar: :any,                 sonoma:        "89d62fcc08d90cd0e430f027a6a9d59d7e1b74bfc5b7d579192470f252e4f234"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0339d77cb5a7183bef0f239de996cc1a313cf7b14dea61766004d7a36a96102"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "181a3cce0ba97fcf23ee3d76aaf425c23359e73237978074cc7f79eec31a8884"
   end
 
   depends_on "boost" => :build
@@ -43,6 +44,27 @@ class Onnxruntime < Formula
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/microsoft/onnxruntime/refs/tags/v#{LATEST_VERSION}/cmake/deps.txt"
       regex(%r{^pytorch_cpuinfo;.*/(\h+)\.zip}i)
+    end
+  end
+
+  resource "coremltools" do
+    url "https://ghfast.top/https://github.com/apple/coremltools/archive/refs/tags/7.1.tar.gz"
+    sha256 "d3222966982367b2be4ce62f1bd2b3dddc5a0ae018724a9acf850fbf2b0cc09a"
+
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/microsoft/onnxruntime/refs/tags/v#{LATEST_VERSION}/cmake/deps.txt"
+      regex(%r{^coremltools;.*/(\h+)\.zip}i)
+    end
+  end
+
+  resource "fp16" do
+    url "https://ghfast.top/https://github.com/Maratyszcza/FP16/archive/3d2de1816307bac63c16a297e8c4dc501b4076df.tar.gz"
+    version "3d2de1816307bac63c16a297e8c4dc501b4076df"
+    sha256 "65ace2f05fd9434b0acb7a7d3cc6cd96842ea6236b680594af932b359bedbfc1"
+
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/microsoft/onnxruntime/refs/tags/v#{LATEST_VERSION}/cmake/deps.txt"
+      regex(%r{^fp16;.*/(\h+)\.zip}i)
     end
   end
 
@@ -77,6 +99,12 @@ class Onnxruntime < Formula
       -Donnxruntime_USE_FULL_PROTOBUF=OFF
     ]
 
+    args << if OS.mac?
+      "-Donnxruntime_USE_COREML=ON"
+    else
+      "-Donnxruntime_USE_COREML=OFF"
+    end
+
     # Regenerate C++ bindings to use newer `flatbuffers`
     flatc = Formula["flatbuffers"].opt_bin/"flatc"
     system python3, "onnxruntime/core/flatbuffers/schema/compile_schema.py", "--flatc", flatc
@@ -97,10 +125,19 @@ class Onnxruntime < Formula
       #include <cassert>
       #include <iostream>
       #include <onnxruntime/onnxruntime_cxx_api.h>
+      #ifdef __APPLE__
+      #include <Availability.h>
+      #include <onnxruntime/coreml_provider_factory.h>
+      #endif
 
       int main(void) {
         Ort::Env ort_env;
-        Ort::Session session{ort_env, "mul_1.onnx", Ort::SessionOptions{nullptr}};
+        Ort::SessionOptions so;
+        #if defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 150000
+        uint32_t coreml_flags = 0;
+        Ort::ThrowOnError(OrtSessionOptionsAppendExecutionProvider_CoreML(so, coreml_flags));
+        #endif
+        Ort::Session session{ort_env, "mul_1.onnx", so};
         auto memory_info = Ort::MemoryInfo::CreateCpu(OrtDeviceAllocator, OrtMemTypeCPU);
 
         std::array<float, 6> input_data{1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f};

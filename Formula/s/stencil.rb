@@ -1,18 +1,18 @@
 class Stencil < Formula
   desc "Modern living-template engine for evolving repositories"
   homepage "https://stencil.rgst.io"
-  url "https://ghfast.top/https://github.com/rgst-io/stencil/archive/refs/tags/v2.15.2.tar.gz"
-  sha256 "4338417e2a7bae8bdfadb37a01d29b5ed565ede785ba2fc2074c1defba6d9000"
+  url "https://ghfast.top/https://github.com/rgst-io/stencil/archive/refs/tags/v2.15.3.tar.gz"
+  sha256 "2391ed29d86b224daa920b4af64c70a6fc63e99a68ee46f98a13cffb9e682078"
   license "Apache-2.0"
   head "https://github.com/rgst-io/stencil.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3bbe850dd8ed609e5a5ebbc94b24eb96b9d695038e25b47aee45d0904b0f026f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aeb1e4113974a206106283e1cfd4a43420426d1af8b883f4fde945cd097e4a0f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0569f81b0a39ff28a99c2e8ee2920a101d2df315741faa8dbaf547819f637ca7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "50fff448e20ccccef7890bddcac5a1f1decd75b1f329df6a2617f12d6dd069f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cad637d9dc5d3685ecac52ac699a272f08e19f6285e222d715f540f8fa1398c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b42287fa20945a3581d0c12857113f2e605c808020d51b5685ee5b581b2255a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68825338d7d4d937567de9f59e7617fe5c05cd913e5c178e040b9194b7e722ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd63b14c6278390399391188878c9b09dd87f9708b6d28da9467a0deebdc6d75"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0133af668b31722657a25fdfa288766de4df02cf6db72a841d8edfc8f7084f27"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a849544868d08b429f920d478ef9b98e49d9d1091e99d6f7caac5b5052bff38f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9e349386ab6dc5f30abbdb2afd1f74a14b9f73d1a00c300b7a902fdc4cf2e0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97437520b8e50fe587515c0dbb6902088381389dcb71e7a4de8b30333d0c8aab"
   end
 
   depends_on "go" => :build

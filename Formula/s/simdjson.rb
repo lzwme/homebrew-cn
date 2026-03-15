@@ -1,19 +1,19 @@
 class Simdjson < Formula
   desc "SIMD-accelerated C++ JSON parser"
   homepage "https://simdjson.org"
-  url "https://ghfast.top/https://github.com/simdjson/simdjson/archive/refs/tags/v4.3.0.tar.gz"
-  sha256 "bf0d5fb1f6544153b50111fe644aa1f201e2d8fcf5109f17a9805dc6392974dd"
+  url "https://ghfast.top/https://github.com/simdjson/simdjson/archive/refs/tags/v4.4.0.tar.gz"
+  sha256 "d493cf4e5c60afab90cb4a3d58620c5a17904676076e927f715815d903ef4d08"
   license "Apache-2.0"
-  compatibility_version 1
+  compatibility_version 2
   head "https://github.com/simdjson/simdjson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a6daf4f695cf035bc5ba5b53916839d4e05bc0f3ac068532f39092d9b5fcc7eb"
-    sha256 cellar: :any,                 arm64_sequoia: "99a41c3376b9ffddf372f5068c787644320fb01ec833167ab28c66fe84c49381"
-    sha256 cellar: :any,                 arm64_sonoma:  "a33da68725355929df2cee4aed6e6b17f93712428ae9864346d01dd08ace4921"
-    sha256 cellar: :any,                 sonoma:        "bcfa0411781d52a19a0a19ef1077a5235cb7d0016fa5f9a52a1f71c7380ecc20"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3de286369d0caa6fe7d7cd6d0a90b99c71ce88b42d482e9fd9e493b2ce9e6316"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7462fc2fc7087bf37507c8c50a4198d2635497587909ca1fec972e7a5b79252"
+    sha256 cellar: :any,                 arm64_tahoe:   "883818a18c6d50ef903bc4104430ef24c1896b56a7f39b28539d3d01ed5b806a"
+    sha256 cellar: :any,                 arm64_sequoia: "5a4034e6f15e89d9825632af4c1f47ac344c54a13c662619c33f3a4d59a65946"
+    sha256 cellar: :any,                 arm64_sonoma:  "dd6527ba6132b6f36a95fa13742fb746f1ddd1f254657e274807db2dba858c43"
+    sha256 cellar: :any,                 sonoma:        "1aa88f3e8e89a13511ced0fa116a4095553040504638f3381c6fa1fab407be1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57899516b8bfc12420bc416d66aabf4e5c1061357a412d52d4f3f89ff0a357ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "838480de0388cd9e9b876855a248b018d57bd752e42ecd8786a79beebca4624d"
   end
 
   depends_on "cmake" => :build

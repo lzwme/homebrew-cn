@@ -1,8 +1,8 @@
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
   homepage "https://emscripten.org/"
-  url "https://ghfast.top/https://github.com/emscripten-core/emscripten/archive/refs/tags/5.0.2.tar.gz"
-  sha256 "59f3b1a8e25b514f0d6f6993b3860e53a2d4f5057b6a8bc8f508f209ee145548"
+  url "https://ghfast.top/https://github.com/emscripten-core/emscripten/archive/refs/tags/5.0.3.tar.gz"
+  sha256 "b32ce4192bae12f15b06b1eec67b7ea6ac8ae809fc81230a43354c3c24251360"
   license all_of: [
     "Apache-2.0", # binaryen
     "Apache-2.0" => { with: "LLVM-exception" }, # llvm
@@ -16,12 +16,12 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "45be0e5f10714ef71061ad462d3669c061da96f706fad12840dd20fa863448a2"
-    sha256 cellar: :any,                 arm64_sequoia: "f4c936d7e87142341edd079e0d15cd7fd4a5ec823e56b14b7a3417d67641ef7d"
-    sha256 cellar: :any,                 arm64_sonoma:  "6119adf27387f2e9547d400d47d46a3cbe80b2b440db85588139ddaf9a4a3bf6"
-    sha256 cellar: :any,                 sonoma:        "c0f3b3e9a5c269bf64bc6384d040d7242381718cbe7331743c8741841d7457ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10950c827ef99d32178b768a8911d4c4bf633932e4119d2828267c61f637990d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "238d7f5dc1157df3cc3557a5fc27f00f36267a9accf5521b5e32b08ff7525491"
+    sha256 cellar: :any,                 arm64_tahoe:   "062ed239aab2f3e2063e2b284b66f10946ff375fd0e25fff6d87f9d6fcbe66f3"
+    sha256 cellar: :any,                 arm64_sequoia: "83929f6028244be9cd8f01cd2f919e2e912fa4327d98f0a9ce802d0e36b15dff"
+    sha256 cellar: :any,                 arm64_sonoma:  "514bc6c80e97e376266e7254dc0648017b63865bda10bfd335e2c985a905a465"
+    sha256 cellar: :any,                 sonoma:        "4e883beb69f944c656177aa2c538195edefae81263928d75a3a0e1b4433484ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02b027ad22cd1dd5140dc092d1a0aa9fc00be8cdc953b4025984df059b88a0ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9fea22366f57ffa199374729da53b2386600a4963a0eecacf7c631917c5247d"
   end
 
   depends_on "cmake" => :build
@@ -50,9 +50,9 @@ class Emscripten < Formula
   # https://chromium.googlesource.com/emscripten-releases/+/<commit>/DEPS
   # Then use the listed binaryen_revision for the revision below.
   resource "binaryen" do
-    url "https://ghfast.top/https://github.com/WebAssembly/binaryen/archive/f538edcd79e739e68bdbe6bdf7a62e3ec5ccaeed.tar.gz"
-    version "f538edcd79e739e68bdbe6bdf7a62e3ec5ccaeed"
-    sha256 "b81fe437ac29542a27f7cf3a3df517a284aa7a986c576ad57332c25202119bd0"
+    url "https://ghfast.top/https://github.com/WebAssembly/binaryen/archive/2eb472cd650b183ffe0f88b0365908d0aa669ea3.tar.gz"
+    version "2eb472cd650b183ffe0f88b0365908d0aa669ea3"
+    sha256 "2f6e66c88da7c8c91cacdade844eb3e30f40b8164e2bd52223bd2cb5d2e8ac7f"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/emscripten-core/emsdk/refs/tags/#{LATEST_VERSION}/emscripten-releases-tags.json"
@@ -76,9 +76,9 @@ class Emscripten < Formula
   # See binaryen resource above for instructions on how to update this.
   # Then use the listed llvm_project_revision for the tarball below.
   resource "llvm" do
-    url "https://ghfast.top/https://github.com/llvm/llvm-project/archive/58f4da463e5b3cd3531cace17cc3f2d8d860964e.tar.gz"
-    version "58f4da463e5b3cd3531cace17cc3f2d8d860964e"
-    sha256 "cc22a6bf8f7f719eca123d2197c60a62b7f00f8cf33f4cd010b66f68ad645710"
+    url "https://ghfast.top/https://github.com/llvm/llvm-project/archive/e5927fecf8a6ce89e1a4eac5b828e7d42676452a.tar.gz"
+    version "e5927fecf8a6ce89e1a4eac5b828e7d42676452a"
+    sha256 "f4a17a855af51c147402668c61b9f651f3a8d969124f1fea9f5b37168a682b66"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/emscripten-core/emsdk/refs/tags/#{LATEST_VERSION}/emscripten-releases-tags.json"

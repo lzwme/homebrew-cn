@@ -1,18 +1,18 @@
 class Pvetui < Formula
   desc "Terminal UI for Proxmox VE"
   homepage "https://github.com/devnullvoid/pvetui"
-  url "https://ghfast.top/https://github.com/devnullvoid/pvetui/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "e112a5d5af45f6ec316a7a90bc4a9ec73220de5927bec3147c8bbf7fdcde8419"
+  url "https://ghfast.top/https://github.com/devnullvoid/pvetui/archive/refs/tags/v1.2.1.tar.gz"
+  sha256 "6c5f6d5c8721c6b5a11349539c95af778300d347cab533bf9a6272d9461ca977"
   license "MIT"
   head "https://github.com/devnullvoid/pvetui.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "40c67497fc838e1e558d040001a20b11bb4c1e0933cfbbe119dfb7591a132c28"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40c67497fc838e1e558d040001a20b11bb4c1e0933cfbbe119dfb7591a132c28"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40c67497fc838e1e558d040001a20b11bb4c1e0933cfbbe119dfb7591a132c28"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a3910b3d0c5d2b31d16409ecd0da23798b37ebd099a03da56f7ec742c053fdae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd97e127e89a351510a1f0e94b56f635588d2d9c4dbd2f6553b07e8eee5166de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acf9d9839367fa67bf0de032cf64cafdb02fcb36f543e2c63b255252b2431a82"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b59196c5fb810a8c4d3881653e8d260bc4a94d8f42f9368b5e4fe97430126e25"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b59196c5fb810a8c4d3881653e8d260bc4a94d8f42f9368b5e4fe97430126e25"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b59196c5fb810a8c4d3881653e8d260bc4a94d8f42f9368b5e4fe97430126e25"
+    sha256 cellar: :any_skip_relocation, sonoma:        "db54bfbf28b71c8eed6baebe16cbab29f6e3ba67a870b550263e8d428a591aa6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1f9903d2d53293e61ce4065dff154476103a69b8bb901e45bb513afc0957cb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3d429b501243b01c854c99c8c92d094c2b58f7d71f9396597a2e81ddecb8fa7"
   end
 
   depends_on "go" => :build
