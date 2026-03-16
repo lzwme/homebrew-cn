@@ -6,21 +6,21 @@ class ArgusClients < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae80fb8ebf1ce278fb8c74c1a7a9f4fdb5e615103e15dc63283c217ebf525024"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6da67dbd52f3e1bb62e7f8a04a18c0b07f73bcd3fb4cd3415d62dc58b973846"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88978797864547020e800351c13576b07d7c4e6b4ac96285c0dd551c136d4790"
-    sha256 cellar: :any_skip_relocation, sonoma:        "06fe4d80aadbd2a0d4cec2963d92706f7d168c9d43fff983689ac6aa755e9e70"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51a9b33724d646314c65efc2841ada96f7825dfa8384aa9d6ecf0a8fbaaf4cae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eda872f8bd03edefe8f6c54e096030be6f21e7515c37dfc507944a56944d82db"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e26b45c0acd6b6da44868f99227cea5680806709c2a1fe6765cb75548595e27"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa390a8b4e242fb30b0f6cd07d65116b969cfe7416235e76e3396861735a0fb2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "64cac1f77ccf88c417625996d814055c835049f18228a10a6c10087b93331b08"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c6fc9682378acd09e4b37e294a9aa8d61378d7861187fe240187c5f7cb92898c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c0b14a2dd371d30a8a8d9302e820c0dea30e0d0ec8c0ce869094a5f33fbc3e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f91a2424dec64075a85d4c86b849a4e0cdc097a3b1766cd4eca97d96d3e0f525"
   end
 
-  depends_on "perl"
   depends_on "readline"
   depends_on "rrdtool"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
+  uses_from_macos "perl"
 
   on_linux do
     depends_on "libtirpc"
@@ -30,6 +30,10 @@ class ArgusClients < Formula
   resource "Switch" do
     url "https://cpan.metacpan.org/authors/id/C/CH/CHORNY/Switch-2.17.tar.gz"
     sha256 "31354975140fe6235ac130a109496491ad33dd42f9c62189e23f49f75f936d75"
+
+    livecheck do
+      url :url
+    end
   end
 
   def install

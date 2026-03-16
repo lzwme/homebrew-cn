@@ -190,12 +190,11 @@ class NotmuchMutt < Formula
     system "make", "V=1", "prefix=#{prefix}", "-C", "contrib/notmuch-mutt", "install"
 
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+    ENV["PERL_MM_USE_DEFAULT"] = "1"
 
     resources.each do |r|
       r.stage do
-        args = ["INSTALL_BASE=#{libexec}"]
-        args.unshift "--defaultdeps" if r.name == "MIME::Charset"
-        system "perl", "Makefile.PL", *args
+        system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
         system "make", "install"
       end
     end

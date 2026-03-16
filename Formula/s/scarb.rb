@@ -12,12 +12,13 @@ class Scarb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f02f4e1a456055cce04e7c7bf65a6f20ee36b6ed008784ecc75bcdc78c3c8e69"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4db1b321aec4bfc0604bd71aa1965859bc994c417c0429200b6ac6b571dc689"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca127274eaf1c336de409554053fc830f6167c0c02000332058ae933c5253e0a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4614bfdc5d79c60b17585bfbb65a587adbc61f655458ba4be5491764c890e74f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "08ca8caf80bd686903b152b046bd0505edd5fdccf60bdfce080320b0bd8263d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8c101ae146bcaff382ebd0372ea72385b50bb281389491f44257c8eac31086d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27fafc6ee6cde5b801e2425cfe828c6de3bc1857d26bb66ca9ef56ef90f04c46"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50f21799d830a4dfa8a29f1096eb3f16eed3d9748df7ad72b7735c360f38c236"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0493f22d510bb97965ebd83fb878c2b81a6767d22b3f6f51051d8baf81909f85"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a094a372bac1c9bf646e0e48b7dc16080cd53ab37d197d38f5af9702687f2ec4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "debf2d0042a3bf7c72367ebb48472cd409f9149b533d970a457a039939ed9cea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2c21e3170a86b655897eeef69292bff4050f44c1b1678a7924c84f5f46fe06a"
   end
 
   depends_on "rust" => :build
@@ -35,6 +36,8 @@ class Scarb < Formula
     ].each do |f|
       system "cargo", "install", *std_cargo_args(path: f)
     end
+
+    generate_completions_from_executable(bin/"scarb", "completions", shell_parameter_format: :clap)
   end
 
   test do

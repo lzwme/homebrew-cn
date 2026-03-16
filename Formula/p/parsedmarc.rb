@@ -6,15 +6,16 @@ class Parsedmarc < Formula
   url "https://files.pythonhosted.org/packages/81/de/99f0ef30d55cb4965b5b76b058f3ceef4ce3332601cd24157d2892427bb8/parsedmarc-9.2.1.tar.gz"
   sha256 "b65d4ecedcfe4e63769fe3cd04996414870fed3dae300d7a92af17f98a9f5fc0"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6cd71a0d5daa3bd131d8af1894cd5fc0794a16072b2832e0efef42d95d6d80fb"
-    sha256 cellar: :any,                 arm64_sequoia: "29b4ded6bc8a85de58218d1ce2f79de015b25b6654306494a4b6fbb6002b05ee"
-    sha256 cellar: :any,                 arm64_sonoma:  "7ce8f6fe651de0e0faee4a73c58e1b2d3e9282f390016b5b691755dae1f11444"
-    sha256 cellar: :any,                 sonoma:        "1ee5213a51becb871a3aa2568f0458bdc5367d088a73523688763f56407b8a5e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cde3b02124494cbc29414a13658d0e4f92c8f4572901ab8c2f65399dab1bd306"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e698bac76d652df3ec088741c1ab65a92b485767af3b945b8b5418926565ab7"
+    sha256 cellar: :any,                 arm64_tahoe:   "c546060dc0869e9bfa1b2a8acbbd25c95327c5aaf4787bf3e57ef393457a6656"
+    sha256 cellar: :any,                 arm64_sequoia: "5a2b5aed89ede90d14c5f0c019b9b0c5f94e89bb7c9d088f6376d79f3afd8718"
+    sha256 cellar: :any,                 arm64_sonoma:  "9a325bd9f666bf4cf9e1da280b5171b5a6b452fdf14d474afcb97a9c8ab5a3ee"
+    sha256 cellar: :any,                 sonoma:        "7d28fe73ced4b4b9cff5fea6dc7d6327595a46b253e54c369ed53f5ad4c30fed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9a7c2b6a21efc29b8112bfac8ee926896f3c18c52bdbda808c4f358f5f23f12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "422400ff034f3c07037920a5ec7d4017b0ac53a6db1ebaa45e770fb3bff11ac1"
   end
 
   depends_on "rust" => :build
@@ -49,13 +50,13 @@ class Parsedmarc < Formula
   end
 
   resource "azure-core" do
-    url "https://files.pythonhosted.org/packages/00/fe/5c7710bc611a4070d06ba801de9a935cc87c3d4b689c644958047bdf2cba/azure_core-1.38.2.tar.gz"
-    sha256 "67562857cb979217e48dc60980243b61ea115b77326fa93d83b729e7ff0482e7"
+    url "https://files.pythonhosted.org/packages/c8/29/9641b73248745774a52c7ce7f965ed1febbdea787ec21caad3ae6891d18a/azure_core-1.38.3.tar.gz"
+    sha256 "a7931fd445cb4af8802c6f39c6a326bbd1e34b115846550a8245fa656ead6f8e"
   end
 
   resource "azure-identity" do
-    url "https://files.pythonhosted.org/packages/c2/3a/439a32a5e23e45f6a91f0405949dc66cfe6834aba15a430aebfc063a81e7/azure_identity-1.25.2.tar.gz"
-    sha256 "030dbaa720266c796221c6cdbd1999b408c079032c919fef725fcc348a540fe9"
+    url "https://files.pythonhosted.org/packages/c5/0e/3a63efb48aa4a5ae2cfca61ee152fbcb668092134d3eb8bfda472dd5c617/azure_identity-1.25.3.tar.gz"
+    sha256 "ab23c0d63015f50b630ef6c6cf395e7262f439ce06e5d07a64e874c724f8d9e6"
   end
 
   resource "azure-monitor-ingestion" do
@@ -64,13 +65,13 @@ class Parsedmarc < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/1e/c9/8ff8a901cf62374f1289cf36391f855e1702c70f545c28d1b57608a84ff2/boto3-1.42.65.tar.gz"
-    sha256 "c740af6bdaebcc1a00f3827a5729050bf6fc820ee148bf7d06f28db11c80e2a1"
+    url "https://files.pythonhosted.org/packages/06/ae/60c642aa5413e560b671da825329f510b29a77274ed0f580bde77562294d/boto3-1.42.68.tar.gz"
+    sha256 "3f349f967ab38c23425626d130962bcb363e75f042734fe856ea8c5a00eef03c"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/2e/81/2c832e2117d24da4fe800861e8ddd19bbaa308623b1198eb2c2cc6fcd3d4/botocore-1.42.65.tar.gz"
-    sha256 "7d52c148df07f70c375eeda58f99b439c7c7836c25df74cccfba3bb6e12444d2"
+    url "https://files.pythonhosted.org/packages/3f/22/87502d5fbbfa8189406a617b30b1e2a3dc0ab2669f7268e91b385c1c1c7a/botocore-1.42.68.tar.gz"
+    sha256 "3951c69e12ac871dda245f48dac5c7dd88ea1bfdd74a8879ec356cf2874b806a"
   end
 
   resource "charset-normalizer" do
@@ -129,8 +130,8 @@ class Parsedmarc < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/7d/59/7371175bfd949abfb1170aa076352131d7281bd9449c0f978604fc4431c3/google_auth-2.49.0.tar.gz"
-    sha256 "9cc2d9259d3700d7a257681f81052db6737495a1a46b610597f4b8bafe5286ae"
+    url "https://files.pythonhosted.org/packages/ea/80/6a696a07d3d3b0a92488933532f03dbefa4a24ab80fb231395b9a2a1be77/google_auth-2.49.1.tar.gz"
+    sha256 "16d40da1c3c5a0533f57d268fe72e0ebb0ae1cc3b567024122651c045d879b64"
   end
 
   resource "google-auth-httplib2" do
@@ -254,8 +255,8 @@ class Parsedmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/f6/50/c26502482b744694a1778b9c2391f6c25aa8385404f5891af633bc8991f1/publicsuffixlist-1.0.2.20260307.tar.gz"
-    sha256 "f2c674d769ea71087e2371d50849350a57443014ecaa72a17a1b5216c78cf37a"
+    url "https://files.pythonhosted.org/packages/dd/c9/c2b2b329f007ac57a3194673237f0606106f68c871c5cef8224ac21059e3/publicsuffixlist-1.0.2.20260311.tar.gz"
+    sha256 "9cd66cd893be75544610a9a51ee71c00d331edc18cf879b598803e34d028fba8"
   end
 
   resource "pyasn1" do
@@ -274,8 +275,8 @@ class Parsedmarc < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/5c/5a/b46fa56bf322901eee5b0454a34343cdbdae202cd421775a8ee4e42fd519/pyjwt-2.11.0.tar.gz"
-    sha256 "35f95c1f0fbe5d5ba6e43f00271c275f7a1a4db1dab27bf708073b75318ea623"
+    url "https://files.pythonhosted.org/packages/c2/27/a3b6e5bf6ff856d2509292e95c8f57f0df7017cf5394921fc4e4ef40308a/pyjwt-2.12.1.tar.gz"
+    sha256 "c74a7a2adf861c04d002db713dd85f84beb242228e671280bf709d765b03672b"
   end
 
   resource "pyparsing" do
@@ -311,11 +312,6 @@ class Parsedmarc < Formula
   resource "requests-oauthlib" do
     url "https://files.pythonhosted.org/packages/42/f2/05f29bc3913aea15eb670be136045bf5c5bbf4b99ecb839da9b422bb2c85/requests-oauthlib-2.0.0.tar.gz"
     sha256 "b3dffaebd884d8cd778494369603a9e7b58d29111bf6b41bdc2dcd87203af4e9"
-  end
-
-  resource "rsa" do
-    url "https://files.pythonhosted.org/packages/da/8a/22b7beea3ee0d44b1916c0c1cb0ee3af23b700b6da9f04991899d0c555d4/rsa-4.9.1.tar.gz"
-    sha256 "e7bdbfdb5497da4c07dfd35530e1a902659db6ff241e39d9953cad06ebd0ae75"
   end
 
   resource "s3transfer" do

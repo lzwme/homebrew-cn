@@ -12,13 +12,13 @@ class TclTk < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "05f176d9255ff98aa4910a30500bfe8cc5611fd592aa8a6a7cd0e0aaddda0b70"
-    sha256 arm64_sequoia: "7d27d0c09cc27867aa39cb6351cafcb3b5517ced408d551cc932bc10126b8905"
-    sha256 arm64_sonoma:  "61c6ca9792c1d870741bfa23dd56f35067bfd307fa39097e61013a4e344d203d"
-    sha256 sonoma:        "7b56375c63b3e3c7d43e1354cc77ab4e36a28dc34884589c6b6575cf3dacf3ab"
-    sha256 arm64_linux:   "7a36d991f2cdbcd843741c25892821f4b855fe5ddfd81254a8231737bab7ccee"
-    sha256 x86_64_linux:  "40e4c170b60a470cc659b19958c3b0ff3d478fcdf87a4164062bc2d3cfdd7f5a"
+    rebuild 2
+    sha256 arm64_tahoe:   "30e2a53a42dd933ff608651b365604fcccef57accc93ed30657172ecbbce94b0"
+    sha256 arm64_sequoia: "fe275cd50f8ed0b187d76c18026f44d4539ac77911b7c7b3face83b716ff108b"
+    sha256 arm64_sonoma:  "b0378e73a72918c1e3a3f05352d82ded2a4d254c3aa1e0fff2787792c068992a"
+    sha256 sonoma:        "c7eab351e5651328e0107596fdbb6210cc98f21e18a7970f9c2f67a53180b6c4"
+    sha256 arm64_linux:   "1e0207dbf68c0bd42340211b04db0219d579ac230dee989f4473c0f64760e396"
+    sha256 x86_64_linux:  "0a9aedf5c4469a4343e2444ed7501186426c619307a7e15d73d09d8f87d9894d"
   end
 
   depends_on "libtommath"
@@ -55,18 +55,13 @@ class TclTk < Formula
     end
   end
 
-  # There is no tcltls release compatible with TCL 9 and upstream Fossil repo
-  # added bot check that breaks download so instead track the Debian version.
-  # TODO: Track official versions once available
-  # Ref: https://core.tcl-lang.org/tcltls/tktview/f5a0fe8ddf
-  # Ref: https://sourceforge.net/p/tcl/mailman/tcl-core/thread/eab3a8bf-b846-45ef-a80c-6bc94d6dfe91@elmicron.de/
   resource "tcltls" do
-    url "https://deb.debian.org/debian/pool/main/t/tcltls/tcltls_1.8.0.orig.tar.gz"
-    sha256 "720a9e0bed3ba41b1ad141443c8651b7d0dc8fc9087f2077accb1ba9a5736489"
+    url "https://core.tcl-lang.org/tcltls/uv/tcltls-2.0-src.tar.gz"
+    sha256 "f1fa46067984c4096976f04f131fdea54c07ba45ce2b03a0697a0ea801e3a23a"
 
     livecheck do
-      url "https://deb.debian.org/debian/pool/main/t/tcltls/"
-      regex(/href=.*?tcltls[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
+      url "https://core.tcl-lang.org/tcltls/wiki/Download"
+      regex(/href=.*?tcltls[._-]v?(\d+(?:\.\d+)+)(?:[._-]src)?\.t/i)
     end
   end
 

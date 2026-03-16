@@ -6,15 +6,16 @@ class Cycode < Formula
   url "https://files.pythonhosted.org/packages/a3/9f/6dcc9a3d35d6afc344b88a2ba89c870e48dd3ccaa19ec2d2ff2b79a8b2d6/cycode-3.11.3.tar.gz"
   sha256 "fdee0ce807806cabe8a85489e55f7358e4d9f13322328431e7347ea2b616781e"
   license "MIT"
+  revision 1
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f156c02780404f170d3dfe23b1794e5b237bf86afd970c9cca8a887929e3611f"
-    sha256 cellar: :any,                 arm64_sequoia: "e6769ac284e1a23caad6f375c25fa128058a95f5cbc05351892633caf1cbe659"
-    sha256 cellar: :any,                 arm64_sonoma:  "b1776d918a9a989cb3b8452d4941844e1e84945f1f611d4b707426c967fce9ed"
-    sha256 cellar: :any,                 sonoma:        "a30e5aeff6ad5de7e7d1b4457c02eafe281bd2b78beed61998bb3e792f98ddde"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "335e8388961a08ed043a75ab0ecea6c23cea64b860d42d853df44b2b69226ce3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96a2f96d6b00a940a39c6005839f300b1667858823df45eda38959dfe66760d8"
+    sha256 cellar: :any,                 arm64_tahoe:   "2c47b791ad51e1e8b0b959bea7df9cc252c0bbc08e0331487f2d39ebd4b59e83"
+    sha256 cellar: :any,                 arm64_sequoia: "b687d6edb29459c7701fe0037bbf1079507f5256ddd35af4801c9241e46f379a"
+    sha256 cellar: :any,                 arm64_sonoma:  "c8593fbde788d1af9cb1d766770e5b4de42816efb9cceae6a850e7ef923ccc15"
+    sha256 cellar: :any,                 sonoma:        "4ccd0944755aaaa3f891fc734c38ac4b26621b5854dee998dc6b18a9f2dace99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aebfac7b64c433c32514ca5111b3f5a849b31b17b4955ed2b4121f569dd4faab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82c576efe444215442677c00e227f830c747c87c5883eab38a40532dae0e6d3c"
   end
 
   depends_on "certifi" => :no_linkage
@@ -147,8 +148,8 @@ class Cycode < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/5c/5a/b46fa56bf322901eee5b0454a34343cdbdae202cd421775a8ee4e42fd519/pyjwt-2.11.0.tar.gz"
-    sha256 "35f95c1f0fbe5d5ba6e43f00271c275f7a1a4db1dab27bf708073b75318ea623"
+    url "https://files.pythonhosted.org/packages/c2/27/a3b6e5bf6ff856d2509292e95c8f57f0df7017cf5394921fc4e4ef40308a/pyjwt-2.12.1.tar.gz"
+    sha256 "c74a7a2adf861c04d002db713dd85f84beb242228e671280bf709d765b03672b"
   end
 
   resource "python-dateutil" do

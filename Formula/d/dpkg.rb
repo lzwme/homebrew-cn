@@ -28,7 +28,7 @@ class Dpkg < Formula
   depends_on "gnu-tar"
   depends_on "gpatch"
   depends_on "libmd" # for md5.h
-  depends_on "perl"
+  depends_on "perl" # perl >= 5.36.0
   depends_on "xz" # For LZMA
 
   uses_from_macos "bzip2"
@@ -66,13 +66,12 @@ class Dpkg < Formula
     ENV["PERL_LIBDIR"] = libexec/"lib/perl5"
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
 
-    system "./configure", "--disable-dependency-tracking",
+    system "./configure", "--disable-dselect",
                           "--disable-silent-rules",
-                          "--prefix=#{libexec}",
+                          "--disable-start-stop-daemon",
                           "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}",
-                          "--disable-dselect",
-                          "--disable-start-stop-daemon"
+                          *std_configure_args(prefix: libexec)
     system "make"
     system "make", "install"
 

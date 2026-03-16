@@ -6,9 +6,10 @@ class StrandsAgentsSops < Formula
   url "https://files.pythonhosted.org/packages/c6/d6/efa19f4e061820c7d5e3ac8de8bd3716adaad6678209b16eb7a03ecee875/strands_agents_sops-1.1.1.tar.gz"
   sha256 "e36a72cfb806b20099856b28bbf6f6c317d1caa318608bb302e6467ed33c1361"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f44f75acb7943451d6c0e5b002974aee94c7e747e541348ec6b0d668a3fa05cd"
+    sha256 cellar: :any_skip_relocation, all: "79064f14fa30f8ddd969a27e796d32daf3fd95ac9d2eec14f6a481a4eb2787d2"
   end
 
   depends_on "certifi" => :no_linkage
@@ -80,8 +81,8 @@ class StrandsAgentsSops < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/5c/5a/b46fa56bf322901eee5b0454a34343cdbdae202cd421775a8ee4e42fd519/pyjwt-2.11.0.tar.gz"
-    sha256 "35f95c1f0fbe5d5ba6e43f00271c275f7a1a4db1dab27bf708073b75318ea623"
+    url "https://files.pythonhosted.org/packages/c2/27/a3b6e5bf6ff856d2509292e95c8f57f0df7017cf5394921fc4e4ef40308a/pyjwt-2.12.1.tar.gz"
+    sha256 "c74a7a2adf861c04d002db713dd85f84beb242228e671280bf709d765b03672b"
   end
 
   resource "python-dotenv" do

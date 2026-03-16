@@ -32,6 +32,11 @@ class Freedink < Formula
   resource "freedink-data" do
     url "https://ftpmirror.gnu.org/gnu/freedink/freedink-data-1.08.20190120.tar.gz"
     sha256 "715f44773b05b73a9ec9b62b0e152f3f281be1a1512fbaaa386176da94cffb9d"
+
+    livecheck do
+      url :url
+      regex(/href=.*?freedink-data[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    end
   end
 
   # Patch for recent SDL

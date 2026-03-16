@@ -1,18 +1,17 @@
 class Colmap < Formula
   desc "Structure-from-Motion and Multi-View Stereo"
   homepage "https://colmap.github.io/"
-  url "https://ghfast.top/https://github.com/colmap/colmap/archive/refs/tags/3.13.0.tar.gz"
-  sha256 "98a8f8cf6358774be223239a9b034cc9d55bf66c43f54fc6ddea9128a1ee197a"
+  url "https://ghfast.top/https://github.com/colmap/colmap/archive/refs/tags/4.0.1.tar.gz"
+  sha256 "de391aad3e45bbb1c43753a3b6dea50c6cf486316c7aa6c2356376822497ac60"
   license "BSD-3-Clause"
-  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c3ddfd4601a31a3585f41cbcb156478a33504ef9e26f4bcf28e4b94edfc2fdb0"
-    sha256 cellar: :any,                 arm64_sequoia: "95161d695470dcd967e382792a7af70502e9a92611d33123a3959ab1f1c36697"
-    sha256 cellar: :any,                 arm64_sonoma:  "a8e46cb6f6a1829d7adcf283522843635172e2208253850cb32710e9ea79ec3b"
-    sha256 cellar: :any,                 sonoma:        "32915062b90b298a0e178910753d28e533f6cd8a1598db75b14bf0921ec705b0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "144a551ecdef01a2b23157e9007b3770b243cd65b25d3705d6c914c77310f033"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "633c1c82e404ff2c340d3f28d0a25d781190631ba060f0e2b2db36582aa85662"
+    sha256                               arm64_tahoe:   "2d6dd7a3b3ef65250569478223c1fe566bddee3b969f306e2bd4242b295932cf"
+    sha256                               arm64_sequoia: "d4b3e047ecd328f53667dbf9aa90134cd86f695598f6815a21aacd03ccbe9775"
+    sha256                               arm64_sonoma:  "7ff4e637e90642c4a3d1544329bf67d877aaea46e4d16f5b8ced66dbf766cd3f"
+    sha256 cellar: :any,                 sonoma:        "08d899b6af6ba6a63c7d95067d89431d93389252040ef43a23d0556d8f9659fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "75084c6ffc92fd0942636f7b8deaaa184e8b2a7b4737fa1aaa2a869d721c2f78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "065d9abd82317c9daf9518fba206faec973d616d461f2f7d9bc92faa80ae3514"
   end
 
   depends_on "cmake" => :build
@@ -28,6 +27,8 @@ class Colmap < Formula
   depends_on "gmp"
   depends_on "lz4"
   depends_on "metis"
+  depends_on "onnx"
+  depends_on "onnxruntime"
   depends_on "openimageio"
   depends_on "openssl@3"
   depends_on "poselib"
@@ -47,31 +48,18 @@ class Colmap < Formula
     depends_on "mesa"
   end
 
-  # Backport support for OpenimageIO
-  patch :DATA # https://github.com/colmap/colmap/commit/c9e6ba0e63f1eaf9b4de985228da27ee6ec4c1f1
-  patch do
-    url "https://github.com/colmap/colmap/commit/083f4dee70b23f25729ed6d6c6fe9abc340b205e.patch?full_index=1"
-    sha256 "226dfaaf179ad650ce535f6a3f6cbb9f93bfec2587bef5eb4d2d789a2c782e44"
-  end
-  patch do
-    url "https://github.com/colmap/colmap/commit/8e014c5bc70c7e01506f1d5ef7daaf25dc3190ae.patch?full_index=1"
-    sha256 "368e697f9cc863bdb706c99383aefa81d6be2ba373285a2a398fb69aa6bb7390"
-  end
-  patch do
-    url "https://github.com/colmap/colmap/commit/74eeb69c62998c32dd8981b301956aaacec71596.patch?full_index=1"
-    sha256 "e8a8ff862a38b80d2531f2300d1817fc7f132ee8c11b0f813b1d17f02309d25b"
-  end
-  patch do
-    url "https://github.com/colmap/colmap/commit/70358de550ab47b0b83c3e5812d42ec8e2d41b22.patch?full_index=1"
-    sha256 "ffc001e4d18dee24a47d262bc0e4e30906ee51ad5f8d38e81aed6284d75b9daf"
-  end
-
   def install
     args = %w[
       -DCUDA_ENABLED=OFF
       -DFETCH_POSELIB=OFF
       -DFETCH_FAISS=OFF
+      -DFETCH_ONNX=OFF
+      -DBUILD_SHARED_LIBS=ON
     ]
+
+    # Fix library install directory and rpath
+    inreplace "CMakeLists.txt", "LIBRARY DESTINATION thirdparty/", "LIBRARY DESTINATION lib/"
+    args << "-DCMAKE_INSTALL_RPATH=#{loader_path}"
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
@@ -83,17 +71,3 @@ class Colmap < Formula
     assert_path_exists (testpath / "db")
   end
 end
-
-__END__
-diff --git a/.github/workflows/build-ubuntu.yml b/.github/workflows/build-ubuntu.yml
-index f19bac5237..e793ea64f3 100644
---- a/.github/workflows/build-ubuntu.yml
-+++ b/.github/workflows/build-ubuntu.yml
-@@ -145,6 +145,7 @@ jobs:
-             libboost-system-dev \
-             libeigen3-dev \
-             libceres-dev \
-+            libsuitesparse-dev \
-             libfreeimage-dev \
-             libmetis-dev \
-             libgoogle-glog-dev \

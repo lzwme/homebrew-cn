@@ -1,18 +1,18 @@
 class Zxc < Formula
   desc "High-performance asymmetric lossless compression library"
   homepage "https://github.com/hellobertrand/zxc"
-  url "https://ghfast.top/https://github.com/hellobertrand/zxc/archive/refs/tags/v0.8.3.tar.gz"
-  sha256 "6422427613178b8543d2f6ad08c3a5327c9087381dcda707f70e18d84215f136"
+  url "https://ghfast.top/https://github.com/hellobertrand/zxc/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "14a4016ff92e0981efb5c74ecc80e0ecea178287ea899c2d38d406323104797f"
   license "BSD-3-Clause"
   head "https://github.com/hellobertrand/zxc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "637a11622ad33dc1b2aa6d552ea92d34b1dce5b9e53bcfbf6b46f3d808548b98"
-    sha256 cellar: :any,                 arm64_sequoia: "74dc1cdd8e3a74bc7eb0ba40d369e35fbbd82d54b964a0a31a323243abfa3184"
-    sha256 cellar: :any,                 arm64_sonoma:  "d4ebc84041ad66af46f617707e4f57a69e791710602bceca7da7ea86b7c21109"
-    sha256 cellar: :any,                 sonoma:        "6c304ca798bea13f7eccf692f15b8f250c6a991787712597435d8bf271bced03"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc199288202235f4d3cc8e6a20373ea2ba9569c74fd8b4b4931c514a9ef503ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58393ba17bc31bf08c5e33f3d43f4ab20141c97af23d40d5bb67f055f3916a75"
+    sha256 cellar: :any,                 arm64_tahoe:   "723ce9338871e6e81336f8357dce191f0a4d04751e46455f10770f5090ec1ccf"
+    sha256 cellar: :any,                 arm64_sequoia: "871914782b83ec89f236147be5dfb38ba64059ee8f117efb70899a0be9e0e993"
+    sha256 cellar: :any,                 arm64_sonoma:  "52caa2e12ee9e42c173e3dce9e0b4636a9bf9a4a7e3a568667e8930b4909e330"
+    sha256 cellar: :any,                 sonoma:        "9104ce59a639a75cc4434c61d20183ee824ebb32539f9e726d27d0ca2eecbd27"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f2f9b253d2aba56063d78a0331c05f8fa9ef95ac1876277602caf4a827f2c75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f17f9d8168d8c5addb93501d676e8e1d1a79efd4c33da714dcea141f99674fb"
   end
 
   depends_on "cmake" => :build

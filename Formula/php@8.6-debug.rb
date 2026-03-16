@@ -1,9 +1,9 @@
 class PhpAT86Debug < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/php/php-src/archive/ed887241be87c976a44c8727e3a08bdb8f252ae3.tar.gz?commit=ed887241be87c976a44c8727e3a08bdb8f252ae3"
+  url "https://ghfast.top/https://github.com/php/php-src/archive/4561e92fa1e7b5515aad9d2f127e52d56e159928.tar.gz?commit=4561e92fa1e7b5515aad9d2f127e52d56e159928"
   version "8.6.0"
-  sha256 "a9c879ddf7d9c6783ac3fceeb4459a72da7743109b6bf9599cdda332abd9f967"
+  sha256 "0ce23e2a977c93268d978d94ff35c34bce433db3d38043c9297c4dc0701ef900"
   license all_of: [
     "PHP-3.01",
 
@@ -32,13 +32,13 @@ class PhpAT86Debug < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 40
-    sha256 arm64_tahoe:   "5d83150c09c5564c5ff5298b29e908ec399868e74312b1b818b00abb2b826b48"
-    sha256 arm64_sequoia: "16ac111a2c4041d3fd89c2370d0f382e65ebb0937b2fa9ff75064d4931c649fd"
-    sha256 arm64_sonoma:  "7dc05a9bf475ee2965dc154e8d802db4c52eeffa98550defc0cb7223a4833cfc"
-    sha256 sonoma:        "ad8f18e1b039d1685299160a8e55e08f47de130babf4410106daef6665c77b8a"
-    sha256 arm64_linux:   "d3eb70480fd018da4b36dbe91c3c81e5cb08c29779078383e3a6d156e3f7c088"
-    sha256 x86_64_linux:  "b4802c817e35660996082c98e442bb95342c67c99cfad75d767ed6e24c7b89de"
+    rebuild 41
+    sha256 arm64_tahoe:   "318c86b0df68608a35d68feb7a354f75de1f10f599a6e7987684addd9c7e75e3"
+    sha256 arm64_sequoia: "ebdb5a9338cfa85282f5b2993540cc5524d48ce5c3896e4cf35fc58d2d9ab31d"
+    sha256 arm64_sonoma:  "dfc50f9121a0da9448fe37936752285288790320971a4d8005455032e5d50d6d"
+    sha256 sonoma:        "9c30e78079552ec5b559f7023786542d73b71b2b9e10f2de963cb731e6be97db"
+    sha256 arm64_linux:   "46b6a96acb1057a76e18e70e7d381a436e8b71ec6e87305f073ef1fbafa46947"
+    sha256 x86_64_linux:  "037520dea29ba55bdfb83633d0bac23b4f68f34229a14ae884d834622bc7122a"
   end
 
   keg_only :versioned_formula
@@ -198,7 +198,7 @@ class PhpAT86Debug < Formula
       --with-pdo-pgsql=#{Formula["libpq"].opt_prefix}
       --with-pdo-sqlite
       --with-pgsql=#{Formula["libpq"].opt_prefix}
-      --with-pic
+      --enable-pic
       --with-snmp=#{Formula["net-snmp"].opt_prefix}
       --with-sodium
       --with-sqlite3

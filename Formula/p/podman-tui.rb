@@ -1,20 +1,20 @@
 class PodmanTui < Formula
   desc "Podman Terminal User Interface"
   homepage "https://github.com/containers/podman-tui"
-  url "https://ghfast.top/https://github.com/containers/podman-tui/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "88cdf474f5b60dd9227055e9a73a79db35ef4f06944ef50d68014fcfab535c9a"
+  url "https://ghfast.top/https://github.com/containers/podman-tui/archive/refs/tags/v1.11.1.tar.gz"
+  sha256 "210b691917864c0413134efeaa426139c9feefb3d039462a541ebddc6cae74e1"
   license "Apache-2.0"
   head "https://github.com/containers/podman-tui.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "43a2c83fb8232239f2244376b93368d63797f1726f7af42ce4c4be76cd7c4c10"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43a2c83fb8232239f2244376b93368d63797f1726f7af42ce4c4be76cd7c4c10"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43a2c83fb8232239f2244376b93368d63797f1726f7af42ce4c4be76cd7c4c10"
-    sha256 cellar: :any_skip_relocation, sonoma:        "250d199bb09eb32d1cf540091383586ac2ae477f27b92030229ab81bd52a4bb2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f876d754bb4da2d2cc305c784185e866c90e7e6b9d623a6f25a4127a57231d96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "572a8a77c5ee36748bb013ad1a96d62dc085022653a90b9e8bbd479b9cfd3d7a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae23d88bb8be1e0619ea9218f8725e498b22ea468bb6afcc3940f6bffb27a1bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae23d88bb8be1e0619ea9218f8725e498b22ea468bb6afcc3940f6bffb27a1bb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae23d88bb8be1e0619ea9218f8725e498b22ea468bb6afcc3940f6bffb27a1bb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9c57dd0df75f6fa206c2a102e1bb9ef5f59c050823494facf2e934440a319f53"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28f0486866efd54d641f1d4a1021b2ccd5d53625fa7be3d33c0ece1337115649"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5c535af8cac0eaefa23187db7bc4c7e60b97e9efdc0021943357f4a9d46fbf3"
   end
 
   depends_on "go" => :build

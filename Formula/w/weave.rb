@@ -1,18 +1,18 @@
 class Weave < Formula
   desc "Entity-level semantic merge driver for Git using tree-sitter"
   homepage "https://github.com/Ataraxy-Labs/weave"
-  url "https://ghfast.top/https://github.com/Ataraxy-Labs/weave/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "60c3cf0bacc7593d64ffde2d5d5720d93634e0c87778f4654a02b4903f00e8a4"
+  url "https://ghfast.top/https://github.com/Ataraxy-Labs/weave/archive/refs/tags/v0.2.4.tar.gz"
+  sha256 "267b516147a956719bfa13ef0b815f4351cb1f61e87a3d3370d96a96c2a970c7"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/Ataraxy-Labs/weave.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "09615be0816d3f36956db08308083f9f91d53bfbb8ede1f1c0ea93eeec951739"
-    sha256 cellar: :any,                 arm64_sequoia: "9e7dc341726028ff45792f373a74958440d5eb315dd3db48b67e6615cb90ad6c"
-    sha256 cellar: :any,                 arm64_sonoma:  "2e0e17314569bc4e153ff3b2079190c77bf7faf3d14b5fc6c78b9c5a1fde0bc8"
-    sha256 cellar: :any,                 sonoma:        "2fd42b337768ffacd1cb7a385d3441fa5ce0f05cef70de9553c679abbe2cb0f4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9ed0be611e8a2947163b8e2435e8481824f08f0d1ffe801afd67d823e6fbd56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "516b2472943365e73cd9431775a4b5cd1e05471522d0f0df24fb2439e75a751d"
+    sha256 cellar: :any,                 arm64_tahoe:   "345cb908dfbab285a886b2cffdebfd51297ee4717b75495db7dd4a7bc62a8b40"
+    sha256 cellar: :any,                 arm64_sequoia: "3bd026a70f26c06c27416bcfd25301d988e8f51c286e5f2ab7298b495028bd78"
+    sha256 cellar: :any,                 arm64_sonoma:  "926a29a7cb3a9e3d6d23217fbc97d8cedb18e82a8e054b4d3c5377d4786c7069"
+    sha256 cellar: :any,                 sonoma:        "84fe08fe1d6e7999372544c3a483dd5cefecf1cf1e6ee6f0a1b7f68e2f3b7cf3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d39c629eea3fe3c9d07beae60954e76293ac4b6ea793df24a81c4e4cbd8651ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fac8d199a612df2f333df3c0bd1208cfdae853bd8f65a637f095494be00126a"
   end
 
   depends_on "pkgconf" => :build

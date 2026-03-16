@@ -3,13 +3,13 @@ class GitCola < Formula
 
   desc "Highly caffeinated git GUI"
   homepage "https://git-cola.github.io/"
-  url "https://files.pythonhosted.org/packages/eb/9c/69e0614a8ecfb41911b264d2dc909739615c52b582066d822f6100597f97/git_cola-4.17.1.tar.gz"
-  sha256 "c0a0cba72ac931196be21ff592c1fd0fb43c901037e4f6b2c87e05a7f3d063e7"
+  url "https://files.pythonhosted.org/packages/d5/33/b78f66e20178e24e8723db2a092e33bffef1cc857386aa47acfe3e392c16/git_cola-4.18.1.tar.gz"
+  sha256 "f175bc0db09f5bcd027503dc584f7c7b7c727129f12b1816255d3977b2502c52"
   license "GPL-2.0-or-later"
   head "https://github.com/git-cola/git-cola.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "15d3798c3416077a4935c19fa975d9fd336bd3ec2c6e7c806575596b448ffd7b"
+    sha256 cellar: :any_skip_relocation, all: "acf672b12208c1d330b07543bb0a517a040d0d14b3d0a31a78f2c4e3c3ffc0b2"
   end
 
   depends_on "git-gui"

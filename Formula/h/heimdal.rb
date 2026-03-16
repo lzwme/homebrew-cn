@@ -42,6 +42,8 @@ class Heimdal < Formula
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
 
+  # TODO: Remove in the next release
+  # https://github.com/heimdal/heimdal/commit/f62e2f278437ff6c03d2d09bd628381c795bba78
   resource "JSON" do
     on_linux do
       url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-4.10.tar.gz"
@@ -51,8 +53,8 @@ class Heimdal < Formula
 
   def install
     if OS.linux?
+      odie "Remove JSON resource and corresponding build!" if version > "7.8.0"
       ENV.prepend_create_path "PERL5LIB", buildpath/"perl5/lib/perl5"
-
       resource("JSON").stage do
         system "perl", "Makefile.PL", "INSTALL_BASE=#{buildpath}/perl5"
         system "make"

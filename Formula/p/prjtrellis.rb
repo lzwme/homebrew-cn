@@ -23,6 +23,10 @@ class Prjtrellis < Formula
   resource "prjtrellis-db" do
     url "https://ghfast.top/https://github.com/YosysHQ/prjtrellis/releases/download/1.4/prjtrellis-db-1.4.zip"
     sha256 "4f8a8a5344f85c628fb3ba3862476058c80bcb8ffb3604c5cca84fede11ff9f0"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   # Workaround to build with Boost 1.89.0 until fixed upstream

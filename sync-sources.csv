@@ -12544,6 +12544,7 @@ Homebrew-homebrew-cask/Casks/g/graalvm-jdk@21.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/graalvm-jdk@25.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/grads.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/grafx.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/gram.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/grammarly-desktop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gramps.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/grandperspective.rb, Homebrew/homebrew-cask, 0
@@ -12811,7 +12812,6 @@ Homebrew-homebrew-cask/Casks/i/istatistica-core.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/istherenet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/isubtitle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/isyncer.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/i/isyncr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itau.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/iterm2.rb, Homebrew/homebrew-cask, 1
@@ -13369,7 +13369,6 @@ Homebrew-homebrew-cask/Casks/m/memory-meter-3.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memory.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memoryanalyzer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mendeley-reference-manager.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/mendeley.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/menu-bar-splitter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/menubar-colors.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/menubar-countdown.rb, Homebrew/homebrew-cask, 1
@@ -14868,6 +14867,7 @@ Homebrew-homebrew-cask/Casks/s/sparsity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spatial.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spatterlight.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/specter.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/spectra-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spectrolite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/speedcrunch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/speedify.rb, Homebrew/homebrew-cask, 0
@@ -15375,6 +15375,7 @@ Homebrew-homebrew-cask/Casks/u/ui-tars.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/ukelele.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/ukrainian-typographic-keyboard.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/ukrainian-unicode-layout.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/u/ulaa.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/ulbow.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/ultdata.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/ultimaker-cura.rb, Homebrew/homebrew-cask, 1

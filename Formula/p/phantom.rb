@@ -1,12 +1,12 @@
 class Phantom < Formula
   desc "CLI tool for seamless parallel development with Git worktrees"
-  homepage "https://github.com/aku11i/phantom"
-  url "https://registry.npmjs.org/@aku11i/phantom/-/phantom-5.1.0.tgz"
-  sha256 "92000a1e2b905b7ecfb3acb6e6a8a9c8f422ec1211b15a71eb68ced62e36f411"
+  homepage "https://github.com/phantompane/phantom"
+  url "https://registry.npmjs.org/@phantompane/cli/-/cli-6.1.0.tgz"
+  sha256 "fddf828288a14cb8de1739071c019f4a7bce900f6546d48985160410168bf33a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "44195c9478ecbad4f9f87da365be5499a15861ae6940304c219adc8bc66b8d4f"
+    sha256 cellar: :any_skip_relocation, all: "9d98f066a7c1e76bfb5f6379b5f9332d9d1d7016d0dcdc33cb1aa28cb409624d"
   end
 
   depends_on "node"

@@ -1,8 +1,8 @@
 class SwiProlog < Formula
   desc "ISO/Edinburgh-style Prolog interpreter"
   homepage "https://www.swi-prolog.org/"
-  url "https://www.swi-prolog.org/download/stable/src/swipl-10.0.1.tar.gz"
-  sha256 "a9504745310e36195cf8cee9ad9164a7aa99e389c669ca6d279e321efc2ad9d4"
+  url "https://www.swi-prolog.org/download/stable/src/swipl-10.0.2.tar.gz"
+  sha256 "e42cc098f7b8a6051c4f79a99b55162d467098aba60f69649bdc7583f0734b57"
   license "BSD-2-Clause"
   head "https://github.com/SWI-Prolog/swipl-devel.git", branch: "master"
 
@@ -12,12 +12,12 @@ class SwiProlog < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ec138c06b1b609386119a1a01de26d4a2d13c220b35087772f3f617cb6757f82"
-    sha256 arm64_sequoia: "8097c8070826fc200a90f7f5275133520bb06b188b220ced7b91cf60972aef8e"
-    sha256 arm64_sonoma:  "3150968bdca7001398fbcbe8fa440c49257ac6ffe107df2a177c33ead61081f6"
-    sha256 sonoma:        "10a5ebed010d3892c549e2a2bf614dd943698f60f67209f272573e2e350c0b0d"
-    sha256 arm64_linux:   "d63fb5ffd077083e93a2c3de24bcbcb6720ca6d05249c0eb373f3fd38591f2ec"
-    sha256 x86_64_linux:  "9822768754b2e7fb206050ab4b3c9950768920477166e142dd8441f8451e97ba"
+    sha256 arm64_tahoe:   "658967ea1fc58394cd4efeb57b8fa0a2ec5d9a359822655a8657211369d47a87"
+    sha256 arm64_sequoia: "c0d227bc5e7907a1d0498d154687d45bea093b19b78f37542ba9b89f5a3a616d"
+    sha256 arm64_sonoma:  "83360173120efdd80d1807dad53287db7d1ade703197a3740a6ccfa7d2fe06cd"
+    sha256 sonoma:        "8d68b36e1f86eb033035c3e16dfba3956b260c726ba876771dac77657893f74e"
+    sha256 arm64_linux:   "0da6dee24b78dd05455eabdb5ea6e83589a1e61c464bc9d4c4e22d3defa73abf"
+    sha256 x86_64_linux:  "ba920440f195ac462e39656d8604ba83045b39bb86948cca3700527c5f9520c9"
   end
 
   depends_on "cmake" => :build

@@ -1,9 +1,9 @@
 cask "paseo" do
   arch arm: "aarch64", intel: "x64"
 
-  version "0.1.27"
-  sha256 arm:   "eee051b6e80534eb4caf6ab49f0e62a11a27f0ca89f5ed939c6e6bae479e8d5d",
-         intel: "70f5e61825db066c5718fb687493ab9531defbbe9785492df2c47ed4e7e74407"
+  version "0.1.28"
+  sha256 arm:   "6d845b59284f67f8f19c1f5b04fb29c7ebfe37c12cf18a22dc5701196f48ed8e",
+         intel: "1174842028c451292aea9906d4ea103e8591cfd1ed30adf3df2ea916eb0d62cb"
 
   url "https://ghfast.top/https://github.com/getpaseo/paseo/releases/download/v#{version}/Paseo_#{version}_#{arch}.dmg",
       verified: "github.com/getpaseo/paseo/"
@@ -14,6 +14,7 @@ cask "paseo" do
   depends_on macos: ">= :ventura"
 
   app "Paseo.app"
+  binary "#{appdir}/Paseo.app/Contents/MacOS/Paseo", target: "paseo"
 
   zap trash: [
     "~/Library/Application Support/dev.paseo.desktop",

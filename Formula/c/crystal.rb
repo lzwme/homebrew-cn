@@ -26,12 +26,13 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1e12ff8299d252518e4124e56ecc4cdb48ef0153d08c75715f7bcb076c8a2a0b"
-    sha256 cellar: :any,                 arm64_sequoia: "731fd73bd657516829c34e0228066ccec8563a55543ee3e2cb2bcef38facbaa3"
-    sha256 cellar: :any,                 arm64_sonoma:  "85a87d697edec5fcfeb78bfa899e213079e9de377de5b7cef7a416ad39e9e937"
-    sha256 cellar: :any,                 sonoma:        "44a252cb01c1de8c5f7d22119ecaee4dbecc6b62d550364d5c3ee3d43a72971a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "23fb74f2869d8a7a111c32490076c5042d6307ce85bf4eb540ea32e9cc8a13eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6114a8ba26bcae0bd6fc50468f9eeb217df1a245be1a2ee49eadf634e3f27e82"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "71da2d965964a9281cd93b2e5c4f3bc5050fa7fa51edfc2fb13f1c68d3e6a506"
+    sha256 cellar: :any,                 arm64_sequoia: "f0c5846d6ad69929d02e1c847dd626b9a3bdbc3d51859bfc242795ae0324cc8b"
+    sha256 cellar: :any,                 arm64_sonoma:  "d3fe185ad8dae9a1981575f058c4901b0aadb752ca39b58a798197ade8129dfd"
+    sha256 cellar: :any,                 sonoma:        "a71f7db6b80c4d581eba51666ea1be16f10802c94e6d9af0093a464f3dc8af82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef978bbc693bcf53d4294cff658ef5019648a10b09b7966a50e1fc2c4e319215"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50bdb6726fba33f256ea2f0df7b3adffe7d64b6328b06c2342bd72ee858f0fea"
   end
 
   head do
@@ -44,12 +45,17 @@ class Crystal < Formula
 
   depends_on "bdw-gc"
   depends_on "gmp" => :no_linkage # std uses it but it's not linked
-  depends_on "libffi" # for the interpreter
   depends_on "libyaml"
   depends_on "llvm"
   depends_on "openssl@3" # std uses it but it's not linked
   depends_on "pcre2"
   depends_on "pkgconf" # @[Link] will use pkg-config if available
+
+  uses_from_macos "libffi" # for the interpreter
+
+  on_intel do
+    depends_on "libffi"
+  end
 
   # It used to be the case that every new crystal release was built from a
   # previous release, except patches. Crystal is updating its policy to

@@ -33,13 +33,29 @@ class Cryptominisat < Formula
   # Currently using revision in flake.lock
   resource "cadical" do
     url "https://ghfast.top/https://github.com/meelgroup/cadical/archive/8fcb8139c453e7cb85c470cea5d783db8e229518.tar.gz"
+    version "8fcb8139c453e7cb85c470cea5d783db8e229518"
     sha256 "9880d09a7ff3d9dc4b633fa8230ff168b089c78a4c1811efd467925eb9972f9b"
+
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/msoos/cryptominisat/refs/tags/release/#{LATEST_VERSION}/flake.lock"
+      strategy :json do |json|
+        json.dig("nodes", "cadical", "locked", "rev")
+      end
+    end
   end
 
   # Currently using revision in flake.lock
   resource "cadiback" do
     url "https://github.com/meelgroup/cadiback.git",
         revision: "c24a73f62da2f984df6d3f1cf37283b1ca1c9f9e"
+    version "c24a73f62da2f984df6d3f1cf37283b1ca1c9f9e"
+
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/msoos/cryptominisat/refs/tags/release/#{LATEST_VERSION}/flake.lock"
+      strategy :json do |json|
+        json.dig("nodes", "cadiback", "locked", "rev")
+      end
+    end
   end
 
   # Apply modified Arch Linux patch to avoid rebuilding C++ library for Python bindings
