@@ -1,8 +1,8 @@
 class Cvsync < Formula
   desc "Portable CVS repository synchronization utility"
   homepage "https://www.cvsync.org/"
-  url "https://www.cvsync.org/dist/cvsync-0.24.19.tar.gz"
-  sha256 "75d99fc387612cb47141de4d59cb3ba1d2965157230f10015fbaa3a1c3b27560"
+  url "https://www.cvsync.org/dist/cvsync-0.24.20.tar.bz2"
+  sha256 "38fe7ed5e5b8e93858cf59484e0c3e661a52fb82177f73ce29e6170d3069a2a5"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,12 @@ class Cvsync < Formula
   end
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_tahoe:   "462780681001bc3d967095fe7299ea1a80d5c61a97445fa71906b9c313a3d524"
-    sha256 cellar: :any,                 arm64_sequoia: "c10b8ee0fac29dacca30b600168f906ba9dba4c8482a43a914c465a0136242b2"
-    sha256 cellar: :any,                 arm64_sonoma:  "76c47b6ce6da172873b98ab94ef3e5e538a4e876eb49cea83067526fe79a52d4"
-    sha256 cellar: :any,                 sonoma:        "4cd58fd98a0d40e093b9d4bd274713a13abdf3b4937c022d8d1d03fa763bc316"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e57f12788449006737f2a77356c2bd3a4c65e6301e78b8cbe50512087f9f03ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "681d877926aaa76806b946e22c4d254a6b4e82bd22aca241113cf05d1271a5c1"
+    sha256 cellar: :any,                 arm64_tahoe:   "b81c4d24167e797f64465c3060f8a8d28529255c229998c8bb726be119aa1028"
+    sha256 cellar: :any,                 arm64_sequoia: "7309da9877789f2a01a29b5adca987e3d5cca4825ee349042c9211eea0f96774"
+    sha256 cellar: :any,                 arm64_sonoma:  "a7e5a9da3977ccc2c20daa0eeac3ac6069dd5d026bb6d86aa40c4219432c9040"
+    sha256 cellar: :any,                 sonoma:        "5759b950487eb0317d3424292d3ab47866bc408ff81909d731cbda79c80d5954"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd83b23b9450d46c8c72da4f914d969f359073dceb5b48cbaea6bd464123cc2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34a2636df942bc8fabaf8112d319f14b037e04dd3a43c9f8948ca0be77cca8fd"
   end
 
   depends_on "openssl@3"

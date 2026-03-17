@@ -1,18 +1,18 @@
 class AutoEditor < Formula
   desc "Effort free video editing!"
   homepage "https://auto-editor.com"
-  url "https://ghfast.top/https://github.com/WyattBlue/auto-editor/archive/refs/tags/29.8.1.tar.gz"
-  sha256 "88daf3bbb52fb7f4818e56b52d86b3e4690bf87320875426d0acf068c7e6151e"
+  url "https://ghfast.top/https://github.com/WyattBlue/auto-editor/archive/refs/tags/30.0.0.tar.gz"
+  sha256 "326f5d3dfa2c475679b23d5d67957fe4c0fc30b37b61c1b302f9f32400428ca6"
   license "Unlicense"
   head "https://github.com/WyattBlue/auto-editor.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "032aabbf6e27fd086013ac6c0d0b42adf4490a70ea1e203f3165e13611710925"
-    sha256 cellar: :any,                 arm64_sequoia: "0fb1af744497233d520486ed30759d770bf000cb74089079a51aed89e48191f1"
-    sha256 cellar: :any,                 arm64_sonoma:  "091fc43f1efeae0d0f0c0d3dbae846316347849c634ba92f541521237e2d5c60"
-    sha256 cellar: :any,                 sonoma:        "5bbe46232fc51431524dad28e90d100a27b17b68a5c065658f91c9ebbd19f7ed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "99862bbf08c9f533c3ebf494d22535fa03f6ab33b89a0140c2edc6c1c47415ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa37e5a16cedad636279a1af680f28ac0b753da85d1e088e09fcc1553f09531e"
+    sha256 cellar: :any,                 arm64_tahoe:   "7dcec00389e400aed1b3073f16cd4703db73533d2fcbfd97f1793a70980323c5"
+    sha256 cellar: :any,                 arm64_sequoia: "0450d024573842a63d53273888e1098a904d9c2c70e77c652bfcbdf7133a18ef"
+    sha256 cellar: :any,                 arm64_sonoma:  "cdadc1d5214628ebe3e1137ebdef0e90d5635fbd3800e1eb733efcddc6bd6c3a"
+    sha256 cellar: :any,                 sonoma:        "81e87b4fe6090680b6dec26c3be77e79dec096f83b7328ff4bc088aee5b1cc1a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "131a8cfb77d68abd9fca60c8807a74d1fc4cafd5c0a4d829cf2d186baf43d6c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b6aca1bd4f2d5b0a84fb800f0717a60e4ed27c34b57656cc321ab77eac1bf5f"
   end
 
   depends_on "nim" => :build

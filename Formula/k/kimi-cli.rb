@@ -3,20 +3,20 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/79/3f/002077b60d6ec3257f4aef0c2dc76a4f72c528575e32d3f3bbc4abf49a7a/kimi_cli-1.21.0.tar.gz"
-  sha256 "104a6889da00518aaba90c425a9771691383ea19a8ddeb0c36432338e3eb6363"
+  url "https://files.pythonhosted.org/packages/de/74/589b302175a4ada98237911ac68df51852570659e755ada1f66f3f342a2c/kimi_cli-1.22.0.tar.gz"
+  sha256 "fbc85fc38d597986b4b50ce12213e7693da7611a6337a1051ccc9338b53cc3b0"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a0043d50e4e57e52f4019026482d83ebb16ea3f63a72e95122b35235f8ebc703"
-    sha256 cellar: :any,                 arm64_sequoia: "04893c8eb1bb0e2328777671a1f7800331bfbd990b53b70e4d7af8350a6204cf"
-    sha256 cellar: :any,                 arm64_sonoma:  "a0da65c2a3b6a217ac752acc075a3e61446bc0ece544c9ae2c72904d23d3c0c4"
-    sha256 cellar: :any,                 sonoma:        "3e30511f6c11f64e190553c8476cd6f7bc066cb0be3a36860a61b28ef1777333"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "157cb84f06d8898dc9647d69cc54c4a159d8a4a84a909296101d71be68369ad1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fdc0f27e18f4996998a1915155cfa7c0b285c99f61cdb5dc53d420a8e647957"
+    sha256 cellar: :any,                 arm64_tahoe:   "474f401bc95a065a2891bd4d6cb95e237aefbbefb6404ee2347f1b2f1410be25"
+    sha256 cellar: :any,                 arm64_sequoia: "968199505d7a687e69f7555455308d8ee5438f8f4c07b71966d8fc8de5dbdfd6"
+    sha256 cellar: :any,                 arm64_sonoma:  "2d298c4da965e4785f3cd4473fbd8ad26c47652642bac0b4d6203739dac61847"
+    sha256 cellar: :any,                 sonoma:        "d09451c6013c231e6e7944a9935085e57fe09e48d8207f48ac6e28f358dc94a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3eaab2171b1da4dfebec776e6dbd7fccb8a3d7dfcf7ca614cfcdd46607f5162d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e868bb7b9d60eb2b51df0679111d77fdbe5707c46c3dcef613aabf425980dbe"
   end
 
   depends_on "pkgconf" => :build
@@ -123,8 +123,8 @@ class KimiCli < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
-    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "click" do
@@ -138,8 +138,8 @@ class KimiCli < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/33/7a/3c3623755561c7f283dd769470e99ae36c46810bf3b3f264d69006f6c97a/cyclopts-4.8.0.tar.gz"
-    sha256 "92cc292d18d8be372e58d8bce1aa966d30f819a5fb3fee02bd2ad4a6bb403f29"
+    url "https://files.pythonhosted.org/packages/2c/e7/3e26855c046ac527cf94d890f6698e703980337f22ea7097e02b35b910f9/cyclopts-4.10.0.tar.gz"
+    sha256 "0ae04a53274e200ef3477c8b54de63b019bc6cd0162d75c718bf40c9c3fb5268"
   end
 
   resource "dateparser" do
@@ -744,8 +744,8 @@ class KimiCli < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/32/ce/eeb58ae4ac36fe09e3842eb02e0eb676bf2c53ae062b98f1b2531673efdd/uvicorn-0.41.0.tar.gz"
-    sha256 "09d11cf7008da33113824ee5a1c6422d89fbc2ff476540d69a34c87fab8b571a"
+    url "https://files.pythonhosted.org/packages/e3/ad/4a96c425be6fb67e0621e62d86c402b4a17ab2be7f7c055d9bd2f638b9e2/uvicorn-0.42.0.tar.gz"
+    sha256 "9b1f190ce15a2dd22e7758651d9b6d12df09a13d51ba5bf4fc33c383a48e1775"
   end
 
   resource "uvloop" do

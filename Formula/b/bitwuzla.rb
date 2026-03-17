@@ -1,8 +1,8 @@
 class Bitwuzla < Formula
   desc "SMT solver for bit-vectors, floating-points, arrays and uninterpreted functions"
   homepage "https://bitwuzla.github.io"
-  url "https://ghfast.top/https://github.com/bitwuzla/bitwuzla/archive/refs/tags/0.8.2.tar.gz"
-  sha256 "637ed0b8d43291004089543b8c7bb744d325231113cab9bfa07f7bb7a154eeb5"
+  url "https://ghfast.top/https://github.com/bitwuzla/bitwuzla/archive/refs/tags/0.9.0.tar.gz"
+  sha256 "e15420eaaef586c0d02d4b46cf3bdf203ba2511147b0decab99a9df9c9f115ca"
   license "MIT"
 
   livecheck do
@@ -11,18 +11,19 @@ class Bitwuzla < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bd4be0f59690b95209e2d40eead07a3da969721e99bd7904ebbd65e2442dc4a9"
-    sha256 cellar: :any, arm64_sequoia: "a11c02bc02faee3f438c2a3cc5e248c096b34b58588818ae2e1a6e7ccf260f71"
-    sha256 cellar: :any, arm64_sonoma:  "ed4d3c68db7f8c090bb1055d58bb4481d4fd0ccf376cb44a9ac526e656ec1c86"
-    sha256 cellar: :any, sonoma:        "d788de04dba4aeced6270c38f3d043ab65c821c4c0af992001847be5843b54b4"
-    sha256               arm64_linux:   "70695221d6796ec98c71e6f6d6b9754a78e6a776aa05c608feb72e080cacc261"
-    sha256               x86_64_linux:  "073560c6335ecdce5557e77b0c96f8f362f4af25002296da4c949673290f969e"
+    sha256 cellar: :any, arm64_tahoe:   "1aefec513dad32a1fa2276294090522577a32bb2423fe07574099d972652488b"
+    sha256 cellar: :any, arm64_sequoia: "56117956505409a4b853ce4d3feda40a26373bfe3ad615da607dbb6e6d79f0dc"
+    sha256 cellar: :any, arm64_sonoma:  "4e5aa34b585af95119fe5e4909efc00abc3cb390dda43d23ba5b81fb2160fb13"
+    sha256 cellar: :any, sonoma:        "f11a33d62af85cd1d026e685466c793bafa7e0610e889e8342963aa9d21493e3"
+    sha256               arm64_linux:   "8347a56e18adc32eef4d53e6ae3f3e7e046ff9aa592fe380c051471f5f6bc56b"
+    sha256               x86_64_linux:  "3de69500d8b2cbc2ee2c85a0a07e4be5aade0bd1b315926d3b83641f620d6c32"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "gmp"
+  depends_on "mpfr"
 
   def install
     # Not compatible with brew cadical (>= 3)

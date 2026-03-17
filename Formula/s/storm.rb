@@ -3,7 +3,8 @@ class Storm < Formula
 
   desc "Distributed realtime computation system to process data streams"
   homepage "https://storm.apache.org"
-  url "https://dlcdn.apache.org/storm/apache-storm-2.8.4/apache-storm-2.8.4.tar.gz"
+  url "https://www.apache.org/dyn/closer.lua?path=storm/apache-storm-2.8.4/apache-storm-2.8.4.tar.gz"
+  mirror "https://archive.apache.org/dist/storm/apache-storm-2.8.4/apache-storm-2.8.4.tar.gz"
   sha256 "fb5060f1a62282bdf45d93fb9ae3da5fb13a5d295159c7cdce5d7aacb8be9a5d"
   license "Apache-2.0"
 

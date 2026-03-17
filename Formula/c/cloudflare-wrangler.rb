@@ -1,17 +1,17 @@
 class CloudflareWrangler < Formula
   desc "CLI tool for Cloudflare Workers"
   homepage "https://github.com/cloudflare/workers-sdk"
-  url "https://registry.npmjs.org/wrangler/-/wrangler-4.73.0.tgz"
-  sha256 "e52de9137205aa76cc2462d55c5e033c9e7eb0ee869a4f61d240327e679fb02e"
+  url "https://registry.npmjs.org/wrangler/-/wrangler-4.74.0.tgz"
+  sha256 "a2344b1e764186bc560c990e647ad5305696dd2985698ede438119bb33cd4f09"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a24a5ed5853931ed98576610c592ebbd9250597e4013b5eea3463e87e50f75d9"
-    sha256 cellar: :any,                 arm64_sequoia: "897ccff5c06894d8767647c4580fe3cb7cb0d833a5a42e0ac3c1177ac82e62cf"
-    sha256 cellar: :any,                 arm64_sonoma:  "897ccff5c06894d8767647c4580fe3cb7cb0d833a5a42e0ac3c1177ac82e62cf"
-    sha256 cellar: :any,                 sonoma:        "fccefaac95cf33014af3b68d3ea599ca7efd787a0855e8f7632f3d73179e4821"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "829cb492f1b937a45e89332d40a02332d069ebc29069105ae7d653b812a53d6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed9e79e7683a16c139fc850b473ec257801fd53f7b0a2d1261402208c768f4f4"
+    sha256 cellar: :any,                 arm64_tahoe:   "e433aa87174e52808ff5d04874b4c856a6a8a598dce4e86d67b4bf111a833f15"
+    sha256 cellar: :any,                 arm64_sequoia: "373a2b6a2ff691468db8f78ff0f5325693cdccbdef2ea58453b5d5912cb9262d"
+    sha256 cellar: :any,                 arm64_sonoma:  "373a2b6a2ff691468db8f78ff0f5325693cdccbdef2ea58453b5d5912cb9262d"
+    sha256 cellar: :any,                 sonoma:        "733e86bff926e8100a92c197110854c07b5eb3d21a88f9a5242c81684112f8f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c64143b93e516e367a89883d99e310771addbf5e3e16c229594e8c4a590cb1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02d0da8a5734f6bbbf3a4b1d9001acf16e2c20df99e502b6b36ec35b5144471c"
   end
 
   depends_on "node"

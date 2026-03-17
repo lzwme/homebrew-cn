@@ -3,12 +3,12 @@ class Fobis < Formula
 
   desc "KISS build tool for automatically building modern Fortran projects"
   homepage "https://github.com/szaghi/FoBiS"
-  url "https://files.pythonhosted.org/packages/13/b2/f3851edd883ffba1d96e710e62c509f39d052dacc1c8d8eeecf10cd99961/fobis_py-3.6.4.tar.gz"
-  sha256 "9dfe34e615b2e6b0ad108708229f2f358ff343ee25a3df9200a326d7eb19f9b2"
+  url "https://files.pythonhosted.org/packages/12/51/8ec4d27fb0f94df3b538cebcdad15db373f59a85d76716d3291e57328ef6/fobis_py-3.7.3.tar.gz"
+  sha256 "b5fd5f9b73fa47e12a3f5ad68ef6aa6317c9d1ed70e6032ce8c71066ac7bbaa6"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bdbae7901f38dc0b7ee411c6ad0227e05335e17a9ea1735ee0b42d2c2d854bcf"
+    sha256 cellar: :any_skip_relocation, all: "2e19a55353ac914b9549578aefdb08ef9d57f4892efb926e3cbf48652e6015d3"
   end
 
   depends_on "gcc" # for gfortran
@@ -23,16 +23,6 @@ class Fobis < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
     sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
-  end
-
-  resource "configparser" do
-    url "https://files.pythonhosted.org/packages/8b/ac/ea19242153b5e8be412a726a70e82c7b5c1537c83f61b20995b2eda3dcd7/configparser-7.2.0.tar.gz"
-    sha256 "b629cc8ae916e3afbd36d1b3d093f34193d851e11998920fdcfc4552218b7b70"
-  end
-
-  resource "future" do
-    url "https://files.pythonhosted.org/packages/a7/b2/4140c69c6a66432916b26158687e821ba631a4c9273c474343badf84d3ba/future-1.0.0.tar.gz"
-    sha256 "bd2968309307861edae1458a4f8a4f3598c03be43b97521076aebf5d94c07b05"
   end
 
   resource "markdown-it-py" do
@@ -63,11 +53,6 @@ class Fobis < Formula
   resource "typer" do
     url "https://files.pythonhosted.org/packages/f5/24/cb09efec5cc954f7f9b930bf8279447d24618bb6758d4f6adf2574c41780/typer-0.24.1.tar.gz"
     sha256 "e39b4732d65fbdcde189ae76cf7cd48aeae72919dea1fdfc16593be016256b45"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   def install

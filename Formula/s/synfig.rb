@@ -2,8 +2,8 @@ class Synfig < Formula
   desc "Command-line renderer"
   homepage "https://www.synfig.org/"
   # TODO: Update livecheck to track only stable releases when 1.6.x is available.
-  url "https://ghfast.top/https://github.com/synfig/synfig/releases/download/v1.5.4/synfig-1.5.4.tar.gz"
-  sha256 "b8fb9d609e3aedebde7b0efa0c3de3b1fa5c4b61f5493b7f797b496a80f15fd0"
+  url "https://ghfast.top/https://github.com/synfig/synfig/releases/download/v1.5.5/synfig-1.5.5.tar.gz"
+  sha256 "95783c92925bd8ae494e00fdab0340caba9b19d2a0aac989fd8c200434b26f06"
   license "GPL-3.0-or-later"
   head "https://github.com/synfig/synfig.git", branch: "master"
 
@@ -13,13 +13,12 @@ class Synfig < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_tahoe:   "c4bfc5af3eacc379168007869d3bf2812783b6ac4ef7e40f615b13ae431fd9ee"
-    sha256                               arm64_sequoia: "059fbfcb678e0ba38ce383e7895624da78965573d2beca918a15ef4023867bda"
-    sha256                               arm64_sonoma:  "3780751b8c12cdd49dcb4bc0a42a7b79702f1268cf983e95e9ee9921891d7911"
-    sha256                               sonoma:        "804d7f628b553b269fd4fe7582f83c66af8ff22875fd766bd959ac3e9fda7d93"
-    sha256                               arm64_linux:   "db544e07b436f64df708bc6f19255dbd9d3e64634bda978bdcc274e363a8070d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b2241a4a7e43fc44cdfc02703a960af582331b97272a7ebc5ac87aab48cae23"
+    sha256                               arm64_tahoe:   "0075ee7f2b25f9de48de93254a812e88fa322d69aa957f7ea5b6e476568a2fe2"
+    sha256                               arm64_sequoia: "5152754bac39e931dc349b505fcf372efb685c2cce060f4b55f699209ad1461a"
+    sha256                               arm64_sonoma:  "a42fa1cdaf0f9e9747cdc428856f7aae6a2d956ff2a02aa0b9813c0629711931"
+    sha256                               sonoma:        "5de592eda1f7ea792af3d7e997a57389caa25a865c68f0153c2a38287f8b12d4"
+    sha256                               arm64_linux:   "32554a263478194272fddda52532ee6a7cb8092cc470776c65cef8249bb72c39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea2ec08203b96158a0a24897ce37ff1a2f40d94ae01691df1f8df89f88f7cc33"
   end
 
   depends_on "autoconf" => :build

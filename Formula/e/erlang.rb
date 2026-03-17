@@ -53,7 +53,13 @@ class Erlang < Formula
   # https://github.com/erlang/otp/blob/OTP-#{version}/make/ex_doc_link
   resource "ex_doc" do
     url "https://ghfast.top/https://github.com/elixir-lang/ex_doc/releases/download/v0.39.3/ex_doc_otp_27"
+    version "0.39.3/ex_doc_otp_27"
     sha256 "bc16c8eaae26886f15a2d2cff490f3c873d425106e949eb5fe0e8377e778c93d"
+
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/erlang/otp/refs/tags/OTP-#{LATEST_VERSION}/make/ex_doc_link"
+      regex(%r{/v?(\d+(?:\.\d+)+/ex_doc_otp_\d+)$}i)
+    end
   end
 
   def install

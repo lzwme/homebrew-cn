@@ -6,16 +6,16 @@ class Sigstore < Formula
   url "https://files.pythonhosted.org/packages/98/c3/84ec81173ade0dba5613feea577308cde4e69045cc804d02953e3a40922c/sigstore-4.2.0.tar.gz"
   sha256 "bdbb49a42fd5f0ea6765919adb42ccee7254c482330764d0842eec4e11ad78d7"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/sigstore/sigstore-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3df9f784439f920ae13881d1e4a485fe451e2ba0f583986c04bc17267187359e"
-    sha256 cellar: :any,                 arm64_sequoia: "f2d81d3dbda4ea9b8a09216ff1d17e61f2c800747fe4fcd08f57838eddf769f0"
-    sha256 cellar: :any,                 arm64_sonoma:  "e8c60b55a2be29a24806c86ab08ec237da87998a36c7b486def4421bc008e7e8"
-    sha256 cellar: :any,                 sonoma:        "f365fae4488b4cf573ae3242641b6b7c8111e1e8b1709d2ee3227e44b9f4b435"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8842d0fd124616627ec47481a8bedc19d03ecc8b29c423375872ff473b7b20c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99a0b0eca597ffa4c4238c8e41974b0832a352c40877b24e2ca2b93e3bd3bc3a"
+    sha256 cellar: :any,                 arm64_tahoe:   "52657b5c230697d8cf475855ebe3aa5c0c5a813cb1de41cc6da525641deafb7e"
+    sha256 cellar: :any,                 arm64_sequoia: "b6ad91d16ed72721019607ce6e6198f054f60fb7328396d04871554a669df2f0"
+    sha256 cellar: :any,                 arm64_sonoma:  "c5633f198443fd140b61794b64b4e9267fe2f8a1cba38134fd1dfe5e626eb131"
+    sha256 cellar: :any,                 sonoma:        "94a5a4f915d36502fc59d032b09e159dd221225ee279bc8944d9dd63f5107c57"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8340254506cff7c931ecee26ef8cefad3e03f176de1b5453e9fc310f364a4462"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37d8aa5c128d4396b7b2eb8974c3f7671c0905f655223d10af26c96dbba1d42f"
   end
 
   depends_on "pkgconf" => :build # for rfc3161-client
@@ -29,8 +29,8 @@ class Sigstore < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pydantic]
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
-    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "dnspython" do
@@ -84,8 +84,8 @@ class Sigstore < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/80/be/97b83a464498a79103036bc74d1038df4a7ef0e402cfaf4d5e113fb14759/pyopenssl-25.3.0.tar.gz"
-    sha256 "c981cb0a3fd84e8602d7afc209522773b94c1c2446a3c710a75b06fe1beae329"
+    url "https://files.pythonhosted.org/packages/8e/11/a62e1d33b373da2b2c2cd9eb508147871c80f12b1cacde3c5d314922afdd/pyopenssl-26.0.0.tar.gz"
+    sha256 "f293934e52936f2e3413b89c6ce36df66a0b34ae1ea3a053b8c5020ff2f513fc"
   end
 
   resource "requests" do

@@ -1,18 +1,18 @@
 class Ntfy < Formula
   desc "Send push notifications to your phone or desktop via PUT/POST"
   homepage "https://ntfy.sh/"
-  url "https://ghfast.top/https://github.com/binwiederhier/ntfy/archive/refs/tags/v2.19.0.tar.gz"
-  sha256 "1a80d255cfd1809c34d293ab0869b37b422da33aef2dbbaf201d5fc813e1d2ad"
+  url "https://ghfast.top/https://github.com/binwiederhier/ntfy/archive/refs/tags/v2.19.1.tar.gz"
+  sha256 "580aca7e71bafb7419fd7539071cedb2472724ef5731c9ca2ce4a04c959df1c2"
   license any_of: ["Apache-2.0", "GPL-2.0-only"]
   head "https://github.com/binwiederhier/ntfy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85f0ab4c0815f184f473f9b58166d5df144bc211160c43d1c64892cdca3a61eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85f0ab4c0815f184f473f9b58166d5df144bc211160c43d1c64892cdca3a61eb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85f0ab4c0815f184f473f9b58166d5df144bc211160c43d1c64892cdca3a61eb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "055c91ae2a80395fc4a9a61bfbcea3d959059a87fecc999a9cdc556ab11d82cc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0de09c45e5fdcfb855b0859857f5b96d158bb3233bffc2871983b0dadd2cff3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0ea45865b2d079ee749eef7dc9bfde3f46bd0dd622ffadc89f0a548a24d08f0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "59095806993033f1206eb88eea8413e5eafbb08454d696bb256f39f487222d47"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59095806993033f1206eb88eea8413e5eafbb08454d696bb256f39f487222d47"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59095806993033f1206eb88eea8413e5eafbb08454d696bb256f39f487222d47"
+    sha256 cellar: :any_skip_relocation, sonoma:        "58fa7ecc6ea0e92cd77cb95859114c86e577d9efbb15c4c398013a7d58009e1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6350ee489a95cd2b9509de80955f2be9525921534c125b32351083a01633917"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e343e7079fee21c093ac53b64f5207ec375e20d7319c204c6251d5b9f6d7fa6"
   end
 
   depends_on "go" => :build

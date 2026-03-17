@@ -1,15 +1,11 @@
 class Kamel < Formula
   desc "Apache Camel K CLI"
   homepage "https://camel.apache.org/"
-  url "https://ghfast.top/https://github.com/apache/camel-k/archive/refs/tags/v2.9.1.tar.gz"
+  url "https://www.apache.org/dyn/closer.lua?path=camel/camel-k/2.9.1/camel-k-sources-2.9.1.tar.gz"
+  mirror "https://archive.apache.org/dist/camel/camel-k/2.9.1/camel-k-sources-2.9.1.tar.gz"
   sha256 "35688ec92762fe699496eeda78abb7be5a8f6a1b15f3c1e0e55dfebf039be3f3"
   license "Apache-2.0"
   head "https://github.com/apache/camel-k.git", branch: "main"
-
-  livecheck do
-    url :stable
-    strategy :github_latest
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fb627b95421f4e70f8b9755294e6f6df367a8d603c7996a54f91d2bf6a9cf97b"

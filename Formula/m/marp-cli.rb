@@ -1,18 +1,17 @@
 class MarpCli < Formula
   desc "Easily convert Marp Markdown files into static HTML/CSS, PDF, PPT and images"
   homepage "https://github.com/marp-team/marp-cli"
-  url "https://registry.npmjs.org/@marp-team/marp-cli/-/marp-cli-4.3.0.tgz"
-  sha256 "6ed46d251e50670c8bc9b2d9b937c8dfd7c9865a4d5c5e2eac00643f9a68d77e"
+  url "https://registry.npmjs.org/@marp-team/marp-cli/-/marp-cli-4.3.1.tgz"
+  sha256 "162c5e06f022c75dd741f4e27bff8caf97f3283f3fa57475decea59d3b480a1e"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "58a34f7a119994f255e1f7293ee5f0867b5bca0a4bca3d0b9367719456f9311a"
-    sha256 cellar: :any,                 arm64_sequoia: "a3370cf8d77c10925eba825a85d615f0a4eb4705b4a57bc75e90acd20db9455a"
-    sha256 cellar: :any,                 arm64_sonoma:  "a3370cf8d77c10925eba825a85d615f0a4eb4705b4a57bc75e90acd20db9455a"
-    sha256 cellar: :any,                 sonoma:        "d060d8787bac6d50f56c4fa7b8e3e37d73402d4928f87ba91deb734bf136d5ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9ba616389ef7b83b83a57a4b8fc51beb334fd1718ed60a2a09ce2b89579847e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7789285ea61a9736d086b91de6ea2679230f2cc570c6c019b05aec206ea19ee9"
+    sha256 cellar: :any,                 arm64_tahoe:   "b5e74d0cb2b6aba5ebc8fcb9066e2579143856e28565578344a0eec3177e7587"
+    sha256 cellar: :any,                 arm64_sequoia: "f7bb739c27563361aa91847c952bf100f98167b6662d61d5a30999a8ba12c2c8"
+    sha256 cellar: :any,                 arm64_sonoma:  "f7bb739c27563361aa91847c952bf100f98167b6662d61d5a30999a8ba12c2c8"
+    sha256 cellar: :any,                 sonoma:        "f68e38630e584815a3b4035ff5f8dfdc6665b00aa3940b7e51d340e257c2c2c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "234404880ee4628830255bd83cb3f37e63798cd3a7c029e7b4edec22db135a9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c684a488cc5073a2783e8bff1575f60955763c96b4576912dd7f793395e6d11"
   end
 
   depends_on "node"

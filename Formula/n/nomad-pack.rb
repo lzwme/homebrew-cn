@@ -1,17 +1,17 @@
 class NomadPack < Formula
   desc "Templating and packaging tool used with HashiCorp Nomad"
   homepage "https://github.com/hashicorp/nomad-pack"
-  url "https://ghfast.top/https://github.com/hashicorp/nomad-pack/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "4865cc1490d3aeb48248133ec667162cb1199e379d592643ef024b9ac0f30640"
+  url "https://ghfast.top/https://github.com/hashicorp/nomad-pack/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "844a072ba9c9098d846899899a5603d3058290a2ecdc7dfd77cb3c9a9de9585e"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a7a85e186fd17535eaab79eaf8b289372cb586469ead0d732725d60ea9a29b5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a7a85e186fd17535eaab79eaf8b289372cb586469ead0d732725d60ea9a29b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a7a85e186fd17535eaab79eaf8b289372cb586469ead0d732725d60ea9a29b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3eda1d471d71c03e5d571fa56daf01aace68ae67b19da7ce2f59cb87cf5078f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1bcfcbe32bea180a74b23c41e8e1ee1fd4d45420f375db0d29b18797066df6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fee0126393e00b05a7da76172d9a4226f2a70e3853500ad6016de31715b4bf22"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9761fdb20f5158538de20b69389e72f4e27b9d6b5afa3d9ef4e84ad628662b4f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9761fdb20f5158538de20b69389e72f4e27b9d6b5afa3d9ef4e84ad628662b4f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9761fdb20f5158538de20b69389e72f4e27b9d6b5afa3d9ef4e84ad628662b4f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "093c8100b110f48f781e0852c6a9d6703c672530a96461fdbcdc99e4c68ac0c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "913df678b2b04c2d2735b4c1d48498ef53244c088e6cd341c2ec0eed869e203a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5af2f227ecad0890711d11356ef282f95653265446c363cd1187833e94b7304"
   end
 
   depends_on "go" => :build

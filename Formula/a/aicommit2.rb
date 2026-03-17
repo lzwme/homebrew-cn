@@ -1,12 +1,12 @@
 class Aicommit2 < Formula
   desc "Reactive CLI that generates commit messages for Git and Jujutsu with AI"
   homepage "https://github.com/tak-bro/aicommit2"
-  url "https://registry.npmjs.org/aicommit2/-/aicommit2-2.4.31.tgz"
-  sha256 "5b5d95edab7f5fb105bf3416e533324cc77d7c33a64e90eed73cf73e63a6797e"
+  url "https://registry.npmjs.org/aicommit2/-/aicommit2-2.5.1.tgz"
+  sha256 "5be1c7dcf51ce5a63b215bb2dd901ddab960e9c35258608b975a87623666ae14"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "05cfca44b5da00163fb3dd925b9f84aed76bd42bbe8e77ea977876522ac7cd32"
+    sha256 cellar: :any_skip_relocation, all: "e1e3534599fe9fe8c42ff4efad22be4d81f693d9882427379edc0a10dba0b4d2"
   end
 
   depends_on "node"
@@ -28,7 +28,7 @@ class Aicommit2 < Formula
     (testpath/"test.txt").write "test content"
     system "git", "add", "test.txt"
 
-    assert_match "Please set at least one API key", shell_output("#{bin}/aicommit2 2>&1", 1)
+    assert_match "No AI provider API keys configured.", shell_output("#{bin}/aicommit2 2>&1", 1)
     shell_output("#{bin}/aicommit2 config set OPENAI.key=sk-test")
     assert_match "key: 'sk-test'", shell_output("#{bin}/aicommit2 config get OPENAI")
   end
