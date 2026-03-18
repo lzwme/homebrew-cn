@@ -5,6 +5,12 @@ class Iccdev < Formula
   sha256 "b475e0f42b41a53689d0e67d86eddb902156183fd4de3742c6a5c18f5b065048"
   license "BSD-3-Clause"
 
+  # Skip `wasm-` tags
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "bd74477116a0e2c2e0e842c6650f9d27fedf3a3ac3dc1ceb8d62063031f7d34c"
     sha256 cellar: :any,                 arm64_sequoia: "93ae485471749e3bd7bda7973b103e2b24737d9265d0b715e6d8373bb040f1ed"

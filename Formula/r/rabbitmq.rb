@@ -1,8 +1,8 @@
 class Rabbitmq < Formula
   desc "Messaging and streaming broker"
   homepage "https://www.rabbitmq.com"
-  url "https://ghfast.top/https://github.com/rabbitmq/rabbitmq-server/releases/download/v4.2.4/rabbitmq-server-generic-unix-4.2.4.tar.xz"
-  sha256 "7cc2ce2dea3c35fc1cf9ad48bca4a534e394af9e6c77c71d94eeb07775ec7832"
+  url "https://ghfast.top/https://github.com/rabbitmq/rabbitmq-server/releases/download/v4.2.5/rabbitmq-server-generic-unix-4.2.5.tar.xz"
+  sha256 "1cfce9374e37c56e4efd3831e90c5508a511bae87dbaa95f7bdddd36f71e27aa"
   license "MPL-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Rabbitmq < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6d392b6185c2cd4502d54cfee627f2ac399e0c228f85c3b7e4ab671d27b4aee4"
+    sha256 cellar: :any_skip_relocation, all: "c01ab05fa12c5f9e90356076a46a334265ab520a002f7b03a159d108589b4253"
   end
 
   depends_on "erlang"

@@ -14,12 +14,13 @@ class FfmpegAT6 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "43cd0a0b5ad10850b84108aaf0f3293bf433c3c58a4b40667e3d76d7286d6731"
-    sha256 arm64_sequoia: "6e937ae0e4764a624097c566ba756d1a4f4a945485b65a1974d9bb538cbd6665"
-    sha256 arm64_sonoma:  "ce8371428f5bf0526e781469b79c073b6881cbd29138ea0d99140f783a2303a7"
-    sha256 sonoma:        "707d8315b4b2983c65b67fc815770aa149f347c858658f6469e7fefc67b27d25"
-    sha256 arm64_linux:   "ad2630ae05d97a6ea94f55e4070397249244617ad08200d2e6f42e608e571da7"
-    sha256 x86_64_linux:  "92ca150b0120de946e85884e02b8a6af789b088cee7102ca8262ba7fe342b157"
+    rebuild 1
+    sha256 arm64_tahoe:   "84a5c1dfd385e95fffee6cdeac7823e60b497237ec57f371426b822cf24bbb38"
+    sha256 arm64_sequoia: "97d4006597c5496be65ae7b6cf422e7c061d0b2562ef44051738c76464cf7ab6"
+    sha256 arm64_sonoma:  "cde5b50ab3bbbf00e8814d47dff7d6e25686970442884d56f51bfb3ab13b584b"
+    sha256 sonoma:        "8a383f281a729d5b1a59d9bd8c4f865bbb7de6351b9d761ef61e09e1e3b2507b"
+    sha256 arm64_linux:   "7dbaeccd969ab606ba531071f3f9c471edd28fb8fd87ae9e9b75df75b6506f03"
+    sha256 x86_64_linux:  "da328811fe7eceb828a8afbba9801487ddb9b67269f5f5581d7e92dccd0c41d0"
   end
 
   keg_only :versioned_formula
@@ -84,13 +85,6 @@ class FfmpegAT6 < Formula
 
   on_intel do
     depends_on "nasm" => :build
-  end
-
-  # Fix for QtWebEngine, do not remove
-  # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270209
-  patch do
-    url "https://gitlab.archlinux.org/archlinux/packaging/packages/ffmpeg/-/raw/5670ccd86d3b816f49ebc18cab878125eca2f81f/add-av_stream_get_first_dts-for-chromium.patch"
-    sha256 "57e26caced5a1382cb639235f9555fc50e45e7bf8333f7c9ae3d49b3241d3f77"
   end
 
   # Backport support for recent svt-av1 (3.0.0)

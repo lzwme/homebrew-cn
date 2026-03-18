@@ -1,18 +1,18 @@
 class ClaudeAgentAcp < Formula
   desc "Use Claude Code from any ACP client such as Zed!"
   homepage "https://github.com/zed-industries/claude-agent-acp"
-  url "https://registry.npmjs.org/@zed-industries/claude-agent-acp/-/claude-agent-acp-0.21.0.tgz"
-  sha256 "610cc41d23e339c328ce4ca75dafbb85759d1f3381a9401644ef1288236fe59f"
+  url "https://registry.npmjs.org/@zed-industries/claude-agent-acp/-/claude-agent-acp-0.22.1.tgz"
+  sha256 "aec68dd60ecb65fdbc3be67941a6a1eb5eb8007f7005fc72c81b0ea7187ef6e6"
   license "Apache-2.0"
   head "https://github.com/zed-industries/claude-agent-acp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d6e79ac2daa1e9b008bf06ed369d9b9ed9f6c0640389ad1a5e3d73756cc5b350"
-    sha256 cellar: :any,                 arm64_sequoia: "1ca044d322cd466406a50defd736fe8beadcf1cf914e14ba813d52c2fa988178"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ca044d322cd466406a50defd736fe8beadcf1cf914e14ba813d52c2fa988178"
-    sha256 cellar: :any,                 sonoma:        "d2e7974c19b4b545e337a8f0b79139fc008c5df719de44cc24a6358a6cb60571"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0bf114d4feee5274a207c4c8145d51fbe01764c11097f62e78cffe4398d4370c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ad93f0351aac79eb661b5d4b9b0fcac81d605db114c4a7e90954e622ef036c5"
+    sha256 cellar: :any,                 arm64_tahoe:   "9cda86bdd06e36f7fd53298dd4ff1775549695138c18a90533605cdcc5e7d7b0"
+    sha256 cellar: :any,                 arm64_sequoia: "1e48777c2fe9de7b298701f689b38b6729195155c6845e4f172e7bef5a87fea9"
+    sha256 cellar: :any,                 arm64_sonoma:  "1e48777c2fe9de7b298701f689b38b6729195155c6845e4f172e7bef5a87fea9"
+    sha256 cellar: :any,                 sonoma:        "c3ebff735335e670150c123c22d165e8ff825529b34f13d62cb8e32561c750e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcba9b621d83a6f723ab623ec16c19f95f8715776aadc44c4a5953de46947cb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a09b68f76d4f0d4cea3f8fa13232f66082a605a72125a0ac70165af543af4994"
   end
 
   depends_on "node"
@@ -20,11 +20,17 @@ class ClaudeAgentAcp < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    ripgrep_vendor_dir = libexec/"lib/node_modules/@zed-industries/claude-agent-acp" /
-                         "node_modules/@anthropic-ai/claude-agent-sdk/vendor/ripgrep"
-    rm_r ripgrep_vendor_dir
+    vendor_dir = libexec/"lib/node_modules/@zed-industries/claude-agent-acp" /
+                 "node_modules/@anthropic-ai/claude-agent-sdk/vendor"
+
+    %w[ripgrep audio-capture tree-sitter-bash].each do |dep|
+      dep_dir = vendor_dir/dep
+      rm_r dep_dir
+    end
+
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     ripgrep_platform = "#{arch}-#{OS.kernel_name.downcase}"
+    ripgrep_vendor_dir = vendor_dir/"ripgrep"
     platform_dir = ripgrep_vendor_dir/ripgrep_platform
     platform_dir.mkpath
     ln_s Formula["ripgrep"].opt_bin/"rg", platform_dir/"rg"

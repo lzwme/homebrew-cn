@@ -6,6 +6,7 @@ class Notmuch < Formula
   url "https://notmuchmail.org/releases/notmuch-0.40.tar.xz"
   sha256 "4b4314bbf1c2029fdf793637e6c7bb15c1b1730d22be9aa04803c98c5bbc446f"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://git.notmuchmail.org/git/notmuch", using: :git, branch: "master"
 
   livecheck do
@@ -14,12 +15,12 @@ class Notmuch < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cafbd5ffd9eb60479b8edf50891ec9f2b08bdd21e146f5f04eda782480db75b8"
-    sha256 cellar: :any,                 arm64_sequoia: "63cdd5c3afdff3c28ee8f2a5fa3fa413f4bf4553bace983239cbef29a01763af"
-    sha256 cellar: :any,                 arm64_sonoma:  "05cf2893b94f0e0480d2f630b47bc442d62d14141609ae5f49a5c43448bdda13"
-    sha256 cellar: :any,                 sonoma:        "d9237123ce3a5e4f3ccac403836f39f800c15e4868d17ca1ad01ba8192e16146"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "259509347674489fc0f424df7e95590b5ee9f6b878a8a8b22d74a6f239f3c18f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1adead0a4a2502fd61aeace8890dee06054263d4c6fae6a783af826cb3cccb6"
+    sha256 cellar: :any,                 arm64_tahoe:   "eae24f49c3b10abfde979af48095a1a57930ed5bdcbc6812ccc54a19bad10860"
+    sha256 cellar: :any,                 arm64_sequoia: "421174ec9e5af1051572972811fa7062bd3d6e680d5881c8a11e4f538b42505f"
+    sha256 cellar: :any,                 arm64_sonoma:  "15d1e06cdc2fee25afe4812f6482d3775cf4302c5a3f66b60935322cbf9fbf1c"
+    sha256 cellar: :any,                 sonoma:        "2b990b337a8c0ed0e2e086703ae947ee5b1fbfcb3131404855faf319032c0693"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c55b7b11e0bbe8128902da95371f0ddf2c4f25b248f54aaca9ddbdb1c12b74f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9f8bd8f09dc8ccf7665e5adaba42916d2023ddc4c3420d4d5472ef1c1a784d6"
   end
 
   depends_on "doxygen" => :build
@@ -50,7 +51,7 @@ class Notmuch < Formula
   end
 
   def install
-    ENV.cxx11 if OS.linux?
+    ENV.append "CXXFLAGS", "-std=c++17"
     site_packages = Language::Python.site_packages(python3)
     with_env(PYTHONPATH: Formula["sphinx-doc"].opt_libexec/site_packages) do
       system "./configure", "--prefix=#{prefix}",

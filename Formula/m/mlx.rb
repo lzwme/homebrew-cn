@@ -2,7 +2,7 @@ class Mlx < Formula
   include Language::Python::Virtualenv
 
   desc "Array framework for Apple silicon"
-  homepage "https://github.com/ml-explore/mlx"
+  homepage "https://ml-explore.github.io/mlx/build/html/index.html"
   url "https://ghfast.top/https://github.com/ml-explore/mlx/archive/refs/tags/v0.31.1.tar.gz"
   sha256 "37e2a585a2bb28bcd3432af1c45d5c1ba8d560704ae285c3f9fd22a041e37004"
   license all_of: [

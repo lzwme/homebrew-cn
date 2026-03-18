@@ -1,19 +1,18 @@
 class Sqlcipher < Formula
   desc "SQLite extension providing 256-bit AES encryption"
   homepage "https://www.zetetic.net/sqlcipher/"
-  url "https://ghfast.top/https://github.com/sqlcipher/sqlcipher/archive/refs/tags/v4.13.0.tar.gz"
-  sha256 "7ca5c11f70e460d6537844185621d5b3d683a001e6bad223d15bdf8eff322efa"
+  url "https://ghfast.top/https://github.com/sqlcipher/sqlcipher/archive/refs/tags/v4.14.0.tar.gz"
+  sha256 "67fb27e967a4a6968c0905691c89c908e7250dddc581b887c19ef981c737e473"
   license all_of: ["BSD-3-Clause", "blessing"]
   head "https://github.com/sqlcipher/sqlcipher.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "e68a18abaa2253082f86d38b43c01ed3df41ecc999ef7de6b1bebe041e8f876d"
-    sha256 cellar: :any,                 arm64_sequoia: "f22dc347644451f51cfe87910411a10d0c6fbc2eda49f86e80485512d5d70ffc"
-    sha256 cellar: :any,                 arm64_sonoma:  "71f235e6480cc75f46a898afc90bca59cf7cdf5a0a28493fc658156a72b6a0c6"
-    sha256 cellar: :any,                 sonoma:        "c718a9d068cf45ad7a0a265862b8953dd3e87a7660f5544a04ec4e6542aded9d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "545b6d269df5b4ca96527f4dda09f8753015f7ea8646a311c3b5551f58133e29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8a7327016c96673dfbe06b4de00814345cf914f1e377aadd5340d8583329f32"
+    sha256 cellar: :any,                 arm64_tahoe:   "bac5dae45687c1febf9bee4a71aa7607ef4fd41ab28454591cb2023f0a6d2eac"
+    sha256 cellar: :any,                 arm64_sequoia: "cebc1660f1cb2fafd00fa8f085ed99bf716f9ff2279375dcf4312fcb019ae74b"
+    sha256 cellar: :any,                 arm64_sonoma:  "3c2f8346fd3c76e6417ff122cb8457a16cf215c05b934cd88383c6fb16edba3a"
+    sha256 cellar: :any,                 sonoma:        "95bedc9128368ad0125e41d7eb2f4ef2d7b29d2dd700e0317f65442a31f8d45d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6fe18269d80fc03021ad3fc67d563200ea1b3cf18c6dab6b7c08153d9644a3f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02c58fd88765f08711351013792636ac385c0e6dac7ba229cf6ee0aba6b9b50a"
   end
 
   depends_on "openssl@3"

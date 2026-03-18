@@ -3,18 +3,17 @@ class Bbot < Formula
 
   desc "OSINT automation tool"
   homepage "https://github.com/blacklanternsecurity/bbot"
-  url "https://files.pythonhosted.org/packages/a8/f2/0d6ac012ad60575a706d3723db206206847c227aa3bffbcc8d0e9957a4ed/bbot-2.8.3.tar.gz"
-  sha256 "ed7a607f8d3bf313e617eb3dda156d6cb6b2bb96fc390099fe0db53a50f7ec80"
+  url "https://files.pythonhosted.org/packages/6a/83/24a0087894d853703f64ab2044927ef56c831edb379295a873b05f34eb92/bbot-2.8.4.tar.gz"
+  sha256 "2ed4d3eda85ddb7261318a48f8a41e8543888b5d9b9eb8876aaff0e813a2429c"
   license "AGPL-3.0-only"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1e1d01141bed82d6addf2952f351e0e2d0b0763dc547ec058ab714f2929e7225"
-    sha256 cellar: :any,                 arm64_sequoia: "df1704299d68aed46ad5d81a408d718a5e3d6651945588a4272708f875e1bca4"
-    sha256 cellar: :any,                 arm64_sonoma:  "ff9f4328b7f8ec15c85e23bd50cb4dfa86c33c22cbdef676b7040aee7788e7e3"
-    sha256 cellar: :any,                 sonoma:        "5c3d20b3076d789b4fb37ab99114a3957a90d5a36ce422c62c01026370db38e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f77da47112864cc70d6f605c09b361e882ff16a499445f04515a074594425e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0266ee531736d89865d11ea4d6282f67bb7f86d952326b08eb821bd1e86f624b"
+    sha256 cellar: :any,                 arm64_tahoe:   "9edd0966378ce1a3480a8e8fb1c26c970f332d767509fae84dbf80f68f43774c"
+    sha256 cellar: :any,                 arm64_sequoia: "5b932edb88a282d6e065de729fde543f66480ce7926ffe0532dff805379b2459"
+    sha256 cellar: :any,                 arm64_sonoma:  "4408c42d52f6aad6d2480d70c824a7a14cd39ec537b163e25daca901c2291c1e"
+    sha256 cellar: :any,                 sonoma:        "c69a539da443acac06f6e19ecc2bc71b4ad64d2211985c1fb67e432bb50d06fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0bf2d72ece7774f48c5dd5578fff2abedc69831174875c686ea76d1b4e6f0ab8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bd4a26e26297d012d4128a874e2d2264dfcc05c43221a49d30680ef14fe9a21"
   end
 
   depends_on "cmake" => :build
@@ -41,8 +40,8 @@ class Bbot < Formula
   end
 
   resource "ansible-runner" do
-    url "https://files.pythonhosted.org/packages/aa/db/65b9e058807d313c495a6f4365cc11234d0391c5843659ddc27cc4bf1677/ansible_runner-2.4.2.tar.gz"
-    sha256 "331d4da8d784e5a76aa9356981c0255f4bb1ba640736efe84b0bd7c73a4ca420"
+    url "https://files.pythonhosted.org/packages/68/4f/62222b42b52cc771db51ccc77ffac19cc5f0196ff61de7c93585845a819b/ansible_runner-2.4.3.tar.gz"
+    sha256 "5f3025529bb968fdc3b627457dd8d418dbf9d53bc73735d50e69c28544d53031"
   end
 
   resource "antlr4-python3-runtime" do
@@ -66,8 +65,8 @@ class Bbot < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
-    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "cloudcheck" do

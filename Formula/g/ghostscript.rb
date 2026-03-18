@@ -1,10 +1,9 @@
 class Ghostscript < Formula
   desc "Interpreter for PostScript and PDF"
   homepage "https://www.ghostscript.com/"
-  url "https://ghfast.top/https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/ghostpdl-10.06.0.tar.xz"
-  sha256 "3602056368cf649026231e2d65250b5860c023f3d4a0d9c35e6605e28e543ec1"
+  url "https://ghfast.top/https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10070/ghostpdl-10.07.0.tar.xz"
+  sha256 "ba1366006a93b91e615f74aad9c0905fae503d3f5b04078ce2ddbe360bd2f9df"
   license "AGPL-3.0-or-later"
-  revision 1
 
   # The GitHub tags omit delimiters (e.g. `gs9533` for version 9.53.3). The
   # `head` repository tags are formatted fine (e.g. `ghostpdl-9.53.3`) but a
@@ -20,12 +19,12 @@ class Ghostscript < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "36245de09fc9100dff794142e7ca847b465d24109c3b4e66fcda28e8818850c1"
-    sha256 arm64_sequoia: "1aeb2dae71bdcd521ef298e114b49ba4fce87b47865aa86cac97a449d2870d63"
-    sha256 arm64_sonoma:  "2c4c3bd4bdded514714ffc1ed0f554f7399eda311d3df64af1a45e5219b41d20"
-    sha256 sonoma:        "1849aec43a04e46e21b370fdeff7efd1cfcac63d017c9fc44dc235e6f2fa47af"
-    sha256 arm64_linux:   "c81897d05d33d36448bb7e9d4da9ea0d30dd16ababdd5265662e8ebec296d3ef"
-    sha256 x86_64_linux:  "0c0ab563da757f637d27ac01d11013738701e3fdeef696e89ed878de66c5cdca"
+    sha256 arm64_tahoe:   "f0ad91f4bc1139f9c68bd1fa4ffdd2d9b9fcc1013df88e54b7850ee994260d9b"
+    sha256 arm64_sequoia: "927302f491a471b2d973b4e22c48591bfe008f68f200cc06ca61f8873b2b2a17"
+    sha256 arm64_sonoma:  "f4ea965a4fbb561fc0c7d4fa68c433e1ced5a354f02aebefe5dba73fdac278c2"
+    sha256 sonoma:        "8fa0a33626c3d1223f1fa8bec57d1337f2b9e6e1789080b6eebd7d1839858708"
+    sha256 arm64_linux:   "70c8e6aa211d92e9469f8dcb4e72aa722a55f04c880abbecf89101d1a15d6bc7"
+    sha256 x86_64_linux:  "0a622fa3b8f596c6cc6e5b7d5e88c7f1a453043640138c086e59ec64a48f2002"
   end
 
   head do
@@ -93,13 +92,6 @@ class Ghostscript < Formula
     ENV.deparallelize { system "make", "install-so" }
 
     (pkgshare/"fonts").install resource("fonts")
-
-    # Temporary backwards compatibility symlinks
-    if build.stable?
-      odie "Remove backwards compatibility symlink and caveat!" if version >= "10.07"
-      pkgshare.install_symlink pkgshare => version.to_s
-      doc.install_symlink doc => version.to_s
-    end
   end
 
   def caveats

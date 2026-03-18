@@ -2381,6 +2381,7 @@ Homebrew-homebrew-core/Formula/g/gforth.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gfxutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/ggc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/ggh.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/ggml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/ggshield.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gh-ost.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gh.rb, Homebrew/homebrew-core, 1
@@ -8275,7 +8276,8 @@ Homebrew-homebrew-core/Formula/z/zx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zxc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zxcc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zxing-cpp.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/z/zydis.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/z/zycore-c.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/z/zydis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zyre.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zzuf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zzz.rb, Homebrew/homebrew-core, 1
@@ -9298,7 +9300,6 @@ Homebrew-homebrew-cask/Casks/d/detail.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/detectx-swift.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/detexify.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/devcleaner.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/d/deveco-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/developerexcuses.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/deviceinfo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/devilutionx.rb, Homebrew/homebrew-cask, 1
@@ -15764,7 +15765,6 @@ Homebrew-homebrew-cask/Casks/x/xrg.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xscope.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xscreensaver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xsplit-vcam.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/x/xstation5.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xtool-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yaak.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yaak@beta.rb, Homebrew/homebrew-cask, 1

@@ -3,12 +3,15 @@ class Tox < Formula
 
   desc "Generic Python virtualenv management and test command-line tool"
   homepage "https://tox.wiki/en/latest/"
-  url "https://files.pythonhosted.org/packages/2a/e8/6f7dac9ab53a03b79d5dda2dd462147341069f70b138e1c7ac04219e72ea/tox-4.49.1.tar.gz"
-  sha256 "4130d02e1d53648d7107d121ed79f69a27b717817c5e9da521d50319dd261212"
+  # FIXME: PyPI source distribution is missing `docs/man/tox.1.rts` file
+  # related issue: https://github.com/tox-dev/tox/issues/3885
+  url "https://github.com/tox-dev/tox.git",
+      tag:      "4.50.0",
+      revision: "db1362d7ba99776d5e5d40d8f1f71b7dbf5bf149"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "73c767cec27368de08b6d2858d7fba9151a7c4e8ac9042f22500ec47b80afa79"
+    sha256 cellar: :any_skip_relocation, all: "28d7ecbfa3112fc57491391e7fbf22fd1e2d97bdb9e15cffeb04f2c68e1be414"
   end
 
   depends_on "python@3.14"
@@ -29,8 +32,8 @@ class Tox < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/b3/8b/4c32ecde6bea6486a2a5d05340e695174351ff6b06cf651a74c005f9df00/filelock-3.25.1.tar.gz"
-    sha256 "b9a2e977f794ef94d77cdf7d27129ac648a61f585bff3ca24630c1629f701aa9"
+    url "https://files.pythonhosted.org/packages/94/b8/00651a0f559862f3bb7d6f7477b192afe3f583cc5e26403b44e59a55ab34/filelock-3.25.2.tar.gz"
+    sha256 "b64ece2b38f4ca29dd3e810287aa8c48182bbecd1ae6e9ae126c9b35f1382694"
   end
 
   resource "packaging" do
@@ -54,8 +57,8 @@ class Tox < Formula
   end
 
   resource "python-discovery" do
-    url "https://files.pythonhosted.org/packages/7a/16/6f3f5e9258f0733aaca19aa18e298cb3a629ae49363573e78d241abeef59/python_discovery-1.1.2.tar.gz"
-    sha256 "c500bd2153e3afc5f48a61d33ff570b6f3e710d36ceaaf882fa9bbe5cc2cec49"
+    url "https://files.pythonhosted.org/packages/d7/7e/9f3b0dd3a074a6c3e1e79f35e465b1f2ee4b262d619de00cfce523cc9b24/python_discovery-1.1.3.tar.gz"
+    sha256 "7acca36e818cd88e9b2ba03e045ad7e93e1713e29c6bbfba5d90202310b7baa5"
   end
 
   resource "tomli-w" do

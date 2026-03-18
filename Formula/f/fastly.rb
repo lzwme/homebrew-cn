@@ -1,18 +1,18 @@
 class Fastly < Formula
   desc "Build, deploy and configure Fastly services"
   homepage "https://www.fastly.com/documentation/reference/cli/"
-  url "https://ghfast.top/https://github.com/fastly/cli/archive/refs/tags/v14.0.4.tar.gz"
-  sha256 "25a203f89075031da408e94b1d272909ea2cd5ed72b78936fc7b7ba0f06d8976"
+  url "https://ghfast.top/https://github.com/fastly/cli/archive/refs/tags/v14.1.0.tar.gz"
+  sha256 "bc6f82a71812d1a6964c321a94a9882f4cdd8b21156e781ed78946be794651e6"
   license "Apache-2.0"
   head "https://github.com/fastly/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6e3957d6de868b75f696aa1a366271e765b44ba3a5c0841e767e040edabd910"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6e3957d6de868b75f696aa1a366271e765b44ba3a5c0841e767e040edabd910"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6e3957d6de868b75f696aa1a366271e765b44ba3a5c0841e767e040edabd910"
-    sha256 cellar: :any_skip_relocation, sonoma:        "00fd593ebe26c39dd3e10201f65ee45b991231ecd9648dcfae64b7323635c2e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0bea0e2e9efeaed76b4826bbc696b5265a6d52b3647264d208c5a57032798ccc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "133c05028c14541d72c61f2237821abc2b1bccb58d8e9d6d44625fff3c9892be"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b97ed23144c87ed834d663c8f99132ed38202c8424a04baf40973d8130cb1b7f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b97ed23144c87ed834d663c8f99132ed38202c8424a04baf40973d8130cb1b7f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b97ed23144c87ed834d663c8f99132ed38202c8424a04baf40973d8130cb1b7f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f34100877b7b339eb434c51c7363aa21e592875c894d5d931f9db2a6621f249a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db4db5d35e819cd4a7d55e0b5f495fb6b51e95d73c61f4858af4ea2026b8a3f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9068e8c317765b98d557105afde706648e8db989c7edb10cfdb3a052cae42636"
   end
 
   depends_on "go" => :build
@@ -41,7 +41,8 @@ class Fastly < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/fastly version")
 
+    ENV["FASTLY_API_TOKEN"] = "invalid-token"
     output = shell_output("#{bin}/fastly service list 2>&1", 1)
-    assert_match "Fastly API returned 401 Unauthorized", output
+    assert_match "401 Unauthorized", output
   end
 end

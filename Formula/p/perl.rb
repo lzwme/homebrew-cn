@@ -4,6 +4,7 @@ class Perl < Formula
   url "https://www.cpan.org/src/5.0/perl-5.42.1.tar.xz"
   sha256 "098c7f76e7a28443f6403610c7e339777905360c5225798fd142b8d33b05c6b4"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
+  revision 1
   head "https://github.com/perl/perl5.git", branch: "blead"
 
   livecheck do
@@ -12,12 +13,12 @@ class Perl < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "1797a24aa1647708e81f493554b7142cfcd54b40ac3349d4d4a05b283fc24558"
-    sha256 arm64_sequoia: "3dd44ebd53879e42d0632163208712e678da844fbe56ef0f6a949d141a07b458"
-    sha256 arm64_sonoma:  "fb2181cc60b1bc570485796f6f04a4b7e6fa768697e0d42198a49d45859a9b24"
-    sha256 sonoma:        "953096c1c194b3d04c6da4bbf47dc8b793133e4391e09af9307882f4bf92c084"
-    sha256 arm64_linux:   "dd4be1fc5a34603d647df344fc18d3180b7aecc8d29c2613442616fd3b65522a"
-    sha256 x86_64_linux:  "74ea847b35918f16fb6e82d1b5690125466e1094ecb47676f957f0861aa3f224"
+    sha256 arm64_tahoe:   "8143bb35b0370cc5c69022d3aeb32f502dc2f8a92996ac621847ab17b7ba0da9"
+    sha256 arm64_sequoia: "4de2d682352ccb3f5943a38e9663f21bb35df41bb012b2036548237c9b23079e"
+    sha256 arm64_sonoma:  "fadcc2724242479f59b6a36ede101eff047852588d59ba3a3aa5d0128fc90d12"
+    sha256 sonoma:        "b0e52a27dc75e276ce065ffc789459ca52f21dda227f55f2bf3751961d372a46"
+    sha256 arm64_linux:   "6fc95d40253e2c051e1b89d37180de5fe43089ba5e94a9e192a7ac7e407a05eb"
+    sha256 x86_64_linux:  "81da130e4d89d11f88fab2f85c15a549bae8efe01985ebc4633e3c893a48a9a1"
   end
 
   depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL-3.0 restrictions
@@ -38,6 +39,8 @@ class Perl < Formula
       -Dprivlib=#{opt_lib}/perl5/#{version.major_minor}
       -Dsitelib=#{opt_lib}/perl5/site_perl/#{version.major_minor}
       -Dotherlibdirs=#{HOMEBREW_PREFIX}/lib/perl5/site_perl/#{version.major_minor}
+      -Dvendorlib=#{HOMEBREW_PREFIX}/lib/perl5/vendor_perl/#{version.major_minor}
+      -Dvendorprefix=#{HOMEBREW_PREFIX}
       -Dperlpath=#{opt_bin}/perl
       -Dstartperl=#!#{opt_bin}/perl
       -Dman1dir=#{opt_share}/man/man1
@@ -51,21 +54,6 @@ class Perl < Formula
     system "./Configure", *args
     system "make"
     system "make", "install"
-  end
-
-  def post_install
-    if OS.linux?
-      perl_archlib = Utils.safe_popen_read(bin/"perl", "-MConfig", "-e", "print $Config{archlib}")
-      perl_core = Pathname.new(perl_archlib)/"CORE"
-      if File.readlines("#{perl_core}/perl.h").grep(/include <xlocale.h>/).any? &&
-         (OS::Linux::Glibc.system_version >= "2.26" ||
-         (Formula["glibc"].any_version_installed? && Formula["glibc"].version >= "2.26"))
-        # Glibc does not provide the xlocale.h file since version 2.26
-        # Patch the perl.h file to be able to use perl on newer versions.
-        # locale.h includes xlocale.h if the latter one exists
-        inreplace "#{perl_core}/perl.h", "include <xlocale.h>", "include <locale.h>"
-      end
-    end
   end
 
   def caveats

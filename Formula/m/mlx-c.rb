@@ -1,6 +1,6 @@
 class MlxC < Formula
   desc "C API for MLX"
-  homepage "https://ml-explore.github.io/mlx-c"
+  homepage "https://ml-explore.github.io/mlx-c/build/html/index.html"
   url "https://ghfast.top/https://github.com/ml-explore/mlx-c/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "dcfc404d7004e6da70170c669dbc920913cb25a59c9f7dac781caf92e524cc86"
   license "MIT"

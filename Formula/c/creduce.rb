@@ -139,14 +139,6 @@ class Creduce < Formula
       end
     end
 
-    # Work around build failure seen on Apple Clang 13.1.6 by using LLVM Clang
-    # Undefined symbols for architecture x86_64:
-    #   "std::__1::basic_stringbuf<char, std::__1::char_traits<char>, ...
-    if DevelopmentTools.clang_build_version == 1316
-      ENV["CC"] = llvm.opt_bin/"clang"
-      ENV["CXX"] = llvm.opt_bin/"clang++"
-    end
-
     system "./configure", "--disable-silent-rules",
                           "--bindir=#{libexec}",
                           *std_configure_args

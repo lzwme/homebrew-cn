@@ -2,7 +2,7 @@ class Subversion < Formula
   desc "Version control system designed to be a better CVS"
   homepage "https://subversion.apache.org/"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   stable do
     url "https://www.apache.org/dyn/closer.lua?path=subversion/subversion-1.14.5.tar.bz2"
@@ -17,13 +17,12 @@ class Subversion < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "ce4f041d63dc7d7d82169f6078adf8644689694185ec1cf97449aa675f28f8a8"
-    sha256 arm64_sequoia: "9af120df151d3839df30fd71222e6b2bb4a3ff5d6130a6d01d88c91c32251397"
-    sha256 arm64_sonoma:  "955bb3e745dc2953621198bb183460c405c63287a8c9e05da9a0812a5af10aa0"
-    sha256 sonoma:        "311df2025d05d11e0404c8945b086fc954074e9ca11e1cf936528c12abad69ed"
-    sha256 arm64_linux:   "9e2b9ba8f2a5ba0efaa5db767baefa2d228ab2192f7a88b3fb13e82e82038648"
-    sha256 x86_64_linux:  "c6c2674be10507ef292f4cb4385f184d74171f414efd95c1c99727e8bf100d66"
+    sha256 arm64_tahoe:   "5e038b0cc26af690210dccba99843496bbfec1aeb880c4dd4e9d46f4d2a730a7"
+    sha256 arm64_sequoia: "6b7e822daf9fa486cd647077813e476c261cd86fb444e27ef750377ffb7748c7"
+    sha256 arm64_sonoma:  "cf34643fbdd5481f92294d8a4a4d90618f87972ab1994e966c4081e0d7e9b4bc"
+    sha256 sonoma:        "6d063196b675e9b5c514d1425061c798cfe78bea4f0a5704e44e4d9302e692c8"
+    sha256 arm64_linux:   "b949a958992ca6cdd90fd3c0540f0cff78f52e459b8b73abab8210f39f85e9ea"
+    sha256 x86_64_linux:  "c3dfdd9e92e870c396b53d2bdf3f410b4b5369386e467186e4b4fa86214ea02d"
   end
 
   head do
@@ -121,32 +120,13 @@ class Subversion < Formula
 
     system "make", "swig-py"
     system "make", "install-swig-py"
-    (prefix/Language::Python.site_packages(python3)).install_symlink Dir["#{lib}/svn-python/*"]
+    (prefix/Language::Python.site_packages(python3)).install_symlink lib.glob("svn-python/*")
 
-    perl_archlib = Utils.safe_popen_read(perl.to_s, "-MConfig", "-e", "print $Config{archlib}")
-    perl_core = Pathname.new(perl_archlib)/"CORE"
-    perl_extern_h = perl_core/"EXTERN.h"
-
-    if OS.mac? && !perl_extern_h.exist?
-      # No EXTERN.h, maybe it's system perl
-      perl_version = Utils.safe_popen_read(perl.to_s, "--version")[/v(\d+\.\d+)(?:\.\d+)?/, 1]
-      perl_core = MacOS.sdk_path/"System/Library/Perl"/perl_version/"darwin-thread-multi-2level/CORE"
-      perl_extern_h = perl_core/"EXTERN.h"
-    end
-
-    onoe "'#{perl_extern_h}' does not exist" unless perl_extern_h.exist?
-
-    if OS.mac?
-      inreplace "Makefile" do |s|
-        s.change_make_var! "SWIG_PL_INCLUDES",
-          "$(SWIG_INCLUDES) -arch #{Hardware::CPU.arch} -g -pipe -fno-common " \
-          "-DPERL_DARWIN -fno-strict-aliasing -I#{HOMEBREW_PREFIX}/include -I#{perl_core}"
-      end
-    end
     system "make", "swig-pl-lib"
     system "make", "install-swig-pl-lib"
     cd "subversion/bindings/swig/perl/native" do
-      system perl, "Makefile.PL", "PREFIX=#{prefix}", "INSTALLSITEMAN3DIR=#{man3}"
+      args = OS.mac? ? ["INSTALLSITEMAN3DIR=#{man3}"] : ["INSTALLDIRS=vendor"]
+      system perl, "Makefile.PL", "PREFIX=#{prefix}", *args
       ENV.deparallelize { system "make", "install" }
     end
 
@@ -172,17 +152,11 @@ class Subversion < Formula
     system bin/"svnadmin", "verify", "test"
     system bin/"svn", "checkout", "file://#{testpath}/test", "svn-test"
 
-    platform = if OS.mac?
-      "darwin-thread-multi-2level"
-    else
-      arch = Hardware::CPU.arm? ? :aarch64 : Hardware::CPU.arch
-      "#{arch}-#{OS.kernel_name.downcase}-thread-multi"
-    end
-
     perl = DevelopmentTools.locate("perl")
-
-    perl_version = Utils.safe_popen_read(perl.to_s, "--version")[/v(\d+\.\d+(?:\.\d+)?)/, 1]
-    ENV["PERL5LIB"] = "#{lib}/perl5/site_perl/#{perl_version}/#{platform}"
+    if OS.mac?
+      perl_version = Utils.safe_popen_read(perl.to_s, "--version")[/v(\d+\.\d+(?:\.\d+)?)/, 1]
+      ENV["PERL5LIB"] = "#{lib}/perl5/site_perl/#{perl_version}/darwin-thread-multi-2level"
+    end
     system perl, "-e", "use SVN::Client; new SVN::Client()"
 
     system python3, "-c", "import svn.client, svn.repos"

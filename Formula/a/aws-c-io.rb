@@ -1,17 +1,17 @@
 class AwsCIo < Formula
   desc "Event driven framework for implementing application protocols"
   homepage "https://github.com/awslabs/aws-c-io"
-  url "https://ghfast.top/https://github.com/awslabs/aws-c-io/archive/refs/tags/v0.26.1.tar.gz"
-  sha256 "5481178b99f074314b23b39b35786715fb0c1bf9773023ff83efe0d62d6e0ce2"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-io/archive/refs/tags/v0.26.2.tar.gz"
+  sha256 "bf3491499e528a17247e440775775c3d47c85df94ea23b620f95c5baa5df7d1b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cc12f673bff8e14b9028ba9dd5d63f3569e18504b73b011bdcd5c1360fd9e632"
-    sha256 cellar: :any,                 arm64_sequoia: "9d517b93eb5aa9928001e879b73cda880bb098e55dc1dc306e44544d833b2128"
-    sha256 cellar: :any,                 arm64_sonoma:  "729b66fa364fba7de210ab575b6f6b93987aeeb17f361b08de350bc2f6d52696"
-    sha256 cellar: :any,                 sonoma:        "798efa5bf8d2e5665091cc786d9be22517645b1c7e3962e5d2a84d2010fd012a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e379afae8bbe78246c0731c24fa683d2d72d5ee29c1e44c8fa8b6be087c0b77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34e2da3546cdf4ee4a322be2077de0a1606765109e8c765c2b1ef1d7495024c8"
+    sha256 cellar: :any,                 arm64_tahoe:   "180452bcf79dcdca27b69bdefae91ae73ca295caa1c5dd365916fdc0eb5071f5"
+    sha256 cellar: :any,                 arm64_sequoia: "bcef5a675de90b278a1c84561e5287c2a931f3d66905992b487b0507d7ff8b70"
+    sha256 cellar: :any,                 arm64_sonoma:  "3fb4ce8aea2286715b1df65469d0e9b49d52e3e4177f1bd1789a7a06711e27d1"
+    sha256 cellar: :any,                 sonoma:        "af4ed45d8d23c7bf400bd30266af3409f0d5ddcd66b174aac803c4cd0f2842e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7e94550808ac04c6fe8f018df9c813a88a6b674cb25934962a214c11c80253c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbb99f0e08b929817a6972444e7caceb68747aa481f4a27026eebaeb6d6c2312"
   end
 
   depends_on "cmake" => :build

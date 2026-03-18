@@ -3,17 +3,17 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/b1/74/603937164d84904f453544d9a930330f5c38b1252557a0595619d590207e/dxpy-0.405.0.tar.gz"
-  sha256 "535474d22c8dec2beea46dc22128f55351d5eade3abfcab34df4449742b79008"
+  url "https://files.pythonhosted.org/packages/71/ca/7078e0b8440ae4c427b353c88530bb78e7bb6b2d7f892641e4890ed7a0be/dxpy-0.406.0.tar.gz"
+  sha256 "10b44b0473e6972f19ba496d7ec9ccb7cf0a1fa7301a5d4e03e3279d3a9d1b82"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e048e0fc6d403c878898d34a8cb5e95ee5251284f0e25d2c8badaef6503c1496"
-    sha256 cellar: :any,                 arm64_sequoia: "938c6efa6c45acaaf6a6b644569d9be5f1f96e9b297dd15dce9f8c6783d09bdf"
-    sha256 cellar: :any,                 arm64_sonoma:  "4bf8c101cbc5ffd0194c31df7dbed236384e219e1edf6e6342f6bbc70d959371"
-    sha256 cellar: :any,                 sonoma:        "64bbc96660e37d9bb9b48cd1f49275e7ccd49a0b5826cbfe010ec33bf9979345"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2d605ca35855a6fe04f95064a146748eafd2f8b59cd5c52dc2a44d9c0d5509a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f519b3b26b423249f255f39d5506b2ee66c0408719cbc2f3108857e7f589102c"
+    sha256 cellar: :any,                 arm64_tahoe:   "1640d0867a527808d280798555c60a3d8297ede683546d28188fa255afb63578"
+    sha256 cellar: :any,                 arm64_sequoia: "1fe173e860db8a89ab7aa25fbd5598fed66ed58b30f9cd71f735ee20d9b28748"
+    sha256 cellar: :any,                 arm64_sonoma:  "1ddafb94579e266e1f40b4d99db97ab7751a72a794ab87acb3057d2572260465"
+    sha256 cellar: :any,                 sonoma:        "a87c567bfa83383836cf3968479e798cb83cd163fd76dac36b34a1281ed38f2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fdb17d2c6831325680d17ff0aaac9259a9bd88b9bb70702fbba0912dda1086f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "593f165fd0a02c93c69f87598495ea04b0f2361ca5a1580457a7438f745e65f9"
   end
 
   depends_on "cmake" => :build # for awscrt
@@ -54,8 +54,8 @@ class Dxpy < Formula
   end
 
   resource "awscrt" do
-    url "https://files.pythonhosted.org/packages/f6/05/1697c67ad80be475d5deb8961182d10b4a93d29f1cf9f6fdea169bda88c3/awscrt-0.31.2.tar.gz"
-    sha256 "552555de1beff02d72a1f6d384cd49c5a7c283418310eae29d21bcb749c65792"
+    url "https://files.pythonhosted.org/packages/3d/e7/354b811e17c0dc8641209446d39306667a34a5158fc8b2fb03333d1cb1a3/awscrt-0.31.3.tar.gz"
+    sha256 "16cc0380eef073a2e37eff01a98f3f2108ead6dbb4a919d40f656db0d8ad4b71"
   end
 
   resource "crc32c" do
