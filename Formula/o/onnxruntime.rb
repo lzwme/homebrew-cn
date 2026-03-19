@@ -1,11 +1,9 @@
 class Onnxruntime < Formula
   desc "Cross-platform, high performance scoring engine for ML models"
   homepage "https://github.com/microsoft/onnxruntime"
-  url "https://github.com/microsoft/onnxruntime.git",
-      tag:      "v1.24.3",
-      revision: "3a728b75062256951b6e19ce718907cf1a1d4cf0"
+  url "https://ghfast.top/https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.24.4.tar.gz"
+  sha256 "0cf4d2ee4392fbb8aedaabc6b2ba11b4a680d1071fa4f75546c2289ca5b404cf"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +11,12 @@ class Onnxruntime < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ace689891419766dbc22341b010c68aadd95811d0119776bfa0d868e3efcb6e2"
-    sha256 cellar: :any,                 arm64_sequoia: "23dae1769a801e7cb363fed140734e5e2cbed6fca6af395fbb99d1e3082495b9"
-    sha256 cellar: :any,                 arm64_sonoma:  "c40165e97a6aff57fbc372d0939643063b6779f65e03dffaf2257aa7bb1f961a"
-    sha256 cellar: :any,                 sonoma:        "89d62fcc08d90cd0e430f027a6a9d59d7e1b74bfc5b7d579192470f252e4f234"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0339d77cb5a7183bef0f239de996cc1a313cf7b14dea61766004d7a36a96102"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "181a3cce0ba97fcf23ee3d76aaf425c23359e73237978074cc7f79eec31a8884"
+    sha256 cellar: :any,                 arm64_tahoe:   "8dd9e26d3cba8fa91acc3d65c657b308476ba7df75639f6d0ce4760546b93241"
+    sha256 cellar: :any,                 arm64_sequoia: "7d6e336784fbd4d7bf400fe0063d7ea208bd682b844e3c8decff7136c097b41f"
+    sha256 cellar: :any,                 arm64_sonoma:  "6a51d0a23801b62a4c255fa277bb456c4d74b611286500a49679ac1d19c4e3a1"
+    sha256 cellar: :any,                 sonoma:        "8688ab809331f70fdba32ec77be418c6ef827ae6444d86139d593b2e69e4ecef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6221a0c03753858a6eb99a1d5c94f0fec4e5cc215e524b3d7d75ec83e4f8b653"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30d8af8518ba1bdba1ff9f030f77c9212c064a1f4f7ca67373a88c16eae45378"
   end
 
   depends_on "boost" => :build
@@ -53,18 +50,29 @@ class Onnxruntime < Formula
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/microsoft/onnxruntime/refs/tags/v#{LATEST_VERSION}/cmake/deps.txt"
-      regex(%r{^coremltools;.*/(\h+)\.zip}i)
+      regex(%r{^coremltools;.*/v?(\d+(?:\.\d+)+)\.zip}i)
     end
   end
 
   resource "fp16" do
-    url "https://ghfast.top/https://github.com/Maratyszcza/FP16/archive/3d2de1816307bac63c16a297e8c4dc501b4076df.tar.gz"
-    version "3d2de1816307bac63c16a297e8c4dc501b4076df"
-    sha256 "65ace2f05fd9434b0acb7a7d3cc6cd96842ea6236b680594af932b359bedbfc1"
+    url "https://ghfast.top/https://github.com/Maratyszcza/FP16/archive/0a92994d729ff76a58f692d3028ca1b64b145d91.tar.gz"
+    version "0a92994d729ff76a58f692d3028ca1b64b145d91"
+    sha256 "a91f4770ff9c39f4d72e339c379f566b3bbb359fa66122d85fc0bae3dde7abc7"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/microsoft/onnxruntime/refs/tags/v#{LATEST_VERSION}/cmake/deps.txt"
       regex(%r{^fp16;.*/(\h+)\.zip}i)
+    end
+  end
+
+  resource "psimd" do
+    url "https://ghfast.top/https://github.com/Maratyszcza/psimd/archive/072586a71b55b7f8c584153d223e95687148a900.tar.gz"
+    version "072586a71b55b7f8c584153d223e95687148a900"
+    sha256 "f6c4dab91ae9a03b3019e7cab0572743afd0e1b6e75b97fcca50259c737c924e"
+
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/microsoft/onnxruntime/refs/tags/v#{LATEST_VERSION}/cmake/deps.txt"
+      regex(%r{^psimd;.*/(\h+)\.zip}i)
     end
   end
 
@@ -86,6 +94,7 @@ class Onnxruntime < Formula
     end
 
     args = %W[
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
       -DHOMEBREW_ALLOW_FETCHCONTENT=ON
       -DFETCHCONTENT_FULLY_DISCONNECTED=ON
       -DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS

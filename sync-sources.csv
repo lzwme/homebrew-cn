@@ -5228,6 +5228,7 @@ Homebrew-homebrew-core/Formula/o/odt2txt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/offlineimap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oggz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ogmtools.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/oh-my-agent.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/oh-my-posh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oha.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ohcount.rb, Homebrew/homebrew-core, 1
@@ -5792,6 +5793,7 @@ Homebrew-homebrew-core/Formula/p/portablegl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/portal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/portaudio.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/porter.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/portless.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/portmidi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/poselib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/posh.rb, Homebrew/homebrew-core, 0

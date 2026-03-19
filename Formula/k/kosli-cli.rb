@@ -1,8 +1,8 @@
 class KosliCli < Formula
   desc "CLI for managing Kosli"
   homepage "https://docs.kosli.com/client_reference/"
-  url "https://ghfast.top/https://github.com/kosli-dev/cli/archive/refs/tags/v2.12.1.tar.gz"
-  sha256 "fb9a7cfdcee3911cbc9981e3b03477c6a9ef1ec19b2504fd27f01408d81dc863"
+  url "https://ghfast.top/https://github.com/kosli-dev/cli/archive/refs/tags/v2.13.0.tar.gz"
+  sha256 "34fc17ac5c9eea2d7838e8a308e8798ea7d786287a567a144423a9bade43ce3e"
   license "MIT"
   head "https://github.com/kosli-dev/cli.git", branch: "main"
 
@@ -14,12 +14,12 @@ class KosliCli < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c3792dc129170d571ec63085d1162d825bd030c1462347e84d146add7d17382"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53930e4c0f32e16afd9099b5e43f2ceec8b45493f6e935dcee77559250091c52"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82e5137323547b0a311abc2a847ba0a8e04a36f66301f1683662f33c7d4b5ac2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b299d6ffa2b8d21440e87d9811c58fa37419b181f426b2a9a332ff2372c1d533"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3dc9d8c8780e1a54ea295b1e910cbe7a62dd11ab8eb648ee7ddb923a1011ef1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "024058068a55831bed48c5e1ba4eb69743097bfead3533cbfbcde264b9844e35"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fdffb5fa1e4cfddc9133868471a8ac5da5b73cb84ee1de57ff571d8842607e55"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1edb3ea2cc696da5a6bfa79afa2a131604bbd7fd89e4acca7f26d3d6087e4aec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd9386a9a7ef6f2ab97435445aba5c2755a7e3fcb0da5202860bac5652e1d387"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c0cc953d122788924a1e3b307f752c5b49192955f00d4f47510804630921ff55"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "694e10f0b81f583f0cf4606d12c1fa91170bae29865d676b04b860c1a114b899"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "969dabf07657e5e5ebb157a8abb0bba0a57ecf24eb3735b8c4d8d364d0796bd5"
   end
 
   depends_on "go" => :build

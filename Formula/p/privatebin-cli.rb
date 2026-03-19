@@ -6,12 +6,13 @@ class PrivatebinCli < Formula
   license "ISC"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ed201fc5f15f7c2e698da7958cc3f7850717447d25112de21f178879efd44d8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ed201fc5f15f7c2e698da7958cc3f7850717447d25112de21f178879efd44d8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ed201fc5f15f7c2e698da7958cc3f7850717447d25112de21f178879efd44d8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f2e4fa411d88cce37a30da74d468d452692a4837d83655cffc4738bf1b324fb9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9dc9373dd412bfa83d39f08fbccd6ab55b0c58f4952d3b8b049c10e8cb2f2448"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a98fa2e7050c0484bceb3b221fabfa802f83c5f0a68eebfc5ef0f3485e5d2d8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf4f261b7a6b91ce1d1ea15257b2e533dd47b4e9a7d635c2d9985c033698c48a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf4f261b7a6b91ce1d1ea15257b2e533dd47b4e9a7d635c2d9985c033698c48a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf4f261b7a6b91ce1d1ea15257b2e533dd47b4e9a7d635c2d9985c033698c48a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9ca7892ee44e534bf0e81e50f9a9ea2ab79bb1335aa805d86b67cb68ad40a83b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "97b0c6526605a3ec8bf164a9805bd4e7806c5d78bfe69c7211561abc719f511c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f23a8f66a69a556b63317ad2d4659062601b3518e9c782ce090db5a6486f8a5c"
   end
 
   depends_on "go" => :build
@@ -19,6 +20,8 @@ class PrivatebinCli < Formula
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"privatebin"), "./cmd/privatebin"
+
+    generate_completions_from_executable(bin/"privatebin", shell_parameter_format: :cobra)
   end
 
   test do

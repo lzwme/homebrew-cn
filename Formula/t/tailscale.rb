@@ -2,8 +2,8 @@ class Tailscale < Formula
   desc "Easiest, most secure way to use WireGuard and 2FA"
   homepage "https://tailscale.com"
   url "https://github.com/tailscale/tailscale.git",
-      tag:      "v1.94.2",
-      revision: "2de4d317a8c2595904f1563ebd98fdcf843da275"
+      tag:      "v1.96.2",
+      revision: "17a4f58b5c457d350b1e357c8b1e3a9e7188416b"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,12 +13,12 @@ class Tailscale < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "108283741824bec70d11ae348f0af09e3cba7d84dd16a5cacedb15c5f69bc60e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5c5506d7a5f909cfb94fac1cce1628c6916fa2f01cefc2825cd088763931090"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "96b7887c1fbbb55c58d9a1efb4f9205d3277c226ea9edced21230da5281417b1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9b49997ee1f475d64e625193c3dc84710e8d623222dd52e52592ca7cee135f8f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "49c386390d1a723d0e096f3246d617f85eaac061907e209743b301e8c7750cd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "febd25594fc848792f30d935077b801509fb13306d50b1db410994229c4f07e8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb55422ab413d70d6541ba89e341dabea1179cead87b292b2d367f956d377abc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d3b348d1d8735ff59d7321210c36cbe54a8ebd99eac0577cec16262c11f8fcf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8911e0c7106dc1231ae635cc2789d5a43c1c4f5afdfa8168b4453d06484b06f5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "738ee948c77b0a885951ec5095dbce731d8a3be373a4c0aa393c6f441e2d410f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "33357bc235d0958dcc45d473be0751c8867ef412b5a4d411718e115be79ae575"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "baa7bc317a6bf85492f9181eb411426fb5c8ecf71fca366bbf86d82697919799"
   end
 
   depends_on "go" => :build

@@ -1,17 +1,17 @@
 class Witr < Formula
   desc "Why is this running?"
   homepage "https://github.com/pranshuparmar/witr"
-  url "https://ghfast.top/https://github.com/pranshuparmar/witr/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "dce5f0fe15a6de590f44b6c2d09e282300e30cb52eaff3e44c6643c960203cee"
+  url "https://ghfast.top/https://github.com/pranshuparmar/witr/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "3e28aa5082b7e83e35e2e8d2b0be30732ac454ac261eb8f315ae8eb30810e6a5"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0c7f34d3243aa23a756901cf3f4ffc831d586e19f30e1f43908c6a3d1e591907"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ff4cff6554dc662703b3d395c6dd78332c7d34f3d4901628490f40c615a5e87"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "caee8a7bbf5cdcb36749337259190709ccafe0617d824f94082426ee1d4fbefa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "31051b50229f4a47c603f5dd29a9fe43b389ab93df3a0a7cb0d7b5fbb9ddc206"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "96449d0c78d48ff58e5749643ddc933be3bfba70ae21e583b44c0a54747c368d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc65750ef8b21a137a65c098cf33fa15a8c5290829d78a711accdb38636ce68c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd9fb425255725c69d39ae9ebe18c8cf4fb7fb6865d2ab2b05477304ccf58e57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c187bae9ee368e0f0448483c19594ab7cfd95aecf4d09a48d68afa36089a11e1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75788a7b721b2c21fe3f5095a78e0ad3941b895993f55119c854a7a00499fbcb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "18ab2624efe88e35a2099f3fd4e6bc86730b45fd0306b61db7b6ecbcd047349e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "279c926500ae3fade5ff2f858ea7fcf395093f142f1a7777db5e87fb1d7bc25c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bcda88507cd3bafcdee588c8fac8f6459a38beeb40cd8825ecdf750ee9c77fb"
   end
 
   depends_on "go" => :build
@@ -24,6 +24,6 @@ class Witr < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/witr --version")
-    assert_match "Error: no process ancestry found", shell_output("#{bin}/witr --pid 99999999 2>&1", 1)
+    assert_match "no process ancestry found", shell_output("#{bin}/witr --pid 99999999 2>&1", 2)
   end
 end

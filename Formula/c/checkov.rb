@@ -3,8 +3,8 @@ class Checkov < Formula
 
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
-  url "https://files.pythonhosted.org/packages/44/39/cbdee920a3b7cb90787b8d2602c4a3e2eb018de45a7511ef0a25041b528d/checkov-3.2.500.tar.gz"
-  sha256 "4c1c720447b30cadf3a0c28bb5c4cb70f5c82af2d811fc19fdc30f633a110e61"
+  url "https://files.pythonhosted.org/packages/ba/47/81dc68e33ba323b973c90a7792b547e44d80afb687e402cf00412d709371/checkov-3.2.510.tar.gz"
+  sha256 "db065e2d3257440a9626543184e2f89ba04779b51757f3db65e0af3f1961e538"
   license "Apache-2.0"
 
   livecheck do
@@ -17,13 +17,12 @@ class Checkov < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "053fb8aa7e6afd82155440211a17893905e930aade5774abe3c58c85658a60f7"
-    sha256 cellar: :any,                 arm64_sequoia: "02506f986ccbcd625d0701623d504d5c8d15a4f63d7591deb9ad1baf0b0091e3"
-    sha256 cellar: :any,                 arm64_sonoma:  "82dcbeea7b99836bae71d401bdcd2dc604687861ff9e4a0ff0868c34de94d1d1"
-    sha256 cellar: :any,                 sonoma:        "c1d03a4f1e15c49310ca239a4f18f833990b852cbaf6cefb2e80d00d673a9c76"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "343276d9f7d7cea2bc0f33cb8ad405d7c09e429fe4898cd9feab110627adaf82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78519cbd5e10ead3b11446ea147fe8ded4d5bbc848221b7a2034a1e9ff8bc404"
+    sha256 cellar: :any,                 arm64_tahoe:   "c49d8497e183f0ee86d242380b5eba3e082aabfb5c6de8ce8e8fa6b83ed85a54"
+    sha256 cellar: :any,                 arm64_sequoia: "493fd8fefeaef46000d408789d86c1fdd2434d9c33df4d5dc896c4f73cdc0ddc"
+    sha256 cellar: :any,                 arm64_sonoma:  "dd2a3e39c9be01e76ec73050fd53259049ffa3da419705f12d7013eea11f8a88"
+    sha256 cellar: :any,                 sonoma:        "10edd4e568241778418f04f18c17bd9adef77408cb0d0561d557fbcf4be373bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5290693fd09de77199a8d3fcc1e7731e63a5b28875c0ea8690a59f50aa87546"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2fadde58f37a4739c7b8e7408ead6f23e142aebca907cc61d71260b3e1d89be"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -81,8 +80,8 @@ class Checkov < Formula
   end
 
   resource "bc-detect-secrets" do
-    url "https://files.pythonhosted.org/packages/7a/22/389df1a2d5f539593ce22671a401fedbc78d8054b4644dde2c2263f1f343/bc_detect_secrets-1.5.45.tar.gz"
-    sha256 "f05cc539d1865d6f8d65cbd51968e85ec570ee1375447a5a29a5623ca8ea9f2b"
+    url "https://files.pythonhosted.org/packages/82/fb/624aa462ea738cd21e56b1a5b7bbe375403e4114f7bc92a7cded7f516da0/bc_detect_secrets-1.5.47.tar.gz"
+    sha256 "a9be28a2e564f2b19731991df39e63ae6372cc84d828ee24e50c094cbb4c154c"
   end
 
   resource "bc-jsonpath-ng" do
@@ -131,8 +130,8 @@ class Checkov < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
-    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "click" do

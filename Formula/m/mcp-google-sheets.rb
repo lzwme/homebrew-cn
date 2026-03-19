@@ -6,14 +6,15 @@ class McpGoogleSheets < Formula
   url "https://files.pythonhosted.org/packages/1c/d1/2fc5b72d125ac1fa3a305c6df5111ccd3b0fcc0958fd3b40c8f91069fd5a/mcp_google_sheets-0.6.1.tar.gz"
   sha256 "4a1b0c81b2bee94743696f4afb95c9a680b6b3b5c5e27f5e8328e7b15dc3851d"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d9cf817bf7a14aa7540c6a76923dbbc6934b3cf2c38cb3b8317862971dd1dc8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa2d500f8352a1f1f9b0cdc03bf9765e04406cb69babc89820519a08589d5165"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95e4f7928277a20147e7b8f4c66d5aecff11e3b5c9054f090dd23085d70d0540"
-    sha256 cellar: :any_skip_relocation, sonoma:        "91f1610ef6e198ce6f42e99615fcb07fc33b1f688c42d5e320609efccaa75187"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "92060aac410d6407ca181229963006a550c77e97b4b0f07726c0b4aaa3444b89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15703ecc6bcd1ce13877ea2c7a647833da714908654585d9d8aeda8f1fba9cf1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fff91f8bb69e7b4e5b176698614972f06c54bd8330cfd4c85972f355ae014cd9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36952d130ab2cdf73575a437c3ca1f83f81b5265aeae54b7986c7e73264b8f16"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2c21e9bc416aff68a2f332beac62e339fb16259a9abb769639818de653c6411"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2463f689cdb3e51d190104fd153de5ff88731df2cb252749b3e6fdb3dcdb7269"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57bcccb341a46441d3e551f2346433f621601e097998e8a068d8f44d373b6056"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d125720ecfba508d19849ee92af1d3264c997770eeec8415a6074fe05e455f3d"
   end
 
   depends_on "certifi" => :no_linkage
@@ -50,8 +51,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/85/d8/489052a40935e45b9b5b3d6accc14b041360c1507bdc659c2e1a19aaa3ff/google_api_python_client-2.192.0.tar.gz"
-    sha256 "d48cfa6078fadea788425481b007af33fe0ab6537b78f37da914fb6fc112eb27"
+    url "https://files.pythonhosted.org/packages/90/f4/e14b6815d3b1885328dd209676a3a4c704882743ac94e18ef0093894f5c8/google_api_python_client-2.193.0.tar.gz"
+    sha256 "8f88d16e89d11341e0a8b199cafde0fb7e6b44260dffb88d451577cbd1bb5d33"
   end
 
   resource "google-auth" do
@@ -135,8 +136,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/fe/b6/6e630dff89739fcd427e3f72b3d905ce0acb85a45d4ec3e2678718a3487f/pyasn1-0.6.2.tar.gz"
-    sha256 "9b59a2b25ba7e4f8197db7686c09fb33e658b98339fadb826e9512629017833b"
+    url "https://files.pythonhosted.org/packages/5c/5f/6583902b6f79b399c9c40674ac384fd9cd77805f9e6205075f828ef11fb2/pyasn1-0.6.3.tar.gz"
+    sha256 "697a8ecd6d98891189184ca1fa05d1bb00e2f84b5977c481452050549c8a72cf"
   end
 
   resource "pyasn1-modules" do
@@ -185,8 +186,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/5a/9f/c3695c2d2d4ef70072c3a06992850498b01c6bc9be531950813716b426fa/sse_starlette-3.3.2.tar.gz"
-    sha256 "678fca55a1945c734d8472a6cad186a55ab02840b4f6786f5ee8770970579dcd"
+    url "https://files.pythonhosted.org/packages/14/2f/9223c24f568bb7a0c03d751e609844dce0968f13b39a3f73fbb3a96cd27a/sse_starlette-3.3.3.tar.gz"
+    sha256 "72a95d7575fd5129bd0ae15275ac6432bb35ac542fdebb82889c24bb9f3f4049"
   end
 
   resource "starlette" do
@@ -205,8 +206,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/32/ce/eeb58ae4ac36fe09e3842eb02e0eb676bf2c53ae062b98f1b2531673efdd/uvicorn-0.41.0.tar.gz"
-    sha256 "09d11cf7008da33113824ee5a1c6422d89fbc2ff476540d69a34c87fab8b571a"
+    url "https://files.pythonhosted.org/packages/e3/ad/4a96c425be6fb67e0621e62d86c402b4a17ab2be7f7c055d9bd2f638b9e2/uvicorn-0.42.0.tar.gz"
+    sha256 "9b1f190ce15a2dd22e7758651d9b6d12df09a13d51ba5bf4fc33c383a48e1775"
   end
 
   def install

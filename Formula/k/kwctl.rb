@@ -1,18 +1,18 @@
 class Kwctl < Formula
   desc "CLI tool for the Kubewarden policy engine for Kubernetes"
   homepage "https://www.kubewarden.io/"
-  url "https://ghfast.top/https://github.com/kubewarden/kubewarden-controller/archive/refs/tags/v1.33.0.tar.gz"
-  sha256 "26407d202984acffaac4704617d82755d289a01075f40ab6d98fff73a8f88547"
+  url "https://ghfast.top/https://github.com/kubewarden/kubewarden-controller/archive/refs/tags/v1.33.1.tar.gz"
+  sha256 "8bdc59d34dcc2b94f9c82b8996c9735b58733b7f279cfefebf3be50074dd2c85"
   license "Apache-2.0"
   head "https://github.com/kubewarden/kubewarden-controller.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0fca7f7642ece2c160ceefc71bdce66afa5f91c9d5729a22bbcc8c333e8ce6e7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fedd58812def280fbea19d7472bb8947fd114564b3baa74d31f1ebd63dbea8ad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1086119d74b81daeefeb303a06b583fb716cf6898106c2eec3199ec6f8c67a3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7fcef36c08598de3a9280a5ad9301a58f81ac8cefb3117b1cc6cd2c1de6af8d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbe32f06878de140c7b135c5598c9122eb96f239b4be48d8432ee4bd414feecb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0e3000ac285dd0415c7a6f7e682d4e02ed86c4506881f90ef5b655f55e548ef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b753565e38474273b4df3e1411ee2101e82b12dfe42113471508bc7adb0b104e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c0e310ff186f7c701fc56b164242004e537552213dc488cd20a7e66de6fd763"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0720b88636645c4c4451bf9ce8ecd43d7f130f3b507d19fc2368f43751fa84a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d0b3a42bc40f2fb7146f3ad18f7d426b6880bd7f7acff86571c5613a0ecbef21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "609fc9b73e6c5c135e96d235b74911fb8839bdeb2a092b50a80e3b4da395d095"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c88e7a6712ca927f36457bdc1e681d89fd25ac09002a5e145f3060b9ca1c8dca"
   end
 
   depends_on "pkgconf" => :build

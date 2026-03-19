@@ -1,18 +1,18 @@
 class Topicctl < Formula
   desc "Declarative Kafka topic management"
   homepage "https://github.com/segmentio/topicctl"
-  url "https://ghfast.top/https://github.com/segmentio/topicctl/archive/refs/tags/v2.0.1.tar.gz"
-  sha256 "ac57bed1c6c387d050b8a7cd43c8b82457d7f34ac4bc4630ac8a6d989c8b0e69"
+  url "https://ghfast.top/https://github.com/segmentio/topicctl/archive/refs/tags/v2.0.2.tar.gz"
+  sha256 "fb97094222529c018917a0ac29cfd139b6991a168634eb067f7eb4b26b8424b5"
   license "MIT"
   head "https://github.com/segmentio/topicctl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f71f5d8f760ec5e5772a82bebf1a9bd0b921d3267d259b8effb8210905572444"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f71f5d8f760ec5e5772a82bebf1a9bd0b921d3267d259b8effb8210905572444"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f71f5d8f760ec5e5772a82bebf1a9bd0b921d3267d259b8effb8210905572444"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8d9804fa4bab8b68a3555e102184f763d8e22a6edcf18cba09441cd0414a95bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "24889b807c09e8094152a1f5fcb32a67dfaac884afefb5333b3d1652358e92dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54f7b1d2d2b7ad45ec86e051ae83c44fa814b4e86d6ef4677901d91c3d6c2024"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0f833e3ff25e07ca3d19276f3ab81af1510ea96b000f3245904a7ba8eb48471"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0f833e3ff25e07ca3d19276f3ab81af1510ea96b000f3245904a7ba8eb48471"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0f833e3ff25e07ca3d19276f3ab81af1510ea96b000f3245904a7ba8eb48471"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d17132aaaf3c3cfb8e9e90b9daa34622d53af4a6545cce47a4c28a71a7bac4b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "81ce8ff37b015a67bef328e2fa8eb62344d526a2c7b3559126025d642ed6812e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60bef3b8fa1cf53ef4e87016c5e475649eb67430985b36657be306a6b5e4780f"
   end
 
   depends_on "go" => :build

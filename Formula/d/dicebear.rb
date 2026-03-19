@@ -1,17 +1,17 @@
 class Dicebear < Formula
   desc "CLI for DiceBear - An avatar library for designers and developers"
   homepage "https://github.com/dicebear/dicebear"
-  url "https://registry.npmjs.org/dicebear/-/dicebear-9.4.0.tgz"
-  sha256 "f81355aa528371341dbf7007ae84f42dd0b0fcca50896762a19b6b6763f46af2"
+  url "https://registry.npmjs.org/dicebear/-/dicebear-9.4.1.tgz"
+  sha256 "175763ff506d7979b927ae4b3941cf4beb8f1568a1bfd295c85893ce876438c5"
   license "MIT"
 
   bottle do
-    sha256                               arm64_tahoe:   "55aca3510b08bb12217b0c7bb4937271c377811b52627818ddd2cb0b3508ecd2"
-    sha256                               arm64_sequoia: "89e7408bf53a7c86d2b6034c44edc344bc5925e721de6244891c8955cb9fe4f6"
-    sha256                               arm64_sonoma:  "3ef4baa4b9f36759430529c67805365e4709e82112f1d964f28f5ebf40de71fe"
-    sha256                               sonoma:        "7b27b7280579f6919e3a6496bf10ebdb6011e7bf9090934101d22845848ae70a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ae0ef7bbad82a96d4537de2e2fa3bf042586025b224633cb75b336c79686e86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6081b3bd16dfe70f338afb92cf77cb88023a6abf0e54707c547dcf380c3e345"
+    sha256                               arm64_tahoe:   "8c7a8437bb4de8381981886ab5432fc232aa4f744c7861aca6c369d34dab2046"
+    sha256                               arm64_sequoia: "9eb3788cf7882d2e7a912c45cdc9b6ae02ba3eb038e3a9e56ab9da24da80cf7c"
+    sha256                               arm64_sonoma:  "cbe7e37a05c3566744b2e31666b56a48a155df9abac188343ba5aec1236b3d73"
+    sha256                               sonoma:        "8d7d02b958016c49c688eb2abdd3fdaa5d3e47bfc3421409264a7bc1d6162cb0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b419f621cfd452a0accd6abb2df8d48dde9d50d7c9591e7d2c1593772ee44209"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d01385a058155fd86a568fd93bfbd3ccc1cc47a0b2d4a05784584782ef837288"
   end
 
   depends_on "pkgconf" => :build
@@ -26,8 +26,8 @@ class Dicebear < Formula
   # Resources needed to build sharp from source to avoid bundled vips
   # https://sharp.pixelplumbing.com/install/#building-from-source
   resource "node-addon-api" do
-    url "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.5.0.tgz"
-    sha256 "d12f07c8162283b6213551855f1da8dac162331374629830b5e640f130f07910"
+    url "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.6.0.tgz"
+    sha256 "e3029e9581015874cc794771ec9b970be83b12c456ded15cfba9371bddc42569"
   end
 
   resource "node-gyp" do

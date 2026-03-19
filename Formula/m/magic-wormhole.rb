@@ -6,16 +6,16 @@ class MagicWormhole < Formula
   url "https://files.pythonhosted.org/packages/02/0e/b00b4a0de6d82b25f30a2405e3640c508b18dd3544d0104efe2d6c161719/magic_wormhole-0.23.0.tar.gz"
   sha256 "4cd8f48a5c47f70578be7063f892988177681ab66845f4d6ad2d5eb03ce82acf"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/magic-wormhole/magic-wormhole.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3e6b71c2a1ab9b7aed1868d6bb12834bafe35fb506f8ca7eadef67d18f929d15"
-    sha256 cellar: :any,                 arm64_sequoia: "f670030a169e48378886b9c6cdcb05abb287d8de54b4d6d407b10db609a960f0"
-    sha256 cellar: :any,                 arm64_sonoma:  "3e353536a3e031d79a7291ae6c563c17d59b73ed988ee95bd8a71e88c7cbfd1e"
-    sha256 cellar: :any,                 sonoma:        "f63b3205c15541dcdb3c9d2004d1c081b69d2d2f101e66ecb375d805f0ab9a54"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f5a831ce55b0df7d5db69a28d8995c1e9328f50dd8db82378e1ef84f3584b8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3883fea8b1312ba81cd80948926c9256bb7187094c92c12fcdd3d4092356f8d0"
+    sha256 cellar: :any,                 arm64_tahoe:   "946358596338535de392ce6f5fa0a17c71f87e0e9b14bc243d860481017d0434"
+    sha256 cellar: :any,                 arm64_sequoia: "617b91dbacae7467dd0509e2c560f3a8e5e8cfe16a0d3f43aae673a2f9bc671e"
+    sha256 cellar: :any,                 arm64_sonoma:  "a1eeb12dbc3004842fbafdeed6056e670975d0f2d767cdc72e9bb1c876151e87"
+    sha256 cellar: :any,                 sonoma:        "c4cb9d4b0ef94a7de24f7a6bd2187b393324f12e5ceae7fcfcace3662953cedc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47c1fc45890489f4217475ea926008753f74995cdf5f16cab6e70560d0e8cdf2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02377e5b17882f936d3fc49cf0167f30ca33ba874b1787ac897ffa8cedca4078"
   end
 
   depends_on "cryptography" => :no_linkage
@@ -97,8 +97,8 @@ class MagicWormhole < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/fe/b6/6e630dff89739fcd427e3f72b3d905ce0acb85a45d4ec3e2678718a3487f/pyasn1-0.6.2.tar.gz"
-    sha256 "9b59a2b25ba7e4f8197db7686c09fb33e658b98339fadb826e9512629017833b"
+    url "https://files.pythonhosted.org/packages/5c/5f/6583902b6f79b399c9c40674ac384fd9cd77805f9e6205075f828ef11fb2/pyasn1-0.6.3.tar.gz"
+    sha256 "697a8ecd6d98891189184ca1fa05d1bb00e2f84b5977c481452050549c8a72cf"
   end
 
   resource "pyasn1-modules" do

@@ -4,6 +4,7 @@ class WhisperCpp < Formula
   url "https://ghfast.top/https://github.com/ggml-org/whisper.cpp/archive/refs/tags/v1.8.3.tar.gz"
   sha256 "870ba21409cdf66697dc4db15ebdb13bc67037d76c7cc63756c81471d8f1731a"
   license "MIT"
+  revision 1
   head "https://github.com/ggml-org/whisper.cpp.git", branch: "master"
 
   livecheck do
@@ -12,45 +13,33 @@ class WhisperCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5eedd491cfac5e7fb0212068d794ff129ab2b7b1e0353c16e9b69c3ef8040278"
-    sha256 cellar: :any,                 arm64_sequoia: "315a2b2b47fc231ad88586dae9c1f2d4147222d0d6acd62a921eba6263c32c2d"
-    sha256 cellar: :any,                 arm64_sonoma:  "f0901568c7babbd3022a043887007400e4b57a22d3a90b9c0824d01fa3a77270"
-    sha256 cellar: :any,                 sonoma:        "e6c2f78cbc5d6b311dfe24d8c5d4ffc68a634465c5e35ed11746068583d273c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "684199fd6bec28cddfa086c584a49d236386c109f901a443b577b857fd052f83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09defdf76a98554ed27b2fd4c2e34472b83603b17ed0411505166146799800ac"
+    sha256 cellar: :any,                 arm64_tahoe:   "5e0ea9ed7ccf601fea3c9420f5d858678a8545e3eb1699bf2496d6ad5f7b1f71"
+    sha256 cellar: :any,                 arm64_sequoia: "fe0330ae5ff226162518de18d80dcb5e7975da15a07eadd7692a99026998aa8c"
+    sha256 cellar: :any,                 arm64_sonoma:  "19c13da9b026f9cbea6a5b14a713de935df6c249e37127b296576517c851aba5"
+    sha256 cellar: :any,                 sonoma:        "1924781a85172e26234e6c6ca7d941fbe09229487460e1c6d28e6ac1d1c4d665"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e06990c957249aca97063639139c4ed9ca89f79d85aae5d3057b458642d26d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "945ce43e2a54becffb4add413a2fd37edf61492324120ae051a498062761116a"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :test
+  depends_on "ggml"
   depends_on "sdl2"
 
   def install
     args = %W[
       -DBUILD_SHARED_LIBS=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
-      -DGGML_METAL=#{(OS.mac? && !Hardware::CPU.intel?) ? "ON" : "OFF"}
-      -DGGML_METAL_EMBED_LIBRARY=#{OS.mac? ? "ON" : "OFF"}
-      -DGGML_NATIVE=#{build.bottle? ? "OFF" : "ON"}
       -DWHISPER_SDL2=ON
       -DWHISPER_BUILD_EXAMPLES=ON
       -DWHISPER_BUILD_TESTS=OFF
       -DWHISPER_BUILD_SERVER=OFF
+      -DWHISPER_USE_SYSTEM_GGML=ON
     ]
 
-    # avoid installing into prefix as ggml libraries/headers would conflict with llama.cpp
-    # TODO: change this once ggml has releases, https://github.com/ggml-org/ggml/issues/1333
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args(install_prefix: libexec)
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-
-    # Expose executables and pkgconfig files
-    bin.install_symlink libexec.glob("bin/*")
-    (lib/"pkgconfig").install_symlink libexec.glob("lib/pkgconfig/*")
-
-    # Install whisper headers and libraries for opt paths
-    include.install_symlink libexec.glob("include/whisper.h")
-    lib.install_symlink libexec.glob("lib/libwhisper*")
-
     pkgshare.install "models/for-tests-ggml-tiny.bin", "samples/jfk.wav"
   end
 
@@ -82,8 +71,7 @@ class WhisperCpp < Formula
       }
     CPP
 
-    flags = shell_output("pkgconf --cflags --libs whisper").chomp.split
-    flags << "-Wl,-rpath,#{libexec}/lib" if OS.linux?
+    flags = shell_output("pkgconf --cflags --libs ggml whisper").chomp.split
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
     system "./test"
   end

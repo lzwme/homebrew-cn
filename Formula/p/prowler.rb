@@ -6,15 +6,16 @@ class Prowler < Formula
   url "https://files.pythonhosted.org/packages/20/c5/d57b5636dd99cbffc5449a886edc9324c33a67da6add0e6bbdbc7f4a3596/prowler-5.20.0.tar.gz"
   sha256 "c8ccbcfa21f5ba375c8fc50d4d2f18da04a1bd6f64d152ddf2f65b4f3fcfa16b"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "364a831dc06cb160d0a672b25fecd9f7b147cf62f39d31f4ba8cbedf4e1f627a"
-    sha256 cellar: :any,                 arm64_sequoia: "dcfee7f5644cbe7b374b3831cbf9953780122bf319b84d16872b46349006402d"
-    sha256 cellar: :any,                 arm64_sonoma:  "6801d97be9397ad4797fcaf177de7eb9dc6972711d9ce54c95516a9d9b98076d"
-    sha256 cellar: :any,                 sonoma:        "fa9fa449fae60581163868b9afc962ccc4867e23c5a406d94d64862cb45815c2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3674836ab5de9a1ee196613be3c821cc42e487064fe164188b5e4750e6cd8877"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92845e53ff69e7c7d0be1838c7f960940186ddad260d5f6918857bfd28352eee"
+    sha256 cellar: :any,                 arm64_tahoe:   "80acb28d85fb6f9fa0462b1f541d4b0256014b1a5f8af75d048d94d649e5e244"
+    sha256 cellar: :any,                 arm64_sequoia: "9c7e5b515bdf8a0f3d81f563d6d54451edb8b83891e0c891f2ac3c0b3b231108"
+    sha256 cellar: :any,                 arm64_sonoma:  "51246c503d57d139bb87083a3f5a2c148f2b6ebbe604cbccdbc95e3aea54d208"
+    sha256 cellar: :any,                 sonoma:        "73e7c4df53b5b920e45c4db09cc1a8463ae7290f7e6eb497a63c7862f080a894"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1855dedf78d953457eeddf1a1ee40e523d4c98a776d610707ff954d7856df0e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65e79d22f89df07593dc016d1005c9d3c13bd6ae4c994290e0b1d8b674cfa310"
   end
 
   depends_on "cmake" => :build
@@ -254,8 +255,8 @@ class Prowler < Formula
   end
 
   resource "azure-core" do
-    url "https://files.pythonhosted.org/packages/00/fe/5c7710bc611a4070d06ba801de9a935cc87c3d4b689c644958047bdf2cba/azure_core-1.38.2.tar.gz"
-    sha256 "67562857cb979217e48dc60980243b61ea115b77326fa93d83b729e7ff0482e7"
+    url "https://files.pythonhosted.org/packages/c8/29/9641b73248745774a52c7ce7f965ed1febbdea787ec21caad3ae6891d18a/azure_core-1.38.3.tar.gz"
+    sha256 "a7931fd445cb4af8802c6f39c6a326bbd1e34b115846550a8245fa656ead6f8e"
   end
 
   resource "azure-identity" do
@@ -419,8 +420,8 @@ class Prowler < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
-    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "circuitbreaker" do
@@ -549,8 +550,8 @@ class Prowler < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/7d/59/7371175bfd949abfb1170aa076352131d7281bd9449c0f978604fc4431c3/google_auth-2.49.0.tar.gz"
-    sha256 "9cc2d9259d3700d7a257681f81052db6737495a1a46b610597f4b8bafe5286ae"
+    url "https://files.pythonhosted.org/packages/ea/80/6a696a07d3d3b0a92488933532f03dbefa4a24ab80fb231395b9a2a1be77/google_auth-2.49.1.tar.gz"
+    sha256 "16d40da1c3c5a0533f57d268fe72e0ebb0ae1cc3b567024122651c045d879b64"
   end
 
   resource "google-auth-httplib2" do
@@ -604,8 +605,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/8f/7f/6a17347028d4db0b9c54f4369df99fd4fffb667f2fb0bc11e30774bc5387/iamdata-0.1.202603121.tar.gz"
-    sha256 "98e26a66c10bf4366a6857ada90fafbfeb618bdb74085eca9d1163e503341399"
+    url "https://files.pythonhosted.org/packages/e9/27/8463cb83bd121a5318240a206a5c07ab571967a90aef85dd4f99b9657b8e/iamdata-0.1.202603181.tar.gz"
+    sha256 "78c844fb36f359eca4802554093635b9159f2f36237cfb96554e4c3b53a68e7f"
   end
 
   resource "idna" do
@@ -865,8 +866,8 @@ class Prowler < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/fe/b6/6e630dff89739fcd427e3f72b3d905ce0acb85a45d4ec3e2678718a3487f/pyasn1-0.6.2.tar.gz"
-    sha256 "9b59a2b25ba7e4f8197db7686c09fb33e658b98339fadb826e9512629017833b"
+    url "https://files.pythonhosted.org/packages/5c/5f/6583902b6f79b399c9c40674ac384fd9cd77805f9e6205075f828ef11fb2/pyasn1-0.6.3.tar.gz"
+    sha256 "697a8ecd6d98891189184ca1fa05d1bb00e2f84b5977c481452050549c8a72cf"
   end
 
   resource "pyasn1-modules" do
@@ -895,8 +896,8 @@ class Prowler < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/a8/10/e8192be5f38f3e8e7e046716de4cae33d56fd5ae08927a823bb916be36c1/pyjwt-2.12.0.tar.gz"
-    sha256 "2f62390b667cd8257de560b850bb5a883102a388829274147f1d724453f8fb02"
+    url "https://files.pythonhosted.org/packages/c2/27/a3b6e5bf6ff856d2509292e95c8f57f0df7017cf5394921fc4e4ef40308a/pyjwt-2.12.1.tar.gz"
+    sha256 "c74a7a2adf861c04d002db713dd85f84beb242228e671280bf709d765b03672b"
   end
 
   resource "pynacl" do
@@ -962,11 +963,6 @@ class Prowler < Formula
   resource "rpds-py" do
     url "https://files.pythonhosted.org/packages/20/af/3f2f423103f1113b36230496629986e0ef7e199d2aa8392452b484b38ced/rpds_py-0.30.0.tar.gz"
     sha256 "dd8ff7cf90014af0c0f787eea34794ebf6415242ee1d6fa91eaba725cc441e84"
-  end
-
-  resource "rsa" do
-    url "https://files.pythonhosted.org/packages/da/8a/22b7beea3ee0d44b1916c0c1cb0ee3af23b700b6da9f04991899d0c555d4/rsa-4.9.1.tar.gz"
-    sha256 "e7bdbfdb5497da4c07dfd35530e1a902659db6ff241e39d9953cad06ebd0ae75"
   end
 
   resource "s3transfer" do

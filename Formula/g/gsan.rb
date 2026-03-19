@@ -6,11 +6,11 @@ class Gsan < Formula
   url "https://files.pythonhosted.org/packages/73/0c/1fc5a29ae79fd74f0fd54d2c4d487b8cf7b21ede08efe99a6c39977816c6/gsan-5.0.0.tar.gz"
   sha256 "2418a6897b0eb1c6eb44c3521ccc5c69a811071f864b8001fd9699a4d2f4c9e3"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/franccesco/getaltname.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5c3a869b6d930fe146d85e7d9394d53aefacc41e13aff1756c25f5b216932d2c"
+    sha256 cellar: :any_skip_relocation, all: "4f4a523defbda42e8a69246d1d43ab8599b69604e09233b95ff5fcbe52d86e2c"
   end
 
   depends_on "cryptography" => :no_linkage
@@ -39,8 +39,8 @@ class Gsan < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/fe/b6/6e630dff89739fcd427e3f72b3d905ce0acb85a45d4ec3e2678718a3487f/pyasn1-0.6.2.tar.gz"
-    sha256 "9b59a2b25ba7e4f8197db7686c09fb33e658b98339fadb826e9512629017833b"
+    url "https://files.pythonhosted.org/packages/5c/5f/6583902b6f79b399c9c40674ac384fd9cd77805f9e6205075f828ef11fb2/pyasn1-0.6.3.tar.gz"
+    sha256 "697a8ecd6d98891189184ca1fa05d1bb00e2f84b5977c481452050549c8a72cf"
   end
 
   resource "pygments" do
