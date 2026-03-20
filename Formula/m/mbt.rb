@@ -1,18 +1,18 @@
 class Mbt < Formula
   desc "Multi-Target Application (MTA) build tool for Cloud Applications"
   homepage "https://sap.github.io/cloud-mta-build-tool"
-  url "https://ghfast.top/https://github.com/SAP/cloud-mta-build-tool/archive/refs/tags/v1.2.43.tar.gz"
-  sha256 "b93baa727ed23f06f5e36f10e3f7dffc0a6950dd9238921163dac80a4d91d94a"
+  url "https://ghfast.top/https://github.com/SAP/cloud-mta-build-tool/archive/refs/tags/v1.2.45.tar.gz"
+  sha256 "2c808e7920691dfd0dbf3bab48f86b5aab57a936de5fc9086daf6a090fce18d4"
   license "Apache-2.0"
   head "https://github.com/SAP/cloud-mta-build-tool.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "311d8eb5123a3aea5fbdf32976abfa895b646419d2eca32684b744aab5559c81"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "311d8eb5123a3aea5fbdf32976abfa895b646419d2eca32684b744aab5559c81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "311d8eb5123a3aea5fbdf32976abfa895b646419d2eca32684b744aab5559c81"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2fcfad38f3da1b077e469a44b13a93c7851f20c06e8ec5fc9ee77cb3b4f949b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6dbf3a587e8d21a6777f0798e523950c7285208927a147da9cbc7a0615ffc8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc414a4dc5df5fd9f1929201bb3ab02c4cf36faee99919bbffcfd2df1fb21c6c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b44380596b3206fc81a45de4a6fdbe474c26ad8a992605885ae7045bc3abba3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b44380596b3206fc81a45de4a6fdbe474c26ad8a992605885ae7045bc3abba3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b44380596b3206fc81a45de4a6fdbe474c26ad8a992605885ae7045bc3abba3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cf1ca2608fc2473a229983b40ea653eed3f69dd5fd97cf5337ee5488e4d1ad68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7a248614a6dad8253525537b10cca4b83ebf28f8a02e3f13fbe9471fcd4e553"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9faaf010089663b23d04307f3886af2712a0e9662486ef2778f1d9d746e7bf4e"
   end
 
   depends_on "go" => :build

@@ -3,15 +3,12 @@ class Tox < Formula
 
   desc "Generic Python virtualenv management and test command-line tool"
   homepage "https://tox.wiki/en/latest/"
-  # FIXME: PyPI source distribution is missing `docs/man/tox.1.rts` file
-  # related issue: https://github.com/tox-dev/tox/issues/3885
-  url "https://github.com/tox-dev/tox.git",
-      tag:      "4.50.0",
-      revision: "db1362d7ba99776d5e5d40d8f1f71b7dbf5bf149"
+  url "https://files.pythonhosted.org/packages/65/5a/4eafe84380d782a582ed22769dbad486d300fa97724c1a164d944a5dbd19/tox-4.50.2.tar.gz"
+  sha256 "dd9e99fcf54660cde07bf2def4a242990447f440038e1d7c5133509aec2f7184"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "28d7ecbfa3112fc57491391e7fbf22fd1e2d97bdb9e15cffeb04f2c68e1be414"
+    sha256 cellar: :any_skip_relocation, all: "da0cd674961370b8ba987b7792bac662acc4f5098a67a69e3dbfb827fd798ade"
   end
 
   depends_on "python@3.14"
@@ -57,8 +54,8 @@ class Tox < Formula
   end
 
   resource "python-discovery" do
-    url "https://files.pythonhosted.org/packages/d7/7e/9f3b0dd3a074a6c3e1e79f35e465b1f2ee4b262d619de00cfce523cc9b24/python_discovery-1.1.3.tar.gz"
-    sha256 "7acca36e818cd88e9b2ba03e045ad7e93e1713e29c6bbfba5d90202310b7baa5"
+    url "https://files.pythonhosted.org/packages/9c/90/bcce6b46823c9bec1757c964dc37ed332579be512e17a30e9698095dcae4/python_discovery-1.2.0.tar.gz"
+    sha256 "7d33e350704818b09e3da2bd419d37e21e7c30db6e0977bb438916e06b41b5b1"
   end
 
   resource "tomli-w" do

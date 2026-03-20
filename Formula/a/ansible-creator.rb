@@ -3,17 +3,17 @@ class AnsibleCreator < Formula
 
   desc "CLI tool for scaffolding Ansible Content"
   homepage "https://ansible.readthedocs.io/projects/creator/"
-  url "https://files.pythonhosted.org/packages/d2/39/f8b94327f041d7755b9dd59a6c5792740b831a80659303aa12a4cf3739ca/ansible_creator-26.3.1.tar.gz"
-  sha256 "22440fbf329720b0b82e0bcb66d0e688f87ca66b6f5cff73c7baeda59227e195"
+  url "https://files.pythonhosted.org/packages/49/d1/7f4d40461ad3de061ad3eb0732322de5b0e88f2b4f4972cf9ac17a5c8efc/ansible_creator-26.3.2.tar.gz"
+  sha256 "411a368b740e66b36e58ea4f1eebf0ef5c53eb56dca8a9bd1411613be50ff2a6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2f25c2167ad49272fccef8df358f8bc5e073537a78c4e7c537d1b7a023ced623"
-    sha256 cellar: :any,                 arm64_sequoia: "1710606c3cc3a68b19ccceaa5907c2f57100e01e0c8c97a563ba163931b8c24b"
-    sha256 cellar: :any,                 arm64_sonoma:  "39d63a44fa98b4bb0ee6b327af0de9216bfcabf1f97ff6e955d8f8026c327930"
-    sha256 cellar: :any,                 sonoma:        "db722a1f0f36d38c905e33366b063ed97ad4901bdbe3435dc527b59758cd5c52"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3603e98df4796395ef80779b0c6a78b2a1e090f864646f1036724bb3104055b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "839b4dd868da0a85213baf6a7b18d123299fdd5f8563c43ebfc50e67919cefbd"
+    sha256 cellar: :any,                 arm64_tahoe:   "ee8b6c1139fe0fc99fe1bde13b57e1bb061d5644dadc5a9d095e66f726dd6ad4"
+    sha256 cellar: :any,                 arm64_sequoia: "c492d94d976455fe219a8336948ba9502159faf0ec7f9addf036ec6c91d0c232"
+    sha256 cellar: :any,                 arm64_sonoma:  "4a308b1c2abc34bf61f53443f7033e83fe1b1ebba93932e52d7c3aa25fff546a"
+    sha256 cellar: :any,                 sonoma:        "36e42f0f662509600b7d06da68957da05fe3a1d805460e356e6c3ddbd08e02bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "908eaebd3120264a5a9f98a971f2cec45219d9b92a680ab8ab58a8fe3a45fd4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3e596536300c4f7d427962933ee4c23e7e4f76c7d1a559c8f01dce1cb708afa"
   end
 
   depends_on "libyaml"

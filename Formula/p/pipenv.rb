@@ -3,12 +3,12 @@ class Pipenv < Formula
 
   desc "Python dependency management tool"
   homepage "https://github.com/pypa/pipenv"
-  url "https://files.pythonhosted.org/packages/aa/e6/76aa6cdab85d93b2d198337ad57f833f6ae9d313d9a1115090a04271a9b2/pipenv-2026.2.0.tar.gz"
-  sha256 "47533756050acbd7142ecd0d27bb6ca1f10c951ec8d7cd8ac9e94c6f9daca443"
+  url "https://files.pythonhosted.org/packages/96/9d/2e93a86a928cad6ec97eb419eae582ebc334df7c0665a91c09a6e37abac0/pipenv-2026.2.1.tar.gz"
+  sha256 "cd2858095181578ec17451f3ff02b8f74eb9038013ddbbc54228c5f0611fa3da"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "341c160f762c8db79b06378e1fdc40642ba44f652b8b8938b7d0ce2ea2f1a5a0"
+    sha256 cellar: :any_skip_relocation, all: "c32ec1022691f1c8b13ca563002518a908e6265543efe55a6e43b5a7c35e343b"
   end
 
   depends_on "certifi" => :no_linkage
@@ -41,8 +41,8 @@ class Pipenv < Formula
   end
 
   resource "python-discovery" do
-    url "https://files.pythonhosted.org/packages/d7/7e/9f3b0dd3a074a6c3e1e79f35e465b1f2ee4b262d619de00cfce523cc9b24/python_discovery-1.1.3.tar.gz"
-    sha256 "7acca36e818cd88e9b2ba03e045ad7e93e1713e29c6bbfba5d90202310b7baa5"
+    url "https://files.pythonhosted.org/packages/9c/90/bcce6b46823c9bec1757c964dc37ed332579be512e17a30e9698095dcae4/python_discovery-1.2.0.tar.gz"
+    sha256 "7d33e350704818b09e3da2bd419d37e21e7c30db6e0977bb438916e06b41b5b1"
   end
 
   resource "setuptools" do

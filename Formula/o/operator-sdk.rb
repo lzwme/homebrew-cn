@@ -2,8 +2,8 @@ class OperatorSdk < Formula
   desc "SDK for building Kubernetes applications"
   homepage "https://sdk.operatorframework.io/"
   url "https://github.com/operator-framework/operator-sdk.git",
-      tag:      "v1.42.1",
-      revision: "3d5ab21480e6d262e649c8f6097b9aa0371b2b12"
+      tag:      "v1.42.2",
+      revision: "6001c29067051e1a04e829ea033988b904d1845e"
   license "Apache-2.0"
   head "https://github.com/operator-framework/operator-sdk.git", branch: "master"
 
@@ -13,12 +13,12 @@ class OperatorSdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d43e07be279594b8cbe180d4343c9632e6960d5bbe4e2f70f07969a4d414185e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "898afce679a1e816e9ccbb6394ebcdcea7e8bb05b00e898e70f32dd522b111fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10f8d56fe359c79f055db5052de09dfa800127fdcf54dd1c1e76848f54a7e6c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "47ae79b39d03e86df894a907fea121275f26f4aeb1d89340148adb843bd5632b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "48b369e2fa1b98099fc2c57d70c87f1b411318c8b7ee608dff461a7beecb51c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2390372e158d614cb6cbbc74aefa9a7514186f7bbb8df93b7d669d5845fe1cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ac26f6202124cd135687b423d478d65c0ead0ac1178a7bf294db5a0697642f4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7cbc9ed59f8c33306bde4ba2beb16c3f8c4e305c989e2b3c71d663a0f70289f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e44d4197872ea85c600c9249019a527fb2921015b6f6020ccb9498f7c628b82"
+    sha256 cellar: :any_skip_relocation, sonoma:        "10a7169afc5dadbd985d6d679ffd0c7988691769b3e84bf11a51db8c837ce201"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8da9980171416c190a7f425c8842e983eae4d003827b6f1fa3560fb061952ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d713a149a37d45a02d8819c1578ff81f2fab470c58db46bdfa529e2f590dcda"
   end
 
   depends_on "pkgconf" => :build

@@ -6,14 +6,15 @@ class Bbot < Formula
   url "https://files.pythonhosted.org/packages/6a/83/24a0087894d853703f64ab2044927ef56c831edb379295a873b05f34eb92/bbot-2.8.4.tar.gz"
   sha256 "2ed4d3eda85ddb7261318a48f8a41e8543888b5d9b9eb8876aaff0e813a2429c"
   license "AGPL-3.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9edd0966378ce1a3480a8e8fb1c26c970f332d767509fae84dbf80f68f43774c"
-    sha256 cellar: :any,                 arm64_sequoia: "5b932edb88a282d6e065de729fde543f66480ce7926ffe0532dff805379b2459"
-    sha256 cellar: :any,                 arm64_sonoma:  "4408c42d52f6aad6d2480d70c824a7a14cd39ec537b163e25daca901c2291c1e"
-    sha256 cellar: :any,                 sonoma:        "c69a539da443acac06f6e19ecc2bc71b4ad64d2211985c1fb67e432bb50d06fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0bf2d72ece7774f48c5dd5578fff2abedc69831174875c686ea76d1b4e6f0ab8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bd4a26e26297d012d4128a874e2d2264dfcc05c43221a49d30680ef14fe9a21"
+    sha256 cellar: :any,                 arm64_tahoe:   "c7e94c2f3f9d04339a3ce1755f066cf3c9ea378dda847af2dbb1da06abfa6eeb"
+    sha256 cellar: :any,                 arm64_sequoia: "303cdd1cb3a7d1c1bee18ddcb519c1e7c1da9d9a8072a1f17ff4bd143bf08387"
+    sha256 cellar: :any,                 arm64_sonoma:  "aee0000adb46e6015452f6534094baaa804068cf4a2c5cdf803d91fa483b2e64"
+    sha256 cellar: :any,                 sonoma:        "ccab387d9d4fed6a5cced692d7ff10ebe16c6fe9491608a0bb1210b1024f252f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3963797a5ab2b098e4ff305fa7db225964fdd70fcfc2dd8c56debf4fa5c365ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f695f9d486755446c88fcf608dce98c78fe7dbf58b1ce416740f92e78fd88f0d"
   end
 
   depends_on "cmake" => :build
@@ -75,8 +76,8 @@ class Bbot < Formula
   end
 
   resource "deepdiff" do
-    url "https://files.pythonhosted.org/packages/19/76/36c9aab3d5c19a94091f7c6c6e784efca50d87b124bf026c36e94719f33c/deepdiff-8.6.1.tar.gz"
-    sha256 "ec56d7a769ca80891b5200ec7bd41eec300ced91ebcc7797b41eb2b3f3ff643a"
+    url "https://files.pythonhosted.org/packages/89/50/767448e792d41bfb6094ee317a355c1cb221dca24b2e178e2203bbea2a77/deepdiff-8.6.2.tar.gz"
+    sha256 "186dcbd181e4d76cef11ab05f802d0056c5d6083c5a6748c1473e9d7481e183e"
   end
 
   resource "dnspython" do

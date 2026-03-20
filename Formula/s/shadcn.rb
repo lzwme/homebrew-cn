@@ -1,12 +1,12 @@
 class Shadcn < Formula
   desc "CLI for adding components to your project"
   homepage "https://ui.shadcn.com"
-  url "https://registry.npmjs.org/shadcn/-/shadcn-4.0.8.tgz"
-  sha256 "f200e984256f15c4367babf1d26feb2f5aa373822f48cf1654c680533389c0aa"
+  url "https://registry.npmjs.org/shadcn/-/shadcn-4.1.0.tgz"
+  sha256 "516f5ce69cce29cb2dc8cedcf5d7b1c0de9476d752a6e4ca9240ad6aa1600f42"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "68ec910d353807553f8a275b8beea2294db32622da70f8c7885540516962dba5"
+    sha256 cellar: :any_skip_relocation, all: "02d50a83394114bd628955c6d312053c13b437371b2f68131e462294193cc0ad"
   end
 
   depends_on "node"

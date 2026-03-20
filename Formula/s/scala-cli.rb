@@ -6,6 +6,11 @@ class ScalaCli < Formula
       revision: "ca3f6e8f59562e1adcf798cd868b0233500f94f1"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256                               arm64_tahoe:   "bbe4de04e1a58fb60cf7f6abd8d9839ebb0a89a48f3f003659a9f553cdae5708"
     sha256                               arm64_sequoia: "92cb26714138cd1eab785157659477e0883fd0ca4e51ff7820cb54332e6b83c5"

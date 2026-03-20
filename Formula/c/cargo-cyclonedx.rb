@@ -1,8 +1,8 @@
 class CargoCyclonedx < Formula
   desc "Creates CycloneDX Software Bill of Materials (SBOM) from Rust (Cargo) projects"
   homepage "https://cyclonedx.org/"
-  url "https://ghfast.top/https://github.com/CycloneDX/cyclonedx-rust-cargo/archive/refs/tags/cargo-cyclonedx-0.5.8.tar.gz"
-  sha256 "101e3592a378c2f8591f5836fb7b235393032bcda84442217c239b4ebd80dba9"
+  url "https://ghfast.top/https://github.com/CycloneDX/cyclonedx-rust-cargo/archive/refs/tags/cargo-cyclonedx-0.5.9.tar.gz"
+  sha256 "36f0dbdd203424cdcb2d73d71093a2795494c776ca5ff9039d5002e4b7785da7"
   license "Apache-2.0"
   head "https://github.com/CycloneDX/cyclonedx-rust-cargo.git", branch: "main"
 
@@ -12,12 +12,12 @@ class CargoCyclonedx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6873c5063435091be5114554b7d35ab766bc7ed874f82bc31a8141e309364d6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "846c71363a75d011baf2368c25afa26444f8c3f5a90a20e44431b23cf25ba502"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "adee4f88af3b63d0b60e3b557a1d7423740e301b4a99154555f729e51408f451"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a444dd8b4fd4a0a7c1f6ee8b0c0c654f64a77e23115216040cdb3a3f7d3a130b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca9dca958c65b3fcbf35c9dbf502a45c9ac6fb14166780c904de279c247bce1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e717e9d9b04e3fbff87862793e96d8abdde79541b8589187bd3d2127eaaf2e0a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ce17165c9bee2938de66837ca8e86a6a5f87355da84728f3b49420956eada0d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3415a06c50578e57b1a6baf9a1a4e470713b92904b1df7921e69a392c6bf602f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0314789edaac1408c04ba42f058ea5e9ae38ee88b4913b4fb7c2db0b6f2b19d1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c640eb162b69d7fc4833cf18fefbdf178268bb952b91c990b97cfc9467b91541"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c616c3e41fb4e29e25bc0ed4247a731a61d9fd8cf3d0a164ccac849f203b798"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0db5dbbdc52e869cbb5a075a40150bdf54e5a3862741fd55b95c11aedbe88fab"
   end
 
   depends_on "rust" => :build

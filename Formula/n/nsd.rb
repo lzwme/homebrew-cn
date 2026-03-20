@@ -1,8 +1,8 @@
 class Nsd < Formula
   desc "Name server daemon"
   homepage "https://www.nlnetlabs.nl/projects/nsd/"
-  url "https://www.nlnetlabs.nl/downloads/nsd/nsd-4.14.1.tar.gz"
-  sha256 "d3fd50a567551ccd606a11a05613e8b00e70686e3a98b9e95285ac045978f969"
+  url "https://www.nlnetlabs.nl/downloads/nsd/nsd-4.14.2.tar.gz"
+  sha256 "2bff57349841844d7560e76d7bd70b6bd6f4c462cdaa6d57b8e83d1e14dd22d6"
   license "BSD-3-Clause"
 
   # We check the GitHub repo tags instead of
@@ -18,12 +18,12 @@ class Nsd < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "28a450250950243d099ffa7f848dadb23153676ed3b4becfe5737a6f195a5c24"
-    sha256 arm64_sequoia: "78dd22c237e228b419ad48af14b2819f7dad25a31e77a9c6f4b8fadd053d7c11"
-    sha256 arm64_sonoma:  "e2aaf43e4e50a41662acac44c75420f5993bcf815fb5e3d6087b13f1264f958d"
-    sha256 sonoma:        "95a51b8c1ae988e56b71c31e758b8b74012001e8fb3cdb680e7f91eac6075cd9"
-    sha256 arm64_linux:   "31b47eb300a16bd281eb3b49279b405b08733e91fb5312fb0aa31c5623964267"
-    sha256 x86_64_linux:  "3c202c95aacbe3ef1a93b2a8ba925c090888b1f3f88db06aa4296d302703bcbd"
+    sha256 arm64_tahoe:   "a4394782121330129516d8754a1afc60fcf65021a825f5bb7299b29e19471f46"
+    sha256 arm64_sequoia: "542fa3457af566ece535603d02358889450e0f261ef4e95979066e3dbe3054d8"
+    sha256 arm64_sonoma:  "c6d2bd7ca911de2af6ee07cda601e324d5864c19338fb1e1efa517ed055f9108"
+    sha256 sonoma:        "84be842d16cf6d959917750f4519bae976aba6e3bae3ecd1f7ce865b0b212376"
+    sha256 arm64_linux:   "24005bb47835c5d7df0fcf7cd12671f29c7b807f529b6822f958a64b71366e7f"
+    sha256 x86_64_linux:  "ba65dde178817e42ce9436607b1cb60857dd8848c7ce00e94be9a0e80cd86dfd"
   end
 
   depends_on "pkgconf" => :build

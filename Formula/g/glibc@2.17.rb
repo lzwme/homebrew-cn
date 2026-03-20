@@ -77,7 +77,7 @@ class GlibcAT217 < Formula
     sha256 x86_64_linux: "23e8506f5365138f86d33a39c62dd543813acdc71d160c9de6bde623c6b2d1ef"
   end
 
-  keg_only :versioned_formula
+  keg_only "it can shadow system glibc if linked"
 
   depends_on GawkRequirement => :build
   depends_on "linux-headers@4.4" => :build

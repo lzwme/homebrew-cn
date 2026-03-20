@@ -18,16 +18,16 @@ class Pcapmirror < Formula
   uses_from_macos "libpcap"
 
   on_linux do
-     depends_on "libpcap"
+    depends_on "libpcap"
   end
 
   def install
-     bin.mkpath
-     man8.mkpath
-     system "make", "install", "BINDIR=#{bin}", "MANDIR=#{man}"
+    bin.mkpath
+    man8.mkpath
+    system "make", "install", "BINDIR=#{bin}", "MANDIR=#{man}"
   end
 
   test do
-     assert_match "Available network interfaces:", shell_output("#{bin}/pcapmirror -l")
+    assert_match "Available network interfaces:", shell_output("#{bin}/pcapmirror -l")
   end
 end

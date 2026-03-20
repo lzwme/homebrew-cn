@@ -1,9 +1,8 @@
 class Sapling < Formula
   desc "Source control client"
   homepage "https://sapling-scm.com"
-  url "https://ghfast.top/https://github.com/facebook/sapling/archive/refs/tags/0.2.20250521-115337+25ed6ac4.tar.gz"
-  version "0.2.20250521-115337-25ed6ac4"
-  sha256 "53c48bb807a7c65965a9f9f154f955ec4ccbce6696f721db73d0873e4bf03244"
+  url "https://ghfast.top/https://github.com/facebook/sapling/archive/refs/tags/0.2.20260317-201835+0234c21f.tar.gz"
+  sha256 "6e0eaa1b1a6e21003e45120ba23b6466ae2a91b5b5d5e80c347981dfac61d975"
   license "GPL-2.0-or-later"
   head "https://github.com/facebook/sapling.git", branch: "main"
 
@@ -16,13 +15,12 @@ class Sapling < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "24e16f80032864b4adbf096223be034983f97f336a2dd3245d93f7d1e343faf9"
-    sha256 cellar: :any,                 arm64_sequoia: "0004df8241dc01b6ddd1299a1f75f0288698042e065aba3fdee99e2f7b965918"
-    sha256 cellar: :any,                 arm64_sonoma:  "f5a79d8a8861fa0a7a24e81108cf95b098f1eecaed22551804629ddae1b810fc"
-    sha256 cellar: :any,                 sonoma:        "ab1e3160fb134a87be5d5268a11981051375cc9cd36f6719ab7714d34165acbf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6937e7736547bac6bc35ea0f75e2a47ff792457af39f1819686615e97af81c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12c50272688a28355e8d36757f857219e08a767cf6c51848040e91f4320485fd"
+    sha256 arm64_tahoe:   "bcc8f92b5352181eebc179a39a818df3ecfb5df27273ecdfce5a2d2f8cea92b2"
+    sha256 arm64_sequoia: "1b990fd8fbf7dc1d585d7f879a2865854995c1743963fc02abdc9cf888eb97d0"
+    sha256 arm64_sonoma:  "fb87ed59e4a96bfb1bf860c010a6a9ee1195168da8da83a58fe95f7881495cc2"
+    sha256 sonoma:        "0f1bcacb15dd92517710c35f6665580d5e1426db798ba16cdfb4c08b67bdaa9b"
+    sha256 arm64_linux:   "20a323bfa9845ce5ee37ed0a0d01dc5967d80f3858c6131a295b0518607d6cde"
+    sha256 x86_64_linux:  "cc67e8b49a40e4170aa1a394bd329cbac444f11cd7e3c52543486d6918ef3df0"
   end
 
   depends_on "cmake" => :build

@@ -1,17 +1,17 @@
 class Btllib < Formula
   desc "Bioinformatics Technology Lab common code library"
   homepage "https://github.com/bcgsc/btllib"
-  url "https://ghfast.top/https://github.com/bcgsc/btllib/releases/download/v1.7.6/btllib-1.7.6.tar.gz"
-  sha256 "36eea386e42033b8e099232ca19827cd6c70b8f92bdfe4f6ed51fc6ad976486b"
+  url "https://ghfast.top/https://github.com/bcgsc/btllib/releases/download/v1.7.7/btllib-1.7.7.tar.gz"
+  sha256 "9e81a509f60d5bf7f19d5e5d052248a92425fec5809d0d31368537660336247a"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4f4429b45c95bbf2721e957400277712dfe4e9aac916132f248e0dc5e57ca3e1"
-    sha256 cellar: :any,                 arm64_sequoia: "a9bd0432b49338c549aef34f63ad545d20cf8ab48f729a3320f58bfd12fcc8f8"
-    sha256 cellar: :any,                 arm64_sonoma:  "ebaab1487a030eb109193a24eb34b1a7521e3f66db673fbaadd8362b03936c16"
-    sha256 cellar: :any,                 sonoma:        "7b4d7723956e2165c03ee6078249e265606d8c6542cae067bef2ffe237856fec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3971e3e8fd67fdf130c31e0580beb45e961caca8e1952bb4c01653495a75f2f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb6d4c923df2e6babe437eb6d84687402ab173f67e7541fa3ab99ee7cce3ff9d"
+    sha256 cellar: :any,                 arm64_tahoe:   "6c80e5b9c4f2998ee7216c2854bceec4f391416569bad982b51692eefa389ebe"
+    sha256 cellar: :any,                 arm64_sequoia: "f103f3a8bb10fabf57746de55432fda7f27590b5b1a683d161d23412be1521b6"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac1372fd0b2573f0f154a8d2400ff0908d99768a49c3e6efb7d19256335b5779"
+    sha256 cellar: :any,                 sonoma:        "1f2ccf4565f213d1939870be4752e048c8abba6c1a5833e20093ba628e0a7f3f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "688e643a5c17de084209b3a1d26edb5d91067a0f39397df9a4cae8dcbef09d91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16983204f5bc2d14d99d4f43df2482c974bdc39e3a0549d51f1b8d7f150e307b"
   end
 
   depends_on "cmake" => :build

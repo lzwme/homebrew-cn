@@ -7,12 +7,13 @@ class Gdu < Formula
   head "https://github.com/dundee/gdu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be7ad505558a21d361f6d2d5269a15e646e0332ea3979c7e831425a3036e2b05"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be7ad505558a21d361f6d2d5269a15e646e0332ea3979c7e831425a3036e2b05"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be7ad505558a21d361f6d2d5269a15e646e0332ea3979c7e831425a3036e2b05"
-    sha256 cellar: :any_skip_relocation, sonoma:        "75cca354c5ccf6c34821bd45ee3cabe9bcc028a0654e1fe206a2157eb1e42ca2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a606867bdb25deddc04d8cb37d0c4d2b1c8f918fd9eedcea2235e715f0f0b90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "880a65e40b06bbf21689630eb8f01a3bde69129d9a396f6c81b3730c4c260793"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e742cc70ab1daf8278f86c6ddfed4cdd8eb4c54110fb737ff77bcaff9312f49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e742cc70ab1daf8278f86c6ddfed4cdd8eb4c54110fb737ff77bcaff9312f49"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e742cc70ab1daf8278f86c6ddfed4cdd8eb4c54110fb737ff77bcaff9312f49"
+    sha256 cellar: :any_skip_relocation, sonoma:        "52b1c7e36f204d19b26e9941d4cbc75d51d3764e6a5d0d33648e694723c7fc41"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ccb744a87ec28820e70e0465a847f5e187f98562e222378e785bae901d0d4793"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4ee8e0370c79b85e2b8f93463cfc52c5269cd7f8b3032b70bc98b2bdc211f47"
   end
 
   depends_on "go" => :build
@@ -29,6 +30,7 @@ class Gdu < Formula
     ]
 
     system "go", "build", *std_go_args(ldflags:, output: bin/"gdu-go"), "./cmd/gdu"
+    man1.install "gdu.1" => "gdu-go.1"
   end
 
   def caveats

@@ -3,19 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/a3/9f/6dcc9a3d35d6afc344b88a2ba89c870e48dd3ccaa19ec2d2ff2b79a8b2d6/cycode-3.11.3.tar.gz"
-  sha256 "fdee0ce807806cabe8a85489e55f7358e4d9f13322328431e7347ea2b616781e"
+  url "https://files.pythonhosted.org/packages/b8/af/a378bfa03f30a27326eebdbfd1d5e3d52c7cd8233c7f6ec7fdcc56017633/cycode-3.11.5.tar.gz"
+  sha256 "40a5d5e60604cec3c33b3a81401c0cfd7637aed2a6d295068904c5e1773bf9a1"
   license "MIT"
-  revision 1
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2c47b791ad51e1e8b0b959bea7df9cc252c0bbc08e0331487f2d39ebd4b59e83"
-    sha256 cellar: :any,                 arm64_sequoia: "b687d6edb29459c7701fe0037bbf1079507f5256ddd35af4801c9241e46f379a"
-    sha256 cellar: :any,                 arm64_sonoma:  "c8593fbde788d1af9cb1d766770e5b4de42816efb9cceae6a850e7ef923ccc15"
-    sha256 cellar: :any,                 sonoma:        "4ccd0944755aaaa3f891fc734c38ac4b26621b5854dee998dc6b18a9f2dace99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aebfac7b64c433c32514ca5111b3f5a849b31b17b4955ed2b4121f569dd4faab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82c576efe444215442677c00e227f830c747c87c5883eab38a40532dae0e6d3c"
+    sha256 cellar: :any,                 arm64_tahoe:   "fc42a202e7a083fa569d72166a5e3bcfc721aa674d46fd7b3941f5b1938b6e92"
+    sha256 cellar: :any,                 arm64_sequoia: "54a23c42d756dbec0b39a72ba8f86d6274c269c328155913b66ef342416de9de"
+    sha256 cellar: :any,                 arm64_sonoma:  "2f22dc12d1f324e08160cdb6627f4da60303110e51898adfc02a23923dc3dab5"
+    sha256 cellar: :any,                 sonoma:        "20cbc6a67e4b76250f37f556b6d4da18075ab9c022724734e382bafd2cdc4efb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b09e1f3129a194130a770ef6753085933c6f0d806331929a9817fc9b6eab6b6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29ab4c3b288fe525267839978ab69625ef50d04f79364b301c3202a172a6ad8d"
   end
 
   depends_on "certifi" => :no_linkage
@@ -43,8 +42,8 @@ class Cycode < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
-    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "click" do
@@ -203,8 +202,8 @@ class Cycode < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/5a/9f/c3695c2d2d4ef70072c3a06992850498b01c6bc9be531950813716b426fa/sse_starlette-3.3.2.tar.gz"
-    sha256 "678fca55a1945c734d8472a6cad186a55ab02840b4f6786f5ee8770970579dcd"
+    url "https://files.pythonhosted.org/packages/14/2f/9223c24f568bb7a0c03d751e609844dce0968f13b39a3f73fbb3a96cd27a/sse_starlette-3.3.3.tar.gz"
+    sha256 "72a95d7575fd5129bd0ae15275ac6432bb35ac542fdebb82889c24bb9f3f4049"
   end
 
   resource "starlette" do
@@ -233,8 +232,8 @@ class Cycode < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/32/ce/eeb58ae4ac36fe09e3842eb02e0eb676bf2c53ae062b98f1b2531673efdd/uvicorn-0.41.0.tar.gz"
-    sha256 "09d11cf7008da33113824ee5a1c6422d89fbc2ff476540d69a34c87fab8b571a"
+    url "https://files.pythonhosted.org/packages/e3/ad/4a96c425be6fb67e0621e62d86c402b4a17ab2be7f7c055d9bd2f638b9e2/uvicorn-0.42.0.tar.gz"
+    sha256 "9b1f190ce15a2dd22e7758651d9b6d12df09a13d51ba5bf4fc33c383a48e1775"
   end
 
   def install

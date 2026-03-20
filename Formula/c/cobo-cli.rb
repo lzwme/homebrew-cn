@@ -3,18 +3,18 @@ class CoboCli < Formula
 
   desc "Build, test, and manage your integration with Cobo Wallet-as-a-Service"
   homepage "https://github.com/CoboGlobal/cobo-cli"
-  url "https://files.pythonhosted.org/packages/6c/0c/4b9bf0c12776b1334a077dc4f54e6ca15bd384e774c882e4c97d7fe4cfd7/cobo_cli-0.1.5.tar.gz"
-  sha256 "7a9e627720618a722589e844393ad233956c91ded9c64f5a44be4e71cf967f6d"
+  url "https://files.pythonhosted.org/packages/c6/7e/f6a593e8b22f4eb1558df3281d926f1db7a639f2bc45c6cbd720837e5e18/cobo_cli-0.1.6.tar.gz"
+  sha256 "70c1438e04d4e1549a51e45c6b7c69a94a2040afed559e318531999dc426c347"
   license "MIT"
   head "https://github.com/CoboGlobal/cobo-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ed91466bf9dd08740b6bfedf849983a37e1650367c7676db3dff7239a5f56eff"
-    sha256 cellar: :any,                 arm64_sequoia: "6ba6fc1209599d75bbb01fa5d588e9f33be78553575525365a689c9dbc6917b9"
-    sha256 cellar: :any,                 arm64_sonoma:  "6ade809ff38ff9fd86dd1bfac11bd5afc9721f9129c613b29974ea4737acb673"
-    sha256 cellar: :any,                 sonoma:        "d9fe4347138519ace8b0764d0a4961caaef3bcd5ba23086926333fdbd4fb7efd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7919e0cf92cbd675b8311e4c1157abda979de0aedb364a60b3764510bb0c68b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5316a41e18d36796efd599ff9294ad3be2955f5a84e1fd1b9b72af8ec29c3cd"
+    sha256 cellar: :any,                 arm64_tahoe:   "3c1b1b5217102710b3cd9f0512bfcb37ffb00b292c573c8129d87a74448f2630"
+    sha256 cellar: :any,                 arm64_sequoia: "76efd98f0b47360598feb5602e4b9378a28dec6cd983273e07b260bacf2a5137"
+    sha256 cellar: :any,                 arm64_sonoma:  "9f36a62cab22357d621d54084677ce57ecbefc416e7db332a5e91b969e8a54f3"
+    sha256 cellar: :any,                 sonoma:        "85c87ad8e92466313df2b518c69b2e60c7af93815a4a3b7c4c5d2aa505d7fcf3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a044ee87f1b961a8f05d30810c325922930e12115b6f05102eaead6bae3fa6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee850da2a2c049b8d0a468e4e1e0efc2cc1e539d2d5eff6fa02ba2994de55485"
   end
 
   depends_on "certifi" => :no_linkage

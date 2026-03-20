@@ -6,16 +6,16 @@ class Maigret < Formula
   url "https://files.pythonhosted.org/packages/3d/29/ef75d365917075a72ad88b7b1027bc6f93d6e45f27aec1ee6410607eb5f6/maigret-0.5.0.tar.gz"
   sha256 "d85c7f799cce51b6edf7179dda36019d0081bba528ce77284925499b07a49be7"
   license "MIT"
-  revision 9
+  revision 10
   head "https://github.com/soxoj/maigret.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "73d780ce97497622422c502f07da3c25ac2fe24eddb188bd6e6d035561fdf2fa"
-    sha256 cellar: :any,                 arm64_sequoia: "3b8c98d97732068900206d8abff48866b1c70166c959a7a158f3872ac99c25ca"
-    sha256 cellar: :any,                 arm64_sonoma:  "e9c9a3f8498e3b8226cec9ca73ab9ff45947780e57b5d59b167c917efc716bfa"
-    sha256 cellar: :any,                 sonoma:        "cf8d49a65fb3b164336b158bd24b4c2b6ba0b5ca7ff6618b471a3b1800dd6937"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c12f1f996c620f1db696e4e61a880c51bba3f93452ba35b764e4c4a3aef3486"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e26756d519dc8ac9b08b1d4baf11368a6400dd1f6a80e420a9ec35bf99c55eb8"
+    sha256 cellar: :any,                 arm64_tahoe:   "162a89d58d2f7af0eaf362d706923666b8acdad01f9f89118dc326a2d49c81cc"
+    sha256 cellar: :any,                 arm64_sequoia: "ccc6a793a40907842360503b774beec8969200caa93ca829f751ba614dbcd13a"
+    sha256 cellar: :any,                 arm64_sonoma:  "d14eda5d5c9f31f8d6c6bc31aa0e04ee920e589ced5e1da268f532af30cbef82"
+    sha256 cellar: :any,                 sonoma:        "afbefd75bbe13a986c068a3ae8f437f85404a2d1ed4a471f0825b13cd420ba7e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "74663a5d390b3ba49f60ce89dcd3f7e76c050a1006e502cc25500a6dd9f9b3be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e328e7555f610771e7f8db987d4bcc0e30743b4bf40f025a2f3af8c5443af0b6"
   end
 
   depends_on "rust" => :build
@@ -115,8 +115,8 @@ class Maigret < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
-    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "click" do
@@ -322,8 +322,8 @@ class Maigret < Formula
   end
 
   resource "pypdf" do
-    url "https://files.pythonhosted.org/packages/b4/a3/e705b0805212b663a4c27b861c8a603dba0f8b4bb281f96f8e746576a50d/pypdf-6.8.0.tar.gz"
-    sha256 "cb7eaeaa4133ce76f762184069a854e03f4d9a08568f0e0623f7ea810407833b"
+    url "https://files.pythonhosted.org/packages/f9/fb/dc2e8cb006e80b0020ed20d8649106fe4274e82d8e756ad3e24ade19c0df/pypdf-6.9.1.tar.gz"
+    sha256 "ae052407d33d34de0c86c5c729be6d51010bf36e03035a8f23ab449bca52377d"
   end
 
   resource "pypdf2" do

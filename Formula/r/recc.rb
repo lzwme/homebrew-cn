@@ -1,19 +1,18 @@
 class Recc < Formula
   desc "Remote Execution Caching Compiler"
   homepage "https://buildgrid.gitlab.io/recc"
-  url "https://gitlab.com/BuildGrid/buildbox/buildbox/-/archive/1.3.54/buildbox-1.3.54.tar.gz"
-  sha256 "467b83cff48bbde7efc0978edbca0201e572c9a4d95de59a6ce7c81234909710"
+  url "https://gitlab.com/BuildGrid/buildbox/buildbox/-/archive/1.4.0/buildbox-1.4.0.tar.gz"
+  sha256 "002e84e2dadc90a4784dac9bb997eab3f150dc801b091f78c84bf4e892439a25"
   license "Apache-2.0"
-  revision 1
   head "https://gitlab.com/BuildGrid/buildbox/buildbox.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "5065da3e3d6469b8e57fc8704412baa24fff628dc1ede8356d2d760a3d679929"
-    sha256 arm64_sequoia: "002e87d2f10ac3812211e0a1ee5fbaf3fce1f6d924ce7029993f253d5e354311"
-    sha256 arm64_sonoma:  "d722829b150feae2e3fa6586dbbfe79f93ecaba8760b1e21d6a5683aabb54ad6"
-    sha256 sonoma:        "895df59b21c62eeaf60d9a8c63f92587490d39d91b6c2fa6266b3f97cd0253dd"
-    sha256 arm64_linux:   "1dd164b99e5f3d8e32184e868030488e4bff8b40cc7116affb41a4f215a08478"
-    sha256 x86_64_linux:  "00f7441651bca0c8763117e16765e8e84b570e45df73c7aa8000397bbb4352ed"
+    sha256 arm64_tahoe:   "4575d60175d07b393f78eae49fea8b57c2c833d5bd8f7e034d67e1fb482f5e25"
+    sha256 arm64_sequoia: "044fb31f2d786d42197bfb2edc6cd588b72ae9a2b132ca0f3a758bcf398fafbe"
+    sha256 arm64_sonoma:  "99648d735dd655569d114a776a90ee429c210e0cf6e0024bbd573046ce7dd9d4"
+    sha256 sonoma:        "4242c56e61d1b3640011a4fe7321396f23491c2e41261026edd30cef800ed3ca"
+    sha256 arm64_linux:   "32e4258267c372dade47a005c31f9d112bc674b2137de60b714eb68348eb39c5"
+    sha256 x86_64_linux:  "64887fc6abe2d3b33b89151664a00b8dc4c35ff8679f4573acf012e552ae7472"
   end
 
   depends_on "cmake" => :build
@@ -40,6 +39,12 @@ class Recc < Formula
     depends_on "pkgconf" => :build
     depends_on "util-linux"
     depends_on "zlib-ng-compat"
+  end
+
+  # Fix macOS libc++ build, upstream pr ref, https://gitlab.com/BuildGrid/buildbox/buildbox/-/merge_requests/1129
+  patch do
+    url "https://gitlab.com/BuildGrid/buildbox/buildbox/-/commit/63aca98a79778242057f40a25f8cbceda4849265.diff?full_index=1"
+    sha256 "2dd44e6bebaca37d78b2d26cdf96ebbb6b269cd21031a17907e986da29548b6d"
   end
 
   def install

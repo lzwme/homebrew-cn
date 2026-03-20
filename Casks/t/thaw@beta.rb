@@ -1,6 +1,6 @@
 cask "thaw@beta" do
-  version "1.1.99-beta.11"
-  sha256 "f38b14f2d6c4a937e1f583ccf48832f8f73055181265794d7bd3896e6d6b045b"
+  version "1.2.0-rc.2"
+  sha256 "eb1b80f0cd90e06bec929c74be3fe10b3ff428d8d1c48402e6d4dd4ea118f7fe"
 
   url "https://ghfast.top/https://github.com/stonerl/Thaw/releases/download/#{version}/Thaw_#{version}.zip"
   name "Thaw"
@@ -9,7 +9,7 @@ cask "thaw@beta" do
 
   livecheck do
     url :url
-    regex(/v?(\d+(?:\.\d+)+(?:-beta[._-]\d+)?)/i)
+    regex(/v?(\d+(?:\.\d+)+(?:-(beta|RC)[._-]\d+)?)/i)
   end
 
   auto_updates true

@@ -44,6 +44,10 @@ class Groonga < Formula
   resource "groonga-normalizer-mysql" do
     url "https://ghfast.top/https://github.com/groonga/groonga-normalizer-mysql/releases/download/v1.3.0/groonga-normalizer-mysql-1.3.0.tar.gz"
     sha256 "693c24eff9ba95cd498ba28f8d5826843caec347b5aa6976e565e69535b44147"
+
+    livecheck do
+      url :url
+    end
   end
 
   def install

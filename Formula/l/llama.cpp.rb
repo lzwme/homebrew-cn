@@ -3,8 +3,8 @@ class LlamaCpp < Formula
   homepage "https://github.com/ggml-org/llama.cpp"
   # CMake uses Git to generate version information.
   url "https://github.com/ggml-org/llama.cpp.git",
-      tag:      "b8400",
-      revision: "cf23ee244717b7b41f092410991d0344b25620ea"
+      tag:      "b8420",
+      revision: "7f2cbd9a4df77a2ce10f31d69f07d4fb75eabc07"
   license "MIT"
   head "https://github.com/ggml-org/llama.cpp.git", branch: "master"
 
@@ -19,12 +19,12 @@ class LlamaCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "becc31b6e04df151306f297d948cc3eb3fd60a92289c647f40f84b6e6ed004f9"
-    sha256 cellar: :any,                 arm64_sequoia: "ba94be2b173844412211266dae0b32fe0912f87433c52044e05cfa6bb2bd1311"
-    sha256 cellar: :any,                 arm64_sonoma:  "054da5b7ef6fed12102b08a0f4a330c1731e392ffc1b6c63288538c069c51b55"
-    sha256 cellar: :any,                 sonoma:        "11f51abcf5d411ef36f56475dd743860005205f3199ae1b1725e8a39249d26b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e675e1216d741ac751766d2e3d21855b0256b6a06a0b02cf1fcffe57f024a41b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3164e1683e97791aa7db96ab8ddf89e95ac94be3d13b42763b61b4afdd921c0"
+    sha256 cellar: :any,                 arm64_tahoe:   "efea4e33511bcaa7eef561a2d158f57ebf3d7f54de103c7b1af83eabc62378ae"
+    sha256 cellar: :any,                 arm64_sequoia: "e2f81ad233b137e38f41e734156a7d0a45f5f84e627f1a02dc7d6963eeecd1c5"
+    sha256 cellar: :any,                 arm64_sonoma:  "3b09467ca77bf2552dc6d1b34ec579fe0e34652d1666adbe29a5dfdde5fbc5c5"
+    sha256 cellar: :any,                 sonoma:        "94761e846a89d02c3a4df55695033922a64785fec1f61422e1376c5c727417b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6461d40968aafbe321f41b4c7e164e758a402bcdeef39424e8678de4cf467db0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddb05534a0c676e71ff431e0b4732c65abac2e4cd27658d46bc14de44df1b379"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -1,18 +1,18 @@
 class Spicedb < Formula
   desc "Open Source, Google Zanzibar-inspired database"
   homepage "https://authzed.com/docs/spicedb/getting-started/discovering-spicedb"
-  url "https://ghfast.top/https://github.com/authzed/spicedb/archive/refs/tags/v1.49.2.tar.gz"
-  sha256 "375343717e81ace4108aed7442a6a0827a5b404f00d66a8527f37ca6e610c029"
+  url "https://ghfast.top/https://github.com/authzed/spicedb/archive/refs/tags/v1.50.0.tar.gz"
+  sha256 "847d6f37e6123723be557e7665fcc57f72ee54dec05bfbe9b6887bb0844e07ee"
   license "Apache-2.0"
   head "https://github.com/authzed/spicedb.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b20e83a9057d45f64909c11f2ddbd17670e53a1c3306a2aebf9d24623192463"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e403420bdaeca87fcc3b042af3f544f82baf8261b47d4e322068b28da556c697"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0254f25654f8d641d2e1b6780a3f705810074cd7e1e1c60f23869641771af30f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3434be339a68d83257b1419bb72472e283e7459532f89ff5c296ddfd0916d4df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8db1f47f3a5276bd44ecb93fa046d963e53937257ed1f316340be63c3012aea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "566651576b6c2336d79828131fc2acf8bbefab8e0c96f93a81abe27c046c205e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "364bf7f3e93e657924223e5750d93dc904f20018ce5d32fd25630225c9a98f09"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "840538c6763554fe63704d50a6c33559a5d0c7b3165a0143418e80f73ae33a80"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6ae1e7a319e86a2d86b23f0c07a2e41911c26c45747fedc60a38b48fb34e5f5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ed9af191cd87a654ca09150d802ae3669b84406fbcbb6a4b44a599e5cc90e511"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23690922684971c39346285cc4e96e455e2929ff38f4e240745b7d82d51bbf59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a7dc326507a6e1d02011d019dbc14bdf0b4bb88cc85a2372aaccc6c930f8f45"
   end
 
   depends_on "go" => :build

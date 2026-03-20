@@ -1,8 +1,8 @@
 class Gmic < Formula
   desc "Full-Featured Open-Source Framework for Image Processing"
   homepage "https://gmic.eu/"
-  url "https://gmic.eu/files/source/gmic_3.7.3.tar.gz"
-  sha256 "64d5e46077fc203d3e617076ae580f6699da16d7ee2ac63e5bbce0026c4350ba"
+  url "https://gmic.eu/files/source/gmic_3.7.4.tar.gz"
+  sha256 "f9f0e5267b26b3c8e683092df87159173b649e69bccfd1481cacd4d294398adf"
   license "CECILL-2.1"
   head "https://github.com/GreycLab/gmic.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Gmic < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "59968d037e996bc63eba28131d443647b3ca15a71e472c751f89edec44679a9c"
-    sha256 cellar: :any,                 arm64_sequoia: "c9ed536f0532d153286c5db9908ae385576fff3aa3c3c778698d848467268dde"
-    sha256 cellar: :any,                 arm64_sonoma:  "edd37645ac2bd5795ee93decde4a5b7da055f7e328f41f76402d24b627f6ed2d"
-    sha256 cellar: :any,                 sonoma:        "45ea098fe4b4ff0e096a8b73292afabaed236c4fdadb9316c593ccf136ffb372"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8a370c665674fec46fd3348d924c46c407a8831ba199cb43d1248aec322907d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae66de68f16c63ff1f04c48ecf9f23fb7a20ff6bb0b7128ec5f65aa95e7fa7cf"
+    sha256 cellar: :any,                 arm64_tahoe:   "27f92114ee4fca966d638137a1ab24c2ea52c084df442a0a7beddb59e3e7657d"
+    sha256 cellar: :any,                 arm64_sequoia: "fed9100db6a833088c6959cc586c7f458c960ac7b76c2d9b7804e5002cadeb32"
+    sha256 cellar: :any,                 arm64_sonoma:  "17c8d73d05b5f402ed7c140252bdac73c97f38873e75da0b20ca8f60d5d1ed91"
+    sha256 cellar: :any,                 sonoma:        "569d26a83cc32f84cb5dfd25ca8967acaa2b6edfab4bf7f8e4ceac45fa0137f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8fa97dbd527bffbe73b66de5ef8c1e1a8b8981cbf8e8353500b6ae984189ad6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62346348f2570df11ef9c08068fcddf90bbf5d480abad4b7583b1787cd18d6a1"
   end
 
   depends_on "cmake" => :build

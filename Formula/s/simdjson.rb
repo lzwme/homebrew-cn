@@ -1,19 +1,19 @@
 class Simdjson < Formula
   desc "SIMD-accelerated C++ JSON parser"
   homepage "https://simdjson.org"
-  url "https://ghfast.top/https://github.com/simdjson/simdjson/archive/refs/tags/v4.4.0.tar.gz"
-  sha256 "d493cf4e5c60afab90cb4a3d58620c5a17904676076e927f715815d903ef4d08"
+  url "https://ghfast.top/https://github.com/simdjson/simdjson/archive/refs/tags/v4.4.1.tar.gz"
+  sha256 "04f7e0381eab0eaad68d031b9438e7843e2f6b138151c1a9fd0fe4cc4bab3250"
   license "Apache-2.0"
   compatibility_version 2
   head "https://github.com/simdjson/simdjson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "883818a18c6d50ef903bc4104430ef24c1896b56a7f39b28539d3d01ed5b806a"
-    sha256 cellar: :any,                 arm64_sequoia: "5a4034e6f15e89d9825632af4c1f47ac344c54a13c662619c33f3a4d59a65946"
-    sha256 cellar: :any,                 arm64_sonoma:  "dd6527ba6132b6f36a95fa13742fb746f1ddd1f254657e274807db2dba858c43"
-    sha256 cellar: :any,                 sonoma:        "1aa88f3e8e89a13511ced0fa116a4095553040504638f3381c6fa1fab407be1f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "57899516b8bfc12420bc416d66aabf4e5c1061357a412d52d4f3f89ff0a357ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "838480de0388cd9e9b876855a248b018d57bd752e42ecd8786a79beebca4624d"
+    sha256 cellar: :any,                 arm64_tahoe:   "d8de385ff9b1937535805aec5b8292cd9b38cc3a6cea73525e6bb0500fb1fb8f"
+    sha256 cellar: :any,                 arm64_sequoia: "d71a970dbe43100a80e3767a5a9f8aa2ca8546bf612babdf3998a0fc80bd2b1c"
+    sha256 cellar: :any,                 arm64_sonoma:  "935fd2858af2988e2c7ab8eb3abd87f75189948f15d1185384617be8349ff528"
+    sha256 cellar: :any,                 sonoma:        "1f5d28cc878460e3dcec586c95a2f7894ef7844bb12bc0a50ab2b8e26c2ea23c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ac9deb905468f606ed2f93fa23d051d23fe7aca0ec8066310ef5674b5828cc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9aef4e8dabcc908aff54ac8e46d62da2dac779cd2648333a97bbe0b67c847d7"
   end
 
   depends_on "cmake" => :build
