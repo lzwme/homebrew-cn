@@ -4,6 +4,7 @@ class Libmnl < Formula
   url "https://www.netfilter.org/projects/libmnl/files/libmnl-1.0.5.tar.bz2"
   sha256 "274b9b919ef3152bfb3da3a13c950dd60d6e2bcd54230ffeca298d03b40d0525"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://www.netfilter.org/projects/libmnl/downloads.html"

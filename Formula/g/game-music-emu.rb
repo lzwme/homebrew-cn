@@ -5,6 +5,7 @@ class GameMusicEmu < Formula
   sha256 "f2360feb5a32ace226c583df4faf6eff74145c81264aaea11e17a1af2f6f101a"
   license one_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
   revision 1
+  compatibility_version 1
   head "https://github.com/libgme/game-music-emu.git", branch: "master"
 
   bottle do

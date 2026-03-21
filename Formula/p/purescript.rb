@@ -2,6 +2,7 @@ class Purescript < Formula
   desc "Strongly typed programming language that compiles to JavaScript"
   homepage "https://www.purescript.org/"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/purescript/purescript.git", branch: "master"
 
   stable do

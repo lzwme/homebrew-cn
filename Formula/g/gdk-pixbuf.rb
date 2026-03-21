@@ -4,6 +4,7 @@ class GdkPixbuf < Formula
   url "https://download.gnome.org/sources/gdk-pixbuf/2.44/gdk-pixbuf-2.44.5.tar.xz"
   sha256 "69b93e09139b80c0ee661503d60deb5a5874a31772b5184b9cd5462a4100ab68"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 arm64_tahoe:   "0d6052d4db7c5a04aaf283aade5ebed7b59897ef3c71d078b1370971d0273fa6"

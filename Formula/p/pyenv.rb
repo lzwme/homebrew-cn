@@ -5,6 +5,7 @@ class Pyenv < Formula
   sha256 "3ba6b803f3dc4ea0a794abc2d585a3a917dd031986d100615a1477a3be364ab1"
   license "MIT"
   version_scheme 1
+  compatibility_version 1
   head "https://github.com/pyenv/pyenv.git", branch: "master"
 
   livecheck do

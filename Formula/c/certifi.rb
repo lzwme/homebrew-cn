@@ -4,6 +4,7 @@ class Certifi < Formula
   url "https://files.pythonhosted.org/packages/af/2d/7bf41579a8986e348fa033a31cdd0e4121114f6bce2457e8876010b092dd/certifi-2026.2.25.tar.gz"
   sha256 "e887ab5cee78ea814d3472169153c2d12cd43b14bd03329a39a9c6e2e80bfba7"
   license "MPL-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "ba0750ea6e4d7a08649bf2cee63fc831b6c5b61383baa7fed535f14265e16d7d"

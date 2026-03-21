@@ -4,6 +4,7 @@ class Frei0r < Formula
   url "https://ghfast.top/https://github.com/dyne/frei0r/archive/refs/tags/v2.5.5.tar.gz"
   sha256 "e2d01f58fa0f96a7452715f052fe452212044da4bad50bf7cc1d5d0db514a9a9"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b4b9fdb23adb1a2929dfd626d476a3d3847c539ff7e470eabba69845171b8dad"

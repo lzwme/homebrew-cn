@@ -4,6 +4,7 @@ class Cgl < Formula
   url "https://ghfast.top/https://github.com/coin-or/Cgl/archive/refs/tags/releases/0.60.10.tar.gz"
   sha256 "41b7ac9402db883d9c487eb7101e59eb513cefd726e6e7a669dc94664d9385e6"
   license "EPL-2.0"
+  compatibility_version 1
 
   livecheck do
     url :stable

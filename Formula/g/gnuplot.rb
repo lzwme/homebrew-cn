@@ -3,6 +3,7 @@ class Gnuplot < Formula
   homepage "http://www.gnuplot.info/"
   license "gnuplot"
   revision 1
+  compatibility_version 1
 
   stable do
     url "https://downloads.sourceforge.net/project/gnuplot/gnuplot/6.0.4/gnuplot-6.0.4.tar.gz"

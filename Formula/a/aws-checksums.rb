@@ -4,6 +4,7 @@ class AwsChecksums < Formula
   url "https://ghfast.top/https://github.com/awslabs/aws-checksums/archive/refs/tags/v0.2.10.tar.gz"
   sha256 "cb6509f75e42ee25c372a6d379e8582ce5179e5335183842e808f7d8abb0c314"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "6d445735de28c8a10112acf0aef35604333dd1e116178049cb14fac250cc2a8e"

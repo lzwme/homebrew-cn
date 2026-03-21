@@ -5,6 +5,7 @@ class Graphviz < Formula
   sha256 "fe76529477c22c0cf833ec5a35b430cf710f4705afc465d86292bf13560be584"
   license "EPL-1.0"
   version_scheme 1
+  compatibility_version 1
 
   livecheck do
     url "https://graphviz.org/download/source/"

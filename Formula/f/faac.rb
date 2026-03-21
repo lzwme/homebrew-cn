@@ -4,6 +4,7 @@ class Faac < Formula
   url "https://ghfast.top/https://github.com/knik0/faac/archive/refs/tags/faac-1.40.tar.gz"
   sha256 "3ef4cc1fa6a750003602adc6eea892ca3815becd9145797b787f0999e8b2b89c"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
   head "https://github.com/knik0/faac.git", branch: "master"
 
   bottle do

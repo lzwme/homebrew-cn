@@ -4,6 +4,7 @@ class Libraqm < Formula
   url "https://ghfast.top/https://github.com/HOST-Oman/libraqm/archive/refs/tags/v0.10.4.tar.gz"
   sha256 "6b583fb0eb159a3727a1e8c653bb0294173a14af8eb60195a775879de72320a3"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "80573133b47b2923ed7e407a873c31f71c88acd9c84553a289757a908bcaf386"

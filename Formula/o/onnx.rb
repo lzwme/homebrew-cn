@@ -5,6 +5,7 @@ class Onnx < Formula
   sha256 "9bcd6473c689b1ac3aeba8df572891756e01c1a151ae788df5cbc7a4499e5db5"
   license "Apache-2.0"
   revision 4
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "f22d77e26cb864c3990c516952526a30fa2b8a5492054ec8384f10cd28459540"

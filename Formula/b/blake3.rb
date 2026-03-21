@@ -4,6 +4,7 @@ class Blake3 < Formula
   url "https://ghfast.top/https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/1.8.3.tar.gz"
   sha256 "5a11e3f834719b6c1cae7aced1e848a37013f6f10f97272e7849aa0da769f295"
   license any_of: ["CC0-1.0", "Apache-2.0"]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "d03ff32973f9c9bd2d13bf2e6f9f3dd8a202aeb15adece0f3c68aabb4fb192ac"

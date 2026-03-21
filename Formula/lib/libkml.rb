@@ -5,6 +5,7 @@ class Libkml < Formula
   sha256 "8892439e5570091965aaffe30b08631fdf7ca7f81f6495b4648f0950d7ea7963"
   license "BSD-3-Clause"
   revision 1
+  compatibility_version 1
 
   bottle do
     rebuild 3

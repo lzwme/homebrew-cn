@@ -4,6 +4,7 @@ class Libdnet < Formula
   url "https://ghfast.top/https://github.com/ofalk/libdnet/archive/refs/tags/libdnet-1.18.2.tar.gz"
   sha256 "95611c6d2703f1772fc01ce74acf4ebcc4bcd4315cede35b343bb90dc43bfd8f"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url :homepage

@@ -10,6 +10,7 @@ class E2fsprogs < Formula
     "BSD-3-Clause",      # lib/uuid
     "MIT",               # lib/et, lib/ss
   ]
+  compatibility_version 1
   head "https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git", branch: "master"
 
   livecheck do

@@ -4,6 +4,7 @@ class Libunibreak < Formula
   url "https://ghfast.top/https://github.com/adah1972/libunibreak/releases/download/libunibreak_6_1/libunibreak-6.1.tar.gz"
   sha256 "cc4de0099cf7ff05005ceabff4afed4c582a736abc38033e70fdac86335ce93f"
   license "Zlib"
+  compatibility_version 1
 
   livecheck do
     url :stable

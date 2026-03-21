@@ -176,6 +176,7 @@ Homebrew-homebrew-core/Formula/a/aoe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aoeui.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aom.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-archiva.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/apache-arrow-adbc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-arrow-glib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-arrow.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-brooklyn-cli.rb, Homebrew/homebrew-core, 1
@@ -5973,7 +5974,7 @@ Homebrew-homebrew-core/Formula/p/pylint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pylyzer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pymol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pympress.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/pymupdf.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pymupdf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyoxidizer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyperformance.rb, Homebrew/homebrew-core, 0
@@ -8592,7 +8593,6 @@ Homebrew-homebrew-cask/Casks/a/augur.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aural.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aurora-hdr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ausweisapp.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/a/authy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/auto-claude.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/autodesk-fusion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/autodmg.rb, Homebrew/homebrew-cask, 1
@@ -8946,7 +8946,7 @@ Homebrew-homebrew-cask/Casks/c/chatgpt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatmate-for-whatsapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatterino.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatty.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/c/chatwise.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/chatwise.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatwork.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cheatsheet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/checkra1n.rb, Homebrew/homebrew-cask, 0
@@ -9246,11 +9246,13 @@ Homebrew-homebrew-cask/Casks/d/db-browser-for-sqlite@nightly.rb, Homebrew/homebr
 Homebrew-homebrew-cask/Casks/d/dbeaver-community.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dbeaver-enterprise.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dbeaverlite.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dbeaverteam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dbeaverultimate.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dbgate.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dbngin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dbschema.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dbvisualizer.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dbvr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dcommander.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dcp-o-matic-batch-converter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dcp-o-matic-combiner.rb, Homebrew/homebrew-cask, 0
@@ -14431,7 +14433,6 @@ Homebrew-homebrew-cask/Casks/r/receiptquicklook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/receipts.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/recents.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/recipeui.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/r/recovery-disk-assistant.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rectangle-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rectangle.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/recut.rb, Homebrew/homebrew-cask, 0

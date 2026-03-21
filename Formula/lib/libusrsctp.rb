@@ -3,6 +3,7 @@ class Libusrsctp < Formula
   homepage "https://github.com/sctplab/usrsctp"
   license "BSD-3-Clause"
   revision 1
+  compatibility_version 1
   head "https://github.com/sctplab/usrsctp.git", branch: "master"
 
   stable do

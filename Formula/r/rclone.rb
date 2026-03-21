@@ -4,6 +4,7 @@ class Rclone < Formula
   url "https://ghfast.top/https://github.com/rclone/rclone/archive/refs/tags/v1.73.2.tar.gz"
   sha256 "1bbb94dedf84fff7bb769a40fafda148d5987f97e26a3a3ceef08dcf18c7e534"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/rclone/rclone.git", branch: "master"
 
   bottle do

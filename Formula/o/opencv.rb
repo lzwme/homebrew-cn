@@ -3,6 +3,7 @@ class Opencv < Formula
   homepage "https://opencv.org/"
   license "Apache-2.0"
   revision 6
+  compatibility_version 1
 
   stable do
     url "https://ghfast.top/https://github.com/opencv/opencv/archive/refs/tags/4.13.0.tar.gz"

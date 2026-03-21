@@ -6,6 +6,7 @@ class Libtiff < Formula
   sha256 "f698d94f3103da8ca7438d84e0344e453fe0ba3b7486e04c5bf7a9a3fabe9b69"
   license "libtiff"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://download.osgeo.org/libtiff/"

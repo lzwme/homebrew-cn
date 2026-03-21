@@ -5,6 +5,7 @@ class Texinfo < Formula
   mirror "https://ftp.gnu.org/gnu/texinfo/texinfo-7.3.tar.xz"
   sha256 "51f74eb0f51cfa9873b85264dfdd5d46e8957ec95b88f0fb762f63d9e164c72e"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 arm64_tahoe:   "af864341784c9958f6ce991fa0e0bc3b5727dfc7c8f53a90cbf2339e080c2232"

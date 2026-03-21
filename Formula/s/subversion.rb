@@ -3,6 +3,7 @@ class Subversion < Formula
   homepage "https://subversion.apache.org/"
   license "Apache-2.0"
   revision 4
+  compatibility_version 1
 
   stable do
     url "https://www.apache.org/dyn/closer.lua?path=subversion/subversion-1.14.5.tar.bz2"

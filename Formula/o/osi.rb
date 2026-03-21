@@ -4,6 +4,7 @@ class Osi < Formula
   url "https://ghfast.top/https://github.com/coin-or/Osi/archive/refs/tags/releases/0.108.12.tar.gz"
   sha256 "1d80d0b4275f2e1ceefc6dda66b8616e3a8c8b07a926ef4456db4a0d55249333"
   license "EPL-2.0"
+  compatibility_version 1
 
   livecheck do
     url :stable

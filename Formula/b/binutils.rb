@@ -5,6 +5,7 @@ class Binutils < Formula
   mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.46.0.tar.bz2"
   sha256 "0f3152632a2a9ce066f20963e9bb40af7cf85b9b6c409ed892fd0676e84ecd12"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later", "LGPL-2.0-or-later", "LGPL-3.0-only"]
+  compatibility_version 1
 
   bottle do
     sha256                               arm64_tahoe:   "274e1e41ddb008e2089fe5faaa832a0383abdda48acf26134ee59510cb8aac63"

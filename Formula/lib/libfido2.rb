@@ -5,6 +5,7 @@ class Libfido2 < Formula
   sha256 "7d86088ef4a48f9faad4ff6f41343328157849153a8dc94d88f4b5461cb29474"
   license "BSD-2-Clause"
   revision 1
+  compatibility_version 1
 
   bottle do
     rebuild 1

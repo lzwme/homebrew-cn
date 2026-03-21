@@ -4,6 +4,7 @@ class AwsCIo < Formula
   url "https://ghfast.top/https://github.com/awslabs/aws-c-io/archive/refs/tags/v0.26.3.tar.gz"
   sha256 "521fd0848fca661130bbb7278a414d7a38bdcb9bc8ffa89f6660d84e5838a303"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "f96cf4e4319785524c71a88e1cb2f1d065bf5f4b0111c77887115777fbd8dc38"

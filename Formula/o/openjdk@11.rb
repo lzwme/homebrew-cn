@@ -4,6 +4,7 @@ class OpenjdkAT11 < Formula
   url "https://ghfast.top/https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.30-ga.tar.gz"
   sha256 "5357c80e529dc131cbd8eb1121fa1e54bae7aaa53c038391ea053281266c1718"
   license "GPL-2.0-only"
+  compatibility_version 1
 
   livecheck do
     url :stable

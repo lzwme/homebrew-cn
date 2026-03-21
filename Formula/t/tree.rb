@@ -4,6 +4,7 @@ class Tree < Formula
   url "https://ghfast.top/https://github.com/Old-Man-Programmer/tree/archive/refs/tags/2.3.2.tar.gz"
   sha256 "22cf32e84e3eb508d97a9e991c2c3cc006b9dcf4afed201d96311c5c57d08fcf"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1967d2ed08717f963addb249ea6b8ca11c26ecb59efba34f2860853a06bedc7"

@@ -4,6 +4,7 @@ class AwsCEventStream < Formula
   url "https://ghfast.top/https://github.com/awslabs/aws-c-event-stream/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "af3cd291d831b5fd65f789b7b9d34d856c6a3a5f6f5eb03bc23cffd1792d25e9"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "4e659dca20d8ae4ad62b48dde9587aa9e12cd1ee4697e1c1ba6c36427469c494"

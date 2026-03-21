@@ -4,6 +4,7 @@ class Libcbor < Formula
   url "https://ghfast.top/https://github.com/PJK/libcbor/archive/refs/tags/v0.13.0.tar.gz"
   sha256 "95a7f0dd333fd1dce3e4f92691ca8be38227b27887599b21cd3c4f6d6a7abb10"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "f5c20790e57a940c90412368e2b013905e348111d24c3c1094b216d78aa5e79e"

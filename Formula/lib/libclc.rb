@@ -4,6 +4,7 @@ class Libclc < Formula
   url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.1/llvm-project-22.1.1.src.tar.xz"
   sha256 "9c6f37f6f5f68d38f435d25f770fc48c62d92b2412205767a16dac2c942f0c95"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  compatibility_version 1
 
   livecheck do
     url :stable

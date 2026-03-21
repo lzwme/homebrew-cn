@@ -6,6 +6,7 @@ class Lpeg < Formula
   sha256 "4b155d67d2246c1ffa7ad7bc466c1ea899bbc40fef0257cc9c03cecbaed4352a"
   license "MIT"
   revision 2
+  compatibility_version 1
 
   livecheck do
     url :homepage

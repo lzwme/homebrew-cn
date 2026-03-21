@@ -4,6 +4,7 @@ class Libaec < Formula
   url "https://gitlab.dkrz.de/k202009/libaec/-/archive/v1.1.6/libaec-v1.1.6.tar.bz2"
   sha256 "41777c62cd109bee692a4976496ad680aa015016840b79ce2f84b8ac0d4d7dac"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://gitlab.dkrz.de/k202009/libaec.git", branch: "master"
 
   bottle do

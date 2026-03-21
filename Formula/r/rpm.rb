@@ -7,6 +7,7 @@ class Rpm < Formula
   ]
   revision 1
   version_scheme 1
+  compatibility_version 1
   head "https://github.com/rpm-software-management/rpm.git", branch: "master"
 
   stable do

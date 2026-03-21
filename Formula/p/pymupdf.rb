@@ -1,20 +1,17 @@
 class Pymupdf < Formula
   desc "Python bindings for the PDF toolkit and renderer MuPDF"
   homepage "https://pymupdf.readthedocs.io/en/latest/"
-  # FIXME: switch to PyPI source distribution when it becomes available again
-  # https://github.com/pymupdf/PyMuPDF/issues/4945
-  url "https://ghfast.top/https://github.com/pymupdf/PyMuPDF/archive/refs/tags/1.27.2.tar.gz"
-  sha256 "51f3800190f23d40fedf3c4808b0fbd13f77ecd0fad84299182d8a319b8f9a2b"
+  url "https://files.pythonhosted.org/packages/f1/32/f6b645c51d79a188a4844140c5dabca7b487ad56c4be69c4bc782d0d11a9/pymupdf-1.27.2.2.tar.gz"
+  sha256 "ea8fdc3ab6671ca98f629d5ec3032d662c8cf1796b146996b7ad306ac7ed3335"
   license "AGPL-3.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "5e775775b06e7dcaa9f6a0045edff684d412eddf4bf9a414b355195742aed0ee"
-    sha256 cellar: :any,                 arm64_sequoia: "2f5ec72ff3bd5a5cdae7e7d908fc8f3bf32de3bdd8239529130b76aaf88676dd"
-    sha256 cellar: :any,                 arm64_sonoma:  "83b32f97f3bccca3c5ef9b2989a32e3fd42f3b87c188aeef4420f5112567919f"
-    sha256 cellar: :any,                 sonoma:        "57f1d9cbcf729e32c8a2b7ce674d9f870550d0c9c5bba5dbb279ad7805de01e4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "136e9ca0f4360b3d652ba7e4dbd997ab6a1ea631edc897d1ed84db0caf028372"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c10c04339cba2f5914b29299be560f3a6a584ec10b6826345eb2ed7aec1b7fe8"
+    sha256 cellar: :any,                 arm64_tahoe:   "124e64afbc02bf5889b6d9188cb75873e304dec10b51f8dd842ce3f6fd25eaa3"
+    sha256 cellar: :any,                 arm64_sequoia: "a74500cd3038757634029e6c9ee16d65c5dbfb714088f345093e25a2ab37fbcc"
+    sha256 cellar: :any,                 arm64_sonoma:  "c82f493fa1bef8021b24b3585a075fd85a9c1e955cd91e1415404f334e86da36"
+    sha256 cellar: :any,                 sonoma:        "9d10e5d2d4fd40cc2c6205fceed2b32e051adbae2d186426177e68dcbc557702"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "03781d1ec2924c780e7be9a6a7670cae16091ccfaca120dae574483ec1976c96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07647c4cbbf233516d4f5edb60a29006a4e5691ffe36dc0a6482eaf51aa33608"
   end
 
   depends_on "freetype" => :build

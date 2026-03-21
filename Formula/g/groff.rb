@@ -5,6 +5,7 @@ class Groff < Formula
   mirror "https://ftp.gnu.org/gnu/groff/groff-1.24.1.tar.gz"
   sha256 "74e2819795b6aff431aeac983d63a9c8968eeaba2a2eba7df8ba4c7b41e7cfd8"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 arm64_tahoe:   "c3e55a14145a5904cba3e5bed3417e66b23cc9808736ca043936813308957c9c"

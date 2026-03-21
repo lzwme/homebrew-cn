@@ -7,6 +7,7 @@ class Localstack < Formula
   sha256 "68f27e2c30a0e9b476eb5ee9b76cb8d78a1871031d9842d6b6d79cc0c182df90"
   license "Apache-2.0"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "ddade857f733871bd05f5a730e7841aa1e8cddb36d60b93f7a711d600bc6414f"

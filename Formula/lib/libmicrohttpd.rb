@@ -5,6 +5,7 @@ class Libmicrohttpd < Formula
   mirror "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.2.tar.gz"
   sha256 "df324fcd0834175dab07483133902d9774a605bfa298025f69883288fd20a8c7"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "744bd620cfd4c01fdab40a0b91d689994d549ce6f31f54a785c968348f29e089"

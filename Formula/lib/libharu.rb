@@ -5,6 +5,7 @@ class Libharu < Formula
   sha256 "0ed3eacf3ceee18e40b6adffbc433f1afbe3c93500291cd95f1477bffe6f24fc"
   license "Zlib"
   revision 1
+  compatibility_version 1
   head "https://github.com/libharu/libharu.git", branch: "master"
 
   bottle do

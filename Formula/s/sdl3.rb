@@ -4,6 +4,7 @@ class Sdl3 < Formula
   url "https://ghfast.top/https://github.com/libsdl-org/SDL/releases/download/release-3.4.2/SDL3-3.4.2.tar.gz"
   sha256 "ef39a2e3f9a8a78296c40da701967dd1b0d0d6e267e483863ce70f8a03b4050c"
   license "Zlib"
+  compatibility_version 1
   head "https://github.com/libsdl-org/SDL.git", branch: "main"
 
   livecheck do

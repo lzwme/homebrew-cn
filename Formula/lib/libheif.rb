@@ -4,6 +4,7 @@ class Libheif < Formula
   url "https://ghfast.top/https://github.com/strukturag/libheif/releases/download/v1.21.2/libheif-1.21.2.tar.gz"
   sha256 "75f530b7154bc93e7ecf846edfc0416bf5f490612de8c45983c36385aa742b42"
   license "LGPL-3.0-only"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "74409afd4371c441de5349908173d75a5d04525c41a4f145cb6f669b1a98ed4f"

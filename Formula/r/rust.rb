@@ -3,6 +3,8 @@ class Rust < Formula
   homepage "https://www.rust-lang.org/"
   license any_of: ["Apache-2.0", "MIT"]
 
+  compatibility_version 1
+
   stable do
     url "https://static.rust-lang.org/dist/rustc-1.94.0-src.tar.gz"
     sha256 "b83f921cd3f321ff614f9c06a8b870d89299fc02888b48a5549683a36823474c"

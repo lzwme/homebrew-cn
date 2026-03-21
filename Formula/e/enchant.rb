@@ -4,6 +4,7 @@ class Enchant < Formula
   url "https://ghfast.top/https://github.com/rrthomas/enchant/releases/download/v2.8.15/enchant-2.8.15.tar.gz"
   sha256 "d3fd9e4170bfb5110b0bda577fe764a38fb606b3c25d2f0c3840234521ff1252"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 arm64_tahoe:   "b425927ed1f2cb4137b768acee1f4d8cb8bdc96f91af90edb17f6fd8c72ab86a"

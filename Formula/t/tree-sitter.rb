@@ -4,6 +4,7 @@ class TreeSitter < Formula
   url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.26.7.tar.gz"
   sha256 "4343107ad1097a35e106092b79e5dd87027142c6fba5e4486b1d1d44d5499f84"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/tree-sitter/tree-sitter.git", branch: "master"
 
   livecheck do

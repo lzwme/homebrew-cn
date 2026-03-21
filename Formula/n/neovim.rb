@@ -3,6 +3,8 @@ class Neovim < Formula
   homepage "https://neovim.io/"
   license "Apache-2.0"
 
+  compatibility_version 1
+
   stable do
     # TODO: Bump to use tree-sitter 0.26+ when new Neovim release supports it
     # TODO: remove `head` block when stable supports tree-sitter 0.26+.

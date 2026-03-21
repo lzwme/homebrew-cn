@@ -5,6 +5,7 @@ class Fontforge < Formula
   sha256 "69046500185a5581b58139dfad30c0b3d8128f00ebbfddc31f2fcf877e329e52"
   license "GPL-3.0-or-later"
   revision 1
+  compatibility_version 1
   head "https://github.com/fontforge/fontforge.git", branch: "master"
 
   bottle do

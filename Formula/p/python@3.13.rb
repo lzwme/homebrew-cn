@@ -5,6 +5,7 @@ class PythonAT313 < Formula
   sha256 "12e7cb170ad2d1a69aee96a1cc7fc8de5b1e97a2bdac51683a3db016ec9a2996"
   license "Python-2.0"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"

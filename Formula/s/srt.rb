@@ -2,6 +2,7 @@ class Srt < Formula
   desc "Secure Reliable Transport"
   homepage "https://www.srtalliance.org/"
   license "MPL-2.0"
+  compatibility_version 1
   head "https://github.com/Haivision/srt.git", branch: "master"
 
   stable do

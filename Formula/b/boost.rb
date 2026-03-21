@@ -5,6 +5,7 @@ class Boost < Formula
   sha256 "9e6bee9ab529fb2b0733049692d57d10a72202af085e553539a05b4204211a6f"
   license "BSL-1.0"
   revision 1
+  compatibility_version 1
   head "https://github.com/boostorg/boost.git", branch: "master"
 
   livecheck do

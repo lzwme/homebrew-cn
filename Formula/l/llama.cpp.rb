@@ -6,6 +6,7 @@ class LlamaCpp < Formula
       tag:      "b8420",
       revision: "7f2cbd9a4df77a2ce10f31d69f07d4fb75eabc07"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/ggml-org/llama.cpp.git", branch: "master"
 
   # llama.cpp publishes new tags too often

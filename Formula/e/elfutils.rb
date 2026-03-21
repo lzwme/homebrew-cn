@@ -5,6 +5,7 @@ class Elfutils < Formula
   sha256 "09e2ff033d39baa8b388a2d7fbc5390bfde99ae3b7c67c7daaf7433fbcf0f01e"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later", "LGPL-2.0-only"]
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://sourceware.org/elfutils/ftp/"

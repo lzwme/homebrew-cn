@@ -7,6 +7,7 @@ class Netpbm < Formula
   version "11.02.22"
   license "GPL-3.0-or-later"
   version_scheme 1
+  compatibility_version 1
   head "https://svn.code.sf.net/p/netpbm/code/trunk"
 
   livecheck do

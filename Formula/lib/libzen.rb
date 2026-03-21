@@ -3,6 +3,7 @@ class Libzen < Formula
   homepage "https://github.com/MediaArea/ZenLib"
   license "Zlib"
   revision 1
+  compatibility_version 1
   head "https://github.com/MediaArea/ZenLib.git", branch: "master"
 
   stable do

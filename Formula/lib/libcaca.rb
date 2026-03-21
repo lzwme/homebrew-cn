@@ -6,6 +6,7 @@ class Libcaca < Formula
   version "0.99b20"
   sha256 "ff9aa641af180a59acedc7fc9e663543fb397ff758b5122093158fd628125ac1"
   license "WTFPL"
+  compatibility_version 1
 
   livecheck do
     url :stable

@@ -4,6 +4,7 @@ class Libass < Formula
   url "https://ghfast.top/https://github.com/libass/libass/releases/download/0.17.4/libass-0.17.4.tar.xz"
   sha256 "78f1179b838d025e9c26e8fef33f8092f65611444ffa1bfc0cfac6a33511a05a"
   license "ISC"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "b7b56025da7bfcff9b6d784a2a8179d05f820d9662b67366173c99b3336c3b32"

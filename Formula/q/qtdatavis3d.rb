@@ -9,6 +9,7 @@ class Qtdatavis3d < Formula
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
   ]
+  compatibility_version 1
   head "https://code.qt.io/qt/qtdatavis3d.git", branch: "dev"
 
   livecheck do

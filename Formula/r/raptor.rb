@@ -5,6 +5,7 @@ class Raptor < Formula
   sha256 "089db78d7ac982354bdbf39d973baf09581e6904ac4c92a98c5caadb3de44680"
   license any_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later", "Apache-2.0"]
   revision 1
+  compatibility_version 1
 
   livecheck do
     url :homepage

@@ -4,6 +4,7 @@ class Capstone < Formula
   url "https://ghfast.top/https://github.com/capstone-engine/capstone/archive/refs/tags/5.0.7.tar.gz"
   sha256 "6427a724726d161d1e05fb49fff8cd0064f67836c04ffca3c11d6d859e719caa"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/capstone-engine/capstone.git", branch: "next"
 
   livecheck do

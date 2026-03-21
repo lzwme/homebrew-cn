@@ -4,6 +4,7 @@ class MbedtlsAT3 < Formula
   url "https://ghfast.top/https://github.com/Mbed-TLS/mbedtls/releases/download/mbedtls-3.6.5/mbedtls-3.6.5.tar.bz2"
   sha256 "4a11f1777bb95bf4ad96721cac945a26e04bf19f57d905f241fe77ebeddf46d8"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url :stable

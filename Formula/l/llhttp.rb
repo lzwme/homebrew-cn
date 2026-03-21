@@ -4,6 +4,7 @@ class Llhttp < Formula
   url "https://ghfast.top/https://github.com/nodejs/llhttp/archive/refs/tags/release/v9.3.1.tar.gz"
   sha256 "c14a93f287d3dbd6580d08af968294f8bcc61e1e1e3c34301549d00f3cf09365"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "35c5eb5a905ba0729cf2af32593498a8c62f289941e141c46836335b8e428a20"

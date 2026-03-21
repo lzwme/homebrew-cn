@@ -4,6 +4,7 @@ class LibgeditAmtk < Formula
   url "https://gitlab.gnome.org/World/gedit/libgedit-amtk/-/archive/5.9.2/libgedit-amtk-5.9.2.tar.bz2"
   sha256 "6a3bf9c5ec35e7d2009dfa759567b1682fc12ebf98e9ab140bb14847d71f13f8"
   license "LGPL-3.0-or-later"
+  compatibility_version 1
   head "https://gitlab.gnome.org/World/gedit/libgedit-amtk.git", branch: "main"
 
   bottle do

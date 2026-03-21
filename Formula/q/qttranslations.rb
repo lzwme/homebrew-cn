@@ -6,6 +6,7 @@ class Qttranslations < Formula
   mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.2/submodules/qttranslations-everywhere-src-6.10.2.tar.xz"
   sha256 "b3b3813bc9d76b545716dc8b6e659fa71b6e2bc14569e9fab6dab8b30650a644"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://code.qt.io/qt/qttranslations.git", branch: "dev"
 
   livecheck do

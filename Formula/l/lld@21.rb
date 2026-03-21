@@ -6,6 +6,7 @@ class LldAT21 < Formula
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   revision 1
+  compatibility_version 1
 
   livecheck do
     formula "llvm@21"

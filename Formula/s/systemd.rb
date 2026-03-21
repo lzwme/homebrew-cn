@@ -27,6 +27,7 @@ class Systemd < Formula
     { any_of: ["MIT", "GPL-2.0-or-later" => { with: "Linux-syscall-note" }] },
     { any_of: ["GPL-2.0-only", "BSD-2-Clause"] },
   ]
+  compatibility_version 1
   head "https://github.com/systemd/systemd.git", branch: "main"
 
   bottle do

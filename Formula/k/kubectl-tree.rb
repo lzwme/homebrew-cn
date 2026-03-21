@@ -1,18 +1,18 @@
 class KubectlTree < Formula
   desc "Kubectl plugin to browse Kubernetes object hierarchies as a tree"
   homepage "https://github.com/ahmetb/kubectl-tree"
-  url "https://ghfast.top/https://github.com/ahmetb/kubectl-tree/archive/refs/tags/v0.4.6.tar.gz"
-  sha256 "5b0070fc84fa54e4120a844e26b5de0f5d8a9c1672691588f1fa215f68ba1e5d"
+  url "https://ghfast.top/https://github.com/ahmetb/kubectl-tree/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "480c71b07f27e5c824367e328c7c1818b76766a990a3a786189b698a7f923922"
   license "Apache-2.0"
   head "https://github.com/ahmetb/kubectl-tree.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3c10d52a8ae955a32d9226e50dce3a49dfb371c3056dc32160b81fdc6e447c8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1005e06b3ddc5f3f033b74987380a2c0df81ce21977e4024b72c354fe5c60dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49b0a79a58a2bede20dfdb9ecb3ebdfcb2836b05599f65c52a47d8680a4587bf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68def8c7c63822e6ae448e35ecd293c60a99b9238da8e6ecf6cc17c9b2364dd3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c580051105677ae70964420d948adcd9fa8176e70d1a1dd2eb78c26e16a96363"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3814aa8afb541953b0497dce173a461b0da330b8c8c9ccd8eb1f7c3be36fe36b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d829de1df35abf4ea5ce8d5e64f154178ac7b87aba4fee8ee3e41e85086b3ecd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2838060155814070f9d9d63bad3a1a9bddd27269de258ab398cc0570fa3883e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d6f00d76a3d2b714f0d9b54c62faa22249b505150b0680320a7337a6552c398"
+    sha256 cellar: :any_skip_relocation, sonoma:        "25086a527e3b8ef3cb382a316ff9cbe06c4a212c81f6c8fda72e5766320f38d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "921484062c94213f86ac765fe82d20f27280ab182285186a8ca85d1a80052741"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de85af9f5a8baa922b8664e71502227c8d0b70abdf254412bcf08aa26f2bfafd"
   end
 
   depends_on "go" => :build

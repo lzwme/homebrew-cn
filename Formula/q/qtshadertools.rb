@@ -13,6 +13,7 @@ class Qtshadertools < Formula
                "GPL-3.0-or-later" => { with: "Bison-exception-2.2" }] }, # bundled glslang
     "BSD-3-Clause", # *.cmake
   ]
+  compatibility_version 1
   head "https://code.qt.io/qt/qtshadertools.git", branch: "dev"
 
   livecheck do

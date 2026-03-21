@@ -4,6 +4,7 @@ class Libsodium < Formula
   url "https://download.libsodium.org/libsodium/releases/libsodium-1.0.21.tar.gz"
   sha256 "9e4285c7a419e82dedb0be63a72eea357d6943bc3e28e6735bf600dd4883feaf"
   license "ISC"
+  compatibility_version 1
 
   livecheck do
     url "https://download.libsodium.org/libsodium/releases/"

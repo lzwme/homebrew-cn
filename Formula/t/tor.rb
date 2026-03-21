@@ -13,6 +13,7 @@ class Tor < Formula
     "MIT",
     "NCSA",
   ]
+  compatibility_version 1
 
   livecheck do
     url "https://dist.torproject.org/"

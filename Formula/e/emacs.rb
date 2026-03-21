@@ -7,6 +7,7 @@ class Emacs < Formula
   sha256 "b3f36f18a6dd2715713370166257de2fae01f9d38cfe878ced9b1e6ded5befd9"
   license "GPL-3.0-or-later"
   revision 2
+  compatibility_version 1
 
   bottle do
     rebuild 1

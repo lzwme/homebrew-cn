@@ -12,6 +12,7 @@ class Qtquick3d < Formula
     "BSD-3-Clause", # bundled tinyexr; *.cmake
     "MIT",          # bundled jsoncpp
   ]
+  compatibility_version 1
   head "https://code.qt.io/qt/qtquick3d.git", branch: "dev"
 
   livecheck do

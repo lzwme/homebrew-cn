@@ -4,6 +4,7 @@ class Numpy < Formula
   url "https://files.pythonhosted.org/packages/10/8b/c265f4823726ab832de836cdd184d0986dcf94480f81e8739692a7ac7af2/numpy-2.4.3.tar.gz"
   sha256 "483a201202b73495f00dbc83796c6ae63137a9bdade074f7648b3e32613412dd"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/numpy/numpy.git", branch: "main"
 
   bottle do

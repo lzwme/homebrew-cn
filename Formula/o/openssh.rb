@@ -6,6 +6,7 @@ class Openssh < Formula
   version "10.2p1"
   sha256 "ccc42c0419937959263fa1dbd16dafc18c56b984c03562d2937ce56a60f798b2"
   license "SSH-OpenSSH"
+  compatibility_version 1
 
   livecheck do
     url "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/"

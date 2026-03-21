@@ -4,6 +4,7 @@ class Freetds < Formula
   url "https://www.freetds.org/files/stable/freetds-1.5.14.tar.bz2"
   sha256 "2422a04d6fb546f168e69dd4a8289d13ac9f53ef86fc852ab11f5e0de249207f"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://www.freetds.org/files/stable/"

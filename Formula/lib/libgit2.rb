@@ -5,6 +5,7 @@ class Libgit2 < Formula
   sha256 "6f097c82fc06ece4f40539fb17e9d41baf1a5a2fc26b1b8562d21b89bc355fe6"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }
   revision 1
+  compatibility_version 1
   head "https://github.com/libgit2/libgit2.git", branch: "main"
 
   livecheck do

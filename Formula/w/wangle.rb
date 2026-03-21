@@ -4,6 +4,7 @@ class Wangle < Formula
   url "https://ghfast.top/https://github.com/facebook/wangle/archive/refs/tags/v2026.03.09.00.tar.gz"
   sha256 "020679cb67bbec2c2a7da678e5020f140415af0719ac7e159f028902e4eb5d8b"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/facebook/wangle.git", branch: "main"
 
   bottle do

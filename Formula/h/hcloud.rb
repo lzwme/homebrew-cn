@@ -1,18 +1,18 @@
 class Hcloud < Formula
   desc "Command-line interface for Hetzner Cloud"
   homepage "https://github.com/hetznercloud/cli"
-  url "https://ghfast.top/https://github.com/hetznercloud/cli/archive/refs/tags/v1.61.0.tar.gz"
-  sha256 "e99b116586d8040f33994bb1ef232b7def058fcd43f24abd3db22e822da11419"
+  url "https://ghfast.top/https://github.com/hetznercloud/cli/archive/refs/tags/v1.62.0.tar.gz"
+  sha256 "942bd763ddce01c69efaef033a9207b3d543e068b69cb6910981ec26eb0cc434"
   license "MIT"
   head "https://github.com/hetznercloud/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d6f30a931983997ef14b383558216328b786b64eec64d11fa1248bca2c70742"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ca3416fdeadd625d4655b08e0e8ae5436f01910c8ebcab9ec755f45eac63c58"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8a3496527433273f3c9505319aef57bf99595094a3424853d8ae3b275c39094"
-    sha256 cellar: :any_skip_relocation, sonoma:        "58471d520acb9f6854a3cf0e1e90cdb38085493b4b5429c54bb4e0a9549a3f1f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d72dfad8b325798ee9e47b7a53a157bba678073b1c669128855a7670b9daa7ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cef8841a8741b1736526db75fb1e52ff14cb31afc7a5cdac2a57d96ef6cb2e93"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed2a1123adc4885eeb25b9a536062e3bf4674f6f915463563377319774d4c5f4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7d9e1ff61000938e267e4af27ae8849c5412240a23611f12ae1d4ac1571b0cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6f5a1eb8df2cdabe8900c127c1bd502bcdd42cbd029f1413a13f9c5bc6ca68b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5d229e6fc039c9ed1cbc9fb70ee63c7e05600175df765c01ee2da1f876d04d2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f41a7c28b8498b914deb19c9cb710338273d48c59a1a8451453eb12c4d05fd17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "721c01a21dc3c00cfe4497d0995c6386ac9c2e24ee76339051d2741826ab377c"
   end
 
   depends_on "go" => :build

@@ -6,6 +6,7 @@ class Libopenmpt < Formula
   sha256 "627f9bf11aacae615a1f2c982c7e88cb21f11b2d6f0267946f7c82c5eae4943b"
   license "BSD-3-Clause"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://lib.openmpt.org/files/libopenmpt/src/"

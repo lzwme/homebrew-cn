@@ -11,6 +11,7 @@ class Qtdeclarative < Formula
     "BSD-2-Clause", # masm
     "BSD-3-Clause", # *.cmake
   ]
+  compatibility_version 1
   head "https://code.qt.io/qt/qtdeclarative.git", branch: "dev"
 
   livecheck do

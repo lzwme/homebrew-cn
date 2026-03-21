@@ -5,6 +5,7 @@ class DotnetAT9 < Formula
   url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v9.0.115.tar.gz"
   sha256 "4e9bb987d5311395e0d516b2db98bcfe02a7eb8054bb8603b6db0b8ea39b81ca"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable

@@ -5,6 +5,7 @@ class Hdf5Mpi < Formula
   sha256 "ce7f5515a95d588b8606c3fb50643f8b88ac52ffbbde9c63bb1edca6a256e964"
   license "BSD-3-Clause"
   version_scheme 1
+  compatibility_version 1
 
   livecheck do
     formula "hdf5"

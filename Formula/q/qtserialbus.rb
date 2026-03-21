@@ -10,6 +10,7 @@ class Qtserialbus < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # canbusutil
     "BSD-3-Clause", # *.cmake
   ]
+  compatibility_version 1
   head "https://code.qt.io/qt/qtserialbus.git", branch: "dev"
 
   livecheck do

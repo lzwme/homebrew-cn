@@ -4,6 +4,7 @@ class GradleCompletion < Formula
   url "https://ghfast.top/https://github.com/gradle/gradle-completion/archive/refs/tags/v9.3.1.tar.gz"
   sha256 "ad1578915f793074fedd180fc2fb87390af9ee1a8ebf63d09e0af4a5fa4f1c4e"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/gradle/gradle-completion.git", branch: "master"
 
   bottle do

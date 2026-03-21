@@ -4,6 +4,7 @@ class LinuxHeadersAT515 < Formula
   url "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.202.tar.gz"
   sha256 "7459799f7138c67817f587225d453647b2219f5371d0b610823a5fcecbc496d8"
   license "GPL-2.0-only"
+  compatibility_version 1
 
   livecheck do
     url :homepage

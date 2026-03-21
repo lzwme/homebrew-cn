@@ -4,6 +4,7 @@ class Libuv < Formula
   url "https://dist.libuv.org/dist/v1.52.1/libuv-v1.52.1.tar.gz"
   sha256 "66d511b9e6e334c0e62279eb234fbfb2b3110b1479c09b95b44c7afca8cff9e7"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/libuv/libuv.git", branch: "v1.x"
 
   livecheck do

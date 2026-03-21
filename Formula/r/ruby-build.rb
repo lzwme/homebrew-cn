@@ -4,6 +4,7 @@ class RubyBuild < Formula
   url "https://ghfast.top/https://github.com/rbenv/ruby-build/archive/refs/tags/v20260317.tar.gz"
   sha256 "f52019a9ecac3587888b7bf421c21912121b546b001ce9521669ac9bb41db73f"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/rbenv/ruby-build.git", branch: "master"
 
   bottle do

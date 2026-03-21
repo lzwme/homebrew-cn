@@ -4,6 +4,7 @@ class Luv < Formula
   url "https://ghfast.top/https://github.com/luvit/luv/archive/refs/tags/1.52.1-0.tar.gz"
   sha256 "e8b8774b31d24be4fcf2b021b90599ecccc8e476c61efcc59c3c10cab813a885"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/luvit/luv.git", branch: "master"
 
   bottle do

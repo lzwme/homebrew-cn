@@ -7,6 +7,7 @@ class LibusbCompat < Formula
     "LGPL-2.1-or-later",
     any_of: ["LGPL-2.1-or-later", "BSD-3-Clause"], # libusb/usb.h
   ]
+  compatibility_version 1
 
   livecheck do
     url :stable

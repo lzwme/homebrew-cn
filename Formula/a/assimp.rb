@@ -13,6 +13,7 @@ class Assimp < Formula
     "Zlib",      # contrib/unzip
   ]
   revision 1
+  compatibility_version 1
   head "https://github.com/assimp/assimp.git", branch: "master"
 
   bottle do

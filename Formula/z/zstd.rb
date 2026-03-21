@@ -11,6 +11,7 @@ class Zstd < Formula
     "MIT", # lib/dictBuilder/divsufsort.c
   ]
   revision 1
+  compatibility_version 1
   head "https://github.com/facebook/zstd.git", branch: "dev"
 
   # The upstream repository contains old, one-off tags (5.5.5, 6.6.6) that are

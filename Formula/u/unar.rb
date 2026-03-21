@@ -5,6 +5,7 @@ class Unar < Formula
   sha256 "652953d7988b3c33f4f52b61c357afd1a7c2fc170e5e6e2219f4432b0c4cd39f"
   license "LGPL-2.1-or-later"
   revision 7
+  compatibility_version 1
   head "https://github.com/MacPaw/XADMaster.git", branch: "master"
 
   bottle do

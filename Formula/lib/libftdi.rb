@@ -5,6 +5,7 @@ class Libftdi < Formula
   sha256 "7c7091e9c86196148bd41177b4590dccb1510bfe6cea5bf7407ff194482eb049"
   license "LGPL-2.1-only"
   revision 2
+  compatibility_version 1
 
   livecheck do
     url "https://www.intra2net.com/en/developer/libftdi/download.php"

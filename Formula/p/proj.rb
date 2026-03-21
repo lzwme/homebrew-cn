@@ -5,6 +5,7 @@ class Proj < Formula
   mirror "https://download.osgeo.org/proj/proj-9.8.0.tar.gz"
   sha256 "a8b493b00cf4d08b712b9e063ed5e53e2be90fcde46770e9dbd773341f378f43"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/OSGeo/proj.git", branch: "master"
 
   livecheck do

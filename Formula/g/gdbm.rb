@@ -5,6 +5,7 @@ class Gdbm < Formula
   mirror "https://ftp.gnu.org/gnu/gdbm/gdbm-1.26.tar.gz"
   sha256 "6a24504a14de4a744103dcb936be976df6fbe88ccff26065e54c1c47946f4a5e"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "665930fdbccbaf710705195a7ee89f3b3e04122e11d585f6a50cac2ff2595296"

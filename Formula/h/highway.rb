@@ -4,6 +4,7 @@ class Highway < Formula
   url "https://ghfast.top/https://github.com/google/highway/archive/refs/tags/1.3.0.tar.gz"
   sha256 "07b3c1ba2c1096878a85a31a5b9b3757427af963b1141ca904db2f9f4afe0bc2"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/google/highway.git", branch: "master"
 
   bottle do

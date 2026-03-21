@@ -5,6 +5,7 @@ class DotnetAT8 < Formula
   url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v8.0.125.tar.gz"
   sha256 "55461fd09921edad587043b935974dcb999974aec6addff95c8918070b03490f"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable

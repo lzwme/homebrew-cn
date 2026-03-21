@@ -4,6 +4,7 @@ class VulkanHeaders < Formula
   url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-Headers/archive/refs/tags/vulkan-sdk-1.4.341.0.tar.gz"
   sha256 "d73bc5036b6556b741f6985ff600ca720308c5f2850e4a43ceb498bd3de069e7"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/KhronosGroup/Vulkan-Headers.git", branch: "main"
 
   livecheck do

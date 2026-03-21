@@ -5,6 +5,7 @@ class Rtmpdump < Formula
       tag:      "v2.6",
       revision: "138fdb258d9fc26f1843fd1b891180416c9dc575"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  compatibility_version 1
   head "https://git.ffmpeg.org/rtmpdump.git", branch: "master"
 
   bottle do

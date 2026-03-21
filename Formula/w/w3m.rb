@@ -4,6 +4,7 @@ class W3m < Formula
   url "https://git.sr.ht/~rkta/w3m/archive/v0.5.6.tar.gz"
   sha256 "8dd652cd3f31817d68c7263c34eeffb50118c80be19e1159bf8cbf763037095e"
   license "w3m"
+  compatibility_version 1
   head "https://git.sr.ht/~rkta/w3m", branch: "master"
 
   bottle do

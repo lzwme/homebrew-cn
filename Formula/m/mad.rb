@@ -4,6 +4,7 @@ class Mad < Formula
   url "https://codeberg.org/tenacityteam/libmad/releases/download/0.16.4/libmad-0.16.4.tar.gz"
   sha256 "0f6bfb36c554075494b5fc2c646d08de7364819540f23bab30ae73fa1b5cfe65"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "c2f1263d0123e856bc3b10b59ec49ce8533a75f8bf46c9829a19a482134a8b33"

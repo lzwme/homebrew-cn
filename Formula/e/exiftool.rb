@@ -7,6 +7,7 @@ class Exiftool < Formula
   mirror "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-13.50.tar.gz"
   sha256 "27e2d66eb21568cc0d59520f89afcaaa50735e1ad9fa4b36d0a4ccf916c70d31"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
+  compatibility_version 1
 
   livecheck do
     url "https://exiftool.org/history.html"

@@ -5,6 +5,7 @@ class SpirvTools < Formula
   sha256 "15bfb678138cdf9cd1480dfb952547bbb66b763a735b6d5582578572f5c2e6f9"
   license "Apache-2.0"
   version_scheme 1
+  compatibility_version 1
   head "https://github.com/KhronosGroup/SPIRV-Tools.git", branch: "main"
 
   livecheck do

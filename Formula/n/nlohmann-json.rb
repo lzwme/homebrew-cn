@@ -4,6 +4,7 @@ class NlohmannJson < Formula
   url "https://ghfast.top/https://github.com/nlohmann/json/archive/refs/tags/v3.12.0.tar.gz"
   sha256 "4b92eb0c06d10683f7447ce9406cb97cd4b453be18d7279320f7b2f025c10187"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/nlohmann/json.git", branch: "develop"
 
   bottle do

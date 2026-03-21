@@ -4,6 +4,7 @@ class Gh < Formula
   url "https://ghfast.top/https://github.com/cli/cli/archive/refs/tags/v2.88.1.tar.gz"
   sha256 "79b9d8b6f45771188bcbe7de23e0300827b33454b811881522e20f6b48bb6e4c"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/cli/cli.git", branch: "trunk"
 
   livecheck do

@@ -4,6 +4,7 @@ class PythonAT311 < Formula
   url "https://www.python.org/ftp/python/3.11.15/Python-3.11.15.tgz"
   sha256 "f4de1b10bd6c70cbb9fa1cd71fc5038b832747a74ee59d599c69ce4846defb50"
   license "Python-2.0"
+  compatibility_version 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"

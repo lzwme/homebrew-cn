@@ -5,6 +5,7 @@ class TclTk < Formula
   mirror "https://fossies.org/linux/misc/tcl9.0.3-src.tar.gz"
   sha256 "2537ba0c86112c8c953f7c09d33f134dd45c0fb3a71f2d7f7691fd301d2c33a6"
   license "TCL"
+  compatibility_version 1
 
   livecheck do
     url :stable

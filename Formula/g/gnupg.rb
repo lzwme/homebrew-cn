@@ -4,6 +4,7 @@ class Gnupg < Formula
   url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.18.tar.bz2"
   sha256 "0dbd64e0322fe1a4813360d46539d5f8daf4a8fa235cf5fce464e8b0214a7e4f"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   # GnuPG usually indicates stable releases with an even-numbered minor but
   # can declare an odd-numbered minor stable. e.g. 2.5 was stable since 2.5.16,

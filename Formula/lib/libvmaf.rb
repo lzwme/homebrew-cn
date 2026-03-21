@@ -4,6 +4,7 @@ class Libvmaf < Formula
   url "https://ghfast.top/https://github.com/Netflix/vmaf/archive/refs/tags/v3.0.0.tar.gz"
   sha256 "7178c4833639e6b989ecae73131d02f70735fdb3fc2c7d84bc36c9c3461d93b1"
   license "BSD-2-Clause-Patent"
+  compatibility_version 1
 
   bottle do
     rebuild 1

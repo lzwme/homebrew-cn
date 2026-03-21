@@ -4,6 +4,7 @@ class Exiv2 < Formula
   url "https://ghfast.top/https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.8.tar.gz"
   sha256 "ea51b0609f58a9afa063b60daa1539948b62247721e154f4fff0ad3aec9f9756"
   license "GPL-2.0-or-later"
+  compatibility_version 1
   head "https://github.com/Exiv2/exiv2.git", branch: "main"
 
   livecheck do

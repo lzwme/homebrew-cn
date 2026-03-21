@@ -11,6 +11,7 @@ class Qtbase < Formula
     "BSD-3-Clause", # *.cmake
     "GFDL-1.3-no-invariants-only", # *.qdoc
   ]
+  compatibility_version 1
   head "https://code.qt.io/qt/qtbase.git", branch: "dev"
 
   # The first-party website doesn't make version information readily available,

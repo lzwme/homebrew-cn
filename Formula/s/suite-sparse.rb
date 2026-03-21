@@ -11,6 +11,7 @@ class SuiteSparse < Formula
     "GPL-3.0-only",
     any_of: ["LGPL-3.0-or-later", "GPL-2.0-or-later"],
   ]
+  compatibility_version 1
 
   livecheck do
     url :stable

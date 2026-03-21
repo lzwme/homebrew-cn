@@ -4,6 +4,7 @@ class Resvg < Formula
   url "https://ghfast.top/https://github.com/linebender/resvg/archive/refs/tags/v0.47.0.tar.gz"
   sha256 "7869119fd822983b0a0bc2469bc94d59e7908fc12165fa67a105a4fa25087f9a"
   license "MPL-2.0"
+  compatibility_version 1
   head "https://github.com/linebender/resvg.git", branch: "main"
 
   bottle do

@@ -5,6 +5,7 @@ class OpensslAT3 < Formula
   mirror "http://fresh-center.net/linux/misc/openssl-3.6.1.tar.gz"
   sha256 "b1bfedcd5b289ff22aee87c9d600f515767ebf45f77168cb6d64f231f518a82e"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url "https://openssl-library.org/source/"

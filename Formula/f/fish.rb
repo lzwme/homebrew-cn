@@ -4,6 +4,7 @@ class Fish < Formula
   url "https://ghfast.top/https://github.com/fish-shell/fish-shell/releases/download/4.5.0/fish-4.5.0.tar.xz"
   sha256 "89151f8cf14b634e080226fe696f9ce7d4d153c77629996ca4431c80482c64ed"
   license "GPL-2.0-only"
+  compatibility_version 1
   head "https://github.com/fish-shell/fish-shell.git", branch: "master"
 
   livecheck do

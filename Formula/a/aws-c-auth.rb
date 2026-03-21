@@ -4,6 +4,7 @@ class AwsCAuth < Formula
   url "https://ghfast.top/https://github.com/awslabs/aws-c-auth/archive/refs/tags/v0.10.1.tar.gz"
   sha256 "85d737f0f735256f1931e85e4cadbe228d88698f7b59a9b390b49ef5d0778a43"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "5c22d6769a7520e25ffa70a46af3e10473250d05c74a789905967406d7ab8258"

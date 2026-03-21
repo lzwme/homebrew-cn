@@ -9,6 +9,7 @@ class Qtconnectivity < Formula
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
   ]
+  compatibility_version 1
   head "https://code.qt.io/qt/qtconnectivity.git", branch: "dev"
 
   livecheck do

@@ -6,6 +6,7 @@ class Cmake < Formula
   mirror "http://fresh-center.net/linux/misc/legacy/cmake-4.3.0.tar.gz"
   sha256 "f51b3c729f85d8dde46a92c071d2826ea6afb77d850f46894125de7cc51baa77"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://gitlab.kitware.com/cmake/cmake.git", branch: "master"
 
   # The "latest" release on GitHub has been an unstable version before, and

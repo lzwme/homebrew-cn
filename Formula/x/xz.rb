@@ -10,6 +10,7 @@ class Xz < Formula
     "GPL-2.0-or-later",
   ]
   version_scheme 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "770e7bbcac1c6422435e63cdc48fc68f40942060913ee2d8d24d4a0eadbeb593"

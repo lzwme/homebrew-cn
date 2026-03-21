@@ -13,6 +13,7 @@ class Qtmultimedia < Formula
     "GPL-3.0-only", # Qt6MultimediaTestLib
     "MIT",          # bundled signalsmith-stretch (Linux)
   ]
+  compatibility_version 1
   head "https://code.qt.io/qt/qtmultimedia.git", branch: "dev"
 
   livecheck do

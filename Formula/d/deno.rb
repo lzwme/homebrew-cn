@@ -4,6 +4,7 @@ class Deno < Formula
   url "https://ghfast.top/https://github.com/denoland/deno/releases/download/v2.7.7/deno_src.tar.gz"
   sha256 "8786a1cb51d93275da845be33e0199a7a63c6ecc7839b8feec548097288c16ac"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do

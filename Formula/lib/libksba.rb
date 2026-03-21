@@ -4,6 +4,7 @@ class Libksba < Formula
   url "https://gnupg.org/ftp/gcrypt/libksba/libksba-1.6.8.tar.bz2"
   sha256 "0f4510f1c7a679c3545990a31479f391ad45d84e039176309d42f80cf41743f5"
   license any_of: ["LGPL-3.0-or-later", "GPL-2.0-or-later"]
+  compatibility_version 1
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/libksba/"

@@ -4,6 +4,7 @@ class Libxp < Formula
   url "https://gitlab.freedesktop.org/xorg/lib/libxp/-/archive/libXp-1.0.4/libxp-libXp-1.0.4.tar.bz2"
   sha256 "81468f6d5d8d8f847aac50af60b36c43d84d976d907ab1dfd667683dbfb5fb90"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable

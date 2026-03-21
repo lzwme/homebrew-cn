@@ -3,6 +3,7 @@ class Libspatialite < Formula
   homepage "https://www.gaia-gis.it/fossil/libspatialite/index"
   license any_of: ["MPL-1.1", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
   revision 4
+  compatibility_version 1
 
   stable do
     url "https://www.gaia-gis.it/gaia-sins/libspatialite-sources/libspatialite-5.1.0.tar.gz"

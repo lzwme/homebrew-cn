@@ -4,6 +4,7 @@ class Qemu < Formula
   url "https://download.qemu.org/qemu-10.2.2.tar.xz"
   sha256 "784b296ff29c1417aa72323abcb2d2ea9ab9771724f577dcd785c3b04f21e176"
   license "GPL-2.0-only"
+  compatibility_version 1
   head "https://gitlab.com/qemu-project/qemu.git", branch: "master"
 
   livecheck do

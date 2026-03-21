@@ -4,6 +4,7 @@ class R < Formula
   url "https://cran.r-project.org/src/base/R-4/R-4.5.3.tar.gz"
   sha256 "aa5c1ed4293c7271ac513d654670356ac0e8a6ad5e42be014365d11150b5b8f2"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://cran.rstudio.com/banner.shtml"

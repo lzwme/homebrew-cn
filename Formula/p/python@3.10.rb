@@ -4,6 +4,7 @@ class PythonAT310 < Formula
   url "https://www.python.org/ftp/python/3.10.20/Python-3.10.20.tgz"
   sha256 "4ff5fd4c5bab803b935019f3e31d7219cebd6f870d00389cea53b88bbe935d1a"
   license "Python-2.0"
+  compatibility_version 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"

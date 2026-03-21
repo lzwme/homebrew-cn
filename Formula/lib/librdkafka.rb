@@ -4,6 +4,7 @@ class Librdkafka < Formula
   url "https://ghfast.top/https://github.com/confluentinc/librdkafka/archive/refs/tags/v2.13.2.tar.gz"
   sha256 "14972092e4115f6e99f798a7cb420cbf6daa0c73502b3c52ae42fb5b418eea8f"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://github.com/confluentinc/librdkafka.git", branch: "master"
 
   livecheck do

@@ -7,6 +7,7 @@ class Samba < Formula
   url "https://download.samba.org/pub/samba/stable/samba-4.24.0.tar.gz"
   sha256 "1b1e457fd651a612cd08226cc6efd04e5d01e36d918c8b4c4e470e74e86881ea"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://www.samba.org/samba/download/"

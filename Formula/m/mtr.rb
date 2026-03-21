@@ -8,6 +8,7 @@ class Mtr < Formula
   # 2. portability/error.* is LGPL-2.0-only (only used on macOS)
   # 3. portability/getopt.* is omitted as unused
   license all_of: ["GPL-2.0-only", "BSD-3-Clause", "LGPL-2.0-only"]
+  compatibility_version 1
   head "https://github.com/traviscross/mtr.git", branch: "master"
 
   bottle do

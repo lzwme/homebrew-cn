@@ -10,6 +10,7 @@ class Qtscxml < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qscxmlc
     "BSD-3-Clause", # *.cmake
   ]
+  compatibility_version 1
   head "https://code.qt.io/qt/qtscxml.git", branch: "dev"
 
   livecheck do

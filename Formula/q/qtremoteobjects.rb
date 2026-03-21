@@ -10,6 +10,7 @@ class Qtremoteobjects < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # repc
     "BSD-3-Clause", # *.cmake
   ]
+  compatibility_version 1
   head "https://code.qt.io/qt/qtremoteobjects.git", branch: "dev"
 
   livecheck do

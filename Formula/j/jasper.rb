@@ -4,6 +4,7 @@ class Jasper < Formula
   url "https://ghfast.top/https://github.com/jasper-software/jasper/releases/download/version-4.2.9/jasper-4.2.9.tar.gz"
   sha256 "f71cf643937a5fcaedcfeb30a22ba406912948ad4413148214df280afc425454"
   license "JasPer-2.0"
+  compatibility_version 1
 
   livecheck do
     url :stable

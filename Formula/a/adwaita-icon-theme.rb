@@ -4,6 +4,7 @@ class AdwaitaIconTheme < Formula
   url "https://download.gnome.org/sources/adwaita-icon-theme/50/adwaita-icon-theme-50.0.tar.xz"
   sha256 "fac6e0401fca714780561a081b8f7e27c3bc1db34ebda4da175081f26b24d460"
   license any_of: ["LGPL-3.0-or-later", "CC-BY-SA-3.0"]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "47172d1fb11dcdac39b27a41921517f3710a3dc0cde41372c3a086c955f77ba8"

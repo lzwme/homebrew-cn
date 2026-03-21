@@ -4,6 +4,7 @@ class Nss < Formula
   url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_121_RTM/src/nss-3.121.tar.gz"
   sha256 "cb3a8f8781bea78b7b8edd3afb7a2cb58e4881bb0160d189a39b98216ba7632e"
   license "MPL-2.0"
+  compatibility_version 1
 
   livecheck do
     url "https://ftp.mozilla.org/pub/security/nss/releases/"

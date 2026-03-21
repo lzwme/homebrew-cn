@@ -10,6 +10,7 @@ class Redis < Formula
     "MIT", # deps/lua
     any_of: ["CC0-1.0", "BSD-2-Clause"], # deps/hdr_histogram
   ]
+  compatibility_version 1
   head "https://github.com/redis/redis.git", branch: "unstable"
 
   livecheck do

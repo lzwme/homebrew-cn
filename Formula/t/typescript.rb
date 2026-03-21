@@ -4,6 +4,7 @@ class Typescript < Formula
   url "https://registry.npmjs.org/typescript/-/typescript-5.9.3.tgz"
   sha256 "10e108c9cf7d5f2879053dff18515fb405abf2ccef63eaaf017d9c571687a1d3"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "0c23793ac33b974de3cf9ae83c60ce9d2bb405a0994e956bb845f2bde50b37ec"

@@ -5,6 +5,7 @@ class Vtk < Formula
   sha256 "cee64b98d270ff7302daf1ef13458dff5d5ac1ecb45d47723835f7f7d562c989"
   license "BSD-3-Clause"
   revision 3
+  compatibility_version 1
   head "https://gitlab.kitware.com/vtk/vtk.git", branch: "master"
 
   bottle do

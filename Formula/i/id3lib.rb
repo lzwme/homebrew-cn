@@ -5,6 +5,7 @@ class Id3lib < Formula
   sha256 "2749cc3c0cd7280b299518b1ddf5a5bcfe2d1100614519b68702230e26c7d079"
   license "LGPL-2.0-or-later"
   revision 1
+  compatibility_version 1
 
   bottle do
     rebuild 1

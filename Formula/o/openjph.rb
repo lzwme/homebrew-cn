@@ -4,6 +4,7 @@ class Openjph < Formula
   url "https://ghfast.top/https://github.com/aous72/OpenJPH/archive/refs/tags/0.26.3.tar.gz"
   sha256 "29de006da7f1e8cf0cd7c3ec424cf29103e465052c00b5a5f0ccb7e1f917bb3f"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://github.com/aous72/OpenJPH.git", branch: "master"
 
   bottle do

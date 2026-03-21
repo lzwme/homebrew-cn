@@ -5,6 +5,7 @@ class DockerMachine < Formula
   version "0.16.2-gitlab.44"
   sha256 "10b3032f43f445e3974f2890497a89f41d2e7134a60d507e03394d5f40a8c94d"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://gitlab.com/gitlab-org/ci-cd/docker-machine.git", branch: "main"
 
   bottle do

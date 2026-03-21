@@ -6,6 +6,7 @@ class Sourcekitten < Formula
       revision: "731ffe6a35344a19bab00cdca1c952d5b4fee4d8"
   license "MIT"
   revision 1
+  compatibility_version 1
   head "https://github.com/jpsim/SourceKitten.git", branch: "main"
 
   bottle do

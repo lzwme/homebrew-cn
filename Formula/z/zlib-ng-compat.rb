@@ -7,6 +7,7 @@ class ZlibNgCompat < Formula
   sha256 "f9c65aa9c852eb8255b636fd9f07ce1c406f061ec19a2e7d508b318ca0c907d1"
   license "Zlib"
   revision 1
+  compatibility_version 1
   head "https://github.com/zlib-ng/zlib-ng.git", branch: "develop"
 
   livecheck do

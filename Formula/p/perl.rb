@@ -5,6 +5,7 @@ class Perl < Formula
   sha256 "098c7f76e7a28443f6403610c7e339777905360c5225798fd142b8d33b05c6b4"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   revision 1
+  compatibility_version 1
   head "https://github.com/perl/perl5.git", branch: "blead"
 
   livecheck do

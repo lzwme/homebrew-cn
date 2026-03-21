@@ -4,6 +4,7 @@ class Gtkx3 < Formula
   url "https://download.gnome.org/sources/gtk/3.24/gtk-3.24.51.tar.xz"
   sha256 "0013877c6bd23c2dbe42ad7c70a053d0e449be66736574e37867c49c5f905a4f"
   license "LGPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url :stable

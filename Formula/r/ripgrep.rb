@@ -4,6 +4,7 @@ class Ripgrep < Formula
   url "https://ghfast.top/https://github.com/BurntSushi/ripgrep/archive/refs/tags/15.1.0.tar.gz"
   sha256 "046fa01a216793b8bd2750f9d68d4ad43986eb9c0d6122600f993906012972e8"
   license "Unlicense"
+  compatibility_version 1
   head "https://github.com/BurntSushi/ripgrep.git", branch: "master"
 
   livecheck do

@@ -4,6 +4,7 @@ class Mongosh < Formula
   url "https://registry.npmjs.org/@mongosh/cli-repl/-/cli-repl-2.8.1.tgz"
   sha256 "abeb47fd4251abb569d2c9132b28f79e96f41c7983eb3505db9ee393fb3b10f5"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc5503176400ebf8bc1796fd4d8289816ec190da0e8d7b15c3eb421f48cd2689"

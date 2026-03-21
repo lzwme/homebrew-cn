@@ -4,6 +4,7 @@ class Podman < Formula
   url "https://ghfast.top/https://github.com/containers/podman/archive/refs/tags/v5.8.1.tar.gz"
   sha256 "b9540ecb19cfcbcfc40e1b81d39930f688c537d8fd6f11ae56be41f2bf9e97a4"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
+  compatibility_version 1
   head "https://github.com/containers/podman.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a

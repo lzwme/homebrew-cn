@@ -4,6 +4,7 @@ class Libid3tag < Formula
   url "https://codeberg.org/tenacityteam/libid3tag/releases/download/0.16.4/id3tag-0.16.4-source.tar.gz"
   sha256 "8b6bc96016f6ab3a52b753349ed442e15181de9db1df01884f829e3d4f3d1e78"
   license "GPL-2.0-only"
+  compatibility_version 1
   head "https://codeberg.org/tenacityteam/libid3tag.git", branch: "main"
 
   bottle do

@@ -5,6 +5,7 @@ class LlvmAT20 < Formula
   sha256 "6898f963c8e938981e6c4a302e83ec5beb4630147c7311183cf61069af16333d"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
+  compatibility_version 1
 
   livecheck do
     url :stable

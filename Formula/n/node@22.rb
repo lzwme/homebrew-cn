@@ -5,6 +5,7 @@ class NodeAT22 < Formula
   sha256 "87104b07e7acee748bcc5391e1bc69cf3571caa0fdfb8b1d6b5fd3f9599b7849"
   license "MIT"
   revision 3
+  compatibility_version 1
 
   livecheck do
     url "https://registry.npmmirror.com/-/binary/node/"

@@ -5,6 +5,7 @@ class ProtobufC < Formula
   sha256 "e2c86271873a79c92b58fef7ebf8de1aa0df4738347a8bd5d4e65a80a16d0d24"
   license "BSD-2-Clause"
   revision 12
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "62765efeffc1718219c4b6ea9c8a89ac60bfea91033d96198e7339dfffcb39dd"

@@ -4,6 +4,7 @@ class Taglib < Formula
   url "https://taglib.github.io/releases/taglib-2.2.1.tar.gz"
   sha256 "7e76b5299dcef427c486bffe455098470c8da91cf3ccb9ea804893df57389b5e"
   license all_of: ["LGPL-2.1-only", "MPL-1.1"]
+  compatibility_version 1
   head "https://github.com/taglib/taglib.git", branch: "master"
 
   bottle do

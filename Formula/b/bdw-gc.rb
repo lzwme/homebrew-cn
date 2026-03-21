@@ -4,6 +4,7 @@ class BdwGc < Formula
   url "https://ghfast.top/https://github.com/bdwgc/bdwgc/releases/download/v8.2.12/gc-8.2.12.tar.gz"
   sha256 "42e5194ad06ab6ffb806c83eb99c03462b495d979cda782f3c72c08af833cd4e"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/bdwgc/bdwgc.git", branch: "master"
 
   livecheck do

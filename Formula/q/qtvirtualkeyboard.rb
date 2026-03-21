@@ -10,6 +10,7 @@ class Qtvirtualkeyboard < Formula
     "Apache-2.0",   # bundled openwnn, pinyin and tcime
     "BSD-3-Clause", # bundled tcime; *.cmake
   ]
+  compatibility_version 1
   head "https://code.qt.io/qt/qtvirtualkeyboard.git", branch: "dev"
 
   livecheck do

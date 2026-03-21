@@ -4,6 +4,7 @@ class Libmediainfo < Formula
   url "https://mediaarea.net/download/source/libmediainfo/26.01/libmediainfo_26.01.tar.xz"
   sha256 "bcd3d2cc12cf108ca0fbad07568b303257e72afd8ff73d05cfe6b7aa0e66a1c5"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://github.com/MediaArea/MediaInfoLib.git", branch: "master"
 
   livecheck do

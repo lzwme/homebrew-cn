@@ -5,6 +5,7 @@ class Libngtcp2 < Formula
   mirror "http://fresh-center.net/linux/www/ngtcp2-1.21.0.tar.xz"
   sha256 "2d1c07e6aa509c017516c08307b0b707cd165a17275ab5f1caff9aaa0e3b6c7d"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/ngtcp2/ngtcp2.git", branch: "main"
 
   bottle do

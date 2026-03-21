@@ -4,6 +4,7 @@ class Fizz < Formula
   url "https://ghfast.top/https://github.com/facebookincubator/fizz/archive/refs/tags/v2026.03.09.00.tar.gz"
   sha256 "1859e710fa26e3ea9fb190f3f7c770c13614378e19bafaa22776958749f7b02f"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/facebookincubator/fizz.git", branch: "main"
 
   bottle do

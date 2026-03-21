@@ -4,6 +4,7 @@ class Mvfst < Formula
   url "https://ghfast.top/https://github.com/facebook/mvfst/archive/refs/tags/v2026.03.09.00.tar.gz"
   sha256 "0fbdf46b742a76f32ca2c2bfcd9c6e9246f8bf9bb6921dbef65e087253af8970"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/facebook/mvfst.git", branch: "main"
 
   bottle do

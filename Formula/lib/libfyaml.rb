@@ -4,6 +4,7 @@ class Libfyaml < Formula
   url "https://ghfast.top/https://github.com/pantoniou/libfyaml/releases/download/v0.9.6/libfyaml-0.9.6.tar.gz"
   sha256 "a59cc3331e2eb903ec36933ad52a45888041cac31e44f553a00511131242c483"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "50fb30d6db3da0bbda7d36d346e78bf30a82a13b9ed263661ab679f9fab2e2a5"

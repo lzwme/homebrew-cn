@@ -1,18 +1,18 @@
 class CargoHack < Formula
   desc "Cargo subcommand to provide options for testing and continuous integration"
   homepage "https://github.com/taiki-e/cargo-hack"
-  url "https://ghfast.top/https://github.com/taiki-e/cargo-hack/archive/refs/tags/v0.6.43.tar.gz"
-  sha256 "cf9048b4b5e52a14cd80d226c68a9a8ee874e187bad31f92c253aba795cc13d4"
+  url "https://ghfast.top/https://github.com/taiki-e/cargo-hack/archive/refs/tags/v0.6.44.tar.gz"
+  sha256 "63dd630915e31995899291d602c49a5cfae062af619e1a75ec04e53687552d04"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/taiki-e/cargo-hack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70e93226d97dbdb77670fdf193b90a45eef3cfb32f7ee702113faf5dc7b7da05"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3c836a65fdbfa2d76cc05605b9f15afd835f9f4a1cd6a306d3b446d3458d1ed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d2b746e3e5ff1c92b567a60bdd727704be9dacbf13e54054f7e9e382694faa5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ea35e0efc48f3f8956584be96cda1de92a712b7a7d13763df6885816e7b5fabe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c49415361a066b378e8958ebffe6a6e2b1bccba86401ebaf64b03ac160127b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0733e1d9ab659eb1c7386b1f36c485233cc2eed48ba15ec1487b8b763fb9daa8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22fcc1e849186d4c3716650fca9a7ed2283e5b9718814051b180d258615942b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56c3be7d257d7d32390db110afac2571d7283ef95742fe9c87b5ae0b824a07a8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a5f9b1de98c01bfc84eec7b0ba141691a4e7e21dbf6b4e90309dfdc0a7b59a1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "353c88c1c4988a0f0be55600a7125a4ed982640a68cb02572cf6694b53868ee3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1d1622968f4cae78f4444d45695744a3e6cd7abadf412be9a544e36a2a062b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bfbf0b389ffcfe4d1b18f2e43404176a28413021cf75db0decf54f61d15815d"
   end
 
   depends_on "rust" => :build

@@ -4,6 +4,7 @@ class TclTkAT8 < Formula
   url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.17/tcl8.6.17-src.tar.gz"
   sha256 "a3903371efcce8a405c5c245d029e9f6850258a60fa3761c4d58995610949b31"
   license "TCL"
+  compatibility_version 1
 
   livecheck do
     url :stable

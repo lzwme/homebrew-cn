@@ -4,6 +4,7 @@ class Mono < Formula
   url "https://dl.winehq.org/mono/sources/mono/mono-6.14.1.tar.xz"
   sha256 "3024c97c0bc8cbcd611c401d5f994528704108ceb31f31b28dea4783004d0820"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://gitlab.winehq.org/mono/mono.git", branch: "main"
 
   livecheck do

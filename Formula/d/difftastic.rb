@@ -4,6 +4,7 @@ class Difftastic < Formula
   url "https://ghfast.top/https://github.com/Wilfred/difftastic/archive/refs/tags/0.68.0.tar.gz"
   sha256 "86cfd4232f99c5dac56bd1e6fab7b8d96cfaac7a4271738b50c8189031c97a66"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3cb4cfa55f76562ec113c42d0888214947ded6b18f074581dd0132216c63614f"

@@ -5,6 +5,7 @@ class Openslide < Formula
   sha256 "cc227c44316abb65fb28f1c967706eb7254f91dbfab31e9ae6a48db6cf4ae562"
   license "LGPL-2.1-only"
   revision 1
+  compatibility_version 1
 
   bottle do
     rebuild 1

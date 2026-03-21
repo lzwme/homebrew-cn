@@ -3,6 +3,7 @@ class Pmix < Formula
   homepage "https://openpmix.github.io/"
   license "BSD-3-Clause"
   revision 1
+  compatibility_version 1
 
   stable do
     url "https://ghfast.top/https://github.com/openpmix/openpmix/releases/download/v5.0.10/pmix-5.0.10.tar.bz2"

@@ -4,6 +4,7 @@ class Vips < Formula
   url "https://ghfast.top/https://github.com/libvips/libvips/releases/download/v8.18.1/vips-8.18.1.tar.xz"
   sha256 "3a0d641175013df712a348d5c528e5f0b46fcbfa4b00b30fcf228c631ffee485"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   livecheck do
     url :stable

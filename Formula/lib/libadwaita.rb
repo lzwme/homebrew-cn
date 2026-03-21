@@ -4,6 +4,7 @@ class Libadwaita < Formula
   url "https://download.gnome.org/sources/libadwaita/1.9/libadwaita-1.9.0.tar.xz"
   sha256 "817837bf06363db5bbfce66085136eff1436af6625dfabff3ca08b87bfca1b6b"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
   head "https://gitlab.gnome.org/GNOME/libadwaita.git", branch: "main"
 
   # libadwaita doesn't use GNOME's "even-numbered minor is stable" version

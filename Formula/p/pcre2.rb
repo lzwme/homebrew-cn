@@ -5,6 +5,7 @@ class Pcre2 < Formula
   sha256 "47fe8c99461250d42f89e6e8fdaeba9da057855d06eb7fc08d9ca03fd08d7bc7"
   license "BSD-3-Clause"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url :stable

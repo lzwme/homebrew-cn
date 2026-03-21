@@ -4,6 +4,7 @@ class Giflib < Formula
   url "https://downloads.sourceforge.net/project/giflib/giflib-6.x/giflib-6.1.2.tar.gz"
   sha256 "2421abb54f5906b14965d28a278fb49e1ec9fe5ebbc56244dd012383a973d5c0"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable

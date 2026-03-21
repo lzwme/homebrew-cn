@@ -9,6 +9,7 @@ class Qtnetworkauth < Formula
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
   ]
+  compatibility_version 1
   head "https://code.qt.io/qt/qtnetworkauth.git", branch: "dev"
 
   livecheck do

@@ -4,6 +4,7 @@ class AtSpi2Core < Formula
   url "https://download.gnome.org/sources/at-spi2-core/2.60/at-spi2-core-2.60.0.tar.xz"
   sha256 "80e50c1a97d8fd660a3fadb02ca35876df881c266d3d6108fc5b4c113614cb99"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 arm64_tahoe:   "9f10240d7f2e152d0694dc1c499bb0904b5d32ef465f1e2a17dffb580dc03fa0"

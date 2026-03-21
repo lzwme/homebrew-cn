@@ -4,6 +4,7 @@ class MongoCDriver < Formula
   url "https://ghfast.top/https://github.com/mongodb/mongo-c-driver/archive/refs/tags/2.2.3.tar.gz"
   sha256 "5d725d488bf26ae61403dca4c988d49f10814ebaaee8fcf4342e2f89a6e06410"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/mongodb/mongo-c-driver.git", branch: "master"
 
   livecheck do

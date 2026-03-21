@@ -4,6 +4,7 @@ class Libxpm < Formula
   url "https://www.x.org/archive/individual/lib/libXpm-3.5.18.tar.gz"
   sha256 "74eb57253ed3085686371a331737daf072223b77f76bba13ed65a4b3aa6cb403"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "dfb4812d9570c75c744777378f7653ec3e0072cc64c1676652aba5a63ffb93be"

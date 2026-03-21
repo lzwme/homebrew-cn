@@ -6,6 +6,7 @@ class ApacheArrow < Formula
   sha256 "bd09adb4feac11fe49d1604f296618866702be610c86e2d513b561d877de6b18"
   license "Apache-2.0"
   revision 3
+  compatibility_version 1
   head "https://github.com/apache/arrow.git", branch: "main"
 
   bottle do

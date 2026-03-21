@@ -4,6 +4,7 @@ class Pybind11 < Formula
   url "https://ghfast.top/https://github.com/pybind/pybind11/archive/refs/tags/v3.0.2.tar.gz"
   sha256 "2f20a0af0b921815e0e169ea7fec63909869323581b89d7de1553468553f6a2d"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url :stable

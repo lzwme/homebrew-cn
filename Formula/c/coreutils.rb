@@ -5,6 +5,7 @@ class Coreutils < Formula
   mirror "https://ftp.gnu.org/gnu/coreutils/coreutils-9.10.tar.xz"
   sha256 "16535a9adf0b10037364e2d612aad3d9f4eca3a344949ced74d12faf4bd51d25"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 arm64_tahoe:   "dfb88b3ff6dd4c8aed52209d470dc8f2119d394f883411f4d17ba21972b602e4"

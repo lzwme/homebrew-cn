@@ -4,6 +4,7 @@ class Squashfs < Formula
   url "https://ghfast.top/https://github.com/plougher/squashfs-tools/archive/refs/tags/4.7.5.tar.gz"
   sha256 "547b7b7f4d2e44bf91b6fc554664850c69563701deab9fd9cd7e21f694c88ea6"
   license "GPL-2.0-or-later"
+  compatibility_version 1
   head "https://github.com/plougher/squashfs-tools.git", branch: "master"
 
   # Tags like `4.4-git.1` are not release versions and the regex omits these

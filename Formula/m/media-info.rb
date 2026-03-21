@@ -4,6 +4,7 @@ class MediaInfo < Formula
   url "https://mediaarea.net/download/binary/mediainfo/26.01/MediaInfo_CLI_26.01_GNU_FromSource.tar.xz"
   sha256 "3e70f27783521c31d6e852bd1982cb8858b9633982b66967a56d5364fb856de3"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://github.com/MediaArea/MediaInfo.git", branch: "master"
 
   livecheck do

@@ -4,6 +4,7 @@ class GnuGetopt < Formula
   url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.3.tar.xz"
   sha256 "3330d873f0fceb5560b89a7dc14e4f3288bbd880e96903ed9b50ec2b5799e58b"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/"

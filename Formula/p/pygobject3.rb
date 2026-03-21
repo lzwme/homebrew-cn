@@ -4,6 +4,7 @@ class Pygobject3 < Formula
   url "https://download.gnome.org/sources/pygobject/3.56/pygobject-3.56.1.tar.gz"
   sha256 "2ec1cc8c55c7ffeebb97e58a9bba7aa1e74611f1173628084685446804a8881a"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "71463d786a2c092be821002478ede1418b63816367aa85b63801ff884ef7388e"

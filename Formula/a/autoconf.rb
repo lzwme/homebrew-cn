@@ -8,6 +8,7 @@ class Autoconf < Formula
     "GPL-3.0-or-later",
     "GPL-3.0-or-later" => { with: "Autoconf-exception-3.0" },
   ]
+  compatibility_version 1
 
   bottle do
     rebuild 1

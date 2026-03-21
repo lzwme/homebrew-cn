@@ -4,6 +4,7 @@ class Leptonica < Formula
   url "https://ghfast.top/https://github.com/DanBloomberg/leptonica/releases/download/1.87.0/leptonica-1.87.0.tar.gz"
   sha256 "c73363397f96eb1295602bf44d708a994ad42046c791bf03ea0505d829bdb6a7"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   livecheck do
     url :stable

@@ -4,6 +4,7 @@ class PythonAT312 < Formula
   url "https://www.python.org/ftp/python/3.12.13/Python-3.12.13.tgz"
   sha256 "0816c4761c97ecdb3f50a3924de0a93fd78cb63ee8e6c04201ddfaedca500b0b"
   license "Python-2.0"
+  compatibility_version 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"

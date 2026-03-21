@@ -4,6 +4,7 @@ class FluidSynth < Formula
   url "https://ghfast.top/https://github.com/FluidSynth/fluidsynth/archive/refs/tags/v2.5.3.tar.gz"
   sha256 "6f247edfb4b91b927efc68c8884cec2ec345c8007afe6b59558cc52a67ef2517"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
   head "https://github.com/FluidSynth/fluidsynth.git", branch: "master"
 
   bottle do

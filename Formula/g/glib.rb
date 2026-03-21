@@ -6,6 +6,7 @@ class Glib < Formula
   url "https://download.gnome.org/sources/glib/2.88/glib-2.88.0.tar.xz"
   sha256 "3546251ccbb3744d4bc4eb48354540e1f6200846572bab68e3a2b7b2b64dfd07"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 arm64_tahoe:   "5cc0e9470b11e995f3e2a78db6ca6c5d6f5f84fc57e5216ee11ee99cef385c78"

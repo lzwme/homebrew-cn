@@ -5,6 +5,7 @@ class Libzip < Formula
   sha256 "8a247f57d1e3e6f6d11413b12a6f28a9d388de110adc0ec608d893180ed7097b"
   license "BSD-3-Clause"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://libzip.org/download/"

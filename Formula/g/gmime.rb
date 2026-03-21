@@ -5,6 +5,7 @@ class Gmime < Formula
   sha256 "84cd2a481a27970ec39b5c95f72db026722904a2ccf3fdbd57b280cf2d02b5c4"
   license "LGPL-2.1-or-later"
   revision 1
+  compatibility_version 1
 
   bottle do
     rebuild 1

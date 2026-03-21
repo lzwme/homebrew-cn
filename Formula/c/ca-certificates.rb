@@ -4,6 +4,7 @@ class CaCertificates < Formula
   url "https://curl.se/ca/cacert-2026-03-19.pem"
   sha256 "b6e66569cc3d438dd5abe514d0df50005d570bfc96c14dca8f768d020cb96171"
   license "MPL-2.0"
+  compatibility_version 1
 
   livecheck do
     url :homepage

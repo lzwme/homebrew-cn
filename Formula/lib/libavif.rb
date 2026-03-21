@@ -4,6 +4,7 @@ class Libavif < Formula
   url "https://ghfast.top/https://github.com/AOMediaCodec/libavif/archive/refs/tags/v1.4.0.tar.gz"
   sha256 "713e2b998ca0bf5473fe4624afdbc7fa9f6e4799dd414020fe67d56f6997bf4e"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "1c56406e359dde4df0875ff0a4436d8e86b85cc98c6210c2348c9b2283be1f9d"

@@ -4,6 +4,7 @@ class Librttopo < Formula
   url "https://deb.debian.org/debian/pool/main/libr/librttopo/librttopo_1.1.0.orig.tar.gz"
   sha256 "2e2fcabb48193a712a6c76ac9a9be2a53f82e32f91a2bc834d9f1b4fa9cd879f"
   license "GPL-2.0-or-later"
+  compatibility_version 1
   head "https://git.osgeo.org/gitea/rttopo/librttopo.git", branch: "master"
 
   livecheck do

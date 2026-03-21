@@ -4,6 +4,7 @@ class Fzf < Formula
   url "https://ghfast.top/https://github.com/junegunn/fzf/archive/refs/tags/v0.70.0.tar.gz"
   sha256 "a99e0df4dfb6228c8af63a2f99f39f7476b7da614833141be30a6b3a3f9d440f"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/junegunn/fzf.git", branch: "master"
 
   bottle do

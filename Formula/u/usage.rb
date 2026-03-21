@@ -4,6 +4,7 @@ class Usage < Formula
   url "https://ghfast.top/https://github.com/jdx/usage/archive/refs/tags/v3.0.0.tar.gz"
   sha256 "6a8e521b466b63b3c25d78b1e72662b548babe15423061c691c7039b2e0c03d4"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/jdx/usage.git", branch: "main"
 
   bottle do

@@ -4,6 +4,7 @@ class Librevenge < Formula
   url "https://downloads.sourceforge.net/project/libwpd/librevenge/librevenge-0.0.5/librevenge-0.0.5.tar.xz"
   sha256 "106d0c44bb6408b1348b9e0465666fa83b816177665a22cd017e886c1aaeeb34"
   license any_of: ["LGPL-2.1-or-later", "MPL-2.0"]
+  compatibility_version 1
 
   livecheck do
     url "https://sourceforge.net/projects/libwpd/rss?path=/librevenge"

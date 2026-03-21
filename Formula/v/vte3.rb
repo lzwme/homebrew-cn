@@ -5,6 +5,7 @@ class Vte3 < Formula
   sha256 "6dc6278f6fee30d07d1a03e2ba3335b1ea4e8d2956ceb59d861943115d930a85"
   license "LGPL-2.0-or-later"
   revision 3
+  compatibility_version 1
 
   bottle do
     sha256 arm64_tahoe:   "fb3a1e39f1d3902e6925125a636f0b1d498776bcfe62ff1bdb993dc99e95ee23"

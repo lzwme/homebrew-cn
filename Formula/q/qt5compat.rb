@@ -10,6 +10,7 @@ class Qt5compat < Formula
     "BSD-2-Clause", # src/core5/codecs
     "BSD-3-Clause", # *.cmake
   ]
+  compatibility_version 1
   head "https://code.qt.io/qt/qt5compat.git", branch: "dev"
 
   livecheck do

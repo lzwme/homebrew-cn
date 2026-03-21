@@ -9,6 +9,7 @@ class Qtquickeffectmaker < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     "BSD-3-Clause", # BlurHelper.qml
   ]
+  compatibility_version 1
   head "https://code.qt.io/qt/qtquickeffectmaker.git", branch: "dev"
 
   livecheck do

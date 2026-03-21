@@ -4,6 +4,7 @@ class Libb2 < Formula
   url "https://ghfast.top/https://github.com/BLAKE2/libb2/releases/download/v0.98.1/libb2-0.98.1.tar.gz"
   sha256 "53626fddce753c454a3fea581cbbc7fe9bbcf0bc70416d48fdbbf5d87ef6c72e"
   license "CC0-1.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "4c161a089a39249a589b88d39f57998c6a2183426647ce886708861774b001eb"

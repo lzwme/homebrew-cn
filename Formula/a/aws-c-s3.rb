@@ -4,6 +4,7 @@ class AwsCS3 < Formula
   url "https://ghfast.top/https://github.com/awslabs/aws-c-s3/archive/refs/tags/v0.11.5.tar.gz"
   sha256 "bc76ad6e4ef40703477cd2e411553b85216def71a0073cfe8b7fad8d3728b37c"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "1c1b7003cccc39db9eec9802784837d31194e1f3f29b7f69f84b15df0f50f335"

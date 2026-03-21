@@ -4,6 +4,7 @@ class Glog < Formula
   url "https://ghfast.top/https://github.com/google/glog/archive/refs/tags/v0.7.1.tar.gz"
   sha256 "00e4a87e87b7e7612f519a41e491f16623b12423620006f59f5688bfd8d13b08"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/google/glog.git", branch: "master"
 
   bottle do

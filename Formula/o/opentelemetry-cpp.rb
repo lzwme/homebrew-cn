@@ -1,19 +1,18 @@
 class OpentelemetryCpp < Formula
   desc "OpenTelemetry C++ Client"
   homepage "https://opentelemetry.io/"
-  url "https://ghfast.top/https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.25.0.tar.gz"
-  sha256 "a0c944a9de981fe1874b31d1fe44b830fc30ee030efa27ee23fc73012a3a13e9"
+  url "https://ghfast.top/https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.26.0.tar.gz"
+  sha256 "8a878777a18a013e0ee6604629d1b5f29b162354c14489ad1dccd370f14ac372"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/open-telemetry/opentelemetry-cpp.git", branch: "main"
 
   bottle do
-    sha256               arm64_tahoe:   "3bc622572218f35b31d0694d7afbc481d9a58f4682cb22ff90b65a0cb7f84cfa"
-    sha256               arm64_sequoia: "2e652c7a3b9106aa9ecdb07981ef0ac0a25a922a0a1fc63a0f07aeefb4340055"
-    sha256               arm64_sonoma:  "299a13c39584b510c11bd9233e5dd946dc73e6c35fcdff7bb9a0ff4acd43322e"
-    sha256 cellar: :any, sonoma:        "3daccbe6544f83c23e7613b5f0ef01ace87ec4fa6a98eee2020afa65a46dacc6"
-    sha256               arm64_linux:   "404220054579f3c682d976672ef29119c757f6915f4854d827a01a348042d31c"
-    sha256               x86_64_linux:  "83d731a65c3df00c5d0ffda2a634917173c0f90c77215135aa4e2de650ac9288"
+    sha256               arm64_tahoe:   "7e708cba6203ddfc698b810289ccb1b9d199edf9dcb173fa34aedb989a2e9bd0"
+    sha256               arm64_sequoia: "b4eb95447c0b2553b46e08329885cb637e8cfa1b8726a4fbb7a7133470d025ec"
+    sha256               arm64_sonoma:  "950bdf1cc41e1be4d0145a1e83cae43b4fd47dd52ccaa856c9d267ece70446c6"
+    sha256 cellar: :any, sonoma:        "d589d2c2e7ac28dd557d525851fd13acda7a765ce128acc59810e7f5bbacca89"
+    sha256               arm64_linux:   "51e10146e625eb15b63b3dd82f53225c67585de4cbbb0b5ca90de886dbeda3c5"
+    sha256               x86_64_linux:  "6e7a33e39fb8f698e7a736d3db01bd88a939456263593c0a1c10559d80613e6e"
   end
 
   depends_on "cmake" => :build
@@ -40,9 +39,9 @@ class OpentelemetryCpp < Formula
     cause "fails handling PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED"
   end
 
-  resource "openetelemetry-proto" do
-    url "https://ghfast.top/https://github.com/open-telemetry/opentelemetry-proto/archive/refs/tags/v1.9.0.tar.gz"
-    sha256 "2d2220db196bdfd0aec872b75a5e614458f8396557fc718b28017e1a08db49e4"
+  resource "opentelemetry-proto" do
+    url "https://ghfast.top/https://github.com/open-telemetry/opentelemetry-proto/archive/refs/tags/v1.10.0.tar.gz"
+    sha256 "52c85df79badc45da7e6a8735e8090b05a961b0208756187e1492a40db2d1f5f"
   end
 
   def install
@@ -53,7 +52,7 @@ class OpentelemetryCpp < Formula
       ENV.append "LDFLAGS", "-Wl,--as-needed"
     end
 
-    (buildpath/"opentelemetry-proto").install resource("openetelemetry-proto")
+    (buildpath/"opentelemetry-proto").install resource("opentelemetry-proto")
 
     ENV.append "LDFLAGS", "-Wl,-undefined,dynamic_lookup" if OS.mac?
     system "cmake", "-S", ".", "-B", "build",

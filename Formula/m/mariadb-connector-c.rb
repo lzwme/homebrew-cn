@@ -7,6 +7,7 @@ class MariadbConnectorC < Formula
   sha256 "156aed3b49f857d0ac74fb76f1982968bcbfd8382da3f5b6ae71f616729920d7"
   license "LGPL-2.1-or-later"
   revision 1
+  compatibility_version 1
   head "https://github.com/mariadb-corporation/mariadb-connector-c.git", branch: "3.4"
 
   # The REST API may omit the newest major/minor versions unless the

@@ -5,6 +5,7 @@ class Mpv < Formula
   sha256 "ee21092a5ee427353392360929dc64645c54479aefdb5babc5cfbb5fad626209"
   license :cannot_represent
   revision 4
+  compatibility_version 1
   head "https://github.com/mpv-player/mpv.git", branch: "master"
 
   bottle do

@@ -5,6 +5,7 @@ class Spidermonkey < Formula
   version "140.8.0"
   sha256 "57a7f339ef68273f6597d8074a841fa053f63a21d1f609ab0074a26c063282e6"
   license "MPL-2.0"
+  compatibility_version 1
   head "https://hg.mozilla.org/mozilla-central", using: :hg
 
   # Spidermonkey versions use the same versions as Firefox, so we simply check

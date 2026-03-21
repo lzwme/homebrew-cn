@@ -3,6 +3,7 @@ class Crystal < Formula
   homepage "https://crystal-lang.org/"
   license "Apache-2.0"
   revision 1
+  compatibility_version 1
 
   stable do
     url "https://ghfast.top/https://github.com/crystal-lang/crystal/archive/refs/tags/1.19.1.tar.gz"

@@ -1,17 +1,17 @@
 class Cline < Formula
   desc "AI-powered coding agent for complex work"
   homepage "https://cline.bot"
-  url "https://registry.npmjs.org/cline/-/cline-2.8.1.tgz"
-  sha256 "27072c1e299a6dce2af10f52310ecdb2fc9d2d6de0e731c3e0d29f4f8e04082b"
+  url "https://registry.npmjs.org/cline/-/cline-2.9.0.tgz"
+  sha256 "fda97242c4fdc46958192f5d27a773e11a1ea65f21b32fcf9b0b491595530360"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6e5c14206324b030eebc15cbd913d367782910061d76c75a75d41d5998460025"
-    sha256 cellar: :any,                 arm64_sequoia: "cd455f86012a7d3b4a95245aa34c9f869e68e53fd26af923a37060df372e2572"
-    sha256 cellar: :any,                 arm64_sonoma:  "cd455f86012a7d3b4a95245aa34c9f869e68e53fd26af923a37060df372e2572"
-    sha256 cellar: :any,                 sonoma:        "3e658cae6b2cd0f7bdc3190a6e625e585478fc65b750f564883724b255a600aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0085a8d3e367fcd31a78c6b77a20e7091bf7481ff6999345c91af0c7da62f36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbb1e099f2f9e0ceb77cc5ff0cd37a2a473a5917836f4d87146000d3178e6b91"
+    sha256 cellar: :any,                 arm64_tahoe:   "388306fcdb05927544e7653c270dde57bf91c9b9d74840fff9fc15fbfc9c1875"
+    sha256 cellar: :any,                 arm64_sequoia: "1f80a2850721dce3cea5fa1562c39fb3b35ee21675310fb3a2f8f4ea6cfddd58"
+    sha256 cellar: :any,                 arm64_sonoma:  "1f80a2850721dce3cea5fa1562c39fb3b35ee21675310fb3a2f8f4ea6cfddd58"
+    sha256 cellar: :any,                 sonoma:        "897c2a9179c5dc85e75854e153f4194d2b19ee745294e0c926868bc2ef21455b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "979916eafa9143ab70db0c9b2dfd44ba61944d971ac0c083c717c813584423c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d610853235f48ebf77a49e253c3814ed84635ef278fcc664a75a79f6a519c4c6"
   end
 
   depends_on "node"

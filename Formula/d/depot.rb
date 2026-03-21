@@ -1,8 +1,8 @@
 class Depot < Formula
   desc "Build your Docker images in the cloud"
   homepage "https://depot.dev/"
-  url "https://ghfast.top/https://github.com/depot/cli/archive/refs/tags/v2.101.25.tar.gz"
-  sha256 "9a028088aa9fbb1800b22e09f6280b4bc9d1603fe84f003059b853d90bf526d4"
+  url "https://ghfast.top/https://github.com/depot/cli/archive/refs/tags/v2.101.27.tar.gz"
+  sha256 "16fe2a1028ba410b7efc096975dd688caaa329bde486661db7d2a94a8578a9e4"
   license "MIT"
   head "https://github.com/depot/cli.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Depot < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f799e5758ba94df1fd7c8dc8d6377413cc2a988a201ee97140af8208505dea01"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f799e5758ba94df1fd7c8dc8d6377413cc2a988a201ee97140af8208505dea01"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f799e5758ba94df1fd7c8dc8d6377413cc2a988a201ee97140af8208505dea01"
-    sha256 cellar: :any_skip_relocation, sonoma:        "32daef45d3d19886df232a92d2b74860afccd9639012667cd9e1348814417a48"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f09f242de12acb648195b82883cb10dda5cea4fc1b3b0e7a92819dde85794dbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06aae5c0dbc330c25122911187089c5a414b6e1e83e61f21a176cc0a876c4a87"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d6eaf51f2326e6bae97c61e510a77244df9015f695f18cc0cbb49160a0544a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d6eaf51f2326e6bae97c61e510a77244df9015f695f18cc0cbb49160a0544a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d6eaf51f2326e6bae97c61e510a77244df9015f695f18cc0cbb49160a0544a5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "abec2190a2ae3c63586a1352b1869555bbd9c419ecc57aaacc5a7811fce3399a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8623e8cd2901850ea71a0bca1b6c6ddc289d5548a31c5f2a9bb78816a18efe4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21a756005c596e2abd141538ea29a561cd1802ae05067e750ac370c1f69e6e22"
   end
 
   depends_on "go" => :build

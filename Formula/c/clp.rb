@@ -4,6 +4,7 @@ class Clp < Formula
   url "https://ghfast.top/https://github.com/coin-or/Clp/archive/refs/tags/releases/1.17.11.tar.gz"
   sha256 "2c078e174dc1a7a308e091b6256fb34b4017897fc140ea707ba207b2913ea46d"
   license "EPL-2.0"
+  compatibility_version 1
 
   livecheck do
     url :stable

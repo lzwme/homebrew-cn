@@ -5,6 +5,7 @@ class Libraw < Formula
   sha256 "1071e6e8011593c366ffdadc3d3513f57c90202d526e133174945ec1dd53f2a1"
   license any_of: ["LGPL-2.1-only", "CDDL-1.0"]
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://www.libraw.org/download/"

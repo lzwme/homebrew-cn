@@ -4,6 +4,7 @@ class Libmaxminddb < Formula
   url "https://ghfast.top/https://github.com/maxmind/libmaxminddb/releases/download/1.13.3/libmaxminddb-1.13.3.tar.gz"
   sha256 "a66502ea76eadbe17f2cd6fd708946777253972d2ae8157dee1b23a2fb528171"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "5936b3b75b64cab056955f2bb8c0b756fa60c53804dcd7dbde8abad2abceed84"

@@ -5,6 +5,7 @@ class Cfitsio < Formula
   sha256 "fad44fff274fdda5ffcc0c0fff3bc3c596362722b9292fc8944db91187813600"
   license "CFITSIO"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url :homepage

@@ -4,6 +4,7 @@ class Libretls < Formula
   url "https://causal.agency/libretls/libretls-3.8.1.tar.gz"
   sha256 "3bc9fc0e61827ee2f608e5e44993a8fda6d610b80a1e01a9c75610cc292997b5"
   license "ISC"
+  compatibility_version 1
 
   livecheck do
     url "https://causal.agency/libretls/"

@@ -4,6 +4,7 @@ class Jj < Formula
   url "https://ghfast.top/https://github.com/jj-vcs/jj/archive/refs/tags/v0.39.0.tar.gz"
   sha256 "52a60f058cf66ba3dc0bf69f189e99763b33b6770b3068b2be4fe76ecd287282"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/jj-vcs/jj.git", branch: "main"
 
   bottle do

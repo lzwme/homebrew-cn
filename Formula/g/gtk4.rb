@@ -4,6 +4,7 @@ class Gtk4 < Formula
   url "https://download.gnome.org/sources/gtk/4.22/gtk-4.22.1.tar.xz"
   sha256 "cd7b5a9c41127da6fb321c5a842ad73c62e6996f9ce3f1960ca509f6559d55fc"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
   head "https://gitlab.gnome.org/GNOME/gtk.git", branch: "main"
 
   livecheck do

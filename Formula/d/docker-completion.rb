@@ -4,6 +4,7 @@ class DockerCompletion < Formula
   url "https://ghfast.top/https://github.com/docker/cli/archive/refs/tags/v29.3.0.tar.gz"
   sha256 "47d6dae52c7fff35cf9e41d465c57626564c8ba58447b4ef345901977f63ac8a"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/docker/cli.git", branch: "master"
 
   livecheck do

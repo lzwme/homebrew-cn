@@ -6,6 +6,7 @@ class Libxmlb < Formula
   url "https://ghfast.top/https://github.com/hughsie/libxmlb/releases/download/0.3.25/libxmlb-0.3.25.tar.xz"
   sha256 "77f2768c9debd2e946173cdf9465efd987849805e7c58251c5772ea728a61d9a"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
   head "https://github.com/hughsie/libxmlb.git", branch: "main"
 
   bottle do

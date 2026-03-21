@@ -4,6 +4,7 @@ class Lima < Formula
   url "https://ghfast.top/https://github.com/lima-vm/lima/archive/refs/tags/v2.1.0.tar.gz"
   sha256 "9358f4629ba01a5998327017be0470fff914b5f1bf902bbd2616ec520074ec78"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/lima-vm/lima.git", branch: "master"
 
   bottle do

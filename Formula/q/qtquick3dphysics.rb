@@ -10,6 +10,7 @@ class Qtquick3dphysics < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # cooker
     "BSD-3-Clause", # bundled PhysX; *.cmake
   ]
+  compatibility_version 1
   head "https://code.qt.io/qt/qtquick3dphysics.git", branch: "dev"
 
   livecheck do

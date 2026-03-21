@@ -13,6 +13,7 @@ class UtilLinux < Formula
     :public_domain,
   ]
   revision 1
+  compatibility_version 1
 
   # The directory listing where the `stable` archive is found uses major/minor
   # version directories, where it's necessary to check inside a directory to

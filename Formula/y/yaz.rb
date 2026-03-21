@@ -4,6 +4,7 @@ class Yaz < Formula
   url "https://ftp.indexdata.com/pub/yaz/yaz-5.37.0.tar.gz"
   sha256 "9257feb06e2fdbbfceb7d040c139fa13957c4d1ebba6aa293a6dd13cab2225ce"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   # The latest version text is currently omitted from the homepage for this
   # software, so we have to check the related directory listing page.

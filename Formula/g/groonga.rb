@@ -5,6 +5,7 @@ class Groonga < Formula
   sha256 "e8cec40d59c848617912d988c69ca67445c19fd2d8fcb5b6080eded2df89d545"
   license "LGPL-2.1-or-later"
   revision 2
+  compatibility_version 1
   head "https://github.com/groonga/groonga.git", branch: "main"
 
   livecheck do

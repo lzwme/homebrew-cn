@@ -4,6 +4,7 @@ class Libpq < Formula
   url "https://ftp.postgresql.org/pub/source/v18.3/postgresql-18.3.tar.bz2"
   sha256 "d95663fbbf3a80f81a9d98d895266bdcb74ba274bcc04ef6d76630a72dee016f"
   license "PostgreSQL"
+  compatibility_version 1
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"

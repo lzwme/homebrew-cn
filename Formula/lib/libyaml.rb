@@ -4,6 +4,7 @@ class Libyaml < Formula
   url "https://ghfast.top/https://github.com/yaml/libyaml/archive/refs/tags/0.2.5.tar.gz"
   sha256 "fa240dbf262be053f3898006d502d514936c818e422afdcf33921c63bed9bf2e"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable

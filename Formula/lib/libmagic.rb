@@ -4,6 +4,7 @@ class Libmagic < Formula
   url "https://astron.com/pub/file/file-5.47.tar.gz"
   sha256 "45672fec165cb4cc1358a2d76b5d57d22876dcb97ab169427ac385cbe1d5597a"
   license all_of: ["BSD-2-Clause-Darwin", "BSD-2-Clause", :public_domain]
+  compatibility_version 1
 
   livecheck do
     formula "file-formula"

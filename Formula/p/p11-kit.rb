@@ -4,6 +4,7 @@ class P11Kit < Formula
   url "https://ghfast.top/https://github.com/p11-glue/p11-kit/releases/download/0.26.2/p11-kit-0.26.2.tar.xz"
   sha256 "09fd9f44da4813a3141e73d5e7cf7008e5660d0405f13d56c15e1da9dcecf828"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/p11-glue/p11-kit.git", branch: "master"
 
   bottle do

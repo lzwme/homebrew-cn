@@ -4,6 +4,7 @@ class Libunwind < Formula
   url "https://ghfast.top/https://github.com/libunwind/libunwind/releases/download/v1.8.3/libunwind-1.8.3.tar.gz"
   sha256 "be30d910e67f58d82e753231f1357f326a1a088acf126b21ff77e60aab19b90b"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable

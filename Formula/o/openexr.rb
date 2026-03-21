@@ -4,6 +4,7 @@ class Openexr < Formula
   url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.4.7.tar.gz"
   sha256 "6f57641fb12b019867a766e602252ed4ccb26d7354e3a15688fe9c85a391716e"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "69d53f0a32469314ca4ee273beccc765ee4997d305b354e158e5d8ea7e0b46d5"

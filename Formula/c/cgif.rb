@@ -4,6 +4,7 @@ class Cgif < Formula
   url "https://ghfast.top/https://github.com/dloebl/cgif/archive/refs/tags/v0.5.2.tar.gz"
   sha256 "d5e603309176334406d7e4f0063ed96924fe9b0368e8037df2614c0df67bb41b"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "934ef90557be33d46d6fdac7ac1d49bf96a22f802113415fbda84bf3cca86c99"

@@ -4,6 +4,7 @@ class Jadx < Formula
   url "https://ghfast.top/https://github.com/skylot/jadx/archive/refs/tags/v1.5.5.tar.gz"
   sha256 "8c1af4a9aebd5334367d5d60c8d56b02755b2027f9f8bc6633b5c3afdc273e1a"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/skylot/jadx.git", branch: "master"
 
   bottle do

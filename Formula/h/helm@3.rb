@@ -5,6 +5,7 @@ class HelmAT3 < Formula
       tag:      "v3.20.1",
       revision: "a2369ca71c0ef633bf6e4fccd66d634eb379b371"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url :stable

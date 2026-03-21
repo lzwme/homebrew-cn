@@ -4,6 +4,7 @@ class Libbluray < Formula
   url "https://download.videolan.org/videolan/libbluray/1.4.1/libbluray-1.4.1.tar.xz"
   sha256 "76b5dc40097f28dca4ebb009c98ed51321b2927453f75cc72cf74acd09b9f449"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
   head "https://code.videolan.org/videolan/libbluray.git", branch: "master"
 
   livecheck do

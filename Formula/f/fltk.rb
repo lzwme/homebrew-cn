@@ -4,6 +4,7 @@ class Fltk < Formula
   url "https://ghfast.top/https://github.com/fltk/fltk/releases/download/release-1.4.4/fltk-1.4.4-source.tar.bz2"
   sha256 "2b302c80b7ea937a8bdc01ed6718fd995035bf63e9a2895491c1001821725f1f"
   license "LGPL-2.0-only" => { with: "FLTK-exception" }
+  compatibility_version 1
 
   livecheck do
     url "https://www.fltk.org/software.php"

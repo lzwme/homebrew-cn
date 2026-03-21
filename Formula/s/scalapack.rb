@@ -2,6 +2,7 @@ class Scalapack < Formula
   desc "High-performance linear algebra for distributed memory machines"
   homepage "https://netlib.org/scalapack/"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/Reference-ScaLAPACK/scalapack.git", branch: "master"
 
   stable do

@@ -4,6 +4,7 @@ class LuaAT54 < Formula
   url "https://www.lua.org/ftp/lua-5.4.8.tar.gz"
   sha256 "4f18ddae154e793e46eeab727c59ef1c0c0c2b744e7b94219710d76f530629ae"
   license "MIT"
+  compatibility_version 1
 
   # Check for new releases until https://www.lua.org/versions.html#5.4
   # says "There will be no further releases of Lua 5.4".

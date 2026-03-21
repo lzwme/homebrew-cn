@@ -4,6 +4,7 @@ class Ggml < Formula
   url "https://ghfast.top/https://github.com/ggml-org/ggml/archive/refs/tags/v0.9.8.tar.gz"
   sha256 "9d8b38e473697e9014ea2275fadb4ed5c247b1ca82404875fe5ac336c0d0754c"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/ggml-org/ggml.git", branch: "master"
 
   bottle do

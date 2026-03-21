@@ -4,6 +4,7 @@ class Lzip < Formula
   url "https://download-mirror.savannah.gnu.org/releases/lzip/lzip-1.26.tar.gz"
   sha256 "641cf30961525cbe3b340cc883436c8854e9f5032f459f444de4782b621e6572"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://download.savannah.gnu.org/releases/lzip/"

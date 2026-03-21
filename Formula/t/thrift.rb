@@ -3,6 +3,7 @@ class Thrift < Formula
   homepage "https://thrift.apache.org/"
   license "Apache-2.0"
   revision 1
+  compatibility_version 1
 
   stable do
     url "https://www.apache.org/dyn/closer.lua?path=thrift/0.22.0/thrift-0.22.0.tar.gz"

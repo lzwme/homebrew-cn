@@ -2,6 +2,7 @@ class Ruby < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
   license "Ruby"
+  compatibility_version 1
   head "https://github.com/ruby/ruby.git", branch: "master"
 
   stable do

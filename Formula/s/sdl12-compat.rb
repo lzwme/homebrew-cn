@@ -4,6 +4,7 @@ class Sdl12Compat < Formula
   url "https://ghfast.top/https://github.com/libsdl-org/sdl12-compat/archive/refs/tags/release-1.2.74.tar.gz"
   sha256 "2588686c0972e1785829dc3bf436b543c317e6afa30a9b91d48013dd9c110e81"
   license all_of: ["Zlib", "MIT-0"]
+  compatibility_version 1
   head "https://github.com/libsdl-org/sdl12-compat.git", branch: "main"
 
   livecheck do

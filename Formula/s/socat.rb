@@ -5,6 +5,7 @@ class Socat < Formula
   mirror "http://www.dest-unreach.org/socat/download/socat-1.8.1.1.tar.gz"
   sha256 "f68b602c80e94b4b7498d74ec408785536fe33534b39467977a82ab2f7f01ddb"
   license "GPL-2.0-only"
+  compatibility_version 1
 
   livecheck do
     url "http://www.dest-unreach.org/socat/download/"

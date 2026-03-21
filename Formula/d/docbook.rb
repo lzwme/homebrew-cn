@@ -5,6 +5,7 @@ class Docbook < Formula
   sha256 "11992554a884786f1b78c6b478d6cec90352caf00bef54731c8d54f26751f2c5"
   license :cannot_represent
   revision 1
+  compatibility_version 1
 
   livecheck do
     url :stable

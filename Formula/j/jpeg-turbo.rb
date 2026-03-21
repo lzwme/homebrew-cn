@@ -8,6 +8,7 @@ class JpegTurbo < Formula
     "Zlib", # libjpeg-turbo SIMD source code
     "BSD-3-Clause", # TurboJPEG API library and programs
   ]
+  compatibility_version 1
   head "https://github.com/libjpeg-turbo/libjpeg-turbo.git", branch: "main"
 
   livecheck do

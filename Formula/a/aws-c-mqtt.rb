@@ -4,6 +4,7 @@ class AwsCMqtt < Formula
   url "https://ghfast.top/https://github.com/awslabs/aws-c-mqtt/archive/refs/tags/v0.15.2.tar.gz"
   sha256 "66f3f5edff4ad1f765a86d3342b6017d0f29f950c1c24f8c1edacdc895202edc"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url :stable

@@ -5,6 +5,7 @@ class NodeAT24 < Formula
   sha256 "9fe025ef4028aba95d16e7810518bf4a5e8abfb0bdc07d8a3fdbb0afd538d77f"
   license "MIT"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://registry.npmmirror.com/-/binary/node/"

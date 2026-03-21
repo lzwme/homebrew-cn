@@ -4,6 +4,7 @@ class Liblinear < Formula
   url "https://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/liblinear-2.50.tar.gz"
   sha256 "e5eeafe2159c41148b59304da2ba0ed12648e3d491ce2b9625058e174e96ca29"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/cjlin1/liblinear.git", branch: "master"
 
   livecheck do

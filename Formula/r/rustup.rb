@@ -4,6 +4,7 @@ class Rustup < Formula
   url "https://ghfast.top/https://github.com/rust-lang/rustup/archive/refs/tags/1.29.0.tar.gz"
   sha256 "de73d1a62f4d5409a2f6bdb1c523d8dc08aa6d9d63588db62493c19ca8f8bf55"
   license any_of: ["Apache-2.0", "MIT"]
+  compatibility_version 1
   head "https://github.com/rust-lang/rustup.git", branch: "main"
 
   bottle do

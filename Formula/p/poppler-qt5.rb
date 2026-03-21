@@ -4,6 +4,7 @@ class PopplerQt5 < Formula
   url "https://poppler.freedesktop.org/poppler-26.03.0.tar.xz"
   sha256 "8b3c5e2a9f2ab4c3ec5029f28af1b433c6b71f0d1e7b3997aa561cf1c0ca4ebe"
   license "GPL-2.0-only"
+  compatibility_version 1
   head "https://gitlab.freedesktop.org/poppler/poppler.git", branch: "master"
 
   livecheck do

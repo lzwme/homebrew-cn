@@ -4,6 +4,7 @@ class Glow < Formula
   url "https://ghfast.top/https://github.com/charmbracelet/glow/archive/refs/tags/v2.1.1.tar.gz"
   sha256 "f13e1d6be1ab4baf725a7fedc4cd240fc7e5c7276af2d92f199e590e1ef33967"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     rebuild 1

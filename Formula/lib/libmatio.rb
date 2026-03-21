@@ -5,6 +5,7 @@ class Libmatio < Formula
   sha256 "8bd3b9477042ecc00dd71c04762fa58468e14cccc32fd8c6826c2da1e8bc3107"
   license "BSD-2-Clause"
   revision 1
+  compatibility_version 1
 
   bottle do
     rebuild 1

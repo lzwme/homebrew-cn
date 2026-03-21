@@ -4,6 +4,7 @@ class WaylandProtocols < Formula
   url "https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/1.47/downloads/wayland-protocols-1.47.tar.xz"
   sha256 "5fd4349bcbc9bab9a46f8cf77d1f434296a7a052c87440a094f63fcf62a58e20"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url "https://wayland.freedesktop.org/releases.html"

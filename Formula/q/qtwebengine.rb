@@ -28,6 +28,7 @@ class Qtwebengine < Formula
     :public_domain,      # sigslot; SPL-SQRT-FLOOR
     { all_of: ["ISC", "OpenSSL"] }, # boringssl, TODO: remove in Chromium 134+
   ]
+  compatibility_version 1
   head "https://code.qt.io/qt/qtwebengine.git", branch: "dev"
 
   livecheck do

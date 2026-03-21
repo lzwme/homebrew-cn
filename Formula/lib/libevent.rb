@@ -5,6 +5,7 @@ class Libevent < Formula
   sha256 "7180a979aaa7000e1264da484f712d403fcf7679b1e9212c4e3d09f5c93efc24"
   license "BSD-3-Clause"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url :homepage

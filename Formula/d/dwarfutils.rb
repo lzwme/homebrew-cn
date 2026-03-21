@@ -5,6 +5,7 @@ class Dwarfutils < Formula
   sha256 "28cf9a5d27aceff5c1f906244a4fe7ae208e41d20a6d8fc7e091c633a40b6e97"
   license all_of: ["BSD-2-Clause", "LGPL-2.1-or-later", "GPL-2.0-or-later"]
   version_scheme 1
+  compatibility_version 1
 
   livecheck do
     url :homepage

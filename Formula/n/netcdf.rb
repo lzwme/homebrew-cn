@@ -4,6 +4,7 @@ class Netcdf < Formula
   url "https://ghfast.top/https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.10.0.tar.gz"
   sha256 "ce160f9c1483b32d1ba8b7633d7984510259e4e439c48a218b95a023dc02fd4c"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/Unidata/netcdf-c.git", branch: "main"
 
   livecheck do

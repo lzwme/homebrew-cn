@@ -5,6 +5,7 @@ class Solarus < Formula
       tag:      "v2.0.3",
       revision: "d5e170be67a0119d73a502988e91bffcf04c3e06"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url :stable

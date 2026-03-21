@@ -4,6 +4,7 @@ class Qpdf < Formula
   url "https://ghfast.top/https://github.com/qpdf/qpdf/releases/download/v12.3.2/qpdf-12.3.2.tar.gz"
   sha256 "6cba2f9f2cd887d905faeb99e0e51a307b217920d1bbf3e9cfbb2e8178a2deda"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     rebuild 1

@@ -7,6 +7,7 @@ class Psutils < Formula
   sha256 "6212167dd8c09f59c9535d5e416c4f8c01431b7a5beab0ee68f4ec416ca3980c"
   license "GPL-3.0-or-later"
   revision 10
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "7e8963b170e4dda92c936a3ad7011af5e07c66a8a1bf4b039f8dd5b11bd8275d"

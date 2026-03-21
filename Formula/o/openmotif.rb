@@ -5,6 +5,7 @@ class Openmotif < Formula
   sha256 "859b723666eeac7df018209d66045c9853b50b4218cecadb794e2359619ebce7"
   license "LGPL-2.1-or-later"
   revision 4
+  compatibility_version 1
 
   bottle do
     sha256 arm64_tahoe:   "c0bfac872caadffd55339660bae1d6f2b3c7e5453524561f7c74a8ee19c649c1"
