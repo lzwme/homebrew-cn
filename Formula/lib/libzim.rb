@@ -1,18 +1,17 @@
 class Libzim < Formula
   desc "Reference implementation of the ZIM specification"
   homepage "https://github.com/openzim/libzim"
-  url "https://ghfast.top/https://github.com/openzim/libzim/archive/refs/tags/9.5.0.tar.gz"
-  sha256 "0e5290a21a4efe8281dfa2325c59d465ba8ace7ccc1082554763c1a58fdd3b42"
+  url "https://ghfast.top/https://github.com/openzim/libzim/archive/refs/tags/9.5.1.tar.gz"
+  sha256 "5f4ac87887b05a6eaa408b4f03d3486262c8a5c13e488024822b293cdefe8c0e"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1ee245d4f949abd15ebee72df876c3b96f8d7919fec0eefcf0d86ce9d7c16c35"
-    sha256 cellar: :any, arm64_sequoia: "fe3827330c0435549535a7055323a6bbb66fdb1bbdca7fcde83056f3fd3f7800"
-    sha256 cellar: :any, arm64_sonoma:  "8f640623a17c74f5277a97604f63e02f1604680a8b2002a4d88e0f5b35e659ce"
-    sha256 cellar: :any, sonoma:        "7d641aabc6595f26e1e838bab8b701cf8579e2d0dffa062eb9c7b48045dfe990"
-    sha256               arm64_linux:   "004399b0e5b8ef999c5d55b8295d0c4e8bc8b935d1368f29f9fd73925e95ee4a"
-    sha256               x86_64_linux:  "e2c40e05b046798f4d4129be96011e7fd8d6c78f6cb3b5ba8e92da090f17d95c"
+    sha256 cellar: :any, arm64_tahoe:   "bd0854df1cc0f725db980924e90362a97bde97b9a95d449d96b90ead26156725"
+    sha256 cellar: :any, arm64_sequoia: "3f31e8d87aa391642406b5521df0a85d28f495fedfba6291e541447c6f8aea77"
+    sha256 cellar: :any, arm64_sonoma:  "51170cbb8ff7ec8048838b8b2c2e6735c8b7e97f8ba99922ffde056a5cf56d95"
+    sha256 cellar: :any, sonoma:        "812e62c6628c002e8c3ce4fb840ad2e3e59ffe77979a2b94ab077ce442deed79"
+    sha256               arm64_linux:   "8099f298a2b3ef1e61797f7547cf850407b37bca7bd17f67c3123649100d0bc0"
+    sha256               x86_64_linux:  "571a3591a380797a8516a89b31b221888c1c7dfa1d961d67263553efbef6d577"
   end
 
   depends_on "meson" => :build

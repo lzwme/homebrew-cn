@@ -1,19 +1,28 @@
 class Fbthrift < Formula
   desc "Facebook's branch of Apache Thrift, including a new C++ server"
   homepage "https://github.com/facebook/fbthrift"
-  url "https://ghfast.top/https://github.com/facebook/fbthrift/archive/refs/tags/v2026.03.09.00.tar.gz"
-  sha256 "39130cd57f90f14276479b8389f2431f12a6363d07c07743dd6889aec57dce53"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/fbthrift.git", branch: "main"
 
+  stable do
+    url "https://ghfast.top/https://github.com/facebook/fbthrift/archive/refs/tags/v2026.03.16.00.tar.gz"
+    sha256 "b79411e8e8c86ec98577e68b79e0889d53bda0d1ef45ffd7f839a776e87784f3"
+
+    # Backport fix for shared libraries
+    patch do
+      url "https://github.com/facebook/fbthrift/commit/ea92c7a50d7058475559790717fceef975325a4c.patch?full_index=1"
+      sha256 "7b48afa014ab190296847386901705bcda066ea4ff8b6eca16366d7cb8bb6c98"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8e37f4b6050155316ec1aeaa891f445181065045f0f66e1384a616a4d79b4bba"
-    sha256 cellar: :any,                 arm64_sequoia: "8cc9a882f8402db7e9053a5f1269bf8588175593496bc2ac7e64f155720c363f"
-    sha256 cellar: :any,                 arm64_sonoma:  "43fddf214dd17b502422334adbbfa4c84b341bf18553341af4dc4f10bdcdf16c"
-    sha256 cellar: :any,                 sonoma:        "1537bf91c50dd78ccbf09357afae46d9007adeee5621908dd687d50979f71b39"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f173534f47636cbe7fbf26d1ad57c01abe94d7c12755c05d3c182bd01e01da9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07c5e93aa2d9731d7106486a0c814a088ba81880c81b16688b1a7fd424fa3c70"
+    sha256 cellar: :any,                 arm64_tahoe:   "da098e7856a91706e9054a2ea60fc0b9cc7eebf28f5db72c7cc8775372a8aada"
+    sha256 cellar: :any,                 arm64_sequoia: "beaf8b33d4a1cea830c40584f7f5ee2f7fa4a7bbf9dab8cda399231c0b3c67c1"
+    sha256 cellar: :any,                 arm64_sonoma:  "dd2d4a11083bf92c73ab698e1fa4d456ae935803e5456794be31f2a79c4174a6"
+    sha256 cellar: :any,                 sonoma:        "e0f6f493e185175b49be075a5ade32e45a245e8117c516ab2c0e39cce98946c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "021dfd1ca8324f19207d32ad7bd17e3ecfa0e80d8cd7157f1c13662287264336"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e696a29e69245b68298ad71d17c43a7a7be876f6930cdc40ccc0f0da6f06472"
   end
 
   depends_on "bison" => :build # Needs Bison 3.1+

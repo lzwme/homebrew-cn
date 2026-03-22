@@ -1,13 +1,13 @@
 class Quantumxx < Formula
   desc "Modern C++ quantum computing library"
   homepage "https://github.com/softwareQinc/qpp"
-  url "https://ghfast.top/https://github.com/softwareQinc/qpp/archive/refs/tags/v7.0.0.tar.gz"
-  sha256 "094452097e84ab0f743cf27e0b91f4797f041c7924b4794f20153a6efed95883"
+  url "https://ghfast.top/https://github.com/softwareQinc/qpp/archive/refs/tags/v7.0.1.tar.gz"
+  sha256 "795c68320115c2110c05642f5cdfa521e5f7a8868c6b446096560b1594eeed6d"
   license "MIT"
   head "https://github.com/softwareQinc/qpp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6c1c17a10188eda3c602b1822d3e98f6289a6b60de6abc5ac309e1e75fc44435"
+    sha256 cellar: :any_skip_relocation, all: "0ea630d559cf8ce0c0bc63a68ecc1dd2005f0df11f6066981e5e71af6d763d1a"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -17,8 +17,6 @@ class Quantumxx < Formula
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build", "--target", "install"
-    # The upstream source hard-codes `/opt/homebrew` in their config file.
-    inreplace lib/"cmake/qpp/qpp_openmp.cmake", "/opt/homebrew", HOMEBREW_PREFIX
   end
 
   test do

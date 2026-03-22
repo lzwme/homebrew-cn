@@ -1,19 +1,19 @@
 class Edencommon < Formula
   desc "Shared library for Watchman and Eden projects"
   homepage "https://github.com/facebookexperimental/edencommon"
-  url "https://ghfast.top/https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2026.03.09.00.tar.gz"
-  sha256 "e90d7d94d06e4f7a87cfddd0ebf747c5b4a20112e7798c72873c583b282d15d7"
+  url "https://ghfast.top/https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2026.03.16.00.tar.gz"
+  sha256 "969441d5e37c987617a5f47311450aca310165bf1c4cc6996dade8141c0e2b44"
   license "MIT"
   compatibility_version 1
   head "https://github.com/facebookexperimental/edencommon.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "3457fda00d252e4dbdeafdec1f782375a0adacb947182447894ccedc500efaf5"
-    sha256                               arm64_sequoia: "a4024dd67590b9e510533c1e9749e8ef03726e82e045240e07981a9bf9f9fcdc"
-    sha256                               arm64_sonoma:  "95544bfea1f6dbaca0b99e6d7d152d49b7edb08e8d064020464ec721b9370911"
-    sha256 cellar: :any,                 sonoma:        "4be7fa60f0a9e6edcb68df7fb2268ebb448548f1a79f5e7a9e08bf980e14b099"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cf9c744dc53a8df3489c72f218afc5f45ef95f4489f462feed6a2cc25ef3ea3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8982437f130e543d72b2c86aed9cbaa691e62d7061a0b17c48eb8ced05753de"
+    sha256                               arm64_tahoe:   "8a1ba4ae20623cb0520509086be7055507945c4531fbdc6db382c60b36ad1d6e"
+    sha256                               arm64_sequoia: "1752b2504a12d4008a82cfcfeb6e5bd54e12ddebbba0cd2350481b92d0a2e22a"
+    sha256                               arm64_sonoma:  "22807b62279080d1e33d564c35e5f137637cbebb8432a0d61f54ab4fb372db06"
+    sha256 cellar: :any,                 sonoma:        "486012c3144cd093b2c16e41cc7a0dfff28ef0a5038feb109e736946ec2cdd16"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa5e4155e5251459095b62cc09947cb9898c69fa7b1717631d2d65c2741d6602"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c40d6d80f87ab406084f5a99b3524b68ba33cdf79358d2554419c2ebf0b3ed00"
   end
 
   depends_on "cmake" => :build
@@ -68,7 +68,7 @@ class Edencommon < Formula
       }
     CPP
 
-    system ENV.cxx, "-std=c++17", "-I#{include}", "test.cc",
+    system ENV.cxx, "-std=c++20", "-I#{include}", "test.cc",
                     "-L#{lib}", "-L#{Formula["folly"].opt_lib}",
                     "-L#{Formula["boost"].opt_lib}", "-L#{Formula["glog"].opt_lib}", "-L#{Formula["fmt"].opt_lib}",
                     "-ledencommon_utils", "-lfolly", "-lfmt", "-lboost_context", "-lglog", "-o", "test"

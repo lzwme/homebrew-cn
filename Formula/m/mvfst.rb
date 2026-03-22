@@ -1,19 +1,19 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https://github.com/facebook/mvfst"
-  url "https://ghfast.top/https://github.com/facebook/mvfst/archive/refs/tags/v2026.03.09.00.tar.gz"
-  sha256 "0fbdf46b742a76f32ca2c2bfcd9c6e9246f8bf9bb6921dbef65e087253af8970"
+  url "https://ghfast.top/https://github.com/facebook/mvfst/archive/refs/tags/v2026.03.16.00.tar.gz"
+  sha256 "4095de8db4108cec9351aed2df202e0353175687ad3235bf254c06e92ccab50f"
   license "MIT"
   compatibility_version 1
   head "https://github.com/facebook/mvfst.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "34db75a461a70131665342a48f33e275b40b46bf22213c607d1c0bc767b04263"
-    sha256 cellar: :any,                 arm64_sequoia: "f2bfd1155948ce31973913e8394c01cf2581eccffb6a58579eb4d70e9f76d992"
-    sha256 cellar: :any,                 arm64_sonoma:  "6cf4c8ab66b9a94c96b92e98481de480eeae76fd14212833d212019a99ef4b26"
-    sha256 cellar: :any,                 sonoma:        "19c0c92c69b9d0b89796704b69705333c49f59820e874e6dd8b5f3d564bdc331"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4d9571e1502ab586d4c613df8ea33fdad7b9a0d44072b309190bf3547969b1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9321b74ccb7b120cc305fb0ca489568aec75b49ad6b799fa653f3cfbeecdfb87"
+    sha256 cellar: :any,                 arm64_tahoe:   "3c5f1ff49d470d2c961df62424b1d1ad99279d9fcc43cc380b6b6d56f2c89f87"
+    sha256 cellar: :any,                 arm64_sequoia: "bfa14d85946f0ef632650c2c91c20296a1c6716448393593db73f39d106434c2"
+    sha256 cellar: :any,                 arm64_sonoma:  "5422183a3f67d44f37e4327ab5ec4bc07e82ccca0312f37ac853b4ebec3747b9"
+    sha256 cellar: :any,                 sonoma:        "88ec2c9ce9ca938654a62197ec283800dfaf59e34414ebfb171814e95cabce4b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8180b0f99ade9c6fe4c82411c06ffc52ca0345871e02047d4ef209b8cbc38ea7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d8ae4639c170da3a24420408dcbb2ba24d8a5a655adbd3e9b43c476a1c2d14f"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -40,9 +40,9 @@ class Mvfst < Formula
     stable.stage testpath
 
     (testpath/"CMakeLists.txt").atomic_write <<~CMAKE
-      cmake_minimum_required(VERSION 3.20)
+      cmake_minimum_required(VERSION 4.0)
       project(echo CXX)
-      set(CMAKE_CXX_STANDARD 17)
+      set(CMAKE_CXX_STANDARD 20)
 
       list(PREPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
       find_package(fizz REQUIRED)

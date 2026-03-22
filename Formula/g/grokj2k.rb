@@ -1,8 +1,8 @@
 class Grokj2k < Formula
   desc "JPEG 2000 Library"
   homepage "https://github.com/GrokImageCompression/grok"
-  url "https://ghfast.top/https://github.com/GrokImageCompression/grok/releases/download/v20.1.0/source-full.tar.gz"
-  sha256 "52287ba722299cb2afa229db25472e411c82e4685ca74ef5020f764a1ddc6eeb"
+  url "https://ghfast.top/https://github.com/GrokImageCompression/grok/releases/download/v20.2.0/source-full.tar.gz"
+  sha256 "b1d4b4dd65251090ce653b23d09f43e5ad57602ee98b2f91d887bdef6e3ab7e0"
   license "AGPL-3.0-or-later"
   head "https://github.com/GrokImageCompression/grok.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Grokj2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e65a852cec04df1ba0ccd6606f64c14fa7c3f200784e7d8b0b5b4400050bdb69"
-    sha256 cellar: :any,                 arm64_sequoia: "776a45e69c07f156242fe63a55dd61514f3f3b9ed21eafa456682f3a84a67336"
-    sha256 cellar: :any,                 arm64_sonoma:  "568be73ac8d90e1d2354a1b645e9b2e29656b77599a3f3d5e35dea654c4afb15"
-    sha256 cellar: :any,                 sonoma:        "21ae414e933b199b92e9b2155b7a328d0b453e3b43ae8ce9499560d7b1cc3433"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d1ab65abe53eb576c18f948015806cf299ac0da79b4912da7bab75018b50f2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92d0ac272c2633d20d53300ecbcf9716dc26cc280a7fabcea90eb9bd53c66b41"
+    sha256 cellar: :any,                 arm64_tahoe:   "af2635f349fad9d763a0ca4669b19f9e415534f824a99a7a63ce30267a98db60"
+    sha256 cellar: :any,                 arm64_sequoia: "1f7773e8bf5a2765b23f71cd9f8bca6c043feddb070ad943b308f3e6f9d904d0"
+    sha256 cellar: :any,                 arm64_sonoma:  "bcdd137553268bb67f34f0595582978bdc58409decec41ddb35a9a0024d76561"
+    sha256 cellar: :any,                 sonoma:        "a3d1a546ebedcc9a475dc39a0749085820d708da9789c1192b7b7c06827350aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6f018e659534363f531b3fde7c64ed81afd8480c06fcd9dc096acd2272ab282"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b589fcd51915fa5df7287940c4c03c5b7790c543547c870ad6da2d6cd5ef942"
   end
 
   depends_on "cmake" => :build
@@ -51,10 +51,6 @@ class Grokj2k < Formula
     version "9"
     cause "GNU compiler version must be at least 10.0"
   end
-
-  # Restore Highway target disables after the upstream include refactor stopped
-  # pulling in grk_includes.h on Linux arm64. Upstream pr ref, https://github.com/GrokImageCompression/grok/pull/391
-  patch :DATA
 
   def install
     # Fix: ExifTool Perl module not found
@@ -137,64 +133,3 @@ class Grokj2k < Formula
     end
   end
 end
-
-__END__
-diff --git a/src/lib/core/point_transform/mct.cpp b/src/lib/core/point_transform/mct.cpp
-index 7959f998f41b2ea6dceb40bd2cc30adba1347976..4502f7348a638d7f5101df40ace0d8d3b4be7585 100644
---- a/src/lib/core/point_transform/mct.cpp
-+++ b/src/lib/core/point_transform/mct.cpp
-@@ -53,6 +53,7 @@ struct ITileProcessor;
- 
- #undef HWY_TARGET_INCLUDE
- #define HWY_TARGET_INCLUDE "point_transform/mct.cpp"
-+#include "grk_includes.h"
- #include <hwy/foreach_target.h>
- #include <hwy/highway.h>
- HWY_BEFORE_NAMESPACE();
-diff --git a/src/lib/core/util/lanes.cpp b/src/lib/core/util/lanes.cpp
-index b8f50b4da0d249d32f5a26c21870426fccf6b0cf..f54caf5424aba988d72dd1f641499c9455d5b1e8 100644
---- a/src/lib/core/util/lanes.cpp
-+++ b/src/lib/core/util/lanes.cpp
-@@ -17,6 +17,7 @@
- 
- #undef HWY_TARGET_INCLUDE
- #define HWY_TARGET_INCLUDE "lanes.cpp"
-+#include "grk_includes.h"
- #include <hwy/foreach_target.h>
- #include <hwy/highway.h>
- 
-diff --git a/src/lib/core/wavelet/WaveletFwd.cpp b/src/lib/core/wavelet/WaveletFwd.cpp
-index 2a7874d2397fd32bd0b708f21077fef6f3123036..818ee2fe8bdfc1dcaa811bc1ed15288db5fc1aaa 100644
---- a/src/lib/core/wavelet/WaveletFwd.cpp
-+++ b/src/lib/core/wavelet/WaveletFwd.cpp
-@@ -51,6 +51,7 @@ struct ITileProcessor;
- 
- #undef HWY_TARGET_INCLUDE
- #define HWY_TARGET_INCLUDE "wavelet/WaveletFwd.cpp"
-+#include "grk_includes.h"
- #include <hwy/foreach_target.h>
- #include <hwy/highway.h>
- HWY_BEFORE_NAMESPACE();
-diff --git a/src/lib/core/wavelet/WaveletReverse.cpp b/src/lib/core/wavelet/WaveletReverse.cpp
-index 31049c9cd6909887d4bbaeb8f4e85745d7f9c33a..003a0ee9b2f09bb75c26fe969d436b7486416f54 100644
---- a/src/lib/core/wavelet/WaveletReverse.cpp
-+++ b/src/lib/core/wavelet/WaveletReverse.cpp
-@@ -74,6 +74,7 @@ struct ITileProcessor;
- 
- #undef HWY_TARGET_INCLUDE
- #define HWY_TARGET_INCLUDE "wavelet/WaveletReverse.cpp"
-+#include "grk_includes.h"
- #include <hwy/foreach_target.h>
- #include <hwy/highway.h>
- 
-diff --git a/src/lib/core/wavelet/WaveletReverse97.cpp b/src/lib/core/wavelet/WaveletReverse97.cpp
-index 2289945f626d9628049bdefa18530851a51947f4..22dd35e6cb4f63b98dc40b53779f30ae68f79975 100644
---- a/src/lib/core/wavelet/WaveletReverse97.cpp
-+++ b/src/lib/core/wavelet/WaveletReverse97.cpp
-@@ -68,6 +68,7 @@ namespace grk
- 
- #undef HWY_TARGET_INCLUDE
- #define HWY_TARGET_INCLUDE "wavelet/WaveletReverse97.cpp"
-+#include "grk_includes.h"
- #include <hwy/foreach_target.h>
- #include <hwy/highway.h>

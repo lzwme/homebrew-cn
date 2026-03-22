@@ -1383,6 +1383,7 @@ Homebrew-homebrew-core/Formula/c/cweb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cxgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cxxopts.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cxxtest.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cyan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cyclonedx-gomod.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cyclonedx-python.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cycode.rb, Homebrew/homebrew-core, 0
@@ -7061,6 +7062,7 @@ Homebrew-homebrew-core/Formula/s/sugarjar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/suil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/suite-sparse.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/summarize.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sundials.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/supabase-mcp-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/supabase.rb, Homebrew/homebrew-core, 1

@@ -1,19 +1,19 @@
 class Wangle < Formula
   desc "Modular, composable client/server abstractions framework"
   homepage "https://github.com/facebook/wangle"
-  url "https://ghfast.top/https://github.com/facebook/wangle/archive/refs/tags/v2026.03.09.00.tar.gz"
-  sha256 "020679cb67bbec2c2a7da678e5020f140415af0719ac7e159f028902e4eb5d8b"
+  url "https://ghfast.top/https://github.com/facebook/wangle/archive/refs/tags/v2026.03.16.00.tar.gz"
+  sha256 "a16f036f58def0eafbe637f1097835327db408c8e48a63da0eb532b206212dd0"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/wangle.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ba9ca36c6ec95ac9b0be748ffdfdf0340f3de4bd14423b9e5028e9941e69233b"
-    sha256 cellar: :any,                 arm64_sequoia: "a182f41a33e71c80fcf90d70187ad448357ac3a6f02304348d4b2e9e284767c7"
-    sha256 cellar: :any,                 arm64_sonoma:  "481ecb3b313205bda7f4a81be0932b5ab1e19ab089a9d5c4290cf1514fe821ab"
-    sha256 cellar: :any,                 sonoma:        "cc32b8a5de8f66be7868626b5fd5b525f4bc99c618c7fe1212b932318b25a0e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "06987016381e47d37fcb164b0eb88ccde48b2bf1da01dadf59f8ff89bb4ee9b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcc040adcbf74d3d7531a0bb9ae188988c88ac043e9affb60d8839f72e972492"
+    sha256 cellar: :any,                 arm64_tahoe:   "0a893b12d1129da56153d4f854f74bd4c21f9119146f0d36387979ec10afe817"
+    sha256 cellar: :any,                 arm64_sequoia: "11a3caf05dce5ff5830d6cac3fbb2939a7cae115120cbb6667a0a6b45ba22cd7"
+    sha256 cellar: :any,                 arm64_sonoma:  "2598495c1ca5c439291bc7efadbc409b3984a77ce9f219e2d4cd5985e4e33af8"
+    sha256 cellar: :any,                 sonoma:        "aa002a9ffd3886d00d5161803386792e2693868b22652816b659a7b86ccf1483"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4516c4f2a1286ab8c866b604787062dadaaa34c50681dcc126ef8adac35d808c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4174c55a8ddb1d7ae7637687adbdc0f23d45cc0fc4f5b37104916e99ad578a43"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -44,9 +44,9 @@ class Wangle < Formula
 
   test do
     (testpath/"CMakeLists.txt").write <<~CMAKE
-      cmake_minimum_required(VERSION 3.5)
+      cmake_minimum_required(VERSION 4.0)
       project(Echo LANGUAGES CXX)
-      set(CMAKE_CXX_STANDARD 17)
+      set(CMAKE_CXX_STANDARD 20)
 
       list(APPEND CMAKE_MODULE_PATH "#{Formula["fizz"].opt_libexec}/cmake")
       find_package(gflags REQUIRED)

@@ -1,8 +1,8 @@
 class Lume < Formula
   desc "Create and manage Apple Silicon-native virtual machines"
   homepage "https://github.com/trycua/cua"
-  url "https://ghfast.top/https://github.com/trycua/cua/archive/refs/tags/lume-v0.2.86.tar.gz"
-  sha256 "6390f86b5f7baf0d63575badfaca08f51195345ace6fa6cb923d86b3aa8f1505"
+  url "https://ghfast.top/https://github.com/trycua/cua/archive/refs/tags/lume-v0.3.0.tar.gz"
+  sha256 "c34c7c16dfd13ba6f2fe3ba6db2c193cc6f47ee267f237e72029a5144ee031c5"
   license "MIT"
   head "https://github.com/trycua/cua.git", branch: "main"
 
@@ -12,9 +12,9 @@ class Lume < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fb3fe55fc57b36fc16f59f024efab60c086a018de8721c4bdf4a780c13464d96"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b116a6bdd94bc978ec57058ba3594f808b683f8495b46918528c11bb45328a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4c22338a08c6b9746271ec3e5790ae05784f1e08abcc0e693eb5650cd626abc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9e4a06d5bee73dab476871d7724baf0e408dd3d9c57a507185eadff3e925c840"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b5d9adb68a24896c88905851ab104bcde8b800dc67a65f3191057f585fede4a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22b8060774fefba17e83394e79c070a3ff2550757eda665263987ab99bfff806"
   end
 
   depends_on xcode: ["16.0", :build]

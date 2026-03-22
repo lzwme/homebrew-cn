@@ -6,6 +6,11 @@ class SentryCli < Formula
   license "BSD-3-Clause"
   head "https://github.com/getsentry/sentry-cli.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68dbf138e33e6bcac8897d27c09e3c96756346310f5fc54cbbfe324b62f8feec"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9951f2d154d1ea23f78d53873efcb533fcdc367534c2d4fd44cf1359854e61f9"

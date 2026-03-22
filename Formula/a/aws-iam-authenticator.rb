@@ -1,8 +1,8 @@
 class AwsIamAuthenticator < Formula
   desc "Use AWS IAM credentials to authenticate to Kubernetes"
   homepage "https://github.com/kubernetes-sigs/aws-iam-authenticator"
-  url "https://ghfast.top/https://github.com/kubernetes-sigs/aws-iam-authenticator/archive/refs/tags/v0.7.11.tar.gz"
-  sha256 "1869fd23eb19e8276ee6a4d4bdf1334cf82c7baee849eab7a9f85519d4318221"
+  url "https://ghfast.top/https://github.com/kubernetes-sigs/aws-iam-authenticator/archive/refs/tags/v0.7.12.tar.gz"
+  sha256 "a8edf13b033400ae9bf5c0d354b5aa98ac133d3d781dece4568ae9de5e74eda9"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/aws-iam-authenticator.git", branch: "master"
 
@@ -16,12 +16,12 @@ class AwsIamAuthenticator < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "373c5d52edc30e3c858f0d3d8b701253271b48419cd7dc4f77144a9a3454ff34"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e8e470826355d369b79143ffdd011a5dd338fca39a9dea5cdd8fa4f2a83ff84"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5eabd2855c5d7863fc7e7a2112b3d791fd4bdaf5b7538a58fcb99a5929a8f181"
-    sha256 cellar: :any_skip_relocation, sonoma:        "49d4a8578a6ec185a5eade55c3802895afd35641119798453a1f6b3a919310ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0369060657b37e3f9575c1e55e63aace69fd45c7245aa8493c42ba6b400aade5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d19f848d8583504479ac10ed877e7774c872a1b692ac4b598807b953b6dc2e41"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a28929b04fe8d25b42a78d37a2ce3cb3936d14596b1e3e862abc580c6232a1e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ecf6373985b6ae98bf38393d74119f82856641641e57885ed1206229e7c56d4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9407174faf71608e53ce9aa7fcffd3bd827bb915bf1bb130cb4a8e0ea830ac6a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "db7180b9fc9d55ebbe58196b0bec91808febb32c4b058d1d57b85641affdb1d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "263c2675226a8686a97016ed9284439501c1b36f10a1f2fb8887f28e4932e565"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49fb16e9ccba8634dd545aba3060bc7b70e4fd854e64be3047e2278852e65b9d"
   end
 
   depends_on "go" => :build

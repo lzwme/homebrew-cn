@@ -3,19 +3,18 @@ class Parsedmarc < Formula
 
   desc "DMARC report analyzer and visualizer"
   homepage "https://domainaware.github.io/parsedmarc/"
-  url "https://files.pythonhosted.org/packages/81/de/99f0ef30d55cb4965b5b76b058f3ceef4ce3332601cd24157d2892427bb8/parsedmarc-9.2.1.tar.gz"
-  sha256 "b65d4ecedcfe4e63769fe3cd04996414870fed3dae300d7a92af17f98a9f5fc0"
+  url "https://files.pythonhosted.org/packages/19/ae/ab3ca937e2ab57967081b0c23b06dfe9422e8c5cd435ea8368e0b12e64f4/parsedmarc-9.3.0.tar.gz"
+  sha256 "f50d7cd50963d7062e1895ac72dafc1054e9151f0348755b6df3aff12500f83e"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "60497803d00391dffc114a758df73b0c61768cd87ed649841f01dbf461dfb747"
-    sha256 cellar: :any,                 arm64_sequoia: "bed1da9b54e9bc6e97dadfb57d9fbdb7b8398e2109188b8685f8e0eb43f393cd"
-    sha256 cellar: :any,                 arm64_sonoma:  "06bc2d94e590f5106f17847064cf30bb275cde239e38c07f784f64d2eb97994e"
-    sha256 cellar: :any,                 sonoma:        "28dc96c719984361e08184cd30b1f2de7c6d13cb937fc14bfdac46e161aec10c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "07269eb175d79c3eb396e09e3a323f15c467a1a57c5a153c0feb0e151c3dacc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c597547ac70d5406d8a41df53a09c409048a10e0f9666cb222d0b7fa9ae6cc8"
+    sha256 cellar: :any,                 arm64_tahoe:   "c219d9e1c66b02f496c6fbf2f6d7cec4ad2941a62a0f560819e4abea82165ebc"
+    sha256 cellar: :any,                 arm64_sequoia: "587762cf2e01bbd3cb6c41cdcdcd09cc19116d5b92cf0c0abf14e537da58febe"
+    sha256 cellar: :any,                 arm64_sonoma:  "f7379486a49eb4cfda697328ad0320d8f065ef76993f1fe5bf8561bb93e53db8"
+    sha256 cellar: :any,                 sonoma:        "b03e562acefc75bc1219724f9f1d97ecd4bfc478dc706182a7094eb7d6782e6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "898670c37a7075f63fef4432e7f8f11433d71e378304644464c06350d5488449"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dfac45d4ff3e3a44936e8ea5db7956eea35b2ce463e133492b3a9585d367d40"
   end
 
   depends_on "rust" => :build
@@ -45,13 +44,13 @@ class Parsedmarc < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
-    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
+    url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
+    sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
   end
 
   resource "azure-core" do
-    url "https://files.pythonhosted.org/packages/c8/29/9641b73248745774a52c7ce7f965ed1febbdea787ec21caad3ae6891d18a/azure_core-1.38.3.tar.gz"
-    sha256 "a7931fd445cb4af8802c6f39c6a326bbd1e34b115846550a8245fa656ead6f8e"
+    url "https://files.pythonhosted.org/packages/34/83/bbde3faa84ddcb8eb0eca4b3ffb3221252281db4ce351300fe248c5c70b1/azure_core-1.39.0.tar.gz"
+    sha256 "8a90a562998dd44ce84597590fff6249701b98c0e8797c95fcdd695b54c35d74"
   end
 
   resource "azure-identity" do
@@ -65,13 +64,13 @@ class Parsedmarc < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/04/7c/d7a533916d1afc9e17f8594203a85799d42f7c5751464fbdb25ead8db9d2/boto3-1.42.70.tar.gz"
-    sha256 "d060b0d83d2832e403671b9a895e73c3b025df8bb5896d89e401b0678705aac4"
+    url "https://files.pythonhosted.org/packages/e4/8b/d00575be514744ca4839e7d85bf4a8a3c7b6b4574433291e58d14c68ae09/boto3-1.42.73.tar.gz"
+    sha256 "d37b58d6cd452ca808dd6823ae19ca65b6244096c5125ef9052988b337298bae"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/66/54/b80e1fcee4f732e0e9314bbb8679be9d5690caa1566c4a4cd14e9724d2dd/botocore-1.42.70.tar.gz"
-    sha256 "9ee17553b7febd1a0c1253b3b62ab5d79607eb6163c8fb943470a8893c31d4fa"
+    url "https://files.pythonhosted.org/packages/28/23/0c88ca116ef63b1ae77c901cd5d2095d22a8dbde9e80df74545db4a061b4/botocore-1.42.73.tar.gz"
+    sha256 "575858641e4949aaf2af1ced145b8524529edf006d075877af6b82ff96ad854c"
   end
 
   resource "charset-normalizer" do
@@ -245,8 +244,8 @@ class Parsedmarc < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/ba/25/7c72c307aafc96fa87062aa6291d9f7c94836e43214d43722e86037aac02/protobuf-6.33.5.tar.gz"
-    sha256 "6ddcac2a081f8b7b9642c09406bc6a4290128fce5f471cddd165960bb9119e5c"
+    url "https://files.pythonhosted.org/packages/66/70/e908e9c5e52ef7c3a6c7902c9dfbb34c7e29c25d2f81ade3856445fd5c94/protobuf-6.33.6.tar.gz"
+    sha256 "a6768d25248312c297558af96a9f9c929e8c4cee0659cb07e780731095f38135"
   end
 
   resource "publicsuffix2" do

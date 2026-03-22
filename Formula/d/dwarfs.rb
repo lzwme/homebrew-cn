@@ -1,8 +1,8 @@
 class Dwarfs < Formula
   desc "Fast high compression read-only file system for Linux, Windows, and macOS"
   homepage "https://github.com/mhx/dwarfs"
-  url "https://ghfast.top/https://github.com/mhx/dwarfs/releases/download/v0.15.0/dwarfs-0.15.0.tar.xz"
-  sha256 "790f3bae70f18e9a6b27d821986fcdb72f00f6c821bf7466eb4b228c19ae78d7"
+  url "https://ghfast.top/https://github.com/mhx/dwarfs/releases/download/v0.15.1/dwarfs-0.15.1.tar.xz"
+  sha256 "a180086f9a898b4b52a5217e336c0134d63a10b395b493f2e19f231d575a87ec"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,12 +12,12 @@ class Dwarfs < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "667971918a01d9ecf9a68e517419556518f40b1a88d129f7388e3c056dde20e1"
-    sha256                               arm64_sequoia: "010a72e9d50722ae75da2b9a90184ba3944b7209201f2727555f75bbb58adcd8"
-    sha256                               arm64_sonoma:  "88707bafc55681104dbe8ebc27cdd8320ae4efadf01052029ec8ecbec1e8ab6c"
-    sha256 cellar: :any,                 sonoma:        "c92cfb03e437391045d4f409b721430d908f5f79b9cf45679b4c683da3b48545"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "163fe1b1433eb1a91a5c1f7298176eacd3575532f6312110b35d515303a34561"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c34707a0aa4b50b2679ca80a577ebaf8ba068e59254a695fe391e4b5b6a3a280"
+    sha256                               arm64_tahoe:   "b243a2802993dec638cea437a9c9e45ad5934676b9ecaa584c846f5fb0f3eec5"
+    sha256                               arm64_sequoia: "1cff8a70137098c0ce4e98adbf798f856f29fd91ca52bc46aeefed665bce32a5"
+    sha256                               arm64_sonoma:  "f237adf0136b796f67eda9f6e536476be0e1ff99690e44574a6a3088fe0d0958"
+    sha256 cellar: :any,                 sonoma:        "3d0e905406c9a3765382d6847ca84f0564b1ff155392e5e80f47110b5559551a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbea34a7d08497160c1b4562af538cd42fa3669ea237c4b29041fa484b2e86e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e60ac81e633d27a38f194b7ccf38eb2ad7448f771756f39c03802f9ad62a298f"
   end
 
   depends_on "cmake" => :build

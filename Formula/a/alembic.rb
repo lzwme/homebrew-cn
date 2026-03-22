@@ -1,20 +1,18 @@
 class Alembic < Formula
   desc "Open computer graphics interchange framework"
   homepage "http://www.alembic.io/"
-  url "https://ghfast.top/https://github.com/alembic/alembic/archive/refs/tags/1.8.10.tar.gz"
-  sha256 "06c9172faf29e9fdebb7be99621ca18b32b474f8e481238a159c87d16b298553"
+  url "https://ghfast.top/https://github.com/alembic/alembic/archive/refs/tags/1.8.11.tar.gz"
+  sha256 "ab299bb4b1894a6675c73fa29940522b54c81a91b1d691ca3470d86b7345ffce"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/alembic/alembic.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "3a8207a61469b1d25e6b2b39968491931f8eeba421877ea6a24ec38044eaf9cd"
-    sha256 cellar: :any,                 arm64_sequoia: "8d40cf612fb27eb0304df9d159573dcf90645d51b071f3d8a16b3dce713562fd"
-    sha256 cellar: :any,                 arm64_sonoma:  "059f167ec443be9b67097c3ad8d20139cef7d88893e188e7dcf83097851592ea"
-    sha256 cellar: :any,                 sonoma:        "819f54e39924e2e0ccbc1c00b74e7a9e4846497e0a6e0383543e4e037cd4b993"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eefaabb5c8e230694b7e045df9e11afa70c1b4864fc26621b19a469ef15b1317"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03de0e5c013bd50a6cc411a5d4fd9200edd9b1273238327ab16f1e705ab1feb5"
+    sha256 cellar: :any,                 arm64_tahoe:   "e998ad08677ded32645d1c6760c18a6fe28d9498cb0c7d92b95f52afe0d18cfd"
+    sha256 cellar: :any,                 arm64_sequoia: "c6063967c5f8228950ee6fc37028a299995fadfe16df49dbf7822e9408a14110"
+    sha256 cellar: :any,                 arm64_sonoma:  "29c5928e08940c9d21732fd5bc5748a9d717775136a82fef23861c48982f802c"
+    sha256 cellar: :any,                 sonoma:        "d97e5d2e338e7b80b6cd9abcee30dcda081be9cafa5bf6ea08c67a3cd61ada64"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cff7051b91258b01135979d371daab9202bbac592c8729cfcb28d402fb941526"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30bb652271cc38b693c199281ae88c89944ad738212ae347d52f633ae20a2cd5"
   end
 
   depends_on "cmake" => :build
