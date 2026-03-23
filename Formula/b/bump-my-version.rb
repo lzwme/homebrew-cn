@@ -3,13 +3,13 @@ class BumpMyVersion < Formula
 
   desc "Version bump your Python project"
   homepage "https://callowayproject.github.io/bump-my-version/"
-  url "https://files.pythonhosted.org/packages/45/11/0f73c652396f86197ea6d509c78e8c44c3483d9a86437ca53ce55edca8e8/bump_my_version-1.2.7.tar.gz"
-  sha256 "d915a10b41e0c9db5a2fa39bde9f45f92e1e4194242d819c9ceb9eca8831cd21"
+  url "https://files.pythonhosted.org/packages/3d/61/07b90027091a4192b4a0290dc3da1aeea6b9e7b6b4c0f7fd30dab36070c1/bump_my_version-1.3.0.tar.gz"
+  sha256 "5780137a8d93378af3839798fcba01c7e6cb28dcc5aa5a7ab4d8507787f1995c"
   license "MIT"
   head "https://github.com/callowayproject/bump-my-version.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "93bfc887dc9105439b8f68be4806ba6f98221765f80184ae76b35704633b3afd"
+    sha256 cellar: :any_skip_relocation, all: "5fa92e92c6fe14100ea9a945af637c99b5b8eac40272da8c3fb826d27e410738"
   end
 
   depends_on "certifi" => :no_linkage
@@ -69,8 +69,8 @@ class BumpMyVersion < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/43/4b/ac7e0aae12027748076d72a8764ff1c9d82ca75a7a52622e67ed3f765c54/pydantic_settings-2.12.0.tar.gz"
-    sha256 "005538ef951e3c2a68e1c08b292b5f2e71490def8589d4221b95dab00dafcfd0"
+    url "https://files.pythonhosted.org/packages/52/6d/fffca34caecc4a3f97bda81b2098da5e8ab7efc9a66e819074a11955d87e/pydantic_settings-2.13.1.tar.gz"
+    sha256 "b4c11847b15237fb0171e1462bf540e294affb9b86db4d9aa5c01730bdbe4025"
   end
 
   resource "pygments" do
@@ -79,8 +79,8 @@ class BumpMyVersion < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
-    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
+    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
+    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
   end
 
   resource "questionary" do
@@ -89,8 +89,8 @@ class BumpMyVersion < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/74/99/a4cab2acbb884f80e558b0771e97e21e939c5dfb460f488d19df485e8298/rich-14.3.2.tar.gz"
-    sha256 "e712f11c1a562a11843306f5ed999475f09ac31ffb64281f73ab29ffdda8b3b8"
+    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
+    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
   end
 
   resource "rich-click" do

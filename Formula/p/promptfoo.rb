@@ -6,22 +6,19 @@ class Promptfoo < Formula
   license "MIT"
 
   bottle do
-    sha256                               arm64_tahoe:   "487598999b9055e2f93022865806bb7b2a7c27086185799f203d6c8f9441fe94"
-    sha256                               arm64_sequoia: "7a8e10ab79ae058e5e7c49645047b7fe00651b30be41c014f1a5471d534bc817"
-    sha256                               arm64_sonoma:  "7876f2fa017a355ececc6f104856cea5eed916668cb9dd7b7aaaabea83cd43b7"
-    sha256                               sonoma:        "d6d08e1a9928eecdb30e524de79d42921ed979e7a0c9d65446d5ce2a49a6df96"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "94876482947603d227b59aad84fe136c490bac6f5ca627f89e019e21f0aa2df2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80f917ca68cf4192c7d9a2227adc9d44a2a389cf6bf9e2582e4625a87ce8795e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9e15352c340a853fa79c592eae5d4c58ad48118f43b3cfad4784c682a1b383f6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7c59c027c6cef10cb97727089d2b022051c238be9387bc6cd815955940d9586"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a798d0e25b95a7d50da08a44891b38f508f3fcb0a497641fc4c2ddd7be84c58"
+    sha256 cellar: :any_skip_relocation, sonoma:        "989f2c0427223662b41bba57751d89c98d44c75555c53cf9d472ad702be9e4f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b61644a4be24a8b66cdedfaf23723464bdfa78f9c978711f1e9a893abc6fd95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4375f9c1d6ae5a875b1c2a67003dbaa077fe6ca9bb67cc84a69e881271cb4543"
   end
 
-  depends_on "glib"
   depends_on "node"
-  depends_on "vips"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version < 1700
-    depends_on "gettext"
-    depends_on "pcre2"
   end
 
   fails_with :clang do
@@ -29,36 +26,20 @@ class Promptfoo < Formula
     cause "better-sqlite3 fails to build"
   end
 
-  # Resources needed to build sharp from source to avoid bundled vips
-  # https://sharp.pixelplumbing.com/install/#building-from-source
-  resource "node-addon-api" do
-    url "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.5.0.tgz"
-    sha256 "d12f07c8162283b6213551855f1da8dac162331374629830b5e640f130f07910"
-  end
-
-  resource "node-gyp" do
-    url "https://registry.npmjs.org/node-gyp/-/node-gyp-12.2.0.tgz"
-    sha256 "8689bbeb45a3219dfeb5b05a08d000d3b2492e12db02d46c81af0bee5c085fec"
-  end
-
   def install
-    ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
-    system "npm", "install", *std_npm_args(ignore_scripts: false), *resources.map(&:cached_download)
-    bin.install_symlink libexec.glob("bin/*")
-
-    # Remove incompatible pre-built binaries
-    node_modules = libexec/"lib/node_modules/promptfoo/node_modules"
-    rm_r(node_modules/"@anthropic-ai/claude-agent-sdk/vendor/ripgrep")
-    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    keep = node_modules.glob("onnxruntime-node/bin/napi-v*/#{OS.kernel_name.downcase}/#{arch}")
-    rm_r(node_modules.glob("onnxruntime-node/bin/napi-v*/*/*") - keep)
-    if OS.linux? && Hardware::CPU.intel?
-      rm(node_modules.glob("onnxruntime-node/bin/napi-v*/*/*/libonnxruntime_providers_{cuda,tensorrt}.so"))
+    # NOTE: We need to disable optional dependencies to avoid proprietary @anthropic-ai/claude-agent-sdk;
+    # however, npm global install seems to ignore `--omit` flags. To work around this, we perform a local
+    # install and then symlink it using `brew link`.
+    (libexec/"promptfoo").install buildpath.children
+    cd libexec/"promptfoo" do
+      system "npm", "install", "--omit=dev", "--omit=optional", *std_npm_args(prefix: false)
+      system "npm", "run", "--prefix=node_modules/better-sqlite3", "build-release"
+      with_env(npm_config_prefix: libexec) do
+        system "npm", "link"
+      end
     end
 
-    # Remove unneeded pre-built binaries
-    rm_r(node_modules.glob("@img/sharp-*"))
-    rm_r(node_modules.glob("sharp/node_modules/@img/sharp-*"))
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do

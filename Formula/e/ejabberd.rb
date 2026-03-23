@@ -94,17 +94,24 @@ class Ejabberd < Formula
   end
 
   test do
+    node = "ejabberd_test_#{Process.pid}@localhost"
+
     ENV["EJABBERD_BYPASS_WARNINGS"] = "true"
     ENV["EJABBERD_CONFIG_PATH"] = testpath/"ejabberd.yml"
+    ENV["SPOOL_DIR"] = testpath/"spool"
+    ENV["LOGS_DIR"] = testpath/"log"
+
+    (testpath/"spool").mkpath
+    (testpath/"log").mkpath
 
     cp etc/"ejabberd/ejabberd.yml", testpath/"ejabberd.yml"
     inreplace testpath/"ejabberd.yml", "port: 1883", "port: #{free_port}"
 
-    pid = spawn sbin/"ejabberdctl", "foreground"
-    sleep 1
-    system sbin/"ejabberdctl", "ping"
+    pid = spawn(sbin/"ejabberdctl", "--node", node, "foreground", pgroup: true)
+    sleep 5
+    assert_equal "pong\n", shell_output("#{sbin}/ejabberdctl --node #{node} ping")
   ensure
-    Process.kill "TERM", pid
+    Process.kill "TERM", -pid
     Process.wait pid
   end
 end

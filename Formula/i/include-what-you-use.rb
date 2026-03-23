@@ -1,10 +1,9 @@
 class IncludeWhatYouUse < Formula
   desc "Tool to analyze #includes in C and C++ source files"
   homepage "https://include-what-you-use.org/"
-  url "https://include-what-you-use.org/downloads/include-what-you-use-0.25.src.tar.gz"
-  sha256 "be81f9d5498881462465060ddc28b587c01254255c706d397d1a494d69eb5efd"
+  url "https://include-what-you-use.org/downloads/include-what-you-use-0.26.src.tar.gz"
+  sha256 "5247c0c9a59df9d14e8aa7408ffec4134c6a4aef12f590929111fbfeac930a08"
   license "NCSA"
-  revision 2
   head "https://github.com/include-what-you-use/include-what-you-use.git", branch: "master"
 
   # This omits the 3.3, 3.4, and 3.5 versions, which come from the older
@@ -17,16 +16,16 @@ class IncludeWhatYouUse < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cb16a8422501ee26489ab0dc70d2137f66fab074435382c390efa33271290a24"
-    sha256 cellar: :any,                 arm64_sequoia: "680eeeb2004d29b000e4b24ff69136cb988f903b8a9ede72be642427a9128965"
-    sha256 cellar: :any,                 arm64_sonoma:  "e90a4915c7ab8fe751a8dc6038539657d1ce3b1d9ddd76c19cb92af846946fe1"
-    sha256 cellar: :any,                 sonoma:        "d0f141120aaede9cf0d38d68b2f09907b02aadcd4b36abcf44fb14e82c06e15c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe1f672fc5f6b859f9b7935ef7ec93826ec067eca641b6bc45c4aaea888bf424"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de767ccb3a6ffb9f5fa5ac5e71202381a2aeb4b22de7d1df06c96a262f431e5c"
+    sha256 cellar: :any,                 arm64_tahoe:   "e9305ba6904fb9eaf0667bf1ecb997ac246f9324a8a7ab8dda143cea9fe68d7f"
+    sha256 cellar: :any,                 arm64_sequoia: "682e8c9a6382511726473c66db09aa6d1ff49dcb9de8cadf5fb076c58640d692"
+    sha256 cellar: :any,                 arm64_sonoma:  "c22754d7c061f04621025f151d0aeee90da20bd9dfab05e92fe7e18d05e8050e"
+    sha256 cellar: :any,                 sonoma:        "fac4b6b56a0f3dd03be07545c89b3be4ac623398ccc8a6b8ea1e46117ba8a585"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49d35bcdc687d3501d9c9e7c89f4d44d0650beb24f7f2f2562c2d0cd1075cfba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2d2879a2aa78ab98386305bf0f4b53b998ba4554f6bcf9cbd0422734c316974"
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm@21"
+  depends_on "llvm"
   uses_from_macos "ncurses"
 
   on_linux do

@@ -1,32 +1,20 @@
 class Roapi < Formula
   desc "Full-fledged APIs for static datasets without writing a single line of code"
   homepage "https://roapi.github.io/docs"
-  url "https://ghfast.top/https://github.com/roapi/roapi/archive/refs/tags/roapi-v0.12.6.tar.gz"
-  sha256 "15b4f7c7b16b1fa87a487569d42e76355acbce9ecdaaa34bf1203326d77e7b57"
+  url "https://ghfast.top/https://github.com/roapi/roapi/archive/refs/tags/roapi-v0.12.7.tar.gz"
+  sha256 "97d30e5f8d8ea9292a05ab67925ca71246c96cdc82d690a95242b186d656c714"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6116ecb02c112d2f990024d034ba242894e9e4a023f6756f883e0ec58b3408e2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3bf66401f133a7d2e9234280571eed8cf06b9f1b98802762b5995b456414077"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1d1d6423d420c65fe3f2b414fdd0c33a67226d5afae78c5ddebf6e4dea35931"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1f2e0e0df5b406870033b3284ad136e6566c4f1fefb32c8d7c36f75c42f3e931"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "528ea8f1d1cb5818ac4259bddd081f9e03069e78cb254f8f74c3de15f0720eb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8b39ad8324ea2d41fa80ff81a6c623453ab504752e02c915eed48d11b212616"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "206a038df2a8bcfc3b22cae42d0ba36a22c8d75bc5347eef165abca1fd0fd291"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4392cba3e8df84b89d7a1da7a6bf3753172a98058f0dcb109e4c050a9ac2ef82"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a90e2178cf2ef6830efa3d31f53311129508b67b1be6152d2f26b8555946047d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f0cdbe9d524400a20e42412b7335fba2d39c091633b81e268ec8a7370f9d879e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d43120591307e4b3423f72675135854c05a634ce79cb1a28812bb345bbcb8f34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e85bf2d4fd6880821e4300f86781f5ec072c5c5be68301c76c04452e0090138"
   end
 
   depends_on "rust" => :build
-
-  # Fix to error: hiding a lifetime that's elided elsewhere is confusing
-  # Should remove on next release
-  patch do
-    url "https://github.com/roapi/roapi/commit/f01f6b4d9e08638052afbde907316052bb241856.patch?full_index=1"
-    sha256 "ad02d21a2327d18b0d60b59a56c8d2019b76627be793ed3ab330be95a4e1b79b"
-  end
-  patch do
-    url "https://github.com/roapi/roapi/commit/162dbfe5ad1b6815691b33fc9cc096e37773d767.patch?full_index=1"
-    sha256 "00786352042683d2c7951d41a72fe69bd67f04bab1420016f758f0ddae8bb88b"
-  end
 
   def install
     # skip default features like snmalloc which errs on ubuntu 16.04

@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/0b/f2/24df7e625ffeb52beb55047bff0eee89729482a0d54113bd9859e6f1fa68/schemathesis-4.12.2.tar.gz"
-  sha256 "cf7ba3d2ed26d3df441e8282c05008e6c9fa0c619c8a89ca080a9ff135216f0f"
+  url "https://files.pythonhosted.org/packages/4e/08/d011bb86c7d0a6e4f8fe8614675b582e09ea7cbc1508d2aae2043c9b1fcc/schemathesis-4.13.0.tar.gz"
+  sha256 "a2fafe13d20d299d10d166c521f675798d03576ae31899c3bf762aae7efab4e1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a398dfab1704867bdffef376d3a220703b6818561001577856507193c3549a6c"
-    sha256 cellar: :any,                 arm64_sequoia: "394fe800e9c745c9be09838648388c0449cf3e85cfb34870e3b254a4eef27dba"
-    sha256 cellar: :any,                 arm64_sonoma:  "d0a32408a0df4fe4e700bc83b9b6246a5de796579e2c0ca989e693b89b3b3658"
-    sha256 cellar: :any,                 sonoma:        "2762cec6801e9c220d0b137f3cc4a655c2da0286d57c0b5b8437cd61b94be66d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b97013abb3533df6b29cacb99e63424836214ba233565b892e1cfcab09de2ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1686b3bd95b11e6464ab84e4aa846fc1f6facbcef993b4cebcde7c1247403b8"
+    sha256 cellar: :any,                 arm64_tahoe:   "9dfa965f92bcd1b1da5f2c7032e4f94d30ae5328643d6e9196475d28263ea237"
+    sha256 cellar: :any,                 arm64_sequoia: "26ac934b90a2d0d7eb7760f5a8897d87f07349a24756c1b0d82022c206244d7a"
+    sha256 cellar: :any,                 arm64_sonoma:  "c2f8cd6fc9edecb4f79e14ecc6e18761814aa6b7fd0f78aad8af39ddc4ac86d0"
+    sha256 cellar: :any,                 sonoma:        "0fd2122d63732a04903f8abce1979a5719eea99ca1b180fbb99a4c191db7eef8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2957c27c121767a5f381fb9a86ae20c5956852c2dac76821fa2565e543214bde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47ed7921389ef536c873c368e6592f0468ba38f503964152d0990215c576fc32"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
@@ -32,8 +32,8 @@ class Schemathesis < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
-    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
+    url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
+    sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
   end
 
   resource "charset-normalizer" do
@@ -147,8 +147,8 @@ class Schemathesis < Formula
   end
 
   resource "pyrate-limiter" do
-    url "https://files.pythonhosted.org/packages/03/98/2b3dc1ba6bdf2efaeaa3e102124cbd2636a4ccec241ffeb8a1de207f5cd4/pyrate_limiter-4.0.2.tar.gz"
-    sha256 "b678841e2215f114ef6f98c7093755ca3b466de83cb5a881231fd6e321fa14b5"
+    url "https://files.pythonhosted.org/packages/33/0c/6e78218e6ef726be35a4c0a5e2e281e36ddd940566800219e96d13de99ad/pyrate_limiter-4.1.0.tar.gz"
+    sha256 "be1ac413a263aa410b98757d1b01a880650948a1fc3a959512f15865eb58dbf3"
   end
 
   resource "pytest" do
@@ -187,8 +187,8 @@ class Schemathesis < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/c4/68/79977123bb7be889ad680d79a40f339082c1978b5cfcf62c2d8d196873ac/starlette-0.52.1.tar.gz"
-    sha256 "834edd1b0a23167694292e94f597773bc3f89f362be6effee198165a35d62933"
+    url "https://files.pythonhosted.org/packages/81/69/17425771797c36cded50b7fe44e850315d039f28b15901ab44839e70b593/starlette-1.0.0.tar.gz"
+    sha256 "6a4beaf1f81bb472fd19ea9b918b50dc3a77a6f2e190a12954b25e6ed5eea149"
   end
 
   resource "starlette-testclient" do

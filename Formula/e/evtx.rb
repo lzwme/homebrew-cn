@@ -1,18 +1,18 @@
 class Evtx < Formula
   desc "Windows XML Event Log parser"
   homepage "https://github.com/omerbenamram/evtx"
-  url "https://ghfast.top/https://github.com/omerbenamram/evtx/archive/refs/tags/v0.11.1.tar.gz"
-  sha256 "ff852ba0d469acc77630db41f0d3c76bbc4fce01e037b07770da3b9a9472d73b"
+  url "https://ghfast.top/https://github.com/omerbenamram/evtx/archive/refs/tags/v0.11.2.tar.gz"
+  sha256 "b1a8d6c2e176fc67d9c6431255847d657024ac4ec32c8752375e189171bcfa57"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/omerbenamram/evtx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ad2a98dbb129359b978ee095ee6e9004cf723841d0b7001288e326d1e79f896"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30add89f3974b06020b0ac73251a07f7bca36389f11786765ecff0758fd99fa2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e0b8f9c26c5c60c21032e680e6dc0114f863db82af8b97ce092a78680de15c7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5e99b685ee246720c41d180c960085172b9bb9eba8300441e47e22b098dfb0f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9c6beb8eafb842fd973785b96d9f906a37107168aab459f82e44e8406c6d84a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1121bd8b48bcbe67e5954045d7231f2cec10bb67d0ede6f15021214ff990ee01"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14b66d509ebd7829d09268b6babc721bb40f43fb462dfa15576fe0677e8e61e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39270961c9b9c822158a48b3568b193cf0a9258f1aa4fb74786c1c49fee25160"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6183490db0fd4f8093b872b20ccb04621baaf6a1f69ba19042a4537e81413f3f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "86485fc045f5223fb61430c7a5bcb64681b8f7536e68fbc3f7f7659488509faa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44bee646ed5a476aafb00c3c54b243a3b6abfd05544e2077e935457f96e12ad0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4222f3e515023e356d554780af9067f84f3581a7b87bae63cc2a14dc216d1546"
   end
 
   depends_on "rust" => :build

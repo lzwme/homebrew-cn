@@ -1,29 +1,23 @@
 class Fastp < Formula
   desc "Ultra-fast all-in-one FASTQ preprocessor"
   homepage "https://github.com/OpenGene/fastp"
-  url "https://ghfast.top/https://github.com/OpenGene/fastp/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "fd7e20923e8f748803d54d9e0fabf44a44c748822a65062999e4b7edec6b8da6"
+  url "https://ghfast.top/https://github.com/OpenGene/fastp/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "c55656dfe9c3a40d3da59d680aa4ff4a2a4861bbc3993cb3659cdeb5e23fd858"
   license "MIT"
   head "https://github.com/OpenGene/fastp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b02fa8eb605f94a974f37b89724a6c00761867bb64991febf9e1ade48a978d27"
-    sha256 cellar: :any,                 arm64_sequoia: "a60acfa9d9c2ac218fcf2aa84f95c2b0ab496ba808c692938db33f0780976d14"
-    sha256 cellar: :any,                 arm64_sonoma:  "0c6bfce83397202a958d5d55a85a1162fdcd28fe4fc40ab4286495786da1408b"
-    sha256 cellar: :any,                 sonoma:        "bb3d842ea702ec3abd214bffd5206b7a04bb1ee9f862af60a4db81e06b9591a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "771b3d74c74f777203e479b5a57bfd5c02555622b34fa22822d441cd64c4953d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01cb3eda27cbfcc940d1499dac5d1a8962b5bca60f3eaa5e0ff47fe3e0ef53ac"
+    sha256 cellar: :any,                 arm64_tahoe:   "4b3cd27137c016fb30ab7133d42eba0d526a4c8174cb994432a95a2339596393"
+    sha256 cellar: :any,                 arm64_sequoia: "04de2eb48361d2a6ab031fe66587ac5ad3cf8302b038d457970a7baf82a9a2c9"
+    sha256 cellar: :any,                 arm64_sonoma:  "20f35cc1600e805a27251b15ddadd0a82ed873e424bc561b69deb5516f5f8a1c"
+    sha256 cellar: :any,                 sonoma:        "8be6ff536586710382c0f15a05f989464b0039cd3272f2fcd45125ac2a9c5990"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea2cc9354495f7f1348ce86b73d3bd6e1f8d2edad4b67860a1c99dc72c74208b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b89099cd70d5c4504b6a2ac388b9a43c9316d3fc0c61476b1844127c4040967"
   end
 
   depends_on "highway"
   depends_on "isa-l"
   depends_on "libdeflate"
-
-  # Remove forced Linux static linking, upstream pr ref, https://github.com/OpenGene/fastp/pull/667
-  patch do
-    url "https://github.com/chenrui333/fastp/commit/b86119e07253b86d161d18cfcd46815a78a328d8.patch?full_index=1"
-    sha256 "3ac491369f4354a895312cddce82ea2b8aa02bb52c4f5b9c040cc3d8cfaeeb58"
-  end
 
   def install
     mkdir prefix/"bin"

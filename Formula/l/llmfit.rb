@@ -1,24 +1,24 @@
 class Llmfit < Formula
   desc "Find what models run on your hardware"
   homepage "https://github.com/AlexsJones/llmfit"
-  url "https://ghfast.top/https://github.com/AlexsJones/llmfit/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "06b9d6b6b3308610727d560eee44a89df2dface3919e677d72bfa4de7d11a4c3"
+  url "https://static.crates.io/crates/llmfit/llmfit-0.8.4.crate"
+  sha256 "93dac11633e8dcbaa8e3a91c9bf0b342c0d206295e360b5a37d6588360f1f69d"
   license "MIT"
   head "https://github.com/AlexsJones/llmfit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06925c2ef4d631192e5ef50134246846084f12cc47a7e52cbd276080b2877379"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aedb87028cd99ef001fbcec8bfb036c06473fc639da595d82e5165d72d4dcb5f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9b5467afe78c415150d4bd31b88befdfbc9156ca3f130180fb5813f0d7da0f2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bcca31371130d84e0a9ca6446077d837bbf8c7756494d6b3aa3f34fd037feb11"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4149e1871f2be74f86d93fb8f348c20d0d289450c70677a7c74af1466e78e35c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3f063c64c214faa93bef37b0735e7cc10f1579dbb2bdbef6e7178f727ed7116"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52c8463f146e539583ae9da968f65b4cf23dcd73405d2004bb1b76540670e8bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5fa356e126c7d6dc05b9215b3b52ecf7b5efb5e3d93729f5c65c7286d0a6798"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ccf52008e619ef1a0370c03b55aca4fe2909ae5cbbf936a85a44c7b425097e78"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0dd011578a256470d9456be68b8597d98fe8b5979ec8ddd15b61e40a4cb4f8e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa4b29ab2f79ea84d42aba19dfd82c27f485b2de56e624a7be9fa79a2f6708f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c619465b9e6ddacd71bb5bd0d9e6f3c2fc2f93c727fb9127da6a18b41f6ddb72"
   end
 
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "llmfit-tui")
+    system "cargo", "install", *std_cargo_args
   end
 
   test do

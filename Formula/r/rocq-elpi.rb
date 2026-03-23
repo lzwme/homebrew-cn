@@ -5,6 +5,7 @@ class RocqElpi < Formula
   url "https://ghfast.top/https://github.com/LPCIC/coq-elpi/releases/download/v3.3.1/rocq-elpi-3.3.1.tar.gz"
   sha256 "97468eea82299c7276ea5e1047342e8897de5a437a357e595a5728183ea66721"
   license "LGPL-2.1-or-later"
+  revision 1
   compatibility_version 1
 
   livecheck do
@@ -13,12 +14,12 @@ class RocqElpi < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "66f5f79c9c0b247a4f4c257918e0060c8937d55356a9fa7ca899921be590fd2d"
-    sha256 arm64_sequoia: "4006e4d8afea43f2ba2f126cbecdc7b60cadd6d85d5d94546f48db09ba6b2e41"
-    sha256 arm64_sonoma:  "2f95a9e10ad415d91f6776009016092d7cb9ad6cd6cb6707be0b8246592c917a"
-    sha256 sonoma:        "f940e54ae99807217f998c0f3207d7716be6d3611fb78a3b3bf06c5efa0a6f3c"
-    sha256 arm64_linux:   "8ed9b4772fb83b3987a52021245e1bb9fff7da3aff1fe73bdd7b5df4f049ddfb"
-    sha256 x86_64_linux:  "7b8c260e31ca799133d58cc8db868b47be10961b1fc1f1c5e9f029ff685d38b7"
+    sha256 arm64_tahoe:   "bf16e11e81aed811ff3370122873ec135f0476d5330b19b23d7739e170bf6713"
+    sha256 arm64_sequoia: "5f85a3d033ed19eb30ccf6e830beafeebcb7e103c7499ba6286499f09e91250b"
+    sha256 arm64_sonoma:  "633a069ba51abb921442b4e1595ed42afe8b04457642fb8dbec23bc4538a8012"
+    sha256 sonoma:        "f97723ee6985064bae456a0ac66f9a1aa2a4c6bce468b9c7a9c8f2d43154a390"
+    sha256 arm64_linux:   "f41e452874613a8407aa014a926e1d5f9ff9bbfd602f915012f4e4cbf817dd00"
+    sha256 x86_64_linux:  "e43ac552f0e02fc52356122e1069a60266d814aff7082300e4869bbad7d64259"
   end
 
   depends_on "dune" => :build

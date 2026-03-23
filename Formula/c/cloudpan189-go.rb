@@ -21,6 +21,9 @@ class Cloudpan189Go < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "21c193bc56690eef410bdbbce6d6b774fcf658f16b114ea0222afee18591d361"
   end
 
+  deprecate! date: "2026-03-22", because: :repo_archived
+  disable! date: "2027-03-22", because: :repo_archived
+
   depends_on "go" => :build
 
   def install

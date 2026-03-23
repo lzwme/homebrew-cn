@@ -14,12 +14,13 @@ class Nexttrace < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae2cfe945c714c811d90f6cba40b5f30421912ccc3b483e3ec84c09446418a73"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9b7941fd708f17796c4d52c4954011ba011c9e832a5d3be61f6823f78fdc7c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dbad1d29f86304f9a3b8f775fcc554f751b9a8365260414aa9b98cb2ff15c2a8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f311dbdc3b3db59cfcf056090645ef47e12e37e6dce34def668f9a35865ebbf4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f954af10843510adf07e55f32aee41200fa65a4ad87b0e4d4d580941a9da2b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bd95da27bad69a6b6aba1abb57410d0877e3aaa591b074f349b8e98d7449ccb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d611c0d3a668465df8abfcae0e74d08751e12a1130ff34efcdb2edbd2d198f4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20cac5912ffe63118b12d12efc8dff29f3d3deb55100ff60c2e7ea7439839e00"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cfdb0297f32919fbd5b48f20e8f544e01923160ba5fd54aa3d061fa3b11ce73f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e3d2f2b33acddd71e79f6f43761434d079a037cf420482402477d850117615ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e95f94da2c088338f2ab4ebecdc91ac3c03f466f180f9cabb7a81b6e781df393"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eee804de76758d6b753f0882015f3e6f4424fa991ed5be44e6a65871198da0f0"
   end
 
   depends_on "go" => :build
@@ -30,9 +31,7 @@ class Nexttrace < Formula
       -X github.com/nxtrace/NTrace-core/config.Version=#{version}
       -X github.com/nxtrace/NTrace-core/config.CommitID=#{tap.user}
       -X github.com/nxtrace/NTrace-core/config.BuildDate=#{time.iso8601}
-      -checklinkname=0
     ]
-    # checklinkname=0 is a workaround for Go >= 1.23, see https://github.com/nxtrace/NTrace-core/issues/247
     system "go", "build", *std_go_args(ldflags:)
   end
 

@@ -2,6 +2,7 @@ class Rocq < Formula
   desc "Proof assistant for higher-order logic"
   homepage "https://rocq-prover.org/"
   license "LGPL-2.1-only"
+  revision 1
   compatibility_version 1
 
   stable do
@@ -20,12 +21,12 @@ class Rocq < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b8360a844ef669a0b3b08a9a5a3dfe296902688ce6fbad6a7e9a612954e8e47f"
-    sha256 arm64_sequoia: "1a8d48139fa5839cdc196c5d4f79823d0a47b6f68f15f367091f16b628fe1c11"
-    sha256 arm64_sonoma:  "e534440b771adc163d4ecc14f72ec5efffd6e2e2b4c0f880c47c0dab281a4ff2"
-    sha256 sonoma:        "ab3466cbae6cc0d9a150993ef372cb7116b0b8e2347fcb1f63603c1d5327f665"
-    sha256 arm64_linux:   "9c307986f20b14744bb1cf125096710f009d8c40a83834ca02b93ac198e730ce"
-    sha256 x86_64_linux:  "a537821e69bdddf8dfc88fdfa542adf4e1fcc05886d6056fc4e5bb3c11dee459"
+    sha256 arm64_tahoe:   "115c48fed35576b8543ee131ce2e7d76aacbaf41bf26ba748da6e91318ac47e6"
+    sha256 arm64_sequoia: "6189d339f699d4741e897e3dd72b5e1b3166882cb5f8daaa0ee1e51577a98c95"
+    sha256 arm64_sonoma:  "00d13e12440801af1ca6c5511d1d25ed42aced5b2bb42156ad115add4abfb76e"
+    sha256 sonoma:        "d8cc0cb44561d73766ce10cdc1bdf105d07f98d0ba1cc478ea97d199500e4da3"
+    sha256 arm64_linux:   "0444ebaece6e0db5bff8c49dccdff11aeda920b641f5bef478ee54a667f7f59b"
+    sha256 x86_64_linux:  "d260c686d4408133e018b5035683bd963f4b0844af66f9890307929965f908b1"
   end
 
   head do

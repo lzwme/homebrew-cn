@@ -1,8 +1,8 @@
 class Grokj2k < Formula
   desc "JPEG 2000 Library"
   homepage "https://github.com/GrokImageCompression/grok"
-  url "https://ghfast.top/https://github.com/GrokImageCompression/grok/releases/download/v20.2.0/source-full.tar.gz"
-  sha256 "b1d4b4dd65251090ce653b23d09f43e5ad57602ee98b2f91d887bdef6e3ab7e0"
+  url "https://ghfast.top/https://github.com/GrokImageCompression/grok/releases/download/v20.2.1/source-full.tar.gz"
+  sha256 "522852759fb7ae7632f97643c5e05ee4e5798db9088186c6bcdb5c4ca30c427f"
   license "AGPL-3.0-or-later"
   head "https://github.com/GrokImageCompression/grok.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Grokj2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "af2635f349fad9d763a0ca4669b19f9e415534f824a99a7a63ce30267a98db60"
-    sha256 cellar: :any,                 arm64_sequoia: "1f7773e8bf5a2765b23f71cd9f8bca6c043feddb070ad943b308f3e6f9d904d0"
-    sha256 cellar: :any,                 arm64_sonoma:  "bcdd137553268bb67f34f0595582978bdc58409decec41ddb35a9a0024d76561"
-    sha256 cellar: :any,                 sonoma:        "a3d1a546ebedcc9a475dc39a0749085820d708da9789c1192b7b7c06827350aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6f018e659534363f531b3fde7c64ed81afd8480c06fcd9dc096acd2272ab282"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b589fcd51915fa5df7287940c4c03c5b7790c543547c870ad6da2d6cd5ef942"
+    sha256 cellar: :any,                 arm64_tahoe:   "337a651e760f24ff5ce5b72a6b9df02699b072ca2fbd5e76386b1cbc26e0b2db"
+    sha256 cellar: :any,                 arm64_sequoia: "dbfe9f4e8a07a3b939df48f7249b725d129377dde522acaa4199387e28f3b818"
+    sha256 cellar: :any,                 arm64_sonoma:  "36e6bd54a320ac8ea8accfdc8afe851237c653586560c9d6dc2c9ab5feb6517f"
+    sha256 cellar: :any,                 sonoma:        "fc3be815fe9386297ef02d949f58ad99d6414eca039566f19e0d736202fb9507"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c98effded73b0f058ea8c7516d05668474f27114b2bc5fc93b9be15926eb5b66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f3503a85808fd9c46f1e8799cd22aaef680ea8d660030b0a2d798c6764a097d"
   end
 
   depends_on "cmake" => :build

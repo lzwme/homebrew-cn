@@ -1,18 +1,18 @@
 class Handbrake < Formula
   desc "Open-source video transcoder available for Linux, Mac, and Windows"
   homepage "https://handbrake.fr/"
-  url "https://ghfast.top/https://github.com/HandBrake/HandBrake/releases/download/1.11.0/HandBrake-1.11.0-source.tar.bz2"
-  sha256 "c5de77365b083f519c76b9edcc0685d8bda9ce04fc0ad59c3c38145355ef1b17"
+  url "https://ghfast.top/https://github.com/HandBrake/HandBrake/releases/download/1.11.1/HandBrake-1.11.1-source.tar.bz2"
+  sha256 "4ff6a8a57c9b1cea51025306e313eee423b0fa1a8b7799aeaa8d4d7c457a7310"
   license "GPL-2.0-only"
   head "https://github.com/HandBrake/HandBrake.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "62bc75a4742e0a57cfbbca7ea877bc1ea9da623e5855cc99fc0de31bd77a9215"
-    sha256 cellar: :any,                 arm64_sequoia: "c9c95e193870201045a569c46c836aa543855d36d5ec25b421dbde384dfddc0f"
-    sha256 cellar: :any,                 arm64_sonoma:  "611ae94bc08bbb89dd0e16f26475f40026e395a378cc71818e496e7f7a3964b0"
-    sha256 cellar: :any,                 sonoma:        "404c788c5c74eeab3018885f33c1172d39bf2f359323945d9682bf5ca87c6879"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "537b85f124f68ba9341c743f899d7b8f63101fb228065e225d14d7c05757f9ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef64a622c0c98095b5db1582dc76ca6e54b01e19cf378fc2773380db1d4e63fa"
+    sha256 cellar: :any,                 arm64_tahoe:   "e4958aeec4f211615cabf05103cc658fd16e41fa94a75ad6534ee3d530f8c9dc"
+    sha256 cellar: :any,                 arm64_sequoia: "6bced8e0eb310af3577405a6b8f1547a223740dd2167483b8a815d07b6ed7f3b"
+    sha256 cellar: :any,                 arm64_sonoma:  "7258a8f387259d9fc67dd4bebf095804fe089a7642c7ee19ae8950e944c9c5fa"
+    sha256 cellar: :any,                 sonoma:        "a5262e08a6c6d774ef9785d642a723b2fccc41e0a4667f820b8836f67c9767ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ec61958b85a3b15844259f56a2975bf3dd1cf1ab8703ef9d1860eb781929270"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2d8d8f17070ea586be9a0524af66406fed98d4f781595d7f5310b692d87658e"
   end
 
   depends_on "autoconf" => :build

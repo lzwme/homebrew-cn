@@ -1041,7 +1041,6 @@ Homebrew-homebrew-core/Formula/c/clangql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clarinet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/classads.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/classifier.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/claude-agent-acp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/claude-cmd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/claude-code-router.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/claude-code-templates.rb, Homebrew/homebrew-core, 0
@@ -1905,6 +1904,7 @@ Homebrew-homebrew-core/Formula/e/espeak.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/espflash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/esphome.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/esptool.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/e/et.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/etcd-cpp-apiv3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/etcd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/ethereum.rb, Homebrew/homebrew-core, 1
@@ -3116,6 +3116,7 @@ Homebrew-homebrew-core/Formula/i/iceberg-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icecast.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/icecream.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icemon.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/icestorm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icloudpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/icon-naming-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/icon.rb, Homebrew/homebrew-core, 1
@@ -3780,7 +3781,7 @@ Homebrew-homebrew-core/Formula/l/lldpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/llgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llhttp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llm.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/l/llmfit.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/llmfit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/llnode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@12.rb, Homebrew/homebrew-core, 1
@@ -4801,7 +4802,7 @@ Homebrew-homebrew-core/Formula/m/mongodb-atlas-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mongoose.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mongosh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mongrel2.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/monika.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/monika.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/monit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/monitoring-plugins.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/monkeysphere.rb, Homebrew/homebrew-core, 0
@@ -7202,7 +7203,6 @@ Homebrew-homebrew-core/Formula/t/tcsh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/td.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tdb.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/t/tdd-guard.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tdlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tdom.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tea.rb, Homebrew/homebrew-core, 0
@@ -7736,7 +7736,6 @@ Homebrew-homebrew-core/Formula/v/vgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vgrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vgt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vhs.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/v/vibe-log-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vibecheck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vice.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/victorialogs.rb, Homebrew/homebrew-core, 1
@@ -9008,7 +9007,6 @@ Homebrew-homebrew-cask/Casks/c/claude-devtools.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/claude-island.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/claude.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/claudebar.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/c/clay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cleanapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cleanclip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cleaneronepro.rb, Homebrew/homebrew-cask, 0
@@ -13395,6 +13393,7 @@ Homebrew-homebrew-cask/Casks/m/menuwhere.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meridiem.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/merlin-project.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meru.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/mesh.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meshlab.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/messenger-native.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/messenger.rb, Homebrew/homebrew-cask, 0

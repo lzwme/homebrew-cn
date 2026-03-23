@@ -12,25 +12,33 @@ class Xgo < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0e4fd2f4eb245d182b44b646ba69c26ca149b1fc078a1b6cd3c535cf15ca8946"
-    sha256 arm64_sequoia: "2c19011efb91f3364245e09820031e904b03454386b9a7fd51e50a7cb084b12d"
-    sha256 arm64_sonoma:  "25a5409d2035a3c4cdf010ca9e0652ee945a489a0347cbeb26d18a4b7d79176f"
-    sha256 sonoma:        "100f851b8c56238806a3a139e10259d3ea1706e8c087f49b57f0e2f097419922"
-    sha256 arm64_linux:   "3fbf4ca8ce8214f8e3cc6442690c9182ab23fd66d8427e4eea2abf9ed5ee843c"
-    sha256 x86_64_linux:  "9f0205adca4e42fc5c9f9a0265046766debcf98030987dde2fd2c5eeb411b797"
+    rebuild 1
+    sha256 arm64_tahoe:   "3c7dc19ca1cd86e82d313c14726c5cb0c207974983806313106934bcf03d143b"
+    sha256 arm64_sequoia: "3c7dc19ca1cd86e82d313c14726c5cb0c207974983806313106934bcf03d143b"
+    sha256 arm64_sonoma:  "3c7dc19ca1cd86e82d313c14726c5cb0c207974983806313106934bcf03d143b"
+    sha256 sonoma:        "958c6902406feb814beed05766e094888b5ee87dd6ea8be658e3855e2314eecb"
+    sha256 arm64_linux:   "1609dfb3658109b13c0d589512f0accf16f5822929c2056224d40f06c6243bca"
+    sha256 x86_64_linux:  "1a30d84381ce9bd456b63054e7f1e36fa0483c3d7eb52091c02b2896a2eb8526"
   end
 
   depends_on "go"
 
   def install
-    ENV["GOPROOT_FINAL"] = libexec
+    ENV["CGO_ENABLED"] = "0"
 
-    # Add VERSION file
-    (buildpath/"VERSION").write version
+    ldflags = %W[
+      -X github.com/goplus/xgo/env.buildVersion=v#{version}
+      -X github.com/goplus/xgo/env.buildDate=#{time.strftime("%Y-%m-%d")}
+      -X github.com/goplus/xgo/env.defaultXGoRoot=#{libexec}
+    ]
 
-    system "go", "run", "cmd/make.go", "--install"
+    system "go", "build", *std_go_args(ldflags:, output: libexec/"bin/xgo"), "./cmd/xgo"
 
-    libexec.install Dir["*"] - Dir[".*"]
+    # gop is a symlink to xgo
+    (libexec/"bin").install_symlink "xgo" => "gop"
+
+    # Install source files (required for XGOROOT validation)
+    libexec.install Dir["*"] - Dir[".*"] - ["bin"]
     bin.install_symlink Dir[libexec/"bin/*"]
 
     generate_completions_from_executable(bin/"xgo", shell_parameter_format: :cobra)

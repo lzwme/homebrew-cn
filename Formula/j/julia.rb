@@ -17,12 +17,13 @@ class Julia < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "9785857320c7d661ee4658ebdf4b3e3983904beca996c081222ec8ec50b6ebc2"
-    sha256 cellar: :any,                 arm64_sequoia: "7d67a46ec8794767598055582bb4e3cd3117239dc43e697de49abec822e7385e"
-    sha256 cellar: :any,                 arm64_sonoma:  "f6a777fb6382ec79c96627769bed728b22f752e46ee672e38051f9ce890de2f0"
-    sha256 cellar: :any,                 sonoma:        "ecb8100fb9924dbfe8ae53aaba483542b8cba21d3afe53a14bb667cea5b35f23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ff47b0a140358b3ccfa2891f41b8a2cc97a2d68853f7e2d96c54417adb15bd8"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "13bce352649667518549e638b37acc7b8d0a3c6d427b13a190ec02684c363f90"
+    sha256 cellar: :any,                 arm64_sequoia: "9a7bc0160c8e38b19c3a418ed3047d72fa90a42b4ebdbf1869ce4201017bdc38"
+    sha256 cellar: :any,                 arm64_sonoma:  "3539da2d6f0855711a8dda0b670de3c4f87143dd8a06f4899db1ecdaa3d16ba6"
+    sha256 cellar: :any,                 sonoma:        "d8f1fbbc3ca3cdca078d18ecd296d3052091c14e26dd469e7d45553b7d1b16cf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2c8af25b2fe5d1240b01c8e3b9c6621de8e50c441de40dff07b2fff86a3895b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b76c5bd2bdf90bb32c8353c63b8663d6bf48a79936f8e6c7552701a066bf451"
   end
 
   depends_on "cmake" => :build # Needed to build LLVM
@@ -92,20 +93,26 @@ class Julia < Formula
       WITH_TERMINFO=0
     ]
 
+    args << "TAGGED_RELEASE_BANNER=Built by #{tap&.user || "unknown user"} (v#{pkg_version})"
     args << "MACOSX_VERSION_MIN=#{MacOS.version}" if OS.mac?
 
     # Set MARCH and JULIA_CPU_TARGET to ensure Julia works on machines we distribute to.
-    # Values adapted from https://github.com/JuliaCI/julia-buildkite/blob/main/utilities/build_envs.sh
-    args << "MARCH=#{Hardware.oldest_cpu}" if Hardware::CPU.intel?
+    # https://github.com/JuliaLang/julia/blob/master/doc/src/devdocs/build/distributing.md#target-architectures
+    march = ENV["HOMEBREW_OPTFLAGS"].to_s[/-march=(\S+)/, 1]
+    args << "MARCH=#{march}" if march
 
+    # Values adapted from https://github.com/JuliaCI/julia-buildkite/blob/main/utilities/build_envs.sh
     cpu_targets = %w[generic]
     if Hardware::CPU.arm?
       if OS.mac?
         # For Apple Silicon, we don't care about other hardware
         cpu_targets << "apple-m1,clone_all"
       else
-        cpu_targets += %w[cortex-a57 thunderx2t99 carmel,clone_all
-                          apple-m1,base(3) neoverse-512tvb,base(3)]
+        cpu_targets += %w[cortex-a57
+                          thunderx2t99
+                          carmel,clone_all
+                          apple-m1,base(3)
+                          neoverse-512tvb,base(3)]
       end
     end
     if Hardware::CPU.intel?
@@ -114,12 +121,6 @@ class Julia < Formula
                         x86-64-v4,-rdrnd,base(1)]
     end
     args << "JULIA_CPU_TARGET=#{cpu_targets.join(";")}"
-    user = begin
-      tap.user
-    rescue
-      "unknown user"
-    end
-    args << "TAGGED_RELEASE_BANNER=Built by #{user} (v#{pkg_version})"
 
     ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}/julia"
     # Help Julia find keg-only dependencies
@@ -162,6 +163,9 @@ class Julia < Formula
           ln_sf so.relative_path_from(lib/"julia"), lib/"julia"
         end
       end
+
+      # Remove debug testing library which causes EOFError when parsing ELF
+      rm lib/"julia/libccalltest.so.debug" if Hardware::CPU.arm?
     end
 
     # Create copies of the necessary gcc libraries in `buildpath/"usr/lib"`
