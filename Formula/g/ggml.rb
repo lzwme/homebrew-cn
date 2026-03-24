@@ -62,7 +62,7 @@ class Ggml < Formula
       -DGGML_BUILD_TESTS=OFF
       -DGGML_CCACHE=OFF
       -DGGML_LTO=ON
-      -DGGML_NATIVE=#{build.bottle? ? "OFF" : "ON"}
+      -DGGML_NATIVE=OFF
     ]
 
     # Enabling OpenBLAS for BLAS support and Vulkan for GPU support on Linux

@@ -12,12 +12,13 @@ class Flang < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f2db3d117ae0dff996faac0369f91cde670416dbb4d05a0e51ac80aa0e9ed158"
-    sha256 cellar: :any,                 arm64_sequoia: "9f3394c65540a5c725bb620cc3b0282986fc4510e52ccb3687f78ed1f53ff489"
-    sha256 cellar: :any,                 arm64_sonoma:  "6b9268d80ecc7806dc3435f1eed514ad7a1f03dbd747065c0eac39feef312461"
-    sha256 cellar: :any,                 sonoma:        "350a234bf10be21e18a016a8c6dd54f65d9a7072fdc491ae0192697e6b9d074f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1b4a1dd76fbb498663ee6c8fe0d94df37c5b4eaa22cc86417ea9cd76b994914"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16629e08e42dfdc136305e160f7482990cc68c9d38ee6f48e305f8efe2f1c4cc"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "123962c5ce9986392d4b16db2a5f84e8e1ba052073275bae029d5e536abfb83f"
+    sha256 cellar: :any,                 arm64_sequoia: "435179300904ed8f63c3cd308e4eef41d2de36c86349fe24cabb872714a03316"
+    sha256 cellar: :any,                 arm64_sonoma:  "f800e73bc3b94466b6a46c561c7d8840753a43bc31c5f6734c5450aa52105090"
+    sha256 cellar: :any,                 sonoma:        "b2709f3acbedce9ab7b713111c0c1f43e3ca2de5b404c5cf996ac6f6bb654dd1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2694276366cc208701eaa0d80b52c65552e62821003f5d0d0c7341a74dbd9618"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ffe757e4ab4fb71a4673cf261b1dfe5c36d25d4c7d1b2e50293a0e72b81666d"
   end
 
   depends_on "cmake" => :build
@@ -99,6 +100,8 @@ class Flang < Formula
     configs = ["-resource-dir=#{llvm.opt_prefix/relative_resource_dir}"]
     configs << "-Wl,-lto_library,#{llvm.opt_lib}/libLTO.dylib" if OS.mac?
     (libexec/"flang.cfg").atomic_write "#{configs.join("\n")}\n"
+
+    (prefix/"etc").install_symlink etc/"clang"
   end
 
   test do
@@ -166,7 +169,7 @@ class Flang < Formula
     return if OS.linux?
     return unless (etc/"clang").exist? # https://github.com/Homebrew/homebrew-test-bot/issues/805
 
-    assert_match %r{^Configuration file: #{Regexp.escape(etc)}/clang/.*\.cfg$}i,
+    assert_match %r{^Configuration file: .*/etc/clang/.*\.cfg$}i,
                  shell_output("#{bin}/flang --version")
   end
 end

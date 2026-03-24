@@ -1,11 +1,11 @@
 cask "paseo" do
-  arch arm: "aarch64", intel: "x64"
+  arch arm: "-arm64"
 
-  version "0.1.30"
-  sha256 arm:   "8e00aa114442f6cd9cfd40559708773c4991dab20b12bc23c00f6f1b45fc59b5",
-         intel: "bd57c4821dc5f7113486b4bb5722958401331adccaa83a681174af9dd36f6e1b"
+  version "0.1.33"
+  sha256 arm:   "fcff5924801b055f4d27128c3eb21554186ce4739f2cbae02479904fe96a09c4",
+         intel: "e87a44cc01406377e60e11d00348153335462ff0456450537c23a5e80fa38309"
 
-  url "https://ghfast.top/https://github.com/getpaseo/paseo/releases/download/v#{version}/Paseo_#{version}_#{arch}.dmg",
+  url "https://ghfast.top/https://github.com/getpaseo/paseo/releases/download/v#{version}/Paseo-#{version}#{arch}.dmg",
       verified: "github.com/getpaseo/paseo/"
   name "Paseo"
   desc "Self-hosted daemon for AI coding agents"
@@ -16,7 +16,7 @@ cask "paseo" do
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: ">= :monterey"
 
   app "Paseo.app"
   binary "#{appdir}/Paseo.app/Contents/MacOS/Paseo", target: "paseo"

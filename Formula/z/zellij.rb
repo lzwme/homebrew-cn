@@ -1,19 +1,18 @@
 class Zellij < Formula
   desc "Pluggable terminal workspace, with terminal multiplexer as the base feature"
   homepage "https://zellij.dev"
-  url "https://ghfast.top/https://github.com/zellij-org/zellij/archive/refs/tags/v0.43.1.tar.gz"
-  sha256 "e9fd24190869be6e9e8d731df2ccd0b3b1dd368ae9dbb9d620ec905b83e325ec"
+  url "https://ghfast.top/https://github.com/zellij-org/zellij/archive/refs/tags/v0.44.0.tar.gz"
+  sha256 "be413dc49d7bff1be6502a1998664b015b77ad55636d72e0497cfc66d4a4cdf6"
   license "MIT"
   head "https://github.com/zellij-org/zellij.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0fd12578e1e52bbe7536fe7e2c57914fcad0cf935b6af381a4d6de6248ba8268"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d0e7a93b03bf99864e5a2b753852d1a987a264d8cd98947906d6799901aa33d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f7843d66a1a76ee969adfafab713595d57fb671acc82cb7c7c4d85e47166abd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7f3a794db4ce52ed3d1e64d0a86dcf78e77f50e01ed19bf99193c373f46d563b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea6f112c98a503e8d7a9bcfe22b065f2f036fcf829bfe49d77e5aa7d25f5fddd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe90ea20c44eecc63bc7f412a3fa621d7e1320c4d508ed11a177fc6b2b04b998"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3cbcca3b96b2fd6921131b268c6eda24d65ba0c8bedfccb3a46ef75b807fe6b3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba199471fcabfc05ac8ba91846dd6d2104cd15889ed499a18f33ff066fa1a368"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a837f3eb4f66086c0e8ec8abd82f4820c4afa7e8fc8a18477467e391e362dc6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cc7144e7bd3e50f4e03ae6336bcb4e7ecc533c1caf93e74695eb37837dd3c65e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1f48f98f3159d6091eb7fc3c40bf912956feb3f1adf74fdea6e8f801ddacf1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1028ca00d14f72d262c84724cb3627e67908cefc25ccb0e9897c4269183b54e0"
   end
 
   depends_on "rust" => :build

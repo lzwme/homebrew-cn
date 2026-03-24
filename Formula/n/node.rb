@@ -14,12 +14,13 @@ class Node < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6b4bc59a4f2e71ebeb959a43e60f145a47aa9cf6596a7de4b6ab70fd18e33d66"
-    sha256 cellar: :any,                 arm64_sequoia: "cf1d44f4c13aa6162d6bb2a89e1c4baffc061b88e791b6b7fd47ce5fd448a72e"
-    sha256 cellar: :any,                 arm64_sonoma:  "5e3a2fe131f00093b54aa2c63b7ef838f979eb62b75d0cfe7ccb785ba7aee942"
-    sha256 cellar: :any,                 sonoma:        "4d516a78db46c93f730964ae6b9fc4648f17216c161d7328cacec2462761534f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0dfe20b9401ef8c9756a925613768a65b4d85dd5de71558c26a8cdefd7a86a8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "758e27e5e7cb9f8d17857f41cf47eefd7d6d6463b3c213b081906aa4c267b7c8"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "12aeac1d868bcb3610f8c27978a40c796bbf60f1da79623618b582e612c72f98"
+    sha256 cellar: :any,                 arm64_sequoia: "dc795ee675479fe6b71503f1f0c801ceb1823d82a63c08f9173b67708c241877"
+    sha256 cellar: :any,                 arm64_sonoma:  "b9c3d573999e0026804859d8502255a36f57da6d51edbe36be08a637064cfdb4"
+    sha256 cellar: :any,                 sonoma:        "f0f04da274a7fcababba13cf43839918f5e5342a8dd46a9605dce8e46ff50408"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9c6479b41aafb4c1e90513bea8eaecb02395703c1a72ef93c5d641b1f91bfe0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fad79e85fd0cc8a4012d565297cf4610677ea6dfb2031423a1340e8e014680d"
   end
 
   depends_on "pkgconf" => :build
@@ -196,9 +197,8 @@ class Node < Formula
     ln_s libexec/"lib/node_modules/npm/bin/npm-cli.js", bin/"npm"
     ln_s libexec/"lib/node_modules/npm/bin/npx-cli.js", bin/"npx"
 
-    generate_completions_from_executable(bin/"npm", "completion",
-                                         shells:                 [:bash, :zsh],
-                                         shell_parameter_format: :none)
+    # Use the _npm completion included in Zsh rather than generating broken completion
+    generate_completions_from_executable(bin/"npm", "completion", shells: [:bash], shell_parameter_format: :none)
   end
 
   def post_install

@@ -3,18 +3,18 @@ class Dotdrop < Formula
 
   desc "Save your dotfiles once, deploy them everywhere"
   homepage "https://github.com/deadc0de6/dotdrop"
-  url "https://files.pythonhosted.org/packages/66/a7/8c8f1d7268bcb0ae3f7e43d8b0da03ad0c1336baabbd4b9ce88a4b1d7b36/dotdrop-1.15.0.tar.gz"
-  sha256 "7e7b5558a66ac514c3861e0bb31262d5972bc15fc97c1402aef8cccffd0bde61"
+  # TODO: check if source is available on pypi distribution: https://pypi.org/project/dotdrop/#files
+  url "https://ghfast.top/https://github.com/deadc0de6/dotdrop/archive/refs/tags/v1.16.0.tar.gz"
+  sha256 "2b2f87214e3f12ea83a7b297558e55c628bc3a1d86a8e63bd16a9793a45fb418"
   license "GPL-3.0-or-later"
-  revision 6
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d919b35517a87294b333d3724b7220faa43cebfa9e818709866eae9e8f4c6c5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f9c965ec5587fbbbefe51901af682c54e61b028226fe6dcdc96b588ac4960e4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8545757e816241a3790ce0e7d7b1a43a44bddce1eff47c1c0a085de22569b81"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1cfc427630c16fdd8751a5587255a23d01458f7c2c1b92d0da76a82538077c75"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "181bbc4727f74de35553ef27d3722d6af8f144ab76f5eb66f32686e9a625f609"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fb159a10f45dd7b27bcb421bc9d9b91e3f8d37ac9b5b982df8c2acd05864617"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac901832beaf8ba175a02be8f2fa2ffd93c14aedd541d52101de7e0f9e45ffba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afbda11e747314b1a5b98786eef541cb17fbaaf7bc482c0627e6060424ed5821"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "358e76c171bebcc6fd334b2760e0d8a0d276fb20607861473cda9c4614b72058"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d90326490174a15810f18800889fae3089ba54d1819e61e7279b8186b7dac7e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65aecf9795063edbccb934995d7f2af652634ac089615264e9ed095f4df47c02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "554374cfabfa54201ac62ad014088ef6461b3d584d4de2f39aecaad518521c9b"
   end
 
   depends_on "certifi" => :no_linkage
@@ -24,8 +24,8 @@ class Dotdrop < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "distro" do
@@ -54,8 +54,8 @@ class Dotdrop < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "python-magic" do

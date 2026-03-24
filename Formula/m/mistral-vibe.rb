@@ -3,19 +3,18 @@ class MistralVibe < Formula
 
   desc "Minimal CLI coding agent"
   homepage "https://github.com/mistralai/mistral-vibe"
-  url "https://files.pythonhosted.org/packages/e4/03/769387fcccd6aee92b2dba94b87c11b947dc204b623d80bc48df2c523fe7/mistral_vibe-2.5.0.tar.gz"
-  sha256 "78b50c0d736f0cd1582828ad1806fde5f099d2227d14c0cf20ba0a6562cff08e"
+  url "https://files.pythonhosted.org/packages/82/06/567cba2840e4474ab2ddbc48e7f6dbc0eb7921638b6f12c51c2fbf58419d/mistral_vibe-2.6.2.tar.gz"
+  sha256 "36a8590202081a9691994f3515e80f6e89af9e3fc98f0a60eeeb32a9ef03ef95"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/mistralai/mistral-vibe.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f21a573e47baa603794e3fa487b86c46d2e133b921eea069d688bbb4bcb27a04"
-    sha256 cellar: :any,                 arm64_sequoia: "7395456ea62e8d09b53ce2d36c454d199a4dd9f963b6a1039d537a9b767745aa"
-    sha256 cellar: :any,                 arm64_sonoma:  "a5e73d8a69fe068e9c4b620f1fd1f030f39e9d8e9620464b7d615560ae256795"
-    sha256 cellar: :any,                 sonoma:        "7c0257ddbbef59180d9c00f144de7a167a23d4fe1d92ac9e853852bad4790dec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9cacebaf3e25caef3c42b4527511b2f97196d49a17805f8a32fc847f6d347f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f38c90967abd6e42b5c4e3a8cec90567fc36503165d2de84c39a5db104227b5"
+    sha256 cellar: :any,                 arm64_tahoe:   "aa79af7c2c886d8fe870ef4aec1043ddbc55df7dc1c3a5b809abe2a5ec9d17c1"
+    sha256 cellar: :any,                 arm64_sequoia: "0da4b58899c214242fa7299f99e7fffbe190013a5ba9ae6bcdcc56dbd094fef6"
+    sha256 cellar: :any,                 arm64_sonoma:  "78457d0533557ec5c57cfd957df785a1ba6b045d1e055cb2c0944ccdf1e2fccc"
+    sha256 cellar: :any,                 sonoma:        "b5c977924b8693ac99e1c19c684442972be8327ea15abfcad8fbcc353c9023ed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d42199da02228590bcbf2df3b2833b320656a426783f09df40064e1f134b4bfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "725ab8875c554451efa6a97ed8f6866a12c41b1a5f02362b978c6d407952f6e1"
   end
 
   depends_on "rust" => :build
@@ -39,8 +38,8 @@ class MistralVibe < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
-    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
+    url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
+    sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
   end
 
   resource "beautifulsoup4" do
@@ -88,6 +87,11 @@ class MistralVibe < Formula
     sha256 "16d40da1c3c5a0533f57d268fe72e0ebb0ae1cc3b567024122651c045d879b64"
   end
 
+  resource "googleapis-common-protos" do
+    url "https://files.pythonhosted.org/packages/99/96/a0205167fa0154f4a542fd6925bdc63d039d88dab3588b875078107e6f06/googleapis_common_protos-1.73.0.tar.gz"
+    sha256 "778d07cd4fbeff84c6f7c72102f0daf98fa2bfd3fa8bea426edc545588da0b5a"
+  end
+
   resource "h11" do
     url "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz"
     sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
@@ -124,13 +128,18 @@ class MistralVibe < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/27/7b/c3081ff1af947915503121c649f26a778e1a2101fd525f74aef997d75b7e/jaraco_context-6.1.1.tar.gz"
-    sha256 "bc046b2dc94f1e5532bd02402684414575cc11f565d929b6563125deb0a6e581"
+    url "https://files.pythonhosted.org/packages/af/50/4763cd07e722bb6285316d390a164bc7e479db9d90daa769f22578f698b4/jaraco_context-6.1.2.tar.gz"
+    sha256 "f1a6c9d391e661cc5b8d39861ff077a7dc24dc23833ccee564b234b81c82dfe3"
   end
 
   resource "jaraco-functools" do
     url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
     sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
+  end
+
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
+    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
   end
 
   resource "jsonschema" do
@@ -193,6 +202,26 @@ class MistralVibe < Formula
     sha256 "fbde8c80e1b937a2c61f20347e91c0c18a1940cecf012d62e65a7caf08967c9c"
   end
 
+  resource "opentelemetry-exporter-otlp-proto-common" do
+    url "https://files.pythonhosted.org/packages/e9/9d/22d241b66f7bbde88a3bfa6847a351d2c46b84de23e71222c6aae25c7050/opentelemetry_exporter_otlp_proto_common-1.39.1.tar.gz"
+    sha256 "763370d4737a59741c89a67b50f9e39271639ee4afc999dadfe768541c027464"
+  end
+
+  resource "opentelemetry-exporter-otlp-proto-http" do
+    url "https://files.pythonhosted.org/packages/80/04/2a08fa9c0214ae38880df01e8bfae12b067ec0793446578575e5080d6545/opentelemetry_exporter_otlp_proto_http-1.39.1.tar.gz"
+    sha256 "31bdab9745c709ce90a49a0624c2bd445d31a28ba34275951a6a362d16a0b9cb"
+  end
+
+  resource "opentelemetry-proto" do
+    url "https://files.pythonhosted.org/packages/49/1d/f25d76d8260c156c40c97c9ed4511ec0f9ce353f8108ca6e7561f82a06b2/opentelemetry_proto-1.39.1.tar.gz"
+    sha256 "6c8e05144fc0d3ed4d22c2289c6b126e03bcd0e6a7da0f16cedd2e1c2772e2c8"
+  end
+
+  resource "opentelemetry-sdk" do
+    url "https://files.pythonhosted.org/packages/eb/fb/c76080c9ba07e1e8235d24cdcc4d125ef7aa3edf23eb4e497c2e50889adc/opentelemetry_sdk-1.39.1.tar.gz"
+    sha256 "cf4d4563caf7bff906c9f7967e2be22d0d6b349b908be0d90fb21c8e9c995cc6"
+  end
+
   resource "opentelemetry-semantic-conventions" do
     url "https://files.pythonhosted.org/packages/91/df/553f93ed38bf22f4b999d9be9c185adb558982214f33eae539d3b5cd0858/opentelemetry_semantic_conventions-0.60b1.tar.gz"
     sha256 "87c228b5a0669b748c76d76df6c364c369c28f1c465e50f661e39737e84bc953"
@@ -211,6 +240,11 @@ class MistralVibe < Formula
   resource "platformdirs" do
     url "https://files.pythonhosted.org/packages/19/56/8d4c30c8a1d07013911a8fdbd8f89440ef9f08d07a1b50ab8ca8be5a20f9/platformdirs-4.9.4.tar.gz"
     sha256 "1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934"
+  end
+
+  resource "protobuf" do
+    url "https://files.pythonhosted.org/packages/66/70/e908e9c5e52ef7c3a6c7902c9dfbb34c7e29c25d2f81ade3856445fd5c94/protobuf-6.33.6.tar.gz"
+    sha256 "a6768d25248312c297558af96a9f9c929e8c4cee0659cb07e780731095f38135"
   end
 
   resource "ptyprocess" do
@@ -283,6 +317,11 @@ class MistralVibe < Formula
     sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
   end
 
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
+    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
+  end
+
   resource "six" do
     url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
@@ -309,8 +348,8 @@ class MistralVibe < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/c4/68/79977123bb7be889ad680d79a40f339082c1978b5cfcf62c2d8d196873ac/starlette-0.52.1.tar.gz"
-    sha256 "834edd1b0a23167694292e94f597773bc3f89f362be6effee198165a35d62933"
+    url "https://files.pythonhosted.org/packages/81/69/17425771797c36cded50b7fe44e850315d039f28b15901ab44839e70b593/starlette-1.0.0.tar.gz"
+    sha256 "6a4beaf1f81bb472fd19ea9b918b50dc3a77a6f2e190a12954b25e6ed5eea149"
   end
 
   resource "textual" do

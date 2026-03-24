@@ -24,12 +24,13 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "2e9357a9dc0143d1f9f71b0f84b2085c3266f5d510e7045574bc6128453ea5f2"
-    sha256                               arm64_sequoia: "75b1748d3ec6ccc427aec259b680bc73781504c152e612033d3ae04bcc335aac"
-    sha256                               arm64_sonoma:  "abf74a45f7b5ce253725b75315c8694c07ddce124a546f5ec5396de5e993381a"
-    sha256 cellar: :any,                 sonoma:        "aebac4aacc590fb33de2d3b665dda8397c8f0a301f262a91df55582fe3a4a4a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef1cdaf4ae35e7880cefde57b059a2c58babf6bcb7e136d7e560f1b91fec3674"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d18a9a91d52c0ba8eec085fe3aa832644d963775793d0f31f75cb9f25ded1df"
+    rebuild 1
+    sha256                               arm64_tahoe:   "4fb519b216308fa5ec95d91514159ae879e392a14176ba15088dc190daa38d02"
+    sha256                               arm64_sequoia: "f0dc9fd75dbaa423912c379f7d843710443ee3c30a54e29107b82c9889a74c9f"
+    sha256                               arm64_sonoma:  "17a3d9fae29ab75ea4497cd1bd78297f38da0c86d5a53b349f7ae7b2d949f638"
+    sha256 cellar: :any,                 sonoma:        "22c5be28e47c1e60b7917e7e891eec8a000d6500c6316182ee06ff32e905865f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "46949c7b4eac0568064a5c742c58a9575927d5687227dc98ceba00c4c775757f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03e0a8e736177979fadf63db623303c5526b90e147e8ebaf65e532206ba32640"
   end
 
   keg_only :provided_by_macos
@@ -132,7 +133,7 @@ class Llvm < Formula
       -DCLANG_PYTHON_BINDINGS_VERSIONS=#{python_versions.join(";")}
       -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF
       -DCLANG_FORCE_MATCHING_LIBCLANG_SOVERSION=OFF
-      -DCLANG_CONFIG_FILE_SYSTEM_DIR=#{clang_config_file_dir.relative_path_from(bin)}
+      -DCLANG_CONFIG_FILE_SYSTEM_DIR=../etc/clang
       -DCLANG_CONFIG_FILE_USER_DIR=~/.config/clang
     ]
 
@@ -395,6 +396,10 @@ class Llvm < Formula
       system "cmake", "--build", "."
       system "cmake", "--build", ".", "--target", "install"
     end
+
+    clang_config_file_dir.mkpath
+    touch clang_config_file_dir/".keepme"
+    (prefix/"etc").install_symlink clang_config_file_dir
 
     if OS.mac?
       # Get the version from `llvm-config` to get the correct HEAD or RC version too.
@@ -833,5 +838,11 @@ class Llvm < Formula
         end
       end
     end
+
+    return if OS.linux?
+    return unless clang_config_file_dir.exist? # https://github.com/Homebrew/homebrew-test-bot/issues/805
+
+    assert_match("Configuration file: #{opt_prefix}/etc/clang/",
+                 shell_output("#{opt_bin}/clang --version -no-canonical-prefixes"))
   end
 end

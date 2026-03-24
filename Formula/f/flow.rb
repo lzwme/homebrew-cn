@@ -1,20 +1,20 @@
 class Flow < Formula
   desc "Static type checker for JavaScript"
   homepage "https://flow.org/"
-  url "https://ghfast.top/https://github.com/facebook/flow/archive/refs/tags/v0.306.0.tar.gz"
-  sha256 "1479c8f0723bbd555068067d19aa053c749bbb8e688a5bb3f10dacb5e4dbd67b"
+  url "https://ghfast.top/https://github.com/facebook/flow/archive/refs/tags/v0.306.1.tar.gz"
+  sha256 "0333bc9855d6a6497a8c2173582c2b32a9c5019fb454c97d3853d48db47a37d2"
   license "MIT"
   head "https://github.com/facebook/flow.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c4e802eb16fd4499a16d0163d4071407f4783e0c42d437b4ccf6c6b49c4a034d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7816f7ff0bbb2bdd5e6e3359d99c2b8fb2bd7c3099440d83cf90221535aba856"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9f09d77ba908e6342931855dbe050d360ad8afcfe406c24b9df556ec9dbab32"
-    sha256 cellar: :any_skip_relocation, sonoma:        "35536b9f6db5044d3f8a2ea216ae350602eae31883819400593d7b39d0bdd98b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3cabac61e0c4713fc27b681b4fd46e35262a7264c633c1d3d5e497f84bbabc6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a49241db5783048c9012709b5f76c3d09c802ae491fda096697082693b416906"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4fe92c183ce4e051181f417fcbc03a1c5655d3656988c23d6b5b3aa67df0922c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6c533a41a1aa6f46584b56a64a97cc51cacf83f9c4f7ad6e2201333876a653b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60a0381cb78852cdbbe4973008af1c28a050f648af92f3df15d306324e3ecf14"
+    sha256 cellar: :any_skip_relocation, sonoma:        "04e6783b9f7497f3acba646e97719f694f13453d10fd6f106c5380e01cb624f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "52a6acb7d3defbe061cf803b0a26e3c8be788ff047cbf7c704c5ab285a3946fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5200a17c54515081ed024af7a3d3d1fb0dba3c7a1db8d3d3ba36a9c8263ffcca"
   end
 
   depends_on "ocaml" => :build

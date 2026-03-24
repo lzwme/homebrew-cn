@@ -4,6 +4,7 @@ class Git < Formula
   url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.53.0.tar.xz"
   sha256 "5818bd7d80b061bbbdfec8a433d609dc8818a05991f731ffc4a561e2ca18c653"
   license "GPL-2.0-only"
+  revision 1
   compatibility_version 1
   head "https://github.com/git/git.git", branch: "master"
 
@@ -13,13 +14,12 @@ class Git < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "822dc9a395af7f1977ae98bd584f76ccd7390381de71b5420a4b0d69b15665cf"
-    sha256 arm64_sequoia: "e54c3b8416ce766df9c6efa6f96f14c6fe43cd805e3da2706c258b5d9520c93b"
-    sha256 arm64_sonoma:  "90035e05c20b14efb12550b50431b53da8d857ccd5d29ac7fafe8ab0f959d16e"
-    sha256 sonoma:        "4831766b1d63c27c19f6c84e2f74a2c2b1131a69f818467fab6b84536ca26d90"
-    sha256 arm64_linux:   "f6946b453ca295f25ba4c855fe51e65c23b29983dc97e4f8b14c21a8b4854985"
-    sha256 x86_64_linux:  "d8c0fc6ac9824ad9c77d566018db78c252ac3c2ce0652c72d8b6d0b861867034"
+    sha256 arm64_tahoe:   "48d11e6aaf34cd77ccc23d6d44b9792cc6599853352fd22dc70f018307d91ad6"
+    sha256 arm64_sequoia: "798a2c0ca3ca80119d618f760ca2947f897753b7d9da901b1215b6c3a7637980"
+    sha256 arm64_sonoma:  "0adcd4c3164162705fd7290557587fdfb0e271b9d9b5dcbca75b219b4ca5da41"
+    sha256 sonoma:        "7505b924f98e5e1b7e412b1a37f91d72ebed4b8d9b9ad65bf2ca5179d601a949"
+    sha256 arm64_linux:   "cffdf96390bc57c53009245a200fed79275ae1d202ad2fd13d4f4a66a48aedd3"
+    sha256 x86_64_linux:  "69b8ad022d6ed8b241806c16b7c066272a6708ccfbfb8bc19d975b8c379018b3"
   end
 
   depends_on "pkgconf" => :build
@@ -29,9 +29,8 @@ class Git < Formula
   uses_from_macos "curl"
   uses_from_macos "expat"
 
-  on_macos do
-    depends_on "libiconv"
-  end
+  # Don't try to add a libiconv dependency without reading this PR first:
+  # https://github.com/Homebrew/homebrew-core/pull/258461
 
   on_linux do
     depends_on "openssl@3" # Uses CommonCrypto on macOS
@@ -89,7 +88,6 @@ class Git < Formula
     perl_version = Utils.safe_popen_read("perl", "--version")[/v(\d+\.\d+)(?:\.\d+)?/, 1]
 
     if OS.mac?
-      ENV["ICONVDIR"] = Formula["libiconv"].opt_prefix
       ENV["PERLLIB_EXTRA"] = %W[
         #{MacOS.active_developer_dir}
         /Library/Developer/CommandLineTools

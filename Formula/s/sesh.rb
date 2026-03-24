@@ -7,12 +7,13 @@ class Sesh < Formula
   head "https://github.com/joshmedeski/sesh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec544c16f286645eb88aa7283839b411839c2803009b72cdd18866b2942144f5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec544c16f286645eb88aa7283839b411839c2803009b72cdd18866b2942144f5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec544c16f286645eb88aa7283839b411839c2803009b72cdd18866b2942144f5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eca2f930719ddb074ae426852d6211c18b978ac3b71babe303dbd7d529ff04fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74581e4dc4114455bb9dd2ba4bb20f0e2823af4eedb61b7e9bc41d52db142c41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bfc542af6cf0fa43d24b268e2b1c32bc1791b0cef8c17ef0addd6b0e4907e7d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8fbbe8f4739d5828b91e12d74d4850962200622e587b7bf6174cc783682ae465"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fbbe8f4739d5828b91e12d74d4850962200622e587b7bf6174cc783682ae465"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8fbbe8f4739d5828b91e12d74d4850962200622e587b7bf6174cc783682ae465"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5f3cea788214c8991140183f4889e6ce9182e2055c5273f1a5a6ba5b4297e765"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c6cdee52beb52ff575949a790b91f1b65943d764ceeeecb6771d7da0225bdaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9eaa1162b55d0353200ce358110a4b2e523fe922cb365cdcc1483a7b86a3d1d"
   end
 
   depends_on "go" => :build
@@ -20,6 +21,7 @@ class Sesh < Formula
   def install
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
+    generate_completions_from_executable(bin/"sesh", shell_parameter_format: :cobra)
   end
 
   test do

@@ -1655,7 +1655,7 @@ Homebrew-homebrew-core/Formula/d/dosbox-staging.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dosbox-x.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dosfstools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotbot.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/d/dotdrop.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dotdrop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotenv-linter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotnet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotnet@6.rb, Homebrew/homebrew-core, 1
@@ -5689,6 +5689,7 @@ Homebrew-homebrew-core/Formula/p/pipemeter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pipenv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pipes-sh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pipet.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pipewire-gstreamer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pipewire.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pipgrip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pipx.rb, Homebrew/homebrew-core, 0
@@ -7942,6 +7943,7 @@ Homebrew-homebrew-core/Formula/w/wiredtiger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wireguard-go.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wireguard-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wiremock-standalone.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/wireplumber.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wireshark.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wirouter_keyrec.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wishlist.rb, Homebrew/homebrew-core, 1

@@ -1,18 +1,18 @@
 class Prek < Formula
   desc "Pre-commit re-implemented in Rust"
   homepage "https://github.com/j178/prek"
-  url "https://ghfast.top/https://github.com/j178/prek/archive/refs/tags/v0.3.6.tar.gz"
-  sha256 "9f39ea242ff680b11e78164e94c45f11d15b1fdcf1b4af2a659bbd43945315ed"
+  url "https://ghfast.top/https://github.com/j178/prek/archive/refs/tags/v0.3.8.tar.gz"
+  sha256 "fdca3ff08b10d4d8fc3dc820c704eb32f32bc838bf755ac11dbb8ae182fee774"
   license "MIT"
   head "https://github.com/j178/prek.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f4bda2c82139e7226e3464f35f8732d773c8ef47578d6d1f19c78a95f51731d8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b6fdb52890bea93437694ed166941cf26f98e1f8217ac8a61f948e444a6964d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "774323d8631e9f6f977f07a1855f1664e4cbf1fb5c41653dde5e76dc60899e6d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fda58c84bea95310b365312eb6184ef3c3551ad530209546d4f72ea639335eec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "686faf15b3980327ec7e814be5558f7edc62b2c1ac1970ced9f17f941cb485a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4cc283ddbb3373e14e66858629577d3d66c3f8a206ac506d6dd9b03d3cec00b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4998f20ee2577031e5e8c28736760818ed70a10c3f750424d051dd139034fd1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75741ec3c5d136554ded5de36656ffe6cbbbc87f39b6afa2026d20c885bc29e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a9879b2f5002ace6254ebaebaeeae95620cc2e71d3047628fbfade85768b2c1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "033d8738b3b203150382ee653a3d174f358a4bf58ae2583d2363189e4cbb9c85"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98af4b29821b0c60dffe7d8a540acf85283e880cba907aafdae35159898dcedd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54f3f4d747fee5ab6767a227ed605ebb17805f5f9cc623481d5828a6f38d25f3"
   end
 
   depends_on "rust" => :build

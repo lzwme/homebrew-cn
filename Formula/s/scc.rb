@@ -11,18 +11,20 @@ class Scc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0e2990323b5fc911cc49cb1e76825d0d40dec63d6dd3005ca365661d54f91b6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0e2990323b5fc911cc49cb1e76825d0d40dec63d6dd3005ca365661d54f91b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0e2990323b5fc911cc49cb1e76825d0d40dec63d6dd3005ca365661d54f91b6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d01d294651add28aac7cfd22bb92eb8a2d51a1391f86e1d1983b75f53a350f70"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "982eab81bcfff356c30a69eebcb48b92dde737b2dd391a14ecc444688da246a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a1abde78079b9778eb24f26998b8857d001ad357c9219629993cc833a817f32"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6770468fcdb16a8f1fcae82285026a84eadd5524fef199c6f56a7213ee195239"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6770468fcdb16a8f1fcae82285026a84eadd5524fef199c6f56a7213ee195239"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6770468fcdb16a8f1fcae82285026a84eadd5524fef199c6f56a7213ee195239"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8a1ad7fa233caf6383633e0180fc9c80b468abe1fb55af63ddbe0fca153efd4c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e0d003227e2164092960ac21ddfe9b4429bf8afa04c49f5f65f06689a8e5d76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c1ed3b5514ca73c3783e66ce81d563c860ef46585dbdac0a9f7d8c805c4c823"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
+    generate_completions_from_executable(bin/"scc", shell_parameter_format: :cobra)
   end
 
   test do
