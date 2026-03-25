@@ -1,19 +1,18 @@
 class Lanraragi < Formula
   desc "Web application for archival and reading of manga/doujinshi"
   homepage "https://github.com/Difegue/LANraragi"
-  url "https://ghfast.top/https://github.com/Difegue/LANraragi/archive/refs/tags/v.0.9.60.tar.gz"
-  sha256 "27889a0b32b70ddfd2781b0c55d8924953baf879a55cf3bd54759902ea3fea49"
+  url "https://ghfast.top/https://github.com/Difegue/LANraragi/archive/refs/tags/v.0.9.70.tar.gz"
+  sha256 "bc89ae47873a35145a0db5a4d93d274b89e7f546deaa396d389fe7975693f7a6"
   license "MIT"
-  revision 1
   head "https://github.com/Difegue/LANraragi.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cfeddce6cf385603aacfd7e6f8575ec15f287bff42368fbd6750fcc2e73cab94"
-    sha256 cellar: :any,                 arm64_sequoia: "cc74f3545f1c4bef7bee2be1c24430cd9c99dc68f5d019c2014570aa9c5b5e4c"
-    sha256 cellar: :any,                 arm64_sonoma:  "8be2d798cfb4fcbf459f8b4ff7d363e5ceca3975314e2bb773f7a8e4643de5db"
-    sha256 cellar: :any,                 sonoma:        "5258447053106cf0c9e7072f8a596a999be0e1ced876e5348b1b1c10e9dab074"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed1140b6d3c63a5ea2f986e16cf7ed78b9eb95872a4f091d24657c80f1e7b034"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "062e2b9bc86d06ab91ba517c8b039762e8e26883a660c13264adf53e6f7a6c27"
+    sha256 cellar: :any,                 arm64_tahoe:   "6f6ce14831069a2d17fd22a7138fa073b60ee21331e13bfa340fcdedd0a2dc6b"
+    sha256 cellar: :any,                 arm64_sequoia: "4197fd31d6eaf2eec8b074693a305ebb6a1ae8c53752a804ee328384aa700688"
+    sha256 cellar: :any,                 arm64_sonoma:  "fbe6f463fc98a9bc2958cc4a088a782f8b779851cc1641bd983d1ad334f9f189"
+    sha256 cellar: :any,                 sonoma:        "cf6505419798f0c775f36f0abbf4c55a1656df2ec1a83c8fae0870954d78e5e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "05c1d365450337a8f86c67a9af3aa3f32f76f8db60cbc11acd3f9ed0932209bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e01c310845b7f2d122105d4233b1986262c68acfa41e52063372414adaf55cbe"
   end
 
   depends_on "cpanminus" => :build
@@ -31,8 +30,8 @@ class Lanraragi < Formula
   uses_from_macos "libffi"
 
   resource "Image::Magick" do
-    url "https://cpan.metacpan.org/authors/id/J/JC/JCRISTY/Image-Magick-7.1.1-28.tar.gz"
-    sha256 "bc54137346c1d45626e7075015f7d1dae813394af885457499f54878cfc19e0b"
+    url "https://cpan.metacpan.org/authors/id/J/JC/JCRISTY/Image-Magick-7.1.2-3.tar.gz"
+    sha256 "dc6ee21aed560d36f36be608909344bd2e25d63ab5d959553401e02f5df28a6b"
 
     livecheck do
       url :url

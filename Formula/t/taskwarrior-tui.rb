@@ -1,8 +1,8 @@
 class TaskwarriorTui < Formula
   desc "Terminal user interface for taskwarrior"
   homepage "https://kdheepak.com/taskwarrior-tui/"
-  url "https://ghfast.top/https://github.com/kdheepak/taskwarrior-tui/archive/refs/tags/v0.26.5.tar.gz"
-  sha256 "9eebb2f736693cbb64b3a79b88d3e5bbae8603ef9206d47e555c9a9cf9077708"
+  url "https://ghfast.top/https://github.com/kdheepak/taskwarrior-tui/archive/refs/tags/v0.26.7.tar.gz"
+  sha256 "d0bf2b9c5563165565db7941c7806f58c1c54f8bcb5f8d1430b0d35f1da7678d"
   license "MIT"
   head "https://github.com/kdheepak/taskwarrior-tui.git", branch: "main"
 
@@ -12,12 +12,12 @@ class TaskwarriorTui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c6f8b874e37ead71dffb8014f21b1a64b7cc63bb34751e8609f29548d902e87"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "969332438c3a9f41790608dff1603b50a0a90687fdb1992e45900666e1a2876e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed513520272f51eb9f69d1c1dcc09e12a4b024aa7b3dd2d317348e2f63c6f6f5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a1c8b0848787f3a0d5504d6669cc96d92525068185df20c990e9f845fa2e9d7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d272aad52c1837a9b4b9c337699e6de3ec9b9844f1fdc7d5c3527ebe76c658cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b20fe0076fb6c6cbd76af7d9d836a0cb2ec736a3d30d57d9790d0407fdc742a2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4698a9f0904339f4ce4e82b5dbb5fc02ac98d5aabbdbe46b373b80263c3c574f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "699763b55e53ec5256ffc1f4bf850ae07fa221d5354659f4e3dd3d0297d57525"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2a533ad0159e89adef97111d7acf5ffaf69d12ee15f4ee8ecf647f00def2e22"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fced24c0cda62a41f2b711b5230bb43042a401cfe16192a6adb311b13dc24107"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92111cac3a2d0ae11bd83e7e581c199146e468d57b277f6ec7be99e905ce50eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c356889f388183649e73df39bf254ca64bc8e9719073dc42cb3aa5dac43efdf"
   end
 
   depends_on "rust" => :build

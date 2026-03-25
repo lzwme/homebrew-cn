@@ -1,18 +1,18 @@
 class Zeroclaw < Formula
   desc "Rust-first autonomous agent runtime"
   homepage "https://github.com/zeroclaw-labs/zeroclaw"
-  url "https://ghfast.top/https://github.com/zeroclaw-labs/zeroclaw/archive/refs/tags/v0.5.9.tar.gz"
-  sha256 "04dffd8881698ba4a5fa8ffcfc49fa026a520cb5c1ae1c75469411f4e897c4b4"
+  url "https://ghfast.top/https://github.com/zeroclaw-labs/zeroclaw/archive/refs/tags/v0.6.2.tar.gz"
+  sha256 "b792b8391998dcb3253ee4dcabf9732b836725626538e28ec52c75985cc740d1"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/zeroclaw-labs/zeroclaw.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1637ccc47141f3aa97d66b37aacaa232ddd03bcddb47abad2edffae634dc0b6b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "228f9f0b3ec4f3ba4bf48a08572b258088c84776d60b36bca900a8aa2ad09cd8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "995aae3401c04ab77a2fc2345e62826a7c624cb0df32a945c411fbfe6e8266bd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dd008e35ad27ddbba3a59ee0cab8fa092a764132c76db129b1669c01e96c2bd8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "46987134cbeb3e9ed96bb7fb65c3c8989a65e9faccb601408c885b8e12595fce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a43b98dfc121402a2d9e1e6bbb2a7ec474a6601ee05ad8a5642a15ff2b58691b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd5a4702bc50c2af4343c430cee1480bf288e9d647d7045d9b1598dacd8c9f06"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cfb95ba9e8f3ec179ab1c57aefd72dc213ccf59f239cdf03303644b58b304a62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c25e64aa39f603fd82c4d3425879077691ecb680b8747162f38769a485711d5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "be88952c9d75cc17c03b7d7aab7bbced6894de49b1f76fe1ed846ab10f52fc12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7adf5f8b2831ec9327b5a8567fb29c8853c4b30f718060e045ac7a53728426b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63a02f5a289e01ba68687a00358db41d1343d3fb76284636f6e6354a9a6fcdf9"
   end
 
   depends_on "rust" => :build

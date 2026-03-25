@@ -6,16 +6,16 @@ class Gptline < Formula
   url "https://files.pythonhosted.org/packages/5b/28/d15a9a5b349c77a051a633e13141151314f352067ec7d516220bd6b20fcf/gptline-1.0.8.tar.gz"
   sha256 "4a0a0b5fa4f23e5f2ad7ac5bf44a9143e5de3757b0b8eefe5d78a7757d1d34bb"
   license "GPL-3.0-only"
-  revision 15
+  revision 16
   head "https://github.com/gnachman/gptline.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3b68546847da50b9cece4ddc6d89203926bff1815c1192bcc34b56286ac9835a"
-    sha256 cellar: :any,                 arm64_sequoia: "cd33bf6d5d0fca122cc23530a058f39756adb8715c0a169baff596f8c135c85f"
-    sha256 cellar: :any,                 arm64_sonoma:  "a6e26036f0a80a114564c0553a6f15846efa76905ab45cf5dd7505d8b68e97bf"
-    sha256 cellar: :any,                 sonoma:        "2462048f5ac6f6b4f51a46c996f693f48fa1a05183a2d847658f47cf80b30f57"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4cc843c66b7e36e99927aaadcef9ccc6c5decec168b312a1085704e52ebee57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9858d23587a9ea0dd2033d3ea7433e8e7eb99537851175f2883375aa6ed123e"
+    sha256 cellar: :any,                 arm64_tahoe:   "6752469a590669e395957bb854c8740bb6b9e33062805b0b6c608b69b23df7fc"
+    sha256 cellar: :any,                 arm64_sequoia: "bd97e4293d585aef1dce46bb2b14b95c6dd032ea307da37fdc7637361f3b4f10"
+    sha256 cellar: :any,                 arm64_sonoma:  "296d499cc33a0094b10d3ef46358f4638b99376c9bba7c2a11b7b5a3bea33c00"
+    sha256 cellar: :any,                 sonoma:        "591c460c6f794b3dffba4a0d52f50c3515cbe644fc856dd98f9d11a9cd121530"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "407f3895c23ddfd7da1c7973454164750b2d1c38ad44b0352047a5f040852a96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b4aed14dda1783a1529d49a8064deeff0ce08a303195f207ec7b2c142065bee"
   end
 
   depends_on "pkgconf" => :build
@@ -58,8 +58,8 @@ class Gptline < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "click" do
@@ -88,8 +88,8 @@ class Gptline < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/77/18/a1fd2231c679dcb9726204645721b12498aeac28e1ad0601038f94b42556/filelock-3.25.0.tar.gz"
-    sha256 "8f00faf3abf9dc730a1ffe9c354ae5c04e079ab7d3a683b7c32da5dd05f26af3"
+    url "https://files.pythonhosted.org/packages/94/b8/00651a0f559862f3bb7d6f7477b192afe3f583cc5e26403b44e59a55ab34/filelock-3.25.2.tar.gz"
+    sha256 "b64ece2b38f4ca29dd3e810287aa8c48182bbecd1ae6e9ae126c9b35f1382694"
   end
 
   resource "h11" do
@@ -148,13 +148,13 @@ class Gptline < Formula
   end
 
   resource "nltk" do
-    url "https://files.pythonhosted.org/packages/e1/8f/915e1c12df07c70ed779d18ab83d065718a926e70d3ea33eb0cd66ffb7c0/nltk-3.9.3.tar.gz"
-    sha256 "cb5945d6424a98d694c2b9a0264519fab4363711065a46aa0ae7a2195b92e71f"
+    url "https://files.pythonhosted.org/packages/74/a1/b3b4adf15585a5bc4c357adde150c01ebeeb642173ded4d871e89468767c/nltk-3.9.4.tar.gz"
+    sha256 "ed03bc098a40481310320808b2db712d95d13ca65b27372f8a403949c8b523d0"
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/55/13/17e87641b89b74552ed408a92b231283786523edddc95f3545809fab673c/openai-2.24.0.tar.gz"
-    sha256 "1e5769f540dbd01cb33bc4716a23e67b9d695161a734aff9c5f925e2bf99a673"
+    url "https://files.pythonhosted.org/packages/b4/15/203d537e58986b5673e7f232453a2a2f110f22757b15921cbdeea392e520/openai-2.29.0.tar.gz"
+    sha256 "32d09eb2f661b38d3edd7d7e1a2943d1633f572596febe64c0cd370c86d52bec"
   end
 
   resource "prompt-toolkit" do

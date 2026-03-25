@@ -6,15 +6,15 @@ class Acronym < Formula
   url "https://files.pythonhosted.org/packages/e3/1a/1a364f93053f9ad0d4f38b5c0078637db484bb4c1388ad0234b85c9d2ca8/acronym-2.0.0.tar.gz"
   sha256 "163cc1630b7c65cbca6426f80e267f5253ea787e17a329d1d55517868897bbf1"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe9d58a50861621cc1e5cc93adbe8079337051eed85a84a19b1890e34f627b3d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3248848b1b141ad55b49c0b932db4e95f74a6006087b02c1e6aba614e03ed66f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c14f87e7d22b78a0acdfd37325733325242dc5f46f998d752491e89e9b4da53"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e58f08df88a9d4153f9fb31ea0b7d016935b5f65f56f16c60373cb4ca0c15fa4"
-    sha256                               arm64_linux:   "d6d9686539b292e0e0b80e80bb7431c8f60a3a769cf0deb0029ea50e29bf9426"
-    sha256                               x86_64_linux:  "e7a7706a8da238c0a30682d3c65565157ceb6d6f30b54792753ccc3aae0015b8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "703a2052af753d6303dcbca32664a38a033d24350c52d48caac5d0f65162ded0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1279bd8e339303b923cf31e75ae4937e9d3103f59d7ff01e905e6f51585a4e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ea54b3780487ad0d53d6a2afaa26c2492d6516a78f58639168568c6143449b8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "02b938f252557fc173ae20c1430fa9e259189d713212d144a7565b9a720273af"
+    sha256                               arm64_linux:   "08ac341265bc7c9cdbd684786ba6674f1fb295f83f898bc8ac0dc6f6e38f9d0c"
+    sha256                               x86_64_linux:  "084a6c4d8c2f5d5fa096cdbd8eb50f03d5d05d6cd404dd57ad9c24a56fe459ca"
   end
 
   depends_on "cmake" => :build
@@ -40,8 +40,8 @@ class Acronym < Formula
   end
 
   resource "nltk" do
-    url "https://files.pythonhosted.org/packages/e1/8f/915e1c12df07c70ed779d18ab83d065718a926e70d3ea33eb0cd66ffb7c0/nltk-3.9.3.tar.gz"
-    sha256 "cb5945d6424a98d694c2b9a0264519fab4363711065a46aa0ae7a2195b92e71f"
+    url "https://files.pythonhosted.org/packages/74/a1/b3b4adf15585a5bc4c357adde150c01ebeeb642173ded4d871e89468767c/nltk-3.9.4.tar.gz"
+    sha256 "ed03bc098a40481310320808b2db712d95d13ca65b27372f8a403949c8b523d0"
   end
 
   resource "pandas" do
@@ -55,8 +55,8 @@ class Acronym < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/ff/c0/d8079d4f6342e4cec5c3e7d7415b5cd3e633d5f4124f7a4626908dbe84c7/regex-2026.2.19.tar.gz"
-    sha256 "6fb8cb09b10e38f3ae17cc6dc04a1df77762bd0351b6ba9041438e7cc85ec310"
+    url "https://files.pythonhosted.org/packages/8b/71/41455aa99a5a5ac1eaf311f5d8efd9ce6433c03ac1e0962de163350d0d97/regex-2026.2.28.tar.gz"
+    sha256 "a729e47d418ea11d03469f321aaf67cdee8954cde3ff2cf8403ab87951ad10f2"
   end
 
   resource "six" do

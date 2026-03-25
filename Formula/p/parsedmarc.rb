@@ -9,19 +9,20 @@ class Parsedmarc < Formula
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8801dc4316984335503351c2ea81461b23c3f8f10b1e6861e3d05bcc1a77df6e"
-    sha256 cellar: :any,                 arm64_sequoia: "4bf513f7865bf5d6b63b38058e4db30e417cc027a07fc5cd16baba2c52f4ecaf"
-    sha256 cellar: :any,                 arm64_sonoma:  "737d3b2f9631944075636b632dd069b490224465365587c8364d07351a13c985"
-    sha256 cellar: :any,                 sonoma:        "38c855553b41e84d10dbeab22b7bc02a13b661d2cc07174a2f9fdd8168253aef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "966d54067f91651a69ff65789f07ef3a9bbec41394e726cd2357f01ced3d96e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2094ce7d77013f915f80276c99ec1a1a9fdfd69bc21c7b10d8a503ff265d4556"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c37022a26afc5fb57bba27ec1a19e5ae6af6cbe9c06c627d6d5406b767c79388"
+    sha256 cellar: :any,                 arm64_sequoia: "837e855283ca36f6a4972f09968faff4bdd456def78f6f511742f483d320515b"
+    sha256 cellar: :any,                 arm64_sonoma:  "85c95026af3e989cc4176354deb9878dd2f5de4985b267eb784759e623809d8e"
+    sha256 cellar: :any,                 sonoma:        "9a18b1f41a666c925ee409b46fd35990e8e37eab56d6f1b28b0bb73f03c5836b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f94eb53f473f3610f9cfe0d8c2b71381869ee2cf147a20d208d21193272f82d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9eeb331d6674f4941df3554f21a168c1420cc0de1fe7f394a7522531e2c95800"
   end
 
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "libyaml"
-  depends_on "python@3.13" # `mailsuite` refuses to build on 3.14, https://github.com/seanthegeek/mailsuite/issues/15
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"

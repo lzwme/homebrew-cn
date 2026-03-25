@@ -6,16 +6,16 @@ class CryticCompile < Formula
   url "https://files.pythonhosted.org/packages/f4/cb/669ed02fbfe17091998f52a7e3326ac276409117ea10a2c36b2a852a22f9/crytic_compile-0.3.11.tar.gz"
   sha256 "d4e2253d5d81ec3a75deb3ab9fc2c2d2db56e835001cf07f3703911d74b56716"
   license "AGPL-3.0-only"
-  revision 2
+  revision 3
   head "https://github.com/crytic/crytic-compile.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b730d51821ff76d42a5f27e0864d62c3f47d574dae63d17fdfebd2b43131c712"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb7304fd7476760be83ce4a81c07e58dccd6ae37d00a06128c5be96d518eff61"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab5cc1f576111396fef3f2fd75d11333c0c6338d013794c5c0d9c316f71f4fb7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "51decdfa2f28e7bd170f3801c010d90f01bf3c53bba3bfa71c80be3679ad29b2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7032b0aa0524fa59808159b1551e48017f0622f9e7bea02f4f637e896e03babc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6a2645f6d27f2a38aeea575d8c5abd51ee0e97f207bfadb4b52dd94adf7de46"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea174444ae84f615bdcc194eebff308e1ec9d18c739a21bf4c9da61bd513cc01"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae3107e5847b8c957b2cd104e793e96e4e41b4bb35df1f4a706d30b3321ab80e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7418be600564de33d6889012c35da83f8afae686dce44119ae2b2ffa8a9e6205"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9787a8eac7a59c5fdcc6c85b7b72fb4bc39749d802797e56db06ba78591e1a3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb70992aee348b2d32cf99998f39e75dc1fe85978f1ff56638ca02df7646e373"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f0b9ed8faedc80ced49fc088d8ec2033ca341cd170d4e611d03aad6dc9ccd1b"
   end
 
   depends_on "certifi" => :no_linkage
@@ -24,13 +24,13 @@ class CryticCompile < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "cbor2" do
-    url "https://files.pythonhosted.org/packages/d9/8e/8b4fdde28e42ffcd741a37f4ffa9fb59cd4fe01625b544dfcfd9ccb54f01/cbor2-5.8.0.tar.gz"
-    sha256 "b19c35fcae9688ac01ef75bad5db27300c2537eb4ee00ed07e05d8456a0d4931"
+    url "https://files.pythonhosted.org/packages/bd/cb/09939728be094d155b5d4ac262e39877875f5f7e36eea66beb359f647bd0/cbor2-5.9.0.tar.gz"
+    sha256 "85c7a46279ac8f226e1059275221e6b3d0e370d2bb6bd0500f9780781615bcea"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "idna" do
@@ -39,8 +39,8 @@ class CryticCompile < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "pycryptodome" do

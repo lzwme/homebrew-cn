@@ -1,19 +1,19 @@
 class AdaUrl < Formula
   desc "WHATWG-compliant and fast URL parser written in modern C++"
   homepage "https://github.com/ada-url/ada"
-  url "https://ghfast.top/https://github.com/ada-url/ada/archive/refs/tags/v3.4.3.tar.gz"
-  sha256 "c7a6450019a326c6a10b144249b03ebea662afb2451d74f06963389fe7707460"
+  url "https://ghfast.top/https://github.com/ada-url/ada/archive/refs/tags/v3.4.4.tar.gz"
+  sha256 "77bc5bbc383ed098cc60266ad6ee912de2431bb62d89248c0e17c4e712dcdaf9"
   license any_of: ["Apache-2.0", "MIT"]
   compatibility_version 1
   head "https://github.com/ada-url/ada.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "753d0af5b348fffc968be4e126f087b372c30229b5f70d545b68dbebe06ed71e"
-    sha256 cellar: :any,                 arm64_sequoia: "d43e0717e87817cd7bf9589fff330e9e7f1082ac7d4b08b9f32f959021b37e6b"
-    sha256 cellar: :any,                 arm64_sonoma:  "1df875f42b8e4805098b3225bd30888d047f5d65dee366ae358e4c2b4765e6e1"
-    sha256 cellar: :any,                 sonoma:        "f67e316aa2e08bb92b8471b7b15f1fb1f32a987330b947e3203249b6bfe06339"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "34159fd23078f273e1031b8adcbf9b4f415033cdaece0abe0bee8b424e91cb35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a0ae11f98bf7f9330403835969eeba9e4330d1bd9c1d1a2941615f2c6ee492e"
+    sha256 cellar: :any,                 arm64_tahoe:   "14bf3540eb0d168084ff5e748077717f2824badf4697205a2f13135070b1816f"
+    sha256 cellar: :any,                 arm64_sequoia: "9e9b542074a36db6482d9d1d39c191c5410786e5bd3bec1be69489414d958f2f"
+    sha256 cellar: :any,                 arm64_sonoma:  "5cb45c0688bcfbd6d0fbbde936835b6a8ce35974373a40a25e0d3253bff89bbf"
+    sha256 cellar: :any,                 sonoma:        "af4c7c480558d2a2d941857296529606f8c921437df78d66311d0f4878de7cc1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9b870b4f77920e0d5ed1c9d4960085b89d846597819e6e298aeeb3c9d0f151a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e39841ea7a82f8acf968d7583c332014eeb202396fe23864ed6eb127e727509"
   end
 
   depends_on "cmake" => :build

@@ -3,18 +3,18 @@ class Standardebooks < Formula
 
   desc "Tools for producing ebook files"
   homepage "https://github.com/standardebooks/tools"
-  url "https://files.pythonhosted.org/packages/d3/bf/d37896d64c5c5754c403b593978f23db5fdd2c1efb66fc3fd07c76e18299/standardebooks-3.0.2.tar.gz"
-  sha256 "754fd4c2c9850d264c2ffeae3b7e9af9a984e750d40a460384431b2dc522ba03"
+  url "https://files.pythonhosted.org/packages/c6/90/ca0014663fe4c431e213d4e7e710edcb65713111a9b47df3a1c20f030ac5/standardebooks-3.0.3.tar.gz"
+  sha256 "f794b71758892532609111b225a2b8c38c6c6e12c60b9d596c4f435a912183f6"
   license "GPL-3.0-or-later"
   head "https://github.com/standardebooks/tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9f622b0a88c609dd14212eaa5e85bfc4c03c45a5cea747cda1399a49636d144e"
-    sha256 cellar: :any,                 arm64_sequoia: "691112a5b682d26465ffab356cda1a8706a32772be0ff7784541d904f0cade14"
-    sha256 cellar: :any,                 arm64_sonoma:  "b5ade2cbcf35278956f277425be1cc99c82298300e50d88f68c6599984a27faf"
-    sha256 cellar: :any,                 sonoma:        "37f24e2eac16a8854619c1daa4f576f15c58f969d7f5c6576ff635d5abd071f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15f147774408556c3446f5f3f83e19fa9a371579a983a94b81e651acaf0e3bd4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b158b46d2bedc03aa956ebaa3ba98f8bacefec566851d7f436e2c38b8d8679db"
+    sha256 cellar: :any,                 arm64_tahoe:   "ca7039271f446f6ddc2457b8a62ad45387effe9d36c25796053486440722958b"
+    sha256 cellar: :any,                 arm64_sequoia: "34e7693b434d409db9f76a66417c8d635179343debd3bc16657ffee3c0c957c3"
+    sha256 cellar: :any,                 arm64_sonoma:  "dbfa53aa9178a504d30fc5ec9f5e38bbc8925b54022a48bd700ed5cfae63254b"
+    sha256 cellar: :any,                 sonoma:        "522653fd7c9f89c7cbb4968cc8c63b1710f1fc465ded8f824efed46649e94acc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3c994499f561e440d03442c8b0f3580d8ec0d6e4acbd01651d5c7a3d895dcc3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d75b5218c69c5b61be6e3263e4541c1e03cda88298a1a6dc420f97927a6e6641"
   end
 
   depends_on "rust" => :build # for selenium
@@ -36,8 +36,8 @@ class Standardebooks < Formula
   pypi_packages exclude_packages: %w[certifi cffi pillow pycairo]
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
-    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
+    url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
+    sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
   end
 
   resource "cairocffi" do
@@ -46,8 +46,8 @@ class Standardebooks < Formula
   end
 
   resource "cairosvg" do
-    url "https://files.pythonhosted.org/packages/ab/b9/5106168bd43d7cd8b7cc2a2ee465b385f14b63f4c092bb89eee2d48c8e67/cairosvg-2.8.2.tar.gz"
-    sha256 "07cbf4e86317b27a92318a4cac2a4bb37a5e9c1b8a27355d06874b22f85bef9f"
+    url "https://files.pythonhosted.org/packages/38/07/e8412a13019b3f737972dea23a2c61ca42becafc16c9338f4ca7a0caa993/cairosvg-2.9.0.tar.gz"
+    sha256 "1debb00cd2da11350d8b6f5ceb739f1b539196d71d5cf5eb7363dbd1bfbc8dc5"
   end
 
   resource "chardet" do
@@ -56,8 +56,8 @@ class Standardebooks < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
-    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "cssselect" do

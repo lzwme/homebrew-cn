@@ -1,17 +1,17 @@
 class Typedb < Formula
   desc "Strongly-typed database with a rich and logical type system"
   homepage "https://typedb.com/"
-  url "https://ghfast.top/https://github.com/typedb/typedb/archive/refs/tags/3.8.1.tar.gz"
-  sha256 "3bbbaac93a331ca0f2496b5ab157a387393648d959dcdbbb919a59357727adcd"
+  url "https://ghfast.top/https://github.com/typedb/typedb/archive/refs/tags/3.8.2.tar.gz"
+  sha256 "0c278578cf93d1dffe5909922ceba398b23a374126988d09bd0d9fd867450a20"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d18441f5f7d2057de82ee4f22ae48c5c7fac1d602bad26469630a1cc1e81df47"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba3b7f1920fbe1cada278118b2c0ab6f465b2e07cdec376adffc94695b5b537f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00ea1556bf1b6fff58a0cf0480b7de3ad0b79d425a39d7d7fb5ea378206c599b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c94b6b2f663a25861501c8a15581c7f59368377ed0557729f692b6a1cffbbcd3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c97dfd89761690fdece00d16498896efcd9dcc7c203c9f1252418cbefdf61851"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b845e18b2db55d53e3f2a6b0fa1d5acd0c178c315fe21ab40a9ca0968628fe8e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eea0c2ea160f8b4ad1d1e2f094dde5334a59e189f320a626437ffca2d5cf3b75"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3451dc69c20e877030bc8182668bff05a05c626f52f1f36663cb6dfc468c8b7f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05bf45758518825aa0c8d50358a5edcc7e0d46e750f49f1271737caab8b424a1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "99a9d2f3985b5f3bac5ce690b1a761c0a8737777f56b328a1df3ec355cf2e5d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "38bf185671cfbde4165ab672996fb9e8a81167cb4cd9a4f6b7032e3a59d7832f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "601895dc0125115e67c11cd5a32f1014da2db143f97172fc9b9660ee26a36e0f"
   end
 
   depends_on "protobuf" => :build

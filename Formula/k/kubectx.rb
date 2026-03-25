@@ -1,18 +1,18 @@
 class Kubectx < Formula
   desc "Tool that can switch between kubectl contexts easily and create aliases"
   homepage "https://github.com/ahmetb/kubectx"
-  url "https://ghfast.top/https://github.com/ahmetb/kubectx/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "efcedc14a1cb7e4d0c9b0e8b50fbecf5a24b337f8df7b018fb70a50420fcd27a"
+  url "https://ghfast.top/https://github.com/ahmetb/kubectx/archive/refs/tags/v0.10.2.tar.gz"
+  sha256 "b6c5f73eba17293cc860a7f46080bda43a547ba0ccbee63595476afa7b2b17eb"
   license "Apache-2.0"
   head "https://github.com/ahmetb/kubectx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95ff800339b3b2676da1f161d3b16152d2a42ff53e8f326386d48ecee2d60f0a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95ff800339b3b2676da1f161d3b16152d2a42ff53e8f326386d48ecee2d60f0a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95ff800339b3b2676da1f161d3b16152d2a42ff53e8f326386d48ecee2d60f0a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0a0c0b9585eb033f00a2cc66e83103c04a98f78d75b1ed59c3e7700360e80c38"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5247260e65b79f83ca8e0c99eb957b941429d352229bf1cfc016f39d0631456f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e140d415df2320fb2c039d52e234a53355574b26e0e4dd4c1fa195321c4d9009"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef8f0ff3b3f0b9f45e1176f6ffeef9675f2aa75efec15e0b9d04cb0761f490eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef8f0ff3b3f0b9f45e1176f6ffeef9675f2aa75efec15e0b9d04cb0761f490eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef8f0ff3b3f0b9f45e1176f6ffeef9675f2aa75efec15e0b9d04cb0761f490eb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "80ba34da02333894823c0a26657ef0bc5289d6c69793d66d2e380931eef2ee60"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e20ab39c84c9ea6b20d819f6e55fdca8a51412056b4a52af114f4175099c1f0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c05227285fc0590d808890bb2e57937bd1a4b6b1e0e58542632c7a4da401f585"
   end
 
   depends_on "go" => :build

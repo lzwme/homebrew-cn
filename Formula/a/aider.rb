@@ -3,6 +3,8 @@ class Aider < Formula
 
   desc "AI pair programming in your terminal"
   homepage "https://aider.chat/"
+  # TODO: Try switching to `python@3.14` in next release
+  # https://github.com/Aider-AI/aider/commit/975e5a899168444cba6f85d57070cb0012deb75d
   url "https://files.pythonhosted.org/packages/39/45/71111a018c653b7e743216188fb73cd640a86abbda56b7e430f65cd45d23/aider_chat-0.86.2.tar.gz"
   sha256 "f38a9d322f5609f0c13af82d50c6a11170185b3fdf26956e4a7e89ba19819159"
   license "Apache-2.0"

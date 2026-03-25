@@ -1,18 +1,18 @@
 class Oxker < Formula
   desc "Terminal User Interface (TUI) to view & control docker containers"
   homepage "https://github.com/mrjackwills/oxker"
-  url "https://ghfast.top/https://github.com/mrjackwills/oxker/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "47cb524ae8460e87d05b80364af764b9c188075f6d3973983f4589b87b573c42"
+  url "https://ghfast.top/https://github.com/mrjackwills/oxker/archive/refs/tags/v0.13.1.tar.gz"
+  sha256 "c4b1e5c1b45320902842e72779d4c0a5899b63e2dc0c62f8e2b2776d0873ff02"
   license "MIT"
   head "https://github.com/mrjackwills/oxker.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d32bc9b10aedb02b21b2ce0326de84f5c3296457f5b86a195a0884e9ba0d0f0a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b163b1bb13aa66fad21c30084a36e0b21d0398ba2d0e67ff45b51ed560655859"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "251fb5d9141ce86869bd73c7c5e1f6b0e8f8ffbc926deb33c11ca0375e18eb56"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d3a23f517fded5a6196569601a4dee59263fa6bb3659473beae06be7bb179984"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c272a4f0d02583ccc4938dd9058535524ab6f9d48207aa588d4859c1236f49e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1f7eaf82a651a173e78c1b2bc80510b0a7af10d847390032efeacf530caa3d2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28ac3a0434ccdb0a34f7d8e0399600e761ebcaadee06140d56d5da24d9de9214"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b237bea96ca45fe749a5b03401bb81871aa85c50d254b338eed6d67fe2bc46d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8273171e1f22ed247aa1a7892a666f2c515181b80cd3c4717de0afb38324312b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9b1d72517cd96138966baa6fd7e252b26bd97e7b66ad541310a410ebf2674fbe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "467e4faebcd0c81aa70dab7e8b7f1c6a0266eda20d7c7bd5f9b5ec6b7e44930b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d115bbd4839156a5765b1e36bf70965288442009d8767cf2b00f0d78c2bbfb4"
   end
 
   depends_on "rust" => :build

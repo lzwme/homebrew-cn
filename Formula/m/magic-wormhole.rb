@@ -6,16 +6,16 @@ class MagicWormhole < Formula
   url "https://files.pythonhosted.org/packages/02/0e/b00b4a0de6d82b25f30a2405e3640c508b18dd3544d0104efe2d6c161719/magic_wormhole-0.23.0.tar.gz"
   sha256 "4cd8f48a5c47f70578be7063f892988177681ab66845f4d6ad2d5eb03ce82acf"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/magic-wormhole/magic-wormhole.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "946358596338535de392ce6f5fa0a17c71f87e0e9b14bc243d860481017d0434"
-    sha256 cellar: :any,                 arm64_sequoia: "617b91dbacae7467dd0509e2c560f3a8e5e8cfe16a0d3f43aae673a2f9bc671e"
-    sha256 cellar: :any,                 arm64_sonoma:  "a1eeb12dbc3004842fbafdeed6056e670975d0f2d767cdc72e9bb1c876151e87"
-    sha256 cellar: :any,                 sonoma:        "c4cb9d4b0ef94a7de24f7a6bd2187b393324f12e5ceae7fcfcace3662953cedc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "47c1fc45890489f4217475ea926008753f74995cdf5f16cab6e70560d0e8cdf2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02377e5b17882f936d3fc49cf0167f30ca33ba874b1787ac897ffa8cedca4078"
+    sha256 cellar: :any,                 arm64_tahoe:   "09726e4041c243941400752a742312ac0cea1bb4f11f59d0f444ab53a738d595"
+    sha256 cellar: :any,                 arm64_sequoia: "52513f37a97352d2a25bb34b3f8281141a6d23dc18fc9b85409a6e83c9a0fc1d"
+    sha256 cellar: :any,                 arm64_sonoma:  "0080663f81925f32641fd141a8c4e89acfbaa22441a9f501fc661290ad8adcfd"
+    sha256 cellar: :any,                 sonoma:        "e0fc969a16f2af79b0889da257cf3b97471c991c59a37f29ef95ed4d61dc1062"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49aad1600e5fa63a2fc76e9825239f2d3f4884b6d9480912e68752749399526a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13fc730c52e2a73a1ba8cebefac902756e61d419b6e6bdd8b46a6abcb55ad1d8"
   end
 
   depends_on "cryptography" => :no_linkage
@@ -27,8 +27,8 @@ class MagicWormhole < Formula
   pypi_packages exclude_packages: "cryptography"
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
-    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
+    url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
+    sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
   end
 
   resource "autobahn" do
@@ -42,8 +42,8 @@ class MagicWormhole < Formula
   end
 
   resource "cbor2" do
-    url "https://files.pythonhosted.org/packages/d9/8e/8b4fdde28e42ffcd741a37f4ffa9fb59cd4fe01625b544dfcfd9ccb54f01/cbor2-5.8.0.tar.gz"
-    sha256 "b19c35fcae9688ac01ef75bad5db27300c2537eb4ee00ed07e05d8456a0d4931"
+    url "https://files.pythonhosted.org/packages/bd/cb/09939728be094d155b5d4ac262e39877875f5f7e36eea66beb359f647bd0/cbor2-5.9.0.tar.gz"
+    sha256 "85c7a46279ac8f226e1059275221e6b3d0e370d2bb6bd0500f9780781615bcea"
   end
 
   resource "click" do

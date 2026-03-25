@@ -6,15 +6,16 @@ class Remarshal < Formula
   url "https://ghfast.top/https://github.com/remarshal-project/remarshal/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "32201c6456aa0d8dc18881c1a7508650635e389ab2e6016a6f5b6934251774c0"
   license "MIT"
+  revision 1
   head "https://github.com/remarshal-project/remarshal.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "976887f25e153e0d8e6bce43d4c050e1ec7e831c05b990128e8a54774f9c0c05"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76f32d74a6f923c5bf06459136d6914dcef332c71344c050f8a187c4fd4c51fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e21159d9b7a8711d2aab756f9b9c1c4645226eb94229a0b59cc4af31aab594ae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b0dbbde294fb942f049f465337b5e02a76598edcbcb8fedefe694ff8dcfd7f0c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "76bcb67af3643ca48bbcfe543736abcb3bcd026102c587328c820c9086defcdc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb032e66414af64855feb123d8ef61839498e83a31ffebfbf88b4ae31a412933"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a613f0d7ef54c0412ea95d5cf69283957ebbf7a31140bb6fcb940f65e7e416be"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4d00f7dbcde6a761732ebe5d15e2c02ca6eda26ab2e29a4c3cd14c756b3e7bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93cf2fe50ae7263c6eed128589c70b889d83f44274b077d48c7950cd90626e8f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6d58e43aff110d7fb3df3d4e190c7e7f57686728c5b7d7b585056fc7966bc3dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b49e8dbd4666340c6d028cb93a633da5778e27228d58540839a7ecf6f71ff2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04a6dffa390219ad474232a805c6737d3cc25a7aa2fcba6250a04d1e4e40ee3f"
   end
 
   depends_on "python@3.14"
@@ -24,8 +25,8 @@ class Remarshal < Formula
   conflicts_with "yaml2json", because: "both install `yaml2json` binaries"
 
   resource "cbor2" do
-    url "https://files.pythonhosted.org/packages/d9/8e/8b4fdde28e42ffcd741a37f4ffa9fb59cd4fe01625b544dfcfd9ccb54f01/cbor2-5.8.0.tar.gz"
-    sha256 "b19c35fcae9688ac01ef75bad5db27300c2537eb4ee00ed07e05d8456a0d4931"
+    url "https://files.pythonhosted.org/packages/bd/cb/09939728be094d155b5d4ac262e39877875f5f7e36eea66beb359f647bd0/cbor2-5.9.0.tar.gz"
+    sha256 "85c7a46279ac8f226e1059275221e6b3d0e370d2bb6bd0500f9780781615bcea"
   end
 
   resource "colorama" do
@@ -49,8 +50,8 @@ class Remarshal < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/74/99/a4cab2acbb884f80e558b0771e97e21e939c5dfb460f488d19df485e8298/rich-14.3.2.tar.gz"
-    sha256 "e712f11c1a562a11843306f5ed999475f09ac31ffb64281f73ab29ffdda8b3b8"
+    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
+    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
   end
 
   resource "rich-argparse" do

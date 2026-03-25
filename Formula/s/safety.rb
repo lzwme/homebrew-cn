@@ -6,16 +6,16 @@ class Safety < Formula
   url "https://files.pythonhosted.org/packages/6f/e8/1cfffa0d8836de8aa31f4fa7fdeb892c7cfa97cd555039ad5df71ce0e968/safety-3.7.0.tar.gz"
   sha256 "daec15a393cafc32b846b7ef93f9c952a1708863e242341ab5bde2e4beabb54e"
   license "MIT"
-  revision 6
+  revision 7
   head "https://github.com/pyupio/safety.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aef05f42d9ba03d4b3ca7d4097eec977f052b049407cadb8a86f4a7021251a26"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10d0975a522a3ed63338cb6bf557f6a90f83a55d47eb4eaff69c291a9012df56"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ebbe5612dd1ccc1a2e7570d3e0f63676d464638a2a077766b862fcc8c71d9957"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1b34da4f9fad7b604ec18e6e7bde825f802c0a2c8e3edf1a4d200871b1bea776"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d351a319fe6b02d03d0fdfbea338d33549aa18c1d5b1f79ac304cc5ab77cedd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2dd54204361f5be9d1d0e071a5cd6e05ae64313f099b99a4ef8fadd7efde9e09"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "65388b373dcaed93cc2e198069b3b24c8d658819fef206316c67160a2ca92fbe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21901f7d7a216e2cee053d6791084d43964e70bad77234a08534daac2d6206e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff35f14ade10c448d1238d526c77cb0b9919b1b650f1d7e420b91ae535beea34"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c6a88edd36e6550a308b47198616c314916622a32baa06d6e02460d9303da7fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d19bfe284ad6788d6310499715dddad2a08ca82d4ddd5fb0dd14ffc5b77582b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ec533433d5ffa5e775214490f953926cb45a237c748ee4cd29eb36e1acb1a14"
   end
 
   depends_on "certifi" => :no_linkage
@@ -111,8 +111,8 @@ class Safety < Formula
   end
 
   resource "nltk" do
-    url "https://files.pythonhosted.org/packages/e1/8f/915e1c12df07c70ed779d18ab83d065718a926e70d3ea33eb0cd66ffb7c0/nltk-3.9.3.tar.gz"
-    sha256 "cb5945d6424a98d694c2b9a0264519fab4363711065a46aa0ae7a2195b92e71f"
+    url "https://files.pythonhosted.org/packages/74/a1/b3b4adf15585a5bc4c357adde150c01ebeeb642173ded4d871e89468767c/nltk-3.9.4.tar.gz"
+    sha256 "ed03bc098a40481310320808b2db712d95d13ca65b27372f8a403949c8b523d0"
   end
 
   resource "packaging" do

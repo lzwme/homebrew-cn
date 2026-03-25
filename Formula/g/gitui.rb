@@ -1,21 +1,20 @@
 class Gitui < Formula
   desc "Blazing fast terminal-ui for git written in rust"
   homepage "https://github.com/gitui-org/gitui"
-  url "https://ghfast.top/https://github.com/gitui-org/gitui/archive/refs/tags/v0.28.0.tar.gz"
-  sha256 "3d7d1deef84b8cb3f59882b57b9a70d39ddd6491bd4539504d69b2b3924c044f"
+  url "https://ghfast.top/https://github.com/gitui-org/gitui/archive/refs/tags/v0.28.1.tar.gz"
+  sha256 "0400cbf59605490b5fb8779f9af41fa4d7a1bb748093ca0e13156a5dff31c7aa"
   license "MIT"
   head "https://github.com/gitui-org/gitui.git", branch: "master"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "3bf06c89899c36b3f312246fe1e2638fec683b7d21cb4b230071980a126be480"
-    sha256 cellar: :any,                 arm64_sequoia: "2eca639c9b02860faca96ca14ac7758fb18360138d0b8d260fc606efb27461b6"
-    sha256 cellar: :any,                 arm64_sonoma:  "210ee535561366f07bd0f9a8a6ed589c857997c954f1bb63ab92ec40a3f0fce2"
-    sha256 cellar: :any,                 sonoma:        "c5b29d634487cbed56de2c817401da5755ef13d7a31123666d5a0481b1a60988"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf71424e3d0d7ed2c46366864891f447697e1037c7178f7a2f219be7477a505d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e53d035e90f92966f561ee6ceb697aea0722a5fe7933fa47867bf24b2c02e879"
+    sha256 cellar: :any,                 arm64_tahoe:   "8d680002eec562dc3e551b65df13870ed7c76f12137a47bd797b50bdcd2487d1"
+    sha256 cellar: :any,                 arm64_sequoia: "7cecc7faf77b0a9eb8263cf9bcbc9ac6c9066eafb065b4c6e43188572b9c3061"
+    sha256 cellar: :any,                 arm64_sonoma:  "e4370bb36e12fd616f29ccd1159abe412e3196b3e8d758fdd1b6c04069d63cdd"
+    sha256 cellar: :any,                 sonoma:        "a257d6363277574277a79ac33ec5ce1c9d97531b5137d4ef00d3fac4dd7793f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b81e6514a38501028d2e54c7d245ac376f2f5f6039e0f1b96ca1bafd5cc9fc01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3776e0418c6233796021596efb33de72343bfd36f67c562c347642598d52253"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys

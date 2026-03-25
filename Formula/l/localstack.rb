@@ -3,19 +3,18 @@ class Localstack < Formula
 
   desc "Fully functional local AWS cloud stack"
   homepage "https://localstack.cloud/"
-  url "https://files.pythonhosted.org/packages/e5/a5/ad352fa626de1514500abf6ec002e479cf854d9a250e254ca2a1925bbbb6/localstack-4.14.0.tar.gz"
-  sha256 "68f27e2c30a0e9b476eb5ee9b76cb8d78a1871031d9842d6b6d79cc0c182df90"
+  url "https://files.pythonhosted.org/packages/a2/16/8231e7b97a3e0c5187754b65be2d7a6c550dea6d71a00318068e95953560/localstack-2026.3.0.tar.gz"
+  sha256 "c06b06ed205ae6c52637b75b6f72640f2876ebbb1981fc4ae22d71ab047851b6"
   license "Apache-2.0"
-  revision 1
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ddade857f733871bd05f5a730e7841aa1e8cddb36d60b93f7a711d600bc6414f"
-    sha256 cellar: :any,                 arm64_sequoia: "d960ea2b9fc4a3fcce607eace3ff88b823521ba1e366de45a35c973e1b327f87"
-    sha256 cellar: :any,                 arm64_sonoma:  "409ff53104d952453fdf6dc861d21933f4f9c85d51110fac2a544c5477703937"
-    sha256 cellar: :any,                 sonoma:        "b1635dc4844b90df478680ff67cb9bac3ff657ece051b89177a643e57067748c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "99c7db3095ebda8021ee411ef74614ddf59d910fea70e87d695ba49ee854c275"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fabdd6bfa138d09e0ddee1cd2867429a7cfcdad34cd0927cc8ad6abb0c5c677"
+    sha256 cellar: :any,                 arm64_tahoe:   "356a4cf4df3add833b12d7a01ffdf08931f1b990bdbd3d7cd4600055835d32e7"
+    sha256 cellar: :any,                 arm64_sequoia: "548073aa670193d8acf8ba0c7e68c20d448db44f62bc33ee63c53bec0a0121d8"
+    sha256 cellar: :any,                 arm64_sonoma:  "9a5952ba22840764313567a9b44bcde99a80c73aab96bf417f22950208b9bcb4"
+    sha256 cellar: :any,                 sonoma:        "8e872f1a10b08a182e9eaaa187a4d9ad8bd7c3fdb6ba0f1676c88832169b61b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4dfac01decfad95ba97922fd23002c9611c7296e9d60a20cac701fadf97ab64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddb972f7457ba0364b35c6a08a3641617831a6a9bc80b9bd75eba5267d8caeb0"
   end
 
   depends_on "pkgconf" => :build # for localstack_ext
@@ -40,8 +39,8 @@ class Localstack < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
-    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "click" do
@@ -168,7 +167,7 @@ class Localstack < Formula
     assert_match version.to_s, shell_output("#{bin}/localstack --version")
 
     output = shell_output("#{bin}/localstack start --docker 2>&1", 1)
-
-    assert_match "License activation failed!", output
+    expected = OS.mac? ? "failed to connect to the docker API" : "Docker not available"
+    assert_match expected, output
   end
 end

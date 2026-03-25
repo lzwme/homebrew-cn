@@ -1,8 +1,8 @@
 class Hdf5Mpi < Formula
   desc "File format designed to store large amounts of data"
   homepage "https://www.hdfgroup.org/solutions/hdf5/"
-  url "https://ghfast.top/https://github.com/HDFGroup/hdf5/releases/download/2.1.0/hdf5-2.1.0.tar.gz"
-  sha256 "ce7f5515a95d588b8606c3fb50643f8b88ac52ffbbde9c63bb1edca6a256e964"
+  url "https://ghfast.top/https://github.com/HDFGroup/hdf5/releases/download/2.1.1/hdf5-2.1.1.tar.gz"
+  sha256 "efff93b5a904d66e8f626d7da60b5eedc9faf544be27dbabbaa87967b8ad798b"
   license "BSD-3-Clause"
   version_scheme 1
   compatibility_version 1
@@ -12,12 +12,12 @@ class Hdf5Mpi < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "36140cb8bb4db4a6a05656eabc3a216cc97085952ba8310e1eaf42519c60409e"
-    sha256 cellar: :any,                 arm64_sequoia: "0349531e9e56d74f9e11b18ba075a3023bb4890ed8626854da393261ded6d621"
-    sha256 cellar: :any,                 arm64_sonoma:  "bdd44591f56fcbe61047ab61a22d0656c12290741e9228c0508a951f36eb9e16"
-    sha256 cellar: :any,                 sonoma:        "fae2af5337df5f36a9b88f21060bc01384f5905612f9c36303179d46e04b6edc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75663ef3635622dc2882b99012535edcdf0a684d6a15cbd503edd2f4ae48dba5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5581f10dfc0966ac5a6c386140debb38f3642cc982ab0c36647e34ab2f408abd"
+    sha256 cellar: :any,                 arm64_tahoe:   "be826b39d4bae3f28fcb17eff9b1e1eb7d943dfe9032ddf87d61a23b57d78f4d"
+    sha256 cellar: :any,                 arm64_sequoia: "2c75d9f0921baeddc4a86bb616bc31f3a99c9fea78b3d6a8370fdcab70c617c8"
+    sha256 cellar: :any,                 arm64_sonoma:  "bd79c2dc5fdd0875830eaf3ed7bd4a02ff25c0592d0dade5e6b9e450e9bb463a"
+    sha256 cellar: :any,                 sonoma:        "2745926da93d021d27287fbbefab8053f1fbfef4d990058ea0684dff955c6341"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0f1ef56161bcb8235bd9b65b78c61aca298cf6d4c49b7de52c8547450eb292a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fed39da8c3d3e958bfbf7bb9423b2a7aeb961d7a0bc481f3403ddbbede297b1"
   end
 
   depends_on "cmake" => :build
@@ -31,13 +31,6 @@ class Hdf5Mpi < Formula
   end
 
   conflicts_with "hdf5", because: "hdf5-mpi is a variant of hdf5, one can only use one or the other"
-
-  # Fix malformed HL Fortran dylib version flags from a soversion interface typo.
-  # Upstream PR ref: https://github.com/HDFGroup/hdf5/pull/6267
-  patch do
-    url "https://github.com/HDFGroup/hdf5/commit/bf2c70a3d2a428be67a2273e0acdc97c622c0aab.patch?full_index=1"
-    sha256 "ad83d07a9f3de540619f55ab12b8997b463cdb804eb07cac790f556ca55b4517"
-  end
 
   def install
     # CMake FortranCInterface_VERIFY fails with LTO on Linux due to different GCC and GFortran versions

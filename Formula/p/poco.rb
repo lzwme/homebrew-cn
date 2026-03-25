@@ -1,10 +1,10 @@
 class Poco < Formula
   desc "C++ class libraries for building network and internet-based applications"
   homepage "https://pocoproject.org/"
-  url "https://pocoproject.org/releases/poco-1.15.0/poco-1.15.0-all.tar.bz2"
-  sha256 "4b0f7bbbb1abbd1c06e000635b20530b5a977f702cfd54647926c996d99a1282"
+  url "https://pocoproject.org/releases/poco-1.15.1/poco-1.15.1-all.tar.bz2"
+  sha256 "4fac8f0faaff69623b742edfe0bdfba1804ddb42286bcd8f5aa83e89b4eb4b4f"
   license "BSL-1.0"
-  compatibility_version 1
+  compatibility_version 2
   head "https://github.com/pocoproject/poco.git", branch: "main"
 
   livecheck do
@@ -13,12 +13,12 @@ class Poco < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2ea32a69fbaa18c2e1285164eb60a7434512fc9e8f9391a8ba6e0ae5fae4c81e"
-    sha256 cellar: :any,                 arm64_sequoia: "cb8229016187d81720ac352b9629d5fb004dd9b8c9b67df4c1cf01a4dfc75985"
-    sha256 cellar: :any,                 arm64_sonoma:  "f2eb97e7ebf59438650a30a6baad07978cff8470869cee0cbf073621c1adb8db"
-    sha256 cellar: :any,                 sonoma:        "8761f92bdfa0bb6829f7c872ee5331cb39bc6d66a96847d1aafab87f80a63391"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "933757a5315034c5c2763983dd2e641d022ce5eb25ce68d4b3c92f881ed40fa8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03547c258e6fd4ea6d6f597d485439bbe5f172c8cee01d054f091b505fe9f4c1"
+    sha256 cellar: :any,                 arm64_tahoe:   "73df2a765bf6fdaeba9b4537bd072d5bb58fecb5022f92e3e4bc6c8b9fefb829"
+    sha256 cellar: :any,                 arm64_sequoia: "450e22a06a2232b0fb280d975e9432fe1a45f678f5a32f188607ecf28c322fd1"
+    sha256 cellar: :any,                 arm64_sonoma:  "f25021d032a7d516562dbc0b2986658b246be9b1e98c8d0d11f0dedbcbd93d9b"
+    sha256 cellar: :any,                 sonoma:        "531651bcf4379fdd5b41fa793efb6edb1ea78c72008c3ce0dc91d436b2ce985d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d59ea6fb9f6bd8d6b57d52de086f485cbb2cea71cb29b8f3bfa54a5348675a16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94914185a1609bbb7927d4a4cd6f3ed041f62c40d45cf1ec804c5bf5b16f847e"
   end
 
   depends_on "cmake" => :build
