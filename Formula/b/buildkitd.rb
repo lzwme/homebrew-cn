@@ -1,8 +1,8 @@
 class Buildkitd < Formula
   desc "Concurrent, cache-efficient, and Dockerfile-agnostic builder toolkit (Daemon)"
   homepage "https://github.com/moby/buildkit"
-  url "https://ghfast.top/https://github.com/moby/buildkit/archive/refs/tags/v0.28.0.tar.gz"
-  sha256 "2307112b30593fb8fc4d479ce4547862fa101fa2ecd50a852330a1117a988bbc"
+  url "https://ghfast.top/https://github.com/moby/buildkit/archive/refs/tags/v0.28.1.tar.gz"
+  sha256 "1e7a0c031c038a7399eacf52655c3511ce5f0d83f1d7c821fb44821387a76e2c"
   license "Apache-2.0"
   head "https://github.com/moby/buildkit.git", branch: "master"
 
@@ -15,8 +15,8 @@ class Buildkitd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "aeef826aa5ac6bba845296fd2aeb5fb7c8b32cf455ad85023e65e15b7354758e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fb0f2ad2f794821947ac5c76d7cbd80aa7d9d965e0c3d52f53ba7c5f7df1a005"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "7c5a575471fce170262529563c557c48704bf23fd9504137ee08dbd5f628b8f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e179956c4022886af8894ec5c8beed162937c61830a567e7543f9c70a76c2773"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class Gfold < Formula
   desc "Help keep track of your Git repositories, written in Rust"
   homepage "https://github.com/nickgerace/gfold"
-  url "https://ghfast.top/https://github.com/nickgerace/gfold/archive/refs/tags/2025.12.0.tar.gz"
-  sha256 "cead84f83c6bd333f5c11a714db2f187150c5d7b5d1b29cd6441172195728f45"
+  url "https://ghfast.top/https://github.com/nickgerace/gfold/archive/refs/tags/2026.3.0.tar.gz"
+  sha256 "e8e0667c324658c0c816c909e880879f606ca7d874b7cbf4820ef47ba517d558"
   license "Apache-2.0"
   head "https://github.com/nickgerace/gfold.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Gfold < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "b169463826c6f1c2198d6d189f165f603c214d428b236921a01891ba7eaa9369"
-    sha256 cellar: :any,                 arm64_sequoia: "e9df0ea149ed3b6eaac544266d9ddf867a482ff03a6e347771a1fbf5a5ec21b4"
-    sha256 cellar: :any,                 arm64_sonoma:  "c44f90438bee0efdf92767d2f10cc3bbf50e5fc3d2c78b4b26c2f28fa4e52efd"
-    sha256 cellar: :any,                 sonoma:        "e82a9e593da89543e433c6a6deac44cbb06c7e322f1b8a7ffacc7d9c9b49d812"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "79f7422c37ee4b9afc3294589753e6b48038f27d37e44a5237de501d36d6ebed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e74fb427b9eab422ec4539ef4821bc16f1b27797c6f9b67c8a8e3d00c9177ef5"
+    sha256 cellar: :any,                 arm64_tahoe:   "db41a670045dc8a7876c729a952d1fba166f287eea7024b8719588f1da51e871"
+    sha256 cellar: :any,                 arm64_sequoia: "6ef51773366e7661f85473c36fce2dfea09653ae56caa817e0d5c83aaa25dc45"
+    sha256 cellar: :any,                 arm64_sonoma:  "4ede65914fa3dd5b43f7e247f74bcd091962e101e9f72b8d9af12b4dd13cc5d0"
+    sha256 cellar: :any,                 sonoma:        "528334f580d8869521b1b1d0ee3b8cd282c191f350596d77c49acef16a31d7f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5907c31d6a83a8ec8f14c3aae1d282bd2bcb1d279532f7503562e9e232f90276"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fd6dcad1f035d6dd3652a9a9ced56e2212a155a4428008e7cc09b4953fde63f"
   end
 
   depends_on "pkgconf" => :build

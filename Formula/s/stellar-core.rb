@@ -2,8 +2,8 @@ class StellarCore < Formula
   desc "Backbone of the Stellar (XLM) network"
   homepage "https://www.stellar.org/"
   url "https://github.com/stellar/stellar-core.git",
-      tag:      "v25.2.1-external",
-      revision: "3356bd4ac9646281ee81636f04033ed247582ec5"
+      tag:      "v25.2.2-external",
+      revision: "1a44083a0ca3781737e2492a2e4774316f5d7feb"
   license "Apache-2.0"
   head "https://github.com/stellar/stellar-core.git", branch: "master"
 
@@ -16,12 +16,12 @@ class StellarCore < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fff681f122e6878d6d367951e466fb5441441b94a93ba1a587ba9c410e10a8be"
-    sha256 cellar: :any, arm64_sequoia: "edde3fc5a2d07c3e59552292107dc7d35ad51536dce2074c3aeda700f82897c5"
-    sha256 cellar: :any, arm64_sonoma:  "ea62cb42c436c63f7dc4258f7dd625ed719bd4daebcf84ec9412e3809a90743a"
-    sha256 cellar: :any, sonoma:        "162eafcaccb5aaf1f33a93051f1e0293159bf38ed58e16eebeeef55a3f298d33"
-    sha256               arm64_linux:   "5fd1f4c7f11982661f8afaf7d63f4bbe8fb0e3ddfb175073accc9950e08f86e1"
-    sha256               x86_64_linux:  "71119db2b8a4cd73cec25139e8cf231bf165e9de85e732cccd2b00f24aab4345"
+    sha256 cellar: :any, arm64_tahoe:   "d63d2a65b3563b7c06649bf5b291c2ee3c046b8f245c45c2775c9e8561dfa8c4"
+    sha256 cellar: :any, arm64_sequoia: "4ca8376aedb8f98893fa91476d1fba61f8c50eecd28a08aaaf839f895dd1c0cf"
+    sha256 cellar: :any, arm64_sonoma:  "1d2c33bdc9f4cf810ad8a31645a67f848880080e8b431c64bdcf8b6758f5389c"
+    sha256 cellar: :any, sonoma:        "185d9132b4a455e9854ce7c81e85996a38588f7c73b3567781674d75390730c7"
+    sha256               arm64_linux:   "c15d4b0a0b31e5c489650568785b49d43f03f02c7b94823e8cccce5b0d9f1d4e"
+    sha256               x86_64_linux:  "0b9e3cc3796e7a95b1967c0b6499ca33e5575b4683376606ac95f7e5228d7542"
   end
 
   depends_on "autoconf" => :build

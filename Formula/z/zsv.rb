@@ -31,7 +31,6 @@ class Zsv < Formula
     ]
 
     system "./configure", *args, *std_configure_args
-    ENV.deparallelize
     system "make", "install", "VERSION=#{version}", "PCRE2_STATIC="
   end
 

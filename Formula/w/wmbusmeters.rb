@@ -7,12 +7,13 @@ class Wmbusmeters < Formula
   head "https://github.com/wmbusmeters/wmbusmeters.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f22d9a9d1e4c5bb6d912e13d8811c692d16604b3e4d074c5293e23b053fe4967"
-    sha256 cellar: :any,                 arm64_sequoia: "4fa18e380b5cb8a92374cf71e510751e30ebcacf1d9279781bd0561e4841197d"
-    sha256 cellar: :any,                 arm64_sonoma:  "ee30d71218607fbd64fcf18921f9657d224af6a3042bb67c0217836a77a40ad1"
-    sha256 cellar: :any,                 sonoma:        "9dafae198efc565d7bbb344784eac5bddb19a60cbcd88afe4ee659cf45b0a0a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2451083cdca31570262efa096b9384bfc2ddc336dd891c1b67e7511c0245ca4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7890d501952fcaf0823ec5f3eccf7e28f70716c1a1a7d193d0c0e589fdb4f262"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "48ed2b6256fd4de5aae0ba88f168edff789455ebeddb45ec2c0b02dcf023ef50"
+    sha256 cellar: :any,                 arm64_sequoia: "d9e5e3b1e49de985190abb8b617f48a0f25fde23de7006bdf7fba515b33bccc4"
+    sha256 cellar: :any,                 arm64_sonoma:  "914a69c5bd54cc032acf7ea11da5d527e9767fd8028a9c9fc320cde7615bf486"
+    sha256 cellar: :any,                 sonoma:        "d6d9021668bcf95ff563644a53219ada239edea1f9b7985f4869855cf74f5f82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5418013076180919d6d8beae685569da60970b1006ddb28d9c6304bd35156a3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8eb65c9637ca3517a45909a2ba750ea4c9c6bd3e11d41a90f9edcc818f971bd"
   end
 
   depends_on "pkgconf" => :build
@@ -35,6 +36,7 @@ class Wmbusmeters < Formula
   service do
     run [opt_bin/"wmbusmeters", "--useconfig=#{etc}/wmbusmeters"]
     keep_alive true
+    environment_variables PATH: std_service_path_env
   end
 
   test do

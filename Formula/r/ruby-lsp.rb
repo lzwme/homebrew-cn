@@ -1,18 +1,18 @@
 class RubyLsp < Formula
   desc "Opinionated language server for Ruby"
   homepage "https://shopify.github.io/ruby-lsp"
-  url "https://ghfast.top/https://github.com/Shopify/ruby-lsp/archive/refs/tags/v0.26.8.tar.gz"
-  sha256 "e152af85830348971bfd46ceef9709b531c5cb3bb90febb5aff2b111dccdfcfb"
+  url "https://ghfast.top/https://github.com/Shopify/ruby-lsp/archive/refs/tags/v0.26.9.tar.gz"
+  sha256 "dce37728a674194f27e5a6565adb298cb10ab7f7bd8bfbed60180fe57d0bc64b"
   license "MIT"
   head "https://github.com/Shopify/ruby-lsp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ddd35e878d6a335d5c71664f1cfffb7d40a180f705535f9facd17da56c06786a"
-    sha256 cellar: :any,                 arm64_sequoia: "e9c4bc2fbd30950d032019495b69b076d32cd0be54f958ef2f994ba547b313ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "545117d236d7cd98a08773e105f248ae936ab9b56452dcb02252d94a65d7006c"
-    sha256 cellar: :any,                 sonoma:        "b2b64fd3be168c2bfffaa96713963d3ff955a12734cdf560faac0be83ebb6ad3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b5a9b9ffe511c73a344570b18d1eb30a914c342f179d1bfac81dca58241b47a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cbae600afa01ab34b97c2bddaa9e9fc0453e0202b574aa59f2633cbf5488cd3"
+    sha256 cellar: :any,                 arm64_tahoe:   "70e906ca86ab7d544c64e5c5c8ff5cb6c753330da919149c0da47f4a607efd3c"
+    sha256 cellar: :any,                 arm64_sequoia: "c892b43193f13f0ac62991a8f14a0226e688392f41d86426c5707f34e6e9dffa"
+    sha256 cellar: :any,                 arm64_sonoma:  "660ea01b712675baea507d0658d4f8fee09d6d72a4331f478c895afc3a2c41de"
+    sha256 cellar: :any,                 sonoma:        "eb7487772e9435ffd6ee57a12d01f8f94795aac8a329dafe05b2baff9f4dfb4b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e67d8ebb4b705aed8fcd747dd643076a22fc47b926e0d3ca98cc45319233039"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f249b8e92c21ff6e78972874d89a087b23741e78b94fbf526fd0922702ef3926"
   end
 
   depends_on "ruby"

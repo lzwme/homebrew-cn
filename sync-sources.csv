@@ -8034,6 +8034,7 @@ Homebrew-homebrew-core/Formula/x/xcp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xcresultparser.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xcsift.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xctesthtmlreport.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/x/xcursorgen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xcv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xdelta.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xdg-ninja.rb, Homebrew/homebrew-core, 1
@@ -8434,6 +8435,7 @@ Homebrew-homebrew-cask/Casks/a/aloha-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alpha.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alt-tab.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/altair-graphql-client.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/altar-ai.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alternote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/altserver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/amadeus-pro.rb, Homebrew/homebrew-cask, 0

@@ -1,8 +1,8 @@
 class Libomp < Formula
   desc "LLVM's OpenMP runtime library"
   homepage "https://openmp.llvm.org/"
-  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.1/llvm-project-22.1.1.src.tar.xz"
-  sha256 "9c6f37f6f5f68d38f435d25f770fc48c62d92b2412205767a16dac2c942f0c95"
+  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.2/llvm-project-22.1.2.src.tar.xz"
+  sha256 "62f2f13ff25b1bb28ea507888e858212d19aafb65e8e72b4a65ee0629ec4ae0c"
   license "MIT"
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class Libomp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2e7a7b1fe7237895696c610657a184a4c1ba87dd7e8411d18e82075264c40024"
-    sha256 cellar: :any,                 arm64_sequoia: "dd3f5731b833e7c205bd918c4fff6716771b1ebfce176d46493f914443d452c5"
-    sha256 cellar: :any,                 arm64_sonoma:  "5dda69f7b0baf181a657a2c7588a24e699b5058e5d248728c63deda131e89fc0"
-    sha256 cellar: :any,                 sonoma:        "0048c15855555ba76d37871c824faa32b0a7275b5104717aa07fc101ca579e1a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "23a5ea9ebf213e9ca70c88075f9d2ff6ec7f2e34487d936c9b7929520a9bb613"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd8f3373e55c1c45db05ca720581bcb4fbbda7e8ba180910bd6f7dffc20c82cc"
+    sha256 cellar: :any,                 arm64_tahoe:   "82f432712cb1f241632bfcea9598cd728c7e4e581e49cd3dc3cbb401fe549a31"
+    sha256 cellar: :any,                 arm64_sequoia: "2f17e338c69f7d875b22b95e738ea8c3ef5f62fcd0849715be682c1d50cb5d71"
+    sha256 cellar: :any,                 arm64_sonoma:  "9f27e4eff9f59796a750ddc868266d484513b9206ad497552bbd3ae143c49c6b"
+    sha256 cellar: :any,                 sonoma:        "4573c77b99131736d7bcd4a7fcd7482da0d33651e3b8dd83d89be5ec64e9f8a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "33fe5e2b84cec1ff8c626c03acafdf88b1837174f58bc76253ec3132850068f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e3b1fe1d7d935ef3ba8bbe2e0a7d1949d557ffe193d02acf49258ecb485e636"
   end
 
   # Ref: https://github.com/Homebrew/homebrew-core/issues/112107

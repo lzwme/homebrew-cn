@@ -2,17 +2,17 @@ class GoogleworkspaceCli < Formula
   desc "CLI for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more"
   homepage "https://developers.google.com/workspace"
   # We cannot install from the npm registry because it installs precompiled binaries
-  url "https://ghfast.top/https://github.com/googleworkspace/cli/archive/refs/tags/v0.22.0.tar.gz"
-  sha256 "bfe44bc17113b798522d74339a276ebf7df049a4c6b56d69bb14527da11fb699"
+  url "https://ghfast.top/https://github.com/googleworkspace/cli/archive/refs/tags/v0.22.1.tar.gz"
+  sha256 "53d5fdf3911d6e559fc6d422e9c17d8555e64234c21a8907374f6d88b9fa2717"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6793cabf43caed04a9b9f8cf485626adbec8d6c299b960a54a61b36aed02c2f9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b59f0692aafb6a84499e815b1855f736a00f3f861f1dec7f64454a07a065d792"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f78faaaacc8ebe5d1d40264ee35d66544d3463ded7f6c09aa87da8ec8336b7e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "21e46b699c54664832fb5d99e4f64090033c2bd507c65f12cdfd3d9f03f8040d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fc2ff456b52f5c816e723cd19836ce6c3e96a794302da91d470c6891e77e14c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "434ec9393d5850d8c7dfc9aefafa66cc3403554cd19016fcfd99a1e091f64fe2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "97c8fa101ddf2ebf12d8d1a24885c580fe5518572554ad232227e5de57a850ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "952ebcc8753b00353c618f237a01eb25f1eeaa3f190ef96b13ed62419d08d7d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "889b753977cd74fac278f8b9fbb790ea9c39fea2df98e8fada9909694d53b978"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d3b5129e691c2d1e852565b5cf88ff7c3284248b534d75b9a77006518a5d2a3a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0b8fdb3b44c3b271c50572482d1114d65427510d220dcd72cc6909a13a0ccbf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8c9ed1a0f4670b34f7eceff621dd691751125cfe82492d6180323d0b337560e"
   end
 
   depends_on "rust" => :build

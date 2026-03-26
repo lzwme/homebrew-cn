@@ -1,17 +1,17 @@
 class Ovsx < Formula
   desc "Command-line interface for Eclipse Open VSX"
   homepage "https://www.npmjs.com/package/ovsx"
-  url "https://registry.npmjs.org/ovsx/-/ovsx-0.10.9.tgz"
-  sha256 "e3e7a6142ae01113c7e2c39412b2f1ed74cce727f22c5665c3d8ce6a3fece3c9"
+  url "https://registry.npmjs.org/ovsx/-/ovsx-0.10.10.tgz"
+  sha256 "64458b3b5af09825afe832a8cf7481ac50cb5891e3f7e7d5e4e4b2888abcf89e"
   license "EPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1a0c048b505c0172033daebe91ee545f2445faa3e01b9f327a9f904898cc43b8"
-    sha256 cellar: :any,                 arm64_sequoia: "4b2634705c772c330aa357244a907314b3d309e7b119193498ca04e25d43024b"
-    sha256 cellar: :any,                 arm64_sonoma:  "4b2634705c772c330aa357244a907314b3d309e7b119193498ca04e25d43024b"
-    sha256 cellar: :any,                 sonoma:        "82bc0d06d59ce7f296b1876fdb59a327ebb3d8de97807171989e37c7886368d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27e4c65e095db9d22d61935bb77487b19682f5ca771067a203589187a463a952"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9487e993a5fe4edb8b5a9fbcc97306171167b682e13828c72abb4f53ce01b2f"
+    sha256 cellar: :any,                 arm64_tahoe:   "b8033ba156e3c301b09ff3e3cbb41a0e03e65fab85ae05ca4749f9dc3d6446a7"
+    sha256 cellar: :any,                 arm64_sequoia: "8fdda8f3858333dc8368b83e4060f540ad12d466788f1782f4d1bdeaac1a3b71"
+    sha256 cellar: :any,                 arm64_sonoma:  "8fdda8f3858333dc8368b83e4060f540ad12d466788f1782f4d1bdeaac1a3b71"
+    sha256 cellar: :any,                 sonoma:        "13862c478b67ffca985b854f21aa233e18f044e82bae1af25c421f058316b68e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6d2e14366f106ffe00d782adff60df98f4822e33dbe3a4a7285614279e6714b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e577d56fa8ad541ffbd23aadc3e633d93ab0d37cd62c23c3436bcf8b07f0a96f"
   end
 
   depends_on "node"

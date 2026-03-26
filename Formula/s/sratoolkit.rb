@@ -4,12 +4,12 @@ class Sratoolkit < Formula
   license all_of: [:public_domain, "GPL-3.0-or-later", "MIT"]
 
   stable do
-    url "https://ghfast.top/https://github.com/ncbi/sra-tools/archive/refs/tags/3.4.0.tar.gz"
-    sha256 "6f60984a212d35b239244c23b9686e2a1131c76b92f0c41e8b56d3f5b6fff2d0"
+    url "https://ghfast.top/https://github.com/ncbi/sra-tools/archive/refs/tags/3.4.1.tar.gz"
+    sha256 "874dcbb28b7ebffb5554839254e777b1137b0f0430815bab175068decfe96e98"
 
     resource "ncbi-vdb" do
-      url "https://ghfast.top/https://github.com/ncbi/ncbi-vdb/archive/refs/tags/3.4.0.tar.gz"
-      sha256 "ff7f49994620d2453043ccfcff1eb7d376bb6ab5402eaae127497a94b4a210b2"
+      url "https://ghfast.top/https://github.com/ncbi/ncbi-vdb/archive/refs/tags/3.4.1.tar.gz"
+      sha256 "2fa0919b2842641ead93eeeb45047e87ca480a543b6e4eda15f94d5187e91c85"
 
       livecheck do
         formula :parent
@@ -23,12 +23,12 @@ class Sratoolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f0290de3cbea5db235065149d91c67338897a39679b65e0ca5b1875d139bd292"
-    sha256 cellar: :any,                 arm64_sequoia: "a7bb204779fe03d2ea6e25f646bc7b9c37b8b3e38af24ae7d977e3038cac89ce"
-    sha256 cellar: :any,                 arm64_sonoma:  "60d5a6e64d8648ea20b3499c66a0cc9f885e272a6be9c0499321e0e4c5716be8"
-    sha256 cellar: :any,                 sonoma:        "e186fbaa4b6dbd3e874615f5830837b776a4821c9980d2d851e2099516db6820"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "110291bb50879dfd90c5be51eda28de8ab22395d214ac0fc41b59fbc42e89658"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d78d4198b2666232baa704d10e4ef961dfeb5ee7bde14a31486b77e2ea84e720"
+    sha256 cellar: :any,                 arm64_tahoe:   "ea15253c72d8bfbac1caaefac0cf90bc48d6a215af38d5d0b8af0cae50be524d"
+    sha256 cellar: :any,                 arm64_sequoia: "2eb1898cc5afb9fb2e81c1f56a25cdea78385d8a1236721723f36a2223a59c66"
+    sha256 cellar: :any,                 arm64_sonoma:  "a00bdef100d52e2bc4729002a8d2c30d343459fd07890218e207f62e170b47f0"
+    sha256 cellar: :any,                 sonoma:        "df6fe9a10e35c77e8b86c2c27a84e9e05c671b3b3b6e55860c3c65724960715c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7dc648d79584227003885181424d9b4abd21ffdbce665db892be297b1ef56b4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c32d0758c0d31c4e0af88ec49ef06be34745391f6ad804325c1fd40967e6c7a"
   end
 
   head do

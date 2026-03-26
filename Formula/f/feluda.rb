@@ -1,8 +1,8 @@
 class Feluda < Formula
   desc "Detect license usage restrictions in your project"
   homepage "https://github.com/anistark/feluda"
-  url "https://ghfast.top/https://github.com/anistark/feluda/archive/refs/tags/v1.11.1.tar.gz"
-  sha256 "2a869288fec7f6edad343aca29571215c94e7b47eba93e93dfb9f3ada8ede2e3"
+  url "https://ghfast.top/https://github.com/anistark/feluda/archive/refs/tags/v1.12.0.tar.gz"
+  sha256 "c9305dbbd25b35083d0458e60e538d038d0c646738606e9ba1092b84a8c3471c"
   license "MIT"
   head "https://github.com/anistark/feluda.git", branch: "main"
 
@@ -15,13 +15,12 @@ class Feluda < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "f8bda65949c192b41fc8018a393bff44fce7312681b70a72dff419f3fa32d8f7"
-    sha256 cellar: :any,                 arm64_sequoia: "146ba34a18edf47a4eeb090dfaa09a17c175fdd5e2f04fa110c4257b8d61d1ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "e0ec1d5948f74eb60ed7830f214bb61f71a7b1dde2a8f4bd0212cb1b0055585a"
-    sha256 cellar: :any,                 sonoma:        "90fca6ae9d8936959af23b3598763d510ecc285326a0606be0f72256cf7c0e02"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e28cd22412bd283c1b295950c417579d210d2e6026556de84093d5a37cf809b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4307b81c8979bb3699aa88ca68c6dcfbd1d9f91e14eea2ca0a49534346dcf51e"
+    sha256 cellar: :any,                 arm64_tahoe:   "769cc7fd5adc675de3135dc05b0d98bd546e73d074df254059e0112370bea5c8"
+    sha256 cellar: :any,                 arm64_sequoia: "f5730d3804c63681aa62df7e95ca1faae037b0203cffb6dd0a96e1e67dc79715"
+    sha256 cellar: :any,                 arm64_sonoma:  "0828e022fe411502f7e6a22b2f06e1e6c2ab8091b8fee43520c245ce1cf69499"
+    sha256 cellar: :any,                 sonoma:        "2cc81bb146fda4e4a103797ce3acbd62ab09873f164328095f3b62771e9f1b43"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7d7c2e37a2734de9e12d011fc29e0a5291253081c880b8256f7cc5da4339856"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81a4ee5c0855935aebba6cce98214a8aa5cc5128644c492fa1fc6f82368e0b47"
   end
 
   depends_on "pkgconf" => :build

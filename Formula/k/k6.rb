@@ -1,8 +1,8 @@
 class K6 < Formula
   desc "Modern load testing tool, using Go and JavaScript"
   homepage "https://k6.io"
-  url "https://ghfast.top/https://github.com/grafana/k6/archive/refs/tags/v1.6.1.tar.gz"
-  sha256 "3a6948ebfe9bc5fc19dfd0f7ec7d39737c8d702c35cfc457ad53da179e9dcb90"
+  url "https://ghfast.top/https://github.com/grafana/k6/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "b430df93ba31f8524248d34f00e74e02699023534debb488f4750923ef1ee8f8"
   license "AGPL-3.0-or-later"
   head "https://github.com/grafana/k6.git", branch: "master"
 
@@ -12,12 +12,12 @@ class K6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b92d09a0599c0939eca201a1efcdcdd53fdc3d469a2f67f83f0e60584f81162"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "857ae3c0ff83f3fff9fe10b1badf160adfdefcd9da434af8f3d470ee8254c3cc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68f493ae713b4e2a82de582496980c62d2aa27085b01c06de2d225f36573e159"
-    sha256 cellar: :any_skip_relocation, sonoma:        "89580a3b6badcb1d0edd2b383b018da64eee7b25eb8e4a7e578c1e97236a7c21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba1279c3b3e1e20a19e7cc9cadb2a3d8b8fbcfa6ca82f8c03668c84a9c62b866"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f466103e10577bb7945fbdd3d7b8dcf3f99a5932e2dae6dc08b6ee927d86b55d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed599283f6a652dc2bd3667c744083520d2c03eb28280b95702e024e40b7ea7d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe5eee9766f56dfc9e24e091be3e9aeb0d1b251fe03b44f95d030a412b1995bb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34dcee570b6b29b32609b2d7c6971c9f7133a3863980d80fcc85ab353cd57620"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2668d642362b86f042a8a4d4821eb5ee3f95bd467ed7608a568c5e37adb62382"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7092423cfa0f32ac32efc45f77b83e5217f5024da731934d12bb015b196fa5a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9b5b524fab140e077d9f19208c8a4e33210420a9b2d236945209efcd3f2267d"
   end
 
   depends_on "go" => :build

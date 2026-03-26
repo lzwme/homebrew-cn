@@ -1,8 +1,8 @@
 class Libclc < Formula
   desc "Implementation of the library requirements of the OpenCL C programming language"
   homepage "https://libclc.llvm.org/"
-  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.1/llvm-project-22.1.1.src.tar.xz"
-  sha256 "9c6f37f6f5f68d38f435d25f770fc48c62d92b2412205767a16dac2c942f0c95"
+  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.2/llvm-project-22.1.2.src.tar.xz"
+  sha256 "62f2f13ff25b1bb28ea507888e858212d19aafb65e8e72b4a65ee0629ec4ae0c"
   license "Apache-2.0" => { with: "LLVM-exception" }
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class Libclc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0765271d6d15c0aa2d94d2b62ce8cbdebf032c6678b093e288b43acec03865e4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0765271d6d15c0aa2d94d2b62ce8cbdebf032c6678b093e288b43acec03865e4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0765271d6d15c0aa2d94d2b62ce8cbdebf032c6678b093e288b43acec03865e4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0765271d6d15c0aa2d94d2b62ce8cbdebf032c6678b093e288b43acec03865e4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0765271d6d15c0aa2d94d2b62ce8cbdebf032c6678b093e288b43acec03865e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6904317c64b928e48276d7564f17f726d397d79fc855488ce6f0c3cf385dd688"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e16de6eb361b027296ad2276caf549d8ae5c9a2bca673df619009a26b87aff3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e16de6eb361b027296ad2276caf549d8ae5c9a2bca673df619009a26b87aff3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e16de6eb361b027296ad2276caf549d8ae5c9a2bca673df619009a26b87aff3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7e16de6eb361b027296ad2276caf549d8ae5c9a2bca673df619009a26b87aff3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e16de6eb361b027296ad2276caf549d8ae5c9a2bca673df619009a26b87aff3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0208db6ea68fb2f01a75d7237a4a307ea6e75dd643f33e4c052628c76c022dc"
   end
 
   depends_on "cmake" => :build

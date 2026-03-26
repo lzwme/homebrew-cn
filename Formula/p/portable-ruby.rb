@@ -14,10 +14,10 @@ class PortableRuby < PortableFormula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "c38e94dd5727435bb9f320a7a7262f3a0d536e92207a4ece47c667944957744e"
-    sha256 cellar: :any_skip_relocation, catalina:      "d9483f451e814ab4cbb90fc464391c7740133826f07dadea6cc98c3feac729e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "970d57e2fe16d12a026da660c01b0e216a61824514da96b6616fcee16c04defd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98c8f22a91acc48c85d06d0c8f61770f9a009c9801b7b645f48fce7dfa53fab3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "a506fdbd4f01f2ef9578944e932d2eb2dfb291a69e5806dece426259b6e9f22c"
+    sha256 cellar: :any_skip_relocation, catalina:      "6581aceb09afafab23bac3f3926850066c45a17d4a02e6e16f607cd33ebb4c7a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdad9a44102a50c1d0e61f9d6f78b1b3974ff26aee72f24b05c3afef0ee8c7cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74f0635fef7133470c1a3fa91a26c57f3ecc8dacbc430bbb5ac8e1baf08bb2ed"
   end
 
   depends_on "pkgconf" => :build
@@ -63,7 +63,8 @@ class PortableRuby < PortableFormula
     # - irb
     #   - reline
     #   - rdoc
-    allowed_gems = %w[debug fiddle irb reline rdoc]
+    # - rake
+    allowed_gems = %w[debug fiddle irb rake reline rdoc]
     bundled_gems = File.foreach("gems/bundled_gems").select do |line|
       line.blank? || line.start_with?("#") || allowed_gems.any? { |gem| line.match?(/\A#{Regexp.escape(gem)}\s/) }
     end
@@ -201,6 +202,7 @@ class PortableRuby < PortableFormula
       require "fiddle"
       require "bootsnap"
     EOS
+    system testpath/"bin/rake", "--version"
     system testpath/"bin/irb", "--version"
     system testpath/"bin/gem", "environment"
     system testpath/"bin/bundle", "init"

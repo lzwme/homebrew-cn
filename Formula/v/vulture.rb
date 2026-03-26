@@ -3,13 +3,13 @@ class Vulture < Formula
 
   desc "Find dead Python code"
   homepage "https://github.com/jendrikseipp/vulture"
-  url "https://files.pythonhosted.org/packages/59/c6/4f147b621b4c0899eb1770f98113334bb706ebd251ac2be979316b1985fa/vulture-2.15.tar.gz"
-  sha256 "f9d8b4ce29c69950d323f21dceab4a4d6c694403dffbed7713c4691057e561fe"
+  url "https://files.pythonhosted.org/packages/66/3e/4d08c5903b2c0c70cad583c170cc4a663fc6a61e2ad00b711fcda61358cd/vulture-2.16.tar.gz"
+  sha256 "f8d9f6e2af03011664a3c6c240c9765b3f392917d3135fddca6d6a68d359f717"
   license "MIT"
   head "https://github.com/jendrikseipp/vulture.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4d1edeca5bb6872316c5192168113e018618df78e161df627b260009c8b3eabc"
+    sha256 cellar: :any_skip_relocation, all: "e4969db78c39c58d4a158aa8efd5ab19020c52b1e2536919c2b3c65929c50f18"
   end
 
   depends_on "python@3.14"

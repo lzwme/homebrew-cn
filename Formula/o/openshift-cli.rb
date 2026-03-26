@@ -1,7 +1,7 @@
 class OpenshiftCli < Formula
   desc "OpenShift command-line interface tools"
   homepage "https://www.openshift.com/"
-  url "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.21.5/openshift-client-src.tar.gz"
+  url "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.21.6/openshift-client-src.tar.gz"
   # This project employs synchronized versioning so the sha256 may not change on version bumps
   sha256 "060ac7cb56266f27268a5ec304720f1d8d9d9230c1070159b2a836e9cf70183e"
   license "Apache-2.0"
@@ -13,12 +13,12 @@ class OpenshiftCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a507926e0d5a11b99a0875762e40b91381d1c95dd7354838bc9a1bd0044f55e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9139691ef92a8015d4bed5de3be2dd331c48cb5c27f8a41bd06036c30ac1c255"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4197ddfab4ca272b954c02bfa1ba6ec870be7df5fd0d51419642e33da0f8b739"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9e78aff7bf7625cba9939db6299a2a3edc6b1b583ec86b92b8961bb5f44129cc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b5186e967be3cbf442318e6258b3270bdd9a1cbbdb2ed80d52bb1723db32f7be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c0509b8ecc999edc5a729dcaec99857485aa1cf206d09ac802f0ffe852b10c0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e1ca442757d87ea5b81f142afab8196b2e4c36939a37d2afba38b54116d9997d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26ed5811a2bc2b3c3820fdeabbeb981009158a46ace1301bfc61291f6f835091"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50a8d14d705b2325ecc7c7bb6648ad0c655f51963de225981fe9641c95679e03"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a075a61a4c76b72c539c8cd874ff569a0db5ff01bb04961ea27417694d2fb28d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1b02889e32b262a739e2c23e9c56b6ea2e577d27c34ec5143ffa45e06786947"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a190591d13b4599ec3ec4cb3fbce8b5a83d3d98a5e770c2340653b2e6f44f99a"
   end
 
   depends_on "go" => :build

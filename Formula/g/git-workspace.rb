@@ -1,20 +1,20 @@
 class GitWorkspace < Formula
   desc "Sync personal and work git repositories from multiple providers"
   homepage "https://github.com/orf/git-workspace"
-  url "https://ghfast.top/https://github.com/orf/git-workspace/archive/refs/tags/v1.10.0.tar.gz"
-  sha256 "0b7992e3ec898e02a5837caeed54512f8fa9a2a78bfc19253c4134343d7240b3"
+  url "https://ghfast.top/https://github.com/orf/git-workspace/archive/refs/tags/v1.10.1.tar.gz"
+  sha256 "b962a879594d916c6b5bd5402ef323cb8a7e0d2112ea4d46998409e485ed48d0"
   license "MIT"
   head "https://github.com/orf/git-workspace.git", branch: "master"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "23285696507de756063d31a918d4612422e6bc6a09f13f24a96b4d1ae851e9d7"
-    sha256 cellar: :any,                 arm64_sequoia: "f770de434800db508f687f766f4783b1d9d5c9df0c1f6cfcd719aaf1122c314e"
-    sha256 cellar: :any,                 arm64_sonoma:  "a1cbe64e8c71363b600925c60050528c8c56e144ce2f57aec2914f3a0f28fdf2"
-    sha256 cellar: :any,                 sonoma:        "813610ed6838c17768cf836b7d2def4742c4133871e537ba72112a65ecb9ccdc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e1014d431a4abd86c219d13c68e5bda12fef8d6ddcb10e5388f368f4b13e773"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbf315965767ecb21efbe93e21fc3f8292155b718afd2d1062ef748826d1d422"
+    sha256 cellar: :any,                 arm64_tahoe:   "c6ac5f815523a23ed6bd0612293d2221f87d929d94d7789cc3da6d504e47fbcf"
+    sha256 cellar: :any,                 arm64_sequoia: "6bf616927a82d2d116caf1650507e88be477c9d1d8548c4ebcae2adea6e294ec"
+    sha256 cellar: :any,                 arm64_sonoma:  "bbecaf7262599228c1c15472b78d72be552516800ac1a09d89dff83400ba588b"
+    sha256 cellar: :any,                 sonoma:        "8212ca5c8a97fa76305697d8a107dc0c173e07473fa562d6dc810cb570689da9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9fd69840b3ef28bb3aa567819a5e81f06e5a49364a43ec03ceef8b73dd5d54a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3d0bcdf8d607acdee86c6dbf299e84d6991ad6439b372ea2490eb1509f92c85"
   end
 
   depends_on "pkgconf" => :build

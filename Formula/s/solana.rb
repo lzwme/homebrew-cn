@@ -12,12 +12,13 @@ class Solana < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5cc4e95dd09ac8f26fb8da4e983d3b6170ca82ca901cf2b4bbdf44f08d48e838"
-    sha256 cellar: :any,                 arm64_sequoia: "08e46041d862e55762096d0d6b1f7590dc0bbb5909b4233976ef48f738cdd87f"
-    sha256 cellar: :any,                 arm64_sonoma:  "ca5891ed61d4443616654b595a60491c91c788b6bc2ee3363c56064e412184bb"
-    sha256 cellar: :any,                 sonoma:        "b7b3e2e7354dbb27cfabf9061c60d739674b3c30eb851267815182dcaba69746"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4991068c61f6f3ba850c4cb8b49787c49d53fe65b187d0ad6b873763fcfd2c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18fd84a66c0301b0d19287a5b2c16762db7cb3b2a76631f841ebe22b29f2040f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "03a19d52b40ad5ba9c361684323ebb15b856d06af51477f8c37a0aad9d8c696e"
+    sha256 cellar: :any,                 arm64_sequoia: "8409ef553324c036d4adbef98768164a5d8af26faf38dd73caf3e083b172d18e"
+    sha256 cellar: :any,                 arm64_sonoma:  "577165c98b21d1dc8de83c3d38116a3bcd49902d952a9cb615abf1761b67b31d"
+    sha256 cellar: :any,                 sonoma:        "20a6d4412c008662941f7b421276c6077faea127694983f5a48f33b1f792cc6f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe13435a4619971ac29a1252ecc652241562b1b0846d2ae744b590e13464cda5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "071f0018c89949549eb0a6d56267e777d8a393a033751c2313998d6673b518c5"
   end
 
   depends_on "llvm" => :build # for libclang
@@ -73,6 +74,13 @@ class Solana < Formula
     (bins + bins_dcou).each do |bin|
       system "cargo", "install", "--no-default-features", *std_cargo_args(path: bin)
     end
+
+    generate_completions_from_executable(bin/"solana", "completion", shell_parameter_format: "--shell=",
+                                                                     shells:                 [:bash, :zsh, :fish])
+    # `:pwsh` string is "pwsh" in the shell_parameter_format,
+    # so we need to write the completion manually since solana expects "powershell"
+    (pwsh_completion/"solana").write Utils.safe_popen_read({ "SHELL" => "pwsh" }, bin/"solana", "completion",
+"--shell=powershell")
   end
 
   test do
