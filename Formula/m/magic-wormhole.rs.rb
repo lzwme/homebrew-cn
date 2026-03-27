@@ -1,18 +1,18 @@
 class MagicWormholeRs < Formula
   desc "Rust implementation of Magic Wormhole, with new features and enhancements"
   homepage "https://github.com/magic-wormhole/magic-wormhole.rs"
-  url "https://ghfast.top/https://github.com/magic-wormhole/magic-wormhole.rs/archive/refs/tags/0.7.7.tar.gz"
-  sha256 "bf3eb617b5d885f5e7d6ab0a25b5bde63033909167489626f04b8e40df4c7cde"
+  url "https://ghfast.top/https://github.com/magic-wormhole/magic-wormhole.rs/archive/refs/tags/0.8.0.tar.gz"
+  sha256 "c6cf7f9e5793488a275f525562d55f9edb03ab5ffbe0d859c2ea052fec05a08d"
   license "EUPL-1.2"
   head "https://github.com/magic-wormhole/magic-wormhole.rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a86cfb953c24657c167c1cfe9b581138f4d296fb141f453128bcc376304cb740"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c2bcf6e0e0283685511f3b42ff52409134eadf5d024b828974bdb871f3e72df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c14712694fbcb0ae96945c0533f9f4fe2c214bd03e78cba5fe05e893e531ddea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8861c8c79240a77f2da43f07856e7d52c9b22c7fcea8d68fbe50b7897d47716a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "32c76321e07f47356777edb823ec0e48d66dbf6d2940e6ac46ce30025c257552"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57abd516212ff9f82b34e61be9241ba44dbb5c96f88e93a9054d09b11a50e0fa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e96efa80b44367e83104f74d56eabd4eae246852e0cbefbced41604e4d2a269"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e55ecc6f0f55258ab5612e89f93e86212af41a3ea38f4b3bb241425af79ed449"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd13363db07ed58675c61843da02e0af211980cfac5aa590eb29bde09a9a0e1d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "99596794d9aee114584a49100fed6bd5fe8344e1cbb7b7abda98c4819275610d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c20a1dbf798ec4c8e3744fc006e8fb83840322fde44416c1982b54c58410c20a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc7e00c24774687f9f14a872e9737cb8f84fd18ad78d908defe3fcfa6d4a8e9d"
   end
 
   depends_on "rust" => :build

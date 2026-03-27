@@ -1,8 +1,8 @@
 class Kokkos < Formula
   desc "C++ Performance Portability Ecosystem for parallel execution and abstraction"
   homepage "https://kokkos.org"
-  url "https://ghfast.top/https://github.com/kokkos/kokkos/releases/download/5.0.2/kokkos-5.0.2.tar.gz"
-  sha256 "188817bb452ca805ee8701f1c5adbbb4fb83dc8d1c50624566a18a719ba0fa5e"
+  url "https://ghfast.top/https://github.com/kokkos/kokkos/releases/download/5.1.0/kokkos-5.1.0.tar.gz"
+  sha256 "7bdbdfc88033ed7d940c7940ed8919e1f2b78a9656c69276beb76ad45c41ec4e"
   license "Apache-2.0"
   head "https://github.com/kokkos/kokkos.git", branch: "develop"
 
@@ -12,12 +12,12 @@ class Kokkos < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3df9280f1d6263c84962cdf9ae4f82f404c71d2881477adc1dcb894b84ebd2b9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b538877780df9026ae5cf8b679b8cc1abba90fca1bcbdcddfd5ec29045e7c62"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0acc835618515c9d62098f1e672d08bfe5598477d46c1b7f46ecd45c5303fe1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c9aa45a9c304a9969aa2f64d1a6e7fab71829188d732d3d0b0f8c5cc59520b55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b6ae931661a41fb12af97d3283d501b6c8c5e0497fcba76a01e83015fd4195b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c1239687728a7746ca3d8319acbc931a9ae203a8616d7ed5e18289982b17a5f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ebc9bb6533eda8d5dbb415fb4ffb6391b589bc135e66c45ae30443fab0dbc019"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15d0145c257dead6a87a776dafc2a5f57e17db9cc1cfd682a2a503a00df7ed9d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6896c39545540162e747fdc5a7723b259a2c55f0f10b798d4888cb6566ab25ef"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e4e100c02966347900d05d7c0425d752818347bc3e09a63878f7ae853513f9cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bef9e8e1473d5359b086574b2a901278edf022b497463aa58bbec489dae82fa9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f628676472a178f0eff5e71f4fabfb483d539d80b5384b934ee4d0885feff07"
   end
 
   depends_on "cmake" => :build

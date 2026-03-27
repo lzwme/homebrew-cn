@@ -7,12 +7,13 @@ class Sops < Formula
   head "https://github.com/getsops/sops.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e96d48df05fde78939944e559b803076d5918423bc1d92b4dba8cfe648b544f3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e96d48df05fde78939944e559b803076d5918423bc1d92b4dba8cfe648b544f3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e96d48df05fde78939944e559b803076d5918423bc1d92b4dba8cfe648b544f3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "18d1ab202dec7f4ecbdccd93ac3475bde569c162a561259451897166a07a2ed3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "745ea76d3a12c43b045f59d087cb7b083f88af9cff9241a1dd69967849895122"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06f13d7dd2237ef289d34e48f76b46cb1db522b3217b6ccdb6ab869a4b5f1d99"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b09a92006fe701494f378f8a58faf1c3dfae6932b1ab217725a1728542b8bd4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b09a92006fe701494f378f8a58faf1c3dfae6932b1ab217725a1728542b8bd4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b09a92006fe701494f378f8a58faf1c3dfae6932b1ab217725a1728542b8bd4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d86665bedc9eb0c2deac9d82c532b0c9155339aef946dbe99b2b210ea227a916"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "04c65a6452f9fe980b379c9aedb1db807c03050f17f492b52f1b4d28b68880dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d076dd279b45587a24becd3b54a0b9974621ef89e3fa7ee880f253cc0994f0f9"
   end
 
   depends_on "go" => :build
@@ -21,6 +22,8 @@ class Sops < Formula
     ldflags = "-s -w -X github.com/getsops/sops/v3/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/sops"
     pkgshare.install "example.yaml"
+
+    generate_completions_from_executable(bin/"sops", shell_parameter_format: :cobra, shells: [:bash, :zsh])
   end
 
   test do

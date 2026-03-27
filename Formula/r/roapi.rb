@@ -1,20 +1,26 @@
 class Roapi < Formula
   desc "Full-fledged APIs for static datasets without writing a single line of code"
   homepage "https://roapi.github.io/docs"
-  url "https://ghfast.top/https://github.com/roapi/roapi/archive/refs/tags/roapi-v0.12.7.tar.gz"
-  sha256 "97d30e5f8d8ea9292a05ab67925ca71246c96cdc82d690a95242b186d656c714"
+  url "https://ghfast.top/https://github.com/roapi/roapi/archive/refs/tags/roapi-v0.13.0.tar.gz"
+  sha256 "f1941e528efac4c610cc042bff7f03a613d7d7b59e2a7f8c10cea8c478d915ee"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "206a038df2a8bcfc3b22cae42d0ba36a22c8d75bc5347eef165abca1fd0fd291"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4392cba3e8df84b89d7a1da7a6bf3753172a98058f0dcb109e4c050a9ac2ef82"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a90e2178cf2ef6830efa3d31f53311129508b67b1be6152d2f26b8555946047d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f0cdbe9d524400a20e42412b7335fba2d39c091633b81e268ec8a7370f9d879e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d43120591307e4b3423f72675135854c05a634ce79cb1a28812bb345bbcb8f34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e85bf2d4fd6880821e4300f86781f5ec072c5c5be68301c76c04452e0090138"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aac8101f79606c4ae4f5349cdc1ec7f704918ed4273007bf9c1219d2e142286b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e80cf32ea0736c933171f0f7df7b5f20d7ec73352e096a9a3e2a6c90aa2fbf2f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a3491c3a39585e6d943f8d4370c83078339f1b8b93e4e815bbd454c340f87dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "42bf88fd3ced3d5dd910013dda2914d236b559f707f90665cd452a8f5b448bc5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "76a0b027bc370aa4e0e5e798be33fd634cb8a9f497f2116c6ed3a9c2043b38fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b853f090ebe4651667143325ffc6a7462764a4185713c67d3ce2f7448ce7e91e"
   end
 
   depends_on "rust" => :build
+
+  # Patch to fix build error, remove in next release
+  patch do
+    url "https://github.com/roapi/roapi/commit/c53bfa489011038cb934735451d88dcd9f39dbe2.patch?full_index=1"
+    sha256 "0bdb9950c1f9e69670283f4fb491f2d71ce0f18248345c38869b4a6615ac823e"
+  end
 
   def install
     # skip default features like snmalloc which errs on ubuntu 16.04

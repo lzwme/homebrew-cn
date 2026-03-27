@@ -1,20 +1,19 @@
 class Libharu < Formula
   desc "Library for generating PDF files"
   homepage "https://github.com/libharu/libharu"
-  url "https://ghfast.top/https://github.com/libharu/libharu/archive/refs/tags/v2.4.5.tar.gz"
-  sha256 "0ed3eacf3ceee18e40b6adffbc433f1afbe3c93500291cd95f1477bffe6f24fc"
+  url "https://ghfast.top/https://github.com/libharu/libharu/archive/refs/tags/v2.4.6.tar.gz"
+  sha256 "ec8f327520d1d354ce58b5d2af75b64f380cddc522437c169463b39760921348"
   license "Zlib"
-  revision 1
   compatibility_version 1
   head "https://github.com/libharu/libharu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2a5c693f01bbceadbc47a3debdb9bf41149de6e6222ad4f42741847bd62cf943"
-    sha256 cellar: :any,                 arm64_sequoia: "fcda91482f44f56d5d98387adcfa10412de7216906deb0b27084c1d2ebf8f6af"
-    sha256 cellar: :any,                 arm64_sonoma:  "ab07ca9b26a58c1510881ab2a032df5e955f3ddef02105045e9f4b1a809d1432"
-    sha256 cellar: :any,                 sonoma:        "3316ccdae1f8e6dfafd938a05bd81a89932e2b41888dbd34195cc547b95c75fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ef3176620a5cd03469609ef74b71c4731200853dfd97acdc7ffb3e67edd55f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d421cad27dfa67545c699b9ebcba09b914f2bc9b309ec088b53db2c43bcc3a4a"
+    sha256 cellar: :any,                 arm64_tahoe:   "7c711120c3924fc180e54f7948b7c21ee8e9695d61d5e614ce491cc57c2ea70b"
+    sha256 cellar: :any,                 arm64_sequoia: "eac020c6b4a0a047413108e13b3c89707bb08b03053de172a0a13ba2f5c1b369"
+    sha256 cellar: :any,                 arm64_sonoma:  "fa4b1635cf0425bec217bc1e613a6699164ac0f9dad5f6d174bc200ab79d06ba"
+    sha256 cellar: :any,                 sonoma:        "69ade359b587a875817d7aa5137faa666734ff472c813845947cdb9d16d8233f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa203be6dc180fdac5d3e134a65eab72cb770631f589ee888dd0794c0108e6e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "946728db7b2ce4a26d05ba314d33a399539ca79dbe2d47059be659fd54242028"
   end
 
   depends_on "cmake" => :build

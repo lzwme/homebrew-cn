@@ -7,12 +7,13 @@ class Lanraragi < Formula
   head "https://github.com/Difegue/LANraragi.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6f6ce14831069a2d17fd22a7138fa073b60ee21331e13bfa340fcdedd0a2dc6b"
-    sha256 cellar: :any,                 arm64_sequoia: "4197fd31d6eaf2eec8b074693a305ebb6a1ae8c53752a804ee328384aa700688"
-    sha256 cellar: :any,                 arm64_sonoma:  "fbe6f463fc98a9bc2958cc4a088a782f8b779851cc1641bd983d1ad334f9f189"
-    sha256 cellar: :any,                 sonoma:        "cf6505419798f0c775f36f0abbf4c55a1656df2ec1a83c8fae0870954d78e5e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "05c1d365450337a8f86c67a9af3aa3f32f76f8db60cbc11acd3f9ed0932209bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e01c310845b7f2d122105d4233b1986262c68acfa41e52063372414adaf55cbe"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "4f86576d118a1637ce0782199448d27fe6c1c1b85b5f677a28a00ac0d74291a3"
+    sha256 cellar: :any,                 arm64_sequoia: "3c0184197fa965de72895b6e47d0663160c41d8ae69750174e913cf31ad8fb6a"
+    sha256 cellar: :any,                 arm64_sonoma:  "51082767fccba96f84b20bba75754f5739e242cb8180a5ca0af67d2c1d033829"
+    sha256 cellar: :any,                 sonoma:        "1868bc4be55401b487271bcc1c0f9f7034721df9bec6454b4870f20ffb194937"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce916c932637a2d482c9ef431e72bf6a008e957acb3cfec235abd4f607a0bb1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf65e28832e61f3175af0122013761366850c4b5147255d202cbda3f402f1d38"
   end
 
   depends_on "cpanminus" => :build
@@ -68,6 +69,7 @@ class Lanraragi < Formula
               "'#{ENV["ARCHIVE_LIBARCHIVE_LIB_DLL"]}'"
 
     (libexec/"lib").install Dir["lib/*"]
+    (libexec/"tools").install "tools/openapi.yaml"
     libexec.install "script", "package.json", "public", "locales", "templates", "tests", "lrr.conf"
     libexec.install "tools/build/homebrew/redis.conf"
     bin.install "tools/build/homebrew/lanraragi"

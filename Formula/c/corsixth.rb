@@ -28,7 +28,7 @@ class Corsixth < Formula
   depends_on "luarocks" => :build
   depends_on "ffmpeg"
   depends_on "freetype"
-  depends_on "lpeg"
+  depends_on "lpeg" => :no_linkage
   depends_on "lua@5.4"
   depends_on "sdl2"
   depends_on "sdl2_mixer"
@@ -63,7 +63,7 @@ class Corsixth < Formula
 
     resources.each do |r|
       r.stage do
-        system "luarocks", "build", r.name, "--tree=#{luapath}"
+        system "luarocks", "make", "--tree=#{luapath}", "--lua-dir=#{lua.opt_prefix}"
       end
     end
 

@@ -1,19 +1,18 @@
 class Zsv < Formula
   desc "Tabular data swiss-army knife CLI"
   homepage "https://github.com/liquidaty/zsv"
-  url "https://ghfast.top/https://github.com/liquidaty/zsv/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "251b1f61e8c2371382e9b612f1877c9f1f7ff71d47029ee04f45db89c5f0caab"
+  url "https://ghfast.top/https://github.com/liquidaty/zsv/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "939fb66d4885260ebe52cc280d131a3973886a37b9ac5db0fe8be18e27c4c31c"
   license "MIT"
   head "https://github.com/liquidaty/zsv.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "76284618eb9197f6a95662fef7b0561317264ca45478ca0b618c7cade04715af"
-    sha256 cellar: :any,                 arm64_sequoia: "ab57f85786b1350ecb12706551c04d19bc9648f7cc85797e8a20781bf16304a9"
-    sha256 cellar: :any,                 arm64_sonoma:  "90368dd0b65b8302ba68063510aae8c2df88195c906167adb3aa4bf4caa0559a"
-    sha256 cellar: :any,                 sonoma:        "f98f1e5a3782f5ef64573d80acfe89e75e7793dd56ea574cec7cad2cca30c4af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e195404e9bc473770a34909d508a813dea95c0b3bb64e0b4e3d618bb3d060c9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32cb9126d5d14d886c92d2e12b4e71cd7d45c3c6e1e6789b289f531db60a05f6"
+    sha256 cellar: :any,                 arm64_tahoe:   "9cf74a76ac5f958a5abb51420f152b54494c18024406f3ac1dc67806c6f2e6ba"
+    sha256 cellar: :any,                 arm64_sequoia: "8dac7e816ec70957c6ed14f404e95172ecdb28437cccfc26d5cb0f179a0459d9"
+    sha256 cellar: :any,                 arm64_sonoma:  "ad4d4068e736dad481ed4da93223fac5e86d1cbb1d8631bb7ace73ae7e749cf0"
+    sha256 cellar: :any,                 sonoma:        "af0128af6d66a726aed4e3fc0cdabc599eb9646b768e78bf75de9153f5430ba8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e9e57c23352087eca53556b2fee0d9643faeaaa523680054e5659124783c669"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8a977ce589211e1c35e826cec28aabb021ff58b930313087bc0a5afceefe564"
   end
 
   depends_on "jq"

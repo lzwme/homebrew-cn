@@ -1,18 +1,18 @@
 class AwsCHttp < Formula
   desc "C99 implementation of the HTTP/1.1 and HTTP/2 specifications"
   homepage "https://github.com/awslabs/aws-c-http"
-  url "https://ghfast.top/https://github.com/awslabs/aws-c-http/archive/refs/tags/v0.10.12.tar.gz"
-  sha256 "3d95f7aec670a2f58ab2dac59d9c9bf10dab36b67162e75b7a3c7dbb4ac635ea"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-http/archive/refs/tags/v0.10.13.tar.gz"
+  sha256 "d8352e7a1fb1996694a4dc31219ce03452882abf8d0858c104727f975e11b9c7"
   license "Apache-2.0"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "29b809b9953c0c07931a643a1ba7be2bc98e5eb5834e842f962b706bedc1748f"
-    sha256 cellar: :any,                 arm64_sequoia: "3001aa573ff271e9a06fb47d53ef41c90fdcf23e34f35480c85f403292f61e19"
-    sha256 cellar: :any,                 arm64_sonoma:  "ccc866e341900aaf7b4bc60a31c81aaa8e5a68139baa1ee29a96c6c45f4a2618"
-    sha256 cellar: :any,                 sonoma:        "1d94df91372d0965b1a6300f6c4eb8c25fe6e2601123ffa29531b4ffb7ea9c43"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f976f39c8ed816983719a1a08406bab0a9a0faacddc413edc25161053da50a6e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8682cfca145cca3d0c2491cfad82a1d3e16b8443f1412623ade07c7668c1026c"
+    sha256 cellar: :any,                 arm64_tahoe:   "8e5bed1281096aab7af9067357e182cedb010644222f02ef047efaa4d2b7ec6b"
+    sha256 cellar: :any,                 arm64_sequoia: "b2fceb6f3186999060f3d27a6889363cc23d755cabf780f2e1d537fd1a85d077"
+    sha256 cellar: :any,                 arm64_sonoma:  "999930344d5f3fd073234a223e00600de7ced5ee3eb2cd34e3baff0250d19803"
+    sha256 cellar: :any,                 sonoma:        "6626752d73d679103f9be1ccadc8efea835a7377060e0eddbff24adfd69890e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "989ab0303d303cc11ff176bd4e5636742077e4792b4d2d75bd8315c686ff0dc7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2326d8470eb5fbe509651e9c61b5e41451e0af84b948abf31467fec905db088"
   end
 
   depends_on "cmake" => :build

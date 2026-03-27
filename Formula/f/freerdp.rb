@@ -1,17 +1,17 @@
 class Freerdp < Formula
   desc "X11 implementation of the Remote Desktop Protocol (RDP)"
   homepage "https://www.freerdp.com/"
-  url "https://ghfast.top/https://github.com/FreeRDP/FreeRDP/releases/download/3.24.1/freerdp-3.24.1.tar.gz"
-  sha256 "3217e429735ff65377db664cc668746099bae5197299dbfab8d02222454ebb8c"
+  url "https://ghfast.top/https://github.com/FreeRDP/FreeRDP/archive/refs/tags/3.24.2.tar.gz"
+  sha256 "dcb46af2a4296c796c83de610613002ac5a89a3f4ed18122f889d65611cf473e"
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_tahoe:   "7d1fb24364310ac1a07b99523c2d0d801a47809ed04feecc77ea742c48f4e839"
-    sha256 arm64_sequoia: "1879268ee17efa818b1ecc4d7bdcb1b905a2e97ad34940f1fa06ff513002fcbc"
-    sha256 arm64_sonoma:  "7487768afd81717f155d2de21bf5daee407945e8b506afb7e55c6a484ef4b137"
-    sha256 sonoma:        "cb73a1fcdd7755cf049b8f17189297607c65fe2820c902a3317ac193a09319d2"
-    sha256 arm64_linux:   "d8db6609b4084ed198f33fa35221786eb0f275ac3c65a5c7f506e61401ddff8d"
-    sha256 x86_64_linux:  "d30a75a77768155b8ce63f953d771b3bbd4f5bbc3529c3a343f558b24f78c6f9"
+    sha256 arm64_tahoe:   "8988afd6e8828a4ff1454fde1173021c72af4d88324f95565c65703f66656175"
+    sha256 arm64_sequoia: "f59417b1763936b3e7c379485014f9e03bfad054fd074848238c5b6e88f8bb02"
+    sha256 arm64_sonoma:  "cc6d9fae72f71b53b178090eb853dfad0a95b20e342f602108cf44ce15f44052"
+    sha256 sonoma:        "68da11845defe13f6045888f773921bb49be3a29fc2ab05f98c9ddecc3298b28"
+    sha256 arm64_linux:   "65c24a6b100d92017dbb72ba5b1fedb5117a21790e57631ed270a9de5367eaeb"
+    sha256 x86_64_linux:  "eac5e3e505caa38107c8d0874853d513bdd2fd13673644c0b53f8c16e2c80dfe"
   end
 
   head do
@@ -23,6 +23,7 @@ class Freerdp < Formula
   depends_on "pkgconf" => :build
   depends_on "cjson"
   depends_on "ffmpeg"
+  depends_on "jansson"
   depends_on "jpeg-turbo"
   depends_on "libusb"
   depends_on "libx11"
@@ -38,6 +39,7 @@ class Freerdp < Formula
   depends_on "pkcs11-helper"
   depends_on "sdl3"
   depends_on "sdl3_ttf"
+  depends_on "uriparser"
 
   uses_from_macos "cups"
 

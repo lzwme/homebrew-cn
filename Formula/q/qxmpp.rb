@@ -1,17 +1,17 @@
 class Qxmpp < Formula
   desc "Cross-platform C++ XMPP client and server library"
   homepage "https://invent.kde.org/libraries/qxmpp"
-  url "https://invent.kde.org/libraries/qxmpp/-/archive/v1.14.3/qxmpp-v1.14.3.tar.bz2"
-  sha256 "827988d60ff601735879b8bf02cfbd26b185e196191b0e366a46b21be3a0f74d"
+  url "https://invent.kde.org/libraries/qxmpp/-/archive/v1.14.4/qxmpp-v1.14.4.tar.bz2"
+  sha256 "e5bcc95546e9f1fc5452934f6795dd1f2874e75da9139aa1330436f62f550c31"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "829287475fef2861a8de57d12eb5c5ba2dac5bf1393411ebbe7941a5b9893324"
-    sha256 cellar: :any,                 arm64_sequoia: "076be3b3ebef09527ea61b4c897c4d3a51422ddaf0b366569b43a56f17f7f4c9"
-    sha256 cellar: :any,                 arm64_sonoma:  "06bdbd998574c532afaa76951a414e9ee8d9dbee94e75a90f40be73f11a7607e"
-    sha256 cellar: :any,                 sonoma:        "a259dfae356d1425b61b6a9a5feda2e45a857a4f903c13276ebe741afb328c30"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "64dcfe7f1633a2302fed2e16099501e08c50a1a7b5257c24ce179145dc5604b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a02d91a8a28aa70ef456402074a34389801f62106c7b6c8354a3bdb54500da80"
+    sha256 cellar: :any,                 arm64_tahoe:   "bee10b891fc2d262be28313229a0f74b8cc431e36b621fdf8a400a8f6ad17987"
+    sha256 cellar: :any,                 arm64_sequoia: "b6a27320056ae94be2148f94c1f2da5d770f75eb9336fa9568eb14d2b9fe728b"
+    sha256 cellar: :any,                 arm64_sonoma:  "a4b3477d2e7cc6b4cda2837c12687158ad3adc8d3f9a70b6901961559792a44b"
+    sha256 cellar: :any,                 sonoma:        "e10721ab7aae8db4eb9fbc15cd3d867a1c41fad8cf052619130aecbb6a635d8b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "03f838280c655cdbcb4cc2ac6bf413d40363f914056ee4773308f5f92a3c71e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43717f3203d96967046ca5df1939fee03fbb59e7fc6f819baffe762020539f45"
   end
 
   depends_on "cmake" => :build

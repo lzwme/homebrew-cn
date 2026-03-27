@@ -1,17 +1,17 @@
 class Rapidyaml < Formula
   desc "Library to parse and emit YAML, and do it fast"
   homepage "https://github.com/biojppm/rapidyaml"
-  url "https://ghfast.top/https://github.com/biojppm/rapidyaml/releases/download/v0.11.0/rapidyaml-0.11.0-src.tgz"
-  sha256 "46e42f656a767b9ecaf9b903b6f6a9c72453359ee9cbf488d510d0558ff5ab78"
+  url "https://ghfast.top/https://github.com/biojppm/rapidyaml/releases/download/v0.11.1/rapidyaml-0.11.1-src.tgz"
+  sha256 "9d9938269adc25e9a9b84650338b87d130cf469d82685fffc028c325279619c1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6997e9d5a634aa37266f4186fc11137c886b63150113d710d65d88e500f96b67"
-    sha256 cellar: :any,                 arm64_sequoia: "37d10c22e5a8061ef4bfb8c630ccf891324a6ba46ae37b7fde3b045da6bfe9d4"
-    sha256 cellar: :any,                 arm64_sonoma:  "3662c6b0ee2c58622a6b1ab90e95746bd8f36f9342cba49999a8122dc66119c2"
-    sha256 cellar: :any,                 sonoma:        "5c55f42efa974828fae3b6ed15fb0a3dbce40f2070b88a673bbcb35e509d4b73"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f1e99898b0a319814216cdfed0fe6f862a11c6788a20df7b824e8b44cf10213"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "000664809cba9de464a5ceb7c7d9b29a48c0ff43fd987bbc9380a120a85db0e7"
+    sha256 cellar: :any,                 arm64_tahoe:   "9582f8355adaa95cd7c9f47f13d2daee0bcaa704d1554575d48ad7b7013bf3ac"
+    sha256 cellar: :any,                 arm64_sequoia: "ca7aaccf4437919f82eeae974e66be5b732e39128aaf52021f133be060ba87c5"
+    sha256 cellar: :any,                 arm64_sonoma:  "dd64910f09873586ee987a76ce3e6a0c2b3f07d826844e0d76133ea6d9a7a5b4"
+    sha256 cellar: :any,                 sonoma:        "b296626c23d782325167163b5ba05db22ae1b327967f74ea7e1a16353d8af2e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a642e51102e5fa9f6d3fff6074055d9a94e822d11a90ce2c5c201138cdf0b002"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f29a0168ef5dec7225e4c5d6a433802e20777fe347ba6ae1b8dbedbcb961f72d"
   end
 
   depends_on "cmake" => :build

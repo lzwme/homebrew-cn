@@ -3658,6 +3658,7 @@ Homebrew-homebrew-core/Formula/l/launch_socket_server.rb, Homebrew/homebrew-core
 Homebrew-homebrew-core/Formula/l/launchctl-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lavat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazycontainer.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lazycut.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazydocker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazygit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazyjj.rb, Homebrew/homebrew-core, 1
@@ -4691,6 +4692,7 @@ Homebrew-homebrew-core/Formula/m/mimirtool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/min-lang.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mingw-w64.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/miniaudio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minica.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minicom.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/minidjvu.rb, Homebrew/homebrew-core, 0
@@ -13730,6 +13732,7 @@ Homebrew-homebrew-cask/Casks/n/nosqlbooster-for-mongodb.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask/Casks/n/nostalgiapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nota.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notable.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/n/notchi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notchnook.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notebooks.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notepadexe.rb, Homebrew/homebrew-cask, 1
@@ -13772,10 +13775,12 @@ Homebrew-homebrew-cask/Casks/n/nvalt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvidia-geforce-now.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvidia-nsight-compute.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvidia-nsight-systems.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/nvidia-sync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nwjs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nx-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nzbvortex.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/ob-xf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/objectivesharpie.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/objektiv.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/obs-advanced-scene-switcher.rb, Homebrew/homebrew-cask, 1
@@ -15551,6 +15556,7 @@ Homebrew-homebrew-cask/Casks/v/voicenotes.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/voicepeak.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/void.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/voiden.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/v/voiden@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/voikkospellservice.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/volanta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/volt-app.rb, Homebrew/homebrew-cask, 1

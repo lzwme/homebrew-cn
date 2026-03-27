@@ -2,8 +2,8 @@ class Vcluster < Formula
   desc "Creates fully functional virtual k8s cluster inside host k8s cluster's namespace"
   homepage "https://www.vcluster.com"
   url "https://github.com/loft-sh/vcluster.git",
-      tag:      "v0.33.0",
-      revision: "69cb3ac90e5d8f25ed11ddb529396c9c7682c901"
+      tag:      "v0.33.1",
+      revision: "ac04311a85bce383aacdda0721408e98f8ef453c"
   license "Apache-2.0"
   head "https://github.com/loft-sh/vcluster.git", branch: "main"
 
@@ -16,12 +16,12 @@ class Vcluster < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5527f34c4c49dc83629bbe007f0a9373157b567ffd762e95facd2c8e46f30eaf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6cf7fda77e985a31d7a44d5dbb8893970f0ed467cfac9aa75ee25d89b04d40c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88866f6afd4489aee94a7a844b0f465333e557b701b087d894716df56673b3ef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d86291ea529f829a9d371227bca48865fd4374672b00a7400aeb0ec906f3b262"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5540f5ad914acf10ba095b0c206046d5c03c54812e3048718c85495e020bc7fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42894a4a3d6e6f08668435530a2466b2f9d895123450f18c0437373b37222487"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0fd529461e1335c809a44763158e2d14ef06ecb58863b3174bc16bc308f20bd2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45d988b4ea093f783af67e609f9d2c7d03cc3a3a22d4009e9e82e9e2da4bb4a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a83338360751eda28c1e4a959e3bfda594f113e59851b52109853705515c316d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6d8298f83793bf886123eb1bf02576961dd79627999a10cd03eb688d92783c91"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "499ad54b991b497ecdf5088b2c782843ffdea83181e0349fc6c3560bae70dab2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41103b25d357435fd16b885f77266dcfdc660703cf29aaf077c2e2532d7ce724"
   end
 
   depends_on "go" => :build

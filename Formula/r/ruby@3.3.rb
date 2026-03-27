@@ -1,8 +1,8 @@
 class RubyAT33 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.10.tar.gz"
-  sha256 "b555baa467a306cfc8e6c6ed24d0d27b27e9a1bed1d91d95509859eac6b0e928"
+  url "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.11.tar.gz"
+  sha256 "59f0fafb1a59a05dc3765117af3fa68e153eb48254708549f321c1e9e078d7a0"
   license "Ruby"
 
   livecheck do
@@ -11,13 +11,12 @@ class RubyAT33 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "c830a047d7a1c3762671aaa1c47a83a110d814e5a22c0ad7d620a63a7abe1856"
-    sha256 arm64_sequoia: "e79e4ff1adc9cd327f3b96e25db7f1abcd6f4b5accb81a58fe25c243a5ba25c7"
-    sha256 arm64_sonoma:  "3ddab5432e6d6be84dc311932178096bcd5c1e584ed212d134f881b3cc90b700"
-    sha256 sonoma:        "411dfdad202446d0565e3fa2d37e0c93df728cd996c2e1005fbb08d1282544aa"
-    sha256 arm64_linux:   "b9c2c7a320f6e60deae6a68e823c775b58c7d90d00b28cdd89bda384ba78bd54"
-    sha256 x86_64_linux:  "432c5405267a58d87add30db949d1e85134eedb304e2af7d04416578bb7434e3"
+    sha256 arm64_tahoe:   "5a7ed215d0f36ef6eace83824aa82bc8338719efecff5d844477cb67a6983f83"
+    sha256 arm64_sequoia: "5ac78d6da4430380e2fbb13014d36ece144c5cda1f0a76f525dc45cbc07ff588"
+    sha256 arm64_sonoma:  "354ea0e876c66fc0a31486fd3780fe7dcd0865c776210b14ed09f9d9a1476482"
+    sha256 sonoma:        "077f5a0f18025a1010d556436aec97f37aad2eb669a0f88ff08bf2a9423743df"
+    sha256 arm64_linux:   "4bd9d79381ac0897e830ea3eeb07128e7d996f9ea3cdee55d8fc8e82dbf5a282"
+    sha256 x86_64_linux:  "ba673a5b6e384874269a80aab923a083b9d9da42b4119dd452f5b433a831abf0"
   end
 
   keg_only :versioned_formula
@@ -40,8 +39,8 @@ class RubyAT33 < Formula
   # The exception is Rubygem security fixes, which mandate updating this
   # formula & the versioned equivalents and bumping the revisions.
   resource "rubygems" do
-    url "https://rubygems.org/rubygems/rubygems-3.7.1.tgz"
-    sha256 "750c8c771180d41ed2358344e5461edee83158c0a81b779969a1339961bc1163"
+    url "https://rubygems.org/rubygems/rubygems-4.0.9.tgz"
+    sha256 "39b1e2c878946e420116c3c26e4e708c0ddbdf7cd4a13c48dd0fc0774c7add8d"
 
     livecheck do
       url "https://rubygems.org/pages/download"

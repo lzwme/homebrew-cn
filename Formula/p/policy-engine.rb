@@ -1,18 +1,18 @@
 class PolicyEngine < Formula
   desc "Unified Policy Engine"
   homepage "https://github.com/snyk/policy-engine"
-  url "https://ghfast.top/https://github.com/snyk/policy-engine/archive/refs/tags/v1.1.3.tar.gz"
-  sha256 "b90e6cd1c4acca844a73cb376fabd698d3c06536346d9e4067abe4782edc58b9"
+  url "https://ghfast.top/https://github.com/snyk/policy-engine/archive/refs/tags/v1.1.4.tar.gz"
+  sha256 "fbb133fc5eeec783f147b6abc7658faab4e3f697df5c49d0ecbf77ecb42f92f8"
   license "Apache-2.0"
   head "https://github.com/snyk/policy-engine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9e511473901b94df785c2fab82f2358a33bf47f968f2f8d64191f638fb913c78"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e511473901b94df785c2fab82f2358a33bf47f968f2f8d64191f638fb913c78"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e511473901b94df785c2fab82f2358a33bf47f968f2f8d64191f638fb913c78"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b6024a86d4107fbd998256f4f348de5175625dcf7672ba4c0d1b6f89f534a9c3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bfec98fe5591ffe78ebc6b58969aaea807e16db96e33241b9b5afb306201c5ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fac74cbeeb0bf49f1e661e2f95c9d877505c80f7407325e1bef65e431fda413b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f20b6f93b48b346baa7f1408564fcc60cb8b79d98e6032798826cb2e32d7de46"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f20b6f93b48b346baa7f1408564fcc60cb8b79d98e6032798826cb2e32d7de46"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f20b6f93b48b346baa7f1408564fcc60cb8b79d98e6032798826cb2e32d7de46"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5df9371d84b177cb3f092d104c478479166b3d7e8483f04791b7e14b9a84ffd4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "88b4a1806b2fac092963000a3fa88321f5ecafeb56c3f3333f336ffc4b9d80f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cda1bc0e74c78999259e87c915304487ff2d3f29b4919f076f4f28bbc2ba549f"
   end
 
   depends_on "go" => :build
