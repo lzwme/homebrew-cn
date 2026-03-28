@@ -6,14 +6,15 @@ class Dolphie < Formula
   url "https://files.pythonhosted.org/packages/46/36/19ba18fc576c8228272f683c15bbfc518453728a4b79a6355cf9135c11b2/dolphie-6.14.0.tar.gz"
   sha256 "6ca09e85f182fc53f02ad9d4102d98ff7826fb87baa312c17801be6f50eba882"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9f2bc96aae49f387cef9aa97d7787c7f3a0e1987195bb6830f2f9d4ec4f9dcbc"
-    sha256 cellar: :any,                 arm64_sequoia: "ba6b2a7e3973c6f78096af11816c24fc8af24ebe98bf17e532a91355d0959558"
-    sha256 cellar: :any,                 arm64_sonoma:  "6e2482d4a722f8d076bd6dce032715ee397d9c35da4716aa1eb9462d86bfd137"
-    sha256 cellar: :any,                 sonoma:        "e97645a6cfd51f061bef0ea5b0311824cf440acc8ef275b6dae1615c01795f36"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb00b8fb356bfa6510217f72a17ed18d6acb6055dc5fc6f8e5fa0c4772fdaab9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5637e6af6ce66162e2bd76045a77a2f74e09e41c4a71dd19de035f64bc37b992"
+    sha256 cellar: :any,                 arm64_tahoe:   "ed196b0dedd6a2c0ea90a47968d722366386c4a9cb72a379a5daf46235c880eb"
+    sha256 cellar: :any,                 arm64_sequoia: "f4fce205f14d28fc4335c0e8d5a8d71695a5ed827d5951df784517bc0259b11d"
+    sha256 cellar: :any,                 arm64_sonoma:  "0a773faff5a9c069eea842e6a26b0651edc99425213a5f20fea6b09524312f7b"
+    sha256 cellar: :any,                 sonoma:        "e8a1cc4b79dd6fd20e7a2c38078f9b7fafdde207d3a3a270f75d42db317828a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "50b2f8859faa335b4c10a5878fc3527725a0f311b6282a6994c30e88630b6d5b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eeaf648262e99455974ba1adbdfcc892bc86e640496ae70889a8758a88c384e9"
   end
 
   depends_on "rust" => :build # for orjson
@@ -99,8 +100,8 @@ class Dolphie < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "rich" do

@@ -2,18 +2,17 @@ class Mighttpd2 < Formula
   desc "HTTP server"
   homepage "https://kazu-yamamoto.github.io/mighttpd2/"
   # TODO: Check if `cborg` allow-newer workarounds can be removed
-  url "https://hackage.haskell.org/package/mighttpd2-4.0.9/mighttpd2-4.0.9.tar.gz"
-  sha256 "6f85f533a232a9ab25f6758886beedcb1a8d8bcc0012bf73a7dac2ed291ca4e1"
+  url "https://hackage.haskell.org/package/mighttpd2-4.0.10/mighttpd2-4.0.10.tar.gz"
+  sha256 "7512f967748517537f526cb1ff6c6bd4e896d432691dd14c613530071e8357db"
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "99f64d61207f727cffd821669446f5853cb5f6ef4fb73004415a3a98a245bd9e"
-    sha256 cellar: :any,                 arm64_sequoia: "141ddf12baa00ebdb61710992d7a994575b20bc13387b9a37bff27cac4320a2b"
-    sha256 cellar: :any,                 arm64_sonoma:  "f0c5a2f46297faa921320ab4b1e661f41abf4c6bdc45738a19cc540af57e9bbc"
-    sha256 cellar: :any,                 sonoma:        "cc5290c3e3992f951543a3520209838ab7b6062f9664258295358f86f557d1b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67fbc95ab3285dc2bb03f7ac53b094258dca7d9ace439485c9b65164cc8f16f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c521f5c6d62571565f09f681499647ddda932207983409cc8d65fee2503e1b1b"
+    sha256 cellar: :any,                 arm64_tahoe:   "66fbd63b606e13da4d46baebd96a6a26de5dc555553ede663a49be878d6091d7"
+    sha256 cellar: :any,                 arm64_sequoia: "3bd15fc041272bcc6acba9fc872d3a14b4fe3dc500f1e3db04e0e3077ac49c81"
+    sha256 cellar: :any,                 arm64_sonoma:  "144cc74e8f72513a0791956190136c19373f2b456876f5172bb455f64e7c46b9"
+    sha256 cellar: :any,                 sonoma:        "1d87006977c3e8d4d4f64ee888e52c14dab67d14011d5f4d9f333739f10cf8e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5d0a2d98d44a5f042aa42c95129f90ea90fe6a8355cf047f9545924c00d1867"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61f34699423a6e6e60e12776b21141712b2220b27b515365a469f4bfa41214ec"
   end
 
   depends_on "cabal-install" => :build

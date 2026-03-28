@@ -6,6 +6,8 @@ class Mongosh < Formula
   license "Apache-2.0"
   compatibility_version 1
 
+  no_autobump! because: :bumped_by_upstream
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d67cc5c70961c77a5c3ecf6aeac41082d7623310f1458f00ce5e55b625e2a0a6"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d67cc5c70961c77a5c3ecf6aeac41082d7623310f1458f00ce5e55b625e2a0a6"

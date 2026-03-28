@@ -1,9 +1,9 @@
 class Pyside < Formula
   desc "Official Python bindings for Qt"
   homepage "https://wiki.qt.io/Qt_for_Python"
-  url "https://download.qt.io/official_releases/QtForPython/pyside6/PySide6-6.10.2-src/pyside-setup-everywhere-src-6.10.2.tar.xz"
-  mirror "https://cdimage.debian.org/mirror/qt.io/qtproject/official_releases/QtForPython/pyside6/PySide6-6.10.2-src/pyside-setup-everywhere-src-6.10.2.tar.xz"
-  sha256 "05eec38bb71bffff8860786e3c0766cc4b86affc72439bd246c54889bdcb7400"
+  url "https://download.qt.io/official_releases/QtForPython/pyside6/PySide6-6.11.0-src/pyside-setup-everywhere-src-6.11.0.tar.xz"
+  mirror "https://cdimage.debian.org/mirror/qt.io/qtproject/official_releases/QtForPython/pyside6/PySide6-6.11.0-src/pyside-setup-everywhere-src-6.11.0.tar.xz"
+  sha256 "48d5c44d7c3ed861055d5491486e6a220ef5006573cae01a5fae3fb69d786336"
   # NOTE: We omit some licenses even though they are in SPDX-License-Identifier or LICENSES/ directory:
   # 1. LicenseRef-Qt-Commercial is removed from "OR" options as non-free
   # 2. GFDL-1.3-no-invariants-only is only used by not installed docs, e.g. sources/{pyside6,shiboken6}/doc
@@ -13,7 +13,6 @@ class Pyside < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
   ]
-  revision 2
 
   livecheck do
     url "https://download.qt.io/official_releases/QtForPython/pyside6/"
@@ -21,12 +20,12 @@ class Pyside < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "1d31e4d4410de481977b89ba7fc1c57dece74cd4064bbc35486cac7e40c7957b"
-    sha256                               arm64_sequoia: "14b5da211c69305c1494aedba826d2237a3f85c4fa605c07c3dcd248079d18b3"
-    sha256                               arm64_sonoma:  "0d52dd47d88606f1ce919d446bb9f4790347e6a420fc93795daebd8567f30d30"
-    sha256 cellar: :any,                 sonoma:        "1e3394704be6e83f8d192f5d082e640d590a72bb32f55056f81b49ca672d0670"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c68c71db54c96b7d1aad68214b422b5a14b0faf71847152a8c6b74896e339d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9850022e3918536a2fb7896ff48db57e704cab0d8bd5e92017853105ce11000c"
+    sha256                               arm64_tahoe:   "03512803455b2775535c47a6945ae7bcf84f6631f1ca5bfc2aaa95b141770a2e"
+    sha256                               arm64_sequoia: "10e77347cf7dfd38f62379dffd98d749b8dcfc7e129841659c6c96248c9ca15d"
+    sha256                               arm64_sonoma:  "884f528ffc724dc2b8556481d36c9eb3d09f6a5c83da5489765a80652991b82b"
+    sha256 cellar: :any,                 sonoma:        "47c83f6c0174a63f0c1e31e7e81ab1ed92a8ba2d04a89a6cad01175e279110c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e12ac78636758b76581e17da03d61f1fa8ec78c02c5977901cc241ec06cba4c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8911cfb4c34770f42717b86b5d16ffaf4fc10fd28b61caacbc2474876de8764"
   end
 
   depends_on "cmake" => :build
@@ -36,10 +35,11 @@ class Pyside < Formula
   depends_on xcode: :build
   depends_on "pkgconf" => :test
 
-  depends_on "llvm"
+  depends_on "llvm@21"
   depends_on "python@3.14"
   depends_on "qt3d"
   depends_on "qtbase"
+  depends_on "qtcanvaspainter"
   depends_on "qtcharts"
   depends_on "qtconnectivity"
   depends_on "qtdatavis3d"
@@ -89,6 +89,16 @@ class Pyside < Formula
   end
 
   def install
+    # TODO: Remove following when using unversioned LLVM
+    ENV["CLANG_INSTALL_DIR"] = ENV["LLVM_INSTALL_DIR"] = Formula["llvm@21"].opt_prefix
+    if OS.linux?
+      # Workaround to search versioned LLVM path before HOMEBREW_PREFIX/lib
+      ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(target: Formula["llvm@21"].opt_lib)}"
+      inreplace "sources/shiboken6/cmake/ShibokenHelpers.cmake",
+                'list(APPEND path_dirs "${libclang_lib_dir}")',
+                'list(PREPEND path_dirs "${libclang_lib_dir}")'
+    end
+
     ENV.append_path "PYTHONPATH", buildpath/"build/sources"
 
     extra_include_dirs = [Formula["qttools"].opt_include]
@@ -102,7 +112,7 @@ class Pyside < Formula
     inreplace "sources/pyside-tools/CMakeLists.txt", "DESTINATION bin", "DESTINATION #{pkgshare}"
 
     # Avoid shim reference
-    inreplace "sources/shiboken6/ApiExtractor/CMakeLists.txt", "${CMAKE_CXX_COMPILER}", ENV.cxx
+    inreplace "sources/shiboken6_generator/ApiExtractor/CMakeLists.txt", "${CMAKE_CXX_COMPILER}", ENV.cxx
 
     shiboken6_module = prefix/Language::Python.site_packages(python3)/"shiboken6"
 

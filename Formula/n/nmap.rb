@@ -1,10 +1,9 @@
 class Nmap < Formula
   desc "Port scanning utility for large networks"
   homepage "https://nmap.org/"
-  url "https://nmap.org/dist/nmap-7.98.tar.bz2"
-  sha256 "ce847313eaae9e5c9f21708e42d2ab7b56c7e0eb8803729a3092f58886d897e6"
+  url "https://nmap.org/dist/nmap-7.99.tar.bz2"
+  sha256 "df512492ffd108e53a27a06f26d8635bbe89e0e569455dc8ffef058c035d51b2"
   license :cannot_represent
-  revision 1
   compatibility_version 1
   head "https://svn.nmap.org/nmap/"
 
@@ -14,12 +13,12 @@ class Nmap < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "64b89fa933591f6ca2b7fd1ce45c70859f549955a6941e3e1070a79f1be83a1b"
-    sha256 arm64_sequoia: "63ef0acfe123c65f364f19ddae8621eb050fa618e4749c51f62ff54c5fa59966"
-    sha256 arm64_sonoma:  "38b8de5522f3cbccb812c1e61696d16b27b267716fd2bd67b3dbd4f4846236a3"
-    sha256 sonoma:        "464ffaf24758602b9e53eef5f4cae49b97ad1ece9b339145c6044e4e5faf09d7"
-    sha256 arm64_linux:   "56420284aa2c62c55f96cf332868ad12ce23e1583edf54a2543ee8c5a8c3edd3"
-    sha256 x86_64_linux:  "9eac9fadda8834f10a1c8a407714522625818d912a1c99f31c57435ae14c6cc0"
+    sha256 arm64_tahoe:   "610785e4dd545c5f71d3af2d221f8a92951714710cf98ac4ed10f6fd0d0c5153"
+    sha256 arm64_sequoia: "5840513b1bcc8c8e20b68a1a9e71977d424827ba9e26c157e79760dc218fb55e"
+    sha256 arm64_sonoma:  "47740d854f1669dc68deabbfd6f5d54036c99ddb606ba39d70e747f7632f4f85"
+    sha256 sonoma:        "a5c5594350aad5168e64c364c6508b669cd5ea2273ad0f88d005b27de75cd5bd"
+    sha256 arm64_linux:   "55edc13eebfb103bdc26cdcb479daf81d709b727d6c6e2e22ae2c447cebc638a"
+    sha256 x86_64_linux:  "71db30907d6cd22b65e60fbb825cbc394ea291123aba6f9422342026bdddd6ad"
   end
 
   depends_on "python-setuptools" => :build

@@ -1,19 +1,18 @@
 class Pivy < Formula
   desc "Python bindings to coin3d"
   homepage "https://github.com/coin3d/pivy"
-  url "https://ghfast.top/https://github.com/coin3d/pivy/archive/refs/tags/0.6.10.tar.gz"
-  sha256 "7b409816c9fad84cf94f93659281f9dd2501d285eb2fc609e9401a3d004ce723"
+  url "https://ghfast.top/https://github.com/coin3d/pivy/archive/refs/tags/0.6.11.tar.gz"
+  sha256 "78f79bd7d1ce7e8140ceba4b1220136ea1f14b4403b1e463c59fa892feed961e"
   license "ISC"
-  revision 1
   head "https://github.com/coin3d/pivy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7af9cc64f5c26f519c8c8116982c84a4dd77b217c5fc91e508aa3a056e066a49"
-    sha256 cellar: :any,                 arm64_sequoia: "1749994556abef4f47023dc4831c8f66d3ab5345655c971eed253d841c3daec6"
-    sha256 cellar: :any,                 arm64_sonoma:  "6c70ff465259e3ea3b8b778e2afb81d664831214ab35be393b8647da04e7682e"
-    sha256 cellar: :any,                 sonoma:        "50e39ab5c9e250a552c416b7b50128f5d5c3100acab15b8c5114a78a7b41ba39"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f3dd2afff6c77e1501b70461fd6efd481fc601710faef30a7feb22bdca305c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5867393be9c9375ba219639d2a73a5ceab1dccc72b048f9f879ffc3ae2391cb"
+    sha256 cellar: :any,                 arm64_tahoe:   "3c3efc4969c94db900ff5a8d2e564792db5b2aa0b17d687f441e29d654e872bf"
+    sha256 cellar: :any,                 arm64_sequoia: "4ad65036fd17e5f291383b618d1d4d0a372a424baf46db6f9d5660350bb2099f"
+    sha256 cellar: :any,                 arm64_sonoma:  "bafa801b126aec60325b9a44060cffa929b2cbb064b2799972868f6b5a0cd51c"
+    sha256 cellar: :any,                 sonoma:        "8d401a42d19e519d79fceb13e776808a6f249b52c054ee464e18fdc20730e872"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9f4842d2e3d7cda6a5576989b3f99c80904831dafc11953ce1091e80b6384db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fec926400c3514af60807399894ac76d0a0f1251795b36d512c9aa50ef2240d7"
   end
 
   depends_on "cmake" => :build

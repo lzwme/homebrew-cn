@@ -1,10 +1,10 @@
 class Qtdeclarative < Formula
   desc "QML, Qt Quick and several related modules"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.10/6.10.2/submodules/qtdeclarative-everywhere-src-6.10.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.2/submodules/qtdeclarative-everywhere-src-6.10.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.2/submodules/qtdeclarative-everywhere-src-6.10.2.tar.xz"
-  sha256 "a249914ff66cdcdbf0df8b5ffad997a2ee6dce01cc17d43c6cc56fdc1d0f4b0f"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.0/submodules/qtdeclarative-everywhere-src-6.11.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.0/submodules/qtdeclarative-everywhere-src-6.11.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.0/submodules/qtdeclarative-everywhere-src-6.11.0.tar.xz"
+  sha256 "4eece569431ddf8324e7d322fa27001916570b23df535f8fb28aba445eedfde9"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qml
@@ -19,12 +19,12 @@ class Qtdeclarative < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "40c4fa0ae02ea69c6bddfc2ed6e184638c59843e6ccc23d89ca5fb0d020db793"
-    sha256                               arm64_sequoia: "43ec33cc1424f501c43cbde74bbbe592d6d083f7311ed462c51d90cd93a23217"
-    sha256                               arm64_sonoma:  "470efa5dddc0cbf8663965f4538dd25ae25444c7f8f679ea2570c06ee6890d3d"
-    sha256 cellar: :any,                 sonoma:        "826cdedf5cf1d7180bec128312b7a1ab708228cbff94b21d4a5f204561373d93"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3cb7ddd01b559c5b2fd499c20ee01b2c62f7041934d9a36317dbba4373b5236f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "412bad1588deeefae1fb0ba898d387cc3155b3656791e5285930e95be0a47c42"
+    sha256                               arm64_tahoe:   "6f557e598b3bf669684d83108c38ecb1f48d09e8d839f84250d5eac7d1f48668"
+    sha256                               arm64_sequoia: "a66cf1a41a2d27e65e5a65fa35f3333faed75f968c44f148493c40ea4184fcae"
+    sha256                               arm64_sonoma:  "947cb76269d81e7f72bca99ec48dbf73683156666ac460abb9786e0dba4af1e7"
+    sha256 cellar: :any,                 sonoma:        "e31f983a649e5df483fc894c9db88a8ab8e6de48d1ffcb3d6f49a06d0b695b35"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "89bc2ebb7a623fc377807e39e8f5f71c7cf48a8577ede31a178fe160904d3f34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba1dd1467beeb9872fec5a5163fead19abead4a3ca7fc5803ada7203578602e4"
   end
 
   depends_on "cmake" => :build
@@ -47,8 +47,13 @@ class Qtdeclarative < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
+    return unless OS.mac?
+
     # Some config scripts will only find Qt in a "Frameworks" folder
-    frameworks.install_symlink lib.glob("*.framework") if OS.mac?
+    frameworks.install_symlink lib.glob("*.framework")
+
+    # Remove non-executable file used for signing app
+    rm(bin/"qml.entitlements")
   end
 
   test do

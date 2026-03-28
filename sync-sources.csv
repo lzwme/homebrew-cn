@@ -1558,6 +1558,7 @@ Homebrew-homebrew-core/Formula/d/diskonaut.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/disktype.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/diskus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dislocker.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dispenso.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/displayplacer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dissent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/distcc.rb, Homebrew/homebrew-core, 1
@@ -3399,6 +3400,7 @@ Homebrew-homebrew-core/Formula/j/json5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/json_spirit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jsoncpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jsonfmt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jsongrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jsonlint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jsonnet-bundler.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jsonnet.rb, Homebrew/homebrew-core, 1
@@ -6073,6 +6075,7 @@ Homebrew-homebrew-core/Formula/q/qt5compat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qt@5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qtads.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qtbase.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/q/qtcanvaspainter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qtcharts.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qtconnectivity.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qtdatavis3d.rb, Homebrew/homebrew-core, 0
@@ -6101,6 +6104,7 @@ Homebrew-homebrew-core/Formula/q/qtserialport.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qtshadertools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qtspeech.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qtsvg.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/q/qttasktree.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qttools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qttranslations.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qtvirtualkeyboard.rb, Homebrew/homebrew-core, 0
@@ -7853,7 +7857,7 @@ Homebrew-homebrew-core/Formula/w/wasm-pack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasm-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasm3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasmedge.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/w/wasmer.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/wasmer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wasmtime.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wassette.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/watch-sim.rb, Homebrew/homebrew-core, 1
@@ -13704,6 +13708,7 @@ Homebrew-homebrew-cask/Casks/n/nifty.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/niftyman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nightfall.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nightshade.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/nimbalyst.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nimble-commander.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nimblenote.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nimbus.rb, Homebrew/homebrew-cask, 1

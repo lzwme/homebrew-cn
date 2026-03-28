@@ -1,18 +1,18 @@
 class LibgeditGfls < Formula
   desc "Gedit Technology - File loading and saving"
   homepage "https://gitlab.gnome.org/World/gedit/libgedit-gfls"
-  url "https://gitlab.gnome.org/World/gedit/libgedit-gfls/-/archive/0.3.1/libgedit-gfls-0.3.1.tar.bz2"
-  sha256 "fef85c08abff129199ba59444825d602c3aad8346cba48677a58a6421daad46d"
+  url "https://gitlab.gnome.org/World/gedit/libgedit-gfls/-/archive/0.4.0/libgedit-gfls-0.4.0.tar.bz2"
+  sha256 "ce6431fa532ae8d5c43f2b84e32913744d0eb8043bd753cf9e23e225f6147d75"
   license "LGPL-3.0-or-later"
   head "https://gitlab.gnome.org/World/gedit/libgedit-gfls.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "094a4573c2d02e1abf7802c22e526f1088750c23fc446bb22d8c1f59a2ee2d44"
-    sha256 cellar: :any, arm64_sequoia: "8db07fb4c7b54d03cbff3825099e2aac1fac8bd05e2f6c2394ee04fdb2917d94"
-    sha256 cellar: :any, arm64_sonoma:  "7a5b3641096059b45f2493f03a020dc5892c71ccc608f7aaffd38f8ba40cc5fe"
-    sha256 cellar: :any, sonoma:        "2a74de4486d4c26f60e821abc4fd08c1ae61597785298fdf5bd8f5a3b8c37f6c"
-    sha256               arm64_linux:   "1a9b830716ce11ade5e9970175836b0244c6798bbcc0d237b3ba643ea1c183a5"
-    sha256               x86_64_linux:  "6621aa963f78c982fa874bbfd0262b5ff26bcf5b06236d545520b6b121fcb64c"
+    sha256 cellar: :any, arm64_tahoe:   "91820ae5f87904f923ef6723e3929dc62d63785ebf15710600f4ce47cb705501"
+    sha256 cellar: :any, arm64_sequoia: "34cab0af8812f4ac20e28cb89b2fb5d63e7d126a7de1f2bec249bcca94608e84"
+    sha256 cellar: :any, arm64_sonoma:  "8918d916c908c7da785fd94d0b3eff1b0cd78dcebd1179c32fbdfffd35050a9f"
+    sha256 cellar: :any, sonoma:        "0abd9a21bedeffb94a7f8ca4d14915a9c0adf80ad304ea44790bd081be8d55d7"
+    sha256               arm64_linux:   "35e65f702ee0de556170df628119c689e70613278ffebdbe272b895af18cf986"
+    sha256               x86_64_linux:  "a50e4438a2f1d34617ee014754e09c7248ebf1efc848d0c74b3aec2e609da60a"
   end
 
   depends_on "gobject-introspection" => :build

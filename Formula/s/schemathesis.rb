@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/4e/08/d011bb86c7d0a6e4f8fe8614675b582e09ea7cbc1508d2aae2043c9b1fcc/schemathesis-4.13.0.tar.gz"
-  sha256 "a2fafe13d20d299d10d166c521f675798d03576ae31899c3bf762aae7efab4e1"
+  url "https://files.pythonhosted.org/packages/c3/cd/e4e98a7a86ffdb05d4d113a3069fd28024856ef3f4a093078572dcb280af/schemathesis-4.14.0.tar.gz"
+  sha256 "acf8c699a191098e980d376647c65ba075ff42c75000cf209c6c757c777365a8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9dfa965f92bcd1b1da5f2c7032e4f94d30ae5328643d6e9196475d28263ea237"
-    sha256 cellar: :any,                 arm64_sequoia: "26ac934b90a2d0d7eb7760f5a8897d87f07349a24756c1b0d82022c206244d7a"
-    sha256 cellar: :any,                 arm64_sonoma:  "c2f8cd6fc9edecb4f79e14ecc6e18761814aa6b7fd0f78aad8af39ddc4ac86d0"
-    sha256 cellar: :any,                 sonoma:        "0fd2122d63732a04903f8abce1979a5719eea99ca1b180fbb99a4c191db7eef8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2957c27c121767a5f381fb9a86ae20c5956852c2dac76821fa2565e543214bde"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47ed7921389ef536c873c368e6592f0468ba38f503964152d0990215c576fc32"
+    sha256 cellar: :any,                 arm64_tahoe:   "8e13939a6db7928bf2c731fe080b36ec109cbdb61f463b7b696427cf5aad0d43"
+    sha256 cellar: :any,                 arm64_sequoia: "ef102a4fd8127ff015c1e39612b0c41d0e6e6faccadd2cfebb247233b4735be8"
+    sha256 cellar: :any,                 arm64_sonoma:  "6a50935d01af15283482b637831b9f1bf43311737466adaf33900872c971ed61"
+    sha256 cellar: :any,                 sonoma:        "3e94db5e9bea252672bebf5b03f6b8e32f85ed1c726cbacef9f472f04703d5f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "979fca3ffe25ab088951eb2267368396edc1c9efda0d5372248df67510f24afb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a1c8e7cd6ab7321893666dcf6ea72baaa42c9a8a221e6969072b952b9f92ab5"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
@@ -27,8 +27,8 @@ class Schemathesis < Formula
   pypi_packages exclude_packages: %w[certifi rpds-py]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
-    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
+    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
+    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
   end
 
   resource "attrs" do
@@ -167,8 +167,8 @@ class Schemathesis < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "rich" do
@@ -212,8 +212,8 @@ class Schemathesis < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/61/f1/ee81806690a87dab5f5653c1f146c92bc066d7f4cebc603ef88eb9e13957/werkzeug-3.1.6.tar.gz"
-    sha256 "210c6bede5a420a913956b4791a7f4d6843a43b6fcee4dfa08a65e93007d0d25"
+    url "https://files.pythonhosted.org/packages/b5/43/76ded108b296a49f52de6bac5192ca1c4be84e886f9b5c9ba8427d9694fd/werkzeug-3.1.7.tar.gz"
+    sha256 "fb8c01fe6ab13b9b7cdb46892b99b1d66754e1d7ab8e542e865ec13f526b5351"
   end
 
   def install

@@ -9,16 +9,16 @@ class Jupyterlab < Formula
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
+  revision 1
   compatibility_version 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "20dd1d0a553e3bed17873eb8cc632845b204d7f0e25ca5e4929b2425e0ce2f32"
-    sha256 cellar: :any,                 arm64_sequoia: "a5c7c859e8bfcdd54a48711dca8ce518cce9f3a61dd287cc307edddb9e58c106"
-    sha256 cellar: :any,                 arm64_sonoma:  "942aef805acc82bbc9f3dae546b89cf784b1a8c3fc275a44bea899777efe91f1"
-    sha256 cellar: :any,                 sonoma:        "78734377f04f71949bfa97722cc4ad0637f531ca7ec386b7afb252850c929121"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab55a371ecc65b7c1310b61123d5a3741debc48342917fb8f957a28f3b9a13db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54352b8db1d1d304a43f1e0ed3fa61277f95b98b7c1a35b255021267a4523876"
+    sha256 cellar: :any,                 arm64_tahoe:   "a703887489cd6ad188cc88599139a9a77c6622a7a185a9aebd764cb8541a67ac"
+    sha256 cellar: :any,                 arm64_sequoia: "246e525b9b61955ad5e748ee78b6833b865aa7f2693adc41575caa00db8e7ab2"
+    sha256 cellar: :any,                 arm64_sonoma:  "a1832c0021be8f007f4a04f9d6349779ce03731b056f6ac03ad733409c5fa13d"
+    sha256 cellar: :any,                 sonoma:        "6e44bf5dfe436fb77f0494868ff73c489c4ee3fffde63520f204e6fe0f7326ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "599af8436455bdb8be9ee36ecccda7843ba643d0d9ef7edc7759c5269fb44b97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96142f0af67dd31efd286fe1513b73cadec2212503cd0fc24f30c00a6e3239b0"
   end
 
   depends_on "cmake" => :build # for ipykernel
@@ -38,8 +38,8 @@ class Jupyterlab < Formula
                 exclude_packages: %w[certifi cffi rpds-py]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
-    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
+    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
+    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
   end
 
   resource "appnope" do
@@ -68,13 +68,13 @@ class Jupyterlab < Formula
   end
 
   resource "async-lru" do
-    url "https://files.pythonhosted.org/packages/05/8a/ca724066c32a53fa75f59e0f21aa822fdaa8a0dffa112d223634e3caabf9/async_lru-2.2.0.tar.gz"
-    sha256 "80abae2a237dbc6c60861d621619af39f0d920aea306de34cb992c879e01370c"
+    url "https://files.pythonhosted.org/packages/e8/1f/989ecfef8e64109a489fff357450cb73fa73a865a92bd8c272170a6922c2/async_lru-2.3.0.tar.gz"
+    sha256 "89bdb258a0140d7313cf8f4031d816a042202faa61d0ab310a0a538baa1c24b6"
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
-    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
+    url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
+    sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
   end
 
   resource "babel" do
@@ -93,8 +93,8 @@ class Jupyterlab < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
-    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "comm" do
@@ -203,8 +203,8 @@ class Jupyterlab < Formula
   end
 
   resource "jsonpointer" do
-    url "https://files.pythonhosted.org/packages/6a/0a/eebeb1fa92507ea94016a2a790b93c2ae41a7e18778f85471dc54475ed25/jsonpointer-3.0.0.tar.gz"
-    sha256 "2b2d729f2091522d61c3b31f82e11870f60b68f43fbc705cb76bf4b832af59ef"
+    url "https://files.pythonhosted.org/packages/18/c7/af399a2e7a67fd18d63c40c5e62d3af4e67b836a2107468b6a5ea24c4304/jsonpointer-3.1.1.tar.gz"
+    sha256 "0b801c7db33a904024f6004d526dcc53bbb8a4a0f4e32bfd10beadf60adf1900"
   end
 
   resource "jsonschema" do
@@ -403,8 +403,8 @@ class Jupyterlab < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "rfc3339-validator" do

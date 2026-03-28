@@ -6,16 +6,16 @@ class Gcalcli < Formula
   url "https://files.pythonhosted.org/packages/68/b8/c3f3b8c73c9740eeb592e31f3f1092485ce8809fd7137d7c776a0b0d3567/gcalcli-4.5.1.tar.gz"
   sha256 "bbc8d6b9ce40d0be0535ffec3bb3384761400c7fbf1d67716e7d0e5fe9c6f2d5"
   license "MIT"
-  revision 9
+  revision 10
   head "https://github.com/insanum/gcalcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e1806f543eb6455d2b8f2065e4b894840df0a27e5ab7f9acecf6a4df876c565f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f018ddf7c5dda355fbad8398059ef24444cc47b45c834e7d4696046aeb717c3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d05b9ce8d08223eecf20e7c4991f8648b5b04a7deabee3afda61a4f491c1671"
-    sha256 cellar: :any_skip_relocation, sonoma:        "14b1038a917395b89f8e090c511904356deb4593703a7054195f9b68d0ba80dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0e460fce19493a311de1c29d59dc332c4d509aa0aad92444d346c10867e026e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f33836820cfbe93f8e02ff79fc4dbfc520622e416540df448782e744433e7d20"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "17dfc183812fbcb49abd173cf2810c62da6b3a4ac53d57abdfcb04cf9c7ad040"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a15f449f12fea8d631b5977563ab0df3bcb33adf0b532ea20919a669280483f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a9fc752ee15fd1fc76268c3eeb341087d8d06cfe79ac0ff522b5403475ac5b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "738172a1dc47775b3ad2408ab506142dbd06681883ea00d632dbb43ed85c8726"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1dc672cf0392aee5a93b41f6a3b7d44f4da433dd27430d164721e6337cd7deec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26cc3ee086e652910c77717e13d10a544af0ec2b1ec072c539a3a31dc4d936a2"
   end
 
   depends_on "certifi" => :no_linkage
@@ -67,8 +67,8 @@ class Gcalcli < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/99/96/a0205167fa0154f4a542fd6925bdc63d039d88dab3588b875078107e6f06/googleapis_common_protos-1.73.0.tar.gz"
-    sha256 "778d07cd4fbeff84c6f7c72102f0daf98fa2bfd3fa8bea426edc545588da0b5a"
+    url "https://files.pythonhosted.org/packages/a1/c0/4a54c386282c13449eca8bbe2ddb518181dc113e78d240458a68856b4d69/googleapis_common_protos-1.73.1.tar.gz"
+    sha256 "13114f0e9d2391756a0194c3a8131974ed7bffb06086569ba193364af59163b6"
   end
 
   resource "httplib2" do
@@ -97,13 +97,13 @@ class Gcalcli < Formula
   end
 
   resource "proto-plus" do
-    url "https://files.pythonhosted.org/packages/3a/02/8832cde80e7380c600fbf55090b6ab7b62bd6825dbedde6d6657c15a1f8e/proto_plus-1.27.1.tar.gz"
-    sha256 "912a7460446625b792f6448bade9e55cd4e41e6ac10e27009ef71a7f317fa147"
+    url "https://files.pythonhosted.org/packages/81/0d/94dfe80193e79d55258345901acd2917523d56e8381bc4dee7fd38e3868a/proto_plus-1.27.2.tar.gz"
+    sha256 "b2adde53adadf75737c44d3dcb0104fde65250dfc83ad59168b4aa3e574b6a24"
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/ba/25/7c72c307aafc96fa87062aa6291d9f7c94836e43214d43722e86037aac02/protobuf-6.33.5.tar.gz"
-    sha256 "6ddcac2a081f8b7b9642c09406bc6a4290128fce5f471cddd165960bb9119e5c"
+    url "https://files.pythonhosted.org/packages/66/70/e908e9c5e52ef7c3a6c7902c9dfbb34c7e29c25d2f81ade3856445fd5c94/protobuf-6.33.6.tar.gz"
+    sha256 "a6768d25248312c297558af96a9f9c929e8c4cee0659cb07e780731095f38135"
   end
 
   resource "pyasn1" do
@@ -127,8 +127,8 @@ class Gcalcli < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "requests-oauthlib" do

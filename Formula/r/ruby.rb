@@ -30,12 +30,13 @@ class Ruby < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "1c2a55f1120c4da37bba4644511d73b5601951bdb00c17d1996991821ba23e2f"
-    sha256 arm64_sequoia: "64bc89bbb717d5425c90178488a9a9112f99d00275b433d6af481556e906de02"
-    sha256 arm64_sonoma:  "cda05f71be5304aec6d66f87de8041acdd67423ebc6fb4a283a166ce5a7a38c3"
-    sha256 sonoma:        "ca64cd1355b3261bd8f68e0ec343256931fa725fa22161c8b040bd6b6dbbffb3"
-    sha256 arm64_linux:   "2d76dedb79742a70e0fb2046c56a30dcbef45c7cefbe7d8ed4fb1a1c945fad3a"
-    sha256 x86_64_linux:  "6e3e80fabf047ecd5246905a863f83ffc143e41acd6eb26ebecd76db648c0a56"
+    rebuild 1
+    sha256 arm64_tahoe:   "20aa2a6031cc84853deccbfa216e42e842c1e1597a1335b7bb85f97f3d74fe1a"
+    sha256 arm64_sequoia: "b4319787e83337a4eb12778d3b80efdec7545f83df79529ddfd69a1ddca92a67"
+    sha256 arm64_sonoma:  "b6462047bc41a601178a813d6e8748ff2f572b9b958800f00da9022c1aac9397"
+    sha256 sonoma:        "47e2e1df7653208ed558a7355eedc69d2c268d88112acbdc9daca6598ce8525d"
+    sha256 arm64_linux:   "5dd4ab6c3478eb0fb1997508079cad388ffc49cbdf2b872d704ba0bbf5627100"
+    sha256 x86_64_linux:  "add492ecc16215c294f693d86a093aa21f5f64b41d061c60e7063e8f00eabff8"
   end
 
   keg_only :provided_by_macos
@@ -75,18 +76,15 @@ class Ruby < Formula
     HOMEBREW_PREFIX/"lib/ruby/gems/#{api_version}/bin"
   end
 
+  def versioned_opt_prefix
+    opt_prefix.dirname/"ruby@#{version.major_minor}"
+  end
+
   def install
-    # otherwise `gem` command breaks
-    ENV.delete("SDKROOT")
-
-    # Prevent `make` from trying to install headers into the SDK
-    # TODO: Remove this workaround when the following PR is merged/resolved:
-    #       https://github.com/Homebrew/brew/pull/12508
-    inreplace "tool/mkconfig.rb", /^(\s+val = )'"\$\(SDKROOT\)"'\+/, "\\1"
-
-    system "./autogen.sh" if build.head?
-
     paths = %w[libyaml openssl@3].map { |f| Formula[f].opt_prefix }
+    # Add versioned Ruby RPATH so user-installed gems can work when user is switched to versioned Ruby
+    paths << versioned_opt_prefix if OS.linux? && !versioned_formula?
+
     args = %W[
       --prefix=#{prefix}
       --enable-shared
@@ -99,14 +97,9 @@ class Ruby < Formula
     args << "--with-baseruby=#{RbConfig.ruby}" if build.head?
     args << "--disable-dtrace" if OS.mac? && !MacOS::CLT.installed?
 
-    # Correct MJIT_CC to not use superenv shim
-    args << "MJIT_CC=/usr/bin/#{DevelopmentTools.default_compiler}"
-
     # Avoid stdckdint.h on macOS 15 as it's not available in Xcode 16.0-16.2,
     # and if the build system picks it up it'll use it for runtime builds too.
     args << "ac_cv_header_stdckdint_h=no" if OS.mac? && MacOS.version == :sequoia
-
-    system "./configure", *args
 
     # Ruby has been configured to look in the HOMEBREW_PREFIX for the
     # sitedir and vendordir directories; however we don't actually want to create
@@ -121,6 +114,8 @@ class Ruby < Formula
       s.gsub! 'prepare "extension objects", vendorarchlibdir', ""
     end
 
+    system "./autogen.sh" if build.head?
+    system "./configure", *args
     system "make"
     system "make", "install"
 
@@ -175,16 +170,36 @@ class Ruby < Formula
     config_file.write rubygems_config
   end
 
-  # TODO: remove when enabling default_user_install
   def post_install
     # Since Gem ships Bundle we want to provide that full/expected installation
     # but to do so we need to handle the case where someone has previously
     # installed bundle manually via `gem install`.
+    # TODO: remove when enabling default_user_install
     rm(%W[
       #{rubygems_bindir}/bundle
       #{rubygems_bindir}/bundler
     ].select { |file| File.exist?(file) })
     rm_r(Dir[HOMEBREW_PREFIX/"lib/ruby/gems/#{api_version}/gems/bundler-*"])
+
+    # Use versioned opt path so user-installed gems can work when user is switched to versioned Ruby.
+    # Needs to be done in postinstall since install names are modified by brew after install method.
+    # TODO: Consider adding a DSL for this to avoid performance cost of post install and binary patching
+    if OS.mac? && !versioned_formula?
+      dylib = (lib/"libruby.dylib").realpath
+      old_dylib_id = dylib.dylib_id
+      new_dylib_id = old_dylib_id.sub("#{opt_prefix}/", "#{versioned_opt_prefix}/")
+      return if old_dylib_id == new_dylib_id
+      return unless File.exist?(new_dylib_id)
+
+      dylib_mode = dylib.stat.mode
+      begin
+        chmod 0664, dylib
+        MachO::Tools.change_dylib_id(dylib, new_dylib_id)
+        MachO.codesign!(dylib) if Hardware::CPU.arm?
+      ensure
+        chmod dylib_mode, dylib
+      end
+    end
   end
 
   def rubygems_config
@@ -286,6 +301,10 @@ class Ruby < Formula
 
     ENV["GEM_HOME"] = testpath
     system bin/"gem", "install", "json"
+    if OS.mac?
+      parser = testpath.glob("gems/json-*/lib/json/ext/parser.bundle").first
+      assert_includes MachO::Tools.dylibs(parser), "#{versioned_opt_prefix}/lib/libruby.#{version.major_minor}.dylib"
+    end
 
     (testpath/"Gemfile").write <<~RUBY
       source 'https://rubygems.org'

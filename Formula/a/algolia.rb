@@ -1,18 +1,18 @@
 class Algolia < Formula
   desc "CLI for Algolia"
   homepage "https://www.algolia.com/doc/tools/cli/get-started"
-  url "https://ghfast.top/https://github.com/algolia/cli/archive/refs/tags/v1.8.0.tar.gz"
-  sha256 "23f6e2c832546339dffc8bc9178a4190418afa0313fdb8bf8b1eae6f8c845714"
+  url "https://ghfast.top/https://github.com/algolia/cli/archive/refs/tags/v1.8.1.tar.gz"
+  sha256 "7dd953bb70b59246e30b4721f34cda3f424d5b6461fe63686ccd52af4bbcb87d"
   license "MIT"
   head "https://github.com/algolia/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "40d7325126169048781ce1d462ac1948bcf7d384f56594ce477a16e552e83bfc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40d7325126169048781ce1d462ac1948bcf7d384f56594ce477a16e552e83bfc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40d7325126169048781ce1d462ac1948bcf7d384f56594ce477a16e552e83bfc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3717f576db4d82f9bc6e27244e42c375e3a32f031dc673677441a2ba08803fbf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a26856e56733af8562ef17757d0248734e86d29a7898a08acb64c1012844142"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fc66ce3c26589dd6bfb74dc3670e3c6f86e6aa37741fcd517ba85cd283aed42"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f1e48eb2b05cf70ab2c182b18c6e14007a21051a73c606b00bba0fec52132f70"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1e48eb2b05cf70ab2c182b18c6e14007a21051a73c606b00bba0fec52132f70"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f1e48eb2b05cf70ab2c182b18c6e14007a21051a73c606b00bba0fec52132f70"
+    sha256 cellar: :any_skip_relocation, sonoma:        "69af07e6d5f63dcabbee22347fcaf486d9681c1a01062517a3db7e4fe93ed196"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "67314a506eb1b38c47633ec97657ebf7595c2b493e3d0f12775fe58495030fbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68a0aef7f8dc9867c831fcf9139cc20cd895ece8e79363fccba8e303ffea9381"
   end
 
   depends_on "go" => :build

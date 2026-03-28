@@ -1,17 +1,16 @@
 class Qtgrpc < Formula
   desc "Provides support for communicating with gRPC services"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.10/6.10.2/submodules/qtgrpc-everywhere-src-6.10.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.2/submodules/qtgrpc-everywhere-src-6.10.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.2/submodules/qtgrpc-everywhere-src-6.10.2.tar.xz"
-  sha256 "7386bfc9c10c7920e5ff22dcf067e95f379bb379e4d916269f4465ab295ed136"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.0/submodules/qtgrpc-everywhere-src-6.11.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.0/submodules/qtgrpc-everywhere-src-6.11.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.0/submodules/qtgrpc-everywhere-src-6.11.0.tar.xz"
+  sha256 "9dedcb51836cd0e8703764f0c89ef5a7da414e0c9a0d67d0d8d6ab17bb94a879"
   license all_of: [
     "GPL-3.0-only", # QtGrpc
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] }, # QtProtobuf
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qtgrpcgen; qtprotobufgen
     "BSD-3-Clause", # *.cmake
   ]
-  revision 2
   compatibility_version 1
   head "https://code.qt.io/qt/qtgrpc.git", branch: "dev"
 
@@ -20,12 +19,12 @@ class Qtgrpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d87359b97729afabb13d9acc178182367ea20aeb53bd29c976a0d45cbf819948"
-    sha256 cellar: :any,                 arm64_sequoia: "ebf6edad32446d17c0eaa8e563ea10010634be60da85f6e40547539a413433ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "205256a7f030f9b7c1c4b390d5fbbf899ed7f178947942778f9348a9512bdc86"
-    sha256 cellar: :any,                 sonoma:        "bee8445c1c7ca1c1a84b14d43356cb99ee6564ab88cd36044d0b3f18a2222fa3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e26dd973bd1b93fa64aba6ddd0e6895fb4b7726203766b37448ac0142fa6b66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1a659a0183094379481e868cbeef0cdb8c604d22c012fc4cfc82dd9580f141b"
+    sha256 cellar: :any,                 arm64_tahoe:   "72c2c4f232f4effad2a39d3b154f23e0f3b35999e882b291a6ebd5e894e780bb"
+    sha256 cellar: :any,                 arm64_sequoia: "40a5f027b0d842cb317f1e30c0a0e01de5587f8dbbbf4650d7772080e5fd3f8c"
+    sha256 cellar: :any,                 arm64_sonoma:  "dce5341f60279302a29c9f89144423d0f88d543be862aa420a93123e922f2e92"
+    sha256 cellar: :any,                 sonoma:        "bf8e2601a9e60648e5d262facf2d5246358446dda710a4271d5334fde02e01c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1c3ca8353196b43b10856b1c3514f0053d468ef6f29818ad0e0f07f332fa207"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "feb06fcd45ec4e4bb7200f423887347318eded9fcb360cf2137dffa302c0b474"
   end
 
   depends_on "cmake" => [:build, :test]

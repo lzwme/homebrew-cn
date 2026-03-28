@@ -1,8 +1,8 @@
 class Echidna < Formula
   desc "Ethereum smart contract fuzzer"
   homepage "https://github.com/crytic/echidna"
-  url "https://ghfast.top/https://github.com/crytic/echidna/archive/refs/tags/v2.3.1.tar.gz"
-  sha256 "4ba8598467d06c6f2ea6ca453b2c4e51c318752dff39cd1c8510470ed0fd7b75"
+  url "https://ghfast.top/https://github.com/crytic/echidna/archive/refs/tags/v2.3.2.tar.gz"
+  sha256 "c35a6f65c8758743253e91d5ce25017d0d69864f3fad58c41269e9ef4089c1a1"
   license "AGPL-3.0-only"
   head "https://github.com/crytic/echidna.git", branch: "master"
 
@@ -12,13 +12,12 @@ class Echidna < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "95899ade7e9c31097b1c4f0121b4c007deb0190243f2eb7c4fc7707f635455f2"
-    sha256 cellar: :any,                 arm64_sequoia: "7471d1fcb3862213037f7a66b84c1831c89c13926618209820a9acbc0c5b3887"
-    sha256 cellar: :any,                 arm64_sonoma:  "f15ad76cbfded816b2bbeb2117639347260581e622591e532a802ebafc07ee68"
-    sha256 cellar: :any,                 sonoma:        "395a3e87b997ae6ab4b770078e00c265badd2b87b70da9612ddf30df187d1752"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad2f6057bd74851ec6f4567602593e200a6eab5eaeaeccccbaf1eee7c7274032"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6a7540c87c2a4d60019cdc5b748d14fe26f7add7b75493c5d7a7fa2a2df12e3"
+    sha256 cellar: :any,                 arm64_tahoe:   "73ee5125c1c57859fd03769004a15aef0a1a15269ca2347c7ad83d0ecf91ee01"
+    sha256 cellar: :any,                 arm64_sequoia: "d03c58df980548b41ab1142cf07d1a1ef6ef65b35e687250634f3fd508aa9139"
+    sha256 cellar: :any,                 arm64_sonoma:  "7894e8b14c9288b42e4517c82b4a7e55b3b6a90797bb863c155aeec4cd619820"
+    sha256 cellar: :any,                 sonoma:        "a55c55db6a2ac10af2eb9b074e172aa8752307ce21b000ec7f98a8961e9313d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "772ac3f480f5cb1d4b6c075d856ae2954ca8f211487e438ef7e0a6b270ec251e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a13f6c68f9407099551800aed96a4ec194b7c931b57b1b2f083a4ad781e3f0dd"
   end
 
   depends_on "ghc@9.10" => :build

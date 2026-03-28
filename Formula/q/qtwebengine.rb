@@ -3,10 +3,10 @@ class Qtwebengine < Formula
 
   desc "Provides functionality for rendering regions of dynamic web content"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.10/6.10.2/submodules/qtwebengine-everywhere-src-6.10.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.2/submodules/qtwebengine-everywhere-src-6.10.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.2/submodules/qtwebengine-everywhere-src-6.10.2.tar.xz"
-  sha256 "856eddf292a69a88618567deea67711b4ec720e69bcb575ed7bb539c9023961e"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.0/submodules/qtwebengine-everywhere-src-6.11.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.0/submodules/qtwebengine-everywhere-src-6.11.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.0/submodules/qtwebengine-everywhere-src-6.11.0.tar.xz"
+  sha256 "63b921c8b2dd59152ced9a796676010166df044588ee00ef9429dc2fd2146736"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qwebengine_convert_dict; QtWebEngineProcess
@@ -14,7 +14,7 @@ class Qtwebengine < Formula
 
     # The following extra licenses are for Chromium's bundled libraries
     # https://doc.qt.io/qt-6/qtwebengine-licensing.html#third-party-licenses
-    "Apache-2.0",        # Abseil; Crashpad; FlatBuffers; libgav1; ...
+    "Apache-2.0",        # Abseil; boringssl; Crashpad; FlatBuffers; libgav1; ...
     "blessing",          # sqlite
     "BSD-2-Clause",      # aom; cpuinfo; dav1d; libavif
     "LGPL-2.1-or-later", # ffmpeg; speech-dispatcher (Linux)
@@ -26,7 +26,6 @@ class Qtwebengine < Formula
     "SunPro",            # fdlibm
     "Zlib",              # zlib (macOS)
     :public_domain,      # sigslot; SPL-SQRT-FLOOR
-    { all_of: ["ISC", "OpenSSL"] }, # boringssl, TODO: remove in Chromium 134+
   ]
   compatibility_version 1
   head "https://code.qt.io/qt/qtwebengine.git", branch: "dev"
@@ -36,12 +35,11 @@ class Qtwebengine < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "9c1a6ccbb044acd5d0a1eaebb09619cced4f9f31f3317577bf3f091ab814429f"
-    sha256 cellar: :any,                 arm64_sequoia: "cfab735161312e7e5ba9d9992478d9b1ba2d2df2c45d4d4037d421da86448888"
-    sha256 cellar: :any,                 arm64_sonoma:  "a3d6f4651b703f7f471742db0efe5e9fdffe3b0de401af021a319ded43bfa28f"
-    sha256 cellar: :any,                 sonoma:        "f3fc664cf1d088ceb2635028bdd6b6b4c2bd7fef2b5275f33cbe382073a14a9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49913ea9abac4bd1f175be2995ee6fe7b8c78cf1655e6298f9ae143d7fe04b1b"
+    sha256 cellar: :any,                 arm64_tahoe:   "b14e11b3baf33f5e98aaab5a7ba09275fd23d1b57251e30d7e7ada7a4f580d19"
+    sha256 cellar: :any,                 arm64_sequoia: "177c51464a87e6dfd905bab23ed2ac0ee22ce2b7d9a87b3e8b65f2f6979fd66a"
+    sha256 cellar: :any,                 arm64_sonoma:  "a29194c16f53908e8d5b1a771a45ec7da786c01e612bad195eba84f9e3f38926"
+    sha256 cellar: :any,                 sonoma:        "06dde7423868b3f32b49cf2169b0298542efd457f2341831baf3810e671c4c2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7147da96828ae61a82ebca7e3be1d081e4d70951c7070dcec50ae295ef5c7f1c"
   end
 
   depends_on "cmake" => [:build, :test]

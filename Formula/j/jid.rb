@@ -1,18 +1,18 @@
 class Jid < Formula
   desc "Json incremental digger"
   homepage "https://github.com/simeji/jid"
-  url "https://ghfast.top/https://github.com/simeji/jid/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "93eba44a69e570ecfe6c99c311568f446cddfe1ddd99672fc49fc0df3cbcdab7"
+  url "https://ghfast.top/https://github.com/simeji/jid/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "5f4c200625f0a1eb7a1bdb5578693fa30fbc935eb66608c9bb6d7aef90566bd8"
   license "MIT"
   head "https://github.com/simeji/jid.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1dcd12d8cde5a5fe7d1703d6314ed38824e3ca418807d8b48da5a1348e1da220"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1dcd12d8cde5a5fe7d1703d6314ed38824e3ca418807d8b48da5a1348e1da220"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1dcd12d8cde5a5fe7d1703d6314ed38824e3ca418807d8b48da5a1348e1da220"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e711c0afe47ada4d7c3a4bfc34c5c7a84ca9444553e0b4ffdd9f5b7a21a181b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8272d7bd8e98edc2ed04fe905d0fb326e3e539f330d58da7f6bcf3409997223f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1240084d702b5d30e7327cd56bca69aa405fb688a8ef8613ecffced0b97227cd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d5188209f088f09f2212750095f0aff0878077d85f4736a76d6e84458445518a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5188209f088f09f2212750095f0aff0878077d85f4736a76d6e84458445518a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5188209f088f09f2212750095f0aff0878077d85f4736a76d6e84458445518a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f8015d25ec616f1674727d781b41a94ae4e310df451bea89d048120b9bc3fb02"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a61a61f15dbb2d884158b1553e69ac49b134fed0d0875b7bfe6163cc92cfe9b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22bb14394912bb0c2746fe8a757c8ec36a27a16fc21cfad5d9ebbb0a746ade6e"
   end
 
   depends_on "go" => :build

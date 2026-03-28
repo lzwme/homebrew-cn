@@ -1,10 +1,10 @@
 class Qtwebchannel < Formula
   desc "Bridges the gap between Qt applications and HTML/JavaScript"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.10/6.10.2/submodules/qtwebchannel-everywhere-src-6.10.2.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.2/submodules/qtwebchannel-everywhere-src-6.10.2.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.2/submodules/qtwebchannel-everywhere-src-6.10.2.tar.xz"
-  sha256 "e31ea59f8e19e0374d54fdc7a8479c840acffc4ba5297ee43564b5158a4f2c27"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.0/submodules/qtwebchannel-everywhere-src-6.11.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.0/submodules/qtwebchannel-everywhere-src-6.11.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.0/submodules/qtwebchannel-everywhere-src-6.11.0.tar.xz"
+  sha256 "e946143a8b015e2c9d5cc6110515f43618b441799da546138d0b05d8afa9fb24"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
@@ -17,12 +17,12 @@ class Qtwebchannel < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6cc96f30d46fbebcda16715d54b63de79b296d69819ac47919caaa834103c9e0"
-    sha256 cellar: :any,                 arm64_sequoia: "01f0995a0acfcdc6a92b60008e9648d9cb73414305cd211113ca403aab127fe0"
-    sha256 cellar: :any,                 arm64_sonoma:  "53a67dcb59ffb690b4cc7f80d77ebeb2bb94d5bfacee122dd9300e284cbd2934"
-    sha256 cellar: :any,                 sonoma:        "1c9c455b3a52de0bf21303fbddbc985ec00ed4198d74ad8118a93c3612b4e645"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d34f231fd171997a9d223fdd5d359fd284f31a008e12bf1918e74ee4c6f0599c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a295c165ccea3eb0c07d0370f2e41f04742a5c330ca079f827ff961cc4db0f5"
+    sha256 cellar: :any,                 arm64_tahoe:   "e0c06691b87c791938e23a1aa6d85cc2d0c0942d7a8378291d5b083f176843d4"
+    sha256 cellar: :any,                 arm64_sequoia: "12369409f2c746066ba0e4fa0eafc83fea2f4f9c32b42076be30a761ad516da0"
+    sha256 cellar: :any,                 arm64_sonoma:  "365506e38a530fdafa3896202957828c90bc190762a50b27c0520a3550695957"
+    sha256 cellar: :any,                 sonoma:        "a312cdb462dc6d30af281f9121d5314ed553dc31396647d2a8b5a937460b311f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2277a6a7eba48b7420a50482633e72f69b8a8df0aebd52d792c5d4e6956e7e01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f08ff0f1b997c8f81d95c7aa50f17141ded2490c57be4e14d456763ea64236ed"
   end
 
   depends_on "cmake" => [:build, :test]

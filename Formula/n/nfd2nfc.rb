@@ -1,16 +1,16 @@
 class Nfd2nfc < Formula
   desc "Convert filesystem entry names from NFD to NFC for cross-platform compatibility"
   homepage "https://github.com/elgar328/nfd2nfc"
-  url "https://ghfast.top/https://github.com/elgar328/nfd2nfc/archive/refs/tags/v2.0.7.tar.gz"
-  sha256 "ea53755802bbd85aa52e4d56d251c20bbf490bce39c28551852b2f7f02e042cf"
+  url "https://ghfast.top/https://github.com/elgar328/nfd2nfc/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "76ba19c0d93fb0e1020f6758cde0c9fc3308ee682afab524b6f1f1fdc084c4a0"
   license "MIT"
   head "https://github.com/elgar328/nfd2nfc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4846e44a1c14c1b76eef72df36adb7ba84fe51a8f20da6f82439b1c0b610f90"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f385ac54a2ac690e578a37685256407726df2fa8912344c7bfc557374b9095f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a71ac65f6c1cb86807bba5643e9fc64f714c22f9908a905ff2f1505cc8cecae1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "287142bdaba3ce58a5a65850241522ad04539a1f63026b3aad0e26e6114a04fa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "758878a854fcc43aac88516abac91bed3661382cc01ca32662da3bd102ff2971"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2427d41aa6715e1c6988495abeda198c5f58ce2cfff32e6686e4c68457d1462d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9047a9ba262f39e7a4bb18fa027e94b44efdd994e6754b5624711d7a5658092"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7b2435805f7bdf8fcc3adb49f9faafb7bd2bf72b36ee497f3aa54f9b2782c3ec"
   end
 
   depends_on "rust" => :build

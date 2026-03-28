@@ -6,15 +6,15 @@ class McpGoogleSheets < Formula
   url "https://files.pythonhosted.org/packages/1c/d1/2fc5b72d125ac1fa3a305c6df5111ccd3b0fcc0958fd3b40c8f91069fd5a/mcp_google_sheets-0.6.1.tar.gz"
   sha256 "4a1b0c81b2bee94743696f4afb95c9a680b6b3b5c5e27f5e8328e7b15dc3851d"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fff91f8bb69e7b4e5b176698614972f06c54bd8330cfd4c85972f355ae014cd9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36952d130ab2cdf73575a437c3ca1f83f81b5265aeae54b7986c7e73264b8f16"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2c21e9bc416aff68a2f332beac62e339fb16259a9abb769639818de653c6411"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2463f689cdb3e51d190104fd153de5ff88731df2cb252749b3e6fdb3dcdb7269"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "57bcccb341a46441d3e551f2346433f621601e097998e8a068d8f44d373b6056"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d125720ecfba508d19849ee92af1d3264c997770eeec8415a6074fe05e455f3d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e2ad66602f8041dd091a75d465595130adacf04fa41d9fc08fcdc4abb2231afe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bf39f6e59e5c621ff4ee7ca8cedc36146641e7f7f9a3559d8a41da0bdc88348"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ca54e9fa0ce3ec284379ce00a79970802bd00c49de7e95850d51329b1636a41"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4468f4268122ef2d04016a02baecb7c186e7cbec01597a2a41d23818f2fc65f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f20a1a1fbf8704158c0bc198cca0ccb77958df86b46a57f3732a59f3d7c1d707"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06a75c454a578b3ce499a8a2c13d14a45916801186f73ae194e49064cf0d15d9"
   end
 
   depends_on "certifi" => :no_linkage
@@ -26,13 +26,13 @@ class McpGoogleSheets < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
-    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
+    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
+    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
-    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
+    url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
+    sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
   end
 
   resource "charset-normalizer" do
@@ -71,8 +71,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/99/96/a0205167fa0154f4a542fd6925bdc63d039d88dab3588b875078107e6f06/googleapis_common_protos-1.73.0.tar.gz"
-    sha256 "778d07cd4fbeff84c6f7c72102f0daf98fa2bfd3fa8bea426edc545588da0b5a"
+    url "https://files.pythonhosted.org/packages/a1/c0/4a54c386282c13449eca8bbe2ddb518181dc113e78d240458a68856b4d69/googleapis_common_protos-1.73.1.tar.gz"
+    sha256 "13114f0e9d2391756a0194c3a8131974ed7bffb06086569ba193364af59163b6"
   end
 
   resource "h11" do
@@ -126,13 +126,13 @@ class McpGoogleSheets < Formula
   end
 
   resource "proto-plus" do
-    url "https://files.pythonhosted.org/packages/3a/02/8832cde80e7380c600fbf55090b6ab7b62bd6825dbedde6d6657c15a1f8e/proto_plus-1.27.1.tar.gz"
-    sha256 "912a7460446625b792f6448bade9e55cd4e41e6ac10e27009ef71a7f317fa147"
+    url "https://files.pythonhosted.org/packages/81/0d/94dfe80193e79d55258345901acd2917523d56e8381bc4dee7fd38e3868a/proto_plus-1.27.2.tar.gz"
+    sha256 "b2adde53adadf75737c44d3dcb0104fde65250dfc83ad59168b4aa3e574b6a24"
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/ba/25/7c72c307aafc96fa87062aa6291d9f7c94836e43214d43722e86037aac02/protobuf-6.33.5.tar.gz"
-    sha256 "6ddcac2a081f8b7b9642c09406bc6a4290128fce5f471cddd165960bb9119e5c"
+    url "https://files.pythonhosted.org/packages/66/70/e908e9c5e52ef7c3a6c7902c9dfbb34c7e29c25d2f81ade3856445fd5c94/protobuf-6.33.6.tar.gz"
+    sha256 "a6768d25248312c297558af96a9f9c929e8c4cee0659cb07e780731095f38135"
   end
 
   resource "pyasn1" do
@@ -176,8 +176,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "requests-oauthlib" do
@@ -191,8 +191,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/c4/68/79977123bb7be889ad680d79a40f339082c1978b5cfcf62c2d8d196873ac/starlette-0.52.1.tar.gz"
-    sha256 "834edd1b0a23167694292e94f597773bc3f89f362be6effee198165a35d62933"
+    url "https://files.pythonhosted.org/packages/81/69/17425771797c36cded50b7fe44e850315d039f28b15901ab44839e70b593/starlette-1.0.0.tar.gz"
+    sha256 "6a4beaf1f81bb472fd19ea9b918b50dc3a77a6f2e190a12954b25e6ed5eea149"
   end
 
   resource "uritemplate" do

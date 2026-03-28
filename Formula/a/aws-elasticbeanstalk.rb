@@ -3,17 +3,17 @@ class AwsElasticbeanstalk < Formula
 
   desc "Client for Amazon Elastic Beanstalk web service"
   homepage "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html"
-  url "https://files.pythonhosted.org/packages/7b/e2/4690277ef0478c6f702529b4d90d31ae43c274b04967078cdc7a4525e3e2/awsebcli-3.27.tar.gz"
-  sha256 "6ba8abcf5dd26a0629f6319aed7cd5173544647a63442bba6cce9a99cd194b75"
+  url "https://files.pythonhosted.org/packages/fd/9d/9c36f5f3eb9cae3827c0c9a36f740e4200c189cf06f7d09af1a5081049ba/awsebcli-3.27.1.tar.gz"
+  sha256 "83bcb4e5de2ce9659d07246ac32eb4a8e109d8627c045a55c2c142e9a7ed5683"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c82b104978de0393d3ffa0814cc2bbb2c3c683d567e387c1800e5f26f568ec13"
-    sha256 cellar: :any,                 arm64_sequoia: "15c9af0fc720ba24c160e1850976e21753800ad96739ffa9e8002a2dac1252d2"
-    sha256 cellar: :any,                 arm64_sonoma:  "41d45b0745b2fda47a9016912d6ae06a59e842f445013c7bbb50b8d055c536b1"
-    sha256 cellar: :any,                 sonoma:        "36b4dd8c14ce2856c6331a0a8e1ebb5dcc6a2bbeff9f0f57fbd1285b004e16e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "64cba2d6c6d2a0a45e9d80e9be14f8ad31cdc70cff0ef5e985e6905b36c2bae0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4f1ed2bb5ba0fc37c39f8b5003dc7f24c68481296080be045678f958747016d"
+    sha256 cellar: :any,                 arm64_tahoe:   "70c684be1a03b582f27e9704e6ccc07b0f908a008493199d7b01c783668ea68a"
+    sha256 cellar: :any,                 arm64_sequoia: "43da7c01913fa9e70af7388576ce4d9f658755927f49511991cf594f5969c8fe"
+    sha256 cellar: :any,                 arm64_sonoma:  "f631900f396f096a31ebbe98c348b6fac455cd9f8caacec9fb62e57866bc16d2"
+    sha256 cellar: :any,                 sonoma:        "658d23e1c4acb2db591d81799e1327274f3fe73cd6df864cdcc02494aa101ab2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aac118fdf912dc3b7c82c270cd54634e45a052479ac0a228babb1e264bb4c606"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "570144ff90f570333d7300afc4e621582688bead5f92d79b4b93566d118d7cab"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -38,8 +38,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/42/d1/81a6e39c7d5419ba34bad8a1ac2c5360c26f21af698a481a8397d79134d1/botocore-1.42.69.tar.gz"
-    sha256 "0934f2d90403c5c8c2cba83e754a39d77edcad5885d04a79363edff3e814f55e"
+    url "https://files.pythonhosted.org/packages/9d/05/b16d6ac5eea465d42e65941436eab7d2e6f6ebef01ba4d70b6f5d0b992ce/botocore-1.42.75.tar.gz"
+    sha256 "95c8e716b6be903ee1601531caa4f50217400aa877c18fe9a2c3047d2945d477"
   end
 
   resource "cement" do
@@ -88,8 +88,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d0/63/68dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106da/packaging-24.2.tar.gz"
-    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "paramiko" do
@@ -118,8 +118,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "semantic-version" do
@@ -143,8 +143,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/e4/e8/6ff5e6bc22095cfc59b6ea711b687e2b7ed4bdb373f7eeec370a97d7392f/urllib3-1.26.20.tar.gz"
-    sha256 "40c2dc0c681e47eb8f90e7e27bf6ff7df2e677421fd46756da1161c39ca70d32"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "wcwidth" do

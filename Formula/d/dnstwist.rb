@@ -6,15 +6,15 @@ class Dnstwist < Formula
   url "https://files.pythonhosted.org/packages/e7/0e/88b4c5c7f3077c0d2e8544a14e321fce80b3cf0148a46dec9724e27c61d3/dnstwist-20250130.tar.gz"
   sha256 "8b6dd9c42a643a0e8b087903c0e6d75c0f6cebf94920ab0b7760ac2522c6bb42"
   license "Apache-2.0"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f592fbabbf5a143792e91077044d5a5c81b0eecbfdb8cba4283168e7e37fb3ae"
-    sha256 cellar: :any,                 arm64_sequoia: "5c280c780afe39f517d43e856cd2bd36f7b3ebb620eab399f5dc930c721a4fce"
-    sha256 cellar: :any,                 arm64_sonoma:  "45ea55fc05081f13dea12c89345e97246c7d9f76fdc987d2bc8f9ae3e282db0b"
-    sha256 cellar: :any,                 sonoma:        "dcac34394e12c42bdc3167d67d160c412f768aeebdb306a4c77ef26e6d4e1912"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6c59c3156bba162d453e31bad4969843e14fa4825810c9b1c35917fb2f1f604"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ecbbcc82af739c6ae941618a10746fb20cf2f89e36dc9f2468b6f02b99df76c"
+    sha256 cellar: :any,                 arm64_tahoe:   "7f72c9225a16821ffe223149d1580072ea30ab8e768aae7cda8158da6230a5bb"
+    sha256 cellar: :any,                 arm64_sequoia: "986b1d10461fce557ccad6fcc65e8f59655ca5f17f2f38d362b61cceb531096a"
+    sha256 cellar: :any,                 arm64_sonoma:  "30d703dbceb790b7074add95c09cc0741ac4809c4376c18ec7b069232be31bf2"
+    sha256 cellar: :any,                 sonoma:        "bc467c1c9e26a8ee102e655ef3d12060722b4f61276f1c3c1d44348d724297c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4660f031d95c1e6433d771aa8f330fb80aca15a89392dcfc9e9842336e27888c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fcb696e3649b368c4c7723c19ce2e6ff036450accf9a8b0a1f9581005ab74b8"
   end
 
   depends_on "rust" => :build # for geoip2, uv-backend
@@ -48,13 +48,13 @@ class Dnstwist < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
-    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
+    url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
+    sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "dnspython" do
@@ -78,18 +78,18 @@ class Dnstwist < Formula
   end
 
   resource "maxminddb" do
-    url "https://files.pythonhosted.org/packages/b2/6e/6adbb0b2280a853e8b3344737fea5167e8a2a2ff67168555589b7278e2e8/maxminddb-3.0.0.tar.gz"
-    sha256 "9792b19625945dff146e2e3187f9e470b82330a912f7cea5581b8bd5af30da8b"
+    url "https://files.pythonhosted.org/packages/31/83/bcd7f2e7dfcf601258a4eab92155816218e8f8adf6608d5f7d39da7ba863/maxminddb-3.1.1.tar.gz"
+    sha256 "b19a938c481518f19a2c534ffdcb3bc59582f0fbbdcf9f81ac9adf912a0af686"
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/80/1e/5492c365f222f907de1039b91f922b93fa4f764c713ee858d235495d8f50/multidict-6.7.0.tar.gz"
-    sha256 "c6e99d9a65ca282e578dfea819cfa9c0a62b2499d8677392e09feaf305e9e6f5"
+    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
+    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
   end
 
   resource "ppdeep" do
-    url "https://files.pythonhosted.org/packages/6a/50/7a56c6309633f92f9e58ae60d76be5c1a01ade92ec33d49881eccff9b446/ppdeep-20251115.tar.gz"
-    sha256 "c6fdb5117b0eebfbe91a117b3c89f4de5d161a7a0c1a2d3023a065a676727b7c"
+    url "https://files.pythonhosted.org/packages/ef/6c/4b97c7c1f7dcb4ee0c8d3534284e7f1a638dee6dccd5d0a8f7d9fa6dac3c/ppdeep-20260221.tar.gz"
+    sha256 "8be1f4164b7ad2f7c40a51a664d3176701e40b2f9c1b96d18eeffaf06dfeff94"
   end
 
   resource "propcache" do
@@ -98,18 +98,18 @@ class Dnstwist < Formula
   end
 
   resource "py-tlsh" do
-    url "https://files.pythonhosted.org/packages/ba/5b/4d860cffd3e6e7afb277e159d97e11583fc3b611d22355799364dff325f1/py-tlsh-4.7.2.tar.gz"
-    sha256 "5b6943cfd93a168671f33b84828dca34d252278bdedcacf25cbe711fda655e9f"
+    url "https://files.pythonhosted.org/packages/69/6b/94f9aee3904016a99d2cc9029ff9999f6058d8351e740730ad1a2bdba291/py_tlsh-4.12.1.tar.gz"
+    sha256 "4b312d122c8a204d0b7ae7632c3b762160351887a19b5e451ef63da86dc231c1"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "tld" do
-    url "https://files.pythonhosted.org/packages/df/a1/5723b07a70c1841a80afc9ac572fdf53488306848d844cd70519391b0d26/tld-0.13.1.tar.gz"
-    sha256 "75ec00936cbcf564f67361c41713363440b6c4ef0f0c1592b5b0fbe72c17a350"
+    url "https://files.pythonhosted.org/packages/5c/5d/76b4383ac4e5b5e254e50c09807b3e13820bed6d6c11cd540264988d6802/tld-0.13.2.tar.gz"
+    sha256 "d983fa92b9d717400742fca844e29d5e18271079c7bcfabf66d01b39b4a14345"
   end
 
   resource "urllib3" do
@@ -118,8 +118,8 @@ class Dnstwist < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/57/63/0c6ebca57330cd313f6102b16dd57ffaf3ec4c83403dcb45dbd15c6f3ea1/yarl-1.22.0.tar.gz"
-    sha256 "bebf8557577d4401ba8bd9ff33906f1376c877aa78d1fe216ad01b4d6745af71"
+    url "https://files.pythonhosted.org/packages/23/6e/beb1beec874a72f23815c1434518bfc4ed2175065173fb138c3705f658d4/yarl-1.23.0.tar.gz"
+    sha256 "53b1ea6ca88ebd4420379c330aea57e258408dd0df9af0992e5de2078dc9f5d5"
   end
 
   def install

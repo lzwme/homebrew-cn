@@ -3,18 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/f5/98/76ed8f69ae27655e754356325d8ce48894d62b9136b37201b15dcc677880/cycode-3.12.0.tar.gz"
-  sha256 "66bb37279fccbf0e52b199181b21bc8b300e6b7b8a83489e9046ab1e27bfbe1a"
+  url "https://files.pythonhosted.org/packages/ca/61/75b91064eec91013e61e168495994e2f1f8ae604061122cf1de56692c919/cycode-3.12.1.tar.gz"
+  sha256 "727d5d9b95f2cd415c10d7ed7e70be8f7e0f570b5db436011b3d850ae28096e0"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8a04ef7cedaf515bff73414d1e466bf9389ba43b99173247814d62b96995d41c"
-    sha256 cellar: :any,                 arm64_sequoia: "c6b80134076912a8b4bad6716632a17dd3d5a430886892070c2a8caed518a825"
-    sha256 cellar: :any,                 arm64_sonoma:  "9083c05f4acfaebc5c198d171b1edf0bea6159538b9b92c0886841b21dcead65"
-    sha256 cellar: :any,                 sonoma:        "91a4925610691d9120a9e99052566b1ecb7134096fc66c9948d5707901485d17"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "961aa8505fe1bbe31eb425cca16342a69818a44979f1f36c3dc03a04c94ff7d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbfc423508c4342d8ad74f63d4d3dbcaaf0235a4089fb0862012c458d9bf53be"
+    sha256 cellar: :any,                 arm64_tahoe:   "2f46df4d8f848b95914b5c9e2348359e27f04e8a86950fb8c96ee08b45dbed39"
+    sha256 cellar: :any,                 arm64_sequoia: "4a4c20378d07a7e7dd54b09c7b556c603d5917907eeccbff9d3db1503ba470eb"
+    sha256 cellar: :any,                 arm64_sonoma:  "6044311e85b5fe8fdb09d0faaf550c17daebee0a87a5fea1492e2f2f485e9534"
+    sha256 cellar: :any,                 sonoma:        "092c10589162d2ec39af439108a671c9beb7e66a0c6bf8a504e3b889541447b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8ff686901a61607dbbb9cddb99e9d79b7bd6c2f7e4db22ec76591269f3d2c2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5550538262fcbc9adb31d6af22c591982b36b8b1fc9b13069cb51018b8058ec"
   end
 
   depends_on "certifi" => :no_linkage
@@ -27,8 +27,8 @@ class Cycode < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
-    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
+    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
+    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
   end
 
   resource "arrow" do
@@ -177,8 +177,8 @@ class Cycode < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "rich" do
