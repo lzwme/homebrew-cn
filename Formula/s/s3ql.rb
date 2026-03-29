@@ -6,6 +6,7 @@ class S3ql < Formula
   url "https://ghfast.top/https://github.com/s3ql/s3ql/releases/download/s3ql-6.0.0/s3ql-6.0.0.tar.gz"
   sha256 "33d29ce1d9e6db9f78369624669c805b1617cb8916b2939cd190ddee68975248"
   license "GPL-3.0-only"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,8 +14,8 @@ class S3ql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "7e4f7c00d0bf2bbe7a749bbfff0235e73a5ce72237550932b89033dda51ce079"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "034d3dce93258cb11fbbfe539b4b0d1851c547cafa83675638beac19df239cf4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "94ab024f7d3be9b144dc7ec76ec6f90d9eddf40c918547e77336d801c63bf42e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "904e115e76f74f0a1ad95788049d59c79912a0d80b483abb845bc7cdfa6a3eec"
   end
 
   depends_on "pkgconf" => :build
@@ -29,8 +30,8 @@ class S3ql < Formula
   pypi_packages exclude_packages: %w[certifi cryptography]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
-    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
+    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
+    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
   end
 
   resource "apsw" do
@@ -39,8 +40,8 @@ class S3ql < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
-    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
+    url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
+    sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
   end
 
   resource "charset-normalizer" do
@@ -94,8 +95,8 @@ class S3ql < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "requests-oauthlib" do

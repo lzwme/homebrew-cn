@@ -1,8 +1,8 @@
 class Goctl < Formula
   desc "Generates server-side and client-side code for web and RPC services"
   homepage "https://go-zero.dev"
-  url "https://ghfast.top/https://github.com/zeromicro/go-zero/archive/refs/tags/tools/goctl/v1.10.0.tar.gz"
-  sha256 "4fcd6d56ce24272000f83eebe1bc7552b7931eb619a56bb60cabde6a187654ab"
+  url "https://ghfast.top/https://github.com/zeromicro/go-zero/archive/refs/tags/tools/goctl/v1.10.1.tar.gz"
+  sha256 "b8889573a26b24306dccc4d7e991e0321780e19ad4d247f814a4f65e11f07c69"
   license "MIT"
   head "https://github.com/zeromicro/go-zero.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Goctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d0a54388204a1a1898057013472bbb98e9a7711efb59b065eae04e46e89fcb3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e56349df82031d85d4bf1b973869c32acf17773ee710ca859622688f928404f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c2374b42c10623f2569d8132c8ff9d1fd8ee111f48b683e7e9f5a65528a0e3c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2a7fee4a17cca516c4bfb99b8fa49b39409cc8dd7432981609437a6d2325d817"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e16aded581e1b30880288323b382fafa62ae33393cb293ea8c8db5fac0d3c4ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbb64661962c91187198992f41a2da12a6e5d2f10986d3a0a40c8686a8e4ff2d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "559dc79f895ef231894d6ad061ffded217c784eda9598e497756b3427e756cfc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb712c36fad7e43668ce9f367dbc9d517e1f7bca07df0a1b5afe074997916dbe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b12bd097a7940f2606023d2631b4b60a7e92d3b2f8025fc4646a3e5f9fe808b6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0976ece45058588058d5f00d0b8007c999f7e8cba9605f696916e13c0476a8e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa77776ac70c099fff460ccc6d99f5dc1f2a294bd31df0948cf6897c45672dae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a69a66e3f9081d4cb410e11d55f89f24f193957ad26afc6b8a0321fd4f26847"
   end
 
   depends_on "go" => :build

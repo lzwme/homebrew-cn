@@ -4,14 +4,15 @@ class Gedit < Formula
   url "https://gitlab.gnome.org/World/gedit/gedit/-/archive/50.0/gedit-50.0.tar.bz2"
   sha256 "c2d064001b95196f046a6f9705245e3a02dc427265f4e24af9bd2d5f3cb619ee"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_tahoe:   "a9086d4b1ae809e6a7300752c1d25a7989dba26c4534a4fd1af019b2f7e1cfff"
-    sha256 arm64_sequoia: "1a84baec44eadb2a09c4ef477062f0f5d24bf02ce97f3fa828be88d318892924"
-    sha256 arm64_sonoma:  "3b6e0d13f1c5975ee64c3296ac3cd8ee05a8c7c564629d007f8e8563a118d244"
-    sha256 sonoma:        "d85f86c11dee8c6d5bc884e7c01b851ad7a75a548b0e1f98c2e16711f575d3cd"
-    sha256 arm64_linux:   "459eedb11b562d0016437e146da72aca6499bfbcaec7e6f718c22a0cdf5d95c8"
-    sha256 x86_64_linux:  "a654a11fe714360d46822a0ee23f9aea9d6c917f60128c2edc6c73c26f438fd8"
+    sha256 arm64_tahoe:   "7ab23f8b77bacabdc5c44b8dbd1a723d6e3466520ec79efba32c317992b9780e"
+    sha256 arm64_sequoia: "37c41e7231cf0347a22679a0e93538a583256f18ec8f6e80e2dacc746b98abad"
+    sha256 arm64_sonoma:  "9c557f5e3353b2f47bed28cb382f154ddbe00e9093756e848bf5c9accd5d4fb5"
+    sha256 sonoma:        "c0de076352635b54021b8f2071a7b165560bce4d38c71080da5a9bd9a4462420"
+    sha256 arm64_linux:   "b67918659a932d7e8773cfce2841874fd440811ec088abefd89da0518901a1ca"
+    sha256 x86_64_linux:  "2e2bb9743758ec4e03af79652116c9ed9a52957360bcf9eaea61aecab70b4c3a"
   end
 
   depends_on "desktop-file-utils" => :build # for update-desktop-database

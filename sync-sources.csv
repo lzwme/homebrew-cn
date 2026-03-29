@@ -5517,6 +5517,7 @@ Homebrew-homebrew-core/Formula/p/patchutils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pawk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pax-runner.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pax.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pay.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/payara.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/payload-dumper-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pazpar2.rb, Homebrew/homebrew-core, 0
@@ -5652,7 +5653,7 @@ Homebrew-homebrew-core/Formula/p/pickle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/picoc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/picoclaw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/picocom.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/picoruby.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/picoruby.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/picotool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pict.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pidcat.rb, Homebrew/homebrew-core, 1
@@ -10148,6 +10149,7 @@ Homebrew-homebrew-cask/Casks/font/font-b/font-biz-udmincho.rb, Homebrew/homebrew
 Homebrew-homebrew-cask/Casks/font/font-b/font-biz-udpgothic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-biz-udpmincho.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-bizter.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-b/font-bj-cree.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-black-and-white-picture.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-black-han-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-black-ops-one.rb, Homebrew/homebrew-cask, 0
@@ -11995,6 +11997,7 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-saira-condensed.rb, Homebrew/homeb
 Homebrew-homebrew-cask/Casks/font/font-s/font-saira-extra-condensed.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-saira-semi-condensed.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-saira-stencil-one.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-s/font-saira-stencil.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-saira.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-salsa.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-sanchez.rb, Homebrew/homebrew-cask, 0
@@ -12753,6 +12756,7 @@ Homebrew-homebrew-cask/Casks/i/imgotv.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/imhex.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/impactor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/inav-configurator.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/i/incident-io.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/infinidesk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/infinity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/inform.rb, Homebrew/homebrew-cask, 1
@@ -14625,6 +14629,7 @@ Homebrew-homebrew-cask/Casks/s/screens-assist.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/screens-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/screens.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/scribus.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/scribus@devel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/script-debugger.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/script-kit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/scriptql.rb, Homebrew/homebrew-cask, 0
@@ -16031,6 +16036,7 @@ shivammathur-homebrew-php/Formula/php@8.4-debug-zts.rb, shivammathur/homebrew-ph
 shivammathur-homebrew-php/Formula/php@8.4-debug.rb, shivammathur/homebrew-php, 0
 shivammathur-homebrew-php/Formula/php@8.4-zts.rb, shivammathur/homebrew-php, 0
 shivammathur-homebrew-php/Formula/php@8.4.rb, shivammathur/homebrew-php, 0
+shivammathur-homebrew-php/Formula/php@8.5-experimental.rb, shivammathur/homebrew-php, 0
 shivammathur-homebrew-php/Formula/php@8.6-debug-zts.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.6-debug.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.6-zts.rb, shivammathur/homebrew-php, 1

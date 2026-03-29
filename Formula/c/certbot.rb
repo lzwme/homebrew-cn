@@ -6,16 +6,16 @@ class Certbot < Formula
   url "https://files.pythonhosted.org/packages/36/78/14cb738aaaa1eda7b28eca85beef131f1edb8d10fc31ec8d02a2f86363aa/certbot-5.4.0.tar.gz"
   sha256 "c0757fbc82aec597072219ce05c559f3bd2e20e9e96a54a5286f297e639fb91b"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/certbot/certbot.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "02d1ac70eaf019216c2a1f95437ffdbe81a2ec7065207d0b9785d8cc44e3b671"
-    sha256 cellar: :any,                 arm64_sequoia: "d3475657f0f4c3dfa13f5a685c529bf899ece6188baaeb3e7b8e44bd821649de"
-    sha256 cellar: :any,                 arm64_sonoma:  "a39b68c67ccda17b6c6b164c3c7d4c2994c731732730cf39965da0eebba02f0f"
-    sha256 cellar: :any,                 sonoma:        "566826f8e60972659f223ef6df2e92bb06043b689a226dfe1d54f825845125d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bcfd604ce9e7ae9cdcb58022358eaf5d90b9fcbb66b5955276ea19ffe84b8f42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76082e2f747ca353f3f1c5ad96454a4888e13c47595640ee340bae5d5a54f560"
+    sha256 cellar: :any,                 arm64_tahoe:   "9e8c9e2af3a475fd49cbb53198a01323b286380d64f1235346b7c9929665e344"
+    sha256 cellar: :any,                 arm64_sequoia: "194dcb48998a73e019479fafc0c6ae92683f41436b430ce8b4ea2ac9b4537607"
+    sha256 cellar: :any,                 arm64_sonoma:  "8f1c22fc57bacea4008251eccb84b3152278b5345ae6dc5468948e0e8e47ae3f"
+    sha256 cellar: :any,                 sonoma:        "7310b7e83d746361d4ed4aacb6d149a65eb394b3c68fa9a4c949e20eb854f7fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae7dcf4aa07ae4c02be22440a3a16705167d9b18446d81201015487794e16e18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af85ebbb6d14f3d272abe18807e0b700672efcdf1fa7d49087bed0553b27fe69"
   end
 
   depends_on "augeas"
@@ -35,8 +35,8 @@ class Certbot < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
-    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
+    url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
+    sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
   end
 
   resource "certbot-apache" do
@@ -125,8 +125,8 @@ class Certbot < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "urllib3" do

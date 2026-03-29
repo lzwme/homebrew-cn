@@ -6,16 +6,16 @@ class Glances < Formula
   url "https://files.pythonhosted.org/packages/64/7b/5305b194c76fd5122900652efbee9f35ca32abe73e1592c55eee4727f6fb/glances-4.5.2.tar.gz"
   sha256 "e150e100b328a419d5003a4d54c02a4d78b0a1f5782f0aa0816877ddbe5881e9"
   license "LGPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/nicolargo/glances.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3216aa3690873ac5e3947e9a835cb57824d2029697dfbf0aea81a88ab10f9331"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d0de3afbef4659cc6d971c24a8cf648bff7adadab44ca5df7cd269801c3d11c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "819eeea4075016c380501e7b357bf63ea4a79e008733c150ff4c288e6e8d5bbf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4db0a4137da208e5cb3bbd4291c077311ee0ab45bade666641b414e3e31013c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e16ff6fb61542677c7d600b911c75827ab80a6bf72ea603add55f31484c1df2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4a40f6fc9a3e2ec9d5a537b38fa594a17796ca820ffbd3909e669c243fe522e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4dfd1ead9155b6c64a4087b4497e70a0ee89eefaccbb6b5cb13cd6b0430870d0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f667c46f2d14a59061f5541eedc0f14896d300d39c162d498f3ef268ccd81171"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2fce86727e02be9ea19e268104ed39aba8ec8cb4b08df6885369e5750e5bc13"
+    sha256 cellar: :any_skip_relocation, sonoma:        "af87d566a5bba38b6dacbad7be4522320c9dee0acab092bfbbb9cf729ce3d400"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c629cae47bc2c14cc84f947993988ea55b9a271efd10191ce23a4693b581ceea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6f18554f2d29fcaabf06d16bf5b7182a91524493f8022e2be021736db5b53ed"
   end
 
   depends_on "rust" => :build # for annotated-docs
@@ -34,8 +34,8 @@ class Glances < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
-    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
+    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
+    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
   end
 
   resource "charset-normalizer" do
@@ -59,13 +59,13 @@ class Glances < Formula
   end
 
   resource "ecdsa" do
-    url "https://files.pythonhosted.org/packages/c0/1f/924e3caae75f471eae4b26bd13b698f6af2c44279f67af317439c2f4c46a/ecdsa-0.19.1.tar.gz"
-    sha256 "478cba7b62555866fcb3bb3fe985e06decbdb68ef55713c4e5ab98c57d508e61"
+    url "https://files.pythonhosted.org/packages/25/ca/8de7744cb3bc966c85430ca2d0fcaeea872507c6a4cf6e007f7fe269ed9d/ecdsa-0.19.2.tar.gz"
+    sha256 "62635b0ac1ca2e027f82122b5b81cb706edc38cd91c63dda28e4f3455a2bf930"
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/e7/7b/f8e0211e9380f7195ba3f3d40c292594fd81ba8ec4629e3854c353aaca45/fastapi-0.135.1.tar.gz"
-    sha256 "d04115b508d936d254cea545b7312ecaa58a7b3a0f84952535b4c9afae7668cd"
+    url "https://files.pythonhosted.org/packages/c4/73/5903c4b13beae98618d64eb9870c3fac4f605523dd0312ca5c80dadbd5b9/fastapi-0.135.2.tar.gz"
+    sha256 "88a832095359755527b7f63bb4c6bc9edb8329a026189eed83d6c1afcf419d56"
   end
 
   resource "h11" do
@@ -94,8 +94,8 @@ class Glances < Formula
   end
 
   resource "podman" do
-    url "https://files.pythonhosted.org/packages/c5/12/149e906003e1ae4e702d999ea80e79ef6a1a842254fc716edfbbc997f3ce/podman-5.7.0.tar.gz"
-    sha256 "9314e8d782a76266dfafe7d0f72645f32031b1029a0428fd197dead5c05926a0"
+    url "https://files.pythonhosted.org/packages/18/f1/ea8988ff2085d1a898f7f27b7fa26a5b5e296949c6ef4df26ebc2be1aac0/podman-5.8.0.tar.gz"
+    sha256 "bc39b77f4a6a0598bbe860d199e0d54ef2ec551131ae7eab66f0557c43331fb3"
   end
 
   resource "psutil" do
@@ -124,8 +124,8 @@ class Glances < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "rsa" do
@@ -144,8 +144,8 @@ class Glances < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/c4/68/79977123bb7be889ad680d79a40f339082c1978b5cfcf62c2d8d196873ac/starlette-0.52.1.tar.gz"
-    sha256 "834edd1b0a23167694292e94f597773bc3f89f362be6effee198165a35d62933"
+    url "https://files.pythonhosted.org/packages/81/69/17425771797c36cded50b7fe44e850315d039f28b15901ab44839e70b593/starlette-1.0.0.tar.gz"
+    sha256 "6a4beaf1f81bb472fd19ea9b918b50dc3a77a6f2e190a12954b25e6ed5eea149"
   end
 
   resource "urllib3" do

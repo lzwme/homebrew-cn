@@ -8,8 +8,8 @@ class Neovim < Formula
   stable do
     # TODO: Bump to use tree-sitter 0.26+ when new Neovim release supports it
     # TODO: remove `head` block when stable supports tree-sitter 0.26+.
-    url "https://ghfast.top/https://github.com/neovim/neovim/archive/refs/tags/v0.11.6.tar.gz"
-    sha256 "d1c8e3f484ed1e231fd5f48f53b7345b628e52263d5eef489bb8b73ca8d90fca"
+    url "https://ghfast.top/https://github.com/neovim/neovim/archive/refs/tags/v0.11.7.tar.gz"
+    sha256 "b550b0e4cd2a0f9558bc6b278d27e47b528f7684efa2a46def438fcd64ee9822"
 
     # TODO: Consider backporting for compatibility with 0.26
     # https://github.com/neovim/neovim/commit/f4fc769c81af6f8d9235d59aec75cfe7c104b3ce
@@ -59,12 +59,12 @@ class Neovim < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "cfd8b300b05d3dea574845a7158b08c1733502816892522bc57205475f4c97c6"
-    sha256 arm64_sequoia: "a6e456b504df759202e5402f2f4ffe1213f01e06b9b3d39d95580505bf0912e1"
-    sha256 arm64_sonoma:  "3ca28c90195f578a8263a2b2d7ab67f724bd80ba656423bda2e35c4cf2d92d0f"
-    sha256 sonoma:        "0395c342b45728126663f10c945c2c238172763363f879c0628aa6933a19ca0b"
-    sha256 arm64_linux:   "b78c6e371c8ee77189262e98078a7194365fb198dbf4c778ad69b2023732a34a"
-    sha256 x86_64_linux:  "ca74f40e189c28deeff7aedc1387336fe1a31fd3b3b5a54afbedaa6ba0b8b7ff"
+    sha256 arm64_tahoe:   "976b95a8c247860dcf27ba91833636a3726db6dd3c223affe52d4c3bcecec57f"
+    sha256 arm64_sequoia: "0c9d83d3e6af3752859f0e323a061f8038624cf32670cb4aa6f98226efb6db87"
+    sha256 arm64_sonoma:  "13506df491d979a4269586fc05ddababa378ae5d7b7dfbf3ce86e1c2773dfa94"
+    sha256 sonoma:        "ff464e5276ee4eef60c0c2f9350df38754bab9947e70b2e612d60ad2b50e87ca"
+    sha256 arm64_linux:   "03d9f1a9c333bd65ff226a9a83490e24bcef11d47eafdb80b641c58c2ae30d34"
+    sha256 x86_64_linux:  "99e3bdc31f68f33578f782a5ec354a99e69c270e0d3581b49cf2e62ad2755339"
   end
 
   # TODO: remove `head` block when stable supports tree-sitter 0.26+.

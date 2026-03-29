@@ -6,16 +6,16 @@ class CryticCompile < Formula
   url "https://files.pythonhosted.org/packages/f4/cb/669ed02fbfe17091998f52a7e3326ac276409117ea10a2c36b2a852a22f9/crytic_compile-0.3.11.tar.gz"
   sha256 "d4e2253d5d81ec3a75deb3ab9fc2c2d2db56e835001cf07f3703911d74b56716"
   license "AGPL-3.0-only"
-  revision 3
+  revision 4
   head "https://github.com/crytic/crytic-compile.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea174444ae84f615bdcc194eebff308e1ec9d18c739a21bf4c9da61bd513cc01"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae3107e5847b8c957b2cd104e793e96e4e41b4bb35df1f4a706d30b3321ab80e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7418be600564de33d6889012c35da83f8afae686dce44119ae2b2ffa8a9e6205"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9787a8eac7a59c5fdcc6c85b7b72fb4bc39749d802797e56db06ba78591e1a3c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb70992aee348b2d32cf99998f39e75dc1fe85978f1ff56638ca02df7646e373"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f0b9ed8faedc80ced49fc088d8ec2033ca341cd170d4e611d03aad6dc9ccd1b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9394aee44e21568ac4e7f881f01ea931c5f3cca459676884ec111a7054a854d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5196a0b64edebe6b7e18bef5744061964e08e8c5dcf2773ff0765dd3c258e6f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c59ab30888ac4bf6fb36304c1cd41fecf11747c4ff08cdbcd0df6d38cd3a242"
+    sha256 cellar: :any_skip_relocation, sonoma:        "52f913765869799f3a068ecac69b98af6450ce630b937a689ebbfeddd46337d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f7da16cb57e46a7c72922a9aa6a4bd70d499864c5f48910f785e27f8c750c79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b94fb720fb758fcd2c10c76c63e89c6e7c5b8d4be8e35c5a1eeea90bb9d5c010"
   end
 
   depends_on "certifi" => :no_linkage
@@ -49,8 +49,8 @@ class CryticCompile < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "solc-select" do

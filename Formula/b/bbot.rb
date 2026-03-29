@@ -6,15 +6,15 @@ class Bbot < Formula
   url "https://files.pythonhosted.org/packages/6a/83/24a0087894d853703f64ab2044927ef56c831edb379295a873b05f34eb92/bbot-2.8.4.tar.gz"
   sha256 "2ed4d3eda85ddb7261318a48f8a41e8543888b5d9b9eb8876aaff0e813a2429c"
   license "AGPL-3.0-only"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c7e94c2f3f9d04339a3ce1755f066cf3c9ea378dda847af2dbb1da06abfa6eeb"
-    sha256 cellar: :any,                 arm64_sequoia: "303cdd1cb3a7d1c1bee18ddcb519c1e7c1da9d9a8072a1f17ff4bd143bf08387"
-    sha256 cellar: :any,                 arm64_sonoma:  "aee0000adb46e6015452f6534094baaa804068cf4a2c5cdf803d91fa483b2e64"
-    sha256 cellar: :any,                 sonoma:        "ccab387d9d4fed6a5cced692d7ff10ebe16c6fe9491608a0bb1210b1024f252f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3963797a5ab2b098e4ff305fa7db225964fdd70fcfc2dd8c56debf4fa5c365ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f695f9d486755446c88fcf608dce98c78fe7dbf58b1ce416740f92e78fd88f0d"
+    sha256 cellar: :any,                 arm64_tahoe:   "2b164dc5b8eafb3697281d5e5e63bc89ccef53eae6a9848fadc7257ab888024f"
+    sha256 cellar: :any,                 arm64_sequoia: "7f358ea0e3ee87882f8db879270c90cb672bca61373955f4a9992fdfd8260de7"
+    sha256 cellar: :any,                 arm64_sonoma:  "b931bbaefda72dc089485464533e597bc5e0685ac73c2871847aae6564887d7c"
+    sha256 cellar: :any,                 sonoma:        "b25fa3feddb0cd139bc96e9f34705198f6eb403691f35c7f5f95afb65741c1b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e75059e479ef529358f37719412437b652e4dd2bc987677cefc31a741238143d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18015b076003466464dfe81f3cdffaf0bfd8d6b4f7921c36caee2b92bc4ded3f"
   end
 
   depends_on "cmake" => :build
@@ -36,8 +36,8 @@ class Bbot < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pydantic]
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/03/d6/2a1fda59f9bab7519f2e94a7bec8416e080dd2e17af4f4fb5d1e3d0c997d/ansible_core-2.20.3.tar.gz"
-    sha256 "38670ab2d2ffd67ee7e9e562f7c94e0927c8b7b4b0eb69233bc008c29e32d591"
+    url "https://files.pythonhosted.org/packages/11/7c/57263940ef61d7a829baef6e752556b1434f3a66ae05885c80753efbca50/ansible_core-2.20.4.tar.gz"
+    sha256 "2060c06195ada0cca0ac3128025d1167f567479da465897d818982fbe28bed1f"
   end
 
   resource "ansible-runner" do
@@ -51,8 +51,8 @@ class Bbot < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
-    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
+    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
+    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
   end
 
   resource "beautifulsoup4" do
@@ -211,8 +211,8 @@ class Bbot < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "requests-file" do

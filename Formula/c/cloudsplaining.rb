@@ -6,16 +6,16 @@ class Cloudsplaining < Formula
   url "https://files.pythonhosted.org/packages/d1/64/ba28b9b1854a40bcaae318da0e0fe147bd25999e496a8382a5a67c463db1/cloudsplaining-0.8.2.tar.gz"
   sha256 "733085a7648e45714a24e629d05d3dfd592d2925b21fe001c19f55a6d6c1581a"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
   head "https://github.com/salesforce/cloudsplaining.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "23f5ce14f5a6e91c113e2dc63d969ccdd3ad6d51f54444d65d58db05461b6037"
-    sha256 cellar: :any,                 arm64_sequoia: "23ebbdb857788e1a697c85c089f0f3caf703b4004fee1d7db19608a7f3daa188"
-    sha256 cellar: :any,                 arm64_sonoma:  "0a7c70a9a6a2a49ea38d8726a6e6ff5b2f60c6aea924f4e35ad43041d46fb35c"
-    sha256 cellar: :any,                 sonoma:        "56f50e5cfc176173952ed59aef8ceb7388b686b33bb6272ec9002ac7e92cadc5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "adf6f9219d86e74d78b26ed978954a4e9d2822248d56c07ff914af0a68cf9447"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1377cf88c7079e74518de47d6f3324d5f4cca28db816b511cf2026e44ca7686"
+    sha256 cellar: :any,                 arm64_tahoe:   "f5461a61672f2d8bacd6c4ed387e770536f3564dc81db90708a785610f89c54e"
+    sha256 cellar: :any,                 arm64_sequoia: "dbd27bc5b569ab7e23e4e81b25b77fd8816cfda5621d28d5178c10ee352857f9"
+    sha256 cellar: :any,                 arm64_sonoma:  "0a9ad6e7475574ab05375c1ad633f1426cc094946dab96c1aebccd1d3b5959dd"
+    sha256 cellar: :any,                 sonoma:        "3e6036da1272eb1be90eb2ac2910562a7c21c826cea06957eec99e5284c0bfc6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f907531148dc62d1e552002badf94422b976b46808c2e9aa32b1bd8c13ef47d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a182f71dc57641be0f5dc00ae15e38098fa3742a5c47c5dca3f75013c351ab1"
   end
 
   depends_on "rust" => :build # for orjson
@@ -31,13 +31,13 @@ class Cloudsplaining < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/06/ae/60c642aa5413e560b671da825329f510b29a77274ed0f580bde77562294d/boto3-1.42.68.tar.gz"
-    sha256 "3f349f967ab38c23425626d130962bcb363e75f042734fe856ea8c5a00eef03c"
+    url "https://files.pythonhosted.org/packages/f1/13/33c8b8704d677fcaf5555ba8c6cc39468fc7b9a0c6b6c496e008cd5557fc/boto3-1.42.76.tar.gz"
+    sha256 "aa2b1973eee8973a9475d24bb579b1dee7176595338d4e4f7880b5c6189b8814"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/3f/22/87502d5fbbfa8189406a617b30b1e2a3dc0ab2669f7268e91b385c1c1c7a/botocore-1.42.68.tar.gz"
-    sha256 "3951c69e12ac871dda245f48dac5c7dd88ea1bfdd74a8879ec356cf2874b806a"
+    url "https://files.pythonhosted.org/packages/70/62/a982acb81c5e0312f90f841b790abad65622c08aad356eed7008ea3d475b/botocore-1.42.76.tar.gz"
+    sha256 "c553fa0ae29e36a5c407f74da78b78404b81b74b15fb62bf640a3cd9385f0874"
   end
 
   resource "cached-property" do
@@ -46,8 +46,8 @@ class Cloudsplaining < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
-    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "click" do
@@ -106,8 +106,8 @@ class Cloudsplaining < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "s3transfer" do

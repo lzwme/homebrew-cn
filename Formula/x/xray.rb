@@ -1,8 +1,8 @@
 class Xray < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https://xtls.github.io/"
-  url "https://ghfast.top/https://github.com/XTLS/Xray-core/archive/refs/tags/v26.2.6.tar.gz"
-  sha256 "a41f170a03fa25d9d39f23f344540b02336a5c893d97b1b837b9477f4b35bc7f"
+  url "https://ghfast.top/https://github.com/XTLS/Xray-core/archive/refs/tags/v26.3.27.tar.gz"
+  sha256 "992a4997e6bb846d11469435d687f99ef812fcde1e0a009bb8e95189ea20331d"
   license all_of: ["MPL-2.0", "CC-BY-SA-4.0"]
   head "https://github.com/XTLS/Xray-core.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Xray < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f92da454b89199aa6c48c76e1c003342bb513af7b962cf7ab428dff5458b91ac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f92da454b89199aa6c48c76e1c003342bb513af7b962cf7ab428dff5458b91ac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f92da454b89199aa6c48c76e1c003342bb513af7b962cf7ab428dff5458b91ac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "65d12bc1f05523bb07d1599a56fd84babea5ad6a0b5b2d8248af1cd79a67257c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "42fb5b479fbe65b4226e5131556ab6c91b72399d2848d23339960216b85462ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a79f11956710dff040c0560e8b7a462dffd34232ed25f857b825a374db53eea7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4bff981876814bff60240beb45a257ddaea1fe1b6852ec345b52d2701933245a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bff981876814bff60240beb45a257ddaea1fe1b6852ec345b52d2701933245a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4bff981876814bff60240beb45a257ddaea1fe1b6852ec345b52d2701933245a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cd67caebe5bb10ff6e511bad9ff4ff733f3b55bcd5baf60bb64b64cd3839929c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6d56ea0b24d8b7eb17ad076a02ffdffa92a41598fd14f08d20fc0eed0219192"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb09e38ca9e9c9f1d8436bb76628ad708198bab80fa0f159949b3aa32100de46"
   end
 
   depends_on "go" => :build
@@ -34,7 +34,7 @@ class Xray < Formula
 
   resource "example_config" do
     # borrow v2ray example config
-    url "https://ghfast.top/https://raw.githubusercontent.com/v2fly/v2ray-core/v5.44.1/release/config/config.json"
+    url "https://ghfast.top/https://raw.githubusercontent.com/v2fly/v2ray-core/v5.48.0/release/config/config.json"
     sha256 "15a66415d72df4cd77fcd037121f36604db244dcfa7d45d82a0c33de065c6a87"
 
     livecheck do

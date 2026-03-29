@@ -1,18 +1,18 @@
 class Wifitui < Formula
   desc "Fast featureful friendly wifi terminal UI"
   homepage "https://github.com/shazow/wifitui"
-  url "https://ghfast.top/https://github.com/shazow/wifitui/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "f3fb64564fd5cd896a16aa36b8214733c88344e6154a63d37357dd9ecbeebece"
+  url "https://ghfast.top/https://github.com/shazow/wifitui/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "9d049ddba951d226648ae5778b8609102298aec085eb85aa60f712ef37cb1116"
   license "MIT"
   head "https://github.com/shazow/wifitui.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4327153f768cd60cb98933ad7ddc6de6f5d07a594993a79fef2fe67e633e044"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4327153f768cd60cb98933ad7ddc6de6f5d07a594993a79fef2fe67e633e044"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4327153f768cd60cb98933ad7ddc6de6f5d07a594993a79fef2fe67e633e044"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df10128b2d4cafa679004cdb63f7ed5d37c2052a345fd0228883367b368e86e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "429e7ea8119a0626f9b611e1b054c560e40880491b08a40cb030d72cce65986d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00a5b31b734814860eddf50a31d6154aade5998403b4e64cd23e5735845a0412"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "08cb96f9816a12a7f354ed4bc24747d33a23f6f5648da12ee6faab04e4e52f09"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08cb96f9816a12a7f354ed4bc24747d33a23f6f5648da12ee6faab04e4e52f09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08cb96f9816a12a7f354ed4bc24747d33a23f6f5648da12ee6faab04e4e52f09"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8f1a517af3aa353b9834577d29f52de5bea24a003915b7a83d9816a01e2b1699"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "442ff3ec8ee46f09240452d30cafcf7b178d8bfb282af6cdc2c287ec5489495c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b37e00309667810eb7eec9f7222f2a83453acef012cce42685855d7fcab563ff"
   end
 
   depends_on "go" => :build

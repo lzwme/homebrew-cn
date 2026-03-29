@@ -6,14 +6,15 @@ class TrezorAgent < Formula
   url "https://files.pythonhosted.org/packages/d9/b1/e533c417259dc112a067226d4c95cb772d7c090b696a61a065e1e41429d6/trezor_agent-0.13.0.tar.gz"
   sha256 "f3324a7c5708db0e40682e272720f5d9e9dac7b62281ee740ee7825e6a23e8ff"
   license "LGPL-3.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b800ca04c501796f8d7dcf2b34d4b2a6066ea381795e48708100f572dc177d13"
-    sha256 cellar: :any,                 arm64_sequoia: "ac781c4e7b4c35956d83cb32907cbd6b84d5cec92a0cf25c01e478f889deb3e8"
-    sha256 cellar: :any,                 arm64_sonoma:  "30d9ff3d2ea5e73a2b4dcb2a5e82eba0070138443938652a2da4fd45cb2e7e28"
-    sha256 cellar: :any,                 sonoma:        "1d8d36c26d76cb7a4355a944f130ec29130a6019addb66ef4b9dfcf9e6cc0f6f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75d94b95fea1e36f0ebe1432593dfcc10e2ce9d38af0535c50fc04f08cd464a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc646919d623cbe65d6bc35aaa54c913715f7b8fc550e6d96abe5573d1a1e48c"
+    sha256 cellar: :any,                 arm64_tahoe:   "20a651a1adb054a11c1d01cde22dbab462bb48071304816e7c4e8284a9523290"
+    sha256 cellar: :any,                 arm64_sequoia: "4715530fb5825581493de331775260a9adf789aa7ae9b40a1dae2f514c28d5f6"
+    sha256 cellar: :any,                 arm64_sonoma:  "a4beff2fc5948dd0dda0ff22f7229367b66b4e2a2b90a79bff7c5c7285d2441f"
+    sha256 cellar: :any,                 sonoma:        "c9999f244913227da026a46ae71ac3762517d81aa92f76a74d43ac8f07b47c4c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d80adf7d9b744c38c9815019b02c4b3f393af724cef3ded3b273167e13beafce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b80208824b06c6d227ae528bcc9ac83f1f86a4c4d686ddf35fae4be1af629a5"
   end
 
   depends_on "pkgconf" => :build # for hidapi resource
@@ -39,8 +40,8 @@ class TrezorAgent < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "click" do
@@ -49,8 +50,8 @@ class TrezorAgent < Formula
   end
 
   resource "configargparse" do
-    url "https://files.pythonhosted.org/packages/85/4d/6c9ef746dfcc2a32e26f3860bb4a011c008c392b83eabdfb598d1a8bbe5d/configargparse-1.7.1.tar.gz"
-    sha256 "79c2ddae836a1e5914b71d58e4b9adbd9f7779d4e6351a637b7d2d9b6c46d3d9"
+    url "https://files.pythonhosted.org/packages/3f/0b/30328302903c55218ffc5199646d0e9d28348ff26c02ba77b2ffc58d294a/configargparse-1.7.5.tar.gz"
+    sha256 "e3f9a7bb6be34d66b2e3c4a2f58e3045f8dfae47b0dc039f87bcfaa0f193fb0f"
   end
 
   resource "construct" do
@@ -69,8 +70,8 @@ class TrezorAgent < Formula
   end
 
   resource "ecdsa" do
-    url "https://files.pythonhosted.org/packages/c0/1f/924e3caae75f471eae4b26bd13b698f6af2c44279f67af317439c2f4c46a/ecdsa-0.19.1.tar.gz"
-    sha256 "478cba7b62555866fcb3bb3fe985e06decbdb68ef55713c4e5ab98c57d508e61"
+    url "https://files.pythonhosted.org/packages/25/ca/8de7744cb3bc966c85430ca2d0fcaeea872507c6a4cf6e007f7fe269ed9d/ecdsa-0.19.2.tar.gz"
+    sha256 "62635b0ac1ca2e027f82122b5b81cb706edc38cd91c63dda28e4f3455a2bf930"
   end
 
   resource "hidapi" do
@@ -89,8 +90,8 @@ class TrezorAgent < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/cb/9c/a788f5bb29c61e456b8ee52ce76dbdd32fd72cd73dd67bc95f42c7a8d13c/jaraco_context-6.1.0.tar.gz"
-    sha256 "129a341b0a85a7db7879e22acd66902fda67882db771754574338898b2d5d86f"
+    url "https://files.pythonhosted.org/packages/af/50/4763cd07e722bb6285316d390a164bc7e479db9d90daa769f22578f698b4/jaraco_context-6.1.2.tar.gz"
+    sha256 "f1a6c9d391e661cc5b8d39861ff077a7dc24dc23833ccee564b234b81c82dfe3"
   end
 
   resource "jaraco-functools" do
@@ -109,8 +110,8 @@ class TrezorAgent < Formula
   end
 
   resource "libagent" do
-    url "https://files.pythonhosted.org/packages/df/77/f216ecbc76ce467478e6dfeeca0701f7505cbbb1425044af95f3a0dd7819/libagent-0.16.0.tar.gz"
-    sha256 "9fc83cc8c37bbb22f5eae53ecee44733b7962018da438c942c71a06d753525db"
+    url "https://files.pythonhosted.org/packages/01/f8/c8759b7ed2b8b42a83c9989d37ad4d0594960593067cca40acc560cf4d37/libagent-0.16.1.tar.gz"
+    sha256 "7132c11100e53d3a54cb276fe9d03577c61c8c357025e2716de0812bd94f2763"
   end
 
   resource "libusb1" do
@@ -144,8 +145,8 @@ class TrezorAgent < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/1b/04/fea538adf7dbbd6d186f551d595961e564a3b6715bdf276b477460858672/platformdirs-4.9.2.tar.gz"
-    sha256 "9a33809944b9db043ad67ca0db94b14bf452cc6aeaac46a88ea55b26e2e9d291"
+    url "https://files.pythonhosted.org/packages/19/56/8d4c30c8a1d07013911a8fdbd8f89440ef9f08d07a1b50ab8ca8be5a20f9/platformdirs-4.9.4.tar.gz"
+    sha256 "1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934"
   end
 
   resource "pymsgbox" do
@@ -164,8 +165,8 @@ class TrezorAgent < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "secretstorage" do

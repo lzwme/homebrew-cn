@@ -1,18 +1,18 @@
 class GitDelta < Formula
   desc "Syntax-highlighting pager for git and diff output"
   homepage "https://github.com/dandavison/delta"
-  url "https://ghfast.top/https://github.com/dandavison/delta/archive/refs/tags/0.19.1.tar.gz"
-  sha256 "a2089af1b86264d45a2b5872708701aca4506d1c092be23017bb610af369f283"
+  url "https://ghfast.top/https://github.com/dandavison/delta/archive/refs/tags/0.19.2.tar.gz"
+  sha256 "f59b86f8c8dda4d76a3ba34b8553777a20c3b461646917d8e480fac6531bba9f"
   license "MIT"
   compatibility_version 1
   head "https://github.com/dandavison/delta.git", branch: "main"
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7177bf9406094f5a1002ab58f81ce76be27b54da6b84dfce77f2c42c8dd3f06e"
-    sha256 cellar: :any,                 arm64_sequoia: "81e84b3e38d4c68dfd813afeba57f67a0735a73216c4fc5a6b366062e245d253"
-    sha256 cellar: :any,                 arm64_sonoma:  "54c6503027859be0a8ab512c65dab70b90bb5c64034df7026ec05e2d0dc264c9"
-    sha256 cellar: :any,                 sonoma:        "57a8ab78bd589af4fb229a17c9d8a31bf956746b82d33654f1f9c8e04ea8d8a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f819766b1de8de56b31f7876c9f0eea60fb522c14b1134a524d970c15130c475"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31695c57397af3d1645a14e80913447686aed23718450e1d8b3bd6f5d81ce0e4"
+    sha256 cellar: :any,                 arm64_tahoe:   "c35e06abe0161e57beb2d763cb43ce0beccf024613dbcfb92b31a39093b3397d"
+    sha256 cellar: :any,                 arm64_sequoia: "b45a48b049ca24a824a3f870a467412e3119dac4746f1c13443082bac9d9895f"
+    sha256 cellar: :any,                 arm64_sonoma:  "fa7ed02ac2fcbed7247f3fc58012c5e7cafdc609a849cd4295529c750a5b7df7"
+    sha256 cellar: :any,                 sonoma:        "f0aba2898cd9d587f33b330905c621c75e9230ba27f0ed249d0860fd3f641e46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "622e704b1cfc9f303fabce8859215b32ce6871e30efbd7da80084709afa0d48c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ef78e0c387f35781bb09dcbbadee5d2d10c7b21f00e6107962d1843fac73a5a"
   end
 
   depends_on "pkgconf" => :build

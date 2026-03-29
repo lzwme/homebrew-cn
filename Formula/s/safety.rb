@@ -6,16 +6,16 @@ class Safety < Formula
   url "https://files.pythonhosted.org/packages/6f/e8/1cfffa0d8836de8aa31f4fa7fdeb892c7cfa97cd555039ad5df71ce0e968/safety-3.7.0.tar.gz"
   sha256 "daec15a393cafc32b846b7ef93f9c952a1708863e242341ab5bde2e4beabb54e"
   license "MIT"
-  revision 7
+  revision 8
   head "https://github.com/pyupio/safety.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "65388b373dcaed93cc2e198069b3b24c8d658819fef206316c67160a2ca92fbe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21901f7d7a216e2cee053d6791084d43964e70bad77234a08534daac2d6206e3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff35f14ade10c448d1238d526c77cb0b9919b1b650f1d7e420b91ae535beea34"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c6a88edd36e6550a308b47198616c314916622a32baa06d6e02460d9303da7fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d19bfe284ad6788d6310499715dddad2a08ca82d4ddd5fb0dd14ffc5b77582b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ec533433d5ffa5e775214490f953926cb45a237c748ee4cd29eb36e1acb1a14"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8fd7de3917b97a283a43a1889aeb5a5b3de785378bd2e404e7eefb11a661243"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7614ced61b1d15969a1475e68651d6573779c8253b28466bc4e3152cca75eb2c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "69afd6a9b70d8857f9435c45d53e1b330248907193b0a03ab9122c2b55a58f4d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e063eb867eed9a08a9abf3eef4075495a8ebfb860460c17097d04f346a7d6c78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c13735e1b664bcf7ecfa013637ad6094583c8ff7469104d603e1eeda61fcedb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52ee86cf12397f06c4bcaec7e3e46d24fb9603fac312fc16a1c9cea407fc4d99"
   end
 
   depends_on "certifi" => :no_linkage
@@ -31,8 +31,8 @@ class Safety < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
-    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
+    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
+    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
   end
 
   resource "authlib" do
@@ -101,8 +101,8 @@ class Safety < Formula
   end
 
   resource "marshmallow" do
-    url "https://files.pythonhosted.org/packages/f9/03/261af5efb3d3ce0e2db3fd1e11dc5a96b74a4fb76e488da1c845a8f12345/marshmallow-4.2.2.tar.gz"
-    sha256 "ba40340683a2d1c15103647994ff2f6bc2c8c80da01904cbe5d96ee4baa78d9f"
+    url "https://files.pythonhosted.org/packages/7f/ed/ecdd3a8259680dc9626ed5971b110c9be560962e11f7b0319b45ec2092b1/marshmallow-4.2.3.tar.gz"
+    sha256 "3e3fef6b3603721a25a723b8caedfa488369bddaf9bc03b40b9442c90aebd22b"
   end
 
   resource "mdurl" do
@@ -131,8 +131,8 @@ class Safety < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "rich" do

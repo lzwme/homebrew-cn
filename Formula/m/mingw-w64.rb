@@ -1,8 +1,8 @@
 class MingwW64 < Formula
   desc "Minimalist GNU for Windows and GCC cross-compilers"
   homepage "https://sourceforge.net/projects/mingw-w64/"
-  url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v13.0.0.tar.bz2"
-  sha256 "5afe822af5c4edbf67daaf45eec61d538f49eef6b19524de64897c6b95828caf"
+  url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v14.0.0.tar.bz2"
+  sha256 "6eaf921d9eb987d3820b364ea9775bc19b965ec81490b6fdd716526c28e1995c"
   license all_of: [
     # mingw-w64
     "ZPL-2.1",
@@ -11,7 +11,6 @@ class MingwW64 < Formula
     # gcc
     "GPL-3.0-or-later" => { with: "GCC-exception-3.1" },
   ]
-  revision 2
 
   livecheck do
     url :stable
@@ -19,13 +18,12 @@ class MingwW64 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "687705e89853f818c4750c2e254eba8ff42a6e4383776e29ad4202f54f9be2c2"
-    sha256 arm64_sequoia: "20e35713fd05a9dac2fcda9e0c56468c539526825b19dee23f1f5625992cb28c"
-    sha256 arm64_sonoma:  "a891e793e7b40feed8fcf1aac63e2386d754efcbf2df927b6bd526a2d6ddaf13"
-    sha256 sonoma:        "07abc35bcfcf64297df6a8bb50a587148921b2618f94aec95ba9da370fa17222"
-    sha256 arm64_linux:   "d51e6d1a3acc70fe646a710fe8d9a0a4d672ddf0f23087c0ca5b25e5a176480b"
-    sha256 x86_64_linux:  "b483173565e227feb70a894630749d8538de3067672ac00786c2612d0c8824cd"
+    sha256 arm64_tahoe:   "298d5ca67d497f70b61351ff954b3b3a6384d10d7e23fc35948f227821d730c2"
+    sha256 arm64_sequoia: "07eebaebcae187932b41573b59f3f8e33a92a892608d05ed07cb53930636b129"
+    sha256 arm64_sonoma:  "1add0b74a4cb2cc4980adfdde03e6fda0f9eda143c46ca510f5de8df2176e650"
+    sha256 sonoma:        "fb9719a502355193cf828cb626131890c9e148d3985099d3b0abe6815876a0df"
+    sha256 arm64_linux:   "26f0d10101da67e975b32656345e0bd63affcca8f33f088dd8f3078d66046217"
+    sha256 x86_64_linux:  "27bc6a705a7b8ac8e82b83746dd330d98917bf6741ec3dff8a343558f41f2572"
   end
 
   # binutils searches for zstd using pkg-config
@@ -44,9 +42,9 @@ class MingwW64 < Formula
   end
 
   resource "binutils" do
-    url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.45.tar.bz2"
-    mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.45.tar.bz2"
-    sha256 "1393f90db70c2ebd785fb434d6127f8888c559d5eeb9c006c354b203bab3473e"
+    url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.46.0.tar.bz2"
+    mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.46.0.tar.bz2"
+    sha256 "0f3152632a2a9ce066f20963e9bb40af7cf85b9b6c409ed892fd0676e84ecd12"
   end
 
   resource "gcc" do

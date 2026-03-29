@@ -4,10 +4,9 @@
 class Mu < Formula
   desc "Tool for searching e-mail messages stored in the maildir-format"
   homepage "https://www.djcbsoftware.nl/code/mu/"
-  url "https://ghfast.top/https://github.com/djcb/mu/releases/download/v1.12.15/mu-1.12.15.tar.xz"
-  sha256 "49d75622acff9d8a552622eba29d8abe49ae26d7fe80d835898f75f43e673ee3"
+  url "https://ghfast.top/https://github.com/djcb/mu/releases/download/v1.14.0/mu-1.14.0.tar.xz"
+  sha256 "c5d338ee81664c29d18de757017942b14d01fe313d6fea82f8b7c66c6fd4354a"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/djcb/mu.git", branch: "master"
 
   # We restrict matching to versions with an even-numbered minor version number,
@@ -19,12 +18,12 @@ class Mu < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f0896b34904fbe3c80853358fa99c46ff482c059e18473ad175d57bfda6a934d"
-    sha256 cellar: :any, arm64_sequoia: "7eb99c40ac10ea74a6f1f9df7d3991424fa29f48900b6f116e9e26c0147aa0d3"
-    sha256 cellar: :any, arm64_sonoma:  "4d0867baa3ba0a4653714f01ce6afc91b3ddef2b389a60ac8065b63dc7a25469"
-    sha256 cellar: :any, sonoma:        "4825f732730b110ec0f77c50f52f9e560fb3cf089e78a1c0525b177c3ac3678e"
-    sha256               arm64_linux:   "9c144107909f4d37ffbc9f64fc08ea50e520caa84f530ff5ed900ecda54a641f"
-    sha256               x86_64_linux:  "4e01fe8fbf627795663bba5b74047f240f5d9083ff9014474ef84541b85dc48a"
+    sha256 cellar: :any, arm64_tahoe:   "25ba167fd8092dafc7f4f7cbc5363d62602e46a0182ddfa67c2378a6e825bef6"
+    sha256 cellar: :any, arm64_sequoia: "46223fdb671533083bc863ac1ddd62394494ec02b089fcdf9ddf00525d46f4ed"
+    sha256 cellar: :any, arm64_sonoma:  "613ee156f85937789c665e21018205ee35109cd654a70323cb4c4b71dfed951a"
+    sha256 cellar: :any, sonoma:        "204a9d55f95d494a17921385202ef109acf17d7d6989aa5997397224c3a8a3c0"
+    sha256               arm64_linux:   "6426519de6db9a938c944fdaf363fcaa7864c6632551b00c8b28e8b0094dc450"
+    sha256               x86_64_linux:  "3ffb8f35c036c173b2b28fa1ceb569ac1f3bd552696b6c98a221d67cd91d8f18"
   end
 
   depends_on "emacs" => :build

@@ -1,18 +1,18 @@
 class Zsign < Formula
   desc "Cross-platform codesigning tool for iOS apps"
   homepage "https://github.com/zhlynn/zsign"
-  url "https://ghfast.top/https://github.com/zhlynn/zsign/archive/refs/tags/v0.9.7.tar.gz"
-  sha256 "2ba8b61369c0a6dd370c04ca51f65ad2e8fe2b6a8fcbc82656f30e3be97a6e17"
+  url "https://ghfast.top/https://github.com/zhlynn/zsign/archive/refs/tags/v0.9.9.tar.gz"
+  sha256 "530252e5ae7df80e0ac84e9a9fac4f2529ef383d9816343c0bff9fc6e2c30ae8"
   license "MIT"
   head "https://github.com/zhlynn/zsign.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "09f7baf0255ee39e1de47a40ca39fc23236db122bc185193396cff4ae7bf0d34"
-    sha256 cellar: :any,                 arm64_sequoia: "556e995dd4bb9cb34e3298b57b80532df2a66dddd463a0103663321c8002451c"
-    sha256 cellar: :any,                 arm64_sonoma:  "3af45bba03883fa344504e28ef33aace713aab7094fb8456433020ba0dc38ce0"
-    sha256 cellar: :any,                 sonoma:        "bd765ff2ae77407dfe6c5df0e7fe8c033f470fc0ad5336fed6e493bc1eaf8c87"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3bccc331f4e5ae3d6ba0ce25aa91479a2183a2001baa2f8f59dada466d1f0029"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fc5233ea8baa7fe7e52172652c98c3e1082a66c263716136127ad31d163f0e6"
+    sha256 cellar: :any,                 arm64_tahoe:   "76583aae3de3b1390cd89155b2c58e799b623eec7cf8e9dec9a60db8922cb36f"
+    sha256 cellar: :any,                 arm64_sequoia: "67949bf4c3844e6f304f0c20e4a818ce6fa3e99da6ae803e7def7e113dc29e1b"
+    sha256 cellar: :any,                 arm64_sonoma:  "402a83a4ec47777f58d208e16cd06da6ef28fd1f22ce5cc0fea474e5685b592b"
+    sha256 cellar: :any,                 sonoma:        "3a113b98c9c54d37aea02eeb68b12ed1324a956fa841a2dda0c20ed9fb37e849"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc8673d16d8419c4ce1f67130c00f6bbbbe365df91a77d3d1ff63338f0f91ae5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ff381d5c8e12dfef0e6e03a1ea9dcc81b61236f58e4a13b4d1b2d6858f3f8b4"
   end
 
   depends_on "pkgconf" => :build

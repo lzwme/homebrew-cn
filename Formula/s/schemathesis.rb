@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/c3/cd/e4e98a7a86ffdb05d4d113a3069fd28024856ef3f4a093078572dcb280af/schemathesis-4.14.0.tar.gz"
-  sha256 "acf8c699a191098e980d376647c65ba075ff42c75000cf209c6c757c777365a8"
+  url "https://files.pythonhosted.org/packages/97/97/80ebb54a901b73310d36cd53417d43299869e80618c0c86c2909d18b5aa6/schemathesis-4.14.2.tar.gz"
+  sha256 "a366fefb1beee6cfef837a2828daa0e867be4741a55c044ba315c15a3d84ee42"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8e13939a6db7928bf2c731fe080b36ec109cbdb61f463b7b696427cf5aad0d43"
-    sha256 cellar: :any,                 arm64_sequoia: "ef102a4fd8127ff015c1e39612b0c41d0e6e6faccadd2cfebb247233b4735be8"
-    sha256 cellar: :any,                 arm64_sonoma:  "6a50935d01af15283482b637831b9f1bf43311737466adaf33900872c971ed61"
-    sha256 cellar: :any,                 sonoma:        "3e94db5e9bea252672bebf5b03f6b8e32f85ed1c726cbacef9f472f04703d5f4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "979fca3ffe25ab088951eb2267368396edc1c9efda0d5372248df67510f24afb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a1c8e7cd6ab7321893666dcf6ea72baaa42c9a8a221e6969072b952b9f92ab5"
+    sha256 cellar: :any,                 arm64_tahoe:   "68660476eb9f9e5a8ef93458d2c2caba0ff420a79d523d722e1b11aaeacfa1e9"
+    sha256 cellar: :any,                 arm64_sequoia: "1095dd414ed3505112999411c71a16e4398733e04397cae0537dc92d8e57fbe2"
+    sha256 cellar: :any,                 arm64_sonoma:  "73b10556a8ffd7d19321424e04846fd912537049f2c2cfa8d3fbb1a0373b2aae"
+    sha256 cellar: :any,                 sonoma:        "95eacbdc88bd397e4fa03ef11692aa73c31c21fa278aad7705953ae1715b74bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "72426c125f5ca860a8aa43e7ce1215c31eacc2a6f3fa53b8029527c5d17765af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cf80d5a5d7e341f445803e23c0519fb276ed5974f5952923d780de21aaa61ea"
   end
 
   depends_on "rust" => :build # for jsonschema-rs

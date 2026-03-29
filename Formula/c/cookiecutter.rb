@@ -6,15 +6,16 @@ class Cookiecutter < Formula
   url "https://files.pythonhosted.org/packages/92/03/f4c96d8fd4f5e8af0210bf896eb63927f35d3014a8e8f3bf9d2c43ad3332/cookiecutter-2.7.1.tar.gz"
   sha256 "ca7bb7bc8c6ff441fbf53921b5537668000e38d56e28d763a1b73975c66c6138"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/cookiecutter/cookiecutter.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "635f4aec34562bdacdad83c80a7acaf12b1ea895556a0c9069e0afb9cb712ff8"
-    sha256 cellar: :any,                 arm64_sequoia: "6e4cc8513ae3d69b7a2cd30e9608cf21975517655a6c66b9c372f7a1691697e7"
-    sha256 cellar: :any,                 arm64_sonoma:  "7eea4be2e64567719ae9221ee3fe66a236976131b33ec0a1489b02f5a547dc12"
-    sha256 cellar: :any,                 sonoma:        "06be4f1883231ae523a024ebbe2238f52cabff84251e61c9eed6aab9a43e4f27"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "706dc3df7bdff7580819bebd32e91947317205809d33f5961f4477199112daae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f28864f327301a046771d4a5fea37fc35b1adc9331919fe38e96fdd8ad9d1757"
+    sha256 cellar: :any,                 arm64_tahoe:   "e6250c26fae1ff99ca2a4bdc26dd6b864e370f8a6b9fd31088b4684cbdc5c2f9"
+    sha256 cellar: :any,                 arm64_sequoia: "875c768e8cf65eab9de557d5f0050567a6e00a734b0a88a7f5dab75b496b1989"
+    sha256 cellar: :any,                 arm64_sonoma:  "bc50235b802d469d40b1cd2645e97c430976e2e315a5c4c75be61a3376c7dec7"
+    sha256 cellar: :any,                 sonoma:        "4379070b9de233f2b07c3545681733cd67bc6b49b8140a29c78542f4d69fd646"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "724119991e3ffb8aa040a2cb678d96654e27a01b0d9aefd8839cc718313ea4ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5aecb38387951a5eed8ca72d403df506772f6040c70757e2b4df0e8285f83bee"
   end
 
   depends_on "certifi" => :no_linkage
@@ -29,18 +30,13 @@ class Cookiecutter < Formula
   end
 
   resource "binaryornot" do
-    url "https://files.pythonhosted.org/packages/a7/fe/7ebfec74d49f97fc55cd38240c7a7d08134002b1e14be8c3897c0dd5e49b/binaryornot-0.4.4.tar.gz"
-    sha256 "359501dfc9d40632edc9fac890e19542db1a287bbcfa58175b66658392018061"
-  end
-
-  resource "chardet" do
-    url "https://files.pythonhosted.org/packages/a3/20/e1e92c8f05666debb7c0c18285646195ef9915e72127771962408609815e/chardet-7.0.0.tar.gz"
-    sha256 "5272ea14c48cb5f38e87e698c641a7ea2a8b1db6c42ea729527fbe8bd621f39c"
+    url "https://files.pythonhosted.org/packages/86/72/4755b85101f37707c71526a301c1203e413c715a0016ecb592de3d2dcfff/binaryornot-0.6.0.tar.gz"
+    sha256 "cc8d57cfa71d74ff8c28a7726734d53a851d02fad9e3a5581fb807f989f702f0"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "click" do
@@ -94,8 +90,8 @@ class Cookiecutter < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "rich" do
@@ -130,8 +126,16 @@ class Cookiecutter < Formula
   end
 
   test do
-    system "git", "clone", "https://github.com/audreyr/cookiecutter-pypackage.git"
-    system bin/"cookiecutter", "--no-input", "cookiecutter-pypackage"
-    assert (testpath/"python-boilerplate").directory?
+    assert_match version.to_s, shell_output("#{bin}/cookiecutter --version")
+
+    system "git", "clone", "https://github.com/audreyfeldroy/cookiecutter-pypackage.git", "--depth", "1"
+
+    require "open3"
+    Open3.popen3(bin/"cookiecutter", "--no-input", "cookiecutter-pypackage") do |stdin, _stdout|
+      stdin.write "public"
+      sleep 3
+      sleep 5 if OS.mac? && Hardware::CPU.intel?
+      assert (testpath/"Python-Boilerplate").directory?
+    end
   end
 end

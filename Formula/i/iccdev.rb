@@ -1,8 +1,8 @@
 class Iccdev < Formula
   desc "Developer tools for interacting with and manipulating ICC profiles"
   homepage "https://github.com/InternationalColorConsortium/iccDEV"
-  url "https://ghfast.top/https://github.com/InternationalColorConsortium/iccDEV/archive/refs/tags/v2.3.1.5.tar.gz"
-  sha256 "b475e0f42b41a53689d0e67d86eddb902156183fd4de3742c6a5c18f5b065048"
+  url "https://ghfast.top/https://github.com/InternationalColorConsortium/iccDEV/archive/refs/tags/v2.3.1.6.tar.gz"
+  sha256 "ee89402db8f4e5a6cd732dca6f16545cc16bd14590b1d7b191ff593e5cbb87a6"
   license "BSD-3-Clause"
 
   # Skip `wasm-` tags
@@ -12,12 +12,12 @@ class Iccdev < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bd74477116a0e2c2e0e842c6650f9d27fedf3a3ac3dc1ceb8d62063031f7d34c"
-    sha256 cellar: :any,                 arm64_sequoia: "93ae485471749e3bd7bda7973b103e2b24737d9265d0b715e6d8373bb040f1ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "337d4907871bea4d95bd52e0f65c9ac8da54339bcec876930562eba762e26e77"
-    sha256 cellar: :any,                 sonoma:        "f597aa258193d6774f669818a4503fe0c857e462e679b8b8a8d9943109a961e4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "38021eddee86c800e712d71279d507941a40bc6df4d4f9541f174024782c78a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e54aa6f7fae5b7bc4b14c07ceca75f81ba83aecf957641ede12552a02ca53cf8"
+    sha256 cellar: :any,                 arm64_tahoe:   "163abab7e37c33a5f15f6c507c45d60602534f5ea40dcc28021eab8c1f7c2687"
+    sha256 cellar: :any,                 arm64_sequoia: "e89b52a2489e628a00fda054193845d197f52bb45a89362f93902a5753d47f18"
+    sha256 cellar: :any,                 arm64_sonoma:  "f584467504056635de65645dc44cabf7e3cd037dd8e654342e9fd080a819a405"
+    sha256 cellar: :any,                 sonoma:        "f0fe6a53ac27e661113ff7574bfc57ecbf7cef57ce5b5d1faf0cc841ad528681"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c53c81d947cfe9ec5a47a478f69b77734636e2ad0fcb9406c1a5e7e917f6f120"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f628fbbb8fbbf5f8219ffc3e189457e780e05a4f2101c4ba64df23ff98636e79"
   end
 
   depends_on "cmake" => :build

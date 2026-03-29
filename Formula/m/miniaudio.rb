@@ -30,15 +30,23 @@ class Miniaudio < Formula
   test do
     (testpath/"test.c").write <<~C
       #include <miniaudio/miniaudio.h>
-      #include <assert.h>
       int main(void) {
-        assert(MA_VERSION_MAJOR == 0);
-        assert(MA_VERSION_MINOR == 11);
-        assert(MA_VERSION_REVISION == 25);
+        ma_context context;
+        if (ma_context_init(NULL, 0, NULL, &context) != MA_SUCCESS) return 1;
+        ma_context_uninit(&context);
         return 0;
       }
     C
-    system ENV.cc, "test.c", "-I#{include}", "-o", "test"
+
+    args = %W[
+      test.c
+      -I#{include}
+      -L#{lib}
+      -lminiaudio
+      -lm
+    ]
+    args += %w[-o test]
+    system ENV.cc, *args
     system "./test"
   end
 end

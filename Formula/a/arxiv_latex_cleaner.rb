@@ -3,18 +3,18 @@ class ArxivLatexCleaner < Formula
 
   desc "Clean LaTeX code to submit to arXiv"
   homepage "https://github.com/google-research/arxiv-latex-cleaner"
-  url "https://files.pythonhosted.org/packages/fa/0d/61cd8e7754424acae444e3b23bbcacf6487afffbf4aff17498b9d60c4e3f/arxiv_latex_cleaner-1.0.10.tar.gz"
-  sha256 "cfe5f5c3ce2b69ea8a984eac61212e17b69f52aa0a5a7bb1cde51699eb50a7a3"
+  url "https://files.pythonhosted.org/packages/73/ad/a58581c70d89cd1b26dffb87ff4722e3607dad8884a507da25401fb921c0/arxiv_latex_cleaner-1.0.11.tar.gz"
+  sha256 "13884594a0fadbe4a055e594a67b9a9be9a418453edadc8db1810bf801322f9b"
   license "Apache-2.0"
   head "https://github.com/google-research/arxiv-latex-cleaner.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0da5280bca2eca89977d3b01756ad82337843dc1fb8745f21997bcd3e28fca9f"
-    sha256 cellar: :any,                 arm64_sequoia: "172ced30cb2cd23b7dfeca59747d5687d2bf9f6b2bb6967702fa8c76d04d9a65"
-    sha256 cellar: :any,                 arm64_sonoma:  "c289a91a6f8245b8c47ffe5de881489a839b2bc94e75e9c692cd0eb461129e79"
-    sha256 cellar: :any,                 sonoma:        "bd748ed3dbaf4ee8351a91571055f25bf2474b6fe499ba4cf68ccd8643ef5403"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63fc24618ce154eb199abfcb63facd8ca323c08d4d3a3fa862529fb79fa7b958"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfc0dda695a616418a1d0a85a02eba734027dc50368ae6f7db1f4f118dd71000"
+    sha256 cellar: :any,                 arm64_tahoe:   "6cc532ee61c786f42b1a398ea715b623a6ee2bc2dd2dd83bff56f4cdb79d66b2"
+    sha256 cellar: :any,                 arm64_sequoia: "ca37f949a97153f7a0dd9bb851526f569509eff27412b343c8a1c749ff6e8865"
+    sha256 cellar: :any,                 arm64_sonoma:  "aa43626eda3a4d5c2900c97d9ce7e258ddb311ee217fda9967fc64f1d22d66e8"
+    sha256 cellar: :any,                 sonoma:        "850f2aa206d1843fc85a816fae19d1681999091b65563d1db34254cdc8481035"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c55da219f023c8014aad3ccd3b00ec9e3bf3bd9c586c47feca815eb4d4b6af9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a8578828a8dd755dd9ac95ecf09ecf6ba815f9eba2cc6c1120bb71363f4d141"
   end
 
   depends_on "libyaml"

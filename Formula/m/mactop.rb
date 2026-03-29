@@ -1,15 +1,15 @@
 class Mactop < Formula
   desc "Apple Silicon Monitor Top written in Go Lang"
   homepage "https://github.com/metaspartan/mactop"
-  url "https://ghfast.top/https://github.com/metaspartan/mactop/archive/refs/tags/v2.1.1.tar.gz"
-  sha256 "afe31e876841d7362d3514e5aa927587adc0d351d88fa3df165619cc8c680a2a"
+  url "https://ghfast.top/https://github.com/metaspartan/mactop/archive/refs/tags/v2.1.2.tar.gz"
+  sha256 "3ebfacea4ad9e4f570a1425f02263cb2d76c6df24a2523ed7312ba42701d2468"
   license "MIT"
   head "https://github.com/metaspartan/mactop.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e883acda3840ae8d107c931f54d56250666d016d9f8ecc6b59b38306c2589440"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "946bb00996c49b882d39c906f167f8b91fc14b01f7ba628248fe37972ced595e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db008db6910a0fdb0a821d12e21bb4a7ebf0bc46d86ef98ca5e53b0ea60b65cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8eef1556f06b537034c7ef1fc844226e76f4640512c98b52cd05fa5363d79e21"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5df5de342d3c799976de6803c76fd016145c9a2bfa77713fb6ed929e9cc17e38"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a23ae4ca26601de341e06f50a59a0a7a5da7209e578666e9a3568fa740dd8f3"
   end
 
   depends_on "go" => :build

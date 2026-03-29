@@ -6,15 +6,16 @@ class Subliminal < Formula
   url "https://files.pythonhosted.org/packages/56/05/3529ed61f1471fe7c01a6a14183e21c12f3ae09dc79f796962a484d91f28/subliminal-2.6.0.tar.gz"
   sha256 "e6e7aee1b218d543dcb3b7b2248ea0f92afc4c223ce3e7af8d2c3843e31bafe5"
   license "MIT"
+  revision 1
   head "https://github.com/Diaoul/subliminal.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c4d4f656a56e6929588150705ec3662e90edc650b63f70eb4831d5a75dee587a"
-    sha256 cellar: :any,                 arm64_sequoia: "92d9fe21446262eb908ef8cf71d245cbcfe1706b7cd16f5e18d82a26f93f3294"
-    sha256 cellar: :any,                 arm64_sonoma:  "af2557f5c0ede40e08839ec639fd004b5e8c135a47bbd8abdaf9c2c14c590f4b"
-    sha256 cellar: :any,                 sonoma:        "94060e2c0df7a3c1fd819f44f07b6523b8d4f43c4a1a4252163bbf8427d50a33"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b12445b694c85e33d977df92df916ac156aaf35ef0a57069ee6a85b4dd172bfd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9596a6773d4488b592e7cd00e740999aa2c5d04e5f1ae75cdded115e04923eea"
+    sha256 cellar: :any,                 arm64_tahoe:   "bab61792e6fcb6e4059332a5742829768a7202dd0efd1b85f81aefe9e0fdcca9"
+    sha256 cellar: :any,                 arm64_sequoia: "cee655d18f66eb7de264af5f6e162bc859ffb31524eb5d1eae609e9769e826d4"
+    sha256 cellar: :any,                 arm64_sonoma:  "a29d640878a30ebdd923f0c188a40999fb3f7a092168c34328ad05f3bb3d7b7f"
+    sha256 cellar: :any,                 sonoma:        "31444efb9fba3d6a4c235d26f094106463517be1c9a73723ff1a124fd5756194"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "306b3df0a68068f21ca9d05fff4b47397e67fe63270b75ea2d67d17943529023"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5380c21f667807b76af6bab935173addbcd1400d388ad787918ce5a7dee94cf"
   end
 
   depends_on "certifi" => :no_linkage
@@ -34,13 +35,13 @@ class Subliminal < Formula
   end
 
   resource "chardet" do
-    url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
-    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
+    url "https://files.pythonhosted.org/packages/91/d7/47988d40231b41376f5a66346ef3b322c81091dfd4c0f84df5a1e3bb06b5/chardet-7.4.0.post1-py3-none-any.whl"
+    sha256 "57a62ef50f69bc2fb3a3ea1ffffec6d10f3d2112d3b05d6e3cb15c2c9b55f6cc"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "click" do
@@ -89,8 +90,8 @@ class Subliminal < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/1b/04/fea538adf7dbbd6d186f551d595961e564a3b6715bdf276b477460858672/platformdirs-4.9.2.tar.gz"
-    sha256 "9a33809944b9db043ad67ca0db94b14bf452cc6aeaac46a88ea55b26e2e9d291"
+    url "https://files.pythonhosted.org/packages/19/56/8d4c30c8a1d07013911a8fdbd8f89440ef9f08d07a1b50ab8ca8be5a20f9/platformdirs-4.9.4.tar.gz"
+    sha256 "1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934"
   end
 
   resource "pymediainfo" do
@@ -99,8 +100,8 @@ class Subliminal < Formula
   end
 
   resource "pysubs2" do
-    url "https://files.pythonhosted.org/packages/31/4a/becf78d9d3df56e6c4a9c50b83794e5436b6c5ab6dd8a3f934e94c89338c/pysubs2-1.8.0.tar.gz"
-    sha256 "3397bb58a4a15b1325ba2ae3fd4d7c214e2c0ddb9f33190d6280d783bb433b20"
+    url "https://files.pythonhosted.org/packages/c4/73/eff32fcc4babb32b76d7fce6d74995de2d04201f7b43c9a7764554d6ab49/pysubs2-1.8.1.tar.gz"
+    sha256 "af3a288643da87db6bb13dbde70e94c9570765cc8f6423b1c21de11f16d734da"
   end
 
   resource "python-dateutil" do
@@ -119,8 +120,8 @@ class Subliminal < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "six" do

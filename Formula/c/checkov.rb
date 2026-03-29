@@ -6,6 +6,7 @@ class Checkov < Formula
   url "https://files.pythonhosted.org/packages/ba/47/81dc68e33ba323b973c90a7792b547e44d80afb687e402cf00412d709371/checkov-3.2.510.tar.gz"
   sha256 "db065e2d3257440a9626543184e2f89ba04779b51757f3db65e0af3f1961e538"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://pypi.org/rss/project/checkov/releases.xml"
@@ -17,12 +18,12 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c49d8497e183f0ee86d242380b5eba3e082aabfb5c6de8ce8e8fa6b83ed85a54"
-    sha256 cellar: :any,                 arm64_sequoia: "493fd8fefeaef46000d408789d86c1fdd2434d9c33df4d5dc896c4f73cdc0ddc"
-    sha256 cellar: :any,                 arm64_sonoma:  "dd2a3e39c9be01e76ec73050fd53259049ffa3da419705f12d7013eea11f8a88"
-    sha256 cellar: :any,                 sonoma:        "10edd4e568241778418f04f18c17bd9adef77408cb0d0561d557fbcf4be373bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5290693fd09de77199a8d3fcc1e7731e63a5b28875c0ea8690a59f50aa87546"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2fadde58f37a4739c7b8e7408ead6f23e142aebca907cc61d71260b3e1d89be"
+    sha256 cellar: :any,                 arm64_tahoe:   "555decf36f72756f5c87d552ff6f19f3339fb7744cf3b5fdcd99daee44fe40fb"
+    sha256 cellar: :any,                 arm64_sequoia: "180f4daec3fdbf099d6384b714e145682ea402c8a0b6f424b8794591781ea168"
+    sha256 cellar: :any,                 arm64_sonoma:  "26011f02065ca7e74b252a684c2a38603cf14969769e0b2b86e4a98bfd0ad050"
+    sha256 cellar: :any,                 sonoma:        "8d165e5da1321d1c30f20c83b0e5037e400a1cbeaa61e0ba17c888ebfc0b0c73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb6c55116c816896b88ed1ff53a1436d11f014eb1d5f4fa343783d2b93263200"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43f9a19e0632e433206f3b4e184cef8779a8c36ca4ec53a7c278484fe9b219ff"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -75,8 +76,8 @@ class Checkov < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
-    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
+    url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
+    sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
   end
 
   resource "bc-detect-secrets" do
@@ -355,8 +356,8 @@ class Checkov < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "rustworkx" do

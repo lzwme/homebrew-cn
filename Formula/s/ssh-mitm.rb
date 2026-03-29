@@ -6,16 +6,16 @@ class SshMitm < Formula
   url "https://files.pythonhosted.org/packages/f0/4e/c804d08c336bcff29fd665fdc3ff9d3698d529b1d75462b89bc53527862a/ssh_mitm-5.0.1.tar.gz"
   sha256 "221dafeed602c4cca7a3c7fb2eee55eb9725ea11d19a75fd13c9bc3a1cf274ed"
   license "GPL-3.0-only"
-  revision 2
+  revision 3
   head "https://github.com/ssh-mitm/ssh-mitm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9aacf02b8edaac0d51db1761c733149853ab1767a92444bfd9ca0ef1fcda32b7"
-    sha256 cellar: :any,                 arm64_sequoia: "fb2a77d504d881511a270440f0491152fcb6cdb6f7d7b267d30d397db3d548ee"
-    sha256 cellar: :any,                 arm64_sonoma:  "9ff87606e5c61c27a5f67767c6d055f4bff18e215e7e190c4f62cb56d161e0db"
-    sha256 cellar: :any,                 sonoma:        "51bad8720276750080843a272e394aca10bae95411b7bb601b04abec2a8d65b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8553cf164c140040c777c54d9473200d9685c6589df7f676ca3e1ce5c2e6ba2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c788d3f37a0a03db875b307a9805b384d92efda60a2629769fcd80486f0ec4dd"
+    sha256 cellar: :any,                 arm64_tahoe:   "80a4fc1fab0bf659bf577c6766156f05237a1c9f5e30daf2cbddb731b1733988"
+    sha256 cellar: :any,                 arm64_sequoia: "b6017f81f7da88dbfc9902569f66007a2c8b3367daf9f3cefb6228602846a015"
+    sha256 cellar: :any,                 arm64_sonoma:  "464a56d8b777187465d567ce33328828f4c2f584dd810b34f84148a7eaf89bd7"
+    sha256 cellar: :any,                 sonoma:        "a1eb64f86acbde813862780fb56136452a8306346ba27516574369a3c35f324c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5f437768af4212478bca40e2b6da9d2e48fc877320da2e2e87760c9b0c9518d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1f411807bfbb63d204b0521fa32883186f478b544ddd8b086a048c9fbdc1abf"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -47,8 +47,8 @@ class SshMitm < Formula
   end
 
   resource "ecdsa" do
-    url "https://files.pythonhosted.org/packages/c0/1f/924e3caae75f471eae4b26bd13b698f6af2c44279f67af317439c2f4c46a/ecdsa-0.19.1.tar.gz"
-    sha256 "478cba7b62555866fcb3bb3fe985e06decbdb68ef55713c4e5ab98c57d508e61"
+    url "https://files.pythonhosted.org/packages/25/ca/8de7744cb3bc966c85430ca2d0fcaeea872507c6a4cf6e007f7fe269ed9d/ecdsa-0.19.2.tar.gz"
+    sha256 "62635b0ac1ca2e027f82122b5b81cb706edc38cd91c63dda28e4f3455a2bf930"
   end
 
   resource "markdown-it-py" do
@@ -62,8 +62,8 @@ class SshMitm < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "paramiko" do
@@ -87,8 +87,8 @@ class SshMitm < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/f8/bf/abbd3cdfb8fbc7fb3d4d38d320f2441b1e7cbe29be4f23797b4a2b5d8aac/pytz-2025.2.tar.gz"
-    sha256 "360b9e3dbb49a209c21ad61809c7fb453643e048b38924c765813546746e81c3"
+    url "https://files.pythonhosted.org/packages/56/db/b8721d71d945e6a8ac63c0fc900b2067181dbb50805958d4d4661cf7d277/pytz-2026.1.post1.tar.gz"
+    sha256 "3378dde6a0c3d26719182142c56e60c7f9af7e968076f31aae569d72a0358ee1"
   end
 
   resource "pyyaml" do
@@ -97,8 +97,8 @@ class SshMitm < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
-    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
+    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
+    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
   end
 
   resource "six" do
@@ -112,8 +112,8 @@ class SshMitm < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/49/2a/6de8a50cb435b7f42c46126cf1a54b2aab81784e74c8595c8e025e8f36d3/wrapt-2.0.1.tar.gz"
-    sha256 "9c9c635e78497cacb81e84f8b11b23e0aacac7a136e73b8e5b2109a1d9fc468f"
+    url "https://files.pythonhosted.org/packages/2e/64/925f213fdcbb9baeb1530449ac71a4d57fc361c053d06bf78d0c5c7cd80c/wrapt-2.1.2.tar.gz"
+    sha256 "3996a67eecc2c68fd47b4e3c564405a5777367adfd9b8abb58387b63ee83b21e"
   end
 
   def install

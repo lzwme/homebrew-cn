@@ -6,16 +6,16 @@ class Cruft < Formula
   url "https://files.pythonhosted.org/packages/d1/7e/0e20012f2aa156e5d6a70483a8d90accb7ed4966dddb0c58987d9f6eba12/cruft-2.16.0.tar.gz"
   sha256 "184662853fbc1c16c0137fe0e9444e0cbe95e40362f5ebb2d9fae33d9223e73f"
   license "MIT"
-  revision 5
+  revision 6
   head "https://github.com/cruft/cruft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fdfd6b696586942c5e8a5f97a1fa1e1597cdc1c1a6900aed3bdab43954bcf557"
-    sha256 cellar: :any,                 arm64_sequoia: "e9e65ba51a0bbeb815a7b3fab7b4012be2f0a1e17b24671602116431bfb797d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "c1a0118c3ebd8563f826a46ac0ad2a393913768c093156df0605a1a0bbece908"
-    sha256 cellar: :any,                 sonoma:        "5dadfbdd91312929c3be56d5036f67f45d8d048726ef90fb932acb59813cfc42"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "37397341d7af90f63f3c57c45ec961365e4c8d8eeeec2dd4e99ad1e9f2591edb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbcefed8890162bd9094ceaba1615003bb5d09b7158a31c98a4b5b5bb01d3628"
+    sha256 cellar: :any,                 arm64_tahoe:   "9ad9262f43a39d03096c2f3fa869c021c094893a6d20fd6823578429698ba4ae"
+    sha256 cellar: :any,                 arm64_sequoia: "fd20e7676086c2fa4a08eaea7d1ffad52d5b1e29c45ae449cc0deb5a86f94730"
+    sha256 cellar: :any,                 arm64_sonoma:  "4af835f648f5bf39175d2308c601de3df373f8eb85f35cf6ee3812ced08356fd"
+    sha256 cellar: :any,                 sonoma:        "3a9ed9e1bcd89d5313e54c0493967d44943137daceddb75416e259f482d6c28f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cf76b4712dd011148ee71aa1c3cc33e6b22df59b2013d339fbe9502a40efc38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6814373275b662146a108d743bd359e356ebecfea23b968b49f03800d6774ff5"
   end
 
   depends_on "certifi" => :no_linkage
@@ -24,24 +24,24 @@ class Cruft < Formula
 
   pypi_packages exclude_packages: "certifi"
 
+  resource "annotated-doc" do
+    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
+    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+  end
+
   resource "arrow" do
     url "https://files.pythonhosted.org/packages/b9/33/032cdc44182491aa708d06a68b62434140d8c50820a087fac7af37703357/arrow-1.4.0.tar.gz"
     sha256 "ed0cc050e98001b8779e84d461b0098c4ac597e88704a655582b21d116e526d7"
   end
 
   resource "binaryornot" do
-    url "https://files.pythonhosted.org/packages/a7/fe/7ebfec74d49f97fc55cd38240c7a7d08134002b1e14be8c3897c0dd5e49b/binaryornot-0.4.4.tar.gz"
-    sha256 "359501dfc9d40632edc9fac890e19542db1a287bbcfa58175b66658392018061"
-  end
-
-  resource "chardet" do
-    url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
-    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
+    url "https://files.pythonhosted.org/packages/86/72/4755b85101f37707c71526a301c1203e413c715a0016ecb592de3d2dcfff/binaryornot-0.6.0.tar.gz"
+    sha256 "cc8d57cfa71d74ff8c28a7726734d53a851d02fad9e3a5581fb807f989f702f0"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "click" do
@@ -50,8 +50,8 @@ class Cruft < Formula
   end
 
   resource "cookiecutter" do
-    url "https://files.pythonhosted.org/packages/52/17/9f2cd228eb949a91915acd38d3eecdc9d8893dde353b603f0db7e9f6be55/cookiecutter-2.6.0.tar.gz"
-    sha256 "db21f8169ea4f4fdc2408d48ca44859349de2647fbe494a9d6c3edfc0542c21c"
+    url "https://files.pythonhosted.org/packages/92/03/f4c96d8fd4f5e8af0210bf896eb63927f35d3014a8e8f3bf9d2c43ad3332/cookiecutter-2.7.1.tar.gz"
+    sha256 "ca7bb7bc8c6ff441fbf53921b5537668000e38d56e28d763a1b73975c66c6138"
   end
 
   resource "gitdb" do
@@ -110,13 +110,13 @@ class Cruft < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
-    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
+    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
+    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
   end
 
   resource "shellingham" do
@@ -130,8 +130,8 @@ class Cruft < Formula
   end
 
   resource "smmap" do
-    url "https://files.pythonhosted.org/packages/44/cd/a040c4b3119bbe532e5b0732286f805445375489fceaec1f48306068ee3b/smmap-5.0.2.tar.gz"
-    sha256 "26ea65a03958fa0c8a1c7e8c7a58fdc77221b8910f6be2131affade476898ad5"
+    url "https://files.pythonhosted.org/packages/1f/ea/49c993d6dfdd7338c9b1000a0f36817ed7ec84577ae2e52f890d1a4ff909/smmap-5.0.3.tar.gz"
+    sha256 "4d9debb8b99007ae47165abc08670bd74cb74b5227dda7f643eccc4e9eb5642c"
   end
 
   resource "text-unidecode" do
@@ -140,13 +140,8 @@ class Cruft < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/36/bf/8825b5929afd84d0dabd606c67cd57b8388cb3ec385f7ef19c5cc2202069/typer-0.21.1.tar.gz"
-    sha256 "ea835607cd752343b6b2b7ce676893e5a0324082268b48f27aa058bdb7d2145d"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f5/24/cb09efec5cc954f7f9b930bf8279447d24618bb6758d4f6adf2574c41780/typer-0.24.1.tar.gz"
+    sha256 "e39b4732d65fbdcde189ae76cf7cd48aeae72919dea1fdfc16593be016256b45"
   end
 
   resource "tzdata" do
@@ -169,8 +164,17 @@ class Cruft < Formula
   end
 
   test do
-    system bin/"cruft", "create", "--no-input", "https://github.com/audreyr/cookiecutter-pypackage.git"
-    assert (testpath/"python-boilerplate").directory?
-    assert_path_exists testpath/"python-boilerplate/.cruft.json"
+    assert_match version.to_s, shell_output("#{bin}/cruft --help")
+
+    system "git", "clone", "https://github.com/audreyfeldroy/cookiecutter-pypackage.git", "--depth", "1"
+
+    require "open3"
+    Open3.popen3(bin/"cruft", "create", "--no-input", "cookiecutter-pypackage") do |stdin, _stdout|
+      stdin.write "public"
+      sleep 3
+      sleep 5 if OS.mac? && Hardware::CPU.intel?
+      assert (testpath/"Python-Boilerplate").directory?
+      assert_path_exists testpath/"Python-Boilerplate/.cruft.json"
+    end
   end
 end

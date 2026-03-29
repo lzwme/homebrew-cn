@@ -14,12 +14,13 @@ class Sprocket < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6f8ea3990cf53b3addd7c304ac7935603d55851fc002e472d59d6bced9eaa6ae"
-    sha256 cellar: :any,                 arm64_sequoia: "596da87c69cdf235ed1607e4b94f321435d2893cf90b0c74e80235016a448159"
-    sha256 cellar: :any,                 arm64_sonoma:  "b03bf20a3605a350ddcb29185ee4c54252d76ca619ff2ef7231024e6c80ad1cf"
-    sha256 cellar: :any,                 sonoma:        "14b5a2e82c8a11d53af09ac4bb3f3d426a65199253176fadf6a973aa35109f3e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c0dfdc77b2e5e2865c61e2b3fedee4d44ebcac5f5b62671fa510901c96e1b26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd49695e9e892c036a5700639b762f95a5d23053e437fdbacbc9365e7d7fe53c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "7b5b4674bbe74baa303745ad30a16e1eee09815a12681cccdd9f4014c47f0425"
+    sha256 cellar: :any,                 arm64_sequoia: "f20bfae256ab5db082cf63116a3ce167a481929214ee14c2941809b94c25e719"
+    sha256 cellar: :any,                 arm64_sonoma:  "11a6c1c241bc44c190e219eb4771618c48f3afb03394b91a8735e2093029d11d"
+    sha256 cellar: :any,                 sonoma:        "f5b8f7374e2036af18819d3004e821dc1eaab8aba47476062fa1c843890742f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "964c7b25ea8981adda2037f79197937dbcd67b8f8137fbcdaa68f1507ded08cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab377ecabb1e59c3ce4993a558bd4f2c2f08f286fe4d282fdb224fd3c89ce07c"
   end
 
   depends_on "pkgconf" => :build
@@ -32,6 +33,8 @@ class Sprocket < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+
+    generate_completions_from_executable(bin/"sprocket", "completions", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

@@ -6,16 +6,16 @@ class Gptline < Formula
   url "https://files.pythonhosted.org/packages/5b/28/d15a9a5b349c77a051a633e13141151314f352067ec7d516220bd6b20fcf/gptline-1.0.8.tar.gz"
   sha256 "4a0a0b5fa4f23e5f2ad7ac5bf44a9143e5de3757b0b8eefe5d78a7757d1d34bb"
   license "GPL-3.0-only"
-  revision 16
+  revision 17
   head "https://github.com/gnachman/gptline.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6752469a590669e395957bb854c8740bb6b9e33062805b0b6c608b69b23df7fc"
-    sha256 cellar: :any,                 arm64_sequoia: "bd97e4293d585aef1dce46bb2b14b95c6dd032ea307da37fdc7637361f3b4f10"
-    sha256 cellar: :any,                 arm64_sonoma:  "296d499cc33a0094b10d3ef46358f4638b99376c9bba7c2a11b7b5a3bea33c00"
-    sha256 cellar: :any,                 sonoma:        "591c460c6f794b3dffba4a0d52f50c3515cbe644fc856dd98f9d11a9cd121530"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "407f3895c23ddfd7da1c7973454164750b2d1c38ad44b0352047a5f040852a96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b4aed14dda1783a1529d49a8064deeff0ce08a303195f207ec7b2c142065bee"
+    sha256 cellar: :any,                 arm64_tahoe:   "69a63c48ceb9c741bbe84a0c6c1d6f2e338a20d6e35e4b399b198fc2b1877f5f"
+    sha256 cellar: :any,                 arm64_sequoia: "d4602a0560532b6b11e50a7d2a4937561f653ea8d1cff3dfb4a4c5d5b4574b23"
+    sha256 cellar: :any,                 arm64_sonoma:  "05050b91fa3b4b02a3c9ebf096cc1a8c6a21ef3baa7e2faa47e9ebe4fa460400"
+    sha256 cellar: :any,                 sonoma:        "43ab2a1b0c4a7069ea754b1e78c970d4ab6ae52b289270c0d064e8014fc0b722"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f310a1645305960b11fdab4c1513c248c1986f210b10385836cf44a959b0c1cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a33b868d4eb5a7e7758c6cfd96c7f4d60f5b0a4a97eae84a20fcd2e78b7c92bd"
   end
 
   depends_on "pkgconf" => :build
@@ -43,8 +43,8 @@ class Gptline < Formula
                 extra_packages:   "lxml-html-clean"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
-    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
+    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
+    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
   end
 
   resource "beautifulsoup4" do
@@ -153,8 +153,8 @@ class Gptline < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/b4/15/203d537e58986b5673e7f232453a2a2f110f22757b15921cbdeea392e520/openai-2.29.0.tar.gz"
-    sha256 "32d09eb2f661b38d3edd7d7e1a2943d1633f572596febe64c0cd370c86d52bec"
+    url "https://files.pythonhosted.org/packages/88/15/52580c8fbc16d0675d516e8749806eda679b16de1e4434ea06fb6feaa610/openai-2.30.0.tar.gz"
+    sha256 "92f7661c990bda4b22a941806c83eabe4896c3094465030dd882a71abe80c885"
   end
 
   resource "prompt-toolkit" do
@@ -183,8 +183,8 @@ class Gptline < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "requests-file" do

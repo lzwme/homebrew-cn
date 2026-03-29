@@ -1,9 +1,9 @@
 class Libpng < Formula
   desc "Library for manipulating PNG images"
   homepage "https://www.libpng.org/pub/png/libpng.html"
-  url "https://downloads.sourceforge.net/project/libpng/libpng16/1.6.55/libpng-1.6.55.tar.xz"
-  mirror "https://sourceforge.mirrorservice.org/l/li/libpng/libpng16/1.6.55/libpng-1.6.55.tar.xz"
-  sha256 "d925722864837ad5ae2a82070d4b2e0603dc72af44bd457c3962298258b8e82d"
+  url "https://downloads.sourceforge.net/project/libpng/libpng16/1.6.56/libpng-1.6.56.tar.xz"
+  mirror "https://sourceforge.mirrorservice.org/l/li/libpng/libpng16/1.6.56/libpng-1.6.56.tar.xz"
+  sha256 "f7d8bf1601b7804f583a254ab343a6549ca6cf27d255c302c47af2d9d36a6f18"
   license "libpng-2.0"
   compatibility_version 1
 
@@ -13,12 +13,12 @@ class Libpng < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "18e55305589da2de3f27d7162aa331bcaf020e3f50d1310fe14d4539d3d90281"
-    sha256 cellar: :any,                 arm64_sequoia: "3219ece24a16bfc3b51f052101fc38213ff27fa12bfc866d6f7e4a28f70a9581"
-    sha256 cellar: :any,                 arm64_sonoma:  "8f97640017cc367b9ef1049352f3cda54fd34686ec6b04eb58f34b8c26b85dbb"
-    sha256 cellar: :any,                 sonoma:        "878c3075639e125f47cd730b7af85e4b1087dee15b08d9a9cbdaff6abf9ab8dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "65fe1a45dab0ee25b54582b37968a5c5fb5e065ff22ad9debf05b948ca0525c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41f6eb3ea4da5e7996f09d3eb6ba9b02db91752f4b70c31abaee9a8bad1b7aa1"
+    sha256 cellar: :any,                 arm64_tahoe:   "293be4230646bf12d6ec509ad04fb7687d6bcb62e70f7662bb9f3a7082b02c2c"
+    sha256 cellar: :any,                 arm64_sequoia: "90f24ecc6634943512f759636b45958a8df87f740cb77e3436543dace84c995a"
+    sha256 cellar: :any,                 arm64_sonoma:  "c12fb89b2d4f107d82e71be5f70ba39f58da5fa78d5a244564e20d968d65620a"
+    sha256 cellar: :any,                 sonoma:        "f4b55df78d51ddb24cd92eb73abb462520d0e1b11ff6d8c0f8fbe76b79bc9c17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dff215af8bf71c4ea63b6868d23e7301f382c2f7e80845cd6c162410feeb7789"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c766bfc93270a082725d527bc42669309318b6d8e5bc6fa67a2e20bb92640ba8"
   end
 
   head do
