@@ -46,7 +46,7 @@ class Mesa < Formula
   depends_on "rust" => :build
   depends_on "xorgproto" => :build
 
-  depends_on "libclc" # OpenCL support needs share/clc/*.bc files at runtime
+  depends_on "libclc" => :no_linkage # OpenCL support needs share/clc/*.bc files at runtime
   depends_on "libpng"
   depends_on "libx11"
   depends_on "libxcb"
@@ -73,7 +73,6 @@ class Mesa < Formula
     depends_on "valgrind" => :build
     depends_on "wayland-protocols" => :build
 
-    depends_on "elfutils"
     depends_on "libdrm"
     depends_on "libxml2" # not used on macOS
     depends_on "libxshmfence"
@@ -84,6 +83,7 @@ class Mesa < Formula
 
     on_intel do
       depends_on "cbindgen" => :build
+      depends_on "elfutils"
     end
   end
 

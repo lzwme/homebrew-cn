@@ -1,19 +1,18 @@
 class Komac < Formula
   desc "Community Manifest Creator for Windows Package Manager (WinGet)"
   homepage "https://github.com/russellbanks/Komac"
-  url "https://ghfast.top/https://github.com/russellbanks/Komac/archive/refs/tags/v2.15.0.tar.gz"
-  sha256 "c22ef89c9018a35b10de14c953616721864a86f2a6c4c83f4ceb95785cb8635d"
+  url "https://ghfast.top/https://github.com/russellbanks/Komac/archive/refs/tags/v2.16.0.tar.gz"
+  sha256 "a88eb12956091e2e5bd9b15184a4efc953c037346fe66f81d2553c08b9e81da4"
   license "GPL-3.0-or-later"
   head "https://github.com/russellbanks/Komac.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "214e38f5d5c2c934cb4730294f7d94919f0129dd136069e21d2f833edb8fedea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b90d1fe43e4c27a434199c3d30fbdefb99773ac8f8d2bfe38014ac093909d97e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "288abbf1428b34fc43147f81c6cd62ea9998b944c2153d4a4e8ff39d1e8f00b9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d3f6d5c6588ac64eb53e290deec9c99ac0e2975cf6f67d959273422a2c08dc96"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aea31ec2083ae5d327a15256d64c94dd377ecd896079b83b2fd9685b8b198bcf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae362118eb60fb3c89ade19d437675f27690e4fd60515d3bda34f6bf20d1a6c5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73b35bb2d85e740a8601845dfa23958bd12d6d6d0b85831665e11e2ae8b63b9e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35e910178255d87137e43f4f7d71396982e9b8c930b40a777ec2f382b66caf23"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92eb2c50aad8a8a812245f5118f71ed5a8e8f28b04ead558f60439ca755f2575"
+    sha256 cellar: :any_skip_relocation, sonoma:        "70d1b06a7ecbda682281841b977f16c1b9d81d838f4280c4734374a902dc0825"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "295c4d298fedffa4ff7f6becf30607c6b5651ee5b892309e9e13f033144653f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "362ef26a8e39f78324a3020a0bf4e446c52a60c70d22e7eb6b1191f10e83d618"
   end
 
   depends_on "pkgconf" => :build

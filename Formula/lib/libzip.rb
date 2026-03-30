@@ -12,8 +12,6 @@ class Libzip < Formula
     regex(/href=.*?libzip[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: "unable to get versions"
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "08417964bf803b08c703fa297f87ff23998f73c6cfe0b327103d02c9a41582af"
     sha256 cellar: :any,                 arm64_sequoia: "6a65f5a729a460ee8988e05e9af08880215a008692dffede96e51694d0a8b428"

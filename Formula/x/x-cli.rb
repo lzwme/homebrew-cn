@@ -18,11 +18,13 @@ class XCli < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
+  on_macos do
+    conflicts_with "xorg-server", because: "both provide an `x` binary"
+  end
+
   on_linux do
     depends_on "openssl@3"
   end
-
-  conflicts_with "xorg-server", "x-cmd", because: "both provide an `x` binary"
 
   def install
     # https://github.com/sferik/x-cli/issues/475

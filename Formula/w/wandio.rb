@@ -14,8 +14,6 @@ class Wandio < Formula
     end
   end
 
-  no_autobump! because: :incompatible_version_format
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "5673ce841d6d082afc1432971b3b2e28596c4f931aa409b22f86e74317039ec4"

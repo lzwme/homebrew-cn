@@ -6,15 +6,16 @@ class GalleryDl < Formula
   url "https://files.pythonhosted.org/packages/a3/ba/7e4c7d37c54e2b4e10698a23e9c7338671b81d14cc7cbba8f5aa53f3101c/gallery_dl-1.31.10.tar.gz"
   sha256 "d387c41429e14c2646eeb10285bf4777cf0ed3da68ee3f2edcba505f3e137bb7"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/mikf/gallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "010698ecadad0061e9868eb634d7884e4b534a7ee3ea9fb0f6d8aa44a1808d47"
-    sha256 cellar: :any,                 arm64_sequoia: "bec441333d90d61f8d44f069e1f09f6e7bb7ae1a459073d6f4c74cee8af163ff"
-    sha256 cellar: :any,                 arm64_sonoma:  "f72cb2cdfcf303896459d6c80a79ed47085f5d9b769c6a4909aa1ae706053f6f"
-    sha256 cellar: :any,                 sonoma:        "621d925a4ec4ae9613c5b6e403a1adc407f9688d882aac54ac9e35665c9127b0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "87f1760dbd7c99b2fd954364bbf674953c9da2641b0670e32ed49831501563b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b45b8ce4658234abc317f817b78c256bc53955afa4e5817d237466a0d855b4a"
+    sha256 cellar: :any,                 arm64_tahoe:   "3cab1f7bb11128fc5ff6096606a5fc9cc2fa973e4e0f2a2002676430f3152443"
+    sha256 cellar: :any,                 arm64_sequoia: "efc8c708a9039a41c3e72d35c925bd4a9497b5e090925b987d61aeb8dd37021b"
+    sha256 cellar: :any,                 arm64_sonoma:  "d0682d3998981b545d334df2a16883e1fab420821ef995c85f6aa6d92fbaf9d6"
+    sha256 cellar: :any,                 sonoma:        "176225331a23ed8d25c51e69817fd8d65aba70ddc54f3afc1aa2245e3b40f8b3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a2547a6f96e54a46c8f4aa5842b4b304a9e2e9df8defc6c0264688c28da6824"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "219067300e7c18b196efd9349a78f47208b2a2d723faa53c90d0f90ff9a62b09"
   end
 
   depends_on "certifi" => :no_linkage
@@ -78,8 +79,8 @@ class GalleryDl < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "secretstorage" do

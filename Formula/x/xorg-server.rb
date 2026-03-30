@@ -44,6 +44,9 @@ class XorgServer < Formula
 
   on_macos do
     depends_on "libapplewm"
+
+    # Case-insensitive filesystem conflict
+    conflicts_with "x-cli", because: "both provide an `x` binary"
   end
 
   on_linux do
@@ -67,8 +70,6 @@ class XorgServer < Formula
       sha256 "7e8e39c98ae006b8ba583b59c8be0419885eaead062c3ae87592854de33e5a00"
     end
   end
-
-  conflicts_with "x-cmd", "x-cli", because: "both provide an `x` binary"
 
   def install
     # ChangeLog contains some non relocatable strings

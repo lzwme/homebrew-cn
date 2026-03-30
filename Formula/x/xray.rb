@@ -12,24 +12,25 @@ class Xray < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4bff981876814bff60240beb45a257ddaea1fe1b6852ec345b52d2701933245a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bff981876814bff60240beb45a257ddaea1fe1b6852ec345b52d2701933245a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4bff981876814bff60240beb45a257ddaea1fe1b6852ec345b52d2701933245a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cd67caebe5bb10ff6e511bad9ff4ff733f3b55bcd5baf60bb64b64cd3839929c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6d56ea0b24d8b7eb17ad076a02ffdffa92a41598fd14f08d20fc0eed0219192"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb09e38ca9e9c9f1d8436bb76628ad708198bab80fa0f159949b3aa32100de46"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bff79bcf360802fa0aef96803a01bb46c4d52500c1b38263929f464b3c0fb907"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bff79bcf360802fa0aef96803a01bb46c4d52500c1b38263929f464b3c0fb907"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bff79bcf360802fa0aef96803a01bb46c4d52500c1b38263929f464b3c0fb907"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cd5204044d371e0ca845ca19f986a38e0e8407e37b4a7e90b5b56862eca24f87"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6d296df37d4a391985efce24056d66f557c60ff98f281691253b57de1aa05c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "190c1acc90997a981bdd3a7219bbc0b95f9b10e3ac6ede1effd43c8f47ecc347"
   end
 
   depends_on "go" => :build
 
   resource "geoip" do
-    url "https://ghfast.top/https://github.com/v2fly/geoip/releases/download/202601220433/geoip.dat"
-    sha256 "ed2de9add79623e2e5dbc5930ee39cc7037a7c6e0ecd58ba528b6f73d61457b5"
+    url "https://ghfast.top/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/download/202603282222/geoip.dat"
+    sha256 "744c97b74c52bae2ac8664fef6ac481d7765cb8432a0df54f0368a88b9b4a354"
   end
 
   resource "geosite" do
-    url "https://ghfast.top/https://github.com/v2fly/domain-list-community/releases/download/20260203145437/dlc.dat"
-    sha256 "158e0e3052238dcdd09d58857032c67da49b933b3a9fd74fedf2c684e21d4f87"
+    url "https://ghfast.top/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/download/202603282222/geosite.dat"
+    sha256 "c202e5ed36a591ddd6d7b0164453d36c7c91a32be45e4d26256fd19d24c70b71"
   end
 
   resource "example_config" do
@@ -51,7 +52,7 @@ class Xray < Formula
 
     pkgshare.install resource("geoip")
     resource("geosite").stage do
-      pkgshare.install "dlc.dat" => "geosite.dat"
+      pkgshare.install "geosite.dat"
     end
     pkgetc.install resource("example_config")
   end

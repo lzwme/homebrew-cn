@@ -6,15 +6,16 @@ class YtDlp < Formula
   url "https://files.pythonhosted.org/packages/8b/34/7c6b4e3f89cb6416d2cd7ab6dab141a1df97ab0fb22d15816db2c92148c9/yt_dlp-2026.3.17.tar.gz"
   sha256 "ba7aa31d533f1ffccfe70e421596d7ca8ff0bf1398dc6bb658b7d9dec057d2c9"
   license "Unlicense"
+  revision 1
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "64a6515aef6108a5e9b66cbb1805d0b1c87710c03247188998332e1d9c5fee21"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce7def15bc6008f0003265ebeb21511dc2761c9438f4dc7646fb41944d9c2082"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66d0bc9000b19db4d00a9c5b0cfaf8c9d63a0dabe05088480af732649c59c7c3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "53f48c5017c7c0f53e3a3b1173e337c9a61a6736ef072508133d3fc591322401"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb42484bf847b2237e625d84a573bf0fa9bcd78a2f11176a7b76fbecee488444"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ee254155a96e9d20d9240cba89c3d8c35efb0d96e6bcceb8582d8ee57c50971"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9826aa4e7261cf6ce793bdd277144b2a331d02298e75b817600bd9e68cbcd663"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9981e65100fb6f6a8453a457d761b1a7e2feabf7c190d224736d8865c7af5721"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a817808dad1a25fab7bc0895baecc043dd126cbc871c2108a4ae1ca17c430c3a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7ebb0d25bea1855b94060a48564db822be87912508117e3891bc906725f6a80a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "100c416c5c111a406654a88bea5490ca867b6bae7e8426484921aa237fb96922"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b99cb6ac470ce6870a898d89232e7cb21fc121cda01713530084e7301bb67a2"
   end
 
   head do
@@ -57,8 +58,8 @@ class YtDlp < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "urllib3" do

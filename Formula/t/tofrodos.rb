@@ -1,17 +1,17 @@
 class Tofrodos < Formula
   desc "Converts DOS <-> UNIX text files, alias tofromdos"
   homepage "https://github.com/ChristopherHeng/tofrodos"
-  url "https://ghfast.top/https://github.com/ChristopherHeng/tofrodos/archive/refs/tags/2.0.0.tar.gz"
-  sha256 "9bac37ec72323fa0a98218e457c31d93c8fad5ba2e4f953e5c82bdcbc0aafaab"
+  url "https://ghfast.top/https://github.com/ChristopherHeng/tofrodos/archive/refs/tags/2.1.0.tar.gz"
+  sha256 "e28d52bee39b8da61d5149bd4c3af59e7b19d936172d86f3d314aa956291faf0"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9bcf5f828ffe0cc532e0f8ed676dafea2ff7d9bec8713a4e9e08b7a154b7105c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1552fdcdff9a2cd5a3be3fd18f16c1fef4fe940fadef699ca3c502803932fc0d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49a86b801c4c6211ca32b293088f4eeec9825d1f53bf366d1770e4330a15c79a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6300145de1846a449a733e36dce032ce5ef7b6273af7db40cbcc0757255d4891"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbc4d0b83975280eae92296808c8c08c2a6c3429efc766bb818fa6442629598f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52c5ef8d1778eeb76255a394c98ecd749707c4da9085f77f3daec810eac16910"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c7a027d80fc364549efdb9e0a76a8805af869088a78556d857e1af913ad1cc8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff2ad7739ba8094a33b04811762e3ea7b2fe429832b64bbb512f3e9e0d34cb7f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74ea91c0ae621e297b386903e16158887f6a283a3abca4b9147b3b69cb8b46bc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8154cbd076e3ea795852d2978890a77e8255970f745de0cb52b6e262e184c497"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "145f5ede93d2c0af8b8b5896766f4cf7ad362ffc0fa01a1014b4196a01cbd6a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb5d402270410856a8aca0c5a6b1489a24e015dcdfdb43c3c9c7f542eff5b428"
   end
 
   def install

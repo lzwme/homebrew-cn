@@ -11,7 +11,8 @@ class Rpm < Formula
   head "https://github.com/rpm-software-management/rpm.git", branch: "master"
 
   stable do
-    url "https://ftp.osuosl.org/pub/rpm/releases/rpm-4.20.x/rpm-4.20.1.tar.bz2"
+    # Using GitHub tarball rather than ftp.osuosl.org to support autobump
+    url "https://ghfast.top/https://github.com/rpm-software-management/rpm/releases/download/rpm-4.20.1-release/rpm-4.20.1.tar.bz2"
     sha256 "52647e12638364533ab671cbc8e485c96f9f08889d93fe0ed104a6632661124f"
 
     # Backport commit needed to fix handling of -fhardened
@@ -25,8 +26,6 @@ class Rpm < Formula
     url "https://rpm.org/releases/"
     regex(/RPM\s+v?(\d+(?:\.\d+)+)/i)
   end
-
-  no_autobump! because: :incompatible_version_format
 
   bottle do
     sha256 arm64_tahoe:   "9c214ce074bddb955970b60106ebc155f0783a04e2af65080268ccecf7bd499b"
@@ -74,6 +73,10 @@ class Rpm < Formula
   resource "rpm-sequoia" do
     url "https://ghfast.top/https://github.com/rpm-software-management/rpm-sequoia/archive/refs/tags/v1.8.0.tar.gz"
     sha256 "a34de2923f07b2610de82baa42f664850a4caedc23c35b39df315d94cb5dc751"
+
+    livecheck do
+      url :url
+    end
   end
 
   # Apply nixpkgs patch to work around build failure on macOS

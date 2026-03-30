@@ -5053,6 +5053,7 @@ Homebrew-homebrew-core/Formula/n/newsraft.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/newt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nextdns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nextflow.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/nextpnr-ice40.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nexttrace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nexus.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nfcutils.rb, Homebrew/homebrew-core, 0
@@ -6022,7 +6023,7 @@ Homebrew-homebrew-core/Formula/p/python@3.14.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pythran.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pytorch.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pytr.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pytr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyupgrade.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyvim.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pywhat.rb, Homebrew/homebrew-core, 0
@@ -15916,6 +15917,7 @@ nicerloop-homebrew-nicerloop/Formula/video-transcoding.rb, nicerloop/homebrew-ni
 nicerloop-homebrew-nicerloop/Formula/warc2html.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/windows-esd-to-iso.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/wine-scripts.rb, nicerloop/homebrew-nicerloop, 1
+nicerloop-homebrew-nicerloop/Formula/xcodes.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/8bitdo-firmware-updater.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Casks/airdisplay-client.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Casks/archi.rb, nicerloop/homebrew-nicerloop, 1
