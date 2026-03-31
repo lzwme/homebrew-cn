@@ -7,10 +7,11 @@ class Exif < Formula
 
   livecheck do
     url :stable
-    regex(/exif[._-]v?(\d+(?:[._-]\d+)+)[._-]release/i)
+    regex(/^exif[._-]v?(\d+(?:[._-]\d+)+)[._-]release$/i)
+    strategy :git do |tags, regex|
+      tags.filter_map { |tag| tag[regex, 1]&.tr("_", ".") }
+    end
   end
-
-  no_autobump! because: :incompatible_version_format
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "bfb1b7b9782dd4c888442a3dc2d6872894e1acfde781fc8b819e631fd1f4ed23"

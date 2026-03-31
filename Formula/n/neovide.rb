@@ -1,20 +1,18 @@
 class Neovide < Formula
   desc "No Nonsense Neovim Client in Rust"
   homepage "https://neovide.dev/"
-  url "https://ghfast.top/https://github.com/neovide/neovide/archive/refs/tags/0.15.2.tar.gz"
-  sha256 "a8179c461d41277b41692edcae64af6d1c80454aafff608af0268c5abca95b5c"
+  url "https://ghfast.top/https://github.com/neovide/neovide/archive/refs/tags/0.16.0.tar.gz"
+  sha256 "035909f90c1df11fdf66c271e2e2a81e7a0d1f6d2c9c094b909653363bb7cf86"
   license "MIT"
-  revision 1
   head "https://github.com/neovide/neovide.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc3c1b70d73e5b021480db2b0443600703f16e5ec1b52d4135d8d41c0d55186b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "117679e168231321d8447464c15579a50e197c962879bb146c445861c6c71bf8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5fb0b7546d5b35fb6318ba89a5e7a943116c22cbd6ed059d54d93e34a1302e6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0e3d1b2500c1e5fd422814f8cec203172457a6ceda246873f7adced0e60ebdb7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b66a170728606d26271bbb98d9707847a6b31b6ccb22cb46af69d8957683100b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65507179c2ec993fa6c6922104aa8743f2ff0c13d57fddaf840847ea76e087f9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad5b9b5d6cbe66a8d7d9b892ef5cfeda50232b6957084c9dfa227ab08fa43bb8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "504c5c7f6c9f13b84ea44462ebb0352a87b2c9240767f7691918633137675022"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92d8c2c5a7c7d7cb2a647de5ba2ceec219d87e29ad2d3e3cb064c94c4210d391"
+    sha256 cellar: :any_skip_relocation, sonoma:        "33405ac4bca2ec8a413cae8b4b59dc5ad7cd79719b1f8d8a991066e426a0c015"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc7fba18eb8329e6ca8716df5f1e9aff62f182b9a1070a001fe28167ee9f53e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7abb1b88519e9b6a9c60d201a694fb107daf77eeccdc4b1f98d470355b00ae4"
   end
 
   depends_on "ninja" => :build

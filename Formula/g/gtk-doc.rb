@@ -6,6 +6,7 @@ class GtkDoc < Formula
   url "https://download.gnome.org/sources/gtk-doc/1.36/gtk-doc-1.36.0.tar.xz"
   sha256 "3b84bac36efbe59017469040dfee58f17cf0853b5f54dfae26347daf55b6d337"
   license "GPL-2.0-or-later"
+  revision 1
 
   # We use a common regex because gtk-doc doesn't use GNOME's
   # "even-numbered minor is stable" version scheme.
@@ -15,12 +16,12 @@ class GtkDoc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa4545c0ed0e71de8cbe8111a291f999bc475f9e06a4a296e0ad29ca582793e7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "870df07ab7d1912d6341c2c9d1d966b68097ddbf5b6d850db22b614ed6758779"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "127d1017a9d1f754fc4da80ca9c8a1ac63305510255057d461bff1e8762af00f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3a6a6940b7af87fa5348ab9822a2ca0f9ad662e6e934623218c5d76f3b7c1761"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45a6ff0c8d8cce8cec896c6c095915ae1e0b63443b4bd3b0d5f046c4f4bcc421"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "baf787ae2f1dd3833a27d9d3ea41ce8363ff9f7ce7f9b09493b784c81382d363"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bda10d6a7806c4a3b900203c0ebc0f450d1c07d22b6d42ebc498a05a7b488cf1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7786664f1459fd909ce570c0db2e2fb609b74f2a7455407d49750848a530b1d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e96303cfc6156115bd58e7fb591cc2366d19d917021c3f0e06b4c12286661ea"
+    sha256 cellar: :any_skip_relocation, sonoma:        "34cd092117725bb031c2c67ad8fde6a199058e8dc2b5e768e166df2bd4264d85"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "21626866a4655a070d0a14c02c41c7216ad9580e2f6bd60a5a351ac448546046"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d92a564d508bc96a26399e8885f52ce849df7f336de73bb2be8e6fb6d59eb09"
   end
 
   depends_on "meson" => :build
@@ -42,8 +43,8 @@ class GtkDoc < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   def install

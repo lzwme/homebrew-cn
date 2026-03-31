@@ -14,8 +14,6 @@ class Binkd < Formula
     end
   end
 
-  no_autobump! because: :incompatible_version_format
-
   bottle do
     rebuild 3
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "98ede139dd485567a090cc5cc53906f6307761c12fa3a045f1e0849e8ad99ca1"

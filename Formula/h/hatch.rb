@@ -6,14 +6,15 @@ class Hatch < Formula
   url "https://files.pythonhosted.org/packages/d2/02/ce9c4c439fa3f195b21b4b5bb18b44d1076297c86477ef7e3d2de6064ec3/hatch-1.16.5.tar.gz"
   sha256 "57bdeeaa72577859ce37091a5449583875331c06f9cb6af9077947ad40b3a1de"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a2e0e8c30cf1a691ff0f25b3d9efcf5b6367ae09a848e4fb07ef78214bf6a09"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a2e0e8c30cf1a691ff0f25b3d9efcf5b6367ae09a848e4fb07ef78214bf6a09"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a2e0e8c30cf1a691ff0f25b3d9efcf5b6367ae09a848e4fb07ef78214bf6a09"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b2cc46956ea42e0e3dd2bbb19d659ca4166ce5204c9c29a93efe3c0732dccb77"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15ce2d5ef9b93cf71aeeb799fc96605a18e6d5387ce065d3e5a32123debece36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15ce2d5ef9b93cf71aeeb799fc96605a18e6d5387ce065d3e5a32123debece36"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e20cac25362510f5b56206e570636f6fc54b6f12a5ddf25fe4edd4c3e254dad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e20cac25362510f5b56206e570636f6fc54b6f12a5ddf25fe4edd4c3e254dad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e20cac25362510f5b56206e570636f6fc54b6f12a5ddf25fe4edd4c3e254dad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "db4a3d99a0fd51a227cf25236d55edf362675a5517f17ee4e9a190d13b3d9913"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfe5d17cc6364ae9593c1178741b53b06afd69138bb14115cd45bef0d596edc4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfe5d17cc6364ae9593c1178741b53b06afd69138bb14115cd45bef0d596edc4"
   end
 
   depends_on "certifi" => :no_linkage
@@ -30,8 +31,8 @@ class Hatch < Formula
                 extra_packages:   %w[jeepney secretstorage]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
-    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
+    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
+    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
   end
 
   resource "click" do
@@ -45,8 +46,8 @@ class Hatch < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/73/92/a8e2479937ff39185d20dd6a851c1a63e55849e447a55e798cc2e1f49c65/filelock-3.24.3.tar.gz"
-    sha256 "011a5644dc937c22699943ebbfc46e969cdde3e171470a6e40b9533e5a72affa"
+    url "https://files.pythonhosted.org/packages/94/b8/00651a0f559862f3bb7d6f7477b192afe3f583cc5e26403b44e59a55ab34/filelock-3.25.2.tar.gz"
+    sha256 "b64ece2b38f4ca29dd3e810287aa8c48182bbecd1ae6e9ae126c9b35f1382694"
   end
 
   resource "h11" do
@@ -85,8 +86,8 @@ class Hatch < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/cb/9c/a788f5bb29c61e456b8ee52ce76dbdd32fd72cd73dd67bc95f42c7a8d13c/jaraco_context-6.1.0.tar.gz"
-    sha256 "129a341b0a85a7db7879e22acd66902fda67882db771754574338898b2d5d86f"
+    url "https://files.pythonhosted.org/packages/af/50/4763cd07e722bb6285316d390a164bc7e479db9d90daa769f22578f698b4/jaraco_context-6.1.2.tar.gz"
+    sha256 "f1a6c9d391e661cc5b8d39861ff077a7dc24dc23833ccee564b234b81c82dfe3"
   end
 
   resource "jaraco-functools" do
@@ -135,8 +136,8 @@ class Hatch < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/1b/04/fea538adf7dbbd6d186f551d595961e564a3b6715bdf276b477460858672/platformdirs-4.9.2.tar.gz"
-    sha256 "9a33809944b9db043ad67ca0db94b14bf452cc6aeaac46a88ea55b26e2e9d291"
+    url "https://files.pythonhosted.org/packages/19/56/8d4c30c8a1d07013911a8fdbd8f89440ef9f08d07a1b50ab8ca8be5a20f9/platformdirs-4.9.4.tar.gz"
+    sha256 "1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934"
   end
 
   resource "pluggy" do
@@ -150,8 +151,8 @@ class Hatch < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyproject-hooks" do
@@ -160,8 +161,8 @@ class Hatch < Formula
   end
 
   resource "python-discovery" do
-    url "https://files.pythonhosted.org/packages/82/bb/93a3e83bdf9322c7e21cafd092e56a4a17c4d8ef4277b6eb01af1a540a6f/python_discovery-1.1.0.tar.gz"
-    sha256 "447941ba1aed8cc2ab7ee3cb91be5fc137c5bdbb05b7e6ea62fbdcb66e50b268"
+    url "https://files.pythonhosted.org/packages/b9/88/815e53084c5079a59df912825a279f41dd2e0df82281770eadc732f5352c/python_discovery-1.2.1.tar.gz"
+    sha256 "180c4d114bff1c32462537eac5d6a332b768242b76b69c0259c7d14b1b680c9e"
   end
 
   resource "rich" do
@@ -200,8 +201,8 @@ class Hatch < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/2f/c9/18d4b36606d6091844daa3bd93cf7dc78e6f5da21d9f21d06c221104b684/virtualenv-21.1.0.tar.gz"
-    sha256 "1990a0188c8f16b6b9cf65c9183049007375b26aad415514d377ccacf1e4fb44"
+    url "https://files.pythonhosted.org/packages/aa/92/58199fe10049f9703c2666e809c4f686c54ef0a68b0f6afccf518c0b1eb9/virtualenv-21.2.0.tar.gz"
+    sha256 "1720dc3a62ef5b443092e3f499228599045d7fea4c79199770499df8becf9098"
   end
 
   def install

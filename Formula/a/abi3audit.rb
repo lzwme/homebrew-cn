@@ -6,10 +6,10 @@ class Abi3audit < Formula
   url "https://files.pythonhosted.org/packages/99/2d/fa16448d36021e36caa71acda36e25be8f6315b9c740b1be8bdae5c76257/abi3audit-0.0.26.tar.gz"
   sha256 "44b5fa5ddc8acdfdbd221f400d48b8a205df519e8f4c6d57a349837ac88d0ff8"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "338d00a30a2cdd3aa875828eb690a16e852083076eed4cc55aa6889c305044e5"
+    sha256 cellar: :any_skip_relocation, all: "94cf624b7d6b1059df31e5106f192d266e3b3e78f8b4633a822411bd0b487f84"
   end
 
   depends_on "cmake" => :build
@@ -84,8 +84,8 @@ class Abi3audit < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "requests" do

@@ -17,8 +17,6 @@ class GnustepBase < Formula
     end
   end
 
-  no_autobump! because: :incompatible_version_format
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "0693816f992adcfc685d2ee8464599a92a51bfb60a8fc428b7a41f77b6657266"

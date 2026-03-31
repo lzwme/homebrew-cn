@@ -1,17 +1,17 @@
 class Dispenso < Formula
   desc "High-performance C++ library for parallel programming"
   homepage "https://github.com/facebookincubator/dispenso"
-  url "https://ghfast.top/https://github.com/facebookincubator/dispenso/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "1773991c164b723567fcdf922651f75e7d2611ab36efd87dd0cd3ef20b135e2f"
+  url "https://ghfast.top/https://github.com/facebookincubator/dispenso/archive/refs/tags/v1.5.1.tar.gz"
+  sha256 "e75b2a1bd428b2e9558ea99c03d266d2bf8881ba41689016e8c98052e1a0c17d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "aed31c67ff2da3bb908ce48d22504d629de1221a985b2f933c1dd4c5f1e723b3"
-    sha256 cellar: :any,                 arm64_sequoia: "862c9592e1da9fcdc45cf7761485d1cb6bad4f5019111e06e77c7c09412f3884"
-    sha256 cellar: :any,                 arm64_sonoma:  "7290d05b525575120e29bea9dadddc41a67a562759bb24294bb6a2ec63399c99"
-    sha256 cellar: :any,                 sonoma:        "91843b2b96397ca0f3703e26bda81bcb6cf84043748403e1342966221526cdea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee6b672c615beaa35e8e9d5ad49edb1db790d8abd7bb1a41a5a85fc1e43dcbe6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8a09e3ab0135d2945e391be34d7afe55e27527909db12dfe3226b37c2a74635"
+    sha256 cellar: :any,                 arm64_tahoe:   "cfa3dc2188a6867fa7e7c27cbc0761f6683f8c941a86bbc1e484626cc99b8578"
+    sha256 cellar: :any,                 arm64_sequoia: "4281d2b609a86c254cbbcdbb351e603b85b70748da2954c1810781a1aeb67769"
+    sha256 cellar: :any,                 arm64_sonoma:  "efb4f85c4d8aaaf96666934346cf4ee46cf000a60df21783827b85186a30f0a5"
+    sha256 cellar: :any,                 sonoma:        "72c83dc6993fdd5a3fd38a0e8fab343bb774e7254157b3a8b68d047fb12a9fb4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "43f84d73d3c3f6febd9211ef6e9e8bed6b8a492ecdae7067be45e0f414747078"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b75186ae2034cfd299c92bffc56fab21abc14f800ffa07b784266a62d5331b8e"
   end
 
   depends_on "cmake" => [:build, :test]

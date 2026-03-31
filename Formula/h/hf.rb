@@ -6,15 +6,16 @@ class Hf < Formula
   url "https://files.pythonhosted.org/packages/8e/2a/a847fd02261cd051da218baf99f90ee7c7040c109a01833db4f838f25256/huggingface_hub-1.8.0.tar.gz"
   sha256 "c5627b2fd521e00caf8eff4ac965ba988ea75167fad7ee72e17f9b7183ec63f3"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "52f4ad6b434603d2d7f73a7a6b87334fb92770bc0d7e644c36a3b06ce6ba7a13"
-    sha256 cellar: :any,                 arm64_sequoia: "7d5aa0d73e6843a4a975bc53b89aa5b54c4766266a45d99b12ca65513f6cda38"
-    sha256 cellar: :any,                 arm64_sonoma:  "22bbea96760bf9822c4e7912f9246e17637f47b80fee501e3fc4d3d9cb86403c"
-    sha256 cellar: :any,                 sonoma:        "16506ec6d2b26492316d107a40ba91574b1002ae181da04599dedc5bee2d559d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f4a78308cddea653a2fc24ef03c0a1a1e59229f2cbcc8f4358218c7ac1006e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07bf72de1255047a0a86d0bce6fbe814e14105e2b33c9228b3e0ede6f9c95d9b"
+    sha256 cellar: :any,                 arm64_tahoe:   "e9f2e3cb71a3d8184db5696be43ad9122436c94742c44560036c429cdacf88fa"
+    sha256 cellar: :any,                 arm64_sequoia: "38d84e9fe7c6e9f6349aae4a6ce18b82ae84e4df74977bd5d6af9cf51f98751c"
+    sha256 cellar: :any,                 arm64_sonoma:  "071d58766c5dceb62c0b8ec475a0a8e00872be53c9aafe8eadfcabd05cad6448"
+    sha256 cellar: :any,                 sonoma:        "40ee5c5c45283ccb02af7d65955abc1a269cb6ea3bee2427b311239b4c14558c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "287f6c7ba546a1cc75b82eb1672a30777e98435dca43dcc90c755d6453674aab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf1dbf1f96812cdfd1e95f1ccceafaca2ab7e17c65a5ba01840175f86d726a37"
   end
 
   depends_on "pkgconf" => :build
@@ -53,8 +54,8 @@ class Hf < Formula
   end
 
   resource "fsspec" do
-    url "https://files.pythonhosted.org/packages/51/7c/f60c259dcbf4f0c47cc4ddb8f7720d2dcdc8888c8e5ad84c73ea4531cc5b/fsspec-2026.2.0.tar.gz"
-    sha256 "6544e34b16869f5aacd5b90bdf1a71acb37792ea3ddf6125ee69a22a53fb8bff"
+    url "https://files.pythonhosted.org/packages/e1/cf/b50ddf667c15276a9ab15a70ef5f257564de271957933ffea49d2cdbcdfb/fsspec-2026.3.0.tar.gz"
+    sha256 "1ee6a0e28677557f8c2f994e3eea77db6392b4de9cd1f5d7a9e87a0ae9d01b41"
   end
 
   resource "h11" do
@@ -98,8 +99,8 @@ class Hf < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyyaml" do

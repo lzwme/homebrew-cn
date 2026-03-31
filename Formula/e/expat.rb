@@ -14,8 +14,6 @@ class Expat < Formula
     end
   end
 
-  no_autobump! because: :incompatible_version_format
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "04fed88fc5ea63211829695ae832be622bba9b224f8c84f4882a6776b3f5cca7"
     sha256 cellar: :any,                 arm64_sequoia: "266fc399a590e756abd38ce5b2923c397876253704dd4c3fde01816dffb7843e"

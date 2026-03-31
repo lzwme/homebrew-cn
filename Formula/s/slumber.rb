@@ -1,18 +1,18 @@
 class Slumber < Formula
   desc "Terminal-based HTTP/REST client"
   homepage "https://slumber.lucaspickering.me/"
-  url "https://ghfast.top/https://github.com/LucasPickering/slumber/archive/refs/tags/v5.2.0.tar.gz"
-  sha256 "4d8972af3af169538804d0da647520d3c8485daec1f882e15e6cad3e48307b68"
+  url "https://ghfast.top/https://github.com/LucasPickering/slumber/archive/refs/tags/v5.2.4.tar.gz"
+  sha256 "feefd7341026e78fad6025d8e2c3419071288bd3e6d8672e91b2d7023d58ba34"
   license "MIT"
   head "https://github.com/LucasPickering/slumber.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d05d788a8d682f471aea7fc0442018144990300b589a38bf08a03517ab1944ae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d1e988fbe55ff65a1e6d5a10a2b2663ffddcea9988824dc03ca2ff8b3c201e8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57e2c431209af698922ed751a368b6523353e19892746078263493c502440b4c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f27ff2d4c7441e37a9f6b176a423f494223f81d62e04f4f973634498be0fee16"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b84e2a18e38d80915d893e2d25ae18adfc5fd99f62354c7dc2cacea77b3bbace"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03ea3a03f515eed4719ddbbd7495d3520d2af4b75d0dc3862bff4fb476650782"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ac41a5b0820b5f79ec50ecdeb02ba1692b4e3a65b9b2968b95c00c307dc96d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a319a7e28a8ed5b8d702ce8cf458573f2fd0bc1c160dfe18c6c9763895f412b2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86565f70f8a8be3238d113ffabf1dc19c557ec80d4138499234d760154228be1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a7c061998946f8f398dbbe3226e39e6034a9e6a214dcc9d4a061eb1d730479cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d058109ecbdf77d26ad3cdd08e5eee11f677b159a1d2f17c7404aedfe56d1aac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91fdedb61a6d690cc3c2cc296a79d427a69529bb0efa9d53073cce9fa04d39e1"
   end
 
   depends_on "rust" => :build

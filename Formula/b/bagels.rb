@@ -6,15 +6,15 @@ class Bagels < Formula
   url "https://files.pythonhosted.org/packages/6e/04/e19a99e357221cb41e1e2f0352172e282ac8195fa2418b776345497fb260/bagels-0.3.12.tar.gz"
   sha256 "c3ebd4a727ddd62450528676a1ce3e475f92bd36edfed5f9c0b110bb24592608"
   license "GPL-3.0-or-later"
-  revision 8
+  revision 9
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "adbee35a0c368929b9e7ccaa4335da16eb8bdfb1362f1d950ee2453a5791fcef"
-    sha256 cellar: :any,                 arm64_sequoia: "6adc1ec659ec4373530d2d4eadf37757a7b58f104d8d6f8632b6b81fdc55fb05"
-    sha256 cellar: :any,                 arm64_sonoma:  "c87f589ff20ff4c86026d2640b95d65f7adf91524b02cb85c64258766c714d24"
-    sha256 cellar: :any,                 sonoma:        "fbacc4378c8cbdf4837d8d5dce74d09832378636faa709402efbfbe218b6e1e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5e15eb34e98c03bcd9905ca3343e2e7d4c12a68cf9cabccbd409476b7218bed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d3530360d6350254be1f214bacdb0066c2f16dd648e297b35479d9f693b95c9"
+    sha256 cellar: :any,                 arm64_tahoe:   "4c8e15f972401d5676d8b50e6b51fea1694557ad2ef56b865b70035698914149"
+    sha256 cellar: :any,                 arm64_sequoia: "e12061abde0a99057f215892a52254d0026ba3383c5790d6964af1844c28101c"
+    sha256 cellar: :any,                 arm64_sonoma:  "fc88ca8a46bb3db2b638c8d163ddcd94ae6fd07b695e3f1469d1ffc333c9631c"
+    sha256 cellar: :any,                 sonoma:        "5357f6398aa156bd7f9f72b5db4e0af49fa2bdb895ed85cbab2045e540bab1db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ecabf818d85bc9fa547d4ab10a565f06bf704785050c7e42de8236f0548e0bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cd5a7a75e975eff1c38bd3ade624e011b74992b8c8f312d1e511e1e2ab5e6fd"
   end
 
   depends_on "certifi" => :no_linkage
@@ -31,8 +31,8 @@ class Bagels < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/50/42/32cf8e7704ceb4481406eb87161349abb46a57fee3f008ba9cb610968646/aiohttp-3.13.3.tar.gz"
-    sha256 "a949eee43d3782f2daae4f4a2819b2cb9b0c5d3b7f7a927067cc84dafdbb9f88"
+    url "https://files.pythonhosted.org/packages/45/4a/064321452809dae953c1ed6e017504e72551a26b6f5708a5a80e4bf556ff/aiohttp-3.13.4.tar.gz"
+    sha256 "d97a6d09c66087890c2ab5d49069e1e570583f7ac0314ecf98294c1b6aaebd38"
   end
 
   resource "aiohttp-jinja2" do
@@ -146,8 +146,8 @@ class Bagels < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "python-dateutil" do

@@ -1,8 +1,8 @@
 class Radicle < Formula
   desc "Sovereign code forge built on Git"
   homepage "https://radicle.xyz"
-  url "https://files.radicle.xyz/releases/latest/heartwood-1.7.1.tar.gz"
-  sha256 "3263219e470862cc2489ed684c6d947ec6d462354954f5e2ac1aba0939d851a8"
+  url "https://files.radicle.xyz/releases/latest/heartwood-1.8.0.tar.gz"
+  sha256 "c1de84fee59ae1c69fac5e42c932f4d2765a85630b27642f77792fc765948097"
   license all_of: ["MIT", "Apache-2.0"]
 
   livecheck do
@@ -13,12 +13,12 @@ class Radicle < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e71464307cab48d0fa169d010bb1b6207289a3ed02e54b31cf6d6a2a4cfdcc0a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78a078aea6cf4d58e7f973890afef6a318186c5e5cf02102297365380b105509"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd67bfec110bd744f7c16cd41a0d95bb0067553182f2130e968acb0fa3695512"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c03efe8cd243725f5b7bcbdb4fd8f89863cef6d29a06d91c39ff2dc9ce5f4a8d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c667b42aff1b507a927bb5033f70c11cf84dd27cb84e3f05bbc2bc0f86bbcf7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "727c6f48e6f98916cf6d61188c15bfb13e86b103816cdfbe381b3ee764a38257"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d208f5a25bbab7fa45a173aa7fc5d9a2110553a59edab74c64e885c1f4f7d20"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ae0b766779e9b8869000ef68776693e0c7709c9abc40dadb0a5489d4660ede0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d0104b90ae5a07c926ead686f255078e6ea512fe4ea52e0390a904b860eecc0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f8f4631c56c352441e6000fec0a921b9655cd54e064b669bbae56474ccb09076"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e42a705b7fd6dd5203491791ea3943af98ea6b81c6da04f0dcf3bba476c8563f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "326623a7b34c86eef1c598e00f5be67fe3a0fc730ed38fdda76876512c1cdc33"
   end
 
   depends_on "asciidoctor" => :build

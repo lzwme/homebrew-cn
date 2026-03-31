@@ -18,8 +18,6 @@ class Openmsx < Formula
     end
   end
 
-  no_autobump! because: :incompatible_version_format
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "e5ae1c09d02fecd72160c6d855f89a4deba2bb7e772bbc2786de450ecb4c9fa5"

@@ -1,8 +1,8 @@
 class Rke < Formula
   desc "Rancher Kubernetes Engine, a Kubernetes installer that works everywhere"
   homepage "https://rke.docs.rancher.com/"
-  url "https://ghfast.top/https://github.com/rancher/rke/archive/refs/tags/v1.8.12.tar.gz"
-  sha256 "84e12399e1b140bf35585896aeb89aac9c8370874113728b3b27057126eb629c"
+  url "https://ghfast.top/https://github.com/rancher/rke/archive/refs/tags/v1.8.13.tar.gz"
+  sha256 "1d4af9e45225eaba1d9038a133f86fcd529574ca971c65096b6c4dc2f220a6a6"
   license "Apache-2.0"
 
   # It's necessary to check releases instead of tags here (to avoid upstream
@@ -16,12 +16,12 @@ class Rke < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a09a69344661ff34198c8bf8fab4df755394b3762a883c207025495f421be70a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28b06b92a6c0050163593f6e48e22d13ecc4b3966805e6d0f6a64ef65dd5d058"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d74a1ab7063bcbbf6fb1e492ad2e1a0ae9a23e60632755939f621c0df48739e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "09be09fdb26e83803e03bd73be2191ab178cb65f34005af1197b34e891ed0b45"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e19bfd3a8d4695088f17f18817c3028945b4581abb195e1d3d2318fc2df98d05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a54e44ff9b7453e76bdc083203840bc12275b2dd1f4645593530e714925599ee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7cc08970c661fe33ee24b7bfc73f53503414cc881bd90d90570b6bccfa9d44a3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aff2f601decd40399318b51a4030d2883c54e10c43705fd25029addd397841a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9103072a01bd3d80c0c4310409240f96623218e87484253d7a3410e1d885bbec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "71dd0ee4591072fb19ffef92748cae476d220f2588ca7eaf8e473083514102b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28c7eeb5d7137c9069842160521badd8eded593125a2c8d7d5634d9fa67addce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d77f54bbdcff8784b5bb0ef58e4dedd0d78962359620935905279704b4373ac8"
   end
 
   depends_on "go" => :build

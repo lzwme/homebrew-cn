@@ -1,18 +1,18 @@
 class Hysteria < Formula
   desc "Feature-packed proxy & relay tool optimized for lossy, unstable connections"
   homepage "https://hysteria.network/"
-  url "https://ghfast.top/https://github.com/apernet/hysteria/archive/refs/tags/app/v2.7.1.tar.gz"
-  sha256 "2b8e42e965eb1b5215efe58f06a1416b2379b025c79adc89c620c56488b4f08d"
+  url "https://ghfast.top/https://github.com/apernet/hysteria/archive/refs/tags/app/v2.8.0.tar.gz"
+  sha256 "7509c0ad77ec3f5828a962b7136d51c36e0b0ddde4b5fccdabc6403a75562720"
   license "MIT"
   head "https://github.com/apernet/hysteria.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8749b2a53c3868a6c2693ed4f339ee62d72f1c94dffb76fafa5eebeadffc38af"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8749b2a53c3868a6c2693ed4f339ee62d72f1c94dffb76fafa5eebeadffc38af"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8749b2a53c3868a6c2693ed4f339ee62d72f1c94dffb76fafa5eebeadffc38af"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2e9339b6dfbbc93c37ec2da860a9cea19dac801136303867e0b204da7b281ad9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a514fd8872e5b7d0bce77b45b95e3e27b1912b39a154ecd061cf1ff44e16602f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77b70f530ca438284197d1d181cff3fb3c635918783d63cde9f1b7a20b94651f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2a7f2080c460c26cdee9ff5c57f50d7245a321d543af56e681700adb71c707a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2a7f2080c460c26cdee9ff5c57f50d7245a321d543af56e681700adb71c707a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2a7f2080c460c26cdee9ff5c57f50d7245a321d543af56e681700adb71c707a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dc353374c9be4703b5395392e095d8d811d070a90d2bea77c3e5234a6257065e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a93e99f76c4c145feb0bf32bf29a77eb26e2c664399a0a5bd7098adf67a81c11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ebc2863a0ab0e71a78c72a700abb16008eae60af88a44a3faf14ad3ffd93126"
   end
 
   depends_on "go" => :build

@@ -6,16 +6,16 @@ class Cruft < Formula
   url "https://files.pythonhosted.org/packages/d1/7e/0e20012f2aa156e5d6a70483a8d90accb7ed4966dddb0c58987d9f6eba12/cruft-2.16.0.tar.gz"
   sha256 "184662853fbc1c16c0137fe0e9444e0cbe95e40362f5ebb2d9fae33d9223e73f"
   license "MIT"
-  revision 6
+  revision 7
   head "https://github.com/cruft/cruft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9ad9262f43a39d03096c2f3fa869c021c094893a6d20fd6823578429698ba4ae"
-    sha256 cellar: :any,                 arm64_sequoia: "fd20e7676086c2fa4a08eaea7d1ffad52d5b1e29c45ae449cc0deb5a86f94730"
-    sha256 cellar: :any,                 arm64_sonoma:  "4af835f648f5bf39175d2308c601de3df373f8eb85f35cf6ee3812ced08356fd"
-    sha256 cellar: :any,                 sonoma:        "3a9ed9e1bcd89d5313e54c0493967d44943137daceddb75416e259f482d6c28f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cf76b4712dd011148ee71aa1c3cc33e6b22df59b2013d339fbe9502a40efc38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6814373275b662146a108d743bd359e356ebecfea23b968b49f03800d6774ff5"
+    sha256 cellar: :any,                 arm64_tahoe:   "c73ab3e6e70ed8b613a830d5b0126cb0c118d91755082d668559e2ad24c23f37"
+    sha256 cellar: :any,                 arm64_sequoia: "57f8290d399e479262656b864e4644f55a0930ab13491d8454251251fb0cd276"
+    sha256 cellar: :any,                 arm64_sonoma:  "3c509d0e1d6adab732a054b8e154828b514e4de3ed80215c4c5c4cbab7d37250"
+    sha256 cellar: :any,                 sonoma:        "7a14e02279b4e3b98f9abb839ef654307ab865dda58cbe838f73d533ebfd7d1e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "951318bfb00eeef90429995c72964143bdeb27f36f7ee070294f033e49821cf9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f23c83b8f65eee0a4e1546b8a9e5737b71aa4ccb7daf1eb54a1d67f689abdca4"
   end
 
   depends_on "certifi" => :no_linkage
@@ -90,8 +90,8 @@ class Cruft < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "python-dateutil" do

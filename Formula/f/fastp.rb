@@ -1,18 +1,18 @@
 class Fastp < Formula
   desc "Ultra-fast all-in-one FASTQ preprocessor"
   homepage "https://github.com/OpenGene/fastp"
-  url "https://ghfast.top/https://github.com/OpenGene/fastp/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "c55656dfe9c3a40d3da59d680aa4ff4a2a4861bbc3993cb3659cdeb5e23fd858"
+  url "https://ghfast.top/https://github.com/OpenGene/fastp/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "c4ace9d14dd412954efdfb6160a6069175fc470cbcdbd4d379eab6b7eb835d30"
   license "MIT"
   head "https://github.com/OpenGene/fastp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4b3cd27137c016fb30ab7133d42eba0d526a4c8174cb994432a95a2339596393"
-    sha256 cellar: :any,                 arm64_sequoia: "04de2eb48361d2a6ab031fe66587ac5ad3cf8302b038d457970a7baf82a9a2c9"
-    sha256 cellar: :any,                 arm64_sonoma:  "20f35cc1600e805a27251b15ddadd0a82ed873e424bc561b69deb5516f5f8a1c"
-    sha256 cellar: :any,                 sonoma:        "8be6ff536586710382c0f15a05f989464b0039cd3272f2fcd45125ac2a9c5990"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea2cc9354495f7f1348ce86b73d3bd6e1f8d2edad4b67860a1c99dc72c74208b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b89099cd70d5c4504b6a2ac388b9a43c9316d3fc0c61476b1844127c4040967"
+    sha256 cellar: :any,                 arm64_tahoe:   "f8ab56fce15d17d4f3c1683533074d0bee1986b9ff064b407c318c1555ea24d9"
+    sha256 cellar: :any,                 arm64_sequoia: "a56898f08b7ee4d2e79df0100818cd65f1880e6309b01d06f75d0fb637f993b3"
+    sha256 cellar: :any,                 arm64_sonoma:  "78c63fb2fab9c71a6d91d4af248096445285766df125dd61bedeebfa612b40a3"
+    sha256 cellar: :any,                 sonoma:        "3fad557ef62ffcc4c6ea69131a95efd6efe518993abf70ed45db703cb09c6757"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "97987dcd4ede63426b9dcc9d442cdb6140f642d1d053752b0b8a6e380cbfa5a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62d4248e49e4f85e5c51ab1ff6d25ba6c20e7cf593a9f21153992100bd99895f"
   end
 
   depends_on "highway"

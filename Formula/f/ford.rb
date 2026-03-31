@@ -6,15 +6,16 @@ class Ford < Formula
   url "https://files.pythonhosted.org/packages/7e/22/c9688672022dc47456a0dd0a51e0f4310e5c69ef4cd8243c141420421dc9/ford-7.0.13.tar.gz"
   sha256 "482a75b34b9f2b1975cbae9aa1c533a62d63e0c1861b5b772d25aa52fb1ce809"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/Fortran-FOSS-Programmers/ford.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c09cb38a6d731739a183b7707bf2e4f38233b670f558a789b5220293d2c89fe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65d188b19db4c7dc043bf8924b9e6dde6858924bbebda64aaa3cd9934ce289fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d58c3d8b1681d6e92c38632758100ca798f1b0eca4d5f66ef8e703aaa357b736"
-    sha256 cellar: :any_skip_relocation, sonoma:        "38f26970c8a5c1b1845b4546e06bbddda7582dddac1cee4f160b0fcdd41085ac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7dda4b08ababe1f0ef46940c74195c6885d1fe916eac102e793513236b741997"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15cb9becf07f3ecf3a69d6f05349a84c207916fba341c2a140359c0e25a8036c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2cf02c0873c7cbbe937d5f2d5b6715f39879c9aff8ce6ee9a9380e9c46f79d8f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a81168709bd0970c463be5c9ba5deff31a4eb5dacb64c1a4ad1a1a9731c94d06"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a40d6849247ea7b2191ae773b92858e543c877cf9edbe77312bd942669d5001a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f733ce2f59893fd27bc0ade8ed4a5dc74e0c6713992cbb0d0be04c6e7b1257ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd6ac9b7b437bf042a411adbf44cebb75d99a8fcec194c6caacb6427a3f126e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3404cda6e1c63274e0d4a7fbbe84c54a07acb45714832efa992c527597101ffd"
   end
 
   depends_on "graphviz"
@@ -66,8 +67,8 @@ class Ford < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "python-markdown-math" do
@@ -76,8 +77,8 @@ class Ford < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/74/99/a4cab2acbb884f80e558b0771e97e21e939c5dfb460f488d19df485e8298/rich-14.3.2.tar.gz"
-    sha256 "e712f11c1a562a11843306f5ed999475f09ac31ffb64281f73ab29ffdda8b3b8"
+    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
+    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
   end
 
   resource "soupsieve" do

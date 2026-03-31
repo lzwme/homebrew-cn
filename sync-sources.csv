@@ -5366,6 +5366,7 @@ Homebrew-homebrew-core/Formula/o/openssl@3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openstackclient.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opensubdiv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opentelemetry-cpp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/opentimestamps-client.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opentofu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opentsdb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openvdb.rb, Homebrew/homebrew-core, 1
@@ -5894,6 +5895,7 @@ Homebrew-homebrew-core/Formula/p/protolint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protozero.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prover9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/prowler.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/proxelar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proxify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proxsuite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proxychains-ng.rb, Homebrew/homebrew-core, 1
@@ -9006,6 +9008,7 @@ Homebrew-homebrew-cask/Casks/c/clash-verge-rev.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/classicftp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/classroom-mode-for-minecraft.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/claude-code.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/claude-code@latest.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/claude-devtools.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/claude-island.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/claude.rb, Homebrew/homebrew-cask, 0
@@ -9307,7 +9310,6 @@ Homebrew-homebrew-cask/Casks/d/desktop-composer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/desktoppr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/desktoputility.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/desmume.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/d/detail.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/detectx-swift.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/detexify.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/devcleaner.rb, Homebrew/homebrew-cask, 1
@@ -12890,6 +12892,7 @@ Homebrew-homebrew-cask/Casks/j/jettison.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jewelrybox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jgrasp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jgrennison-openttd.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/j/jiba.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jiggler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jitouch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jitsi-meet.rb, Homebrew/homebrew-cask, 1

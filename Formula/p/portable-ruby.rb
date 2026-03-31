@@ -6,6 +6,7 @@ class PortableRuby < PortableFormula
   url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.2.tar.gz"
   sha256 "51502b26b50b68df4963336ca41e368cde92c928faf91654de4c4c1791f82aac"
   license "Ruby"
+  revision 1
 
   # This regex restricts matching to versions other than X.Y.0.
   livecheck do
@@ -14,10 +15,10 @@ class PortableRuby < PortableFormula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "a506fdbd4f01f2ef9578944e932d2eb2dfb291a69e5806dece426259b6e9f22c"
-    sha256 cellar: :any_skip_relocation, catalina:      "6581aceb09afafab23bac3f3926850066c45a17d4a02e6e16f607cd33ebb4c7a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdad9a44102a50c1d0e61f9d6f78b1b3974ff26aee72f24b05c3afef0ee8c7cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74f0635fef7133470c1a3fa91a26c57f3ecc8dacbc430bbb5ac8e1baf08bb2ed"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "f41c72b891c40623f9d5cd2135f58a1b8a5c014ae04149888289409316276c72"
+    sha256 cellar: :any_skip_relocation, catalina:      "7c7830166a509857669c544dcba7a0d08ca656a3da073c68826ca0a5b1b56b12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7694e72a42b55e501c297bd7ba83ef94830de8dd800be292f7b1a64bc113976a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25a7c872b5e518adc2c6877e1474fba4dc7bd27f79729bfbfcc22d44fbca839f"
   end
 
   depends_on "pkgconf" => :build
@@ -52,6 +53,14 @@ class PortableRuby < PortableFormula
         json.first["number"]
       end
     end
+  end
+
+  # Fix performance regression in GC sweeping of classes.
+  # https://github.com/Homebrew/brew/issues/21859
+  # Remove with Ruby 4.0.3.
+  patch do
+    url "https://github.com/ruby/ruby/commit/2b22593ac12d0e8cbcf8299f0fea14c6311715d8.patch?full_index=1"
+    sha256 "fb7efdd6ed383aacf4d2d2cc5aeb8bb180f47dc3930c4280c5e137963780411c"
   end
 
   def install

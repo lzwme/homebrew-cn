@@ -1,8 +1,8 @@
 class SentryCli < Formula
   desc "Command-line utility to interact with Sentry"
   homepage "https://docs.sentry.io/cli/"
-  url "https://ghfast.top/https://github.com/getsentry/sentry-cli/archive/refs/tags/3.3.4.tar.gz"
-  sha256 "617e9a5a09c8d2a24603e91fcd7a7b1379c0fe4cda39a015c2fa3009e0c83aee"
+  url "https://ghfast.top/https://github.com/getsentry/sentry-cli/archive/refs/tags/3.3.5.tar.gz"
+  sha256 "9ec565db99e85a29ca5ada4605581fa3e8a93e8ac9509ef6a47dc4ca3a269044"
   license "BSD-3-Clause"
   head "https://github.com/getsentry/sentry-cli.git", branch: "master"
 
@@ -12,12 +12,12 @@ class SentryCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18aae5ffd2a257cdad62fd5f44681412845a069233b39aae6c7ee63f8ececbbc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb6da0107d6c7ebc3c25bc325becbd93054d29f513d73bbb70e98766f7ee87d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dfa198a85cc6ccb8ad827c599653043e885f7c4c428a29542e3cd6a0e7296d83"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f8c109142f43d1fe8b335633491fca682b54aa1d943c1c2516bdd7b6ab8fede4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "89aec554cacfebe1e987ff32f1f05ce7fef1a963dbc13bf19fa411c1500b9bc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "771f0b5623d4208b18ce6dda30c422976354e29a1ab6d152d459f17984bff4bd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "46a922f3ba8be8bc5452f8ce1b6910f17e8cc23915604d751fb6e332b9ba43eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d272e7a1697d739cb03b92556a962c58c13ac8b71e6ebf0958a98c02eb9abbd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c902b6f6be5fdb805b5f47a9ed2b32ba2c3d9bdee8b597080588b59cc8b4de21"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3c07e1c10453435ca9a425387211634713d3f1297b56948a9f195cd85f7f0fd3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c48236ecbf784942cdd7e36296a6f7b466b818f1bba8ce797647e025ff6c08db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4892f7f41e4ba82d1eaecea8b2ec688ff94772e16b9f8ae776d502fa34ed6b5"
   end
 
   depends_on "pkgconf" => :build

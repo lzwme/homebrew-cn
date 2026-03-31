@@ -6,15 +6,15 @@ class CloudformationCli < Formula
   url "https://files.pythonhosted.org/packages/12/ed/36f14b63957e99d9f2cbb5ac5671eed9fb93569e57add60534d47fc630e4/cloudformation-cli-0.2.39.tar.gz"
   sha256 "63bd83ad0b40b6ad21983dfe05f0717aeaa36cb3f935ef6825f8ca73d7a8e5a7"
   license "Apache-2.0"
-  revision 9
+  revision 10
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b749b95876e9c81014fb83ed9e86bbdccaa660f739c1e7a05cb4b3a225994489"
-    sha256 cellar: :any,                 arm64_sequoia: "2a45305b29ec22160e80444fabd7bfaaba7439d541116d3c9e621d377fef50ae"
-    sha256 cellar: :any,                 arm64_sonoma:  "a8da9ed619ce1ea4d9c9b9ddbd89fb9f9e9a65559d9eee080031950316ba5392"
-    sha256 cellar: :any,                 sonoma:        "efd47a0923cf7a972d93a0a793628137c34077ffcb509f15a0aaf596a09209c2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b72566e67770b1782409ab69e655aa9c91ef5203020c95a09363149d6325488"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de023e019f50eb0decab97e05237e2ea0e18164bb97f31057c11f494463130ff"
+    sha256 cellar: :any,                 arm64_tahoe:   "7fd897b049960b6ebc2ba80de447c6de2243f03a6c3b749bf17ff0ce9b792df0"
+    sha256 cellar: :any,                 arm64_sequoia: "9c457555a12a355fe03c170c578b9264925d5acd5df8832c0bcfba7a946c386d"
+    sha256 cellar: :any,                 arm64_sonoma:  "5d9b0e107d2ca79f06eefe831e9ab36ba7a84f6ed7927a39422822ca557b9cd2"
+    sha256 cellar: :any,                 sonoma:        "b733bfe90c8af2657935c0267ae01c9b25521ba856bbfd1a8e00ffc8923fbfd8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d09388c286fe3b20d5dcc5bc07bbfd32131a98dcec6e480a4368b739ecd7d3b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c558e74bf301e01aa26af9b185ec6e940530a1f68ff0ed28b2e9ee5f1b867da8"
   end
 
   depends_on "go" => :test
@@ -38,13 +38,13 @@ class CloudformationCli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/f1/13/33c8b8704d677fcaf5555ba8c6cc39468fc7b9a0c6b6c496e008cd5557fc/boto3-1.42.76.tar.gz"
-    sha256 "aa2b1973eee8973a9475d24bb579b1dee7176595338d4e4f7880b5c6189b8814"
+    url "https://files.pythonhosted.org/packages/a8/2b/ebdad075934cf6bb78bf81fe31d83339bcd804ad6c856f7341376cbc88b6/boto3-1.42.78.tar.gz"
+    sha256 "cef2ebdb9be5c0e96822f8d3941ac4b816c90a5737a7ffb901d664c808964b63"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/70/62/a982acb81c5e0312f90f841b790abad65622c08aad356eed7008ea3d475b/botocore-1.42.76.tar.gz"
-    sha256 "c553fa0ae29e36a5c407f74da78b78404b81b74b15fb62bf640a3cd9385f0874"
+    url "https://files.pythonhosted.org/packages/67/8e/cdb34c8ca71216d214e049ada2148ee08bcda12b1ac72af3a720dea300ff/botocore-1.42.78.tar.gz"
+    sha256 "61cbd49728e23f68cfd945406ab40044d49abed143362f7ffa4a4f4bd4311791"
   end
 
   resource "cfn-flip" do
@@ -93,8 +93,8 @@ class CloudformationCli < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/19/e1/ef365ff480903b929d28e057f57b76cae51a30375943e33374ec9a165d9c/hypothesis-6.151.9.tar.gz"
-    sha256 "2f284428dda6c3c48c580de0e18470ff9c7f5ef628a647ee8002f38c3f9097ca"
+    url "https://files.pythonhosted.org/packages/f5/dd/633e2cd62377333b7681628aee2ec1d88166f5bdf916b08c98b1e8288ad3/hypothesis-6.151.10.tar.gz"
+    sha256 "6c9565af8b4aa3a080b508f66ce9c2a77dd613c7e9073e27fc7e4ef9f45f8a27"
   end
 
   resource "idna" do
@@ -168,8 +168,8 @@ class CloudformationCli < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyrsistent" do
@@ -203,8 +203,8 @@ class CloudformationCli < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/8b/71/41455aa99a5a5ac1eaf311f5d8efd9ce6433c03ac1e0962de163350d0d97/regex-2026.2.28.tar.gz"
-    sha256 "a729e47d418ea11d03469f321aaf67cdee8954cde3ff2cf8403ab87951ad10f2"
+    url "https://files.pythonhosted.org/packages/81/93/5ab3e899c47fa7994e524447135a71cd121685a35c8fe35029005f8b236f/regex-2026.3.32.tar.gz"
+    sha256 "f1574566457161678297a116fa5d1556c5a4159d64c5ff7c760e7c564bf66f16"
   end
 
   resource "requests" do

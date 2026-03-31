@@ -8,9 +8,10 @@ class Gpsbabel < Formula
   livecheck do
     url :stable
     regex(/^gpsbabel[._-]v?(\d+(?:[._]\d+)+)$/i)
+    strategy :git do |tags, regex|
+      tags.filter_map { |tag| tag[regex, 1]&.tr("_", ".") }
+    end
   end
-
-  no_autobump! because: :incompatible_version_format
 
   bottle do
     rebuild 2

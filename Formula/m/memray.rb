@@ -7,8 +7,6 @@ class Memray < Formula
   sha256 "680cb90ac4564d140673ac9d8b7a7e07a8405bd1fb8f933da22616f93124ca84"
   license "Apache-2.0"
 
-  no_autobump! because: "`update-python-resources` cannot update resource blocks"
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "d2b8be477afa8dd1e3725a17c9b996e7b9c0ae89ad85af9a63cc7174842d187a"
     sha256 cellar: :any,                 arm64_sequoia: "70b5d903a69cc55f60a65b6f585356e14c80704d68b4ff07303771373511d088"
@@ -32,6 +30,11 @@ class Memray < Formula
     resource "elfutils" do
       url "https://sourceware.org/elfutils/ftp/0.194/elfutils-0.194.tar.bz2"
       sha256 "09e2ff033d39baa8b388a2d7fbc5390bfde99ae3b7c67c7daaf7433fbcf0f01e"
+
+      livecheck do
+        url "https://sourceware.org/elfutils/ftp/"
+        regex(%r{href=(?:["']?v?(\d+(?:\.\d+)+)/?["' >]|.*?elfutils[._-]v?(\d+(?:\.\d+)+)\.t)}i)
+      end
     end
   end
 

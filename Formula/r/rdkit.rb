@@ -15,8 +15,6 @@ class Rdkit < Formula
     end
   end
 
-  no_autobump! because: :incompatible_version_format
-
   bottle do
     sha256                               arm64_tahoe:   "52b7b9cdd45e1608a46944ff59341d8267b3da53b9528d24ca92f99b7c3fcc18"
     sha256                               arm64_sequoia: "3ccc7f633ece1ce408685f97d6d28c19c5e634c33e646c580f1465a9025aa137"

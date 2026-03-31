@@ -1,18 +1,18 @@
 class CargoUpdate < Formula
   desc "Cargo subcommand for checking and applying updates to installed executables"
   homepage "https://github.com/nabijaczleweli/cargo-update"
-  url "https://ghfast.top/https://github.com/nabijaczleweli/cargo-update/archive/refs/tags/v19.0.0.tar.gz"
-  sha256 "1937584fc78fa340e63b0d8e5e26becbcda996fd2a97f7f75fc5fa3020689a3e"
+  url "https://ghfast.top/https://github.com/nabijaczleweli/cargo-update/archive/refs/tags/v19.0.1.tar.gz"
+  sha256 "3f71d07f20bc8fe46f8b37a59dd414412e62b5ba01738a384d3c9c0e93d63676"
   license "MIT"
   head "https://github.com/nabijaczleweli/cargo-update.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e52a495839250cc5e180b466e01505bef8056e66946331c6c00baa8e196d8eae"
-    sha256 cellar: :any,                 arm64_sequoia: "f2cd85a0da9c9536e855fcb8182c96b4247a1ea57ab9c51c235948762e680b4f"
-    sha256 cellar: :any,                 arm64_sonoma:  "e42998e8a0de79885c60d509855e450c9af4b3a32976036bded0f856ac94aa10"
-    sha256 cellar: :any,                 sonoma:        "e49d7150139efd348e152d29f12d0c1dca62734ecf3821503ddb996d7c23bd15"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f44d4fba414d0810aed74cbd986aa62d6417f60b55ca7f2bd7ea45f19eb5f2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb15663e791851f7effb309175f65f088a0fee4b0c509b2fcc9bf8a094cac544"
+    sha256 cellar: :any,                 arm64_tahoe:   "d05c66a788b82dc2d7a5115989dd178228b7a66669eae145bfb4413eaa608767"
+    sha256 cellar: :any,                 arm64_sequoia: "8369d287b75aeca29bc69d2f19df639115f235fdfefffacd0d278666657eba95"
+    sha256 cellar: :any,                 arm64_sonoma:  "390aedf00c7af89ee310b2a090cf2db1dbf9db27b6c1396ccfd71c9532c6e267"
+    sha256 cellar: :any,                 sonoma:        "260037fdfb46777606c117c61a11bc368a25330a2d1621b9b27ed4a012ddd351"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4dd30596cd823d9e41530964d5a3d69be477fe48741e782f65881c43cd06e698"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fadb436fe80d08a454877baf24ae13210a99b9ff5c1dc6767adb55977dbc3d0"
   end
 
   depends_on "pkgconf" => :build

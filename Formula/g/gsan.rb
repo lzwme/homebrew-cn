@@ -6,11 +6,11 @@ class Gsan < Formula
   url "https://files.pythonhosted.org/packages/73/0c/1fc5a29ae79fd74f0fd54d2c4d487b8cf7b21ede08efe99a6c39977816c6/gsan-5.0.0.tar.gz"
   sha256 "2418a6897b0eb1c6eb44c3521ccc5c69a811071f864b8001fd9699a4d2f4c9e3"
   license "MIT"
-  revision 3
+  revision 4
   head "https://github.com/franccesco/getaltname.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4f4a523defbda42e8a69246d1d43ab8599b69604e09233b95ff5fcbe52d86e2c"
+    sha256 cellar: :any_skip_relocation, all: "b50e7f2e818efaf55501b2c3de09cf00dd6d961251a98c253b778a171175883c"
   end
 
   depends_on "cryptography" => :no_linkage
@@ -44,8 +44,8 @@ class Gsan < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyopenssl" do

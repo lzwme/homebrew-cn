@@ -6,9 +6,10 @@ class Fobis < Formula
   url "https://files.pythonhosted.org/packages/12/51/8ec4d27fb0f94df3b538cebcdad15db373f59a85d76716d3291e57328ef6/fobis_py-3.7.3.tar.gz"
   sha256 "b5fd5f9b73fa47e12a3f5ad68ef6aa6317c9d1ed70e6032ce8c71066ac7bbaa6"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2e19a55353ac914b9549578aefdb08ef9d57f4892efb926e3cbf48652e6015d3"
+    sha256 cellar: :any_skip_relocation, all: "aede4ee9ebb9cf55c47ce4d2d6650d9a8507c77f3ff5c9b0cd5c438ac77f7f2a"
   end
 
   depends_on "gcc" # for gfortran
@@ -36,8 +37,8 @@ class Fobis < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "rich" do

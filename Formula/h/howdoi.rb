@@ -6,15 +6,15 @@ class Howdoi < Formula
   url "https://files.pythonhosted.org/packages/6d/43/0e8166583575bd500c0f8f1a4ab9429af9466feb6fcdc006e88de8fd23e9/howdoi-2.0.20.tar.gz"
   sha256 "51cd40c53e0c0f8f8da88f480eb7423183be2350ab4f0a4d9d4763ca6ac3e2a9"
   license "MIT"
-  revision 17
+  revision 18
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5a4a892ba8304ab4bfc5c1e1c27b963c7a50ffee5343a2d426ef31ab52bcb5c4"
-    sha256 cellar: :any,                 arm64_sequoia: "e56fd00a3b362c3413888634dfb1c9f8df58e76d1191166a99b58d23ae2cb014"
-    sha256 cellar: :any,                 arm64_sonoma:  "fe95a8bba0938636da115288a17e41700c75172fcc06d8de0984faeb506b0e64"
-    sha256 cellar: :any,                 sonoma:        "8dc3a8a2777351c29ea22e582a0ba5048d804b606e6c20efb2961ecc7852cab7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3603b095049f4094fab6a055d22ee9a3b99406e6547c5c0704d0030511f7bfa8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edbb52b9c008f8a19a8084e13dbadb30fbd640708cf7d71bfd33d5026bf9cb00"
+    sha256 cellar: :any,                 arm64_tahoe:   "9fce719168f53c52f8cc5a03f59023519b365e10224bc261cd7378a247f5ff0a"
+    sha256 cellar: :any,                 arm64_sequoia: "b8527839d5675c5c5c02c1bb185d7304cdf73c77e4887d8bacb190bf62c66f13"
+    sha256 cellar: :any,                 arm64_sonoma:  "0f5e802f74fb7b57f60b45ada913596b03ef7df3844d5e507e8fc86bcbbadc1d"
+    sha256 cellar: :any,                 sonoma:        "aa58df417bc8d0419f7d57e7c4f06a418a583117e8da3dd268e6b062fcf6838a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbfeab2889a06c9b2f6c00bba2f6faae7fb2e3922a5589352315eb0856e98b74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30b23452469e68f886568968b94e57b293ba10f00abc0c903a445917bee059ec"
   end
 
   depends_on "certifi" => :no_linkage
@@ -88,8 +88,8 @@ class Howdoi < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyjwt" do

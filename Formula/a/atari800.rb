@@ -11,11 +11,11 @@ class Atari800 < Formula
 
   livecheck do
     url :stable
-    regex(/ATARI800[._-]v?(\d+(?:[._]\d+)+)/i)
-    strategy :github_latest
+    regex(/^ATARI800[._-]v?(\d+(?:[._]\d+)+)$/i)
+    strategy :git do |tags, regex|
+      tags.filter_map { |tag| tag[regex, 1]&.tr("_", ".") }
+    end
   end
-
-  no_autobump! because: :incompatible_version_format
 
   bottle do
     rebuild 1

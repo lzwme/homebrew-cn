@@ -6,11 +6,11 @@ class Cinecli < Formula
   url "https://files.pythonhosted.org/packages/df/c6/bc46bf8f30ce881a8822ce7b4ead93f9cfaee466852c78cab3f8931f5639/cinecli-0.1.2.tar.gz"
   sha256 "5e2e053a6b0f71070b8e7028dab69be47b8def42639b90f805f28da5a040a141"
   license "MIT"
-  revision 3
+  revision 4
   head "https://github.com/eyeblech/cinecli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b2ad55d04f041560aafb0e0095d52aa81e1c34f55f789d9534ad791b7137113e"
+    sha256 cellar: :any_skip_relocation, all: "e58a69302e7245035a636c5934e4f6a6f229c0828288bf7801b3a1a14e1d2e02"
   end
 
   depends_on "certifi" => :no_linkage
@@ -49,8 +49,8 @@ class Cinecli < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "requests" do

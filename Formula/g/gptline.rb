@@ -6,16 +6,16 @@ class Gptline < Formula
   url "https://files.pythonhosted.org/packages/5b/28/d15a9a5b349c77a051a633e13141151314f352067ec7d516220bd6b20fcf/gptline-1.0.8.tar.gz"
   sha256 "4a0a0b5fa4f23e5f2ad7ac5bf44a9143e5de3757b0b8eefe5d78a7757d1d34bb"
   license "GPL-3.0-only"
-  revision 17
+  revision 18
   head "https://github.com/gnachman/gptline.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "69a63c48ceb9c741bbe84a0c6c1d6f2e338a20d6e35e4b399b198fc2b1877f5f"
-    sha256 cellar: :any,                 arm64_sequoia: "d4602a0560532b6b11e50a7d2a4937561f653ea8d1cff3dfb4a4c5d5b4574b23"
-    sha256 cellar: :any,                 arm64_sonoma:  "05050b91fa3b4b02a3c9ebf096cc1a8c6a21ef3baa7e2faa47e9ebe4fa460400"
-    sha256 cellar: :any,                 sonoma:        "43ab2a1b0c4a7069ea754b1e78c970d4ab6ae52b289270c0d064e8014fc0b722"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f310a1645305960b11fdab4c1513c248c1986f210b10385836cf44a959b0c1cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a33b868d4eb5a7e7758c6cfd96c7f4d60f5b0a4a97eae84a20fcd2e78b7c92bd"
+    sha256 cellar: :any,                 arm64_tahoe:   "a3a355c706fdd095759e4b77b391d502852969058e332ee0b6c7712ace4080b5"
+    sha256 cellar: :any,                 arm64_sequoia: "b998d203a74eb1c0231c6948b119e3029d44717b98d165a97a6ac1e06fb02448"
+    sha256 cellar: :any,                 arm64_sonoma:  "543c603df16f32dd177d8e58c8bc2c627ecc3f9606978a623a1124528326b5e2"
+    sha256 cellar: :any,                 sonoma:        "1318b147dbd31d9fde22c274006bc4323b2cae035f3bc2822c3181411a27bf68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "811a183c560b1eb10cf7ea601b8cafbc95f604a845d72b66101a7ceaed2e166c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9af7454966d06bc8978380e1a7c7f8c505e0a073d1f442ec50e1d32462069e5d"
   end
 
   depends_on "pkgconf" => :build
@@ -163,8 +163,8 @@ class Gptline < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "python-dateutil" do
@@ -178,8 +178,8 @@ class Gptline < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/8b/71/41455aa99a5a5ac1eaf311f5d8efd9ce6433c03ac1e0962de163350d0d97/regex-2026.2.28.tar.gz"
-    sha256 "a729e47d418ea11d03469f321aaf67cdee8954cde3ff2cf8403ab87951ad10f2"
+    url "https://files.pythonhosted.org/packages/81/93/5ab3e899c47fa7994e524447135a71cd121685a35c8fe35029005f8b236f/regex-2026.3.32.tar.gz"
+    sha256 "f1574566457161678297a116fa5d1556c5a4159d64c5ff7c760e7c564bf66f16"
   end
 
   resource "requests" do

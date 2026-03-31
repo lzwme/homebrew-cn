@@ -14,8 +14,6 @@ class Psqlodbc < Formula
     end
   end
 
-  no_autobump! because: :incompatible_version_format
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "8ea1a4ecf8e6a609fdc9b2c38efc6a1f48c905420eee73abc502e466de797328"
     sha256 cellar: :any,                 arm64_sequoia: "904625a0bf31b2b254a7e6832a98a4e9cd9ac738895564a69ade039223b22b90"

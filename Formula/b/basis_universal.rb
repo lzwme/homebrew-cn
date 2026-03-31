@@ -14,8 +14,6 @@ class BasisUniversal < Formula
     end
   end
 
-  no_autobump! because: :incompatible_version_format
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8878b4f2ecde5c3ecf036eae7cf1ca38f88e3b0fb334fc4b71cfce53de3a70e3"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "996300ae778bc067a3f9ac741afb9867b27d6518e6dd234db25d0c53e6be7ad2"

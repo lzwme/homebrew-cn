@@ -24,6 +24,10 @@ class Esniper < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "676227a142bc96ca566a352c446328a78c7ad02bb80b56e3f3f131e755994a31"
   end
 
+  # https://sourceforge.net/p/esniper/git/ci/e2b495c6aae6596a2c8ac039d76afdf0764b06d7/
+  deprecate! date: "2026-03-30", because: :unmaintained
+  disable! date: "2026-09-30", because: :unmaintained
+
   uses_from_macos "curl"
 
   def install

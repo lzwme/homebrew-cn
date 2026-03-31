@@ -14,8 +14,6 @@ class Gauche < Formula
     end
   end
 
-  no_autobump! because: :incompatible_version_format
-
   bottle do
     rebuild 1
     sha256 arm64_tahoe:   "4dcc399b09f0db638cb74c51b46a1d289f7d9eb7602e1632f409af0d780d6b70"

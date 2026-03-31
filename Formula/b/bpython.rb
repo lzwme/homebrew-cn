@@ -6,16 +6,16 @@ class Bpython < Formula
   url "https://files.pythonhosted.org/packages/44/29/cd80e9108a6fc6a925ffb915f8f69198a2bb2388e39167a41d743ac2a8f4/bpython-0.26.tar.gz"
   sha256 "f79083e1e3723be9b49c9994ad1dd3a19ccb4d0d4f9a6f5b3a73bef8bc327433"
   license "MIT"
-  revision 3
+  revision 4
   head "https://github.com/bpython/bpython.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a27317d1f8be38904018d3f59217a804dc30f96392f72899326b0665f7a45cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2167a75279b1e682cab96c81dae932ad6168ef262a733c697a5ca894e2958cfb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52f895e953eb6264412908454c097f909bd1d1d72dc70a91fabece487565e906"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0fd0594e7d722578647524170c21051721e0ef47bf5539c92e006bc44ca8de0d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca393ca9075eced881692b0688abdce8215939bd13037f30ccea1060d7fcd3fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "502b44c8bb3d0fc29774d58cd5f06f795fd615085910761093e16731711685d7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a6e6d1c65644a6950494960fa6a7f46fca7cc5f0bbed89cce20728a4b8f6dd34"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16e1b2bca7b2c3f1b2a0b90b34cd9cf7d33d2d99e80ea498e1b9aedd655d75ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c06d8dc99cf3e925339a6c187563ac330860b86eac3aeba98c142802ae58df5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7a9c7ad94255bdcc9ab9c73fd4070bba9deec65966f124fe1134a00a72ece9f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe0beaf48cfe30c5910321281d81c647bb23ad1ff2cee71919f60ea2928d9309"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e7a185beb1aca1c73e399d60ac82c06f6d439cd3e75163ea898032a3c5cba27"
   end
 
   depends_on "certifi" => :no_linkage
@@ -24,8 +24,8 @@ class Bpython < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "blessed" do
-    url "https://files.pythonhosted.org/packages/34/b4/a8ae4b4c9c80c36d0bfe026001e39c79b4d5d0947d7eed961ae3b5854fd1/blessed-1.34.0.tar.gz"
-    sha256 "3d17468c3d47e11ed8d6ca3da1270b8aba8ac8bd0a55a1f8189e4d04f223a1f0"
+    url "https://files.pythonhosted.org/packages/0c/ec/67c46675f26223fa9972276f4f0e616773a75a79ec25fafc62f4d4f6b770/blessed-1.37.0.tar.gz"
+    sha256 "36da5ff5779c1b15d4dfa8cd583ea3b05a0a31e1db4bd5af81f89c774b3e9815"
   end
 
   resource "charset-normalizer" do
@@ -54,8 +54,8 @@ class Bpython < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyxdg" do

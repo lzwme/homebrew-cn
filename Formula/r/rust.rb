@@ -6,8 +6,8 @@ class Rust < Formula
   compatibility_version 1
 
   stable do
-    url "https://static.rust-lang.org/dist/rustc-1.94.0-src.tar.gz"
-    sha256 "b83f921cd3f321ff614f9c06a8b870d89299fc02888b48a5549683a36823474c"
+    url "https://static.rust-lang.org/dist/rustc-1.94.1-src.tar.gz"
+    sha256 "4c142a625f12e3cdf716c68ae19f4f60d98ad1482627b08579b15838e95ad514"
 
     # From https://github.com/rust-lang/rust/tree/#{version}/src/tools
     resource "cargo" do
@@ -17,12 +17,12 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d5e00e29ea3544d11dbd1d8e120d168154608ffd5fe4eb62336f4639193d258d"
-    sha256 cellar: :any,                 arm64_sequoia: "7301c72f0da263d62c773093d3dd2da52baa98f24ac60044b6e06872465356d8"
-    sha256 cellar: :any,                 arm64_sonoma:  "d670fe3a67bd2925a94b0e3e569f0ba4ad29b3078c35b4035addb4aa4b2242fb"
-    sha256 cellar: :any,                 sonoma:        "15a40611dcae240d8f831e0af6381345ea89c83a6f3abe66675a29cc6fcd67eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "462b4a8b12744b7d06c8d6488de6ead2af403eed8aea2e868cf7dbe684f4f21c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53e7f45c1a40611f896918ef8d2c09127e123dd364cf53213e08fb4f4d5d9b10"
+    sha256 cellar: :any,                 arm64_tahoe:   "6149dd55f0e8ba36fe103517e623c05f5ccc9b658f628500280d1197484c0c67"
+    sha256 cellar: :any,                 arm64_sequoia: "f56f61fc8035075563073e35a92ba988075cc67be563507fba9bbce532f24650"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe0d663d497fa1b85e0122881d260b91e934a791161af1b3964e4086813e6a57"
+    sha256 cellar: :any,                 sonoma:        "eed4ecbcb5868fb9cf14adaba5c81628cada42e3cc8a538cd42e09a35240b3f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bef26d6d55e46e6441b76a0c839653eda9bd577bbb9e1caf8525f7d3fbd012b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71d32fb75792834c3ce0b6e451a56c8dbf214dec0f239e4bf87c7bc9b9f05fb8"
   end
 
   head do

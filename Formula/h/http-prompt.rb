@@ -6,16 +6,16 @@ class HttpPrompt < Formula
   url "https://files.pythonhosted.org/packages/bf/e2/bc5b0df107afcac65fde7015df48cbe9b4d877d1d0818203544ed1a41d4c/http-prompt-2.1.0.tar.gz"
   sha256 "eee71a00fed0b8a2a35bb338b269be7a20e8a1a6f6465a65561d76a21521e7f3"
   license "MIT"
-  revision 16
+  revision 17
   head "https://github.com/httpie/http-prompt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a149c8d203842fe8ac8770442f2f7d265cbe8c94e36af3973b8c1d4c715291ab"
-    sha256 cellar: :any,                 arm64_sequoia: "01f2a4a7cd0bc7270b4abe4eadc35f46a2dc3f92d57cec117fd023952e6fa381"
-    sha256 cellar: :any,                 arm64_sonoma:  "946a89cedefef3325199a3831215a80ab20f04c07321b1d874ffad430e808832"
-    sha256 cellar: :any,                 sonoma:        "11c52e0235853d89ccf96358b69d8d4f20782fa820d5a8c9827c3f6a12afe0b8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ff3b3c57f7763cf8e47a327f5281b936143ef6797ff1daea19c3688a0cb682e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "873306a3df4696b5cd99ebb9d6a2dbdb890c52ca4eb39c13d5480b4cbb9ee8c6"
+    sha256 cellar: :any,                 arm64_tahoe:   "8ef05ad46af577f1edab7716dcf3b00f6dc5b9149b26340840ef63c779032b97"
+    sha256 cellar: :any,                 arm64_sequoia: "9ae52828f002e7fbc04fde192157436c4d4b6fd55a7896338ccd21bc5f34bed6"
+    sha256 cellar: :any,                 arm64_sonoma:  "6d44e826c2f225dd5572fe93378c164027ab7e327a4985fb53715630a6433af5"
+    sha256 cellar: :any,                 sonoma:        "dfbb24581dfb6fda5ff660c980b0ec1727fab69bf50d5c4e2189d5a0eebab251"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1169947552d81ce8deda11785cd9afdc917d34b78f706cbb86df25bb41922ba5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2091031e1f0dc0fef2b586d7622be49794f1f6e8fb2f4470ce9d8dcc6e7e02a2"
   end
 
   depends_on "certifi" => :no_linkage
@@ -75,8 +75,8 @@ class HttpPrompt < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pysocks" do
@@ -90,8 +90,8 @@ class HttpPrompt < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/8b/71/41455aa99a5a5ac1eaf311f5d8efd9ce6433c03ac1e0962de163350d0d97/regex-2026.2.28.tar.gz"
-    sha256 "a729e47d418ea11d03469f321aaf67cdee8954cde3ff2cf8403ab87951ad10f2"
+    url "https://files.pythonhosted.org/packages/81/93/5ab3e899c47fa7994e524447135a71cd121685a35c8fe35029005f8b236f/regex-2026.3.32.tar.gz"
+    sha256 "f1574566457161678297a116fa5d1556c5a4159d64c5ff7c760e7c564bf66f16"
   end
 
   resource "requests" do

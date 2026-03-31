@@ -6,15 +6,16 @@ class Cycode < Formula
   url "https://files.pythonhosted.org/packages/ca/61/75b91064eec91013e61e168495994e2f1f8ae604061122cf1de56692c919/cycode-3.12.1.tar.gz"
   sha256 "727d5d9b95f2cd415c10d7ed7e70be8f7e0f570b5db436011b3d850ae28096e0"
   license "MIT"
+  revision 1
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2f46df4d8f848b95914b5c9e2348359e27f04e8a86950fb8c96ee08b45dbed39"
-    sha256 cellar: :any,                 arm64_sequoia: "4a4c20378d07a7e7dd54b09c7b556c603d5917907eeccbff9d3db1503ba470eb"
-    sha256 cellar: :any,                 arm64_sonoma:  "6044311e85b5fe8fdb09d0faaf550c17daebee0a87a5fea1492e2f2f485e9534"
-    sha256 cellar: :any,                 sonoma:        "092c10589162d2ec39af439108a671c9beb7e66a0c6bf8a504e3b889541447b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8ff686901a61607dbbb9cddb99e9d79b7bd6c2f7e4db22ec76591269f3d2c2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5550538262fcbc9adb31d6af22c591982b36b8b1fc9b13069cb51018b8058ec"
+    sha256 cellar: :any,                 arm64_tahoe:   "2087795db3b4c239d998eb4ed2ffefdf5b56d1ad3c190a07fc18ca9f24a41846"
+    sha256 cellar: :any,                 arm64_sequoia: "46eb23b9871ef46172d491f1a242908276befba48f944d7c016c4abba979de97"
+    sha256 cellar: :any,                 arm64_sonoma:  "1683439ff5acc2696a3a5eb42232e68b05feaa1147dd18a29f867ca8adad16a6"
+    sha256 cellar: :any,                 sonoma:        "fe7105161f9fb55fb1d4d1108ffced84ad5d6fa0c65abefe89d72e58cee25064"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0573b8177cd7c5218d3fd75d0f809d326105e273fd494518f79116056252a189"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2b4a8fb3a5b5439041b7c4a7aa7b703e3db831b17041d79d7f86b6094929ea4"
   end
 
   depends_on "certifi" => :no_linkage
@@ -142,8 +143,8 @@ class Cycode < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyjwt" do
@@ -202,8 +203,8 @@ class Cycode < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/14/2f/9223c24f568bb7a0c03d751e609844dce0968f13b39a3f73fbb3a96cd27a/sse_starlette-3.3.3.tar.gz"
-    sha256 "72a95d7575fd5129bd0ae15275ac6432bb35ac542fdebb82889c24bb9f3f4049"
+    url "https://files.pythonhosted.org/packages/26/8c/f9290339ef6d79badbc010f067cd769d6601ec11a57d78569c683fb4dd87/sse_starlette-3.3.4.tar.gz"
+    sha256 "aaf92fc067af8a5427192895ac028e947b484ac01edbc3caf00e7e7137c7bef1"
   end
 
   resource "starlette" do

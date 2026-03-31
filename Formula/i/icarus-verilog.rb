@@ -8,11 +8,12 @@ class IcarusVerilog < Formula
   head "https://github.com/steveicarus/iverilog.git", branch: "master"
 
   livecheck do
-    url :head
-    regex(/v?(\d+(?:[._]\d+)+)/i)
+    url :stable
+    regex(/^v?(\d+(?:[._]\d+)+)$/i)
+    strategy :git do |tags, regex|
+      tags.filter_map { |tag| tag[regex, 1]&.tr("_", ".") }
+    end
   end
-
-  no_autobump! because: :incompatible_version_format
 
   bottle do
     sha256 arm64_tahoe:   "9171910a21536b9bcb60e0de5b11f3d2ebc31f211cae962ad6e520ecfdba1175"

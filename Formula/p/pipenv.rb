@@ -3,12 +3,12 @@ class Pipenv < Formula
 
   desc "Python dependency management tool"
   homepage "https://github.com/pypa/pipenv"
-  url "https://files.pythonhosted.org/packages/8b/1f/63c7e1f6877fa6c6e45e0512fc72ac7966a081fc333f851cea9081378fc7/pipenv-2026.4.0.tar.gz"
-  sha256 "ea6ffd18e42eb7b6193c9bd820db8da934b25a406d9a28c33e76cdabc9ed93a9"
+  url "https://files.pythonhosted.org/packages/b6/67/fdc44f47b4fc9d99729c0e6588407642a4e8ec0d7522736cfe29fea4ebdf/pipenv-2026.5.0.tar.gz"
+  sha256 "5402ac5fb1dae2c3d89e504496502da21fa38ff7c293b2e289a809e2f77b036e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "627f12a2858fc6b8a08a7631fa40e4cef2149323cf2be0133b6bee6767e639c4"
+    sha256 cellar: :any_skip_relocation, all: "960486cfef9ab3cee301a63918251d101c45c00e600004675df8f8ba99234331"
   end
 
   depends_on "certifi" => :no_linkage
@@ -75,7 +75,6 @@ class Pipenv < Formula
 
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
-    assert_match "Commands", shell_output(bin/"pipenv")
     system bin/"pipenv", "--python", which(python3)
     system bin/"pipenv", "install", "requests"
     system bin/"pipenv", "install", "boto3"

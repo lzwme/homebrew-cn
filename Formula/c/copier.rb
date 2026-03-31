@@ -6,14 +6,15 @@ class Copier < Formula
   url "https://files.pythonhosted.org/packages/cb/35/42b9e1c2b4adab0ebb788eae1f1800fa5f481ff5552a6e58c3d953dd11c0/copier-9.14.0.tar.gz"
   sha256 "4d1b6a19538a5d170f913afb7682fe745c74b35c84085890809cb8d8d4d8fe7a"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7dd8829fed4f2ec2cd889e4ab364b16f8d2c2bb32682fbc806e1e32322c8f93a"
-    sha256 cellar: :any,                 arm64_sequoia: "cacce0426f73cdbefca35276dfe573fd4ec785a0cf473c6ca9ef6c7e30bc3087"
-    sha256 cellar: :any,                 arm64_sonoma:  "379af3c6ab28e5de48f13021e7dd8b3c07ec12bea817ba45579bdd3c44e82e72"
-    sha256 cellar: :any,                 sonoma:        "560f1d52a14ac17eee95534abc0f4f3f4db6fd4254a079bef0f5a3390862935e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "090710c15ac40f1f476fdd468d31a4154e7e847eaeedc0019d5db15da7b9e9ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f7825a7fc00e9dba26ac3d4cf4860f9da137d0c84b52015fb78d25244157159"
+    sha256 cellar: :any,                 arm64_tahoe:   "1549ec7656408fc63e439a7b2b9cb302051034d983b10c65252233665c64b531"
+    sha256 cellar: :any,                 arm64_sequoia: "97558af1657f910af4feee5d6f5f1d604ea20d43862658a3052b6e19659106b1"
+    sha256 cellar: :any,                 arm64_sonoma:  "937dfe79cc7c79b9ccd6743fe50d625ff79504c558281516003bad3719460af1"
+    sha256 cellar: :any,                 sonoma:        "df01c73e7ab7fb7f223fb41d706c0c3afee3c3695c0dedbbecaa4164e1ef51ed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "86f2ba8918f0a095b2ac3d2468e89103cd91da399fbef911b30eb1b242ea0ef1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b117e632613595e86bf480931ec8e9061503bc7b1d2ffc2a544ee913515ef73f"
   end
 
   depends_on "libyaml"
@@ -78,8 +79,8 @@ class Copier < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyyaml" do

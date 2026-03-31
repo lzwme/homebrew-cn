@@ -1,18 +1,18 @@
 class RustypasteCli < Formula
   desc "CLI tool for rustypaste"
   homepage "https://blog.orhun.dev/blazingly-fast-file-sharing"
-  url "https://ghfast.top/https://github.com/orhun/rustypaste-cli/archive/refs/tags/v0.9.4.tar.gz"
-  sha256 "d12b8acb028a92fc6d16347ce3c4b3fa89c86cb902a4a291c116077cc41b1e92"
+  url "https://ghfast.top/https://github.com/orhun/rustypaste-cli/archive/refs/tags/v0.9.5.tar.gz"
+  sha256 "409245145c94ba5f0555577e9e3e723d8e10585bb826e5c8b2f88b1b533b0783"
   license "MIT"
   head "https://github.com/orhun/rustypaste-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4dd88e00b24e6d306c44f10f0b7934b84e083e87dbf394e9cdfde51613e79153"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd70d2c16dd58461cf1d50ea26fe2f7e6cd0d3d2a6cdde9fb288a06db3f4ed5e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3fb9ddf804c949046ea26ddd3aa294f6e6bfe31d704e4f61aa479f6a715adfb6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b3d4c7cf0192536dc44b459779e281397c3c9f1b9c99bd32183d7922931918b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4823974b668f741fd3d8daa19775536c224a34d8581c33d7709711aac52fc8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "662b6202603b7a6330e922a227d676f7d33775355ce392d1eb6f2cd939d8466c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16c8833e77ed63d0abbcfbb9b0c34fb21224f6a91e2c286fa2cf0f7fb47042ea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94c4993dd5c74b391ca579a4f16b735ad4447f4033092f688f2c9488e2b8f9f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82d3e750e1439f0de5a657ce2b59dc0ceebb0bb31ee59baf2ed93dac238bfaee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "974595d6b614813f280c4350970ca054abfd73892c919220786f2f455389570e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "95e51e8b975739bac321b1eaf2fac42d52281ec806b689660fe5bcc76e0f151f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e188ca87c16a76fdc518d9fcaa997f24770ef72c5689dcc171fa89f44dfd362"
   end
 
   depends_on "rust" => :build

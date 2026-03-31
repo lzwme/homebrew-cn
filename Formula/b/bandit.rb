@@ -6,15 +6,16 @@ class Bandit < Formula
   url "https://files.pythonhosted.org/packages/aa/c3/0cb80dfe0f3076e5da7e4c5ad8e57bac6ac357ff4a6406205501cade4965/bandit-1.9.4.tar.gz"
   sha256 "b589e5de2afe70bd4d53fa0c1da6199f4085af666fde00e8a034f152a52cd628"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/PyCQA/bandit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e603153517ddc896927a102b1ff5c9145cd3dde0bfc7464e6265396c73791ed7"
-    sha256 cellar: :any,                 arm64_sequoia: "35a8204e8f98715465f58d8db81746f4ffc2f255289e9f10aa3a9124adaab81e"
-    sha256 cellar: :any,                 arm64_sonoma:  "0fb082d10588db09451af25e065e944715e5a3b1c78b02d7b53f89949d5c7718"
-    sha256 cellar: :any,                 sonoma:        "3c3660c6fc3adc80d70e21b2d354bd75601c25dac6d03620a79edc233541eb3b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6818bb846a9d0e8fb24e323619b79915b7089acef506004c2a41ceed693ae0a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88cfbf4ff98d367a35a3e8063e58f73d4cff2892b82f7128de29304641251737"
+    sha256 cellar: :any,                 arm64_tahoe:   "1b7189ed69829e064ecbdf704cbd6e08b3a293cc4f8b6f7b8a905853acd3e879"
+    sha256 cellar: :any,                 arm64_sequoia: "97ce6dfbaa20d117c9b42c4c86f7dbc1ecaeec0d729c95dfd3c62a7233d10f08"
+    sha256 cellar: :any,                 arm64_sonoma:  "046c7ea7788b6033fc02fbf9a274ac7e61323195392af3fd88835e1383621fca"
+    sha256 cellar: :any,                 sonoma:        "b90fd2ec3020a447430ca6c678a90926c961251bd0af287d2c7c4f8a4289069c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84acad612b361d5211dae97c27d1c1f75251eb1548f636ad9a5e60cad0fd6b8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aeed013586f401f4d8233ad572169066746a062e655e719c3d459dc981101870"
   end
 
   depends_on "libyaml"
@@ -31,8 +32,8 @@ class Bandit < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyyaml" do

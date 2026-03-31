@@ -9,8 +9,6 @@ class OpenaiWhisper < Formula
   revision 4
   head "https://github.com/openai/whisper.git", branch: "main"
 
-  no_autobump! because: "`update-python-resources` cannot update resource blocks"
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "ec93ed9f2680a8252d5ee718c0457ac3355c0fa3a180bc2f0ceb9ffbe5649add"
     sha256 cellar: :any,                 arm64_sequoia: "86e5dd24e920a06a6b51e9cbcad72564fe9dd1ce420e4241df4717ab28ae87c3"

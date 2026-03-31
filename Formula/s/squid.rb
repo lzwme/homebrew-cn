@@ -16,8 +16,6 @@ class Squid < Formula
     end
   end
 
-  no_autobump! because: :incompatible_version_format
-
   bottle do
     sha256 arm64_tahoe:   "b9017646c31b4a67e21d3f46bb084658c5a9f70c1b4b99a812a04cbbff320736"
     sha256 arm64_sequoia: "983292fc24c38c06581ffe2c8aae64ffd9bf3bdd4f193862d43fb5d313e28ebc"

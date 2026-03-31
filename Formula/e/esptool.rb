@@ -6,16 +6,18 @@ class Esptool < Formula
   url "https://files.pythonhosted.org/packages/77/25/7b50d81a66f600a60f23258fa134201e97e854271b478ca4e21e9f694355/esptool-5.2.0.tar.gz"
   sha256 "9c355b7d6331cc92979cc710ae5c41f59830d1ea29ec24c467c6005a092c06d6"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f4e3862d7a541f356022ae1d13fc3e265a7b1012f340f0b3fe05020ba9b409a3"
-    sha256 cellar: :any,                 arm64_sequoia: "19c614e1639c2745e6ef432ad24c790867d55fc647bf36f4d597ba2591f0a0e5"
-    sha256 cellar: :any,                 arm64_sonoma:  "8ab22f5d4eaca0831868a0815df1abf82e19bc00411ff5a9b7c0bfd184d7b147"
-    sha256 cellar: :any,                 sonoma:        "e0f8a0069f5367a3bf0aa3143e672e77dbcb6d2e2b2bb24133622902b70e48ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "523c738dfbe95279c7e720e907f53caf6145cbfab4ab4e1b0dfa3c17fc15825b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebe7a5dd621f2734185448daee0b0a86435f65776994dd267c8db786d3caa0ee"
+    sha256 cellar: :any,                 arm64_tahoe:   "e4fde24b5b7d942e3f091675e1c133f6b2619aec4ea51cbb05d4702405807bf8"
+    sha256 cellar: :any,                 arm64_sequoia: "f52f68f89a2c8b2effae29cb2a4f335bd1908c9dddb7e53c3dfe9ec505951395"
+    sha256 cellar: :any,                 arm64_sonoma:  "26d7cfaef912a8bc6fa669548ec304f5606cf3a9173240e6c4866992a0fdf144"
+    sha256 cellar: :any,                 sonoma:        "9b49016881ac03f695a8efde30413c2d3dc6486ef679f8d9bd3858c27db5e170"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dacfbb30327d9c1402bf2c34abec27a1424f03c4de0d9028175c6d7eefdb4cd4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb2c8f82ff5aa62b609205149baff17f0b0633cda09aec6122de254a5095aff1"
   end
 
+  depends_on "rust" => :build # for tibs
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.14"
@@ -28,8 +30,8 @@ class Esptool < Formula
   end
 
   resource "bitstring" do
-    url "https://files.pythonhosted.org/packages/15/a8/a80c890db75d5bdd5314b5de02c4144c7de94fd0cefcae51acaeb14c6a3f/bitstring-4.3.1.tar.gz"
-    sha256 "a08bc09d3857216d4c0f412a1611056f1cc2b64fd254fb1e8a0afba7cfa1a95a"
+    url "https://files.pythonhosted.org/packages/36/d3/de6fe4e7065df8c2f1ac1766f5fdccbe75bc18af2cf2dbeecd34d68e1518/bitstring-4.4.0.tar.gz"
+    sha256 "e682ac522bb63e041d16cbc9d0ca86a4f00194db16d0847c7efe066f836b2e37"
   end
 
   resource "click" do
@@ -53,8 +55,8 @@ class Esptool < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyserial" do
@@ -73,13 +75,18 @@ class Esptool < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/74/99/a4cab2acbb884f80e558b0771e97e21e939c5dfb460f488d19df485e8298/rich-14.3.2.tar.gz"
-    sha256 "e712f11c1a562a11843306f5ed999475f09ac31ffb64281f73ab29ffdda8b3b8"
+    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
+    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
   end
 
   resource "rich-click" do
     url "https://files.pythonhosted.org/packages/04/27/091e140ea834272188e63f8dd6faac1f5c687582b687197b3e0ec3c78ebf/rich_click-1.9.7.tar.gz"
     sha256 "022997c1e30731995bdbc8ec2f82819340d42543237f033a003c7b1f843fc5dc"
+  end
+
+  resource "tibs" do
+    url "https://files.pythonhosted.org/packages/57/cd/6cf028decf1c2df4d26077dd5d0532587d93d4917233d5e004133166a940/tibs-0.5.7.tar.gz"
+    sha256 "173dfbecb2309edd9771f453580c88cf251e775613461566b23dbd756b3d54cb"
   end
 
   def install

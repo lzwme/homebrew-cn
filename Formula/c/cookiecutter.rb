@@ -6,16 +6,16 @@ class Cookiecutter < Formula
   url "https://files.pythonhosted.org/packages/92/03/f4c96d8fd4f5e8af0210bf896eb63927f35d3014a8e8f3bf9d2c43ad3332/cookiecutter-2.7.1.tar.gz"
   sha256 "ca7bb7bc8c6ff441fbf53921b5537668000e38d56e28d763a1b73975c66c6138"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/cookiecutter/cookiecutter.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e6250c26fae1ff99ca2a4bdc26dd6b864e370f8a6b9fd31088b4684cbdc5c2f9"
-    sha256 cellar: :any,                 arm64_sequoia: "875c768e8cf65eab9de557d5f0050567a6e00a734b0a88a7f5dab75b496b1989"
-    sha256 cellar: :any,                 arm64_sonoma:  "bc50235b802d469d40b1cd2645e97c430976e2e315a5c4c75be61a3376c7dec7"
-    sha256 cellar: :any,                 sonoma:        "4379070b9de233f2b07c3545681733cd67bc6b49b8140a29c78542f4d69fd646"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "724119991e3ffb8aa040a2cb678d96654e27a01b0d9aefd8839cc718313ea4ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5aecb38387951a5eed8ca72d403df506772f6040c70757e2b4df0e8285f83bee"
+    sha256 cellar: :any,                 arm64_tahoe:   "d136410d48863132c607c7484d765012d74a72912da2829a0de9d79ad9e6067c"
+    sha256 cellar: :any,                 arm64_sequoia: "f000dab727f749f951d6696621581fa3fe29f2ea6fcadc4e543aebe7e5202bd7"
+    sha256 cellar: :any,                 arm64_sonoma:  "699c5951d640648c041c47b75252db17b58b3ee7cb00bf4524c88e576149c5e4"
+    sha256 cellar: :any,                 sonoma:        "1acca062520c1db10e96237cc79b12507a77ce983457e5374986ad9116c685e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ff6d17ffcf9ccbbf7bf0fb6bbbc0988cf8387fbac905246af4f4c4d39011eca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "581a5a42d18b9c255250a206fbce6a0d2cc9092fa7ef12aca5851936292b0bbb"
   end
 
   depends_on "certifi" => :no_linkage
@@ -70,8 +70,8 @@ class Cookiecutter < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "python-dateutil" do

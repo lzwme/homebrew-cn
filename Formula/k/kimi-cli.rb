@@ -8,7 +8,7 @@ class KimiCli < Formula
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
-  no_autobump! because: "has non-PyPI resources"
+  no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "84397866890ec39e8085a96a7b25980d48a44f13eaedb0c619da9a35b4bc10d5"

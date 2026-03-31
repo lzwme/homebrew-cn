@@ -6,15 +6,16 @@ class Ggshield < Formula
   url "https://files.pythonhosted.org/packages/78/18/dedb9c9756104fba2060f77e7102b5dc0af073fb8639c26c6784dd7602a7/ggshield-1.48.0.tar.gz"
   sha256 "677a6517f4cc8854f4a6bb1f02a9eef5d44dca3f4999e69fa63a44ed8a7680b8"
   license "MIT"
+  revision 1
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ad1ef295e011b13982c5ab458d14e645a7e904ed396f1fa1410f4e93832013c2"
-    sha256 cellar: :any,                 arm64_sequoia: "5019d37e94c475f439071502493b5117159517ca52765bf71c23ced4cca233cb"
-    sha256 cellar: :any,                 arm64_sonoma:  "1df449c173060708a587d3505a5f9c64ec0ccb732e386450b5a7cdb39f44f033"
-    sha256 cellar: :any,                 sonoma:        "710e5cbbe1d480e78728137ae305c75cd86359ec03a95b6db52438b0b95e5114"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ad12aa065fe5d153fcecb381843eeed97bd1e25f671b29421713a7e4c5cc433"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e600655c15300ef7c4c3e24e129df3f9a55ecea06e8733ef7f93478a55955aa9"
+    sha256 cellar: :any,                 arm64_tahoe:   "5866f9dd280f7940d3f8c67a22ab9f4c5133c23c8e45220f4f7ce9a0bd4bd4fb"
+    sha256 cellar: :any,                 arm64_sequoia: "b04086c7e22ad995f713fcbd1358327e10377a53b475ee778ecfca787fc29f3e"
+    sha256 cellar: :any,                 arm64_sonoma:  "4669512165d19023bffb4bd610bcae70f7b4e82f348a3db29edd603734045f3e"
+    sha256 cellar: :any,                 sonoma:        "de4eae7bef561c0217157c67c213630dea8c15a671ad2c629e05f18669dedfb1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3c1c0752cc87c5eb91c8db56109d6e3a91f80dd659e7cc202b4475448e0ec3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fa063f58be9205f05961ae76d561969f34b54c78e48b6b2bbe2c06c23b5b107"
   end
 
   depends_on "certifi"
@@ -80,8 +81,8 @@ class Ggshield < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyjwt" do
@@ -110,8 +111,8 @@ class Ggshield < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/82/f3/748f4d6f65d1756b9ae577f329c951cda23fb900e4de9f70900ced962085/setuptools-82.0.0.tar.gz"
-    sha256 "22e0a2d69474c6ae4feb01951cb69d515ed23728cf96d05513d36e42b62b37cb"
+    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
+    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
   end
 
   resource "truststore" do

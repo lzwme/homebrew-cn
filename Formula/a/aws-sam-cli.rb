@@ -6,14 +6,15 @@ class AwsSamCli < Formula
   url "https://files.pythonhosted.org/packages/9d/40/d9d0116c77117d5c257d4d09a7c7256284dab08b010640a4e66aff18a1de/aws_sam_cli-1.157.1.tar.gz"
   sha256 "aa5ad3171010c09dea2c5f440914a32116c9414f182f9cbededd431a6865caa6"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "85e8bd9c90cdb729be6c092197eb190229d49de289b37f7c08ccfc9136e4ac26"
-    sha256 cellar: :any,                 arm64_sequoia: "64827bca0db3848de6911960e4c1bfb1f0e3e32aa11c164c1ca3d68cd2f403ae"
-    sha256 cellar: :any,                 arm64_sonoma:  "7716d9262146697e5f244c210ef7ec23596611ee1ca707648c00be810fdaf92b"
-    sha256 cellar: :any,                 sonoma:        "6131b9fb0dc9c677253435de25388e677231d3350388b09760cdbfb65b97e327"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c3194c227f90699f6db5ab9cf2f035ef14d3b078c4229a6ddbdb0f16868008d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc593371c43a3aea911ff3d45bf2ca95439e29440759d60a4bb9cdbfc054edb6"
+    sha256 cellar: :any,                 arm64_tahoe:   "8cbe984750629d554192e0c23faeaeda9493c33561d3ef3f5319e555debc7efe"
+    sha256 cellar: :any,                 arm64_sequoia: "1bee4cdd182b2e3d89bb67fc47f8743d1ae04d0e007c71f2b7b1807e68c7330d"
+    sha256 cellar: :any,                 arm64_sonoma:  "523eb15685870f0c878d7e3fb031c1c3b28f2c4f4ffa1e6c595ae3c7c35eee6d"
+    sha256 cellar: :any,                 sonoma:        "d3ce252f7e2cb7273eec8a8d2be5904ea96222d6eb262fdfb65496fdb4cd6631"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60ac65943aa5db91082b69be510424d8e0414e86f459d05d892fc41a08f1f172"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa10b7b9990edb6e531c34e4a54d211ab7f77f27f98c2c88d0a9a6561bc971ec"
   end
 
   depends_on "cmake" => :build # for `awscrt`
@@ -267,8 +268,8 @@ class AwsSamCli < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyopenssl" do
@@ -307,8 +308,8 @@ class AwsSamCli < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/8b/71/41455aa99a5a5ac1eaf311f5d8efd9ce6433c03ac1e0962de163350d0d97/regex-2026.2.28.tar.gz"
-    sha256 "a729e47d418ea11d03469f321aaf67cdee8954cde3ff2cf8403ab87951ad10f2"
+    url "https://files.pythonhosted.org/packages/81/93/5ab3e899c47fa7994e524447135a71cd121685a35c8fe35029005f8b236f/regex-2026.3.32.tar.gz"
+    sha256 "f1574566457161678297a116fa5d1556c5a4159d64c5ff7c760e7c564bf66f16"
   end
 
   resource "requests" do

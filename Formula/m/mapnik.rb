@@ -1,8 +1,8 @@
 class Mapnik < Formula
   desc "Toolkit for developing mapping applications"
   homepage "https://mapnik.org/"
-  url "https://ghfast.top/https://github.com/mapnik/mapnik/releases/download/v4.2.1/mapnik-v4.2.1.tar.bz2"
-  sha256 "5828695831cfac09b5d5e660c6c0747f0f447c7356b183b26fbed3e220456b33"
+  url "https://ghfast.top/https://github.com/mapnik/mapnik/releases/download/v4.2.2/mapnik-v4.2.2.tar.bz2"
+  sha256 "a530f03c2bcf1ea8f9e500a0dab7f8387f1a1eae3040a886c1547b3af86f5911"
   license "LGPL-2.1-or-later"
   head "https://github.com/mapnik/mapnik.git", branch: "master"
 
@@ -12,13 +12,12 @@ class Mapnik < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_tahoe:   "a0e77dbc25136b76fb979d6f90517a6f1730a98cfb8112c5555f23cf0f6ab6f5"
-    sha256                               arm64_sequoia: "9a46c4ac818b301c0576eff83b5af0ce7e7f8b1bc12ba6c585c300c0ef0ccc31"
-    sha256                               arm64_sonoma:  "a08fd81a277282b9ad5fe19d3a7bb4ef4d944e9716288138dc690c995ae2039f"
-    sha256 cellar: :any,                 sonoma:        "7f64219e2fe9eace29ee064c77a79e1cb95498dff4b3460c8939a2e45e32917b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9eaaed630c9f7c5cc37148a6bade7cbed83beabdbff25d8e447aacef965a40c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3402fc10a7358b9a916a7821325c6bc07a294e963741c7b8c3b987917124cc27"
+    sha256                               arm64_tahoe:   "17461daa16a83cc1b68d83bddec019fe70f5ae3b2025dc96e6c452b609150856"
+    sha256                               arm64_sequoia: "7eab01ac99e1e4d5033fe6b0820c765f4116abfcbf8dcf60629eaa83020533cf"
+    sha256                               arm64_sonoma:  "d43b7a22d394246775470e7f7e1c04595950b398aa888733cc466bc578554b57"
+    sha256 cellar: :any,                 sonoma:        "2d758a5fbfa96cab450ad2f598a7911c9ffd5d675f9a1021545e4c8d89ddd7a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "578349d989d343e7334d1d816620cadf19364e359143034064444b4a50410c73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "773d9545c7adf7b00cddba30fc78af1ff692debb8e4388fb22f0742cc8e107b0"
   end
 
   depends_on "cmake" => :build
