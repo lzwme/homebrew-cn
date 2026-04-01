@@ -1,22 +1,29 @@
 class TextEmbeddingsInference < Formula
   desc "Blazing fast inference solution for text embeddings models"
   homepage "https://huggingface.co/docs/text-embeddings-inference/quick_tour"
-  url "https://ghfast.top/https://github.com/huggingface/text-embeddings-inference/archive/refs/tags/v1.9.2.tar.gz"
-  sha256 "92c289f2ce51a9df6e69d7cf4adf17e13d7c3fb561168b74fab2be4224c38b29"
+  url "https://ghfast.top/https://github.com/huggingface/text-embeddings-inference/archive/refs/tags/v1.9.3.tar.gz"
+  sha256 "85cbe4b18033cd8e84118841a94122a8d4e4bfeeba128c4b0f77bd30d4f1e4ea"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d0544b700a55278610a4f3405875107822d2b801fbb7ab5b4ca3e47f6782f9a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "173d036aa4cb307a502fbb98b1436419409e94992a55e9f91052b1bf12577074"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f30e82669f79e24aefe425950543f1d8db8870aedd8c45db51c3ded78169fc3e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "599e42486ac079dcfb7826fc15faa7174ba7647715e299f986181e095a1ea68d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d627908ede29b0544ebf52d3e32495106bdd9511e048a392fb2aee55591f6c61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8eb15c2cf8a11731239a3a09d1871042d40890462affc90a921ff449ff8e4037"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "882a2c6914cfa360291086c732b3317d60d125094afae0a10f29c16b878d197c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3598491762db367951dbc74957b075a53700d021b891e593e8a4a37eb7c5488"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "141c6b7d4dffc4b5b89c703fcdaf93d855d85a89e81b52abc4805f5284111971"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e91fe44b42fe195c9e78a832f9c39ab85c8b324a06e9ce0057de9f8150039538"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4b101ad37123e4c99697960e4880ce4f53779b6d5d30c5c079ace55c5f7c369"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b54223fcde1cc35c7328489fe2e680d00fdd81469598ce55fbd8ae3b91a4fb77"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
+
+  # Fix lifetime error for `metrics` package
+  # PR ref: https://github.com/huggingface/text-embeddings-inference/pull/850
+  patch do
+    url "https://github.com/huggingface/text-embeddings-inference/commit/574132b3ee9ebccb63e223a35ef50e42559f5666.patch?full_index=1"
+    sha256 "10438e9f9428db4fc0be52dba7fabeff7a26fd906763b6a1d182e0cb710dec2c"
+  end
 
   def install
     args = (OS.mac? && Hardware::CPU.arm?) ? ["-F", "metal"] : []

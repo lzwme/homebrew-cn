@@ -1,18 +1,18 @@
 class Jsongrep < Formula
-  desc "Path query language over JSON documents"
+  desc "Query tool for JSON, YAML, TOML, and other structured formats"
   homepage "https://github.com/micahkepe/jsongrep"
-  url "https://ghfast.top/https://github.com/micahkepe/jsongrep/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "5c6d42f5a76e880242c42ffad2f078872d5bb7f4a9e98eb3e3bda92089a682b4"
+  url "https://ghfast.top/https://github.com/micahkepe/jsongrep/archive/refs/tags/v0.8.1.tar.gz"
+  sha256 "f728f3a5ed876053a85ff095f7d03073d5a43ce9ece3134b63539bdaa711aff7"
   license "MIT"
   head "https://github.com/micahkepe/jsongrep.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aefbed9d4f865d54332f073b4e8514818745bc027cffb1a9c799daabc680b7f9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5de1cec33f956a92f569de7eb86ba5c5ba161d0fec83b6d8e110707157204957"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7a6bd3f9d8573ae5831b64ba35225f462bdd4da4ce51e54310b8aa23e202843"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f69b942d9a8c7646e2820c74df12765194855e3f07292e98a6180ccf5d4a3006"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a57ad6d876d51e68259d2e97eb3fc5cabd1986e8b1bd126f46092112f59c60cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1362c7ba51cfcc77a9a4f76fa4140bf23e3ade9a97552c46c33a5edf855ef8e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "034ea6f33f610aa1020bfb2d43da8d75bf713151a4569540d58ddd4d230c18dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b10860f29e0f0754a412ebb8a4cc1f18fc797f70da9cc4f1ce78f0401da50232"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef101dd75de29b8a6f3eae43627200d288a130be04df054461d56de785dde78c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e1e923a7243660a8503f302cd44f21c3e17c7ba1c8829697321302f03affd369"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d64e0a2e24e5c742e81d48a646bc11e5654f4b06030134398eccd7ba93d28a27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6f81909e53d359960648806705de253d94e1b7fbf672ed37838538aaa7116f2"
   end
 
   depends_on "rust" => :build

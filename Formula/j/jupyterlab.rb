@@ -9,16 +9,16 @@ class Jupyterlab < Formula
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
-  revision 1
+  revision 2
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a703887489cd6ad188cc88599139a9a77c6622a7a185a9aebd764cb8541a67ac"
-    sha256 cellar: :any,                 arm64_sequoia: "246e525b9b61955ad5e748ee78b6833b865aa7f2693adc41575caa00db8e7ab2"
-    sha256 cellar: :any,                 arm64_sonoma:  "a1832c0021be8f007f4a04f9d6349779ce03731b056f6ac03ad733409c5fa13d"
-    sha256 cellar: :any,                 sonoma:        "6e44bf5dfe436fb77f0494868ff73c489c4ee3fffde63520f204e6fe0f7326ba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "599af8436455bdb8be9ee36ecccda7843ba643d0d9ef7edc7759c5269fb44b97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96142f0af67dd31efd286fe1513b73cadec2212503cd0fc24f30c00a6e3239b0"
+    sha256 cellar: :any,                 arm64_tahoe:   "9f21dffbc106cd7dd68d2905ab781f96c5d89fe64ebde05a44387f7a30bf1b28"
+    sha256 cellar: :any,                 arm64_sequoia: "c5c2cbd8fe2dc87b3a4748e56e0fdfdb211be1a3ce5adc54d81849e6f12a1b92"
+    sha256 cellar: :any,                 arm64_sonoma:  "d1f165b06309517bd9bdf0dc73f1d6cf93130ea7a46d3f427ab5d525423d8350"
+    sha256 cellar: :any,                 sonoma:        "edf2353cb4147737e0e1de26d68df085dee0dcf23fd477357498ae683ac6e0f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "180c1ff775c8d46a287a833b93ceb0c84409b1f613230ca06322fc5fbd262182"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "270f217a23b150bd06964c33ced12e485aa8ea9baf9aa32ab5c36201f7290903"
   end
 
   depends_on "cmake" => :build # for ipykernel
@@ -173,8 +173,8 @@ class Jupyterlab < Formula
   end
 
   resource "ipython" do
-    url "https://files.pythonhosted.org/packages/86/28/a4698eda5a8928a45d6b693578b135b753e14fa1c2b36ee9441e69a45576/ipython-9.11.0.tar.gz"
-    sha256 "2a94bc4406b22ecc7e4cb95b98450f3ea493a76bec8896cda11b78d7752a6667"
+    url "https://files.pythonhosted.org/packages/3a/73/7114f80a8f9cabdb13c27732dce24af945b2923dcab80723602f7c8bc2d8/ipython-9.12.0.tar.gz"
+    sha256 "01daa83f504b693ba523b5a407246cabde4eb4513285a3c6acaff11a66735ee4"
   end
 
   resource "ipython-pygments-lexers" do
@@ -198,8 +198,8 @@ class Jupyterlab < Formula
   end
 
   resource "json5" do
-    url "https://files.pythonhosted.org/packages/77/e8/a3f261a66e4663f22700bc8a17c08cb83e91fbf086726e7a228398968981/json5-0.13.0.tar.gz"
-    sha256 "b1edf8d487721c0bf64d83c28e91280781f6e21f4a797d3261c7c828d4c165bf"
+    url "https://files.pythonhosted.org/packages/9c/4b/6f8906aaf67d501e259b0adab4d312945bb7211e8b8d4dcc77c92320edaa/json5-0.14.0.tar.gz"
+    sha256 "b3f492fad9f6cdbced8b7d40b28b9b1c9701c5f561bef0d33b81c2ff433fefcb"
   end
 
   resource "jsonpointer" do
@@ -373,8 +373,8 @@ class Jupyterlab < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "python-dateutil" do
@@ -383,8 +383,8 @@ class Jupyterlab < Formula
   end
 
   resource "python-json-logger" do
-    url "https://files.pythonhosted.org/packages/29/bf/eca6a3d43db1dae7070f70e160ab20b807627ba953663ba07928cdd3dc58/python_json_logger-4.0.0.tar.gz"
-    sha256 "f58e68eb46e1faed27e0f574a55a0455eecd7b8a5b88b85a784519ba3cff047f"
+    url "https://files.pythonhosted.org/packages/f7/ff/3cc9165fd44106973cd7ac9facb674a65ed853494592541d339bdc9a30eb/python_json_logger-4.1.0.tar.gz"
+    sha256 "b396b9e3ed782b09ff9d6e4f1683d46c83ad0d35d2e407c09a9ebbf038f88195"
   end
 
   resource "pyyaml" do
@@ -403,8 +403,8 @@ class Jupyterlab < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "rfc3339-validator" do

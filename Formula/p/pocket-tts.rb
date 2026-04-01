@@ -6,16 +6,16 @@ class PocketTts < Formula
   url "https://files.pythonhosted.org/packages/ab/3e/2f15ee05b3dcf6ec08251f5030a3deb4643d2ecd55e17a4ca8998888c1df/pocket_tts-1.1.1.tar.gz"
   sha256 "cdd234e49299e8fe927bd0b93c164c7785bdd83bed302622e218bcda3944f603"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/kyutai-labs/pocket-tts.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1e4fbf1148f74186e37af650dd9d3d8fed4e38a337c2ffcea42240e7ae1890fa"
-    sha256 cellar: :any,                 arm64_sequoia: "a3b7479bb2a148d0e45e6f29958a9412e5cdf4e86471cb8f7370c4fcd13a1b0c"
-    sha256 cellar: :any,                 arm64_sonoma:  "16d2d38809d97af8672c2c46065990de4800739a8fa62cefa3e7a5bdcd9ee49d"
-    sha256 cellar: :any,                 sonoma:        "6e06fd3990b0d570cef2418e63257643f3bc1d68747e967d390e0c66ca5374a5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7e14a61e0eb615d6cfe7823e181763dfcdd7c3d7c2c7b46f955344146d11194"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f50800c596662c0054b8d226b378a25731b00df9a4c900b329afb2623775372a"
+    sha256 cellar: :any,                 arm64_tahoe:   "ab2ed443c65e77e7fa0920db4d67ebb14cb78d186362976f1ae681fe38d8cbd0"
+    sha256 cellar: :any,                 arm64_sequoia: "b9e3a36de81b78c0140a59806bdaf1c0e7f682a43bedb8fdf83d0f074ae8c2c8"
+    sha256 cellar: :any,                 arm64_sonoma:  "b186054dfe941747a8aadff6ee0786c04d3548821cad55930d0c0ef4555b8cda"
+    sha256 cellar: :any,                 sonoma:        "2a3e5e81e4e1f5280a28adf93b379aeb57f9231e758a2bd039bfc8c81d561906"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "135c428526a1dadc919af2e085a9c7b97d40d98e29d8fbf317069dc8d570cad8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bd013366500db1e98535b6782e0b839d4898efb44867ce09e60aff37bf5fa4a"
   end
 
   depends_on "cmake" => :build
@@ -115,8 +115,8 @@ class PocketTts < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "python-multipart" do
@@ -130,8 +130,8 @@ class PocketTts < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "rich" do

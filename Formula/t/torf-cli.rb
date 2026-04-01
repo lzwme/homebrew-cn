@@ -3,8 +3,8 @@ class TorfCli < Formula
 
   desc "CLI tool for creating, reading and editing torrent files"
   homepage "https://github.com/rndusr/torf-cli"
-  url "https://ghfast.top/https://github.com/rndusr/torf-cli/archive/refs/tags/v5.2.1.tar.gz"
-  sha256 "7fa885a18a3e9fd586c038c8d4a648fac20932f90cd5be1971a24ac84c0f6037"
+  url "https://files.pythonhosted.org/packages/31/90/b67f5f73353f419b172c8d22ebaf744750fa22af9eb4b52adff52a7706f2/torf_cli-5.2.1.tar.gz"
+  sha256 "96f64e3f2408e8ca5a3567ced9f5ad2e9ef1d63e13cfe8836145ac36bad8ed54"
   license "GPL-3.0-or-later"
 
   bottle do

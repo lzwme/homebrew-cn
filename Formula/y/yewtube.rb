@@ -3,8 +3,8 @@ class Yewtube < Formula
 
   desc "Terminal based YouTube player and downloader"
   homepage "https://github.com/mps-youtube/yewtube"
-  url "https://ghfast.top/https://github.com/mps-youtube/yewtube/archive/refs/tags/v2.13.1.tar.gz"
-  sha256 "cfff2f05a403b26807dd9000457bd339aff33fc437b79609b2454c0903c97895"
+  url "https://files.pythonhosted.org/packages/ab/0d/6c5fe6b0da51bbae6906317978ef38df505ec5920c843ab21a3acb9d945a/yewtube-2.13.1.tar.gz"
+  sha256 "5e173433c5db16a7d2ff0ec0cb1201ebb50fa9997fcae272c14956610375257f"
   license "GPL-3.0-or-later"
   revision 1
   head "https://github.com/mps-youtube/yewtube.git", branch: "master"

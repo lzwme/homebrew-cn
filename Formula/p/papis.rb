@@ -6,15 +6,16 @@ class Papis < Formula
   url "https://files.pythonhosted.org/packages/70/22/365efb048e5a99a71d912acf95fd73b0a974a8df20487683817bf6ed44e6/papis-0.15.0.tar.gz"
   sha256 "9d0e319a4e04388bc1f705c272b607aaf2b678e33530bff64b1a58bc1364b788"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/papis/papis.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "452a30b67172d09b33884fe9b9e462d02829cda86e4b75e77ef929e60fc84b3b"
-    sha256 cellar: :any,                 arm64_sequoia: "c4997231b52ee9c7e53d82cbc17ceacbb96cf949f4fa5020b318d097d066f8c7"
-    sha256 cellar: :any,                 arm64_sonoma:  "9f1970c04df6b1432c8f431b07432033f62752bfccf6d61c4cc36fe6c422c5c9"
-    sha256 cellar: :any,                 sonoma:        "f7d9a80dba6e2422d955484876bd241aef5762c0feafc2d6efa63e03394aa909"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d06e159672e7bb9ff5b0c4412144e0b906bc7a524da9cb27187e01a3ecf03453"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6621abda2e2277851e94dfe723a73ab3751e60793d747aff35ec8ab91bef4b4a"
+    sha256 cellar: :any,                 arm64_tahoe:   "37f36e1b7d95db6400c15b85996a335552873e6940ab09f4b2b0a0b27ab1982e"
+    sha256 cellar: :any,                 arm64_sequoia: "c201a67cf1f93e196edcfbbf973066db36d63f882e82db23c1bd664c332a3cd0"
+    sha256 cellar: :any,                 arm64_sonoma:  "77b8f648368a45e3bd75a5f07214140a0fe66cbe441e86e0984a66d3d9aa924c"
+    sha256 cellar: :any,                 sonoma:        "ce4f8f1fa86090748d5060981755fcf9ca40fb8a25a14bb5b6612341118ff827"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8af1acb04173b128e0c4dff1c291cd0987b8b9e4b5fd10bf3f8abf29e37b02e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "920a7bf8cd8660234fc94f24a59d18bd5d44554911e74db7a7a4944943e50b4c"
   end
 
   depends_on "certifi" => :no_linkage
@@ -27,13 +28,13 @@ class Papis < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
-    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
+    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
+    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
   end
 
   resource "arxiv" do
-    url "https://files.pythonhosted.org/packages/8d/aa/dc1c6c633f63fce090e7c067af8c528a5e61218a61c266ff615d46cbde0a/arxiv-2.4.0.tar.gz"
-    sha256 "cabe5470d031aa3f22d2744a7600391c62c3489653f0c62bec9019e62bb0554b"
+    url "https://files.pythonhosted.org/packages/24/6e/647dd134e66d3ea6ff8aba2a177a37c74245625cfc58184e3aff99c8d8ec/arxiv-2.4.1.tar.gz"
+    sha256 "691606c1069bcca8316fcb082f5d15e65f1f24a021b0b87f01b9fa56347f63c8"
   end
 
   resource "beautifulsoup4" do
@@ -47,8 +48,8 @@ class Papis < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "click" do
@@ -117,8 +118,8 @@ class Papis < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/cf/86/0248f086a84f01b37aaec0fa567b397df1a119f73c16f6c7a9aac73ea309/platformdirs-4.5.1.tar.gz"
-    sha256 "61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda"
+    url "https://files.pythonhosted.org/packages/19/56/8d4c30c8a1d07013911a8fdbd8f89440ef9f08d07a1b50ab8ca8be5a20f9/platformdirs-4.9.4.tar.gz"
+    sha256 "1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934"
   end
 
   resource "prompt-toolkit" do
@@ -127,8 +128,8 @@ class Papis < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyparsing" do
@@ -157,8 +158,8 @@ class Papis < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/82/f3/748f4d6f65d1756b9ae577f329c951cda23fb900e4de9f70900ced962085/setuptools-82.0.0.tar.gz"
-    sha256 "22e0a2d69474c6ae4feb01951cb69d515ed23728cf96d05513d36e42b62b37cb"
+    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
+    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
   end
 
   resource "sgmllib3k" do

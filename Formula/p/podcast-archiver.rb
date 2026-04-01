@@ -6,15 +6,15 @@ class PodcastArchiver < Formula
   url "https://files.pythonhosted.org/packages/96/05/8f08025cbfb32ad8a0589d90e69c9da04d4ecf201b48815569a114ffed2e/podcast_archiver-2.3.5.tar.gz"
   sha256 "1c157df1202d1ce05e2303d7d729e4e1e87ba202cba6f51c6024b38a2236b937"
   license "MIT"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e6ff43617a47ab6f011a525d875289c3797e3f7ad031f50e8a10443dbb685cee"
-    sha256 cellar: :any,                 arm64_sequoia: "68b76f5fc30810bcc69090f966027809c38997357489e91f6ec9d74c60802a2f"
-    sha256 cellar: :any,                 arm64_sonoma:  "87c8ca64dbba078e4e3498fd31c4a5c818557e7c5fedda36d4a4ac1f6b74d629"
-    sha256 cellar: :any,                 sonoma:        "c19051271026f8d73251138f2a151483e65042ae2078f797bea85ae3adb80fb5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "efbd35e8f29cc18e2a9946637df14ac810501cc15f021d0be71c52b731f1bb48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ad54725963fcf53dcb4836320a879af8f67b461faeda6e98914ddccbba5efee"
+    sha256 cellar: :any,                 arm64_tahoe:   "1f6c139a0708af2709a5211bc576c64e3a2a35fd4cd7ab1c914d431de4e23ae0"
+    sha256 cellar: :any,                 arm64_sequoia: "8b1e9586a7845ffe4f8b2b09d10415abe7f12fb4c8c0ed70128da78abd97f03b"
+    sha256 cellar: :any,                 arm64_sonoma:  "6f64e21e3bbae62067e8f129d8f51af89b876f3994eaad37fbfeabf3c8f85be8"
+    sha256 cellar: :any,                 sonoma:        "73666040bb74c2dfe0bd423c612d34406299e5ee19b0b24e7aa2dc5a0de17443"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "50d451f58006ca91154c1be106455274b7183c75002ef51656b87fdd2ad919c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83119bf960eadc4f4c306841842904960cb07da3da260e4a7da4c9bf5ecc871b"
   end
 
   depends_on "certifi" => :no_linkage
@@ -60,8 +60,8 @@ class PodcastArchiver < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "python-slugify" do
@@ -75,8 +75,8 @@ class PodcastArchiver < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "rich" do

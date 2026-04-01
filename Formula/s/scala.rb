@@ -1,8 +1,8 @@
 class Scala < Formula
   desc "JVM-based programming language"
   homepage "https://scala-lang.org/"
-  url "https://ghfast.top/https://github.com/scala/scala3/releases/download/3.8.2/scala3-3.8.2.tar.gz"
-  sha256 "827356a78a70d3d792f1a77e109cc3fa3ea946b8d26848bb245f275be52fd78e"
+  url "https://ghfast.top/https://github.com/scala/scala3/releases/download/3.8.3/scala3-3.8.3.tar.gz"
+  sha256 "ff62e827eb1ea17813d97e5fd5e0d2690110787173fe1e1e43d9dadcc3542fa7"
   license "Apache-2.0"
 
   livecheck do
@@ -11,8 +11,7 @@ class Scala < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "c0e0c4e6c31c063f563984245f7d0e32ff33f3bd1b0d969192f497aa3ad4d0b9"
+    sha256 cellar: :any_skip_relocation, all: "9c0aa8286ed3acd4d7e20a953806c5d794bb662f74131b4c8a14046be0ff5340"
   end
 
   # JDK Compatibility: https://docs.scala-lang.org/overviews/jdk-compatibility/overview.html

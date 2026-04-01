@@ -1,6 +1,4 @@
 class Lasso < Formula
-  include Language::Python::Virtualenv
-
   desc "Library for Liberty Alliance and SAML protocols"
   homepage "https://lasso.entrouvert.org/"
   url "https://dev.entrouvert.org/releases/lasso/lasso-2.9.0.tar.gz"
@@ -40,21 +38,8 @@ class Lasso < Formula
     depends_on "zlib-ng-compat"
   end
 
-  resource "six" do
-    on_linux do
-      url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
-      sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
-    end
-  end
-
   def install
-    ENV["PYTHON"] = if OS.linux?
-      venv = virtualenv_create(buildpath/"venv", "python3")
-      venv.pip_install resources
-      venv.root/"bin/python"
-    else
-      DevelopmentTools.locate("python3") || DevelopmentTools.locate("python")
-    end
+    ENV["PYTHON"] = which("python3")
 
     system "./configure", "--disable-silent-rules",
                           "--disable-java",

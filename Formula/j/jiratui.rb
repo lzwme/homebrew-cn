@@ -8,8 +8,6 @@ class Jiratui < Formula
   license "MIT"
   head "https://github.com/whyisdifficult/jiratui.git", branch: "main"
 
-  no_autobump! because: "has non-PyPI resources"
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "c48bbb3a9cfc4631922e6627d6ad1390b0a19a6e0574bd89445649354f93ace9"
     sha256 cellar: :any,                 arm64_sequoia: "34f87cb24edc56d5af3135814c7d5f12d25315868e24589a93919456d95abf27"

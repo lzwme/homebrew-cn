@@ -3,20 +3,20 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/d6/db/87064a863f65f9adde09ffb104cb620892fd380c514da3e7cf5ac9d86ef1/kimi_cli-1.27.0.tar.gz"
-  sha256 "2518e38ff3831d31bcd0e381a26dde088e9305e054164e2e2cb9bc1083a82ac8"
+  url "https://files.pythonhosted.org/packages/c3/73/ef25d5fdc1907a6a4afb9f26e434d69699461afa832efaa41fefbc0f6bc0/kimi_cli-1.28.0.tar.gz"
+  sha256 "be8e99ef7efb2ac27e37c7b2dd19794d1ef29ba1bfbc72fdcf16b57733d88cf0"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "84397866890ec39e8085a96a7b25980d48a44f13eaedb0c619da9a35b4bc10d5"
-    sha256 cellar: :any,                 arm64_sequoia: "392f9ba359c3bb6e4d18263a011a93680374f02294bba2532140c23b35c13508"
-    sha256 cellar: :any,                 arm64_sonoma:  "f52d8afe4e22e68ad6b5a30319e87e1f20f9a5c1efd1c839b93c9bf982ec700f"
-    sha256 cellar: :any,                 sonoma:        "16ee7fd9e05b507aafe06636b618d02996c47fe977c45e4542b99aebcf4188f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b14b01e6a80db2a15a3576edf48609821060e15b8728c8dd48e1e5370d045f39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1acaa47d3b7846a2afebd89c0ab471960311c7bfed8c25cceaed5409c238ec0"
+    sha256 cellar: :any,                 arm64_tahoe:   "a1c8b442d0d1b8b94fd53d3a8e0bce5fade0d836a048b4f8f585b3c5ab467fcc"
+    sha256 cellar: :any,                 arm64_sequoia: "57a78578cc0ab383fe5e29c2b527a44444d0b2e9249457681c289465138e4973"
+    sha256 cellar: :any,                 arm64_sonoma:  "01f0e5670c3965cd088a5cf142bf7a3c04f5f43cf7a22d099aaa4edc7adcfbed"
+    sha256 cellar: :any,                 sonoma:        "85aa79d09ce922ea1ef78adaeaa6ca063b71bce95d7f78706e25b27fbf45e885"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ce9f76d2ba7cfff307709de613e9490bcca1dc4d1463c90d62016e9bbbf5c55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d512cc992b9421a5a6abc6c4bb009be4c9985ee2e0d69a0e6dc030d4834151b6"
   end
 
   depends_on "pkgconf" => :build
@@ -313,8 +313,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/31/19/9a9716730be570d4d088fb9597977f5c88c998dbd00579b96497ba714281/kosong-0.46.0.tar.gz"
-    sha256 "69c08ddbea59a8442f84f1173459b55fd5f0aa08b5fa86e1fc1f8f33581d46a5"
+    url "https://files.pythonhosted.org/packages/05/04/450ff8d8147592041e40dbf493342e262097cbbcbbdd5bee9ba4a5127698/kosong-0.47.0.tar.gz"
+    sha256 "f9df6ee1de92835011059d837dfba12fb7467a8e9f53c5a3b1ef7c0187a3566d"
   end
 
   resource "lazy-object-proxy" do
@@ -513,8 +513,8 @@ class KimiCli < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "rfc3339-validator" do
@@ -694,8 +694,8 @@ class KimiCli < Formula
   end
 
   resource "tree-sitter-rust" do
-    url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-rust/archive/refs/tags/v0.24.0.tar.gz"
-    sha256 "79c9eb05af4ebcce8c40760fc65405e0255e2d562702314b813a5dec1273b9a2"
+    url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter-rust/archive/refs/tags/v0.24.2.tar.gz"
+    sha256 "061e90a539a55a6aa65dceb0ad6425c50ab1a6e3e6d4ba430e2795ed4550f10e"
   end
 
   resource "tree-sitter-sql" do

@@ -3,19 +3,18 @@ class Glances < Formula
 
   desc "Alternative to top/htop"
   homepage "https://nicolargo.github.io/glances/"
-  url "https://files.pythonhosted.org/packages/64/7b/5305b194c76fd5122900652efbee9f35ca32abe73e1592c55eee4727f6fb/glances-4.5.2.tar.gz"
-  sha256 "e150e100b328a419d5003a4d54c02a4d78b0a1f5782f0aa0816877ddbe5881e9"
+  url "https://files.pythonhosted.org/packages/83/8e/6de18ece0daf847b484af754f5b1d203ed8dff0ffd842e1a43feeb71b15a/glances-4.5.3.tar.gz"
+  sha256 "6b95dcca4fa74094c2f0b5eca5ae53493b7833f933b1b49f7636fb39a474f71d"
   license "LGPL-3.0-or-later"
-  revision 2
   head "https://github.com/nicolargo/glances.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4dfd1ead9155b6c64a4087b4497e70a0ee89eefaccbb6b5cb13cd6b0430870d0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f667c46f2d14a59061f5541eedc0f14896d300d39c162d498f3ef268ccd81171"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2fce86727e02be9ea19e268104ed39aba8ec8cb4b08df6885369e5750e5bc13"
-    sha256 cellar: :any_skip_relocation, sonoma:        "af87d566a5bba38b6dacbad7be4522320c9dee0acab092bfbbb9cf729ce3d400"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c629cae47bc2c14cc84f947993988ea55b9a271efd10191ce23a4693b581ceea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6f18554f2d29fcaabf06d16bf5b7182a91524493f8022e2be021736db5b53ed"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2f8b7bfffda5291069183233982fe8ee328f6b652eda8e89731b86522361f7c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7d65067491595e94b2e02cbf23599ceb42a3237a2d688a75a0c89c7d07f10d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be540d4138238ce78753af2bd963f1343c7dda2b2625e72d5452f08c54c88bdb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c24a5577c9a4e8309da4a2d26efbe50b2eec696edba561f1affb347ef4b9b494"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f03ede3da9cd6df8e68b26533543641163e19e635c1d86335522f574382b57f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "897f450a721c61738cd2e41bc56d17df5b55c6bd6fb1b4eb1ee64456bfad72c2"
   end
 
   depends_on "rust" => :build # for annotated-docs
@@ -113,6 +112,11 @@ class Glances < Formula
     sha256 "af149d672da9493fa37334a1cc68f7b80c3e6cb9fd99b9e426c447db5c650bf0"
   end
 
+  resource "pylxd" do
+    url "https://files.pythonhosted.org/packages/40/7e/3d54d2f8f73dd55a842f1dea82255cfddf0eba355fa20238b8552209bc4b/pylxd-2.4.0.tar.gz"
+    sha256 "b402f060857d2927627c743a183e1c0535b0adb32cfd10588a7299d402a84a94"
+  end
+
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
     sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
@@ -124,8 +128,13 @@ class Glances < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+  end
+
+  resource "requests-toolbelt" do
+    url "https://files.pythonhosted.org/packages/f3/61/d7545dafb7ac2230c70d38d31cbfe4cc64f7144dc41f6e4e4b78ecd9f5bb/requests-toolbelt-1.0.0.tar.gz"
+    sha256 "7681a0a3d047012b5bdc0ee37d7f8f07ebe76ab08caeccfc3921ce23c88d5bc6"
   end
 
   resource "rsa" do
@@ -156,6 +165,11 @@ class Glances < Formula
   resource "uvicorn" do
     url "https://files.pythonhosted.org/packages/e3/ad/4a96c425be6fb67e0621e62d86c402b4a17ab2be7f7c055d9bd2f638b9e2/uvicorn-0.42.0.tar.gz"
     sha256 "9b1f190ce15a2dd22e7758651d9b6d12df09a13d51ba5bf4fc33c383a48e1775"
+  end
+
+  resource "ws4py" do
+    url "https://files.pythonhosted.org/packages/cb/55/dd8a5e1f975d1549494fe8692fc272602f17e475fe70de910cdd53aec902/ws4py-0.6.0.tar.gz"
+    sha256 "9f87b19b773f0a0744a38f3afa36a803286dd3197f0bb35d9b75293ec7002d19"
   end
 
   def install

@@ -1,17 +1,17 @@
 class Lexbor < Formula
   desc "Fast embeddable web browser engine written in C with no dependencies"
   homepage "https://lexbor.com/"
-  url "https://ghfast.top/https://github.com/lexbor/lexbor/archive/refs/tags/v2.7.0.tar.gz"
-  sha256 "e2473ade7173f69c56731ba71291d2ba705675ede2bb4423dc939ed70bcb55b5"
+  url "https://ghfast.top/https://github.com/lexbor/lexbor/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "eafaa79ef9871f0bbb1978eda8677d184f7ecdcaa203d7cd25b3f86e32c014c2"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1e59cc1164c8c337c3e121093013a969d1027b1c31a2874b951a66a864b9e48c"
-    sha256 cellar: :any,                 arm64_sequoia: "b851096f26503cf39f5bcdddc02f7896613a08ee2be5b69fef7a6c2c9400259a"
-    sha256 cellar: :any,                 arm64_sonoma:  "fb3810bfbcb1fdfadc53d7d9ac79708959f999d0b27dc8e6be0545d2b44a63b4"
-    sha256 cellar: :any,                 sonoma:        "2e05d288f16c23d59469d9ce5b7179581db72a6817161f9fa14904fb244836ba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "72901391b34df2b4ffcd10fa2a4c1707ac85f8bfd6ad9c37a1747b0689c93f38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d894a3541135c8f4c4d523e9fe5d3f95b52095056bba92e2a89665ba59d85c5b"
+    sha256 cellar: :any,                 arm64_tahoe:   "231a737ed10d301c88fcb5c6b372411578faf9cdf22c03f2c0903454e2a0f552"
+    sha256 cellar: :any,                 arm64_sequoia: "273ee0120f9722c3158f7e92a272eb1c606b432eac36b3eed213e51548b69bbf"
+    sha256 cellar: :any,                 arm64_sonoma:  "c11c11c5e9040f456320e0e7a7ac12d9dfe9b251fd13d8a9f4e327cf1a24a752"
+    sha256 cellar: :any,                 sonoma:        "8c7eefc8862cf83d4c79daec3fae265772ce72940cf351cc3ed4c614fe8e4635"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8eb786dd2780027958e5879c2d58bea437f491eb5fa2aa1ae94e8c03528cdf4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "071ce43949be15bc761f9546029b129f7510b219103025d08c069b5cc3a5c9b9"
   end
 
   depends_on "cmake" => :build

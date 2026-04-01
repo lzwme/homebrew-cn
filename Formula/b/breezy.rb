@@ -2,12 +2,11 @@ class Breezy < Formula
   include Language::Python::Virtualenv
 
   desc "Version control system implemented in Python with multi-format support"
-  # homepage "https://www.breezy-vcs.org/" # https://bugs.launchpad.net/brz/+bug/2102204
-  homepage "https://github.com/breezy-team/breezy"
-  # pypi sdist bug report, https://bugs.launchpad.net/brz/+bug/2111649
-  url "https://ghfast.top/https://github.com/breezy-team/breezy/archive/refs/tags/brz-3.3.21.tar.gz"
-  sha256 "86b34450e167f96208a19260d5c981046690097815cdf4bb56b3c9f299c9f8b8"
+  homepage "https://www.breezy-vcs.org/"
+  url "https://files.pythonhosted.org/packages/59/1d/68956e351c1af8116ec8525c85faf82ed2484f38f6f4fed4755759073500/breezy-3.3.21.tar.gz"
+  sha256 "70a5a810690ad8d5def1798a1351e7588be7f89f821eb7a6fae277aacd33d3be"
   license "GPL-2.0-or-later"
+  head "https://github.com/breezy-team/breezy.git", branch: "main"
 
   livecheck do
     url :stable
@@ -69,7 +68,6 @@ class Breezy < Formula
       f.unlink
       f.write_env_script libexec/"bin"/f.basename, PATH: "#{libexec}/bin:$PATH"
     end
-    man1.install_symlink Dir[libexec/"man/man1/*.1"]
 
     # Replace bazaar with breezy
     bin.install_symlink "brz" => "bzr"

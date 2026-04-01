@@ -10,8 +10,6 @@ class Aider < Formula
   license "Apache-2.0"
   head "https://github.com/Aider-AI/aider.git", branch: "main"
 
-  no_autobump! because: "has non-PyPI resources"
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "7a247897eb06b35bdc2cc6f3a225a9c32f8c1448e9654192c0d30f2c6b56c00b"
     sha256 cellar: :any,                 arm64_sequoia: "72acfa80c059d3e96dc59087eb68c07450b5b745d1b7f8e3e665044e7d1a9b18"

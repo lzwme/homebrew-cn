@@ -1,8 +1,8 @@
 class Dwarfs < Formula
   desc "Fast high compression read-only file system for Linux, Windows, and macOS"
   homepage "https://github.com/mhx/dwarfs"
-  url "https://ghfast.top/https://github.com/mhx/dwarfs/releases/download/v0.15.1/dwarfs-0.15.1.tar.xz"
-  sha256 "a180086f9a898b4b52a5217e336c0134d63a10b395b493f2e19f231d575a87ec"
+  url "https://ghfast.top/https://github.com/mhx/dwarfs/releases/download/v0.15.2/dwarfs-0.15.2.tar.xz"
+  sha256 "6b7edcb2121347e273753d949f72913f006ec12477248384b24c48989ec34995"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,12 +12,13 @@ class Dwarfs < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "b243a2802993dec638cea437a9c9e45ad5934676b9ecaa584c846f5fb0f3eec5"
-    sha256                               arm64_sequoia: "1cff8a70137098c0ce4e98adbf798f856f29fd91ca52bc46aeefed665bce32a5"
-    sha256                               arm64_sonoma:  "f237adf0136b796f67eda9f6e536476be0e1ff99690e44574a6a3088fe0d0958"
-    sha256 cellar: :any,                 sonoma:        "3d0e905406c9a3765382d6847ca84f0564b1ff155392e5e80f47110b5559551a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbea34a7d08497160c1b4562af538cd42fa3669ea237c4b29041fa484b2e86e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e60ac81e633d27a38f194b7ccf38eb2ad7448f771756f39c03802f9ad62a298f"
+    rebuild 1
+    sha256                               arm64_tahoe:   "290e75c819f9ffcda0c5794039eb7cf56907e2a63dbc5e388e5a399186b6adbe"
+    sha256                               arm64_sequoia: "e6f4f0aadb9c3e023e9e9e6ea6833fb547e963da0caf8f60b351e079304a2da2"
+    sha256                               arm64_sonoma:  "884cf271b03bb38d2abe7237c9e92a196e0ef2a132cfecba1955de045b6f8876"
+    sha256 cellar: :any,                 sonoma:        "15d4f9af4dc7ae5104e078a50ec146b78a1d878ad97eef34fd0e7db9dbf716f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3931ad914ee50897e13983f617ee464bf100b35d3694ca8cc103ece43cdd820e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0249f181d10bca210cd1b7bdcc9382ca95243e33b6804b0860147a2337239a0"
   end
 
   depends_on "cmake" => :build
@@ -51,9 +52,6 @@ class Dwarfs < Formula
     build 1500
     cause "Not all required C++23 features are supported"
   end
-
-  # Temporary fix for missing dependency on Boost::program_options
-  patch :DATA
 
   def install
     args = %W[
@@ -116,20 +114,3 @@ class Dwarfs < Formula
     assert_equal version.to_s, shell_output("./test").chomp
   end
 end
-
-__END__
---- a/cmake/libdwarfs.cmake
-+++ b/cmake/libdwarfs.cmake
-@@ -335,6 +335,12 @@ target_link_libraries(
-   dwarfs_fsst
- )
- 
-+target_link_libraries(
-+  dwarfs_writer
-+  PRIVATE
-+  Boost::program_options
-+)
-+
- if(TARGET Boost::process)
-   target_link_libraries(dwarfs_common PUBLIC Boost::process)
- endif()

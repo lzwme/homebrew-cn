@@ -6,16 +6,16 @@ class Pwntools < Formula
   url "https://files.pythonhosted.org/packages/f2/5c/9ae3d94c98b0b038ffd7f09ebdac506d346fe1b964999f71c96c8a904efd/pwntools-4.15.0.tar.gz"
   sha256 "d99a917298c1ca7241b51bba9ad2212f2af441ef66488059b2426508e9a2a776"
   license "MIT"
-  revision 4
+  revision 5
   head "https://github.com/Gallopsled/pwntools.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ef7cb7bdb63af1253942ebb51eca6a5354606859e59f633b3f6f400798a22636"
-    sha256 cellar: :any,                 arm64_sequoia: "598cfb545347299f28d57e9c3000961c78e3a9f5b5c9911a64d007a96c3f9c36"
-    sha256 cellar: :any,                 arm64_sonoma:  "a01b46e2e3ceababcea01d2fd561572acf84e1c9ca6654bb04a6fae664d47408"
-    sha256 cellar: :any,                 sonoma:        "f1f72ee3a2f7b4e8df5f6e227be5cc8f4a47cf79e46821609f12b9a240e5f268"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8959d216b121988a51fa3040d61e9dd51b7ca215028f156d88c25db3488a9518"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7c933566a6fcd07aa5558cbd54166b72c0fec30f321c68d4cd1c2d3d95dfd17"
+    sha256 cellar: :any,                 arm64_tahoe:   "2d4cd402c0b999c0416d9eb090cc239f20ee74010de82146070eb6b396288442"
+    sha256 cellar: :any,                 arm64_sequoia: "75e56e41ec9320433a910943fe8118ff69de27f15b28d76ffe4e743906320d15"
+    sha256 cellar: :any,                 arm64_sonoma:  "ad9322dec33c2449cecc79358ca0f6349bb9079961b2fa7c7a6e2791d40f1516"
+    sha256 cellar: :any,                 sonoma:        "2a35a02308a952fdb7336802b2d88642712271e2593bcf527c6b7adfc94b6a13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3328eb78006fd5989acfaccd8c70b8fa968424339a6effb3330edbf8e017cf3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5c633593c486fb6e67c9fea15c58060a39634a5567a39d09fd8ba868d318c30"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -100,8 +100,8 @@ class Pwntools < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pynacl" do
@@ -125,8 +125,8 @@ class Pwntools < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "ropgadget" do

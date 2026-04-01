@@ -6,15 +6,16 @@ class Jrnl < Formula
   url "https://files.pythonhosted.org/packages/06/50/c1925fbf8472667b6cee6c211645fdc82a550d120ebe50536645252e4e64/jrnl-4.3.tar.gz"
   sha256 "19ee865bf289b12bf412723874bd5876e25c2b6fbef7a226ea975fa3fcf0920f"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/jrnl-org/jrnl.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f6243f3ad0ca6d67decd79f6d1259050dff6c3a29fa1b701663704185a9f0d4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5dd0c2b7573144dba8f37a77b45d31d8ce96d2e7c0e67ad65ee73a2ac331957"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb03a74a09b2047ae74c36acab7c8a4005075be0624a7e4c56c6f325b84fa656"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4f79d0928c0ba26a0d9fbbbd4c8df80d5d20d2dec48d256956d9e6fc46d4c807"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "35fc1e8658ba3716b4623a30f1af22f2cd3e95aa2d24cd27f27928d79ad358ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20fc1a734e0194dd3b6091528db1b747ba4b47ba4ea2df74f1106f48b9661dc7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2275dc57689de2ce991e8a344dec4f3feef18a7494fd3875c2d3975a97fc79e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ae1d9b3836d12b1d08811937382151708bd2a75eb0ba4b7b0661f4de261aeda"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52f4523eda1fdb6c77beb98721d912b25dd140113e044631581e92c0d62cd2e7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "265bc76d88c124e443686cdec1ca720fcdfa29fe684f8b7e8d4a1e52c6d10135"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "24a46665b921592e20b48d48bffecd98122c40b5d09ccebac04bb8140af2cfdb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "928eda5a4a094e449464230a5f56c2d69382cb639571a3d61032cad2711524f9"
   end
 
   depends_on "cryptography" => :no_linkage
@@ -35,8 +36,8 @@ class Jrnl < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/cb/9c/a788f5bb29c61e456b8ee52ce76dbdd32fd72cd73dd67bc95f42c7a8d13c/jaraco_context-6.1.0.tar.gz"
-    sha256 "129a341b0a85a7db7879e22acd66902fda67882db771754574338898b2d5d86f"
+    url "https://files.pythonhosted.org/packages/af/50/4763cd07e722bb6285316d390a164bc7e479db9d90daa769f22578f698b4/jaraco_context-6.1.2.tar.gz"
+    sha256 "f1a6c9d391e661cc5b8d39861ff077a7dc24dc23833ccee564b234b81c82dfe3"
   end
 
   resource "jaraco-functools" do
@@ -75,8 +76,8 @@ class Jrnl < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "python-dateutil" do

@@ -3,18 +3,18 @@ class Mediamtx < Formula
   homepage "https://github.com/bluenviron/mediamtx"
   # need to use the tag to generate the version info
   url "https://github.com/bluenviron/mediamtx.git",
-      tag:      "v1.17.0",
-      revision: "2b302e7940107cea87fe85ab8cb3cedf891d8ac2"
+      tag:      "v1.17.1",
+      revision: "5addbed337a884d05ae7eda056c2f4397e3ed874"
   license "MIT"
   head "https://github.com/bluenviron/mediamtx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "356224bd573818b64f0179926f7b106a32a45db35654c236ab13eee891e7a951"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "356224bd573818b64f0179926f7b106a32a45db35654c236ab13eee891e7a951"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "356224bd573818b64f0179926f7b106a32a45db35654c236ab13eee891e7a951"
-    sha256 cellar: :any_skip_relocation, sonoma:        "10b159d1c13e09aef2d1b50e06d566fd1eb9725e35702062002c157dc4820d0f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9972843b12b63228d3c39ee2e95eb73e94e4e928c45762752c5b1cb40dc2e38f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e31ff23df48a4836e03ec233f616dc516884c7071361e271457a776336d3bbda"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23be24bfa8e8e783fb2f3e05763738b41cec269a853098ff1e3563b8ecd0ffb1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23be24bfa8e8e783fb2f3e05763738b41cec269a853098ff1e3563b8ecd0ffb1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23be24bfa8e8e783fb2f3e05763738b41cec269a853098ff1e3563b8ecd0ffb1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6ccecaecefcd856448761356d4295050b2388f99ec98d13a0fce9b52298e06e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9da6636f38d17cf3683b4de06caa84db1087f29f345f0a34b5d03a154d349f65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04bc5cdaba98359748a7634ff9a7eb83aa14ba5ac9e28ad069373f02fa846103"
   end
 
   depends_on "go" => :build

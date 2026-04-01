@@ -6,18 +6,26 @@ class Pipenv < Formula
   url "https://files.pythonhosted.org/packages/b6/67/fdc44f47b4fc9d99729c0e6588407642a4e8ec0d7522736cfe29fea4ebdf/pipenv-2026.5.0.tar.gz"
   sha256 "5402ac5fb1dae2c3d89e504496502da21fa38ff7c293b2e289a809e2f77b036e"
   license "MIT"
+  head "https://github.com/pypa/pipenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "960486cfef9ab3cee301a63918251d101c45c00e600004675df8f8ba99234331"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "f1e7fa9ef57786e05f507633fb1d535625d48bcbe7e1fecc433e0539d25df1ce"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
-  pypi_packages exclude_packages: "certifi"
+  pypi_packages package_name:     "pipenv[completion]",
+                exclude_packages: "certifi"
 
   def python3
     "python3.14"
+  end
+
+  resource "argcomplete" do
+    url "https://files.pythonhosted.org/packages/38/61/0b9ae6399dd4a58d8c1b1dc5a27d6f2808023d0b5dd3104bb99f45a33ff6/argcomplete-3.6.3.tar.gz"
+    sha256 "62e8ed4fd6a45864acc8235409461b72c9a28ee785a2011cc5eb78318786c89c"
   end
 
   resource "distlib" do
@@ -56,9 +64,13 @@ class Pipenv < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources
 
-    generate_completions_from_executable(libexec/"bin/pipenv", shell_parameter_format: :click)
+    generate_completions_from_executable(libexec/"bin/register-python-argcomplete", "pipenv", "--shell")
+
+    # Build an `:all` bottle by replacing comments
+    file = venv.site_packages.glob("argcomplete-*.dist-info/METADATA")
+    inreplace file, "/opt/homebrew/bin/bash", "$HOMEBREW_PREFIX/bin/bash"
   end
 
   # Avoid relative paths

@@ -1,17 +1,17 @@
 class WasmBindgen < Formula
   desc "Facilitating high-level interactions between Wasm modules and JavaScript"
   homepage "https://wasm-bindgen.github.io/wasm-bindgen/"
-  url "https://ghfast.top/https://github.com/wasm-bindgen/wasm-bindgen/archive/refs/tags/0.2.115.tar.gz"
-  sha256 "edd7a457aaf7b625c455c025e996b709dd32e57015612d0db517c6d5d670a28d"
+  url "https://ghfast.top/https://github.com/wasm-bindgen/wasm-bindgen/archive/refs/tags/0.2.117.tar.gz"
+  sha256 "55f706c5f6e6c17009f267723909f88071c330485187a071e6356378cf609adf"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3a0e3cae235b40d519a50b105f582efa09729c0e147cc8d4fd7ed4f9d245e9e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16d78f41861b611a973565a1944865e42020063a85e8755e04ac367d060eae65"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "895aaf6fdcfd20b5942234b4319e342c675eadf2e0593a0018faebf3b161d992"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5c29d40f44bf9d27ccb2db994764998a239892a62d393757bac5131ac270fd6c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb7d09e9ee09827377f78231ba285d1a41ad86ad54552fe9578e49bbe94c47b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "788cc22b19f2469d037de0698538b7f37e16c3917e433291418610ec22c99b3f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "843d06a7c7f6e1c128fe661052f48a249ac3a79b7f4259d016b49b639d84c3de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b60f77d75fed2ad97f6bdb716a800e1cb45a2de90a924ee767c1cb3fef4d8396"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "880c6077733808fe319cb6a8d3ad4e1f3949aff09fb23c91b66f194bdfb55537"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f1e0e507ba8292e64764ba9dfd9475ef3289b4a149df16bc7f790467e41de767"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "15bc5623840f4030e901da0400af5ffad258cb4ed583da77bd7fa39922858644"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2260bad350fcb2e73a57cedefe00ae6c7f7e4e8dbb59fd96992f30dc1c363c8"
   end
 
   depends_on "rust" => :build

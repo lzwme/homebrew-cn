@@ -2,12 +2,11 @@ class Nerdctl < Formula
   desc "ContaiNERD CTL - Docker-compatible CLI for containerd"
   homepage "https://github.com/containerd/nerdctl"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/containerd/nerdctl.git", branch: "main"
 
   stable do
-    url "https://ghfast.top/https://github.com/containerd/nerdctl/archive/refs/tags/v2.2.1.tar.gz"
-    sha256 "f39c34d3a285e087f2b2869f06fea343d8285ad9bfb9417b9c5b6dd4e78d6fad"
+    url "https://ghfast.top/https://github.com/containerd/nerdctl/archive/refs/tags/v2.2.2.tar.gz"
+    sha256 "55d4a28e05ad7b4691d79cd113d623c8fed5077653e426d5457a6232259f4ad2"
 
     # CNI: add Homebrew's installation path
     # https://github.com/containerd/nerdctl/pull/4761
@@ -19,8 +18,8 @@ class Nerdctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "c81283953a5fc7c7241d99b615ddd6d5bc15ca9c38aa0b7c7f1aca3f9531a88f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "482ba7a0f51fec5cb4ad63f904eeee97bfaf1ceb76e26504321d449478a4cc06"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "ed24b21eaf6d27dede5df48055d2b0a5abd299f95e5ac41f449cab4e491557ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b00bb44232a31a7cedaa6144060f4cd514d4e859837567ae503b3a37f312e7d9"
   end
 
   depends_on "go" => :build

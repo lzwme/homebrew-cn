@@ -14,8 +14,9 @@ class S3ql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "94ab024f7d3be9b144dc7ec76ec6f90d9eddf40c918547e77336d801c63bf42e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "904e115e76f74f0a1ad95788049d59c79912a0d80b483abb845bc7cdfa6a3eec"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "be41dcabe98f3c88db9826823def666645b6dbdff57fe37d4824246b256346e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4143bd5309acc23cc856d8ccd21f64c7ebc429244564eb919ff0c83992a58a0f"
   end
 
   depends_on "pkgconf" => :build
@@ -125,21 +126,29 @@ class S3ql < Formula
   end
 
   def install
-    # The inreplace changes the name of the (fsck|mkfs|mount|umount).s3ql
-    # utilities to use underscore (_) as a separator, which is consistent
-    # with other tools on macOS.
-    # Final names: fsck_s3ql, mkfs_s3ql, mount_s3ql, umount_s3ql
-    inreplace "pyproject.toml", /"(?:(mkfs|fsck|mount|umount)\.)s3ql" =/, '"\\1_s3ql" ='
-
     virtualenv_install_with_resources
+
+    # Create temporary compatibility executables for previous patched names.
+    # Remove them after 2 minor releases, i.e. 6.2.0, or next major release.
+    odie "Remove compatibility scripts!" if version >= "6.2.0"
+    %w[mkfs fsck mount umount].each do |cmd|
+      old_cmd = "#{cmd}_s3ql"
+      new_cmd = "#{cmd}.s3ql"
+      (bin/old_cmd).write <<~SHELL
+        #!/bin/bash
+        echo "WARNING: #{old_cmd} has been renamed to #{new_cmd}; #{old_cmd} will be removed in 6.2.0." >&2
+        exec "#{bin/new_cmd}" "$@"
+      SHELL
+    end
   end
 
   test do
-    assert_match "S3QL ", shell_output("#{bin}/mount_s3ql --version")
+    assert_match "S3QL ", shell_output("#{bin}/mount_s3ql --version") # TODO: remove in 6.2.0
+    assert_match "S3QL ", shell_output("#{bin}/mount.s3ql --version")
 
     # create a local filesystem, and run an fsck on it
-    assert_match "Creating metadata", shell_output("#{bin}/mkfs_s3ql --plain local://#{testpath} 2>&1")
-    assert_match "s3ql_params", shell_output("ls s3ql_params")
-    system bin/"fsck_s3ql", "local://#{testpath}"
+    assert_match "Creating metadata", shell_output("#{bin}/mkfs.s3ql --plain local://#{testpath} 2>&1")
+    assert_path_exists testpath/"s3ql_params"
+    system bin/"fsck.s3ql", "local://#{testpath}"
   end
 end

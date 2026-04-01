@@ -6,14 +6,15 @@ class Mcpm < Formula
   url "https://files.pythonhosted.org/packages/7b/85/c8593ad62e32393af71a028032cfa0a291a3eee98c592f74b92dc74881d6/mcpm-2.14.0.tar.gz"
   sha256 "ac586a1b5b79ebb27650e9cf934714f073f19d1936a778334e74ad65f6dfb417"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6aee03635a57df1a4717d6b94b9e383c9a9001d22759f95828f8aa76e7fcfdc5"
-    sha256 cellar: :any,                 arm64_sequoia: "51c0d7abd579bd674f6c289d25dd258a5bfa2d09b3243fccd91781ea2e95366d"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ab9b39f2c94b8c4e38c09622e06c6cf05e2f042f133f2e1134cbe7751296a6d"
-    sha256 cellar: :any,                 sonoma:        "89f557ae26de1d724f96ddcae300d6cd091229040e9d88e1df93b83418a52d2b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "07e3d5dd3caeb9fe252d4bca2ece071800d13ca44b0efd0a92e83c1506d0ab05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb34235ac470746975cbe60643f945f00c09ee4920f8b862b8c3a9cfc2047b08"
+    sha256 cellar: :any,                 arm64_tahoe:   "c3bf9be38ed20d52aa84ccd9420a9e2a3b46d12fc879c6689b79fa34998d37f9"
+    sha256 cellar: :any,                 arm64_sequoia: "261350b7e68ae8827cbe6274ce0b4f424fca753ece129400e353a652897e0031"
+    sha256 cellar: :any,                 arm64_sonoma:  "3dd0eef35b677ecfed0c60a0b929f2f056e1f8758aac155b7de85ef1bd1fb060"
+    sha256 cellar: :any,                 sonoma:        "98a23f77c45beb76512bb68cf5b043b1dc665555f7b722924d48739bc89d3129"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c86dc14e83e9a9bf15d467eb83d7af9b0cab3d6066aba8a366c7e30580d202f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97a02d52d157b045284b4b09b1b8fb7328e994d60e1a58aad536fb6040f3ee45"
   end
 
   depends_on "cmake" => :build # for duckdb
@@ -168,11 +169,6 @@ class Mcpm < Formula
     sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
   end
 
-  resource "jeepney" do
-    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
-    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
-  end
-
   resource "jsonschema" do
     url "https://files.pythonhosted.org/packages/f1/6e/35174c1d3f30560848c82d3c233c01420e047d70925c897a4d6e932b4898/jsonschema-4.24.1.tar.gz"
     sha256 "fe45a130cc7f67cd0d67640b4e7e3e2e666919462ae355eda238296eafeb4b5d"
@@ -304,8 +300,8 @@ class Mcpm < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyjwt" do
@@ -344,8 +340,8 @@ class Mcpm < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "rfc3339-validator" do
@@ -383,19 +379,14 @@ class Mcpm < Formula
     sha256 "53eb66cd27849eff968ebf8f0bf61f46cdac2da1d1f3576dd4ccee9b25c31993"
   end
 
-  resource "secretstorage" do
-    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
-    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
-  end
-
   resource "six" do
     url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/14/2f/9223c24f568bb7a0c03d751e609844dce0968f13b39a3f73fbb3a96cd27a/sse_starlette-3.3.3.tar.gz"
-    sha256 "72a95d7575fd5129bd0ae15275ac6432bb35ac542fdebb82889c24bb9f3f4049"
+    url "https://files.pythonhosted.org/packages/26/8c/f9290339ef6d79badbc010f067cd769d6601ec11a57d78569c683fb4dd87/sse_starlette-3.3.4.tar.gz"
+    sha256 "aaf92fc067af8a5427192895ac028e947b484ac01edbc3caf00e7e7137c7bef1"
   end
 
   resource "starlette" do

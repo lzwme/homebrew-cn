@@ -6,16 +6,16 @@ class PipAudit < Formula
   url "https://files.pythonhosted.org/packages/bd/89/0e999b413facab81c33d118f3ac3739fd02c0622ccf7c4e82e37cebd8447/pip_audit-2.10.0.tar.gz"
   sha256 "427ea5bf61d1d06b98b1ae29b7feacc00288a2eced52c9c58ceed5253ef6c2a4"
   license "Apache-2.0"
-  revision 4
+  revision 5
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9e58cca49d5dedeac248c5ba420f1baa1188226cb3ddd862f13fd7a11f8bef2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89499564dc59cdfdda9a51a1768ff282ab06202d8835dea938f81dfd2475cc70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88402188e8e5ea4d69fe29d10a8e0ad98e13bd3a07c775af617942ac2e01262e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "14e4dc1d8952314058817c38e69acf88acfaceb7e203059b5695cdbdfea78af4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e601fcd78d8f5ef2d29adceb864df102a690d74fa1f575648f460ca87b3d8802"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7be5c414f11048d4ca40cdd5297bad686947b378956398f5ef5a6e9820efa39c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "429c219d5a312af3c868ad8aaf918aec696ed592e80c0f36d35cd1140262cfbb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c200e1a1ded02aa511b140de1fb77f51883fdfe1522343ce5e7a9d2c7d3d8807"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c009587d4414519dfd07b513f1c13e011436039583958e16150407d78d28274f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7038e6272ac048347d0761b9a2612997359cbd636284d24289ce06f4905fc2e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "938e61b05bb9e59a90bf996995e1278796ef232875dd78fa999e772648009c47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70b97aebf401847ec558df5acdeef2f6640f6d4eb2a1d7884d69d516c8dc72ff"
   end
 
   depends_on "rust" => :build
@@ -110,8 +110,8 @@ class PipAudit < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyparsing" do
@@ -120,8 +120,8 @@ class PipAudit < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "rich" do

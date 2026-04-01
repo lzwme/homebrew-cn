@@ -17,6 +17,12 @@ class Gstreamer < Formula
       livecheck do
         formula :parent
       end
+
+      # Backport whisper-rs update to build with LLVM 22
+      patch do
+        url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/commit/a69aa05e92cf4ae6bbe17bdc1f19b741d1c34ed8.diff"
+        sha256 "90ee916968c8cc764813f2b380a483292e2949d0fa303cb48250a825db0e13d9"
+      end
     end
   end
 
@@ -126,6 +132,7 @@ class Gstreamer < Formula
 
   on_linux do
     depends_on "alsa-lib"
+    depends_on "elfutils" => :no_linkage
     depends_on "fontconfig"
     depends_on "freetype"
     depends_on "libdrm"

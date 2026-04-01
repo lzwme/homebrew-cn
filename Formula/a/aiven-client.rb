@@ -3,14 +3,13 @@ class AivenClient < Formula
 
   desc "Official command-line client for Aiven"
   homepage "https://aiven.io/docs/tools/cli"
-  url "https://files.pythonhosted.org/packages/25/45/77d357c74969dd3d1cf80d7dc7174f35f5f34c9803335fb8e5e707cf9621/aiven_client-4.12.0.tar.gz"
-  sha256 "0cf371c02cb830e5aa1ef9fd78ca3dc4c793c78894a01fb65e42d0dc97337e42"
+  url "https://files.pythonhosted.org/packages/cd/26/9a0ea3d8c58226ee33a80778c232873d2116372e1d9b3c78dfdbe8b9fdc3/aiven_client-4.13.0.tar.gz"
+  sha256 "90564933489922bd44e343c515ad009f84cbec82d70e5689b9dd5c27e2264dac"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/aiven/aiven-client.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "253e938b06e7cce4e417868cac1015dbb136df43a9220700179f505186d0fec4"
+    sha256 cellar: :any_skip_relocation, all: "17ad4f2a9f0b5c7c70f8087e9927a9c6ab814150cc452e17b35d2ede581f76e3"
   end
 
   depends_on "certifi"
@@ -29,8 +28,8 @@ class AivenClient < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "requests-toolbelt" do

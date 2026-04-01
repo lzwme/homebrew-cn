@@ -6,16 +6,16 @@ class Maigret < Formula
   url "https://files.pythonhosted.org/packages/3d/29/ef75d365917075a72ad88b7b1027bc6f93d6e45f27aec1ee6410607eb5f6/maigret-0.5.0.tar.gz"
   sha256 "d85c7f799cce51b6edf7179dda36019d0081bba528ce77284925499b07a49be7"
   license "MIT"
-  revision 11
+  revision 12
   head "https://github.com/soxoj/maigret.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cf90861b40fe3bf67a50ade7eeffa65373dfb0fff8524e15176a8dd60d9696e3"
-    sha256 cellar: :any,                 arm64_sequoia: "6937b0e371803dfbe365cb5913e450b08ea8ea23825c226f5ec18752a953d692"
-    sha256 cellar: :any,                 arm64_sonoma:  "f6fdbe18f920dc4ba7acddf69e9043617047815ec9d04a65da01c8d7f2d491d0"
-    sha256 cellar: :any,                 sonoma:        "0c8f5f5413d202a5999218a1e7b28c8113e43a1841bec79a06fce1347068b974"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "35b084eea14596958691e52558ef0066c2b56502cb28e25e6c3eb270aa23a24f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d79a24a02fe03a06dfb16d0f50a5f5528fcf51a2a57bc0c05c4b92698c4f268f"
+    sha256 cellar: :any,                 arm64_tahoe:   "783c75e5daa92150100647ff1bf735d51db7d3666deb8e7e151558aa4cba2ae7"
+    sha256 cellar: :any,                 arm64_sequoia: "42c66f84f654c9e05ac0aba9d20a87a08c36a9852b74bb50cb9ab02c34ecb1ef"
+    sha256 cellar: :any,                 arm64_sonoma:  "a5a55233da117f4144c6fc136370d30ebab5b4eafe16f9406c9a5817a1b227a4"
+    sha256 cellar: :any,                 sonoma:        "25ee3fcc0787c590e1a14de61516a9ce0655f01e7d5ad5c67ac5c3432683c73c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d675df8f627ad107b439783cbeb409ee23d684628856745e74ec0b5f8656b8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5548ad87318daa3584a71c385529e0ae0b4eba1782966c8030c78b2127272c3"
   end
 
   depends_on "rust" => :build
@@ -50,8 +50,8 @@ class Maigret < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/50/42/32cf8e7704ceb4481406eb87161349abb46a57fee3f008ba9cb610968646/aiohttp-3.13.3.tar.gz"
-    sha256 "a949eee43d3782f2daae4f4a2819b2cb9b0c5d3b7f7a927067cc84dafdbb9f88"
+    url "https://files.pythonhosted.org/packages/45/4a/064321452809dae953c1ed6e017504e72551a26b6f5708a5a80e4bf556ff/aiohttp-3.13.4.tar.gz"
+    sha256 "d97a6d09c66087890c2ab5d49069e1e570583f7ac0314ecf98294c1b6aaebd38"
   end
 
   resource "aiohttp-socks" do
@@ -192,8 +192,8 @@ class Maigret < Formula
   end
 
   resource "ipython" do
-    url "https://files.pythonhosted.org/packages/86/28/a4698eda5a8928a45d6b693578b135b753e14fa1c2b36ee9441e69a45576/ipython-9.11.0.tar.gz"
-    sha256 "2a94bc4406b22ecc7e4cb95b98450f3ea493a76bec8896cda11b78d7752a6667"
+    url "https://files.pythonhosted.org/packages/3a/73/7114f80a8f9cabdb13c27732dce24af945b2923dcab80723602f7c8bc2d8/ipython-9.12.0.tar.gz"
+    sha256 "01daa83f504b693ba523b5a407246cabde4eb4513285a3c6acaff11a66735ee4"
   end
 
   resource "ipython-pygments-lexers" do
@@ -302,8 +302,8 @@ class Maigret < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyhanko" do
@@ -312,8 +312,8 @@ class Maigret < Formula
   end
 
   resource "pyhanko-certvalidator" do
-    url "https://files.pythonhosted.org/packages/c6/9a/0fc4a955bc432eb8598ba3481e19df4706cace594c9fbe760587ea3dfd1c/pyhanko_certvalidator-0.30.1.tar.gz"
-    sha256 "a37e7b11a4afc85594916abdf64b16c42e8b61cd3fa73a53652d16ac8958df18"
+    url "https://files.pythonhosted.org/packages/47/f7/55c8bdae87f912d20b7abc7386d3c8049ad2fba703e759c933bafb28362e/pyhanko_certvalidator-0.30.2.tar.gz"
+    sha256 "bccf6d6780448b0734529b32eb4c049db37c625909b7d6ee22875282efc77768"
   end
 
   resource "pyparsing" do
@@ -367,8 +367,8 @@ class Maigret < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "requests-futures" do

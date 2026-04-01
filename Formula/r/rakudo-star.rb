@@ -1,8 +1,8 @@
 class RakudoStar < Formula
   desc "Rakudo compiler and commonly used packages"
   homepage "https://rakudo.org/"
-  url "https://ghfast.top/https://github.com/rakudo/star/releases/download/2026.02/rakudo-star-2026.02.tar.gz"
-  sha256 "07320246808b8f21a7625c35352ea2e357d201412ef75082fd38cbb9ed76963c"
+  url "https://ghfast.top/https://github.com/rakudo/star/releases/download/2026.03/rakudo-star-2026.03.tar.gz"
+  sha256 "e68a7c697c27ada1b9f4f2f8038a9d446fb5b1e32ad8aa290c22c6c85b3ec25e"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class RakudoStar < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "2e46a1265473c05a7404b5ca549c46878420f1607d1e1f84582a69fceee29397"
-    sha256 arm64_sequoia: "ae7157ab24614e9f3be82a30a45abb59f99d5a77403b53a2c8e5d2b8ecca1734"
-    sha256 arm64_sonoma:  "a0a1399abfbe7857fdaa387eecb3b91d7b4552daf37bac3d7e31ccbce485a533"
-    sha256 sonoma:        "7131c5a98f04711a417c847a709642c3b347e0d6ca620c3aba298b1aa7dcc8ba"
-    sha256 arm64_linux:   "122dee9e81735f79627c148cd85e4cdf12d734351908f198431508a38c6fe418"
-    sha256 x86_64_linux:  "1ab408457fc6d274a6034668df1f4377af2420958cca65659d52ed0c44c94d71"
+    sha256 arm64_tahoe:   "8837e4d7da49087c2a3c5d66fba3d3cfa61768333bef3f369cc705a4cc086934"
+    sha256 arm64_sequoia: "5600c5465c089800c856d8b942e81231c81ab109a424586bdb22c643c43e97a2"
+    sha256 arm64_sonoma:  "db0b17b33d278f55b0994621e469fefa3eb9a392ef11dc23eb197cc80b83c293"
+    sha256 sonoma:        "2e715541a6771fa72c1a46e014b9046ecf1caf50683d724e734bc5ffaf9be20f"
+    sha256 arm64_linux:   "f0f21555a39118b60750dafb4a2743214b7f7a0180eca932201d9277541d55b8"
+    sha256 x86_64_linux:  "0fff45c9f086cfe22bb581101a788be116525eb06cd227c93325c35f243be371"
   end
 
   depends_on "pkgconf" => :build

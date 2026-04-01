@@ -4,7 +4,7 @@ class KubectlAi < Formula
   url "https://ghfast.top/https://github.com/GoogleCloudPlatform/kubectl-ai/archive/refs/tags/v0.0.31.tar.gz"
   sha256 "a16ccc914fb957e59b7d03f2c707672366ec4444e5c34777361f2efea3e732f3"
   license "Apache-2.0"
-  head "https://github.com/GoogleCloudPlatform/kubectl-ai"
+  head "https://github.com/GoogleCloudPlatform/kubectl-ai.git", branch: "main"
 
   livecheck do
     url :stable

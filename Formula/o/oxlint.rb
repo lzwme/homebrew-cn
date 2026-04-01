@@ -1,8 +1,8 @@
 class Oxlint < Formula
   desc "High-performance linter for JavaScript and TypeScript written in Rust"
   homepage "https://oxc.rs/"
-  url "https://ghfast.top/https://github.com/oxc-project/oxc/archive/refs/tags/oxlint_v1.57.0.tar.gz"
-  sha256 "c15fe714c408aaf3f46faad912052e767fe61d1d7b7198fd1067f4e93048e2a4"
+  url "https://ghfast.top/https://github.com/oxc-project/oxc/archive/refs/tags/oxlint_v1.58.0.tar.gz"
+  sha256 "49590614b091d94e90adf316fb8f51a27599fc9c26ad511b1836da6343ef08a8"
   license "MIT"
   head "https://github.com/oxc-project/oxc.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Oxlint < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb686666fa403ca0548961b1093f06caf6815db222dc3c87a7aaf1125656773a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bea907eebd7dae2da89d4504e77ec7ccbc6ac4ea237d0f8a4c5552be22cbccb1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "961fb7584971714bca8a094befac594b9ea8612566952852447c3705e8e5a8b7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ff425acfe44c487827c050143023b326bc795476e765ed28d480ffd6348c8636"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "72ee79dbd54b8cd68361e0df1b2abe76ede2345113d0394de280af14252f2439"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fc1b710a8c2ae4605a18d73f4b21bff04d6231ab7e4d0d49c22c9a889703ca7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "015b9da8759f6777218c91f7bf9c4befa45de6ed576eb7e199e791740dadaca6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "514f64a12c6a2149ac9219dd369f2cd899150314ea0185b849faa470902030c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f957cef6d45e5a7b7f072ef66c3f7947f8177b1fa897a9b43d79e9ef52bd14dd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ec0bceb2ec8f3eef28bcae48855538efffbe7d957973e200005514d3e1553710"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "407dd381c3b34041a6fe11de4e2102da91f12332a95b6e5516f7255bd381e321"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3aebca84fe0fecade238eb9273acbcdf582ef1d9cd8cddb720af2b97275ed0ba"
   end
 
   depends_on "rust" => :build

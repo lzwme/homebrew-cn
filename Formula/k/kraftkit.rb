@@ -1,8 +1,8 @@
 class Kraftkit < Formula
   desc "Build and use highly customized and ultra-lightweight unikernel VMs"
   homepage "https://unikraft.org/docs/cli"
-  url "https://ghfast.top/https://github.com/unikraft/kraftkit/archive/refs/tags/v0.12.6.tar.gz"
-  sha256 "7c22a178a6a04bdd5ef6dadd4f04ded4a9ded75a19b48b24e57d8ea71fbb256e"
+  url "https://ghfast.top/https://github.com/unikraft/kraftkit/archive/refs/tags/v0.12.7.tar.gz"
+  sha256 "5088ae9faf64b655cae441943089f5248e0f072fbeca14f9db65d3c0d6280dc2"
   license "BSD-3-Clause"
   head "https://github.com/unikraft/kraftkit.git", branch: "staging"
 
@@ -12,12 +12,12 @@ class Kraftkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c071c6ba4e3dcf1a84b14680c48482d014f834acb9e308e998564e1ab1e55b9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "066b66c9ad0a4c754d00986096e5571b2261640c3b46e904b0dbc916ed55ba2d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a62054124277ed3b9c5f6b9e89e09e1db512e9e4769f39066f467900a52addad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "da3c1760468576e2d599322d33a03262f77a8a845493123428699e6d27de98f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "273ddf39a81b1c0fef3dab45ab4391c9b6dbcd5445fdc9879be4b098083f5a3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c97abb166049ffd20efea77a41f18713df2d4822be48a6f4c8230938b3ba705"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea02698e443b881d59789ebf38cef3271de8c75e9784217259cec4e26b4bda5f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5373c9df613c82dd4cd2a1811330a9e66e826f1ae327c909ded6d38e284b348b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c10a568db91927be2411cd9eff6c5b288cc89ad2c5f303c21c4291b34810e0e6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eb3b5c8f5e07f1a1e164b8fc225c9c24421275ca3e74905667a5cad676447927"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8a117db143d2211c35468cb78374d224021274675639b43bc0298167b371da4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7193330cf4477d6ffa8770a5a3b8e0019fa1580e9397ee997ffe591ac8e939e"
   end
 
   depends_on "go" => :build

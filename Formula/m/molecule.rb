@@ -6,15 +6,15 @@ class Molecule < Formula
   url "https://files.pythonhosted.org/packages/ec/a4/29f1738fa03ad997b07e8d48bdbcef0a35ee5aecee780d817711519b1f0b/molecule-26.3.0.tar.gz"
   sha256 "e48c92383be5e580545dcc7d115b3f3559d6d5f28e1ab151a35dc780b7400a66"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9ff347286c242325dd7d11cd3d14b929134328d453ff2dfd9107556b4fa0468d"
-    sha256 cellar: :any,                 arm64_sequoia: "bb1e73cef817593504266f4c8a30f33ad66ce1bd382e2544ffd04362373eb915"
-    sha256 cellar: :any,                 arm64_sonoma:  "2ee6297a5d4f4a9fb27dc353f7f9361e8dcab75fe81fbc40a9f4c1530bfceb9a"
-    sha256 cellar: :any,                 sonoma:        "1fba05ecb2e435981b8c8f95afe196d89f7b388e0831a6ea484d065ccbd2ed7b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c344e32cbad8f4c99b1b002439bcaaf603bbfefb1bee556bb37cf9e27cceb342"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5da18d5d0a8a4edc6042083fc1f19f9f27b4701606a5a8dd2c8d5a677e8cc5e"
+    sha256 cellar: :any,                 arm64_tahoe:   "c4cf642d35896bbbb9c0025793b8177b3f6881cc1bc7731065acf8f29f008efd"
+    sha256 cellar: :any,                 arm64_sequoia: "d631bb127ad42dea9f0f7f4f86078f3a648e59eb58320d971156662393415dac"
+    sha256 cellar: :any,                 arm64_sonoma:  "aea3078b9392729da4f3f45517ae367fb3f14ca334645af5928a7fbc6aab56e8"
+    sha256 cellar: :any,                 sonoma:        "986b197c1e21cae5a4c636cc3f8d2849f3163e08fb63eb0a9a1fd170b9ef8837"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a945dad6a43ad35c2af53c24ba4a5229bb380c25b2e1496f91e811a74f0c0ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eef19dd1fd3e19d69eb4b7c8f9cf993a9b58a168f643ae667b6284697294da01"
   end
 
   depends_on "ansible"
@@ -204,8 +204,8 @@ class Molecule < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "python-vagrant" do
@@ -224,8 +224,8 @@ class Molecule < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "requestsexceptions" do
