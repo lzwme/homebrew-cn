@@ -6,14 +6,15 @@ class Tmt < Formula
   url "https://files.pythonhosted.org/packages/2f/d2/90dab987da30091efd1cfb3cd26b9c80ce6fae54cb7927cc309c72be4510/tmt-1.70.0.tar.gz"
   sha256 "ca74383d723a462f5a0b3468c65fcaaf1a50a20af043a6d54c85f741dbfb7897"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e27d31024862da68aeca74c8488cb680c9469b997f99e07cde25f4254f0b1052"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "444ed473d40f17873293413c2c75ddfbb73febf16e5c043208ce567862db19bf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4ea683b7378e43373226f04c1cf070303c636036c4d0ed330feb062329f7f11"
-    sha256 cellar: :any_skip_relocation, sonoma:        "99f8c6183dbcdc18cf60eb5ef25fa9610380f023ff77e095f0a8b836f689b79b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c34a1bfedfffa48bb4d41cffac843ec4b97b0421708099fcad0b7d11b2d7ece"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b3d7ccae08ceeadd3f8f71cb18fa29be81a259ccbeccc72c8b348f49d743349"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f056ae089d7cff1888f1a5e40aaa6f5fa6bce9f2a814bfe8a4d2b6114c97e9ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb96f7b90c2296908071d010852071cecf8672318f75a5977e5baf86bb3e53dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58b261d57068cbf01bf293caf50864afc62833a415a2ff22f1d087bf5d48cff6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1ca5ba7f3eca830eda7372a9f59053016377346f9d66fe74a81f6b7c9dcced8d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0cc873a1d5b8cbf767bd8a2ba98a0e71639b4e44e700de9b14cf92f36595f29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "272c7a3289b4bb149eb721ec8d85111f8bc766b9c09d5bdf955b0359f766e36d"
   end
 
   depends_on "beakerlib"
@@ -105,8 +106,8 @@ class Tmt < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "referencing" do
@@ -115,8 +116,8 @@ class Tmt < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "ruamel-yaml" do

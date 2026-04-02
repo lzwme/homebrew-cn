@@ -6,15 +6,16 @@ class SnowflakeCli < Formula
   url "https://files.pythonhosted.org/packages/0a/92/82f7041c7f6f0025de0f1703b9ad2407e6c93a99194b85ff11a6d45a932a/snowflake_cli-3.16.0.tar.gz"
   sha256 "dfe6c805b8565c24b1a2804b5844a3074a3748145ca99793724c175842f7c47c"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/snowflakedb/snowflake-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6d64bd12ad1193554c33938005e3cb8c1dfcec040e0ea028c878ec0bf76a6d6c"
-    sha256 cellar: :any,                 arm64_sequoia: "e0ebf815aa1734cbb808f8cde3677b7da62d76f71f31591646f771ae668b8cef"
-    sha256 cellar: :any,                 arm64_sonoma:  "44e1cebefac069944705c19cd4fb4be5abcd5a088053fdfd964f01cf53b55eba"
-    sha256 cellar: :any,                 sonoma:        "144e40627df12d613c526d1d9811b7c43e4675b491a91a13acab2e23d58a96d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b34f856e512602a68ce46b1699fe2528b6a9b44f66ce21efd6d8a497ca750e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f21cbb49c02525bda5a2bd8fde6221de36f067dbed324146964b11a7d980e8d"
+    sha256 cellar: :any,                 arm64_tahoe:   "02b997c0135b50bff506a10b355b08a99acef165fedc53b0f46253a40699890a"
+    sha256 cellar: :any,                 arm64_sequoia: "d620d6c14b4812447930ab59fa05e1532abdf924aebc3a9cfb362569f35dd8a1"
+    sha256 cellar: :any,                 arm64_sonoma:  "e16d79c04d063effff6ce49d35dc79fdde6fb43ad1f1d4ef30ff5732d6b48f18"
+    sha256 cellar: :any,                 sonoma:        "919ead34f5b8dc8de674963c18d6a4b45c3e2f7f611052c74d14d67763b28170"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10c6876ab63952b22aaff5a785c21e7ebcb805d9e9bb2cf43d2cfdeeec9feafb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0f6b6e9d929c4ae0de36af1e7695edb034287aa7fa5f856fd4fa129a64106f4"
   end
 
   depends_on "certifi" => :no_linkage
@@ -35,13 +36,13 @@ class SnowflakeCli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/7d/39/774ff22347856ebbe9da350045ad5851aa0524ee6e4832fdc98b27981801/boto3-1.42.71.tar.gz"
-    sha256 "500edd2699a3f479053bbfb407b06c231d1ff1e574f7c90d269d605a6a1f8160"
+    url "https://files.pythonhosted.org/packages/4b/85/f1e43429ce4c81a920742f98af5cd377a020768738645a7d0ff450553ef0/boto3-1.42.80.tar.gz"
+    sha256 "797cec65f8a36dde38d2397119a114ab0d807cf92c43fb44b72b0522558acc0a"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/37/65/a76ced7e1c7f61880ec474e301cb63c27fd47c09ae0b7e4ccaa3cd3b04c6/botocore-1.42.71.tar.gz"
-    sha256 "6b3796c76edeb78afee325a54e23508bbd57624faea1e4aeb8f6e9c1e1e79a0f"
+    url "https://files.pythonhosted.org/packages/2e/42/d0ce09fe5b494e2a9de513206dec90fbe72bcb101457a60f526a6b1c300b/botocore-1.42.80.tar.gz"
+    sha256 "fe32af53dc87f5f4d61879bc231e2ca2cc0719b19b8f6d268e82a34f713a8a09"
   end
 
   resource "charset-normalizer" do
@@ -90,8 +91,8 @@ class SnowflakeCli < Formula
   end
 
   resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/27/7b/c3081ff1af947915503121c649f26a778e1a2101fd525f74aef997d75b7e/jaraco_context-6.1.1.tar.gz"
-    sha256 "bc046b2dc94f1e5532bd02402684414575cc11f565d929b6563125deb0a6e581"
+    url "https://files.pythonhosted.org/packages/af/50/4763cd07e722bb6285316d390a164bc7e479db9d90daa769f22578f698b4/jaraco_context-6.1.2.tar.gz"
+    sha256 "f1a6c9d391e661cc5b8d39861ff077a7dc24dc23833ccee564b234b81c82dfe3"
   end
 
   resource "jaraco-functools" do
@@ -170,8 +171,8 @@ class SnowflakeCli < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyjwt" do

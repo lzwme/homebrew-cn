@@ -1,18 +1,18 @@
 class Jnv < Formula
   desc "Interactive JSON filter using jq"
   homepage "https://github.com/ynqa/jnv"
-  url "https://ghfast.top/https://github.com/ynqa/jnv/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "7ac4379a04732c250d5f818f58fbf14adec6db9188157789cd82ba3ea3c555d1"
+  url "https://ghfast.top/https://github.com/ynqa/jnv/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "22423fe5d621848f2b7dd3b94511d74068b763235d07a30a191d086f6a98b6b5"
   license "MIT"
   head "https://github.com/ynqa/jnv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3085b4cbfab5d16f7e25d9843ae8d58ee3a7d0905f237bd6caf554d63e925fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9f216cec58e6cbb38a334a46c4432965006fcb1b3d0979f6ace307de11f09cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4717de2f1daf78a1058897714da397c939ee89811202a1c53fc49f2d646bd93"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e26c27165a40790c653f145837c097550f49210a01aed0c314f353437f64432a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45988febfad99d33d18c24bc92bd9198e8bacd3185abaeb781d12c315a6ce122"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1163503fac03d94fc7ef1f00031a3df900488e15407737ae05fe220ecdfa8dc6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "272d9f011fb98188406a0d10efb323e2b8e4f800dd0d15070074e0d39ce4a671"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae8feccd4810098d6c84882fb8f3912706cf4f36979d7cfc1c0f2fe67ed5c54a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb8f91de5e610e09ba3a1de0625d977d432423372532828eb714fe17b3d9f960"
+    sha256 cellar: :any_skip_relocation, sonoma:        "edf64bce1912b31ae9fc2218351b1b3cafda3432cffcc7088400ac8ef6d22c03"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ed01cb4c627230047d2505596e9c54a610811d2c5cc9e37d55d86fd133a4117"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e233d3a3c0c1f53a06155449293815381ff8fc0ff6f0f0c486a5c4d0e600a2c"
   end
 
   depends_on "rust" => :build

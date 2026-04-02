@@ -26,4 +26,22 @@ class Aoeui < Formula
   def install
     system "make", "INST_DIR=#{prefix}", "install"
   end
+
+  test do
+    require "pty"
+    PTY.spawn(bin/"aoeui", "test.txt") do |r, w, _pid|
+      r.winsize = [80, 43]
+      sleep 1
+      w.write "brew"
+      sleep 1
+      w.write "\x00\x11"
+      begin
+        r.read
+      rescue Errno::EIO
+        # GNU/Linux raises EIO when read is done on closed pty
+      end
+    end
+    assert_path_exists testpath/"test.txt"
+    assert_match "brew", File.read("test.txt")
+  end
 end

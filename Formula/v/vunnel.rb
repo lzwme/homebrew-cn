@@ -6,16 +6,16 @@ class Vunnel < Formula
   url "https://files.pythonhosted.org/packages/31/5c/c578bd7b6ab563d2aea887cdf8a318fe523a796367f7e841d12364ed8ddf/vunnel-0.55.3.tar.gz"
   sha256 "97b99f7f5385c961086e99ff13cc258911a4a9519ece342a3b63b4ee3d42254b"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fa11d2fd5a6ac1e5e5ddf1cf838683203aa38b6a812009ae46b22e1b5a645f1c"
-    sha256 cellar: :any,                 arm64_sequoia: "161e70eb0d0f81d170b15fd26c542ddbfe38c0329c845528c82db018889945c0"
-    sha256 cellar: :any,                 arm64_sonoma:  "253ca4efde990f6fc77100706261ed7ddd281ff47db55013e2d59ee4b6988542"
-    sha256 cellar: :any,                 sonoma:        "2db28544458551cd7e5440ec67a1986d7e3d19c03da40568567edea2c3c8720c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ee90715391f1f64ab095b7dc1ac3d0146729870911863330a78f15c4ef1359c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e03fb7820651c9a740115bae317d59dc0df63412886e51ba9a7ea84aa64781f8"
+    sha256 cellar: :any,                 arm64_tahoe:   "fe901b402c2951f6481b828c306926d0e4f79508efa6a16670bb83004aec092b"
+    sha256 cellar: :any,                 arm64_sequoia: "e08b52202df451982e6c84f17aad48247088dc4bc52967a9e3a48e41a93dff4f"
+    sha256 cellar: :any,                 arm64_sonoma:  "d5f551ba92d3531b0defadd36445c1d61d2ab17185344faa2a01e180e5101c7b"
+    sha256 cellar: :any,                 sonoma:        "83add7be85c03a906c4835c12d77e7e572fd6cb252194a558530b604c6be05f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6c1ebe4183f7f49c8e4efec7480cb0f16f48eb2d65eff9317f749a4e68944cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dec4954ad414f21e1e4e3c01652a136527d1c2f154748aaad372ea2b48f6badf"
   end
 
   depends_on "rust" => :build
@@ -125,8 +125,8 @@ class Vunnel < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/53/45/b268004f745ede84e5798b48ee12b05129d19235d0e15267aa57dcdb400b/orjson-3.11.7.tar.gz"
-    sha256 "9b1a67243945819ce55d24a30b59d6a168e86220452d2c96f4d1f093e71c0c49"
+    url "https://files.pythonhosted.org/packages/9d/1b/2024d06792d0779f9dbc51531b61c24f76c75b9f4ce05e6f3377a1814cea/orjson-3.11.8.tar.gz"
+    sha256 "96163d9cdc5a202703e9ad1b9ae757d5f0ca62f4fa0cc93d1f27b0e180cc404e"
   end
 
   resource "packageurl-python" do
@@ -145,8 +145,8 @@ class Vunnel < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pytest" do
@@ -175,8 +175,8 @@ class Vunnel < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "ruff" do

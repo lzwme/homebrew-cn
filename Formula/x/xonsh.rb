@@ -6,15 +6,16 @@ class Xonsh < Formula
   url "https://files.pythonhosted.org/packages/99/d7/269a167722c8cea95204add643664a7dcb445ef50f5810a924ca7fd3e3f2/xonsh-0.22.8.tar.gz"
   sha256 "5eedf7822f1655eb4f29a7c3916b0dcc7b8fe548b4b83001afe79f3bd39be28c"
   license "BSD-2-Clause-Views"
+  revision 1
   head "https://github.com/xonsh/xonsh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6589d19e7da196fc49f38ea0261dc9e7e997c29ed1592b1c085e9f23f3de982f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0de65006ee16728beb3991b16aa87ae4d21192a4d046dd9ad28e88b42e397363"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8685a9f533a8d8f84b37cbd0e66940cd29fc08bb0df5e2d415974854a671c15b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ec9e398a6880d4c91fbdf99f90c4180bef61c86fe396f93aafde43dcf9ba6363"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f60b50b1026dce1323637707396960de0f487567fdb208ad27445d5357fdb5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3debccb3e970683d842357ed49690e6a50a0e37e7cff171ad90cdb25e4ee33c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dcccf913ccad7b3bc26c8714207c4fcfc966a34ebaee8174fc8b01fa1b50ef5e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86a57ef41000ced4a0ddf09505bac4897db5b62c91cd6026cb127192cc0a1b55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c658c36c57e131cbe0f091858e12181c4a1519a8499494256e961cfb196621d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5f882ea5a2daf7f832933896501f7f58e4502179481e291aa4cbe96a4fcce83e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad4533c9c8f2ad62a381d925289ddc2c3507c8783cb687d697e36a9f8a928764"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00513aa360a4966604881aab7caba0b69b8aab2fcd13c9582628fe7400f99f12"
   end
 
   depends_on "python@3.14"
@@ -27,8 +28,8 @@ class Xonsh < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyperclip" do

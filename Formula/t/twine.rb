@@ -6,16 +6,16 @@ class Twine < Formula
   url "https://files.pythonhosted.org/packages/e0/a8/949edebe3a82774c1ec34f637f5dd82d1cf22c25e963b7d63771083bbee5/twine-6.2.0.tar.gz"
   sha256 "e5ed0d2fd70c9959770dce51c8f39c8945c574e18173a7b81802dab51b4b75cf"
   license "Apache-2.0"
-  revision 4
+  revision 5
   head "https://github.com/pypa/twine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "35a958f3d4f476c2386bcc2e492442bac0ec46695443e5bb10e5000f97bba47f"
-    sha256 cellar: :any,                 arm64_sequoia: "1a37bdda72a9689676042264b9edebf9bee3d58c6821f152f320d592795cd169"
-    sha256 cellar: :any,                 arm64_sonoma:  "0138f810c070b5124164434d8ff47f7daa1d8a7219a785284e51fbf61d39026e"
-    sha256 cellar: :any,                 sonoma:        "ae369d4eddc0bb06cb7c980fab17a8837eb154a7feb792c987feb761f5da91c1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c12ec822be6855836d12b9e2aa8f6a697fc8387345683ec33bc5246bba28c97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43e0da85e5b75e1ba35a81001492c1909eded62fac81d059a7b3f0e510588b09"
+    sha256 cellar: :any,                 arm64_tahoe:   "331449e74615ec23f438fee79635a206a7fb4eecb4a44ad719c6f84aa8e43204"
+    sha256 cellar: :any,                 arm64_sequoia: "a38087df540165a223a97751ef9925e3e3aea55599e0ad300939837a9d2b3647"
+    sha256 cellar: :any,                 arm64_sonoma:  "4116fc265070a5adba70469089d012c110d99034d50f4374882926403107a9b9"
+    sha256 cellar: :any,                 sonoma:        "27449a3091b1f9bfe04c4ede9e0655211c840681a66458c0e146c819eda3ef2c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dd84ba0bf2655f34e04222ab5391c7db0a698c975aa61394a10638c5f7276a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c85b59698080496d806a772ddc07a0f14c9e516f85cee95aeb734bd406d9ac20"
   end
 
   depends_on "rust" => :build
@@ -100,8 +100,8 @@ class Twine < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "readme-renderer" do
@@ -110,8 +110,8 @@ class Twine < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "requests-toolbelt" do

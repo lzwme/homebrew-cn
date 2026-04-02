@@ -3,14 +3,13 @@ class Pipenv < Formula
 
   desc "Python dependency management tool"
   homepage "https://github.com/pypa/pipenv"
-  url "https://files.pythonhosted.org/packages/b6/67/fdc44f47b4fc9d99729c0e6588407642a4e8ec0d7522736cfe29fea4ebdf/pipenv-2026.5.0.tar.gz"
-  sha256 "5402ac5fb1dae2c3d89e504496502da21fa38ff7c293b2e289a809e2f77b036e"
+  url "https://files.pythonhosted.org/packages/8a/21/1657c31ed3df0b439f91f8f4c79abd8d6fa799a517918ec0153c5b3dc18c/pipenv-2026.5.1.tar.gz"
+  sha256 "e4fe303af2f13d29644081c905a28fe5a945ce75ea14310675baefafe7fdfab2"
   license "MIT"
   head "https://github.com/pypa/pipenv.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "f1e7fa9ef57786e05f507633fb1d535625d48bcbe7e1fecc433e0539d25df1ce"
+    sha256 cellar: :any_skip_relocation, all: "48aa99cd7b232f59683b6a422d7a0ac5c882cea155ccf63a5b2f92df11b2ef54"
   end
 
   depends_on "certifi" => :no_linkage
@@ -71,18 +70,6 @@ class Pipenv < Formula
     # Build an `:all` bottle by replacing comments
     file = venv.site_packages.glob("argcomplete-*.dist-info/METADATA")
     inreplace file, "/opt/homebrew/bin/bash", "$HOMEBREW_PREFIX/bin/bash"
-  end
-
-  # Avoid relative paths
-  def post_install
-    lib_python_path = Pathname.glob(libexec/"lib/python*").first
-    lib_python_path.each_child do |f|
-      next unless f.symlink?
-
-      realpath = f.realpath
-      rm f
-      ln_s realpath, f
-    end
   end
 
   test do

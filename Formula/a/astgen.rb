@@ -1,14 +1,13 @@
 class Astgen < Formula
   desc "Generate AST in json format for JS/TS"
   homepage "https://github.com/joernio/astgen"
-  url "https://ghfast.top/https://github.com/joernio/astgen/archive/refs/tags/v3.37.0.tar.gz"
-  sha256 "bc41e4b04886047350b1db1cfe303b4ded6f243b3a094b1c42304f08ffa5732d"
+  url "https://ghfast.top/https://github.com/joernio/astgen/archive/refs/tags/v3.40.0.tar.gz"
+  sha256 "e46f93cb7abd3a6ecdd150e096f52bbf5425aef14110ebb6dd7aa38fb7adcc22"
   license "Apache-2.0"
   head "https://github.com/joernio/astgen.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "aa0d4c0a0efca61052f9c3672634b339b98e4d697653d119c4cc8610ed01b1db"
+    sha256 cellar: :any_skip_relocation, all: "f1cbf7a1230cb340d08121fc9dbb71567e6fb84885e34c2740fd615147185e71"
   end
 
   depends_on "node"

@@ -1,18 +1,18 @@
 class Act < Formula
   desc "Run your GitHub Actions locally"
   homepage "https://github.com/nektos/act"
-  url "https://ghfast.top/https://github.com/nektos/act/archive/refs/tags/v0.2.86.tar.gz"
-  sha256 "5717a45d967ddbb5e227b4029dfde4d7757477ec2d828486f714f75695f05c86"
+  url "https://ghfast.top/https://github.com/nektos/act/archive/refs/tags/v0.2.87.tar.gz"
+  sha256 "e04dcdcbc56741e2a5426814ae7c330e41f708d466838ad6e42622690b80af23"
   license "MIT"
   head "https://github.com/nektos/act.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04a4e5a427028927ca4f436be134cb1c24aca9225a92587726d5e01f88f7f38e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68d5cb6a9862803c2ab0d6f66fc7ea1553b6e737f086d450597a527c2afe87c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "424ab2b730b52ba4ec68a3cc0f9423d1f89a4b2f44e72b8bf29a2fcf1f4d3b51"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8842068f78ad3f18b16366968f56c06fca165f977d542427816746b870500710"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "01a0c0b8189449a12abf090b8b5220ca5f200b8e39ffcffb798e4f677a542a30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e6abfa0f746db53587ca40122da2f8d8b47d102a7cf5fefe6b779303aa389ae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31e04ddd1a5fc0ec333004ebbd4e99453ca4993fca875f8b3056cbf097990f41"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1a968907ae281da480d5d964c9f771f4f786746816bf4548771558fd1a51efa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42eb590baec1fc6e3f783c2254d82c058578b787e3c02b85a4bcaeea97a8cf5e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9506505c76e66d02bbab12fd3046b0683ddd44768fd27c779cd7fae50307c987"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdd693ca3f5c3b9f1720609da00ca7f4ce69969d2152440a2ee943467d1ba899"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75dd3e14d13a5fea2a70d04c5ce4360d38f614f0f9583b849758e60f2ba8d859"
   end
 
   depends_on "go" => :build

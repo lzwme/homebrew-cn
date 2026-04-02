@@ -1,8 +1,8 @@
 class Dwarfs < Formula
   desc "Fast high compression read-only file system for Linux, Windows, and macOS"
   homepage "https://github.com/mhx/dwarfs"
-  url "https://ghfast.top/https://github.com/mhx/dwarfs/releases/download/v0.15.2/dwarfs-0.15.2.tar.xz"
-  sha256 "6b7edcb2121347e273753d949f72913f006ec12477248384b24c48989ec34995"
+  url "https://ghfast.top/https://github.com/mhx/dwarfs/releases/download/v0.15.3/dwarfs-0.15.3.tar.xz"
+  sha256 "2a9c6b7cb2841f3c7b75839da9326724a2817e4467b20e79e3e24c3eefc13eca"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,13 +12,12 @@ class Dwarfs < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_tahoe:   "290e75c819f9ffcda0c5794039eb7cf56907e2a63dbc5e388e5a399186b6adbe"
-    sha256                               arm64_sequoia: "e6f4f0aadb9c3e023e9e9e6ea6833fb547e963da0caf8f60b351e079304a2da2"
-    sha256                               arm64_sonoma:  "884cf271b03bb38d2abe7237c9e92a196e0ef2a132cfecba1955de045b6f8876"
-    sha256 cellar: :any,                 sonoma:        "15d4f9af4dc7ae5104e078a50ec146b78a1d878ad97eef34fd0e7db9dbf716f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3931ad914ee50897e13983f617ee464bf100b35d3694ca8cc103ece43cdd820e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0249f181d10bca210cd1b7bdcc9382ca95243e33b6804b0860147a2337239a0"
+    sha256                               arm64_tahoe:   "eb0df7e1ff55f49ac73430d2fba04f51783356ed5a4637150ace7ff4cfa39681"
+    sha256                               arm64_sequoia: "1fb61e84be8e29a982e9640037fe3d1918b8f2f3f98f414d50c79a8565477b2d"
+    sha256                               arm64_sonoma:  "7d02a75fd7989d7e563b6c7fa01be879c731ce8eeea9ca1fb2146b725f1d6409"
+    sha256 cellar: :any,                 sonoma:        "0621cdb883746e82f746782af5626cc72962b3a45c6addb2ec803d7a33cc444e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca1dc50195afd13e63856de31e0d25933703adbe012edecfd01f41a4e075d187"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "225a82a5cc48d2014732c1dbb2dabbbddeeeb3dfe74cf99feb44abe0f9ac82b3"
   end
 
   depends_on "cmake" => :build

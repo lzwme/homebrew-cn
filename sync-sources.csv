@@ -1942,6 +1942,7 @@ Homebrew-homebrew-core/Formula/e/exodriver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/exomizer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/expat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/expect.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/expert.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/exploitdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/ext2fuse.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/ext4fuse.rb, Homebrew/homebrew-core, 1
@@ -14269,6 +14270,7 @@ Homebrew-homebrew-cask/Casks/p/protokol.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/proton-drive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/proton-mail-bridge.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/proton-mail.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/proton-meet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/proton-pass.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/protonvpn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/protopie.rb, Homebrew/homebrew-cask, 0

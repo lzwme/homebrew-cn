@@ -1,27 +1,30 @@
 class Mkbrr < Formula
   desc "Is a tool to create, modify and inspect torrent files. Fast"
   homepage "https://mkbrr.com/introduction"
-  url "https://ghfast.top/https://github.com/autobrr/mkbrr/archive/refs/tags/v1.20.0.tar.gz"
-  sha256 "6a9cadf38b8c5dfed76246eccf44cda1329f39022a720cab44ae5cc4d0c11888"
+  url "https://ghfast.top/https://github.com/autobrr/mkbrr/archive/refs/tags/v1.21.0.tar.gz"
+  sha256 "f071ec9bb77bf56b5971dcb2ea47a2764b61d5778f064d5b052d1200fe6967b9"
   license "GPL-2.0-or-later"
   head "https://github.com/autobrr/mkbrr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a16a203bfd66d7372660c91517681544ecf098bf26824bb1bcee4b66a07baadb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a16a203bfd66d7372660c91517681544ecf098bf26824bb1bcee4b66a07baadb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a16a203bfd66d7372660c91517681544ecf098bf26824bb1bcee4b66a07baadb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6884e129bf0b4e50683cf22d4ee942a074652c4fc1d3423757107a688088be4f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e47190ec6c29d904b2f243ef360f351b59ea801e63c5a51b6028cda244ab4c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d15fb744e91594de2f4c285583130e4965938146877fc492f56cc2afa4048ff"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f450012cff626c26eaf57321c18f0df45cce14727095efa61fbae73e98774b70"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f450012cff626c26eaf57321c18f0df45cce14727095efa61fbae73e98774b70"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f450012cff626c26eaf57321c18f0df45cce14727095efa61fbae73e98774b70"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cf9d72f6da9e708b3e7c77630c8f8f8c03dcc20453f6097d33bd0be901011330"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "87fe05e7adbf14ed8b3900bbf16fa22520c7bc56f6aa8af5d7057b7d25e9338e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8ec2cd7522d708b010ac516c7776f374812451e5da22ac8433777fa9b21a281"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version={version} -X main.buildTime=#{time.iso8601}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.buildTime=#{time.iso8601}")
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/mkbrr version")
+
     (testpath/"hello.txt").write "Hello, World!"
     system bin/"mkbrr", "create", (testpath/"hello.txt"), "-o", (testpath/"hello.torrent")
 

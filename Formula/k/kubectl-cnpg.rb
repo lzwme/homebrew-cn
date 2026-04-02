@@ -2,18 +2,18 @@ class KubectlCnpg < Formula
   desc "CloudNativePG plugin for kubectl"
   homepage "https://cloudnative-pg.io/"
   url "https://github.com/cloudnative-pg/cloudnative-pg.git",
-      tag:      "v1.28.1",
-      revision: "1ecc48340a5fcc7243773bb8d84e59e24d6909a3"
+      tag:      "v1.29.0",
+      revision: "23eae00cd7aad82978397798dd27b600eb25ae3d"
   license "Apache-2.0"
   head "https://github.com/cloudnative-pg/cloudnative-pg.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81981c8eccd3173eb11b7e94f2a61012539805560335279d00396c8cf5a653d5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f991229063c39309140450ff268cf42b38a2b54b1c240c2226d623e8d756e0b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9bc47ada833c8d1fa6f633ee2d92debb643616ce2b1b3c28fb872175d27b37ad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c3963933a18f771958f99fb6fc0ad9ba9edb8a8042fbbb5250000625c55f729d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ebd19955d65aa8d6ee9b7c840a4c8b2ff9ff9b494bf71a1c4d63f07dbc651bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "836d53fa78ba01f7942b6c9d23b2ffbe3b9907f65d6420831e404292f29e3979"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d0ad36ff850b3d1af2dd9fced6fc79900725eb4befea43623ba92261b09912e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6b5873dc9b19e0fcd97bd2adf8b04c5a971234ecd97ab8f518f5ccb0e590cd5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5311eb25705d192462a83c12c17d894732343141ee31cbd1ed1b12d19ea33037"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7fd9ddd9b1f1b4b23b0ee9f971ef8f14e1a50028c0d29ad613af8060b22e1562"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db6eae479d43d7884030039f5373fdb46a51afdd23082ac7da2eabcf9948554d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66eda2b640c7c4dd0765b46b3fa46e0b8ebf23b25b0c57751bdef5c42addeb2d"
   end
 
   depends_on "go" => :build

@@ -1,10 +1,21 @@
 class Gdal < Formula
   desc "Geospatial Data Abstraction Library"
   homepage "https://gdal.org/en/stable/"
-  url "https://ghfast.top/https://github.com/OSGeo/gdal/releases/download/v3.12.3/gdal-3.12.3.tar.gz"
-  sha256 "1fdfe51181d08b9b83037b611da4de4a7cf1fca69e6564945ac99d3f7d0367dd"
   license "MIT"
+  revision 1
   compatibility_version 1
+
+  stable do
+    url "https://ghfast.top/https://github.com/OSGeo/gdal/releases/download/v3.12.3/gdal-3.12.3.tar.gz"
+    sha256 "1fdfe51181d08b9b83037b611da4de4a7cf1fca69e6564945ac99d3f7d0367dd"
+
+    # Fix compatibility with new poppler version
+    # https://github.com/OSGeo/gdal/pull/14243
+    patch do
+      url "https://github.com/OSGeo/gdal/commit/0ad9529d5fd5e03880147221d56bfee08383d7dc.patch?full_index=1"
+      sha256 "fba9b0f6591f83b7837c3fc9e649e902b7490f877190a6d9535f969ea5fd87ab"
+    end
+  end
 
   livecheck do
     url "https://download.osgeo.org/gdal/CURRENT/"
@@ -12,12 +23,12 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "6a972619e33c36c20612c587306cea5871678fa10c33ecae379ef5b85fa43857"
-    sha256 arm64_sequoia: "09be89fec7141e734f63d376ff6d3f7f9c4271d48c6fdafcd3fcbfa3af1b1146"
-    sha256 arm64_sonoma:  "0fee5d9432e03ec09f3cd108e57a53ea5ff165bf294e0ab33025ee8b381e3a20"
-    sha256 sonoma:        "9acfccb1a76da61ce3f66d5486b734e3801685f6ef666f6ad104fecbda5eab09"
-    sha256 arm64_linux:   "22aa4a86afc7b6a4e9457f6e7eaf94948307cc412edd63ed3c3ea329c792cc87"
-    sha256 x86_64_linux:  "1d53904cbb209e91dd4c90c2cfecf0bebdc69bb5be4cedf826852e260a9485b1"
+    sha256 arm64_tahoe:   "da4988d3972da0188f0cd25dc1bae927b094bdb0ec3a9f2fde89504eb0651ab8"
+    sha256 arm64_sequoia: "97fb597a0b94044e239ec9ad27bdbdfe8a9086406174392a038a170f0ace0e98"
+    sha256 arm64_sonoma:  "3de6199757030217dc12fb9e3965463afd99281163717a647f856360fbc1a169"
+    sha256 sonoma:        "be7e148351b10e61d92108a861867a811b68735440966c280fda6217eb0cfc1a"
+    sha256 arm64_linux:   "119d5bf7d4dc729af9333d41a69f0977fa9e9c6e10167e2bf137b08d41dfc3c1"
+    sha256 x86_64_linux:  "d4a83643944948a56f8d1ce208a421651e37eb826f663f876ec82c0b7d7f9276"
   end
 
   head do

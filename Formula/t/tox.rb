@@ -72,18 +72,6 @@ class Tox < Formula
     virtualenv_install_with_resources
   end
 
-  # Avoid relative paths
-  def post_install
-    lib_python_path = Pathname.glob(libexec/"lib/python*").first
-    lib_python_path.each_child do |f|
-      next unless f.symlink?
-
-      realpath = f.realpath
-      rm f
-      ln_s realpath, f
-    end
-  end
-
   test do
     assert_match "usage", shell_output("#{bin}/tox --help")
     system bin/"tox"

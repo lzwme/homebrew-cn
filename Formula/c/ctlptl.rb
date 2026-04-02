@@ -1,18 +1,18 @@
 class Ctlptl < Formula
   desc "Making local Kubernetes clusters fun and easy to set up"
   homepage "https://github.com/tilt-dev/ctlptl"
-  url "https://ghfast.top/https://github.com/tilt-dev/ctlptl/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "4949fea5a496916dbd6a8abe52a2b90d3e80006ae5cbdca071973488bd31f415"
+  url "https://ghfast.top/https://github.com/tilt-dev/ctlptl/archive/refs/tags/v0.9.2.tar.gz"
+  sha256 "1ae406faea06817a44859a1906d5a5ec457c1c054af05153aa0c9a768299406d"
   license "Apache-2.0"
   head "https://github.com/tilt-dev/ctlptl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55b4f0c099bc165231858b3af57bee54379d5921271a3c7e952db9c207f28d3d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "545bf28a4c873bb412be722b3850a5888287aea3429a6bf0c660b0152b7a6f69"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9dab7b593479157988ee187862720abae910c808594230a38dcd4aaabac3097c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e0eb722460f32b56416c7222869861c8a14118531a62bbd4fef7879bac43d781"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a561b41a132e28270d3b2a78a57cdb3f944c3d65f17ae080e65447f33fd29191"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a14de4f475d6c325c95ac11369d8aa9f94d68b04fd2753167c05fc16a3152a5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "58573570be137fdefadb74059cf19bbf53e7aa8ddf33150e7a80409b4a3a5435"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c00f172c724757768721e90a09c68367c99ff6cab259dd400e7c222e1aa7d4e7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f4debbf3cad42b9f3a62f4f21c984e25104191f74e5e346a757f13dabe3a876"
+    sha256 cellar: :any_skip_relocation, sonoma:        "da045185748bab04aa3df797798ff34354478e208cb3f69f2fd8272248a11557"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "07e4fa60c9f5fa4fe48d6587d3b9af849a987b5ff4aba0702a50ff042d4acee2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12379ce356b1479c349e8b44fa1f4a4037459138f461bf86e0e7ed0abbd94dd5"
   end
 
   depends_on "go" => :build

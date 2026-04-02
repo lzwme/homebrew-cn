@@ -3,17 +3,17 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.com/github/spec-kit"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.4.3.tar.gz"
-  sha256 "32c7bc0fcae97de71124af650c45f78144f7f391d050270defeec1d12b1efebd"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.4.4.tar.gz"
+  sha256 "17b19a93b9471927496a34fd6a2ea8fb1f9da4c3dd121707f67934140da82630"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "84b64be9b1599aa08ff40a09bb4ee81bd9662c5340aba2495dcbf2dabd9cd47a"
-    sha256 cellar: :any,                 arm64_sequoia: "092be9ecd4f8c25634fb8c20872287a060338e2f963759f105c29991874ca1fa"
-    sha256 cellar: :any,                 arm64_sonoma:  "9a4e030d3c6f78e216a7f0ec6647244cb9b534257e2075da9ad90bbd54fa3533"
-    sha256 cellar: :any,                 sonoma:        "31f4c69d4da4efa812b5b5a06962014ae8b5e042822b3c38c2db56d2c58a3c71"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fc121bd1c3af338adf1d78bd99dbfc26e0e4aec34f79755706f11839aeb81d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64d63315f873fbb16503d2acbb71824f07a3c58914e722ba00b7580c0f149c0b"
+    sha256 cellar: :any,                 arm64_tahoe:   "da6609b3480538819cfe844dad0d108c8fef4c75bf461cacb7ec4b19cb173a7d"
+    sha256 cellar: :any,                 arm64_sequoia: "2634bc133aef8a9f950f839525c852727a9ec75111e0891c3c2e550be78cf640"
+    sha256 cellar: :any,                 arm64_sonoma:  "addf35e75e3590654200ef549952dfa5bb51bc69d767deaa203ed3f25e565d73"
+    sha256 cellar: :any,                 sonoma:        "9994a07df4b44473f1cef7a715f21f8c456c0e26fc492983c92329b3439e23da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ccb11da0887cf717aba680fe508773862cbb4d44f40bd60469994f8b110a53e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b41e1ab060c945ad63bfd64225eb1b482a49c4bce1ed90f139d15c6be1c82982"
   end
 
   depends_on "certifi" => :no_linkage
@@ -28,8 +28,8 @@ class Specify < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
-    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
+    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
+    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
   end
 
   resource "click" do
@@ -58,8 +58,8 @@ class Specify < Formula
   end
 
   resource "json5" do
-    url "https://files.pythonhosted.org/packages/77/e8/a3f261a66e4663f22700bc8a17c08cb83e91fbf086726e7a228398968981/json5-0.13.0.tar.gz"
-    sha256 "b1edf8d487721c0bf64d83c28e91280781f6e21f4a797d3261c7c828d4c165bf"
+    url "https://files.pythonhosted.org/packages/9c/4b/6f8906aaf67d501e259b0adab4d312945bb7211e8b8d4dcc77c92320edaa/json5-0.14.0.tar.gz"
+    sha256 "b3f492fad9f6cdbced8b7d40b28b9b1c9701c5f561bef0d33b81c2ff433fefcb"
   end
 
   resource "markdown-it-py" do
@@ -88,8 +88,8 @@ class Specify < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyyaml" do

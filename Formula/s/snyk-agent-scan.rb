@@ -3,17 +3,17 @@ class SnykAgentScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/snyk/agent-scan"
-  url "https://files.pythonhosted.org/packages/a6/62/9d3ac0c753417b71b1075db9ef5f8229080827f28ad09660187eda0e978d/snyk_agent_scan-0.4.11.tar.gz"
-  sha256 "eb808855be909d31314f0f6f75b18ede70c7e05c385be2c887a3f2ab4a82187e"
+  url "https://files.pythonhosted.org/packages/25/0a/48c636af19be281adc51fff02c8db48085c564e7ae07dd71c16cd17893d2/snyk_agent_scan-0.4.13.tar.gz"
+  sha256 "d5e1a1659d9612ca8a3d5b0543fb6fcb64e9055a7e7fe1964aedf088624a74e6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e3d1273a32b5433c0b31ca13cf8f8a304888e14d87dde5ee180810744113f563"
-    sha256 cellar: :any,                 arm64_sequoia: "1d08d00576770eb42b0574383bf96faf0ee033a1ac31f3705e07abdf2f8cb9ff"
-    sha256 cellar: :any,                 arm64_sonoma:  "89d9cde54ea0bf996d6856459a41c92f6a34bb96fea20a4306cd869490e91ed8"
-    sha256 cellar: :any,                 sonoma:        "771431eba4a5ebe71e7578c92082554d082577033408257da66e13e9f379f327"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7bdaf99ae602914d07e7cbdb9d3c2e810010a1ea7b0ff0ed31eb5c1fa46075bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14c9f07bf2b82e274b1f7caa9b7e59d2ca3a5d0f8132b04e3e489c7ab93bfcd3"
+    sha256 cellar: :any,                 arm64_tahoe:   "215dfb7ee1e88cbd9110959c38317605212df9dbc3030cebdb33dc3028082765"
+    sha256 cellar: :any,                 arm64_sequoia: "ee1ecbd2b0a5e41bd6545d8a97ffa3b0ca6a29464712886fc2485f5c962f6b5a"
+    sha256 cellar: :any,                 arm64_sonoma:  "a7d973bfdcab7d5ce7d80c20ac4536296d5c7abb013dc70e94267a420d126ad1"
+    sha256 cellar: :any,                 sonoma:        "b066b3c51e39f08a782e986f3bd54c8ad78c997ece5e9e90a4249d39f4430152"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f18389004e42634e3c8cc7a06b49274067694135d5d563f78ade79efed27d19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dccdeac1506a4e7ae28a66034d30ac67951dfeed54486cea0d2b9ed3b6ccc43e"
   end
 
   depends_on "certifi" => :no_linkage
@@ -31,8 +31,8 @@ class SnykAgentScan < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/45/4a/064321452809dae953c1ed6e017504e72551a26b6f5708a5a80e4bf556ff/aiohttp-3.13.4.tar.gz"
-    sha256 "d97a6d09c66087890c2ab5d49069e1e570583f7ac0314ecf98294c1b6aaebd38"
+    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
+    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
   end
 
   resource "aiosignal" do

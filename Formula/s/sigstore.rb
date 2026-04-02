@@ -6,16 +6,16 @@ class Sigstore < Formula
   url "https://files.pythonhosted.org/packages/98/c3/84ec81173ade0dba5613feea577308cde4e69045cc804d02953e3a40922c/sigstore-4.2.0.tar.gz"
   sha256 "bdbb49a42fd5f0ea6765919adb42ccee7254c482330764d0842eec4e11ad78d7"
   license "Apache-2.0"
-  revision 4
+  revision 5
   head "https://github.com/sigstore/sigstore-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e95a638e7197bebdedd3c5f552de83a2e7af3a48ba55bd6a69765f7fc0096794"
-    sha256 cellar: :any,                 arm64_sequoia: "1cc7623c28d566a6c25fca3b1a51ead7ac5b94b34fff093e5655dc4a82fda189"
-    sha256 cellar: :any,                 arm64_sonoma:  "08fc1ddcddfb3beb99dc049af0b4e8290814eb57111033930ac7394f9560bfeb"
-    sha256 cellar: :any,                 sonoma:        "f646e977d96011f69d02da0f5928047d35a500858bc1cfebf7ca511785840ecc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f716a9e5dadf4735028a171cb3adedd63a841744bf5db91abe31a123a3138aa5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0eee3b3f18396a56408aef4d55f4874263cd2c7bc83b3ecd1e0e51e8fab543f7"
+    sha256 cellar: :any,                 arm64_tahoe:   "5a304fa379a107c28f92f75f56d0633de35eece4c51d938be6f0df139086e0a7"
+    sha256 cellar: :any,                 arm64_sequoia: "bdf741e6302926bc679aeead6fe2d9eb5dda05b58f7f7c0b4421dd21838b137f"
+    sha256 cellar: :any,                 arm64_sonoma:  "c31a67db8a0ddf2ecd4b691d72ecd2cd8bcce39574abc5c7120622d16f16ba26"
+    sha256 cellar: :any,                 sonoma:        "24466700b4a66fe8d56558790edb90c5da815cc4f93057fbd293ee8b0b3262f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8228aee817f1d94f134ad98d2d5bc1c44221ff8b49a0a96e6e08ae7121083c94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f34b9e2ba2510b31c35cb0551b8419ba2a5e51e71611e9ef7d5ace4c06e06e71"
   end
 
   depends_on "pkgconf" => :build # for rfc3161-client
@@ -74,8 +74,8 @@ class Sigstore < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyjwt" do
@@ -89,8 +89,8 @@ class Sigstore < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "rfc3161-client" do

@@ -1,18 +1,18 @@
 class TerraformMcpServer < Formula
   desc "MCP server for Terraform"
   homepage "https://github.com/hashicorp/terraform-mcp-server"
-  url "https://ghfast.top/https://github.com/hashicorp/terraform-mcp-server/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "acc6ec39559bd8e4cb1d3eba29ce04a448f3c06501eebe086363848ee41ab7a5"
+  url "https://ghfast.top/https://github.com/hashicorp/terraform-mcp-server/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "27eaeaf9c2ef42ee842a29556798c9ccc456982a8ab1e92e04b8d8a699893d75"
   license "MPL-2.0"
   head "https://github.com/hashicorp/terraform-mcp-server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31296b26237917cdce5afd4cbcf6fc544fcfbc391f93d8fa951d2f322b0311d7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31296b26237917cdce5afd4cbcf6fc544fcfbc391f93d8fa951d2f322b0311d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31296b26237917cdce5afd4cbcf6fc544fcfbc391f93d8fa951d2f322b0311d7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "91f11907dc109860f8ef2870e0ccdb42688365e6a43ffd40c4196804ad7811a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ea55608654c620009131361dfc7aa19a5f5469490a41bee9e1f0fae04c9d5db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f731b632aac2feb29b7e37701f77ffee26b40dbf84c4ebc9431ed4944ebdfd78"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01f5ad715fb526a4e9cda9ae60d995d8e86d53eecb032ee5db79544459c56cfd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01f5ad715fb526a4e9cda9ae60d995d8e86d53eecb032ee5db79544459c56cfd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01f5ad715fb526a4e9cda9ae60d995d8e86d53eecb032ee5db79544459c56cfd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7c6d6497e6f7ee805b415366162d77a5e9792a61ef2e6256a4719d1c715256ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d98e52a7b736961c2c82320101ef70c1c8e307e44188d65a32f05613029a954"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e198d5ab84e4cc9e9978dfd33c33e1c6be36732523317c874ce4f510f47a8629"
   end
 
   depends_on "go" => :build

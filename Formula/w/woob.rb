@@ -6,15 +6,15 @@ class Woob < Formula
   url "https://files.pythonhosted.org/packages/85/f3/a2dc1bb679de004aa1e48c8b77b5d5b9bca3007b2f25e0c39f850a009186/woob-3.7.tar.gz"
   sha256 "b1d7113ba87a9b947c13a1e3b4bb4fa616ba3037092b54912fc3fee2647d1b2f"
   license "LGPL-3.0-or-later"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5d2eb2b448804564bcc6534dd76a24a40137542a603a69ec713220ac20269688"
-    sha256 cellar: :any,                 arm64_sequoia: "68667c77fd5b406b6e3e2ff4805a2e3957d3bc20b5f0a4cc061d21464eacecaa"
-    sha256 cellar: :any,                 arm64_sonoma:  "2ee40b954f326f6ddc47fcee0507cb688822f83895a50fb7498ca0dc3ac605d6"
-    sha256 cellar: :any,                 sonoma:        "882d0c9bdd73b9ca7ed028a3f7c7e70e277b297c813dabdb9bee44880a4c4957"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1410519e920ecee1bb8e5d2651f9dca2668007c7e11f2b8fe03af39e2312c6dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1eab04557f4a2fda24abfc88c123842182b0aa7f6a357623c58b6e6d35d5c48b"
+    sha256 cellar: :any,                 arm64_tahoe:   "73e430245011190facc4b3b505a36d5f0af552e7564e78cae5171ee4b316b7bc"
+    sha256 cellar: :any,                 arm64_sequoia: "fdeba8d3f6c6a0bd420c189aa35a6d1443fc6f531468d61a457f65c23ebbe26f"
+    sha256 cellar: :any,                 arm64_sonoma:  "021c7d650e7c9afbdba77162975a5515b9b07f06d7ea01af0a91a03cccc78797"
+    sha256 cellar: :any,                 sonoma:        "2ec3e8edab02aa25d52a6e8e052217cac8597d15d3d47513bb85460c62d68016"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7538d795bda9861660365fd22ab7831116057f01475d17614b1508de6a87853"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eac51e2201df9e5003cae11aee9f4e085b33fc585146fe4f5df178f17a4ea495"
   end
 
   depends_on "certifi"
@@ -74,8 +74,8 @@ class Woob < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "python-dateutil" do
@@ -89,8 +89,8 @@ class Woob < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "rich" do

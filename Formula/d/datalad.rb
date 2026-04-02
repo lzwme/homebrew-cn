@@ -3,19 +3,18 @@ class Datalad < Formula
 
   desc "Data distribution geared toward scientific datasets"
   homepage "https://www.datalad.org"
-  url "https://files.pythonhosted.org/packages/59/32/9c8b33931d6c6a72b94dad3087833f61abb546197f4f14cfd0caaaf0206e/datalad-1.3.4.tar.gz"
-  sha256 "891db31bfc4680bba3e24355886582016bdac85e8fde4e756f84b785a0b79ea4"
+  url "https://files.pythonhosted.org/packages/ba/39/cff4c947d5ed1ad88e45e0a9e5bbcf06fe663d2ba1aafe8e852456dde6b3/datalad-1.4.0.tar.gz"
+  sha256 "4f663b76eb5ffc560d747c9c4bcfe23e59afc62a0029557dac4f53ceec638833"
   license "MIT"
-  revision 1
   head "https://github.com/datalad/datalad.git", branch: "maint"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cafba1e2c52bb94316f46d7920a5c9af2d613aec03478bfbc3a992b3879421ab"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6e37b04d3d78d313b731512290910c46b4288b06215e456ff56ee78ff3186ea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27440854f0031ec1d0f8878a7f651de30f6b28b5f456295fb197ca91a0b98685"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eaf64e550ff799ebd70d7df0a88574b365e6fb62605a6aca291a1c9158f0bd04"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fa302ba2f07196893248a27f07c503d69d88d5c74ab5e8db04e6754f71e6a69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16f7797979838535b5585333ab7cc46d698ab9d71fb2a474906c3b4402cb28cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16bb25254154d8962654585f6cca4644af3a593164ffb0ee160d096ca1a710e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e5a78a2c042a4b61d99aefe722765c6333f5f2a8a97a93a27d13bdc07c59b93"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1360596c706bdcb380d5f9d2dba1c2bd65332a31ffb1f26df13ec32cc42309ef"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eb6d4a0092f1f3782541aba9a2932b895eaf269d085856ac96c3a018e588fc4a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "938cfe703a70e8e0cfac83a480b70d8416f84e0b7eedf4385923c4b2d862cec6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a328471883fd8fa26701b250549b4bba195a1a3bce128678578aac2772644d8a"
   end
 
   depends_on "certifi" => :no_linkage
@@ -39,18 +38,18 @@ class Datalad < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/f1/13/33c8b8704d677fcaf5555ba8c6cc39468fc7b9a0c6b6c496e008cd5557fc/boto3-1.42.76.tar.gz"
-    sha256 "aa2b1973eee8973a9475d24bb579b1dee7176595338d4e4f7880b5c6189b8814"
+    url "https://files.pythonhosted.org/packages/4b/85/f1e43429ce4c81a920742f98af5cd377a020768738645a7d0ff450553ef0/boto3-1.42.80.tar.gz"
+    sha256 "797cec65f8a36dde38d2397119a114ab0d807cf92c43fb44b72b0522558acc0a"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/70/62/a982acb81c5e0312f90f841b790abad65622c08aad356eed7008ea3d475b/botocore-1.42.76.tar.gz"
-    sha256 "c553fa0ae29e36a5c407f74da78b78404b81b74b15fb62bf640a3cd9385f0874"
+    url "https://files.pythonhosted.org/packages/2e/42/d0ce09fe5b494e2a9de513206dec90fbe72bcb101457a60f526a6b1c300b/botocore-1.42.80.tar.gz"
+    sha256 "fe32af53dc87f5f4d61879bc231e2ca2cc0719b19b8f6d268e82a34f713a8a09"
   end
 
   resource "chardet" do
-    url "https://files.pythonhosted.org/packages/3e/af/8d6ad988a6a4b9830c4e39e4c2e390e3037465b76a5e32e92273df27a973/chardet-7.3.0.tar.gz"
-    sha256 "e6bf602bb8a070524a19bac1cff2a10d62c71b09606f066251282870fa1466e5"
+    url "https://files.pythonhosted.org/packages/03/4b/1fe1ade6b4d33abff0224b45a8310775b04308668ad1bdef725af8e3fcaa/chardet-7.4.0.post2.tar.gz"
+    sha256 "21a6b5ca695252c03385dcfcc8b55c27907f1fe80838aa171b1ff4e356a1bb67"
   end
 
   resource "charset-normalizer" do
@@ -148,6 +147,11 @@ class Datalad < Formula
     sha256 "1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934"
   end
 
+  resource "psutil" do
+    url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
+    sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
+  end
+
   resource "pyperclip" do
     url "https://files.pythonhosted.org/packages/e8/52/d87eba7cb129b81563019d1679026e7a112ef76855d6159d24754dbd2a51/pyperclip-1.11.0.tar.gz"
     sha256 "244035963e4428530d9e3a6101a1ef97209c6825edab1567beac148ccc1db1b6"
@@ -159,13 +163,13 @@ class Datalad < Formula
   end
 
   resource "python-gitlab" do
-    url "https://files.pythonhosted.org/packages/20/1d/a62fea1f3312fd9e58af41466ae072796a09684dd0cd825cc042ba39488c/python_gitlab-8.1.0.tar.gz"
-    sha256 "660f15e3f889ec430797d260322bc61d90f8d90accfc10ba37593b11aed371bd"
+    url "https://files.pythonhosted.org/packages/77/9c/ec0073c260812bca170418e8e259a2ed0728200af4b3f7120badf2e6f05a/python_gitlab-8.2.0.tar.gz"
+    sha256 "de874dc538db6dceb48929f4c8fb55d6064dd19cb3ffdad1100190f835c5b674"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "requests-toolbelt" do

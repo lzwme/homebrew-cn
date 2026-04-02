@@ -1,8 +1,8 @@
 class Cog < Formula
   desc "Containers for machine learning"
   homepage "https://cog.run/"
-  url "https://ghfast.top/https://github.com/replicate/cog/archive/refs/tags/v0.17.1.tar.gz"
-  sha256 "dfd9eb0eb2f58901e0c4c3ad440179157b09186cb4ab4601c7a20af4fd937829"
+  url "https://ghfast.top/https://github.com/replicate/cog/archive/refs/tags/v0.17.2.tar.gz"
+  sha256 "c0ff6ca2661c58a5134bcb6518e23205873ba0b91232ea854333abb953d268fb"
   license "Apache-2.0"
   head "https://github.com/replicate/cog.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Cog < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "969740fa22ea2ca79957bb05b2ed851d9b6099c1cbe6fac9dd0269b2b0cbc718"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64c088314527868a3b52d4612a086d90b531e406561f3193da9b4da680d8484b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d4d76b7e79c86bab3ddee4f3958ab1ce0924ed0ad15ea13d2cdf96a779f7892"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b6bba2d8df66fb7265d828f6ab0a15737b0ac6621f219649321eb57b3983d063"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cb5d67288699b4442a6711736fc3a20d36c86f5a619ebd892fe4bcf46ffbbff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aee5657e88f1a435cb7542b36fdc5f3c126a9fae1bd8569d04df545b7a0adb2f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e65f0af79120cda9af48fa1bc512d51e311aae1a27d41037c4f7f4ea8eef3bb5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17176007720d6f98a8c34a4fab42aad4bb43fdfd2f87d469e7139834c78733f1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6089b2d54dd76efc8a15bfd020a1e9cc0bc3d0b41a015cb2fbf9002c66548eaa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dc4eb8743d995b2754268d7cdcc765c0967eb790cb8b7d0e8d00e9effa9145ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d9a77f70d00ff2d3aef8f95d0ab268f07487df60d0b2eed98d636e83e03f081"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97e835c7ae028f408631d3964e4bc3c22f1007ea03c7d9c507e3fed555cebaef"
   end
 
   depends_on "go" => :build

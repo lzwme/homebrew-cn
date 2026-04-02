@@ -6,15 +6,16 @@ class Standardebooks < Formula
   url "https://files.pythonhosted.org/packages/c6/90/ca0014663fe4c431e213d4e7e710edcb65713111a9b47df3a1c20f030ac5/standardebooks-3.0.3.tar.gz"
   sha256 "f794b71758892532609111b225a2b8c38c6c6e12c60b9d596c4f435a912183f6"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/standardebooks/tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ca7039271f446f6ddc2457b8a62ad45387effe9d36c25796053486440722958b"
-    sha256 cellar: :any,                 arm64_sequoia: "34e7693b434d409db9f76a66417c8d635179343debd3bc16657ffee3c0c957c3"
-    sha256 cellar: :any,                 arm64_sonoma:  "dbfa53aa9178a504d30fc5ec9f5e38bbc8925b54022a48bd700ed5cfae63254b"
-    sha256 cellar: :any,                 sonoma:        "522653fd7c9f89c7cbb4968cc8c63b1710f1fc465ded8f824efed46649e94acc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3c994499f561e440d03442c8b0f3580d8ec0d6e4acbd01651d5c7a3d895dcc3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d75b5218c69c5b61be6e3263e4541c1e03cda88298a1a6dc420f97927a6e6641"
+    sha256 cellar: :any,                 arm64_tahoe:   "32b30612b123e461c75465911bd5b530c212165c0e1b9bf552d428c657b2ce3c"
+    sha256 cellar: :any,                 arm64_sequoia: "5c14428a0e698f40a20a923868db85444ce2dbe67adc47b10228f4d5c82d09f2"
+    sha256 cellar: :any,                 arm64_sonoma:  "bf92b82f6e352e5b16b2419035c84977c05f5a79d7db2c04dc1c19ee1639635b"
+    sha256 cellar: :any,                 sonoma:        "ae979c08d665032ef9335815bebf867c637dd0e43a680816542db59ad33b5e7d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbfd578983c117c00694cecd0acc4fde559cdb4c13d7b4ee31e7bada4bf4ca6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42dfa637d8d401d4887c4cf478fa17bcea30e13f72fdd639bba24a463b868799"
   end
 
   depends_on "rust" => :build # for selenium
@@ -146,8 +147,8 @@ class Standardebooks < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyoxipng" do

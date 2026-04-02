@@ -6,18 +6,17 @@ class Fdroidserver < Formula
   url "https://files.pythonhosted.org/packages/dd/1e/4f8b300092cef6f90f46041743c653156347063c15e81cdc60728c70dd28/fdroidserver-2.4.3.tar.gz"
   sha256 "bb0da11f4ff087061af900a1c12404e7c26392aee8a214e1f842fa129a33a0db"
   license "AGPL-3.0-or-later"
-  revision 3
+  revision 4
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "5dc7abb22636b07a7926a220b8c9bce86a4090bae6e33d069643fc06c4017a46"
-    sha256 cellar: :any,                 arm64_sequoia: "ce32b34e1e62b87d5ce516c2fe594059bc642f558b3d620f2e84c2f2091ef1ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "1462ec1af43bab1605dad703c3a8f0840de914422f0955d23b565d9603c2bdb3"
-    sha256 cellar: :any,                 sonoma:        "0a9598cbf1ca50bf33c3ace820aa45825ee3d67076a0e2c487ef7ecf21b75f66"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "624c8875c40119b5b3d6456dd6b312640b9775b11992c147168b6c8d23f45ec5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c54d147c1b38780c1f834d5e59a045cdfc07aaebe498b14f1a4cd63339d53b6c"
+    sha256 cellar: :any,                 arm64_tahoe:   "ea223263c8574faed38adee3900d6dd41de33c90922c0439afa2feeb4836873e"
+    sha256 cellar: :any,                 arm64_sequoia: "ffd18faf3805f45a0f3914f3d476c27127477f85c5b0e618e3a1a916d78cfc00"
+    sha256 cellar: :any,                 arm64_sonoma:  "713be7301b34c949f2708eeac0eaff37e9892dde866d0352feac8c3895698097"
+    sha256 cellar: :any,                 sonoma:        "79149a99cdefb3d91e2362b73897e5ef9874e5ec4797c17c70e0a85323fb8c30"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "adc2aeb1ed04ac570e045aa64191ce197c68a555b98964cd52391015b0fe3990"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8672cebc042cfde683446de5dacc40b36c10e22a06eee450dfbcb816c9e7b541"
   end
 
   depends_on "cmake" => :build # for contourpy
@@ -46,10 +45,8 @@ class Fdroidserver < Formula
     depends_on "patchelf" => :build
   end
 
-  # `ruamel-yaml` is manually updated to support Python 3.14
-
   pypi_packages package_name:     "fdroidserver[optional]",
-                exclude_packages: %w[certifi cryptography frida numpy pillow puremagic],
+                exclude_packages: %w[certifi cryptography frida numpy pillow puremagic python-vagrant ruamel-yaml],
                 extra_packages:   "greenlet"
 
   resource "alembic" do
@@ -108,8 +105,8 @@ class Fdroidserver < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
-    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
+    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
+    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
   end
 
   resource "click" do
@@ -158,8 +155,8 @@ class Fdroidserver < Formula
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/ec/ca/cf17b88a8df95691275a3d77dc0a5ad9907f328ae53acbe6795da1b2f5ed/fonttools-4.61.1.tar.gz"
-    sha256 "6675329885c44657f826ef01d9e4fb33b9158e9d93c537d84ad8399539bc6f69"
+    url "https://files.pythonhosted.org/packages/9a/08/7012b00a9a5874311b639c3920270c36ee0c445b69d9989a85e5c92ebcb0/fonttools-4.62.1.tar.gz"
+    sha256 "e54c75fd6041f1122476776880f7c3c3295ffa31962dc6ebe2543c00dca58b5d"
   end
 
   resource "gitdb" do
@@ -188,8 +185,8 @@ class Fdroidserver < Formula
   end
 
   resource "ipython" do
-    url "https://files.pythonhosted.org/packages/86/28/a4698eda5a8928a45d6b693578b135b753e14fa1c2b36ee9441e69a45576/ipython-9.11.0.tar.gz"
-    sha256 "2a94bc4406b22ecc7e4cb95b98450f3ea493a76bec8896cda11b78d7752a6667"
+    url "https://files.pythonhosted.org/packages/3a/73/7114f80a8f9cabdb13c27732dce24af945b2923dcab80723602f7c8bc2d8/ipython-9.12.0.tar.gz"
+    sha256 "01daa83f504b693ba523b5a407246cabde4eb4513285a3c6acaff11a66735ee4"
   end
 
   resource "ipython-pygments-lexers" do
@@ -203,8 +200,8 @@ class Fdroidserver < Formula
   end
 
   resource "kiwisolver" do
-    url "https://files.pythonhosted.org/packages/5c/3c/85844f1b0feb11ee581ac23fe5fce65cd049a200c1446708cc1b7f922875/kiwisolver-1.4.9.tar.gz"
-    sha256 "c3b22c26c6fd6811b0ae8363b95ca8ce4ea3c202d3d0975b2914310ceb1bcc4d"
+    url "https://files.pythonhosted.org/packages/d0/67/9c61eccb13f0bdca9307614e782fec49ffdde0f7a2314935d489fa93cd9c/kiwisolver-1.5.0.tar.gz"
+    sha256 "d4193f3d9dc3f6f79aaed0e5637f45d98850ebf01f7ca20e69457f3e8946b66a"
   end
 
   resource "loguru" do
@@ -313,8 +310,8 @@ class Fdroidserver < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pynacl" do
@@ -337,11 +334,6 @@ class Fdroidserver < Formula
     sha256 "c1ba14b08e4a5f5c31a302b7721239695b2f0f058d125bd5ce1ee36b9d9d3c3b"
   end
 
-  resource "python-vagrant" do
-    url "https://ghfast.top/https://github.com/pycontribs/python-vagrant/archive/refs/tags/v1.1.0.tar.gz"
-    sha256 "a33c95d03e4a5ee24704d332afc55637d5fc9b68c40d04d12b49fe3880344b89"
-  end
-
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
@@ -353,13 +345,8 @@ class Fdroidserver < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
-  end
-
-  resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/3e/db/f3950f5e5031b618aae9f423a39bf81a55c148aecd15a34527898e752cf4/ruamel.yaml-0.18.15.tar.gz"
-    sha256 "dbfca74b018c4c3fba0b9cc9ee33e53c371194a9000e694995e620490fd40700"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "sdkmanager" do
@@ -373,8 +360,8 @@ class Fdroidserver < Formula
   end
 
   resource "smmap" do
-    url "https://files.pythonhosted.org/packages/44/cd/a040c4b3119bbe532e5b0732286f805445375489fceaec1f48306068ee3b/smmap-5.0.2.tar.gz"
-    sha256 "26ea65a03958fa0c8a1c7e8c7a58fdc77221b8910f6be2131affade476898ad5"
+    url "https://files.pythonhosted.org/packages/1f/ea/49c993d6dfdd7338c9b1000a0f36817ed7ec84577ae2e52f890d1a4ff909/smmap-5.0.3.tar.gz"
+    sha256 "4d9debb8b99007ae47165abc08670bd74cb74b5227dda7f643eccc4e9eb5642c"
   end
 
   resource "sqlalchemy" do
@@ -410,6 +397,24 @@ class Fdroidserver < Formula
   resource "yamllint" do
     url "https://files.pythonhosted.org/packages/28/a0/8fc2d68e132cf918f18273fdc8a1b8432b60d75ac12fdae4b0ef5c9d2e8d/yamllint-1.38.0.tar.gz"
     sha256 "09e5f29531daab93366bb061e76019d5e91691ef0a40328f04c927387d1d364d"
+  end
+
+  resource "ruamel-yaml" do
+    url "https://files.pythonhosted.org/packages/3e/db/f3950f5e5031b618aae9f423a39bf81a55c148aecd15a34527898e752cf4/ruamel.yaml-0.18.15.tar.gz"
+    sha256 "dbfca74b018c4c3fba0b9cc9ee33e53c371194a9000e694995e620490fd40700"
+
+    livecheck do
+      skip "Skip until `fdroidserver` release with `ruamel-yaml` v0.18.15+"
+    end
+  end
+
+  resource "python-vagrant" do
+    url "https://ghfast.top/https://github.com/pycontribs/python-vagrant/archive/refs/tags/v1.1.0.tar.gz"
+    sha256 "a33c95d03e4a5ee24704d332afc55637d5fc9b68c40d04d12b49fe3880344b89"
+
+    livecheck do
+      strategy :github_latest
+    end
   end
 
   def install

@@ -6,15 +6,15 @@ class Streamrip < Formula
   url "https://files.pythonhosted.org/packages/b8/c9/6997772e0217f3081e4e692c7b8b104aaa564c008f2593341e81bbbd2396/streamrip-2.1.0.tar.gz"
   sha256 "e59b4b406f9ac77eb59c927a1a082644e0902152ffeb6212b6b24af7fbef5540"
   license "GPL-3.0-only"
-  revision 8
+  revision 9
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d2d7d846343781ed0accefb4b19228f3b967f1060d162a87ea1f7cf90d4a587"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0507a167912db00ea78a6b269ced5ed2b4f9ac72fe5eada8ad544b617b08a46"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5319edac3d7d69fe7b2513a9672978fba0c221fe658be3766433c14a947abe35"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f09c7339e015a6f21f552c64edb942b250db5b0c5a8f5ddd151e043466db5e5e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a297d1d3ad20aff16e25ab100779eee39a190db0c149bb419b47c954406e275"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae932b5dfdb94c44e6aa741d1d8af1b945a1bd024d0119c3b22d6f49b7a46bbc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77efc60b80cde8f456d96df38c58563b5911a07c1aa0432aacdb4377c7c24cf5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "142eab06a58d96ddc277a007f13d523c6042c1e5f1a875be756442903d67147e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d71d95181b4d34ead797e2de30d2d6d21077e32888fe6e9e984e5479836741d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e961d15fa261bff114f9048e9e645990218691dca90078eba8d39f428ae79280"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "50c7f2e9584037d6879eb8a30a6c0643ac5a6e401bf5c8d927920f93c0f44e0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40e4196fd9cfa1645aac4b6d58749511fc521b524be47c3b4b9d513b862be578"
   end
 
   depends_on "certifi" => :no_linkage
@@ -44,8 +44,8 @@ class Streamrip < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/50/42/32cf8e7704ceb4481406eb87161349abb46a57fee3f008ba9cb610968646/aiohttp-3.13.3.tar.gz"
-    sha256 "a949eee43d3782f2daae4f4a2819b2cb9b0c5d3b7f7a927067cc84dafdbb9f88"
+    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
+    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
   end
 
   resource "aiolimiter" do
@@ -149,13 +149,13 @@ class Streamrip < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "rich" do

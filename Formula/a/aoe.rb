@@ -1,18 +1,18 @@
 class Aoe < Formula
   desc "Terminal session manager for AI coding agents"
   homepage "https://github.com/njbrake/agent-of-empires"
-  url "https://ghfast.top/https://github.com/njbrake/agent-of-empires/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "f2bedbf0849a797aa5591d3938b4cea38371cf4274a753b15b1b779997799ace"
+  url "https://ghfast.top/https://github.com/njbrake/agent-of-empires/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "f6a9356f180dc43f17791045e2fee352b55d318466918d2634e51c94d627df32"
   license "MIT"
   head "https://github.com/njbrake/agent-of-empires.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "46054dfe6d3b72aaa6ec881b7f397304a67595c331281542120a61abcef13725"
-    sha256 cellar: :any,                 arm64_sequoia: "ef198c7d911c0f3a14d0c9671b175ff46e75bc8c96ef2cdce6e2fba8c7d265d8"
-    sha256 cellar: :any,                 arm64_sonoma:  "0611644764e9d70059325b69574cc506e73f98c85d1b3bbf83000b9f9b3ccc92"
-    sha256 cellar: :any,                 sonoma:        "26fd8ea25ba51c622c3491f94f59cccd4d693f1a4386469faaa6b862174c6bee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "af0b441fe4c8b22f360777c8558afc3dfab5b4629fcf851b324ac3ae3fbafc6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "abc1490d8dd5cfeeb09714831bdca304944b62bb39c85b1bca9d360afa71249a"
+    sha256 cellar: :any,                 arm64_tahoe:   "3e406c66d2552e067554d4cdfcc708a94639ba7e9959c9135f9f6757451553b0"
+    sha256 cellar: :any,                 arm64_sequoia: "d37fdb03153bd6355d9f11809829c59483ff90ac66b4eb1b26cd6b7dde11f8e3"
+    sha256 cellar: :any,                 arm64_sonoma:  "6d75eb37a3bf6db19a388f1ea036ed7e455c0ad20208da59295faf2b05a9966c"
+    sha256 cellar: :any,                 sonoma:        "7021b15778bc3d7f4014935c32d5c5cdca9aff5035a3462a4bc6e3d6093fa633"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a582a3431e922dddcb3cdc0d5c06a853fbf9602776118148cb1924759956e97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a47f56a960d35232ffdfc33c7c154a3144ee87dd8189bef249de1023ac162c07"
   end
 
   depends_on "pkgconf" => :build
@@ -33,7 +33,7 @@ class Aoe < Formula
     assert_match version.to_s, shell_output("#{bin}/aoe --version")
 
     system bin/"aoe", "init", testpath
-    assert_match "Agent of Empires", (testpath/".aoe/config.toml").read
+    assert_match "Agent of Empires", (testpath/".agent-of-empires/config.toml").read
 
     output = shell_output("#{bin}/aoe init #{testpath} 2>&1", 1)
     assert_match "already exists", output

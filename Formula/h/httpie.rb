@@ -21,7 +21,8 @@ class Httpie < Formula
   depends_on "certifi"
   depends_on "python@3.14"
 
-  pypi_packages exclude_packages: "certifi"
+  pypi_packages package_name:     "httpie",
+                exclude_packages: "certifi"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"

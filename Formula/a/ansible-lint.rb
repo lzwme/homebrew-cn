@@ -3,18 +3,17 @@ class AnsibleLint < Formula
 
   desc "Checks ansible playbooks for practices and behaviour"
   homepage "https://ansible-lint.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/1f/b6/d0df64afdf68393e0c2e9a541ecb8124acf94c8511d824d45e75c8718a37/ansible_lint-26.3.0.tar.gz"
-  sha256 "dbcf3796d715ccef742a89dfcb21263649a2c2be8d3479ea98da104efa406717"
+  url "https://files.pythonhosted.org/packages/e4/39/54f7cc264f7f02c635af786c4a57da4ab993865140f90e031cdec39dd514/ansible_lint-26.4.0.tar.gz"
+  sha256 "29e0438f8af685a4fec96f9ea3404a3beb50d2911bc8df43f283256954ceea5b"
   license all_of: ["MIT", "GPL-3.0-or-later"]
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "835f1c395a853c556d0e66cd6bade1187a22ebf9fda7e5ea4d2a263314e2cd28"
-    sha256 cellar: :any,                 arm64_sequoia: "eb5b67eedb31f7f4170edc42908bc13a1dd93bde3a8fe00a688655f44c4ea863"
-    sha256 cellar: :any,                 arm64_sonoma:  "ca13b1b77546f300d3fbbb7be6ad6374e66ca27737fe6ee666961d06adb65c17"
-    sha256 cellar: :any,                 sonoma:        "42aad6a9f5c9bc24d781e5e6babdc881b0f7a24667051b0e4ac038f6b98cdb91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a05d6092925d0a4b21242e1719d2d7422a487dcb4cc4313ed2dc167edfc5f97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bd2731c25c2e27523d1b8332143ece82bff6ee27c43c7fe50e53a09b5035fe2"
+    sha256 cellar: :any,                 arm64_tahoe:   "f826d6a6e254758791911e7f199bf8e4ce55f4d0339c305c8293b3b80e6c87d4"
+    sha256 cellar: :any,                 arm64_sequoia: "9ba7ea525e7babe371205c57d7d1340e6023dc28ce87e85e128a92fbb2f2043a"
+    sha256 cellar: :any,                 arm64_sonoma:  "879d4f3b9581152e24fe8ee523a37924b69b0bc9812b94f972959d9298be5fd0"
+    sha256 cellar: :any,                 sonoma:        "7744d46718ca47e24e2cdb23ee477947c697fc3499a516cfc9063009aac63dfd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e03a7b6ad912b4c4af7d4d5a60d78a5ea957aa5b97164b0efade2a537a0d3287"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "115f1717ef77c12a8a308a5f4b79f272cd7ead304e0af8465bc9c686c40fd29f"
   end
 
   depends_on "pkgconf" => :build
@@ -27,8 +26,8 @@ class AnsibleLint < Formula
   pypi_packages exclude_packages: ["cryptography", "rpds-py"]
 
   resource "ansible-compat" do
-    url "https://files.pythonhosted.org/packages/c7/8f/14e8566b9a0cd5393150719db218a7b332308456b003b289f21e5812000a/ansible_compat-25.12.1.tar.gz"
-    sha256 "509a42fbfc65acad90b4e62c311ec0b37447e497b9b2a19cc38a625e458f2afd"
+    url "https://files.pythonhosted.org/packages/04/42/53ba59f8116e716ec0af8dc47ef65b15f5e3bc28131e8e6cbe87e50203f5/ansible_compat-26.3.0.tar.gz"
+    sha256 "15f0ea5ff6fcc5587b6b11a4a436fdeefd0fd4a46afe92d4e483c28370082ae0"
   end
 
   resource "ansible-core" do
