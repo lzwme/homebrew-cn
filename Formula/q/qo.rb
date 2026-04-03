@@ -1,17 +1,17 @@
 class Qo < Formula
   desc "Interactive minimalist TUI to query JSON, CSV, and TSV using SQL"
   homepage "https://github.com/kiki-ki/go-qo"
-  url "https://ghfast.top/https://github.com/kiki-ki/go-qo/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "917c694772f760e00383fab6ef34c4ce8d186f52c440cad7b3de555b30bc9391"
+  url "https://ghfast.top/https://github.com/kiki-ki/go-qo/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "f22567f902c464080951f0a9e3e1fe758b81e9ac3a71be31296f0af32e9aece9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b90c88a676c693d34eafbc29ac1b468e5d9a3cf27b56c59c1aafb70a950b68f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b90c88a676c693d34eafbc29ac1b468e5d9a3cf27b56c59c1aafb70a950b68f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b90c88a676c693d34eafbc29ac1b468e5d9a3cf27b56c59c1aafb70a950b68f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ed7714400a647f7ed70b96fec9ad0eb0de64d4e38206da929284858c8d49b6a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63693f55c44b5039f313948be4bc0583d8f8e114adfc481a8dbb108d1d18b623"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b3890c9179dd06563f1ce8034fec73975cd4d50287db5d4897a7167f8d95ec9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b74cb13657af152c2124a88e1786898fb2ccee8679247438d77413a3675c71e5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b74cb13657af152c2124a88e1786898fb2ccee8679247438d77413a3675c71e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b74cb13657af152c2124a88e1786898fb2ccee8679247438d77413a3675c71e5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fadadfb9732e9fc0a8d534309ff007ac69bce8fee2acfe2208aeb6196a8ffd13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "73e86ac4e58cf868455b9553ae098c1cf4020a72211c2fca14cd7e57bb71680e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fdd3f0cb6c5377ae7eebd5deaad43a0970a4320ef4391c9e7219c43f127bd03"
   end
 
   depends_on "go" => :build

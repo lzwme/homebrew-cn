@@ -1,18 +1,17 @@
 class SimpleScan < Formula
   desc "GNOME document scanning application"
   homepage "https://gitlab.gnome.org/GNOME/simple-scan"
-  url "https://download.gnome.org/sources/simple-scan/49/simple-scan-49.1.tar.xz"
-  sha256 "9ae8d4151ecaf95845eb9f99b436d579c838f2cf02763fba3bc03780251be334"
+  url "https://download.gnome.org/sources/simple-scan/50/simple-scan-50.0.tar.xz"
+  sha256 "cc32b561ae227182d31a94466632e311723756e3ac90538c3c7e2a2c9aaa4a09"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "e4ff2b33c03720942a9e4c85ad6a67aab642a4c0cf4e2610b9d2bdf61ef666a3"
-    sha256 arm64_sequoia: "5d23ebaecaee138bf8a565355a24986fe50d5a4624b51930245cf97e75702f29"
-    sha256 arm64_sonoma:  "24679c9f519ee2748eaef1b614ddfc1323df7d563f469532fde0b7bbf1d23e7e"
-    sha256 sonoma:        "86788fde5e41cbb727c779c41e7b00c6203d131dfa0860aeda940bd2169465b0"
-    sha256 arm64_linux:   "6df30f86f56028f2e0060011a0271f51d224e88226c0bc4c679c907a1cc14ad7"
-    sha256 x86_64_linux:  "e852c24277cf7a2e93d7730ce61de3faf5a0c3488ba26886bf32c71e3d742148"
+    sha256 arm64_tahoe:   "a869b0d7b8904def7e1054b7dce454df9415cd0fdf6bab2df7d9d3e53a9c1a35"
+    sha256 arm64_sequoia: "deec11bead0cda8b1de5cbf92549a2837207ec94c58c5539e4c18590063c0f4a"
+    sha256 arm64_sonoma:  "140753330f6fb9150a48ee983da40c620fa6d0c4755716d1c4dcdd8b804ec59b"
+    sha256 sonoma:        "14d80b1475f30ae41a55c686f493d05abfd02a3d9df8be916ee75061519139b6"
+    sha256 arm64_linux:   "3b07c5ccdde6168b3f39e0be2e8fb73cee7841c64542387f2664e19fac653e0d"
+    sha256 x86_64_linux:  "69cd72385ad10852e92f4f3195ba6d52a8ca6c080c892d148a986a89f28ddd58"
   end
 
   depends_on "gettext" => :build # for msgfmt

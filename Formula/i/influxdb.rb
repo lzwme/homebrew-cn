@@ -11,7 +11,7 @@ class Influxdb < Formula
   # version in the install script instead.
   livecheck do
     url "https://www.influxdata.com/d/install_influxdb3.sh"
-    regex(/^INFLUXDB_VERSION=["']v?(\d+(?:\.\d+)+)["']$/i)
+    regex(/^INFLUXDB_OSS_VERSION=["']v?(\d+(?:\.\d+)+)["']$/i)
   end
 
   bottle do

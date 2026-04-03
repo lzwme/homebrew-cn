@@ -1,17 +1,17 @@
 class CopilotLanguageServer < Formula
   desc "Language Server Protocol server for GitHub Copilot"
   homepage "https://github.com/github/copilot-language-server-release"
-  url "https://registry.npmjs.org/@github/copilot-language-server/-/copilot-language-server-1.462.0.tgz"
-  sha256 "a13a1b01a574f2b32bc8a294e33c703c704f0356cc4657aa268e43d1cecf66a9"
+  url "https://registry.npmjs.org/@github/copilot-language-server/-/copilot-language-server-1.464.0.tgz"
+  sha256 "700af795243c9766079c5d72826802e9c249a6fd7ddca2e9faafc930057f4897"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e31a44e33915ec1fd585571846e16586114bd0bf67aa1dacb2ec9f217b8dfca9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3eb5e7e5eba32ffe8b17710e93853dbf2025efbafef230aed71c36c8a2a1c400"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b2af4ee3e912c13e954c2cd7d46ec395fa0671508d5b216af169fa5f1e6bb1d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fd360230bc13ababf64afeb802256088c3354051fd6ba0d59e488577665236c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "429ab2dfb08baa2d234ab131170defa2df1fda836df1f5df7dedbd585d29818f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0c3e3e1bcd0eebe804db0a3e3aa82abfa961a99815c3fe1d0e14deb01971251"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a79530ed16f063bc28a0e01ffb7ac8ca35e7334521804651fa47b87faf9470aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e32bcb64632f2800de2470a8f8f8eca0d488faad5a9f322c76a7a7b9d23b909c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23fc8e90384f1a84cddec2463e27d52b0b494150d157ac17ba277e380f827a45"
+    sha256 cellar: :any_skip_relocation, sonoma:        "77b5d02fe03b4aff143b922a372a36e1ea3a2197ae6762654b229842787c9a20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d83831a359fb43117be4bdc6e38b7d272011c5f23176b0155075e44f1411a18d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eadc030f185de81072e6261ebdf0989a2060adce4d5561ff8949f8e7bcad65dd"
   end
 
   depends_on "node"

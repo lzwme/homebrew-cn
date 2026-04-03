@@ -1,18 +1,18 @@
 class McpGrafana < Formula
   desc "MCP server for Grafana"
   homepage "https://github.com/grafana/mcp-grafana"
-  url "https://ghfast.top/https://github.com/grafana/mcp-grafana/archive/refs/tags/v0.11.3.tar.gz"
-  sha256 "9489cde2f3d2fce8d6c16cffeddf75f774812f07d8b91abcdee804c250353f77"
+  url "https://ghfast.top/https://github.com/grafana/mcp-grafana/archive/refs/tags/v0.11.4.tar.gz"
+  sha256 "25b53302322c606a57b4e4e31e47fb2e09cda241e26aed3f980de44d8e754dc4"
   license "Apache-2.0"
   head "https://github.com/grafana/mcp-grafana.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "29197de10502a6663d195fd14ebfb90081a65aec72c62f4d18a6e4e449478603"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d77c26ef1c595d63d1265ac93646629cddb8bc11e11e93b2291d88f4ecfd1f2c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c56fa7e378ca5796642d487d3505e0529ce84bfd9154f46400a4ff05ff3db4a1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "99f44f5d404b80f82942442fd7a346f202381bd68cc29740a9475f55f7fc6dde"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5efd1f3ab3e267dbac2d62308c36dcb9b93ac161ddd3d2d5e197b2fbdae54f89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebdd99c3ceff115f30e70292edef4d4eca9124f35b3fe5c2484d0c3b3ecac41f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41da8b82119eda3e75e66dc244cf955d376658a60c038cdd8098e84b0c06e349"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f03740df02642f0dd8dedd7ed92dae9da44dbb6365cb3acd9e2bcb26a58467d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f61e44c15a29fdb5ba18ad8b8c223e1d4465d4d9990991d058cb39333fd4818b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6e030d3dc21f85dfa0f773ff841fea3cb0e0f931e95e28d1e99aa06d7d630812"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "78046ad4bb7352096429a0a8451ab8084e563ba4ce5c1dfb89d85d69e776a9f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e10a464015f1388220245d827e477303b3a6324d5952465c541542f1026a776a"
   end
 
   depends_on "go" => :build

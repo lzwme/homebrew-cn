@@ -496,24 +496,34 @@ class Maigret < Formula
     (testpath/"data.json").write <<~JSON
       {
         "sites": {
-          "GitHub": {
-              "tags": [
-                  "coding"
-              ],
-              "regexCheck": "^[a-zA-Z0-9](?:[a-zA-Z0-9]|-(?=[a-zA-Z0-9])){0,38}$",
-              "urlProbe": "https://api.github.com/users/{username}",
-              "checkType": "status_code",
-              "alexaRank": 83,
-              "urlMain": "https://www.github.com/",
-              "url": "https://github.com/{username}",
-              "usernameClaimed": "blue",
-              "usernameUnclaimed": "noonewouldeverusethis7"
+          "YouTube User": {
+            "tags": [
+              "video"
+            ],
+            "headers": {
+              "User-Agent": "curl/8.6.0",
+              "Accept": "*/*"
+            },
+            "regexCheck": "^[^\\/]+$",
+            "checkType": "message",
+            "presenseStrs": [
+              "visitorData",
+              "userAgent"
+            ],
+            "absenceStrs": [
+              "404 Not Found"
+            ],
+            "alexaRank": 3,
+            "urlMain": "https://www.youtube.com/",
+            "url": "https://www.youtube.com/@{username}",
+            "usernameClaimed": "test",
+            "usernameUnclaimed": "noonewouldeverusethis777"
           }
         }
       }
     JSON
 
-    expected_output = "Search by username Homebrew returned 1 accounts."
-    assert_match expected_output, shell_output("#{bin}/maigret Homebrew --db #{testpath}/data.json")
+    expected_output = "Search by username google returned 1 accounts."
+    assert_match expected_output, shell_output("#{bin}/maigret google --db #{testpath}/data.json")
   end
 end

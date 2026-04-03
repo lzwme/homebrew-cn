@@ -1,10 +1,10 @@
 class Noti < Formula
   desc "Trigger notifications when a process completes"
-  homepage "https://github.com/variadico/noti"
-  url "https://ghfast.top/https://github.com/variadico/noti/archive/refs/tags/3.8.0.tar.gz"
-  sha256 "b637b4b4e5eb10b3ea2c5b2cf0fbd1904ab8fd26eaec4b911f4ce2db3ab881a2"
+  homepage "https://codeberg.org/roble/noti"
+  url "https://codeberg.org/roble/noti/archive/3.8.0.tar.gz"
+  sha256 "40939b83ee80f84ea2516ff205a961ddc0c4ec66af4f29319cdc41fce87eb332"
   license "MIT"
-  head "https://github.com/variadico/noti.git", branch: "main"
+  head "https://codeberg.org/roble/noti.git", branch: "main"
 
   bottle do
     rebuild 1

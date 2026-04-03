@@ -1,18 +1,18 @@
 class Localai < Formula
   desc "OpenAI alternative"
   homepage "https://localai.io"
-  url "https://ghfast.top/https://github.com/mudler/LocalAI/archive/refs/tags/v4.0.0.tar.gz"
-  sha256 "6673edefdff0e2f1373ae35348b11e95638eb94850326d0dbd9fbeee6b5f16bc"
+  url "https://ghfast.top/https://github.com/mudler/LocalAI/archive/refs/tags/v4.1.0.tar.gz"
+  sha256 "4246defb1e003b3ab152d656a349a3887b65aa8c6585e8b9fd9e67b74e8bffb9"
   license "MIT"
   head "https://github.com/mudler/LocalAI.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9eed9842b455cd9b222fe2e0b487e87f0413d322281edd1688847ff4c63121a1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e79f23c64f62b8f44608d760180b9fc46a5d0a2c066800e81f94dd4caa81a75"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbfbaa9ae2f344d6c8358bec62c84534bd27254e94fead39555ad22ad5b045c3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e990a67c05fe3d7d8fe34891e1aa5e3816fbf2adfb11f4a0d17ec25f13f898fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1aa2d54d7e65b5b720b0e04ebe145ef4dc57204b4bfef8c7880d624c3b58ce2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "325d6788ea9735adcff329302c9ca216650e32452b0704fd501317d5eac39bd7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb177d8c6a3a02adfb91462cfb042d7ec4db52b1e840efbd92aac2991862f574"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "101ade6ffe9c0d24237d782856ce8f98ba70350697550691503e37677bf54f27"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2beff8018ec5afad8653e50a1dd50bb033ee6c590a9e8702d601a1c64c399ad4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c4b629fb07b4aa2026683694dcd99deaec323b4e31a6b583e3069a5ca2ac160c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ac2821fbd8c85fd37181cab8101f7b6ee649f9c5c5200fbd70ec02936faa36f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "035bdb55927ef0c0102fb72074c3ee3cb97c1e0cb4cee0c2d8e05d0fc018a597"
   end
 
   depends_on "go" => :build

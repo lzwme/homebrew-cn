@@ -18,6 +18,7 @@ class Lume < Formula
 
   depends_on xcode: ["16.0", :build]
   depends_on arch: :arm64 # For Swift 6.0
+  depends_on :macos
   depends_on macos: :sequoia # Swift 6 actor isolation requires macOS 15 SDK
 
   def install

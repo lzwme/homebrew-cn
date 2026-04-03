@@ -6,7 +6,7 @@ class Checkov < Formula
   url "https://files.pythonhosted.org/packages/ba/47/81dc68e33ba323b973c90a7792b547e44d80afb687e402cf00412d709371/checkov-3.2.510.tar.gz"
   sha256 "db065e2d3257440a9626543184e2f89ba04779b51757f3db65e0af3f1961e538"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://pypi.org/rss/project/checkov/releases.xml"
@@ -18,12 +18,12 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "555decf36f72756f5c87d552ff6f19f3339fb7744cf3b5fdcd99daee44fe40fb"
-    sha256 cellar: :any,                 arm64_sequoia: "180f4daec3fdbf099d6384b714e145682ea402c8a0b6f424b8794591781ea168"
-    sha256 cellar: :any,                 arm64_sonoma:  "26011f02065ca7e74b252a684c2a38603cf14969769e0b2b86e4a98bfd0ad050"
-    sha256 cellar: :any,                 sonoma:        "8d165e5da1321d1c30f20c83b0e5037e400a1cbeaa61e0ba17c888ebfc0b0c73"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb6c55116c816896b88ed1ff53a1436d11f014eb1d5f4fa343783d2b93263200"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43f9a19e0632e433206f3b4e184cef8779a8c36ca4ec53a7c278484fe9b219ff"
+    sha256 cellar: :any,                 arm64_tahoe:   "74086fa1a27a628bbc5f9aa1888829fa8fd5a2ef5be42983e86d41a1b97577b1"
+    sha256 cellar: :any,                 arm64_sequoia: "08fc525fb74fd8c2b3ffe5a3b3b9e4d4d8c479708eae34ada524002d13ac731d"
+    sha256 cellar: :any,                 arm64_sonoma:  "8fb0a4a22ca233bc99e18a9e64541394e11453a566a0d079f2736bcc8ca7749a"
+    sha256 cellar: :any,                 sonoma:        "c3e6e0ccd85709a8bfdba66747cf99da3b4fe9d361b8deeb4683ce2217614006"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d7c75767e5449fcd7f1b2d7583458270ad62418d181ede510f9b38a8bbcd416"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a65cf974bd05b3ff1b1b86aec4e2582802d556060ddccbd4542bbcba5c430028"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -51,8 +51,8 @@ class Checkov < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/50/42/32cf8e7704ceb4481406eb87161349abb46a57fee3f008ba9cb610968646/aiohttp-3.13.3.tar.gz"
-    sha256 "a949eee43d3782f2daae4f4a2819b2cb9b0c5d3b7f7a927067cc84dafdbb9f88"
+    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
+    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
   end
 
   resource "aiomultiprocess" do
@@ -276,8 +276,8 @@ class Checkov < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/53/45/b268004f745ede84e5798b48ee12b05129d19235d0e15267aa57dcdb400b/orjson-3.11.7.tar.gz"
-    sha256 "9b1a67243945819ce55d24a30b59d6a168e86220452d2c96f4d1f093e71c0c49"
+    url "https://files.pythonhosted.org/packages/9d/1b/2024d06792d0779f9dbc51531b61c24f76c75b9f4ce05e6f3377a1814cea/orjson-3.11.8.tar.gz"
+    sha256 "96163d9cdc5a202703e9ad1b9ae757d5f0ca62f4fa0cc93d1f27b0e180cc404e"
   end
 
   resource "packageurl-python" do
@@ -351,13 +351,13 @@ class Checkov < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/8b/71/41455aa99a5a5ac1eaf311f5d8efd9ce6433c03ac1e0962de163350d0d97/regex-2026.2.28.tar.gz"
-    sha256 "a729e47d418ea11d03469f321aaf67cdee8954cde3ff2cf8403ab87951ad10f2"
+    url "https://files.pythonhosted.org/packages/81/93/5ab3e899c47fa7994e524447135a71cd121685a35c8fe35029005f8b236f/regex-2026.3.32.tar.gz"
+    sha256 "f1574566457161678297a116fa5d1556c5a4159d64c5ff7c760e7c564bf66f16"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "rustworkx" do

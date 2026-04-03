@@ -3,19 +3,18 @@ class CoboCli < Formula
 
   desc "Build, test, and manage your integration with Cobo Wallet-as-a-Service"
   homepage "https://github.com/CoboGlobal/cobo-cli"
-  url "https://files.pythonhosted.org/packages/c6/7e/f6a593e8b22f4eb1558df3281d926f1db7a639f2bc45c6cbd720837e5e18/cobo_cli-0.1.6.tar.gz"
-  sha256 "70c1438e04d4e1549a51e45c6b7c69a94a2040afed559e318531999dc426c347"
+  url "https://files.pythonhosted.org/packages/86/04/c89a9673b66d8f39cd19a870daccb3420a793da34d4fc1cf02f51da64050/cobo_cli-0.1.7.tar.gz"
+  sha256 "499e4d5e54b2e47d036951c055ab12a3dd7c3710c6672565f9388feff6ffdbde"
   license "MIT"
-  revision 1
   head "https://github.com/CoboGlobal/cobo-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ae5289c3d0f6e17d64a76c54f060d5c27701e572f3f83213f8fca2af2ac1dd30"
-    sha256 cellar: :any,                 arm64_sequoia: "644ccfcb8e7ddcd02387e3631b8989b021716b668090239af367247316623f1f"
-    sha256 cellar: :any,                 arm64_sonoma:  "fbb82a5822dc28e96f9a22f1de7ac0006ab7f2401ea64a297a6f4059021a5434"
-    sha256 cellar: :any,                 sonoma:        "b875242fea79902f653565d855032dd6f2cfe67e141fd824b3508a149031073a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e991f6d05bee3ed164d6e189ed6e723aed5703192049a71554548d28abbda7d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9ae953a100183439f321c4e195be704b2d5f6b10d2b5b48ec65386ab3ea4607"
+    sha256 cellar: :any,                 arm64_tahoe:   "5894bc81db0c50b94af755071fba4d99a0e3f1d5ac57719fc21babeb341f817a"
+    sha256 cellar: :any,                 arm64_sequoia: "40287a032e75ab75a12f1e9718afb7353a5c7fc68efb050cb65a9ecc06ef9c94"
+    sha256 cellar: :any,                 arm64_sonoma:  "a327fb5c9a25bc0ab117597a39cb86ee1b61ae2076b49b737df102fa4d01e2d6"
+    sha256 cellar: :any,                 sonoma:        "3eedba5cd4d2f498ba765c94ff8ededf6c7174a8db62525267c867c361c53277"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "75ee21fb7d12ffe0f83002ba13c2c061853ae64c0c1f360eededf9c7e8c9a369"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "266aef546bd1a6a88dc59601fb5f4b16abfc76c5bc1de594473fa642c7d7d925"
   end
 
   depends_on "certifi" => :no_linkage
@@ -30,8 +29,8 @@ class CoboCli < Formula
   pypi_packages exclude_packages: %w[certifi cffi pydantic]
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "click" do
@@ -105,8 +104,8 @@ class CoboCli < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "smmap" do

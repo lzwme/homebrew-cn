@@ -1,19 +1,19 @@
 class Jj < Formula
   desc "Git-compatible distributed version control system"
   homepage "https://github.com/jj-vcs/jj"
-  url "https://ghfast.top/https://github.com/jj-vcs/jj/archive/refs/tags/v0.39.0.tar.gz"
-  sha256 "52a60f058cf66ba3dc0bf69f189e99763b33b6770b3068b2be4fe76ecd287282"
+  url "https://ghfast.top/https://github.com/jj-vcs/jj/archive/refs/tags/v0.40.0.tar.gz"
+  sha256 "ca45f2b866ce2fa25c7fc485e6b168cf055a39b1eab0ea170738c0b7e86d3b33"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/jj-vcs/jj.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "94418d1c38adb5add9e8e4a9de853af1cc61d6ab981959df17b1a78c457837c9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e0d6abf8ec92f512b0a8598ce32ec736330624c7be5057ff481fa0466385a92"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0469e577868ede409810d4fecd237a0b0dfe74106e707d38ebf833612e95fdc2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d0699fd6c863c0eae151964d64aa5a1e2bd95e729a3df571b14e8c858932115d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bf180e9b14f44065ee151c2784c1b8616f17eeccbad42d760d6ff490f8a9626"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "543c47f1eb390ae92b04c750874d1abd2b0fa92cf6b905be36defffffa7764dc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a084677111387fae1fcefe58dbef9279fc64f538d947141e31dd66fe56d761a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f87a9ca6764b4f0a50a92e2177368cbc1b33185e7ff9f588ecf6039987cb325a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5840611c17062cf1e9c846562aade986f84a86c0fc1752e377532b2fcac5dc5e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "44aa5827cb460127edfefe89bed75999aa0d231ef3f7822680522c8f20ec24ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f4006106855ee07ca69b4f8a9e8da228b1e0a9180cb6d3e208de151335f12e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bc31003d66b4b9e812e5a34cce03f1cd7405e7607ecbd09f5291b6e283a8885"
   end
 
   depends_on "rust" => :build

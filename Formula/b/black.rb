@@ -6,15 +6,16 @@ class Black < Formula
   url "https://files.pythonhosted.org/packages/e1/c5/61175d618685d42b005847464b8fb4743a67b1b8fdb75e50e5a96c31a27a/black-26.3.1.tar.gz"
   sha256 "2c50f5063a9641c7eed7795014ba37b0f5fa227f3d408b968936e24bc0566b07"
   license "MIT"
+  revision 1
   head "https://github.com/psf/black.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "96118b6e32413b7879c394752f3cb3ef4fd4efc3035daf0da144c063c0e942ee"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea8f271ff0f113fd2fd82903d2f87b9ebc0631a9eeff0451a9f01611bfe2530c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6fe48c23c3e5998e647b6f945bdfb55fe8a1cb6e8ad1f6bff911ceae087a61b1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "87884189df4bed87a8799a9859be0ae31478ed1a0063c43e7e53f7491c4a27b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e963e008be247360d59d8f9d7a6de2fd1286ea987fef75ae351cde29f32292ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9d28b297fc52782fda080508702a900e4f1b1de5dac0d1d2cf0178bd385ed8e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f14e8471779f315d01097e4d39aaec0bb00e2a084aabd23ed4ab47b1aa9d030"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f994f4e1a6eb4bb5c1abc76c9057e38bca0b16e095651f6edb7cb95d831aee53"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d31453b4c0e97715219c2b33e2943ae83c72b430e5ec4ea0f644ce934292240f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1ff3648b78242fc5cc3ce6b1e2dd4d1eb7fff3515b9163d5feb8dbe66460dcfe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3440523fa06692972a177432d5fdde635f4a0a5e35246f6e6db327a60fc0369a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf206e89f119d06c4fc04957151e9dc4bb1c9fd38320e09df169d0e39b3faf42"
   end
 
   depends_on "python@3.14"
@@ -27,8 +28,8 @@ class Black < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/50/42/32cf8e7704ceb4481406eb87161349abb46a57fee3f008ba9cb610968646/aiohttp-3.13.3.tar.gz"
-    sha256 "a949eee43d3782f2daae4f4a2819b2cb9b0c5d3b7f7a927067cc84dafdbb9f88"
+    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
+    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
   end
 
   resource "aiosignal" do
@@ -37,8 +38,8 @@ class Black < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
-    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
+    url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
+    sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
   end
 
   resource "click" do

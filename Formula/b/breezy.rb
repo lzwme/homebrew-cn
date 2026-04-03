@@ -8,11 +8,6 @@ class Breezy < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/breezy-team/breezy.git", branch: "main"
 
-  livecheck do
-    url :stable
-    regex(/^brz[._-]v?(\d+(?:\.\d+)+)$/i)
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "9ed24cf6f30dc47b00894484a9b8c6014990f7d23f6f4d6d84e4f8e25d94f3de"
     sha256 cellar: :any,                 arm64_sequoia: "9e36f3fe869416207650c74e8f1dc705c9575bb72eb2d792947c130983234974"

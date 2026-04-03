@@ -3,21 +3,20 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/32/da/0de4649a73c0e59ed4a61f723ca51528e204a8803c003d0706a09dd17a75/keepercommander-17.2.10.tar.gz"
-  sha256 "7770ce74cf93a0260e094c0ef66a055b3c9d7e19fa3564cb3acd2790502bdf33"
+  url "https://files.pythonhosted.org/packages/f4/fe/8b272a0dfca0b1049ff49335979fd22f3a5dced759e9dfb62ae059768c49/keepercommander-17.2.11.tar.gz"
+  sha256 "984d5f9996735163be8b66a734a7496ea9d03b0097dd30c75bbf6caba9a2dc21"
   license "MIT"
-  revision 3
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "66a7182d8cbd965b4530972dd6f280a2758cd41de93809eb5d2ac7b91e7749e3"
-    sha256 cellar: :any,                 arm64_sequoia: "8092fec2581c98657679bda9b946b5b9ea84ffc628118fc81f917afc9d3d31ac"
-    sha256 cellar: :any,                 arm64_sonoma:  "7ec9d3b00f78b8cedb3915a2fc3456136a65f74be4bd337f67b28ee201f2c98d"
-    sha256 cellar: :any,                 sonoma:        "0008ab7dc490dffb355c764b778aa1c70baa8f6872262ce3e8911dcd6cbe5733"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c85b05b0786a25d6643f69fd2638e58886727c3a8ee97b4da60e03984231be18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75b88c06d0b381e166d1e93dac270f72d2cb73938288f28f749b755cc39eab55"
+    sha256 cellar: :any,                 arm64_tahoe:   "67fafe771d1b5c5df85b4767092f7e3f7314009350ca9080ea3dbcb90baa9e09"
+    sha256 cellar: :any,                 arm64_sequoia: "72e8146c509ff2b6c1e9cbfc85ce75f070f67456a928da59533ca82b22a8f426"
+    sha256 cellar: :any,                 arm64_sonoma:  "21464ee087a1e4cb8e3c4797182b5235d135a82fbbad110f5e8199ba00b42dca"
+    sha256 cellar: :any,                 sonoma:        "226345e7a0302fc3b2c5d644ec81b986178cdffe86114468cd5fe4c4fd4213b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "94f9a6dca8b65c42081d0e54568dbcf052112479c0b7bdca5b28cdbfc8880be2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45b121670117823c40f93eef0997a3c1a6a210af7301b25055c02906c2a0a113"
   end
 
   depends_on "pkgconf" => :build
@@ -223,8 +222,8 @@ class KeeperCommander < Formula
   end
 
   resource "pyngrok" do
-    url "https://files.pythonhosted.org/packages/9e/8b/a254d57f6d5ec8797daa57510abd8e82eb7f7992fc1c455677f28e805893/pyngrok-7.5.1.tar.gz"
-    sha256 "934ec8a899ace8ec61c39120a27a8212aeb40293cad2f4ffc8a3d1a4bb6a8d6c"
+    url "https://files.pythonhosted.org/packages/ec/7a/6f9b08044be356d228533f6a8454377e2d31dd1309adf13209906019762d/pyngrok-8.0.0.tar.gz"
+    sha256 "6e7aaf90b43086ad25508a1122423608003f712d9988319ddf7be50431028101"
   end
 
   resource "pyobjc-core" do

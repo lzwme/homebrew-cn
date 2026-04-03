@@ -1,8 +1,8 @@
 class Grokj2k < Formula
   desc "JPEG 2000 Library"
   homepage "https://github.com/GrokImageCompression/grok"
-  url "https://ghfast.top/https://github.com/GrokImageCompression/grok/releases/download/v20.2.5/source-full.tar.gz"
-  sha256 "d33d63c009b2d89d2ab031d3a5659ae9d691dd81bacd024d6cdf7a2501a2411e"
+  url "https://ghfast.top/https://github.com/GrokImageCompression/grok/releases/download/v20.2.6/source-full.tar.gz"
+  sha256 "10c245727d6f2f07f5b10675a5b704039645d17de2e3f814bfe5e8773439cc35"
   license "AGPL-3.0-or-later"
   head "https://github.com/GrokImageCompression/grok.git", branch: "master"
 
@@ -12,25 +12,23 @@ class Grokj2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9062c6b49fe7649d6f4370bcdac8b4436e1f0a030098da34e4c0e6be4ffa0a4d"
-    sha256 cellar: :any,                 arm64_sequoia: "460bf919e943c4a71f4b36ed5d69983c81fcceb4d930076dca97f99a0d9ec0b7"
-    sha256 cellar: :any,                 arm64_sonoma:  "0e38f2e0e2095d10f1831cb7558a1a677da0d3ca29223c32becfd0be18cc0ecb"
-    sha256 cellar: :any,                 sonoma:        "3bf7d4fe3be53338da91e02c595434e46f1d6e1541d6b695cc79b6eede412426"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2b895bac4b9bd22528c66692b35b72e4527293460ab75afb9c069955e50e2be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b7532ebac5e736414bd9650644ecbe6d41b110e5c2e4d1e33b43b5a8aed0aec"
+    sha256 cellar: :any,                 arm64_tahoe:   "5355cd25e872df4800d07cbe9be36eec2d8706c9209560aa893da9bf4d7aff49"
+    sha256 cellar: :any,                 arm64_sequoia: "9bb5ab4b7900401813c48aa6649404e86fab170e60e7daca612b177aaf080410"
+    sha256 cellar: :any,                 arm64_sonoma:  "2459419e0683c66cc3f87d63f74210c6a2322bdcb7bcd60aca4494086730a626"
+    sha256 cellar: :any,                 sonoma:        "a70fe31084a91cf4e06e47674508587d417fa3f31e3af86f1663b74ae81af722"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b7fdb2ae5bd57137d977dbe95adc0a2f21e2a719a0949ef69c79d0f6e9a719e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef70fd0c94ec675d21878f2cbc4c549a468eef1b9c24dbddb566279a03e142c7"
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pkgconf" => :build
-  depends_on "exiftool"
+  depends_on "exiftool" => :test
   depends_on "fmt"
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "little-cms2"
-
-  uses_from_macos "perl"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version < 1700
@@ -54,41 +52,27 @@ class Grokj2k < Formula
   end
 
   def install
-    # Fix: ExifTool Perl module not found
-    ENV.prepend_path "PERL5LIB", Formula["exiftool"].opt_libexec/"lib/perl5"
-
     # Ensure we use Homebrew libraries
     %w[liblcms2 libpng libtiff libz].each { |l| rm_r(buildpath/"thirdparty"/l) }
 
-    perl = DevelopmentTools.locate("perl")
-    perl_archlib = Utils.safe_popen_read(perl.to_s, "-MConfig", "-e", "print $Config{archlib}")
-    args = %W[
+    args = %w[
       -DGRK_BUILD_DOC=ON
       -DGRK_BUILD_JPEG=OFF
       -DGRK_BUILD_LCMS2=OFF
       -DGRK_BUILD_LIBPNG=OFF
       -DGRK_BUILD_LIBTIFF=OFF
-      -DPERL_EXECUTABLE=#{perl}
       -DSPDLOG_FMT_EXTERNAL=ON
     ]
 
-    if OS.mac?
+    if OS.mac? && MacOS.version <= :catalina
       # Workaround Perl 5.18 issues with C++11: pad.h:323:17: error: invalid suffix on literal
-      ENV.append "CXXFLAGS", "-Wno-reserved-user-defined-literal" if MacOS.version <= :catalina
-      # Help CMake find Perl libraries, which are needed to enable ExifTool feature.
-      # Without this, CMake outputs: Could NOT find PerlLibs (missing: PERL_INCLUDE_PATH)
-      args << "-DPERL_INCLUDE_PATH=#{MacOS.sdk_path_if_needed}/#{perl_archlib}/CORE"
-    else
-      # Fix linkage error due to RPATH missing directory with libperl.so
-      ENV.append "LDFLAGS", "-Wl,-rpath,#{perl_archlib}/CORE"
+      ENV.append "CXXFLAGS", "-Wno-reserved-user-defined-literal"
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     include.install_symlink "grok-#{version.major_minor}" => "grok"
-
-    bin.env_script_all_files libexec, PERL5LIB: ENV["PERL5LIB"]
   end
 
   test do
@@ -114,20 +98,17 @@ class Grokj2k < Formula
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lgrokj2k", "-o", "test"
     system "./test"
 
-    # Test Exif metadata retrieval
+    # Test metadata preservation
     testpath.install resource("homebrew-test_image")
     system bin/"grk_compress", "--in-file", "basn6a08.tif",
-                               "--out-file", "test.jp2", "--out-fmt", "jp2",
-                               "--transfer-exif-tags"
+                               "--out-file", "test.jp2", "--out-fmt", "jp2"
     output = shell_output("#{Formula["exiftool"].bin}/exiftool test.jp2")
 
     expected_fields = [
-      "Exif Byte Order                 : Big-endian (Motorola, MM)",
-      "Orientation                     : Horizontal (normal)",
-      "X Resolution                    : 72",
-      "Y Resolution                    : 72",
-      "Resolution Unit                 : inches",
-      "Y Cb Cr Positioning             : Centered",
+      "Capture X Resolution            : 2835",
+      "Capture Y Resolution            : 2835",
+      "Capture X Resolution Unit       : m",
+      "Capture Y Resolution Unit       : m",
     ]
 
     expected_fields.each do |field|

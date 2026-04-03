@@ -5,6 +5,7 @@ class Powershell < Formula
       tag:      "v7.6.0",
       revision: "767990ba06f8579d69f99eec46057541374aa892"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +13,12 @@ class Powershell < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "f73a918fa674ee916288d70b3cde3adfd1ffe67a917cce9dccb111e23df41908"
-    sha256 cellar: :any,                 arm64_sequoia: "78ca7f8e7d0b5e10a30713aac53678366e501d74136818cfe054596b2270f0d9"
-    sha256 cellar: :any,                 arm64_sonoma:  "6d7ec156a300a7ef041778851f5c48155b66354e4b7b13140a802d3d6d943aa5"
-    sha256 cellar: :any,                 sonoma:        "f32a84350d75b925cfb2ce2a4fb202d25958779ee7aa57e3e3468128566d527d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "07e6fd509053c092c54e141cb20564080048512548c95d217729a770b3080edc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "308cea8ca07ba922605ebe7d748d678ce5a955ee352a97d5c7b78f70eff28698"
+    sha256 cellar: :any,                 arm64_tahoe:   "9e164ecea7a8319f50bdb63f940553c3225f5b4fdb721705451ff1c1c3e9ed54"
+    sha256 cellar: :any,                 arm64_sequoia: "4db31779851843df9958c3bd84b49ac5a8f92a9b90cee8f1739cf3acbb6d3f2f"
+    sha256 cellar: :any,                 arm64_sonoma:  "033c71c388fbbb54f390f70c89230930f3bb6bd2936286ffa2f37340776a2a2a"
+    sha256 cellar: :any,                 sonoma:        "57e179c0bd8c2565a279edca93152578e0aac3a3bd52673a8eb6de8cd6ef82e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "597e50330a560c00e8cae859e9b661d75ecf3d9b5b1dfb4129915f40ab094019"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3ef9b43d72327b1d67625e1e83a7d59f26352d8321a9a84ab38e8f6f062cc4a"
   end
 
   depends_on "dotnet"
@@ -128,6 +128,11 @@ class Powershell < Formula
     clear_native_dependencies(publish_path, runtime, dotnet)
 
     libexec.install publish_path.glob("*")
+
+    ref_pack_path = (dotnet.opt_libexec/"packs/Microsoft.NETCore.App.Ref").children.select(&:directory?)
+                    .max_by { |path| Version.new(path.basename.to_s) }
+    (libexec/"ref").install_symlink (ref_pack_path/"ref/#{target_framework}/").glob("*")
+
     (bin/"pwsh").write_env_script libexec/"pwsh",
                                   DOTNET_ROOT: "${DOTNET_ROOT:-#{dotnet.opt_libexec}}"
 
@@ -177,8 +182,12 @@ class Powershell < Formula
 
     assert_equal libexec.to_s, local_module_output
 
-    module_cmd = "Import-Module PowerShellGet; [bool](Get-Command Install-Module )"
-    module_output = shell_output("#{bin}/pwsh -NoLogo -NoProfile -c '#{module_cmd}'").lines.last.chomp
+    module_cmd = "Import-Module PowerShellGet; [bool](Get-Command Install-Module)"
+    module_output = shell_output("#{bin}/pwsh -NoLogo -NoProfile -c '#{module_cmd}' 2>&1")
+
+    # If this produces an error try compiling powershell from source and increment revision
+    refute_match(/InternalWebProxy/, module_output)
+    module_output = module_output.lines.last.chomp
     assert_equal "True", module_output
   end
 end

@@ -2452,6 +2452,7 @@ Homebrew-homebrew-core/Formula/g/git-filter-repo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-fixup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-flow-next.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-flow.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/git-format-staged.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-fresh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-ftp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-game.rb, Homebrew/homebrew-core, 1
@@ -2628,7 +2629,6 @@ Homebrew-homebrew-core/Formula/g/gnunet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnupg-pkcs11-scd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnupg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnupg@1.4.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/g/gnupg@2.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnuplot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnuradio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnuski.rb, Homebrew/homebrew-core, 0
@@ -4116,6 +4116,7 @@ Homebrew-homebrew-core/Formula/lib/libjwt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libkate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libkeccak.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libkeyfinder.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libkiwix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libkml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libksba.rb, Homebrew/homebrew-core, 0
@@ -4218,6 +4219,7 @@ Homebrew-homebrew-core/Formula/lib/libpanel.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libpano.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libpaper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libparserutils.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libpathrs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpcap.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libpciaccess.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libpcl.rb, Homebrew/homebrew-core, 1
@@ -5121,7 +5123,7 @@ Homebrew-homebrew-core/Formula/n/normalize.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/noseyparker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/notation.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/notcurses.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/n/noti.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/noti.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/notifiers.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/notify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/notion-mcp-server.rb, Homebrew/homebrew-core, 0
@@ -6457,6 +6459,7 @@ Homebrew-homebrew-core/Formula/r/rustypaste.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustywind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rv-r.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rv.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rvvm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rxvt-unicode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rye.rb, Homebrew/homebrew-core, 1
@@ -6915,7 +6918,7 @@ Homebrew-homebrew-core/Formula/s/spotifyd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spring-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spring-loaded.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/sprocket.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/sprocket.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sproxy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spytrap-adb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sq.rb, Homebrew/homebrew-core, 1
@@ -7143,6 +7146,7 @@ Homebrew-homebrew-core/Formula/t/t-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/t-rec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/t1lib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/t1utils.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/t2sz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/ta-lib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tabiew.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tabixpp.rb, Homebrew/homebrew-core, 1
@@ -8160,6 +8164,7 @@ Homebrew-homebrew-core/Formula/y/ydiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yeet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yek.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yelp-tools.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/y/yelp-xsl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yetris.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yewtube.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yh.rb, Homebrew/homebrew-core, 1
@@ -9177,6 +9182,7 @@ Homebrew-homebrew-cask/Casks/c/coverload.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cpu-info.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cpuinfo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cr.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/craft-agents.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/craft.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/crashplan.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/creality-print.rb, Homebrew/homebrew-cask, 1
@@ -9780,7 +9786,7 @@ Homebrew-homebrew-cask/Casks/f/force-paste.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/forecast.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fork.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fork@dev.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/f/forkgram-telegram.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/f/forkgram.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/forklift.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fossa.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fotokasten.rb, Homebrew/homebrew-cask, 0
@@ -10836,6 +10842,7 @@ Homebrew-homebrew-cask/Casks/font/font-i/font-iosevka-ss18.rb, Homebrew/homebrew
 Homebrew-homebrew-cask/Casks/font/font-i/font-iosevka-term-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-iosevka-term-slab-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-iosevka.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-i/font-ioskeley-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-ipaexfont.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-i/font-ipafont.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-i/font-ipamjmincho.rb, Homebrew/homebrew-cask, 0
@@ -14462,6 +14469,7 @@ Homebrew-homebrew-cask/Casks/r/reflector@2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/reflex-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/reikey.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rekordbox.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/remanager.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rember.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/remember-the-milk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/reminders-menubar.rb, Homebrew/homebrew-cask, 1

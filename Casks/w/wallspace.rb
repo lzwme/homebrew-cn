@@ -1,6 +1,6 @@
 cask "wallspace" do
-  version "1.4.4"
-  sha256 "5201ae22c2ebff033e2d0eb5e55c6cb8e299e9432751536665c00280cd9939df"
+  version "1.5"
+  sha256 "12a633612a04d1883c4ca565686e426aa2300276a7017b13f53d56b4c682b000"
 
   url "https://dvivcibhncrefmnjtjeq.supabase.co/functions/v1/download-version?v=#{version}",
       verified: "dvivcibhncrefmnjtjeq.supabase.co/"
@@ -13,6 +13,7 @@ cask "wallspace" do
     strategy :sparkle, &:short_version
   end
 
+  auto_updates true
   depends_on macos: ">= :sequoia"
   container type: :zip
 
@@ -22,9 +23,7 @@ cask "wallspace" do
 
   zap trash: [
     "~/Library/Caches/Wallspace",
-    "~/Library/Caches/wallspace.app",
     "~/Library/HTTPStorages/wallspace.app",
-    "~/Library/Logs/DiagnosticReports/Wallspace*.ips",
     "~/Library/Preferences/wallspace.app.plist",
   ]
 end

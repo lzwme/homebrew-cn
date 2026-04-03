@@ -1,9 +1,9 @@
 class Openvpn < Formula
   desc "SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension"
   homepage "https://openvpn.net/community/"
-  url "https://swupdate.openvpn.org/community/releases/openvpn-2.7.0.tar.gz"
-  mirror "https://build.openvpn.net/downloads/releases/openvpn-2.7.0.tar.gz"
-  sha256 "2f0e10eb272be61e8fb25fe1cfa20875ff30ac857ef1418000c02290bd6dfa45"
+  url "https://swupdate.openvpn.org/community/releases/openvpn-2.7.1.tar.gz"
+  mirror "https://build.openvpn.net/downloads/releases/openvpn-2.7.1.tar.gz"
+  sha256 "9858477ec2894a8a672974d8650dcb1af2eeffb468981a2b619f0fa387081167"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
 
   livecheck do
@@ -12,12 +12,12 @@ class Openvpn < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9556ad7724a36ce5c2d015d226ead32d78051f85b795f662d15b0b879a55ab59"
-    sha256 arm64_sequoia: "ebf95c77f4a8ac83d50b0a62cb2c5b913a3e594f6ea9c5237776a5f3c242628c"
-    sha256 arm64_sonoma:  "27016d74a0169d025635c8e94152f4e46b58a41078a0a6f8dcb0175b46b6a784"
-    sha256 sonoma:        "5c8a4352ed57a16917c30709681fd558c77e94760cea767179de28efc532bda5"
-    sha256 arm64_linux:   "36b3317cb6d4e11e871fc70c00de6439534c00348da2eca17c81a9b48d8a0e3d"
-    sha256 x86_64_linux:  "51ca6876b41a2f3e01b3ba9fc56ad5f464d6e9a611f26bc10fe80198cd04ee4a"
+    sha256 arm64_tahoe:   "40345d22d9df7935fab8953182a85c8893525ec65018edff1112c539735dede9"
+    sha256 arm64_sequoia: "f64547169d1732bc351d29dbb743cc3786343889a14f3ba1a3d8f9ab14edf733"
+    sha256 arm64_sonoma:  "e6332253270b9c4f27f5ee1171978c580f09ad8a2ddd26b32d5726f87226a310"
+    sha256 sonoma:        "50dde1e0f619875d9adb52c3b3dff2e344f7927d6bdf653dda4d3bade19cd43b"
+    sha256 arm64_linux:   "1074d91d4d904337c5c32b68c27d148899ef3c9edee649fb9fc59ef0371aa83e"
+    sha256 x86_64_linux:  "8605c796ebfebfb2d140d540258d6f2d8f7be398b0a894ae13c3be362c0dfc58"
   end
 
   depends_on "pkgconf" => :build

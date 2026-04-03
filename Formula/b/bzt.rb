@@ -6,16 +6,16 @@ class Bzt < Formula
   url "https://files.pythonhosted.org/packages/e1/5d/4372f76a9a483247538138d84ad21e303f88c35c630b9745c1c69bec05f1/bzt-1.16.49.tar.gz"
   sha256 "827408e83f8ae07a42982bf7541fd5b1f8f9162a09cfc342ba8f0d4bfd8f65e2"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "641321c66ae0a9031bbe58e0f81bd79ec8b4e984f7bab76e96824dcbd88b9106"
-    sha256 cellar: :any,                 arm64_sequoia: "eaf997c36fe16704a5174ff4675880ab17fa1c98506b252300cc00a06ec04985"
-    sha256 cellar: :any,                 arm64_sonoma:  "c94ef1cb3289b4b750033f563a77bfac73da2900e90575051a430f773e60bd51"
-    sha256 cellar: :any,                 sonoma:        "63e287513e97571f3fa9987382cce8654d64a1e4cd1373e2eb3523f11f89299e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a21829b1750e0cfbfe671a4192cc2be12458b41b72958be72cc58f9b2bea560"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb7a58439c493529e226a387027da7171615b764b649dbdc4b90add4070eb8f8"
+    sha256 cellar: :any,                 arm64_tahoe:   "352f0fdc47d7dc63ddff98e91fab475eab7bf5d656be0a60e8de2a966487b227"
+    sha256 cellar: :any,                 arm64_sequoia: "0a01487680d0476c33f8860c30660fb4b74a097b265f241617b297876ed8d1d8"
+    sha256 cellar: :any,                 arm64_sonoma:  "f72de95b097676f9a12486c0230d9318cf06cfaa53d74f92cdf01c940508602a"
+    sha256 cellar: :any,                 sonoma:        "7608c5764a6826956463b23ec7f4734cb4669de4e67aaded10f7f56b2dd83d46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e63233e8a0f9f8c088a817315ee30269ee4022d3a512ea9cc18c4c533f60e364"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "491b24deee705831205ebea3fc658373881fd22a44334bd3dc27efc92bff80bb"
   end
 
   depends_on "cmake" => :build
@@ -28,7 +28,8 @@ class Bzt < Formula
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
-  pypi_packages exclude_packages: ["certifi", "numpy"]
+  pypi_packages exclude_packages: ["certifi", "numpy"],
+                extra_packages:   "urwid<4" # issue ref: https://github.com/Blazemeter/taurus/issues/1972
 
   resource "aiodogstatsd" do
     url "https://files.pythonhosted.org/packages/8d/ea/d2d79661f213f09df0e9f56d25dbae41501880822e5c85a0a6d6857baa55/aiodogstatsd-0.16.0.post0.tar.gz"
@@ -41,8 +42,8 @@ class Bzt < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/50/42/32cf8e7704ceb4481406eb87161349abb46a57fee3f008ba9cb610968646/aiohttp-3.13.3.tar.gz"
-    sha256 "a949eee43d3782f2daae4f4a2819b2cb9b0c5d3b7f7a927067cc84dafdbb9f88"
+    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
+    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
   end
 
   resource "aiosignal" do
@@ -211,8 +212,8 @@ class Bzt < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "setuptools" do

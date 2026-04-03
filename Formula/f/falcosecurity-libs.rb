@@ -16,12 +16,13 @@ class FalcosecurityLibs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "27b747d3d3084ac979f783188fa9e26341f278181196f48dace42bb72bb72399"
-    sha256 cellar: :any,                 arm64_sequoia: "276bc934131bae13ebca0401a490e5ab6688e9f5e51b129ee61a096a0468b3ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "773301a5bf953dc35076d8ef5b2fccf9a439827ce3ff266f4d1941bb55570fab"
-    sha256 cellar: :any,                 sonoma:        "6e14e2e1c9085c510659349eacfab620b147f64a99f538d98425c487abb89aea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a08a7a0cbf1962a41ba265dffc4d647f84e8f70932b3be709d8d67d8c2b88122"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d95433c52e96ee4ee8548237e427e9a6e581f95c6f80aaa128dc54876ed3ad7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "bf2f9695deefb36e9ecda067f29d4134499aa7cdd6c857c74b40bc80314c74a5"
+    sha256 cellar: :any,                 arm64_sequoia: "5efe954a4ff97547b86942b62c1ce5d346bdb649e47e676e1494f23751439a65"
+    sha256 cellar: :any,                 arm64_sonoma:  "f9176e3d5a422bd5d3a7f1877b3e7bea15ec50fa027ff4ce803a26089795d9ae"
+    sha256 cellar: :any,                 sonoma:        "f53b2e4e2a12a693126e96185025d9e2ef39e7498a4890a1ac3c357868931646"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "997b5c2ce454d5eddc87686eb9e86d9312603fd37d24ae9daef035bf0e978764"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa384b8a9d032ca4cf0abec8d7a99a55efff9abd7d577ba8198ad7cdc8a2b470"
   end
 
   depends_on "cmake" => :build
@@ -30,14 +31,10 @@ class FalcosecurityLibs < Formula
   depends_on "jsoncpp"
   depends_on "re2"
   depends_on "tbb"
-  depends_on "uthash" # headers needed for libscap/uthash_ext.h
+  depends_on "uthash" => :no_linkage # headers needed for libscap/uthash_ext.h
 
   on_linux do
-    depends_on "abseil"
-    depends_on "curl"
     depends_on "elfutils"
-    depends_on "grpc"
-    depends_on "protobuf"
     depends_on "zlib-ng-compat"
   end
 

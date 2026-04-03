@@ -6,16 +6,16 @@ class GimmeAwsCreds < Formula
   url "https://files.pythonhosted.org/packages/63/73/9e508d37d4d301f6a3811fdc0b0a076696de87f82ad8a81ec28c3e6befb5/gimme_aws_creds-2.8.2.tar.gz"
   sha256 "12784f4b749617d7391bf2056373990277858dc9886328832b545e9e334f24d3"
   license "Apache-2.0"
-  revision 9
+  revision 10
   head "https://github.com/Nike-Inc/gimme-aws-creds.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4298d6160289126d062e90e3f9bb403b129c5d35d217a7b0ef690c035c5f47df"
-    sha256 cellar: :any,                 arm64_sequoia: "4cc97ba7f5087389c76a20fc9e60621cc445350d9e1fbc7d88c08e53392a7eaf"
-    sha256 cellar: :any,                 arm64_sonoma:  "3a362feac1252ab2084a64eeb35bb5d4dbc641c9ebaf7a21e1722566c72bd152"
-    sha256 cellar: :any,                 sonoma:        "e56617852c88d74864ad49bc26767d54dce1b32ef6513e3004a8c911ba6d5bc3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "041574d87365cea511f871d34e039d3e33e02aef5c863299b808bf8075b04a83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5b330a195fed33753ab3453652d594354f4297951327cb0e82ad059f9961565"
+    sha256 cellar: :any,                 arm64_tahoe:   "61f5e7437db7b4831b880fa2f695d5b1c2466434c5993649b275f303a16ef430"
+    sha256 cellar: :any,                 arm64_sequoia: "48ad2eb39d269668698da10b24c3fa6658d76bb5e8b4d2ec3e62afbd4c5d7eae"
+    sha256 cellar: :any,                 arm64_sonoma:  "f1e747abd13298fceee0a087d489e9f3f85bd5bdce4fa8e9aee71d59ee17c451"
+    sha256 cellar: :any,                 sonoma:        "2ece9654bfa344736072d0e3f1b90803b676d4a80666d167036e86c81dee5eed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "45026667e11b7a310ea3a8a42a2d1db780a9038873b8e41e699635e4424c937d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f28d0abc97c77de2ba6b0819e12034ffa518ea1fd44c09eed37ed28b65bda5f"
   end
 
   depends_on "certifi"
@@ -60,8 +60,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/50/42/32cf8e7704ceb4481406eb87161349abb46a57fee3f008ba9cb610968646/aiohttp-3.13.3.tar.gz"
-    sha256 "a949eee43d3782f2daae4f4a2819b2cb9b0c5d3b7f7a927067cc84dafdbb9f88"
+    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
+    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
   end
 
   resource "aiosignal" do
@@ -80,13 +80,13 @@ class GimmeAwsCreds < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/4e/f6/b280afd91b2284744c0bb26afa1272bd60270726b4d3999fc27b68200854/boto3-1.42.77.tar.gz"
-    sha256 "c6d9b05e5b86767d4c6ef762f155c891366e5951162f71d030e109fe531f4fd9"
+    url "https://files.pythonhosted.org/packages/9d/4d/40029c26b535c41333a0b11573127cfc548fdcb1cbcd1798ea7046c56bab/boto3-1.42.81.tar.gz"
+    sha256 "e5c0d57229763007151be6d388319514a040ccdc922fbb27e37c3100a7fbc01a"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/42/97/1800633988e890b4eea0706b2671342eddfeb33c1eb1d2fe28a8117f7907/botocore-1.42.77.tar.gz"
-    sha256 "cbb0ac410fab4aa0839a521329f970b271ec298d67465ed7fa7d095c0dad9f48"
+    url "https://files.pythonhosted.org/packages/fa/5f/b0bb9a8768398fb131e1fe722c9cc5b18f74d21ca1970efe8576912b2c6e/botocore-1.42.81.tar.gz"
+    sha256 "48e6f6f52de1cc107a34810309b8ca998ea9bb719a3fe4c06f903a604b3138cb"
   end
 
   resource "charset-normalizer" do
@@ -249,8 +249,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "s3transfer" do

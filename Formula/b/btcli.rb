@@ -3,18 +3,18 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https://docs.bittensor.com/btcli"
-  url "https://files.pythonhosted.org/packages/42/3d/366f5b6316c1ae52d4db683f9c1355b28faf67978f1262cd8ad981ce1e6a/bittensor_cli-9.20.0.tar.gz"
-  sha256 "839910ab32446809b15b0cad6d1a0aef8bf31d96ff70d4d2296224dcd70e27b8"
+  url "https://files.pythonhosted.org/packages/78/1a/4100808d7d4f854340ef89330ee19531e67d6dbd9a7656dc18b2f2be400c/bittensor_cli-9.20.1.tar.gz"
+  sha256 "84c60ee15eae0aab7a2bedf19122f8e96db6d986ec7eddf0340b101a360dc6a0"
   license "MIT"
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1391b5fc5da7574e5671ec796fe8f928923d8c1970d7c3f8e51ecc2fb6274cfb"
-    sha256 cellar: :any,                 arm64_sequoia: "0bd4e9bb6cc416bd9904733f0ce544e8fc9aae6c1570e4af63d6c69bb6d6a6f3"
-    sha256 cellar: :any,                 arm64_sonoma:  "1d0d85df460a0796e01b30623d324379071f7e550b95fd8fe59bf0876125d073"
-    sha256 cellar: :any,                 sonoma:        "119d7eee2bd2fae6b28e32ef7fb23c7a8b9eded4e8f0737ad9a3d8ffc838aee1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f2e04cc917280859d0775f4ed546632a0a9076f02858e433a15a250c813173c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95bab61ac321f7673c7ca74bb0c247786e4318693d8638fd833eb1cb3fb27203"
+    sha256 cellar: :any,                 arm64_tahoe:   "9011bcc01e6487a5c6fbdc9d0ee80eb2b77c25c0c11a4146c515249711bad4b1"
+    sha256 cellar: :any,                 arm64_sequoia: "10143d2e0e62dcd0cda7396650a71d58127f7adf7a77ab54c2680c79604fce29"
+    sha256 cellar: :any,                 arm64_sonoma:  "e6f8f2285149ac6bd8ad41348e580cba30270da4b861402164e0d18d9a3d0547"
+    sha256 cellar: :any,                 sonoma:        "eef6e1d1bf46ddd7fa47ef481ff1d1437aefa864b710fc5781baa58e59727884"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5028dfaa92505ed1a2334eda54438782721e99d64a894c5546b8337627034aed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32f679813e1a37dd5baebd172389034bc3ac579beee6cfef9bd5c1258c646866"
   end
 
   depends_on "rust" => :build # for bittensor-wallet, plotly
@@ -35,8 +35,8 @@ class Btcli < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/45/4a/064321452809dae953c1ed6e017504e72551a26b6f5708a5a80e4bf556ff/aiohttp-3.13.4.tar.gz"
-    sha256 "d97a6d09c66087890c2ab5d49069e1e570583f7ac0314ecf98294c1b6aaebd38"
+    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
+    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
   end
 
   resource "aiosignal" do
@@ -55,8 +55,8 @@ class Btcli < Formula
   end
 
   resource "async-substrate-interface" do
-    url "https://files.pythonhosted.org/packages/60/8a/c25ee72ce902686191c9a56dfdcbc12b5408defb343589e398dfa0331416/async_substrate_interface-1.6.3.tar.gz"
-    sha256 "6d45c8a77c8ff9120f08892bec6913a470983c15ffab1489046f56ca421f1c1c"
+    url "https://files.pythonhosted.org/packages/bb/48/b53f7aa0f4e63ea8f33378e0d6bafb457de3b40b6dd4e426286159438af5/async_substrate_interface-1.6.4.tar.gz"
+    sha256 "982fd9c7102176d509a5bc31a1cbee0ba6c6dff7629328a94b08cad155520aad"
   end
 
   resource "attrs" do
@@ -90,8 +90,8 @@ class Btcli < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "click" do
@@ -140,8 +140,8 @@ class Btcli < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/ea/5d/38b681d3fce7a266dd9ab73c66959406d565b3e85f21d5e66e1181d93721/more_itertools-10.8.0.tar.gz"
-    sha256 "f638ddf8a1a0d134181275fb5d58b086ead7c6a72429ad725c67503f13ba30bd"
+    url "https://files.pythonhosted.org/packages/24/24/e0acc4bf54cba50c1d432c70a72a3df96db4a321b2c4c68432a60759044f/more_itertools-11.0.1.tar.gz"
+    sha256 "fefaf25b7ab08f0b45fa9f1892cae93b9fc0089ef034d39213bce15f1cc9e199"
   end
 
   resource "multidict" do
@@ -195,8 +195,8 @@ class Btcli < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "rich" do

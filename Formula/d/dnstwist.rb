@@ -6,15 +6,15 @@ class Dnstwist < Formula
   url "https://files.pythonhosted.org/packages/e7/0e/88b4c5c7f3077c0d2e8544a14e321fce80b3cf0148a46dec9724e27c61d3/dnstwist-20250130.tar.gz"
   sha256 "8b6dd9c42a643a0e8b087903c0e6d75c0f6cebf94920ab0b7760ac2522c6bb42"
   license "Apache-2.0"
-  revision 7
+  revision 8
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7f72c9225a16821ffe223149d1580072ea30ab8e768aae7cda8158da6230a5bb"
-    sha256 cellar: :any,                 arm64_sequoia: "986b1d10461fce557ccad6fcc65e8f59655ca5f17f2f38d362b61cceb531096a"
-    sha256 cellar: :any,                 arm64_sonoma:  "30d703dbceb790b7074add95c09cc0741ac4809c4376c18ec7b069232be31bf2"
-    sha256 cellar: :any,                 sonoma:        "bc467c1c9e26a8ee102e655ef3d12060722b4f61276f1c3c1d44348d724297c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4660f031d95c1e6433d771aa8f330fb80aca15a89392dcfc9e9842336e27888c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fcb696e3649b368c4c7723c19ce2e6ff036450accf9a8b0a1f9581005ab74b8"
+    sha256 cellar: :any,                 arm64_tahoe:   "549bcb232718dd856e74031dce803c3112fded744134666c529dfa42b738d723"
+    sha256 cellar: :any,                 arm64_sequoia: "b24f4296a0fb585b8a2d83195f9a5a74194baad3cf9522682917e2f842d8fc16"
+    sha256 cellar: :any,                 arm64_sonoma:  "0eee18eef5783fa0472406fd362aba680fb92a1e176da2155da0b309759584b8"
+    sha256 cellar: :any,                 sonoma:        "4009f982ab84ee59eda8fa833e212cb6891b853fbd7469bb3490f2111a230986"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "62f4ccdb88c0965c672a3053fe222e6d875785de251ef6ebc7ee4f88c4f6c755"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df4d10a7d40c7507198779cfffd1effa6a98e34a061949f39b0af20f55f8e922"
   end
 
   depends_on "rust" => :build # for geoip2, uv-backend
@@ -38,8 +38,8 @@ class Dnstwist < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/50/42/32cf8e7704ceb4481406eb87161349abb46a57fee3f008ba9cb610968646/aiohttp-3.13.3.tar.gz"
-    sha256 "a949eee43d3782f2daae4f4a2819b2cb9b0c5d3b7f7a927067cc84dafdbb9f88"
+    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
+    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
   end
 
   resource "aiosignal" do
@@ -103,8 +103,8 @@ class Dnstwist < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "tld" do

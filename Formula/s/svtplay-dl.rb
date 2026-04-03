@@ -60,8 +60,8 @@ class SvtplayDl < Formula
 
   def caveats
     <<~EOS
-      To use post-processing options:
-        `brew install ffmpeg` or `brew install libav`.
+      To use post-processing:
+        `brew install ffmpeg`.
     EOS
   end
 

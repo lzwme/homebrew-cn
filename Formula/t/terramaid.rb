@@ -1,18 +1,18 @@
 class Terramaid < Formula
   desc "Utility for generating Mermaid diagrams from Terraform configurations"
   homepage "https://github.com/RoseSecurity/Terramaid"
-  url "https://ghfast.top/https://github.com/RoseSecurity/Terramaid/archive/refs/tags/v2.11.1.tar.gz"
-  sha256 "13166a17639fc2c7039eb27545d7c411c9aa6bbc188f7513124711a5667e06d8"
+  url "https://ghfast.top/https://github.com/RoseSecurity/Terramaid/archive/refs/tags/v2.12.0.tar.gz"
+  sha256 "241642fdbd0565f441e4d4de8fc2165531a8a9d554032ed3bf9d81911f2a786a"
   license "Apache-2.0"
   head "https://github.com/RoseSecurity/Terramaid.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "672bf91502762faf0b8f9e8ad5504809ae1181df8d88197ada1b4a39147d34ff"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "672bf91502762faf0b8f9e8ad5504809ae1181df8d88197ada1b4a39147d34ff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "672bf91502762faf0b8f9e8ad5504809ae1181df8d88197ada1b4a39147d34ff"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aa6139e8c8aad8ba20959e9829729ed52be0da05914bbfea9a48883b8ed50ebf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85b0bbc1f6f01e1d04ce17847a38bc400b999a7375d82b6fc0d5f75a37d3c215"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b58a6329121b05445bdca335d2b27948c43fbfb88169b43251217ba163557036"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a1465c5351e78981e984a4aa64500e8b78cfdca6492fd384f15a02091be15ff9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1465c5351e78981e984a4aa64500e8b78cfdca6492fd384f15a02091be15ff9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1465c5351e78981e984a4aa64500e8b78cfdca6492fd384f15a02091be15ff9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2fb66ecc66fa76a67fd4b76dfd9be501d21d5eb0e6ab1a8503cf9ead87767dc4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ce1ee20edfaefbb5cf90f8a797ae1673563ccd55e34bc46e1ec43ef18531595"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9351baaa7829073ed9782f7d3680d1045e56ae78ce3cb7a095fa92a443a3e5cc"
   end
 
   depends_on "go" => [:build, :test]

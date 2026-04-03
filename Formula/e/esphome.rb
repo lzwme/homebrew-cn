@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/59/1d/2b65d610882e26182a663c1a4ddfa7a284ec34c069a4e277068791533981/esphome-2026.3.1.tar.gz"
-  sha256 "68d24638e3d2ae813fdf170584804f668ab82c6cc3d0fb2a6c55a68e1a891647"
+  url "https://files.pythonhosted.org/packages/17/53/543f20a017ec704bd1dd1ec4330a7f5ad502f322af6d445ffb069cbf1717/esphome-2026.3.2.tar.gz"
+  sha256 "b4791efd346f80a72a052679b2c50fdffe0a958185ea6dbf52d2fdce226947c3"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -12,12 +12,12 @@ class Esphome < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "49acd812b5fbfc9cea32de0ca0f11589d1155280181197540f808b7825055c9e"
-    sha256 cellar: :any,                 arm64_sequoia: "26f478c8cde31433095ed713ccbb38f02fde91ed8e8557255de8a5d3116f47b6"
-    sha256 cellar: :any,                 arm64_sonoma:  "c76a8caddfa6924e054183940e67f0d5be60f727ae1cd74793bf163cd0c806b0"
-    sha256 cellar: :any,                 sonoma:        "c9db34e01f3096e7714d3fe685e9e272abc2cf86f0d1ae9e2a30973ef1229cd9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8ff83a4c00dfbb69d574ed1b8d133caf5e09fbac520a9a8e7114679da694281"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af9d13e3ac2b40eba79e6023619f0b396d1c092cbf268e84e19c1c0066dca60c"
+    sha256 cellar: :any,                 arm64_tahoe:   "b99333c71ce8fb52791abe3298644dcaef0cb698d1a55fffce3e67e7b5cb6016"
+    sha256 cellar: :any,                 arm64_sequoia: "7d3c92fe26dbc650822205d43707a9f3503d2ee6f820413c41b695cdd81d6487"
+    sha256 cellar: :any,                 arm64_sonoma:  "cbc1fa0f6fbf90c3cd730e32d0bc2411ccec19e1d0f1a894d344bfae779c84c1"
+    sha256 cellar: :any,                 sonoma:        "bdff69754a5e4ff8d0251a6258bdc683ec49165eb84225eb3037493cf718316c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "93ba57cc789a4a2bbdebffb9b48a0e5cc2e6baa0be599eb451a1301bee61ec83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef5e85f1c13368308a7cef196757a3f205da8f0ccd1ddf29e856c6ab6fab01cb"
   end
 
   depends_on "rust" => :build
@@ -56,8 +56,8 @@ class Esphome < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
-    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
+    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
+    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
   end
 
   resource "argcomplete" do
@@ -126,8 +126,8 @@ class Esphome < Formula
   end
 
   resource "dbus-fast" do
-    url "https://files.pythonhosted.org/packages/3d/f7/36515d10e85ab6d6193edbabbcae974c25d6fbabb8ead84cfd2b4ee8eaf6/dbus_fast-4.0.0.tar.gz"
-    sha256 "e1d3ee49a4a81524d7caaa2d5a31fc71075a1c977b661df958cee24bef86b8fe"
+    url "https://files.pythonhosted.org/packages/5f/cd/402b0e524bdf37d8b1d22b1d926c538bf1d2eedf115ea1d401c6c08a7d81/dbus_fast-4.0.4.tar.gz"
+    sha256 "43137f0b73a7adbf7d5c0e9eb9d8d34df9e6e0aeafade2166e641c52dfe0a853"
   end
 
   resource "esphome-dashboard" do
@@ -236,8 +236,8 @@ class Esphome < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyobjc-core" do

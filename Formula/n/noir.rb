@@ -1,20 +1,20 @@
 class Noir < Formula
   desc "Attack surface detector that identifies endpoints by static analysis"
   homepage "https://owasp.org/www-project-noir/"
-  url "https://ghfast.top/https://github.com/owasp-noir/noir/archive/refs/tags/v0.29.0.tar.gz"
-  sha256 "fd82153f00997035d3ebc5f9e6429383c1a93b045a10ea87c9eebb0041cb9967"
+  url "https://ghfast.top/https://github.com/owasp-noir/noir/archive/refs/tags/v0.29.1.tar.gz"
+  sha256 "a7e3703d71acc0736effe71d3b7ee973ce0f49d03546501bd3e354f2bcf40065"
   license "MIT"
   head "https://github.com/owasp-noir/noir.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "af5fd34ce95bb6e743068a19d26812fe1a12eb6b721f4fbfa568ed49c94e8268"
-    sha256 cellar: :any,                 arm64_sequoia: "de05960dfac575df0bc685153770968881079eca7eb41c4da10f70db9f98fa2c"
-    sha256 cellar: :any,                 arm64_sonoma:  "287fdd4563c09d54836cbeb7d8dabb67284c6b176d497b36d42a050113989650"
-    sha256 cellar: :any,                 sonoma:        "1cb66106c2d9d306c71ff3bdc1b9fc6c94edddd9096b6f6ed05de78d8915a6f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ee2744b843b839f2c23a0a69e3183d84f88ea0bfdce196ba060639477bd97c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe57ede7945b19014e9bc7bf6f00b6a50d97d3c2d7bb1610f8cd5ad2bc9ce4f4"
+    sha256 cellar: :any,                 arm64_tahoe:   "09deb3040aa035a7c48438f87e94fddd7bf3482f75dba8035214bab221e366f4"
+    sha256 cellar: :any,                 arm64_sequoia: "a4da490d5f5db6398884ddf68edf1329a79022641dd064152d64b03f22cb2605"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd814218db44d32ed1e3e2dee26aa4205f16398690ca90f838078563fa72c92f"
+    sha256 cellar: :any,                 sonoma:        "16c367765a4230a251d182e71fb90eea84d50495463a1306362890df3c9f26b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a886eae8cfad285aa9044167d379afeaec0730935009fdaa9cb93649b2fb53c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20f1fc248edbabcf6a7a2df91b1eeb9acd3f2220e01e34bfbd81e52cedc32a44"
   end
 
   depends_on "crystal" => :build

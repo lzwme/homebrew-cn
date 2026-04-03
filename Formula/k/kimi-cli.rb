@@ -3,20 +3,20 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/c3/73/ef25d5fdc1907a6a4afb9f26e434d69699461afa832efaa41fefbc0f6bc0/kimi_cli-1.28.0.tar.gz"
-  sha256 "be8e99ef7efb2ac27e37c7b2dd19794d1ef29ba1bfbc72fdcf16b57733d88cf0"
+  url "https://files.pythonhosted.org/packages/3e/34/08ef4a0d173c66837b5b1be9416033553561ebee3c7a59d4af89ae745b97/kimi_cli-1.29.0.tar.gz"
+  sha256 "cbf958a8ac6e23abdafb407a111c6ca929542286d184061284396634b9de43b7"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a1c8b442d0d1b8b94fd53d3a8e0bce5fade0d836a048b4f8f585b3c5ab467fcc"
-    sha256 cellar: :any,                 arm64_sequoia: "57a78578cc0ab383fe5e29c2b527a44444d0b2e9249457681c289465138e4973"
-    sha256 cellar: :any,                 arm64_sonoma:  "01f0e5670c3965cd088a5cf142bf7a3c04f5f43cf7a22d099aaa4edc7adcfbed"
-    sha256 cellar: :any,                 sonoma:        "85aa79d09ce922ea1ef78adaeaa6ca063b71bce95d7f78706e25b27fbf45e885"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ce9f76d2ba7cfff307709de613e9490bcca1dc4d1463c90d62016e9bbbf5c55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d512cc992b9421a5a6abc6c4bb009be4c9985ee2e0d69a0e6dc030d4834151b6"
+    sha256 cellar: :any,                 arm64_tahoe:   "840d25375e14719b6521a979df5c1aa8d7b00a17a21866bfc03f774c719d552e"
+    sha256 cellar: :any,                 arm64_sequoia: "46c1d2f913717858b132ca94e732a202543c7fe87b716daa6213fa7ca28abce8"
+    sha256 cellar: :any,                 arm64_sonoma:  "b89d7d9a3b998f740020b06fc3a941ed57371f82de1c7f6d6f62ec1360f0dbef"
+    sha256 cellar: :any,                 sonoma:        "b3c8a4cf54c6ca2fea813ea066272f1c01780068361c9bc607ab322280250896"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ffb27b92ba2891a9430b38aa4da6d032dc207f4e98d034daf5339b7a3e3102f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47fc6858440501c60cef386bde6c16fa79e306dedf3bd6cbdcd99589994599b9"
   end
 
   depends_on "pkgconf" => :build
@@ -83,8 +83,8 @@ class KimiCli < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/37/7a/8b390dc47945d3169875d342847431e5f7d5fa716b2e37494d57cfc1db10/anthropic-0.86.0.tar.gz"
-    sha256 "60023a7e879aa4fbb1fed99d487fe407b2ebf6569603e5047cfe304cebdaa0e5"
+    url "https://files.pythonhosted.org/packages/86/68/565f13059c0a6a6fd5f96f306f2a0fb478a0e1174ec18a4df16b5fac9379/anthropic-0.88.0.tar.gz"
+    sha256 "f4c7f6863d08c869913516f08d658fe53caaf8bcc4fbea3218df343d2a876c58"
   end
 
   resource "anyio" do
@@ -178,8 +178,8 @@ class KimiCli < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/c4/73/5903c4b13beae98618d64eb9870c3fac4f605523dd0312ca5c80dadbd5b9/fastapi-0.135.2.tar.gz"
-    sha256 "88a832095359755527b7f63bb4c6bc9edb8329a026189eed83d6c1afcf419d56"
+    url "https://files.pythonhosted.org/packages/f7/e6/7adb4c5fa231e82c35b8f5741a9f2d055f520c29af5546fd70d3e8e1cd2e/fastapi-0.135.3.tar.gz"
+    sha256 "bd6d7caf1a2bdd8d676843cdcd2287729572a1ef524fc4d65c17ae002a1be654"
   end
 
   resource "fastmcp" do
@@ -208,8 +208,8 @@ class KimiCli < Formula
   end
 
   resource "google-genai" do
-    url "https://files.pythonhosted.org/packages/00/5e/c0a5e6ff60d18d3f19819a9b1fbd6a1ef2162d025696d8660550739168dc/google_genai-1.69.0.tar.gz"
-    sha256 "5f1a6a478e0c5851506a3d337534bab27b3c33120e27bf9174507ea79dfb8673"
+    url "https://files.pythonhosted.org/packages/74/dd/28e4682904b183acbfad3fe6409f13a42f69bb8eab6e882d3bcbea1dde01/google_genai-1.70.0.tar.gz"
+    sha256 "36b67b0fc6f319e08d1f1efd808b790107b1809c8743a05d55dfcf9d9fad7719"
   end
 
   resource "google-re2" do
@@ -458,8 +458,8 @@ class KimiCli < Formula
   end
 
   resource "pykaos" do
-    url "https://files.pythonhosted.org/packages/cb/a3/6579427249f03ad3c9781c53d0de57348c031eae99a34c2607c06cb20a08/pykaos-0.7.0.tar.gz"
-    sha256 "e8623749abb1f7f88681237f2799af50113e365288969afe091fadb19562c41c"
+    url "https://files.pythonhosted.org/packages/96/45/a7821b29ac4189988934f2c7b8b9a1b7310085cae5944b419ee8ddfb88f7/pykaos-0.8.0.tar.gz"
+    sha256 "2b648daf2a3b0ef6b205dfbe2eb0f34b128a87d62d93097da081fb605d9dfd83"
   end
 
   resource "pyobjc-core" do

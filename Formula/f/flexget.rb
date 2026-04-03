@@ -3,17 +3,17 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/8a/d2/9957f585bd64fe56caadf4ad5a7580ed7e89a784f3455e6528e08cb0d59b/flexget-3.19.8.tar.gz"
-  sha256 "c8b89ecb36bba524298e56566e571ea3602fa49eff566e5828d99faa73d23437"
+  url "https://files.pythonhosted.org/packages/44/cd/1594dde428fd8c663f40b9193b66406f746adde066f0cc8019bce70a6172/flexget-3.19.9.tar.gz"
+  sha256 "5f80990cd9fb9f27fb34bac4105603eedef7d05e90ea2807b13790aba684745d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "56d88e8bf37ccee2f82150f6a63f4e49209dd634cad5171c526afc05017bc7be"
-    sha256 cellar: :any,                 arm64_sequoia: "5957488b86b7bc9da95b3f86a83c69995d62772b1cccccc8c532458bd4f274b7"
-    sha256 cellar: :any,                 arm64_sonoma:  "7f5d3029b2435f9731477c0d9aa9de62729b8c9b4777b21f9512f1b25ac263f2"
-    sha256 cellar: :any,                 sonoma:        "7bfbc2af5ca3a0da762dce97694054174dec4caf4dfd1c9e3fdd30827f203f61"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb010838f16dacaec5402d16b656400a1c172e3b6b6792174e3e8c87f0a11101"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ad622d4ac0cec7598d76df0be33e0b53aa32f2125223800659f7c3582716667"
+    sha256 cellar: :any,                 arm64_tahoe:   "5cbc7d6e8bc18146f1ac21d979c84bc9a3201e9c9dd31260b525f8638dcf8c63"
+    sha256 cellar: :any,                 arm64_sequoia: "35f7e59da2297f6a7128f028ffad82f5178c3cfff3c71c232bc17541555ebdfa"
+    sha256 cellar: :any,                 arm64_sonoma:  "7103b370cbd4dd6ca99f8796b8575f1721b84ce75627c8471b84c80eb3a81bb4"
+    sha256 cellar: :any,                 sonoma:        "a1dac25b376a06b88264a10d907b260c8c2f52ab2658fa49fe33612129629260"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9db1856d34a05365e875025908d91a1c257a5760c236c0967d3e6994a8837d5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3552baac9f19127428535d2b0f96a92c2ccab68b9bbc25395df04e63d39cc51c"
   end
 
   depends_on "rust" => :build
@@ -96,8 +96,8 @@ class Flexget < Formula
   end
 
   resource "flask-compress" do
-    url "https://files.pythonhosted.org/packages/5d/e4/2b54da5cf8ae5d38a495ca20154aa40d6d2ee6dc1756429a82856181aa2c/flask_compress-1.23.tar.gz"
-    sha256 "5580935b422e3f136b9a90909e4b1015ac2b29c9aebe0f8733b790fde461c545"
+    url "https://files.pythonhosted.org/packages/c2/de/2ae0118051b38ab53437328074a696f3ee7d61e15bf7454b78a3088e5bc3/flask_compress-1.24.tar.gz"
+    sha256 "14097cefe59ecb3e466d52a6aeb62f34f125a9f7dadf1f33a53e430ce4a50f31"
   end
 
   resource "flask-cors" do
@@ -215,8 +215,8 @@ class Flexget < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/ea/5d/38b681d3fce7a266dd9ab73c66959406d565b3e85f21d5e66e1181d93721/more_itertools-10.8.0.tar.gz"
-    sha256 "f638ddf8a1a0d134181275fb5d58b086ead7c6a72429ad725c67503f13ba30bd"
+    url "https://files.pythonhosted.org/packages/24/24/e0acc4bf54cba50c1d432c70a72a3df96db4a321b2c4c68432a60759044f/more_itertools-11.0.1.tar.gz"
+    sha256 "fefaf25b7ab08f0b45fa9f1892cae93b9fc0089ef034d39213bce15f1cc9e199"
   end
 
   resource "packaging" do

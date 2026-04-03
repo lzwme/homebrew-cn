@@ -1,8 +1,8 @@
 class Spoofdpi < Formula
   desc "Simple and fast anti-censorship tool written in Go"
   homepage "https://spoofdpi.xvzc.dev"
-  url "https://ghfast.top/https://github.com/xvzc/SpoofDPI/releases/download/v1.3.0/spoofdpi-1.3.0.tar.gz"
-  sha256 "3483303ba31311c3245f7b5c767a6b4d8c294a633c15b15d3547a4728d342b1a"
+  url "https://ghfast.top/https://github.com/xvzc/SpoofDPI/releases/download/v1.3.1/spoofdpi-1.3.1.tar.gz"
+  sha256 "124f4848c2b095538618071700780b506930d033e8a32ae9ba9b606ad66dd6b5"
   license "Apache-2.0"
   head "https://github.com/xvzc/SpoofDPI.git", branch: "main"
 
@@ -15,17 +15,15 @@ class Spoofdpi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fcf14e3fca87b931ac66ffb8426f17eafe8567ea64ddcf200d9ba9bba8fa187f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96aaa3ee31dbe4b97918777835f03a378202d50fb92a7c1dff2fd9c816580f66"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18ef5c3bb71d5b4473c37bc5952804d921aee713a90c01b8b7831be5f8e7efeb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "23aef349182182e8a2a20bce6237e897796f926caa805af8234964bb8270e184"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdced136d2cfede0472beee2935b82692a018ec837958c9232abdd14735d916f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6eb362bea7f9b7f13448dd7cd360aed7a6ea5030edef878e9120f0c674189047"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28123e574ccf48335c2d4c560a50592a2fd042a59d75d6fb817da0a4da444d94"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72740fa322cfc0a1b51fddc770b4d7bcdd8685bee883714a08b8ceb7be85b794"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e682f4b826303fa488859b011a970733876213948ea5702a37123f28f9858a0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "14f0baf3ae84b12f86f95af9b9752da9a4321e8fcc9ac71f48f57e24682ce4c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "590d319b328c80b32d0ca618771da5b59a1c5150b578e85ca79dd7661ba96c79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd95cd2e5aa033a36b22511f336ffe541a8f4ab81dc69d3d307abde6ae2d3cd9"
   end
 
-  # One of dependency `gvisor.dev/gvisor` needs to be updated, but still go v1.26 is not supported well.
-  # Issue ref: https://github.com/xvzc/SpoofDPI/issues/365
-  depends_on "go@1.25" => :build
+  depends_on "go" => :build
 
   def install
     # Disable CGO for Linux builds
