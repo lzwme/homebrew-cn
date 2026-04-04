@@ -3,18 +3,17 @@ class LiterateGit < Formula
 
   desc "Render hierarchical git repositories into HTML"
   homepage "https://github.com/bennorth/literate-git"
-  url "https://files.pythonhosted.org/packages/67/0e/e37f96177ca5227416bbf06e96d23077214fbb3968b02fe2a36c835bf49e/literategit-0.5.1.tar.gz"
-  sha256 "3db9099c9618afd398444562738ef3142ef3295d1f6ce56251ba8d22385afe44"
+  url "https://files.pythonhosted.org/packages/61/ef/443d7a7db6d72b4f905fe43ea34b3f7f6ca5b2edc0ad241290671ef6c454/literategit-0.5.3.tar.gz"
+  sha256 "bd634cb4305d1e99f9f994c07aac2d68492f939598f776e9abb7376488378b47"
   license "GPL-3.0-or-later"
-  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53e9e9035b79074fdd76c70c10b4c03e663f4aeebd5de06c2a4006d54bc2197d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29e9fc35621839feeb70793e62453fcaa349b080b2ca0ef71ff7e47f8d6aa14f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1deccec18bfdd5c3a11958fb12ed93c9bb69a46391dd3ea45dac7923a8791850"
-    sha256 cellar: :any_skip_relocation, sonoma:        "52e1b30262f847803440d3caeaf6043885ac63094ef46175a326c4e8ca8e67ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ae8b4772ead1e786684aac2ac5f6d14118064f8baf823dbea4b0d3ba9523dc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d52288f087de750af0f59b7f241047dd2855b2930df13a22d3b7bf970b54663"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b6925bcc4d2cd98ca66c9718c64bba3e9ce9e33ac52dcab9071393f29048e07"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89c8e458d420f64da110eb59f24849b9f516a79252b81fe1e0c76ff611c71031"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a2fa92954da47c45de82d1c1cb98b5c131ba8ad46c317fc0f2ee3948406f9f8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "24ed1b94875f33458ec2e45542878931124892c57ae25a92a62647a719c07ce1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e790764cf320e398f5ed43ccdfb58281ef18c75dde3e9a4f48fe988cf054613"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c1c7daf0837e9b7b13cda7e128e01a950a073c55093e94a6dbf31ce286493b4"
   end
 
   depends_on "pkgconf" => :build

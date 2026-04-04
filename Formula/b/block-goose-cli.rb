@@ -1,8 +1,8 @@
 class BlockGooseCli < Formula
   desc "Open source, extensible AI agent that goes beyond code suggestions"
   homepage "https://block.github.io/goose/"
-  url "https://ghfast.top/https://github.com/block/goose/archive/refs/tags/v1.29.0.tar.gz"
-  sha256 "74f0aac3b31ccf439ebce7cbd28406f7a523edc9d3532fdc0423bb44375d201a"
+  url "https://ghfast.top/https://github.com/block/goose/archive/refs/tags/v1.29.1.tar.gz"
+  sha256 "faf89a8309f725c928c82f94a9ccd017dbd0fc3bf79bd3533962ba97d056f762"
   license "Apache-2.0"
   head "https://github.com/block/goose.git", branch: "main"
 
@@ -12,12 +12,12 @@ class BlockGooseCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7cfef5be567369a7ebf1b536333b9df965103b23b1c99c022fc40c8e21f52dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74b8c7d29bfadb3b7abe5ee52eac4bb103b7de494f9d5e870974326a882595b9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10032dc0b06c850c1e58afe80fd17809840c24666d184773ea1eb8c9022bc776"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1b92a38e4fa80787843444055e71dc327204caeaa04e6348385f270a0d507a3e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac5d641be1adbaa80098e78f63e11817e13873e677c3789b0e1a159eeb42708e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db6e932f829d0b8bade1b074e9982bcd89ed65d0fc485fbe4e0fbfbbdafe25fe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "99b3a76ae94d03378c6e8aaeadae8dd94c884bbc06922cc6eb9ca8307aef16f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "caf51fc4ecc8e5488af92be07ae5f80dfc6386a44eb7759e35dffcc535889520"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4fc00857795d28a5889d0d479a4d3c377602737832a6f05077a988941260423"
+    sha256 cellar: :any_skip_relocation, sonoma:        "91aae562cebf54be4cf193ef497520dd7a5ea961de3a6273a0cbede39cbcfd73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fe55141e4bf2befdded53a4a2d2b64f953aff33577375e95cd12fd2994c0f0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf2df21522323a45c6d90673a8fab2f832ac78ce25b7dea7e43a148dda4555ae"
   end
 
   depends_on "cmake" => :build

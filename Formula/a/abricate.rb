@@ -1,19 +1,18 @@
 class Abricate < Formula
   desc "Find antimicrobial resistance and virulence genes in contigs"
   homepage "https://github.com/tseemann/abricate"
-  url "https://ghfast.top/https://github.com/tseemann/abricate/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "ac3ac3c62b445501b8d82942b0d0b20404ddd9cb9a0a8deb03cbc1f446f2c379"
+  url "https://ghfast.top/https://github.com/tseemann/abricate/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "cbafe0efbdb7a0ac3d3bcd3cb2ca4a0152474d20b68c5f98da5a4c7cc25676eb"
   license "GPL-2.0-only"
-  revision 2
   head "https://github.com/tseemann/abricate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee03ede7c781fff916ac7df1911bce723a74a4b7ba314f90395979df6bba809d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee03ede7c781fff916ac7df1911bce723a74a4b7ba314f90395979df6bba809d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee03ede7c781fff916ac7df1911bce723a74a4b7ba314f90395979df6bba809d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ee03ede7c781fff916ac7df1911bce723a74a4b7ba314f90395979df6bba809d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c11abe63139f21655ba4980452b41158c6a9d5032629790bbc43c531f8742b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff02b84240e8f30d20c84def06e4f6d4fdcb7c88fb699c5fbfdd1ca86b2a24f2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cdeeab2a8f7508fca1997787b6df48f8c255662ab35e9b48f46b9725eb8df4b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cdeeab2a8f7508fca1997787b6df48f8c255662ab35e9b48f46b9725eb8df4b0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cdeeab2a8f7508fca1997787b6df48f8c255662ab35e9b48f46b9725eb8df4b0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cdeeab2a8f7508fca1997787b6df48f8c255662ab35e9b48f46b9725eb8df4b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "69a7a2317e99329bf6e2fa29e9db1bfb127a9d941ef92eb51d8c57fd02621252"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22bc97bf2b32603dcb53a3f5832c86425eb60bee776b7557623fb91091c503de"
   end
 
   depends_on "any2fasta"

@@ -1,17 +1,17 @@
 class CodeServer < Formula
   desc "Access VS Code through the browser"
   homepage "https://github.com/coder/code-server"
-  url "https://registry.npmjs.org/code-server/-/code-server-4.112.0.tgz"
-  sha256 "adca4415d5553e9a70ef755f36f6de944aa2d9180540ff42d899eb9ebe28d8c8"
+  url "https://registry.npmjs.org/code-server/-/code-server-4.113.1.tgz"
+  sha256 "2f90cd3a574deebae45f6c8bae8c13514b6142a6e219bb00f98038a17912bab7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9beab2b9faf342dbaa5285e28769f15cbca0fc7a49974eee7d55db4473e7b5de"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c5925f52f54f5c9bf28e282bb9e2c44346e0847944eb537a668b94ad50bba68"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cfe6869fc47d058252388cb1aab5d13ae038bbeeb2ff414564a36a0fed0c2c48"
-    sha256 cellar: :any_skip_relocation, sonoma:        "15ccec1a1431856575a4a0e896005bd7b3e51d3deb47be0a501b9a8ed2c068e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef1cecaa8687d64eb3e46272f9c267a6d0d4d540f844b1b21ac8f8e87d7b1bf6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "037207fb5db01520481db8969a8d2c2f5ab989ae0a2b5108e96ed0847ffe6fc0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8653350ed2e757ab63d8941055903aec0957aef4f6c67b9c4e65f63ce7ae1910"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5fd0a8e88f16203a2093a3931401617cb96a9ecdb763025c35d3787c95d20a20"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5d09f9c9454d1a55fc5e802eecd7a72d069f3112d5974d6f61ec51c135cbebf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2d97bfb4234bc05b7716e6710133f1cc0d3f98faec4218262418f71f41750718"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "24d487c57dbd3e9d3cd7cb6f7f5664950f851065f307bfe7f04342d9be31c4c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a18470494c03d290ef3aab36bac4b4431a8e3dbf47c5d60adb70a1e00105109"
   end
 
   depends_on "pkgconf" => :build
@@ -45,6 +45,9 @@ class CodeServer < Formula
     rm_r(vscode_node_modules.glob("@anthropic-ai/sandbox-runtime/vendor/seccomp/#{arch}"))
     rm_r(anthropic_node_modules.glob("@parcel/watcher-{darwin,linux}*"))
     rm_r(vscode_node_modules.glob("@parcel/watcher-{darwin,linux}*"))
+    rm_r(vscode_node_modules.glob("@github/copilot/prebuilds/{darwin,linux}*"))
+    rm_r(vscode_node_modules.glob("@github/copilot/ripgrep/bin/*/rg"))
+    rm_r(vscode_node_modules.glob("@github/copilot/clipboard/node_modules/@teddyzhu/clipboard-*/clipboard.*"))
 
     # Remove pre-built binaries where source in not available to allow compilation
     # https://www.npmjs.com/package/@azure/msal-node-runtime

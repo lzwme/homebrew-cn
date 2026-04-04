@@ -1,18 +1,18 @@
 class Lakekeeper < Formula
   desc "Apache Iceberg REST Catalog"
   homepage "https://github.com/lakekeeper/lakekeeper"
-  url "https://ghfast.top/https://github.com/lakekeeper/lakekeeper/archive/refs/tags/v0.11.5.tar.gz"
-  sha256 "9c7107649ca89efa435aaf5b871d54931ba690502f0bc504584765b37c68d85e"
+  url "https://ghfast.top/https://github.com/lakekeeper/lakekeeper/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "0831ebb452f0dd0ddd678b0970b2ad1ead7ce2945da622997cd13f91e8cead1d"
   license "Apache-2.0"
   head "https://github.com/lakekeeper/lakekeeper.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "087d1a57ea03f4abbffe75b474eca40cf0de73752b0dbed57859aabe466eb0c7"
-    sha256 cellar: :any,                 arm64_sequoia: "741fdfbb656fc23a22f89a63b1b55acdd9d1a47aa1114f24268437b0d7f73057"
-    sha256 cellar: :any,                 arm64_sonoma:  "0518ac179ddb7f4e7837b369db01cbfc266fed3aef2d18c40601b818af42ced7"
-    sha256 cellar: :any,                 sonoma:        "ff837fc31a52847c0c2c738216683172db3dcfd146096782fa2f1694ac948b7d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1001ee5d06c1dd5d4d47953426ea3315177dcec00c286ccf065e83f1aa80c84a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b99ec69f35eba54f6f9126542535b1a7210cd27718cc9e449be18b5a06a33191"
+    sha256 cellar: :any,                 arm64_tahoe:   "7a8924951600ecf35f81fa63fcb3e67bdf56c1bda649db6c1a14fa53dc40e131"
+    sha256 cellar: :any,                 arm64_sequoia: "d11a44df64540a2286d0e8436c1ba8ba0b43d40c417a6ac174bd977521dac722"
+    sha256 cellar: :any,                 arm64_sonoma:  "8177264f539c7be17c7654ed105a61faacff0a42e9aadee1a7f570b4e7ee29de"
+    sha256 cellar: :any,                 sonoma:        "a0005ccc9e68c91cdc5d38526da8af9bfa6f09689123f3a4ed33be0995b6f9ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "372008f206ec3186c1a74dd2a18cc7d8485a0c13abbce406a35dfb9e14e2eb4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "478cb48065afb02a043597135ad9f687cb5e80d112b6f75d90c048368acc0a05"
   end
 
   depends_on "cmake" => :build

@@ -5,6 +5,7 @@ class OathToolkit < Formula
   mirror "https://fossies.org/linux/privat/oath-toolkit-2.6.14.tar.gz"
   sha256 "8b1da365759f1249be57a82aec6e107f7b57dc77d813f96dc0aaf81624f28971"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
+  revision 1
 
   livecheck do
     url "https://download.savannah.gnu.org/releases/oath-toolkit/"
@@ -12,12 +13,12 @@ class OathToolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "be69513c03fa1a31c6e590fd6873033505f82612471832e327d55cfa55ae822e"
-    sha256 cellar: :any, arm64_sequoia: "031067b5c96b2a25e386455e275a1e742275e079bebe392579cfc67c86508e8f"
-    sha256 cellar: :any, arm64_sonoma:  "fbf83d68bec1c112f46fc73fa20a697f374fb28dc318c3cd03abbed5fbb4274a"
-    sha256               sonoma:        "1eeb6226466d3aa467080421151f80284865f7abf8be8b93fe2b320c3408b3c2"
-    sha256               arm64_linux:   "f8175b382aa6a5cbcfac359b445da5e60739fc745dce2ba19789085b98fb9869"
-    sha256               x86_64_linux:  "ae317354c3e8fd7ebd807e9f50e27cc2b5e06d9c3059500d5a49b0abf93b170e"
+    sha256 cellar: :any, arm64_tahoe:   "e8c95f4f09ec9349d195a5f3ae9fe7bb2fbf8db26e85c9e35a6c9486a067a673"
+    sha256 cellar: :any, arm64_sequoia: "8ee88352b7074345247d1208d9033c496787074cae517a8dace2d1e6f19c1956"
+    sha256 cellar: :any, arm64_sonoma:  "a8771c1c125e8aba500f940d688009e616a3f0f1d9369794c954065cda97b808"
+    sha256               sonoma:        "e45b792ac8ca0ade286842b7ace8c8f4b2877bab1af410df5f8fd9d1fe7a3f2b"
+    sha256               arm64_linux:   "02d0fc79f3aa20f18d76029ed09e3f3669a134e2687507ee64b151b7e74028ae"
+    sha256               x86_64_linux:  "ba94938ff24cbe9dcc373d7bbd4e6a4e58367ff2ab0b54a44eab9aa65b45e5a9"
   end
 
   head do

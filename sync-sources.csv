@@ -1419,6 +1419,7 @@ Homebrew-homebrew-core/Formula/d/darkice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/darklua.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/darkstat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dart-sdk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dartaotruntime.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dartsim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dasel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dash-mpd-cli.rb, Homebrew/homebrew-core, 1
@@ -2768,6 +2769,7 @@ Homebrew-homebrew-core/Formula/g/gputils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gpx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gqlplus.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/graalvm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grace.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gradle-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gradle-profiler.rb, Homebrew/homebrew-core, 0
@@ -7359,6 +7361,7 @@ Homebrew-homebrew-core/Formula/t/timidity.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/timoni.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tin.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tinc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tini.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tintin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tiny-remapper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tiny.rb, Homebrew/homebrew-core, 1
@@ -8339,7 +8342,6 @@ Homebrew-homebrew-cask/Casks/a/ableton-live-standard@11.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask/Casks/a/ableton-live-suite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ableton-live-suite@10.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ableton-live-suite@11.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/a/abscissa.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/abstract.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/abyssoft-teleport.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/accessmenubarapps.rb, Homebrew/homebrew-cask, 0
@@ -9682,7 +9684,6 @@ Homebrew-homebrew-cask/Casks/f/filemonitor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/filen.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/filepane.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/filo.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/f/final-cut-library-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/final-fantasy-xiv-online.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/finalshell.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/finbar.rb, Homebrew/homebrew-cask, 0
@@ -14412,6 +14413,7 @@ Homebrew-homebrew-cask/Casks/r/r-name.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/racket.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/radar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/radarr.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/r/radial.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/radio-silence.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/radiola.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/raiderio.rb, Homebrew/homebrew-cask, 1
@@ -15017,6 +15019,7 @@ Homebrew-homebrew-cask/Casks/s/sunvox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/supacode.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/supasidebar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/super-productivity.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/super.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/supercollider.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/superduper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/superhuman.rb, Homebrew/homebrew-cask, 0

@@ -1,35 +1,33 @@
 class Zsign < Formula
   desc "Cross-platform codesigning tool for iOS apps"
   homepage "https://github.com/zhlynn/zsign"
-  url "https://ghfast.top/https://github.com/zhlynn/zsign/archive/refs/tags/v0.9.9.tar.gz"
-  sha256 "530252e5ae7df80e0ac84e9a9fac4f2529ef383d9816343c0bff9fc6e2c30ae8"
+  url "https://ghfast.top/https://github.com/zhlynn/zsign/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "3ea97b5ff96b5e115757dfca969378c38682507282d30e2a4583b2a2264e65e7"
   license "MIT"
   head "https://github.com/zhlynn/zsign.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "76583aae3de3b1390cd89155b2c58e799b623eec7cf8e9dec9a60db8922cb36f"
-    sha256 cellar: :any,                 arm64_sequoia: "67949bf4c3844e6f304f0c20e4a818ce6fa3e99da6ae803e7def7e113dc29e1b"
-    sha256 cellar: :any,                 arm64_sonoma:  "402a83a4ec47777f58d208e16cd06da6ef28fd1f22ce5cc0fea474e5685b592b"
-    sha256 cellar: :any,                 sonoma:        "3a113b98c9c54d37aea02eeb68b12ed1324a956fa841a2dda0c20ed9fb37e849"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc8673d16d8419c4ce1f67130c00f6bbbbe365df91a77d3d1ff63338f0f91ae5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ff381d5c8e12dfef0e6e03a1ea9dcc81b61236f58e4a13b4d1b2d6858f3f8b4"
+    sha256 cellar: :any,                 arm64_tahoe:   "69b6cbea96b12a6e42af80650fb3e2b99f1c812cd74b203c354da210b48e77c0"
+    sha256 cellar: :any,                 arm64_sequoia: "66764ca15e0684eaa8eca50d29ba7e9ef4223b6f8be90c886b299c0fe539d35d"
+    sha256 cellar: :any,                 arm64_sonoma:  "1607d3b1ecb6288d2bb0695125ff2b69629211cf57655b8066d9130df97165cd"
+    sha256 cellar: :any,                 sonoma:        "2a3a5c6a5924f543f1c8b1dd80bf5f4d768777b4d0911523dff74dc287fd4f6e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02cbc54a073b163e0d9adf396bfd028e0568ff415e45d0aa20a01c81645e66d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0aa7130b30d71609c5c84078e77e86cd510f146cbf51f2435e85f40f670ecf7"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "minizip"
+  depends_on "minizip-ng"
   depends_on "openssl@3"
+
+  # Use minizip-ng in Linux Makefile, upstream PR: https://github.com/zhlynn/zsign/pull/386
+  patch do
+    url "https://github.com/zhlynn/zsign/commit/d4c32a6c877a62cf4b0b39dcefcd37e898f940b8.patch?full_index=1"
+    sha256 "0d7e25f328016f2b5d21f67db07d300a0ff928a1d9aba213e8b9336b10013905"
+  end
 
   def install
     build_dir = OS.mac? ? "build/macos" : "build/linux"
-    # Makefile hardcodes CXX=g++
-    args = ["-C", build_dir, "CXX=#{ENV.cxx}"]
-
-    if OS.linux?
-      # zsign messes up the zip include path on Linux
-      args << "CXXFLAGS=-std=c++11 -O3 -Wno-unused-result -I#{Formula["minizip"].opt_include}/minizip"
-    end
-
-    system "make", *args
+    system "make", "-C", build_dir, "CXX=#{ENV.cxx}"
     bin.install "bin/zsign"
   end
 

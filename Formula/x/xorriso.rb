@@ -1,10 +1,9 @@
 class Xorriso < Formula
   desc "ISO9660+RR manipulation tool"
   homepage "https://www.gnu.org/software/xorriso/"
-  url "https://ftpmirror.gnu.org/gnu/xorriso/xorriso-1.5.6.pl02.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/xorriso/xorriso-1.5.6.pl02.tar.gz"
-  version "1.5.6.pl02"
-  sha256 "786f9f5df9865cc5b0c1fecee3d2c0f5e04cab8c9a859bd1c9c7ccd4964fdae1"
+  url "https://ftpmirror.gnu.org/gnu/xorriso/xorriso-1.5.8.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/xorriso/xorriso-1.5.8.tar.gz"
+  sha256 "319e3675cd7d986bf71d36596ca7b03dac172a758462bedcbbd298a7f86f36cc"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -13,13 +12,12 @@ class Xorriso < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fceeb65166fc6b9aec4b74b77897da475a890384717df9ebc46488a3bfbcdeb5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "695c33db8e91cf5c45d8024768eeeaa32d7d51268344d150367355c569b70518"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c85c0022f31b62c5e5949ecfacc9178ef58afb8ef8a89fb9bfeadca4326980b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7393a7926142ea960892a3b72efc423f4600ebe0be7cf089f8d94201edd5c5e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6bf70c1bb510be7dee6854d6e6ef20c69da79b2c080d42c3d0a2b84c8f783c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f19040f286ffb85071c95e2633570117b4fa2e68196c3d42b2ca178ec8d8805"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "629036e47e08270cae6d7f8fb3458362c13fa65fcf0eff184f9b7e16fa88d924"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0870121ca2a235cf92df9b033c5185397ed34627385c88d067be0a5abd5a030d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a15a3ec01f7900d30dafcc7e47027dfb9f9eca88144760e7a62ce46d71e62e18"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ef488f42015efaeeecca1d86e66d25f2bb34e6051be0e10ebdcc8ac662088ed5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aec46fc839997683dd3d971c7e680af63a5e9d4872f29e38fc5bc332976fc905"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "263686a59bb925025a40ca2a0bfaf1b1e37b29a43ca68e056b33c4385196d30d"
   end
 
   on_linux do

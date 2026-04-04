@@ -3,19 +3,18 @@ class Hf < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/8e/2a/a847fd02261cd051da218baf99f90ee7c7040c109a01833db4f838f25256/huggingface_hub-1.8.0.tar.gz"
-  sha256 "c5627b2fd521e00caf8eff4ac965ba988ea75167fad7ee72e17f9b7183ec63f3"
+  url "https://files.pythonhosted.org/packages/88/bb/62c7aa86f63a05e2f9b96642fdef9b94526a23979820b09f5455deff4983/huggingface_hub-1.9.0.tar.gz"
+  sha256 "0ea5be7a56135c91797cae6ad726e38eaeb6eb4b77cefff5c9d38ba0ecf874f7"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e9f2e3cb71a3d8184db5696be43ad9122436c94742c44560036c429cdacf88fa"
-    sha256 cellar: :any,                 arm64_sequoia: "38d84e9fe7c6e9f6349aae4a6ce18b82ae84e4df74977bd5d6af9cf51f98751c"
-    sha256 cellar: :any,                 arm64_sonoma:  "071d58766c5dceb62c0b8ec475a0a8e00872be53c9aafe8eadfcabd05cad6448"
-    sha256 cellar: :any,                 sonoma:        "40ee5c5c45283ccb02af7d65955abc1a269cb6ea3bee2427b311239b4c14558c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "287f6c7ba546a1cc75b82eb1672a30777e98435dca43dcc90c755d6453674aab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf1dbf1f96812cdfd1e95f1ccceafaca2ab7e17c65a5ba01840175f86d726a37"
+    sha256 cellar: :any,                 arm64_tahoe:   "28b360620c80ba612fcdb947a566619b41128ef021f5b7b48d3a9aabeb7b4677"
+    sha256 cellar: :any,                 arm64_sequoia: "d82d9b64bd52f1fdecb622c931628936b845dc13c2a837673afd93f57dc1c428"
+    sha256 cellar: :any,                 arm64_sonoma:  "fcd151bbc0dac1be836ca8002c494e61246b1f31a6ed54f558ffb953e46c74f2"
+    sha256 cellar: :any,                 sonoma:        "affbd2672cf7d239ac5b23aadc0353288ff2fe0c3a563f14da6518b3d24a6534"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fe9fe958ec18d4202e44191afcb76265486730f4c1e4e0e4bbaaf849b052e98"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "806927ee6881ce8914393e869fa0a187e3b529bc8fb30c1deecd492ca72cfb0f"
   end
 
   depends_on "pkgconf" => :build
@@ -64,8 +63,8 @@ class Hf < Formula
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/09/08/23c84a26716382c89151b5b447b4beb19e3345f3a93d3b73009a71a57ad3/hf_xet-1.4.2.tar.gz"
-    sha256 "b7457b6b482d9e0743bd116363239b1fa904a5e65deede350fbc0c4ea67c71ea"
+    url "https://files.pythonhosted.org/packages/53/92/ec9ad04d0b5728dca387a45af7bc98fbb0d73b2118759f5f6038b61a57e8/hf_xet-1.4.3.tar.gz"
+    sha256 "8ddedb73c8c08928c793df2f3401ec26f95be7f7e516a7bee2fbb546f6676113"
   end
 
   resource "httpcore" do
@@ -156,7 +155,7 @@ class Hf < Formula
   test do
     ENV["HUGGINGFACE_HUB_CACHE"] = testpath
     ENV["NO_COLOR"] = "1"
-    assert_match "Not logged in", shell_output("#{bin}/hf auth whoami")
+    assert_match "Not logged in", shell_output("#{bin}/hf auth whoami 2>&1", 1)
     assert_match "No cached repositories found.", shell_output("#{bin}/hf cache ls")
   end
 end
