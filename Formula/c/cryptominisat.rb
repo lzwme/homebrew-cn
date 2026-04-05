@@ -1,8 +1,8 @@
 class Cryptominisat < Formula
   desc "Advanced SAT solver"
   homepage "https://www.msoos.org/cryptominisat5/"
-  url "https://ghfast.top/https://github.com/msoos/cryptominisat/archive/refs/tags/release/v5.14.2.tar.gz"
-  sha256 "8ffe7da6ed6716b83a7f4ec26b89d680d7afbb390bc3628d68898d3bc36a9d27"
+  url "https://ghfast.top/https://github.com/msoos/cryptominisat/archive/refs/tags/release/v5.14.3.tar.gz"
+  sha256 "0ed3b7ec51ae44a9c58858459552b58783b6ab5663b11b79a8289de4b9ed6cab"
   # Everything that's needed to run/build/install/link the system is MIT licensed. This allows
   # easy distribution and running of the system everywhere.
   license "MIT"
@@ -14,12 +14,12 @@ class Cryptominisat < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1f616764d075894c180a60ed93683a82e79954292c3600d07be10afcdb7de1f3"
-    sha256 cellar: :any,                 arm64_sequoia: "557300de80471bc78009251d973f5789f2a3365b50d91d5acc3097cc6d5babc3"
-    sha256 cellar: :any,                 arm64_sonoma:  "219191f361770cf83e0d5a365cb48822698810e73f87c0b4e1761b3f83410568"
-    sha256 cellar: :any,                 sonoma:        "c9e10a84c97f5032c9e750222038553a4c86a906d9f9673d7f0c0dcdb18ffb62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d4c7cd1f36648a97af46e599c76a929b05920cee3b13e28acc6921e304c2b66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c00665e16db04514a98fc6175032b5b5c6746709b7d61ce54ca570d2f9b1b78"
+    sha256 cellar: :any,                 arm64_tahoe:   "793241bdc8bff995a4db02cce9bda882ab6e148011f92a4f5e9b59e41a79edee"
+    sha256 cellar: :any,                 arm64_sequoia: "213c68da9d40f83b531728a8693da5b69b1ca5397c70e37d4c5090e2fcf08ff7"
+    sha256 cellar: :any,                 arm64_sonoma:  "75233926b63055af5ae7274e0ec09746393eb43a180732832935fab093d88925"
+    sha256 cellar: :any,                 sonoma:        "1ad17d8a2bf7e6135a86b97af2b16e206c0fb7578c7fdd7317b21bdec700c4e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ba0cbf372ec2733828781b1f981552a061424eafdcde43273a132b4841f1474"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebc4fe546bc60bf4c13c60e2350cb905caf69b6ead1db90dd6250d16376570f0"
   end
 
   depends_on "cmake" => :build

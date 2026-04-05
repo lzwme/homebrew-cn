@@ -1,8 +1,8 @@
 class NodeExporter < Formula
   desc "Prometheus exporter for machine metrics"
   homepage "https://prometheus.io/"
-  url "https://github.com/prometheus/node_exporter/archive/refs/tags/v1.10.2.tar.gz"
-  sha256 "aeb88ad980fd87ee08b1b3e5c70977c32065115cc8152e3fc846e2d60b2a662f"
+  url "https://github.com/prometheus/node_exporter/archive/refs/tags/v1.11.0.tar.gz"
+  sha256 "17728be6a733072e4e3f60b0cdd4821d99a483d737e0f84f4db7f23599ebe137"
   license "Apache-2.0"
   head "https://github.com/prometheus/node_exporter.git", branch: "master"
 
@@ -12,12 +12,12 @@ class NodeExporter < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f221086f0c4d0faf31f467605f6ac41e9111836a1e2c0411c7452c30f45b378"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e314e1b9ea5776a9a985db9dcab4bdf28e184b57f14c8e40d7b71062bfce3e44"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37234e077521900645ffcec0585ad20637d8849fa7b2fc49c32fba8782f4c87a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "db269f3eb33791698f3cc0ec9be4caa50e13de7586b863ad7b192c3bed04dc60"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbf70540445b072f8d6ac83d0720e656dea7b8ccd97eb5c0ef5e4f109e97345e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba514952afa5b376f711f35be1ee2ba1b6532824771e762c0c59d5d83a6033ba"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3da123b95ed947817f2944faa9b891395d7d2fa297e37770f854ac8f71fa5f69"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b15880b34a58bccfdf002ffc91b5ade1b261f37b72270024ace65098cc2d8b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c58ebf5eed0d50ef3913e4ae3886aa042a0cd63e3322a27760c751afe9658bd5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5a3f493760ce3328132891c13c89472b18c7bd229cbf5908915130a2c17fc80d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "adb32857fb74056291f0954cd66a6af71a29517062b76c2a03ded006d4232891"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce83bdfadebf680e55fe7bc929ff0b3a64e3c9e198d3f412d6a87e4e32b7c2cc"
   end
 
   depends_on "go" => :build

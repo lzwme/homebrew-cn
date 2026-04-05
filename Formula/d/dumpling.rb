@@ -1,10 +1,19 @@
 class Dumpling < Formula
   desc "Creating SQL dump from a MySQL-compatible database"
   homepage "https://github.com/pingcap/tidb"
-  url "https://ghfast.top/https://github.com/pingcap/tidb/archive/refs/tags/v8.5.5.tar.gz"
-  sha256 "2dee41c6e6f1251ef5aa820cbb8c47950069e3e2baeb26072604d6be25498ecd"
   license "Apache-2.0"
   head "https://github.com/pingcap/tidb.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/pingcap/tidb/archive/refs/tags/v8.5.5.tar.gz"
+    sha256 "2dee41c6e6f1251ef5aa820cbb8c47950069e3e2baeb26072604d6be25498ecd"
+
+    # Support Go 1.26: https://github.com/pingcap/tidb/pull/66254
+    patch do
+      url "https://github.com/pingcap/tidb/commit/f641265e809082c88161f92d5c38cb6caa700ed3.patch?full_index=1"
+      sha256 "3484b5c03bc2169f5408d9f95776b3f57a4c6bb6bc7a01cfa50e2da00494821d"
+    end
+  end
 
   livecheck do
     url :stable
@@ -20,8 +29,7 @@ class Dumpling < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfc64eb60af9ecd9ba221226e92abf183890db5e55ebfca027681ec52c0a2700"
   end
 
-  # Unpin go when release supports Go 1.26. Ref https://github.com/pingcap/tidb/issues/65761
-  depends_on "go@1.25" => :build
+  depends_on "go" => :build
 
   def install
     project = "github.com/pingcap/tidb/dumpling"
