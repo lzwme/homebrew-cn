@@ -1,14 +1,13 @@
 class Pciutils < Formula
   desc "PCI utilities"
   homepage "https://github.com/pciutils/pciutils"
-  url "https://ghfast.top/https://github.com/pciutils/pciutils/archive/refs/tags/v3.14.0.tar.gz"
-  sha256 "9f99bb89876510435fbfc47bbc8653bc57e736a21915ec0404e0610460756cb8"
+  url "https://ghfast.top/https://github.com/pciutils/pciutils/archive/refs/tags/v3.15.0.tar.gz"
+  sha256 "06f467642057599acf396bc17340452fac3308f1e08be19e0c32587e42d7017b"
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_linux:  "1365e67a35ba8ba7e9ab1988409a040861f7086a21e98ba80a61c634ba022cd2"
-    sha256 x86_64_linux: "a202068569c6c4beb49b207d584ffbf6a586ef55cb330e7fe305bda336bd1ea8"
+    sha256 arm64_linux:  "363c0403500443312c609f1030b16e089f78dd7470ae6446efd4c875d463911d"
+    sha256 x86_64_linux: "7c95c0b0a9eb96b489dd2e772e6fa7e1e195fa5a5b679fdeea457b4b9fa8a583"
   end
 
   depends_on :linux # arm64 macOS is not supported: https://github.com/pciutils/pciutils/issues/111

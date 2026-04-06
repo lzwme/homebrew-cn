@@ -3,7 +3,7 @@ class Ejabberd < Formula
   homepage "https://www.ejabberd.im"
   url "https://ghfast.top/https://github.com/processone/ejabberd/archive/refs/tags/26.03.tar.gz"
   sha256 "584b9d43a1f67e929fdb08fa7429f359fabc022923aca311666b1073ed709a52"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
   head "https://github.com/processone/ejabberd.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a

@@ -1,17 +1,17 @@
 class Mailpit < Formula
   desc "Web and API based SMTP testing"
   homepage "https://mailpit.axllent.org/"
-  url "https://ghfast.top/https://github.com/axllent/mailpit/archive/refs/tags/v1.29.5.tar.gz"
-  sha256 "4fbd01c8675edcbab7354ec564ecb537ebec0f74f28ce174f4652310b7505aa6"
+  url "https://ghfast.top/https://github.com/axllent/mailpit/archive/refs/tags/v1.29.6.tar.gz"
+  sha256 "fa8bfc5a70ee20212f3bbfa1333d4a7b99f8e706f26d83a73143c4db1f0a45fd"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e365b1c3da6c23b88b204be7f07810b023aa2d71c6f7507e3aa38f106ac6f429"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "deef28418fc24c217ba70d80e6a7eaeafec4aefc49125bf33214ceb10a1ee003"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "078ef6f344fd861cf3936646cb93d57b09df926b05ffd842566c5bf8b60cf74e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "92735655f2ca34fc8792d1e32769aa75c38ecabedc65c57934a7771c261da4e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0dd8bac69d5cc8364d6dd2b6f74b80847296fce4f4b335fd1dbcdae5e4eed4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e3f6ce9ba95ae1dc042b21e8473e4e30219469d4a14799f835cd371f7ee44d7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b36ead8b415440507a029be3c3172c7a03c30c1dfdb81f1a715d7689f5b5e2b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1edd29d973c949bef116b5c2373aecdf73058164f4db945e38870c0ee3d7185a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7387a68cd405c948d63be0f38caa3aeadc3361aebfdd4b0be170661ccbf65130"
+    sha256 cellar: :any_skip_relocation, sonoma:        "25c117dbf85dd098b16323e782013f8c260835d99dfbf54f1bfa0cf3a3c11d41"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ee7f242d053ee0ab12b90fdd925359b444336a6bf7f7f46e9054ec7e1c736c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58a640cfc8b764a1cb244d537f356a7f5c7947509dfc5b8b6dcfd8078a0864d3"
   end
 
   depends_on "go" => :build
@@ -40,6 +40,6 @@ class Mailpit < Formula
     output = shell_output("#{bin}/mailpit sendmail < #{testpath}/test_email.txt 2>&1", 11)
     assert_match "error parsing message body: malformed header line", output
 
-    assert_match "mailpit v#{version}", shell_output("#{bin}/mailpit version", 1)
+    assert_match "mailpit v#{version}", shell_output("#{bin}/mailpit version")
   end
 end

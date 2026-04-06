@@ -1,8 +1,8 @@
 class DoviTool < Formula
   desc "CLI tool for Dolby Vision metadata on video streams"
   homepage "https://github.com/quietvoid/dovi_tool/"
-  url "https://ghfast.top/https://github.com/quietvoid/dovi_tool/archive/refs/tags/2.3.1.tar.gz"
-  sha256 "090888c35da017e290614b70108653ea975034c23b48ddd459538a1a6e4cc05a"
+  url "https://ghfast.top/https://github.com/quietvoid/dovi_tool/archive/refs/tags/2.3.2.tar.gz"
+  sha256 "8e1ca50219a68ba27a200ea1dd4210a6ef232b5f66d1b6ffc4a8303c87fe16bf"
   license "MIT"
   head "https://github.com/quietvoid/dovi_tool.git", branch: "main"
 
@@ -12,13 +12,12 @@ class DoviTool < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "4fe6538417109e21ad4f85ac51d122561c7422367924a76b001c757f4da239f3"
-    sha256 cellar: :any,                 arm64_sequoia: "627d237f20823e9808125da935ee82b276525efb00e513a1da9608c384014fdd"
-    sha256 cellar: :any,                 arm64_sonoma:  "33fd11db3b81785613f4ef467e416650efad1b9f2b902466530623bf6bea66b3"
-    sha256 cellar: :any,                 sonoma:        "ba6d602037df67196a73a5d2f9e2839976e3b0587bba61d7769783231957c432"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c791123617f40517602bd82e316ab8eb4045e146dc01291ebdc50dd58f76b88e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb370cab1028ed749676dbde706c1b2bfaf58f5057cef5edaf31e4b2d1b3c5ab"
+    sha256 cellar: :any,                 arm64_tahoe:   "81c1c94dd315789c85def55bb8fcb7f297be401239e9132f2f4c22baf7009532"
+    sha256 cellar: :any,                 arm64_sequoia: "4fd138789438a2e488019d70154c52c9e41f31261baa99db926bd0b0ae65ab1a"
+    sha256 cellar: :any,                 arm64_sonoma:  "e08172d3ba5dbb923ba92b064377338c4d4be1ed9ad8503e5d9da1487281d432"
+    sha256 cellar: :any,                 sonoma:        "39f780763832297e81d97b3d729e4b8505876f10c2892974fc7e45ba2c26eff7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c986986476ecea0de572803691294ef2607bd8a963000f088f23ebf7a173fb05"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97d80749c54d45aa4d0ec45a54ecdb421dd3005b106f86a4412ac23ec9c47bb4"
   end
 
   depends_on "cargo-c" => :build

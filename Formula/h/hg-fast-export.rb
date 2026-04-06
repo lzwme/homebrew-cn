@@ -3,24 +3,13 @@ class HgFastExport < Formula
 
   desc "Fast Mercurial to Git converter"
   homepage "https://repo.or.cz/fast-export.git"
+  url "https://ghfast.top/https://github.com/frej/fast-export/archive/refs/tags/v260405.tar.gz"
+  sha256 "23af10aed62096a25f54012e37a16f5137d221f7e862dd559eba1ecf56ff1dbe"
   license "GPL-2.0-or-later"
-  revision 2
   head "https://github.com/frej/fast-export.git", branch: "master"
 
-  stable do
-    url "https://ghfast.top/https://github.com/frej/fast-export/archive/refs/tags/v250330.tar.gz"
-    sha256 "1c4785f1e9e63e0ada87e0be5a7236d6889eea98975800671e3c3805b54bf801"
-
-    # Backport fix for mercurial 7.2
-    patch do
-      url "https://github.com/frej/fast-export/commit/76db75d9631fc90a25f58afa39b72822e792e724.patch?full_index=1"
-      sha256 "68c61af1c95ce55e9f41c18cbf6f7858139d6153654d343a639b30712350540b"
-    end
-  end
-
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "608ef4e7b632bb7795fe1162ad7c351c7c50f25ddd684075f3d353cbda11a0e6"
+    sha256 cellar: :any_skip_relocation, all: "d63cc3af8e41294758be1e5b4b50e4a4fa117f7d9ce782afb62ad2629db42cdc"
   end
 
   depends_on "mercurial"

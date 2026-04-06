@@ -255,19 +255,9 @@ class V8 < Formula
       v8_enable_temporal_support:   false,
     }
 
-    # workaround to use shim to compile v8
-    llvm = Formula["llvm"]
-    clang_base_path = buildpath/"clang"
-    clang_base_path.install_symlink (llvm.opt_prefix.children - [llvm.opt_bin])
-    (clang_base_path/"bin").install_symlink llvm.opt_bin.children
-    %w[clang clang++].each do |compiler|
-      rm(clang_base_path/"bin"/compiler)
-      (clang_base_path/"bin"/compiler).write_env_script Superenv.shims_path/"llvm_#{compiler}", _skip: ""
-      chmod "+x", clang_base_path/"bin"/compiler
-    end
-
     # uses Homebrew clang instead of Google clang
-    gn_args[:clang_base_path] = "\"#{clang_base_path}\""
+    llvm = Formula["llvm"]
+    gn_args[:clang_base_path] = "\"#{llvm.opt_prefix}\""
     gn_args[:clang_version] = "\"#{llvm.version.major}\""
 
     if OS.linux?

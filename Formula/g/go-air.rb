@@ -1,18 +1,18 @@
 class GoAir < Formula
   desc "Live reload for Go apps"
   homepage "https://github.com/air-verse/air"
-  url "https://ghfast.top/https://github.com/air-verse/air/archive/refs/tags/v1.64.5.tar.gz"
-  sha256 "344202da98e4497825feb7459a6728ea113fffcf661215cf1ee4f313f3324a86"
+  url "https://ghfast.top/https://github.com/air-verse/air/archive/refs/tags/v1.65.0.tar.gz"
+  sha256 "4322f6f331b2f8e62c7b2afb4b94c903d09cfbb710098cb2020ebdcfb162ccc1"
   license "GPL-3.0-or-later"
   head "https://github.com/air-verse/air.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12f3bc2d4b5e5fdcbd76612520f2906ee79c4fb0f768ce29eb0d3147d8cd92c6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12f3bc2d4b5e5fdcbd76612520f2906ee79c4fb0f768ce29eb0d3147d8cd92c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12f3bc2d4b5e5fdcbd76612520f2906ee79c4fb0f768ce29eb0d3147d8cd92c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b28c28519a3700172e21c7f4d30990c30433a39a28bf2759b22f79197229fe9b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "970f3b4df1c5a7bcd28eeab5f1e3f6f0ab1f412ebba43f253a082b0ec9ef9627"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42c93ec8eeda78f5fa45f843478cbf42feaa3764656888dfccee773348e4a2c2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6b475f93b371203e0d49a35998482f5ad82ec0890f4a09df7d0cb1641270b28d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b475f93b371203e0d49a35998482f5ad82ec0890f4a09df7d0cb1641270b28d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b475f93b371203e0d49a35998482f5ad82ec0890f4a09df7d0cb1641270b28d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "33c7ea4186e5762a2d27443b105125232cff3935b2856792842de20623b321a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f54390402dfa4b24043cb4bb6e91d9f1f63469be496ae1dce2a0b56c606ac375"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "067f61597a529e66b8a62b05f9a2c853304791da56aa203649b26c558b6c181d"
   end
 
   depends_on "go"
@@ -20,18 +20,17 @@ class GoAir < Formula
   conflicts_with "air", because: "both install binaries with the same name"
 
   def install
-    ldflags = [
-      "-s", "-w",
-      "-X", "'main.BuildTimestamp=#{time.iso8601}'",
-      "-X", "'main.airVersion=v#{version}'",
-      "-X", "'main.goVersion=#{Formula["go"].version}'"
+    ldflags = %W[
+      -s -w
+      -X main.BuildTimestamp=#{time.iso8601}
+      -X main.airVersion=v#{version}
+      -X main.goVersion=#{Formula["go"].version}
     ]
-
     system "go", "build", *std_go_args(ldflags: ldflags.join(" "), output: bin/"air")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/air -v")
+    assert_match version.to_s, shell_output("#{bin}/air -v 2>&1")
     (testpath/"air-test").mkpath
     cd testpath/"air-test" do
       system "go", "mod", "init", "air-test"

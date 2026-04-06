@@ -26,7 +26,10 @@ class AbAv1 < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/ab-av1 --version")
 
-    system bin/"ab-av1", "encode", "-i", test_fixtures("test.mp4"), "--crf", "32", "-o", testpath/"test.av1.mp4"
+    # Create a 5 second test MP4 (same as ffmpeg test) as the test fixture is too minimal
+    system Formula["ffmpeg"].bin/"ffmpeg", "-filter_complex", "testsrc=rate=1:duration=5", "test.mp4"
+
+    system bin/"ab-av1", "auto-encode", "-i", "test.mp4", "-o", testpath/"test.av1.mp4"
     assert_path_exists testpath/"test.av1.mp4"
   end
 end

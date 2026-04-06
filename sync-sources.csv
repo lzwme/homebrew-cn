@@ -6455,6 +6455,7 @@ Homebrew-homebrew-core/Formula/r/rustcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustledger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustls-ffi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rustpython.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustscan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustypaste-cli.rb, Homebrew/homebrew-core, 1
@@ -6503,6 +6504,7 @@ Homebrew-homebrew-core/Formula/s/samurai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sandvault.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sane-backends.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sapling.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sarif-fmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sarif-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sassc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/savana.rb, Homebrew/homebrew-core, 0
@@ -8874,7 +8876,6 @@ Homebrew-homebrew-cask/Casks/b/butler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/butt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/buttercup.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/butterkit.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/b/buzz.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bwana.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bzflag.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/c0re100-qbittorrent.rb, Homebrew/homebrew-cask, 1
@@ -14237,7 +14238,6 @@ Homebrew-homebrew-cask/Casks/p/presentation.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/presonus-universal-control.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/prettyclean.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pretzel.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/prezi-classic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/prezi-next.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/prezi-video.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/prince.rb, Homebrew/homebrew-cask, 0
@@ -15516,6 +15516,7 @@ Homebrew-homebrew-cask/Casks/v/viable.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/viables.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vial.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vibemeter.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/v/vibeproxy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/viber.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vibetunnel.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vidcutter.rb, Homebrew/homebrew-cask, 1
@@ -15774,7 +15775,6 @@ Homebrew-homebrew-cask/Casks/x/xcodes-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xctu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xee.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xemu.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/x/xiami.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xiaomi-cloud.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/ximalaya.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xit.rb, Homebrew/homebrew-cask, 1

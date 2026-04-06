@@ -13,12 +13,13 @@ class Sui < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f92730b5dc495881609d2ece1a158bb2884de3c292332d0ebe446ad9b0a65957"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ef8331b2a1c5c904d584818179a2142beba6c89b30e7ac4b1f0ca99933f1ced"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7480de3cf91794b3e507de53ee0b478d60236d230b995bf0a819a5e9283053ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e479636d354125386c906a119091411c16bea6a1eb540a9556c37aecab5488e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29674f9dddced255764ff6a91f638b18dc060818c23620a4c78805119c3c7d06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06fdf1eb4f4b70168c4daea0c61231b3c02fbe2ccddfce8318508377d38dcfa6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0993586e9d995fc38c5df83618953e00b4973d4d115ae30e9e80cc044c030749"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e296fd0d485194dca6f7ac3517acf023dd9a963b3a24249ba3b6626793e3af9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8fb6cd0e63822a70acc1846148ab6996684261a14bfc4e79324d8ab0dfe781c7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "72634fa867c77d410eb2a1d2ead1cedff660b52dd4dd35e8d64cdfa07b451a3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "41cadd3bed1d577ad4afdfebf7371235e5b216a089d5c221da8d12e8716e425b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac7fed19d9e9b1a95d0ff6c7e8a6eacd250ba19d8574fa93a89d8c67c06877b1"
   end
 
   depends_on "cmake" => :build
@@ -32,6 +33,7 @@ class Sui < Formula
   def install
     ENV["GIT_REVISION"] = "homebrew"
     system "cargo", "install", *std_cargo_args(path: "crates/sui", features: "tracing")
+    generate_completions_from_executable(bin/"sui", "completion", "--generate", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

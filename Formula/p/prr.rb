@@ -3,7 +3,7 @@ class Prr < Formula
   homepage "https://github.com/danobi/prr"
   url "https://ghfast.top/https://github.com/danobi/prr/archive/refs/tags/v0.21.0.tar.gz"
   sha256 "891d8b2bc0397027e909750ac7891ca3d6e215acab59a48d5b2da35e60b45b8c"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
   head "https://github.com/danobi/prr.git", branch: "master"
 
   bottle do

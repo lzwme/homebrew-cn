@@ -1,23 +1,16 @@
 class NowplayingCli < Formula
   desc "Retrieves currently playing media, and simulates media actions"
   homepage "https://github.com/kirtan-shah/nowplaying-cli"
-  url "https://ghfast.top/https://github.com/kirtan-shah/nowplaying-cli/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "bb49123c66282b6495c245589313afc94875a7b0e82c9ae9f79d6f25e7503db4"
+  url "https://ghfast.top/https://github.com/kirtan-shah/nowplaying-cli/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "a495a4f6dfc75326d4ab8843c82f8b0e42ac83d88c397461ea6b7968973da01d"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "652c94eaf2850ecceee1e133439af0c303aff3b4f8ac7a56c6b18f9d09049acf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1a4b77d57e7d151e6fc408096e76e2f6273a0187e974778bec58ff4417dac115"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "028c91c0152017e30caa8f006961034ad91faedb2f92fb76d9d3a724775bf2a0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d98330f2152a1dd02ecc8a515f5ff56d2e780196e705a8367275d8ce043552c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5fbe78e350e35164e78a14b0cb853143c00824c612813d4cdd78afaa1675709e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9bdf6c603add430676f621c00b5d6c944819fb0851cb419dacda90eae42bcb43"
-    sha256 cellar: :any_skip_relocation, ventura:        "0d06f10462257cfd5c96e7e029db043499d9fffae9cb6f843714e7e115dc4288"
-    sha256 cellar: :any_skip_relocation, monterey:       "4a6d9fdc2681a4912562186b4ee2c0965e56c0ec2c9189314afb505424745bb3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "87a38ee11003d4ba859f8dda0fc11fad58d38aa2b2688205fc44e3ce91a739f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d1803bd15ca30129407a4a6b6905475b823be4fde8302bb76ce5734f5905a9c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5bcc94e36688dc8f326216284d7961b68170dea873ffd778763ee19621b9450"
+    sha256 cellar: :any_skip_relocation, sonoma:        "976e8a7cce5bb8e2f848e698df4056b0c2315fff5dcbdef6891a90affdb4bc15"
   end
-
-  # see upstream discussion, https://github.com/kirtan-shah/nowplaying-cli/issues/28
-  deprecate! date: "2026-04-17", because: :unmaintained
 
   depends_on :macos
 
@@ -27,6 +20,6 @@ class NowplayingCli < Formula
   end
 
   test do
-    assert_equal "(null)", shell_output("#{bin}/nowplaying-cli get-raw").strip
+    assert_match "{", shell_output("#{bin}/nowplaying-cli get-raw")
   end
 end
