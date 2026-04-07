@@ -26,10 +26,8 @@ class Imagemagick < Formula
   # Only add dependencies required for dependents in homebrew-core,
   # recursive dependencies or INCREDIBLY widely used and light formats in the
   # current year (2026).
-  # Add other dependencies to imagemagick-full formula or consider making
-  # formulae dependent on imagemagick-full.
+  # Add other dependencies to imagemagick-full formula.
   depends_on "freetype"
-  depends_on "glib"
   depends_on "jpeg-turbo"
   depends_on "libheif"
   depends_on "libpng"
@@ -41,11 +39,6 @@ class Imagemagick < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
-
-  on_macos do
-    depends_on "gettext"
-    depends_on "imath"
-  end
 
   on_linux do
     depends_on "zlib-ng-compat"
@@ -79,11 +72,7 @@ class Imagemagick < Formula
       "--without-jxl",
       "--without-openexr",
     ]
-    if OS.mac?
-      args += [
-        "--without-x",
-      ]
-    end
+    args << "--without-x" if OS.mac?
 
     system "./configure", *args, *std_configure_args
     system "make", "install"

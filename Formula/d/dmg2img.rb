@@ -4,7 +4,11 @@ class Dmg2img < Formula
   url "https://cdn.netbsd.org/pub/pkgsrc/distfiles/dmg2img-1.6.7.tar.gz"
   mirror "http://vu1tur.eu.org/tools/dmg2img-1.6.7.tar.gz"
   sha256 "02aea6d05c5b810074913b954296ddffaa43497ed720ac0a671da4791ec4d018"
-  license "GPL-2.0-only"
+  # OpenSSL is only used in vfdecrypt so avoids incompatibility with GPL-2.0-only
+  license all_of: [
+    "GPL-2.0-only",
+    "MIT", # vfdecrypt
+  ]
   revision 1
 
   livecheck do

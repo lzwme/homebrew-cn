@@ -7,12 +7,13 @@ class Gup < Formula
   head "https://github.com/nao1215/gup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c4640e450be7f6fd4a23d61f1cb3f07a054b816d428cb03c4beaba04b9f6d51b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4640e450be7f6fd4a23d61f1cb3f07a054b816d428cb03c4beaba04b9f6d51b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4640e450be7f6fd4a23d61f1cb3f07a054b816d428cb03c4beaba04b9f6d51b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1ea3a86bc3718a00db3924541534636135dbced36b68b52dbd875ed69420a7d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9bddaa7d40252dc0985406e8039edb5794a81da869b5ba3481e7e31c7b345677"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bb5af22727f73f5a7f1cf66541c69b19f637cf304594d454f42c60b6a996e70"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f2390d9725806d7b9d0e6fee7bbbe12f7532bc9394aeca98888db989fe1c568e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2390d9725806d7b9d0e6fee7bbbe12f7532bc9394aeca98888db989fe1c568e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2390d9725806d7b9d0e6fee7bbbe12f7532bc9394aeca98888db989fe1c568e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5aa9fb237647b1fbac0d97b265cd4148ccad3a6ad49cb930ee776feef1d7442c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a929e3e44ab7f5c5e8976fc88a8da31a7beb68ccc8890accb8837aa879da76e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad3e4aacca672f1319c31a1a1d8e95998ab07179e82687de710c8b04ae0abcf2"
   end
 
   depends_on "go"
@@ -21,8 +22,7 @@ class Gup < Formula
     ldflags = "-s -w -X github.com/nao1215/gup/internal/cmdinfo.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    # upstream bug report on powershell completion support, https://github.com/nao1215/gup/issues/233
-    generate_completions_from_executable(bin/"gup", shell_parameter_format: :cobra, shells: [:bash, :zsh, :fish])
+    generate_completions_from_executable(bin/"gup", shell_parameter_format: :cobra)
 
     ENV["MANPATH"] = man1.mkpath
     system bin/"gup", "man"

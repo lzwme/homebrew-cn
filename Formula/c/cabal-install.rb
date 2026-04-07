@@ -2,7 +2,7 @@ class CabalInstall < Formula
   desc "Command-line interface for Cabal and Hackage"
   homepage "https://www.haskell.org/cabal/"
   license "BSD-3-Clause"
-  head "https://github.com/haskell/cabal.git", branch: "3.16"
+  head "https://github.com/haskell/cabal.git", branch: "master"
 
   stable do
     url "https://hackage.haskell.org/package/cabal-install-3.16.1.0/cabal-install-3.16.1.0.tar.gz"
@@ -62,8 +62,8 @@ class CabalInstall < Formula
   end
 
   def install
-    resource("bootstrap").stage buildpath
-    cabal = buildpath/"cabal"
+    resource("bootstrap").stage(buildpath/"bin")
+    cabal = buildpath/"bin/cabal"
     cd "cabal-install" if build.head?
     system cabal, "v2-update"
     system cabal, "v2-install", *std_cabal_v2_args

@@ -1,8 +1,8 @@
 class Jruby < Formula
   desc "Ruby implementation in pure Java"
   homepage "https://www.jruby.org/"
-  url "https://search.maven.org/remotecontent?filepath=org/jruby/jruby-dist/10.0.4.0/jruby-dist-10.0.4.0-src.zip"
-  sha256 "14970303abd383e5cbdd62fc12240fc500ca56ac67043fdab12acd12c0bc33e1"
+  url "https://search.maven.org/remotecontent?filepath=org/jruby/jruby-dist/10.0.5.0/jruby-dist-10.0.5.0-src.zip"
+  sha256 "60b2e9d96f7e2cc1f3c2178584b1a1829a87493c51b3196f77a3a95ddf9b7553"
   license any_of: ["EPL-2.0", "GPL-2.0-only", "LGPL-2.1-only"]
 
   livecheck do
@@ -11,12 +11,12 @@ class Jruby < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6bb65182d298172002cf8f395d0608edefa6222e827575e5849e1ad51dee865a"
-    sha256 cellar: :any,                 arm64_sequoia: "c933a215eb77587117a4bfa0b7c47aa4cd12add469ddbd195c4707d6860369e8"
-    sha256 cellar: :any,                 arm64_sonoma:  "15a760ae69f18d4ab4e802803bcedc4660696345e0a9cddf2ccd9db51809a5c0"
-    sha256 cellar: :any,                 sonoma:        "cd35107cc3ba2df332a350399a2c1ee6c591ca3f138efd22bc1679829ef83b48"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0139a9da688e5abf02eeb8bad825e4d41649c8178aa6a15f960e5ec4383ec57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd5d25230676021c5e8cf6d7ed6854122a9d132ec297b07974255d93ea71c083"
+    sha256 cellar: :any,                 arm64_tahoe:   "f5ef40707ff77a8e7d23efd5d710838c24ff1fe5b617b62e887b8d05f5bc78c9"
+    sha256 cellar: :any,                 arm64_sequoia: "8640ddf85f5ba83554165ffb1677d73d315ee4a5f4726d3beee3a16a53d0701d"
+    sha256 cellar: :any,                 arm64_sonoma:  "cfb851e0b6b5ad7996d3f73f15b8e8fa7175b613ab93bc387cde477f05ff0b4a"
+    sha256 cellar: :any,                 sonoma:        "8a93825c15df3f2346a28fd05788ce6d96ad89422fb851750a496896c711d0ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b30e91b0f82c80041ad5aba85de851d09a04dee731f7db519f13e5a54c7e401"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0ed402f0cec32813cbf4575980143743d8ea000e03942ea5a5df3b6922e1a78"
   end
 
   depends_on "ant" => :build # for jffi
@@ -30,8 +30,8 @@ class Jruby < Formula
   uses_from_macos "libffi" # for jffi
 
   resource "jffi" do
-    url "https://ghfast.top/https://github.com/jnr/jffi/archive/refs/tags/jffi-1.3.14.tar.gz"
-    sha256 "dfc120bc832cd81940fb785bef2987bd3f54199fddbed0e62145718d5a3d3b95"
+    url "https://ghfast.top/https://github.com/jnr/jffi/archive/refs/tags/jffi-1.3.15.tar.gz"
+    sha256 "2f9dcdede918746c5784ba55c992214e30eaf62b23ad2609561730644917a189"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/jruby/jruby/refs/tags/#{LATEST_VERSION}/pom.xml"

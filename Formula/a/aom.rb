@@ -18,25 +18,24 @@ class Aom < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "jpeg-xl"
   depends_on "libvmaf"
 
   on_intel do
-    depends_on "yasm" => :build
+    depends_on "nasm" => :build
   end
 
   def install
     ENV.runtime_cpu_detection
 
-    args = [
-      "-DCMAKE_INSTALL_RPATH=#{rpath}",
-      "-DENABLE_DOCS=off",
-      "-DENABLE_EXAMPLES=on",
-      "-DENABLE_TESTDATA=off",
-      "-DENABLE_TESTS=off",
-      "-DENABLE_TOOLS=off",
-      "-DBUILD_SHARED_LIBS=on",
-      "-DCONFIG_TUNE_VMAF=1",
+    args = %W[
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DENABLE_DOCS=OFF
+      -DENABLE_EXAMPLES=ON
+      -DENABLE_TESTDATA=OFF
+      -DENABLE_TESTS=OFF
+      -DENABLE_TOOLS=OFF
+      -DBUILD_SHARED_LIBS=ON
+      -DCONFIG_TUNE_VMAF=1
     ]
 
     system "cmake", "-S", ".", "-B", "brewbuild", *args, *std_cmake_args

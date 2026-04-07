@@ -31,7 +31,6 @@ class Mplayer < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "yasm" => :build
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "jpeg-turbo"
@@ -44,6 +43,10 @@ class Mplayer < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  on_intel do
+    depends_on "nasm" => :build
   end
 
   def install
@@ -71,6 +74,8 @@ class Mplayer < Formula
       --enable-freetype
       --disable-libbs2b
     ]
+    args << "--yasm=nasm" if Hardware::CPU.intel?
+
     system "./configure", *args
     system "make"
     system "make", "install"

@@ -17,7 +17,7 @@ class Libvpx < Formula
   end
 
   on_intel do
-    depends_on "yasm" => :build
+    depends_on "nasm" => :build
   end
 
   def install

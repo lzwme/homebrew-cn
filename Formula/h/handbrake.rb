@@ -23,7 +23,6 @@ class Handbrake < Formula
   depends_on "nasm" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "yasm" => :build
 
   depends_on "dav1d"
   depends_on "freetype"

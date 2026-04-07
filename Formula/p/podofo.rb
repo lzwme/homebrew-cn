@@ -3,7 +3,19 @@ class Podofo < Formula
   homepage "https://github.com/podofo/podofo"
   url "https://ghfast.top/https://github.com/podofo/podofo/archive/refs/tags/1.0.3.tar.gz"
   sha256 "02815b21a51632c2849d41b067597e9356bbc54bad0efcd84c902b555c203ce7"
-  license all_of: ["LGPL-2.0-only", "GPL-2.0-only"]
+  # TODO: in v1.1 check if LGPL-2.0-or-later can be removed by scanning SPDX-License-Identifier
+  # https://github.com/podofo/podofo/blob/eb75c9f6d1b7b164f868433493c6560935cf981b/TODO.md
+  # https://www.mail-archive.com/podofo-users@lists.sourceforge.net/msg05022.html
+  license all_of: [
+    "LGPL-2.0-or-later",
+    { any_of: ["LGPL-2.0-or-later", "MPL-2.0"] },
+    "GPL-2.0-or-later", # tools/
+
+    # Additional licenses used in specific files
+    "Apache-2.0", # src/podofo/private/FontUtils*
+    "MIT",        # src/podofo/private/SASLprep*
+    "OpenSSL",    # src/podofo/private/OpenSSLInternal_Ripped.cpp
+  ]
   head "https://github.com/podofo/podofo.git", branch: "master"
 
   livecheck do

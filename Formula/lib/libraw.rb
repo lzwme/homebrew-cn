@@ -1,11 +1,10 @@
 class Libraw < Formula
   desc "Library for reading RAW files from digital photo cameras"
   homepage "https://www.libraw.org/"
-  url "https://www.libraw.org/data/LibRaw-0.22.0.tar.gz"
-  sha256 "1071e6e8011593c366ffdadc3d3513f57c90202d526e133174945ec1dd53f2a1"
+  url "https://www.libraw.org/data/LibRaw-0.22.1.tar.gz"
+  sha256 "a789dc4e2409e2901d93793a4e0b80c7b49d0d97cf6ad71c850eb7616acfd786"
   license any_of: ["LGPL-2.1-only", "CDDL-1.0"]
-  revision 1
-  compatibility_version 1
+  compatibility_version 2
 
   livecheck do
     url "https://www.libraw.org/download/"
@@ -13,12 +12,12 @@ class Libraw < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "84d64ea419852d30e62b845b818bf7787cdea94a320963e3c5b2aef4343cc9fd"
-    sha256 cellar: :any,                 arm64_sequoia: "103ad865d34ea2ff122569821813fbacd03684c3b5dc20554fd2e49ea28b665a"
-    sha256 cellar: :any,                 arm64_sonoma:  "8e96444be4032ee949444f0d67b874a22dfbb886ce68ddb9cfb5f06f576fb8ac"
-    sha256 cellar: :any,                 sonoma:        "9bb269ce1bd8563a0ca1941a1d40bb267e4870823ad086d3fb4fc066295c03ed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9287051f314cfdc92f385016fb6b234054b62ceaaa96d4eff9ad00d2ce08fc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e670484b1d2a43f0a67e54418f3bfbe0cc152b9940d6a6fa118820a54d6cb472"
+    sha256 cellar: :any,                 arm64_tahoe:   "6d5b21dc4697e4d359934c6d386fa2807319b1cc119e0c74ed47a4226acb9877"
+    sha256 cellar: :any,                 arm64_sequoia: "bae39130d2cb53d6b7fd5f4ee48e3412b5ec27ddcf0d8786a37490ed9f655a2b"
+    sha256 cellar: :any,                 arm64_sonoma:  "3a1c3da28c276df566c71e5646eabb2cc9797f49cd5e66c744217efa1ce3b55a"
+    sha256 cellar: :any,                 sonoma:        "352953a6564709b14b2de0d435bda8de13988b9fd35d0740018d451ae5afa4f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c17f5029564905fa71590b18366243fa2b31b5ee8c2b36cf64bf2d475abac39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d93c19ae3ffdd3ab5b5bde74661e427b81ea0d2c7070669ff0a4409e132ac55b"
   end
 
   head do

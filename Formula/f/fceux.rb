@@ -1,7 +1,11 @@
 class Fceux < Formula
   desc "All-in-one NES/Famicom Emulator"
   homepage "https://fceux.com/"
-  license "GPL-2.0-only"
+  license all_of: [
+    "GPL-2.0-or-later",
+    "LGPL-2.1-or-later", # src/drivers/common/{hq2x.cpp,nes_ntsc*}
+    "MIT", # src/emufile*, src/drivers/Qt/TasEditor/, src/lua/
+  ]
   revision 9
   head "https://github.com/TASEmulators/fceux.git", branch: "master"
 

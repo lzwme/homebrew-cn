@@ -1,18 +1,18 @@
 class Odbc2parquet < Formula
   desc "CLI to query an ODBC data source and write the result into a Parquet file"
   homepage "https://github.com/pacman82/odbc2parquet"
-  url "https://ghfast.top/https://github.com/pacman82/odbc2parquet/archive/refs/tags/v9.0.0.tar.gz"
-  sha256 "22f123a29d29a435a881adebece56154204ead2c6ce7dc9b5b8d128dc77afda6"
+  url "https://ghfast.top/https://github.com/pacman82/odbc2parquet/archive/refs/tags/v10.0.0.tar.gz"
+  sha256 "d76320c3b3704f89de9c00e1886441970b04379639704562277907f763b429eb"
   license "MIT"
   head "https://github.com/pacman82/odbc2parquet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "99df96eb4d73bc70708908c7b6a75bf73ebed8b2af94ea2994667d78395e9f78"
-    sha256 cellar: :any,                 arm64_sequoia: "67c3dd54eca980e404629d9702300257f2791eeb93c369e1c7cf01766cf22eb1"
-    sha256 cellar: :any,                 arm64_sonoma:  "31b6dd2da1099b1f22e722286a83e90bf0e06da9d24ac2433a592ad49c14261b"
-    sha256 cellar: :any,                 sonoma:        "a962e03f312a2fe3a06ba07f107b20f6333ba6dc0eef98b81e9dad0a35cf8fc5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fb90bb872b855d6d4f3252f324ddad76512bdfc31cbd5eb484ea194e82b9bd2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf17b60278f788a2ff577ccd6edb20aee0e7252e7e38de01360a2e9432b88b11"
+    sha256 cellar: :any,                 arm64_tahoe:   "52256984f6e35aa7d8a5a1ad9c74a18f83342027bfd3fd4d58f036f09413a655"
+    sha256 cellar: :any,                 arm64_sequoia: "6f4720ed367ce3fd82caa58c9c492c9c323340a321ff77a163696fae19e8ebe0"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac96aad8997492e9406bfb8a81a1abfb063743f04a00e96599f57cdab7c1700c"
+    sha256 cellar: :any,                 sonoma:        "ac450d1ca884823d0bb2e85a65425d028c68a6c9fd333ca5923505022743cc25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "99777c273d431588944ede311c4d57c22709a7f0c4f9f8602c304b5e131a7330"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61835b70c2ade1ac88458b85cda1a5e04dc68b1668d5105b6d7693dd0cdd0cc8"
   end
 
   depends_on "pkgconf" => :build

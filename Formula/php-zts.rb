@@ -30,6 +30,8 @@ class PhpZts < Formula
     "Zlib",                  # 8
   ]
 
+  revision 1
+
   livecheck do
     url "https://www.php.net/downloads?source=Y"
     regex(/href=.*?php[._-]v?(\d+(?:\.\d+)+)\.t/i)
@@ -37,12 +39,12 @@ class PhpZts < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_tahoe:   "891bff6834268dec70ff63ca67842027e6444509850d56c58a0506d8e7fd432e"
-    sha256 arm64_sequoia: "c2a3508899b2164e06dfa9ff74138417c667ee61fea6dd7d8f4f1f3606b8a266"
-    sha256 arm64_sonoma:  "d24863aeff919ac009615c9d42f7de41e94aa8c34623a9498a3b3ca5e80ae938"
-    sha256 sonoma:        "461f0f8337f71260d6728737ca530f0a2548fde5db2671decbb1c800f1a649b0"
-    sha256 arm64_linux:   "231c60233915165fe932d5b0d54a0201f1cb7098194c9d39a34007fe59863a39"
-    sha256 x86_64_linux:  "fc0da17980d84bbbefb868d00fb80e8581ab4628c15c2f9ba78cc7687f07d68e"
+    sha256 arm64_tahoe:   "e94fa44bf72827ec6b6c84762014257ae88d593f1a0994e23a3ae152f10c90f8"
+    sha256 arm64_sequoia: "41316df2360eda64271a949d2f8f06705a598867a4b08f1a8c0ab6c730d2d590"
+    sha256 arm64_sonoma:  "e1b2230b79e79de671c2af5a9783d889f8da09b6ea077bc9a2e556620c722845"
+    sha256 sonoma:        "7612e131d6e40e653f94e4f09fa0a6ff2ef5e6a95daa55fd52b4f29802a0258f"
+    sha256 arm64_linux:   "f924b9a7be962ff9a378a469593e27bca8dcb7b45c3bd1177a7bf7766e9d7670"
+    sha256 x86_64_linux:  "ccee978892ba97f86870fbdde8f9c06cfc5eae2bb3eab69258a2081234164675"
   end
 
   depends_on "bison" => :build
@@ -129,6 +131,9 @@ class PhpZts < Formula
 
     # Identify build provider in php -v output and phpinfo()
     ENV["PHP_BUILD_PROVIDER"] = "Shivam Mathur"
+    ENV.O3
+    use_pgo = !OS.mac? || Hardware::CPU.arm?
+    use_lto = OS.mac? && Hardware::CPU.arm?
 
     # system pkg-config missing
     if OS.mac?
@@ -225,6 +230,85 @@ class PhpZts < Formula
     args << "--enable-fpm"
     args << "--with-fpm-user=#{fpm_user}"
     args << "--with-fpm-group=#{fpm_group}"
+
+    if use_pgo
+      pgo_script = buildpath/"pgo_script.php"
+      pgo_script.write (Pathname(__dir__).parent/"Scripts/pgo_script.php").read
+
+      base_flags = %w[CFLAGS CXXFLAGS OBJCFLAGS OBJCXXFLAGS LDFLAGS].to_h { |key| [key, ENV[key]] }
+      profile_dir = buildpath/"pgo-data"
+      pgo_generate_flag = if OS.mac?
+        "-fprofile-instr-generate"
+      else
+        profile_dir.mkpath
+        "-fprofile-generate=#{profile_dir}"
+      end
+      %w[CFLAGS CXXFLAGS OBJCFLAGS OBJCXXFLAGS].each do |key|
+        ENV.append key, pgo_generate_flag
+      end
+      ENV.append "LDFLAGS", pgo_generate_flag
+
+      system "./configure", *args
+      system "make"
+
+      php = buildpath/"sapi/cli/php"
+      if OS.mac?
+        profile_pattern = buildpath/"php-experimental-%p-%m.profraw"
+        ENV["LLVM_PROFILE_FILE"] = profile_pattern.to_s
+      end
+      begin
+        system php, "-n", "-d", "opcache.enable_cli=1", "Zend/bench.php", "--repeat", "3"
+        system php, "-n", "Zend/bench.php", "--repeat", "3"
+        3.times do
+          system php, "-n", "-d", "opcache.enable_cli=1", pgo_script
+          system php, "-n", pgo_script
+        end
+      ensure
+        ENV.delete("LLVM_PROFILE_FILE")
+      end
+
+      if OS.mac?
+        profiles = Dir[buildpath/"php-experimental-*.profraw"]
+        odie "PGO training did not generate any profile data" if profiles.empty?
+
+        profdata_tool = Utils.safe_popen_read("/usr/bin/xcrun", "--find", "llvm-profdata").chomp
+        profdata = buildpath/"php-experimental.profdata"
+        system profdata_tool, "merge", "-o", profdata, *profiles
+        pgo_use_flag = "-fprofile-instr-use=#{profdata}"
+      else
+        profiles = Dir[profile_dir/"**/*.gcda"]
+        odie "PGO training did not generate any profile data" if profiles.empty?
+
+        pgo_use_flag = "-fprofile-use=#{profile_dir}"
+      end
+
+      system "make", "distclean"
+      base_flags.each do |key, value|
+        if value.nil?
+          ENV.delete(key)
+        else
+          ENV[key] = value
+        end
+      end
+
+      %w[CFLAGS CXXFLAGS OBJCFLAGS OBJCXXFLAGS].each do |key|
+        ENV.append key, pgo_use_flag
+        if OS.mac?
+          ENV.append key, "-Wno-profile-instr-out-of-date"
+          ENV.append key, "-Wno-profile-instr-unprofiled"
+        else
+          ENV.append key, "-fprofile-correction"
+        end
+      end
+      ENV.append "LDFLAGS", pgo_use_flag
+      if use_lto
+        %w[CFLAGS CXXFLAGS OBJCFLAGS OBJCXXFLAGS].each do |key|
+          ENV.append key, "-flto=thin"
+        end
+        ENV.append "LDFLAGS", "-flto=thin"
+        ENV.append "LDFLAGS", "-Wl,-export_dynamic"
+      end
+    end
 
     system "./configure", *args
     system "make"

@@ -1,18 +1,18 @@
 class Shfmt < Formula
   desc "Autoformat shell script source code"
   homepage "https://github.com/mvdan/sh"
-  url "https://ghfast.top/https://github.com/mvdan/sh/archive/refs/tags/v3.13.0.tar.gz"
-  sha256 "efef583999befd358fae57858affa4eb9dc8a415f39f69d0ebab3a9f473d7dd3"
+  url "https://ghfast.top/https://github.com/mvdan/sh/archive/refs/tags/v3.13.1.tar.gz"
+  sha256 "b31aad2d4c26b0c6e8ebe894d59022520bbebce33e082d7d29e4325eee35d308"
   license "BSD-3-Clause"
   head "https://github.com/mvdan/sh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "daba25b6eaa9fad3fafd0cc18cdb1cff105c8a2f668425246d2d8ccfb27f0bea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "daba25b6eaa9fad3fafd0cc18cdb1cff105c8a2f668425246d2d8ccfb27f0bea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "daba25b6eaa9fad3fafd0cc18cdb1cff105c8a2f668425246d2d8ccfb27f0bea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "078f86b43cc4ebfe44586c7897954d9a17b2f4339742e3044a65ab53c23232ab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0e8f15dca5f36dd316e1866fbb7d034216cbb8b5dd5d96c23d2034c07c92b49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "053eb1c7ea71daaa7b28649797289f69a59d4d39e3d30c19c81b46944bbe0da9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf8528e33b4d5c4d8572fa23f45a2dbe3935b54a21b522cc0e4059e5a70b4fcb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf8528e33b4d5c4d8572fa23f45a2dbe3935b54a21b522cc0e4059e5a70b4fcb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf8528e33b4d5c4d8572fa23f45a2dbe3935b54a21b522cc0e4059e5a70b4fcb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b7d542832f29366a897f46c3659e06e190ebf27458d1e8260b410d185cd6e6dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e3ee9253b76dc169b3be3a9d24dd15caebdcc1c82eebe1c2de549fdd87f4067"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e78519471a3c6a1f082c944277d3e97ee4cab817f7a8d92ee69c635a85cf3d3f"
   end
 
   depends_on "go" => :build

@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/4f/f4/d3fb158f5ffbe6231227839db05c2bfca8e3e2e90fa914100c6ab4f6c2f6/schemathesis-4.14.3.tar.gz"
-  sha256 "4e381f14584ab236f38cd2ae140516e3986d861b3022fb22a232c8ace2a13a22"
+  url "https://files.pythonhosted.org/packages/59/33/efe295da326c54a890f95239cc50f2c01a73072b90b0d60da340130798cd/schemathesis-4.15.0.tar.gz"
+  sha256 "6f57b494d3957b1afed4746cdf92a6ed4b0b2add0354de4b450c52477913eb59"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "176ebb999961b73076b5a22e315461a5e5bd6449a6b4ba325d1a882bfb77721d"
-    sha256 cellar: :any,                 arm64_sequoia: "238b9bbfd0e1a8bfbccb225752cca3fd15c288dfbe0ccddb5e3da07ffbeb3855"
-    sha256 cellar: :any,                 arm64_sonoma:  "9c0189f9d93fb138a480805a5f0fe6d47a4b81a2158778126cba981a82d195e2"
-    sha256 cellar: :any,                 sonoma:        "e1aedbbfcb3a77536b094d83a466f27babe140c2e21a3931395596a5e14b7c48"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed6a7481f6ef77a3258b15fb83fbbacf7e3479265fb2704fee39e2b57eaffcc9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8637aa8b987cba104953143af6e1c4c74524e061949506846d92017747979bad"
+    sha256 cellar: :any,                 arm64_tahoe:   "fafb18953251ed408ea3e48e037396f78b1129a78196ae93464fbb63e718629a"
+    sha256 cellar: :any,                 arm64_sequoia: "ebc798c3429c40ed790326ecfc4cd0751d670f221075b95e8028ee2c2dc7d866"
+    sha256 cellar: :any,                 arm64_sonoma:  "48350739ebb3c88bb7d9f07f05d2c8d9c9313fe742cd88405fb3acdc3dc715f9"
+    sha256 cellar: :any,                 sonoma:        "eaa748743ed8f5f28eab71aae8b88c323aab644acb04b3bcd19f5094d66cf379"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "085266918c93ede86ae9f21ab10dedb013ecd4204c1d24e7845e20c9cd03f5ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b65df8280aa8f6fa99fb851f14d7cdc9bf62a0bacd5449b21009c0ec10976f33"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
@@ -37,13 +37,13 @@ class Schemathesis < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
+    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
   end
 
   resource "graphql-core" do
@@ -72,8 +72,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/f5/dd/633e2cd62377333b7681628aee2ec1d88166f5bdf916b08c98b1e8288ad3/hypothesis-6.151.10.tar.gz"
-    sha256 "6c9565af8b4aa3a080b508f66ce9c2a77dd613c7e9073e27fc7e4ef9f45f8a27"
+    url "https://files.pythonhosted.org/packages/a9/58/41af0d539b3c95644d1e4e353cbd6ac9473e892ea21802546a8886b79078/hypothesis-6.151.11.tar.gz"
+    sha256 "f33dcb68b62c7b07c9ac49664989be898fa8ce57583f0dc080259a197c6c7ff1"
   end
 
   resource "hypothesis-graphql" do
@@ -212,8 +212,8 @@ class Schemathesis < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/b5/43/76ded108b296a49f52de6bac5192ca1c4be84e886f9b5c9ba8427d9694fd/werkzeug-3.1.7.tar.gz"
-    sha256 "fb8c01fe6ab13b9b7cdb46892b99b1d66754e1d7ab8e542e865ec13f526b5351"
+    url "https://files.pythonhosted.org/packages/dd/b2/381be8cfdee792dd117872481b6e378f85c957dd7c5bca38897b08f765fd/werkzeug-3.1.8.tar.gz"
+    sha256 "9bad61a4268dac112f1c5cd4630a56ede601b6ed420300677a869083d70a4c44"
   end
 
   def install

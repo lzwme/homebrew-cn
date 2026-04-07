@@ -1,18 +1,18 @@
 class GitFlowNext < Formula
   desc "Modern implementation of the Git-flow branching model"
   homepage "https://git-flow.sh/"
-  url "https://ghfast.top/https://github.com/gittower/git-flow-next/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "2efe4fc1416ebf7018ae46954df67992afd187dd51d954e55a61b7bbf716bc23"
+  url "https://ghfast.top/https://github.com/gittower/git-flow-next/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "cb91dcf6b5901d9c65800a971fbacb556a9a90971d5b4883b968770e2383130f"
   license "BSD-2-Clause"
   head "https://github.com/gittower/git-flow-next.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf81aa88a5048c61d1d9ed6c5733add8627e46e5257845879cd5fcceb9a0bda9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf81aa88a5048c61d1d9ed6c5733add8627e46e5257845879cd5fcceb9a0bda9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf81aa88a5048c61d1d9ed6c5733add8627e46e5257845879cd5fcceb9a0bda9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ea63faf36d3bc65ab13bc19d2e66d47471baf0deb305ba798bdb4007e61b99cd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb3434f3fce699867ac2a329a93b17be5d973280f39a15b8ee905589d054436a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5adef590191f9ebf323be7c32ed8a8b12142a716e404a5f77fa46083a037c763"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14c7ba0d3cd9aceeb6f7f27c116290e4a8344114645b4e0ff042fdde202687ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14c7ba0d3cd9aceeb6f7f27c116290e4a8344114645b4e0ff042fdde202687ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14c7ba0d3cd9aceeb6f7f27c116290e4a8344114645b4e0ff042fdde202687ae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd4f295c2ba07487bdd4ee938bb0cf63e97a70b90ece4f4f3cbafe265c5952f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "96515070a214836708d8a45e589d2fc8ce129f24c0bfe88064b5793bc487628b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46758e4929c4cd2b9c6bfbd366acd5bca141d938b797439f053427f9b55299df"
   end
 
   depends_on "go" => :build

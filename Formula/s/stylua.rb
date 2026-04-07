@@ -1,17 +1,17 @@
 class Stylua < Formula
   desc "Opinionated Lua code formatter"
   homepage "https://github.com/JohnnyMorganz/StyLua"
-  url "https://ghfast.top/https://github.com/JohnnyMorganz/StyLua/archive/refs/tags/v2.4.0.tar.gz"
-  sha256 "e63130a0bc26d0825f99afcfb4d969516ab34dd1b397087bf564095766a16c2a"
+  url "https://ghfast.top/https://github.com/JohnnyMorganz/StyLua/archive/refs/tags/v2.4.1.tar.gz"
+  sha256 "882eadb417294399a89ba2b3f17edc751d4b6d1892e4814bfbf5c024bb89de6c"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e7cfefcc178b7f31de5fb95931d8461071ddf99fb7a10aa0a46e6657f2b30b8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c9a823332f9a926f6997e2f9bf7c32d2b4dd85e4eb229ca2592af1121d8ba9f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "519236c7b6cbce2993396431fdbcdf8d9e240b0b78ead7e15840cd498d7bf302"
-    sha256 cellar: :any_skip_relocation, sonoma:        "726d3da99c6fc59d5408126070163233945da5111b63cc7182177d9a8a2263fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd7c5eb674630ee8a3b88965a96fe33253d80b51a5beee6b493daca981443623"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97ceef0231c02a972d2d6594b67745d40698c28c5a1bf6f2f888484b46d8c4c3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e97755a51aee4f11ee3a6b5d30a520f67ec8dc7f4f9b6f1c69eb0bd87654e5af"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af2a3155c54508b19942dd5269df0bc41e25aebce127205f7fc29e0b27679050"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88b4738a8e38e690efbf9292d159f3ff88880e249d2d0e8d9f1ef80433faba2d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "37779f96c9b73660283f7a4ac844971f6af0d14b25cf3b51899562537bc2de47"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "75231e015de7781cdf1674e3bb5091b8fdd24edfc6ef9763a2ba0649f6bfc743"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b95a841af6d3bb18dde300398ff009357860c913e84dd2db13b0783d7ef15084"
   end
 
   depends_on "rust" => :build

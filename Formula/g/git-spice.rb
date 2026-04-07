@@ -1,40 +1,34 @@
 class GitSpice < Formula
   desc "Manage stacked Git branches"
   homepage "https://abhinav.github.io/git-spice/"
-  url "https://ghfast.top/https://github.com/abhinav/git-spice/archive/refs/tags/v0.24.2.tar.gz"
-  sha256 "6605166dc47b179af0d3e9714dba83254b633e78d6b0bc2189592c5067b0ccf2"
+  url "https://ghfast.top/https://github.com/abhinav/git-spice/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "b00cc82627ae71cdba3890db2179b19a563f26d24d0ed9ee41de18cace3d3d67"
   license "GPL-3.0-or-later"
   head "https://github.com/abhinav/git-spice.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "377d48138de5d3a3d0957305cb1b52d83db9126d9d4ec3145e0fc883ba0cf96b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "377d48138de5d3a3d0957305cb1b52d83db9126d9d4ec3145e0fc883ba0cf96b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "377d48138de5d3a3d0957305cb1b52d83db9126d9d4ec3145e0fc883ba0cf96b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9d655c0b65bf4d3a061f7b55ae16530585eca0fc8b5d45f00255ce1355b41a07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de2dbe8a6bde74014878969036a97710c9f7ae34b3fcddbe0edd3bfa91c2beaf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a9ee526792a2ae72bf7d38728e2455d9843482481bfbe45a570ea2bb8b21c20"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "def49fe7ab835c9fd1bbc824506aaa54abdc63168adf53211791de305ca872bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "def49fe7ab835c9fd1bbc824506aaa54abdc63168adf53211791de305ca872bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "def49fe7ab835c9fd1bbc824506aaa54abdc63168adf53211791de305ca872bc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3a282776698b38e4930cab5ea78a2c220a56fb88d8b1eebcab7b1347c3719a55"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb6285210f5f96af385825ea0a8bf22875f53db87b4d30c5c1a78ecebd7a2793"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0668db23c53abd23e638e3b1e3c35a434c24cf1c06082e29a312764d6145ac85"
   end
 
   depends_on "go" => :build
 
-  conflicts_with "ghostscript", because: "both install `gs` binary"
-
   def install
     ldflags = "-s -w -X main._version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"git-spice")
-    bin.install_symlink "git-spice" => "gs"
 
-    generate_completions_from_executable(bin/"gs", "shell", "completion")
     generate_completions_from_executable(bin/"git-spice", "shell", "completion")
   end
 
   def caveats
     <<~EOS
-      The executable has been renamed to 'git-spice'.
-      To ease the transition, this release also symlinks 'gs' to 'git-spice'.
-      The symlink will be dropped in a future release.
+      The 'gs' executable has been renamed to 'git-spice'.
       If you prefer to use 'gs', add an alias to your shell configuration:
 
         alias gs='git-spice'

@@ -1553,7 +1553,7 @@ Homebrew-homebrew-core/Formula/d/directx-headers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/direnv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/direvent.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/direwolf.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/dirt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dirt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/discount.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/diskonaut.rb, Homebrew/homebrew-core, 1
@@ -6752,6 +6752,7 @@ Homebrew-homebrew-core/Formula/s/ski.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/skills.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/skillshare.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skinny.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/skip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skktools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skopeo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skylighting.rb, Homebrew/homebrew-core, 0

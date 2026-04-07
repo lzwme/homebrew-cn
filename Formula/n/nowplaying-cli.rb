@@ -1,22 +1,21 @@
 class NowplayingCli < Formula
   desc "Retrieves currently playing media, and simulates media actions"
   homepage "https://github.com/kirtan-shah/nowplaying-cli"
-  url "https://ghfast.top/https://github.com/kirtan-shah/nowplaying-cli/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "a495a4f6dfc75326d4ab8843c82f8b0e42ac83d88c397461ea6b7968973da01d"
+  url "https://ghfast.top/https://github.com/kirtan-shah/nowplaying-cli/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "c7c23564657bf5b5598bdf58f79e11c8dffbde909e364df4da7c3a49a26e3753"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "87a38ee11003d4ba859f8dda0fc11fad58d38aa2b2688205fc44e3ce91a739f0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d1803bd15ca30129407a4a6b6905475b823be4fde8302bb76ce5734f5905a9c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5bcc94e36688dc8f326216284d7961b68170dea873ffd778763ee19621b9450"
-    sha256 cellar: :any_skip_relocation, sonoma:        "976e8a7cce5bb8e2f848e698df4056b0c2315fff5dcbdef6891a90affdb4bc15"
+    sha256 cellar: :any, arm64_tahoe:   "600fb00263c9e681254f24f85b53ce6115685b277dad95388eaedcd72d23e015"
+    sha256 cellar: :any, arm64_sequoia: "79caf948bf5f319c89aa58297b6e9af714e08ec7abf621c262cf141f287eb518"
+    sha256 cellar: :any, arm64_sonoma:  "4af22862856403429542dde32839d07e74aa046e2cdb340253c1959da0d620ad"
+    sha256 cellar: :any, sonoma:        "3ac15d66faea03a58864b93aacf850ebcdbf49196157dfd789fc81bacf73e02c"
   end
 
   depends_on :macos
 
   def install
-    system "make"
-    bin.install "nowplaying-cli"
+    system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do

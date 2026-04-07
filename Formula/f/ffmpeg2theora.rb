@@ -18,6 +18,12 @@ class Ffmpeg2theora < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "af084dab0150730e9197bd8c8d3ba09eb0aef171742918f257aabead5b5a664e"
   end
 
+  # Last release on 2016-01-09. We use patches from Debian but Bullseye will
+  # be the last release with ffmpeg2theora and Bullseye is EOL on 2026-08-31.
+  # Also removed from Arch and Gentoo: https://repology.org/project/ffmpeg2theora/history
+  deprecate! date: "2026-04-06", because: :unmaintained
+  disable! date: "2027-04-06", because: :unmaintained
+
   depends_on "pkgconf" => :build
   depends_on "scons" => :build
   depends_on "ffmpeg@4"

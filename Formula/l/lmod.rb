@@ -1,18 +1,17 @@
 class Lmod < Formula
   desc "Lua-based environment modules system to modify PATH variable"
   homepage "https://lmod.readthedocs.io"
-  url "https://ghfast.top/https://github.com/TACC/Lmod/archive/refs/tags/9.1.2.tar.gz"
-  sha256 "b7277482677a22c3396b88a1290406ca20bb2564c59632403ca98373f132e65a"
+  url "https://ghfast.top/https://github.com/TACC/Lmod/archive/refs/tags/9.2.tar.gz"
+  sha256 "01a219845e6627204129de93c7692eb84087336173ae178165758df4dd772293"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "af03a89fc1d744660b257657f05ac2166f1e8106015055f858c420848ba6f128"
-    sha256 cellar: :any,                 arm64_sequoia: "6c0f9c7f34b31d47fe54d69604ea319a0f5f143dd40a5026232e9abb81d4564e"
-    sha256 cellar: :any,                 arm64_sonoma:  "48d0e1256c983210d2a260aea66ef3a2a4539a8dd97e15cb5b56f04ca93ae71e"
-    sha256 cellar: :any,                 sonoma:        "792f834bde8fdc698b1b87325d39ea4eadedcdf52a5f77e717f0989bcd409366"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45da9ab7608952a9069d56325c70bc77a5d663222ade80316ac0573bf1a05d5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f2f8a407a09c4dcc6738fedcaf6a7fd370ae803cca94935d183ec9bd4a35f80"
+    sha256 cellar: :any,                 arm64_tahoe:   "b7ac243c5e50f49a38510af724cb080dc4dd7625a0141ddd9dea660ab64bcab6"
+    sha256 cellar: :any,                 arm64_sequoia: "be2b165a232d34fa1a0ed5317986f714493127d8460fce516815feea370770dc"
+    sha256 cellar: :any,                 arm64_sonoma:  "0d49906ae5dcaadb924496ed71af4fa1ae10e6ac95a229f9bae3e7798e1ce8bf"
+    sha256 cellar: :any,                 sonoma:        "e752079db96330833ad68d050eea6c14b32e8705472275f02152f50b48cb58f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c44374f7631116058aab10d7247c16d2628275ae4d165e8416ae15a2e0868535"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a3f1b3d92f900e484b74da697c69bdb761ce612cf8e7651bb2cc99a890c8ec5"
   end
 
   depends_on "luarocks" => :build

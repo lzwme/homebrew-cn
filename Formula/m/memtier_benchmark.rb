@@ -3,9 +3,10 @@ class MemtierBenchmark < Formula
   homepage "https://github.com/RedisLabs/memtier_benchmark"
   url "https://ghfast.top/https://github.com/RedisLabs/memtier_benchmark/archive/refs/tags/2.3.0.tar.gz"
   sha256 "4c3238e28e63b524e6adf31e3c306af911597c5a73da4957b1dd2498d6ae7c74"
+  # https://github.com/redis/memtier_benchmark/blob/master/debian/copyright
   license all_of: [
-    "GPL-2.0-only",
-    any_of: ["CC0-1.0", "BSD-2-Clause"], # deps/hdr_histogram
+    "GPL-2.0-or-later" => { with: "cryptsetup-OpenSSL-exception" },
+    any_of: ["CC0-1.0", "BSD-2-Clause"], # deps/hdr_histogram/LICENSE.txt
   ]
 
   bottle do

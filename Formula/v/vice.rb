@@ -1,10 +1,16 @@
 class Vice < Formula
   desc "Versatile Commodore Emulator"
   homepage "https://sourceforge.net/projects/vice-emu/"
-  url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.10.tar.gz"
-  sha256 "8e5bac18cbcb9f192380ad3ef881f8790f5b75c41d7b3da65d831985d864d6d1"
   license "GPL-2.0-or-later"
   head "https://svn.code.sf.net/p/vice-emu/code/trunk/vice"
+
+  stable do
+    url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.10.tar.gz"
+    sha256 "8e5bac18cbcb9f192380ad3ef881f8790f5b75c41d7b3da65d831985d864d6d1"
+
+    # Backport of https://sourceforge.net/p/vice-emu/code/46032/
+    patch :DATA
+  end
 
   livecheck do
     url :stable
@@ -27,7 +33,6 @@ class Vice < Formula
   depends_on "pkgconf" => :build
   depends_on "texinfo" => :build
   depends_on "xa" => :build
-  depends_on "yasm" => :build
 
   depends_on "adwaita-icon-theme"
   depends_on "at-spi2-core"
@@ -38,10 +43,8 @@ class Vice < Formula
   depends_on "glew"
   depends_on "glib"
   depends_on "gtk+3"
-  depends_on "lame"
   depends_on "libogg"
   depends_on "libpng"
-  depends_on "librsvg"
   depends_on "libvorbis"
   depends_on "pango"
 
@@ -87,3 +90,15 @@ class Vice < Formula
     assert_match "Initializing chip model", output
   end
 end
+
+__END__
+--- a/src/arch/shared/macOS-launcher.c
++++ b/src/arch/shared/macOS-launcher.c
+@@ -26,6 +26,7 @@
+ #include <unistd.h>
+ #include <libgen.h>
+ #include <limits.h>
++#include <mach-o/dyld.h>
+ 
+ int main(int argc, char *argv[])
+ {

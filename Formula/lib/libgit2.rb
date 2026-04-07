@@ -14,25 +14,39 @@ class Libgit2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "97ff2e84ab73e8cb56e5884cf26c27ea4e4bb21987549c0706816b0bc45532a9"
-    sha256 cellar: :any,                 arm64_sequoia: "c2694695e86b097811b664c9e0382f217c4b4300cf32cc0c62f28fe172ed3536"
-    sha256 cellar: :any,                 arm64_sonoma:  "8ae9df99ad28aff8e5aee4400c2ff2124d2ec01f6480a730a71767b46cac6a3b"
-    sha256 cellar: :any,                 sonoma:        "af08d60e1020689f58c37f7d9a2e465353fdca50c0b33ee353e1512a0f2827dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "42e7be69909a93ad884898883441819318fd6cbb0df1b58a683ee97c69b4b900"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a8609a42095a81ca3061e76d9605bd160e395d66a588a5757f676e2bc8417a6"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "8a30e6866a9d341a0536d1ee79084d9a38ccefa0070f36defcf7cd7d0c42d968"
+    sha256 cellar: :any,                 arm64_sequoia: "67f5becf455b5bd4fdb21207f914abb074fb48f4b58e0c159e70e916d9256356"
+    sha256 cellar: :any,                 arm64_sonoma:  "a805127b9a4bbeeb9f27effee5cc459ce5b5672779bffbaee94e7405db03ec73"
+    sha256 cellar: :any,                 sonoma:        "005aea9f682b2dfa3a2606fd953c1fe1bc5e2c10b6b3ad1bda12abe1a61a77af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "05d6d6c13bf3130e180ddb471799e8b5ec5cea5ac8d08f7cbecc8b34951cad0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef33f5f695d8bbd7e2dd2b6041ed3fb0b018ffb8d547135224dac33653397d13"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "libssh2"
+  depends_on "llhttp"
 
   on_linux do
     depends_on "openssl@3" # Uses SecureTransport on macOS
+    depends_on "pcre2" # Uses regcomp_l on macOS which needs xlocale.h
     depends_on "zlib-ng-compat"
   end
 
   def install
-    args = %w[-DBUILD_EXAMPLES=OFF -DBUILD_TESTS=OFF -DUSE_SSH=ON -DUSE_BUNDLED_ZLIB=OFF]
+    # Remove bundled libraries
+    rm_r(Dir["deps/*"] - ["deps/ntlmclient", "deps/xdiff"])
+
+    args = %w[
+      -DBUILD_EXAMPLES=OFF
+      -DBUILD_TESTS=OFF
+      -DUSE_BUNDLED_ZLIB=OFF
+      -DUSE_HTTP_PARSER=llhttp
+      -DUSE_SSH=ON
+    ]
+    # TODO: Switch to USE_REGEX in 1.10
+    args << "-DREGEX_BACKEND=pcre2" if OS.linux?
 
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *args, *std_cmake_args
     system "cmake", "--build", "build"

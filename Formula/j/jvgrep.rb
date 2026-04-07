@@ -1,18 +1,18 @@
 class Jvgrep < Formula
   desc "Grep for Japanese users of Vim"
   homepage "https://github.com/mattn/jvgrep"
-  url "https://ghfast.top/https://github.com/mattn/jvgrep/archive/refs/tags/v5.8.13.tar.gz"
-  sha256 "75a5832e6b504d7f627cce135a60ef486033895d509875cecd01828a4b718efd"
+  url "https://ghfast.top/https://github.com/mattn/jvgrep/archive/refs/tags/v5.8.15.tar.gz"
+  sha256 "8d992c01e39201aa6b513030d2de81a7b17040a6881395189779bb3ab5f36bed"
   license "MIT"
   head "https://github.com/mattn/jvgrep.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7266ca4575b279ba7b16aaae0d2459f16f0c791c4ea1490e11f82f00789d634a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7266ca4575b279ba7b16aaae0d2459f16f0c791c4ea1490e11f82f00789d634a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7266ca4575b279ba7b16aaae0d2459f16f0c791c4ea1490e11f82f00789d634a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f9726c8401eaeb5a704be625595d8855fab0d23c0e2a167e9dd0dc315a3cb2c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e072dadb313901731a01dc280102725803ecd42015036228bddfb7608e78b31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "751113b0e30f280a7237b6322950eb35cb9dcfd01c8a23780ff95fc7d26f3f2a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7981c3185ddc4678970a2312a645c418822b99fcdc7103599607a4e661564a69"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7981c3185ddc4678970a2312a645c418822b99fcdc7103599607a4e661564a69"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7981c3185ddc4678970a2312a645c418822b99fcdc7103599607a4e661564a69"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0cc035c4724437d837e4244ef64a637c18b3e6f2e805b14a3ab88bbd97de05a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "337079572e433500bb4d9c8da994a506c56b717b992c9fd366a9c37df2781879"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4eb17950624747e7b7d8cad781c7a2785bbe7f19724185e6c08d7ac6b3d5b9a0"
   end
 
   depends_on "go" => :build

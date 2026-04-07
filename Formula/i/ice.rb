@@ -3,6 +3,8 @@ class Ice < Formula
   homepage "https://zeroc.com"
   url "https://ghfast.top/https://github.com/zeroc-ice/ice/archive/refs/tags/v3.8.1.tar.gz"
   sha256 "87aa0381f2347715467686547bccf253fa208948bf2a462584872d2d0f8b1720"
+  # See https://github.com/zeroc-ice/ice/blob/main/ICE_LICENSE for a special
+  # exception to combine Ice with the OpenSSL library and Apache-2.0 libraries
   license "GPL-2.0-only"
 
   livecheck do
