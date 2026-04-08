@@ -1,19 +1,18 @@
 class ApacheArrowAdbc < Formula
   desc "Cross-language, Arrow-native database access"
   homepage "https://arrow.apache.org/adbc"
-  url "https://www.apache.org/dyn/closer.lua?path=arrow/apache-arrow-adbc-22/apache-arrow-adbc-22.tar.gz"
-  sha256 "48b19d70a734e789da99e3c53ebad57389c914b85fdc9c509188e5f50896b07c"
+  url "https://www.apache.org/dyn/closer.lua?path=arrow/apache-arrow-adbc-23/apache-arrow-adbc-23.tar.gz"
+  sha256 "c74059448355681bf306008e559238ade40af01658d6a8f230b8da34d9a40de9"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/apache/arrow-adbc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a35bdf7912d038c52bbc6c02b9ccc8c0d3daf1745ef2e0be9378d3e47ffd5426"
-    sha256 cellar: :any,                 arm64_sequoia: "a3227f6c0ec168103c6032df45723b2407daef34ea582789042d315001951140"
-    sha256 cellar: :any,                 arm64_sonoma:  "7432d11b911c1434a8594039263fe6bf84b586de64e393d26dcda7870263f315"
-    sha256 cellar: :any,                 sonoma:        "7763bed036f66e8166974ea1c7b0e78bf25dd8a227696ae7b3d5aeaf94ec777b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f9474b593542cd0e86043999c7d5464bada5705452346aa36527062c7bcfe8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c86434868438430a0520e751c1f4a4d8040dd45e4bc2fd0185819400fd9b0b9e"
+    sha256 cellar: :any,                 arm64_tahoe:   "dd1d27b0bc5f4d9252f9c0973140e939c4763f7f6b3eac9dbe65078a5e774631"
+    sha256 cellar: :any,                 arm64_sequoia: "8b856b7b61e7f2f14338606792b637da14fed9b38e8f17ab6227807beb46dd77"
+    sha256 cellar: :any,                 arm64_sonoma:  "b3f466098710fdde41f81ddc291aaf8bcdb014ae0a6010120bc1fc0c65ff1a13"
+    sha256 cellar: :any,                 sonoma:        "54e3f5a01f8c5864ade077a775e8ebbba15ede5a62a09c552cfbbb5915cfa860"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b080062754c2263343ad1a1e8dc295ae248e9841be1e17433e50a729fe4ab95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "141171b5c5813e34b61840656375cdab38c53bddf6a761dd4178aeb12a34407a"
   end
 
   depends_on "cmake" => :build

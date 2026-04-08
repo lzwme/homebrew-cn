@@ -12,12 +12,13 @@ class BlockGooseCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "99b3a76ae94d03378c6e8aaeadae8dd94c884bbc06922cc6eb9ca8307aef16f0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "caf51fc4ecc8e5488af92be07ae5f80dfc6386a44eb7759e35dffcc535889520"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4fc00857795d28a5889d0d479a4d3c377602737832a6f05077a988941260423"
-    sha256 cellar: :any_skip_relocation, sonoma:        "91aae562cebf54be4cf193ef497520dd7a5ea961de3a6273a0cbede39cbcfd73"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fe55141e4bf2befdded53a4a2d2b64f953aff33577375e95cd12fd2994c0f0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf2df21522323a45c6d90673a8fab2f832ac78ce25b7dea7e43a148dda4555ae"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e306b3f971bba9e9b968a3595663f02231805c1d892e884784e9d9711502469a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81e9245dd091963a740514bc9cb9ba38a1e543318e9a18ab3172357007d71aff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3e3dca431eedad5a0bb682cf3d2ae8a37e9ca496b1115ffe623b73ba8a053c7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e4b2468a30d227b5411f722c70a6883b0d4bb202ce90e313f5d673d5fff60aea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "32fa42c28fe214db02a46ef47f994ca9cde86fc4c83f984c0f42b02df9ff5254"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee34ca6befd986acec1a6cddc6f6fd4b2943fefb0f133d1b0c4946e0ea884366"
   end
 
   depends_on "cmake" => :build
@@ -37,6 +38,8 @@ class BlockGooseCli < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/goose-cli")
+
+    generate_completions_from_executable(bin/"goose", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

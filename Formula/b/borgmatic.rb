@@ -3,14 +3,13 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/3c/58/ee4d0f0a50f6983d4dce79945120db2de5a63ed4f30860906310792a7817/borgmatic-2.1.3.tar.gz"
-  sha256 "99665006841477e730395dd053ad97c93085745a67073d81b32226cd5028cc91"
+  url "https://files.pythonhosted.org/packages/fe/02/f3279746ae4cec5c8735fa740a1ca2379265ab5391828a5fe2f830a1602b/borgmatic-2.1.4.tar.gz"
+  sha256 "4bdc9db3a2c91998842e3125b25e2f570efa630e6c278b362ee8cb928add7ac0"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://projects.torsion.org/borgmatic-collective/borgmatic.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4c42a8bc034ea123b5c8255f349559cd62e867ac1f05d2aa35b6fae8b75c3a3f"
+    sha256 cellar: :any_skip_relocation, all: "694fb5bbcdc07a9e4da78d3ddcde5c0d89e61ee4a04d46d12597d349ec89e67a"
   end
 
   depends_on "certifi" => :no_linkage
@@ -25,8 +24,8 @@ class Borgmatic < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "idna" do
@@ -55,8 +54,8 @@ class Borgmatic < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "ruamel-yaml" do

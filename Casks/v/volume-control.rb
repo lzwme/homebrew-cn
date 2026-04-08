@@ -1,9 +1,8 @@
 cask "volume-control" do
-  version "2.1.0"
-  sha256 "b3012f66a601aa97e0b76182dcaecc1a60f4f7cc9be393dd58a3db8abceb1d40"
+  version "2.2.1"
+  sha256 "7862979f92a7112d8602f353dc321b69be85a3227afc4c8552945c900d526403"
 
-  url "https://ghfast.top/https://raw.githubusercontent.com/alberti42/Volume-Control/main/Releases/VolumeControl-v#{version}.zip",
-      verified: "raw.githubusercontent.com/alberti42/Volume-Control/"
+  url "https://ghfast.top/https://github.com/alberti42/Volume-Control/releases/download/v#{version}/VolumeControl.zip"
   name "Volume Control"
   desc "Control the volume of Apple Music and Spotify using keyboard volume keys"
   homepage "https://github.com/alberti42/Volume-Control"

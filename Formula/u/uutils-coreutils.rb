@@ -4,6 +4,7 @@ class UutilsCoreutils < Formula
   url "https://ghfast.top/https://github.com/uutils/coreutils/archive/refs/tags/0.8.0.tar.gz"
   sha256 "03f765fd23e9cc66f8789edc6928644d8eae5e5a7962d83795739d0a8a85eaef"
   license "MIT"
+  revision 1
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
   livecheck do
@@ -12,12 +13,12 @@ class UutilsCoreutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "07738f6acd80648d3f46702a39d735d1a7c59f9b3f4f60f89b350feeb349290c"
-    sha256 cellar: :any,                 arm64_sequoia: "21b75dce554d38c812f1336596d317425c81130cdbd58f87a1569765ae300075"
-    sha256 cellar: :any,                 arm64_sonoma:  "67d5f6cea919010ab137a46a73f28820618322cfb2f6459335487615e076524a"
-    sha256 cellar: :any,                 sonoma:        "d6c1cb07fc62c56308f385548dfb0e73fd07a742bdd5d8007234cf8ebb2f743e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "361b414f867af5410d2d2a144bede1e0c8559622f2e1a98f171ea0c53a147974"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c59701cdc8555d1d0cdd67534a57135ecf7fb4c1a50be99911c55c051af289e8"
+    sha256 cellar: :any,                 arm64_tahoe:   "3dca4194eb52ee1018d7245b8c8a7e3bd7196c61bfe4efe052f16f53c78b5156"
+    sha256 cellar: :any,                 arm64_sequoia: "6f093fbe0c368002408b0b95d3140f18dee0363bb09025a4e0ff698cae92c047"
+    sha256 cellar: :any,                 arm64_sonoma:  "79902e7e0b7694995e314b3c3da68168b108035e33caa0e705d05fefb53e0a4e"
+    sha256 cellar: :any,                 sonoma:        "03a3427054fceb821c369225b2105bd45e7dff653a10150bc9f43c0a4cf1b2a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d7323360044c84ebc07d70ac0791647c191d4c6ec79abdba2307b1be6ceaf4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "303487e992bd9bff355d0ef51d8f7d5282fb6337a3f5f9f8f4e937e427b42a9e"
   end
 
   depends_on "rust" => :build
@@ -26,13 +27,12 @@ class UutilsCoreutils < Formula
   def install
     man1.mkpath
 
-    # Prevent to add a feature for `selinux`
-    inreplace "GNUmakefile", "$(SELINUX_PROGS)", ""
-
-    args = %W[
-      PROG_PREFIX=uu-
-      PREFIX=#{prefix}
-      SPHINXBUILD=#{Formula["sphinx-doc"].opt_bin}/sphinx-build
+    args = [
+      "PROG_PREFIX=uu-",
+      "PREFIX=#{prefix}",
+      "SPHINXBUILD=#{Formula["sphinx-doc"].opt_bin}/sphinx-build",
+      "MULTICALL=y",
+      "LN=ln -sf",
     ]
     system "make", "install", *args
 

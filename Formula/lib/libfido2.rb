@@ -4,17 +4,16 @@ class Libfido2 < Formula
   url "https://ghfast.top/https://github.com/Yubico/libfido2/archive/refs/tags/1.16.0.tar.gz"
   sha256 "7d86088ef4a48f9faad4ff6f41343328157849153a8dc94d88f4b5461cb29474"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
   compatibility_version 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "432fd520ac9a846d45b344c4ce888fd6ffb898c78e289710de6aac0add686fb6"
-    sha256 cellar: :any,                 arm64_sequoia: "979c5922c7fc50b44cd52b56cc5864c5d084cdc5b7f37e0ef69f611cd02bbf2d"
-    sha256 cellar: :any,                 arm64_sonoma:  "a6446fead07bb8d304ae5d6580dca5f4860a9acbfa01fc45bef79df7cd95eb62"
-    sha256 cellar: :any,                 sonoma:        "c218ca912276907a8b7690f03649becd474c64bb0b12749b6136f3ffc7703126"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e95b21e17cf4fe231733612ebb7b524e5cacd27b20fb4828e0b3818b45ed00d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbd9420fb40c7b95ab6011f9d8149a9406a32083d2044ca9dc0a1a4885f9b352"
+    sha256 cellar: :any,                 arm64_tahoe:   "de7760db5c26f7f27d1e63c18160253e2be10b9c91420fa898b36c4f6c3f92c5"
+    sha256 cellar: :any,                 arm64_sequoia: "8a0b4ea43277a6f1f10bb8eef33d7e781808813e31a5c9eb93fd3e5b0a0c370a"
+    sha256 cellar: :any,                 arm64_sonoma:  "630853eec76c71352580531a7b2afff3db34ae94250e70575fb3bbcd41b6ac54"
+    sha256 cellar: :any,                 sonoma:        "e6611f41c5e77ca4f0f813a37262c334d7a2b0087cbbb120ce1bb274eb6848aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3175cb4697597912eca08346a70ffbb6b4674dfb7a1ebd0059036c783edacca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c41af87d2533861806381d3ba6c36fd7fc713133f87422b45981597324a204f3"
   end
 
   depends_on "cmake" => :build

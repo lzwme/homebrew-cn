@@ -3,18 +3,17 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/ec/a4/29f1738fa03ad997b07e8d48bdbcef0a35ee5aecee780d817711519b1f0b/molecule-26.3.0.tar.gz"
-  sha256 "e48c92383be5e580545dcc7d115b3f3559d6d5f28e1ab151a35dc780b7400a66"
+  url "https://files.pythonhosted.org/packages/09/e0/f671b5b0742a60b6067cbe9e57720b600ded5e0fcabb837663dd21b57568/molecule-26.4.0.tar.gz"
+  sha256 "12e4c905079f67628ae765506c697d2b8a744a65f2d4cbf5a3b22cb09d0dafc4"
   license "MIT"
-  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c4cf642d35896bbbb9c0025793b8177b3f6881cc1bc7731065acf8f29f008efd"
-    sha256 cellar: :any,                 arm64_sequoia: "d631bb127ad42dea9f0f7f4f86078f3a648e59eb58320d971156662393415dac"
-    sha256 cellar: :any,                 arm64_sonoma:  "aea3078b9392729da4f3f45517ae367fb3f14ca334645af5928a7fbc6aab56e8"
-    sha256 cellar: :any,                 sonoma:        "986b197c1e21cae5a4c636cc3f8d2849f3163e08fb63eb0a9a1fd170b9ef8837"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a945dad6a43ad35c2af53c24ba4a5229bb380c25b2e1496f91e811a74f0c0ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eef19dd1fd3e19d69eb4b7c8f9cf993a9b58a168f643ae667b6284697294da01"
+    sha256 cellar: :any,                 arm64_tahoe:   "3d89d2525b8e81165bdac7822480b7390ea9c315e5a2b8255489bdbe050dcf20"
+    sha256 cellar: :any,                 arm64_sequoia: "dc9bc9d82ae22f349279493d437870319dafa7e5a57977d2744740f6ec0e73dc"
+    sha256 cellar: :any,                 arm64_sonoma:  "804b35f6802b84c51f872de137f26a592b7a4571f67f8f80a9b6a789e94e33cf"
+    sha256 cellar: :any,                 sonoma:        "9610072d1ec6b66c29e527a986f72e40a24f5da52a869e0572566d32a01c2eb2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a9458875f42763abe7fe75f7029680d4379216080b4fdaa04979445427f75ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff6b2225d87ed88046f32c4eaa4a67c348b0c33ef55d72356b80de85be8e71be"
   end
 
   depends_on "ansible"
@@ -34,8 +33,8 @@ class Molecule < Formula
                 extra_packages:   %w[distro molecule-plugins[azure,docker,ec2,gce,podman,vagrant,openstack] selinux]
 
   resource "ansible-compat" do
-    url "https://files.pythonhosted.org/packages/c7/8f/14e8566b9a0cd5393150719db218a7b332308456b003b289f21e5812000a/ansible_compat-25.12.1.tar.gz"
-    sha256 "509a42fbfc65acad90b4e62c311ec0b37447e497b9b2a19cc38a625e458f2afd"
+    url "https://files.pythonhosted.org/packages/04/42/53ba59f8116e716ec0af8dc47ef65b15f5e3bc28131e8e6cbe87e50203f5/ansible_compat-26.3.0.tar.gz"
+    sha256 "15f0ea5ff6fcc5587b6b11a4a436fdeefd0fd4a46afe92d4e483c28370082ae0"
   end
 
   resource "ansible-core" do
@@ -54,13 +53,13 @@ class Molecule < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
+    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
   end
 
   resource "decorator" do

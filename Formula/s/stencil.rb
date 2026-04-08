@@ -7,12 +7,13 @@ class Stencil < Formula
   head "https://github.com/rgst-io/stencil.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "834e8f3aa6c4d9c2cb1960453e24d2ef3419a631ea8c55af3c1484b894ed3689"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0466c1767bb8a421385b69d16ef264c0125bb98d63df6e3e8856a18f9d90cc24"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89805914b37c684ebb579f994521bd5691f6ad4942f63321888b088a2e7256e6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7269e0b72ab733bba96e4db3a18823f618e57c8533522e07de807d758dc915af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a48bfd1d05a06c8cbbdfb4bf7a50af98aa1e35ef92dcda345ceb670f97a06dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "daae205138baae22b61fd350da8cffdac088c403a9ca1eb26122c6faf4fa114e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6f9ad8d6f502672e72445f800c3f1a097271327669b75e7fda892f32a5873c96"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89cf0fa20256333153c095e46614aba9d50dd086b7673d5ee8be6c07a7a6bd08"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "371b165821da6b2cb09c6bf7081d2955735fa4c98a2c24e8cbcb2863eec7851a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b7f753a4d90fd395f072bdc12dfac0252e0082acaf7c24942a959fdee3aa191"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f412c1f1b66d81d69dac56eb46cbd9984b319f716302b43d8eaff68a990f0114"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc7e8a9d19b596d082f684f3f6a08c01bc5c1d9d974ed013419149dd03fcea31"
   end
 
   depends_on "go" => :build
@@ -25,6 +26,9 @@ class Stencil < Formula
     ]
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/stencil"
+    generate_completions_from_executable(bin/"stencil", "completion",
+                                          shell_parameter_format: "",
+                                          shells:                 [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

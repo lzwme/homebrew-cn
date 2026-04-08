@@ -1,8 +1,8 @@
 class MongoCDriver < Formula
   desc "C driver for MongoDB"
   homepage "https://github.com/mongodb/mongo-c-driver"
-  url "https://ghfast.top/https://github.com/mongodb/mongo-c-driver/archive/refs/tags/2.2.3.tar.gz"
-  sha256 "5d725d488bf26ae61403dca4c988d49f10814ebaaee8fcf4342e2f89a6e06410"
+  url "https://ghfast.top/https://github.com/mongodb/mongo-c-driver/archive/refs/tags/2.2.4.tar.gz"
+  sha256 "85b58dc70245fe32eab47f8c870d9bf323eeaa4f9432c6eb4b3dedce57fd4911"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/mongodb/mongo-c-driver.git", branch: "master"
@@ -13,12 +13,12 @@ class MongoCDriver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3016f10623524a930a61bfbd9294e5ebb36630b42334c184c794300ef2b105ee"
-    sha256 cellar: :any,                 arm64_sequoia: "73a4d1db6fbb819b4203bce5797dc364ad0a203a30d6bd679b2405bb893f18bb"
-    sha256 cellar: :any,                 arm64_sonoma:  "07c266cd3677d3303319d7eecdda0aca16c8faea241abbb5b234d5e15be13d9d"
-    sha256 cellar: :any,                 sonoma:        "5d847879848b2971abda65cb0879780dc09b2a0135d04378d37b277fa53258d7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dcbe2e3e57f59bd275d7f60d35af192cb9e3c1378104b919d633e565c28273d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09416ece64d234071232cb64cb63cd34d8ce8df195a521e62fa970917e4f3e28"
+    sha256 cellar: :any,                 arm64_tahoe:   "e9dd29b715b143e461468f30ad2f971c9c274b37840690cfbc9f8e50268f965e"
+    sha256 cellar: :any,                 arm64_sequoia: "a524d9cd92de59ea303f76bd00be1cb52bfa899b2832d555d550a56f727db5e0"
+    sha256 cellar: :any,                 arm64_sonoma:  "f1ca6a280d1ad3ac205d79be07fad4b35fb446e73d01fef178807a06be80dd7c"
+    sha256 cellar: :any,                 sonoma:        "d0c43321baa7dad596dfe67fa47c4ad6ac25cf48638125b8a4df2c49e166171b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "32945843047e31e91ca580dfc5a2b88dd214809d57ff018d8f0779172675e2f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11207fd4e9215b5dbf669108edfad3c12e43af62187a20509f6b98f14f017c7a"
   end
 
   depends_on "cmake" => :build

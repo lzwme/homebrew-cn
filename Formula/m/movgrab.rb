@@ -16,6 +16,16 @@ class Movgrab < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bd514f0b8349b7a15da7d9c28d64a2a8eaba6f16bdd36beb1aaa449f9b68088"
   end
 
+  # Last release on 2017-07-19 and upstream consider projects abandoned:
+  # * https://github.com/ColumPaget/Movgrab/issues/5#issuecomment-591343423
+  # * https://github.com/ColumPaget/Movgrab/issues/7#issuecomment-3425456387
+  #
+  # Also doesn't work with OpenSSL >= 3 while libressl has GPL-incompatible old
+  # OpenSSL license (https://www.gnu.org/licenses/license-list.html#OpenSSL)
+  # and Movgrab lacks a special exception to distribute combined work.
+  deprecate! date: "2026-04-07", because: :unmaintained
+  disable! date: "2027-04-07", because: :unmaintained
+
   depends_on "libressl"
 
   on_linux do

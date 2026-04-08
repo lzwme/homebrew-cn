@@ -1,9 +1,9 @@
 class Spidermonkey < Formula
   desc "JavaScript-C Engine"
   homepage "https://spidermonkey.dev"
-  url "https://archive.mozilla.org/pub/firefox/releases/140.9.0esr/source/firefox-140.9.0esr.source.tar.xz"
-  version "140.9.0"
-  sha256 "b972b2a4c17244d51c10123cbd6c936e2cf26ebc29eb724570d285c283e9e92c"
+  url "https://archive.mozilla.org/pub/firefox/releases/140.9.1esr/source/firefox-140.9.1esr.source.tar.xz"
+  version "140.9.1"
+  sha256 "45d2e6c2b3aa4f52815d1a8a4a93e013d19e86e1b06480f13db9e6fdd7148dc2"
   license "MPL-2.0"
   compatibility_version 1
   head "https://hg.mozilla.org/mozilla-central", using: :hg
@@ -16,12 +16,12 @@ class Spidermonkey < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8094f46e9b9fa2b910f5e1e2cf6ed7996052ca21fd81754d898b6e1fb2f77496"
-    sha256 cellar: :any, arm64_sequoia: "ab98ead74434fff0efd4906769a4d6d4084b538ef95cef14c1903685054d616d"
-    sha256 cellar: :any, arm64_sonoma:  "62721a6e5cbeb2dd4d06a032cbdc4646a27846aa9064b27a3ddb7cb114d29f42"
-    sha256 cellar: :any, sonoma:        "c9c1fb867c8065b57bb9f4c6820e73fbfaa9ca62dbb4d15fc0575ae6c81e2a7b"
-    sha256               arm64_linux:   "c953febb7f74bcbeba1b0b3a45d316c9bfbe2735809a2a7b15ba7cfffe7adc23"
-    sha256               x86_64_linux:  "91ca3b4499a8c8759947636c7b0c92aec73b2179be0b77b802e221cad8bc5d4f"
+    sha256 cellar: :any, arm64_tahoe:   "9082cea8980c696de81f06e22102607ccaedec45e3431671bdc91cb629554372"
+    sha256 cellar: :any, arm64_sequoia: "675be661c587ae6371431556a3dbd84120d9ce2071fabf09dba8a5d3b1776f3c"
+    sha256 cellar: :any, arm64_sonoma:  "06d78e50a588918140fd1dce3de69f872675ec55b041d684fa1e22a5d82713d6"
+    sha256 cellar: :any, sonoma:        "4b941ac89891f824676e5b549286f22a59296658fdd76ad455c6279c1baa2e29"
+    sha256               arm64_linux:   "12869c4cdf6ed295e1cace7064cefff0e584333b456ea3f0db41f33595dd676f"
+    sha256               x86_64_linux:  "3736913796237497f26e3ca20d9168a1eae23485d1957c31af1f9e776aba564b"
   end
 
   depends_on "cbindgen" => :build

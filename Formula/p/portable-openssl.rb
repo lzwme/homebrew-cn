@@ -3,10 +3,10 @@ require File.expand_path("../../Abstract/portable-formula", __dir__)
 class PortableOpenssl < PortableFormula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl.org/"
-  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-3.6.1/openssl-3.6.1.tar.gz"
-  mirror "https://www.openssl.org/source/openssl-3.6.1.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/openssl-3.6.1.tar.gz"
-  sha256 "b1bfedcd5b289ff22aee87c9d600f515767ebf45f77168cb6d64f231f518a82e"
+  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-3.6.2/openssl-3.6.2.tar.gz"
+  mirror "https://www.openssl.org/source/openssl-3.6.2.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/openssl-3.6.2.tar.gz"
+  sha256 "aaf51a1fe064384f811daeaeb4ec4dce7340ec8bd893027eee676af31e83a04f"
   license "Apache-2.0"
 
   livecheck do
@@ -28,8 +28,8 @@ class PortableOpenssl < PortableFormula
 
   resource "cacert" do
     # https://curl.se/docs/caextract.html
-    url "https://curl.se/ca/cacert-2025-12-02.pem"
-    sha256 "f1407d974c5ed87d544bd931a278232e13925177e239fca370619aba63c757b4"
+    url "https://curl.se/ca/cacert-2026-03-19.pem"
+    sha256 "b6e66569cc3d438dd5abe514d0df50005d570bfc96c14dca8f768d020cb96171"
 
     livecheck do
       url "https://curl.se/ca/cadate.t"

@@ -7,12 +7,13 @@ class Broot < Formula
   head "https://github.com/Canop/broot.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f2c4d66083294b14dc65242efa350a2350a90e0211e475457561840d3613ea7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22fabe8fded7f153657a67506918252f81fc18365b4ca4a1f1476616e9bb33d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58b2199c594695a9003b7e034393f31bab46dba5da94d837d120d15f8de2770e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "505393e6ec36711156984a5c8910545dabeeda1f041d93e387bd2b2ecadf1ad8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3985735018a7aaa65e72544d3a0f66d6ff28d43a5efb2c171fafa569e28a65f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "904eec43923040d62604c9c71c689e99537bea1f994cbe3e62c78ae7f8282f05"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c3f44c63c335e67ccbb18d3f434ef53f35f415d454c22756fa5ea70c1cbe257"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b53b0aa9c2a73c86e5fb65cc5a62b1c4feaffdbbd158e29effe1791b77e4a7d4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32bf11832c25c8959b9bc0d03a8fdffe4294c4955c64c6b9bd05aad2d54b7744"
+    sha256 cellar: :any_skip_relocation, sonoma:        "091053c173bca639071ab5581a5400e9f6c9f15681176712faf850c0858c82cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c65cbf84becefe4628874c041cdb73b6279fd6c2ae8bfafd3a9a2b7073dff7b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "423d9e73268d6a02b0d00c3b45a29e06c84caa66caa55c9f39c1ed3d7d47a74f"
   end
 
   depends_on "rust" => :build
@@ -43,6 +44,8 @@ class Broot < Formula
     zsh_completion.install "#{out_dir}/_br"
     bash_completion.install "#{out_dir}/broot.bash" => "broot"
     bash_completion.install "#{out_dir}/br.bash" => "br"
+    pwsh_completion.install "#{out_dir}/_broot.ps1"
+    pwsh_completion.install "#{out_dir}/_br.ps1"
   end
 
   test do

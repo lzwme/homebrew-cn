@@ -1,8 +1,8 @@
 class Fio < Formula
   desc "I/O benchmark and stress test"
   homepage "https://github.com/axboe/fio"
-  url "https://ghfast.top/https://github.com/axboe/fio/archive/refs/tags/fio-3.41.tar.gz"
-  sha256 "38f2c723eda1d94fd25c91dbad30da7a551a58840b7a6368eaee3daa700fb088"
+  url "https://ghfast.top/https://github.com/axboe/fio/archive/refs/tags/fio-3.42.tar.gz"
+  sha256 "56b03497a918d07692257890fd759bf73168ad79df5be78a2bcbbdc8ce67895b"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,13 +11,12 @@ class Fio < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3cb5e54c2ed3c71f2ee65c468d09f5517fd0a907a964ee65239fff10f0cc3e92"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ca6ff0e4b9d6cb31e7136b3b3ee3e2bb48cd23f112c516025c78c34213e9208"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ac4827580d3218212dbf2dd97859b5c95cea622c1dcbe9821ebe6f473be6873"
-    sha256 cellar: :any_skip_relocation, sonoma:        "402d67954f91a966b989ef13a06f131d2179c643f7d5dd40ccb3745d52e9fe16"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "11567a64f191b14ac26cc2d05a805c61a12f76fd2a135e2cc5b7bc06a733d72c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8d5370cc5ea1c91fa145ba9f59f214d3a87c5c59758e00164d9a18aa3258edc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "611c21aa09abf75e1df6e31658b1bf04182e7b7c678a0b29bb978cf15e2cbb9a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a4f2a8dab06afd2289586c52856e49777630e387161a3cc791ffe1ecb54dbf7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb7a4ffae3b6efc4de0cd489f458448eeacf4a1226711a2443ab48dd0b6accff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "960759c937bf7dc1e54d4605ef912a443ced521e4531062e29c856af476add9f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc1623f397fd345e7bcec43a36a9e679a20d108281c1f3581f67b03cfb599a6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8539bfd65ae2df6839534e907f291e50943eab0df04bb9513b868a45ce6e5247"
   end
 
   on_linux do

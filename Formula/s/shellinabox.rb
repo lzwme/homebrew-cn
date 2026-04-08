@@ -3,7 +3,7 @@ class Shellinabox < Formula
   homepage "https://github.com/shellinabox/shellinabox"
   url "https://ghfast.top/https://github.com/shellinabox/shellinabox/archive/refs/tags/v2.21.tar.gz"
   sha256 "2a8f94beb286d0851bb146f7a7c480a8740f59b959cbd274e21a8fcbf0a7f307"
-  license "GPL-2.0-only"
+  license "GPL-2.0-only" => { with: "GPL-3.0-linking-source-exception" } # OpenSSL exception
 
   bottle do
     rebuild 1

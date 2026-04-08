@@ -1,8 +1,8 @@
 class Coder < Formula
   desc "Tool for provisioning self-hosted development environments with Terraform"
   homepage "https://coder.com"
-  url "https://ghfast.top/https://github.com/coder/coder/archive/refs/tags/v2.30.6.tar.gz"
-  sha256 "325b45c2048e94a61d44b822ee96b348105007a8403c6791fe6de5b4a22325f3"
+  url "https://ghfast.top/https://github.com/coder/coder/archive/refs/tags/v2.31.7.tar.gz"
+  sha256 "598c2592392cd902ff786ddf69f3e30b8b0fbcf12d82763f4feb6d15be72acfa"
   license "AGPL-3.0-only"
   head "https://github.com/coder/coder.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Coder < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c2542133a05d424e1e9e83121894693efe9a7908f0899a5750976f33955c5c28"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bedcd2779cd70c89f63877259071b4e21ee5fd75a1dd80db248013d5eef58185"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0fc29705caed747eab584f7b3670457305884ded1a506376ead23d1d1ce3d40b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5fc8b38c30de40f2a801d5710fc57f5650002e38c36ec01fd8652a5120195968"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8badccae91c234b18b9839cb22adb3222c71530db5a36999984f90533c69e6f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45227ae0bf5d336a6274d75b814c1ea55485423cb891afd0a94e11bb98f9eb63"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e5afc9554c0e70a35daea5df6ef4e6f59391ec804ea5a7c5cc4f1486755751f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "786878fca1cce97d6685875a26acb7d0026d37bec3090d41f5c5a5431f53e6f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d6878c238a2d94edd4ebb4e733275c8cf3997c41579a6032719d7232f0d49de"
+    sha256 cellar: :any_skip_relocation, sonoma:        "29ca51fff22705037483b699e4f4b73bc0b863a7dbc18b05dd6f25c8d10bb205"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b76b4b7f5f707ac64d655270bc424cff376e8de40c6f6f083b07281ac199026c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aee33c780276bc2fae3315f833a016aaa5442e6e25a61b1d3c00535709dda644"
   end
 
   depends_on "go" => :build

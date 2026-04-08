@@ -1,8 +1,8 @@
 class MongoCDriverAT1 < Formula
   desc "C driver for MongoDB"
   homepage "https://github.com/mongodb/mongo-c-driver"
-  url "https://ghfast.top/https://github.com/mongodb/mongo-c-driver/archive/refs/tags/1.30.7.tar.gz"
-  sha256 "addac1f20d280a1a55fdbcb73edf929af74b9768b61c92d77703466f51d6885a"
+  url "https://ghfast.top/https://github.com/mongodb/mongo-c-driver/archive/refs/tags/1.30.8.tar.gz"
+  sha256 "11f87477efe7aa9cacd9fd18872eb7e629adee898af627f670d1c2e2911b4670"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,12 @@ class MongoCDriverAT1 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "da30b69d4cb4b2be0762d80a9125aa34c2256d03670d7a31e7d2b12de1fa691d"
-    sha256 cellar: :any,                 arm64_sequoia: "dfa78f2a5d9b3abcc26db837de8b5e28bb488b6916742bcd39a4244a7bc1fcc7"
-    sha256 cellar: :any,                 arm64_sonoma:  "6140f3b7609c4425695ab49aea82e513047a5d409a557f85769052e9e949deff"
-    sha256 cellar: :any,                 sonoma:        "693819b2185f77e0f6c12cc30b1e6d340785574e2449379b4944a2b531bc5437"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8fd8f18d4e78ac98ae0e61c0a6e3e4bd829d8ea00d0b753fb667474985cd354"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "604c322948f8ac122e50970d8af4e8b1f2be763eb119ccbc6a6a226121d4bf70"
+    sha256 cellar: :any,                 arm64_tahoe:   "631afe5e9a69bdefc9fc3a7bc6a8594092d95992dc69576911450c1e4e05ead9"
+    sha256 cellar: :any,                 arm64_sequoia: "e63f93a4b2e8a25bdbd8296552f7d2f5068b1c26d2da377bc850e5b6684527b7"
+    sha256 cellar: :any,                 arm64_sonoma:  "e37e0f01f42b7bc092f61f666a73d099db68c7befcd055cec1c2d7030cc153b2"
+    sha256 cellar: :any,                 sonoma:        "5fa45af42b827d347807e64531ed1e2670d9496479d9c921813d16dc2e3e766e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "feb745e0367542478306534be0ba3cce7f48bbb259b36ffa5dd597d55a271270"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb8bb4be9623dae26fe356cee0e366cf5e26951e25074b62563bb97ab89a0839"
   end
 
   keg_only :versioned_formula

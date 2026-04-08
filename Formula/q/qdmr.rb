@@ -1,17 +1,17 @@
 class Qdmr < Formula
   desc "Codeplug programming tool for DMR radios"
   homepage "https://dm3mat.darc.de/qdmr/"
-  url "https://ghfast.top/https://github.com/hmatuschek/qdmr/archive/refs/tags/v0.14.0.tar.gz"
-  sha256 "26f808352edaf3ad3fbba86b4d45e8e085c9d27e7cb2b78eaf548a4c763382bc"
+  url "https://ghfast.top/https://github.com/hmatuschek/qdmr/archive/refs/tags/v0.14.1.tar.gz"
+  sha256 "cb584c500f98897a959d7242292261ae7d8deafc7d0f709fc53d811e40d27f11"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9c6160045a19e7b2515227379587deb10368b64ca90c3f1103f267c2104bf3b8"
-    sha256 cellar: :any,                 arm64_sequoia: "ce8540450dd832f0b634e5a257106fab0064ba3dd997662717d3f465a39d17e6"
-    sha256 cellar: :any,                 arm64_sonoma:  "6ce52cad9b7d702fe5d7d08e29f8418bd8bfb9ba4f5c8cf9430d78462461be01"
-    sha256 cellar: :any,                 sonoma:        "e344c3818d279f9a31bb060ce204fa1f938bea33f736361f6af0d0259e09fbc9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "06e4da3589fce5c735c673a4d084c1e3fa7b4d217b2f0127ec0b18debba95b9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0be4a1758a9c7e63bc60b33c622a626f434d4358ed8eae0681558a3146da435e"
+    sha256 cellar: :any,                 arm64_tahoe:   "2b503002f09b4cfa8641ab1216d64442f89ea122fddd22763c66a64ec4302003"
+    sha256 cellar: :any,                 arm64_sequoia: "d8955c28830bcc49c18f908658e27ca77c148edc73e57d0b70ac08fb7ac78cb8"
+    sha256 cellar: :any,                 arm64_sonoma:  "428503859864e597728d26431a6e0e44209dfd679dd779be8b829c632d6b06e8"
+    sha256 cellar: :any,                 sonoma:        "5d09662a536662b434ac7aadefae20e2760056b088a44fd4003ef2c059b132f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0caee5a51c5a3f0b686f2aaa901096540bea72a9bed40b4bea970ce2bf44b839"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd115844dda55a26b9078c1f07732e2ab6592afeaca4fe4cf80fdd75c0e2f19c"
   end
 
   depends_on "cmake" => :build

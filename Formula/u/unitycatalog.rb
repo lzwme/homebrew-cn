@@ -1,8 +1,8 @@
 class Unitycatalog < Formula
   desc "Open, Multi-modal Catalog for Data & AI"
   homepage "https://unitycatalog.io/"
-  url "https://ghfast.top/https://github.com/unitycatalog/unitycatalog/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "b06447f18ca411662070b928b6a294d4ab6c237545f0acca88dfa2fa1b4b6404"
+  url "https://ghfast.top/https://github.com/unitycatalog/unitycatalog/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "176961234b38ec784660c2804ccb59df79feec1fb1dd5829b6f97e8ba3412605"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,12 @@ class Unitycatalog < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5bb29544d5d9cd7b35507be2156ebd230a8e4065bd56c2fe384c0d510362b899"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee881ebb4140d889e7f410720bc914ba18103102b30be7e63cebd06ef69f5629"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee881ebb4140d889e7f410720bc914ba18103102b30be7e63cebd06ef69f5629"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee881ebb4140d889e7f410720bc914ba18103102b30be7e63cebd06ef69f5629"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ee881ebb4140d889e7f410720bc914ba18103102b30be7e63cebd06ef69f5629"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "32924b5b58778dcdfd46578afbb6304c0ded6ab5d720549cde3fed78fa3070b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32924b5b58778dcdfd46578afbb6304c0ded6ab5d720549cde3fed78fa3070b5"
   end
 
   depends_on "sbt" => :build

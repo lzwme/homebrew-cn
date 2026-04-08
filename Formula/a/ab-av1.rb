@@ -7,12 +7,13 @@ class AbAv1 < Formula
   head "https://github.com/alexheretic/ab-av1.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73201c47450ccdcbdc9688ca2262b95bed40d0bf62162918e7312cc3f9f05fd5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fbd80a4ee25c445639cd905f15dca80c2b4866681ab2f09ecae94ff7e4c68c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1cc3a5edf81a515828ef54964fa3fceb9903d294a8b5b5b1f27c20dce95c8e6b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4eaeebb35aeeff85b903cdde3adde3254758cfb028e897285d4b51d72019047a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd91ab6e890554de7ebeeb7ac1fdc4a2c60518ae4423f87c0da04be972bfef1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a604df6d3a01024605b844875e72dbeb5e5525e6db2a211d5f8949079e46afe"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "800d7dda4433997fa81b9abe19faf274b647fc56ec0da8d901daf6e32fdd6dcf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d852e18f09e2fcc76ea086502558f9330046ecf89ea1b200a10b50b251b57355"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b58144acd8619ab22df4f631809d40d16ff3f39e2200e3e6b1b1a46db9d255b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8e3e4ff5915bcde7121ff94b77216404b65e08048838bec5f2a812dde93b307f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "030e005f23208da1f8ad43526233b73a0fdec91553146ffa1679d2c3ac95a75a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "208b08dc100a6dd6c2f7b990dc5d620bf984f464e4ef60e793888dabcfd2206c"
   end
 
   depends_on "rust" => :build
@@ -20,7 +21,7 @@ class AbAv1 < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    generate_completions_from_executable(bin/"ab-av1", "print-completions")
+    generate_completions_from_executable(bin/"ab-av1", "print-completions", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

@@ -2,10 +2,9 @@ class DockerEngine < Formula
   desc "Pack, ship and run any application as a lightweight container (Daemon)"
   homepage "https://www.docker.com/"
   url "https://github.com/moby/moby.git",
-      tag:      "docker-v29.3.1",
-      revision: "f78c987ad3710cacffe47fce696975ecb337148d"
+      tag:      "docker-v29.4.0",
+      revision: "daa0cb7f23594cdbcce5002e370027d3fd36ffd7"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/moby/moby.git", branch: "master"
 
   livecheck do
@@ -14,8 +13,8 @@ class DockerEngine < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "8b1b9681cc9905de0f5720788e019a60ad5d6061a1e9c16fe0915def74979de6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "110998a509e8f35ac7e8c32f2b74f516826f63ecab5c4f86f1a52bc0b1eb825f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "4128cb729cd535f6df88e941df82ed5645c372615e7f4b6e8e6ab666a6d04018"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "198003a5515e052cd67633ac371c69f7b7b80ff7d28bcf327922ab3dc086428d"
   end
 
   depends_on "go" => :build

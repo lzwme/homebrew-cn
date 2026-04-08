@@ -1,18 +1,18 @@
 class Treefmt < Formula
   desc "One CLI to format the code tree"
   homepage "https://treefmt.com/latest/"
-  url "https://ghfast.top/https://github.com/numtide/treefmt/archive/refs/tags/v2.4.1.tar.gz"
-  sha256 "b798ea210346474ce7f90dc062e849615abdbfeac1219d88d16bb1da7ce5566b"
+  url "https://ghfast.top/https://github.com/numtide/treefmt/archive/refs/tags/v2.5.0.tar.gz"
+  sha256 "eb15e4ba4de41909ae5b9fcf7c3763d971deec59683319ebc83ce404fd7c10a3"
   license "MIT"
   head "https://github.com/numtide/treefmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed5a10b18aa08bd20327b09cf7ebb6f52f0dabe0120a289848e8e9991c6a6945"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed5a10b18aa08bd20327b09cf7ebb6f52f0dabe0120a289848e8e9991c6a6945"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed5a10b18aa08bd20327b09cf7ebb6f52f0dabe0120a289848e8e9991c6a6945"
-    sha256 cellar: :any_skip_relocation, sonoma:        "613c7e3a993c485cbe041fe608ff7dc766507689f7408060101806629a5df465"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f690ebba1fc834e088305ff8f6047e6e199bff76fb3ac10739ab7e67087d7f11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ea13aad1351bb0da64fefbc96d3dceb989fe621abd4a19fa5a23d9a1eb8b9ff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e2f5a81b67b656811f5322d3bb853f8dd145429746040545df411b3372a1df1e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2f5a81b67b656811f5322d3bb853f8dd145429746040545df411b3372a1df1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2f5a81b67b656811f5322d3bb853f8dd145429746040545df411b3372a1df1e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "83cb6292e57374f2bdc7919714c5bfd02e19a01fe4f9803d7a259bb97c44303b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2743a42e91e2b33921bd60f3dfcbc270926e8bb7d65da74b074a858144a81fbc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4491d304804daa8a2685d0b9120fff7d12230e42a84aa4c261e54db125f5cd6"
   end
 
   depends_on "go" => :build

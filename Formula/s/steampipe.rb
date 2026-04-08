@@ -1,8 +1,8 @@
 class Steampipe < Formula
   desc "Use SQL to instantly query your cloud services"
   homepage "https://steampipe.io/"
-  url "https://ghfast.top/https://github.com/turbot/steampipe/archive/refs/tags/v2.4.0.tar.gz"
-  sha256 "dcbde3f1fa438bf0640b4ce71c6a34bdb889a4080945a428f3804136b091ff0d"
+  url "https://ghfast.top/https://github.com/turbot/steampipe/archive/refs/tags/v2.4.1.tar.gz"
+  sha256 "b2eebf71c3e2340b987c7bb992733ee1913e0619faead2309f37a02cb6b54c66"
   license "AGPL-3.0-only"
   head "https://github.com/turbot/steampipe.git", branch: "develop"
 
@@ -12,12 +12,12 @@ class Steampipe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d71e8de79941dbae4d3c6c67252e0fdda2e7dcd17ff94aa8f666080f5be1ed6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a72311914c3062fdc936541b295a7e2edced7d0d8c0ab8277bbd81c652dafe41"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e730f33db6882cd74ac46eaa680523dc3bc0b98dd312b4b825d81dc369d0f931"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7e6720265404bdbae626b50fc303fc1baffac23fa0e077ca419b308af5e4010a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "32a34ed171a2ca4088543d6b80965664f1815812b97ad1beb82896be1a65ca53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55987709cb69431e75f9c62e3f223dde0ec8c2ccacfe77728f699cd065f90532"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c7f461ded24423a45db368eefa99bb32cb54f68db5504a8029f71a02e199b91"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "070d80940058b638eae63b95c8109e9eea6a4f61fe7d66b6fe7081d5f2bd5929"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "241ef56d9025f07650d4c906210f4bde2928aad2ff8749f4162673097d15c26d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f018a40f37218294641a36a98daddd0814c5f634fbd3247996d7e05de5c80ab3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "770ed0e23345b29d5f2e7cd435d60efb4a644db1dfe12cf13d9af00728cff8b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "298e8ceaca1994aa70be0333591db40f872cc6ca055986942aa4268e5bc2b098"
   end
 
   depends_on "go" => :build

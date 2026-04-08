@@ -1,17 +1,17 @@
 class Miniserve < Formula
   desc "High performance static file server"
   homepage "https://github.com/svenstaro/miniserve"
-  url "https://ghfast.top/https://github.com/svenstaro/miniserve/archive/refs/tags/v0.33.0.tar.gz"
-  sha256 "eacef6128688c02409b0aba34c550a80fa5a714979c6c8e21e20c6a0aa2bc33a"
+  url "https://ghfast.top/https://github.com/svenstaro/miniserve/archive/refs/tags/v0.34.0.tar.gz"
+  sha256 "b963f0226dd7fc8e66a70708da4f0747a3eef3763ea97b958d9d1d317362812d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "51a652974e5b6cbc0c900aa59db2d90ee9b09bdc4eee6d4ac53439508aac1778"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "489497e4fd12e21775e64294921ae04dd4c584e227ffdd2128993dec836d28a1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eae7278059d876c2e570d00c79d9d0ffcd33beb6a76177f3a914bc8d5ad269cd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c234fcbed960c1ce0590db9111b6ced642f9b52ceb70ac09956f07775406da31"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4054184cc0c0ae822c6e09b27b0b7134d96b0981b31631a328008a8689507c90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24966360e41ff69713840bfbac5c95c02bc9b55856123230745108787a1536f2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e5490779133bfb3cf53f52029496d27a0060462eb6be15a510377b90dc3e0e8c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9020b9f0643c914dff10739681e4a6fcf398a111ca15b252e0e9a68593861039"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a48e15094e2694784453efd6ac835aa6e06ae8f4553b4c94d90e0a495bd93ad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a50e495c8ef408ed6da0ed2c3e3b5956751b9959a94b6e87cb9ea31e7bb4ead1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e08e23519e9d6764c13b5ddb55f88b673ac833a15e66c8607cddecb67eb4c30e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcb7893f0f9bdb09d16f6270b403eb5d2a234672ef36f70c9a51f0ac2f214f3a"
   end
 
   depends_on "rust" => :build

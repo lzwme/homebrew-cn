@@ -14,15 +14,11 @@ class Mongoose < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f33c503bd19499b37d942517704bdb19d05b1a5ad1628bc2e7502f217f22066d"
   end
 
-  depends_on "openssl@3"
-
   def install
     # No Makefile but is an expectation upstream of binary creation
     # https://github.com/cesanta/mongoose/issues/326
-    cd "tutorials/http/http-server" do
-      system "make", "mongoose_mac", "PROG=mongoose_mac"
-      bin.install "mongoose_mac" => "mongoose"
-    end
+    system "make", "-C", "tutorials/http/http-server", "example"
+    bin.install "tutorials/http/http-server/example" => "mongoose"
 
     system ENV.cc, "-dynamiclib", "mongoose.c", "-o", "libmongoose.dylib" if OS.mac?
     if OS.linux?

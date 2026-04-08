@@ -1,19 +1,18 @@
 class Ettercap < Formula
   desc "Multipurpose sniffer/interceptor/logger for switched LAN"
   homepage "https://ettercap.github.io/ettercap/"
-  url "https://ghfast.top/https://github.com/Ettercap/ettercap/archive/refs/tags/v0.8.4.tar.gz"
-  sha256 "1674c235b16b2048888b85a697697eb0c4e742f875fdaaef7acacc152568ad06"
+  url "https://ghfast.top/https://github.com/Ettercap/ettercap/archive/refs/tags/v0.8.4.1.tar.gz"
+  sha256 "210a535138772ee67f5946ef61efe3bba31413d0f241a11d953fb553cacbbacd"
   license "GPL-2.0-or-later"
   head "https://github.com/Ettercap/ettercap.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "b0f697c28c4d4dc88b6f717abaf9bf9856b9fa26c2aa511b970dcfcc6ea1105d"
-    sha256 arm64_sequoia: "8f56c6044ab1ab45ce0cddf6628aac54ec78a5644ccf3d6da3adf982ead97b70"
-    sha256 arm64_sonoma:  "8318020ce63c1709a24a570ea65c9c0c76a6e7391f8a78808c3f6d133620ece5"
-    sha256 sonoma:        "3dd8609d57b114735a7db0708b350a5587f4435c4b4b11d1ca20871c5837decf"
-    sha256 arm64_linux:   "73a5e485dae3ee5339481f54ae56ccbb69bacc5d41ecbfc8053071be373d9b9a"
-    sha256 x86_64_linux:  "98f5d49640400d62f0813d27d2d72c2a68473c28bd621004fd24b5ce13f9fc0a"
+    sha256 arm64_tahoe:   "683a1e70a4ed420180dc80604f60bc2f1862f0f37db7fd315c6ed0a98c427ea2"
+    sha256 arm64_sequoia: "4d89d3266fc1456c361809c437ddd63efbd2b22f4f843cb7f6a0930cce0e418c"
+    sha256 arm64_sonoma:  "57b7ba0a951d2d150bc15e4c550dea9d72d8b8185950b9ad8771c16f23bde0be"
+    sha256 sonoma:        "71e45b355ab2fcd63cfd1d50797908832d2d0a75a6da4b68076eaf8e1b671d0b"
+    sha256 arm64_linux:   "8b73234cc878c74b1c948428238c7d5db228d4c445f25bb732b657ca8853e7ff"
+    sha256 x86_64_linux:  "5c052b9cfffeb2a6ab032ff9903575894dadefc364b8dcb1090d28d34ec4648c"
   end
 
   depends_on "cmake" => :build

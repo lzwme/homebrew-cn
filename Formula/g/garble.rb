@@ -4,16 +4,16 @@ class Garble < Formula
   url "https://ghfast.top/https://github.com/burrowers/garble/archive/refs/tags/v0.15.0.tar.gz"
   sha256 "b429b24dafa851a25bbeca635db33eb4162b8e3109fb234a2c8e7780a837b958"
   license "BSD-3-Clause"
-  revision 8
+  revision 9
   head "https://github.com/burrowers/garble.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fac51277b744e6c16b8cc4667c9e5d0e07f7329a46bb292bc79f967b8013b392"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fac51277b744e6c16b8cc4667c9e5d0e07f7329a46bb292bc79f967b8013b392"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fac51277b744e6c16b8cc4667c9e5d0e07f7329a46bb292bc79f967b8013b392"
-    sha256 cellar: :any_skip_relocation, sonoma:        "162c0db6b8d12680cfc17a4a0b5834d8e6d55c7bc91d0d97021699c9a597e15e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce682fbe28be8c951bc1766cbed3564baff91fc79d0c2474efb92e8058511213"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37842bb21aa6e908df86b1c8e8f2e8acb574eff16da04d88ad8e8321c39b634e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d9c85054c99c1bbb2e353caacca1954cf31cd6e2d6b2df029a61a6908ccc83c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d9c85054c99c1bbb2e353caacca1954cf31cd6e2d6b2df029a61a6908ccc83c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d9c85054c99c1bbb2e353caacca1954cf31cd6e2d6b2df029a61a6908ccc83c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8a444269c41ed8b9701d9cc9339a84bb4ef67c72ef9b9fa3152acfb4e178ea63"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39d254734cae250a41fa2ff10693b877f5dad0b0176e7fb5603224b9bc6dea7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4114023ed6dab4e1f09a70094ff97b8d8375ff1735794f4779aebf94928bedc7"
   end
 
   # unpin go when the release is supporting Go 1.26, fixing https://github.com/burrowers/garble/issues/990
