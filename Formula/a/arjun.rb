@@ -56,8 +56,33 @@ class Arjun < Formula
   end
 
   test do
-    dbfile = libexec/Language::Python.site_packages(python3)/"arjun/db/small.txt"
-    output = shell_output("#{bin}/arjun -u https://mockbin.org/ -m GET -w #{dbfile}")
-    assert_match "No parameters were discovered", output
+    port = free_port
+    (testpath/"server.py").write <<~PYTHON
+      from http.server import HTTPServer, BaseHTTPRequestHandler
+
+      class Handler(BaseHTTPRequestHandler):
+          def do_GET(self):
+              self.send_response(200)
+              self.send_header("Content-Type", "text/html")
+              self.end_headers()
+              self.wfile.write(b"<html><body>OK</body></html>")
+
+          def log_message(self, *args):
+              pass
+
+      HTTPServer(("127.0.0.1", #{port}), Handler).serve_forever()
+    PYTHON
+
+    server_pid = spawn python3, testpath/"server.py"
+    sleep 2
+
+    begin
+      dbfile = libexec/Language::Python.site_packages(python3)/"arjun/db/small.txt"
+      output = shell_output("#{bin}/arjun -u http://127.0.0.1:#{port}/ -m GET -w #{dbfile}")
+      assert_match "No parameters were discovered", output
+    ensure
+      Process.kill("TERM", server_pid)
+      Process.wait(server_pid)
+    end
   end
 end

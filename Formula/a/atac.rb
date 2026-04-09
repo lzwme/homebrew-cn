@@ -7,13 +7,13 @@ class Atac < Formula
   head "https://github.com/Julien-cpsn/ATAC.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "663f26d36f6d20a16ce4623de822aa4b7a460ded7b5ef0cb2deacd8b09ae9be6"
-    sha256 cellar: :any,                 arm64_sequoia: "18b2909c261d5f7106947beb76279dbf6b60792742ca65b8ad8052226d53ff97"
-    sha256 cellar: :any,                 arm64_sonoma:  "b0a868229e3ca876054705b6c82691df09b51ef287be1a3650bef9b597732da5"
-    sha256 cellar: :any,                 sonoma:        "b1a3ca4d5cafd6b572f01cff8d50c67a900ec520842ff61112588a0ebf090b71"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3a67ba1e163c6e89d879df3564c32d5caec9d08e81bd3aedd8a3e39ab4695a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8783a29ce8fe794e012cd6c1d2fb6d73fcefad1bc2453f0365e9eb1198dd218e"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "42781046c144e343aafd6b19753793003ea4d267931cbc4fa79d4aa1483b7d2e"
+    sha256 cellar: :any,                 arm64_sequoia: "c5dedba31d079bdcc86d0d4819d53a0bc7f3c0190b00f4ecca80943894d16bf9"
+    sha256 cellar: :any,                 arm64_sonoma:  "4719c8cad3a935cd7dbaef659d1fb50c576884fc446031770f8e0722d083433e"
+    sha256 cellar: :any,                 sonoma:        "520a5f26b41870ba4c755ec5ee88502e72897f3033fca9e47a0ccbc1cf7ff62e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "afed6fbbdcd5e7f2bc28f0fe228dfecca4fb3516fd7d9570154e485558a49513"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1e89c4945b747f27ee12ed861d7e3c31a0e6c91d7840e25a169905d6372e3b4"
   end
 
   depends_on "pkgconf" => :build
@@ -27,12 +27,13 @@ class Atac < Formula
     system "cargo", "install", *std_cargo_args
 
     # stdout is not supported, so install manually
-    [:bash, :zsh, :fish].each do |shell|
+    %w[bash zsh fish powershell].each do |shell|
       system bin/"atac", "completions", shell
     end
     bash_completion.install "atac.bash" => "atac"
     zsh_completion.install "_atac"
     fish_completion.install "atac.fish"
+    pwsh_completion.install "_atac.ps1"
 
     system bin/"atac", "man"
     man1.install "atac.1"

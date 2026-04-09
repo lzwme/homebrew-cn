@@ -1,19 +1,19 @@
 class Rocksdb < Formula
   desc "Embeddable, persistent key-value store for fast storage"
   homepage "https://rocksdb.org/"
-  url "https://ghfast.top/https://github.com/facebook/rocksdb/archive/refs/tags/v10.10.1.tar.gz"
-  sha256 "df2ff348f3fac8578fd4b727eee7267aaf90cd403c99b55e898d1db63fa8cff5"
+  url "https://ghfast.top/https://github.com/facebook/rocksdb/archive/refs/tags/v11.0.4.tar.gz"
+  sha256 "b4dfd75199f385ec76056f81d33cde8f4cb446ea2ed1821feec7b996b3409f67"
   license any_of: ["GPL-2.0-only", "Apache-2.0"]
+  compatibility_version 1
   head "https://github.com/facebook/rocksdb.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "d1614d2a4c5acb5bf39aebcb2792717cff23ef9d8dd761cbc4c03f42227a44f3"
-    sha256 cellar: :any,                 arm64_sequoia: "fbd10ebeaf9b1518d3af65eec5ba4bbf9a71dfe53f6022163af62068dfcfa72f"
-    sha256 cellar: :any,                 arm64_sonoma:  "5fcd71d99272f69748d20547639cd29f8b74eee68c7cbdcc965f64c1c79c54ac"
-    sha256 cellar: :any,                 sonoma:        "04b506ca88a63e1f6f17d9710c175642b139f570d4601c2062403e0a2483eccc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad10f71bedbadd5f0cd51bc782704e0e10d710ee1599500916331d79d1af7d9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90c4057d4b34589ce782a576fca13702246c2f9bb94cb421930f7dd1e9b45f93"
+    sha256 cellar: :any,                 arm64_tahoe:   "27c6911b0c57747c2766d314d766d60235587b051f75b21659eab6d554e0837a"
+    sha256 cellar: :any,                 arm64_sequoia: "d2608e9cae567e84d7368a24a73724ac0fde7258587cad85e86c0eff25004e73"
+    sha256 cellar: :any,                 arm64_sonoma:  "ed4d1e08e10418b45b76dbc455db8b1f422dba42e0f7ac59a018743bd8b284a4"
+    sha256 cellar: :any,                 sonoma:        "9175d6da82a52771d6c1d96b33321ef81f772a4274a676fe16a98f2b6d046224"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "89022b4cacebf33bb83bf5ffb1383eecf9b981102d915e659d8ab86b88cd9935"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26a074fcd71e498da0669ce78ffa0ebbfaa09fe7433e93ded39223fa825fdce2"
   end
 
   depends_on "cmake" => :build

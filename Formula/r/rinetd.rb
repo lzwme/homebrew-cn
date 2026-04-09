@@ -44,6 +44,10 @@ class Rinetd < Formula
     system "make", "install"
   end
 
+  service do
+    run [opt_sbin/"rinetd", "-c", etc/"rinetd.conf", "-f"]
+  end
+
   test do
     system sbin/"rinetd", "-h"
   end

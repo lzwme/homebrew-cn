@@ -1,18 +1,18 @@
 class Fedify < Formula
   desc "CLI toolchain for Fedify"
   homepage "https://fedify.dev/cli"
-  url "https://ghfast.top/https://github.com/fedify-dev/fedify/archive/refs/tags/2.1.4.tar.gz"
-  sha256 "dbcecac2f085ab9de8907478542c8a1a30d7aa7f591e3a717e41c326f6994927"
+  url "https://ghfast.top/https://github.com/fedify-dev/fedify/archive/refs/tags/2.1.5.tar.gz"
+  sha256 "cae549e59fd0983cca82faf72f7e7722badf6a3f74f04ca352fd825879cc7edd"
   license "MIT"
   head "https://github.com/fedify-dev/fedify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c86e375940a543a676528ca736fb71a99939669212069bd4ab9def58b678fb1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3a3ffd6ca8dd36a2ffaf7c96da95411715d4f16267eb655076ec43f57c940b3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "daaf881ece240aca3e2ddf3fdfca994594018a626d9fff13135b910e0df8e431"
-    sha256 cellar: :any_skip_relocation, sonoma:        "90108fea989bb15a379cdfc7b06852da21f71a76f7fb47354b32570293f4559e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6ddeb804dbc07054aec7511311ad1657708b1460e5d6e13e0b7c30cc098d36b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb785c6edbb495feaffe7c5d114afaf6fe3b36ba6a20fcc7d6b28b952f6fb5fa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0996232da79bc999b846d18e74e4694cbdeeb2b3b61f7cb6eb6dd56a8e28cd58"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f0bb0edce7c6901ee08c076345e0cc099ff59af30414f32562940394e96971e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d91f5eaf334ed61c5cf48501eed409df083c5d938cc244fa2a41c2bd41b06f60"
+    sha256 cellar: :any_skip_relocation, sonoma:        "16794d66f476d6c3234602a3275155be2b264fc44f614ba234b09069fb9cfafc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca3e1de4f59ab395d62a11ffbc63b7dac76f911d67e795349d373b385401d67f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3df24258a92a2115f1d7ed6d2ddae4df78f68b5a8a9a44863a5f132578b1e72"
   end
 
   depends_on "deno" => :build

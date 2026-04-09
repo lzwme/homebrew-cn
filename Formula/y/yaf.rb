@@ -13,12 +13,13 @@ class Yaf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fbdfcc645e3d97d078b53318943a5e44e86b6d2e3456180254057b16b577830e"
-    sha256 cellar: :any,                 arm64_sequoia: "55475eea5c3d1e4a10c92fa824a2a57e8caaf884af0b1717391d8cfada89af61"
-    sha256 cellar: :any,                 arm64_sonoma:  "af7898289f5b90c1a57294de12bc58fca05dab477084388fee266bce5abfb496"
-    sha256 cellar: :any,                 sonoma:        "bd00807ff0368600337f5ef1a940928c828ffa39912a9281534d9eb034094629"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9205bfd89e5f641d0d373e5a0efd86422a77a43319e10bd2bcbac84ea58b2fac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f861e973c78e50d22b0eb7153af58bab716a480eaedc37b866d39734d5f7b64"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "3b7251cb48fe4163d5ceaf8c494d08f515f36969cbd11b663111828f9f9bb726"
+    sha256 cellar: :any,                 arm64_sequoia: "7cad8b87c9095aa1109b7a9d2aef1959d4f8a22212bd06935f81354e0b0e6257"
+    sha256 cellar: :any,                 arm64_sonoma:  "e918c459b53d43fe9c5e81fd34cce202a2837c0b9965dceab37dd80c78dd5ff1"
+    sha256 cellar: :any,                 sonoma:        "42791e849b3a3d5b6fef29e72eb312d002a522795d75ab10f1eb1a343f9cff61"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a94b4b5ad8a62f6cb5303609324034aebc094f1b33c05a10013197a90104cdc9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9df057a2865d4c4752a5f54c7d6b86bc91e92cc0343998821ed7dd6cbd47ba7e"
   end
 
   depends_on "pkgconf" => :build
@@ -30,7 +31,6 @@ class Yaf < Formula
 
   on_macos do
     depends_on "gettext"
-    depends_on "openssl@3"
   end
 
   on_linux do
@@ -38,7 +38,9 @@ class Yaf < Formula
   end
 
   def install
-    system "./configure", *std_configure_args
+    # OpenSSL is disabled as Apache-2.0 is not compatible with GPL-2.0-only
+    # Ref: https://www.gnu.org/licenses/license-list.html#apache2
+    system "./configure", "--without-openssl", *std_configure_args
     system "make"
     system "make", "install"
   end

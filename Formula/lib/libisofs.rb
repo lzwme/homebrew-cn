@@ -4,8 +4,9 @@ class Libisofs < Formula
   license "GPL-2.0-or-later"
 
   stable do
-    url "https://files.libburnia-project.org/releases/libisofs-1.5.8.tar.gz"
-    sha256 "910532653e6a56b5e4c2ef8717500d913debd5fd29f616fed15134b7522059a6"
+    url "https://files.libburnia-project.org/releases/libisofs-1.5.8.pl01.tar.gz"
+    version "1.5.8.pl01"
+    sha256 "ccbc3e7f43a0929691973539cef45f6468a3f3d72612af0b001a659957a045c7"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -20,12 +21,12 @@ class Libisofs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7aa1c6b0014287eeb32e00df255d513edbb924f27ac4211f6a43e740af5e0ab1"
-    sha256 cellar: :any,                 arm64_sequoia: "6599e191c4349560c2cfa69fac3366517e9a4b9e4210940657717812147c9cd5"
-    sha256 cellar: :any,                 arm64_sonoma:  "1e6c244eb84c438601a29b21eb50bec77c44e5940a248f0ad24179d5d8833fb0"
-    sha256 cellar: :any,                 sonoma:        "13bfe4b276b3a352354364e99cc5f009cf8286e362d1575bdd24af551330e556"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "429afaf2deeeb76cc4e42d3d6e5e743955c4261984f9807592150e88f0967a73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f4c52c8c9655e6310ab81fe2c14669a7cd24e928ec0211ff1616e678d487e47"
+    sha256 cellar: :any,                 arm64_tahoe:   "51499f11405e131d706495a2e55f0f6e36ce0a898111e34918bccc1e659b4154"
+    sha256 cellar: :any,                 arm64_sequoia: "6481f1993c2428c65c39cfb7c257f496b7d785b95618067b3d612917afc6d2d6"
+    sha256 cellar: :any,                 arm64_sonoma:  "efe1ed96e030ac1aee1e2a5b84d0ffcf0cc7463840f88267489307cd62889825"
+    sha256 cellar: :any,                 sonoma:        "cbb251eac3d3a0acf7b787c94be00265984ecdc84dd39fedddacdf90232d27be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "03c49a76ae9abc78236c6caa06e60c7108e7236d2b5b49a7ecc54b9a24819144"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba7c5e53415464406c2bd683ef2ed9291b16b5b132fbfff3dc1f9fd1effae2bb"
   end
 
   head do

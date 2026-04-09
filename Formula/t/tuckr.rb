@@ -1,18 +1,18 @@
 class Tuckr < Formula
   desc "Super powered replacement for GNU Stow"
   homepage "https://raphgl.github.io/Tuckr/"
-  url "https://ghfast.top/https://github.com/RaphGL/Tuckr/archive/refs/tags/0.13.0.tar.gz"
-  sha256 "8878bbe5017e9c34227598eda489f6e0b18e364d7ac75cc4488efbae91b630c8"
+  url "https://ghfast.top/https://github.com/RaphGL/Tuckr/archive/refs/tags/0.13.1.tar.gz"
+  sha256 "4b3bdc51e5de5961d89021f28e5aa1ae976fe37330ffafaa5042ed7d6ee2c7c7"
   license "GPL-3.0-or-later"
   head "https://github.com/RaphGL/Tuckr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4746e35bff4ec91205d140fbc1edc2575a67ffed4eeece5c765ee33082b40c6f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5cfff7e61489a5bde54ede3aebea68a4ca39369193da958e4669655e992073ee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0c2f920bfbf4838b8fe6c936ec93d8a4303a29c71527ffe6bc9b02561111e19"
-    sha256 cellar: :any_skip_relocation, sonoma:        "edffb701526d884abaf732ce5f603cad0718c929d50bb23828ac394c4dbcf186"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "21b0a789446ea055fdff5b00f3c42e05c3141be27627992c379907761d5a3bee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d3e69c2946bb0013779c9393e645cb3802dd24ef659a32c56f1b274549d4228"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53bb3a9c01895a2030156e5914c2be6385b42f3f4b735ebe527c7becae05f926"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39e80458c6a75f14f12ebb0401ab9a4b294ff6ef38cf576769b54980aae358d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7904f08a47d3cdbd8c39eae475ef03c5253d600e618b7e54d6fe2e91511a348"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b7ff703677b33d74065b649f34d3625161ea5beac468f4c6bae621be07870e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b46206b7d2fbab691d89eea6ffd6f06b69ef6fdc2881c77a515b27da7140c4c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "912dd0019e140f2d24322b5d01e9146f07f66571db709b02cb5c43a30d54d779"
   end
 
   depends_on "rust" => :build

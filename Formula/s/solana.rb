@@ -4,6 +4,7 @@ class Solana < Formula
   url "https://ghfast.top/https://github.com/anza-xyz/agave/archive/refs/tags/v3.1.12.tar.gz"
   sha256 "5d0e0ab87b2f1b504e9c6b15e438bc9f3fd705b9427bb0bcbcaa9e135d6c23e2"
   license "Apache-2.0"
+  revision 1
   version_scheme 1
 
   livecheck do
@@ -12,12 +13,12 @@ class Solana < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "205d6c16c8f4e78fd4d117d72d60c8b461d8870c4c81537e8d271020ba55d941"
-    sha256 cellar: :any,                 arm64_sequoia: "d0f8e005d08c98bc7ffa97ab16f6b61801f50b04597b40955fabc581e4f99b7c"
-    sha256 cellar: :any,                 arm64_sonoma:  "9a01bad434f6bc4a6308b8b3b4c62a249acf88cc59233e2281ae6cb147a20a00"
-    sha256 cellar: :any,                 sonoma:        "546721c6e6d77a3bb6242b21a46e923f17ccb065fe59bdaf7759dd554c4689c2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "76735951c1222244184f3dd253fb2528d05591fc26d2ac4505fd44c7a8c6a06c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca2516b21cfbc35831df42e2ed3087f244fc6a83724bc012280e4e97756b6f69"
+    sha256 cellar: :any,                 arm64_tahoe:   "81da0ce47df92d0149e29c8e28b67fc53440aa6e1437eb8ea232426d1482c6e4"
+    sha256 cellar: :any,                 arm64_sequoia: "b16ec359633ba05901e1de2ebab428a363718a787de9d17b7d99e9964a67db9f"
+    sha256 cellar: :any,                 arm64_sonoma:  "7577b5eb395d741a3e38f65bb18e1f5449973935fc2bbbb9fbfa29afc6981a6d"
+    sha256 cellar: :any,                 sonoma:        "8760f835e693b5e948145d4f725f1cec8eeed8e052f4a10bc47d8479ab41b7d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf0e976ee6976a8b39e2c4aab2de484e4ae9c64af455485a7d49f6468a63343a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ce4f214669c4065bfa640b123c28df2d20480ae13e701ae9bad4294ee7c51de"
   end
 
   depends_on "llvm" => :build # for libclang

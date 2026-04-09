@@ -23,7 +23,6 @@ class Libheif < Formula
   depends_on "libde265"
   depends_on "libpng"
   depends_on "libtiff"
-  depends_on "shared-mime-info"
   depends_on "webp"
   depends_on "x265"
 
@@ -48,10 +47,6 @@ class Libheif < Formula
 
     # Avoid rebuilding dependents that hard-code the prefix.
     inreplace lib/"pkgconfig/libheif.pc", prefix, opt_prefix
-  end
-
-  def post_install
-    system Formula["shared-mime-info"].opt_bin/"update-mime-database", "#{HOMEBREW_PREFIX}/share/mime"
   end
 
   test do

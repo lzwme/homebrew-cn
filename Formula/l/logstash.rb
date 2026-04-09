@@ -1,8 +1,8 @@
 class Logstash < Formula
   desc "Tool for managing events and logs"
   homepage "https://www.elastic.co/products/logstash"
-  url "https://ghfast.top/https://github.com/elastic/logstash/archive/refs/tags/v9.3.2.tar.gz"
-  sha256 "fac99027d3fb057b7cca3192ab2aad20cb169a139481f35a1ea1496418cb45ae"
+  url "https://ghfast.top/https://github.com/elastic/logstash/archive/refs/tags/v9.3.3.tar.gz"
+  sha256 "e84b0ea2e099e3379d3fe8d219486b748c5a1fbbc4e320d47e25283561c2fab9"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/elastic/logstash.git", branch: "main"
@@ -13,12 +13,12 @@ class Logstash < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a09686c30e926d45b89a47602ea65cf4da14a8e003ee6ef4e26cc362ce4bd58"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b1716b3ea6d22ac5bfcd5425683a6deca35dbf08af7eb04a61e59f0e2066b23"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2223833c290461233dad95b9ff5a3ca2b2e252ab92af6c4eb4f947010a01620c"
-    sha256 cellar: :any,                 sonoma:        "4297f192ea1a19795e6c1d7b1d2c10b574ddf047035593cf6ad208bbd33f60bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2279ae22157295f55beb98f7d277a2eb09834f01ecefb575c1712bdbf4e730f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af50e333234601eb09dec47c02b859ba78662e2c9389d89d8b457ea49863cb93"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6169f4f49fd7240e31249b34d39c3fc7a4170dbb51c90c4f58990133ef656538"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "476a72839f41c51352c3dab51671931dfc35ca7b3c4d5cd5c462c470c56e3560"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39922effb024e668b051cec0b2ef0cd665b802f00b563606d15cf1c1435c90f8"
+    sha256 cellar: :any,                 sonoma:        "1d24cf10b2abc460a8a0004364a64617a1acb7fc31e59cf7b38068a42d27b4b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b818a0e5d6b26998431af90ff9a14a45db4e22619aa9de812637faedb904685"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bfd6383879c9895974a5bbbcdf8058dc7a6915dbee83ef3e0869c15423c1ffa"
   end
 
   depends_on "gradle@8" => :build # gradle 9 support issue, https://github.com/elastic/logstash/issues/16641

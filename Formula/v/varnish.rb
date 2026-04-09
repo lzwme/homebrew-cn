@@ -5,6 +5,11 @@ class Varnish < Formula
   sha256 "c943862cb18c430a0f8fe0688991d581593736063158ca5be76eca178aa7f149"
   license "BSD-2-Clause"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 arm64_tahoe:   "e50d44672c5f0519f1dec0c0c4cbf53b5107328bec67adb3f976311f10d4b401"
     sha256 arm64_sequoia: "5deb140bc414198043621ad7b440f5186869ad090171342dc978a54818beb397"

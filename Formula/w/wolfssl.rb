@@ -4,8 +4,8 @@ class Wolfssl < Formula
   # Git checkout automatically enables extra hardening flags
   # Ref: https://github.com/wolfSSL/wolfssl/blob/master/m4/ax_harden_compiler_flags.m4#L71
   url "https://github.com/wolfSSL/wolfssl.git",
-      tag:      "v5.9.0-stable",
-      revision: "922d04b3568c6428a9fb905ddee3ef5a68db3108"
+      tag:      "v5.9.1-stable",
+      revision: "1d363f3adceba9d1478230ede476a37b0dcdef24"
   license "GPL-3.0-or-later"
   head "https://github.com/wolfSSL/wolfssl.git", branch: "master"
 
@@ -16,12 +16,12 @@ class Wolfssl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0aa9a866c469c80c891e1e381049e226b257735cf6425f8e1bd2685966ed7ced"
-    sha256 cellar: :any,                 arm64_sequoia: "d27328c5c3061094e185621c87b3f722c6d3ea91308a56642c841344467eaa0a"
-    sha256 cellar: :any,                 arm64_sonoma:  "f692466f4bbfd3adaad0c45e23287a68ec6e357051bd3dae8d88e820ffc471cb"
-    sha256 cellar: :any,                 sonoma:        "c62b566c168221f9d7d6ef9e90fb9290b288d774166352ed367cb4d72d9890e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f83ac0fa853e2cd750f561cf424c697dc405af38e08d3fe528c55131d133f48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "daccc374ef8a3d113495cf631edd89b6f5800f377d415fdd690377c11a8c8920"
+    sha256 cellar: :any,                 arm64_tahoe:   "591870f66e1d140d21a7c001ac99ce06e98b472cdb253535db0e9c5b1ec4b166"
+    sha256 cellar: :any,                 arm64_sequoia: "3aa87e6f1c42efd344f238a0b5f1ae2f6e7181e0d596681d1df83cc6814bcad8"
+    sha256 cellar: :any,                 arm64_sonoma:  "45b2065475667e1e44a677006508f140ef80b7872c122090d28fa29de08ad1cd"
+    sha256 cellar: :any,                 sonoma:        "bed4309d315045e39e46893b34650ba498dc02c1a3693ac94e0fa33aac634325"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b297f8c2637957114569dd8e8aff76a2b12732beca5ed1c410ec1aeecf916a2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf1a91326f6ffe43f48d472974c022cb2e5ea5cd7222688725f1ce5bfcde1434"
   end
 
   depends_on "autoconf" => :build

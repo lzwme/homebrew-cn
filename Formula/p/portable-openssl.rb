@@ -32,14 +32,8 @@ class PortableOpenssl < PortableFormula
     sha256 "b6e66569cc3d438dd5abe514d0df50005d570bfc96c14dca8f768d020cb96171"
 
     livecheck do
-      url "https://curl.se/ca/cadate.t"
-      regex(/^#define\s+CA_DATE\s+(.+)$/)
-      strategy :page_match do |page, regex|
-        match = page.match(regex)
-        next if match.blank?
-
-        Date.parse(match[1]).iso8601
-      end
+      url "https://curl.se/docs/caextract.html"
+      regex(/href=.*?cacert[._-](\d{4}-\d{2}-\d{2})\.pem/i)
     end
   end
 

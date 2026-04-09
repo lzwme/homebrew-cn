@@ -1,8 +1,8 @@
 class Bkmr < Formula
   desc "Unified CLI Tool for Bookmark, Snippet, and Knowledge Management"
   homepage "https://github.com/sysid/bkmr"
-  url "https://ghfast.top/https://github.com/sysid/bkmr/archive/refs/tags/v7.5.0.tar.gz"
-  sha256 "1830546367001a5714ab8e068dc137932700b42cd1e6ea9c8c0e80f255edbe0d"
+  url "https://ghfast.top/https://github.com/sysid/bkmr/archive/refs/tags/v7.6.0.tar.gz"
+  sha256 "ff94196f04dac1e15fd9a1882a4f28a06a39295cf85a69e47d9d596193da11cc"
   license "BSD-3-Clause"
   head "https://github.com/sysid/bkmr.git", branch: "main"
 
@@ -12,12 +12,13 @@ class Bkmr < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "455458134351a15cc58d6e306b81b32890cf221d0bcc44ac52cc3cabc7d86ae6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "319bcccc90e457c551d4f9d35dc2393da56c4af1b42bd1a90bcce2a660094b4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8083eabdcbec3903dbb542936bfca399547cc07d7f7ac6de930cb479bfd071a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "03aa96e05ba7a3a3aef2142df95858d839846a1ca96d0ca6e74bea7e1b65251d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5c57be80461476e14a123cda25bb8b2873fdcb07b8161bec805e431493d1782"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fad514b4a4dfb24bbd9e8668d7fe0a677ebcd01efa0826d72396eaff166b45fe"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "981398303bfcdf1d0ac8632ec2aab00c1daa90ad6a81ae9ec9320b06e742ac57"
+    sha256 cellar: :any,                 arm64_sequoia: "49a69d94d72a10b1bde5c8a27b4b927a12a8e7f5c7408bc3c70137175aa0c80a"
+    sha256 cellar: :any,                 arm64_sonoma:  "ab6205d1ab4f743fba53ae69d9b3ce50a1e0e5593d88cf87cc46dc48c24fa587"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c8e218569eed5c4dd2c146fed42d5da2c1296c71e4d60b998418d8f201d21ae9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "31d506cd6750d23ff81f5944a62550fa01e8c9853e27689c101fe2bd6837dfe2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b867ddb8333a7bc686f6a8435858d6aaab97dba7dc50c98bd010e577444a6ec2"
   end
 
   depends_on "rust" => :build
@@ -31,6 +32,9 @@ class Bkmr < Formula
       # Ensure that the `openssl` crate picks up the intended library.
       # https://docs.rs/openssl/latest/openssl/#manual
       ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+
+      # Add Homebrew lib to rpath so dlopen("libonnxruntime.dylib") finds it at runtime
+      ENV.append "RUSTFLAGS", "-C link-args=-Wl,-rpath,#{HOMEBREW_PREFIX}/lib"
 
       system "cargo", "install", *std_cargo_args(features: "system-ort"),
              "--no-default-features"

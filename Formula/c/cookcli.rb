@@ -1,18 +1,18 @@
 class Cookcli < Formula
   desc "CLI-tool for cooking recipes formated using Cooklang"
   homepage "https://cooklang.org"
-  url "https://ghfast.top/https://github.com/cooklang/cookcli/archive/refs/tags/v0.27.2.tar.gz"
-  sha256 "04f317fc85d7321d5decd6819461d699befd36bdfe8287f7c2ef5d64656a9178"
+  url "https://ghfast.top/https://github.com/cooklang/cookcli/archive/refs/tags/v0.28.0.tar.gz"
+  sha256 "3d188a410cc2b52b0fd4867aab7a26cefd0c47e2a47ab284105d82b6a06073b9"
   license "MIT"
   head "https://github.com/cooklang/cookcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07272978b1f6d4bee45dd48bce0ce327be607b58563b37e258b9da01348a876c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f55b31aea2e2aa9896be07f6df2c8221c107703b02daa1b4ff120e031f843b95"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab34f9e611fc99a98fc7773688cbd104db3897140e3c67788e76ea09ef3f6b56"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b644b4456e5f2d4396586e909a6639bb24faa48d1a2205520d10f03722d478a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "060a04f5ccd56840eb052a7996cb4e27134e07633a3e21867620185cd8de1fcb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9de05ae6b6965a66d93a9a6e76caac07a3400614450ed625ad28acf767a40ae7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "97a3f873192082b11547fc2a6c3112c7d35e661a085a2f0ede3a4a7d9007c385"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb62a3f07f9c189f3abfb3e7dc4cbd698bdd056bbf9926879b8f5125cb709f3d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d1c76a94f70bb15a1c48be3d2f34f603bbb60ea8478514acf3a244df1c9e1b5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "57a896e9b2e9fea31217c50ee2b52a32d900a8694173203f10ab0e306d135e46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac6620c8bc4731edda6e47e16f4f44dd234dba61247c65edf51046a2e52c5483"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e08903dd5294e82844de635e7571f41a60903ce38919750a7e5316729d19670d"
   end
 
   depends_on "node" => :build

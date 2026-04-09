@@ -14,12 +14,13 @@ class Aptos < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f001d517b9296cf5612b805effdcb2ce9a51bc75fc297d70808babd5861e30c9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3bce37f656e96afd28de4fdbf21ddc156c5db395866d5124ab7a77902eb621db"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c553b9dabd105bb3d6f64be90c37504ed8e4c9d79f274588e79ace842609cb44"
-    sha256 cellar: :any_skip_relocation, sonoma:        "14d84766dd23760095a5d66d806184a5e4248ce884416256ddc656d68d35b7ab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7d3b7240a67c52fc1d0fdcd7139192396666604146d9916c7f9633979c76b98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7d55faac0071adedc40c6f23ffc0613db4148f6dd9fa71ef2720d5cfaf4eda0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f63609819066da6a3a2f11e464513c13192cfa61fdd3014cea5ab7a843a253f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3d1c00c39535a964b4c5aad6170aec3cf6af87ee26d13fb67e3841f7c659960"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11112cd13554fc2c7ab5719e977832a863bb076e33505ffc69c255d4b560dbe3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5807bb15bab96ecfa699f87908e7deb89c70612f9cf8950a390e51c93a570fdd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "35e6ac7edee51c1f2f20da23357d66c539cb3cce43180b1280a9d041fce819d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80949a756ad0025b5123dc7001975ac4cd500a116809b4b367e72f7d48ab7cde"
   end
 
   depends_on "cmake" => :build
@@ -44,6 +45,15 @@ class Aptos < Formula
     inreplace ".cargo/config.toml", /,\s*"-C",\s*"target-cpu=x86-64-v3"/, ""
 
     system "cargo", "install", *std_cargo_args(path: "crates/aptos"), "--profile=cli"
+
+    # stdout is not supported, so install manually
+    %w[bash zsh fish powershell].each do |shell|
+      system bin/"aptos", "config", "generate-shell-completions", "--shell", shell, "--output-file", "aptos.#{shell}"
+    end
+    bash_completion.install "aptos.bash" => "aptos"
+    zsh_completion.install "aptos.zsh" => "_aptos"
+    fish_completion.install "aptos.fish"
+    pwsh_completion.install "aptos.powershell" => "_aptos.ps1"
   end
 
   test do

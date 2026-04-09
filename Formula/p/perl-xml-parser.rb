@@ -1,18 +1,18 @@
 class PerlXmlParser < Formula
   desc "Perl module for parsing XML documents"
   homepage "https://github.com/cpan-authors/XML-Parser"
-  url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.56.tar.gz"
-  sha256 "a78bfcd3834fde7411acee2f5fcd74deeecfbaa8cee86f16c33c42dde2fd8fff"
+  url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.57.tar.gz"
+  sha256 "a846bf77032e953e8344989780fa6a885e2a5226ebcaa93dae1d3df9b184e9cf"
   license "Artistic-2.0"
   head "https://github.com/cpan-authors/XML-Parser.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a102ab8e7fc6f8c729075b45f37927d26db352959a992d5a06bd75cb4a187fc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f39aa47aee3b3351694d96c152628ad0c389dd24a9593655c9c289d664edb0f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85763a17083836d3a3090cf62dacd4d33a169b49056f9c167672e74c2ea2cf44"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f5c26cdc636219021eb336f53344623d2e8fa87e37a641f061b54619bd185641"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa5799b7a71d8f333575c5378cca557fa048b4a1f195c33322fba8b1ab2c985d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f133d5131834016cbaee553f70496b5603568036baa9675c488c509ac5eab3ae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da63568c14d05224f6c76433e4505121d0781bf539da795e0c32405011c69003"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fcd52664202afda0759f918e9942d6c8584ba5f7c56550efb4f5615a524f227a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dad40769fbe7595b6abe590ec54e6049677642eeb49796cff48233f8be2835a1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5b997dab79d7f8761410c7e6ee0115153d0a0f0105ebf0b0f3837b704fa6ed1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "87b2c069bb1d724e69ff177c20c69e54a39244dc7add672246d87e36948c1a97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6466a583664968edb1703499fdca80ea6682c0b115af5dab513f948994aaeb40"
   end
 
   depends_on "perl" # macOS Perl already has the XML::Parser module

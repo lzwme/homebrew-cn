@@ -1,18 +1,18 @@
 class Resterm < Formula
   desc "Terminal client for .http/.rest files with HTTP, GraphQL, and gRPC support"
   homepage "https://github.com/unkn0wn-root/resterm"
-  url "https://ghfast.top/https://github.com/unkn0wn-root/resterm/archive/refs/tags/v0.24.3.tar.gz"
-  sha256 "6a0ab7f8b04861de017c0809cae39e32fc3d184c5c08fe953fc20a1a8c7c7a4c"
+  url "https://ghfast.top/https://github.com/unkn0wn-root/resterm/archive/refs/tags/v0.26.1.tar.gz"
+  sha256 "21fcb08115483de2ff1195ae5ac57aa62abb396529c42307dd8964e42bab4d2e"
   license "Apache-2.0"
   head "https://github.com/unkn0wn-root/resterm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8eed6c642b09ddd23abe4e01c9c5c5650c0f72dea41b645d5c037e0fbcc5667"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8eed6c642b09ddd23abe4e01c9c5c5650c0f72dea41b645d5c037e0fbcc5667"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8eed6c642b09ddd23abe4e01c9c5c5650c0f72dea41b645d5c037e0fbcc5667"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d67571709060efecbd93056c35bc84418e17c6c48a5ed1ddec50f78049d16fe4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4625b9b685bb26496fe78a97a2ddcf8b726be032bece03952967da328a85829"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe823c9eae2663683c8bd9748be6b0d0f96d746ff99e1f8a26f730e6a442550a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d17aa9e54b8138721964a06be54992872de855d176e730d9dde9884b1ff8afc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d17aa9e54b8138721964a06be54992872de855d176e730d9dde9884b1ff8afc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d17aa9e54b8138721964a06be54992872de855d176e730d9dde9884b1ff8afc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "294ca3edbdd9f867c5655c612f2cc6dbc3d9a0a5b7da83dfb41929f33042eb82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b996501c05e45018ffc3717d225ee97c1d648e901de7e08daba7d4fbae1b711"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c1b7cb87eb5bd62ac58e052e4884c2329cbdcba8cacd568f94bf43ad45d8907"
   end
 
   depends_on "go" => :build

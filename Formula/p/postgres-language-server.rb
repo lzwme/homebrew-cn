@@ -1,18 +1,18 @@
 class PostgresLanguageServer < Formula
   desc "Language Server for Postgres"
   homepage "https://pg-language-server.com/"
-  url "https://ghfast.top/https://github.com/supabase-community/postgres-language-server/archive/refs/tags/0.22.1.tar.gz"
-  sha256 "2f6891c32d85e52fea11645b273670f99bade9ebf6b90f2a90eb4c3560a38969"
+  url "https://ghfast.top/https://github.com/supabase-community/postgres-language-server/archive/refs/tags/0.23.0.tar.gz"
+  sha256 "a42e6e155a2f667a691a7a4bd2f9e9055cb1a80631f9a7cedd1720cd11062cc3"
   license "MIT"
   head "https://github.com/supabase-community/postgres-language-server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a537e0821c71ea60d362e82fb2e1d994a2cc7ef2ab1a407243e82e028b336bc8"
-    sha256 cellar: :any,                 arm64_sequoia: "aa4a513a516e86673f67a70caa82b5cb813f564d2d441009a7da219351ecf445"
-    sha256 cellar: :any,                 arm64_sonoma:  "774827907bbd4cc013c5fe7e463d6316ec48a221204c66e9a54615b5496d2cd9"
-    sha256 cellar: :any,                 sonoma:        "1388a1fc1ea0c1f710f9bdb9648a4cb188696fd514137b65915a1ce21f23f3a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3119fe0190eb7a3a80eeded39900c1a4e632b4f23919b72b0f3df06d422dd31c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61a0bcff6656e26c54002584a89f86dffb42456340b09227e2bca1847e951d61"
+    sha256 cellar: :any,                 arm64_tahoe:   "59f6bf55d319bb3776f56cb6a4e8d7d637ac618aa04888bdcc1e41e8fc7416e2"
+    sha256 cellar: :any,                 arm64_sequoia: "caf02557f03a3abc25c694699b91ad83f6a22c65b5d9c560937ca015902c0901"
+    sha256 cellar: :any,                 arm64_sonoma:  "94b008e4d9928b9238531fa866adde5071c99ba0128361a284a8e9b4bf138184"
+    sha256 cellar: :any,                 sonoma:        "4cf2875eaaabe206e3c7488d627721fed0882e85dec6765cffd9a671e44c150f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "190b1eb2af2cd7cff0f935d8c24932005757c25494e8b7c7ed975d461c2a1c10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d98bf70f80ad4a819d3a2c7adb8ceaec8affed167afa438714812cab1f1b20c8"
   end
 
   depends_on "llvm" => :build

@@ -3,16 +3,15 @@ class MlxLm < Formula
 
   desc "Run LLMs with MLX"
   homepage "https://github.com/ml-explore/mlx-lm"
-  url "https://files.pythonhosted.org/packages/9e/f9/3f5597c62bd5733ebb3c9f96c33f2065db16353d743b8548bb05a01b7dd3/mlx_lm-0.31.1.tar.gz"
-  sha256 "1b2362ea301427004e5dda43b9241d751d4cb80eba641f6b85b29fc493affac5"
+  url "https://files.pythonhosted.org/packages/51/d7/66ac623c87f9ca834e49f8c79ff3be69179a6b5f23fc7b257fcd4fbb15bd/mlx_lm-0.31.2.tar.gz"
+  sha256 "2681b7652546d36128f43d6cc7698ec43529a1845a27350394d1843be63c652b"
   license "MIT"
-  revision 1
   head "https://github.com/ml-explore/mlx-lm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9f5ffe26e96084a332914b06425e9730d7dc7fcf3c5e7e248e0902ef409bc2da"
-    sha256 cellar: :any, arm64_sequoia: "c072dcc59a59534d74293d3e0c9c2f2253ce0d62a88b213d615424e8765454ec"
-    sha256 cellar: :any, arm64_sonoma:  "fad13006d5c4d47829141cac1467a6f786a661e1c9bd154f059d33d3e8d484a2"
+    sha256 cellar: :any, arm64_tahoe:   "9fa606d6f51828cba4bd14b9748dbf9edaefad84e3a879103c47d4cb4b0f36ae"
+    sha256 cellar: :any, arm64_sequoia: "973d3e64bbe88849734a8d2485be836a0033a966f6c138e5e30e57f46854944f"
+    sha256 cellar: :any, arm64_sonoma:  "65cd6656f48a4fc477554b690d1c6894171295a301fa9b7da1482fc73f371331"
   end
 
   depends_on "pkgconf" => :build
@@ -40,8 +39,8 @@ class MlxLm < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
+    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
   end
 
   resource "filelock" do
@@ -60,8 +59,8 @@ class MlxLm < Formula
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/09/08/23c84a26716382c89151b5b447b4beb19e3345f3a93d3b73009a71a57ad3/hf_xet-1.4.2.tar.gz"
-    sha256 "b7457b6b482d9e0743bd116363239b1fa904a5e65deede350fbc0c4ea67c71ea"
+    url "https://files.pythonhosted.org/packages/53/92/ec9ad04d0b5728dca387a45af7bc98fbb0d73b2118759f5f6038b61a57e8/hf_xet-1.4.3.tar.gz"
+    sha256 "8ddedb73c8c08928c793df2f3401ec26f95be7f7e516a7bee2fbb546f6676113"
   end
 
   resource "httpcore" do
@@ -75,8 +74,8 @@ class MlxLm < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/8e/2a/a847fd02261cd051da218baf99f90ee7c7040c109a01833db4f838f25256/huggingface_hub-1.8.0.tar.gz"
-    sha256 "c5627b2fd521e00caf8eff4ac965ba988ea75167fad7ee72e17f9b7183ec63f3"
+    url "https://files.pythonhosted.org/packages/44/40/68d9b286b125d9318ae95c8f8b206e8672e7244b0eea61ebb4a88037638c/huggingface_hub-1.9.1.tar.gz"
+    sha256 "442af372207cc24dcb089caf507fcd7dbc1217c11d6059a06f6b90afe64e8bd2"
   end
 
   resource "idna" do
@@ -125,8 +124,8 @@ class MlxLm < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/81/93/5ab3e899c47fa7994e524447135a71cd121685a35c8fe35029005f8b236f/regex-2026.3.32.tar.gz"
-    sha256 "f1574566457161678297a116fa5d1556c5a4159d64c5ff7c760e7c564bf66f16"
+    url "https://files.pythonhosted.org/packages/cb/0e/3a246dbf05666918bd3664d9d787f84a9108f6f43cc953a077e4a7dfdb7e/regex-2026.4.4.tar.gz"
+    sha256 "e08270659717f6973523ce3afbafa53515c4dc5dcad637dc215b6fd50f689423"
   end
 
   resource "rich" do
@@ -160,8 +159,8 @@ class MlxLm < Formula
   end
 
   resource "transformers" do
-    url "https://files.pythonhosted.org/packages/0b/4c/42a8e1c7bbe668d8e073941ec3205263afb1cd02683fa5a8a75e615fdfbe/transformers-5.4.0.tar.gz"
-    sha256 "cb34ca89dce345ae3224b290346b9c0fa9694b951d54f3ed16334a4b1bfe3d04"
+    url "https://files.pythonhosted.org/packages/ff/9d/fb46e729b461985f41a5740167688b924a4019141e5c164bea77548d3d9e/transformers-5.5.0.tar.gz"
+    sha256 "c8db656cf51c600cd8c75f06b20ef85c72e8b8ff9abc880c5d3e8bc70e0ddcbd"
   end
 
   resource "typer" do

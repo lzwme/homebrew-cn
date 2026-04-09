@@ -3,13 +3,12 @@ class Pytest < Formula
 
   desc "Simple powerful testing with Python"
   homepage "https://docs.pytest.org/en/latest/"
-  url "https://files.pythonhosted.org/packages/d1/db/7ef3487e0fb0049ddb5ce41d3a49c235bf9ad299b6a25d5780a89f19230f/pytest-9.0.2.tar.gz"
-  sha256 "75186651a92bd89611d1d9fc20f0b4345fd827c41ccd5c299a868a05d70edf11"
+  url "https://files.pythonhosted.org/packages/7d/0d/549bd94f1a0a402dc8cf64563a117c0f3765662e2e668477624baeec44d5/pytest-9.0.3.tar.gz"
+  sha256 "b86ada508af81d19edeb213c681b1d48246c1a91d304c6c81a427674c17eb91c"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2865c4cd3ad77b114d8cdf9e95cdd76361dff40cf15190d75246a7ad428f406a"
+    sha256 cellar: :any_skip_relocation, all: "1c296d9ccfdb6dd76a676a45cfafeb75e88a47b04509c9463015b02637608baa"
   end
 
   depends_on "python@3.14"

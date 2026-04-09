@@ -3,17 +3,17 @@ class SnykAgentScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/snyk/agent-scan"
-  url "https://files.pythonhosted.org/packages/25/0a/48c636af19be281adc51fff02c8db48085c564e7ae07dd71c16cd17893d2/snyk_agent_scan-0.4.13.tar.gz"
-  sha256 "d5e1a1659d9612ca8a3d5b0543fb6fcb64e9055a7e7fe1964aedf088624a74e6"
+  url "https://files.pythonhosted.org/packages/78/ff/1b0032c6b99c4d92a5a81c6a7f7fb007272086147abf813d6c7fa727421d/snyk_agent_scan-0.4.14.tar.gz"
+  sha256 "e9c8210b40df490034095661b213375c4315a8d15aa47e6e116fcb3248386080"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "215dfb7ee1e88cbd9110959c38317605212df9dbc3030cebdb33dc3028082765"
-    sha256 cellar: :any,                 arm64_sequoia: "ee1ecbd2b0a5e41bd6545d8a97ffa3b0ca6a29464712886fc2485f5c962f6b5a"
-    sha256 cellar: :any,                 arm64_sonoma:  "a7d973bfdcab7d5ce7d80c20ac4536296d5c7abb013dc70e94267a420d126ad1"
-    sha256 cellar: :any,                 sonoma:        "b066b3c51e39f08a782e986f3bd54c8ad78c997ece5e9e90a4249d39f4430152"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f18389004e42634e3c8cc7a06b49274067694135d5d563f78ade79efed27d19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dccdeac1506a4e7ae28a66034d30ac67951dfeed54486cea0d2b9ed3b6ccc43e"
+    sha256 cellar: :any,                 arm64_tahoe:   "02138bec98dfbbc46b1b29d1cc04ce0eb76de4519abf1192deb44d0fe0a6b5ec"
+    sha256 cellar: :any,                 arm64_sequoia: "aff9789511fd83bcc13ebd070c75b0e390d3c348da17e910268f64e35bc44c2a"
+    sha256 cellar: :any,                 arm64_sonoma:  "f1255fd491b285d5deef453b3f180c6a82e6ea0fac2715fa1ea4efa53ea2f3a0"
+    sha256 cellar: :any,                 sonoma:        "85fc5fc71f25d0003a596e317fd004d8e052fb27dc2f24159194796e320e72a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f43bc5174af0c2b546758124a7300a0ae1cc7fee1cb9fc449e2166e90bd903b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65c5888a210697326a8862abcbede20d3d48e6137c0fda7ed6384cf9cae25759"
   end
 
   depends_on "certifi" => :no_linkage
@@ -56,13 +56,13 @@ class SnykAgentScan < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
+    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/c4/73/5903c4b13beae98618d64eb9870c3fac4f605523dd0312ca5c80dadbd5b9/fastapi-0.135.2.tar.gz"
-    sha256 "88a832095359755527b7f63bb4c6bc9edb8329a026189eed83d6c1afcf419d56"
+    url "https://files.pythonhosted.org/packages/f7/e6/7adb4c5fa231e82c35b8f5741a9f2d055f520c29af5546fd70d3e8e1cd2e/fastapi-0.135.3.tar.gz"
+    sha256 "bd6d7caf1a2bdd8d676843cdcd2287729572a1ef524fc4d65c17ae002a1be654"
   end
 
   resource "filelock" do
@@ -171,8 +171,8 @@ class SnykAgentScan < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/94/01/979e98d542a70714b0cb2b6728ed0b7c46792b695e3eaec3e20711271ca3/python_multipart-0.0.22.tar.gz"
-    sha256 "7340bef99a7e0032613f56dc36027b959fd3b30a787ed62d310e951f7c3a3a58"
+    url "https://files.pythonhosted.org/packages/8a/45/e23b5dc14ddb9918ae4a625379506b17b6f8fc56ca1d82db62462f59aea6/python_multipart-0.0.24.tar.gz"
+    sha256 "9574c97e1c026e00bc30340ef7c7d76739512ab4dfd428fec8c330fa6a5cc3c8"
   end
 
   resource "pyyaml" do
@@ -181,8 +181,8 @@ class SnykAgentScan < Formula
   end
 
   resource "rapidfuzz" do
-    url "https://files.pythonhosted.org/packages/d3/28/9d808fe62375b9aab5ba92fa9b29371297b067c2790b2d7cda648b1e2f8d/rapidfuzz-3.14.3.tar.gz"
-    sha256 "2491937177868bc4b1e469087601d53f925e8d270ccc21e07404b4b5814b7b5f"
+    url "https://files.pythonhosted.org/packages/2c/21/ef6157213316e85790041254259907eb722e00b03480256c0545d98acd33/rapidfuzz-3.14.5.tar.gz"
+    sha256 "ba10ac57884ce82112f7ed910b67e7fb6072d8ef2c06e30dc63c0f604a112e0e"
   end
 
   resource "referencing" do
@@ -191,8 +191,8 @@ class SnykAgentScan < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/81/93/5ab3e899c47fa7994e524447135a71cd121685a35c8fe35029005f8b236f/regex-2026.3.32.tar.gz"
-    sha256 "f1574566457161678297a116fa5d1556c5a4159d64c5ff7c760e7c564bf66f16"
+    url "https://files.pythonhosted.org/packages/cb/0e/3a246dbf05666918bd3664d9d787f84a9108f6f43cc953a077e4a7dfdb7e/regex-2026.4.4.tar.gz"
+    sha256 "e08270659717f6973523ce3afbafa53515c4dc5dcad637dc215b6fd50f689423"
   end
 
   resource "rich" do
@@ -226,8 +226,8 @@ class SnykAgentScan < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/e3/ad/4a96c425be6fb67e0621e62d86c402b4a17ab2be7f7c055d9bd2f638b9e2/uvicorn-0.42.0.tar.gz"
-    sha256 "9b1f190ce15a2dd22e7758651d9b6d12df09a13d51ba5bf4fc33c383a48e1775"
+    url "https://files.pythonhosted.org/packages/5e/da/6eee1ff8b6cbeed47eeb5229749168e81eb4b7b999a1a15a7176e51410c9/uvicorn-0.44.0.tar.gz"
+    sha256 "6c942071b68f07e178264b9152f1f16dfac5da85880c4ce06366a96d70d4f31e"
   end
 
   resource "yarl" do

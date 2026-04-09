@@ -3,7 +3,13 @@ class Git < Formula
   homepage "https://git-scm.com"
   url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.53.0.tar.xz"
   sha256 "5818bd7d80b061bbbdfec8a433d609dc8818a05991f731ffc4a561e2ca18c653"
-  license "GPL-2.0-only"
+  license all_of: [
+    "GPL-2.0-only",
+    "GPL-2.0-or-later",  # imap-send.c; trace.c; ...
+    "LGPL-2.1-or-later", # xdiff/
+    "BSD-3-Clause",      # xdiff/xhistogram.c; reftable/
+    "MIT",               # khash.h; sha1dc/
+  ]
   revision 1
   compatibility_version 1
   head "https://github.com/git/git.git", branch: "master"
@@ -22,8 +28,8 @@ class Git < Formula
     sha256 x86_64_linux:  "69b8ad022d6ed8b241806c16b7c066272a6708ccfbfb8bc19d975b8c379018b3"
   end
 
+  depends_on "gettext" => :build
   depends_on "pkgconf" => :build
-  depends_on "gettext"
   depends_on "pcre2"
 
   uses_from_macos "curl"
@@ -32,8 +38,12 @@ class Git < Formula
   # Don't try to add a libiconv dependency without reading this PR first:
   # https://github.com/Homebrew/homebrew-core/pull/258461
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   on_linux do
-    depends_on "openssl@3" # Uses CommonCrypto on macOS
+    depends_on "openssl@3" # for git-imap-send (GPL-2.0-or-later), uses CommonCrypto on macOS
     depends_on "zlib-ng-compat"
   end
 

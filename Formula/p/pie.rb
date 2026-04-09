@@ -1,19 +1,21 @@
 class Pie < Formula
   desc "PHP Installer for Extensions"
   homepage "https://github.com/php/pie"
-  url "https://ghfast.top/https://github.com/php/pie/releases/download/1.3.10/pie.phar"
-  sha256 "d5e72d69a823c0a955bb60acf6a7ecdc754b90b0a7b73f13f75eaea3503b267d"
+  url "https://ghfast.top/https://github.com/php/pie/releases/download/1.4.0/pie.phar"
+  sha256 "b4a50f2c1c22eb72321ee462039b71f180c2c86778d8fa2a7c18812766468c3d"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc35e57ee40039b69dfa8cfd97cc534b26353b6d6d7122257355d2f18eb5ee15"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc35e57ee40039b69dfa8cfd97cc534b26353b6d6d7122257355d2f18eb5ee15"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc35e57ee40039b69dfa8cfd97cc534b26353b6d6d7122257355d2f18eb5ee15"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7ac6df20d1b5456f6101f55d51d6cf01255e382d064f7c3460c4957ccee27b21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ac6df20d1b5456f6101f55d51d6cf01255e382d064f7c3460c4957ccee27b21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ac6df20d1b5456f6101f55d51d6cf01255e382d064f7c3460c4957ccee27b21"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d5c7ad29830c0cbcb428ae040e91a918f499da598d458c4e738d2a0664f79ab0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5c7ad29830c0cbcb428ae040e91a918f499da598d458c4e738d2a0664f79ab0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5c7ad29830c0cbcb428ae040e91a918f499da598d458c4e738d2a0664f79ab0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7ad0ac42e4e74deed06d985e9e3eb22f3ecd138a0d330213778ea934a7cf0181"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ad0ac42e4e74deed06d985e9e3eb22f3ecd138a0d330213778ea934a7cf0181"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ad0ac42e4e74deed06d985e9e3eb22f3ecd138a0d330213778ea934a7cf0181"
   end
 
+  depends_on "pkgconf" => :test
+  depends_on "re2c" => :test
   depends_on "php"
 
   def install

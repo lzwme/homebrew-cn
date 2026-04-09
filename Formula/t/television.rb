@@ -1,18 +1,18 @@
 class Television < Formula
   desc "General purpose fuzzy finder TUI"
   homepage "https://github.com/alexpasmantier/television"
-  url "https://ghfast.top/https://github.com/alexpasmantier/television/archive/refs/tags/0.15.4.tar.gz"
-  sha256 "d399ca013475af49f51e0284c79039755d9d3b11425e0144e05d0740fc203cd3"
+  url "https://ghfast.top/https://github.com/alexpasmantier/television/archive/refs/tags/0.15.5.tar.gz"
+  sha256 "bf65e03a5484fef5010a390b9ad5289bfd5addc71101ced971eeecfef73197ab"
   license "MIT"
   head "https://github.com/alexpasmantier/television.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "746384162013f01735486ab31bd866db9b5a998b5abb045290e017121945abe1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3551768a12763a92237021cf00c348cba791a7122f907071008a9780fef7cf63"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d34c706dfb31950160c4c3eac4efb0feb954d76874cf07c860a19db46e835df3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aedb219f81de4a54c0769c4764191835bdd04d1f9f658b9c9b00e7f0b6c0a636"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1fc58964966d1b05e658ee05208ec6defd82a90be6308a38f48f4397cad1fb48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "639cfd981554935ec408207ef54dc63b4be6ea9e806cd3d4401e53375b720562"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6898c04cb3f7992423712ee0b5ca7fb414e18246babe6b4224ec78f776cc45b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c581305858546f634985894e900fcf215ff707092826032010e035e20a7cc627"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13cf4c4702af47b007ca9e15c4c2595127418ac24af51501e894348e98274652"
+    sha256 cellar: :any_skip_relocation, sonoma:        "897727f4a05ae51abf0ae17d7e224cba052b04966dfabd83fd0b32bce46f9084"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7849eb87b6d6c44a4e68d0e09b209f99a2a041d68593ea628607af7cfbc286c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec16485b9e7dadc2b260be9536beb90023cb0bbe50b395dc2c7d29871c7ea400"
   end
 
   depends_on "rust" => :build

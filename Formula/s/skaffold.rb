@@ -2,18 +2,18 @@ class Skaffold < Formula
   desc "Easy and Repeatable Kubernetes Development"
   homepage "https://skaffold.dev/"
   url "https://github.com/GoogleContainerTools/skaffold.git",
-      tag:      "v2.18.2",
-      revision: "5a5ac63055798309350c4f129387081627013230"
+      tag:      "v2.18.3",
+      revision: "122e7914522ebce23ead9705c55b93a2b6a781c8"
   license "Apache-2.0"
   head "https://github.com/GoogleContainerTools/skaffold.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60c8639723c02cbf79b1d094b30ffe5aabf81ab84f40ce7c48cec86f333130e0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "774706ec623ae891b51520c6a7f041b9489adba0b1937ac3138b0983f74741f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce12c48c203ada5d6d6ba06546cac464df786d7a3bc39c54d709a35303e561ef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "09c3a513ac0cd3c46598162dace286e13ef0bb830a4ff0f33fc06ee47caa1d85"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0556ad470a8cbc86ac648325be8641021c1b49f08ba305cb58fd07bee5e2a7e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b99f37d7db73170428a83120ac6bc95e0d58e90048f3e7a11f79313ba83da357"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25d3d4072d5b30371ed9c74b5c37fce996ddc9cb3aa71062fc46ae0af65948ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71e347688999113b3a633517274a0e6220a9d4f84f3b9a0bae3ab3843d7dd1c6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59790ad9cea41feb66a3601ea7efbaee50646e141a3a2d37b12e2559ecf52677"
+    sha256 cellar: :any_skip_relocation, sonoma:        "777050827ee404460fcf9744223a2cd57e0d68f56123a7806f5cfea16ea13b78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce3707cb72c09047b1ecfe82142079183f5f04702602aeab3526893030a8db6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df82a337a402a36b6d085a80456256df7732472bc2da750cda593705121d09ce"
   end
 
   depends_on "go" => :build

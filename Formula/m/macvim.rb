@@ -2,11 +2,10 @@
 class Macvim < Formula
   desc "GUI for vim, made for macOS"
   homepage "https://github.com/macvim-dev/macvim"
-  url "https://ghfast.top/https://github.com/macvim-dev/macvim/archive/refs/tags/release-182.tar.gz"
-  version "9.1.1887"
-  sha256 "82148b9f7fa4c83e18ba7fea3f65289b1eb3e2775a4d17a4c3e0fe16087e0e53"
+  url "https://ghfast.top/https://github.com/macvim-dev/macvim/archive/refs/tags/release-183.tar.gz"
+  version "9.2.0321"
+  sha256 "72de6be82087cd4db8d7b5b27ee079fe80d504f12b53065d68d29366fc7025f1"
   license "Vim"
-  revision 3
   head "https://github.com/macvim-dev/macvim.git", branch: "master"
 
   # The stable Git tags use a `release-123` format and it's necessary to check
@@ -26,10 +25,10 @@ class Macvim < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "26fcaa0a6d63f8b95e7c6f944db2549b109bcb10f0bad9c1b1c73435323e7ae6"
-    sha256 cellar: :any, arm64_sequoia: "57c3bbef456973f473b27a88a91bb46bc938beb8361cad3a0b840d5542518cae"
-    sha256 cellar: :any, arm64_sonoma:  "53685fddc743df4384d6c5eee1d7d3de91b4c3fa28e1cb75021e790ce0f552b0"
-    sha256 cellar: :any, sonoma:        "f7ad54cdbcbbf6c825a07529fc388c6dba70373be6c528d66c1ef748258c4907"
+    sha256 cellar: :any, arm64_tahoe:   "a24c9c958d1549ea630fb4b95d84e1afec46b271c075178bf378633ad36e60cd"
+    sha256 cellar: :any, arm64_sequoia: "2938d6ef858cb5c1da056df3bd40b4b9baed98c8132bbb3a78069a4628a4b7ff"
+    sha256 cellar: :any, arm64_sonoma:  "0275b6aa54cedf4bae7a749be2c67447d302a18c729796634b4b1a9c0102bd24"
+    sha256 cellar: :any, sonoma:        "4021bac7a55c4de66c04ef3f7d20e6c8e16c33a50d2cd27f0a68b2cf7fa11bd3"
   end
 
   depends_on "gettext" => :build

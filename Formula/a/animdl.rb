@@ -167,12 +167,8 @@ class Animdl < Formula
   end
 
   test do
-    (testpath/"config.yml").write <<~YAML
-      default_provider: animixplay
-    YAML
-
-    assert_match "One Piece Film", shell_output("#{bin}/animdl search 'one piece' 2>&1")
     assert_match "animdl, version #{version}", shell_output("#{bin}/animdl --version")
+    assert_match "Aired @", shell_output("#{bin}/animdl schedule")
   end
 end
 

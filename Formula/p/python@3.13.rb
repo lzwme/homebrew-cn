@@ -1,10 +1,9 @@
 class PythonAT313 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.13.12/Python-3.13.12.tgz"
-  sha256 "12e7cb170ad2d1a69aee96a1cc7fc8de5b1e97a2bdac51683a3db016ec9a2996"
+  url "https://www.python.org/ftp/python/3.13.13/Python-3.13.13.tgz"
+  sha256 "f9cde7b0e2ec8165d7326e2a0f59ea2686ce9d0c617dbbb3d66a7e54d31b74b9"
   license "Python-2.0"
-  revision 1
   compatibility_version 1
 
   livecheck do
@@ -13,14 +12,14 @@ class PythonAT313 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7174630275da7640723f8c68b1943d0c5643589878ad1f802e79dbf22a713f4d"
-    sha256 arm64_sequoia: "105a143cb97455344d3b87a72b3db05fab3909c8c533101fbc7be6157667b3c0"
-    sha256 arm64_sonoma:  "2f136925755c6b985b5a2943d839ea1560f3f0afe7bc4c258d350a73d9a50ad7"
-    sha256 tahoe:         "6034250c63ccf5b117422c95c374aafed5f06ff267290996e6b4671c7536a816"
-    sha256 sequoia:       "5ebeec231e23d415c496c96a4531096ff42353707be6446631c1495a4feebb1b"
-    sha256 sonoma:        "a82ac3c4617fc32aa839cf18ce2170030066d3e23fd7f256af8da841c08fe172"
-    sha256 arm64_linux:   "e1957354cab975ced0cb3db5ba388840cac31eb27565b7efa24e9e8d46ffdee6"
-    sha256 x86_64_linux:  "cf99e1f4d67e629ee731eeecb0ee0ffca94f4a5f063487ee239d3687a250a0be"
+    sha256 arm64_tahoe:   "ed907abf03958a9deb907c61e7915310504dc8b3f99bc0889ef31afa9961a0a2"
+    sha256 arm64_sequoia: "a972237c2662b9f1a0530d457e3ae5560213facdb59707218c1d479a257e82a5"
+    sha256 arm64_sonoma:  "045732d4f98aa42ca25e6a7278d69ad44fc99f0381b5a84120a391d6bb1e7f38"
+    sha256 tahoe:         "5634acdfa1bcd119e76768914b2c5876a5a8adf1ae52b7feabce88378e0fce2e"
+    sha256 sequoia:       "9770a04cfc7d9f39dd34b22087358a055120f556c4710d9d79d6955195eacbfa"
+    sha256 sonoma:        "2c0169cde20544032224e6aa33b6dc3a99fd145834f95ee00d4f03b584cf520b"
+    sha256 arm64_linux:   "b34b94543059d4b78585347951c48be2ca78ecee2f165657c148335d0e66ee98"
+    sha256 x86_64_linux:  "1f7da7543b2be8802a58e187f3e926294ab68bfd0b890521624898e6d8a3420b"
   end
 
   depends_on "pkgconf" => :build
@@ -58,8 +57,8 @@ class PythonAT313 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/44/c2/65686a7783a7c27a329706207147e82f23c41221ee9ae33128fc331670a0/pip-26.0.tar.gz"
-    sha256 "3ce220a0a17915972fbf1ab451baae1521c4539e778b28127efa79b974aff0fa"
+    url "https://files.pythonhosted.org/packages/48/83/0d7d4e9efe3344b8e2fe25d93be44f64b65364d3c8d7bc6dc90198d5422e/pip-26.0.1.tar.gz"
+    sha256 "c4037d8a277c89b320abe636d59f91e6d0922d08a05b60e85e53b296613346d8"
   end
 
   resource "wheel" do

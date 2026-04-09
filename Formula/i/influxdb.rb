@@ -47,6 +47,20 @@ class Influxdb < Formula
     system "cargo", "install", *std_cargo_args(path: "influxdb3")
   end
 
+  service do
+    run [
+      opt_bin/"influxdb3",
+      "serve",
+      "--node-id", "default",
+      "--object-store", "file",
+      "--data-dir", var/"lib/influxdb"
+    ]
+    keep_alive true
+    working_dir var
+    log_path var/"log/influxdb/influxdb3.log"
+    error_log_path var/"log/influxdb/influxdb3.log"
+  end
+
   test do
     port = free_port
     host = "http://localhost:#{port}"

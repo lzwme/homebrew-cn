@@ -1,8 +1,8 @@
 class BalenaCli < Formula
   desc "Command-line tool for interacting with the balenaCloud and balena API"
   homepage "https://docs.balena.io/reference/balena-cli/latest/"
-  url "https://registry.npmjs.org/balena-cli/-/balena-cli-24.1.2.tgz"
-  sha256 "295ff5904e9b2772a2acab1076d0741273a8465491ae1a6e7ad282fe08339904"
+  url "https://registry.npmjs.org/balena-cli/-/balena-cli-24.1.3.tgz"
+  sha256 "9de922932d8c05ed91bd25978a6f39a13831e1419bea7d086fb1542912870678"
   license "Apache-2.0"
 
   livecheck do
@@ -13,12 +13,12 @@ class BalenaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9ae8ab3b6ddbc35f80aaae100519b17917fabe4b03435d647bafb198b8328cd7"
-    sha256 cellar: :any,                 arm64_sequoia: "155d5d5c7fbb8d602b6591964e98aef2c5eb8834f76029d4c80e0638fa3a8f34"
-    sha256 cellar: :any,                 arm64_sonoma:  "155d5d5c7fbb8d602b6591964e98aef2c5eb8834f76029d4c80e0638fa3a8f34"
-    sha256 cellar: :any,                 sonoma:        "8ab784cdffdf50c61c9c4bf81ffc8f9c35caaf4ba172bf57149de0f757083856"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e379232230f6645f6be5a8d5be6d8138953e8f8eee7ec0cf0a2d432aac41dd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94d1c8321473068ec6f2755e7e712915d81798beb56f05f2d2b65385737a11c3"
+    sha256 cellar: :any,                 arm64_tahoe:   "9c4ac1ca2911d9a9146d9a74a8a2111a591ea611f0a7a579c1d88917ace10d75"
+    sha256 cellar: :any,                 arm64_sequoia: "86ac05d92fd8ef9bc9676b518951e01b4f744336f1fbc5994ddd163f3290757a"
+    sha256 cellar: :any,                 arm64_sonoma:  "86ac05d92fd8ef9bc9676b518951e01b4f744336f1fbc5994ddd163f3290757a"
+    sha256 cellar: :any,                 sonoma:        "d686f5809f2a76a3876100ae72701d397cc968c878b50a2c191f18a5412cd4d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d00f40e91c8ad049cf62e032b1803ec872fa6f55497755e180470c38394e5305"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae6927ccf00b6daf4ca5b1c82bac595b394d2d4e9b721708a3371e7dea6a26f8"
   end
 
   depends_on "node"

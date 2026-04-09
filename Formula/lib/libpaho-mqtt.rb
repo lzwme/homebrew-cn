@@ -6,19 +6,25 @@ class LibpahoMqtt < Formula
   license "EPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "16433282b65e480ba201c3d7be20a04f9a467df60ca0dd8656759edbb3be7b58"
-    sha256 cellar: :any,                 arm64_sequoia: "b96324bc57c2bdb2e2dde3b4179f240c9474dad0e0421f33a32c845cba22c4af"
-    sha256 cellar: :any,                 arm64_sonoma:  "2aa9e33c14b99b5ab12843a7ff761d09a2fb21053727c8278648f4c5ac8ffb8b"
-    sha256 cellar: :any,                 sonoma:        "93be86edbcb744aca1ba39596adf2a4f0e461dfb8be17f273d8e342306278770"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "edfda6f2d2cbc26452874c4f12234ca9e188f7be4e8c4052447463b5e5ea7a96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f742ea550c8656fa6e967dd1a444acce319272b57e42649f54781508b3fa398"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "eeeb71c665576f02cc774b84e777eddda3969b2e63ccae7f66f7c5dc1638f999"
+    sha256 cellar: :any,                 arm64_sequoia: "c0a8cb599d043492514a8412746d4b281215aa5aeda8db1fd12954a40237b138"
+    sha256 cellar: :any,                 arm64_sonoma:  "4320aa4be856759a55293101979436f7a79382d8528b3e8b935068ab5edf0886"
+    sha256 cellar: :any,                 sonoma:        "8a3054d689f09b17faa7392f37ecd140fe2e0358b18b472db84f74f7c7556c50"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f091e548e02bf60eee30c26f4451aeda7fa77a3f54452349cc98f5568404aed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71be99abeb74ab2fada683b2b0fcae74c3ec65c062d3b273ac033697f08342e5"
   end
 
   depends_on "cmake" => :build
   depends_on "openssl@3"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", "-DPAHO_WITH_SSL=ON", *std_cmake_args
+    args = %W[
+      -DBUILD_SHARED_LIBS=ON
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DPAHO_WITH_SSL=ON
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

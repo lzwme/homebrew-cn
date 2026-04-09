@@ -1,14 +1,13 @@
 class FalcosecurityLibs < Formula
   desc "Core libraries for Falco and Sysdig"
   homepage "https://falcosecurity.github.io/libs/"
-  url "https://ghfast.top/https://github.com/falcosecurity/libs/archive/refs/tags/0.23.1.tar.gz"
-  sha256 "38c580626b072ed24518e8285a629923c8c4c6d6794b91b3b93474db7fd85cf7"
+  url "https://ghfast.top/https://github.com/falcosecurity/libs/archive/refs/tags/0.23.2.tar.gz"
+  sha256 "928128add70724938ee8dcc57ef3653aec162f7d575975a559b04b238a3b448c"
   license all_of: [
     "Apache-2.0",
     { any_of: ["GPL-2.0-only", "MIT"] }, # driver/
     { "GPL-2.0-only" => { with: "Linux-syscall-note" } }, # userspace/libscap/compat/
   ]
-  revision 2
 
   livecheck do
     url :stable
@@ -16,13 +15,12 @@ class FalcosecurityLibs < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "bf2f9695deefb36e9ecda067f29d4134499aa7cdd6c857c74b40bc80314c74a5"
-    sha256 cellar: :any,                 arm64_sequoia: "5efe954a4ff97547b86942b62c1ce5d346bdb649e47e676e1494f23751439a65"
-    sha256 cellar: :any,                 arm64_sonoma:  "f9176e3d5a422bd5d3a7f1877b3e7bea15ec50fa027ff4ce803a26089795d9ae"
-    sha256 cellar: :any,                 sonoma:        "f53b2e4e2a12a693126e96185025d9e2ef39e7498a4890a1ac3c357868931646"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "997b5c2ce454d5eddc87686eb9e86d9312603fd37d24ae9daef035bf0e978764"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa384b8a9d032ca4cf0abec8d7a99a55efff9abd7d577ba8198ad7cdc8a2b470"
+    sha256 cellar: :any,                 arm64_tahoe:   "eb5cc011b7195aadd56652db0b5b9b0c9565e3c6c7ded777614a0cbbe5d0a838"
+    sha256 cellar: :any,                 arm64_sequoia: "31e1103260059e8ff540b8b036a935b628d44b848d2ca0a27d76bf889dee7301"
+    sha256 cellar: :any,                 arm64_sonoma:  "85747d25e4f1fac02d6ee4c92b64f98eecc28771d2d3b7d51779eb8bcae9461e"
+    sha256 cellar: :any,                 sonoma:        "8a527fe71fde2cafb2d77b7cb60a505a8eedbbfa18f0443ba1855a9289c7b9f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7df3b6d580d0e7fc042b7f27502e5984a8057a20f03aa4daa6b91fbcb483d790"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80ef8c42783b34856544f79eec28c142fe54fe5f74a90279ee760f1e644f199f"
   end
 
   depends_on "cmake" => :build

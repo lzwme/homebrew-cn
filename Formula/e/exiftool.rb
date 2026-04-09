@@ -3,9 +3,9 @@ class Exiftool < Formula
   homepage "https://exiftool.org"
   # Ensure release is tagged production before submitting.
   # https://exiftool.org/history.html
-  url "https://exiftool.org/Image-ExifTool-13.50.tar.gz"
-  mirror "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-13.50.tar.gz"
-  sha256 "27e2d66eb21568cc0d59520f89afcaaa50735e1ad9fa4b36d0a4ccf916c70d31"
+  url "https://exiftool.org/Image-ExifTool-13.55.tar.gz"
+  mirror "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-13.55.tar.gz"
+  sha256 "5f4c81d34ad406538c2871ad72dbfceb5d9b412b2f16cbbeb4d712d270846667"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   compatibility_version 1
 
@@ -15,14 +15,14 @@ class Exiftool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "416d7b391c1765cd0d1d14fbae34a226a074adee20e16a63024f626186ed4935"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2288bcc7820d33cd20d71cb9d3339b21d441f9cff9b8cbc1ab20a7226dee4891"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8cefabec3c1341a38e0f55bb16c4b5010a39ae7d7b17cad98ed487fb792b1ce"
-    sha256 cellar: :any_skip_relocation, tahoe:         "28ae052442b9b7a8fe4f76189e50e14c9ba51e141c5214983fff86368ada86d3"
-    sha256 cellar: :any_skip_relocation, sequoia:       "1a27e30f5c6a74ca7862542b5c47286e7517f6dbfa487324ce3bfdb70ea1221b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a456cb44f4418c7663261fa28a3902cb284f74045c32243e0d102c76e17b7075"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "95596b30070a21851fb7f765176c31f482e817c01d754beef8a4aba1e2d60ea5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11bda5dc7f5a6a5f6bd54aaf55c924c8d021a1a731d5860da4d420502dbbd560"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "caf71016613eee3fe2ecf3c8ad6dca5e03b75af0559f9461b736bccf5088bc54"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88b1fe728ce9eda498584e5680569e33a2f6338d873ccbe8cf780de6fb4b3eca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04081f56f7ba98e6312e5436cd263a688de687cb54ff73e05e3274d86c47b28d"
+    sha256 cellar: :any_skip_relocation, tahoe:         "6dfd49b4005014c2abd10b651adc0be4f09481458c878adb25612d62d93b316d"
+    sha256 cellar: :any_skip_relocation, sequoia:       "fb744a44b4ca3d40e8f9ef51d42d8229a3720e96eb309847cc4cff8da901d298"
+    sha256 cellar: :any_skip_relocation, sonoma:        "562b8596777c1a6a2f6c3771f480e4fb7210c96cd0163d0e0aa4738edad8c992"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e66e5d46417fcb3fc738e9798c7e2d0914777d2bd9fb091595482dfe99da5c4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35c7ac97205bcf990c534f904ab84179cb8a7cc86a34588a6414c37176c01a7b"
   end
 
   depends_on "cmake" => :build
@@ -69,6 +69,7 @@ class Exiftool < Formula
     sha256 "bf5f3307406ebe2581237f025982e8c84f6f6625dd774e457c03f8994efd2eaa"
   end
 
+  # 0.10 rejects Homebrew's cmake 4 and falls back to bundled binaries that fail audit/linkage checks.
   resource "Alien::cmake3" do
     url "https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-cmake3-0.08.tar.gz"
     sha256 "93dfb1146f0053ec1ed59558f5f6d8f85d87b822a8433c6485d419c4f0182f1f"

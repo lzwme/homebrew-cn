@@ -1,17 +1,17 @@
 class IcpCli < Formula
   desc "Development tool for building and deploying canisters on ICP"
   homepage "https://dfinity.github.io/icp-cli/"
-  url "https://ghfast.top/https://github.com/dfinity/icp-cli/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "62c371ea443217759eb5f784182f16414a4615c11c800c9b824059a1f41b2102"
+  url "https://ghfast.top/https://github.com/dfinity/icp-cli/archive/refs/tags/v0.2.3.tar.gz"
+  sha256 "ec9d35ebc52b17946127e37f95eb0425ae459530b056c47d9a4d46449a999f39"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "39fd6cd129287585cda077a517e27726ba75714cde939b3d5a127758d11f7b16"
-    sha256 cellar: :any,                 arm64_sequoia: "5ae325071c3bb64b6e5c89133cf3570aa2c1f6bc59008ad7c6df8d8ad0c4ba99"
-    sha256 cellar: :any,                 arm64_sonoma:  "948ca8a5424eab628a28f57aa3c22f99fb825aaa6b4519655c17bcd24d90d764"
-    sha256 cellar: :any,                 sonoma:        "a41f7cb8825bcf24f64dae0feaf7178c2f0608a2694032eecdae123181088b07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6215412898ee87b1e1e6f40e8ba98c977c832767e43cc6e92e931603744cffb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a78a1e7c2ee4dc6cb9d42577ccc319ecc3b11bea721cccfe739fac85f43f1aa6"
+    sha256 cellar: :any,                 arm64_tahoe:   "6c9ccbb08126a1e4974940ec45799ed2e187990d8d0fa31340a4b7b6276c96b6"
+    sha256 cellar: :any,                 arm64_sequoia: "7abc3f1032f39de06c23271f89b9100df1d433f2be3d0b7870d90a3a69eed2d1"
+    sha256 cellar: :any,                 arm64_sonoma:  "de08df93ca3674ec065375274dd7b9b6f53456ed157178372ae8772b5f8d4f25"
+    sha256 cellar: :any,                 sonoma:        "dc793be1ac1ae65d061294a96fadf3363a99b41841389f1357c405b816d1730b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d04336c09f2159583be61dbe696c4f9f769b6a2e8e28f7edcb511dff8414ee3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee383984403504853eedd58e04b3d1ec138a80177a94d15cfa079645614c6800"
   end
 
   depends_on "rust" => :build
