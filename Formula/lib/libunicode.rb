@@ -1,17 +1,17 @@
 class Libunicode < Formula
   desc "Modern C++20 Unicode library"
   homepage "https://github.com/contour-terminal/libunicode"
-  url "https://ghfast.top/https://github.com/contour-terminal/libunicode/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "1cea0180dd75a46132505330218efc102152fc4eb52462e470ea2bebf836cc58"
+  url "https://ghfast.top/https://github.com/contour-terminal/libunicode/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "65affc5decf38e5c3e104b021e6d696c2f5bf305f20b475604901682f137e02a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4846522bed2a20e0e55fc78d44bddfda8d20cc548e1ae52e11e2c515ab25497e"
-    sha256 cellar: :any,                 arm64_sequoia: "18c77a62061164b2bb648f3c0d2f81c6dc59c6d55d203c630d4b4b76502cb50c"
-    sha256 cellar: :any,                 arm64_sonoma:  "2c6d41deab236a258845bfe7cad0d1a23150b1c96ee5de45de133c342a993ef9"
-    sha256 cellar: :any,                 sonoma:        "f425c312c6fc2946ae0cc20ee4bc69279c891c3f0c81036891ddc8ffe640bb8d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5e2f93a5968bc3f0386cc34b9ab84188d71dcd9e6418bcee9c82f3ee5439ab1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "875b32c339c1e465c6f2a1a1830b6d6e68b7a2a932638276c527088a395fb3dc"
+    sha256 cellar: :any,                 arm64_tahoe:   "96923a903c4727cd0981cb838046323df0d2387c79a25d4168dbc41cd21c980e"
+    sha256 cellar: :any,                 arm64_sequoia: "64eaf35131519b22d28be7a936fe9c6c5819004d2e996236af0bb84ce77eae03"
+    sha256 cellar: :any,                 arm64_sonoma:  "502a5dde6335ff9655503fc4050089880255a3929874dbf7bf3a6f9e3290985d"
+    sha256 cellar: :any,                 sonoma:        "2366882adc5714fd78db3068a72a17c55c938925f39439e90c2889c32ac8e6c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f600c3d79303271fa845b4c79718a85c49c130d3da5b271b1a620e553f0ba96f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1feb81594418e9764f9e612a504f5a97a3df8363c9a101fc1d8ad5fa6648bc68"
   end
 
   depends_on "cmake" => :build

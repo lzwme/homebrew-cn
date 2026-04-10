@@ -3,14 +3,13 @@ class Wtfis < Formula
 
   desc "Passive hostname, domain, and IP lookup tool"
   homepage "https://github.com/pirxthepilot/wtfis"
-  url "https://files.pythonhosted.org/packages/aa/a3/6ed63e7bdc5e643360d203c9aae7a12e92b777accd2c2dbabe8598610114/wtfis-0.14.0.tar.gz"
-  sha256 "71ce501972dace781316f2b1cedcc3a5783a46a4f9b87acba355eb33d86528b6"
+  url "https://files.pythonhosted.org/packages/de/32/9b20625e41f00c13706b03774790f31e4bcc26f3e5f39f7fce09f2d60729/wtfis-0.15.0.tar.gz"
+  sha256 "a37f93f00019ce68f887eacc40ab19669cd64582ff6432737a8b940085866bcb"
   license "MIT"
-  revision 4
   head "https://github.com/pirxthepilot/wtfis.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9524522922d77a0748df5ae2820b8e7f0a9682bb4c3536fe373cf3bc8bdd9695"
+    sha256 cellar: :any_skip_relocation, all: "863a1548a52deb4f98e833498feaecc44c1c96dc682a09d77c00def7e1d4a5bd"
   end
 
   depends_on "certifi" => :no_linkage
@@ -20,8 +19,8 @@ class Wtfis < Formula
   pypi_packages exclude_packages: ["certifi", "pydantic"]
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "idna" do
@@ -69,6 +68,6 @@ class Wtfis < Formula
   end
 
   test do
-    assert_match "Error: Environment variable VT_API_KEY not set", shell_output("#{bin}/wtfis 2>&1", 1)
+    assert_match "the following arguments are required: entity", shell_output("#{bin}/wtfis 2>&1", 2)
   end
 end

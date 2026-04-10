@@ -6,12 +6,13 @@ class DartSdk < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f6b414553f10ca0477cc6cb4722f796a8f209da0e1d91d90e29bdcbaf3f9fb79"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d1dec9eda8ff017c6428e1c2ea18cb8df6ea6e7b0f94d32b62beab5e2886581"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e9c798bdebbe115d2a2c408f3ea3362e25ae32a01589ddb1b6f3779e2aa4fd8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d3e414a09f65ad69a3b667224abd04e43fdc3d996c1fffd05b4ccb6f9b816fda"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "20fd9ac1cb42af2c1df88ba879ced6b1bbfbeb2e1a24bb3e0eec48a006cbe27e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9da7043c34539062cc09bf40fd73663f31a8eaac794757d10117f6dd5e13848"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3de15fcf1c8414f305c703d0653f5eea64cb9200b61080038b93a896ae53cdf9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "028d51c9e3ed5b54d7b43671db16652ed651509f816b5973eb0352db0902b369"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08654fb65125dc56fdac8594da4918a51825e0839b7aa1420f206410a75360b0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1288c60dc4d9398f759c0fdc20ff760d6202ab1a8cc1cc2ff44f30dbc9403b6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "07993fd5d586e7bdf7dd8743961232665ec31ecc96314b2b7cca77b49ff1b8fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c3a9a04bab93eea472fc120130a84ab12fb25b89da811ff0aa493666be2d6f6"
   end
 
   depends_on "ninja" => :build
@@ -41,6 +42,20 @@ class DartSdk < Formula
 
     system "gclient", "config", "--name", "sdk", "https://dart.googlesource.com/sdk.git@#{version}"
     system "gclient", "sync", "--no-history"
+
+    # Workaround for error: 'readdir_r' is deprecated
+    # Issue ref: https://github.com/dart-lang/sdk/issues/63089
+    inreplace "sdk/build/config/compiler/BUILD.gn",
+              "\"-Wno-tautological-constant-compare\",",
+              "\\0\n      \"-Wno-deprecated-declarations\","
+
+    # Workaround for dependants audit failure: Libraries were compiled with a flat namespace.
+    # Issue ref: https://github.com/dart-lang/sdk/issues/63115
+    # PR ref: https://github.com/dart-lang/sdk/pull/63116
+    inreplace "sdk/runtime/platform/mach_o.h",
+              "MH_NO_REEXPORTED_DYLIBS = 0x100000;",
+              "\\0\nstatic constexpr uint32_t MH_TWOLEVEL = 0x80;"
+    inreplace "sdk/runtime/vm/mach_o.cc", "MH_NO_REEXPORTED_DYLIBS", "\\0 | mach_o::MH_TWOLEVEL"
 
     chdir "sdk" do
       arch = Hardware::CPU.arm? ? "arm64" : "x64"

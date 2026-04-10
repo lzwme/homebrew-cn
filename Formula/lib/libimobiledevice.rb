@@ -27,6 +27,10 @@ class Libimobiledevice < Formula
   depends_on "libusbmuxd"
   depends_on "openssl@3"
 
+  on_linux do
+    depends_on "readline"
+  end
+
   def install
     # As long as libplist builds without Cython bindings,
     # so should libimobiledevice as well.

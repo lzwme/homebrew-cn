@@ -23,6 +23,9 @@ class Sassc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4575b459543c822d40a074f73591b1865790aa8977e7dc12148c10c858d55203"
   end
 
+  deprecate! date: "2026-04-02", because: :repo_archived
+  disable! date: "2027-04-02", because: :repo_archived
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

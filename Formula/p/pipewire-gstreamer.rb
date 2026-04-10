@@ -1,8 +1,8 @@
 class PipewireGstreamer < Formula
   desc "GStreamer Plugin for PipeWire"
   homepage "https://pipewire.org"
-  url "https://gitlab.freedesktop.org/pipewire/pipewire/-/archive/1.6.2/pipewire-1.6.2.tar.gz"
-  sha256 "2014c187fccdd6d245585be4eda7dabd781dcddd921604c40ab015bba6cb042d"
+  url "https://gitlab.freedesktop.org/pipewire/pipewire/-/archive/1.6.3/pipewire-1.6.3.tar.gz"
+  sha256 "93db72dc06768db548d48ae2b8e96e7c299c89a47f5c4426f152221aa90b0f2d"
   license "MIT"
   head "https://gitlab.freedesktop.org/pipewire/pipewire.git", branch: "master"
 
@@ -11,8 +11,8 @@ class PipewireGstreamer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "ee4e435ed86521beb4b421b9e6781a00982dae23a6de7747fdb55ab1639a5530"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "154f32dce5a913be0bfac715017398d15fe38f97db96bad129dbd6d941be280b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "74f11344c9e980abe841cb5cd5aa21bb7e28dab15abe3905a84ef59f22667310"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b647033f79e6cabc497e8af0075579aca588bc96362af8995e5f4f54c66d1c77"
   end
 
   depends_on "meson" => :build

@@ -4,13 +4,13 @@ class Sby < Formula
 
   desc "Front-end for Yosys-based formal verification flows"
   homepage "https://symbiyosys.readthedocs.io/en/latest/"
-  url "https://ghfast.top/https://github.com/YosysHQ/sby/archive/refs/tags/v0.63.tar.gz"
-  sha256 "96ada7fd013a2d6c7381ea75419a00d20b847ab08d56147c3aa66e0ada8ca0d7"
+  url "https://ghfast.top/https://github.com/YosysHQ/sby/archive/refs/tags/v0.64.tar.gz"
+  sha256 "8eb53706ca17130fd4df3b34c86a9be71c48ec06afec26c0543ece0300eb9276"
   license "ISC"
   head "https://github.com/YosysHQ/sby.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9db99749b4160fa833c0c980433f27a845d80cc53c3add85e820f002f811fa58"
+    sha256 cellar: :any_skip_relocation, all: "0cf6a76bdc533482bb11d5defa286fe1955e6820990945bb6cefb1bf7f9d0cfe"
   end
 
   depends_on "yices2" => :test

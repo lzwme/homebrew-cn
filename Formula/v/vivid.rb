@@ -1,17 +1,17 @@
 class Vivid < Formula
   desc "Generator for LS_COLORS with support for multiple color themes"
   homepage "https://github.com/sharkdp/vivid"
-  url "https://ghfast.top/https://github.com/sharkdp/vivid/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "2d31f72ac9df81ddc8b5ecb9e5e539c754c22863ada3e76e4c1a88ee53c99a21"
+  url "https://ghfast.top/https://github.com/sharkdp/vivid/archive/refs/tags/v0.11.1.tar.gz"
+  sha256 "a43ccfbc6554055181a08f2740664f9280fa2d0e57c4641850c60dd0e5323720"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0eb9d08aa6de8c090a446b07d3fd468c234c4f870c3afc6d155b67c6844b6de2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ac4335252ecda470fac92478734cd6b69a23ef724ce72ec31101b06f7de0163"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abaa690028023fba3c32e5ab17a07c7ed9e3de0bf781565363b56cb650f3f284"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c8d029bcc60c8170fc082215034dfd073a46bab05592e55671a548a238f7067f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b400b71d8eb2552020a161c3d40c905d458a9b9b61ded4058d1e8038dc376aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af566891c0c11afe80f44e884ce7a4074b7eeea876b2484c26ce591a49dc4f01"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "398963cabbaf8702745b26fe4ea1f77a32a230718a2b6087d7120d4a4927b23f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15f3bdc717cf987d5e8fe657daf8dd8b2fcd24701735bdcd60cd6d7d9dc71214"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df3e4d6c6481c22186c95ab36753d4a44804f3d8515017e48a4ca667664b36f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e95541e49042260c75c278311a5777acd11e76a1cd7af9067436f625083097fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "40ee40be6c6955cefe4f766daca30a2582c71d76080956c238ef0cc57347892c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67c2e96c2dc332c4ebf0cfb2c928bdd7daeedee4e40375ef490085ecc2ac0f83"
   end
 
   depends_on "rust" => :build

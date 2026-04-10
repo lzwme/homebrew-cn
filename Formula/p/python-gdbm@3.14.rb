@@ -1,8 +1,8 @@
 class PythonGdbmAT314 < Formula
   desc "Python interface to gdbm"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.14.3/Python-3.14.3.tgz"
-  sha256 "d7fe130d0501ae047ca318fa92aa642603ab6f217901015a1df6ce650d5470cd"
+  url "https://www.python.org/ftp/python/3.14.4/Python-3.14.4.tgz"
+  sha256 "b4c059d5895f030e7df9663894ce3732bfa1b32cd3ab2883980266a45ce3cb3b"
   license "Python-2.0"
 
   livecheck do
@@ -10,12 +10,13 @@ class PythonGdbmAT314 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "69e7e5faf2ce879d0c29a5d28716f94c2c4301fc1eb0012bffb58e5b44249d2b"
-    sha256 cellar: :any, arm64_sequoia: "ef64a5b1aeccecb3262930bab62a30061e514008e490aabd0beb22da453a3335"
-    sha256 cellar: :any, arm64_sonoma:  "3e0fa3b7b807ef03abaa60ab316c50e0255702b0fdc64e446c508e66a6cd3781"
-    sha256 cellar: :any, sonoma:        "88f4034267c9fd249fb3180145e5946b9e4ea7c739b71a0a2c97c8921c18e340"
-    sha256               arm64_linux:   "0037e048b183aedd3436c771a1f4c80841617c080d93c78f449281359445cea4"
-    sha256               x86_64_linux:  "251e611096b158aaf897d49c73aa87b8b71a6ec354003c1fbaf19e2e4f2e4ed2"
+    sha256 cellar: :any, arm64_tahoe:   "1bef27f3b0d3a83a41e0ff854052b560848f21c0ae08d19221fee8ceb7322511"
+    sha256 cellar: :any, arm64_sequoia: "606abcbb6f1a952481671850346ef38b64e33bc76cc2f587ef3da89eb206898a"
+    sha256 cellar: :any, arm64_sonoma:  "2f22db62ae2601143417c1ba4a575d4b3137bb03c49fea8f338d5e8ae083c0b8"
+    sha256 cellar: :any, sequoia:       "999aa26f8f53dba6ca07e765f7516dd5ef3b68d31c1c630508d6b30b176f564c"
+    sha256 cellar: :any, sonoma:        "203e25fa170e365fdb196a0cd7aee90d7a877d59ce49f0227e5808292a4fa108"
+    sha256               arm64_linux:   "3030dc120dee0c17373bdf8024cfdf17dba4e459443d03fb0addaf56a5c9bf49"
+    sha256               x86_64_linux:  "08f842f1f18d922ee49c49ddae728e9659b34fa5b3284a0f060375e7212496ca"
   end
 
   depends_on "gdbm"
@@ -33,25 +34,26 @@ class PythonGdbmAT314 < Formula
       Formula["python@#{xy}"].opt_include/"python#{xy}"
     end
 
-    cd "Modules" do
-      (Pathname.pwd/"setup.py").write <<~PYTHON
-        from setuptools import setup, Extension
+    (buildpath/"Modules/pyproject.toml").write <<~TOML
+      [project]
+      name = "gdbm"
+      version = "#{version}"
+      description = "#{desc}"
 
-        setup(name="gdbm",
-              description="#{desc}",
-              version="#{version}",
-              ext_modules = [
-                Extension("_gdbm", ["_gdbmmodule.c"],
-                          include_dirs=["#{Formula["gdbm"].opt_include}", "#{python_include}/internal"],
-                          libraries=["gdbm"],
-                          library_dirs=["#{Formula["gdbm"].opt_lib}"])
-              ]
-        )
-      PYTHON
-      system python3, "-m", "pip", "install", *std_pip_args(prefix: false, build_isolation: true),
-                                              "--target=#{libexec}", "."
-      rm_r libexec.glob("*.dist-info")
-    end
+      [tool.setuptools]
+      packages = []
+
+      [[tool.setuptools.ext-modules]]
+      name = "_gdbm"
+      sources = ["_gdbmmodule.c"]
+      include-dirs = ["#{Formula["gdbm"].opt_include}", "#{python_include}/internal"]
+      libraries = ["gdbm"]
+      library-dirs = ["#{Formula["gdbm"].opt_lib}"]
+    TOML
+
+    system python3, "-m", "pip", "install", *std_pip_args(prefix: false, build_isolation: true),
+                                            "--target=#{libexec}", "./Modules"
+    rm_r libexec.glob("*.dist-info")
   end
 
   test do

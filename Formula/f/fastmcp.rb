@@ -3,18 +3,18 @@ class Fastmcp < Formula
 
   desc "Fast, Pythonic way to build MCP servers and clients"
   homepage "https://gofastmcp.com/getting-started/welcome"
-  url "https://files.pythonhosted.org/packages/d0/32/4f1b2cfd7b50db89114949f90158b1dcc2c92a1917b9f57c0ff24e47a2f4/fastmcp-3.2.0.tar.gz"
-  sha256 "d4830b8ffc3592d3d9c76dc0f398904cf41f04910e41a0de38cc1004e0903bef"
+  url "https://files.pythonhosted.org/packages/12/0d/56dc2c9fd402b21b850f2c9725f1dc8c257991d2e48a2d2e8a755215ee47/fastmcp-3.2.1.tar.gz"
+  sha256 "6d824463ed8cefb122a9566ddd96b8a994d8a69db413ab3105509b00b0aca1fd"
   license "Apache-2.0"
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ffb66b7196d59deca9721fa70b60a2aa3cb85de635cb6f0821a96aef0d580dd3"
-    sha256 cellar: :any,                 arm64_sequoia: "de7704e8840c718d6ec71f72fcd9f2e04d7a0ddedf9147ab6b38a65631e2f764"
-    sha256 cellar: :any,                 arm64_sonoma:  "5803be20145857df4779423cdaf090ec3cd8d50a56f6df6cff74e72c83da1afd"
-    sha256 cellar: :any,                 sonoma:        "4334a155c482a27f6974a97cdd269c1a2d5cd4d0736466e60a4f2f612e04ca87"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2f32266603c1acb1f4b00fd6af4f1bfd0ebb2c249c408d5c4fcbc5ace82bd93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "923d02aedba81983933d7b17219f42ef74d384f69546ebf3c990e5e7718d3fa8"
+    sha256 cellar: :any,                 arm64_tahoe:   "884453aedb03fa69d180c6967645e45c12745006eb094bb163d58f18838f1b5d"
+    sha256 cellar: :any,                 arm64_sequoia: "f4f7ceccbda4efae50bdeec7de4b4d75a024bb725014af19efaf38bc24eb5948"
+    sha256 cellar: :any,                 arm64_sonoma:  "918937b769491f0232927002682c6e02a0b884c5a0253c51fe8566e9f1b62d9c"
+    sha256 cellar: :any,                 sonoma:        "9772bc5367fd4842bdc7f87b382c1210f218dd5b29e5faf7e7aa19e06953606a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "97e0d8108096683a51fa00045f90d0fc281c5efe9026ec86e0a2c9004bf75802"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "485441c81891512368d1f7570c4ce0b7dd6579a715675a8ef98ec97d717038a7"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -65,8 +65,8 @@ class Fastmcp < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
+    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
   end
 
   resource "cyclopts" do
@@ -180,8 +180,8 @@ class Fastmcp < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/fc/6d/62e76bbb8144d6ed86e202b5edd8a4cb631e7c8130f3f4893c3f90262b10/mcp-1.26.0.tar.gz"
-    sha256 "db6e2ef491eecc1a0d93711a76f28dec2e05999f93afd48795da1c1137142c66"
+    url "https://files.pythonhosted.org/packages/8b/eb/c0cfc62075dc6e1ec1c64d352ae09ac051d9334311ed226f1f425312848a/mcp-1.27.0.tar.gz"
+    sha256 "d3dc35a7eec0d458c1da4976a48f982097ddaab87e278c5511d5a4a56e852b83"
   end
 
   resource "mdurl" do
@@ -190,8 +190,8 @@ class Fastmcp < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/ea/5d/38b681d3fce7a266dd9ab73c66959406d565b3e85f21d5e66e1181d93721/more_itertools-10.8.0.tar.gz"
-    sha256 "f638ddf8a1a0d134181275fb5d58b086ead7c6a72429ad725c67503f13ba30bd"
+    url "https://files.pythonhosted.org/packages/24/24/e0acc4bf54cba50c1d432c70a72a3df96db4a321b2c4c68432a60759044f/more_itertools-11.0.1.tar.gz"
+    sha256 "fefaf25b7ab08f0b45fa9f1892cae93b9fc0089ef034d39213bce15f1cc9e199"
   end
 
   resource "openapi-pydantic" do
@@ -250,8 +250,8 @@ class Fastmcp < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/94/01/979e98d542a70714b0cb2b6728ed0b7c46792b695e3eaec3e20711271ca3/python_multipart-0.0.22.tar.gz"
-    sha256 "7340bef99a7e0032613f56dc36027b959fd3b30a787ed62d310e951f7c3a3a58"
+    url "https://files.pythonhosted.org/packages/8a/45/e23b5dc14ddb9918ae4a625379506b17b6f8fc56ca1d82db62462f59aea6/python_multipart-0.0.24.tar.gz"
+    sha256 "9574c97e1c026e00bc30340ef7c7d76739512ab4dfd428fec8c330fa6a5cc3c8"
   end
 
   resource "pyyaml" do
@@ -290,13 +290,13 @@ class Fastmcp < Formula
   end
 
   resource "uncalled-for" do
-    url "https://files.pythonhosted.org/packages/02/7c/b5b7d8136f872e3f13b0584e576886de0489d7213a12de6bebf29ff6ebfc/uncalled_for-0.2.0.tar.gz"
-    sha256 "b4f8fdbcec328c5a113807d653e041c5094473dd4afa7c34599ace69ccb7e69f"
+    url "https://files.pythonhosted.org/packages/e1/68/35c1d87e608940badbcfeb630347aa0509897284684f61fab6423d02b253/uncalled_for-0.3.1.tar.gz"
+    sha256 "5e412ac6708f04b56bef5867b5dcf6690ebce4eb7316058d9c50787492bb4bca"
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/e3/ad/4a96c425be6fb67e0621e62d86c402b4a17ab2be7f7c055d9bd2f638b9e2/uvicorn-0.42.0.tar.gz"
-    sha256 "9b1f190ce15a2dd22e7758651d9b6d12df09a13d51ba5bf4fc33c383a48e1775"
+    url "https://files.pythonhosted.org/packages/5e/da/6eee1ff8b6cbeed47eeb5229749168e81eb4b7b999a1a15a7176e51410c9/uvicorn-0.44.0.tar.gz"
+    sha256 "6c942071b68f07e178264b9152f1f16dfac5da85880c4ce06366a96d70d4f31e"
   end
 
   resource "watchfiles" do

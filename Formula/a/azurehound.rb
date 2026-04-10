@@ -1,8 +1,8 @@
 class Azurehound < Formula
   desc "Azure Data Exporter for BloodHound"
   homepage "https://github.com/SpecterOps/AzureHound"
-  url "https://ghfast.top/https://github.com/SpecterOps/AzureHound/archive/refs/tags/v2.11.0.tar.gz"
-  sha256 "9c66851f4842229fbd4c92e021c3f2929889bc0e2484ef1ea5bf96a553933d86"
+  url "https://ghfast.top/https://github.com/SpecterOps/AzureHound/archive/refs/tags/v2.12.0.tar.gz"
+  sha256 "36fa980d4b1d5a454b13aa5c6f12de4a10320a656f2badff2239b7070bb33715"
   license "GPL-3.0-or-later"
   head "https://github.com/SpecterOps/AzureHound.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Azurehound < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8a92572f5f98ea7b505e7b58ad60c5053349b1cbf07ae50b67422f3fb103047"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8a92572f5f98ea7b505e7b58ad60c5053349b1cbf07ae50b67422f3fb103047"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8a92572f5f98ea7b505e7b58ad60c5053349b1cbf07ae50b67422f3fb103047"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7fc47ff9f28ad8d24fed868642d2c2d88875b379ba145ee79621632111c0adbf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "252836f41e842afefc581f452e935b21732a100a941a4751265aeac275c3072b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dddf3d1282aea78572d168a80b0dbf8d47705670944bc35746aa9302c58c2db6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "59d39d98ab1ba5ce12168d7371e52bd490c2e42b4402b129016b74f3a84bbe21"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59d39d98ab1ba5ce12168d7371e52bd490c2e42b4402b129016b74f3a84bbe21"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59d39d98ab1ba5ce12168d7371e52bd490c2e42b4402b129016b74f3a84bbe21"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5c6a7bae4a97374c59799e0520960846934f6b23998326ada53cbc87267093aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92f1ef3f100dd7560c4bd0d2b6961a8012bc90e40fc5830d5fdc50b60446cfd4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed962aa3a337253f5907ce81eb473f97fc9c4880cdf8911e59c76e4a3176749b"
   end
 
   depends_on "go" => :build

@@ -25,7 +25,7 @@ class Ejabberd < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "elixir" => :build
+  depends_on "elixir"
   depends_on "erlang"
   depends_on "gd"
   depends_on "libyaml"
@@ -120,11 +120,13 @@ class Ejabberd < Formula
     cp etc/"ejabberd/ejabberd.yml", testpath/"ejabberd.yml"
     inreplace testpath/"ejabberd.yml", "port: 1883", "port: #{free_port}"
 
-    pid = spawn(sbin/"ejabberdctl", "--node", node, "foreground", pgroup: true)
+    output_log = testpath/"output.log"
+    pid = spawn(sbin/"ejabberdctl", "--node", node, "foreground", pgroup: true, [:out, :err] => output_log.to_s)
     sleep 5
     assert_equal "pong\n", shell_output("#{sbin}/ejabberdctl --node #{node} ping")
+    refute_match(/ERROR/i, output_log.read)
   ensure
-    Process.kill "TERM", -pid
+    Process.kill "TERM", pid
     Process.wait pid
   end
 end

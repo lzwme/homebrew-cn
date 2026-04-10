@@ -26,6 +26,9 @@ class Libsass < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "091841d5a1c742f6574ef14d6bb952d54409c7fcbc2085222a11b18eee0e38ba"
   end
 
+  deprecate! date: "2026-04-02", because: :repo_archived
+  disable! date: "2027-04-02", because: :repo_archived
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

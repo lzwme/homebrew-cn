@@ -13,12 +13,13 @@ class Gtk4 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "629aad16613de3d3c52a7b319e2b3b523c1cc107484b6967f860e2140aeff6eb"
-    sha256 arm64_sequoia: "05ed86ffb535047afa7e3f178358ddcd0e8c411df5be5b6711f8cdfab0749209"
-    sha256 arm64_sonoma:  "c1ed38af4735867e2f71f58aa72b1931240159fc0f6fce94faee9489efa904e4"
-    sha256 sonoma:        "b4e793432f03c317c8adc9cd518dea27394a301c755f45cebcdda8e568acd3c2"
-    sha256 arm64_linux:   "9933655624b796b21e1f5f3dcf3da514877f72d9603a83a6ea415a3e2949cced"
-    sha256 x86_64_linux:  "4977c56351fea5ee4954229a0906a56cb249ad2055133877ace71056dd97c10e"
+    rebuild 1
+    sha256 arm64_tahoe:   "df9fccdfab031083ad3665e2611c20b8dd7ae9197cc3f27117b8d78fcdad6b9b"
+    sha256 arm64_sequoia: "46d06f694632df98a45eeea8f11683941e6a2e81e63e88a49dae6b8c19057b91"
+    sha256 arm64_sonoma:  "1822fa25451d8fc9b38118d0af2691882c41715c833adf83328a82cd95c23f4a"
+    sha256 sonoma:        "ff5108a4cc81b600710f5cf01fb3bb97b798f782a0f85fd02e847e145e747daa"
+    sha256 arm64_linux:   "85b73eb5727ad76f794ed01225587c2792a6338a60dccb61c75627a6143854c4"
+    sha256 x86_64_linux:  "446dc5d917d848b6398529a78bb602f375e8c5cbd7fc2d571b70afd04aa7ba04"
   end
 
   depends_on "docbook" => :build
@@ -29,7 +30,6 @@ class Gtk4 < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
-  depends_on "sassc" => :build
   depends_on "cairo"
   depends_on "fontconfig"
   depends_on "fribidi"

@@ -16,13 +16,14 @@ class Avfs < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "d85a19151e210f1c932804b20149eb0cea8684cb4ba51796321e83c78f03f2f1"
-    sha256 x86_64_linux: "688b2dcaa878db660e2ec1a05b98376cd388aeb616bb6391cf4904f7a7625258"
+    rebuild 1
+    sha256 arm64_linux:  "e5779de64e7a280622e2fd4b81b73726c88a4aaa6e8c4dc4787e14bc7bc27b17"
+    sha256 x86_64_linux: "966402ae4700d048e95b8de4a4c9397b3fcfacb2f85b61f23ef506e703deaefa"
   end
 
   depends_on "pkgconf" => :build
   depends_on "bzip2"
-  depends_on "libfuse@2"
+  depends_on "libfuse"
   depends_on :linux # on macOS, requires closed-source macFUSE
   depends_on "xz"
 

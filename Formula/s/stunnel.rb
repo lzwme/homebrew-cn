@@ -1,8 +1,8 @@
 class Stunnel < Formula
   desc "SSL tunneling program"
   homepage "https://www.stunnel.org/"
-  url "https://www.stunnel.org/downloads/stunnel-5.77.tar.gz"
-  sha256 "ec026f4fae4e0d25b940cc7a9451d925e359e7fd59e9edad20baea66ce45f263"
+  url "https://www.stunnel.org/downloads/stunnel-5.78.tar.gz"
+  sha256 "fada662282c73923ff1c39ae7089c487694ecea92098a0e3190a81a6f492d3a0"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Stunnel < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ac74092907babf1f1a5f40745d61cc2c8ea2df2ede28ca17ed922342bcaba2c3"
-    sha256 cellar: :any,                 arm64_sequoia: "2f9afc595da6206042e9562ee2bdd619df7cd674a924a06451893090094ee066"
-    sha256 cellar: :any,                 arm64_sonoma:  "ac4c9155cbdef0590034c2a4489e887392f653a7a31a223617b6f0cfa36e9f75"
-    sha256 cellar: :any,                 sonoma:        "4316263bd80f6627cb4a92de46eac2eed50dd039b3079043cb7f00abfba96445"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdda7e79c931dad1a231b0329227f0f4946f9aceaed127bdc7041bfe641a83d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf84a75ce8992b9842965c10e2f3a82e52c52576f853e01e81f89d2d46fff99c"
+    sha256 cellar: :any,                 arm64_tahoe:   "39db1e422f499c370d2ca6d4a3ea522a5e2c5ba449613143e60333a4e942a55e"
+    sha256 cellar: :any,                 arm64_sequoia: "5437506a5e4e9fe0b6226aed2f58367e676200179a9e2b91529b02523069ecc7"
+    sha256 cellar: :any,                 arm64_sonoma:  "55cb2685b0e6aa8d25de1a4c22dcbc2a73b44f2d0a6b16595fc1c356ee2430f4"
+    sha256 cellar: :any,                 sonoma:        "a7834dd9314261f37ae181e7241491a41a5f5619f3182f0cde97e550fda776d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fdcd7912a0134981263f8155793cc49350847767d830cc88130e00c9bce1c54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28b5b3eddb6e07d8435d38e96c6e72f04cf0977c396dcb6f2eea204a552dc157"
   end
 
   depends_on "openssl@3"

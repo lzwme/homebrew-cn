@@ -3,17 +3,17 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.com/github/spec-kit"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "71873d247385e9b3175340c34330fce50b46e3648f0bf11d51e48eef592ad9f7"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "c89333f217dd488aff879951514e4bd8c8a464d1d79640017464dcc0ed079a74"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b106ad4dc007318bd3aa3ff45edc82bdb7998d09a46b4191f8b28334b703ffa4"
-    sha256 cellar: :any,                 arm64_sequoia: "d3ce426ddedad3205dc7316f2a60b5f8c3424dcd7e27d197ed54f54333c37983"
-    sha256 cellar: :any,                 arm64_sonoma:  "f7f623c664c1fbb887d5f08126d2b474c632b25c46180c11a04ca172c75307a2"
-    sha256 cellar: :any,                 sonoma:        "abf3060727bb20b98f6136c4314acdc21147452d5e1e0ad0da95f57a30bca4b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "07ec98cb433e8330a64a6d561187b09b8ee9fbd5287258da68aa5bcbc7778231"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee63e1c1b40af7509677b703f1e8f774c325477364b78630b815ff272d9bb4bd"
+    sha256 cellar: :any,                 arm64_tahoe:   "2efab294a54601ff56fcd3e735596b3348d9370fb43c2dee17e95a93348042ae"
+    sha256 cellar: :any,                 arm64_sequoia: "41d18a3d57cbd01bd6f549029c65f6d7c44e88a432c265617d358c2704f21fa2"
+    sha256 cellar: :any,                 arm64_sonoma:  "c45ad68386c127ada1d7a1f45b37497a2c62a114d6b1112a99a1a28f93f2a87f"
+    sha256 cellar: :any,                 sonoma:        "b7ba4c87fbe78137777fa65998effcdcde425f9d78b87881677f3d003e3399cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3644d4dbb1b42ae81394110015139a3d38bd5735eef43204117af44520accb8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5f6dfe4e210023d3cb020f1ff1870653ae1f477ad6df393cfa414c7df6dfdb5"
   end
 
   depends_on "certifi" => :no_linkage
@@ -27,34 +27,9 @@ class Specify < Formula
     sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
   end
 
-  resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
-  end
-
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
-  end
-
-  resource "h11" do
-    url "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz"
-    sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
-  end
-
-  resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/06/94/82699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cb/httpcore-1.0.9.tar.gz"
-    sha256 "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
-  end
-
-  resource "httpx" do
-    url "https://files.pythonhosted.org/packages/b1/df/48c586a5fe32a0f01324ee087459e112ebb7224f646c0b5023f5e79e9956/httpx-0.28.1.tar.gz"
-    sha256 "75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc"
-  end
-
-  resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
+    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
   end
 
   resource "json5" do
@@ -98,8 +73,8 @@ class Specify < Formula
   end
 
   resource "readchar" do
-    url "https://files.pythonhosted.org/packages/dd/f8/8657b8cbb4ebeabfbdf991ac40eca8a1d1bd012011bd44ad1ed10f5cb494/readchar-4.2.1.tar.gz"
-    sha256 "91ce3faf07688de14d800592951e5575e9c7a3213738ed01d394dcc949b79adb"
+    url "https://files.pythonhosted.org/packages/ed/49/a10341024c45bed95d13197ec9ef0f4e2fd10b5ca6e7f8d7684d18082398/readchar-4.2.2.tar.gz"
+    sha256 "e3b270fe16fc90c50ac79107700330a133dd4c63d22939f5b03b4f24564d5dd8"
   end
 
   resource "rich" do
@@ -110,22 +85,6 @@ class Specify < Formula
   resource "shellingham" do
     url "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz"
     sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
-  end
-
-  resource "socksio" do
-    url "https://files.pythonhosted.org/packages/f8/5c/48a7d9495be3d1c651198fd99dbb6ce190e2274d0f28b9051307bdec6b85/socksio-1.0.0.tar.gz"
-    sha256 "f88beb3da5b5c38b9890469de67d0cb0f9d494b78b106ca1845f96c10b91c4ac"
-
-    # Unpin flit-core<3 to support 3.14+
-    patch do
-      url "https://github.com/sethmlarson/socksio/commit/b326406915fd98a8185c1c160165c5b8963b30c1.patch?full_index=1"
-      sha256 "7aefa906b62e2c9a8df255ea742ca97e155ac2e1238e49ce11e3e56e37ee1f8b"
-    end
-  end
-
-  resource "truststore" do
-    url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
-    sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
   end
 
   resource "typer" do
