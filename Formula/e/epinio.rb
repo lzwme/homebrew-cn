@@ -1,8 +1,8 @@
 class Epinio < Formula
   desc "CLI for Epinio, the Application Development Engine for Kubernetes"
   homepage "https://epinio.io/"
-  url "https://ghfast.top/https://github.com/epinio/epinio/archive/refs/tags/v1.13.9.tar.gz"
-  sha256 "c87b5c7d04bdee6f24d48b2814ece147240b1edec72331d86c4b669d399a6be4"
+  url "https://ghfast.top/https://github.com/epinio/epinio/archive/refs/tags/v1.13.10.tar.gz"
+  sha256 "1cff0c45f710196a944d43bee1ccabc7c68a89d51ecb95af02f71e4bed38f3de"
   license "Apache-2.0"
 
   # Upstream creates a stable version tag ahead of release but a version isn't
@@ -14,12 +14,12 @@ class Epinio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cfae1d834f2f7c6767e729148a7ef841b0930e561b10b780b2ce10ec0874356"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eca1534ecd2e5eb24b54315712fe70b949f341bae5d84d575c6565ce11011ac6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c74fd01e7da95d0dc3a15f01d470b423327bd6df4d8da9fcf09fbcd674e761f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9bc71df548bfc304a5847648d6079b6a8c94f828d33f1d11ae7f4def7445c85b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7172c23e8b46aeccdaead2b645c444e4504d2ee38c74f1df7938d2e1ac7d149c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12cc47d5378c19c77f5f24cc70e832514ce9fb8e0746a570df57dd023013ba39"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5bd5c4830e5858377c5d887c72f0bee48f0f9da263eac9a84636fe4e51c95d12"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8a3b106c4ca1a96c0a4c9c9a935d4b95d18080eb3e44820c65cef4de355dde3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f427c8fc544c38ab855dbc339ced1792836fef3eb402f1ea72720abb018292b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cc3735950c3324c1e7c97e94a0fe56531bcb167e2c7d82aa732df3b127ff8f33"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9693ed125c1731b454b4a69d820804026bd216a454c3141cf5578caafb8d5e36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d670343719a604d2324efc88f426858d53c08842ef36017935de5f3250181e0d"
   end
 
   depends_on "go" => :build

@@ -1,18 +1,18 @@
 class Frei0r < Formula
   desc "Minimalistic plugin API for video effects"
   homepage "https://frei0r.dyne.org/"
-  url "https://ghfast.top/https://github.com/dyne/frei0r/archive/refs/tags/v3.0.0.tar.gz"
-  sha256 "a206f16564d5c506cef8919e398bb568f69e2eaf7c2f0908043c0fb4db6aab50"
+  url "https://ghfast.top/https://github.com/dyne/frei0r/archive/refs/tags/v3.0.1.tar.gz"
+  sha256 "dec04785ab4dc5fb8167ed542647a976d38a3ff63efab1980e9baaeee100d682"
   license "GPL-2.0-or-later"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8708231f327ab08c4a1b9fc702087f9920e841ca5507b9bb823f10e61fb4d88"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f5c0650c05eef5cd067f20c9faac02641be7d3c7004e767d3f50bcfcf590708"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08e625e4bc9c55687930ea784ac11d3c924fa170fbb08d24b17545be293fed7f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "23f9e82cb17a5843d2bebb28a7041b8408110e6855566e3444f630dd736668e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e820c564ba71a55b195ca3530a324467fd718c6398be1e9742c1e55b0a74a74b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bae7f9e28678e97f27439aa24df873267460dea2e32aa9fb49f07e63aa6a4556"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "46e0beb8b8e867c6f6c253ed3557728c6512a41b249ba48821d34fe4a9ea81fb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eac12cc1042dee57a73e584dee0c04d57fa53ce6f6eba2643ad03a6061d99bbb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0b6e3542a369f31b1b3000794bd96569d077ce1743b74947b624370b801e6ab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0375d26726a06d92593b583cd874369855af86eb19f07ddcd9cd72addbce3432"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ed8af5cc204dc5520beca0f93aa91dd6047a55ea31ee22f148ca680addc2fb5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef4fb533a67cab0f45b3e1a29279ba1c080aa07ec3fdf207ab58be6bf92ed12d"
   end
 
   depends_on "cmake" => :build

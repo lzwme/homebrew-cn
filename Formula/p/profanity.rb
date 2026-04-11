@@ -1,18 +1,18 @@
 class Profanity < Formula
   desc "Console based XMPP client"
   homepage "https://profanity-im.github.io"
-  url "https://profanity-im.github.io/tarballs/profanity-0.17.0.tar.xz"
-  sha256 "508e18c0e797d46cc38779eb207480fc3e93b814e202a351050f395c1b262804"
+  url "https://profanity-im.github.io/tarballs/profanity-0.18.0.tar.xz"
+  sha256 "a1ad441bf92ba0327e0740a15dfe7885cb14415a934c850b8b98ac2f728d7cf8"
   license "GPL-3.0-or-later"
   head "https://github.com/profanity-im/profanity.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "2f567c165e355a6aa6b0d577f03c856791df3ddebd3f9ffbd595665761efd073"
-    sha256 arm64_sequoia: "edf9f7f259796f41180caa949a6ebc8c84a383c4226c4a59a995001f6fefcf7d"
-    sha256 arm64_sonoma:  "693892cddb95d56dff09da433c86da52f38a51dd5c70ea58d26241595b62d34e"
-    sha256 sonoma:        "537fc9ab1f71f61916f5ec8ce45b58c6e6340fd01eca667d8d7320a6af546c39"
-    sha256 arm64_linux:   "4d2caeb7dbf41a46e3ff90c34689a864153f5866944fb6fa99ea8e270e3952b8"
-    sha256 x86_64_linux:  "ae8c6b511ccd488753ca14b0af9996c518ec7093ddb46c60868a966807bedb91"
+    sha256 arm64_tahoe:   "6ff33b65801254c3f687f682c32a4a2bf5ff7294a5ca17c73f9001eec73e3651"
+    sha256 arm64_sequoia: "e47d5c5419642bfc391a63b41f837596afc2bc2701d47a10399c212a091b6fca"
+    sha256 arm64_sonoma:  "032c901164d7e7e56e1fc82e3e4adc2fe33313a59ce30072101f906e13e5a553"
+    sha256 sonoma:        "28226b645ad41cda17521ea9b5d265429cf74fdc2ef59a3a1297cd5fc48ca8c7"
+    sha256 arm64_linux:   "11b138269c95cdd14e315f142874ed3f4b5dcd94d4b6bf80577922181248f40e"
+    sha256 x86_64_linux:  "1ddd88181401770e9b1583f21228e01edb8bc721efee0fb0aa21a3b5928b8bc4"
   end
 
   depends_on "meson" => :build
@@ -42,12 +42,6 @@ class Profanity < Formula
 
   on_linux do
     depends_on "libnotify"
-  end
-
-  # Fix missing imports for libomemo-c support: https://github.com/profanity-im/profanity/pull/2133
-  patch do
-    url "https://github.com/profanity-im/profanity/commit/9a501e6ecdaf65d28362e5888a0529fb734a353e.patch?full_index=1"
-    sha256 "ac0f514496890bbcbed9cee3f6a84387c64f3a299d9b2f700e07ae57bb887447"
   end
 
   def install

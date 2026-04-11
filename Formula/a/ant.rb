@@ -1,14 +1,14 @@
 class Ant < Formula
   desc "Java build tool"
   homepage "https://ant.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=ant/binaries/apache-ant-1.10.16-bin.tar.xz"
-  mirror "https://archive.apache.org/dist/ant/binaries/apache-ant-1.10.16-bin.tar.xz"
-  sha256 "a49af58215617f7de29e517b34719de2bb04d4692ee79cdb7dfd8ea4bd56fa46"
+  url "https://www.apache.org/dyn/closer.lua?path=ant/binaries/apache-ant-1.10.17-bin.tar.xz"
+  mirror "https://archive.apache.org/dist/ant/binaries/apache-ant-1.10.17-bin.tar.xz"
+  sha256 "9553018e2cd5368261c32b2163c802e00de0a1c9707c3cfdd4cf7d6821674b08"
   license "Apache-2.0"
   head "https://git-wip-us.apache.org/repos/asf/ant.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b327c99b0554eb1603e82e5c4089b9bd7a42bda60c95edcea6f85d1b85735afd"
+    sha256 cellar: :any_skip_relocation, all: "423ffa7d6e246d4d4ee04d28fecd2181600e3bcf8e76200bd18e057c6513e9e7"
   end
 
   depends_on "openjdk"
@@ -20,9 +20,9 @@ class Ant < Formula
   end
 
   resource "bcel" do
-    url "https://www.apache.org/dyn/closer.lua?path=commons/bcel/binaries/bcel-6.10.0-bin.tar.gz"
-    mirror "https://archive.apache.org/dist/commons/bcel/binaries/bcel-6.10.0-bin.tar.gz"
-    sha256 "451557c4fb706d3f405fdd93eb4b8326915617a0e2a2d706d4abcaae515f1165"
+    url "https://www.apache.org/dyn/closer.lua?path=commons/bcel/binaries/bcel-6.12.0-bin.tar.gz"
+    mirror "https://archive.apache.org/dist/commons/bcel/binaries/bcel-6.12.0-bin.tar.gz"
+    sha256 "e9d838da3fc4c20c4891de35e87f0fe0f7fd69b79053202338ee14402cd697bd"
   end
 
   def install

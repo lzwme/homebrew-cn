@@ -2263,6 +2263,7 @@ Homebrew-homebrew-core/Formula/f/fuse-zip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fuseki.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/futhark.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fuzzy-find.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fvm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fwknop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fwup.rb, Homebrew/homebrew-core, 1
@@ -6295,6 +6296,7 @@ Homebrew-homebrew-core/Formula/r/req.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/reshape.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/resterm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/restic.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/resticprofile.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/restish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/restview.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/resty.rb, Homebrew/homebrew-core, 1
@@ -12827,7 +12829,7 @@ Homebrew-homebrew-cask/Casks/i/ipsecuritas.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/iptvnator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/ipvanish-vpn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ipynb-quicklook.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/i/iqmol.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/iqmol.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/ireal-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/iridium.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/iris.rb, Homebrew/homebrew-cask, 1
@@ -15745,6 +15747,7 @@ Homebrew-homebrew-cask/Casks/w/wordservice.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/workbench.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/workflowy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/workman.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/w/worksheet-crafter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/workspace-one-intelligent-hub.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/workspaces.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/worldpainter.rb, Homebrew/homebrew-cask, 0

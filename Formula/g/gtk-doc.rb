@@ -3,10 +3,9 @@ class GtkDoc < Formula
 
   desc "GTK+ documentation tool"
   homepage "https://gitlab.gnome.org/GNOME/gtk-doc"
-  url "https://download.gnome.org/sources/gtk-doc/1.36/gtk-doc-1.36.0.tar.xz"
-  sha256 "3b84bac36efbe59017469040dfee58f17cf0853b5f54dfae26347daf55b6d337"
+  url "https://download.gnome.org/sources/gtk-doc/1.36/gtk-doc-1.36.1.tar.xz"
+  sha256 "0e517a5f97069831181be177516bde8aa8b3922398f2bdb09e265d22aecadbc5"
   license "GPL-2.0-or-later"
-  revision 1
 
   # We use a common regex because gtk-doc doesn't use GNOME's
   # "even-numbered minor is stable" version scheme.
@@ -16,12 +15,12 @@ class GtkDoc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bda10d6a7806c4a3b900203c0ebc0f450d1c07d22b6d42ebc498a05a7b488cf1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7786664f1459fd909ce570c0db2e2fb609b74f2a7455407d49750848a530b1d8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e96303cfc6156115bd58e7fb591cc2366d19d917021c3f0e06b4c12286661ea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "34cd092117725bb031c2c67ad8fde6a199058e8dc2b5e768e166df2bd4264d85"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "21626866a4655a070d0a14c02c41c7216ad9580e2f6bd60a5a351ac448546046"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d92a564d508bc96a26399e8885f52ce849df7f336de73bb2be8e6fb6d59eb09"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92b3de960f05cd6aa078168d15c29ee98bba3b1679ecce31fe297744c862df13"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3a225d00d74c528c3f9a32962a7128d2142d36b9bd5f420d53dac13abc636ed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6bfc2fe13b5c29fa9ba41678d387c62b8a26bea00d4e0fe1aec7c3dc00b2f312"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2c9e18e7d679c43b6cffa7a6ca0190a1fbb22b1d25e6ffa6186793ccba22beab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "995bbf1b30cb3269bed346ce9fbce436d17a56cba373b986c961dccb3558ab2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37296c2c2a71aa6e6e5a90b6091da7fa8f2c7463d5f27ae26c777a858cace6e8"
   end
 
   depends_on "meson" => :build

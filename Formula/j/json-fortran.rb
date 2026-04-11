@@ -1,29 +1,23 @@
 class JsonFortran < Formula
   desc "Fortran 2008 JSON API"
   homepage "https://github.com/jacobwilliams/json-fortran"
-  url "https://ghfast.top/https://github.com/jacobwilliams/json-fortran/archive/refs/tags/9.3.0.tar.gz"
-  sha256 "7f29ded5283ba62b0ee9829ffe860326a17bef207ee9d6cbe68bb7cc3ecf1cfc"
+  url "https://ghfast.top/https://github.com/jacobwilliams/json-fortran/archive/refs/tags/9.3.1.tar.gz"
+  sha256 "301a8d205bc7510b21c731130c30babd552c33e3f20568ce732b5e165b1f7a86"
   license "BSD-3-Clause"
   head "https://github.com/jacobwilliams/json-fortran.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "26e45bc068ea5ec11f2c963326ff627aae34e6c1abdfba61797febcfae7261d7"
-    sha256 cellar: :any,                 arm64_sequoia: "59bf7aa895b1325a553193ee0b9bce9e4bfdd0096fd2d981ea24febcc5513982"
-    sha256 cellar: :any,                 arm64_sonoma:  "00155050c910fbb755c5deb12011afb87c6449164ca937a80ccdd9c1e681e59b"
-    sha256 cellar: :any,                 sonoma:        "4afb4b9e2a4b19872cbd184becce1245c36824cf7e1226db61a816a6b3cca4f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ffea2a7d7fd6a06ccd740c08b01e0b1e83c0dffa5731c730ee6a3e024d98277a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de087dcfe595a1f471e5696e1addbc75f5e0a40c81affd45aa5fde60f61e6d95"
+    sha256 cellar: :any,                 arm64_tahoe:   "0bfbf56faa41240ada69ead84c20f1e006c1515fffa7836f78a6e742b9bfc026"
+    sha256 cellar: :any,                 arm64_sequoia: "e96de8e36a76969b8113dbbe77459698ddbb49fe0ea892a2ad37c6fefa3b5bfe"
+    sha256 cellar: :any,                 arm64_sonoma:  "eaba5780f22a68e2fa8e106ebfe7363cc7c7debc33388c7cd2a7e1f43b983dfc"
+    sha256 cellar: :any,                 sonoma:        "f9d4bb1fdd94e6fca2b385edfbd9ef405e32b164758d92ce962acf16969c45b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc25a87494b26cfe74b3d2d731d318ec0e1bd7251f66751c4b3414f632aab67e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "444ca14a92e02ef5527fea110463c6ef368888ee96ac353ba4ce903eddd6ac0c"
   end
 
   depends_on "cmake" => :build
   depends_on "ford" => :build
   depends_on "gcc" # for gfortran
-
-  # Fix bad Unicode introspection source path, upstream PR ref, https://github.com/jacobwilliams/json-fortran/pull/630
-  patch do
-    url "https://github.com/jacobwilliams/json-fortran/commit/5182811edf258c85a405dfad76985885bd0159ab.patch?full_index=1"
-    sha256 "94688e5718dc2bad696521a3a1ad38503af4c37edab38ebb7c5a6f07ff7f648d"
-  end
 
   def install
     args = %w[

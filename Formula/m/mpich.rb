@@ -1,9 +1,9 @@
 class Mpich < Formula
   desc "Implementation of the MPI Message Passing Interface standard"
   homepage "https://www.mpich.org/"
-  url "https://www.mpich.org/static/downloads/5.0.0/mpich-5.0.0.tar.gz"
-  mirror "https://fossies.org/linux/misc/mpich-5.0.0.tar.gz"
-  sha256 "e9350e32224283e95311f22134f36c98e3cd1c665d17fae20a6cc92ed3cffe11"
+  url "https://www.mpich.org/static/downloads/5.0.1/mpich-5.0.1.tar.gz"
+  mirror "https://fossies.org/linux/misc/mpich-5.0.1.tar.gz"
+  sha256 "8c1832a13ddacf071685069f5fadfd1f2877a29e1a628652892c65211b1f3327"
   license "mpich2"
 
   livecheck do
@@ -12,12 +12,12 @@ class Mpich < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cddd7243c9fc14d85739eb391df96403eacd14858dedd6c26860c40f541d21d4"
-    sha256 cellar: :any,                 arm64_sequoia: "9ac8e014021c59e7e9398546d331ee23bdabd8834bff814cd2b24089d0456242"
-    sha256 cellar: :any,                 arm64_sonoma:  "1af6d998ddf081cdcbd71e5c94889ffb1717cf4ffe1f135c979f61f978f387be"
-    sha256 cellar: :any,                 sonoma:        "53d20db6489f7d0926a3a2de398fe7aa0ee3c8fd001626cd05a6b5a4212b8b5e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22ecf35c9bbbdf4349cbd7fe58ce4a960795f3a0cace045294e63d4371a87130"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efd3020248992ffe6f2c3f1104022f140d516628990ebf4ac4bc0207273da3e6"
+    sha256 cellar: :any,                 arm64_tahoe:   "4a2a8add74c70109ba5974c4f84c9a98179a32613eefb525ed5d76f3e3cc0083"
+    sha256 cellar: :any,                 arm64_sequoia: "bfb4e7bfbcd5b85c2e08fb56e4d73f98e7bf2412781f40c91b8212d9724581ef"
+    sha256 cellar: :any,                 arm64_sonoma:  "9b7819b64c45568bf82cc3ef411f39c5c7ecdaedc6a7dbb31c170a6b76adb85e"
+    sha256 cellar: :any,                 sonoma:        "eefa5b660c3420ec269486dd0cc544352cf2ee7ec6e18ca4882e59edfeab46bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "adf98998bca6574b1c1549b2c6bd2c89fe63a36044b98309eb2df28d04e4a8a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "543dd5db69f763f595a42a0a983ceab55639ad8ed4aea14cfb33e87875d57171"
   end
 
   head do

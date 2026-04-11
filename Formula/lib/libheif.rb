@@ -3,17 +3,17 @@ class Libheif < Formula
   homepage "https://www.libde265.org/"
   url "https://ghfast.top/https://github.com/strukturag/libheif/releases/download/v1.21.2/libheif-1.21.2.tar.gz"
   sha256 "75f530b7154bc93e7ecf846edfc0416bf5f490612de8c45983c36385aa742b42"
-  license "LGPL-3.0-only"
+  license "LGPL-3.0-or-later"
+  revision 1
   compatibility_version 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "af35c3d2f410ad34259b563c7035046fec87d79742e4553d0fc320320ad3704a"
-    sha256 cellar: :any,                 arm64_sequoia: "a430779bd65fb58f2df5376026778715a914586bfc33eac7cfb241448d005b2b"
-    sha256 cellar: :any,                 arm64_sonoma:  "af7b1b63237a51c44c051132b9f6192c4e0a2bc01bbc3102f56c30a66ee2aced"
-    sha256 cellar: :any,                 sonoma:        "ecca71e02cd48a1a93d0de63615740a87bd519c41f5edbb081ce77d65ae64d93"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51511c8e9db12403542684a1d879b41a4ba9d7996e9584cd7949f5a08e9db0f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e21d6132fbc71fac055316d01347d5691bde547a022716a0f07f97071b08403"
+    sha256 cellar: :any,                 arm64_tahoe:   "2e879a02aadd09f9136d3c614e0eaa9800bfb12b82c3fc6105819fe7af8075a4"
+    sha256 cellar: :any,                 arm64_sequoia: "1e21503c29c6a82193d520e05239a248e7d1ecb967edafe693dc42c45d1a906c"
+    sha256 cellar: :any,                 arm64_sonoma:  "852801214a948486b04117d274ca86a9cec86d2eb4668163652c53b11c953dde"
+    sha256 cellar: :any,                 sonoma:        "d42f0f04f44cd8e2d353c0515f2b2621838c36b621b02b4c78d52cf233b63fb3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "14f4d79e3c3fa91e342649efbf422a33c8fa22c4e0095074b859e861ae1d510f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c140f9b88d5a47a803272ec24ce007e4692a911889ac399fd88fd8ac1c853819"
   end
 
   depends_on "cmake" => :build
@@ -30,10 +30,15 @@ class Libheif < Formula
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DPLUGIN_DIRECTORY=#{HOMEBREW_PREFIX}/lib/libheif
+      -DPLUGIN_INSTALL_DIRECTORY=#{lib}/libheif
       -DWITH_DAV1D=OFF
+      -DWITH_EXAMPLE_HEIF_VIEW=OFF
       -DWITH_GDK_PIXBUF=OFF
+      -DWITH_OpenH264_DECODER=OFF
       -DWITH_RAV1E=OFF
       -DWITH_SvtEnc=OFF
+      -DWITH_X264=OFF
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

@@ -1,10 +1,9 @@
 class Solana < Formula
   desc "Web-Scale Blockchain for decentralized apps and marketplaces"
   homepage "https://www.anza.xyz/"
-  url "https://ghfast.top/https://github.com/anza-xyz/agave/archive/refs/tags/v3.1.12.tar.gz"
-  sha256 "5d0e0ab87b2f1b504e9c6b15e438bc9f3fd705b9427bb0bcbcaa9e135d6c23e2"
+  url "https://ghfast.top/https://github.com/anza-xyz/agave/archive/refs/tags/v3.1.13.tar.gz"
+  sha256 "02cf1eac551e0f04e41eb7f9802a1e4f34012f0ab31b74fa56eaf8df0db6cfac"
   license "Apache-2.0"
-  revision 1
   version_scheme 1
 
   livecheck do
@@ -13,12 +12,12 @@ class Solana < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "81da0ce47df92d0149e29c8e28b67fc53440aa6e1437eb8ea232426d1482c6e4"
-    sha256 cellar: :any,                 arm64_sequoia: "b16ec359633ba05901e1de2ebab428a363718a787de9d17b7d99e9964a67db9f"
-    sha256 cellar: :any,                 arm64_sonoma:  "7577b5eb395d741a3e38f65bb18e1f5449973935fc2bbbb9fbfa29afc6981a6d"
-    sha256 cellar: :any,                 sonoma:        "8760f835e693b5e948145d4f725f1cec8eeed8e052f4a10bc47d8479ab41b7d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf0e976ee6976a8b39e2c4aab2de484e4ae9c64af455485a7d49f6468a63343a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ce4f214669c4065bfa640b123c28df2d20480ae13e701ae9bad4294ee7c51de"
+    sha256 cellar: :any,                 arm64_tahoe:   "03122f7c98ed0d8053ef7a71a8dd0b1b4212cfc016da0f3d9fd7cad3990a0128"
+    sha256 cellar: :any,                 arm64_sequoia: "3487a13d6002d69baade4051436d1a5ec65ba7e32f7539329cc42512205f6672"
+    sha256 cellar: :any,                 arm64_sonoma:  "b48e83b80c04aebe7c8986f92c1f8c171b6d31c1dced519e70838ba84734dc23"
+    sha256 cellar: :any,                 sonoma:        "f1e7cd96f7ef78ffac016e45ed2d245f53e08fcaf550045883ec5f0d2debe18f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "14d2f94f76c0c07cfe295cd035e529e823fcbcca843c8c033c352c94bb786655"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d935cf2a8a7ecafe44df7b6ac9ce5e06cf10fd5d0f7f8ca9f23b9f90dd954a7"
   end
 
   depends_on "llvm" => :build # for libclang
