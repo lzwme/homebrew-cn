@@ -1,8 +1,8 @@
 class Ptex < Formula
   desc "Texture mapping system"
   homepage "https://ptex.us/"
-  url "https://ghfast.top/https://github.com/wdas/ptex/archive/refs/tags/v2.5.1.tar.gz"
-  sha256 "6b4b55f562a0f9492655fcb7686ecc335a2a4dacc1de9f9a057a32f3867a9d9e"
+  url "https://ghfast.top/https://github.com/wdas/ptex/archive/refs/tags/v2.5.2.tar.gz"
+  sha256 "dd95fbea4b50e9e68fd042f540fb83157a0ff25053066c3439d4527de3621d34"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,12 @@ class Ptex < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "180dc89f0792317b8800689587ccbcb1b36e0d2316f8811467323361cd7152c4"
-    sha256 cellar: :any,                 arm64_sequoia: "31009fa3315b845913d355b230e40a2cbc321fe3b250fd7c6149e78827d0cb09"
-    sha256 cellar: :any,                 arm64_sonoma:  "25cfb86f4efe5aaa92239bf7b862d852ce5fef2a228bf81494b6b3ca10f674ae"
-    sha256 cellar: :any,                 sonoma:        "95017074b589ede0043a7974a045faeb7e6a7945400e44bce17a400ccf811949"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1dbcf9a26c757d9404ae835e3e35903ca65adc10f76d23bc9fea920d3a608b5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "893722f8de667f5d9fdbf20d04b89868e5d9d05484272f68f16dfd20afc50aee"
+    sha256 cellar: :any,                 arm64_tahoe:   "e4f099c6edc4ecbad03908454937754e8c8f6c305e26c81c2f7076691cca8988"
+    sha256 cellar: :any,                 arm64_sequoia: "d2b785dd36c29c9134a6df5a3f63b259af2512472db0386732fef6a697211fda"
+    sha256 cellar: :any,                 arm64_sonoma:  "9eea79e8534259ecaa6ba343b5420ebd09a10121cbae8788239ea88c0f41b4c1"
+    sha256 cellar: :any,                 sonoma:        "bd517a22c4b204d6f8017c572bdac202afd99d6138338de08b99090d4cd49e2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "997872daabf6c5f28913f179499df3a0a9ff6368863ec5da47302a6cc9bad964"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "382a10a67ae55b7fb623010561ada1e635976223370d361a33e7ded6123078ed"
   end
 
   depends_on "cmake" => :build

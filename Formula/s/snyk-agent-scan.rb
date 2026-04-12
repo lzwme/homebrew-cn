@@ -3,17 +3,17 @@ class SnykAgentScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/snyk/agent-scan"
-  url "https://files.pythonhosted.org/packages/78/ff/1b0032c6b99c4d92a5a81c6a7f7fb007272086147abf813d6c7fa727421d/snyk_agent_scan-0.4.14.tar.gz"
-  sha256 "e9c8210b40df490034095661b213375c4315a8d15aa47e6e116fcb3248386080"
+  url "https://files.pythonhosted.org/packages/85/6b/b3bd85e11c09b32a1e5b1e80a7107b33ce18790c3163ed7e4111935d07f1/snyk_agent_scan-0.4.15.tar.gz"
+  sha256 "e31cf0e2a57e98ca383a9c6188ab420e3c6e346d25e16abb20857406ed44a586"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "02138bec98dfbbc46b1b29d1cc04ce0eb76de4519abf1192deb44d0fe0a6b5ec"
-    sha256 cellar: :any,                 arm64_sequoia: "aff9789511fd83bcc13ebd070c75b0e390d3c348da17e910268f64e35bc44c2a"
-    sha256 cellar: :any,                 arm64_sonoma:  "f1255fd491b285d5deef453b3f180c6a82e6ea0fac2715fa1ea4efa53ea2f3a0"
-    sha256 cellar: :any,                 sonoma:        "85fc5fc71f25d0003a596e317fd004d8e052fb27dc2f24159194796e320e72a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f43bc5174af0c2b546758124a7300a0ae1cc7fee1cb9fc449e2166e90bd903b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65c5888a210697326a8862abcbede20d3d48e6137c0fda7ed6384cf9cae25759"
+    sha256 cellar: :any,                 arm64_tahoe:   "99295f2d51f79427f71421248620f45bdb1b6e3c0224d2ff734e8984b1975723"
+    sha256 cellar: :any,                 arm64_sequoia: "4477eab6ed184b2e21707bcb5f565f462726e56ec3a5529030a2b52a7c98c7ed"
+    sha256 cellar: :any,                 arm64_sonoma:  "d6255e075f2dd39f367dc40b0849bf72a40a09d187dee96f1772ea765e2d79bc"
+    sha256 cellar: :any,                 sonoma:        "2680cef4dc62c5a0331f82f56c3d61126ccbb88e045821ff04e6901db7dc0581"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4364be387d34b544c5b96fdcb3a377c9aadcd8514ffe5d09f0f0cdbb5778bb5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bdb275b239fece201d960b0da95fa83df8b3319f3177edcdd953a542a38e608"
   end
 
   depends_on "certifi" => :no_linkage
@@ -171,8 +171,8 @@ class SnykAgentScan < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/8a/45/e23b5dc14ddb9918ae4a625379506b17b6f8fc56ca1d82db62462f59aea6/python_multipart-0.0.24.tar.gz"
-    sha256 "9574c97e1c026e00bc30340ef7c7d76739512ab4dfd428fec8c330fa6a5cc3c8"
+    url "https://files.pythonhosted.org/packages/88/71/b145a380824a960ebd60e1014256dbb7d2253f2316ff2d73dfd8928ec2c3/python_multipart-0.0.26.tar.gz"
+    sha256 "08fadc45918cd615e26846437f50c5d6d23304da32c341f289a617127b081f17"
   end
 
   resource "pyyaml" do

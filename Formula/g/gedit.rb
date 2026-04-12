@@ -5,6 +5,7 @@ class Gedit < Formula
   sha256 "c2d064001b95196f046a6f9705245e3a02dc427265f4e24af9bd2d5f3cb619ee"
   license "GPL-2.0-or-later"
   revision 1
+  head "https://gitlab.gnome.org/World/gedit/gedit.git", branch: "master"
 
   bottle do
     sha256 arm64_tahoe:   "7ab23f8b77bacabdc5c44b8dbd1a723d6e3466520ec79efba32c317992b9780e"

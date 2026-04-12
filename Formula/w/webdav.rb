@@ -1,18 +1,18 @@
 class Webdav < Formula
   desc "Simple and standalone WebDAV server"
   homepage "https://github.com/hacdias/webdav"
-  url "https://ghfast.top/https://github.com/hacdias/webdav/archive/refs/tags/v5.11.4.tar.gz"
-  sha256 "3c236581b1073bf175f2d88b1bc91767e07e3976f4ed28d067ab4a0ab48eba6d"
+  url "https://ghfast.top/https://github.com/hacdias/webdav/archive/refs/tags/v5.11.5.tar.gz"
+  sha256 "7be1082c077375980b93a46ed4de37c64254203a211723a83b9b43d7a064e865"
   license "MIT"
   head "https://github.com/hacdias/webdav.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68c5d82cd597df48f5e5bb9743dab527cc097b91afc159f87c6b2274d9981b03"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68c5d82cd597df48f5e5bb9743dab527cc097b91afc159f87c6b2274d9981b03"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68c5d82cd597df48f5e5bb9743dab527cc097b91afc159f87c6b2274d9981b03"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c1ae64cc2b28e332593bafa0b62db359c951aa810d931863473b325c0914a00b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdc6b48ec557b22dae0c24745fa92bcc67965319c54648501369c69d0cf0d0bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30fee1e76dd3751f40ba1bb9ce5f83551bb4ac766ddf47d7e3db07cb70d1e069"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34bf91d38c4e95e3a0501cb8d5aa76ba898733319d263e320f17e5e87b819406"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34bf91d38c4e95e3a0501cb8d5aa76ba898733319d263e320f17e5e87b819406"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34bf91d38c4e95e3a0501cb8d5aa76ba898733319d263e320f17e5e87b819406"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ceba1f28623709f9668af4377e5e7a363280c9afdaed535134b3ef87e4179c66"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3b949c1a3b1b81175a3ffb4b5bdbcb289910019201dbf1f268220011e126eac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d380c65bdc3de3ee410b588fb2461a95e26350784399cec12f5fc3d5bf0cd0c6"
   end
 
   depends_on "go" => :build

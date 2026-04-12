@@ -1,9 +1,9 @@
 class Sqlite < Formula
   desc "Command-line interface for SQLite"
   homepage "https://sqlite.org/index.html"
-  url "https://sqlite.org/2026/sqlite-autoconf-3510300.tar.gz"
-  version "3.51.3"
-  sha256 "81f5be397049b0cae1b167f2225af7646fc0f82e4a9b3c48c9ea3a533e21d77a"
+  url "https://sqlite.org/2026/sqlite-autoconf-3530000.tar.gz"
+  version "3.53.0"
+  sha256 "851e9b38192fe2ceaa65e0baa665e7fa06230c3d9bd1a6a9662d02380d73365a"
   license "blessing"
   compatibility_version 1
 
@@ -18,14 +18,14 @@ class Sqlite < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "61b8c41bd50692618317c15cf49df150c43dc1171a0eb22e34398320675428f5"
-    sha256 cellar: :any,                 arm64_sequoia: "76cc45e2468ed978994cebd09c86f5c88308f80a57f7744813b699b786451b3e"
-    sha256 cellar: :any,                 arm64_sonoma:  "58cc3efa81a9415e21991191bed05e9af0ed07d836a4d1288eefb36fcbf6234f"
-    sha256 cellar: :any,                 tahoe:         "bbb00a1972755629db38439a8f36592ae1282ae76cf7adc665d5923c99fa8d43"
-    sha256 cellar: :any,                 sequoia:       "da75d72b08d32851919e68df4c0d772abc84dd7157a742759b04aaddee4d63b2"
-    sha256 cellar: :any,                 sonoma:        "1804a10be21353ffdcab30daf39602df232a5ed73c50fced8d6904892edd8857"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a052cecdfab5101384518ea53bbe20287f00e18e280abb11fb79e63365a31d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1699f0f7d4bd0a724140bb1e46709c93e9882d60ebc630bc83cdb21f3fb47e69"
+    sha256 cellar: :any,                 arm64_tahoe:   "eb0597f2fc461458b99d9988915a1ec6c55f9a503a63d30cd8f55db661160f34"
+    sha256 cellar: :any,                 arm64_sequoia: "70310585b41dbac8b84540f061b12882490cd55b4101982d3aa33155d8b7243d"
+    sha256 cellar: :any,                 arm64_sonoma:  "36080e3273614fe3d606ff0bd5bb090ad33c19f186ba44c35807b8f97afa15be"
+    sha256 cellar: :any,                 tahoe:         "109b479dafa7d3170606a3d13795478031baf2b60d2bf77bc1045c4a6a6578f6"
+    sha256 cellar: :any,                 sequoia:       "3f6f75a8f1422c1da90f2c07ec9bae606100ab0b3f52422288118a34801230b6"
+    sha256 cellar: :any,                 sonoma:        "d1e0f1cc65d426ba689fd0c512d918179b11b9c6be177ddc92b7751c6252be76"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f854d0fde3e8a2e8321476fd488f273e69833c672d7d672d3e0b13e3a3c5475"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1a29a99fae0bbd1e20ffc396aa6b4e9f47c0dcc11dd88c3d4c18f1de2fa904a"
   end
 
   keg_only :provided_by_macos

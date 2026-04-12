@@ -1,8 +1,8 @@
 class Oxen < Formula
   desc "Data VCS for structured and unstructured machine learning datasets"
   homepage "https://www.oxen.ai/"
-  url "https://ghfast.top/https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.46.10.tar.gz"
-  sha256 "9f34b45e77431a6c6528b3b6b54d678106ea78cc4195edd4b677da91c527915b"
+  url "https://ghfast.top/https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.46.11.tar.gz"
+  sha256 "cbd2a72193848e0c4ee8aed4948b2f2212c5b09d380f409f688f6e62a17ac8ac"
   license "Apache-2.0"
   head "https://github.com/Oxen-AI/Oxen.git", branch: "main"
 
@@ -16,12 +16,12 @@ class Oxen < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cd438aedad2dc3dc97195181c48a7c888a9127d3fa4db33e24035b6c696a84b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7a87eb2ecebef058bfaaf0f3bc007ff189d1e6753001160b58d4f8b2370b6ef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "114e26007f245b4fdd0bd9bd42bd3875f0dae55304d623f21523df36fddde36a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "93ab3054fed509aa16904ab28b50b1500d2b11aaf4ea407f0bc2035213b9be41"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "db99709a9b384a27f37557f818cad7e43de89bfb2f3cae92f54aa1c9be563829"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69334d3f6dc3a3b942b7fc2e0c10436c52f62aaf3895cc4567795ecd0ee480fb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3b97dca32ea5c5ddebfad5a72eddeafc5b2274cab10761fb6fb06ed91850fb1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60de6cef4648e9a7bde2f350c4524e4300e7586e5bdde919eb2b7d4e78ac8c81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6810c4c860a4153d4057e57c343441fc22ccf883aead092904015835b083807f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4815c03fd8381868746c7d6e05dbd8d13ecd1af5d808b1d68b739dbd6a267e66"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "50195c28643e8310d97de3c01651ed9cc0d50ad4bc5cf8cdfec95ba9e8072188"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e41113c8854e2fb85c4d6e20dea3a0e911a942d3a1f3a0c703e1c761fcf0015"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys

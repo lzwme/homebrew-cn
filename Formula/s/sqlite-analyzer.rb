@@ -1,9 +1,9 @@
 class SqliteAnalyzer < Formula
   desc "Analyze how space is allocated inside an SQLite file"
   homepage "https://www.sqlite.org/"
-  url "https://sqlite.org/2026/sqlite-src-3510300.zip"
-  version "3.51.3"
-  sha256 "f8a67a1f5b5cae7c6d42f0994ca7bf1a4a5858868c82adc9fc1340bed5eb8cd2"
+  url "https://sqlite.org/2026/sqlite-src-3530000.zip"
+  version "3.53.0"
+  sha256 "fbc30cdbfcfa42c78fe7bddd3fd37ab8995369a31d39097a5d0633296c0b6e65"
   license "blessing"
 
   livecheck do
@@ -13,12 +13,12 @@ class SqliteAnalyzer < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "47ba7ae3b965af371df60ca1983ec977eea991ca623d286e0e35bad6195e67d8"
-    sha256 cellar: :any,                 arm64_sequoia: "8a3b2ad75ac91a99d07afac6e6223b515dae73efa16e70c8720ff1c3e5ae3b79"
-    sha256 cellar: :any,                 arm64_sonoma:  "9f95fe480a57131dcf127ded6a718c8e79a257a80348131875c6388b14a03742"
-    sha256 cellar: :any,                 sonoma:        "fa3fd0e9f8c5abbdf1542723d1e1520b89b7cd9b5584330269ae639fbb9fc1df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "66eb695dced8b9b31a6387b3e2ea9b5768b54869510d499c0bb2e2bafae51ce9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1f3a46ecba766cd5db581e97ad9623617e54209fc97700212e596bcaf8eeea7"
+    sha256 cellar: :any,                 arm64_tahoe:   "696e9ee8a6d23204712fa6c707c663e1bcf48904fc20a540ecf60844eef98d9b"
+    sha256 cellar: :any,                 arm64_sequoia: "a3e3052d704e4fb041bc6d994a91bd89404c8b83686a574bc9c1ea8a2239ac43"
+    sha256 cellar: :any,                 arm64_sonoma:  "0cdd373500d597dbc25906c0fd8566bff60e5ef2b2ae8a2cca09ca4e27ffa2de"
+    sha256 cellar: :any,                 sonoma:        "cbb76d77346f6375833d8ba8043ab8ff9369b00fe643f846e5eb6b7d5573ad35"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f66a48f14f8f26d4dc878707c0bad0722bec377549bcd26b5368f4e40e5f74c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87bbb90408ce0e85d1966cf19ea1e54bb8e90bb33c2e9a655be0fa59f36dd8db"
   end
 
   depends_on "tcl-tk"

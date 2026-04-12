@@ -3,12 +3,12 @@ class Fobis < Formula
 
   desc "KISS build tool for automatically building modern Fortran projects"
   homepage "https://github.com/szaghi/FoBiS"
-  url "https://files.pythonhosted.org/packages/fa/96/10f2eec393f94d25b3e7ca5947f00083ce78b03df4852088f95911f139b7/fobis_py-3.7.8.tar.gz"
-  sha256 "ea3da1f521a83b0a879bcc453d14b5062c285401da027f03e4c7a1e64401a87c"
+  url "https://files.pythonhosted.org/packages/7e/a2/6b9bada9c6f0c045a102cba968831e790d72a7da58eac16495698706b82c/fobis_py-3.7.10.tar.gz"
+  sha256 "c8615a588354738dc3f57d36c9383f1901f8bc16a6b821b7beb431cc00a721c5"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "08d61d8ad98038e33e90c4b048ce781ead5f34aece9ad0d79fbcce22fb31f200"
+    sha256 cellar: :any_skip_relocation, all: "3095eb000707d842ce0b146582c68d52c1f6ddb9ea43af677f1cc5e2455adf2b"
   end
 
   depends_on "gcc" # for gfortran
@@ -21,8 +21,8 @@ class Fobis < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
+    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
   end
 
   resource "markdown-it-py" do

@@ -3,19 +3,18 @@ class Nuitka < Formula
 
   desc "Python compiler written in Python"
   homepage "https://nuitka.net"
-  url "https://files.pythonhosted.org/packages/ed/0e/2537066db2458843e4a1edfc524409069ad58a456fc4b312b18b1d327431/nuitka-4.0.7.tar.gz"
-  sha256 "26543bfed6009a466ae8608bdc643add81a497e8662e4aaf157cd00aa7fd5b9f"
+  url "https://files.pythonhosted.org/packages/1c/48/e54130d57b89fc015d702e98a1a217b5757625d01a01cc07d29fd046d336/nuitka-4.0.8.tar.gz"
+  sha256 "3f87e87e4d3773997944ce401145ef21461337121d39ea0fbe678274005e60ba"
   license "AGPL-3.0-only"
   head "https://github.com/Nuitka/Nuitka.git", branch: "develop"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "96bfcc3de90d3485afb92ebbfb6896e1721f2935ad1b0e29b242247e82b9140c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "065857cc5116eb682af9321275ebe8567609782bc4e14e471dd426e8f477650a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0d061d1a02c582b52767a40e2a80eac30e16dff3fe887b9ece03a69acd691cb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ddf715eafcebf140aacb2db1ff403be4d9d39c93860fa0b44c1c3bec05dc5bcb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22b5886a56dff76aa00355af9b04801352092570c0884bda0f4872c524399988"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75c898bedfde1072f1a0bacef64b831828a700fdd19b5fe79a33a40d77d69d1c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "befe43b9135694541c56d510a382bd2be7d20b2dbb9af94e4e876f676f3d8c9b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97cb911e7d68d00944ef2280f2d3f32f381ff14760722aae6fee5b110d1b81e6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ca78c962d5b28aad31c6a341ad0b48015bd3c4b2560a379dac341f5c7c1eff3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3391feede32e355d49f6398372e211dfbc4cb46881c33fe3246f76915668e752"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "caee19e3b03fd28990d41b447abb6bb42a2dcd3a7be0773bf6933ec3d3a8c3ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d984fb267dd7d17b1519e6b8c1da074f23423c7ee598cb10c89ac46380e522ac"
   end
 
   depends_on "ccache"

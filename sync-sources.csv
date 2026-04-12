@@ -1222,7 +1222,6 @@ Homebrew-homebrew-core/Formula/c/cookiecutter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/coordgen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/copa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/copier.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/c/copilot-language-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/copilot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/copyparty.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/core-lightning.rb, Homebrew/homebrew-core, 1
@@ -6392,6 +6391,7 @@ Homebrew-homebrew-core/Formula/r/rp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rpcsvc-proto.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rpds-py.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rpg-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rpiboot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rpki-client.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rpl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rpm.rb, Homebrew/homebrew-core, 1
@@ -8672,6 +8672,7 @@ Homebrew-homebrew-cask/Casks/b/bankid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/banking-4.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/banksiagui.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/banktivity.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/baoliandeng.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/baretorrent.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/baritone.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/barrier.rb, Homebrew/homebrew-cask, 1
@@ -9163,6 +9164,7 @@ Homebrew-homebrew-cask/Casks/c/coolterm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/copilot-cli.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/copilot-cli@prerelease.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/copilot-for-xcode.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/copilot-language-server.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/copilot-money.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/copyclip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/copyq.rb, Homebrew/homebrew-cask, 1
@@ -12186,16 +12188,24 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-style-script.rb, Homebrew/homebrew
 Homebrew-homebrew-cask/Casks/font/font-s/font-stylish.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-sudo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-sue-ellen-francisco.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-s/font-suez-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-suit.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-s/font-sulphur-point.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-s/font-sumana.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-sunflower.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-sunshiney.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-supermercado-one.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-s/font-sura.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-s/font-suranna.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-s/font-suravaram.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-suse-mono.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-suse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-suwannaphum.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-swanky-and-moo-moo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-symbols-only-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-syncopate.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-s/font-syne-mono.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-s/font-syne-tactile.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-syne.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-tac-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-t/font-tagesschrift.rb, Homebrew/homebrew-cask, 0
@@ -12746,6 +12756,7 @@ Homebrew-homebrew-cask/Casks/i/iconset.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/id3-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/idagio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ideamaker.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/idevice-pair.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/idisplay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/idrive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ieasemusic.rb, Homebrew/homebrew-cask, 1
@@ -14020,6 +14031,7 @@ Homebrew-homebrew-cask/Casks/p/pangolin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/panoply.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/panwriter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/paparazzi.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/paper-design.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/paper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/papercut-mobility-print-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/paperpile.rb, Homebrew/homebrew-cask, 0
@@ -14569,6 +14581,7 @@ Homebrew-homebrew-cask/Casks/r/rocket-typist.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rocket.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rocketman-choices-packager.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rocks-n-diamonds.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/rockxy-community.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rode-central.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rode-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rode-unify.rb, Homebrew/homebrew-cask, 0
@@ -14584,6 +14597,7 @@ Homebrew-homebrew-cask/Casks/r/rotki.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/routeconverter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/routine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rouvy.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/rowboat.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rowmote-helper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/royal-tsx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/royal-tsx@beta.rb, Homebrew/homebrew-cask, 0
@@ -15111,6 +15125,7 @@ Homebrew-homebrew-cask/Casks/t/tableau-reader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tableau.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tablecruncher.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tableflip.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/tablen.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tableplus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tablepro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tabtab.rb, Homebrew/homebrew-cask, 1

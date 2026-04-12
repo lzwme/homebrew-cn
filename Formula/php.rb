@@ -29,6 +29,7 @@ class Php < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
+  revision 1
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -37,12 +38,12 @@ class Php < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_tahoe:   "2ded2be69cd20b1165dc76140a973e1e14d44852c0ef460ef6977fafcc1292a7"
-    sha256 arm64_sequoia: "ae053822e3f7ab49012a71cef041d5bbfca0cca79603fab9f405ec9e9a9c9f2d"
-    sha256 arm64_sonoma:  "047e282ff7fc654ecfff56bd0e4ee03ad892a279571949df293081b06c339241"
-    sha256 sonoma:        "d5c8ba52f01d31ce0f7a98e47228192210f60a5547446f33cde42011c2c36e22"
-    sha256 arm64_linux:   "f7bc48bacd8a508c60ff9324e068a2588f91e3308ec7d4c422fd9c283ccbdda0"
-    sha256 x86_64_linux:  "6d5d0fdc90a5b37ce744d5b8f246607b466a9b9a54b34530545823a5a5bea636"
+    sha256 arm64_tahoe:   "be67bc65a7ba8b85ad0b6affd21a7bd862c7f4a274c25c584930bd4cc53e6504"
+    sha256 arm64_sequoia: "ad3e8bfc9ea4360fa93f0720463f5f248f8d1ca839ea000df41b1e76d20ac3bc"
+    sha256 arm64_sonoma:  "1c34a9e735b3169f4f1f8f233ce4ddc5358d812f3b407b44d100e7619e323ee5"
+    sha256 sonoma:        "b182b51cc611baf21c72ff3f13fb7d69940639edc2a6afed57ebd9667bf6b73f"
+    sha256 arm64_linux:   "501e3fee776b9ca43ff90dd12166c459cd00238011291fe989a034aaa7dea97d"
+    sha256 x86_64_linux:  "39a8fad27fd0970e0f50c2915c203601de95cd14a311c55f0ce4d7b245b80ebc"
   end
 
   depends_on "bison" => :build
@@ -129,9 +130,12 @@ class Php < Formula
 
     # Identify build provider in php -v output and phpinfo()
     ENV["PHP_BUILD_PROVIDER"] = "Shivam Mathur"
+
+    # Runtime optimizations
     ENV.O3
     use_pgo = !OS.mac? || Hardware::CPU.arm?
     use_lto = OS.mac? && Hardware::CPU.arm?
+    pgo_prefix = "pgo"
 
     # system pkg-config missing
     if OS.mac?
@@ -247,7 +251,7 @@ class Php < Formula
 
       php = buildpath/"sapi/cli/php"
       if OS.mac?
-        profile_pattern = buildpath/"php-experimental-%p-%m.profraw"
+        profile_pattern = buildpath/"#{pgo_prefix}-%p-%m.profraw"
         ENV["LLVM_PROFILE_FILE"] = profile_pattern.to_s
       end
       begin
@@ -262,11 +266,11 @@ class Php < Formula
       end
 
       if OS.mac?
-        profiles = Dir[buildpath/"php-experimental-*.profraw"]
+        profiles = Dir[buildpath/"#{pgo_prefix}-*.profraw"]
         odie "PGO training did not generate any profile data" if profiles.empty?
 
         profdata_tool = Utils.safe_popen_read("/usr/bin/xcrun", "--find", "llvm-profdata").chomp
-        profdata = buildpath/"php-experimental.profdata"
+        profdata = buildpath/"#{pgo_prefix}.profdata"
         system profdata_tool, "merge", "-o", profdata, *profiles
         pgo_use_flag = "-fprofile-instr-use=#{profdata}"
       else
@@ -332,6 +336,7 @@ class Php < Formula
       rm dst_default if dst_default.exist?
     end
     config_path.install config_files
+    (config_path/"conf.d").mkpath
 
     unless (var/"log/php-fpm.log").exist?
       (var/"log").mkpath

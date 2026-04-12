@@ -1,17 +1,17 @@
 class Proxelar < Formula
   desc "Man-in-the-Middle proxy for HTTP/HTTPS traffic"
   homepage "https://github.com/emanuele-em/proxelar"
-  url "https://ghfast.top/https://github.com/emanuele-em/proxelar/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "d9c86b001e63867efc3bd30f94cc077bdd714f605e33c5817292cafe84df7653"
+  url "https://ghfast.top/https://github.com/emanuele-em/proxelar/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "c76944713bc01aea302b28bcf044ea5a7fcde7a7d7c2523904724234880cb647"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "689f76b1d84d7dd6c892ce4afb8c0f725ddb96561fb7b11db684ffaaf3f09460"
-    sha256 cellar: :any,                 arm64_sequoia: "bb8f970c45a1ae1f1c2719282765cafa91e7a0a3d82f0a20ccdd2f5b6c327858"
-    sha256 cellar: :any,                 arm64_sonoma:  "ee5378b66d66edc29d39bc5908fd39dbd9519b7dd6c3e5c39912b1cbf3f765b3"
-    sha256 cellar: :any,                 sonoma:        "2fab45da5e3a7760aaee6813217dc7d7b3b94d5582528f2cb52fd228ad3980a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d4ef5785d0a5de94743f0061a9fce176b82ecb499f4914306e1b2f84d5052d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c1a05810d776ebf29972c9a4891fc9fb81ff5ae0a33579ba306d8dc893d3d92"
+    sha256 cellar: :any,                 arm64_tahoe:   "1cac2cf644e2332dd91f18101d60943f0f975ef146f1bcdcb8152b38455c8199"
+    sha256 cellar: :any,                 arm64_sequoia: "b481165c58341db8e8024e456fd6952ec46cb3b42354310514cd8067b8ff2c43"
+    sha256 cellar: :any,                 arm64_sonoma:  "4719af1e043a7d21b4c185b6291dc33108bacc7cd5dfd7418101138cd7596548"
+    sha256 cellar: :any,                 sonoma:        "a853936783d090c02d927529d1d097087d12c0571461d8b49ed7fdb143a2be27"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e81bd4f5ea3625fe829c7ace10a4391aea5c53f5c1cabf88b72ccadb5ed49b30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "985fc058fad3f962276e55c0ee4555fbe544111f98d881e05052ecd879bfa9c2"
   end
 
   depends_on "pkgconf" => :build

@@ -3,19 +3,18 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/ba/6c/2693892f73a1f27642297929dbb4a6e35a3795314c0d084f3273cc492b71/streamlink-8.2.1.tar.gz"
-  sha256 "afa26582cabf343f49733d79e2bc9a5bbe90aec7dbb246ec5f97796499c637ee"
+  url "https://files.pythonhosted.org/packages/84/f3/d47914b26c7401c3695c3c9f81e28cd289cc8996feb22e6682f82b5d91b1/streamlink-8.3.0.tar.gz"
+  sha256 "6cffe55b42df3b3c2e6dd1c0cc41fc01477afbc496ba86740ffa5eec5c333d34"
   license "BSD-2-Clause"
-  revision 1
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "440b0a0ec4385f76a8fe6931a0ee1ad878a883fd9267251f735590e9088f0934"
-    sha256 cellar: :any,                 arm64_sequoia: "cd1745912dbde363a221c1595a2ba42080c458c90f451bf5bd659e0f16d325ba"
-    sha256 cellar: :any,                 arm64_sonoma:  "2923c1902b68fad1a1b0e59b889e9109f50818ffb34e61a738cd085bb0b6e77c"
-    sha256 cellar: :any,                 sonoma:        "bc987f150b2bb7e57578d327475b170c382220401b75e504fcd369f14b6b1230"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "848c5013aa0ce8675c0a773acd1a8b9fe48c2be9c50e5063575f40217294c027"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b660483dcffb22e377b841534739477bf7e046d8fddd47875ceecabe4c99428"
+    sha256 cellar: :any,                 arm64_tahoe:   "471cf9d1e3d16b2f16bf014d3705c29d602e8361da558d5c1d22b4119f3d1ed4"
+    sha256 cellar: :any,                 arm64_sequoia: "56001eda61fd398fda04d433984d63ba0a936ec8798ad1806755e231c9debefb"
+    sha256 cellar: :any,                 arm64_sonoma:  "c528d7879bff905e211d5d37e3878ca51753d0e15b21a958ababf682d767feb9"
+    sha256 cellar: :any,                 sonoma:        "ffae6c5da6a5ea011fe5a8750896150153fbffc327e6fd85bd7ce5916ed7ffe6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d23a89acc386f7f543b30d9adcab115eb3d05664d905436b55c2dfd32aace17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8addcb5c30afda861d4ef34e9355c8b172fe92d6c813dadd9aeb224dc18bebc9"
   end
 
   depends_on "pkgconf" => :build
@@ -34,8 +33,8 @@ class Streamlink < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "h11" do
@@ -54,8 +53,8 @@ class Streamlink < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
-    sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
+    url "https://files.pythonhosted.org/packages/43/42/149c7747977db9d68faee960c1a3391eb25e94d4bb677f8e2df8328e4098/lxml-6.0.3.tar.gz"
+    sha256 "a1664c5139755df44cab3834f4400b331b02205d62d3fdcb1554f63439bf3372"
   end
 
   resource "outcome" do
@@ -79,8 +78,8 @@ class Streamlink < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "sniffio" do

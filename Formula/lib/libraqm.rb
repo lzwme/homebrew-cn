@@ -1,18 +1,18 @@
 class Libraqm < Formula
   desc "Library for complex text layout"
   homepage "https://github.com/HOST-Oman/libraqm"
-  url "https://ghfast.top/https://github.com/HOST-Oman/libraqm/archive/refs/tags/v0.10.4.tar.gz"
-  sha256 "6b583fb0eb159a3727a1e8c653bb0294173a14af8eb60195a775879de72320a3"
+  url "https://ghfast.top/https://github.com/HOST-Oman/libraqm/archive/refs/tags/v0.10.5.tar.gz"
+  sha256 "7f3dd21b4b3bd28a36f2c911d31d91a9d69341697713923ef1aac65d56ebcafd"
   license "MIT"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "80573133b47b2923ed7e407a873c31f71c88acd9c84553a289757a908bcaf386"
-    sha256 cellar: :any, arm64_sequoia: "d6d61caf0cfea3c41e461f5a1025cccb581df32833095c54deb9ac1a9c7a1782"
-    sha256 cellar: :any, arm64_sonoma:  "7123cff4762e4ec7d1045f20789fc1eecc2529a69c84e0c3f8a89c1cd91acc18"
-    sha256 cellar: :any, sonoma:        "85ebe16cdd41a156dac23c0d97faf8efb6456ca34cb016ba1c94110f21c1e317"
-    sha256               arm64_linux:   "b39145fa67adc360e8bbb66372ca603600a7c4a206d528f552554742f74d0a8f"
-    sha256               x86_64_linux:  "5163492384bc5eb6606b7d7cc490962fe0da9cfcf24f0557408d5bdfe4f84675"
+    sha256 cellar: :any, arm64_tahoe:   "2b1117c8508549d57157890bf3acfacbc2d45de6197d188bf83474f30fd0f572"
+    sha256 cellar: :any, arm64_sequoia: "4259ac8ccfb1e30bf67bac2188e12479af6e884a863d33b4c631edb42fa58aa0"
+    sha256 cellar: :any, arm64_sonoma:  "0450f2947a22391458c06eb305ba09679689ad83642f0e9de65dfd99a7d2e414"
+    sha256 cellar: :any, sonoma:        "f2a956bafe35455da4e6fa01f5ca1f65f32357935c731e5ac46ab4b7ff728290"
+    sha256               arm64_linux:   "05ca1326319450ae29ab912a8bb707eb68361212a9f990ed74216007caef6a6c"
+    sha256               x86_64_linux:  "bf1b6e9c25a735b6524a1b54fe5d7ae39c49c28867c774a2ea83d887e51bee3a"
   end
 
   depends_on "meson" => :build

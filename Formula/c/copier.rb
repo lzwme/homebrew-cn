@@ -3,17 +3,17 @@ class Copier < Formula
 
   desc "Utility for rendering projects templates"
   homepage "https://copier.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/33/68/7ad4e4b7c19ea4881244f04db01c1b5a2a720292673458fe338a2581cf72/copier-9.14.2.tar.gz"
-  sha256 "dc268f94964a6ddd076128a53a5e037932795dbc456991b1d423afcb66deef0f"
+  url "https://files.pythonhosted.org/packages/9e/0f/9762830def619c9aa2cb7cf2ab59ade60bfd8a83325767ad3edca597d29f/copier-9.14.3.tar.gz"
+  sha256 "8737a14af1540ad19d6a6d59a05ff07bb0a81b286cca9ee79163572352df6e5e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "426433f9bed2637822d9dc2b28997a020638c6cec86b027b8ebc4d02d4c24bfd"
-    sha256 cellar: :any,                 arm64_sequoia: "2c03999a2767bcd67e10b40820528dfcedd0790a6b844400942a77e682721e15"
-    sha256 cellar: :any,                 arm64_sonoma:  "5c005e9574a81c13d98a72f0285480ea002399cf89bdcab7a6bb192187a5440f"
-    sha256 cellar: :any,                 sonoma:        "4b10a7bd8b9fcca8c169f3a2001168e4acb8292a24a218a82d9318a0a60d0f07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ef933787f67cde8810f306fa5af3a4f08b2930b7bd34b58e701cf80e6ac8f02"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "696358fb0f895b619194adc07e03d0bb95b2a62160cedc54fd35e3370dd944c6"
+    sha256 cellar: :any,                 arm64_tahoe:   "e7b1c0de88dd217d738c2360c13f92765b09af80b4ac668b82ff66f657ed49cc"
+    sha256 cellar: :any,                 arm64_sequoia: "5340c47965b66be8b588e7f848a13fa9bb881c679f3b8cd31253ffb94b20ddec"
+    sha256 cellar: :any,                 arm64_sonoma:  "e4f1c3dcd6761b323638aa062339027dd7610630915b84e02847ba1719d7ef56"
+    sha256 cellar: :any,                 sonoma:        "f11e7afdeec8d3df6bed0de737368b1a61ec324808e129a41414911491e5da8c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad32bc02929a7984648dcaf259e4b9ed366b971e846e1a478850b0f9fa2ff492"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ffeb0978dc5b7210e24f28085d7e69a129550afc132e78b50b42fae45e66c36"
   end
 
   depends_on "libyaml"

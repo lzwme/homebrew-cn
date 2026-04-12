@@ -5,6 +5,12 @@ class DartSass < Formula
   sha256 "5f969b2eedf86384d90a9a339824b6652a4600e9e5f32784a7e48e453e145016"
   license "MIT"
 
+  # Some tags are used for sass-api/sass-parser
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "04b68917e5fa15257e4015a7464bd866627c4676c48f0c9c4f42cbdff47c8f10"
     sha256 cellar: :any,                 arm64_sequoia: "504e7c9ab687facfd63978bb335f3bc3cddaedb5c0494093e13b503a0f055d21"

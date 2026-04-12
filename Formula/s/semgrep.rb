@@ -5,8 +5,8 @@ class Semgrep < Formula
   homepage "https://semgrep.dev"
   # Pull from git tag to get submodules, https://github.com/semgrep/semgrep/issues/10877
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.157.0",
-      revision: "caad1d53f48a40fa55cec9e41bf4820f115889b3"
+      tag:      "v1.159.0",
+      revision: "372573ac62d9579b6722f891e1650bce8228405c"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -16,12 +16,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a8f7a274d5361dff6d168963aad5f275c40094cb161e03cafcf3e3013894d75f"
-    sha256 cellar: :any, arm64_sequoia: "88b273c18ccfd1c41a5b72a6719f3910e9c8cbd7e4601524fd06c33cb3f17dc4"
-    sha256 cellar: :any, arm64_sonoma:  "7e66decfc20bd0338a70e31e320016667f7aa75850f06742d3c44702b5bf1632"
-    sha256 cellar: :any, sonoma:        "bee3905a9fd77ea029cabc6cc49c5be6664fc283f29d0761708c970e06ef3d92"
-    sha256               arm64_linux:   "b5529bdc1074c2b7e21d50936922f39c0cece4235be879b2ba7dc753e245104b"
-    sha256               x86_64_linux:  "520dd985aeef9302af17d6a471e10c326c84d7402b9be9028d51413a2b834d3c"
+    sha256 cellar: :any, arm64_tahoe:   "50a4311fe987ce2faa85e15d5869a317d73799e7f8ba82a28ba59fc2f23b9a0b"
+    sha256 cellar: :any, arm64_sequoia: "c86b29a425107dfc9564c1f9a183b76e8205e224f433aa80b304665db3e8941e"
+    sha256 cellar: :any, arm64_sonoma:  "afac3ff1f8a8f6578a49352061b39c9f1195658939474deecd1284c6c1c2978e"
+    sha256 cellar: :any, sonoma:        "e0ec8365bfdb9e486c8b5b4564dd676347d7b40f81e9799588bb4969a9e93e95"
+    sha256               arm64_linux:   "bb11238b657985057dcebc2d1251e895ca401346cd75906c57e25c30ec2bb86c"
+    sha256               x86_64_linux:  "bfb889a446c45135f85587033bb6dd8ae7e093752255610cbaa95e7d95dc2e41"
   end
 
   depends_on "ocaml" => :build
@@ -72,8 +72,8 @@ class Semgrep < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "click" do
@@ -107,8 +107,8 @@ class Semgrep < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/a1/c0/4a54c386282c13449eca8bbe2ddb518181dc113e78d240458a68856b4d69/googleapis_common_protos-1.73.1.tar.gz"
-    sha256 "13114f0e9d2391756a0194c3a8131974ed7bffb06086569ba193364af59163b6"
+    url "https://files.pythonhosted.org/packages/20/18/a746c8344152d368a5aac738d4c857012f2c5d1fd2eac7e17b647a7861bd/googleapis_common_protos-1.74.0.tar.gz"
+    sha256 "57971e4eeeba6aad1163c1f0fc88543f965bb49129b8bb55b2b7b26ecab084f1"
   end
 
   resource "h11" do
@@ -252,8 +252,8 @@ class Semgrep < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/94/01/979e98d542a70714b0cb2b6728ed0b7c46792b695e3eaec3e20711271ca3/python_multipart-0.0.22.tar.gz"
-    sha256 "7340bef99a7e0032613f56dc36027b959fd3b30a787ed62d310e951f7c3a3a58"
+    url "https://files.pythonhosted.org/packages/88/71/b145a380824a960ebd60e1014256dbb7d2253f2316ff2d73dfd8928ec2c3/python_multipart-0.0.26.tar.gz"
+    sha256 "08fadc45918cd615e26846437f50c5d6d23304da32c341f289a617127b081f17"
   end
 
   resource "referencing" do
@@ -307,8 +307,8 @@ class Semgrep < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/e3/ad/4a96c425be6fb67e0621e62d86c402b4a17ab2be7f7c055d9bd2f638b9e2/uvicorn-0.42.0.tar.gz"
-    sha256 "9b1f190ce15a2dd22e7758651d9b6d12df09a13d51ba5bf4fc33c383a48e1775"
+    url "https://files.pythonhosted.org/packages/5e/da/6eee1ff8b6cbeed47eeb5229749168e81eb4b7b999a1a15a7176e51410c9/uvicorn-0.44.0.tar.gz"
+    sha256 "6c942071b68f07e178264b9152f1f16dfac5da85880c4ce06366a96d70d4f31e"
   end
 
   resource "wcmatch" do

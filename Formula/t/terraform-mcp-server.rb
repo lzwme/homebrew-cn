@@ -7,12 +7,13 @@ class TerraformMcpServer < Formula
   head "https://github.com/hashicorp/terraform-mcp-server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7cc2bf56d6c30b6d8a3e9a67ade87e40e0e7ec0740194ea2fa68352d6d8ca5bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7cc2bf56d6c30b6d8a3e9a67ade87e40e0e7ec0740194ea2fa68352d6d8ca5bd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7cc2bf56d6c30b6d8a3e9a67ade87e40e0e7ec0740194ea2fa68352d6d8ca5bd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "85f6cbe9b50fa38d5787ac1e4d26b73bc2bc0917f7bd8873713c0df0a5bd8221"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5585c11145f6a5519879d9e03b112dfa1f9bd7e2190e3c730c842e81825aa719"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee81e27a0cd66787cde02691579b5b6b6b9383c568745af755ff12c0a5ac35b3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5afc8dc0c0522f6b6b2ae35380e4bfd2a2608164c1fcede51bec03bc1ede3397"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5afc8dc0c0522f6b6b2ae35380e4bfd2a2608164c1fcede51bec03bc1ede3397"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5afc8dc0c0522f6b6b2ae35380e4bfd2a2608164c1fcede51bec03bc1ede3397"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ad434ccaeda98d318260f96603344922f01bd2e49836ca2e5c2ca449dd3bf731"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98929ed661a966663c3d49f8afe49dda31bafbe5c643e1ad29beec2bb7576a99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c8aecb8b94fe339bf0d58be472a436082a28daa0e42c70eb351a78a8d2f4ed2"
   end
 
   depends_on "go" => :build
@@ -25,6 +26,7 @@ class TerraformMcpServer < Formula
       -X github.com/hashicorp/terraform-mcp-server/version.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/terraform-mcp-server"
+    generate_completions_from_executable(bin/"terraform-mcp-server", shell_parameter_format: :cobra)
   end
 
   test do

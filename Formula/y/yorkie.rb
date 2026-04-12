@@ -1,8 +1,8 @@
 class Yorkie < Formula
   desc "Document store for collaborative applications"
   homepage "https://yorkie.dev/"
-  url "https://ghfast.top/https://github.com/yorkie-team/yorkie/archive/refs/tags/v0.7.3.tar.gz"
-  sha256 "cb0d7849b6010688540cb5671ef24a13f1576f61c8940ac415dfa830949bc17d"
+  url "https://ghfast.top/https://github.com/yorkie-team/yorkie/archive/refs/tags/v0.7.4.tar.gz"
+  sha256 "a593336b72dc5f4f24c0eea6363318c984381bbc9fdba4e0a22fb7b70221ce7e"
   license "Apache-2.0"
   head "https://github.com/yorkie-team/yorkie.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Yorkie < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "36ac0ffeba0bb63064c6a6b40bb47677c78d3ef61d9dc6b05ed4ea527db8e096"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19012b44bd68a338ad3cefbc3dc6fbe05bd9600a68b20668c5d6daf50ead06b8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e9e979e0c0276e80c0161f20bae45fd46554d13e4ceecdd5545b44970fcb064"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f1e1cdb435da1bc723e76de13948e7752835da64f5f2209fbc7e6be62abd6aa6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "429546e9f2f476e66604e1bf62d09c518a19fd9da39e45506e0386a1c5485399"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8616947ff60b6a0cfcd7f5476a143640738252e7ae2f2cf6692b825980cbb9b6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1b35835baf6df8badd354b87590496016ccdfdf51a7eb1c559327838198ffd3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "873aa68cc3c69b07ba4e1d6913e6ccf7418a15c86dc4cf132cb98fcc344db16a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f81ac2d5b18cc04278e4ad444b0e262ffeb51247412d789032c20ea5f3acb27"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0c940303c71cf75e7ba4ab26af0ba145d458cdf2bce17fbf2ad199cdc7afed8f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbcf8b14846409bccf139c4ae47d0cabcdfd4e1857928844237ddb648c929ac6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "108f6559432f818bc3ba6cca6b124c0d6ecfeaacf9bb6afcf01be1056fe29579"
   end
 
   depends_on "go" => :build

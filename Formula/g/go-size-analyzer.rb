@@ -1,8 +1,8 @@
 class GoSizeAnalyzer < Formula
   desc "Analyzing the dependencies in compiled Golang binaries"
   homepage "https://github.com/Zxilly/go-size-analyzer"
-  url "https://ghfast.top/https://github.com/Zxilly/go-size-analyzer/archive/refs/tags/v1.12.2.tar.gz"
-  sha256 "9758a75d46b0592bf8dfa84148dc249fe7a66d55270513b7b0c5fb79a3a3b851"
+  url "https://ghfast.top/https://github.com/Zxilly/go-size-analyzer/archive/refs/tags/v1.12.3.tar.gz"
+  sha256 "2d5983923b60fe06659d6d380e012105c270edb0d1714a230f8a97ccd48d2fbc"
   license "AGPL-3.0-only"
   head "https://github.com/Zxilly/go-size-analyzer.git", branch: "master"
 
@@ -12,12 +12,12 @@ class GoSizeAnalyzer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5244d6e7723ef9ba0fa17a6ef0b67165ab26d2639b54386302889bd1e6aaf8f9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "484319e54d3663ab2fcc8894a3175bdb2ef9243fc0e691aabeafb4515e0f384c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c327b3ab64b00b0c2cddb9daebe8ea5282f3aebfd9da33d4040d2b3a8640939"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bd7322f7a3229d47c89f7dd7e51f814772501b1f8dbd13b03914014b1a98ffd3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "efc9232ba99e4ccf5cf305e0e2752bfc8a427a9aaff044ad601db3742d3b452d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e5956490bc3de4791985060d4640aa8f57123e64c382de9b6d841babff55f4e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a679469ef91666638345e4c3f554e03b145a6265ed77ce23d922acd50bc9020"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb5e1cb171c19944aa2cac5231a28f2a0a7c16437c02a18a0ca54174b10bbadb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf91329f20d7697fca846990b0b69a9098ad600f218c7f58cf179e4a91e57ff4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6f44309f7656f7de4d0283ffebeb8468ba5559393e0ea751ab9629b6661a562c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34ca531eb886fb2cee96cfd1db2786db6e672a8bd678d5bdce4af55fba08f24a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa9a973413a4c23b6dc557e9b73b60fcc0f763d9a7d1af6450cf809cb1854b2b"
   end
 
   depends_on "go" => [:build, :test]
@@ -31,6 +31,9 @@ class GoSizeAnalyzer < Formula
     system "pnpm", "--dir", "ui", "build:ui"
 
     mv "ui/dist/webui/index.html", "internal/webui/index.html"
+
+    # Set experimental feature for go
+    ENV["GOEXPERIMENT"] = "jsonv2"
 
     ldflags = %W[
       -s -w

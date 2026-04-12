@@ -1,18 +1,17 @@
 class Mle < Formula
   desc "Flexible terminal-based text editor"
   homepage "https://github.com/adsr/mle"
-  url "https://ghfast.top/https://github.com/adsr/mle/archive/refs/tags/v1.7.2.tar.gz"
-  sha256 "5275fcfc58d3d4890d074077d94497db488b2648287b3e48e67b00ea517b02ba"
+  url "https://ghfast.top/https://github.com/adsr/mle/archive/refs/tags/v1.8.1.tar.gz"
+  sha256 "7ee33a695f801024254fc717b64aff6a7a4c274874fc4b83e1a23ccf1a74b9ca"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "aaf1838843db7b6638185bbd393cbc7ab9e3b3984407717ef687428b02ede51b"
-    sha256 cellar: :any,                 arm64_sequoia: "0afc101c6ed8bb562ed508f6001d593748b7f9ec2d49957282c98a59f268bcce"
-    sha256 cellar: :any,                 arm64_sonoma:  "afb603d1ff975d3b8a949b0cafbf0f3e9c218d289ec0925c21f0810cc4f08178"
-    sha256 cellar: :any,                 sonoma:        "efcd5533acea7fbc1174852ce5b540b40b95d56b213da0371a3d790d15815978"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8561075351cd517bf08589ef66ed0065a176971b02879b3fa397b3c21f2814b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c209ffdf0f454441364be26612eeeb905019ad59d000a10eef17d00fab8b750"
+    sha256 cellar: :any,                 arm64_tahoe:   "306e6cdc4f433ef963be6385bfce249743c0ded11def9172985fd6882eb55633"
+    sha256 cellar: :any,                 arm64_sequoia: "0dc72aa256f0a8e5f65f502e8c175d5e0d8b0d5a48348716a377847734a61ae4"
+    sha256 cellar: :any,                 arm64_sonoma:  "e7ba6fbd35d12b9a52b61eab18eb684d4814a7dbcf70271dd246feb2514fbe1d"
+    sha256 cellar: :any,                 sonoma:        "1c7ef3254e6d91bf71a34ea33c1a77678ae8e696044c706dd7fd6037c6a48bfa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b0dbffe4e55c0849d4938508f6cf86d8efea3bdf6583999467ab0c44611cec5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fad439343aa7dd03abf599f9e7cc924d098a4d3d14b8fb430eaf497b930cb7a"
   end
 
   depends_on "uthash" => :build

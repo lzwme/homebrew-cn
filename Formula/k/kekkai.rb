@@ -1,18 +1,18 @@
 class Kekkai < Formula
   desc "File integrity monitoring tool"
   homepage "https://github.com/catatsuy/kekkai"
-  url "https://ghfast.top/https://github.com/catatsuy/kekkai/archive/refs/tags/v0.2.4.tar.gz"
-  sha256 "d942c4695c1312c15109db8f14a0677c972d2ab78e28efdc2b8827dbe1306672"
+  url "https://ghfast.top/https://github.com/catatsuy/kekkai/archive/refs/tags/v0.2.5.tar.gz"
+  sha256 "ba57b93d114ea6183d9f3fddd5907c55d11d67e04e185b65997c1205872b607f"
   license "MIT"
   head "https://github.com/catatsuy/kekkai.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86714a4cba5f1b14e6208d337b944bae39cfb8c2653d16f6aaf151b9af9d2938"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86714a4cba5f1b14e6208d337b944bae39cfb8c2653d16f6aaf151b9af9d2938"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86714a4cba5f1b14e6208d337b944bae39cfb8c2653d16f6aaf151b9af9d2938"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3af464afaba71a28d9916eb7a940f6e3fcd8556c42f94497b075bd1ab216395d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e979005260d7a33cb8eeed014ab78956357a284cd0bb9b7ee15e0b4cea46656"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92cfe0d1ba6ae5b18ae2df91270ad894f18e8316f83c50f1c22e3872d535bacc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0be4e5816e8149546892aae46fab73aef281443789d3c683d9564f4f1772e6ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0be4e5816e8149546892aae46fab73aef281443789d3c683d9564f4f1772e6ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0be4e5816e8149546892aae46fab73aef281443789d3c683d9564f4f1772e6ad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f9698b009751321eb8527aee1a65c9f3dd2145da2bd65ec99bf332ff2bfd1f6c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47edf48ea24fe34573f826d4f985c926d2050ce2845bdcbb4d178033f3ca67a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "596f8439741e71684e5028c3af62f1939bfb6b2a3d2184b4bdc17fcdc3bc9446"
   end
 
   depends_on "go" => :build

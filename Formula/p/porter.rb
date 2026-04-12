@@ -6,6 +6,11 @@ class Porter < Formula
   license "Apache-2.0"
   head "https://github.com/getporter/porter.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d2e6cd91af0e966c8a821789017b81a0f22cfc0e8c9cf4a255ed92f7c852286"
