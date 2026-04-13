@@ -193,6 +193,7 @@ Homebrew-homebrew-core/Formula/a/apache-serf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-spark.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apachetop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apcupsd.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/apfel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apgdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/api-linter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apib.rb, Homebrew/homebrew-core, 1
@@ -3735,7 +3736,7 @@ Homebrew-homebrew-core/Formula/l/licensefinder.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/licenseplist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/licensor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lief.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/l/lifelines.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/lifelines.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lightgbm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lighthouse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lightning.rb, Homebrew/homebrew-core, 0
@@ -4064,7 +4065,6 @@ Homebrew-homebrew-core/Formula/lib/libghthash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgit2-glib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgit2.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libgit2@1.6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgit2@1.7.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgit2@1.8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgnt.rb, Homebrew/homebrew-core, 0
@@ -4085,6 +4085,7 @@ Homebrew-homebrew-core/Formula/lib/libgxps.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libhandy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libharu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libhdhomerun.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libheif-plugins.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libheif.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libheinz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libhttpserver.rb, Homebrew/homebrew-core, 1
@@ -7275,7 +7276,6 @@ Homebrew-homebrew-core/Formula/t/terraform-lsp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/terraform-mcp-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform-module-versions.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform-provider-libvirt.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/terraform.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform_landscape.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraformer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terragrunt-atlantis-config.rb, Homebrew/homebrew-core, 1
@@ -8941,6 +8941,7 @@ Homebrew-homebrew-cask/Casks/c/castr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/catch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/catlight.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cave-story.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/cc-switch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/ccleaner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/ccmenu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/ccstudio.rb, Homebrew/homebrew-cask, 0
@@ -13963,6 +13964,7 @@ Homebrew-homebrew-cask/Casks/o/orca.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/orcasheets.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/orcaslicer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/orcaslicer@nightly.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/orchard.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/origami-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/origin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/orion.rb, Homebrew/homebrew-cask, 0
@@ -16029,6 +16031,7 @@ codello-homebrew-brewery/Casks/renew.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/Casks/ultrastar-creator.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/ultrastar-manager.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/yamaha-steinberg-usb-driver.rb, codello/homebrew-brewery, 0
+codello-homebrew-brewery/lib/b2.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/lib/b2_download_strategy.rb, codello/homebrew-brewery, 0
 shivammathur-homebrew-php/Formula/autoconf@2.69.rb, shivammathur/homebrew-php, 0
 shivammathur-homebrew-php/Formula/bison@2.7.rb, shivammathur/homebrew-php, 1

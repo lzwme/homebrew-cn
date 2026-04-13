@@ -13,17 +13,18 @@ class Rsync < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "e2721ff74a3d354cccd1c98c3b97ca1dbb41aa4a48945caf72e0a6950183d698"
-    sha256 cellar: :any,                 arm64_sequoia: "044b28628b6fa75ea583521e112eb3d2a6ed1c5fb0be05b72495d209300a73ae"
-    sha256 cellar: :any,                 arm64_sonoma:  "58aeb782a8f6efe94dd9b7c6f64e87f4b340d7ea448bd325b115b52dd2fd5c98"
-    sha256 cellar: :any,                 sonoma:        "e36f0a191187ceaef4c193bb59941fb512c42784288f967a9a00d456022a7c8f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f0e09610aa95a51f1b39225041dae8fef6431278285f44cf51b38178a446312"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ebcddcce2bc4e37fb1b5b2aaf956bdba9122b54d56c4b3e74005853a996d311"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "0788bfffd17f8bc2e8a811872138dc1c982fe0ad499a7a3de787d49f698cf52a"
+    sha256 cellar: :any,                 arm64_sequoia: "80935e18dbfba662f81e08e57e753086c8d25489a2f64a0f00323be2cba1f8f0"
+    sha256 cellar: :any,                 arm64_sonoma:  "030d807ac23fa2ce01203c46830f354070330e8b60b945b9b37b2065d5365132"
+    sha256 cellar: :any,                 sonoma:        "745da62d69fc3b379ac37773cfa93fdb57f47bbd4407d04ce4a0a0744a2d0c31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad8ff5025ca448e37ffd3b463cdbfd22b344a3b6830c39e88cb798cdcdcddddd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f9d25a62161a4c53d96c3ac1b5053e5f21a0fd02c8bf466ff82b0bbe2d3ffd9"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "cmark-gfm" => :build
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "popt"
@@ -44,10 +45,14 @@ class Rsync < Formula
   end
 
   def install
+    # build rrsync.1 which is not included in the source tarball
+    (buildpath/"support/rrsync.1").write Utils.safe_popen_read("cmark-gfm", "support/rrsync.1.md", "--to", "man")
+
     args = %W[
       --with-rsyncd-conf=#{etc}/rsyncd.conf
       --with-included-popt=no
       --with-included-zlib=no
+      --with-rrsync=yes
       --enable-ipv6
     ]
 

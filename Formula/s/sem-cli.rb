@@ -1,18 +1,18 @@
 class SemCli < Formula
   desc "Semantic version control CLI with entity-level diffs and blame"
   homepage "https://github.com/Ataraxy-Labs/sem"
-  url "https://ghfast.top/https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.3.16.tar.gz"
-  sha256 "c1529db0bb0581dc4908b77192c117768af5f7855acf95e93663fbd7dc00ae55"
+  url "https://ghfast.top/https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.3.17.tar.gz"
+  sha256 "637272d2df0e3903378bef76361336f5e6a9988cde89546583a9c3b104114f11"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/Ataraxy-Labs/sem.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e26106a69f7d689f970c4b7d8f22ea2c51aa540b612a064e3a35e5b4be6dd504"
-    sha256 cellar: :any,                 arm64_sequoia: "80dc7078757c83d1ce84915cf5e2aed2bef267f3746776390cffc9f579db2258"
-    sha256 cellar: :any,                 arm64_sonoma:  "db447af099743f6247cba915a1b9a08e16e999e5148b45cf349e2ced1c51bc23"
-    sha256 cellar: :any,                 sonoma:        "12db985e22ec9e20f343d1a8752e3d1e520b82437e631663d6066187b1d1cc1c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f987aa34677525ac35048dd44301a95ece9486b92a0fc198667219bd14fef90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aec22a8834a041596ae8323c39974483e846b00f294bc83dcf5d95269dc47cd5"
+    sha256 cellar: :any,                 arm64_tahoe:   "9dcf041c51b5d3260881229f1ad35388b8e4217284bc25c29824eaf44d4135a6"
+    sha256 cellar: :any,                 arm64_sequoia: "bcc618b7ed918562e682704817a7f2cb1c80512a1d6988ec5aa26256db053a1b"
+    sha256 cellar: :any,                 arm64_sonoma:  "25d16c974dbc22c6dc5705ada172977a46f6e15e56837963c157a783a688a3b1"
+    sha256 cellar: :any,                 sonoma:        "57e79012a68eb96b3d13870656c47a9e500533b41170b7a3cefe944b6acd9050"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eacc29250f33d0830cd191daf3d1fc306f469e09e0ac4b83487b8e6a1499064c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19ce6026f91f8a5f4ab6d541a3e98b33ecd115a52cc33cbc43f12c4d0be3c19f"
   end
 
   depends_on "pkgconf" => :build

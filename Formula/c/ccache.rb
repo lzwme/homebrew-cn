@@ -1,19 +1,19 @@
 class Ccache < Formula
   desc "Object-file caching compiler wrapper"
   homepage "https://ccache.dev/"
-  url "https://ghfast.top/https://github.com/ccache/ccache/releases/download/v4.13.2/ccache-4.13.2.tar.xz"
-  sha256 "4a0d835f1b3fd7e2ac58a511718bbc902532941f377f7990a3d33b5cf8733ba6"
+  url "https://ghfast.top/https://github.com/ccache/ccache/releases/download/v4.13.3/ccache-4.13.3.tar.xz"
+  sha256 "1aefc18ba43c237723d224eeecfe47fd0fc7d3c93ccdda31a619b8eb90c3e470"
   license "GPL-3.0-or-later"
   compatibility_version 1
   head "https://github.com/ccache/ccache.git", branch: "master"
 
   bottle do
-    sha256               arm64_tahoe:   "6cd46d9e3746ec91b40a1713d295ebc604f06d70082c7cb3e413361e871658c9"
-    sha256               arm64_sequoia: "527e89fb6b8f56fbc89c4d969187439501ceb4db255d52ddd6a0a7abafe50776"
-    sha256               arm64_sonoma:  "e4bb258f68de9440f7eef5022eaad8288e9067a916c6bd5baf42273129d28cf5"
-    sha256 cellar: :any, sonoma:        "815f349b137a52797c6de35df2463ae6636e32491036fb438c2bb41a29ba3a22"
-    sha256               arm64_linux:   "28fba73de04c8c85308564bbd0434e4f425a20b5756ccd7d9ca15329512ec449"
-    sha256               x86_64_linux:  "a95c6269b794ce865269d3b34a7e05a6023ce8aaeacb9c241e1617cd3476444c"
+    sha256               arm64_tahoe:   "82c053bda466d8ab39dc9c3a4c676a73c712056241473c1e55e7e785933509d9"
+    sha256               arm64_sequoia: "d1ddd9d30dab8c30a35d701b48f104a06c60e185f1e85547c122a005fc45905a"
+    sha256               arm64_sonoma:  "e3db0eb95e519fb66032ea6b383cdf87b7f708f0c0edd914b81c95a0b47fcbc7"
+    sha256 cellar: :any, sonoma:        "df4178f855a5383ad6f4f261e0182c6c18456745736cac5374f38ce942e83a58"
+    sha256               arm64_linux:   "c00d2e952a52507f1e0d04bc8e4dc8bcd5b0357ec87f607ab3f1193acece32fd"
+    sha256               x86_64_linux:  "b3aeeb476f45e99ad73383dc6f3db5b91c689218f982fc14393cb11db471d577"
   end
 
   depends_on "asciidoctor" => :build
@@ -23,11 +23,17 @@ class Ccache < Formula
   depends_on "pkgconf" => :build
   depends_on "span-lite" => :build
   depends_on "tl-expected" => :build
+
   depends_on "blake3"
   depends_on "fmt"
   depends_on "hiredis"
+  depends_on "openssl@3"
   depends_on "xxhash"
   depends_on "zstd"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build",

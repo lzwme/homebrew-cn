@@ -6,17 +6,18 @@ class Oterm < Formula
   url "https://files.pythonhosted.org/packages/37/e4/1df0729d9f86e3d52b0b0fb92e7d57eab21fd41071043ae8587252c38385/oterm-0.14.7.tar.gz"
   sha256 "eeed277840c3314aef90042a9a43e10de7fc9110212c56ad729a0b4255d356f7"
   license "MIT"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cba0cb4799bd3fe323d22a20c3cd5a7306c21128e4c72dd135502e385c0774e7"
-    sha256 cellar: :any,                 arm64_sequoia: "8d7f2506511e78383cf57d8508730ae831795c0545854651b8c59295146d1596"
-    sha256 cellar: :any,                 arm64_sonoma:  "849ef0c864d7e235dfc120eda18ed98f388d259423d09f96ef98cae18789ecb4"
-    sha256 cellar: :any,                 sonoma:        "0ff93b2ec466eeacd0892c3e0bc72cba814cbd6a8c8bd5754422789a3db32b8b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0faa1cf34c31064884e1d5f51076909a21b142b8ed98f1f3993d05d90078b235"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "424dafa100b413bd2512e9bb1db70cf147129abcc67e8c2bd013dc9307ad0157"
+    sha256 cellar: :any,                 arm64_tahoe:   "b40d4af25fa37c2d3c5bdb0e986295e199b34c6bef975e497cf230f886e07b77"
+    sha256 cellar: :any,                 arm64_sequoia: "a8de459755767e18af32a7ca5d01b0965ed099bcd7d1e00a93369be98234325e"
+    sha256 cellar: :any,                 arm64_sonoma:  "6502e55532bad616d8309d3c1502a4d131033fc64a437baf0924c714a4629f9b"
+    sha256 cellar: :any,                 sonoma:        "72b9f4afcb2ec3b20e548af54bb5c77b646d4ace16797d5999b7d52a73b9436b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a57bff5fc82e25520b612887348160e2583821d22a58d510cec35d7bf61f0da9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d251afe2083a56945cfd8aa10239870380bfd6b4886e23cbbf347837baec62b"
   end
 
+  depends_on "luajit" => :build # for lupa
   depends_on "pkgconf" => :build
   depends_on "rust" => :build # for textual_speedups
   depends_on "certifi" => :no_linkage
@@ -70,8 +71,8 @@ class Oterm < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
+    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
   end
 
   resource "cloudpickle" do
@@ -210,8 +211,8 @@ class Oterm < Formula
   end
 
   resource "lupa" do
-    url "https://files.pythonhosted.org/packages/b8/1c/191c3e6ec6502e3dbe25a53e27f69a5daeac3e56de1f73c0138224171ead/lupa-2.6.tar.gz"
-    sha256 "9a770a6e89576be3447668d7ced312cd6fd41d3c13c2462c9dc2c2ab570e45d9"
+    url "https://files.pythonhosted.org/packages/c4/a0/327c40cdd59f0ce9dc6faaf73bf6e52b0b22188f1ee2366ef36d0e5c1b85/lupa-2.7.tar.gz"
+    sha256 "73a64ce5dc8cd95b75a330c1513e46e098d40fceed3fea516c09f6595eade889"
   end
 
   resource "markdown-it-py" do
@@ -220,8 +221,8 @@ class Oterm < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/fc/6d/62e76bbb8144d6ed86e202b5edd8a4cb631e7c8130f3f4893c3f90262b10/mcp-1.26.0.tar.gz"
-    sha256 "db6e2ef491eecc1a0d93711a76f28dec2e05999f93afd48795da1c1137142c66"
+    url "https://files.pythonhosted.org/packages/8b/eb/c0cfc62075dc6e1ec1c64d352ae09ac051d9334311ed226f1f425312848a/mcp-1.27.0.tar.gz"
+    sha256 "d3dc35a7eec0d458c1da4976a48f982097ddaab87e278c5511d5a4a56e852b83"
   end
 
   resource "mdit-py-plugins" do
@@ -235,8 +236,8 @@ class Oterm < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/ea/5d/38b681d3fce7a266dd9ab73c66959406d565b3e85f21d5e66e1181d93721/more_itertools-10.8.0.tar.gz"
-    sha256 "f638ddf8a1a0d134181275fb5d58b086ead7c6a72429ad725c67503f13ba30bd"
+    url "https://files.pythonhosted.org/packages/24/24/e0acc4bf54cba50c1d432c70a72a3df96db4a321b2c4c68432a60759044f/more_itertools-11.0.1.tar.gz"
+    sha256 "fefaf25b7ab08f0b45fa9f1892cae93b9fc0089ef034d39213bce15f1cc9e199"
   end
 
   resource "ollama" do
@@ -325,8 +326,8 @@ class Oterm < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/94/01/979e98d542a70714b0cb2b6728ed0b7c46792b695e3eaec3e20711271ca3/python_multipart-0.0.22.tar.gz"
-    sha256 "7340bef99a7e0032613f56dc36027b959fd3b30a787ed62d310e951f7c3a3a58"
+    url "https://files.pythonhosted.org/packages/8a/45/e23b5dc14ddb9918ae4a625379506b17b6f8fc56ca1d82db62462f59aea6/python_multipart-0.0.24.tar.gz"
+    sha256 "9574c97e1c026e00bc30340ef7c7d76739512ab4dfd428fec8c330fa6a5cc3c8"
   end
 
   resource "pyyaml" do
@@ -415,13 +416,13 @@ class Oterm < Formula
   end
 
   resource "uncalled-for" do
-    url "https://files.pythonhosted.org/packages/02/7c/b5b7d8136f872e3f13b0584e576886de0489d7213a12de6bebf29ff6ebfc/uncalled_for-0.2.0.tar.gz"
-    sha256 "b4f8fdbcec328c5a113807d653e041c5094473dd4afa7c34599ace69ccb7e69f"
+    url "https://files.pythonhosted.org/packages/e1/68/35c1d87e608940badbcfeb630347aa0509897284684f61fab6423d02b253/uncalled_for-0.3.1.tar.gz"
+    sha256 "5e412ac6708f04b56bef5867b5dcf6690ebce4eb7316058d9c50787492bb4bca"
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/e3/ad/4a96c425be6fb67e0621e62d86c402b4a17ab2be7f7c055d9bd2f638b9e2/uvicorn-0.42.0.tar.gz"
-    sha256 "9b1f190ce15a2dd22e7758651d9b6d12df09a13d51ba5bf4fc33c383a48e1775"
+    url "https://files.pythonhosted.org/packages/5e/da/6eee1ff8b6cbeed47eeb5229749168e81eb4b7b999a1a15a7176e51410c9/uvicorn-0.44.0.tar.gz"
+    sha256 "6c942071b68f07e178264b9152f1f16dfac5da85880c4ce06366a96d70d4f31e"
   end
 
   resource "websockets" do
@@ -435,8 +436,14 @@ class Oterm < Formula
   end
 
   def install
-    without = %w[jeepney secretstorage] unless OS.linux?
-    virtualenv_install_with_resources(without:)
+    without = ["lupa"]
+    without += %w[jeepney secretstorage] unless OS.linux?
+    venv = virtualenv_install_with_resources(without:)
+
+    resource("lupa").stage do
+      ENV["LUPA_NO_LUAJIT"] = "true"
+      venv.pip_install Pathname.pwd
+    end
 
     generate_completions_from_executable(bin/"oterm", shell_parameter_format: :typer)
   end

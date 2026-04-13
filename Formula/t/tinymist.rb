@@ -15,18 +15,20 @@ class Tinymist < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09763abf42ced27b737f5a8a816ceb344fc7b73754d9598fae34b98d4d8c2ede"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f206361e269787b7bea96f1199b2383eda58d3eef94325fa525e017a949d70b0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea097622323b25769b3d3420c7aee2c1508fae8235547274379da009d68c4644"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c1fad36cdd952c7680996783641c124fbadf0bc6af89dbdb0fa87ff06c1817cf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad41a7492bcb3767a50f04d3aac4d1acf53f7a83f064bb821b4b3fa33e9d550d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48b41032db15f98cb20e298493724a51e1d4c45623c8ab834fa5dccf7c10fb48"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5ae315923a00214aa33b536f46e0f7a7dd0299928c1df2b3aeaf25dbf1b324e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14962661c5e1303769775eb737a8b75f7caab9073327e67881302c1a8ca32931"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "638aec58d38727c79265dd35fc806c9ada01625495430383dc4dfc50b38c125a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "47224320f7b30bcb8611c969d06393a69f7e6bc4b33c89559b7f931645b02dda"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "50032f40e6bd88882d1df4a529512b79c6b8c6822dd8d1304e56ca643c70a42e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85f990a50cc931dc86f527d241517b6837281feaf9ef4470398add5fb44efab9"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/tinymist-cli")
+    generate_completions_from_executable(bin/"tinymist", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

@@ -1,4 +1,4 @@
-require_relative "../lib/b2_download_strategy" unless defined?(B2DownloadStrategy)
+require_relative "../lib/b2" unless defined?(B2DownloadStrategy)
 
 cask "font-yorkten" do
   version "1.0"

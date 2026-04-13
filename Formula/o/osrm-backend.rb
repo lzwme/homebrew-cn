@@ -1,26 +1,10 @@
 class OsrmBackend < Formula
   desc "High performance routing engine"
   homepage "https://project-osrm.org/"
+  url "https://ghfast.top/https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v26.4.0.tar.gz"
+  sha256 "e50863f1d73ca31dffd91fa8d3c2425ef69b985c41528a2962726c0001520e78"
   license "BSD-2-Clause"
-  revision 3
   head "https://github.com/Project-OSRM/osrm-backend.git", branch: "master"
-
-  stable do
-    url "https://ghfast.top/https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v6.0.0.tar.gz"
-    sha256 "369192672c0041600740c623ce961ef856e618878b7d28ae5e80c9f6c2643031"
-
-    # Backport support for Boost 1.89.0
-    patch do
-      url "https://github.com/Project-OSRM/osrm-backend/commit/a2e159d0d4f6b3922ee0cb058a800230cf90642e.patch?full_index=1"
-      sha256 "296e924268436847b941e287f8c46d0b98e829e723b310d96ff587b51940b653"
-    end
-
-    # Backport support for Lua 5.5
-    patch do
-      url "https://github.com/Project-OSRM/osrm-backend/commit/314c566cd63da80b2a9ced6a71bbb36610113fb9.patch?full_index=1"
-      sha256 "5e259e4ff3ab48cff4ce1a947fde14de8bf5f0d99d79ac407804af4637e871ad"
-    end
-  end
 
   livecheck do
     url :stable
@@ -28,13 +12,12 @@ class OsrmBackend < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "e74008d49cd71d3efd5b7006a2809848ca73f15c923be180ef4f6de6edc79f59"
-    sha256 cellar: :any,                 arm64_sequoia: "ea5588b2c7e83b37fa376b43b2ce3f9b62b614ebdb55bc826dce885cad7c7797"
-    sha256 cellar: :any,                 arm64_sonoma:  "0a82e6177cf9cd25b69d0e1eb9e5ba8c1468af67e7595e91bc2d7a6d5e7f13a1"
-    sha256 cellar: :any,                 sonoma:        "91283bc8dd2b37363db095c04c025354b0f7869a2e316eb8f7e49ea5b56145be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b1cd90a2989c42e0f000e10480d15ff2d4dd86ac1ecf790722dd63064891b62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef5a80bc12c171d942fc5a74153b0d7a0a4c47f2b1eb5ba33374ab2bc2f1bc94"
+    sha256 cellar: :any,                 arm64_tahoe:   "24f2e27bdc483aec1ecd2d091b078d617f59751b832b834c2a9bd86e001b8499"
+    sha256 cellar: :any,                 arm64_sequoia: "402c3b051cef735d798fd9aa7eca1f38d7066ff7e71706b73701b488a30992e3"
+    sha256 cellar: :any,                 arm64_sonoma:  "be49cfb5d7293dd0d1e1cc75f8d0ae575160c8be8313844fc30653adc003148b"
+    sha256 cellar: :any,                 sonoma:        "e1f39cb14359a120c1d900a46ffd8345ea7ec8454a7c73a3de4b4d90d08df1f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b27ad5881eb7fe9f6cec9bcc2fd736c5af5918dc939ba37c54bb5c8f435baaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7e48ed50ede3c4faf57137872817d4d269bbfa56cc6aa5bbbd11d5f146176da"
   end
 
   depends_on "cmake" => :build

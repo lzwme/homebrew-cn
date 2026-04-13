@@ -18,6 +18,10 @@ class Localstack < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2070d591c53fc3564d7f25872e11332b6ed55e554488fbcf00cdee1aa1f1a3f4"
   end
 
+  # Project got archived on 2026-03-23 per https://github.com/localstack/localstack/pull/13901
+  deprecate! date: "2026-04-12", because: :unmaintained
+  disable! date: "2027-04-12", because: :unmaintained
+
   depends_on "pkgconf" => :build # for localstack_ext
   depends_on "rust" => :build # for orjson
   depends_on "docker" => :test

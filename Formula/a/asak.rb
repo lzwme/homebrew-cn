@@ -1,18 +1,18 @@
 class Asak < Formula
   desc "Cross-platform audio recording/playback CLI tool with TUI"
   homepage "https://github.com/chaosprint/asak"
-  url "https://ghfast.top/https://github.com/chaosprint/asak/archive/refs/tags/v0.3.7.tar.gz"
-  sha256 "b4d4c99b2e1cf5dba9a9b271815fa12aa8342f1f77587ce5ff1b39098d224be0"
+  url "https://ghfast.top/https://github.com/chaosprint/asak/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "d4df734e87b63cf20f7fa34e15853afa640620043871497d54f78a6818680dd6"
   license "MIT"
   head "https://github.com/chaosprint/asak.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7606897627e570b2245d9f3ab7d8c0c5013054295f7f94903231e1b6172ab7e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84f922171a47099541fb4b78255841c41c39fc7f34e1cf379f5ef39cc81ce437"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3514b8f54bd3d9681fb19bef7b80630994e858aff2a52f62b8adc52a9a8df82e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "33406e737a078a377554c187c51fad6851d57ef6180842779405d7d034550300"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a89502eb0b2314f5b3c756cc46445d78f76c816901a5586ad094d93f710cfcb6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95073ac0593fc17f52cf5aa30b32733924c5ce6a9b1da468ebba4787e863dff8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ece34a9219e864c87ba8cb21d120dc79100df2bde873715f5fa45401b7af0548"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1aeb82e44bd338080df9218164db8ce26330b5f4c89269d45a8f16147757602f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12c898a0f70d04045e16592e024ecfecaf95cdccab6955dbfcef95682db3402f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "07a5c1fe0e9ffa353f3240484eabf614f041b8bd53884b9f7e6df15dd535d451"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "46d875061b821be6723665dd5774716325b901e54853b27c77683236581f456b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "366d64c0c14529791b97ae92dc89b3c5a2343c167874586aecb69054eadf184d"
   end
 
   depends_on "pkgconf" => :build
@@ -33,8 +33,8 @@ class Asak < Formula
   end
 
   test do
-    output = shell_output("#{bin}/asak play")
-    assert_match "No .wav, .ogg, or .mp3 files found in current directory", output
+    output = shell_output("#{bin}/asak play 2>&1", 2)
+    assert_match "unexpected argument 'play' found", output
 
     assert_match version.to_s, shell_output("#{bin}/asak --version")
   end

@@ -2,8 +2,8 @@ class Julia < Formula
   desc "Fast, Dynamic Programming Language"
   homepage "https://julialang.org/"
   # Use the `-full` tarball to avoid having to download during the build.
-  url "https://ghfast.top/https://github.com/JuliaLang/julia/releases/download/v1.12.5/julia-1.12.5-full.tar.gz"
-  sha256 "de3bf3693d938d7e15539a5c3ac2177c546acd0d7b7bc4e327e30d6a7238f1e3"
+  url "https://ghfast.top/https://github.com/JuliaLang/julia/releases/download/v1.12.6/julia-1.12.6-full.tar.gz"
+  sha256 "711f3aa8d6ec5c9004593eb8f3d53e3564cd759acba8ad4adae967afc20332cc"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
   head "https://github.com/JuliaLang/julia.git", branch: "master"
 
@@ -17,13 +17,12 @@ class Julia < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "13bce352649667518549e638b37acc7b8d0a3c6d427b13a190ec02684c363f90"
-    sha256 cellar: :any,                 arm64_sequoia: "9a7bc0160c8e38b19c3a418ed3047d72fa90a42b4ebdbf1869ce4201017bdc38"
-    sha256 cellar: :any,                 arm64_sonoma:  "3539da2d6f0855711a8dda0b670de3c4f87143dd8a06f4899db1ecdaa3d16ba6"
-    sha256 cellar: :any,                 sonoma:        "d8f1fbbc3ca3cdca078d18ecd296d3052091c14e26dd469e7d45553b7d1b16cf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2c8af25b2fe5d1240b01c8e3b9c6621de8e50c441de40dff07b2fff86a3895b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b76c5bd2bdf90bb32c8353c63b8663d6bf48a79936f8e6c7552701a066bf451"
+    sha256 cellar: :any,                 arm64_tahoe:   "0bb211e4fd86ece2ac70c41d8837dca72ff8f0211aa9c1bf6d145a9dd417eca3"
+    sha256 cellar: :any,                 arm64_sequoia: "7ac7fad8e6b347d701bde5500abd2243821d88f62ce3455c728e643cb5d3ab3d"
+    sha256 cellar: :any,                 arm64_sonoma:  "c2ad6e5fa61633fb49c6ac16eec104860f59502454437c30154f6add53e3b8fc"
+    sha256 cellar: :any,                 sonoma:        "a08682c717772c224125dfb554ee72728e5c113d9767f039123012c8c409bf07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "031f2fad72004425fda1465d469056ae4b1be7c4b0ab9b4789bb065708c51cb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "960bce588ddc557aecf7b73089f1c9529c671bc029b7141e6444adf1e232e27c"
   end
 
   depends_on "cmake" => :build # Needed to build LLVM

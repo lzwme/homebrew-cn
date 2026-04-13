@@ -1,8 +1,8 @@
 class CargoCrev < Formula
   desc "Code review system for the cargo package manager"
   homepage "https://github.com/crev-dev/cargo-crev"
-  url "https://ghfast.top/https://github.com/crev-dev/cargo-crev/archive/refs/tags/v0.26.5.tar.gz"
-  sha256 "9bf1ec351c15243c598db86b8edc292fb36b9deb8c4e94dd5506abf3edd5a41a"
+  url "https://ghfast.top/https://github.com/crev-dev/cargo-crev/archive/refs/tags/v0.27.1.tar.gz"
+  sha256 "785ed01f3352331ac4f6ecd63da5ab896a4d251678ad75b6bcf1545858a4cc82"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,12 @@ class CargoCrev < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "81b2fa2f7315f2665d8dcccb6752d37b56652bd7ef02c18129a8f5a406277c43"
-    sha256 cellar: :any,                 arm64_sequoia: "493e9ff59968ff20604d88efd36caa673c6111ed908ceef6d25e2c7a9a430c6b"
-    sha256 cellar: :any,                 arm64_sonoma:  "cf4941e37d2916c721d3c7fe7acf882fd025f131f7a31a57ae60ae04ce968957"
-    sha256 cellar: :any,                 sonoma:        "205486c193ca878625a1c5e2eecc5105ef46239be6057814f5e423da7ab73d44"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "307f024d7d29778e3341fe7e2a39864d0cf546bd1965f4b3cea1b4bc8cefec7c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "616a84800440e0d72026f04b52adbc1dd7c2768cba516fb3517f1e98658ba50c"
+    sha256 cellar: :any,                 arm64_tahoe:   "71e14ec0c42cdd3dfe446ece32f58d5f52ff6d31db25b3de1acc4a6a2dc1c5f4"
+    sha256 cellar: :any,                 arm64_sequoia: "49a298d9684d31c5a47203fa980ed2ca90f43299a5156f6af8b39eb8d04719f5"
+    sha256 cellar: :any,                 arm64_sonoma:  "698e6d52e95a6dd3efa9de309d77d6a492ca79842e74f90f85f964661b1af932"
+    sha256 cellar: :any,                 sonoma:        "3ba1e65600f43c32a417998885ddee0406696577899cb185f5f6208f6489ec0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "194d2633b70788c541c460d7ebefff409b90a41f921ca4e3bcb68ba68efb7f88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75cc24c53306a0e7945e4a95488cd8bbf79d1aa1c7da85b66ca3dc2ed000f987"
   end
 
   depends_on "rust" => :build

@@ -1,8 +1,8 @@
 class GerbilScheme < Formula
   desc "Opinionated dialect of Scheme designed for Systems Programming"
   homepage "https://cons.io"
-  url "https://ghfast.top/https://github.com/mighty-gerbils/gerbil/releases/download/v0.18.1/gerbil-v0.18.1.tar.gz"
-  sha256 "e1827bb88bdb74a01a99f0d94a50a6469ae4e760905be83dd3064ffc1709ceb5"
+  url "https://ghfast.top/https://github.com/mighty-gerbils/gerbil/archive/refs/tags/v0.18.2.tar.gz"
+  sha256 "8e4cdefea8d75feea4d5df33cc90b37dc5e8d6ab03b7b4b7eb749ae7d9ff739e"
   license any_of: ["LGPL-2.1-or-later", "Apache-2.0"]
 
   livecheck do
@@ -11,13 +11,12 @@ class GerbilScheme < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "6745d8bce39a3b89bbf4b5c3c69cac16ada9073a9a8216ebba04507b63f298c3"
-    sha256 arm64_sequoia: "d42dd1a6b7f7b922eae3a3f9d3d51ff97893d4fb93ad98ba919381d4dddf3717"
-    sha256 arm64_sonoma:  "4e67eee05dd06c0e744af6e715ffdebe003f3f3d207de6f5805c75d27dc95a20"
-    sha256 sonoma:        "e1c3c27f77b53389a64aa3c46179877217f8b1b411dec0de2940e57cc1efab07"
-    sha256 arm64_linux:   "28192cc2a3d65cd154d33e86b8d4c341cd487fc32aa62762238285d34e2899bc"
-    sha256 x86_64_linux:  "ead102fa71b688c6923afa46460741d75848aa18c13f521854358f545ae8d6a7"
+    sha256 arm64_tahoe:   "5d5b0c0983acb6e54a5b980bafd5966d0a56a565ad5629a70f6664652cfab2b5"
+    sha256 arm64_sequoia: "d0d981ad80f1b71ffe7ef8fff4b6e5f5e330bb348ed82415d1d536ae6d387f27"
+    sha256 arm64_sonoma:  "32a553ff944193e9152d3e164380e484d19d4ef71232e292a62c1515c90673e7"
+    sha256 sonoma:        "5004a6b5a26614f190c4fc4e5d3e353cbb35b4f56c01498a7d278a6494f065b0"
+    sha256 arm64_linux:   "b329cfd3d24ed07d56b6a6558e051f970083f29c02b43689db0b575d6077a376"
+    sha256 x86_64_linux:  "9e1c6732baed62c845e8fe0169f5e3eb5998773fd12aaa3700a47c1d21fe6403"
   end
 
   depends_on "pkgconf" => :build
@@ -41,6 +40,7 @@ class GerbilScheme < Formula
   end
 
   def install
+    ENV["GERBIL_VERSION"] = "v#{version}"
     system "./configure", "--prefix=#{prefix}", "--enable-march="
     ENV.deparallelize
     system "make"

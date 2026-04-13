@@ -1,8 +1,8 @@
 class Lnav < Formula
   desc "Curses-based tool for viewing and analyzing log files"
   homepage "https://lnav.org/"
-  url "https://ghfast.top/https://github.com/tstack/lnav/releases/download/v0.13.2/lnav-0.13.2.tar.gz"
-  sha256 "2b40158e36aafce780075e05419924faf8dd99d1c0d4ae25a15b00bc944f4d60"
+  url "https://ghfast.top/https://github.com/tstack/lnav/releases/download/v0.14.0/lnav-0.14.0.tar.gz"
+  sha256 "0fd591a2e0488a06b3b44d7b384d3d7c6852d68607efc16ef4dec7a6ed054eea"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,13 +11,12 @@ class Lnav < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "46095011327647eac507bcbae0974cee22f854fe5976150754d49080e81fd55a"
-    sha256 cellar: :any,                 arm64_sequoia: "945ceeaa372761b961cf7b34c64082a6a0cf3a564c732a7663b9fb2b06f73945"
-    sha256 cellar: :any,                 arm64_sonoma:  "c0c0411af0bb0c719868c7dc78043ee40459d3f7a6fd3606b0339dae73e75ec6"
-    sha256 cellar: :any,                 sonoma:        "9e7a4ea4ea60a0722141ed6ef952d2566da7487af2ff806c2373925b08700d3b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed8fd3d41e2fbcb04e08ab3ce11237f9e03de50c96df1450ab85f7cffb111f7c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae07d7f453c2bc9cd51abf4b11558c30216c2faaf0409c9f33700d0439b79db6"
+    sha256 cellar: :any,                 arm64_tahoe:   "0734c28ac29d9c1c9105f83fc8089c7a611abc3c9363f6f43d720cc2f4fe8d7c"
+    sha256 cellar: :any,                 arm64_sequoia: "bde37fd78c8db1a3a69a9bb5eaa2218b75ea130bb67303e9f67eff3666123199"
+    sha256 cellar: :any,                 arm64_sonoma:  "aed48c97b6665f786f5ab5691e92aff8d0be62da9bff62301fa48a39e05aab82"
+    sha256 cellar: :any,                 sonoma:        "fad8a10875f7181c826994ddcb4c08d21e4d4581178060b1b24756728940ef3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "711760343dc3a37c61950a2c67ba418f6da61e9e0c9b52f6c478e186895d41c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52adf18fb91dea662e9a75b78ad5d7041efa98864d00198ea61052b131f6fc1f"
   end
 
   head do
