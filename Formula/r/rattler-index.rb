@@ -1,8 +1,8 @@
 class RattlerIndex < Formula
   desc "Index conda channels using rattler"
   homepage "https://github.com/conda/rattler"
-  url "https://ghfast.top/https://github.com/conda/rattler/archive/refs/tags/rattler_index-v0.27.22.tar.gz"
-  sha256 "d3dc1b64dcd081abf68e0d900d91818fd5063b1ff392d2f62bd64680456381d2"
+  url "https://ghfast.top/https://github.com/conda/rattler/archive/refs/tags/rattler_index-v0.27.23.tar.gz"
+  sha256 "4e3d8180eaeb2a4242757be6b2937655cb9027dfb347ef79562bd6e9496e6e1d"
   license "BSD-3-Clause"
   head "https://github.com/conda/rattler.git", branch: "main"
 
@@ -12,12 +12,12 @@ class RattlerIndex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a6864c487e9069caba05015b48b544820e7befe8d0051f19dd538cd22961d5d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "907752908160a42f94ce0538d1c7b88d2bed444ca5cd4b6200bba70e5e57301f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c83dd7b80fb73c9a406199768afdc5c65088ce8e0cb9a6d0e3fd3c53c7eed6e5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ca252859c44478fe377dbcadd783a548980069140f1518a66e9aa11ce580bfd3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b8eac7271218fabcace3e564fd2e32569ef3b1e8392f8536a0084433cbee07f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9e03c35ef3913ef2ac1136bd478091fff8e95c4abd8efcebf7d5c5d9b876eaf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f4dea89fd6e979ed5e339ef8151d5250cb1271cad296c6b4e569331cc5e30719"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bde10a33b3854dfcc10605ebb1f841b52eb4a1c3482a02571c7ae9f4a4f9cc72"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b5d1c068c736748138eccd5b8ec7bd347ec3d7a0342545bfb9a68b639aaceb9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4a9c6f0c39b31bfbdc3fc926d558acadd85edfa6b0e6b0aa3559d20640430f83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0188ae5992bda8d6d2187cb21f50efe3748c43a0b640faa5fb112d9f3bf4c4f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "863c0661cfc199ee8b94527a734e73feac37ffda5c803905f43db8ce2f462853"
   end
 
   depends_on "pkgconf" => :build

@@ -4,7 +4,7 @@ class Node < Formula
   url "https://registry.npmmirror.com/-/binary/node/v25.9.0/node-v25.9.0.tar.xz"
   sha256 "8f78af3ee55fb278668b5f801db58bd1a38ea161318eb5ce2128ddbc9cd813aa"
   license "MIT"
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Node < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "14064395ca2b9af98bdf6d5cf1189e3a5cd99db368d4d22e185ce5c7d7d10827"
-    sha256 cellar: :any,                 arm64_sequoia: "9d124ecee37a843304b39f597721cec387a7d69b21c43aaa91aecce9f264489f"
-    sha256 cellar: :any,                 arm64_sonoma:  "254b53ee990c76cb384cbb303360d9653b3d499156ffa3341b42538e7ca9de4c"
-    sha256 cellar: :any,                 sonoma:        "10702cf6a92bd12ba84c62173964308e8c98e4c8697b47b0f7a12b67895b3956"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a0c1bd349242c9708d0d940aaf12ae5fbbd8f89e8cdc5d06782b98b96041397"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29db02b2c6038a347b1c208bfaf3b8b98a21911c99872dfc64b99e435b2317dd"
+    sha256 cellar: :any,                 arm64_tahoe:   "3432dd22a4f6bb6b6a2decdaa6e39f980518120106b25e8f9032c92e97380938"
+    sha256 cellar: :any,                 arm64_sequoia: "8c3fb7faffdab909f18ecd255cd7ec63d0fd874d48285f40b4e09ef472140f71"
+    sha256 cellar: :any,                 arm64_sonoma:  "c384fef61921d8e3af26fc67231bbf581ffe176de2e5ecef42c4ea66ba2bf1a5"
+    sha256 cellar: :any,                 sonoma:        "492d9823b1e958a334d664b9694a02d2e2087280d248c398284d75787cdf8733"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "21c9e2e7f8fb82c2764cddf862baf49e5c86e7483b30902186e63f1f8aa77bbc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "863422cefaae72ab333d662a64a39e81b97a00065c9bc0e7a460b1b16e010a1b"
   end
 
   depends_on "pkgconf" => :build
@@ -34,6 +34,8 @@ class Node < Formula
   depends_on "libngtcp2"
   depends_on "libuv"
   depends_on "llhttp"
+  depends_on "merve"
+  depends_on "nbytes"
   depends_on "openssl@3"
   depends_on "simdjson"
   depends_on "sqlite" # Fails with macOS sqlite.
@@ -115,6 +117,8 @@ class Node < Formula
       "hdr-histogram" => ["histogram",       "hdrhistogram_c"],
       "http-parser"   => ["llhttp",          "llhttp"],
       "libuv"         => ["uv",              "libuv"],
+      "merve"         => ["merve",           "merve"],
+      "nbytes"        => ["nbytes",          "nbytes"],
       "nghttp2"       => ["nghttp2",         "libnghttp2"],
       "nghttp3"       => ["ngtcp2/nghttp3",  "libnghttp3"],
       "ngtcp2"        => ["ngtcp2",          "libngtcp2"],
@@ -135,15 +139,11 @@ class Node < Formula
 
     # TODO: Try to devendor these libraries.
     # - `--shared-gtest` is only used for building the test suite, which we don't run here.
-    # - `--shared-merve` is not available as dependency in Homebrew.
-    # - `--shared-nbytes` is not available as dependency in Homebrew.
     # - `--shared-simdutf` seems to result in build failures.
     # - `--shared-temporal_capi` is only used when building with `--v8-enable-temporal-support`
     # - `--shared-lief` is not available as dependency in Homebrew.
     ignored_shared_flags = %w[
       gtest
-      merve
-      nbytes
       simdutf
       temporal_capi
       lief

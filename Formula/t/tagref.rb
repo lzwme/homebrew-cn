@@ -1,17 +1,17 @@
 class Tagref < Formula
   desc "Refer to other locations in your codebase"
   homepage "https://github.com/stepchowfun/tagref"
-  url "https://ghfast.top/https://github.com/stepchowfun/tagref/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "a5172df6b7e3c943d9c805ffd31ec4b00d226c34c989b9c3cefe29eb0499361c"
+  url "https://ghfast.top/https://github.com/stepchowfun/tagref/archive/refs/tags/v1.12.1.tar.gz"
+  sha256 "3d0017911afb6d9b887444c6da32f1642ad4046b4098af3d412fae1b58fece8c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f1c5fd2add90743d9c53c225acd316dad04e486e73576f10d4b18696d24cc6c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96b4a153bf74f88b345e0b00301c445e6980247ae734f394339fae362a30b996"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cce149fc158f24678b2736d3b82d1cdcfc88dbcdd0d7929730ad21bf6af7d640"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f4ff33ae056da1a427c596d6b2f4471f88a87821965eb968fd8b493a0133ed7e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "58d3b926d2c486a71ad0b37117bddaa4fc6c3742f36868668cc8a3b300e8fb36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "377d80c5354130daaee0ce3cb649f69b007c73a40cf032983cb9c8775e5e623b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd2cf5d505804dcc7c87391c136ca3427f9b425a2893a6eec1106d316e2d2257"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b9da9b70cb41294edb6aa01f93ebd3fe60c55b92c1c27b169b477f23622a0e4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fda41c0c9e8ab44b84a739ccfca6988dde0e79b1e0e1eeabe198056cdf781c79"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1b3d31a89ce136aa4d439da6ee58b707d94e197443aab0910410a902ff0c5321"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc3d2ef9a8a1e2660dee7638329c0247b7cf6231875e4d83e7a3bc1f2f5dc162"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0d200fb78fd990e680ab7cbcd0e67745094bad5e3e062d26be4aef65cf838db"
   end
 
   depends_on "rust" => :build

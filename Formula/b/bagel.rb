@@ -1,18 +1,18 @@
 class Bagel < Formula
   desc "CLI to audit posture and evaluate compromise blast radius"
   homepage "https://boostsecurityio.github.io/bagel/"
-  url "https://ghfast.top/https://github.com/boostsecurityio/bagel/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "08ba311938a567f582d9ee075645d333e1d315e09af706aeaf5efc0af8b888e5"
+  url "https://ghfast.top/https://github.com/boostsecurityio/bagel/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "e9303999c5a3e7af03d935f10737cde5680f74572843ed75eea3e9f8534bf2d5"
   license "GPL-3.0-or-later"
   head "https://github.com/boostsecurityio/bagel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "11d59fc62ceb292573b7697f19ef46e10f8ec195f8c4af312d18ae67b2d68709"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11d59fc62ceb292573b7697f19ef46e10f8ec195f8c4af312d18ae67b2d68709"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11d59fc62ceb292573b7697f19ef46e10f8ec195f8c4af312d18ae67b2d68709"
-    sha256 cellar: :any_skip_relocation, sonoma:        "562cbba57f84b9154b0e826285ae40e7a9c19708c88f5ebbb65946d056cf9ff4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13876d13a0037e92289869c269586a0f20bb7fd6c3612b4093e4085565947238"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f38c36a43b143646f10e408223b3fd05477afa35cf48595d0a6a3a3c803b75c8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8c1ba8bc9581da129554e65461522d8cfa4c683ec2908108f9c5c05d343bbb9e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c1ba8bc9581da129554e65461522d8cfa4c683ec2908108f9c5c05d343bbb9e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c1ba8bc9581da129554e65461522d8cfa4c683ec2908108f9c5c05d343bbb9e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9f25b85b9d4d05d0c4f7793be9fff148fde903c55880108decbc738b50fd3dc5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e56f6a309dc858c1d4973a3e1e4d1fe3ebb2b1540649fdb30781a7ffea1ddc6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9fa06a753cae53fa59aa45b324e070422530f72b3f0473f454c16e8b4fe8a53"
   end
 
   depends_on "go" => :build

@@ -1,19 +1,18 @@
 class Aoe < Formula
   desc "Terminal session manager for AI coding agents"
   homepage "https://github.com/njbrake/agent-of-empires"
-  url "https://ghfast.top/https://github.com/njbrake/agent-of-empires/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "f3179f625264f80ba86e46be6c7303717067430b3a144ac05cf7def726dc5098"
+  url "https://ghfast.top/https://github.com/njbrake/agent-of-empires/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "55bb99e79d438643795e841bcffec7bb5dc84639bdb62842db0e1ddd40e17951"
   license "MIT"
   head "https://github.com/njbrake/agent-of-empires.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "fe0900b74c1e27d6b24dce854a1c62f7ae85832075314f8d2afa770e2ced4b4c"
-    sha256 cellar: :any,                 arm64_sequoia: "7dc0f5e559238bf8591349ae6d38d8f2237927668fd7686967543d615e02741f"
-    sha256 cellar: :any,                 arm64_sonoma:  "e95ba46ad49cda11a1f870f649457cc99b17116cae3a8fcfbc3dc1370fcda8ea"
-    sha256 cellar: :any,                 sonoma:        "575fcea748d5cde43d9a3a1ec98a49bacd89303cce43034eb8850a048f87d3f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b7fc8f8bbd11044dc9a0d964d744516c0c1b26a737be93ed240ee0f779cf983"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31aa2fe72a99db65237104460835cddf816943b10cd66df2d080b2475ce0b964"
+    sha256 cellar: :any,                 arm64_tahoe:   "ea36a7ecded69e787027a765ccb54130c3aa312e7071369a8fcb06fe3e04411e"
+    sha256 cellar: :any,                 arm64_sequoia: "d11dd61f996be926c95e8bf2f221ea8ecef3849dd4ea73ebfdbf11ee84efd9db"
+    sha256 cellar: :any,                 arm64_sonoma:  "d5c296ed8eaabca0eb203a7d3e418b885f0b6526f8a9eb260e5f471cb1584f75"
+    sha256 cellar: :any,                 sonoma:        "59262c6dc235ae57a5f07d1b108753376a86bb7e740853570a3e56d00557f590"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad0c40c059ef6159ee6e8bdd8093b5da97f97ed36a32cf846a53e2d6bf259231"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e3e2b1d2ca32b048c1c535f838238ec598ad2774836149a68a3cc1918621a06"
   end
 
   depends_on "pkgconf" => :build

@@ -3,12 +3,12 @@ class Fobis < Formula
 
   desc "KISS build tool for automatically building modern Fortran projects"
   homepage "https://github.com/szaghi/FoBiS"
-  url "https://files.pythonhosted.org/packages/7e/a2/6b9bada9c6f0c045a102cba968831e790d72a7da58eac16495698706b82c/fobis_py-3.7.10.tar.gz"
-  sha256 "c8615a588354738dc3f57d36c9383f1901f8bc16a6b821b7beb431cc00a721c5"
+  url "https://files.pythonhosted.org/packages/70/5c/af98e7c9710610bab7663dbd065a161c78a9aa0dc059a0c8084447b7c7e1/fobis_py-3.8.0.tar.gz"
+  sha256 "9a180fb5ba7d764d0c4652125369293656bb2b2cf05b20e4d369372cdbbb2710"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3095eb000707d842ce0b146582c68d52c1f6ddb9ea43af677f1cc5e2455adf2b"
+    sha256 cellar: :any_skip_relocation, all: "63bcd96cd2b83c7c79b308f68f607d71515805caa5b4408fc509138e1c47cd71"
   end
 
   depends_on "gcc" # for gfortran
@@ -41,8 +41,8 @@ class Fobis < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
-    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
+    url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
+    sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
   end
 
   resource "shellingham" do

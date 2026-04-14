@@ -1,18 +1,18 @@
 class Regclient < Formula
   desc "Docker and OCI Registry Client in Go and tooling using those libraries"
   homepage "https://regclient.org/"
-  url "https://ghfast.top/https://github.com/regclient/regclient/archive/refs/tags/v0.11.2.tar.gz"
-  sha256 "f09ccd1a9e9872cc3bff957a4a54729643f0869491932d2a074c2974f8e2cb70"
+  url "https://ghfast.top/https://github.com/regclient/regclient/archive/refs/tags/v0.11.3.tar.gz"
+  sha256 "7d0e0655eed36269980db8df1ac6db30281e99f5bfd5ee6b498b4925cd1667b0"
   license "Apache-2.0"
   head "https://github.com/regclient/regclient.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f3f7e04ff5eb537bbacaa2703e1a3cb382a7ed48ea3e1fbd447617a1585d271"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f3f7e04ff5eb537bbacaa2703e1a3cb382a7ed48ea3e1fbd447617a1585d271"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f3f7e04ff5eb537bbacaa2703e1a3cb382a7ed48ea3e1fbd447617a1585d271"
-    sha256 cellar: :any_skip_relocation, sonoma:        "44c276d25723f17b1043a7e269dccbd78dfd47ba8c8672e318e47037054377a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "106b558c014ede4a167f553ab592286cd6e95bae0795d8c9a6c7cebca9130770"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9f83a6ed6a56a2015323d437a95039d23f1f8c8f6a34f88451c67e8cd5d4cd0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8dc623e0d8b965a773fa77531f0daeb06266243fca2e580cf54835f22525b3e5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8dc623e0d8b965a773fa77531f0daeb06266243fca2e580cf54835f22525b3e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8dc623e0d8b965a773fa77531f0daeb06266243fca2e580cf54835f22525b3e5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e3354f01847660af903a2b918dbca97c569c5d4284d7bce815c6175c8ae3b3ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db4eac9c60a922d26dde0acaef1b0564f9942080e7e981224ad99619807787af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dff60c6aada583ffdcf62f4139b51ddf8f1a70d8aec5479497a49cedce04d523"
   end
 
   depends_on "go" => :build

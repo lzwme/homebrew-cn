@@ -1,18 +1,18 @@
 class Cloudfox < Formula
   desc "Automating situational awareness for cloud penetration tests"
   homepage "https://github.com/BishopFox/cloudfox"
-  url "https://ghfast.top/https://github.com/BishopFox/cloudfox/archive/refs/tags/v2.0.2.tar.gz"
-  sha256 "d2257c94f4134556a8219e6a8f92d39b5320a970ebde0272f0df43c92449ce73"
+  url "https://ghfast.top/https://github.com/BishopFox/cloudfox/archive/refs/tags/v2.0.3.tar.gz"
+  sha256 "f49faffd25a44060a8a58239bc1582d026eceda51a1718e4904d5bf0a77965a6"
   license "MIT"
   head "https://github.com/BishopFox/cloudfox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31de97d1e6757af0901510564b04c91997bb910a794fc28a9c45d9922b6124f0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31de97d1e6757af0901510564b04c91997bb910a794fc28a9c45d9922b6124f0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31de97d1e6757af0901510564b04c91997bb910a794fc28a9c45d9922b6124f0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "33845a2849503c6f19fca7add1a3b6a2ca0ea7df83b8670f585659a6890bec98"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad4a7386afef03242dfa2ff49eabf4f4928f48c1b2aa3380e50fd2679a4d1213"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "672afdb40aad5e6c235576b5953eeaadd74e576cac2d9d091f82d1a24c4ca15a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed74902a6b0ad21e0ff7bfa52eba8cc8d75f3cb3579a8b7aab03088001491ac1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed74902a6b0ad21e0ff7bfa52eba8cc8d75f3cb3579a8b7aab03088001491ac1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed74902a6b0ad21e0ff7bfa52eba8cc8d75f3cb3579a8b7aab03088001491ac1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9adafa2b68496bcd00308e0e9bdae633d6d2ef2e511be995c055fef98a841e78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a20ea1e8c3b9dda31ada82f85112f9bfde6e2dacba7b073213c3db003439598"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4047a590db3d10b4f4293f09c96a2e810896f699223d0187a2e2cfe011581e0e"
   end
 
   depends_on "go" => :build

@@ -1,18 +1,18 @@
 class Mmdbctl < Formula
   desc "MMDB file management CLI supporting various operations on MMDB database files"
   homepage "https://github.com/ipinfo/mmdbctl"
-  url "https://ghfast.top/https://github.com/ipinfo/mmdbctl/archive/refs/tags/mmdbctl-1.4.9.tar.gz"
-  sha256 "845f758c4be7508224093f4522d3b8932e23c1fa455b58266404c59c2e746772"
+  url "https://ghfast.top/https://github.com/ipinfo/mmdbctl/archive/refs/tags/mmdbctl-1.4.10.tar.gz"
+  sha256 "1588afaabface10b05a27e624b35a4113a19bd5888747fcc8505ca21b8d44149"
   license "Apache-2.0"
   head "https://github.com/ipinfo/mmdbctl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6f123304964fb7e0074e1da3e336386015519f4e6adb28a99fcc42e4a1871507"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f123304964fb7e0074e1da3e336386015519f4e6adb28a99fcc42e4a1871507"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f123304964fb7e0074e1da3e336386015519f4e6adb28a99fcc42e4a1871507"
-    sha256 cellar: :any_skip_relocation, sonoma:        "94af123d96f44ede7b93c166b0e699120481c78c1c078bbcc6d9dd21f892dc97"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aafb02ec3b697ca40e60a5570cfc0da2d5a2524b8a7e3d370683ac3393c9bf73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "adcfcae53e37bc3eb641386e18116cdc367c5b00a735d01ac603459491e41963"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7dedc0c03e9c296fab2820798814ad936a3e5f324652ebef365cccc2655cce9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7dedc0c03e9c296fab2820798814ad936a3e5f324652ebef365cccc2655cce9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7dedc0c03e9c296fab2820798814ad936a3e5f324652ebef365cccc2655cce9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "35fe73d2a1e19b6da5f20c9ff0e85fdbc2e0ad706372e769aea0afdac4eb63cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "efae1a85d5e64015e9b17a6d9054f63596b4b4eed2e9dfa999874f42148f82f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60f326af4ab45e42920dc85ddbc4693d13f01047d675bdfad0415cccecbd5290"
   end
 
   depends_on "go" => :build

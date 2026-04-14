@@ -1,8 +1,8 @@
 class Moon < Formula
   desc "Task runner and repo management tool for the web ecosystem, written in Rust"
   homepage "https://moonrepo.dev/moon"
-  url "https://ghfast.top/https://github.com/moonrepo/moon/archive/refs/tags/v2.1.4.tar.gz"
-  sha256 "f82a4bbfb3012b4d0bddd3b29d7e343e2b8fa96fbbdf125d1379623c6091269f"
+  url "https://ghfast.top/https://github.com/moonrepo/moon/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "db230be91fa6b7bfd34c9b6a4f438fd62862c1c18e8bf089798694ea7badfa82"
   license "MIT"
   head "https://github.com/moonrepo/moon.git", branch: "master"
 
@@ -12,15 +12,16 @@ class Moon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "46fd10d6dc7f7cfdd05334c17d14bcc0e3ec7f17cd042461df487c81b22cec7c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "464c2a34a92efe6b902285709383d71c78503a308642f25d79dc58e3c6bc0683"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2c257570096a901d44b966ebbd1e436ccc2b3992731514db0cbcac422ce5ee4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "12ac863e68b7d3e1a19bdb4343a687b446e2209abbe83b2f4556199268f872e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0978ae3304e9971a672ee803949a77dee7a05e4b1338b9e6de42ba3852fbc2ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a95c7e5f0ef82da24a8d49424b7533ba8946390b5a614a9373a1286d8536203"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b1d1cfaa07ed07e96c40d7a1c800a7a9d22862e418e44cfce7c316db23b5c59"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f6613ed3402e256c01132ba2fb6729942fc0732c6e0b20a8ddad08c8e03e410"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72b66cf9c4c2a01c463289e1e73acfbf3c641a46e3d9fd8146049d42039d269f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a2cd1d9825b0d884a3d0e691f0e8bebc345bd2193042a73e0daf1c3ce440b213"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "96efab7d129313ac8cf43788d5e55e066fb5c93a2ef691a24e70e899126462c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "511551488286dc45b01d80cdb0a7639eb9a1b04ce7e908a5a3422d779adaa897"
   end
 
   depends_on "pkgconf" => :build
+  depends_on "protobuf" => :build
   depends_on "rust" => :build
 
   uses_from_macos "bzip2"

@@ -1,8 +1,8 @@
 class CloudfoundryCli < Formula
   desc "Official command-line client for Cloud Foundry"
   homepage "https://docs.cloudfoundry.org/cf-cli"
-  url "https://ghfast.top/https://github.com/cloudfoundry/cli/archive/refs/tags/v8.18.0.tar.gz"
-  sha256 "33cbaa5b45f3cba52ed7842a84fd1c462de4fa334f6e09929eb0c7b4420f7d2e"
+  url "https://ghfast.top/https://github.com/cloudfoundry/cli/archive/refs/tags/v8.18.2.tar.gz"
+  sha256 "24cc28199b9f86806e67bdeb812840e4221da2fc283cb120eef726f08a38e3b6"
   license "Apache-2.0"
   head "https://github.com/cloudfoundry/cli.git", branch: "main"
 
@@ -12,12 +12,12 @@ class CloudfoundryCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b61decccbf35024e3257bc139377ff3a310cc0eac449200bca9ce662697591d9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b61decccbf35024e3257bc139377ff3a310cc0eac449200bca9ce662697591d9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b61decccbf35024e3257bc139377ff3a310cc0eac449200bca9ce662697591d9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b487d3d8ed11eaca1defe7c3151ad7352812b6f1fef8cef09c34387f99f12344"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "87092cf4cf85b8264f6d0767a0dc0cebfb69a33f4eb06ddcffbf4d639e1a0616"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b139461c0739a4b9c0ec054df2bbce366f88887c40e7182e0c01a8ae3910d208"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7aa18ec2058053b495ae9fc08983af2ee30644e54fdbbb100e2ec3cd2d597903"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7aa18ec2058053b495ae9fc08983af2ee30644e54fdbbb100e2ec3cd2d597903"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7aa18ec2058053b495ae9fc08983af2ee30644e54fdbbb100e2ec3cd2d597903"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ea4bcc50a95b07de561da7db156f7d24edc957b56e94dff82b00852c245f058e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "710a2e77b245c6cbc3b4d9878a9fca1d5b769bfa712d4a4c68286a45c19f4f6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4310b765917ab7e875247ef32d1768e90e9f7bd297a23e61bee3fa3accff0d42"
   end
 
   depends_on "go" => :build

@@ -1,6 +1,6 @@
 class Scmpuff < Formula
-  desc "Adds numbered shortcuts for common git commands"
-  homepage "https://mroth.github.io/scmpuff/"
+  desc "Numeric file selection shortcuts for common git commands"
+  homepage "https://github.com/mroth/scmpuff"
   url "https://ghfast.top/https://github.com/mroth/scmpuff/archive/refs/tags/v0.6.3.tar.gz"
   sha256 "6a889718563dd3fbcccb49684acb628a9d3edb1f0e00dcb66502e2ee76c69f60"
   license "MIT"

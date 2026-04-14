@@ -1,19 +1,19 @@
 class Libmicrohttpd < Formula
   desc "Light HTTP/1.1 server library"
   homepage "https://www.gnu.org/software/libmicrohttpd/"
-  url "https://ftpmirror.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.3.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.3.tar.gz"
-  sha256 "7816b57aae199cf5c3645e8770e1be5f0a4dfafbcb24b3772173dc4ee634126a"
+  url "https://ftpmirror.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.4.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.4.tar.gz"
+  sha256 "d72e5cfccd62bf2f79252edbc3828eeedc088ce71fc47b7c9e3bd7246b3d54de"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c99ef29c0b7e82e3bb78ba9fdbc10d1e17cbd15ed8a7f198aedbddd7eab2edec"
-    sha256 cellar: :any,                 arm64_sequoia: "f5d2524db452325a6cafd07aab7c30041d06f1ce1818055bd0c0ffeddc73fb3b"
-    sha256 cellar: :any,                 arm64_sonoma:  "bc7e05326141087cfcaac52829ea3d3f7047352214fb0b5c133d60c2d9963d48"
-    sha256 cellar: :any,                 sonoma:        "a7efe951ddcc357cd561ced17193f8d9281eefa4b4073d7ee84b02933e6df25a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "92e0016dfa1d0594197957ab4b8c0d2f3c81317b3b12692236bae79e0e6ecb1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19c7c153e4ec5ddb2fe2c7ab497eaba55bf8283bb644aba958aae81ea9112e60"
+    sha256 cellar: :any,                 arm64_tahoe:   "4175ff8a54eb307571e35dbf18da6efe603961beae455f483209ddd4ee3f1b9f"
+    sha256 cellar: :any,                 arm64_sequoia: "0c4a4f16c64a6805656e0fe96a64b17da7f9343532b6b4a5d90cf096d96d469f"
+    sha256 cellar: :any,                 arm64_sonoma:  "d8365a3642d2f84fdf31e18a786ddcdb6a9dc8dbb3b6263e9b594a72e177df7d"
+    sha256 cellar: :any,                 sonoma:        "424a0be1ca6fa82d759e6b59a0098f605985bd6ef159fda700c0982c005c7845"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8243509f68af182b9305089b85a03590425191bf9cd35a72947e9d3012e9c843"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "114529a27653970bae292edbab4139249bf59de6272a7af545dbd218fcfcb7f7"
   end
 
   depends_on "gnutls"

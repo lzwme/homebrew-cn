@@ -1,8 +1,8 @@
 class Supabase < Formula
   desc "Open source Firebase alternative"
   homepage "https://supabase.com/docs/reference/cli/about"
-  url "https://ghfast.top/https://github.com/supabase/cli/archive/refs/tags/v2.84.2.tar.gz"
-  sha256 "4eefac9d0abd093fa35035013da4abddc0914c1c74c1a3ea46bdd4ac108b12f3"
+  url "https://ghfast.top/https://github.com/supabase/cli/archive/refs/tags/v2.90.0.tar.gz"
+  sha256 "74631c8f0ecd88c92e04055bf6fd96862ce47f9e0561dd630565f7c0d1a46d40"
   license "MIT"
   head "https://github.com/supabase/cli.git", branch: "develop"
 
@@ -12,12 +12,12 @@ class Supabase < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ca3446743bee31cb301de220c1b35a775abfecbd83616f38e0d1fe88a088d65"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58edac71eef196ce038a89c98631563fc55eea4bec9adc0dbb12237d1efd18e3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63f09dd4a93372cc9600b83a530e391b0af96b2b462a62cfa8e627bf0c2d3a30"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4ad32dac373ef53c4f9d4f80b820ef73a7c6f5a135fb9919f33cd773dd119bcf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ca906566cbd25d97ec80e3b95c67423c1d849540a4fc8da381a15df20343e0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f5b84dd38613667fa5505ec7ca9d7f4bc49ae475df7f3536ad6919415ab65d0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4fe61df643b7cf7ee8d08495a3b54833bc8e495b8a8b006344b50424696ec312"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dac833b319fffedfd4cdb818622d23fa2ed59374f0937c90c1b2a803d688ef27"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "672117b2a0fc2aaba5e9d35e18c38a91ab8395fae7b7309002ad8e5c49afa77a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "984ce7ef2dd0b783cd1bafc0b393ba8ae1494ba896abf0ad817bf29c011a5280"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a696c520fb8a9e830ff4659ef1ba4d0469524667136f77a313697b4991b2db6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e0c3a6542d1ddabaeb16e62143fcb9ed5ef14102457289f59373dfacea66b9f"
   end
 
   depends_on "go" => :build

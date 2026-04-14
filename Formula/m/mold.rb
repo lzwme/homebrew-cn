@@ -1,8 +1,8 @@
 class Mold < Formula
   desc "Modern Linker"
   homepage "https://github.com/rui314/mold"
-  url "https://ghfast.top/https://github.com/rui314/mold/archive/refs/tags/v2.40.4.tar.gz"
-  sha256 "69414c702ec1084e1fa8ca16da24f167f549e5e11e9ecd5d70a8dcda6f08c249"
+  url "https://ghfast.top/https://github.com/rui314/mold/archive/refs/tags/v2.41.0.tar.gz"
+  sha256 "0a61abac85d818437b425df856822e9d6e9982baeae5a93bcb02fe6c0060c61a"
   license "MIT"
   head "https://github.com/rui314/mold.git", branch: "main"
 
@@ -15,13 +15,12 @@ class Mold < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "5733b66bbcb80581733ce9c5b890d920ece84dd8fbf19416ca3565f6ea6de0be"
-    sha256 cellar: :any,                 arm64_sequoia: "2ebfecf9ccf2c38f4f4ef592f0c3e7c0a2823732c0832f9b52916e3a57453005"
-    sha256 cellar: :any,                 arm64_sonoma:  "cb22350cbe464777f397ee4ea99aa05c52b506b11ae6271ebbb11b72d22ed0c3"
-    sha256 cellar: :any,                 sonoma:        "d68d8c192b9d685abb2260d42ad117cc2aa0aa35ede04b6a33435e5c18af899a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0e5fe128a94e3665ae2423743f9fc0cdcf775cb21b021c1ca4379910a645eed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0a3edd10d03ae3340bcb0e13cff3a55e2a59e0d0f4c2c6ecf7eeec41ce2e3c3"
+    sha256 cellar: :any,                 arm64_tahoe:   "35d236bd637fc1d244b9fc57d4813829dfa9013148d7fe0f42a829fcf0e99637"
+    sha256 cellar: :any,                 arm64_sequoia: "6b55e967cf616f017ed6b8a518783d65714f9b70a21b9289f2f49f2bc4e95876"
+    sha256 cellar: :any,                 arm64_sonoma:  "87addb4013852f6523584023085f3541402234ab13cb58c893edfbafbe93875b"
+    sha256 cellar: :any,                 sonoma:        "df2b0b7c591195a19e68244ddee0c6e0d50a51c5fc6ada23d06c51468b8e2531"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23bce5ee171d327c402a9d42937ad6cc682e2bcee3ee658305b552a04d3ea1a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aeffa1693a6e26ffc350c89c46c7e19b60170f691293b35c362be433c0488373"
   end
 
   depends_on "cmake" => :build

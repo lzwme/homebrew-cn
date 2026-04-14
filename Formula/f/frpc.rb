@@ -1,18 +1,18 @@
 class Frpc < Formula
   desc "Client app of fast reverse proxy to expose a local server to the internet"
   homepage "https://github.com/fatedier/frp"
-  url "https://ghfast.top/https://github.com/fatedier/frp/archive/refs/tags/v0.68.0.tar.gz"
-  sha256 "f7678f5c9d3934687976e493a8c5ce9e0d6da39fdea4c7a2fa03a2c289866ac3"
+  url "https://ghfast.top/https://github.com/fatedier/frp/archive/refs/tags/v0.68.1.tar.gz"
+  sha256 "44ed7107bf35e4f68dc0e77cd5805102effa5301528b89ee5ab0ab379088edc6"
   license "Apache-2.0"
   head "https://github.com/fatedier/frp.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e7db3aff858d6b7db7dae3467ef64a233a4d237628638249cff3375651195b5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e7db3aff858d6b7db7dae3467ef64a233a4d237628638249cff3375651195b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e7db3aff858d6b7db7dae3467ef64a233a4d237628638249cff3375651195b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "90981888a6db2c5c2634fb89d889052eca39ef5ee7de43503d001962a9263da0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "776601b1dc90e71606f6ca2a9486a486a6fc43683987bebb3d84687a2943ede3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f509935c306129120f26e4967f7a66eb2801945cbe51fd4247c91465731dac3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f94f8c3a1465dbd7a77edd66358c04d2b52765a8270fa8f5f06666f2db59588"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f94f8c3a1465dbd7a77edd66358c04d2b52765a8270fa8f5f06666f2db59588"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f94f8c3a1465dbd7a77edd66358c04d2b52765a8270fa8f5f06666f2db59588"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4feda721eff970c8ed30c1d5223030081cde00deea66d7deb79d3ed6a13999c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57c82e126ddd08e0c14e85e2feea0c029f8b4d5ea9fedc88a814a7df910d8557"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2deb617e133480817d062db71ace6641e03178f34a229c004e86a6a2f03e25f"
   end
 
   depends_on "go" => :build

@@ -1,18 +1,18 @@
 class Nextdns < Formula
   desc "CLI for NextDNS's DNS-over-HTTPS (DoH)"
   homepage "https://nextdns.io"
-  url "https://ghfast.top/https://github.com/nextdns/nextdns/archive/refs/tags/v1.47.1.tar.gz"
-  sha256 "3356b283a8eeb675efee8163854c83c65d1dbb7743bac04db696751290f8ee64"
+  url "https://ghfast.top/https://github.com/nextdns/nextdns/archive/refs/tags/v1.47.2.tar.gz"
+  sha256 "d4a57f07f51a58ab57f8ff872678fc81be76c3985011ef0960b156df361ea44a"
   license "MIT"
   head "https://github.com/nextdns/nextdns.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42b9ae4eab445ad25eadd9f211bee8e3933e17cf25057ae73c9ce2fba4927a90"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1deb8eb5df9c2adca09b2370283fd0fb1b25479df9ee7e5a74519479bb9f1984"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5535b2daa84051caa7707687be529ba88adc23c178cd4788b2cf1abbff32b063"
-    sha256 cellar: :any_skip_relocation, sonoma:        "334796163a459547e92494904446e807f6be8e914dd2326998f376fef0cbc5b0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "049a091172de82955386167851938838c48ab61e57dc2b5ae89135a3e9b52589"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3d3979d0fef14e2c70d334dfe867f5ca6ec4bc10ddc6262ab5564cfdf65d781"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9067118923db2bbc4f2c6baa1ea08000edfaf40b5a0c21454447399548692573"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b450a22a7194c214ff848aeb912cc709c91f12667e7f9c012c92fe91c0f7fbe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a3573e6395f91968574ea4da04309ab318e666eef01219cc11151949e824d13a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c82954d9507e2e1d207aeaed0b0a9ad91263976e72cae770add75d157de5a844"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f186bcf1752c104ca78daea2a08553b7ab51a4f32a3d518daa13af6045906e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c873eb0bcd6b577353898d499c1eab28e520483d1445e5a8ca351034b0e3a73c"
   end
 
   depends_on "go" => :build

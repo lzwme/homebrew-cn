@@ -1,8 +1,8 @@
 class Giflib < Formula
   desc "Library and utilities for processing GIFs"
   homepage "https://giflib.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/giflib/giflib-6.x/giflib-6.1.2.tar.gz"
-  sha256 "2421abb54f5906b14965d28a278fb49e1ec9fe5ebbc56244dd012383a973d5c0"
+  url "https://downloads.sourceforge.net/project/giflib/giflib-6.x/giflib-6.1.3.tar.gz"
+  sha256 "b65b66b99f0424b93525f987386f22fc5efb9da2bfc92ad4a532249aaffbab0e"
   license "MIT"
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class Giflib < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "47c053a47ffdb60efe8a86e42f3ebfd0790630c8e209c76abbc1301aea7af33b"
-    sha256 cellar: :any,                 arm64_sequoia: "ab9ea92328ff025c3c50a2f5be370d2cd970fe31b746417a9bae99fa038e6a46"
-    sha256 cellar: :any,                 arm64_sonoma:  "3046550c4e6e7525239c20798fb090acf521361134224ccee4f24dce975b28df"
-    sha256 cellar: :any,                 sonoma:        "01044b2d4051eeeb8acc4ae16f017b74df7adc0fdfd77d9d1f3d8b3b5e97bc5c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fcdfe49c9fb632dbcf4ffe4a6adbe98f19e7d36410a6ab398746a6b29c29934"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6756c7d0bd5d9c0a3437288e4bd78cd1f05c4e13b27d17bdb4f5242dd4d8974"
+    sha256 cellar: :any,                 arm64_tahoe:   "bef1f5fb654184cce8af628e3a0c222eeab3c61fcaa4ff169974b22c22f01a8c"
+    sha256 cellar: :any,                 arm64_sequoia: "87a14dfa72601220313c1190505c7a4d0426b384a6a2d1ba3c5a36bdc784d1b0"
+    sha256 cellar: :any,                 arm64_sonoma:  "513c620b8bcf0f74370b4852fa823f1e29761b843540abfb6b9fa9cd9517994b"
+    sha256 cellar: :any,                 sonoma:        "2f33f13f237f51ac1521faa46e71338de79a6fe6c826e4f739388fac3ba510f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "88ab65a2310db6f6801c33aa8856dad4309bc61868006c9fbac62f8730b977b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e349e61810df032b3fff5eaac4f0db46dcc66580a070b5640a60482d6779bf64"
   end
 
   def install
