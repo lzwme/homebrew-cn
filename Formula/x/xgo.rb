@@ -1,8 +1,8 @@
 class Xgo < Formula
   desc "AI-native programming language that integrates software engineering"
   homepage "https://xgo.dev/"
-  url "https://ghfast.top/https://github.com/goplus/xgo/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "f77b147878140d99ea6d41e8f01287f629d44ed12fe6ed9a5477ee901fa7c0c9"
+  url "https://ghfast.top/https://github.com/goplus/xgo/archive/refs/tags/v1.7.1.tar.gz"
+  sha256 "a5a5278e9806a11d0618c5a18b704754e559ef434eebae3ea9190481d866a96f"
   license "Apache-2.0"
   head "https://github.com/goplus/xgo.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Xgo < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c24e30cafeb875ab79dddef25bf41eda8d6ec2ecaabdf9404b79981e846f9ca1"
-    sha256 arm64_sequoia: "c24e30cafeb875ab79dddef25bf41eda8d6ec2ecaabdf9404b79981e846f9ca1"
-    sha256 arm64_sonoma:  "c24e30cafeb875ab79dddef25bf41eda8d6ec2ecaabdf9404b79981e846f9ca1"
-    sha256 sonoma:        "a5c31aefba57e46587dbe415ef997b8b5c63ef3c79a1d4c9ce9e949df2db020d"
-    sha256 arm64_linux:   "5c0f933eac159d7cebfc63740c5a5d17026f6aab7446f82023160d88bdbc7883"
-    sha256 x86_64_linux:  "52edd8693fe6bf0629b000f64a86e2d066566b75c39a71249af65960f99add0c"
+    sha256 arm64_tahoe:   "3d5bc393e4cce01f458e7b254e23eb01e84634fc2c0a57238ae6f52bf73eb04c"
+    sha256 arm64_sequoia: "3d5bc393e4cce01f458e7b254e23eb01e84634fc2c0a57238ae6f52bf73eb04c"
+    sha256 arm64_sonoma:  "3d5bc393e4cce01f458e7b254e23eb01e84634fc2c0a57238ae6f52bf73eb04c"
+    sha256 sonoma:        "1f66ab14492171bd2b075e0b7d623111a82184c183ab7d77ca0885f16219b23e"
+    sha256 arm64_linux:   "1bafb97ff8e503fe065b6811aec684677e36dc2d4a2471e7152696ea6ec8bef0"
+    sha256 x86_64_linux:  "87dd24df2498716fd78e40409b4ced3d0abbb66b912c02e6c96e4cef03f374e5"
   end
 
   depends_on "go"

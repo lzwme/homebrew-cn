@@ -6,15 +6,15 @@ class Oterm < Formula
   url "https://files.pythonhosted.org/packages/37/e4/1df0729d9f86e3d52b0b0fb92e7d57eab21fd41071043ae8587252c38385/oterm-0.14.7.tar.gz"
   sha256 "eeed277840c3314aef90042a9a43e10de7fc9110212c56ad729a0b4255d356f7"
   license "MIT"
-  revision 7
+  revision 8
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b40d4af25fa37c2d3c5bdb0e986295e199b34c6bef975e497cf230f886e07b77"
-    sha256 cellar: :any,                 arm64_sequoia: "a8de459755767e18af32a7ca5d01b0965ed099bcd7d1e00a93369be98234325e"
-    sha256 cellar: :any,                 arm64_sonoma:  "6502e55532bad616d8309d3c1502a4d131033fc64a437baf0924c714a4629f9b"
-    sha256 cellar: :any,                 sonoma:        "72b9f4afcb2ec3b20e548af54bb5c77b646d4ace16797d5999b7d52a73b9436b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a57bff5fc82e25520b612887348160e2583821d22a58d510cec35d7bf61f0da9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d251afe2083a56945cfd8aa10239870380bfd6b4886e23cbbf347837baec62b"
+    sha256 cellar: :any,                 arm64_tahoe:   "33c550e1f54a6e838662746c27e6d43a94dfcfed84d181f5bfcab4e7805f3d36"
+    sha256 cellar: :any,                 arm64_sequoia: "c32689ffecc38c6e8399c3a0ba5c20f55939de498659e20aaf478bf8d650f04e"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac738e5bebcf0874815407e7a21a9a29a26fbb0a70541a33f554fabf178c02a7"
+    sha256 cellar: :any,                 sonoma:        "e73597adb51ba326eb9a21a5074200a7bd950cff7f9377d7ec316444aca6e97e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a6e89acaeb066a70f153c17e04fba056625fb902b9b5e717c166e6ae4bb08bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3bd2b2e20471b707c4af8f158e5062a1bcf1491f0ebd930aa950769b2bdb00d"
   end
 
   depends_on "luajit" => :build # for lupa
@@ -86,8 +86,8 @@ class Oterm < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/6c/c4/2ce2ca1451487dc7d59f09334c3fa1182c46cfcf0a2d5f19f9b26d53ac74/cyclopts-4.10.1.tar.gz"
-    sha256 "ad4e4bb90576412d32276b14a76f55d43353753d16217f2c3cd5bdceba7f15a0"
+    url "https://files.pythonhosted.org/packages/66/2c/fced34890f6e5a93a4b7afb2c71e8eee2a0719fb26193a0abf159ecb714d/cyclopts-4.10.2.tar.gz"
+    sha256 "d7b950457ef2563596d56331f80cbbbf86a2772535fb8b315c4f03bc7e6127f1"
   end
 
   resource "diskcache" do
@@ -126,8 +126,8 @@ class Oterm < Formula
   end
 
   resource "fastmcp" do
-    url "https://files.pythonhosted.org/packages/d5/e0/3a562d34c007e9180746864170b9829a7d03426a855ca0c3aa6d6424e2e2/fastmcp-2.14.6.tar.gz"
-    sha256 "224c942b1e8d16523db3d7501ae73f5020535a9566ff33fa10f206c5fe2fe525"
+    url "https://files.pythonhosted.org/packages/41/c7/6b5202e427b87b14a34ef8b65eba0f5c60a8fbc71919e98a13d646b4a641/fastmcp-2.14.7.tar.gz"
+    sha256 "0d2e83b9d1c5fe0af32036979de3bb99a38f05dc1476d60f1b3259168e139cd0"
   end
 
   resource "h11" do
@@ -236,8 +236,8 @@ class Oterm < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/24/24/e0acc4bf54cba50c1d432c70a72a3df96db4a321b2c4c68432a60759044f/more_itertools-11.0.1.tar.gz"
-    sha256 "fefaf25b7ab08f0b45fa9f1892cae93b9fc0089ef034d39213bce15f1cc9e199"
+    url "https://files.pythonhosted.org/packages/a2/f7/139d22fef48ac78127d18e01d80cf1be40236ae489769d17f35c3d425293/more_itertools-11.0.2.tar.gz"
+    sha256 "392a9e1e362cbc106a2457d37cabf9b36e5e12efd4ebff1654630e76597df804"
   end
 
   resource "ollama" do
@@ -251,8 +251,8 @@ class Oterm < Formula
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/2c/1d/4049a9e8698361cc1a1aa03a6c59e4fa4c71e0c0f94a30f988a6876a2ae6/opentelemetry_api-1.40.0.tar.gz"
-    sha256 "159be641c0b04d11e9ecd576906462773eb97ae1b657730f0ecf64d32071569f"
+    url "https://files.pythonhosted.org/packages/47/8e/3778a7e87801d994869a9396b9fc2a289e5f9be91ff54a27d41eace494b0/opentelemetry_api-1.41.0.tar.gz"
+    sha256 "9421d911326ec12dee8bc933f7839090cad7a3f13fcfb0f9e82f8174dc003c09"
   end
 
   resource "packaging" do
@@ -271,13 +271,13 @@ class Oterm < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/19/56/8d4c30c8a1d07013911a8fdbd8f89440ef9f08d07a1b50ab8ca8be5a20f9/platformdirs-4.9.4.tar.gz"
-    sha256 "1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934"
+    url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
+    sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
   end
 
   resource "prometheus-client" do
-    url "https://files.pythonhosted.org/packages/f0/58/a794d23feb6b00fc0c72787d7e87d872a6730dd9ed7c7b3e954637d8f280/prometheus_client-0.24.1.tar.gz"
-    sha256 "7e0ced7fbbd40f7b84962d5d2ab6f17ef88a72504dcf7c0b40737b43b2a461f9"
+    url "https://files.pythonhosted.org/packages/1b/fb/d9aa83ffe43ce1f19e557c0971d04b90561b0cfd50762aafb01968285553/prometheus_client-0.25.0.tar.gz"
+    sha256 "5e373b75c31afb3c86f1a52fa1ad470c9aace18082d39ec0d2f918d11cc9ba28"
   end
 
   resource "py-key-value-aio" do
@@ -326,8 +326,8 @@ class Oterm < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/8a/45/e23b5dc14ddb9918ae4a625379506b17b6f8fc56ca1d82db62462f59aea6/python_multipart-0.0.24.tar.gz"
-    sha256 "9574c97e1c026e00bc30340ef7c7d76739512ab4dfd428fec8c330fa6a5cc3c8"
+    url "https://files.pythonhosted.org/packages/88/71/b145a380824a960ebd60e1014256dbb7d2253f2316ff2d73dfd8928ec2c3/python_multipart-0.0.26.tar.gz"
+    sha256 "08fadc45918cd615e26846437f50c5d6d23304da32c341f289a617127b081f17"
   end
 
   resource "pyyaml" do
@@ -346,8 +346,8 @@ class Oterm < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
-    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
+    url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
+    sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
   end
 
   resource "rich-rst" do

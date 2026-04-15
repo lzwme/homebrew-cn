@@ -5,8 +5,8 @@ class Snapcraft < Formula
   homepage "https://snapcraft.io/"
   # Use git checkout so setuptools-scm and update-python-resources works
   url "https://github.com/canonical/snapcraft.git",
-      tag:      "8.14.4",
-      revision: "527ff6d2c73f75859706cd4399f5ebb86d0d5a80"
+      tag:      "8.14.5",
+      revision: "f725c11628cbef30cb1279a917c0c76c615c2640"
   license "GPL-3.0-only"
   head "https://github.com/canonical/snapcraft.git", branch: "main"
 
@@ -16,12 +16,12 @@ class Snapcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "77a5a0a00edcd7ab66a60393d90d0915b3cd2a704a67100aa834301e3f8ed24b"
-    sha256 cellar: :any,                 arm64_sequoia: "b8c29482ad280a45493b9152db21fdcd91386f1a88c830fc6c6a75f814cf92f8"
-    sha256 cellar: :any,                 arm64_sonoma:  "d26e7dc142f7b7d24fb03288dcfb8216f22953a845fb38a65091f9416c9ecdfb"
-    sha256 cellar: :any,                 sonoma:        "94514c7f902bbe79a0d78e7de06618e35ed54d95b494e67e5cff68a3b0f6fcaa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce9a293d489f6bbf0fac3c64b9dbb3a033d0390172132ea1342ca51dc4a44f29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "410aec2fbbadb12d4fe405a7420fc413a886f0789cb7cfe0b96b26a6683cbfb4"
+    sha256 cellar: :any,                 arm64_tahoe:   "d6e696f9b84abe7d226ccf1a1be5c701c764ae514173311e4edefff0620a7f14"
+    sha256 cellar: :any,                 arm64_sequoia: "33c9e2bb099efe42908f60b05433e3da199a47b92ad13712b57edc93d793c78d"
+    sha256 cellar: :any,                 arm64_sonoma:  "4b4854a970dbceeb565cfd94a5100c9cf6217754c1979faef5b98c9737940f1f"
+    sha256 cellar: :any,                 sonoma:        "9cd35d4c47dc388724ce1ddfc50605097876dbe822df9e48351cfc78dae806f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4725c911e222fc08d9d4b9c641fe057778183ecabfc768d32c89e1aa4d3e4304"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6acc81b499bf56e6545a31e296ffd71f1fc5537fc9f946ae7432b950eb2b615"
   end
 
   depends_on "certifi" => :no_linkage
@@ -81,13 +81,13 @@ class Snapcraft < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
+    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
   end
 
   resource "craft-application" do
-    url "https://files.pythonhosted.org/packages/54/1e/bbc633c2c86ca93bcab925847fb40531883f374dde0cbf4b67a829021607/craft_application-6.3.0.tar.gz"
-    sha256 "4c26f30f2e36d9a592f7fe3e8979d8e31870bb56f75f610ca3ab7ba0388d9fc9"
+    url "https://files.pythonhosted.org/packages/54/53/b438062f5e86cf01bf3efc39069624502c741379e12c395fc2c2fec1b1f5/craft_application-6.3.1.tar.gz"
+    sha256 "bdac674c77c79e62fdf21cd786ddf2033bdb72de14bd0f742a5807478be7451f"
   end
 
   resource "craft-archives" do
@@ -96,8 +96,8 @@ class Snapcraft < Formula
   end
 
   resource "craft-cli" do
-    url "https://files.pythonhosted.org/packages/20/7b/8e0c347214f26e61cd89a855102e39a893657536bb24bf69e531f1cea677/craft_cli-3.3.0.tar.gz"
-    sha256 "238841df6093400e60a297c350a79c95f348074463e094f8191ab78accb135cb"
+    url "https://files.pythonhosted.org/packages/21/f8/6e4414523405f439f99ad1fa8b8839bf2a6030e569c1dee89e3e97a8ac15/craft_cli-3.4.0.tar.gz"
+    sha256 "72e7494c66cb78ba08a80b20685dbaa739c7ef18b2fafbde3105958ab55ae7aa"
   end
 
   resource "craft-grammar" do
@@ -106,13 +106,13 @@ class Snapcraft < Formula
   end
 
   resource "craft-parts" do
-    url "https://files.pythonhosted.org/packages/50/f5/358ab4aeb2afa8525db77fb35fb31ad1f76b5447d59837c5e5145127e7c7/craft_parts-2.30.1.tar.gz"
-    sha256 "d01e2e9f010a1912c99cb4e117b44d72971eff8b6d984f21b5e4d003d9bd96d5"
+    url "https://files.pythonhosted.org/packages/db/ce/fcf50bfc440a085b407436bad12a59006fea4d298ad4ec3f3e70cf62910c/craft_parts-2.32.0.tar.gz"
+    sha256 "7cd368db11c57cbb0875b5b8e21128d5cc3b0b6779c1cdc400872fae23fdc1e5"
   end
 
   resource "craft-platforms" do
-    url "https://files.pythonhosted.org/packages/be/f0/00dd4b4f0529eeb399fbaf1a9e536fd98f1ee0ba3e9a8febde94914ccd0b/craft_platforms-0.11.0.tar.gz"
-    sha256 "2e795922f471220e08c202881da761793e1f28961e77e0b476b1dbaa62860e7a"
+    url "https://files.pythonhosted.org/packages/93/b9/b7bef735949e73756910d85c1d4178e5c6523b70e5dbe5477ab0c2fd8d81/craft_platforms-0.11.1.tar.gz"
+    sha256 "5807e2b727c0cb9c7c85e5ecaf4181ed1b3f89e6232464736369dcb871ae9339"
   end
 
   resource "craft-providers" do
@@ -226,8 +226,8 @@ class Snapcraft < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
-    sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
+    url "https://files.pythonhosted.org/packages/ce/08/1217ca4043f55c3c92993b283a7dbfa456a2058d8b57bbb416cc96b6efff/lxml-6.0.4.tar.gz"
+    sha256 "4137516be2a90775f99d8ef80ec0283f8d78b5d8bd4630ff20163b72e7e9abf2"
   end
 
   resource "macaroonbakery" do
@@ -241,8 +241,8 @@ class Snapcraft < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/24/24/e0acc4bf54cba50c1d432c70a72a3df96db4a321b2c4c68432a60759044f/more_itertools-11.0.1.tar.gz"
-    sha256 "fefaf25b7ab08f0b45fa9f1892cae93b9fc0089ef034d39213bce15f1cc9e199"
+    url "https://files.pythonhosted.org/packages/a2/f7/139d22fef48ac78127d18e01d80cf1be40236ae489769d17f35c3d425293/more_itertools-11.0.2.tar.gz"
+    sha256 "392a9e1e362cbc106a2457d37cabf9b36e5e12efd4ebff1654630e76597df804"
   end
 
   resource "mypy-extensions" do
@@ -266,8 +266,8 @@ class Snapcraft < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/19/56/8d4c30c8a1d07013911a8fdbd8f89440ef9f08d07a1b50ab8ca8be5a20f9/platformdirs-4.9.4.tar.gz"
-    sha256 "1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934"
+    url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
+    sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
   end
 
   resource "progressbar" do
@@ -291,8 +291,8 @@ class Snapcraft < Formula
   end
 
   resource "pylxd" do
-    url "https://files.pythonhosted.org/packages/40/7e/3d54d2f8f73dd55a842f1dea82255cfddf0eba355fa20238b8552209bc4b/pylxd-2.4.0.tar.gz"
-    sha256 "b402f060857d2927627c743a183e1c0535b0adb32cfd10588a7299d402a84a94"
+    url "https://files.pythonhosted.org/packages/23/b2/ed81d9cebf8c81b0f76db47cc8cf844475cb11aa1963b8cd87e11fd2fce9/pylxd-2.4.1.tar.gz"
+    sha256 "db539951d1e593e562315ec90031f6635020e2a7174f8328a63207e8db854c15"
   end
 
   resource "pymacaroons" do
@@ -433,6 +433,11 @@ class Snapcraft < Formula
   resource "ws4py" do
     url "https://files.pythonhosted.org/packages/cb/55/dd8a5e1f975d1549494fe8692fc272602f17e475fe70de910cdd53aec902/ws4py-0.6.0.tar.gz"
     sha256 "9f87b19b773f0a0744a38f3afa36a803286dd3197f0bb35d9b75293ec7002d19"
+  end
+
+  resource "zstandard" do
+    url "https://files.pythonhosted.org/packages/fd/aa/3e0508d5a5dd96529cdc5a97011299056e14c6505b678fd58938792794b1/zstandard-0.25.0.tar.gz"
+    sha256 "7713e1179d162cf5c7906da876ec2ccb9c3a9dcbdffef0cc7f70c3667a205f0b"
   end
 
   def install

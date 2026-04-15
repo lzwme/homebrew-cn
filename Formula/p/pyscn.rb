@@ -1,18 +1,18 @@
 class Pyscn < Formula
   desc "Intelligent Python Code Quality Analyzer"
   homepage "https://github.com/ludo-technologies/pyscn"
-  url "https://ghfast.top/https://github.com/ludo-technologies/pyscn/archive/refs/tags/v1.15.0.tar.gz"
-  sha256 "feffd33e088fae9dbcd2aeeb8f89d03496f22a57ebf9d6d6a8f4dd26ddc53615"
+  url "https://ghfast.top/https://github.com/ludo-technologies/pyscn/archive/refs/tags/v1.16.0.tar.gz"
+  sha256 "fe371cea116bf6d15cd3616a7845b201ca257f6818219d91f73ff7a6255c3e44"
   license "MIT"
   head "https://github.com/ludo-technologies/pyscn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9552cf9f44f33639b7f67bcbe6827ed87150ea4e573d2ae2fd47dccab6fa7801"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "329b42917554a0a9ff99531b4bc957a079a4229697d00d9d4c8eab0bb9c6d033"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "335924f3823515c66a182fa4bd8bfec538fd33f0e41ecc17e681f8e7436a06db"
-    sha256 cellar: :any_skip_relocation, sonoma:        "afcfea858ac7e3d96d71cd717fc2bdea81b1d315818e24a7ae9e1a5bb32750ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33e98dbc6f4f5b1095979e99311e3af44b422dbe0412f662855e214715805be5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5aa847ebc50ff6f4f288d5c739f883042a71a053cad420a800cd83c717d31f60"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "edf72bd11528e6bc74c68096cbcc16318be50b720db58e0d4640fdf04c2a9b65"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c95a125e8aebb564d4f2ec8978fb815e2818895e4852a854e8072213c9ae909"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b693285df203a4dc7d4d123940cfa160563a1dc4c74f85104faa213587faebe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c6e1226bc14e636aec18c0c340831fe1d931f6851d42530f7cadf2222fc2427f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd75d7ee77c8c871009d62759a3d5715395a312e2dcf7a936a28268f5149f194"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a8a99785f89d515ee74eafd34404965d690c0be09c0ca5bc6ade0b741338f47"
   end
 
   depends_on "go" => :build

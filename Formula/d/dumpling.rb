@@ -5,8 +5,8 @@ class Dumpling < Formula
   head "https://github.com/pingcap/tidb.git", branch: "master"
 
   stable do
-    url "https://ghfast.top/https://github.com/pingcap/tidb/archive/refs/tags/v8.5.5.tar.gz"
-    sha256 "2dee41c6e6f1251ef5aa820cbb8c47950069e3e2baeb26072604d6be25498ecd"
+    url "https://ghfast.top/https://github.com/pingcap/tidb/archive/refs/tags/v8.5.6.tar.gz"
+    sha256 "6d06151f0862cc43ae6d591d004924375477dcd89b913233d666b9853c4ac9cd"
 
     # Support Go 1.26: https://github.com/pingcap/tidb/pull/66254
     patch do
@@ -21,12 +21,12 @@ class Dumpling < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5844a11f18582d626238f91d0a2aa0e5df9067b14b4ff6481d76751c49ca6bae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e61551c2cc9561b920bfb1fae76a34453fd9e4b2342111b2cf38b8552a595119"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89b16c443161aa8af29d9d67c2bfba4a2c3c1bd83934deae7db40f660a7834ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4e379fc76aad5816a8b9bf3711a12c47c0b64e67de8271670b1467f9ba6ff623"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be17bd146f8d0e5214ad39a850dc55d2f741bbcf495a968e3857024df44fd664"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfc64eb60af9ecd9ba221226e92abf183890db5e55ebfca027681ec52c0a2700"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "47a0608569387952d7081dbc9e1be7552a16fbe3da6800b5a576117c49318896"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac4ebd422dd88eaf70c134551585fcc5aa6190dd9675198175dc6dd7f716d066"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1d81f8f6344627d4f8fcf37103d49dbba982ff38b5e6c436c5cfe44f1e9418f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c46ed2b051dbbd7950f93462a05bd0ac424400895a6dc952adc33f764e96dae9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10601e1d84649f569cad52c31ea3b530aa8e4db6342432c54b72b32b57988e75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05944c8623d9db656061717df24f269b5fd918ca44b2a6c34c0118c5c4d746f4"
   end
 
   depends_on "go" => :build

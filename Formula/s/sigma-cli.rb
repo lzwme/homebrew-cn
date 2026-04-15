@@ -3,18 +3,18 @@ class SigmaCli < Formula
 
   desc "CLI based on pySigma"
   homepage "https://github.com/SigmaHQ/sigma-cli"
-  url "https://files.pythonhosted.org/packages/29/5c/0e3d1b34f85519f8afc5ffdb63f2cc13b7f7ca128d5020ebb2783cc75e4c/sigma_cli-2.0.2.tar.gz"
-  sha256 "07af8acfaff61b557155d11b73c067909f5f75fdd2a02c5f953fed5b718d13e3"
+  url "https://files.pythonhosted.org/packages/22/81/d72d567401dc4926fda6872a17353b38c0f177532567c6b2ba4201223508/sigma_cli-3.0.0.tar.gz"
+  sha256 "a76973ca6909a8cdfa695fa620423cc8ae68ee8b235d1a50d5bbd19d0fe0c4ac"
   license "LGPL-2.1-or-later"
   head "https://github.com/SigmaHQ/sigma-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4affef587ed4b1c776dcd28a7e97e7ca90a1cee1cbab0d6e1f8316c63f9fc8e2"
-    sha256 cellar: :any,                 arm64_sequoia: "7ba9eb30b05d7fbbb20ac4a52d1d9b415c2cfd2f2d33378f8aa504a143ff1648"
-    sha256 cellar: :any,                 arm64_sonoma:  "6b782d95fee550788964fbe1214765d46348b0f921b739e2f0cba5918095dec2"
-    sha256 cellar: :any,                 sonoma:        "9ce377d819e5946e9e25d6edbd74daafb161f8fdb6c0776f2bbdcc909a4118f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cd7cde76fbed3230a765fa3a7b1d27d5a21558442b2679a542c85e5c5631f9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81b3597a5d5562312c79946d6144ee5bb418c9c2c9b937c7614c4423529b6e8a"
+    sha256 cellar: :any,                 arm64_tahoe:   "107387333cb3fe3393c5e26b38900042b9bdf4afe01f61affd1f2342581d6c7f"
+    sha256 cellar: :any,                 arm64_sequoia: "5ac72bb2902428b774e19add738e8ddf9e81ea6f79677933f880547c81614a23"
+    sha256 cellar: :any,                 arm64_sonoma:  "383ac72d6757dedaff0c3e5be9b0c67d4a4d94f6935c6e616d00a7add11a3a0a"
+    sha256 cellar: :any,                 sonoma:        "e243240a1c200bb74727cb0d3165e0b4c6d61fcb68328af508769e68f409956c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d85d34208b0165e95f2fff5775dac4b44ee37bfd99c2093c63df060559d6c378"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2ccb9ebba0eb8f6c55f7611bf17371d47753a8a11b550d834bc2f5e30b32454"
   end
 
   depends_on "certifi" => :no_linkage
@@ -33,8 +33,8 @@ class SigmaCli < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
+    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
   end
 
   resource "colorama" do
@@ -68,8 +68,8 @@ class SigmaCli < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "prettytable" do
@@ -83,8 +83,8 @@ class SigmaCli < Formula
   end
 
   resource "pysigma" do
-    url "https://files.pythonhosted.org/packages/a5/4e/7c8ee69872c85f328be10a96bb3de3733142b6bf8577d93ac6b8fa5a927d/pysigma-1.2.0.tar.gz"
-    sha256 "1a7a607d12f036c93ba9697b3f328ed3559627d252386ce8cff079a7492582dd"
+    url "https://files.pythonhosted.org/packages/d4/64/0ebf1ec9adbdc9aaaa345f75fdc2c600a11058717044dc5fe831bfc7c511/pysigma-1.3.0.tar.gz"
+    sha256 "a9849dba06fb05955bac980d547ef92aab1b52b7517d817be3cb4ae664c6cb27"
   end
 
   resource "pyyaml" do
@@ -98,8 +98,8 @@ class SigmaCli < Formula
   end
 
   resource "types-pyyaml" do
-    url "https://files.pythonhosted.org/packages/7e/69/3c51b36d04da19b92f9e815be12753125bd8bc247ba0470a982e6979e71c/types_pyyaml-6.0.12.20250915.tar.gz"
-    sha256 "0f8b54a528c303f0e6f7165687dd33fafa81c807fcac23f632b63aa624ced1d3"
+    url "https://files.pythonhosted.org/packages/74/73/b759b1e413c31034cc01ecdfb96b38115d0ab4db55a752a3929f0cd449fd/types_pyyaml-6.0.12.20260408.tar.gz"
+    sha256 "92a73f2b8d7f39ef392a38131f76b970f8c66e4c42b3125ae872b7c93b556307"
   end
 
   resource "typing-extensions" do

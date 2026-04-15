@@ -6,15 +6,16 @@ class McpAtlassian < Formula
   url "https://files.pythonhosted.org/packages/c3/44/d879210be4178c408fbd8971f8dd36e9abc7ba3d729f7ccd4b790e73c1f6/mcp_atlassian-0.21.1.tar.gz"
   sha256 "dff6c81541506cb0cc80d7ac9900ffdcb246fec7808e41e8df73c09dd4a28074"
   license "MIT"
+  revision 1
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8be16b0645bfbe1d97013c25e330dbcc7cde404c28f0c691864f26a9c8e67dd2"
-    sha256 cellar: :any,                 arm64_sequoia: "d0fdcc9c94f45b26125434a82b146a3bcf63a126aee4bcc749b742796b83bac3"
-    sha256 cellar: :any,                 arm64_sonoma:  "d168f37157b91e80d6e11fefeac604837ab886b156c44e8f4cca12d3960cd6f4"
-    sha256 cellar: :any,                 sonoma:        "3f9b5d6d704106c3c62c0759741aff208c8136deb95918717820b3c50e18f2bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "43ef5b3c82e118bc71e448b7914d1b8b8f0a64d67d4c4bec86058d07c19e95bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "440c2000eddfa2daeed7231bb00a14b45e30959092089d6aa726329652a1fa83"
+    sha256 cellar: :any,                 arm64_tahoe:   "49a0b6a549b3bf664f9e304a2850dfe211158b51895aa881d01dc61642e312bd"
+    sha256 cellar: :any,                 arm64_sequoia: "4a551b19dbed2d7c2cf8c816aa5967617de07f6dca4614104a8b19738abb0362"
+    sha256 cellar: :any,                 arm64_sonoma:  "525eba78045231411a0b9632f76bc33fe03287fe5aec3d016c946f258a58d33c"
+    sha256 cellar: :any,                 sonoma:        "4c9a1da14dfacc1549be678c8d430d6c12fe89700666d0986fc4e60b987942e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9642e1b0ad675af8e5bd716956b6eff39896100268187addea14f52341d7db5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f86ae2ea5c1b22818649b2cf838d1d808fbb857e7f2bd202603c156b02b0ec36"
   end
 
   depends_on "luajit" => :build # for lupa
@@ -144,8 +145,8 @@ class McpAtlassian < Formula
   end
 
   resource "fastmcp" do
-    url "https://files.pythonhosted.org/packages/d5/e0/3a562d34c007e9180746864170b9829a7d03426a855ca0c3aa6d6424e2e2/fastmcp-2.14.6.tar.gz"
-    sha256 "224c942b1e8d16523db3d7501ae73f5020535a9566ff33fa10f206c5fe2fe525"
+    url "https://files.pythonhosted.org/packages/41/c7/6b5202e427b87b14a34ef8b65eba0f5c60a8fbc71919e98a13d646b4a641/fastmcp-2.14.7.tar.gz"
+    sha256 "0d2e83b9d1c5fe0af32036979de3bb99a38f05dc1476d60f1b3259168e139cd0"
   end
 
   resource "h11" do
@@ -234,8 +235,8 @@ class McpAtlassian < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/43/42/149c7747977db9d68faee960c1a3391eb25e94d4bb677f8e2df8328e4098/lxml-6.0.3.tar.gz"
-    sha256 "a1664c5139755df44cab3834f4400b331b02205d62d3fdcb1554f63439bf3372"
+    url "https://files.pythonhosted.org/packages/ce/08/1217ca4043f55c3c92993b283a7dbfa456a2058d8b57bbb416cc96b6efff/lxml-6.0.4.tar.gz"
+    sha256 "4137516be2a90775f99d8ef80ec0283f8d78b5d8bd4630ff20163b72e7e9abf2"
   end
 
   resource "markdown" do
@@ -379,8 +380,8 @@ class McpAtlassian < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/8a/45/e23b5dc14ddb9918ae4a625379506b17b6f8fc56ca1d82db62462f59aea6/python_multipart-0.0.24.tar.gz"
-    sha256 "9574c97e1c026e00bc30340ef7c7d76739512ab4dfd428fec8c330fa6a5cc3c8"
+    url "https://files.pythonhosted.org/packages/88/71/b145a380824a960ebd60e1014256dbb7d2253f2316ff2d73dfd8928ec2c3/python_multipart-0.0.26.tar.gz"
+    sha256 "08fadc45918cd615e26846437f50c5d6d23304da32c341f289a617127b081f17"
   end
 
   resource "pyyaml" do
@@ -414,8 +415,8 @@ class McpAtlassian < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
-    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
+    url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
+    sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
   end
 
   resource "rich-rst" do

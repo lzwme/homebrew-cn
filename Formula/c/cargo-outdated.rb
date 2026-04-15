@@ -1,19 +1,18 @@
 class CargoOutdated < Formula
   desc "Cargo subcommand for displaying when Rust dependencies are out of date"
   homepage "https://github.com/kbknapp/cargo-outdated"
-  url "https://ghfast.top/https://github.com/kbknapp/cargo-outdated/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "a0acb73eca2cc65915db426e49a0b834d20ef2cb302bd2ce21c1d59f3cb1894b"
+  url "https://ghfast.top/https://github.com/kbknapp/cargo-outdated/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "ea6592c08d4e8ea53aa0251cbbfbf8ad2b2167f794cb9599715eecb3653507f2"
   license "MIT"
   head "https://github.com/kbknapp/cargo-outdated.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "f8504bf9f925b96d25650f9e54b66ab2b4bdad03152e32852925f91d8ace013f"
-    sha256 cellar: :any,                 arm64_sequoia: "1a816f6084a20539490d740967f2904540c7dd3944b6004c0ea03cf4a7fd8792"
-    sha256 cellar: :any,                 arm64_sonoma:  "265d75b98895a464a49eb0f48bf3468d871633eb9a82f531109a37e0459305fa"
-    sha256 cellar: :any,                 sonoma:        "d2e13f92d39844c992b1027ca25eb291f6d423ba4b99ba2817326057af1df28e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f957cffbd6b076b0b845866372797d8d47af68ae1edb9a7e9bfd899cd07351d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2964bf4703ecdcf66ed3a80c955db9dada8663c959fa28b89057449649ba9cf2"
+    sha256 cellar: :any,                 arm64_tahoe:   "6174085b6cd0d46cd1be2c6dda1a24a0f7bcd4e98c362808c63e09d0c11bf3bc"
+    sha256 cellar: :any,                 arm64_sequoia: "57f2a20781ae0cbfcf3e279725f528d12d808d008876e0bcccf5cda173eafc1f"
+    sha256 cellar: :any,                 arm64_sonoma:  "c77702c3d4da76762864ace24b8b25318bd732b95019471c061b6188892c38bd"
+    sha256 cellar: :any,                 sonoma:        "6afd5d52a700fd64b1f613980c399f08a05ccfe5f38072f42bfc438bd89a826f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f4b8afc5760e243f583e60f81e11cd92a9819a14d6d00bfdc7125fcede1b035"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d8f21cc13aba011e544f746cb9096799337c335ff8796586c23163bab069f1c"
   end
 
   depends_on "pkgconf" => :build

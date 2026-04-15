@@ -1,8 +1,8 @@
 class Postgis < Formula
   desc "Adds support for geographic objects to PostgreSQL"
   homepage "https://postgis.net/"
-  url "https://download.osgeo.org/postgis/source/postgis-3.6.2.tar.gz"
-  sha256 "d488089a64ee4060bce7dbba0291fcca358e7f7ac5230e2ee5b344e7485729c4"
+  url "https://download.osgeo.org/postgis/source/postgis-3.6.3.tar.gz"
+  sha256 "58ff19ae133e470280efb4949ef92e0364d4c2a66bef8c57e69477348d815ea3"
   license "GPL-2.0-or-later"
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class Postgis < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d1530f71ddfd1229308739475a02d5d569a853efdccd6f4f3848d9d5cf30d824"
-    sha256 cellar: :any,                 arm64_sequoia: "d5339cd23e2e8d1611352c5843085827b8f9ddfc525fa34f95e6187490504e67"
-    sha256 cellar: :any,                 arm64_sonoma:  "fe35643027281d8029b530d3ece678002fb66849c1458ba9da588f08db32245a"
-    sha256 cellar: :any,                 sonoma:        "2ab361e0b2270c2088946c0cf1daa03a60ac1639634c33823f117eff3b19d27f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ccd63a1425bd72261233bc8523220965631897fe2402cdd8dedbebd0c339a2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36288526e76b3bd6ec4daee709c2f845f2a26e32f54ca4d7979de166990ef449"
+    sha256 cellar: :any,                 arm64_tahoe:   "76e35db280d8cfb48228d1bbbda6836972119098b44dce7daf4a7cf970749804"
+    sha256 cellar: :any,                 arm64_sequoia: "189b3159d3fadbc05f464fc68e182aa09179f0fc087986e7b0a1100ee794a8f2"
+    sha256 cellar: :any,                 arm64_sonoma:  "90dd7287c71cea1baa5064c458ba89c5afaff9245192742772d86c8a017ccf83"
+    sha256 cellar: :any,                 sonoma:        "7b809abd25c7d8e5258aa751bb43b427942ff077a1064a50bb22bbc98a9aebba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "931b9d55c5f4db95e9d127d70a769921f84c4659b45a59bdb32567ada837d5a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96f7b708864700b7dcbf3893fdbdd697f17d32c018fb3e657acb3f999c50bf0a"
   end
 
   head do

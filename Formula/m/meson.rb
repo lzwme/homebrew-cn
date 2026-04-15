@@ -1,13 +1,13 @@
 class Meson < Formula
   desc "Fast and user friendly build system"
   homepage "https://mesonbuild.com/"
-  url "https://ghfast.top/https://github.com/mesonbuild/meson/releases/download/1.10.2/meson-1.10.2.tar.gz"
-  sha256 "7890287d911dd4ee1ebd0efb61ed0321bfcd87c725df923a837cf90c6508f96b"
+  url "https://ghfast.top/https://github.com/mesonbuild/meson/releases/download/1.11.0/meson-1.11.0.tar.gz"
+  sha256 "dffdd0915ceb028541fe3bed77d63ba35e78514591c043736b450d62634eeb31"
   license "Apache-2.0"
   head "https://github.com/mesonbuild/meson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b4a54efea5713cf92572131cdf72ee17137dffa0e3703136c28540c12ab22701"
+    sha256 cellar: :any_skip_relocation, all: "43470c079c3e341d4a33901b6bbb15cc29dcf4f9c277c3167dc59c95fea65a67"
   end
 
   depends_on "ninja"
@@ -32,6 +32,7 @@ class Meson < Formula
       dependencies/cuda.py
       dependencies/misc.py
       dependencies/qt.py
+      mdevenv.py
       options.py
       scripts/python_info.py
       utils/universal.py

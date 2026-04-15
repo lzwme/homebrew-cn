@@ -1,17 +1,17 @@
 class Labctl < Formula
   desc "CLI tool for interacting with iximiuz labs and playgrounds"
   homepage "https://github.com/iximiuz/labctl"
-  url "https://ghfast.top/https://github.com/iximiuz/labctl/archive/refs/tags/v0.1.70.tar.gz"
-  sha256 "bef58a3aa371ae74f487637dc356d6a19182e2c13b249bd9f8d8f6b1cad2c395"
+  url "https://ghfast.top/https://github.com/iximiuz/labctl/archive/refs/tags/v0.1.72.tar.gz"
+  sha256 "3c6d2bfbd5c5d075d69495b1873cf80dc4f0d698111f18f9ffd02f9205150fdc"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b42ff2553bccdddf907c8f61f878f23ba627c5ff270160e447bbeb329bce961"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b42ff2553bccdddf907c8f61f878f23ba627c5ff270160e447bbeb329bce961"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b42ff2553bccdddf907c8f61f878f23ba627c5ff270160e447bbeb329bce961"
-    sha256 cellar: :any_skip_relocation, sonoma:        "caf3a9cbb3e56f7346db21091e75a66413b69b54dc854eba2e209e5112ddd952"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f60e09cbd8b6081f45076b3c82e2e3d6aefa0fc6b5c692641f9d864e0ec2a5de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b24194bb869aca7e9f38188f608434fdebcd51beedc0f02e1499b76c102caaa8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8bfc052149ac80f2ba007017c618014c39491bc06df467b8d8869317a8058969"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8bfc052149ac80f2ba007017c618014c39491bc06df467b8d8869317a8058969"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8bfc052149ac80f2ba007017c618014c39491bc06df467b8d8869317a8058969"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c9a774104a97b4ed487b108bfe7b250cf7c33229f4f65b6ab2d6f854cb5148dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e5f9a1de3d8a04474fa3a4fed8dd9950cb7893941019a27a5da9b9e86a37887"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f5ad10d1a902f2aa0311d41251f22134be120a708473b0a9d4ef667dd00ed1d"
   end
 
   depends_on "go" => :build

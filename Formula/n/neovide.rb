@@ -1,18 +1,18 @@
 class Neovide < Formula
   desc "No Nonsense Neovim Client in Rust"
   homepage "https://neovide.dev/"
-  url "https://ghfast.top/https://github.com/neovide/neovide/archive/refs/tags/0.16.1.tar.gz"
-  sha256 "129a10adbee98b913bcbeecdbf76cb7091d1119f1261e58fca7a057c2e0b4af5"
+  url "https://ghfast.top/https://github.com/neovide/neovide/archive/refs/tags/0.16.2.tar.gz"
+  sha256 "a2016cceab3cba50b6a8b2f6787ae9017a85923575e89a83ebb9d428e8f80ca9"
   license "MIT"
   head "https://github.com/neovide/neovide.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b554883c44524421d9f3437b7a4975dfb17972e102bdc9b57d78dc3b11736729"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc2da3b34fcb2ab2453d24392846043f8d832a8b475359d9a10f24174ac5c74d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9bf11dbf9869c4b5a94ae47b4427b62aee56cdff6ac0e7fbb4d022be2decf2fd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0cc628a8d72ba62bf9b3b1598c64bbbc460a507d5506ff9224b027aa52c16af2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b184271d52770a85b055edf59e2c37384e9a3b7dcebc670708f1b52faaa78d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef392bc686c79d357b281b576c4ced87b403c18b84f2d9cb8278b52790b778c1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7708b2c0dd2a7e477cbf5356651356aeee272dbe3abacc43a5458ed791a49d6d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d745456e8e4fe4ae122473125fc4193912efc7a2bec54bef439c6f683099b176"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a601edbdf48cd39c52325dcc0ece4c63015874b9a19664b4196edb84b43f5d8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fe2e463394919597829d82ecdb9d02971941bb8d75033e141e1563618761517e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a1d67b6e85b580e3d47ff66029ef37a77df37f5f2ebd8e9d006eecb16bce34b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "363ff7bb4895c4626687bb96d9f1dac82d73e9a73853177854dec561c8ccab51"
   end
 
   depends_on "ninja" => :build

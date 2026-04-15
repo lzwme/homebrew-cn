@@ -3,17 +3,17 @@ class Gersemi < Formula
 
   desc "Formatter to make your CMake code the real treasure"
   homepage "https://github.com/BlankSpruce/gersemi"
-  url "https://files.pythonhosted.org/packages/cc/ea/d601c2caf8436ee8defc23297d8beb7999be8d34bb087802eb1c8202b9a5/gersemi-0.26.1.tar.gz"
-  sha256 "10762fba8e9d867352b315407f9da85a8873eac3a46420e467a779fd8fe9b963"
+  url "https://files.pythonhosted.org/packages/60/74/349a9dd2d890787aba7ea00fa8c54f12f4b006cc84a37e6e9a02fc07684f/gersemi-0.27.0.tar.gz"
+  sha256 "39fd89642c060d604a20330302721372be7b0987f0bfb53b2b2d2e96abd28bac"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b0f3743f638ad6d348f3fbda16d34613a937bc306b9874c4d27622cafdc66eb3"
-    sha256 cellar: :any,                 arm64_sequoia: "655563e0d45a4557e17395180284e19b1a099583232a7a96c9e511896abd4a2e"
-    sha256 cellar: :any,                 arm64_sonoma:  "3a7f8f47b9bb8b5e83e3d6cc1ebb3c1e60cdbd1062543cf077167a8a598ff5ba"
-    sha256 cellar: :any,                 sonoma:        "1817b84a41940dcddda9701131fa27e3ed8fdd0f57a671d7239eaeea4876717a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b035a27a4aa3b58e176b25a3670ebf1c8c8ba5f16ee55fb2e05fbe77babd160e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78bb1cdf573bab058a9c032e3401ffbe4bb19b038f7d137bb539712e180a1955"
+    sha256 cellar: :any,                 arm64_tahoe:   "8ee8ad9b67eb877bbe30999627decdb6b83b03233d0ec8f24d03dda82f26d9d4"
+    sha256 cellar: :any,                 arm64_sequoia: "486d00cfd463ce14a0af7e7d3fe08dd6a2831cd2ac5572bece28c3c606ffe1d3"
+    sha256 cellar: :any,                 arm64_sonoma:  "a027954ae85d9faf8e15fef7bc76565f976fdce19ddcbc1d89f10a366e594f8e"
+    sha256 cellar: :any,                 sonoma:        "07a8a8b408acd2fa0e86b9239246de9a347f8bff878375251ea3900f476762b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c8838c5f1afa6f5813915f0dee100fbb8421664234e46779c8487382b76341f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01eacb5af66251c1b09ac4b10dcad7ecbf8c747f2a8045a529526228fe01ae9e"
   end
 
   depends_on "rust" => :build
@@ -25,14 +25,9 @@ class Gersemi < Formula
     sha256 "dc80ac80ace112da6d02f44681b6beb2ccecb68d6ac2b5e1b82d7f84347e1cf6"
   end
 
-  resource "lark" do
-    url "https://files.pythonhosted.org/packages/da/34/28fff3ab31ccff1fd4f6c7c7b0ceb2b6968d8ea4950663eadcb5720591a0/lark-1.3.1.tar.gz"
-    sha256 "b426a7a6d6d53189d318f2b6236ab5d6429eaf09259f1ca33eb716eed10d2905"
-  end
-
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/19/56/8d4c30c8a1d07013911a8fdbd8f89440ef9f08d07a1b50ab8ca8be5a20f9/platformdirs-4.9.4.tar.gz"
-    sha256 "1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934"
+    url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
+    sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
   end
 
   resource "pyyaml" do
@@ -41,6 +36,7 @@ class Gersemi < Formula
   end
 
   def install
+    ENV["CARGO_VERSION"] = Formula["rust"].version.to_s
     virtualenv_install_with_resources
   end
 

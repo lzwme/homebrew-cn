@@ -1,8 +1,8 @@
 class CloudNuke < Formula
   desc "CLI tool to nuke (delete) cloud resources"
   homepage "https://gruntwork.io/"
-  url "https://ghfast.top/https://github.com/gruntwork-io/cloud-nuke/archive/refs/tags/v0.48.0.tar.gz"
-  sha256 "93d5982c209e76b88233deb610c9a3720a7f0ddd3f3dc66f389338b2f1e0f709"
+  url "https://ghfast.top/https://github.com/gruntwork-io/cloud-nuke/archive/refs/tags/v0.49.0.tar.gz"
+  sha256 "6c9a6a1c64ee2099f9d0e69a784c807999d62d86a599927fe3e8d8b4caaff54b"
   license "MIT"
   head "https://github.com/gruntwork-io/cloud-nuke.git", branch: "master"
 
@@ -12,12 +12,12 @@ class CloudNuke < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "46d81f2749b43600740f65cc1679ddd0506fe03b5b33bd1dddac47f34f9cf10f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46d81f2749b43600740f65cc1679ddd0506fe03b5b33bd1dddac47f34f9cf10f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46d81f2749b43600740f65cc1679ddd0506fe03b5b33bd1dddac47f34f9cf10f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8ef45ab2f3b6c234726a27fdd86469604f77944acdb76f8caba1e6b473de4e9e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cb655705a885c1a3662343a4130f04b012f112b9582e9584fd133a24cb3c3fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0765b0790ba49657daa9113b9c8defad2fd2206b7c158728206666a754117ca5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa53403d59a95f6d45848c839f5f8bb9ac49138928506aa5db4117476cd06c30"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa53403d59a95f6d45848c839f5f8bb9ac49138928506aa5db4117476cd06c30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa53403d59a95f6d45848c839f5f8bb9ac49138928506aa5db4117476cd06c30"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a09b9e2618cf78e09a4a82366aad60bf1f31a5881e1df0d4950ba25947fad97b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "841cdfeb91d3c450afc4c8a61d2ca3ecc5c57c75c11745f31d871f2cca8a68df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "637978aab39b5b703ccd62bde01b4cad37f23979cdbb905517ee74e994b19729"
   end
 
   depends_on "go" => :build
