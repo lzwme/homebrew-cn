@@ -3,17 +3,17 @@ class SnykAgentScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/snyk/agent-scan"
-  url "https://files.pythonhosted.org/packages/85/6b/b3bd85e11c09b32a1e5b1e80a7107b33ce18790c3163ed7e4111935d07f1/snyk_agent_scan-0.4.15.tar.gz"
-  sha256 "e31cf0e2a57e98ca383a9c6188ab420e3c6e346d25e16abb20857406ed44a586"
+  url "https://files.pythonhosted.org/packages/e3/30/6e8909c95f8c81daf41f604161554091aed2ddfd56ab2351ea0d4857469b/snyk_agent_scan-0.4.16.tar.gz"
+  sha256 "0bc23b0b5e685fcd6aa0d8f93db4851ab39185229468b1cc6cd1792b01cb867a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "99295f2d51f79427f71421248620f45bdb1b6e3c0224d2ff734e8984b1975723"
-    sha256 cellar: :any,                 arm64_sequoia: "4477eab6ed184b2e21707bcb5f565f462726e56ec3a5529030a2b52a7c98c7ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "d6255e075f2dd39f367dc40b0849bf72a40a09d187dee96f1772ea765e2d79bc"
-    sha256 cellar: :any,                 sonoma:        "2680cef4dc62c5a0331f82f56c3d61126ccbb88e045821ff04e6901db7dc0581"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4364be387d34b544c5b96fdcb3a377c9aadcd8514ffe5d09f0f0cdbb5778bb5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bdb275b239fece201d960b0da95fa83df8b3319f3177edcdd953a542a38e608"
+    sha256 cellar: :any,                 arm64_tahoe:   "5f0e1823aee4e27d6d00a7d67b374d13043370b81f6c2652a52221fff6964a97"
+    sha256 cellar: :any,                 arm64_sequoia: "e0149fce0220183f37d1ece54559fa526bc9694769eb2776c46cdf5976a3ad63"
+    sha256 cellar: :any,                 arm64_sonoma:  "ffe6ed5873c86eab4d5cd340420ec28e5778be657e79243a756923326d97438f"
+    sha256 cellar: :any,                 sonoma:        "f5581a5d220d92947c0c00abd9faea2fc2ffb16a535ce1570cb2b571abd9968a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "035aa8c3bee6a1f8826f80ef029158d890001bee46f517006b60825d2603deba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4a70b24f3e84d905245310d14feec3876dc13bec65e0c6545b26b9f47c40b22"
   end
 
   depends_on "certifi" => :no_linkage

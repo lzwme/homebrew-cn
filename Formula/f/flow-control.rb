@@ -17,7 +17,7 @@ class FlowControl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "23ea757119c328bc9fc880ec1df320cdead86f29ba3f58d3787f00efe7cd81b5"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.15" => :build
 
   def install
     # Avoid an error when the git repository is detached from HEAD
@@ -27,10 +27,10 @@ class FlowControl < Formula
 
     # Fix illegal instruction errors when using bottles on older CPUs.
     # https://github.com/Homebrew/homebrew-core/issues/92282
-    cpu = case Hardware.oldest_cpu
+    cpu = case ENV.effective_arch
     when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
     when :armv8 then "xgene1" # Closest to `-march=armv8-a`
-    else Hardware.oldest_cpu
+    else ENV.effective_arch
     end
 
     # Do not use `std_zig_args` or `--release=` flag here

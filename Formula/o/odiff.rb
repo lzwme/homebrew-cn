@@ -15,7 +15,7 @@ class Odiff < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3530785e49488b5a08dcbe1ce5ff6d058c84711db92d9d78242b06fc6af3aaac"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.15" => :build
 
   on_intel do
     depends_on "nasm" => :build

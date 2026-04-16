@@ -3,18 +3,18 @@ class Fastmcp < Formula
 
   desc "Fast, Pythonic way to build MCP servers and clients"
   homepage "https://gofastmcp.com/getting-started/welcome"
-  url "https://files.pythonhosted.org/packages/b9/42/7eed0a38e3b7a386805fecacf8a5a9353a2b3040395ef9e30e585d8549ac/fastmcp-3.2.3.tar.gz"
-  sha256 "4f02ae8b00227285a0cf6544dea1db29b022c8cdd8d3dfdec7118540210ae60a"
+  url "https://files.pythonhosted.org/packages/9c/13/29544fbc6dfe45ea38046af0067311e0bad7acc7d1f2ad38bb08f2409fe2/fastmcp-3.2.4.tar.gz"
+  sha256 "083ecb75b44a4169e7fc0f632f94b781bdb0ff877c6b35b9877cbb566fd4d4d1"
   license "Apache-2.0"
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "73a1545770f559e4cc917c37542f53af527c8a5465fe3092a1bb7b2a7bc0fd3e"
-    sha256 cellar: :any,                 arm64_sequoia: "1f0e886f9f43555568cc7dccba89064020b55a68e9dfabf0d36388d4f4868e33"
-    sha256 cellar: :any,                 arm64_sonoma:  "9da0f86920bd36d51f937358aeacbdba6a5133f525690b43fc39bba164b487c8"
-    sha256 cellar: :any,                 sonoma:        "da6c1e7d067f6a0e43551d249c152862abd68506fc46759973c23b117aff145d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dd7f09b633ce446069bf11eedde483ce419e0e9c3c26fd501b0f006f8e8f2c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "948e479517de7f1d2c6bbdea1d64492f73cf4986bc6233aea825575478dfbf31"
+    sha256 cellar: :any,                 arm64_tahoe:   "42de2513424c3af628e3c8588bf98f6aaa7bd741a35b0cb6d916c77f5bd25ca1"
+    sha256 cellar: :any,                 arm64_sequoia: "a68fe5e8d0d12d9675b7629077ff1a272b8dadfbd184ad5b2e77df4d7c081a82"
+    sha256 cellar: :any,                 arm64_sonoma:  "78da890d2c5ead4302313b1da7d1c465d176fd4a292fa003a0244515b32a7448"
+    sha256 cellar: :any,                 sonoma:        "1961bf1778fd9da94195499b776220dc7cc7def7846902b805051fb630130bbe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd5f1e8847d65efce0b4cf2a8a190873df80bdea9de2f5d33450bc82f8dd506a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae80cac0dc27629597d29624be1c4762a33dd1a960953162c30a19acdc919e9a"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -45,8 +45,8 @@ class Fastmcp < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/af/98/00d3dd826d46959ad8e32af2dbb2398868fd9fd0683c26e56d0789bd0e68/authlib-1.6.9.tar.gz"
-    sha256 "d8f2421e7e5980cc1ddb4e32d3f5fa659cfaf60d8eaf3281ebed192e4ab74f04"
+    url "https://files.pythonhosted.org/packages/aa/e2/2cd626412bfc3c78b17ca5e5ea8d489f8cae31d40b061f4da0a89068d8a3/authlib-1.6.10.tar.gz"
+    sha256 "856a4f54d6ef3361ca6bb6d14a27e8b88f8097cca795fb428ffe13720e2ecde6"
   end
 
   resource "beartype" do
@@ -97,6 +97,11 @@ class Fastmcp < Formula
   resource "exceptiongroup" do
     url "https://files.pythonhosted.org/packages/50/79/66800aadf48771f6b62f7eb014e352e5d06856655206165d775e675a02c9/exceptiongroup-1.3.1.tar.gz"
     sha256 "8b412432c6055b0b7d14c310000ae93352ed6754f70fa8f7c34141f91c4e3219"
+  end
+
+  resource "griffelib" do
+    url "https://files.pythonhosted.org/packages/9d/82/74f4a3310cdabfbb10da554c3a672847f1ed33c6f61dd472681ce7f1fe67/griffelib-2.0.2.tar.gz"
+    sha256 "3cf20b3bc470e83763ffbf236e0076b1211bac1bc67de13daf494640f2de707e"
   end
 
   resource "h11" do
@@ -250,8 +255,8 @@ class Fastmcp < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/8a/45/e23b5dc14ddb9918ae4a625379506b17b6f8fc56ca1d82db62462f59aea6/python_multipart-0.0.24.tar.gz"
-    sha256 "9574c97e1c026e00bc30340ef7c7d76739512ab4dfd428fec8c330fa6a5cc3c8"
+    url "https://files.pythonhosted.org/packages/88/71/b145a380824a960ebd60e1014256dbb7d2253f2316ff2d73dfd8928ec2c3/python_multipart-0.0.26.tar.gz"
+    sha256 "08fadc45918cd615e26846437f50c5d6d23304da32c341f289a617127b081f17"
   end
 
   resource "pyyaml" do
@@ -265,8 +270,8 @@ class Fastmcp < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
-    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
+    url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
+    sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
   end
 
   resource "rich-rst" do
@@ -310,8 +315,8 @@ class Fastmcp < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/e3/02/0f2892c661036d50ede074e376733dca2ae7c6eb617489437771209d4180/zipp-3.23.0.tar.gz"
-    sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
+    url "https://files.pythonhosted.org/packages/30/21/093488dfc7cc8964ded15ab726fad40f25fd3d788fd741cc1c5a17d78ee8/zipp-3.23.1.tar.gz"
+    sha256 "32120e378d32cd9714ad503c1d024619063ec28aad2248dc6672ad13edfa5110"
   end
 
   def install

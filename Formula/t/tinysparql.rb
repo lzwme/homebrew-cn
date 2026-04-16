@@ -1,8 +1,8 @@
 class Tinysparql < Formula
   desc "Low-footprint RDF triple store with SPARQL 1.1 interface"
   homepage "https://tinysparql.org/"
-  url "https://download.gnome.org/sources/tinysparql/3.11/tinysparql-3.11.0.tar.xz"
-  sha256 "011e758a53f31112a8c45700fd6039ae55617f0dac70119d9eddafc03cf68fe5"
+  url "https://download.gnome.org/sources/tinysparql/3.11/tinysparql-3.11.1.tar.xz"
+  sha256 "cfd46021ee1514ad435e714f7aa1ec7a787c7f516a94f4c7438897ee3d6eca1e"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
   head "https://gitlab.gnome.org/GNOME/tinysparql.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Tinysparql < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "de1f0fd87b3725ca75dd651f6b6cccdbade9a49b206f1993dbf5824d74b4f585"
-    sha256 arm64_sequoia: "701428db04e01b79f081710b4ce37fcde5fbb04e3543fe0ec4da813fd7c7c3cc"
-    sha256 arm64_sonoma:  "df83b90506db3849d55757dc6de409064c73bc44b5c725ff2ea2039a9f6f2973"
-    sha256 sonoma:        "bc7f868620da17dd9e847b4f72172296a4a49903ec6ffe1da8453e06591efe9e"
-    sha256 arm64_linux:   "fe643e5cadb33ac30d5b209e596861307d76b11e039a43c8e6e96a9d45f7b972"
-    sha256 x86_64_linux:  "57708914141e8d9b89901d4e7877bb846459f03c44176d7849a06a6b7ca05a40"
+    sha256 arm64_tahoe:   "09243fa8ca6c894e94fe7b6b061cf01894bc041959ef4bf880a95ba2f45b4b2d"
+    sha256 arm64_sequoia: "bb41121e6df1a9216611c53cd2b3d6f0ac83a057b5371e2edd45fbfe57581908"
+    sha256 arm64_sonoma:  "865f12d2617eb5b49dca8fba5c552f832ca1d7a6d28c14fbd6ff62ac94f672ed"
+    sha256 sonoma:        "5d71b933c2c672a09c96184a308285dabb9d9c09afd3b8e9258878c6135b6373"
+    sha256 arm64_linux:   "c29b33dbc0392d8dfe2660754ec76292bddccc79d07a943e03111ba4d45a70d8"
+    sha256 x86_64_linux:  "03f94a5ec379639b70423314555bee512d5e6a2d69a0a7bb9b1e7154cf5348fe"
   end
 
   depends_on "gettext" => :build
@@ -41,23 +41,6 @@ class Tinysparql < Formula
 
   on_macos do
     depends_on "gettext"
-  end
-
-  # TODO: Remove patches when fix is in a release.
-  # https://gitlab.gnome.org/GNOME/tinysparql/-/merge_requests/808
-  patch do
-    url "https://gitlab.gnome.org/GNOME/tinysparql/-/commit/1219e5ff4c4ce3afcbc5161baa27ef54153b2a99.diff"
-    sha256 "67f9780f4438906b55c7f295b5f7afde30faef0885f94209e6c52654ea5b75d6"
-  end
-
-  patch do
-    url "https://gitlab.gnome.org/GNOME/tinysparql/-/commit/b139706196da17089dbd0b5ee0f8713d1d50264d.diff"
-    sha256 "16ec2db418b424991fd0c45130ef328ff76d4f21a8e6dbab69bef439fc6d3ab0"
-  end
-
-  patch do
-    url "https://gitlab.gnome.org/GNOME/tinysparql/-/commit/806771f99e42c0ee8c7d9b2f66f5d65241131ce8.diff"
-    sha256 "23b7124ab989e416787d98727f40b291260f786622e4a9d414df403bea7e403d"
   end
 
   def install

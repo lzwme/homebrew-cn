@@ -1,8 +1,8 @@
 class Libgcrypt < Formula
   desc "Cryptographic library based on the code from GnuPG"
   homepage "https://gnupg.org/related_software/libgcrypt/"
-  url "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.12.1.tar.bz2"
-  sha256 "7df5c08d952ba33f9b6bdabdb06a61a78b2cf62d2122c2d1d03a91a79832aa3c"
+  url "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.12.2.tar.bz2"
+  sha256 "7ce33c2492221a0436f96a8500215e9f3e3dcb5fd26a757cd415e7a843babd5e"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class Libgcrypt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cff8b6a3c92ffd76aa26ccbcc13e21e10ca6b3b231ded3d35e81e38ed5b05a6d"
-    sha256 cellar: :any,                 arm64_sequoia: "1e90fbea3e8a54c2309a5f54db60159cbf4ac34264e60040e31e48b02c1c9d8c"
-    sha256 cellar: :any,                 arm64_sonoma:  "885a7de8758e4bd968dd91d1acbd4f090913dc7396aca96503c6fca2c7712001"
-    sha256 cellar: :any,                 sonoma:        "41423fc76f133a106758d801991bcd20fcb0dfdc2eed8f1ccbcbb1b324481a16"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9910126e491fb609f3671bcdc0ca9d9aeeb633361dc65fae56def5b5a3d4b7b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec18f27e8109b7fb873ad1ead6acb4150af9ffb6c3a2f9f40c6e80c28c73e67e"
+    sha256 cellar: :any,                 arm64_tahoe:   "a28d181fc09720c699b5fefe62d41b3c75ad8ae73a080c989faa2acf6925d06d"
+    sha256 cellar: :any,                 arm64_sequoia: "8f05385898305e7f3f8717aead5162962b7266d1f25f8eb6b1f1aaf5ced87139"
+    sha256 cellar: :any,                 arm64_sonoma:  "562d16658a0786b0be1ae3bb764ce4e66d9215d0ca0007d8df0c800fe192ab2b"
+    sha256 cellar: :any,                 sonoma:        "72ec986ea68038405a419bfe5f646aa4b71f0e214517873d154b300b4ce71fbc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7154aabeee4d72b91369b7f7b9bfecd25c793fb4e4fcfadfc41b3f23197e012"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "941be22c944a367fc59d0dac07bce43ee16b3ea8b634389813bd9d2337a01926"
   end
 
   depends_on "libgpg-error"

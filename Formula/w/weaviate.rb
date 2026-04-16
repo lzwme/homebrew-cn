@@ -5,6 +5,11 @@ class Weaviate < Formula
   sha256 "418ed13ccc0a014ba2c3e46c91924129e189f37797629afa2c6014064ac63ec9"
   license "BSD-3-Clause"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "57b37e15b97ca31d353ad85f6da90f2cb79fc1ce2c4e2d0cfcfa504552d95674"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "57b37e15b97ca31d353ad85f6da90f2cb79fc1ce2c4e2d0cfcfa504552d95674"

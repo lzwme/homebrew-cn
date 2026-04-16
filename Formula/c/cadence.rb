@@ -1,8 +1,8 @@
 class Cadence < Formula
   desc "Resource-oriented smart contract programming language"
   homepage "https://cadence-lang.org/"
-  url "https://ghfast.top/https://github.com/onflow/cadence/archive/refs/tags/v1.10.1.tar.gz"
-  sha256 "5be6ae17fb768e90f87aafc0a9c235476eae0b201fe1b8a42e38c73ed622ea90"
+  url "https://ghfast.top/https://github.com/onflow/cadence/archive/refs/tags/v1.10.2.tar.gz"
+  sha256 "cfcb6544880e296ca8c64aab2a8440d4af38c60e0dd8dfbcd6e7e0b4862e7db2"
   license "Apache-2.0"
   head "https://github.com/onflow/cadence.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Cadence < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "35802a08df5ccb9989e45e0d2afb6052f8f2828809ea0bd9861da05516e9693e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35802a08df5ccb9989e45e0d2afb6052f8f2828809ea0bd9861da05516e9693e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35802a08df5ccb9989e45e0d2afb6052f8f2828809ea0bd9861da05516e9693e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a9a06c6ea72c4da13a6d8fb6c79aa8ea6aed0a3bae55f99930f8aceef1dbdd6d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e5c92ee06a6a1e34fc7128c7302ae367385b773121c3624fd49f51f1df85115"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e887fa4731f5661bd0b2dca94b2f5dd279c72ebb1ca40f736cb93ce195002d5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d93eae81b2c8aee73f20e401cadf206c9abec792d12352fadc0ed0190410ece3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d93eae81b2c8aee73f20e401cadf206c9abec792d12352fadc0ed0190410ece3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d93eae81b2c8aee73f20e401cadf206c9abec792d12352fadc0ed0190410ece3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b204f2ed05b22536b08a94151fcce12e56486c7cbcae870849e37f381903f0a5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "053b3fa7c42ee03785f1805f9ecf5468e703503d21d0b9e5ee6cadec772c80c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9acec8a9f60411a86bee476b264093505e71eef43640b5add543ecbfa4b2921"
   end
 
   depends_on "go" => :build

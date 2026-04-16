@@ -4,8 +4,8 @@ class Gwyddion < Formula
   license "GPL-2.0-or-later"
 
   stable do
-    url "https://downloads.sourceforge.net/project/gwyddion/gwyddion/2.70/gwyddion-2.70.tar.xz"
-    sha256 "942f4e041945a850bc32d05193a115ac8a5118a6f841afa6d4dea510f9913f59"
+    url "https://downloads.sourceforge.net/project/gwyddion/gwyddion/2.71/gwyddion-2.71.tar.xz"
+    sha256 "2df721befccbe4d5ee2ba564b32e69341f8ce1de637e2045838a09a2d46b5dba"
 
     depends_on "gtk+"
   end
@@ -16,13 +16,12 @@ class Gwyddion < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "4600005e4a74dc2e9b3e0ec17f9e0e52c5cdebeaf4830f16e187d2b06415b44b"
-    sha256 arm64_sequoia: "f95d7836e09dfc7cdc666fd93d7125734d4b07fec1308b9c01cb3a7a875265b1"
-    sha256 arm64_sonoma:  "3c532cc85266974f4af9ba3f04b971ba1116f7a763dd9a9b9fa373033971225c"
-    sha256 sonoma:        "960dbce3c3045c936ec5bcbda40626a20664b2e8540224211e573b2784569cd4"
-    sha256 arm64_linux:   "799e34fbff79d604bdf29e5ba6e91e68466ea8ce4c208631021f73d9e0822175"
-    sha256 x86_64_linux:  "d9f991bd16d1e0e3412b2f61c9d6a6b8806c8db047482381a4f77f951294dd1f"
+    sha256 arm64_tahoe:   "0b68818a49fef20580c6d7f3055ad7e108fda64592c4e66353dbe91762ab2830"
+    sha256 arm64_sequoia: "2bf33cea35773f3a6db7ff6a6c80700ceeffe32c382c3710c82be3ac1f57a646"
+    sha256 arm64_sonoma:  "79abadad092e0670df97cc6078ac31c0f7e88f1e78baee412b62087bc76aa848"
+    sha256 sonoma:        "9fa8d23ece1da41bcb48ee217e92ce1579b76741f2d456dd2d2c35c80eefdad9"
+    sha256 arm64_linux:   "0b3934f11b431c089878be3263c8a26e86e25ab5fd5b138eb4524449ef0657a4"
+    sha256 x86_64_linux:  "4a4aba81dfb4883218e0b5f2f9237285f1c1fc7b18bd364c28d4e773a5d658a2"
   end
 
   head do
@@ -53,6 +52,7 @@ class Gwyddion < Formula
   depends_on "libxml2"
   depends_on "libzip"
   depends_on "pango"
+  depends_on "zstd"
 
   uses_from_macos "bzip2"
 

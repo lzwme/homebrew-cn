@@ -1,18 +1,18 @@
 class Resticprofile < Formula
   desc "Configuration profiles manager and scheduler for restic backup"
   homepage "https://creativeprojects.github.io/resticprofile/"
-  url "https://ghfast.top/https://github.com/creativeprojects/resticprofile/archive/refs/tags/v0.33.0.tar.gz"
-  sha256 "6f550580877d172965f29398a1fff2a11075d0592f09324b1d33efae6f7bf6fc"
+  url "https://ghfast.top/https://github.com/creativeprojects/resticprofile/archive/refs/tags/v0.33.1.tar.gz"
+  sha256 "3b8a26dbc17ac9268108de59ce0fedf831fe5bc8c41f7b36b8341fa9157b8f5a"
   license "GPL-3.0-only"
   head "https://github.com/creativeprojects/resticprofile.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe9f71446c080af341af94906dfa3192230d1d5d77f994fe7bbbd9a1d0cf930d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad7042dbd3c8f14163bc1bf332be459b350d80c0f62f35349e7a035d2c9119e6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf07c7238a96b388a1fcfe2daa90346569ff1af19cf2842c3dc21cebc628cf36"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cd52a3a89d0ab22eb9e59b99d80b556b83c21e5a9679449c88639b0862e9e481"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "497420f4d7613d2e3461e0041ade56470320c3752274bf893c6b34f35817080d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02f4d8c0929e06c0d62ce703a5e1bbd59419b82be2af632a611cf76fb6edb07f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f986d017c8ce9414c2f1ad6b1b0c16287decbcd5f923e8bf82d36a9f098cbeb2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08755807092ca3abb8bef66adb739364686facc2bf82884a9e0d657d7467be7b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "253287995bf155d81c1a21df23eff213f46dce7fdbeb593253f0ed5d5924d42f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a48b32ea01fff0fb9d80f038b201b96ee36b99c43feffc831d4a39b943a22f4b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7e2912941204582a3c1f6229dda13ab9b5e3d9e7878f78f8b09862f1a454727"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "867d857a556e6e0fc36fcf1aa7eae9257dd70a097248762130787fcfe0647ae7"
   end
 
   depends_on "go" => :build

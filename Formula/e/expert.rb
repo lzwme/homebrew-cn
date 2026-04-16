@@ -18,7 +18,7 @@ class Expert < Formula
   depends_on "erlang" => :build
   depends_on "just" => :build
   depends_on "xz" => :build
-  depends_on "zig" => :build
+  depends_on "zig@0.15" => :build
 
   def install
     os = OS.mac? ? "darwin" : "linux"

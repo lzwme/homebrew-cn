@@ -3,13 +3,13 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https://virtualenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/eb/e3/2595f5ab32a7c1ebe96ba23b70ed06477e8a6de08925b2c55ce22f2e5be5/virtualenv-21.2.2.tar.gz"
-  sha256 "cf780026a5696c86ef9982be3ca9b623c97ea4eb3d92043504f06729112048ce"
+  url "https://files.pythonhosted.org/packages/0c/98/3a7e644e19cb26133488caff231be390579860bbbb3da35913c49a1d0a46/virtualenv-21.2.4.tar.gz"
+  sha256 "b294ef68192638004d72524ce7ef303e9d0cf5a44c95ce2e54a7500a6381cada"
   license "MIT"
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "96980b8c89d26fb377a01517db4d5851e7fb17eb4e965ee8e2228e14f72001c8"
+    sha256 cellar: :any_skip_relocation, all: "74964bb15618047084e818e39f1db52d317435d447f1f54d0ed5b070daeb321d"
   end
 
   depends_on "python@3.14"
@@ -20,8 +20,8 @@ class Virtualenv < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/94/b8/00651a0f559862f3bb7d6f7477b192afe3f583cc5e26403b44e59a55ab34/filelock-3.25.2.tar.gz"
-    sha256 "b64ece2b38f4ca29dd3e810287aa8c48182bbecd1ae6e9ae126c9b35f1382694"
+    url "https://files.pythonhosted.org/packages/d6/17/6e8890271880903e3538660a21d63a6c1fea969ac71d0d6b608b78727fa9/filelock-3.28.0.tar.gz"
+    sha256 "4ed1010aae813c4ee8d9c660e4792475ee60c4a0ba76073ceaf862bd317e3ca6"
   end
 
   resource "platformdirs" do

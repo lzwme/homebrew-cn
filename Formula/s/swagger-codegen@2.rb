@@ -1,8 +1,8 @@
 class SwaggerCodegenAT2 < Formula
   desc "Generate clients, server stubs, and docs from an OpenAPI spec"
   homepage "https://swagger.io/tools/swagger-codegen/"
-  url "https://ghfast.top/https://github.com/swagger-api/swagger-codegen/archive/refs/tags/v2.4.51.tar.gz"
-  sha256 "20100d53e204e1d6c2ceac2bd65596c884a7386bae0890aa3ab0b7ba21710a8c"
+  url "https://ghfast.top/https://github.com/swagger-api/swagger-codegen/archive/refs/tags/v2.4.52.tar.gz"
+  sha256 "7707fa9771272644d7fab12a5eaee0f3f319bda746a44ed58ba726efa60050a9"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class SwaggerCodegenAT2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e60872362ef280846128c4c94e7fbeca4ab5191e87f59ea8253e5041495d9d10"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2d4ef7957948843aad46c3e61d3f3cfda66ed4dee9d0faba366ea3a479c8a75"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08242ea6f0fe4a54df8dd18ac96b2efdb6ce04f5a1f4691050e0a8b5bf45d62a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "86c7bcae76cebfb42273d033c692742fb68406c52df958b694b68813b07b56e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a26bca1b7efb54eaa79b30410261633682d99e51d856c788669c423405f97218"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d198d697c315b45cfb993d660db68455b9d1ec781442e39f04f71958f4de35c3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c3bccf0295a0e1dd633850e9946c680b2e70061d9a77ba0922bf30064163108"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8eb8141b0066f09474554c5b43ce5483900f7142cf7b2ce5a18a317fcbb3238a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "101c619d8b7a95aa123982249702b328aca40c54fdcae71079363f326db928f0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c995512184cf6536ec84c924c40da4fd49d8b8d9dbba841fef440f3019960d0a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d245e13d12fb312da9204d64be5f74254ce5abd383ade758b63ffb1f94e3dfe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "076500d9ca8519fd67662c64962b9d31203ca92c7593be56e864aa1b5da85738"
   end
 
   keg_only :versioned_formula

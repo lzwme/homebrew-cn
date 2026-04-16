@@ -1,8 +1,8 @@
 class Mimalloc < Formula
   desc "Compact general purpose allocator"
   homepage "https://github.com/microsoft/mimalloc"
-  url "https://ghfast.top/https://github.com/microsoft/mimalloc/archive/refs/tags/v3.2.8.tar.gz"
-  sha256 "68163666575518c213a6593850099adce3863b340ca2751103dbd1f253664e05"
+  url "https://ghfast.top/https://github.com/microsoft/mimalloc/archive/refs/tags/v3.3.0.tar.gz"
+  sha256 "cf227295c307efc6f16e90c485595f9bb91c5a5532a3000f81f08907f8fc56a2"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Mimalloc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bc6f9b1db6effe64908a85e46ecfb03341acf1352ba7a3c83308bf1af3e50ffb"
-    sha256 cellar: :any,                 arm64_sequoia: "17c926d79dcead2314f91f205bf85f37114f909a6e6a838840ad923552df2731"
-    sha256 cellar: :any,                 arm64_sonoma:  "6f87b08db6ad3e794a298afdb385eece6ff31068f3b1211916404b262b5752ac"
-    sha256 cellar: :any,                 sonoma:        "4b586ead845fadaff26fea75596f2115cd2f4f9184184c82487e4bff9d4bfeb5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "84ccd64fddcd740fd1d8e19b4dc36af100b80cd8210d8ba0bd667605c749029e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0554e2b09e732858ef460e41a80216e3fc2937711aa244a543e6735991a11557"
+    sha256 cellar: :any,                 arm64_tahoe:   "4616013e772f0cd0c0fa4358aef3341c8eaa54ae595e24e594e2bef91809f180"
+    sha256 cellar: :any,                 arm64_sequoia: "ef70ef3afd490318ba382126ce1c4b636d7b8b30c313a272edd560cb0a9843c7"
+    sha256 cellar: :any,                 arm64_sonoma:  "8c749c7fdf0f125d47e104f24a659c112bea8103a85b99bab801e5829031f6e5"
+    sha256 cellar: :any,                 sonoma:        "2a5ca969c4d70e4277eab183ac9fb31247277826d07fc58d83c65f020c90562f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b60fe99a08e2cddd4cdc98d3040fcfba9972541ec8698c1d5f9331b675bc2e51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be04ba3bb87362beded8351ee96fcb02e75bf3ddac3bf4948237b9243be80bf3"
   end
 
   depends_on "cmake" => :build

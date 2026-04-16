@@ -2,7 +2,7 @@ class Dartaotruntime < Formula
   desc "Command-line tool for running AOT-compiled snapshots of Dart code"
   homepage "https://dart.dev/tools/dartaotruntime"
   # NOTE: Using a placeholder file because the build source is fetched by gclient
-  url "https://ghfast.top/https://raw.githubusercontent.com/dart-lang/sdk/refs/tags/3.11.4/README.md"
+  url "https://ghfast.top/https://raw.githubusercontent.com/dart-lang/sdk/refs/tags/3.11.5/README.md"
   sha256 "ff4301ec8e5c1259c5778c4abc947e303308cd31af30acd55575f5ca7ed6f405"
   license "BSD-3-Clause"
 
@@ -11,12 +11,12 @@ class Dartaotruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "43c342c42220efb0e8f2f77ea1aebbfaa9db2a8aef692eb98bd6280b7885420d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1de265c3c99ac612f79f26a5556527f0ffb7ec32df63a99440fc0e74f27f5b62"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "650f0ae31f16d10e9b691d5c9a44d05837c79d7b724737d811d789c8a5035a94"
-    sha256 cellar: :any_skip_relocation, sonoma:        "48d7fe226d8879076400eb199f9c6db7c071f4ed7168893b0e66c5bdb0b65e0e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a7908bae85fea2c0b12ff4629c24114638363a1bf2f9adfb89adfb0a7c913a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26fb9b632354bf75343bf07bddba74caf23dc2ea27411fd6eeb4d63fd55d0e3e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b381e624cf828387c31e044d9a4d6340ce8d55ba572c007b0ac11b122f00fc91"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0a96926a2757edd3999f17d6179d2be9dde3093c18a7603c4b29c30f1aae75b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36463ed4b180261483d701a0eba52c0ea33c1e464c08a340c67b87f015c9478f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0973a4459bf6a41245fd3853152f2796586b7d4e857e6f4f6a0c03a4c0b5bbd5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1840945baeee2a3cf2c1b86fb09ac075e0ac2d7f57c86bf1b9649700f69a9dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff695b2219a2839231981e31159c936e7ed8b94cb30c8991c9c8f35b79545d41"
   end
 
   depends_on "ninja" => :build
@@ -30,8 +30,8 @@ class Dartaotruntime < Formula
   # always pull the latest commit from https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main
   resource "depot-tools" do
     url "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
-        revision: "4ce8ba39a3488397a2d1494f167020f21de502f3"
-    version "4ce8ba39a3488397a2d1494f167020f21de502f3"
+        revision: "b9d2b54daea64fa757df5ba737e611b691dc6201"
+    version "b9d2b54daea64fa757df5ba737e611b691dc6201"
 
     livecheck do
       url "https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main?format=JSON"

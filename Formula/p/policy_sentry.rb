@@ -3,19 +3,18 @@ class PolicySentry < Formula
 
   desc "Generate locked-down AWS IAM Policies"
   homepage "https://policy-sentry.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/2d/84/fc0594aead9d0bae80251f1415c0c76b053d7abeb2fd9a69a3993d88f6ec/policy_sentry-0.15.1.tar.gz"
-  sha256 "5ab684b1a26970e33e7e8cb028eec93f1483616fb483c1c09568858a42983a30"
+  url "https://files.pythonhosted.org/packages/87/fb/1d8cd9672d757481f6ffbdb18ca92d628d8d2b08cbf1829a1c4d700bc1ab/policy_sentry-0.15.2.tar.gz"
+  sha256 "6e16f059dde400c856815be9368052102993499e66754207f9a9a1cdcf996dd2"
   license "MIT"
-  revision 4
   head "https://github.com/salesforce/policy_sentry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9f797933116bb0662fcdb3d3fd436818ff13ab740216e482a51fb7bab200c16e"
-    sha256 cellar: :any,                 arm64_sequoia: "cc91ed558471ec40f7cb580f8479f8c08fac950aeb04258280756c6a96d3c8ea"
-    sha256 cellar: :any,                 arm64_sonoma:  "e34d809b3e59277dbb723730e2a6e949f30f78970537e37856fa583ced9b71d0"
-    sha256 cellar: :any,                 sonoma:        "db4dbbbaf7c0c79a3ee984c9ca7393147060b4e57c0e3495c78ba8da254d86d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ae62658a76c71f891ad3391164abdedfc7cc908377a86891f011b84c2f669bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f971061ed656ed061a40da563f9c02c37b96fb33a8bec4eafd411e2ce1d78f9"
+    sha256 cellar: :any,                 arm64_tahoe:   "6a5d74584f70833e1aeab2047f0744e0d23c22dadf091456ff5397c4909b5e3a"
+    sha256 cellar: :any,                 arm64_sequoia: "8aa4786827c6e94e3dfe4dcda0b0e47d0fa56bfc4210304ac429f777ce85663f"
+    sha256 cellar: :any,                 arm64_sonoma:  "4d8759f4bddbcb8f47a560d240f96ba97bac30e5148f0c5647c1ede1dc9ae67e"
+    sha256 cellar: :any,                 sonoma:        "9b0018fa368df731255b732f63081740a73c455d5fb2fd976b3c564256e5181b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee5fd5189391f3cd433e2148c49dda0602c27409b94b33d0f7e077b5082fca4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33b80e36f08b6634aad9d6795940e21fda67d97a9042777cbef21dad9212317a"
   end
 
   depends_on "rust" => :build # for orjson
@@ -31,13 +30,13 @@ class PolicySentry < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
+    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
   end
 
   resource "idna" do
@@ -46,8 +45,8 @@ class PolicySentry < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/53/45/b268004f745ede84e5798b48ee12b05129d19235d0e15267aa57dcdb400b/orjson-3.11.7.tar.gz"
-    sha256 "9b1a67243945819ce55d24a30b59d6a168e86220452d2c96f4d1f093e71c0c49"
+    url "https://files.pythonhosted.org/packages/9d/1b/2024d06792d0779f9dbc51531b61c24f76c75b9f4ce05e6f3377a1814cea/orjson-3.11.8.tar.gz"
+    sha256 "96163d9cdc5a202703e9ad1b9ae757d5f0ca62f4fa0cc93d1f27b0e180cc404e"
   end
 
   resource "pyyaml" do
@@ -56,8 +55,8 @@ class PolicySentry < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "schema" do

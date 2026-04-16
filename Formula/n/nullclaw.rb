@@ -15,7 +15,7 @@ class Nullclaw < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3207e120165bfbc3933235cb27a1d7d720e89481b8453b521f4744416470c84f"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.15" => :build
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.

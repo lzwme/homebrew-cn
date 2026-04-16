@@ -7,16 +7,17 @@ class Aria2 < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "8253bf83d39fcdb91b7a251b2d38f0e32f21a0352f2e3798f5a376ba21ae68e9"
-    sha256 arm64_sequoia: "c7a6244ec33cb6eaf959d61616b90b08e331ae172936052709f4b2934d36dcb9"
-    sha256 arm64_sonoma:  "5822684ab206b076690a5b3b53331a4e351440a45fe6e649e3e64f6a088f2e17"
-    sha256 sonoma:        "08007898a6dc4b162547081eb85329457345688279d6dce42f98d601e19ad799"
-    sha256 arm64_linux:   "4d5aac6c6905b3274f33b2160bf446293785eebc547c2d398562eb5acf576d7f"
-    sha256 x86_64_linux:  "ce15dc949ff077b3ded7d07bb45964a17a44a603e97a6be66ead70e9682f1d96"
+    rebuild 2
+    sha256 arm64_tahoe:   "95bdbd84198eb00cac090ecedad387eabcfb5815ced97467a24c518020cf48dd"
+    sha256 arm64_sequoia: "8595dd94303e84f0d359fcdfcb507d1d5bf72254e73f10126b46b3bf1f04e13a"
+    sha256 arm64_sonoma:  "7038fdbb6d201ee9b7ffe0b21e350783c42168d3651f0c8259a2023282c782f5"
+    sha256 sonoma:        "237e81120aa836dac06a16342cad1eda81fd155ae731a683b2a819e27a43c2fb"
+    sha256 arm64_linux:   "ea893dc5171591d4aec0142c384d8b91cbb0766d9bf0b194a9837cee7ae65f1a"
+    sha256 x86_64_linux:  "f23aa8887c144680a5bf5429151d57a2cb8890cfd3e7989daf55ba631e565777"
   end
 
   depends_on "pkgconf" => :build
+  depends_on "c-ares"
   depends_on "libssh2"
   depends_on "openssl@3"
   depends_on "sqlite"

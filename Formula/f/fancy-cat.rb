@@ -15,7 +15,7 @@ class FancyCat < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "16d2018532c3849119a0d66c7ba11df7ad69aef5e194de2d3d271e853706ce37"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.15" => :build
   depends_on "mujs"
   depends_on "mupdf"
 

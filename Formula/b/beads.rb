@@ -1,19 +1,19 @@
 class Beads < Formula
   desc "Memory upgrade for your coding agent"
   homepage "https://github.com/steveyegge/beads"
-  url "https://ghfast.top/https://github.com/steveyegge/beads/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "db089aa41a3aa1f68f57ad72b632e2796dd5a045406366a68e001450889f0370"
+  url "https://ghfast.top/https://github.com/steveyegge/beads/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "21f6170bd039ab0fefc7ee686f391a7b0c919690074d056bfb0636d3233b1914"
   license "MIT"
   compatibility_version 1
   head "https://github.com/steveyegge/beads.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "75791a4f359e348d3c6d974d108591354fb81dff1b17450d7d4355453f92804e"
-    sha256 cellar: :any,                 arm64_sequoia: "fc69d08b4563a922af590eca4821a3d108bb69433f389bf7e1a6b5030199ed06"
-    sha256 cellar: :any,                 arm64_sonoma:  "cc158d34d4f543bd829696d104774671b2387f56f1e7d37b33771623e2a75782"
-    sha256 cellar: :any,                 sonoma:        "e2435ca8a160e696f5cd0ef7a5bbf3d9547fa0f070dad84d2b8d70a3aeede7f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfb7628fcef7779c73743bd8ff20af88713d4f933adea2652d68433fccee936c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "467163e52e379e7d5536b58e0f9b05817d1dc2a8c391897e3f66648441b843c5"
+    sha256 cellar: :any,                 arm64_tahoe:   "adad56fd7f1c4a793b273867b481d482511a9ad5b45176fcc70f6570d2fd6156"
+    sha256 cellar: :any,                 arm64_sequoia: "9d98ac98cfe7962a69de01660bff97b092dcf7f7887f728c38def9e3dc035eb9"
+    sha256 cellar: :any,                 arm64_sonoma:  "14b40b54c48b270187f0c381354abfb8a9b3d5e096d93c153a9e3aa04d029273"
+    sha256 cellar: :any,                 sonoma:        "fb96949d8bfd34120d855a53f8456c9648321a7f460c982764866ee4e92c3063"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de5b1406b518ac2cf765e0d7cda2a8077fb52893415479ec2684fe55e0e8528c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b48478656caf592d1bb3104c1d345c87fc546bed7ca9b2698a382ddab0046166"
   end
 
   depends_on "go" => :build
@@ -42,10 +42,9 @@ class Beads < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/bd --version")
 
-    system "git", "init"
-
-    shell_output("#{bin}/bd init -p homebrew-beads < /dev/null")
-    assert_path_exists testpath/"AGENTS.md"
+    system bin/"bd", "init", "--prefix", "homebrew-beads", "--non-interactive", "--stealth"
+    system bin/"bd", "setup", "claude"
+    assert_path_exists testpath/"CLAUDE.md"
     assert_path_exists testpath/".beads/config.yaml"
 
     output = shell_output("#{bin}/bd --db #{testpath}/.beads/dolt info")
