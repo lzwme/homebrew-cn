@@ -5,18 +5,18 @@ class Cassandra < Formula
   desc "Eventually consistent, distributed key-value store"
   homepage "https://cassandra.apache.org"
   # TODO: Switch to `python@3.13` after https://github.com/apache/cassandra/pull/4628
-  url "https://www.apache.org/dyn/closer.lua?path=cassandra/5.0.7/apache-cassandra-5.0.7-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/cassandra/5.0.7/apache-cassandra-5.0.7-bin.tar.gz"
-  sha256 "556be693f1941aeb8ec1538fe6224cbefdca7bc3729f87ff0e24a0052eb98c33"
+  url "https://www.apache.org/dyn/closer.lua?path=cassandra/5.0.8/apache-cassandra-5.0.8-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/cassandra/5.0.8/apache-cassandra-5.0.8-bin.tar.gz"
+  sha256 "1579d7d3f2d812741a28cd2c2cbe29e83541bb4d25fb21ec2c00c1e4fb3b9a8f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "69447b29380473bb63260335e820c5dd360753a590bbfe1d9c9630e41a84d54d"
-    sha256 cellar: :any,                 arm64_sequoia: "48e2aaffd02a67bf892bfcad198c81fdf1bf79422fe95a4e1d0cba6583f03e4f"
-    sha256 cellar: :any,                 arm64_sonoma:  "4569c6b3d2975083cb538f640fa6b2e992acbf8ed4f95dbe552bba2b10ce130f"
-    sha256 cellar: :any,                 sonoma:        "7eae9fc3ddddf212d502896470a4e70aaa64f73a0e81eda8d99555fc4217a878"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "524816714602d2fc2d1a7071f884b04e2c08520bf2223fdc5a511085a5d21b47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad31007a1f33a574ea466f8fcddf21602c0be345b098024aa0883574254a3e02"
+    sha256 cellar: :any,                 arm64_tahoe:   "bfc15cd9d3db17f3e089661c454a51bb8bbc32cb2798d4464876c5952496a47e"
+    sha256 cellar: :any,                 arm64_sequoia: "180a63e5ab13dd22aaa55c5654a36ee5771a20f4b2265a0abe9f3c7e9ffea1b3"
+    sha256 cellar: :any,                 arm64_sonoma:  "0d26ad45cdbd0b9ec88140e0339a3d34e82549cd74537b8e4ccdf1f67d942aea"
+    sha256 cellar: :any,                 sonoma:        "7908dbaed8ac61780a35650ffb9d4b2d09bf37dabed214495c8bcd5c0f753fc2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e31b3645edc4d63c9aa0190827b809b02d8b033edb29d6217951b058518e981c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1330aa5402dd4782daa30d206ceb4b2dfc97e080952db83cb58d168fb2d011e8"
   end
 
   depends_on "libev"
@@ -40,9 +40,21 @@ class Cassandra < Formula
     patch :DATA
   end
 
+  resource "cassandra-driver" do
+    url "https://files.pythonhosted.org/packages/06/47/4e0fbdf02a7a418997f16f59feba26937d9973b979d3f23d79fbd8f6186f/cassandra_driver-3.29.3.tar.gz"
+    sha256 "ff6b82ee4533f6fd4474d833e693b44b984f58337173ee98ed76bce08721a636"
+
+    # Remove `ez_setup.py` to be compatible with setuptools 82+, remove in next release
+    patch do
+      url "https://github.com/apache/cassandra-python-driver/commit/7d8015e3c1cff543a5f64c70cff3e14216e58037.patch?full_index=1"
+      sha256 "66a5a714aed117306e6c0e78b51615b56ca655e12cb9ea5718b0c1ae384ceef6"
+    end
+    patch :DATA
+  end
+
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
+    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
   end
 
   resource "geomet" do

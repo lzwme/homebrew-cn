@@ -1,8 +1,8 @@
 class Weaviate < Formula
   desc "Open-source vector database that stores both objects and vectors"
   homepage "https://weaviate.io/developers/weaviate/"
-  url "https://ghfast.top/https://github.com/weaviate/weaviate/archive/refs/tags/v1.36.10.tar.gz"
-  sha256 "418ed13ccc0a014ba2c3e46c91924129e189f37797629afa2c6014064ac63ec9"
+  url "https://ghfast.top/https://github.com/weaviate/weaviate/archive/refs/tags/v1.37.0.tar.gz"
+  sha256 "2dded67225a8241685d174e81e449574b61a511d0d79f4331de04e8eb4c95ec1"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Weaviate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "57b37e15b97ca31d353ad85f6da90f2cb79fc1ce2c4e2d0cfcfa504552d95674"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "57b37e15b97ca31d353ad85f6da90f2cb79fc1ce2c4e2d0cfcfa504552d95674"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57b37e15b97ca31d353ad85f6da90f2cb79fc1ce2c4e2d0cfcfa504552d95674"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1e0c8d425fc33ec6519927cd9e7b9e5711dccff110c45eca5acbf899056f00ae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45d96100c01aecbaf109aea281a8600beab13a6cf5ad5be6b1a52ca67d64d5ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f5aecdece54435cdff10b245558a41bd8a98e67d6b775fd11cf5097a1d1042d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21a5bce3b99663026f614e8f5a1d66c358758f78fe35bc623dfbbf454ee9b812"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21a5bce3b99663026f614e8f5a1d66c358758f78fe35bc623dfbbf454ee9b812"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21a5bce3b99663026f614e8f5a1d66c358758f78fe35bc623dfbbf454ee9b812"
+    sha256 cellar: :any_skip_relocation, sonoma:        "699a527e3afbc2a7d263d4cfe6bf92c94b5df4e434e8c5df9bb4fc515de19722"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "87565e79ff998dff32718904e513a38937b4a4460e704a65f0026a6fae47db0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c11791cd9882fdf3a04bed2f01a6b84974a8b0ab8b2bf401be275e4fc8a18a10"
   end
 
   depends_on "go" => :build

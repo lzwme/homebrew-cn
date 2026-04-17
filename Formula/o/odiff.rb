@@ -1,18 +1,18 @@
 class Odiff < Formula
   desc "Very fast SIMD-first image comparison library (with nodejs API)"
   homepage "https://github.com/dmtrKovalenko/odiff"
-  url "https://ghfast.top/https://github.com/dmtrKovalenko/odiff/archive/refs/tags/v4.3.3.tar.gz"
-  sha256 "50c8edb6da90461f218c59ab85e6be21b6a5ad4a9e90f65e91b04134bf30dc47"
+  url "https://ghfast.top/https://github.com/dmtrKovalenko/odiff/archive/refs/tags/v4.3.4.tar.gz"
+  sha256 "72bb5a9a32efa6e02aa3392193194127215fe8e302cb827b7202c028f64afddb"
   license "MIT"
   head "https://github.com/dmtrKovalenko/odiff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6fcd894a6ca26f53e76190e85d33e59fe520eec0a4fc79878254363563de0e0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab46ea7de52f4d5623b7f422fb428a37f1fc7b7013dc3006008b7b875dd62ec1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36e7d955a6fb0599ca8c0776ee31cdfac2f680ffe74bf2156d0bc12592abfaae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "edfe06c808e823f3ff070f6ce56d065e4e6f7776af5b928df455365b1e2ddf4a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c4176f26859f1d52e83b85926823b34032367abb55cd7411f4e7ae4499f0769"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3530785e49488b5a08dcbe1ce5ff6d058c84711db92d9d78242b06fc6af3aaac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07e194f20e22963bcd68070cb90dd98397f64e13c2151f47155c5ca38120ae77"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d525ed05b9bfa690d19d5151676b323b20aadc0fc0d3bee8d0e6794ba6caa5c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1237ffdcda76dbd27b060d3a4b74885a17442163905ada0330979e551250fae5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bc4ce97b002caa2fee3ed817210ed2d26dccce41ec52b131d03fee3fd398a583"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0222c72e0ff935f96e07b0460742877998d7df144d4e2876466a0d517b92844b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9803b1c58769a539e0da1fb8327999679c450cfdb0d754ec5178817fc339ae80"
   end
 
   depends_on "zig@0.15" => :build

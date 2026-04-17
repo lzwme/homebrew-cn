@@ -1,18 +1,18 @@
 class Hamlib < Formula
   desc "Ham radio control libraries"
   homepage "http://www.hamlib.org/"
-  url "https://ghfast.top/https://github.com/Hamlib/Hamlib/releases/download/4.7.0/hamlib-4.7.0.tar.gz"
-  sha256 "24542b09cb2432458ba239b2ba8f5b7fb67cde64df6553f150e6eb8475a87a23"
+  url "https://ghfast.top/https://github.com/Hamlib/Hamlib/releases/download/4.7.1/hamlib-4.7.1.tar.gz"
+  sha256 "d197a08a3d5d936d7571ae573f745bbba619e88998742c8267e3fcb0fb3d5974"
   license "LGPL-2.1-or-later"
   head "https://github.com/hamlib/hamlib.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "795fb006175fc13444cf579440e6e125ac2b93f663eb91e465575ad928efb8b2"
-    sha256 cellar: :any,                 arm64_sequoia: "797eacb1d1c19c05626d504f2fc89d3879ff0815edad0a7fc5dd9bbbdebe6535"
-    sha256 cellar: :any,                 arm64_sonoma:  "cd7a308c3b60fd7eb35050f53d6d594c4aa396c882764d9de35ac377db85de8a"
-    sha256 cellar: :any,                 sonoma:        "07a248953520ac1cb124b0c2658c8c09be0368263978a72af2a0cb0bcae3e621"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "03dd51b236f22b14d4c4facdba2785626461b158f6b9cf5efec2dbfecbebc6ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe36a3eb41674900111dd9754872026ced061dd66447d5e932fc7fd153e511eb"
+    sha256 cellar: :any,                 arm64_tahoe:   "a15d17d84db87b76f1cefff6599cddd5987e4a1bd06a62c24934db82d1afaecd"
+    sha256 cellar: :any,                 arm64_sequoia: "5602a7cceeb1f70927ff9bd8f9789801ca99e20839927be69af1d69f11df8169"
+    sha256 cellar: :any,                 arm64_sonoma:  "5d5ef6222b66202c64fd5f3920006248a6bac227af541348aa271a0b4002e259"
+    sha256 cellar: :any,                 sonoma:        "e0a06769fb90de54e742255eeadf6f2ca102a77ff8fe253eeafbee677e92c09a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecb6d74a31b9a263f8f5fd15429fd00f163d65ad636391820676383ea6db2d66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd85b22bf603d9166733d57e2720be95d1da42f164558de1cfd53474657780f8"
   end
 
   depends_on "autoconf" => :build

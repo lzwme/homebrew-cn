@@ -1,6 +1,6 @@
 cask "vibeproxy" do
-  version "1.8.136"
-  sha256 "26641a77fb9f2f2bfea81374e4402c0b61770cdb34d2c8e473bd8b567aac7843"
+  version "1.8.138"
+  sha256 "d5444106f6713f0274ac1e5fd1f15fd61f19ad85f71f8d07611e20573db9ccc9"
 
   url "https://ghfast.top/https://github.com/automazeio/vibeproxy/releases/download/v#{version}/VibeProxy-arm64.dmg"
   name "VibeProxy"

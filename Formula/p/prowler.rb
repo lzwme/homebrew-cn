@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/43/18/f8abf5bb7a97c84c35ff3ee966a0d0d076ce17cd8cd34c2aa012c9acb697/prowler-5.23.0.tar.gz"
-  sha256 "6b46d13e5cd25979236bafdbde3bbee524380b909a416816b79fd21cd5ca759f"
+  url "https://files.pythonhosted.org/packages/dd/35/b58e033e56261024213b399163d09f1f0145509f8fdf3bb027314fe82502/prowler-5.24.0.tar.gz"
+  sha256 "3504432e4d97fe74834ea63fb5070a9be04dcb7df66559e585a6c3a7d4805dd7"
   license "Apache-2.0"
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bf845f3f21b694df33f6b901a5a236af666cf94d7ac108f87ecb431b90608f6b"
-    sha256 cellar: :any,                 arm64_sequoia: "74271c596ae9feefd8c471162e1747dfc4e51dcfd852637e885d6cacdacc81e1"
-    sha256 cellar: :any,                 arm64_sonoma:  "78206a18ae9583510fe38b98455aa36802625bbeb0b0417514aba627192d0c6c"
-    sha256 cellar: :any,                 sonoma:        "8292bc0e84a929b97cc74ed84142089feb2db037cb0dfa83722f67ab175db96a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b1185925837c5425016b923e91028c548188ef7be99796ed569312d43f56a40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82af9cfa57ba3d16b7848c110fe03fc660097ad8ccf43a97a79c6397db687f4d"
+    sha256 cellar: :any,                 arm64_tahoe:   "a545101b337eb64e2d81e13e15f11b3799e9bc262f3dbfa7c7264701fdab30b8"
+    sha256 cellar: :any,                 arm64_sequoia: "404921d99659429c10398a1a530ddea40f9bf0c5f878944c9621eb1760cbcad7"
+    sha256 cellar: :any,                 arm64_sonoma:  "d4c51ac86234a595a29f2e67bcdf607b792dac71951637990da892025f168b16"
+    sha256 cellar: :any,                 sonoma:        "0285056d22fc392415c93772f74d1bbecfb56cab83199d24b9d84b3cf79d3dbb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70aaf217c5909cbff95ec5f5f12f46c44f3130bba98b2f27a5211439b8c53559"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43c5fde984a92ec9289e3dac2b2b8ea5e6b2118f8dc01117f74846dc92660e5c"
   end
 
   depends_on "cmake" => :build
@@ -519,8 +519,8 @@ class Prowler < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/94/b8/00651a0f559862f3bb7d6f7477b192afe3f583cc5e26403b44e59a55ab34/filelock-3.25.2.tar.gz"
-    sha256 "b64ece2b38f4ca29dd3e810287aa8c48182bbecd1ae6e9ae126c9b35f1382694"
+    url "https://files.pythonhosted.org/packages/d6/17/6e8890271880903e3538660a21d63a6c1fea969ac71d0d6b608b78727fa9/filelock-3.28.0.tar.gz"
+    sha256 "4ed1010aae813c4ee8d9c660e4792475ee60c4a0ba76073ceaf862bd317e3ca6"
   end
 
   resource "flask" do
@@ -599,8 +599,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/c9/6d/57b460ba75c9cf80b31626e5cfb609aa14f10dba9b6b9fe8998a1c638d50/iamdata-0.1.202604131.tar.gz"
-    sha256 "f421cc6246a746b36d7a4ef9e57a46d204b7fe5c8de257d0e1cf124ce2b0ebd3"
+    url "https://files.pythonhosted.org/packages/5c/fe/c553511c957318a6b3cb8f12cdc2dffd5280a101d03615806bf732b3c9b1/iamdata-0.1.202604151.tar.gz"
+    sha256 "be53185fc14b205bcf7cb4e13d7052af330b51256c8bc4210ddd55a3cca1dfec"
   end
 
   resource "idna" do
@@ -805,8 +805,8 @@ class Prowler < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
-    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+    url "https://files.pythonhosted.org/packages/df/de/0d2b39fb4af88a0258f3bac87dfcbb48e73fbdea4a2ed0e2213f9a4c2f9a/packaging-26.1.tar.gz"
+    sha256 "f042152b681c4bfac5cae2742a55e103d27ab2ec0f3d88037136b6bfe7c9c5de"
   end
 
   resource "pandas" do
@@ -1070,8 +1070,8 @@ class Prowler < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/e3/02/0f2892c661036d50ede074e376733dca2ae7c6eb617489437771209d4180/zipp-3.23.0.tar.gz"
-    sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
+    url "https://files.pythonhosted.org/packages/30/21/093488dfc7cc8964ded15ab726fad40f25fd3d788fd741cc1c5a17d78ee8/zipp-3.23.1.tar.gz"
+    sha256 "32120e378d32cd9714ad503c1d024619063ec28aad2248dc6672ad13edfa5110"
   end
 
   resource "zstd" do

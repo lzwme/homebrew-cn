@@ -1,8 +1,8 @@
 class Xbyak < Formula
   desc "C++ JIT assembler for x86 (IA32), x64 (AMD64, x86-64)"
   homepage "https://github.com/herumi/xbyak"
-  url "https://ghfast.top/https://github.com/herumi/xbyak/archive/refs/tags/v7.36.1.tar.gz"
-  sha256 "a20f48fbb3cc161a9d12c10b75bec7396d15eedaf73143ad0ab2046f6eaf52cc"
+  url "https://ghfast.top/https://github.com/herumi/xbyak/archive/refs/tags/v7.36.2.tar.gz"
+  sha256 "b2535c3d7523cc44a074926b29b2837b58dc6aec1c687ca0eee41f6e1ff61708"
   license "BSD-3-Clause"
   head "https://github.com/herumi/xbyak.git", branch: "master"
 
@@ -12,7 +12,7 @@ class Xbyak < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "be5030ce0a2a1ab17c0279fba5c1f5ba74e96495809960b4e97c0867a0929c2c"
+    sha256 cellar: :any_skip_relocation, all: "d9ac34e5f6ff4da72d6c56768930f0944aa5f5d3c54073002f48a5f18ec7a43c"
   end
 
   depends_on "cmake" => :build

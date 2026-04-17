@@ -1,8 +1,8 @@
 class Libxml2 < Formula
   desc "GNOME XML library"
   homepage "http://xmlsoft.org/"
-  url "https://download.gnome.org/sources/libxml2/2.15/libxml2-2.15.2.tar.xz"
-  sha256 "c8b9bc81f8b590c33af8cc6c336dbff2f53409973588a351c95f1c621b13d09d"
+  url "https://download.gnome.org/sources/libxml2/2.15/libxml2-2.15.3.tar.xz"
+  sha256 "78262a6e7ac170d6528ebfe2efccdf220191a5af6a6cd61ea4a9a9a5042c7a07"
   license "MIT"
   compatibility_version 1
 
@@ -14,12 +14,12 @@ class Libxml2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "21b0d9f78c4c85fc6e8ba934d2dcbd840f80777ec6e4b3272409db51ed67b0a6"
-    sha256 cellar: :any,                 arm64_sequoia: "709ecf6c22956f9e3652197f5fb4d29d05e0883981bb47915ac693be9497b6f3"
-    sha256 cellar: :any,                 arm64_sonoma:  "3a174f412cf8a3330503929a849710ffc39fbc9d284bf01564ac4bfe92d6d800"
-    sha256 cellar: :any,                 sonoma:        "62a71bec0d44fc1e749bd6057daf421c841ab0b3ab2579ddda62558a3bc2a4a4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7d519b032ee340ad605d0ce1f72d6dbfe1402f6f68ac70bcb4d539e73352110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17b63e416112ab39a3cd942961dcd1deebf771a7709eac0b10285356e70ee500"
+    sha256 cellar: :any,                 arm64_tahoe:   "fa797509d0bd7d73b1c296bb696d544a6c5e212f1a196d867aba7e53d0d6c6b4"
+    sha256 cellar: :any,                 arm64_sequoia: "cf956a7b12be9755ac1a905470c35ad070c7a4fa52a13b380c66eae3dcccf353"
+    sha256 cellar: :any,                 arm64_sonoma:  "e8105aa3d75882944ac86f34a3feec34075ec774c58f1d30848e1f6addc2499a"
+    sha256 cellar: :any,                 sonoma:        "c39f8567f5d228ab173ab8c467b65cae0b85f7da07d8cd8984597d5e3caeafd3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a2523b36bbc7cff373c7325d5cba58c53d94bebfcac43d7a570ec84dfe4f4c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a76858b74071c78ad6f70ccdcb29563944d18da9350504c4d95bed17279593d1"
   end
 
   head do

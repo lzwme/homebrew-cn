@@ -6,15 +6,16 @@ class Cycode < Formula
   url "https://files.pythonhosted.org/packages/b1/8e/1cd7e20d82cb0cf32097d02ae6668daffd040620e60c4cf0ab3b20eb0853/cycode-3.13.0.tar.gz"
   sha256 "5d8f0ba44c4a31343b333f4a3f78b348a8fec198c48873f3e552bb5a13f17746"
   license "MIT"
+  revision 1
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "937b70d1be29d940aebe908cfe0956e071c911df35c63c4220ea73e67ca9cb48"
-    sha256 cellar: :any,                 arm64_sequoia: "d9368947c7d770c708e7f314102ab1ba05c82b38b943339eda917b9a6452bc75"
-    sha256 cellar: :any,                 arm64_sonoma:  "cebe0e059cc22fe8d7c307e17c9857edbb9029824ffc2ffde641e48b915112da"
-    sha256 cellar: :any,                 sonoma:        "03b7f3b73525aec8ac77f6620fcb643c2d123d4f907b854ddda229be2abbe463"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bdc8c762ab89fa528f8ad6b93b1f95520f003a549ac479f6b1a86686c62b555d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9343b713dc0e2fd5dd80b69266a4c3ea7046d41a05e982fe03b84aefc68c40b"
+    sha256 cellar: :any,                 arm64_tahoe:   "45989d2fed916a21d330474333f6bdcae3e608eb26cc744c5dd2fb516c8c2781"
+    sha256 cellar: :any,                 arm64_sequoia: "3586dd190e7de6896b488fb6c0cdbf55341e217fdb743e047ba34a40ced74699"
+    sha256 cellar: :any,                 arm64_sonoma:  "36432528549d1ce0c527f2e1ad8ad2ce5d0387ee52bacb042321c3b23b727b75"
+    sha256 cellar: :any,                 sonoma:        "3411a76a9eae0987da40bbbe3094df3991c1bd6597c83d55f984de1faca847fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd598dd72616a60f243beece707d755ec2565d5a115abae4fc5a60bd8c8a524a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8642a440d452941eacddd2b10acff40ad7c0a4400ba0e060e1aef0158c00431f"
   end
 
   depends_on "certifi" => :no_linkage
@@ -122,8 +123,8 @@ class Cycode < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
-    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+    url "https://files.pythonhosted.org/packages/df/de/0d2b39fb4af88a0258f3bac87dfcbb48e73fbdea4a2ed0e2213f9a4c2f9a/packaging-26.1.tar.gz"
+    sha256 "f042152b681c4bfac5cae2742a55e103d27ab2ec0f3d88037136b6bfe7c9c5de"
   end
 
   resource "patch-ng" do
@@ -162,8 +163,8 @@ class Cycode < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/8a/45/e23b5dc14ddb9918ae4a625379506b17b6f8fc56ca1d82db62462f59aea6/python_multipart-0.0.24.tar.gz"
-    sha256 "9574c97e1c026e00bc30340ef7c7d76739512ab4dfd428fec8c330fa6a5cc3c8"
+    url "https://files.pythonhosted.org/packages/88/71/b145a380824a960ebd60e1014256dbb7d2253f2316ff2d73dfd8928ec2c3/python_multipart-0.0.26.tar.gz"
+    sha256 "08fadc45918cd615e26846437f50c5d6d23304da32c341f289a617127b081f17"
   end
 
   resource "pyyaml" do

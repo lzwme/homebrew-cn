@@ -55,6 +55,10 @@ class Libheif < Formula
     inreplace lib/"pkgconfig/libheif.pc", prefix, opt_prefix
   end
 
+  def caveats
+    "Additional codecs can be enabled by `brew install libheif-plugins`"
+  end
+
   test do
     output = "File contains 2 images"
     example = pkgshare/"example.heic"

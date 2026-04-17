@@ -1,9 +1,9 @@
 class Snap < Formula
   desc "Tool to work with .snap files"
   homepage "https://snapcraft.io/"
-  url "https://ghfast.top/https://github.com/canonical/snapd/releases/download/2.74.1/snapd_2.74.1.vendor.tar.xz"
-  version "2.74.1"
-  sha256 "126f41aba651ec36c1d946b389687d937d3e96489b683cffdc4f37bd9deb1d46"
+  url "https://ghfast.top/https://github.com/canonical/snapd/releases/download/2.75.2/snapd_2.75.2.vendor.tar.xz"
+  version "2.75.2"
+  sha256 "b59998e0e7f2b683d04999d968ef29f9b9933cdb2c85ffc83cf1505bc3efccf1"
   license "GPL-3.0-only"
 
   livecheck do
@@ -12,12 +12,12 @@ class Snap < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4fdde9c0dd434c50ec1f145aa608224e071a9d19feb63f9b73eb3db997cf77b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4fdde9c0dd434c50ec1f145aa608224e071a9d19feb63f9b73eb3db997cf77b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4fdde9c0dd434c50ec1f145aa608224e071a9d19feb63f9b73eb3db997cf77b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8426769329f282d1fe9e3967ea8a18c499baa5e53c72fe4dbcb5bf73696d1b77"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2aa78782d3dfebeb3a5544f2e9199e411f906bb573f6c5cca24d563110cb50a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40ce7582b477a6b33f53dd1734a4182456ddcfe9469cf555dd647331c80106e4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d42cf3a64a210e39c5b7dfd0899b9367930642e9e28093f81ca817c6c1609e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d42cf3a64a210e39c5b7dfd0899b9367930642e9e28093f81ca817c6c1609e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d42cf3a64a210e39c5b7dfd0899b9367930642e9e28093f81ca817c6c1609e8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f574d6d95a3e4ca73611a6efb6295e89e43d3abc427a19ff92101ec6a38ef4e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da54b1d720f372214c4ff3535a03a173df302c06fe600563b8337d010f864811"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01b6de90fa78de68808e738fb06f389494d32200cba8f87bf713684b7e090b80"
   end
 
   depends_on "go" => :build

@@ -1,18 +1,18 @@
 class Buffrs < Formula
   desc "Modern protobuf package management"
   homepage "https://github.com/helsing-ai/buffrs"
-  url "https://ghfast.top/https://github.com/helsing-ai/buffrs/archive/refs/tags/v0.13.1.tar.gz"
-  sha256 "61453466055e446b124dae4359d3c17026b954bfee69b47db0c8c6b31dfce689"
+  url "https://ghfast.top/https://github.com/helsing-ai/buffrs/archive/refs/tags/v0.13.2.tar.gz"
+  sha256 "eb132a73a5873bcd2f06cad44f3f4f637782418e533c22c7cc60d253f122bf56"
   license "Apache-2.0"
   head "https://github.com/helsing-ai/buffrs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80a29e452541050a776191be6f756112bc30daa06d0a9673019b00dbe770c5be"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6907ac9b9d39ad3a5e7b85de8b31ab3db9f591902c30aff85bcbd0270fedc8cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f6341041ac3d4b27acb17927e1dd77bb370a53edb1525c30a43926a47378c51"
-    sha256 cellar: :any_skip_relocation, sonoma:        "af35d715899450380b6b09fb41758545136c221609465a3b07db67dc3a222a4a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "61072ea1912aa449964d9e211acb9a3744a9d08a5c283f4124b09f2a6db7008d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73742df959d4c9bbc0a382d8536f14cc575638364ce4a3621cad76b9f7eedb8a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3dec1a6a2139b11adf776c1b97ac26645b77ab005dffb39167b56a29c874ebf5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0366ceef4f160e185bcfd36de79b6458a9c98a72c0c7bdcf94cc9dd2d100574"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9dd27b3e1650e250b2a4408deb4a5f1d523f145c64d10e626583f0c4967100ea"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ce90bdc2ce5c03107741108b0c6361cc53d5272c034284481551e9be06d9ce21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5900a11e0c8d59e893af496fd20500a75c004b157268d4d1ddea55cb66abc96d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ef8b802643975acde7088877eac150257b5c5c5ef89f788a5ab9e13593ef511"
   end
 
   depends_on "rust" => :build

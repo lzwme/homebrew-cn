@@ -1,18 +1,18 @@
 class Worktrunk < Formula
   desc "CLI for Git worktree management, designed for parallel AI agent workflows"
   homepage "https://worktrunk.dev"
-  url "https://ghfast.top/https://github.com/max-sixty/worktrunk/archive/refs/tags/v0.37.1.tar.gz"
-  sha256 "03b2f156a27a3c4310d49a484e2c606578e395ce1134466dfaa26a0ea0602887"
+  url "https://ghfast.top/https://github.com/max-sixty/worktrunk/archive/refs/tags/v0.38.0.tar.gz"
+  sha256 "5ff6808b5d7f2e81421074ce25b76bdda2e64749d87b237922fea2d589ce6839"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/max-sixty/worktrunk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "15c3bc772ec2ef5318c12b16c8d6b8eb81f26cd61914023d1234b1cf8b8f0415"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eca92be6b43f5872c09dd8c1cbf1f4e1be7b8ce4da42684eff03e06b44e1bf36"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7766ff9fcac8d351827679aa32a4d544cfe2a8dab3f5cd9cf79a2ae603c00aec"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b696123aa51c867934b17963261547d0332b8f4b4bd1b48c8990b9d59187d76c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc8e2d61dc0ec599429f59c248a0e3bb4bcf3802fbaa2629698972601a55f646"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37341d26919faad1feb52d41276843c3cb2331b12d7baedcbbc29730dd90fd66"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27bd0032abec684841219c25ec7f0d9a9d52d14e30d24f15a5fe95b37a49ab61"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc5480747c5db08e1ca9631b057907e0b04a518cabaed3fa8552959a74cc3afe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "991929ea432086bbbd9eae0b9a058d2ae8b85d76e1eb81104ffa0b04bd2a6b95"
+    sha256 cellar: :any_skip_relocation, sonoma:        "87d6f7a785314e06bedb628ead5dec1f11997a22701e020c0924cf3f1499399c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e6dea9565e225db7a84dba9ff7c04ea5a0ae5240e3112c30f376003efb08356"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef8d551737ab8d9e909cd9edcb1602824bee2d35b7ae42db39b70fb1d24405cd"
   end
 
   depends_on "rust" => :build

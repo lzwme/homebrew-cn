@@ -6,11 +6,11 @@ class Psutils < Formula
   url "https://files.pythonhosted.org/packages/45/ff/4af412351a21ee38835b7597555936c547830d9a8246a2b7d2aa41aabdd3/psutils-3.3.14.tar.gz"
   sha256 "6212167dd8c09f59c9535d5e416c4f8c01431b7a5beab0ee68f4ec416ca3980c"
   license "GPL-3.0-or-later"
-  revision 12
+  revision 13
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ddb0038c88a79060600500010e43b26d00ab33a4d3a14890493fc24b73e1b383"
+    sha256 cellar: :any_skip_relocation, all: "d42a1cf722ed6475c83fc14ba4626e0428b350b7daa4d63f4811dd4fd5034db7"
   end
 
   depends_on "libpaper"
@@ -22,8 +22,8 @@ class Psutils < Formula
   end
 
   resource "pypdf" do
-    url "https://files.pythonhosted.org/packages/b8/9f/ca96abf18683ca12602065e4ed2bec9050b672c87d317f1079abc7b6d993/pypdf-6.10.0.tar.gz"
-    sha256 "4c5a48ba258c37024ec2505f7e8fd858525f5502784a2e1c8d415604af29f6ef"
+    url "https://files.pythonhosted.org/packages/66/79/f2730c42ec7891a75a2fcea2eb4f356872bcbc671b711418060424796612/pypdf-6.10.1.tar.gz"
+    sha256 "62e6ca7f65aaa28b3d192addb44f97296e4be1748f57ed0f4efb2d4915841880"
   end
 
   def install

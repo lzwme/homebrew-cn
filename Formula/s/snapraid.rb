@@ -1,17 +1,17 @@
 class Snapraid < Formula
   desc "Backup program for disk arrays"
   homepage "https://www.snapraid.it/"
-  url "https://ghfast.top/https://github.com/amadvance/snapraid/releases/download/v14.2/snapraid-14.2.tar.gz"
-  sha256 "57da8c813b12dd91bfa5b145b7529f84e227a301394da109fa64f39479c14a1b"
+  url "https://ghfast.top/https://github.com/amadvance/snapraid/releases/download/v14.3/snapraid-14.3.tar.gz"
+  sha256 "29cb416eda9beac436c2994543938c01f28555a11a24dedfe102677c9669080a"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d10794b0ca2b81a7ef269666bdc3951df97133c2ddff0c7dbc09fc0229c9703"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae1ff335221758dceb6cd7ae388df4b3fb3e10fffdf4a5c3864befeb89ab8ba8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "759562eb7d8616c0ec6dae79d8b8eeecf7d57ac1e49bda497f3238581c96b8ec"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2203cc8b6623ba60fe2f14847bb82dd1736063508c7d3d1778ccbe3a9b89b05d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b730a630546d4d8e608e54ba7de60aa19093a089e3e967ebd2536de6898f5408"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "418c6814165bfc98b1b3b940ba5b2cdc6ad9a37f8d78fad02df87709bea3311f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "138e6bd4b42acd5e4b42239036749c33d526fb6323f31a7b3ab2cf5286e065e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69fd27957de89813b47870b2119157e7aacb77e6a0defb36ff4d6a0bf018c597"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7610a0960f80a741fa30c453dca2e54dfd8096b40b108a88802b5a4797a511d1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3ab27468e20247f51c173ce4f573612dc921ad381deffe973edf081e588cb275"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "050919daa6eadeeca4920fb18eac5ab747467ba2e144ed25f78df753b550b9eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d74a62ca3da777ebbbd4051aacd100657c301f4c96de754bb3db188bf1185fd8"
   end
 
   head do

@@ -1,19 +1,18 @@
 class Wasmedge < Formula
   desc "Lightweight, high-performance, and extensible WebAssembly runtime"
   homepage "https://WasmEdge.org/"
-  url "https://ghfast.top/https://github.com/WasmEdge/WasmEdge/releases/download/0.16.1/WasmEdge-0.16.1-src.tar.gz"
-  sha256 "fc256b8be022eb0487549cc2119c57fd12ad402e4130a05263b7aa85e2df89b9"
+  url "https://ghfast.top/https://github.com/WasmEdge/WasmEdge/releases/download/0.16.2/WasmEdge-0.16.2-src.tar.gz"
+  sha256 "c8df006bb43baaba1e8d52ac7ee6c13dc2f32f7e1456341fd621b51d53ec4f4d"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/WasmEdge/WasmEdge.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b74cd16cf0d26056adf5ff7045b7fc62a22786717933f1f49d50b6cf5fd21d2a"
-    sha256 cellar: :any,                 arm64_sequoia: "2051e0817c645a6dda47f6a4e7aa620b61f7035f1897bd2387657708c5c134ab"
-    sha256 cellar: :any,                 arm64_sonoma:  "f6a5895f3068e70639a9ab825d3c4cc4d2c0b9c32deaccb55894827209204cd7"
-    sha256 cellar: :any,                 sonoma:        "6af51419bc3294ade55e569848c81818d668df0b1a47ca39dbe8e3d8683f4fc5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f106a5e86dc8482c9844b7588157e62b222f7a27531efbb4902e57e1017f624e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bae8285dce0643fd38456fb163ecc2e1a0869e841c979d5f87d9bbf8898274cb"
+    sha256 cellar: :any,                 arm64_tahoe:   "673b2858ef5c026b68016a471c1f33977414d2c80a2c97d554d3e4d887d82169"
+    sha256 cellar: :any,                 arm64_sequoia: "df1685a2203911ca2b4fecd7d4f70a5795c1fa2def67cbf89f4017a98b040d64"
+    sha256 cellar: :any,                 arm64_sonoma:  "07791a9b7d25dbceb92502ca4efec8ada10303e206e258faca807cd45639e98d"
+    sha256 cellar: :any,                 sonoma:        "918caef6241368801ae8e33beebbd5424fbc0e423cc0626313076b9ad45f9d9f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b4c1b472b5fd9bd9e2913e0d0fed3b69dc85c9c02c31488b32a3d03f0a89d14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ad145e7f6910db001a762a143102c2359497af287c3eebddca743621fe1785f"
   end
 
   depends_on "cmake" => :build
@@ -21,6 +20,13 @@ class Wasmedge < Formula
   depends_on "lld"
   depends_on "llvm"
   depends_on "spdlog"
+
+  # Fix error: 'is_class' cannot be specialized on macOS 26
+  # PR ref: https://github.com/WasmEdge/WasmEdge/pull/4796
+  patch do
+    url "https://github.com/WasmEdge/WasmEdge/commit/aa0d621c0241af22c34400e5a617f0e0e83c504b.patch?full_index=1"
+    sha256 "1d76615c23e13324c62f1bea009f41c3f2257b261cf3f325556480d414f67a90"
+  end
 
   def install
     # Use CMAKE_BUILD_WITH_INSTALL_RPATH to keep versioned LLVM in RPATH on Linux

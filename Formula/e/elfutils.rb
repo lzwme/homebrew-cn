@@ -1,10 +1,9 @@
 class Elfutils < Formula
   desc "Libraries and utilities for handling ELF objects"
   homepage "https://fedorahosted.org/elfutils/"
-  url "https://sourceware.org/elfutils/ftp/0.194/elfutils-0.194.tar.bz2"
-  sha256 "09e2ff033d39baa8b388a2d7fbc5390bfde99ae3b7c67c7daaf7433fbcf0f01e"
+  url "https://sourceware.org/elfutils/ftp/0.195/elfutils-0.195.tar.bz2"
+  sha256 "37629fdf7f1f3dc2818e138fca2b8094177d6c2d0f701d3bb650a561218dc026"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later", "LGPL-2.0-only"]
-  revision 1
   compatibility_version 1
 
   livecheck do
@@ -13,8 +12,8 @@ class Elfutils < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "1ca43cc8af9766635f9484f007cd79152c35ddaf434e44eb8eaf79b7ca8682a3"
-    sha256 x86_64_linux: "4f5ee54efe423d3ac486aa5372af4ca8debf2e2626ef16d480e4c79f1681b2de"
+    sha256 arm64_linux:  "463f09ff4d31b7cd73e99b42437071126849962fde8ab8b0c96a64105f7afa06"
+    sha256 x86_64_linux: "c465671b13a19bdf9eb686ed3f6a42fe4c404a05ae46b1be58db8da25166a5a8"
   end
 
   depends_on "m4" => :build

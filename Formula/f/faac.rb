@@ -1,19 +1,19 @@
 class Faac < Formula
   desc "ISO AAC audio encoder"
   homepage "https://sourceforge.net/projects/faac/"
-  url "https://ghfast.top/https://github.com/knik0/faac/archive/refs/tags/faac-1.40.tar.gz"
-  sha256 "3ef4cc1fa6a750003602adc6eea892ca3815becd9145797b787f0999e8b2b89c"
+  url "https://ghfast.top/https://github.com/knik0/faac/archive/refs/tags/faac-1.50.tar.gz"
+  sha256 "e6876cba00cbd786a7f984d9aaada4d5bcb08d2582100366c70f6164d5c89214"
   license "LGPL-2.1-or-later"
   compatibility_version 1
   head "https://github.com/knik0/faac.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "328ea5edf8aed0c2924d466aa547ecf361bb4329601eb0b46cdec7cadcc684f7"
-    sha256 cellar: :any,                 arm64_sequoia: "8e645259e46b7f9da1ed54e0ddc3dc8ab059148d2bef398eedb5545942c9b181"
-    sha256 cellar: :any,                 arm64_sonoma:  "e2e624769511e047231361cb3c7b6997b2952c4902b224ffd40b5e0cc6031eb8"
-    sha256 cellar: :any,                 sonoma:        "83dbb04d3aa70aa85260ff1f8a80b35a1b9261d44a300efad76658ba49872bb1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0dc2fd31acbc1b6ab2272283143a64d17a7ef9155a1d83d95ce82a31041c4155"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db68453ac31bbde0615ad36cd30214c019d5a718769f1febe5c8952220ea29c7"
+    sha256 cellar: :any,                 arm64_tahoe:   "a574ca25f086a26e78bbba85083d08fba1625eac583926ea225e21abb96c58de"
+    sha256 cellar: :any,                 arm64_sequoia: "14b4c7d0d9a3eff2134d38f3a0390f571ec592963a0b01c2a5d8194e71bae1e6"
+    sha256 cellar: :any,                 arm64_sonoma:  "0c750f3bba82d9544c35948c11097b9d9ede18c93fe61877fd0cbc5454a9e4f2"
+    sha256 cellar: :any,                 sonoma:        "c08f8b6e2c50c8d85b7e48c1e255227d395b9518a1e37d52c4e05969e9e25ae3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "16831fe3c0506720985abc848a75ff201f4c80b378083858289b6615ca2e5b19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80d3a04f6c8279bcaa77e91c22ded1d4b37d414d3d4476189cfe7ba5c5f49efa"
   end
 
   depends_on "meson" => :build
