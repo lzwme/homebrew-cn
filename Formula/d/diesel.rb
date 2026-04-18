@@ -28,8 +28,10 @@ class Diesel < Formula
 
   test do
     ENV["DATABASE_URL"] = "db.sqlite"
-    system "cargo", "init"
-    system bin/"diesel", "setup"
-    assert_path_exists testpath/"db.sqlite", "SQLite database should be created"
+    system "cargo", "init", "homebrew"
+    cd "homebrew" do
+      system bin/"diesel", "setup"
+      assert_path_exists "db.sqlite", "SQLite database should be created"
+    end
   end
 end

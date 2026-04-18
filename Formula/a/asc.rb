@@ -1,18 +1,18 @@
 class Asc < Formula
   desc "Fast, lightweight CLI for App Store Connect"
   homepage "https://asccli.sh"
-  url "https://ghfast.top/https://github.com/rudrankriyam/App-Store-Connect-CLI/archive/refs/tags/1.2.2.tar.gz"
-  sha256 "3534ea61a771ab63547fcb3b3c6deca4b047c9fd381d6df10fc1edf8cae30a7d"
+  url "https://ghfast.top/https://github.com/rorkai/App-Store-Connect-CLI/archive/refs/tags/1.2.3.tar.gz"
+  sha256 "707cd25ce7902a342dda6a0dce6d8bcdf3e1eefcacb7179f5e58e0d482fb5aaa"
   license "MIT"
-  head "https://github.com/rudrankriyam/App-Store-Connect-CLI.git", branch: "main"
+  head "https://github.com/rorkai/App-Store-Connect-CLI.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a92e80ef1712c44f9be31810f09550d05a913139d08671e64c55b7a2026c664d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d86f25928d29aa36c6048efb9db13545925f98b972e73ab48e763f2a3b55734"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a98857ab4f762164c60f6ccc94c8ef66851834284831715be0cccb012ec1653"
-    sha256 cellar: :any_skip_relocation, sonoma:        "abd1b07e881a9cf54ed7abe6de223aa8d66c05cd8175f46c9ac60811c42cafc5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "89c95ff799b4ecaac51d555ee351c541bbaf46f09f2bb17b739aebd73d9444d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f51f45345d06becb20e72ad630f89490e302a9a0b283a5a4cddaba69a3be2b06"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "612b9a7aeab66791850275510f59173d0b78dc31109136c9793e1460883530e3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f0c86fb981910a493d7e809e722879cdb152eeeb2f5b365d6dfc5c396f013ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37631ffc4c224cb7efaccd54aaaf0c6e22b611e2d4ef04a0306a0c903d5455ba"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9bb5fe28dea9ce857da42807ba5156fb101bfce327e029a34c4473e3d529376a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b4696da981b457c7c66e5ac64f19af035efdd2ebc5d6d5cda14ba2ea5832103"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83cf01656b8cdd99383849aa8db728e617c9df13cb8e3f95b33594ff873295e9"
   end
 
   depends_on "go" => :build

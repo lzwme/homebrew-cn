@@ -1,18 +1,17 @@
 class Pgrx < Formula
   desc "Build Postgres Extensions with Rust"
   homepage "https://github.com/pgcentralfoundation/pgrx"
-  url "https://ghfast.top/https://github.com/pgcentralfoundation/pgrx/archive/refs/tags/v0.17.0.tar.gz"
-  sha256 "f8f555332946a19bc029d086a9f6651e3be0a55e6634b62dbfa412e1fe8876a2"
+  url "https://ghfast.top/https://github.com/pgcentralfoundation/pgrx/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "fc39703527b34f916fef9fb0e44e8aab3f5691e1f15f7e89030d96050c322afe"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe6a73461c94fe83d005e63c608a68bd1a79586d62fe99633c2c0e65b6707e87"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8194aa5d2b3fea73f486e72d449e8764f0a3c0d6924d6e0a2bb0ba53b122fa80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "693c1b4b19e4f240b15c69b4830d93a15621e83f9b78d73c1eefbab1def9a2ee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "69cdb8579569022ec60b9b0453cdee895106809ac6d320b437a033bec218b415"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "60a9afaa9cf9eb17424c2ff0ea79d664c4857dc0955fa251990b8834cde9d912"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4ef449012c3bd8b7667efaa7eaf878b0df688f2f737d074ae3a12cf867e02da"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93ef1e628ad8ca6a9eb7174dbc949d2465b9324f92a979a7bf1dab2f4c5cab29"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a13d89e91363f12e5a3d0a8c2c6f1cf2a0836922cb016c74cadab02e1d1fcd9b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "380c2dabb4cc76115966d4cbe542d088646892e8b486e7538d0019e4376e63de"
+    sha256 cellar: :any_skip_relocation, sonoma:        "de4ad7d75687f82d59862f5b9d75d01333cf51492975da6118bba10f4388a502"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7557d8fc1b6fd4968c12a88942419ae526085f454b409b793b471c2ee9842f71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58aac8c85d6f4a68f7c3e1891ea59703d2481590cd0603194368968470281196"
   end
 
   depends_on "pkgconf" => :build

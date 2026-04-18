@@ -1,8 +1,8 @@
 class Rumdl < Formula
   desc "Markdown Linter and Formatter written in Rust"
   homepage "https://github.com/rvben/rumdl"
-  url "https://ghfast.top/https://github.com/rvben/rumdl/archive/refs/tags/v0.1.72.tar.gz"
-  sha256 "a8043dcd10dea428897929e345110b7caa7ed6acb60590f00fb11092283f7c7b"
+  url "https://ghfast.top/https://github.com/rvben/rumdl/archive/refs/tags/v0.1.73.tar.gz"
+  sha256 "206210370de555bd917c5d22ea1bdc702991cb41732da29fdf62dd52b0f1e3dc"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Rumdl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "689c584e8bf763c87088b1b7f2e928eeed9de830ce15510aba32dfd436e6364d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c54bbe18c59c69d16e5b538a45c4c82af28e198f1ec487d1cea5514ff3b328e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "56f782929318f4fbaa2f572d6151f625edbc76734a6da500b01d9cdf2d4c3fe0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ad41bf231f0a83ebc7cfe974aa6865ca9e405eec9b0491841c8294f062ceff91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "adb78f0d589ea6937500f6e3c7932f5eaf0eba2790fa814d2d2142b8fc2c614e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5029ea7d9403afbe4a179d1c38edff2706a1cfb4c61bb841c8b5e05312fcb88"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd5cf211ee86ac8005bbe83fd39db5cf2f2860a733b09f31cf3d11c19430e1be"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d55227328a5b44b25c7a15bd5fe707874ee6a1a5005641378255509873c6037"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a42626761edb6997369fa1f562460ff7d0b5c373209059fa60b15437db6002f1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5778f507bcd4fcbcaf04c990e864cb36cf585950879b70eb1290193dcf160ce0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ffce9dbe800f9810960ed1c98cb6da4f0e76cdb3ddd2500dc3eeba7f3979451d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfb0f69cb60c45340e92f543ae35cb9fcd705deab3d903b579c41fe09b2f7de7"
   end
 
   depends_on "rust" => :build

@@ -1,21 +1,22 @@
 class Libmicrohttpd < Formula
   desc "Light HTTP/1.1 server library"
   homepage "https://www.gnu.org/software/libmicrohttpd/"
-  url "https://ftpmirror.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.4.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.4.tar.gz"
-  sha256 "d72e5cfccd62bf2f79252edbc3828eeedc088ce71fc47b7c9e3bd7246b3d54de"
+  url "https://ftpmirror.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.5.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.5.tar.gz"
+  sha256 "b46d00f58efa6f497b97d2e782c4ee66301d412ddd855dd3068518b3a2cd3ea2"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4175ff8a54eb307571e35dbf18da6efe603961beae455f483209ddd4ee3f1b9f"
-    sha256 cellar: :any,                 arm64_sequoia: "0c4a4f16c64a6805656e0fe96a64b17da7f9343532b6b4a5d90cf096d96d469f"
-    sha256 cellar: :any,                 arm64_sonoma:  "d8365a3642d2f84fdf31e18a786ddcdb6a9dc8dbb3b6263e9b594a72e177df7d"
-    sha256 cellar: :any,                 sonoma:        "424a0be1ca6fa82d759e6b59a0098f605985bd6ef159fda700c0982c005c7845"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8243509f68af182b9305089b85a03590425191bf9cd35a72947e9d3012e9c843"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "114529a27653970bae292edbab4139249bf59de6272a7af545dbd218fcfcb7f7"
+    sha256 cellar: :any,                 arm64_tahoe:   "cd84cc41c84e505be8a957788a3f2993c082d5c7c29e68ee951228bcd79374d9"
+    sha256 cellar: :any,                 arm64_sequoia: "291e7f43b1f252816c7daa42c69079ca3022ba778d1381768c42301b269e0286"
+    sha256 cellar: :any,                 arm64_sonoma:  "c1959ffe509c181f211be15b8cef3c5ffec9ab8985354cb56b6321c0760d9e12"
+    sha256 cellar: :any,                 sonoma:        "c889f12e20ce446ef65784e28f3135eedc3c358d69963dab068331a1345a7eef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c8ef804898c01fa619655d9b62e3754eaf74421322989dbf24dc6aac702ac5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9901822c18a24a632deacd02755e0e20936eb5a5a9134dadda3b844d8e203ed9"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "gnutls"
 
   def install

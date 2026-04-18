@@ -872,6 +872,7 @@ Homebrew-homebrew-core/Formula/c/cbindgen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cbmbasic.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cbmc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cbonsai.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/cc-connect.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cc65.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/ccache.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/ccal.rb, Homebrew/homebrew-core, 0
@@ -5236,6 +5237,7 @@ Homebrew-homebrew-core/Formula/o/odbc2parquet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/odiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/odin.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/odinfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/odo-dev.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/odo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/odpi.rb, Homebrew/homebrew-core, 1
@@ -5257,6 +5259,7 @@ Homebrew-homebrew-core/Formula/o/okteto.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ola.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ollama.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/ols.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/olsrd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/omake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/omega.rb, Homebrew/homebrew-core, 0
@@ -15130,6 +15133,7 @@ Homebrew-homebrew-cask/Casks/s/sysdig-inspect.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sysex-librarian.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/systhist.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/t3-code.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/t3-code@nightly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tabby.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/table-tool.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tableau-prep.rb, Homebrew/homebrew-cask, 0

@@ -1,18 +1,18 @@
 class Pyrefly < Formula
   desc "Fast type checker and IDE for Python"
   homepage "https://pyrefly.org/"
-  url "https://ghfast.top/https://github.com/facebook/pyrefly/archive/refs/tags/0.61.0.tar.gz"
-  sha256 "e8b77c4eba9c40a4bce7543431febb1b238bb881ab9b24908229d2156e31fb2f"
+  url "https://ghfast.top/https://github.com/facebook/pyrefly/archive/refs/tags/0.61.1.tar.gz"
+  sha256 "3bae471babc2073f893563d18295a385db87b4a592492b01cf21c93798295be6"
   license "MIT"
   head "https://github.com/facebook/pyrefly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ec0496d5114023344fd6af53918cb034ceda45bfd6ad431ae47df6a5de6f5ea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "116c605f7e1af46850f053c2190b1932e4bea095c305f7775c0030c7b7140f77"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06f8c82ac98f37a27e5ba713768ad16e5bc8919c0528478f67c18afba6399cf6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3be564949cee13485b7d2c4a4a8af59595eb9a588f5abff9f4075c77a95425ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bea8ecd889d1ee913adccc91d6a5c3fd24e314194b39198ad7e8f2d574b4f35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf2852280ad9f3b25a08a4f758244a5f7c1dcca3b49ded19edaa64b7b1d4b399"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "96153509bf4faf1210e50b7bfd40a02ed7b460a496b5766c0ff0d6084495d87e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f85ed09a1f01cbae32412a79f6043df6fdd696b922bb73fc656a47aa48174b1b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee2606bc9985e2db3d0ecb562003942cd8f3541dcec13325850f7d919ea91f3d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fbd9df1b7ed1ccf62f4828081d9c74143f5506f8a848062ee1ce7e6af166f87c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "09122a13de6277ab12e6da6d5bf86443aac912a93d89cc1c263586d9c5eec805"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a032ed094ea49e57d94f37da9d04acfad35daba6753690138d26182e78ecc3a"
   end
 
   depends_on "rust" => :build

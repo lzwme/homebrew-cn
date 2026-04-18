@@ -1,18 +1,18 @@
 class ForgejoCli < Formula
   desc "CLI tool for interacting with Forgejo"
   homepage "https://codeberg.org/forgejo-contrib/forgejo-cli"
-  url "https://codeberg.org/forgejo-contrib/forgejo-cli/archive/v0.4.1.tar.gz"
-  sha256 "8f6a93c5f97e45308aead0154d4ec53e672ca90ab0809db543cde6be8078729e"
+  url "https://codeberg.org/forgejo-contrib/forgejo-cli/archive/v0.5.0.tar.gz"
+  sha256 "028ebcbd744301fbfd144cd9bc5ff0a27e02d99b02c8abafb20742299715c556"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://codeberg.org/forgejo-contrib/forgejo-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ecea1142d8a21c109d66da88aa7c591d240e40dd6ba3d5727ddb1031b1be4e02"
-    sha256 cellar: :any,                 arm64_sequoia: "7f5a2d7e6eecfad0a8e0efb319aa0a72c854ba18012817b5c77d5f621d9650b7"
-    sha256 cellar: :any,                 arm64_sonoma:  "e01394831fa782d2cd8c26cc11fad03523d002ef14ff43a0112580ad7f909d04"
-    sha256 cellar: :any,                 sonoma:        "9b9b4b63125dda6e7165dd95e59099c27fce621560c812ac959b6a7e9d3d3f4c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2595dda3beee936b2de15b5b0469ec103526349234c8301c51f6d8ca694bd21e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "983394df6100e0c3c26a2b3283f95c5bff1ffd199a3f53837d11eebb4746fcb8"
+    sha256 cellar: :any,                 arm64_tahoe:   "da03e5e9283bacfecb9085684ba35701932a95254486a5d25b841f898715bcc5"
+    sha256 cellar: :any,                 arm64_sequoia: "50ef4d22fdd29d0144769db602da1a46098c6649959f702c7193a6ce55a474af"
+    sha256 cellar: :any,                 arm64_sonoma:  "b1d585c8520c57d6cb8a2309e3ea1ca71cdc278e371b3ed35d58645b1ea6af54"
+    sha256 cellar: :any,                 sonoma:        "90fdf8e55f03114a11c912f20ea1eeb60c09f26a69628ce94c6e1a5d9066076b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dee5a25bc9af4873f25cadd9152a7b43a7fe9f281694cc617d9b7c5a181ee4e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bd9495f4637a8392608b9dfb0cb76c9b1e4a6fac326e5ef29008ee232d1f218"
   end
 
   depends_on "pkgconf" => :build

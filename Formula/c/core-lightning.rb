@@ -6,6 +6,7 @@ class CoreLightning < Formula
   url "https://ghfast.top/https://github.com/ElementsProject/lightning/releases/download/v25.09.3/clightning-v25.09.3.zip"
   sha256 "d051a08f1432ddc7b26d1132ea9ad302de935f89a5a930eafcf92f68830649ab"
   license "MIT"
+  revision 1
   head "https://github.com/ElementsProject/lightning.git", branch: "master"
 
   livecheck do
@@ -15,13 +16,12 @@ class CoreLightning < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "413d64741f471efb89d9ebe501c850392dccbc957e1a4056d3d4b0a3dc164ec4"
-    sha256 arm64_sequoia: "df6ff8d881ebcb853a9025d0077173cc3ef3442ea18ce2ddad6b3e35770fe94a"
-    sha256 arm64_sonoma:  "ef6d4c04dbf7de5a0b6b80b63cc5b1f510717a390977731ff34503166f2af86c"
-    sha256 sonoma:        "0cb2e696030b3c28ae9322dcc626190beb150506533cded15e03e081b9aa2745"
-    sha256 arm64_linux:   "94699dd32738861f7200ad7dae15a81064871016c12b4acbe7c9bdaeeab934b6"
-    sha256 x86_64_linux:  "4468958e1d22bc0546b582961665ff5beb0ae84dc01ecee317566e0c88a4a2f9"
+    sha256 arm64_tahoe:   "fa345f8d4113ff7e9d2d37b208040770047fc7d5e03d34aa822ee81b11c3ff09"
+    sha256 arm64_sequoia: "b49a2b4eaf6b52fefac0a15adec0b0dac8a079f0fe03442276c9ad98d7d3335e"
+    sha256 arm64_sonoma:  "f3c220075efa013f1b8bc09817b469af61e2b22aab38dc1cdab93eb8be3bb56a"
+    sha256 sonoma:        "343b50d84398893ad430b50844db6192b980aaf74318cfca6803a4843bce9485"
+    sha256 arm64_linux:   "b25ab15a2b6cd7cb53c3ba45798a11ac47507a46ab3045573f39bbda3dbb6963"
+    sha256 x86_64_linux:  "4ca16b767391a2118693916b646f9d2e8fdbdb58a53802dd6c8246b5d3439d9a"
   end
 
   depends_on "autoconf" => :build
@@ -52,8 +52,8 @@ class CoreLightning < Formula
                 extra_packages: ["mako", "setuptools"]
 
   resource "mako" do
-    url "https://files.pythonhosted.org/packages/9e/38/bd5b78a920a64d708fe6bc8e0a2c075e1389d53bef8413725c63ba041535/mako-1.3.10.tar.gz"
-    sha256 "99579a6f39583fa7e5630a28c3c1f440e4e97a414b80372649c0ce338da2ea28"
+    url "https://files.pythonhosted.org/packages/59/8a/805404d0c0b9f3d7a326475ca008db57aea9c5c9f2e1e39ed0faa335571c/mako-1.3.11.tar.gz"
+    sha256 "071eb4ab4c5010443152255d77db7faa6ce5916f35226eb02dc34479b6858069"
   end
 
   resource "markupsafe" do
@@ -62,8 +62,8 @@ class CoreLightning < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
-    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
+    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
+    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
   end
 
   # Configure script overwrites `PKG_CONFIG_PATH` on macOS

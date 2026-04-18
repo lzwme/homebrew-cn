@@ -6,15 +6,16 @@ class Fastmcp < Formula
   url "https://files.pythonhosted.org/packages/9c/13/29544fbc6dfe45ea38046af0067311e0bad7acc7d1f2ad38bb08f2409fe2/fastmcp-3.2.4.tar.gz"
   sha256 "083ecb75b44a4169e7fc0f632f94b781bdb0ff877c6b35b9877cbb566fd4d4d1"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "42de2513424c3af628e3c8588bf98f6aaa7bd741a35b0cb6d916c77f5bd25ca1"
-    sha256 cellar: :any,                 arm64_sequoia: "a68fe5e8d0d12d9675b7629077ff1a272b8dadfbd184ad5b2e77df4d7c081a82"
-    sha256 cellar: :any,                 arm64_sonoma:  "78da890d2c5ead4302313b1da7d1c465d176fd4a292fa003a0244515b32a7448"
-    sha256 cellar: :any,                 sonoma:        "1961bf1778fd9da94195499b776220dc7cc7def7846902b805051fb630130bbe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd5f1e8847d65efce0b4cf2a8a190873df80bdea9de2f5d33450bc82f8dd506a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae80cac0dc27629597d29624be1c4762a33dd1a960953162c30a19acdc919e9a"
+    sha256 cellar: :any,                 arm64_tahoe:   "aea146624ad25bebeb6f93720cddabb539e404d48b5292d7ffe5abce3816f290"
+    sha256 cellar: :any,                 arm64_sequoia: "2b3c3d2e27b779107d5b25e5547d156c3faad6e1ae5513173bd3a48ed7a9b03a"
+    sha256 cellar: :any,                 arm64_sonoma:  "c251a2fe1e97232faf307d8ac0863e06feba95c67e6c55e5cab553b0d92e7081"
+    sha256 cellar: :any,                 sonoma:        "6f67e06bd83825b1d8ce783bdfeb91448e4ed2bab63aa96ba5f33492635a9585"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7dcfec9fd5b5f3be465b7d376edf3e2fcd714e75c05368c9dc9bd8ebaa03965"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f00b1c2fd74683a3676cd411d48ba98f199a1b55ca87a62e7880fc81c5eaa18"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -45,8 +46,8 @@ class Fastmcp < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/aa/e2/2cd626412bfc3c78b17ca5e5ea8d489f8cae31d40b061f4da0a89068d8a3/authlib-1.6.10.tar.gz"
-    sha256 "856a4f54d6ef3361ca6bb6d14a27e8b88f8097cca795fb428ffe13720e2ecde6"
+    url "https://files.pythonhosted.org/packages/28/10/b325d58ffe86815b399334a101e63bc6fa4e1953921cb23703b48a0a0220/authlib-1.6.11.tar.gz"
+    sha256 "64db35b9b01aeccb4715a6c9a6613a06f2bd7be2ab9d2eb89edd1dfc7580a38f"
   end
 
   resource "beartype" do
@@ -80,8 +81,8 @@ class Fastmcp < Formula
   end
 
   resource "docstring-parser" do
-    url "https://files.pythonhosted.org/packages/b2/9d/c3b43da9515bd270df0f80548d9944e389870713cc1fe2b8fb35fe2bcefd/docstring_parser-0.17.0.tar.gz"
-    sha256 "583de4a309722b3315439bb31d64ba3eebada841f2e2cee23b99df001434c912"
+    url "https://files.pythonhosted.org/packages/e0/4d/f332313098c1de1b2d2ff91cf2674415cc7cddab2ca1b01ae29774bd5fdf/docstring_parser-0.18.0.tar.gz"
+    sha256 "292510982205c12b1248696f44959db3cdd1740237a968ea1e2e7a900eeb2015"
   end
 
   resource "docutils" do
@@ -210,8 +211,8 @@ class Fastmcp < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
-    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+    url "https://files.pythonhosted.org/packages/df/de/0d2b39fb4af88a0258f3bac87dfcbb48e73fbdea4a2ed0e2213f9a4c2f9a/packaging-26.1.tar.gz"
+    sha256 "f042152b681c4bfac5cae2742a55e103d27ab2ec0f3d88037136b6bfe7c9c5de"
   end
 
   resource "pathable" do

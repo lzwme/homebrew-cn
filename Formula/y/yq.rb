@@ -1,8 +1,8 @@
 class Yq < Formula
   desc "Process YAML, JSON, XML, CSV and properties documents from the CLI"
   homepage "https://github.com/mikefarah/yq"
-  url "https://ghfast.top/https://github.com/mikefarah/yq/archive/refs/tags/v4.52.5.tar.gz"
-  sha256 "4b1d8f8d903793af62adf74f4810542cbd03515a728d1add0868072ea9aa00b8"
+  url "https://ghfast.top/https://github.com/mikefarah/yq/archive/refs/tags/v4.53.2.tar.gz"
+  sha256 "1bc19bb8b1029148afa3465a9383f6dcccb1ecce28a0af1d81f07c93396ce37d"
   license "MIT"
   compatibility_version 1
   head "https://github.com/mikefarah/yq.git", branch: "master"
@@ -13,12 +13,12 @@ class Yq < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd12fa1986a2264ae55be6f0c6f1fe87e8e2d0a115feffc2b36e844633135ee0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd12fa1986a2264ae55be6f0c6f1fe87e8e2d0a115feffc2b36e844633135ee0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd12fa1986a2264ae55be6f0c6f1fe87e8e2d0a115feffc2b36e844633135ee0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d95f1954ec38218eb33a0dbf8ede3a981a88148061561bb7c07195eefbc4de83"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2647619244eed1ee3ea137665ee7d21e2aad7c4fd31d1a12625b87634a9dd8da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae3363e74da1d7c440bacaf0848eca6993094548c87abc742460e1f03094ab52"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d17c2839ee1777042fee74ea12ae4b208ad185b7568736848056fca2c280ae10"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d17c2839ee1777042fee74ea12ae4b208ad185b7568736848056fca2c280ae10"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d17c2839ee1777042fee74ea12ae4b208ad185b7568736848056fca2c280ae10"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f286c6fe05ab3414f9698d81d59d36209980c63b3937e2e4e9437981e1fec8f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fb220286c54f661e9779d91eff29f46055ff544995b8beffacd7e6486df5fb7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c30770b766c4be4264aaab9e3d901451cb8465d6e34cd42480b3088446ea1dd"
   end
 
   depends_on "go" => :build

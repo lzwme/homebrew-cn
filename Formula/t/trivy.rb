@@ -1,19 +1,19 @@
 class Trivy < Formula
   desc "Vulnerability scanner for container images, file systems, and Git repos"
   homepage "https://trivy.dev/"
-  url "https://ghfast.top/https://github.com/aquasecurity/trivy/archive/refs/tags/v0.69.3.tar.gz"
-  sha256 "3ca5fa62932273dd7eef3b6ec762625da42304ebb8f13e4be9fdd61545ca1773"
+  url "https://ghfast.top/https://github.com/aquasecurity/trivy/archive/refs/tags/v0.70.0.tar.gz"
+  sha256 "ff9ac06468aab89802388f16d1d179f4680db714afbf6a8132a417d288aa008e"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/aquasecurity/trivy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8896cbac7e3358f40b7abe67282f3e48edbc968c7574109718623282c8e613ff"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "978f24b985c15bbede6230a4677eef11f1d174ffea452aec4450f966ca455782"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c75d8581f3803f06899965fc1f679a57cefb33011843e52fb358483641316e47"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f3a4b53fa2665514ee3354ee466c73e068b239048cb1553227e18e61cae64cee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ca6c5adf4b3cfe7bbade34a47853b2b51277a5e1e616964d230c25d547594c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22d76c73d1df4940c4582df814d58b8627f88b0a4762c3a23fcfa28003bb688c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "849fa08e89fb98fb9acd8fdf3a7039a2dc0290c0b560b2c944ca44f7d1bf11a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a52885984006333d0784e253ea64326c627d9e8b8b80b894e5107519c03c681f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "260f6aa3a38dfeff3939111b04ff7b814fff5f8af2c72923857de9bec698c4b1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "263cacd934b02877b9764b59f8f4eb448c7cd84c70a7ea02e507a080a456f254"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d3072ea47b493f28013354e7358fafb926f34c1d7fd3423462c916133c9cf9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "142cb02e772528e127d7aceddac052fe4c8c3f52d3a74c671c19f01c8ea588c1"
   end
 
   depends_on "go" => :build

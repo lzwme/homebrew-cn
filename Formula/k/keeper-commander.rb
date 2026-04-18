@@ -3,20 +3,20 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/78/61/dbdadfb00d9d5aa67760bb07f0c1b87a7aaa25a3e5ba43ab1cd79069180f/keepercommander-17.2.12.tar.gz"
-  sha256 "4f6aae1c0b92d5d2040338e58a8aa0d97aae40dc0c2aaeca2977fe63b5867561"
+  url "https://files.pythonhosted.org/packages/cc/41/1eab6db0971a76e22c632c3a0f9204bd85814341bd13330227b0c5a3df2c/keepercommander-17.2.13.tar.gz"
+  sha256 "953af25b5de8740ebc5cd6163b6ac0bb0392c0066e76864878ea03b929fb1d46"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "528726c9aa5340c1f8c13ffced9a922cb64eef0daee095737a3314d7c634cf6d"
-    sha256 cellar: :any,                 arm64_sequoia: "6e261d218ecf89b6c7dcd7179b2333fc8e15acf8bfd95ec2ea4dd3c6e4167eaf"
-    sha256 cellar: :any,                 arm64_sonoma:  "805eb5a936df39a2d7cb5558b9eff558ae455b5da7eed7577d7fef2f878693a8"
-    sha256 cellar: :any,                 sonoma:        "a31a5d58e74083b97434fd4df302f5966f029a081b07803f979dd7db5aeac5ad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "46a75bcc6db0971c429e60a27c340e647f4336d62dc208d77fb7e5b8cb6b3c42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a69e4917eda8d31383ad0eaa37494a057308956e9910c62ddadbc8b58bfe86cf"
+    sha256 cellar: :any,                 arm64_tahoe:   "7aef21ff1ada34c31078333fea8ef68a336c2b4b7d7fa0d036ecb6728dd9ea36"
+    sha256 cellar: :any,                 arm64_sequoia: "ea730c9f69488b10dd225addf7dd320e413b29e1961f038b97306d246ddfe070"
+    sha256 cellar: :any,                 arm64_sonoma:  "0677be70254a63d0ee580beb257a720ffe50df7944e39457912a75a7916abb6c"
+    sha256 cellar: :any,                 sonoma:        "22e8cf2da19b87bc741a197571c3609f1b7c8ece1f558b9aa0cebc11716352d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a38d18fef347d725da55f3ce3783b8bb9b7fb242f2a12c9b71444a9265043334"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d204f9017c647e078bbbcb22977e7527b363eece47a36c41301922fafe818a20"
   end
 
   depends_on "pkgconf" => :build
@@ -97,8 +97,8 @@ class KeeperCommander < Formula
   end
 
   resource "fido2" do
-    url "https://files.pythonhosted.org/packages/e7/3c/c65377e48c144afca6b02c69f10c0fe936db556096a4e2c9798e2aa72db6/fido2-2.1.1.tar.gz"
-    sha256 "f1379f845870cc7fc64c7f07323c3ce41e8c96c37054e79e0acd5630b3fec5ac"
+    url "https://files.pythonhosted.org/packages/09/34/4837e2f5640baf61d8abd6125ccb6cc60b4b2933088528356ad6e781496f/fido2-2.2.0.tar.gz"
+    sha256 "0d8122e690096ad82afde42ac9d6433a4eeffda64084f36341ea02546b181dd1"
   end
 
   resource "flask" do
@@ -142,8 +142,8 @@ class KeeperCommander < Formula
   end
 
   resource "keeper-pam-webrtc-rs" do
-    url "https://files.pythonhosted.org/packages/b2/90/239a5bae0045ca11f60b141dd74e31ecbfae815cb14ef7ca7b62c0c36cc6/keeper_pam_webrtc_rs-2.1.12.tar.gz"
-    sha256 "71e576c6d753f5ffa80611693bed8083ae4d7e6d2f47017cc16b3d3efd70e494"
+    url "https://files.pythonhosted.org/packages/eb/84/d44d15dde63ba63a5acc9534022b481447f39cbebceb5b5bade03d6d6391/keeper_pam_webrtc_rs-2.1.13.tar.gz"
+    sha256 "8ec1e6b6f29f6e577d020578c504af3ce8675397544352a64a4834db3cf8c80c"
   end
 
   resource "keeper-secrets-manager-core" do
@@ -187,8 +187,8 @@ class KeeperCommander < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
-    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+    url "https://files.pythonhosted.org/packages/df/de/0d2b39fb4af88a0258f3bac87dfcbb48e73fbdea4a2ed0e2213f9a4c2f9a/packaging-26.1.tar.gz"
+    sha256 "f042152b681c4bfac5cae2742a55e103d27ab2ec0f3d88037136b6bfe7c9c5de"
   end
 
   resource "platformdirs" do
@@ -267,8 +267,8 @@ class KeeperCommander < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
-    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
+    url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
+    sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
   end
 
   resource "tabulate" do

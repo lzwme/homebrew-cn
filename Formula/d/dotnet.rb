@@ -3,16 +3,17 @@ class Dotnet < Formula
   homepage "https://dotnet.microsoft.com/"
   license "MIT"
   version_scheme 1
+  compatibility_version 1
   head "https://github.com/dotnet/dotnet.git", branch: "main"
 
   stable do
     # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-    url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.105.tar.gz"
-    sha256 "c634e849db52424b75c82c010116cb8290bc952431b7ccf6078ed7365d57b90e"
+    url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.106.tar.gz"
+    sha256 "04a29699e8b5ead160a633c376d815280ccd7a78e03c80f257e329c0bfdfe771"
 
     resource "release.json" do
-      url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v10.0.105/release.json"
-      sha256 "e8f1ccc6f7f1e2f5b2265bcab5a5351535288c9c5261ac7c677e865a6a547dcd"
+      url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v10.0.106/release.json"
+      sha256 "f89b778619633f8bf075506495854651e52b205454b85cd01f622a50029688f6"
 
       livecheck do
         formula :parent
@@ -30,12 +31,12 @@ class Dotnet < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7a473a10c5f4b75cc5c4ded89263cfeb5c9d50e2520935cce75be400f5b14ffa"
-    sha256 cellar: :any,                 arm64_sequoia: "3dc28e3e729add4029a3b0b2b302c449a4321bdd1e189091d1d5cd2ee912420a"
-    sha256 cellar: :any,                 arm64_sonoma:  "410db18a7f83def7d657cd67f5e8e79e5d54d3f55226bf2ed44196d8fa55a710"
-    sha256 cellar: :any,                 sonoma:        "28ea46ab7b6fffced27292dc10790063a2d426c1792170a863fdc0704127044e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e72ff8fed4f6b10b62f78dd62fc996d3d5c3c1dde9b2c3f6eadf5b09f1c0a9a6"
-    sha256                               x86_64_linux:  "bdab4c1a8a2cd86ac784ba1d95d18ff9b9bc796c159f86655b6929e9befabee2"
+    sha256 cellar: :any,                 arm64_tahoe:   "1fdce799acbc95ba613c4273cdfcd269d11e07db8627ba1c8b6978e889bfbb64"
+    sha256 cellar: :any,                 arm64_sequoia: "b4ff8ca04bcea24ea98f95baf2f8e443bd48d094fd46d3e96ac794a50ab3bcfa"
+    sha256 cellar: :any,                 arm64_sonoma:  "4af5303d7788beca1097a5c1d4bd312b48fd6132084c93b2bc9deccef2d1d78a"
+    sha256 cellar: :any,                 sonoma:        "25c3b114fcfdd7a9b3a8e366469a87e19d1208e0da9f7e4c25ea1519b78690a5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28bd08eb004c41176a7061fafeb759d7e4cf4aea9a18d2193d5e962aead1efc9"
+    sha256                               x86_64_linux:  "2c40d67f0a88d8e7a572b78080c8ec508e06036c1ce841e7f8d32c78ec38ccb8"
   end
 
   depends_on "cmake" => :build

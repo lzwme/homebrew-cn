@@ -24,7 +24,6 @@ class Perl < Formula
   depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL-3.0 restrictions
   depends_on "gdbm"
 
-  uses_from_macos "expat"
   uses_from_macos "libxcrypt"
 
   # Prevent site_perl directories from being removed

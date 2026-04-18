@@ -6,15 +6,15 @@ class Mcpm < Formula
   url "https://files.pythonhosted.org/packages/7b/85/c8593ad62e32393af71a028032cfa0a291a3eee98c592f74b92dc74881d6/mcpm-2.14.0.tar.gz"
   sha256 "ac586a1b5b79ebb27650e9cf934714f073f19d1936a778334e74ad65f6dfb417"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ab533c3e1f6ad8bae855ed7a2341467f9d5a349eb4e3c5185df370f28072dc0f"
-    sha256 cellar: :any,                 arm64_sequoia: "48129ef1ed3cebb2396f47c3b21ff41d177c6ea8addb101b85c1488b9a594cf7"
-    sha256 cellar: :any,                 arm64_sonoma:  "df9bc236e6cfbf8a06a4a08318a2af5c43968962120b3f02bc45698fcefc5e73"
-    sha256 cellar: :any,                 sonoma:        "526c92062d1eb94f2c25de0d05296af2f8c61be065fa2f4c69a68733ce92c211"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45b96f361e48a2d493232625c68e6a8b3d317917bbcb18a64d41afd61bd17e34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aede9b978492cf35aa9d331a2dc4f71b0cff71bc0b2abc0501c72e3cc4edf371"
+    sha256 cellar: :any,                 arm64_tahoe:   "5e5e2f24ea8f5ef6688e10aa399e874bf51c8bdf531615a5810ffc30e3401ef9"
+    sha256 cellar: :any,                 arm64_sequoia: "3357ddeadf4a88e10a738fd47b651928172ccf6f3a3b97996f1641806cad2175"
+    sha256 cellar: :any,                 arm64_sonoma:  "2e4d6af9dce8fca2b774e929accb05391534427191598a43072292b513794a32"
+    sha256 cellar: :any,                 sonoma:        "72760e653883633751221ce80bb982ec1fda9e82992fd1c681d63dbcc4f0b760"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3355cd5f4269d8377b1673852d1b8b299d23afe09ce7a3af0b6953c6b9fd1bd0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c470c51c70f1e9661c0ac4a1545aa85da76e87c789f82dc0b7aa4bae0a816f89"
   end
 
   depends_on "cmake" => :build # for duckdb
@@ -40,8 +40,8 @@ class Mcpm < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/af/98/00d3dd826d46959ad8e32af2dbb2398868fd9fd0683c26e56d0789bd0e68/authlib-1.6.9.tar.gz"
-    sha256 "d8f2421e7e5980cc1ddb4e32d3f5fa659cfaf60d8eaf3281ebed192e4ab74f04"
+    url "https://files.pythonhosted.org/packages/28/10/b325d58ffe86815b399334a101e63bc6fa4e1953921cb23703b48a0a0220/authlib-1.6.11.tar.gz"
+    sha256 "64db35b9b01aeccb4715a6c9a6613a06f2bd7be2ab9d2eb89edd1dfc7580a38f"
   end
 
   resource "beartype" do
@@ -85,8 +85,8 @@ class Mcpm < Formula
   end
 
   resource "docstring-parser" do
-    url "https://files.pythonhosted.org/packages/b2/9d/c3b43da9515bd270df0f80548d9944e389870713cc1fe2b8fb35fe2bcefd/docstring_parser-0.17.0.tar.gz"
-    sha256 "583de4a309722b3315439bb31d64ba3eebada841f2e2cee23b99df001434c912"
+    url "https://files.pythonhosted.org/packages/e0/4d/f332313098c1de1b2d2ff91cf2674415cc7cddab2ca1b01ae29774bd5fdf/docstring_parser-0.18.0.tar.gz"
+    sha256 "292510982205c12b1248696f44959db3cdd1740237a968ea1e2e7a900eeb2015"
   end
 
   resource "docutils" do
@@ -95,8 +95,8 @@ class Mcpm < Formula
   end
 
   resource "duckdb" do
-    url "https://files.pythonhosted.org/packages/ae/62/590caabec6c41003f46a244b6fd707d35ca2e552e0c70cbf454e08bf6685/duckdb-1.5.1.tar.gz"
-    sha256 "b370d1620a34a4538ef66524fcee9de8171fa263c701036a92bc0b4c1f2f9c6d"
+    url "https://files.pythonhosted.org/packages/0c/66/744b4931b799a42f8cb9bc7a6f169e7b8e51195b62b246db407fd90bf15f/duckdb-1.5.2.tar.gz"
+    sha256 "638da0d5102b6cb6f7d47f83d0600708ac1d3cb46c5e9aaabc845f9ba4d69246"
   end
 
   resource "email-validator" do
@@ -245,8 +245,8 @@ class Mcpm < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
-    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+    url "https://files.pythonhosted.org/packages/df/de/0d2b39fb4af88a0258f3bac87dfcbb48e73fbdea4a2ed0e2213f9a4c2f9a/packaging-26.1.tar.gz"
+    sha256 "f042152b681c4bfac5cae2742a55e103d27ab2ec0f3d88037136b6bfe7c9c5de"
   end
 
   resource "pathable" do

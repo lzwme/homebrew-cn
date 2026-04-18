@@ -6,15 +6,15 @@ class Oterm < Formula
   url "https://files.pythonhosted.org/packages/37/e4/1df0729d9f86e3d52b0b0fb92e7d57eab21fd41071043ae8587252c38385/oterm-0.14.7.tar.gz"
   sha256 "eeed277840c3314aef90042a9a43e10de7fc9110212c56ad729a0b4255d356f7"
   license "MIT"
-  revision 8
+  revision 9
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "33c550e1f54a6e838662746c27e6d43a94dfcfed84d181f5bfcab4e7805f3d36"
-    sha256 cellar: :any,                 arm64_sequoia: "c32689ffecc38c6e8399c3a0ba5c20f55939de498659e20aaf478bf8d650f04e"
-    sha256 cellar: :any,                 arm64_sonoma:  "ac738e5bebcf0874815407e7a21a9a29a26fbb0a70541a33f554fabf178c02a7"
-    sha256 cellar: :any,                 sonoma:        "e73597adb51ba326eb9a21a5074200a7bd950cff7f9377d7ec316444aca6e97e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a6e89acaeb066a70f153c17e04fba056625fb902b9b5e717c166e6ae4bb08bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3bd2b2e20471b707c4af8f158e5062a1bcf1491f0ebd930aa950769b2bdb00d"
+    sha256 cellar: :any,                 arm64_tahoe:   "02a516f3dc0e097d39975f165bfd4bf5852615f4efc8d174c90aa8e978ff3c0b"
+    sha256 cellar: :any,                 arm64_sequoia: "930930b5eaeeb8ec843db9362a2e88adc9fd8a9e971f90ce315391a372a6ccf1"
+    sha256 cellar: :any,                 arm64_sonoma:  "a713cef2c37d7d3afef9623292dc1b4c1e3819bef1a6e98bbcba26350748e04e"
+    sha256 cellar: :any,                 sonoma:        "55d5b2026c4325a3db098ba4258bbea312dce5dfb928b14ed79b657c0cf0c462"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "480c9dfdf28f7e5d311142a699201f4b8f18e65429718a3d6c4ea6194d41422a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c193244fa895e8c7258b43a807df95361880ca8905ca3d4f99d67042d2377d9a"
   end
 
   depends_on "luajit" => :build # for lupa
@@ -56,8 +56,8 @@ class Oterm < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/af/98/00d3dd826d46959ad8e32af2dbb2398868fd9fd0683c26e56d0789bd0e68/authlib-1.6.9.tar.gz"
-    sha256 "d8f2421e7e5980cc1ddb4e32d3f5fa659cfaf60d8eaf3281ebed192e4ab74f04"
+    url "https://files.pythonhosted.org/packages/28/10/b325d58ffe86815b399334a101e63bc6fa4e1953921cb23703b48a0a0220/authlib-1.6.11.tar.gz"
+    sha256 "64db35b9b01aeccb4715a6c9a6613a06f2bd7be2ab9d2eb89edd1dfc7580a38f"
   end
 
   resource "beartype" do
@@ -101,8 +101,8 @@ class Oterm < Formula
   end
 
   resource "docstring-parser" do
-    url "https://files.pythonhosted.org/packages/b2/9d/c3b43da9515bd270df0f80548d9944e389870713cc1fe2b8fb35fe2bcefd/docstring_parser-0.17.0.tar.gz"
-    sha256 "583de4a309722b3315439bb31d64ba3eebada841f2e2cee23b99df001434c912"
+    url "https://files.pythonhosted.org/packages/e0/4d/f332313098c1de1b2d2ff91cf2674415cc7cddab2ca1b01ae29774bd5fdf/docstring_parser-0.18.0.tar.gz"
+    sha256 "292510982205c12b1248696f44959db3cdd1740237a968ea1e2e7a900eeb2015"
   end
 
   resource "docutils" do
@@ -211,8 +211,8 @@ class Oterm < Formula
   end
 
   resource "lupa" do
-    url "https://files.pythonhosted.org/packages/c4/a0/327c40cdd59f0ce9dc6faaf73bf6e52b0b22188f1ee2366ef36d0e5c1b85/lupa-2.7.tar.gz"
-    sha256 "73a64ce5dc8cd95b75a330c1513e46e098d40fceed3fea516c09f6595eade889"
+    url "https://files.pythonhosted.org/packages/c3/a6/0f869fbb07c393f15473b1eefefb7b5bec162fb7481803d040ed4dc46002/lupa-2.8.tar.gz"
+    sha256 "d8022641b9ec8ecf2c5ecbe9f47e5a70e0b87c4b5ae921b92cb02a638e0acd08"
   end
 
   resource "markdown-it-py" do
@@ -431,8 +431,8 @@ class Oterm < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/e3/02/0f2892c661036d50ede074e376733dca2ae7c6eb617489437771209d4180/zipp-3.23.0.tar.gz"
-    sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
+    url "https://files.pythonhosted.org/packages/30/21/093488dfc7cc8964ded15ab726fad40f25fd3d788fd741cc1c5a17d78ee8/zipp-3.23.1.tar.gz"
+    sha256 "32120e378d32cd9714ad503c1d024619063ec28aad2248dc6672ad13edfa5110"
   end
 
   def install

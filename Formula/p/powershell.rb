@@ -5,7 +5,7 @@ class Powershell < Formula
       tag:      "v7.6.0",
       revision: "767990ba06f8579d69f99eec46057541374aa892"
   license "MIT"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -13,12 +13,12 @@ class Powershell < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9e164ecea7a8319f50bdb63f940553c3225f5b4fdb721705451ff1c1c3e9ed54"
-    sha256 cellar: :any,                 arm64_sequoia: "4db31779851843df9958c3bd84b49ac5a8f92a9b90cee8f1739cf3acbb6d3f2f"
-    sha256 cellar: :any,                 arm64_sonoma:  "033c71c388fbbb54f390f70c89230930f3bb6bd2936286ffa2f37340776a2a2a"
-    sha256 cellar: :any,                 sonoma:        "57e179c0bd8c2565a279edca93152578e0aac3a3bd52673a8eb6de8cd6ef82e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "597e50330a560c00e8cae859e9b661d75ecf3d9b5b1dfb4129915f40ab094019"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3ef9b43d72327b1d67625e1e83a7d59f26352d8321a9a84ab38e8f6f062cc4a"
+    sha256 cellar: :any,                 arm64_tahoe:   "23d4e1fd2b41069a252d34cd5d1edde61a99a0b63bbb8b797cd3d6796d62aae8"
+    sha256 cellar: :any,                 arm64_sequoia: "65d76038f7b950749d20d99411a432821d63b8eeaa953bdd46e90cff86551e67"
+    sha256 cellar: :any,                 arm64_sonoma:  "fb52383ff82208b155224dc20ebfe53bdcb095265f4c7722d157f348e68f80e2"
+    sha256 cellar: :any,                 sonoma:        "5d82cce6d2c432cc0a5b0157c2a8bb98eaa0469f9a27cf9ed3141040d38d2e9a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8cda2c3fcf51135800bbe4001c141051aeb79fca3358841110221788ac7988c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcc017990d60d72ab1b02c90855d289387b384801738d4a69d41d4a10e3ff7dd"
   end
 
   depends_on "dotnet"
@@ -44,6 +44,7 @@ class Powershell < Formula
       --disable-build-servers
       --use-current-runtime
       --nologo
+      --property:WarningsNotAsErrors=NU1903
     ]
     dotnet_publish_flags = %W[
       --disable-build-servers
@@ -57,6 +58,7 @@ class Powershell < Formula
       --property:ErrorOnDuplicatePublishOutputFiles=false
       --property:IsWindows=false
       --property:ReleaseTag=#{version}
+      --property:WarningsNotAsErrors=NU1903
     ]
     dotnet_run_flags = %W[
       --framework #{target_framework}
@@ -75,6 +77,7 @@ class Powershell < Formula
       -t:_GetDependencies
       -property:DesignTimeBuild=true;_DependencyFile=#{buildpath}/src/TypeCatalogGen/#{inc_file}
       -nologo
+      -p:WarningsNotAsErrors=NU1903
     ]
     target_file = buildpath/"src/Microsoft.PowerShell.SDK/obj/Microsoft.PowerShell.SDK.csproj.TypeCatalog.targets"
     target_file.dirname.mkpath

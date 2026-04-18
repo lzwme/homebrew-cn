@@ -29,7 +29,7 @@ class LlamaCpp < Formula
   end
 
   depends_on "cmake" => [:build, :test]
-  depends_on "ggml"
+  depends_on "ggml" # NOTE: reject all PRs that try to bundle ggml
   depends_on "openssl@3"
 
   def install

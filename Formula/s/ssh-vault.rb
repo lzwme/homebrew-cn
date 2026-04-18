@@ -1,20 +1,20 @@
 class SshVault < Formula
   desc "Encrypt/decrypt using SSH keys"
   homepage "https://ssh-vault.com/"
-  url "https://ghfast.top/https://github.com/ssh-vault/ssh-vault/archive/refs/tags/1.2.5.tar.gz"
-  sha256 "14e3015e1cf52e64751f8574bde18058f1b964b36ae5475db7763b86f14e4d96"
+  url "https://ghfast.top/https://github.com/ssh-vault/ssh-vault/archive/refs/tags/1.2.6.tar.gz"
+  sha256 "09b335c6afac984a1a7e5a5d7910728a1beee65cb2fe27545fc923594d0b4b9c"
   license "BSD-3-Clause"
   head "https://github.com/ssh-vault/ssh-vault.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1a7affb8673dcb792b7c5bc87f1f9864e50da02e6337f8eff8024eb098caf7d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37da52524152ee75bdaaf9635938d9fda7e691b177feb1c0ec3b7788dcf28173"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5006291b13f31e6f81f667e173f9e62932cd4787d656e33da2e3d2eb41f6cea7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "25bf75240d6765b959db67ae7c2255d85970e34b8dfd25150ac8c0a7773d12bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f619b51e88d5343494628e1101e7ec400eb998615baaa597030f7e8cb1efbd76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5b5369ffa31eec116de95a463c4af4e12949a0d5a5a7a893194c7941cc19633"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df669e1d5d43636895f55c81c004bfc555f2e6dee82bc63a594740af1f085942"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "154df103306cfc938ea5b0fb1de6336ad6a77fac52a6da22a392129c6dcdaa74"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "120b99b614b6d5511edcfdea43f0c0ba1010e8b49a6527e063167c62328cd1fb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "353ec9425b34589fb0d1e3bf1a7329bdcfdeb3815d39cff1b913f0968be3c7a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe1feb35a10d0bc90a093e324991ebe89b5a1ec993c23c48990bf05fd84cc6d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5a2fcd6b3afda6561ca904f107d5f726219e4b1d3b0212755bc637d29bc98fb"
   end
 
   depends_on "rust" => :build

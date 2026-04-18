@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/0c/31/62c23573fc6109ad1f16cb1afe68d4fc5dc2427d3b6f4bbdf8d6137b0672/mycli-1.68.0.tar.gz"
-  sha256 "fe908b3d07695b10deb23301749bbf1ff42e3c2af0f12c5da5de8d7b3869f353"
+  url "https://files.pythonhosted.org/packages/b3/3a/f0bff753e5d07e115a39a25df0af442a2e07c937dc46a24aefeb791c75d7/mycli-1.68.1.tar.gz"
+  sha256 "32426f3599ef5378586740640e37a5dc293b683f657cf1dbf5b46f4154fe275a"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3453ddeff11273465113e0a9e6fd7bdbd856f00cd8cd72909ef6018d97f3ae54"
-    sha256 cellar: :any,                 arm64_sequoia: "73dc65d0afdc9a0e7ce4364f3b0673a81604184aae3c1aa46b37ec7b6b14cebd"
-    sha256 cellar: :any,                 arm64_sonoma:  "6e71bd71c37468e1adfe1d20e2756f45fe7ae84012250a43fc29328ab3612a2b"
-    sha256 cellar: :any,                 sonoma:        "da7f4a1ddbe4c260a61b87d012a5676191d6eddaad7629ec44d6d444c9750c36"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ea2cee1259b9e92169c193d04d4e7ea3a78b8fb1eb1982bbb7cf693dea26648"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ccd59ee9d6157bfb27e8c6b321bbc63fc9ab66989e0b482132ed7ce184fed3e"
+    sha256 cellar: :any,                 arm64_tahoe:   "96b30eec192415dfe827d29104dea196974b2bfa647146eda6d3aaa752269313"
+    sha256 cellar: :any,                 arm64_sequoia: "c8bb6fcb60b6955d84c189e7fbc8327631cb348944d43f241fce380ab2acf422"
+    sha256 cellar: :any,                 arm64_sonoma:  "92690b2f9d3960e41c7be2442fed6bfbf80075dd5ba8fa2d7c61ef234cbb2ac4"
+    sha256 cellar: :any,                 sonoma:        "0b8b5c3f2dbdbed20c932c4cda0da8f9953a539b4f4e03a9716ab2c72ca4114e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b156934553f815fea8c13b3da2132b773294777db3dc23f69c768abd86ee67db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afa9c7b4b3b22de9890a9aa88780b1e2763ab732a512031e9304308ac5c15baa"
   end
 
   depends_on "rust" => :build # for jiter, sqlglotrs
@@ -130,8 +130,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/94/fe/64b3d035780b3188f86c4f6f1bc202e7bb74757ef028802112273b9dcacf/openai-2.31.0.tar.gz"
-    sha256 "43ca59a88fc973ad1848d86b98d7fac207e265ebbd1828b5e4bdfc85f79427a5"
+    url "https://files.pythonhosted.org/packages/ed/59/bdcc6b759b8c42dd73afaf5bf8f902c04b37987a5514dbc1c64dba390fef/openai-2.32.0.tar.gz"
+    sha256 "c54b27a9e4cb8d51f0dd94972ffd1a04437efeb259a9e60d8922b8bd26fe55e0"
   end
 
   resource "pluggy" do
@@ -215,13 +215,13 @@ class Mycli < Formula
   end
 
   resource "sqlglot" do
-    url "https://files.pythonhosted.org/packages/5b/7a/3b6a8853fc2fa166f785a8ea4fecde46f70588e35471bc7811373da31a49/sqlglot-30.0.3.tar.gz"
-    sha256 "35ba7514c132b54f87fd1732a65a73615efa9fd83f6e1eed0a315bc9ee3e1027"
+    url "https://files.pythonhosted.org/packages/f8/9b/af8fcaca1b0821349ef4f88e2775e059bcd7640900bca6533832f1fb845d/sqlglot-30.4.3.tar.gz"
+    sha256 "3a4e9a1e1dd47f8e536ba822d77cb784681704da5e4a3e1a07d2ef86b6067826"
   end
 
   resource "sqlglotc" do
-    url "https://files.pythonhosted.org/packages/05/fe/25a3d389834e116d3612e1960b1abedef3dabcc0fe7913a5dcf4541271f5/sqlglotc-30.0.3.tar.gz"
-    sha256 "8e85b401fc3cec09d4341ea14bfe8bac5d28179e348638d00384c41e039ab79b"
+    url "https://files.pythonhosted.org/packages/c8/46/575285cfdf219bdcfe8f12d485827efc1aa26c06416711d8125cfdff86bb/sqlglotc-30.4.3.tar.gz"
+    sha256 "10187877550509a1a546a5f1f24ea2077fa648b55944a9cbee8d9b569d01f0ff"
   end
 
   resource "sqlite-fts4" do
@@ -260,12 +260,6 @@ class Mycli < Formula
   end
 
   def install
-    # sqlglotc is built by latest sqlglot and it doesn't match with resource version
-    # Issue ref: https://github.com/dbcli/mycli/issues/1847
-    odie "Check if sqlglot workaround can be removed!" if resource("sqlglotc").version > "30.0.3"
-    (buildpath/"build-constraints.txt").write "sqlglot<30.1.0\n"
-    ENV["PIP_BUILD_CONSTRAINT"] = buildpath/"build-constraints.txt"
-
     without = %w[jeepney secretstorage] unless OS.linux?
     virtualenv_install_with_resources(without:)
 

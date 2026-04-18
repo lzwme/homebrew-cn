@@ -1,20 +1,18 @@
 class Reposurgeon < Formula
   desc "Edit version-control repository history"
   homepage "http://www.catb.org/esr/reposurgeon/"
-  url "https://gitlab.com/esr/reposurgeon/-/archive/5.3/reposurgeon-5.3.tar.gz"
-  sha256 "a13e758e6bba5f4d17cdfa0ad8956bb864f336ba248b175353f741c3e5d3b089"
+  url "https://gitlab.com/esr/reposurgeon/-/archive/5.4/reposurgeon-5.4.tar.gz"
+  sha256 "52cc10255b10a160ee07f94d6981b924cf000642a4e2c9c47ff33520b3a7f9b6"
   license "BSD-2-Clause"
   head "https://gitlab.com/esr/reposurgeon.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "889508d576ab7da93911aaa8975968101cb229b79f80f3d7ad1a9602d7759568"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "102e0f3f46f350bfd96d6568ad92250a6779ec45cb0608c5b96eeee7acb113e3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5050fc7b8b308327099fc78cfffeff27c0e41f63db65eb8b5d94648c51f88983"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f6045878a2a1f779ed09291a9c6d21eff4698be4377a7b6f958ef17faf3017c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "479f8b063e2fb806b3b2585bb65fb65308b0209b3c7687d5d3bb44ff641d131f"
-    sha256 cellar: :any_skip_relocation, ventura:       "97eba5c7136a5397bdf4ed46af8a7068edf5710e1d0c893081078cc64eaf5fc8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "52b7350eaacb2a1a4203d7927265fad7e1f48f3abee399db014f357e7ef12b8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d79f22e49216e32de6b2e6e1575dae5a1d3c7dc140bd672ecbe203862fa30b08"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "750dbd7023f5da24ee5f3f786934140be4522130f88a42f5600ec24e97536f93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b75d3cae9c5aa84f48d6cccc11c93e278f988fd6b86f84855357c4e9ff0f456f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36384f2f0f1a6a4c7dd1062f02e5ca51d36ac8b2d0f079f7ba7a1660245108ee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8a6ee584c579a030959d74731644f05615057d83c7b7dd4673b705ff401df7cf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c96db17892d83d22dc58770852a76bb42fbeb94200bb19576dd2f088942cad76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7e64f475f9a97050a9f3bacc47f0a6243dcbf9ee7806963a56aa294725e6706"
   end
 
   depends_on "asciidoctor" => :build
@@ -30,7 +28,7 @@ class Reposurgeon < Formula
     ENV.append_path "GEM_PATH", Formula["asciidoctor"].opt_libexec
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
     system "make"
-    system "make", "install", "prefix=#{prefix}"
+    system "make", "install", "PREFIX=#{prefix}"
     elisp.install "reposurgeon-mode.el"
   end
 

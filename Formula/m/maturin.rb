@@ -48,9 +48,11 @@ class Maturin < Formula
 
   test do
     python3 = "python3.14"
-    system "cargo", "init", "--name=brew", "--bin"
-    system bin/"maturin", "build", "-o", "dist", "--compatibility", "off"
-    system python3, "-m", "pip", "install", "brew", "--prefix=./dist", "--no-index", "--find-links=./dist"
-    system python3, "-c", "import maturin"
+    system "cargo", "init", "homebrew", "--name=brew", "--bin"
+    cd "homebrew" do
+      system bin/"maturin", "build", "-o", "dist", "--compatibility", "off"
+      system python3, "-m", "pip", "install", "brew", "--prefix=./dist", "--no-index", "--find-links=./dist"
+      system python3, "-c", "import maturin"
+    end
   end
 end

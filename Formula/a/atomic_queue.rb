@@ -1,17 +1,17 @@
 class AtomicQueue < Formula
   desc "C++14 lock-free queues"
   homepage "https://github.com/max0x7ba/atomic_queue"
-  url "https://ghfast.top/https://github.com/max0x7ba/atomic_queue/archive/refs/tags/v1.7.3.tar.gz"
-  sha256 "8502effdbf580426bda77b258ec0e2e0d69be55ebeb874886ef86f84cc7d5a50"
+  url "https://ghfast.top/https://github.com/max0x7ba/atomic_queue/archive/refs/tags/v1.8.1.tar.gz"
+  sha256 "57880b536f81c12903dfdc5aa25e3187e67cd56657f005f0be75084a00614958"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a1f9619f5c9e07ad89374dc1725521f87dcca9d54041602345114ff67e532de"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a1f9619f5c9e07ad89374dc1725521f87dcca9d54041602345114ff67e532de"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a1f9619f5c9e07ad89374dc1725521f87dcca9d54041602345114ff67e532de"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3a1f9619f5c9e07ad89374dc1725521f87dcca9d54041602345114ff67e532de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d9c6f73913a49c03716892e85d5a2da94f9f7805f98345e7ba70f300cb49cfd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d9c6f73913a49c03716892e85d5a2da94f9f7805f98345e7ba70f300cb49cfd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "08b52539483c0ae231cf5348d12141bd8bb9696b3db839ec4d5edcb2bfdc380e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08b52539483c0ae231cf5348d12141bd8bb9696b3db839ec4d5edcb2bfdc380e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08b52539483c0ae231cf5348d12141bd8bb9696b3db839ec4d5edcb2bfdc380e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "08b52539483c0ae231cf5348d12141bd8bb9696b3db839ec4d5edcb2bfdc380e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "163b953e704f5d42ad66a3f9b0f6d52ffed41b7e2ad98ff0e165d344e394738e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "163b953e704f5d42ad66a3f9b0f6d52ffed41b7e2ad98ff0e165d344e394738e"
   end
 
   depends_on "meson" => :build

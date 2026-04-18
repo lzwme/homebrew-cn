@@ -6,16 +6,16 @@ class McpAtlassian < Formula
   url "https://files.pythonhosted.org/packages/c3/44/d879210be4178c408fbd8971f8dd36e9abc7ba3d729f7ccd4b790e73c1f6/mcp_atlassian-0.21.1.tar.gz"
   sha256 "dff6c81541506cb0cc80d7ac9900ffdcb246fec7808e41e8df73c09dd4a28074"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "49a0b6a549b3bf664f9e304a2850dfe211158b51895aa881d01dc61642e312bd"
-    sha256 cellar: :any,                 arm64_sequoia: "4a551b19dbed2d7c2cf8c816aa5967617de07f6dca4614104a8b19738abb0362"
-    sha256 cellar: :any,                 arm64_sonoma:  "525eba78045231411a0b9632f76bc33fe03287fe5aec3d016c946f258a58d33c"
-    sha256 cellar: :any,                 sonoma:        "4c9a1da14dfacc1549be678c8d430d6c12fe89700666d0986fc4e60b987942e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9642e1b0ad675af8e5bd716956b6eff39896100268187addea14f52341d7db5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f86ae2ea5c1b22818649b2cf838d1d808fbb857e7f2bd202603c156b02b0ec36"
+    sha256 cellar: :any,                 arm64_tahoe:   "10ca116ff5746356a08d515de98ca61e05c61e4700c62190dd801d0bcd2e9ecf"
+    sha256 cellar: :any,                 arm64_sequoia: "85615a6bc58a9750dba089a16dd3fb0601edca6564bb4c68ef285aa7966abff2"
+    sha256 cellar: :any,                 arm64_sonoma:  "5f208fc4b912c59dfd4583b79d9900e17a807a5577129debc5ab92ffc0d61d9c"
+    sha256 cellar: :any,                 sonoma:        "096ffaca69d4ef06157dbdadcb2529c46301c8673f794856441d8050c6cb9d1d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "731ae72cbda346d30a4df3d0792fc396c34ea04e9a04210fb5ab3f27394ad126"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77e171a1872599f9d24ffb38251a6a49a9059ca7ebce37b428e9bbfeb2117c81"
   end
 
   depends_on "luajit" => :build # for lupa
@@ -55,8 +55,8 @@ class McpAtlassian < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/af/98/00d3dd826d46959ad8e32af2dbb2398868fd9fd0683c26e56d0789bd0e68/authlib-1.6.9.tar.gz"
-    sha256 "d8f2421e7e5980cc1ddb4e32d3f5fa659cfaf60d8eaf3281ebed192e4ab74f04"
+    url "https://files.pythonhosted.org/packages/28/10/b325d58ffe86815b399334a101e63bc6fa4e1953921cb23703b48a0a0220/authlib-1.6.11.tar.gz"
+    sha256 "64db35b9b01aeccb4715a6c9a6613a06f2bd7be2ab9d2eb89edd1dfc7580a38f"
   end
 
   resource "beartype" do
@@ -120,8 +120,8 @@ class McpAtlassian < Formula
   end
 
   resource "docstring-parser" do
-    url "https://files.pythonhosted.org/packages/b2/9d/c3b43da9515bd270df0f80548d9944e389870713cc1fe2b8fb35fe2bcefd/docstring_parser-0.17.0.tar.gz"
-    sha256 "583de4a309722b3315439bb31d64ba3eebada841f2e2cee23b99df001434c912"
+    url "https://files.pythonhosted.org/packages/e0/4d/f332313098c1de1b2d2ff91cf2674415cc7cddab2ca1b01ae29774bd5fdf/docstring_parser-0.18.0.tar.gz"
+    sha256 "292510982205c12b1248696f44959db3cdd1740237a968ea1e2e7a900eeb2015"
   end
 
   resource "docutils" do
@@ -230,8 +230,8 @@ class McpAtlassian < Formula
   end
 
   resource "lupa" do
-    url "https://files.pythonhosted.org/packages/c4/a0/327c40cdd59f0ce9dc6faaf73bf6e52b0b22188f1ee2366ef36d0e5c1b85/lupa-2.7.tar.gz"
-    sha256 "73a64ce5dc8cd95b75a330c1513e46e098d40fceed3fea516c09f6595eade889"
+    url "https://files.pythonhosted.org/packages/c3/a6/0f869fbb07c393f15473b1eefefb7b5bec162fb7481803d040ed4dc46002/lupa-2.8.tar.gz"
+    sha256 "d8022641b9ec8ecf2c5ecbe9f47e5a70e0b87c4b5ae921b92cb02a638e0acd08"
   end
 
   resource "lxml" do
@@ -295,8 +295,8 @@ class McpAtlassian < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
-    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+    url "https://files.pythonhosted.org/packages/df/de/0d2b39fb4af88a0258f3bac87dfcbb48e73fbdea4a2ed0e2213f9a4c2f9a/packaging-26.1.tar.gz"
+    sha256 "f042152b681c4bfac5cae2742a55e103d27ab2ec0f3d88037136b6bfe7c9c5de"
   end
 
   resource "pathable" do
@@ -555,8 +555,8 @@ class McpAtlassian < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/e3/02/0f2892c661036d50ede074e376733dca2ae7c6eb617489437771209d4180/zipp-3.23.0.tar.gz"
-    sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
+    url "https://files.pythonhosted.org/packages/30/21/093488dfc7cc8964ded15ab726fad40f25fd3d788fd741cc1c5a17d78ee8/zipp-3.23.1.tar.gz"
+    sha256 "32120e378d32cd9714ad503c1d024619063ec28aad2248dc6672ad13edfa5110"
   end
 
   def install

@@ -62,15 +62,17 @@ class Hk < Formula
       }
     PKL
 
-    system "cargo", "init", "--name=brew"
+    system "cargo", "init", "homebrew", "--name=brew"
 
-    system "git", "config", "user.name", "BrewTestBot"
-    system "git", "config", "user.email", "BrewTestBot@test.com"
+    cd "homebrew" do
+      system "git", "config", "user.name", "BrewTestBot"
+      system "git", "config", "user.email", "BrewTestBot@test.com"
 
-    system "git", "add", "--all"
-    system "git", "commit", "-m", "Initial commit"
+      system "git", "add", "--all"
+      system "git", "commit", "-m", "Initial commit"
 
-    output = shell_output("#{bin}/hk run pre-commit --all 2>&1")
-    assert_match "cargo-clippy", output
+      output = shell_output("#{bin}/hk run pre-commit --all 2>&1")
+      assert_match "cargo-clippy", output
+    end
   end
 end
