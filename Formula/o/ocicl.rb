@@ -1,17 +1,17 @@
 class Ocicl < Formula
   desc "OCI-based ASDF system distribution and management tool for Common Lisp"
   homepage "https://github.com/ocicl/ocicl"
-  url "https://ghfast.top/https://github.com/ocicl/ocicl/archive/refs/tags/v2.16.10.tar.gz"
-  sha256 "944ee4d885fd016199496e743dcb819333c06f34351e88ad1e2bb9bd12bdd9b7"
+  url "https://ghfast.top/https://github.com/ocicl/ocicl/archive/refs/tags/v2.16.12.tar.gz"
+  sha256 "5889ff5d2cc386b07c8320bfc4a7a949d8b25e9e21c15cea3ea121337083a49b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff251474eea55d182d3a45382fb82775a85dffcf7a2a2bbda87ac8ce373ae909"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4425d1db8a3c940eea608a0a5226fa929d6d6dfa45fbfd265826dadef3b7b488"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c14d2b71dfd04442ff0c4142c1c0ecd593798d626f49b27f41dd82f805fe6138"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e1d9b1b281bbc4f2493fd0acba32da7c051039d03e42434755d94e6da55df659"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b045150d1f763086c98fc1f2d76a4034af7b225992e0cb35951b7dafd56ed877"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8990b2031b4669d628f27315ca748755148cf2a7bbd1ed308900849993002c28"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48b63ba211fb8be6874bc5f8922adfc16fcf88067a747264f26b6a0f60176688"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eeefb73301c23462f0cb23caf76a31bd557729d73453cbcb6cdc0c5bc28b4baa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b1dc656f974d0804bf44ddf2a584e0848c9b4eafb16583c6b81ec77f4773870"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cc66b94a8dc94198a08fdd0f14b302f2ddc989c11bc74874decffa6594678e21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "883134361b39f0c238293805020bd76007ffee95fcbd3af67720605d8d869eab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d88c971e2831b30dee65f61a4c394b341630ff3736b581c4e1ef42e940ab0bd4"
   end
 
   depends_on "sbcl"

@@ -1,18 +1,18 @@
 class Mdfried < Formula
   desc "Terminal markdown viewer"
   homepage "https://github.com/benjajaja/mdfried"
-  url "https://ghfast.top/https://github.com/benjajaja/mdfried/archive/refs/tags/v0.19.2.tar.gz"
-  sha256 "7d1bb0f157c6fb05877deb26ca1e733128708fc5b60959967c0dd297b7ed7840"
+  url "https://ghfast.top/https://github.com/benjajaja/mdfried/archive/refs/tags/v0.19.4.tar.gz"
+  sha256 "615707f302d8ab1fe9edca63117ec3d98ff8b0f2de86aa0341edc50a51e655a6"
   license "GPL-3.0-or-later"
   head "https://github.com/benjajaja/mdfried.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4e5d6d5dd979fc684117dbf90387975e15ea8e3f9771d8b4feef283dce02f889"
-    sha256 cellar: :any,                 arm64_sequoia: "e15eb7ddb0be1a2700b3e0f28127e1e2b11d1c6fe7c7e4598ef316a31f22a73c"
-    sha256 cellar: :any,                 arm64_sonoma:  "db3026048a96b2c2a0c0cd4110f7d2d2b9cc88d24e3a73835fa859c00765b2b5"
-    sha256 cellar: :any,                 sonoma:        "2ce179ab2bf9dd06853717321ac9769eadddc3bb3b029314f32929b79163960d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da8a5c4ea556bc045059599eb320a807101db7a9823236d8344b3c5c3615ccb9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39691e970db7506124ccce2cd722f79a5415630491583e8049b4ab65c9473b5d"
+    sha256 cellar: :any,                 arm64_tahoe:   "39529170b6291ea686cea77c9353acdba96f6b0b5c4e2972c7cb0f8c1fb94031"
+    sha256 cellar: :any,                 arm64_sequoia: "f2c46c33b864eb62e2853b79e7333e1972f6ed0c6fe7b63387122fc0b07827c4"
+    sha256 cellar: :any,                 arm64_sonoma:  "24f02bfa5d21f82415f044b913b30769d676b7843e0ec0bedbb77128bfdf1106"
+    sha256 cellar: :any,                 sonoma:        "d82f153a4519e79eeba0ff7b8d86f23c3affcffcb86db31136bb7f844ec6c548"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da688f13fa977994dfd29482dc736ee1179126dacedbb6de1dc5c779eb5f14b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cff116e9f3c8ede647699fc698d170077ca26bcba59e709e398affe964b00d00"
   end
 
   depends_on "pkgconf" => :build

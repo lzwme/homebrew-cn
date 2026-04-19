@@ -1,18 +1,17 @@
 class Ols < Formula
   desc "Language server for The Odin Programming Language"
   homepage "https://github.com/DanielGavin/ols"
-  url "https://ghfast.top/https://github.com/DanielGavin/ols/archive/refs/tags/dev-2026-03.tar.gz"
-  version "dev-2026-03"
-  sha256 "7c0d9e0312d5dc0d49e1696b98217932838e1b132feb2a68950e6fa7d6d4a2ea"
+  url "https://ghfast.top/https://github.com/DanielGavin/ols/archive/refs/tags/dev-2026-04.tar.gz"
+  sha256 "887dbcdb5418a16b52655bc0953bddf798919520123d5a3eb5d27a9125800d8a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0ce90f81fc0649e4f209da48b1c1fb6830d3216dc69bb8670adf6a7d39ad6bc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3861137355135b4f4f52f17218deb2a954a7f5f4a284cd31be7f0ea078a6909b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "479b60d55bbb1c87f4c50c1b984919032bb55a09e794d38ba65de721dcd624fb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "05b95527be6fd8d8055f945bf51e990982ef94018dcd1c61075dc06be3927f2b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9022556c3e1970773588b6ab4c734d3962dc17a651c2b408775b15c905b9f43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1707031f8b6716608ee0300787222965f5a76912ebf17c48d0819c05dfb58be"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "40a9b092f327c75244d8c6dff40e2bdd82b30b87169cc523061cd68a1f562634"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "446ccf2b0d9b7c09e5e1a37fc170428e1d82881ae9375f6d87b849a9ca57afad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "752fb0db34aac5dc444a830595258fb5d1e34f107e330d9710b0846d711e2e94"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cf469719426a1d3fd52f4e919270396f6c4755d3a0c2b53c5a5d675a01a27c48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57d4c981e0f1416a5e3ea8d63f6d695a9c8e337d55e8060895cd157be6833dc9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ed75becb09a6d303cfca605b0cb6d08789f801566c0983aa8bdd0b01ccca98e"
   end
 
   depends_on "odin" => :build

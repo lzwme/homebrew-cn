@@ -1,18 +1,18 @@
 class Jsongrep < Formula
   desc "Query tool for JSON, YAML, TOML, and other structured formats"
   homepage "https://github.com/micahkepe/jsongrep"
-  url "https://ghfast.top/https://github.com/micahkepe/jsongrep/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "f728f3a5ed876053a85ff095f7d03073d5a43ce9ece3134b63539bdaa711aff7"
+  url "https://ghfast.top/https://github.com/micahkepe/jsongrep/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "9ed0a0f7ca44652e7851ba7223bb69af56498311b1d5b2064f7bf532677c8a33"
   license "MIT"
   head "https://github.com/micahkepe/jsongrep.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "034ea6f33f610aa1020bfb2d43da8d75bf713151a4569540d58ddd4d230c18dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b10860f29e0f0754a412ebb8a4cc1f18fc797f70da9cc4f1ce78f0401da50232"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef101dd75de29b8a6f3eae43627200d288a130be04df054461d56de785dde78c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e1e923a7243660a8503f302cd44f21c3e17c7ba1c8829697321302f03affd369"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d64e0a2e24e5c742e81d48a646bc11e5654f4b06030134398eccd7ba93d28a27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6f81909e53d359960648806705de253d94e1b7fbf672ed37838538aaa7116f2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c99626120c03c11d6975816987703f4ed6bcec13d9d2d0d1d084acec3d15c4c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f438dbd80f5932a8731835d0e6da1eb30e0b141c27b59c84b75922e25d9991a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2682a083792707f9985d714ca321e3c7aab54254e6b0e43714f6f61d1fb0680"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9861c77aa8e4474dce67405c48e2a2e707f7a0fa95a567a3d04dfe30f81c7bd6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "943944a9e855d47810df639c4028e97b6dfe519a2d6d6b81555035d43ec842c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8d9744e9327d7c11fd437e20ca3142d8af778fad3ab775dc7ccca4ed8d93737"
   end
 
   depends_on "rust" => :build

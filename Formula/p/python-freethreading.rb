@@ -10,14 +10,15 @@ class PythonFreethreading < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "458606fec746ec17f5e40fff067b78495995ef746845389b1465f485367cc3df"
-    sha256 arm64_sequoia: "4a7d7a8b7437b6e1f8b4ff08c3984a825e64cf5b17744bf8df7c56d92870f950"
-    sha256 arm64_sonoma:  "cd950e0f8b996d5fc02d5d402759a7cf7873ae1be3eb1c6ad08ad0fc55543af7"
-    sha256 tahoe:         "d4c4fa49163bbd3b8d8fd2fc00874c4a0d2baa0a9ea979eb39fa94983125d592"
-    sha256 sequoia:       "f84cd13b0b7b7477253d9a483102e4245e2fe409222d60d19c416385246d77cb"
-    sha256 sonoma:        "829a6948a5da0f419693c914a4040c9a8f4f831a4e980c116c5e54c2ad962047"
-    sha256 arm64_linux:   "29a47e79c4a5623f71574337179295524a12fc69e9e4d2beed5790e793799c72"
-    sha256 x86_64_linux:  "778f2eec723cd7da7364b9ad72ea386e7422625ab2edb8791e6353bb7354462d"
+    rebuild 1
+    sha256 arm64_tahoe:   "de45a1ea2ac97814b3964fd2183f2c984a277f7ff011ac3f8751526abce0fe03"
+    sha256 arm64_sequoia: "5207aea14d8e1ce1a0876062cfc98c9ea72829f1dd4d42e32e9f1d267afb6f58"
+    sha256 arm64_sonoma:  "20fed90639904b0e95ee45e7439248e5abc929e53691c300ed7484eb9fff7de5"
+    sha256 tahoe:         "70d4daa341988f5d2e232b64c38b9779c44192a7aa522d6b4e735bce1e6d7afb"
+    sha256 sequoia:       "ff77b06d49b810ec0e60f7ca3e8bd0f4d4338cbda0ca2d48c295a916f13a8fea"
+    sha256 sonoma:        "73c4e1ac46b27c65efed23c7fd50c92a15518e3442909f87a90f315818efe1c2"
+    sha256 arm64_linux:   "e6f97d3e578a5c5e0ce5c218230c7935aef4c4653fb547780747315ef782b11b"
+    sha256 x86_64_linux:  "667e4e91425f256e59438c95c656149490791ab7fd97e5b18b6ade4b6f7f432a"
   end
 
   depends_on "pkgconf" => :build
@@ -38,7 +39,7 @@ class PythonFreethreading < Formula
   uses_from_macos "unzip"
 
   on_linux do
-    depends_on "berkeley-db@5"
+    depends_on "gdbm"
     depends_on "libnsl"
     depends_on "libtirpc"
     depends_on "zlib-ng-compat"
@@ -155,7 +156,7 @@ class PythonFreethreading < Formula
       args << "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
     else
       args << "--enable-shared"
-      args << "--with-dbmliborder=bdb"
+      args << "--with-dbmliborder=gdbm" # NOTE: no dependents so can directly use GPLv3+ `gdbm` to avoid BDB
     end
 
     # Allow python modules to use ctypes.find_library to find homebrew's stuff
@@ -434,11 +435,13 @@ class PythonFreethreading < Formula
     assert_match "ModuleNotFoundError: No module named '_tkinter'",
                  shell_output("#{python3} -Sc 'import tkinter' 2>&1", 1)
 
-    # gdbm is provided in a separate formula
-    assert_match "ModuleNotFoundError: No module named '_gdbm'",
-                 shell_output("#{python3} -Sc 'import _gdbm' 2>&1", 1)
-    assert_match "ModuleNotFoundError: No module named '_gdbm'",
-                 shell_output("#{python3} -Sc 'import dbm.gnu' 2>&1", 1)
+    # gdbm is not provided on macOS
+    if OS.mac?
+      assert_match "ModuleNotFoundError: No module named '_gdbm'",
+                   shell_output("#{python3} -Sc 'import _gdbm' 2>&1", 1)
+      assert_match "ModuleNotFoundError: No module named '_gdbm'",
+                   shell_output("#{python3} -Sc 'import dbm.gnu' 2>&1", 1)
+    end
 
     # Verify that the selected DBM interface works
     (testpath/"dbm_test.py").write <<~PYTHON

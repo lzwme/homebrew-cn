@@ -1,8 +1,8 @@
 class OsrmBackend < Formula
   desc "High performance routing engine"
   homepage "https://project-osrm.org/"
-  url "https://ghfast.top/https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v26.4.0.tar.gz"
-  sha256 "e50863f1d73ca31dffd91fa8d3c2425ef69b985c41528a2962726c0001520e78"
+  url "https://ghfast.top/https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v26.4.1.tar.gz"
+  sha256 "1b836eefc0233a65fa04e66073eabb1674cc41988a8b8862856d967cdd0fe17b"
   license "BSD-2-Clause"
   head "https://github.com/Project-OSRM/osrm-backend.git", branch: "master"
 
@@ -12,12 +12,12 @@ class OsrmBackend < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "24f2e27bdc483aec1ecd2d091b078d617f59751b832b834c2a9bd86e001b8499"
-    sha256 cellar: :any,                 arm64_sequoia: "402c3b051cef735d798fd9aa7eca1f38d7066ff7e71706b73701b488a30992e3"
-    sha256 cellar: :any,                 arm64_sonoma:  "be49cfb5d7293dd0d1e1cc75f8d0ae575160c8be8313844fc30653adc003148b"
-    sha256 cellar: :any,                 sonoma:        "e1f39cb14359a120c1d900a46ffd8345ea7ec8454a7c73a3de4b4d90d08df1f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b27ad5881eb7fe9f6cec9bcc2fd736c5af5918dc939ba37c54bb5c8f435baaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7e48ed50ede3c4faf57137872817d4d269bbfa56cc6aa5bbbd11d5f146176da"
+    sha256 cellar: :any,                 arm64_tahoe:   "1cf9312d36fe1fa8bb91c4cebf6c2726a799c7ccf4b1629ce6c9ac686e011e4b"
+    sha256 cellar: :any,                 arm64_sequoia: "64d0ad324ee2c5328f9dc99651238bc1d0df588a43a23731a4a9a44b0ebc1475"
+    sha256 cellar: :any,                 arm64_sonoma:  "9238479b4565e592005bc378de37b6275cf704a9eb475e252a142067ccd56557"
+    sha256 cellar: :any,                 sonoma:        "45ce2b8c0a5ce1c484706c84932284e463e22f3b77be48411ee339d9d472b359"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10914a289dfd69af2c77f2809ea7af19f800ae0df704c44be9c9fbc20a6d7f8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f47d7b79efa43199ea0210145f6939f4650370f93ac74578627d3bb3b89bce87"
   end
 
   depends_on "cmake" => :build

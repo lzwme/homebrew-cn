@@ -1,13 +1,12 @@
-cask "font-bj-cree" do
+cask "font-bjcree" do
   version :latest
   sha256 :no_check
 
   url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
       branch:    "main",
       only_path: "ofl/bjcree"
-  name "BJ Cree"
-  homepage "https://fonts.google.com/specimen/BJ+Cree"
+  name "BJCree"
+  homepage "https://github.com/silnrsi/font-bjcree"
 
   font "BJCree-Bold.ttf"
   font "BJCree-Medium.ttf"

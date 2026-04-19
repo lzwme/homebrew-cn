@@ -3,17 +3,17 @@ class LanggraphCli < Formula
 
   desc "Command-line interface for deploying apps to the LangGraph platform"
   homepage "https://www.github.com/langchain-ai/langgraph"
-  url "https://files.pythonhosted.org/packages/9c/b6/d3de115f4529bf42e4f4c4888093621a3c835bdc4e35a7c42ac9bf15c699/langgraph_cli-0.4.22.tar.gz"
-  sha256 "f25720795f39e97e0c553cf21ae6312772faf2d3eab909d146de163367fe3d33"
+  url "https://files.pythonhosted.org/packages/4d/f0/f987c13cf35214bbe1a6f6f911b3e61afaa071b7bb3d7b2a94ffd2cff921/langgraph_cli-0.4.23.tar.gz"
+  sha256 "620d2fe7506580d57e90384ae42495af7f6092e8f7c6c11f8e010a8e57177075"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ad516bd881df689db0f6baf94d3b3c8c620339a992ea7db0b9080fe2ad99deff"
-    sha256 cellar: :any,                 arm64_sequoia: "67d121eedc7f1a3bb37c1c21f14b8bc2ccaaddfd39070602dbc1be85101a10cb"
-    sha256 cellar: :any,                 arm64_sonoma:  "21aaf42fdb3d1fa89cd2b199bd9cec7332aa1296d5deff5b0dcd39d9ecd57f8c"
-    sha256 cellar: :any,                 sonoma:        "74ca542ce65d9dc472f18b116b465f1242b246f02ec24fea3e97f3721038eb4a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f7048e663d7626c06e9367ddcc8e09550267a4056a4c1887f8f45b38c11920e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f5e977e096d8d433306d0c6557595fe4ef6f5d3c45ba6a733925c3172b1bd1d"
+    sha256 cellar: :any,                 arm64_tahoe:   "3cd97b0281fd7ae7d6c0a401811a6ed57c19bea38fc1203e5f718a8be3e442eb"
+    sha256 cellar: :any,                 arm64_sequoia: "7221ce43d08f44bac795d75a8b48b4d217800223091cbdb624a7b5c0f02f9132"
+    sha256 cellar: :any,                 arm64_sonoma:  "72751e438f9dd02c59d14c3ed66f566919e6e06265dab211c77b86104774bec2"
+    sha256 cellar: :any,                 sonoma:        "30857d912d4614da2aa3c0cd7bde5e75414c1b1d4aed35de7d75426c4e22251c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b144129ee392b163734ddf554c28ac9a526da4f8b44f53434d94e7f12323e1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3f9ee4faa873363c13b8215d6709ada41f6488112478d7dbffdbfeea121c7c9"
   end
 
   depends_on "rust" => :build # for orjson

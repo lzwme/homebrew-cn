@@ -6,10 +6,6 @@ class Dbxml < Formula
   license "AGPL-3.0-only"
   revision 4
 
-  livecheck do
-    skip "No longer developed or maintained"
-  end
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "3828eca647ae656062c684b2a22643d28cd2f0f1664ec44c960a5f7b20a7d5e6"
@@ -19,6 +15,9 @@ class Dbxml < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "9a19a0a31bfa89f8b1ae945f05cd44281267114d25d49cc6f0b3f06f6c3f43bc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "afed5853113aeb049c66efecd663697396c9cca6466c67c5b34b7f37981415c6"
   end
+
+  deprecate! date: "2026-04-18", because: :unmaintained
+  disable! date: "2027-04-18", because: :unmaintained
 
   depends_on "berkeley-db"
   depends_on "xerces-c"

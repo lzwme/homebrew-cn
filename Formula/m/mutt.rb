@@ -21,12 +21,13 @@ class Mutt < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b492a0d6b74fb1dbb1477a327c55b26cc8eaa8451c867b837d6e49b5181acd6d"
-    sha256 arm64_sequoia: "f09b1a41cc515b3d29eb77ff21e8e0ca7ae512420812f9a55836ad8d6d69fe13"
-    sha256 arm64_sonoma:  "2e173621795ea192e4160e2a14b10e40379331e8e71f62b6066a5ed0e141b602"
-    sha256 sonoma:        "f7456438cf78303733ab16e7ebbf8f99a216963e6a7fd14a1ecd64061dd126f5"
-    sha256 arm64_linux:   "8c2aeb33074a52410e91c6937b9cffcc0d3a4ed104df826834131e8af0d0e371"
-    sha256 x86_64_linux:  "1b4c6b177722724195f77220714a5c8aed80ae28cc5e5fa0bab09fc5bf5e05cc"
+    rebuild 1
+    sha256 arm64_tahoe:   "7b3f6bd8f446e44e5f3bc416d76ebddb6a1fc2aa5f0d0a90f658456c19c8a3c7"
+    sha256 arm64_sequoia: "682e5ff1b3de2927ca3b2392f9bb31d9512ba53d670a4d1443cabb95c705d5f9"
+    sha256 arm64_sonoma:  "307538a7057f977b2e1cf2dc58201b3ed4c5e61bf893eb00f8a3b8a43642b6a0"
+    sha256 sonoma:        "96adf1eaa6932024d451badf4514fc857583552f21d6c93d4e04bacd9558d659"
+    sha256 arm64_linux:   "aefee900cfcc4426a648d15d9e5384d9e7c555d4da2353280f0d1e05260cbbe6"
+    sha256 x86_64_linux:  "034e669358e9711e96af30a0f01e0747d8fea84f53a39d3865fba081f25e8644"
   end
 
   head do
@@ -43,9 +44,9 @@ class Mutt < Formula
   depends_on "gpgme"
   depends_on "libgpg-error"
   depends_on "libidn2"
+  depends_on "lmdb"
   depends_on "ncurses"
   depends_on "openssl@3"
-  depends_on "tokyo-cabinet"
 
   uses_from_macos "bzip2"
   uses_from_macos "cyrus-sasl"
@@ -66,6 +67,10 @@ class Mutt < Formula
     user_in_mail_group = Etc.getgrnam("mail").mem.include?(ENV["USER"])
     effective_group = Etc.getgrgid(Process.egid).name
 
+    # NOTE: For hcache backend choice:
+    # * Kyoto Cabinet, Tokyo Cabinet, QDBM and Berkeley DB may be unmaintained or low maintenance
+    # * Remaining options are GDBM and LMDB. NeoMutt (fork) now recommends LMDB. Gentoo also
+    #   recommends LMDB as fastest for Mutt, https://wiki.gentoo.org/wiki/Mutt#Header_cache_backends
     args = %W[
       --disable-warnings
       --enable-gpgme
@@ -76,9 +81,9 @@ class Mutt < Formula
       --enable-smtp
       --with-gss
       --with-idn2
+      --with-lmdb
       --with-sasl
       --with-ssl=#{Formula["openssl@3"].opt_prefix}
-      --with-tokyocabinet
     ]
 
     configure = build.head? ? "./prepare" : "./configure"

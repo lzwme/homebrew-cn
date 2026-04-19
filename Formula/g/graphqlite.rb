@@ -1,17 +1,17 @@
 class Graphqlite < Formula
   desc "SQLite graph database extension"
   homepage "https://colliery-io.github.io/graphqlite/"
-  url "https://ghfast.top/https://github.com/colliery-io/graphqlite/archive/refs/tags/v0.4.3.tar.gz"
-  sha256 "1886f9f817500fcbbf47fe957bde54eb7d6c34a19de5fd9f9568249903c8d879"
+  url "https://ghfast.top/https://github.com/colliery-io/graphqlite/archive/refs/tags/v0.4.4.tar.gz"
+  sha256 "f70840ab7fcf934c01ac13b6db6eee8b5511b8992abe350e898f618e12f94de9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "74ec0153dae2cff17ebb9409e474ff94f7becc5d1be353592434a42cb1f89d60"
-    sha256 cellar: :any,                 arm64_sequoia: "5fec9eaccc924e23127767ceca27d33c744abb93ff51c751061dcf29e1c9a911"
-    sha256 cellar: :any,                 arm64_sonoma:  "f02578acf41d1865794ee6386f181095a574dafabbcd0dd5452c3dd0bd7b6c25"
-    sha256 cellar: :any,                 sonoma:        "d7d99588bc68286b33ffeb369c1d27c7a00e6779fd6b6df37dde56baf5063b2a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c15826428e5cd9b225772d92a8790ce6d2596353e86bbe0a7ed2bf4bf2c187c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00396c1c5a282a3f8a586dd6d8c611e4ca1a6a57b4c332ea95d6e73427c52d8c"
+    sha256 cellar: :any,                 arm64_tahoe:   "4e68d851871d4adb0df91cfb644e16da7ba2bd81bc26b5288d17f5262f93adff"
+    sha256 cellar: :any,                 arm64_sequoia: "65ffe8aa1006828ff672175e753e3c5fe10e5c7e4c5b7570205ae8bb1e6d4ab8"
+    sha256 cellar: :any,                 arm64_sonoma:  "8a313647d5ccbb7fa139298d7d05eb96ff8141d0afa84e3eb9b053c5477d7526"
+    sha256 cellar: :any,                 sonoma:        "ed68b247267e5c614ff1abb9e88cef761c9c4eaac905d6e2d97d21f3675d34cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "982b76b216a5ab15f1453a7355399c4a973dfc26535296080f148e002399d7e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30a9956131cd16edbec497d30682f43063c150f28901076fed6f138b98c16bd1"
   end
 
   depends_on "bison" => :build # macOS bison is too old

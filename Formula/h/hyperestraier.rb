@@ -26,6 +26,10 @@ class Hyperestraier < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "67da1265df5336838e42f563b8b90041d83d848739bf7972950de444cef78650"
   end
 
+  # Last release on 2007-12-24 and needs unmaintained `qdbm`
+  deprecate! date: "2026-04-18", because: :unmaintained
+  disable! date: "2027-04-18", because: :unmaintained
+
   depends_on "pkgconf" => :build
   depends_on "qdbm"
 

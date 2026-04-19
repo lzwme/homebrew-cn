@@ -1,18 +1,18 @@
 class Oras < Formula
   desc "OCI Registry As Storage"
   homepage "https://github.com/oras-project/oras"
-  url "https://ghfast.top/https://github.com/oras-project/oras/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "0fc82da7f0938ae32201c258a36499453d114cc4bce93dd2aa21a34a7b660d35"
+  url "https://ghfast.top/https://github.com/oras-project/oras/archive/refs/tags/v1.3.2.tar.gz"
+  sha256 "33a44023666e00b6e32b5bd022a77f0813a488bdeab90c7d728b811d5f97df48"
   license "Apache-2.0"
   head "https://github.com/oras-project/oras.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d638010fe839ef19033aa35d254c4ba246112a0699d682bf426976d5401b617"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d638010fe839ef19033aa35d254c4ba246112a0699d682bf426976d5401b617"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d638010fe839ef19033aa35d254c4ba246112a0699d682bf426976d5401b617"
-    sha256 cellar: :any_skip_relocation, sonoma:        "42d2ff6d5eb85f62f843b6f227932d4f9cf88565b48855fc6c078a0f8fe74adb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4bbd72ec2a9d21aa6ba1cd9bb5932d2413740711954394a143027acc13f85bbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4492f5d6efc5013622cf99be1325f7759a1d4feec80f34ad22f149202d04dda"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7854879fac23c228f80368e88f0836825a5969c028d06d3550f2912fa51ac6a8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7854879fac23c228f80368e88f0836825a5969c028d06d3550f2912fa51ac6a8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7854879fac23c228f80368e88f0836825a5969c028d06d3550f2912fa51ac6a8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "23b787ed090524b9988d6098e9bd1f39fd06fa2f71c99f2071befac3c66b7ac6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9320a667afc254c4bcfcabaa2abf652a445a23ad5652f3e4932d905c37db943a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44ba928ae32fb6b7ada4583648b641daf0767874a148ac3e9c8db55f886faef0"
   end
 
   depends_on "go" => :build

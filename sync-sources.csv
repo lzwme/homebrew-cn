@@ -127,7 +127,6 @@ Homebrew-homebrew-core/Formula/a/alp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/alpine.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/alpscore.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/alsa-lib.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/a/alure.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/amass.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/amazon-ecs-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/amber.rb, Homebrew/homebrew-core, 1
@@ -10176,7 +10175,7 @@ Homebrew-homebrew-cask/Casks/font/font-b/font-biz-udmincho.rb, Homebrew/homebrew
 Homebrew-homebrew-cask/Casks/font/font-b/font-biz-udpgothic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-biz-udpmincho.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-bizter.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-b/font-bj-cree.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-b/font-bjcree.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-black-and-white-picture.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-black-han-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-black-ops-one.rb, Homebrew/homebrew-cask, 0
@@ -10503,6 +10502,7 @@ Homebrew-homebrew-cask/Casks/font/font-e/font-epunda-slab.rb, Homebrew/homebrew-
 Homebrew-homebrew-cask/Casks/font/font-e/font-erica-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-e/font-escumasia.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-e/font-esteban.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-e/font-estedad.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-e/font-estonia.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-e/font-et-book.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-euphoria-script.rb, Homebrew/homebrew-cask, 0

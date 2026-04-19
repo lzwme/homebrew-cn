@@ -13,12 +13,13 @@ class Powershell < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "23d4e1fd2b41069a252d34cd5d1edde61a99a0b63bbb8b797cd3d6796d62aae8"
-    sha256 cellar: :any,                 arm64_sequoia: "65d76038f7b950749d20d99411a432821d63b8eeaa953bdd46e90cff86551e67"
-    sha256 cellar: :any,                 arm64_sonoma:  "fb52383ff82208b155224dc20ebfe53bdcb095265f4c7722d157f348e68f80e2"
-    sha256 cellar: :any,                 sonoma:        "5d82cce6d2c432cc0a5b0157c2a8bb98eaa0469f9a27cf9ed3141040d38d2e9a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8cda2c3fcf51135800bbe4001c141051aeb79fca3358841110221788ac7988c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcc017990d60d72ab1b02c90855d289387b384801738d4a69d41d4a10e3ff7dd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "8114af0cf6b0cdb6c28ef6ba25898ac99bcdaad17bd09cf58da7d2877ec240b0"
+    sha256 cellar: :any,                 arm64_sequoia: "3e949d349c0b67f30a3e26d058a6ae2372d59848d2f800ca6795ec409f68a124"
+    sha256 cellar: :any,                 arm64_sonoma:  "8eb3d949a794f1a83405a83721d021d91dadfb5248ef0f087540b3eab69e0fa2"
+    sha256 cellar: :any,                 sonoma:        "f0b1eb11dfcfa5cd3924815fb638fcd1c62f974bc89ee35f887e034094c1832a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "473a04f0e5a408e1617af04d60bfdda35084f19db7d286c199d0911379eb4559"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "317e2f6651a5b4f28d63882c90ac02e33d49a04f1bcf37468467e8fc0e8af19f"
   end
 
   depends_on "dotnet"
@@ -132,12 +133,13 @@ class Powershell < Formula
 
     libexec.install publish_path.glob("*")
 
-    ref_pack_path = (dotnet.opt_libexec/"packs/Microsoft.NETCore.App.Ref").children.select(&:directory?)
-                    .max_by { |path| Version.new(path.basename.to_s) }
-    (libexec/"ref").install_symlink (ref_pack_path/"ref/#{target_framework}/").glob("*")
+    (libexec/"ref").mkpath
+
+    ln_s dotnet.opt_libexec.glob("packs/Microsoft.NETCore.App.Ref/*/ref/#{target_framework}").first.glob("*"),
+         libexec/"ref"
 
     (bin/"pwsh").write_env_script libexec/"pwsh",
-                                  DOTNET_ROOT: "${DOTNET_ROOT:-#{dotnet.opt_libexec}}"
+                                  DOTNET_ROOT: dotnet.opt_libexec
 
     man1.install buildpath/"assets/manpage/pwsh.1"
     deuniversalize_machos libexec/"libpsl-native.dylib" if OS.mac?
@@ -189,7 +191,8 @@ class Powershell < Formula
     module_output = shell_output("#{bin}/pwsh -NoLogo -NoProfile -c '#{module_cmd}' 2>&1")
 
     # If this produces an error try compiling powershell from source and increment revision
-    refute_match(/InternalWebProxy/, module_output)
+    refute_match(/InternalWebProxy/, module_output,
+                                     "Probbably newer .NET runtime version than last build. Try recompiling")
     module_output = module_output.lines.last.chomp
     assert_equal "True", module_output
   end

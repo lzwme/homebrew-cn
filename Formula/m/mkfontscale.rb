@@ -1,18 +1,17 @@
 class Mkfontscale < Formula
   desc "Create an index of scalable font files for X"
   homepage "https://www.x.org/"
-  url "https://www.x.org/releases/individual/app/mkfontscale-1.2.3.tar.xz"
-  sha256 "2921cdc344f1acee04bcd6ea1e29565c1308263006e134a9ee38cf9c9d6fe75e"
+  url "https://www.x.org/releases/individual/app/mkfontscale-1.2.4.tar.xz"
+  sha256 "a01492a17a9b6c0ee3f92ee578850e305315b9f298da5f006a1cd4b51db01a5e"
   license "X11"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "2029b136126ebb853f7c72befec91cb833b8218d54e04e1707c51a61a51d9ed8"
-    sha256 cellar: :any,                 arm64_sequoia: "3dd14178ed5788bc616fd8b53017ee7b28830e06e51c2ef5fbf4a87b13157424"
-    sha256 cellar: :any,                 arm64_sonoma:  "5750bbac5a5a7e478998daa857ae7794ebdc3195c243255043f5805f3344928e"
-    sha256 cellar: :any,                 sonoma:        "9a091c7ef6f917c5227d1311c66a72bf9981b74aff2fcb3b2592bb2883dfe74f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "84f1ae828213f379ec6558b5206633cbece34cca0d40fe965dd683591e825f0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3112c5e6d39688bdfee2ed411f2c9f9a98416a9751212f3c5bc305694ef2a0f"
+    sha256 cellar: :any,                 arm64_tahoe:   "3bf96e2f1889d39f29c6732ae5199503fc11de4c02c658748909af183aad0953"
+    sha256 cellar: :any,                 arm64_sequoia: "82f78c357339cc9200ce7a80c4b4289fe5b6e53b7aaa50c36861be5ab2222a6e"
+    sha256 cellar: :any,                 arm64_sonoma:  "0fcd32b02623dc4f981d924163af62af62cb95104eef22b5221221376c4464fa"
+    sha256 cellar: :any,                 sonoma:        "45f16d946c3ed20222f3be602426752143bbc498c3a5a173e94437cb0305eec9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b524bea7fa6210a2ae29b2165700359a8b801005407100817216d5fa031bdfd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4afa3e0f3b2d817d818e2d8620add591150f0161e26e2466245788c099af73a2"
   end
 
   depends_on "pkgconf" => :build

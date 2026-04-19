@@ -1,18 +1,18 @@
 class Nuclei < Formula
   desc "HTTP/DNS scanner configurable via YAML templates"
   homepage "https://docs.projectdiscovery.io/tools/nuclei/overview"
-  url "https://ghfast.top/https://github.com/projectdiscovery/nuclei/archive/refs/tags/v3.7.1.tar.gz"
-  sha256 "aefa55d31d8d4e60cdb1458d33ac85ddd723c4046e6c82a8cc16e5d602b0a351"
+  url "https://ghfast.top/https://github.com/projectdiscovery/nuclei/archive/refs/tags/v3.8.0.tar.gz"
+  sha256 "caa622327dc8661e032b44bb1174e3df1858de8cb33086737330deec9f126549"
   license "MIT"
   head "https://github.com/projectdiscovery/nuclei.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "193a1757ca83ec7e002922b6487e1031cbc58a456a18e9adf18457f7952168f7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bff632277b40dd22fa9d3d327ec4d88b6b02af2271a38425412f0e4dbf6bb4d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8eb1a3f02dbeb4ae7091b602226195e2e797b7770fdf61a7c0da0520404b3308"
-    sha256 cellar: :any_skip_relocation, sonoma:        "76d56731fafc65c71188e0701a9be63ae44c9e5e190730f96959f85cd83f903c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd8b26cbefe7f27d69344d6d2e41ac3fb7d875e659da9f6095972a41280b85d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d098d5456f49ecf4eec3675e72ebcce40bf6f4ca08f77a5301ff07ff327aee2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "539cceaeab3b35075c64f42f5145f7dbd5bea43480363040f0bb72e3f95a0a72"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "360aff1e4ae34e2d5cc27ba683cc26a42394553ca4c10efdce72b66f37169be4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ebabbf88d0f78cc2e132dbc1d1820405f417094d0a34f396a90824ef022ef693"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5c4c6fb14cbf4df70f24b88f8d4a962e01a3b32ba74ed716dbfa12e38f191184"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4734ff468e630a73c91e7960e519d7bd633ebfb818a7677147739edf0d17e117"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78f16b70f29b186fdd6bbb18e6f16668d9be61dc2117a95639b02a7e1a50ae1b"
   end
 
   depends_on "go" => :build

@@ -8,12 +8,13 @@ class Neomutt < Formula
   head "https://github.com/neomutt/neomutt.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "5187c6aa23a3639e1a26e40006b9cc3aeabfaacde7a35d946cb7bee1f6bc33f5"
-    sha256 arm64_sequoia: "0aa0e5169c531f71f22659975c32072209c3a15b42b64f897b5b45a6d9f332e0"
-    sha256 arm64_sonoma:  "ef4f61bc67d6f829513a45926bcfc42ab77a88121de9343398115a01974d25d3"
-    sha256 sonoma:        "3eafbe45cf4be3d97c8912aa5f4dde93766400e7a1a0f35c30eb01ed6f538e42"
-    sha256 arm64_linux:   "079e1204f13b47d41e2439a00efb6ddef8d75e19ddabd24e006b6c65ea8be7df"
-    sha256 x86_64_linux:  "b5f634193c40187d5002a7763df29049234c02b4a07c83175f5d762caa55c445"
+    rebuild 1
+    sha256 arm64_tahoe:   "7501350f322f933d19aa4d56bcf70078142bf6ab9129e5e90d6ac15394c783f8"
+    sha256 arm64_sequoia: "509e9d89e22a19388182017a82ffff59fe3532498a9c01097a574193fdeda025"
+    sha256 arm64_sonoma:  "72ec6ac5d9734656b79251ad9c0e2d2a13e983ed7074e068b60b5fb7b4c10fc0"
+    sha256 sonoma:        "f6872649f86357c7c47af0b83c2efba848a5b27ed3d67db4af8ef269970664a8"
+    sha256 arm64_linux:   "abf8b127d94dd2730fadc2c676d38a9a2b4bb74d8d70c82105d36745e56ef4af"
+    sha256 x86_64_linux:  "1116af9e321ad35bbce757764c101b46ccff5fc285950850bc682c8327072a10"
   end
 
   depends_on "docbook-xsl" => :build
@@ -30,7 +31,6 @@ class Neomutt < Formula
   depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "sqlite"
-  depends_on "tokyo-cabinet"
 
   uses_from_macos "libxslt" => :build # for xsltproc
   uses_from_macos "cyrus-sasl"
@@ -62,7 +62,6 @@ class Neomutt < Formula
       --pcre2
       --sasl
       --sqlite
-      --tokyocabinet
       --zlib
       --with-idn2=#{Formula["libidn2"].opt_prefix}
       --with-lua=#{Formula["lua"].opt_prefix}

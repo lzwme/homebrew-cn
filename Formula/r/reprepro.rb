@@ -22,7 +22,7 @@ class Reprepro < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "berkeley-db@5"
+  depends_on "berkeley-db@5" # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1119179
   depends_on "gpgme"
   depends_on "libarchive"
   depends_on "libgpg-error"
