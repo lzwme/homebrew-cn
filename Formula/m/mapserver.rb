@@ -1,8 +1,8 @@
 class Mapserver < Formula
   desc "Publish spatial data and interactive mapping apps to the web"
   homepage "https://mapserver.org/"
-  url "https://download.osgeo.org/mapserver/mapserver-8.6.1.tar.gz"
-  sha256 "ff4c33271e91b46ba4d2b24990dc480bc3839e203e534102b2094a6166446c4b"
+  url "https://download.osgeo.org/mapserver/mapserver-8.6.2.tar.gz"
+  sha256 "e10d71c3ced22b8b0858a98434d55a532f4359d193a32e4b353411814976ca22"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Mapserver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d7ccc611fbf8a8c35c35788bc9c60a409827336d31d37c679fdd4ddb4ee55e30"
-    sha256 cellar: :any,                 arm64_sequoia: "a4713a357c004074b30acb944dd15b7f576d1e87f63270172a8102f62b0fb67a"
-    sha256 cellar: :any,                 arm64_sonoma:  "865e609806c8d2247a8c027b82213d9e2d03d6719675e3900e74563afeb3f442"
-    sha256 cellar: :any,                 sonoma:        "38163fab7c929ac03d3b98a79b7c7a4bf510d8d1ce6f58bb601dda4150d83aae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0e1006f32db71a47a72f6352dc35b95e3c5f3c5f1fa2cff848548c47041b12a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e12f8a85b33b5e23c0c387c0c6ca8c42600aa12038e15512e0eacf2ad16dec3"
+    sha256 cellar: :any,                 arm64_tahoe:   "57609eb8b307df21d469defb19f1875114d93cbd2598e127778dfb10d7eb4322"
+    sha256 cellar: :any,                 arm64_sequoia: "14427144a4baded019b2a0c8862f7a3fe0d9e9d373248fdd5c4e575be89c1c6b"
+    sha256 cellar: :any,                 arm64_sonoma:  "068c1482518b63285bee38a734e8ee9aa48c34156d2e61b1e3faac113f37c68e"
+    sha256 cellar: :any,                 sonoma:        "fd3a52912e087911b42972ab3385f425d61e6d4817a35aedbb37dce0255b5717"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "71d54007ed6f478309e98b3370fdccf87b485296a9cbb50ecd8beb8a98a9051e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5451c4504808371eedf23061a4cf549c12a0e9b4fece32001a09364ca36ff5b"
   end
 
   depends_on "cmake" => :build

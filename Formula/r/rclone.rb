@@ -1,19 +1,19 @@
 class Rclone < Formula
   desc "Rsync for cloud storage"
   homepage "https://rclone.org/"
-  url "https://ghfast.top/https://github.com/rclone/rclone/archive/refs/tags/v1.73.4.tar.gz"
-  sha256 "b68b5c55bac24ccfd86fd4b70f722181a689fb6ea2b1cc2ad0bd53de94c4ef99"
+  url "https://ghfast.top/https://github.com/rclone/rclone/archive/refs/tags/v1.73.5.tar.gz"
+  sha256 "e52541bc238dd434a0335f467697d7d9575529698a74aab534ad39b8649f8a49"
   license "MIT"
   compatibility_version 1
   head "https://github.com/rclone/rclone.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5737d5b11007e6bf8e1d8b7bbd2ec21f88248c1f56f6ed3c206d4233c41562c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d56be510be9e36a4f1ad09b4583996c832930dbd5527976caf9a33da3c87bd0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17924e7439b1cf1499d14b0c1f960d3a8f23be13316a81f4349befc49d471902"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9bf0c2df3ab7390373004018e2cf913f52100684bcf61c9dea32216329c0fee5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "04f17b4b213d665278087a86b4bee90bd8c3e17430bf0ae4c6eca2d1145215de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f706ac6cb0d01d8bfe3f69d72b0d62c4cab27be5d43799932c952ff4f7bfcd61"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a72b0876fdc29dd0ec25b99c22fab96fb0cbfe4a24f9fb21ac7ec8682f28ae3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8643bfc56cfeb510a837f340007b2060e36033957e9e979a14dbec3377ac148f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0259030d92c3287cd5bcf372c7131ca1a2e5bce4f8231cd0c50f162863883a58"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c63534a72dd83b4e04fb668bbd518a84e681502e52244abe4ef6111d155ce8b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2fadbde92b7d82ae13005945ea75aef859371c1e2d6f89417743b60ebae9634"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2e90819f16c8f27b13e23611a740e3a33ae811b3ae7b95d76d2c4d71de80cb9"
   end
 
   depends_on "go" => :build

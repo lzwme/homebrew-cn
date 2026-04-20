@@ -1,18 +1,29 @@
 class Envio < Formula
   desc "Modern And Secure CLI Tool For Managing Environment Variables"
-  homepage "https://github.com/envio-cli/envio"
-  url "https://ghfast.top/https://github.com/envio-cli/envio/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "729a02ac8a5e129fa5129de6ee62f7e2c408502dafc25924d65d02558caa5a08"
+  homepage "https://github.com/humblepenguinn/envio"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/envio-cli/envio.git", branch: "main"
+  revision 1
+  head "https://github.com/humblepenguinn/envio.git", branch: "main"
+
+  stable do
+    url "https://ghfast.top/https://github.com/humblepenguinn/envio/archive/refs/tags/v0.7.0.tar.gz"
+    sha256 "729a02ac8a5e129fa5129de6ee62f7e2c408502dafc25924d65d02558caa5a08"
+
+    # Fix missing version
+    # TODO: Remove in the next release
+    patch do
+      url "https://github.com/humblepenguinn/envio/commit/37976a3d0327435d631b6ac6eff1ad114472f148.patch?full_index=1"
+      sha256 "da23f201ac3b20d8c6cff09d95496fb6c4e88ca9c737351804b6a84bf3a9293f"
+    end
+  end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b18308e8847f096e91c31c563e0e4ca6b0a87a260ac6f3ef680ea8ab477dd9dc"
-    sha256 cellar: :any,                 arm64_sequoia: "a3e048b909779bf06ff1fafb0da2f95b9463173957346bcf5e7023ff041f5a37"
-    sha256 cellar: :any,                 arm64_sonoma:  "3cefe805698e54c6b61187c0d038ce4c4c78d3819055109d93177f82691b215c"
-    sha256 cellar: :any,                 sonoma:        "19125731457442ee02d534d4cabb9f7a31cafcd7aa75fbebd87af772396b052a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "669a6d3805a14be62a553178f9cf31571a7db0717bbd90e5d5668046ff32e35b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ff6c6cebba244c79d927a9203ff657318d0af4290f95941888deb1dec58fc34"
+    sha256 cellar: :any,                 arm64_tahoe:   "9e461ece805b428cc117de9bab60d6b3480e394a1ab4773ce7cbbaf84dcd12fd"
+    sha256 cellar: :any,                 arm64_sequoia: "d9984aa667eea7aedfab98a2ba0e320e10209e0d2bf8477d52dc60350ca39081"
+    sha256 cellar: :any,                 arm64_sonoma:  "e9dbfa5d209c868943a43639c22f9bc9089aeed36e9e5f71daa927a683ca3b02"
+    sha256 cellar: :any,                 sonoma:        "471ab5750a38dffdbe044e4cb12ef3dd5f8d33d453e922c575f43fcd03d37319"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d327cb2ad2bb9a981ba480e620eacbd098a64fb6717c0c38aeca0b0445d0b37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11dd45e470b900a216a0bba3da45f775943690ee1e1241d5319d50a4e166425f"
   end
 
   depends_on "pkgconf" => :build
@@ -26,6 +37,10 @@ class Envio < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+
+    man1.install "man/envio.1"
+
+    generate_completions_from_executable(bin/"envio", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

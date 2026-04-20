@@ -3,18 +3,17 @@ class Cronboard < Formula
 
   desc "Terminal-based dashboard for managing cron jobs locally and on servers"
   homepage "https://github.com/antoniorodr/cronboard"
-  url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "593a33f8cb01f369ea4fa53f29628fc77783f7484b61072ff20948fdb0017a94"
-  license "MIT"
-  revision 1
+  url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "f6d1b184b1320dcdac0b70ed80981fa774df6ab54b2892278400c64a3a3c1c2b"
+  license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "effa3e41ccfef8185dcc2532094f63f1066a6f57ff7c9c3b7819cd8e9ddb7e96"
-    sha256 cellar: :any,                 arm64_sequoia: "5eb30afd3166a95ecdc3e95fbf4f16f4be881fb78c9bd2c956bf9b947d9ee2be"
-    sha256 cellar: :any,                 arm64_sonoma:  "474e79116cc4323d18e897ff6494544eedf36461bed4e12092ed51744526024b"
-    sha256 cellar: :any,                 sonoma:        "6caa2fbef31df4bf5e22cba1da72b3de7f2940a2dbd9fb5f14b3ccdf0c6a52bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8023ff05282c902d4fa09b31174071bcdf6498935803d4a0a990195b90eca1c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae16e08b27324a24749418e1d5276ad41be026263cd06607fa601972125c2f11"
+    sha256 cellar: :any,                 arm64_tahoe:   "de6890cc1ba456c05cbbdc640dd8b8f6f5343c7d567f9b541a93d78727fadfbf"
+    sha256 cellar: :any,                 arm64_sequoia: "23f76c1e7dcb69964aa4e563721be1322767324e18b7d810baa5e1d035e685ee"
+    sha256 cellar: :any,                 arm64_sonoma:  "ed16499635d10b42fa40ba271c92bb02a42f08d9b588dfc095850bf8931c9935"
+    sha256 cellar: :any,                 sonoma:        "94fb97beda6799068b98e5c17d7c70b2e64462e91427a9e2c4c911d946940182"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2580c4522a6b4dca12e938e2d06183fecef42576624e46edfc0e08433372d169"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "466296731f527c26b805381692901d480a34af428b4f6caa8476634928676125"
   end
 
   depends_on "rust" => :build

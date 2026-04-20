@@ -1,18 +1,18 @@
 class AtSpi2Core < Formula
   desc "Protocol definitions and daemon for D-Bus at-spi"
   homepage "https://www.freedesktop.org/wiki/Accessibility/AT-SPI2/"
-  url "https://download.gnome.org/sources/at-spi2-core/2.60/at-spi2-core-2.60.0.tar.xz"
-  sha256 "80e50c1a97d8fd660a3fadb02ca35876df881c266d3d6108fc5b4c113614cb99"
+  url "https://download.gnome.org/sources/at-spi2-core/2.60/at-spi2-core-2.60.1.tar.xz"
+  sha256 "f99b87e3c1674f5fbc417cc9c1d9e261c0f29aab0550ad6369805031d12f6852"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "9f10240d7f2e152d0694dc1c499bb0904b5d32ef465f1e2a17dffb580dc03fa0"
-    sha256 arm64_sequoia: "8d0f5d633269e1feb5d59530f36f4f9b25b14633d3ca3812cb439f7d4a316b16"
-    sha256 arm64_sonoma:  "e823a0efee98929e83750ce1b729a2f5d565b7a58a7878402034457f817db267"
-    sha256 sonoma:        "d5c1066543b18a34cdc2e6c85a45a7fbff42feba15feda0da6f88e44e7d67a6b"
-    sha256 arm64_linux:   "4d0cbf9c05b9540e382b6cc9ab91d5c8c262e7ec3be829206e5a4a0137b94c96"
-    sha256 x86_64_linux:  "d5772836953d6d9a8144461f01f1d1c5f2187c53f0112107f0c6d6d54d8d5041"
+    sha256 arm64_tahoe:   "f3d06580f2c41d12893154b26713c0851698d70665d104457b4ce335ba5f9aac"
+    sha256 arm64_sequoia: "0620968405904e7734a05d89b72c2f2118a6f7ea9b9fd6abb17010ec95e88de4"
+    sha256 arm64_sonoma:  "14c138aaa39bd1211c3c6b5a2f7d6a1a7acc73c0d7c0a525d4d24d2c12b969e7"
+    sha256 sonoma:        "2ebfb5a3fdc02fca61dfb4288e7015f3294517a00df6d1613a00500edc587b0c"
+    sha256 arm64_linux:   "cb43149b82f64dc9956d0ac8be386a340d6337ca2c69a5447f05bfad0cc8f219"
+    sha256 x86_64_linux:  "ba3f9ff502b8e493f5361197d88fcf7eecd0e2d5f5b2ddaf59cc0a76f7007c3b"
   end
 
   depends_on "gettext" => :build
@@ -75,6 +75,7 @@ class AtSpi2Core < Formula
 
     pkg_config_cflags = shell_output("pkg-config --cflags --libs atspi-2").chomp.split
     system ENV.cc, "test.c", *pkg_config_cflags, "-lgobject-2.0", "-o", "test"
-    assert_match "AT-SPI", shell_output("#{testpath}/test 2>&1", 133)
+    expected_exit_status = OS.linux? ? 134 : 133
+    assert_match "AT-SPI", shell_output("#{testpath}/test 2>&1", expected_exit_status)
   end
 end

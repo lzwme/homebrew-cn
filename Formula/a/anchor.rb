@@ -18,7 +18,6 @@ class Anchor < Formula
   depends_on "rust" => :build
   depends_on "node" => :test
   depends_on "yarn" => :test
-  depends_on "openssl@3"
 
   on_linux do
     depends_on "systemd" # for `libudev`
@@ -27,9 +26,6 @@ class Anchor < Formula
   def install
     # FIXME: "Unknown attribute kind (102) (Producer: 'LLVM21.1.8' Reader: 'LLVM APPLE_1_1600.0.26.6_0')"
     inreplace "Cargo.toml", "lto = true", "lto = false"
-
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
 
     system "cargo", "install", "--no-default-features", *std_cargo_args(path: "cli")
 

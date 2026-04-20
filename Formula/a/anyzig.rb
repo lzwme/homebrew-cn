@@ -20,7 +20,7 @@ class Anyzig < Formula
   deprecate! date: "2026-08-19", because: "does not build with Zig >= 0.15"
   disable! date: "2027-08-19", because: "does not build with Zig >= 0.15"
 
-  depends_on "zig@0.14" => :build
+  depends_on "zig@0.14" => :build # https://github.com/marler8997/anyzig/pull/76
 
   conflicts_with "zig", because: "both install `zig` binaries"
 

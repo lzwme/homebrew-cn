@@ -1,17 +1,17 @@
 class Structurizr < Formula
   desc "Software architecture models as code"
   homepage "https://structurizr.com/"
-  url "https://ghfast.top/https://github.com/structurizr/structurizr/archive/refs/tags/v2026.03.06.tar.gz"
-  sha256 "5b47d506ff4735bd2d52d5aedb546e1711a50c9042f6bfdc02e3f5dc2d1f91e8"
+  url "https://ghfast.top/https://github.com/structurizr/structurizr/archive/refs/tags/v2026.04.19.tar.gz"
+  sha256 "f757f53fa418a285248ba44bd2b3b0869a202ead295421e5f65a7013cc68ce94"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23b6747d7dcc0469f809c9cdcf28403fe30c92cd6bf59bc7de8a221188f4d5f3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6118c897d07fae4aa3cae44b100ef7db432444d11c9f3d2b7533597c8982abd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf6b43f2a15abeb2d2abcd9ba6fc14ac2dfe303231ac80a1eddfaf8262cb0cfd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dfe13f558fbd106fe14e7ec7bfd3536edbda012387df1c2935161ee5d1c78925"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d0bc4f4c9a693a31d2e381461324b65c5f3e874881e9d9a871748b1fab45693"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcd73da1fcfdd759004803edd2f2f49617860e30508ed277548b7e7de1f6a8f4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1bcff291047778459b459feb71ada9d9229cfc2ea37746f8de75820a9c560ea9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e77dfee4c6f7046633faa4b7f97feac1f8b11ecba9b4e03452edf6ba73c507e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65fa477d875707f1ee4b412bc11d662fd460458d2fdc0abd8333ead9568b28a6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1b7c03373de84a4801d189e5267bd5e72a96aa1b6c4f89071e01e6210c346114"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f58360faa50a5318d5d6467ee7a2b433255e03c8f5c8575b3cf6b43a22bfb2c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc8ec9af84099ac75a39f88a7ae5a0d2208dc2eb9a6cf8be52435fe9d918e610"
   end
 
   depends_on "maven" => :build

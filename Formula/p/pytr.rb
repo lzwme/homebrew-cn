@@ -3,24 +3,37 @@ class Pytr < Formula
 
   desc "Use TradeRepublic in terminal and mass download all documents"
   homepage "https://github.com/pytr-org/pytr"
-  url "https://files.pythonhosted.org/packages/04/c0/173ad027a75b3c1b6705ac56c647c78ed9ec99379e7257adfd42ebd8e30f/pytr-0.4.7.tar.gz"
-  sha256 "7b60cbd8fb0f9f623059c42b9a78e751677e1d97726ef834784ff5babd6872e4"
+  url "https://files.pythonhosted.org/packages/7f/87/7804f890684a4f137f49c74c9254fe95097ea724d2002dca38c2250aed0f/pytr-0.4.8.tar.gz"
+  sha256 "e592cdb5b00564f1c1ed93c4e6effcb89912c6068b36d99d57f36fbe5daaaee6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "56c4f938e4b7fbaa9a63514f948535ecb9f24d4672760d4df39adefc3d09f3c9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77d1f027ac4e76f5a988f673b97210b4cebbaa3170c24af6eb1741a8bdd4db88"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7e08f720be81953dc8f6ee268a769480b94bd4f865404e12e517a5f74f2935c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c7c9874e4bb97b67c195a1aabbf6314ece074e12a89ee679603d7ed3bb3ee20b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b70721f04f1fbd576b21913f8b38d34828aee542991f697678ba1003360487e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c0f89a1969a1ac5d0701ac4b787123e5de202783d788ee9e48ba0cd1891d599"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "250dee3a1bd895f808b738a552b1392be67c242050b7bc7459d090805c11da60"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b64b57ca7c5d9c512f139e34b3a6fda674394daa24a8ddfcb3c8b7df2572529"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bca928e2415ad46f6b579368192629cf3963c93bae6cc0efc9d885ac806c1c8f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e4c0001e4ee538ec360c8ea62f7412138bc200a2a53491ecee12dd6e6768b629"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "106f5686c843ccc52aff9bd35715547e36a25e80b94ed0e1274107c9eb3240b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "970ad0091a2cd0f96391a3cceffeee5b45f7390334389b34737bd62f0e99483f"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
+  depends_on "node"
   depends_on "python@3.14"
 
-  pypi_packages exclude_packages: %w[certifi cryptography]
+  pypi_packages exclude_packages: %w[certifi cryptography playwright],
+                extra_packages:   %w[greenlet pyee typing-extensions]
+
+  # No sdist on PyPI, so we use the GitHub tarball
+  # Ref: https://github.com/microsoft/playwright-python/issues/2579
+  resource "playwright" do
+    url "https://ghfast.top/https://github.com/microsoft/playwright-python/archive/refs/tags/v1.58.0.tar.gz"
+    sha256 "27ce34440c0a73d8123f721f8288689db57a40358e40f1ab234c936f4a2c08eb"
+
+    livecheck do
+      url :url
+    end
+  end
 
   resource "babel" do
     url "https://files.pythonhosted.org/packages/7d/b2/51899539b6ceeeb420d40ed3cd4b7a40519404f9baf3d4ac99dc413a834b/babel-2.18.0.tar.gz"
@@ -28,8 +41,8 @@ class Pytr < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "coloredlogs" do
@@ -38,16 +51,13 @@ class Pytr < Formula
   end
 
   resource "curl-cffi" do
-    url "https://files.pythonhosted.org/packages/9b/c9/0067d9a25ed4592b022d4558157fcdb6e123516083700786d38091688767/curl_cffi-0.14.0.tar.gz"
-    sha256 "5ffbc82e59f05008ec08ea432f0e535418823cda44178ee518906a54f27a5f0f"
-
-    # Backport of upstream libcurl-impersonate build fix, upstream PR 697, https://github.com/lexiforest/curl_cffi/pull/697
-    patch :DATA
+    url "https://files.pythonhosted.org/packages/48/5b/89fcfebd3e5e85134147ac99e9f2b2271165fd4d71984fc65da5f17819b7/curl_cffi-0.15.0.tar.gz"
+    sha256 "ea0c67652bf6893d34ee0f82c944f37e488f6147e9421bef1771cc6545b02ded"
   end
 
-  resource "ecdsa" do
-    url "https://files.pythonhosted.org/packages/25/ca/8de7744cb3bc966c85430ca2d0fcaeea872507c6a4cf6e007f7fe269ed9d/ecdsa-0.19.2.tar.gz"
-    sha256 "62635b0ac1ca2e027f82122b5b81cb706edc38cd91c63dda28e4f3455a2bf930"
+  resource "greenlet" do
+    url "https://files.pythonhosted.org/packages/86/94/a5935717b307d7c71fe877b52b884c6af707d2d2090db118a03fbd799369/greenlet-3.4.0.tar.gz"
+    sha256 "f50a96b64dafd6169e595a5c56c9146ef80333e67d4476a65a9c55f400fc22ff"
   end
 
   resource "humanfriendly" do
@@ -60,9 +70,19 @@ class Pytr < Formula
     sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
+  resource "markdown-it-py" do
+    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
+    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+  end
+
+  resource "mdurl" do
+    url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
+    sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
-    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+    url "https://files.pythonhosted.org/packages/df/de/0d2b39fb4af88a0258f3bac87dfcbb48e73fbdea4a2ed0e2213f9a4c2f9a/packaging-26.1.tar.gz"
+    sha256 "f042152b681c4bfac5cae2742a55e103d27ab2ec0f3d88037136b6bfe7c9c5de"
   end
 
   resource "pathvalidate" do
@@ -70,14 +90,19 @@ class Pytr < Formula
     sha256 "b18c07212bfead624345bb8e1d6141cdcf15a39736994ea0b94035ad2b1ba177"
   end
 
+  resource "pyee" do
+    url "https://files.pythonhosted.org/packages/8b/04/e7c1fe4dc78a6fdbfd6c337b1c3732ff543b8a397683ab38378447baa331/pyee-13.0.1.tar.gz"
+    sha256 "0b931f7c14535667ed4c7e0d531716368715e860b988770fc7eb8578d1f67fc8"
+  end
+
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "requests-futures" do
@@ -85,14 +110,19 @@ class Pytr < Formula
     sha256 "6b7eb57940336e800faebc3dab506360edec9478f7b22dc570858ad3aa7458da"
   end
 
+  resource "rich" do
+    url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
+    sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
+  end
+
   resource "shtab" do
     url "https://files.pythonhosted.org/packages/b0/7a/7f131b6082d8b592c32e4312d0a6da3d0b28b8f0d305ddd93e49c9d89929/shtab-1.8.0.tar.gz"
     sha256 "75f16d42178882b7f7126a0c2cb3c848daed2f4f5a276dd1ded75921cc4d073a"
   end
 
-  resource "six" do
-    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
-    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
+    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "urllib3" do
@@ -106,9 +136,19 @@ class Pytr < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    ENV["SETUPTOOLS_SCM_PRETEND_VERSION_FOR_PLAYWRIGHT"] = resource("playwright").version
+    venv = virtualenv_install_with_resources
 
     generate_completions_from_executable(bin/"pytr", "completion", shells: [:bash, :zsh])
+
+    # Help find playwright when installed inside virtualenv
+    rm(bin/name)
+    (bin/name).write_env_script libexec/"bin"/name, PATH: "#{libexec}/bin:${PATH}"
+
+    # Replace bundled node
+    bundled_node = venv.site_packages/"playwright/driver/node"
+    rm(bundled_node)
+    ln_sf (Formula["node"].opt_bin/"node").relative_path_from(bundled_node.dirname), bundled_node
   end
 
   test do
@@ -117,342 +157,8 @@ class Pytr < Formula
     output = shell_output(
       "#{bin}/pytr --debug-logfile pytr.log login -n +4912345678 -p 1234 2>&1", 1
     )
-    assert_match "Setting up debug logfile pytr.log", output
+    assert_match "Retrieving AWS WAF token using Playwright", output
     assert_path_exists testpath/"pytr.log"
-    assert_match "Phone number provided as argument", (testpath/"pytr.log").read
+    assert_match "Failed to get AWS WAF token", (testpath/"pytr.log").read
   end
 end
-
-__END__
---- a/libs.json
-+++ b/libs.json
-@@ -5,8 +5,9 @@
-         "pointer_size": 64,
-         "libdir": "./lib64",
-         "sysname": "win32",
--        "so_name": "libcurl.dll",
--        "so_arch": "x86_64"
-+        "link_type": "dynamic",
-+        "obj_name": "libcurl.dll",
-+        "arch": "x86_64"
-     },
-     {
-         "system": "Windows",
-@@ -14,8 +15,9 @@
-         "pointer_size": 32,
-         "libdir": "./lib32",
-         "sysname": "win32",
--        "so_name": "libcurl.dll",
--        "so_arch": "i686"
-+        "link_type": "dynamic",
-+        "obj_name": "libcurl.dll",
-+        "arch": "i686"
-     },
-     {
-         "system": "Windows",
-@@ -23,113 +25,106 @@
-         "pointer_size": 64,
-         "libdir": "./libarm64",
-         "sysname": "win32",
--        "so_name": "libcurl.dll",
--        "so_arch": "arm64"
-+        "link_type": "dynamic",
-+        "obj_name": "libcurl.dll",
-+        "arch": "arm64"
-     },
-     {
-         "system": "Darwin",
-         "machine": "x86_64",
-         "pointer_size": 64,
--        "libdir": "/Users/runner/work/_temp/install/lib",
-         "sysname": "macos",
--        "so_name": "libcurl-impersonate.4.dylib",
--        "so_arch": "x86_64"
-+        "link_type": "static",
-+        "obj_name": "libcurl-impersonate.a",
-+        "arch": "x86_64"
-     },
-     {
-         "system": "Darwin",
-         "machine": "arm64",
-         "pointer_size": 64,
--        "libdir": "/Users/runner/work/_temp/install/lib",
-         "sysname": "macos",
--        "so_name": "libcurl-impersonate.4.dylib",
--        "so_arch": "arm64"
-+        "link_type": "static",
-+        "obj_name": "libcurl-impersonate.a",
-+        "arch": "arm64"
-     },
-     {
-         "system": "Linux",
-         "machine": "x86_64",
-         "pointer_size": 64,
--        "libdir": "",
-         "sysname": "linux",
-         "link_type": "static",
-         "libc": "gnu",
--        "so_name": "libcurl-impersonate.so",
--        "so_arch": "x86_64"
-+        "obj_name": "libcurl-impersonate.a",
-+        "arch": "x86_64"
-     },
-     {
-         "system": "Linux",
-         "machine": "x86_64",
-         "pointer_size": 64,
--        "libdir": "",
-         "sysname": "linux",
-         "link_type": "static",
-         "libc": "musl",
--        "so_name": "libcurl-impersonate.so",
--        "so_arch": "x86_64"
-+        "obj_name": "libcurl-impersonate.a",
-+        "arch": "x86_64"
-     },
-     {
-         "system": "Linux",
-         "machine": "i686",
-         "pointer_size": 32,
--        "libdir": "",
-         "sysname": "linux",
-         "link_type": "static",
-         "libc": "gnu",
--        "so_name": "libcurl-impersonate.so",
--        "so_arch": "i386"
-+        "obj_name": "libcurl-impersonate.a",
-+        "arch": "i386"
-     },
-     {
-         "system": "Linux",
-         "machine": "aarch64",
-         "pointer_size": 64,
--        "libdir": "",
-         "sysname": "linux",
-         "link_type": "static",
-         "libc": "gnu",
--        "so_name": "libcurl-impersonate.so",
--        "so_arch": "aarch64"
-+        "obj_name": "libcurl-impersonate.a",
-+        "arch": "aarch64"
-     },
-     {
-         "system": "Linux",
-         "machine": "riscv64",
-         "pointer_size": 64,
--        "libdir": "",
-         "sysname": "linux",
-         "link_type": "static",
-         "libc": "gnu",
--        "so_name": "libcurl-impersonate.so",
--        "so_arch": "riscv64"
-+        "obj_name": "libcurl-impersonate.a",
-+        "arch": "riscv64"
-     },
-     {
-         "system": "Linux",
-         "machine": "aarch64",
-         "pointer_size": 64,
--        "libdir": "~/.local/lib",
-         "sysname": "linux",
--        "link_type": "dynamic",
-+        "link_type": "static",
-         "libc": "musl",
--        "so_name": "libcurl-impersonate.so",
--        "so_arch": "aarch64"
-+        "obj_name": "libcurl-impersonate.a",
-+        "arch": "aarch64"
-     },
-     {
-         "system": "Linux",
-         "machine": "armv6l",
-         "pointer_size": 32,
--        "libdir": "",
-         "sysname": "linux",
-         "link_type": "static",
-         "libc": "gnueabihf",
--        "so_name": "libcurl-impersonate.so",
--        "so_arch": "arm"
-+        "obj_name": "libcurl-impersonate.a",
-+        "arch": "arm"
-     },
-     {
-         "system": "Linux",
-         "machine": "armv7l",
-         "pointer_size": 32,
--        "libdir": "",
-         "sysname": "linux",
-         "link_type": "static",
-         "libc": "gnueabihf",
--        "so_name": "libcurl-impersonate.so",
--        "so_arch": "arm"
-+        "obj_name": "libcurl-impersonate.a",
-+        "arch": "arm"
-     }
- ]
---- a/scripts/build.py
-+++ b/scripts/build.py
-@@ -11,7 +11,7 @@
- from cffi import FFI
- 
- # this is the upstream libcurl-impersonate version
--__version__ = "1.2.5"
-+__version__ = "1.4.1"
- 
- 
- def detect_arch():
-@@ -33,7 +33,7 @@
-             and arch["pointer_size"] == pointer_size
-             and ("libc" not in arch or arch.get("libc") == libc)
-         ):
--            if arch["libdir"]:
-+            if arch.get("libdir"):
-                 arch["libdir"] = os.path.expanduser(arch["libdir"])
-             else:
-                 global tmpdir
-@@ -49,12 +49,17 @@
- 
- 
- arch = detect_arch()
--print(f"Using {arch['libdir']} to store libcurl-impersonate")
-+link_type = arch.get("link_type")
-+libdir = Path(arch["libdir"])
-+is_static = link_type == "static"
-+is_dynamic = link_type == "dynamic"
-+print(f"Using {libdir} to store libcurl-impersonate")
- 
- 
- def download_libcurl():
--    if (Path(arch["libdir"]) / arch["so_name"]).exists():
--        print(".so files already downloaded.")
-+    expected = libdir / arch["obj_name"]
-+    if expected.exists():
-+        print(f"libcurl-impersonate: {expected} already downloaded.")
-         return
- 
-     file = "libcurl-impersonate.tar.gz"
-@@ -63,46 +68,34 @@
-     url = (
-         f"https://ghfast.top/https://github.com/lexiforest/curl-impersonate/releases/download/"
-         f"v{__version__}/libcurl-impersonate-v{__version__}"
--        f".{arch['so_arch']}-{sysname}.tar.gz"
-+        f".{arch['arch']}-{sysname}.tar.gz"
-     )
- 
-     print(f"Downloading libcurl-impersonate from {url}...")
-     urlretrieve(url, file)
- 
-     print("Unpacking downloaded files...")
--    os.makedirs(arch["libdir"], exist_ok=True)
--    shutil.unpack_archive(file, arch["libdir"])
-+    os.makedirs(libdir, exist_ok=True)
-+    shutil.unpack_archive(file, libdir)
- 
-     if arch["system"] == "Windows":
--        for file in glob(os.path.join(arch["libdir"], "lib/*.lib")):
--            shutil.move(file, arch["libdir"])
--        for file in glob(os.path.join(arch["libdir"], "bin/*.dll")):
--            shutil.move(file, arch["libdir"])
-+        for file in glob(str(libdir / "lib/*.lib")):
-+            shutil.move(file, libdir)
-+        for file in glob(str(libdir / "bin/*.dll")):
-+            shutil.move(file, libdir)
- 
--    print("Files after unpacking")
--    print(os.listdir(arch["libdir"]))
-+    print("Files after unpacking:")
-+    print(os.listdir(libdir))
- 
- 
- def get_curl_archives():
--    print("Files for linking")
--    print(os.listdir(arch["libdir"]))
--    if arch["system"] == "Linux" and arch.get("link_type") == "static":
-+    print("Files in linking directory:")
-+    print(os.listdir(libdir))
-+    if is_static:
-         # note that the order of libraries matters
-         # https://stackoverflow.com/a/36581865
-         return [
--            f"{arch['libdir']}/libcurl-impersonate.a",
--            f"{arch['libdir']}/libssl.a",
--            f"{arch['libdir']}/libcrypto.a",
--            f"{arch['libdir']}/libz.a",
--            f"{arch['libdir']}/libzstd.a",
--            f"{arch['libdir']}/libnghttp2.a",
--            f"{arch['libdir']}/libngtcp2.a",
--            f"{arch['libdir']}/libngtcp2_crypto_boringssl.a",
--            f"{arch['libdir']}/libnghttp3.a",
--            f"{arch['libdir']}/libbrotlidec.a",
--            f"{arch['libdir']}/libbrotlienc.a",
--            f"{arch['libdir']}/libbrotlicommon.a",
--            f"{arch['libdir']}/libcares.a",
-+            str(libdir / arch["obj_name"])
-         ]
-     else:
-         return []
-@@ -128,11 +121,8 @@
-             "brotlidec",
-             "brotlicommon",
-             "iphlpapi",
--            "cares",
-         ]
--    elif arch["system"] == "Darwin" or (
--        arch["system"] == "Linux" and arch.get("link_type") == "dynamic"
--    ):
-+    elif is_dynamic:
-         return ["curl-impersonate"]
-     else:
-         return []
-@@ -143,21 +133,38 @@
- root_dir = Path(__file__).parent.parent
- download_libcurl()
- 
-+# With mega archive, we only have one to link
-+static_libs = get_curl_archives()
-+extra_link_args = []
-+if is_static:
-+    if system == "Darwin":
-+        extra_link_args = [
-+            f"-Wl,-force_load,{static_libs[0]}",
-+            "-lc++",
-+        ]
-+    elif system == "Linux":
-+        extra_link_args = [
-+            "-Wl,--whole-archive",
-+            static_libs[0],
-+            "-Wl,--no-whole-archive",
-+            "-lstdc++",
-+        ]
- 
-+libraries = get_curl_libraries()
-+
- ffibuilder.set_source(
-     "curl_cffi._wrapper",
-     """
-         #include "shim.h"
-     """,
--    # FIXME from `curl-impersonate`
-+    library_dirs=[str(libdir)],
-     libraries=get_curl_libraries(),
--    extra_objects=get_curl_archives(),
--    library_dirs=[arch["libdir"]],
-+    extra_objects=[],  # linked via extra_link_args
-     source_extension=".c",
-     include_dirs=[
-         str(root_dir / "include"),
-         str(root_dir / "ffi"),
--        str(Path(arch["libdir"]) / "include"),
-+        str(libdir / "include"),
-     ],
-     sources=[
-         str(root_dir / "ffi/shim.c"),
-@@ -165,7 +172,7 @@
-     extra_compile_args=(
-         ["-Wno-implicit-function-declaration"] if system == "Darwin" else []
-     ),
--    extra_link_args=(["-lstdc++"] if system != "Windows" else []),
-+    extra_link_args=extra_link_args,
- )
- 
- with open(root_dir / "ffi/cdef.c") as f:

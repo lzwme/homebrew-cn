@@ -1,18 +1,18 @@
 class Nghttp2 < Formula
   desc "HTTP/2 C Library"
   homepage "https://nghttp2.org/"
-  url "https://ghfast.top/https://github.com/nghttp2/nghttp2/releases/download/v1.68.1/nghttp2-1.68.1.tar.gz"
-  mirror "http://fresh-center.net/linux/www/nghttp2-1.68.1.tar.gz"
-  sha256 "ceb434c1f9dfe2a9d305b6b797786fb9227484dfa88508d14ca1c50263db55d3"
+  url "https://ghfast.top/https://github.com/nghttp2/nghttp2/releases/download/v1.69.0/nghttp2-1.69.0.tar.gz"
+  mirror "http://fresh-center.net/linux/www/nghttp2-1.69.0.tar.gz"
+  sha256 "c866b7477cbb7512ab6863a685027adbb1bb8da8fc3bab7429ed43d3281d5aa9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f81a8883531828de7adf70d56055aa62ec0330bd3b36fa137e5fed621660c292"
-    sha256 cellar: :any,                 arm64_sequoia: "477d3f318b64df6e5696dc9c8617d76cf4360b2c9d9f532a8498cefeb9ae90ea"
-    sha256 cellar: :any,                 arm64_sonoma:  "b1bfeb7a05bb626b237d762cd71d4c33134e1718eb46a46b12dafafa438f1346"
-    sha256 cellar: :any,                 sonoma:        "acb8c68c592c42de4982d973a751885ad01e65c88904d919d5965c8e5c0e3c46"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "88e1463f0dd01540e92e7db68e01d3fd97a33ba31d78ec4279695266203beda8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c369643d01639747a6af3b3fcc3fd40848ffa29c3e8b3e958bbb0a6f896ab172"
+    sha256 cellar: :any,                 arm64_tahoe:   "b2e05c11cc4a132f3b38c5cc1a724f3c7db34fb28f99f0ed5220c849d815119e"
+    sha256 cellar: :any,                 arm64_sequoia: "4cb7547b401741b6f3d908f3e8cd15546ad6f79bd08c30682eba5a7a775e8a53"
+    sha256 cellar: :any,                 arm64_sonoma:  "69224a4a6f324e65af2d5ff259af6ec30702ad1e1abd61c1f9489d6d6f91c26b"
+    sha256 cellar: :any,                 sonoma:        "7a700d492e5f10c3af5fdc8231000247095b9c24a889de40f772744b6835123c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebf951646a2bf3ae5357eb28b1eff1814557ca1eb05f33533846d4032127af8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "888926049373d180eedbad78d96728728d3a9901b8750de8bec18240c4c5e4f6"
   end
 
   head do

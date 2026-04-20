@@ -1,8 +1,8 @@
 class Fswatch < Formula
   desc "Monitor a directory for changes and run a shell command"
   homepage "https://github.com/emcrisostomo/fswatch"
-  url "https://ghfast.top/https://github.com/emcrisostomo/fswatch/releases/download/1.19.0/fswatch-1.19.0.tar.gz"
-  sha256 "c0f10b0961af73496247501f3a6cad61e3a71018b87ec14e580b3bf4c5d9427d"
+  url "https://ghfast.top/https://github.com/emcrisostomo/fswatch/releases/download/1.19.1/fswatch-1.19.1.tar.gz"
+  sha256 "b8736d41b6f108c8089ae38361ea9bdb035445caac3dcb413702bc567a42a91a"
   license all_of: ["GPL-3.0-or-later", "Apache-2.0"]
 
   livecheck do
@@ -11,12 +11,12 @@ class Fswatch < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "afb9915aac832d01ebada0eb640cabc8d10ff371f0692dde6318306486d6b5e7"
-    sha256 cellar: :any, arm64_sequoia: "adff23a72f49510738f842a96d1a6872c8384a86bed36d3bfd363bbef30208b3"
-    sha256 cellar: :any, arm64_sonoma:  "677fcc3a484e8500ab2bcb06afd245b367693c65aee550e4a30feb10bf420dea"
-    sha256 cellar: :any, sonoma:        "39beb59ba5ec2a3c6fdf8cd595cfb1094759abd6492a9c7bfab2fc5a62b623cc"
-    sha256               arm64_linux:   "d6fcfd34597d592e58d53fdfe1f3defc18bf4ce4aef5d0f82921aa23af7368e3"
-    sha256               x86_64_linux:  "3aa07d847014715001b53e012c80053399839a2098befba04637ce814b846b62"
+    sha256 cellar: :any, arm64_tahoe:   "b4731e9b2ef6304087d9366073093b672f4809e446c2a99accfb1e39d79e3d08"
+    sha256 cellar: :any, arm64_sequoia: "0f18b4fd676f65fe80cb5005b2ee94ef0958d208632133527c2f8345f5478821"
+    sha256 cellar: :any, arm64_sonoma:  "60925a138619dc65784c6db480bc6755f8aafcfb1fc9423966bef1a408ac300d"
+    sha256 cellar: :any, sonoma:        "698b0faa3858f897e5b7a4fd5f72fe13f9045c59d0279917a16b664eaf0e0a55"
+    sha256               arm64_linux:   "3699705c7fc07f95d6cf19da66b55c555dc0f37629e215ad47b0880bf673ea5b"
+    sha256               x86_64_linux:  "ab75c570dcf1a8b8684a8c03b8af3bc8abfb9820427ec672d703ac71d6dded3d"
   end
 
   def install

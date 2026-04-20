@@ -1,6 +1,6 @@
 cask "stats" do
-  version "2.12.9"
-  sha256 "0d6d6dde8956a72c597e4e41af07063d07ced2df9a395adcff2a8bc171d89a4e"
+  version "2.12.11"
+  sha256 "41edc5bc9c6a4503f9b48826ea1040ea3b94f76221f0801788c8714d18924093"
 
   url "https://ghfast.top/https://github.com/exelban/stats/releases/download/v#{version}/Stats.dmg"
   name "Stats"

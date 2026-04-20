@@ -1,18 +1,18 @@
 class PocketId < Formula
   desc "Open-source identity provider for secure user authentication"
   homepage "https://pocket-id.org"
-  url "https://ghfast.top/https://github.com/pocket-id/pocket-id/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "152e7c22064922e81429fda1c04231c66364d1d6b01ba674bee7a13d237ddc27"
+  url "https://ghfast.top/https://github.com/pocket-id/pocket-id/archive/refs/tags/v2.6.0.tar.gz"
+  sha256 "1f8cce4c4dbb3d4c33b56eaa829d62c6c4fa1d6103156b5138ddbf7baf41d29a"
   license "BSD-2-Clause"
   head "https://github.com/pocket-id/pocket-id.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28f536b00fc54f979ac9a8a47c409b0fbb394f3adc486c650b6c5d8fe601ec20"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69b60408b9f13441fd6d7ac110833438624ab376d674ea526066210f28a03a23"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eed4801a058be610f3c182c462479d6b9cb596d54668276040670792e367d296"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5f93366eebf1c4602f654bcf71d8081a542b03eaf5f068099bbf14459a35a0aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0439b67d8ca0618309abcb08d7908d625c263faa8d7b3f91285626f536f6b1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de3ce3b86f1f00388a7a117f093a90f7e8918c32e693088dea4e01fcbce538b7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02b9be9dbaf2a3e845eb0466c5ae080fe07993e5309100642e4257f8bcae0aa3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e9145123c4f98461f540fff7760f9275147bc4d19b9c1e6139e8adaab2fb8bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61d526e8c2244bd21421419271a427c23061d24acc762ea42253ab90b0614e1a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ea4313c8055a9e86e567bffcce5c468e875936301e395b215a9a913f25c8a91a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20300ffca8a35fe072423539861dccecf8e30689551730d67f235e798d7ec51e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f70791782d7379c415c98409d8b0202241c83046f586efe9f163e6a4ab9c20e"
   end
 
   depends_on "go" => :build

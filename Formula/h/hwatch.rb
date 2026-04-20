@@ -1,19 +1,18 @@
 class Hwatch < Formula
   desc "Modern alternative to the watch command"
   homepage "https://github.com/blacknon/hwatch"
-  url "https://ghfast.top/https://github.com/blacknon/hwatch/archive/refs/tags/0.3.20.tar.gz"
-  sha256 "df5edf3e8cd8ec3ce0cf59ee48590d2f0ccad1ed6fb68ce16caf31a21983160a"
+  url "https://ghfast.top/https://github.com/blacknon/hwatch/archive/refs/tags/0.4.0.tar.gz"
+  sha256 "3f4615233a0330a3a10e35f053f35774826ca13bc25a50c09bb60fe8684c9781"
   license "MIT"
   head "https://github.com/blacknon/hwatch.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d077e8fec77e684c25528f6b016b1808a402fc1b54b3a5fb60cc5fe5ff2002a8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7116bbfd15368f6f0a329ab9f970b1373abdd9cbedc97c7f93729ac8cbcaa36c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74cf64b8f48cb1ecf305b8237ba00782a3faf31d1d70a1dafd4f2af5b68ce817"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c69ece693c39c0de3bfe6e5e26d112ec66b1f655d6b58e6218831b04ac35a0f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "00dac9d3c0cec491f497f4e81c8ebe0f626d4889383f10fa3b3cf0ffeee329ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "266e148d4fbcd8c9c6ee3e379ee8b7c030c8d671f4a9dda2633459a1cac74c1b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9e98182c45c3365c97c903598c80120f373f118b0e1a10d3883b50051de4485b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f39ec52234f924a4526087d2ce66cb8eab363b234ee8de2d0926fb5ccb65a7f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "406252eb464692d8bee409f72df0c6387a787d2637e367dbc68e273d661175a5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "215e9838ded02623b5bec887e1b7ce20347eeec3ad7783c4bb85aefa183ae0cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0863ea00685032b8ad8e638a232c91d02baf1dd6b7019f71d335a3a5ac4601f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba29d66dfa64a13d9cc0381fdc09ff735ae3437d11a289505e89cc337310eaa2"
   end
 
   depends_on "rust" => :build

@@ -1,19 +1,19 @@
 class Termscp < Formula
   desc "Feature rich terminal file transfer and explorer"
-  homepage "https://termscp.veeso.dev/"
-  url "https://ghfast.top/https://github.com/veeso/termscp/archive/refs/tags/v0.19.1.tar.gz"
-  sha256 "04248fc89e71a050463ad1824eccab4c04d34bff3126a8f9e26a77c75fe55b0f"
+  # https://termscp.veeso.dev is not accessible, upstream bug report, https://github.com/veeso/termscp/issues/420
+  homepage "https://github.com/veeso/termscp"
+  url "https://ghfast.top/https://github.com/veeso/termscp/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "c07e2b82cb1cc327d977548e24d27fbbda8ee0cc4f2c3df9fb1b90c6e971e568"
   license "MIT"
   head "https://github.com/veeso/termscp.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "8bdec1e7b0df8b1245316318cd2a94add2b2a3bd6e87c6b1ec45498401c19b1f"
-    sha256 cellar: :any,                 arm64_sequoia: "3a359010c1e22734ee9576b9a11202eeb1f6da04b3bb443f665dff126a678503"
-    sha256 cellar: :any,                 arm64_sonoma:  "af65ce15e43152d630e7bb55a564a255e06c085b63fa3b37c3194778b627fe2e"
-    sha256 cellar: :any,                 sonoma:        "29b1da4bed40847c693bb52e32511d4dfc53e6ac04524a3217e5cf0282a47f13"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa3958d217ee1d3a5d45de489b1cfb4df90587269211060643017c9ff45e5308"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0bec0fcc27065085c36f6cf69efec45e3d7744ff5892c6cadc4293c8de73962"
+    sha256 cellar: :any,                 arm64_tahoe:   "16738eb10940aeb04ac6f2f0438d41aa0b78e5b5b5c8d84442ffac69286711ab"
+    sha256 cellar: :any,                 arm64_sequoia: "e0d20562754944a0ac3e774502710f36d3887cf69c7f88e4a9336b935923ad63"
+    sha256 cellar: :any,                 arm64_sonoma:  "9cd2f95da5c27e3675ec723a03365d68b1fe86a280a87b513ada537a9efe89ca"
+    sha256 cellar: :any,                 sonoma:        "5f1330c3dfbfc8bddf5ed780eb650e178c353bfdbeff2d553911a74ad27c2d60"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d38dcba45f2b5fe2356162fb896bca365a70c2bd008405ef79c39aac8f82233e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ee69ebb96a07482273391ce05523e81299de73393aacc1c89411e243aa59b20"
   end
 
   depends_on "pkgconf" => :build

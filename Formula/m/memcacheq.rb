@@ -16,6 +16,10 @@ class Memcacheq < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "57b2c80f352cc9e1d88b5f1e643e1c2e67436e1259a0353bac11ffca103e7af9"
   end
 
+  # Last release on 2014-12-16.
+  deprecate! date: "2026-04-19", because: :unmaintained
+  disable! date: "2027-04-19", because: :unmaintained
+
   depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL incompatibility
   depends_on "libevent"
 

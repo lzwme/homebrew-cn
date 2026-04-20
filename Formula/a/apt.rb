@@ -27,6 +27,9 @@ class Apt < Formula
   depends_on "po4a" => :build
   depends_on "w3m" => :build
 
+  # Upstream plans for replacing Berkeley DB:
+  # - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1119193
+  # - https://salsa.debian.org/apt-team/apt/-/merge_requests/489
   depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL-3.0 restrictions
   depends_on "bzip2"
   depends_on "dpkg"

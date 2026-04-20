@@ -1,19 +1,18 @@
 class Rad < Formula
   desc "Modern CLI scripts made easy"
   homepage "https://amterp.dev/rad/"
-  url "https://ghfast.top/https://github.com/amterp/rad/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "7d2215d596fdb6d380761411bf868b7cd451a436efa6dd2153265a7b981e14d2"
+  url "https://ghfast.top/https://github.com/amterp/rad/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "24d4443b1105d69dc991b0493ea766f7b40e8976639938de6a995d64190e9c27"
   license "Apache-2.0"
   head "https://github.com/amterp/rad.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d2ddfb5f50ca27fc4156adbb4f0471db7fc13e095c89fed1eedff83b73b9d00f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2540fee7bd9a821e8d7517251bca660e70d45903e5b532006075a117895c529"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aeabb7881604b0120ea14212ce0f59ed14d683d1eb34ed6e5c96f7c4c42e4916"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d03526abced8126bef2552e41b96b53c94880b6bd98aa51d86cae03c2dc55f43"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d976118e06481472a02d25be38663c68952ea98bf91b17994e2656df0a1c177"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6fc540a6569f8ff546413f349981c20655c466a5046af788472f5fde37679bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f98771d3bbbcb3c833ac3f71ca4efbd2318f99eb113c1f1ea53b1c0ec7af265"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "962431d0868fdf35589100676b3f2681d2d822a00f41694eca0165faeb83d418"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f0687c9eb4462b84d99d06ba1996e5076f33b4492166b6279502192cf630663"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2cc1b57dee979e5df768bcb6ca721fb364f98c4843a00246b300042267e55f52"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3338561e1bf53c6c65b6e283fe31de16672207d0dfd0d9a32f2d33718bec2723"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38a26dd713cab0a87c4c8b4e9f86a322e17a5e60a96c4092dc59d3c804c9f5ed"
   end
 
   depends_on "go" => :build

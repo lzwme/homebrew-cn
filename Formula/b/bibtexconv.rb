@@ -1,18 +1,18 @@
 class Bibtexconv < Formula
   desc "BibTeX file converter"
   homepage "https://github.com/dreibh/bibtexconv"
-  url "https://ghfast.top/https://github.com/dreibh/bibtexconv/archive/refs/tags/bibtexconv-2.1.2.tar.gz"
-  sha256 "0bd2b14c4e92512dc39ca421fe4b1a11e6dc7bee4d1c948b1afa5a7c81b1bc46"
+  url "https://ghfast.top/https://github.com/dreibh/bibtexconv/archive/refs/tags/bibtexconv-2.2.0.tar.gz"
+  sha256 "841542821ae46eaf4065e6b3b62b5e9466e4c85c17058b1b9c42f69190bd0111"
   license "GPL-3.0-or-later"
   head "https://github.com/dreibh/bibtexconv.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "069a0fc2b599f0f372d301f1fedf08a29fbfc84c8dca341f8a20ad6a96aa368f"
-    sha256 cellar: :any,                 arm64_sequoia: "de66963ec4cfa457d5adb9fbc0c1c6193a9c2e068b792a3709c64cff0b834917"
-    sha256 cellar: :any,                 arm64_sonoma:  "33cb3528e8a521517b4b8de0862f6fc9f0fc19fffb8ce3b11e8343cf3130d100"
-    sha256 cellar: :any,                 sonoma:        "8038763c7f02c880a67e402110977bf23b7591dcd96a58ba2b32dc4ccfb0b9cc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3288fc1f6d00e924ae897ceb7061c27eb251f9a01b87faa63757f1afbeb0eca8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "737b1cb149b274538819ad3c03b2fb6a4c6867b917211b2589a4bb3d00016177"
+    sha256 cellar: :any,                 arm64_tahoe:   "a4d6ffffc224e6d13e64beb408afdec7b12d789180ae4b867a6460c50009f65f"
+    sha256 cellar: :any,                 arm64_sequoia: "edfc0db60e7d5dcaed31b742538d6deb71b6e57b5039777c64eb0dd1a9b37996"
+    sha256 cellar: :any,                 arm64_sonoma:  "edbe71bf6e18a179991bb5f0f8f67be142a6a8360e3cfbe10118ee91473bc8fb"
+    sha256 cellar: :any,                 sonoma:        "dbc07746f58dded72794882853850bd29f4ad01c320a0b7ce9df1264a78552da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "662120d717684923235895acdc877ef5d2ddce9afaa80da1e1356eff93305ba8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97c2a90dc415e56946717b1413d4347b926f77fdb0095dce28cd51ca6c5ef494"
   end
 
   depends_on "bison" => :build
@@ -23,11 +23,11 @@ class Bibtexconv < Formula
   uses_from_macos "curl"
 
   on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1600
   end
 
   fails_with :clang do
-    build 1500
+    build 1600
   end
 
   def install

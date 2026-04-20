@@ -678,7 +678,7 @@ Homebrew-homebrew-core/Formula/b/bpmnlint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bpython.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bpytop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brag.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/b/braid.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/braid.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brainfuck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/breezy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/brename.rb, Homebrew/homebrew-core, 1
@@ -5372,6 +5372,7 @@ Homebrew-homebrew-core/Formula/o/openssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssl@3.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssl@3.5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssl@3.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/openssl@4.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openstackclient.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opensubdiv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opentelemetry-cpp.rb, Homebrew/homebrew-core, 1
@@ -13913,6 +13914,7 @@ Homebrew-homebrew-cask/Casks/o/openemu@experimental.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/o/openforis-collect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openframeworks.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openhv.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/openin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openineditor-lite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openinterminal-lite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openinterminal.rb, Homebrew/homebrew-cask, 1

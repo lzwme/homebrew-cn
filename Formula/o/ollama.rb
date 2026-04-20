@@ -5,6 +5,7 @@ class Ollama < Formula
       tag:      "v0.21.0",
       revision: "57653b8e42d69ec35f68a59857bad4d0f07994a3"
   license "MIT"
+  revision 1
   head "https://github.com/ollama/ollama.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -16,12 +17,12 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "38dd62d9f5023afe9d0bc06d62af5b31cb43ffdeb417a049097c4058a52da95b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2663a51f318ead29c04fb63c7c7944802702037ff4a25ca47a386c92d7852124"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c99bcf3eceb68e3065fa44941492457ad54ebf7b1c16eaa163a644bd8561f88"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2f47b6e0ecf89be0e5ba3b872623f15b5d8d31d10b07a201c73cd6c2ef7375fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75c4bfe23a579316f3e01fd50b7266e42379bad360c77e5ae3fc9fc339befc8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59459e8c986af36476970963058189ac5abb2b0bb232689ee7575779ed76e44f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "87b707af8fb3e38b167321cdf2122e6db1f648da1192a03928f6c737abd18c57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e69b6097744a0bcaea3c472d95027cff0a08fe8b841f7f0223a4c17efb729c5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b01f3b38743a922d2dfbbc2ed77d7d690b96bd10b8f4b2ab059211a76ebc0a7f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6cd9385577d3a77fd49aaac324b678319d7050bd7794dfc18253dfdda2a38f5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e99765dc6d1e0a9ddcfd98a535b56cc90ec179a548fd97805384495b00d297da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95b6355a01237a808b1b0d971affa4402311855d339aa3debe245a5e00e6525d"
   end
 
   depends_on "cmake" => :build
@@ -69,7 +70,17 @@ class Ollama < Formula
     end
 
     system "go", "generate", *mlx_args, "./x/imagegen/mlx"
-    system "go", "build", *mlx_args, *std_go_args(ldflags:)
+    # Build into libexec so the mlx runner's required `<exe_dir>/lib/ollama/`
+    # sibling can be populated without tripping the non-executables-in-bin audit.
+    system "go", "build", *mlx_args, *std_go_args(ldflags:, output: libexec/"ollama")
+    bin.install_symlink libexec/"ollama"
+
+    # The mlx runner dlopens MLX libraries from `<exe_dir>/lib/ollama/mlx_*/`.
+    # Using `opt` keeps the link stable across mlx-c version bumps.
+    if OS.mac? && Hardware::CPU.arm?
+      (libexec/"lib/ollama/mlx_metal_v3").mkpath
+      ln_sf Formula["mlx-c"].opt_lib/"libmlxc.dylib", libexec/"lib/ollama/mlx_metal_v3/libmlxc.dylib"
+    end
   end
 
   service do
@@ -93,6 +104,13 @@ class Ollama < Formula
     ensure
       Process.kill "TERM", pid
       Process.wait pid
+    end
+
+    # Test MLX (Apple silicon only)
+    if OS.mac? && Hardware::CPU.arm?
+      output = shell_output("DYLD_PRINT_LIBRARIES=1 #{bin}/ollama --help 2>&1")
+      assert_match "libmlxc.dylib", output
+      assert_match "libmlx.dylib", output
     end
   end
 end

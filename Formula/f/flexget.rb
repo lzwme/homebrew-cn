@@ -3,17 +3,17 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/36/07/ab2575eb8a0e333376a4c2407540c0b17b7001caca28c67b345e1ab7e537/flexget-3.19.10.tar.gz"
-  sha256 "514ab6e01fd8fd621874ccc7b4547e338a0fe4bbcf29c3a943c4d3211d1b432a"
+  url "https://files.pythonhosted.org/packages/5e/67/c9b77c0b73e693297646c4416df1083b03b9af6fd8af0a30c7a6571e2b92/flexget-3.19.12.tar.gz"
+  sha256 "5dfdf99a98673c9c62f6b986035de21e129a51cec78ecbb8756661475361d149"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ba17d8a2124f617100597dd828f33cad2845295ed4653a49ded804e9ce38ff02"
-    sha256 cellar: :any,                 arm64_sequoia: "884dbaa2805f48e9b91deafabbcd54955788dbe59d650069132174c06676a057"
-    sha256 cellar: :any,                 arm64_sonoma:  "0068d51977d4b9f7c52515c86be0ed3df0703636764f045848841dced0306f84"
-    sha256 cellar: :any,                 sonoma:        "12fb82b3e446c29237143b9d5da12f41599c5a411d73ad54ad8e2aab64b3395a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed6848edabe1cd9431b064af836901937a6fdcd3c319c5b955b8deefa4aadda0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd74294b871345ecb2b2eb8141f73443e73353e6f56ec91a6b38e63a26312003"
+    sha256 cellar: :any,                 arm64_tahoe:   "ffffdd25aace8147a2560e994cd742705fb9bde38239005a57749d3ee750dd21"
+    sha256 cellar: :any,                 arm64_sequoia: "b468d53e06c4d48182490f6956dc93bc80194a53749a0d77ef4419b4c3217772"
+    sha256 cellar: :any,                 arm64_sonoma:  "a0743a3105da51f475e1515201b1f81bf0b32e9ea3dc382d9881c80b8717b70a"
+    sha256 cellar: :any,                 sonoma:        "3ad71d1c8ba9e71c34e0f43e58dfc3f217b686ab94a3e058412d4857539f7409"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "08200fb8c128297ec8f3cea6e5ca0cb4000c52fd3fc13e28437aec776d2addfa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee36889c69672426902bfb944394eba340509beef3f120d4071564b9d44f26c1"
   end
 
   depends_on "rust" => :build
@@ -116,8 +116,8 @@ class Flexget < Formula
   end
 
   resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/a3/51/1664f6b78fc6ebbd98019a1fd730e83fa78f2db7058f72b1463d3612b8db/greenlet-3.3.2.tar.gz"
-    sha256 "2eaf067fc6d886931c7962e8c6bede15d2f01965560f3359b27c80bde2d151f2"
+    url "https://files.pythonhosted.org/packages/86/94/a5935717b307d7c71fe877b52b884c6af707d2d2090db118a03fbd799369/greenlet-3.4.0.tar.gz"
+    sha256 "f50a96b64dafd6169e595a5c56c9146ef80333e67d4476a65a9c55f400fc22ff"
   end
 
   resource "guessit" do
@@ -150,8 +150,8 @@ class Flexget < Formula
   end
 
   resource "importlib-resources" do
-    url "https://files.pythonhosted.org/packages/cf/8c/f834fbf984f691b4f7ff60f50b514cc3de5cc08abfc3295564dd89c5e2e7/importlib_resources-6.5.2.tar.gz"
-    sha256 "185f87adef5bcc288449d98fb4fba07cea78bc036455dd44c5fc4a2fe78fed2c"
+    url "https://files.pythonhosted.org/packages/e4/06/b56dfa750b44e86157093bc8fca0ab81dccbf5260510de4eaf1cb69b5b99/importlib_resources-7.1.0.tar.gz"
+    sha256 "0722d4c6212489c530f2a145a34c0a7a3b4721bc96a15fada5930e2a0b760708"
   end
 
   resource "itsdangerous" do
@@ -215,13 +215,13 @@ class Flexget < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/24/24/e0acc4bf54cba50c1d432c70a72a3df96db4a321b2c4c68432a60759044f/more_itertools-11.0.1.tar.gz"
-    sha256 "fefaf25b7ab08f0b45fa9f1892cae93b9fc0089ef034d39213bce15f1cc9e199"
+    url "https://files.pythonhosted.org/packages/a2/f7/139d22fef48ac78127d18e01d80cf1be40236ae489769d17f35c3d425293/more_itertools-11.0.2.tar.gz"
+    sha256 "392a9e1e362cbc106a2457d37cabf9b36e5e12efd4ebff1654630e76597df804"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
-    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+    url "https://files.pythonhosted.org/packages/df/de/0d2b39fb4af88a0258f3bac87dfcbb48e73fbdea4a2ed0e2213f9a4c2f9a/packaging-26.1.tar.gz"
+    sha256 "f042152b681c4bfac5cae2742a55e103d27ab2ec0f3d88037136b6bfe7c9c5de"
   end
 
   resource "pendulum" do
@@ -290,8 +290,8 @@ class Flexget < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
-    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
+    url "https://files.pythonhosted.org/packages/e9/67/cae617f1351490c25a4b8ac3b8b63a4dda609295d8222bad12242dfdc629/rich-14.3.4.tar.gz"
+    sha256 "817e02727f2b25b40ef56f5aa2217f400c8489f79ca8f46ea2b70dd5e14558a9"
   end
 
   resource "rpyc" do
@@ -391,6 +391,8 @@ class Flexget < Formula
 
   def install
     ENV["BUNDLE_WEBUI"] = "true"
+    # `pendulum` builds a PyO3 extension through maturin.
+    ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup" if OS.mac?
     virtualenv_install_with_resources
   end
 

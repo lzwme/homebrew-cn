@@ -1,19 +1,19 @@
 class FluidSynth < Formula
   desc "Real-time software synthesizer based on the SoundFont 2 specs"
   homepage "https://www.fluidsynth.org"
-  url "https://ghfast.top/https://github.com/FluidSynth/fluidsynth/archive/refs/tags/v2.5.3.tar.gz"
-  sha256 "6f247edfb4b91b927efc68c8884cec2ec345c8007afe6b59558cc52a67ef2517"
+  url "https://ghfast.top/https://github.com/FluidSynth/fluidsynth/archive/refs/tags/v2.5.4.tar.gz"
+  sha256 "72f5720328fe44e2e5c67813885f0a6b4b004d048bd2eeeb0c0064074ebff530"
   license "LGPL-2.1-or-later"
   compatibility_version 1
   head "https://github.com/FluidSynth/fluidsynth.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "969995c79b2651580bac91d62795022084354c975a3ecd6ca17e20f0854061b5"
-    sha256 cellar: :any,                 arm64_sequoia: "4b51fe6aebc24e10e581e5377cc2e1042c219eb25678fd00b462eb1583f4261d"
-    sha256 cellar: :any,                 arm64_sonoma:  "c9a3886611c1f17ddcb810b4734886c7cc1a20b190c06349a09481a14d952117"
-    sha256 cellar: :any,                 sonoma:        "b784773a748dcc50b884c9c7e71b054900a0026cd028f7a10234d611d5a973e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "516b90be09a28312b40090a818ee74122374af18f33cab7c2fb2efb98562e67c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d84d702848cf52f6be9fbfb74e5083815ab75c3132c262d24ece015586b559fd"
+    sha256 cellar: :any,                 arm64_tahoe:   "e81a9f39d06a5607f737b1953da081d60e7eb599d892cddb54890b775a52eacd"
+    sha256 cellar: :any,                 arm64_sequoia: "dd49aa96b7043b155e51351afd5d600b83e2500722aaaa4b2369ebf3516777dd"
+    sha256 cellar: :any,                 arm64_sonoma:  "50259b32b99c46af71c0fba1964c176eebda485e9766c52c703fa1632000d403"
+    sha256 cellar: :any,                 sonoma:        "ca84e1e7a879bdb703da42ca4b279525daef5d68432ba52b4943d345ae431825"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fbf7d74d1e13bba9f4697d527678702e92c3c6357cef19e4ca0a85b87112883"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b64484abf95cd571885d34a86ac854adffaaaf6975249c212d677740752765cb"
   end
 
   depends_on "cmake" => :build
