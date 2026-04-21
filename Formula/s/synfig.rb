@@ -23,6 +23,7 @@ class Synfig < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => [:build, :test]
@@ -34,7 +35,6 @@ class Synfig < Formula
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "fribidi"
-  depends_on "gettext"
   depends_on "glib"
   depends_on "glibmm@2.66"
   depends_on "harfbuzz"
@@ -53,6 +53,7 @@ class Synfig < Formula
   uses_from_macos "perl" => :build
 
   on_macos do
+    depends_on "gettext"
     depends_on "liblqr"
     depends_on "libomp"
     depends_on "little-cms2"

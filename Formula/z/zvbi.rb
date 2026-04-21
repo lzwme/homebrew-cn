@@ -17,10 +17,14 @@ class Zvbi < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "gettext" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
-  depends_on "gettext"
   depends_on "libpng"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "./autogen.sh"
@@ -29,7 +33,7 @@ class Zvbi < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libzvbi.h>
       #include <stdio.h>
 
@@ -46,7 +50,7 @@ class Zvbi < Formula
         vbi_decoder_delete(dec);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lzvbi", "-I#{include}", "-o", "test"
     assert_match version.to_s, shell_output("./test")
   end

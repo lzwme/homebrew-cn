@@ -2513,7 +2513,7 @@ Homebrew-homebrew-core/Formula/g/git-who.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-workspace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-xargs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-xet.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/git.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/git.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gitbackup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitbatch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitbucket.rb, Homebrew/homebrew-core, 1
@@ -6458,7 +6458,7 @@ Homebrew-homebrew-core/Formula/r/rush.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rust-analyzer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rust-parallel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rust-script.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/rust.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rust.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rustc-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustic.rb, Homebrew/homebrew-core, 1
@@ -8575,7 +8575,6 @@ Homebrew-homebrew-cask/Casks/a/ariang.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/arkiwi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/arm-performance-libraries.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/armory.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/a/around.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/arq-cloud-backup.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/arq.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/artisan.rb, Homebrew/homebrew-cask, 1
@@ -8946,6 +8945,7 @@ Homebrew-homebrew-cask/Casks/c/cashnotify.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/castr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/catch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/catlight.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/cavalry.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cave-story.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cc-switch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/ccleaner.rb, Homebrew/homebrew-cask, 0
@@ -10422,7 +10422,7 @@ Homebrew-homebrew-cask/Casks/font/font-d/font-delugia-powerline.rb, Homebrew/hom
 Homebrew-homebrew-cask/Casks/font/font-d/font-denk-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-d/font-departure-mono-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-d/font-departure-mono.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-d/font-devicons.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-d/font-devicons.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-d/font-devonshire.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-d/font-dhurjati.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-d/font-dhyana.rb, Homebrew/homebrew-cask, 0
@@ -13640,6 +13640,7 @@ Homebrew-homebrew-cask/Casks/m/mu-editor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mubu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mucommander.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mudlet.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/mujoco.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mullvad-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mullvad-vpn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mullvad-vpn@beta.rb, Homebrew/homebrew-cask, 0

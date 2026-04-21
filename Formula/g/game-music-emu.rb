@@ -1,20 +1,19 @@
 class GameMusicEmu < Formula
   desc "Videogame music file emulator collection"
   homepage "https://github.com/libgme/game-music-emu"
-  url "https://ghfast.top/https://github.com/libgme/game-music-emu/archive/refs/tags/0.6.4.tar.gz"
-  sha256 "f2360feb5a32ace226c583df4faf6eff74145c81264aaea11e17a1af2f6f101a"
+  url "https://ghfast.top/https://github.com/libgme/game-music-emu/archive/refs/tags/0.6.5.tar.gz"
+  sha256 "8531678502451c2cf04248cda45c8b4645e19fcfb63e6a7ec2549641c47bb392"
   license one_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  revision 1
   compatibility_version 1
   head "https://github.com/libgme/game-music-emu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8cad7f27befc7e783d32d9d69167f02612e161f6821af168960442067e93c3f6"
-    sha256 cellar: :any,                 arm64_sequoia: "0cc376bae52b30b1e0c72a44b69cb0a04e36da4378bb774f660a401f38adf2d8"
-    sha256 cellar: :any,                 arm64_sonoma:  "5f744556ffa8af626454d406f7139ced8a46c1e6a8cb50789c8848a47626e5a8"
-    sha256 cellar: :any,                 sonoma:        "8c403e2dbd363c1b5b72a24ebf8e7f994608a6657468b22ef7d3dc738935c214"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81c70c227ec71617513c94601116e8c1a40ccda60ac92c7785366814669042f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffc28bb91c6ca56f35eed5acc08c84808d8f54864952268c15b514e43f3c5960"
+    sha256 cellar: :any,                 arm64_tahoe:   "19b1c4f3047bfe80135bcafe84bbccb56b9771d36ecb7a5e02d3b9e1595fd395"
+    sha256 cellar: :any,                 arm64_sequoia: "0b676cefce47fae8276bbd21f3e446b95f2c87f065bfaf498db2950a404a33d2"
+    sha256 cellar: :any,                 arm64_sonoma:  "0b4a845baf5d9a8827eb9a87be3da1f187501641e5c7c0c732dca6a5c140a090"
+    sha256 cellar: :any,                 sonoma:        "9408ded8839fe3d477632fc55da1aa4b179100dad3ca8d993f7a957d5f4d734f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "390ae9dba17bc5ab1c6f97c482e75fe870c6647f42b5684be5aa67adb00ce5f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab8380ec3254fee092a5d3bc8b5c03bd794cdae031613ec3811fbe9db92d49d7"
   end
 
   depends_on "cmake" => :build

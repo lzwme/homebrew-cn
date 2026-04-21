@@ -8,28 +8,31 @@ class FluidSynth < Formula
   head "https://github.com/FluidSynth/fluidsynth.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e81a9f39d06a5607f737b1953da081d60e7eb599d892cddb54890b775a52eacd"
-    sha256 cellar: :any,                 arm64_sequoia: "dd49aa96b7043b155e51351afd5d600b83e2500722aaaa4b2369ebf3516777dd"
-    sha256 cellar: :any,                 arm64_sonoma:  "50259b32b99c46af71c0fba1964c176eebda485e9766c52c703fa1632000d403"
-    sha256 cellar: :any,                 sonoma:        "ca84e1e7a879bdb703da42ca4b279525daef5d68432ba52b4943d345ae431825"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fbf7d74d1e13bba9f4697d527678702e92c3c6357cef19e4ca0a85b87112883"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b64484abf95cd571885d34a86ac854adffaaaf6975249c212d677740752765cb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "611d13e2a55b197803b0450464e8217e62dc4744aa351559a36f6e8c183b897e"
+    sha256 cellar: :any,                 arm64_sequoia: "fe2f133e71a92a549b177b80ebc3ed78c7b88299fac0f6daad66725693a5905b"
+    sha256 cellar: :any,                 arm64_sonoma:  "f9bc81b28834d988e5779db9ccef8f2f68bad8679f6d34d47c7440da99bf8875"
+    sha256 cellar: :any,                 sonoma:        "c9ebb65c4fd49ebeb4143b46360836d0a2bdc09305b37ef1d171ee58e8115424"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cff48fe8a15e99dd281c6692c6fc66b463f864254fb0026f7309df88f5ae11f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b3defa741a14eaed3eedf0f5f18eea42a94ce4388be4040a68eb9842a548ca2"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "glib"
   depends_on "libsndfile"
-  depends_on "portaudio"
   depends_on "readline"
 
   on_macos do
     depends_on "gettext"
+    depends_on "portaudio"
   end
 
   on_linux do
     depends_on "alsa-lib"
     depends_on "jack"
+    depends_on "pipewire"
+    depends_on "pulseaudio"
     depends_on "systemd"
   end
 
@@ -58,10 +61,10 @@ class FluidSynth < Formula
       -Denable-oboe=OFF
       -Denable-openmp=OFF
       -Denable-oss=OFF
-      -Denable-pipewire=OFF
-      -Denable-portaudio=ON
+      -Denable-pipewire=#{OS.linux?}
+      -Denable-portaudio=#{OS.mac?}
       -Denable-profiling=OFF
-      -Denable-pulseaudio=OFF
+      -Denable-pulseaudio=#{OS.linux?}
       -Denable-readline=ON
       -Denable-sdl2=OFF
       -Denable-systemd=#{OS.linux?}

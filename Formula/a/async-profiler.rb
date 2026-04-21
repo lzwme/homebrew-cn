@@ -1,18 +1,18 @@
 class AsyncProfiler < Formula
   desc "Sampling CPU & HEAP profiler for Java using AsyncGetCallTrace + perf_events"
   homepage "https://github.com/async-profiler/async-profiler"
-  url "https://ghfast.top/https://github.com/async-profiler/async-profiler/archive/refs/tags/v4.3.tar.gz"
-  sha256 "50f65033df0b999d0ae80c82d09827b595ad06051406ff7ec322fd1a40c1d328"
+  url "https://ghfast.top/https://github.com/async-profiler/async-profiler/archive/refs/tags/v4.4.tar.gz"
+  sha256 "888483f6fc482b32dfc76dc9ecb254dc954c1e5c893de325a895b41e2f9bbbf6"
   license "Apache-2.0"
   head "https://github.com/async-profiler/async-profiler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a22cc696b639d326786fb71cd8a1dc121aba26962aaa87e5ec68057795edccc2"
-    sha256 cellar: :any,                 arm64_sequoia: "c339e4e5c3463a45ecdb4a93633854559e40ff128ba3eaa7dae2665935d8285f"
-    sha256 cellar: :any,                 arm64_sonoma:  "976d7a9057d97a490aaa95ea0e908f8066ce0629114cdc64f25ba4df7e7495b6"
-    sha256 cellar: :any,                 sonoma:        "eaa11bd51896193995a0902f7bc5ad698154169cc01920793d1270f95bce7fce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb5b1bb4f00674a12985f31b5aa79f9fd9a33f62b96a640c3b57bfdcfe877ba4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2b7eb1b4d1c8704e028f8e4ea609de3b94c84348da76d65d765b525a4904f93"
+    sha256 cellar: :any,                 arm64_tahoe:   "56d2adc45828051bcdd6fd6a2549fff196916dc6a2b548da3509ac69eb627244"
+    sha256 cellar: :any,                 arm64_sequoia: "a39fdee58eb4114f3682dd4f4cff62c9dbda2331c3dbabb99c30ffe39fafb52d"
+    sha256 cellar: :any,                 arm64_sonoma:  "4ea1630c71f5b51a727c9f08f202cc4afe8fc2d86cfabbd0aadb93df28ff4848"
+    sha256 cellar: :any,                 sonoma:        "3d69c4c9ab10e2fa4b6ad557c6eaa5ac464964af8eafc117f17e94cc78103acf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf8739df298c90ac9a73905323fa493bd19b7ddab6e24b9bafc31e854eed54e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f512a5fd52cc4120f2036d1a0254f732e9ea12e0652cab4895dee7c3dcd40c2"
   end
 
   depends_on "cmake" => :build

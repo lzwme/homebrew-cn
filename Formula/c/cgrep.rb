@@ -1,18 +1,18 @@
 class Cgrep < Formula
   desc "Context-aware grep for source code"
   homepage "https://awgn.github.io/cgrep/"
-  url "https://hackage.haskell.org/package/cgrep-9.1.0/cgrep-9.1.0.tar.gz"
-  sha256 "0bcdc712fcf21422a51338a7a152e3d3095343f595fd600f0e6e530b6565ecff"
+  url "https://hackage.haskell.org/package/cgrep-9.2.1/cgrep-9.2.1.tar.gz"
+  sha256 "066379b1d742595aad680e32acf1b950443c1891a05e0e64336f448044eefa57"
   license "GPL-2.0-or-later"
   head "https://github.com/awgn/cgrep.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b42f9383d5a41f744a18add208aafc128c66e2c92350b23d09eaab77ea5db7fb"
-    sha256 cellar: :any,                 arm64_sequoia: "6fc1f842532ccc160c04bc2eab3b9adad196b4ef96e6eb611b7ab79203dfdda3"
-    sha256 cellar: :any,                 arm64_sonoma:  "7d85747ed757e85ab4dae3aa4c75abef1fdebdf4a667c0ee5ac5fd5550b41128"
-    sha256 cellar: :any,                 sonoma:        "8753927f7c4b5d1319579cf37128e000e5b126ef2ff37b407f52b59290650b8f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e01e5f966e2a0f4a7bf75801e7de78663703e5b6c816553d6a038ea69f408718"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ca071d935a0beb72a598f0beef64be30482c475d5d373c025b0ca2bac3ec639"
+    sha256 cellar: :any,                 arm64_tahoe:   "cc287175e8bc20a925028e3b4d0939feb5e693116a0a0514f4bf3a6e2ff2d45a"
+    sha256 cellar: :any,                 arm64_sequoia: "0f9922f03e5efb62189cc6b64320f52bb244fc7c593f48190c4246d78192e243"
+    sha256 cellar: :any,                 arm64_sonoma:  "e131a6adb643d51cdefe5d20f2253e73eba15818d23f07a384ff85f50760aac9"
+    sha256 cellar: :any,                 sonoma:        "9d22c8855ab9676864f30fc331a8e2ab1ce2b6e848338a400d31937761722778"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a642dfd4b6e712012bb882ed1db8c3122ec3d886f496949bf7ae01d2a5501b0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4303cda845989c5979466ad0a79666b2cbcdda682927f697e8deaa1b8a8379a6"
   end
 
   depends_on "cabal-install" => :build

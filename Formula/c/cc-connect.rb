@@ -1,17 +1,17 @@
 class CcConnect < Formula
   desc "Bridges local AI coding agents to messaging platforms"
   homepage "https://github.com/chenhg5/cc-connect"
-  url "https://ghfast.top/https://github.com/chenhg5/cc-connect/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "b4823bcdf34273b4699df20903d8d1feda9f7e7397b5ca62b76d1ca0a1996632"
+  url "https://ghfast.top/https://github.com/chenhg5/cc-connect/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "5c03b6601f360e679b378cfcb68ad5d70aeb14a27b3d9597ee771b0800e1d4e2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d13fd07d466d45e8cd25868f6504ce42a618a930d38c635ec6f1a5811167ed3f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d13fd07d466d45e8cd25868f6504ce42a618a930d38c635ec6f1a5811167ed3f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d13fd07d466d45e8cd25868f6504ce42a618a930d38c635ec6f1a5811167ed3f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e6d275f0d176c8090c1b824a63f9c82950299a259fa7029c7376dd6fd2cab04"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a6c130abadcb9f875c7557181c98e99e26ac392d6002e0156a59bc1c00e495d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "031246092789fd55cfd14b85cc47312a12289036935e78c8c2d78a64fd6f354f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "026041e63d1e6739d5f685c2fd71063431cacee54040dd776db948e89a3f1589"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "026041e63d1e6739d5f685c2fd71063431cacee54040dd776db948e89a3f1589"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "026041e63d1e6739d5f685c2fd71063431cacee54040dd776db948e89a3f1589"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5cf84c7c853f73fd5cb4237cd0642a51fc1c6963e7d8e88ca7706069c8df52cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47d6c169e4ecca42574cfb6dd5401195d3f0c698573294a5a480c4b4fb808390"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16f299478e4d66561b11d873ba485dcd0b17f540e74bb6fa3c7b4dda9864e8ee"
   end
 
   depends_on "go" => :build

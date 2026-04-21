@@ -13,15 +13,15 @@ class Perl < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c38c4726d8051ec62909766bf22f9adc4eb58cfb5986508e9db0ab4ac62c9e82"
-    sha256 arm64_sequoia: "be4f87d55038181b37d0575cc078df330c69fd02830c9f88594b1862386f49f3"
-    sha256 arm64_sonoma:  "da40f848051fa1c6e32325a6e3fa0f9fd75b14f7fdb328ae4b7ab822e3ba534c"
-    sha256 sonoma:        "06a30da13092e77fe0bd4d7c82a6e24061d6f94db99d57f78f9e24a276decb38"
-    sha256 arm64_linux:   "4e40892b92c139702ac188ebf39cf2700b88717bea16277fcc9adec42413a773"
-    sha256 x86_64_linux:  "92d8ab5d61decdb5afde5e0abfeecb31a5adac7d8638e95d56daaf7248f0b6dd"
+    rebuild 1
+    sha256 arm64_tahoe:   "11266b9a2528911df242d82ec041ee91a50c3374d03c9401b558e521b5569916"
+    sha256 arm64_sequoia: "055da0dbe11d31788f13154fb01f7b5596e8450705bd4a1e54e799977d7bddaa"
+    sha256 arm64_sonoma:  "e9270cae03ec248b9910b33924cd522773d4494ed1da07a4fbc8bc70c48eeddd"
+    sha256 sonoma:        "78ee0a26f6650a15d49bc1e6586b91f9716981207059d511704d15f30882c63a"
+    sha256 arm64_linux:   "a2adf29ff516a10c5851c1da904cb033cb92f89c5ea8efee5600065d06f3d989"
+    sha256 x86_64_linux:  "036d3e8899b33c3c4f7dd9b69057f5dd522184a72750b212376d8fd5fc7d120f"
   end
 
-  depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL-3.0 restrictions
   depends_on "gdbm"
 
   uses_from_macos "libxcrypt"
@@ -50,13 +50,18 @@ class Perl < Formula
     ]
     args << "-Dusedevel" if build.head?
 
+    # On macOS, we can use Apple's system library to support DB_File module.
+    # On Linux, we explicitly exclude bundled DB_File to avoid opportunistic
+    # linkage to Berkeley DB. Dependents and users can install it from CPAN.
+    args << "-Ui_db" unless OS.mac?
+
     system "./Configure", *args
     system "make"
     system "make", "install"
   end
 
   def caveats
-    <<~EOS
+    s = <<~EOS
       By default non-brewed cpan modules are installed to the Cellar. If you wish
       for your modules to persist across updates we recommend using `local::lib`.
 
@@ -65,6 +70,13 @@ class Perl < Formula
       And add the following to your shell profile e.g. ~/.profile or ~/.zshrc
         eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
     EOS
+    on_linux do
+      s += <<~EOS
+
+        Bundled DB_File module was not installed. If needed, you can install it from CPAN.
+      EOS
+    end
+    s
   end
 
   test do

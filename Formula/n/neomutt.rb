@@ -18,10 +18,10 @@ class Neomutt < Formula
   end
 
   depends_on "docbook-xsl" => :build
+  depends_on "gettext" => :build
   depends_on "pkgconf" => :build
   # The build breaks when it tries to use system `tclsh`.
   depends_on "tcl-tk" => :build
-  depends_on "gettext"
   depends_on "gpgme"
   depends_on "libidn2"
   depends_on "lmdb"
@@ -32,11 +32,13 @@ class Neomutt < Formula
   depends_on "pcre2"
   depends_on "sqlite"
 
+  uses_from_macos "libxml2" => :build
   uses_from_macos "libxslt" => :build # for xsltproc
   uses_from_macos "cyrus-sasl"
   uses_from_macos "krb5"
 
   on_macos do
+    depends_on "gettext"
     depends_on "libgpg-error"
     # Build again libiconv for now on,
     # but reconsider when macOS 14.2 is released

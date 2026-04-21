@@ -1,18 +1,18 @@
 class Sendme < Formula
   desc "Tool to send files and directories, based on iroh"
   homepage "https://iroh.computer/sendme"
-  url "https://ghfast.top/https://github.com/n0-computer/sendme/archive/refs/tags/v0.32.0.tar.gz"
-  sha256 "92c5caa0f3ed3157a047cff7b3568e750764876a7958a36d2d8b865ff290992d"
+  url "https://ghfast.top/https://github.com/n0-computer/sendme/archive/refs/tags/v0.33.0.tar.gz"
+  sha256 "75ed1cbb040100dcc6bf28228c3393e00d5d4305c6c951bf5df374ccb63e1621"
   license "MIT"
   head "https://github.com/n0-computer/sendme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4397599e5969b001425f9342264304144fa22b442b2fc4ebb457cba4aaa2387"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75e3525335bfe957fb13470945e630ebdc14e734ce2b594caebc33a4982621e4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee5e79077a5287799aacd292a71079d880d62bc920df04009338f5b827e1bfcd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b8f7a3cc83247f6dee9a3fb78178ea5df97c5350775fe16b0b7f69febae10421"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "368a4258b15f6345c0ea09ce9da86844340f38c64f72dcc204e398f7c8789bdb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2c25cda1b0d48a054c515c60214e639877afaf2e1f3dd825baeac7f7b4c00f2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2fdaf77a8964a2b2ea7250bafb3f6851277b2f75a26ac404562aba4f37a0445b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c945e117916d9e326e7dba3ec97c9c3bc5d1208cef4052dea831b12a34d1d58"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8bfaf7570c3ff03201bb56dc66964f71339ef1dfa6bd46ebdc799e6e44795dd5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b7ab5d924cd9867d19fe91c331ce9fde00ac513753d0e289fd8db34e1bbe039e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7e4f78beef40a66c0e3b48a431ae178bf4da2814ea51f9889f8f453b88b2f65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40a412ec67288ba069701948c4ed327559037bf36da909d1c1dcfc12caa696f6"
   end
 
   depends_on "rust" => :build

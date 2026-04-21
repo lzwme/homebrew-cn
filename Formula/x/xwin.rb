@@ -1,17 +1,17 @@
 class Xwin < Formula
   desc "Microsoft CRT and Windows SDK headers and libraries loader"
   homepage "https://github.com/Jake-Shadle/xwin"
-  url "https://ghfast.top/https://github.com/Jake-Shadle/xwin/archive/refs/tags/0.8.0.tar.gz"
-  sha256 "e9671f13dbb0c4f5eeccaaf3d8406f198989e1e148942db2cf33c273e5767a3c"
+  url "https://ghfast.top/https://github.com/Jake-Shadle/xwin/archive/refs/tags/0.9.0.tar.gz"
+  sha256 "6878480d7a4126fb4390fe083ac0509bf43e4d284797e2ddd0a4a01fd614f35b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8a6670cf22f0c75ef89dad69374a5c0d77c148f86937dbf11fd9cebf1689892"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82e45aacb32a535ff473f1c8f10b1638d099f510c6e8c4901e8799017a1ea16e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35a2248f81f3f4e6fe9bba38491696d1aeb16615e9a0c2ae7a8eb974efa60c7b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0b282e5ecd683df4ca2ad0ee1e02decc0c4d2e0efcc0b2d6eb50901b5efbba8b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "adcb174309a3c7338015f5fb40b00d0eac2fb00641bc0d1e9e27781148f05601"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68b1dcaf8e145135c5a4bc8b7dcb60abd9f3de8cb79d4cda58da6ff82f1a586a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "985ce687c46b51744fcee0e62c1dc9099a36be3f533596addc8e62b908714a2b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dab5dab1635297f505374617e69f02b05df6ffd26797ea8c0cb6febb66d71fab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7d5721f59a623ef4d90a73872d001f10809e8be36fbb79285aeef5bd5303b4e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d3a803aa1c5d0a44ecd035d621655c0b6e2fffb77ffe00e839caab3dcdb28f0d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82b561aefd09e770b88fa4310b7b8e5ce469241fd53e34e91c7a77ebb2c2cb92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40f5ed6b41c2e68fd10bfb4cb0293b1866e2f045fdc34f6b1e958af7f34a18ce"
   end
 
   depends_on "rust" => :build

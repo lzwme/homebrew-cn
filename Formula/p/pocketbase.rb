@@ -1,17 +1,17 @@
 class Pocketbase < Formula
   desc "Open source backend for your next project in 1 file"
   homepage "https://pocketbase.io/"
-  url "https://ghfast.top/https://github.com/pocketbase/pocketbase/archive/refs/tags/v0.37.1.tar.gz"
-  sha256 "f1c81277aea92d30195b5cd6060b627da40818604fb2d905dfa990b2a4bc59f6"
+  url "https://ghfast.top/https://github.com/pocketbase/pocketbase/archive/refs/tags/v0.37.2.tar.gz"
+  sha256 "ae65afcd77d10ace558042d4611ec37a264500cfdb66f94f54a2f429ab93ba1d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03ee94611066f5f7b376dbb5f65e40c7b7bf5155b16c4cbf5a1db9277b36811c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03ee94611066f5f7b376dbb5f65e40c7b7bf5155b16c4cbf5a1db9277b36811c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03ee94611066f5f7b376dbb5f65e40c7b7bf5155b16c4cbf5a1db9277b36811c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d9fb5cb7579a30fe7902b2b2583941ccdc5e038192d6cf850d9b2fcbbde44e1b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb3dd5e9cd988f6ab8c947726b768d3669f8ae7f22369191aae0a35fb01a1cf1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce81b22e4b9c09d1d623d1140dc7c72f3e315c37d42724bd016f38634215a8bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac13d34711304271d1080d9a7e4da582bc41192449747a17cb77203d82cd1a38"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac13d34711304271d1080d9a7e4da582bc41192449747a17cb77203d82cd1a38"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac13d34711304271d1080d9a7e4da582bc41192449747a17cb77203d82cd1a38"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f042493bc5ca702f1f4f1efdbc9551fcfb5067125f651081ce3614bb2adcb7b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "73e7eaae4f1b37b09eb6e89b59bb3605227920dad18fe9f6aea740bb2aae7397"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "990bf1981ae33fd8f89d4df4b8600bc195b5d5197d7f39ced406a711bb296e78"
   end
 
   depends_on "go" => :build

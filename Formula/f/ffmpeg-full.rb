@@ -7,6 +7,7 @@ class FfmpegFull < Formula
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   # Passing `--enable-version3` changes the license to GPL v3+.
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/FFmpeg/FFmpeg.git", branch: "master"
 
   livecheck do
@@ -14,13 +15,12 @@ class FfmpegFull < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "a682623c2212746be339ecba18fd6f889de4ae9ed9b198d4a165fba7fc975dbc"
-    sha256 arm64_sequoia: "87c11a185968cf36f74231461c89c99e5190ea8f0e545a63c8d58e9e2b48aef5"
-    sha256 arm64_sonoma:  "ac21c7686e4d4b0f1f4bd838140b04eabd972106337d57210c57957b5943ed07"
-    sha256 sonoma:        "d06b9e91cd44842c21d4dafa2e2695c208052c9ab4ede50baf7d2a95848c3bb0"
-    sha256 arm64_linux:   "67f69ca1409acc4fa707205bbdb5220ab6d9c56d2dc6b91bc54b11b44e446be0"
-    sha256 x86_64_linux:  "a97e9104ceb0a4fdb81fb817816d63642431b0ff450741eb8ba1c5879b106ffa"
+    sha256 arm64_tahoe:   "035e0bae1c35323e77200ab23c654935e55a2b9b77d1eaa2cf05b3bec3ba7ffc"
+    sha256 arm64_sequoia: "72fc7dae34506e0b830858faaaaede2adbce505230f802aceb419708ac7ecfd9"
+    sha256 arm64_sonoma:  "d61d3b77d33179f33cf48bbdc0b65d9e0b36464b316ccc0ce3b85fb910ae84cb"
+    sha256 sonoma:        "b09898000eff8b5be78559aff91de9945344576439fa57dd077f30e749b93b0e"
+    sha256 arm64_linux:   "897332552f7d444bd2781dbb0b37d2ff3023415f79f208cd0e0166441a4f6b80"
+    sha256 x86_64_linux:  "919d2ddc0c10a39acacaf5595eb48cc1321c4fc440ccc9e4bfbeffec5352e980"
   end
 
   keg_only :versioned_formula

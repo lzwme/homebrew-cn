@@ -31,10 +31,14 @@ class Redshift < Formula
     depends_on "libtool" => :build
   end
 
+  depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "pkgconf" => :build
-  depends_on "gettext"
   depends_on "glib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     args = %w[

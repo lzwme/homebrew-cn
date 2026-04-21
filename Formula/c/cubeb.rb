@@ -32,6 +32,11 @@ class Cubeb < Formula
     url "https://github.com/mozilla/cubeb.git", branch: "master"
 
     depends_on "cmake" => :build
+    depends_on "rust" => :build
+
+    on_linux do
+      depends_on "speexdsp"
+    end
   end
 
   depends_on "pkgconf" => :build
@@ -44,6 +49,7 @@ class Cubeb < Formula
     if build.head?
       system "cmake", "-S", ".", "-B", "build",
                       "-DBUILD_SHARED_LIBS=ON",
+                      "-DBUILD_RUST_LIBS=ON", # https://github.com/mozilla/cubeb#supported-backends--status
                       "-DBUILD_TESTS=OFF",
                       "-DCMAKE_INSTALL_RPATH=#{rpath}",
                       *std_cmake_args

@@ -1,8 +1,8 @@
 class Telegraf < Formula
   desc "Plugin-driven server agent for collecting & reporting metrics"
   homepage "https://www.influxdata.com/time-series-platform/telegraf/"
-  url "https://ghfast.top/https://github.com/influxdata/telegraf/archive/refs/tags/v1.38.2.tar.gz"
-  sha256 "8f67651b9ff690593b57a8ff7703dbf9764bb1a356433503a4d9a27a69d26321"
+  url "https://ghfast.top/https://github.com/influxdata/telegraf/archive/refs/tags/v1.38.3.tar.gz"
+  sha256 "83a8119b09830eb7d9167563add221335d0f59a22499919741ed539697a6fa45"
   license "MIT"
   head "https://github.com/influxdata/telegraf.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Telegraf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9cae292d3a28a8cd38d15a2c887db85b655c9a2c5575d042089788e22ce2c091"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3d2cf2c562a44204d77918d18506d6d8e4df1d4f8664e9be374b0ad4b37fecd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "539716d98b748f65db1017e69bc33798d6451b13ac46e1cf072488e3b7346b38"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b7b82dc1f31f03eb41d1fae0a88ee1c2e1152e37e840eda12cf3719cdce82de9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cfe47784a27d9f45daf10f303c7e02a93f6945df36863ca616b02702b45a81d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f590a048a17ba447f3c67c54f6e405d5fa88658f5572a12d7d28af2fdd1a6eb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c141ebbc61a52387d12fa6676f0d1aff01d4ec98f09f6a78c1cd79cb94cebcd4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b85d87895ce0d392935b46eb380caa966e858bbe17c1080aa13f30e5bd952bd8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c435fa96170f48c385ec8d91caf1ec5cd0b78a43f35817b641906868c73f7073"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6ae8d39da2c88142b5cf10fb9c6c90b1cf432c1446dcc0d4c60d0a9ab93e5b33"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2e80e03df7a6da075900d543f64abe4e9176b2cabe197ef9becb33f4511b288"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b5d218f091e6fdd3fa56456b5409df6e936623422e9da45114204d91dedd34a"
   end
 
   depends_on "go" => :build

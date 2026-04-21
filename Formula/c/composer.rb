@@ -11,21 +11,20 @@ class Composer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a80f6f3a1c84e2595cd19eae297e3b7c9024f62cf618890b9ae1e7ac5c1b23a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2a80f6f3a1c84e2595cd19eae297e3b7c9024f62cf618890b9ae1e7ac5c1b23a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a80f6f3a1c84e2595cd19eae297e3b7c9024f62cf618890b9ae1e7ac5c1b23a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df6be3d8b4c58f2bf96e0b57c51b67def1f6223978b289d7a7f33fe4bd3cfa55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "df6be3d8b4c58f2bf96e0b57c51b67def1f6223978b289d7a7f33fe4bd3cfa55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df6be3d8b4c58f2bf96e0b57c51b67def1f6223978b289d7a7f33fe4bd3cfa55"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2ccf50a27ea0643772b63a056801047388f211c6a9238b4651c47e8e5d96717"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2ccf50a27ea0643772b63a056801047388f211c6a9238b4651c47e8e5d96717"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2ccf50a27ea0643772b63a056801047388f211c6a9238b4651c47e8e5d96717"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8b05f880c3c5ee1171aa7859e3969ec4d314eda26fd27afc54d2f60421573b99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b05f880c3c5ee1171aa7859e3969ec4d314eda26fd27afc54d2f60421573b99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b05f880c3c5ee1171aa7859e3969ec4d314eda26fd27afc54d2f60421573b99"
   end
 
   depends_on "php"
 
-  # Keg-relocation breaks the formula when it replaces `/usr/local` with a non-default prefix
+  # Keg-relocation breaks the formula when it replaces the prefix with a non-default value
   on_macos do
-    on_intel do
-      pour_bottle? only_if: :default_prefix
-    end
+    pour_bottle? only_if: :default_prefix
   end
 
   def install

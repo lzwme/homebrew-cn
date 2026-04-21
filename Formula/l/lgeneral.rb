@@ -15,9 +15,12 @@ class Lgeneral < Formula
     sha256 x86_64_linux:  "feadf3058a4c903237b6cf8d09b61f97ba5fb5656a6ff3819f96660dd0d4400b"
   end
 
-  depends_on "gettext"
   depends_on "sdl12-compat"
   depends_on "sdl2"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     # Applied in community , to remove in next release
@@ -25,7 +28,7 @@ class Lgeneral < Formula
 
     args = ["--disable-silent-rules", "--disable-sdltest"]
     # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     system "./configure", *args, *std_configure_args
     system "make", "install"

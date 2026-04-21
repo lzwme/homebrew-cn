@@ -30,7 +30,6 @@ class Snapcast < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "avahi"
-    depends_on "pulseaudio"
   end
 
   def install

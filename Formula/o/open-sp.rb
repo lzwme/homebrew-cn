@@ -28,7 +28,10 @@ class OpenSp < Formula
   depends_on "ghostscript" => :build
   depends_on "libtool" => :build
   depends_on "xmlto" => :build
-  depends_on "gettext"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   # Apply Gentoo patch to fix build error: ISO C++11 does not allow access declarations
   patch do

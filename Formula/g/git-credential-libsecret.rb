@@ -1,8 +1,8 @@
 class GitCredentialLibsecret < Formula
   desc "Git helper for accessing credentials via libsecret"
   homepage "https://git-scm.com"
-  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.53.0.tar.xz"
-  sha256 "5818bd7d80b061bbbdfec8a433d609dc8818a05991f731ffc4a561e2ca18c653"
+  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.54.0.tar.xz"
+  sha256 "f689162364c10de79ef89aa8dbf48731eb057e34edbbd20aca510ce0154681a3"
   license "GPL-2.0-or-later"
   head "https://github.com/git/git.git", branch: "master"
 
@@ -11,12 +11,12 @@ class GitCredentialLibsecret < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "eed886c74cb45001e81877c24d505796fa38062037a577bcf41f83aee4ee9756"
-    sha256 cellar: :any,                 arm64_sequoia: "e0c5a9c7835cc58d38ceb8f7ff459509f6034022d20adc3ce0dbef5024558611"
-    sha256 cellar: :any,                 arm64_sonoma:  "6b788ce3a12b46ac47f0a64b4b784f16bd814a01f10d5183fd82b378ad7783b2"
-    sha256 cellar: :any,                 sonoma:        "e47de0d5a84d18dfe49a2a7f8036691b99f314015dd4eade43b039cfa941b296"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d7ecf11c0883ca061d1559e9af07e91fe680b14a10c2e9e41ab8b7780a0ce0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "226b3dd8f8599b172a42b7ca335e3c38f65bed3c8828a0c3f6e30a203dff7817"
+    sha256 cellar: :any,                 arm64_tahoe:   "60dda60ed23adbd2cef8010ae0d38691e639e2b0f05baee72464bfa4960954ab"
+    sha256 cellar: :any,                 arm64_sequoia: "fa4a6ddd91c846890a75391fee75882b9045bb8394753683dffa3064603de05e"
+    sha256 cellar: :any,                 arm64_sonoma:  "314221fc285e619d14f6a5198b563143f21b1c0c9978b449993903e88fdb79b1"
+    sha256 cellar: :any,                 sonoma:        "ce042515f2c7d83297e8a94862438e7459c533800d0b352d689648e94faac998"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c752d6dacb824652db503fe3a36861e3d58ff6791622d97c0661f34ee38a62e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c292305d48c6c1ec599c3421ed7a4379b6b508679df5e1b82df1e2409213218"
   end
 
   depends_on "pkgconf" => :build

@@ -1,8 +1,8 @@
 class Ejabberd < Formula
   desc "XMPP application server"
   homepage "https://www.ejabberd.im"
-  url "https://ghfast.top/https://github.com/processone/ejabberd/archive/refs/tags/26.03.tar.gz"
-  sha256 "584b9d43a1f67e929fdb08fa7429f359fabc022923aca311666b1073ed709a52"
+  url "https://ghfast.top/https://github.com/processone/ejabberd/archive/refs/tags/26.04.tar.gz"
+  sha256 "77deb1053978ae9790f909b7b573ac61c6b94d7c465a84c5b56568292d49e47d"
   license "GPL-2.0-or-later"
   head "https://github.com/processone/ejabberd.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Ejabberd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b440c79f05b5cfa0bc7d6d855716cba0c2ae2a3605ac0ec2814d364a6aac7ded"
-    sha256 cellar: :any,                 arm64_sequoia: "8f224288b9a94c60615169c46fe162d2e6804831ba5f68ec5ba7e015abe91dd5"
-    sha256 cellar: :any,                 arm64_sonoma:  "bce339940797be51a1f1b0b94acc0e4205103870930f3a1417d54276fe30ca62"
-    sha256 cellar: :any,                 sonoma:        "6335a60927919311572936b8ac7b374a4545f9a3b734573fadd9b0278a132758"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebf0f8934a281d5ea9eac7cda328af2cd7f7fc5a503d2ba14bad156a12f94e6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7edfd5b829a9e4db6d611eedb3e43e14b63d67f81019b1ce8b8b927a872bc3b3"
+    sha256 cellar: :any,                 arm64_tahoe:   "cf0674ca2aa17c798ac60e86f0068a88894e9dfb9978cb687865054826eabdc5"
+    sha256 cellar: :any,                 arm64_sequoia: "cf0a301efd94385a5e6e738068e7681e21e608e0a62e5dbaf6e772a13524fef5"
+    sha256 cellar: :any,                 arm64_sonoma:  "f88dc66e2e13e23c6370882ed7569cf29d68db732d86a4104249feabacca9051"
+    sha256 cellar: :any,                 sonoma:        "3cc15ca3bb936daa310e87f2fb08e8361140db3e2689c02c5002e97d16fb4013"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a95ecbe57c11772a48c521719684a8b17a3c6319081977f9407cf5edd1a1348b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e43c4b9834b95958ae4f7671f6d09f13ad985ac95567e3bcab734f92790fe0f"
   end
 
   depends_on "autoconf" => :build

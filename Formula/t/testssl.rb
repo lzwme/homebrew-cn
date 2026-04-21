@@ -7,10 +7,11 @@ class Testssl < Formula
   head "https://github.com/testssl/testssl.sh.git", branch: "3.3dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6f6a96cacd2d34621cb61a355004e5d9af4686bcb5e693df3b2f2863258a7561"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "ce2cda77f85f1288f3cdd3aa1c33631adc7d1d83910e61d12168740a7b190fe1"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "bind" => :test # can also use `drill` or `ldns`

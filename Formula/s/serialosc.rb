@@ -17,7 +17,6 @@ class Serialosc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "be67991d5ec342af372b09090ecdc048e178960b31795f438eac84f3090b3c54"
   end
 
-  depends_on "confuse"
   depends_on "liblo"
   depends_on "libmonome"
   depends_on "libuv"
@@ -25,7 +24,7 @@ class Serialosc < Formula
   uses_from_macos "python" => :build
 
   on_linux do
-    depends_on "avahi"
+    depends_on "avahi" => :no_linkage # dlopen("libdns_sd.so")
     depends_on "systemd" # for libudev
   end
 
