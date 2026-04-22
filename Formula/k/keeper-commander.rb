@@ -19,9 +19,9 @@ class KeeperCommander < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d204f9017c647e078bbbcb22977e7527b363eece47a36c41301922fafe818a20"
   end
 
+  # `pkgconf` and `rust` are for bcrypt
   depends_on "pkgconf" => :build
-  depends_on "rust" => :build # for bcrypt, keeper-pam-webrtc-rs
-
+  depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "ffmpeg"

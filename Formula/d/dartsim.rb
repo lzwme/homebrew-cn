@@ -4,14 +4,15 @@ class Dartsim < Formula
   url "https://ghfast.top/https://github.com/dartsim/dart/archive/refs/tags/v6.16.7.tar.gz"
   sha256 "7c8c76126db31046c1d5e40267645e3a78199c1b88ae4f6346b18b97eee000dd"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
-    sha256                               arm64_tahoe:   "dcbf0408267da7cfe6be73ac03fde0da400b87252135e36d6c4ac96d7aa15891"
-    sha256                               arm64_sequoia: "5a9c0ba4cd92654dc9b1e6c38492685d9dfa3b8afc370448ca9d3628ee3f2f1f"
-    sha256                               arm64_sonoma:  "d93ccff5a41c88fc87462b11334897632f7392876e66000c81959ed272de75f3"
-    sha256                               sonoma:        "f526a59eb77d8f16f7fbba5f1a2ab47c8c1396d1f14f84cfe6c07bec1681025e"
-    sha256                               arm64_linux:   "2bd1c628019da80cd34a8a09a492d7e770540cf6f78500588666ef1728ba694f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a2caf269b29404c8bf9329963183b0eea63d459fe0bd04aa7f310342b965838"
+    sha256                               arm64_tahoe:   "1439eed5d80a635cf02292a32421c6a9d325d0bdab1b739f05732d8da414810a"
+    sha256                               arm64_sequoia: "d5710fe0b17b24c06fc5d5123593f7f5724a35ff2924baacba8e22558906c42b"
+    sha256                               arm64_sonoma:  "907f4e1ce2c81fe6242cf426bdc2ff85338933ec69d53f6de562ecb775cdf768"
+    sha256                               sonoma:        "09b997609733c28bab0bcfc7ee0f939f171f207fdd5a5e09e319d1d66acca08a"
+    sha256                               arm64_linux:   "d3017b0473232f5182a0ca6f85c05eb5dd53ea4410f79460af5d4cb53002e0cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00543555293aa43efe252cfac29a7b088130afd79237c13210b20008d13e9687"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -1,17 +1,17 @@
 class YuqueDl < Formula
   desc "Knowledge base downloader for Yuque"
   homepage "https://github.com/gxr404/yuque-dl"
-  url "https://registry.npmjs.org/yuque-dl/-/yuque-dl-1.0.83.tgz"
-  sha256 "998a3339716d7cee76591d5a208ca22ea119e32384ac1dbc70a9b6f98413cc3b"
+  url "https://registry.npmjs.org/yuque-dl/-/yuque-dl-1.0.84.tgz"
+  sha256 "c7868454ed6ff486ee1ef5261003504dd304174ef4914bf787bc3f70acfcd1f9"
   license "ISC"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0880a8d376bcacb4d1855583b489cbb657114a5092a6e18c2b1f4678d7ebfcd2"
-    sha256 cellar: :any,                 arm64_sequoia: "97a9903bf2a8885e75388846eedf37eb033b6faa4f13e5a4dd687c16487d5460"
-    sha256 cellar: :any,                 arm64_sonoma:  "97a9903bf2a8885e75388846eedf37eb033b6faa4f13e5a4dd687c16487d5460"
-    sha256 cellar: :any,                 sonoma:        "c42cc4e4a72e86cb9e5d48153c91f7155a5553160ddd9c04063c2818a9f0ca76"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0848bc6e84557947d7e7e674479b8e61b8e12bfc455f8e227d1da42d03ef831"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e4dc3351c18aa9dc2a86132a922900dc8590b55ebd7399c5fd30f6937e3a304"
+    sha256 cellar: :any,                 arm64_tahoe:   "8f37af702e8ddbe1ed3cf1dea132d843b898562e1e467c8aa226ba6809ff2d3b"
+    sha256 cellar: :any,                 arm64_sequoia: "b7ccced3ec9c2678bbf06a19bafb7f59ddbc1f567792ed90bef84bd1460477ad"
+    sha256 cellar: :any,                 arm64_sonoma:  "b7ccced3ec9c2678bbf06a19bafb7f59ddbc1f567792ed90bef84bd1460477ad"
+    sha256 cellar: :any,                 sonoma:        "961c0a80da9238c1e32a7896fa68ac25decbb0f250d1a6c759c1f5d6f5693bf4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3490df9bc7e06c529dc73a42bf5a19583b3b143bea600b6876914f966d7ffe67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30a07b2a10ca14a4008880c1cd7e6a7df79c4f2f42d1fec69c10e889eb4cdc07"
   end
 
   depends_on "node"

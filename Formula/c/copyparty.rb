@@ -16,9 +16,11 @@ class Copyparty < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0af848219a0f58ced0960b59492f7d1b9555a0fe5b0481598602b3849272e019"
   end
 
+  # `pkgconf` and `rust` are for bcrypt
   depends_on "cmake" => :build
   depends_on "ninja" => :build
-  depends_on "rust" => :build # for bcrypt
+  depends_on "pkgconf" => :build
+  depends_on "rust" => :build
   depends_on "cryptography" => :no_linkage
   depends_on "libsodium"
   depends_on "pillow" => :no_linkage

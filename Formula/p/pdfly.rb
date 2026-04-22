@@ -17,8 +17,9 @@ class Pdfly < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "547c09d0a4e20b09180402829968b23df3620449f1ad746e183ce2cab18a6c36"
   end
 
+  # `pkgconf` and `rust` are for bcrypt
   depends_on "pkgconf" => :build
-  depends_on "rust" => :build # for bcrypt
+  depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libsodium"

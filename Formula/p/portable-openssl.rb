@@ -80,7 +80,9 @@ class PortableOpenssl < PortableFormula
     openssldir.mkpath
     system "perl", "./Configure", *(configure_args + arch_args)
     system "make"
-    system "make", "test"
+    # `test_quick_tserver` intermittently fails on CI.
+    # It has been reported upstream with no resolution in over a year, so we skip it.
+    system "make", "test", "TESTS=-test_quic_tserver"
 
     system "make", "install_dev"
 

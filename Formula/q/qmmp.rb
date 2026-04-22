@@ -10,19 +10,19 @@ class Qmmp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d49b214fc2b13be18ddd9a7374c754c8a2e4a6b091e88b75d66c2ca6082a2827"
-    sha256 cellar: :any,                 arm64_sequoia: "7191a25f7ac9e6050a382bc6ebd1d265dc404b6324694e07d0c732918aa4bbe1"
-    sha256 cellar: :any,                 arm64_sonoma:  "a90d723e7ce4def58f6739f2bfb754608f3681469f74ad8cc6006af6868f1cab"
-    sha256 cellar: :any,                 sonoma:        "b3e3c1db669d2fdfec4956afa13097e62f922a45bcd26eae3b3fcfab0aa6d87f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f01f6081988932670099c0a5d6af75d726b89aa9ff396564af76190db2c0b0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d17f1c0d0996c3a60a5259d32be95e8f37bc356efa5d3b69133ae0f30f508ba1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "9d03ff5bfcc0fbba96e84e791d03ba977b65cfc121436b1d66c05381a5e70dc0"
+    sha256 cellar: :any,                 arm64_sequoia: "6cd2fb64ba6b2b840bc0afb65a42d711242b82afba083e1d845a9c9ead80e530"
+    sha256 cellar: :any,                 arm64_sonoma:  "c79c9a4ba9e420423177ea92934fbe20c515521a156d5b42486799c4e6cd3a08"
+    sha256 cellar: :any,                 sonoma:        "29615da1ed9e7311f7199f881eac6ff69783c70e201ff6d3a0b53db50d858b96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9db1616a8dc11b5b89dd45f8925a5548b48572bc559415c91cb1060dc82a351b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fb506ef7761e01022e4b3943be52d9ca5e0e9860f764b01d8361e512c0f9e54"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "qttools" => :build
 
-  # TODO: on linux: pipewire
   depends_on "faad2"
   depends_on "ffmpeg"
   depends_on "flac"
@@ -68,6 +68,7 @@ class Qmmp < Formula
     depends_on "libx11"
     depends_on "libxcb"
     depends_on "mesa"
+    depends_on "pipewire"
   end
 
   resource "qmmp-plugin-pack" do

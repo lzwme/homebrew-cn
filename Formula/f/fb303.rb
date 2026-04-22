@@ -1,19 +1,19 @@
 class Fb303 < Formula
   desc "Thrift functions for querying information from a service"
   homepage "https://github.com/facebook/fb303"
-  url "https://ghfast.top/https://github.com/facebook/fb303/archive/refs/tags/v2026.03.30.00.tar.gz"
-  sha256 "b7193385301d8aa64dc8bf145f5e8990ed5ac34c566076f91bc35cdffb0e1d4d"
+  url "https://ghfast.top/https://github.com/facebook/fb303/archive/refs/tags/v2026.04.20.00.tar.gz"
+  sha256 "28e94e387bcb5fc8d82cd6dc050aba40067dfd6a26aa157eabbde1ca5eadc414"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/fb303.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "386da334bd7bb178f71f3a84c421ba71afd60a8dbb74a741da1c5afe6f2bca6e"
-    sha256                               arm64_sequoia: "ec232834087010f944f20634c9f8f5b6d6aa410dc577418727183c5ea0b0dd53"
-    sha256                               arm64_sonoma:  "7c105f2f3e5c26823572178803d6af9860cb678057579e9c78c34a1304f23734"
-    sha256 cellar: :any,                 sonoma:        "ad0261048457fb1b0ea494bb8271bc1db1f2490998e8216e6acbb181d101a94c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10bf39a9ccb045d70655b2dbe69d7214972887c85610a22c9a12c1921e0f6867"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d99a7e732a341dec45b478fafb89f051554e38d0001336e2f0a4a6e6111a851e"
+    sha256                               arm64_tahoe:   "dd79ee892bbffd2a2355498e0cad26c784f39da01d83a53bd7ca72cb77aa8512"
+    sha256                               arm64_sequoia: "7890c7f5dd09c3cdb1fa291cf120086f9537f346ef5a10552aa83dbc2f2dafcf"
+    sha256                               arm64_sonoma:  "f6669cd8046eac8b881c75d33909a94140110cdd8168e28592eb16dee456fdf9"
+    sha256 cellar: :any,                 sonoma:        "8d4aaae6b0844267ea314cb1daea21d6f3db732f3c3ba6bc88b678840ce17adc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1f8f2247b6fa7be125341f22dcc5382f758639c0abe3636587b18135105dd57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f0f1e0ebe5ef37454c0066dde027f379f706552ab56399d4b92a72fcff9ae18"
   end
 
   depends_on "cmake" => [:build, :test]

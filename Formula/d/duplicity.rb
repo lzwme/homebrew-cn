@@ -22,8 +22,10 @@ class Duplicity < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "73160d432f61287aa672934080b32a00d6545e7deeea796bd38d4d3c4aea1780"
   end
 
+  # `pkgconf` and `rust` are for bcrypt
   depends_on "gettext" => :build # for msgfmt
-  depends_on "rust" => :build # for bcrypt
+  depends_on "pkgconf" => :build
+  depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "gnupg"

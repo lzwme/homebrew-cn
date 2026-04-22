@@ -17,7 +17,9 @@ class Fabric < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdb1381b5b253e567f4dbba55be51ef0d83f14c85ce437f085ad558524fdc421"
   end
 
-  depends_on "rust" => :build # for bcrypt
+  # `pkgconf` and `rust` are for bcrypt
+  depends_on "pkgconf" => :build
+  depends_on "rust" => :build
   depends_on "cryptography"
   depends_on "libsodium" # for pynacl
   depends_on "python@3.14"

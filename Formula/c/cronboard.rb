@@ -16,6 +16,8 @@ class Cronboard < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "466296731f527c26b805381692901d480a34af428b4f6caa8476634928676125"
   end
 
+  # `pkgconf` and `rust` are for bcrypt
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "cryptography" => :no_linkage
   depends_on "libsodium"

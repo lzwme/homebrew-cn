@@ -1,18 +1,18 @@
 class Valabind < Formula
   desc "Vala bindings for radare, reverse engineering framework"
   homepage "https://github.com/radare/valabind"
-  url "https://ghfast.top/https://github.com/radare/valabind/archive/refs/tags/2.0.0.tar.gz"
-  sha256 "bb859845b57b1d842c9d2ae0229bc49611be90a9cd3f14927ff96836799c6b59"
+  url "https://ghfast.top/https://github.com/radare/valabind/archive/refs/tags/2.1.0.tar.gz"
+  sha256 "8a9ec9752fc64e589f6d48a0bcbdc91d0edf5e90663d9077daceb4eefa31447f"
   license "GPL-3.0-or-later"
   head "https://github.com/radare/valabind.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "408b48cd4790aa704edcefbe939264dd64fdf41fed8bb1f928315e05a43690d6"
-    sha256 cellar: :any,                 arm64_sequoia: "6b516510be85c25b63567eb58abd0dc102864421fb16cbb68c44cbb83507ff13"
-    sha256 cellar: :any,                 arm64_sonoma:  "c03c17786b11f5b8c1f347788622662ddb812c9ccb4416ca4b4dc716439ace38"
-    sha256 cellar: :any,                 sonoma:        "e329783601f0f9de58ad1bc09f0f853f9bc82c77a158c623621f1fe910a60fc3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "70eeb8a4096d887d7196cb2416323666549c257c9e6a52971a00970afd7a70cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a2ec9556e850ecd2219928a9d5d365871e8b721ae6a1e3930a33032151555ea"
+    sha256 cellar: :any,                 arm64_tahoe:   "96644c5f33f86c6ede04624797bab4dc30b9c3b13437307749cd7c995023dd7a"
+    sha256 cellar: :any,                 arm64_sequoia: "a0ab6a915e8f5d8f4335c97b059775eb6dbe465f5d9cb856383a82adef6a8182"
+    sha256 cellar: :any,                 arm64_sonoma:  "87f6095868b5e55bca86b0da90c6d2a752e39d3cbb25f9821288c61036e9d764"
+    sha256 cellar: :any,                 sonoma:        "0d56e665c0b9323dab09738d8ace9494c8b390ff5456e058bc65ef7a1f05009b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e14ea38be553a7a0bc77d84575a0cf94a30b0ecfdad6a8597f7739ffbdf81a5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ed2b873a26f57eb8ed395e320866f917f7b7d0ac7d666695dd80cf4930769a6"
   end
 
   depends_on "pkgconf" => :build

@@ -1,19 +1,10 @@
 class Dumpling < Formula
   desc "Creating SQL dump from a MySQL-compatible database"
   homepage "https://github.com/pingcap/tidb"
+  url "https://ghfast.top/https://github.com/pingcap/tidb/archive/refs/tags/v26.3.0.tar.gz"
+  sha256 "f8ef3a5f6d98fd04670aac7c9170c8a0bb0f3a773593244da046e221b6290580"
   license "Apache-2.0"
   head "https://github.com/pingcap/tidb.git", branch: "master"
-
-  stable do
-    url "https://ghfast.top/https://github.com/pingcap/tidb/archive/refs/tags/v8.5.6.tar.gz"
-    sha256 "6d06151f0862cc43ae6d591d004924375477dcd89b913233d666b9853c4ac9cd"
-
-    # Support Go 1.26: https://github.com/pingcap/tidb/pull/66254
-    patch do
-      url "https://github.com/pingcap/tidb/commit/f641265e809082c88161f92d5c38cb6caa700ed3.patch?full_index=1"
-      sha256 "3484b5c03bc2169f5408d9f95776b3f57a4c6bb6bc7a01cfa50e2da00494821d"
-    end
-  end
 
   livecheck do
     url :stable
@@ -21,12 +12,12 @@ class Dumpling < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "47a0608569387952d7081dbc9e1be7552a16fbe3da6800b5a576117c49318896"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac4ebd422dd88eaf70c134551585fcc5aa6190dd9675198175dc6dd7f716d066"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1d81f8f6344627d4f8fcf37103d49dbba982ff38b5e6c436c5cfe44f1e9418f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c46ed2b051dbbd7950f93462a05bd0ac424400895a6dc952adc33f764e96dae9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10601e1d84649f569cad52c31ea3b530aa8e4db6342432c54b72b32b57988e75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05944c8623d9db656061717df24f269b5fd918ca44b2a6c34c0118c5c4d746f4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d8250ba9c2dbb1a383d39229356a42875462a5f5ddc2e4d910b4776f9484374"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12b702610835422d9a57705ee2eb8a9addbe84e8ec292b8cec9abdada12e2516"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "758f62647dc639f9dc3ccacd53511560fe81a90d2c9f2eedff89ae94bebc220a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a021f74123efe7e6765f39c4bead2548e6269dd556b97606b8ecf6784fc5e221"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "05b11f99e282135fce5589e663b816ff92a861920c432f560a8a1cbf1c89aab5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ffeb5b4bcc71ade151f7e74939ac736be7713a4df56110f049a0a8a50176ee8"
   end
 
   depends_on "go" => :build

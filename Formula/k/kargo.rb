@@ -1,18 +1,18 @@
 class Kargo < Formula
   desc "Multi-Stage GitOps Continuous Promotion"
   homepage "https://kargo.io/"
-  url "https://ghfast.top/https://github.com/akuity/kargo/archive/refs/tags/v1.10.0.tar.gz"
-  sha256 "e6f2542a07a3fbf3782ba69884d1e6fffa52a40782dca8356753759462e69e7d"
+  url "https://ghfast.top/https://github.com/akuity/kargo/archive/refs/tags/v1.10.1.tar.gz"
+  sha256 "35e87b5fcd77df75b30f042b5bf02d4bf5817bba01bbe5980fce6e9e4f2b8687"
   license "Apache-2.0"
   head "https://github.com/akuity/kargo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12d831ff06f1036ac8a4bb9a66164508d95ed0460b13ddfa80dadbe9fd9a6904"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "787fd7b3a60c3032dbdfb5db20382ff5f1b3e4d90998b25c435fa530d5a19116"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91443da7f68f4d815e55104c9914dd1a5e2f6ca621bbec16f2d2fbab03bb7e2c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9b9acf618790974234cd566622ae261350567248d869c65a8e6101f4d689791e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4cf17c896bfbae1ac78f99514a22f81cd63664d1bc0a2fc912c4dec19f2771d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2695e61949dccc8966046f09b5ec62e0d95309b43eaa4b6ef2a055042f6fb670"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4adb382388637733ee41f408968dec79a03c73fa2833a565d52da9ff850f8363"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1881ff4e0949228b9f73f41a06aa86de4991b86c00fb493ce5924451882f87e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65b0d1494ffb686f08e4d20aabd55fbd78db9e0fd79d7c3ace85c269ef6f7db9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "98e3a64cf3021f1c52a8469b59c90fe744959c4275f8d990f26650bb563826e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2953569b63d30b761f1f6ba98b58812c0cc4c14f397290ba26bddf73b4fb8881"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e2e35169ecad68fc81849dfa495ec7bbae77a741f6b5a6e8a155d1ba3582751"
   end
 
   depends_on "go" => :build

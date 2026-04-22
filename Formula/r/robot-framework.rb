@@ -17,7 +17,9 @@ class RobotFramework < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d5dcb9a2dc9a5141aacd54ac1bfd8462cf38d9a2f72fa90a6ed33d9a4523bdb"
   end
 
-  depends_on "rust" => :build # for bcrypt
+  # `pkgconf` and `rust` are for bcrypt
+  depends_on "pkgconf" => :build
+  depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libsodium" # for pynacl

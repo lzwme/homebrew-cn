@@ -25,7 +25,7 @@ class AzureCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "141a2b2c9f09da1d456cfb652920b75aed7acc3093c86da7440852e4ebde5ea1"
   end
 
-  # `pkgconf`, `rust`, and `openssl@3` are for cryptography.
+  # `pkgconf`, `rust`, and `openssl@3` are for bcrypt and cryptography.
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libsodium"

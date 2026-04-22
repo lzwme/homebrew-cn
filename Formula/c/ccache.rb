@@ -1,19 +1,19 @@
 class Ccache < Formula
   desc "Object-file caching compiler wrapper"
   homepage "https://ccache.dev/"
-  url "https://ghfast.top/https://github.com/ccache/ccache/releases/download/v4.13.3/ccache-4.13.3.tar.xz"
-  sha256 "1aefc18ba43c237723d224eeecfe47fd0fc7d3c93ccdda31a619b8eb90c3e470"
+  url "https://ghfast.top/https://github.com/ccache/ccache/releases/download/v4.13.4/ccache-4.13.4.tar.xz"
+  sha256 "4a7ef278b39d031b9ec524c0778d24bdb3e761940ed368060b54594f15559537"
   license "GPL-3.0-or-later"
   compatibility_version 1
   head "https://github.com/ccache/ccache.git", branch: "master"
 
   bottle do
-    sha256               arm64_tahoe:   "82c053bda466d8ab39dc9c3a4c676a73c712056241473c1e55e7e785933509d9"
-    sha256               arm64_sequoia: "d1ddd9d30dab8c30a35d701b48f104a06c60e185f1e85547c122a005fc45905a"
-    sha256               arm64_sonoma:  "e3db0eb95e519fb66032ea6b383cdf87b7f708f0c0edd914b81c95a0b47fcbc7"
-    sha256 cellar: :any, sonoma:        "df4178f855a5383ad6f4f261e0182c6c18456745736cac5374f38ce942e83a58"
-    sha256               arm64_linux:   "c00d2e952a52507f1e0d04bc8e4dc8bcd5b0357ec87f607ab3f1193acece32fd"
-    sha256               x86_64_linux:  "b3aeeb476f45e99ad73383dc6f3db5b91c689218f982fc14393cb11db471d577"
+    sha256               arm64_tahoe:   "95ee0c395bd3e4ff2073dbbd510ab8308aa1d35de5931dcaf5886942ca08629d"
+    sha256               arm64_sequoia: "6b10053c008945604b6bd074fb80877d371823b2b5104ac63cf6687f0c60ba49"
+    sha256               arm64_sonoma:  "10d5e1aa5ec6cc88c344f6dc165065e4ae45e7620fea74420e9dfa1baf9bf051"
+    sha256 cellar: :any, sonoma:        "5ff1fc6bc3067981de02c58f8fd245caa02bfe5507144e925e023fc18d92c7f4"
+    sha256               arm64_linux:   "9b16a8079cbc9379e1fa3edfa61aecc8574776fb2b587fb83c28228c11d27b96"
+    sha256               x86_64_linux:  "114468c755b458b178c0785a1d138d8e66d5a564449d19a7b529287a3402a94b"
   end
 
   depends_on "asciidoctor" => :build
@@ -33,6 +33,12 @@ class Ccache < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Expose base16 source digest in debug input text, upstream PR ref, https://github.com/ccache/ccache/pull/1735
+  patch do
+    url "https://github.com/ccache/ccache/commit/517329f27aeb90195bda57955435cafbe88f38c6.patch?full_index=1"
+    sha256 "4e14cfc43d5654f67f011393501ecba8402acbaf51fffd55cce94f668b3aa35c"
   end
 
   def install
@@ -124,10 +130,8 @@ class Ccache < Formula
     input_text = testpath.glob("test.o.*.ccache-input-text").first.read
     assert_match File.basename(ENV.cc), input_text
     assert_match "test.c", input_text
-    # TODO: `--hash-file` and `ccache-input-text` does not match for now, needs to check it can be matched again.
-    # ref: https://github.com/ccache/ccache/pull/1672
-    # assert_match file_hash, input_text
-    assert_match "5af3d23skapbcgbs975geemfqv6r6utsu", input_text
+    assert_match "### sourcecode hash (base16)", input_text
+    assert_match file_hash, input_text
 
     # The format of the log file seems to differ on Linux.
     # It's not clear how to make the assertion below work for it.

@@ -3,17 +3,17 @@ class Pytr < Formula
 
   desc "Use TradeRepublic in terminal and mass download all documents"
   homepage "https://github.com/pytr-org/pytr"
-  url "https://files.pythonhosted.org/packages/7f/87/7804f890684a4f137f49c74c9254fe95097ea724d2002dca38c2250aed0f/pytr-0.4.8.tar.gz"
-  sha256 "e592cdb5b00564f1c1ed93c4e6effcb89912c6068b36d99d57f36fbe5daaaee6"
+  url "https://files.pythonhosted.org/packages/11/91/6296f202e588f830437d27d0876745eca4e21555d9a11a504ac8270f1e4e/pytr-0.4.9.tar.gz"
+  sha256 "cd9a9547ba8de75caf9322bb205e71871890a57a69512a6e48a72bb354866332"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "250dee3a1bd895f808b738a552b1392be67c242050b7bc7459d090805c11da60"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b64b57ca7c5d9c512f139e34b3a6fda674394daa24a8ddfcb3c8b7df2572529"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bca928e2415ad46f6b579368192629cf3963c93bae6cc0efc9d885ac806c1c8f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e4c0001e4ee538ec360c8ea62f7412138bc200a2a53491ecee12dd6e6768b629"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "106f5686c843ccc52aff9bd35715547e36a25e80b94ed0e1274107c9eb3240b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "970ad0091a2cd0f96391a3cceffeee5b45f7390334389b34737bd62f0e99483f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bde26c9488dbc50dee40253e45878c7216457caa711ec818116edf7b79b6e082"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ccb4cc427d2ef631a11d8d76edcf601dc3344da10428a0da223a6a29870ffbb8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da77655776f0b48c4451bc907aa455a84081fd7ce99473d1aac50136625975ef"
+    sha256 cellar: :any_skip_relocation, sonoma:        "73cdacdc03e7ed5d0ba94d2a2781572e2265b0b0665f2b0e62f7c1d9068790db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d6a8fb9180b1b56c9cf75da9ce37df1e854ca119bb0a8fef08b43cec561a8b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "256aaf3ff2cada830b9731d06479f38dba7873aa24b1b3a4380b2cacac1529a8"
   end
 
   depends_on "certifi" => :no_linkage
@@ -159,6 +159,6 @@ class Pytr < Formula
     )
     assert_match "Retrieving AWS WAF token using Playwright", output
     assert_path_exists testpath/"pytr.log"
-    assert_match "Failed to get AWS WAF token", (testpath/"pytr.log").read
+    assert_match "Looks like Playwright was just installed or updated", (testpath/"pytr.log").read
   end
 end

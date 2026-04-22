@@ -3,17 +3,17 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-lint/"
-  url "https://files.pythonhosted.org/packages/0a/fd/81468395bd6bbf3483b64045a247d094cb305fd849a0b044dc3a744baf76/cfn_lint-1.48.1.tar.gz"
-  sha256 "1855dce6b97528ff532e3f5a3aa5b659f40e51c338192a0ba82c1af88882b6f7"
+  url "https://files.pythonhosted.org/packages/61/19/3c1b2f2f1f30bf6e2ca515137f77486fabbaf5fe70c214724eea042e9529/cfn_lint-1.49.0.tar.gz"
+  sha256 "fddf487b46318ec8fc213e67f75c9435783ce634225686f5c7e22d44efd9a047"
   license "MIT-0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3c7f803ce39cbd0f4a8ea35b27a674de905816fa28d82e78f855c2b6686d9d5a"
-    sha256 cellar: :any,                 arm64_sequoia: "fbc78ceebe819235e941e4070e9a58e6012230b2b21dd377d3cb6d6512362402"
-    sha256 cellar: :any,                 arm64_sonoma:  "0855326632c5531c941a9428ae1d21f7c433ef61011d468a59fddc4edd6a938c"
-    sha256 cellar: :any,                 sonoma:        "7b7a4408c5174f9e1ac42faafc926350763102f06a39191b5e2816c466249f08"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "56f45d1894438db369d0316c60a8ba36265a0d85c096ea5f76d1ed824ddf8322"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90e70da9b1bb13ec3af7a1524f3a626c00fd0c3a14ec25fc4573ce3f49dbffff"
+    sha256 cellar: :any,                 arm64_tahoe:   "986f99fbebc507e778784867ad48471481400549a02d0fadd554c28f6a4ae189"
+    sha256 cellar: :any,                 arm64_sequoia: "40162940353e7340be3d5e03b806fc8f8d33bbb7228edeba66b54e43e659ab4c"
+    sha256 cellar: :any,                 arm64_sonoma:  "181c9496222057e73d7882375a2dfa5a52a021bce76af8d9ced1ef0d8907680b"
+    sha256 cellar: :any,                 sonoma:        "2220144ae73477a573d499dee6ab612c1445fcf7080aaabcc2842d9058f2684d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd1693b38609267b3119fa4c3c527a985f4eb378d8b57db6e8d662870eeb2553"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dde0052d64a0ea0d29d2bf6af9e44cc902f49709cccc4ddb88a3ad744efa70ff"
   end
 
   depends_on "libyaml"
@@ -29,18 +29,18 @@ class CfnLint < Formula
   end
 
   resource "aws-sam-translator" do
-    url "https://files.pythonhosted.org/packages/51/2f/9283feaa243e18f1e28490ae053c1bd1d7c8855d412cb84b37ea4926681e/aws_sam_translator-1.108.0.tar.gz"
-    sha256 "8a21be119caaa64cf85e01b5e0fde804abe117b36fcce934bc1b74f3ccdc2488"
+    url "https://files.pythonhosted.org/packages/e0/09/f62aa8d076f6ba85080ec6291e61af345e9be0daf8a4094101555e054ec7/aws_sam_translator-1.109.0.tar.gz"
+    sha256 "0c5e60223ae8434ce0c6bdb9a491d69ba3ec97e15c0d825d3803f7806382d804"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/4b/85/f1e43429ce4c81a920742f98af5cd377a020768738645a7d0ff450553ef0/boto3-1.42.80.tar.gz"
-    sha256 "797cec65f8a36dde38d2397119a114ab0d807cf92c43fb44b72b0522558acc0a"
+    url "https://files.pythonhosted.org/packages/a7/c0/98b8cec7ca22dde776df48c58940ae1abc425593959b7226e270760d726f/boto3-1.42.91.tar.gz"
+    sha256 "03d70532b17f7f84df37ca7e8c21553280454dea53ae12b15d1cfef9b16fcb8a"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/2e/42/d0ce09fe5b494e2a9de513206dec90fbe72bcb101457a60f526a6b1c300b/botocore-1.42.80.tar.gz"
-    sha256 "fe32af53dc87f5f4d61879bc231e2ca2cc0719b19b8f6d268e82a34f713a8a09"
+    url "https://files.pythonhosted.org/packages/21/bc/a4b7c46471c2e789ad8c4c7acfd7f302fdb481d93ff870f441249b924ae6/botocore-1.42.91.tar.gz"
+    sha256 "d252e27bc454afdbf5ed3dc617aa423f2c855c081e98b7963093399483ecc698"
   end
 
   resource "jmespath" do
@@ -94,8 +94,8 @@ class CfnLint < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/81/93/5ab3e899c47fa7994e524447135a71cd121685a35c8fe35029005f8b236f/regex-2026.3.32.tar.gz"
-    sha256 "f1574566457161678297a116fa5d1556c5a4159d64c5ff7c760e7c564bf66f16"
+    url "https://files.pythonhosted.org/packages/cb/0e/3a246dbf05666918bd3664d9d787f84a9108f6f43cc953a077e4a7dfdb7e/regex-2026.4.4.tar.gz"
+    sha256 "e08270659717f6973523ce3afbafa53515c4dc5dcad637dc215b6fd50f689423"
   end
 
   resource "s3transfer" do

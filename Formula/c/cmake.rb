@@ -1,10 +1,10 @@
 class Cmake < Formula
   desc "Cross-platform make"
   homepage "https://www.cmake.org/"
-  url "https://ghfast.top/https://github.com/Kitware/CMake/releases/download/v4.3.1/cmake-4.3.1.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/cmake-4.3.1.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/legacy/cmake-4.3.1.tar.gz"
-  sha256 "0798f4be7a1a406a419ac32db90c2956936fecbf50db3057d7af47d69a2d7edb"
+  url "https://ghfast.top/https://github.com/Kitware/CMake/releases/download/v4.3.2/cmake-4.3.2.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/cmake-4.3.2.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/legacy/cmake-4.3.2.tar.gz"
+  sha256 "b0231eb39b3c3cabdc568c619df78208a7bd95ea10c9b2236d61218bac1b367d"
   license "BSD-3-Clause"
   compatibility_version 1
   head "https://gitlab.kitware.com/cmake/cmake.git", branch: "master"
@@ -18,14 +18,14 @@ class Cmake < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a53eb2f9408eae51ac642a7a5026c51658455b370ce1399ea1bac4b5cdc519a6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "036c1664515b9b96321468c520207f678fd7d0850d88578475a5c1bd71a5dc61"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cfcfff5e08fc08838dd966167a93d3b7059f949377c12830adcfd079c5af9b67"
-    sha256 cellar: :any_skip_relocation, tahoe:         "637ac8abc32662f66001ffa93977421c648724e59996e4bca79fc37915b2c077"
-    sha256 cellar: :any_skip_relocation, sequoia:       "4f612d107665840da84ab5eb95f8aaab48dab240856a425c537602742f69ebf4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "046bd8864307c950d01316cee50c7ae4505e7e042c33eca62362cdfc5d084413"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b27c118ba2a778b078befeb57c390fe822f9f61c596c198203673f2aa59c485"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46388e26bcde45c6af54eed554d576dfde7e1a6133eb5957d95e528033998f28"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e2c5a1ae09a0e35a582305caba6f7ad47adfd35cc240d8b2e6c24a106fdbb1c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8f1f9f6a2a1a73ddb23f85ab9e60b02822dbea67437e0e3263ccdbdbe119ef8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "442706522c7aa99018512b41f43ef6b3886bd6adbabc91401450852f1540ed8a"
+    sha256 cellar: :any_skip_relocation, tahoe:         "6c11190a4470cc8b813227670233c7073513090e83af6eb02e23f30c6e8e3f1b"
+    sha256 cellar: :any_skip_relocation, sequoia:       "781e965f824e5aacf040171dbe3c93785810f21125f8f2d406b0951647d19ba4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fdb020c78c9eae496d086556ca1d729cd4815203ef1b545d77de73767553b041"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b78b738d51bb50e489362ebfacc1c3f441980e153c81305cf2a03dd510a0edb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72afa4b97cce47ab0433bc2e59b474ee585ceb3f7e55cf34ee7805ce687ae3f8"
   end
 
   uses_from_macos "ncurses"

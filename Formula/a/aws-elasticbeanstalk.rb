@@ -16,7 +16,9 @@ class AwsElasticbeanstalk < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "570144ff90f570333d7300afc4e621582688bead5f92d79b4b93566d118d7cab"
   end
 
-  depends_on "rust" => :build # for bcrypt
+  # `pkgconf` and `rust` are for bcrypt
+  depends_on "pkgconf" => :build
+  depends_on "rust" => :build
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "libsodium" # for pynacl

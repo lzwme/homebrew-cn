@@ -1,8 +1,8 @@
 class Werf < Formula
   desc "Consistent delivery tool for Kubernetes"
   homepage "https://werf.io/"
-  url "https://ghfast.top/https://github.com/werf/werf/archive/refs/tags/v2.65.4.tar.gz"
-  sha256 "7c05b69d0a44b23c4e834a3f0092613f2e971dc264de1909942a9b3caec26750"
+  url "https://ghfast.top/https://github.com/werf/werf/archive/refs/tags/v2.67.2.tar.gz"
+  sha256 "0a5e28d718dd079a5f09c6d8ae41ac1c121c7ae61a0ad86fd12e11fc4c491f09"
   license "Apache-2.0"
   head "https://github.com/werf/werf.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Werf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "989b3ec2ca685e2c0df702883ba102fe91583e6f6f4a8a63d67279b786d4da35"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89a9daa65493f46a585b68632796130e7c97777c4785cbb75537708c1aa7de72"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37a587cabf01a38d8577eb41cb7669f2ff0b5d1a227a80300df488e7c9e22782"
-    sha256 cellar: :any_skip_relocation, sonoma:        "98b1cbb2fce3094f8de539168e976b335e29e9211005204486b9ded80e4c8244"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1267a6b562de0c8a5271b41c336840020fadde029b970278d99cf673365d1d81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "576b900ddeefdfc8755f9c8cfdeca1df37fe143be09547a5385cd945f2c8859f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2c4b38194bc9b38606f6e2f6f7f50c7d675b8eb10545021142be0c80cf7902ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fbd233a0d5cc0e3039f595eb94297d919ce4ce3862aa9fb6cdc2e8ff2d3058e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "783c84e9f5f6ab2858a879ae5a8b0df081b6654c2b00a63fe600212dec036676"
+    sha256 cellar: :any_skip_relocation, sonoma:        "00438af44ac09cc97ccbde813934418ae3e4c781275b41d9e7c61f5ba2b75d1b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d0e17d14396ce8fc272a769f2b89041a14f0b3d8f7de9534b3af84e10ceff9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a58957debd97e08093e2be69aeed569f232648aba566b2c1e47890e21b8d480"
   end
 
   depends_on "go" => :build

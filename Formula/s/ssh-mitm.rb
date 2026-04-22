@@ -18,7 +18,9 @@ class SshMitm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "62568cc83db749cddd48ecb685595c087b73c18cca87e864507654ca2d18252d"
   end
 
-  depends_on "rust" => :build # for bcrypt
+  # `pkgconf` and `rust` are for bcrypt
+  depends_on "pkgconf" => :build
+  depends_on "rust" => :build
   depends_on "cryptography" => :no_linkage
   depends_on "libsodium" # for pynacl
   depends_on "libyaml"

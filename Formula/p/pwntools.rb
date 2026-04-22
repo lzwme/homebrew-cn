@@ -18,7 +18,9 @@ class Pwntools < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebc88917f0c5dfa4b0d5b7dfcf2b2a572c4380d6e203ca991569a088447113f4"
   end
 
-  depends_on "rust" => :build # for bcrypt
+  # `pkgconf` and `rust` are for bcrypt
+  depends_on "pkgconf" => :build
+  depends_on "rust" => :build
   depends_on "capstone"
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage

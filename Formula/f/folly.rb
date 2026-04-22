@@ -1,19 +1,19 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
   homepage "https://github.com/facebook/folly"
-  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2026.03.30.00.tar.gz"
-  sha256 "8806a4574e5b26c12fcef4c938ecfbce5338907982200a2e85b5871ed7f43723"
+  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2026.04.20.00.tar.gz"
+  sha256 "a38658fe42cef33c43520d6550689d08006668a6c8ebaa6b023c9e8c290878c5"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2a383c0d8f56df890169a3f80797ca861d4bc118b7ccf2d005d5473b961805d9"
-    sha256 cellar: :any,                 arm64_sequoia: "7165c1eb6d03270449802b6135832b6b3e81412df60efe2696317f54fd8667c9"
-    sha256 cellar: :any,                 arm64_sonoma:  "d6a0fb4209586836e1c3dd069c2ee081126766f465d0b4027a400c7f77902f08"
-    sha256 cellar: :any,                 sonoma:        "9b98ea6f5130a2a0428ea3d0ea49de8a330fff887335b1390b8b369223fe631e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd866909d98e696cc912205fdb2d2b6947c9d71566317246441d87cb228fec7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c978892c5e6348cc0300f5160335fe39fc60365a71581a8134da9dc1fa55b90c"
+    sha256 cellar: :any,                 arm64_tahoe:   "7f085593f80b70cbc257e9b9b4830a5563afe2ecbae0e9b96bdf933b5092a1d0"
+    sha256 cellar: :any,                 arm64_sequoia: "1c805b367a091368557d5649f98a156f87814eb2fc5b7a3b0dc6524f08caaa2e"
+    sha256 cellar: :any,                 arm64_sonoma:  "74bab4592aa8398ec837ba573d08868bafeaed358432d252e2aaf082f3f1fcd1"
+    sha256 cellar: :any,                 sonoma:        "7ec1d8cd5dd7492a90cdbaeed43b5e659f757bff9051c3c4de92ed2dd755fa73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2296c5b404ae264db969596ba7f9fe6342e306f7ca11dbb37b26bb2f2ad1793"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdbca0f7e000e67fa1d0cf6717fa071411115c4f225411f845e6d1b461fa8614"
   end
 
   depends_on "cmake" => :build

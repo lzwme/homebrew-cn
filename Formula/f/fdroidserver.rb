@@ -19,6 +19,7 @@ class Fdroidserver < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "17ce0b6750ca7dbfd2bab3889ce1ed8881498bb26edf756bfc20bfe513ce00ea"
   end
 
+  # `pkgconf` and `rust` are for bcrypt
   depends_on "cmake" => :build # for contourpy
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build

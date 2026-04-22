@@ -3,8 +3,8 @@ class MysqlClientAT80 < Formula
   # FIXME: Actual homepage fails audit due to Homebrew's user-agent
   # homepage "https://dev.mysql.com/doc/refman/8.0/en/"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.45.tar.gz"
-  sha256 "f679707d05f0c2b61e9b14961302e7f540c23e9e5e2bffd8ad9193599e295cee"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.46.tar.gz"
+  sha256 "dff4332ee7f8f37fc0516c66763600a22a81c8192c743c477b6484206e314f2f"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
@@ -12,13 +12,12 @@ class MysqlClientAT80 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "e0eee02438c1171ce3b91f7169fc736ec5726121b2f18f9faabe86d57bfa9762"
-    sha256 arm64_sequoia: "986fbca72239104460859c4c49116ec7487347a9b4559c632bc4a731875b0a59"
-    sha256 arm64_sonoma:  "09fe421464e5cece5defe612b3e7249fc9badd2273f21e462530f5f91a9fb7da"
-    sha256 sonoma:        "a1c6b120c3459343c2904e08998f8b08df8245ed96de9da0fc33a95fd414f0fc"
-    sha256 arm64_linux:   "93b7add6884734fbb9725277ea5ff92d2b683ee422830d8c8412ed8ef0622868"
-    sha256 x86_64_linux:  "60fcf50ff63a630ce3d4e65a0130956a008e55958ca572a128bc2188dde00281"
+    sha256 arm64_tahoe:   "b04aa085d7b540a2a26910f0adc7eaa82776f4a31c050205877e72dc1b0b14d7"
+    sha256 arm64_sequoia: "c62722b6ab50c2608f96655d03136ee76106e30b6ea57e3bd2ed0fa672aa2a96"
+    sha256 arm64_sonoma:  "934915d2baa56d43a1f01f7b8e0d982922e03972ce8d690c7a76e47bfc4fb79d"
+    sha256 sonoma:        "4aaed2075ded190d1494d60f66a66dfccbe09e3ad0e054043524e953104cf495"
+    sha256 arm64_linux:   "73443c2a2c0bc42a5bec2d5f8f110c65cf8cfe952c91dc02cf3db29f8de1fca6"
+    sha256 x86_64_linux:  "5b3762f299d424bde333aae29bc00580ed7f52eb0c622887a0222848372fa089"
   end
 
   keg_only :versioned_formula

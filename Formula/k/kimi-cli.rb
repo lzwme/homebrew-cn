@@ -3,20 +3,20 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/1b/2e/de243e766500f3a650202ab1c0745fe5adbc169e18635505bb3af37df122/kimi_cli-1.35.0.tar.gz"
-  sha256 "71cdeda1d77391701bd71a8fdbe1aa36041559cfbe5c283774f4bb574c97594b"
+  url "https://files.pythonhosted.org/packages/a5/72/2c0097cdaa809b08193bebb81a06ae578a7d21d8e64938755a5d08e68961/kimi_cli-1.37.0.tar.gz"
+  sha256 "ce3258cbb6086f5759b71b24ce035013644bdf4f68a3b7e0d83e6074718211fb"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "eb39569e11562f90d301058468df233c0993145addb8f211476ed76bbf33ae1d"
-    sha256 cellar: :any,                 arm64_sequoia: "06c7b6bd1ffc1a96c9ac10c941319dac26d4b44508c73707638ca9844a0ad839"
-    sha256 cellar: :any,                 arm64_sonoma:  "6056cefefaa1ad0a1199c630b8bbbe5193c981b120d8337f3fd2b89cbd236648"
-    sha256 cellar: :any,                 sonoma:        "c2cc1db541c261f1f32557c616fcd645d81a6af4ddabaf7bd9fe33fdc9a99ff6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "25f60029372830584c37a217dd2a8ca3d6bf68ef8f56af9f54dfdd1999571645"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b91bf3871ec2aee4fd51c66947de2ecc345a99563747a9d4e1411df2cd35e6d"
+    sha256 cellar: :any,                 arm64_tahoe:   "7a3b4bc5bb139ac33ba3afc93f1afcf395eb909f9b99815e0dcf43d7c52841a4"
+    sha256 cellar: :any,                 arm64_sequoia: "b8d7d7fd8670a0598321fd92487e9a39251d5d10e6b1e3d77aa6885e24bb630b"
+    sha256 cellar: :any,                 arm64_sonoma:  "d63f32cb7aa7bee940133ef2c7d537e3439498d5304a904935b146e246b2625d"
+    sha256 cellar: :any,                 sonoma:        "71330ceddef3fece248fd3b2ab6381ab97684c5d0051daa30f3f2eb7fec134c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9aaa3b00f204d00635abc92a0d0aebc7f7845253faec5c6d261071ecdb69f788"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c03ff183cb90648b72be112bb03289a15bae2cf792364bdede05b13148582f1c"
   end
 
   depends_on "pkgconf" => :build
@@ -83,8 +83,8 @@ class KimiCli < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/f0/cb/b1896da12f12680c39c90af1b9c9fdf75354899317e2a7900ab37fe3a640/anthropic-0.95.0.tar.gz"
-    sha256 "e4d815351489e5627f39806f12561c52b574e69be10d12fcab723264f955c11d"
+    url "https://files.pythonhosted.org/packages/b9/7e/672f533dee813028d2c699bfd2a7f52c9118d7353680d9aa44b9e23f717f/anthropic-0.96.0.tar.gz"
+    sha256 "9de947b737f39452f68aa520f1c2239d44119c9b73b0fb6d4e6ca80f00279ee6"
   end
 
   resource "anyio" do
@@ -103,8 +103,8 @@ class KimiCli < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/28/10/b325d58ffe86815b399334a101e63bc6fa4e1953921cb23703b48a0a0220/authlib-1.6.11.tar.gz"
-    sha256 "64db35b9b01aeccb4715a6c9a6613a06f2bd7be2ab9d2eb89edd1dfc7580a38f"
+    url "https://files.pythonhosted.org/packages/d9/82/4d0603f30c1b4629b1f091bb266b0d7986434891d6940a8c87f8098db24e/authlib-1.7.0.tar.gz"
+    sha256 "b3e326c9aa9cc3ea95fe7d89fd880722d3608da4d00e8a27e061e64b48d801d5"
   end
 
   resource "babel" do
@@ -287,6 +287,11 @@ class KimiCli < Formula
     sha256 "e8a39e66dac7153cf3f964a12aad515afa8d74938ec5cc0018adcdae5367c79e"
   end
 
+  resource "joserfc" do
+    url "https://files.pythonhosted.org/packages/de/c6/de8fdbdfa75c8ca04fead38a82d573df8a82906e984c349d58665f459558/joserfc-1.6.4.tar.gz"
+    sha256 "34ce5f499bfcc5e9ad4cc75077f9278ab3227b71da9aaf28f9ab705f8a560d3c"
+  end
+
   resource "jsonschema" do
     url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
     sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
@@ -313,8 +318,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/59/6b/17ff152ed87770cbc1c55bbc9be3b7b20fc6669f4b0cc760406d14aabd3b/kosong-0.49.0.tar.gz"
-    sha256 "789b6647b11521327ad7a0a61cb9f980bbdf11d8a332b6c826b177f2c0004258"
+    url "https://files.pythonhosted.org/packages/99/95/7629f882b6ebb276531fc5c45a9f3a39d585b90818c33ebce9a5aee6132c/kosong-0.50.0.tar.gz"
+    sha256 "bf111ad817d93e55d57f42c89d63f6954516ce02190cf308a1a54c41ffef5618"
   end
 
   resource "lazy-object-proxy" do
@@ -448,8 +453,8 @@ class KimiCli < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/52/6d/fffca34caecc4a3f97bda81b2098da5e8ab7efc9a66e819074a11955d87e/pydantic_settings-2.13.1.tar.gz"
-    sha256 "b4c11847b15237fb0171e1462bf540e294affb9b86db4d9aa5c01730bdbe4025"
+    url "https://files.pythonhosted.org/packages/42/98/c8345dccdc31de4228c039a98f6467a941e39558da41c1744fbe29fa5666/pydantic_settings-2.14.0.tar.gz"
+    sha256 "24285fd4b0e0c06507dd9fdfd331ee23794305352aaec8fc4eb92d4047aeb67d"
   end
 
   resource "pygments" do
@@ -604,8 +609,8 @@ class KimiCli < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/cf/2f/d44f0f12b3ddb1f0b88f7775652e99c6b5a43fd733badf4ce064bdbfef4a/textual-8.2.3.tar.gz"
-    sha256 "beea7b86b03b03558a2224f0cc35252e60ef8b0c4353b117b2f40972902d976a"
+    url "https://files.pythonhosted.org/packages/19/89/bec5709fb759f9c784bbcb30b2e3497df3f901691d13c2b864dbf6694a17/textual-8.2.4.tar.gz"
+    sha256 "d4e2b2ddd7157191d00b228592b7c739ea080b7d792fd410f23ca75f05ea76c4"
   end
 
   resource "textual-serve" do
@@ -744,8 +749,8 @@ class KimiCli < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/5e/da/6eee1ff8b6cbeed47eeb5229749168e81eb4b7b999a1a15a7176e51410c9/uvicorn-0.44.0.tar.gz"
-    sha256 "6c942071b68f07e178264b9152f1f16dfac5da85880c4ce06366a96d70d4f31e"
+    url "https://files.pythonhosted.org/packages/eb/2e/62b0d9a2cfc8b4de6771322dae30f2db76c66dae9ec32e94e176a44ad563/uvicorn-0.45.0.tar.gz"
+    sha256 "3fe650df136c5bd2b9b06efc5980636344a2fbb840e9ddd86437d53144fa335d"
   end
 
   resource "uvloop" do

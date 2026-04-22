@@ -1,19 +1,19 @@
 class Ggml < Formula
   desc "Tensor library for machine learning"
   homepage "https://github.com/ggml-org/ggml"
-  url "https://ghfast.top/https://github.com/ggml-org/ggml/archive/refs/tags/v0.9.11.tar.gz"
-  sha256 "97b6f55df0e5d7c8f7528a443907752ff65c1c66bc0a3b71db2a0664e79c1982"
+  url "https://ghfast.top/https://github.com/ggml-org/ggml/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "a344050fc15b0307826a6b0b480eda4b45bd6c5cdbe974cec6840be2c3b6c7d0"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ggml-org/ggml.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "df416e439f8bd8ad13e51117f2cfc4d27d9e4a131539df232ed284a0b36fbfe4"
-    sha256 arm64_sequoia: "cd2bfda0462dab3ea8186868aa654eb5825788090e1467fb0b96b74a4263c208"
-    sha256 arm64_sonoma:  "879bba174ff0c1cf722136914ec757cd369c99b4804da3c723972db798ea8d22"
-    sha256 sonoma:        "ebbe28048543384ee0e6a8136d42e551b9ae23ed16cc2038785d3fe01768d2d1"
-    sha256 arm64_linux:   "c7421cb5d7d6ca009aeb2d7f06f7788da2c67590803623e282aa758689c616cf"
-    sha256 x86_64_linux:  "6dfe5ece36094fdc25c09b59e8b6bad4b55edeb58ff8a3fdad85c99a4fa58434"
+    sha256 arm64_tahoe:   "738f16218750d1905f8dd3a341b225a558385ccad8df12175113f2168275d745"
+    sha256 arm64_sequoia: "1cbf7ad26a057e50cc93dbf29e563cc9f435530c01314668c5746403de223a51"
+    sha256 arm64_sonoma:  "e41638175b9c89f9e51c046b8a08ec4e72fc968709f92b97a2839c34eb3445f3"
+    sha256 sonoma:        "09078b1745239461a411b1cea11a19f3d80f9030937a4f9387d9265f21b7fd28"
+    sha256 arm64_linux:   "48891afd6c0308310c80b819103f911826ae46ca948b5d5302b21852aa32af23"
+    sha256 x86_64_linux:  "34110ce6375e78b263bbf7fd28191982f9cb0f85f75f54d0c557f738a3673fc9"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -26,6 +26,7 @@ class Ggml < Formula
     depends_on "pkgconf" => :build
     depends_on "shaderc" => :build
     depends_on "openblas"
+    depends_on "spirv-headers"
     depends_on "vulkan-loader"
   end
 
@@ -34,8 +35,8 @@ class Ggml < Formula
 
   # Lengthy test so not worth installing. Shorter examples/tests haven't been ported to new DL backend
   resource "test-backend-ops.cpp" do
-    url "https://ghfast.top/https://raw.githubusercontent.com/ggml-org/ggml/refs/tags/v0.9.11/tests/test-backend-ops.cpp"
-    sha256 "a05c5c1b61f88202af1f237975a68f290a807d50f93f2b539d9de7ca47633f30"
+    url "https://ghfast.top/https://raw.githubusercontent.com/ggml-org/ggml/refs/tags/v0.10.0/tests/test-backend-ops.cpp"
+    sha256 "99e600136c9d49db24b624a181ca056cd8924140f04321e47b9c3b45143b6f67"
 
     livecheck do
       formula :parent

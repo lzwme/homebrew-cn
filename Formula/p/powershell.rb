@@ -2,10 +2,9 @@ class Powershell < Formula
   desc "Command-line shell and scripting language"
   homepage "https://github.com/PowerShell/PowerShell"
   url "https://github.com/PowerShell/PowerShell.git",
-      tag:      "v7.6.0",
-      revision: "767990ba06f8579d69f99eec46057541374aa892"
+      tag:      "v7.6.1",
+      revision: "fb32ab04df59569f4e6d8f0670a82f27e22a1d7e"
   license "MIT"
-  revision 2
 
   livecheck do
     url :stable
@@ -13,13 +12,12 @@ class Powershell < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "8114af0cf6b0cdb6c28ef6ba25898ac99bcdaad17bd09cf58da7d2877ec240b0"
-    sha256 cellar: :any,                 arm64_sequoia: "3e949d349c0b67f30a3e26d058a6ae2372d59848d2f800ca6795ec409f68a124"
-    sha256 cellar: :any,                 arm64_sonoma:  "8eb3d949a794f1a83405a83721d021d91dadfb5248ef0f087540b3eab69e0fa2"
-    sha256 cellar: :any,                 sonoma:        "f0b1eb11dfcfa5cd3924815fb638fcd1c62f974bc89ee35f887e034094c1832a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "473a04f0e5a408e1617af04d60bfdda35084f19db7d286c199d0911379eb4559"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "317e2f6651a5b4f28d63882c90ac02e33d49a04f1bcf37468467e8fc0e8af19f"
+    sha256 cellar: :any,                 arm64_tahoe:   "cecabdd8328a226017765421a577faadeaa59fa16ddea90552d64c72e29ce65d"
+    sha256 cellar: :any,                 arm64_sequoia: "4b87a4732631ad03c86bd1ec063de081f996312984f027eddef94eb572bc0602"
+    sha256 cellar: :any,                 arm64_sonoma:  "d21bebd8d511208b4751323354041a1c30a1f3844feeb4e82e9fbb6ec9cabe28"
+    sha256 cellar: :any,                 sonoma:        "6d98bceaa2137d4acdcb16d98e908b2dc6242df09f0a13d999555c1f6b355583"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb9c2ed457128282974af4a447f9c9d03bde2dade1559d51821a7024e8d6bdf4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "741f66e60afb43c82e451bae8d2682eee2f4ade881d1c0dc43ed9e850f5ab394"
   end
 
   depends_on "dotnet"

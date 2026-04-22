@@ -16,10 +16,12 @@ class Dvc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5962e0f82caab93b8342570afc2ed6261733e9770e9d8d778f3b2c61b33cf054"
   end
 
+  # `pkgconf` and `rust` are for bcrypt
   depends_on "cmake" => :build # for pyarrow
   depends_on "ninja" => :build # for pyarrow
   depends_on "openjdk" => :build # for hydra-core
-  depends_on "rust" => :build # for bcrypt
+  depends_on "pkgconf" => :build
+  depends_on "rust" => :build
   depends_on "apache-arrow"
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
