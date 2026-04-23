@@ -6,15 +6,15 @@ class Pdfly < Formula
   url "https://files.pythonhosted.org/packages/48/ae/70f161c80b3f39d8fe4ff784c78045225820d10375c81c2097c0e85ac0fc/pdfly-0.5.1.tar.gz"
   sha256 "636e9736ca3296ed69ad7e14d997813ea5a662ba7a86c77d155e343494dcc3d7"
   license "BSD-3-Clause"
-  revision 17
+  revision 18
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1fc95d7185ec7095abd084f3622a42e596eeafcc89b61da9539cf8599cbcd385"
-    sha256 cellar: :any,                 arm64_sequoia: "85b1ee2b241af304318578d265e667f6e4e0c18cedd0179f22bfb7105ba6d141"
-    sha256 cellar: :any,                 arm64_sonoma:  "acb4b03f45e8c580bdd2072ff6f770af2af10dc9fc3b807f60e2081f0c6505db"
-    sha256 cellar: :any,                 sonoma:        "955cfabc0a26e1b28bfe8564fa4b434fa0b541a772932cd896b1e6fdc7f8e617"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdf09b183b26369a9882dddc4c018f1cba4e24a27579edbf7dc74d5eee51e37d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "547c09d0a4e20b09180402829968b23df3620449f1ad746e183ce2cab18a6c36"
+    sha256 cellar: :any,                 arm64_tahoe:   "057ef0e7ef816526b51cb720cd8ca02882c9dc2f9a1cfd8541dfdec1727427f1"
+    sha256 cellar: :any,                 arm64_sequoia: "21f0b8d1e357805bffe61c2d0622d6ae2ae4cc435f0100bc9d846bc7d3f70ac4"
+    sha256 cellar: :any,                 arm64_sonoma:  "47b438856d9905792028d625686d0b786a04c670d82b4c729582cee59e40de64"
+    sha256 cellar: :any,                 sonoma:        "8ea0508fd227ac4752c4aa582d3d57d58e6f7be1997f6b2be4186c0434f99097"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ce9ede6b4aa404a54066cbbb9818137d8955f014032b0cdfc4dcc72b99a4183"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34c71a5c399bdb503ef30102605816d51d36ba9e0236b02454ffcf8ed635b689"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -90,8 +90,8 @@ class Pdfly < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/ce/08/1217ca4043f55c3c92993b283a7dbfa456a2058d8b57bbb416cc96b6efff/lxml-6.0.4.tar.gz"
-    sha256 "4137516be2a90775f99d8ef80ec0283f8d78b5d8bd4630ff20163b72e7e9abf2"
+    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
+    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
   end
 
   resource "markdown-it-py" do

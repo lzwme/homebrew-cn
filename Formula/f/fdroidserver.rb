@@ -6,17 +6,17 @@ class Fdroidserver < Formula
   url "https://files.pythonhosted.org/packages/dd/1e/4f8b300092cef6f90f46041743c653156347063c15e81cdc60728c70dd28/fdroidserver-2.4.3.tar.gz"
   sha256 "bb0da11f4ff087061af900a1c12404e7c26392aee8a214e1f842fa129a33a0db"
   license "AGPL-3.0-or-later"
-  revision 5
+  revision 6
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8cd579138a5d350f8b7fd12c3771fb4f9b2bc8065a05e735a4ef076766bc59ca"
-    sha256 cellar: :any,                 arm64_sequoia: "50cfb1bf19175d0825d25003ac37df0d0cd034406aac6f227e64841b9337b7dc"
-    sha256 cellar: :any,                 arm64_sonoma:  "4f186f4b340e3e60d8114801a58d7436a92c0a15d37aeeed3edae52f04e1e51b"
-    sha256 cellar: :any,                 sonoma:        "d54bfd66d34ebcc8c1ebe303eb2f03dfceb87b5c4090ec634501af784b4ab100"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67aba7c3aabff0c3748710141ac4de252c6edbc415a10e7c5719dae0df7286e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17ce0b6750ca7dbfd2bab3889ce1ed8881498bb26edf756bfc20bfe513ce00ea"
+    sha256 cellar: :any,                 arm64_tahoe:   "18d31a340130e753fdc4e1897e0396fd0684840ba9f1a82cba3088137d9068df"
+    sha256 cellar: :any,                 arm64_sequoia: "2acc1abfb520350ae6df8bf995e0d2ce6c7e87459c727e7be1fa1cb9e4a812b5"
+    sha256 cellar: :any,                 arm64_sonoma:  "66f2ce12c1048b8004cba77d5637289b166bec8be8f2dcf348c214d039dd5969"
+    sha256 cellar: :any,                 sonoma:        "e644a681e9352e21cf1696290240d31cf3a2d93e0aba38ca6ea49ed3d7a23703"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "690cda93f43579ceddb4d369b3737654a81c1bb8c8c013ef338f4701dad0c7dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cfbff4d517a15258cfe386ae63ff513bf8cea61331dc6596f57f9b1294abcde"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -61,8 +61,8 @@ class Fdroidserver < Formula
   end
 
   resource "apache-libcloud" do
-    url "https://files.pythonhosted.org/packages/b9/d0/78cafc5ced00f01710e00653917cb0485ca6d42d20347ebd07d6d6ccb291/apache_libcloud-3.9.0.tar.gz"
-    sha256 "ace0a87f6d9709c561390f4cb8fcc3b6ddd82af8cddc6f6807fdfeff5aa51a4a"
+    url "https://files.pythonhosted.org/packages/f0/ed/555a1869de19413efc270078632a8f9a049828ab65f2cc09fd61e6ba3f15/apache_libcloud-3.9.1.tar.gz"
+    sha256 "b65eaa5ac32b28a0f9555e6a223dba39e73b99b682cd849624587ce7bc251661"
   end
 
   resource "apkinspector" do
@@ -211,8 +211,8 @@ class Fdroidserver < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/ce/08/1217ca4043f55c3c92993b283a7dbfa456a2058d8b57bbb416cc96b6efff/lxml-6.0.4.tar.gz"
-    sha256 "4137516be2a90775f99d8ef80ec0283f8d78b5d8bd4630ff20163b72e7e9abf2"
+    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
+    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
   end
 
   resource "mako" do

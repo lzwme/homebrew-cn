@@ -6,16 +6,16 @@ class Sacad < Formula
   url "https://files.pythonhosted.org/packages/df/39/3ec259100446937a0c36c14e1bc0794e990259100e90f5b83463b23c740d/sacad-2.8.3.tar.gz"
   sha256 "e9b2b114e3f884f6d4e5dd49ff0ae8d4133f061f56fff433719e186df69aa986"
   license "MPL-2.0"
-  revision 3
+  revision 4
   head "https://github.com/desbma/sacad.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52f7c485323d50ef2d4dfadfbb43accd8b9958dac6b647d2d298e97d739eaf47"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e6faba4756bcbdf86c6a12325991d8939c7fd2c8a1a1340227d39a90b898137"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2bb2cc6d80e37240900b74a32cd7b047b31a7002d08121d6542bc9d4dc37837"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5967d3cacd362df5d2ccc567b89f85bce8593218f5054b69d92f05673ad53416"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "194fafea5217a0cc03e6eab06bdbaff738465367dfafe113b18b9b65c867fa46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1261dabc1880cbb0855b7dce7084a33f97d99c3652fc96defdf5dd67bc9df6b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4fc22d721746b0b6475a4c36f4084ed25d47ea1e749303208ae5e9c06d6c00d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c44ed946a8bf810c803d58dbe213fe30a6b56024cfe8d90422308d3b3304e2d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6df4ebc1261afaf916e8870c9f5c177d86573c893a4a17c274e57f8c358154a4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "78d4103bb60a8959c2102ebc8e9d240cca4f5dac3255d216c1b064a42ce01583"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "31e54e03b56a90f2ed853531c51e1dd41326a75a46f895aed352440e0f1b23e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7522e56d12da5b0918cde16180a4e3f099e2870bddf2a157efbe5747cd7a96a9"
   end
 
   depends_on "pillow" => :no_linkage
@@ -52,8 +52,8 @@ class Sacad < Formula
   end
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/95/06/92fdc84448d324ab8434b78e65caf4fb4c6c90b4f8ad9bdd4c8021bfaf1e/bitarray-3.8.0.tar.gz"
-    sha256 "3eae38daffd77c9621ae80c16932eea3fb3a4af141fb7cc724d4ad93eff9210d"
+    url "https://files.pythonhosted.org/packages/fc/47/b5da717e7bbe97a6dc4c986f053ca55fd3276078d78f68f9e8b417d1425a/bitarray-3.8.1.tar.gz"
+    sha256 "f90bb3c680804ec9630bcf8c0965e54b4de84d33b17d7da57c87c30f0c64c6f5"
   end
 
   resource "cssselect" do
@@ -72,8 +72,8 @@ class Sacad < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
-    sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
+    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
+    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
   end
 
   resource "multidict" do

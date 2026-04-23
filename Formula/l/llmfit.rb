@@ -1,18 +1,18 @@
 class Llmfit < Formula
   desc "Find what models run on your hardware"
   homepage "https://github.com/AlexsJones/llmfit"
-  url "https://static.crates.io/crates/llmfit/llmfit-0.9.11.crate"
-  sha256 "be26df286b732cd6ce0f852e221d4b95bff297a6f8c4c8ecd45d900b2d747258"
+  url "https://static.crates.io/crates/llmfit/llmfit-0.9.13.crate"
+  sha256 "75d9d0fae0e42022d0149dc7187e59ef050dbcc8f87862b3584752481872a552"
   license "MIT"
   head "https://github.com/AlexsJones/llmfit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7468a4775d5ad2e30ee2dfd063b4207582213ec6912d1b3601bc52574e9babe1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "222612db43a9cc16335cb1e5c1b05a9117d6e288f92f566aec236693adc4bb36"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55d82198c6feb7ca84b8a51031efd0f0b9f5f906d020a2a605bb2c3d3eccd726"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b48384c5f82b48f2e08657ed807a02147af8136b632234fb42e31f85a40fd2a9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3bf5788605c07e1491101ac1b639ac320772b73ea2726fac18e60f962ef8b03d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8683676e4ff481ace0447fba27e9c97349180d7231c1ba2906fe2220bab8210b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0bffed64cfd10784499ddae4b80e6437db9c1195a2820940aa978c72160f71c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2ca77d834f98e177d725715360698cdb2a8ae9e99527179a6aa1b4d37c23556"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7f20750dbff528fe2b1265744659abf47090acbc808ea10b6b88ec718a7a38d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "826947f5c4ee5fc6f0a659a73ce1756de36cdcdbeeff2284ca1679244160df47"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de5b153c1462641d054369c9e2561cd6030ff8bbaef53ccc1a3f6cd3eae34741"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53f80117e1c822005674cdd6e4bad54e8804245c0b9bbaa43a686bd770bc6660"
   end
 
   depends_on "rust" => :build

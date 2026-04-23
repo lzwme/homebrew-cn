@@ -1,8 +1,8 @@
 class Strongswan < Formula
   desc "VPN based on IPsec"
   homepage "https://www.strongswan.org"
-  url "https://download.strongswan.org/strongswan-6.0.5.tar.bz2"
-  sha256 "437460893655d6cfbc2def79d2da548cb5175b865520c507201ab2ec2e7895d9"
+  url "https://download.strongswan.org/strongswan-6.0.6.tar.bz2"
+  sha256 "07df7cedae56a7f3bb07e66d21a1f9f87e961db70e99184e11d3819413e4f87c"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Strongswan < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9f183fb5e2230a27a71a15a4fb23f5f1e12abe9117511c8eef26a6bb05186e1e"
-    sha256 arm64_sequoia: "32b77d7579ba8865b4a19f4025b8d56044bcc6d86ddabef59e44d99127c21a08"
-    sha256 arm64_sonoma:  "87f39629d931eaea8fe6d04fd12ff40f1f5e94a75d970994291647bc5bb9553e"
-    sha256 sonoma:        "7cfb949512bb60f19160472b5acd6f06fa427dd6f97f38d1c20964bb05b2523d"
-    sha256 arm64_linux:   "56cb7b5e2a3aeaaf7f8117945275cfa3f2cc668e32d01d5dbe9ff279a609473a"
-    sha256 x86_64_linux:  "9f205be904cc8eb975399dd84aa75f4ae5a3b475873ba5fd7f02aef5c95f562b"
+    sha256 arm64_tahoe:   "1fac6a54da4ed6df3ced045e5140f9827f09e41cd6d4c57a936ca862f339dd8d"
+    sha256 arm64_sequoia: "90b8bc38bdf7eb4d52fbc3027098c87a765c658ed3ee7399c582f1b8a3cc62bc"
+    sha256 arm64_sonoma:  "f2ec21a88689d0c828bc1d9c1678110d61c91b35d42e7dcab684bab81cb9c4d2"
+    sha256 sonoma:        "78d633f4a289190d5868e9080967905a088070216f72e2264e6a9fd036661ea0"
+    sha256 arm64_linux:   "e362c35c25664f995ef72c70ccffbaab14acd66f6f350926949eab11ac04c022"
+    sha256 x86_64_linux:  "333d1f2b76c72c2bcdb19cec8bde7ca191209620443df35f1a0ed093932085ef"
   end
 
   head do

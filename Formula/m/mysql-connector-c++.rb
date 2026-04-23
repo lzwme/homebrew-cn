@@ -1,8 +1,8 @@
 class MysqlConnectorCxx < Formula
   desc "MySQL database connector for C++ applications"
   homepage "https://github.com/mysql/mysql-connector-cpp"
-  url "https://cdn.mysql.com/Downloads/Connector-C++/mysql-connector-c++-9.6.0-src.tar.gz"
-  sha256 "b25a9a139855da9713c863b5a64c7f10c52eded76b2c04a2fb2deb9aab456b3d"
+  url "https://cdn.mysql.com/Downloads/Connector-C++/mysql-connector-c++-9.7.0-src.tar.gz"
+  sha256 "9a3dd4fe441a8191f761192ecdc717c18a58a1cbb6e39623debb7196c3075b0e"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
@@ -11,13 +11,12 @@ class MysqlConnectorCxx < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "25a5e5655a23a9b4ca1c8942e51f7d48b526666c14ba27911a7f568692f853a6"
-    sha256 cellar: :any,                 arm64_sequoia: "276ae190eae1888565b428290ab05f882f21b9aaa23ce0ec75d075621b22a639"
-    sha256 cellar: :any,                 arm64_sonoma:  "56c758e115c4b0df9d79ca51f1100f9b1b8dd572ebb4352acb6f470c8e06c6d3"
-    sha256 cellar: :any,                 sonoma:        "e4f93817027db4e59c1a48323f74f41c3d3624fdbf1ceb49b3549ad74531c503"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "95f03df5bf0630b4819866f36a6d1cd811f7a72f465bba1a8a361ccc5e5e7fa0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "414bfc26006113beacde84911a23ebf239871df6df0ca8050c36382cb2b3d46f"
+    sha256 cellar: :any,                 arm64_tahoe:   "c34a38e56f88a827a0cb055f1ebb7eef5c40d023939263b3d01925ea3fa2dfd7"
+    sha256 cellar: :any,                 arm64_sequoia: "918d30529748406b9c8dc644ebde019254e20831c497c9aca189285d6b7a0715"
+    sha256 cellar: :any,                 arm64_sonoma:  "b286bbb2e65e9721c07f3cf5cd3aa4c75d098243f8061daae02796fe12ad9637"
+    sha256 cellar: :any,                 sonoma:        "429f3910a8be9342d72e5dc636a08634bbfbeebf1a457bec1bd37ba5492b7809"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "856d401321de0183a238b1e15c1553ec54a8bfb787412cd36771cab53fa0c910"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "859e9cdcba99f01d1a7e1296ad8a8518a2523734e28efb894ee701cc89cd42f6"
   end
 
   depends_on "cmake" => :build

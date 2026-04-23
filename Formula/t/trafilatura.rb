@@ -6,15 +6,15 @@ class Trafilatura < Formula
   url "https://files.pythonhosted.org/packages/06/25/e3ebeefdebfdfae8c4a4396f5a6ea51fc6fa0831d63ce338e5090a8003dc/trafilatura-2.0.0.tar.gz"
   sha256 "ceb7094a6ecc97e72fea73c7dba36714c5c5b577b6470e4520dca893706d6247"
   license "GPL-3.0-or-later"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "99430cb7aab7e772030d6225732f7257ffd7db0aed8233203fb6d6ef11661e12"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f82b05258acc472a0644ee9af9175477be3ac5bca821f56995d5fd4e01f1d41"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2bd4dbd6a54d27d8aac34570dc33662badbcce54fb5ec9b269a7484d49682039"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3233de705f5feb0868ce78527a576b731c93953bcae4e48a18a7b709aebd9996"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8ceed2d9305b6a9849122c62679caacf78916fc3374e078627df87950f84b43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00e29501ff02dc3d7375bdfebdfa3140df6e82fb1e46e8d0a153e68005151f94"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93ee4bf4121a57dcd514aaf8c87891d01e6f8f2d854c0b1e86184edd3e8ea4eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ab9f5a751d6c595f1dd3e9f345c5a7a18819c4e0878834f26b319fedb8e0d2b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc8dc29923fe52f8bff8e6407987348b863d6f9842322a6842bda107582d13a7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d2401490c4582d74d08d921bce9c8c2ce56027d93ac9b4d81f29e6e02f89af3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8953668c7b0601c74c4ae93f3915cee54fa16974bc4f5bc3a2344b8f0b0e8be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d01772f935730cffe0e446d8b11915816916793de7c5574e22fc378473df05d7"
   end
 
   depends_on "certifi"
@@ -31,8 +31,8 @@ class Trafilatura < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "courlan" do
@@ -41,8 +41,8 @@ class Trafilatura < Formula
   end
 
   resource "dateparser" do
-    url "https://files.pythonhosted.org/packages/3d/2c/668dfb8c073a5dde3efb80fa382de1502e3b14002fd386a8c1b0b49e92a9/dateparser-1.3.0.tar.gz"
-    sha256 "5bccf5d1ec6785e5be71cc7ec80f014575a09b4923e762f850e57443bddbf1a5"
+    url "https://files.pythonhosted.org/packages/46/2d/a0ccdb78788064fa0dc901b8524e50615c42be1d78b78d646d0b28d09180/dateparser-1.4.0.tar.gz"
+    sha256 "97a21840d5ecdf7630c584f673338a5afac5dfe84f647baf4d7e8df98f9354a4"
   end
 
   resource "htmldate" do
@@ -56,8 +56,8 @@ class Trafilatura < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
-    sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
+    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
+    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
   end
 
   resource "lxml-html-clean" do
@@ -76,8 +76,8 @@ class Trafilatura < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/8b/71/41455aa99a5a5ac1eaf311f5d8efd9ce6433c03ac1e0962de163350d0d97/regex-2026.2.28.tar.gz"
-    sha256 "a729e47d418ea11d03469f321aaf67cdee8954cde3ff2cf8403ab87951ad10f2"
+    url "https://files.pythonhosted.org/packages/cb/0e/3a246dbf05666918bd3664d9d787f84a9108f6f43cc953a077e4a7dfdb7e/regex-2026.4.4.tar.gz"
+    sha256 "e08270659717f6973523ce3afbafa53515c4dc5dcad637dc215b6fd50f689423"
   end
 
   resource "six" do
@@ -86,8 +86,8 @@ class Trafilatura < Formula
   end
 
   resource "tld" do
-    url "https://files.pythonhosted.org/packages/df/a1/5723b07a70c1841a80afc9ac572fdf53488306848d844cd70519391b0d26/tld-0.13.1.tar.gz"
-    sha256 "75ec00936cbcf564f67361c41713363440b6c4ef0f0c1592b5b0fbe72c17a350"
+    url "https://files.pythonhosted.org/packages/5c/5d/76b4383ac4e5b5e254e50c09807b3e13820bed6d6c11cd540264988d6802/tld-0.13.2.tar.gz"
+    sha256 "d983fa92b9d717400742fca844e29d5e18271079c7bcfabf66d01b39b4a14345"
   end
 
   resource "tzlocal" do

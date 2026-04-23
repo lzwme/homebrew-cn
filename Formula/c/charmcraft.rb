@@ -6,15 +6,16 @@ class Charmcraft < Formula
   url "https://files.pythonhosted.org/packages/fa/77/cc5efd656ece6d18ee7481b2aad7c4d1d60fa0f29b4d37637b902f305ee7/charmcraft-4.2.1.tar.gz"
   sha256 "7dab07f85c7eea06baf5efa99c4977df1d631d032ce8ebf26f253fdc556ecdee"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/canonical/charmcraft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "461dff507dcc6ff8a1be74ca6122fa31c94039afe9a1e758737f7421f82a0704"
-    sha256 cellar: :any,                 arm64_sequoia: "8bd479fac0af9529c62227c477ac21877e47fabaf52702bb12ffdf78c5d0c065"
-    sha256 cellar: :any,                 arm64_sonoma:  "137a1f2f26dd0ce77988c96368b9b0178c0fe9fada2f6af348137d8efa86348d"
-    sha256 cellar: :any,                 sonoma:        "9ff392d1a088b503b588bb64c8f2cea938ef6b9aa6e98debf98a2e0fde97eb14"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebe3c8e801c13095968bf1042b90cfcebe74bc223a6f90f2f8c1885679a139e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18ac6c955cf664d5fc54ef68971933195ce7b5f93f1d308d023ecb84d21b0448"
+    sha256 cellar: :any,                 arm64_tahoe:   "8bd78d923d2de55501e574dda55a66e29ff1466263b3cc1d0efeed98de16e19f"
+    sha256 cellar: :any,                 arm64_sequoia: "15b3e097394344d1b4d094dbc4bf2698246db9a810dfb7227052f2ce7a19afc2"
+    sha256 cellar: :any,                 arm64_sonoma:  "7456d6dcb5a0403c5e28d766a0fa88db58d87137a6d9eb16f0e1f8df8aee5974"
+    sha256 cellar: :any,                 sonoma:        "6f61d7b6e875e55c77d9d81109270bfafebddb9afc3bebc396c17d558386c6a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "94b91bf90bbab2f0deaa667e69939b348a9d33091f437bb8226a8f743b08d807"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "300b5ab1dba4a56d157c45d9692496c30d59ecf1e019b95f8cbe7ce4d316fe31"
   end
 
   depends_on "certifi" => :no_linkage
@@ -73,8 +74,8 @@ class Charmcraft < Formula
   end
 
   resource "craft-parts" do
-    url "https://files.pythonhosted.org/packages/db/ce/fcf50bfc440a085b407436bad12a59006fea4d298ad4ec3f3e70cf62910c/craft_parts-2.32.0.tar.gz"
-    sha256 "7cd368db11c57cbb0875b5b8e21128d5cc3b0b6779c1cdc400872fae23fdc1e5"
+    url "https://files.pythonhosted.org/packages/67/12/4fc505185393f016d26f3ab76094ee574dd84e9fb3213414c62c26eb1431/craft_parts-2.33.0.tar.gz"
+    sha256 "9c6adb4eb794faf27f439c3bfe2794692487fc66cf59eccc4e4800ee2479600e"
   end
 
   resource "craft-platforms" do
@@ -198,8 +199,8 @@ class Charmcraft < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/ce/08/1217ca4043f55c3c92993b283a7dbfa456a2058d8b57bbb416cc96b6efff/lxml-6.0.4.tar.gz"
-    sha256 "4137516be2a90775f99d8ef80ec0283f8d78b5d8bd4630ff20163b72e7e9abf2"
+    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
+    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
   end
 
   resource "macaroonbakery" do
@@ -228,8 +229,8 @@ class Charmcraft < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
-    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+    url "https://files.pythonhosted.org/packages/df/de/0d2b39fb4af88a0258f3bac87dfcbb48e73fbdea4a2ed0e2213f9a4c2f9a/packaging-26.1.tar.gz"
+    sha256 "f042152b681c4bfac5cae2742a55e103d27ab2ec0f3d88037136b6bfe7c9c5de"
   end
 
   resource "platformdirs" do

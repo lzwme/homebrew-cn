@@ -6,16 +6,16 @@ class Bzt < Formula
   url "https://files.pythonhosted.org/packages/e1/5d/4372f76a9a483247538138d84ad21e303f88c35c630b9745c1c69bec05f1/bzt-1.16.49.tar.gz"
   sha256 "827408e83f8ae07a42982bf7541fd5b1f8f9162a09cfc342ba8f0d4bfd8f65e2"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "352f0fdc47d7dc63ddff98e91fab475eab7bf5d656be0a60e8de2a966487b227"
-    sha256 cellar: :any,                 arm64_sequoia: "0a01487680d0476c33f8860c30660fb4b74a097b265f241617b297876ed8d1d8"
-    sha256 cellar: :any,                 arm64_sonoma:  "f72de95b097676f9a12486c0230d9318cf06cfaa53d74f92cdf01c940508602a"
-    sha256 cellar: :any,                 sonoma:        "7608c5764a6826956463b23ec7f4734cb4669de4e67aaded10f7f56b2dd83d46"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e63233e8a0f9f8c088a817315ee30269ee4022d3a512ea9cc18c4c533f60e364"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "491b24deee705831205ebea3fc658373881fd22a44334bd3dc27efc92bff80bb"
+    sha256 cellar: :any,                 arm64_tahoe:   "5fb8dc423f05fd99f7a16ed2d6352521d1e491596a93169bc354533a6f521bd4"
+    sha256 cellar: :any,                 arm64_sequoia: "ee827038f421ab1f78ec6c1c0ce323958822b67fb31b0501b8ca723a5a2940e7"
+    sha256 cellar: :any,                 arm64_sonoma:  "e3c465494a7011386159640a9554962e596d9de9be93f518ec5131ebe56f7d3d"
+    sha256 cellar: :any,                 sonoma:        "45036db89606ffdbbe57f5402dbd17737758a63eda546f6eb02391128b3bae0f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "83f6b2fad17575e479fe90c187b3f3d0e1ce37d815245fe50318729c98dd450a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0332f125f5501f0bfdf39cb37a9e5ac0b51a35cc0a43400666cabec8062da273"
   end
 
   depends_on "cmake" => :build
@@ -67,8 +67,8 @@ class Bzt < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "colorlog" do
@@ -127,8 +127,8 @@ class Bzt < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
-    sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
+    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
+    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
   end
 
   resource "molotov" do
@@ -152,8 +152,8 @@ class Bzt < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
-    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+    url "https://files.pythonhosted.org/packages/df/de/0d2b39fb4af88a0258f3bac87dfcbb48e73fbdea4a2ed0e2213f9a4c2f9a/packaging-26.1.tar.gz"
+    sha256 "f042152b681c4bfac5cae2742a55e103d27ab2ec0f3d88037136b6bfe7c9c5de"
   end
 
   resource "progressbar33" do
@@ -207,8 +207,8 @@ class Bzt < Formula
   end
 
   resource "rapidfuzz" do
-    url "https://files.pythonhosted.org/packages/d3/28/9d808fe62375b9aab5ba92fa9b29371297b067c2790b2d7cda648b1e2f8d/rapidfuzz-3.14.3.tar.gz"
-    sha256 "2491937177868bc4b1e469087601d53f925e8d270ccc21e07404b4b5814b7b5f"
+    url "https://files.pythonhosted.org/packages/2c/21/ef6157213316e85790041254259907eb722e00b03480256c0545d98acd33/rapidfuzz-3.14.5.tar.gz"
+    sha256 "ba10ac57884ce82112f7ed910b67e7fb6072d8ef2c06e30dc63c0f604a112e0e"
   end
 
   resource "requests" do

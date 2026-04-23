@@ -1,11 +1,11 @@
 class Libxmlsec1 < Formula
   desc "XML security library"
   homepage "https://www.aleksey.com/xmlsec/"
-  url "https://ghfast.top/https://github.com/lsh123/xmlsec/releases/download/1.3.10/xmlsec1-1.3.10.tar.gz"
-  mirror "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.10.tar.gz"
-  sha256 "5915590780566dae4b5d13d51a42fc0e34b30b26fda6f2c5f744ec31b363ee1a"
+  url "https://ghfast.top/https://github.com/lsh123/xmlsec/releases/download/1.3.11/xmlsec1-1.3.11.tar.gz"
+  mirror "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.11.tar.gz"
+  sha256 "53675e98fa83b48201d24f7bfbcaeaa1b51496b8b19ff969785856bdeb196af3"
   license "MIT"
-  compatibility_version 2
+  compatibility_version 3
 
   # Checking the first-party download page persistently fails in the autobump
   # environment, so we check GitHub releases as a workaround.
@@ -15,12 +15,12 @@ class Libxmlsec1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "51f825cb1ff495c3d8cd39537ca620d080a7788baa5666a64e98f34cba2c3c3e"
-    sha256 cellar: :any,                 arm64_sequoia: "18665575c61336c4cd851d105748e8aec6d21830f34cf62503e66368a6ceaa63"
-    sha256 cellar: :any,                 arm64_sonoma:  "c0883ca61525c9a82e3055b0a285557636f6e669f37bf5be0c0465399ead7795"
-    sha256 cellar: :any,                 sonoma:        "8238f04b0ac3ec78153b98780b175f19e8e56f4727b92918d33e91615a06699a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e71121ba7a168102d78e0f0720354395bdb1ba33c5665b3e83c7b05e7b73790"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "386f07f2a718de944530b492a65f1db9e5b832fad084f7505a5f673f2875bb18"
+    sha256 cellar: :any,                 arm64_tahoe:   "bac1c67f0bd350168eff667a8d681b580f77a76e2d5b4099d5dd2c1bec1c6547"
+    sha256 cellar: :any,                 arm64_sequoia: "a46e425da9b5abbf83145ac8b7e223654c2b91fae79c39f42bfd2a7170d700b0"
+    sha256 cellar: :any,                 arm64_sonoma:  "8991271947badefa216c58643d4f713b598a66133063d2b8204325a36ee8444e"
+    sha256 cellar: :any,                 sonoma:        "19f6197df4950d73a4995bdab59a6a961eaa1b50b7a9dd2ab5f5206797bb1d98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d10507c035a546e9de6e052d407271b4b797696328b235ea905778e7bde3e97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48adaa263f332b70297e3aa627aec2be891b30331d84d534961e9d15d477ba33"
   end
 
   depends_on "pkgconf" => :build

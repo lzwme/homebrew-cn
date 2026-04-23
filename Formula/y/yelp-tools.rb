@@ -7,15 +7,15 @@ class YelpTools < Formula
   url "https://download.gnome.org/sources/yelp-tools/42/yelp-tools-42.1.tar.xz"
   sha256 "3e496a4020d4145b99fd508a25fa09336a503a4e8900028421e72c6a4b11f905"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b1e968b17741ac5251b5d267e252fb186ac87d51335623d366c064883b60b80b"
-    sha256 cellar: :any,                 arm64_sequoia: "8c4def7b0209ba8c22ab1111f4cfae24e11897873278cad833900265798e5c04"
-    sha256 cellar: :any,                 arm64_sonoma:  "40fdc7a8081d17bbe2be6b588f93b3a68cd235383c26c7aae127e24bfc97f06a"
-    sha256 cellar: :any,                 sonoma:        "10c1dd7a18701ef9cfdf745ea02e88402b4ba99200c839e9a9315f0247555c81"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "84ee16a1c90b1a7b3dc7a5f65550d91a3cfc1652834bdafc28885ed095b79559"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd0b3f493de1f048bd054a086715d76ec67d01ec1fdf95bb7023c6fcd5ce4b73"
+    sha256 cellar: :any,                 arm64_tahoe:   "0a3f9404c8d97b4e5bf674a6a412a4d0ebe70264cf7d3e1f2bc7457d4ec50105"
+    sha256 cellar: :any,                 arm64_sequoia: "a9cb317bc7a4ab248246e110c4fe84a545497a03ca03e22bbd9149a5d5fcc997"
+    sha256 cellar: :any,                 arm64_sonoma:  "64dc7141411fd67c7fadf810871698084a38550d98f0434e95b4e5567f43ad8e"
+    sha256 cellar: :any,                 sonoma:        "0e0d0165ca19b4bc03d8907462d3b7204c3763eaee291bb49236dd33bf98e20b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ade5f26615b99ea03312c681075265f29020713ad10f928205ac354d30bbd8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b46a9066e4361ba000c17ddc5b05e5016432dd6576c7ad3cd4e369af635f5fa"
   end
 
   depends_on "meson" => :build
@@ -32,8 +32,8 @@ class YelpTools < Formula
                 extra_packages: "lxml"
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
-    sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
+    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
+    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
   end
 
   resource "mallard-rng" do

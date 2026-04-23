@@ -4,14 +4,15 @@ class Merve < Formula
   url "https://ghfast.top/https://github.com/nodejs/merve/archive/refs/tags/v1.2.2.tar.gz"
   sha256 "8f19c2132447b9113545ffd399cb2bc1e61c6166743921b04883f8e1d778d69e"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0b41d6a9b45460e7fd65eb26833e136ffc7f33f5d2362db2f3d78e1bb2deb073"
-    sha256 cellar: :any,                 arm64_sequoia: "b75e744bcc229153ed43e9c272f79133d44161f39f2b0e3d54de157b0084a20d"
-    sha256 cellar: :any,                 arm64_sonoma:  "0d89c962210d30ca7573f0283ecc3ea306eed2c3f77976dbea84598aa5381fec"
-    sha256 cellar: :any,                 sonoma:        "14087e337f17b1facee97520fa4494ace436474aab683dd65ec993d9f9e594e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "46c11758a8a95905c18d5f5972eb1e243c3fe9c01e3649fb545ab32af96a5d48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbc11fc91bd7d6562fe496c2cb1b9fb6dc4c6f5e6d1d18eade0cb7f45f348981"
+    sha256 cellar: :any,                 arm64_tahoe:   "762282750ff31f5f38c273aa346bcaefe71d9f488b222e0e67686eb55a5187fc"
+    sha256 cellar: :any,                 arm64_sequoia: "04998f770171f826772a0db12bc60cda32c83fcddfde1c3143c4a336062d9155"
+    sha256 cellar: :any,                 arm64_sonoma:  "90ae194c060574e94e394da3181cbe98f7077d3ffc3fa0b3470f77651fc510ac"
+    sha256 cellar: :any,                 sonoma:        "2b74b54491f8c2f601a5bf649b9c6a94f0e55bce1b7f6e56451b1c7e8a262037"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f2e3e038d8c3bf94ec942c72371ddc5d4197aeab478d36f5c5d114053073e9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec1ac2932467d47af1c0e9441730f23ff9badf7698695d868bab4ec8738a4ddb"
   end
 
   depends_on "cmake" => :build

@@ -4,7 +4,7 @@ class Lasso < Formula
   url "https://dev.entrouvert.org/releases/lasso/lasso-2.9.0.tar.gz"
   sha256 "63816c8219df48cdefeccb1acb35e04014ca6395b5263c70aacd5470ea95c351"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
 
   livecheck do
     url :homepage
@@ -12,12 +12,12 @@ class Lasso < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "41f3d8764b5dc0ddc20ff790a315822f498fd47b646972114b1682be311c1ac8"
-    sha256 cellar: :any,                 arm64_sequoia: "707877e266c43b74428031c64e21a41e9d8b734b6648e56f559fca64dbd6696f"
-    sha256 cellar: :any,                 arm64_sonoma:  "44ea6bcff874454226d5a9a80326801fdace98b239eded7ef5a09bd649ebedb2"
-    sha256 cellar: :any,                 sonoma:        "deb974f63dd6705ab0701cdbe06e09830a69f0f81211ae7e74a23f665a3b2b86"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a89fb2481ff5cae631f637e6964666bbe77c849fb534dc6bc21b5bd6e09d3be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e99378cb3aa78496bf60550dd11f893ddc87a02a93426c38cc18f4ed0f7eaea2"
+    sha256 cellar: :any,                 arm64_tahoe:   "d819cfc71c4094c2840f0ace5ec2b01ff6817fe09426d917a47d0c764dc2eccb"
+    sha256 cellar: :any,                 arm64_sequoia: "7f6a17ca3f575ee84b0bec14a6ededf285e214cca068e5e6c422ef081f120dc4"
+    sha256 cellar: :any,                 arm64_sonoma:  "be4bec7abf0c0303d2e631fe99a257e12df574fa6c1a67aead3b89343cdde66f"
+    sha256 cellar: :any,                 sonoma:        "96ead58227b3f791882863b7fcc28967c7827006bfc4ccab9a24a98c8f6a1cca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f40fcc18a21e49380a5f367c2bd82e4cf4f089dd7863238d21c90a199323e777"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fc705bad342e13d893469df4786fe35cceab8f3135502723a5218b5458530f8"
   end
 
   depends_on "pkgconf" => :build

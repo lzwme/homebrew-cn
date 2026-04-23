@@ -6,15 +6,16 @@ class Streamlink < Formula
   url "https://files.pythonhosted.org/packages/84/f3/d47914b26c7401c3695c3c9f81e28cd289cc8996feb22e6682f82b5d91b1/streamlink-8.3.0.tar.gz"
   sha256 "6cffe55b42df3b3c2e6dd1c0cc41fc01477afbc496ba86740ffa5eec5c333d34"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "471cf9d1e3d16b2f16bf014d3705c29d602e8361da558d5c1d22b4119f3d1ed4"
-    sha256 cellar: :any,                 arm64_sequoia: "56001eda61fd398fda04d433984d63ba0a936ec8798ad1806755e231c9debefb"
-    sha256 cellar: :any,                 arm64_sonoma:  "c528d7879bff905e211d5d37e3878ca51753d0e15b21a958ababf682d767feb9"
-    sha256 cellar: :any,                 sonoma:        "ffae6c5da6a5ea011fe5a8750896150153fbffc327e6fd85bd7ce5916ed7ffe6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d23a89acc386f7f543b30d9adcab115eb3d05664d905436b55c2dfd32aace17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8addcb5c30afda861d4ef34e9355c8b172fe92d6c813dadd9aeb224dc18bebc9"
+    sha256 cellar: :any,                 arm64_tahoe:   "b2bd675fe6daa8a55cff57ebad00f59fe220f7be456be7521471c34783b9b84a"
+    sha256 cellar: :any,                 arm64_sequoia: "4571be7e3c9556891abf573dfcba9e63bfd0ec78de739be9103533e3e18df2e5"
+    sha256 cellar: :any,                 arm64_sonoma:  "093fe18b63f3954453b66e0f63a5df0ae14b36e668fc5373acbd716d93197f3a"
+    sha256 cellar: :any,                 sonoma:        "7b7342e0b71b40e1dcc4822ad130b82f3035fafcaa0f0c935a387bb4a5e1e896"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2794ee7d94d26307b711aa90290250183280bcba529b5b0a67c8fc259c2ff000"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9752bd525efab7b4ad9f5c0041085d65da30b36e8bba00ed2bca5c0f7e7d19e0"
   end
 
   depends_on "pkgconf" => :build
@@ -53,8 +54,8 @@ class Streamlink < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/43/42/149c7747977db9d68faee960c1a3391eb25e94d4bb677f8e2df8328e4098/lxml-6.0.3.tar.gz"
-    sha256 "a1664c5139755df44cab3834f4400b331b02205d62d3fdcb1554f63439bf3372"
+    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
+    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
   end
 
   resource "outcome" do

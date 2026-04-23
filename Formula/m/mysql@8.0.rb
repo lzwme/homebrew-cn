@@ -3,10 +3,9 @@ class MysqlAT80 < Formula
   # FIXME: Actual homepage fails audit due to Homebrew's user-agent
   # homepage "https://dev.mysql.com/doc/refman/8.0/en/"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.45.tar.gz"
-  sha256 "f679707d05f0c2b61e9b14961302e7f540c23e9e5e2bffd8ad9193599e295cee"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.46.tar.gz"
+  sha256 "dff4332ee7f8f37fc0516c66763600a22a81c8192c743c477b6484206e314f2f"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 2
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/8.0.html?tpl=files&os=src&version=8.0"
@@ -14,12 +13,12 @@ class MysqlAT80 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f9f22a31ea9b1605ffd859b452d79c8b9a6970e0ac24962fab34dfa258a26fa7"
-    sha256 arm64_sequoia: "aabbd507a637280b2fb54ce4317caf9557592830c2b63fd2d7d4e7e5c57f3b2f"
-    sha256 arm64_sonoma:  "9740563d022b518ecae78df9847eedf9d07156635600c3a75911ba5ce3d4baae"
-    sha256 sonoma:        "c1a474b14edf0471368c5a3609391c5fa6b150ac61b0d904f1a2307138567ee3"
-    sha256 arm64_linux:   "d08eb99b8f65367f7e5b9464f5d489f9e7055e25f6911c8e0703ceef7fc81005"
-    sha256 x86_64_linux:  "4a8be95a47ccb21b241795ab88c8df1a63bb1eb158bb7e994bcef52afd8c88d7"
+    sha256 arm64_tahoe:   "07a002fe7f7bfb02889b779acbf908be173a566ea9ca50bc1005bf873e16f9e0"
+    sha256 arm64_sequoia: "11ca786b449739928a72aa96d5d4ccd6c8be11da59c7227a8bb84d1916acd372"
+    sha256 arm64_sonoma:  "30c20ff8f4e1d8903c24d149e014c9e6d1cc3338339be3e70ddc7ee1536acaf2"
+    sha256 sonoma:        "34746f29e1fec9ee3775ddd34bbce43bd40c9e7951a0271fdc91a3b1d15f16f7"
+    sha256 arm64_linux:   "cad7693fe5b1f18d81f2e7a6fc4752bfa90f43c6133ffe86a1d99af2b8f3fedc"
+    sha256 x86_64_linux:  "655eb77cf16e51bad1747de653dcabccd347c3c89b9437b596aa18e84f80c65e"
   end
 
   keg_only :versioned_formula
@@ -67,6 +66,9 @@ class MysqlAT80 < Formula
 
     # Disable ABI checking
     inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0" if OS.linux?
+
+    # Workaround for error: 'is_default_constructible' cannot be specialized
+    ENV.append_to_cflags "-Wno-invalid-specialization" if OS.mac? && MacOS.version >= :tahoe
 
     icu4c = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
                 .to_formula

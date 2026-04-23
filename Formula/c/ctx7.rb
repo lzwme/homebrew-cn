@@ -17,15 +17,9 @@ class Ctx7 < Formula
   end
 
   test do
-    system bin/"ctx7", "setup", "--cli", "--claude", "--yes", "--api-key", "ctx7sk_test_key"
-
-    credentials = JSON.parse((testpath/".context7/credentials.json").read)
-    assert_equal "ctx7sk_test_key", credentials["access_token"]
-    assert_path_exists testpath/".claude/skills/find-docs/SKILL.md"
-
-    assert_match "find-docs", shell_output("#{bin}/ctx7 skills list")
-
-    assert_match "Invalid API key",
-      shell_output("#{bin}/ctx7 library react hooks 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/ctx7 --version")
+    assert_match "Not logged in", shell_output("#{bin}/ctx7 whoami")
+    assert_match "No skills installed", shell_output("#{bin}/ctx7 skills list")
+    system bin/"ctx7", "library", "react", "hooks"
   end
 end

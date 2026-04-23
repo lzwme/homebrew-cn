@@ -6,16 +6,16 @@ class Gptme < Formula
   url "https://files.pythonhosted.org/packages/1a/20/57d7b444abc582b5aa09b98aa6821fefa728eb056a1c4371d475d19514dd/gptme-0.31.0.tar.gz"
   sha256 "96e17e9dd82c409743b1b81dad08c6c024ace108d829f80c557be8eb2c429ffb"
   license "MIT"
-  revision 6
+  revision 7
   head "https://github.com/ErikBjare/gptme.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "81f656460ff66d130056a1c432e231b030ee6d8ede30a649fb187d5b00e78129"
-    sha256 cellar: :any,                 arm64_sequoia: "0a68f69bd668bb951ca04539f4400bb9ad87ab95cdea9e5090b8e59215385090"
-    sha256 cellar: :any,                 arm64_sonoma:  "2f26ef0f50e35a482cfae8d603c4ab6d5e7b9742e73be78e4f40b10b785fae89"
-    sha256 cellar: :any,                 sonoma:        "723333bfae337f7fbbc67fd94ab45dcbbecc9f3410b2c0977f9c2bbc96f6def4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "657df2752484c1ac99f057bcb4f50cc7877286539b160370191a68fe64a4b404"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "144a9c2910c9c4ee960a85d972de40d8117842ac4b7f09558dbc2ac929688231"
+    sha256 cellar: :any,                 arm64_tahoe:   "0a732abdb122a2ed4cb41f6ead9ac959a694958bd696a680396e2fcccc19d33f"
+    sha256 cellar: :any,                 arm64_sequoia: "e976a6302d38ec7fc2b76cbf1f5c80c24546288d148e2f867e0ec32793a9d9a5"
+    sha256 cellar: :any,                 arm64_sonoma:  "e1030e4aecbf7b3c9367b4d9ac58aacc617361c68382f237b8ad38d6a2df77d1"
+    sha256 cellar: :any,                 sonoma:        "a659a247d92d81f13d338cb77311d243ce55fca515609a3a09a9dc63f07bd8ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "adca493a529a4c1fb66a9cee2f64a05ddf99a705020445785dc9d64829f7afda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "289c3246e7304d36bcb51af890dd038401e48ac59e2086b02a6201826dc27e3a"
   end
 
   depends_on "rust" => :build # for jitter
@@ -148,8 +148,8 @@ class Gptme < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/ce/08/1217ca4043f55c3c92993b283a7dbfa456a2058d8b57bbb416cc96b6efff/lxml-6.0.4.tar.gz"
-    sha256 "4137516be2a90775f99d8ef80ec0283f8d78b5d8bd4630ff20163b72e7e9abf2"
+    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
+    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
   end
 
   resource "markdown-it-py" do
@@ -218,8 +218,8 @@ class Gptme < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/52/6d/fffca34caecc4a3f97bda81b2098da5e8ab7efc9a66e819074a11955d87e/pydantic_settings-2.13.1.tar.gz"
-    sha256 "b4c11847b15237fb0171e1462bf540e294affb9b86db4d9aa5c01730bdbe4025"
+    url "https://files.pythonhosted.org/packages/42/98/c8345dccdc31de4228c039a98f6467a941e39558da41c1744fbe29fa5666/pydantic_settings-2.14.0.tar.gz"
+    sha256 "24285fd4b0e0c06507dd9fdfd331ee23794305352aaec8fc4eb92d4047aeb67d"
   end
 
   resource "pygments" do

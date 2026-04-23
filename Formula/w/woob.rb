@@ -6,15 +6,15 @@ class Woob < Formula
   url "https://files.pythonhosted.org/packages/85/f3/a2dc1bb679de004aa1e48c8b77b5d5b9bca3007b2f25e0c39f850a009186/woob-3.7.tar.gz"
   sha256 "b1d7113ba87a9b947c13a1e3b4bb4fa616ba3037092b54912fc3fee2647d1b2f"
   license "LGPL-3.0-or-later"
-  revision 7
+  revision 8
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "73e430245011190facc4b3b505a36d5f0af552e7564e78cae5171ee4b316b7bc"
-    sha256 cellar: :any,                 arm64_sequoia: "fdeba8d3f6c6a0bd420c189aa35a6d1443fc6f531468d61a457f65c23ebbe26f"
-    sha256 cellar: :any,                 arm64_sonoma:  "021c7d650e7c9afbdba77162975a5515b9b07f06d7ea01af0a91a03cccc78797"
-    sha256 cellar: :any,                 sonoma:        "2ec3e8edab02aa25d52a6e8e052217cac8597d15d3d47513bb85460c62d68016"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7538d795bda9861660365fd22ab7831116057f01475d17614b1508de6a87853"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eac51e2201df9e5003cae11aee9f4e085b33fc585146fe4f5df178f17a4ea495"
+    sha256 cellar: :any,                 arm64_tahoe:   "957497df101fb14e04aaf8dbb637a5b59037f8bd86559a0a35a4c96c061aeffd"
+    sha256 cellar: :any,                 arm64_sequoia: "657a755cc004804973531b9dd2256984376f85ddba4be6234b14e814fb5c9646"
+    sha256 cellar: :any,                 arm64_sonoma:  "34538fb55cc4f9df80456d921b8de424ea55b4f41444d1a1d5dbfede8dcdc3a1"
+    sha256 cellar: :any,                 sonoma:        "2688a33a86417025373e8d589179c9a3effb894d99f7607e42fce23daab71807"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d160114e0a0a0f99654dd4aae96df50c056aa9ab1ff6dd64007533405f91fa0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cd172a6d9d252fc654bda804fb368b81ca1148a992c405d1e43f64b1890cc41"
   end
 
   depends_on "certifi"
@@ -34,8 +34,8 @@ class Woob < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "html2text" do
@@ -49,8 +49,8 @@ class Woob < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
-    sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
+    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
+    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
   end
 
   resource "markdown-it-py" do

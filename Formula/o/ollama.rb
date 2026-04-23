@@ -2,10 +2,9 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.21.0",
-      revision: "57653b8e42d69ec35f68a59857bad4d0f07994a3"
+      tag:      "v0.21.1",
+      revision: "21883571b746d9d965cf7747d5f09a5c53f389fb"
   license "MIT"
-  revision 1
   head "https://github.com/ollama/ollama.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -17,12 +16,12 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "87b707af8fb3e38b167321cdf2122e6db1f648da1192a03928f6c737abd18c57"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e69b6097744a0bcaea3c472d95027cff0a08fe8b841f7f0223a4c17efb729c5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b01f3b38743a922d2dfbbc2ed77d7d690b96bd10b8f4b2ab059211a76ebc0a7f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6cd9385577d3a77fd49aaac324b678319d7050bd7794dfc18253dfdda2a38f5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e99765dc6d1e0a9ddcfd98a535b56cc90ec179a548fd97805384495b00d297da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95b6355a01237a808b1b0d971affa4402311855d339aa3debe245a5e00e6525d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2536295c380c8065657892ae7c8f6eebb27d93c200e8ffe11d3cdcfb8bc448da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3eb96540bb010ad9b2889a898c52df01ba6d348cae4ad9228bc6626205e9cd49"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5382daa6bd7f1d34aa81ca5ab861fdebe29be6b5107a6ece6ec0020c899ca0b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dd29e1c8b39efaa446767f24ca3a289d9b80f0924e1b0b3d2e8eb0f7df507715"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d20447ff552bd1acc60fa0d0034211b5c4cb93d77fef158b24fbab27f5607a7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9756f964b7613374ade9835f4708ddfeb2f001b55c6cfbedb4b9fb2ba63ce6e0"
   end
 
   depends_on "cmake" => :build

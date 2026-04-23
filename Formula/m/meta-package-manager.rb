@@ -7,15 +7,16 @@ class MetaPackageManager < Formula
   url "https://files.pythonhosted.org/packages/19/cc/902b1f4e8861517ebbd3a556642d68a920aa3d548785ec56e185f353b856/meta_package_manager-6.3.0.tar.gz"
   sha256 "04fe3b0ff3d798154ef9dbecc0f8c10e8a44fd2a62ff9e284a44c20b8e981df6"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/kdeldycke/meta-package-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3eaf68f291f71752f03a2cacddf42743d5b31d08b7eade00960bbe21e1a4e38e"
-    sha256 cellar: :any,                 arm64_sequoia: "df398c9a8df4b9eb9f65a738f9df4cdbb68b474caa6afa10cecea0004c63a114"
-    sha256 cellar: :any,                 arm64_sonoma:  "a873fbee9ec6e198167c3910fd7551d1f1938b8db2596601b0fe0fe12222e057"
-    sha256 cellar: :any,                 sonoma:        "06a1dab567395955829df1940cdac202ff0a1bc9f730956f3c01b615571fe037"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdd69be0a98b4f292b207ab91a6e647ab5bffd6a3f662f0b190ec65c16245907"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d66d2c9ab10174f5f97c37be5b1e59b7d653fde27c856048d89de41ef63e23d3"
+    sha256 cellar: :any,                 arm64_tahoe:   "2100e68a1526d9198b53601753d35ce1b75d134d2f14e938954acd86dc78d787"
+    sha256 cellar: :any,                 arm64_sequoia: "2452002bd881493594acd7031fa4f01da7026e1752d6aa2c95d56f4e6308de15"
+    sha256 cellar: :any,                 arm64_sonoma:  "b7e7ff87a24b396bf2d259f37080bfeda8a441483ddc749797643750bd13a212"
+    sha256 cellar: :any,                 sonoma:        "30718e4f7c117ed9c28ff4119370ea5dba5a807ab72546916369b3926efc4150"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "822d817ee269c4647c6294dc1db1544bcec6b64ded08b3481fae556e829cb1e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "371d9cde7cc01c447d2cecee826ba57d777b77302a967d6f0e73c7223358f088"
   end
 
   depends_on "rust" => :build
@@ -71,8 +72,8 @@ class MetaPackageManager < Formula
   end
 
   resource "click-extra" do
-    url "https://files.pythonhosted.org/packages/21/2b/a9863024cc55ce065316efd3acfd4faff133d864e66dd1ed61ad367bc468/click_extra-7.10.1.tar.gz"
-    sha256 "dbee5339f27474a7bd1fc83b80c498e1cf7d1f48128598006aadeec83834c27f"
+    url "https://files.pythonhosted.org/packages/fc/3b/61fab1784a949eec5337cfd45ceb12f87d12757d0cffac850b50cafc269e/click_extra-7.13.0.tar.gz"
+    sha256 "52b27d746e8254c93320cc463750f376aea45aa61bd0de9a45412f471e54f63e"
   end
 
   resource "cloup" do
@@ -96,8 +97,8 @@ class MetaPackageManager < Formula
   end
 
   resource "extra-platforms" do
-    url "https://files.pythonhosted.org/packages/f7/ab/757eb1e8b77757651dd0c69d18d118b22608be551dfc06e3f3962f6bb474/extra_platforms-11.0.5.tar.gz"
-    sha256 "89ae7971ba79193a256af16b44f3b9ab1c16dc4ba671f80e6110fa421679a82e"
+    url "https://files.pythonhosted.org/packages/7c/7b/0049f8a7817ac4eb6ad1af72c7938fff3e2677d55468c87de792208e068c/extra_platforms-11.1.0.tar.gz"
+    sha256 "3045d722cab2b422a8fcbcba7f52026c33523cb147616d99fc50947f8e952375"
   end
 
   resource "fqdn" do
@@ -141,8 +142,8 @@ class MetaPackageManager < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/43/42/149c7747977db9d68faee960c1a3391eb25e94d4bb677f8e2df8328e4098/lxml-6.0.3.tar.gz"
-    sha256 "a1664c5139755df44cab3834f4400b331b02205d62d3fdcb1554f63439bf3372"
+    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
+    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
   end
 
   resource "more-itertools" do
