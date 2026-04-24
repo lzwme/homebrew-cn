@@ -1,17 +1,17 @@
 class Typedb < Formula
   desc "Strongly-typed database with a rich and logical type system"
   homepage "https://typedb.com/"
-  url "https://ghfast.top/https://github.com/typedb/typedb/archive/refs/tags/3.8.3.tar.gz"
-  sha256 "9034d50417e9cad59edbee47deed54bf376da307b6d73e69846b0e634eb0ffc6"
+  url "https://ghfast.top/https://github.com/typedb/typedb/archive/refs/tags/3.10.1.tar.gz"
+  sha256 "6fc8d4d6525f15afda3f3d8a2814d38e8d45b544c09cda32bb7018ce48610a43"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80b4a776198facebec8cd49f723b8f233338d38bc0d290bb12420524bb3b1635"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c504bf5c1fc9602c3f69b0b401ae7d50536e500c2e374faea203ff7b4d495694"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be9cbb55df28a7a3b07977a70321a4c2808de01925df6e10d5734b1e57750fb1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b5f7fcc3bb428c3f6f1698ba1ba3f46d7ee9c770fc00abf26b0ff3dcdecc0a7e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "427b0e252fa7c616c9bf6a93a35a3d561f27d73f36f590f3bc023c23963c2b9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab1aca255d891a8de1f3547e990fe8f377757ed35abc9809fb58f7f711befc42"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1021dcd639a40316b75c82a6471263f82ab392dda24b725da5018e04456dc139"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87853ff6c19f5b7822666943234e1a8c786af6dbbf9a5ef7b3af27dc360b250e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f678291f8f1f99df3916a996999a9027d86145b2ba878ac4b896161baf595e3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6006dbf79149d64c07fbb3bac75f9d9e4340809e642ee83f343c143611385e52"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d350d9c8fe573d7213df0f5fc4c1e473261182920dedfc3f9e2970ebb2fdec8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c24f28b696b3222db8103fad9d5d5fde3052d5e231749609450785bc9859c464"
   end
 
   depends_on "protobuf" => :build

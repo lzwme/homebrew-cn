@@ -12,6 +12,11 @@ class Mlx < Formula
   compatibility_version 3
   head "https://github.com/ml-explore/mlx.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "def8a7ae1e6a6506eed4dea45bf52b55be0f52f8364f8a928da6e65b1204a371"
     sha256 cellar: :any, arm64_sequoia: "79e643d23e3f55a315461919d69d1ef7b3ba103405fe4ccc0645229c049a6b4e"

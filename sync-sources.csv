@@ -2132,6 +2132,7 @@ Homebrew-homebrew-core/Formula/f/flip-link.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/flix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flock.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/floresta.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flow-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flow-control.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/flow-tools.rb, Homebrew/homebrew-core, 1
@@ -2178,6 +2179,7 @@ Homebrew-homebrew-core/Formula/f/forego.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/foreman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/foremost.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/forge.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/forgecode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/forgejo-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/forgejo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/forgit.rb, Homebrew/homebrew-core, 1
@@ -3668,6 +3670,7 @@ Homebrew-homebrew-core/Formula/l/lazydocker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazygit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazyjj.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazyjournal.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lazymake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazysql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazyssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lbdb.rb, Homebrew/homebrew-core, 0
@@ -6434,7 +6437,6 @@ Homebrew-homebrew-core/Formula/r/ruby-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby-install.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby-lsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/r/ruby@3.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby@3.1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby@3.2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby@3.3.rb, Homebrew/homebrew-core, 0
@@ -14062,6 +14064,7 @@ Homebrew-homebrew-cask/Casks/p/parallels@17.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parallels@18.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parallels@19.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parallels@20.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/paranoia-file-text-encryption.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/paraview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pareto-security.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/parsec.rb, Homebrew/homebrew-cask, 0

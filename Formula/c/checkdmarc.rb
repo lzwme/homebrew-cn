@@ -3,13 +3,13 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https://domainaware.github.io/checkdmarc/"
-  url "https://files.pythonhosted.org/packages/ed/27/0dfaf7433c28edc5adaad871150ce4486940469b4a81714bcca394a46f7b/checkdmarc-5.14.3.tar.gz"
-  sha256 "f38874bcec8c518b7dd5281bd846a9336d02d236bcab7e60cd40c27f4d2f93a1"
+  url "https://files.pythonhosted.org/packages/47/9f/2d3d76d562e7011a0776fa35055f89961767121ff14040da07813fc60cd0/checkdmarc-5.15.0.tar.gz"
+  sha256 "18f797d6a83069eb7e7d84c7860957b01c4af52069b3465d57fa6e198dc4af1a"
   license "Apache-2.0"
   head "https://github.com/domainaware/checkdmarc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b00d3cff279288bb73f253d85474b739baa797a4a1391ee5111cdc46964affa2"
+    sha256 cellar: :any_skip_relocation, all: "950e996c83e36ec7db4aee256f6465e83b6f4e6a616ed1339a0588f78fb37642"
   end
 
   depends_on "certifi" => :no_linkage
@@ -34,8 +34,8 @@ class Checkdmarc < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/22/12/2948fbe5513d062169bd91f7d7b1cd97bc8894f32946b71fa39f6e63ca0c/idna-3.12.tar.gz"
-    sha256 "724e9952cc9e2bd7550ea784adb098d837ab5267ef67a1ab9cf7846bdbdd8254"
+    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
+    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
   end
 
   resource "importlib-resources" do
@@ -49,8 +49,8 @@ class Checkdmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/80/25/eb4e354d5c439209f3f6e6c62ca4fe26373296f83e68970fac7735dcc662/publicsuffixlist-1.0.2.20260417.tar.gz"
-    sha256 "36255a53f3a3fea3436ce89c1b701465554e5453cbf7f5676e9ea4c9427aa728"
+    url "https://files.pythonhosted.org/packages/bd/7a/1d865772d369f59c123b0b426e1d4e1df82dda1553dc3a535d0a736b0681/publicsuffixlist-1.0.2.20260422.tar.gz"
+    sha256 "745992cf7d7bb07020d8f081836c0018cdec85bdbbb2a464c79335c5c3b682cc"
   end
 
   resource "pyleri" do

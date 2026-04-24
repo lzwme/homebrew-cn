@@ -1,6 +1,6 @@
 cask "captains-deck" do
-  version "1.4.2.2"
-  sha256 "1c3f4b3c59c48e0ed6fcd6a648ded68800546b70c8a6a9172f73db24ee63c1c9"
+  version "1.4.2.5"
+  sha256 "aed0633b8299f69dc178698efb1006dc77183f2aa6bf9921fb984ef2612c40f8"
 
   url "https://captains-deck.com/downloads/CaptainsDeck-#{version}.dmg"
   name "Captain's Deck"
