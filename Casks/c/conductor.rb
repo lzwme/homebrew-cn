@@ -2,12 +2,12 @@ cask "conductor" do
   arch arm: "aarch64", intel: "x86_64"
 
   on_arm do
-    version "0.49.2,01KPY9EYZPJHW3PVW52E3ZDARW"
-    sha256 "3cc713163cd411a7899bf23263a8c533be9ccedf58efc3997f407c2f66d84868"
+    version "0.49.5,01KQ0Z63RRHPXMQFX01XH25ZFD"
+    sha256 "2c3d5f0d176af233f7cd9e20c4e93fc63e2a8c6063474fac7cd56c7dae021fd6"
   end
   on_intel do
-    version "0.49.2,01KPY9EN5NZ338EH0A4GZZW54F"
-    sha256 "7e3c07bf3e697a35a8fe3423a363db2ea6acf652e764071e873afc3ca5be2000"
+    version "0.49.5,01KQ0Z5RAAWGFC5MCQNN2WPHQQ"
+    sha256 "3f8e0fed04f8f1d22fa9f726049db48e63db07d9a47e41afff546e95cb5ad427"
   end
 
   url "https://cdn.crabnebula.app/asset/#{version.csv.second}",
@@ -29,6 +29,7 @@ cask "conductor" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "Conductor.app"
 

@@ -1,18 +1,18 @@
 class Expert < Formula
   desc "Official Elixir Language Server Protocol implementation"
   homepage "https://expert-lsp.org"
-  url "https://ghfast.top/https://github.com/expert-lsp/expert/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "e93ac9a2a8576697d327e3bea3005b755111a62986977d66140b9e5df5af6be2"
+  url "https://ghfast.top/https://github.com/expert-lsp/expert/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "69608d25f0a214e4360dbbac155e61729db96a1073e2e92b3b34a200d9cc26b8"
   license "Apache-2.0"
   head "https://github.com/expert-lsp/expert.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2216f8baef44fbe47d0f4ef4560581ee1c79dfeedbc25fe31b855084bb45f70"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5eaac9fbb54a49c282aa6527ac16798c44b78e060d333400df2e682a83d5b27c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7179f4d3d65cb02fe7f691eb242170e0c53e45c65e410d36344efd728f2ff88"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b45c42c75be50c4409faa8fa68fde3ed9df10c91ac7a5d511a87a658f936a45c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f650d12eba0f434fb2fed80e51e299fac8b85a46aa5a8cf8824bb70625b7fd1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd38f52de2630682f21d8298836f53365f3354475b0e9a079738eaf89cae4ad0"
+    sha256 cellar: :any,                 arm64_tahoe:   "9acd897b4c38ed5de3f84e949a01450c3e9e17b6a86a833189c94aac2701972d"
+    sha256 cellar: :any,                 arm64_sequoia: "042b471de1b653656c801463e45ac18ae2d9afd45082bb872a4d21e88faefd6a"
+    sha256 cellar: :any,                 arm64_sonoma:  "3540b346df247cefe80a24566b65847876ecfc5ae3ae089b2605a0f24316bd62"
+    sha256 cellar: :any,                 sonoma:        "2dc17156ddb089f8a6883c60d2095f6a5cb4b3e8868f0fc57b19e641e93590e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e09a8d592a45a221c73cdde76468a004b73a41c059c8aac55d332e471c5f842"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e87dbae846e59f49387826fc170b1d4ca2ebb0a4b18a9a67eae83a5b3e94096e"
   end
 
   depends_on "elixir" => :build

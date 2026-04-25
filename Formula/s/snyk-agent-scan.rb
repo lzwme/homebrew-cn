@@ -3,17 +3,17 @@ class SnykAgentScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/snyk/agent-scan"
-  url "https://files.pythonhosted.org/packages/96/9c/015715ab2a8e2414a4792758730dd39ec224987adf36ac809831625d9fff/snyk_agent_scan-0.4.17.tar.gz"
-  sha256 "aecf6cbc6c53c6ca2f22c024bf73277d36b7ec570dfff11ac8693fbb0997af80"
+  url "https://files.pythonhosted.org/packages/85/73/5578115b41c97ca2ab5472811c85455d82aa1bcf83d5ebc75e9b43e5e9f4/snyk_agent_scan-0.4.18.tar.gz"
+  sha256 "d98acad9889b23bf594f08901a0834807096aedab450daf8d144959b4b8af182"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d9d42ae716bd973c7e436102c4c0093449fff33dc30ada0a6afa51b0437fa0c2"
-    sha256 cellar: :any,                 arm64_sequoia: "8cb438e84549490b0d24bed0da8a71a2487d28195105271616411f537e8c35b9"
-    sha256 cellar: :any,                 arm64_sonoma:  "34323cb89b52827b6dedf786f85c2c789051af93c833478dc3039bd39ffa1a63"
-    sha256 cellar: :any,                 sonoma:        "0f0c09e79c5a72ae9d50751d731e7c736c458529c7de10b9b5032f4188f8fe6c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "056776156b550e3e1d9b8529cdc25eb4642b3ae45f1cff301ff6604dbf593b32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b6cfa22278b260040c1e57e6dacbaeeace28b1ed7b564b29b746208b6d4b266"
+    sha256 cellar: :any,                 arm64_tahoe:   "6cba18d08f474af0ef43d74e715b0881f9f3168e259ade844c99cb70b14b6d9f"
+    sha256 cellar: :any,                 arm64_sequoia: "d5e84bf3319ad7e8f1ef7df47497a89deb78f1e09f56a317302a214fcf41534e"
+    sha256 cellar: :any,                 arm64_sonoma:  "e2dd2507ff8302739c73b7d871d7711db4ef6743bf22530f1c1759351c11ded6"
+    sha256 cellar: :any,                 sonoma:        "a8675dfea31f51955b35d17b83d9af7d3ec89461465bb0ff6939a3bfc04b3393"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "efec8b3dacdfdf8315e06cb8ed5c758bcc0e19f44fcbf34cb3532c979a3d8ac9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87ce9d4a9255ae80d06e530db518792841c11a272a7f507a3878a923f0704515"
   end
 
   depends_on "certifi" => :no_linkage
@@ -226,8 +226,8 @@ class SnykAgentScan < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/eb/2e/62b0d9a2cfc8b4de6771322dae30f2db76c66dae9ec32e94e176a44ad563/uvicorn-0.45.0.tar.gz"
-    sha256 "3fe650df136c5bd2b9b06efc5980636344a2fbb840e9ddd86437d53144fa335d"
+    url "https://files.pythonhosted.org/packages/1f/93/041fca8274050e40e6791f267d82e0e2e27dd165627bd640d3e0e378d877/uvicorn-0.46.0.tar.gz"
+    sha256 "fb9da0926999cc6cb22dc7cd71a94a632f078e6ae47ff683c5c420750fb7413d"
   end
 
   resource "yarl" do

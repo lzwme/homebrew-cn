@@ -1,9 +1,9 @@
 cask "opencode-desktop" do
   arch arm: "aarch64", intel: "x64"
 
-  version "1.14.22"
-  sha256 arm:   "62441a26d1ea1824815889601a994ab44a96b8105a1119e7ff1b9d8db86bb59c",
-         intel: "37c574061ed43b2de0af28ba88e7fb297978ca3138cd0a1ea1387610eaece3c1"
+  version "1.14.24"
+  sha256 arm:   "4378e56ad2f58e074d839bf0cc48965da34950a25a34feb004ef018d6f8c5968",
+         intel: "5c045d37ab82750231f1e92a0e923acb8dbd2d70afaf1ebfbb86b02615f252fb"
 
   url "https://ghfast.top/https://github.com/sst/opencode/releases/download/v#{version}/opencode-desktop-darwin-#{arch}.dmg",
       verified: "github.com/sst/opencode/"
@@ -19,6 +19,7 @@ cask "opencode-desktop" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "OpenCode.app"
 
