@@ -4,13 +4,13 @@ class MlxC < Formula
   url "https://ghfast.top/https://github.com/ml-explore/mlx-c/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "6ec2eab86ed3ce661c0d9b834027870651546138b7b4470fa8ef5533498c79aa"
   license "MIT"
-  revision 1
+  revision 2
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "83d092eb6a813c680997c13cafaff9cf6559be17f94eaa80f4aa503dd5e6b8f0"
-    sha256 cellar: :any, arm64_sequoia: "721c3c05e50cf23350c725d4b3855ab8fe2ff7265b9e2d61e951b730fe5b2b5b"
-    sha256 cellar: :any, arm64_sonoma:  "03127804f9796dfa15b14e4e4faaa19420a182377441a98275fd855ab32fe973"
+    sha256 cellar: :any, arm64_tahoe:   "b30c755158db3f9d9090b69a1a74f3e05ae8e7a3969695d9f0974f1bc1d3df1b"
+    sha256 cellar: :any, arm64_sequoia: "1c912954c1d7c888c99638fc58a541d364862c3acf3b279627e5221b9bd0afa7"
+    sha256 cellar: :any, arm64_sonoma:  "b09d19e06b33a10936b006a67202a091715bbedf9fe1620b1162eb140f8af0fd"
   end
 
   depends_on "cmake" => :build
@@ -27,10 +27,28 @@ class MlxC < Formula
     cause "Requires C++20 support"
   end
 
-  # pr ref: https://github.com/ml-explore/mlx-c/pull/114
+  # support for mlx_distributed_group_free() (#110)
   patch do
-    url "https://github.com/GunniBusch/mlx-c/commit/3fce35b0b1fa1160fdf767229bfb84d695ef1e5d.patch?full_index=1"
-    sha256 "0361169fe85cdaccfb9a25e3f8a9991951b263b33b7683867972c36dca05e97c"
+    url "https://github.com/ml-explore/mlx-c/commit/1e3c24ffebfdfbeecca054c51637fc4381d98aab.patch?full_index=1"
+    sha256 "24831d5bc44b72a0fd027572a4e4eaf754ed9805ffed86185bb8dbdfb6284818"
+  end
+
+  # support for gguf (#111)
+  patch do
+    url "https://github.com/ml-explore/mlx-c/commit/89d3454ac3f46ff68668dd9f7817c6d47650e47c.patch?full_index=1"
+    sha256 "411749fd1908fdee783c3b378471603606852ce3a0ee0011ca5b66f47187b9d3"
+  end
+
+  # support for graph export (#112)
+  patch do
+    url "https://github.com/ml-explore/mlx-c/commit/782d4712862b247a094086419ce130fd82cf3c53.patch?full_index=1"
+    sha256 "4469b3ec2836efeadce98a192ae26f423cdbbd182edcd2126f4a6ef36891ce58"
+  end
+
+  # regenerate bindings for MLX 0.31.2 (#114)
+  patch do
+    url "https://github.com/ml-explore/mlx-c/commit/fba4470b89073180056c9ea46c443051375f7399.patch?full_index=1"
+    sha256 "5102eafc68ea94cbe8cabb4acaa9905e17d1c92cb6a1b8c7f0f73dc863c09609"
   end
 
   def install

@@ -1,18 +1,18 @@
 class HfMount < Formula
   desc "Mount Hugging Face Buckets and repos as local filesystems"
   homepage "https://github.com/huggingface/hf-mount"
-  url "https://ghfast.top/https://github.com/huggingface/hf-mount/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "10d67843343a731d78cd51579fbb55a0dead1a8f17c379f2552979c06b5c706b"
+  url "https://ghfast.top/https://github.com/huggingface/hf-mount/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "da9d2658bc91aa98ddd52b7169563d9cb1aacc5f779f3db587456ed8a543c594"
   license "Apache-2.0"
   head "https://github.com/huggingface/hf-mount.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8540f030ed9ea162c681eb104793ea6fd52ab3a577b272782906d24c1fb8a1d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5bc61325092ac812a9df2c111a67e8daa5abd745a0d9d40160864f0444aff22"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9c6162bb7cd86d823e8d10f854b60534946e7b7427b4b8726ce79e0a5473649"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c512da1fd2914e7f0a1dfc8b8653959e8d3221eff0f30c3d694e7621a8a3d4f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9aac553cd2aefc7eb250deb2b05a556c2b1e48e017d0be74258a744c44895b6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9c804083dbafe6fcfa171044816761454f0bd7370033c48b895a14a886393c1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63fd535386f08a5e1d4388a9ece1e5466039731e7e2583ea04dca003e7bc2bed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b581ef204a5463245ed7e7e565ec6fd1192672bfd3d5adb26c5cd2ac9baea683"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbd978fcefaeb44d8152c6dbd9a453a510561f4bef643a7a638f5eb9ebc63e7e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "03d54ed15a6bda87687b83b8fb78cc57ab39bb6f685ff47831c232a8a1b80e5a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "24ca9ef1ba29fe60b3fad58859ac8aa49049ba9a6ab0ec61112e3ab81c17845d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d1f5d1c03a14229c3699383808d5aa4f9c3a33c1305b5bb9f656791ac6fe162"
   end
 
   depends_on "pkgconf" => :build
@@ -20,7 +20,7 @@ class HfMount < Formula
 
   on_linux do
     depends_on "libfuse"
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   def install

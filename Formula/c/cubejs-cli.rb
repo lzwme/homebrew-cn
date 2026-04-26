@@ -1,17 +1,17 @@
 class CubejsCli < Formula
   desc "Cube.js command-line interface"
   homepage "https://cube.dev/"
-  url "https://registry.npmjs.org/cubejs-cli/-/cubejs-cli-1.6.38.tgz"
-  sha256 "b9fff431b3f671b9e6c37aaf26e993968f38769546a12170b2e6179f5f38f90b"
+  url "https://registry.npmjs.org/cubejs-cli/-/cubejs-cli-1.6.39.tgz"
+  sha256 "ba5143df49d201cc05743b10673393ce9c418724f60294bf3aa2bfbe968d3b7b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01f25294f501de7e4414a188ccd48b520c063b9d5dd40f7d38d3946c19125624"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b549672ed6eacc62f6e76691ecd4c53850526ef3a673c81edf2b80ca9efd27c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b549672ed6eacc62f6e76691ecd4c53850526ef3a673c81edf2b80ca9efd27c4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0691edf9f638826de956c649ffc615ac2748aa693f5bbac53650570f9f9e90c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9296f6e0547721f5673d861fa9e00f1400bc86b2bb20bc36c45798db87f2664"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9296f6e0547721f5673d861fa9e00f1400bc86b2bb20bc36c45798db87f2664"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d71afcda15bc8799bed2acfa647dd504d18d53fe948ab75b35dfc71c94b58143"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7740d24c0a61e946850030752e139ad7d79c3579bd841a17b04a25b25435a792"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7740d24c0a61e946850030752e139ad7d79c3579bd841a17b04a25b25435a792"
+    sha256 cellar: :any_skip_relocation, sonoma:        "731709f359fcac157744dbf687b88eaa8bac08d7ca467d4974bb63f4bed11e4c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84c095891eab42d2b226cc0e2b949844184dcd3ff10491ae18ca093013fe8350"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84c095891eab42d2b226cc0e2b949844184dcd3ff10491ae18ca093013fe8350"
   end
 
   depends_on "node"
