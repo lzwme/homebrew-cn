@@ -1,18 +1,18 @@
 class MinizipNg < Formula
   desc "Zip file manipulation library with minizip 1.x compatibility layer"
   homepage "https://github.com/zlib-ng/minizip-ng"
-  url "https://ghfast.top/https://github.com/zlib-ng/minizip-ng/archive/refs/tags/4.1.1.tar.gz"
-  sha256 "ecc1a514f9e455cb627a768e1219369c576a761bc04196941590906c8b622d7e"
+  url "https://ghfast.top/https://github.com/zlib-ng/minizip-ng/archive/refs/tags/4.1.2.tar.gz"
+  sha256 "3738c742c663fda43f1e510b8eeef312917581a712c89cb253f682aaef8c732f"
   license "Zlib"
   head "https://github.com/zlib-ng/minizip-ng.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5f957d07757148ab8a8f611f49f27c54938f8236ba24ecd4fc0379d22df86467"
-    sha256 cellar: :any,                 arm64_sequoia: "815728d8b6633406fd7822b65c37cc046f0842242bb8f34394e8789f92b68a8c"
-    sha256 cellar: :any,                 arm64_sonoma:  "4dac875a087850a514221d9149d90919b1f97c2e541cda609a0fc9c6506d8c86"
-    sha256 cellar: :any,                 sonoma:        "fb1f5b34730044930ee6d3bd087be10571764f94e1259da6b0951fb2eadd0e72"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "673126c43bb60541bbfe0dcc99dcfce5dff44da93576b64e568a0e575d646b00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "890491339ee3b557cdf5ef18bdc422aa73eec6f7d4488f30744a34491ff17015"
+    sha256 cellar: :any,                 arm64_tahoe:   "652e206cf55d7999bed48042f6231b414b948079c677e9ed302a9c99017acf84"
+    sha256 cellar: :any,                 arm64_sequoia: "0f0cdcf802459491aa6ca0ad02377f00da00bdc7550af0156d0be39ef888a973"
+    sha256 cellar: :any,                 arm64_sonoma:  "bcb6fca4c512e22b198bf85d28b763d87df5613a3dee38f0be45396894417c59"
+    sha256 cellar: :any,                 sonoma:        "a195fcf34eb72f8938469eb9924f7ad8225c13ca25dab03e60a8ef1041dff512"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9be5906d844d3a8320fa28e79cfbbdcf38edbdf8a476558074a062acec02ca5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cbbce26ec60e8065365c65523a78e5b4ae8f4ab4962675ec07f09227abcb3d8"
   end
 
   depends_on "cmake" => :build
@@ -43,7 +43,6 @@ class MinizipNg < Formula
     system "cmake", "-S", ".", "-B", "build/static", *args, *std_cmake_args
     system "cmake", "--build", "build/static"
     lib.install "build/static/libminizip-ng.a"
-    (include/"minizip-ng").install "mz_config.h"
   end
 
   test do

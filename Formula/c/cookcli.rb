@@ -20,7 +20,6 @@ class Cookcli < Formula
   depends_on "openssl@3"
 
   def install
-    ENV["OPENSSL_NO_VENDOR"] = "1"
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
 
     # Install npm dependencies and build assets

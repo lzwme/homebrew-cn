@@ -1,9 +1,9 @@
 cask "motionik" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.0.1"
-  sha256 arm:   "b1c24476f75955822d0c23264f1ddff88c3dbdd8ab7c1a19547396ac85c585df",
-         intel: "56b7eacaeea78253e1feef9b361bbc499a3b2383ec1e5778b93e7edc14ac8bd8"
+  version "2.0.3"
+  sha256 arm:   "ceb60c552ccba989e4b3f5d908b310cb8cd1845bc0f2fc7acb3dfa2d1801a9e3",
+         intel: "185dbbe51ed32ae343ca6f6013610bcfdca75abfdec050ce96a3d33d5ce5cc3c"
 
   url "https://assets.motionik.com/releases/Motionik-#{version}-#{arch}.dmg"
   name "Motionik"

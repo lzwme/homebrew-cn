@@ -1,8 +1,8 @@
 cask "clocker" do
-  version "26.08,26.8"
-  sha256 "aae313d59c7293af2d18b18f885c5dad7df5c6121d9bff245dd4ca478ff80647"
+  version "26.10"
+  sha256 "24e37c7d761f0e3697d537bb3de70f9450d9fb6184fee97ae3d3a8430a94a611"
 
-  url "https://ghfast.top/https://github.com/n0shake/Clocker/releases/download/#{version.csv.second || version.csv.first}/Clocker.app.zip",
+  url "https://ghfast.top/https://github.com/n0shake/Clocker/releases/download/#{version.csv.second || version.csv.first}/Clocker.zip",
       verified: "github.com/n0shake/Clocker/"
   name "Clocker"
   desc "Menu bar timezone tracker and compact calendar"
