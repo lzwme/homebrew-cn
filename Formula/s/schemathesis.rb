@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/ab/a2/cec4166416ff2c08ccf7be71bec708d0b8adacf25f40232992157ff73960/schemathesis-4.15.2.tar.gz"
-  sha256 "66f264f270e2222ffc7ab11c23a5dd2277c93c5a1a329d3d82a0b6ddc05263ef"
+  url "https://files.pythonhosted.org/packages/c1/58/412c71cfa443d66ffc4e67426ccf1687ea1957519ff32c7c620c0d2e4646/schemathesis-4.16.1.tar.gz"
+  sha256 "475d3449b18f61534e1ce914971a4643c484990164530029eac7328fc54a63de"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8cfb42165780b683ca776cf50626bddbda2be179a08fa44755023838c6c1aa29"
-    sha256 cellar: :any,                 arm64_sequoia: "b353b22f9a1836cbdaab8a53c2f85caf082900fd9c4a6d712e68491e4a549b14"
-    sha256 cellar: :any,                 arm64_sonoma:  "8d6c4b3ae7f0617f14b19044a3096dc5baa6c9566d74efa67de379ad8cc9bfc5"
-    sha256 cellar: :any,                 sonoma:        "76c533ceece3c07fc463f73970fb40a13bc3c9bceb9d2671eec0d560624cebec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15f6606b45c8d55fac125f0e1efb2a0364db1051d2022c5caabacb7f593cc385"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d23b60566cc0655a7d667ab96e3519ef598c837e2cd2d4ff0225e435eb38da40"
+    sha256 cellar: :any,                 arm64_tahoe:   "e191fa92cacf9dba181db623c4beec65696e98d3bc7e53e868595b3894c16b5e"
+    sha256 cellar: :any,                 arm64_sequoia: "ffb39d16297b04ba59446aaaafc9608e2b1cb577a50f1d16420965459643f6ad"
+    sha256 cellar: :any,                 arm64_sonoma:  "35a0eeeb863934bcbd208cf2d9da1e20264360ba05d6c0ec31eacfa490fe86f3"
+    sha256 cellar: :any,                 sonoma:        "b84734297ed8b1925b4b269d9297c23d7599659e10680d1d4808cf49cdc9767b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "12570358150a514271bebc59f1eb23db582e96b762eaf8875737e2e10acff821"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f2d56148a19a368423eaab923ef595df7f55e9efbbff74ec4c70c2b1ae40a70"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
@@ -42,8 +42,8 @@ class Schemathesis < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
-    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
+    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
+    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
   end
 
   resource "graphql-core" do
@@ -72,8 +72,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/83/77/3227982784ff12a74fc5b28823f3487f457640e6cc653afe16d090891334/hypothesis-6.151.14.tar.gz"
-    sha256 "14fffdfdb50e816cf114f9946aebbf533d7e0920c07ddc1531889f0a22ffaa20"
+    url "https://files.pythonhosted.org/packages/b0/7f/67a06c5f19368e0fa04612bbc446c535bf45b0b51bc6aa56055b112f7604/hypothesis-6.152.2.tar.gz"
+    sha256 "11fd5725958fe75597d1b831f703fdf7e636b7cf1f249117f381ad5cee4d888f"
   end
 
   resource "hypothesis-graphql" do
@@ -87,8 +87,8 @@ class Schemathesis < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
+    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
   end
 
   resource "iniconfig" do
@@ -102,8 +102,8 @@ class Schemathesis < Formula
   end
 
   resource "jsonschema-rs" do
-    url "https://files.pythonhosted.org/packages/7b/89/7dc67b91860924360c12628ca5986902a44e7b42108747ce0b6d3f0ad750/jsonschema_rs-0.46.0.tar.gz"
-    sha256 "4ad96a7fa583fa63abd78d0fd95ffc662cc8e22b8feb06c629c8c314c5e825a1"
+    url "https://files.pythonhosted.org/packages/91/71/76e10065c02a3d2f540e02620399d3d6eedb6a620572f35ad3f4dc48eed8/jsonschema_rs-0.46.2.tar.gz"
+    sha256 "c833d81031817076dc4dba40c1e52ccaf5fcd53ae7e546f4e876050611901a97"
   end
 
   resource "jsonschema-specifications" do
@@ -132,8 +132,8 @@ class Schemathesis < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
-    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
+    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
   end
 
   resource "pluggy" do

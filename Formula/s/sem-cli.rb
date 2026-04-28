@@ -1,18 +1,18 @@
 class SemCli < Formula
   desc "Semantic version control CLI with entity-level diffs and blame"
   homepage "https://github.com/Ataraxy-Labs/sem"
-  url "https://ghfast.top/https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.3.24.tar.gz"
-  sha256 "6fab3313fb3d8606ca3f9e67497b3da72af15d900748f9d4b21b21285d4934ab"
+  url "https://ghfast.top/https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "21842d8b24aebb1395e9024368e22d4ff05a9f62ed9756e3a6b236c882669f7a"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/Ataraxy-Labs/sem.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6340d645529f7345a6a37c6f8944788f97d10f1feff5cc68e043448a27632f3b"
-    sha256 cellar: :any,                 arm64_sequoia: "04439418c52ab3af2d02f45ea3cb8a22765ca8f7406a701785d30356a519198e"
-    sha256 cellar: :any,                 arm64_sonoma:  "f93dbf6f7bbd181004d85f5cc41bb152842d312b9f9121bd2a1ac8f7ad6ca4ae"
-    sha256 cellar: :any,                 sonoma:        "11c10113b3bd1375dbe100eeec6907360120886920f89d5bca03df0f33580a20"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0e96a676ec0dec2bc655e85f855a00b5ce4168a611a4ba86025e290c8259a88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c4e03d40dbee75c53355a833552061c520c61e00661259fb2135d9507312ca0"
+    sha256 cellar: :any,                 arm64_tahoe:   "48ed5276515600f7de9a7c5f857d78d288ec227dc66465b43f3bda48aef56b29"
+    sha256 cellar: :any,                 arm64_sequoia: "004b86645321c11f13e23f23e2c6336e7683a779120e3c240de0c0ea4512763e"
+    sha256 cellar: :any,                 arm64_sonoma:  "b7b55fb284fa1d436f9483fe5aac768b7ed10cfe7253de644cc27806a71f232d"
+    sha256 cellar: :any,                 sonoma:        "00a77ea05ebd1faf9013e5bfe1f7603b659091b24b1779c2e202b6fa02590315"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "855ca1b9d21f592982e4a061d8d4954db2c555a9dd3f4464fb4ad1e23e35e91e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea05599e7de2fae4af509d23d7ee283709c1c48a664b1ce359e75046c050ebeb"
   end
 
   depends_on "pkgconf" => :build

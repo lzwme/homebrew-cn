@@ -1,9 +1,9 @@
 cask "donut" do
   arch arm: "aarch64", intel: "x64"
 
-  version "0.22.1"
-  sha256 arm:   "333dd43ed9f5a79b35a4f4e4d38dfd937a25b69cd7e3aec457ac66ca5b7725f3",
-         intel: "3b65aebee543a69e758a42af9f71914bd14397864b6fa46f1a8fab5f3f03fc14"
+  version "0.22.3"
+  sha256 arm:   "4c7ba7c34d4cfd8b3cd382c06bf53a39b29469dcf5b7b049096a316ced657ba6",
+         intel: "9696a8f607012505fe1ebb26d4eb4550f204fa7269d3ee42c10eb705b10065b5"
 
   url "https://ghfast.top/https://github.com/zhom/donutbrowser/releases/download/v#{version}/Donut_#{version}_#{arch}.dmg",
       verified: "github.com/zhom/donutbrowser/"

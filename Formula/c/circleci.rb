@@ -3,18 +3,18 @@ class Circleci < Formula
   homepage "https://circleci.com/docs/guides/toolkit/local-cli/"
   # Updates should be pushed no more frequently than once per week.
   url "https://github.com/CircleCI-Public/circleci-cli.git",
-      tag:      "v0.1.35213",
-      revision: "1cbd2542e036e2aa13f775ea5e2e461b6a76ffcf"
+      tag:      "v0.1.35800",
+      revision: "bb129029cfdc48d00dacff17fd8dcdaaa67e58f3"
   license "MIT"
   head "https://github.com/CircleCI-Public/circleci-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "beedb43dba63c1829749cff797a543b74770629fc023b17cc5c43dc9c68f0f86"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "142ff782aeec0ee8eb859f07d912f89ee9ad31c5368290c3b6ca779fd49471e2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d6454b01dcb206f0567bd4efa2dc795d43dc5d736790ed6a9bd98601ab3a823"
-    sha256 cellar: :any_skip_relocation, sonoma:        "327543e7ef8c26e758c7a023da090c7d407e47518376086a49bf75f491e9563b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9645a6b69e42befe1af8abfabd8aaac5367505d52de6c7309cdb78e10c8db6c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d7e1ca229d3b00dca43c29d1c2d84809ad6cd1f30d9bf11c3eb600533db2aee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0703ee9aff329dc3e3ef793c1f9559d31dda443d29c09d117e6daa429b646f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52763d39564aab463e8312f566970bec59dcc1db7a8f1539a75f6b1d54e03b41"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71471a14773c850ca7f0318ecbbd76ae2a1425044db66971366f0c4fd7ad5908"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a1bde638429a4d7ff8d928c2b05ffd7570603da4b61eb4aa37f81c0f2ef9f303"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3e002dc0d11c9e006de6c357d33d471acca40e51f89b424e64616bb7a3a0db8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c6b25e9ced6b692c6b5a9cef0aef39f7a5b100d9c25c485228855323c5ffbef"
   end
 
   depends_on "go" => :build

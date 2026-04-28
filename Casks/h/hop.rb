@@ -1,9 +1,9 @@
 cask "hop" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.1.8"
-  sha256 arm:   "73566974e3bd209eb51b0e024c4f45f4ccd1d77297396bfbbe284d18b6ad0861",
-         intel: "2298e22c22aef88ce156a7e17661980736d88761492323f4eba758dbc8e8745b"
+  version "0.1.9"
+  sha256 arm:   "9daf497f6f1fde84317896bd397807ac2d737344ab7e1c5d7ad1af92d814ef90",
+         intel: "dd8c8a62370fde182f69ac228d94c50e0ad500410c654cf12f8447d70eada7fa"
 
   url "https://ghfast.top/https://github.com/golbin/hop/releases/download/v#{version}/HOP-macos-#{arch}.dmg",
       verified: "github.com/golbin/hop/"

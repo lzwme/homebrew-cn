@@ -1,10 +1,8 @@
 cask "usmart-trade" do
-  arch arm: "-arm64"
+  version "4.5.9,20260424_184752,0cac8a24-6a68-4675-8838-8d9e40c52a44,2026-04-25"
+  sha256 "91a839dffd50001bbe6983cf70fe21cd09320ad579d81510fe9148919b5c140a"
 
-  version "4.5.1,7f59351d-5e8a-4e0c-88c5-b2512e426c39,2026-01-28"
-  sha256 "8e75e0ad272867d473d363edc15c2a3002cbac24038043a630274c3e26269016"
-
-  url "https://jy-common-prd-1257884527.cos.ap-guangzhou.myqcloud.com/admin/app-version-file/#{version.csv.third}/#{version.csv.second}/uSMART%20Trade-#{version.csv.first}-universal.dmg",
+  url "https://jy-common-prd-1257884527.cos.ap-guangzhou.myqcloud.com/admin/app-version-file/#{version.csv.fourth}/#{version.csv.third}/usmart_macapp_#{version.csv.first}_#{version.csv.second}.dmg",
       verified: "jy-common-prd-1257884527.cos.ap-guangzhou.myqcloud.com/"
   name "uSMART Trade"
   desc "Stock and options trading platform"
@@ -15,12 +13,12 @@ cask "usmart-trade" do
       appType: 7,
       system:  "mac",
     }
-    regex(%r{file/(\d+[-_]\d+[-_]\d+)/((?:\w+-)+(?:\w+))/.*?Trade[-_]?(\d+(?:\.\d+)+)[._-]universal\.dmg}i)
+    regex(%r{file/(\d+[-_]\d+[-_]\d+)/((?:\w+-)+(?:\w+))/usmart[._-]macapp[-_]?(\d+(?:\.\d+)+)[-_](\d+[-_]\d+)\.dmg}i)
     strategy :json do |json, regex|
       match = json.dig("data", 0, "url")&.match(regex)
       next if match.blank?
 
-      "#{match[3]},#{match[2]},#{match[1]}"
+      "#{match[3]},#{match[4]},#{match[2]},#{match[1]}"
     end
   end
 

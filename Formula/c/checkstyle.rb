@@ -1,8 +1,8 @@
 class Checkstyle < Formula
   desc "Check Java source against a coding standard"
   homepage "https://checkstyle.sourceforge.io/"
-  url "https://ghfast.top/https://github.com/checkstyle/checkstyle/releases/download/checkstyle-13.4.0/checkstyle-13.4.0-all.jar"
-  sha256 "b1eea46ff726d6029b67101547523d7d7a545670dffec80a7c5a03b126dfa30c"
+  url "https://ghfast.top/https://github.com/checkstyle/checkstyle/releases/download/checkstyle-13.4.1/checkstyle-13.4.1-all.jar"
+  sha256 "9af1686953f2a1b1711c45001326c4f36ed4e2f2d8df90e8a5f2ae6c79c16bff"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,7 +11,7 @@ class Checkstyle < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e661d12bd8b736bff18a575e632a44968cf8289f1bb208273486aad0c9a77e81"
+    sha256 cellar: :any_skip_relocation, all: "d6fcc6b2c8af7c3608be5ce026ac922d4340711cd2080fc3ac74ea04b4b3c01f"
   end
 
   depends_on "openjdk"

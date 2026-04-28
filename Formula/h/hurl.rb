@@ -1,8 +1,8 @@
 class Hurl < Formula
   desc "Run and Test HTTP Requests with plain text and curl"
   homepage "https://hurl.dev"
-  url "https://ghfast.top/https://github.com/Orange-OpenSource/hurl/archive/refs/tags/7.1.0.tar.gz"
-  sha256 "1bbe1e9f2736209bc1c0ce3082d3debac08b1aec7c6203e0b6698669c8abc3f2"
+  url "https://ghfast.top/https://github.com/Orange-OpenSource/hurl/archive/refs/tags/8.0.0.tar.gz"
+  sha256 "d6877cd16109b67a64f8581113c3f061b8759de5577f024b8126cbc5ee393243"
   license "Apache-2.0"
   head "https://github.com/Orange-OpenSource/hurl.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Hurl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "edd49915f44436cfadb09265f7a25bb416285ea1368b652e81e60cdd82084184"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23cd51ed813f6a04ef2dda8bfe7835f4581db110e67b4aecccb4590652f7d1e7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "086a925f840c851696f69affba51fdf048ef48b4bb9054357133422c074d162f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "66ed13f47fcc9f6edcdbfaadca45319b7fe411495491d5f3214cac72ccc78323"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3a50486dbdf525831cf6d4c3f28f9d9d29db10dd59d2a9362c1847e9dfc1f52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc7886a550cb1fdb5331418be37e06e04f0b038ca0bc083d5385ffa65b17983b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "859f75892784f7b9d7427acbfda6e5a06a3c2ea3e600654a95171baf0844d1bf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e23f15c61ca4e97157843d27bd4908ececb0dd4c819f8ebd40aa1d9f264b754"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "911448d9f4482516e8410640c241379a6decfca8e3f4e75eb8e950279cc7da34"
+    sha256 cellar: :any_skip_relocation, sonoma:        "70dfa20b8bcc5d2112d05ec84754d3a408013db7ebfbbad936bfc0b8837dbe5b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa2d18e7dc54282d6236d25d4c9c1c7f805afe9de58d37a75c3c2b53eb6cf18c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a0f86a3331185e7a69f8393893e7d4a7ba1c9396833499e8bfb52bfe92f1731"
   end
 
   depends_on "pkgconf" => :build

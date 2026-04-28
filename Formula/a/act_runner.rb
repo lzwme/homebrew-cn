@@ -1,17 +1,17 @@
 class ActRunner < Formula
   desc "Action runner for Gitea based on Gitea's fork of act"
   homepage "https://docs.gitea.com/usage/actions/act-runner"
-  url "https://gitea.com/gitea/act_runner/archive/v0.4.1.tar.gz"
-  sha256 "b7674aefd6271727d78ec1072634d6b78768f323b74450ab933d525f69a9d2a3"
+  url "https://gitea.com/gitea/act_runner/archive/v0.5.0.tar.gz"
+  sha256 "bd85fe4b0bc93e9f4ade9af4f14c4ae951667deb443da9057ae10664fee01c25"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd71c9063288d26315b4943663fb2bc9a360cf9fc7f9780681db1aa834c8ac50"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4811942b8b373161812c30a3da7354e16c630e246878c2a9d7d5db5ed79c1fd4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec4faf2caf9b398f083956beecdf029665472bc27640bf83dcdf2106c1357727"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7bb714e226fe9b23212df38c29451aabc16ab943752b4333d7502a0b874e426b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "229ee7ee61133084f72c5e50f93e352a53d80b93943174dec1707d7b9daffd49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54f761d21d6e2fa829dbf9d7b7c3e6f5008c9221ec45482778c6115f712fce9f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed337e6c088dd8893a8e8b4fb7905e2d88e85a0431bb1934dd89ca1b49812adf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25e565a9bd56b6dbdd59eab6d9ab3abbe030fb0150eceae277d0dcc61cbaa819"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14ce74f2e99e66eb5778bfbc61f02a43d81eb5b4a3832c210e9e6f4e5bcf313b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c164c21f9f9cc57f368e1e441793da640633001ef32cc500e939ab6b5fd08b3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eae74a2b17e639c9d2bb2b9cc90205b566e2f777681f1943acf3b44124cea215"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76a6308ed2571dae169e3850af98066692941ecc68274b9d6675d12edc06ece0"
   end
 
   depends_on "go" => :build
