@@ -1,6 +1,6 @@
 cask "miaoyan" do
-  version "3.3.0"
-  sha256 "a1e85e25fa5feaa80fa81a63f123fc052ec5b3732db8c51540edbc651ab1da5c"
+  version "3.4.0"
+  sha256 "043d525f858442e521750dd5acf42414a4636fbf099c7a71e3512b99e294ca3b"
 
   url "https://ghfast.top/https://github.com/tw93/MiaoYan/releases/download/V#{version}/MiaoYan_V#{version}.zip",
       verified: "github.com/tw93/MiaoYan/"

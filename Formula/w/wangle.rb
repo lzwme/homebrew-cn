@@ -1,19 +1,19 @@
 class Wangle < Formula
   desc "Modular, composable client/server abstractions framework"
   homepage "https://github.com/facebook/wangle"
-  url "https://ghfast.top/https://github.com/facebook/wangle/archive/refs/tags/v2026.04.20.00.tar.gz"
-  sha256 "58df6d98657d2335d0ead6a5197ae5f1270dec4bbef3695d69defce6d86b1290"
+  url "https://ghfast.top/https://github.com/facebook/wangle/archive/refs/tags/v2026.04.27.00.tar.gz"
+  sha256 "ade67be4fd362d88f2c184ed2e05729af6ac9579f4f7281a902af1e0c41f8125"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/wangle.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f99cd040a0d4e73b9e60ccff3a748f48cb5db8e916a8e6366e713776e9991629"
-    sha256 cellar: :any,                 arm64_sequoia: "142c37d3c77dfe2fdb17af7fea5ed61830a623171ccefea4ed9074ef5a1d8b9c"
-    sha256 cellar: :any,                 arm64_sonoma:  "54267f5451cb7e6792b8195f0b1c73d4c7446b0ba989ad56f6b19dd13ff3a3b4"
-    sha256 cellar: :any,                 sonoma:        "f57abf1f038fac409d0c63107a515fb3b812fcd855c8a7da50cb18987a429cfd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b5a5922d6e8fb1804d3a7a2f560607c6775b304420559aa446e7588e903cfc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "583fae056c0585f8b276074a60b497c3f5b4cd903735e036557c8c6bd4afa5aa"
+    sha256 cellar: :any,                 arm64_tahoe:   "cc6f1876c0b73bbc4ff05f4cb74e600b9a9a3786a2743a0b95818edca74959a7"
+    sha256 cellar: :any,                 arm64_sequoia: "b76af4335a3709292ae43f8b200899b4b5ce51b4cec355d87fdfab1d3d6b9a98"
+    sha256 cellar: :any,                 arm64_sonoma:  "91f9f5c37f0fd25e45e1314dbd22c0f63c412abeaad2edb4aa9ab91e067698a3"
+    sha256 cellar: :any,                 sonoma:        "588df27b48ae45fc96d1a29690143c09af3feede175e735d2921d71c55d1ead4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2456b13d8e9dd338ea98e071c0cc8d99f2b0588779fad1ef0991b05a7742ffd0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4e28cc40ba221dbd3b330d446922d7c92d923d7f24e8997200014a6143c2119"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -468,6 +468,7 @@ Homebrew-homebrew-core/Formula/b/baobab.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bareos-client.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/baresip.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/barman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bartib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bartycrouch.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bas55.rb, Homebrew/homebrew-core, 0
@@ -3961,6 +3962,7 @@ Homebrew-homebrew-core/Formula/lib/libcec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libcello.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libcerf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libchaos.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libchardet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libchewing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libclc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libcmph.rb, Homebrew/homebrew-core, 1
@@ -8240,6 +8242,7 @@ Homebrew-homebrew-core/Formula/z/zeromq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zfind.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/z/zfp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zig@0.14.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zig@0.15.rb, Homebrew/homebrew-core, 0

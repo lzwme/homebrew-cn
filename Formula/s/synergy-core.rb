@@ -1,8 +1,8 @@
 class SynergyCore < Formula
   desc "Synergy, the keyboard and mouse sharing tool"
   homepage "https://symless.com/synergy"
-  url "https://ghfast.top/https://github.com/symless/synergy/archive/refs/tags/v1.20.0.tar.gz"
-  sha256 "c41a25ccc9fa2ea41706170338c5069890503f0de02668551250f89afe8fa012"
+  url "https://ghfast.top/https://github.com/symless/synergy/archive/refs/tags/v1.20.1.tar.gz"
+  sha256 "9fff6a15893e3d8862d1948612f17c2e1bca501f8b7c892b9d14e3be13dc3770"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
   head "https://github.com/symless/synergy-core.git", branch: "master"
 
@@ -17,12 +17,12 @@ class SynergyCore < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "40929bc35488d7eeed31e9ee9611fa20f00eccf91c0c26e6c49c6f291ff78682"
-    sha256 cellar: :any,                 arm64_sequoia: "087fea94b4556338772c3e5c8675544995bf76535808c4ce2a41277bf8eac6f6"
-    sha256 cellar: :any,                 arm64_sonoma:  "d98cc38fb67ce355c0d5b0212993e9e9e0cfb6bdf9c5937e4dc88f4c8fbfee0c"
-    sha256 cellar: :any,                 sonoma:        "1e9c736ae27ad553089cf782f0735b8b7863e5233995e9d66b79e9f940856f62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3db71fa49a5ccda86826efad51ed3e342a4e597cfaf0209e1eba94036e8a9e32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "035e1084d5c6172fabb5c6f473f2624fce9db11c0a672feedcfe14775dffb42e"
+    sha256 cellar: :any,                 arm64_tahoe:   "ed678d4d23525f640e42f4bcff8b517bf33ad67b7586a22f1c93989bfaa1d4a2"
+    sha256 cellar: :any,                 arm64_sequoia: "bde091d9cffb700b2f072bb25e3fe5efef07090b8de6ab6cf03a429328cb9475"
+    sha256 cellar: :any,                 arm64_sonoma:  "9058461c4a03f8c209540bc373e16f4a4e37bb1652d001d11d3f80f930c30c21"
+    sha256 cellar: :any,                 sonoma:        "17ace0f16e4306a6cf9cb2c570d055fccaa664f0a961b8a51c1ce3540e39eee7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "af19fe462bd9423dda5e816b3cb51dc7bb8306379f1b25220443211fc52030e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5dfa43f93b8db14dfeef9c01945739d6e0141dea4a83ce2584b6237c73db0fa"
   end
 
   depends_on "cmake" => :build

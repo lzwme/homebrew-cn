@@ -1,9 +1,9 @@
 cask "coderabbit" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.4.3"
-  sha256 arm:   "07bc82a1f153ff5ab4c81474034b0837bf33128dc3d676f11a7a48445ddb02b4",
-         intel: "8fe34819da86e35295d0c85488fb099b6a77fb9dfef6aa909f57f9b435c45b87"
+  version "0.4.4"
+  sha256 arm:   "fbc51ff865dd71b4f08511949f7c0e3a23acd2dd6eec6c02e9b81aca3826626f",
+         intel: "e32f899c833973c475218c3688d02d43dd4e18477c23b5ea7b95b0cf414027e5"
 
   url "https://cli.coderabbit.ai/releases/#{version}/coderabbit-darwin-#{arch}.zip"
   name "CodeRabbit"

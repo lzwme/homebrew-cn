@@ -4,7 +4,7 @@ class Adios2 < Formula
   url "https://ghfast.top/https://github.com/ornladios/ADIOS2/archive/refs/tags/v2.11.0.tar.gz"
   sha256 "0a2bd745e3f39745f07587e4a5f92d72f12fa0e2be305e7957bdceda03735dbf"
   license "Apache-2.0"
-  revision 3
+  revision 4
   head "https://github.com/ornladios/ADIOS2.git", branch: "master"
 
   livecheck do
@@ -13,13 +13,12 @@ class Adios2 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "0fc0bba06d97e22d5c1869d158bc966d4edae99020e4ca7c8c4c13004f3b52c4"
-    sha256 arm64_sequoia: "92c091315f8dbadb845f200cace50fc6e18b55a78d8cdd6ef45872e8c8ee6486"
-    sha256 arm64_sonoma:  "45d3e08530811c78a0aa15aa60d41b44a70698a4c44b741d16be03365f103dc1"
-    sha256 sonoma:        "d9fef9268fa1e89e72598057dac3eb94651f795bda0db338ddd995c76c62fb0e"
-    sha256 arm64_linux:   "534704afd26df44507961778f55a3792962cfe487fd94efe4b9148330e976b12"
-    sha256 x86_64_linux:  "b52a6393a46cb6e8c64b502f88b2d032f029d15148347038cc709870f156cfb4"
+    sha256 arm64_tahoe:   "46c1bee36eec9c38cd0ef964c90b4c5036347be04c0cc19bed1e9a56d01e09ee"
+    sha256 arm64_sequoia: "4dde7bf358fc984bace7c999bec222510a73081b05e728478cabeca791c53150"
+    sha256 arm64_sonoma:  "046ea42197e1e88f4d3bf4ad7e8916cdbefad9e41a5bebc7bc2acf8bd3171cc0"
+    sha256 sonoma:        "d08be037bcbf032eaa43dd2c8e5d28c119d689b8852486feda7cc165b819b80a"
+    sha256 arm64_linux:   "7fd3ad903e977a1ea1b0ac7f7504da174f4238eafc6bd8cf992f36670ec7545a"
+    sha256 x86_64_linux:  "6432ce924f199c69772fffc96dfada0a94da1e4fa7391bf31bf68abaa987f14e"
   end
 
   depends_on "cmake" => :build

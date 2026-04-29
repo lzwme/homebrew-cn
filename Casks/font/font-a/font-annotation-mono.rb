@@ -1,6 +1,6 @@
 cask "font-annotation-mono" do
-  version "0.3"
-  sha256 "a72513e0737aed6db311054ea6e18049760b060865214e74c84750b46c846325"
+  version "0.4"
+  sha256 "c0a8c1fa9f8dbf6a0ffadf08395244dda9b3623b7f9a147ec277e23afc7e4e7d"
 
   url "https://ghfast.top/https://github.com/qwerasd205/AnnotationMono/releases/download/v#{version}/AnnotationMono_v#{version}.zip",
       verified: "github.com/qwerasd205/AnnotationMono/"

@@ -3,18 +3,18 @@ class Parsedmarc < Formula
 
   desc "DMARC report analyzer and visualizer"
   homepage "https://domainaware.github.io/parsedmarc/"
-  url "https://files.pythonhosted.org/packages/32/bb/a1ba878e4b9456eda226f68559981d68e903cbd41e93e3a936ae933e1b86/parsedmarc-9.10.2.tar.gz"
-  sha256 "16e851b6e3622d39b82d3743538df518b1a7b80be45fd66a78678a9bb341d008"
+  url "https://files.pythonhosted.org/packages/d5/1c/18b21ccc3c2a55c63b6b7230882fa04424359071aeb3291c46b30a3d60e8/parsedmarc-9.10.3.tar.gz"
+  sha256 "e1e310a7a83f6b4b097dcbf5f41c228bf2e978934dc44da33b8dcd0d0266f456"
   license "Apache-2.0"
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "af8a4a7dc1e56357ae3f043b1894d875d8394e7bfe491b4ececac5a853a668b1"
-    sha256 cellar: :any,                 arm64_sequoia: "bb039a0033f025806ecd971b31ba9905f0b732d7c60f60a15604db247d01ab7f"
-    sha256 cellar: :any,                 arm64_sonoma:  "4b2967f377d148f19bcc05892639f92cc37a817a0d344da357ea2b11c991cb4e"
-    sha256 cellar: :any,                 sonoma:        "1a412b1114c47dc63cc83833944396a97bedc9505c775fd8b718f3278332a75d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "31f236a36d941c6710b2c5484199d78b7002209fa262c0a25697c82f2eca91b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4802a9e89969c83692b96a98f7eacf889b187ae69f77daae46efa210525b362c"
+    sha256 cellar: :any,                 arm64_tahoe:   "416b23fcbc4fd37e4ac93312720a0b7dc0cefa83e0026229b504246413c5f2c6"
+    sha256 cellar: :any,                 arm64_sequoia: "fcb67b3740b3a1f64cd8c8d38541004da9adc3a5cbfdf26fb42f4862256861c2"
+    sha256 cellar: :any,                 arm64_sonoma:  "cd6e1ca6c305533eff4235ba13b2e208d057de3ce84f85397067c6f2b77cecf3"
+    sha256 cellar: :any,                 sonoma:        "a0b1d9f32ad6bf91a0768d5e848ea512b09fa57d49ce72da033c7e4dc5ff9ff5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1cb1f10fb76f1adaa7f98e57dd0431dd068378cc9797553eaab6e79f9f3e89a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07a5179cfdcc2464b5cc45d32438728d55fe4be15a2aa7a65d8344f363037363"
   end
 
   depends_on "rust" => :build
@@ -224,8 +224,8 @@ class Parsedmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/68/88/d6a7d14c21265010f7b0f5ded63d45ace161f950a5a2a23d0a5d6058f6cd/publicsuffixlist-1.0.2.20260424.tar.gz"
-    sha256 "b1f28102ffc8dc1e83a4d07dec141e1d1822e9b607d14d420519615755f47d55"
+    url "https://files.pythonhosted.org/packages/06/c2/18e2d5bdadfbf04665d0c609104cdeb1759af548aaf69fdcda5d436b5ea4/publicsuffixlist-1.0.2.20260425.tar.gz"
+    sha256 "145f86db36930549f197244f6f100ae1c6c8cd26dd3796d6d0219b453541c087"
   end
 
   resource "pyasn1" do

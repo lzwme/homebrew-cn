@@ -4,19 +4,18 @@ class MetaPackageManager < Formula
 
   desc "Wrapper around all package managers with a unifying CLI"
   homepage "https://kdeldycke.github.io/meta-package-manager/"
-  url "https://files.pythonhosted.org/packages/19/cc/902b1f4e8861517ebbd3a556642d68a920aa3d548785ec56e185f353b856/meta_package_manager-6.3.0.tar.gz"
-  sha256 "04fe3b0ff3d798154ef9dbecc0f8c10e8a44fd2a62ff9e284a44c20b8e981df6"
+  url "https://files.pythonhosted.org/packages/43/88/56eeaba6b1cfc70d94e200077fa51179e467c9830f429f420f75f78604f7/meta_package_manager-6.4.0.tar.gz"
+  sha256 "48af218873bb2c532a1df2875b711ee25a830e529f95348ddcf1e7ef8782cf35"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/kdeldycke/meta-package-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2100e68a1526d9198b53601753d35ce1b75d134d2f14e938954acd86dc78d787"
-    sha256 cellar: :any,                 arm64_sequoia: "2452002bd881493594acd7031fa4f01da7026e1752d6aa2c95d56f4e6308de15"
-    sha256 cellar: :any,                 arm64_sonoma:  "b7e7ff87a24b396bf2d259f37080bfeda8a441483ddc749797643750bd13a212"
-    sha256 cellar: :any,                 sonoma:        "30718e4f7c117ed9c28ff4119370ea5dba5a807ab72546916369b3926efc4150"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "822d817ee269c4647c6294dc1db1544bcec6b64ded08b3481fae556e829cb1e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "371d9cde7cc01c447d2cecee826ba57d777b77302a967d6f0e73c7223358f088"
+    sha256 cellar: :any,                 arm64_tahoe:   "2810f76dbc005140b3cf02633601bcb3f5d4a63fcf696a4929bb0537b7f22ce7"
+    sha256 cellar: :any,                 arm64_sequoia: "836882c9bd02dfb7b83eb1ba65ce2c212cb6e1cf5c3b727d0f946e7256111eb5"
+    sha256 cellar: :any,                 arm64_sonoma:  "45893211725f5f7921c0de1748af39e188fa94db826e33d27c9c967e1c1834af"
+    sha256 cellar: :any,                 sonoma:        "232651c77377e48c3ac8abebb2abad96c14bff0807e826375f071944ef6af15e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6302fd7a5101306809ee62fb7da4b5351e4b1d0005748cf417e5ad6485ac8c29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e26e9ddae96d42e4c263b0bde5a94b39d87e60670c79faa7b439b90baf0bdc81"
   end
 
   depends_on "rust" => :build
@@ -67,13 +66,13 @@ class MetaPackageManager < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
-    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
+    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
+    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
   end
 
   resource "click-extra" do
-    url "https://files.pythonhosted.org/packages/fc/3b/61fab1784a949eec5337cfd45ceb12f87d12757d0cffac850b50cafc269e/click_extra-7.13.0.tar.gz"
-    sha256 "52b27d746e8254c93320cc463750f376aea45aa61bd0de9a45412f471e54f63e"
+    url "https://files.pythonhosted.org/packages/20/c9/f02eef46dd487565fac61a0cf7b77bd2c1ce255129bbf04507a6bd3a2cf5/click_extra-7.14.1.tar.gz"
+    sha256 "acfa952375f5051e509643623ef9e66e2691435b9f4ceb50f5fb078e87761028"
   end
 
   resource "cloup" do
@@ -97,8 +96,8 @@ class MetaPackageManager < Formula
   end
 
   resource "extra-platforms" do
-    url "https://files.pythonhosted.org/packages/7c/7b/0049f8a7817ac4eb6ad1af72c7938fff3e2677d55468c87de792208e068c/extra_platforms-11.1.0.tar.gz"
-    sha256 "3045d722cab2b422a8fcbcba7f52026c33523cb147616d99fc50947f8e952375"
+    url "https://files.pythonhosted.org/packages/88/3e/b7dfcbd8ccfb8127f2b907e3c7eabf0ff34bebdc7ae126266fbb7eba7208/extra_platforms-12.0.1.tar.gz"
+    sha256 "55146246c1e4babe385d2438c4da54e3f0078cedc70914288bedbe6502849218"
   end
 
   resource "fqdn" do
@@ -107,8 +106,8 @@ class MetaPackageManager < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
+    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
   end
 
   resource "isoduration" do
@@ -242,8 +241,8 @@ class MetaPackageManager < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/19/f5/cd531b2d15a671a40c0f66cf06bc3570a12cd56eef98960068ebbad1bf5a/tzdata-2026.1.tar.gz"
-    sha256 "67658a1903c75917309e753fdc349ac0efd8c27db7a0cb406a25be4840f87f98"
+    url "https://files.pythonhosted.org/packages/ba/19/1b9b0e29f30c6d35cb345486df41110984ea67ae69dddbc0e8a100999493/tzdata-2026.2.tar.gz"
+    sha256 "9173fde7d80d9018e02a662e168e5a2d04f87c41ea174b139fbef642eda62d10"
   end
 
   resource "uri-template" do
@@ -252,8 +251,8 @@ class MetaPackageManager < Formula
   end
 
   resource "uritools" do
-    url "https://files.pythonhosted.org/packages/dd/f7/6651d145bedd535a5bdd6dad108329ec1fec89d38ec611f8d98834eb5378/uritools-6.0.1.tar.gz"
-    sha256 "2f9e9cb954e7877232b2c863f724a44a06eb98d9c7ebdd69914876e9487b94f8"
+    url "https://files.pythonhosted.org/packages/86/92/07bd0999768dc45ab2be5795d53065cabee3bd54db89e7499005e09a4a32/uritools-6.0.2.tar.gz"
+    sha256 "4d671c3b8ca230a5d47efa5f8a693f3d01531f38f4f523170299be734cc9851b"
   end
 
   resource "urllib3" do
@@ -293,8 +292,8 @@ class MetaPackageManager < Formula
 
     # Check mpm is detecting brew and report it as a manager in a table row.
     assert_match "brew,Homebrew Formulae,✓,✓",
-      shell_output("#{bin}/mpm --output-format csv --all-managers managers")
+      shell_output("#{bin}/mpm --table-format csv --all-managers managers")
     # Check mpm is reporting itself as installed via brew in a table row.
-    assert_match "meta-package-manager,,brew,#{version}", shell_output("#{bin}/mpm --output-format csv installed")
+    assert_match "meta-package-manager,,brew,#{version}", shell_output("#{bin}/mpm --table-format csv installed")
   end
 end

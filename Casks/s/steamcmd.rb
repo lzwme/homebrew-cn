@@ -1,5 +1,5 @@
 cask "steamcmd" do
-  version "1773426366"
+  version "1777415795"
   sha256 :no_check
 
   url "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_osx.tar.gz",

@@ -1,19 +1,19 @@
 class Fbthrift < Formula
   desc "Facebook's branch of Apache Thrift, including a new C++ server"
   homepage "https://github.com/facebook/fbthrift"
-  url "https://ghfast.top/https://github.com/facebook/fbthrift/archive/refs/tags/v2026.04.20.00.tar.gz"
-  sha256 "7452baef2b654232d934e4f67250915de8474f6e292cec8cd856e34371a1fdf2"
+  url "https://ghfast.top/https://github.com/facebook/fbthrift/archive/refs/tags/v2026.04.27.00.tar.gz"
+  sha256 "3114785d3e5fa59ab2a8d7180c5f5791e852fc57d3d6d8b6a0430ecf26f8be47"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/fbthrift.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "034f93365f3c1f6a8f24deb3e46274d101722ca96d9018de97438d4d5fe62392"
-    sha256 cellar: :any,                 arm64_sequoia: "d1a1fdb576694331672b2a4eb7dd13674e337c3a4a6df493791fb02b58b7a587"
-    sha256 cellar: :any,                 arm64_sonoma:  "edf601e69e575b0745e7771385a19986b1272ea9a5b8e86445de63725ef8cbf5"
-    sha256 cellar: :any,                 sonoma:        "c497b22da5c2264b298984211b89066cc9bb07f2429f1e06d3351e93aa8f1aa5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1fd5e5132c1aaa27b5731d7e2bf516a3139e579982f9c0adb5a4bfbc702d49d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "253ee9ba31add1c609e7680fffdad6c79d964d395485000db997dafc966ea5f1"
+    sha256 cellar: :any,                 arm64_tahoe:   "13050245a97fcd240234aaad61775b3de69cf845784f14b0bf88cceb2d854606"
+    sha256 cellar: :any,                 arm64_sequoia: "947ebbf6a2ec1df4d9a168c2010cc5bf15c8ef0bce60c92cdd9c8c0f36a859eb"
+    sha256 cellar: :any,                 arm64_sonoma:  "cbbf879b52111c77c471875d9f7c18c05f9c701aca6ef510959850a7d4653003"
+    sha256 cellar: :any,                 sonoma:        "b3494b7c76a33adadd21a542b38adeb97a2bd9a1c82c06fd837144b0abb4bce1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce530c727651dedba03ae3588c1631d49d6f512d120b681de9b5f159fa548056"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75da42d9aa49b194ecfded5fb5d1530dd1094d2d55eb0753a88449cd2824050b"
   end
 
   depends_on "bison" => :build # Needs Bison 3.1+

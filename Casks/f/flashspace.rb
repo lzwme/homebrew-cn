@@ -1,6 +1,6 @@
 cask "flashspace" do
-  version "4.16.75"
-  sha256 "c8d3524c5d9b327feee8d4503633e82687a5c740f5eda7bcb46877bcea1098bd"
+  version "4.16.76"
+  sha256 "8aff77a2d2e290ea37f20639f2070762d0dd5f8e1f730ee5cfdceae1ea050157"
 
   url "https://ghfast.top/https://github.com/wojciech-kulik/FlashSpace/releases/download/v#{version}/FlashSpace.app.zip"
   name "FlashSpace"

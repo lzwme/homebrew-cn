@@ -6,6 +6,11 @@ class Libdicom < Formula
   license "MIT"
   compatibility_version 1
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "edf1ef90081de45407247c6f2c62dfa5f25ec6e449c77fd817587e4e7947bdd5"
     sha256 cellar: :any,                 arm64_sequoia: "a0ebd3a3367d71d0334a7891bcfd592e2b3afb155ee06ef53147132dfcefd60e"

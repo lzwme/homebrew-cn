@@ -1,15 +1,14 @@
 class Container < Formula
   desc "Create and run Linux containers using lightweight virtual machines"
   homepage "https://apple.github.io/container/documentation/"
-  url "https://ghfast.top/https://github.com/apple/container/archive/refs/tags/0.11.0.tar.gz"
-  sha256 "aaab11949e2d9d9a983aedc08f6d3f3f5612c927d980e66cff45aafd63d031f2"
+  url "https://ghfast.top/https://github.com/apple/container/archive/refs/tags/0.12.0.tar.gz"
+  sha256 "dc9fb35c212b69ad2b904b835c0856b38f039ff825e2bb5a09d72355215e4ef3"
   license "Apache-2.0"
   head "https://github.com/apple/container.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "485f6e988c79187a98be715e5410a920df3d9e3edd9e71b2d5e29055368f4847"
-    sha256 arm64_sequoia: "3050bf8eeb1a7d6d9ffd98a55fe4df5e6454d38981dfe10b8b5b9c6380387371"
+    sha256 arm64_tahoe:   "cca5bf8f104fd3277c81b2309d4d962837f53184e233ec6afbc5a45d451d388c"
+    sha256 arm64_sequoia: "b21e4de3b391caf5222ff70a1b5143cd2759676ba057fa30fde130e96bc86135"
   end
 
   depends_on xcode: ["26.0", :build]
@@ -48,18 +47,19 @@ class Container < Formula
     codesign "--identifier=com.apple.container.cli", bin/"container"
     codesign "--identifier=com.apple.container.apiserver", bin/"container-apiserver"
 
-    [
-      "container-core-images",
-      "container-network-vmnet",
-      "container-runtime-linux",
-    ].each do |plugin|
-      (libexec/"container-plugins/#{plugin}/bin").install release_dir/plugin
-      (libexec/"container-plugins/#{plugin}").install "config/#{plugin}-config.json" => "config.json"
+    {
+      "container-core-images"   => "CoreImages",
+      "container-network-vmnet" => "NetworkVMNet",
+      "container-runtime-linux" => "RuntimeLinux",
+    }.each do |bin_name, source|
+      (libexec/"container-plugins/#{bin_name}/bin").install release_dir/bin_name
+      (libexec/"container-plugins/#{bin_name}").install "Sources/Plugins/#{source}/config.toml"
 
       entitlement_args = []
-      entitlement_args << "--entitlements=signing/#{plugin}.entitlements" if plugin != "container-core-images"
+      entitlement_args << "--entitlements=signing/#{bin_name}.entitlements" if bin_name != "container-core-images"
 
-      codesign "--prefix=com.apple.container.", *entitlement_args, libexec/"container-plugins/#{plugin}/bin/#{plugin}"
+      codesign "--prefix=com.apple.container.", *entitlement_args,
+libexec/"container-plugins/#{bin_name}/bin/#{bin_name}"
     end
 
     generate_completions_from_executable bin/"container", "--generate-completion-script"
