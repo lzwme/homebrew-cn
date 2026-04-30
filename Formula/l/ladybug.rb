@@ -1,17 +1,17 @@
 class Ladybug < Formula
   desc "Embedded graph database built for query speed and scalability"
   homepage "https://ladybugdb.com/"
-  url "https://ghfast.top/https://github.com/LadybugDB/ladybug/archive/refs/tags/v0.15.4.2.tar.gz"
-  sha256 "7ca796ff20f88ac374a835a7bc3689ee12faae621fcfee9fa5d5de5a8c1cda81"
+  url "https://ghfast.top/https://github.com/LadybugDB/ladybug/archive/refs/tags/v0.16.0.tar.gz"
+  sha256 "a99286a544b4430c9737dd10202a5b60172393f63d6844e7e2c223ab3c37be1f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "449a8f5cd5d3afb0dc3407b14d3be64c710e048685e9b66a1492d1414f540a87"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e2f4fcde43748b50dc831d9e1b411f238e6aa9ef31ce9ebf7486b7b2930dc10"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1598b77622c7e2111adb5414fc6249257f264cb005056295f31471fd6337299e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4995ff8a2853b2fd2fa9203bdb25f5a03b2e9bff390dac1a898f90faf1dafd4a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3eca97bbee0d9056e9dae624ac9c7e91a4b3ea5520706a6c3ccfef8504d5bbcd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3dd6120d9267693ae1bf7b6d08578f10bca1dd27ec258c7fcc7b0d2b9a0caa5e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23a4b409cf2021ec7ef211b85bd7d6ec9b01a7e5adfdbae6f04762f08f3ae6a2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "421f80b88bcc9f1b9bfec6f800d27b0655409ad3d597df77d773ba18ab217d95"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23c74e8655853c62d5a66a779bffdf6412d6b212fe1b0fa298ec41d39f4874aa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "803c9b265e630d487b5b622fd2ca72330fc659ff5aa6713c040cc3f5c974f57a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1dd6e9535bcb309434bf53c3e9da2b29742da72ab87a2d2e4b202e4835965b8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11982da506c602bcd6998a918d64e4816b9d61fd40725a23d10e3efd68ab8bfe"
   end
 
   depends_on "cmake" => :build

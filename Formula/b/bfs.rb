@@ -1,20 +1,17 @@
 class Bfs < Formula
   desc "Breadth-first version of find"
   homepage "https://tavianator.com/projects/bfs.html"
-  url "https://ghfast.top/https://github.com/tavianator/bfs/archive/refs/tags/4.1.tar.gz"
-  sha256 "7a2ccafc87803b6c42009019e0786cb1307f492c2d61d2fcb0be5dcfdd0049da"
+  url "https://ghfast.top/https://github.com/tavianator/bfs/archive/refs/tags/4.1.1.tar.gz"
+  sha256 "23f72223733d08393e9a5309c6a38b175e32d9afa65b15517edc316bd02a1f4f"
   license "0BSD"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "2d197823d3ea09db80ff41a0a887b3278c9b1f28db50c683f17f8233a26e95c9"
-    sha256 cellar: :any,                 arm64_sequoia: "cc95849810fe6c692160249cc81d38f1a2cd3e0f5d6f033e0bd9342429116e40"
-    sha256 cellar: :any,                 arm64_sonoma:  "dd75c7c57aa181eb29832ee8c1fb6d4530f8509672d9bfb27e19134309507d2d"
-    sha256 cellar: :any,                 arm64_ventura: "5b0fccf7829272c6a2c9d10c7432b70c912fbb5174eeff38a64ddbbb165bdce2"
-    sha256 cellar: :any,                 sonoma:        "4c121ba08ed118750411c1003e9e078420e98a819258816f133b6ca0c83f2473"
-    sha256 cellar: :any,                 ventura:       "50c78795197923422f8f51d5099dd604027a289701f9af875e7f942e6443e9be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b3a3ee53d9833b58291c0e426afbdd4bac5a880c9bc77585d42e0205fb00785"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "724d215224af855240f52ca8f0ad7fccc8c1d2dace5f770692f699a8dd91c09f"
+    sha256 cellar: :any,                 arm64_tahoe:   "25aa919670b9e9f2d9b3cfcb01b5e73f574e02cbaa2a544bb8eb2c5b82d9d3b5"
+    sha256 cellar: :any,                 arm64_sequoia: "361c1e90ce900bc4279afa7eb0cb6661c22f440e0b4518748740c6c7cccc9660"
+    sha256 cellar: :any,                 arm64_sonoma:  "3b3021baefab4fa5b1c3be129710efdc34102ff9cb61e48f921309a43600b7ac"
+    sha256 cellar: :any,                 sonoma:        "02abd18d52fd4275b2fbaaf253e36aac8b5526106217369160ac5b5c658ac61d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff0940f982cae75976499fab1ee15a9b1013ecb7f1cbd66af5bc6391f6d42631"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e61b565bad6ba51814c96b49f483fa6fed47be82224fe415eba7fe03b300ac59"
   end
 
   depends_on "pkgconf" => :build

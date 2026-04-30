@@ -1,17 +1,17 @@
 class LettaCode < Formula
   desc "Memory-first coding agent"
   homepage "https://docs.letta.com/letta-code"
-  url "https://registry.npmjs.org/@letta-ai/letta-code/-/letta-code-0.24.7.tgz"
-  sha256 "b9a4398503bd90af3f868fdb74c902e12d13fa45fae77e07337f8d90bae10e28"
+  url "https://registry.npmjs.org/@letta-ai/letta-code/-/letta-code-0.24.9.tgz"
+  sha256 "5c151b0413a6704a02ee17683eb0e810ccaf2172543358adb48a91dfd3cea4a2"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "154bea06883d7a3e476a222683fb3bbbae6e377ebd0ff35c4ae764538665ee43"
-    sha256 cellar: :any,                 arm64_sequoia: "086cef0bfaaca55083938d119acd6562d021865912e1f063e0010e6c515fe47d"
-    sha256 cellar: :any,                 arm64_sonoma:  "086cef0bfaaca55083938d119acd6562d021865912e1f063e0010e6c515fe47d"
-    sha256 cellar: :any,                 sonoma:        "71d0e9b48107633a3a324159bd2ef999db6e07736c9facb632a8b8d160fd28f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed8721d93bc0ae9b5a449335a3580563c6829181913dd53579669bbf05701933"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebbbe02a05cd4b75911cd94328385ed934927260409dcaab0182bfef2d964118"
+    sha256 cellar: :any,                 arm64_tahoe:   "56724d27f864e7971829346c846776dd08001b127542d6f2960168ca0bc7f17b"
+    sha256 cellar: :any,                 arm64_sequoia: "19f541e4550de0c2fe6f8228644fa462a142924052b609ef37d034927296e6b8"
+    sha256 cellar: :any,                 arm64_sonoma:  "19f541e4550de0c2fe6f8228644fa462a142924052b609ef37d034927296e6b8"
+    sha256 cellar: :any,                 sonoma:        "34ff50767509f27229aa2a1f91897b77070ba455e12828b758b2a33d6eef413e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f9b350b039d2427c012b2eb523da05e3e1b9eb5e86f7250bc3c6d37cfb53e21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2a4f5884a14279a669b6b2e5c75aaf34061eaf04359ca6ba5ffb9d6db9eb4e0"
   end
 
   depends_on "node"

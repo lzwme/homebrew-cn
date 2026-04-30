@@ -1,17 +1,17 @@
 class Geni < Formula
   desc "Standalone database migration tool"
   homepage "https://github.com/emilpriver/geni"
-  url "https://ghfast.top/https://github.com/emilpriver/geni/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "5530fb7fff8cfeaecaebe95c0d68b93a757369997872ed48d30d8d2f3625992f"
+  url "https://ghfast.top/https://github.com/emilpriver/geni/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "84f49ef39e6c9a7725e25dbda9b751ce780e09352dd90b0eea86db4ab06dcbb1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "571e38daab774553490d3e3de2c5d09bcefad8313191498f7f611b85e65997df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a255650f3d9485e2107ac5c3c7c24ec6145acd9817be23c1fda6fe6a92a0d2e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27f24a56ad668cd64fc8efa4443e6da3ccab00898f9c47f5bf045ededf318470"
-    sha256 cellar: :any_skip_relocation, sonoma:        "583030f57ad040198966cb9307df19fbe3a8ce17dd97956745a85b24cd96d943"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8090f1e35e8de4e4d581680fb37292f04142785ea0333f14e627753fdfd99106"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7448803a172c040f866f004e26580c54f38b1c4caa2a5ed25871cf180a02d23a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e401951dd53c1937667b4f2de2294d5d53b0515d8839c362ef471c119224aa39"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24e009a27e515c4d86c161e3d01e16e32a16ff610ef1cca7b2ecd8495b5253f2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c80fdded46bdfd69202ae4790908ae1b290f90c32e24b965879d9037aa7d7bf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "930b7ee583452d372d6ade5dbe282c57c3de266fa0096203d7d27d0f12151baa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dcb99e5d87a513ce243fd304cd3367f2c33189802730f4dd2a5a22bd025c2a57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11c21a0e53a0850657f1b6bdac01fc37fb16ed31330139535a4e68c536db8a09"
   end
 
   depends_on "rust" => :build

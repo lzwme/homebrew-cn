@@ -1,10 +1,9 @@
 class Adios2 < Formula
   desc "Next generation of ADIOS developed in the Exascale Computing Program"
   homepage "https://adios2.readthedocs.io"
-  url "https://ghfast.top/https://github.com/ornladios/ADIOS2/archive/refs/tags/v2.11.0.tar.gz"
-  sha256 "0a2bd745e3f39745f07587e4a5f92d72f12fa0e2be305e7957bdceda03735dbf"
+  url "https://ghfast.top/https://github.com/ornladios/ADIOS2/archive/refs/tags/v2.12.1.tar.gz"
+  sha256 "71edd8f721448311852122fca8d83ae497b43846e5bfcdfd275dc06bb7f3d0c5"
   license "Apache-2.0"
-  revision 4
   head "https://github.com/ornladios/ADIOS2.git", branch: "master"
 
   livecheck do
@@ -13,12 +12,12 @@ class Adios2 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "46c1bee36eec9c38cd0ef964c90b4c5036347be04c0cc19bed1e9a56d01e09ee"
-    sha256 arm64_sequoia: "4dde7bf358fc984bace7c999bec222510a73081b05e728478cabeca791c53150"
-    sha256 arm64_sonoma:  "046ea42197e1e88f4d3bf4ad7e8916cdbefad9e41a5bebc7bc2acf8bd3171cc0"
-    sha256 sonoma:        "d08be037bcbf032eaa43dd2c8e5d28c119d689b8852486feda7cc165b819b80a"
-    sha256 arm64_linux:   "7fd3ad903e977a1ea1b0ac7f7504da174f4238eafc6bd8cf992f36670ec7545a"
-    sha256 x86_64_linux:  "6432ce924f199c69772fffc96dfada0a94da1e4fa7391bf31bf68abaa987f14e"
+    sha256 cellar: :any,                 arm64_tahoe:   "264adbac2b0515a18279cc09c2564f506d124b4972ba4c2ece22414c9d6d3577"
+    sha256 cellar: :any,                 arm64_sequoia: "a40d806dc776c0a71daf37be4489c58d4515b6f78f6e7104f1dbbf3a9093070e"
+    sha256 cellar: :any,                 arm64_sonoma:  "970a0cf1cbf813bb8e24674b92ea06cdc9403df71d0edd97d0156067fec93d8a"
+    sha256 cellar: :any,                 sonoma:        "d39e90c524ab681ab22c2c67a832d2649d4d845874a935c8ca21d080a67bf250"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa59f68ddc63cd454ee9187efa912e39f2c1dc749ac1fa8e103dc3e625d2166f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbb723202b8917802c16657a1233a27c257178dbd5bbbc71b6067f498c4d7d5e"
   end
 
   depends_on "cmake" => :build
@@ -30,6 +29,7 @@ class Adios2 < Formula
   depends_on "libpng"
   depends_on "libsodium"
   depends_on "mpi4py"
+  depends_on "nanobind"
   depends_on "numpy"
   depends_on "open-mpi"
   depends_on "openssl@3"
@@ -55,12 +55,6 @@ class Adios2 < Formula
   # clang: error: clang frontend command failed due to signal (use -v to see invocation)
   # Apple clang version 14.0.0 (clang-1400.0.29.202)
   fails_with :clang if DevelopmentTools.clang_build_version == 1400
-
-  # Upstream PR: https://github.com/ornladios/ADIOS2/pull/4791
-  patch do
-    url "https://github.com/ornladios/ADIOS2/commit/1dcffdf15a90282549ce679e96ac59f35e93acde.patch?full_index=1"
-    sha256 "1133316f038abed99824d00584b70454122083cf0e2717a1322511b91a14c4dd"
-  end
 
   def python3
     "python3.14"
@@ -100,11 +94,15 @@ class Adios2 < Formula
       -DADIOS2_BUILD_TESTING=OFF
       -DADIOS2_BUILD_EXAMPLES=OFF
       -DADIOS2_USE_EXTERNAL_DEPENDENCIES=ON
+      -DADIOS2_USE_EXTERNAL_PERFSTUBS=OFF
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    # Remove standalone helper script that upstream installs as a non-executable.
+    rm bin/"bpcmp.py"
 
     (pkgshare/"test").install "examples/hello/bpWriter/bpWriter.cpp"
     (pkgshare/"test").install "examples/hello/bpWriter/bpWriter.py"

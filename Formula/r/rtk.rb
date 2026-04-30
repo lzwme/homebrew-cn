@@ -1,18 +1,18 @@
 class Rtk < Formula
   desc "CLI proxy to minimize LLM token consumption"
   homepage "https://www.rtk-ai.app/"
-  url "https://ghfast.top/https://github.com/rtk-ai/rtk/archive/refs/tags/v0.37.2.tar.gz"
-  sha256 "cf6ebc722fedf34a146fab3eccc1a691439491b55457c324270d15498185ea5e"
+  url "https://ghfast.top/https://github.com/rtk-ai/rtk/archive/refs/tags/v0.38.0.tar.gz"
+  sha256 "26d02dff5a315ca3e620ddce36c46ab6b478c060827e06c004b2b40fa8c9ef0e"
   license "Apache-2.0"
   head "https://github.com/rtk-ai/rtk.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d7696ee411984434615589675979a8c06e3c1939d9f271a1fea301434afa91a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6ce2ff25489b5cd4ab8c93c32007ed6e6804cbe5e0cd8eada2fd3831251538f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd75aed430a3d43bcd783999739c4b1b414fb80c01502579f15e50126a893127"
-    sha256 cellar: :any_skip_relocation, sonoma:        "67c38f5ae31a3c2a1a57cf50728268db1dc289e29f855ba335dfe10460f3e7c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f75ed9083a26a30241db65751e1ae0c9d1e75579d1e6394e743dbfc3c938439"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92c1b6c229274c3f424ccfd1ec3c181c60afcfb8d8090d6481d47ee5fa637c5c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a73920a562b5533cccbede5f663651a0211f3893e26ac2ebf62a9ac2b58c88a2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f47e4554a2488217c0521445b4719c8e599c5bb13491645eebc3caf75700bc03"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27052b0498f2ddfaeb39fed3ed70669417a9c50b3da68dd9dd048cc4ea9789db"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a402e30af197ea1079b0865b57f1338d87ac7279b37fd1cf6451f5a97c6cf61c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "304953b14ded41fe9a61f43969745d0264a86123d378ae6325c0a17dfc12406e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca1eff2c108fadfffb4734c2a9b2f19cbbeaae5a015f68239a7e32be3ab04807"
   end
 
   depends_on "rust" => :build

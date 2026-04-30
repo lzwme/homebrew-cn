@@ -1,4 +1,4 @@
-cask "linear-linear" do
+cask "linear" do
   arch arm: "arm64", intel: "x64"
 
   version "1.28.13,260318pho1bttxr"

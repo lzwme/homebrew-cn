@@ -1,8 +1,8 @@
 class Electric < Formula
   desc "Real-time sync for Postgres"
   homepage "https://electric-sql.com"
-  url "https://ghfast.top/https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.6.0.tar.gz"
-  sha256 "81f5a27f8805d0b95f90324a28ec3e8185a5e516bebf966c1af7178291ae3cb0"
+  url "https://ghfast.top/https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.6.2.tar.gz"
+  sha256 "67fa27d1265114a1047ac29d8a75da6cfed78f40d5872d1822a0bbe7f17d958c"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Electric < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b8d552ac3bfc82f3c5535e3f0cfd6d56a334de3060f7ce1a5e953503564232f0"
-    sha256 cellar: :any, arm64_sequoia: "6dbd939c12840f7bdf8af9b04d7282a6e104ea3aff2189e2f8e9562648a8bcd5"
-    sha256 cellar: :any, arm64_sonoma:  "9a292941649f002dd56e9232288b190a68db5cffd94e1bd2d080cb24d76492b8"
-    sha256 cellar: :any, sonoma:        "e746dab2725baa50c49917f25bdaee771bf8a647d2b8f69ffa284905dc8701d0"
-    sha256               arm64_linux:   "313e69d84893f1de2d0c52d22d8b816cd987123bd077b939fdd9858305751dbc"
-    sha256               x86_64_linux:  "d003b672df45a1b5470c1564dbceeb5cd7189b3b0777308baedd8458a12a5eed"
+    sha256 cellar: :any, arm64_tahoe:   "c92f761a6a6863af06999fb985d1e56dc3fc791a3d0e469fd80e2335fe39efac"
+    sha256 cellar: :any, arm64_sequoia: "d8cf2fdab60eb48f6b7cebe47d2ceddf568a1b7990ec06b30cbb35fa9409644c"
+    sha256 cellar: :any, arm64_sonoma:  "bcc9814e843915518be4f6204aec9b3563692794ca9730f74efcc8cc904478b9"
+    sha256 cellar: :any, sonoma:        "01cfd5ab8b502ae69421cb6e223784e6faa4312732e9581f871140ee18cc7dd0"
+    sha256               arm64_linux:   "e31cbee884af4fe1c81762686156489eb56e87118d1cace9dcb42b9c21141e54"
+    sha256               x86_64_linux:  "a42a3d0b1996341e63afb9c6083f98c00f382704744909256e6f426fac3dd8bc"
   end
 
   depends_on "elixir" => :build

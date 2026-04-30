@@ -1,10 +1,10 @@
 class SynergyCore < Formula
   desc "Synergy, the keyboard and mouse sharing tool"
   homepage "https://symless.com/synergy"
-  url "https://ghfast.top/https://github.com/symless/synergy/archive/refs/tags/v1.20.1.tar.gz"
-  sha256 "9fff6a15893e3d8862d1948612f17c2e1bca501f8b7c892b9d14e3be13dc3770"
+  url "https://ghfast.top/https://github.com/symless/synergy/archive/refs/tags/v1.20.2.tar.gz"
+  sha256 "f80270bcf1dcaaa6e91c39747292428573f99ccf80116a0fee71de145c12b667"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
-  head "https://github.com/symless/synergy-core.git", branch: "master"
+  head "https://github.com/symless/synergy.git", branch: "master"
 
   # This repository contains old 2.0.0 tags, one of which uses a stable tag
   # format (`v2.0.0-stable`), despite being marked as "pre-release" on GitHub.
@@ -17,12 +17,12 @@ class SynergyCore < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ed678d4d23525f640e42f4bcff8b517bf33ad67b7586a22f1c93989bfaa1d4a2"
-    sha256 cellar: :any,                 arm64_sequoia: "bde091d9cffb700b2f072bb25e3fe5efef07090b8de6ab6cf03a429328cb9475"
-    sha256 cellar: :any,                 arm64_sonoma:  "9058461c4a03f8c209540bc373e16f4a4e37bb1652d001d11d3f80f930c30c21"
-    sha256 cellar: :any,                 sonoma:        "17ace0f16e4306a6cf9cb2c570d055fccaa664f0a961b8a51c1ce3540e39eee7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "af19fe462bd9423dda5e816b3cb51dc7bb8306379f1b25220443211fc52030e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5dfa43f93b8db14dfeef9c01945739d6e0141dea4a83ce2584b6237c73db0fa"
+    sha256 cellar: :any,                 arm64_tahoe:   "e87674bec5466e499885db60321faf31aeb0f2cda55f6c20b98cd543381d9b36"
+    sha256 cellar: :any,                 arm64_sequoia: "4280ea5122753277d50e8c89a3c0c9ffd3d91946673b650908c75c57c53ccdbf"
+    sha256 cellar: :any,                 arm64_sonoma:  "226fd09ebf7df2563fcc96a1033621c4d8a609c4d0efa6b21a6bff129a263e6f"
+    sha256 cellar: :any,                 sonoma:        "d3b1e8f60ee0b691159f1503b657ca9146971fe46e6d41663ca8d83717b178d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "200dae8d3400f6497dd062c66aad16cb5fe340ed29355bc0909cf6fad1922c98"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f194ab834cc7168d41bea2007b4df1b0df1fad6a62f5543c35a77553b14a51b7"
   end
 
   depends_on "cmake" => :build
@@ -60,6 +60,13 @@ class SynergyCore < Formula
     # but it's submodule uses ssh protocol which will be failed in CI
     # and so we use tarball of `synergy` and apply patch to ignore git process
     patch :DATA
+  end
+
+  # Fix VERSION file not updated for 1.20.2 release
+  # Upstream pr ref, https://github.com/symless/synergy/pull/179
+  patch do
+    url "https://github.com/symless/synergy/commit/0953f62ba8a98eaa87eee2857efef5f5ef64a87e.patch?full_index=1"
+    sha256 "5701a3d18b91458b0e44fb420d362f68e7787da2798d46e42bfd913e62bade38"
   end
 
   def install

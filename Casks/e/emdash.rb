@@ -11,6 +11,11 @@ cask "emdash" do
   desc "UI for running multiple coding agents in parallel"
   homepage "https://www.emdash.sh/"
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   depends_on macos: ">= :big_sur"
 
   app "emdash.app"

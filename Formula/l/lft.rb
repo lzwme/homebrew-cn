@@ -1,8 +1,8 @@
 class Lft < Formula
   desc "Layer Four Traceroute (LFT), an advanced traceroute tool"
   homepage "https://pwhois.org/lft/"
-  url "https://pwhois.org/dl/index.who?file=lft-3.97.tar.gz"
-  sha256 "168532d208599d64179a7b269f151ad0fd1d0d69b2a3318b8a6088b2cfcd6eb6"
+  url "https://pwhois.org/dl/index.who?file=lft-3.98.tar.gz"
+  sha256 "395ced8d95ee2bcc588a837f187e23bb25ce97999a0bb8481b2b3e0c1c633455"
   license "VOSTROM"
 
   livecheck do
@@ -11,27 +11,21 @@ class Lft < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fa7303ad298beb604bacf5692d806271e38f306aac77861206148de510410e74"
-    sha256 cellar: :any,                 arm64_sequoia: "651db6559becdc21bcf8c7cbcdf4e39f365e77c4ba06f3b11e18fa3d05f4cf5a"
-    sha256 cellar: :any,                 arm64_sonoma:  "7ac770dba9b4b4d68f9bf929c83f28d156f51eedbe79cfd6950cbed619807dbf"
-    sha256 cellar: :any,                 sonoma:        "c0f8235ebeded75454efd24c79a867bcecd588b9dbc2887a22aff72d08927361"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ebcb424fa1928e67e1655ab46a73e3cac5a68022fb904f584378487547c1b93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bb7d5fddfd3805510612d01eb6549401d87c962e1716575b8935b7f3c89d102"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f89494bec6e8351e0ce8d648954f8a46bcd966b35113518df85b0b97438a1c2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "419eda32f35554778ee34e24d65104e50fca5bd934de9fc2c5264fe040828f3c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e0f89ea402cb4c6598e3890b25bb03c46a7f1532ec759c127eb68910497e077"
+    sha256 cellar: :any_skip_relocation, sonoma:        "78c94f8f33339c225c2354822384f955ff614916f55629e65f6dae7cda03779a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fac6c8bc94198d5a1a8638fe527c54506b9368891a87e66a1eb6c2b416398101"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f5f45aab33f889b46dba96f3b077f47b5d49638d9439bc1981c299eae110615"
   end
 
-  depends_on "c-ares"
-
   uses_from_macos "libpcap"
-  uses_from_macos "ncurses"
 
   def install
-    # `lft_watch.c` uses `struct winsize`/`TIOCGWINSZ` without including `<sys/ioctl.h>`
-    inreplace "lft_watch.c", "#include <sys/time.h>", "#include <sys/ioctl.h>\n\\0"
-
-    args = []
-    # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-
+    args = %w[
+      --disable-async-dns
+      --disable-ncurses
+    ]
     system "./configure", *args, *std_configure_args
     system "make", "install"
   end

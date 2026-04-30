@@ -1,6 +1,6 @@
 cask "pika@beta" do
-  version "1.6.0"
-  sha256 "318f09efc4769c1358e93370567f197d104947cc2b4b18cae6b51d39fbd7ecd4"
+  version "1.7.0-beta1"
+  sha256 "a8e6bd5418b27508fe24bb21f63b04692025bb9daef5510880fc7f04210ba6d0"
 
   url "https://ghfast.top/https://github.com/superhighfives/pika/releases/download/#{version}/Pika-#{version}.dmg",
       verified: "github.com/superhighfives/pika/"

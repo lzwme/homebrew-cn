@@ -1,9 +1,9 @@
 cask "nrf-connect" do
   arch arm: "arm64", intel: "x64"
 
-  version "5.2.1"
-  sha256 arm:   "fe03fd1586195c60f3a1eda32fb9dfdd3b081abd6a5f44f02d39a814844aee83",
-         intel: "04b3bd673a97bac572e717cdeb9ae7737ae9dc047d9f022589f0093435783e38"
+  version "5.3.0"
+  sha256 arm:   "529c2a12ed920fd10e8ea30d6a83cc4efaf91ea32f0af5829ac610afe77b9add",
+         intel: "8854deef1ca54d25f1c015058a44931d0b58b291f49ec9a7949290e1588a10ed"
 
   url "https://ghfast.top/https://github.com/NordicSemiconductor/pc-nrfconnect-launcher/releases/download/v#{version}/nrfconnect-#{version}-#{arch}.dmg",
       verified: "github.com/NordicSemiconductor/pc-nrfconnect-launcher/"

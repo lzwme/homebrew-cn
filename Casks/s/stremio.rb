@@ -1,9 +1,9 @@
 cask "stremio" do
   arch arm: "arm64", intel: "x64"
 
-  version "5.1.21"
-  sha256 arm:   "806e1e2510649b4e0f2b579c304a184ee73424720de0defde699548172fdc929",
-         intel: "d25c7f5d5ff26b735c690114f6809caffefd4bb42bab8bf295ac15a899f470c6"
+  version "5.1.22"
+  sha256 arm:   "5e7f812af4902455a5c780b2ea08ef0387bda95889fb1f3a177ca12be1a216e6",
+         intel: "077dd1d816d64bfee806c9facef5a72effcd686a09d7590ba3cfe51de8d5ab79"
 
   on_arm do
     depends_on macos: ">= :big_sur"

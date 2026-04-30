@@ -1,8 +1,8 @@
 class DatadogStaticAnalyzer < Formula
   desc "Static analysis tool for code quality and security"
   homepage "https://docs.datadoghq.com/security/code_security/static_analysis/"
-  url "https://ghfast.top/https://github.com/DataDog/datadog-static-analyzer/archive/refs/tags/0.8.2.tar.gz"
-  sha256 "453520f69b628beb90fdc96c0d73e28e8b12efe2e224658c446c998f7093ca23"
+  url "https://ghfast.top/https://github.com/DataDog/datadog-static-analyzer/archive/refs/tags/0.8.3.tar.gz"
+  sha256 "003270772ea540f0f3bddaaddad163aecb48cf81816033487972d17081391184"
   license "Apache-2.0"
   head "https://github.com/DataDog/datadog-static-analyzer.git", branch: "main"
 
@@ -12,12 +12,12 @@ class DatadogStaticAnalyzer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "09bc5b6540856021e1fe0b5520a9bab9eec8024a8301a68d3093b6c906d91466"
-    sha256 cellar: :any,                 arm64_sequoia: "2badcbd600b760322272ff6f4816bdf43767ea6cfe0cac6ff09690b18a729833"
-    sha256 cellar: :any,                 arm64_sonoma:  "80a717461beb6f09e6f47dd1bb8f8ef126bf6003c63f5c1059d05bd89de94449"
-    sha256 cellar: :any,                 sonoma:        "ba59bd1542757dd7be962900d5d1ca98cd51af99f6cb8556639eeaf8338c4350"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8076f2f69bcd71da22b5565c9e04486c97980681c1837e84094a1cac49a71ab7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42e81562f6714d1d05cf1d443e5c55f7180ebc35ca6d15f40f2cd006d332e9fc"
+    sha256 cellar: :any,                 arm64_tahoe:   "0bfee5e48685ca3dc6cf4d077308d72690c557c793be310688722e325e0d61e8"
+    sha256 cellar: :any,                 arm64_sequoia: "0b876d2f160537cf0c53ce8f12611ab47e4ec44e9e0662aa25e146fcd7448d51"
+    sha256 cellar: :any,                 arm64_sonoma:  "2b56ff0793bee1e0907c2daadc28aceff4d141f6ffd39c32a89610ad72101552"
+    sha256 cellar: :any,                 sonoma:        "a669317b55f404f0392142a2180472e7918a27ade50badd69bdec1653ae8f5b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8cc5d5b9d0ca545e3d3ecf5b238c4294a1a3e9b052ea785b8b141ad4c1d63ee8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b70f102d1392fa19ad85f707967f1dc0a76e490fabbd9aed959fe71ae0c73443"
   end
 
   depends_on "pkgconf" => :build

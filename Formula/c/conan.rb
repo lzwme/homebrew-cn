@@ -3,18 +3,18 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://files.pythonhosted.org/packages/f9/65/5be3cb2f2657c11f02e0a3a2d27a3014c8c025ed963442e580aea4269089/conan-2.27.1.tar.gz"
-  sha256 "64814e66995bc341057cd051693ce13606dc3027b984a133202bc796892af967"
+  url "https://files.pythonhosted.org/packages/27/18/29b81f3721a296c3cee83be78638d1d47aa55dd6be39a0f35faf4ff2bee2/conan-2.28.0.tar.gz"
+  sha256 "f59d41e39628b3479caad0d56a9dd3dab73abe61f214581aaf0d0ca58a9e29c8"
   license "MIT"
   head "https://github.com/conan-io/conan.git", branch: "develop2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "66fac1019c7ace559734172f0af016ce0da08fb5e79cd7f650ad74eeb12dcb73"
-    sha256 cellar: :any,                 arm64_sequoia: "46c26146522f5e4863a28bfa9a1334c03c998d9519394f3f226a9f70920c5d9b"
-    sha256 cellar: :any,                 arm64_sonoma:  "7e57a417a10150457eb5d3cde63f169acbbb45286ea924d2a0d49dabf8d4954c"
-    sha256 cellar: :any,                 sonoma:        "1257392da9ec9cd1ac05c5a6972801c97cadca4776a266aa11a5d9193ccb65c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e4272cf21b490bc27d6c488dd6f71598bd9842d8246701aa3add3c9ebb16d02"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab9f569c8f99a58b0aaf40d559e8b85ca7d230a07578cdc1976afcd2229d92c8"
+    sha256 cellar: :any,                 arm64_tahoe:   "9ab7942d4996bbb55db00426d9f9d7ec930c774c34fb75903d93e3bd117f6060"
+    sha256 cellar: :any,                 arm64_sequoia: "d06b113cec611f6c5d40d03a94d3cecaf28e7f707b4148e9aea04afa560b55d5"
+    sha256 cellar: :any,                 arm64_sonoma:  "e308c13f68bb7f4b7892f30a34e2a6c880cbdeaf8dd52669cd58114bd20735a9"
+    sha256 cellar: :any,                 sonoma:        "270b9bdcb5e1d3ff656de30f26a0460443f9785fdcb90f9516966a7ef56035ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "747334db9e1df8d81186eab01140968678346e6d61e0fe0919a3421c6146815a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd7db9ce04ec11aa7ed3b33ebc87db5319dd2e84d26b5f7e400fcfa294af9e4a"
   end
 
   depends_on "pkgconf" => :build
@@ -47,8 +47,8 @@ class Conan < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
+    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
   end
 
   resource "jinja2" do
@@ -62,8 +62,8 @@ class Conan < Formula
   end
 
   resource "patch-ng" do
-    url "https://files.pythonhosted.org/packages/ee/c0/53a2f017ac5b5397a7064c2654b73c3334ac8461315707cbede6c12199eb/patch-ng-1.18.1.tar.gz"
-    sha256 "52fd46ee46f6c8667692682c1fd7134edc65a2d2d084ebec1d295a6087fc0291"
+    url "https://files.pythonhosted.org/packages/da/b6/8ea8095f964f93567bbe28709298b30104ad418b50d4217538387bf48f7d/patch_ng-1.19.1.tar.gz"
+    sha256 "036a3cc00134ec53f37e92333958ee75e117f2e62a5ec2b85c7122e5e815c29e"
   end
 
   resource "python-dateutil" do
@@ -89,12 +89,6 @@ class Conan < Formula
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
     sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
-  end
-
-  # Add Apple Clang 21 and Apple 26.4 settings support, upstream PR ref, https://github.com/conan-io/conan/pull/19795
-  patch do
-    url "https://github.com/conan-io/conan/commit/99ace5c1fc86d47c64e5770901954867e6c12e22.patch?full_index=1"
-    sha256 "9ee4a285beb925009e129a803d7b8d1571cc5cadb0369e89a797cd948a26ad31"
   end
 
   def install

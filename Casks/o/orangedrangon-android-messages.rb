@@ -1,6 +1,6 @@
 cask "orangedrangon-android-messages" do
-  version "6.0.1"
-  sha256 "5cc5f6b9e232612033ca973cdf6aea3aa3a03b2d7f9d0fa455956013db8ee201"
+  version "6.0.2"
+  sha256 "ea831fae7bd4a4f4d9d323d2423035d07fcfd8909426663c575c41adc039f7c2"
 
   url "https://ghfast.top/https://github.com/OrangeDrangon/android-messages-desktop/releases/download/v#{version}/Android-Messages-v#{version}-mac-universal.zip"
   name "Android Messages Desktop"
