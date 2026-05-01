@@ -3,20 +3,20 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/4e/e1/8935e92f1b2c8b3f57311486c9df3d36ce764477f2d04a2c589551105246/keepercommander-17.2.15.tar.gz"
-  sha256 "488a5623edfd4ad842fec7a57054c06f041eafc6c6cd0f634e677a63ba4221b8"
+  url "https://files.pythonhosted.org/packages/13/f1/b5c02d9f3e4ed35733e03e8c7583ae4bef9da01e1a3798d68a55edb70bf5/keepercommander-17.2.16.tar.gz"
+  sha256 "7baa7b2f8186452167c92f98db4cd12753e3bf2eb50bfe1353f801084b713f5d"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d586984bcc08ad499828dc17d39bd0488fb31628819bcfc36220ccbb39096080"
-    sha256 cellar: :any,                 arm64_sequoia: "d653ad1d5a3aebbe715b3b8595c81f47bcee237ee8d0a9e0d4ee16c483ee41a3"
-    sha256 cellar: :any,                 arm64_sonoma:  "3b4c71183f9cacaa75b914657068a7c08605667d5e059356a52b7fd74428d39f"
-    sha256 cellar: :any,                 sonoma:        "07c1e1425c7df04954785b4d72c270ca25000bc59f7dd746e3ebf033e720cf82"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6096658bd63c068ecf3df38d98afd60016621f09fc2011c5099b435f28c16dea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddc5108aaaf25e1d072158da6af12dc43fc66e8a95985a2070e3af53539beaa5"
+    sha256 cellar: :any,                 arm64_tahoe:   "ecbb42a8014a33afbc9f135de98aad1dfd542eb84ac8dd0283dc904b7dc05d1c"
+    sha256 cellar: :any,                 arm64_sequoia: "f1c0cffd817c867b2b4d0ad69edb0d6c681868ad514d8a5411d81ce235fcb4fc"
+    sha256 cellar: :any,                 arm64_sonoma:  "32f91ed01d86a5c55aaf3567b8b467494bd5ea2634d2b04c71127eec21d3cb19"
+    sha256 cellar: :any,                 sonoma:        "93ba54a34ca557a1bc785f771c15b9c3cfd4702ee93ca6d5a32411593b976b49"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57afcdbf21a65d240d731cf5a391d646e525a7f9a446e69f639387255df24e47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ae754fd8b588c4197ec199fb33960c8754211dd09614fce56e4d9155b6ac668"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -67,8 +67,8 @@ class KeeperCommander < Formula
   end
 
   resource "cbor2" do
-    url "https://files.pythonhosted.org/packages/bd/cb/09939728be094d155b5d4ac262e39877875f5f7e36eea66beb359f647bd0/cbor2-5.9.0.tar.gz"
-    sha256 "85c7a46279ac8f226e1059275221e6b3d0e370d2bb6bd0500f9780781615bcea"
+    url "https://files.pythonhosted.org/packages/3e/fe/5d7f37d51ec21cccf9ae14a42a674907b8385779e639482f83c6eff1bcee/cbor2-6.0.1.tar.gz"
+    sha256 "46a745c296ec336fe83fa7905b77b4faa243eb32bb84fab1cfdb0e4636d1985b"
   end
 
   resource "charset-normalizer" do
@@ -142,8 +142,8 @@ class KeeperCommander < Formula
   end
 
   resource "keeper-pam-webrtc-rs" do
-    url "https://files.pythonhosted.org/packages/19/1c/f3525f08311a2e47a577379def1e44d35db8488927335d6a5e15f68d3c54/keeper_pam_webrtc_rs-2.1.16.tar.gz"
-    sha256 "d9ecfa8861a49729ce4f69c674149e5795f36a397490d0ed0894eec408c36437"
+    url "https://files.pythonhosted.org/packages/25/33/918836066b51232c799a9fa1eaea759cb4eebcab6748bdf82354662533a6/keeper_pam_webrtc_rs-2.1.17.tar.gz"
+    sha256 "e091d8f555e6525d7238e652a09e82fe80bd3ace8d4b972a3382a6819955f3c1"
   end
 
   resource "keeper-secrets-manager-core" do
@@ -222,8 +222,8 @@ class KeeperCommander < Formula
   end
 
   resource "pyngrok" do
-    url "https://files.pythonhosted.org/packages/ec/7a/6f9b08044be356d228533f6a8454377e2d31dd1309adf13209906019762d/pyngrok-8.0.0.tar.gz"
-    sha256 "6e7aaf90b43086ad25508a1122423608003f712d9988319ddf7be50431028101"
+    url "https://files.pythonhosted.org/packages/76/3a/648d102f18acf603b64d4895a234213c9a1b1d12c6cc3c1118672a19b039/pyngrok-8.1.1.tar.gz"
+    sha256 "3ea50bfa1153187ffd95fc7c5169d7f1cc62ec80ad79714212123fd3d52077fb"
   end
 
   resource "pyobjc-core" do

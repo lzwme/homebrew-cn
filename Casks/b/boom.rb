@@ -1,5 +1,5 @@
 cask "boom" do
-  version "1.7.18"
+  version "1.7.20"
   sha256 :no_check
 
   url "https://d13nae1tw8tdnq.cloudfront.net/Boom2mac/webstore/Boom2.dmg",
@@ -15,7 +15,7 @@ cask "boom" do
     end
   end
 
-  depends_on :macos
+  depends_on macos: ">= :big_sur"
 
   app "Boom 2.app"
 

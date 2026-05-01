@@ -1,6 +1,6 @@
 cask "infinidesk" do
-  version "2.31"
-  sha256 "d3dfaa3e217c10989771148af4e80d546b0c23ed162eed94062679969c36565c"
+  version "3.0"
+  sha256 "5445df7cb927ab6a3f08f216901f364f3a02b5d97876bfe370fca5f2a9f1ec7d"
 
   url "https://infinidesk.app/static/download/v#{version}/InfiniDesk.dmg"
   name "InfiniDesk"

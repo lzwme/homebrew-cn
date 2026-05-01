@@ -1,8 +1,8 @@
 class GoSizeAnalyzer < Formula
   desc "Analyzing the dependencies in compiled Golang binaries"
   homepage "https://github.com/Zxilly/go-size-analyzer"
-  url "https://ghfast.top/https://github.com/Zxilly/go-size-analyzer/archive/refs/tags/v1.12.5.tar.gz"
-  sha256 "686f543ed4b3fe9b6c74221bca32fd69a311cb9224c2cdaca6d2553aefd3a925"
+  url "https://ghfast.top/https://github.com/Zxilly/go-size-analyzer/archive/refs/tags/v1.12.6.tar.gz"
+  sha256 "269add0f001bc670974c913968a9f2f68f5966a7afadce7027c0b75c3627f28b"
   license "AGPL-3.0-only"
   head "https://github.com/Zxilly/go-size-analyzer.git", branch: "master"
 
@@ -12,12 +12,12 @@ class GoSizeAnalyzer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ce14b9c27303daff79a69e332d70796a094c1953b128252999a31f73c5cf878"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "186bf5aeded618c4af3bf97f81697722119dcd10a7397b5685f1d2155ed55c5b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10543ff77176179092fbff7079e2e4bcb222c2fec7321b10233054fd81cf4d07"
-    sha256 cellar: :any_skip_relocation, sonoma:        "26c0dcfb9ac301c61f2c1d2ad3173fc4d2e5be60a419eca1e036a118cace7a34"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "84afe065fc7b8ea2bc85618754d871ba0d3dfa27513d1725ddbc058936994030"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46f8850088c30be5dfe3396bb9379c86d3485a1b45c1de0884ea9021c071c85e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d8bbbbb840bcce8f3ccee6e37542af9085ab07be967200ef4f6a0e4abbe5dc1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ed8d00c701abaf1ac48f3fb725f777b60e107966ff5fa196314e32849dc8e87"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53b56201393a85cfad89a06ec14619a2b808ce75b1df814632be24a20a66056c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b2b2c6c44827e80e539ff0a151bbdfa2c58e75c55f2b4d3a3395462de74845bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5546677e9d5ba7595f02e0a9b7cd05403cef9b259f7c366d9a18f0108e99c5f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bd3270a56624d8c838810ebaa436afb6047ddc666f0f2937c2ff126340a2b53"
   end
 
   depends_on "go" => [:build, :test]

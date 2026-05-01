@@ -18,21 +18,20 @@ class Cmake < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e45bfc7f554994e0e1de6f1710d43d434f2e6e22f8a02cba767067e02654123"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d671c4fcba89e0bef05cb6792ce74eb69f7195db9bade0365db94e4c329c3b09"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b4ffb87e296144b33f5b82b1c49d5579bd56fd648d48389374c9739e24f3b41b"
-    sha256 cellar: :any_skip_relocation, tahoe:         "4d87836c75b2608c0f6d02f53b202d810fb2defa0c87f986b880267c753908f7"
-    sha256 cellar: :any_skip_relocation, sequoia:       "d38266b30cba32fe9fe3a5093e8a9a62c90b5c0f347af655e71e197316edc16c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2a63fee74f42bb9db4d7acee5581bd94148a1c408e399bff9751ed5c3efa92d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a4258af85b7b315c08962cba764f5ae025e73f6a7313b6ba2e98d48f9e962e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a6bb79e9edfed3e2df71f3af9271f0782eaa76e3305a7a5edd49f466b2fef4d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e2c5a1ae09a0e35a582305caba6f7ad47adfd35cc240d8b2e6c24a106fdbb1c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8f1f9f6a2a1a73ddb23f85ab9e60b02822dbea67437e0e3263ccdbdbe119ef8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "442706522c7aa99018512b41f43ef6b3886bd6adbabc91401450852f1540ed8a"
+    sha256 cellar: :any_skip_relocation, tahoe:         "6c11190a4470cc8b813227670233c7073513090e83af6eb02e23f30c6e8e3f1b"
+    sha256 cellar: :any_skip_relocation, sequoia:       "781e965f824e5aacf040171dbe3c93785810f21125f8f2d406b0951647d19ba4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fdb020c78c9eae496d086556ca1d729cd4815203ef1b545d77de73767553b041"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b78b738d51bb50e489362ebfacc1c3f441980e153c81305cf2a03dd510a0edb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72afa4b97cce47ab0433bc2e59b474ee585ceb3f7e55cf34ee7805ce687ae3f8"
   end
 
   uses_from_macos "ncurses"
 
   on_linux do
-    depends_on "openssl@4"
+    depends_on "openssl@3"
   end
 
   conflicts_with cask: "cmake-app"

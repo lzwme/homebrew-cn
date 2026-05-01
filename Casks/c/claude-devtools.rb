@@ -1,9 +1,9 @@
 cask "claude-devtools" do
-  arch arm: "-arm64"
+  arch arm: "-arm64", intel: "-x64"
 
-  version "0.4.13"
-  sha256 arm:   "61a5ed9409bfc7bd48340936a154fdc8088e8dbc1772b18736d5dc35505d009f",
-         intel: "8dbad9db18e38e22223feb1995a1d5fdb66e892e93675b6a6adb14d7ef1f04d8"
+  version "0.4.15"
+  sha256 arm:   "a50b00867921bdc9795b0f0cfbdd624fe2ff00262e4250e07aac36afd8aed7bb",
+         intel: "4396c731119765c3d0fa4758de92bd2caf8ea6bc58bd2adfaf3e0829781c068a"
 
   url "https://ghfast.top/https://github.com/matt1398/claude-devtools/releases/download/v#{version}/claude-devtools-#{version}#{arch}.dmg"
   name "Claude DevTools"

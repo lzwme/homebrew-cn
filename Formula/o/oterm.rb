@@ -3,17 +3,17 @@ class Oterm < Formula
 
   desc "Terminal client for Ollama"
   homepage "https://github.com/ggozad/oterm"
-  url "https://files.pythonhosted.org/packages/94/3e/ad6c0040237518281f76ec712e67de08d4f0b68f14a24d6c4c92d315bc55/oterm-0.15.0.tar.gz"
-  sha256 "b148cdeaae82893b76007e7fe9e8454508b284e38d0e297509a97b7d8f821e41"
+  url "https://files.pythonhosted.org/packages/78/94/c4037182321b67bbb08d609131f7b3331a59e53697317e6f12c0fea23082/oterm-0.16.0.tar.gz"
+  sha256 "be2c79db9b4134a879ecc0c21d9fcbc06316fdac29cdd512989d7cdcad934afa"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c189481d0175bb0c2b054f8a5ee38cb60a66139ecc8bd3c932cdc71e8e0b89cc"
-    sha256 cellar: :any,                 arm64_sequoia: "b14a9074b756e1f8e6de3f7e5103ac57ac515ae9f5589ec876da89b55637778b"
-    sha256 cellar: :any,                 arm64_sonoma:  "10b48ae8a5cd6dcea71b0e7a56d623720e0d518fc8a72e8b0f263bc8e408ae18"
-    sha256 cellar: :any,                 sonoma:        "083e335ce1607c44bc2c377a7b8ca44415b445d06b590061c3483d5180ed7a98"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b17aee66e29bb6cd31d0c55db3f3f4b7146f5169126a68b43cd0847b0cd7fd10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5df0b44582d1b1dd915ab5d0ab1b4a9d0fb9aa7db7137bf954ee02766cb5044"
+    sha256 cellar: :any,                 arm64_tahoe:   "ad2ca451e23cefcd3404c2caf0349604197e809a0f01603114f8dc7151837e51"
+    sha256 cellar: :any,                 arm64_sequoia: "0e912f816284453cd8b828da698c2af87264fd5609cd1effe265b73acbd16692"
+    sha256 cellar: :any,                 arm64_sonoma:  "62f293ac04f90663299ad988bc58dbefa6c749feba7febe4f381f703c4d19e06"
+    sha256 cellar: :any,                 sonoma:        "3f4d6bc7578d298cd4e3e4f740223c44e3da785602b5615fcf8337ec646bc397"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b5b5d66f5c71798dc7289d038b0ac39950690273a9a4305bfb3730a20b59b87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "916fab934d24df72f1c0e2d43add7912d9a4627b67d702804aa51bea7b9080b8"
   end
 
   depends_on "pkgconf" => :build
@@ -80,13 +80,13 @@ class Oterm < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/a6/2d/69fb3acd50bab83fb295c167d33c4b653faeb5fb0f42bfca4d9b69d6fb68/boto3-1.42.96.tar.gz"
-    sha256 "b38a9e4a3fbbee9017252576f1379780d0a5814768676c08df2f539d31fcdd68"
+    url "https://files.pythonhosted.org/packages/55/7d/5c6fa0bb9fd5caf865b9356411793900304328bcd0bc1eda96a32a1368a6/boto3-1.42.97.tar.gz"
+    sha256 "2833dbeda3670ea610ad48dff7d27cdc829dbbfcdfbc6b750b673948e949b6f0"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/61/77/2c333622a1d47cf5bf73cdcab0cb6c92addafbef2ec05f81b9f75687d9e5/botocore-1.42.96.tar.gz"
-    sha256 "75b3b841ffacaa944f645196655a21ca777591dd8911e732bfb6614545af0250"
+    url "https://files.pythonhosted.org/packages/c6/95/c37edb602948fad2253ffd1bb3dba5b938645bd1845ee4160350136a0f41/botocore-1.42.97.tar.gz"
+    sha256 "5c0bb00e32d16ff6d278cc8c9e10dc3672d9c1d569031635ac3c908a60de8310"
   end
 
   resource "cachetools" do
@@ -175,8 +175,8 @@ class Oterm < Formula
   end
 
   resource "fsspec" do
-    url "https://files.pythonhosted.org/packages/e1/cf/b50ddf667c15276a9ab15a70ef5f257564de271957933ffea49d2cdbcdfb/fsspec-2026.3.0.tar.gz"
-    sha256 "1ee6a0e28677557f8c2f994e3eea77db6392b4de9cd1f5d7a9e87a0ae9d01b41"
+    url "https://files.pythonhosted.org/packages/d5/8d/1c51c094345df128ca4a990d633fe1a0ff28726c9e6b3c41ba65087bba1d/fsspec-2026.4.0.tar.gz"
+    sha256 "301d8ac70ae90ef3ad05dcf94d6c3754a097f9b5fe4667d2787aa359ec7df7e4"
   end
 
   resource "genai-prices" do
@@ -235,8 +235,8 @@ class Oterm < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/56/52/1b54cb569509c725a32c1315261ac9fd0e6b91bbbf74d86fca10d3376164/huggingface_hub-1.12.0.tar.gz"
-    sha256 "7c3fe85e24b652334e5d456d7a812cd9a071e75630fac4365d9165ab5e4a34b6"
+    url "https://files.pythonhosted.org/packages/3e/9f/3fda8b014db3ae239addc9b48b35c2cf7d318950b430712f34a2473ef81d/huggingface_hub-1.12.2.tar.gz"
+    sha256 "282c4999e641c89affdc4c02c265eddea944c1390dc19e89dac8ad3ae76dbdaf"
   end
 
   resource "idna" do
@@ -300,8 +300,8 @@ class Oterm < Formula
   end
 
   resource "jsonschema-path" do
-    url "https://files.pythonhosted.org/packages/5b/8a/7e6102f2b8bdc6705a9eb5294f8f6f9ccd3a8420e8e8e19671d1dd773251/jsonschema_path-0.4.5.tar.gz"
-    sha256 "c6cd7d577ae290c7defd4f4029e86fdb248ca1bd41a07557795b3c95e5144918"
+    url "https://files.pythonhosted.org/packages/01/86/cfee6dd25843bec0760f456599a4f7e7e40221a934b9229fda0662c859bc/jsonschema_path-0.4.6.tar.gz"
+    sha256 "c89eb635f4d497c9ac328eeff359c489755838806a7d033510a692e9576f5c4b"
   end
 
   resource "jsonschema-specifications" do
@@ -350,8 +350,8 @@ class Oterm < Formula
   end
 
   resource "mistralai" do
-    url "https://files.pythonhosted.org/packages/5f/f9/0e67c37f305b127d4df005f4a216d3570c4cf3330aa775415bde90d2f662/mistralai-2.4.2.tar.gz"
-    sha256 "7896ffa763e0be1ec05e5b436d2c21ae089e4b5438cda9033dcd1b25bc3021a2"
+    url "https://files.pythonhosted.org/packages/18/c0/b3c48fed30e12881a519018662374da91242899fe7593478f0a2c44d566e/mistralai-2.4.3.tar.gz"
+    sha256 "82d671f29bfb161580ccd3f59eb0cf57c7bbc3c920d1ec436e55f82bf8d0034f"
   end
 
   resource "more-itertools" do
@@ -365,8 +365,8 @@ class Oterm < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/ed/59/bdcc6b759b8c42dd73afaf5bf8f902c04b37987a5514dbc1c64dba390fef/openai-2.32.0.tar.gz"
-    sha256 "c54b27a9e4cb8d51f0dd94972ffd1a04437efeb259a9e60d8922b8bd26fe55e0"
+    url "https://files.pythonhosted.org/packages/f0/ee/d056c82f63c05f06baac0cffb4a90952d8274f90c49dfe244f20497b9bbd/openai-2.33.0.tar.gz"
+    sha256 "f850c435e2a4685bba3295bd54912dd26315d9c1b7733068186134d6e0599f9a"
   end
 
   resource "openapi-pydantic" do
@@ -495,8 +495,8 @@ class Oterm < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/88/71/b145a380824a960ebd60e1014256dbb7d2253f2316ff2d73dfd8928ec2c3/python_multipart-0.0.26.tar.gz"
-    sha256 "08fadc45918cd615e26846437f50c5d6d23304da32c341f289a617127b081f17"
+    url "https://files.pythonhosted.org/packages/69/9b/f23807317a113dc36e74e75eb265a02dd1a4d9082abc3c1064acd22997c4/python_multipart-0.0.27.tar.gz"
+    sha256 "9870a6a8c5a20a5bf4f07c017bd1489006ff8836cff097b6933355ee2b49b602"
   end
 
   resource "pyyaml" do
@@ -600,8 +600,8 @@ class Oterm < Formula
   end
 
   resource "tokenizers" do
-    url "https://files.pythonhosted.org/packages/73/6f/f80cfef4a312e1fb34baf7d85c72d4411afde10978d4657f8cdd811d3ccc/tokenizers-0.22.2.tar.gz"
-    sha256 "473b83b915e547aa366d1eee11806deaf419e17be16310ac0a14077f1e28f917"
+    url "https://files.pythonhosted.org/packages/c1/60/21f715d9faba5f5407ff759472ade058ec4a507ad62bcea47cb847239a73/tokenizers-0.23.1.tar.gz"
+    sha256 "1feeeadf865a7915adc25445dea30e9933e593c31bb96c277cee36de227c8bfa"
   end
 
   resource "tqdm" do

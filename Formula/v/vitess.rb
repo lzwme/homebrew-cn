@@ -1,17 +1,17 @@
 class Vitess < Formula
   desc "Database clustering system for horizontal scaling of MySQL"
   homepage "https://vitess.io"
-  url "https://ghfast.top/https://github.com/vitessio/vitess/archive/refs/tags/v23.0.3.tar.gz"
-  sha256 "b517deb54d0802a6864cbf9e728b9ba5b0d1746842d53ef45c82796bfaf0769d"
+  url "https://ghfast.top/https://github.com/vitessio/vitess/archive/refs/tags/v24.0.0.tar.gz"
+  sha256 "dc7d6b8835249550fc0ff0d77b4f5ef5e9842d9656860ad9d8340201655d8cad"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9942b02f88dcf12545b44ecfef3a29a9deb5db4dc2c01494534e00a54d123894"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3cf56a3f00af69596aa4d48260f8aa94337268d2c1e9572f688eb5db82572384"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c33927e00edebdf4e5181ac88d4fd7a40de8c6f91672d25854c2e57b87814d69"
-    sha256 cellar: :any_skip_relocation, sonoma:        "21713748331a18a52f2190d7c34327f2a27dc86be27f46ce554dce430fe8aca5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ee569d4d05b5a880f9b508cbe7849427ae3851522517b094fa5c1cf324c8477"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7d5a210645a270884ba33ed343a8f68b02f572dac87045d080404ae55209f50"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ebca25be84fc314fa46402516536a78597825e860d86d68bccc2dbed31ce3de5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc4e495201d38bf0113cb1d5084eeb469b5ae946cd2fa9e5d45d5aceb28b02b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f772cdd8170ca6f0f2d814eee9897cb2566d76fc81f5a1c426789f7387b016c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fa132faeae4ef203f10eda57caabd4648e7e8eb00535f9aa0e75291452ad8faf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d300a77e86c6a695e6048be426cf6a58fdc54da1094212bbbc0333b73703553e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a03b40196f0115cc88dd5e3e1ff8ae7c65baf5955be257077fdc5020ac5786d5"
   end
 
   depends_on "go" => :build

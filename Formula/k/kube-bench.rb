@@ -1,18 +1,18 @@
 class KubeBench < Formula
   desc "Checks Kubernetes deployment against security best practices (CIS Benchmark)"
   homepage "https://github.com/aquasecurity/kube-bench"
-  url "https://ghfast.top/https://github.com/aquasecurity/kube-bench/archive/refs/tags/v0.15.2.tar.gz"
-  sha256 "4958d5b9a51d22879edd1c3ea6f7a0f26f3b5318cfbe19bde8b3f04b9028d6ec"
+  url "https://ghfast.top/https://github.com/aquasecurity/kube-bench/archive/refs/tags/v0.15.3.tar.gz"
+  sha256 "461f4dc07e8c1f3c93049b5344feafb7788b88d69625d23ccdea6610d55d4f4a"
   license "Apache-2.0"
   head "https://github.com/aquasecurity/kube-bench.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e19ea531b5b2ffbf1c79faa2a87aca0ba4f8e6ae2cb2b6653d50f94878844ebf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e19ea531b5b2ffbf1c79faa2a87aca0ba4f8e6ae2cb2b6653d50f94878844ebf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e19ea531b5b2ffbf1c79faa2a87aca0ba4f8e6ae2cb2b6653d50f94878844ebf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6354115036f84bfe2b918ec7ee6acbf655aaf5416cdeee8617377d9d615103d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "281a6ee78611f3e04640cdca0e75669fe74e3718c79edc5f8281383b06c9fa39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "797505add0dbfb86222e101d7b53b518fa410d1c97c85872f23300e4d1d54b6f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4cdb30940f22e1db02616ec9e63f9d9cf98ed5f89df10f48c2287fac4754263"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4cdb30940f22e1db02616ec9e63f9d9cf98ed5f89df10f48c2287fac4754263"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e4cdb30940f22e1db02616ec9e63f9d9cf98ed5f89df10f48c2287fac4754263"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ad2e4ac25428aee0e5d1da547c1fa8883c382b24ba9b1c51f7b1117aff437084"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "310e45e29f8a0eb970dd8257981aeba816e9bc9a586b27f370b2b6dc8a5ace27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c24c3bf71bcc2cc29c6762ff3ae8d2d76df349cedad3d5626ceee38aafcfd1b3"
   end
 
   depends_on "go" => :build
