@@ -3166,8 +3166,8 @@ Homebrew-homebrew-core/Formula/i/iir1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ijq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ike-scan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imagejs.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/i/imagemagick-full.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/i/imagemagick.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/i/imagemagick-full.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/imagemagick.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imagemagick@6.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/imageoptim-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imagesnap.rb, Homebrew/homebrew-core, 1
@@ -7047,8 +7047,9 @@ Homebrew-homebrew-core/Formula/s/stdman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/steamguard-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/steampipe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stella.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/stellar-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/stellar-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/stellar-core.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/stellar-xdr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/stencil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/step.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stepci.rb, Homebrew/homebrew-core, 0
@@ -15873,6 +15874,7 @@ Homebrew-homebrew-cask/Casks/x/xtool-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yaak.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yaak@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yacreader.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/y/yakit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yam-display.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yandex-cloud-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yandex-disk.rb, Homebrew/homebrew-cask, 0

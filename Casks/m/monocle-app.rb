@@ -5,7 +5,7 @@ cask "monocle-app" do
   url "https://files.heyiam.dk/updates/monocle/Monocle-#{version.dots_to_hyphens}.zip"
   name "Monocle"
   desc "Window dimming utility"
-  homepage "https://monocle.heyiam.dk/"
+  homepage "https://www.heyiam.dk/monocle/"
 
   livecheck do
     url "https://files.heyiam.dk/updates/monocle/appcast.xml"

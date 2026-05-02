@@ -1,6 +1,6 @@
 cask "zo" do
-  version "1.5.0"
-  sha256 "84e3be9df24d39984b811472049990b9e6740b582e8d606cb159f653bb3ed069"
+  version "1.5.1"
+  sha256 "e7241eabbdbaf610673ebe172a4c25b3f4802b197178c10a428df71cff4d370b"
 
   url "https://ghfast.top/https://github.com/zocomputer/Zo/releases/download/v#{version}/Zo-#{version}-universal-mac.zip",
       verified: "github.com/zocomputer/Zo/"

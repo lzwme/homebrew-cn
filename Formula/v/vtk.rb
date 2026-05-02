@@ -1,21 +1,19 @@
 class Vtk < Formula
   desc "Toolkit for 3D computer graphics, image processing, and visualization"
   homepage "https://www.vtk.org/"
-  url "https://www.vtk.org/files/release/9.5/VTK-9.5.2.tar.gz"
-  sha256 "cee64b98d270ff7302daf1ef13458dff5d5ac1ecb45d47723835f7f7d562c989"
+  url "https://www.vtk.org/files/release/9.6/VTK-9.6.1.tar.gz"
+  sha256 "47ca9af899165a33b935533046acce7c0aa3c007f0b57880665bb89d9986543f"
   license "BSD-3-Clause"
-  revision 3
-  compatibility_version 1
+  compatibility_version 2
   head "https://gitlab.kitware.com/vtk/vtk.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "100fd9e37f999ded1ea0094a95f2ef9a7dc15251f5dca51e44107afed5831233"
-    sha256 cellar: :any,                 arm64_sequoia: "81595c5a9f1fd3fba4f5eec3aaa5eaaf1aaa187f5ea0bacad5058b4a4164bc93"
-    sha256 cellar: :any,                 arm64_sonoma:  "1f4d4b2900cbeb4923959a555d832d27d24498fa59d44ece4516b76a278c02a5"
-    sha256 cellar: :any,                 sonoma:        "462e3c9d703713bedca3e6152c113084eab8b4440a79245c2c459b46945bf389"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e432d600806ba0c6c594e791bfe2aaa664ebeb0a9caa516a989f4b37c6601cec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3cf4fa567b7a0be93666a081cdb512489b7656c43a4d5b4a97ea601a4deab16"
+    sha256 cellar: :any,                 arm64_tahoe:   "ab398c0862b2518a9b2d5aec31c1efdfc87bb1a94b6b56936e3ac3ead2f9ecba"
+    sha256 cellar: :any,                 arm64_sequoia: "45ab74a56ce993083a74a59565b5e766dd89bd625ca0bb835c7596de806370d7"
+    sha256 cellar: :any,                 arm64_sonoma:  "30d739d3d605155d2c63058e009340efcaa210f9d99cb9ffdeb1e7fd7514d692"
+    sha256 cellar: :any,                 sonoma:        "152a454a8f5fea230cbb7df932086d1d496325098691e3917000651963c12869"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "64493d81181347b00770b7bfc8cb2e9b7f708da79a5e7505ecfbcaee3e3dcf00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5090263a7b403e9aa90d965497d286fe58f8b8e0082a85b0854c268628ca5e7b"
   end
 
   depends_on "cmake" => [:build, :test]

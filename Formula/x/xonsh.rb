@@ -3,18 +3,18 @@ class Xonsh < Formula
 
   desc "Python-powered, cross-platform, Unix-gazing shell language and command prompt"
   homepage "https://xon.sh"
-  url "https://files.pythonhosted.org/packages/60/e5/2dfa99e21a8118bed0e73ed50e91962fdad01b900e23497064e8810b03b5/xonsh-0.23.2.tar.gz"
-  sha256 "633608c8292938af0f242f05326cc2912f25fa72bd808824ab0534a6df304402"
+  url "https://files.pythonhosted.org/packages/60/d8/c225b0bf992a18403051ea5a9e59f1c14287b07a771ed7acb0ef1578ffe8/xonsh-0.23.3.tar.gz"
+  sha256 "8ba220d5e8a645e9feffa4037acfa18034d6c2bb3aec6cbe8e826c989802b618"
   license "BSD-2-Clause-Views"
   head "https://github.com/xonsh/xonsh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a586589b9ff3a63b83f2eba6254a6c6dd73f95e73c3c603c36747870ccd9ec33"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93a90789dd994b5c9e64aaa56ad964e2ac915901282aa36678ade9403a0e0161"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "943f8dc2cb3e4e9a995cef13b8d091dee904bd5ce468cda6c0a14c619e87cda6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "24ca7219d43372cbcb11ba82cffe159fae38487b0cf227e19afa11efcb3f6337"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d239adc3813cdaa35d5f3f82d055cd509f498794eb9eab52bd2fb751c672395b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e14c3984a102419242aa3a9e96c3f493323de66abb71872772ae8d29ea84b0e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "119555f31742160cb4003ea25e0d10c7a919b8c6af8073c3ec0e4354b8bcae19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56af509e16635aa126a9cabe262a63be442e7f83e355e2eef12a541d95b6f165"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db1d4fd954c77958e11a3c8245c3fa1c30e258941208875c771bede96fc7d981"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1e061630831d38e88d5d1128196cb9020079a372ce4396af3174b767be2cd5d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bfd9741ba3dcfd28aff6baed70fffbae81f334dd401e998d8a1831b4c174dfa0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69de4201c5d7dba800404046ae984a9e8f0cb98c39d759997846999fcdcbc6be"
   end
 
   depends_on "python@3.14"

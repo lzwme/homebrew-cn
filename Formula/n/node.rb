@@ -4,7 +4,7 @@ class Node < Formula
   url "https://registry.npmmirror.com/-/binary/node/v25.9.0/node-v25.9.0.tar.xz"
   sha256 "8f78af3ee55fb278668b5f801db58bd1a38ea161318eb5ce2128ddbc9cd813aa"
   license "MIT"
-  revision 2
+  revision 3
   compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Node < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3432dd22a4f6bb6b6a2decdaa6e39f980518120106b25e8f9032c92e97380938"
-    sha256 cellar: :any,                 arm64_sequoia: "8c3fb7faffdab909f18ecd255cd7ec63d0fd874d48285f40b4e09ef472140f71"
-    sha256 cellar: :any,                 arm64_sonoma:  "c384fef61921d8e3af26fc67231bbf581ffe176de2e5ecef42c4ea66ba2bf1a5"
-    sha256 cellar: :any,                 sonoma:        "492d9823b1e958a334d664b9694a02d2e2087280d248c398284d75787cdf8733"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "21c9e2e7f8fb82c2764cddf862baf49e5c86e7483b30902186e63f1f8aa77bbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "863422cefaae72ab333d662a64a39e81b97a00065c9bc0e7a460b1b16e010a1b"
+    sha256 cellar: :any,                 arm64_tahoe:   "d1fe8663479f817e4b39067b5731d9561c61303ee7ae6fc373906ee89cc13345"
+    sha256 cellar: :any,                 arm64_sequoia: "f2578f9da474ceca9b2de0f53e2d532dd8afc7ec3f585c4b8e333dc6f7f6d407"
+    sha256 cellar: :any,                 arm64_sonoma:  "f036e5a951e81b87f29e584217ce5407d7251a8d8d0218f053dbb08e477d4d2c"
+    sha256 cellar: :any,                 sonoma:        "2659f08b0b6e20fbff42994f419c2015469a1fb6d14af384b6dbaceb2f7c0ebc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d0b62930337a7771839277fc1190fe1ba41186991571403c37a80567af36791"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a810f9ccd690eb61cff811bbcaabb17bb4558b7b7ff92cc1e14163d1250a5714"
   end
 
   depends_on "pkgconf" => :build

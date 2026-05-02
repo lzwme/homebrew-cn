@@ -4,7 +4,7 @@ class Libgit2 < Formula
   url "https://ghfast.top/https://github.com/libgit2/libgit2/archive/refs/tags/v1.9.2.tar.gz"
   sha256 "6f097c82fc06ece4f40539fb17e9d41baf1a5a2fc26b1b8562d21b89bc355fe6"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/libgit2/libgit2.git", branch: "main"
 
@@ -14,13 +14,12 @@ class Libgit2 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "8a30e6866a9d341a0536d1ee79084d9a38ccefa0070f36defcf7cd7d0c42d968"
-    sha256 cellar: :any,                 arm64_sequoia: "67f5becf455b5bd4fdb21207f914abb074fb48f4b58e0c159e70e916d9256356"
-    sha256 cellar: :any,                 arm64_sonoma:  "a805127b9a4bbeeb9f27effee5cc459ce5b5672779bffbaee94e7405db03ec73"
-    sha256 cellar: :any,                 sonoma:        "005aea9f682b2dfa3a2606fd953c1fe1bc5e2c10b6b3ad1bda12abe1a61a77af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "05d6d6c13bf3130e180ddb471799e8b5ec5cea5ac8d08f7cbecc8b34951cad0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef33f5f695d8bbd7e2dd2b6041ed3fb0b018ffb8d547135224dac33653397d13"
+    sha256 cellar: :any,                 arm64_tahoe:   "53c58d492ddab149c2cc76b2cba6717935cff08348dcb250762e5ecc94793099"
+    sha256 cellar: :any,                 arm64_sequoia: "3a612eb2cf9a5f6f872baffa1b43643969ee4ba8901dfe070ff1ea7baf6b204c"
+    sha256 cellar: :any,                 arm64_sonoma:  "fbb917ea9623578572bf97f36e86a57a7a0983c0069d167bef40224f4e98795c"
+    sha256 cellar: :any,                 sonoma:        "df45947e30998e47ae6c547dbb9550b63a2a822e542d6221f6c6681ea6eaf7c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbe8631b467e0add62e8e4e3261b9410b6f0939946f92b31ff86f6596fa66051"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fec5a8fac2d572a4ef28949f760046054dbe82f71a2c610e91cf62da7de1d02d"
   end
 
   depends_on "cmake" => :build
