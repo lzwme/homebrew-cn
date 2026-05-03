@@ -1,17 +1,17 @@
 class Seal < Formula
   desc "Easy-to-use homomorphic encryption library"
   homepage "https://github.com/microsoft/SEAL"
-  url "https://ghfast.top/https://github.com/microsoft/SEAL/archive/refs/tags/v4.3.1.tar.gz"
-  sha256 "ed2416c18273339dbd879af344d7fd40b4af3e041da5176ca71d9e0097b42721"
+  url "https://ghfast.top/https://github.com/microsoft/SEAL/archive/refs/tags/v4.3.2.tar.gz"
+  sha256 "90c36b28bda750327f9ae172a4b15ad0706412f7d8239471636b94f944dfcac6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e09403f216fe6237ecffb4a7dc5eb96fd546c68b90265d1e229efb01195b3a63"
-    sha256 cellar: :any,                 arm64_sequoia: "ea04b1e78e18f657f2d28c50fc76e7a572a8ee957b82cbecdd025fc5f6ff2d59"
-    sha256 cellar: :any,                 arm64_sonoma:  "0beebe3e6f2dda00ee09f0c9047849862055bb9a22412ea1ac4f16aa3a593001"
-    sha256 cellar: :any,                 sonoma:        "939e2c32aa278291a17399fed1cec8025ad7c4586f5492ab4a9a7a1e188a4805"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de24686b59b3294a905b06c201b0d06bd2b0f3f5877853ac8517f9f291cd7808"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2343d81f588101050459089ddeefbe441244800382d31e7867d6eeab24a77ba6"
+    sha256 cellar: :any,                 arm64_tahoe:   "7cc01d9da127c29dfd802c11e3814b7b2f5a68634183771a6dc2c45bcecc3916"
+    sha256 cellar: :any,                 arm64_sequoia: "3ff8fd30e84624004babcca418e0c6c0ea62a474f20e04a958a8ea554d08101e"
+    sha256 cellar: :any,                 arm64_sonoma:  "39fec0847163290974daf97015cadccd2d3b9cd2f445b0958d66c760e85862fc"
+    sha256 cellar: :any,                 sonoma:        "cfd97a692850aee3755660ad63d81c9bff076f86e4d45a39ccff16683dbaddce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d544832700f6e72900c75555f332c5e1a9a63d89ff36c7090ba0352852d1dc2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e89a843fa2378aba5156d3374b36bc47bb273031493e9949594a41bd4bc1ae32"
   end
 
   depends_on "cmake" => [:build, :test]

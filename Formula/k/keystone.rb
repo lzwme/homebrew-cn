@@ -1,21 +1,19 @@
 class Keystone < Formula
   desc "Assembler framework: Core + bindings"
-  homepage "https://www.keystone-engine.org/"
+  homepage "https://github.com/keystone-engine/keystone"
   url "https://ghfast.top/https://github.com/keystone-engine/keystone/archive/refs/tags/0.9.2.tar.gz"
   sha256 "c9b3a343ed3e05ee168d29daf89820aff9effb2c74c6803c2d9e21d55b5b7c24"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/keystone-engine/keystone.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db234233227f5659094d618cc75191413354559df733c63ed1aac7bcb9796dbf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ccd260480e31343df08f282b31c71ba54088029cccf2e210afd58ef404a64be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26489f253fff8ad2046ff3c2faf2f8a7d2601a2daddbe512944deb882a17402b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a1b296425709c379e4ba6e27054a06aafa876b1fea1f4a5e8d72ff131faf2e86"
-    sha256 cellar: :any_skip_relocation, sonoma:        "51d036d346993a190ad6e348e4188590bd9c953a440d4dcf2e044e2e3c700ebd"
-    sha256 cellar: :any_skip_relocation, ventura:       "eba0bcccc49e5776fe9e53cdf27c2577c150ff5628d6596da02d8dd1d95f3b24"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b6e10619b3e6bfcf7ae709db1d468690f5afd260516c982df46d1180ed414ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bc74b3742a7af0e95d1bda251428ebd57ff0bb6062fca7ca14d54c4ea92a176"
+    sha256 cellar: :any,                 arm64_tahoe:   "16718b3ab5cdb99ec55f801ad2b44e017e817de14efc7439df6a9d8c30c837f2"
+    sha256 cellar: :any,                 arm64_sequoia: "8bba071f3a1cd29d9dd4fde38ebc7c83aa046d19cb26494a7a42f0a121b7aca4"
+    sha256 cellar: :any,                 arm64_sonoma:  "a06cba546dcf8d6cbb8916b60f4b0c26a87c79193701eff2627625c6fff77751"
+    sha256 cellar: :any,                 sonoma:        "8c15b988dd6edbf427d295d4061368c9206d36b7ece0e0f6332a7ffe9764ad05"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20734f18c816faee5057909846aaf3a5ec9d85da4a126778d6e77792fdf1d26d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "adc563464e102851ee37aa4bed7f8acdd13b983b00379144daadb6b03201acd4"
   end
 
   depends_on "cmake" => :build
@@ -28,6 +26,8 @@ class Keystone < Formula
   def install
     args = %W[
       -DPYTHON_EXECUTABLE=#{python}
+      -DBUILD_SHARED_LIBS=ON
+      -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
 
     # Workaround to build with CMake 4

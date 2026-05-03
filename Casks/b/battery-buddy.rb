@@ -1,5 +1,5 @@
 cask "battery-buddy" do
-  version "1.0.3"
+  version "1.0.4"
   sha256 :no_check
 
   url "https://batterybuddy.app/releases/Battery%20Buddy.zip"

@@ -1,6 +1,6 @@
 cask "floorp" do
-  version "12.12.2"
-  sha256 "9e41880693c58cbbf694684e4c24d6db69581de9caa06b374e9d7bee65997205"
+  version "12.13.0"
+  sha256 "0c848d1a65fbabf94e226cdfd9fae4915aa6357e9262608b30140ff221d43ad1"
 
   url "https://ghfast.top/https://github.com/Floorp-Projects/Floorp/releases/download/v#{version}/floorp-macOS-universal.dmg",
       verified: "github.com/Floorp-Projects/Floorp/"

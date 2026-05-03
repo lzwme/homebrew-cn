@@ -1,6 +1,6 @@
 cask "openclaw" do
-  version "2026.4.29"
-  sha256 "2ba6614eae6fbb7a2777d2ed9210481978beaf7590b049885c04a1dcc7c65cc2"
+  version "2026.5.2"
+  sha256 "947d3a371326c1ce77181d4ddbc3e3c7ea797033140d8e5ffff6e9d983b6bab7"
 
   url "https://ghfast.top/https://github.com/openclaw/openclaw/releases/download/v#{version}/OpenClaw-#{version}.dmg",
       verified: "github.com/openclaw/openclaw/"
