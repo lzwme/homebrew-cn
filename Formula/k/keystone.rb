@@ -8,12 +8,13 @@ class Keystone < Formula
   head "https://github.com/keystone-engine/keystone.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "16718b3ab5cdb99ec55f801ad2b44e017e817de14efc7439df6a9d8c30c837f2"
-    sha256 cellar: :any,                 arm64_sequoia: "8bba071f3a1cd29d9dd4fde38ebc7c83aa046d19cb26494a7a42f0a121b7aca4"
-    sha256 cellar: :any,                 arm64_sonoma:  "a06cba546dcf8d6cbb8916b60f4b0c26a87c79193701eff2627625c6fff77751"
-    sha256 cellar: :any,                 sonoma:        "8c15b988dd6edbf427d295d4061368c9206d36b7ece0e0f6332a7ffe9764ad05"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "20734f18c816faee5057909846aaf3a5ec9d85da4a126778d6e77792fdf1d26d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "adc563464e102851ee37aa4bed7f8acdd13b983b00379144daadb6b03201acd4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "792e2f64e52c56b737ffa463eebbc8c69912b6528c0aa6094b1547417bdafb64"
+    sha256 cellar: :any,                 arm64_sequoia: "0a34a8cc81909cd75cb20bc2573a3a5d1328f4b3ac44e8a814d3da9dff59a7d7"
+    sha256 cellar: :any,                 arm64_sonoma:  "7f16a69f3cafa919b46840c4dff01d6f7220167499c0dcc22c972738a6b3c7fb"
+    sha256 cellar: :any,                 sonoma:        "5777578985ee84ccba4730e20677576c9024ad0a86c0f49546344a232e9413ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f78641458d84848c32803626ba0127081539d768e284ccfa262baa48265e4cc8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4f985a7993b44fba4ca497a76488ce22eaa4ac77de292fccf716c4d5e9acca7"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +27,6 @@ class Keystone < Formula
   def install
     args = %W[
       -DPYTHON_EXECUTABLE=#{python}
-      -DBUILD_SHARED_LIBS=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
 
@@ -35,9 +35,15 @@ class Keystone < Formula
               "cmake_policy(SET CMP0051 OLD)", ""
     args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
 
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    # Build shared library
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    # Build static library
+    system "cmake", "-S", ".", "-B", "static", "-DBUILD_SHARED_LIBS=OFF", *args, *std_cmake_args
+    system "cmake", "--build", "static"
+    lib.install "static/llvm/lib/libkeystone.a"
   end
 
   test do

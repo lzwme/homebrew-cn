@@ -3,20 +3,20 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/af/6b/4ea1617437b69fbbbb3c9716465d5e4e3cd55408e3f293035085e709b749/kimi_cli-1.40.0.tar.gz"
-  sha256 "f756b00b44ad9b395ac48a22efe5d66caaa760de726dcbca600a05f7ac78447a"
+  url "https://files.pythonhosted.org/packages/3f/21/ee58a79d84c5b5b9a9750166d76a1346b62345c09453da25ad1913148ca6/kimi_cli-1.41.0.tar.gz"
+  sha256 "65fcbb86905d31f1be70c5e875b47d0e01652c33d9b0153ad328350260f696f0"
   license "Apache-2.0"
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "15baf64209cbf2bd9bbbc1ce62d2891b916a18550e8b29b8e73db4c73995734d"
-    sha256 cellar: :any,                 arm64_sequoia: "0e0739dc1c7504f0b25456603a0bf34afbba545ba611d7eb8b5b1c39d370fdf6"
-    sha256 cellar: :any,                 arm64_sonoma:  "dc4a259e558a7356ccce78ea4cd69079723c5f7b833897351b5ff3f7bfb16577"
-    sha256 cellar: :any,                 sonoma:        "a330678c89adf94bcaa06bde88a4ce2b8e0aa2d14799043b7d87cd2a42b9a8f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b635e14039e208ed43a02daeeeab1014ad5f61e28c8cbe188fbff2ba21d6afce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f417dd622706ea3ec130c0b62ccdde497c3a9942602ab68ac0a37cc0a64ddf0"
+    sha256 cellar: :any,                 arm64_tahoe:   "2aa4885a4a8d5b13ba785125a6c4d30783163bee267dce646ecf24348288bf5b"
+    sha256 cellar: :any,                 arm64_sequoia: "183f2d6c15930a439346bec022d2fbc2bc230e7acf5e8403778e695802606fdc"
+    sha256 cellar: :any,                 arm64_sonoma:  "13d83378b14e4b653b6d759e628a4ab377fa3004df57cd9f5214852d3f81bd8e"
+    sha256 cellar: :any,                 sonoma:        "53aec904f356257d42bd162958370be8e04f80657d443d0fcebba325ede5a3e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f14961b12783915679cb9f58f4357c48aab700760667728903976c0f17c0498a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f81689ba5d9a6e4c3b1cc79df1dff4049820fddc2609bf0580c1a5f0a25bc75"
   end
 
   depends_on "pkgconf" => :build
@@ -203,13 +203,13 @@ class KimiCli < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/c6/fc/e925290a1ad95c975c459e2df070fac2b90954e13a0370ac505dff78cb99/google_auth-2.49.2.tar.gz"
-    sha256 "c1ae38500e73065dcae57355adb6278cf8b5c8e391994ae9cbadbcb9631ab409"
+    url "https://files.pythonhosted.org/packages/5f/18/238d7021d151bdab868f23433817b027dd759135202f4dfce0670d1230ca/google_auth-2.50.0.tar.gz"
+    sha256 "f35eafb191195328e8ce10a7883970877e7aeb49c2bfaa54aa0e394316d353d0"
   end
 
   resource "google-genai" do
-    url "https://files.pythonhosted.org/packages/3d/d8/40f5f107e5a2976bbac52d421f04d14fc221b55a8f05e66be44b2f739fe6/google_genai-1.73.1.tar.gz"
-    sha256 "b637e3a3b9e2eccc46f27136d470165803de84eca52abfed2e7352081a4d5a15"
+    url "https://files.pythonhosted.org/packages/33/c8/4a8f1de0a3268d526a345b8c74456b3e1e6ffd200982626326cf7ca83e5b/google_genai-1.74.0.tar.gz"
+    sha256 "c4c473cebdeb6e5adbb0639326de66a3a85a2209e0d32de7d66bf05c698abae8"
   end
 
   resource "google-re2" do
@@ -609,8 +609,8 @@ class KimiCli < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/19/89/bec5709fb759f9c784bbcb30b2e3497df3f901691d13c2b864dbf6694a17/textual-8.2.4.tar.gz"
-    sha256 "d4e2b2ddd7157191d00b228592b7c739ea080b7d792fd410f23ca75f05ea76c4"
+    url "https://files.pythonhosted.org/packages/62/1e/1eedc5bac184d00aaa5f9a99095f7e266af3ec46fa926c1051be5d358da1/textual-8.2.5.tar.gz"
+    sha256 "6c894e65a879dadb4f6cf46ddcfedb0173ff7e0cb1fe605ff7b357a597bdbc90"
   end
 
   resource "textual-serve" do

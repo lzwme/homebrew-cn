@@ -1,6 +1,6 @@
 cask "thaw@beta" do
-  version "2.0.0-beta.6"
-  sha256 "5545cc2d3cc1c06dc71373eaaf91e9d2e2da67d3d8f46d2cc81be088d05f7f95"
+  version "2.0.0-beta.7"
+  sha256 "8865856f664278fb72e0c6a2cf3eaa9be4f358c6dd73693598f5494a5733daba"
 
   url "https://ghfast.top/https://github.com/stonerl/Thaw/releases/download/#{version}/Thaw_#{version}.zip"
   name "Thaw"

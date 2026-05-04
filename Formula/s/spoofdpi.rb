@@ -1,8 +1,8 @@
 class Spoofdpi < Formula
   desc "Simple and fast anti-censorship tool written in Go"
-  homepage "https://spoofdpi.xvzc.dev"
-  url "https://ghfast.top/https://github.com/xvzc/SpoofDPI/releases/download/v1.4.0/spoofdpi-1.4.0.tar.gz"
-  sha256 "44f3792a0b37bedb2c95f4e34e67cb561272e1378a616da98175241a683a5e57"
+  homepage "https://spoofdpi.dev"
+  url "https://ghfast.top/https://github.com/xvzc/SpoofDPI/releases/download/v1.4.1/spoofdpi-1.4.1.tar.gz"
+  sha256 "e7144d7c9ae4dd2a4ba33c26ee19f333aff77b2c4a15191d65e570557ddd9c82"
   license "Apache-2.0"
   head "https://github.com/xvzc/SpoofDPI.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Spoofdpi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ddf9be7b68f14b0b6d6bde449c033c1bd535fbf9d28dcca3ca464621a3155038"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f13cbd06422fdd7e21eceb36c882d077b28d33528681d6c28ec6e51acf68e00"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cdbb1944773d972b5780d5a510bfb71c3d78e732db00d713781d8c9a8206787e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "978f5fd491912c3004ac40638f8e1922386ef784c438e3088a024e77c1dc72d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "95508b50bad57b41e6fbf34660f4ea1e4aeb544f720c4ca7ea841fc29d529d26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "705cfc2c65ad3904b18b1798b1ce42a8d1548c508b93ef0a568aa69636055e55"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aedfeb1d34771ec6dc6e29cd8a36499b2cbe3dd123fbb93c567c7bc33ecff2d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4763bdccab298b53ffc2fe6e18cfb9229f1ef2d1aa060c055ed0fecd6e4ba9ac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fdf93ddb3ae44beb0416a9199c885e43b2b80ee19d8e040911376a93c38e9c4e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b2882a36a51980c08050773f9b12cae30fbe1c4649d93031b805617205a28250"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d72c7b7ea5e33bfe8eee730332607a870f3c5ecbe7209c42cc5c0b050568cc5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2104b752d6b0de9ab50d53e5b60203f451d268f0007852e36534de9184cb86d3"
   end
 
   depends_on "go" => :build

@@ -20,6 +20,8 @@ cask "versions" do
     "~/Library/Application Support/com.versionsapp.v#{version.major}",
     "~/Library/Application Support/Versions",
     "~/Library/Caches/com.versionsapp.v#{version.major}",
+    "~/Library/HTTPStorages/com.versionsapp.v#{version.major}",
     "~/Library/Preferences/com.versionsapp.v#{version.major}.plist",
+    "~/Library/WebKit/com.versionsapp.v#{version.major}",
   ]
 end

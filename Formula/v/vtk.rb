@@ -4,16 +4,17 @@ class Vtk < Formula
   url "https://www.vtk.org/files/release/9.6/VTK-9.6.1.tar.gz"
   sha256 "47ca9af899165a33b935533046acce7c0aa3c007f0b57880665bb89d9986543f"
   license "BSD-3-Clause"
+  revision 1
   compatibility_version 2
   head "https://gitlab.kitware.com/vtk/vtk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ab398c0862b2518a9b2d5aec31c1efdfc87bb1a94b6b56936e3ac3ead2f9ecba"
-    sha256 cellar: :any,                 arm64_sequoia: "45ab74a56ce993083a74a59565b5e766dd89bd625ca0bb835c7596de806370d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "30d739d3d605155d2c63058e009340efcaa210f9d99cb9ffdeb1e7fd7514d692"
-    sha256 cellar: :any,                 sonoma:        "152a454a8f5fea230cbb7df932086d1d496325098691e3917000651963c12869"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "64493d81181347b00770b7bfc8cb2e9b7f708da79a5e7505ecfbcaee3e3dcf00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5090263a7b403e9aa90d965497d286fe58f8b8e0082a85b0854c268628ca5e7b"
+    sha256 cellar: :any,                 arm64_tahoe:   "41cf0ce92462d8ba8990a0cb3245031a0755c3b1c7d4c39119738ecbbccc3772"
+    sha256 cellar: :any,                 arm64_sequoia: "2fd41313d52771ac3baa7e74dd93a721aa6882d527d43e31e36d10d6aab42144"
+    sha256 cellar: :any,                 arm64_sonoma:  "7232486f1cd67296440f98ecec39244c99c74bff4f5068354a394a54ed7cd065"
+    sha256 cellar: :any,                 sonoma:        "7a90689f255da3df6971ae08274d5bb509e3f586a61089e11d9102906651233d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1472fa289fe7a8bcf5f7e6446c7d23d5c82164c97d7b08109b989f6ee5f396b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3394be0547ed3c0eba7fb3725ebc586777c3b4d6b87b8ef113842fb77f42bd74"
   end
 
   depends_on "cmake" => [:build, :test]

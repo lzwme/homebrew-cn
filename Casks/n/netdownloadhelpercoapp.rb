@@ -11,10 +11,7 @@ cask "netdownloadhelpercoapp" do
   desc "Allows video downloads from the Web"
   homepage "https://www.downloadhelper.net/w/CoApp-Installation"
 
-  livecheck do
-    url :url
-    strategy :github_latest
-  end
+  deprecate! date: "2026-05-02", because: :discontinued
 
   depends_on :macos
 

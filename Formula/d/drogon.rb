@@ -6,16 +6,16 @@ class Drogon < Formula
       tag:      "v1.9.12",
       revision: "89aca8c7993c8194f2c109c1d06a3b45bf363d5d"
   license "MIT"
+  revision 1
   head "https://github.com/drogonframework/drogon.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256                               arm64_tahoe:   "e54d554cd89483fea3b1033aa7a8c0142b8dd0a7f6e96fe99851c0250f9a103c"
-    sha256                               arm64_sequoia: "a7d97d0b74b7b8bc3740fd0eaafcf93f1fe0ab72f683a28da9e3256111cb0df2"
-    sha256                               arm64_sonoma:  "f02d33b2b8f47537762cd61f8ddacdb8503a4e898cd4086e6869068a5817ef79"
-    sha256                               sonoma:        "a2dddfaf010e2f0040161dc6e7d6365f269fc7ef16f6b2b30cb28c972c2343ef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "19365063e0137d2933f96c033ed5b064b14784e84ac5d65c7b2eff84c84fa3e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4608264dbac7b1e42f24b1d12c16cf9f67a8d62a6165bae4534acebf4941e274"
+    sha256                               arm64_tahoe:   "da3e0590411f956b464e9967f1a2942e0bf81e90a1b96994a16cb88692b11e2f"
+    sha256                               arm64_sequoia: "abaffd04eb7578816ac9b4c460bd2a3ad652fc6f239623955168ef5f08484987"
+    sha256                               arm64_sonoma:  "951a407f1a3bb3ea3f8eb50688e8aa18a5582b39b683137d48e1814bc0fb0b92"
+    sha256                               sonoma:        "99f19ef430cbcccfa26b130c44f20cff78a04a7e308039591fd0bd9a3b17de98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2af8eb13bb5ece7d6af44a0e7f49c752474910c0d163029bcbf891c20f8f482c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85d302c27e453199d62d13f6eefdca1e35c7e68057c7ecfbe0b7c0514ba7063d"
   end
 
   depends_on "cmake" => [:build, :test]

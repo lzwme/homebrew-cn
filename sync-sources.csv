@@ -5490,6 +5490,7 @@ Homebrew-homebrew-core/Formula/p/pakchois.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pake.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pam-reattach.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pam-u2f.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/paml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pan.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pandemics.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pandoc-crossref.rb, Homebrew/homebrew-core, 1
@@ -12945,6 +12946,7 @@ Homebrew-homebrew-cask/Casks/j/jellybeansoup-netflix.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/j/jellyfin-media-player.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jellyfin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jet-pilot.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/j/jetbrains-air.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jetbrains-gateway.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jetbrains-space.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jetbrains-toolbox.rb, Homebrew/homebrew-cask, 0
@@ -13379,6 +13381,7 @@ Homebrew-homebrew-cask/Casks/m/manico.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/manictime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/manila.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/manta.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/manus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/manuskript.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/manyverse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/marathon-2.rb, Homebrew/homebrew-cask, 1

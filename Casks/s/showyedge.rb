@@ -18,7 +18,9 @@ cask "showyedge" do
   app "ShowyEdge.app"
 
   zap trash: [
+    "~/Library/Application Scripts/org.pqrs.ShowyEdge",
     "~/Library/Caches/org.pqrs.ShowyEdge",
+    "~/Library/Containers/org.pqrs.ShowyEdge",
     "~/Library/Preferences/org.pqrs.ShowyEdge.plist",
   ]
 end

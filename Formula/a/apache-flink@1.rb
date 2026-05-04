@@ -18,6 +18,9 @@ class ApacheFlinkAT1 < Formula
 
   keg_only :versioned_formula
 
+  deprecate! date: "2026-05-02", because: :unsupported
+  disable! date: "2027-05-02", because: :unsupported
+
   depends_on "openjdk@11"
 
   def install
