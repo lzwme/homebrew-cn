@@ -1,18 +1,18 @@
 class SemCli < Formula
   desc "Semantic version control CLI with entity-level diffs and blame"
   homepage "https://github.com/Ataraxy-Labs/sem"
-  url "https://ghfast.top/https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "f255c259543689764e9bc4819d9a82a5d1bdfffe22ebe4db04b657db9bd46aea"
+  url "https://ghfast.top/https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "526efde2aa9322eb5938e4c41e315eec16df083e39f5f7d759d58db386b08f8c"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/Ataraxy-Labs/sem.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5c4062d73589a3d3806a70bc21d10ab1aa5f0e54f1b12c4fc9242c6fc41fe1d5"
-    sha256 cellar: :any,                 arm64_sequoia: "32780518b7cfb3de0e5c286a2f8743d134f2de463b7f00c12b679a126fdfa1b9"
-    sha256 cellar: :any,                 arm64_sonoma:  "a741e19cca41cf6796aed11a331a5ddc06922faf834d153dd678963c72c2120d"
-    sha256 cellar: :any,                 sonoma:        "355e8c57c5e9d6be10e806156901c29345ad705a1c83e489ee6db0ceff0ba810"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "95b5a65a93b0b731c20b880084c2d3d14c31060159a8867e2a6f064738889721"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98bb5547bd16957580c4341273f4173ec9d166a743147feecb778fc9e7b97aba"
+    sha256 cellar: :any,                 arm64_tahoe:   "018b64ce2ee944116854c2d2aaa39f665ed3b13445e13eb9f8789feacd72f5c3"
+    sha256 cellar: :any,                 arm64_sequoia: "124199408f4ccaad464a82a5b9af6218c1d7c5e6a8934c56e6b0cccb6d621d69"
+    sha256 cellar: :any,                 arm64_sonoma:  "493e79b96b797d3d5e18ec5c386d1466749d212d6b4c6678712f656b97c91fec"
+    sha256 cellar: :any,                 sonoma:        "20ade01f93ad7b23779655a461d8208123d4ba4050696151ca9b01fa1d30135c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "58dfd3da7dd57f75f38dd731aa8bb8222f2c14341045a1db3549bf42e9e0bf2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "008f5f5b073a8d0fafbbddef540d859796b43487faeb2110054dacbb8a02ab04"
   end
 
   depends_on "pkgconf" => :build

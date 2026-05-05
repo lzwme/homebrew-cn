@@ -1374,6 +1374,7 @@ Homebrew-homebrew-core/Formula/c/curlie.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/curlpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/curseofwar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/custom-install.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cutadapt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cutter-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cvs-fast-export.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cvs.rb, Homebrew/homebrew-core, 1
@@ -2435,6 +2436,7 @@ Homebrew-homebrew-core/Formula/g/gimme-aws-creds.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gimme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gimmecert.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ginac.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/ginkgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/girara.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gismo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gist.rb, Homebrew/homebrew-core, 1
@@ -6301,7 +6303,7 @@ Homebrew-homebrew-core/Formula/r/ren.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rename.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/renameutils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/render.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/renovate.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/renovate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/reop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/reorder-python-imports.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/repeater.rb, Homebrew/homebrew-core, 1
@@ -8949,7 +8951,6 @@ Homebrew-homebrew-cask/Casks/c/caption.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/capto.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/carbide-create.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/carbon-copy-cloner.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/c/carbon-copy-cloner@5.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/carbon-copy-cloner@6.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cardhop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cardinal-search.rb, Homebrew/homebrew-cask, 1
@@ -9666,6 +9667,7 @@ Homebrew-homebrew-cask/Casks/f/fabfilter-twin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fabfilter-volcano.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fabric-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/factor.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/factory.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fake.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/falcon-sql-client.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fanny.rb, Homebrew/homebrew-cask, 1

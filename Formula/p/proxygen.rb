@@ -1,18 +1,18 @@
 class Proxygen < Formula
   desc "Collection of C++ HTTP libraries"
   homepage "https://github.com/facebook/proxygen"
-  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2026.04.27.00/proxygen-v2026.04.27.00.tar.gz"
-  sha256 "cb791ae69bf915c3d7756160b83f28a1c5b91bc63d5d1977020cdd0a47b9e43a"
+  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2026.05.04.00/proxygen-v2026.05.04.00.tar.gz"
+  sha256 "1f42b824552056af697c161d4f8683884066478d34f809fd5a2b2bb305e600a9"
   license "BSD-3-Clause"
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "749e3f022b91ff5da67d333edef86bd1b03a1825e41c5899a364af10014bfe80"
-    sha256 cellar: :any,                 arm64_sequoia: "fe2ea4a9e4f2313b47fed94cf1c52f0d25e4a3d8876f01ed9c849c992980330b"
-    sha256 cellar: :any,                 arm64_sonoma:  "46d16de322cb18e0cb060ac96b84888aa1db1b7f9cc64ef931bee40a023b8749"
-    sha256 cellar: :any,                 sonoma:        "647047968c6afd9aaadb8508631d4f6cd5d870f86755bbcf143275fdc493c38b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15be2348f6fa9ee95c885d43f756ac0958a1db6d2570b58803dff41452eb7862"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49851c29cb80777c58cdc46aa45d112fa031896556ade830bb66144aef555794"
+    sha256 cellar: :any,                 arm64_tahoe:   "fdf161011522c27c673d4c0d7023d6a5a266b0b041f3a7a49c8773e337e01363"
+    sha256 cellar: :any,                 arm64_sequoia: "1dc65de4f7c94e0d26989fd971e77953bebe1990c7599e77ddfcc1aa55fec40a"
+    sha256 cellar: :any,                 arm64_sonoma:  "7837eab2755ebb6df135777f46fdec998cd9a692d2213a62fe772ba799c9a5f1"
+    sha256 cellar: :any,                 sonoma:        "aa4e297e6c145119cafaaf25bc6aaf2621be5ccde0a3a7b50d3e2ee8525b4be3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1aaec18b1fc9774a4a9a6de2c98628bd19a6a0b5b5e28f313234c64d1a7c2c66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cd21787435051fb9d6747ef81f3fa6f75c0e0b43252add99eba12961760e73b"
   end
 
   depends_on "cmake" => :build

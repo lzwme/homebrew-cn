@@ -1,9 +1,9 @@
 cask "droid" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.117.0"
-  sha256 arm:   "6e35ee49783164f9ba245f17e88d0813a9f2889f67209395599f807b0835e1ba",
-         intel: "9ce09726684f334e2a941e6c89a495c86a356273414a0bde4e5f9fbaa4fb9f98"
+  version "0.118.0"
+  sha256 arm:   "45ab7e594d0c886ff985fe9d3979a0e9d83d22f0d56d813855e36e28e78400b3",
+         intel: "c48213cddbbdd4076218cdb93f9748a02ace19d6ec5748308cc55a500f792bbd"
 
   url "https://downloads.factory.ai/factory-cli/releases/#{version}/darwin/#{arch}/droid"
   name "Droid"

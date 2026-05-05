@@ -1,18 +1,18 @@
 class Dagu < Formula
   desc "Lightweight and powerful workflow engine"
   homepage "https://dagu.sh"
-  url "https://ghfast.top/https://github.com/dagu-org/dagu/archive/refs/tags/v2.6.4.tar.gz"
-  sha256 "603eba863cfa828880b428c5603a53f6a1b2d8ff3a747e5c052b0d28248d80e9"
+  url "https://ghfast.top/https://github.com/dagu-org/dagu/archive/refs/tags/v2.6.5.tar.gz"
+  sha256 "5e5ca8614c176b0d8d97aa88320472b8505db628677b624fe9457ed3f755d524"
   license "GPL-3.0-only"
   head "https://github.com/dagu-org/dagu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73ac8043d7f96e76361eaa1e108352b4d24bbb8406d363328a528dd0263eed79"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c421aaf79ee51a7944e263a897e79e0e4bd7d339368d04ec624a2feae18234c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c68785dddc6c440f6d999157d3d0550054e702e4eff416246a62b84bdad7126d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "34e5d76a20ff6e9d4c139637d6ba93cee3aafe5cf6f182b22e4e48a8507059bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eac15577c0aa0d3da36b79b1e03dcdf70f2fdad4bedae8e7cc9f935d8cbcc04e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65b9f64ac08088c3d949a89661dca4df94a8ffcb9216e1fb1e2107ae118480a7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d32d6746975c3b6077589ad1534a371c9a92e54abccbb25467e6e4b6ff1829fa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35e3ebe38165c944315436e1fc6b66b5a8ab2eb5001b3edf31671cf995d58a39"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "462d0c8a48a505c5e94c27b925f769f0007bdc80c433bd80b92e0f4bb711750a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bd6c0faa51a72ad1b7ca5475b7511a6706af7ab240a739cd0909afbb8e283de7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "90a323b7fab70302c3e9922f534fb52290068d566be0225f12be4bfda2f32141"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4271aab41c5253d9352fa3b4523d5b1dc5b0bf6d38820ca1e4415f5bee145f4a"
   end
 
   depends_on "go" => :build

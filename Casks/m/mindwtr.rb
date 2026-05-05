@@ -1,9 +1,9 @@
 cask "mindwtr" do
   arch arm: "aarch64", intel: "x64"
 
-  version "0.8.9"
-  sha256 arm:   "70b732ccbd18d3f29ec7af321a477b37119479c8cda5873254a4a27cf20a34b2",
-         intel: "27e7ae2f322fb3ea9b2ccc365b25125be446eeacf44a232b9129edacf51b2647"
+  version "0.9.0"
+  sha256 arm:   "e43899d665f53641e90c1f42f519aac6b1352cbe0a66ebd9dfc8dff35e60f6f8",
+         intel: "62ab6e0291d121724ef17197cafbb92e8f076d54170d7a94973ed91e3af4ba46"
 
   url "https://ghfast.top/https://github.com/dongdongbh/Mindwtr/releases/download/v#{version}/mindwtr_#{version}_#{arch}.dmg"
   name "Mindwtr"
