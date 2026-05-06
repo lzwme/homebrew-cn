@@ -4,18 +4,18 @@ class MetaPackageManager < Formula
 
   desc "Wrapper around all package managers with a unifying CLI"
   homepage "https://kdeldycke.github.io/meta-package-manager/"
-  url "https://files.pythonhosted.org/packages/43/88/56eeaba6b1cfc70d94e200077fa51179e467c9830f429f420f75f78604f7/meta_package_manager-6.4.0.tar.gz"
-  sha256 "48af218873bb2c532a1df2875b711ee25a830e529f95348ddcf1e7ef8782cf35"
+  url "https://files.pythonhosted.org/packages/72/d3/d8cf8f6597ba5e14d5c9c6888bc980426bb3edbbf3b4afab41b8bd988efc/meta_package_manager-6.4.1.tar.gz"
+  sha256 "18b78e18ad3676a7769a91ab359574024c9a18946084e33ae370a4e4f4a60fe6"
   license "GPL-2.0-or-later"
   head "https://github.com/kdeldycke/meta-package-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2810f76dbc005140b3cf02633601bcb3f5d4a63fcf696a4929bb0537b7f22ce7"
-    sha256 cellar: :any,                 arm64_sequoia: "836882c9bd02dfb7b83eb1ba65ce2c212cb6e1cf5c3b727d0f946e7256111eb5"
-    sha256 cellar: :any,                 arm64_sonoma:  "45893211725f5f7921c0de1748af39e188fa94db826e33d27c9c967e1c1834af"
-    sha256 cellar: :any,                 sonoma:        "232651c77377e48c3ac8abebb2abad96c14bff0807e826375f071944ef6af15e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6302fd7a5101306809ee62fb7da4b5351e4b1d0005748cf417e5ad6485ac8c29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e26e9ddae96d42e4c263b0bde5a94b39d87e60670c79faa7b439b90baf0bdc81"
+    sha256 cellar: :any,                 arm64_tahoe:   "0451f147da0e3b24305a72e4c550267380c25a2545faa629d79701cce1d066a6"
+    sha256 cellar: :any,                 arm64_sequoia: "fcb08162427fd7f913d9f443cb19e49602964fe42ed153ed187f0f6d6152d025"
+    sha256 cellar: :any,                 arm64_sonoma:  "20e69698efac32f1820269c6556d188c8ead1aef5f513b8f5162aabcdfdf6c2b"
+    sha256 cellar: :any,                 sonoma:        "57d067c5f803a5cd954194d5af3b6358a0238f09676edbebf36feeae1feb4390"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "96caef0f680c8caf26858f41ea23a8f933ba6bd101f954a3dc354c792a2dc410"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ca78f297c29512525ae02b340c24b08c80d1d8295bc26f4b20c191ecd9b5342"
   end
 
   depends_on "rust" => :build
@@ -71,8 +71,8 @@ class MetaPackageManager < Formula
   end
 
   resource "click-extra" do
-    url "https://files.pythonhosted.org/packages/20/c9/f02eef46dd487565fac61a0cf7b77bd2c1ce255129bbf04507a6bd3a2cf5/click_extra-7.14.1.tar.gz"
-    sha256 "acfa952375f5051e509643623ef9e66e2691435b9f4ceb50f5fb078e87761028"
+    url "https://files.pythonhosted.org/packages/98/ee/a2bf0ca48304aff973e3d387364f4b60862be8d16247a6101a148cb9a637/click_extra-7.15.0.tar.gz"
+    sha256 "ca56ffd64c3afc5d302c68e894eb955a9457dc5dcb7be9e22d74d2073d1e56ac"
   end
 
   resource "cloup" do
@@ -96,8 +96,8 @@ class MetaPackageManager < Formula
   end
 
   resource "extra-platforms" do
-    url "https://files.pythonhosted.org/packages/88/3e/b7dfcbd8ccfb8127f2b907e3c7eabf0ff34bebdc7ae126266fbb7eba7208/extra_platforms-12.0.1.tar.gz"
-    sha256 "55146246c1e4babe385d2438c4da54e3f0078cedc70914288bedbe6502849218"
+    url "https://files.pythonhosted.org/packages/4c/f6/a20c4586c9bd653f596258455652725405f4b734e6270f7fc07a1a498932/extra_platforms-12.0.3.tar.gz"
+    sha256 "0a3201a05f93f18c840f3e9970d33f756a621eea719cbdfa24a514f96c79de7e"
   end
 
   resource "fqdn" do
@@ -143,11 +143,6 @@ class MetaPackageManager < Formula
   resource "lxml" do
     url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
     sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
-  end
-
-  resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/a2/f7/139d22fef48ac78127d18e01d80cf1be40236ae489769d17f35c3d425293/more_itertools-11.0.2.tar.gz"
-    sha256 "392a9e1e362cbc106a2457d37cabf9b36e5e12efd4ebff1654630e76597df804"
   end
 
   resource "packageurl-python" do
@@ -251,8 +246,8 @@ class MetaPackageManager < Formula
   end
 
   resource "uritools" do
-    url "https://files.pythonhosted.org/packages/86/92/07bd0999768dc45ab2be5795d53065cabee3bd54db89e7499005e09a4a32/uritools-6.0.2.tar.gz"
-    sha256 "4d671c3b8ca230a5d47efa5f8a693f3d01531f38f4f523170299be734cc9851b"
+    url "https://files.pythonhosted.org/packages/8a/97/508fa009ddc9c0d0e6e687eca0e3aa6ff09ac9836f98c28958a7eed936c1/uritools-6.1.0.tar.gz"
+    sha256 "be97e452528e7a42ef0a4df68364ddd77833e982c5bac5cdcfee15c81f65e96b"
   end
 
   resource "urllib3" do
@@ -266,8 +261,8 @@ class MetaPackageManager < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz"
-    sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
+    url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
+    sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
   end
 
   resource "webcolors" do

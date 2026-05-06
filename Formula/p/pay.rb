@@ -1,8 +1,8 @@
 class Pay < Formula
   desc "HTTP client that automatically handles 402 Payment Required"
   homepage "https://github.com/solana-foundation/pay"
-  url "https://ghfast.top/https://github.com/solana-foundation/pay/archive/refs/tags/pay-v0.13.0.tar.gz"
-  sha256 "bde6bea2bb39b2ba8997d8719fc7e42d10b7cc2239dd756fd29ed16601cce2df"
+  url "https://ghfast.top/https://github.com/solana-foundation/pay/archive/refs/tags/pay-v0.15.0.tar.gz"
+  sha256 "5dfa3599c8f69aec2798eb0afd6d57cb33fbb175850c50a9534093fd45c7570e"
   license "MIT"
   head "https://github.com/solana-foundation/pay.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Pay < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7dfc7b02df09d2149fc4cf60aa6b6bab37f203276445b88aaf29265b5c648a4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0df3181121baff1afd2b047f204a569b78eaddc4c3738a8f7b6bb1f6b0326bb1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d6310d5a09168194d2e164133ade109efc5c50f1ef1f716d3cb1db0ab560503"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4d5853cbc725c0720678374e2412cde4b8d2136f03c25a780d9698b08448c6e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dcd9f3e29abad83d42ac27c076362ae4f00cf64244b676e2db93aa1abec95ce4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff73d5e51f91d0cd7852d5bd2455e6621bc015a8ce545ca56f00f612691ebdb3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a50e8d10b835917a8cea6b59fc6413a989633b122698861f008b45dc09f14ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e06bf9bfcaa411920f7ed988e1cce8494b03bf2221ebbdbd1031ba671871804"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e187d79871b9ed0cc3ba8914bb3702592877192f2889266297b863a2bc27c5fe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "da0a1def936036738f0846d009991fdbbdda786b16212f015045d50a9af6298f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7829f52c6d47b97bf107df84d5d7c70384c42564a81fb2a72b75b8062a31cba3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "493cc2b330461fe91e702cbdeb0cb006eedabfa4507ed36eb0edc36e8a119fbc"
   end
 
   depends_on "just" => :build

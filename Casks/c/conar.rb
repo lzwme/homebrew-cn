@@ -1,9 +1,9 @@
 cask "conar" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.31.1,2605049zot2d535"
-  sha256 arm:   "cf01d407f283228998f34b83f906f46a7ee11687819d01ad3d4971ff174891a9",
-         intel: "8080fb073675c78c0986c5e6ce60d463e66e689f6abf8de57bbbbd4af546ec37"
+  version "0.31.3,260505d8zjtixcw"
+  sha256 arm:   "0f07a930aad6cce93004701121686887523e0ca91ba329620d976df02eb0e171",
+         intel: "9c1ffec9b4419b8d9be610aaa29c0a01cc7a9118e63311024cc5992e41af45f7"
 
   url "https://download.todesktop.com/25112796k32u7/Conar%20#{version.csv.first}%20-%20Build%20#{version.csv.second}-#{arch}-mac.zip",
       verified: "download.todesktop.com/25112796k32u7/"

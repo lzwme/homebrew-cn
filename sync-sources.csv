@@ -31,7 +31,6 @@ Homebrew-homebrew-core/Formula/a/acme.sh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/acpica.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/acronym.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/act.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/act_runner.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/action-docs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/action-validator.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/actionlint.rb, Homebrew/homebrew-core, 1
@@ -77,7 +76,6 @@ Homebrew-homebrew-core/Formula/a/age.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/agedu.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/agent-browser.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/agg.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/aggregate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aha.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ahcpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ahoy.rb, Homebrew/homebrew-core, 1
@@ -175,7 +173,6 @@ Homebrew-homebrew-core/Formula/a/anyzig.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aoe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aoeui.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aom.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/a/apache-archiva.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-arrow-adbc-glib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-arrow-adbc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-arrow-glib.rb, Homebrew/homebrew-core, 0
@@ -1759,7 +1756,6 @@ Homebrew-homebrew-core/Formula/d/dvdbackup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dvdrtools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dvisvgm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dvm.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/dvorak7min.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dvr-scan.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dwarf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dwarfs.rb, Homebrew/homebrew-core, 1
@@ -2058,7 +2054,6 @@ Homebrew-homebrew-core/Formula/f/fetchmail.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ffc.h.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffe.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/f/fff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffmate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ffmpeg-full.rb, Homebrew/homebrew-core, 0
@@ -2229,6 +2224,7 @@ Homebrew-homebrew-core/Formula/f/freeipmi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/freeling.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/freeradius-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/freerdp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/freesasa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/freeswitch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/freetds.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/freetype.rb, Homebrew/homebrew-core, 0
@@ -2528,6 +2524,7 @@ Homebrew-homebrew-core/Formula/g/gitbackup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitbatch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitbucket.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitea-mcp-server.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gitea-runner.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gitea.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gitg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/github-keygen.rb, Homebrew/homebrew-core, 1
@@ -2982,6 +2979,7 @@ Homebrew-homebrew-core/Formula/h/helmify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helmsman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/help2man.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hercules.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/hermes-agent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hermit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/heroku.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hesiod.rb, Homebrew/homebrew-core, 1
@@ -3267,6 +3265,7 @@ Homebrew-homebrew-core/Formula/i/iputils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ipv6calc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ipv6toolkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ipython.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/i/iqtree3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ircd-hybrid.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ircd-irc2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ircii.rb, Homebrew/homebrew-core, 0
@@ -3674,6 +3673,7 @@ Homebrew-homebrew-core/Formula/l/launch4j.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/launch_socket_server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/launchctl-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lavat.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lavinmq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazycontainer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazycut.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazydocker.rb, Homebrew/homebrew-core, 1
@@ -5023,7 +5023,6 @@ Homebrew-homebrew-core/Formula/n/nemu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/neo4j-mcp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/neo4j.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/neocmakelsp.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/n/neofetch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/neomutt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/neon.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/neonctl.rb, Homebrew/homebrew-core, 0
@@ -5339,6 +5338,7 @@ Homebrew-homebrew-core/Formula/o/opencv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opendbx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opendetex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opendht.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/opendoor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openexr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openfa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openfast.rb, Homebrew/homebrew-core, 0
@@ -5621,7 +5621,6 @@ Homebrew-homebrew-core/Formula/p/petsc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pferd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pfetch-rs.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pfetch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pg-schema-diff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pg_cron.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pg_partman.rb, Homebrew/homebrew-core, 1
@@ -9534,6 +9533,7 @@ Homebrew-homebrew-cask/Casks/e/eddie.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/edfbrowser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/editaro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/edrawmind.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/e/eez-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/effect-house.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/egnyte.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/egovframedev.rb, Homebrew/homebrew-cask, 0

@@ -1,18 +1,18 @@
 class CloudflareSpeedCli < Formula
   desc "Cloudflare-based speed test with optional TUI"
   homepage "https://github.com/kavehtehrani/cloudflare-speed-cli"
-  url "https://ghfast.top/https://github.com/kavehtehrani/cloudflare-speed-cli/archive/refs/tags/v0.6.6.tar.gz"
-  sha256 "258158b6d8828cc692f51027c8aee51b5f56d0023022ce918aee88d6a87dbad2"
+  url "https://ghfast.top/https://github.com/kavehtehrani/cloudflare-speed-cli/archive/refs/tags/v0.6.7.tar.gz"
+  sha256 "01be86f39c3c817170ad508f81599ea3a59e412434533c1900cabab823e5a26b"
   license "GPL-3.0-only"
   head "https://github.com/kavehtehrani/cloudflare-speed-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "575cfba9dd3e1abb8f17f002364cbe0aa4d2ee0052351a1cfe77944f7e453be9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23724d65182ae96879c96ed6a1ab7a33857603ad5900d3f8675b5cc21247d1ad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc9d981683f75bbd8eeda690e96ebf4ab1305944751b6af7ce553caba41fb751"
-    sha256 cellar: :any_skip_relocation, sonoma:        "187fcde1f6a6e1f89aac7ec2e842d1c6ddb3237b8fc3c5ee68251cb398e1df35"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbff72d869cccc694bf382913062b4c6e1123d0eab3ade6257c8034f81a7fe4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65f34683394d1b62fb6e1c0a6807df866730d9983d0e09fd18112c29a1e150da"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2248e345877b832ca150162569df3b9b5e60eac9f66dfb56b73f1e0efb66a3b5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1c158f7fb0688cb23db76908104d44511bcefaee97e27b2bf7a5b890d506381"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "561f709aa99dfe1bfd87efc59721a282fd2a033908c1fc8da703255156040465"
+    sha256 cellar: :any_skip_relocation, sonoma:        "223c7513d35a6d00c5c3ab5e2b2b8a38c7ab648b802cfd88858bce5d3f866c0d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4becad3388c2067585704f65dd5c7749ce20d37d3305d0c232dceb7fef5fb987"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "887ac6a099f4f1c0e36aa9cc82b0cd9405c09064ae322d5c60a299c165890a7b"
   end
 
   depends_on "rust" => :build

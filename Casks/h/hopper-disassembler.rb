@@ -1,6 +1,6 @@
 cask "hopper-disassembler" do
-  version "6.2.8"
-  sha256 "47dee71e094b393b54b40b3badb28bd4e62f3a40e36955dc4736a2582d10ed87"
+  version "6.2.9"
+  sha256 "01c71c736a16b1f1548f28a9482ee849ee33b07fcabbaa0b37c799e354c6359b"
 
   url "https://www.hopperapp.com/downloader/public/Hopper-#{version}-demo.dmg",
       user_agent: :browser

@@ -1,9 +1,9 @@
 cask "clickhouse" do
   arch arm: "-aarch64"
 
-  version "26.3.9.8-lts"
-  sha256 arm:   "7d10a7fc1ece9e55786a48b799950a2c344b6b537e739555014b8379a201f837",
-         intel: "f78467cde5c42adc27aeeabe2ca66b7b5a5ffc299e447653b8db648fa6e84b94"
+  version "26.4.1.1141-stable"
+  sha256 arm:   "e3c822c61818753928b7720b82361d2c858deb7591d2bfd772683263543feb61",
+         intel: "62ebd7c949a37baf9b278da5fb5067cfaefeb6d11f27ab54818cc5e3a456c60d"
 
   url "https://ghfast.top/https://github.com/ClickHouse/ClickHouse/releases/download/v#{version}/clickhouse-macos#{arch}",
       verified: "github.com/ClickHouse/ClickHouse/"

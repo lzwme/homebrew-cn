@@ -1,6 +1,6 @@
 cask "inky" do
-  version "0.15.1"
-  sha256 "75a8a28202a093a3ba5f6d8e66137f4208df5705aed420af0d460fe6efb2252f"
+  version "0.15.2"
+  sha256 "7f2d6c69e63c12ae1467824655aecc17a24bc299fd2860e8f21b08f6551ac7d5"
 
   url "https://ghfast.top/https://github.com/inkle/inky/releases/download/#{version}/inky.dmg",
       verified: "github.com/inkle/inky/"

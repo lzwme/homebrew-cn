@@ -1,18 +1,18 @@
 class VapoursynthBm3d < Formula
   desc "BM3D denoising filter for VapourSynth"
   homepage "https://github.com/HomeOfVapourSynthEvolution/VapourSynth-BM3D"
-  url "https://ghfast.top/https://github.com/HomeOfVapourSynthEvolution/VapourSynth-BM3D/archive/refs/tags/r10.tar.gz"
-  sha256 "3582f8c0aa00c710b4d4d484da2716207f2e1f305124a9c365fc7530461c25f3"
+  url "https://ghfast.top/https://github.com/HomeOfVapourSynthEvolution/VapourSynth-BM3D/archive/refs/tags/r10.1.tar.gz"
+  sha256 "3a340c23f4d77559d7c766a2a14f4a1e408752a785958930eb4ca41e13392c85"
   license "MIT"
   head "https://github.com/HomeOfVapourSynthEvolution/VapourSynth-BM3D.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6dc3874d1369504afab69b13d6bf21bbc3437088f6052fade1beaee5d64992ed"
-    sha256 cellar: :any, arm64_sequoia: "4d938bb02801e8fba0ef24ce2b5ff9d614b2ae773a35fb33d558e23130cb4d82"
-    sha256 cellar: :any, arm64_sonoma:  "b539cb6c0dfcdf1e7d01c350f1a492b778b5b091cb295283873d0adb17e65e34"
-    sha256 cellar: :any, sonoma:        "af2cdf5852a16ea43d7f32f0504d15792893cc524401bd3f2b939bbfd1ae5b64"
-    sha256               arm64_linux:   "f13ad83cd04d8a1c6a0e4160d83a8c678522b300e2e00910b2da79ef2a119fe3"
-    sha256               x86_64_linux:  "aad7240c647d28093efc2cb64cc17ccd8f60a939185ccef62c8a85aa84a38ee8"
+    sha256 cellar: :any, arm64_tahoe:   "d66a5b9cdcfd04fd2ba1bb26d0534d24840e43af534aca2047f56c9980b53c8f"
+    sha256 cellar: :any, arm64_sequoia: "f089a6d524a754aac646203216c65958d2733369781c4f289eddec950d09801a"
+    sha256 cellar: :any, arm64_sonoma:  "205173809d3bc30389b1b3f1caf4a036aee54ab1472ee0337e22be01702b696b"
+    sha256 cellar: :any, sonoma:        "a8a84fff097131d528f37735a48106fa3bf9da188a8f16a82e6be09fa378e725"
+    sha256               arm64_linux:   "9469cda709c6fe9e3ed9857899d32753bdd79997906e57518a988da7e387d470"
+    sha256               x86_64_linux:  "361e6094fd9dc6f044cbb771fe14a35b5994cfd7923354f3e3f0e0fd181701f7"
   end
 
   depends_on "meson" => :build

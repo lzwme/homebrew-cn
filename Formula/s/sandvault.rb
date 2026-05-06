@@ -1,15 +1,17 @@
 class Sandvault < Formula
   desc "Run AI agents isolated in a sandboxed macOS user account"
   homepage "https://github.com/webcoyote/sandvault"
-  url "https://ghfast.top/https://github.com/webcoyote/sandvault/archive/refs/tags/v1.17.0.tar.gz"
-  sha256 "b40664e92d16c4b7b4c18be208863bd252060fe4cf3a948f77edfa3e503c6bb8"
+  url "https://ghfast.top/https://github.com/webcoyote/sandvault/archive/refs/tags/v1.18.0.tar.gz"
+  sha256 "694e2cf6973c58756052d3176a7ecc90949642d27b81c4f2c5ea0cb5fbd39e4f"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc91f02c8a01000c2a9bce901e1f17401d8501b90ce5f0ca09705a221875cde4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc91f02c8a01000c2a9bce901e1f17401d8501b90ce5f0ca09705a221875cde4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc91f02c8a01000c2a9bce901e1f17401d8501b90ce5f0ca09705a221875cde4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "790bfcbf033449d8701b77c8d4f3fbbc87f546eb0cc4c8df6059a85e8e89a37a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0ac955dd6598fed72fa27024df8b460e7c1c46caf161f7da48541beba663527"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0ac955dd6598fed72fa27024df8b460e7c1c46caf161f7da48541beba663527"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0ac955dd6598fed72fa27024df8b460e7c1c46caf161f7da48541beba663527"
+    sha256 cellar: :any_skip_relocation, sonoma:        "365cdaf9b0f3296c230f114a9b3847b56dab6bd97c55053f3e151de8c3a7fbc9"
   end
 
   depends_on :macos
@@ -17,8 +19,8 @@ class Sandvault < Formula
   conflicts_with "runit", because: "both install `sv` binaries"
 
   def install
-    libexec.install "guest", "helpers", "skills", "sv", "sv-clone"
-    bin.write_exec_script libexec/"sv", libexec/"sv-clone"
+    libexec.install "guest", "helpers", "skills", "sv", "sv-clone", "sv-agentsview-setup"
+    bin.write_exec_script libexec/"sv", libexec/"sv-clone", libexec/"sv-agentsview-setup"
   end
 
   test do

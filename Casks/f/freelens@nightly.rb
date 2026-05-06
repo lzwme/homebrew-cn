@@ -1,9 +1,9 @@
 cask "freelens@nightly" do
   arch arm: "arm64", intel: "amd64"
 
-  version "1.9.0-0-nightly-2026-05-04"
-  sha256 arm:   "fdb3f6b6e7e6c0c6cb92458952f324f2e03fc1bf71a0c776df9e0bd620282075",
-         intel: "09c509f0a5242ef300d73dc58184c7d12ecb4f6f25c84b6c2c3d82a30ca7fd3d"
+  version "1.9.0-0-nightly-2026-05-05"
+  sha256 arm:   "f9da59ff32621fd24d3d953df3a92d7fe0f62146720ffa519afb040465c7ce21",
+         intel: "4f0a6065224600572fe42de68d58657790353e74663024f24f7d211752078558"
 
   url "https://ghfast.top/https://github.com/freelensapp/freelens-nightly-builds/releases/download/v#{version}/Freelens-#{version}-macos-#{arch}.dmg",
       verified: "github.com/freelensapp/freelens-nightly-builds/"

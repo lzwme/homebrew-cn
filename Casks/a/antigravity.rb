@@ -38,6 +38,8 @@ cask "antigravity" do
     EOS
   end
 
+  uninstall quit: "com.google.antigravity"
+
   zap trash: [
     "~/.antigravity/",
     "~/Library/Application Support/Antigravity",

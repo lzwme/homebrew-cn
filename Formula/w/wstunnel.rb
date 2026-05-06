@@ -1,8 +1,8 @@
 class Wstunnel < Formula
   desc "Tunnel all your traffic over Websocket or HTTP2"
   homepage "https://github.com/erebe/wstunnel"
-  url "https://ghfast.top/https://github.com/erebe/wstunnel/archive/refs/tags/v10.5.4.tar.gz"
-  sha256 "1815b64a47114e4d7449bcb76e292a07c0e3a3cae53be14345ebb64ebad3e3b4"
+  url "https://ghfast.top/https://github.com/erebe/wstunnel/archive/refs/tags/v10.5.5.tar.gz"
+  sha256 "c4b675bad8668cb86a99e96b6e343a8bce3c6382f54c266875333aaca209b1f9"
   license "BSD-3-Clause"
   head "https://github.com/erebe/wstunnel.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Wstunnel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "143cd2bc3827f2856ef5cd9b8c5218b94c289a87b22b8304c646cf5a21d1adc7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1e91229084da71e8959f2f5e14935433ab5d3b4e9d23967a45946fa7c8606ad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80d23841a7eba8d27405ae69c878b736b91188a2f5ba894aaf2129523402b2dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3b387b2b1c5bbce0fe2e65cefe0c60dda33835f1ce903cb5e93366c92c270221"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b16c58e9da34987834606183da7f4e34dbcc324f9d932ed44c36f32ecb589a2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "045328be6c265b505a1b69a01a8e45d005003e9153a1ff1cc16966787d6b5dd5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e88e304b357698f00953a7fe92b066fdd98bea0168cf912c798ab9d34fa8b2e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fcc186e59354940f7b80c1f355506b9cab495746ca02cf9433174894c2f27e1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c11c08f73beea8ca67e6818a712a42aaa0aa7f0d5ca441d1195add3963cf1d0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d6521bb8d08428cb9bc58d609af0c926d83a0856b3e9aa7bd28726eaf4c9b0e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "38db0fb6258a45e6156597ad28cf166a2e498cb7481618762d89de9e5f243982"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c13f8518ac96dd33787b1bc6d0caf99bf7a17f3733e22ddd88cca76fdfc37319"
   end
 
   depends_on "rust" => :build
