@@ -1,18 +1,18 @@
 class Upterm < Formula
   desc "Instant terminal sharing"
   homepage "https://github.com/owenthereal/upterm"
-  url "https://ghfast.top/https://github.com/owenthereal/upterm/archive/refs/tags/v0.23.0.tar.gz"
-  sha256 "e990c3c00ad378d32bb7b42c8131fe0c310b342f926d860a682e36a7d0cabd78"
+  url "https://ghfast.top/https://github.com/owenthereal/upterm/archive/refs/tags/v0.24.0.tar.gz"
+  sha256 "263ef7af78f8fd0c6f480204b435ac4269b5baf04626c73ae92521b0c061a642"
   license "Apache-2.0"
   head "https://github.com/owenthereal/upterm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7bf23d62d534c91711ce71ca93bf8af43590572fd4a45ff755d553048151960c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e129ac180740683b6d39c4691b001705ceb88527dd847a4948785e3a50a67db"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3bd38f68925a802c98c7361f4d914b1b68332718797e6c7eb3a627dc37c124f4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "027f82da75337791a459b028b0e00944d7c1029aa6c221a374ecad9cc2d7ba85"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0676171e91a08c1aa9e99d5b8c77b484a3a37d9e5a0c7da498dd298b9bb53097"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fd2f77ddaccd7adee89df5df58a4e73f052b19deab65e5c5ccae5065c3634d3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5bbf90b05ccf41009779c7798f4afe9e9b7a8c65ea245170c74da1833df984f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de54de15b763907b158d9b0a1abc13192de0c7e7b4b39335620e9319ce0c3ea0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5bf828853e7714e8cde042fbc8ad9ab8a0aeda9455c4fd9a26333782a2bc4edc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8ff935dbc0911bf38813fbb29aded3bca052fe7953b5bf6303a4793e859201f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3210c8019d8fb81110343513b59ceca5652996e57f00de277a9a1024e6a0fc2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0170f7e15a1ce265ac40afcd3375a5dfcb8b28f044791fbd8ca10b1e67d39f73"
   end
 
   depends_on "go" => :build

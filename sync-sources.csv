@@ -6818,6 +6818,7 @@ Homebrew-homebrew-core/Formula/s/smartypants.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/smenu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smimesign.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smlfmt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/smlnj.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/smlpkg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smpeg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smpeg2.rb, Homebrew/homebrew-core, 1
@@ -8236,6 +8237,7 @@ Homebrew-homebrew-core/Formula/z/z80dasm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zabbix-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zabbix.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zanata-client.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/z/zapp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zbar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zbctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zboy.rb, Homebrew/homebrew-core, 0
@@ -13917,6 +13919,7 @@ Homebrew-homebrew-cask/Casks/o/open-data-editor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-eid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/open-in-code.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-video-downloader.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/open-webui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openaudible.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openbb-terminal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openbci.rb, Homebrew/homebrew-cask, 1
@@ -14889,7 +14892,6 @@ Homebrew-homebrew-cask/Casks/s/smartsvn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smartsynchronize.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smcfancontrol.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/smcfancontrol@beta.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/s/smlnj.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smoothcsv.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/smoothscroll.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smooze-pro.rb, Homebrew/homebrew-cask, 0

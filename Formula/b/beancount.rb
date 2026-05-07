@@ -3,18 +3,18 @@ class Beancount < Formula
 
   desc "Double-entry accounting tool that works on plain text files"
   homepage "https://beancount.github.io/"
-  url "https://files.pythonhosted.org/packages/f8/9d/aa97bb5d354cc853faca60d0b0bf0728af11300cd6276769314885b4b9a8/beancount-3.2.2.tar.gz"
-  sha256 "7f9a3919152232c262c826998fb2620046b47249624c665d79fa4b0a72f78bfc"
+  url "https://files.pythonhosted.org/packages/eb/21/ed48e671a5e474c620762a7ea9c6b7f402f847d74dd2b73ceb5d2dec79a3/beancount-3.2.3.tar.gz"
+  sha256 "f52c4d237bcb092cbf02a29373d3e59d95349c2828a91491818ae437ee220f74"
   license "GPL-2.0-only"
   head "https://github.com/beancount/beancount.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f93a6a56f8dae45a97e10b084c45a100e24b0f3e2a56b6d70d1a5e5a8f6de48c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd0d2c9083c80723ac8fcae327f545eae8d497986e8f4bb71f2e2c8d8f9c8f93"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a260dcb01eee1341c47cb3750f637b7fe90014fdb747c38a42ad607afe32c74"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c17d79176b975fc0aa46757ca096ef98d9f0fa38395703a2d7fcc4296859ccab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3c70f40719bf59c974cf051444d4314fa06bc8509cf271f45df8122097c2624"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66ec705f73ad23c03fc829a10953139e3666d57c4b5bd8d375ceda9588a5221b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1af0f9a89d47e99664b9bad0e4d2751d478e174b8bc7cbd588ff6989383c00c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c57d3813a14d22f1a692b91998be9b172c289a6cf663eb95b17a392580cb9e1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab88e4520e81e3e9522b763443cfa5a13eaa0f88f8f5fdea048f8e60da427f93"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2c4062e64e6e41b696552c21225773e0f8754cb7a18c8e1662e8e0b083ef3ced"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4c4f66f5d218bb6526476e7c1fc8b1a5491e5e895957af55a8c1ad7bb92e471"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5111dd091e70b372535c34ccec7b32356031a49473c679a47463e961e7ed6f3b"
   end
 
   depends_on "bison" => :build

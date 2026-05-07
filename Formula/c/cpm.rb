@@ -1,18 +1,18 @@
 class Cpm < Formula
   desc "Fast CPAN module installer"
   homepage "https://metacpan.org/pod/cpm"
-  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-v1.0.3.tar.gz"
-  sha256 "4fc21e1ab196211cefb08be13f7e69816f597b3b3afb895a56409e0ca8596b81"
+  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-v1.0.4.tar.gz"
+  sha256 "a23a66aaa83e59242cf484d720126b0923e9dfa5f3e858298e03ac8af959242a"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https://github.com/skaji/cpm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "366f3f6ff6fa3dbfeefcb80314b039df9b100382dc27556d06ca047e3e4efe88"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "366f3f6ff6fa3dbfeefcb80314b039df9b100382dc27556d06ca047e3e4efe88"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "366f3f6ff6fa3dbfeefcb80314b039df9b100382dc27556d06ca047e3e4efe88"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e925503832cb15f1d6326ae27f262de9c970c086515cf86400eadd7ea6e2018a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b2050aed8b96d64bb1d37136dd01e76ca8842105dab62f0b2b4743544eb8ea0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddb144f5386385584dbe88204246e50b124241ec7781f94dcf0bf14d3fcf6562"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "936cfcc58ccf4d447c8997c94107a72ea203c500039322c4ad309074d8cb486e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "936cfcc58ccf4d447c8997c94107a72ea203c500039322c4ad309074d8cb486e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "936cfcc58ccf4d447c8997c94107a72ea203c500039322c4ad309074d8cb486e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "067690d3beb6bdf1c03f6d4d3ae8473b45a96ef980792a86e3fe0d21495d6d7e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1082eff9f205f8817df9d3739598ee884211dbdeb901985998097505891b1c1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b451a78fab0951e63e1791bec42b9a20b6bbac9386f6ac9abad2c1d570b77ac6"
   end
 
   depends_on "perl"
@@ -95,8 +95,8 @@ class Cpm < Formula
   end
 
   resource "HTTP::Tinyish" do
-    url "https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/HTTP-Tinyish-0.19.tar.gz"
-    sha256 "e9ce94a9913f9275d312ded4ddb34f76baf011b6b8d6029ff2871d5bd7bae468"
+    url "https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/HTTP-Tinyish-0.20.tar.gz"
+    sha256 "c60e714186f81c815690ca5d475f3e6eac8617c50b146ae668ae4dd5d86a5ed7"
   end
 
   resource "IPC::Run3" do

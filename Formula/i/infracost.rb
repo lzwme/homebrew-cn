@@ -6,8 +6,6 @@ class Infracost < Formula
   license "Apache-2.0"
   head "https://github.com/infracost/infracost.git", branch: "master"
 
-  no_autobump! because: :bumped_by_upstream
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12a68a6ec410dd1883c8cf5a63b594631678cead882d7af914f0a5a08d3df06f"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "12a68a6ec410dd1883c8cf5a63b594631678cead882d7af914f0a5a08d3df06f"

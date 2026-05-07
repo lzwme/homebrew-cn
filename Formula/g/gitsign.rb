@@ -1,18 +1,18 @@
 class Gitsign < Formula
   desc "Keyless Git signing using Sigstore"
   homepage "https://github.com/sigstore/gitsign"
-  url "https://ghfast.top/https://github.com/sigstore/gitsign/archive/refs/tags/v0.15.1.tar.gz"
-  sha256 "aad96074b912925ed2169730870ced36f705591ecdfe7d338aca6ff6a97f243f"
+  url "https://ghfast.top/https://github.com/sigstore/gitsign/archive/refs/tags/v0.16.0.tar.gz"
+  sha256 "98aae793562337414bc67d529eb2971efa6168020fa4640634b8942faf9a6ea9"
   license "Apache-2.0"
   head "https://github.com/sigstore/gitsign.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2f6fde2a707894aaddb26eeacdb083312987dcab04d0aa6279e5ed7373e6a29c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f6fde2a707894aaddb26eeacdb083312987dcab04d0aa6279e5ed7373e6a29c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f6fde2a707894aaddb26eeacdb083312987dcab04d0aa6279e5ed7373e6a29c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68f9acb066fb84377f5a85e18268abb3286f8d53bdc9f60f4408ad81a46125e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "91ee0f100c534299ba44977a99db4d589a5b32337dfed28d3b8cc04b0b9e6ec6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "613f83a2ba93e749b57cce00386233ceacd1ad93143f1d583fbabc7f6708c8b0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a54bf87aa0e1d92363eb5eaf1c985342dda65edb18cc491437f3b8fe6c67ea0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a54bf87aa0e1d92363eb5eaf1c985342dda65edb18cc491437f3b8fe6c67ea0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a54bf87aa0e1d92363eb5eaf1c985342dda65edb18cc491437f3b8fe6c67ea0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a360dda6c07f8435ea9887a7ddbcc7e08ff507908852d210113b930cfdaf528d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "12b3eaa45137ae08fe25ebb56ceab6ac4f713fd6e61f1b08b721956675c31783"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a98a432d4c92090be7c42cebee6f6468f2ae77edb5a931832875aaf1063d78b"
   end
 
   depends_on "go" => :build
