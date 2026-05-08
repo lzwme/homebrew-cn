@@ -1304,6 +1304,7 @@ Homebrew-homebrew-core/Formula/c/crfsuite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cri-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crispy-doom.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/crit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/criterion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crm114.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/croaring.rb, Homebrew/homebrew-core, 1
@@ -15369,12 +15370,10 @@ Homebrew-homebrew-cask/Casks/t/toneprint.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tongbu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/toolreleases.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/toontown-rewritten.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/t/topaz-denoise-ai.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/topaz-gigapixel-ai.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/topaz-gigapixel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/topaz-photo-ai.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/topaz-photo.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/t/topaz-sharpen-ai.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/topaz-video-ai.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/topaz-video.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/topcat.rb, Homebrew/homebrew-cask, 0

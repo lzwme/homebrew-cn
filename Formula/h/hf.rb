@@ -3,18 +3,18 @@ class Hf < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/89/ff/ec7ed2eb43bd7ce8bb2233d109cc235c3e807ffe5e469dc09db261fac05e/huggingface_hub-1.13.0.tar.gz"
-  sha256 "f6df2dac5abe82ce2fe05873d10d5ff47bc677d616a2f521f4ee26db9415d9d0"
+  url "https://files.pythonhosted.org/packages/39/40/43109e943fd718b0ccd0cd61eb4f1c347df22bf81f5874c6f22adf44bcff/huggingface_hub-1.14.0.tar.gz"
+  sha256 "d6d2c9cd6be1d02ae9ec6672d5587d10a427f377db688e82528f426a041622c2"
   license "Apache-2.0"
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "98b95be055466f8684ef9d179f10f1805f2a8e5b4a6c42c6707110d16dacb5e6"
-    sha256 cellar: :any,                 arm64_sequoia: "635392fc812205e6fea5065334c32c5c737ef871c91dc0241ac25e60db11c149"
-    sha256 cellar: :any,                 arm64_sonoma:  "60d62c1ebe973c8ff4f9712d0ea11131d96fa3c2f6ffa01a663b801c7a74bdbb"
-    sha256 cellar: :any,                 sonoma:        "86b3e09bae81dff023bfc79cbc8611ce90c18c444f9fab6381e3fd2b7d730345"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec1810e96530da78b49cda73a423997d535039ce4a1ea4078169376d8981debe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc5fc9cd08044b75eaebb2df3a546d9622d681cc052963b07a2b0afc459f380d"
+    sha256 cellar: :any,                 arm64_tahoe:   "64dfd20e4b17363eed5b6601701925c4ef7133625871118347c6acb92f97b817"
+    sha256 cellar: :any,                 arm64_sequoia: "d7900261cdd38f8ada851a79a3c183903da06955f3d9154521cb9c7ea018873c"
+    sha256 cellar: :any,                 arm64_sonoma:  "f1d29021548649bbe6b71a4559e29a5d2b87ef9a3aca28178c3a60ba568c0856"
+    sha256 cellar: :any,                 sonoma:        "ddb1f9cb926f0f90e42fd516efea5cb35780eadb672df63f77d75057c40901f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad3d90aeabd96b465ae30e0f6fa0a6ec10f8fa1307afb1691750e5293436cd06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd465fe79c0da1e1bfb6f0813b7ff0f1218b5566ad1fb3ff3cce84d2a753ff71"
   end
 
   depends_on "pkgconf" => :build
@@ -63,8 +63,8 @@ class Hf < Formula
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/53/92/ec9ad04d0b5728dca387a45af7bc98fbb0d73b2118759f5f6038b61a57e8/hf_xet-1.4.3.tar.gz"
-    sha256 "8ddedb73c8c08928c793df2f3401ec26f95be7f7e516a7bee2fbb546f6676113"
+    url "https://files.pythonhosted.org/packages/74/d8/5c06fc76461418326a7decf8367480c35be11a41fd938633929c60a9ec6b/hf_xet-1.5.0.tar.gz"
+    sha256 "e0fb0a34d9f406eed88233e829a67ec016bec5af19e480eac65a233ea289a948"
   end
 
   resource "httpcore" do
@@ -83,8 +83,8 @@ class Hf < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/5c/5c/f3aedc83549aae71cd52b9e9687fe896e3dc6e966ba20eba04718605d198/markdown_it_py-4.1.0.tar.gz"
+    sha256 "760e3f87b2787c044c5138a5ba107b7c2be26c03b13cc7f8fe42756b65b1df6c"
   end
 
   resource "mdurl" do
@@ -123,8 +123,8 @@ class Hf < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/7b/27/ede8cec7596e0041ba7e7b80b47d132562f56ff454313a16f6084e555c9f/typer-0.25.0.tar.gz"
-    sha256 "123eaf9f19bb40fd268310e12a542c0c6b4fab9c98d9d23342a01ff95e3ce930"
+    url "https://files.pythonhosted.org/packages/e4/51/9aed62104cea109b820bbd6c14245af756112017d309da813ef107d42e7e/typer-0.25.1.tar.gz"
+    sha256 "9616eb8853a09ffeabab1698952f33c6f29ffdbceb4eaeecf571880e8d7664cc"
   end
 
   resource "typing-extensions" do

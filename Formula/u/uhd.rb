@@ -6,6 +6,7 @@ class Uhd < Formula
   url "https://ghfast.top/https://github.com/EttusResearch/uhd/archive/refs/tags/v4.10.0.0.tar.gz"
   sha256 "a9c66b52abcd586b513999f3a52345807b7551d01efac8c98eed813838be0297"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0"]
+  revision 1
   compatibility_version 1
   head "https://github.com/EttusResearch/uhd.git", branch: "master"
 
@@ -15,12 +16,12 @@ class Uhd < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "cd5b441f00ef5d17de9210d49ceb932aba4b50e17789d348fd4e12b376292ae2"
-    sha256                               arm64_sequoia: "5bf766413fbf535fdd67c71e6e8a3b20ce2ea25cfa2bfcd320018b4c160990c5"
-    sha256                               arm64_sonoma:  "2b3fa297397a34f85060937ee5b1583634e08ef0e3618b61a3df7c674b37ffb6"
-    sha256                               sonoma:        "353869166ccb0896940857f6e19d5922f977f7059f52278775b427851f696537"
-    sha256                               arm64_linux:   "67855b9f56adcab9cf90e0ef681712e8d62d0e15c0ee2813a88cdf4dae6347ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbb4c3d549f0565c0d008512e50f52871b830b89f61f546b8be3e5128efed813"
+    sha256                               arm64_tahoe:   "d2d8b22b36d74dcec53d69202d9a57c217bf15c7b8c81458c2faa24cb1001faa"
+    sha256                               arm64_sequoia: "08806358c6bec7aede6b1dbdfbe96a937ce4d594ff6e7685382585a6d5570913"
+    sha256                               arm64_sonoma:  "895ccb259bec8911f6c66910620745ebbc839df681d66710ee529043345e3bef"
+    sha256                               sonoma:        "0d4396c1d2c519efe90d7b35240644ad6ba8c40b79df82e362cab22ac7b024cc"
+    sha256                               arm64_linux:   "d065b6fc1491a5f15f00b1eeca9f76a16abbf2424e3d5ed2276c56e2d7114032"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4641269e1dc2292c2ca2ae33c89f6460af58af2e6806f794aeddff0057a6244a"
   end
 
   depends_on "cmake" => :build
@@ -38,8 +39,8 @@ class Uhd < Formula
                 extra_packages: "mako"
 
   resource "mako" do
-    url "https://files.pythonhosted.org/packages/59/8a/805404d0c0b9f3d7a326475ca008db57aea9c5c9f2e1e39ed0faa335571c/mako-1.3.11.tar.gz"
-    sha256 "071eb4ab4c5010443152255d77db7faa6ce5916f35226eb02dc34479b6858069"
+    url "https://files.pythonhosted.org/packages/00/62/791b31e69ae182791ec67f04850f2f062716bbd205483d63a215f3e062d3/mako-1.3.12.tar.gz"
+    sha256 "9f778e93289bd410bb35daadeb4fc66d95a746f0b75777b942088b7fd7af550a"
   end
 
   resource "markupsafe" do

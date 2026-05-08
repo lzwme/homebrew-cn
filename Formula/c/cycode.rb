@@ -3,18 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/2d/bb/0fc9e24a5f0451edd98d0323e4ddca5a5e3731665a361463f3b196ead727/cycode-3.15.0.tar.gz"
-  sha256 "8befa9edc3293529b967ba1f1dc181f0da10e51f39d59454dfcba5c2c1499366"
+  url "https://files.pythonhosted.org/packages/3a/8b/4b726c5c8777e7d2cf2e979b5aa321e0f48a4763ba68cee4162809f2f2ed/cycode-3.15.1.tar.gz"
+  sha256 "9cf6b724257a208f7fd203764cf438779b3214c5382d4a92a6e61eeeeee111ce"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e1c3f15258c298518f74bad7c7070726b287e0102d619c03c075422c7ac5435d"
-    sha256 cellar: :any,                 arm64_sequoia: "afeb698413e2f723c46c34b28ec8166de3a5907e2eea0856be9878b2a444aac0"
-    sha256 cellar: :any,                 arm64_sonoma:  "d39df17b7c848532e8795c6500fd64ae3e693dd15b68328ab1cadbb00c19ca0e"
-    sha256 cellar: :any,                 sonoma:        "3d1c5c7b1dabe1216500a383171bd82f1c1a1fbe257cbf491655904738b7dbb0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4228ea97059110d55013adeadd506b52fbdb6e10090f7a1ca10641052b55c5b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee05d7bdede02d1ad7eda43c5cef3a50ace70e820feef644f95f912e189c9a30"
+    sha256 cellar: :any,                 arm64_tahoe:   "81750393db4b615b413e1e97f9ffd16c71629ef4641d48af3f114f6f3ef62708"
+    sha256 cellar: :any,                 arm64_sequoia: "0c2a5880f036520adaac556dff226386d9be27aa55889ceae7109fe9ec7867c4"
+    sha256 cellar: :any,                 arm64_sonoma:  "ed9cb0cdee1a121cd500c8a939d0f75a22d870f590388679fa9482d9bf686fbe"
+    sha256 cellar: :any,                 sonoma:        "66ea58a7d6eebbfe9d386aac9cdbc9c7eca99591518680c06afd2e68ed4911a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc52b1c3dbe6237be8ca25bc61751fc72ec01f7a541c97406dde38af34ad1026"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcbc5d925e07dcf67591fc37fa857da29df911d5c2112f0ab98a0757b51fdd89"
   end
 
   depends_on "certifi" => :no_linkage
@@ -62,8 +62,8 @@ class Cycode < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/e1/63/210aaa302d6a0a78daa67c5c15bbac2cad361722841278b0209b6da20855/gitpython-3.1.49.tar.gz"
-    sha256 "42f9399c9eb33fc581014bedd76049dfbaf6375aa2a5754575966387280315e1"
+    url "https://files.pythonhosted.org/packages/33/f6/354ae6491228b5eb40e10d89c4d13c651fe1cf7556e35ebdded50cff57ce/gitpython-3.1.50.tar.gz"
+    sha256 "80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc"
   end
 
   resource "h11" do

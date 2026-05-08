@@ -2,9 +2,9 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.5.5.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.5.5.tar.xz"
-  sha256 "95bec382f4bd00570a8ef52a58ec04d8d9b9a90494781f1c106d1b274a3902f2"
+  url "https://www.php.net/distributions/php-8.5.6.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.5.6.tar.xz"
+  sha256 "826c600b7c6f956bd335558ca3bdbcab23b22126c1cc8d9348be2280a2204bb7"
   license all_of: [
     "PHP-3.01",
 
@@ -29,7 +29,6 @@ class Php < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
-  revision 1
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -38,12 +37,12 @@ class Php < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_tahoe:   "be67bc65a7ba8b85ad0b6affd21a7bd862c7f4a274c25c584930bd4cc53e6504"
-    sha256 arm64_sequoia: "ad3e8bfc9ea4360fa93f0720463f5f248f8d1ca839ea000df41b1e76d20ac3bc"
-    sha256 arm64_sonoma:  "1c34a9e735b3169f4f1f8f233ce4ddc5358d812f3b407b44d100e7619e323ee5"
-    sha256 sonoma:        "b182b51cc611baf21c72ff3f13fb7d69940639edc2a6afed57ebd9667bf6b73f"
-    sha256 arm64_linux:   "501e3fee776b9ca43ff90dd12166c459cd00238011291fe989a034aaa7dea97d"
-    sha256 x86_64_linux:  "39a8fad27fd0970e0f50c2915c203601de95cd14a311c55f0ce4d7b245b80ebc"
+    sha256 arm64_tahoe:   "1b5394b9868a461b54d2e6b605e4cfbbbaa27e1a1968485e862528251639b38a"
+    sha256 arm64_sequoia: "e625dabfef02e549aa967a92552a427a6e46cda82cc60947ae82a6a484057eeb"
+    sha256 arm64_sonoma:  "4fb36a02a3b89f06c1b6fd0214d45fbd55b1f23d43d2049e9640a2e3a6724473"
+    sha256 sonoma:        "fdadce4df1febd016578fd10641ab1e9a21444f49c6aa30b69bb7b598fd0427a"
+    sha256 arm64_linux:   "a0aa6aa91ecf3d4ff6d2368ba44356cbd45de6283190c6cee75a1cf3a96730a5"
+    sha256 x86_64_linux:  "5017b0994d108d43b79ba006b545e51853cb7e3728599ff12d82e70dc1e7c020"
   end
 
   depends_on "bison" => :build

@@ -8,8 +8,8 @@ class PythonAT311 < Formula
   compatibility_version 1
 
   livecheck do
-    url "https://www.python.org/ftp/python/"
-    regex(%r{href=.*?v?(3\.11(?:\.\d+)*)/?["' >]}i)
+    url "https://www.python.org/downloads/source/"
+    regex(%r{href=.*?/Python[._-]v?(3\.11(?:\.\d+)*)\.t}i)
   end
 
   bottle do

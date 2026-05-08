@@ -1,6 +1,6 @@
 cask "airserver" do
-  version "7.2.7"
-  sha256 "e092aa4803418483dac749f71c644d63972b4ffe61f235364b92a5b72e08ae0d"
+  version "7.3"
+  sha256 "b272ccf9051ab0df2a524bb5796378755283ad451f1a1c3b1c3fa1488eaf730e"
 
   url "https://dl.airserver.com/mac/AirServer-#{version}.dmg"
   name "AirServer"
@@ -22,8 +22,4 @@ cask "airserver" do
     "~/Library/Preferences/com.pratikkumar.airserver-mac.AirServer.plist",
     "~/Library/Preferences/com.pratikkumar.airserver-mac.plist",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

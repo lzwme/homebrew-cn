@@ -3,17 +3,17 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.com/github/spec-kit"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.8.6.tar.gz"
-  sha256 "5ed67f31bcad1b237182aab0e403929d307b1510a551c141a24d1b8cd8d282bd"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.8.7.tar.gz"
+  sha256 "401df81dc721576e2e23ea150f94d9227341b7ac3556b7e4ae89c20d45437e8c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f0040633350ec7c3e78b5cc574d926c0fc04531004d63e925c4fe0d5c338cfe0"
-    sha256 cellar: :any,                 arm64_sequoia: "38724c70b4cc8e0dff2370235b40752e5b4254814e44fd292e6b28f53e34c4f6"
-    sha256 cellar: :any,                 arm64_sonoma:  "97d93e60ae4c15ba66087311cde768d631ff37a748f64e5b5983c1e94dcd143a"
-    sha256 cellar: :any,                 sonoma:        "35c50882b3aaba40f40e7f0a42d8f57741a2b792edc5baea88484dfdc43b1a88"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1a78a4a8d8cb1f0dcd211acb2fe4507ac4aefa91b4d5981be88c8d9b2cedafe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80056bd036cdf4004d6e96a58a06e2370f2315e78cd68ba95243802d5223661f"
+    sha256 cellar: :any,                 arm64_tahoe:   "890e85efdc7e74ee9a25ea82c616b54bd6cdb8002d1585d412306046a3ac9276"
+    sha256 cellar: :any,                 arm64_sequoia: "f7ec4223c9d03ac8105c7512fc4b275c6794594b4cbd201bb49925960408b4b8"
+    sha256 cellar: :any,                 arm64_sonoma:  "90f009998ef61ce1b9b2706516d495208140eaab97b3253ee85d09600325ea7c"
+    sha256 cellar: :any,                 sonoma:        "0f0b0864fb7894bf1d485d35cdab2bd3199d9a62099e8007a18b2660986768e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fdee60d74d44b1b2109ccb1912d2dd33677a0b36138a8f945d81ac66b563b2df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bce3d5a246948256166439a070cde3e9d9b44cc117b1165fc537cc597646a65c"
   end
 
   depends_on "certifi" => :no_linkage
@@ -38,8 +38,8 @@ class Specify < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/5c/5c/f3aedc83549aae71cd52b9e9687fe896e3dc6e966ba20eba04718605d198/markdown_it_py-4.1.0.tar.gz"
+    sha256 "760e3f87b2787c044c5138a5ba107b7c2be26c03b13cc7f8fe42756b65b1df6c"
   end
 
   resource "mdurl" do

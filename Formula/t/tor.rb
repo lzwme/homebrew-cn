@@ -1,10 +1,10 @@
 class Tor < Formula
   desc "Anonymizing overlay network for TCP"
   homepage "https://www.torproject.org/"
-  url "https://www.torproject.org/dist/tor-0.4.9.7.tar.gz"
-  mirror "https://www.torservers.net/mirrors/torproject.org/dist/tor-0.4.9.7.tar.gz"
-  mirror "https://fossies.org/linux/misc/tor-0.4.9.7.tar.gz"
-  sha256 "5a740f32f688ac89c066345c38b47ba286b0c4394d351b251ff48b6a5394618f"
+  url "https://www.torproject.org/dist/tor-0.4.9.8.tar.gz"
+  mirror "https://www.torservers.net/mirrors/torproject.org/dist/tor-0.4.9.8.tar.gz"
+  mirror "https://fossies.org/linux/misc/tor-0.4.9.8.tar.gz"
+  sha256 "ac1f394e2dd2ab0877d27d928fd0d9e86662fe3ca6afdffb9fd9b6f0f96d05de"
   # Complete list of licenses:
   # https://gitweb.torproject.org/tor.git/plain/LICENSE
   license all_of: [
@@ -21,12 +21,12 @@ class Tor < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "dea0f954387a76d9f32d9f5294fa12299b298de452ffb9a8db7520f8cfdab270"
-    sha256 arm64_sequoia: "c7dc7a54234b0e96125ad27c570b3fef30b267affd6a3612cfe29c1149f00e5a"
-    sha256 arm64_sonoma:  "e7bb5a645ebf002df9466094fcd933837111e40a051dab69c107d2943081f910"
-    sha256 sonoma:        "e5ed7607470d2e6930432929c799a48ba9d9b1f94560ecd1a2ec3c2ca9f7c1d4"
-    sha256 arm64_linux:   "1837f7474e02a4c6d45764f55e841a10f205094cadca835cd0e698b2c458c240"
-    sha256 x86_64_linux:  "bdfad8930937a97e6d88a33b0a7773c78b8ece87b5c84d4aaa363e2a3a61a8f3"
+    sha256 arm64_tahoe:   "3284d7b6a88627858eb8e326b22dcd072eaf8bc0b90ba299915d4976ad50972d"
+    sha256 arm64_sequoia: "35d19c15fa2d5b763e3887559fad09342498def577d1829dd9889061e9822660"
+    sha256 arm64_sonoma:  "3ab57e2582dcbe80518a9fe1ef8198a130f1ee0729aa270341a9de50bcac7ac2"
+    sha256 sonoma:        "c65a2461b506f46f5688b6e389b1c5db575ec39888e6d3a82d65f9d535ddd095"
+    sha256 arm64_linux:   "e153caf72c221f68acc7e0493d28c1d70aa6efbc217c3c91ee632222514ef803"
+    sha256 x86_64_linux:  "7da3be67c396e95a7a2ef56206c7e54855feea40e1cb876b107382b1ee12c3f9"
   end
 
   depends_on "pkgconf" => :build

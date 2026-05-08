@@ -1,9 +1,9 @@
 class PhpAT82Debug < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://www.php.net/distributions/php-8.2.30.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.2.30.tar.xz"
-  sha256 "bc90523e17af4db46157e75d0c9ef0b9d0030b0514e62c26ba7b513b8c4eb015"
+  url "https://www.php.net/distributions/php-8.2.31.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.2.31.tar.xz"
+  sha256 "95eae411d594fe6f6e5678b76645dc13ae47d3c0a5325c1d969b58dea56ee45a"
   license all_of: [
     "PHP-3.01",
 
@@ -35,12 +35,12 @@ class PhpAT82Debug < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_tahoe:   "5bdc9f758f0da3ede7fde45b50571563a53f7874adc19bf8faaf388931728a02"
-    sha256 arm64_sequoia: "eb258caaf9f295aac1b560d85d090cc90c18939841a1bbe82edff142e4bbad44"
-    sha256 arm64_sonoma:  "bf4d208356433e8d64281fe784e1fdf1b9f8803c2eb678aa182fdeae96e60894"
-    sha256 sonoma:        "95e5b35b9c28213db9385e788b50c452c6e004e27a99ba77ba141afeac60a8ea"
-    sha256 arm64_linux:   "ef38a1cb278d4f47bd9d7af7da78e519bc50fd9f9cf8cb258c1835105dcbfbea"
-    sha256 x86_64_linux:  "0aae67a5af72232a5831dfa8c7366c92e9cddee9b3dc7bc2bd3623f539ecbf70"
+    sha256 arm64_tahoe:   "13c0cffa2209cbd33c66ffbae960e222263aac2767cba345204f68b4b3707a17"
+    sha256 arm64_sequoia: "08ff66280bc76e133d617c44ff686a04bd95a7c2ac187e3b987eb4e5e0e63058"
+    sha256 arm64_sonoma:  "3924131aefbc0fbb61a531f9e7b8a6db1764afd02919a45fd83b80a7a61ce9ae"
+    sha256 sonoma:        "e0096e623b5ac8cf61adbbcc11b8bdd7fdd36eee1db79ba7562b2ff44c2cacd8"
+    sha256 arm64_linux:   "87ac9f5c7de6896aaa1ed1fdc1b326176bda75cd3d8365f5106a4c12a4b54b0d"
+    sha256 x86_64_linux:  "adc03353af07d9c54f01f9c47eb99828269898285be370af906b038f7ea315fb"
   end
 
   keg_only :versioned_formula
@@ -269,6 +269,8 @@ class PhpAT82Debug < Formula
         # rubocop:disable all
         ENV["CC"] = "/usr/bin/clang"
         ENV["CXX"] = "/usr/bin/clang++"
+        # Ensure there is enough Mach-O header space for Homebrew rpath rewrites.
+        ENV.append "LDFLAGS", "-Wl,-headerpad_max_install_names"
         # rubocop:enable all
       end
       system "./configure", "--with-php-config=#{bin}/php-config"

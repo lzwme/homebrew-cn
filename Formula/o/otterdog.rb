@@ -3,19 +3,18 @@ class Otterdog < Formula
 
   desc "Manage GitHub organizations at scale using an infrastructure as code approach"
   homepage "https://otterdog.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/2a/e4/4249ca1627431e160b74a9b3525731b0eb2e0ab574cb43dfbd4e13f58210/otterdog-1.3.0.tar.gz"
-  sha256 "94ba75c5fe11d32869e065b0c074f60b28fec827b87b87ef01707e27e36963b0"
+  url "https://files.pythonhosted.org/packages/37/e0/0924904726041a4f554082a57c7cd7020af03d34de5f0018732d46fa2608/otterdog-1.3.1.tar.gz"
+  sha256 "71d186a9055a7e06f780d1ca9d2a9141f56b3280e5a5ee73fb8c3d9106dbee92"
   license "EPL-2.0"
-  revision 1
   head "https://github.com/eclipse-csi/otterdog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0489622b837d73ca965ea0f4cc38c85a9e9a3dd039e433a7260f110b61de4092"
-    sha256 cellar: :any,                 arm64_sequoia: "a13bc7c776b7ae485cc2bf42aadc2386487e9df5452f0ca489f7a472ce8dcaf8"
-    sha256 cellar: :any,                 arm64_sonoma:  "0f82f49198507500200668c97dfb2d89b1dafe9fd881bf405f0850a448fc53ff"
-    sha256 cellar: :any,                 sonoma:        "8e9083ad846a69d49ec4755c70014d63ca67d0bbe7374d4e965a107dc585cf53"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9282fc3bba6dd1da9f7c8fc6897d34f62ca3309e831871eefacbc0b332df09ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5640b2da6c2c8c585714b04dbee7033e5551eb26f72ee27dde9cd1bcd764f4a"
+    sha256 cellar: :any,                 arm64_tahoe:   "72f248f225d82342ded3291bde66acf86f8a9051f4a0e486b6e883268d675901"
+    sha256 cellar: :any,                 arm64_sequoia: "fbd06cad519c72c2c540e70d9126e2814f71e0c16f83441f5e95f2efd6d70386"
+    sha256 cellar: :any,                 arm64_sonoma:  "882e16382ada1a5cc64f2c2e4d7cde3d4fab06c00a8e34b3c4e5f15564d1dc1f"
+    sha256 cellar: :any,                 sonoma:        "ee0b63b81614e2e5c88dc1e571439135d177d19b8992783b2da7dcc529a0fa6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26b59a7660e17afbd69b2ea4c76d843fb17f5bb031ca015fa4d8aa38ed780ba7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9e9effecd6b1bacb4ab3cf08b66db232ecf10202b7ca64dc005f11440521232"
   end
 
   depends_on "rust" => :build # for rjsonnet
@@ -124,8 +123,8 @@ class Otterdog < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/e1/63/210aaa302d6a0a78daa67c5c15bbac2cad361722841278b0209b6da20855/gitpython-3.1.49.tar.gz"
-    sha256 "42f9399c9eb33fc581014bedd76049dfbaf6375aa2a5754575966387280315e1"
+    url "https://files.pythonhosted.org/packages/33/f6/354ae6491228b5eb40e10d89c4d13c651fe1cf7556e35ebdded50cff57ce/gitpython-3.1.50.tar.gz"
+    sha256 "80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc"
   end
 
   resource "greenlet" do
@@ -179,8 +178,8 @@ class Otterdog < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/5c/5c/f3aedc83549aae71cd52b9e9687fe896e3dc6e966ba20eba04718605d198/markdown_it_py-4.1.0.tar.gz"
+    sha256 "760e3f87b2787c044c5138a5ba107b7c2be26c03b13cc7f8fe42756b65b1df6c"
   end
 
   resource "mdurl" do
