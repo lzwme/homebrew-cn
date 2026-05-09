@@ -1,8 +1,8 @@
 class Ecl < Formula
   desc "Embeddable Common Lisp"
   homepage "https://ecl.common-lisp.dev"
-  url "https://ecl.common-lisp.dev/static/files/release/ecl-24.5.10.tgz"
-  sha256 "e4ea65bb1861e0e495386bfa8bc673bd014e96d3cf9d91e9038f91435cbe622b"
+  url "https://ecl.common-lisp.dev/static/files/release/ecl-26.5.5.tgz"
+  sha256 "a01a5bcda8c5b73e59dda3494fd13e5fec5db6aa1dad782c3cc3bb57f1633435"
   license "LGPL-2.1-or-later"
   head "https://gitlab.com/embeddable-common-lisp/ecl.git", branch: "develop"
 
@@ -12,22 +12,19 @@ class Ecl < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:    "792a14c129f90bf2d9394da6c7af284e69548a20f0928b9623b36d3aa7261545"
-    sha256 arm64_sequoia:  "04a0ce4228cb34b3dc85b14755a96f61c698d9a3b35c3459d6f228a0e87fe5df"
-    sha256 arm64_sonoma:   "f511628793d569db33a5d91a96a052eff9a7bcc922717941c7e5dd3a08a32d34"
-    sha256 arm64_ventura:  "6e4978801eb0b6cf26e5bccd502ce82e5b4c5ba7213aedd23fd39ee6e639d3e7"
-    sha256 arm64_monterey: "38a0407a7998ec9218775d7eeafec3703cbbe823298383bee875b32113f23fae"
-    sha256 sonoma:         "2a29cff3a5684dc0171d182ca98308ffd5f16336500b03e3352c40f699bd999e"
-    sha256 ventura:        "538afbf26399d650b672ddd2013103ac4faacea950ec92531afc00bb8a6fd583"
-    sha256 monterey:       "95e261506d9cbb74e121eb52f281c516012d971d0b88887b9116b74a82144e8e"
-    sha256 arm64_linux:    "5693dbc0e01cdaf463ca0ab804fb0454b9739d7c53b64fb421f2c4422e41fec2"
-    sha256 x86_64_linux:   "fcc4ecc3ffdf65a6d96712a835d80711d804f643139208fe49ea029296a0a1dc"
+    sha256 arm64_tahoe:   "054ff824a33ca7a35e66bc33dba30390f2c7b72f0405b9778603f889ce06c260"
+    sha256 arm64_sequoia: "33efb093034b0c7ac433e63bbdfd11b216ebda96cf07ecad294eab1ad7cad2a8"
+    sha256 arm64_linux:   "a19e6405f0f7b7b25e7792d7d19a66f01b3276c115cf09a74559794cde45fb4e"
+    sha256 x86_64_linux:  "d4f53f9ae623f0997d4395a3967c84151bf168ad76dd815e705c4be41a86d008"
   end
 
   depends_on "texinfo" => :build # Apple's is too old
   depends_on "bdw-gc"
   depends_on "gmp"
+  depends_on macos: :sequoia
   uses_from_macos "libffi"
+
+  # does not build on macOS 14
 
   def install
     ENV.deparallelize
@@ -37,13 +34,13 @@ class Ecl < Formula
     else
       Formula["libffi"].opt_prefix
     end
-    system "./configure", "--prefix=#{prefix}",
-                          "--enable-threads=yes",
+    system "./configure", "--enable-threads=yes",
                           "--enable-boehm=system",
                           "--enable-gmp=system",
                           "--with-gmp-prefix=#{Formula["gmp"].opt_prefix}",
                           "--with-libffi-prefix=#{libffi_prefix}",
-                          "--with-libgc-prefix=#{Formula["bdw-gc"].opt_prefix}"
+                          "--with-libgc-prefix=#{Formula["bdw-gc"].opt_prefix}",
+                          *std_configure_args
     system "make"
     system "make", "install"
   end

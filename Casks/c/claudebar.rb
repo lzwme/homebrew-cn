@@ -1,6 +1,6 @@
 cask "claudebar" do
-  version "0.4.60"
-  sha256 "eb538d8cc647c807f69ca660303e641363f2684dc11096a1a0f4c76a2e6eb02f"
+  version "0.4.61"
+  sha256 "1e64da7d823cdc406eaae5cb4598bd0759086c3ce1978df0cc6e0e569ba9acb2"
 
   url "https://ghfast.top/https://github.com/tddworks/ClaudeBar/releases/download/v#{version}/ClaudeBar-#{version}.dmg"
   name "ClaudeBar"

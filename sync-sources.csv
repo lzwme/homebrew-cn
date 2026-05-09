@@ -1182,6 +1182,7 @@ Homebrew-homebrew-core/Formula/c/comby.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/commandbox.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/commitizen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/commitlint.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/committed.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/compiledb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/composer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/comrak.rb, Homebrew/homebrew-core, 1
@@ -1511,6 +1512,7 @@ Homebrew-homebrew-core/Formula/d/devspace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dex2jar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dexidp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dexter-lsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dexter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dezoomify-rs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dfc.rb, Homebrew/homebrew-core, 1
@@ -2652,6 +2654,7 @@ Homebrew-homebrew-core/Formula/g/go-boring.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go-camo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-critic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-feature-flag-relay-proxy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/go-hass-agent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-jira.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-jsonnet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-librespot.rb, Homebrew/homebrew-core, 1
@@ -5763,6 +5766,7 @@ Homebrew-homebrew-core/Formula/p/plplot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pluto.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plutobook.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plutoprint.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/plutosvg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plutovg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plz-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plzip.rb, Homebrew/homebrew-core, 0
@@ -6865,6 +6869,7 @@ Homebrew-homebrew-core/Formula/s/socket_vmnet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sofia-sip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/soft-serve.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/softhsm.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sol2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/solana.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/solargraph.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/solarus.rb, Homebrew/homebrew-core, 0
@@ -7855,6 +7860,7 @@ Homebrew-homebrew-core/Formula/v/vte3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vtk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vtsls.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vttest.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/v/vtzero.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vue-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vue-language-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vulkan-extensionlayer.rb, Homebrew/homebrew-core, 1
@@ -13927,6 +13933,7 @@ Homebrew-homebrew-cask/Casks/o/openbci.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openboard.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openboardview.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencat.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/openchamber.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openchrom.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openclaw.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencloud.rb, Homebrew/homebrew-cask, 1
@@ -16119,10 +16126,10 @@ shivammathur-homebrew-php/Formula/php@8.0-debug-zts.rb, shivammathur/homebrew-ph
 shivammathur-homebrew-php/Formula/php@8.0-debug.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.0-zts.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.0.rb, shivammathur/homebrew-php, 1
-shivammathur-homebrew-php/Formula/php@8.1-debug-zts.rb, shivammathur/homebrew-php, 0
-shivammathur-homebrew-php/Formula/php@8.1-debug.rb, shivammathur/homebrew-php, 0
-shivammathur-homebrew-php/Formula/php@8.1-zts.rb, shivammathur/homebrew-php, 0
-shivammathur-homebrew-php/Formula/php@8.1.rb, shivammathur/homebrew-php, 0
+shivammathur-homebrew-php/Formula/php@8.1-debug-zts.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.1-debug.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.1-zts.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.1.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.2-debug-zts.rb, shivammathur/homebrew-php, 0
 shivammathur-homebrew-php/Formula/php@8.2-debug.rb, shivammathur/homebrew-php, 0
 shivammathur-homebrew-php/Formula/php@8.2-zts.rb, shivammathur/homebrew-php, 0

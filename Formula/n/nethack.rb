@@ -36,12 +36,13 @@ class Nethack < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "263f45d084336797c0d218b49fa8569039f7ed227ea59e10135f585b2a3b39a0"
-    sha256 arm64_sequoia: "d8355aeffe5789f86375979287c62fe720c8d0e6472543b0da9d2a17f60f4535"
-    sha256 arm64_sonoma:  "a9132b7b68acda7a4def72459ef19bd3f45b54c650d7af7276f16540970e07bc"
-    sha256 sonoma:        "f02f8d45ea8cdffed20400ecb0c6f3c33a185ad8dd70c45a214bec52b2feea62"
-    sha256 arm64_linux:   "340fd39677a8b56e30acecc47c33b69618c0f8319bd6b91d1c975764246d095b"
-    sha256 x86_64_linux:  "0f72ae46bf187e2c0e507b2504c39cd3f94872f3ac2ac86a5b5c7ed1de6e016e"
+    rebuild 1
+    sha256 arm64_tahoe:   "64c1e5e3881ad027b0863dec469eb70bb17c96d2682b0ca111c472e27ea685ef"
+    sha256 arm64_sequoia: "cbe525013079e0b7036e3eb1ce549b738fe9a973e9d49a6209f2be4eaaad9f71"
+    sha256 arm64_sonoma:  "ae526f9bb987bd3fd402f6eba3bb9ff12fe17d32db301e9649ece36c3e14bfc0"
+    sha256 sonoma:        "dabec95206e3a906c55552727a6bbd346daa31ba7b8a9e7310ccf7ff915456c3"
+    sha256 arm64_linux:   "27674cebca8e1f2cdaafe515b2562f4fe5e363d56b24915db408b7d59278101b"
+    sha256 x86_64_linux:  "23c92a6f3d645059c8624d380fd8c2a31d995d902029a9589614a24db22b6a44"
   end
 
   depends_on "groff" => :build
@@ -80,7 +81,7 @@ class Nethack < Formula
     end
 
     system "make", "fetch-lua"
-    system "make", "install"
+    system "make", "install", "WANT_WIN_CURSES=1", "WANT_WIN_TTY=1"
     bin.install_symlink libexec/"nethack"
     man6.install "doc/nethack.6"
   end

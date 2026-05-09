@@ -1,8 +1,8 @@
 class Pgbouncer < Formula
   desc "Lightweight connection pooler for PostgreSQL"
   homepage "https://www.pgbouncer.org/"
-  url "https://www.pgbouncer.org/downloads/files/1.25.1/pgbouncer-1.25.1.tar.gz"
-  sha256 "6e566ae92fe3ef7f6a1b9e26d6049f7d7ca39c40e29e7b38f6d5500ae15d8465"
+  url "https://www.pgbouncer.org/downloads/files/1.25.2/pgbouncer-1.25.2.tar.gz"
+  sha256 "924ad35113fd0a71c8e2dbe85b5d03445532e2b7b37a9f8a48983beea238b332"
   license "ISC"
 
   livecheck do
@@ -11,12 +11,12 @@ class Pgbouncer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f5a3fc3c60b6965b84c3726d7a2ba38abc650ccbe07a57c96de83d9b6fd330d1"
-    sha256 cellar: :any,                 arm64_sequoia: "6be837ec94647a38dd17d202a3694adf258ab90e78e5afdae17b345201dac64a"
-    sha256 cellar: :any,                 arm64_sonoma:  "b90669ff9c33f12172c202a805aad612aff2c0c29d3085165c5bb7b42750922f"
-    sha256 cellar: :any,                 sonoma:        "ca92fc4e84e84654b20e3696eedf19fc5ef394cae7ce74ffe111a43317eb90e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a4786998a1c81f0a7f5080626e4133800cc8f013431e9c3e350040c15db6f87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f8526ad5bf46f76b9b8821dd240a512452a1502020dee3ad3d0c1a7c5f99e11"
+    sha256 cellar: :any,                 arm64_tahoe:   "c4d3afb213297e0fe071af4635a3225f45f27ab3a449c53663b34bc7efe9f644"
+    sha256 cellar: :any,                 arm64_sequoia: "1b328b87cabcc6161a51e61071e02f244a309335f75fb4f4441b1848651379b9"
+    sha256 cellar: :any,                 arm64_sonoma:  "e4369885ecf75d2d7dd9682a0b031dcf25d7edb569d6f93d8f3258bd87cd313e"
+    sha256 cellar: :any,                 sonoma:        "a95d4cae40c8395f9208bb5a780cd733536c82f1a44f30ca368e62da5877c78b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7353981ba4bafe80874718e0019b76f406afb220e8429ad4f27ddcd01990b2c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f93d001a0478a33b1660a611a60155824f8f69a978f1d974e020e7cee42a3ee"
   end
 
   head do

@@ -1,9 +1,9 @@
 class PhpAT81 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://www.php.net/distributions/php-8.1.34.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.1.34.tar.xz"
-  sha256 "ffa9e0982e82eeaea848f57687b425ed173aa278fe563001310ae2638db5c251"
+  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/371109cc3633b43f01baeaaa2243bdcdf9b58da0.tar.gz"
+  version "8.1.34"
+  sha256 "ae686b086c69317398a9b3c1a8ad51f71bd38a18afea62a430203b8ac468fc8e"
   license all_of: [
     "PHP-3.01",
 
@@ -27,6 +27,7 @@ class PhpAT81 < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
+  revision 1
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -35,12 +36,12 @@ class PhpAT81 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_tahoe:   "cfdfc31dbc1a917c31cd00d4c4cc7f5d79b53202b0c0b9ce51c675ed80cb65e3"
-    sha256 arm64_sequoia: "e1275358b83ccd3c5fc1de3962b8e356fa844600c8e9909ba33742065e5747ee"
-    sha256 arm64_sonoma:  "dab6a43a27c993628498535c4663a78f79736507b5bdef2ff6cc369ae9a4f7ff"
-    sha256 sonoma:        "ccd540b65ff44c3ccc35c3acdc5dbc154678fe90fdf25245d0f1eab0c6a495bd"
-    sha256 arm64_linux:   "d06fe308aa4f2de297ed6884906d5026f2b1b7aaf0f1eba1782a1cc09f6b2818"
-    sha256 x86_64_linux:  "e94eca7db5c79a17e7068e6f02a505bcdef41a1351defa74c2357488f663b455"
+    sha256 arm64_tahoe:   "c9ed26bd1e7ce806c7d38ea1f9abb4a163bac0e0b059a4cdbea6a2383aa68e42"
+    sha256 arm64_sequoia: "1692b3df179897af5159c9b603edb690d446a593a485e7b6cac0a0bb9bd66db8"
+    sha256 arm64_sonoma:  "3b3e4cce3722ecb3be07c546c074b4983b405790893f5c9615edec594ba9cd8b"
+    sha256 sonoma:        "ceae2e9984ef71e4c5fdbfe904b73534fd3745c735b6c54185ec7d005e799712"
+    sha256 arm64_linux:   "525759eb4375a7efcec8cbdc0c92f240d9c04f951e99c48727ec4c4f2d966cf9"
+    sha256 x86_64_linux:  "1f7008af02aebf45e15313d3a8b84a67e6adcb203fdb9ee8b910a4a505f244c4"
   end
 
   keg_only :versioned_formula
@@ -49,8 +50,10 @@ class PhpAT81 < Formula
   # https://www.php.net/supported-versions.php
   deprecate! date: "2025-12-31", because: :unsupported
 
+  depends_on "bison" => :build
   depends_on "httpd" => [:build, :test]
   depends_on "pkgconf" => :build
+  depends_on "re2c" => :build
   depends_on "apr"
   depends_on "apr-util"
   depends_on "argon2"
@@ -94,23 +97,14 @@ class PhpAT81 < Formula
     cause "Performs worse due to lack of general global register variables"
   end
 
-  patch :DATA
-
   def install
-    # Backport fix for libxml2 >= 2.13
-    # Ref: https://github.com/php/php-src/commit/67259e451d5d58b4842776c5696a66d74e157609
-    inreplace "ext/xml/compat.c",
-              "!= XML_PARSER_ENTITY_VALUE && parser->parser->instate != XML_PARSER_ATTRIBUTE_VALUE)",
-              "== XML_PARSER_CONTENT)"
-
     # Work around to support `icu4c` 75, which needs C++17.
     ENV["ICU_CXXFLAGS"] = "-std=c++17"
+    # Ensure there is enough Mach-O header space for Homebrew rpath rewrites.
+    ENV.append "LDFLAGS", "-Wl,-headerpad_max_install_names" if OS.mac?
 
     # buildconf required due to system library linking bug patch
     system "./buildconf", "--force"
-
-    # cURL needs the value to be long,
-    inreplace "ext/curl/interface.c", /CURLOPT_VERBOSE,\s+0/, "CURLOPT_VERBOSE, 0L"
 
     inreplace "configure" do |s|
       s.gsub! "APACHE_THREADED_MPM=`$APXS_HTTPD -V 2>/dev/null | grep 'threaded:.*yes'`",
@@ -493,27 +487,3 @@ class PhpAT81 < Formula
     end
   end
 end
-
-__END__
-diff --git a/Zend/zend_execute_API.c b/Zend/zend_execute_API.c
-index 1e31934f..49d430c4 100644
---- a/Zend/zend_execute_API.c
-+++ b/Zend/zend_execute_API.c
-@@ -1477,7 +1477,7 @@ static void zend_set_timeout_ex(zend_long seconds, bool reset_signals) /* {{{ */
- 			t_r.it_value.tv_sec = seconds;
- 			t_r.it_value.tv_usec = t_r.it_interval.tv_sec = t_r.it_interval.tv_usec = 0;
- 
--# if defined(__CYGWIN__) || defined(__PASE__)
-+# if defined(__CYGWIN__) || defined(__PASE__) || (defined(__aarch64__) && defined(__APPLE__))
- 			setitimer(ITIMER_REAL, &t_r, NULL);
- 		}
- 		signo = SIGALRM;
-@@ -1541,7 +1541,7 @@ void zend_unset_timeout(void) /* {{{ */
- 
- 		no_timeout.it_value.tv_sec = no_timeout.it_value.tv_usec = no_timeout.it_interval.tv_sec = no_timeout.it_interval.tv_usec = 0;
- 
--# if defined(__CYGWIN__) || defined(__PASE__)
-+# if defined(__CYGWIN__) || defined(__PASE__) || (defined(__aarch64__) && defined(__APPLE__))
- 		setitimer(ITIMER_REAL, &no_timeout, NULL);
- # else
- 		setitimer(ITIMER_PROF, &no_timeout, NULL);

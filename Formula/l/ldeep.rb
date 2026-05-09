@@ -3,19 +3,18 @@ class Ldeep < Formula
 
   desc "LDAP enumeration utility"
   homepage "https://github.com/franc-pentest/ldeep"
-  url "https://files.pythonhosted.org/packages/a0/e6/3da498f6a5b0ada48ef16602cc5bafbea1e43992d7c4c64aa2d167e3cbd0/ldeep-2.0.0.tar.gz"
-  sha256 "2adea5d3268b6cfc4edeeb415d4720525b92d8ca574aed9bf4925790080bd88d"
+  url "https://files.pythonhosted.org/packages/9d/bd/2a6796f34543d006b71b5ac9024c5fad294bea210118c701138211abcca8/ldeep-2.0.2.tar.gz"
+  sha256 "cf776a27616c20818a0a9c0616ceb7170b434903ec9bc35546db29a58d9c9e7c"
   license "MIT"
-  revision 1
   head "https://github.com/franc-pentest/ldeep.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c853f18ae0c3b753e90d242b155385e3864c3ae4e46901bd2166264d2513d00d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1ae59c536a56c625583797b018b5a608fe466c6a7f2cb6960137e3325b0c37f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d23419c22454d9e048015927ac02f0341d8becc1f769ed7a4082c5ec8774d95d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "24354ed626ab5a8f4e6e9e5586068846b36753a38e1ec2f7b9cc744e7725a129"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f1b52323891c02926c5fa79a89bd61b2af6020bcb013194507f542504beb44e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c5b339b726d9807d6fa636a020ee53d320522940ac12ddf3de36877197323e8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14e3e15abe02fad43f13795790ca8683c757f9ee1b915e8e50c73901051d149b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8d8657115bef5fbce4661dc89f0ea7de1ec36741a8c088ea9ac5dd9e618c587"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea134d4c00871a486c386ede8e34c56354500a13894cdf5ee5686a082927b357"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4b2703101b8023fce3118e26c0d3e7b137b161af2ae12dc8fd9ea7a177b0066c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5131ff9f331cc549509e8352ca857870270e78707ffeff086d55b4a3ed70feb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "695fb365104b4937258683def86fb511c01df84f541ac609e429bbc1fdeea24f"
   end
 
   depends_on "cryptography" => :no_linkage

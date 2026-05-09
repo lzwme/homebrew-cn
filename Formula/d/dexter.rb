@@ -19,6 +19,8 @@ class Dexter < Formula
   depends_on "libpq"
   depends_on "ruby"
 
+  conflicts_with "dexter-lsp", because: "both install `dexter` binaries"
+
   resource "google-protobuf" do
     url "https://rubygems.org/gems/google-protobuf-4.33.0.gem"
     sha256 "a4918b45bea5889c38fb82da83a5175209600f9c17fb1698be30d635696b3526"

@@ -1,5 +1,5 @@
 cask "meituxiuxiu" do
-  version "2.2.16"
+  version "2.2.30"
   sha256 :no_check
 
   url "https://xiuxiupc-dl.meitudata.com/xiuxiumac_setup.dmg",

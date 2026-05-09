@@ -1,9 +1,9 @@
 class PhpAT81DebugZts < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://www.php.net/distributions/php-8.1.34.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.1.34.tar.xz"
-  sha256 "ffa9e0982e82eeaea848f57687b425ed173aa278fe563001310ae2638db5c251"
+  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/371109cc3633b43f01baeaaa2243bdcdf9b58da0.tar.gz"
+  version "8.1.34"
+  sha256 "ae686b086c69317398a9b3c1a8ad51f71bd38a18afea62a430203b8ac468fc8e"
   license all_of: [
     "PHP-3.01",
 
@@ -27,6 +27,7 @@ class PhpAT81DebugZts < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
+  revision 1
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -35,12 +36,12 @@ class PhpAT81DebugZts < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_tahoe:   "12103384d72aad215289d5848eaec49e79d345aaecec742338be59e0f4dd8257"
-    sha256 arm64_sequoia: "54ed4ed4d8a4d9381049b94fe9c7cda75cd39ed458bf7b1ad5645ee267dbcbe0"
-    sha256 arm64_sonoma:  "daff12b9ace3f1c3f4db491b73416e2f04d9b5ada07d54338da9bcbcf79ffbba"
-    sha256 sonoma:        "89b3415a3cf9ce90d230343bc043d19f45ff6ce8a1956728738fc5286cfd3cba"
-    sha256 arm64_linux:   "fecf9e135a2d4a8682da271368b426b5d9e6fefab80d02c8de2cb446c58ded45"
-    sha256 x86_64_linux:  "051d247b4edab3d61e46d701ed4ad4a646d941243f4d212b913e64281cc1634c"
+    sha256 arm64_tahoe:   "cd7a1a090574af48969427374ea8a29a260809b53b9e7f97b3df2ef06e87ede6"
+    sha256 arm64_sequoia: "182e6cae2e2161cc7f1c09703ba60650099eee9e3d6ca03c77f27f50de70db2e"
+    sha256 arm64_sonoma:  "dc2f0ff67086d67599137da6cfaf125154a684134d1110e7a2e8e13516ded18f"
+    sha256 sonoma:        "a2626bad9526c4197e3f14bc09b8c80fb75dc3e18c14e89e2d5ece9947db6a9d"
+    sha256 arm64_linux:   "930070b234f801fc62127c5f842e339b47310ad36ba90f2c0aba89ebe53d80d6"
+    sha256 x86_64_linux:  "c4127c832a23a94cdbca3c0c843a4531ffd6f083cf9f2460a51d527d65698db5"
   end
 
   keg_only :versioned_formula
@@ -83,9 +84,6 @@ class PhpAT81DebugZts < Formula
 
   on_macos do
     depends_on "gettext"
-    # PHP build system incorrectly links system libraries
-    # see https://github.com/php/php-src/issues/10680
-    patch :DATA
   end
 
   on_linux do
@@ -93,11 +91,8 @@ class PhpAT81DebugZts < Formula
   end
 
   def install
-    # Backport fix for libxml2 >= 2.13
-    # Ref: https://github.com/php/php-src/commit/67259e451d5d58b4842776c5696a66d74e157609
-    inreplace "ext/xml/compat.c",
-              "!= XML_PARSER_ENTITY_VALUE && parser->parser->instate != XML_PARSER_ATTRIBUTE_VALUE)",
-              "== XML_PARSER_CONTENT)"
+    # PHP 8.1 still has K&R-style bcmath sources that fail under C23.
+    ENV.append "CFLAGS", "-std=gnu17"
 
     # Work around to support `icu4c` 75, which needs C++17.
     ENV["ICU_CXXFLAGS"] = "-std=c++17"
@@ -464,68 +459,3 @@ class PhpAT81DebugZts < Formula
     end
   end
 end
-
-__END__
-diff --git a/Zend/zend_execute_API.c b/Zend/zend_execute_API.c
-index 1e31934f..49d430c4 100644
---- a/Zend/zend_execute_API.c
-+++ b/Zend/zend_execute_API.c
-@@ -1477,7 +1477,7 @@ static void zend_set_timeout_ex(zend_long seconds, bool reset_signals) /* {{{ */
- 			t_r.it_value.tv_sec = seconds;
- 			t_r.it_value.tv_usec = t_r.it_interval.tv_sec = t_r.it_interval.tv_usec = 0;
- 
--# if defined(__CYGWIN__) || defined(__PASE__)
-+# if defined(__CYGWIN__) || defined(__PASE__) || (defined(__aarch64__) && defined(__APPLE__))
- 			setitimer(ITIMER_REAL, &t_r, NULL);
- 		}
- 		signo = SIGALRM;
-@@ -1541,7 +1541,7 @@ void zend_unset_timeout(void) /* {{{ */
- 
- 		no_timeout.it_value.tv_sec = no_timeout.it_value.tv_usec = no_timeout.it_interval.tv_sec = no_timeout.it_interval.tv_usec = 0;
- 
--# if defined(__CYGWIN__) || defined(__PASE__)
-+# if defined(__CYGWIN__) || defined(__PASE__) || (defined(__aarch64__) && defined(__APPLE__))
- 		setitimer(ITIMER_REAL, &no_timeout, NULL);
- # else
- 		setitimer(ITIMER_PROF, &no_timeout, NULL);
-diff --git a/build/php.m4 b/build/php.m4
-index 3624a33a8e..d17a635c2c 100644
---- a/build/php.m4
-+++ b/build/php.m4
-@@ -425,7 +425,7 @@ dnl
- dnl Adds a path to linkpath/runpath (LDFLAGS).
- dnl
- AC_DEFUN([PHP_ADD_LIBPATH],[
--  if test "$1" != "/usr/$PHP_LIBDIR" && test "$1" != "/usr/lib"; then
-+  if test "$1" != "$PHP_OS_SDKPATH/usr/$PHP_LIBDIR" && test "$1" != "/usr/lib"; then
-     PHP_EXPAND_PATH($1, ai_p)
-     ifelse([$2],,[
-       _PHP_ADD_LIBPATH_GLOBAL([$ai_p])
-@@ -470,7 +470,7 @@ dnl
- dnl Add an include path. If before is 1, add in the beginning of INCLUDES.
- dnl
- AC_DEFUN([PHP_ADD_INCLUDE],[
--  if test "$1" != "/usr/include"; then
-+  if test "$1" != "$PHP_OS_SDKPATH/usr/include"; then
-     PHP_EXPAND_PATH($1, ai_p)
-     PHP_RUN_ONCE(INCLUDEPATH, $ai_p, [
-       if test "$2"; then
-diff --git a/configure.ac b/configure.ac
-index 36c6e5e3e2..71b1a16607 100644
---- a/configure.ac
-+++ b/configure.ac
-@@ -190,6 +190,14 @@ PHP_ARG_WITH([libdir],
-   [lib],
-   [no])
-
-+dnl Support systems with system libraries/includes in e.g. /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk.
-+PHP_ARG_WITH([os-sdkpath],
-+  [for system SDK directory],
-+  [AS_HELP_STRING([--with-os-sdkpath=NAME],
-+    [Ignore system libraries and includes in NAME rather than /])],
-+  [],
-+  [no])
-+
- PHP_ARG_ENABLE([rpath],
-   [whether to enable runpaths],
-   [AS_HELP_STRING([--disable-rpath],

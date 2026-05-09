@@ -12,17 +12,16 @@ class Flatbuffers < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "27884d2b962c0f736d434e0cd7bff42c4d4b73aee40fc304af19aa687e392249"
-    sha256 cellar: :any,                 arm64_sequoia: "a0bec168703354b47325a5a9cb2b8340e33d549a6daca48589563401235c4d89"
-    sha256 cellar: :any,                 arm64_sonoma:  "8a8253232ef44f875c6787363e96a6c8219939e370836688d29c9ff0179345a9"
-    sha256 cellar: :any,                 sonoma:        "08403eb4b28bda3d8ee89003b743f5554e18b08e08c6a8f4b48207fa13fe320a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a3a907efeb6111e32a828aae08a2b235f62cfe89b37468337449bc799633246"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f3cb57c7d5d16d51d47439a7ab56a3a9e275d9912094eba581609003be526ac"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "328b035addba1451d382b7df88101a006f38f4f148e41b3cf37927139e4b7926"
+    sha256 cellar: :any,                 arm64_sequoia: "7ff96ca0377f7007e2b7476ccf5d128f8ca1e4f1ae48799c54c4e3169f47da65"
+    sha256 cellar: :any,                 arm64_sonoma:  "9861b60f635fbd2b053d9e44d6693f28066f674602a6e678a6810b389627f0ae"
+    sha256 cellar: :any,                 sonoma:        "4f9b13c5ecb225cea16d5c60ec050933f6b5f76bcb08d9d32f7036eecb2448db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "94a3da2f6d6349bdbbac53f0a8b17c022ff0cfb163029dfe589c4793198445d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7e4ccf9797920f3ecfbbb9a5a540b1416f377d7a7b04a851f23860427df1434"
   end
 
   depends_on "cmake" => :build
-
-  conflicts_with "osrm-backend", because: "both install flatbuffers headers"
 
   def install
     system "cmake", "-S", ".", "-B", "build",

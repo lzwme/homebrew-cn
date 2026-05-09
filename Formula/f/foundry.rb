@@ -2,10 +2,10 @@ class Foundry < Formula
   desc "Blazing fast, portable and modular toolkit for Ethereum application development"
   homepage "https://github.com/foundry-rs/foundry"
   # `build.rs` in `common` crate requires `.git` repository
-  # https://github.com/foundry-rs/foundry/blob/f83bad912a9dba7bf0371def1e70bb1896048356/crates/common/build.rs#L9-L12
+  # https://github.com/foundry-rs/foundry/blob/4072e48705af9d93e3c0f6e29e93b5e9a40caed8/crates/common/build.rs#L9-L12
   url "https://github.com/foundry-rs/foundry.git",
-      tag:      "v1.7.0",
-      revision: "f83bad912a9dba7bf0371def1e70bb1896048356"
+      tag:      "v1.7.1",
+      revision: "4072e48705af9d93e3c0f6e29e93b5e9a40caed8"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/foundry-rs/foundry.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Foundry < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "619a6900892b93d6efd1ddd4e7df4ba82d2a8e5870b37441e0633f5b4ad27cb3"
-    sha256 cellar: :any,                 arm64_sequoia: "8a96f15b875eeec9093442c9d30bb61c2915be7cafbde086af0e7b3958f4e4aa"
-    sha256 cellar: :any,                 arm64_sonoma:  "6ee981156bcf5c192f6e0b96e782c06780c6be1f09e5449c8219a8fe0693df28"
-    sha256 cellar: :any,                 sonoma:        "af49de5cc243d7846c4a1204059a8ca56a26d2e24b44fb473ffdcd1c34628282"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da308a61e71ca4dafd0d4ce787444c84e75d441af5354ccc1141be83d2d9f1d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cef0b04fa1f5ba8f59afb0aff3da939b9b38e2cb619ec8ac3fef465f03e5401"
+    sha256 cellar: :any,                 arm64_tahoe:   "119bb98930237ad9d2e9ad01f43681e5f77db1a7bbaa22e6c151430b26e1dfce"
+    sha256 cellar: :any,                 arm64_sequoia: "8770d61a8b838e17e09ab9bf79cc597f8218469231e4ce29e9e89f762b071459"
+    sha256 cellar: :any,                 arm64_sonoma:  "e38cf2ed6246727f90875be95b3fd0571cf7d7cc63c2b02a90969ddc8bbf40c8"
+    sha256 cellar: :any,                 sonoma:        "9f089ce540310c86282e349921859da3025fbb2ec4b4341e407a4266171a31dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b910d388c08e13fa833c4784d0064faf15373d259ec5f64878e776cbe6804fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8606052819eb6057fcd57918c79a4e53203eaf3f7dc783b1d0e32e38757f738c"
   end
 
   depends_on "help2man" => :build

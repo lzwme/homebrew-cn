@@ -1,19 +1,17 @@
 class Serpl < Formula
   desc "Simple terminal UI for search and replace"
   homepage "https://github.com/yassinebridi/serpl"
-  url "https://ghfast.top/https://github.com/yassinebridi/serpl/archive/refs/tags/0.3.4.tar.gz"
-  sha256 "d3765e273f54bf2e268f9696eef5e5459ffe46310af8ae48eb6ebe4c279deb62"
+  url "https://ghfast.top/https://github.com/yassinebridi/serpl/archive/refs/tags/0.3.5.tar.gz"
+  sha256 "ac53081d4610da6597b90ee785c4f6dbf553e7653bcebc0689a26931e1a4dd76"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "17d66f0a6070402ad1ca996de2076bcaff6ef5f4c474bfab7fcc0952de0978d9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7170f6c039d004e719e86934352f1fc0a30929749c853e71f8ad6db97689511f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a78316d3e051f3eaeeb2b26263c24135382dd8038222eb5ca14253e80fe96790"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a87b7d3d19d97b7aa33dd296a4ba5f0b98057c3b0f4ecf345d2495148f3dec7f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "90dd2fc2f33f9ba2d8122097e8b9f891f084f9038a4a2e5e26bf65fbb1c62335"
-    sha256 cellar: :any_skip_relocation, ventura:       "7128ef970ad0e5c428037dbeae24bf722dc57c19706ef05cb626d72bbdb619f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bfc0a698cbce4d7894689a991e6f8e72645cf22ffb5e03a10444b721cd8b20ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "823f676ecea17d9ff2f20448c5a42963fcdc7378e89a6eff3a250e161d17ddd0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b88504be53fd6c6d0f4aedfafa8b85242e6f35383517fe9c5886ab52aa55ea25"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad317368e476c6488b780e9910742ab649c6563e3fe2c8296801603c3915f9ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa13125f545f6dccc7766f4dd49a5e4632b8dc9bab43fef97e414134c5d709d3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "89f5f9abd344d6f2401d42f476de2fe68c615aa2af5d707fb94d74c4303f3a6d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b69c0b32ca5b58b5c8a3181b0ccc601bc9f8a7361f35bd26c99e5979f5ebc9fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a119bda728e51a5938e737cd0a5609212daf6701aeab6216ead96b1550dbc2b7"
   end
 
   depends_on "rust" => :build

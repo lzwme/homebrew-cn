@@ -1,18 +1,18 @@
 class Forgecode < Formula
   desc "AI-enhanced terminal development environment"
   homepage "https://forgecode.dev/"
-  url "https://ghfast.top/https://github.com/tailcallhq/forgecode/archive/refs/tags/v2.12.11.tar.gz"
-  sha256 "39f3c6be1fd24c5db7255714eccd67436ffbf4b95cdd400d3adc1cc987548729"
+  url "https://ghfast.top/https://github.com/tailcallhq/forgecode/archive/refs/tags/v2.12.12.tar.gz"
+  sha256 "4c3e2d7d77c291bc869f3c5f2db34aff3d29e1b3ddef86902ce3fd74608cf938"
   license "Apache-2.0"
   head "https://github.com/tailcallhq/forgecode.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7e2acf9cdb401c5ec2e01ce9b1f3093b2d8510e2ce7ca3564cd9b5d61590f58"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c636822d01970f45a40d2b8eacadfb2b235e7fc15eba929b73ae8b79d1a4a6de"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f14abff0829a7ca1e3abb3258f9ab09c805d46c5423270f47570094e3cf5d86c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "166a5a0994436130e343165bf738d6f8528f23c33e11474c463dbfaa1fa7b746"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "25ce00727b4dc5117b93420f8e7869e21f579e0ea1eac730308ed2414e94af57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79ba3a5c36d5266cabfc4ae215aafa125ea8286f2fbb5a364866eea8ab79351b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "328b3bd91d91d768c26cb46c1c8c51567e6122a4319890c51edbdd71e6f9799e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64b9c59d8518a2936418190a3b497bb87917016e44fe08307a34c3ad64459483"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2fcdfb48598432e272198d2bc50ce8c07f2888c9ca917477e0d3c5c6d383461c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b12e8cfd86299f3a8ed21bfc12294762732b9bfde0c8ac3170166a8387fed288"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e90af1b33d64214c4f748f7a5ec90b339db1273cab8564d5e2c873dae2d61549"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6db765a24accfa496500ba4a478440e6bd9576ce469554d1c6dc30d9a5e23b50"
   end
 
   depends_on "protobuf" => :build

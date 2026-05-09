@@ -1,18 +1,18 @@
 class RalphOrchestrator < Formula
   desc "Multi-agent orchestration framework for autonomous AI task completion"
   homepage "https://github.com/mikeyobrien/ralph-orchestrator"
-  url "https://ghfast.top/https://github.com/mikeyobrien/ralph-orchestrator/archive/refs/tags/v2.9.2.tar.gz"
-  sha256 "4c90282906ee5886b486815d4e9a33941fdd70e60569eb4fc59d074f7a568815"
+  url "https://ghfast.top/https://github.com/mikeyobrien/ralph-orchestrator/archive/refs/tags/v2.9.3.tar.gz"
+  sha256 "90112634553659c4e422906a526b1ca9e8e1bddbfb8dbddff799041f71aef6b3"
   license "MIT"
   head "https://github.com/mikeyobrien/ralph-orchestrator.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7285480ea891dd0bfa029c96d7021a86194ee52169f9221f6d7f6c9b229bb6b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e50fd7513d1a1483fee5ac6b0fe12110a23484b3f414ccc2207f011b63812fcb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "849e5bbfcb5e6352d09b915aef4de8653600001bb948109455952364f91b3034"
-    sha256 cellar: :any_skip_relocation, sonoma:        "270550e19deffe737a205debbc62f0a6f615021c01af3383a605aa95fc3e6e8b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "df9b2efbaaed173d1a96fc923b2f30f0b78ff61f076951924e12d58706e5efc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "971fe93c72f7c445b5c625b461ce5d4362910787f13674d814b138a614f8f00f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "760e10847d3a9726acb9ce04b2da4b69570dccd06c35f937fdd12686e91a9eab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d67befa844d0b899a9aba665aed16b88ce93c65fdfdc2e3d220f99cdfe3ad6d4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c8deed6525a644356724949c0bfd737d933d8d57b629d001971c782eef0857d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b0207930b555eb691017cda11cf0040f96588f5985ce2acea7c773cbb76525fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3055fc762448b49feb87d04fa53e39cd727f0caabba93b7da73a8784b2ac061a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e9bf3349abf6d209f7fc4944426c6b99e23bcd4bb482ce758a9084c2176fef7"
   end
 
   depends_on "rust" => :build

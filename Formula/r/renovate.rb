@@ -2,8 +2,8 @@ class Renovate < Formula
   desc "Automated dependency updates. Flexible so you don't need to be"
   homepage "https://github.com/renovatebot/renovate"
   # TODO: Switch to npm registry URL when https://github.com/renovatebot/renovate/discussions/42965 is fixed
-  url "https://ghfast.top/https://github.com/renovatebot/renovate/archive/refs/tags/43.165.0.tar.gz"
-  sha256 "b8a3731d14cd5c268b97ff0975c151f58de7f2a7035f7a5439163b43ff198afb"
+  url "https://ghfast.top/https://github.com/renovatebot/renovate/archive/refs/tags/43.170.0.tar.gz"
+  sha256 "1a2a8c1686251a8da1d781dce9c95051adc04c9d5dfd287dd0a24122d8804b2f"
   license "AGPL-3.0-only"
 
   # livecheck needs to surface multiple versions for version throttling but
@@ -19,7 +19,7 @@ class Renovate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "76405126de0af1de8f0a43e8a45a61a5155280511ee4e2c0cbbf4be3c9509e0d"
+    sha256 cellar: :any_skip_relocation, all: "3f18c9b899e30e8d315822b46c86e46da03d8f8916f7d464fe0843db425ec36a"
   end
 
   depends_on "node@24"
@@ -36,6 +36,8 @@ class Renovate < Formula
   end
 
   test do
+    # Renovate filters child env vars, so Homebrew's git shim cannot run.
+    ENV.remove "PATH", HOMEBREW_SHIMS_PATH/"shared"
     system bin/"renovate", "--platform=local", "--enabled=false"
   end
 end

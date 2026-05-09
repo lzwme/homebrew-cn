@@ -12,20 +12,20 @@ class VrcGet < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de850d693542af7f6e08660d844b13e76331feed2e0ac47367bebbf9816bc4b7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12597ac2dd9b97563c431a6c0220ad2daa8bd519d18467ebf0955d0ff0682670"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e96d29ec329670fd8fb921193e07ef71e5699358df6b60ee65a14fc068927526"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3660f27b64f9e969466fe49bfa55f631dd67ce978bccbac2f9826033637de250"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3c4202ebc728de42372a7db3a926572b7de9de197a1deeb35f207be9f5d131b7"
-    sha256 cellar: :any_skip_relocation, ventura:       "d108f92673c5e0502b59e7682ddaa208886bad7a8162fc2172315759ba20aae6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecec52be3888898c5755c085e97cdb6aab7c36ea33ccf5a8adf81735de95bc93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcf026916c83f75b0ede1071e1cd8c1eb87a74d131456a6bd417d8e31edc7580"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2bb9ca628607023ff346372dda18afa8edab223f5d136a477a0b99e143044f58"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66e14d015ebf6bbe795ffe04efefe6fd9de66c74bcd76232b8878d6ce49a4b59"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1c9b9380b0fa8f3be0f2bab8fb09567b1b55164199d528a3024de3eab62413a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6432ad3d92e067a2fc07e60d8e06b8f9be7be8162cf92f0a93d68aaeac9e2d54"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "17f67fd59ed2c881073a61792a947674c006d3baf16b26de12f35486a7cc49e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab15413c486191dcab9de4a69630c60dc5095b7550151012639debb2fb790dcc"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args(path: "vrc-get")
+    generate_completions_from_executable(bin/"vrc-get", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

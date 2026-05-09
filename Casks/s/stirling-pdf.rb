@@ -1,11 +1,8 @@
 cask "stirling-pdf" do
-  arch arm: "aarch64", intel: "x86_64"
+  version "2.10.1"
+  sha256 "f3d60a82b2ed4bfcf4c6b915135d84b1b0d538f38553f86382a126f915028d10"
 
-  version "2.10.0"
-  sha256 arm:   "2918ef73d55dc0e52c126806dc21f81be9503b8ea896968df59760cc5733d63a",
-         intel: "6ca4a900236e2ce6689260ccd4126542c17ea9fbb0a976e0fe1449d9431025b5"
-
-  url "https://ghfast.top/https://github.com/Stirling-Tools/Stirling-PDF/releases/download/v#{version}/Stirling-PDF-macos-#{arch}.dmg",
+  url "https://ghfast.top/https://github.com/Stirling-Tools/Stirling-PDF/releases/download/v#{version}/Stirling-PDF-macos-universal.dmg",
       verified: "github.com/Stirling-Tools/Stirling-PDF/"
   name "Stirling-PDF"
   desc "PDF utility"

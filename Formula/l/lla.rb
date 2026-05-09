@@ -1,17 +1,17 @@
 class Lla < Formula
   desc "High-performance, extensible alternative to ls"
   homepage "https://github.com/chaqchase/lla"
-  url "https://ghfast.top/https://github.com/chaqchase/lla/archive/refs/tags/v0.5.5.tar.gz"
-  sha256 "c8cafb2eb4145b9655335a6574f296a122b3410c1e36debc6450fee3f4ec0b63"
+  url "https://ghfast.top/https://github.com/chaqchase/lla/archive/refs/tags/v0.5.6.tar.gz"
+  sha256 "05a0d342f3cdc971eea3d0e495c64888bffc5aabda3e91bbc99efb23746c8bee"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3bc4465cdfb353ac1eee66c68a22668f131759f48918a61225049dd10239a60b"
-    sha256 cellar: :any,                 arm64_sequoia: "acbd90d2d8929474d6ca77f0f85fe756f799d79de22c9409d789513fbdeb2628"
-    sha256 cellar: :any,                 arm64_sonoma:  "c613efc2200979938e38c43bf4a7ac9794c37a3c18244707b34114fae099c09a"
-    sha256 cellar: :any,                 sonoma:        "0b2469d3837ca20414ff961cabcdee9bb49429c3eda498c0407b7446e7a1fa22"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "727f25a03314b01b28353625ed314ba0675cf0474e093dbdbaa597c1bfd3074f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4541fb6ddcc92a8c423e989405bf9c88bc99bafcfcc22881c60e35ecf5118c87"
+    sha256 cellar: :any,                 arm64_tahoe:   "3a9eed19cc56579e57d73a046badff2e19090eab93c4d938a3624c087e987814"
+    sha256 cellar: :any,                 arm64_sequoia: "80316b2ba8591a143cf2fd13feed1f685e45fd4d657d598a5f756f2743cc78fa"
+    sha256 cellar: :any,                 arm64_sonoma:  "3d58be4d4daac2f22ad85c74d8307ad5061da6da58bec6d0fe79bbab248c83ef"
+    sha256 cellar: :any,                 sonoma:        "67c6e6b63294d34df2a800d7b49a10dd3d3ff0f11486a49fca001a7e72b53132"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "757ae967c44f63b58ad5f53c354b8ae182e15852eb136d39a9c20c56a4c50d9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f7f96b4f5f8304e9be221108d7ec208a3bc39e12a7da03c070fba202ded8917"
   end
 
   depends_on "protobuf" => :build

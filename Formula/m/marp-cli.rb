@@ -6,15 +6,16 @@ class MarpCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "04b9f331aeecaeabf8f020c30f761b5590852079b55044432b783ac2568a2837"
-    sha256 cellar: :any,                 arm64_sequoia: "a858c7aef2d71a4db630f8cb491d20f70b23fb3c0012daf8bc93f6a6674da730"
-    sha256 cellar: :any,                 arm64_sonoma:  "a858c7aef2d71a4db630f8cb491d20f70b23fb3c0012daf8bc93f6a6674da730"
-    sha256 cellar: :any,                 sonoma:        "a4f4bf0d5fc9868d51e1e65ea6c9a10e78eafc35ab78bc770fde4613fb3a6c4f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f965d91918dd090e78cd9946784b7074bd9fd50341ff81eaec3bd31344194bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b04223816db0be200154326ab586378c9e4b24ac6c0a42ecb495631c694ec3c9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "b736b6057fbd2362e98098260ea5f7a4bc45083811f7a4416b64ef7ec2aae4e8"
+    sha256 cellar: :any,                 arm64_sequoia: "1022c802fe2927d93d68153550089cd61706c6694fa7c29f30f003d8d1b5e908"
+    sha256 cellar: :any,                 arm64_sonoma:  "1022c802fe2927d93d68153550089cd61706c6694fa7c29f30f003d8d1b5e908"
+    sha256 cellar: :any,                 sonoma:        "cbf7d9124137a38d4b9c67d7a752d3536b11fa0d2a8c72d83ebe8e4ac12e2344"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff3c7f6fdf1cc304498e76b34cfeb40b72d9f7d0be28f9814793607400f0031d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd0296008c2e6062bc4e1774188cbc676c67b4c7f79875b164ea943f8e665a31"
   end
 
-  depends_on "node"
+  depends_on "node@24"
 
   def install
     system "npm", "install", *std_npm_args

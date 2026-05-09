@@ -1,8 +1,8 @@
 class Zenith < Formula
   desc "In terminal graphical metrics for your *nix system"
   homepage "https://github.com/bvaisvil/zenith/"
-  url "https://ghfast.top/https://github.com/bvaisvil/zenith/archive/refs/tags/0.14.3.tar.gz"
-  sha256 "b092048d1a9ce7234584d928e4b103aaaa7e47589923cf4e48dfa8919b3f8d88"
+  url "https://ghfast.top/https://github.com/bvaisvil/zenith/archive/refs/tags/0.15.0.tar.gz"
+  sha256 "f92ed87b66f97b1f6c5863a62cc795ec877510dcd0284fba822ef5dc091b9355"
   license "MIT"
   version_scheme 1
   head "https://github.com/bvaisvil/zenith.git", branch: "master"
@@ -13,12 +13,12 @@ class Zenith < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c81ddc75796095724c82b528314108b9faef5bb5fc4b0f4957d6bce598a637f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7d440b1ca179d4cccdcea57576decde4aaeea001d6ccdaa8ec6b6190e74cfbc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "951081852c40e287d187388d69d6d59dcfc096b461c68dbb4255af5bbaeb29a7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "604878551ce967241a95e00fcd5a8c536143ac3885bda1c8e9ba709a10e3ac1d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "04e3f9eca98968d07a3695cf519ced235645d4123bd7cc1d10a569c6fd0fa55e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6f97827bc9854759a38f7e5cb6b86dc14a92152809e0d06d0815adec23af64f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7d5ef787ca0afe7d120eebf5ba5c694ec859968da494518ad999c2a28e1f5df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0c3ca47e1bb97224fb57defc71e9d08b6c5583fb9d44089b25e4848ac425af0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50dacb91e7dd564d48126fd0d2812f62763c65f6ecfaa50b457033571e4c1aa8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c4fffebc7dd48c5f91beb8654388e3a47fb4833d3e235940011d6a77bbcd6e87"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9752c5f88c7ca600c27476b08fcbfc7b4683c4331b3e7ebdc4c03c88c74d082"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a18a32e1d8f7c17b510fe207097779f64742597941b769daadd4404dd654e1d5"
   end
 
   depends_on "rust" => :build

@@ -1,8 +1,8 @@
 class OsrmBackend < Formula
   desc "High performance routing engine"
   homepage "https://project-osrm.org/"
-  url "https://ghfast.top/https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v26.4.1.tar.gz"
-  sha256 "1b836eefc0233a65fa04e66073eabb1674cc41988a8b8862856d967cdd0fe17b"
+  url "https://ghfast.top/https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v26.5.0.tar.gz"
+  sha256 "3e4f5ed09ac0c77158314ef99b5f8c9e336a80339b3f0e62da48abd06acafef9"
   license "BSD-2-Clause"
   head "https://github.com/Project-OSRM/osrm-backend.git", branch: "master"
 
@@ -12,29 +12,44 @@ class OsrmBackend < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1cf9312d36fe1fa8bb91c4cebf6c2726a799c7ccf4b1629ce6c9ac686e011e4b"
-    sha256 cellar: :any,                 arm64_sequoia: "64d0ad324ee2c5328f9dc99651238bc1d0df588a43a23731a4a9a44b0ebc1475"
-    sha256 cellar: :any,                 arm64_sonoma:  "9238479b4565e592005bc378de37b6275cf704a9eb475e252a142067ccd56557"
-    sha256 cellar: :any,                 sonoma:        "45ce2b8c0a5ce1c484706c84932284e463e22f3b77be48411ee339d9d472b359"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10914a289dfd69af2c77f2809ea7af19f800ae0df704c44be9c9fbc20a6d7f8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f47d7b79efa43199ea0210145f6939f4650370f93ac74578627d3bb3b89bce87"
+    sha256 cellar: :any,                 arm64_tahoe:   "84138f03e657f278268fec3452528a0a16ae00d2bf1a379c0a36b00d291e0336"
+    sha256 cellar: :any,                 arm64_sequoia: "f304c8b3b0cf01f32755c7f472cd928ccbf1a49a7e8c4b30fa98a4f1646b39d0"
+    sha256 cellar: :any,                 arm64_sonoma:  "eeb8842755930eacd3d118fc2c063ab681bc6b4e6aa46d59c5fa560dab7540b3"
+    sha256 cellar: :any,                 sonoma:        "b31a1876ed038d5c877406d3c97a9886889e0966b166809f4e09e9c01f314efb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d055964b2f1e882312880082a475cc8c25bdf8297605e2a828b6f721964d005e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bdece55d0dd9e5d1b482c0b309d9847f47dea5276320acd9649923541e22108"
   end
 
   depends_on "cmake" => :build
+  depends_on "flatbuffers" => :build
+  depends_on "fmt" => :build
+  depends_on "libosmium" => :build
   depends_on "pkgconf" => :build
+  depends_on "protozero" => :build
+  depends_on "rapidjson" => :build
+  depends_on "sol2" => :build
+  depends_on "vtzero" => :build
 
   depends_on "boost"
+  depends_on "libarchive"
   depends_on "lua"
   depends_on "tbb"
 
   uses_from_macos "bzip2"
   uses_from_macos "expat"
 
+  on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1600
+  end
+
   on_linux do
     depends_on "zlib-ng-compat"
   end
 
-  conflicts_with "flatbuffers", because: "both install flatbuffers headers"
+  fails_with :clang do
+    build 1600
+    cause "Requires C+++20 support for `std::atomic_ref`"
+  end
 
   fails_with :gcc do
     version "11"
