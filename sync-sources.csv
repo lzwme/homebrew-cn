@@ -4563,6 +4563,7 @@ Homebrew-homebrew-core/Formula/m/markdownlint-cli2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/marked.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/marksman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/marmite.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/marmot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/marp-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/martin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mas.rb, Homebrew/homebrew-core, 0
@@ -9011,6 +9012,7 @@ Homebrew-homebrew-cask/Casks/c/chiaki.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chime@alpha.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chipmunk.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/chiri.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chirp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chitubox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/choice-financial-terminal.rb, Homebrew/homebrew-cask, 0

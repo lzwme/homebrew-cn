@@ -7,11 +7,11 @@ class Tartufo < Formula
   url "https://ghfast.top/https://github.com/godaddy/tartufo/archive/refs/tags/v6.0.0.tar.gz"
   sha256 "ba84bb6192a3647a0dd2f8b4c08c7aff46e8d5bc742e13ee1714477ae8ad7787"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
   head "https://github.com/godaddy/tartufo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "462686f17a049f4906ef625b8d8f738f865c49e8412c664923fe41413dfedc80"
+    sha256 cellar: :any_skip_relocation, all: "3135dd3e81b173cece071490037581416f3d532be0ddfd62aac46d862673073d"
   end
 
   depends_on "pygit2" => :no_linkage
@@ -37,8 +37,8 @@ class Tartufo < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/e1/63/210aaa302d6a0a78daa67c5c15bbac2cad361722841278b0209b6da20855/gitpython-3.1.49.tar.gz"
-    sha256 "42f9399c9eb33fc581014bedd76049dfbaf6375aa2a5754575966387280315e1"
+    url "https://files.pythonhosted.org/packages/33/f6/354ae6491228b5eb40e10d89c4d13c651fe1cf7556e35ebdded50cff57ce/gitpython-3.1.50.tar.gz"
+    sha256 "80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc"
   end
 
   resource "smmap" do

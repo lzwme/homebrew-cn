@@ -6,15 +6,15 @@ class CondaLock < Formula
   url "https://files.pythonhosted.org/packages/96/5d/fed650427a858cacf41f2827d8c00e5fcc6619c05d17ce352f3960bcaea3/conda_lock-4.0.0.tar.gz"
   sha256 "050305a490861baa98d6c3876ed7b394707a67587d939548aac5e20b91b41d36"
   license "MIT"
-  revision 4
+  revision 5
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2b61d184f6eb3292ed63e8254a77a8759eee59d6c9326b29889cdd243b7e5d48"
-    sha256 cellar: :any,                 arm64_sequoia: "f0b0e04566d386f18e974e4e9415372d05d0fbe3608536ecc8c14460b9b54713"
-    sha256 cellar: :any,                 arm64_sonoma:  "0bc4396bdba44e0a08d19c715bcc5e1b6210a8e0f7ff09a85897949d3876e949"
-    sha256 cellar: :any,                 sonoma:        "11a7a61eea990635191cb495fc5e0d53ad2d588a2a67c8d0be762eb00f9355fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a1d7236b96ed15d204dadd4e0c71858894254869510f9ddaa3949b9ee684f82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d65368d1855a1c5d6efe684fbf4e7555dfef5d7cb3da6cd7c88e79375f5ab61"
+    sha256 cellar: :any,                 arm64_tahoe:   "43a72142e797a58a11c9dbeb987d153bf12701ec474b03c036e5aa2bbc31f4e7"
+    sha256 cellar: :any,                 arm64_sequoia: "95dfa38cdb09922aad98fa8ddccc665915dd83559956f8aed0b20606dc83766f"
+    sha256 cellar: :any,                 arm64_sonoma:  "c4e20ed9fbb71745a8083772de0d8f90488d320622d96a3f1a9ec16919842b4b"
+    sha256 cellar: :any,                 sonoma:        "b889344f36d0555bd860870f15d5fd2df0e9e19d837845bfd8a338b822674a2b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "738acf2c3877eaf1664905cbfbe8adef5494be62123fde04baa837f50e76f29d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe8d7de99e68ee9d2c71503e73a612fa0bf8832f1d0ff24124f6b3897820bc3f"
   end
 
   depends_on "rust" => :build # for cachecontrol, uv-backend
@@ -108,8 +108,8 @@ class CondaLock < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/e1/63/210aaa302d6a0a78daa67c5c15bbac2cad361722841278b0209b6da20855/gitpython-3.1.49.tar.gz"
-    sha256 "42f9399c9eb33fc581014bedd76049dfbaf6375aa2a5754575966387280315e1"
+    url "https://files.pythonhosted.org/packages/33/f6/354ae6491228b5eb40e10d89c4d13c651fe1cf7556e35ebdded50cff57ce/gitpython-3.1.50.tar.gz"
+    sha256 "80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc"
   end
 
   resource "idna" do
@@ -238,13 +238,13 @@ class CondaLock < Formula
   end
 
   resource "trove-classifiers" do
-    url "https://files.pythonhosted.org/packages/04/af/88fdebf242bc7bc4957c96c5358a2b2b0f07e5001401906783a521ea9f54/trove_classifiers-2026.4.28.13.tar.gz"
-    sha256 "c85bb8a53c3de7330d1699b844ed9fb809a602a09ac15dc79ad6d1a509be0676"
+    url "https://files.pythonhosted.org/packages/35/68/175e7c07c5be13200387d5c0995b0da1e198e360047c08eb17d1002fcd92/trove_classifiers-2026.5.7.17.tar.gz"
+    sha256 "a04a48f8f0a787cb996514d3969ac7608aa3c60cb15d073c1e02801e60533e80"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   resource "virtualenv" do

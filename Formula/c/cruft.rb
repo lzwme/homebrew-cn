@@ -6,16 +6,16 @@ class Cruft < Formula
   url "https://files.pythonhosted.org/packages/d1/7e/0e20012f2aa156e5d6a70483a8d90accb7ed4966dddb0c58987d9f6eba12/cruft-2.16.0.tar.gz"
   sha256 "184662853fbc1c16c0137fe0e9444e0cbe95e40362f5ebb2d9fae33d9223e73f"
   license "MIT"
-  revision 8
+  revision 9
   head "https://github.com/cruft/cruft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "782d92e64355a319d53588c910935d288e2fde0a1c44dae1a5c763b5b5709769"
-    sha256 cellar: :any,                 arm64_sequoia: "572a94d967d28ac4f535f68782a98e16d7b57b9ad8af59ff476233a3bde0661b"
-    sha256 cellar: :any,                 arm64_sonoma:  "c1786afa5ae5dc2a104431d3a8c36d423e35c7d830e774951c781499914556a2"
-    sha256 cellar: :any,                 sonoma:        "2cc7e79bc35f319f980ebf8255b77ed8084da4f03b67edf30500200b26fc57f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "100d8eb65e58c5d1a99d40f6266e62318b197e254013e3281885ee1d13d69c85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "224f3cb48cb2d8ca82bae8023b726e689e148b9d8ab7d010be43ddfa4c2160bc"
+    sha256 cellar: :any,                 arm64_tahoe:   "3f22c3b858f4dde0ceab2b934ddd33b3cf0094c5eda79140324a4e269d28aef2"
+    sha256 cellar: :any,                 arm64_sequoia: "fc9ec63cc82b9e34fec6f9688b5679b4e32ed4ab32a15862acdb52a7e20d48e7"
+    sha256 cellar: :any,                 arm64_sonoma:  "089154b9e674ebbef638fae6079071aba5413ee954dfba6ff8440222d146e8a3"
+    sha256 cellar: :any,                 sonoma:        "9012c69327918734c4e5a2264560f7e4f975719c8e8ac4424e50042b753be463"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44eea011b366de40b2e915051f46a8c1765b5bf9bc1a7b84b04c9412ce314822"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07eb24ee28a01d5f7ee2bb2ab22e05d59d9a48931c222aef29d464cadfa4eb99"
   end
 
   depends_on "certifi" => :no_linkage
@@ -60,8 +60,8 @@ class Cruft < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/e1/63/210aaa302d6a0a78daa67c5c15bbac2cad361722841278b0209b6da20855/gitpython-3.1.49.tar.gz"
-    sha256 "42f9399c9eb33fc581014bedd76049dfbaf6375aa2a5754575966387280315e1"
+    url "https://files.pythonhosted.org/packages/33/f6/354ae6491228b5eb40e10d89c4d13c651fe1cf7556e35ebdded50cff57ce/gitpython-3.1.50.tar.gz"
+    sha256 "80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc"
   end
 
   resource "idna" do
@@ -75,8 +75,8 @@ class Cruft < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
   resource "markupsafe" do
@@ -150,8 +150,8 @@ class Cruft < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   def install

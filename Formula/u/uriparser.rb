@@ -1,19 +1,19 @@
 class Uriparser < Formula
   desc "URI parsing library (strictly RFC 3986 compliant)"
   homepage "https://uriparser.github.io/"
-  url "https://ghfast.top/https://github.com/uriparser/uriparser/releases/download/uriparser-1.0.1/uriparser-1.0.1.tar.bz2"
-  sha256 "f6cff90438c6605131f36f703bd4c6bf638b7266a52cf9aaf46cf9e11e5f77f6"
+  url "https://ghfast.top/https://github.com/uriparser/uriparser/releases/download/uriparser-1.0.2/uriparser-1.0.2.tar.bz2"
+  sha256 "dd2e4843f43de6f5aedf430e530f1e2d159eba8ca4d64c2787af1c20f707a9e4"
   license "BSD-3-Clause"
   compatibility_version 1
   head "https://github.com/uriparser/uriparser.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "22302d9a7316f526ea2e885a079ca062abc55c2315b6870ca9c94d43979f2db4"
-    sha256 cellar: :any,                 arm64_sequoia: "bae6c2c33ec09e5eea5a94cf724fcc6da0e1d58c85e8eccb23ca3b88044f695b"
-    sha256 cellar: :any,                 arm64_sonoma:  "9afc9000e98490afb2b4215840b4f66af09429d68a045f7de1b4a3dcd9509d02"
-    sha256 cellar: :any,                 sonoma:        "85d419c11047d19e2369bb722e15466db15cf73800e30888fa65aef6342fc653"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a072c52e160da557777bd7e11284066b1fac5b9b8bbd9484535ddf336ff84da3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b2addcdc00d74e12958fbdbb64c2b1c77d7615405fc1bc2d0d88bff4690fa38"
+    sha256 cellar: :any,                 arm64_tahoe:   "d65dd8ec22ad8983a030d28f0860ed787540977f63f54991a0c34f3af59ff54d"
+    sha256 cellar: :any,                 arm64_sequoia: "c493b8bf01407748aee749e76282fd8d28b75609d0bc190d082de21c07195213"
+    sha256 cellar: :any,                 arm64_sonoma:  "f3bbbc62b739c550d0273b4a4f8cb6e0f613b812ee1be4268089963b59dd7ee3"
+    sha256 cellar: :any,                 sonoma:        "d88ca97e3db34d38a4ac3698da4fb1ce5de61cbb46b5c754407cbb5cc56332e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "814a3e8a6d0c3970c05b91c41776b5e6c88ce0c75ddaf97f842c14beb109c423"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92d362009241b6bb912579151fb98480863663a59f9bd586cee65485be998f0f"
   end
 
   depends_on "cmake" => :build

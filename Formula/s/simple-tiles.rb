@@ -4,16 +4,16 @@ class SimpleTiles < Formula
   url "https://ghfast.top/https://github.com/propublica/simple-tiles/archive/refs/tags/v0.6.2.tar.gz"
   sha256 "343ae52a0b20ee091b14bc145b7c78fed13b7272acd827626283b70f178dfa34"
   license "MIT"
-  revision 7
+  revision 8
   head "https://github.com/propublica/simple-tiles.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c6422d3ddffa35605443bdf18158914654450f0ad0362673c6b136e1a116af4d"
-    sha256 cellar: :any,                 arm64_sequoia: "7751a5ff3fe02cb473d4accf7cd2e4f31813b6a35521b9357b0502c202c6a820"
-    sha256 cellar: :any,                 arm64_sonoma:  "daa34638b944a33d7abefd9d2e12787baf1a055ef331b08d9d29db038e840574"
-    sha256 cellar: :any,                 sonoma:        "a43ad30dc8509a71c44e09a8ed58416cd5f1c6b1f29e661223187564438eccd2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1149b833c6586359e97f93673888bf3dbd68f070d74a819cd028c44ad054d1fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cac3424f59872d80f8dcaadc2ab0522f3cfafd7c12a6698c573d71767b66077"
+    sha256 cellar: :any,                 arm64_tahoe:   "edf9216d53cb586423cea902e868c01eed41bfc9af3950ca633d96b39bb080a1"
+    sha256 cellar: :any,                 arm64_sequoia: "9e7509c6008ad30c1ada39a3f2cae499811cb550812d139fce8e05113c694234"
+    sha256 cellar: :any,                 arm64_sonoma:  "9e671db842033323cdc4760112fb6a9f70d0aa7256087c1b6a2eb5489c43544b"
+    sha256 cellar: :any,                 sonoma:        "a348fe567a5c1f94f8f9558789c7b94e98f9df8af3d4e4614588ce502e2867c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d506fade6312fae86ee06ba9689f395cd7d0fd9b701e517b6a688eb2c5f41d32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d39541f12962113b3c9f93d8d3c652adf3aa2f68550a2f9e0a0a4645cd5b765c"
   end
 
   depends_on "pkgconf" => [:build, :test]

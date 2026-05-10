@@ -27,8 +27,6 @@ class KubernetesCliAT135 < Formula
 
   depends_on "go" => :build
 
-  uses_from_macos "rsync" => :build
-
   on_macos do
     depends_on "bash" => :build
     depends_on "coreutils" => :build

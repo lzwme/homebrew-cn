@@ -11,12 +11,13 @@ class Openapv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "933d57861d3f7340895b4d01b1b0d549db7dac5f5ec5b8593a5305b7777e6e88"
-    sha256 cellar: :any,                 arm64_sequoia: "d91aa9b30ecb443599c67842bea2978a877a7dcf300a3642bc8104eccf86b352"
-    sha256 cellar: :any,                 arm64_sonoma:  "f1b704f065e7cb2a8cd023c1591d43b5145e8d266ce39989efbad8387c21f7e6"
-    sha256 cellar: :any,                 sonoma:        "7680708f60dcd1f8e068d641b29ee86194be725038e830ddfdd91cf9750565e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb82504ec64e47445d784258a285d01225ab32092873d8af6a6cf7a34de2ac31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68a010d64a5d9a4af3950ee99548d61ba5d12703793729ef55fcebf625aaa763"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "6f538b5b011de386525413a09e82417537339c86df9e93de80f7027203ddab46"
+    sha256 cellar: :any,                 arm64_sequoia: "1835ea4b5a24613cf8e53f5c013ee4bbfa374f31150f3882a329c829d7dcd5f2"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd42e96892caac4a84f251ff2905954d7d487ef151c0414787b0c0eabfd80faf"
+    sha256 cellar: :any,                 sonoma:        "5244cdb3a5835f1d44976e822be1f9871fe94e4df36b4256383c5912a0d07abc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd9b38a99677d5a016cab74e6ec6bc1732710227f3dbd46aa64507e5020ac446"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e19b68fdb1252c5d5fd31d9f1c30d3b4dd705580d6b1b3796bf53a3d7e9af45"
   end
 
   depends_on "cmake" => :build

@@ -1,18 +1,18 @@
 class Difi < Formula
   desc "Pixel-perfect terminal diff viewer"
   homepage "https://github.com/oug-t/difi"
-  url "https://ghfast.top/https://github.com/oug-t/difi/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "01117155dc86aef6ece17d8e6df40cc7c2c9a93cf0b5c8347167e9159f7d086c"
+  url "https://ghfast.top/https://github.com/oug-t/difi/archive/refs/tags/v0.2.6.tar.gz"
+  sha256 "166ffd7e30d14eecdbbef99f9bada441b6d397af2abd78089cef125961517398"
   license "MIT"
   head "https://github.com/oug-t/difi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "526c76c2dd6d2cfff9b9486a0eaa30a8d23549dd6ad24de56869ce0c50f416ad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "526c76c2dd6d2cfff9b9486a0eaa30a8d23549dd6ad24de56869ce0c50f416ad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "526c76c2dd6d2cfff9b9486a0eaa30a8d23549dd6ad24de56869ce0c50f416ad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "45e470bbbd3fbcbac2a26ffe4b25cd10c7f732e89ec17e6a2bf2a569b596df33"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d7221fba5c001426c36db015ed615aa01612bd18be935c9717fd084f68c80e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9f52b83e77c046d18d700b8e531b34301bfd173c2ce3ef0d2b6ddc14dee3687"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca45e4d005e391867b7be44e328ec9d8cbafb77b6fe45a466cb0ad786f606b67"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca45e4d005e391867b7be44e328ec9d8cbafb77b6fe45a466cb0ad786f606b67"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca45e4d005e391867b7be44e328ec9d8cbafb77b6fe45a466cb0ad786f606b67"
+    sha256 cellar: :any_skip_relocation, sonoma:        "31bd90f2447d50b9fbe8fff32f5c70d2296f8a9e1b4e345e9cab0751ca200b63"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "17e4c0ce23a3abfd555f49c443d8edbea15d0f6e9ea517dc10e016ec0c1e5a37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2402bbe7c108fe5ef10242b71cbe18e9ad84425469df65db0260d9f9f1b4df5b"
   end
 
   depends_on "go" => :build

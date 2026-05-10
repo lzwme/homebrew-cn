@@ -1,18 +1,18 @@
 class Talm < Formula
   desc "Manage Talos Linux configurations the GitOps way"
   homepage "https://github.com/cozystack/talm"
-  url "https://ghfast.top/https://github.com/cozystack/talm/archive/refs/tags/v0.25.1.tar.gz"
-  sha256 "16cd8b56ba56c22af6cc4496cce2a864dcdc95fff3ab650a71b7d30759133ea4"
+  url "https://ghfast.top/https://github.com/cozystack/talm/archive/refs/tags/v0.27.0.tar.gz"
+  sha256 "7b517f1529ee4e4ebba1e8f202b7a4fad6a51043e98eca0f57f0c0f9265798b4"
   license "Apache-2.0"
   head "https://github.com/cozystack/talm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f86a6871f63eaf7b15908fb18c50c0ddc256ee8b3f1ced804d45c5ed254f4f89"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6615a8a7ff58cc1ef5023a7c9d3e6832514f5181ee9781f4bcb7259a0b16f729"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8359ca91ddd9fd2809e5a24e112ef82b9be664cd96d0e99f42e2aede966f24ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "855b42bf043d6f3940c4b19c502e8323c4a55c40b110741538f26f33a9cffaca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5f2072ca9487f99c5f9432aecd43a4c390e64adb7b831c089a9f77e9ff24be5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ce5425057c2066aa428ecfc54237daef05c91990c7b863f9ff1c14c5c97bfef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e91e25728a9ee1bb543f551afaeb7e4fe9122c4cd3db2b04aa033869124d5ec7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df53d0dd191987ef4678909f918f36a3351ed796adcf99ec3d46a97a891d4f7c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3879db04a5ba3a5dd90ecdb27177997e8b8e459740d0864b00ae94112d29bd96"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3a0bb7185a75862531bb00cb82718bf303c69772f47f632073dbb73e492a6016"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b94170451774b901ea664897cae3f16adc78c5e47648da855050012da78811b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d39c9e900708fb2edf76a22813f266f8da5594834a6cc595940fd4851c92f1f1"
   end
 
   depends_on "go" => :build

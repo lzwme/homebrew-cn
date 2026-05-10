@@ -6,16 +6,16 @@ class Cf2tf < Formula
   url "https://files.pythonhosted.org/packages/7f/c3/a6dfdc4848cfd4fb50e15e9449c439791a009638c2bd06b6fe6982d9afc1/cf2tf-0.9.2.tar.gz"
   sha256 "3fcae8f42f2d1aeb14deb7ef70215cc76c1f1f5cac9b465081e87729498e3ac9"
   license "GPL-3.0-only"
-  revision 2
+  revision 3
   head "https://github.com/DontShaveTheYak/cf2tf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bc62b20615b26943c10e1dc14adf82902e6c5a6a97bed21a1ea7b143864a5e9c"
-    sha256 cellar: :any,                 arm64_sequoia: "921f7b224a87234d01d9663bfcb89137796ec88a2d80567ad0665cdbd6866f83"
-    sha256 cellar: :any,                 arm64_sonoma:  "58ab9103d07ace054388ceaffc5effe4c468589852d2f266d5cdc8f847c46fad"
-    sha256 cellar: :any,                 sonoma:        "9532dcceac6031a840e8f3786b1ba62e1ab965790b43bee0a43e7c87ae77491f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "531972c958dbec6579ceafdf0c18e80d35040689a50996cf8a102ef758b7d48c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "790cb719839ef15e7dbdd4c194b81de4234db39e68747749ac9033ff7d03e5ee"
+    sha256 cellar: :any,                 arm64_tahoe:   "4c377a0a2577b3ff68f924dd28dbc80a04c06c70f003bec176bc255b22c416c0"
+    sha256 cellar: :any,                 arm64_sequoia: "22f926d6407faeae116d1f7a7d528b67e0bdd4cfa800ac8079718cf1be2dc038"
+    sha256 cellar: :any,                 arm64_sonoma:  "7c0248e0ef45b9d3ca5c2e36a4c23cca17e3eb314a07bce2dbda4a1b2d4b6719"
+    sha256 cellar: :any,                 sonoma:        "88d53dafdaa9f366a86f66e9f70b54f3e7136d8bdfc9278a2dcc00a8ea2e99d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b622563b29a9536d55e0dfff735b7d4a7ad54d38de38f0db711a150124094ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1509393a4dd19c1d2618a2765fe50e2b374420418c7b954b75cb930c8c930ed7"
   end
 
   depends_on "cmake" => :build
@@ -51,8 +51,8 @@ class Cf2tf < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/e1/63/210aaa302d6a0a78daa67c5c15bbac2cad361722841278b0209b6da20855/gitpython-3.1.49.tar.gz"
-    sha256 "42f9399c9eb33fc581014bedd76049dfbaf6375aa2a5754575966387280315e1"
+    url "https://files.pythonhosted.org/packages/33/f6/354ae6491228b5eb40e10d89c4d13c651fe1cf7556e35ebdded50cff57ce/gitpython-3.1.50.tar.gz"
+    sha256 "80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc"
   end
 
   resource "idna" do
@@ -91,8 +91,8 @@ class Cf2tf < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   def install

@@ -6,15 +6,16 @@ class Snakemake < Formula
   url "https://files.pythonhosted.org/packages/10/35/0b7a341e4d5e42e0470ebdea98a2a8e0c0a8bb4f376ce803c12ed4f206c4/snakemake-9.20.0.tar.gz"
   sha256 "66ff407f4d0a471588bc35778ae1b0d3bd91ec94024f4317bdc3a0af68b9407c"
   license "MIT"
+  revision 1
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "679388455dca0cbc908727e686d34c38d1ca5f6804bc41dce6c48ae44bbaaedd"
-    sha256 cellar: :any,                 arm64_sequoia: "f052a3a644163b4632b1b21103a1875819b1ab833204beb86fae99b7dbc95f46"
-    sha256 cellar: :any,                 arm64_sonoma:  "d2381d8ecfc184746f6acf2384b5552e26323b1a84c7ab1904db8c610ff96010"
-    sha256 cellar: :any,                 sonoma:        "9c62de80f7d8e67908d202f0f8870f7c5778f4e59676233c77dfda9f9d8ef409"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b596a2d4d91727fbe080bebff14337d51fc839ac860de02b5a5404cb9100ea7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f4bbe0c8189e9b23cbcc0dd58bd80cef3143b36d1c7d366fc9cdb40f3c3b837"
+    sha256 cellar: :any,                 arm64_tahoe:   "7b6ffce84d488a7986893dc9fea9ca1c8a2968134dd4690ae37b8b5849e9e51a"
+    sha256 cellar: :any,                 arm64_sequoia: "61ab399cc9c88a9e1424e770c27889c7611db778d8d513791e905b92473b953a"
+    sha256 cellar: :any,                 arm64_sonoma:  "71132a69fd788f933ef8931a3d975567f64a41507b257126fc1d7b0d152c5713"
+    sha256 cellar: :any,                 sonoma:        "c67bb7b09b481dffb32e62cf376aed11613ee60c6985253575b6210c2da0a579"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c58c05ab2f51773f299c36e76ce268f3b456d692393790a1605118f38e5df602"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2148241806f9361c5bc5efef9234ad0686ff00bc011a22137eab3f5d4a8b532"
   end
 
   depends_on "rust" => :build # for appdirs
@@ -78,13 +79,8 @@ class Snakemake < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/e1/63/210aaa302d6a0a78daa67c5c15bbac2cad361722841278b0209b6da20855/gitpython-3.1.49.tar.gz"
-    sha256 "42f9399c9eb33fc581014bedd76049dfbaf6375aa2a5754575966387280315e1"
-  end
-
-  resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/3c/3f/dbf99fb14bfeb88c28f16729215478c0e265cacd6dc22270c8f31bb6892f/greenlet-3.5.0.tar.gz"
-    sha256 "d419647372241bc68e957bf38d5c1f98852155e4146bd1e4121adea81f4f01e4"
+    url "https://files.pythonhosted.org/packages/33/f6/354ae6491228b5eb40e10d89c4d13c651fe1cf7556e35ebdded50cff57ce/gitpython-3.1.50.tar.gz"
+    sha256 "80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc"
   end
 
   resource "humanfriendly" do
@@ -148,8 +144,8 @@ class Snakemake < Formula
   end
 
   resource "pulp" do
-    url "https://files.pythonhosted.org/packages/16/1c/d880b739b841a8aa81143091c9bdda5e72e226a660aa13178cb312d4b27f/pulp-3.3.0.tar.gz"
-    sha256 "7eb99b9ce7beeb8bbb7ea9d1c919f02f003ab7867e0d1e322f2f2c26dd31c8ba"
+    url "https://files.pythonhosted.org/packages/58/a8/6e63330798761e0c903091786681651168fda7365f029b8b5d66160861f2/pulp-3.3.1.tar.gz"
+    sha256 "a9ec237a56981b11c2096e8ba6bb72006833410ba5b400aa257426f85df5e293"
   end
 
   resource "pyyaml" do
@@ -233,13 +229,13 @@ class Snakemake < Formula
   end
 
   resource "traitlets" do
-    url "https://files.pythonhosted.org/packages/eb/79/72064e6a701c2183016abbbfedaba506d81e30e232a68c9f0d6f6fcd1574/traitlets-5.14.3.tar.gz"
-    sha256 "9ed0579d3502c94b4b3732ac120375cda96f923114522847de4b3bb98b96b6b7"
+    url "https://files.pythonhosted.org/packages/1b/22/40f55b26baeab80c2d7b3f1db0682f8954e4617fee7d90ce634022ef05c6/traitlets-5.15.0.tar.gz"
+    sha256 "4fead733f81cf1c4c938e06f8ca4633896833c9d89eff878159457f4d4392971"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   resource "wrapt" do

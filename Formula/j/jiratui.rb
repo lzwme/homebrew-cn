@@ -6,16 +6,16 @@ class Jiratui < Formula
   url "https://files.pythonhosted.org/packages/02/ae/7d5057e29b7ff95e1db0874c259e9886a387b2e5771d742ff359273b603d/jiratui-1.7.0.tar.gz"
   sha256 "86acfb47b3c0c0e2796a7340e851097df88c07d56b5a2a795fc3f52271d99461"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/whyisdifficult/jiratui.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a53cb05530d31c440e09626fa5cb8689ec03361625b95ce000678d1ad63bc79a"
-    sha256 cellar: :any,                 arm64_sequoia: "00ac74322ec4f5da0712cad2f1e6403b308dd5fc2c59b34179b2decb5a6092c9"
-    sha256 cellar: :any,                 arm64_sonoma:  "eb934f742b54ccf2d235e21194b12c801c93b446bfec454230939592931460c7"
-    sha256 cellar: :any,                 sonoma:        "583a04327acd681f51f110b9bb035430080bb2da9c9d4501644236fb47258348"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ec783f7767557e720fe0ba89a02ad102f64c6032208ec3cd152da61cc18541d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0c4c7130ca4055a4e21abc608a5163d5d396f8fdc781bfc0fcf5b94af03dfae"
+    sha256 cellar: :any,                 arm64_tahoe:   "384fe5359406dcbfb8f0d0429992980cf88a420e18acfb62f73c1169e036dcfe"
+    sha256 cellar: :any,                 arm64_sequoia: "6bf759d8f3d1d7996dfda5b399f93c6665255ed8e0af4236196c201765cd1e58"
+    sha256 cellar: :any,                 arm64_sonoma:  "add2719f5d5b0ada26815c68770debbf62a2d880df7fd37e0e433d7f9e37bb01"
+    sha256 cellar: :any,                 sonoma:        "b9b2407125cbbc68768923bb9340fe91912b798a5de59f5346a0b4c4fdcad720"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f6a1fd918d83e95c8f575663f2587aeaee643c8cbcc6bb471de628142616833"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a64c9f6f7717b72495eac27db8718569bb8378d4241a428412a06c3321ee5329"
   end
 
   depends_on "rust" => :build
@@ -56,8 +56,8 @@ class Jiratui < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/e1/63/210aaa302d6a0a78daa67c5c15bbac2cad361722841278b0209b6da20855/gitpython-3.1.49.tar.gz"
-    sha256 "42f9399c9eb33fc581014bedd76049dfbaf6375aa2a5754575966387280315e1"
+    url "https://files.pythonhosted.org/packages/33/f6/354ae6491228b5eb40e10d89c4d13c651fe1cf7556e35ebdded50cff57ce/gitpython-3.1.50.tar.gz"
+    sha256 "80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc"
   end
 
   resource "h11" do
@@ -86,13 +86,13 @@ class Jiratui < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
   resource "mdit-py-plugins" do
-    url "https://files.pythonhosted.org/packages/b2/fd/a756d36c0bfba5f6e39a1cdbdbfdd448dc02692467d83816dff4592a1ebc/mdit_py_plugins-0.5.0.tar.gz"
-    sha256 "f4918cb50119f50446560513a8e311d574ff6aaed72606ddae6d35716fe809c6"
+    url "https://files.pythonhosted.org/packages/d8/3d/e0e8d9d1cee04f758120915e2b2a3a07eb41f8cf4654b4734788a522bcd1/mdit_py_plugins-0.6.0.tar.gz"
+    sha256 "2436f14a7295837ac9228a36feeabda867c4abc488c8d019ad5c0bda88eee040"
   end
 
   resource "mdurl" do

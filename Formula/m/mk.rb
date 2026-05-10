@@ -6,16 +6,16 @@ class Mk < Formula
   url "https://files.pythonhosted.org/packages/75/9e/dcc7813d9f7133f8d384eca24a4d4bb0cb056abcc53f1f170b8353084feb/mk-3.0.0.tar.gz"
   sha256 "0a041a3620057165f155b8372469d8ab55ae94dd91d6e27723ab9a7de1aa2086"
   license "MIT"
-  revision 6
+  revision 7
   head "https://github.com/pycontribs/mk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ed616c24da1aac65580c99658d98e4a2e821eaba288468892f501768eceb24de"
-    sha256 cellar: :any,                 arm64_sequoia: "5e105c5b25e64063fcdd73c4c1b66c114420fe719e594d5b867d368fb0a3242a"
-    sha256 cellar: :any,                 arm64_sonoma:  "7fe5e66368e6bfae96d501661ae4dc07db2fb9e75fd7bb06867593f2f4c79b89"
-    sha256 cellar: :any,                 sonoma:        "598ba5a19cfa63426ead64718da887221c1e287b735a8abea410a3d274a8991e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d499036c4a248a2a5724605e12a695f5988ac573754c2e97b5fdada32a305e95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50de5ac4635828a042c1baef8610505aeee1de7c17839fbe1e824172f6dc476b"
+    sha256 cellar: :any,                 arm64_tahoe:   "f95459e4c970b6e7f395a0539038aa49a0f0e44b178bcfa99eb1277b237ddbf7"
+    sha256 cellar: :any,                 arm64_sequoia: "16c8e51983d9a60118cde38cdc854c78d4bee7e370277c8f4da6c5ee147c4fbc"
+    sha256 cellar: :any,                 arm64_sonoma:  "febce0ea7da1998ce0b5574597ff37496674771fe47cf25daf6a813f32f1fb83"
+    sha256 cellar: :any,                 sonoma:        "a7971d8bb17cf82f0b1e0cabebfc8d034b8a454921c7f6fcbbb8bfbf51df07a5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29d524783493b169b99e9bdfe5f265a78cca866e094af21ed9f1ec522876af78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b9439d8644855f659d6ac20d75fed3b4beed676654220ed416e16382b560cee"
   end
 
   depends_on "rust" => :build
@@ -66,8 +66,8 @@ class Mk < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/e1/63/210aaa302d6a0a78daa67c5c15bbac2cad361722841278b0209b6da20855/gitpython-3.1.49.tar.gz"
-    sha256 "42f9399c9eb33fc581014bedd76049dfbaf6375aa2a5754575966387280315e1"
+    url "https://files.pythonhosted.org/packages/33/f6/354ae6491228b5eb40e10d89c4d13c651fe1cf7556e35ebdded50cff57ce/gitpython-3.1.50.tar.gz"
+    sha256 "80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc"
   end
 
   resource "id" do
@@ -106,8 +106,8 @@ class Mk < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
   resource "mdurl" do
@@ -216,8 +216,8 @@ class Mk < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   def install

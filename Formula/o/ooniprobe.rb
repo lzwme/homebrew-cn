@@ -1,8 +1,8 @@
 class Ooniprobe < Formula
   desc "Network interference detection tool"
   homepage "https://ooni.org/"
-  url "https://ghfast.top/https://github.com/ooni/probe-cli/archive/refs/tags/v3.29.0.tar.gz"
-  sha256 "5c5fd7aac8875f6e825b615d99b0890e6a9856b8647702318c32b1e43a6a1149"
+  url "https://ghfast.top/https://github.com/ooni/probe-cli/archive/refs/tags/v3.29.1.tar.gz"
+  sha256 "b32e40dc306b70e0c2d122a909df78ca0100f796229b7949003ee169e0bfe782"
   license "GPL-3.0-or-later"
   head "https://github.com/ooni/probe-cli.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Ooniprobe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "132117e055ba6054b4a0791a5c59ca80b094bc0e68910111aa753ca31a2b1d95"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d35b9e61dfc02ba4173b1303f673db3acc23fb7872af94253c15d76568f0461"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a93e0aa92e8bf9a26cfb80ac141087c824665a5770d67b063893f07d831a6c3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eb606d21d089fdda86cfc0e3eef4b5c671f1156a395b8c318c9998d1337585e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81ad7442bbc972fe3c8a5c4be4c891f226089f6518a09eb6209a14fb6f53a5da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "414a8e8fa70fb813587b2464c8c7b4fafab381fbdce587fa4068cc33095519f5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ab277c27cf293aa52073b1bb33dba292e8ccbb6ca0564cdab3871c53f922225e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae91031bc77ee4fd6144f1a1fcdba4bb63facefac5735aa58e33713745fcc807"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4f5a95779862d2af3c38f53cdc93cab25a921a3ba6049647a9c8877e4fc7ae6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5c51f566a7c6c9d85980c075c592d905d66e19ad4b88dac0fa148351fa0015c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c0e8a89156b74ff0e883f845f2fe7557b9ee42bfba41af6c8edd7d508cabeaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b975e91fe4c5b5b86816b6f6d0f79d570c2b0ab950a3d32b637d4dab84c50ef"
   end
 
   depends_on "go" => :build
@@ -25,6 +25,9 @@ class Ooniprobe < Formula
 
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
+    # TODO: remove when https://github.com/ooni/probe-cli/issues/1781 is fixed and a new release is made
+    inreplace "internal/version/version.go", "const Version = \"3.29.0\"", "const Version = \"#{version}\""
 
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/ooniprobe"
     (var/"ooniprobe").mkpath

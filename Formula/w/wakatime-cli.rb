@@ -8,12 +8,13 @@ class WakatimeCli < Formula
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb9efe754d700640ff1914bfde7ffc8f7dd15c30f0d2086154ff78cdc6960821"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb9efe754d700640ff1914bfde7ffc8f7dd15c30f0d2086154ff78cdc6960821"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb9efe754d700640ff1914bfde7ffc8f7dd15c30f0d2086154ff78cdc6960821"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bbfe97029203cd57e555018e5c428132377fae31c0ac5129a57b7101c81ef51e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "25a257654acf616c30b04a0d3841f6c2bb9e25a973635ebfac4d70f1c7c906f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4f1736e66b9159c75ee41dc9098dac8e92c07db99e65bf6f53011d6a081d0c2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff5495e503dc036e9236a8a7956cada074127ef1a084fcb3dddd0388494b0dc2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff5495e503dc036e9236a8a7956cada074127ef1a084fcb3dddd0388494b0dc2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff5495e503dc036e9236a8a7956cada074127ef1a084fcb3dddd0388494b0dc2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3659e12ee6b68265ba248ab7bbf75ee9c54565c78cdec4c147320765bfe435e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0570fea21e11bd213b1e488ca0a592ef0320b447e89894a2ad97e89c25b2f872"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61af3dff7b5608996e20d22f6a7c1d65e5aff55bd9e67a61944b754f2acb72b6"
   end
 
   depends_on "go" => :build
@@ -29,6 +30,7 @@ class WakatimeCli < Formula
       -X github.com/wakatime/wakatime-cli/pkg/version.Version=v#{version}
     ].join(" ")
     system "go", "build", *std_go_args(ldflags:)
+    generate_completions_from_executable(bin/"wakatime-cli", shell_parameter_format: :cobra)
   end
 
   test do

@@ -12,12 +12,13 @@ class Bitrise < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c3b5a5ebc867939d310cea77e7dad92c3e8b34499e2e4b99739d90c843b52f4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c3b5a5ebc867939d310cea77e7dad92c3e8b34499e2e4b99739d90c843b52f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c3b5a5ebc867939d310cea77e7dad92c3e8b34499e2e4b99739d90c843b52f4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "61c142077fec04d2cdc75ec31ad89a6695eab5b06c549fdb60e0af1cb2e2dd80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b76bc062e8e90ebaf4794196b218df0e45cbfacd952b588a73640b918328035"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d843adb9d719715e952ed391855d13b149ba7d65aa252721e99b77aaaba0e908"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3fbaaa3d5d9b952cf52739ca6157e43d8af7f95cdf498ade7e36cdb9bd02399d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fbaaa3d5d9b952cf52739ca6157e43d8af7f95cdf498ade7e36cdb9bd02399d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3fbaaa3d5d9b952cf52739ca6157e43d8af7f95cdf498ade7e36cdb9bd02399d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0dbb138edbc707d202daa25c41181f1b33d45dfb6c8ac87fdf84ba316677f58a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0523c8f8958fdd231931a6dd816ed45a3c9f102ece89bcbd5f3edac0dadc9b52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d2f2af595cfb048fcd463d9752779e3fe1ade748a51ecfea86b20e7189261d8"
   end
 
   depends_on "go" => [:build, :test]
@@ -27,14 +28,16 @@ class Bitrise < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/bitrise-io/bitrise/version.VERSION=#{version}
-      -X github.com/bitrise-io/bitrise/version.Commit=#{tap.user}
+      -X github.com/bitrise-io/bitrise/v#{version.major}/version.VERSION=#{version}
+      -X github.com/bitrise-io/bitrise/v#{version.major}/version.Commit=#{tap.user}
     ]
 
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/bitrise --version")
+
     (testpath/"bitrise.yml").write <<~YAML
       format_version: 1.3.1
       default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git

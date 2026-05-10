@@ -3,17 +3,17 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https://tmt.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/e9/e8/24ef461321e9d77e30d87bb9abac92deca20a91395eeb54f1f28a1634b8b/tmt-1.72.0.tar.gz"
-  sha256 "df9b33cc10aae202b679b44933661dd34447ba248df8f02b5b6579334134958a"
+  url "https://files.pythonhosted.org/packages/c6/b1/0984a82cdf3a270052402e0afcca90bbcb022a76857e79384aae5613cc44/tmt-1.73.0.tar.gz"
+  sha256 "000f620ea2b5b6692049b7bac3b3936aad33195440c624b18c653b04893eb3fb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93a63703ed0a9deb13a257d0f322fa491f85652f656684c08f3ddd01d0f6a7b9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e537762777b23c5f3c211ac9bf7c81df3a50ceeb928681668b45fb160fa84b96"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81b716b9c3ef8a033b5492992ff134c7cd0b0a3bbf4152e41e896c569e14b8dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b204c7f90b2f395aa280a76cba31480b4d9f8c01c22d10a443f3e06b356b3790"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "beab7dfa73064f9fd2aaf6a696df2553a9af7404d132b2b578d17f2e273d1c62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d832c7474ea9fda6afd1390d6940aa77840ef517331ce3f878fa0af34c21155"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78974180ef094b473c41fb976e6c2d665dab171b9d5ada07ed1971814cef99fc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10cb50b578f2b67df44f60bc5b3affae3b27e800861240eaa19561328de3cb29"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08e0ad48e663f17b428dd12b1348964dc9bc444836e70ff82fc7142df29fd2c0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cc2862416090a41949457701c52767838271f0ecdfcdccd990877e8a3bf4dc16"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dcbd37a383c696af6183cc3e4aabee5b9d321f73781337d6b3fe8f7a901e0adc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c21540f58d1efefa09ee57c7b1475ceba999fc887a3a739bcf813343ec678cfe"
   end
 
   depends_on "beakerlib"
@@ -90,8 +90,8 @@ class Tmt < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/df/de/0d2b39fb4af88a0258f3bac87dfcbb48e73fbdea4a2ed0e2213f9a4c2f9a/packaging-26.1.tar.gz"
-    sha256 "f042152b681c4bfac5cae2742a55e103d27ab2ec0f3d88037136b6bfe7c9c5de"
+    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
+    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
   end
 
   resource "pint" do
@@ -130,8 +130,8 @@ class Tmt < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   def install

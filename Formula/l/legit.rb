@@ -6,11 +6,11 @@ class Legit < Formula
   url "https://files.pythonhosted.org/packages/cb/e4/8cc5904c486241bf2edc4dd84f357fa96686dc85f48eedb835af65f821bf/legit-1.2.0.post0.tar.gz"
   sha256 "949396b68029a8af405ab20c901902341ef6bd55c7fec6dab71141d63d406b11"
   license "BSD-3-Clause"
-  revision 9
+  revision 10
   head "https://github.com/frostming/legit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6f434dfaecf2aafc03861a83142d4753d89d6cb54a063e160e50950b063f63a8"
+    sha256 cellar: :any_skip_relocation, all: "3a3559539d4f50c27a74e5c19afc32871f3771b79d8f2a87e35c8898fe13e4a0"
   end
 
   depends_on "python@3.14"
@@ -46,8 +46,8 @@ class Legit < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/e1/63/210aaa302d6a0a78daa67c5c15bbac2cad361722841278b0209b6da20855/gitpython-3.1.49.tar.gz"
-    sha256 "42f9399c9eb33fc581014bedd76049dfbaf6375aa2a5754575966387280315e1"
+    url "https://files.pythonhosted.org/packages/33/f6/354ae6491228b5eb40e10d89c4d13c651fe1cf7556e35ebdded50cff57ce/gitpython-3.1.50.tar.gz"
+    sha256 "80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc"
   end
 
   resource "six" do

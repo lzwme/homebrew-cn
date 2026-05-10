@@ -1,9 +1,9 @@
 class Druid < Formula
   desc "High-performance, column-oriented, distributed data store"
   homepage "https://druid.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=druid/36.0.0/apache-druid-36.0.0-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/druid/36.0.0/apache-druid-36.0.0-bin.tar.gz"
-  sha256 "e4a61b1ada6aedba77b12a9819a03e452e167d9605fd71c12af8a59074b9b490"
+  url "https://www.apache.org/dyn/closer.lua?path=druid/37.0.0/apache-druid-37.0.0-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/druid/37.0.0/apache-druid-37.0.0-bin.tar.gz"
+  sha256 "c5e602be6ef435643bf5f58271353925798c818c23d79aac07766338c9ca0dd0"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Druid < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "09c60d994d8322faf5943d8d0c748909a2ed92b4868e48b54061f1c47a0c85b1"
+    sha256 cellar: :any_skip_relocation, all: "4c597447e8db134b506a8757ac1e6bc141f32aa6c860f1f75a28d12faa7e97a1"
   end
 
   depends_on "zookeeper" => :test

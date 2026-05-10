@@ -15,11 +15,7 @@ class Gbox < Formula
   end
 
   depends_on "go" => :build
-  depends_on "rsync" => :build
   depends_on "frpc"
-  depends_on "yq"
-
-  uses_from_macos "jq", since: :sequoia
 
   def install
     system "make", "install", "prefix=#{prefix}", "VERSION=#{version}", "COMMIT_ID=#{File.read("COMMIT")}", "BUILD_TIME=#{time.iso8601}"

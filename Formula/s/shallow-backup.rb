@@ -6,11 +6,11 @@ class ShallowBackup < Formula
   url "https://files.pythonhosted.org/packages/16/25/621fbd73cadb2e18f56ea89ae602b2c93d88c77d9858ae16f541c523e9b3/shallow_backup-6.6.tar.gz"
   sha256 "016e85303accffc24b72a64cf589ff48d962298d60a37759d2302b81f7fbb8b3"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/alichtman/shallow-backup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d9795bea491a131da025bbbc2e08a39204503a94df3d85f5ed1247977ea0be37"
+    sha256 cellar: :any_skip_relocation, all: "2dde7e4b810415b9d6150564c8540a856f76c6c9d2786f56fac3bea6182e60bf"
   end
 
   depends_on "maturin" => :build # for `editor`
@@ -43,8 +43,8 @@ class ShallowBackup < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/e1/63/210aaa302d6a0a78daa67c5c15bbac2cad361722841278b0209b6da20855/gitpython-3.1.49.tar.gz"
-    sha256 "42f9399c9eb33fc581014bedd76049dfbaf6375aa2a5754575966387280315e1"
+    url "https://files.pythonhosted.org/packages/33/f6/354ae6491228b5eb40e10d89c4d13c651fe1cf7556e35ebdded50cff57ce/gitpython-3.1.50.tar.gz"
+    sha256 "80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc"
   end
 
   resource "inquirer" do

@@ -4,6 +4,7 @@ class Mapserver < Formula
   url "https://download.osgeo.org/mapserver/mapserver-8.6.2.tar.gz"
   sha256 "e10d71c3ced22b8b0858a98434d55a532f4359d193a32e4b353411814976ca22"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://mapserver.org/download.html"
@@ -11,12 +12,12 @@ class Mapserver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "57609eb8b307df21d469defb19f1875114d93cbd2598e127778dfb10d7eb4322"
-    sha256 cellar: :any,                 arm64_sequoia: "14427144a4baded019b2a0c8862f7a3fe0d9e9d373248fdd5c4e575be89c1c6b"
-    sha256 cellar: :any,                 arm64_sonoma:  "068c1482518b63285bee38a734e8ee9aa48c34156d2e61b1e3faac113f37c68e"
-    sha256 cellar: :any,                 sonoma:        "fd3a52912e087911b42972ab3385f425d61e6d4817a35aedbb37dce0255b5717"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "71d54007ed6f478309e98b3370fdccf87b485296a9cbb50ecd8beb8a98a9051e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5451c4504808371eedf23061a4cf549c12a0e9b4fece32001a09364ca36ff5b"
+    sha256 cellar: :any,                 arm64_tahoe:   "47271761c91be89673f8aa280edc8bca18feee166d637d0b11943ec432f85fba"
+    sha256 cellar: :any,                 arm64_sequoia: "4450d025940859a501f6eae8bde57d9e4cf29ee104020529298b203ea20e5b2c"
+    sha256 cellar: :any,                 arm64_sonoma:  "ba893b80535ea5d1fe146786610ab95cc1ec9c531c1882cfd67c5b95818e9b05"
+    sha256 cellar: :any,                 sonoma:        "989eb06424e04c3ff0cfb76e1db029c8b548ddd229adf0548bff724a0a242678"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "03454e598571e847a51622bb0cff2aff1422b073036ddf5232715133a44b3ef4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4410c2ef44460499e2b9de899eb19ffad7576a81ee484a906aa838ce55d50b97"
   end
 
   depends_on "cmake" => :build

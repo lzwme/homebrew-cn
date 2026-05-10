@@ -16,6 +16,14 @@ class Openslp < Formula
     sha256 x86_64_linux:  "aa1988503f1e9688dfd80e0331392ab29a053e62197b60653e933ee1bc681efb"
   end
 
+  # Last release on 2013-06-08 which has CVEs:
+  # * CVE-2016-4912
+  # * CVE-2016-7567
+  # * CVE-2017-17833
+  # * CVE-2019-5544
+  deprecate! date: "2026-05-09", because: :unmaintained
+  disable! date: "2027-05-09", because: :unmaintained
+
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
     url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-pre-0.4.2.418-big_sur.diff"

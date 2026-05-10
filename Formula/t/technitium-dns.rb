@@ -1,17 +1,17 @@
 class TechnitiumDns < Formula
   desc "Self host a DNS server for privacy & security"
   homepage "https://technitium.com/dns/"
-  url "https://ghfast.top/https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v15.1.0.tar.gz"
-  sha256 "1d1f2d01519da0fed3b2b28ca982b22f3978d035ce2edeb1a2d8c197d656b78c"
+  url "https://ghfast.top/https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v15.2.0.tar.gz"
+  sha256 "9247b3c70a8f58d336741819b4550b29937815dc535d1cc0f36ffd7cedb8860c"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ae75108693e7085bb0a62f55ce698eccc17829d8a0df6161b4bf85a97081748"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9915234ee77cab8f76c48719de06b5e9209157a5ad3e18eb0e3007e7db56d25"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84925f247b9fcdf8672b2e1f337e29380ce34a044f14494b7babdf6c7b648a7d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7fc41d8f1b82d38a872ee526b02e59942efb9a7112f95fdc421097e62aef763e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67042a13d5f7dec17aa6b325bd78be01d65d78fc9c8134c8fd901b875605a68a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d796ad29117a50b58408f8920a3a596f4161e2c56e0ea48d61a4507e99d62aaf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cfd22e86094c1f55fa0edbd719bae8cefb7faa29e447ff1f1e5836af4a6dabb6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c3178955056ccf75f745a9b66c3f4a9ef9f42dad613d6abbcd29a1407b35017"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "64f8d5ede9fa6cd5cfd6a049ffa02f96bb5e508b365fe2ba7f7227eb9e68ff0c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "703600b68f7becd81a473f9f5a076ba109ac2011c13d2a5ab62b9907adec1689"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "40c15ba74c3a852d580e233d67c741b93fba5fc704ece85d64022e95dbf4b9e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a6ba13b569ff7e40f3c0b59281b4ce69178a2b1b2c27da4f4b83f433181e732"
   end
 
   depends_on "dotnet"

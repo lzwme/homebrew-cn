@@ -28,12 +28,13 @@ class Rpm < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9c214ce074bddb955970b60106ebc155f0783a04e2af65080268ccecf7bd499b"
-    sha256 arm64_sequoia: "ec075b7ef916195ac245a831715ca4305641d607f5c82e9f81b437aa20d5ab8e"
-    sha256 arm64_sonoma:  "cc9845e73233b057da077d3504d8f5a19fcedffdac8a38965246b6c162030b49"
-    sha256 sonoma:        "862e0efee8b4876888c728c3921168cc1cb8ae74d4a787ef81278cd96d873e71"
-    sha256 arm64_linux:   "c8a0598905a3f1eb1c6ca3ea74e9e1313434a6055b9a45ff7c2500facfed373b"
-    sha256 x86_64_linux:  "936bb8258a1b95397a71270123f6298891fab5b9829c80447721693aa7e45a56"
+    rebuild 1
+    sha256 arm64_tahoe:   "9087d4878f018d3aeb607bbf2bb49474dd97b36e50b69999d500c20d65014cef"
+    sha256 arm64_sequoia: "085c2528a2d4c501b39463b82c5acbda955a1a5760b2cf2435a184e0b836c24b"
+    sha256 arm64_sonoma:  "56fa1e0d70bcb91ad28d2ed91f0d2305c9c061932de5c818a6db975b73847d03"
+    sha256 sonoma:        "fcea7ef3f55733159c7a91ee2ad14298d1f1b30fcd85e349aca07dc94444f64b"
+    sha256 arm64_linux:   "5b58e66942f6dbbff725a3edf89f584dc0db610124c343a30583141d85cdf75e"
+    sha256 x86_64_linux:  "cb5f9c076d23495cd071dd0a86233cd2f6ac0a81e8c4de89099416be0387234c"
   end
 
   depends_on "cmake" => :build
@@ -55,6 +56,7 @@ class Rpm < Formula
   depends_on "xz"
   depends_on "zstd"
 
+  uses_from_macos "llvm" => :build
   uses_from_macos "bzip2"
 
   on_macos do
@@ -63,7 +65,6 @@ class Rpm < Formula
   end
 
   on_linux do
-    depends_on "llvm@21" => :build # LLVM 22 fails for nettle-sys
     depends_on "elfutils"
     depends_on "zlib-ng-compat"
   end
@@ -71,8 +72,8 @@ class Rpm < Formula
   conflicts_with "rpm2cpio", because: "both install `rpm2cpio` binaries"
 
   resource "rpm-sequoia" do
-    url "https://ghfast.top/https://github.com/rpm-software-management/rpm-sequoia/archive/refs/tags/v1.8.0.tar.gz"
-    sha256 "a34de2923f07b2610de82baa42f664850a4caedc23c35b39df315d94cb5dc751"
+    url "https://ghfast.top/https://github.com/rpm-software-management/rpm-sequoia/archive/refs/tags/v1.10.2.tar.gz"
+    sha256 "ba740c16657498bb1a5a2b04472728089992e93a83d3584f00854b112dfd45df"
 
     livecheck do
       url :url

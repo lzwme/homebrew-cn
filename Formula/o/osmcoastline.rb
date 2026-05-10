@@ -4,15 +4,15 @@ class Osmcoastline < Formula
   url "https://ghfast.top/https://github.com/osmcode/osmcoastline/archive/refs/tags/v2.5.0.tar.gz"
   sha256 "7980c77acbbf460d6de7df1d30b2f2d9da550db1512d0e828623851c687b238a"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "c594f9f9ef9f7dd27e3decdc3e17f52b040836ba8574901414134d1c94666ac0"
-    sha256 cellar: :any,                 arm64_sequoia: "be34804e33a4dc5106e58b9e97eecefb2cd162842c8106bf19d51b36976fceb1"
-    sha256 cellar: :any,                 arm64_sonoma:  "711e33588946976ca7e2e68e9f1f42f6ac5975e9c814f62ab126a224610776da"
-    sha256 cellar: :any,                 sonoma:        "d3d8c1f5652b522195c764a951abf041b962308757953c45caac2ec79195f15f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c251ca8a96cb5020fa83e406ed3aaccf1ff5c93d43284a86876ef62475cfc1af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc4f8e794f3b8619d5dd0c24c61b75077cb775849cbc1442b9bd9fb07d36f744"
+    sha256 cellar: :any,                 arm64_tahoe:   "d340c3d7d69f63ca3a62acdf15507e826ec2d5e0575473b2505f5a02bc9a7a8b"
+    sha256 cellar: :any,                 arm64_sequoia: "ad49f39875cf7a1a8e3b348132d85a33ad8fa2ed0be26c5272ec733b9e4c4a24"
+    sha256 cellar: :any,                 arm64_sonoma:  "95d502541be4c3defc9508992892d8ed2a58d517e16aae6483214656b51cb568"
+    sha256 cellar: :any,                 sonoma:        "2647a585db77101a817f85a97f2b3db2afc975542738948ca6de71e4339df634"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c252b87ec062aff319915620efcb25b2eac7d0b10c5bb979502c4d112b289d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3698d14dc6187358d69fb7f636fe5d2b48a75afd9a2fb49129faf0ec4f5b1df0"
   end
 
   depends_on "cmake" => :build

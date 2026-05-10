@@ -3,18 +3,18 @@ class Otterdog < Formula
 
   desc "Manage GitHub organizations at scale using an infrastructure as code approach"
   homepage "https://otterdog.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/5e/2c/1267ec048a9d45ce1c831b71ebbc6b6f1917d6ca3e80b52246eadc6525db/otterdog-1.3.2.tar.gz"
-  sha256 "9eb078fde59e05717604df0ac8d45db6f7dcd3f9ced053f07c6f5c1cc46f4e6d"
+  url "https://files.pythonhosted.org/packages/2f/b7/719e98d5c7df7e260fa0914eda32c0f7b824a64b9e4a9f963844b02ddeb4/otterdog-1.3.3.tar.gz"
+  sha256 "23c76f484d12279ab824faa0bd6abd0ee53baeb6f64995a4697223e3efa5df8f"
   license "EPL-2.0"
   head "https://github.com/eclipse-csi/otterdog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "06e491be83e11a7d4fbfb4ad97f258e90bbbb926cc78d932b4536ea09e56ead9"
-    sha256 cellar: :any,                 arm64_sequoia: "e69e5b835f6591899d9b142c6ec32bdcca3f8da2867e485798055507f908754b"
-    sha256 cellar: :any,                 arm64_sonoma:  "ccd10daa5b2572f9a05355b0fc124ba48357a88fe23194b0cdf8c28d0c203716"
-    sha256 cellar: :any,                 sonoma:        "e907ccf849c2c7b54ba9f1630890efe664b39e5202015ce5a0963abb908d22c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3519fd3ee38b533795af3c52849ed75834b825d8e9174178c75a3eeac8bf5d7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96a1c4c09e55d67a90aca7ea448bfac3fc9f8678c1514f2fcbb0e9f6b689be08"
+    sha256 cellar: :any,                 arm64_tahoe:   "0d49063b0eedc9154b594bffea6f2ed2b3ac8ff12f77ee6633eab32d344d7ed6"
+    sha256 cellar: :any,                 arm64_sequoia: "46b796357d047fc1947e49dba454c2047568447694e9564347615071b2a47ab0"
+    sha256 cellar: :any,                 arm64_sonoma:  "a7ff6b84b66cdc838f003da13265a62401ab31a68e6b14fe9ba0313da74f39b5"
+    sha256 cellar: :any,                 sonoma:        "d2b8d1c08967332ed73165c3fdec7e555da2a6c1681ed868fcd20a27744fd2cf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "baa1dfd9e911ba5e239c9a2c3aed567783b04bdab9f4f56bb9d7e156542cb1d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42fd53591109660c2b211a5e5426f979cfddf68f2858d3906937df093cfefb07"
   end
 
   depends_on "rust" => :build # for rjsonnet

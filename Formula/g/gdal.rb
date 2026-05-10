@@ -1,10 +1,10 @@
 class Gdal < Formula
   desc "Geospatial Data Abstraction Library"
   homepage "https://gdal.org/en/stable/"
-  url "https://ghfast.top/https://github.com/OSGeo/gdal/releases/download/v3.12.4/gdal-3.12.4.tar.gz"
-  sha256 "68844ae29557b7efae4292c3b4cb3a3b8a79d14b765b89c5a7b17cbae7fa715a"
+  url "https://ghfast.top/https://github.com/OSGeo/gdal/releases/download/v3.13.0/gdal-3.13.0.tar.gz"
+  sha256 "1eb8c56a8cea4d3c733d90a719540c1aab981e4eb15e03057092e69b2935ae73"
   license "MIT"
-  compatibility_version 1
+  compatibility_version 2
 
   livecheck do
     url "https://download.osgeo.org/gdal/CURRENT/"
@@ -12,12 +12,12 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "91273e792e74c26f6b8a2ab3c822ca418134f08ea714199615d3609b567528be"
-    sha256 arm64_sequoia: "4a3edb147ab9445652263a9bbb52ce6e6b116e2beb34589a37a3ea521310d5e4"
-    sha256 arm64_sonoma:  "6338f71a3a38435ac0e355d270c30022818447a66fc65722ca5765bc59a92848"
-    sha256 sonoma:        "0509d532143eb9be5560f54bf128ed31d74cb72e61347d9056e16bb4eb561e25"
-    sha256 arm64_linux:   "b356d3bd918934b15e5112041e479f9feb13a9158374e92c95a4724082a53312"
-    sha256 x86_64_linux:  "682543e331b12cbe21c932012c4636aaf74cd7d11c2b4f64f519c6fe20e65913"
+    sha256 arm64_tahoe:   "9b2812b4332e7e4f5ab05252e1114166cc6c0e20fce69fda6945b9ca9ee0b997"
+    sha256 arm64_sequoia: "a042fe8d2a96779eae669fd992179a7c06ed2a26d1f5c5a2532f6f7a3c783148"
+    sha256 arm64_sonoma:  "188f10bdd733e768ff91a1af6ac03cabae303d56512185ecfd17ee76253246ee"
+    sha256 sonoma:        "40c26598383f99d1844c99590a45907ab001f1a59a9862ff573f05c2556bdc63"
+    sha256 arm64_linux:   "41343ebf7d274d94be8204494fde301b628b1a1bbad283cd4e2e509d407209f4"
+    sha256 x86_64_linux:  "f7a45e0322e1f00b78efeac74757bb2b8491b8a3d11c41f2a751a46c556652b8"
   end
 
   head do
@@ -123,6 +123,7 @@ class Gdal < Formula
       -DPython_EXECUTABLE=#{which(python3)}
       -DGDAL_PYTHON_INSTALL_LIB=#{site_packages}
       -DCMAKE_CXX_STANDARD=17
+      -DGDAL_USE_OPENMP=OFF
     ]
 
     # JavaVM.framework in SDK causing Java bindings to be built

@@ -7,20 +7,20 @@ class Wishlist < Formula
   head "https://github.com/charmbracelet/wishlist.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d701b7e532275ccddcde513950176e79743e50a2e4c602b24848d573418308d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e77986d045c2b98710bb331b52d217aa06b058d71a6708ebdda71032633beff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e77986d045c2b98710bb331b52d217aa06b058d71a6708ebdda71032633beff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3e77986d045c2b98710bb331b52d217aa06b058d71a6708ebdda71032633beff"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6ac28340cfa526431d73fa37c72eeef3c8da7847ae85034edfbd9f6686728ff9"
-    sha256 cellar: :any_skip_relocation, ventura:       "6ac28340cfa526431d73fa37c72eeef3c8da7847ae85034edfbd9f6686728ff9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a07f7dc954c52c5eb7728c4e32e223cc23bb6756ad7b60fe9ec314e105830037"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb48dabd9a636100ec378e63bbda9ad471a14b742f323556143db04942fe2f04"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd6459f6fa4774495cadc75ab3fb08547c72126193931309609eb2e9eb872061"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd6459f6fa4774495cadc75ab3fb08547c72126193931309609eb2e9eb872061"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd6459f6fa4774495cadc75ab3fb08547c72126193931309609eb2e9eb872061"
+    sha256 cellar: :any_skip_relocation, sonoma:        "730832deb846f179d320f14d2e1c52c19103d4c8a3cd3285b914a87036bcd021"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "190c7e8db9f1d08cf2440ceab664fbcaeec77bba32e425ca8fdcadb1f17c67e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "273cf16e89e4b739b246f4c949c4ee4c626256900cfb3ea83ecb68af13dec649"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), "./cmd/wishlist"
+    generate_completions_from_executable(bin/"wishlist", shell_parameter_format: :cobra)
   end
 
   test do
