@@ -34,13 +34,12 @@ class Qtmultimedia < Formula
   depends_on "qtshadertools" => :build
   depends_on "vulkan-headers" => :build
   depends_on "pkgconf" => :test
-
-  depends_on macos: :ventura
   depends_on "qtbase"
   depends_on "qtdeclarative"
   depends_on "qtquick3d"
 
   on_macos do
+    depends_on macos: :ventura
     depends_on "qtshadertools"
   end
 

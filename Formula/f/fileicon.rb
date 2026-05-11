@@ -1,13 +1,12 @@
 class Fileicon < Formula
   desc "macOS CLI for managing custom icons for files and folders"
   homepage "https://github.com/mklement0/fileicon"
-  url "https://ghfast.top/https://github.com/mklement0/fileicon/archive/refs/tags/v0.3.4.tar.gz"
-  sha256 "c5673cafa9479eb1c3ec312e6673b912bc1630b361732da137428859e037dd91"
+  url "https://ghfast.top/https://github.com/mklement0/fileicon/archive/refs/tags/v0.3.5.tar.gz"
+  sha256 "e0b64fb5ead02dc74fb097948aaca2931e61064e8177801b08a6b57d263cda7e"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "aa252af1391dd8a1b287c031744dbf034fa98dd1f1961c4200e38813b1fee9dd"
+    sha256 cellar: :any_skip_relocation, all: "f949b99b0a677468c315be200854ef1480a72e225a3f3cef028504030389a62e"
   end
 
   depends_on :macos

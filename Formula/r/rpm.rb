@@ -2,10 +2,10 @@ class Rpm < Formula
   desc "Standard unix software packaging tool"
   homepage "https://rpm.org/"
   license all_of: [
-    "GPL-2.0-only",
+    "GPL-2.0-or-later",
     "LGPL-2.0-or-later", # rpm-sequoia
   ]
-  revision 1
+  revision 2
   version_scheme 1
   compatibility_version 1
   head "https://github.com/rpm-software-management/rpm.git", branch: "master"
@@ -28,13 +28,12 @@ class Rpm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "9087d4878f018d3aeb607bbf2bb49474dd97b36e50b69999d500c20d65014cef"
-    sha256 arm64_sequoia: "085c2528a2d4c501b39463b82c5acbda955a1a5760b2cf2435a184e0b836c24b"
-    sha256 arm64_sonoma:  "56fa1e0d70bcb91ad28d2ed91f0d2305c9c061932de5c818a6db975b73847d03"
-    sha256 sonoma:        "fcea7ef3f55733159c7a91ee2ad14298d1f1b30fcd85e349aca07dc94444f64b"
-    sha256 arm64_linux:   "5b58e66942f6dbbff725a3edf89f584dc0db610124c343a30583141d85cdf75e"
-    sha256 x86_64_linux:  "cb5f9c076d23495cd071dd0a86233cd2f6ac0a81e8c4de89099416be0387234c"
+    sha256 arm64_tahoe:   "c1462be8d84ff5e2619abf1ddf519aaf51117600fa0b34915160b8a5aa926dfb"
+    sha256 arm64_sequoia: "e4bf476b54a1224dc7c4b91901f395a8fc51e4c3b0f6c7b386138e1bc1ea455e"
+    sha256 arm64_sonoma:  "41375be050820e0d9b26786600bd888d8ad6e434e834787afa1cc182e6896736"
+    sha256 sonoma:        "a8d1495a1eaef556377e085bca4d6e27dac67bbaf618f34e5eefb16e13103fa1"
+    sha256 arm64_linux:   "9873698fe99788028cc539fc66818b1c5dade0780e2f02032a6a5ac95506975c"
+    sha256 x86_64_linux:  "7815f575b463b87f6eca89a4f0f5c4192d4fd2206ce00b91c998c916787916ee"
   end
 
   depends_on "cmake" => :build
@@ -42,13 +41,10 @@ class Rpm < Formula
   depends_on "python@3.14" => [:build, :test]
   depends_on "rust" => :build # for rpm-sequoia
 
-  depends_on "gmp"
   depends_on "libarchive"
   depends_on "libmagic"
   depends_on "lua"
-  # See https://github.com/rpm-software-management/rpm/issues/2222 for details.
-  depends_on macos: :ventura
-  depends_on "nettle" # for rpm-sequoia
+  depends_on "openssl@3" # for rpm-sequoia
   depends_on "pkgconf"
   depends_on "popt"
   depends_on "readline"
@@ -56,12 +52,13 @@ class Rpm < Formula
   depends_on "xz"
   depends_on "zstd"
 
-  uses_from_macos "llvm" => :build
   uses_from_macos "bzip2"
 
   on_macos do
     depends_on "gettext"
     depends_on "libomp"
+    # See https://github.com/rpm-software-management/rpm/issues/2222 for details.
+    depends_on macos: :ventura
   end
 
   on_linux do
@@ -94,14 +91,18 @@ class Rpm < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+
     resource("rpm-sequoia").stage do |r|
       with_env(PREFIX: prefix) do
-        build_args = ["build", "--release"] # there is no `cargo install`-able components
-        system "cargo", *build_args, *std_cargo_args.reject { |arg| arg["--root"] || arg["--path"] }
+        cargo_args = std_cargo_args(features: "crypto-openssl").reject { |arg| arg["--root"] || arg["--path"] }
+        system "cargo", "build", "--lib", "--no-default-features", "--release", *cargo_args
       end
       # Rename the library to match versioned soname
-      versioned_lib = shared_library("librpm_sequoia", OS.mac? ? r.version.to_s : r.version.major.to_s)
+      versioned_lib = shared_library("librpm_sequoia", r.version.to_s)
       lib.install "target/release/#{shared_library("librpm_sequoia")}" => versioned_lib
+      lib.install_symlink versioned_lib => shared_library("librpm_sequoia", r.version.major.to_s)
       lib.install_symlink versioned_lib => shared_library("librpm_sequoia")
       (lib/"pkgconfig").install "target/release/rpm-sequoia.pc"
       ENV.append_path "PKG_CONFIG_PATH", lib/"pkgconfig"

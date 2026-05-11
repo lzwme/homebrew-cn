@@ -1,9 +1,9 @@
 class Libmd < Formula
   desc "Message Digest functions from BSD systems"
   homepage "https://www.hadrons.org/software/libmd/"
-  url "https://archive.hadrons.org/software/libmd/libmd-1.1.0.tar.xz"
-  mirror "https://libbsd.freedesktop.org/releases/libmd-1.1.0.tar.xz"
-  sha256 "1bd6aa42275313af3141c7cf2e5b964e8b1fd488025caf2f971f43b00776b332"
+  url "https://archive.hadrons.org/software/libmd/libmd-1.2.0.tar.xz"
+  mirror "https://libbsd.freedesktop.org/releases/libmd-1.2.0.tar.xz"
+  sha256 "ac15ffb8430502fbaccdec66c5a82ee0eab0b0f36220df56710feadfeb13d0a0"
   license all_of: ["BSD-3-Clause", "BSD-2-Clause", "ISC", "Beerware", :public_domain]
 
   livecheck do
@@ -12,18 +12,12 @@ class Libmd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "dd432cf5a6edaf4bf4c5fe5ffbf129122c5691ee3c98b13b7b6c512b95e917d2"
-    sha256 cellar: :any,                 arm64_sequoia:  "bbca49fa49f17de525e710aa6e8ae6cca1da2253e6b9eab21dc655389a5a81db"
-    sha256 cellar: :any,                 arm64_sonoma:   "98337df7be937bfe745b53b62522cf81160032f945d744d879713a729acc8ab6"
-    sha256 cellar: :any,                 arm64_ventura:  "02f452242f49ca67f98dff20e769e290db1d99c6d5874c067dafd8be7bfa0a92"
-    sha256 cellar: :any,                 arm64_monterey: "fc0d8c70408cacab6b3b1f2567582ab2281fd308d7e2ce704042705dabe40241"
-    sha256 cellar: :any,                 arm64_big_sur:  "bfd3a5595f509f3ebb3970c0c2a0e3b08569573ca1f406a8047565d26fb652dd"
-    sha256 cellar: :any,                 sonoma:         "92750c60e0d59b9f5e9fd48f80031c957ae8d2f833dca196f1dfa9a36504cf05"
-    sha256 cellar: :any,                 ventura:        "e81790c66cb480c6b411fca1e2adfded0e5c20ab12ec02e57e450bdb589539c3"
-    sha256 cellar: :any,                 monterey:       "36a5e1ef679b99d090814f2fde15e9fb45d73afa26fc5ef75618c4ff85bf48dd"
-    sha256 cellar: :any,                 big_sur:        "603212a43a289d57d2b541a3775d9a2c036b3813f2ca68640651b659f8dda490"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "fcba0ca8cba980bd479183e6bb65765ea70990f7dc8c4258b0e1256de1070731"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c07679b6d5141498eaaab977d8501cf12219feb13a7ae040044561d5abece9af"
+    sha256 cellar: :any,                 arm64_tahoe:   "724fae7568e4d980d58d5e4dd8b16df1bba6867b1b86b19b051506a5f3c2686f"
+    sha256 cellar: :any,                 arm64_sequoia: "c31c4006f3500e54a24928f78209be6ceeb7cdeb2bce2e09e0c012e2f75e671e"
+    sha256 cellar: :any,                 arm64_sonoma:  "9dff072fc11c4cceba0618e321315414aac84c3079da934e29cd75d4debcc0f2"
+    sha256 cellar: :any,                 sonoma:        "6197fba0dd8a2a9b32bb252e0fefcc2f5d1a981d17ba0e404075c3549d18e8d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1df107088db7b9b9c7e8107005899123c9d530605e2de894742094771f850506"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d1a0983574b60ff431bd4c9e903440ce6e5336ad24e18cbaccb6852b07f332b"
   end
 
   head do

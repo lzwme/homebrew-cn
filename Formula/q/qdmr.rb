@@ -1,23 +1,24 @@
 class Qdmr < Formula
   desc "Codeplug programming tool for DMR radios"
   homepage "https://dm3mat.darc.de/qdmr/"
-  url "https://ghfast.top/https://github.com/hmatuschek/qdmr/archive/refs/tags/v0.14.1.tar.gz"
-  sha256 "cb584c500f98897a959d7242292261ae7d8deafc7d0f709fc53d811e40d27f11"
+  url "https://ghfast.top/https://github.com/hmatuschek/qdmr/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "63fd6b2061ebcfee54fc1c6df77e21484a544e694723725b70b49ca4990138d3"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2b503002f09b4cfa8641ab1216d64442f89ea122fddd22763c66a64ec4302003"
-    sha256 cellar: :any,                 arm64_sequoia: "d8955c28830bcc49c18f908658e27ca77c148edc73e57d0b70ac08fb7ac78cb8"
-    sha256 cellar: :any,                 arm64_sonoma:  "428503859864e597728d26431a6e0e44209dfd679dd779be8b829c632d6b06e8"
-    sha256 cellar: :any,                 sonoma:        "5d09662a536662b434ac7aadefae20e2760056b088a44fd4003ef2c059b132f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0caee5a51c5a3f0b686f2aaa901096540bea72a9bed40b4bea970ce2bf44b839"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd115844dda55a26b9078c1f07732e2ab6592afeaca4fe4cf80fdd75c0e2f19c"
+    sha256 cellar: :any,                 arm64_tahoe:   "c547aa11b729f98207cd3ca10da2684f113299c61096d876370cebef4d122871"
+    sha256 cellar: :any,                 arm64_sequoia: "1808f9a6971ecac365fb1d9f6a4ff3c739c7a19ef6865d27d6ca38c8f031f46f"
+    sha256 cellar: :any,                 arm64_sonoma:  "17c82b226c07ad4f51aeefd564319c874f4024839dafa83cf5c3266ad42ac5ab"
+    sha256 cellar: :any,                 sonoma:        "c25f5ae2f77ba6a208a2924d14e406f54af3f9adbcf579544a99cc615a386c75"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f816ff55ab36371cd96c0b2a4846ceb6e88388952e06589b9e3c6b93594f933e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57a70dfa8b56f6653f105784cee83c46cbf73d8c7fbb29f30d11338463a3986e"
   end
 
   depends_on "cmake" => :build
   depends_on "librsvg"
   depends_on "libusb"
   depends_on "qtbase"
+  depends_on "qtmultimedia"
   depends_on "qtpositioning"
   depends_on "qtserialport"
   depends_on "qttools"

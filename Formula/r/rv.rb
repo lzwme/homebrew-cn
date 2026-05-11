@@ -21,7 +21,10 @@ class Rv < Formula
   end
 
   depends_on "rust" => :build
-  depends_on macos: :sonoma
+
+  on_macos do
+    depends_on macos: :sonoma
+  end
 
   conflicts_with "rv-r", because: "both install `rv` binary"
 

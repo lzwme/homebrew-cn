@@ -20,9 +20,12 @@ class Screenpipe < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "ffmpeg"
-  depends_on macos: :sonoma
 
   uses_from_macos "llvm" # for libclang
+
+  on_macos do
+    depends_on macos: :sonoma
+  end
 
   on_linux do
     depends_on "alsa-lib"

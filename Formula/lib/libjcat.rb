@@ -27,7 +27,6 @@ class Libjcat < Formula
   depends_on "glib"
   depends_on "gnutls"
   depends_on "json-glib"
-  depends_on "nettle"
 
   uses_from_macos "python" => :build
 

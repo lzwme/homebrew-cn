@@ -1,17 +1,17 @@
 class Tsshd < Formula
   desc "UDP-based SSH server with roaming support"
   homepage "https://trzsz.github.io/tsshd"
-  url "https://ghfast.top/https://github.com/trzsz/tsshd/archive/refs/tags/v0.1.7.tar.gz"
-  sha256 "84041afef83b2bc63f288bb744f3d8473c7e257ab316b75a148767acd5e5f611"
+  url "https://ghfast.top/https://github.com/trzsz/tsshd/archive/refs/tags/v0.1.8.tar.gz"
+  sha256 "1d19f99a95f19933d8058df1209b421400eaca8c2bf2e045747c8f6c68887d56"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "568d44032b2314a6b447cdcebd76d8f92a8270743a4118c6d4464a71b696255c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "568d44032b2314a6b447cdcebd76d8f92a8270743a4118c6d4464a71b696255c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "568d44032b2314a6b447cdcebd76d8f92a8270743a4118c6d4464a71b696255c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "464d9d5b9a40faf40b0c5879da28d1658ce8dd2188d1642dc678720a85990d40"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "99a25d5799bc465f174dbd0438e505648401815f82ff39e9a7c801e57d2f0a1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9279a9cf9a691a674048ccf57233ebbdca019d1a39c26fd0e3c2fe70faf25b57"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f5be597f86f01b03876a95c9a3fb96225bfff5d3bee624b4e0d2ecda4df79a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f5be597f86f01b03876a95c9a3fb96225bfff5d3bee624b4e0d2ecda4df79a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f5be597f86f01b03876a95c9a3fb96225bfff5d3bee624b4e0d2ecda4df79a9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ca646b2423f59e9288f9218286c941f14462f2af80a11a8a25d7572a398040c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a5ebc66805178c28e62c2dd2fcf45c6b8c13d55d7cb09052d92d18b0b3e1964"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0b89897053dac6610ad70656272742242c88d1851db6e5a69310ddba404f316"
   end
 
   depends_on "go" => :build

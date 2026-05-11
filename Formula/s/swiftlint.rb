@@ -18,12 +18,15 @@ class Swiftlint < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8408453159a1aae0ea8abfc5bf3c8c3b3275891099130e13f96bfbd53a0bedb"
   end
 
-  depends_on macos: :ventura
   depends_on xcode: "8.0"
 
   uses_from_macos "swift" => :build, since: :sonoma # swift 5.10+
   uses_from_macos "curl"
   uses_from_macos "libxml2"
+
+  on_macos do
+    depends_on macos: :ventura
+  end
 
   def install
     if OS.mac?

@@ -17,7 +17,10 @@ class GopassJsonapi < Formula
 
   depends_on "go" => :build
   depends_on "gopass"
-  depends_on macos: :sonoma # for SCScreenshotManager
+
+  on_macos do
+    depends_on macos: :sonoma # for SCScreenshotManager
+  end
 
   def install
     ldflags = "-s -w -X main.version=#{version}"

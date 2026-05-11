@@ -21,10 +21,13 @@ class Groestlcoin < Formula
   depends_on "pkgconf" => :build
   depends_on "capnp"
   depends_on "libevent"
-  depends_on macos: :big_sur
   depends_on "zeromq"
 
   uses_from_macos "sqlite"
+
+  on_macos do
+    depends_on macos: :big_sur
+  end
 
   on_linux do
     depends_on "util-linux" => :build # for `hexdump`

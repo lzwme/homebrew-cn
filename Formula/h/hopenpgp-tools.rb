@@ -5,16 +5,16 @@ class HopenpgpTools < Formula
   url "https://hackage.haskell.org/package/hopenpgp-tools-0.23.11/hopenpgp-tools-0.23.11.tar.gz"
   sha256 "2a056bd320caafe0f7ac3c95d56819f9fef02ddafe11b59802ea5a678d88a54f"
   license "AGPL-3.0-or-later"
+  revision 1
   head "https://salsa.debian.org/clint/hOpenPGP.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "6e1b1eccc7a834a587e44a3d72443034942527f06b6b871a9c44698c1cb21e58"
-    sha256 cellar: :any,                 arm64_sequoia: "1cd126b1a338333e61bc6d5ff086511af4470c9a05764d5250417469a15669d4"
-    sha256 cellar: :any,                 arm64_sonoma:  "089e8a318331d55e8dae0760ae8df764ca9e252c59dd1640f6f9b10ba56ce219"
-    sha256 cellar: :any,                 sonoma:        "4556fef4e991d2e8dd07835f16b92f18d8c8151c1fb9043fa903a7ce0acc90c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10da1dd06cad90211489d231be6b4ddec80304bea1e57aa342c9c4cd2258fc91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a783536238023b381f195e111f0430f9d7931bea24fd9d31849675e00c29f639"
+    sha256 cellar: :any,                 arm64_tahoe:   "9ed34e785a3cbeff6ea95e7b39aeda7f414e0da121428eb90dd8642c4ec28226"
+    sha256 cellar: :any,                 arm64_sequoia: "91215b8ed2b56500b6827ddb3a0ffe02c97f11312a1bd23d2dee8e0c9597b243"
+    sha256 cellar: :any,                 arm64_sonoma:  "2892ccd7b57f203042e950e4806a1b1cfe970374a6d88a9a45de3ddba22cd050"
+    sha256 cellar: :any,                 sonoma:        "a483c64b027cd0275d5ff317052e708c706f79054f1b3b130e1fbf4ffc657e6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "804a0866e6ee6e795186d87f5c963de1e33589899650792f925dfce6735fa569"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "caf063335e13be6ddb1511d2b586659bf80e345b0e53008283a12421ba548a68"
   end
 
   depends_on "cabal-install" => :build
@@ -22,7 +22,7 @@ class HopenpgpTools < Formula
   depends_on "pkgconf" => :build
   depends_on "gnupg" => :test
   depends_on "gmp"
-  depends_on "nettle"
+  depends_on "nettle@3" # https://github.com/stbuehler/haskell-nettle/issues/12
 
   uses_from_macos "libffi"
 

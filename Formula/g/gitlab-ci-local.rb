@@ -1,12 +1,12 @@
 class GitlabCiLocal < Formula
   desc "Run gitlab pipelines locally as shell executor or docker executor"
   homepage "https://github.com/firecow/gitlab-ci-local"
-  url "https://registry.npmjs.org/gitlab-ci-local/-/gitlab-ci-local-4.71.0.tgz"
-  sha256 "76d8fbd8579e56a10441c9f90f6136e048bb08b2f94610070e1cdfb0145575c2"
+  url "https://registry.npmjs.org/gitlab-ci-local/-/gitlab-ci-local-4.72.0.tgz"
+  sha256 "0a555ffd10ee07436194d0a74ccd430b964d9243c74b75d2699bc5f71bfe1573"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8fef7ddf14f9e01f70591c3735ef48d501961e81da438a99a61b1ff8b6035396"
+    sha256 cellar: :any_skip_relocation, all: "84a23183c3dbc87a8b51e5bbe44186c37820ee86794b57b70731be181153cbc6"
   end
 
   depends_on "node"
@@ -63,7 +63,7 @@ class GitlabCiLocal < Formula
         merge = refs/heads/master
     EOS
 
-    assert_match(/name\s*?description\s*?stage\s*?when\s*?allow_failure\s*?needs\n/,
+    assert_match(/name\s*?description\s*?stage\s*?when\s*?allow_failure\s*?environment\s*?needs\n/,
         shell_output("#{bin}/gitlab-ci-local --list"))
   end
 end

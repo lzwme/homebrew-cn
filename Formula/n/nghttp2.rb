@@ -28,13 +28,13 @@ class Nghttp2 < Formula
   depends_on "jemalloc"
   depends_on "libev"
   depends_on "libnghttp2"
-  depends_on macos: :sonoma # Needs C++20 features not available on Ventura
   depends_on "openssl@3"
 
   uses_from_macos "libxml2"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
+    depends_on macos: :sonoma # Needs C++20 features not available on Ventura
   end
 
   on_linux do

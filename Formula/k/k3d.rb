@@ -29,6 +29,7 @@ class K3d < Formula
     resp = Net::HTTP.get(uri)
     resp_json = JSON.parse(resp)
     k3s_version = resp_json["data"].find { |channel| channel["id"]=="stable" }["latest"].sub("+", "-")
+    raise "Invalid k3s version" unless k3s_version.match?(/\Av\d+\.\d+\.\d+-k3s\d+\z/)
 
     ldflags = %W[
       -s -w

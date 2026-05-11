@@ -26,13 +26,9 @@ class CiliumCli < Formula
   depends_on "go" => :build
 
   def install
-    cilium_version_url = "https://ghfast.top/https://raw.githubusercontent.com/cilium/cilium/main/stable.txt"
-    cilium_version = Utils.safe_popen_read("curl", cilium_version_url).strip
-
     ldflags = %W[
       -s -w
       -X github.com/cilium/cilium/cilium-cli/defaults.CLIVersion=v#{version}
-      -X github.com/cilium/cilium/cilium-cli/defaults.Version=#{cilium_version}
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"cilium"), "./cmd/cilium"
 

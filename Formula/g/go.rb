@@ -30,7 +30,9 @@ class Go < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "56903f4984295f41158e23dfa81889f939ff2e4bd03c9abb12326789db3983ad"
   end
 
-  depends_on macos: :monterey
+  on_macos do
+    depends_on macos: :monterey
+  end
 
   # Don't update this unless this version cannot bootstrap the new version.
   resource "gobootstrap" do

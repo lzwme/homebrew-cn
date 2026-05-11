@@ -23,12 +23,15 @@ class Recc < Formula
   depends_on "abseil"
   depends_on "c-ares"
   depends_on "grpc"
-  depends_on macos: :sonoma # Needs C++20 features not in Ventura
   depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "re2"
 
   uses_from_macos "curl"
+
+  on_macos do
+    depends_on macos: :sonoma # Needs C++20 features not in Ventura
+  end
 
   on_linux do
     depends_on "pkgconf" => :build

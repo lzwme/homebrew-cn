@@ -1,10 +1,9 @@
 class Bozohttpd < Formula
   desc "Small and secure http version 1.1 server"
   homepage "https://pkgsrc.se/www/bozohttpd"
-  url "https://cdn.netbsd.org/pub/pkgsrc/distfiles/LOCAL_PORTS/bozohttpd-20240126.tar.bz2"
-  sha256 "576267bc5681c52b650294c3f2a85b8c8d8c239e75e71aaba7973771f852b56d"
+  url "https://cdn.netbsd.org/pub/pkgsrc/distfiles/LOCAL_PORTS/bozohttpd-20260503.tar.bz2"
+  sha256 "2a2e6d62b68d219434973937a8febd17741f22e98c741f6c922b22f13f7523cd"
   license "BSD-2-Clause"
-  revision 1
 
   livecheck do
     url "https://cdn.netbsd.org/pub/pkgsrc/distfiles/"
@@ -12,12 +11,12 @@ class Bozohttpd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "08add554b4f9e6039d3ff57f273abb1ed60e8d691c5029eb4d24a693b28f1182"
-    sha256 cellar: :any,                 arm64_sequoia: "647389ce4b7541386a18139d7aaf53836a970a740cbe975a559448d9d016ad3d"
-    sha256 cellar: :any,                 arm64_sonoma:  "6644d9378c0d0f1b8ae2c895c211dfb4424d35a67fb0f413c1f1ac1c34615d36"
-    sha256 cellar: :any,                 sonoma:        "18b2b7b64fc29b2dfb7bf187e3548b49aa4600379f3e2d3e3391955978b85bc9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e4732ae790f55b727b93df73c83712490db2eed6cdd7c2f6c17c69544538409"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8b06ea44de6ededf75e8233f192670cfc33163d80487719b505cd185ceb228a"
+    sha256 cellar: :any,                 arm64_tahoe:   "a4226ca0417b3a42426e8b9c66e35c27e5b33cde093b72b6367bd4e9af8bf3f5"
+    sha256 cellar: :any,                 arm64_sequoia: "a8bbb72a39b43114431d8fe63bb84828f3c07d1f3874642bde1d7e60ae84777d"
+    sha256 cellar: :any,                 arm64_sonoma:  "867d0c4eac9ad4783a5c137d51dbeaa069c632cf0103e6e16a108dcff3fff849"
+    sha256 cellar: :any,                 sonoma:        "798fb50a66dfd8336989103f0dfd6b238421a71d3b8741252c0c247c90d5d8e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "89de2d92f7e7e9b270ec5df6c83802901c70ddf5db3153f653cc2a10e70a02ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c755a16e29068de4b39e08aece48a14ac58d95252e205d428b794ae26fad71a"
   end
 
   depends_on "openssl@4"

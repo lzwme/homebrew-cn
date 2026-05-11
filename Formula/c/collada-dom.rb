@@ -8,13 +8,17 @@ class ColladaDom < Formula
   head "https://github.com/rdiankov/collada-dom.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "571dd57bc1c55e2136dcca7348eb4ff31aee95a3d20178ea87a36061fe655a6a"
-    sha256 cellar: :any,                 arm64_sequoia: "506e14ad369e4dbb9014a15b29f50ffe2b1d453877939de55a8112b3cb279d0d"
-    sha256 cellar: :any,                 arm64_sonoma:  "591b6312ae7ade63b30c32eb21741b05e04f4cc8092a2c19e4c83f0946cfcf03"
-    sha256 cellar: :any,                 sonoma:        "acac703a5648f3a6211283aeb24e3bdf2185671ecee70d2b00e139efce2925c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63dfeb474fccc391c52805334719c4dee901a1e9ed27194176a5d134315ab780"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1e7a11c3863a2ed8f2b6a266299ddba1f536ae1dd3b7d97c75c2fd2de5a8084"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "f6bc66719dfd5d5bb230efff2f7a0d986f5334e7d8cd3f43f4e23606a9df65b8"
+    sha256 cellar: :any,                 arm64_sequoia: "954392da49909de711dd6e90bead725c51d0008fe62696ee446eddc55417c464"
+    sha256 cellar: :any,                 arm64_sonoma:  "3aeeae010837bd6b90cb95111c1478e63bb1909c19d79366d7c21f9cb760bd74"
+    sha256 cellar: :any,                 sonoma:        "219a97474fa7f823109c9199083157bb3eaf21151fe3409af5958a29997df725"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "13496b1723aa5d79cedce27d67b6c22bb870a94ce10fb16a1ee118505c5af377"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2057993e0ea7e2a6b962096459a4b5bf2dae351be43fba5d662a36d79751eec"
   end
+
+  deprecate! date: "2026-05-04", because: :unmaintained
+  disable! date: "2027-05-04", because: :unmaintained
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
@@ -31,6 +35,9 @@ class ColladaDom < Formula
   def install
     # Remove bundled libraries to avoid fallback
     rm_r(buildpath/"dom/external-libs")
+
+    # Minizip header is in a `minizip` subdirectory, but upstream didn't account for that.
+    inreplace "CMakeLists.txt", "set(MINIZIP_INCLUDE_DIR ${minizip_INCLUDE_DIRS}", "\\0/minizip"
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_CXX_STANDARD=11",

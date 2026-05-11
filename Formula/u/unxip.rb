@@ -16,9 +16,11 @@ class Unxip < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f980d6217df53dc0c7e7c976a4a8bca29e7c38028876ce17184917df790253f9"
   end
 
-  depends_on macos: :sonoma
-
   uses_from_macos "swift" => :build
+
+  on_macos do
+    depends_on macos: :sonoma
+  end
 
   on_sequoia :or_older do
     depends_on xcode: ["16.0", :build]

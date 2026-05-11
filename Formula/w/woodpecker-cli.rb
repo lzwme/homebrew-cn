@@ -7,12 +7,13 @@ class WoodpeckerCli < Formula
   head "https://github.com/woodpecker-ci/woodpecker.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "94dcfb82534450934af5edac090562febd0d0cc64ca6563a964422cfe83a2ab1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94dcfb82534450934af5edac090562febd0d0cc64ca6563a964422cfe83a2ab1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94dcfb82534450934af5edac090562febd0d0cc64ca6563a964422cfe83a2ab1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1bf19504d08b8491c982c6df4083c1c53856a1981463c9bc113fa63803c89ef7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d8e65568292813ba6ea02c5c70dc7cacc8472f8a3a8dd25ead10a38019ae014"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "551b28a7d94c42c193b23705a8ad1c4378c39acc833e8a6b45e2b09fc020a932"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76ca026f7971d92d44a9d256b38bcdaf762ec3892a65ee6af687173f599893c0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76ca026f7971d92d44a9d256b38bcdaf762ec3892a65ee6af687173f599893c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76ca026f7971d92d44a9d256b38bcdaf762ec3892a65ee6af687173f599893c0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1a89b2b6acf2b77e329fabd7b28ca4e5d2240328b498645f381670c7a48c71c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "03938658ecef4f8b041635362e3200a4cc5cfe54745953ba09eb4c7a11b15ec9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8516572800af0ea5ad20ed568cba5bc4b2f9875fea04f772d3eee8b98118a631"
   end
 
   depends_on "go" => :build
@@ -20,6 +21,11 @@ class WoodpeckerCli < Formula
   def install
     ldflags = "-s -w -X go.woodpecker-ci.org/woodpecker/v#{version.major}/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/cli"
+    generate_completions_from_executable(bin/"woodpecker-cli", "completion")
+    # woodpecker-cli expects "pwsh", not "powershell" so we use the custom shell_parameter_format
+    (pwsh_completion/"woodpecker-cli").write Utils.safe_popen_read(
+      { "SHELL" => "pwsh" }, bin/"woodpecker-cli", "completion", "pwsh"
+    )
   end
 
   test do

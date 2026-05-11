@@ -9,12 +9,13 @@ class Overturemaps < Formula
   head "https://github.com/OvertureMaps/overturemaps-py.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "57cbfca0b12b56145860b6f4020795114cf2b3e0e8aac21e2dbec2b19eabcee3"
-    sha256 cellar: :any,                 arm64_sequoia: "d8b5b0a550dcf69afa47623a107b5debeb0ecd88cfdcec24965b5bbfb90d154e"
-    sha256 cellar: :any,                 arm64_sonoma:  "6ea77479bfdd3ea554154f594c99b3c713810d6417a71fd7c25883199b3f353a"
-    sha256 cellar: :any,                 sonoma:        "3441070bbf564d8725fbd319e68c7bcd6b641d60de7cd6efbcc5aa160d7c6675"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b98ba67163be82a39634d5ca51d9d1810071382d2b3b36050f3993e6bb9ac53c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c833ceb433e85de4162744b6da00b2f6cc69e9ae11a13c6e7cc2275f4994da02"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "cd42ccd1a917355e812f5a380665b0308f2bb9e5e78a5e4e4ac36ba33acd2488"
+    sha256 cellar: :any,                 arm64_sequoia: "3124deed456b34697a153c5e5ff46504d71054ca2feacb17ab61e18faf6030db"
+    sha256 cellar: :any,                 arm64_sonoma:  "88635d2797647da59448dd015a483b6864301780502692b1d7198e1005103682"
+    sha256 cellar: :any,                 sonoma:        "1bd3e2b9c55ca6e22c43cf0eede150c9ddfb50a8efe591ef99fdbccd0db03fef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "32e62456cd1deb519a245d10bf7bb7ec2e7169c240d21eca3fc1dfe7408316fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8135573f40797cad90933debd0446c610eec33fc6c8b895dedc6a4656d0e41e0"
   end
 
   depends_on "cmake" => :build  # for pyarrow
@@ -42,11 +43,8 @@ class Overturemaps < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/9d/1b/2024d06792d0779f9dbc51531b61c24f76c75b9f4ce05e6f3377a1814cea/orjson-3.11.8.tar.gz"
-    sha256 "96163d9cdc5a202703e9ad1b9ae757d5f0ca62f4fa0cc93d1f27b0e180cc404e"
-
-    # Remove nightly feature flag, Rust 1.95 is now stable
-    patch :DATA
+    url "https://files.pythonhosted.org/packages/7e/0c/964746fcafbd16f8ff53219ad9f6b412b34f345c75f384ad434ceaadb538/orjson-3.11.9.tar.gz"
+    sha256 "4fef17e1f8722c11587a6ef18e35902450221da0028e65dbaaa543619e68e48f"
   end
 
   resource "pyarrow" do
@@ -69,17 +67,8 @@ class Overturemaps < Formula
     sha256 "7d825f03f89244ef73f1d4ce193cb1774a8179fd96f31d7e1dcde62092b960bb"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
-    # The sdist has reproducible-build timestamps from 2020-02-02, which causes
-    # Homebrew to set SOURCE_DATE_EPOCH to that date. This makes pip restrict
-    # package downloads to pre-2020, breaking all modern build backends.
-    # Reset to current time so the 24-hour safety window works as intended.
-    ENV["SOURCE_DATE_EPOCH"] = Time.now.utc.to_i.to_s
-
+    python3 = "python3.14"
     numpy_include = Formula["numpy"].opt_lib/Language::Python.site_packages(python3)/"numpy/_core/include"
     geos_include = Formula["geos"].opt_include
     geos_lib = Formula["geos"].opt_lib
@@ -96,15 +85,3 @@ class Overturemaps < Formula
     assert_match "Missing option", output
   end
 end
-
-__END__
---- a/src/lib.rs
-+++ b/src/lib.rs
-@@ -1,7 +1,6 @@
- // SPDX-License-Identifier: MPL-2.0
- // Copyright ijl (2018-2026)
-
--#![cfg_attr(feature = "cold_path", feature(cold_path))]
- #![cfg_attr(feature = "generic_simd", feature(portable_simd))]
- #![cfg_attr(feature = "optimize", feature(optimize_attribute))]
- #![allow(unused_features)] // portable_simd on universal2 cross-compile

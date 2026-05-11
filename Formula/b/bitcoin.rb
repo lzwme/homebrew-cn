@@ -30,10 +30,13 @@ class Bitcoin < Formula
   depends_on "pkgconf" => :build
   depends_on "capnp"
   depends_on "libevent"
-  depends_on macos: :sonoma # Needs C++20 features not available on Ventura
   depends_on "zeromq"
 
   uses_from_macos "sqlite"
+
+  on_macos do
+    depends_on macos: :sonoma # Needs C++20 features not available on Ventura
+  end
 
   fails_with :gcc do
     version "11"

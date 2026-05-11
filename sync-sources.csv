@@ -2990,6 +2990,7 @@ Homebrew-homebrew-core/Formula/h/hesiod.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hevea.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hevi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hex.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/hexapoda.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hexcurse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hexd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hexedit.rb, Homebrew/homebrew-core, 1
@@ -5065,6 +5066,7 @@ Homebrew-homebrew-core/Formula/n/netscanner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netshow.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/netsurf-buildsystem.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nettle.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/nettle@3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nettoe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/networkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/never.rb, Homebrew/homebrew-core, 1

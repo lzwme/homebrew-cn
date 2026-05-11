@@ -20,12 +20,15 @@ class ProtocGenGrpcSwift < Formula
   end
 
   depends_on xcode: ["15.0", :build]
-  # https://swiftpackageindex.com/grpc/grpc-swift/documentation/grpccore/compatibility#Platforms
-  depends_on macos: :sequoia
   depends_on "protobuf"
   depends_on "swift-protobuf"
 
   uses_from_macos "swift" => :build
+
+  on_macos do
+    # https://swiftpackageindex.com/grpc/grpc-swift/documentation/grpccore/compatibility#Platforms
+    depends_on macos: :sequoia
+  end
 
   def install
     args = if OS.mac?

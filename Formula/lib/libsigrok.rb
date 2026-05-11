@@ -1,9 +1,8 @@
 class Libsigrok < Formula
   desc "Drivers for logic analyzers and other supported devices"
   homepage "https://sigrok.org/"
-  # libserialport is LGPL3+
   # fw-fx2lafw is GPL-2.0-or-later and LGPL-2.1-or-later"
-  license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  license all_of: ["GPL-3.0-or-later", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
   revision 5
 
   stable do
@@ -16,27 +15,22 @@ class Libsigrok < Formula
       sha256 "247bfee9777a39d5dc454a999ce425a061cdc48f4956fdb0cc31ec67a8086ce0"
     end
 
-    resource "libserialport" do
-      url "https://sigrok.org/download/source/libserialport/libserialport-0.1.1.tar.gz"
-      sha256 "4a2af9d9c3ff488e92fb75b4ba38b35bcf9b8a66df04773eba2a7bbf1fa7529d"
-    end
-
     resource "fw-fx2lafw" do
       url "https://sigrok.org/download/source/sigrok-firmware-fx2lafw/sigrok-firmware-fx2lafw-0.1.7.tar.gz"
       sha256 "a3f440d6a852a46e2c5d199fc1c8e4dacd006bc04e0d5576298ee55d056ace3b"
 
       # Backport fixes to build with sdcc>=4.2.3. Remove in the next release of fw-fx2lafw.
       patch do
-        url "https://sigrok.org/gitweb/?p=sigrok-firmware-fx2lafw.git;a=commitdiff_plain;h=5aab87d358a4585a10ad89277bb88ad139077abd"
-        sha256 "9615c2f25eb03faeca73c8233353698236dc9f16c38e250f3cec4a7bb5d9f15d"
+        url "https://github.com/sigrokproject/sigrok-firmware-fx2lafw/commit/5aab87d358a4585a10ad89277bb88ad139077abd.patch?full_index=1"
+        sha256 "15a9ab04d19231aef165d62c669832638c688d33ebd52021100e60e965a5b4e7"
       end
       patch do
-        url "https://sigrok.org/gitweb/?p=sigrok-firmware-fx2lafw.git;a=commitdiff_plain;h=3e08500d22f87f69941b65cf8b8c1b85f9b41173"
-        sha256 "f9c93c9ac88802173cb37528766d95c231288f343ee5842a1d8bc9f617794c33"
+        url "https://github.com/sigrokproject/sigrok-firmware-fx2lafw/commit/3e08500d22f87f69941b65cf8b8c1b85f9b41173.patch?full_index=1"
+        sha256 "75c4a7770fe8f7d615e3be6c35fa336f8771fbd88145e7ce41afb0d8ad559571"
       end
       patch do
-        url "https://sigrok.org/gitweb/?p=sigrok-firmware-fx2lafw.git;a=commitdiff_plain;h=96b0b476522c3f93a47ff8f479ec08105ba6a2a5"
-        sha256 "1d5d9a7d2e8e7e1b99c57f15093bbffed87d5750caa13b797cd3199438d4c990"
+        url "https://github.com/sigrokproject/sigrok-firmware-fx2lafw/commit/96b0b476522c3f93a47ff8f479ec08105ba6a2a5.patch?full_index=1"
+        sha256 "a2de37d89144746f6370942faad4c358c6426f8e4e6737f117f05f05d8d44f6a"
       end
     end
   end
@@ -50,21 +44,19 @@ class Libsigrok < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256                               arm64_tahoe:   "95e9aaa190e987c353cccf6cc717b084bce946bc42e2c397a6f24700722a95be"
-    sha256                               arm64_sequoia: "0e9aab53e0280c9ff3cada529ff9c7622a50dae6385c637a7132f3c1f2f2eb05"
-    sha256                               arm64_sonoma:  "f4c1faa440cb7aa12ced874cc4f4a563ef0c6d623f8a28ab89c02f2085559666"
-    sha256                               sonoma:        "12e7c974907dedfa1a41dcda2a40eafe7d2d1d36be8939c511e325055177ff9d"
-    sha256                               arm64_linux:   "4dfc8b182043414637c2869745bc581bc755f11a7d5d511c66f657720637d212"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fabcd646d9c33cfb0fe618a29ef8c0f6427304d7f69a525c1685dbcdfa10060"
+    rebuild 4
+    sha256                               arm64_tahoe:   "6c226511f47960806234805a61c081be4951ac579cb9492c61940f92360b1b81"
+    sha256                               arm64_sequoia: "ae00fe2035dcc37cd642d351aae8f1e5670196abe63a5b618fb2e11cea120623"
+    sha256                               arm64_sonoma:  "b736c6afd2d3db63696355aa02b613237dacf115b626f384e2a97e9688990ae9"
+    sha256                               sonoma:        "9be55acc242d543e4f1d853e1d58df3f9c05840bdb3e959649c9e36a8d0194ea"
+    sha256                               arm64_linux:   "e8ee1b325f73075f927dff66d9d02c419273fb98f00084485fbabc6fa05edb1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28e1eeccbe1471973305c0c57cdf01e454623fdee93b47ec0a7567ac10fca17b"
   end
 
   head do
     url "git://sigrok.org/libsigrok", branch: "master"
 
-    resource "libserialport" do
-      url "git://sigrok.org/libserialport", branch: "master"
-    end
+    depends_on "nettle"
 
     resource "fw-fx2lafw" do
       url "git://sigrok.org/sigrok-firmware-fx2lafw", branch: "master"
@@ -81,13 +73,14 @@ class Libsigrok < Formula
   depends_on "python-setuptools" => :build
   depends_on "sdcc" => :build
   depends_on "swig" => :build
+
   depends_on "glib"
   depends_on "glibmm@2.66"
   depends_on "hidapi"
   depends_on "libftdi"
+  depends_on "libserialport"
   depends_on "libusb"
   depends_on "libzip"
-  depends_on "nettle"
   depends_on "numpy"
   depends_on "pygobject3"
   depends_on "python@3.14"
@@ -95,11 +88,6 @@ class Libsigrok < Formula
   on_macos do
     depends_on "gettext"
     depends_on "libsigc++@2"
-  end
-
-  resource "fw-fx2lafw" do
-    url "https://sigrok.org/download/binary/sigrok-firmware-fx2lafw/sigrok-firmware-fx2lafw-bin-0.1.7.tar.gz"
-    sha256 "c876fd075549e7783a6d5bfc8d99a695cfc583ddbcea0217d8e3f9351d1723af"
   end
 
   # Fix for swig 4.4 changing the return type of %init
@@ -111,24 +99,7 @@ class Libsigrok < Formula
 
   def install
     resource("fw-fx2lafw").stage do
-      if build.head?
-        system "./autogen.sh"
-      else
-        system "autoreconf", "--force", "--install", "--verbose"
-      end
-
-      mkdir "build" do
-        system "../configure", *std_configure_args
-        system "make", "install"
-      end
-    end
-
-    resource("libserialport").stage do
-      if build.head?
-        system "./autogen.sh"
-      else
-        system "autoreconf", "--force", "--install", "--verbose"
-      end
+      system "./autogen.sh" if build.head?
 
       mkdir "build" do
         system "../configure", *std_configure_args
@@ -156,7 +127,6 @@ class Libsigrok < Formula
 
     mkdir "build" do
       ENV["PYTHON"] = python3
-      ENV.prepend_path "PKG_CONFIG_PATH", lib/"pkgconfig"
       args = %w[
         --disable-java
         --disable-ruby

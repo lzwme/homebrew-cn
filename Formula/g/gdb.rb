@@ -1,21 +1,20 @@
 class Gdb < Formula
   desc "GNU debugger"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftpmirror.gnu.org/gnu/gdb/gdb-17.1.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/gdb/gdb-17.1.tar.xz"
-  sha256 "14996f5f74c9f68f5a543fdc45bca7800207f91f92aeea6c2e791822c7c6d876"
+  url "https://ftpmirror.gnu.org/gnu/gdb/gdb-17.2.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/gdb/gdb-17.2.tar.xz"
+  sha256 "1c036c0d72e4b3d1fb5c94c88632add6f9d76f4d7c4d2ea793c12a9f19a3228c"
   license "GPL-3.0-or-later"
   compatibility_version 1
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "2295e7004a3c90fe6098270d09ca48a7889925dcf34a07c54e9a1a47e09db70e"
-    sha256 arm64_sequoia: "754675fcfc33b3d12cc510ffa6dc6af3bba6e15ee4abc5f5e8a11c5cc61c832d"
-    sha256 arm64_sonoma:  "c91538f01dd1ec868257a4b462ba54359925c67f3197c247620c049d20125cd0"
-    sha256 sonoma:        "9116ddb519db553a99c6cdcebfa34dbb9aaf0ebdea8e7567863d7aa5616e4a38"
-    sha256 arm64_linux:   "3e10f1975104a93f54a48cd586357cb8279dbfed8e91cd1d78e4eea9d532e215"
-    sha256 x86_64_linux:  "76d485370e5c8e7619e13de8d01af7f47c105eb934174c0e7fe083b4b95e8d9e"
+    sha256 arm64_tahoe:   "12341ca6f6b31162ec70586e0772257dae2fa2840a4081efd30af0c604379db7"
+    sha256 arm64_sequoia: "2feabbafc0fa519392852f4c683ac1f2ec77bfb206b8759c5d58a65aceca0a37"
+    sha256 arm64_sonoma:  "751ed85d1945ff8fd0892fda21fd0dd38a70138cb5ed8fda5c822ab90bacb6b1"
+    sha256 sonoma:        "c4ca53440086795fdb0ea5eb8609f278c412962259e4f02c0a27feb3d1151354"
+    sha256 arm64_linux:   "2c2b33885fd81a54aedf65f3783bca5b1ace11dff3824c6a738ccd2b0a5facfe"
+    sha256 x86_64_linux:  "1cd209394e560c53f14c50407459f242f1095e440fcff1bc4b456cac9aad8f8b"
   end
 
   depends_on "pkgconf" => :build

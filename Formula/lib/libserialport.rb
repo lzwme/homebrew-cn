@@ -21,11 +21,17 @@ class Libserialport < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b61c51d632d2f98386a1eac5eff490bd6cda366f8e5d2edcdde021660ad2006"
   end
 
+  head do
+    url "git://sigrok.org/libserialport", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./autogen.sh" if build.head?
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

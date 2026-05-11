@@ -24,10 +24,10 @@ class Zig < Formula
   depends_on "cmake" => :build
   depends_on "lld@21"
   depends_on "llvm@21"
-  depends_on macos: :big_sur # https://github.com/ziglang/zig/issues/13313
 
   # NOTE: `z3` should be macOS-only dependency whenever we need to re-add
   on_macos do
+    depends_on macos: :big_sur # https://github.com/ziglang/zig/issues/13313
     depends_on "zstd"
   end
 

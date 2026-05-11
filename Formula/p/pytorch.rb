@@ -31,7 +31,6 @@ class Pytorch < Formula
   depends_on "eigen"
   depends_on "libuv"
   depends_on "libyaml"
-  depends_on macos: :monterey # MPS backend only supports 12.3 and above
   depends_on "numpy"
   depends_on "onnx"
   depends_on "openblas"
@@ -41,6 +40,7 @@ class Pytorch < Formula
 
   on_macos do
     depends_on "libomp"
+    depends_on macos: :monterey # MPS backend only supports 12.3 and above
   end
 
   pypi_packages package_name:     "torch[opt-einsum]",

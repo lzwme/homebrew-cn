@@ -20,10 +20,13 @@ class Publish < Formula
 
   # https://github.com/JohnSundell/Publish#system-requirements
   depends_on xcode: ["13.0", :build]
-  # missing `libswift_Concurrency.dylib` on big_sur`
-  depends_on macos: :monterey
 
   uses_from_macos "swift" => :build
+
+  on_macos do
+    # missing `libswift_Concurrency.dylib` on big_sur`
+    depends_on macos: :monterey
+  end
 
   def install
     args = if OS.mac?

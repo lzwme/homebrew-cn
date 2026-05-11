@@ -1,14 +1,13 @@
 class GitExtras < Formula
   desc "Small git utilities"
   homepage "https://github.com/tj/git-extras"
-  url "https://ghfast.top/https://github.com/tj/git-extras/archive/refs/tags/7.4.0.tar.gz"
-  sha256 "aaab3bab18709ec6825a875961e18a00e0c7d8214c39d6e3a63aeb99fa11c56e"
+  url "https://ghfast.top/https://github.com/tj/git-extras/archive/refs/tags/7.5.0.tar.gz"
+  sha256 "bcfe0eabdccc806e53a10130fed6fb02373720ddeb670eecc5cc84d041d79880"
   license "MIT"
   head "https://github.com/tj/git-extras.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "68e0ef44b443f683c0f8d21f1a72162ff1063377582b60855a7fbace9ad3a5ab"
+    sha256 cellar: :any_skip_relocation, all: "eb00f8d931c119b51c32974c191d6b887f9bc1337e4b36681dacf0d3c65279e5"
   end
 
   on_linux do

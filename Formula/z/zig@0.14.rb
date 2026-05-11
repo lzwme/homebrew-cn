@@ -31,9 +31,9 @@ class ZigAT014 < Formula
   depends_on "cmake" => :build
   depends_on "lld@19"
   depends_on "llvm@19"
-  depends_on macos: :big_sur # https://github.com/ziglang/zig/issues/13313
 
   on_macos do
+    depends_on macos: :big_sur # https://github.com/ziglang/zig/issues/13313
     depends_on "zstd"
   end
 

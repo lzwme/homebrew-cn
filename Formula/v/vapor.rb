@@ -14,9 +14,12 @@ class Vapor < Formula
   end
 
   depends_on xcode: ["26.0", :build]
-  depends_on macos: :sequoia
 
   uses_from_macos "swift" => :build
+
+  on_macos do
+    depends_on macos: :sequoia
+  end
 
   def install
     args = if OS.mac?

@@ -21,8 +21,12 @@ class Ecl < Formula
   depends_on "texinfo" => :build # Apple's is too old
   depends_on "bdw-gc"
   depends_on "gmp"
-  depends_on macos: :sequoia
+
   uses_from_macos "libffi"
+
+  on_macos do
+    depends_on macos: :sequoia
+  end
 
   # does not build on macOS 14
 

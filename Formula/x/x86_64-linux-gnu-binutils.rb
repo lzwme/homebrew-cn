@@ -20,12 +20,15 @@ class X8664LinuxGnuBinutils < Formula
   end
 
   depends_on "pkgconf" => :build
-  # Requires the <uchar.h> header
-  # https://sourceware.org/bugzilla/show_bug.cgi?id=31320
-  depends_on macos: :ventura
   depends_on "zstd"
 
   uses_from_macos "llvm" => :test
+
+  on_macos do
+    # Requires the <uchar.h> header
+    # https://sourceware.org/bugzilla/show_bug.cgi?id=31320
+    depends_on macos: :ventura
+  end
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build

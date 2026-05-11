@@ -12,22 +12,19 @@ class SequoiaSq < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "af93f1cb2fa3295751c7789f2e19cb799036aa31f6574399cd4335452b92e8a0"
-    sha256 cellar: :any,                 arm64_sequoia: "748da0543b832cadfa5607c47bd93938bb09a31447ba6470bed0eecd9eed5abe"
-    sha256 cellar: :any,                 arm64_sonoma:  "3de29e0d109f761a2354bb4b2ca540c430f11f402616453c6e01d6f936a1df41"
-    sha256 cellar: :any,                 arm64_ventura: "c5877c6019980cb390b99241687b16e6ab4b41dc8eb1472d3a7654c6cac966c2"
-    sha256 cellar: :any,                 sonoma:        "6b3a8b05eca43acd239476880e5515cc75b283173a0226c7568e5ba84fcc7e14"
-    sha256 cellar: :any,                 ventura:       "f45c40f7187c727f4ab15f925d02125cedb72cc50227f2c30a1bb540adf1ca28"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6cc134524aab57fd7d7e15586e4410b1081998bf03a2dd7b7393044b8729a30a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bdca043f7be55ffe5682aacbc18863cf02eb7fbb698f176e7a880de304cc1da"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "19aea334d358be2cc1ceef010acf929d5878e06a049c7c5fc0857e11811c770f"
+    sha256 cellar: :any,                 arm64_sequoia: "a1a5edfd41e376367742c538e096a482a3ec74410a5b86e5687d774ea91d8a3e"
+    sha256 cellar: :any,                 arm64_sonoma:  "824517c9fb8af79ed92d680d516afaf6359cb02153cfe453e6dd841b0d2bb2df"
+    sha256 cellar: :any,                 sonoma:        "31860aa77c849ceb1e9f700b43ab293b6308d45627fb0fdf0a7e9b23b5aae893"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "09c647e848febcff9a447a124ebe3701ce1b7c340f08bf4b7e1f3f2386659a9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15bd1a4c8b63463a27f65cac2e61af18bedceacb8e0a08c776caa8f1bb3b40d5"
   end
 
   depends_on "capnp" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
-  depends_on "gmp"
-  depends_on "nettle"
   depends_on "openssl@3"
 
   uses_from_macos "llvm" => :build
@@ -40,7 +37,7 @@ class SequoiaSq < Formula
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["ASSET_OUT_DIR"] = buildpath
 
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", "--no-default-features", *std_cargo_args(features: "crypto-openssl")
     man1.install Dir["man-pages/*.1"]
 
     bash_completion.install "shell-completions/sq.bash" => "sq"

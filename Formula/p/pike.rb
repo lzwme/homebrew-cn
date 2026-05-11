@@ -5,6 +5,7 @@ class Pike < Formula
   mirror "https://deb.debian.org/debian/pool/main/p/pike8.0/pike8.0_8.0.1956.orig.tar.gz"
   sha256 "6a0f2677eb579865321bd75118c638c335860157a420a96e52e2765513dad4c0"
   license any_of: ["GPL-2.0-only", "LGPL-2.1-only", "MPL-1.1"]
+  revision 1
 
   livecheck do
     url "https://pike.lysator.liu.se/download/pub/pike/latest-stable/"
@@ -12,19 +13,18 @@ class Pike < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "fcdd576e2d1f6a9e6e5950e606961b3e2a3342470498789089e279a5d3674be4"
-    sha256 arm64_sequoia: "6555f68623b88de4cbd0b3f79fc8cbe809fc7752f866c74a5daf9df5bbdfffc1"
-    sha256 arm64_sonoma:  "40d3f38c11347d04b10d29c5a9494a8b95d2b99fb666e18c436b36c995a77661"
-    sha256 sonoma:        "a85dee58bfc10160afc4d814cc7665837c404861a2f8ba64df76923835868e16"
-    sha256 arm64_linux:   "9ca8feac2ad91ed44254a1acba6316c24459cc5f0f750727d33e814cd2ee07ab"
-    sha256 x86_64_linux:  "d4c545ecc893e81fbde64c012b73d405749254ff6a5f9feab5ac608cce09390b"
+    sha256 arm64_tahoe:   "ce99d1862387995d645b98b72e8704350c594f195ba0bae38e1b5f05aadd0fb0"
+    sha256 arm64_sequoia: "268dff89f0555fb7cdbcaa8e0fc48ff02325d0b174ac540859b540c7a802eb94"
+    sha256 arm64_sonoma:  "baefe332ca33ef1b915c7b34881586b8681279acc47e645126d4629df1212911"
+    sha256 sonoma:        "bf5ba584a6a0c2b013f22b4b13c7d09285503f27a343400c7036001f914b3a02"
+    sha256 arm64_linux:   "416e9e7fb333941f6c8c234a34d3fe9d9359b59525b53c26757ad5b6cdeae59f"
+    sha256 x86_64_linux:  "9f54cedbb927f268a2c63563962ae27533deadf7f00ae636804491f948abca5d"
   end
 
   depends_on "gmp"
   depends_on "jpeg-turbo"
   depends_on "libtiff"
-  depends_on "nettle"
+  depends_on "nettle@3"
   depends_on "webp"
 
   uses_from_macos "bzip2"
