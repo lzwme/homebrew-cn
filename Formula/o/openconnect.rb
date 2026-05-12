@@ -5,7 +5,7 @@ class Openconnect < Formula
   mirror "https://deb.debian.org/debian/pool/main/o/openconnect/openconnect_9.12.orig.tar.gz"
   sha256 "a2bedce3aa4dfe75e36e407e48e8e8bc91d46def5335ac9564fbf91bd4b2413e"
   license "LGPL-2.1-only"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.infradead.org/openconnect/download.html"
@@ -13,13 +13,12 @@ class Openconnect < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "fbcb589590fc3a10a33601e2dfafabaec8e58000357a655b0976e95a80f42aaf"
-    sha256 arm64_sequoia: "b5067d6b52fc350aa1391393cf637643fb8f4eb0f70536575099d8451a068123"
-    sha256 arm64_sonoma:  "5b3b175974886107af03dc6cd3ef87e69f3265123fd0ebddb6bd67f40715c2b4"
-    sha256 sonoma:        "968aca8e8f7d13c995ca44e15dbcb98bec6d7449186d47e64fc7cf2f3fcf31d1"
-    sha256 arm64_linux:   "9edbd927405417ac939217c28428d0e12fef1d3d4cb70e4d5bc5cb629d7fa5d1"
-    sha256 x86_64_linux:  "16f82b8f546ddd8a65a41c40a68e71d90829a928d567cd72f7c41ad5380fd0ed"
+    sha256 arm64_tahoe:   "02beb4be59b0efe19db016198efb1c0889470de85a7bcc8d456fb9e2d5105897"
+    sha256 arm64_sequoia: "9d315e5ff0430cf19b0ad916473773c9244e3d410d1eec526c52664b224ed941"
+    sha256 arm64_sonoma:  "e4023b61d9fa5a710c81db230ba7e81e1821c84622a7fff601260383a7931224"
+    sha256 sonoma:        "d636ccce3b05b014b8e9020564fafffef66d90fc3fd968e8f6703d884eea2417"
+    sha256 arm64_linux:   "f16036645922a933bcaa2eacdc011db910e5a402559fcfc1c1f9b21110fd2b97"
+    sha256 x86_64_linux:  "749eb218c2418c7c1223f79be220ca1bde8c43c649f905cea355d36a2dd69a68"
   end
 
   head do

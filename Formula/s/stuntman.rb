@@ -12,27 +12,20 @@ class Stuntman < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "edaf5c91bca97b2753c2c91faf0c174e2310e48c98ede3b6aa28f5d679ff4369"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0fb5a56446295b44863623d302e1d87d56304f6e48d8afa3b465fd6cb191c891"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7f074ff4dfa646a4ddd4bca3606f9e0b69667e79670fbc119b3c538db13fe58a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f9ff0ae91033b2b01cc9f72180bc752ef48318ec70f538caf943f0baf1fd3bff"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "54d82da2aa9283edd6641bd761cd1c45411d4305ae648672ae3e98079d841894"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c875f14ba13aacc89c0f798cbbea161aac655bf3bcaf9284645eb43aea764b55"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f7ebbf887c71acd20349ad10d69f4f0e4fd5106bdc2c42bc1d804b84dea42782"
-    sha256 cellar: :any_skip_relocation, ventura:        "74ddc9697def76e912a283a68da40099a7fd5195960707981d3d8b3c393b2882"
-    sha256 cellar: :any_skip_relocation, monterey:       "9ad956118fe74ee3af2a673b6a1afc0736d39f51342cb7f4b926dc13e0d28cab"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3180e4e3c719363753cefef52e45972031815f2709760c6b63b4d4e9721e1d4a"
-    sha256 cellar: :any_skip_relocation, catalina:       "2ac7951871edd61c9b254d5436a1b8ba1d939908a9a22ac3ef05b975d34490a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "cf40ac5709a4a0db7eee925acc32d0b2ca7e3a8b4dc3548314d3f2377060e1ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bddee00f936559705e2837cc56956efbc2569f98da27d7abb41640d7f87df7d0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "905f59c8b80028188a9eee9f31b21b77408f3f76cda7fdc5050b193d59ee41c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0042f42b8ca89bfd977af684226d49639dc9036d4b7b52eaa6b742b13e0bd37"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "932c178c5aafbe6316b3fad54ab5c25bf08283358f79bcaa9c77a8c81cbe4d81"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f42e25761bca538a565590a6dd588518f30c35e0dcde6add737d19b466efb8b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "97eee07cc68cdbd662a887d947a325e8abd00dce0f3b2ff83c52680358ae1a21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7830bd81b31a5409326cbc83a60140ada145e197571916ab7193d7a48acb3aee"
   end
 
   depends_on "boost" => :build
 
   # on macOS, stuntman uses CommonCrypt
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   def install

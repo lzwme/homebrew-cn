@@ -4,6 +4,7 @@ class Rdfind < Formula
   url "https://rdfind.pauldreik.se/rdfind-1.8.0.tar.gz"
   sha256 "0a2d0d32002cc2dc0134ee7b649bcc811ecfb2f8d9f672aa476a851152e7af35"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :homepage
@@ -11,12 +12,12 @@ class Rdfind < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8d2979a97f519fb423e4f2cc675228adadfaf06eced01ebca1e9f4e29937780a"
-    sha256 cellar: :any,                 arm64_sequoia: "e28f7b8a870e48477982f7584422dd10c5b7dafbfbce7fab8e6f0e0f5ad87d2e"
-    sha256 cellar: :any,                 arm64_sonoma:  "79893eeaade7d4af2b3b33947bdc40110fda3560e6eff298bd7b52c7f7797986"
-    sha256 cellar: :any,                 sonoma:        "f3e153459e13432a6d1846e8a64e8068f146be76e709a600040a899f8f0c3718"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4d0cf4a553fc36c215dbcedf00665f18a00ac1ee39994e6f651b91bac5ca59f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6259eb0eb7fae1bb1180e27e1978a2fe98f268d9f3a1dc5e8378b4ad440ee7da"
+    sha256 cellar: :any,                 arm64_tahoe:   "63db8993c5a89ab61c517545b2eb85d4a5a6334c8b735c7c60c37ac043ba8b71"
+    sha256 cellar: :any,                 arm64_sequoia: "80b66c742f116218d2044f1375328cfd758580e3ccca3d158b72d3832ed8b106"
+    sha256 cellar: :any,                 arm64_sonoma:  "30d86306c8a3aab465037a111b0e3154e81e269376bc349a91a5a3af7be34f14"
+    sha256 cellar: :any,                 sonoma:        "463efa01de978dc751b6f4e53f31c69b9508e4f676e7b58432b96a43dae2eb9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b477ba9491cb671cd48d2fbaa90898bded997d92a38909b93faef8ef92d1bf8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de313de0fe1ab06c00b90a9c7a58c8b2d4b227b4322478cbbffc10e5c5a7dece"
   end
 
   depends_on "nettle"

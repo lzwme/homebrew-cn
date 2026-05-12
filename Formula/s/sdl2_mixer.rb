@@ -1,10 +1,9 @@
 class Sdl2Mixer < Formula
   desc "Sample multi-channel audio mixer library"
   homepage "https://github.com/libsdl-org/SDL_mixer"
-  url "https://ghfast.top/https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.8.1/SDL2_mixer-2.8.1.tar.gz"
-  sha256 "cb760211b056bfe44f4a1e180cc7cb201137e4d1572f2002cc1be728efd22660"
+  url "https://ghfast.top/https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.8.2/SDL2_mixer-2.8.2.tar.gz"
+  sha256 "938dff531d00ace2296557a6599abe6f34599e2f34f0a4a08a397e2ccac8b8f7"
   license "Zlib"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,14 +11,12 @@ class Sdl2Mixer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "29131b712fd63e8085fd10d1e158e8c4eff11ee363b0b3768ab8f0ab9d26c5cc"
-    sha256 cellar: :any,                 arm64_sequoia: "1c7c1592895fc8bc86a246445698cd3258f835e319a4017d596ae8d67966d605"
-    sha256 cellar: :any,                 arm64_sonoma:  "2203b3fe60c59ca2f77fed180fb25598c083bfc25baff79bd84ffea16fa12623"
-    sha256 cellar: :any,                 arm64_ventura: "bc6a8a9f8e3b8f145873f2f18d428549286923304887c75eae9e0c6153b9f8cd"
-    sha256 cellar: :any,                 sonoma:        "2a0833b4e5b3d6b5e650e6260ea32fe5f07a9fa4ed66a8f4343d5d9c65c26f9e"
-    sha256 cellar: :any,                 ventura:       "721f0f56d5b954e4e5cc484fa4046712b2099aafa4849091772aae71afb19145"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1179824f595c247ae0bd213a9af93d973f17b068fdcac3017ec2431196eba023"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7022d2cdf02890e277cf56cfa6e15e5940a000886b92991027b8efbf8332927"
+    sha256 cellar: :any,                 arm64_tahoe:   "b51467b14224893388dbda5a3154fcd29d63f02fb0810b2aa08844b51b77530e"
+    sha256 cellar: :any,                 arm64_sequoia: "c73b68187c3784df0ca2dfccb296db4b0e87c969dc80a32e27b13cbf79a146fb"
+    sha256 cellar: :any,                 arm64_sonoma:  "ad750989fe0eeceba6d243009c69b02ca9b9da25732d4d562da30d0859ff6a7c"
+    sha256 cellar: :any,                 sonoma:        "0991d538a75bde3e9adae424c2ffad5e75a2b486a435c54954c2a1e902f78109"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e95d2d530adf0c579f1de62a333acd261725e050d31e5f28883d7efc09d83df9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5db7991de483573122d63b0c503a1e7c660535f7e36864dc8e8ac0668b239d53"
   end
 
   head do

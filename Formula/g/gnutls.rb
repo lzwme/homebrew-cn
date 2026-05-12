@@ -5,6 +5,7 @@ class Gnutls < Formula
   mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnutls/v3.8/gnutls-3.8.13.tar.xz"
   sha256 "ffed8ec1bf09c2426d4f14aae377de4753b53e537d685e604e99a8b16ca9c97e"
   license all_of: ["LGPL-2.1-or-later", "GPL-3.0-only"]
+  revision 1
   compatibility_version 1
 
   # The download page links to the directory listing pages for the "Next" and
@@ -31,12 +32,12 @@ class Gnutls < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "18db0c67bfa3137d02bf8f38a5cec216084c86a789bdaab5db9eba4964eb0c88"
-    sha256 cellar: :any, arm64_sequoia: "8acaf18cb03a73800698ab4e056238c9cabf74e7efe74d288054eeacdedf8459"
-    sha256 cellar: :any, arm64_sonoma:  "183ccacee048473aab71fe369f3fe8fb5362f2b063d609640d53b441bb6e7eb3"
-    sha256 cellar: :any, sonoma:        "a5465977c52d8e166cf94f062a8a2195a050874f8cdbb7fb7d3e42df9fc92ed7"
-    sha256               arm64_linux:   "213f90db6d02c8bf0a442f6fb121dea84e02d4cb25f9d3e4460472b325264960"
-    sha256               x86_64_linux:  "6d205dae91a84de7f88ea13a2e055e6071cc06c9d9c1445c2528b0f968592121"
+    sha256 cellar: :any, arm64_tahoe:   "6dbbabecf3b693ed30b1f153cf0f98bac12b3e0fa7fe785cde484cd36431d30f"
+    sha256 cellar: :any, arm64_sequoia: "3dcb07236cdc2c242729ba8287b2b216816399006bc01fef1a0c6a8c689e20a5"
+    sha256 cellar: :any, arm64_sonoma:  "4af91041ce4c658abbce2ac612788a7beb9042ade55cdc8011fa4989cf970e50"
+    sha256 cellar: :any, sonoma:        "3d22af738ddc0843b1508ec6af958c96abddef594cf27bbf0f5f1e8d4a179165"
+    sha256               arm64_linux:   "fe6844d8d7f8e1d42cc18b17fc84bf9a7e8eb72acdd5bc0b1821bebc69d6ea65"
+    sha256               x86_64_linux:  "da55d168ee5b312eda15e29da3b40b6476a242cf94c8c5e003c5aa66d117f51b"
   end
 
   depends_on "pkgconf" => :build

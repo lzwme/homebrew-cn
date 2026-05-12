@@ -33,7 +33,6 @@ class Mcabber < Formula
   depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on "gpgme"
-  depends_on "libgcrypt"
   depends_on "libidn"
   depends_on "libotr"
   depends_on "loudmouth"

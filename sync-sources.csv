@@ -3101,7 +3101,6 @@ Homebrew-homebrew-core/Formula/h/hyper-mcp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hyperestraier.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hyperfine.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hyperkit.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/h/hyperscan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hyphy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hypopg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hypre.rb, Homebrew/homebrew-core, 1
@@ -5435,6 +5434,7 @@ Homebrew-homebrew-core/Formula/o/osc-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/osc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/oscats.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/osctrl-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/osdctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/osi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/osinfo-db-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/osinfo-db.rb, Homebrew/homebrew-core, 0
@@ -8016,7 +8016,6 @@ Homebrew-homebrew-core/Formula/w/wordnet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wordplay.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/worktrunk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wormhole-william.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/w/wownero.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wp-cli-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wp-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wpebackend-fdo.rb, Homebrew/homebrew-core, 1

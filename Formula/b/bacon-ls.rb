@@ -15,12 +15,7 @@ class BaconLs < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7f9f3149741fccf804f00ee8a5be0d50a8861cc4e2bd7186840b48eae779510"
   end
 
-  depends_on "pkgconf" => :build
   depends_on "rust" => :build
-
-  on_linux do
-    depends_on "openssl@3"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args

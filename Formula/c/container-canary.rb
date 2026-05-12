@@ -23,7 +23,7 @@ class ContainerCanary < Formula
     ldflags = %W[
       -s -w
       -X github.com/nvidia/container-canary/internal.Version=#{version}
-      -X github.com/nvidia/container-canary/internal.Buildtime=#{Time.now.utc.iso8601}
+      -X github.com/nvidia/container-canary/internal.Buildtime=#{time.iso8601}
       -X github.com/nvidia/container-canary/internal.Commit=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"canary")

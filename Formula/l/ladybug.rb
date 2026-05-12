@@ -6,12 +6,13 @@ class Ladybug < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bff0dd421557c382367c5e92603052f13aa3677a2a8b94b80854662aa7782dfd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc12007816382652304cb6b10690bca1494e87933465768c25c4d5ac6a7f95bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76e87607ee1f1096f6d9aff58ed7964e75f81f11a8c10397609a49ad8720d7be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c40a555a7a30a9075869e92a31f0bbc199fb2684d4ef0cb062f6029483d86e00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8deea46d03d4ee1413c717e23e57c1519316c45e1542da84d6dc2cba77af275b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a004bcd8abb8c8be44a6bd4caf6bb5007f4664bcd581c3256af1d3b4dbf68c2a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "0d4155d639e169913f17d3d1344591948fce00905e8a4398f3d9074a00200da7"
+    sha256 cellar: :any,                 arm64_sequoia: "645ba24811550a2e0ebe71ee97e4255beb275d912cdaee3008ffb1d3b492ff43"
+    sha256 cellar: :any,                 arm64_sonoma:  "ec2e1557fae4914afc541d1bfafee9b5169fba4eb0d8823d4beb4e7e33ff3919"
+    sha256 cellar: :any,                 sonoma:        "86dbdd77ed809cee24b42b309c7ed5ac00ce841cb45beb27883245c2f4309e82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f878af0aa3ca57fc97e5ade8f58d5ee46218918fbd06c7cade5eff84ef61c372"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a709d48e720801aa916a482a7c14e70e950a3a97837e6fc8d6f8ba0f77b4f36"
   end
 
   depends_on "cmake" => :build
@@ -33,7 +34,10 @@ class Ladybug < Formula
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
-    bin.install "build/tools/shell/lbug"
+    system "cmake", "--install", "build"
+
+    # Remove unwanted headers and libraries for `cppjieba`
+    rm_r Dir["{#{include},#{share}}/cppjieba/*"]
   end
 
   test do

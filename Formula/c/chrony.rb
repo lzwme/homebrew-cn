@@ -4,6 +4,7 @@ class Chrony < Formula
   url "https://chrony-project.org/releases/chrony-4.8.tar.gz"
   sha256 "33ea8eb2a4daeaa506e8fcafd5d6d89027ed6f2f0609645c6f149b560d301706"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url "https://chrony-project.org/download.html"
@@ -11,14 +12,12 @@ class Chrony < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e361230f241f273ef878f5f2bdc2899a414a7973dbd65854e44dfaaa70efc95e"
-    sha256 cellar: :any,                 arm64_sequoia: "c69f2a33c2f23e19668207e8a7f019476d48ddd21aac4ac297e447c4f368a8d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "d625684f40a9cfb51d98b1ca92f212e940074e4303931fd2e4cf3598b4c2f51c"
-    sha256 cellar: :any,                 arm64_ventura: "c9f89d4196e6a7cc762937dea9cb6c2409240399ae95b5077901ae0bf66ead25"
-    sha256 cellar: :any,                 sonoma:        "0f77335cd443a3cf8415f1bd44a82b8c0493aee02037130f829bce8dae1c9604"
-    sha256 cellar: :any,                 ventura:       "fdd09def3431e2f0d55de1d4c9d6196c7ebb3cef7d82d0ba5160ebbcfe8243a4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c392cca54e58164bdfd794709eb64f0a3effb3f3f996dbc112e440459d8ffa45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb65a129ec2f9117babdb703ec57e86857110f0e8cf8e74c14fa22f9c51ffd20"
+    sha256 cellar: :any,                 arm64_tahoe:   "e9e38864bbf2ddb030177f8ddf02c4d21664868ff6002035890da0142873bfb8"
+    sha256 cellar: :any,                 arm64_sequoia: "0ad71dfeedbf1ab26589c26d1a6c0ad4da5aaa89fbc6d6c72d0fe68685c3587a"
+    sha256 cellar: :any,                 arm64_sonoma:  "94f124b782d74410ba8818770899211c21bf3905c4919258ccdcd92c2569319b"
+    sha256 cellar: :any,                 sonoma:        "5a14c7a7ef04c6093b64768074559f4ae29945a578bd5acf9facbb25980305a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "93cbef7ef10e2348eee38409550e98123fbeddac4b89e90c698570ffb29c97be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0a3272ae4766990b77023294169a3f165ed2f32144a062aa7e83443e3e8bf33"
   end
 
   depends_on "pkgconf" => :build
@@ -26,6 +25,12 @@ class Chrony < Formula
   depends_on "nettle"
 
   uses_from_macos "libedit"
+
+  # Backport support for nettle 4.0
+  patch do
+    url "https://gitlab.com/chrony/chrony/-/commit/fee12ec914cce805cc704a4c2804d75b4933ad2f.diff"
+    sha256 "fe464ab1e5839472c78d6b60f110c1f9315c44e7caa595b90bbfe42e7e79ae84"
+  end
 
   def install
     system "./configure", "--localstatedir=#{var}", *std_configure_args

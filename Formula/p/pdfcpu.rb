@@ -1,8 +1,8 @@
 class Pdfcpu < Formula
   desc "PDF processor written in Go"
   homepage "https://pdfcpu.io"
-  url "https://ghfast.top/https://github.com/pdfcpu/pdfcpu/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "5c39e754c465709ced7f62289a837a37808bf48f355b8ef4608cfa9d8e32536f"
+  url "https://ghfast.top/https://github.com/pdfcpu/pdfcpu/archive/refs/tags/v0.12.1.tar.gz"
+  sha256 "a15d61b50e432b90b435e59728fde241fdcb745eba06f437cbf106aafc7ff2d0"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Pdfcpu < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a46fbdaac66c81f2564886c8825fa64f7f6edd89db4a7821e2625dfe8324056"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a46fbdaac66c81f2564886c8825fa64f7f6edd89db4a7821e2625dfe8324056"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a46fbdaac66c81f2564886c8825fa64f7f6edd89db4a7821e2625dfe8324056"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ea748757c656c8c781769904c637e9cab7114733444ae3251bb466591db4182d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "91bdd0f9769e18d9fc8adb9f143f08d4111b6cd4f038e3927bc73ec988706878"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6575c5b6801c7fcb8cb008f1378f5f3669b3464999897bfe46311349b7fa7e5f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f423e614b6a4d1765e57de61487850b34bf63ac206b2982f4c3a5e5b82f50271"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f423e614b6a4d1765e57de61487850b34bf63ac206b2982f4c3a5e5b82f50271"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f423e614b6a4d1765e57de61487850b34bf63ac206b2982f4c3a5e5b82f50271"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ab3e25520b6c1120fd4e25f2e6da50886760db804eb1a31ac0b9f756957e5dff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7165211f222952e921d166198596b8a27086d49dba8638f70b7d48f498ebd9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72529330d9aa8c2d205b2763fd6d39e3664e76f2aeea7758d14a74c802db4103"
   end
 
   depends_on "go" => :build

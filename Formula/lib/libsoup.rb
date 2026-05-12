@@ -24,7 +24,6 @@ class Libsoup < Formula
 
   depends_on "glib"
   depends_on "glib-networking" => :no_linkage
-  depends_on "gnutls"
   depends_on "libnghttp2"
   depends_on "libpsl"
   depends_on "sqlite"

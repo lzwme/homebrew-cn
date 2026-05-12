@@ -1,18 +1,17 @@
 class Pgstream < Formula
   desc "PostgreSQL replication with DDL changes"
   homepage "https://github.com/xataio/pgstream"
-  url "https://ghfast.top/https://github.com/xataio/pgstream/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "330a1601722c11bc5851df097ab901c4c72d8f3350be2c0272edf5fbd8e05e87"
+  url "https://ghfast.top/https://github.com/xataio/pgstream/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "2328fd33f99cf0d1ab6322f1e44dad1b2a14de1479c11a85ba04b4e5f7f4afed"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3e4f5b593556edbb40dfcc90ecde3df1495c0e74cb85f561c0114d239c746d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3e4f5b593556edbb40dfcc90ecde3df1495c0e74cb85f561c0114d239c746d3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3e4f5b593556edbb40dfcc90ecde3df1495c0e74cb85f561c0114d239c746d3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8574a2194f1914bb1a05f0b12a70c2c967a249387c5e1d4b409c9c828aa1c5bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ba3e4464b803af28dd02061ddc1cbacf75222dab31c348838a9a02dc4ca9cd5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b374394b5710faffeef8f70e46e8cc0bbd8b23566bf3715a9814ac1eea8962f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "44a99755475cfbb0137f25e203dfed538d799481ee3120e54c0fd0850b2ef69f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44a99755475cfbb0137f25e203dfed538d799481ee3120e54c0fd0850b2ef69f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44a99755475cfbb0137f25e203dfed538d799481ee3120e54c0fd0850b2ef69f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "133f74ebf9232f365ca5ca7f6b14c358ed75ce8b50196617e5b1a5c80ac3d9b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed7d6a04c7239c9560e26c61ec832a6b886f2ec99009eaecfaab619a9e92def1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbc23c2915077d730a526d62c8856d657c42fc2a3fb6d750e81ceedb426e0182"
   end
 
   depends_on "go" => :build

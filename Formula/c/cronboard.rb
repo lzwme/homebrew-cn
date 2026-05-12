@@ -6,14 +6,15 @@ class Cronboard < Formula
   url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v0.5.4.tar.gz"
   sha256 "6b3ca130c5772c2d6d664fd376e3ba40d944fe6dce92414f192448684df35e37"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "af16312bd447636f9031cd3bbe94f02e499d099994ae16d7e908a05c9bfc1829"
-    sha256 cellar: :any,                 arm64_sequoia: "1cb63baf33812d4fb040777a03f8b4f20aab2e315110f57deb862b36194a2e9b"
-    sha256 cellar: :any,                 arm64_sonoma:  "11f283e24d045fda175068ae1d13b48fbbcb72d73d8af72f6ead4d6c0d4d9802"
-    sha256 cellar: :any,                 sonoma:        "5242ec350d986c9568cffc2ef6d1c98c2bd8cbbcf53d40d72213137f4b9cb856"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce6b7cb51b83e5c802cd9e0cbf358df19939f0caef70040e76f79c109c7dd926"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "429d1467a4eb69b26096d69cc60e6c2eeff26bf6b4a8fb516fffca4d3d0661d1"
+    sha256 cellar: :any,                 arm64_tahoe:   "b2d79247b5d4a01a9451139299b865a17c488b01620bc9533d59ae95af53a77a"
+    sha256 cellar: :any,                 arm64_sequoia: "721df9040e33373c750cb385b97091add61b6aeaf963020e6bdc1c3b25b2e8ae"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac5ecb9f130aadc8d9c0c2c0d7d0f86c533fe61e30086d0a3a602430a78a1c40"
+    sha256 cellar: :any,                 sonoma:        "00bb4504ca58ef93aa755b13bb538761c70826f9556359b3783ba4c5ed2c7901"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c8c92309c1d23573556be5ce01add2862357db0a698a55cc1e52d90211c6114"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15be6224c76183858da73a13119072baeeda4bd87efed0a60a89a0b47ee2a5bf"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -51,13 +52,13 @@ class Cronboard < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
   resource "mdit-py-plugins" do
-    url "https://files.pythonhosted.org/packages/b2/fd/a756d36c0bfba5f6e39a1cdbdbfdd448dc02692467d83816dff4592a1ebc/mdit_py_plugins-0.5.0.tar.gz"
-    sha256 "f4918cb50119f50446560513a8e311d574ff6aaed72606ddae6d35716fe809c6"
+    url "https://files.pythonhosted.org/packages/d8/3d/e0e8d9d1cee04f758120915e2b2a3a07eb41f8cf4654b4734788a522bcd1/mdit_py_plugins-0.6.0.tar.gz"
+    sha256 "2436f14a7295837ac9228a36feeabda867c4abc488c8d019ad5c0bda88eee040"
   end
 
   resource "mdurl" do
@@ -66,8 +67,8 @@ class Cronboard < Formula
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/1f/e7/81fdcbc7f190cdb058cffc9431587eb289833bdd633e2002455ca9bb13d4/paramiko-4.0.0.tar.gz"
-    sha256 "6a25f07b380cc9c9a88d2b920ad37167ac4667f8d9886ccebd8f90f654b5d69f"
+    url "https://files.pythonhosted.org/packages/62/93/dcc25d52f49022ae6175d15e6bd751f1acc99b98bc61fc55e5155a7be2e7/paramiko-5.0.0.tar.gz"
+    sha256 "36763b5b95c2a0dcfdf1abc48e48156ee425b21efe2f0e787c2dd5a95c0e5e79"
   end
 
   resource "platformdirs" do
@@ -106,8 +107,8 @@ class Cronboard < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/19/89/bec5709fb759f9c784bbcb30b2e3497df3f901691d13c2b864dbf6694a17/textual-8.2.4.tar.gz"
-    sha256 "d4e2b2ddd7157191d00b228592b7c739ea080b7d792fd410f23ca75f05ea76c4"
+    url "https://files.pythonhosted.org/packages/62/1e/1eedc5bac184d00aaa5f9a99095f7e266af3ec46fa926c1051be5d358da1/textual-8.2.5.tar.gz"
+    sha256 "6c894e65a879dadb4f6cf46ddcfedb0173ff7e0cb1fe605ff7b357a597bdbc90"
   end
 
   resource "textual-autocomplete" do
@@ -116,8 +117,8 @@ class Cronboard < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/c3/af/14b24e41977adb296d6bd1fb59402cf7d60ce364f90c890bd2ec65c43b5a/tomlkit-0.14.0.tar.gz"
-    sha256 "cf00efca415dbd57575befb1f6634c4f42d2d87dbba376128adb42c121b87064"
+    url "https://files.pythonhosted.org/packages/51/db/03eaf4331631ef6b27d6e3c9b68c54dc6f0d63d87201fed600cc409307fd/tomlkit-0.15.0.tar.gz"
+    sha256 "7d1a9ecba3086638211b13814ea79c90dd54dd11993564376f3aa92271f5c7a3"
   end
 
   resource "typing-extensions" do

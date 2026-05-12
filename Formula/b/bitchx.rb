@@ -24,23 +24,16 @@ class Bitchx < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:    "a24e61a92b29742aed083f0630542dafa1b11daabbfbfe02ec73a1ba904789ff"
-    sha256 arm64_sequoia:  "bb2902a6bb21cd1b2d5765652a7ef8c5b72a9ec645bab961d3d560320a96adb2"
-    sha256 arm64_sonoma:   "774434de284a29888d4c9ed76671faf2903837d76a53acdfe25a8a358843c3ff"
-    sha256 arm64_ventura:  "13c3a23d3e7316d509646ddbd5ee5442c096856124a4f2cc9123afee2ab66bfd"
-    sha256 arm64_monterey: "2176f208cf2ef65ebe0fc9ea27d2581e21450a01f2b399aba4d0620085245bc2"
-    sha256 arm64_big_sur:  "e92a812a3fdb12ef256f677a923b1343bd9a478beb41c988ea36845e6e154d75"
-    sha256 sonoma:         "9a2c155cc9c8089674d95958a529145840263b0a9268707f30f2950e08ec3bad"
-    sha256 ventura:        "c793d5d32ff5b4bb73d9c33f12b047459245ecc9f80883c66fac3ae9a30e2f6e"
-    sha256 monterey:       "60c248c5f1b0a85a655ec9462b28982c4c0a089babdac242aedf9e0313a36f8e"
-    sha256 big_sur:        "fb716a19bd25719a59a53270eb4dd4087d11946f44fe2a7adde6aeee183917fd"
-    sha256 catalina:       "ea43f6d0776072e4a73f77621b676920c7a85c0b35446e29d61612c2e68d1ce8"
-    sha256 arm64_linux:    "4f34b4f508810bd50085303aa389932e4834bbf95db9ccecc01fc4b63a3e9039"
-    sha256 x86_64_linux:   "99bec310978096fc74fb480bd558108eb6f9a476ce0dc6721c84a5023f6913c4"
+    rebuild 2
+    sha256 arm64_tahoe:   "7e65b3f85145e10a3622f5b6d3302292f53a6cf4e895cc497595c70d3fb5f04e"
+    sha256 arm64_sequoia: "f46880225ae77a603ea81fb7dda6762e4f25954b1b35753b51c0dd8707b5317b"
+    sha256 arm64_sonoma:  "b472d9378d5349dfe5a705a3bdca6f5a7acbf5aeb418d2f2a04fd3719df746c9"
+    sha256 sonoma:        "dda418692213cb2577d76916cd29cab33a721fd77b3e5017de637b133399b7de"
+    sha256 arm64_linux:   "a45103a072852383c3e5afad9f786dadd82205b5e487dbd892b4af38fbfe48fe"
+    sha256 x86_64_linux:  "7454146fddf939532a4832c5276107ae6a64448a40ce95a39c370813d899d228"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"

@@ -6,16 +6,16 @@ class Pwntools < Formula
   url "https://files.pythonhosted.org/packages/f2/5c/9ae3d94c98b0b038ffd7f09ebdac506d346fe1b964999f71c96c8a904efd/pwntools-4.15.0.tar.gz"
   sha256 "d99a917298c1ca7241b51bba9ad2212f2af441ef66488059b2426508e9a2a776"
   license "MIT"
-  revision 7
+  revision 8
   head "https://github.com/Gallopsled/pwntools.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "de01e1e134e66ee822618319d5312aad163b51daf129cce037e69de84e638afd"
-    sha256 cellar: :any,                 arm64_sequoia: "206a28ba57e7b1cd49e4febbd4dbba4e62cbeb5feb782d0453236a0e07d79485"
-    sha256 cellar: :any,                 arm64_sonoma:  "ddb620fbfb91c4de8796ab14511ae82e3d68fdc175acab6151d430d43574729e"
-    sha256 cellar: :any,                 sonoma:        "c1bb677d5b8182bbe13cfed6ef6bf5552592ed248328d2c2b6d1bfe256419f62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1605bdc70b0e84aceedcfa92f529e0831482f1c3b86d0589319036d82a2db48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5735a638e0b7dd3a58c8411dfa8ecdc99a094cafee1c220dafa55a9b0a5f562"
+    sha256 cellar: :any,                 arm64_tahoe:   "fdf2b18eb37a58d59c9064c338f132882d10861c269d5682e572368d7885612b"
+    sha256 cellar: :any,                 arm64_sequoia: "8aec0a8b0336818921d31612c17d05368dff7266ce84dd63dde298cce03aaf95"
+    sha256 cellar: :any,                 arm64_sonoma:  "bd459772d0a45220774091de270255ff6f1e37170204dc82de6b6854adde5e36"
+    sha256 cellar: :any,                 sonoma:        "5920447b0de3b4fc4f8e6e4789db4270b187639ec1155b90d8732fbcdb6d919d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f32e38b3a681d495d60b37405f5bf2e1d289cb5e2fe62f14b3486d4884cad78f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45fc0e6822e41bfa02d8a964636d1ec71be2248703e7ac6089a1dc2cd8968741"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -82,8 +82,8 @@ class Pwntools < Formula
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/1f/e7/81fdcbc7f190cdb058cffc9431587eb289833bdd633e2002455ca9bb13d4/paramiko-4.0.0.tar.gz"
-    sha256 "6a25f07b380cc9c9a88d2b920ad37167ac4667f8d9886ccebd8f90f654b5d69f"
+    url "https://files.pythonhosted.org/packages/62/93/dcc25d52f49022ae6175d15e6bd751f1acc99b98bc61fc55e5155a7be2e7/paramiko-5.0.0.tar.gz"
+    sha256 "36763b5b95c2a0dcfdf1abc48e48156ee425b21efe2f0e787c2dd5a95c0e5e79"
   end
 
   resource "plumbum" do
@@ -162,8 +162,8 @@ class Pwntools < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   resource "zstandard" do

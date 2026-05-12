@@ -1,18 +1,18 @@
 class Kuttl < Formula
   desc "KUbernetes Test TooL"
   homepage "https://github.com/kudobuilder/kuttl"
-  url "https://ghfast.top/https://github.com/kudobuilder/kuttl/archive/refs/tags/v0.25.0.tar.gz"
-  sha256 "3b92a5acb24f3db613974f51d5667724ad70c590c7b0ff9c697e2aa10a829b27"
+  url "https://ghfast.top/https://github.com/kudobuilder/kuttl/archive/refs/tags/v0.26.0.tar.gz"
+  sha256 "03832766b9cbc6df5ee89668f34773074c91b67806ada70c18f13b2cacbf6ce1"
   license "Apache-2.0"
   head "https://github.com/kudobuilder/kuttl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6303812f327a32e3b73b920b4add24d5b26d78012131b59575b841082e32dcb7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30ea5271ddadf9f36f478f2ee3965d6599d08c244cfc1c799a59a100dd9f8f35"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a996d0e7916dddc9bf6494083647a8778cccd1ffec34fea3242289e70dca12a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "334dccceec0d32d9a8b6b140d6248692b21394d405cc1cb6d6a023417e6d5e21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de5c411baf3ea4b3f5fff733aff8b2a051b65332800c848e380cdede38e10f47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6482d2e12015c7ec9429c12cd3c2db83d8d4fb617aad1142ef327d3f8c161553"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4cda7934094575e8a9788d66e5ecc75a22f840132020b1752e2b96c517c3cb02"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01f2b46e610f641f50cf50cfc01c56b960b7fc5e28acf8b1e837149628db1e35"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6076a9df8d80b2dd8a6367bf86f6a2e4dc592c68ff94bc484596d57718247ecd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1ad73996974ea968b07c6cbe3548e8d0bc9822d401329fa2124b212163d6e80d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "add1eafb789240a5f286712a64053edb434003ac3981690691c13f373edf7e58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f56b90a6d0bcc3ada605317e74a64851e87435018d3c3a8205fa56d1f00bfad2"
   end
 
   depends_on "go" => :build

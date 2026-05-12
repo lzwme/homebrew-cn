@@ -25,7 +25,7 @@ class Whosthere < Formula
     ldflags = %W[
       -s -w
       -X main.versionStr=#{version}
-      -X main.dateStr=#{Time.now.utc.iso8601}
+      -X main.dateStr=#{time.iso8601}
     ]
 
     ldflags << "-X main.commitStr=#{Utils.git_short_head}" if build.head?

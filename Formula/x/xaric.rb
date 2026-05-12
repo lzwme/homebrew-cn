@@ -11,23 +11,16 @@ class Xaric < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:    "c6912be695b886211e28a85bc88a76e468102a70cf3a251181dcb98a7915ce0f"
-    sha256 arm64_sequoia:  "4ba45ac925f747831ac9bcee52f9c4e45e91b6d10d66181c801ec247dd1d70dd"
-    sha256 arm64_sonoma:   "411539ba49d2249cbde5b3e98bef79d227783d540891f5fcd8fa5cf51bf966f6"
-    sha256 arm64_ventura:  "38088b4ae12add10906e733b77f6fc7c7ce0482af1bbd71e6e03db6351c934b7"
-    sha256 arm64_monterey: "448f66a8156857d38d4050fc9f062d8a6bc9f9267b85a063acc776095635bc19"
-    sha256 arm64_big_sur:  "9f38a153d2c80701856c14b0bbdc776c9d50ab1f0930b668f2e3f7c377b4ecac"
-    sha256 sonoma:         "f2a0e5f1c26055646e3f999ecb00a0a3ca1ab91e4e2dc20ed7836f213a9fc046"
-    sha256 ventura:        "b46f72b6bad580eeb6583455155d8427e8c2812a5e87fe88975fdf5261e10982"
-    sha256 monterey:       "d71030b64a334132691fae5896e5924428138fa2de5bed1634cbcf22d625bedf"
-    sha256 big_sur:        "98a7bcefda0b4262da3bfbb45fe6985fae25db911cc60ea33b503be4e4598bed"
-    sha256 catalina:       "74bf2f31d52f8057a22fd38858314668cd62b89adad5a299209890a717718856"
-    sha256 arm64_linux:    "fcad340e8b719ea6a033f341a272696912a178f0945000ba90ccbf103ef5f041"
-    sha256 x86_64_linux:   "633be739d85e31a8d4e7af822a11a8c07f30c0491035fb76cd68f3b81145940b"
+    rebuild 2
+    sha256 arm64_tahoe:   "28872c99390c2300d6378440d8e060f769ab078e46c9e94a71890b0889d0a409"
+    sha256 arm64_sequoia: "97f67bb569cb2956953e6b36fda5652e6102304962f9342bab5328d9e16a73ad"
+    sha256 arm64_sonoma:  "f85f7887576b2b971caab0247fc1e9dd7dc0c8ff3bd9df731564ae9a5cc3f7cf"
+    sha256 sonoma:        "01c3409aaf6f70234eb46227f93011a4304a5d0db483cc93699ed67b8314f1e1"
+    sha256 arm64_linux:   "4e5a4883340539ac88a7ab2fc160d92eaf49af6abef2fca8dd217e65d30afb90"
+    sha256 x86_64_linux:  "79f59d62efb2fe4cccee741c6a50431596985b700547d2ef333545ec087237ef"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "ncurses"
 
@@ -47,7 +40,7 @@ class Xaric < Formula
     # Workaround for newer Clang
     ENV.append_to_cflags "-Wno-implicit-int" if DevelopmentTools.clang_build_version >= 1403
 
-    system "./configure", "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
+    system "./configure", "--with-openssl=#{Formula["openssl@4"].opt_prefix}",
                           *std_configure_args
     system "make", "install"
   end

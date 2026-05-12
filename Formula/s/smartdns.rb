@@ -17,11 +17,9 @@ class Smartdns < Formula
 
   depends_on "rust" => :build
 
-  uses_from_macos "llvm" # for libclang
+  uses_from_macos "llvm" => :build # for libclang
 
   on_linux do
-    depends_on "openssl@3" => :build # cargo patch
-    depends_on "pkgconf" => :build # cargo patch
     depends_on "bind" => :test # for `dig`
   end
 

@@ -11,17 +11,16 @@ class Spiped < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e564e671fddf59bd3bc9b9aa6607f87dca58ae3fc70930c7abcf31352fa2edc4"
-    sha256 cellar: :any,                 arm64_sequoia: "469c7104799be35f718cab24e9370e0acd2b77a15141d75efd2e7e552bf74fa5"
-    sha256 cellar: :any,                 arm64_sonoma:  "87c3d7eda651e267a339e0655d05cac5678f71a4658e8d9bd985e32f0555e0bc"
-    sha256 cellar: :any,                 arm64_ventura: "f547c50d187df541feb087d3e1534e5537e39dcb73fbbfeea606c3659626b7c3"
-    sha256 cellar: :any,                 sonoma:        "3e77a24d828c58a06b59df85b986b43ebcc14c762920f2999c9cbed7fc729761"
-    sha256 cellar: :any,                 ventura:       "8d286f9e2a3568683b839d0e64aa80ec588d547dbb83ee2ad21a41c7a28c4f4a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "06712747809b962a2faedfc00759e579b9212514dcf17d11afbf08e73aff0626"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "667cc6e283e75c64c91638c8b2c667b4239ae12bcb1957cdb0e14c4dd45a1ed9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e5b2448dfa79e10636ee1eaae63d27f776bb23a1accd2e8aa14e0b9bc948123b"
+    sha256 cellar: :any,                 arm64_sequoia: "15d4704b11467e652ab11b95799eee5ecc3a02cb3bc7d9d22b4201af4581b7db"
+    sha256 cellar: :any,                 arm64_sonoma:  "7c2bb45d44639701ff4742735b874135d0ff89874a0b5783d437b49da8e07fcb"
+    sha256 cellar: :any,                 sonoma:        "95d4d32c9e8218f883a4ca1d8685437d1377fc53b5cfb7f56da914776c6dd32e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0307fc57a2e52689f5fb0e0e30fa54e4bfe40e77e0068cd90cc5256bace74f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0220e6792de7330f0da334dc278cdc7eb48bcb9e8d9e36b6facc8a5746b062b9"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
     system "make", "BINDIR_DEFAULT=#{bin}", "MAN1DIR=#{man1}", "install"

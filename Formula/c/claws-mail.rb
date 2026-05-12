@@ -4,6 +4,7 @@ class ClawsMail < Formula
   url "https://www.claws-mail.org/releases/claws-mail-4.4.0.tar.gz"
   sha256 "642d78309b7b153699c417bcfdf505a735b19c57fd731a0bbb5752ad6adbdb52"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https://www.claws-mail.org/releases.php"
@@ -11,12 +12,12 @@ class ClawsMail < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ee1ac3be93f73c8b809260179278f32cc6f63b00fca95f6ca09ca18e4677d767"
-    sha256 arm64_sequoia: "5beef6e43f8e3f4885bc1d4077f3f9c9db320de47d0a3b61e4d1ab521718f614"
-    sha256 arm64_sonoma:  "92def14333cf5bde9b257e81f0ac9b57624ce741f5497c3e6eed46db15dc5aff"
-    sha256 sonoma:        "b22559fa49882eab1369c6207ce4324befb9ef44bcd9e351f99460914687b523"
-    sha256 arm64_linux:   "94e0b5594e366b508cc5df0cd9870a213b0b7638666177e745bb721c3c762b96"
-    sha256 x86_64_linux:  "84a791186ecf813562c124919d45dae96fdf0ea0f5b372a9f1b861854a544577"
+    sha256 arm64_tahoe:   "6831e9be76de893a5d79834b3822145fd085a3c44c8a5e65d9b7e4969a51a3a9"
+    sha256 arm64_sequoia: "dda17bbeb1dc14d1473f6dd19c4d20b22a17b0d7253c53fbd810bf8461d32c51"
+    sha256 arm64_sonoma:  "e0bd89dc66d75a171cc1237e852184ebcd4e77fac035055990b8b6e61cb1e9e8"
+    sha256 sonoma:        "d990f303124905661817b91f64b5273ba14fa62e6bdcf4bd0de2b18bddb97535"
+    sha256 arm64_linux:   "6a0866128ab5395b64c9a7cdffbc72dbe87c481b525b5447763c3351576e1cf0"
+    sha256 x86_64_linux:  "3c507d478e0d9609d483bfcbddda06b57f1cc48910766dd73cf577488a1a4fa9"
   end
 
   depends_on "pkgconf" => :build

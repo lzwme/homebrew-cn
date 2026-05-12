@@ -35,7 +35,6 @@ class GtkVnc < Formula
   depends_on "gmp"
   depends_on "gnutls"
   depends_on "gtk+3"
-  depends_on "libgcrypt"
 
   on_macos do
     depends_on "gettext"

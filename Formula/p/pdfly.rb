@@ -6,15 +6,15 @@ class Pdfly < Formula
   url "https://files.pythonhosted.org/packages/48/ae/70f161c80b3f39d8fe4ff784c78045225820d10375c81c2097c0e85ac0fc/pdfly-0.5.1.tar.gz"
   sha256 "636e9736ca3296ed69ad7e14d997813ea5a662ba7a86c77d155e343494dcc3d7"
   license "BSD-3-Clause"
-  revision 18
+  revision 19
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "057ef0e7ef816526b51cb720cd8ca02882c9dc2f9a1cfd8541dfdec1727427f1"
-    sha256 cellar: :any,                 arm64_sequoia: "21f0b8d1e357805bffe61c2d0622d6ae2ae4cc435f0100bc9d846bc7d3f70ac4"
-    sha256 cellar: :any,                 arm64_sonoma:  "47b438856d9905792028d625686d0b786a04c670d82b4c729582cee59e40de64"
-    sha256 cellar: :any,                 sonoma:        "8ea0508fd227ac4752c4aa582d3d57d58e6f7be1997f6b2be4186c0434f99097"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ce9ede6b4aa404a54066cbbb9818137d8955f014032b0cdfc4dcc72b99a4183"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34c71a5c399bdb503ef30102605816d51d36ba9e0236b02454ffcf8ed635b689"
+    sha256 cellar: :any,                 arm64_tahoe:   "e217681dbcc842ee4f06b837a651e1701a7e356e9725ef0230c1fb9f1ab41835"
+    sha256 cellar: :any,                 arm64_sequoia: "6fb572d4a655041717ea158437eeca8e0241b7d9aadb649cd28ffb2a663449b4"
+    sha256 cellar: :any,                 arm64_sonoma:  "464d7fabbc9d1502181b32c2d852e84b15e8afa908bd6fd02ccabaf66c98e776"
+    sha256 cellar: :any,                 sonoma:        "d92c162764286af26f60462d3e3751b4f85c95d1334fc415108b983cdb312921"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6758c93825ac86642827a55782e26b278ef81714ccbf821d966e79f83aad69f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bee5c0a52c966630061d0975522414ff05e3e7265020b4cc2534d2dd8d109ac"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -55,8 +55,8 @@ class Pdfly < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
-    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
+    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
+    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
   end
 
   resource "defusedxml" do
@@ -80,8 +80,8 @@ class Pdfly < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
+    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
   end
 
   resource "invoke" do
@@ -95,8 +95,8 @@ class Pdfly < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
   resource "mdurl" do
@@ -105,8 +105,8 @@ class Pdfly < Formula
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/1f/e7/81fdcbc7f190cdb058cffc9431587eb289833bdd633e2002455ca9bb13d4/paramiko-4.0.0.tar.gz"
-    sha256 "6a25f07b380cc9c9a88d2b920ad37167ac4667f8d9886ccebd8f90f654b5d69f"
+    url "https://files.pythonhosted.org/packages/62/93/dcc25d52f49022ae6175d15e6bd751f1acc99b98bc61fc55e5155a7be2e7/paramiko-5.0.0.tar.gz"
+    sha256 "36763b5b95c2a0dcfdf1abc48e48156ee425b21efe2f0e787c2dd5a95c0e5e79"
   end
 
   resource "pygments" do
@@ -125,8 +125,8 @@ class Pdfly < Formula
   end
 
   resource "pypdf" do
-    url "https://files.pythonhosted.org/packages/7b/3f/9f2167401c2e94833ca3b69535bad89e533b5de75fefe4197a2c224baec2/pypdf-6.10.2.tar.gz"
-    sha256 "7d09ce108eff6bf67465d461b6ef352dcb8d84f7a91befc02f904455c6eea11d"
+    url "https://files.pythonhosted.org/packages/bf/58/6dd97d78a4b17a7a6b9d1c6ad23895abc41f0fdc49c553cc05bdfdcc36d0/pypdf-6.11.0.tar.gz"
+    sha256 "062b51c81b0910e6d2755e99e1c5547a0a23b7d0a32322af66240d8edcfabe87"
   end
 
   resource "requests" do
@@ -145,13 +145,13 @@ class Pdfly < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/f5/24/cb09efec5cc954f7f9b930bf8279447d24618bb6758d4f6adf2574c41780/typer-0.24.1.tar.gz"
-    sha256 "e39b4732d65fbdcde189ae76cf7cd48aeae72919dea1fdfc16593be016256b45"
+    url "https://files.pythonhosted.org/packages/e4/51/9aed62104cea109b820bbd6c14245af756112017d309da813ef107d42e7e/typer-0.25.1.tar.gz"
+    sha256 "9616eb8853a09ffeabab1698952f33c6f29ffdbceb4eaeecf571880e8d7664cc"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   def install

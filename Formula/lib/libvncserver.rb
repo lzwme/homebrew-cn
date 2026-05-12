@@ -4,6 +4,7 @@ class Libvncserver < Formula
   url "https://ghfast.top/https://github.com/LibVNC/libvncserver/archive/refs/tags/LibVNCServer-0.9.15.tar.gz"
   sha256 "62352c7795e231dfce044beb96156065a05a05c974e5de9e023d688d8ff675d7"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/LibVNC/libvncserver.git", branch: "master"
 
   livecheck do
@@ -12,20 +13,18 @@ class Libvncserver < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ce1472b68ae1ac5412007a81f99ddec58cec02d3d13b4e9cceb1fe90202ab912"
-    sha256 cellar: :any,                 arm64_sequoia: "4a3d1fee5603436a04b846cb9502e70fbee34a787d6a5201e1888845242de4f2"
-    sha256 cellar: :any,                 arm64_sonoma:  "30629338dbd5ba92cb3726419a559cb9dfa0e7f39cce27976ce3967c1d0d4075"
-    sha256 cellar: :any,                 sonoma:        "b7e7461e4689b9265688597301f7a15ac6b49f77a6a97ae8a5748c8ea6fffcfc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8cb88d51bf4a691357fe3020a78e367687b6329db0394eff5de2af46c439fed6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e4f2fb7d81aa49887b2c26579ca48af09812947fedca499f70d832e269cd516"
+    sha256 cellar: :any,                 arm64_tahoe:   "865a4376a6361437e19230eb55c8baaa89c837e693e7a352d080a91050c7c2ee"
+    sha256 cellar: :any,                 arm64_sequoia: "09c5d54a804cd66267e2f453978281e19edbcacd434b6507bef2d928da69a79d"
+    sha256 cellar: :any,                 arm64_sonoma:  "18f58d8fedea600268bb9a70a470fb279c1afe0086b09b8282e1454904bf3c0c"
+    sha256 cellar: :any,                 sonoma:        "7a127ab1078d09af7ad9d28f554a8ce44fcc32e0259db44031b2ac8ece3b41ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a66daa25ce9cdb07ed0000ff45f93f3f6101621188f712f8a2d97b216891af8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ce999949a58f1263bd09e67af8a39f1709c0f5d8a055696151b0594a1793fda"
   end
 
   depends_on "cmake" => :build
   depends_on "jpeg-turbo"
-  depends_on "libgcrypt"
   depends_on "libpng"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
@@ -35,11 +34,15 @@ class Libvncserver < Formula
     args = %W[
       -DJPEG_INCLUDE_DIR=#{Formula["jpeg-turbo"].opt_include}
       -DJPEG_LIBRARY=#{Formula["jpeg-turbo"].opt_lib/shared_library("libjpeg")}
-      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
+      -DOPENSSL_ROOT_DIR=#{Formula["openssl@4"].opt_prefix}
       -DWITH_EXAMPLES=OFF
+      -DWITH_GCRYPT=OFF
+      -DWITH_GNUTLS=OFF
+      -DWITH_OPENSSL=ON
     ]
     # Workaround for CMake 4 compatibility
     args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "ctest", "--test-dir", "build", "--verbose"

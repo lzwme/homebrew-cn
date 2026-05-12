@@ -1,18 +1,18 @@
 class Canfigger < Formula
   desc "Simple configuration file parser library"
   homepage "https://github.com/andy5995/canfigger/"
-  url "https://ghfast.top/https://github.com/andy5995/canfigger/releases/download/v0.3.1/canfigger-0.3.1.tar.xz"
-  sha256 "8ecb23692b2fdfd8f2f8f22bacf07ab7976915fd157692920c28400caa6aa1bf"
+  url "https://ghfast.top/https://github.com/andy5995/canfigger/releases/download/v0.3.2/canfigger-0.3.2.tar.xz"
+  sha256 "f128a62cec50cce16e1e8c87012f8564d972b663316b27358d1d7f6b4486bec8"
   license "MIT"
   head "https://github.com/andy5995/canfigger.git", branch: "trunk"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2783d1ab89eb7929acc3d8ab9ba99c232f0f7d83a6fdcea6679ff28fac5727cb"
-    sha256 cellar: :any,                 arm64_sequoia: "b22c284f204b00392945429c4b960d7187ef2320010e87c77394d7c5e7fb349a"
-    sha256 cellar: :any,                 arm64_sonoma:  "9f34ac6b55913b3b31fee5b6292da93186020b66bf04d69b8072c36f91588ed6"
-    sha256 cellar: :any,                 sonoma:        "79c9d4b14069056c12d285aa5ec0d58534bf6dd662b68d538ce5a7913a0283d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d3f262bccf48f54a2d488399d949f0521d85187ce43c328cacd75db354a5af4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e96d150674a7cd65055737d5caa4cb5a7b8cc27618e02837fd570979e2cf1bd"
+    sha256 cellar: :any,                 arm64_tahoe:   "13a1c0f9dc12a5ab24bb8135873296b386a9a2550adb8c70ca2baa62035b5e68"
+    sha256 cellar: :any,                 arm64_sequoia: "0f6c11ffa385f60746737a34ad1e358b05a5695244d6a7764309a5d11617a671"
+    sha256 cellar: :any,                 arm64_sonoma:  "e89a075bcb14bd0e42811ba36699c3418eae2538631fa0ee3473712c5a5cd913"
+    sha256 cellar: :any,                 sonoma:        "a25520c1a99e0d88ac2449d30daadfb00c95837466b4ec9678aaa449d38e6894"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2aedd0fc386f76944c4d383b849e5a4f670330ecf9d13c454ae2c9a79082bde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "961162137d888c0bc94b2fa6573d35c68429d50262a02be47a5a7d2573df7f7f"
   end
 
   depends_on "meson" => :build
@@ -30,7 +30,7 @@ class Canfigger < Formula
     EOS
 
     (testpath/"test.c").write <<~C
-      #include <canfigger.h>
+      #include <canfigger/canfigger.h>
       #include <stdio.h>
 
       int main()

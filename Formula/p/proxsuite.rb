@@ -1,19 +1,18 @@
 class Proxsuite < Formula
   desc "Advanced Proximal Optimization Toolbox"
   homepage "https://github.com/Simple-Robotics/proxsuite"
-  url "https://ghfast.top/https://github.com/Simple-Robotics/proxsuite/releases/download/v0.7.2/proxsuite-0.7.2.tar.gz"
-  sha256 "dedda8e06b2880f99562622368abb0c0130cc2ab3bff0dc0b26477f88458a136"
+  url "https://ghfast.top/https://github.com/Simple-Robotics/proxsuite/releases/download/v0.7.3/proxsuite-0.7.3.tar.gz"
+  sha256 "1178721869898401e0a9d7c46803486c87d6ede3356770507dfb1022500a442b"
   license "BSD-2-Clause"
   head "https://github.com/Simple-Robotics/proxsuite.git", branch: "devel"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "2912fb63e15581feb0bb390fd5ed3e525c46bcb7b6781d12bd813dfe6282ce59"
-    sha256 cellar: :any,                 arm64_sequoia: "493ab8fd75c3da238ccf667516e248abfde1a8feb04ab5a6ce6813c7f35631ad"
-    sha256 cellar: :any,                 arm64_sonoma:  "d0484ed787682b90d87bfb5bb834b88e68ea04ac9d9fed36f27defa821469225"
-    sha256 cellar: :any,                 sonoma:        "3ff24000da0064252d189835999b4775042709339922ac3891c75c7201a91a08"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "696c5bd08330dba311f390d3aa3be29016d4d74ebc7d714bf2aee89c31580537"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd84dda9a674cf2ff721ce5cd3a2b62d03977601306072a905adec2559de78e2"
+    sha256 cellar: :any,                 arm64_tahoe:   "0bf056d143141e3660a576f96b2e4522558443aacfcd2e1ec9d40621f421578e"
+    sha256 cellar: :any,                 arm64_sequoia: "eead59678eb4a71600feb14764e7748e63166c1790e9dfb435b722a2d56e7229"
+    sha256 cellar: :any,                 arm64_sonoma:  "7abbc7e4b505cb780732626cb8864101201c461a9919b063e5f8918b4d318d0d"
+    sha256 cellar: :any,                 sonoma:        "249aefe18bee8ce9f9123f35ed09ff00ba654023537826c4c6cb5101d4cce723"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5bf63cea4f9f3f1acfe15b6627759bf6176dc3c21903c355ed2ece2b2243276e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c7a07960a47c7e1aa6f4f1ab72f82a7dde10197b3dbe5f179c54f3742231905"
   end
 
   depends_on "cmake" => :build

@@ -1,17 +1,17 @@
 class Sq < Formula
   desc "Data wrangler with jq-like query language"
   homepage "https://sq.io"
-  url "https://ghfast.top/https://github.com/neilotoole/sq/archive/refs/tags/v0.50.2.tar.gz"
-  sha256 "ad39478132f1f056ec894cc36fb7d090eb1131aab8e42e108454bf46ea18f0ee"
+  url "https://ghfast.top/https://github.com/neilotoole/sq/archive/refs/tags/v0.51.0.tar.gz"
+  sha256 "fc0350854f40ef54a820744f622aac25a005c918f42e1e6181e13aff620c847a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2309132f02d23948bbd2824aca21ba1bbaa63429fbacd73c09a626ce6d997af"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86ff35699927f1222138ca91bbc1ae39b94b45418009a9506f75fb4b18ceff0c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b51980a0cd57d177afccafbab78cd0a3f33087d322000dad04ea2466203d5775"
-    sha256 cellar: :any_skip_relocation, sonoma:        "37e4276bee75bc62079e695841b573fed2c8a43d78234503eb03e7cd3981329f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75568138a93cea1de32f9429e5362f02d7d432487fc8268daf201e534c26b373"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a520c7a5e7850c33c79c6a60451843c93cf669578794fcbc74789f157a75e6b4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80cf6e81610c2e2825bfb5665ef16be4d208ff35e6c07ed02b825fcc713f3f1f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be2a04d3dda2504b1e9e6b292a03c182fae7d9002083bb61ac7a26de90064a8b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a37a5e434dd50a0905af5dac8741ad51ea51e559e8dd3a6c931e3bea8939d577"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d9ce6103f7e3bccdc6a1c3044479dcd8eacaa236dbb9b64a29cb5dd61c6770df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e948b94a569bb41b06437f71f8c60b5e6a64c4878b3cb9e2503cdc9e89f402fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39cd117716e9534e2df57680ed3dba3bd1d6ff63e6db76bdd04c268c697e3f30"
   end
 
   depends_on "go" => :build
@@ -28,7 +28,7 @@ class Sq < Formula
       -s -w
       -X #{pkg}.Version=v#{version}
       -X #{pkg}.Commit=RELEASE
-      -X #{pkg}.Timestamp=#{Time.now.utc.strftime("%Y-%m-%dT%H:%M:%SZ")}
+      -X #{pkg}.Timestamp=#{time.iso8601}
     ]
     tags = %w[
       netgo sqlite_vtable sqlite_stat4 sqlite_fts5 sqlite_introspect

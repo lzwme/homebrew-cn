@@ -1,19 +1,19 @@
 class Taglib < Formula
   desc "Audio metadata library"
   homepage "https://taglib.org/"
-  url "https://taglib.github.io/releases/taglib-2.2.1.tar.gz"
-  sha256 "7e76b5299dcef427c486bffe455098470c8da91cf3ccb9ea804893df57389b5e"
+  url "https://taglib.github.io/releases/taglib-2.3.tar.gz"
+  sha256 "7349f6fd942418bc7009ebe743eb7c9d055f02921ec56fa436ec25007c47fd38"
   license all_of: ["LGPL-2.1-only", "MPL-1.1"]
   compatibility_version 1
   head "https://github.com/taglib/taglib.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9315a7d9f236c78d35ac88daee8705298e425718f97ce3494bde03bdb8506426"
-    sha256 cellar: :any,                 arm64_sequoia: "6d1d590a442ccc669c24fa9b8727962bab762682044cc321cca18fd5a739b005"
-    sha256 cellar: :any,                 arm64_sonoma:  "a0773f69906e88dc041d145156d5686e7737932081ddd98a2593ec3ef423d130"
-    sha256 cellar: :any,                 sonoma:        "24e7ccdd3c1259ccb23f4e2095171d26867721811bb140a5c9f863377e09debb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6178db89831024c5de4baef2d8a1164a4959b744596bf1540b670d6da623ad9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4daf489c39964118ce9ce2d818ce33b672c31c56f656a8210865ce315bfb835c"
+    sha256 cellar: :any,                 arm64_tahoe:   "a928c47709f2870b87d973f74358edf18816d8263304f5e4e9911898162107a3"
+    sha256 cellar: :any,                 arm64_sequoia: "65e5ecc716029c9d1eae11fb643a18df772980a01a09cad434af97bcba955bdb"
+    sha256 cellar: :any,                 arm64_sonoma:  "6b2e26e84d1f58b7a04b40e33bbcdab30f3459779f9229c248f196ca8e94f3d7"
+    sha256 cellar: :any,                 sonoma:        "eb9aefea72d75bee73fc35661433d9f2ebd20f408f70c91011b81c3ccb140f96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6c5c4793004c5c00d0e1267fd3ac8258a9a136cbfe7b471942543733da76d1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "051fc7c416146bc92af62e067e517c3ee37b8834f7a7a8ebb66d1f6dd98f11fd"
   end
 
   depends_on "cmake" => :build

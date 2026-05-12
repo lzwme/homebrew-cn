@@ -3,7 +3,7 @@ class LibniceGstreamer < Formula
   homepage "https://wiki.freedesktop.org/nice/"
   url "https://libnice.freedesktop.org/releases/libnice-0.1.23.tar.gz"
   sha256 "618fc4e8de393b719b1641c1d8eec01826d4d39d15ade92679d221c7f5e4e70d"
-  license any_of: ["LGPL-2.1-only", "MPL-1.1"]
+  license any_of: ["LGPL-2.1-or-later", "MPL-1.1"]
 
   livecheck do
     formula "libnice"

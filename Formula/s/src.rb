@@ -1,8 +1,8 @@
 class Src < Formula
   desc "Simple revision control: RCS reloaded with a modern UI"
   homepage "http://www.catb.org/~esr/src/"
-  url "https://gitlab.com/esr/src/-/archive/1.43/src-1.43.tar.bz2"
-  sha256 "f9e232c61585c47c81f996ba98dc93479ced1c51ea527b79c420b8384491db0a"
+  url "https://gitlab.com/esr/src/-/archive/1.44/src-1.44.tar.bz2"
+  sha256 "7885e8b30c9c8e35649a4e20c871fd25e15c30d031a977131f71a9196b03a9e9"
   license "BSD-2-Clause"
   head "https://gitlab.com/esr/src.git", branch: "master"
 
@@ -14,7 +14,7 @@ class Src < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "080ff71d5b76bd67e6d07b091544b684ea25bc8d67ac5e0610aff8f20b622caa"
+    sha256 cellar: :any_skip_relocation, all: "9cac4a82561a5981c4174c70c5d7fc1ba066b44641b01f1c21fc8ced039d98a0"
   end
 
   depends_on "asciidoctor" => :build

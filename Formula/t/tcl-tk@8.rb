@@ -1,8 +1,8 @@
 class TclTkAT8 < Formula
   desc "Tool Command Language"
   homepage "https://www.tcl-lang.org"
-  url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.17/tcl8.6.17-src.tar.gz"
-  sha256 "a3903371efcce8a405c5c245d029e9f6850258a60fa3761c4d58995610949b31"
+  url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.18/tcl8.6.18-src.tar.gz"
+  sha256 "14f9af32b1767ff718477a8f974ad03c34341097e6b43f4ce54644ee974e268e"
   license "TCL"
   compatibility_version 1
 
@@ -12,13 +12,12 @@ class TclTkAT8 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "c3cef13113dc7af58e7636256289cea7e3f362347f06f96e9417895f5c84494d"
-    sha256 arm64_sequoia: "a5dc8687fecd89ea1ce437a409f3e8938161f8f9fd728679d7ba98aaf9a4a121"
-    sha256 arm64_sonoma:  "5d0e9ae8eebb1e442cb2c27d491b90ac1fdb4b97f0403eaf4de208c1ef2a499c"
-    sha256 sonoma:        "06138d4241d0aa4b4b552dde04215678194643cb5435067b43cf0e8be2b5551e"
-    sha256 arm64_linux:   "baea2f270066d9f00cdb3fc43d4657e1c566d21965b6602cefa310c6bbf586ab"
-    sha256 x86_64_linux:  "dd71d9dee7ad8ff7ac1306e5696471b106ed15081dbf3ff227173a1bccc78fdc"
+    sha256 arm64_tahoe:   "c40ffcd937c2f73a63ee9f881e0efc9ae71ad4d47a723fafedca529da35f5068"
+    sha256 arm64_sequoia: "0c8dffb79d3016c682d91b8523bad6fa7d34dcbf71b0ac6748739e4cef4bf709"
+    sha256 arm64_sonoma:  "d63f01ac7cd5b63caad23298dd1cde88ff1e0cc157c7523d12e0de5c2d9d6c7d"
+    sha256 sonoma:        "00a571bba78b5e8af791f7e9922dc8d0e820f33592a7b0e94cb4376337467fad"
+    sha256 arm64_linux:   "3a0d2901293c588fa84b7d09d147f946bf4bd2b94234b18ea8b235b351b24a4c"
+    sha256 x86_64_linux:  "21ee038d6ced19d84c4e64d13563f4c66fcaa331847ef8fe5c6e28a855b87a48"
   end
 
   keg_only :versioned_formula
@@ -49,8 +48,8 @@ class TclTkAT8 < Formula
   end
 
   resource "tk" do
-    url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.17/tk8.6.17-src.tar.gz"
-    sha256 "e4982df6f969c08bf9dd858a6891059b4a3f50dc6c87c10abadbbe2fc4838946"
+    url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.18/tk8.6.18-src.tar.gz"
+    sha256 "95cd528a80f5e4bdb557af9b14a7197d6860793a3894e25e7c9fad2ed05d4c3c"
 
     livecheck do
       formula :parent

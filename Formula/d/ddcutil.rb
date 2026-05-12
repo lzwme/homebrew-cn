@@ -1,8 +1,8 @@
 class Ddcutil < Formula
   desc "Control monitor settings using DDC/CI and USB"
   homepage "https://www.ddcutil.com"
-  url "https://www.ddcutil.com/tarballs/ddcutil-2.2.6.tar.gz"
-  sha256 "e4b69191c0b450aea23a34a592cf3c58f027fe1462020179070cc92d5ecaed88"
+  url "https://www.ddcutil.com/tarballs/ddcutil-2.2.7.tar.gz"
+  sha256 "19ac6604cf1177ba56666f8a682581e71e8973bd06c7c8dcf033674e4aaaa648"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,11 +11,13 @@ class Ddcutil < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "267db3358097d6518e2a17f47de646fbe2510557292e926b1d1e2d4b3513cdd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2dfd6af3351cdec8e1ee8c714095c107e3233c5a4fb66d8e30d237b8ef5e3936"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "604c2801d09419e20c2457f7aec8d605abd86b846d537ffbefd18665aa626012"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d7e228a9ada1605b7958660a90ce03cd5710e464a767b2a39c02a24f4e17c9fe"
   end
 
   depends_on "pkgconf" => :build
+  depends_on "acl"
+  depends_on "dbus"
   depends_on "glib"
   depends_on "i2c-tools"
   depends_on "jansson"

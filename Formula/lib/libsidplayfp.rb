@@ -30,11 +30,6 @@ class Libsidplayfp < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "libgcrypt"
-
-  on_linux do
-    depends_on "zlib-ng-compat"
-  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?

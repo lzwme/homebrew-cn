@@ -8,40 +8,32 @@ class Dxpy < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f3a5e3cf7c20cdb0a38e80e637b20cc37205a5b4b9916bee92c06ff38a14d409"
-    sha256 cellar: :any,                 arm64_sequoia: "30331680e60744ca24e9323f8638ca8b34a0159c9773ebcc4a219c7ee5ffe069"
-    sha256 cellar: :any,                 arm64_sonoma:  "d871f90635fe7771f8962150b4e7b30af3fba10a87df39fcfd95aed51e3bac58"
-    sha256 cellar: :any,                 sonoma:        "e345a969e2acfb30f432d8824cff2a95b900d4ab2a45f19511a8bbe32aedf8ac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0cc8ac24ca77841503eb265adb92cdebf7a2c053f51ea15698ad4586acb7d66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfc7cf9b4ac97b9ebd81cd7355eb044d03e7244b121e47171370ba60470d00e9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "4269af4ee091220a5d7c448fe6ba5329aeff92aac59f6d090ee4bba063f7f21f"
+    sha256 cellar: :any,                 arm64_sequoia: "6d4640dd08daf8c47ba0dec95131f19a72fc91579b568c63bd7107fc1a03263b"
+    sha256 cellar: :any,                 arm64_sonoma:  "fa8e552b5916b630e770a92651d04c2d30c07c3eabaeef6b84e7c1b8f1bcd6e0"
+    sha256 cellar: :any,                 sonoma:        "f86802378758c5045f24882465623aa6e4063ea8ed7140ea5073db8925ff9fa6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5931423419e04e0fab96ada548b54bb4c548ff9b6fac1571ad7185d81ddb4783"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66405b7df97653673a6fdbeb17d2df416986b370b6b93cdaa8f78bbcface8263"
   end
 
-  depends_on "cmake" => :build # for awscrt
   depends_on "aws-c-auth"
   depends_on "aws-c-cal"
   depends_on "aws-c-common"
-  depends_on "aws-c-compression"
   depends_on "aws-c-event-stream"
   depends_on "aws-c-http"
   depends_on "aws-c-io"
   depends_on "aws-c-mqtt"
   depends_on "aws-c-s3"
-  depends_on "aws-c-sdkutils"
   depends_on "aws-checksums"
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
-  depends_on "openssl@3"
   depends_on "python@3.14"
 
-  uses_from_macos "libffi"
-
   on_macos do
-    depends_on "readline" => :no_linkage
-  end
-
-  on_linux do
-    depends_on "aws-lc"
-    depends_on "s2n"
+    depends_on "aws-c-compression"
+    depends_on "aws-c-sdkutils"
+    depends_on "openssl@3"
   end
 
   conflicts_with "deno", because: "both install `dx` binaries"

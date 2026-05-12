@@ -6,15 +6,15 @@ class Fdroidserver < Formula
   url "https://files.pythonhosted.org/packages/32/c6/f4b247069f703b765037888a24e0fa9508ea9590e78cb344908c90d6e7bd/fdroidserver-2.4.4.tar.gz"
   sha256 "c07fbb68eb505563d9c29560d8880bd51f43274de521a534cde9e24c3028afec"
   license "AGPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e170d6d46bfe3ba72f7aaf04f87f704224a00aa88ea85a5054b5f014cde2635b"
-    sha256 cellar: :any,                 arm64_sequoia: "d7a071268b2e68bf90fb03e050b85cd4c5c761e49792fdf0bc673e82fbc3c7c3"
-    sha256 cellar: :any,                 arm64_sonoma:  "b255652d4c0245ee59a77994057444b344727ccd64ade8f186ac483cf5b36316"
-    sha256 cellar: :any,                 sonoma:        "50aad19d55e01a8dd11711d5086e6004d3d9cb8abf721a06af12970d40b2b642"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3eb467d98ec8c170ebb88c8817ebaf88568923d45b5068c3e1cdbc9bc04c66a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de0b443f9e658424e2043f70f31e045c5c98a8bd7d82f3ee16504be1d3049156"
+    sha256 cellar: :any,                 arm64_tahoe:   "4c1560ea6c14b8b17831611cde663d0c2db0c160283f2c4b96de749a08ea33e2"
+    sha256 cellar: :any,                 arm64_sequoia: "d269a72bf0a34ed1056c1e91c835ed61381d022d9ef1dc695de79aff1e8b50f3"
+    sha256 cellar: :any,                 arm64_sonoma:  "f1344bfb07ee06c96694787fc49a4faf85661ba03715d96fcf92b28b33d906bf"
+    sha256 cellar: :any,                 sonoma:        "51d4927a7a0e63014aa10b433352175fcb58ce260180733955dd2d5fbc68c89f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcf6170fa163351668b2dd60b72ee02708bf7692fcd3e717abbd8014e297a70d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52f5d835be64edf1a990303ae5a361aa36ce2f48dc42de8e3c9baf2e8f85116e"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -229,8 +229,8 @@ class Fdroidserver < Formula
   end
 
   resource "matplotlib-inline" do
-    url "https://files.pythonhosted.org/packages/c7/74/97e72a36efd4ae2bccb3463284300f8953f199b5ffbc04cbbb0ec78f74b1/matplotlib_inline-0.2.1.tar.gz"
-    sha256 "e1ee949c340d771fc39e241ea75683deb94762c8fa5f2927ec57c83c4dffa9fe"
+    url "https://files.pythonhosted.org/packages/bd/c0/9f7c9a46090390368a4d7bcb76bb87a4a36c421e4c0792cdb53486ffac7a/matplotlib_inline-0.2.2.tar.gz"
+    sha256 "72f3fe8fce36b70d4a5b612f899090cd0401deddc4ea90e1572b9f4bfb058c79"
   end
 
   resource "mutf8" do
@@ -254,8 +254,8 @@ class Fdroidserver < Formula
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/1f/e7/81fdcbc7f190cdb058cffc9431587eb289833bdd633e2002455ca9bb13d4/paramiko-4.0.0.tar.gz"
-    sha256 "6a25f07b380cc9c9a88d2b920ad37167ac4667f8d9886ccebd8f90f654b5d69f"
+    url "https://files.pythonhosted.org/packages/62/93/dcc25d52f49022ae6175d15e6bd751f1acc99b98bc61fc55e5155a7be2e7/paramiko-5.0.0.tar.gz"
+    sha256 "36763b5b95c2a0dcfdf1abc48e48156ee425b21efe2f0e787c2dd5a95c0e5e79"
   end
 
   resource "parso" do

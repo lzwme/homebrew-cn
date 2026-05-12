@@ -4,6 +4,7 @@ class Opendht < Formula
   url "https://ghfast.top/https://github.com/savoirfairelinux/opendht/archive/refs/tags/v3.7.1.tar.gz"
   sha256 "363bbe80e937e612c6642e0a395a9efbc0714dfeb65935ec6a63194a55ca8aec"
   license "MIT"
+  revision 1
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -14,23 +15,29 @@ class Opendht < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0fc3ce493601f30db6e3a6a15c7b56cbfa0d90f911e4c0b3d4d33cd80a1b5323"
-    sha256 cellar: :any,                 arm64_sequoia: "6b3ac403c5d69df2aa6353ce7460dcacab6262a1378a3ac90bb549d791449c5f"
-    sha256 cellar: :any,                 arm64_sonoma:  "d6abe4cf6538c04ef0924ef51396c33ebce1cdc824dff800ee3a2e4492a56900"
-    sha256 cellar: :any,                 sonoma:        "bac677e8a34fd7f609412a32724e7ea59c985845c9d4b1931f5ece1e2e771ff2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29bbab9a704134cafded477704180ef11f4f983f8f56974b97a50d2c8481e510"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b65244d50d8ff23e65173fd246c0e93006543f19b888c16245924b87a126aeb"
+    sha256 cellar: :any,                 arm64_tahoe:   "4780c887120eb5982b7c56d8dffcf9c379742bd6d29651a45b498b1add0b1174"
+    sha256 cellar: :any,                 arm64_sequoia: "cecf455aa1a7ca788fd7aa93f61991306892eac5d4f7068262679b8913ca39e1"
+    sha256 cellar: :any,                 arm64_sonoma:  "fc85fed2611c68a15f6b415c56a4e04d0437d041cabae939c1be94d4e97b8fea"
+    sha256 cellar: :any,                 sonoma:        "594ebd908f73bd3f1c27e8c2c165a59065960adc8683af28b3f442122d956cf7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "950bd7aad0db1887175b147b1675c515932fa61a33460813d7af3ebf0c0a07a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0f7e95aebe4cee7fec6609edb149c5728cdeaa41936ae365fc4a2277e0cc3f2"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "argon2"
-  depends_on "asio"
+  depends_on "asio" => :no_linkage
   depends_on "fmt"
   depends_on "gnutls"
-  depends_on "msgpack-cxx"
+  depends_on "msgpack-cxx" => :no_linkage
   depends_on "nettle"
   depends_on "readline"
+
+  # Apply Arch Linux patch to support Nettle 4
+  patch do
+    url "https://gitlab.archlinux.org/archlinux/packaging/packages/opendht/-/raw/f9240e64a01cdadc5c8401e3a1106ed7cd9bf3ee/nettle-4.patch"
+    sha256 "88556b2a0cf071971a565ea312be9164356747656078d3537d3910bc38af8880"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build",

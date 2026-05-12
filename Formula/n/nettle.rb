@@ -1,21 +1,19 @@
 class Nettle < Formula
   desc "Low-level cryptographic library"
   homepage "https://www.lysator.liu.se/~nisse/nettle/"
-  url "https://ftpmirror.gnu.org/gnu/nettle/nettle-3.10.2.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/nettle/nettle-3.10.2.tar.gz"
-  sha256 "fe9ff51cb1f2abb5e65a6b8c10a92da0ab5ab6eaf26e7fc2b675c45f1fb519b5"
+  url "https://ftpmirror.gnu.org/gnu/nettle/nettle-4.0.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/nettle/nettle-4.0.tar.gz"
+  sha256 "3addbc00da01846b232fb3bc453538ea5468da43033f21bb345cb1e9073f5094"
   license any_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
-  compatibility_version 1
+  compatibility_version 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f433c0830169086cae47237fc4fe4b8c71021ec9683006db96e066ff0b883030"
-    sha256 cellar: :any,                 arm64_sequoia: "12c88e8d20a6b5161aa759820710b0d793212f46be7d48933e4519198480bd85"
-    sha256 cellar: :any,                 arm64_sonoma:  "57596e345b70dbb3debba5d8ba9b90147963f62e25022c2661a3672f25304753"
-    sha256 cellar: :any,                 arm64_ventura: "a5f3b6f969357a94626cc52f6e5869a77a0c6fe8bc5ab4fc491ea83ae6986e65"
-    sha256 cellar: :any,                 sonoma:        "46f05ed1c965061f176755083b8a14e6f8cfc3543201d95691bc2a4090309152"
-    sha256 cellar: :any,                 ventura:       "d82f1ec725dc230650b93facd5d8b5d7f0c2bd6f76b0aa7c6a9d6c3a154e4e91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "411e940ef2c87423f8c0ed34427aa5235e0bc702b40943e3564878a62c76d420"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff4a7452b4dcf2f1ad266f19f5eb5a29e02b5d1215d4bc46f3d4c4ca4b8e6282"
+    sha256 cellar: :any,                 arm64_tahoe:   "ba11eb261bc502c28c9cd695f8354306d0a31cb1e55c3d3f1568e051293a0f10"
+    sha256 cellar: :any,                 arm64_sequoia: "01050aa13ce3825fc1b81f1a3c5994a165301b9d5223a9fb9015d122bde5ca3e"
+    sha256 cellar: :any,                 arm64_sonoma:  "ffcf86d94ce0ee31890cfc5e2debfba3f4ab9125a507ff21cfa557acac70087e"
+    sha256 cellar: :any,                 sonoma:        "2830a19a06e2995fc7a19ecd7c14d3bc87e9362fb9c52d2489582246f256662d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "150e9b064e29adf5e75acedbe9de51af5befbd2a7d9986e8ec578646a0af6b19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06c75ac3e75c761b4553312c4ffc12c31eb1757b5ec3e85ce75adc9524337302"
   end
 
   depends_on "gmp"
@@ -42,7 +40,7 @@ class Nettle < Formula
 
         sha1_init(&ctx);
         sha1_update(&ctx, 4, "test");
-        sha1_digest(&ctx, SHA1_DIGEST_SIZE, digest);
+        sha1_digest(&ctx, digest);
 
         printf("SHA1(test)=");
 

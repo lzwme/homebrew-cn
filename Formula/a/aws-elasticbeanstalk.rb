@@ -6,14 +6,15 @@ class AwsElasticbeanstalk < Formula
   url "https://files.pythonhosted.org/packages/fd/9d/9c36f5f3eb9cae3827c0c9a36f740e4200c189cf06f7d09af1a5081049ba/awsebcli-3.27.1.tar.gz"
   sha256 "83bcb4e5de2ce9659d07246ac32eb4a8e109d8627c045a55c2c142e9a7ed5683"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "70c684be1a03b582f27e9704e6ccc07b0f908a008493199d7b01c783668ea68a"
-    sha256 cellar: :any,                 arm64_sequoia: "43da7c01913fa9e70af7388576ce4d9f658755927f49511991cf594f5969c8fe"
-    sha256 cellar: :any,                 arm64_sonoma:  "f631900f396f096a31ebbe98c348b6fac455cd9f8caacec9fb62e57866bc16d2"
-    sha256 cellar: :any,                 sonoma:        "658d23e1c4acb2db591d81799e1327274f3fe73cd6df864cdcc02494aa101ab2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aac118fdf912dc3b7c82c270cd54634e45a052479ac0a228babb1e264bb4c606"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "570144ff90f570333d7300afc4e621582688bead5f92d79b4b93566d118d7cab"
+    sha256 cellar: :any,                 arm64_tahoe:   "e8428e65cff9aef33805be49513b0c376853d6ceff86b74637af4b3697f0e627"
+    sha256 cellar: :any,                 arm64_sequoia: "34faff35d9719c8444d0d1eca8430f17cec7748fe18bb7a6ab4ad1fdb81303ea"
+    sha256 cellar: :any,                 arm64_sonoma:  "2371a06b39e062566495b92f56372b606c59f893aab9fd672c430f89bd28a8ae"
+    sha256 cellar: :any,                 sonoma:        "0d25be58e8d4fe3ab1e6cfe4c04a4a380a6db1cf8daf55b0af81e66ef67edd71"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1db291c6f12ef212a95a8a56afaf42f9eac2a6f7e6ad88d073f14c4e7e402f8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4db93d19753721ec356789e6ee4fc53ba775f6725f91747952adc5005d065baa"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -40,8 +41,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/9d/05/b16d6ac5eea465d42e65941436eab7d2e6f6ebef01ba4d70b6f5d0b992ce/botocore-1.42.75.tar.gz"
-    sha256 "95c8e716b6be903ee1601531caa4f50217400aa877c18fe9a2c3047d2945d477"
+    url "https://files.pythonhosted.org/packages/79/a7/23d0f5028011455096a1eeac0ddf3cbe147b3e855e127342f8202552194d/botocore-1.43.6.tar.gz"
+    sha256 "b1e395b347356860398da42e61c808cf1e34b6fa7180cf2b9d87d986e1a06ba0"
   end
 
   resource "cement" do
@@ -50,8 +51,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "colorama" do
@@ -75,13 +76,13 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
+    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
   end
 
   resource "invoke" do
-    url "https://files.pythonhosted.org/packages/de/bd/b461d3424a24c80490313fd77feeb666ca4f6a28c7e72713e3d9095719b4/invoke-2.2.1.tar.gz"
-    sha256 "515bf49b4a48932b79b024590348da22f39c4942dff991ad1fb8b8baea1be707"
+    url "https://files.pythonhosted.org/packages/33/f6/227c48c5fe47fa178ccf1fda8f047d16c97ba926567b661e9ce2045c600c/invoke-3.0.3.tar.gz"
+    sha256 "437b6a622223824380bfb4e64f612711a6b648c795f565efc8625af66fb57f0c"
   end
 
   resource "jmespath" do
@@ -90,13 +91,13 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
-    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
+    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/1f/e7/81fdcbc7f190cdb058cffc9431587eb289833bdd633e2002455ca9bb13d4/paramiko-4.0.0.tar.gz"
-    sha256 "6a25f07b380cc9c9a88d2b920ad37167ac4667f8d9886ccebd8f90f654b5d69f"
+    url "https://files.pythonhosted.org/packages/62/93/dcc25d52f49022ae6175d15e6bd751f1acc99b98bc61fc55e5155a7be2e7/paramiko-5.0.0.tar.gz"
+    sha256 "36763b5b95c2a0dcfdf1abc48e48156ee425b21efe2f0e787c2dd5a95c0e5e79"
   end
 
   resource "pathspec" do
@@ -120,8 +121,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "semantic-version" do
@@ -145,8 +146,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   resource "wcwidth" do

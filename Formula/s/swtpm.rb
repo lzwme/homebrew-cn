@@ -6,14 +6,13 @@ class Swtpm < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 arm64_tahoe:   "a461f024f4030423eaab2f9708d31ce40abed33ecacf79af52eed9c30685954f"
-    sha256 arm64_sequoia: "2b32d468bbe362aa59c40e0ca09cd222bff2e7ad0926f254805ff4988c0ee0a8"
-    sha256 arm64_sonoma:  "bde6abef0af8f822719577619263e1f733d66fa8a6da8d5cc32fc08207bfcc0f"
-    sha256 arm64_ventura: "480984d30dc4d4dc8cb88e6c7e7c71061bc4f931a8185465e13857b25129f47b"
-    sha256 sonoma:        "a784a5c3d7c831a4cc8715451633570f55666e9436628a8458b34bf7e2275fd2"
-    sha256 ventura:       "8d49a8ca6833ae9af931a695bda0db32830abf0cdaf0938037efea28557c5952"
-    sha256 arm64_linux:   "ea07d63f7e38a8724096a357f6bbc9cb2c16eb0cb8c3cba501d2bc0c77569370"
-    sha256 x86_64_linux:  "a289daeb82cb654710fbfe43b9bd3d2f80a2eeee1c7f20d7d5481e7a3f1c1d3b"
+    rebuild 1
+    sha256 arm64_tahoe:   "9a60d0e6adebb8d733ebf8d8513adfea86794e8fa69cc8f26bdcbbc13bd789c3"
+    sha256 arm64_sequoia: "8f798f1a861ba329fb30c2183f369d5a59b6511af160ac49a9daa0d4b1cef746"
+    sha256 arm64_sonoma:  "806ee9bb517067c3969f8877cc59bcfa18bbf5dfb90c1e2c46aa153462e9c5d3"
+    sha256 sonoma:        "c08557ef9d9cd1b03c3af01f03d58715ad9f708460149ed800c124956b8c6482"
+    sha256 arm64_linux:   "a51c9b172f794b7e95b102a6f637f4eb655682e58af37d13a17970e7e7985a31"
+    sha256 x86_64_linux:  "45c2a54bd1d006b674542e4082856783c76fba8260f678951df0bc2b5bdc8a01"
   end
 
   depends_on "autoconf" => :build
@@ -24,7 +23,6 @@ class Swtpm < Formula
   depends_on "socat" => :build
   depends_on "glib"
   depends_on "gmp"
-  depends_on "gnutls"
   depends_on "json-glib"
   depends_on "libtasn1"
   depends_on "libtpms"
@@ -39,6 +37,12 @@ class Swtpm < Formula
   on_linux do
     depends_on "libseccomp"
     depends_on "net-tools"
+  end
+
+  # Backport changes to drop GnuTLS
+  patch do
+    url "https://github.com/stefanberger/swtpm/commit/86c6046cbe0e913e884683d20acec3949a4a1220.patch?full_index=1"
+    sha256 "8f0c469d178004128c97645f4bb849355473ad0181d6063c6dc5ba1565b716a0"
   end
 
   def install

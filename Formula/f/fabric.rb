@@ -6,15 +6,16 @@ class Fabric < Formula
   url "https://files.pythonhosted.org/packages/e3/7e/29cd6237c3b7ce79c3ca945eb99ab5affd101db54b2f7a78dde0cfa19fd4/fabric-3.2.3.tar.gz"
   sha256 "dcbd2c47ad87688facaef5cc11aab6d1ec9ed05645fed97a5de7204d5d17cc44"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/fabric/fabric.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e9cb8e0cc7a75a650f3dd0ecf8334be67063e6bcca58bf01308f8b63355e554d"
-    sha256 cellar: :any,                 arm64_sequoia: "6e75e16112471fffe1f25bba97eb332fd3da512506658659e5738e40d97878b7"
-    sha256 cellar: :any,                 arm64_sonoma:  "5600994391198714d5213af0cfc57199958b74d1d60f4caec479c31ef29342af"
-    sha256 cellar: :any,                 sonoma:        "2203604eec4f3c27cb42b581943b021a3509b9ac6412f73fbbf6e6df145f3e86"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6997f1ce970478c673e28a3ab50f489ee6143861b6ddb68c3741cdc8ed45b84f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdb1381b5b253e567f4dbba55be51ef0d83f14c85ce437f085ad558524fdc421"
+    sha256 cellar: :any,                 arm64_tahoe:   "1177e8a10b8224740416642316730300b708f7a2266100d41a89f7127995c327"
+    sha256 cellar: :any,                 arm64_sequoia: "b4be3fd62c518105bfbcfd7f1880f5e1bf1c4483a0208e746300ce07ca866172"
+    sha256 cellar: :any,                 arm64_sonoma:  "869c3c99def5951d5347ae9397aaf290c7cbacde40d6e92a12439122cd0eed16"
+    sha256 cellar: :any,                 sonoma:        "dfdd62823570836bfbedb2f5a86cf4fb4ae9fab23aefab8f0246d71781b220a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "125d533ad61f91b06c6e58b94dfc75be4809e523df694f8be9321a552c389212"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e2c3b200325ff671ff12bc50d12c6698e7f13bb449e6faf90b8a284da2e840f"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -48,8 +49,8 @@ class Fabric < Formula
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/1f/e7/81fdcbc7f190cdb058cffc9431587eb289833bdd633e2002455ca9bb13d4/paramiko-4.0.0.tar.gz"
-    sha256 "6a25f07b380cc9c9a88d2b920ad37167ac4667f8d9886ccebd8f90f654b5d69f"
+    url "https://files.pythonhosted.org/packages/62/93/dcc25d52f49022ae6175d15e6bd751f1acc99b98bc61fc55e5155a7be2e7/paramiko-5.0.0.tar.gz"
+    sha256 "36763b5b95c2a0dcfdf1abc48e48156ee425b21efe2f0e787c2dd5a95c0e5e79"
   end
 
   resource "pynacl" do

@@ -1,17 +1,17 @@
 class Vet < Formula
   desc "Policy driven vetting of open source dependencies"
   homepage "https://safedep.io/"
-  url "https://ghfast.top/https://github.com/safedep/vet/archive/refs/tags/v1.16.2.tar.gz"
-  sha256 "187f0c05f118f2d2476c5331e3cac191da1b57c7fc6046a05b0afa434d29ecb9"
+  url "https://ghfast.top/https://github.com/safedep/vet/archive/refs/tags/v1.17.1.tar.gz"
+  sha256 "4b2596d03acdc38b6519f32ada6f89d9a9ff7aa3c1127270e19d5f30941279a1"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13edf520e6a37f41550ecd02230c38982b503879838da4108865b80c16c6b64d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c8edb2374c784c86d4b87de19db2f15f0707469d73ca424af7a80a4263e19f9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14f341869aad606b9bebe2c3a6b62af76618207f8694ceb4932b724d8206fb95"
-    sha256 cellar: :any_skip_relocation, sonoma:        "60b80e2c2b09388641b0b6609a1492fac42b8ad295332baa9d29d0018dd7ae0d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9d3a313ad8ba1d3cb4e5c605d212c12f215b0ecfbc9beae16de0fd4a9521e4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5a64de2a6dccae5903257716f2cd01cb698e7c650a1c58c56c2e1786342f36b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3d6dc3225e8bb19756f91e58e71205ba473c79007847e5daae961cf429046872"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b9518c807e9d0beeaf1948048fe92bc6ac9306971ca25ba4a3d4f93e2fb50d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f956f65fa1aae6fe50e591cef540e618c11befbdadbac75dbd2e00c3112d735"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eea5a1e2bf2c3d2c8cc0c5dfebb2dcce03aeeb7bedba310f788cabf97a829953"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9953314defd20c0b8117f4eb94b4a0382616cdb410abbb52245623467c663a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f531d546b71566922eb24e8d3550775a693d30b92644476285a3d614153459dc"
   end
 
   depends_on "go"
