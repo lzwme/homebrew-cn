@@ -11,25 +11,19 @@ class Dynomite < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:    "ec342954369e6726e60c027f71e8e1fb3e6fcc8fba63255ba73149a02fa50043"
-    sha256                               arm64_sequoia:  "e1eb2ecffe6ef0e08d0cc80b5f5ca44a337e2c4d79dde61be3ad2002d2e31fd3"
-    sha256                               arm64_sonoma:   "1c273876dda80923311eed315f5c69de5e692fe4a666e7e937954895dd9f57c0"
-    sha256 cellar: :any,                 arm64_ventura:  "757afdc3438ad136afef540fee6a07e42a51b3c1bbde3a25fb13bd19e5807d33"
-    sha256 cellar: :any,                 arm64_monterey: "682e0e5ec05ccfdd2fe8142083153dc6a0c14d3b1d7cc8c0dc1cd425aded9e41"
-    sha256 cellar: :any,                 arm64_big_sur:  "edd9fad6b17b83dbf2d2699c3873463ea169a996fed83e861652bb5f92de4d7a"
-    sha256                               sonoma:         "1f189756392ee5476ffd10499b054c0d21a71b5addd75632cd84a37a3a4f25ce"
-    sha256 cellar: :any,                 ventura:        "98d4209a06b832e81859388bd4da429cdbd87f9103d31656b2d094375221e1fa"
-    sha256 cellar: :any,                 monterey:       "5679f89f06a1f5ac53e3c4d2481f35e944238be44579423aab64077e5033c637"
-    sha256 cellar: :any,                 big_sur:        "8a79d6ed731e5a44a26b5691723edc02ca0ed66e4c54fa08bdc183082dd8531b"
-    sha256 cellar: :any,                 catalina:       "879a8a2ca6905ca4cd0cf3cc7e6020415b54b12f3a90f51e52a289c1818da46a"
-    sha256                               arm64_linux:    "2839e6134a007f1e5471394362bef65e4083c1a17c98ec6fe51caac34e349b81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9251d7d3c85de18d648cee8fec1d415a634a820efe26559702a61b01f47c0e52"
+    rebuild 1
+    sha256 arm64_tahoe:   "b80a0fafcbefc40ecbe2c372a3ef9159512a4b85e0838ac65d26f5225ceaa546"
+    sha256 arm64_sequoia: "d2417262050f0f0272c2c76db3e1f4a859b6b424a03c77e2091d903279b0ce62"
+    sha256 arm64_sonoma:  "f36565e700a533a4282f783fe05d70c88e9e306c91b020e3298beddb6989cdc5"
+    sha256 sonoma:        "10b55d281b83fd69944c86ba6cbbb3a89aa3cbf978e41e9effa6190f3d07d222"
+    sha256 arm64_linux:   "5b7a2482637638c1369760bdfa130dff0bf9df35aa3ff5c9370e9d434315a5bc"
+    sha256 x86_64_linux:  "c29a22ea448af26e89c11b28101e4d73a510d23d1b18aea9c177b70745c969ea"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   # Apply fix for -fno-common from gcc-10 branch
   # Ref: https://github.com/Netflix/dynomite/issues/802
@@ -46,10 +40,11 @@ class Dynomite < Formula
     if DevelopmentTools.clang_build_version >= 1500
       ENV.append_to_cflags "-Wno-implicit-function-declaration -Wno-int-conversion"
     end
+    ENV.append "CFLAGS", "-std=gnu17" if DevelopmentTools.clang_build_version >= 1700
 
     args = ["--disable-silent-rules", "--sysconfdir=#{pkgetc}"]
     # Help old config script for bundled libyaml identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *args, *std_configure_args

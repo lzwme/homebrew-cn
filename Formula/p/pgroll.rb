@@ -1,18 +1,18 @@
 class Pgroll < Formula
   desc "Postgres zero-downtime migrations made easy"
   homepage "https://pgroll.com"
-  url "https://ghfast.top/https://github.com/xataio/pgroll/archive/refs/tags/v0.16.1.tar.gz"
-  sha256 "10130a21ec97eed79e2adfc933e4652932694d06cef5d4aace6f04a3461a924e"
+  url "https://ghfast.top/https://github.com/xataio/pgroll/archive/refs/tags/v0.16.2.tar.gz"
+  sha256 "d944b31c6a4b90eeb170db249c1a012b85663ff25f438f007068efc76e4546a7"
   license "Apache-2.0"
   head "https://github.com/xataio/pgroll.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "613fa928565d4ed0c5d4d0811f2b5d216eda6bb51c7ffdc0289115d6b94c2dcb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4b0d954f87a75ea80ff468b13a95ca0c2fb32b461cb4fe87fb3fc0e1dec5d7a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9971a6553c2f17e889a1ca1ed0fb319c039e9acc125ad2ac9c6d9908f54c5467"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cbd5116889f85fdd4faf7af01310926f662ba86127cc3025354d07d778adffb7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7070edf104264980fa5cc5269e4d9ed6eef503d5fd3e8cf7836a080685ec555b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c01a2858ba6cb267d8e9f2d318d6f300d1db8cf7fe115a8b205d3e31d529a156"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cb3fa634ee1808834ddec42df102b893b6378cbee84570d00ff5107b8013fb3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f72efb4b8a69f0d2aeb68a9c645052f4a6521cd19dff3c0728cfa319ee68c92"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5f0cf02c11763791b45fab6e4dc3c951e16ecf9f96145e42659e3d6280b0291"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0c13903e898977f1b471745cef114762c1bbc97041e77ad2f5888aab3aa234e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b68f49b0cbf7ebff66ff8ff108590d2bdada0d5a8b72e125bbf6dbe7d2a1c2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "070c426e63b951f25aa8c46136e8f5abc971f849b0800c828ef2c59a6ce5b7e3"
   end
 
   depends_on "go" => :build

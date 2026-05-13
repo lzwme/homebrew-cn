@@ -3,8 +3,8 @@ require File.expand_path("../../Abstract/portable-formula", __dir__)
 class PortableRuby < PortableFormula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.3.tar.gz"
-  sha256 "77964acc370d5c8375b9502e5ba6c13c03ef91ab9eb9f521c84fb42b9c9a6b0f"
+  url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.4.tar.gz"
+  sha256 "f35f6edfa3dabb3f723f9d0cf1906c6512ae77f4e412ab1e68cc6e91d230fa80"
   license "Ruby"
 
   # This regex restricts matching to versions other than X.Y.0.
@@ -14,10 +14,10 @@ class PortableRuby < PortableFormula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "8ad98d9cf15477d1a43f4012cfd5eff5c271398bca1e2724b55bd4944a0bb1d4"
-    sha256 cellar: :any_skip_relocation, catalina:      "f2bc4c3b081b09d7dcca97a8b8c5e102116e6ba68a5c118d6d961cf33b3162ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e69f1308c6b9158abdab1acd96a91fd5dfb6b95fe3af576163991d33ae2f683"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb96f8003dc6afae036adeaf892578fbc34eb11bbb5660dca7213677fa1047e8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e666cc63add686cf3394d7b9f27c314b22d1871cd9a751aaef7e9d44cebf54e1"
+    sha256 cellar: :any_skip_relocation, catalina:      "a372ff770be6364313bb5e9bd9e5abb128a1c35cd9f98b8a591ca07f948c7491"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a2840e84ec25e4e29ef04c8c4ae14467d2d39eded15790b2f6078e801aff273"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e0dca6f678788420721478178944db366e9e90c5768765074ae38631ccd4558"
   end
 
   depends_on "pkgconf" => :build
@@ -43,8 +43,8 @@ class PortableRuby < PortableFormula
   end
 
   resource "bootsnap" do
-    url "https://rubygems.org/downloads/bootsnap-1.23.0.gem"
-    sha256 "c1254f458d58558b58be0f8eb8f6eec2821456785b7cdd1e16248e2020d3f214"
+    url "https://rubygems.org/downloads/bootsnap-1.24.3.gem"
+    sha256 "f7fa3d20597e2f0aa52b0a1aba83fb54d4f79e9c2e210ec4fa1e8895514dcad8"
 
     livecheck do
       url "https://rubygems.org/api/v1/versions/bootsnap.json"
@@ -52,14 +52,6 @@ class PortableRuby < PortableFormula
         json.first["number"]
       end
     end
-  end
-
-  # Fix performance regression in GC sweeping of classes.
-  # https://github.com/Homebrew/brew/issues/21859
-  # Remove with Ruby 4.0.4.
-  patch do
-    url "https://github.com/ruby/ruby/commit/2b22593ac12d0e8cbcf8299f0fea14c6311715d8.patch?full_index=1"
-    sha256 "fb7efdd6ed383aacf4d2d2cc5aeb8bb180f47dc3930c4280c5e137963780411c"
   end
 
   def install

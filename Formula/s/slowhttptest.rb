@@ -7,26 +7,19 @@ class Slowhttptest < Formula
   head "https://github.com/shekyan/slowhttptest.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:    "a3f7cc9030661fa31e4cf6db7862dcd47a586303bd71df203b6be39c3fbebb19"
-    sha256 cellar: :any,                 arm64_sequoia:  "2708483fcbd6bb9badf73319ba021792a02638eae74315f9b7489cfa1b1ed526"
-    sha256 cellar: :any,                 arm64_sonoma:   "69e91887b20b8954627ba289b3eb711567f93a75582cc9df504d11036cf97a10"
-    sha256 cellar: :any,                 arm64_ventura:  "68f9552d0393f75f8530f7e2100e7325178dff70197e0db2df7037f4396bc55f"
-    sha256 cellar: :any,                 arm64_monterey: "f44686a2cd459960a69bba155aadf7d83e1bd550d894b349dc6f457a7232c13d"
-    sha256 cellar: :any,                 arm64_big_sur:  "d7ac9431e1ae5708175dcd3f8cfbb96189a78621eed8ac99bd06b9b8b6ba22b7"
-    sha256 cellar: :any,                 sonoma:         "4ff751d6c6b99c9d2d6786468bfd53e524883d21b6bdb0a1add1ed8c89690176"
-    sha256 cellar: :any,                 ventura:        "a4a82aed233b8a3e14f2e6870a5460edd7f5645f6b8c60033355b1ef6fe4e800"
-    sha256 cellar: :any,                 monterey:       "85676dfbf81eddac78cb31816f86f8667e6726398ef68be3d2b490f3e78028bc"
-    sha256 cellar: :any,                 big_sur:        "1818300aa4c7c76e0eb05f100009faf97a07fe43133a7f66e09abefb61a5c229"
-    sha256 cellar: :any,                 catalina:       "bce898dc331e6dbbd7af3c39c8b385eb6deb67eedb1e0ca7344d2a45f7f98442"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "46166ade359384ffdf6af2bc9e5dba58cfa680ad8ee9e8bfe3c380e71c1ec853"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3c40357c9bd384b991dc20163d7a1575f2ab2df0f53dfde971a044fd2304e50"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "1ba7cafb59ed4524e48d4239aa70aeb822b4788deeb85b38909e568416b908f3"
+    sha256 cellar: :any,                 arm64_sequoia: "d36b04a9ac4e272cf5948d94f53aff869382d006110c9cc326610fece68ea7a7"
+    sha256 cellar: :any,                 arm64_sonoma:  "22b23a0784dfdf145d60d62a8dae8e1e7c59c22963da6574f4b506b07d6803fb"
+    sha256 cellar: :any,                 sonoma:        "032869712d088861b12d6cc9ce2fd12f4c40aaeadb5077201066526517b04e38"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf68abd4a416c7ddef4e1ae4738ac24c66a9a53e50d7a308373fea3c26d2693a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97645f80bc0d31375ee2f451f7d99657a55b46d63baac8b46ab8a4facfc9674a"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

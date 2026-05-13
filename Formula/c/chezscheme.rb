@@ -1,18 +1,18 @@
 class Chezscheme < Formula
   desc "Implementation of the Chez Scheme language"
   homepage "https://cisco.github.io/ChezScheme/"
-  url "https://ghfast.top/https://github.com/cisco/ChezScheme/releases/download/v10.4.0/csv10.4.0.tar.gz"
-  sha256 "54d0d19e4cd51878f88fb4b7ddb44079be6ca12bcf14163f8ea53cbcb4633385"
+  url "https://ghfast.top/https://github.com/cisco/ChezScheme/releases/download/v10.4.1/csv10.4.1.tar.gz"
+  sha256 "2e74952db7bc177f0c3602e2217a341ba677d733eec4cd7726418c3a4e1ef308"
   license "Apache-2.0"
-  compatibility_version 1
+  compatibility_version 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c66451fe4748a16134e91c9a61eb20b62b713f46ac09e1fc99f7209b1b3527fe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc6ac8ed634ae66aa50fbd6b110293bc9a66d4fee27c349d6a63b845fe8e2435"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "297e1cacde1ee31eea4cb60e1a63b5060904a780f44a38c209d725e6334e583a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d754bf522b204abafc35b18b4fa91c304a76972e0492343436a55d4078ab1198"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b2bdf76af107c52f36245e920a326879973c50b162e916beabedfa2e0c351d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "569bf19ac38aa543d25534c4f37b6629647ace5e492f1c6b48d18fc16b49255c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d4b81b7346fa611f3035f53f94320a1f63ab41af0077d30701c31acb9994a66"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c74f9813bf5b89b6b75e771d77b33cd6a58dc91389ed92fd6852e27edc0eca08"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "97076a147bfcc04e3039736cbc0a452479367755165c48a8f5887fd537736177"
+    sha256 cellar: :any_skip_relocation, sonoma:        "756b5dc8d1146dd5061a4a68b9cc5e4fcdbc286ca0cfc81e4bddcb41be79f0b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bead4424779d0804becf8c3eb84633ada805679bb79dc07defa5a72e7e2dcbe1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9e42873dc1d618f3a5b8935b21ce1ea3f2a398e4a27fb2643a01d8a72a98afb"
   end
 
   depends_on "libx11" => :build

@@ -3,7 +3,7 @@ class Virtuoso < Formula
   homepage "https://virtuoso.openlinksw.com"
   url "https://ghfast.top/https://github.com/openlink/virtuoso-opensource/releases/download/v7.2.17/virtuoso-opensource-7.2.17.tar.gz"
   sha256 "41e0afd6d37c1c41b993282ce11c5cf68f7bb7c0bd7887ef2ff558c452570216"
-  license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
+  license "GPL-2.0-only" => { with: "x11vnc-openssl-exception" }
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "8710e5d0b65eaf9dc44253015f08bcae16225aad0f1dd4ee38cbe27d8da45428"

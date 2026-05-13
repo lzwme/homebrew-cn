@@ -1,8 +1,8 @@
 class Expat < Formula
   desc "XML 1.0 parser"
   homepage "https://libexpat.github.io/"
-  url "https://ghfast.top/https://github.com/libexpat/libexpat/releases/download/R_2_8_0/expat-2.8.0.tar.lz"
-  sha256 "35b02d84d809117506064bb388b3bbc7f421d629d2ba565f6d1f1c369b85fcd2"
+  url "https://ghfast.top/https://github.com/libexpat/libexpat/releases/download/R_2_8_1/expat-2.8.1.tar.xz"
+  sha256 "10b195ee78160a908388180a8fe3603d4e9a12f4755fbf5f3816b23a9d750da0"
   license "MIT"
   compatibility_version 1
 
@@ -15,12 +15,12 @@ class Expat < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a480f2ed56d18b115f55845c2fe5db91422af82a8488b8126488279e0b9f4570"
-    sha256 cellar: :any,                 arm64_sequoia: "c2afce67b202ee45a1f2926c37d3709e14e8d0bc30f4434c6190f01e1833cf8f"
-    sha256 cellar: :any,                 arm64_sonoma:  "5acc0e33d58ccba66f88e517cd5a288e27bbf613f8ed332bc27e17f07294ec18"
-    sha256 cellar: :any,                 sonoma:        "6cc25fd379a99809bacbc2c557804b46f3690ab5962fadcd78a528f0ff805796"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b1a2ac26414b3f7ca04fba288d68f8c4100131a1a6114586744832824e51ccc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf220faaac73feac0ce7a0c28a0e4ec21fb9cd885ea81ac9b04df7e2ba4a84bb"
+    sha256 cellar: :any,                 arm64_tahoe:   "6c0b51cff718474971c0c8c3bf22777d39c561bbb20d6472b9c5af92a4a63339"
+    sha256 cellar: :any,                 arm64_sequoia: "21857ba44f54e48a4048fda9a0f38e25d6abfdb94fe373d01c21bedfc72b6967"
+    sha256 cellar: :any,                 arm64_sonoma:  "030fc6b70ba08652ce44d56dd5937c45fb973dc3a8afe70fb2ffd10eb7588adc"
+    sha256 cellar: :any,                 sonoma:        "3d422a8ca495c64d5c58eebd814dd79a77f5c7fefbae66a1e224ef4b878d9d12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "744dc4e11f8d59a2b3e7c7235fa478ea95c8b2c0105b444ccc17a426c4821892"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a22baf729b24113da4db4c9736a595f1814bc33c305df78313d5229d78599659"
   end
 
   head do

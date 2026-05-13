@@ -16,7 +16,6 @@ class Lazycontainer < Formula
   # limited by Apple Containers support:
   depends_on arch: :arm64
   depends_on macos: :tahoe
-  depends_on :macos
 
   # ref https://github.com/andreybleme/lazycontainer/pull/11
   patch do

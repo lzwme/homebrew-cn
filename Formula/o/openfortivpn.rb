@@ -3,7 +3,7 @@ class Openfortivpn < Formula
   homepage "https://github.com/adrienverge/openfortivpn"
   url "https://ghfast.top/https://github.com/adrienverge/openfortivpn/archive/refs/tags/v1.24.1.tar.gz"
   sha256 "c40d33acd97b89c2e943bfd839c19b69e5a7a5997052e2fc9a595602745c0465"
-  license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
+  license "GPL-3.0-or-later" => { with: "cryptsetup-OpenSSL-exception" }
   revision 1
   head "https://github.com/adrienverge/openfortivpn.git", branch: "master"
 

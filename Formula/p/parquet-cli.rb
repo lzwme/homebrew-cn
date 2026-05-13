@@ -1,13 +1,18 @@
 class ParquetCli < Formula
   desc "Apache Parquet command-line tools and utilities"
   homepage "https://parquet.apache.org/"
-  url "https://ghfast.top/https://github.com/apache/parquet-java/archive/refs/tags/apache-parquet-1.17.0.tar.gz"
-  sha256 "01c6c901bc54ab730c0fcaf57372b90c2d176fab9b6e398372590d749f44c362"
+  url "https://ghfast.top/https://github.com/apache/parquet-java/archive/refs/tags/apache-parquet-1.17.1.tar.gz"
+  sha256 "bf68ed249a828213e4b18de8de3865e2f4edbb856cd19057b2f559a7c9e8f1e5"
   license "Apache-2.0"
   head "https://github.com/apache/parquet-mr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f9d7e23619cb97986ab5edc76d4f1941cc0729691f0b69404a6efbff0ee6cbfa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0ec4ebffdd2db0ca29909d274ec16053efaf7f9cb5b58bcff8a6c56888332c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0ec4ebffdd2db0ca29909d274ec16053efaf7f9cb5b58bcff8a6c56888332c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0ec4ebffdd2db0ca29909d274ec16053efaf7f9cb5b58bcff8a6c56888332c9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c0ec4ebffdd2db0ca29909d274ec16053efaf7f9cb5b58bcff8a6c56888332c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d6f93054a0d02382f1481ea9b86e42d9d2c969b7241ce45654475f4edbab604"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d6f93054a0d02382f1481ea9b86e42d9d2c969b7241ce45654475f4edbab604"
   end
 
   depends_on "maven" => :build

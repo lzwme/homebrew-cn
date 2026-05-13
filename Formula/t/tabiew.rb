@@ -6,21 +6,23 @@ class Tabiew < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a0c7d9ba4698ecc47d76eb457036761dcc971097d3d508617dbb154b2fc27536"
-    sha256 cellar: :any,                 arm64_sequoia: "d766e5dbbd65f992f83d312791ba91b445cf1defd6c89107ecb828598b673a12"
-    sha256 cellar: :any,                 arm64_sonoma:  "b46d9cf46a8b21eaf89965521c3783d27d7f3920040e73b8207bdbf375ddd87c"
-    sha256 cellar: :any,                 sonoma:        "e75ddca15ac27beffaa898fed3bbf2e49e0179be61aef4a1b0f38fa9993c6970"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4f1ec9edc8e462600500866d0d2d8c00280d68a775ca23a760fc7d04a7dfc25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f9bee3520c0690e2ad865dd7e55cfd9eeb26ef9f1ecbd62427c3c56d3aa8348"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "5648ef89aa3cb551a9580302c74d779a260f68b7e833fad4f506efe693f088a6"
+    sha256 cellar: :any,                 arm64_sequoia: "f8a33c7ee147a4e4c0917b4a5ee6e526d3c4587269c6dccc7ef1472335802463"
+    sha256 cellar: :any,                 arm64_sonoma:  "98a958f0baf55e15443f9dba8e6b5e1df181784d59d3e10c008a195ce9c892b2"
+    sha256 cellar: :any,                 sonoma:        "6603d0ac91915d22c21ea9683019c4c0d8a17155b57944554deb017cddba666e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0929ce152b00a8108eda93033d38b08973aa55cc6d3cb787088ee3221379d62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12d805a4b38057a66fd15f26dff9b006b8fce4c9f9bfb6b6aa2cd275224c3cc0"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   conflicts_with "watcher", because: "both install `tw` binaries"
 
   def install
+    ENV["OPENSSL_DIR"] = Formula["openssl@4"].opt_prefix
     system "cargo", "install", *std_cargo_args
 
     man1.install "target/manual/tabiew.1" => "tw.1"

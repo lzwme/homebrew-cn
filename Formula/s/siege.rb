@@ -11,16 +11,16 @@ class Siege < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "322ae54214a25c55311e3e2f1aa930c2fd54ea02f0274fbd4e0cc5b9ab8387c4"
-    sha256 arm64_sequoia: "2675e2c6b50a3f4257710468d6bfad23be161161659e66260f4090763590e4d7"
-    sha256 arm64_sonoma:  "524d5bf687c5adc7affb917cf3e4bb6a58b3c0510f162f829c14e8b39d53e19e"
-    sha256 sonoma:        "3017a5bbaa9663d5bdbabb8b169cd8420b8ae20203d82961ef2a1debb6f7a5cc"
-    sha256 arm64_linux:   "9284ea04070d1d998f6d1e2cd6e5fb8eb596f4ee26c60cdc32b146f37a757917"
-    sha256 x86_64_linux:  "6f02cca62e76799c557d000eb640f5772d666572241bc2b9a5c05e23aa32b76b"
+    rebuild 2
+    sha256 arm64_tahoe:   "99fd3c249f08543fe28e2ce0feacad9d3f39dfaaab5426353db4556354b48343"
+    sha256 arm64_sequoia: "b3e45c347c9a8357cdd9ec6710f68877902cbe1341c14069fedf90f8d41d2fff"
+    sha256 arm64_sonoma:  "e49efe214fad929f1ecc271233082e9b01cc72ea14f0efd7b934ed2eccc08b68"
+    sha256 sonoma:        "cf8869d12d391139c614e555a0cd38c0b2a55fa04f6b86a441cfbcd8a9f41fd3"
+    sha256 arm64_linux:   "78357dc676f30199d8d7c12e543e9950d89db5a5cfe851d1a6f086f073c453e5"
+    sha256 x86_64_linux:  "8cbf3e2d2cc75149b5940c4148d0e96e5b1a3eb5472b0aaab50c10ec34e787fb"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
@@ -34,16 +34,14 @@ class Siege < Formula
     # To avoid unnecessary warning due to hardcoded path, create the folder first
     (prefix/"etc").mkdir
 
-    args = [
-      "--disable-dependency-tracking",
-      "--prefix=#{prefix}",
-      "--mandir=#{man}",
-      "--localstatedir=#{var}",
-      "--with-ssl=#{Formula["openssl@3"].opt_prefix}",
+    zlib = OS.mac? ? "#{MacOS.sdk_path}/usr" : Formula["zlib-ng-compat"].opt_prefix
+    args = %W[
+      --localstatedir=#{var}
+      --with-ssl=#{Formula["openssl@4"].opt_prefix}
+      --with-zlib=#{zlib}
     ]
-    args << "--with-zlib=#{MacOS.sdk_path_if_needed}/usr" if OS.mac?
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 

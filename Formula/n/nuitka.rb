@@ -3,18 +3,18 @@ class Nuitka < Formula
 
   desc "Python compiler written in Python"
   homepage "https://nuitka.net"
-  url "https://files.pythonhosted.org/packages/1c/48/e54130d57b89fc015d702e98a1a217b5757625d01a01cc07d29fd046d336/nuitka-4.0.8.tar.gz"
-  sha256 "3f87e87e4d3773997944ce401145ef21461337121d39ea0fbe678274005e60ba"
+  url "https://files.pythonhosted.org/packages/53/db/b7a344ad688cd6d8547746869f904b105674ff529a24fa5a3d7bdd95560a/nuitka-4.1.tar.gz"
+  sha256 "99092d26f5f8d5264186924451f7df5872bf6a922297062ace2798ecec7cfa0f"
   license "AGPL-3.0-only"
   head "https://github.com/Nuitka/Nuitka.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "befe43b9135694541c56d510a382bd2be7d20b2dbb9af94e4e876f676f3d8c9b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97cb911e7d68d00944ef2280f2d3f32f381ff14760722aae6fee5b110d1b81e6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ca78c962d5b28aad31c6a341ad0b48015bd3c4b2560a379dac341f5c7c1eff3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3391feede32e355d49f6398372e211dfbc4cb46881c33fe3246f76915668e752"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "caee19e3b03fd28990d41b447abb6bb42a2dcd3a7be0773bf6933ec3d3a8c3ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d984fb267dd7d17b1519e6b8c1da074f23423c7ee598cb10c89ac46380e522ac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "57b541f6cc52eb0827dfc3ecf23b9b9384ce3c5fa5103b697ba6bda93ca9e194"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e1fe2639540c827782a46e354ea241292be992f2ba2afbc0e11382afc6f0bf4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b4b355cf2f9c686f358921709bfe2507de2711775d97c42157244ddb9dfafdc0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "702661acbbf244df64f69a2f3e26e4cf6fa472d60c81360d448a5f6bbe56c04d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "332866b7588778724bd8acd48d1273086476aa33755f8d6d0f1dfcf088c1dda8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c72102a38039df1bba16c79b165803a71034896fb184c4d7c5440e1a21d3be5"
   end
 
   depends_on "ccache"

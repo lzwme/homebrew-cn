@@ -18,7 +18,6 @@ class MlxLm < Formula
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on :macos
   depends_on macos: :ventura
   depends_on "mlx"
   depends_on "numpy"

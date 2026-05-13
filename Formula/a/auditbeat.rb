@@ -2,18 +2,18 @@ class Auditbeat < Formula
   desc "Lightweight Shipper for Audit Data"
   homepage "https://www.elastic.co/beats/auditbeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v9.4.0",
-      revision: "b988690b1bd5ae02f00c3facb413d4ee758563fe"
+      tag:      "v9.4.1",
+      revision: "471eefbca30a79d543af5106d039bf610a5c3281"
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cba5778d10a8637fa50c2c9c85e3df9dfa9cb5dd0d2f8dfa2794e1edfa1e6918"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6df1237cc0971362a6623f1afccdc0cf54af1b20f9f0d54a2bcd44869739ad0b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7f71d3d38c7017e20d468fd5a970beab022532d9399fcbf57446f666cbf5477"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b449269b3aa61148eba74ac3c768e4dadeec7e49d21b0ab958081e344bfe3c32"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "750c4ef3f9747dba8aab22e653d18a5f2959d0f9f123659d777314a459e32a9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a4558017509aa62c07184f56a23607c7ede3723c13e9c4d132e1af111b0ca64"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "193a109670cbdb057ffaeef411a9409c0ac20a65133ca7b6630ac18a08a34059"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b40fee02c8cbae9dc65115684bee9967ed9f30f7554cc1bea5cc1b93bb26e7c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dcc2706521d0ad3e1e0229c1a5f521588d5ff1634810f04136a5fd366aac178b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6c9b3d90b6f8c113cb081d6ca6cc5967c0b9364b33ee034c220b1de0196a0be8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f773f5461c5f1aa4689cfea24c2634ec2addcfa03ad39b271820584fc2163194"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26e9625adc38a48c6844c69c01c9150f8a0f71bacf8a783ae4316b335665075a"
   end
 
   depends_on "go" => :build

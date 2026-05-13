@@ -7,24 +7,24 @@ class DistillCli < Formula
   head "https://github.com/awslabs/distill-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05931eb86c8a7c5af00e0119729144e1ec1b71ce608aadce8bda08b9c7d332da"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e0945169c404d9651481553a66e74eccc15dd9fc3fd5fd7090db762c64a679b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b696b679a1e1dc19ae9d5a6a5b88e70fc63f94ea91d8c5025cdf124530f4e027"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "81fa507cd1d2a3a9d82f9ddb27ae523496744c8be016b6431867ea534e32a2da"
-    sha256 cellar: :any_skip_relocation, sonoma:        "22935921422088574b9f67baa4ab10db9ad4f79ac8adbdd0604faaa2af0594e9"
-    sha256 cellar: :any_skip_relocation, ventura:       "72272c4021c3c7fa364464828d0da1bd03c675525a8c649fa6333f45e26e5d1b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "76f573c4b8a3ffe36a963ceeb1c977ed85c6131c05a87e00e9c2edbac956d768"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22ebb083671dbe450f27a1d29caa892eb1b12e1e54a11271677984e3622fecfc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac672b591b503f34365dad97812bcc6a1a9e4d08bc588902869bc81bb9b7f3f8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04f4b2d4fc79a2c3dd51985720064ed2d45fdeb0c8eebe82ebcb396546690d2f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ebb99840e22f2c89819782c9994198ec0b8565c4ae700bef9d2d35f366e2be08"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b3d345fd35fa7fea18d1b3e74deb80d2ff9110074e0169a1aaeffb2e6a2c463d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d43e9799ba33aaa78b3736a5ed5e92560033760125f750b9076d1176f2c9907"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fbefbf8904d128204acd246885dc6a184d38e5b3e56f42bf2df135a1ea4e4b0"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   def install
+    ENV["OPENSSL_DIR"] = Formula["openssl@4"].opt_prefix if OS.linux?
     system "cargo", "install", *std_cargo_args
   end
 

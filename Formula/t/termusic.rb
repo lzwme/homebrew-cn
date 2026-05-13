@@ -18,14 +18,12 @@ class Termusic < Formula
   depends_on "pkgconf" => :build
   depends_on "protobuf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
   depends_on "opus"
 
   uses_from_macos "llvm" => :build # for libclang
 
   on_linux do
     depends_on "alsa-lib"
-    depends_on "libgccjit"
   end
 
   def install

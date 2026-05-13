@@ -17,17 +17,18 @@ class RedisAT82 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e7877125678bd2a162f149b99b9d1c886d503306502b1e293876a5fd48e7dc5c"
-    sha256 cellar: :any,                 arm64_sequoia: "0cea7611a724953ce034ea43aacc1b62d62730d90b34f91e12f16cc978da406b"
-    sha256 cellar: :any,                 arm64_sonoma:  "a4ebcad9e75c6a6aa8a2b149e8595fd399f9b5c8fcf02327e81784939c8719af"
-    sha256 cellar: :any,                 sonoma:        "a5d5968614ca6a325602f0c93e712bfc4a3d37f94c819fc51a3b16947a3aba75"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6df2454501458067779354e4ce2e1aaba0d94ea27ca7413fea89ee75e88f4d26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "310ca6b5d8f4f241432e3dc89252671ab523f8258e083bbf62d9b23f75d0390d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "cd4eb1b96b016ccd7523220dfbb54d2ec43a6353f1d5e6a37b69a3d5826b862d"
+    sha256 cellar: :any,                 arm64_sequoia: "ba77d3318b97296371305f5d86483f6df37a53eadb6cefaa376e978cd0ba60ab"
+    sha256 cellar: :any,                 arm64_sonoma:  "9232f49d3f05f9d29f7b2f249f321fbea058f9b1dc975911b8feb93b08f70483"
+    sha256 cellar: :any,                 sonoma:        "d0c41543bd1793e73ce558c9a562d038afe9c9fb73e2e0648a867e29d66225ca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "124f3979fad86b60148a68312f19a3c5d86f392e76419dcb34d1ea28fa5b77f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0049cf89efab45893c62e3ef076c19dece57d7b25d3b0ca1679b4af2a6c5cfd"
   end
 
   keg_only :versioned_formula
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
     system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes"

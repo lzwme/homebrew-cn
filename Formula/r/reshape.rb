@@ -7,12 +7,13 @@ class Reshape < Formula
   head "https://github.com/fabianlindfors/reshape.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dcb33e42f5519c7e852b82439f0009fe2519d222dd1d555c8c52b5916b99213f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0deb2c203b0fa63a69c68c5b8605e32aedea06293112536988b66827e741784"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d2e4941c2e24cc9e352b8f38a8ad9858f43d0b7fdb5d27b137fdac16453c640"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9096aaa64c7c4670901e34e9b863b5c6bf0689712ff5e2686b73e9ecd73412b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "17fca3f129fa2a54f00958d997824938d743231e88ef40242b40cbead2b0e55f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4584424c5d8504185de183e7f64bb6996fe7b7b0fe02a6e49186677137642a77"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "156d49068d0e0fac6b609c466875cedb2fedd39f1b5643c12ff37fbed78430ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0ea97bab6357c273ac184e0e08ef31d9eec02634db82c4281ffe5f7be4dcf31"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0dd82e64b1a93122a81a23e198f3ca8a2b85d0e31bd4dad5e0197614e68fc62a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c136b7487d666d02b31c7778fe18a03bb35b2735037a21e74e98395b98a7bf3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8073e96cf71f2e46e1d2e9ad085fa3253c1f7fd760b4525ff49a251f7045d95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8a848ec4c95b05cbc61023736b2d650d1048e708a4e015394600f3842412133"
   end
 
   depends_on "pkgconf" => :build
@@ -21,10 +22,11 @@ class Reshape < Formula
   uses_from_macos "llvm" => :build # for libclang to build pg_query
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   def install
+    ENV["OPENSSL_DIR"] = Formula["openssl@4"].opt_prefix if OS.linux?
     system "cargo", "install", *std_cargo_args
   end
 

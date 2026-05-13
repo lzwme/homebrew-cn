@@ -1,24 +1,23 @@
 class PythonFreethreading < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.14.4/Python-3.14.4.tgz"
-  sha256 "b4c059d5895f030e7df9663894ce3732bfa1b32cd3ab2883980266a45ce3cb3b"
+  url "https://www.python.org/ftp/python/3.14.5/Python-3.14.5.tgz"
+  sha256 "9c22bfe9939a6c5418fc74b289a5f1cc41859ae82ac6b163016b5844bd0a86bc"
   license "Python-2.0"
-  revision 1
 
   livecheck do
     formula "python"
   end
 
   bottle do
-    sha256 arm64_tahoe:   "8de43a97a4615265303a894b6916470ff859a6350848a7d49b95197ff44fe86f"
-    sha256 arm64_sequoia: "6e3cf0145c75c58bef0344587caf425e9f221d6851948680dc6bd4f25eb9a589"
-    sha256 arm64_sonoma:  "1b04a667d9e68d546f301eba444977ba1166de7dac988623f5ed9bf06424a4e5"
-    sha256 tahoe:         "7aba095aa0657c1e0c51665c83b618ea82acbde113ee9f6dc88849f2473fcfcc"
-    sha256 sequoia:       "68e298538d698d400e9144910a9dd08214fa9d9772bb32de9df000ff0a44b9ad"
-    sha256 sonoma:        "c6542c4c712c05f16257fc0386512579e6a5bab1c1fcb86108b4226909e1482f"
-    sha256 arm64_linux:   "5b295cc90c78a2e3240b0ecd416127376996cce6a1176a1e1f62d94aa9ffa120"
-    sha256 x86_64_linux:  "470a0a7e8928a202842440849bb9f5ede9f98808758a77c79c3efea852844fd3"
+    sha256 arm64_tahoe:   "6d0c75ac47493e67c1668beb7616235266acae8d7197bed2ebc83061764f3b46"
+    sha256 arm64_sequoia: "4f214aeaf1b487837d6cc82fb891435e6657e8be86e33843e1e44589851828c0"
+    sha256 arm64_sonoma:  "a13e77376aed185fdd08aa487d7e48ddf34096d21abfa4667e49eb284ac3e2f4"
+    sha256 tahoe:         "9503322121146d69a2e29d79c2a2b8eb8e3eae94dc2c9f3816f9a61448f3c0f8"
+    sha256 sequoia:       "7b9b168b628bf999d63564bafd9642e2bf1c1d6bc5a70284f987e566dbcad828"
+    sha256 sonoma:        "9fc8fe2b3e1da7433580ed940dec8a71a6a2f6bacec6ad66db8f5764a1025cdc"
+    sha256 arm64_linux:   "56c20df8073f5e3ba6c6df70e1cea7975da8d316ebea6ec7909839d54ccafc6e"
+    sha256 x86_64_linux:  "408217736e6a34ab5e070f544bb45f8fdd26068922881fede31ed322700a2669"
   end
 
   depends_on "pkgconf" => :build
@@ -59,8 +58,8 @@ class PythonFreethreading < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/73/7e/d2b04004e1068ad4fdfa2f227b839b5d03e602e47cdbbf49de71137c9546/pip-26.1.tar.gz"
-    sha256 "81e13ebcca3ffa8cc85e4deff5c27e1ee26dea0aa7fc2f294a073ac208806ff3"
+    url "https://files.pythonhosted.org/packages/b6/48/cb9b7a682f6fe01a4221e1728941dd4ac3cd9090a17db3779d6ff490b602/pip-26.1.1.tar.gz"
+    sha256 "d36762751d156a4ee895de8af39aa0abeeeb577f93a2eca6ab62467bbf0f8a78"
   end
 
   resource "wheel" do

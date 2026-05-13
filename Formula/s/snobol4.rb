@@ -11,15 +11,16 @@ class Snobol4 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d4705fd2288b5ccba0db75e7591f830fc8bc2babe97ecdf69a02f6f63d40ba61"
-    sha256 arm64_sequoia: "4007a100e7b4d9b64f9db697af1945e112328147e5e8266d04cd886eac8ae244"
-    sha256 arm64_sonoma:  "894a4a4941fdd854b231a3d5ffb204d939f4c5b1762839bcbd81ceb8051a3a82"
-    sha256 sonoma:        "4eba9e8ee63ac75e239471017f83795c37b762d9e7c657172643179d611f19c4"
-    sha256 arm64_linux:   "92192ac1c1040101f2f7725f49bdd4e48ca77f33c9b947378db747e0308ea13f"
-    sha256 x86_64_linux:  "bae8485b664f3c999e1eee9ec0c87cae6283e414b2606fb172b516284176311f"
+    rebuild 1
+    sha256 arm64_tahoe:   "2a8648c2d3fb39dca2d793d359ca305ce81281721bb64a195194b81e0e2b529f"
+    sha256 arm64_sequoia: "4b368da4aa95d4554c82a8de1ceae5f1c36e2791570fd6faf57b95af6d032adb"
+    sha256 arm64_sonoma:  "e9a93dbefd1230e26373a4c546ce948666910e7325435c1742974c0a3a2d8f2c"
+    sha256 sonoma:        "31b54dd8ddf58af62e79791ca11c6d0db27967b60ccea7ae96b7bdd524bd4063"
+    sha256 arm64_linux:   "f4682158fc5b1a5df0442c76fb9611535fea445f05aded8a18584c1fd4c09ed8"
+    sha256 x86_64_linux:  "df5fda5949ffdb1480145b151e48a0bfe45f5fe1ee1bfa834b416ef15840d9b8"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "m4" => :build
   uses_from_macos "libffi"
@@ -33,7 +34,7 @@ class Snobol4 < Formula
   conflicts_with "sdb", because: "both install `sdb` binaries"
 
   def install
-    ENV.append_to_cflags "-I#{MacOS.sdk_path_if_needed}/usr/include/ffi" if OS.mac?
+    ENV.append_to_cflags "-I#{MacOS.sdk_path}/usr/include/ffi" if OS.mac?
     system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
     ENV.deparallelize
     # avoid running benchmark:

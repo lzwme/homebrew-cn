@@ -234,6 +234,7 @@ Homebrew-homebrew-core/Formula/a/archiver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arduino-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arelo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ares.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/arf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/argc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/argo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/argocd-autopilot.rb, Homebrew/homebrew-core, 0
@@ -442,6 +443,7 @@ Homebrew-homebrew-core/Formula/b/babelfish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/babl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/backgroundremover.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/backlog-md.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/backplane-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/backupninja.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bacon-ls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bacon.rb, Homebrew/homebrew-core, 1
@@ -823,6 +825,7 @@ Homebrew-homebrew-core/Formula/c/cargo-fuzz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-geiger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-generate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-hack.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cargo-insta.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-instruments.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-llvm-cov.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cargo-llvm-lines.rb, Homebrew/homebrew-core, 1
@@ -1984,6 +1987,7 @@ Homebrew-homebrew-core/Formula/f/faketty.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/falco.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/falcoctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/falcosecurity-libs.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fallow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fancy-cat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fann.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fantom.rb, Homebrew/homebrew-core, 1
@@ -2303,6 +2307,7 @@ Homebrew-homebrew-core/Formula/g/garble.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/garden.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/garmintools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/garnet.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gascity.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gastown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gateway-go.rb, Homebrew/homebrew-core, 1
@@ -7405,6 +7410,7 @@ Homebrew-homebrew-core/Formula/t/tintin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tiny-remapper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tiny.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tinycdb.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tinyice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tinymist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tinyproxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tinysearch.rb, Homebrew/homebrew-core, 1
@@ -7751,6 +7757,7 @@ Homebrew-homebrew-core/Formula/v/vbindiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vc4asm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vcdimager.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vcfanno.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vcflib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vcftools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vcluster.rb, Homebrew/homebrew-core, 0
@@ -12187,7 +12194,7 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-source-sans-3.rb, Homebrew/homebre
 Homebrew-homebrew-cask/Casks/font/font-s/font-source-serif-4.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-space-grotesk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-space-mono-nerd-font.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-s/font-space-mono.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-s/font-space-mono.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-special-elite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-special-gothic-condensed-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-special-gothic-expanded-one.rb, Homebrew/homebrew-cask, 0

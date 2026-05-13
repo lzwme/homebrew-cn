@@ -1,9 +1,9 @@
 class Sqlite < Formula
   desc "Command-line interface for SQLite"
   homepage "https://sqlite.org/index.html"
-  url "https://sqlite.org/2026/sqlite-autoconf-3530000.tar.gz"
-  version "3.53.0"
-  sha256 "851e9b38192fe2ceaa65e0baa665e7fa06230c3d9bd1a6a9662d02380d73365a"
+  url "https://www.sqlite.org/2026/sqlite-autoconf-3530100.tar.gz"
+  version "3.53.1"
+  sha256 "83e6b2020a034e9a7ad4a72feea59e1ad52f162e09cbd26735a3ffb98359fc4f"
   license "blessing"
   compatibility_version 1
 
@@ -18,14 +18,14 @@ class Sqlite < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "eb0597f2fc461458b99d9988915a1ec6c55f9a503a63d30cd8f55db661160f34"
-    sha256 cellar: :any,                 arm64_sequoia: "70310585b41dbac8b84540f061b12882490cd55b4101982d3aa33155d8b7243d"
-    sha256 cellar: :any,                 arm64_sonoma:  "36080e3273614fe3d606ff0bd5bb090ad33c19f186ba44c35807b8f97afa15be"
-    sha256 cellar: :any,                 tahoe:         "109b479dafa7d3170606a3d13795478031baf2b60d2bf77bc1045c4a6a6578f6"
-    sha256 cellar: :any,                 sequoia:       "3f6f75a8f1422c1da90f2c07ec9bae606100ab0b3f52422288118a34801230b6"
-    sha256 cellar: :any,                 sonoma:        "d1e0f1cc65d426ba689fd0c512d918179b11b9c6be177ddc92b7751c6252be76"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f854d0fde3e8a2e8321476fd488f273e69833c672d7d672d3e0b13e3a3c5475"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1a29a99fae0bbd1e20ffc396aa6b4e9f47c0dcc11dd88c3d4c18f1de2fa904a"
+    sha256 cellar: :any,                 arm64_tahoe:   "603cd1f8bb653f313abfbebda1231ebcc9b9709527187d9d178dd89c63c063b5"
+    sha256 cellar: :any,                 arm64_sequoia: "0b460f9cac31f80121550e33c0b9c88ca29e92ab08465aacbd4d82990a7713ff"
+    sha256 cellar: :any,                 arm64_sonoma:  "ee0636a210447f3503a9343749fbf0e8fa70f44dddd0077d6c8c40b02c24e795"
+    sha256 cellar: :any,                 tahoe:         "1a17fc2beea485700567911cd274fdc9f07e5263b33b572443283f750bca46ff"
+    sha256 cellar: :any,                 sequoia:       "000449b6566f6f1d59706b5ce402aa3cf6838e0095ee38c402229de0c50c2ddc"
+    sha256 cellar: :any,                 sonoma:        "3d617a4a8a8b5dbafa71ea6b757bc0d5b39cf343cd8e0caad9acece728839fa5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c6e567616b54d3e6a31777abe5797275b25b4704e6eedf30a81c0882322628d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6cce8a2676eb574417ab9144488eb94cc6174a8d7564ddb53d443e457591a9a"
   end
 
   keg_only :provided_by_macos
@@ -66,6 +66,7 @@ class Sqlite < Formula
     args << "--soname=legacy" if OS.linux?
 
     system "./configure", *args, *std_configure_args
+    ENV.deparallelize
     system "make", "install"
 
     # Avoid rebuilds of dependants that hardcode this path.

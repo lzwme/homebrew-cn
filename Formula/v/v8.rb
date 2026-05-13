@@ -3,8 +3,8 @@ class V8 < Formula
   homepage "https://v8.dev/docs"
   # Track V8 version from Chrome stable: https://chromiumdash.appspot.com/releases?platform=Mac
   # Check `brew livecheck --resources v8` for any resource updates
-  url "https://ghfast.top/https://github.com/v8/v8/archive/refs/tags/14.8.178.14.tar.gz"
-  sha256 "b799f3222200d5cab73aecc4cb47e4e5f53ee8679592bc55f2c3c7eeb99bdd36"
+  url "https://ghfast.top/https://github.com/v8/v8/archive/refs/tags/14.8.178.21.tar.gz"
+  sha256 "14211bda6f144874b2947081e40168488862f4b63fddefefcf09d99d6ad8dee6"
   license "BSD-3-Clause"
 
   livecheck do
@@ -24,12 +24,12 @@ class V8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f7c89ad8718c0b671dbf5965b56b15ec4b926061f1aa83ab4b8c8e57ef29f7f3"
-    sha256 cellar: :any,                 arm64_sequoia: "34e06d455ac37f8d68e21129c829a2bd0e5556e136e6e5aa4e3b44698f36bbce"
-    sha256 cellar: :any,                 arm64_sonoma:  "3e8fe9d39bfb2d9326e6133ad62eb5c2531173a6fb563ec326d7e13724c36fb8"
-    sha256 cellar: :any,                 sonoma:        "b0685d8b5728f266927e2c0454d234fbeb15da23717e7301acab54de62d82dc3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "06b4e160189d3715c5bd747f8170ae64c0b1aecd53a94ad4e91daffd110628ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad83896b04944bb78014b366747560c987883a3ad4642160ee721d2d7c680d0a"
+    sha256 cellar: :any,                 arm64_tahoe:   "8d248ebd8fbc367758df30b664fc53490d452035738ca1a44f31a2a890c16717"
+    sha256 cellar: :any,                 arm64_sequoia: "fe51e5420644944f11cd8c65fbce193df12da777fdf1e2f8af2ebb45d8f62b8d"
+    sha256 cellar: :any,                 arm64_sonoma:  "c3a9b428742d566393cf2f0df4d4f78323e722a8b95e5165d19c1ac1e67f3cc3"
+    sha256 cellar: :any,                 sonoma:        "c732fe1f75905dbc9980fd152e12f774b7be7b9abc453410a504533f9135f484"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "988cfa243e0b1a806c15338e5a08947e7e97f4780f9492122566346c0b04857c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42888c192e8ddd358f723ed02b47b0284922896a2c3e7803ec9ab51d611cdaa9"
   end
 
   depends_on "llvm" => :build

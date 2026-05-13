@@ -12,16 +12,17 @@ class Tinc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "897c1713ce7c66a1d3f86969cc83533f95698b45329b69b433960455956dc381"
-    sha256 cellar: :any,                 arm64_sequoia: "5b7c292388af7f65cea0c8a21857d7009015dc77f4ba3d00ca62e58c3f0e4e59"
-    sha256 cellar: :any,                 arm64_sonoma:  "a1ac53e02128200442cce3bf8c64254e333f3bbb2a9adfbb7dda354c90208682"
-    sha256 cellar: :any,                 sonoma:        "491fc00a0fefb950612e107b07aad81cb0d181609f091d4286fc775411f1468e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "850d77178d63e341487866033023e8616b199932fc8debfea28cb9eaa4ad1d2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42b16b3f616da81e4f7b8311c4746bb60d73a14c8544308c52181bd241766f03"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "787c187e6c7506a56b7c112480a601d7e881a17e52429c0f30e4f2b63d39ff5e"
+    sha256 cellar: :any,                 arm64_sequoia: "85c840467466955dc20f3b7bf38e814da2c30495fd31bb9ddc843292096d5ad5"
+    sha256 cellar: :any,                 arm64_sonoma:  "4e905858ac8c591b769fbed72a4a9f139c786cc36ef1e7cdb20a88f0b303eb94"
+    sha256 cellar: :any,                 sonoma:        "bc75d6f63b2643ccbf66658b8186511ae6fc65dfecba334c917af3511ac4eaaa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f779b6e945b036f06086c7ccf55c615c172c68d4cf62eb0fa3555fbda893f1a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2873265ddb0e5e93829694b60d4aa6a15690b54dd1b170c3e2586f3df9988f6"
   end
 
   depends_on "lzo"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
@@ -32,7 +33,7 @@ class Tinc < Formula
 
   def install
     system "./configure", "--sysconfdir=#{etc}",
-                          "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
+                          "--with-openssl=#{Formula["openssl@4"].opt_prefix}",
                           *std_configure_args
     system "make", "install"
 

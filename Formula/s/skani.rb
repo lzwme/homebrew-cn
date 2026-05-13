@@ -1,18 +1,18 @@
 class Skani < Formula
   desc "Fast, robust ANI and aligned fraction for (metagenomic) genomes and contigs"
   homepage "https://github.com/bluenote-1577/skani"
-  url "https://ghfast.top/https://github.com/bluenote-1577/skani/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "494b64ec764be1ad485cd5d4f8c97180ff61377863d990532f6fa9541ab1b6f4"
+  url "https://ghfast.top/https://github.com/bluenote-1577/skani/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "5cae2fc3b8c57881fd9d3494c372eb8c8703eb69900513bfaef01f8892c55ae0"
   license "MIT"
   head "https://github.com/bluenote-1577/skani.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3546fc60dc5365b882e38900e4d073a448d0807017a361850b2431e14d4fa2ad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e82c68ed88fa2a1f79205d801e065f75d7e1be579110f643a233036910561db3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aac2ae00d83aa56517fce2357e1ed32acb4d479f13ae10680e004a8414ba091a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e916617176a333e48a633f62711fd64981759db8c7ab90130ce879f925126c7e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b45a01a56e17d9956fa8dcf3759eb38cc64ca85a5e8d653301b4e05452dd4a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "920c90c25b0714d398f7840d2004ca2ef26f7071f7d47a72e88784fe949bc207"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "137e39a846e64d1a17d0a02714910e1ce05d554ec9cdfc229700271db407ec41"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d43f0b4c13a9a4afd313c37eb93c2b89e164e2176678715e35383231d636033"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e50a575e21c93500424351eae6562bc74a98666231c31b7763391f6220c6db5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "71e1da005539c47dc3910cced0e526cc025c8b8beb170e6822e1182109f14b52"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "638ff917ed6a9482d53e412ef5930fd687282dad76fcddf617edf5673ddb2040"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "172570f197be852d7b640de7b4cecf3250b7bc148d8042cca84a91608f4af933"
   end
 
   depends_on "rust" => :build

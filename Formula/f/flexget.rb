@@ -3,17 +3,17 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/48/f5/eeda94e5a33782e8c7ff4bb1294f6505284666815980160b3270ef25f9c2/flexget-3.19.16.tar.gz"
-  sha256 "13f07d687e5bef36785a5c55114126c7dc83882e32525f710989c3ae9251f9de"
+  url "https://files.pythonhosted.org/packages/97/7d/d5fb41100ed84c8ba7df4a0ee35ceedd0ceb6a8c3019395c767bde28b766/flexget-3.19.17.tar.gz"
+  sha256 "2e08f66f795ad7a7e0068308511d1258a70e6ce4e0040c0bec543ab9b76ffdf3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dc6fc95bd5cd72c87924f9d224606a666093e79400d80ef86301115b40c709c6"
-    sha256 cellar: :any,                 arm64_sequoia: "e7eecfdab66521127c83065fc81dd30d941ec163694ea7690ca8cccc0c84f820"
-    sha256 cellar: :any,                 arm64_sonoma:  "429f72b4480a0ab3de7eb7ad9866d71a8559702800648e444c96883c56f3a527"
-    sha256 cellar: :any,                 sonoma:        "af2aedbee576b04608ae2e690da6e72e7fd11be8ee55d58a8cfe76072be13a1a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e73d487e72954b62e14338a71e8ced4bc304fffc3586263742082e59312f716"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29013d2f10b0a8c345fe24e204464e3d64eae6a8b726c8bad635ed2d68980aff"
+    sha256 cellar: :any,                 arm64_tahoe:   "9c9c1b2f87ae2f7067726e8a522290043c58913d35e0e8a109555e16026aff9f"
+    sha256 cellar: :any,                 arm64_sequoia: "ed2aee804486f1d3f78072c96efe1318ca188d85b758e73176566ca545feedec"
+    sha256 cellar: :any,                 arm64_sonoma:  "0968df7943785cfc800ec28150128bb65aaaf048101cea95b96bfb298b4d6b1b"
+    sha256 cellar: :any,                 sonoma:        "61ff857905a069ec7748b40b8eface276778f7443ed2a2b6bc6815f0f6ba7882"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fe974e73bfc67fda12983031df5e5f59dd108e945f4636bc24d9e25affe4945"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e43e499260a340f8150a043eb2b3eda171e6833b0055917f96805b36b590b48b"
   end
 
   depends_on "rust" => :build
@@ -145,8 +145,8 @@ class Flexget < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
+    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
   end
 
   resource "importlib-resources" do
@@ -200,8 +200,8 @@ class Flexget < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
   resource "markupsafe" do
@@ -330,8 +330,8 @@ class Flexget < Formula
   end
 
   resource "tempora" do
-    url "https://files.pythonhosted.org/packages/24/64/a255efe5edd367d12b770b3514194efdc1c97e5ed6ce6e8105d834750dfc/tempora-5.8.1.tar.gz"
-    sha256 "abb5d9ec790cc5e4f9431778029ba3e3d9ba9bd50cb306dad824824b2b362dcd"
+    url "https://files.pythonhosted.org/packages/5a/e8/20e489ba55092e0d737dc54a5c43424a7762d38f59efce54ed86f4fc51bc/tempora-5.9.0.tar.gz"
+    sha256 "66e6ddee320c38f4b253a7d8039337424c699916451b9271e0ccce770a4e8f62"
   end
 
   resource "transmission-rpc" do
@@ -365,8 +365,8 @@ class Flexget < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   resource "webencodings" do

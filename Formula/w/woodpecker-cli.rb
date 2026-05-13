@@ -1,19 +1,18 @@
 class WoodpeckerCli < Formula
   desc "CLI client for the Woodpecker Continuous Integration server"
   homepage "https://woodpecker-ci.org/"
-  url "https://ghfast.top/https://github.com/woodpecker-ci/woodpecker/archive/refs/tags/v3.14.0.tar.gz"
-  sha256 "8aa1ee7dc858cb73cb18db52e8ac9aa68733479e8fdef306166c4dc0806f272a"
+  url "https://ghfast.top/https://github.com/woodpecker-ci/woodpecker/archive/refs/tags/v3.14.1.tar.gz"
+  sha256 "f84115ea73513b9728570c90d85fef09ac07879232e2f1741f766a9368a2a954"
   license "Apache-2.0"
   head "https://github.com/woodpecker-ci/woodpecker.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76ca026f7971d92d44a9d256b38bcdaf762ec3892a65ee6af687173f599893c0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76ca026f7971d92d44a9d256b38bcdaf762ec3892a65ee6af687173f599893c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76ca026f7971d92d44a9d256b38bcdaf762ec3892a65ee6af687173f599893c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a89b2b6acf2b77e329fabd7b28ca4e5d2240328b498645f381670c7a48c71c2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "03938658ecef4f8b041635362e3200a4cc5cfe54745953ba09eb4c7a11b15ec9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8516572800af0ea5ad20ed568cba5bc4b2f9875fea04f772d3eee8b98118a631"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7f0761766b946953df9e88c43c2fb168e844bb2616f0b69b6d331231be199e4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7f0761766b946953df9e88c43c2fb168e844bb2616f0b69b6d331231be199e4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7f0761766b946953df9e88c43c2fb168e844bb2616f0b69b6d331231be199e4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0b653301f4ec83d3886de632fcd8ea8884e0f0354a4de5ff9306c9cc004b350f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de101794908d6ca5db19b144e3d86d47bfb4831af2dc0efa3d23d6df05b1d33e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99e5490ac11dfe37ed5ef8b4dff424f008823592c88d01c48cf8bd4070a04601"
   end
 
   depends_on "go" => :build

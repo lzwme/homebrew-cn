@@ -1,8 +1,8 @@
 class Sdl3Mixer < Formula
   desc "Sample multi-channel audio mixer library"
   homepage "https://github.com/libsdl-org/SDL_mixer"
-  url "https://ghfast.top/https://github.com/libsdl-org/SDL_mixer/releases/download/release-3.2.0/SDL3_mixer-3.2.0.tar.gz"
-  sha256 "1f86fae7226d58f2ad210ca4d9e06488db722230032803423d83bad6d35fc395"
+  url "https://ghfast.top/https://github.com/libsdl-org/SDL_mixer/releases/download/release-3.2.2/SDL3_mixer-3.2.2.tar.gz"
+  sha256 "cdb6d2a9f01bb3c1b98c957ee12109dd6ec1a1157682c9bc8523b0fe8ab2da1e"
   license "Zlib"
   head "https://github.com/libsdl-org/SDL_mixer.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Sdl3Mixer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "40386376f65c2f80aa65dec1f95af9f0fcd55ad646218df600b686a4001db6b8"
-    sha256 cellar: :any,                 arm64_sequoia: "099f6100d09f996c4d54f798cf199962b97bc4c0f123b2e78cdbbc7afdf02bfc"
-    sha256 cellar: :any,                 arm64_sonoma:  "6adfa053dda12cddf303f134a053f2756ee6840c05160bf62fc5f83d92213b52"
-    sha256 cellar: :any,                 sonoma:        "71dcfbb95c0bc67acc53260e88f8833547a7f631eaf8e8c80970456f77e62b21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "926eb9a8c8410348e9281ebb85805a736ec8992a3c63b04bf1538ab82598b306"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdb57e94cada153ef7c2069793a292c42e162b2c5ce0586a9313b325a37809db"
+    sha256 cellar: :any,                 arm64_tahoe:   "95a2042c9e134658d51f7237feb79c9522d892cbad4876b765d46cb927f231a7"
+    sha256 cellar: :any,                 arm64_sequoia: "b318d375376b36a18aebfd9b43279004db97959b3d69df7904cab616ba1e7cb0"
+    sha256 cellar: :any,                 arm64_sonoma:  "2faad709123d62b2eb3b850242ab570c227b4afe9ee12fcca9d111b530c26349"
+    sha256 cellar: :any,                 sonoma:        "caabbe30dc99fddd23774254ce90a000d1be3f5bfa8f5a51d816d23f0ce81947"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a702ab215183d127cb2b537df40f140bc411204fc6fa3779c458e8c2916e8bdf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4836437f259046905db88338f19a330b90c15ba50bdc12e55d4b99aee1c05156"
   end
 
   depends_on "cmake" => :build

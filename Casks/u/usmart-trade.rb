@@ -1,6 +1,6 @@
 cask "usmart-trade" do
-  version "4.5.9,20260424_184752,0cac8a24-6a68-4675-8838-8d9e40c52a44,2026-04-25"
-  sha256 "91a839dffd50001bbe6983cf70fe21cd09320ad579d81510fe9148919b5c140a"
+  version "4.6.1,20260512_163156,90da5ea6-d140-4fc7-93d8-f927ad0c8a19,2026-05-12"
+  sha256 "1f49f7e1ca3b517389eb914efd0ffac767c05202a0067a41daf2c9ee44e2ff42"
 
   url "https://jy-common-prd-1257884527.cos.ap-guangzhou.myqcloud.com/admin/app-version-file/#{version.csv.fourth}/#{version.csv.third}/usmart_macapp_#{version.csv.first}_#{version.csv.second}.dmg",
       verified: "jy-common-prd-1257884527.cos.ap-guangzhou.myqcloud.com/"
@@ -22,7 +22,7 @@ cask "usmart-trade" do
     end
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "uSMART Trade.app"
 

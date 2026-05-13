@@ -1,21 +1,21 @@
 class PhpAT74DebugZts < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/4ab83a550530c864e4bef29b054f81f71874d8be.tar.gz"
+  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/196d6a472da2fca7b2249335c60b6fd60bf3c98c.tar.gz"
   version "7.4.33"
-  sha256 "1593ea9ebe9902aa1dcc5651e62de5cd38b67ac636e0e166110215592ab1f820"
+  sha256 "30f4aa482e34bb2631a66450943256b220e8c13908940bd5c5d78fe743b3e5bd"
   license "PHP-3.01"
   revision 6
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 1
-    sha256 arm64_tahoe:   "56b58fbe3335fc278462733ad58742f11d97fcd85a8009798a191b1d8ab9c578"
-    sha256 arm64_sequoia: "72033b39c19e77caddac6ccba7f191bd309be40d86a3c9ba447bb109462b9f2f"
-    sha256 arm64_sonoma:  "23ecb32d364d40048df30c228a88c508fd441692400e94081bcfc0e6f0722772"
-    sha256 sonoma:        "4a2824e2e4aba0d8c797616d679563d87098c5416a95661a1ada25a9af39d09b"
-    sha256 arm64_linux:   "ec2ecfdd7d8424c4cefa1fd81049bdeb7cccf2084514d0eedd6407eabdcfac5d"
-    sha256 x86_64_linux:  "bd88e4ab4a33456bf4565491738ec85ebb97d3ba8062d6fa651ca59f64664cc6"
+    rebuild 2
+    sha256 arm64_tahoe:   "55040e4eadf02708ef4f6b91c7333ef487ed8c73fa3080f431dab64cf627b654"
+    sha256 arm64_sequoia: "21c0a6022152f7bdbab053c08e5de6452f6dddecea119c1e4bbae55583696caf"
+    sha256 arm64_sonoma:  "18ea4068379d8ea72baefa0b9ce3caec9874688bf50c534c73e7c73e96c5413d"
+    sha256 sonoma:        "2fe04f8adb8ae209fabdb95677e5e31a0942c72b67d7fb3c18d632a6f3edc8c8"
+    sha256 arm64_linux:   "47050071ee03400e952eb2320e2535d2c756f13f1fca2e83a00759f29cfed099"
+    sha256 x86_64_linux:  "661ed017493ae6759288316e58a799d7b34ea70eaf67fca09b65baf07b9fdcf6"
   end
 
   keg_only :versioned_formula
@@ -71,6 +71,9 @@ class PhpAT74DebugZts < Formula
   end
 
   def install
+    # PHP 7.4 still has K&R-style bcmath/intl sources that fail under C23.
+    ENV.append "CFLAGS", "-std=gnu17"
+
     # Work around for building with Xcode 15.3
     if DevelopmentTools.clang_build_version >= 1500
       ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"

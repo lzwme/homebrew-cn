@@ -12,13 +12,13 @@ class BulkExtractor < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fce16972463075eb40a46aff2cec48868513aeeb181a67fbdf41ead522d06d0e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d584ce493285ccd23882534b8707dc2635a97ff4890fb3c84051a2544b9eaf91"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba5d8eec3919cad2196afcabb07b9f92d04de7e46d908887aae54cdb655a57fa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cd2032241f7acb78ae73beb4254a1c9a55ad60b88568b52e260859ae01eacc41"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63def3013392e1b55add767f77b6722108804e57ccf91090ea82f3cff28292aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19a7347706e0ec70fd5db04d47420c392ff30a7f9da887cb8f66c56c86ba7c6b"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f91e27eaece667b8f117802801bd09657b709013aa3a1a439f4c9a32d1643317"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d913b32eda61a6ca752bb16bf19411549e5ce26a01fe925e8e96f3257d6be16d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be54a1b33bbace334e2ccbf21090bb134353bed403033533fe0af2082ba368ed"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d50c440d9d084bff2d9aac53b3cb15fa60926177ae4c218a079b914fc4470e50"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1481485958ddd10ca9171c3e339a23ebe27877e57050cb440aa273f86e2845de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fd01a677511ca96405ee937506dccf9ee51966b5658c0be0a24707fdeebaff5"
   end
 
   head do
@@ -37,7 +37,7 @@ class BulkExtractor < Formula
   uses_from_macos "ncurses"
 
   on_linux do
-    depends_on "openssl@3" # uses CommonCrypto on macOS
+    depends_on "openssl@4" # uses CommonCrypto on macOS
     depends_on "zlib-ng-compat"
   end
 

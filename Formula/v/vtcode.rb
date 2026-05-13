@@ -11,12 +11,13 @@ class Vtcode < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8db0eb8248f769007ec41f12d8b8f8f55f51560e39c4cabb7569b693329b7d8e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe35299675dee16ee405e54c7d17c31492d585bc6ca0e3bf0bf15739207f15ed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c678b32eb598b0cb6e2ee248aef93671e00b8d6d6a1b99ea168bb7c4c21c1d7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "21f7af7b65c14d56a9f6ab06da4f75f11874c7b19db2c648341d0f6bf81e1964"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67ab449e79f8c3b1b412273242fd0c1d9910dc22ba8581b36e3e387120ab7152"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fa3314bb55d2250e727dbae6a1ee5f203d02a795b0c21bb959ca0e10926b90d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d8231eb005b0d3f46b7e0d2bbf6a351e45f00347d05e1160dcca27257d64645"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dedc185ec5934d7aa7c37b1af0f1211f97a2965c0ef92d5c43c3eed0006a2b26"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ca1858981bdd0395a51ed7f9ef8d8f23ded5b5f00092da0827985a6b7bf795f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e32f72e068a1f69db6bfe7580d1d8dc5d143ce2450ed7ab03ff61e034da31429"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eff288be5159caa7d0db9b2d78e87f455298d3224c89649c8e3fda9ec803c697"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66a9019daafe456880167c954c261721c15cf1cba067634a3d2c69f6c74dc19d"
   end
 
   depends_on "pkgconf" => :build
@@ -24,11 +25,11 @@ class Vtcode < Formula
   depends_on "ripgrep"
 
   on_linux do
-    depends_on "openssl@3"
-    depends_on "zlib-ng-compat"
+    depends_on "openssl@4" => :build
   end
 
   def install
+    ENV["OPENSSL_DIR"] = Formula["openssl@4"].opt_prefix if OS.linux?
     system "cargo", "install", *std_cargo_args
   end
 

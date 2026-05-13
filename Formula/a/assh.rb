@@ -1,18 +1,18 @@
 class Assh < Formula
   desc "Advanced SSH config - Regex, aliases, gateways, includes and dynamic hosts"
   homepage "https://v1.manfred.life/assh/"
-  url "https://ghfast.top/https://github.com/moul/assh/archive/refs/tags/v2.17.1.tar.gz"
-  sha256 "9571e3424dcfa5d52e32f3f7dd19995e3d1f30c9d80420e77d47681d4a201744"
+  url "https://ghfast.top/https://github.com/moul/assh/archive/refs/tags/v2.17.2.tar.gz"
+  sha256 "80d33252b5c27e65c1a1539cfc3d49274c7b53372ca5005399c00b465422dd27"
   license "MIT"
   head "https://github.com/moul/assh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dfda9601a1a38d79acb4283392253abcca6922a651c7f3e37766bded440af19e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84b25532eba743cebccebf5819911f2808e468b81117385537bdff21f095080d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a812ac12e89c0d6ebf286a698dbd12203b42387697b18e1e5ddd504d14cf014f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "498ae24af8078005e9c6094f79be928fda04fa153be40640c37ee89db47deeba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "230436b583369233054a88d78be4e51a5c75509e9c50dfb609a89e8de632433e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1bb3a17a7f35cb82a642adb348100d00a69c220576402ad8bb8d500056bab90"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90d63d7a873cf718e770fbef532468ec2edebc8a6bd5704cd7c4f8c9d7bf554f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "683e1c8048760076146ce095596469ae2514d0cd2d60f3c2c60418289c9b8612"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8adb4a260bbf2e5b517166888b55222d7867fd7bc110fa350ac15e1852a76dd5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "beda22fe935a54c00605d0ad185f0f148ec5aad08c5612378fc9837fb3643096"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "533d73958dd2c5a622ebcf0eff45c1023f48932861fd55c04b95f562da91904a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d4976e76276e8a26c1023f8d799ad4607bd3dc7c05d46b4a2eb96a04b14d95e"
   end
 
   depends_on "go" => :build

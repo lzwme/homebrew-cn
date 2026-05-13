@@ -3,7 +3,7 @@ class Sslscan < Formula
   homepage "https://github.com/rbsec/sslscan"
   url "https://ghfast.top/https://github.com/rbsec/sslscan/archive/refs/tags/2.2.2.tar.gz"
   sha256 "a1b4e4f1a52920089aaade85a7b900c8f2683937f49025c821b9c9f2b25db9a1"
-  license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
+  license "GPL-3.0-or-later" => { with: "cryptsetup-OpenSSL-exception" }
   head "https://github.com/rbsec/sslscan.git", branch: "master"
 
   bottle do

@@ -6,16 +6,16 @@ class Aqtinstall < Formula
   url "https://files.pythonhosted.org/packages/76/19/24a588de6c25d43169d172dab47e63a63cd0d8f90e98cf86487acbf00ac7/aqtinstall-3.3.0.tar.gz"
   sha256 "9c7d85fbe7258be2d7d23fda33f8aff2e8b7536817255eaeaaf4226da8546a31"
   license "MIT"
-  revision 6
+  revision 7
   head "https://github.com/miurahr/aqtinstall.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0af2efe70191181d725ce9c1a8aa996e8ce74eda9929e060abe23c75f4a9868e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aab1aa508bb64af54ca64fba9c90aaa495e22061ad177980c8e6f0c1b7eed468"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a4953b74f84b8d60af56f13ed0c6acf101f1e2ddf8053136dedb1a5a6d49dcd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59fd50f51632a2fcdb827bbe6d7d9317450b98bbf1cbd8a1168a9e3ee9905312"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "31ac8d5c941b5b62b2dbb7d91b4067c0fbaee942ac0ba9c892bf65824428b13c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3583b45e4bc4318d0c5df61fbe7e01d32e7f8baf89c9fc229367c7180ba8e28c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78958b0b34e7c9b9639570aadda480997865b61ed163a253088f76c42411c8c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1204c2678c20db273582de0d471b597ad800575bcd171a3221565a8d0e27477"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80982b4f61f509ddfa22d722932e1d63504905c721448b2184b02ed6d5628dec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "849a284c5dc165cffbaf06323c45bb2daac4c8a5427943433a0b77f54220c71e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b5c1bb460fbc72381c035b41eb1f40b33187afa41ad09e7851dab5e8df327e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "224cdfdc5cc33b3a5ac18fc4381bca1b08a774ebe6cee4a435ee8f0675e85f6b"
   end
 
   depends_on "certifi" => :no_linkage
@@ -39,8 +39,8 @@ class Aqtinstall < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "defusedxml" do
@@ -54,8 +54,8 @@ class Aqtinstall < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
+    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
   end
 
   resource "inflate64" do
@@ -69,8 +69,8 @@ class Aqtinstall < Formula
   end
 
   resource "patch-ng" do
-    url "https://files.pythonhosted.org/packages/65/bb/ebd7c6058dcfbf634986f9a8b3fb638f3269501c73701a48b7530042da5b/patch-ng-1.19.0.tar.gz"
-    sha256 "27484792f4ac1c15fe2f3e4cecf74bb9833d33b75c715b71d199f7e1e7d1f786"
+    url "https://files.pythonhosted.org/packages/da/b6/8ea8095f964f93567bbe28709298b30104ad418b50d4217538387bf48f7d/patch_ng-1.19.1.tar.gz"
+    sha256 "036a3cc00134ec53f37e92333958ee75e117f2e62a5ec2b85c7122e5e815c29e"
   end
 
   resource "psutil" do
@@ -99,8 +99,8 @@ class Aqtinstall < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "semantic-version" do
@@ -124,8 +124,8 @@ class Aqtinstall < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   def install

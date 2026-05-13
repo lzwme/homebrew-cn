@@ -13,22 +13,16 @@ class Slrn < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:    "56945818d9c3961dc59b94440485c9c80baf04f29d791efa2803192b9ede727c"
-    sha256 arm64_sequoia:  "439ad507d119a98349f0cc8422d9ef91125faa53a802a55078f11f1e7bb53fc4"
-    sha256 arm64_sonoma:   "0b85878ca8073bc06e77875e5d106aebc10ff664d85e23e77c1b7a944d8fc565"
-    sha256 arm64_ventura:  "f802b3c9ffb6f3974d353225cf25e52605d6c25fa85dbfd9b9710a33d075218b"
-    sha256 arm64_monterey: "03933542674c0ea7206e58e91879b25b068609a954231a7fe1bf64b9636a7ca3"
-    sha256 arm64_big_sur:  "deb43212975b4d77acb6d79eb556990588a71d47a94029f24736bc1661bb18eb"
-    sha256 sonoma:         "eb1b5847ca10bebffed3fb3fc5fadc37340d845780e536c020670fb6d6f01eb8"
-    sha256 ventura:        "409721aae6f317e0e3e0b471c7488dd634585a193957c4feb7916a6a645768a1"
-    sha256 monterey:       "8018c76bf03539804c59b85442cb2c8b578208f0a8b0ea325b559b810cc4a8cf"
-    sha256 big_sur:        "e29042ebfccfb58c2ce1883f763173da76c5a38d190e98255abebf6dc632e343"
-    sha256 arm64_linux:    "068f15a993a5007e14a1f8f1daf439682aedc5a098b58b271496f7996d011b5d"
-    sha256 x86_64_linux:   "5bf9ff614629b46445541310dd089e4893dbfa2e463944aff5596cb14476f812"
+    rebuild 3
+    sha256 arm64_tahoe:   "d12aa6f4674216c6c7ceb66061ea61501d3ef0697e2544309b9534b22072cf77"
+    sha256 arm64_sequoia: "2414f63cb9c68b2fcf95b67d049d1399b444731a278de210f593cbdba0bf3bfb"
+    sha256 arm64_sonoma:  "2117e0a8177c4b02606d061f4cd6e7a1ec0b9d9a45414442fc6a4216fc7b74b1"
+    sha256 sonoma:        "849607a38e934b1cde9460b3b3fac5d9bbbe52e6a6eae58771d71acedf97b1cc"
+    sha256 arm64_linux:   "659efed3f9437c38028c8c48922eaf0ec6c65afe781f703883e3db08699f4061"
+    sha256 x86_64_linux:  "a47454b9d0afb4578fcd6dd2c7258aec6396edea231b18f167171f4ed9f1dad3"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "s-lang"
 
   def install
@@ -40,7 +34,7 @@ class Slrn < Formula
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
 
     system "./configure", *std_configure_args,
-                          "--with-ssl=#{Formula["openssl@3"].opt_prefix}",
+                          "--with-ssl=#{Formula["openssl@4"].opt_prefix}",
                           "--with-slrnpull=#{var}/spool/news/slrnpull",
                           "--with-slang=#{HOMEBREW_PREFIX}"
     ENV.deparallelize

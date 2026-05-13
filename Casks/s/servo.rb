@@ -1,9 +1,9 @@
 cask "servo" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "2026-05-10"
-  sha256 arm:   "74a0674344dd603558775fd084479370152f4e0a5c56b95c15fcc0be3e4b7f24",
-         intel: "41196130c294cf9a306bf7ba7c39839b050f9f650aa9397a38145dde60faa1d3"
+  version "2026-05-12"
+  sha256 arm:   "1ba5bfb8883389373b7410cb97f8597a1ad8ad2a5a8d5ee3530750dcce5213cb",
+         intel: "b09106bf382a8b23759870f9f3d42602d1871694508552eef65c87fa82e92952"
 
   url "https://ghfast.top/https://github.com/servo/servo-nightly-builds/releases/download/#{version}/servo-#{arch}-apple-darwin.dmg",
       verified: "github.com/servo/servo-nightly-builds/"
@@ -19,7 +19,7 @@ cask "servo" do
 
   disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Servo.app"
 

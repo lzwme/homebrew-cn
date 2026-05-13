@@ -1,21 +1,21 @@
 class PhpAT74Debug < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/4ab83a550530c864e4bef29b054f81f71874d8be.tar.gz"
+  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/196d6a472da2fca7b2249335c60b6fd60bf3c98c.tar.gz"
   version "7.4.33"
-  sha256 "1593ea9ebe9902aa1dcc5651e62de5cd38b67ac636e0e166110215592ab1f820"
+  sha256 "30f4aa482e34bb2631a66450943256b220e8c13908940bd5c5d78fe743b3e5bd"
   license "PHP-3.01"
   revision 14
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 1
-    sha256 arm64_tahoe:   "ab53eb9498b1c2f196a9adb6fb09a664daddb546f3da3a597d755a2b651a747d"
-    sha256 arm64_sequoia: "a10d92c1298a027b695b5f59939402298a92425d635fae06dd11526c13274184"
-    sha256 arm64_sonoma:  "470ff644c6a4d7dc047d41e0a62190ba375b08d43760ae97fbb0bbc42883caba"
-    sha256 sonoma:        "7bb0a233e2f5c33bfb71a55419342e6ce3d3f6d393909e1022506a7e838a3d80"
-    sha256 arm64_linux:   "f265c0f24178103fdf908bd9c2f0d15fc1a5227355693acb3c50588b5a2b17e6"
-    sha256 x86_64_linux:  "a169d48dff47688c7a77071d86a0abd2b2690853d49517da3a50294d250a6626"
+    rebuild 2
+    sha256 arm64_tahoe:   "6d03134f501b5fc3df28c3b782f12d703321978ca85b0d4fb00a62c61b8e6fed"
+    sha256 arm64_sequoia: "a80ced88807173e1a7db3c95442293132072103e25f00e81b6c788afa7e128fd"
+    sha256 arm64_sonoma:  "b7e2227952978cf555fa0ead8a78cb10bca6e925827590b2901dea36574cb990"
+    sha256 sonoma:        "ce0e9d7d1832ac55e62fbadc75006d156d3e4ebf2e4420bf28922a3e054fa8cc"
+    sha256 arm64_linux:   "a91b4a166ba4f6ab1958909dbd79c782f11e62ae389663e99b776bdfab89dc15"
+    sha256 x86_64_linux:  "e7a6e09200d36aebfbf1ed17a1d2b8555e4f50e65edc1fe26f1a3198477984f5"
   end
 
   keg_only :versioned_formula
@@ -79,6 +79,9 @@ class PhpAT74Debug < Formula
   patch :DATA
 
   def install
+    # PHP 7.4 still has K&R-style bcmath/intl sources that fail under C23.
+    ENV.append "CFLAGS", "-std=gnu17"
+
     # Work around for building with Xcode 15.3
     if DevelopmentTools.clang_build_version >= 1500
       ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
@@ -89,6 +92,8 @@ class PhpAT74Debug < Formula
 
     # Work around to support `icu4c` 75, which needs C++17.
     ENV["ICU_CXXFLAGS"] = "-std=c++17"
+    # Ensure there is enough Mach-O header space for Homebrew rpath rewrites.
+    ENV.append "LDFLAGS", "-Wl,-headerpad_max_install_names" if OS.mac?
 
     # buildconf required due to system library linking bug patch
     system "./buildconf", "--force"

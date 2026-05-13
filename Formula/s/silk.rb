@@ -29,7 +29,6 @@ class Silk < Formula
 
   on_macos do
     depends_on "gettext"
-    depends_on "openssl@3"
   end
 
   on_linux do

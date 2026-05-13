@@ -1,20 +1,18 @@
 class Trdsql < Formula
   desc "CLI tool that can execute SQL queries on CSV, LTSV, JSON, YAML and TBLN"
   homepage "https://github.com/noborus/trdsql"
-  url "https://ghfast.top/https://github.com/noborus/trdsql/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "e3b8bef57330648d3f4b279bd4c652eaeba19aa4fae3fe05cfa596a2b3f4bc51"
+  url "https://ghfast.top/https://github.com/noborus/trdsql/archive/refs/tags/v1.2.1.tar.gz"
+  sha256 "58a4b5987e80ed313bf878b070b4d94768fae658f2cf56f353284d762937a84a"
   license "MIT"
   head "https://github.com/noborus/trdsql.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9ddcc05dd7ac0be0fe6e20e1881ee61ee15db929558e968a914c8a1c032bbe1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ecd934194fed8b8fcb0c00cdb3108e5a4bf9ba7e465c13f4e14e9a864ffc0a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f998e6d2c9f7085a17395d4b3d4da1065bf806139a03a5dcd99054dcf8071d88"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8c3a2bd0fe2bf86949101930b1efb4c280a52756d59f69b3f04d0c8c612dd415"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1dc4cae00a081d54f378ff91ab8b3b80c538063efec0633b11ce0e24c4dc64e4"
-    sha256 cellar: :any_skip_relocation, ventura:       "bb08c8329af1c57cdda3d50b3d685274c45835665a9d91bf7db15caf01d5c19e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f84e77253c3cb7ad195e7e3dae37b9981e018aa6bc18be292566f433efa7c07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcfdc24169094af5142de81d1f342512c639c262bc8f10566e5ee5230ae6a2ac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a36be03abad1308d14daf19945a9f3c38fa012124105caec8a1021f2db73f84b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "983749de62078d684a988c2f21a0075ee1343373f0bbda3e271f6900492b749f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da216f2410476f2e44eaf333bc0b2b3e1be06b1e8af19a5cb0ba7f96169b8702"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d9d2cdb717612a4abbe4b0827d23d8c3b1dbe6f0cc72f5f3828ef65cc779e365"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de3cc6d52134fbf901bdd5d930b7f483f055e0f0c34ebd3213bde389f4f63d05"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a00bfda8aaa8de57509af6cdf77d5b486859bd928ea10c569051bf3f04b3545c"
   end
 
   depends_on "go" => :build

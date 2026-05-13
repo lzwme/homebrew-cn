@@ -7,17 +7,16 @@ class Readpe < Formula
   head "https://github.com/mentebinaria/readpe.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "c4c0d71502a8cbcd7c90f1da7409e316bb15d84c2e003541bd63da2362451ebe"
-    sha256 arm64_sequoia: "39059d97cdfec3a8b1bb7eca3a7acd3c0f1e8c4e1e322ec14db9bb38c15424ca"
-    sha256 arm64_sonoma:  "d32bd36d656dc44a83bb6dfadf5ec738c4fe11804b804a916b1cb53400434a6c"
-    sha256 arm64_ventura: "c5c6fb0c7ff57141804b2982fcb3f59611df7f3a85ce73c2b665b04f548ca633"
-    sha256 sonoma:        "045c12282c8a90c85934c9f5ca06471ce865c64647c4be3a49606ae6ae09403a"
-    sha256 ventura:       "73c192ae123766a4233942303830ab98f3c4c959ad62897a229f161fd77ea8db"
-    sha256 arm64_linux:   "d493e303872e675b270d1c178913925c24de9124e9cabe0adc5d1b4bc845f918"
-    sha256 x86_64_linux:  "50faef2834685643cdf64ddd6a6f3e87e3f70fdb7f813de2a0c88aaddb84a253"
+    rebuild 1
+    sha256 arm64_tahoe:   "5611f03dabb2f615b6b399a85d937b1772eca7f1ddaeb86f6c9883ad2d1dea03"
+    sha256 arm64_sequoia: "4de2c90e7d61718d3fe23d6214e7746f2aae25d656e2a7fded40dbb7ca1c8aaa"
+    sha256 arm64_sonoma:  "f3e402c3d41573a09bbf3c1f0e6afc605ec997eb0907891beaa0868bcda8d162"
+    sha256 sonoma:        "5600fcc6f348209569f4254cee52ea00caccffa571e6bf8c92b34e70aae463d7"
+    sha256 arm64_linux:   "4056c6fc785ef850a79932f696a7b18ddddd2464ed2e875b3521f03178cd8ba1"
+    sha256 x86_64_linux:  "a4b822686f470e7e03ce964e8fbb067e16a74d2e295ca8b6ef418a13df604384"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
     ENV.deparallelize

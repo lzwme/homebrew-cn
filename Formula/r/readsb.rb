@@ -1,17 +1,17 @@
 class Readsb < Formula
   desc "ADS-B decoder swiss knife"
   homepage "https://github.com/wiedehopf/readsb"
-  url "https://ghfast.top/https://github.com/wiedehopf/readsb/archive/refs/tags/v3.16.14.tar.gz"
-  sha256 "f0469d06dceb75e7ee5c0ae74e710f3dd2ff0941c1c579678226b998c5d2c7d9"
+  url "https://ghfast.top/https://github.com/wiedehopf/readsb/archive/refs/tags/v3.16.15.tar.gz"
+  sha256 "7a8c3886c6c548578e9a65f7b45a993bcd49aa52f70d5bffe1e76b4cbca9998f"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b20a8351a7a9460bd85959193701615b53fc3529575e7bbde035f1775a6e864b"
-    sha256 cellar: :any,                 arm64_sequoia: "404f0593b5958af24d9eb659fcc6c4341612a4249e950b0587171cf5975d4274"
-    sha256 cellar: :any,                 arm64_sonoma:  "5ba73c30797464a5ad28c71912da7fd68bf4c24a9e5d5a35738f0073dab5284a"
-    sha256 cellar: :any,                 sonoma:        "6795aca3f4697a03254d2b820c6a10e2020fd05930d7726a69ae777c925bcdbb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "131422fd48cb829cdfb78a332120998c4ae17cfd861f77f0e796c843fa4b84bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "122671aee363242a7e0012830aa68ac1728b5d1ba269066db81e25892ba35868"
+    sha256 cellar: :any,                 arm64_tahoe:   "80608fc6da82cd0fa55153f571e6052014864962a0e699cbb27ab7e929fedda5"
+    sha256 cellar: :any,                 arm64_sequoia: "5c00bcc415ebd1b5a8220d840d6de66f5ec076f8e125f46829e883f21a01c76f"
+    sha256 cellar: :any,                 arm64_sonoma:  "525232c827d3a651ea45b2ab0937b05f4761a9598afe56f327e5ecd193012196"
+    sha256 cellar: :any,                 sonoma:        "28330af2fb014bf289f82a4bec32dec3c4ae80aa4032df8532f9303cbb949761"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2767725b97c08f2d8eb8a43dabb2cea0e79bb5da045512423ea5f74a09f38ae9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8460b5d1b6975ae821e7b88ebde163fa6594b814d7a1e4785ff65a0bd41e1eac"
   end
 
   depends_on "pkgconf" => :build

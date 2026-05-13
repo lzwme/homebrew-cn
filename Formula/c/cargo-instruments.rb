@@ -6,17 +6,19 @@ class CargoInstruments < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b24f1b8b1c0b8438f5281f3c4651f68fb7a66ab15da73379da514ffa62754a9f"
-    sha256 cellar: :any, arm64_sequoia: "37bb045d1ce6ebe87901932522dbef2ba0c837ea2331ceb73b725e6b3009cb01"
-    sha256 cellar: :any, arm64_sonoma:  "13bc3989d90a6a09b2c7c0b77867138f4f32d5adf06b7adce40422e47f744c9c"
-    sha256 cellar: :any, sonoma:        "e2428340b1b044eb596e9a6c278d2c669a7677cb2b0f42e01d33e53c312c5bd9"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "b31d3827d6b1c33bce56424c8a745ddf2efdfd83b4333c47ab321a8308d9907a"
+    sha256 cellar: :any, arm64_sequoia: "29e767ab55c7706803c867030a317553fd415d92830c15d3476bad4f66055863"
+    sha256 cellar: :any, arm64_sonoma:  "35f14a2c4e195c24786c04b39a4a637a1bb62ed000dfb49ca653a70e7ead694a"
+    sha256 cellar: :any, sonoma:        "4d41b34fe86e84e1acf5b8df0e06d44fbf385cc7742e2922ea4d34ca49e4d0ee"
   end
 
   depends_on "rust" => :build
   depends_on :macos
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
+    ENV["OPENSSL_DIR"] = Formula["openssl@4"].opt_prefix
     system "cargo", "install", *std_cargo_args
   end
 

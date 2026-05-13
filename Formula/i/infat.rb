@@ -14,7 +14,6 @@ class Infat < Formula
   end
 
   depends_on "rust" => :build
-  depends_on :macos
   depends_on macos: :sonoma
 
   def install

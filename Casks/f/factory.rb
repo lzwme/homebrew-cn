@@ -1,9 +1,9 @@
 cask "factory" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.79.0"
-  sha256 arm:   "8aa50ea2ac809bfae7798ade167ef12e4fb99b7b1e157e3838ff1d83e5bec6f2",
-         intel: "f434014f2545780ba092974723f57ce5d3bac8329ee545cca6affba59df2aee7"
+  version "0.80.1"
+  sha256 arm:   "60cde10bb742705cb79e046b87137d07af0c464897a43ee3a7895900973b6b70",
+         intel: "85a61662593b02964c8726d8cff559ecc948b1208b05f78ec4461090ef954f6d"
 
   url "https://downloads.factory.ai/factory-desktop/releases/#{version}/darwin/#{arch}/Factory-#{version}-#{arch}.dmg"
   name "Factory"
@@ -16,7 +16,7 @@ cask "factory" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Factory.app"
 

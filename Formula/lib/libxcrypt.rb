@@ -22,8 +22,6 @@ class Libxcrypt < Formula
 
   keg_only :provided_by_macos
 
-  depends_on "pkgconf" => :build
-
   link_overwrite "include/crypt.h"
   link_overwrite "lib/libcrypt.so"
 

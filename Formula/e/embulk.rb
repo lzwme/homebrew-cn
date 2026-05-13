@@ -16,6 +16,8 @@ class Embulk < Formula
     sha256 cellar: :any_skip_relocation, all: "fc718acf04dd0ffd6e04dc816490ba13bc8af9b0de9d45b169cc6b55a9e936f7"
   end
 
+  disable! date: "2026-05-12", because: :unmaintained
+
   # From https://www.embulk.org,
   # > Embulk v0.11 officially supports only Java 8, but expected to work somehow with Java 11, 17, and 21.
   #

@@ -21,13 +21,7 @@ class CargoAudit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "303b9c4ba7517e22b93399a9876b8bd69307165ac9eae534db83852e449bbfb9"
   end
 
-  depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
-
-  on_linux do
-    depends_on "zlib-ng-compat"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "cargo-audit")

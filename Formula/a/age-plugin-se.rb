@@ -18,7 +18,6 @@ class AgePluginSe < Formula
   depends_on "scdoc" => :build
   depends_on xcode: ["14.0", :build]
   depends_on "age" => :test
-  depends_on :macos
   depends_on macos: :ventura
 
   def install

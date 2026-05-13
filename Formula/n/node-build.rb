@@ -1,8 +1,8 @@
 class NodeBuild < Formula
   desc "Install NodeJS versions"
   homepage "https://github.com/nodenv/node-build"
-  url "https://github.com/nodenv/node-build/archive/refs/tags/v5.4.35.tar.gz"
-  sha256 "96de804271114d278e9fe3e6fa6e2d9437f42fca295533828d63ddb3b4788cdd"
+  url "https://github.com/nodenv/node-build/archive/refs/tags/v5.4.36.tar.gz"
+  sha256 "4f2d55d3f2df918d81d4720a57af751ec4e1cb983fcd75f0d296911c6071c75f"
   license "MIT"
   compatibility_version 1
   head "https://github.com/nodenv/node-build.git", branch: "main"
@@ -15,7 +15,7 @@ class NodeBuild < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9e0c0e498346d923c03796add1b07aa8462e7a27f46d5e59be81d4957e42e3b1"
+    sha256 cellar: :any_skip_relocation, all: "1d404e0aff0353749eb33b395630f155867116f1f8ada4c2e2dcea67c63efba0"
   end
 
   depends_on "autoconf"

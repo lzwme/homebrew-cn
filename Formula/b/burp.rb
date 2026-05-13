@@ -11,13 +11,13 @@ class Burp < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "8299d856b7c33e46727a2baeca69c5a99cf072afa966c420d555d2b778ba382b"
-    sha256 arm64_sequoia: "410ffad86ce38295589c03a0fbe7d7825c3be2064056a82834d3607cc6660f1c"
-    sha256 arm64_sonoma:  "605e51882accc26159aacc07dfd50cfb5838fbd991113c412435b569eaae41b4"
-    sha256 sonoma:        "286a00e3a1be4055262eefdbe1250e7d4ca888dde0534c767c0e2b3eb45e47b0"
-    sha256 arm64_linux:   "08d555e3cd1915263f34d05eda67342ed8d83dddfeba72b462ba3f9b967aaada"
-    sha256 x86_64_linux:  "3eed28a4c204464ea71a807e81554b05a12a3aacd71c12ded2e6925ff0c7a0eb"
+    rebuild 2
+    sha256 arm64_tahoe:   "c129b737a033d7fbba3e46e3b3044f89225d4cf173be9f0c22a8fb2cae29e024"
+    sha256 arm64_sequoia: "53b1f61a6ac2d34c5ed8b19b91294e54e236376b806c1a2f61f5ba141888dfd8"
+    sha256 arm64_sonoma:  "6646ad75dfd50d4834bbe42466f15337bc2da10e67f865216736390a79f53708"
+    sha256 sonoma:        "296756b80ec859d53dcf960a4e025a2f94c184085a6739071bd19e4f3bbb7641"
+    sha256 arm64_linux:   "1183e6bd117bc9a43d90ac62be599f30c3657aa4d85bfed7efe3e812e4f7bf73"
+    sha256 x86_64_linux:  "7c83c81423fcb31dfd2c3e2ed7725777891a11a03f6b30c8955558b97ba09794"
   end
 
   head do
@@ -31,7 +31,7 @@ class Burp < Formula
   depends_on "pkgconf" => :build
   depends_on "uthash" => :build
   depends_on "librsync"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"

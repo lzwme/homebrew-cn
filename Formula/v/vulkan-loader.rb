@@ -1,8 +1,8 @@
 class VulkanLoader < Formula
   desc "Vulkan ICD Loader"
   homepage "https://github.com/KhronosGroup/Vulkan-Loader"
-  url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/vulkan-sdk-1.4.341.0.tar.gz"
-  sha256 "fe982697c780a950641bfcf94707135c26c501352242d285fa95d087d691292e"
+  url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/vulkan-sdk-1.4.350.0.tar.gz"
+  sha256 "91f88fc43abb36821a568c7fbb3f815e9baf946d5fe187928df279708d45e509"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/KhronosGroup/Vulkan-Loader.git", branch: "main"
@@ -13,14 +13,14 @@ class VulkanLoader < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "3295a53bff2bc054547a46bb7e62f44220a8401faca4dc74eb99ed247a2b2f45"
-    sha256               arm64_sequoia: "a5f42668283bfc61f5236ca10f015dcbc72ecc4a536a6ddbb698e4aa6c6759f7"
-    sha256               arm64_sonoma:  "8ebe9d966b66da422f245451ea6965e56b133bdff040385f6a485dca08a8b724"
-    sha256 cellar: :any, tahoe:         "9dff81362f512a5b18fe28ff26b1593c22f1928c4a197648aef5b7b950747777"
-    sha256 cellar: :any, sequoia:       "7eef7a09a206a9174c94b8a1e5a619dad47ddf7d42eebccd56f6820e210411f9"
-    sha256 cellar: :any, sonoma:        "748166fe572e7c2605c52fa53f5e5f4e097a2c84eb016848d8b371386eee6fc9"
-    sha256               arm64_linux:   "384d36d5cda7ab774e0592dd2147aaf3928f762c063a0c5725f2b3189c9d3e7b"
-    sha256               x86_64_linux:  "19929669867dd2f30bd4943506aa08ae295434a68712c649d299daf7422e2247"
+    sha256               arm64_tahoe:   "a3ed8ff9247a4e058afb5d17c9c87856d95b5681409f1b5d230b671691769101"
+    sha256               arm64_sequoia: "20f5cc0a364d8875c3d5f256f88d7795678d6afad1cfa7447ddceb928d5e0c9f"
+    sha256               arm64_sonoma:  "ea5d2e9c708c61482e5b8f6d8acfd46626db1191f945daff914e53af358b2a41"
+    sha256 cellar: :any, tahoe:         "5761fee6fae907918097c8b4b86c22cd17cec7e9ff295223e2e584b5bb314991"
+    sha256 cellar: :any, sequoia:       "5e443d4b19f0b3be2e2eef152249f5ea0f8d8d1d2704b8e226d7ef898527ae6e"
+    sha256 cellar: :any, sonoma:        "2d266cb426bdf54c35c26ef16d1afe9d5aa7df8921476702f1f29a7d33cac611"
+    sha256               arm64_linux:   "cac29a07107d501055ce5584e0786e8d26fdcc59f234454c1f4af82e25d6df54"
+    sha256               x86_64_linux:  "082a2139e5d1f6070f7d20eb920ba0ea9141aa4a5d1523fb5888e9fceb2b4094"
   end
 
   depends_on "cmake" => :build

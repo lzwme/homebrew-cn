@@ -1,9 +1,9 @@
 cask "visual-studio-code@insiders" do
   arch arm: "-arm64"
 
-  version "1.120.0-insider,1778475901025,05ca786e54e18b696b4f47427e620580d83404ff"
-  sha256 arm:   "9524ad766dd3e23f8715a5359299f087913d4f19a22fe2d91f59be36002c8af6",
-         intel: "97b21860b45fa22240b508e36cdc6b39abe065d78e231354723c45e1f321bfd6"
+  version "1.120.0-insider,1778618509988,0958016b2af9f09bb4257e0df4a95e2f90590f9f"
+  sha256 arm:   "515844f30f6eb6186a3e1bde20f4dfff82099ab1f8c69e329324336081822f18",
+         intel: "fc5f99e4e7be6ea2e466e584c8d91870009c57305686bc011ceb2d47d2c3af88"
 
   url "https://vscode.download.prss.microsoft.com/dbazure/download/insider/#{version.csv.third}/VSCode-darwin#{arch}.zip",
       verified: "vscode.download.prss.microsoft.com/"
@@ -25,7 +25,7 @@ cask "visual-studio-code@insiders" do
   end
 
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Visual Studio Code - Insiders.app"
   binary "#{appdir}/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code", target: "code-insiders"

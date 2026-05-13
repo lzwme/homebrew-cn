@@ -6,15 +6,16 @@ class Awscurl < Formula
   url "https://files.pythonhosted.org/packages/54/a3/fcbc64c5e038b87394e72a03131643109e451a697d467a7f90c6b6413ee9/awscurl-0.42.tar.gz"
   sha256 "c19d05427a104c11f0080d74063e607e438fb3eaf789150c84bf6b28639f6937"
   license "MIT"
+  revision 1
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "26033cf08b0ff62c8059fd8629c75f1a67cd7ed76bae9ddd2f291842b6296246"
-    sha256 cellar: :any,                 arm64_sequoia: "30ec0625abeec8ae1b799ea475949d9779f09a89455d51d567b976f311c491eb"
-    sha256 cellar: :any,                 arm64_sonoma:  "00eb0ce6b2b08a3e7bd1ef30857f75fddd6a6305a6cace23485afcba32a8e343"
-    sha256 cellar: :any,                 sonoma:        "79380b8a7eefa52942e4ac2afca9e5bdf4ae9690aead96695963eb341f2cb32e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "54a80ebce549e36a6c3a5d02bdeb8931c8e4d5e4dcd08fabbd101a1f76cd3bc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3a45899d8fb9fc3b53043c237c54d00d18a83beb830833bf2d084a12f7f504a"
+    sha256 cellar: :any,                 arm64_tahoe:   "cb44bc6f506dbf4f5d9a814e4bce672192d87e4d0935c615df6a11d85c4a2dc3"
+    sha256 cellar: :any,                 arm64_sequoia: "86ef9ec524767dbdde7161f54615c45224bbf9c221b750512392718dd4b8a95e"
+    sha256 cellar: :any,                 arm64_sonoma:  "0a7391f37e53adeddb41f1c92209b32e8c0777b4e3cb1a4e19c4e2301fd15151"
+    sha256 cellar: :any,                 sonoma:        "9dfea527dd9d38251e717fb3555c2dd176d975a8c29eb174f98b14c2d15f74ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0bb3f84f5a3efdde0f3f65f6593e77c998367abe9f12c0e60d6a713669faadcb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f75b7c77e05697ef1e183cd1d8a7cb062af417c42535391fc7f627ea6fb66d10"
   end
 
   depends_on "cmake" => :build # for `awscrt`
@@ -39,18 +40,18 @@ class Awscurl < Formula
   pypi_packages exclude_packages: ["certifi", "cryptography"]
 
   resource "awscrt" do
-    url "https://files.pythonhosted.org/packages/fd/98/ddd893b872519da47573810aac0b225433c2a4162967df73bfe0bd282bbe/awscrt-0.32.1.tar.gz"
-    sha256 "1faccfaf365c7ae8975307e42edec44eb3ae3feba2805aff2979ba8474b6bb4f"
+    url "https://files.pythonhosted.org/packages/92/cb/980fe60c4209af71d036276217f8b9f372f958e290c15d2849a3de4dcd23/awscrt-0.32.2.tar.gz"
+    sha256 "a4f48805e8a66237923f03b7b692d213994cff42d1ff08125d1d60c74fcaf872"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/dd/ac/e6b2b24d53c830500176f710594efcde626186b5b3c9aead6f8837976956/boto3-1.42.93.tar.gz"
-    sha256 "ff81c6bac708cb95c4f8b27e331ac67d95c6908dd86bcb7b15b8941960f2bc4c"
+    url "https://files.pythonhosted.org/packages/0a/37/78c630d1308964aa9abf44951d9c4df776546ff37251ec2434944e205c4e/boto3-1.43.6.tar.gz"
+    sha256 "e6315effaf12b890b99956e6f8e2c3000a3f64e4ee91943cec3895ce9a836afb"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/1b/d4/eb53f7ed81836696abf7103c9c901a0cace9217328094ca93419016a78c9/botocore-1.42.93.tar.gz"
-    sha256 "9ce49863c50b43f7942edd295fb16bfc6d227264ce6fc32c8f2426ef11b9351b"
+    url "https://files.pythonhosted.org/packages/79/a7/23d0f5028011455096a1eeac0ddf3cbe147b3e855e127342f8202552194d/botocore-1.43.6.tar.gz"
+    sha256 "b1e395b347356860398da42e61c808cf1e34b6fa7180cf2b9d87d986e1a06ba0"
   end
 
   resource "charset-normalizer" do
@@ -69,8 +70,8 @@ class Awscurl < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/22/12/2948fbe5513d062169bd91f7d7b1cd97bc8894f32946b71fa39f6e63ca0c/idna-3.12.tar.gz"
-    sha256 "724e9952cc9e2bd7550ea784adb098d837ab5267ef67a1ab9cf7846bdbdd8254"
+    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
+    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
   end
 
   resource "jmespath" do
@@ -89,8 +90,8 @@ class Awscurl < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/05/04/74127fc843314818edfa81b5540e26dd537353b123a4edc563109d8f17dd/s3transfer-0.16.0.tar.gz"
-    sha256 "8e990f13268025792229cd52fa10cb7163744bf56e719e0b9cb925ab79abf920"
+    url "https://files.pythonhosted.org/packages/9b/ec/7c692cde9125b77e84b307354d4fb705f98b8ccad59a036d5957ca75bfc3/s3transfer-0.17.0.tar.gz"
+    sha256 "9edeb6d1c3c2f89d6050348548834ad8289610d886e5bf7b7207728bd43ce33a"
   end
 
   resource "six" do
@@ -99,8 +100,8 @@ class Awscurl < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   def install

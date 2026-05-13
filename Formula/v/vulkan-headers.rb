@@ -1,8 +1,8 @@
 class VulkanHeaders < Formula
   desc "Vulkan Header files and API registry"
   homepage "https://github.com/KhronosGroup/Vulkan-Headers"
-  url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-Headers/archive/refs/tags/vulkan-sdk-1.4.341.0.tar.gz"
-  sha256 "d73bc5036b6556b741f6985ff600ca720308c5f2850e4a43ceb498bd3de069e7"
+  url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-Headers/archive/refs/tags/vulkan-sdk-1.4.350.0.tar.gz"
+  sha256 "70270d10bf2c1e074a06ee37a50b75d332993d1b80a1d9526eeed2da6d82ed22"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/KhronosGroup/Vulkan-Headers.git", branch: "main"
@@ -13,14 +13,14 @@ class VulkanHeaders < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b1c04ae00c5603d90d9dec39386d824bc75239abc3d3b58b1404bfe4ce891cdd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1c04ae00c5603d90d9dec39386d824bc75239abc3d3b58b1404bfe4ce891cdd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b1c04ae00c5603d90d9dec39386d824bc75239abc3d3b58b1404bfe4ce891cdd"
-    sha256 cellar: :any_skip_relocation, tahoe:         "bf673dbeb19b05465c269952cc2a46f6c17210209899c0252162f33bb3b4b633"
-    sha256 cellar: :any_skip_relocation, sequoia:       "bf673dbeb19b05465c269952cc2a46f6c17210209899c0252162f33bb3b4b633"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bf673dbeb19b05465c269952cc2a46f6c17210209899c0252162f33bb3b4b633"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf673dbeb19b05465c269952cc2a46f6c17210209899c0252162f33bb3b4b633"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf673dbeb19b05465c269952cc2a46f6c17210209899c0252162f33bb3b4b633"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc420a7f516094e9fa82981811ade1f547e2955db64d81019ffdeb6d48ee7208"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc420a7f516094e9fa82981811ade1f547e2955db64d81019ffdeb6d48ee7208"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc420a7f516094e9fa82981811ade1f547e2955db64d81019ffdeb6d48ee7208"
+    sha256 cellar: :any_skip_relocation, tahoe:         "b927b31768a66513e7e2fc74af2133f4c1f6adde837b1c7479fe95626f421b0e"
+    sha256 cellar: :any_skip_relocation, sequoia:       "b927b31768a66513e7e2fc74af2133f4c1f6adde837b1c7479fe95626f421b0e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b927b31768a66513e7e2fc74af2133f4c1f6adde837b1c7479fe95626f421b0e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b927b31768a66513e7e2fc74af2133f4c1f6adde837b1c7479fe95626f421b0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b927b31768a66513e7e2fc74af2133f4c1f6adde837b1c7479fe95626f421b0e"
   end
 
   depends_on "cmake" => :build

@@ -14,7 +14,6 @@ class ContainerCompose < Formula
   depends_on xcode: ["26.0", :build]
   depends_on arch: :arm64
   depends_on macos: :sequoia
-  depends_on :macos
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"

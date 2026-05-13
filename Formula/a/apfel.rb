@@ -13,7 +13,6 @@ class Apfel < Formula
   depends_on xcode: ["26.4", :build]
   depends_on arch: :arm64
   depends_on macos: :tahoe
-  depends_on :macos
 
   def install
     system "swift", "build", "--disable-sandbox", "--configuration", "release"

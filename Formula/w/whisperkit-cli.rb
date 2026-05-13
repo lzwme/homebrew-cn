@@ -15,7 +15,6 @@ class WhisperkitCli < Formula
 
   depends_on xcode: ["15.0", :build]
   depends_on arch: :arm64
-  depends_on :macos
   depends_on macos: :ventura
 
   uses_from_macos "swift"

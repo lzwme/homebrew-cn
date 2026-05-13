@@ -1,17 +1,17 @@
 class Diamond < Formula
   desc "Accelerated BLAST compatible local sequence aligner"
   homepage "https://github.com/bbuchfink/diamond"
-  url "https://ghfast.top/https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.25.tar.gz"
-  sha256 "4d65c2cc796c158f3a315af14f2a1cfe0a0917326bc2bf394da235bb7159f9d4"
+  url "https://ghfast.top/https://github.com/bbuchfink/diamond/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "d06d26cfa474e17132a9ea4c0a2a7ce4ec7e2ce937606173b401883d62eff730"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c2c7d6550638d64e9ca789189c4f822d694fcca0e765443c0fa2998b4da2f9a6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62ba0c94bd28e548161cc2179897d2b75811d532b3098dcc9f67ebb62c480192"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dae7f8e7e157c0a77d0817c2950d9d7f531bbc2ca1ed128fd77ab7d78f2057c2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1c1e45f4be99cdf36eba4278ac870af45bac8c5010ac744aa224a181db6693aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7c92e642405a3d76a9e8b433a096664acb38c8b06b43285e077e2a9d1ed220e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8be2b64ed4a75914c642b82fa579a035182eacce99dbf302c8d29220682b4333"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e3e69f7f5b7b92d335de4b98bcd8398925227675f8f120992ca44cd795358de7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "622377d3ba4cfb50e49d85e523af4f8bff24532a32b0c869eba15e97d9277ac0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29d26af781608771feb8896ff1528db0b68e1e98998a999364a9306748f5dd97"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ecb12efad1a38e2a05176f66fe84b862427c1c999a28bfe406b109d872d935f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "809f12de9c7f4d6ea499435e497fee8b77a6fbc161f5a95bb74a738a9eef52a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81339d78d33babfa714699e616e87cea29c8e723b1290c1230c0c53c6d995069"
   end
 
   depends_on "cmake" => :build
@@ -20,13 +20,6 @@ class Diamond < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # Fix build failure due to missing `<algorithm>`, upstream PR:
-  # https://github.com/bbuchfink/diamond/pull/953
-  patch do
-    url "https://github.com/bbuchfink/diamond/commit/7b994bd0ef33c968c2f3ad20c039b68f61495ea1.patch?full_index=1"
-    sha256 "1f30d68661493e52d72eac7115c0dc7b39afc828f39f7cb24a3142fe5df7f9d5"
   end
 
   def install

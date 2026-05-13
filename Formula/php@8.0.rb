@@ -1,21 +1,21 @@
 class PhpAT80 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/31b3988504b443365bfa4881257782b00919a751.tar.gz"
+  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/88664f288c699b0d63f324ef96340af335d23672.tar.gz"
   version "8.0.30"
-  sha256 "6f0f2a0dbb37e904859d7cc9ac12425434333a5c4b811b674621525430bd5472"
+  sha256 "790dd5d5a0d72a312239d77f04c42c7cb6b425aa22086fbc17879edab9ba9475"
   license "PHP-3.01"
   revision 10
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 1
-    sha256 arm64_tahoe:   "bf3114ccbecb25dc5a8ae70b9b867a1160f59eb997f2dbbb4f3738b808b822aa"
-    sha256 arm64_sequoia: "0c656b2869c6788cc032579425e3b55e7f9680fa67a16340aac70f477d45718f"
-    sha256 arm64_sonoma:  "31e73a5347a990305979b91a9f7deb090b18d7c78ff298a2ec35407081744a1c"
-    sha256 sonoma:        "306f85c90808231dd66a08787320eb2be5b34a010e0318c916c9eb58dc335955"
-    sha256 arm64_linux:   "71cb539f5d1dcc6579f0bc345220a2e30ab5aea5388c1ebdd87b5e0c4ee9a0ca"
-    sha256 x86_64_linux:  "baae4b34bf454b34cda7c13911779382622abbd6c9a7831b7dee5d4ac7c4ef29"
+    rebuild 2
+    sha256 arm64_tahoe:   "c388c31ac6f619e51c3da0aa42b3748766ec675cc96d7cd86bbe284a40bd17d7"
+    sha256 arm64_sequoia: "0b41bbfb9574a8b6f90164c4dadc1d1102de657dccb87b039d22821195538953"
+    sha256 arm64_sonoma:  "2b2473a4f5cf9bfd95a2e5fcfa5dba835efc59b29043c48417386743ce659c18"
+    sha256 sonoma:        "82ef4e0f272ec0bae88ef4346ddfacda0c9efcbeb4a38318567c7b37dd432ecb"
+    sha256 arm64_linux:   "7320f000e69a8cd45cdfceb962946982443b2c057724603a6e574a72abe61bf6"
+    sha256 x86_64_linux:  "6fc04d1a2de19c28dcd20f6aa58cb1472c156c79b8ac40d0fca89000397891a4"
   end
 
   keg_only :versioned_formula
@@ -78,6 +78,9 @@ class PhpAT80 < Formula
   patch :DATA
 
   def install
+    # PHP 8.0 still has K&R-style bcmath/intl sources that fail under C23.
+    ENV.append "CFLAGS", "-std=gnu17"
+
     # Work around for building with Xcode 15.3
     if DevelopmentTools.clang_build_version >= 1500
       ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
@@ -88,6 +91,8 @@ class PhpAT80 < Formula
 
     # Work around to support `icu4c` 75, which needs C++17.
     ENV["ICU_CXXFLAGS"] = "-std=c++17"
+    # Ensure there is enough Mach-O header space for Homebrew rpath rewrites.
+    ENV.append "LDFLAGS", "-Wl,-headerpad_max_install_names" if OS.mac?
 
     # buildconf required due to system library linking bug patch
     system "./buildconf", "--force"

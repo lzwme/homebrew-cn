@@ -1,23 +1,22 @@
 class PythonGdbmAT314 < Formula
   desc "Python interface to gdbm"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.14.4/Python-3.14.4.tgz"
-  sha256 "b4c059d5895f030e7df9663894ce3732bfa1b32cd3ab2883980266a45ce3cb3b"
+  url "https://www.python.org/ftp/python/3.14.5/Python-3.14.5.tgz"
+  sha256 "9c22bfe9939a6c5418fc74b289a5f1cc41859ae82ac6b163016b5844bd0a86bc"
   license "Python-2.0"
-  revision 1
 
   livecheck do
     formula "python@3.14"
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "af951802d8bc5eaff5946695ad920e07bd63bf42cc3adb39c5982492b20dce02"
-    sha256 cellar: :any, arm64_sequoia: "ce335535fc843258897a9ff3b5437fe803223548e478940aff325c8ea8229b75"
-    sha256 cellar: :any, arm64_sonoma:  "179b4e15ef0bb92af5873b463c4c8cbf463a393ea798dbf089804bec6403e6a0"
-    sha256 cellar: :any, sequoia:       "d4ba21e50a4100e0ec29f9bc03ec3287cbe4c3307363087b18ae626fe5b6a2c3"
-    sha256 cellar: :any, sonoma:        "437dc8334c48f8cb6a72419558de2935232b97d5e3f807023605d6bc77f7c4a8"
-    sha256               arm64_linux:   "5a732c7318b12eb0400d31a7a21de9de5230da97a1c618ff5228c1d8cfcda1ff"
-    sha256               x86_64_linux:  "28c28d97cb5f8adcfd5e62f7a126e79bf5b46c4a55d49c272243a1561f32c630"
+    sha256 cellar: :any, arm64_tahoe:   "cf49f66901e213fdf25ce56dfe662f9f33675ef49394ad249af7fa20a392b9f8"
+    sha256 cellar: :any, arm64_sequoia: "853fed0807d3b90d109c7ba8343742c53bbd73e202975031cff80c0ebd902a0e"
+    sha256 cellar: :any, arm64_sonoma:  "12f58903cbcf47f7420ba2023885b7eb59d682d2c941883586c573b12f42a3a2"
+    sha256 cellar: :any, sequoia:       "dc238052db1ae479329d9be9d589c3811cb74c8226063c13d381c3c0f82510b1"
+    sha256 cellar: :any, sonoma:        "511e111f0cc9d8def1b72cbcd1db817bef5b5aa31d9c74a9b9a09ac744968c1b"
+    sha256               arm64_linux:   "92618372f2370c9b570d516573719e81ba008a3880901a26b07a8a400ed38c0d"
+    sha256               x86_64_linux:  "0f8f044aa01ae183d89ec6e6c2ebb29c673b405e76f16a57273c32fd6af63fb8"
   end
 
   depends_on "gdbm"

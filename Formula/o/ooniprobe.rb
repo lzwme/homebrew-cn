@@ -2,7 +2,7 @@ class Ooniprobe < Formula
   desc "Network interference detection tool"
   homepage "https://ooni.org/"
   url "https://ghfast.top/https://github.com/ooni/probe-cli/archive/refs/tags/v3.29.1.tar.gz"
-  sha256 "b32e40dc306b70e0c2d122a909df78ca0100f796229b7949003ee169e0bfe782"
+  sha256 "132323f69140316f012465f7a20571b563ebff952f2b1568f815755a62ab2fb5"
   license "GPL-3.0-or-later"
   head "https://github.com/ooni/probe-cli.git", branch: "master"
 
@@ -25,9 +25,6 @@ class Ooniprobe < Formula
 
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
-
-    # TODO: remove when https://github.com/ooni/probe-cli/issues/1781 is fixed and a new release is made
-    inreplace "internal/version/version.go", "const Version = \"3.29.0\"", "const Version = \"#{version}\""
 
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/ooniprobe"
     (var/"ooniprobe").mkpath

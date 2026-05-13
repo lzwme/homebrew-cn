@@ -26,6 +26,7 @@ class RedisAT62 < Formula
 
   # See EOL, https://redis.io/docs/latest/operate/rs/installing-upgrading/product-lifecycle/
   deprecate! date: "2025-04-24", because: :unsupported
+  disable! date: "2026-04-24", because: :unsupported
 
   depends_on "openssl@3"
 

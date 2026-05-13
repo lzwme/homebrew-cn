@@ -1,17 +1,17 @@
 class Errcheck < Formula
   desc "Finds silently ignored errors in Go code"
   homepage "https://github.com/kisielk/errcheck"
-  url "https://ghfast.top/https://github.com/kisielk/errcheck/archive/refs/tags/v1.10.0.tar.gz"
-  sha256 "703cb23f19976fc71dbbbd599da1788f686db6719bd07e71bc76476b705c09de"
+  url "https://ghfast.top/https://github.com/kisielk/errcheck/archive/refs/tags/v1.20.0.tar.gz"
+  sha256 "d16b7757bf57dea5bbcfce42badd1bbfadd4c112b2da90b4ccaeb81c6c438c1e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89a733ce92b2486256c82d329c5d5ecf85d1ee8bf375077010f29d70e7b79c74"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89a733ce92b2486256c82d329c5d5ecf85d1ee8bf375077010f29d70e7b79c74"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89a733ce92b2486256c82d329c5d5ecf85d1ee8bf375077010f29d70e7b79c74"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2f8c7df6ff08b34da4fc9d7e3867edf7863f033dc17e2c92ae4104069f408c9a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b85e11602fe5e6cdb6c945fb6769bcbae51f0f3c77945070f9b08f5a2faae98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9dce2d4ec61d9c62e81504c021b8d84146d377921f755cff16fd6a188a95502f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eebf1a2df5e0cbfd40864621539bbf42fdce0833739eb268b31c4009a29230df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eebf1a2df5e0cbfd40864621539bbf42fdce0833739eb268b31c4009a29230df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eebf1a2df5e0cbfd40864621539bbf42fdce0833739eb268b31c4009a29230df"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9d4d423b262fe8a36d9eeaca8a1b212f98d7bf4f3cca46fd9605810cf5206fe5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b25f2c81557687e35755a4560a5ed50eca5850a87d2ee9c45d3bd868f31ec5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "282aa6fbb39475568cc1da3f28dadc08dc7612405f339e1607ef58883afc7bfa"
   end
 
   depends_on "go" => [:build, :test]

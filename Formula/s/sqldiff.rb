@@ -1,9 +1,9 @@
 class Sqldiff < Formula
   desc "Displays the differences between SQLite databases"
   homepage "https://www.sqlite.org/sqldiff.html"
-  url "https://sqlite.org/2026/sqlite-src-3530000.zip"
-  version "3.53.0"
-  sha256 "fbc30cdbfcfa42c78fe7bddd3fd37ab8995369a31d39097a5d0633296c0b6e65"
+  url "https://www.sqlite.org/2026/sqlite-src-3530100.zip"
+  version "3.53.1"
+  sha256 "1b2b5755d9064c4d5d1b0bf5307b48b089963e291c40cc7351318aa1b61c460e"
   license "blessing"
 
   livecheck do
@@ -13,14 +13,14 @@ class Sqldiff < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fa732afdd6482d2dda8b4667a8a93029421dd57622e16451c7355ae613dfd90a"
-    sha256 cellar: :any,                 arm64_sequoia: "f003ba14958f8857e8d425ec5c86020464cc0654aa4eee22047992f3f9b67ff7"
-    sha256 cellar: :any,                 arm64_sonoma:  "3d658610010218be62a4b3c63c2a4f5f00638242d11e25ce05843df916b68d3d"
-    sha256 cellar: :any,                 tahoe:         "49050159aafcac43601c9a86a27b65ebe5ac0c97124c6358342df050e4263706"
-    sha256 cellar: :any,                 sequoia:       "b91134952b623f9153c26ad56650e7ed45d3a2e3bc2e9b90a3e0e126b81e52aa"
-    sha256 cellar: :any,                 sonoma:        "6e9eb032196010f93853593bbbfc5c287979066eef54c1e766a8b5db412810a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d4d0bd3537ceadfeb293f40d3fde8b30a9d9d86523faa7ec39f417237a383f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "087c7d7394950da659c5fc0b0aabbcfa51db90849921b7733608a5db0170e5c9"
+    sha256 cellar: :any,                 arm64_tahoe:   "856fd307bc8f740d9c446df16976cf49b2ce539fb6eb91c971c203887ea4fdf7"
+    sha256 cellar: :any,                 arm64_sequoia: "3d8a16cb28289296bd03f05d698608745790d2bda90a87d969c869df6385ed2c"
+    sha256 cellar: :any,                 arm64_sonoma:  "53aa43246ebaf21c4aedf132b510e1cf4901ed67c461509bef8e8d7e2e6b48c1"
+    sha256 cellar: :any,                 tahoe:         "d4f1f52e5b1f7b3b7664dad5c701b6260f43cc51094c4a8126042c56a4af048b"
+    sha256 cellar: :any,                 sequoia:       "67c4a5da3170c18417054ab671bcde34a568f11faf97ea8f29d86897e0c3f928"
+    sha256 cellar: :any,                 sonoma:        "57bb0710dadc07b8060a1650372c53f1204d648f1eb9de19eccc4014641bf463"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "15e2248ffa4ee80aab4f766d483d719fcb1ff50749282f519afdb15915351e38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f200da8e66a5fcdedc32f58b1ffd18388809fccedbbf6941b92dbedde409547a"
   end
 
   uses_from_macos "tcl-tk" => :build

@@ -6,12 +6,13 @@ class Wuppiefuzz < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4feaacb658e2c0ad8e8b83658ce0ef87a14d2d490cf2d853850e36efa9f72250"
-    sha256 cellar: :any,                 arm64_sequoia: "951bfd7f88dd3b59c2bb242fed41e1450163c06c2fe3de821294d75de2ceb5c1"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ad59c6029f6c989046da3b02617f862f7b4dcffa38aefdea85677441c4c50fd"
-    sha256 cellar: :any,                 sonoma:        "85b560780a233c76c551a6d0dd654e0a81c18382cb6bd808a57338fbca7a326b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "668c7fc5ef40eb1ade9d165ace3f480459806ce76c82e92547622b9830bb574e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bec331a44097c5601069c056b6e3ba948890b8b6fe646ef991f3be8ddf0ec48"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e59b88c5947525e948b443a1cc8997f6a0993523499867ceac2e79303bda97e9"
+    sha256 cellar: :any,                 arm64_sequoia: "6d80b9346c503dba3b78b6763fb45336dd50a6e0c91b88c86a1b274756fe58ec"
+    sha256 cellar: :any,                 arm64_sonoma:  "5a527e9930a2aa066ccdea78854d6ae31d39543a162bb0b5994ce81030d93b1b"
+    sha256 cellar: :any,                 sonoma:        "9e7f5d40692a5cccd8e0d2029868492d7532f0e63811a3335ed6239a3761bc9b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "01b967a6836e5334ed7add55571e047a3b0d297393a4db33a386a59b39c0e985"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9810f28506a6cdf172fb76749e625ec8975547c5b8e2ec23bf189d7f69d39dc4"
   end
 
   depends_on "cmake" => :build
@@ -23,7 +24,7 @@ class Wuppiefuzz < Formula
   uses_from_macos "sqlite"
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4" => :build
   end
 
   def install

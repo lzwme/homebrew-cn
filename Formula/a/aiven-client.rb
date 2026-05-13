@@ -6,10 +6,11 @@ class AivenClient < Formula
   url "https://files.pythonhosted.org/packages/58/8b/76587c9226a489002e337566b9269d615c0280fbd48127713ad1ffa3b10d/aiven_client-4.14.0.tar.gz"
   sha256 "926858e95b664b479e709df455872c1787d889cc8ba7fcb50c3ceae337c48fce"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/aiven/aiven-client.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bf8804ba5bc3ba44afcf78e6e49cd324fc5db9b71ee453ea360cc355f6619012"
+    sha256 cellar: :any_skip_relocation, all: "f32b571c7f104f229f98046d1db05da9c9ab1ee028a24e21b0dd241bca36cf3d"
   end
 
   depends_on "certifi"
@@ -23,8 +24,8 @@ class AivenClient < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
+    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
   end
 
   resource "requests" do
@@ -38,8 +39,8 @@ class AivenClient < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   def install

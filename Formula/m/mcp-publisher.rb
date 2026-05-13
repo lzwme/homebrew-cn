@@ -1,18 +1,18 @@
 class McpPublisher < Formula
   desc "Publisher CLI tool for the Official Model Context Protocol (MCP) Registry"
   homepage "https://github.com/modelcontextprotocol/registry"
-  url "https://ghfast.top/https://github.com/modelcontextprotocol/registry/archive/refs/tags/v1.7.8.tar.gz"
-  sha256 "5cba1bb77a114bb8e8a215c54f22c87fe73cca34c41b70bbd1c9d73f5048dfdb"
+  url "https://ghfast.top/https://github.com/modelcontextprotocol/registry/archive/refs/tags/v1.7.9.tar.gz"
+  sha256 "1347619339d3e6ecbbe4d17a4503bc331da17122a00a3d804eaf26898f40ea47"
   license "MIT"
   head "https://github.com/modelcontextprotocol/registry.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9da8983ea41b509c65cc85131a8794be1477d49775a08ce554dfa7fbfaf57ed9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9da8983ea41b509c65cc85131a8794be1477d49775a08ce554dfa7fbfaf57ed9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9da8983ea41b509c65cc85131a8794be1477d49775a08ce554dfa7fbfaf57ed9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e3aec71952a2c47720e27156ccec95123f3f4f900e395a2b2aa86f4088528930"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "237455d7f20c7df050a65c56ce67ab021a9024d16325723c37822fb59fab9007"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03c3ca0da0a35c1bdc5e186771f413de7f46eb188f8fd0a794653e9c6f89f1ef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37792e8554ad120a2c1ee3db5a4854042af66ced363ccd506a3dedc44c7189f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37792e8554ad120a2c1ee3db5a4854042af66ced363ccd506a3dedc44c7189f2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37792e8554ad120a2c1ee3db5a4854042af66ced363ccd506a3dedc44c7189f2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e4de96faa7eba89f45ba13373f578823c7b11159083a861f91302bb8b90afaed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "618d321d7403a818d65d006a4efe27da8c038b73fe699de151e3bd1b7344a4f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b262e2e7bff8a0400d3df2e3878e65d93e10c52cf36574ef04a604ceed431c58"
   end
 
   depends_on "go" => :build

@@ -12,7 +12,6 @@ class Yap < Formula
 
   depends_on xcode: ["26.0", :build]
   depends_on macos: :tahoe
-  depends_on :macos
   uses_from_macos "swift" => [:test]
 
   def install

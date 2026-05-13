@@ -1,8 +1,8 @@
 class Syncthing < Formula
   desc "Open source continuous file synchronization application"
   homepage "https://syncthing.net/"
-  url "https://ghfast.top/https://github.com/syncthing/syncthing/archive/refs/tags/v2.0.16.tar.gz"
-  sha256 "30ab1917025de0d057ae53b3568e721bbea652b4b3d7bd96b04a6ef9bfb28bab"
+  url "https://ghfast.top/https://github.com/syncthing/syncthing/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "2d3d16eea65b73f37b1ed28e2bef9b16ee5dc35b7a0cafaaedca929003f1eed0"
   license "MPL-2.0"
   head "https://github.com/syncthing/syncthing.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Syncthing < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19b52af39435da2baef7f808e8c912e43aeeb8dfa01a696a5cb994ff88fb942d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e8125d2f023afceaad2fbae1fcfa93ebae017eafffa0ebae1d3759e0a42acd6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0242ae25d363575dec0ed4a56ab10e3f26430b0e01b8fc47c735988c60b6de5f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "295c0f4daf9df32ff46e546a02ea57a4204aee1d94f0a94a78f85acca7f8ebc5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9198d728d2af54ce6f3f81a962fe1a5d071cf8441484a3d80a658f4cd02c9677"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d279a75844682df1a376f5669679fc1544b96ed35d8b189a88b223b53a805d20"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "874d8e5ba83d6c779294781d0b206737375b02f2cb4fabde54bf8e7846c157b2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64908bac7b488755b10944b620bccc3351cec30e1212c7a1e0d354b334481afa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f042622c100b9c2955d36c9af294241b538bfc60e8f204eefdb6dfc3d180806"
+    sha256 cellar: :any_skip_relocation, sonoma:        "99210a70877cd490de9a89adcf3393f1d120d3898b8d73d659be12a2b03cd3b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "548868f971b346de6048d33e75e5ffe4d821eb7c7f6ee7718f9378f9c44857bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "626e608a788743cad9e5f68cc4e44a553a7f6b69c7d5f965c43f0cc3dc83df66"
   end
 
   depends_on "go" => :build

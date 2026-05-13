@@ -1,17 +1,17 @@
 class Mp4ff < Formula
   desc "Tools for parsing and manipulating MP4/ISOBMFF files"
   homepage "https://github.com/Eyevinn/mp4ff"
-  url "https://ghfast.top/https://github.com/Eyevinn/mp4ff/archive/refs/tags/v0.51.0.tar.gz"
-  sha256 "8318a6045e26bb9e901442773aac2a8827bfda3f9d77e72468ca0f1ea8ac1efe"
+  url "https://ghfast.top/https://github.com/Eyevinn/mp4ff/archive/refs/tags/v0.52.0.tar.gz"
+  sha256 "9cd54f4ff69039c211326a08a79a865669276a4b0761a7f6ef57e5a4831151be"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c76ba8cea71d782d2bfd8375e2f20734651119a620e9eeade236cc8390af8b2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c76ba8cea71d782d2bfd8375e2f20734651119a620e9eeade236cc8390af8b2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c76ba8cea71d782d2bfd8375e2f20734651119a620e9eeade236cc8390af8b2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7f926ff500204c557c7b1b22c8d3e032cd92c8cd68727f5959099b5c778f1623"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5f53ae01df2e2db4cc4a40cf5e57d15a42e11bf8921558a8079b3803a8c525a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25ed72e39527fda6b411ce43426b4955ece85ed4cefd8f8cbb4541e8d8b9c701"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b5522746f12c980b5c60e6cf0cbf29a726d544d7351e8f761a3a65ef39c027f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b5522746f12c980b5c60e6cf0cbf29a726d544d7351e8f761a3a65ef39c027f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b5522746f12c980b5c60e6cf0cbf29a726d544d7351e8f761a3a65ef39c027f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f45a19de26e678702862028967b8e56a29f52740450e663450ffe68ef4c13389"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee94d042a9e00ae3029a4124fa40023260033a1af2bb30a85e517aa542efca85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f4ec6056d2334a54784824d4d196f49c2946463ef5c581a2112b94ffd9261d1"
   end
 
   depends_on "go" => :build
@@ -21,35 +21,29 @@ class Mp4ff < Formula
   end
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/Eyevinn/mp4ff/internal.commitVersion=v#{version}
-      -X github.com/Eyevinn/mp4ff/internal.commitDate=#{time.iso8601}
-    ]
-
     tools.each do |tool|
-      system "go", "build", *std_go_args(ldflags:, output: bin/tool), "./cmd/#{tool}"
+      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/tool), "./cmd/#{tool}"
     end
   end
 
   test do
     resource "homebrew-init" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.51.0/mp4/testdata/init.mp4"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/mp4/testdata/init.mp4"
       sha256 "09a99ab8be9a39c80dc41ac6d4c9539b16947aab95abbadec903bfcb7a322221"
     end
 
     resource "homebrew-segment" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.51.0/mp4/testdata/1.m4s"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/mp4/testdata/1.m4s"
       sha256 "00dd5f29bc6ba64a9d8540cdbeda7a3e5be0f0ed67475ab307506d7462fc2d98"
     end
 
     resource "homebrew-prog" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.51.0/mp4/testdata/prog_8s.mp4"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/mp4/testdata/prog_8s.mp4"
       sha256 "86651d2aa80c714440fee3499ac3dd258b75043c4ceb455d70babb7873b16feb"
     end
 
     resource "homebrew-subs" do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.51.0/cmd/mp4ff-subslister/testdata/multi_vttc.mp4"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Eyevinn/mp4ff/v0.52.0/cmd/mp4ff-subslister/testdata/multi_vttc.mp4"
       sha256 "1518ba79c86f28414f9285910f8118e00d3b70aa07c6a48ebb1f80b476b1192a"
     end
 

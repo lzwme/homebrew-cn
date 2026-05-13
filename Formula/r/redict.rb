@@ -7,15 +7,16 @@ class Redict < Formula
   head "https://codeberg.org/redict/redict.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cbfd75594013a1049c135b3d0175339033ae49b805707876505700b0d2fd0244"
-    sha256 cellar: :any,                 arm64_sequoia: "f4bb5f1a67a1255171d99aeb8f4257e95cbe32f256f59f830ad3439a0692f981"
-    sha256 cellar: :any,                 arm64_sonoma:  "0b854006776e9bd8aec252b1363075dac7e41a3d5886f0b203d94aea2238705b"
-    sha256 cellar: :any,                 sonoma:        "4b983424da0a10236d0afc57a2a76aa009a883760f80a482880b6060cd77c7bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0599c6e40122c402656b72c5762babea440c71e4c32a89d593704c3be2ce07a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "708796b8af5a02da1959552fb065bd81218b0f2ebfb649d345e0ae86b3db363f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "65aa1f140b1e4cb883c637eefe8f438ca503a288b9bb13c2d8e36011958e2a71"
+    sha256 cellar: :any,                 arm64_sequoia: "10c29e718cf279452ce6c8f37dbaeaf20e0b2119ca2e36c7311a219ec6cc856f"
+    sha256 cellar: :any,                 arm64_sonoma:  "26c2ddd2d2f29751010d4cc3a53de063cc32af3450cdb7b408a1f45ccf6591c6"
+    sha256 cellar: :any,                 sonoma:        "bbad4f944c6da2efc7c3a7a62e8557aced278412af8a9dd0e561240fa39928b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "52fa830f4104592b333f01c5fcffeb13edc0abdaa0231bd1f3ea4231b3b27dd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03bd484b1b690757e7ddcb5e0ab7c7145f7eafa0374b7e6282fd70f1b850e1f9"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
     system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes"

@@ -3,7 +3,7 @@ class Proxytunnel < Formula
   homepage "https://github.com/proxytunnel/proxytunnel"
   url "https://ghfast.top/https://github.com/proxytunnel/proxytunnel/archive/refs/tags/v1.12.3.tar.gz"
   sha256 "106cfba7aba91faccb158e1c12a4a7c4c65adc95aa1f81b76b987882a68c5afb"
-  license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
+  license "GPL-2.0-or-later" => { with: "x11vnc-openssl-exception" }
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "b6003b5468d9eb16d028cfac02ad7700bb173650fbcb7b4c1be87cf3267a636f"

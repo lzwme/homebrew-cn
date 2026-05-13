@@ -32,7 +32,6 @@ class Mlx < Formula
   depends_on xcode: ["15.0", :build] # for metal
   depends_on arch: :arm64
   depends_on macos: :sonoma
-  depends_on :macos
   depends_on "python@3.14"
 
   # https://github.com/ml-explore/mlx/blob/v#{version}/CMakeLists.txt

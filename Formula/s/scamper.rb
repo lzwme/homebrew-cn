@@ -11,16 +11,17 @@ class Scamper < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dc1cdba89f1aeb9d49547af616d27c3689350b6789b94515b9236309d2f18235"
-    sha256 cellar: :any,                 arm64_sequoia: "e4845c53fc6c793362e7c47f7b2d9138f50d9f8bbfaf95b02a8d50f31150b3a7"
-    sha256 cellar: :any,                 arm64_sonoma:  "200615b7231dbcf5f33bdb6b1c483740264df9f352c0af594c80cfc8cf12fe92"
-    sha256 cellar: :any,                 sonoma:        "cf00935fd7c6659264a576fdab126dc8fcb14fa194d60efb13b768c0404a7d2f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae43b89b4ff5c5c928556739bbbc4848a3df5f10805cd5a83aff7f597d739dcc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7fbe5d7b9b338ee344146658ca5caf7f0befb45de4b3b910d596ba87d688f2c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "47f78e73aac0167e695c58314dbe01c277c87247efa0414aead6f2fe56056d84"
+    sha256 cellar: :any,                 arm64_sequoia: "6b25a0324c9f243227b8e28768930dba5880d3fed13a101e307251a69ba8f699"
+    sha256 cellar: :any,                 arm64_sonoma:  "b2812101497a7135f6905b845a16fbf431a709d84abe3246f8065e4d8237d54d"
+    sha256 cellar: :any,                 sonoma:        "6cfe785d536a562df48ecf86eac56c463afa6cbe7af417dde4b477328ca99188"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2deb85f1f1bb77f257d316e2862319ba040c81d729d9a837767f857b739dca97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cc8ff5978707ad576fa3cc0cf1d2a202f7053b055c333f5dc61c25c6afc9d81"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "xz" # for LZMA
 
   on_linux do

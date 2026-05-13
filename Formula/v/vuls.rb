@@ -1,18 +1,18 @@
 class Vuls < Formula
   desc "Agentless Vulnerability Scanner for Linux/FreeBSD"
   homepage "https://vuls.io/"
-  url "https://ghfast.top/https://github.com/future-architect/vuls/archive/refs/tags/v0.38.6.tar.gz"
-  sha256 "8284f666687723eadcea823aae61cd6759e857e6114b9811ae669367e0aeea7e"
+  url "https://ghfast.top/https://github.com/future-architect/vuls/archive/refs/tags/v0.39.0.tar.gz"
+  sha256 "11302e96c3d960bbdf70b2d025ca73cb50f9ff6b37945083c8f9e2cb165ab163"
   license "GPL-3.0-only"
   head "https://github.com/future-architect/vuls.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f279db38fad31c0bdf62890c3f059ca43723fa8ca3c32e84ce3733cd112610da"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c679cabcd0f2d4f31dbc7c37c1d206edda0f9c0db3f6cc080ad5f31a5ea2bd2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14367f1fca8ab7617d12d8bb587bf7bec5238a2ae46d0d2b9959d18e1a4a6acc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e3b370b0eb38c8dc905d8c149619afc363f5be7c0a48083af1f83abf7f5bca51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "36bb06b3fa589c0d4d5a8acffbd0e2366f5cce360aec9b91f2de1c5e81d13bf3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd5c00776abb525dd78dc807543fb819d50534d72a17ed791492b757d2c079ee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55e5da3ab3ee8f0c10b7ccec5fdf4b3a2259bf84820701ec2d9d4d0aee2ce8b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55e5da3ab3ee8f0c10b7ccec5fdf4b3a2259bf84820701ec2d9d4d0aee2ce8b0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55e5da3ab3ee8f0c10b7ccec5fdf4b3a2259bf84820701ec2d9d4d0aee2ce8b0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4267e72ee940b09cc3c300e5cba603cdbc0f0c546665099d5d4ce3d78ad02e58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28f25367cb5140ebd2241dff756d3b1238ae8b112353fb628d0c8e7986558bdc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78e751b7128bcadb95f3c24e1de071c6beab38beb0fd48c793e64aa78156ab9b"
   end
 
   depends_on "go" => :build

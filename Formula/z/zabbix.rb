@@ -12,16 +12,17 @@ class Zabbix < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d3107ca9d7be13e7eea9930ec6532b1606b42d1760f4ec34bdc51a373fa0c3c4"
-    sha256 arm64_sequoia: "bd288ed00a7c66de0440d38af7a9a262b6524d6a776aad3be0b376d5ac2cf252"
-    sha256 arm64_sonoma:  "3dd3356cf15ae3cb48784423275eae2ad2d68cc46eef85a5b49213ac0b3f33aa"
-    sha256 sonoma:        "2aefb0b8fa56e4f5f56c0d4c2574564d193afe8538452319652aa19b641f6f73"
-    sha256 arm64_linux:   "a18a07e3cdd94ff6ee2cecad23e7f3277f139e0695753cc6a9dda026ad663504"
-    sha256 x86_64_linux:  "62b3e47629f5e4ba5ee78d2c9b20debbebb0837d07cb0a363537a7da93f8fbf4"
+    rebuild 1
+    sha256 arm64_tahoe:   "466b3b1e5399de8513fc1f21937df5d3468adb064280613cf8149ffc6f11566e"
+    sha256 arm64_sequoia: "8f612d594f41b7d34438b9ad81df8e5d290c8de01b3734d57877e02d2c466e74"
+    sha256 arm64_sonoma:  "d421892791dc6aa8735690d2927f2afc71273d0eb76c3b88cf24608939955f93"
+    sha256 sonoma:        "a6d61ccc9ad4c0bbd774de933067520cf16ad9e0e57e341a02fdfd7daf4f1af7"
+    sha256 arm64_linux:   "e3115c480c7dedae0d01bebdcbfe538cf0d485917014e2a3f3dbb29c9cb7bcc6"
+    sha256 x86_64_linux:  "3bd37f9e5503a607dc7f8932d9d1caaa6400e450765c632f4678b1e22cab26fa"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
 
   def install
@@ -30,7 +31,7 @@ class Zabbix < Formula
       --enable-ipv6
       --with-libpcre2
       --sysconfdir=#{pkgetc}
-      --with-openssl=#{Formula["openssl@3"].opt_prefix}
+      --with-openssl=#{Formula["openssl@4"].opt_prefix}
     ]
 
     if OS.mac?
