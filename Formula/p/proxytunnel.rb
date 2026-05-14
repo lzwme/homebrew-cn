@@ -6,19 +6,24 @@ class Proxytunnel < Formula
   license "GPL-2.0-or-later" => { with: "x11vnc-openssl-exception" }
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b6003b5468d9eb16d028cfac02ad7700bb173650fbcb7b4c1be87cf3267a636f"
-    sha256 cellar: :any,                 arm64_sequoia: "6b7dd6ac425100875ce71c7439bfba022d89b03470e108f040abf8f9a1865ed1"
-    sha256 cellar: :any,                 arm64_sonoma:  "4180c52f43d7bc1d79471a57ec13978ace1642e6a9ebf003b5867ad12c22b08f"
-    sha256 cellar: :any,                 arm64_ventura: "b304a1e197fc8840549b2b4f240a6eec34dbdd45eb035bed45fb591201dd0ed3"
-    sha256 cellar: :any,                 sonoma:        "20b05437c58f9ac5e129dbfd9da88d6c57338deb994ad88af6ee2a558a430304"
-    sha256 cellar: :any,                 ventura:       "a7877a40edfc840c91921d0bfb161e1f87d4eef6b8f3bc06789d9a6b89b06dbe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1054f31d72acfeb8d3e4b925620f5d8140349158552c6288db753af40097b72c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68f0a86ab22a1406b3215b1f48abd7bb1cd686a2eab4cd707f989a9bee830a4c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "b8966dae30c62b989afbce561e83e908a0f1212240b0b712b6a45f527465d242"
+    sha256 cellar: :any,                 arm64_sequoia: "3177cd358897b8441de21ac9b2e0bacd75247def6243636fe74ac84713068c1e"
+    sha256 cellar: :any,                 arm64_sonoma:  "641689b0921e831d369f6d554ecbcb0aca979f9334f031308273ec46139d91fe"
+    sha256 cellar: :any,                 sonoma:        "adaf39d075bdceaa060d02243aeaa6b421be9f445bd294e5051a89edc200c888"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "210143a9eedf7cc165a1d0649fe6cf81f495e4d72f7babd38aa7ca41e8533801"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43c36c3ff46390d99f522ddd63de1dcad4e881b2025bd0af0639f15b11645b4d"
   end
 
   depends_on "asciidoc" => :build
   depends_on "xmlto" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  # Backport support for OpenSSL 4
+  patch do
+    url "https://github.com/proxytunnel/proxytunnel/commit/69df6780b819a145ef11342a55d477a059333fe2.patch?full_index=1"
+    sha256 "bf4b4fb8e68dde1a3c0124897de5a333b7f83cb321ecf04ea497867fb82d583e"
+  end
 
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"

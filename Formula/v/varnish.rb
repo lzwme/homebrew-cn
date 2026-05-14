@@ -1,8 +1,8 @@
 class Varnish < Formula
   desc "High-performance HTTP accelerator"
   homepage "https://www.varnish-cache.org/"
-  url "https://ghfast.top/https://github.com/varnish/varnish/releases/download/varnish-9.0.1/varnish-9.0.1.tar.gz"
-  sha256 "c237a6cb856cf6e3b418a63cab56f7e9844efa7d9a0f0924ed6be1ab71894ed2"
+  url "https://ghfast.top/https://github.com/varnish/varnish/releases/download/varnish-9.0.2/varnish-9.0.2.tar.gz"
+  sha256 "f3fcee6bd88bcb01a188eada0efe6fe89fb2d399a7b78c467d29c6d3752c4709"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Varnish < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "1d49563f4ae95371fcbba88cbc9e60417074f3691c405097f75e1db341636ff2"
-    sha256 arm64_sequoia: "11e63cf8c6dde47e7a741768b3ee68fc09fa1740f9bb8b930451f1dfcc70c068"
-    sha256 arm64_sonoma:  "3ac08c3080b34fdbaf3e858ae63e550a3a52487891548c26d4fa7632f4cfbd07"
-    sha256 sonoma:        "5f0c5f04d7fb322cd485baec2a6709504c8b5bef3cc737f6bb9a6d60d6ee2402"
-    sha256 arm64_linux:   "a2de9352c313119ffc212e46783ee25ef9608e4547fa8d3e8a881dad4874d759"
-    sha256 x86_64_linux:  "b93fd3fec7295a4ea3b1065244ffb5c24c32e12a84f76cf4b4fe4ac6131a0432"
+    sha256 arm64_tahoe:   "5271f28bd22252062f3578275790b3cec9461169e6ab8048d34c0244a34a1da8"
+    sha256 arm64_sequoia: "207575c7500d3d22680160519b83840edc05b157a2a2c8ab03c9cb0f91b2c54f"
+    sha256 arm64_sonoma:  "f31746c41f28947a349185ac4bcaa1cc76b4ed1cda0f97b7b54a30a4dabe2ba6"
+    sha256 sonoma:        "9c5fad4e0d1a76754b5f3efea0eef158b25b319868befd82c0be7864ba69b4d6"
+    sha256 arm64_linux:   "f7514f78984041cdc0801712e63fecb574399f271ab351d8da621a2f3d68883a"
+    sha256 x86_64_linux:  "0ba87d23cc117f65b5bddeade0450476886bee141e9f450424207214096e4ac7"
   end
 
   depends_on "docutils" => :build

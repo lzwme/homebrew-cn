@@ -1,20 +1,20 @@
 class Spaceship < Formula
   desc "Zsh prompt for Astronauts"
   homepage "https://spaceship-prompt.sh/"
-  url "https://ghfast.top/https://github.com/spaceship-prompt/spaceship-prompt/archive/refs/tags/v4.22.1.tar.gz"
-  sha256 "3199f900557d8e9fb33df4d5e28dfecad1d6fceff08064a03c7170d74de33290"
+  url "https://ghfast.top/https://github.com/spaceship-prompt/spaceship-prompt/archive/refs/tags/v4.22.2.tar.gz"
+  sha256 "24230f0c0a8dce3bb20d05b20deb6ddb60116661410d324cf43eb138a4ea2097"
   license "MIT"
   head "https://github.com/spaceship-prompt/spaceship-prompt.git", branch: "master"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3bd1cb66f4e5f595cf2badf0c5aa107456789bb7d6da6d8aca9f950446cee18"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3bd1cb66f4e5f595cf2badf0c5aa107456789bb7d6da6d8aca9f950446cee18"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3047fd864383cf375ab8324190612fa14fe3cd451cca5680f5b9ac3e3cd8660c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f9f47acb39ce52e21ed08705a7ecadf1f22835c7d0ea8b0472098b7f88b877e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed82358dff295635a330b4bda4fcdf6fca023d2e50dc0c57e720fe0c4284902d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2d105a40cba097ffaba082cb0005be54004788cf2631ebcfff47af891ca9324"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "17f3f81dd1ec6361d640d3eff4cc704bef2f9960679479d97687c7f66c3f984f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17f3f81dd1ec6361d640d3eff4cc704bef2f9960679479d97687c7f66c3f984f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "582d9b26274e082389d273036c6b10de464b547b600ab91d3bae95966742b2ff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "92eb0994406cec1e2d00a066340a8aaa547f2f693e582d91220e1e2ee48df8b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb5a623f8860d993877b3fa1af19bba17fea885a4f758c79c19b4f5330152189"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b858564e2aff969020c5d0185d9231b2daf9235ef8b26ad6031acd5ac93a1b0"
   end
 
   depends_on "zsh-async"

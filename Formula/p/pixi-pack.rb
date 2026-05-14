@@ -1,18 +1,28 @@
 class PixiPack < Formula
   desc "Pack and unpack conda environments created with pixi"
   homepage "https://pixi.sh/latest/advanced/production_deployment/#pixi-pack"
-  url "https://ghfast.top/https://github.com/quantco/pixi-pack/archive/refs/tags/v0.7.6.tar.gz"
-  sha256 "33d9c3fd58bb50c631825d18328c2eac070d1db4486fdf85f0e347b16904a944"
   license "BSD-3-Clause"
   head "https://github.com/quantco/pixi-pack.git", branch: "main"
 
+  stable do
+    url "https://ghfast.top/https://github.com/quantco/pixi-pack/archive/refs/tags/v0.7.6.tar.gz"
+    sha256 "33d9c3fd58bb50c631825d18328c2eac070d1db4486fdf85f0e347b16904a944"
+
+    # Backport openssl-sys update to support OpenSSL 4
+    patch do
+      url "https://github.com/Quantco/pixi-pack/commit/531711a35df83d569ef3a76acafb27e01d12d917.patch?full_index=1"
+      sha256 "405c888e69e7eff2946cec0e425fff5d184736878a0effc61b8d9ddda8383260"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41065e402d34bb40a6683aea5bf9a58aa534993ba0b99905d126ec7ebe9c1068"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2334b3e68c777ec93b9fb70d6f035002555bfa9e78f844047c791ca1f549e287"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dfb5bfc42b432f335e464e320c347673671d35318b57603496b8a09492710caa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "19940134c0bbdba3ecc71f3fdcec18eaf7127a9b87f35311030cd166eb61d704"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eea4c1018c0d753fcae841efdc56ceb515681d7839a7bb2e775a2adf8163ec4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d7f3c034c07fccd47a2064125fefafce811393e57b14f7fcff93d6c803b37e9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f1dbea14d99e90249d30c7d0e4d7a567ea0bdc23e7a1b12454e89bf0361a14b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acbfffa35c67defc83f039d9cdf82151db139706345288fd7965d8be237a9559"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e83e8565c625f9b9855928c5ccb0ba493c2fcbfd79e42e618dab83e6eadf48f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b881216aad9c8efdb54998b5ddb0b3534868ae9ad770b736b4caaa3f2c51b560"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fcf1735467403241e77bfe17941ba9ba882a4c446038087f07b400d1a503f1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd5766b671f8eed625f2adaa81a34a2db2a28ee15186f24227b432f5e4bdd7ab"
   end
 
   depends_on "cmake" => :build
@@ -22,10 +32,11 @@ class PixiPack < Formula
   uses_from_macos "bzip2"
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   def install
+    ENV["OPENSSL_DIR"] = Formula["openssl@4"].opt_prefix if OS.linux?
     system "cargo", "install", *std_cargo_args
 
     generate_completions_from_executable(bin/"pixi-pack", "completion", "-s")

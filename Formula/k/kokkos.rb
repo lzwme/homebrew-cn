@@ -4,6 +4,7 @@ class Kokkos < Formula
   url "https://ghfast.top/https://github.com/kokkos/kokkos/releases/download/5.1.1/kokkos-5.1.1.tar.gz"
   sha256 "8bdbee0f0ac383436743ad8a9e3e928705b34b31a25a92dc5179c52a3aa98519"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/kokkos/kokkos.git", branch: "develop"
 
   livecheck do
@@ -12,12 +13,12 @@ class Kokkos < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd81e59530910c3e3b4f262f4e97374d07c979799038b739d6505c62419ed36d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb0bc4671c24161a1f0ba4735d8e35305509daf02ba0aaa6e90e903ebc4d7d17"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb13450f99bdfb220a14392fccc93b453e1bd7743afc459a1074753f2242fece"
-    sha256 cellar: :any_skip_relocation, sonoma:        "50f8dcfc5e85bc06b0984fde599f94477fbdf550fa2e1800311504b6cd92de4d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "88ef2037f2aa3a781ce6f05f9946534f9f404dca5dc662e7151741d97e91af2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "384ff655ff681fa3c212dd34e13a444469bc6ede5b5bba7ed3d03e4a531469d4"
+    sha256 cellar: :any,                 arm64_tahoe:   "67df6bee45072b72e93fd0558234bff4e761f8205921c7213460c82167ad1f24"
+    sha256 cellar: :any,                 arm64_sequoia: "f95bda78be3db9f757a285a7b83dfa4d562438e9f4d7d388bb0e1fbefa1cd183"
+    sha256 cellar: :any,                 arm64_sonoma:  "45a5269e3b68ef17296a4f02d31e31fac57bac302407692cabb69c57609b6278"
+    sha256 cellar: :any,                 sonoma:        "4ad47a155b302b6c3740cf88273cb000fdd9da93673b90dd1bcdca8fbb06a9ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e991ab7077e883453986fdf5b95539c3626abc77da9d3a3cabae7483ebe1150f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7418f122faf85fff6bc17a369cb11f24bbd747fd33570545d42f9eac2f21d68b"
   end
 
   depends_on "cmake" => :build
@@ -27,11 +28,13 @@ class Kokkos < Formula
   end
 
   def install
-    args = %w[
+    args = %W[
       -DKokkos_ENABLE_OPENMP=ON
       -DKokkos_ENABLE_TESTS=OFF
       -DKokkos_ENABLE_EXAMPLES=OFF
       -DKokkos_ENABLE_BENCHMARKS=OFF
+      -DBUILD_SHARED_LIBS=ON
+      -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

@@ -1,18 +1,18 @@
 class Egctl < Formula
   desc "Command-line utility for operating Envoy Gateway"
   homepage "https://gateway.envoyproxy.io/"
-  url "https://ghfast.top/https://github.com/envoyproxy/gateway/archive/refs/tags/v1.7.3.tar.gz"
-  sha256 "473e1ff4a731db5bc8116bdc96bd700659e868305ab168a91e94281fb228f0ec"
+  url "https://ghfast.top/https://github.com/envoyproxy/gateway/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "3b00403aa99eda90cc4d1194648640a71aff416a9447eae983278b0df04948e0"
   license "Apache-2.0"
   head "https://github.com/envoyproxy/gateway.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9bda51bdf5119775f80d97e5e92912bb6db7ea46d1de0c12d6834b1e61574065"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dfe95e21a06b624e51027c3dabbc18418a02e44ed67c47723bf67edec3db1af5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03d5013a2b920b7aeae90c65d21daeb5eddecf0004bdab93e50db52510778f76"
-    sha256 cellar: :any_skip_relocation, sonoma:        "14c399fc53ccc6aaff335001580dac1f4783ae73b13b57f9ebed63b20f245b20"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7cf5a98c5e28aa31f3a941b8d77a847871f1e693d478ba6e7c1fdd43db4d3fe3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acd6cc1046ddb36caa469f4e363f0a091a5c1116aaa918751029523d0f79c53c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "57a8dd3f8378ff0313e9521cb44b1a19555966c8b28632db414ed35911739b0f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "920d64ef2005f038408c65ac121c90d257cc936db7026cd954e512293dbd9588"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a401f82c348ade9f327afb5be8d284eb5bf5733b266d389434cbb1e04471b85"
+    sha256 cellar: :any_skip_relocation, sonoma:        "62f07e4ad23f1c73a9c840dc15bb9817b97118be9f8d3619212ce139a45dc6be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2527a8e853ff28a31b47657f306eb960c49ccd3ae34ab7fb83e1fc986afcc899"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40710f01cb3ce90790f0aa00da1425cfeaa56b697e806146ba17397fe6b48ab2"
   end
 
   depends_on "go" => :build

@@ -1,32 +1,31 @@
 class Baresip < Formula
   desc "Modular SIP useragent"
   homepage "https://github.com/baresip/baresip"
-  url "https://ghfast.top/https://github.com/baresip/baresip/archive/refs/tags/v4.7.0.tar.gz"
-  sha256 "fa281d041e6c5d02f9f71b88524ca8fe05b54d37bbdf985f44fb6a034e02a604"
+  url "https://ghfast.top/https://github.com/baresip/baresip/archive/refs/tags/v4.8.0.tar.gz"
+  sha256 "91f113be2bf8385ae5c42979fd36619f93473bfe0c763e952c236dbac63dd9c0"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 arm64_tahoe:   "03f6a32353e1147a8a70e483ddf28a4f0423b6932f2e8028a0c8a1d2ee03a541"
-    sha256 arm64_sequoia: "f7067437db59bf7c870a7383dcc2b7a880349532987673213575f869eb77950d"
-    sha256 arm64_sonoma:  "34b13de302e1ec33880078166a799a735e558dc3ba2b4c8f9c21a38c7e541f04"
-    sha256 sonoma:        "06c0431350efe08d713689776e9e559a10b8bc63ef1b0f78fae798b46011c15a"
-    sha256 arm64_linux:   "555db0a500acf127f89b074b4afb444fe1ad18387f2b430d514850130a6d397f"
-    sha256 x86_64_linux:  "3229e501f5738da0144381e939415389d02fb584b3fe8e22aeea617309415cc2"
+    sha256 arm64_tahoe:   "fcaadf7d51c19813a01eb597b70c208061bdef07d2017b5c61e925c2dfa4d968"
+    sha256 arm64_sequoia: "0dd1f7f626422be6665b47f713350335049dc404b0f21dc5078e159c99f53e2d"
+    sha256 arm64_sonoma:  "01627d98d6cc77292979386512fa62b8fb4beae86bcc9d21ad28c5636b54943d"
+    sha256 sonoma:        "18eb1ef39e70f577d65e769bc77ecd173d4fae13c1a083b11e229c3be9f2df63"
+    sha256 arm64_linux:   "e9385fbaa34cd996a8c1eefd06ca8dddd41100a4be599240f6d06e9897d2b336"
+    sha256 x86_64_linux:  "68f556d944223eb275470501808eba33c936369a2cec586b04c683f5e9c09537"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "libre"
 
-  on_macos do
-    depends_on "openssl@3"
-  end
-
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DRE_INCLUDE_DIR=#{Formula["libre"].opt_include}/re
     ]
+    args += %w[EXE SHARED].map { |type| "-DCMAKE_#{type}_LINKER_FLAGS=-Wl,-dead_strip_dylibs" } if OS.mac?
+
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

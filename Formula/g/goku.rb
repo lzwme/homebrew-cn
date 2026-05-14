@@ -1,18 +1,18 @@
 class Goku < Formula
   desc "HTTP load testing tool"
   homepage "https://github.com/jcaromiq/goku"
-  url "https://ghfast.top/https://github.com/jcaromiq/goku/archive/refs/tags/v2.0.1.tar.gz"
-  sha256 "84432c749c2a528ac5ad6f47261eedc678ba4a87415bbacfa157e39821f2a4d5"
+  url "https://ghfast.top/https://github.com/jcaromiq/goku/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "95635c42cf748b64a4d1a04b5460397331366a78ddd890f7e13bf0e811c27976"
   license "MIT"
   head "https://github.com/jcaromiq/goku.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d6407e5fdade887008fde8a4d62d2386e5a2b8026344ff1281b40824b3ce3a9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95f61c3410fa15a74c3e9d631117be82d778c81fdc5eeaca63d7f0a9ca779e2b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65cb276e43ea8ab19bfc7570cefff14928f01c61b266631915be761a4dd1964f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5d9857b2559d6910f97afaf7ccda968a7e06e5862b61325a9530ecd1f39cb375"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fae4eab315fc29a9bb00d18c5db79955358787eb09c5a39a07c5b11c3827574"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19bd242cddad6a7b15aac7fc5f7615cbf230431332f876c485a3705f7bf3b893"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c00f79db8bb7983c31fc349b3ecf9ae7d56d82c03aa38180fc52d2571ed787a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c4cea235901e79e89c646070ddacf7966b187020bfe47e758c1aa3a4496c1cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc2dacd815a5ac3c0e4693dcbcd274671b3db08e86ff78ded17cdeb2193a507f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f4427222fe868f906faac00c73e4674f8724d669c9395e1a00ca2ec6ca2b1003"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6169386eec892db496aee97bea00fc35e9b52491b72e833b7f56d84727ed4aca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d49853c2c61b0f86865bec8109d5a7cca52bcd1a48e2574155287ae226a6e958"
   end
 
   depends_on "rust" => :build

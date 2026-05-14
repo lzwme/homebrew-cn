@@ -7,17 +7,17 @@ class Unshield < Formula
   head "https://github.com/twogood/unshield.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "a71745f5ca81751bdc007d2d767fa242595cf190b27bc15e2197184061c574fc"
-    sha256 cellar: :any,                 arm64_sequoia: "309409b6e7b1d22e402b027c9dae775b8a7311fec26a1aa8847d5ef155e34cfd"
-    sha256 cellar: :any,                 arm64_sonoma:  "4752e1173c153c3f877695afd23b068b335709945ec20ac5b1a9525b1c0208a6"
-    sha256 cellar: :any,                 sonoma:        "91f0c94d83e2a9e4ee096fa22a11b64242eeb09dd8e378e57ae8da0cefead494"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c11473c5338c952d85e2596e71c221ea48a837f21a7fd09b5925c6da66eac99f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "094b707a57cd05087eb1737f692213a5b55eb1937f832e606d2418fddb8e867e"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "514e1303fb016b6d992a623aba29ae24ee49afcb23a1ce920b3019be881cc257"
+    sha256 cellar: :any,                 arm64_sequoia: "a73e18ad8dc26a08d17407ff380f8ea0916bc82defb10642e2d0c5d762ee2d38"
+    sha256 cellar: :any,                 arm64_sonoma:  "c09b334a22d22b168419ce8d4baa9ae20ce43f894ab218e0343c8341b63234e0"
+    sha256 cellar: :any,                 sonoma:        "d6cea6a06ee0aaa549a7fd124733839eaeb078df6b5bbf18be9222550aa77a11"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "88d0b260f43f9d5d0749fb0625244ccf78443f02549cf4c23aab3b9f458639e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1689300dc52442fcba8de2ed3c07c8eeecc2430bf6f95861354e14c5f01ab23c"
   end
 
   depends_on "cmake" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"

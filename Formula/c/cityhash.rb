@@ -21,6 +21,9 @@ class Cityhash < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f381c56f8063574fc86fa4eace73e99bf9be10155f90c1881362e70aea75826a"
   end
 
+  deprecate! date: "2026-05-13", because: :repo_archived
+  disable! date: "2027-05-13", because: :repo_archived
+
   on_linux do
     on_arm do
       depends_on "autoconf" => :build

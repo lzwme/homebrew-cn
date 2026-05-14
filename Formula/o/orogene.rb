@@ -4,7 +4,6 @@ class Orogene < Formula
   url "https://ghfast.top/https://github.com/orogene/orogene/archive/refs/tags/v0.3.34.tar.gz"
   sha256 "d4e50c2c3965e62160cf6a15db3734e4a847ca79629599fdd5ce30579aaae9a3"
   license "Apache-2.0"
-  head "https://github.com/orogene/orogene.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -19,6 +18,9 @@ class Orogene < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:    "f8fb64cd8e5659c0d3f72fe6c994248c8e7c7c63af9e8a1b5801df5e5e73b13d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ead950a69b6ee4a7d7023264f55372d0d84e83984c46af445280d8f5281871fc"
   end
+
+  # https://github.com/orogene/orogene/commit/7793618494db676bcfd3364b85fb21452a6c0bdf
+  disable! date: "2026-08-13", because: :unsupported
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build

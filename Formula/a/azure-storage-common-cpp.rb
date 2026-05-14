@@ -1,10 +1,9 @@
 class AzureStorageCommonCpp < Formula
   desc "Provides common Azure Storage-related abstractions for Azure SDK"
   homepage "https://github.com/Azure/azure-sdk-for-cpp/tree/main/sdk/storage/azure-storage-common"
-  url "https://ghfast.top/https://github.com/Azure/azure-sdk-for-cpp/archive/refs/tags/azure-storage-common_12.12.0.tar.gz"
-  sha256 "0d835b22c03358f6e837044c70b3f9d93902cf710c27ac9ee22b2544ffdec27c"
+  url "https://ghfast.top/https://github.com/Azure/azure-sdk-for-cpp/archive/refs/tags/azure-storage-common_12.13.0.tar.gz"
+  sha256 "3c24422456c90a9e43b5edc6e9098397309318a0e0eca3fd22a56e94b7c3ccf9"
   license "MIT"
-  revision 2
 
   livecheck do
     url :stable
@@ -12,12 +11,12 @@ class AzureStorageCommonCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0ae309bee78a0792044db2d52bd1111f0ed6be59df4256460dbc39474ac073d7"
-    sha256 cellar: :any,                 arm64_sequoia: "580269d2771350c14ff9fc5bcb039eead21c8ac8ea1d3df114e17c9fb1ca77c7"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ae0d54395cd663b6ef394f386428ac38b27bf6ab92f20d5d15757ba168eb517"
-    sha256 cellar: :any,                 sonoma:        "2c45d8be4428eaed7fcd3654c212180fe9382db207a3b25762b0d0bf2842928e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1114fa0b4fcdc27fbb36e3ef4b8064e8d75b374c43310027a5648ecf0cf78a47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "398233de7fe8306b5cee282f3d3c1d24dcef8b98263adcf8095c62deda34b6b1"
+    sha256 cellar: :any,                 arm64_tahoe:   "1432ccb23ee03b84405c1e2c2cc600e6cbf9f99b2a46479eddd14f1fad7d898e"
+    sha256 cellar: :any,                 arm64_sequoia: "812f97440320ac6780635aae9b9b747798cb05332abd2310de14de0f829eaad0"
+    sha256 cellar: :any,                 arm64_sonoma:  "15256f7d0f98e52b3996f0690ea5db3d17e9db7f62c570b41313a2db3a26b65e"
+    sha256 cellar: :any,                 sonoma:        "b66a66afb74c13e9ca95a5bf3be5eda63a78bf6b9068be6b46ecc023af488857"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "99b6081d14cfb9eebdf61c077050a781a1e6b6d01281343b8f7f40a9733c47d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89309f6c1ec39b7d2d965965f4d9421e951fe99e386d365eb34b853f54c64a61"
   end
 
   depends_on "cmake" => :build

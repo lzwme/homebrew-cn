@@ -1,17 +1,17 @@
 class Mago < Formula
   desc "Toolchain for PHP to help developers write better code"
   homepage "https://github.com/carthage-software/mago"
-  url "https://ghfast.top/https://github.com/carthage-software/mago/releases/download/1.26.0/source-code.tar.gz"
-  sha256 "13f94b5bc9e5ff8c53fce61d23594a6a458a74231409eacca955c5cd86ae2650"
+  url "https://ghfast.top/https://github.com/carthage-software/mago/releases/download/1.27.1/source-code.tar.gz"
+  sha256 "4238e957a5911ce0a7e1097652ef3f07d22aed7860448046602f7a0c79c7d209"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19f840defe84ab54f3186c57ee866b36274ede0109a0931ce23c9e4586b25abd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0005bd36bd0eb9479887a18549809a4bf242c0cb5746f95fa550c4bc19bdf427"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84748f0e2bac6c7f9513c7ba349edc36ba2819933f66ddc086f7f194cd325c23"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e4fc9821d98e788a5d741d3fc6f9b3584fe3cbb7e8cb4a3ed9efd4c4833070bc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5aab0835a2ae454da15b08f2871cb7253536de8c05de3acfbd99931c8c5fa42e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "499e2a5ed691707ad0e9dc8ba10e97cd692e1d6db289963acd69a498e3c58897"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fadf2fcb6ea509be23454ae5d6b3aa7019a461524cf824109d125869024a3fc1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08cb8d9f0b15475b50cf313a5553d72a127882c8586082672b7aefdc920caf11"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4320a22c71d2df9c21b8d5af4888cf5520fc2ff1def7ba2179c86cbb29e02102"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0515a1c984698ed7357b17099acce644bca0a2dfdac54b3f32fbaf88d99b6e8e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cad02b6405b6da90a161cd1ce293712e58e7d20687aed4fbbbb6597c49a3688"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c19d65de58c858a0af727798687c519a283d5e42986ae598e8af63f6d905d364"
   end
 
   depends_on "pkgconf" => :build

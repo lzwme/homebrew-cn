@@ -1,21 +1,25 @@
 class Fortitude < Formula
   desc "Fortran linter"
   homepage "https://fortitude.readthedocs.io/en/stable/"
-  url "https://ghfast.top/https://github.com/PlasmaFAIR/fortitude/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "54a9a12f0b0f85f1448c75d4204b9eb5d2c3ef2095abb364716cd884b65e553b"
+  url "https://ghfast.top/https://github.com/PlasmaFAIR/fortitude/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "04018554aadd9b846c99b5ffc218fe483c353020daefb777af39a75724a6338e"
   license "MIT"
   head "https://github.com/PlasmaFAIR/fortitude.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89d4acffa99ced65d80f70a7c7ddc58c6cab76ab440d8d8e620a7431457e3b1e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "260cf38dc2085196fa0d76d360773be6dd8a1e77ef182712f96a39562c2b8874"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04658dee8414bbc8ead8dce23fb890d4e1d7327a8c378737c40fdbeaaac99969"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1b76d843e9631b2fa96221be8bb8ee40ec5c0f4b40c9dcbd3f9959581fc4391d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "decfa0dbed1dbd9ffa8ae2addd567851606cadfb447c882e03b34d1ab4cd8d5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b82d60defb00467475946211ccf32b8336fe327add6ea7714f76eda3b86efb93"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3aa77b513f1a25b317d4b42eb5f0414e806bf0b39563d0f98eb24522e755f4f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e9f173ebbbc57e9cf0c5691c064da5b758c47efe2f54220d7b362bdfcf3fe62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ccae67fb22d0966ad50cb0d8cabaa5183eaa53061cd29e519f69e2705619c11"
+    sha256 cellar: :any_skip_relocation, sonoma:        "400f4d96043009f5b4258a79178f0bbb95d9cb62d9478f497d712d15cea2ff40"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "546941a3467143b2291927d1e94ae7b6288781cc3f1c91b6d8ddc32c0f895913"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a816f1146d8b65153c7372c856a23f8440068e5ad8aa36e4e79a43ef5acc2a43"
   end
 
   depends_on "rust" => :build
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/fortitude")
@@ -30,10 +34,7 @@ class Fortitude < Formula
       ENDPROGRAM
     FORTRAN
 
-    output = shell_output("#{bin}/fortitude check #{testpath}/test.f90 2>&1", 1)
-    assert_match <<~EOS, output
-      fortitude: 1 files scanned.
-      Number of errors: 2
-    EOS
+    output = shell_output("#{bin}/fortitude check #{testpath}/test.f90 --output-format concise 2>&1", 1)
+    assert_match "fortitude: 1 files scanned.\nNumber of errors: 5", output
   end
 end

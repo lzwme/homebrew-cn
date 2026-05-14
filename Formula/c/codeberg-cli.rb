@@ -15,6 +15,9 @@ class CodebergCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "12d605e557b17e8a81d430e8d5a8bae6aec6b6206b015506a4ed8adfc497a5d2"
   end
 
+  deprecate! date: "2026-05-13", because: :repo_archived, replacement_formula: "forgejo-cli"
+  disable! date: "2027-05-13", because: :repo_archived, replacement_formula: "forgejo-cli"
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"

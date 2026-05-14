@@ -28,10 +28,6 @@ class Aftman < Formula
 
   uses_from_macos "bzip2"
 
-  on_linux do
-    depends_on "openssl@3"
-  end
-
   def install
     system "cargo", "install", *std_cargo_args
   end

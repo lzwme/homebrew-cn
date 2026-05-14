@@ -1,18 +1,18 @@
 class Tfclean < Formula
   desc "Remove applied moved block, import block, etc"
   homepage "https://github.com/takaishi/tfclean"
-  url "https://ghfast.top/https://github.com/takaishi/tfclean/archive/refs/tags/v0.0.16.tar.gz"
-  sha256 "1c0fa4a4995a9fe51d4d43dadb5e50579a354e3614a3a674cb009b4c00f3264e"
+  url "https://ghfast.top/https://github.com/takaishi/tfclean/archive/refs/tags/v0.0.17.tar.gz"
+  sha256 "153fac0c12ff8b09c7de4de233ca12126d90f80cb8f47f7db6729a49e88ba554"
   license "MIT"
   head "https://github.com/takaishi/tfclean.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07fad1bc85357498c303eb9965a521ce57869f5caf9bb967178278d5b2086aed"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07fad1bc85357498c303eb9965a521ce57869f5caf9bb967178278d5b2086aed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07fad1bc85357498c303eb9965a521ce57869f5caf9bb967178278d5b2086aed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "abfce71e4e7b4741a3d47647f7968173cceac59c36f00d58cb35ba24ddc2a030"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45aa2f693a0b21c4cbc52cf9fe420f333c5b9252c8c9d7d4a72b4d8a6a218504"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b7e1f6778001d75a5ae3afab242fe42a1614908145034e6367ef896c15f5237"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec0704ff6e4ec265d53e6815f8185ac1f0816836e37cc1690459738b234a4c45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec0704ff6e4ec265d53e6815f8185ac1f0816836e37cc1690459738b234a4c45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec0704ff6e4ec265d53e6815f8185ac1f0816836e37cc1690459738b234a4c45"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4a2bf3a96b0a1ff87f12d52ed5644156af745ccefcea140cf08eebaf67c4a286"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2147ef1f95a07035c68d19f3d0ac7fa71e4b04dcfd16a9e01257891cbfd8d65e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36cb744e17a7434c7c84a31c8c6ba05fe5833a3ca0eb62dcde01eb66c51133d9"
   end
 
   depends_on "go" => :build

@@ -1,10 +1,9 @@
 class Graphicsmagick < Formula
   desc "Image processing tools collection"
   homepage "https://graphicsmagick.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.46/GraphicsMagick-1.3.46.tar.xz"
-  sha256 "c7c706a505e9c6c3764156bb94a0c9644d79131785df15a89c9f8721d1abd061"
+  url "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.47/GraphicsMagick-1.3.47.tar.xz"
+  sha256 "95fb682dab0206a9db168d065963f4ffdf5a60b0b2a375aca1f4492fb18d0627"
   license "MIT"
-  revision 1
   compatibility_version 1
   head "http://hg.code.sf.net/p/graphicsmagick/code", using: :hg
 
@@ -13,13 +12,12 @@ class Graphicsmagick < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "6b65ffb0b494077277b0c9b654d1e2185cd88ed612a3ceac6f3c6ad5fc677cd2"
-    sha256 arm64_sequoia: "194bbe7820974cab77ef83a827efa00af0bc2fad86e1f076dc20cc53861f138f"
-    sha256 arm64_sonoma:  "a784999a5a54fe74fa72c6cc97c421993b3f22b6c54df621384a14269b4697e0"
-    sha256 sonoma:        "2c1d774a217f0dcd8951cff4e1e93f397a1e6f8040cd4c37ce4134443c68c5c6"
-    sha256 arm64_linux:   "c2769339084f247efba341dc9580863597526503ab5fc7ad96445e2531a54554"
-    sha256 x86_64_linux:  "8053553100e6ffbefe17bbf8cf563937ed988da6723ca8522d80bd261a096b63"
+    sha256 arm64_tahoe:   "e721f8ba04fd44b2c5626fd68138b9fe36de9e84e7c7cfe776637c066d26d8fd"
+    sha256 arm64_sequoia: "ce698ad238da03749a16706504d43505a2f63e835c6d4266fd2df5be1cb02bce"
+    sha256 arm64_sonoma:  "94749785dc6abb8f0d9f6bb2b09cdb5075d8d395d8d9e5ded657e115b188e266"
+    sha256 sonoma:        "40d00eff452266f1141ec1d14a241b6e2fe1f0b26835adb5a18627c90c557613"
+    sha256 arm64_linux:   "295eac51ae04881f68c2b9b93035c5bf47b0fa03f19296469546d0aaf7024a3c"
+    sha256 x86_64_linux:  "f0318555cc66f82ff4fdff317bc5a16a901682cf118d14a440aeea2663c5b312"
   end
 
   depends_on "pkgconf" => :build

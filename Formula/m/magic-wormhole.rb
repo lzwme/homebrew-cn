@@ -6,15 +6,16 @@ class MagicWormhole < Formula
   url "https://files.pythonhosted.org/packages/d7/8c/964308aeed7b828ca726da4bbfcc8f2bc89713b39ba768e24ce6331b30f3/magic_wormhole-0.24.0.tar.gz"
   sha256 "c01b4815878e5fbcad7a22cfa190c529349bf271164189a0ad955a34a8d4cde0"
   license "MIT"
+  revision 1
   head "https://github.com/magic-wormhole/magic-wormhole.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0726141b8a7c48d91cda7264f3c0d9ce45ee14b0f43c5b19c3fb244f11593767"
-    sha256 cellar: :any,                 arm64_sequoia: "79455e3d54d0ceda7adc39e239353e2b8bbaf32c2d675dd0d7b5774f68be3334"
-    sha256 cellar: :any,                 arm64_sonoma:  "50c9e1d562530bec203407f71379cc393e4dfc4b901fc5948af754c4d77d36ab"
-    sha256 cellar: :any,                 sonoma:        "47eabd8f61085ca8d127badb2eed5bfe6f2fafa55beaa9e6548bfb4b292b8b85"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a2329eaefea8f2d161d1d3e95e5127a9c71c8576be2163cb44c507812dbc020"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74a54be2dc6b5ef06bae53a3bc0a4d22552da63ff4abff1fb9b9c01e2e50661a"
+    sha256 cellar: :any,                 arm64_tahoe:   "a361ea17612ebbfa54049eaa6822b1e779ba3c8c7439aad131d419d2e404d8a8"
+    sha256 cellar: :any,                 arm64_sequoia: "888f8837eefcd4798c985ca662d821b6497b6e92a5930c29dbbf40d72a707df6"
+    sha256 cellar: :any,                 arm64_sonoma:  "c472233b905d5aa0b784ea81050b71cbb79ddae499c49520d0807a1da4eedc73"
+    sha256 cellar: :any,                 sonoma:        "99b2cb798312135d142433a756c923590fe1e02237a8484b2405a8ec371ff2a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a66adb3da3d29d399f7dc17cf59ae5f9bd50e37dd223a8d0db62d00e0434f52a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8556f8f336480f6aa222fd3e521ad827ffdbb6cda97e586689420be0064f1de6"
   end
 
   depends_on "rust" => :build # for `cbor2`
@@ -67,8 +68,8 @@ class MagicWormhole < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
+    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
   end
 
   resource "incremental" do
@@ -137,8 +138,8 @@ class MagicWormhole < Formula
   end
 
   resource "twisted" do
-    url "https://files.pythonhosted.org/packages/13/0f/82716ed849bf7ea4984c21385597c949944f0f9b428b5710f79d0afc084d/twisted-25.5.0.tar.gz"
-    sha256 "1deb272358cb6be1e3e8fc6f9c8b36f78eb0fa7c2233d2dbe11ec6fee04ea316"
+    url "https://files.pythonhosted.org/packages/db/97/6e9beb1e78247ae6dc34114f27d538cf2cb183c4afcd3609dfdf2b0439c8/twisted-26.4.0.tar.gz"
+    sha256 "dbfd0fe1ee409d0243fdd7a6a6ff14f4948cec1fd78e0376291f805e1501fae9"
   end
 
   resource "txaio" do
@@ -157,8 +158,8 @@ class MagicWormhole < Formula
   end
 
   resource "ujson" do
-    url "https://files.pythonhosted.org/packages/cb/3e/c35530c5ffc25b71c59ae0cd7b8f99df37313daa162ce1e2f7925f7c2877/ujson-5.12.0.tar.gz"
-    sha256 "14b2e1eb528d77bc0f4c5bd1a7ebc05e02b5b41beefb7e8567c9675b8b13bcf4"
+    url "https://files.pythonhosted.org/packages/bc/78/937198ea8708182dd1edbf0237bf255a96feab3f511691ad08b84da98e5d/ujson-5.12.1.tar.gz"
+    sha256 "5b7e96406c301a1366534479a7352ec40ec68bb327c0c119091635acd5925e35"
   end
 
   resource "zipstream-ng" do

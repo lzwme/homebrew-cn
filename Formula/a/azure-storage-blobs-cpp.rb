@@ -1,10 +1,9 @@
 class AzureStorageBlobsCpp < Formula
   desc "Microsoft Azure Storage Blobs SDK for C++"
   homepage "https://github.com/Azure/azure-sdk-for-cpp/tree/main/sdk/storage/azure-storage-blobs"
-  url "https://ghfast.top/https://github.com/Azure/azure-sdk-for-cpp/archive/refs/tags/azure-storage-blobs_12.16.0.tar.gz"
-  sha256 "66f2bbb0d1ce4af80c985fd9c212643007bf30d5d4b76a840014c4ac05ab7c25"
+  url "https://ghfast.top/https://github.com/Azure/azure-sdk-for-cpp/archive/refs/tags/azure-storage-blobs_12.17.0.tar.gz"
+  sha256 "b512b4b5aeecd45fa26e696efef0d6e83e22b0e3b6cfb536f14cc8faeb82816a"
   license "MIT"
-  revision 2
 
   livecheck do
     url :stable
@@ -12,12 +11,12 @@ class AzureStorageBlobsCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f4db6c252fb3c5776b33bef0da927099fbfa1421c075affe0e46b4a751d5d964"
-    sha256 cellar: :any,                 arm64_sequoia: "3d4f5e65f00d379266c6471b72a0ff185482c09929a19abdf8f48c2d10102874"
-    sha256 cellar: :any,                 arm64_sonoma:  "a3a3aee492489fc5d9d5990d934fe1ab20a24e39d7f86e759b971595afbbcd30"
-    sha256 cellar: :any,                 sonoma:        "b3f9c1d973e7fc8e23889c17df8d97bb0df6312797d2f6f49b406441535896cd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "24c6fbc3e40268d843a852bb1abe69a86e38e4ce052d97664db914a19d31f762"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b53502b8d56a46a937dfd3b2ae449d0f341e277bea1bbbc56f7de966ac50f66a"
+    sha256 cellar: :any,                 arm64_tahoe:   "80bd20199e276a785f2ef142feae41ae6e042f216157830d1f498a4d4e7c632d"
+    sha256 cellar: :any,                 arm64_sequoia: "076f6e19dac8934a60a5b5481d27ed07bb35e7882812989b05ba5f6fda326b68"
+    sha256 cellar: :any,                 arm64_sonoma:  "430234d1764d5be339264614746a9d34cf110fb9231432224174cda0c0382477"
+    sha256 cellar: :any,                 sonoma:        "1dcabbf9043dacd88d548ef14ec1e0cfe728233e49f3b47eecb8d2cfac8eec3d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d83dc191c9bbb7883634b5309015bc6c9cc564508612708808577b5c03a788c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "232744e667f39a70f538921cfc67a51a6c890531c1485a5871002b9692795371"
   end
 
   depends_on "cmake" => :build

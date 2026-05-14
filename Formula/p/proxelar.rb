@@ -6,20 +6,21 @@ class Proxelar < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "21df062661223523cd577320798783ceba457c7a5996123fbd99cbd2a0984d50"
-    sha256 cellar: :any,                 arm64_sequoia: "81334fb5fdcd8a38b1d1c0c143d0ed2fcdf8fdcee15e64e5ea76c0cb85d555b4"
-    sha256 cellar: :any,                 arm64_sonoma:  "1229b6ba3ae4fbc21e156bb596da64aba71442e5fa3511d0bcbde1f2dac758f1"
-    sha256 cellar: :any,                 sonoma:        "9244496614fb29c7f4b36275aaef3abd85dc0aab0e3b28015714c77c04be3a6b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0209ea64efa49f499c575ab5ea268c2e11018649ca063a3eed8e6c3c9bd7e57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31482d2c17cd06c5bee69e2a2966cc01412813413eda1587a10af42f71cf7b3b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "84b8fe7b6346759c6f88c6fe587bdfe18c4a5d105230c9014367f94bb96c1a4a"
+    sha256 cellar: :any,                 arm64_sequoia: "10bbc78ba15baabca0ece294d9427c33582206eb99c0c7ac90f0e59efb9fbfe0"
+    sha256 cellar: :any,                 arm64_sonoma:  "4839bac86d126d9d8d3c2526f7d86b4e2ff7af109b2dd0066a5bec3e49b9d7eb"
+    sha256 cellar: :any,                 sonoma:        "449c586d869b46546b7c9460b5fba97de8ea3b4f04dc7543a07bf3b766a2d8c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "33a46cddcdba2f3e6a1169ce180a29d15dcc10ea6c59fcd7694e5fc85bf93347"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d34ca05ac9c1173463e2da7211aa7e2662b49ce27df5b33314915e0fc80939f"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@4"].opt_prefix
     system "cargo", "install", *std_cargo_args(path: "proxelar-cli")
   end
 

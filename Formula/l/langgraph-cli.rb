@@ -3,17 +3,17 @@ class LanggraphCli < Formula
 
   desc "Command-line interface for deploying apps to the LangGraph platform"
   homepage "https://www.github.com/langchain-ai/langgraph"
-  url "https://files.pythonhosted.org/packages/f8/b7/e8d1d52b757ef60acd50d5d042ca1c2e257e682d811ef863a03bf6d7e65e/langgraph_cli-0.4.25.tar.gz"
-  sha256 "58c8d642fda58426bbb3dc97bc267b292d020ba83415e9cbbfd1ab0288155351"
+  url "https://files.pythonhosted.org/packages/5d/94/6864c94fcc998d7b72f60a4166222f003483426446a10979c0215220dd65/langgraph_cli-0.4.26.tar.gz"
+  sha256 "d81867e45bc198f4c61a4064e8f347aba9e6ffa256db387d8daae594c59bf0f6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "be1fb2c09be96aa5bd5bb31eefc7c9ffbb8d88c47db7f0d5824e5b73c8a1a1a9"
-    sha256 cellar: :any,                 arm64_sequoia: "d21638ed773e995c5774ccaae4123b141cfc808bcb29efff732279e746a8bd46"
-    sha256 cellar: :any,                 arm64_sonoma:  "2d1e8da0e53b98aaab99d6de64f963d55b07b57c7b2da48ac48c4275214fc46e"
-    sha256 cellar: :any,                 sonoma:        "e17ab3409a9ec46cf305781853b0ea92d010010aba5740e746823f1e947c41a9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d32d08a82cbbbf55274f3cd120a1efc80ebdc740bb533cca7f5fb0f9ac57a87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8375f9251245b7474cf9f2aeb441740e47d03324b9f53ab4ef34b38b530ce1a"
+    sha256 cellar: :any,                 arm64_tahoe:   "5b4bd9fc5a1976e59e6f30f88b609510bd598e9588475cf45c90aa3349a3c3e9"
+    sha256 cellar: :any,                 arm64_sequoia: "fdfa0655d05b80d6266593ccfd3c38b73dba6bfa1b7cedc35cd9cf32c80c1025"
+    sha256 cellar: :any,                 arm64_sonoma:  "6055993cba9b73b41d32eacf6822409e98dfe61034de4cf02188c0d0e90f3276"
+    sha256 cellar: :any,                 sonoma:        "6bce3ebf9a8889d030a6ac54b5aa94137d61c426361e2cb88cf56eb21e831e57"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef975cbcb9af6f0fd49076c40c790c3d5dc14c6954c5ae556a353f811b028db4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0331d5713fc699f0b7e03f8b3c93f0a3e9137dfd043e5f22ac0954050f07ada"
   end
 
   depends_on "rust" => :build # for orjson
@@ -49,8 +49,8 @@ class LanggraphCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
+    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
   end
 
   resource "langgraph-sdk" do

@@ -17,10 +17,13 @@ class Wdc < Formula
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "openssl@4"
   depends_on "pugixml"
 
   uses_from_macos "curl"
+
+  on_macos do
+    depends_on "openssl@4"
+  end
 
   def install
     inreplace "CMakeLists.txt", "CURL CONFIG REQUIRED", "CURL REQUIRED"

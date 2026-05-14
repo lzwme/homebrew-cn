@@ -10,12 +10,13 @@ class Zrok < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cdb1ad3d6cfea9f868842f07320b5ac10f4ca0f7e83279fe5881e4c3857be098"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a9d0692fbc0f36bef59e74e92332e4017d871bd759c4e86b6987b53337be9f9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f1c12e82a5cfaef976455a5a1eda75eb3ef9abb2f2b30aec718f1314a2c57be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a30a0663056aba71368f90d81685d3aee8dfa491f2ec9f5e8392aabf98906a5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c944f317d45e46490e441164897cbc42ca9e868bac111ce8db4ee9443cbdc13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f46ab4101a7b286375ce67383682c4de7c2fae5ce53d3056f96338452ad1b63c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd819d5a0c3a7406c81099a79ad510e8a0013b9a66ac1a1032ef3ee9aabbce45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21df7b8670a168d811315204fe6ca38021b94ea1c779f9bcd60f4cca56afbd3a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23470eebb64e12f7cef28b961cfd2b50e46c7ea4c58e60bce2dcba9a9ff7e009"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3f039ab8c173242c8ce00b9aa1308915a7687f7c09f22436f19297623a269f49"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e39cbef58bc7868120538038e792540ad4f321e6f24e5513719305f2505c653"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b49960027c348467c85223c701f1d510581fb191c6590007e62f4e53fa6d89e"
   end
 
   depends_on "go" => :build
@@ -42,6 +43,8 @@ class Zrok < Formula
       -X github.com/openziti/zrok/build.Hash=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/zrok"
+
+    generate_completions_from_executable(bin/"zrok", shell_parameter_format: :cobra)
   end
 
   test do

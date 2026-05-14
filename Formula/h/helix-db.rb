@@ -1,17 +1,17 @@
 class HelixDb < Formula
   desc "Open-source graph-vector database built from scratch in Rust"
   homepage "https://helix-db.com"
-  url "https://ghfast.top/https://github.com/HelixDB/helix-db/archive/refs/tags/v2.3.4.tar.gz"
-  sha256 "9e18fca307763d13798332507adbb19d2fc1ef77d2fc022f3be01769d4ad47c3"
+  url "https://ghfast.top/https://github.com/HelixDB/helix-db/archive/refs/tags/v2.3.5.tar.gz"
+  sha256 "79d5a19efacdc1ee20f74eacdf26e738e1e8a5191de4e86fad0444857ce3d2d0"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04ba6df0ab32b8743bc4a88e90c68164b99c3cc80b09383850f63ca431f3779a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29077fc0125cb6a7eddd23bf197ffdb9df8e22823bfdf1e3faad95cb39a4247d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37db147e17cfb316f2f86977b6268b0d092b6b8b84de0b466678c5dabd639643"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9b8377a99c121bf9f84548f8d7ebca60e447b0f2ffca5e7f1eeb6ce37e6a1d10"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "712acc409087490443bb52a562fa7df17971e4ed8f52be0ad1cc455db18702db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e541ada036d3f575c97480c75b0452a5ddb47394cfffd9676b9b67000e10449"
+    sha256 arm64_tahoe:   "18235fdcfab03d6a82530e186ef69796e23883a0886041ed01c74cb9b12c8b88"
+    sha256 arm64_sequoia: "9a3761517c7b0ca78f9d95da176c13e21135c5b4c11e6cecd9ca59b75a9e879c"
+    sha256 arm64_sonoma:  "1179e76b2664bd8129f43f157a3b10895597b50052516b0ab3a49a1f6cc1de9f"
+    sha256 sonoma:        "e28c0e6a81831a7cc19e0383ad8607b8c2ef0791aec373d58ba2cb41d230b93c"
+    sha256 arm64_linux:   "36c0b10740805e42bffe08b1c7e93c9c022623be2d438c1c9ed8c2f2064d3b99"
+    sha256 x86_64_linux:  "6ea542bec5be53dd884f7524b88cdba08efb3998fc2eb3b21de7c4efcddf3a92"
   end
 
   depends_on "rust"

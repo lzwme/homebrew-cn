@@ -1,18 +1,18 @@
 class RolesanywhereCredentialHelper < Formula
   desc "Manages getting temporary security credentials from IAM Roles Anywhere"
   homepage "https://github.com/aws/rolesanywhere-credential-helper"
-  url "https://ghfast.top/https://github.com/aws/rolesanywhere-credential-helper/archive/refs/tags/v1.8.2.tar.gz"
-  sha256 "5c1da00713ee99e798b99364d759b31fedd7c462d2625d0c8d200a7570d226bb"
+  url "https://ghfast.top/https://github.com/aws/rolesanywhere-credential-helper/archive/refs/tags/v1.8.3.tar.gz"
+  sha256 "54e5e46647d172f158707ae8950756e9b85abef8b78ed344a710a660c0739e87"
   license "Apache-2.0"
   head "https://github.com/aws/rolesanywhere-credential-helper.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ab3df37a77081df79ccf6f50b70715d4e86f5fa7d506251b2bc26dbb4730b7f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc8666ef27162388b45661c89aeacd2b94c2dde3be158708f96cde86f59d3e7f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e17cac634a8d4710e1b50f55cd0ec2ad63d682b2371470288e6df44ffd2e71be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "960718e867d13839e916897df6a2060fba8a4c8f5d353506c7c6219c9be624ba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "14f0b2da30c4910f11289eb2b69a969dd91bce751f314890d0e6fb2da25a6bc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f893504991b4c1a3b5eb45b9a0853b00afb92a0c5fc0a4113a31f6c122d7ffd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9a81e924bc992599c9a52457e4f239732d9783dbec73fde4212a4065b97fc52"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1616fc183e4b3bb0f2f113797d4c4362406f0ccdab5c6ccf2d92c03491c458f1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe74c6412778098ec4eebd272e11039882ffdd385d02f160bf323ee31188924d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5f7d3afe69783077fb6f83d3a33cdf708f9270ed738aeb5554e5a899b54b1b99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d5b68c4e5b21ddab7d11a913dc0f8418b5f5e44d6a007db18e9092dca5435fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01478564fdfcab5497425bbff8460fb7f7fd7dc3ce6f9bbfe242af32b0a284a3"
   end
 
   depends_on "go" => :build

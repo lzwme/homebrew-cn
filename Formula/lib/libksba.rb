@@ -1,8 +1,8 @@
 class Libksba < Formula
   desc "X.509 and CMS library"
   homepage "https://www.gnupg.org/related_software/libksba/"
-  url "https://gnupg.org/ftp/gcrypt/libksba/libksba-1.7.0.tar.bz2"
-  sha256 "e1d3a5745911f5a663fddecf526541c4241052a9e4cafbc92dc7f4096c7efdac"
+  url "https://gnupg.org/ftp/gcrypt/libksba/libksba-1.8.0.tar.bz2"
+  sha256 "296b9db9095749f2aa104202d7ab7fd09ad10710e00780a709c9754b1a1d9292"
   license any_of: ["LGPL-3.0-or-later", "GPL-2.0-or-later"]
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class Libksba < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c8397a90c3319b01a7a1fb918a744d4955d68ac35014cb6b970fddabcc9a978f"
-    sha256 cellar: :any,                 arm64_sequoia: "40e470b7a2063e44d2be4de5ce729ca055262b9f667bf812fb1cd8617bcf9433"
-    sha256 cellar: :any,                 arm64_sonoma:  "0027e64410b8ca621b56d4fafe55fe8c18f140373740d30d5a5d02138ac807af"
-    sha256 cellar: :any,                 sonoma:        "ed1599c59f472be25bd8ec3260ab28d28b22cee360f0b0209961c3f76ad6b37a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd3d03f38475edf731137ef9b20dc6bc89de04077fe7f19739e2a8afd62e424b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1aac1e689711348bf81c4837fcd90c76ca80cd3424f6ff639c979e337ec8b081"
+    sha256 cellar: :any,                 arm64_tahoe:   "a14ed50998df34e93b8eeedea30c7b953ebd07d2de779f6f040bcb628a8c03f0"
+    sha256 cellar: :any,                 arm64_sequoia: "0f0fe7be0551bbc43def382b1a57b6c9c0cd389d9f6ff94e4814f13d874d57ab"
+    sha256 cellar: :any,                 arm64_sonoma:  "0d6ac900bba8a7db4d070d0dc105c6d2e1dc4d7db114eada045e05a36b730c94"
+    sha256 cellar: :any,                 sonoma:        "e628ca384fbbd51f879713e75c9c7fbd8c006ebb0774568acb47b92c31b87642"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "daf8a2212c7bee6a9af2eb0ddf9a56c8c6f6d112f0520ec699b009a2fe837afb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5518938a0b0907d4d12c0153dcba08245d65442e7ee1c0a5663e5935b591305"
   end
 
   depends_on "libgpg-error"

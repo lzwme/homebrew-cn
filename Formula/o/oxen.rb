@@ -16,27 +16,23 @@ class Oxen < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a58e153e247339e6b971a0c5e734e71809beebeb2cd7b1ab1a7cb434212e049f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8210256947f8f7dd4d8ab995277bba274bab6341e073ab2ca0a42fa156697cb8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "310310c07941c5dea9029df673ba303bcc481ba3f10b1e9cc89748866d0e8c48"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0f6c3904fe3c5a166e68753d94f425ad8ac4f2813c18ae0716c6c746e247bc79"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "09a3b8667ed1c7bddb48ce48dafb99ef402ea8944ed0e4e66d8e49a6c34e0cb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da193599ba30b8f40855de28e2162c12cee6dddb6592842881fd9b20ac881390"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "1b6894b73776bbe2742cab33b7045da7ec5eaed1e468eff7beab8404be858dd5"
+    sha256 cellar: :any,                 arm64_sequoia: "f515c1d40286ce4349bb864650772cfd201baf8f9671890787be70d1cbaa08c4"
+    sha256 cellar: :any,                 arm64_sonoma:  "8879683186a6b1940bb941c7b4ec79d2b1def2db745a3bc5ac5de471c77bd027"
+    sha256 cellar: :any,                 sonoma:        "e4b6eb4f28f04f202e1c8f6a4e5c4be679eeb85f1f8318e0f20f5e22f87671ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d6e16f1934ff862c18fea462d259543e3d04cbb50d6b4d141188d1b1307071d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5a70f9754bb0055216c7fd5108e9771530bb79fc819024ec625c840298e01a1"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys
-  depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "xz"
+  depends_on "rocksdb"
 
-  uses_from_macos "bzip2"
-  uses_from_macos "llvm" # for libclang
-
-  on_linux do
-    depends_on "openssl@3"
-  end
+  uses_from_macos "llvm" => :build # for libclang
 
   def install
+    ENV["ROCKSDB_LIB_DIR"] = Formula["rocksdb"].opt_lib
     system "cargo", "install", *std_cargo_args(path: "crates/cli")
   end
 

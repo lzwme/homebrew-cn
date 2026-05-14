@@ -7353,7 +7353,6 @@ Homebrew-homebrew-core/Formula/t/tfcmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfk8s.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/tflint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfmcp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfmigrate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfmv.rb, Homebrew/homebrew-core, 1
@@ -12852,6 +12851,7 @@ Homebrew-homebrew-cask/Casks/i/inky.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/inloop-qlplayground.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/inmusic-software-center.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/input-source-pro.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/input0.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/inso.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/inso@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/insomnia.rb, Homebrew/homebrew-cask, 1
@@ -14673,6 +14673,7 @@ Homebrew-homebrew-cask/Casks/r/rubymotion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/runelite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/runescape.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/runjs.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/r/runtimeviewer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/runway.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rustcast.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rustdesk.rb, Homebrew/homebrew-cask, 1
@@ -14807,6 +14808,7 @@ Homebrew-homebrew-cask/Casks/s/shearwater-cloud.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shell360.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sherlock-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shiba.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/shichizip.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/shield.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/shift.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shifty.rb, Homebrew/homebrew-cask, 1

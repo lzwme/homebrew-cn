@@ -7,21 +7,20 @@ class Octobuild < Formula
   head "https://github.com/octobuild/octobuild.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae3196c00596806784136909afae180ce3556bc53770ca95c8266324c285f1a3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "476cd1bbe57d73e981ac7d93033892ce3a70e507dd4538bbcb3da11d615997f3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84c845b11b998c5eba0e275305a19b9c7db52ffefac17b07f8de5253c52bd92b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9de6ad46ac2f152cde3007ab589650442cc5ce9da7d74399c888534bab8dd7bf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "58d75af4d61aa6ade3e137c414c4b355949e63835c731db228f939b0e3e20c7c"
-    sha256 cellar: :any_skip_relocation, ventura:       "fb996f3b6c85217689dbc99bf94cb1646effb6bc203b5eacf864f862d20046b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "32cd6cd48bb96e40477d91f1b0519c30ddf8b26654c0620060a107e931cd999a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "252412dd4df54aa83cfe00168e09b16c2404a1269ce0ae86da3cbdff8d88fbab"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d207da7d9e3694d849795a4674d6580b8aacb80cec69302f5d8d5ea851f6e3b3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0883d37e4681202fcd7dadd9f5d7444058b237d0dab41769cfb189e934d32e3b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f36198c12bcaa9f5f69db74c84ec064ba81595572981487b7c90c88d7ee3ae5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0cc3926e677c29785105ac4d314f16195d251a5e807682630ac783c956335de3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b5a05a42cb6dec1acb7f35ae87cd419731a45fe323e52e146a59be4d3a6ea72"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d5e33ca23813c81b8c5d913de72e78c1dda0c4af11e82091e95b5f7809e971a"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   resource "ipc-rs" do
@@ -47,6 +46,7 @@ class Octobuild < Formula
         ipc = { path = "./ipc-rs" }
       TOML
     end
+    ENV["OPENSSL_DIR"] = Formula["openssl@4"].opt_prefix if OS.linux?
     system "cargo", "install", *std_cargo_args
   end
 

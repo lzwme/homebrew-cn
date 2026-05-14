@@ -1,19 +1,18 @@
 class Cpi < Formula
   desc "Tiny c++ interpreter"
   homepage "https://treefrogframework.github.io/cpi/"
-  url "https://ghfast.top/https://github.com/treefrogframework/cpi/archive/refs/tags/v2.2.2.tar.gz"
-  sha256 "f1cf314377e3576b2fae021c82efc252f03cf17cd7b8186cc6937bb3b0ff71cb"
+  url "https://ghfast.top/https://github.com/treefrogframework/cpi/archive/refs/tags/v2.2.3.tar.gz"
+  sha256 "f56f3e529b6c3bb954a997a4c97f4b5d2d425e7a078428803624784eaed1b499"
   license "MIT"
   head "https://github.com/treefrogframework/cpi.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ebc8bcf9165cc4f7d1fde637a79c4b871072c74b93358687311e97cd7e126cfd"
-    sha256 cellar: :any,                 arm64_sequoia: "6bea475fa5b517cf42faebb459b104fc8d868dfe5e03cf097e37eb7fb0512a0d"
-    sha256 cellar: :any,                 arm64_sonoma:  "391aa4186fc5c5c6f976bcf61bbd8ec7f311e352194b8595ad97da4db246a260"
-    sha256 cellar: :any,                 sonoma:        "80aa4416afead86fe0621e8c53874dbfd951ff6fc40e8a7641c26cd1a382ab31"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5748c1ce40a957f82c6e288901004c36c8b4aec5d8580828c561fd153e6388ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be937b51660f2d5f2664a132c73b928706be340356100c74b7ebb507c7ec436b"
+    sha256 cellar: :any,                 arm64_tahoe:   "1a48e8aed8aa76f0efa7ed70fd9373f4a103d1a33eaa2ddcecc4bb24d42b9327"
+    sha256 cellar: :any,                 arm64_sequoia: "d3bf08b3f16a80e47e60e5069a6f40fae0bc543a3aa95c18b90bbede7d0d4127"
+    sha256 cellar: :any,                 arm64_sonoma:  "774fb1b2760baf8e39779faa61e4d75ed2041e62ed1e199e8f5c1407600d4516"
+    sha256 cellar: :any,                 sonoma:        "c030076ba10edc7bd91d4fe57d386b2bcfea1c6c00311aac02c45251e73dfbd7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe3211c60ad46f4753fdfb8d9e2c46757acfd684fba08db2d2d46f14c4bba14f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f57105bbfacb083a3523871f80acb287f4dde789ceef34239f709ebb26d3bb6"
   end
 
   depends_on "qtbase"

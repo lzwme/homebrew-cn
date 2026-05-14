@@ -1,8 +1,8 @@
 class LibxmlxxAT5 < Formula
   desc "C++ wrapper for libxml"
   homepage "https://libxmlplusplus.github.io/libxmlplusplus/"
-  url "https://ghfast.top/https://github.com/libxmlplusplus/libxmlplusplus/releases/download/5.6.0/libxml++-5.6.0.tar.xz"
-  sha256 "cd01ad15a5e44d5392c179ddf992891fb1ba94d33188d9198f9daf99e1bc4fec"
+  url "https://ghfast.top/https://github.com/libxmlplusplus/libxmlplusplus/releases/download/5.6.1/libxml++-5.6.1.tar.xz"
+  sha256 "4996e8a73995e8a4cd656c8591dce38181146edfc30cb47c97d1db3c56990ad7"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class LibxmlxxAT5 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d8f7af5b6ae22cf7f4ebc0cdcc6ff4c8da8948fed395c9ec78f70c945af17ef1"
-    sha256 cellar: :any, arm64_sequoia: "0de758278ded4db21000aef5e7e65ede12a06e98cb39bb031af13d6b1fc225f9"
-    sha256 cellar: :any, arm64_sonoma:  "21ed955b01f0d8bdd8108fe6b5ddffa0c90eb57e747bb0b2dc59c66ddd78f46e"
-    sha256 cellar: :any, sonoma:        "fda6da5a238721629336dc6136b3dd332a3ba9a1573ec3277709a03099b4a61e"
-    sha256               arm64_linux:   "b29e9a86607c16f976f10ed9c6674875e9c0261d465a4920191b68df1fb88da1"
-    sha256               x86_64_linux:  "555db96f572fb18e781cb8875bb73f3c595f2a36159dfd19350822d82e4a718a"
+    sha256 cellar: :any, arm64_tahoe:   "9164e86885c4769a04bf9711aa946ea8cfe328cfecb9cf9e46ed2016eb486631"
+    sha256 cellar: :any, arm64_sequoia: "d44a81966c4c22de6570a6c7ad8078974b0ac11fa06fe16259e18f6f789fca86"
+    sha256 cellar: :any, arm64_sonoma:  "c53d66642a81bb8c6e18f6f33c7ff6a77e5a9a678d0957a90b6e691ac8b77fb8"
+    sha256 cellar: :any, sonoma:        "c1945550caf17babeac73a8c274b8b68f5428ef34408282ba2ad97eeb1b8d657"
+    sha256               arm64_linux:   "572191e564ec5e0bb275351f9892b7543030de1afeaa9c7b92ef517e8fb6a08e"
+    sha256               x86_64_linux:  "63823e5e5eeedca47bff04ee8602292563a19a3fc8a9bec4c2db1e7c8521ebce"
   end
 
   depends_on "meson" => :build

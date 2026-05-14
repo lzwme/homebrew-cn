@@ -1,8 +1,8 @@
 class Proto < Formula
   desc "Pluggable multi-language version manager"
   homepage "https://moonrepo.dev/proto"
-  url "https://ghfast.top/https://github.com/moonrepo/proto/archive/refs/tags/v0.56.4.tar.gz"
-  sha256 "e88f952f54bd14b9aec54d68a818e2206fbf52925dd1daf65302532b1c619585"
+  url "https://ghfast.top/https://github.com/moonrepo/proto/archive/refs/tags/v0.57.0.tar.gz"
+  sha256 "61009f6da360159eea4757c828f5615000ec7cb3f551bb59935b3c4dfc0a697a"
   license "MIT"
   head "https://github.com/moonrepo/proto.git", branch: "master"
 
@@ -12,12 +12,13 @@ class Proto < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37b003bb38900f1a4fdca3fcce12110f85e70d7b0177e628ebf2fd27fbd8746e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26357761a6715c154d825b85ca17166cd812577c92e32fa2ff85bd9532690cc0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f686f7b1fea71dc4bd4859777df448daa35b0716b229dccb55d261f25c5c9648"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d1a46fbc089cf292c7b8e50670aed1fa6062cc0dfd39878819d843e87858c9bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef47935dbb594c6cfdce34a51494001632641d9af59b38f73fdf4886ffb33b36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de74008edf284173e2e7ab24a2add1a111ae73f4fbf244e99de0113bcb42e6b5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b896a14bdc98b6ec77c1b7add7b61d55e7c99211c934ebceb93712393c9e932"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b483ae78875a6f3e1c5c71bf04b9dfec95526b2067a934d90c39a203a3948334"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04ff98e27791ba58ed694d9c8dde696267ae65646d2c2738145e9376d22baee3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "35e04904de9fbc1ea8c658a8682d6cb5d911748884593c253d33211bf444df47"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cde5998255d96155675bd604ad3af4626a8580d2eba7628c7571cab2e688b7b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "163d40d50b3729af8f8930242c880ae511461ec747c3fa3992be91be78f092ef"
   end
 
   depends_on "pkgconf" => :build
@@ -26,11 +27,12 @@ class Proto < Formula
   uses_from_macos "bzip2"
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
     depends_on "xz"
   end
 
   def install
+    ENV["OPENSSL_DIR"] = Formula["openssl@4"].opt_prefix if OS.linux?
     system "cargo", "install", *std_cargo_args(path: "crates/cli")
     generate_completions_from_executable(bin/"proto", "completions", "--shell")
 
@@ -55,13 +57,14 @@ class Proto < Formula
   end
 
   test do
-    system bin/"proto", "install", "node", "19.0.1"
+    node_version = "24.15.0"
+    system bin/"proto", "install", "node", node_version
     node = shell_output("#{bin}/proto bin node").chomp
-    assert_match "19.0.1", shell_output("#{node} --version")
+    assert_match node_version, shell_output("#{node} --version")
 
-    path = testpath/"test.js"
-    path.write "console.log('hello');"
-    output = shell_output("#{testpath}/.proto/shims/node #{path}").strip
-    assert_equal "hello", output
+    (testpath/"test.js").write <<~JS
+      console.log('hello');
+    JS
+    assert_equal "hello", shell_output("#{node} #{testpath}/test.js").chomp
   end
 end

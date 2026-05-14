@@ -1,20 +1,18 @@
 class Opencolorio < Formula
   desc "Color management solution geared towards motion picture production"
   homepage "https://opencolorio.org/"
-  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/refs/tags/v2.5.1.tar.gz"
-  sha256 "08cb6213ea4edee550ab050509d38204004bee6742c658166b1cf825d0a9381b"
+  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/OpenColorIO/archive/refs/tags/v2.5.2.tar.gz"
+  sha256 "722601e01b78b7a12da4829cb450674935f404b0e508f3f20046fa77570e3272"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/AcademySoftwareFoundation/OpenColorIO.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "0ca624f3788e11cefd2b246e8154b85a819c2a40ed83e618abdb93c00dbedc16"
-    sha256 cellar: :any,                 arm64_sequoia: "a253b7d210772a5f07acdae83b8707e2c27da64f5dd883f5428e6b5e72afd456"
-    sha256 cellar: :any,                 arm64_sonoma:  "24f7868c7417b93233c10265dc9f594e07331d9a00c515a63d27c3baffb339ab"
-    sha256 cellar: :any,                 sonoma:        "c1b9c2d7eda1ec4613cd573a4c16414f286155f91f25715f7e0c204053e85fa3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9169481ded19f10e1b7c82e7c694d34c30dd78e0ab44107149b303208d869fd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d91f280ab35dd2bfb6c30bf2480f9370fb33fd44aec3b542d2fd28ccd4680f2"
+    sha256 cellar: :any,                 arm64_tahoe:   "7b0813d78b3d682eedd037eed1ffdea77789be0e1d646c10c8867cb1ffe924e3"
+    sha256 cellar: :any,                 arm64_sequoia: "07d927af277f3b4d4a2214b903d8e98cd0501e93194d7d66c8f6402177ff43c1"
+    sha256 cellar: :any,                 arm64_sonoma:  "144a0ec28a8e5f0f4caa6fbd56c5e62f9efc9105483b8787ce48d1760e1e51af"
+    sha256 cellar: :any,                 sonoma:        "1ded26e55687b43f2a79e6c03cefa728cf25c87c2ac54f534b92b70db8df52d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9be8653abb0c4e297138156044a226b55e7a6184a78aa3690e10106902f4108"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0a7734028b65c35ccd63aa6b239686444da7c6c49c76f8c9a2532f801f8bdde"
   end
 
   depends_on "cmake" => :build

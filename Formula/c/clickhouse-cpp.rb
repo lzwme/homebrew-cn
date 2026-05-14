@@ -17,7 +17,7 @@ class ClickhouseCpp < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "abseil"
+  depends_on "abseil" => :no_linkage
   depends_on "lz4"
   depends_on "openssl@4"
   depends_on "zstd"
@@ -28,11 +28,11 @@ class ClickhouseCpp < Formula
     #   https://github.com/ClickHouse/clickhouse-cpp/pull/301#issuecomment-1520592157
     rm_r(Dir["contrib/*"] - ["contrib/cityhash"])
     args = %W[
-      -DWITH_OPENSSL=ON
       -DOPENSSL_ROOT_DIR=#{Formula["openssl@4"].opt_prefix}
+      -DWITH_OPENSSL=ON
       -DWITH_SYSTEM_ABSEIL=ON
       -DWITH_SYSTEM_CITYHASH=OFF
-      -DWITH_SYSTEM_LZ4=O
+      -DWITH_SYSTEM_LZ4=ON
       -DWITH_SYSTEM_ZSTD=ON
     ]
     # Upstream only allows building static libs on macOS
@@ -42,9 +42,6 @@ class ClickhouseCpp < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-
-    # Install vendored `cityhash`.
-    (libexec/"lib").install "build/contrib/cityhash/cityhash/libcityhash.a" if OS.mac?
   end
 
   test do
@@ -93,7 +90,7 @@ class ClickhouseCpp < Formula
       -L#{Formula["lz4"].opt_lib} -llz4
       -L#{Formula["zstd"].opt_lib} -lzstd
     ]
-    args += %W[-L#{libexec}/lib -lcityhash] if OS.mac?
+    args << "-lcityhash" if OS.mac?
     system ENV.cxx, "main.cpp", *args, "-o", "test-client"
     assert_match "Exception: fail to connect: ", shell_output("./test-client", 1)
   end

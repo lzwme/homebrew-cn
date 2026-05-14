@@ -7,24 +7,28 @@ class CodexAcp < Formula
   head "https://github.com/zed-industries/codex-acp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b372648c7ca1aed83b6ef5046924e87a638ad5718d3fb55b4f1ac0cf24848f5c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "078e2f5ed2a9374339b2eb1534c721be45f46d392ae55c620a431ae8b68164f1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3d5a43d2877bce8d95b877e196dd82ca1bbc4e907af21b81a9f9711ba3a2911"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9be014f4a149fb2b156e2192bc5e9b9bf55ad12d6ca26bef5ee69288cb440827"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "480416e516fe0c1a55ee79a7519f20c7d1ccc6270f14dd82dccc913a03e35cb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5584b4627974e4e0fcce3b8adb06267e53a13c2748bc5afe951bdda1cce49c9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb93a1508a5fe0ac2bbe08741d01ae8da27d58db4259a1a18b5f0926a7e37446"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3366d7766d69d5d52b7ac01ed49b806d91e7793182a98668092a9bf72d7668a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04a48f94064b02854089944261de81c75f06d93b1baa57fceec96053cbfd0f0d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "87ac7a183a38adec3d25bcc54ba0e29b8265bac745a23884eb795bf1467ab91d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e1baa85540c3db782a933c7107b2758c0a70d22594300471b71250625bb99bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b12e5979e0ea8bd2288f66c58bd7e3904801fb70e8f2901c70f3e28bb626729"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+
+  uses_from_macos "bzip2"
 
   on_linux do
-    depends_on "libcap"
+    depends_on "libcap" => :build
+    depends_on "openssl@4"
     depends_on "zlib-ng-compat"
   end
 
   def install
+    ENV["OPENSSL_DIR"] = Formula["openssl@4"].opt_prefix if OS.linux?
     system "cargo", "install", *std_cargo_args
   end
 
