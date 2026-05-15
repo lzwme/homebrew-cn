@@ -44,6 +44,7 @@ class ServiceWeaver < Formula
 
   # upstream announcement, https://github.com/ServiceWeaver/weaver/pull/804
   deprecate! date: "2025-06-14", because: :unmaintained
+  disable! date: "2026-06-14", because: :unmaintained
 
   depends_on "go@1.23" => :build
 

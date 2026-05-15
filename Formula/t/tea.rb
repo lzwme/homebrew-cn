@@ -1,18 +1,18 @@
 class Tea < Formula
   desc "Command-line tool to interact with Gitea servers"
   homepage "https://gitea.com/gitea/tea"
-  url "https://gitea.com/gitea/tea/archive/v0.14.0.tar.gz"
-  sha256 "f509de217ac0e57491ffdab2750516e8c505780881529ee703b9d0c86cc652a3"
+  url "https://gitea.com/gitea/tea/archive/v0.14.1.tar.gz"
+  sha256 "848b6b2fafa270fa77b4e278d521bfcc16d2f721c45ac90f08f5b16dc630c3f9"
   license "MIT"
   head "https://gitea.com/gitea/tea.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cf92d8a13e8cc2afeb97674055e165b81ef33842d5ab7371409d2537a000876"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cf92d8a13e8cc2afeb97674055e165b81ef33842d5ab7371409d2537a000876"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6cf92d8a13e8cc2afeb97674055e165b81ef33842d5ab7371409d2537a000876"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e0b6e690872021fb12885dd8cb25c7805a482e7603625f782612b94dca67f382"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "358b46074556a21853cdfd65e2f3c52b359df27fa0a0de8d506cf1b4781cd68c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7023b8493115ded2d7a1f739d260d203e88dfb89369e15614f4eb17e8106048f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8002beb5d9ee2061005984b90a21f7414292fe21d58b3e38ed4d6c3d35ef4304"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8002beb5d9ee2061005984b90a21f7414292fe21d58b3e38ed4d6c3d35ef4304"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8002beb5d9ee2061005984b90a21f7414292fe21d58b3e38ed4d6c3d35ef4304"
+    sha256 cellar: :any_skip_relocation, sonoma:        "343f8e211413ae14e71279aa52b91f1ab00c7001bb00e459ce2818e26ed136f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "53d1a65bddb69f2f4e2d9a6a7f76f5df4db3533fadaef90416fbfd5e2ccafebf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f1b2c7a307df6a8549827cfee645eaa43e23b07582baa412592119b4248f00d"
   end
 
   depends_on "go" => :build

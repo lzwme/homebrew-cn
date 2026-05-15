@@ -1,19 +1,18 @@
 class Netmask < Formula
   desc "IP address netmask generation utility"
-  homepage "https://github.com/tlby/netmask/blob/master/README"
+  homepage "https://github.com/tlby/netmask"
   url "https://ghfast.top/https://github.com/tlby/netmask/archive/refs/tags/v2.5.0.tar.gz"
   sha256 "f352d8117a4f9377a15919d9ad4989cfba8816958718a914abf1414242a9f636"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "526dfd6c8b4bf73f066e2f8d7e2d6dd377daf7709dfc11ba4697ed81d75ac619"
-    sha256 cellar: :any,                 arm64_sequoia: "a13e322af5637a9f17320f03d2f527dff2342edae14f39c88b4b32b2962b878f"
-    sha256 cellar: :any,                 arm64_sonoma:  "9b5e73835736dde2f98f6c5df24ad88a570d4a204f0b352ab35e77e36f5b7bcb"
-    sha256 cellar: :any,                 arm64_ventura: "91de5bd0fb52ad88bbf873d5ee5fa3e65ef1dcf466d95aca7bad145b104bf47f"
-    sha256 cellar: :any,                 sonoma:        "0fc1d11045fe492269b03b694edd9e1fe214a2208f700f5ea98d69b132914668"
-    sha256 cellar: :any,                 ventura:       "37f666ef3af69e17afdabf451eb71196065e3d9e91b091f582b29be4b5c18853"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3eef7efdc4db887245360eabc57b202607d2c6cddc461ad1368898582a8eaa99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "412db2c646b5c4e9038908022c40c809e1c2430fc163dbdc27b3590db01803be"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "cb0530aeaef1e274a3e3457b498d583424b9558fbb4647b20ff0d5020a46cb55"
+    sha256 cellar: :any,                 arm64_sequoia: "378d351713f5eea2019eaea0b601dc206a9dd6a0a3235dd77d450e908876f2b7"
+    sha256 cellar: :any,                 arm64_sonoma:  "d4229b7337b45ee6950de060d01bf4dcaf0d4588152e3e8a765e5b0cae9119fb"
+    sha256 cellar: :any,                 sonoma:        "62421d9e2ff7f4a5f547531b580132eb1732d8d9aa5df3fdcb644e8b170b6a8b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1fc97a92cfc5d50e0a561fd8744b6a3050ea1f42acc152eca977514ae3e6750"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc66aefa5400e4501b5b66157e684899d3790074ae8fc4b163edd957d931c7ba"
   end
 
   depends_on "autoconf" => :build
@@ -29,9 +28,8 @@ class Netmask < Formula
 
   def install
     system "./bootstrap"
-    system "./configure"
-    system "make"
-    bin.install "netmask"
+    system "./configure", *std_configure_args
+    system "make", "install"
   end
 
   test do

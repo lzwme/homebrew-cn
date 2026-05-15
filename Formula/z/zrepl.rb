@@ -7,12 +7,13 @@ class Zrepl < Formula
   head "https://github.com/zrepl/zrepl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "208277fa477884e0419b882934545194b9cc42f94b429bb94cec29095f8294de"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83603ff9603be60833fc8448a17a35eaf01598a52b467335225cc46c470e14e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdfdc9ae054e19a5976218ec1e94ca3e777bd4c7125858aadd3c0c4ab3a20be5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "65f3263bab397da62393bedef12b5b8ed811e0cd747f57fad5bbf7f89c4683d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbf631d984241bf60b21e381ed24570835fa12a40ba3840fdbd73bbda4f8ae26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97a0feee7878c048a4e3a54f09a4706d433ac1cef303f42e278b074a8f86b84d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e49cd8656a732120b3372c27730edcdfcd8fd7b27329bf030d31dc41a7c5214"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "335eee4c13bf862fc84af998944929f36435895475ad50f4191d929d83f9d669"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e8d1a17b44b0c9eba415440cb7e643814a223b5270796e16f2f1b4c9073d95e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "04fa28a458e199055ab473c4e799953708d595f94034f437933fc42fa8300b68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "06f056a22b705129d9d5aa851bec59bfc2a00f46b0a585b1840dfaf9ac69652a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60c673e4fbe421ad7d42796f566d7bd7a062882584a3b3505b5757b50952bd24"
   end
 
   depends_on "go" => :build
@@ -27,6 +28,8 @@ class Zrepl < Formula
     (var/"log/zrepl").mkpath
     (var/"run/zrepl").mkpath
     (etc/"zrepl").mkpath
+
+    generate_completions_from_executable(bin/"zrepl", shell_parameter_format: :cobra)
   end
 
   service do

@@ -6,15 +6,16 @@ class Streamlink < Formula
   url "https://files.pythonhosted.org/packages/69/38/0280b3acf43243090ee6bf8cbbd87147370d4af4e6c864114d8bd7ba28e6/streamlink-8.4.0.tar.gz"
   sha256 "f477e9493336bcb7c3a2b10eea72a60ae9a7f49e968ada0d4d01bff78eac44bb"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e41baa2d87f51936b603ab4a40b13620f34d07b095554cb6c03272da52b13397"
-    sha256 cellar: :any,                 arm64_sequoia: "16788529d13f8977fff4952a1cb329b3a62414dbb448d11b002f7fc81427adcf"
-    sha256 cellar: :any,                 arm64_sonoma:  "688299c3180ed909d37fb2a3c34f89be36b0c02f8d03a4eb1aaa27453c1c50ed"
-    sha256 cellar: :any,                 sonoma:        "a9da28ed2840dda01a14b2d32545124b659941b368dbfb6c560b7c571b530e4f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "09fce2b234c26c6c8b26e330000ee1ab78286704f6c2efdc6230944162524a5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a22bf575b09247761e3bcbc6e69c8be8028ed1c26b863aefd669b530b29f5a2"
+    sha256 cellar: :any,                 arm64_tahoe:   "ce23e84099ba5a817112b898b1042114aff2c8911d7524f1b8bfe934b92f0484"
+    sha256 cellar: :any,                 arm64_sequoia: "1a8e1ef0fd5b2661b4309e46fe74c57bd8336af697bc5209fc0bd3896a29f019"
+    sha256 cellar: :any,                 arm64_sonoma:  "09c29ac90f9b328be31116cf1866aa572291b46c443314e7350509d5634dbbe4"
+    sha256 cellar: :any,                 sonoma:        "f096d2f4afbc8bd641efc0d09bf7561a05c33f3fa44347975e7f272c703f6cd9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7a83cb6ae224155c2612db612b7a6aa1dbc0415179ed0133337a8b21c67893e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5765f55ab94ddaa1bf45f3b2424552e25a62b1b0b642d7f1e1b51bb803550636"
   end
 
   depends_on "pkgconf" => :build
@@ -43,8 +44,8 @@ class Streamlink < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "isodate" do
@@ -78,8 +79,8 @@ class Streamlink < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
+    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
   end
 
   resource "sniffio" do
@@ -103,8 +104,8 @@ class Streamlink < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   resource "websocket-client" do

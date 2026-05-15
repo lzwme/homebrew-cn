@@ -45,7 +45,6 @@ class Krb5 < Formula
   depends_on "openssl@3"
 
   uses_from_macos "bison" => :build
-  uses_from_macos "libedit"
 
   on_linux do
     depends_on "keyutils"

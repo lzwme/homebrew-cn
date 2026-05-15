@@ -24,6 +24,7 @@ class Xsv < Formula
   end
 
   deprecate! date: "2025-04-27", because: :repo_archived
+  disable! date: "2026-04-27", because: :repo_archived
 
   depends_on "rust" => :build
 

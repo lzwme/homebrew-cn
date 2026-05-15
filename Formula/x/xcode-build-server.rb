@@ -14,7 +14,6 @@ class XcodeBuildServer < Formula
     sha256 cellar: :any_skip_relocation, all: "61793d886e98bf6a18b02c32944dfd9f98b0186040f3abc5816802840a8dfe91"
   end
 
-  depends_on "gzip"
   depends_on :macos
 
   uses_from_macos "python"

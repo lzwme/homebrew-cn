@@ -3,7 +3,7 @@ class DiffPdf < Formula
   homepage "https://vslavik.github.io/diff-pdf/"
   url "https://ghfast.top/https://github.com/vslavik/diff-pdf/releases/download/v0.5.3/diff-pdf-0.5.3.tar.gz"
   sha256 "dc4004fe1199eebf381b5e0f2a60b6b59ff73434730e4f0aae1e0d02fa171b98"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "6a01e632da3e4503ad6263b32945640091e38519b0755fd7366ccebe6bad0c68"

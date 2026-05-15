@@ -23,6 +23,7 @@ class Ndenv < Formula
   end
 
   deprecate! date: "2025-08-24", because: :deprecated_upstream, replacement_formula: "nodenv"
+  disable! date: "2026-08-24", because: :deprecated_upstream, replacement_formula: "nodenv"
 
   depends_on "node-build"
 

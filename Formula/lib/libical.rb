@@ -1,8 +1,8 @@
 class Libical < Formula
   desc "Implementation of iCalendar protocols and data formats"
   homepage "https://libical.github.io/libical/"
-  url "https://ghfast.top/https://github.com/libical/libical/releases/download/v4.0.0/libical-4.0.0.tar.gz"
-  sha256 "caa74119c5a83d19e7466f20344ea6ffe4b779198ee33f46d5fab9d574dac207"
+  url "https://ghfast.top/https://github.com/libical/libical/releases/download/v4.0.1/libical-4.0.1.tar.gz"
+  sha256 "7c1d8b780ce305a8823e5824ec4d7eb05d85ae8f808836b495aa37b0c3d08337"
   license any_of: ["LGPL-2.1-or-later", "MPL-2.0"]
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class Libical < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6f2fbf1373acc6b2c802eb317f51e96e5f0fbcc52fed2b41cf56f670bf1d3b62"
-    sha256 cellar: :any,                 arm64_sequoia: "b6d56ca548e974595fc0e0bbc4341a232aa6ce40f497c285dd6b1a853aece64f"
-    sha256 cellar: :any,                 arm64_sonoma:  "3e32dea68213a63da789a8d0e2c3d0b0ff80ac9f002ae88d8769e752b6363c13"
-    sha256 cellar: :any,                 sonoma:        "204d5434b3145264af4742b4fd5d23b570379ac155c9af8ecbabb8c0e76bded6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d4a0166dabbf5931fd6802733c620165110b5726d49120e917d89fc006694e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9811f27e25db2f8762ae7b3522e41500f529fd5cd47b590ccd5449fc69102a64"
+    sha256 cellar: :any,                 arm64_tahoe:   "8fc15f68649b634b7cd954744ad925def9f47082a838d42a15f7160a204fc137"
+    sha256 cellar: :any,                 arm64_sequoia: "56e4eecbabc9afcfebbc4affd313bd32affaf8a4fb192784df61a35b7dff1690"
+    sha256 cellar: :any,                 arm64_sonoma:  "9acc0fba0e46d4d1db6bed7f7ef5b6d1ef88bbbbf87315e5a906a2c6dbf5f615"
+    sha256 cellar: :any,                 sonoma:        "90326c037e0260342e8c20191c427dd912e7468043055af02e99fd776f9de9fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7dd534c93b55f8f2ac74bbe25787376d0d1f90fb46b1ce138d45d31ee397063"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0285d397531579d556b1a69ebfddbc98e2c894da8ca2b046829cb5a731027b33"
   end
 
   depends_on "cmake" => :build

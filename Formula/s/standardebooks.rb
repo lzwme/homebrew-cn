@@ -6,16 +6,16 @@ class Standardebooks < Formula
   url "https://files.pythonhosted.org/packages/c6/90/ca0014663fe4c431e213d4e7e710edcb65713111a9b47df3a1c20f030ac5/standardebooks-3.0.3.tar.gz"
   sha256 "f794b71758892532609111b225a2b8c38c6c6e12c60b9d596c4f435a912183f6"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/standardebooks/tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "32b30612b123e461c75465911bd5b530c212165c0e1b9bf552d428c657b2ce3c"
-    sha256 cellar: :any,                 arm64_sequoia: "5c14428a0e698f40a20a923868db85444ce2dbe67adc47b10228f4d5c82d09f2"
-    sha256 cellar: :any,                 arm64_sonoma:  "bf92b82f6e352e5b16b2419035c84977c05f5a79d7db2c04dc1c19ee1639635b"
-    sha256 cellar: :any,                 sonoma:        "ae979c08d665032ef9335815bebf867c637dd0e43a680816542db59ad33b5e7d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbfd578983c117c00694cecd0acc4fde559cdb4c13d7b4ee31e7bada4bf4ca6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42dfa637d8d401d4887c4cf478fa17bcea30e13f72fdd639bba24a463b868799"
+    sha256 cellar: :any,                 arm64_tahoe:   "54d271a538299ea2ef6080d330086f8501afd0213a16f688ecba33d2fc36fc25"
+    sha256 cellar: :any,                 arm64_sequoia: "f1b3bf0804264b8a76077c1a3373c463ebae38d037bfd22277081c566a08bf2b"
+    sha256 cellar: :any,                 arm64_sonoma:  "848b818abeddd3dd26edf2007a5a2d9ce5eb49a29c4c053f4971101b32603ec9"
+    sha256 cellar: :any,                 sonoma:        "aae37b68a6d6b69ccd9d22924f3949231d81740bf134ea058f322b59a5e52942"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd0b6adb185cf1f83484d85243c3859cfb2edb175dce9f6d87803310ecd357e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1909837a405e855bc9f41dcdf7843663faf7520c132033ddec0a369f7e0b19e8"
   end
 
   depends_on "rust" => :build # for selenium
@@ -57,8 +57,8 @@ class Standardebooks < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "cssselect" do
@@ -102,8 +102,8 @@ class Standardebooks < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "importlib-resources" do
@@ -117,8 +117,8 @@ class Standardebooks < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
   resource "mdurl" do
@@ -127,8 +127,8 @@ class Standardebooks < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/ea/5d/38b681d3fce7a266dd9ab73c66959406d565b3e85f21d5e66e1181d93721/more_itertools-10.8.0.tar.gz"
-    sha256 "f638ddf8a1a0d134181275fb5d58b086ead7c6a72429ad725c67503f13ba30bd"
+    url "https://files.pythonhosted.org/packages/a2/f7/139d22fef48ac78127d18e01d80cf1be40236ae489769d17f35c3d425293/more_itertools-11.0.2.tar.gz"
+    sha256 "392a9e1e362cbc106a2457d37cabf9b36e5e12efd4ebff1654630e76597df804"
   end
 
   resource "natsort" do
@@ -252,13 +252,13 @@ class Standardebooks < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz"
-    sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
+    url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
+    sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
   end
 
   resource "webencodings" do

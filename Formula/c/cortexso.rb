@@ -19,6 +19,7 @@ class Cortexso < Formula
   end
 
   deprecate! date: "2025-07-19", because: :repo_archived
+  disable! date: "2026-07-19", because: :repo_archived
 
   depends_on "node"
   depends_on "sqlite" # needs sqlite3_enable_load_extension

@@ -3,7 +3,7 @@ class MesaGlu < Formula
   homepage "https://gitlab.freedesktop.org/mesa/glu"
   url "https://archive.mesa3d.org/glu/glu-9.0.3.tar.xz"
   sha256 "bd43fe12f374b1192eb15fe20e45ff456b9bc26ab57f0eee919f96ca0f8a330f"
-  license any_of: ["GPL-3.0-or-later", "GPL-2.0-or-later", "MIT", "SGI-B-2.0"]
+  license all_of: ["SGI-B-1.1", "SGI-B-2.0"]
   compatibility_version 1
   head "https://gitlab.freedesktop.org/mesa/glu.git", branch: "master"
 

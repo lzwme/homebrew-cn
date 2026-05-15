@@ -21,6 +21,7 @@ class Grantlee < Formula
   #
   # Just deprecating with replacement message due to incompatible API.
   deprecate! date: "2025-04-03", because: :unmaintained, replacement_formula: "ktexttemplate"
+  disable! date: "2026-04-03", because: :unmaintained, replacement_formula: "ktexttemplate"
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build

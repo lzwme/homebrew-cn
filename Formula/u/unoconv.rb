@@ -20,6 +20,7 @@ class Unoconv < Formula
   end
 
   deprecate! date: "2025-04-27", because: :repo_archived, replacement_formula: "unoserver"
+  disable! date: "2026-04-27", because: :repo_archived, replacement_formula: "unoserver"
 
   depends_on "python@3.14"
 

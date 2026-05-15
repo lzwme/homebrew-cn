@@ -15,6 +15,7 @@ class Screenpipe < Formula
   # Unable to update as newer versions need Bun.
   # Older version used by formula doesn't build with newer Rust.
   deprecate! date: "2025-08-25", because: :does_not_build
+  disable! date: "2026-08-25", because: :does_not_build
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build

@@ -3,7 +3,7 @@ class Osm2pgsql < Formula
   homepage "https://osm2pgsql.org"
   url "https://ghfast.top/https://github.com/osm2pgsql-dev/osm2pgsql/archive/refs/tags/2.2.0.tar.gz"
   sha256 "567dad078f8a66d6d706ac1876b5251b688109d16974909d89ce2056d6e9f258"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
   head "https://github.com/osm2pgsql-dev/osm2pgsql.git", branch: "master"
 
   bottle do

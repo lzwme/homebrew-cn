@@ -1,8 +1,8 @@
 class Bitrise < Formula
   desc "Command-line automation tool"
   homepage "https://github.com/bitrise-io/bitrise"
-  url "https://ghfast.top/https://github.com/bitrise-io/bitrise/archive/refs/tags/v2.39.5.tar.gz"
-  sha256 "65781686de66892f78290ed0a62bdb731313c729637ffa82bef4b3e389ac5bad"
+  url "https://ghfast.top/https://github.com/bitrise-io/bitrise/archive/refs/tags/v2.40.0.tar.gz"
+  sha256 "8d8399d3168bd97abc68e2fafdeac07bf59fed1afb162c19d1a30f87941cf6dc"
   license "MIT"
   head "https://github.com/bitrise-io/bitrise.git", branch: "master"
 
@@ -12,13 +12,12 @@ class Bitrise < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3fbaaa3d5d9b952cf52739ca6157e43d8af7f95cdf498ade7e36cdb9bd02399d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fbaaa3d5d9b952cf52739ca6157e43d8af7f95cdf498ade7e36cdb9bd02399d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3fbaaa3d5d9b952cf52739ca6157e43d8af7f95cdf498ade7e36cdb9bd02399d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0dbb138edbc707d202daa25c41181f1b33d45dfb6c8ac87fdf84ba316677f58a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0523c8f8958fdd231931a6dd816ed45a3c9f102ece89bcbd5f3edac0dadc9b52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d2f2af595cfb048fcd463d9752779e3fe1ade748a51ecfea86b20e7189261d8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4526a4a4efbb4f5870901cbdf0e798f8ec5285c7d43da5762d4628bfb0fd626f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4526a4a4efbb4f5870901cbdf0e798f8ec5285c7d43da5762d4628bfb0fd626f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4526a4a4efbb4f5870901cbdf0e798f8ec5285c7d43da5762d4628bfb0fd626f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "400fbe8d63d1cbbf04ee80c99bb2d247057dd379a1a6b4324812c293e48cb76d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "03040b7ec12e758a5b581e57979b5a7cedd5c99ef9508feeed1e8dc008d13b7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9696562ee645e32c71243c065492ceffac2d4ceb7f1ea85253eda23cd6a3b5d"
   end
 
   depends_on "go" => [:build, :test]

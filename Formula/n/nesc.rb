@@ -22,6 +22,9 @@ class Nesc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "09def7e758ed0e91c1557f6ee6994815db45bb14c9f3f3bcba5848f6e1fa2bf3"
   end
 
+  # "This repository was archived by the owner on Apr 12, 2026. It is now read-only."
+  disable! date: "2027-04-12", because: :repo_archived
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "openjdk" => :build

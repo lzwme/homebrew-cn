@@ -1,8 +1,8 @@
 class Proto < Formula
   desc "Pluggable multi-language version manager"
   homepage "https://moonrepo.dev/proto"
-  url "https://ghfast.top/https://github.com/moonrepo/proto/archive/refs/tags/v0.57.0.tar.gz"
-  sha256 "61009f6da360159eea4757c828f5615000ec7cb3f551bb59935b3c4dfc0a697a"
+  url "https://ghfast.top/https://github.com/moonrepo/proto/archive/refs/tags/v0.57.1.tar.gz"
+  sha256 "7c980244c7f9aafbeca20977598ee0012d2e17beb9d54a63fcc448451917ac3c"
   license "MIT"
   head "https://github.com/moonrepo/proto.git", branch: "master"
 
@@ -12,13 +12,12 @@ class Proto < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b896a14bdc98b6ec77c1b7add7b61d55e7c99211c934ebceb93712393c9e932"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b483ae78875a6f3e1c5c71bf04b9dfec95526b2067a934d90c39a203a3948334"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04ff98e27791ba58ed694d9c8dde696267ae65646d2c2738145e9376d22baee3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "35e04904de9fbc1ea8c658a8682d6cb5d911748884593c253d33211bf444df47"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cde5998255d96155675bd604ad3af4626a8580d2eba7628c7571cab2e688b7b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "163d40d50b3729af8f8930242c880ae511461ec747c3fa3992be91be78f092ef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f48c46c2d62c0fb821385d289603732b6cb1ac3db21dffcad47a814953d292f8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83acdaa1f78d0dace4372373b8c33620c3b0f84621548cbd699dec0427a746e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ee5ba3dde20aa8fe039713f5ff0f8d1d5c59a59c7656a3ebfb5103e561c112a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "69dd6da4336583e1805d8fc7e4d101ffc54c91ab54d98b89508297dff695bfd6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "06188b6cd0b134a4b22d738eb70866248cf401957ffd45263d822b2bb1280f21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3081e4bb9d48d605b2b0c34cc180851e8369591f4446fe5f4dcb88a59dcbbe9e"
   end
 
   depends_on "pkgconf" => :build

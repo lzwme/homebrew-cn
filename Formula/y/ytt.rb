@@ -1,18 +1,18 @@
 class Ytt < Formula
   desc "YAML templating tool that works on YAML structure instead of text"
   homepage "https://carvel.dev/ytt/"
-  url "https://ghfast.top/https://github.com/carvel-dev/ytt/archive/refs/tags/v0.54.0.tar.gz"
-  sha256 "a7266830e05a5119056e7f36c2363e130ca1da1ea6250b62c83bfd377f603c23"
+  url "https://ghfast.top/https://github.com/carvel-dev/ytt/archive/refs/tags/v0.55.0.tar.gz"
+  sha256 "60fe4573a91912568120a493d8aa833ca1e579df3c8d45f85772a4b52330b4c3"
   license "Apache-2.0"
   head "https://github.com/carvel-dev/ytt.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8fb382b72203c78f0a03cce6f50a48c7766e078d467b5cf1d45bfc3490e31f5b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fb382b72203c78f0a03cce6f50a48c7766e078d467b5cf1d45bfc3490e31f5b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8fb382b72203c78f0a03cce6f50a48c7766e078d467b5cf1d45bfc3490e31f5b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1ab166b26c6d57ad93d593b2f5b9d41f0c9e60d31bab122e3213c53e04181468"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13a114d21346914a9cfbd4bf7d026803af1199e586ee68b5cf650bc8023cae3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4507f2c7745c2f1a61a259b22754416f63513e0fa4b097d1ec0dd729855b71a8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ffcddd5571f969d867488af1734a84a2cee6b4cf306f5741ad426251d3b568c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ffcddd5571f969d867488af1734a84a2cee6b4cf306f5741ad426251d3b568c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ffcddd5571f969d867488af1734a84a2cee6b4cf306f5741ad426251d3b568c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4b0f8f605cbe7cdebb1905b13c6dec67a0a2dd12ee854abf28d703c7329168a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ca28ea91505c41bac040a42ad22b5d1b36d483e57fb97cd17cc5bfe5b71137b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15e8252379d4fc41acea18903d508d165cd87b86e75fa6fbc7718621bcc8fd75"
   end
 
   depends_on "go" => :build

@@ -1,18 +1,18 @@
 class Broot < Formula
   desc "New way to see and navigate directory trees"
   homepage "https://dystroy.org/broot/"
-  url "https://ghfast.top/https://github.com/Canop/broot/archive/refs/tags/v1.56.3.tar.gz"
-  sha256 "48f7fdc6e68539a951207d892916824bb08e8752d2c6aa414ef994f08b6ba43c"
+  url "https://ghfast.top/https://github.com/Canop/broot/archive/refs/tags/v1.56.4.tar.gz"
+  sha256 "ec49422f335965ee0338cd630869eb1fc6d974d43648bd483c802fd7e9aea99b"
   license "MIT"
   head "https://github.com/Canop/broot.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ad08923a83d6a0b4aef44580d972f407a742c474813c2ecbfc602f8e7f29bf1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c40e4fe9746dd6f39fc2fdcbfc8714e3576e3aea660f19ed4a78d3761d6e6a5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3289a5ba9e73b4eeecfa586416908373c43c3b3267ab63e244e09c2b06c449c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6ff1e2cf82c197cfee266058aa6f1c385a23368cef0add41361ceb1ff40e307a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8cb9c3bbbbc1973b883b1ea68f19fccd72996742922e3a8cba2af7a37e212370"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d93b4af00564fe30cc50fa62f96feafe6f390f0f3a1d763f8d843176b15709c9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1cb6a183257cf0f1ae7d64aa94312dc0039240273692c0fd314c38c5795c9f98"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3e8dc6979119be5f43e84cddafae12a14d55c85dfad60de47049b1f20dead51"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22cf23ad03d1122afb2972ad63ec75c4e973f58cb45da8b93390251b8cabfb3b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4983c937581d0c87c6e2681276cf49fc0fe9f2c596d374a5a45a77d430dc974e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23b25cd8f2df298b35fadc0cc1820ffc017d332fd3128001a0a53f3776503738"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a710b4577e312647bb3d10fb76c66d89cb832d82f5b70186355d34b4f7b6bac8"
   end
 
   depends_on "rust" => :build

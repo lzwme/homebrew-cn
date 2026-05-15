@@ -1,17 +1,17 @@
 class Cline < Formula
   desc "AI-powered coding agent for complex work"
   homepage "https://cline.bot"
-  url "https://registry.npmjs.org/cline/-/cline-2.18.0.tgz"
-  sha256 "36648f3eac29670858ed0d230d3f45dc74743c020e6d08fdfbce168a78afd99a"
+  url "https://registry.npmjs.org/cline/-/cline-3.0.2.tgz"
+  sha256 "fae5699ffbbebf3d3852a17da2e03273b5f36d9bf5ac30a0efff386336056754"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "60962524f661afc9f7b7acba0fba4c0808f595bd61c025ba982315c94fdc84c7"
-    sha256 cellar: :any,                 arm64_sequoia: "2ba3331a96d7fc2919634b200c87a1e38f26d77037df601254418408c974e6ff"
-    sha256 cellar: :any,                 arm64_sonoma:  "2ba3331a96d7fc2919634b200c87a1e38f26d77037df601254418408c974e6ff"
-    sha256 cellar: :any,                 sonoma:        "7a17739ddd2e74d127c470a91d1e17ced466364609ac3d32d91915042d1a2c01"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc8c743239b5febd3511950ca6eab3ff0e7c751697660dc9e174a99c1bf84d05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4488f59922c3f2f5d4f3a0c239cf904f2afcc5bb36562b0ad4f55ff924a639dc"
+    sha256                               arm64_tahoe:   "2ad4488da60715cff5769b969360d92bbe6bef653ae4c41733097e4f0b425e7d"
+    sha256                               arm64_sequoia: "2ad4488da60715cff5769b969360d92bbe6bef653ae4c41733097e4f0b425e7d"
+    sha256                               arm64_sonoma:  "2ad4488da60715cff5769b969360d92bbe6bef653ae4c41733097e4f0b425e7d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0c16d34dbb70507923e039e28a18db83f08701d2a1daeb95d74ece6ffe23c4c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26d53204bbabe0a1518bf9e76dd1a5e49d6f3733719701f6115d0a3a802a72ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6a403bcaa7590ec6b0b30ab0eb28a62995a8988e8309ad27199bda90501c95e"
   end
 
   depends_on "node"
@@ -19,14 +19,9 @@ class Cline < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
-
-    # https://docs.brew.sh/Acceptable-Formulae#we-dont-like-binary-formulae
-    app_path = libexec / "lib/node_modules/cline/node_modules/app-path"
-    deuniversalize_machos(app_path / "main") if OS.mac?
   end
 
   test do
-    expected = "Not authenticated. Please run 'cline auth' first to configure your API credentials."
-    assert_match expected, shell_output("#{bin}/cline task --json --plan 'Hello World!'", 1)
+    assert_match "Unauthorized", shell_output("#{bin}/cline task --json --plan 'Hello World!'", 1)
   end
 end

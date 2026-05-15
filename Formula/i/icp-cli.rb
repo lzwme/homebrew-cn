@@ -6,17 +6,18 @@ class IcpCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e0275138f2be6a67633f8126dc71e6d5bd3b4672e924c24aa42b9a1500d08f00"
-    sha256 cellar: :any,                 arm64_sequoia: "76a9f32f8003c5784d51635caf66b7c1c8d7c1c24ae1578ccb629f524652134c"
-    sha256 cellar: :any,                 arm64_sonoma:  "0376ecbc267d90e71ebbbfbda4b49a1d7f5ea62e200593b6020aefd53c0ca433"
-    sha256 cellar: :any,                 sonoma:        "74740fa36f35f7e3dfc6d6f62fdabaf2153e502846f7f15b2998f457764a8009"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "91e28e3d6500cfc08ccdb6ac8b80ba167834bb9cce3df21b7dd983b16fedf372"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e394476677b1977fdc8d9e7c7e37c4c7af576ed240a30f4d6c9b212509cdd3e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "2618b9c4d551018615c43b9c152c3a56ed1c4895f318dcd9b719e81d74656f9a"
+    sha256 cellar: :any,                 arm64_sequoia: "699114a5e1cb3a4b5e3cba159d785110677e0c8a950069593a735e5097b4188b"
+    sha256 cellar: :any,                 arm64_sonoma:  "49f50976520c1e827bc16c1d0f17dd2a661310f1dd89a99812f51defc76baf28"
+    sha256 cellar: :any,                 sonoma:        "682183cd0c221a621c62ffdaef9f320f32f1585d71de0054e1f5b6b62578abb1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3dc1a6a1c5d32e8d7748194300fc464dae7e21046d62ee7c7a024dbe6830c864"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26a123fbeeaf6440e1ddd5dd27b5f20f49d0d931a617af59896365f7f8aef04c"
   end
 
   depends_on "rust" => :build
   depends_on "ic-wasm"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "pkgconf" => :build
@@ -26,7 +27,7 @@ class IcpCli < Formula
 
   def install
     ENV["ICP_CLI_BUILD_DIST"] = "homebrew-core"
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@4"].opt_prefix
 
     # Skip wasm32-wasip2 test fixture build in icp-sync-plugin (only used in tests)
     # https://github.com/dfinity/icp-cli/issues/543

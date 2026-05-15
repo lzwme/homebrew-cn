@@ -3,7 +3,7 @@ class Cdi < Formula
   homepage "https://code.mpimet.mpg.de/projects/cdi"
   url "https://code.mpimet.mpg.de/attachments/download/30199/cdi-2.6.1.tar.gz"
   sha256 "145c0f987fd07db302159e839178187c813ea161e98f9b3360ab59cb72cdb99f"
-  license "GPL-2.0-only"
+  license "BSD-3-Clause"
 
   livecheck do
     url "https://code.mpimet.mpg.de/projects/cdi/files"

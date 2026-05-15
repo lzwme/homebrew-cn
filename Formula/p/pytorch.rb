@@ -4,10 +4,10 @@ class Pytorch < Formula
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
   # TODO: Restore pybind11 dependency after https://github.com/pytorch/pytorch/pull/175115
-  url "https://ghfast.top/https://github.com/pytorch/pytorch/releases/download/v2.11.0/pytorch-v2.11.0.tar.gz"
-  sha256 "ab3fde9e7e382f45ac942be6ea2c2ef362c5ccd6f55ed6d5f35e6ea81d3ab88e"
+  url "https://ghfast.top/https://github.com/pytorch/pytorch/releases/download/v2.12.0/pytorch-v2.12.0.tar.gz"
+  sha256 "7cc1deb309f402ad67e9f45bbe311a40def4db19d66fddb9b01950f9bfc5ccb1"
   license "BSD-3-Clause"
-  compatibility_version 1
+  compatibility_version 2
 
   livecheck do
     url :stable
@@ -15,12 +15,12 @@ class Pytorch < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b0ead97b9270dc567c5d4aef3a1493d0897631fffad804c319ef880faefb1311"
-    sha256 cellar: :any,                 arm64_sequoia: "5743750f216c27a55a8032fd3cfa773790b08c713c99bf54f090609e556a1460"
-    sha256 cellar: :any,                 arm64_sonoma:  "d68dfbdf750be02e24fd5c2df3b98a82908f3b6c8dfe72f37bbc822ee56da9a7"
-    sha256 cellar: :any,                 sonoma:        "515e13b08da9e3dd39091446fae2d2b00393dc13cd4ddcaf273d3e83f3900367"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfbbcb7b690a0b55c2a5e871cd9d1b31c8a838b8c4d8a41a0c9d5f1936abef6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66632f38d6e1092c2a1f893e0dd4187cab4e79024beb5275cf89288091551ac8"
+    sha256 cellar: :any,                 arm64_tahoe:   "1d90df9d6cfdf952763645777adaa0fe5eb845f5ef6505f76a6722d705ec2cbf"
+    sha256 cellar: :any,                 arm64_sequoia: "5214ce93ee1ffaca1f9914d4471e1a2a2d992e1cb0627281c3b4d929d1e009ef"
+    sha256 cellar: :any,                 arm64_sonoma:  "90ba86c09419544a80d96f1e11073d9a4eb81874d0f0b5e47f16f560557d5015"
+    sha256 cellar: :any,                 sonoma:        "13d68a2299b9ca8c6c10c584a5db88d1df96c93f5f00c956d479b6e9d5734f9e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70d4b37a17cff0ecb35389785a19a7a34654678685ce7848bdaabcf848b6ca6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f6dfa216b31eb24f0bbdcc2f755cd55a940e2f901fa49bb48e51a5e69935601"
   end
 
   depends_on "cmake" => :build
@@ -48,13 +48,13 @@ class Pytorch < Formula
                 exclude_packages: "numpy"
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/94/b8/00651a0f559862f3bb7d6f7477b192afe3f583cc5e26403b44e59a55ab34/filelock-3.25.2.tar.gz"
-    sha256 "b64ece2b38f4ca29dd3e810287aa8c48182bbecd1ae6e9ae126c9b35f1382694"
+    url "https://files.pythonhosted.org/packages/b5/fe/997687a931ab51049acce6fa1f23e8f01216374ea81374ddee763c493db5/filelock-3.29.0.tar.gz"
+    sha256 "69974355e960702e789734cb4871f884ea6fe50bd8404051a3530bc07809cf90"
   end
 
   resource "fsspec" do
-    url "https://files.pythonhosted.org/packages/51/7c/f60c259dcbf4f0c47cc4ddb8f7720d2dcdc8888c8e5ad84c73ea4531cc5b/fsspec-2026.2.0.tar.gz"
-    sha256 "6544e34b16869f5aacd5b90bdf1a71acb37792ea3ddf6125ee69a22a53fb8bff"
+    url "https://files.pythonhosted.org/packages/d5/8d/1c51c094345df128ca4a990d633fe1a0ff28726c9e6b3c41ba65087bba1d/fsspec-2026.4.0.tar.gz"
+    sha256 "301d8ac70ae90ef3ad05dcf94d6c3754a097f9b5fe4667d2787aa359ec7df7e4"
   end
 
   resource "jinja2" do
@@ -83,8 +83,8 @@ class Pytorch < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
-    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
+    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
   end
 
   resource "pyyaml" do
@@ -113,11 +113,6 @@ class Pytorch < Formula
     # Avoid building AVX512 code
     inreplace "cmake/Modules/FindAVX.cmake", /^CHECK_SSE\(CXX "AVX512"/, "#\\0"
 
-    # Disable SVE support as it requires enabling support in `sleef` formula.
-    # This is not recommended as SLEEF is moving SVE support to unmaintained status:
-    # https://github.com/shibatch/sleef/discussions/673#discussioncomment-12610711
-    inreplace "cmake/Modules/FindARM.cmake", /^\s*CHECK_COMPILES\(CXX "SVE256"/, "#\\0"
-
     # Avoid bundling libomp
     inreplace "setup.py", /^(\s*)self\._embed_libomp\(\)$/, "\\1pass"
 
@@ -142,6 +137,8 @@ class Pytorch < Formula
     ENV["USE_SYSTEM_SLEEF"] = "ON"
     ENV["USE_MPS"] = "ON" if OS.mac?
     ENV["USE_KLEIDIAI"] = "OFF"
+    # Linuxbrew GCC 12 cannot compile PyTorch's SVE+BF16 path; needs GCC 14+
+    ENV["BUILD_IGNORE_SVE_UNAVAILABLE"] = "1" if OS.linux? && Hardware::CPU.arch == :arm64
 
     # Workaround for
     # error: a template argument list is expected after a name prefixed by the template keyword

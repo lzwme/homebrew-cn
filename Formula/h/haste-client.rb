@@ -19,6 +19,7 @@ class HasteClient < Formula
   end
 
   deprecate! date: "2025-04-18", because: :repo_archived
+  disable! date: "2026-04-18", because: :repo_archived
 
   uses_from_macos "ruby"
 

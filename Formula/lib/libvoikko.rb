@@ -3,7 +3,7 @@ class Libvoikko < Formula
   homepage "https://voikko.puimula.org/"
   url "https://www.puimula.org/voikko-sources/libvoikko/libvoikko-4.3.3.tar.gz"
   sha256 "d1162965c61de44f72162fd87ec1394bd4f90f87bc8152d13fe4ae692fdc73fa"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url "https://www.puimula.org/voikko-sources/libvoikko/"

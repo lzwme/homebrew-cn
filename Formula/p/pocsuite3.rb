@@ -6,16 +6,16 @@ class Pocsuite3 < Formula
   url "https://files.pythonhosted.org/packages/12/33/a9f77b222075f034c04c615de19c9ef0f93457d9b627e95cc40d07949e70/pocsuite3-2.1.0.tar.gz"
   sha256 "4107396b5fbbeeb65b27b574c6fb5a40831d1983ad4fd2f9a83c87006bed98e6"
   license "GPL-2.0-only"
-  revision 9
+  revision 10
   head "https://github.com/knownsec/pocsuite3.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c50d2beddc1b7a4d8c95108bb1acc1eba796762b77c2ee5028a10056eb8228bf"
-    sha256 cellar: :any,                 arm64_sequoia: "95ebf242f33be9adb79759bd856eaab3c8b713178dbbd1b5e826cf795742acfd"
-    sha256 cellar: :any,                 arm64_sonoma:  "a6d37fcc8ce6e80a6ae5e7351d7d41ff8642d60bf30bb02f5ace0fd31196eb8b"
-    sha256 cellar: :any,                 sonoma:        "2b6ecea455ee45cebb559662d6b35133ecbaf48d6a8bbb277eaaed33a9fdb832"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d0905233dd474341cea17121e6d8e815fcd147fe89dacb0e97fd42147b30d87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a43c84b6d6ba0b764a35f805d997092543a323074bab981ac8a57858a4071b7e"
+    sha256 cellar: :any,                 arm64_tahoe:   "0b148b5afeafa262d2594100124be053db1ad5df571f5012e30b6f2d1f456652"
+    sha256 cellar: :any,                 arm64_sequoia: "03985d9dd790b5d6dd90cd3292a72d9ac15cacd2478705e9b1957c8ad581eb90"
+    sha256 cellar: :any,                 arm64_sonoma:  "0fab2482c2c9d29ff43d211f0e6b7634b627ddad025144513cfc8baf9dc5656a"
+    sha256 cellar: :any,                 sonoma:        "b6775079e7c2244aa4af7019353aa84548c2703617cf7f7e60b509fcc5155a8d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac0d2db21206ea1e3ceec0b5ed60b109ceef7a05e00d88d1cf51d7eb9797b28a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb0d73d4805949c8e78a3ebeca41bd2aee2add832f8679d4411dc9a9e0a87b43"
   end
 
   depends_on "pkgconf" => :build
@@ -67,8 +67,8 @@ class Pocsuite3 < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jq" do
@@ -87,8 +87,8 @@ class Pocsuite3 < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/df/de/0d2b39fb4af88a0258f3bac87dfcbb48e73fbdea4a2ed0e2213f9a4c2f9a/packaging-26.1.tar.gz"
-    sha256 "f042152b681c4bfac5cae2742a55e103d27ab2ec0f3d88037136b6bfe7c9c5de"
+    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
+    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
   end
 
   resource "prettytable" do
@@ -102,8 +102,8 @@ class Pocsuite3 < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/8e/11/a62e1d33b373da2b2c2cd9eb508147871c80f12b1cacde3c5d314922afdd/pyopenssl-26.0.0.tar.gz"
-    sha256 "f293934e52936f2e3413b89c6ce36df66a0b34ae1ea3a053b8c5020ff2f513fc"
+    url "https://files.pythonhosted.org/packages/1a/51/27a5ad5f939d08f690a326ef9582cda7140555180db71695f6fb747d6a36/pyopenssl-26.2.0.tar.gz"
+    sha256 "8c6fcecd1183a7fc897548dfe388b0cdb7f37e018200d8409cf33959dbe35387"
   end
 
   resource "pysocks" do
@@ -117,8 +117,8 @@ class Pocsuite3 < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
+    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
   end
 
   resource "requests-toolbelt" do
@@ -137,13 +137,13 @@ class Pocsuite3 < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz"
-    sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
+    url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
+    sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
   end
 
   def install

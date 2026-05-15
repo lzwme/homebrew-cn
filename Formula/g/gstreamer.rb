@@ -2,17 +2,16 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 2
   compatibility_version 1
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.2/gstreamer-1.28.2.tar.bz2"
-    sha256 "3eb15429a2721b91fe8339c321867462eb87b98cdad2109292a0aa42cdd6e2c3"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.3/gstreamer-1.28.3.tar.bz2"
+    sha256 "a4787d6eea0beacfe63eb607b7ac84bebb3c34fff7c25080a28ffce8cb2169f1"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.2/gst-plugins-rs-gstreamer-1.28.2.tar.bz2"
-      sha256 "f736a9e3cad1c71a736ffc6749a076bb0939274bbe6f2635a3c4ea65bae7e910"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.3/gst-plugins-rs-gstreamer-1.28.3.tar.bz2"
+      sha256 "8a476692bd190079fc4b04ac46bce85d6b223558b037eb01d4b2371ae6892811"
 
       livecheck do
         formula :parent
@@ -26,12 +25,12 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a00db1293c73da21141dc2dbb586e939a29b93284e7873a29b4f8030d9d1fbc0"
-    sha256 arm64_sequoia: "55d4b6968efd1a6d66aa853e797b05be8022db89fd39c8f0d2abd7d7ea1dbb2f"
-    sha256 arm64_sonoma:  "063e559941e14cb1728ec296ce1d0ce7339c02b6bd0e626d2e027cd861c6b7bd"
-    sha256 sonoma:        "cc04f1d4c004da95f3a6c803a187e08c2b4d0d69cfb9807b20e9cab67a37998b"
-    sha256 arm64_linux:   "75cc548f2e28a07324b9117425ee6aa1169ef6ee4a310e09a4599ddcc6ad8ef4"
-    sha256 x86_64_linux:  "a8540a044a018a36553865a0dffabd63a1419809db7f96753f56e6a832994fa1"
+    sha256 arm64_tahoe:   "22e3aa6a0c7ea009c6a4cd748c5ce747f360372a90d9f537ec6bdd39373827a3"
+    sha256 arm64_sequoia: "68344e4d5f092bca480fbe0ea54650eca19b7e1d77cd8d6389efceb55550eb21"
+    sha256 arm64_sonoma:  "f0758d3ac93a113b78c5e6bcbd5b96df3a20a59c578ca35dafb469bce822b16b"
+    sha256 sonoma:        "4e6fb11fd6433320d9c020b16d4762243517ac3f66c552f253f391c2cd844f3e"
+    sha256 arm64_linux:   "d81220e39109d8fc570fc898253e46ac6f39e4e7815af0a60e7e729ecfe9251a"
+    sha256 x86_64_linux:  "f3a7f68bf93ec5dea49f323a402c4098e3004c832970c40b9b3bc566b2149179"
   end
 
   head do

@@ -18,6 +18,7 @@ class Jsontoolkit < Formula
 
   # Original source is no longer available after repo change
   deprecate! date: "2025-04-17", because: :does_not_build
+  disable! date: "2026-04-17", because: :does_not_build
 
   depends_on "cmake" => :build
 

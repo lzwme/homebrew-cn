@@ -2,8 +2,8 @@ class Asymptote < Formula
   desc "Powerful descriptive vector graphics language"
   homepage "https://asymptote.sourceforge.io"
   # Keep version in sync with manual below
-  url "https://downloads.sourceforge.net/project/asymptote/3.10/asymptote-3.10.src.tgz"
-  sha256 "d27be8fef250d5dc338602bf723e1d09e8cd1e85c199ab4c80743089fd8cd2c7"
+  url "https://downloads.sourceforge.net/project/asymptote/3.11/asymptote-3.11.src.tgz"
+  sha256 "537e9f22621bf84f09ee0d44dc455c4ea91ba193830f1d7624a07d4710d7e7d1"
   license "LGPL-3.0-only"
 
   livecheck do
@@ -12,12 +12,12 @@ class Asymptote < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ea07bd3a67f0a778633e27c0e65860276f6a2789e13de6f6193eac460fe23b8b"
-    sha256 arm64_sequoia: "d4d6ea976e1abe6fb34061edb0aa8a06bb05e09173ca4bd083e8abb463264b06"
-    sha256 arm64_sonoma:  "269b025c6c9ef948565f34b5250b5baf763a3ff029c3420da3cd8559240a89f8"
-    sha256 sonoma:        "23ae94864d03ed420489af9acb41627b75f3bdca6506d80b67b280002813d1e7"
-    sha256 arm64_linux:   "075da15165b811225aa07c7ca3b6883216c04d86754067545b2b8646b10b2a09"
-    sha256 x86_64_linux:  "398bb6270a3eaad7961ec5f80229148c86f1361c2ab6da511c5ebaf4bda02db7"
+    sha256 arm64_tahoe:   "4b53c30735506a03054bcb5067147be8760564623d448bbe9a9bc569f85f612e"
+    sha256 arm64_sequoia: "c5a87256201337fb24e4aed889103a077aacd3e3889b573da4796776bb6bc4c6"
+    sha256 arm64_sonoma:  "ce4020c6782e95ae2a0af5b0751b91dfbac7c1fdb5c609f430ecaf716f71bd62"
+    sha256 sonoma:        "4356e32b547a74ffd6d3e30235412ac71c85823726e71e8cc724c8adc8f830d9"
+    sha256 arm64_linux:   "ec376e27021a0cc8cd8e5597c7ab5c0557b799787b645b1afb24d255e953e4e6"
+    sha256 x86_64_linux:  "ae074f3b90a7f696b638586a5b70297ba527c08f89f953c5aa5ce2e84b8e36de"
   end
 
   depends_on "cmake" => :build
@@ -42,8 +42,8 @@ class Asymptote < Formula
   end
 
   resource "manual" do
-    url "https://downloads.sourceforge.net/project/asymptote/3.10/asymptote.pdf"
-    sha256 "4b8d393fbbb0b44942aa3d70ceb7534e091c4eafe9946dc01667868f612c208b"
+    url "https://downloads.sourceforge.net/project/asymptote/3.11/asymptote.pdf"
+    sha256 "edfc31f9a54900dcc92fd29535aecccf5e83a38c5843742d7418aaa3baee3802"
 
     livecheck do
       formula :parent

@@ -3,7 +3,7 @@ class Cdo < Formula
   homepage "https://code.mpimet.mpg.de/projects/cdo"
   url "https://code.mpimet.mpg.de/attachments/download/30182/cdo-2.6.0.tar.gz"
   sha256 "752d5cda6fa3fdb8a04dcea16af5918e5f9f54657d9a5d2e35ae34f5755c31d8"
-  license "GPL-2.0-only"
+  license "BSD-3-Clause"
 
   livecheck do
     url "https://code.mpimet.mpg.de/projects/cdo/news"

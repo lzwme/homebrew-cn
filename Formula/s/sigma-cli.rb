@@ -6,15 +6,16 @@ class SigmaCli < Formula
   url "https://files.pythonhosted.org/packages/1b/de/eb5f4f643aa24d7dee1066ace1a1e2e7264c8089ebb85ffb8016761e654a/sigma_cli-3.0.2.tar.gz"
   sha256 "57845f9bdfcf49bb099b8f05081e10848a772b7339a609471002924462e53dd3"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/SigmaHQ/sigma-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e605f8cebb1a21a857dbbd4be7b6cf6db4310f4d53c0dee01d1e3e18a2f9b6ea"
-    sha256 cellar: :any,                 arm64_sequoia: "b2b15380870e3fa164e56ff219a821966acfcae1e8a2cf9a3f3e741d2ff11cd7"
-    sha256 cellar: :any,                 arm64_sonoma:  "47fc1c0dc4898eb85c65383d755447e1fb5543b2eb6892ef44841179eb0b0676"
-    sha256 cellar: :any,                 sonoma:        "cd7c891e1594269ea18863212111cb2cf62256bb78824fb004239489a78daca7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "acd05735eb7b6f64327cac0b26a57a0785ae0d7aa2b8e6252026df404294b362"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a1c6b3f4aa9223b9e778a2f0f0c2db673ff4aeb824aa697bc2731b6c311e60f"
+    sha256 cellar: :any,                 arm64_tahoe:   "9c5d00b462998866ed1605c3a37eab871f1feac49180cd74991a5ab9ec69aa1f"
+    sha256 cellar: :any,                 arm64_sequoia: "f0efbfc69f820382c5164b0fb53bcfb5ccc3194ab3973d0857daf58c9b66a7a6"
+    sha256 cellar: :any,                 arm64_sonoma:  "3c2c8ec2ba076e8f86e61e63a9481cbe20c00ff64addaee2bdceb5b31ee40282"
+    sha256 cellar: :any,                 sonoma:        "444f2313dfdf1f3b3668a21ec4121242404afafbccc849c794f419644dc9220b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3c01186b0620a8dad279711770f9686c4960d73b55b720f91deacb1574df9e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14e4194ca35b0ac3201b70cb3a07c6f0a012acbe9a02fd268d272d9e6f62b0b9"
   end
 
   depends_on "certifi" => :no_linkage
@@ -33,8 +34,8 @@ class SigmaCli < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
-    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
+    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
+    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
   end
 
   resource "colorama" do
@@ -53,8 +54,8 @@ class SigmaCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jinja2" do
@@ -68,8 +69,8 @@ class SigmaCli < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/df/de/0d2b39fb4af88a0258f3bac87dfcbb48e73fbdea4a2ed0e2213f9a4c2f9a/packaging-26.1.tar.gz"
-    sha256 "f042152b681c4bfac5cae2742a55e103d27ab2ec0f3d88037136b6bfe7c9c5de"
+    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
+    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
   end
 
   resource "prettytable" do
@@ -83,8 +84,8 @@ class SigmaCli < Formula
   end
 
   resource "pysigma" do
-    url "https://files.pythonhosted.org/packages/d1/56/e1574831ea62582bae8ab769cbdccee34dd392fe406295997ebe31116fc4/pysigma-1.3.2.tar.gz"
-    sha256 "44ebb5cc1b5d2111b0e1cd116de69f9152f5712155f5895018177d93f1821a25"
+    url "https://files.pythonhosted.org/packages/de/8b/ac4ce192992abffce6334d163c57ef6b0d88a087507caee08c1995274f10/pysigma-1.3.3.tar.gz"
+    sha256 "5c66b35a0a72ffcfc9e4e4d7519e10d43a0eec154baa2d35fe12d8a6ff48072f"
   end
 
   resource "pyyaml" do
@@ -93,13 +94,13 @@ class SigmaCli < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
+    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
   end
 
   resource "types-pyyaml" do
-    url "https://files.pythonhosted.org/packages/74/73/b759b1e413c31034cc01ecdfb96b38115d0ab4db55a752a3929f0cd449fd/types_pyyaml-6.0.12.20260408.tar.gz"
-    sha256 "92a73f2b8d7f39ef392a38131f76b970f8c66e4c42b3125ae872b7c93b556307"
+    url "https://files.pythonhosted.org/packages/36/85/0d9fafce21be112e977a89677f1ce9d1aef921d745b17c758c93e861c11f/types_pyyaml-6.0.12.20260510.tar.gz"
+    sha256 "09c1f1cb65a6eebea1e2e51ccf4918b8288e152909609a35cdb0d805efd125ad"
   end
 
   resource "typing-extensions" do
@@ -108,13 +109,13 @@ class SigmaCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz"
-    sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
+    url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
+    sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
   end
 
   def install

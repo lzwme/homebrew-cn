@@ -15,6 +15,7 @@ class GorillaCli < Formula
 
   # service is down: https://github.com/gorilla-llm/gorilla-cli/issues/64
   deprecate! date: "2025-06-17", because: :unmaintained
+  disable! date: "2026-06-17", because: :unmaintained
 
   depends_on "certifi"
   depends_on "python@3.14"

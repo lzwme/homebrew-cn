@@ -6,15 +6,16 @@ class Scdl < Formula
   url "https://files.pythonhosted.org/packages/29/68/602ea370bb383a043f577787a4bbfd9f4e193ffcbe1a7b6325e37f126a08/scdl-3.0.4.tar.gz"
   sha256 "afb72fb28293584d16fe96e399b686aab6bdfaa6f5303c5fd81e42feb76b09d5"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/scdl-org/scdl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8c53dd9bca484cb1314f2b245366cfe2827398fd37cb90825dfdf7c33b124834"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50aade0c02039ee017426aaae3aaecd5a1317ab9a2ca43760893c30871369024"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce7782e4ea3d28c9388ccfad4175ecc41fd38b94e9b05cdf21ac4e99d39075a0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bf0119c66fbca86e2385c89eaa216a3b7f28e666c6651a060ca0290fff64cec2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "60ab05fbd09e5ab81f729edd62c934749e68a50726bf0fc0ef79dce5022c697a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "440a651fb52aa6dbfea3b5e05f3127d22df5d75092933d31889233f64dc5ff39"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bedf56a49242445e29dd8532b82072961600aef585880c60af3b2dbce4afdd06"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aaabc5d3ed7fdc4674f318026b78089b7f6d506ab777ae096a4b39af2008c4c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a44b9ca4cba3a884df506e0ccd0819e48dadce74b24272a1f4a02564597bdc2e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d5261a07cecbd1bd2fc7487731a95447856a2e7138c64ba63797e182597807a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b06207959802c04b92bba716e86931905afe82e9590e4cd59d0b4916e8f9191"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "579f7ee9d57f8738215fb8e10cc0859f129b2b52d97cf5149f9c28adf477c42e"
   end
 
   depends_on "certifi" => :no_linkage
@@ -24,17 +25,9 @@ class Scdl < Formula
 
   pypi_packages exclude_packages: %w[certifi cffi]
 
-  resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
-  end
-
   resource "curl-cffi" do
-    url "https://files.pythonhosted.org/packages/9b/c9/0067d9a25ed4592b022d4558157fcdb6e123516083700786d38091688767/curl_cffi-0.14.0.tar.gz"
-    sha256 "5ffbc82e59f05008ec08ea432f0e535418823cda44178ee518906a54f27a5f0f"
-
-    # Backport of upstream fix for v0.14.0. upstream pr ref, https://github.com/lexiforest/curl_cffi/pull/697
-    patch :DATA
+    url "https://files.pythonhosted.org/packages/48/5b/89fcfebd3e5e85134147ac99e9f2b2271165fd4d71984fc65da5f17819b7/curl_cffi-0.15.0.tar.gz"
+    sha256 "ea0c67652bf6893d34ee0f82c944f37e488f6147e9421bef1771cc6545b02ded"
   end
 
   resource "dacite" do
@@ -47,9 +40,14 @@ class Scdl < Formula
     sha256 "91c6da10b5bb6f2e9e25345829fb8278c78af019f6fc40887ad49b060483b1d7"
   end
 
-  resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+  resource "markdown-it-py" do
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
+  end
+
+  resource "mdurl" do
+    url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
+    sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
   resource "mutagen" do
@@ -57,14 +55,19 @@ class Scdl < Formula
     sha256 "719fadef0a978c31b4cf3c956261b3c58b6948b32023078a2117b1de09f0fc99"
   end
 
+  resource "pygments" do
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+  end
+
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
     sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
   end
 
-  resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+  resource "rich" do
+    url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
+    sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
   end
 
   resource "six" do
@@ -73,18 +76,13 @@ class Scdl < Formula
   end
 
   resource "soundcloud-v2" do
-    url "https://files.pythonhosted.org/packages/a0/a3/5df894f113268c456d3e1ad94a8530ff5a39931a81449507f4627d67dcde/soundcloud_v2-1.6.1.tar.gz"
-    sha256 "b6646e7883a9986a92bdfb6caded9ca65453899f90517e47ecf82d21ca0ae627"
-  end
-
-  resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/f1/87/abf8b9f9075c908b4433ee31ca856f9be068dc4315a71e05e9a384ba3a1f/soundcloud_v2-1.7.0.tar.gz"
+    sha256 "ce6789f5d7966c38939d52c7fcb326197592c06d68d5585859fa0a4f98c095c9"
   end
 
   resource "yt-dlp" do
-    url "https://files.pythonhosted.org/packages/58/d9/55ffff25204733e94a507552ad984d5a8a8e4f9d1f0d91763e6b1a41c79b/yt_dlp-2026.2.21.tar.gz"
-    sha256 "4407dfc1a71fec0dee5ef916a8d4b66057812939b509ae45451fa8fb4376b539"
+    url "https://files.pythonhosted.org/packages/8b/34/7c6b4e3f89cb6416d2cd7ab6dab141a1df97ab0fb22d15816db2c92148c9/yt_dlp-2026.3.17.tar.gz"
+    sha256 "ba7aa31d533f1ffccfe70e421596d7ca8ff0bf1398dc6bb658b7d9dec057d2c9"
   end
 
   def install
@@ -99,120 +97,3 @@ class Scdl < Formula
     assert_match "[download] 100%", output
   end
 end
-
-__END__
-diff --git a/libs.json b/libs.json
-index 5d63db1..03c334d 100644
---- a/libs.json
-+++ b/libs.json
-@@ -30,8 +30,10 @@
-         "system": "Darwin",
-         "machine": "x86_64",
-         "pointer_size": 64,
--        "libdir": "/Users/runner/work/_temp/install/lib",
-+        "libdir": "",
-         "sysname": "macos",
-+        "link_type": "static",
-+        "obj_name": "libcurl-impersonate.a",
-         "so_name": "libcurl-impersonate.4.dylib",
-         "so_arch": "x86_64"
-     },
-@@ -39,8 +41,10 @@
-         "system": "Darwin",
-         "machine": "arm64",
-         "pointer_size": 64,
--        "libdir": "/Users/runner/work/_temp/install/lib",
-+        "libdir": "",
-         "sysname": "macos",
-+        "link_type": "static",
-+        "obj_name": "libcurl-impersonate.a",
-         "so_name": "libcurl-impersonate.4.dylib",
-         "so_arch": "arm64"
-     },
-diff --git a/scripts/build.py b/scripts/build.py
-index f40a6f0..ed17fdf 100644
---- a/scripts/build.py
-+++ b/scripts/build.py
-@@ -50,10 +50,12 @@ def detect_arch():
- 
- arch = detect_arch()
- print(f"Using {arch['libdir']} to store libcurl-impersonate")
-+obj_name = arch.get("obj_name", arch["so_name"])
-+so_arch = arch.get("arch", arch["so_arch"])
- 
- 
- def download_libcurl():
--    if (Path(arch["libdir"]) / arch["so_name"]).exists():
-+    if (Path(arch["libdir"]) / obj_name).exists():
-         print(".so files already downloaded.")
-         return
- 
-@@ -63,7 +65,7 @@ def download_libcurl():
-     url = (
-         f"https://ghfast.top/https://github.com/lexiforest/curl-impersonate/releases/download/"
-         f"v{__version__}/libcurl-impersonate-v{__version__}"
--        f".{arch['so_arch']}-{sysname}.tar.gz"
-+        f".{so_arch}-{sysname}.tar.gz"
-     )
- 
-     print(f"Downloading libcurl-impersonate from {url}...")
-@@ -86,6 +88,10 @@ def download_libcurl():
- def get_curl_archives():
-     print("Files for linking")
-     print(os.listdir(arch["libdir"]))
-+    if arch["system"] == "Darwin" and arch.get("link_type") == "static":
-+        return [
-+            f"{arch['libdir']}/{obj_name}",
-+        ]
-     if arch["system"] == "Linux" and arch.get("link_type") == "static":
-         # note that the order of libraries matters
-         # https://stackoverflow.com/a/36581865
-@@ -130,9 +136,11 @@ def get_curl_libraries():
-             "iphlpapi",
-             "cares",
-         ]
--    elif arch["system"] == "Darwin" or (
--        arch["system"] == "Linux" and arch.get("link_type") == "dynamic"
--    ):
-+    elif arch["system"] == "Darwin":
-+        if arch.get("link_type") == "dynamic":
-+            return ["curl-impersonate"]
-+        return []
-+    elif arch["system"] == "Linux" and arch.get("link_type") == "dynamic":
-         return ["curl-impersonate"]
-     else:
-         return []
-@@ -142,6 +150,15 @@ ffibuilder = FFI()
- system = platform.system()
- root_dir = Path(__file__).parent.parent
- download_libcurl()
-+extra_objects = get_curl_archives()
-+if system == "Darwin" and arch.get("link_type") == "static":
-+    extra_objects = []
-+    extra_link_args = [
-+        f"-Wl,-force_load,{arch['libdir']}/{obj_name}",
-+        "-lc++",
-+    ]
-+else:
-+    extra_link_args = ["-lstdc++"] if system != "Windows" else []
- 
- 
- ffibuilder.set_source(
-@@ -151,7 +168,7 @@ ffibuilder.set_source(
-     """,
-     # FIXME from `curl-impersonate`
-     libraries=get_curl_libraries(),
--    extra_objects=get_curl_archives(),
-+    extra_objects=extra_objects,
-     library_dirs=[arch["libdir"]],
-     source_extension=".c",
-     include_dirs=[
-@@ -165,7 +182,7 @@ ffibuilder.set_source(
-     extra_compile_args=(
-         ["-Wno-implicit-function-declaration"] if system == "Darwin" else []
-     ),
--    extra_link_args=(["-lstdc++"] if system != "Windows" else []),
-+    extra_link_args=extra_link_args,
- )
- 
- with open(root_dir / "ffi/cdef.c") as f:

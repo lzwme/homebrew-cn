@@ -5,7 +5,7 @@ class Cups < Formula
   # https://lists.debian.org/debian-printing/2020/12/msg00006.html
   url "https://ghfast.top/https://github.com/OpenPrinting/cups/releases/download/v2.4.19/cups-2.4.19-source.tar.gz"
   sha256 "820984b12a67f98705785aae2dd1347fe0ac097828001d4583ff64574aed6389"
-  license "Apache-2.0"
+  license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/OpenPrinting/cups.git", branch: "master"
 
   livecheck do
@@ -27,8 +27,6 @@ class Cups < Formula
   depends_on "pkgconf" => :build
   depends_on "openssl@3"
 
-  uses_from_macos "krb5"
-
   on_linux do
     depends_on "zlib-ng-compat"
   end
@@ -36,7 +34,6 @@ class Cups < Formula
   def install
     system "./configure", "--with-components=core",
                           "--with-tls=openssl",
-                          "--without-bundledir",
                           *std_configure_args
     system "make", "install"
   end

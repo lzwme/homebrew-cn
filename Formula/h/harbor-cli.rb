@@ -1,18 +1,18 @@
 class HarborCli < Formula
   desc "CLI for Harbor container registry"
   homepage "https://github.com/goharbor/harbor-cli"
-  url "https://ghfast.top/https://github.com/goharbor/harbor-cli/archive/refs/tags/v0.0.19.tar.gz"
-  sha256 "3c8b9e48f14712f9e4c2179fa59c7b391fe904017c3bfa584d1e868af55aa61a"
+  url "https://ghfast.top/https://github.com/goharbor/harbor-cli/archive/refs/tags/v0.0.20.tar.gz"
+  sha256 "3140b3d9a30feef01ecd297856d859bbd544d25445c9eaf8aad05198c91fd462"
   license "Apache-2.0"
   head "https://github.com/goharbor/harbor-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8812b8ec9c90bc422293942c66b749fe40b474123189a3cb00d6b5e8e2d20519"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8812b8ec9c90bc422293942c66b749fe40b474123189a3cb00d6b5e8e2d20519"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8812b8ec9c90bc422293942c66b749fe40b474123189a3cb00d6b5e8e2d20519"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f277d74af7da81de12e8b82d96548420a1b46b8c2b95f5b581dc2c02ef56b2c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d99b5f110946d17f3cdae55d62b03f89a2864f732680795a6d12a6e0ab10411d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e4fa5a1650cbc9e7f21e86a2eabaef259d62fb50693ecd01855fe981ad63970"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e5993b3a851d8a079507c97cb90ee337e181d8dde7906026c3bf7c0329c8d60"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4289d4a517fa7f997124bcd08780fbcd3ded364f3e21dc2529fe6bdee5f0b3b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8498ff592f8a51e02d5ae841e25886f79ca053dacda48ccc1b6be63c6074fea3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d15240ad53735b873a03795c5a56d0efb90d84ccd8296aa0c7dae7bb9619b04f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c662ea4c4ff79379c814dc23a7394e0a14fe61d84106078aa290aa19798383bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b53636d19c482643083e8ad736b04ed519a11af4972b5689217fc813f52f50c2"
   end
 
   depends_on "go" => :build

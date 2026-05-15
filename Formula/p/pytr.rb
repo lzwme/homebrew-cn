@@ -6,14 +6,15 @@ class Pytr < Formula
   url "https://files.pythonhosted.org/packages/11/91/6296f202e588f830437d27d0876745eca4e21555d9a11a504ac8270f1e4e/pytr-0.4.9.tar.gz"
   sha256 "cd9a9547ba8de75caf9322bb205e71871890a57a69512a6e48a72bb354866332"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bde26c9488dbc50dee40253e45878c7216457caa711ec818116edf7b79b6e082"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ccb4cc427d2ef631a11d8d76edcf601dc3344da10428a0da223a6a29870ffbb8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da77655776f0b48c4451bc907aa455a84081fd7ce99473d1aac50136625975ef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "73cdacdc03e7ed5d0ba94d2a2781572e2265b0b0665f2b0e62f7c1d9068790db"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d6a8fb9180b1b56c9cf75da9ce37df1e854ca119bb0a8fef08b43cec561a8b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "256aaf3ff2cada830b9731d06479f38dba7873aa24b1b3a4380b2cacac1529a8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "071227d7c5f44ea716bbd7ec8c99c36fd6c83c7b7d09d8a462cef79511feda8b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16c1478c63171b89c9f17677d1747281874f64cd101e3d75263632f2a0b134c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36a49070efaf26303f77d52e5bac79dfbed911a94921a7b85d891c1551dbe72e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4a7331a1acc0ed754343f0301637952b8aabc3877e4abf1c78b3a449455f2589"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e01bf623fc03e2ad9d459d32d95e385251d78f4b9fcde59eb1f379f4ae5c40ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4c9f629a2a59356231ef495bc72bd6a13bf3df50e827e083c95043d722b16df"
   end
 
   depends_on "certifi" => :no_linkage
@@ -56,8 +57,8 @@ class Pytr < Formula
   end
 
   resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/86/94/a5935717b307d7c71fe877b52b884c6af707d2d2090db118a03fbd799369/greenlet-3.4.0.tar.gz"
-    sha256 "f50a96b64dafd6169e595a5c56c9146ef80333e67d4476a65a9c55f400fc22ff"
+    url "https://files.pythonhosted.org/packages/3c/3f/dbf99fb14bfeb88c28f16729215478c0e265cacd6dc22270c8f31bb6892f/greenlet-3.5.0.tar.gz"
+    sha256 "d419647372241bc68e957bf38d5c1f98852155e4146bd1e4121adea81f4f01e4"
   end
 
   resource "humanfriendly" do
@@ -66,13 +67,13 @@ class Pytr < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
   resource "mdurl" do
@@ -81,8 +82,8 @@ class Pytr < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/df/de/0d2b39fb4af88a0258f3bac87dfcbb48e73fbdea4a2ed0e2213f9a4c2f9a/packaging-26.1.tar.gz"
-    sha256 "f042152b681c4bfac5cae2742a55e103d27ab2ec0f3d88037136b6bfe7c9c5de"
+    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
+    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
   end
 
   resource "pathvalidate" do
@@ -101,8 +102,8 @@ class Pytr < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
+    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
   end
 
   resource "requests-futures" do
@@ -126,8 +127,8 @@ class Pytr < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   resource "websockets" do

@@ -1,16 +1,15 @@
 class CargoInstruments < Formula
   desc "Easily generate Instruments traces for your rust crate"
   homepage "https://github.com/cmyr/cargo-instruments"
-  url "https://ghfast.top/https://github.com/cmyr/cargo-instruments/archive/refs/tags/v0.4.15.tar.gz"
-  sha256 "0e3271b10d917b5b6d8c86689c04a7c7facfb4c9ed6aafebe34f72b42c01690a"
+  url "https://ghfast.top/https://github.com/cmyr/cargo-instruments/archive/refs/tags/v0.4.16.tar.gz"
+  sha256 "059e6f290517503746bd3fe31bcbb5c5a5c65895ee163ce07cdcbe555eb233d2"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "b31d3827d6b1c33bce56424c8a745ddf2efdfd83b4333c47ab321a8308d9907a"
-    sha256 cellar: :any, arm64_sequoia: "29e767ab55c7706803c867030a317553fd415d92830c15d3476bad4f66055863"
-    sha256 cellar: :any, arm64_sonoma:  "35f14a2c4e195c24786c04b39a4a637a1bb62ed000dfb49ca653a70e7ead694a"
-    sha256 cellar: :any, sonoma:        "4d41b34fe86e84e1acf5b8df0e06d44fbf385cc7742e2922ea4d34ca49e4d0ee"
+    sha256 cellar: :any, arm64_tahoe:   "c47ca1c2c976173e329bf560218cd720e3731e200a3d067bae40f962bae5f690"
+    sha256 cellar: :any, arm64_sequoia: "2191dcb56c905954e1cced325db62b86284d517546920075b8fc90e9c935a609"
+    sha256 cellar: :any, arm64_sonoma:  "799eacb7eaaaffde633bbfaa4174643fdf217ba292ac23a002dfe91e5eea58e2"
+    sha256 cellar: :any, sonoma:        "bd06aebdb085962df308ae8b9173105f155bc496992002db1e72a87abd360e60"
   end
 
   depends_on "rust" => :build
@@ -23,7 +22,7 @@ class CargoInstruments < Formula
   end
 
   test do
-    output = shell_output "#{bin}/cargo-instruments instruments", 1
-    assert_match output, "could not find `Cargo.toml` in `#{Dir.pwd}` or any parent directory"
+    output = shell_output("#{bin}/cargo-instruments instruments --template sys 2>&1", 1)
+    assert_match "could not find `Cargo.toml` in `#{Dir.pwd}` or any parent directory", output
   end
 end

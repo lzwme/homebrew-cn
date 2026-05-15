@@ -1,8 +1,8 @@
 class Kapp < Formula
   desc "CLI tool for Kubernetes users to group and manage bulk resources"
   homepage "https://carvel.dev/kapp/"
-  url "https://ghfast.top/https://github.com/carvel-dev/kapp/archive/refs/tags/v0.65.2.tar.gz"
-  sha256 "1f14fca0b05366a4474c53f0b0b22e0d36879755ede656fdd96747052f1044a0"
+  url "https://ghfast.top/https://github.com/carvel-dev/kapp/archive/refs/tags/v0.65.3.tar.gz"
+  sha256 "ef9ddd75f1b77dc87e285fba47bac094543060a1b463aafcb37faf8536d17c07"
   license "Apache-2.0"
   head "https://github.com/carvel-dev/kapp.git", branch: "develop"
 
@@ -12,12 +12,12 @@ class Kapp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "46dd34c86fab885ce4a1ebeef73e140c7fca445a802b2a2ffe3862fc0fedce46"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46dd34c86fab885ce4a1ebeef73e140c7fca445a802b2a2ffe3862fc0fedce46"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46dd34c86fab885ce4a1ebeef73e140c7fca445a802b2a2ffe3862fc0fedce46"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c64359c517cf4a3cf156b6d3c88204334146b567a80838f3751d04adbc6cef60"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da998499e66350e9c4fabab2b6836da0d8568f797e4d0440dc85f23574afb912"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09e0e6dda2c9e23a845e0249404232ea3834bec67a4cd2759e091fd37367efa2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "576db089f2de933d95db8353fc668c54dddd8ff5e5f3a1514ee6c00942c65708"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "576db089f2de933d95db8353fc668c54dddd8ff5e5f3a1514ee6c00942c65708"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "576db089f2de933d95db8353fc668c54dddd8ff5e5f3a1514ee6c00942c65708"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f9ef388ddcafbb44e07edfc635884e820d5dad61c4b422b97fcdc9948efb9b67"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d46915f1571cde23ca182513551d0545de6d8a5245eb2fec7cda394cb439c985"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a46570ac3f6c48999438d06cd78d01e212ba9fefea2e644ff15e19f85b619fa"
   end
 
   depends_on "go" => :build

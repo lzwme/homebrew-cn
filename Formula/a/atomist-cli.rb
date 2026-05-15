@@ -21,6 +21,7 @@ class AtomistCli < Formula
   end
 
   deprecate! date: "2025-08-01", because: :unmaintained
+  disable! date: "2026-08-01", because: :unmaintained
 
   depends_on "node"
 

@@ -19,6 +19,7 @@ class Sgr < Formula
   end
 
   deprecate! date: "2025-06-21", because: :unmaintained
+  disable! date: "2026-06-21", because: :unmaintained
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage

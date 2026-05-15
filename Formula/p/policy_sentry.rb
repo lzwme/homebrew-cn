@@ -6,15 +6,16 @@ class PolicySentry < Formula
   url "https://files.pythonhosted.org/packages/87/fb/1d8cd9672d757481f6ffbdb18ca92d628d8d2b08cbf1829a1c4d700bc1ab/policy_sentry-0.15.2.tar.gz"
   sha256 "6e16f059dde400c856815be9368052102993499e66754207f9a9a1cdcf996dd2"
   license "MIT"
+  revision 1
   head "https://github.com/salesforce/policy_sentry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6a5d74584f70833e1aeab2047f0744e0d23c22dadf091456ff5397c4909b5e3a"
-    sha256 cellar: :any,                 arm64_sequoia: "8aa4786827c6e94e3dfe4dcda0b0e47d0fa56bfc4210304ac429f777ce85663f"
-    sha256 cellar: :any,                 arm64_sonoma:  "4d8759f4bddbcb8f47a560d240f96ba97bac30e5148f0c5647c1ede1dc9ae67e"
-    sha256 cellar: :any,                 sonoma:        "9b0018fa368df731255b732f63081740a73c455d5fb2fd976b3c564256e5181b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee5fd5189391f3cd433e2148c49dda0602c27409b94b33d0f7e077b5082fca4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33b80e36f08b6634aad9d6795940e21fda67d97a9042777cbef21dad9212317a"
+    sha256 cellar: :any,                 arm64_tahoe:   "d54f682fe9e730009cde23eefb02487504f016924fc1aae60996e154763c0d28"
+    sha256 cellar: :any,                 arm64_sequoia: "a88b6651ee0eed86626c78eddcc3ef3e2fdf60e8a136bdfda4a13c2996d6fce0"
+    sha256 cellar: :any,                 arm64_sonoma:  "7bf36245c1fce6f8825df75923d29717de0c0c5fbd530e6d0cf99fa700822d96"
+    sha256 cellar: :any,                 sonoma:        "009ae7eb598facd6a0db5b185f46f6ec75cc6dec0a0541a708c371282a1147f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20950bf8d3bbc30cddbda13cd3806dd32cc8b76e82fa656274bfb1f489c7af24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84215f4f6521e9cd57cfa64c448388f54fb9e7eb1c9d4fa6bd8042200621c52b"
   end
 
   depends_on "rust" => :build # for orjson
@@ -35,18 +36,18 @@ class PolicySentry < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
-    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
+    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
+    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/9d/1b/2024d06792d0779f9dbc51531b61c24f76c75b9f4ce05e6f3377a1814cea/orjson-3.11.8.tar.gz"
-    sha256 "96163d9cdc5a202703e9ad1b9ae757d5f0ca62f4fa0cc93d1f27b0e180cc404e"
+    url "https://files.pythonhosted.org/packages/7e/0c/964746fcafbd16f8ff53219ad9f6b412b34f345c75f384ad434ceaadb538/orjson-3.11.9.tar.gz"
+    sha256 "4fef17e1f8722c11587a6ef18e35902450221da0028e65dbaaa543619e68e48f"
   end
 
   resource "pyyaml" do
@@ -55,8 +56,8 @@ class PolicySentry < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
+    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
   end
 
   resource "schema" do
@@ -75,8 +76,8 @@ class PolicySentry < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   def install

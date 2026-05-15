@@ -24,6 +24,7 @@ class Dromeaudio < Formula
   end
 
   deprecate! date: "2025-08-02", because: :unmaintained
+  disable! date: "2026-08-02", because: :unmaintained
 
   depends_on "cmake" => :build
 

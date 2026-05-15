@@ -1,18 +1,18 @@
 class Gickup < Formula
   desc "Backup all your repositories with Ease"
   homepage "https://cooperspencer.github.io/gickup-documentation/"
-  url "https://ghfast.top/https://github.com/cooperspencer/gickup/archive/refs/tags/v0.10.43.tar.gz"
-  sha256 "fa0ac4a762cc9f766ff9e31e0351b6f9af3bb19b811e9d9285375ca5992d559a"
+  url "https://ghfast.top/https://github.com/cooperspencer/gickup/archive/refs/tags/v0.10.44.tar.gz"
+  sha256 "07aeec9ea820595fd6beba7bdf76cd746988b0d64ae84275ab2b61edc7eedf6f"
   license "Apache-2.0"
   head "https://github.com/cooperspencer/gickup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f139a875a441646c87d7c8e6519819c13a7da5f34ba7391008709dc5da52c48b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5bc80eee0112da7d51a01e9684a98ea1e619d81f7e037d3da919de43b4e1ecc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58d2ac2600b82bdadfe8125b2a270ef6f7dad2d28552c66c7a4b73f428138a66"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2f8239c2c8af9b848b3818a00fff21fa84584f6ec2a8e7131e69a0c81684c1a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2de1489c7d6a2d5ffd69216b1767d9f73901895716ffeeb8bff51890f83b4ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05dda6b44d28c67e0c154fb47204ca36c176faa5524851dba6b8a5388a6ddeff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55376e634d07e7373fd4f77822537cfa25e46676bf6e81b2c0a10e72ff9c173e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56f6bc182eb495b4e9fae7d53d3fed03f1b31dbdbb057beba472557b994baa1c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75f4fb204fc72cfa8799977a3eb584f0d0acced40145120ad84ec5420224d102"
+    sha256 cellar: :any_skip_relocation, sonoma:        "14783329f9822943c2bec7422aed72eec4423566c3690c368150b5fb04775fad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "faa480161224d2c65641451e5358adaafea739f6e1684f7e19a65d452a50b31c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3361a6bfa882bf1a94de357e37e9c96cab87b82527f2903bd93270684449d33"
   end
 
   depends_on "go" => :build

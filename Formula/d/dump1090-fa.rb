@@ -1,8 +1,8 @@
 class Dump1090Fa < Formula
   desc "FlightAware ADS-B Ground Station System for SDRs"
   homepage "https://github.com/flightaware/dump1090"
-  url "https://ghfast.top/https://github.com/flightaware/dump1090/archive/refs/tags/v10.2.tar.gz"
-  sha256 "1135588ea8f3d045601e8ab45702648e339168eee0792b2c4f62fae3d2cc9f3b"
+  url "https://ghfast.top/https://github.com/flightaware/dump1090/archive/refs/tags/v11.0.tar.gz"
+  sha256 "e6fbee5ddf61ca80ccea69efaba277d135b8a1a4c7bb684616d3bd3b00655551"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Dump1090Fa < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1b1beb064155552de153c46e76829e48848e3d12ad29d146ddb0ff6470828bb9"
-    sha256 cellar: :any,                 arm64_sequoia: "43396d0e29c5c5ddb8c315d863df7e6f0352eba555280319a05fb5623de70b13"
-    sha256 cellar: :any,                 arm64_sonoma:  "27f55d9c38331b9b0bc9233bd34643b88395d3db4076d9625aad602a3bd4167a"
-    sha256 cellar: :any,                 sonoma:        "143e0079e96f0022fc9e4d118e3140288fb96d44a9c560580356444b46859f98"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "657aacbfc8f08a7cf09dc96e0f0187e7bba4e48900c5e1257ca2659e38e3f1ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ba610d7e1fcb90a5ee3280ba6c1ca8f16915216bd398e60afcef481cbe7e0e6"
+    sha256 cellar: :any,                 arm64_tahoe:   "203dd48c495bdccd238cff69f969343cfa8cb4b03dc9600525f6f7104a5655fb"
+    sha256 cellar: :any,                 arm64_sequoia: "e2f575133ad8f2e70eeb7c11acc0255740111524da4cdc525a3f4f559e85d64a"
+    sha256 cellar: :any,                 arm64_sonoma:  "acf4a9f05127f9fbb12860035933b7b9759fa09043c9957936e478a0728b7a2b"
+    sha256 cellar: :any,                 sonoma:        "3377684f779b02225b5043654d7e54843496b92982ba96251f63f6fe77108fb3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f640aa159d38303dcdd8e4895b910f694a81d6e208d36818f9a893c8416893d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14e270b099ff5d0f83c6e275fa9542030033d56cb2e4f72546b0ff0b31fc6d11"
   end
 
   depends_on "pkgconf" => :build

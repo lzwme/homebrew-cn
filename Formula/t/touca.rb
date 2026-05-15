@@ -14,6 +14,7 @@ class Touca < Formula
   end
 
   deprecate! date: "2025-08-13", because: :unmaintained
+  disable! date: "2026-08-13", because: :unmaintained
 
   depends_on "certifi"
   depends_on "python@3.14"

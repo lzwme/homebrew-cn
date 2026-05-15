@@ -3,7 +3,12 @@ class Sdcc < Formula
   homepage "https://sdcc.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/sdcc/sdcc/4.5.0/sdcc-src-4.5.0.tar.bz2"
   sha256 "d5030437fb436bb1d93a8dbdbfb46baaa60613318f4fb3f5871d72815d1eed80"
-  license all_of: ["GPL-2.0-only", "GPL-3.0-only", :public_domain, "Zlib"]
+  license all_of: [
+    "GPL-2.0-or-later", # sdcc, sdcdb, ucsim
+    "GPL-3.0-or-later", # sdcpp, sdas, sdld, sdbinutils
+    :public_domain,     # packihx
+    "Zlib",             # makebin
+  ]
   head "https://svn.code.sf.net/p/sdcc/code/trunk/sdcc"
 
   livecheck do
@@ -21,8 +26,6 @@ class Sdcc < Formula
     sha256 x86_64_linux:  "93e44c24cbcd84f457b2e496d544261a4dfbd146824d36b6f86542727f570bae"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "boost" => :build
   depends_on "gputils"
   depends_on "readline"

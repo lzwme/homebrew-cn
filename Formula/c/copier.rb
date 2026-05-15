@@ -3,17 +3,17 @@ class Copier < Formula
 
   desc "Utility for rendering projects templates"
   homepage "https://copier.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/9e/ec/e67bcf9b867a47dd8cf98e8c8e27ee8cf638633f72c535372ce5e30ade80/copier-9.15.0.tar.gz"
-  sha256 "57b951d9f63b6b9d6ce3907fb1bd4672f60e2819a42393b971122d480059383f"
+  url "https://files.pythonhosted.org/packages/98/77/1b96b1b174e576155a8ce7361ecbf5e3cf8c679cec49acf6f4adf3f68f39/copier-9.15.1.tar.gz"
+  sha256 "0fceec8c27d80a0573809837472f4aaee48b90930f473f9674847a02a2ad7da5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e8c4e722b0d22ebfdc930a26fc3590a19337cf165746309ed1c31d2a4f2b1413"
-    sha256 cellar: :any,                 arm64_sequoia: "08cbf8fec558436e2437971f82087c135b9e5a9e13d7a45da7e4be4f4ccf4b07"
-    sha256 cellar: :any,                 arm64_sonoma:  "81f3b24a6a98eb109e4f3ba7627962b246a5f0d1b541d9b3fbbb2846e45844e1"
-    sha256 cellar: :any,                 sonoma:        "ba2f2e700fb0bd26089457e3cb0ab47c8841568b514e8550bf5a4a9e132b2216"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef4b03131bd9e1b04c61cfd33ad76750b6acac1baad2ecd76b9490c25668b539"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d19d9b69df4b3beed8518b149eaee550546ee4000d74abf5eca6c3826eccbd1"
+    sha256 cellar: :any,                 arm64_tahoe:   "ffb05ab6dd28616f15cdd66a457fe18954d26120c1197c1a6ba4110aff77a536"
+    sha256 cellar: :any,                 arm64_sequoia: "ab7873c31f97e36a653e97c55d066568cca17db764247ad102311e5ff9862ef6"
+    sha256 cellar: :any,                 arm64_sonoma:  "110b25ea7ac022151d9672c680a134e4185eb787023b0aaa59dba5af222db165"
+    sha256 cellar: :any,                 sonoma:        "ed7131227d634823a9ebefc00836aba6d17729284b5a11e0cde976d5f9ddad20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28b8c7e319c2f35581b757497b29326a7939c1b517e080f5a81ccafa9136e511"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bc93ae1a655a3372c6b749ace99bee3c817b28f1939993f5e1924dcd7261958"
   end
 
   depends_on "libyaml"
@@ -93,8 +93,8 @@ class Copier < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz"
-    sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
+    url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
+    sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
   end
 
   def install

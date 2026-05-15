@@ -51,6 +51,7 @@ class IrcdIrc2 < Formula
 
   # Last release on 2010-08-13 and site is down
   deprecate! date: "2025-04-06", because: :unmaintained
+  disable! date: "2026-04-06", because: :unmaintained
 
   uses_from_macos "libxcrypt"
 

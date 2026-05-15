@@ -3,18 +3,17 @@ class AwsElasticbeanstalk < Formula
 
   desc "Client for Amazon Elastic Beanstalk web service"
   homepage "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html"
-  url "https://files.pythonhosted.org/packages/fd/9d/9c36f5f3eb9cae3827c0c9a36f740e4200c189cf06f7d09af1a5081049ba/awsebcli-3.27.1.tar.gz"
-  sha256 "83bcb4e5de2ce9659d07246ac32eb4a8e109d8627c045a55c2c142e9a7ed5683"
+  url "https://files.pythonhosted.org/packages/9d/a4/662a766f2c975c2b09ea5d4b1367492df74678e2844050be7b5fc2bb38eb/awsebcli-3.27.2.tar.gz"
+  sha256 "a2bd40cfe92f791149c7923aa0c085079138857c00ef4342a85795a3db8b8ba2"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e8428e65cff9aef33805be49513b0c376853d6ceff86b74637af4b3697f0e627"
-    sha256 cellar: :any,                 arm64_sequoia: "34faff35d9719c8444d0d1eca8430f17cec7748fe18bb7a6ab4ad1fdb81303ea"
-    sha256 cellar: :any,                 arm64_sonoma:  "2371a06b39e062566495b92f56372b606c59f893aab9fd672c430f89bd28a8ae"
-    sha256 cellar: :any,                 sonoma:        "0d25be58e8d4fe3ab1e6cfe4c04a4a380a6db1cf8daf55b0af81e66ef67edd71"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1db291c6f12ef212a95a8a56afaf42f9eac2a6f7e6ad88d073f14c4e7e402f8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4db93d19753721ec356789e6ee4fc53ba775f6725f91747952adc5005d065baa"
+    sha256 cellar: :any,                 arm64_tahoe:   "624fe081363776047d868e0cd37aec5fb896867cb26c2473e012ce1882a6a849"
+    sha256 cellar: :any,                 arm64_sequoia: "4f267b36cde3e950ea8ad8fc29e9dc814ebd998940d67c663159d98a70685449"
+    sha256 cellar: :any,                 arm64_sonoma:  "c8cc6b4061e2a97d005d20b287750f74a37c4af7148f31027da924b9c6ec6734"
+    sha256 cellar: :any,                 sonoma:        "a436502f16fc75cb509400fb28387e5cf87df18f531369e8837b8838e3cb805f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3f84dc61bb59940791a4e8ad5740ca4ba1c6140b80554e9c85c365bd88019e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e85a7a84f056bc3994a522a02f5686ceb6ebc2771e06846a3d3570cd223fa9f"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -76,8 +75,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "invoke" do
@@ -121,8 +120,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
+    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
   end
 
   resource "semantic-version" do

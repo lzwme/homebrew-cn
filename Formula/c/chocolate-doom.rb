@@ -3,7 +3,7 @@ class ChocolateDoom < Formula
   homepage "https://www.chocolate-doom.org/"
   url "https://ghfast.top/https://github.com/chocolate-doom/chocolate-doom/archive/refs/tags/chocolate-doom-3.1.1.tar.gz"
   sha256 "1edcc41254bdc194beb0d33e267fae306556c4d24110a1d3d3f865717f25da23"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
   head "https://github.com/chocolate-doom/chocolate-doom.git", branch: "master"
 
   livecheck do

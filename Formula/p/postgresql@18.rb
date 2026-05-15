@@ -1,8 +1,8 @@
 class PostgresqlAT18 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v18.3/postgresql-18.3.tar.bz2"
-  sha256 "d95663fbbf3a80f81a9d98d895266bdcb74ba274bcc04ef6d76630a72dee016f"
+  url "https://ftp.postgresql.org/pub/source/v18.4/postgresql-18.4.tar.bz2"
+  sha256 "81a81ec695fb0c7901407defaa1d2f7973617154cf27ba74e3a7ab8e64436094"
   license "PostgreSQL"
 
   livecheck do
@@ -11,12 +11,12 @@ class PostgresqlAT18 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "581c22f083ae24218d978e0855b5df7649442622c0f4553d5dc0aa5fec0e3c3a"
-    sha256 arm64_sequoia: "d673a799d57ccb106e95487b4ae480721dbbda30732071e9014bc5572420e90b"
-    sha256 arm64_sonoma:  "711c76573500ed2a1d898c1849ebd30c133375a980a612010192a624ff759ba7"
-    sha256 sonoma:        "4183572b950af49fad450c4de3cdd1bbb90d9a7e0eff8bd820126086c0de83b7"
-    sha256 arm64_linux:   "1acb5c6bebfbe288da873de04835cf51cc2e3c335d454d1869b379f636c4e08c"
-    sha256 x86_64_linux:  "044df17562b5237ba19ef9ab4a65656309e8a3a15eaa813a906de47d5572d42a"
+    sha256 arm64_tahoe:   "51c114096263c4b3c5e4ba7d77ce6b7cd8e9ad36b9911ebd2df65ccea4048a6e"
+    sha256 arm64_sequoia: "2010179240638613e0f57510f27a7f01bddca5fe8cd23d663a9a818a1d74c423"
+    sha256 arm64_sonoma:  "5505ee5810e82508ac5568f7bb446eafb6d6a643621f864d61f6e75c227b86a0"
+    sha256 sonoma:        "adb9bf954134a2b99507e175f4cb4b8f42d9d4b4b2f1111759d3b0b68e354a8a"
+    sha256 arm64_linux:   "6cc505c46caa72f7c29a0a5e082b14a6377407fc38bfc74d728298c6d7e17ac5"
+    sha256 x86_64_linux:  "27c024ccd19ad7c8a91a61f5bb44937744da833ff55ec57a7ebf64df58372e9b"
   end
 
   keg_only :versioned_formula

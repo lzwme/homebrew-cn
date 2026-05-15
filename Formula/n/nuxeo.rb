@@ -15,6 +15,11 @@ class Nuxeo < Formula
     sha256 cellar: :any_skip_relocation, all: "f770ff60d304faa14d16aa72548f2601afbdd6f622a5ae481aa1a460cfc19b9f"
   end
 
+  # Upstream no longer tags versions and doesn't provide distribution tarballs.
+  # Latest LTS 2025 versions are only available with Nuxeo Online Services account,
+  # https://doc.nuxeo.com/nxdoc/tomcat-server-zip/
+  disable! date: "2026-08-14", because: :unmaintained
+
   depends_on "exiftool"
   depends_on "ghostscript"
   depends_on "imagemagick"

@@ -3176,7 +3176,7 @@ Homebrew-homebrew-core/Formula/i/ike-scan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imagejs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imagemagick-full.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imagemagick.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/i/imagemagick@6.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/i/imagemagick@6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imageoptim-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imagesnap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imageworsener.rb, Homebrew/homebrew-core, 0
@@ -4502,6 +4502,7 @@ Homebrew-homebrew-core/Formula/m/macpine.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mactop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/macvim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mad.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mado.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/madplay.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/maeparser.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mafft.rb, Homebrew/homebrew-core, 0
@@ -6574,7 +6575,7 @@ Homebrew-homebrew-core/Formula/s/scamper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/scarb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sccache.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/scdl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/scdl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/scdoc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sceptre.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/schema-evolution-manager.rb, Homebrew/homebrew-core, 1
@@ -8518,6 +8519,7 @@ Homebrew-homebrew-cask/Casks/a/amie.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/amitv87-pip.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/ammonite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/amneziavpn.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/amore.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ampps.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/anaconda.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ananas-analytics-desktop-edition.rb, Homebrew/homebrew-cask, 1
@@ -9132,7 +9134,7 @@ Homebrew-homebrew-cask/Casks/c/codebolt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/codebuddy-cn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/codebuddy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/codeedit.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/c/codeexpander.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/codeexpander.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/codekit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/codelite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/codeql.rb, Homebrew/homebrew-cask, 1
@@ -12556,6 +12558,7 @@ Homebrew-homebrew-cask/Casks/g/gitfiend.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitfinder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gitfit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitfox.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/github-copilot-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/github-copilot-for-xcode.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/github.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/github@beta.rb, Homebrew/homebrew-cask, 0
@@ -13839,6 +13842,7 @@ Homebrew-homebrew-cask/Casks/n/notes-better.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notesnook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notesollama.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notion-calendar.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/notion-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notion-enhanced.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notion-mail.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notion.rb, Homebrew/homebrew-cask, 0
@@ -13995,6 +13999,7 @@ Homebrew-homebrew-cask/Casks/o/openvanilla.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openvisualtraceroute.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openvpn-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openwebstart.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/openwork.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openzfs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opera-air.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opera-crypto@developer.rb, Homebrew/homebrew-cask, 0
@@ -15040,6 +15045,7 @@ Homebrew-homebrew-cask/Casks/s/squirrelsql.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/ssdreporter-free.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/ssh-config-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/ssh-tunnel-manager.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/sshfs-mac.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/ssokit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stability-matrix.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stack.rb, Homebrew/homebrew-cask, 0

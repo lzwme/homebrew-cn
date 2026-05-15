@@ -13,6 +13,7 @@ class Websocketpp < Formula
   # cannot run with asio 1.34.2, upstream issue, https://github.com/zaphoyd/websocketpp/issues/1169
   # no commits in the past five years
   deprecate! date: "2025-04-10", because: :unmaintained
+  disable! date: "2026-04-10", because: :unmaintained
 
   depends_on "cmake" => :build
   depends_on "asio"

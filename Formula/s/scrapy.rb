@@ -6,15 +6,16 @@ class Scrapy < Formula
   url "https://files.pythonhosted.org/packages/11/ee/601014b8696e2e869c806d4377da6c468b278fd891b03fc5d1c830f2b641/scrapy-2.15.2.tar.gz"
   sha256 "c7b8fc8d2c51a39d52f6025bdd7e9c714e43f97afd300e8c44157cf7a05c0c9e"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/scrapy/scrapy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "61f7ada7013409d632b12e09ecbb7cd0bf816ffa7fc3e4a8620eaf858564b99a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c9a59a393681ba6d6948cd2365ff3f14153f1bd9261d815de7d79db20ade29b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b8dbf40d08143a1d9e4b1d0303e2d6edbf13eee0690f99c67281f3a81c75d96"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b0ff03bbadad7a11c61aa10a96c1f42fe3bf61e559c69a3542c1bc0a46cb0109"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "067fad67568c30ccf0d92404b380a907d739bf986d1526e28d04be1e38aa05b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a84a9eddfc77d9ecbe79f84da56349fb53b6a3b57fa9f165cf1b5382e0457628"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de9131f1f8134cf995cf01cea2e0a0afbb31ba64bc55bd01832f0a9b4957b865"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dca697d82d71474a6999fd913380a4492e7404d94f52ff8d6959f8af468503fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bacd3aca4fce0ae3f9229517d9c5e2ac838cd5233aefe80decdf94840bd8e7ea"
+    sha256 cellar: :any_skip_relocation, sonoma:        "60869eb20ccfc4d22a9fe48e6cdf6024764c064804752c1ef3f52a995f597700"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "11113d473fb7e9c85eded7411558fbc8428d257e4f56016c9f4f64d83ba56e5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5cc7306454fbb293c989a0c3d9ee6c44a868d1c9f97b67385fb8eb9979d614e"
   end
 
   depends_on "certifi" => :no_linkage
@@ -67,8 +68,8 @@ class Scrapy < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "incremental" do
@@ -127,8 +128,8 @@ class Scrapy < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/8c/a8/26d36401e3ab8eed9030ad33f381da7856fcfad5691780fccd1b019718fc/pyopenssl-26.1.0.tar.gz"
-    sha256 "737f0a2275c5bc54f3b02137687e1a765931fb3949b9a92a825e4d33b9eec08b"
+    url "https://files.pythonhosted.org/packages/1a/51/27a5ad5f939d08f690a326ef9582cda7140555180db71695f6fb747d6a36/pyopenssl-26.2.0.tar.gz"
+    sha256 "8c6fcecd1183a7fc897548dfe388b0cdb7f37e018200d8409cf33959dbe35387"
   end
 
   resource "queuelib" do
@@ -137,8 +138,8 @@ class Scrapy < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
+    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
   end
 
   resource "requests-file" do
@@ -178,8 +179,8 @@ class Scrapy < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   resource "w3lib" do

@@ -20,6 +20,7 @@ class Earthly < Formula
 
   # https://github.com/earthly/earthly/commit/9e553bc2905da5fa4f39ad327b80fefed178f70a
   deprecate! date: "2025-06-29", because: :unmaintained
+  disable! date: "2026-06-29", because: :unmaintained
 
   depends_on "go" => :build
 

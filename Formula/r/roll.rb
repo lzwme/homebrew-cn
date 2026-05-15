@@ -1,30 +1,27 @@
 class Roll < Formula
   desc "CLI program for rolling a dice sequence"
   homepage "https://matteocorti.github.io/roll/"
-  url "https://ghfast.top/https://github.com/matteocorti/roll/releases/download/v2.6.1/roll-2.6.1.tar.gz"
-  sha256 "399bd4958d92f82fb75ff308decb2d482c9a8db80234014f6d42f6513b144179"
+  url "https://ghfast.top/https://github.com/matteocorti/roll/releases/download/v2.7.0/roll-2.7.0.tar.gz"
+  sha256 "9e116501aaa0c8f954d31a86e8cf6dee5d98ee35a5e8e5b025646c4bee741533"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "e60f90ae43698201f51529d50768ba5cd57326e62953c81a91280c6e760f5829"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fb1ee4685b24f925ca41abe63c8e7703a9656b96088c4fba6b483cfcdeea9e76"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7a4fb62e0cf82c19e312fa67b94af3ffecae251323a0a327fd7b99aec74a85e6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6ffc7291577ef075aa3c1369419b6d92389b19ad6cd0d841bc613f3eae48c016"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a8e1ac1b898c674f5a752ca03e7952d011f7b115529d3ab1f92f745392ecfe4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "14b4457a32902e96d331fca1fd85fbbf3d5f515914091da2c61dec741bf3d73b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "588feb890e23a61032f2bc5b394e7ba6c3e134d91be3c49cfe6c131efc139280"
-    sha256 cellar: :any_skip_relocation, ventura:        "88ea735366f98e1790c9fe70e9de10138bfbc064a255820d8d8dc684a5bbf912"
-    sha256 cellar: :any_skip_relocation, monterey:       "6f3f061734bc251d233b72aa805dc1cc3d7865e276c3e3c6c75854686ac06fdb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "123c5c66e945afdfac73b0cf5b553df895c8b03ac22c32124ab6ff98e52e3478"
-    sha256 cellar: :any_skip_relocation, catalina:       "c62fd4ce38c97e3f2a41203420feda3601359815a4cf20a6d68e3a9aa37bdcf2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "904914c6aeae44b64aa7fe97d2567ec15ee48c0b1dc8700381a8608b20259174"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e98554d4358ec561afd285196543baf10606cfcb0a6b842ba4949cf7b477894d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7b7d5f5d981510645495a608c12615909ffa3b9b3fc6ba5e9faf5fdacb6c510"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9a9d4588c91eb0325b8601960a763f76232ecb28c866ef5b87050b7f3bbb72b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7d2ac3789b181f01e5e4cd5bd914df40dcbb43f133be87a7320a445011ba5c2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7cc13149f0571a32c72e58ff8bd306a4bc1c0401ec6e4cf084ab6d198178ffde"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "caa11bc9eac9982f9e6a17ac7e28af140533f97e84faff5022e5757829682e0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc292cc25912ad6b5282b6f12d418b5a097cabb71fe41f098bc03243ed9eadad"
   end
 
   head do
     url "https://github.com/matteocorti/roll.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
+  end
+
+  on_macos do
+    depends_on "pkgconf" => :build
   end
 
   def install

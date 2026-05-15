@@ -4,6 +4,7 @@ class Wget2 < Formula
   url "https://ftpmirror.gnu.org/gnu/wget/wget2-2.2.1.tar.gz"
   sha256 "d7544b13e37f18e601244fce5f5f40688ac1d6ab9541e0fbb01a32ee1fb447b4"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,12 @@ class Wget2 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "d907ed01032e6655193fa18c47e45b5e1b202cdd1f328ebefbff065c180cd9e8"
-    sha256 arm64_sequoia: "209e40513c2136920a4eb82e1358efb5ea494bcaf1c460145a9ec74d98e1705b"
-    sha256 arm64_sonoma:  "1ab70482bf8fa6f88ea2091003126bc866dd531ae59b2c71c5bc370a858317cd"
-    sha256 sonoma:        "a65fde8f14db9841aa9e30890f13693c3a5381d21bf7724fc4f284fa64db91a4"
-    sha256 arm64_linux:   "5dfee2ad6e5c7a7ecf5efb3f9afe902df0b8f986e1207775dafc855b2d241cea"
-    sha256 x86_64_linux:  "ea2c0e17b1e5d8e0dac92529034ca89b7651f7ba9d065e66a7a0ebc19683133a"
+    sha256 arm64_tahoe:   "a3c51bc9ea360f1fa2ff6c74bf64e4c24dae20246c067d859b53e157122d2100"
+    sha256 arm64_sequoia: "9b0c5b44ec766dc77c208499f9a3fc1f8075800d68bb9525b0ec115fca50762a"
+    sha256 arm64_sonoma:  "c7aecfdd669dd4af9d7beeecde030f326411c336b86f53cdbd1df9af91f814a5"
+    sha256 sonoma:        "dceb188cd3051a042fc58d659c3e9682e6e35ba8e18d76e3701a38290b9be699"
+    sha256 arm64_linux:   "0bf487f6da889fada7335ae1fd2361b537550bdff94d9fe0df654a467a809e45"
+    sha256 x86_64_linux:  "a1d0fc8b30a6090f2d9aa27ff7ccd6e37c1c33dbf1c5699f19ab4f67de80d000"
   end
 
   depends_on "doxygen" => :build
@@ -65,9 +65,13 @@ class Wget2 < Formula
 
     system "./configure", *args, *std_configure_args
     system "make", "install"
+
+    # Remove `wget2_noinstall` binary, which is only for testing
+    # https://gitlab.com/gnuwget/wget2/-/work_items/565#note_699151912
+    rm bin/"wget2_noinstall"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/wget2 --version")
+    system bin/"wget2", "-O", File::NULL, "https://google.com"
   end
 end

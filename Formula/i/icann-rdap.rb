@@ -6,17 +6,18 @@ class IcannRdap < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "966a48227c17aa3f40e31d3e28ff6b7096d0ab1a82bb38044a8532af58d7cedd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85686ffe266d1edf673dd323dbf68b357d16709f90337d077b4cc95f93bae2ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85e49646eb3a9d8331642716f6d45147479ee3bd82a6fa7765af48fd89a7802f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5f26a52532a842398d923c1d41da53366fcc2e63095f9c1222517bacb4133f89"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c11fdc5bcc524f07bc6f1188f66836b4ed0a577aa7f2a6c66494922c87553c76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a75453ab2eb7ba11eddfe73fec1e994c36b0d1e685aa7deb7eb8dc25af37cf41"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b992d8bbbc8664e39e3dd93debb5cc90a948e390666ec3b6cac3323ce1b1e66"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52d746280f938117e8af6c4863409516c5e0fe759fd27a1549d1fce4c28f3884"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f16e5b9e5163bece9f19309597ecc2cc6c7c073505236f97d8fdfcb013271dd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2567415f6046ac8b5f0dc038007584733c0218a79403002a750653909890a5cf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9932b6b8e14183790413d28f81e8cbb92e558cfc60a1b89dcd6cc263884535e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cd072fe1c3c257531c58384936073c01c0fae6d3da6cde3a4203c99275dfbd1"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   conflicts_with "rdap", because: "rdap also ships a rdap binary"
 

@@ -6,16 +6,16 @@ class SolcSelect < Formula
   url "https://files.pythonhosted.org/packages/62/89/51e614fdbf26f47268c18f8a3b6cf1cb67c9a8b48b7b7231c948cae97814/solc_select-1.2.0.tar.gz"
   sha256 "ad0a7afcae05061ce5e7632950b1fa0193ba9eaf05e4956f86effee024c6fb07"
   license "AGPL-3.0-only"
-  revision 3
+  revision 4
   head "https://github.com/crytic/solc-select.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9ab36fdaca2ba04fc8053d828e9418e49b49f9ddc4a041305b2fc69a140e05e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ddda8b294afc08d15c844f14be32986f62b049cebe9739cc40ea2eeaca787b6d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "014e08dc0899b496c984bc001e9660dcba54c49603ce627ead0674372cbf9278"
-    sha256 cellar: :any_skip_relocation, sonoma:        "775c9cce4b4685951b0d63de078b2b602a13ca39ec30a2112e3dc2b3c767918e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d90042fbaae048ac031dbb5a85e76ba3ee8157f605224113348259fc51c6441"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffc3d31b961e32baf3ab3d6409b33d273772a4f5650cf28ba7ce9206869f021c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a3012899caad3e323736b685fedef4388d1cf407db53821fccffa752052e4221"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15e4b16098de3e78c20393b6fc06443f4278c126025691ed2a3d55ea1f31d63d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f33572626a35fa51561cdf80915c780a253694c80551ce4b04341e048b6e929c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "90ffe9a951528630034260b1ff8c4358da905c94cb04e7d593cb895b1be86b20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "93afa1abc64233381b204b98bbc7525318ab56195e61dc541f34c8c77a901acd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ada0157323d0b6db6490b1cd02bf3abf5355986d13a31accdf77bfed00468f3"
   end
 
   depends_on "certifi" => :no_linkage
@@ -26,18 +26,18 @@ class SolcSelect < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
-    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
+    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
   end
 
   resource "pycryptodome" do
@@ -46,13 +46,13 @@ class SolcSelect < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
+    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   def install
