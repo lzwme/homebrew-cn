@@ -6,15 +6,16 @@ class Vunnel < Formula
   url "https://files.pythonhosted.org/packages/06/2d/f9856bd90ee0e5644a150029d979995d0853e7e1f34cbb053129f2df7ba4/vunnel-0.57.0.tar.gz"
   sha256 "f5ff7726e99d9842720c7e10367ec6328e29e61b87d8754de9d3eb682e2231d2"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3e9250fb5cb5c5c9ae4b7abcaeb04481ca61e4e5a1887e63832d38848100f8dd"
-    sha256 cellar: :any,                 arm64_sequoia: "b63c15dac6d9f446d34889ea92dffeb33e5f5489e40795f671368e9de24268ae"
-    sha256 cellar: :any,                 arm64_sonoma:  "fbe4ecaf079ee259a63bda49851c3ec32e673ba918318ee35c5d9f3bf1db43a3"
-    sha256 cellar: :any,                 sonoma:        "9e1496aff53f923bd032cb56af3790e1d328daf0e2a1e8b33c2dd13d646b7a3c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1ac8324202be5f4d2fb9d77612197c57b8c8af74939aa3318b55b971f57b81c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "049bd0e58053fba9fcfd985f71e7c2be71dc890087d4471083013b5e574c5e8c"
+    sha256 cellar: :any,                 arm64_tahoe:   "fcd03b1ae1b663fe1da96b8e4af0b2bb95fbbc3e4fe3d1a0b6a131f0dd477de9"
+    sha256 cellar: :any,                 arm64_sequoia: "61d8b773650e96e5abb024d9349924a2397e47da4feaf9b81317805f27eaa263"
+    sha256 cellar: :any,                 arm64_sonoma:  "8224a03fe03f0f38ff01ec47c56e8eed0fa1097d1bb5ef172380440d53ad5fbb"
+    sha256 cellar: :any,                 sonoma:        "f19c4dc9aecab2abde40f554f051bdef55cf0d0844a0559ed7f5d05e5d48298e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02757b8a32fedf721c0b3773a8d8970a1bf40d8c5dff271e294a08058e518a75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6339e629040d5b26f18b40d3edae9fda2de152a7799c15452b934aee3ebd9b5"
   end
 
   depends_on "rust" => :build
@@ -59,8 +60,8 @@ class Vunnel < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "ijson" do
@@ -109,8 +110,8 @@ class Vunnel < Formula
   end
 
   resource "mashumaro" do
-    url "https://files.pythonhosted.org/packages/64/3d/0f1bf475109a816c2a31a8b424750911343f0bce304827a5255df167547e/mashumaro-3.20.tar.gz"
-    sha256 "af4573f14ae61be3fbc3a473158ddfc1420f345410385809fd782e0d79e9215c"
+    url "https://files.pythonhosted.org/packages/ee/61/bdbd92fd7684f31fe18982f5a3b9a6ab672ae81a7f52b8aceecb56143430/mashumaro-3.21.tar.gz"
+    sha256 "9bc53b0c7dbed0be80e3ccc3efe1d621ce146b4b7a673ec41ba001a417f2c4b4"
   end
 
   resource "mergedeep" do
@@ -124,11 +125,8 @@ class Vunnel < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/9d/1b/2024d06792d0779f9dbc51531b61c24f76c75b9f4ce05e6f3377a1814cea/orjson-3.11.8.tar.gz"
-    sha256 "96163d9cdc5a202703e9ad1b9ae757d5f0ca62f4fa0cc93d1f27b0e180cc404e"
-
-    # Remove nightly feature flag, Rust 1.95 is now stable
-    patch :DATA
+    url "https://files.pythonhosted.org/packages/7e/0c/964746fcafbd16f8ff53219ad9f6b412b34f345c75f384ad434ceaadb538/orjson-3.11.9.tar.gz"
+    sha256 "4fef17e1f8722c11587a6ef18e35902450221da0028e65dbaaa543619e68e48f"
   end
 
   resource "packageurl-python" do
@@ -177,8 +175,8 @@ class Vunnel < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/24/36/7180e7f077c38108945dbbdf60fe04db681c3feb6e96419f8c6dc8723741/requests-2.34.1.tar.gz"
+    sha256 "0fc5669f2b69704449fe1552360bd2a73a54512dfd03e65529157f1513322beb"
   end
 
   resource "ruff" do
@@ -207,8 +205,8 @@ class Vunnel < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   resource "xsdata" do
@@ -243,15 +241,3 @@ class Vunnel < Formula
     assert_match "alpine", shell_output("#{bin}/vunnel list")
   end
 end
-
-__END__
---- a/src/lib.rs
-+++ b/src/lib.rs
-@@ -1,7 +1,6 @@
- // SPDX-License-Identifier: MPL-2.0
- // Copyright ijl (2018-2026)
-
--#![cfg_attr(feature = "cold_path", feature(cold_path))]
- #![cfg_attr(feature = "generic_simd", feature(portable_simd))]
- #![cfg_attr(feature = "optimize", feature(optimize_attribute))]
- #![allow(unused_features)] // portable_simd on universal2 cross-compile

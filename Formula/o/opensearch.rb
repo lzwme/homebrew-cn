@@ -93,13 +93,16 @@ class Opensearch < Formula
     port = free_port
     (testpath/"data").mkdir
     (testpath/"logs").mkdir
-    spawn bin/"opensearch", "-Ehttp.port=#{port}",
+    pid = spawn bin/"opensearch", "-Ehttp.port=#{port}",
                             "-Epath.data=#{testpath}/data",
                             "-Epath.logs=#{testpath}/logs"
-    sleep 60
+    sleep 30
     output = shell_output("curl -s -XGET localhost:#{port}/")
     assert_equal "opensearch", JSON.parse(output)["version"]["distribution"]
 
     system bin/"opensearch-plugin", "list"
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end

@@ -70,7 +70,7 @@ class ApachePulsar < Formula
     ENV["PULSAR_LOG_DIR"] = testpath
     ENV["PULSAR_STANDALONE_USE_ZOOKEEPER"] = "1"
 
-    spawn bin/"pulsar", "standalone", "--zookeeper-dir", testpath/"zk", "--bookkeeper-dir", testpath/"bk"
+    pid = spawn bin/"pulsar", "standalone", "--zookeeper-dir", testpath/"zk", "--bookkeeper-dir", testpath/"bk"
     # The daemon takes some time to start; pulsar-client will retry until it gets a connection, but emit confusing
     # errors until that happens, so sleep to reduce log spam.
     sleep 30
@@ -80,5 +80,8 @@ class ApachePulsar < Formula
     assert_match "1 messages successfully produced", output
     output = shell_output("#{bin}/pulsar initialize-cluster-metadata -c a -cs localhost -uw localhost -zk localhost")
     assert_match "Cluster metadata for 'a' setup correctly", output
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end

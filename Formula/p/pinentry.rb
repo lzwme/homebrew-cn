@@ -4,7 +4,7 @@ class Pinentry < Formula
   url "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.3.2.tar.bz2"
   mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/pinentry/pinentry-1.3.2.tar.bz2"
   sha256 "8e986ed88561b4da6e9efe0c54fa4ca8923035c99264df0b0464497c5fb94e9e"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
   compatibility_version 1
 
   livecheck do

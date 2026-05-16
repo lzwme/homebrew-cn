@@ -25,7 +25,7 @@ class Nixfmt < Formula
 
   def install
     system "cabal", "v2-update"
-    system "cabal", "v2-install", "--allow-newer=base", *std_cabal_v2_args
+    system "cabal", "v2-install", *std_cabal_v2_args
   end
 
   test do

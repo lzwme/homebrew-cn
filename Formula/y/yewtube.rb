@@ -6,11 +6,11 @@ class Yewtube < Formula
   url "https://files.pythonhosted.org/packages/ab/0d/6c5fe6b0da51bbae6906317978ef38df505ec5920c843ab21a3acb9d945a/yewtube-2.13.1.tar.gz"
   sha256 "5e173433c5db16a7d2ff0ec0cb1201ebb50fa9997fcae272c14956610375257f"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/mps-youtube/yewtube.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7d4a42641c7db0d520898078acbf6bad06e34e0482fb98fa50ff7fa46f72b4b8"
+    sha256 cellar: :any_skip_relocation, all: "5285c312de47d3f8ff9d7e31ce61ad99be829226ca83d8ac26e9510b04764b52"
   end
 
   depends_on "certifi"
@@ -26,8 +26,8 @@ class Yewtube < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "h11" do
@@ -46,8 +46,8 @@ class Yewtube < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "pylast" do
@@ -61,8 +61,8 @@ class Yewtube < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/24/36/7180e7f077c38108945dbbdf60fe04db681c3feb6e96419f8c6dc8723741/requests-2.34.1.tar.gz"
+    sha256 "0fc5669f2b69704449fe1552360bd2a73a54512dfd03e65529157f1513322beb"
   end
 
   resource "sniffio" do
@@ -71,8 +71,8 @@ class Yewtube < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   resource "yewtube-search-python" do

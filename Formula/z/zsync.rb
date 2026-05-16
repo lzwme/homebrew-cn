@@ -1,8 +1,8 @@
 class Zsync < Formula
   desc "File transfer program"
   homepage "https://zsync.moria.org.uk/"
-  url "https://zsync.moria.org.uk/download/zsync-0.6.3.tar.bz2"
-  sha256 "293b6191821641d3ed6248206f8f9df0bf46e6ee2cf8b4dd97cfd1d5909edb9a"
+  url "https://zsync.moria.org.uk/download/zsync-0.6.4.tar.bz2"
+  sha256 "f1d6d3e8e79933e9e03dd9f342673f31274686a29d295e7cb34558755d224670"
   license all_of: [
     "Artistic-2.0",
     "Zlib", # zlib/
@@ -15,14 +15,12 @@ class Zsync < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d4a20e196767857208a02278c4b0d5bf3378ae40402d1a67e948bf58cff27d6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39991c4aa022ce2fe1b3d62b30e2c7e130be4e4e98bf6dca844f28ec8afdfe8d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "800299bfc82b2ce9970159a2d0efcbe445c74024a357aa4a3c2f8a74c4ed871b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a8fcb43f6827e4c2339a9ec5f365c05372c9d17ca91e9fef076f84b784efcd65"
-    sha256 cellar: :any_skip_relocation, sonoma:        "db75f0fa2e8fd02c11b06fb4a75ac536da7aa768f35df369137bf72d87490c36"
-    sha256 cellar: :any_skip_relocation, ventura:       "54804831f99313425941c41263b6b9e875db47ca171dee2a24d370e335e8fcfc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b1d6196e007d24f8416604d28391ed198a28f30fe72b98fc8d3623b4952b01c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61c5c7c1ea629dd5b29e60e554bd87b30528abe65e58730a8034c680c4eeb476"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "46a6472a6c5db07355418baa9806763ed9c042f91c15a5df87ac2b6c59becbc0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c591c6cde4e285d18d3c63952b55ab4b81fcc3d25b4920c57be4edb416550d8c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1475d54229d78f6a6ea23479ea2df033d9a1f838237c1bfd81d57d1b34328600"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e42a2e9acd88b9889d6ae579ef334cf20f7380962da450d226f9f41c44582f25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a991cbdc03c6fb9c7a1114802fb5e151f0440ebe1c8173d6f2c178b56ea5eea7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2f85547fa385ae58296367abbf2b01816514315f54ef3f41fc387e1c41263a4"
   end
 
   head do
@@ -38,6 +36,9 @@ class Zsync < Formula
     end
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
+    # Limit C to the latest standard that supports K&R function definitions
+    ENV.append_to_cflags "-std=gnu17"
 
     args = []
     # Help old config scripts identify arm64 linux

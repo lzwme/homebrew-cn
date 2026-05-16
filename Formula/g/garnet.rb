@@ -1,8 +1,8 @@
 class Garnet < Formula
   desc "High-performance cache-store"
   homepage "https://microsoft.github.io/garnet/"
-  url "https://ghfast.top/https://github.com/microsoft/garnet/archive/refs/tags/v1.1.7.tar.gz"
-  sha256 "d7bd1fa99103d207dce62734b7208b962f50c2492cdad528d0a442fd86f223df"
+  url "https://ghfast.top/https://github.com/microsoft/garnet/archive/refs/tags/v1.1.8.tar.gz"
+  sha256 "dea85632ec070c54c13b4b0fdc2d442136c43a7cdc6f626801eed3c9c1f2a7e8"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Garnet < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f0c98d3b4213e94ada829fe28b37735e778a54ef2478f7e8db18619da1e13c7a"
-    sha256 cellar: :any,                 arm64_sequoia: "51a82a19fd4521fae5cc50988c784cefdb181735731d355d2560320698ab6edd"
-    sha256 cellar: :any,                 arm64_sonoma:  "2c121a86958b1b4a8199c9ee8176e4760499a971c481b7f25fe37c17257b1890"
-    sha256 cellar: :any,                 sonoma:        "07b168ab45e10b5124a7e0607526eff687773f9331c457efc71e26d67c11c0fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4af7bc5449ef3eb8f9fb64f5a8f6c57299fb5802430fe1c89d3fcb894b48c4fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "129fbd5d80544d5a59c15f2592656b8afaa27765aca9e47d8b38b34f1cae4b6e"
+    sha256 cellar: :any,                 arm64_tahoe:   "5b4710a954f2ac121d1d571b2e99c531e00510bd32dae479acf76d8fcf4e9577"
+    sha256 cellar: :any,                 arm64_sequoia: "87bbee8ad22121792a50e6475290dee7e1bfb83c467304aa2eecca111b3801c9"
+    sha256 cellar: :any,                 arm64_sonoma:  "bd5fe457b0fd19cf451a433c1d0fbc5dfe8a28641ca7a9856e5d79a84b465214"
+    sha256 cellar: :any,                 sonoma:        "9e739b735a4af824256b3f57615c3bd0187a82b30c42af039046fb45315eb02b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "42e1be3fe3890f505fb712a3a96bf16a11c1c8ed60142fa5bfcd3cf119533e57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2189d1d1975f9785ef039f8cc924895e1233f81aed0784fa3c1f67ced0ea4851"
   end
 
   depends_on "valkey" => :test

@@ -6,15 +6,15 @@ class Urlwatch < Formula
   url "https://files.pythonhosted.org/packages/76/a3/e3bc54a669fa3ec440ea9d8db64590e761343b02b6ae9fcfcdc05c28d9ea/urlwatch-2.29.tar.gz"
   sha256 "f317ca8b123b15af510ec9e08bf885d8a8b574f502253e5ded200d757366da98"
   license "BSD-3-Clause"
-  revision 8
+  revision 9
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a527dfe6bad663f3c32332569bab4e3ba923a7d4f6adb4bd8ed25ad29903ab24"
-    sha256 cellar: :any,                 arm64_sequoia: "c99602006b6dab582e44f8e1925b800cb045f30566867de6060e9d99801e3ece"
-    sha256 cellar: :any,                 arm64_sonoma:  "202feffaed5bf9fe481722d0c1702f2c2e936def7c96db24fccf1c19895a427a"
-    sha256 cellar: :any,                 sonoma:        "e4449beef82b767d5f8c5fd3610eef56621e1251c742d6f9cc872433e42aa7c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cabbd7d7786a7d7f0cbd397a46318b9a9ea8afc775d69b4218ed8612b9a5dc5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5d4452675f3d6a111ca0e5da6ca8d8600fe93569e9b0b88c569f0688303a2de"
+    sha256 cellar: :any,                 arm64_tahoe:   "ac7e7a28492d7f82469bfb6cf2346b9e43753401d2b6e82528030c778ed1a525"
+    sha256 cellar: :any,                 arm64_sequoia: "45337d7f580a0da3ec1b4cfae1d2844079528d162aed71e9ee0eab016b4fd3b8"
+    sha256 cellar: :any,                 arm64_sonoma:  "a6e139a22713727aa2f54a6af5cab8d4a1cd7e049ec0c7cbd2469525f386d160"
+    sha256 cellar: :any,                 sonoma:        "6058c34cd4720970c366f85bd01719b449307d3d2c0461b0823f63a3773b44e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82eb24893c17ca9a5de3f6c7f32f556b0ae8ec117593393d858c52f4d5903bec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95afa07f41181c9dfce9430b72164c549e4f07644be2f33449b964611566ca34"
   end
 
   depends_on "certifi"
@@ -42,8 +42,8 @@ class Urlwatch < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jaraco-classes" do
@@ -97,8 +97,8 @@ class Urlwatch < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/24/36/7180e7f077c38108945dbbdf60fe04db681c3feb6e96419f8c6dc8723741/requests-2.34.1.tar.gz"
+    sha256 "0fc5669f2b69704449fe1552360bd2a73a54512dfd03e65529157f1513322beb"
   end
 
   resource "secretstorage" do
@@ -107,8 +107,8 @@ class Urlwatch < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   def install

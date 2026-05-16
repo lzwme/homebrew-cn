@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.23.4",
-      revision: "3af1a008e2dd4740874f07968b373db3bc723344"
+      tag:      "v0.24.0",
+      revision: "c28ddc0a7b273cd286b680a6db0bef0c17bc0ec0"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
@@ -16,12 +16,12 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "98ea253a1021123d895de1f8b02fd85d9aee176088fce2c48748022e7ccde656"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f236253ad52ae135ac24df4e8b3069e19254bdf690101f307fc7c1e7cf01fa3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70c4a35cd6a43dd7ae5e1a9a32d9e25ab0822d53d5a60986b10e1adb6d9908ec"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ab23e7ea607b74377ec20558ec2dcc6c96f95995aebe1da4d8cef1a2d4749edb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f4c44580c99aba2a7e4058b1d193f18c2408579ad510b0a9ac5663f7324c7c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3bbb343d8b6bfdc7cfddea4c292dd0320a7ff253705e9232cbb6fb6d2b07547"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a649c27b7b6b74a8cf775a6f3ae227a396b1287cdd684377e98099f076ac8c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "38e8b9966e54b3c2593f7f4474b206e83b1a14a46a4acf7ea15fd4cf8ce8e05b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a96ebf9d8a9a7ab9406d193b3915bb5fbc17c76d2c38cf4aaa9e20ab7e097d6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9b72eee7a920b00a4564daa9ef9bf8b6d23478683a7327e1eafb42b63ea6d4dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "85a1c70f8fc7700887d00d81f31c41ce4543614b4d97d76b5c6e0831240ce508"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "477d8f07a59b4f40f6542e49fa564bdd5a8b69859b7223b5a66dad1ef483c3e4"
   end
 
   depends_on "cmake" => :build

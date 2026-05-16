@@ -3,7 +3,12 @@ class PcscLite < Formula
   homepage "https://pcsclite.apdu.fr/"
   url "https://pcsclite.apdu.fr/files/pcsc-lite-2.4.1.tar.xz"
   sha256 "afd3ba68c8000d2be048dc292df99a9812df9ad2efaf0a366eea22ac1faa19a7"
-  license all_of: ["BSD-3-Clause", "GPL-3.0-or-later", "ISC"]
+  license all_of: [
+    "BSD-3-Clause",
+    "BSD-2-Clause",     # src/auth.*
+    "GPL-3.0-or-later", # src/spy/ (libpcscspy, pcsc-spy)
+    "ISC",              # src/simclist.*
+  ]
 
   livecheck do
     url "https://pcsclite.apdu.fr/files/"
@@ -27,11 +32,6 @@ class PcscLite < Formula
 
   uses_from_macos "flex" => :build
 
-  on_linux do
-    depends_on "libusb"
-    depends_on "systemd" # for libudev
-  end
-
   def install
     args = %W[
       -Dlibsystemd=false
@@ -41,8 +41,6 @@ class PcscLite < Formula
       -Dsysconfdir=#{etc}
       -Dsbindir=#{sbin}
     ]
-
-    args << "-Dlibudev=false" if OS.linux?
 
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

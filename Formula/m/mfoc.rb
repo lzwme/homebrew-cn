@@ -3,7 +3,10 @@ class Mfoc < Formula
   homepage "https://github.com/nfc-tools/mfoc"
   url "https://ghfast.top/https://github.com/nfc-tools/mfoc/archive/refs/tags/mfoc-0.10.7.tar.gz"
   sha256 "2dfd8ffa4a8b357807680d190a91c8cf3db54b4211a781edc1108af401dbaad7"
-  license "GPL-2.0-only"
+  license all_of: [
+    "GPL-2.0-or-later",
+    "BSD-2-Clause", # src/nfc-utils.*; src/mifare.*
+  ]
   revision 2
   head "https://github.com/nfc-tools/mfoc.git", branch: "master"
 
@@ -26,7 +29,10 @@ class Mfoc < Formula
   depends_on "automake" => :build
   depends_on "pkgconf" => :build
   depends_on "libnfc"
-  depends_on "libusb"
+
+  on_macos do
+    depends_on "libusb-compat"
+  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"

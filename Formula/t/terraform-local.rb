@@ -6,26 +6,27 @@ class TerraformLocal < Formula
   url "https://files.pythonhosted.org/packages/b9/f7/7d128b483dfd03d178c37eedc8c9329d7ee0abc4781bcfe5a0069ee63d79/terraform_local-0.26.0.tar.gz"
   sha256 "958abac78c40b15fca6edcd833a9706a28e1cc861cb713e3fed5def345d518b8"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ab3123ebd6269e9cc2ce1e1d6b27be3293af614d83441be1563f126168dc886"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28d71207da6cb778f94d94656ce08df0c0e66341bb749115cb11c9bec32a48af"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a46a471006e9b6ec0ebec6683ef44a8569247da324c26fe16ad8f50af86ee70"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b9da7edff65ad55ebdf5f16a980be54ff4cfe8ed777812b46a01dd772e318a96"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f47c158d99d9934975b13362bc3520dfc8f93194fe0cd4ce702436e03485e79c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9dd31b958b5eefbf3a8de2e63f35f5ce985401488c90ed4ed28fbb2bfdf1f69b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb8d6db692b18c316c966f34b7c80ad24de3056a43780fa6898687f441df73db"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "02778532f8ea2b1a02ed50e9db687a918732dc64c733bebccf56dc32bd63e59f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36b6c307e8fc64aef6176fd4aae7ed774b220811995888253410dd904e24cff1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3cb767bc121627819be3234142f60896cd6008482dcb88e148eb83a9fac319e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c1233b5e7fbf8a626b83af0d6cba97a6d35c01e9ca7faf8d311f958ddd39324"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8274b97b61a86976e22b00bf1a5799e1728e117f330892d46b03a640f283953"
   end
 
   depends_on "python@3.14"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/da/bb/7d4435cca6fccf235dd40c891c731bcb9078e815917b57ebadd1e0ffabaf/boto3-1.42.88.tar.gz"
-    sha256 "2d22c70de5726918676a06f1a03acfb4d5d9ea92fc759354800b67b22aaeef19"
+    url "https://files.pythonhosted.org/packages/6b/0d/67ebf496fe061397f7eb907504e950fe6d2fa5945fd05891f3033376e471/boto3-1.43.7.tar.gz"
+    sha256 "b1e4b40f4a828c67291b12ebefd17d87a57321101e4a0c969b2f593a0310f343"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/93/50/87966238f7aa3f7e5f87081185d5a407a95ede8b551e11bbe134ca3306dc/botocore-1.42.88.tar.gz"
-    sha256 "cbb59ee464662039b0c2c95a520cdf85b1e8ce00b72375ab9cd9f842cc001301"
+    url "https://files.pythonhosted.org/packages/ed/be/59144884fa71908e2ac389cfe0fd2ebe8e8adb47bcc994188eb59967406a/botocore-1.43.7.tar.gz"
+    sha256 "abbbc623c52dce86ea9d4534d35e2d6ce447d98edfdaced1695ee0278d6063e3"
   end
 
   resource "jmespath" do
@@ -44,8 +45,8 @@ class TerraformLocal < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
-    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
+    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
   end
 
   resource "python-dateutil" do
@@ -59,13 +60,13 @@ class TerraformLocal < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/cb/0e/3a246dbf05666918bd3664d9d787f84a9108f6f43cc953a077e4a7dfdb7e/regex-2026.4.4.tar.gz"
-    sha256 "e08270659717f6973523ce3afbafa53515c4dc5dcad637dc215b6fd50f689423"
+    url "https://files.pythonhosted.org/packages/dc/0e/49aee608ad09480e7fd276898c99ec6192985fa331abe4eb3a986094490b/regex-2026.5.9.tar.gz"
+    sha256 "a8234aa23ec39894bfe4a3f1b85616a7032481964a13ac6fc9f10de4f6fca270"
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/05/04/74127fc843314818edfa81b5540e26dd537353b123a4edc563109d8f17dd/s3transfer-0.16.0.tar.gz"
-    sha256 "8e990f13268025792229cd52fa10cb7163744bf56e719e0b9cb925ab79abf920"
+    url "https://files.pythonhosted.org/packages/9b/ec/7c692cde9125b77e84b307354d4fb705f98b8ccad59a036d5957ca75bfc3/s3transfer-0.17.0.tar.gz"
+    sha256 "9edeb6d1c3c2f89d6050348548834ad8289610d886e5bf7b7207728bd43ce33a"
   end
 
   resource "six" do
@@ -74,8 +75,8 @@ class TerraformLocal < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   def install

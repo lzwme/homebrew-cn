@@ -6,16 +6,16 @@ class YleDl < Formula
   url "https://files.pythonhosted.org/packages/a1/92/f2c10d7390899c9f26e08102143d9c0a8d375a7d7a7314e17913ddfa162e/yle_dl-20250730.tar.gz"
   sha256 "2122741f515d5829eff28b2f6b96c251f4f7434412ea6c3ca60e526e60563c89"
   license "GPL-3.0-or-later"
-  revision 5
+  revision 6
   head "https://github.com/aajanki/yle-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41f0a2c2f33c444b5b89372348d3c16803b476ba4f29cb1d9dd8973363c77a79"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6d665ecd959cec4d83c8ccdcbadc42369d8534ebe92f70e5d2fcd301b544bc7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e12d90d05fcfeec54ceb00a8922b605997e3aa9c618eab16eecca0300b18edb6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7656e00a766fc9909c173214f2cdc604c0d884ee25ac7085d3255e5682ee1bbf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1aafc53e6de9c44c1790f948052aa36d38968de432c779f9aa9af21700fc8b3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56ec90957b43fbe58906a46a5dc18e2eb2ff1c6b8b68589d5dbc65cc9af6b415"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "796b7473de6b9525af70a4ca78d90136600f86c423c29ccf31349302b7a3641e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68c61295984548b6dc2a3d526354658217177d819b0d088bcef154a8a7376459"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0c551239bf13a4fd565a573592a5256c848901636e745652cd8bdd732c05ea9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7c3e9c872e9b2baf7d88cb23ecd5fd9351b22626224a053b4e824e244e9d7c54"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6822be095ec85a51a9f57b247965c2a892ca6771373645c87c3fdd457659ba6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51fcddb643645e51f147a9514704b86c8f78316fc08c669e3959600ab22da3c9"
   end
 
   depends_on "certifi"
@@ -39,8 +39,8 @@ class YleDl < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "lxml" do
@@ -49,13 +49,13 @@ class YleDl < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/24/36/7180e7f077c38108945dbbdf60fe04db681c3feb6e96419f8c6dc8723741/requests-2.34.1.tar.gz"
+    sha256 "0fc5669f2b69704449fe1552360bd2a73a54512dfd03e65529157f1513322beb"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   def install

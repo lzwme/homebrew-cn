@@ -1,8 +1,8 @@
 class Thorvg < Formula
   desc "Lightweight portable library used for drawing vector-based scenes and animations"
   homepage "https://www.thorvg.org"
-  url "https://ghfast.top/https://github.com/thorvg/thorvg/archive/refs/tags/v1.0.4.tar.gz"
-  sha256 "1a60b794eaac5717ad79d0c7e3d189f46e21d469b3a0013d7804f348fbacdf17"
+  url "https://ghfast.top/https://github.com/thorvg/thorvg/archive/refs/tags/v1.0.5.tar.gz"
+  sha256 "e25f23c0698c739affd1a092f77d0e56d4888deafa05da37ba1eb0f3031fa5cc"
   license "MIT"
   head "https://github.com/thorvg/thorvg.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Thorvg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f21cebc813cc64e43a1aad142679fdda03cd3511430fef91fa9472ddff0aa9ba"
-    sha256 cellar: :any,                 arm64_sequoia: "5809dfa078528bcfa1da7fc2c11d89d78693efe6368ceb6086987d88986c09e1"
-    sha256 cellar: :any,                 arm64_sonoma:  "46a2c1efff5c80880cfa2815649ed1412a4ce8dd7c90934c135f5f8cc9ca4775"
-    sha256 cellar: :any,                 sonoma:        "e27e2645dcf4ba225ae952943da69129b51c6e07082e11c5ee2d700f52895900"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "60d9651d173e2a53afcb6b32ab1571cd9aea141edc37b3ae918ddbd2f2d6b97d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4279446c80d0bd447f2640a0dedd517b80db923d15dd4cc030a0f3368474fb6c"
+    sha256 cellar: :any,                 arm64_tahoe:   "9a8e3f24a8d9f951a6cb6d2427919cb0af4bdbb30722e6389d3620c5a5cad772"
+    sha256 cellar: :any,                 arm64_sequoia: "33d04b9b52fbd73afbd63e3cb71129db2ad9b6225b25a129c75840578f168dcc"
+    sha256 cellar: :any,                 arm64_sonoma:  "a2f990b9f004bbc284c61658e1d0b21c48c9798dede4e10e7048d40a2b4a06b5"
+    sha256 cellar: :any,                 sonoma:        "51ee0ae71e9e8b1814f80efa9d7a4b10db5958a02b984ab43649c347b5eab9b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb1aa2ac2f32ab691d38f04535e95d43fd66952e9bf35494c7d2e030d4e91efb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9607cd92bba86c1da23c0ae565c8c227e147f2ba67abdc7a14e1d4a08024cf45"
   end
 
   depends_on "meson" => :build

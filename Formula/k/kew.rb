@@ -3,7 +3,7 @@ class Kew < Formula
   homepage "https://github.com/ravachol/kew"
   url "https://ghfast.top/https://github.com/ravachol/kew/archive/refs/tags/v4.0.0.tar.gz"
   sha256 "6162d87db4013b0611eafb2b0ec1c7882d28b8d703dc9593dc38a3ad2e88f787"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
   head "https://github.com/ravachol/kew.git", branch: "main"
 
   bottle do

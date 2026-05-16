@@ -1,20 +1,20 @@
 class Gobackup < Formula
   desc "CLI tool for backup your databases, files to cloud storages"
   homepage "https://gobackup.github.io"
-  url "https://ghfast.top/https://github.com/gobackup/gobackup/archive/refs/tags/v3.0.0.tar.gz"
-  sha256 "6708920cfb35b48886496c74abf6225b0c4865ba0c1a24901e5545d7f70e1683"
+  url "https://ghfast.top/https://github.com/gobackup/gobackup/archive/refs/tags/v3.1.0.tar.gz"
+  sha256 "dbc2d4fc9371ee7db5bf6a85578aaef3eb8c22802babe37c279ede7c337faf63"
   license "MIT"
   head "https://github.com/gobackup/gobackup.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ce1373eeccfcc8253b9f4514fe17ec50d8bd404ad85e7381e50d5e4bc546239"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ce1373eeccfcc8253b9f4514fe17ec50d8bd404ad85e7381e50d5e4bc546239"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ce1373eeccfcc8253b9f4514fe17ec50d8bd404ad85e7381e50d5e4bc546239"
-    sha256 cellar: :any_skip_relocation, sonoma:        "458e1a8c55aaf7db96db9d75a6707bb56288f84dd40e8ba58fd7b0bb61a0feac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1120fc0be81734d225cef6711549f08b67f4cc413c3fc581123f3dd5eabf46f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbff8c521a35a565dc1796ef5bcc3dd20836da924dda2e2ed0f3b4abf4f40d7d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ecb27ca04dbf8a8fc1ea5e236205bb1d09c11f747cb6b2fcadb80d02ab48c51"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ae30b7b267b0eede0608df160078e04b3958f86371002b4f671635575927a9b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "203548195bd5447c950241cfbf3aff0e587c36959edc25600df6685ed94b0b1b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7864c81f611bb8c7970ad9a87c429280dc06885a5c7d8327542e2e00d9b65438"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "97678816b94ca57228c60edae76125f308f1a8ce20229286fac9c77387910335"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a719968301e42c763e39cd1a3e17406a7e4d64525a4db3274e5d11f4bbf6bf82"
   end
 
   depends_on "go" => :build

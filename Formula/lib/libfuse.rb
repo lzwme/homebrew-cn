@@ -3,7 +3,10 @@ class Libfuse < Formula
   homepage "https://github.com/libfuse/libfuse"
   url "https://ghfast.top/https://github.com/libfuse/libfuse/releases/download/fuse-3.18.2/fuse-3.18.2.tar.gz"
   sha256 "f01de85717e20adf5f98aff324acd85dd73d61a5ca3834d573dcf0bd6e54a298"
-  license any_of: ["LGPL-2.1-only", "GPL-2.0-only"]
+  license all_of: [
+    "LGPL-2.1-only", # include/, lib/
+    "GPL-2.0-only",  # bin/, sbin/
+  ]
   compatibility_version 1
   head "https://github.com/libfuse/libfuse.git", branch: "master"
 

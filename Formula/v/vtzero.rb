@@ -5,6 +5,11 @@ class Vtzero < Formula
   sha256 "bdbd4a70404fbd6efc8588cc34065aa401b3bcd2533b532e68ff790267f4fc23"
   license "BSD-2-Clause"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "7edfaf64ec1282ee246f33e362201810ea0c633a609569f021f80c5b4e207601"
   end

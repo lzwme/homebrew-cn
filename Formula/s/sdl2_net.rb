@@ -1,8 +1,8 @@
 class Sdl2Net < Formula
   desc "Small sample cross-platform networking library"
   homepage "https://github.com/libsdl-org/SDL_net"
-  url "https://ghfast.top/https://github.com/libsdl-org/SDL_net/releases/download/release-2.2.0/SDL2_net-2.2.0.tar.gz"
-  sha256 "4e4a891988316271974ff4e9585ed1ef729a123d22c08bd473129179dc857feb"
+  url "https://ghfast.top/https://github.com/libsdl-org/SDL_net/releases/download/release-2.4.0/SDL2_net-2.4.0.tar.gz"
+  sha256 "9cbca2527feb3f1a622d48ba65cc7dee9b1e3f2c55ceafb7d7720bb058aafb30"
   license "Zlib"
 
   livecheck do
@@ -11,19 +11,12 @@ class Sdl2Net < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "fe6ac7f5d82fd91ba2ec6f8969327bc15ede3f548172cd990dfa820795640a8b"
-    sha256 cellar: :any,                 arm64_sequoia:  "3d7c644db9335046fa38cb4ab1f0396572a1cbb1aa748c6458f9a8ac37ac820d"
-    sha256 cellar: :any,                 arm64_sonoma:   "370799a594bbe1c431dac68cf7c6c19a048c15923a659bcb3db36ab7b5d9bf5e"
-    sha256 cellar: :any,                 arm64_ventura:  "9e154cc5085e0f5f8d6c21e3656c1ff871497b1d79136105535f6fefc189aafc"
-    sha256 cellar: :any,                 arm64_monterey: "293d3240dd1ac9c5aa76317ff632fb216c5a2768632a84400479ba6befcdd6c0"
-    sha256 cellar: :any,                 arm64_big_sur:  "218ace24a3d1840ff6b4fd0ae41314a0b69eda326509b2bbf06113c099717d8e"
-    sha256 cellar: :any,                 sonoma:         "f433beb9819e47f6f85360f57cb5d925b4bb97e00f24637ab1847549b4d0c6ae"
-    sha256 cellar: :any,                 ventura:        "7eafd7b1497736d3609709191a7c693c61e0c2e7761bf1901502dca09a585f41"
-    sha256 cellar: :any,                 monterey:       "abc2a0c0a0098fbf6eff04d1a7ac5270de3f96762e0eb068d84bf8f9c484af7d"
-    sha256 cellar: :any,                 big_sur:        "a08a23acdd6f6733e64f26bd796bc454d6c8bb8edd91657ffb4175957b5b8b56"
-    sha256 cellar: :any,                 catalina:       "d653a5933d4df46a2a4cdf743499821e61e61305cc3eb45d7fa88a8452a0dae1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "ecd7a11a898ae2a291af9042b510a7e73537e11bac88c0655513450d378e1d3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa5783e335578a64d84051b2fc247b91585a8950f0406fc8b34ad06ea879872f"
+    sha256 cellar: :any,                 arm64_tahoe:   "842b8be579abc9a3de68666c5654c86781e8a2dbf7ed4ea7eb116e9019249113"
+    sha256 cellar: :any,                 arm64_sequoia: "b6d21421e3538a00c2dee025bba678231f03c99e68a354ba3ed44ffadc691aac"
+    sha256 cellar: :any,                 arm64_sonoma:  "7c01db425e662ec301c077d6ec6cafc0426aeeff7b04a3f5abe07cd46a0f57b7"
+    sha256 cellar: :any,                 sonoma:        "5e5dafd02e711e46e3f0547b003a2d6b467efabfcdcf4aaf7f7b217ba913f0cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7551589bd6c60d0685c19fd6eb3be3a46cb75a01b3a7d10d46a16ff5d6976181"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffd51b211a29509081c1bf2969f724607803db3237f3a861af0a071611677b9d"
   end
 
   head do

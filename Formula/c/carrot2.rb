@@ -7,12 +7,13 @@ class Carrot2 < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26a2e0710f7f3b0b86af79fd864096a49414fe8d8bb25ab9f077715a0270a7dd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7fb93a44e7da0f3b19e3a4cff6c7263daccf2bb7ebb20ecc96cd8e6d186ea1d2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b14477c06f381620f1e897ef65ce1bff59ad4c34f8cdd07810d8132560f32f02"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1894c5d3399c5335ce5726ee51fcc12fbd4d21b3155af2475b8d81af946d11a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a2f9dc7f4462db3ef46a5940544d7f83d7d065f0b5e528ae5f5a5c89cde7dc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f38906fe8f4c2e76336954ef2fc9449e706c29469ea179b78217048e1f64d725"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "720bd31764fe52b13d33727474aeae8f136f39dafd7b2be3ca9a4ba718fbd884"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f941098d23ac4e09831cc6307de3612db0f68c98b1299420ca578aa9429f01d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1a19b526779bd5765316dd2bb421d51f8089cfa5047ff9e49df23ec8845a4b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "679edda4a31c922485d3dd3365740318440a7b64b0bc5485674a93c57ac7eac8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3e195a47608eff28e3d4845590073f46945c2c6fa066a7b861bb4d6952d2ed2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26902c74d9cdf96d37051cc3872edc8d7b4cbd7e6c80e2073dea616146bd97d1"
   end
 
   depends_on "gradle" => :build
@@ -56,8 +57,11 @@ class Carrot2 < Formula
 
   test do
     port = free_port
-    spawn bin/"carrot2", "--port", port.to_s
+    pid = spawn bin/"carrot2", "--port", port.to_s
     sleep 20
     assert_match "Lingo", shell_output("curl -s localhost:#{port}/service/list")
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end

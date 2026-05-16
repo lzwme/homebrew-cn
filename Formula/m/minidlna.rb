@@ -23,19 +23,22 @@ class Minidlna < Formula
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
-    depends_on "gettext" => :build
     depends_on "libtool" => :build
   end
 
+  depends_on "gettext" => :build
   depends_on "ffmpeg"
   depends_on "flac"
-  depends_on "gettext"
   depends_on "jpeg-turbo"
   depends_on "libexif"
   depends_on "libid3tag"
   depends_on "libogg"
   depends_on "libvorbis"
   depends_on "sqlite"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   # Apply Fedora's patch to support newer FFmpeg. This has an open merge request:
   # https://sourceforge.net/p/minidlna/git/merge-requests/58/

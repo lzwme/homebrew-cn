@@ -1,18 +1,18 @@
 class Roadrunner < Formula
   desc "High-performance PHP application server, load-balancer and process manager"
   homepage "https://docs.roadrunner.dev/docs"
-  url "https://ghfast.top/https://github.com/roadrunner-server/roadrunner/archive/refs/tags/v2025.1.13.tar.gz"
-  sha256 "10745d59209226a1d4c92dc9409e405a2846bf0f3517d1f4bd511562f9793aaa"
+  url "https://ghfast.top/https://github.com/roadrunner-server/roadrunner/archive/refs/tags/v2025.1.14.tar.gz"
+  sha256 "2ec7485b935f3e22cd06bc96abc7db34f83d098e457275223e5c615cb0ab425f"
   license "MIT"
   head "https://github.com/roadrunner-server/roadrunner.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e7d9961503c4bb0cde0ae57754bba252e7e40a939a5630db7d4ed6e6e8c9e54"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7e20e2ffaa5b808412a8011a7e9f08fba033ece6b5555631421cd0a1f38a2bf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fecaca4dc526870c80fee2f18a06d6c024be2546362459bc2acde7c66a5f0706"
-    sha256 cellar: :any_skip_relocation, sonoma:        "547930db3c25af17c4b068d1e43d09d11a91341756a9022af858fb391d662ca1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9f7160e234dfebe451c79f7540cf23f9ee4a989e2c9ac8d49c75b8843973806"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23a7c904d8e2e3b43cd4ea9003c4f56b13dce0b21acf6221188b3309f25eac96"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "063e0580ee04b9326c0d04ba4e3977e864f1658ec03e52cccea42bfd42383760"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef04c74ef5c858373580473a5ca41cd154a42eea27e5293e4aa5ed7cf565c380"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "221a57e2f05297fa916d5e045c13c705f5821c0f961c3f971050aceb856b1dac"
+    sha256 cellar: :any_skip_relocation, sonoma:        "80c45fdc7564e53d721d885f18fbb46f5d17e37bf6425c83b43416998b145be5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c72653e81615651e37843c3b0e91a61b3c73ee11d9b2a716670e8d8cc0dad2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0adcd6ad3a77e4c3f7b1800578ab396a8750994c321e18c73b9425241b4e0968"
   end
 
   depends_on "go" => :build

@@ -1,20 +1,21 @@
 class PhpAT73 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/2c97539020cfaadf6998f23fd301cb5158464fbc.tar.gz"
+  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/17961920bc943802ee35637d0ed2269df3acb313.tar.gz"
   version "7.3.33"
-  sha256 "c9bc90d6c3d7b2d3a9e17581d36382f4db3e20e3e43225db5437c52e2f2de7bf"
+  sha256 "348e8c7a07899abcb9e31aeebf082ce9c47178ad274879abbd88e632830d1d16"
   license "PHP-3.01"
   revision 14
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_tahoe:   "3a4881d0703c4157bac8d3b5fe18a3fcb6eb62389f244dc47fb57cc1de614d04"
-    sha256 arm64_sequoia: "a556d6ebf7600696b09fa8f185ddc8e409dd829bf9b10b6266ffd536ac4219e3"
-    sha256 arm64_sonoma:  "23322f8fa0dd4b560a0f1d7b8cc198b9edd4476b13f01bbff23a9e68b0a2c99f"
-    sha256 sonoma:        "95a7778838d308b467930f0c4ed28d6c6ad4f5c17303d7b762fa7f9231897d40"
-    sha256 arm64_linux:   "032748987bb8f3730a82a0a9126af8d0f2d292af9ffceb97c6865de5256050be"
-    sha256 x86_64_linux:  "02c832808bfce2f414f4c7dcbddc7c09076d703156f6bea28d9315c22525683c"
+    rebuild 1
+    sha256 arm64_tahoe:   "2f5236d35b19fecdd03219a536e6474081ace1defde4187f038e30530f780ee2"
+    sha256 arm64_sequoia: "0a0ccceab7913233ae468f6b1c7ccfe5f259bcacd597e691e03d579e52517237"
+    sha256 arm64_sonoma:  "f4e8b31f077759f7842ac18e9f865f98dfe53fbd401b179e35dd696a25e1a80b"
+    sha256 sonoma:        "7abf37d55058d1ef124c3b40348b08f213f9ae6af4eb80049b05b678742312ee"
+    sha256 arm64_linux:   "cbc617acefdc69741ee8483b4d008f8ffc7de3dd1d0326300ebe645c580e2608"
+    sha256 x86_64_linux:  "d24fdb6922b7b370cdeed23ee8960723725f8e2ef96ead01903318bf646551bc"
   end
 
   keg_only :versioned_formula
@@ -75,6 +76,9 @@ class PhpAT73 < Formula
   def install
     # Work around configure issues with Xcode 15
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
+    # PHP 7.x still has old C sources that fail under C23.
+    ENV.append "CFLAGS", "-std=gnu17"
 
     # Work around for building with Xcode 15.3
     if DevelopmentTools.clang_build_version >= 1500
@@ -213,7 +217,7 @@ class PhpAT73 < Formula
       args << "--with-xsl#{headers_path}"
     else
       args << "--disable-dtrace"
-      args << "--with-zlib=#{Formula["zlib"].opt_prefix}"
+      args << "--with-zlib=#{Formula["zlib-ng-compat"].opt_prefix}"
       args << "--with-bz2=#{Formula["bzip2"].opt_prefix}"
       args << "--with-libedit=#{Formula["libedit"].opt_prefix}"
       args << "--with-libxml-dir=#{Formula["libxml2"].opt_prefix}"

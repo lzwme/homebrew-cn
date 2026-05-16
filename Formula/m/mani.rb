@@ -1,18 +1,18 @@
 class Mani < Formula
   desc "CLI tool to help you manage repositories"
   homepage "https://manicli.com"
-  url "https://ghfast.top/https://github.com/alajmo/mani/archive/refs/tags/v0.32.0.tar.gz"
-  sha256 "63151cc156130b335b1f844c6e88049670647c44d4a42516510a9fd70edff9b0"
+  url "https://ghfast.top/https://github.com/alajmo/mani/archive/refs/tags/v0.32.1.tar.gz"
+  sha256 "7b061b6606aeb3b024d14009d9028c30b0b56d8d8d4078b39c8d87db696bde1b"
   license "MIT"
   head "https://github.com/alajmo/mani.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4fd99addf4ca0ecc539b7b2e55ed95cca0e0c9aea8f7edb7814d2ed964a51602"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fd99addf4ca0ecc539b7b2e55ed95cca0e0c9aea8f7edb7814d2ed964a51602"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4fd99addf4ca0ecc539b7b2e55ed95cca0e0c9aea8f7edb7814d2ed964a51602"
-    sha256 cellar: :any_skip_relocation, sonoma:        "27be6de31d5b65fc29273df8968b5bb60d9a3979ad2d4f490576d824310a38b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0ba27a8d4b80afc88021e279a24bc1c5684611e3d920d20eba9a8101dcafd45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae938083622d72bb131aa2210a0568e0a5a2a60527469e41080866040f85cce1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e336167638d0959a709f181cc49df2291513cb39c3695eae0fafec647ec796ba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e336167638d0959a709f181cc49df2291513cb39c3695eae0fafec647ec796ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e336167638d0959a709f181cc49df2291513cb39c3695eae0fafec647ec796ba"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2d0acfa8235e756111d56b4458d8c6e3464679c86bc1f404cc819b18bf11f6c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1666c0236bda8ecbe6488698b97c7208b02bfc50223f6c24fbfde5b270c7c7bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03277410ed2ad6bcd485125b3a8bbbc43cbe9b3a60c5d392f837d2b4c3b7a0ec"
   end
 
   depends_on "go" => :build

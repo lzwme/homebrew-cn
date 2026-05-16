@@ -17,8 +17,11 @@ class Libxpm < Formula
 
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build
-  depends_on "gettext"
   depends_on "libx11"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     args = %W[

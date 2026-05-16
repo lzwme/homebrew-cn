@@ -1,18 +1,18 @@
 class RunKit < Formula
   desc "Universal multi-language runner and smart REPL"
   homepage "https://github.com/Esubaalew/run"
-  url "https://ghfast.top/https://github.com/Esubaalew/run/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "853545b84145a34926b12d6526e517ba96f371a9f759652a50da7996ffdab781"
+  url "https://ghfast.top/https://github.com/Esubaalew/run/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "9faf29540471da65f9481b2fa95aa7513572110d428f7199a27fe04ca1be2896"
   license "Apache-2.0"
   head "https://github.com/Esubaalew/run.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eaf7fb68e8e2c5cc7fdeedc670c10736e7374ed5ede262a13ab30c0299fb67fa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "710f12d75fedc7767e518884637be70b5b68eb341c56b8df8743bccef86445a4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42f460402611e4ffb4f4de60c3600ccf26c34b496852b7800f671bcb87105536"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dcf8421fe8832e8de3036ebadcb06e23069a09826b3153d927e996949e7566c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d27037d42fd8f5ca31a314d0d6debfd4b439ffc49ef0e78de716285c1469dfb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50a776d1b407e6d97bc20e5eb226e2f39a13ff524f04377f0bd20ac52d70f2e3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9104ed02ddf561bf06bf75c5db9b7cfb97b4a383af0190e17c9d11fa47ad0910"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47cc94c954b1e6720545f6d8c9e9031071c3b1055d6aff16f84659f4d2d07b15"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0436fe0f7ac43a1d21ac673be88458103235854c01fa6ec270fd64fe0ddc8746"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ae79c6e82780675707f7c206faa2ef0d7dd4b17ba9a3a81197ed3351e599ca71"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5493fca2cb6ceebcc6855f2bffaa5daa03c3f502083c5f7ae6a871e95ed7458"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6c0ce83f8a22619f4ea16cf882080b47b494234655c04a8b5ba07d124d844a6"
   end
 
   depends_on "rust" => :build

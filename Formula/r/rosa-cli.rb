@@ -1,8 +1,8 @@
 class RosaCli < Formula
   desc "RedHat OpenShift Service on AWS (ROSA) command-line interface"
   homepage "https://www.openshift.com/products/amazon-openshift"
-  url "https://ghfast.top/https://github.com/openshift/rosa/archive/refs/tags/v1.2.62.tar.gz"
-  sha256 "02f794a97109b76bf2952989be533ac7ae5e2b1adf3cb0cec66d23b8ddab9bf4"
+  url "https://ghfast.top/https://github.com/openshift/rosa/archive/refs/tags/v1.2.63.tar.gz"
+  sha256 "9b4baafc16ad9207285aa7d5bfeb0db0f47b07f9e821a71462b3867c85b8b276"
   license "Apache-2.0"
   head "https://github.com/openshift/rosa.git", branch: "master"
 
@@ -12,12 +12,12 @@ class RosaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48d456d966da56920de6f62e8a48626a131655abccb314dd6dd93e06d2192365"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d9e160495866b537bf7f2ccd0f608c517d32d3b8a11ae3a09da2232f3b95b57"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a6d54ef6741627605ab8c67cbbad4f5b563d4f08656bd8c62b295f3352edd87"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a07c8d42e85e454c7d8b0f1bc78ee4cc4393dd4fba0af35041907080452f980c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b25c588fde78f94b6dcba10b0b0243646f8c225614242fa8df68db28abc5a61e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6f4c23cc10f5c52b7d81f2c12446b71147e2f18278fb7418d61e4534bfc06ac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d83bb6b221bfea2d4d9c32fe0064f62395f7b44e2bf52b11ac49eaf9bea0fed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e6cabde04c64fd6d920ee08feaa3997fd2529c219a00a9f7139713183cdce1a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a970033c686452f9ff399875ad5bb80ca2672ceed38a4c0d678f8e79eba49263"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c2820fa70a8e9f3e0655e1fc57501e69974d85c52b5be73cf4b476a6a4bba832"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cb7a1d2d302cc864b27db1e1bc9b8e5d6f070505a632ea2aabccbd1e2d5bfe9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52ceeb8a64addb2f484c1ae98b704622d3c15b85110c11cbbbd64038f410d4b9"
   end
 
   depends_on "go" => :build

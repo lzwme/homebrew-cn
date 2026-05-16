@@ -13762,7 +13762,6 @@ Homebrew-homebrew-cask/Casks/n/navicat-for-oracle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/navicat-for-postgresql.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/navicat-for-sql-server.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/navicat-for-sqlite.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/n/navicat-premium-essentials.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/navicat-premium-lite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/navicat-premium.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/navicat-premium@15.rb, Homebrew/homebrew-cask, 0
@@ -14002,7 +14001,6 @@ Homebrew-homebrew-cask/Casks/o/openwebstart.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openwork.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openzfs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opera-air.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/o/opera-crypto@developer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opera-gx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opera-neon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opera.rb, Homebrew/homebrew-cask, 0
@@ -14209,7 +14207,7 @@ Homebrew-homebrew-cask/Casks/p/pile.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pimosa.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pine.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pineapple.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/pinegrow.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/pinegrow.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pingid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pingmenu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pingnoo.rb, Homebrew/homebrew-cask, 1
@@ -14323,6 +14321,7 @@ Homebrew-homebrew-cask/Casks/p/preform.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/prefs-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/prepros.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/presentation.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/presentify.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/presonus-universal-control.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/prettyclean.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pretzel.rb, Homebrew/homebrew-cask, 0
@@ -15410,7 +15409,6 @@ Homebrew-homebrew-cask/Casks/t/torguard.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/torrent-file-editor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tortoisehg.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/toshiba-color-mfp.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/t/touch-bar-simulator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/touch-portal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/touchbarserver.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/touchdesigner.rb, Homebrew/homebrew-cask, 0

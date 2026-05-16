@@ -5,8 +5,8 @@ class Crystal < Formula
   compatibility_version 1
 
   stable do
-    url "https://ghfast.top/https://github.com/crystal-lang/crystal/archive/refs/tags/1.20.1.tar.gz"
-    sha256 "2fdc7eaefed34755383db15f8787e3a7c2f04069e93871d353f95fa083ed7d8d"
+    url "https://ghfast.top/https://github.com/crystal-lang/crystal/archive/refs/tags/1.20.2.tar.gz"
+    sha256 "68b69b844bf3bf9990cb7befb06520fc477bb6c3f42de833c6b6a80dd5d0b17c"
 
     resource "shards" do
       url "https://ghfast.top/https://github.com/crystal-lang/shards/archive/refs/tags/v0.20.0.tar.gz"
@@ -20,12 +20,12 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ff629eaeaf887408cb9d45c200e3e1504baa5fed839a93131ef734e84447ea1a"
-    sha256 cellar: :any,                 arm64_sequoia: "518f8317f77bdeca7cbddce4e8b31833a02d3af9833449a368a77e5ac06c7160"
-    sha256 cellar: :any,                 arm64_sonoma:  "3cfbbb87730a4a2c7ce806788ca9acd26cf53b962dc42734763823346bb7a32d"
-    sha256 cellar: :any,                 sonoma:        "505bd2158377022be2f3b93989cca2cf7ce275b071ed69b58c8de27b98a5d069"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "42da86e8bd4293a6a2b75f922dd58ff187f7e14fea89428a4aec18dc440efe4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f3fbda029de327c736fa4d34ad2543bc20d38d1ca36b07b029d3dca81b2dff1"
+    sha256 cellar: :any,                 arm64_tahoe:   "8f89230146f8fd4ff20392a2ea44d825e05f080d5292d72a5b6ee9c0ec51150a"
+    sha256 cellar: :any,                 arm64_sequoia: "ffdd12fa768a2b28f896de52f76475c12c841df5244b013646bfc41fd646ecfa"
+    sha256 cellar: :any,                 arm64_sonoma:  "104f9f978fc9cc06a96225eaae4b4697d43045e06a14d71f5b5c3eafe0104ddf"
+    sha256 cellar: :any,                 sonoma:        "78ad9fc995abebd91be759661a3606a04eadebe9ad37a5b72a0b52de481d458c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b247cf6d9b60bfa9a6ddd6ff793207e20ff3995895862e6a420cf076029d8645"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22165537bc0e0e1a58a378a60ae0d0c3cf1546208a1c8a049d2ab047022b91cd"
   end
 
   head do

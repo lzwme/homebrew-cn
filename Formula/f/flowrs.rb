@@ -1,8 +1,8 @@
 class Flowrs < Formula
   desc "TUI application for Apache Airflow"
   homepage "https://github.com/jvanbuel/flowrs"
-  url "https://ghfast.top/https://github.com/jvanbuel/flowrs/archive/refs/tags/flowrs-tui-v0.12.4.tar.gz"
-  sha256 "5377c874309fa6e024ea8a8563dbf7cec8dd9c7165f5e28d63272e6430d62055"
+  url "https://ghfast.top/https://github.com/jvanbuel/flowrs/archive/refs/tags/flowrs-tui-v0.12.5.tar.gz"
+  sha256 "db5c69746918643745dc7a240fd77547c8cb1157d34b1610042bd9e78c5f5b97"
   license "MIT"
   head "https://github.com/jvanbuel/flowrs.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Flowrs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "370e3c8ab71f10f881731da7eef338b477e53379c47d5684af5a5fa568fd7b82"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8462be9168732c4c8efd54cc1888c91a51d455a2fb1c6623f56575f206663f87"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db1b49d5edac20ad1b5ee7f6da0081b5c3af15702ff655456c3210e3eca1f598"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a949291c3f379a4f2b2969a2603442b95e8ae08565fa0f2d4e71a076f0928e26"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "438afd8d7ca297d24f1a868bfc5cb7dacb4dd56332a81f8ad569919b3ee3242b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67b773e5e15789dbb92a4068a4e075871133c023dd9e5323136acb763a04509c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f60b8d92392b3684119eac2af7cfae995d3e341bd097d80b2cb953948042e57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fee6b5ece6c6dfc256916259a7bbf22afbaa5c822143a40f03526420a8648a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5be1d4ce2b760a4a3f6c80c9b4facc964b977866e32b8597703207b49e18fc37"
+    sha256 cellar: :any_skip_relocation, sonoma:        "31b21163185e4c3cad90f27e1ecc2645c57fd643dd46a8daf1e3df88c9db20ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e54159eea40baa81bf569c8d7049243750cadd0d81e0a6d4353d9a1f5326935f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1dd45dceff574ef45902c94c8ec76794779f94d8adb082b9cf55d021a70f562"
   end
 
   depends_on "pkgconf" => :build

@@ -2,19 +2,19 @@ class Uvicorn < Formula
   include Language::Python::Virtualenv
 
   desc "ASGI web server"
-  homepage "https://www.uvicorn.org/"
-  url "https://files.pythonhosted.org/packages/1f/93/041fca8274050e40e6791f267d82e0e2e27dd165627bd640d3e0e378d877/uvicorn-0.46.0.tar.gz"
-  sha256 "fb9da0926999cc6cb22dc7cd71a94a632f078e6ae47ff683c5c420750fb7413d"
+  homepage "https://uvicorn.dev/"
+  url "https://files.pythonhosted.org/packages/f6/b1/8e7077a8641086aea449e1b5752a570f1b5906c64e0a33cd6d93b63a066b/uvicorn-0.47.0.tar.gz"
+  sha256 "7c9a0ea1a9414106bbab7324609c162d8fa0cdcdcb703060987269d77c7bb533"
   license "BSD-3-Clause"
   head "https://github.com/encode/uvicorn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ccf0a53fe2f683ce2abe19535af1da92684de76e19d5c2944378f86dca9ad5a9"
-    sha256 cellar: :any,                 arm64_sequoia: "0e9d8669742de5867b105b17a3186e3090dd132d4e5a426116ac4b74d2efe4eb"
-    sha256 cellar: :any,                 arm64_sonoma:  "69025c471f1ab266959aa08ea5fe165f50979a73e93e532677735c657ddf92f4"
-    sha256 cellar: :any,                 sonoma:        "8d83281ec91759319c0151fcef17301006454130545359a194985f252c483035"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "39408a6cdab77388a027131155008253acd9d54029de8271a997567f81551c99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2c1d4723c3da6dae60cf09fc1e0b73a54801b880283b64f7fb2847a04b0bdef"
+    sha256 cellar: :any,                 arm64_tahoe:   "a71205519f1760991f8ad27c8ace439c11491faffcec435d6227ceb3d66ecd4c"
+    sha256 cellar: :any,                 arm64_sequoia: "5836e18244d1507fe879433cbdc6ef3246d749d0eecce15da343bcc0ac81ddc9"
+    sha256 cellar: :any,                 arm64_sonoma:  "330505ba10d70c458bdf1eedd50b4074a454734435fe2c26579e8da2275e9290"
+    sha256 cellar: :any,                 sonoma:        "a08610ac9c4a8bf70a646b707eac7cd7d301e0424abc05bb16d9f4cd61cc94a5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "573603516689e2ad77a898316a2c5bbd821152e59b85ad3fdd41487c96206ee5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90cc4ef959b5b0e0c31e6eb2b779dcfd2d2ce7c7196328ea36263985986f1571"
   end
 
   depends_on "rust" => :build
@@ -44,8 +44,8 @@ class Uvicorn < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "python-dotenv" do

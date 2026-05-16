@@ -6,15 +6,15 @@ class Twarc < Formula
   url "https://files.pythonhosted.org/packages/44/1e/b124f63e6b220c0bd85abe062b77809a0cfd2e9e6d8aed25f9069687df5a/twarc-2.14.1.tar.gz"
   sha256 "54537495c6575863769e82ba4a0db7d68538e7c5afa9b8fcc8856a0ae94d9fa0"
   license "MIT"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "691ed33e9576de03f81a8df02f2aaf80fc3797afebb82fa1d55cfb8a14a73fe6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45d92a884dced112f358d36393b91b65b40f3c68011491f4fe8c64ab11d500e7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f621b829e25bcc141449d34868534c58c4c84576328c55679da24f755a41ef64"
-    sha256 cellar: :any_skip_relocation, sonoma:        "878e60d17db78fd062727a5c0f39350125655ef6065aded16beb0aee25f26535"
-    sha256                               arm64_linux:   "2a3665b988fc6dae99aaed6e6cb109845ec810ab9867e82dc1a6963c36eb2f8c"
-    sha256                               x86_64_linux:  "3842380a0229bd118f84a0c5e1cbc288cacbf089cc49d3554b3caa3b406743e4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "39bff8a02c42afdabfa9f21f25b3cf5ec500dff524b4f4a2a1a46eaa956e7a97"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ea07e8f85c6f0b520473d7a5c10f57e831f6028896833c51c3368cfc5c6b1f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7fdf7503f80980d3cd86cd2a37b140e193c46926b7806c32b872c5cc7864f99"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c9f444246a272967a2e9ca932e1236dd321f481c02e03744dc5afcf2f070af8e"
+    sha256                               arm64_linux:   "717d6f8f7b6df8fce9a04c41d0d012fce76b56cff0eadbedb3a7af3f6d28430e"
+    sha256                               x86_64_linux:  "d2e81be6131d1ee95b1c200ce5e5954ad3362b532f8c1e70a81f6ce873fa1021"
   end
 
   depends_on "cmake" => :build
@@ -32,13 +32,13 @@ class Twarc < Formula
   pypi_packages exclude_packages: %w[certifi numpy]
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
+    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
   end
 
   resource "click-config-file" do
@@ -62,13 +62,13 @@ class Twarc < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/ea/5d/38b681d3fce7a266dd9ab73c66959406d565b3e85f21d5e66e1181d93721/more_itertools-10.8.0.tar.gz"
-    sha256 "f638ddf8a1a0d134181275fb5d58b086ead7c6a72429ad725c67503f13ba30bd"
+    url "https://files.pythonhosted.org/packages/a2/f7/139d22fef48ac78127d18e01d80cf1be40236ae489769d17f35c3d425293/more_itertools-11.0.2.tar.gz"
+    sha256 "392a9e1e362cbc106a2457d37cabf9b36e5e12efd4ebff1654630e76597df804"
   end
 
   resource "oauthlib" do
@@ -77,8 +77,8 @@ class Twarc < Formula
   end
 
   resource "pandas" do
-    url "https://files.pythonhosted.org/packages/2e/0c/b28ed414f080ee0ad153f848586d61d1878f91689950f037f976ce15f6c8/pandas-3.0.1.tar.gz"
-    sha256 "4186a699674af418f655dbd420ed87f50d56b4cd6603784279d9eef6627823c8"
+    url "https://files.pythonhosted.org/packages/f8/87/4341c6252d1c47b08768c3d25ac487362bf403f0313ddae4a2a26c9b1b4c/pandas-3.0.3.tar.gz"
+    sha256 "696a4a00a2a2a35d4e5deb3fc946641b96c944f02230e4f76137fe35d806c4fc"
   end
 
   resource "python-dateutil" do
@@ -87,8 +87,8 @@ class Twarc < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/24/36/7180e7f077c38108945dbbdf60fe04db681c3feb6e96419f8c6dc8723741/requests-2.34.1.tar.gz"
+    sha256 "0fc5669f2b69704449fe1552360bd2a73a54512dfd03e65529157f1513322beb"
   end
 
   resource "requests-oauthlib" do
@@ -112,8 +112,8 @@ class Twarc < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   def install

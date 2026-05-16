@@ -49,9 +49,12 @@ class ApachePolaris < Formula
     port = free_port
     ENV["QUARKUS_HTTP_PORT"] = free_port.to_s
     ENV["QUARKUS_MANAGEMENT_PORT"] = port.to_s
-    spawn bin/"polaris-server"
+    pid = spawn bin/"polaris-server"
 
     output = shell_output("curl -s --retry 5 --retry-connrefused localhost:#{port}/q/health")
     assert_match "UP", output
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end

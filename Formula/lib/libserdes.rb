@@ -2,18 +2,18 @@ class Libserdes < Formula
   desc "Schema ser/deserializer lib for Avro + Confluent Schema Registry"
   homepage "https://github.com/confluentinc/libserdes"
   url "https://github.com/confluentinc/libserdes.git",
-      tag:      "v8.2.0",
+      tag:      "v8.2.1",
       revision: "8cf97f7395bf5131d14bacfe896c6a5731b1f0c8"
   license "Apache-2.0"
   head "https://github.com/confluentinc/libserdes.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0a8a6ac18fe9e1283d6594b9fa6de00094e0b1bb72cbc6c57531efd26d8455d7"
-    sha256 cellar: :any,                 arm64_sequoia: "57947297d95bf856cea669a33ae3803b105985aec8f9d3541d2783107a215894"
-    sha256 cellar: :any,                 arm64_sonoma:  "4ff52c5e9d42bd93f00857fc623dcc6c6b3644cd6d705642945f77cbf7796fbb"
-    sha256 cellar: :any,                 sonoma:        "eb7ef3b627746d980c8c5caed03aa7b8dfe477dff8d4b5378c18002569927cd8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "78d3628f38a8f91f76c9456939ed8679dc2ed60e2688ebad62cb44db4a83f3cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3ff40de94f782acf63e96f3187c9069f0c5009fc4d7a6bc99d17c2370687b07"
+    sha256 cellar: :any,                 arm64_tahoe:   "a877cd15be330998154ad994e0c472f692afc3a02617495e8e335b4eedd0eb6d"
+    sha256 cellar: :any,                 arm64_sequoia: "2b8a989cb06c593ced0e262bdf4ea22f974158277987b531f4b4742b5f2bbd9d"
+    sha256 cellar: :any,                 arm64_sonoma:  "edaa2e34bd879ee11f0506f5ae6b2d49861050f5f251e24f52b6061f46d5e008"
+    sha256 cellar: :any,                 sonoma:        "c84b18a3ad9499ae3ec291b8d8a38caad25bf8fea29e453a10890606637498dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "454f61c3c4eb631dec6454de7b782de8b6bf3f628a3c58f96e10add5a0e4fa14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1499b281524c46e0bd15bbb87dbb202e4b80f0ef76a2ad19602380bf6bf2da2c"
   end
 
   depends_on "avro-c"

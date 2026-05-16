@@ -3,7 +3,7 @@ class LinuxHeadersAT68 < Formula
   homepage "https://kernel.org/"
   url "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.8.12.tar.gz"
   sha256 "1f6134265066aa2bef94103c1e4485d6ed8c2e08ba2a24202ea0c757c6c2c0de"
-  license "GPL-2.0-only"
+  license "GPL-2.0-only" => { with: "Linux-syscall-note" }
   revision 1
 
   livecheck do

@@ -6,6 +6,11 @@ class Statesmith < Formula
   sha256 "be187b4063734694137a95b77928980ad0f61e44e6a4887d07dc7e3387ccfa0f"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(/^cli[._-]v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0cf4441be541137a58c29cb73f53c5baee5b8908a5f1e91f9b179597702afbf3"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3c18aa8b4649ede0a69ada9ee81a353b5309602ffd7b6fde815498cfa2c8668"

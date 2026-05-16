@@ -1,7 +1,7 @@
 class Rrdtool < Formula
   desc "Round Robin Database"
   homepage "https://oss.oetiker.ch/rrdtool/"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later" => { with: "RRDtool-FLOSS-exception-2.0" }
   revision 1
 
   stable do
