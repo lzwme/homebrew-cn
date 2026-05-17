@@ -1,18 +1,18 @@
 class Ppsspp < Formula
   desc "PlayStation Portable emulator"
   homepage "https://ppsspp.org/"
-  url "https://ghfast.top/https://github.com/hrydgard/ppsspp/releases/download/v1.20.3/ppsspp-1.20.3.tar.xz"
-  sha256 "70818b8001aebb624b24aedc64a25c1808e23acc4b4b31f020288a732ce8495b"
+  url "https://ghfast.top/https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/ppsspp-1.20.4.tar.xz"
+  sha256 "4de21db3105d9d81a465a8a7e78c68ee3c0e0bf6597d1c1d530f7555f3ad8b31"
   license all_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
   head "https://github.com/hrydgard/ppsspp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "528dccce4420d673cfe8a2d46b744f358c1920af70c2894c2c44e72682b849eb"
-    sha256 cellar: :any, arm64_sequoia: "c8830b54ccaa764ad176f8e260fcfaddcf90c0806e1bf9a549ac447c516aaa67"
-    sha256 cellar: :any, arm64_sonoma:  "13d6861714eb336d5b01c86759d1401b95151d5bafdaf250d0e3443b65795206"
-    sha256 cellar: :any, sonoma:        "230849d007a29cb5802e42f83a0d2160f42da181d27c30bd7964d25fcf2a35a5"
-    sha256               arm64_linux:   "e516f646953e10cc45416c10692c7a432b1dacb7086ea47a56c4eddabd0c24ee"
-    sha256               x86_64_linux:  "9c27458004d7b61c152744a119e1c11ec1d1cc8ff4472ebaf3bd621529e8099b"
+    sha256 cellar: :any, arm64_tahoe:   "463c172edc891360f52a17fb04fafe771d3f8bc8a7efddf08d8aee3edf1be25f"
+    sha256 cellar: :any, arm64_sequoia: "37dccc9e4b8a6207c2f2d892a05e2102d5b0a4232dc6ed8093ee80096bc03477"
+    sha256 cellar: :any, arm64_sonoma:  "17637b0dd8d1802ce22e47db93aff44270c4388530e7f82f95400ea7c44a85f8"
+    sha256 cellar: :any, sonoma:        "76ca2f5322fa7e4fc114025f8a976557c72e7d2f9f0d38df727750023c6b1c98"
+    sha256               arm64_linux:   "cd159a025e2681cb590cadb56c6e700cb5ef9deb68a8f4aa9b3ff67657769be8"
+    sha256               x86_64_linux:  "69dbbeff7c7e0dde71f68a8cc93ec9a0c1d3cfec891b720fca5cebf28f6a5a58"
   end
 
   depends_on "cmake" => :build

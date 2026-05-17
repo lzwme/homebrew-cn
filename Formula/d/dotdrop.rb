@@ -4,18 +4,17 @@ class Dotdrop < Formula
   desc "Save your dotfiles once, deploy them everywhere"
   homepage "https://github.com/deadc0de6/dotdrop"
   # TODO: check if source is available on pypi distribution: https://pypi.org/project/dotdrop/#files
-  url "https://ghfast.top/https://github.com/deadc0de6/dotdrop/archive/refs/tags/v1.16.1.tar.gz"
-  sha256 "6c898b55839fba9632d85e15b501697e0dfe9718f3c2a02fdc11dec4f5f6a261"
+  url "https://ghfast.top/https://github.com/deadc0de6/dotdrop/archive/refs/tags/v1.16.2.tar.gz"
+  sha256 "d70376b06a84166db533dfdfa7657cece10560f8370eb1bb2ba8a27a21c5457a"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2718d630dc74e158ea06622b0742241fd5b59bd4c3c1e59b96efcda6a9ca54f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae74faf4287e62692f87cbd612d7fc8520adf8532202384e29caeeb287ce53fc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb36f86e8fda78a3b29b0ce049d9281ca59fd0d5f556948f6189d1d77b7da245"
-    sha256 cellar: :any_skip_relocation, sonoma:        "08068960519d9dffd50a15daf44bcdf9df5f8791ac74d442cdda3d6fee701a61"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5edc0aeb05d4df3cf7a16e8483e061c5e17d0644d256bba7cb1703634d7f59ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89754a767d463b485a653c3b41acb9b20eff0b97d11dc2eac49b0a45062d836f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c12f1c0ba7a8178b63a42a90efa54bdb35a95f2edc9567cdcdf8d04b7d7077b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f11d015123db2f9e4d6bca176453ea6bdfe91a1b35af7258e6fb3b290423232"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3bd07dccc0ee76201329fb4d097426a8db252083fb5c42134105aceffb944ecb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cc77703385f5d5aa475ed0c4dde10bace90e911a4df7c6a12fec332c24179a91"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a6450d337c3e592792c21ee739dcd6aa3bd8f060329dc13935fb989e139c5b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7275d4bc821d7c143e3a16f116d41b9d3a9cdd870f150acc0167aebf09c0bd26"
   end
 
   depends_on "certifi" => :no_linkage

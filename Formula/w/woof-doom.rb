@@ -1,7 +1,25 @@
 class WoofDoom < Formula
   desc "Woof! is a continuation of the Boom/MBF bloodline of Doom source ports"
   homepage "https://github.com/fabiangreffrath/woof"
-  license "GPL-2.0-only"
+  license all_of: [
+    # Default license is GPL-2.0-or-later but `woof` binary ends up GPL-3.0-or-later
+    "GPL-2.0-or-later",
+    "GPL-3.0-or-later", # src/v_flextran.*, src/v_video.*
+
+    # Other licenses
+    "BSD-2-Clause", # third-party/spng/*
+    "BSD-3-Clause", # src/m_scanner.*, base/all-all/sprites/pls*, man/simplecpp
+    "CC-BY-3.0",    # base/all-all/sm*.png, data/setup.ico, data/woof*, setup/setup_icon.c, src/icon.c
+    "CC0-1.0",      # base/all-all/sbardef.lmp, data/io.github.fabiangreffrath.woof.metainfo.*
+    "GPL-2.0-only", # soundfonts/TimGM6mb.sf2
+    "MIT",          # src/i_flickstick.*, src/i_gyro.*, src/nano_bsp.*, base/all-all/dmxopl.op2, third-party/miniz/*
+    "NCL",          # third-party/pffft/*
+    :public_domain, # third-party/md5/*
+
+    # TODO: Licenses for HEAD code to uncomment in 16.0.0+
+    # "CC-BY-SA-4.0", # textscreen/fonts/hauge-8x18-v1-6.png
+    # "Zlib",         # netlib
+  ]
 
   stable do
     url "https://ghfast.top/https://github.com/fabiangreffrath/woof/archive/refs/tags/woof_15.3.0.tar.gz"

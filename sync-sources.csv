@@ -5675,6 +5675,7 @@ Homebrew-homebrew-core/Formula/p/php@8.1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/php@8.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/php@8.3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/php@8.4.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/phpantom-lsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/phpbrew.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/phpmd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/phpmyadmin.rb, Homebrew/homebrew-core, 0
@@ -6795,6 +6796,7 @@ Homebrew-homebrew-core/Formula/s/skillshare.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skinny.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skktools.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/skm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skopeo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/skylighting.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/skymaker.rb, Homebrew/homebrew-core, 0
@@ -8444,6 +8446,7 @@ Homebrew-homebrew-cask/Casks/a/affinity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/after-dark-classic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/agent-tars.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/agentkube.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/agentsview.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/agi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/ai-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aide-app.rb, Homebrew/homebrew-cask, 1
@@ -9014,7 +9017,7 @@ Homebrew-homebrew-cask/Casks/c/checkra1n.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cheetah3d.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chef-workstation.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chemdoodle.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/c/cherry-studio.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/cherry-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chessx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chia.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chiaki.rb, Homebrew/homebrew-cask, 0
@@ -13941,7 +13944,6 @@ Homebrew-homebrew-cask/Casks/o/open-in-code.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-video-downloader.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-webui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openaudible.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/o/openbb-terminal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openbci.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openboard.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openboardview.rb, Homebrew/homebrew-cask, 1
@@ -14970,7 +14972,6 @@ Homebrew-homebrew-cask/Casks/s/sound-siphon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/soundanchor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/soundboosterlite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/soundflower.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/s/soundflowerbed.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/soundsource.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/soundsource@test.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/soundtoys.rb, Homebrew/homebrew-cask, 0

@@ -3,19 +3,16 @@ class Smake < Formula
   homepage "https://codeberg.org/schilytools/schilytools"
   url "https://codeberg.org/schilytools/schilytools/archive/2024-03-21.tar.gz"
   sha256 "4d66bf35a5bc2927248fac82266b56514fde07c1acda66f25b9c42ccff560a02"
-  license "GPL-2.0-only"
+  license "CDDL-1.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "935c37ae0dc9258ccd97c8cf55851d91dd4c0ac1399fd138f61edec5dabf4306"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b2c9095c632a8c91be31c300a3a21234bc06c0cfec1772d9ca0af21a4230c69c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "54d5687fe82a141e445b3e6bf8404dda343c41e57b0c67bc3292241b5af28d1a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b1f63df56d0dd8903164a3fa57dbf30b9d71904ddf051ef907e616e8b535da79"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a88dc2fafc2b3f3745e1ad3a79e82c0c252faf403ff54a2f67e66298114e9ff4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f46933438ba16e6944354e43afc1ed55572ded080b4267af8cb2e6fb7744107c"
-    sha256 cellar: :any_skip_relocation, ventura:        "76c0564c658f45e7d92c1ffaaedf2b5394ace1f29a124867288a47575f40a339"
-    sha256 cellar: :any_skip_relocation, monterey:       "8cf227992ec09344d3a74e81e4aa24b5c3b6747896bba6fdf8bc5b8ca55f57cc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "3f79e77a426444a0a251b6f839ea29f95a29552b912e660ccd21cf08c5a3a851"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b51d8b0c121455fff0ae8f7b5329566f202885e5d4ca0a8720e9a42c489435f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0049fe40e4b73f7f8c12607e2f1a6dec0547c73b0c0d7654585b4876edae939d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f89f5f1360c78408cedb0394404a92b6ef12dcd480b9f9fa7fc5a72ebdb3aeb3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5f9615864ca5742016f51d7bd0e21059bf6f95a6bb3860b482681e9208efda1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "66fe816d0aa3c85c04859b5bbf81583a3b1bbcb897a3cb8b00a7de1c7aaef50d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ffecd47d212b07d23f4c032e3ac9a5e0440e13a305eaccaff9b9b25c38bb1bb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bec844465d1f8b69f5b87ea582994f59c8385e310b926f7c7743acf6db587cd"
   end
 
   def install
@@ -38,6 +35,7 @@ class Smake < Formula
     bin.install Dir.glob("smake/OBJ/*/smake")
     man1.install Dir.glob("smake/OBJ/*/*/*.1")
     man5.install Dir.glob("man/man5/OBJ/*/*/*.5")
+    prefix.install "CDDL.Schily.txt"
   end
 
   test do

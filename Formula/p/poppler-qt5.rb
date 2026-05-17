@@ -3,7 +3,7 @@ class PopplerQt5 < Formula
   homepage "https://poppler.freedesktop.org/"
   url "https://poppler.freedesktop.org/poppler-26.04.0.tar.xz"
   sha256 "b0955163114af96bc0106f68cb24daf973a629462453d8b82775f81b0d4e0693"
-  license "GPL-2.0-only"
+  license any_of: ["GPL-2.0-only", "GPL-3.0-only"] # see README-XPDF
   compatibility_version 1
   head "https://gitlab.freedesktop.org/poppler/poppler.git", branch: "master"
 
@@ -12,12 +12,13 @@ class PopplerQt5 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e2763814ac3f6f8f9e950c616a09d7867a44b533e24cc118cbc392abde4e5c9a"
-    sha256 arm64_sequoia: "425c8bde7817499b81df604aca37606aa4923d33f3e282e9d1d7362075e6599b"
-    sha256 arm64_sonoma:  "bc56ec9117fe7a148b7a23f25147933f5d70661a36fda3b87cc4e1970aec887a"
-    sha256 sonoma:        "b954b3818170a7b473dfba0c9529b5420bbce348b3452c410fe45972749445bd"
-    sha256 arm64_linux:   "b698cc6d2060243767d6cf3bff29f0f945167b959a80fac35ca7dcc5997b2c9d"
-    sha256 x86_64_linux:  "488f73e17a164570643971b67dd14a44b77cbb245f007ff088086e58920ddb0d"
+    rebuild 1
+    sha256 arm64_tahoe:   "bee38516cb7a8a3417615eae7c07a3f92a3557131fc619949fb75efc1af02161"
+    sha256 arm64_sequoia: "830bd40bd7832856b415d1b30d2e8326f25f7c9862a54d81d986deedb3569e60"
+    sha256 arm64_sonoma:  "ce7f53d9d584acd0fb02e3e2460f17e60f47b8ac54614a45e4d81c2e1cf7691d"
+    sha256 sonoma:        "a0bd36a59abf205d3998bfb78750b252eba1b7e7af4ff7122998253303090529"
+    sha256 arm64_linux:   "3a7764bb4f098957677728f0506b3a2423a4cd1c37e6fc27cbc89b117eed7e15"
+    sha256 x86_64_linux:  "3bb8f819256198559fe62e783d3b0e5c004494530e7bab36c91e9f727226c7c1"
   end
 
   keg_only "it conflicts with poppler"
@@ -49,7 +50,6 @@ class PopplerQt5 < Formula
   on_macos do
     depends_on "gettext"
     depends_on "gpgme"
-    depends_on "libassuan"
   end
 
   on_linux do
@@ -70,7 +70,6 @@ class PopplerQt5 < Formula
     args = std_cmake_args + %W[
       -DBUILD_GTK_TESTS=OFF
       -DENABLE_BOOST=OFF
-      -DENABLE_CMS=lcms2
       -DENABLE_GLIB=ON
       -DENABLE_QT5=ON
       -DENABLE_QT6=OFF
@@ -88,6 +87,9 @@ class PopplerQt5 < Formula
     lib.install "build_static/libpoppler.a"
     lib.install "build_static/cpp/libpoppler-cpp.a"
     lib.install "build_static/glib/libpoppler-glib.a"
+
+    # Add extra metafiles for licensing information
+    prefix.install "COPYING3", "README-XPDF"
 
     resource("font-data").stage do
       system "make", "install", "prefix=#{prefix}"

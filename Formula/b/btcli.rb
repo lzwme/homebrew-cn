@@ -3,19 +3,18 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https://docs.bittensor.com/btcli"
-  url "https://files.pythonhosted.org/packages/87/7b/68de741a574a0f28e06acf9dc87dd3443c8227d286981fa394699eecd90a/bittensor_cli-9.21.1.tar.gz"
-  sha256 "bff86ca875f3e120227f25e432bf17243b49154d68d88891581d7337f7a2ae33"
+  url "https://files.pythonhosted.org/packages/51/c4/976097f2faa8b850b15af4db79b0dc3e6e46b2ad948a202bcc2dc7c809a3/bittensor_cli-9.21.2.tar.gz"
+  sha256 "055b79fde5c348038f199a26eab0f5f29cc7b2b4450b0676cd737cdf56d25cd4"
   license "MIT"
-  revision 1
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5ca1a1fa4b0fc7cd0deab359aaa00870076311ff2dc837d6499025fd7a0c89e0"
-    sha256 cellar: :any,                 arm64_sequoia: "007a472d8fa0fd187703765e9c7aebbc4c4a314217d6e1272e643437d6c3e815"
-    sha256 cellar: :any,                 arm64_sonoma:  "5ea2e00772a13c9806089e7b33fdde89f360f859c23122732c1b8e36eebf3449"
-    sha256 cellar: :any,                 sonoma:        "a88272af5108d24993bed0c76a25160494670bf7680fcc359dd845d5d8c32204"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9db3b64420c3fce9f8a46132d22a3c25137c4adab83101fe14d48d903acbaaf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29048583f125f8a4e51d81e2a1924277a897f5f224b9e8042507f4d45c2129ce"
+    sha256 cellar: :any,                 arm64_tahoe:   "dfa9148e2c1363dc8da94625a66de9fba96c91254b265f2e042f8fba99fa7afd"
+    sha256 cellar: :any,                 arm64_sequoia: "a7839ca0872b03d0906cb9ad58bc417d7b11f5da36a53e86ec6e88feab82262e"
+    sha256 cellar: :any,                 arm64_sonoma:  "6c94b1cbc4edab180323d765d00867cde407bf5842672198fb9039c582778937"
+    sha256 cellar: :any,                 sonoma:        "ae97b41fbf335bc7f9cd2e67ab228745408dea486a61adb3be8b2c0a2b64aac7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfd2a0cbe0b943103f3982f00e698785ab244a9236a83451d3ad8e3aa6136c28"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "501143dc9aa05bbc7afd2c1b666550c85986f389f123017b415db0f459affd48"
   end
 
   depends_on "rust" => :build # for bittensor-wallet, plotly
@@ -56,23 +55,13 @@ class Btcli < Formula
   end
 
   resource "async-substrate-interface" do
-    url "https://files.pythonhosted.org/packages/50/e6/387dc39e5a6731cfbc4e4ebbbffdcdbcf5ac22c61588cf0f112c64121eb0/async_substrate_interface-2.0.3.tar.gz"
-    sha256 "35692730cea1f2aa6a9cbc526ecf67a07b3a67e88b2afc68d5db38058173dd7e"
+    url "https://files.pythonhosted.org/packages/00/05/a7c693b274dbf8c6ed2ceb6b38afe9e78e1dbec36b9d5a2e622cd9104a81/async_substrate_interface-2.0.4.tar.gz"
+    sha256 "6c686a035059b6922e2a3372a62ddf54484fa117fde5d6741d1aeb3e01f67117"
   end
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
     sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
-  end
-
-  resource "backoff" do
-    url "https://files.pythonhosted.org/packages/47/d7/5bbeb12c44d7c4f2fb5b56abce497eb5ed9f34d85701de869acedd602619/backoff-2.2.1.tar.gz"
-    sha256 "03f829f5bb1923180821643f8753b0502c3b682293992485b0eef2807afa5cba"
-  end
-
-  resource "base58" do
-    url "https://files.pythonhosted.org/packages/7f/45/8ae61209bb9015f516102fa559a2914178da1d5868428bd86a1b4421141d/base58-2.1.1.tar.gz"
-    sha256 "c5d0cb3f5b6e81e8e35da5754388ddcc6d0d14b6c6a132cb93d69ed580a7278c"
   end
 
   resource "bittensor-drand" do
@@ -91,8 +80,8 @@ class Btcli < Formula
   end
 
   resource "cyscale" do
-    url "https://files.pythonhosted.org/packages/c8/26/58ac0791e64f711ff2999f532737e4de5a2b4a5fb1e2150302e1c4b7bacd/cyscale-0.3.3.tar.gz"
-    sha256 "e1d1f2fc95ef4b1bfb6ebabc72121ec519a0d996e74d905fc0d6142ec4f8694d"
+    url "https://files.pythonhosted.org/packages/41/71/8d6682ce88a8b1f02ebdfc658fc16d36dabfebe17eb0d7a743fbf0f2cb2b/cyscale-0.4.0.tar.gz"
+    sha256 "0ca5ad331a99e86b944876ef2c45962d0a4ae7e915374fd8d8f6b7c0a3779028"
   end
 
   resource "frozenlist" do
@@ -111,8 +100,8 @@ class Btcli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jinja2" do
@@ -135,19 +124,14 @@ class Btcli < Formula
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
-  resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/a2/f7/139d22fef48ac78127d18e01d80cf1be40236ae489769d17f35c3d425293/more_itertools-11.0.2.tar.gz"
-    sha256 "392a9e1e362cbc106a2457d37cabf9b36e5e12efd4ebff1654630e76597df804"
-  end
-
   resource "multidict" do
     url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
     sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
   end
 
   resource "narwhals" do
-    url "https://files.pythonhosted.org/packages/e9/f3/257adc69a71011b4c8cda321b00f02c5bf1980ae38ffd05a58d9632d4de8/narwhals-2.20.0.tar.gz"
-    sha256 "c10994975fa7dc5a68c2cffcddbd5908fc8ebb2d463c5bab085309c0ee1f551e"
+    url "https://files.pythonhosted.org/packages/2d/0e/3ad61eb87088cc4932e0d851531fa82f845a6230b68b091a0e298cc7e537/narwhals-2.21.0.tar.gz"
+    sha256 "7c6e7f50528e62b7a967dd864d7e117d2955d38d4f730653ce46a9861358e2dc"
   end
 
   resource "netaddr" do
@@ -171,13 +155,8 @@ class Btcli < Formula
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/9e/da/e9fc233cf63743258bff22b3dfa7ea5baef7b5bc324af47a0ad89b8ffc6f/propcache-0.4.1.tar.gz"
-    sha256 "f48107a8c637e80362555f37ecf49abe20370e557cc4ab374f04ec4423c97c3d"
-  end
-
-  resource "pycryptodome" do
-    url "https://files.pythonhosted.org/packages/8e/a6/8452177684d5e906854776276ddd34eca30d1b1e15aa1ee9cefc289a33f5/pycryptodome-3.23.0.tar.gz"
-    sha256 "447700a657182d60338bab09fdb27518f8856aecd80ae4c6bdddb67ff5da44ef"
+    url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
+    sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
   end
 
   resource "pygments" do

@@ -3,17 +3,17 @@ class AwsSamCli < Formula
 
   desc "CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM"
   homepage "https://aws.amazon.com/serverless/sam/"
-  url "https://files.pythonhosted.org/packages/29/b6/572838a7629e052b0f5fb397cac5e67080840cec0fbd00d46da62b944754/aws_sam_cli-1.160.0.tar.gz"
-  sha256 "394aa692befd232694e3f7fb9d6ba7610d0f7e32903a20d9e700dd37a71292d9"
+  url "https://files.pythonhosted.org/packages/64/03/f6ef51cd97392664e70a5c1c46f9d75337c67c93443d699a50202881ad1f/aws_sam_cli-1.160.1.tar.gz"
+  sha256 "7e7e6f103256bf87a087c5149af2bdfed83f389a686ec1318994329d5b0b6875"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b39c4b78f12d49989644da6d91987074dd960bb335a8450532d9d134d2f35272"
-    sha256 cellar: :any,                 arm64_sequoia: "39cde5fc2c1cec561d9b53c0cef3efeedbf8113e555c35a3194d897f0de4e7fb"
-    sha256 cellar: :any,                 arm64_sonoma:  "0b06dcc66b979e8203d90ebe0711972c3faee63a34420c3e965fd2b2e4449f38"
-    sha256 cellar: :any,                 sonoma:        "f2b467541e35b362560f1b10c6975fd427b4715ab1ec30f9185982c404e1bb35"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a50632eb07576e51cda1c2bf1433d7a3523d8e8c7b2610cc60f63bb1b1bdea4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "062d1a54be981552c5c31ca01f1d73b5489c1e0b13cedc15ea3872ef85f4c08f"
+    sha256 cellar: :any,                 arm64_tahoe:   "264df81a118a641fba18c6add7ca40214a861ac763091a1e6c822e23a6c2f94a"
+    sha256 cellar: :any,                 arm64_sequoia: "72e1ffaa532fb901ddf13008f33c465a722b5082aac9ddd8e2a0dd28d99f13eb"
+    sha256 cellar: :any,                 arm64_sonoma:  "5966538fc36328e13ab26d9b3499ef9eb5378e79ce34f6f685dce8434d9ce784"
+    sha256 cellar: :any,                 sonoma:        "3406ec08cc8feb1cba5fc35fda8b0bc66589f1a55e8d3373d7825d922a62e266"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f39cf865cf9430af596608d7b87c095647ce444946f298f62ad9df21bbfb610"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be1de1dde3144775d536eaed1d4456cee9a86279a77d51df5c22bd679a8d89f2"
   end
 
   depends_on "cmake" => :build # for `awscrt`
@@ -67,18 +67,18 @@ class AwsSamCli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0a/37/78c630d1308964aa9abf44951d9c4df776546ff37251ec2434944e205c4e/boto3-1.43.6.tar.gz"
-    sha256 "e6315effaf12b890b99956e6f8e2c3000a3f64e4ee91943cec3895ce9a836afb"
+    url "https://files.pythonhosted.org/packages/6b/0d/67ebf496fe061397f7eb907504e950fe6d2fa5945fd05891f3033376e471/boto3-1.43.7.tar.gz"
+    sha256 "b1e4b40f4a828c67291b12ebefd17d87a57321101e4a0c969b2f593a0310f343"
   end
 
   resource "boto3-stubs" do
-    url "https://files.pythonhosted.org/packages/3a/68/9204bacf672e5bf7841c8dd03c8dcd988912e83dcef46fd5c14468a6b7ea/boto3_stubs-1.43.7.tar.gz"
-    sha256 "7e33cc842cd1e9f6bccc88ed53b1dcc93f55216f69ba9bbac90d062c870b752f"
+    url "https://files.pythonhosted.org/packages/11/8c/cc6f77e2eef6be36bcf4d47cf6e8c01e6da2929079758d290726fbc9ea8e/boto3_stubs-1.43.8.tar.gz"
+    sha256 "bb4a6c9476cd879bb3812e1b3b93c4647b3d4744e074be7463cb283fb62adb42"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/ed/be/59144884fa71908e2ac389cfe0fd2ebe8e8adb47bcc994188eb59967406a/botocore-1.43.7.tar.gz"
-    sha256 "abbbc623c52dce86ea9d4534d35e2d6ce447d98edfdaced1695ee0278d6063e3"
+    url "https://files.pythonhosted.org/packages/1c/bb/7c1f5d12e1fbaf88a03d504bfa2f03fa6913f127051a7b121fe3bcaadefb/botocore-1.43.8.tar.gz"
+    sha256 "611ad8b1f60661373cd39d9391ff16f1eaf8f5cb1d0a691563a4201d1a2603ce"
   end
 
   resource "botocore-stubs" do
@@ -312,8 +312,8 @@ class AwsSamCli < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/24/36/7180e7f077c38108945dbbdf60fe04db681c3feb6e96419f8c6dc8723741/requests-2.34.1.tar.gz"
-    sha256 "0fc5669f2b69704449fe1552360bd2a73a54512dfd03e65529157f1513322beb"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "rich" do

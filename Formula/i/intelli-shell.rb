@@ -1,19 +1,18 @@
 class IntelliShell < Formula
   desc "Like IntelliSense, but for shells"
   homepage "https://lasantosr.github.io/intelli-shell/"
-  url "https://ghfast.top/https://github.com/lasantosr/intelli-shell/archive/refs/tags/v3.4.0.tar.gz"
-  sha256 "e2b3fcdda6fa0564f47fb3dc5ce06729f0dc9532e538bb847dad1e684f545e4b"
+  url "https://ghfast.top/https://github.com/lasantosr/intelli-shell/archive/refs/tags/v3.4.1.tar.gz"
+  sha256 "b5c1f0be3212f8818122fbb1a011c5990cbba0ff005b26d793ee065136563843"
   license "Apache-2.0"
   head "https://github.com/lasantosr/intelli-shell.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "a866f596b657e9767f18ccb6662f0140a030991ad2bf4a4ca4eb15febc910820"
-    sha256 cellar: :any,                 arm64_sequoia: "08150e5234950a8396d798dbd9bc570a368d421a050688c05898bc9ec631957c"
-    sha256 cellar: :any,                 arm64_sonoma:  "b801a9ef49f818cf25141f208cff0baef2a0d65518d159428f0daee1e3f9435b"
-    sha256 cellar: :any,                 sonoma:        "4511eb7a9ef917c8eea3fad6488c93c7db468442842794fbd2b1fe2275a679b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "92ab652310a0c3d980648ef0565c44a782e2b6dda87e7b3c5d9a5d0d8adf2e72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26198ee83287fa56bee15edace4c0a166cfc64b3c3ec17b41dfc746b3d823ef3"
+    sha256 cellar: :any,                 arm64_tahoe:   "f1def62e97bd8b80353677f9cf28300a41f5e93e6f36d8e117841fc81518538b"
+    sha256 cellar: :any,                 arm64_sequoia: "ba515a6e8e991f5d221ca586d53f9ca6056010305ed5bf2af40a3c2ebe056d46"
+    sha256 cellar: :any,                 arm64_sonoma:  "461b990b141a88175075993117f22a9f1012fe2e233fb74b070526e0fc386236"
+    sha256 cellar: :any,                 sonoma:        "48ddd3027f10de5c7180207299347f27e40752b37d5f0b4823a93f3a9687171c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "46bb96298b8d895db04ed5a8fafb21ebb31c229cdb6fc30f99936fb1ea1a891d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48a264c5a5f815074e7be18caa3e2c1d5462f29005bdb8916a818f470f8eae5c"
   end
 
   depends_on "pkgconf" => :build

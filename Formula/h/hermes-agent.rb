@@ -3,19 +3,18 @@ class HermesAgent < Formula
 
   desc "Self-improving AI agent that creates skills from experience"
   homepage "https://hermes-agent.nousresearch.com"
-  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.5.7.tar.gz"
-  sha256 "75b629e787a68164713b66d1dd163c65f853474c9c775cd6f206797a629aa2c0"
+  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.5.16.tar.gz"
+  sha256 "c0a554050a50ee9a62f3fa5cd288a167ba5640c42d647d100cdea084b7294143"
   license "MIT"
-  revision 1
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9754fe16aa46960d9bb37929ad21afd461bc4481c6876103610eec88c52edf95"
-    sha256 cellar: :any,                 arm64_sequoia: "018e78a60831d798ffde48b40d807db8e8a78760ed5aa654f8b52b2afe05558b"
-    sha256 cellar: :any,                 arm64_sonoma:  "cea088118ae9d3a36b9921c6448290a349fdec9864106cd7d3e999061a8c5e1b"
-    sha256 cellar: :any,                 sonoma:        "9f5d9681169a2491281f6b9321b89b1656684da41f36fffff163e7146df9770e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d09a69127290c8d3fbe7df13be7ec3aad7b3ed65d51f70f49184b71a1ede79e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "329103ffc2a0c72e53985df899c01b9d5a2d004aea1f8d5241b914c9753e5214"
+    sha256 cellar: :any,                 arm64_tahoe:   "87d9ba3f810bee32b8cbdd58cf3692e128015b8000684687fe3da8b241dba325"
+    sha256 cellar: :any,                 arm64_sequoia: "55bfa44a6a01409ff8a1a303a29b712706ed34e0db559a99c96bedd9138216db"
+    sha256 cellar: :any,                 arm64_sonoma:  "b6dae239b3a9aa9541f456ba08100eb71f78a8587500c0d06cee1d2fabcff349"
+    sha256 cellar: :any,                 sonoma:        "82604e971071b73ee33be8595b65f53a45b6f62e45e6182b6e0cb051a0de6a27"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ccb6e1fb556320de7de5a153dea48c581c49356b1b6b725384f2c9300964859"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39eb5e13b3f0acf3e5b964c4bd1279985b4967fd3c6069c52537ec18a7c78014"
   end
 
   depends_on "pkgconf" => :build

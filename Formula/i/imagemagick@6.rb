@@ -24,6 +24,9 @@ class ImagemagickAT6 < Formula
 
   keg_only :versioned_formula
 
+  deprecate! date: "2026-05-01", because: "is end of life and only receives security updates"
+  disable! date: "2029-04-01", because: :repo_archived, replacement_formula: "imagemagick"
+
   depends_on "pkgconf" => :build
 
   depends_on "fontconfig"

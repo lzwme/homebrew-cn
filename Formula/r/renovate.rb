@@ -2,8 +2,8 @@ class Renovate < Formula
   desc "Automated dependency updates. Flexible so you don't need to be"
   homepage "https://github.com/renovatebot/renovate"
   # TODO: Switch to npm registry URL when https://github.com/renovatebot/renovate/discussions/42965 is fixed
-  url "https://ghfast.top/https://github.com/renovatebot/renovate/archive/refs/tags/43.180.0.tar.gz"
-  sha256 "b0b74f73aeac1469c3d5c5ceca8873269d9229ad571a1f7fdd30d6cba8b8a136"
+  url "https://ghfast.top/https://github.com/renovatebot/renovate/archive/refs/tags/43.181.0.tar.gz"
+  sha256 "d7bf310c0225ab9cd22d4bf19833572e686b42d179b2f4bf4895a309c730b7b5"
   license "AGPL-3.0-only"
 
   # livecheck needs to surface multiple versions for version throttling but
@@ -19,12 +19,12 @@ class Renovate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cd05dcae1a13393baec7930dd955957394744a9994cd371ac5a5abcd256e23fa"
+    sha256 cellar: :any_skip_relocation, all: "0abe16c04fe480ed25f7ebbaf43486b9d9eb9f2f7899318530139b9e2aa35fce"
   end
 
   depends_on "node@24"
 
-  uses_from_macos "git", since: :monterey
+  uses_from_macos "git", since: :monterey # needs git >= 2.33.0 (Apple Git-136)
 
   def install
     # TODO: switch back to `system "npm", "install", *std_npm_args` when using npm registry URL
