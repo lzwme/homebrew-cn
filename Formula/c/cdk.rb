@@ -3,7 +3,7 @@ class Cdk < Formula
   homepage "https://invisible-island.net/cdk/"
   url "https://invisible-mirror.net/archives/cdk/cdk-5.0-20260119.tgz"
   sha256 "46bb68441e698a7b1f642e2564968a7700afef0386442afd5cf2e7b296d30ee5"
-  license "BSD-4-Clause-UC"
+  license "X11-distribute-modifications-variant"
 
   livecheck do
     url "https://invisible-mirror.net/archives/cdk/"

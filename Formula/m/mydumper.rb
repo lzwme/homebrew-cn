@@ -1,8 +1,8 @@
 class Mydumper < Formula
   desc "MySQL logical backup tool"
   homepage "https://github.com/mydumper/mydumper"
-  url "https://ghfast.top/https://github.com/mydumper/mydumper/archive/refs/tags/v0.21.3-1.tar.gz"
-  sha256 "a6a6b4db319e67663410f26462597dfe22a0b34600ee35ada4180df07d8c6ce7"
+  url "https://ghfast.top/https://github.com/mydumper/mydumper/archive/refs/tags/v1.0.1-1.tar.gz"
+  sha256 "742b89f3bc4d87dbb310647c8f9bba6a41c533800a11d30b798e1e4314ba4492"
   license "GPL-3.0-or-later"
   head "https://github.com/mydumper/mydumper.git", branch: "master"
 
@@ -13,12 +13,12 @@ class Mydumper < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6ceae1418a596ebf672a7f921bcbb298b1428408b1fd23e7ef14877c19b3ba39"
-    sha256 cellar: :any,                 arm64_sequoia: "81b5f87b490b85a6d817c153027495a6054d753b5003b3a72b1816343643a44a"
-    sha256 cellar: :any,                 arm64_sonoma:  "d34929334ef51c9f56e40536e16ef56af28957095bbadbdf449f635895e59e7d"
-    sha256 cellar: :any,                 sonoma:        "c1e1e4fe3ccb3b602d2fcf678e9c0626374cc970f53c2c3d9ffd3bd74d19cc9a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "151822263f8176405cf8c3dc1329c1c1736294512d756b5b256c439e0e3bc010"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83fd06ce8a05b9badcd029600ebe977effdf8146e3718e602d89f39b2b9cf61b"
+    sha256 cellar: :any,                 arm64_tahoe:   "359a32be0af2674683becbfc06cb9351d0f5c1bc167e307a856a5218be11224d"
+    sha256 cellar: :any,                 arm64_sequoia: "7c8b7a61a8d6acc48bbad9258cbbe23f1aa8fdcf122c021b9054d5369299356e"
+    sha256 cellar: :any,                 arm64_sonoma:  "8e37060377da0431d3fceb123850559476bebb0957adbd7d824c83e62b80ba96"
+    sha256 cellar: :any,                 sonoma:        "5c2dddf71d740820de9c352160f9b2886f006d5b3e857a26fe7d40bd253cad19"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee8a883e046cef44b2448ae8fc54496a2aba4902b72d1fe5de1eaa76bd41ed0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9219bc5fae95f5ea4682da656f696d483788c0ca30fa28294729867d816bceed"
   end
 
   depends_on "cmake" => :build

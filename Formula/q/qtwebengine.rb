@@ -3,10 +3,10 @@ class Qtwebengine < Formula
 
   desc "Provides functionality for rendering regions of dynamic web content"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.0/submodules/qtwebengine-everywhere-src-6.11.0.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.0/submodules/qtwebengine-everywhere-src-6.11.0.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.0/submodules/qtwebengine-everywhere-src-6.11.0.tar.xz"
-  sha256 "63b921c8b2dd59152ced9a796676010166df044588ee00ef9429dc2fd2146736"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtwebengine-everywhere-src-6.11.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtwebengine-everywhere-src-6.11.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtwebengine-everywhere-src-6.11.1.tar.xz"
+  sha256 "679c66ccc6c158fc215e9c58ef160331ecd29974232e345c05161889f8667083"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qwebengine_convert_dict; QtWebEngineProcess
@@ -35,11 +35,11 @@ class Qtwebengine < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b14e11b3baf33f5e98aaab5a7ba09275fd23d1b57251e30d7e7ada7a4f580d19"
-    sha256 cellar: :any,                 arm64_sequoia: "177c51464a87e6dfd905bab23ed2ac0ee22ce2b7d9a87b3e8b65f2f6979fd66a"
-    sha256 cellar: :any,                 arm64_sonoma:  "a29194c16f53908e8d5b1a771a45ec7da786c01e612bad195eba84f9e3f38926"
-    sha256 cellar: :any,                 sonoma:        "06dde7423868b3f32b49cf2169b0298542efd457f2341831baf3810e671c4c2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7147da96828ae61a82ebca7e3be1d081e4d70951c7070dcec50ae295ef5c7f1c"
+    sha256 cellar: :any,                 arm64_tahoe:   "27c941594e21c1030944063ae89e809e15a51feee81147704ed904c1cb749974"
+    sha256 cellar: :any,                 arm64_sequoia: "17ad5d170ab118eff4c1c1f0e6a525f4a927ee999ff2a66a198068ce1d0f25ae"
+    sha256 cellar: :any,                 arm64_sonoma:  "d17a47708aaf9478ad498c1dede4dab9b55917235c6132ab92ca1810db03c996"
+    sha256 cellar: :any,                 sonoma:        "507e1ad30d3cfbcd7328f6800d341ee75d9bfdb81841bd98b00a3d0cb83978e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6c7431ce6506af0c2012da0dbdb4588b7a73360b393342486cea5aa97c52b8c"
   end
 
   depends_on "cmake" => [:build, :test]

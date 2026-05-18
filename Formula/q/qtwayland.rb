@@ -1,10 +1,10 @@
 class Qtwayland < Formula
   desc "Wayland platform plugin and QtWaylandCompositor API"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.0/submodules/qtwayland-everywhere-src-6.11.0.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.0/submodules/qtwayland-everywhere-src-6.11.0.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.0/submodules/qtwayland-everywhere-src-6.11.0.tar.xz"
-  sha256 "e710e6e760f92922b86e4dd68f6bbe94ef6510919519d1b0068e874b5ad84d37"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtwayland-everywhere-src-6.11.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtwayland-everywhere-src-6.11.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtwayland-everywhere-src-6.11.1.tar.xz"
+  sha256 "95788aa502f75441d4edf65932b235f76523084e13dbbb7b9ee2d207b32bd9b3"
   license all_of: [
     "GPL-3.0-only", # WaylandCompositor
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] }, # WaylandClient
@@ -21,8 +21,8 @@ class Qtwayland < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "f8fb0f841454cd060f8fb449b38fc88e2911de6c7c444dff7cbfafca0b6e2d6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b204aede43af23e5e7724c54894ea0d94f1c7182ba281f959a3679c8fa995159"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "63e1522b7434a6d4f3dfdbd6e591893b995bd8d138f49460e30b15fc9edd4220"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "faf04d8185e556faf11bece3687ca3a336270e36d272351c9000c9e3f0a437a7"
   end
 
   depends_on "cmake" => :build

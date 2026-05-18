@@ -1,17 +1,17 @@
 class Webdis < Formula
   desc "Redis HTTP interface with JSON output"
   homepage "https://webd.is/"
-  url "https://ghfast.top/https://github.com/nicolasff/webdis/archive/refs/tags/0.1.24.tar.gz"
-  sha256 "449ebbfa27c94e942fb2927c5d5a338456cbf8c7bafa00d6f6bd8ec45ad044a2"
+  url "https://ghfast.top/https://github.com/nicolasff/webdis/archive/refs/tags/0.1.25.tar.gz"
+  sha256 "60dc5e876a1df74d83ce5db41f99c61e62f45fa5ea7dbfedde4b1c99530f8032"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ca7f5b95b3e7aacec444a6c121da240705292adb581caa513ee0974405202c94"
-    sha256 cellar: :any,                 arm64_sequoia: "114bca110c1b02371606f394cb06575a90ccc4b30d0294429f6914ae7cd1e588"
-    sha256 cellar: :any,                 arm64_sonoma:  "6109f601d3c4c3f56279e24f50fd978f277cd70371e29a04f651aadd0d590d3c"
-    sha256 cellar: :any,                 sonoma:        "135f913616b097726fe0611009e09902f58f7ef2e050c15d4a51f497d2d6f907"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2268b5724bac082669c0b9ddae7ecdcc45698ff77149d33c589017f3986896a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4dec5745afcf7b2a2c0a74851b2b23b02665c911ab5271505516b69203582ca1"
+    sha256 cellar: :any,                 arm64_tahoe:   "086d5ce5fefbe2b76d819f917bc4a924157e4b95bee9d364857bf87272f4f420"
+    sha256 cellar: :any,                 arm64_sequoia: "6c348962e8ecbfcfbc52032a5b149f4b2ac407c5dbbeaf63a0dce90f206e6a8b"
+    sha256 cellar: :any,                 arm64_sonoma:  "a9e8e4c1bc861226004596ce620aa310fe1c8077821303186e825399c526565d"
+    sha256 cellar: :any,                 sonoma:        "2b6d33d09f60a3304174206bf7eed46607360b802bcf9c74e51547ebf7733623"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cc0a82ee4b77804b7a46df1733c4638562c7c4979bcabd9ca5d0c37e3030b51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db3f743c3ae3dd1febe4ba34cffffa1713d4524eaf0b397091e7830939acc230"
   end
 
   depends_on "libevent"

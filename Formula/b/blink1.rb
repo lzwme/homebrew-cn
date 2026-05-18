@@ -2,18 +2,18 @@ class Blink1 < Formula
   desc "Control blink(1) indicator light"
   homepage "https://blink1.thingm.com/"
   url "https://github.com/todbot/blink1-tool.git",
-      tag:      "v2.4.0",
-      revision: "c0d145b55af30135cfcb161cb63267d591143d69"
-  license "CC-BY-SA-3.0"
+      tag:      "v2.5.0",
+      revision: "600da2c6f14e22fecee0e3871463cdab99a68525"
+  license any_of: ["CC-BY-SA-4.0", "MIT"]
   head "https://github.com/todbot/blink1-tool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d1ac7aaa3855a99d360f2884e59b4662dd398fd3240d2a6f247764f4468f6f53"
-    sha256 cellar: :any,                 arm64_sequoia: "2c6519268e947a70cd5dc1d33ce0e0b8605807537cebcb97ef2d7b0d177014a5"
-    sha256 cellar: :any,                 arm64_sonoma:  "b110ab0405453732b655ff9efe92fbfcb99050ca9ca2f462387228e223cf9b84"
-    sha256 cellar: :any,                 sonoma:        "40fa9e8de27f1760fc30e89ec9aac8292ec38f3101e48ee795de323e64d3d138"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55795035b5ab8d7b87698d3aaafe2acb9ef8c1fbb6215677259f92c2a4478bb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "040a75103d64cc9ada264ea012553afe3f287cb91128373fabde2b0059a94d06"
+    sha256 cellar: :any,                 arm64_tahoe:   "7765cbc8005fcdeca2233f470b533288c1d2f1bc42a5e0984d3977c4200044d7"
+    sha256 cellar: :any,                 arm64_sequoia: "a7b8fb971914d64917d6fb275e488341c25e3e7e2fe2bd8e160625cb09511420"
+    sha256 cellar: :any,                 arm64_sonoma:  "da5c570fe69cf4a065b5931f9b2e779221ee1e4377fd2cba57ab95ec91c112f1"
+    sha256 cellar: :any,                 sonoma:        "43ff210f734a4b7b33b392dde61e307dcc22e5abc3a4420fd7b2c1297ef5fbb8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a76cf8c85bd885caba55246ef3fa7b995f8b0c9e3667763a049b05bd3531dc9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6858a243ce294d2dce4316156adca622f1b298bb065fe423ba0ba0ed07a7a4d"
   end
 
   on_linux do
@@ -22,11 +22,9 @@ class Blink1 < Formula
   end
 
   def install
+    mkdir_p [bin, include, lib/"pkgconfig"]
     system "make"
-    bin.install "blink1-tool"
-    include.install "blink1-lib.h"
-    library = OS.mac? ? "libBlink1.dylib" : "libblink1.so"
-    lib.install library
+    system "make", "install", "install-dev", "PREFIX=#{prefix}"
   end
 
   test do

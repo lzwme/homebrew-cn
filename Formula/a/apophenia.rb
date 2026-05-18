@@ -19,6 +19,14 @@ class Apophenia < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2980951404674b5fc9a6957d6fe7ebb8ae0ded37f3c0c444c732115f5b3f6638"
   end
 
+  # GPL-2.0-only code cannot use a library under GPL-3.0-or-later, see
+  # https://www.gnu.org/licenses/gpl-faq.html#AllCompatibility
+  #
+  # In the past there was an exception to allow distributing binaries but it was removed:
+  # https://github.com/b-k/apophenia/commit/3e3fe1bfea36348f82e5efa9d49fe39e217263f4
+  # https://github.com/b-k/apophenia/commit/ce77bfccb94e68ae6ab28d07e44b4324c886c0e8
+  disable! date: "2026-05-16", because: "needs `gsl` but is under an incompatible license"
+
   depends_on "gsl"
 
   uses_from_macos "sqlite"

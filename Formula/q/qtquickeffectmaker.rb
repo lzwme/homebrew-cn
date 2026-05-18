@@ -1,10 +1,10 @@
 class Qtquickeffectmaker < Formula
   desc "Tool to create custom Qt Quick shader effects"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.0/submodules/qtquickeffectmaker-everywhere-src-6.11.0.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.0/submodules/qtquickeffectmaker-everywhere-src-6.11.0.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.0/submodules/qtquickeffectmaker-everywhere-src-6.11.0.tar.xz"
-  sha256 "ac02813fee62de71b8857fdab51cc20f752ebbefba80fe0ea7a2d77c12d9d715"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtquickeffectmaker-everywhere-src-6.11.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtquickeffectmaker-everywhere-src-6.11.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtquickeffectmaker-everywhere-src-6.11.1.tar.xz"
+  sha256 "cfe63e70e88bdd126a175762d3eeb38eb336e45beceedcbd027bc5362744136b"
   license all_of: [
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     "BSD-3-Clause", # BlurHelper.qml
@@ -17,12 +17,12 @@ class Qtquickeffectmaker < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5a5f0b3dbb30fc5f69d3664a00486a34165a6bca85a81cdedd5e86e2277e3683"
-    sha256 cellar: :any,                 arm64_sequoia: "5f64879adeff197bf46967f7de4cf96b5d4da0f27d4a789670d80b7520995d28"
-    sha256 cellar: :any,                 arm64_sonoma:  "8a6d7b9c1f465ff1dcf2e9791f4df1503723e2afe003f52dd0e45366bfb8edaa"
-    sha256 cellar: :any,                 sonoma:        "5ffeb8b51854b6c8be1be8013b67ed80987a378de0ecbfe640b9353975bc19c1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d382fccde57145db70860913d77661210f9f0eb4a254884160d9fc60834bf5eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6729291906099ca167376b4543bc08c873a979ccbe944393e88645dd61d0e91"
+    sha256 cellar: :any,                 arm64_tahoe:   "4bfc9b0e8279512f39bbc4657e6f01ba3fe500cc2d68a1778af868d657732597"
+    sha256 cellar: :any,                 arm64_sequoia: "9a9c2b54ed683aefbe2e08a4914dd1d8a75a2738b8016e769c3c8a08e3b07b73"
+    sha256 cellar: :any,                 arm64_sonoma:  "284228a5a53138edcc4b90a3375b77a7440a3124eb425d1986834796c31ed717"
+    sha256 cellar: :any,                 sonoma:        "6fbf2c2fd85bd0040dac86ffe53d6da38b9cd2a853d1aee6ec5736bf9f0312e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b564300e21269a824fcfeeba8cae336daf9b22a6b58bb3d7ccc5f4c7b1d2b2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "153233ca6b17a7f647953452dddad8785956894c8c70276bfe7d3707014843f2"
   end
 
   depends_on "cmake" => :build

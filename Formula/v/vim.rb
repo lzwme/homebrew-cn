@@ -26,22 +26,23 @@ class Vim < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c49d9efcc6933d31a49703c13ee2676515d2b51dac912826ea25519d672f99af"
-    sha256 arm64_sequoia: "09667378d89a6f4c45cf1bea423dadd325eb7a6771bb000da13e3d64cdc1ce34"
-    sha256 arm64_sonoma:  "ce8882e5917efd6443869d7ca538a9bd0c0daa7c204fed6044131142c979b8ad"
-    sha256 sonoma:        "b1da150800f88977fe5656c9863ed573431b02e28a0c6cd345d67bfe25076535"
-    sha256 arm64_linux:   "6b8a7dac4d75f738a0c990ef41c64629e83a1a13c3d0281acdeb006837849593"
-    sha256 x86_64_linux:  "37c0c937ea8b12ec92370ed43b7de3885f6fdb51c7fd297e6b2325935e27eab3"
+    rebuild 1
+    sha256 arm64_tahoe:   "9ede85be8b832902a861e3765b4535a894017f6dd1a10d6325501c6f3d3bd7b9"
+    sha256 arm64_sequoia: "c68d9ab6de6bcd5176e6e3a10a5c41fa4d4e7e17d82460b80b6da654114ec992"
+    sha256 arm64_sonoma:  "c2c2c586aa5fef7fd8fec2cd52cbd11e0036b7a66c10e6a630d13119b6067cf4"
+    sha256 sonoma:        "19ec9c6a29531a4fe6bb97ea61931dcbb51efe845ceeac3294e48eaae4d90814"
+    sha256 arm64_linux:   "669a70808d252e626f563768724610509407bc3568eccd778a9e1d55bd04cb68"
+    sha256 x86_64_linux:  "f3889bfceaee90e097c2da725e0c0212bbf3b01bb50558b8990246ac6ffc202d"
   end
 
   depends_on "gettext" => :build
+  depends_on "lua" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
+  depends_on "ruby" => [:build, :test]
   depends_on "libsodium"
-  depends_on "lua@5.4" # Lua 5.5 doesn't work for now, see https://github.com/vim/vim/issues/19639
   depends_on "ncurses"
-  depends_on "python@3.14"
-  depends_on "ruby"
 
-  uses_from_macos "perl"
+  uses_from_macos "perl" => [:build, :test]
 
   on_macos do
     depends_on "gettext"
@@ -54,16 +55,19 @@ class Vim < Formula
   conflicts_with "ex-vi", because: "vim and ex-vi both install bin/ex and bin/view"
   conflicts_with "macvim", because: "vim and macvim both install vi* binaries"
 
+  def extra_deps = deps.select { |dep| dep.build? && dep.test? }
+
   def install
     ENV.prepend_path "PATH", Formula["python@3.14"].opt_libexec/"bin"
 
-    # https://github.com/Homebrew/homebrew-core/pull/1046
-    ENV.delete("SDKROOT")
-
-    # vim doesn't require any Python package, unset PYTHONPATH.
-    ENV.delete("PYTHONPATH")
-
     ENV.append_to_cflags "-mllvm -enable-constraint-elimination=0" if DevelopmentTools.clang_build_version == 1600
+
+    # Allow dynamically loading formulae libraries when not linked
+    extra_deps.each do |dep|
+      extra_rpath = dep.to_formula.opt_lib
+      extra_rpath = rpath(target: extra_rpath) if OS.mac? # cannot use $ORIGIN
+      ENV.append "LDFLAGS", "-Wl,-rpath,#{extra_rpath}"
+    end
 
     # We specify HOMEBREW_PREFIX as the prefix to make vim look in the
     # the right place (HOMEBREW_PREFIX/share/vim/{vimrc,vimfiles}) for
@@ -78,13 +82,13 @@ class Vim < Formula
                           "--with-compiledby=Homebrew",
                           "--enable-cscope",
                           "--enable-terminal",
-                          "--enable-perlinterp",
-                          "--enable-rubyinterp",
-                          "--enable-python3interp",
+                          "--enable-perlinterp#{"=dynamic" unless OS.mac?}",
+                          "--enable-python3interp=dynamic",
+                          "--enable-rubyinterp=dynamic",
                           "--disable-gui",
                           "--without-x",
-                          "--enable-luainterp",
-                          "--with-lua-prefix=#{Formula["lua@5.4"].opt_prefix}"
+                          "--enable-luainterp=dynamic",
+                          "--with-lua-prefix=#{Formula["lua"].opt_prefix}"
     system "make"
     # Parallel install could miss some symlinks
     # https://github.com/vim/vim/issues/1031
@@ -96,13 +100,20 @@ class Vim < Formula
     bin.install_symlink "vim" => "vi"
   end
 
+  def caveats
+    "Additional features can be enabled by installing: #{extra_deps.map(&:name).join(", ")}"
+  end
+
   test do
     (testpath/"commands.vim").write <<~VIM
       :python3 import vim; vim.current.buffer[0] = 'hello python3'
+      :ruby Vim::Buffer.current.append(0, 'hello ruby')
+      :perl $curbuf->Append(0, "hello perl")
+      :lua vim.buffer():insert("hello lua")
       :wq
     VIM
     system bin/"vim", "-T", "dumb", "-s", "commands.vim", "test.txt"
-    assert_equal "hello python3", File.read("test.txt").chomp
+    assert_equal "hello perl\nhello ruby\nhello python3\nhello lua", File.read("test.txt").chomp
     assert_match "+gettext", shell_output("#{bin}/vim --version")
     assert_match "+sodium", shell_output("#{bin}/vim --version")
   end

@@ -4,13 +4,16 @@ class Netatalk < Formula
   url "https://ghfast.top/https://github.com/Netatalk/netatalk/releases/download/netatalk-4-4-3/netatalk-4.4.3.tar.xz"
   sha256 "863d640ecc99f4923ead6c58e8d3406ab3a1ca9dd3b0d47ccdf6fdebb6efe3ab"
   license all_of: [
-    "GPL-2.0-only",
     "GPL-2.0-or-later",
-    "LGPL-2.0-only",
-    "LGPL-2.1-or-later",
-    "BSD-2-Clause",
-    "BSD-3-Clause",
-    "MIT",
+
+    # Licenses covering individual source files or modules. MIT is omitted because we don't install Webmin module
+    "BSD-2-Clause",      # config/pap.in
+    "BSD-3-Clause",      # bin/nad/nad_{cp,util}.c, etc/afpd/nfsquota.c, etc/papd/{lp,printcap}.c, ...
+    "HPND",              # COPYRIGHT (Regents of The University of Michigan)
+    "HPND-Pbmplus",      # COPYRIGHT (Adrian Sun)
+    "Kazlib",            # etc/afpd/hash.*, include/atalk/hash.h
+    "LGPL-2.0-or-later", # libatalk/unicode/charsets/mac_{centraleurope,cyrillic,greek,hebrew,turkish}.h
+    "LGPL-2.1-or-later", # bin/nad/ftw.*
   ]
   head "https://github.com/Netatalk/netatalk.git", branch: "main"
 

@@ -1,10 +1,10 @@
 class Qtquick3d < Formula
   desc "Provides a high-level API for creating 3D content or UIs based on Qt Quick"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.0/submodules/qtquick3d-everywhere-src-6.11.0.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.0/submodules/qtquick3d-everywhere-src-6.11.0.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.0/submodules/qtquick3d-everywhere-src-6.11.0.tar.xz"
-  sha256 "b42000bb33e55b6c642657eb7022ee1f74f9e19cf64d52e85d41763f567b8994"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtquick3d-everywhere-src-6.11.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtquick3d-everywhere-src-6.11.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtquick3d-everywhere-src-6.11.1.tar.xz"
+  sha256 "c76b85de3f8aa2a4bee64987acfef560675c1b378b92076c7c6264613e5b456f"
   license all_of: [
     "GPL-3.0-only",
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
@@ -20,12 +20,12 @@ class Qtquick3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "73418fb9b87b32eb0a023444dbdffb300f2693113ccfc35ac7066913bd26a23c"
-    sha256 cellar: :any,                 arm64_sequoia: "867b9f043b71f9abca68ff781771067f2df3356cfc1c9a81f4b52b2bf81756ab"
-    sha256 cellar: :any,                 arm64_sonoma:  "d1e4e45d4e49b6ea439d818ec3b8b7e68cdfad000fae363de51a1ad97f1f9942"
-    sha256 cellar: :any,                 sonoma:        "c357ea4c7dd50bd1e832e15ea8f6d4fc1084fc102963c32a6cac2c83a3c40f17"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2e346d06fddd35c73d9a6681c15b164084cae119776f876cc337e338a80a29d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90f73138796fcd0020728eab4e85642ff62e3b693bec22bd423650266a7d5903"
+    sha256 cellar: :any,                 arm64_tahoe:   "1f249aa6a9a60893be5c4cb19576b2dc6a8c7c30ec479a13b2b257590c744194"
+    sha256 cellar: :any,                 arm64_sequoia: "0ab350097696b313eed8cf3ffd62af16ee2bfc46196db047a6e8b118f5ea06e7"
+    sha256 cellar: :any,                 arm64_sonoma:  "1f3f1c768e3eeab12892d85713dd98b02f38dc788a2b43fa16138dc1236fd32b"
+    sha256 cellar: :any,                 sonoma:        "9141d684fdce3b159e85e9c814afd4b9aafe5d6c439c2586270dd804df226993"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ec342bca633378b2365581dd6c100c27ee8b757728642b202dc96ef41a48740"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07bdc05f4421d68892a559350204b03681b22f7b0a69e2ac2cbd75ebbf1190b0"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -42,13 +42,6 @@ class Qtquick3d < Formula
   on_linux do
     depends_on "mesa"
     depends_on "zlib-ng-compat"
-  end
-
-  # Apply Arch Linux patches for assimp 6 support
-  # Issue ref: https://bugreports.qt.io/browse/QTBUG-137996
-  patch do
-    url "https://gitlab.archlinux.org/archlinux/packaging/packages/qt6-quick3d/-/raw/547cb929d0a03fdf817fdf2655629bcb9b75505d/assimp-6.patch"
-    sha256 "394b5f26877477c4ceba252c06a6a2101f5e99e3dddc01cc8831e7fa7d70f797"
   end
 
   def install

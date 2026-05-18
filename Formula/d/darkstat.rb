@@ -3,7 +3,12 @@ class Darkstat < Formula
   homepage "https://unix4lyfe.org/darkstat/"
   url "https://ghfast.top/https://github.com/emikulic/darkstat/archive/refs/tags/3.0.722.tar.gz"
   sha256 "5c8e66d4c478b6d7e58f4c842823a09125509bf6851017ff70e32b32ce95b01b"
-  license all_of: ["BSD-4-Clause-UC", "GPL-2.0-only", "GPL-3.0-or-later", "X11"]
+  license all_of: [
+    "GPL-2.0-only",
+    "ISC",
+    "BSD-2-Clause", # tree.h
+    "BSD-3-Clause", # queue.h
+  ]
   head "https://github.com/emikulic/darkstat.git", branch: "master"
 
   bottle do

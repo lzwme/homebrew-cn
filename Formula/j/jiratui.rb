@@ -3,19 +3,18 @@ class Jiratui < Formula
 
   desc "Textual User Interface for interacting with Atlassian Jira from your shell"
   homepage "https://jiratui.sh/"
-  url "https://files.pythonhosted.org/packages/02/ae/7d5057e29b7ff95e1db0874c259e9886a387b2e5771d742ff359273b603d/jiratui-1.7.0.tar.gz"
-  sha256 "86acfb47b3c0c0e2796a7340e851097df88c07d56b5a2a795fc3f52271d99461"
+  url "https://files.pythonhosted.org/packages/90/63/8ee44e6749b6b8a26273dbd20e8a386d36c7709df31aa22993e1070e7b93/jiratui-1.8.0.tar.gz"
+  sha256 "8fc2d83365a1897aef10d0cfff126fd9e7f2d156758dd97070de7b5590629518"
   license "MIT"
-  revision 2
   head "https://github.com/whyisdifficult/jiratui.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "384fe5359406dcbfb8f0d0429992980cf88a420e18acfb62f73c1169e036dcfe"
-    sha256 cellar: :any,                 arm64_sequoia: "6bf759d8f3d1d7996dfda5b399f93c6665255ed8e0af4236196c201765cd1e58"
-    sha256 cellar: :any,                 arm64_sonoma:  "add2719f5d5b0ada26815c68770debbf62a2d880df7fd37e0e433d7f9e37bb01"
-    sha256 cellar: :any,                 sonoma:        "b9b2407125cbbc68768923bb9340fe91912b798a5de59f5346a0b4c4fdcad720"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f6a1fd918d83e95c8f575663f2587aeaee643c8cbcc6bb471de628142616833"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a64c9f6f7717b72495eac27db8718569bb8378d4241a428412a06c3321ee5329"
+    sha256 cellar: :any,                 arm64_tahoe:   "27093877c59f02c37e7d8289648f310758e3cf1b8e3051f60c192009e9d6666a"
+    sha256 cellar: :any,                 arm64_sequoia: "d9c1d3622a12f64807c36f2f3905db79b93afdb50c4359c2b09619d94a87088a"
+    sha256 cellar: :any,                 arm64_sonoma:  "5d838f7c94f5b404a195fc4be5215d3142ccdcfab85891bfa84a4cbf32f03549"
+    sha256 cellar: :any,                 sonoma:        "3fc7280426ac46068f5e71932e81e56dd915942c32daf5af7051a76e0d07961a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cec3275b440fe341b518adc258e9cb82a860ed674c0054f542433a27a354468"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83eac44d0059e13015a0cf30c20906bf348081dc270a8404041995035bfb2047"
   end
 
   depends_on "rust" => :build
@@ -76,8 +75,8 @@ class Jiratui < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "linkify-it-py" do
@@ -90,9 +89,14 @@ class Jiratui < Formula
     sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
+  resource "marklas" do
+    url "https://files.pythonhosted.org/packages/55/ee/940c7c4be2ba207b767e931a7619021579ea8e73a032febe76e4ffb809cd/marklas-0.7.0.tar.gz"
+    sha256 "90956df6cb6ad13171ff0aa9fc4cbe089e13d73d4e2f4861d839104ae4fe16eb"
+  end
+
   resource "mdit-py-plugins" do
-    url "https://files.pythonhosted.org/packages/d8/3d/e0e8d9d1cee04f758120915e2b2a3a07eb41f8cf4654b4734788a522bcd1/mdit_py_plugins-0.6.0.tar.gz"
-    sha256 "2436f14a7295837ac9228a36feeabda867c4abc488c8d019ad5c0bda88eee040"
+    url "https://files.pythonhosted.org/packages/59/fc/f8d0863f8862f25602c0404d75568e89fb6b4109804645e5cdfb1be5cf56/mdit_py_plugins-0.6.1.tar.gz"
+    sha256 "a2bca0f039f39dbd35fb74ae1b5f998608c437463371f0ff7f49a19a17a114d0"
   end
 
   resource "mdurl" do
@@ -100,14 +104,24 @@ class Jiratui < Formula
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
+  resource "mistune" do
+    url "https://files.pythonhosted.org/packages/ca/84/620cc3f7e3adf6f5067e10f4dbae71295d8f9e16d5d3f9ef97c40f2f592c/mistune-3.2.1.tar.gz"
+    sha256 "7c8e5501d38bac1582e067e46c8343f17d57ea1aaa735823f3aba1fd59c88a28"
+  end
+
   resource "platformdirs" do
     url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
     sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
   end
 
+  resource "puremagic" do
+    url "https://files.pythonhosted.org/packages/24/74/ce5987ab9b8aec4ced06e2723ebb604205c9eb58abdad91453da93166380/puremagic-2.2.0.tar.gz"
+    sha256 "eb4bddf07c177c4b434554b92165b67449f5a51e152b976202d6254498810eef"
+  end
+
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/42/98/c8345dccdc31de4228c039a98f6467a941e39558da41c1744fbe29fa5666/pydantic_settings-2.14.0.tar.gz"
-    sha256 "24285fd4b0e0c06507dd9fdfd331ee23794305352aaec8fc4eb92d4047aeb67d"
+    url "https://files.pythonhosted.org/packages/07/60/1d1e59c9c90d54591469ada7d268251f71c24bdb765f1a8a832cee8c6653/pydantic_settings-2.14.1.tar.gz"
+    sha256 "e874d3bec7e787b0c9958277956ed9b4dd5de6a80e162188fdaff7c5e26fd5fa"
   end
 
   resource "pygments" do
@@ -128,11 +142,6 @@ class Jiratui < Formula
   resource "python-json-logger" do
     url "https://files.pythonhosted.org/packages/f7/ff/3cc9165fd44106973cd7ac9facb674a65ed853494592541d339bdc9a30eb/python_json_logger-4.1.0.tar.gz"
     sha256 "b396b9e3ed782b09ff9d6e4f1683d46c83ad0d35d2e407c09a9ebbf038f88195"
-  end
-
-  resource "python-magic" do
-    url "https://files.pythonhosted.org/packages/da/db/0b3e28ac047452d079d375ec6798bf76a036a08182dbb39ed38116a49130/python-magic-0.4.27.tar.gz"
-    sha256 "c1ba14b08e4a5f5c31a302b7721239695b2f0f058d125bd5ce1ee36b9d9d3c3b"
   end
 
   resource "pyyaml" do
@@ -156,13 +165,18 @@ class Jiratui < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/62/1e/1eedc5bac184d00aaa5f9a99095f7e266af3ec46fa926c1051be5d358da1/textual-8.2.5.tar.gz"
-    sha256 "6c894e65a879dadb4f6cf46ddcfedb0173ff7e0cb1fe605ff7b357a597bdbc90"
+    url "https://files.pythonhosted.org/packages/1c/b3/b62658f6cf808d28e4d16a07509728a7b17824f55a6d3533f017fd4566b0/textual-8.2.6.tar.gz"
+    sha256 "cef3714498a120a99278b98d4c165c278844e73db50f1db039aaabd89f2d1b63"
+  end
+
+  resource "textual-autocomplete" do
+    url "https://files.pythonhosted.org/packages/1e/3a/80411bc7b94969eb116ad1b18db90f8dce8a1de441278c4a81fee55a27ca/textual_autocomplete-4.0.6.tar.gz"
+    sha256 "2ba2f0d767be4480ecacb3e4b130cf07340e033c3500fc424fed9125d27a4586"
   end
 
   resource "textual-image" do
-    url "https://files.pythonhosted.org/packages/1a/64/e5e49b639794f0ae426f6c19ca541af55b24a30e96df3b03e086688b8ec1/textual_image-0.8.5.tar.gz"
-    sha256 "43d4c0026a4f21fa255f41eac7b0fc1f7410a4c7bc9bf95b908bec901b0a8c3a"
+    url "https://files.pythonhosted.org/packages/c2/e7/c82ea0604874b6d51d5717a0911061ae5810e36dad2e4d2b11fa7d54cdaa/textual_image-0.12.0.tar.gz"
+    sha256 "fdd0b5ff9c8a99740bc360a99ce014d563fa97d07a5b49b472470809f57c0a74"
   end
 
   resource "tree-sitter" do
@@ -248,6 +262,11 @@ class Jiratui < Formula
   resource "uc-micro-py" do
     url "https://files.pythonhosted.org/packages/78/67/9a363818028526e2d4579334460df777115bdec1bb77c08f9db88f6389f2/uc_micro_py-2.0.0.tar.gz"
     sha256 "c53691e495c8db60e16ffc4861a35469b0ba0821fe409a8a7a0a71864d33a811"
+  end
+
+  resource "urllib3" do
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   resource "xdg-base-dirs" do

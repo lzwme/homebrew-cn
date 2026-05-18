@@ -1,17 +1,17 @@
 class TfstateLookup < Formula
   desc "Lookup resource attributes in tfstate"
   homepage "https://github.com/fujiwara/tfstate-lookup"
-  url "https://ghfast.top/https://github.com/fujiwara/tfstate-lookup/archive/refs/tags/v1.12.0.tar.gz"
-  sha256 "0caf56d6f9b7c7ef489304c865c22405216273d91e97dcda4ae2c140b3d8b439"
+  url "https://ghfast.top/https://github.com/fujiwara/tfstate-lookup/archive/refs/tags/v1.12.1.tar.gz"
+  sha256 "d01dc5ca5193fd38696fcee0b8fd3f7211f9f12fdfefa46403a6159b9d677fa7"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a42f45c5a165f998239542d6d2b962c7be9eb2902363e0e6e8afa4410814071"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a42f45c5a165f998239542d6d2b962c7be9eb2902363e0e6e8afa4410814071"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a42f45c5a165f998239542d6d2b962c7be9eb2902363e0e6e8afa4410814071"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d3ede00e3dc2728f2b97c329e82e39e0090391c2a925321f0a4439672e2f3eef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13d5d99c0aab4d8ca89157408b1209103784da6d8bc46b098625b6a6832ebc92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1413282febebd73ffbccddddbe2ebec9a6f7dfbe0f4f015c0184e092c3c2bbd3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3d19503d32c192bcbfb3f1d7a3c6b8d4df2a0515517ba3be3d86efca31a4acb5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d19503d32c192bcbfb3f1d7a3c6b8d4df2a0515517ba3be3d86efca31a4acb5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d19503d32c192bcbfb3f1d7a3c6b8d4df2a0515517ba3be3d86efca31a4acb5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "83183818fa7570df272d24df9b04be0a9d890065e71e23219252e9cea69d4be4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d3915e141961b0eba102a84ea975f137d71b212931c371962bf7b025308eb0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf9e9304ba1f0e0ecc1499e9f17711e0cb34b6d589a1485646263a3a89143d58"
   end
 
   depends_on "go" => :build

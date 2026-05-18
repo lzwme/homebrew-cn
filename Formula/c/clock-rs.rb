@@ -1,18 +1,18 @@
 class ClockRs < Formula
   desc "Modern, digital clock that effortlessly runs in your terminal"
   homepage "https://github.com/Oughie/clock-rs"
-  url "https://ghfast.top/https://github.com/Oughie/clock-rs/archive/refs/tags/0.2.0.tar.gz"
-  sha256 "9770f5d79408032d635a0eabe2cc70575b0238d8a02c9b5193dc5712a14b8e2d"
+  url "https://ghfast.top/https://github.com/Oughie/clock-rs/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "cb344326f7ed45eb252d74d27d35cddf61b8df9566e60f25e129da696e083344"
   license "Apache-2.0"
   head "https://github.com/Oughie/clock-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e841d0eb84054586edaf2751fd68365a9b745891b7f00d53cdae6258b528e2b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1748644542478383be20188d0719ce7340419ccf3e7f8ca4df99e2d8ffb4fcba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a725d741ed7c79f3ef610a8b9d48054b51e278745c5894d93eaeffc63b80996"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3364739f735631db743eab7680817e6a405f6eaa4347f4122dccdbac1a8715c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d18d53bec5e6504c4d15b2098d0288325486888d7b1f42af2aa9b40645201f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f3234a4b3c5b7e5388b736bc315686856b331b7619578c51eb9b3854215f276"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ab9169308b9683f0c426f2b909c6f2d7893df39f9c1cb6b6e3a53d9c1cd6791"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80a2f8797600837578f1eb85e630f3637c6b93107c7a3686b55d1616cfa393e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3ebbb592aad42fbb2b49d04d35f8c49c8a38e20b1dfeef7924e939bf6ed50d2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9e0c08dde682062f47e8886a68a8e5766b124f267610860998f6986818f3e616"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd1d3f61c00011290a1b46c7fb1655a9777c719d13a703476519dbcc6a552de5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fab64b9d9037fa76b782bbde24cb59f80072758807cc227626e61b1dd2358c78"
   end
 
   depends_on "rust" => :build

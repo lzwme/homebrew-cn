@@ -1,8 +1,8 @@
 class LibsigcxxAT2 < Formula
   desc "Callback framework for C++"
   homepage "https://libsigcplusplus.github.io/libsigcplusplus/"
-  url "https://ghfast.top/https://github.com/libsigcplusplus/libsigcplusplus/releases/download/2.12.1/libsigc++-2.12.1.tar.xz"
-  sha256 "a9dbee323351d109b7aee074a9cb89ca3e7bcf8ad8edef1851f4cf359bd50843"
+  url "https://ghfast.top/https://github.com/libsigcplusplus/libsigcplusplus/releases/download/2.12.2/libsigc++-2.12.2.tar.xz"
+  sha256 "7d4cdf1e4332ebfee8085ad960075045e7763cb291b3ccf4744d7cbf08a22b75"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class LibsigcxxAT2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ce0968768e01d7083aae67a5909ba21931e45815f89b974cffda25aa8a694bef"
-    sha256 cellar: :any,                 arm64_sequoia: "0eb7a34afb68af5d9ea00a5d0211d4768d3e90bbf16c286b450e682ec7c007af"
-    sha256 cellar: :any,                 arm64_sonoma:  "af4c5de76ebf9469808c9c278dbe877160125e0121757234d212a3841a01b2ac"
-    sha256 cellar: :any,                 sonoma:        "164f7457cb79b279f2c34c289304261175501b7ad9de59a619fe9dd8a9c771ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "08f2f15b878a71707163d2f49adda77e59e4015cad55dac1d54bda3d33224f1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17c1833149605fcedee3881382f8a4bf7e961283ea9c2532ff0e1b6785639fb7"
+    sha256 cellar: :any,                 arm64_tahoe:   "8e580d27768484f5dd755531d25ded0d2e36d49152601af692fdeec939fe0a1c"
+    sha256 cellar: :any,                 arm64_sequoia: "6ca9585abc36d3fa9699c5c0e8951f9ed0c70db8c6d1f8d14efb77beb21ae4c8"
+    sha256 cellar: :any,                 arm64_sonoma:  "7bbfc74590d6075e5855ecf9fef009dd4fcb19f107e8dd2433308721b51a8819"
+    sha256 cellar: :any,                 sonoma:        "4559e283eeeb813f3c10731c39d071aacd785071328973b6f6db51b682177ef0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2eace468727cfef91725a8ee20431650d6cda00abc7e540812ef598adb20274"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2265b389d5c0f4452238783cf1d7c970fe647b7a2cc7182675f013f724a0ce3b"
   end
 
   depends_on "meson" => :build

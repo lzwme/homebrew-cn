@@ -1,10 +1,10 @@
 class Qtvirtualkeyboard < Formula
   desc "Provides an input framework and reference keyboard frontend"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.0/submodules/qtvirtualkeyboard-everywhere-src-6.11.0.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.0/submodules/qtvirtualkeyboard-everywhere-src-6.11.0.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.0/submodules/qtvirtualkeyboard-everywhere-src-6.11.0.tar.xz"
-  sha256 "d88a4b1713a313e3ac06c32837b5d00724d1dcf7b44c2594f1029f7c74a8e686"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtvirtualkeyboard-everywhere-src-6.11.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtvirtualkeyboard-everywhere-src-6.11.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtvirtualkeyboard-everywhere-src-6.11.1.tar.xz"
+  sha256 "a1c6967b326243b2ca8d50bc7b7f7852c3975d9aa6ce4b186ebdf35bb1007e1c"
   license all_of: [
     "GPL-3.0-only",
     "Apache-2.0",   # bundled openwnn, pinyin and tcime
@@ -18,12 +18,12 @@ class Qtvirtualkeyboard < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "85d54ee498d6a1dccd74b7c621e59be0e1b96b390f5d2f4c276512da5f9f2555"
-    sha256 cellar: :any,                 arm64_sequoia: "406ba562e2bc0909368513f508fa063f0d446343f76cb10fb9bdb74ac601819c"
-    sha256 cellar: :any,                 arm64_sonoma:  "7787419d7ddc8bc629c559b7c1561203b9aab9c722d0b9a2b40950071d5d558b"
-    sha256 cellar: :any,                 sonoma:        "a60c2edaebe98b7d096aa9328457228bb07465af9c6dba605afc0e711be22236"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f28d48c5d031753769766edb997cdc27b46cdca78813d94abc807beb2e3ec80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40a48084da7320176855e46781716c6cec3cecf60af60f28d37814f47ce1e938"
+    sha256 cellar: :any,                 arm64_tahoe:   "0964465eaf42a3ff32cc2571fea8c84614c72bb05ff8924b9090e26b69d8b5b2"
+    sha256 cellar: :any,                 arm64_sequoia: "e303f1adf972750e816affea89953d090f7142d6989e3fab869992fbc681a56b"
+    sha256 cellar: :any,                 arm64_sonoma:  "dd6a73abd978154c02866a178b3d27b80c6493f41f6466f12d473083d555a614"
+    sha256 cellar: :any,                 sonoma:        "62ebe00d08a9375967f021b8f907bb96e3b1d25bb3855854a47bfc913679adec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d437b7edc39b2daa027f38d0386a3c93f128ab00f464a03ea595879bce64805"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3609720310f82f0d20410cc6deea3ee6976beda873b71c2d920a007d150d809c"
   end
 
   depends_on "cmake" => :build

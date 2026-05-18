@@ -5,7 +5,8 @@ class FfmpegAT7 < Formula
   sha256 "71f4aac3573ed9060489cb62526a6c7dda815ae10993789611acd7be9fa9fbf4"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
-  license "GPL-2.0-or-later"
+  # Passing `--enable-version3` changes the license to GPL v3+.
+  license "GPL-3.0-or-later"
 
   livecheck do
     url "https://ffmpeg.org/download.html"

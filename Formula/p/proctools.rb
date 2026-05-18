@@ -24,6 +24,10 @@ class Proctools < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "f0fe70530d22c270ac3d5a105f2dbbbb0dc6a664acd03f3ad7da3f86255fd548"
   end
 
+  # Last release on 2003-12-07. macOS has included pgrep/pkill since OS X Mountain Lion 10.8
+  deprecate! date: "2026-05-17", because: :unmaintained
+  disable! date: "2027-05-17", because: :unmaintained
+
   depends_on "bsdmake" => :build
   depends_on :macos
 

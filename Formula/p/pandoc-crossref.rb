@@ -1,19 +1,18 @@
 class PandocCrossref < Formula
   desc "Pandoc filter for numbering and cross-referencing"
   homepage "https://github.com/lierdakil/pandoc-crossref"
-  url "https://ghfast.top/https://github.com/lierdakil/pandoc-crossref/archive/refs/tags/v0.3.23a.tar.gz"
-  version "0.3.23a"
-  sha256 "7b3638c8b8d416f28e950cf650c52d3e961f53ce6cc640133caf8ee99b2efade"
+  url "https://ghfast.top/https://github.com/lierdakil/pandoc-crossref/archive/refs/tags/v0.3.24a.tar.gz"
+  version "0.3.24a"
+  sha256 "5b478c94b67d5b972c7b3d867a345be982d3af12475e2261dd9b37fc17e225d1"
   license "GPL-2.0-or-later"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b9b183c44cac850fb1b9fed061f569e237aa661897ebde73b25fab4dcc680a2a"
-    sha256 cellar: :any,                 arm64_sequoia: "5f5b1c921a1ec12673fed139bc30d0081a9e3907576924b37a99031e6b6a4ba3"
-    sha256 cellar: :any,                 arm64_sonoma:  "7cd1f3f54aca0e4ca23b0763a767dbf6954e616d8476ad487305c44cce44a435"
-    sha256 cellar: :any,                 sonoma:        "d372123947b5b6ba2e2855d54698d05cca6834c79d05aa02e93948a973dbc3a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2d364ba6b6b1ed44f8420fa662a609c156e111b13940842fe445dbe8c61f214"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c968d8b3f4e2fea0abf4d45e88de701b529de113e77527fd155313712faeb505"
+    sha256 cellar: :any,                 arm64_tahoe:   "56885d16e051a5355f5fa2168e3198444406008b28bfbc6dd7425cc6a2b61e33"
+    sha256 cellar: :any,                 arm64_sequoia: "d022df5a62df6a7608a3fc2621bb5816da9c59f99b628336fe51f0f07d01b8a9"
+    sha256 cellar: :any,                 arm64_sonoma:  "88d25d295ba194f8cfceccbc80b4bb8d0364040b22ae0e894c7dc909ebf19041"
+    sha256 cellar: :any,                 sonoma:        "d6f51b871ce894c7f23d0dabb58588da549c9c50f935de8a0f5ef672838d863a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "595206134b10f581718fecfceb92825addab0c42ae886a8acfc39da34180804a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3230f07ffb12be2a6c559df5e531243ffcd22e62080939e4a906bfad712a574d"
   end
 
   depends_on "cabal-install" => :build

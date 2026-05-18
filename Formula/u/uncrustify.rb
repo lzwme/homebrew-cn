@@ -1,18 +1,18 @@
 class Uncrustify < Formula
   desc "Source code beautifier"
   homepage "https://uncrustify.sourceforge.net/"
-  url "https://ghfast.top/https://github.com/uncrustify/uncrustify/archive/refs/tags/uncrustify-0.82.0.tar.gz"
-  sha256 "e05f8d5ee36aaa1acfa032fe97546b7be46b1f4620e7c38037f8a42e25fe676f"
+  url "https://ghfast.top/https://github.com/uncrustify/uncrustify/archive/refs/tags/uncrustify-0.83.0.tar.gz"
+  sha256 "1d4d3ab3a991c66eb24cb0a3e690573b4882fd98bc6ec64a01c283998c20dc87"
   license "GPL-2.0-or-later"
   head "https://github.com/uncrustify/uncrustify.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d2147d198e4aa63bd7765b2bb793c62b99396db991cd1200136953042a4e9996"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0925adba92160a19225ee1ee15a3d0216cc40e64d0fa12543f7ae45a414ac430"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "986c576d015d2e421590aacc04c10c23931d39afb37ce526a86f027655a20066"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9452de45814ca613f1fd5497e356ed7ebf151e27892e899dd2de997b409ef5d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f77747fb27d76a15d3a9eae89e5ebaf02cad3890f21a3bc7cd82865dcff2befc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b069a15ffe6e93dcf3d6a7e1a8dbe108e7599c494ae9d67ddc3d64c1add0e898"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "134d4f23548f37e9bcd1473e631356aa661c8932f5d0a7e921651b9c2a845476"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e7415d06eeb5fb68674acf1fc13d75bb48c91786067bc1173bf8bf9b3d62111"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d7aa4f2db4a166e7ab54f519ca24d77fd03d6a0b1d7f9a6766e71d9898b8faf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ca8cf7e06ca7c3c4dce17357161c6bfde9916b44737de009ea85c30a5611606d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc65d0aceb78338ff319e0a29d4e6f74e462dcd2e0e5b873eaba957c1ba7a8a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36ee588a84777f80672a003e012b940ae10437a6f546076128c62ff75debc969"
   end
 
   depends_on "cmake" => :build

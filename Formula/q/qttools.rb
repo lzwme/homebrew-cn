@@ -1,6 +1,10 @@
 class Qttools < Formula
   desc "Facilitate the design, development, testing and deployment of applications"
   homepage "https://www.qt.io/"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qttools-everywhere-src-6.11.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qttools-everywhere-src-6.11.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qttools-everywhere-src-6.11.1.tar.xz"
+  sha256 "8e61835a679c93fa9c6065b142353c2071ba68e297898937c32a03777fcaf50d"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
@@ -9,30 +13,17 @@ class Qttools < Formula
   ]
   head "https://code.qt.io/qt/qttools.git", branch: "dev"
 
-  stable do
-    url "https://download.qt.io/official_releases/qt/6.11/6.11.0/submodules/qttools-everywhere-src-6.11.0.tar.xz"
-    mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.0/submodules/qttools-everywhere-src-6.11.0.tar.xz"
-    mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.0/submodules/qttools-everywhere-src-6.11.0.tar.xz"
-    sha256 "cfb1993d7a10848965b01b9cf33a54b8a4ba4e5e3a6d28d59483e73f10d9fc76"
-
-    # Backport fix for build on Linux
-    patch do
-      url "https://github.com/qt/qttools/commit/b676278a24eb880eeeed35bbf203a76950a9ab4e.patch?full_index=1"
-      sha256 "36740336b401055ca1699787921d474377ec65f0b041351141b158b9ced7ef42"
-    end
-  end
-
   livecheck do
     formula "qtbase"
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5b3ee786cbbf7658bb7f05948cd1de2b4960eb53595300d14122176936e61804"
-    sha256 cellar: :any,                 arm64_sequoia: "126874e85aea16f5575789c26f8839ec16abd5f04068b8f7f29e148cf2fa10e6"
-    sha256 cellar: :any,                 arm64_sonoma:  "cefeb06754d600aa8261d833c558376b6fe50c8f55fd55b30dada84118fb185e"
-    sha256 cellar: :any,                 sonoma:        "5d1e0ac718622920bb272077801dab8a66d73bd89633a11c8917c83df6d0b530"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13382e4130bf7785832ec6ae457776463d6a8df4bcc94a04ebae046a7d16be2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1e493634c013a310f2370e823d4a0c5b93564fb704d7e2292d1c246d52471d3"
+    sha256 cellar: :any,                 arm64_tahoe:   "20aecfa9eb080d4f211b712ea9615fff4402f88c1fcdd1502f19cb762aa334f3"
+    sha256 cellar: :any,                 arm64_sequoia: "462a076f64329011cbbec6812e4c591f80eb81739449fd8a5eb9e03771200b89"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe241aac196a66f1506d8f30048f8ebd248095fc29963b5cd4d1820eab77ffc9"
+    sha256 cellar: :any,                 sonoma:        "9f20463c84fd13541159c9020b552629eaf328d4ae42c593f1251f552c83db47"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc8fa63b4cc8e2ae11b3df94f6db5852e28863fda4832cb793df9b5a5e2c9961"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3dcfd3c8fe73c6cb04ed8b85c6bf1d4b0b73e2b53c37cc96dcce15a9c6af17df"
   end
 
   depends_on "cmake" => [:build, :test]

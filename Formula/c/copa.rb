@@ -1,18 +1,18 @@
 class Copa < Formula
   desc "Tool to directly patch container images given the vulnerability scanning results"
   homepage "https://github.com/project-copacetic/copacetic"
-  url "https://ghfast.top/https://github.com/project-copacetic/copacetic/archive/refs/tags/v0.14.0.tar.gz"
-  sha256 "47cf4c4e583d35523ef1e146e9a640bce5ffbb99bcedbf63e07c11eab60b4a8f"
+  url "https://ghfast.top/https://github.com/project-copacetic/copacetic/archive/refs/tags/v0.14.1.tar.gz"
+  sha256 "2f1a34928192afa3c81cfd8e069e61443e4a1041f8c5cd58c74f9425fea8df4f"
   license "Apache-2.0"
   head "https://github.com/project-copacetic/copacetic.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "17368549b019ccac22fe06200bee34d534c8fe4a0c0f56247a14710e0a9ce6dd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17368549b019ccac22fe06200bee34d534c8fe4a0c0f56247a14710e0a9ce6dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17368549b019ccac22fe06200bee34d534c8fe4a0c0f56247a14710e0a9ce6dd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9481b1416a70cf0a6cca5584c0f52ff4f402231366e138eac6dd75a0ec1564fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "04b5dfc027c1546bdb54de1b1fe2409df969a23618aefd1aabacd831fa88a60f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83b867b11564f03ff5e48c6dd5088a9a59a573bf8c2726fd57dde11fdd322b33"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30dee3cd36f3833d836fee55efb1e7d501f764c60d92fe630af59b07834a4817"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30dee3cd36f3833d836fee55efb1e7d501f764c60d92fe630af59b07834a4817"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30dee3cd36f3833d836fee55efb1e7d501f764c60d92fe630af59b07834a4817"
+    sha256 cellar: :any_skip_relocation, sonoma:        "66cf669fed416c58c45a7de831ba7d9b5fd46d4824e8d9c0a714f73614057ffd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "adfb1e400fafd193842b1f8b33acd0cf19560b65f918a1e5c29af6f12efdde94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89ba4a0ab08e28dc815a3d5112b8633d9d3aa4b9ae35566bd8c505ebe03b278e"
   end
 
   depends_on "go" => :build

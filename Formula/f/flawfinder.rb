@@ -3,10 +3,9 @@ class Flawfinder < Formula
 
   desc "Examines code and reports possible security weaknesses"
   homepage "https://dwheeler.com/flawfinder/"
-  url "https://dwheeler.com/flawfinder/flawfinder-2.0.19.tar.gz"
-  sha256 "fe550981d370abfa0a29671346cc0b038229a9bd90b239eab0f01f12212df618"
+  url "https://dwheeler.com/flawfinder/flawfinder-2.0.20.tar.gz"
+  sha256 "9d732a4e0fef1cd4eaeefd4a0093f183c5981f6c843711ceae6a63419404996b"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/david-a-wheeler/flawfinder.git", branch: "master"
 
   livecheck do
@@ -15,8 +14,7 @@ class Flawfinder < Formula
   end
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any_skip_relocation, all: "ef4160192048471cc1fdda78cbfbda11725e3a826118988878a286f08a71d9a0"
+    sha256 cellar: :any_skip_relocation, all: "67572b363574067724474f17367453dd18f8fc7d20cf78b34fea299cf56435bb"
   end
 
   depends_on "python@3.14"

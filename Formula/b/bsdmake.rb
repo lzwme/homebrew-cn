@@ -20,6 +20,11 @@ class Bsdmake < Formula
     sha256 catalina:       "5075d566898ea241d7251734f82f6846c288a49d939f8842fa566ea706e2417f"
   end
 
+  # bsdmake-24 is from 2009-04-08 and was removed in Mac OS X Lion 10.7
+  # https://github.com/apple-oss-distributions/distribution-macOS/commit/d76ff8abc2758f9d534112f1082b4aa289c7cd93
+  deprecate! date: "2026-05-17", because: :unmaintained
+  disable! date: "2027-05-17", because: :unmaintained
+
   depends_on :macos
 
   # MacPorts patches to make bsdmake play nice with our prefix system

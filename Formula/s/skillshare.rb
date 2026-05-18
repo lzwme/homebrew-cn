@@ -1,18 +1,18 @@
 class Skillshare < Formula
   desc "Sync skills across AI CLI tools"
   homepage "https://skillshare.runkids.cc"
-  url "https://ghfast.top/https://github.com/runkids/skillshare/archive/refs/tags/v0.19.12.tar.gz"
-  sha256 "c6824dace024a2b9f38f4e509ec0b4de3912e4dd2d7852591ac4caecb7e6c996"
+  url "https://ghfast.top/https://github.com/runkids/skillshare/archive/refs/tags/v0.19.13.tar.gz"
+  sha256 "10f6c640d5c8b25ea18d974e1f60fe0fde84186978722f6fd5ef22ffe284ee4c"
   license "MIT"
   head "https://github.com/runkids/skillshare.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42e17cbd8ce94ef833ee56b11646b89be79ee311160c46cbf6636dc505f68488"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42e17cbd8ce94ef833ee56b11646b89be79ee311160c46cbf6636dc505f68488"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42e17cbd8ce94ef833ee56b11646b89be79ee311160c46cbf6636dc505f68488"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d956d43d5cb43d29c5d0b699ee3692dd8425ac926fb335da9b6cca80db7ae205"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e44a9064fa2bf60f9fa787a4397ce23885e13f345bdfc9e8a422978b273e6740"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6dea4624b54fdf48339892c29be0e4928b00a5fd6b8038ccec410e6d6b16e7bb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3bfcb2f1f6fe3e4a41e524ff4293db319f0344bd2dac3777d353f4cbf228cec4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3bfcb2f1f6fe3e4a41e524ff4293db319f0344bd2dac3777d353f4cbf228cec4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3bfcb2f1f6fe3e4a41e524ff4293db319f0344bd2dac3777d353f4cbf228cec4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "480afdfc11260a1876a5dd9c5adf97d6e5f325d19c9c5468e2b7c6e9440d9287"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f357852a83cb621de52d0389c308e91e57676f8a25abaafe1fdb72c43c4c4a8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "701f985e14191747ec03cb90c85356e215f57a01f6800f8ec0d70f6192f91be9"
   end
 
   depends_on "go" => :build

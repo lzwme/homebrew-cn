@@ -8,8 +8,6 @@ class Theharvester < Formula
   license "GPL-2.0-only"
   head "https://github.com/laramies/theHarvester.git", branch: "master"
 
-  no_autobump! because: "'playwright' resource lacks PyPI sdist"
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "636d1505928e2d2caeee8060a354e057ccf41d06e71e2ca404bdb8c2514db213"
     sha256 cellar: :any,                 arm64_sequoia: "805224bb8d2fc6c36503cd5ca3d03192b731b58eb78b4a4ea03308fde133dec9"
@@ -40,6 +38,11 @@ class Theharvester < Formula
   resource "playwright" do
     url "https://ghfast.top/https://github.com/microsoft/playwright-python/archive/refs/tags/v1.57.0.tar.gz"
     sha256 "a040082a24efc6d2a9416daacb4cc173b9750291262b8b8cca154a23b437f029"
+
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/laramies/theHarvester/refs/tags/#{LATEST_VERSION}/pyproject.toml"
+      regex(/"playwright==v?(\d+(?:\.\d+)+)"/i)
+    end
   end
 
   resource "aiodns" do

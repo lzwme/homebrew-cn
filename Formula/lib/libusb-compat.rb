@@ -1,8 +1,8 @@
 class LibusbCompat < Formula
   desc "Library for USB device access"
   homepage "https://libusb.info/"
-  url "https://downloads.sourceforge.net/project/libusb/libusb-compat-0.1/libusb-compat-0.1.8/libusb-compat-0.1.8.tar.bz2"
-  sha256 "b692dcf674c070c8c0bee3c8230ce4ee5903f926d77dc8b968a4dd1b70f9b05c"
+  url "https://downloads.sourceforge.net/project/libusb/libusb-compat-0.1/libusb-compat-0.1.9/libusb-compat-0.1.9.tar.bz2"
+  sha256 "179d934676ad3bd172a5a37cf5c6351b8e9d7816feb3029252e79b30a518a3be"
   license all_of: [
     "LGPL-2.1-or-later",
     any_of: ["LGPL-2.1-or-later", "BSD-3-Clause"], # libusb/usb.h
@@ -15,17 +15,12 @@ class LibusbCompat < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:    "63dfe2cf30c69c8f654177fbd754d013e0b5d86636cf731f5e22fbf3071d228e"
-    sha256 cellar: :any,                 arm64_sequoia:  "db9c3980772b1debe48a65b951a7b6ac27ccfacd26afc6b96b49fa1a60c34339"
-    sha256 cellar: :any,                 arm64_sonoma:   "64e879dd5f99d9e95ef207caf668bd1363d79f660abc1ec60c44eeb7082cb216"
-    sha256 cellar: :any,                 arm64_ventura:  "a2fcb4b8c54d64c71ca73d7b70573617b9df000d7cd8040925c45627a601f84f"
-    sha256 cellar: :any,                 arm64_monterey: "b963fa8ff806b92ea8d4a278ae9fd41e8e86c9dbad743c8848f0962363e48104"
-    sha256 cellar: :any,                 sonoma:         "4ee27e4e0b9a716fd2b15db94b1595901276078780d377432e2fde4e9d78c324"
-    sha256 cellar: :any,                 ventura:        "9d752b7aea1ecaa42c8c7127d986a149ab971bc020689bf6007b27431c2ddc9d"
-    sha256 cellar: :any,                 monterey:       "82d8bd5747595f694da174d66f1b61f407d904f7741f3dfc8d8d342c1239c5a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "878121af3e546d38c3574dd0d43f284044fdfab4c6930cd14e615bce37801d4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0201a3ccb74c1a239274bf0d0ed68541e738d09f4ae46dd93501334bce39c24c"
+    sha256 cellar: :any,                 arm64_tahoe:   "ede303d531c123cd3a5e6c118d0ce048ef9388cc16299e0185b3c1569d7d201d"
+    sha256 cellar: :any,                 arm64_sequoia: "5edda2497fe18ce3d0ffaf638b8b2d78bbb2adcfe17aee9f609ff43866df2a34"
+    sha256 cellar: :any,                 arm64_sonoma:  "e6d7d51c7b6152519f6bd17ab490935ba730cd73f4125f9734790ab79bc15354"
+    sha256 cellar: :any,                 sonoma:        "f5c9946de1037ea59449aaac808e70f5e6fd8e64c9526efd89ad3697f61fb81e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a81d5b98d61c2fc5ae6eabd7136cf2b81b1cf8dcc26acd78eb41c20d8a604771"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92792cb202445badf8ca6ed59b0c3b5397d1e63452abed9d34fef5ebd970466b"
   end
 
   depends_on "autoconf" => :build

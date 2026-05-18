@@ -1,10 +1,10 @@
 class Qtpositioning < Formula
   desc "Provides access to position, satellite info and area monitoring classes"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.11/6.11.0/submodules/qtpositioning-everywhere-src-6.11.0.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.0/submodules/qtpositioning-everywhere-src-6.11.0.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.0/submodules/qtpositioning-everywhere-src-6.11.0.tar.xz"
-  sha256 "d61fd0985ede513ec34d2d1c1e92f383eb8eb46678ca9da805cf795cccb796e9"
+  url "https://download.qt.io/official_releases/qt/6.11/6.11.1/submodules/qtpositioning-everywhere-src-6.11.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.11/6.11.1/submodules/qtpositioning-everywhere-src-6.11.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.11/6.11.1/submodules/qtpositioning-everywhere-src-6.11.1.tar.xz"
+  sha256 "d5e6b91801ae286e7630016caea3bdc5e1978b4291d6741d0d64c125650f78f5"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # bundled poly2tri; *.cmake
@@ -19,12 +19,12 @@ class Qtpositioning < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "58b60582704fcff5a97aa688b4e48ca3b1b757bb437d41dfbf4bf19287e1265b"
-    sha256 cellar: :any,                 arm64_sequoia: "1a76bd7c3d2a3ada2fdbcd73c8a7ce9e85131d600f625b3046c0a6ccf0f14ace"
-    sha256 cellar: :any,                 arm64_sonoma:  "bfdba2c31708b8e84edc0508b78165b3dd2672024ee5db97b1c5c916026091e3"
-    sha256 cellar: :any,                 sonoma:        "b2d4474b15fc92f82dbfbe1b8dea46dec6215e43cf40f1b2a70b082c7ce43a95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "906ccc1d0d5d37c396de76e6220890f997a2364b7536b76d2bffbb79ddde677f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2084cfe7efae13cde78aa86981e869c1713e6de884a8ef69909459fab225523a"
+    sha256 cellar: :any,                 arm64_tahoe:   "3eae7c50185a2099527a1456e72b746bcaf709569b69a7c5a1802d99b9dcf50b"
+    sha256 cellar: :any,                 arm64_sequoia: "5d5393e5e47f67a32be62f450dda35cbc4acbdf455de33f7cf5f0bb10029d5fa"
+    sha256 cellar: :any,                 arm64_sonoma:  "6fc04fa26c47681c1fb8d1d1dfd4fe40748ddc86c8c81364c7c241b9b16061cf"
+    sha256 cellar: :any,                 sonoma:        "6bf61b4bee6dbb362d191853678e6abc0d4dacfd268a30980f833baef15f649a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e5c21b82dccaafa55453570a8a8cdba77349e76ee6ef02ac3a0d3c3831cebf8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a5f4c05a3cef51b5de3768bb47cf2d08bd95ae39be052121e9eef6e118876cd"
   end
 
   depends_on "cmake" => [:build, :test]

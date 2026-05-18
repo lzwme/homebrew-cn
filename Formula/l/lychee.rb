@@ -7,17 +7,17 @@ class Lychee < Formula
   head "https://github.com/lycheeverse/lychee.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a131a1ca4507b36095146419fed6012553f78072f3d89f2bf64a71a98e18f3f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12dcf0ba46f69d2a9e4e00e01fd44ea236bdae98d8b0af488ba5800f6686d763"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba8a087e9cb66245ad0352246f22d913dedb672e67c666560a83ffe32fddb841"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a231e62cdf80e23839acd6dd7b06370b9d9efd619d4887ab2fe96f400203903"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "59cc9c32c9435d268141ab600e4c2f95a5c2da1d82cc3ec10ab569ef39064559"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa56f319728b6bfbbf611951f49a917f9e73cba4a2feb8dd6fa1d2f11a85dc34"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8128df40ab0e154013827ac8b157d319f4dbe848a6413888f69ca08306e8e753"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22d012cc8ad34dd603d9a65b2e4b06820bcd241368ab1c58f3e7d1523221a22f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "678784041262bf50259e1e115702226f43fc9e848706cdf77ca80492e8100e34"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8dedc67ad89a74da8142eb1a17c8011fbb1d409aab891e253ec1551b1834fd23"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6d69c7053d9aa12044829fca11747afaee2bcbee83344357851f715504bd82f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2384d234e01ecef101eefa3485dcf88f5b33d1796a8638e5d3fcc38afcca6f1"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
 
   def install
     system "cargo", "install", *std_cargo_args(path: "lychee-bin")

@@ -2,17 +2,17 @@ class ThorsAnvil < Formula
   desc "Set of modern C++20 libraries for writing interactive Web-Services"
   homepage "https://github.com/Loki-Astari/ThorsAnvil"
   url "https://github.com/Loki-Astari/ThorsAnvil.git",
-      tag:      "9.1.14",
-      revision: "90cf2b697ba94e9da335dc8dbd8c2fae77f44771"
+      tag:      "10.0.6",
+      revision: "5721502233a1f3f54a0efeb1fd957d889e368a7d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b10235fa39a6491082a96e13d1baf4c1c0a3c9c02ac68b1c7116cc8ec83c4e21"
-    sha256 cellar: :any,                 arm64_sequoia: "9611bedf6b2d8fd79ffbaefa305384252fc4b4043b00bb774ca4c79dc0610bb3"
-    sha256 cellar: :any,                 arm64_sonoma:  "0f11c9c7b69bf81ee1d4eb343a04b0ce8a86b811466d1348a20c87f72f9a52ec"
-    sha256 cellar: :any,                 sonoma:        "f6d143db25795bb19bbb10dfbcd31397eed970debb8f5e60444d4d8dbe53065a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b5955c773927e445d95d0aa06c2fefc48289ff12994902fef5434e9bc40f15a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff413bdd5da4ea620faf5ad6cbafb45476ee411b26c2982edcebf3aded1bf70f"
+    sha256 cellar: :any,                 arm64_tahoe:   "6a9aaa672ceeed06a3022283ae86fc814872987283b4896d1103dd42256dd88a"
+    sha256 cellar: :any,                 arm64_sequoia: "1d0a92570e6767b58549a7c0c2e31a26d1b1207be092f438a53cbb8ffe8cbbbe"
+    sha256 cellar: :any,                 arm64_sonoma:  "01e895802ea956db6321a4beeb359beba95656ef6abeb90377341127bb3af1b5"
+    sha256 cellar: :any,                 sonoma:        "30583b99da787a5f9b801ebba3b289f104ad595455f6cf3bf03f29aa409328c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "305d2a32a899bb1bb13a3717478abf654659ba48da8fffeffcf3caab09171537"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cc42fd3f6050027ceb42ab16943d09324a49db9a15aa9264c422d3bc69c2bdb"
   end
 
   depends_on "cmake" => :build
@@ -41,7 +41,7 @@ class ThorsAnvil < Formula
                           "--disable-Mongo-Service",
                           "--disable-slacktest",
                           *std_configure_args
-    ENV["DISBALE_CONTROL_CODES"] = "TRUE"
+    ENV["DISABLE_CONTROL_CODES"] = "TRUE"
     system "make", "-j", "1", "JOBS=" + ENV.make_jobs.to_s
     system "make", "install"
   end

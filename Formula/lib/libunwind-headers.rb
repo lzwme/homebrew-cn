@@ -12,6 +12,11 @@ class LibunwindHeaders < Formula
 
   keg_only :shadowed_by_macos, "macOS provides libunwind.dylib (but nothing else)"
 
+  # Apple stopped using this repository in macOS 12.3.
+  # https://github.com/apple-oss-distributions/distribution-macOS/commit/a2a84eee239e63427b9bc7e011eaaba8ab878fd3
+  deprecate! date: "2026-05-17", because: :unmaintained
+  disable! date: "2027-05-17", because: :unmaintained
+
   def install
     cd "libunwind" do
       include.install Dir["include/*"]

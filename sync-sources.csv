@@ -3783,6 +3783,7 @@ Homebrew-homebrew-core/Formula/l/liquibase.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/liquid-dsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/liquidctl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/liquidprompt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lisette.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lispkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/litani.rb, Homebrew/homebrew-core, 0
@@ -9511,6 +9512,7 @@ Homebrew-homebrew-cask/Casks/d/duet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dungeon-crawl-stone-soup-console.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dungeon-crawl-stone-soup-tiles.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/duo-connect.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/duo-desktop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dupeguru.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/duplicacy-cli.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/duplicacy-web-edition.rb, Homebrew/homebrew-cask, 0
@@ -9713,7 +9715,6 @@ Homebrew-homebrew-cask/Casks/f/fedistar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fedora-media-writer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/feed-the-beast.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/feedflow.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/f/feem.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/feishu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fellow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/ferdium.rb, Homebrew/homebrew-cask, 1
@@ -12520,6 +12521,7 @@ Homebrew-homebrew-cask/Casks/g/geekbench.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/geektool.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gemini.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/geneious-prime.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/general-software-fresh.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/genesis-plus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/genesys-cloud.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/genymotion.rb, Homebrew/homebrew-cask, 0
@@ -13615,6 +13617,7 @@ Homebrew-homebrew-cask/Casks/m/modern-csv.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/modmove.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/modrinth.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/moebius.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/mole-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/molotov.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/moment.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/monal.rb, Homebrew/homebrew-cask, 0

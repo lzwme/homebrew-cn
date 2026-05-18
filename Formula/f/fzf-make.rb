@@ -1,20 +1,20 @@
 class FzfMake < Formula
   desc "Fuzzy finder with preview window for various command runners including make"
   homepage "https://github.com/kyu08/fzf-make"
-  url "https://ghfast.top/https://github.com/kyu08/fzf-make/archive/refs/tags/v0.68.0.tar.gz"
-  sha256 "52c2017195efdac167e2ff27aa86a92e58cad68bbc586fa2fc96e2b2852e90dd"
+  url "https://ghfast.top/https://github.com/kyu08/fzf-make/archive/refs/tags/v0.69.0.tar.gz"
+  sha256 "b4eb620296363f3e4674d14a31f0ac5ec2a44e4b8c6c1ee024d0399c49e31a8b"
   license "MIT"
   head "https://github.com/kyu08/fzf-make.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c4c9c10177398eedfd4cffe27bd9768a04e42acd3c28cc324c5127b10c0c0f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3218d87aef2da1e34d6d5835477d12ef152746703b08731ccbb542009f8d8ee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9223c3993096763e9d009af705c128652e8ce5a4ee60ebdeb371749c92d1520"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b0a03b6afe837aae14bd14c21e73b9e43ec24714df07e6da8770ade87dbecf8c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f34dec6bc4713d8bb7373950f4596e2aa602d8beca2b2948e94545affcf0ee2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec41e4624b808c0b6b71b7241baab60c872ca81e592647d1b58f6db280cdcf8c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1891dc04506f171d01cffcf6ff48c2f3444ba694bb38b5afbcf4f4f509cc54cd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e70340965fbb33f19f7dc8de3d177a60ff5b4f8890f93712872879168236e62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a03af1545620f5361e5ad56bc7f51b1d318391d48f4b1ba8bfb4ac4c2ddb0a6f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b661eadfc76d881f6d3ca59671845557a6250f97ac3df64652c262b65f9f6bb7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d596bd5dc007c2dfd4f8f66b4600a0499b5f074e2affc9949d3ec724d1ef8b97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d455a312c0cfd90dbe6370d14d9d243ccfd494b233091305e77f1c90a6945bf"
   end
 
   depends_on "rust" => :build

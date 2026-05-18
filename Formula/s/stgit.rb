@@ -20,13 +20,9 @@ class Stgit < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "xmlto" => :build
-  depends_on "git"
 
   uses_from_macos "curl"
-
-  on_linux do
-    depends_on "zlib-ng-compat"
-  end
+  uses_from_macos "git" # needs git >= 2.2.0. Consider using system git on Linux once RHEL 7 ELS ends
 
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"

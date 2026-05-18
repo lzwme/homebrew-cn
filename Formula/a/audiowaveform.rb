@@ -1,17 +1,17 @@
 class Audiowaveform < Formula
   desc "Generate waveform data and render waveform images from audio files"
   homepage "https://codeberg.org/chrisn/audiowaveform"
-  url "https://codeberg.org/chrisn/audiowaveform/archive/1.11.0.tar.gz"
-  sha256 "87f7422b823ccb1621d715010649a9b0c1a0ce9a4e4b26c2784cb7f2b94589f4"
+  url "https://codeberg.org/chrisn/audiowaveform/archive/1.11.1.tar.gz"
+  sha256 "ee6d9ff7fa15a44fde31efe1a1c3d8443b0508f6c827237b9d743150605de516"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1a46708684e47e59c0c97f12730a79568473d70c20b198f17abf3f44e1419fc8"
-    sha256 cellar: :any,                 arm64_sequoia: "0a29810f388e9252e30ae8ac65ab4b0382310a39496ee11968255c1faba91f8c"
-    sha256 cellar: :any,                 arm64_sonoma:  "50d62cc5d859c9196359e1eb1b9e6bd4deb82848e45c2ccbdc57f59a19665c96"
-    sha256 cellar: :any,                 sonoma:        "f84ec9bbc74481908f5686ebd04893e15e4d82d39d32b2b7f9f64c068290df07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4440a2064bf90b55931f98247825e9b1029385ee25b2e1665d0a9719174ecbc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be445bcb1ddc838feedf1d08780e30274e951596fd52b6979fc3eb033d099d66"
+    sha256 cellar: :any,                 arm64_tahoe:   "605c6c0525c6d6d6bf7ac817becfc7d10c618432a6bf31a814c608c38bc1b0f0"
+    sha256 cellar: :any,                 arm64_sequoia: "ecd72cb74e3a670f4a268ca3ccd4f3a89d622a6261b4e86156a509edbd31723b"
+    sha256 cellar: :any,                 arm64_sonoma:  "a46385af4b7f97f081d4a4099ecbb3937056d4a449e73128253e3dca1b9d17f4"
+    sha256 cellar: :any,                 sonoma:        "b65001da5f4acb902d62002196ac191aa8c473378df725348d7e9d9d668846ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca10864e1ed9ff3cb31463d9a5d6463740fcecd3cc0c8ef2f0f6d1514289d11b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0521c882c1d9f0bd62b5d9a5a4f97c4b86725cbca65df7ece44ed8f4f2b9a25"
   end
 
   depends_on "cmake" => :build
