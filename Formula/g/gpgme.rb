@@ -1,8 +1,8 @@
 class Gpgme < Formula
   desc "Library access to GnuPG"
   homepage "https://www.gnupg.org/related_software/gpgme/"
-  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-2.0.1.tar.bz2"
-  sha256 "821ab0695c842eab51752a81980c92b0410c7eadd04103f791d5d2a526784966"
+  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-2.1.0.tar.bz2"
+  sha256 "841c5ea53fc26259f4fbf0e8bde982dea1b8a1ca0cb77e681c82b050566bf92b"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class Gpgme < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "f43aa96d4271d497b8e3c03a48d2e7ae78d9106ea26e1bbb983ee923fa4bb11a"
-    sha256                               arm64_sequoia: "623bec9ed07b99b203cc8bac45e5d50f15cad57beaaca0bfe4b6428efd6bb886"
-    sha256                               arm64_sonoma:  "1c3ec9f67e39a8897746cd038199366ff78115723ecf11b0bac100eb183387e9"
-    sha256 cellar: :any,                 sonoma:        "1e07b763ef12b4f6a76a87b705f52e83d9ae62fe85f762170e2e401d999d436a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "94ed67d29ae8433b0b9b8478fdf7323ddd33b5f24c3b56af352774625592cba4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9297331ca5752b0a415a3e90aa0af51a7f3185426daf39a55b92250bd6555f0e"
+    sha256                               arm64_tahoe:   "0c10ccfca11d15aa56e4d1256f5937e42a014599476c8bf0fc205f8ccaec4ac8"
+    sha256                               arm64_sequoia: "364e7d5a64a11cff1fc174c45ae003edc05710647440d659497093e6e3f852e4"
+    sha256                               arm64_sonoma:  "806e6087437443c0f8e0eea337e6d1fd8358085c9d40042a9c3855045fc435e7"
+    sha256 cellar: :any,                 sonoma:        "20246e1dabf22226e2cb05d555807e564c89fd05c29ef9e6513ff4dc9ff5d453"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c083601bce346a536b7ea6541c4bd50428486ef8c2e71987c7b85938eeca4d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cca578994038bbe5e6ec56d04faf8c4f4f272ffbed1808bd574a004213c3037"
   end
 
   depends_on "gnupg"

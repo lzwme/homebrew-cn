@@ -1,8 +1,8 @@
 class Opencode < Formula
   desc "AI coding agent, built for the terminal"
   homepage "https://opencode.ai"
-  url "https://registry.npmjs.org/opencode-ai/-/opencode-ai-1.14.50.tgz"
-  sha256 "6e500379e574c0335364818beae346f99bd06491000c526e957e9349f126c240"
+  url "https://registry.npmjs.org/opencode-ai/-/opencode-ai-1.15.3.tgz"
+  sha256 "be282c09f6d4fe2889b2566b48f0507c52151528490c2a67efeccbe57a7fe317"
   license "MIT"
 
   livecheck do
@@ -10,19 +10,19 @@ class Opencode < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "454190188cae6ce2a4c6e85d618f68de9797d337a9cd206a67382d7db9cd4279"
-    sha256                               arm64_sequoia: "454190188cae6ce2a4c6e85d618f68de9797d337a9cd206a67382d7db9cd4279"
-    sha256                               arm64_sonoma:  "454190188cae6ce2a4c6e85d618f68de9797d337a9cd206a67382d7db9cd4279"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df0dc0e3e939a649029bd4af8293193a62911a0089877ed38779e877b6e37dc8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f37c6bb69bb6706e6550b9ee1f4899c49834244dbcf267d4f35ee1acc51da4bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ffd6be0b7954e54fbc862d88e269c8556b8d37a0a4bc307305b5db958ad532b"
+    sha256                               arm64_tahoe:   "155054d8df9a4752489b3d4c10045cb8d97c22a3b91183d2d4ea006ab4d2f966"
+    sha256                               arm64_sequoia: "155054d8df9a4752489b3d4c10045cb8d97c22a3b91183d2d4ea006ab4d2f966"
+    sha256                               arm64_sonoma:  "155054d8df9a4752489b3d4c10045cb8d97c22a3b91183d2d4ea006ab4d2f966"
+    sha256 cellar: :any_skip_relocation, sonoma:        "140771d36cbaf954be8725726260d65c63f13c95f77b3d730ff13379c2eb66bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e90e64984d561617480a06d32bde6474d249547dff9ab3228da03bbadc2f7c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e591bcc050370306c0a4a5f4038da7a28d0821aebac7bc185d6111ca0792ba07"
   end
 
   depends_on "node"
   depends_on "ripgrep"
 
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(ignore_scripts: false)
     bin.install_symlink libexec.glob("bin/*")
 
     # Remove binaries for other architectures, `-musl`, `-baseline`, and `-baseline-musl`

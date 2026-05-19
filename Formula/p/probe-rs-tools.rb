@@ -34,16 +34,11 @@ class ProbeRsTools < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "probe-rs-tools")
 
-    # probe-rs completion forces the use of the --shell parameter in the middle of the command line,
-    # so we cannot use the generate_completions_from_executable function
-    (zsh_completion/"_probe-rs").write Utils.safe_popen_read({ "SHELL" => "zsh" }, bin/"probe-rs", "complete",
-    "--shell=zsh", "install", "--manual")
-    (bash_completion/"probe-rs").write Utils.safe_popen_read({ "SHELL" => "bash" }, bin/"probe-rs", "complete",
-    "--shell=bash", "install", "--manual")
-    (fish_completion/"probe-rs.fish").write Utils.safe_popen_read({ "SHELL" => "fish" }, bin/"probe-rs", "complete",
-    "--shell=fish", "install", "--manual")
-    (pwsh_completion/"_probe-rs.ps1").write Utils.safe_popen_read({ "SHELL" => "pwsh" }, bin/"probe-rs", "complete",
-    "--shell=powershell", "install", "--manual")
+    generate_completions_from_executable(bin/"probe-rs", "complete", "install", "--manual",
+                                         shell_parameter_format: :none)
+    # clap_complete only recognizes SHELL=powershell but our helper sets SHELL=pwsh
+    (pwsh_completion/"_probe-rs.ps1").write Utils.safe_popen_read({ "SHELL" => "powershell" },
+                                            bin/"probe-rs", "complete", "install", "--manual")
   end
 
   test do

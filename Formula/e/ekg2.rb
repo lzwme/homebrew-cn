@@ -62,6 +62,7 @@ class Ekg2 < Formula
   # ekg2 was also removed from other major distros like Debian/Ubuntu and Gentoo.
   # Last release on 2011-03-17 and last commit on 2019-03-15.
   deprecate! date: "2025-09-13", because: :unmaintained
+  disable! date: "2026-05-18", because: :unmaintained
 
   depends_on "pkgconf" => :build
   depends_on "openssl@3"

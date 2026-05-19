@@ -1,8 +1,8 @@
 class Libusb < Formula
   desc "Library for USB device access"
   homepage "https://libusb.info/"
-  url "https://ghfast.top/https://github.com/libusb/libusb/releases/download/v1.0.29/libusb-1.0.29.tar.bz2"
-  sha256 "5977fc950f8d1395ccea9bd48c06b3f808fd3c2c961b44b0c2e6e29fc3a70a85"
+  url "https://ghfast.top/https://github.com/libusb/libusb/releases/download/v1.0.30/libusb-1.0.30.tar.bz2"
+  sha256 "fea36f34f9156400209595e300840767ab1a385ede1dc7ee893015aea9c6dbaf"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
@@ -12,14 +12,12 @@ class Libusb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b7e94047913739bcf330be575aa4a6f09f4008ffc7c6289fd7f52a0af8ca55f2"
-    sha256 cellar: :any,                 arm64_sequoia: "197c6a9c929f846cacdb7e79376a706ba295bf7f9a5aa49ac9712b9d6a571962"
-    sha256 cellar: :any,                 arm64_sonoma:  "63ea19dcae1a6e9b82b9d2d8497367f29b2baf337aa30bf69abc1a37252078b3"
-    sha256 cellar: :any,                 arm64_ventura: "c5c93e938ae936589f352d213e24cff2a02990e08efb8e7620c45075b1301f50"
-    sha256 cellar: :any,                 sonoma:        "ace918b6a959314990d4653e81496f99594e2999f5a36fd61f538fa3b469db3f"
-    sha256 cellar: :any,                 ventura:       "ecf25be7aa95c979306f6054a6de8aa4dadd380f17341ffdda2259e48a01a213"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc6fdd8e4ea046dbe90ba929765570c3066d4463d37da4e055b69297c954994c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70face621f55df85bc16900355953c3ea8f522d7e9f030df490c3494e8898b2c"
+    sha256 cellar: :any,                 arm64_tahoe:   "184daaa6108f0a56eb72c58cc4124dbbb0b54a655632dffdf8334569d71e2a34"
+    sha256 cellar: :any,                 arm64_sequoia: "a8d271bd5d9e7065987960caa52a9130d7fe6321ff1bad751499e465d0413e38"
+    sha256 cellar: :any,                 arm64_sonoma:  "74fa9ed0291e2d3e7827a06ea836a57c96d8861a7079544d47be231f08eb4c02"
+    sha256 cellar: :any,                 sonoma:        "1387aea9bbed3a1e57884b5b43166fc83cfdae415e5f3803a8259ff77a4ba613"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5789dcd1c84d316fa7f4ffec90277f0967f70a499cb239cefb37d919a3e5207"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ad452e6a96823fcef03781dd0980147b91690d0bb34c97f44e57130de8878f6"
   end
 
   head do

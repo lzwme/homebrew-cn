@@ -12,8 +12,6 @@ class Tmex < Formula
 
   depends_on "tmux"
 
-  uses_from_macos "bash"
-
   def install
     bin.install "tmex"
     man1.install "man/tmex.1"

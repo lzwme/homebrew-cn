@@ -25,6 +25,7 @@ class QwtQt5 < Formula
   keg_only "it conflicts with qwt"
 
   deprecate! date: "2026-05-19", because: "is for end-of-life Qt 5"
+  disable! date: "2027-05-19", because: "is for end-of-life Qt 5"
 
   depends_on "qt@5"
 

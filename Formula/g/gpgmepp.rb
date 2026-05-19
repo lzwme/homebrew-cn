@@ -1,8 +1,8 @@
 class Gpgmepp < Formula
   desc "C++ bindings for gpgme"
   homepage "https://www.gnupg.org/related_software/gpgme/"
-  url "https://www.gnupg.org/ftp/gcrypt/gpgmepp/gpgmepp-2.0.0.tar.xz"
-  sha256 "d4796049c06708a26f3096f748ef095347e1a3c1e570561701fe952c3f565382"
+  url "https://www.gnupg.org/ftp/gcrypt/gpgmepp/gpgmepp-2.1.0.tar.xz"
+  sha256 "57f804468f0204504b172c6b139cb05124b4263be7ad514932c7c4c5062a16e2"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
@@ -12,14 +12,12 @@ class Gpgmepp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a92d04950e7ed7477e8e2f6323eee90f2f07acd03c374561e614c0c1b7d0207e"
-    sha256 cellar: :any,                 arm64_sequoia: "13e6462a3ff4e89c924f8e023b151a0721907d716707daf04b28656173edc732"
-    sha256 cellar: :any,                 arm64_sonoma:  "01f07cfcb3f93b7bc6609fc3399e45bddd7e1e9343d8f11378b8edec0b9abec7"
-    sha256 cellar: :any,                 arm64_ventura: "3f6762cbcae50c7f780889beabfeae5b74df50657181e5aeadfc2da8cf0ad0cb"
-    sha256 cellar: :any,                 sonoma:        "d34c39da789e4b801fe5885fc6b11ee105d92f01336e12e78c2bc918c569d8a0"
-    sha256 cellar: :any,                 ventura:       "71643216cf7c6ab93f6b3728613741b58908386ab67ebaa3d7ddc52796c14172"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0cce58bc668ff2554392efd5d00861871edad5a3904a193405d6524a14639cc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b9eee0c77dff5bb7ae714c7976b05d4277198eb467afec6ddcec64029918730"
+    sha256 cellar: :any,                 arm64_tahoe:   "b6f196a2bd021582ac5594962e57934662903a608aecebf4ac0e7ec98ce4e08c"
+    sha256 cellar: :any,                 arm64_sequoia: "c95bcc1741df57ec84ce79cd9afd023c8ff0277e78f1c3847e2c7d4d614c6c6b"
+    sha256 cellar: :any,                 arm64_sonoma:  "30e129696baf54d10fa6344323007c7226b541104f68121a3a2109ce0cf6252e"
+    sha256 cellar: :any,                 sonoma:        "608c33cbd3a641560314ee7f77979440f0654394672d1407e264ce628ad3d514"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "570a69d6e26e7857c93d7a8cf5f5bd912c11b0fabcca5472471422ee181782ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef4ba880615a1632da127d6ef39b7ceddc2d9d665b290902cc2d21a446d707d5"
   end
 
   depends_on "cmake" => :build

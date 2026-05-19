@@ -1,17 +1,17 @@
 class Plutosvg < Formula
   desc "Tiny SVG rendering library in C"
   homepage "https://github.com/sammycage/plutosvg"
-  url "https://ghfast.top/https://github.com/sammycage/plutosvg/archive/refs/tags/v0.0.7.tar.gz"
-  sha256 "78561b571ac224030cdc450ca2986b4de915c2ba7616004a6d71a379bffd15f3"
+  url "https://ghfast.top/https://github.com/sammycage/plutosvg/archive/refs/tags/v0.0.8.tar.gz"
+  sha256 "49d5cfe772d3aa10cd4879f2f6e189f5083c08e4c8ea01bf3d5b87c97dfca7d2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8bb298a75af6f0be2a1da9823aaa922e3f5bbe343b0add1816074d6a98140826"
-    sha256 cellar: :any,                 arm64_sequoia: "b176ded158160d08ccd061219db379d7c1d9a741d6d7fa16486b51ce6694cc22"
-    sha256 cellar: :any,                 arm64_sonoma:  "d8c82d8e2c4326ebfd1d2f64a80d2b88b121c6bfc74f7d39d6bb50bab2f8f5c5"
-    sha256 cellar: :any,                 sonoma:        "cbe8b14915e492dd15013f93714abd6089ff412a5d7510a9ec4705826fd4a1b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "09a1c1195783f379b4b7e43621a9b3a72cf3f443e603ae538d4eb7a023c1ab62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4764dfeaf0969f65d9d3f229a6a8a409c7aa385b8a204bf09c85d16ea8f80218"
+    sha256 cellar: :any,                 arm64_tahoe:   "216817912278a835f499cc0406e8713426cf48ab2eb616368cab461b14d88380"
+    sha256 cellar: :any,                 arm64_sequoia: "90bb8231955799e976b11762b91b01f4290f2337c2dabd4f5df5b20ded635c97"
+    sha256 cellar: :any,                 arm64_sonoma:  "7a22b93a0c4b858440e7c6513755831063077f31c7feb78cfea98d992aa288c8"
+    sha256 cellar: :any,                 sonoma:        "14a93d50e9f899a477633c4d6ffb60180904d70f7603163d670f2e20e75dac28"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e1e7e72efd09a156c175a6266f61a483181dd8fe26657cd9288fe62dc5c7874"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8d6ce5db89dd3eb9232f5fc103df9fbaa1dfc797e3cb536afe961d2f1cbc0ae"
   end
 
   depends_on "cmake" => :build

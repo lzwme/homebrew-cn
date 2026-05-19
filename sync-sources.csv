@@ -1992,6 +1992,7 @@ Homebrew-homebrew-core/Formula/f/fancy-cat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fann.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fantom.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fanyi.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/far2l-tty.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fast_float.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastapi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fastbit.rb, Homebrew/homebrew-core, 1
@@ -14616,6 +14617,7 @@ Homebrew-homebrew-cask/Casks/r/reveal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/reverso.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/revisionist.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/revolver-office.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/revpdf-editor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rewind.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rewritebar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rhino-app.rb, Homebrew/homebrew-cask, 0
@@ -15433,6 +15435,7 @@ Homebrew-homebrew-cask/Casks/t/trae.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/trailer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/trainerroad.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/transcribe.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/transcribex.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/transfer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/transmission-remote-gui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/transmission.rb, Homebrew/homebrew-cask, 1

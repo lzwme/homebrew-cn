@@ -33,6 +33,7 @@ class Qsoas < Formula
 
   # Can undeprecate if new release with Qt 6 support is available.
   deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5"
+  disable! date: "2027-05-19", because: "needs end-of-life Qt 5"
 
   depends_on "bison" => :build
   depends_on "gsl"

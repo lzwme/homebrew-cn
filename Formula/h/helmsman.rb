@@ -7,16 +7,17 @@ class Helmsman < Formula
   head "https://github.com/mkubaczyk/helmsman.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c5726091c1d85cb3dc4c45599dbcc08e47af8a683371fb2f8386ac51f2580d84"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5726091c1d85cb3dc4c45599dbcc08e47af8a683371fb2f8386ac51f2580d84"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5726091c1d85cb3dc4c45599dbcc08e47af8a683371fb2f8386ac51f2580d84"
-    sha256 cellar: :any_skip_relocation, sonoma:        "76b5e3db809e503f3fad4d4c48b446ca06e50b1d5d09aa39282d89cc9cd083a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b37efc52815db6e43ed2989f86f024ad752ae29195eb07902f4063972bbea4c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e0cd0b6fdfa5d0b2f5824f5d41434f4bc89380ccc8e1d1e4eae6c0571ae9be1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70b190cca08b6c8bc0131a07817b87830a41d1462e19fd9f91dfa07dc09accb8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70b190cca08b6c8bc0131a07817b87830a41d1462e19fd9f91dfa07dc09accb8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70b190cca08b6c8bc0131a07817b87830a41d1462e19fd9f91dfa07dc09accb8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ccd1a566b468c5104da5842724c13f8a493404df38d3726aee445b4953fdf814"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2bb528ab57c7f15aeb7d015589e46f9ba59027a5a7cca3d89fffc7dd09a0366a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "478364859895e1b07a0e3ef573199208e6b83e74abfe9ef15d000c658cef8631"
   end
 
   depends_on "go" => :build
-  depends_on "helm@3"
+  depends_on "helm"
   depends_on "kubernetes-cli"
 
   def install
@@ -29,8 +30,6 @@ class Helmsman < Formula
   end
 
   test do
-    ENV.prepend_path "PATH", Formula["helm@3"].opt_bin
-
     ENV["ORG_PATH"] = "brewtest"
     ENV["VALUE"] = "brewtest"
 

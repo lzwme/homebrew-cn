@@ -1,18 +1,18 @@
 class CargoLlvmLines < Formula
   desc "Count lines of LLVM IR per generic function"
   homepage "https://github.com/dtolnay/cargo-llvm-lines"
-  url "https://ghfast.top/https://github.com/dtolnay/cargo-llvm-lines/archive/refs/tags/0.4.45.tar.gz"
-  sha256 "d1e6fb07760239c2f7ee1ee7e7a857ffb4f82df1378bbd0e4d2e8d75e74f13eb"
+  url "https://ghfast.top/https://github.com/dtolnay/cargo-llvm-lines/archive/refs/tags/0.4.46.tar.gz"
+  sha256 "048cc942bae27bc6ad9f7a9ad5931259661d6988041af94465ab13aa2d94d87d"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/dtolnay/cargo-llvm-lines.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f96bc5657cec596d1c8345a7b33c2b8eb0dcb5e80e677b8c1bcc55ee7153f05"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b003e01713c2c21b2ded471c1617b74d349574847e4ec18b9040e5aac73e5ddb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78435265c11559ef3470087d97d951ff12c1fa29590c1f485daf1fedf186001b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6710eaf6730d103df0bbddd44ff1b71b80dd1c69590798d5a325d71f97cafa1b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "93bbb22430a1d3b4dd16d55a5ce5759a370b973cc8272aa528ae80881acedf89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b83bd2492130d970f7488f4c2ae35852e026a01a79f1668d52704a7977f4dc01"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03910aad4dd26f3c2294a5d42f0bc1f5b719913cb263feb79451d1c9aea5ebd8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23990ea9a7182ae3b0e2efe36f522446518e413930474e5c9d39bba2f91ac568"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "337f1f3dff03f81e9650468ce4b6da3b8652ccf9b82b847f015b08bcd1b7d992"
+    sha256 cellar: :any_skip_relocation, sonoma:        "52e8aacbb04fb81b719788a365d4565e8fdfa5fbb472b1663e3471b5565155ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea932e381510ad1f1035f299c5f75e325c743a72d628360cfc91a45e9b9a6bbb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b3a1f0e63565b4740e78904abf0e99024d415fd1c2162038ac3d8b1a282613d"
   end
 
   depends_on "rust" => :build

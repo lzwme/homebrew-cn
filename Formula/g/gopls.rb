@@ -1,8 +1,8 @@
 class Gopls < Formula
   desc "Language server for the Go language"
   homepage "https://github.com/golang/tools/tree/master/gopls"
-  url "https://ghfast.top/https://github.com/golang/tools/archive/refs/tags/gopls/v0.21.1.tar.gz"
-  sha256 "af211e00c3ffe44fdf2dd3efd557e580791e09f8dbb4284c917bd120bc3c8f9c"
+  url "https://ghfast.top/https://github.com/golang/tools/archive/refs/tags/gopls/v0.22.0.tar.gz"
+  sha256 "249dc0c4b9f3e853f6a7fb6f3528db2f48793e7c54323f3b32aa38f6432f088a"
   license "BSD-3-Clause"
   head "https://github.com/golang/tools.git", branch: "master"
 
@@ -13,12 +13,12 @@ class Gopls < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e1991fd339294634d7b6576de9f101e71b5fe1ab78cf0de2ef38fc56be60e1f2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1991fd339294634d7b6576de9f101e71b5fe1ab78cf0de2ef38fc56be60e1f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1991fd339294634d7b6576de9f101e71b5fe1ab78cf0de2ef38fc56be60e1f2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "63c6dfdd1cc1c2927888bac68f8bb6bb40e283530ef065046206e303888941f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "adc320a44e5a73f55f31c9f78b93ea4e11925b19aefb1b3f9f1979325174f8cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d3ca52daa50fd77434b69220279c28ad44d6c4b0f627c612cf09e38246d9d59"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1afc09f427354f41246b19670e4891edefb65d2792779b49e00eced268f3a072"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1afc09f427354f41246b19670e4891edefb65d2792779b49e00eced268f3a072"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1afc09f427354f41246b19670e4891edefb65d2792779b49e00eced268f3a072"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e8e0974d38ba09332484e5017b2f3e3a09a52fc018b9c5533a41e51d97e02101"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a71640700c5b57ea8719da6b35e1ace1a6aa4e4e0b29b13c96523c003512382"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1677efa2bec78b70788d99c0443c16c418bbebda4a0cccf6963acd1c074864a"
   end
 
   depends_on "go" => :build

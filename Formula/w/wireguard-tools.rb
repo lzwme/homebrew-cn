@@ -20,8 +20,11 @@ class WireguardTools < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0af7756dee0ec6ea3053e5b055259b66b45a6a67a80862a8d280028be5c6aa54"
   end
 
-  depends_on "bash"
   depends_on "wireguard-go"
+
+  on_macos do
+    depends_on "bash" # Bash 4+
+  end
 
   def install
     if HOMEBREW_PREFIX.to_s != HOMEBREW_DEFAULT_PREFIX

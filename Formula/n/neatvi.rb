@@ -2,18 +2,18 @@ class Neatvi < Formula
   desc "Clone of ex/vi for editing bidirectional utf-8 text"
   homepage "https://repo.or.cz/neatvi.git"
   url "https://repo.or.cz/neatvi.git",
-      tag:      "18",
-      revision: "fba47f02d25be4350571e4daf7bb1373b37a5a90"
+      tag:      "19",
+      revision: "45dafe8592090c0dfd8b29e33e6aafd0600ae19e"
   license "ISC"
   head "https://repo.or.cz/neatvi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad23d3dc375b18d42f5770acd705bf1adf326ead97fc33c59bc153444f694258"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0867c5e807d39e68956ea122e6fac4d718b038c47d0f39ff05619fd53b3095a7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f1a010c8cbca6029bfa4f61a564bbfff611e0da4c2f67419f4122f85ae632b3d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1373111890204196e4708c8c34246b3a5f81921a405245c31f99f213d1675dc5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63c7f69520b21ce2c06436b7421166b5d1fec5abfc98bf0ca696952bf9877a4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f97e1611e5ff8c3ccff3672e89db785d2d807ab7d7816e41935ba5ddbe28c0c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9406bf951d0b0a979a5612007984dfa91f22d5454a5e870584ec08a471774f2e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3db63f358cf12903b9cafc397ae157e06a9061b482dcfaf8d62abb92bb6237ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ecf2f32002b0368c91203b6e591a78e6d2a2833564f3614ce2eb33a39301d962"
+    sha256 cellar: :any_skip_relocation, sonoma:        "68226401e3beb02fc3a153b0da657ff845c343bf9f22eb1f19ae9e6d2a7665c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1eba594e3c37a0d0dfe78dba342cfe5bf43c05664367539fb37093c24ecfb5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb3ab5cc3f3209cd2789e90195f6e9ebddd963bf021a1b5eae80b648e556e2d3"
   end
 
   def install

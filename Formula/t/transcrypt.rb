@@ -1,13 +1,13 @@
 class Transcrypt < Formula
   desc "Configure transparent encryption of files in a Git repo"
   homepage "https://github.com/elasticdog/transcrypt"
-  url "https://ghfast.top/https://github.com/elasticdog/transcrypt/archive/refs/tags/v2.3.1.tar.gz"
-  sha256 "c5f5af35016474ffd1f8605be1eac2e2f17743737237065657e3759c8d8d1a66"
+  url "https://ghfast.top/https://github.com/elasticdog/transcrypt/archive/refs/tags/v2.3.2.tar.gz"
+  sha256 "e28676a8ef781046c16b6c34acdb44b66b6d382d9c20cb810c883cc5be20dd28"
   license "MIT"
   head "https://github.com/elasticdog/transcrypt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c796653e0de06fc0a443b591892bd9ad29771a810673a6165d47a61c36c9d157"
+    sha256 cellar: :any_skip_relocation, all: "6d5f9dcdb81fe65ac02f51170775e05937a44dd52f44c394e889df56c79cc1da"
   end
 
   on_linux do

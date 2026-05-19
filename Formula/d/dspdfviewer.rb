@@ -19,6 +19,7 @@ class Dspdfviewer < Formula
   # Last release on 2016-09-13, last commit on 2023-04-27.
   # Can undeprecate if new release with Qt 6 support is available.
   deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5"
+  disable! date: "2027-05-19", because: "needs end-of-life Qt 5"
 
   depends_on "cmake" => :build
   depends_on "gobject-introspection" => :build
@@ -34,7 +35,7 @@ class Dspdfviewer < Formula
   depends_on "libtiff"
   depends_on "openjpeg"
   depends_on "poppler-qt5"
-  depends_on "qt@5"
+  depends_on "qt@5" # https://github.com/dannyedel/dspdfviewer/issues/236
 
   on_macos do
     depends_on "gettext"

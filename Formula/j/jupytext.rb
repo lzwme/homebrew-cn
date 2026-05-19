@@ -3,18 +3,18 @@ class Jupytext < Formula
 
   desc "Jupyter notebooks as Markdown documents, Julia, Python or R scripts"
   homepage "https://jupytext.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/72/3a/4f13fcba0ed05965a48fca197d89fb8c78c4b61051dc0c9ee9ed92e77a8d/jupytext-1.19.2.tar.gz"
-  sha256 "da6198a42406a09142b6b26ebc46a3ec7077f525222a8f12b1811a0e289a2216"
+  url "https://files.pythonhosted.org/packages/ef/2d/15624c3d9440d85a280ff13d2d23afd989802f25470ac59932f4fef6f0c6/jupytext-1.19.3.tar.gz"
+  sha256 "713c3ed4441afe0f31474d28ea2e6b61a268c04c40fd78e5ccfd7f7ac9e9f766"
   license "MIT"
   head "https://github.com/mwouts/jupytext.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "24b313b10bb931bbc5783a1836cbcb838450ab5e6a5c35420b1e529999c7c182"
-    sha256 cellar: :any,                 arm64_sequoia: "90a7f98cd7646d544fa23f43e6d04932cc26619901657c9cacc80adadc62e2ec"
-    sha256 cellar: :any,                 arm64_sonoma:  "37ebfe218315c28dcce6791232f8002419adf42d3561a5a648ae79cb35390720"
-    sha256 cellar: :any,                 sonoma:        "c69b1f534f3d1a4a7d34f89dd02184e6dc2e2975897162f3ac917759ae03378b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4690f0697fb4d8b04bc4c89395af81a0f4c63ee243113ac1ccf3d12313776872"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35373098a2dcd7fc72e80ef09d21c91b7c61a356b0ce615bb0f7ccc07c18f446"
+    sha256 cellar: :any,                 arm64_tahoe:   "fcf1dd6ee15227def4557114f43a7172124e3e7677340c477cb4fcad2e8fcd7f"
+    sha256 cellar: :any,                 arm64_sequoia: "beaad6f441b045e0c24bcd1f9ab75276916719f2841f24347efc46aecdf807cb"
+    sha256 cellar: :any,                 arm64_sonoma:  "749282c5632994fa047e5faf2e496b9b7a997bc2c5c84ecc5193785da70eb7c4"
+    sha256 cellar: :any,                 sonoma:        "96a4c30fabc17ceda48aa2586e41a00d8e5eb26ac1a76f8be9c767af298a60af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e8a30ee79bc2c3200c52c8a0fa4144c546c22090ca74c33a5f4bd7f962de615"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44f31a91edc52ee3c9e2a537a8ca0d1d9188adc99eb9f7546f23f72215574b9d"
   end
 
   depends_on "libyaml"
@@ -54,8 +54,8 @@ class Jupytext < Formula
   end
 
   resource "mdit-py-plugins" do
-    url "https://files.pythonhosted.org/packages/d8/3d/e0e8d9d1cee04f758120915e2b2a3a07eb41f8cf4654b4734788a522bcd1/mdit_py_plugins-0.6.0.tar.gz"
-    sha256 "2436f14a7295837ac9228a36feeabda867c4abc488c8d019ad5c0bda88eee040"
+    url "https://files.pythonhosted.org/packages/59/fc/f8d0863f8862f25602c0404d75568e89fb6b4109804645e5cdfb1be5cf56/mdit_py_plugins-0.6.1.tar.gz"
+    sha256 "a2bca0f039f39dbd35fb74ae1b5f998608c437463371f0ff7f49a19a17a114d0"
   end
 
   resource "mdurl" do

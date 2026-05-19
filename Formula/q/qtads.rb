@@ -30,6 +30,7 @@ class Qtads < Formula
   # PR for Qt 6 open since 2023-10-28: https://github.com/realnc/qtads/pull/21
   # Can undeprecate if new release with Qt 6 support is available.
   deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5"
+  disable! date: "2027-05-19", because: "needs end-of-life Qt 5"
 
   depends_on "pkgconf" => :build
   depends_on "fluid-synth"

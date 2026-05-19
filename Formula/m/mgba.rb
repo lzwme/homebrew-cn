@@ -36,6 +36,10 @@ class Mgba < Formula
     depends_on "sdl3"
   end
 
+  # Can undeprecate if new release with Qt 6 support is available.
+  deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5"
+  disable! date: "2027-05-19", because: "needs end-of-life Qt 5"
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 

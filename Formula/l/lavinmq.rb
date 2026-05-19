@@ -1,18 +1,18 @@
 class Lavinmq < Formula
   desc "Message broker implementing the AMQP 0-9-1 and MQTT protocols"
   homepage "https://lavinmq.com"
-  url "https://ghfast.top/https://github.com/cloudamqp/lavinmq/archive/refs/tags/v2.8.0.tar.gz"
-  sha256 "ce9ec3095adf41dcaa0b99649109fb97abbb0ef98bed639e2bf7881149752dcd"
+  url "https://ghfast.top/https://github.com/cloudamqp/lavinmq/archive/refs/tags/v2.8.1.tar.gz"
+  sha256 "f2d6ecf550801c369ab2d54eb8faa64b062d7b5e668d646ec19f2459568b6a27"
   license "Apache-2.0"
   head "https://github.com/cloudamqp/lavinmq.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e358f0247913f8603d9994e993c52db1e169e843b6bc5afeed310007f1862c11"
-    sha256 cellar: :any,                 arm64_sequoia: "b59b00f6bfe4d275b53e1abe194386c6c6fc7f145571579a5777f621ae436db7"
-    sha256 cellar: :any,                 arm64_sonoma:  "25d3560938c6d21351824abd61319bcbd01ca3216b04a3a56218b5db991e79e1"
-    sha256 cellar: :any,                 sonoma:        "fedd7f4cd9279e688283448adcde7431b15f8ea18101f79d8e2448f613ef25c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5bf297520031bf30b3f92000e47401d3f6c69c88a6575b1ca04e54f03478bfb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebc4566b0830e93f55c776162b0950cca0134d2b744e1185854097f8648a9866"
+    sha256 cellar: :any,                 arm64_tahoe:   "963dcede02370a1255c44fd6215f3805673dfadcc240b7d9bdf06e9687e480e1"
+    sha256 cellar: :any,                 arm64_sequoia: "0f1011dab08d17e4db32b8a3cbac4ce7dcb51a4bf50574b7316e20ff88db208b"
+    sha256 cellar: :any,                 arm64_sonoma:  "b43a1158edc0fdae31c3b6e6aaa1123530f7f733951e58c262782bf641eaff5f"
+    sha256 cellar: :any,                 sonoma:        "0b879ecbd95e1fdee5b1c6bf67394b17a5542eb94571898df06bde2d662ae41d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c22b9dc72645fbd539480e0b7609949c43f77d55a937140625cd33074e75af89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "938be77a1a2074ad69b89130089aa8fc90e763b1398d9da4592d3f339439615e"
   end
 
   depends_on "crystal" => :build

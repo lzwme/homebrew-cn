@@ -3,19 +3,19 @@ class Libxmlb < Formula
 
   desc "Library for querying compressed XML metadata"
   homepage "https://github.com/hughsie/libxmlb"
-  url "https://ghfast.top/https://github.com/hughsie/libxmlb/releases/download/0.3.26/libxmlb-0.3.26.tar.xz"
-  sha256 "a18bc447fff0dd0d76a2e6cd4a603b4712047c027f9bbbdc31ebc25f0e2c1ed9"
+  url "https://ghfast.top/https://github.com/hughsie/libxmlb/releases/download/0.3.27/libxmlb-0.3.27.tar.xz"
+  sha256 "63fa0275f7454d77c10e0af37f79dfdb071821caf429a57dbd9598ea3a9defd6"
   license "LGPL-2.1-or-later"
   compatibility_version 1
   head "https://github.com/hughsie/libxmlb.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "26444295fa3f0a3196a3cefc81945ac38f4eb634b252ae6661b6a93b92f6492b"
-    sha256 cellar: :any, arm64_sequoia: "64c06b5b51bfb1edc51bd187736a17a90587282417c2d3a0f4acb5a0ff9d4c61"
-    sha256 cellar: :any, arm64_sonoma:  "fdfa2c4def3009afd053fa4bc7f0a1f00853dd1367e8d90a00b7b93a269e857f"
-    sha256 cellar: :any, sonoma:        "6aa91c24dd6da83c7c91e00268deba06ab25c5bc208274b7e4930aac4a418378"
-    sha256               arm64_linux:   "2ee39e243e70aa3588593869cc2b1b63837d990ee9ed942c833940e42ad16006"
-    sha256               x86_64_linux:  "bb55d875f9cc32023299161dae441cd2919fd732ca91172453fc0f307de80be4"
+    sha256 cellar: :any, arm64_tahoe:   "120816663f8ba794566de8da00a63f09bfa240c421f63d7c472acba407eccdbe"
+    sha256 cellar: :any, arm64_sequoia: "ac73d2e3d04f7ddf51298c32aeb2bc489a8ec8edce256e368d99bff2523ab514"
+    sha256 cellar: :any, arm64_sonoma:  "76091a4c52e65f0186b6cabcd3b090a78ff32fb9ba709502a906d2ad37682eb1"
+    sha256 cellar: :any, sonoma:        "b164a5170af54cf0e0cfad9324463401fab99d87c7a482a0f0c343afaf19da3e"
+    sha256               arm64_linux:   "5532d4dd0ecd14bd730d12c0f24622286fa4ddafc79463b93d0585334714b6d8"
+    sha256               x86_64_linux:  "f185f321d12c0810b383e3fc289fd35c1ec416f5d9558f8e05b7086180699319"
   end
 
   depends_on "gi-docgen" => :build

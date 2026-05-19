@@ -19,8 +19,6 @@ class Nb < Formula
   depends_on "tig"
   depends_on "w3m"
 
-  uses_from_macos "bash"
-
   def install
     bin.install "nb", "bin/bookmark"
 

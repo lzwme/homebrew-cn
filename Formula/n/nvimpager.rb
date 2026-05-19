@@ -13,8 +13,6 @@ class Nvimpager < Formula
   depends_on "scdoc" => :build
   depends_on "neovim"
 
-  uses_from_macos "bash"
-
   def install
     system "make", "PREFIX=#{prefix}", "install"
   end

@@ -3,12 +3,12 @@ class Opendoor < Formula
 
   desc "CLI for web reconnaissance, directory discovery, and exposure assessment"
   homepage "https://github.com/stanislav-web/OpenDoor"
-  url "https://files.pythonhosted.org/packages/e2/bb/f93950d22167c9d568d62e1099b288f3d926067ac1bfc7a1851a5de85299/opendoor-5.15.3.tar.gz"
-  sha256 "12bbf595927264595e2058daeb987cbae24a46e0bf857666aad704b01f46ffb0"
+  url "https://files.pythonhosted.org/packages/28/53/fa6371de65b11b95a10eb4d4818a661c0600fca09f3d9e50ee2d6a166e08/opendoor-5.16.0.tar.gz"
+  sha256 "101d8205f752d4fa67fcf38cce80fafcce4fa23bfba5c1dd5740324061ef5e12"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fb7308919f32b558be0157551c845d76b59cfa42226bf5c0c02fbc33d139d522"
+    sha256 cellar: :any_skip_relocation, all: "a021eca26228f22a831f15244f9fe82f5fdd06658fb5cfa1e3d433d3f41c66aa"
   end
 
   depends_on "python@3.14"
@@ -21,16 +21,6 @@ class Opendoor < Formula
   resource "pysocks" do
     url "https://files.pythonhosted.org/packages/bd/11/293dd436aea955d45fc4e8a35b6ae7270f5b8e00b53cf6c024c83b657a11/PySocks-1.7.1.tar.gz"
     sha256 "3f8804571ebe159c380ac6de37643bb4685970655d3bba243530d6558b799aa0"
-  end
-
-  resource "six" do
-    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
-    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
-  end
-
-  resource "tabulate" do
-    url "https://files.pythonhosted.org/packages/46/58/8c37dea7bbf769b20d58e7ace7e5edfe65b849442b00ffcdd56be88697c6/tabulate-0.10.0.tar.gz"
-    sha256 "e2cfde8f79420f6deeffdeda9aaec3b6bc5abce947655d17ac662b126e48a60d"
   end
 
   resource "urllib3" do

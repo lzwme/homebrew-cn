@@ -1,22 +1,18 @@
 class Libxi < Formula
   desc "X.Org: Library for the X Input Extension"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libXi-1.8.2.tar.xz"
-  sha256 "d0e0555e53d6e2114eabfa44226ba162d2708501a25e18d99cfb35c094c6c104"
+  url "https://www.x.org/archive/individual/lib/libXi-1.8.3.tar.xz"
+  sha256 "7ad60056f01af4f786cfe93b3a7707447711626fc8da2637bec71a90409babe5"
   license "MIT"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "02cb7bb24d30cd4ec0c6a4911e5a01d0c7d174753752671a31669048585f0c69"
-    sha256 cellar: :any,                 arm64_sequoia:  "57806e4096680d7fdbfeceea4e2aa04c3d179846b0ba00c9db8daf0319e6f40d"
-    sha256 cellar: :any,                 arm64_sonoma:   "474b22f2f4b4bf6945a3ce00400213838ba390542393cdba26c807f39694401b"
-    sha256 cellar: :any,                 arm64_ventura:  "e21e8ceae47d1b3ebabdcc9be472620b3f6f1c07aa320c3b9eb42d71d6c0d0fc"
-    sha256 cellar: :any,                 arm64_monterey: "72f13ecbdacac0c3c7479459e7f89d339c43d3f26d04cd8ff7fab7ab75938376"
-    sha256 cellar: :any,                 sonoma:         "912b8268b30dae048b52740eefbacda1b9767dc2db9469a2d34c395e0752c2b0"
-    sha256 cellar: :any,                 ventura:        "7a214e9759c6d33f6554c7941f9fb5a08c2805e514a93053f087899df79a0eae"
-    sha256 cellar: :any,                 monterey:       "e1621d00c64c524f3e511f93197e6323ae6c8f63d370730b8cc204ff1cd6c5e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "b2b86357aea40aebb92de04c90134a812a6f0f4ead1b0188f4f60b1d1d3846b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6839d93e4dc8d53688515849ec4ec2d830946d6d26f6cfcca6402390bc0f1867"
+    sha256 cellar: :any,                 arm64_tahoe:   "0caffca513b30f308fa1bd54682319f140ea0543397c3f61046f64a39ebcbe85"
+    sha256 cellar: :any,                 arm64_sequoia: "b8267eff95643d75f879e222a0dee27f938bf9eac0ebd93d39abfd557a05e0e5"
+    sha256 cellar: :any,                 arm64_sonoma:  "1f48d151e61ad252b4b34e7a083d7f4985969b53e32ae76e974aacc719ab18e7"
+    sha256 cellar: :any,                 sonoma:        "156699bb0a014109ede563b0e056d977e00c12ee8526b051910664385dd6d522"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9eec879337fd7d374842691b2662e96c885a5b70e1d3b366ca2b139e14eb1b7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5128c5f8ad475f0115e02bd2273029d93ef90ab63dfc0bfd414cf2eb01072c89"
   end
 
   depends_on "pkgconf" => :build

@@ -1,8 +1,8 @@
 class I2util < Formula
   desc "Internet2 utility tools"
   homepage "https://github.com/perfsonar/i2util"
-  url "https://ghfast.top/https://github.com/perfsonar/i2util/archive/refs/tags/v5.2.4.tar.gz"
-  sha256 "c6d9063bc302160889e4f751f00818bbf3488f70056a4f9a8276213f971c3018"
+  url "https://ghfast.top/https://github.com/perfsonar/i2util/archive/refs/tags/v5.2.5.tar.gz"
+  sha256 "7a36fc5d645ee0d2803cddccdfebccb0dc874f809de7172302374c5537a8f289"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class I2util < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "135a65518f90e04d0de2d93bcdc9b7b5f6af6d164ea7197b9a134a4eaa32dd71"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a10c737b26381ce2e88a8713f54b1ae3e00b9ceb6fda33843fc1ca4d19aa1047"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20a896f77935355887f0746e189a25b6c4e3f06b3d46fc1a6c3e6a6bac5c79e1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fced07b9b2bbe56dbed13925ae0678d6136f7b21085aa3c0fa1b6fe581f884a4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a257fe712d830069dc6d84914e0680170891131a989f668e117ec7963715095"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad8a6e1703fd59f08d3aeb9269740f5a80f61a58218f32959608bc9d31b7f765"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f94e66e27adc62bec2cb2998d562201961430b90c0f6ae00529c550cf2c86d6c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4c081fd5e817348709a7c85ef679e2ee0fbc4dc3addc88f7a876f722a4d7962"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f437dd20186783bb6011dc8a62ad7dcd76e915ce9f36806d9de9753e22ce17b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f1912b9918aeee385c2ae5497152f8cc9eda682064b15ceb00b1014a84a96160"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f99e480e98717db1e0d2a53bd626fc05edb54e67d740d82f8d84b16840d66de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cba1ba6297b2ac2ad6366d69ef10369ef2110bec8392f223ce2ea76006b0d5db"
   end
 
   depends_on "autoconf" => :build

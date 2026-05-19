@@ -35,6 +35,10 @@ class Carla < Formula
     depends_on "qtsvg"
   end
 
+  # Can undeprecate if new release with Qt 6 support is available.
+  deprecate! date: "2026-05-19", because: "is for end-of-life Qt 5"
+  disable! date: "2027-05-19", because: "is for end-of-life Qt 5"
+
   depends_on "pkgconf" => :build
 
   depends_on "fluid-synth"

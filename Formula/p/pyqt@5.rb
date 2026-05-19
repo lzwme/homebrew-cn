@@ -17,6 +17,7 @@ class PyqtAT5 < Formula
   end
 
   deprecate! date: "2026-05-19", because: "is for end-of-life Qt 5"
+  disable! date: "2027-05-19", because: "is for end-of-life Qt 5"
 
   depends_on "pyqt-builder" => :build
   depends_on "python@3.14"

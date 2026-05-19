@@ -23,6 +23,10 @@ class Gnuradio < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ec015bf6a0f0091abf7502acefccb202895e590b3beeae8e9edb0dbf6946fd1"
   end
 
+  # Can undeprecate if new release with Qt 6 support is available.
+  deprecate! date: "2026-05-19", because: "is for end-of-life Qt 5"
+  disable! date: "2027-05-19", because: "is for end-of-life Qt 5"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pkgconf" => :build
