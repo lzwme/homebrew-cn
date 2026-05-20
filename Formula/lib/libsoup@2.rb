@@ -22,6 +22,7 @@ class LibsoupAT2 < Formula
   # release and only usage of `libsoup@2` is unmaintained `libgdata`.
   # [^1]: https://gitlab.gnome.org/GNOME/libsoup/-/merge_requests/449
   deprecate! date: "2025-09-05", because: :unsupported
+  disable! date: "2026-09-05", because: :unsupported
 
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build

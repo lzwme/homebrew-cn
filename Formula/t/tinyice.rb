@@ -1,18 +1,18 @@
 class Tinyice < Formula
   desc "Modern, all-in-one Icecast-compatible audio/video streaming server"
   homepage "https://github.com/DatanoiseTV/tinyice"
-  url "https://ghfast.top/https://github.com/DatanoiseTV/tinyice/archive/refs/tags/v2.6.2.tar.gz"
-  sha256 "5ce3e9ccf314cb57dc56fe78d82563cef97ddab4d4f60f36329f324130ccf3a6"
+  url "https://ghfast.top/https://github.com/DatanoiseTV/tinyice/archive/refs/tags/v2.6.3.tar.gz"
+  sha256 "24ced8022e42f900ada1471d7152dcc43552d8bce022efe216a7fa5eb5a55fcd"
   license "Apache-2.0"
   head "https://github.com/DatanoiseTV/tinyice.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "920e6d89e528556e5a59462dcf23a7483517e339badde64deda022320d27b531"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "920e6d89e528556e5a59462dcf23a7483517e339badde64deda022320d27b531"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "920e6d89e528556e5a59462dcf23a7483517e339badde64deda022320d27b531"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7ab8b239183e4d26f868e28e4956e7a5e8f2ebe7ea3b04037d79fb17ce3c4155"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f159c201da0cc887dee355bd5acc6aea06034319391667404ac497e14b7f39c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29b55a9e19a75d29e6b76ff2dc637409c87229ec551069b2dd9e9b1f8a6c4f7b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "445bec3d63ab9aec24b3fe66e8fb9a24df02f098c764256a2caa29641d3d2005"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "445bec3d63ab9aec24b3fe66e8fb9a24df02f098c764256a2caa29641d3d2005"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "445bec3d63ab9aec24b3fe66e8fb9a24df02f098c764256a2caa29641d3d2005"
+    sha256 cellar: :any_skip_relocation, sonoma:        "28de2be722f39d7ad03587da88b8f962c9cc38dff00ca46ccefdfeb9ad058100"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed3e13c5bcc440427c3d077b8401828fb8d812f2ec7b213c66b8b71e899be032"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5feef288d107607ab327956c7c178e7e69d02b0190996954edadd785ae43f867"
   end
 
   depends_on "go" => :build

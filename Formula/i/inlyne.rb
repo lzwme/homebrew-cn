@@ -1,18 +1,18 @@
 class Inlyne < Formula
   desc "GPU powered yet browserless tool to help you quickly view markdown files"
   homepage "https://github.com/Inlyne-Project/inlyne"
-  url "https://ghfast.top/https://github.com/Inlyne-Project/inlyne/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "948cc9366f8191407eb5471ca6aa4a1f72408e7375fbc6df19927bac6ef955eb"
+  url "https://ghfast.top/https://github.com/Inlyne-Project/inlyne/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "4a2f426e88cf192f6aad1bd927640b97350bf6447620d7252bf0d6d01d6d3f40"
   license "MIT"
   head "https://github.com/Inlyne-Project/inlyne.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8033e5f3d3ebcf5925baa1ebac0d82f661f77fbf96bbdd6f39b8b040591add68"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39fb03f841c34c5807aa9073c53c2694db9069b5b8353aca8bc1fd4b82b6152f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f139d17acc3f16314388f17add45ce33569b3cf421e9218630fc71683578c350"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f79bd98c2dfca1fc55b66364ec319c2ffe7de00445caf0cedb5f7d63dfc7e16a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "927b271f06b0d6c271e51b2b4ffb8162fa11cdd35df0ce40a27716195d91bf8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56ceeceab37ebc14ab14475c456250d62cd6e9983bf7475d6a9f980d827bcea6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c71558219e2155f46b8368e86a2c94d2cfcb1343a6c778206352f756b1132979"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "172410bd8d667ac189b83239ae9a69416841149ccf7c342fd48f465624da5736"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8ae3b7cc6bd72e08fd3136afbbc206c765f342e9e0cfa6d8b781b4b6b94d297"
+    sha256 cellar: :any_skip_relocation, sonoma:        "022ee6bf5416aa56b541a523e22f6a05c5e2c33b9e22cb75479010abc5f46545"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f893fe36cef927e593c9bc6a64e5fbe926c8e784c3332225fc9203bb8c38c999"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7db12f52dd1c64cd4578f9474b5f36d4869fd2ffd57c0521fb252e4c895c1b8b"
   end
 
   depends_on "pkgconf" => :build

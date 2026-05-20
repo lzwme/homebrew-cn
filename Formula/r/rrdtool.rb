@@ -1,33 +1,17 @@
 class Rrdtool < Formula
   desc "Round Robin Database"
   homepage "https://oss.oetiker.ch/rrdtool/"
+  url "https://ghfast.top/https://github.com/oetiker/rrdtool-1.x/releases/download/v1.10.2/rrdtool-1.10.2.tar.gz"
+  sha256 "9787114551ee9b5db7c72722736388dcc54bf00ded51b5dd47feed11fb179fe4"
   license "GPL-2.0-or-later" => { with: "RRDtool-FLOSS-exception-2.0" }
-  revision 1
-
-  stable do
-    url "https://ghfast.top/https://github.com/oetiker/rrdtool-1.x/releases/download/v1.9.0/rrdtool-1.9.0.tar.gz"
-    sha256 "5e65385e51f4a7c4b42aa09566396c20e7e1a0a30c272d569ed029a81656e56b"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-    end
-
-    # fix HAVE_DECL checks, upstream pr ref, https://github.com/oetiker/rrdtool-1.x/pull/1262
-    patch do
-      url "https://github.com/oetiker/rrdtool-1.x/commit/98b2944d3b41f6e19b6a378d7959f569fdbaa9cd.patch?full_index=1"
-      sha256 "86b2257fcd71072b712e7079b3fed87635538770a7619539eaa474cbeaa8b7f5"
-    end
-  end
 
   bottle do
-    sha256 arm64_tahoe:   "af31da27f499a6c45e9a953ace7433b4426257f79c4662a3e34b3db176d7ec6b"
-    sha256 arm64_sequoia: "8211f623d3574a49017217e53cb5ea478c2c70a66e9db9f05a33bfc5cc5916c3"
-    sha256 arm64_sonoma:  "60537031ef479b3cb9c99ab8ced2a06586261178747c913b40741e975ece33bc"
-    sha256 sonoma:        "06c7e707f676165b56680e9dfd99afddf8af115c8d49d49c5d4903c39b92f283"
-    sha256 arm64_linux:   "fb254e1c08da875dc69e36c8d88ac48e833255e5e23d24ae1dcb6fdd28fe127d"
-    sha256 x86_64_linux:  "bd73a9c1a9d2374168a12dc6eb7d283a086e39769ca400cf0763c9b68e725c31"
+    sha256 arm64_tahoe:   "051f5d703153edee574abad317a3e7d03be526ef712a7212f3e1587980159e04"
+    sha256 arm64_sequoia: "b89b7f551c094b9f3ed7eaabb59d15fa8ebc7aa69a06862a02f9abb8773a2035"
+    sha256 arm64_sonoma:  "0f36a8248b6bd147ba3601be87bdb3a3de69310e266025fc9b6b2b2a057d5eaf"
+    sha256 sonoma:        "1cff00acce82e849f5ae6ee16b76b8af0f95187dd72bbefe383e65a2de624097"
+    sha256 arm64_linux:   "5cef6094c0e589e198d2c5246d84a29819a66812c0ec98e51c2472782e9635d8"
+    sha256 x86_64_linux:  "f4fe866543a042fde8de3d4c70d3ac8b4f7125eb878269555657a0b1540bffff"
   end
 
   head do

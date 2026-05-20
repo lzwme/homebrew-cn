@@ -1,8 +1,8 @@
 class Memcached < Formula
   desc "High performance, distributed memory object caching system"
   homepage "https://memcached.org/"
-  url "https://www.memcached.org/files/memcached-1.6.41.tar.gz"
-  sha256 "e097073c156eeff9e12655b054f446d57374cfba5c132dcdbe7fac64e728286a"
+  url "https://www.memcached.org/files/memcached-1.6.42.tar.gz"
+  sha256 "50f08b879d4f9d36dea9d905e9eaade15c708e38db7e9a73fc21dc8b45395de7"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Memcached < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "73994b98ba41eaeee0e79d4b5ffab8b9fb68856d5e9136148f1aee6b68cc151b"
-    sha256 cellar: :any,                 arm64_sequoia: "21d44b6b093e0d4782e28cdb4972521e06a7d40a56648a07ca4e228c5fcd2726"
-    sha256 cellar: :any,                 arm64_sonoma:  "12a9038a6a0ce0efe49f915a5c869dd6d22841fad7ea5d2a7a95b8632110d154"
-    sha256 cellar: :any,                 sonoma:        "9014d9f2c632c4095b22a05b6476416bef77993e8ccf7f79bc81560d5e2bb21f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "59ef13bbcea7a66128350ddecb643619f3d1c9e616fc43d82634f5d341048410"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e3fd0efd8dd876cbfb403902908c66b28af041d665b6acbf41f5cfd9ee7ecf2"
+    sha256 cellar: :any,                 arm64_tahoe:   "751beaa71e4798579172f4986bc8b866b8af33f12ba5662c044b5d0a90eadd3d"
+    sha256 cellar: :any,                 arm64_sequoia: "828bb04c815b3d34c436ab07bc991bd8491e2f44ab682494894d5cb670c7f57e"
+    sha256 cellar: :any,                 arm64_sonoma:  "d62ae0381642ef332f90850c8afb675813b7c4eecbe8cbce222ad4dfd17c171a"
+    sha256 cellar: :any,                 sonoma:        "60a872a1b7254dc3f5427c81a8966135ab348f340826a19a00d09c60d28e519c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7a2064f6f999f572e9d1b5da8075299359aff70e6ced37780079fa6d550e6c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d96e5593198adf4d09ca6edc2a10691f9c18640847be19ac65005f96b8b2715"
   end
 
   head do

@@ -2,9 +2,9 @@ class Vgmstream < Formula
   desc "Library for playing streamed audio formats from video games"
   homepage "https://vgmstream.org"
   url "https://github.com/vgmstream/vgmstream.git",
-      tag:      "r2083",
-      revision: "57df2e179d929532094f4e4dd42ce5395514622b"
-  version "r2083"
+      tag:      "r2117",
+      revision: "71e2361042531fe767fb98300cf8c1ee95e539a0"
+  version "r2117"
   license "ISC"
   version_scheme 1
   head "https://github.com/vgmstream/vgmstream.git", branch: "master"
@@ -16,12 +16,12 @@ class Vgmstream < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "47cf5a573445ed7c118cb0845334179d1654073ead9c6de4e9b7a7f9c69b535d"
-    sha256 cellar: :any,                 arm64_sequoia: "c29c821fff5afa7c5078a61a12b841ccf83b69f9e10648755b3c3d37fbeeed1e"
-    sha256 cellar: :any,                 arm64_sonoma:  "1c11d25a63a6f6d3d8be589c622fbb6115f08268d71f3f2bc6e350730978d4bd"
-    sha256 cellar: :any,                 sonoma:        "75160c8ac0aa21de83575798cb142b8de59ef744b3f7b94bcff921cb05e29830"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f26317e486d5c7857d83a0bfca2b75d443f603003e7be18faec10abe45c2700"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e62e644e31513b5e22ce38bf207cf2b6a7afc49bc0b489b047ed18f91aae75e2"
+    sha256 cellar: :any,                 arm64_tahoe:   "42efc7d31923a8223997687b4e3b75c51c1bb0060b880b6758197107bacfa8f3"
+    sha256 cellar: :any,                 arm64_sequoia: "7666a7296ad12b3457713813428c6922c0217b7cc6871447a4544254cb710592"
+    sha256 cellar: :any,                 arm64_sonoma:  "630809d4b97aec569421bb4e9205ecd0b5421ea3f3e277d6c2fa14ef27ad4469"
+    sha256 cellar: :any,                 sonoma:        "fe45b64cf96542feae9fef19d43ee18119fce8a1ee03c97c12e72d7313094ed2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9eda3ceb22f2d299fef87dc9cb28187acf8c9714b12797d7f8f0f9a2bf4dd6d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86752c52fe100b1aabac73b698f4e277c318a7898e6c7bb14c3f747762fdc392"
   end
 
   depends_on "cmake" => :build

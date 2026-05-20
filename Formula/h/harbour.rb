@@ -31,6 +31,7 @@ class Harbour < Formula
   end
 
   deprecate! date: "2026-01-05", because: "uses deprecated libxdiff"
+  disable! date: "2027-01-05", because: "uses deprecated libxdiff"
 
   depends_on "jpeg-turbo"
   depends_on "libharu"

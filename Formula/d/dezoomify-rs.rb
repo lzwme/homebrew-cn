@@ -1,8 +1,8 @@
 class DezoomifyRs < Formula
   desc "Tiled image downloader"
   homepage "https://github.com/lovasoa/dezoomify-rs"
-  url "https://ghfast.top/https://github.com/lovasoa/dezoomify-rs/archive/refs/tags/v2.15.0.tar.gz"
-  sha256 "539853288768258caac07a559bb7050000e7e0c6e9770227b390c875c26c8ce5"
+  url "https://ghfast.top/https://github.com/lovasoa/dezoomify-rs/archive/refs/tags/v2.16.0.tar.gz"
+  sha256 "cf896da035dd0e5f59f20f506d343f5fad9fa2102f69ae75ca092d98dfdd7ed5"
   license "GPL-3.0-only"
   head "https://github.com/lovasoa/dezoomify-rs.git", branch: "master"
 
@@ -15,14 +15,12 @@ class DezoomifyRs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8be8dcfeec19cf3e8255dfb6b70608f591cfffbdee959919d3d99504558657c8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "847cc613f3d55a6e7a4240166c77cb3f96361cdd1aae066d00e81810ea71182e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0404ff601c67f74757b3d827fa0eb15e9a2fbedd0916c827b918cc7b1a5164ad"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "347c1182e473e74646a95f9a9351149a33ddb84b3eb446da5602bc1091acb379"
-    sha256 cellar: :any_skip_relocation, sonoma:        "62bdd4173ad1428c4a19515c4a8ae0728c919e2a7e641a08de9e1105ae72e155"
-    sha256 cellar: :any_skip_relocation, ventura:       "0baa5cabf36380e51d8de49217a19b1dbcac4d8699fe15541c098b05d568baeb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1533e3d5a7eeef4debd69d4a5b54dc8b38b7dbb03055c93b02699b4651a5c33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a04d863259959bfb3021ba1e553e612e320fb515022081770dad861427ef3907"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "11b977ac8a4e6d9fa5ebe7d43678bd305970fcc9d70043d16c25264cbe96adf4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de332846b0bf1796c2e3df40eb28b75722d9f1214438609e9fccd06b556388c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eba14efdc8f4c9c06bce7534c68524b2c9625472670fe99917e92dd2d9fb4aa5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a483599af8e36b38cca3b5cce33e816141fa5e9dd380fc067b1410a631e57b8b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7ea14fb198139f5d2fa9879cc183e16538c2b6669885ee1600be6a552f26cdb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50f5b73624ab915ddc1695bb0ca83c1ef9dc953a338feff2ce169a2e5a588e6a"
   end
 
   depends_on "pkgconf" => :build

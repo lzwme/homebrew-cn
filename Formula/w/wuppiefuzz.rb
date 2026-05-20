@@ -1,18 +1,17 @@
 class Wuppiefuzz < Formula
   desc "Coverage-guided REST API fuzzer developed on top of LibAFL"
   homepage "https://github.com/TNO-S3/WuppieFuzz"
-  url "https://ghfast.top/https://github.com/TNO-S3/WuppieFuzz/releases/download/v1.5.0/source.tar.gz"
-  sha256 "f13052b7066be9c0b1047abc7c7a1ce9c5ed1139d52228fe2609b87853daa946"
+  url "https://ghfast.top/https://github.com/TNO-S3/WuppieFuzz/releases/download/v1.5.1/source.tar.gz"
+  sha256 "36fc2fade7e3a3901540c751f0e29c456ecb434dd171960e32a2d338731c09c9"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "e59b88c5947525e948b443a1cc8997f6a0993523499867ceac2e79303bda97e9"
-    sha256 cellar: :any,                 arm64_sequoia: "6d80b9346c503dba3b78b6763fb45336dd50a6e0c91b88c86a1b274756fe58ec"
-    sha256 cellar: :any,                 arm64_sonoma:  "5a527e9930a2aa066ccdea78854d6ae31d39543a162bb0b5994ce81030d93b1b"
-    sha256 cellar: :any,                 sonoma:        "9e7f5d40692a5cccd8e0d2029868492d7532f0e63811a3335ed6239a3761bc9b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "01b967a6836e5334ed7add55571e047a3b0d297393a4db33a386a59b39c0e985"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9810f28506a6cdf172fb76749e625ec8975547c5b8e2ec23bf189d7f69d39dc4"
+    sha256 cellar: :any,                 arm64_tahoe:   "40403b648a9649ffa00439f8ff70cb50ac8b291a8ef133d96522523d74da0766"
+    sha256 cellar: :any,                 arm64_sequoia: "da82823caa0b43495e7d62a5f2f4c504873d51beaaa4cdfcdd88a8873e9ac660"
+    sha256 cellar: :any,                 arm64_sonoma:  "cd45177938db572afc15dd80364625f317f598804754d1407d530235ac8d9c55"
+    sha256 cellar: :any,                 sonoma:        "e020bd8b8d9a207cb8c6b82e8367fcfb036ca1f55151797528fda27fab7c0422"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e3b32dabf15366d6b2d3115e3cbdc1163373eeab323a0e0d7c1ca8b8fcd8948"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8710a9684a8847af281a7cd362a1df61c182962a5860ee96c646a96bf4416f76"
   end
 
   depends_on "cmake" => :build

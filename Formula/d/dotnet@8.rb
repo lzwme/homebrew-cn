@@ -24,6 +24,7 @@ class DotnetAT8 < Formula
 
   # https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core#lifecycle
   deprecate! date: "2026-11-10", because: :unsupported
+  disable! date: "2027-11-10", because: :unsupported
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build

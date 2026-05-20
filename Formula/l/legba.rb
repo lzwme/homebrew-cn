@@ -1,18 +1,18 @@
 class Legba < Formula
   desc "Multiprotocol credentials bruteforcer/password sprayer and enumerator"
   homepage "https://github.com/evilsocket/legba"
-  url "https://ghfast.top/https://github.com/evilsocket/legba/archive/refs/tags/1.2.0.tar.gz"
-  sha256 "d618c59060b76fcff26c066c1a2385c85f8c808bc07e2a1f30c777255de2a400"
+  url "https://ghfast.top/https://github.com/evilsocket/legba/archive/refs/tags/1.3.0.tar.gz"
+  sha256 "92707c3dfd809480714c2b5347d2f6506c8848466986597787671b9ffa8bc461"
   license "AGPL-3.0-only"
   head "https://github.com/evilsocket/legba.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4a5d7a59154b77080657cdd17b8c4cb989e34a060ad7f80d0c25f8fc6d6c3e68"
-    sha256 cellar: :any,                 arm64_sequoia: "1064dc688e6184befd3497ae9b802897bf52d0cc21b02306914f6e0e488add3e"
-    sha256 cellar: :any,                 arm64_sonoma:  "6e34ddfe276dfc008ced3815ade9654aa119627123a7b3ecc23666552890d55b"
-    sha256 cellar: :any,                 sonoma:        "746c3ebe76412e059eee1843143b06d30a700c60fd85dde0c3726ec3e623a1fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ffe88a7ebad40b7381aa07238ffb91b74f4051653a8dba5e58f1a8650a1869db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2908972ed980846dfb43acd200e11e8a438273776ff8d20a5fc51141f787b031"
+    sha256 cellar: :any,                 arm64_tahoe:   "9b5ffcfb622129d9e1e4e15eb23c7f5d41fb299ec3abf804847258fa5bcf4603"
+    sha256 cellar: :any,                 arm64_sequoia: "cc7a31566e35d829a6ff13fe615f6efaacd6221d0ada8968842f396ab82a45da"
+    sha256 cellar: :any,                 arm64_sonoma:  "32723c6d82955620f6962a68727031f0b3b33ced6e973b410900259d1fc91857"
+    sha256 cellar: :any,                 sonoma:        "dc4a48eb2642cc1c8dcee96f5b326f69074e658015e08b1b31b26feec732034c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9970fd099b0d1b6963fce8861fa80e828c2ff4c076c1c964ac11c4e734b0570"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72d0ffcc00f11eb2befb1c6a5a7a7b13fbf2b574ebe73db7a3821387a82bc12c"
   end
 
   depends_on "cmake" => :build

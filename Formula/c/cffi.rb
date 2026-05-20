@@ -3,7 +3,7 @@ class Cffi < Formula
   homepage "https://cffi.readthedocs.io/en/latest/"
   url "https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz"
   sha256 "44d1b5909021139fe36001ae048dbdde8214afa20200eda0f64c068cac5d5529"
-  license "MIT"
+  license "MIT-0"
   revision 1
   compatibility_version 1
 

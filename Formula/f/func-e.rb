@@ -1,18 +1,18 @@
 class FuncE < Formula
   desc "Easily run Envoy"
   homepage "https://func-e.io"
-  url "https://ghfast.top/https://github.com/tetratelabs/func-e/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "2648439feeb98f0e3dd7b8b5d3381b80b2b4a6793385b255d152db4da3cad3f3"
+  url "https://ghfast.top/https://github.com/tetratelabs/func-e/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "98982018669fe59b2216d43cafac3760bbad346cec93b329d8943f56268b6446"
   license "Apache-2.0"
   head "https://github.com/tetratelabs/func-e.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8716e84aafaf3e684b7b15d6086597d0926e97f8b05c5712c63ea7518476351a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4e518d3252072257a7e1bbd48d104d683c0e9fb622474e4cce467fd9a26578c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b1b1cb08ed33666bbeb46b5a7703a160c89536e47a1bfeb8aa3937086aa4017"
-    sha256 cellar: :any_skip_relocation, sonoma:        "86420a590f773ec6077060e05603e3990ad5b7c49496df302d5e344206d2eefa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a176ca8b0fb670b871bb953db3d3f51dee455fed55a7fa0e004a07f35b9e8ed7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "233527192a1e7e66de8c6dca6af4a9107fab3753e23f7444fad6b9fed448af17"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e1922acc4a11707ba15c59d23f70c60ebdce816d7cfb22cc37f3e13b57c39836"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0887b976f48018004c035c1a9b620c488698e1316f90ef6b2ef3a78001b999b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58e046169e62c807df7b7d6adbb2ddabbe3bfba00a0df01eab7d20f5b9f6e4f2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5352a8248748dc4e3fd73f69f82ed7d3cf07efdcd3f6afd6a9032443b674af70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9678a633abf0a74c10eeb6b4d9d4b70d6b3e2a09e7886471efb0b8a5e481ce4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78beeadb22202bb8909f90c60b1422c732658e395ba5f61f5dce68ba071adee8"
   end
 
   depends_on "go" => :build

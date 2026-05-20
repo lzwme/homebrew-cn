@@ -1,18 +1,18 @@
 class PixiPack < Formula
   desc "Pack and unpack conda environments created with pixi"
   homepage "https://pixi.sh/latest/advanced/production_deployment/#pixi-pack"
-  url "https://ghfast.top/https://github.com/quantco/pixi-pack/archive/refs/tags/v0.7.8.tar.gz"
-  sha256 "fb7dd83fe21d1bec2404b883148ab66a0dfd8e55e402bd49de8494bedcd13da4"
+  url "https://ghfast.top/https://github.com/quantco/pixi-pack/archive/refs/tags/v0.7.9.tar.gz"
+  sha256 "d70c7d58730a104e0a7dfc4d5cf7afea5022a8707ceaeeb820595d43678e8155"
   license "BSD-3-Clause"
   head "https://github.com/quantco/pixi-pack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e1f9bec2c251e317aeb7d9acfcd3647cad56642a7910d824ad3f92a3489d032"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "891a70820f9c3481827bd4c32c583c30b61dee68d65fb0a73275585968eac3bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a93926fe8e9104925e6c235d28433fe43904a7a7a6c43b1125ad2cecfb04ceb4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "21413365a8ce0c21250191379ab2959311bbcceaee483f167646618515e8787b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe196a525703578e929ed6c14034bbce5768cd3f8299ae0e81fe60013ee62f06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe323110368af04b24a1d3c78bea18f94cee7f935dcdd81e224466f7fbf3a446"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a1e55363a9e3fdabdbf464a1fbfa22a6ea67ea75475c5c31b643207ae7cd5602"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8c994357b9dd9d3b2a9a21f1b4e023402b243bec2f9f15a0a435a32f5071129"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3661808148ac11b767932c459781b34ad0da0ef57c02473cc77187667c6f1882"
+    sha256 cellar: :any_skip_relocation, sonoma:        "039240461813aadc7b66067ea929bf487d3608920eede0e5e84b70bf24ff4ab0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "54eac6cbcf76de47dc0a0967e0aaedf8ca3b4435345eb7749ac64791f8b5330e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c63d857a89251dff5a3b7cfd745657c2887db2688357290392ab1c151502968"
   end
 
   depends_on "cmake" => :build

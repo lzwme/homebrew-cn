@@ -12,11 +12,12 @@ class Druid < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4c597447e8db134b506a8757ac1e6bc141f32aa6c860f1f75a28d12faa7e97a1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "9fe3c62596bcc83a6b6dc02a9f919a9bee5bd6b603149bfa6decb120a9135d0f"
   end
 
   depends_on "zookeeper" => :test
-  depends_on "openjdk@17" # JDK 21 issue: https://github.com/apache/druid/issues/17429
+  depends_on "openjdk@21" # JDK 25: https://github.com/apache/druid/commit/77d258c011bbc0c9019bd8c9eaf49359051c9a3a
 
   # check https://github.com/apache/druid/blob/master/docs/development/extensions-core/mysql.md#install-mysql-connectorj
   # for mysql-connector-java version compatibility
@@ -54,7 +55,7 @@ class Druid < Formula
     end
 
     bin.install Dir["#{libexec}/bin/*.sh"]
-    bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env("17")
+    bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env("21")
 
     Pathname.glob("#{bin}/*.sh") do |file|
       mv file, bin/"druid-#{file.basename}"

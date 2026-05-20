@@ -1,18 +1,18 @@
 class Libde265 < Formula
   desc "Open h.265 video codec implementation"
   homepage "https://github.com/strukturag/libde265"
-  url "https://ghfast.top/https://github.com/strukturag/libde265/releases/download/v1.0.18/libde265-1.0.18.tar.gz"
-  sha256 "800478f3bf35f0621b14928ceb317579f3e8b23de4bd2aac29b6cb8be962bbd8"
+  url "https://ghfast.top/https://github.com/strukturag/libde265/releases/download/v1.0.19/libde265-1.0.19.tar.gz"
+  sha256 "bb19a0b485d2643e0eeb7e91f3ab32d1ad617e7c487dbedc91214ca3dbd8d7eb"
   license "LGPL-3.0-or-later"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e332c5e491ae7f70b8ebae1c9f293585b7752a7afaab7333fb8ef9575812544a"
-    sha256 cellar: :any,                 arm64_sequoia: "46bfe532b550fbee788b2a270af0adddd6814631cfbab5ec8072a731fb3aeb69"
-    sha256 cellar: :any,                 arm64_sonoma:  "03ea2640c729029695efd091b57d981467e9fa10c7cc68e76a26fa34a0fba23a"
-    sha256 cellar: :any,                 sonoma:        "2d42dca33ab978407dcf81e723123edeaa37adefd99c271c620b71195da0fa24"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fd498520b9d66240acd346b1456d3dd0fe7441467da243cb806db8a79ee3dce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c17c4d65e7a4c2eafd1c5801d67bf1f6ef8edcd9e79c8dd9a650e07312a4b44"
+    sha256 cellar: :any,                 arm64_tahoe:   "e378aa4d15d3ed8b5a55940617f7106b85706b558519c9274b99b55139cf94b6"
+    sha256 cellar: :any,                 arm64_sequoia: "821492d9461be9803d700846f58e9c2fc376b7a7e4069ea8f2cc3b3512f7ba57"
+    sha256 cellar: :any,                 arm64_sonoma:  "285207ab9e7ab7ec05155def2d61e4725d78f559261e50f66e35c70397528f54"
+    sha256 cellar: :any,                 sonoma:        "e4e812bef14a6fc64d1cb28d2466a0a6e87f993f24fae4c0e41cd08c5e285308"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4797186be12f7ab555ad927194a90fd67e2b1b8d991ae39affcfc83dee68f434"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90b701add8c58b44e9218a1d3411b3c67bd6b68a23b16bbc2f008f806d2280e1"
   end
 
   depends_on "cmake" => :build

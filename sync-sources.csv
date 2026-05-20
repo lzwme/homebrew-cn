@@ -1001,7 +1001,6 @@ Homebrew-homebrew-core/Formula/c/chmlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chocolate-doom.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/choose-gui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/choose-rust.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/choose.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chordii.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chroma.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chromaprint.rb, Homebrew/homebrew-core, 1
@@ -6497,6 +6496,7 @@ Homebrew-homebrew-core/Formula/r/rustcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustledger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustls-ffi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rustnet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustpython.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustscan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustup.rb, Homebrew/homebrew-core, 1
@@ -8271,6 +8271,7 @@ Homebrew-homebrew-core/Formula/z/zenity.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zeptoclaw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zero-install.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zeroclaw.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/z/zerolang.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zeromq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zf.rb, Homebrew/homebrew-core, 1
@@ -9663,6 +9664,7 @@ Homebrew-homebrew-cask/Casks/e/exactscan.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/excalidrawz.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/excire-foto.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/excire-search.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/e/executor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/exelearning.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/exfalso.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/exifcleaner.rb, Homebrew/homebrew-cask, 1
@@ -14177,6 +14179,7 @@ Homebrew-homebrew-cask/Casks/p/pester.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/petrichor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pext.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pgadmin4.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/pgen.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/phd2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/philips-hue-sync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/phocus.rb, Homebrew/homebrew-cask, 0

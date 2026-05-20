@@ -18,6 +18,7 @@ class Aws2Wrap < Formula
   end
 
   deprecate! date: "2025-10-02", because: :repo_archived
+  disable! date: "2026-10-02", because: :repo_archived
 
   depends_on "python@3.14"
 

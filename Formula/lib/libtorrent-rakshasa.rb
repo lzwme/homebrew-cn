@@ -1,8 +1,8 @@
 class LibtorrentRakshasa < Formula
   desc "BitTorrent library with a focus on high performance"
   homepage "https://github.com/rakshasa/libtorrent"
-  url "https://ghfast.top/https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.16.11.tar.gz"
-  sha256 "b1ccbc0f2241d840957d6e82cf1ea35fd537220d3f5478fef23994bd292bf184"
+  url "https://ghfast.top/https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.16.12.tar.gz"
+  sha256 "1ecbb5d7802e18e807d3c2f58499e5c189ef81badb2c6c6ebb2399d49c08f5c1"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class LibtorrentRakshasa < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0c4138afcf161df70bbe73e27eb85544ef7398143f44b4543dee9bb2f3f011d5"
-    sha256 cellar: :any,                 arm64_sequoia: "c5b294fac3ed526a83b55b4a9d932065dd652a3b1b4f740710eeef2fea065c9f"
-    sha256 cellar: :any,                 arm64_sonoma:  "25db9a0301001ede2bdda8c0c0f4dcf1906be7099cdfdea171f5353ce63fd045"
-    sha256 cellar: :any,                 sonoma:        "65f7de5c6a71f360a481795d264acbcc5ae4486e46acde5e248465b9ed4f768e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5c890408c17634d6cee9dc25953eae2ee609c21be4aed3a70a8aac71ef44a07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76774fdcf1c39b5ec79253dc5054dade569ffe00d6eda9478274f56f9319b448"
+    sha256 cellar: :any,                 arm64_tahoe:   "322dc369edcb2a7db8ee93829be2540da2ff2ed858f293f1086092246ed7c81b"
+    sha256 cellar: :any,                 arm64_sequoia: "0184a929e5f33241ef8dd26ba9d74dc342ee34ee15e2c2dbda209e828aedb0b3"
+    sha256 cellar: :any,                 arm64_sonoma:  "e35ee361808f450ffb7eb9ab01a45799fca167e0703284169e8ca7e97d002c89"
+    sha256 cellar: :any,                 sonoma:        "2f3ad006fcd9e589a4ee80e5e360d4226b355b8c2814e0c3f2b1d1c44019dc70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "175b8eee892ee20c3c3b26474f576431788bd92c70eefded5aa1fa537230f51d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5c4c9608644dc8d7de8b49930de7a0ad7d9054fc7ce43eb8d9d9e184de0f541"
   end
 
   depends_on "autoconf" => :build
@@ -43,10 +43,10 @@ class LibtorrentRakshasa < Formula
   test do
     (testpath/"test.cpp").write <<~CPP
       #include <iostream>#{"  "}
-      #include <torrent/torrent.h>
+      #include <torrent/runtime/runtime.h>
       int main(void)
       {
-        std::cout << torrent::version() << std::endl;
+        std::cout << torrent::runtime::version() << std::endl;
         return 0;
       }
     CPP

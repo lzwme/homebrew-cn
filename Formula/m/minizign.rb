@@ -1,18 +1,18 @@
 class Minizign < Formula
   desc "Minisign reimplemented in Zig"
   homepage "https://github.com/jedisct1/zig-minisign"
-  url "https://ghfast.top/https://github.com/jedisct1/zig-minisign/archive/refs/tags/0.1.12.tar.gz"
-  sha256 "4a567fd462e7dc75e3d6f20a300208ca1629a89896119493d53b6d19bec4bca2"
+  url "https://ghfast.top/https://github.com/jedisct1/zig-minisign/archive/refs/tags/0.1.13.tar.gz"
+  sha256 "018f768d5614a1fccedf806b62f5614a179507f4431e8df0574d2dd38e5d31e6"
   license "ISC"
   head "https://github.com/jedisct1/zig-minisign.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7747a4bf070f657dd5f6df9128074e7f7a5fb12a67bbf72d3a72747a7af22e25"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "901ad4567285ecbfbd9c770bc60261e436f0a9bd3eda9edd4302f98f142f4430"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0060297445e8955145eaa9f7eacb2041e16ff8c9f3c58a6b5c803f1861e8b460"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83301b5522b4a250708494c16c2e6fe9b045e14a6233ce469b0f9b50a29c7a0d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "238042c6bcf403128dcd157e08a797029b8b57358929779ce9e8f339c3828227"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69e3b052be65cd52cae297195d1763cef8bf4beee317efefb69fba16fcee9002"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c79df922a2d3c6c37cf7295eff50f6bea3e56ded6d2daabf6854943eb825629"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db6b7e50805d2ca5eabed6299b6b77bcace0b030e2f81e6f78ed3965298165b4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "047dc14e3448fce68827a85711e4534028bfd9e1754773892c50a91ae2627e22"
+    sha256 cellar: :any_skip_relocation, sonoma:        "573882e509717d889f73f17df7bc0bfa688a7e1a24cd8e10393b4ecf55d1cc66"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff9db5247b3e9fb120a9ee1841b7660f3bf489be1a0f157ab9ca1bb57b71edfb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2f745cbd517ad2ce762fe8474ec3246b4ea1f67c5914d0f93dd4b6d4d0d8e02"
   end
 
   depends_on "zig" => :build

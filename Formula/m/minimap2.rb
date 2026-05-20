@@ -1,8 +1,8 @@
 class Minimap2 < Formula
   desc "Versatile pairwise aligner for genomic and spliced nucleotide sequences"
   homepage "https://lh3.github.io/minimap2"
-  url "https://ghfast.top/https://github.com/lh3/minimap2/archive/refs/tags/v2.30.tar.gz"
-  sha256 "4e5cd621be2b2685c5c88d9b9b169c7e036ab9fff2f3afe1a1d4091ae3176380"
+  url "https://ghfast.top/https://github.com/lh3/minimap2/archive/refs/tags/v2.31.tar.gz"
+  sha256 "bff334a0e4512644e2f3e29944aeec408f49450f4f74dc39fe89e5273869255b"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,12 @@ class Minimap2 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bab9ae8b3c6ebe68b4cc6ec84c04cefd0a9ed544d474d0b97b3edde63613c029"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc2e9667c941db62f475850288cc477af72e76f3f2d601dc5504b33a25054bc0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dea2a7c77af4d26e3121377eaa17fe9f8fda9b195a729f30b0c2b031e71cb79c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d9697c3492313510140bb1d4290f854db37f419988e0e141d8c98cd8152e24e4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b66bf9449ae3f6d95f0fd33af2b2df9c1f556a59e6b1eb53754d5d39bbc3aa80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84a23620b041f878b15b147f1eee02ab87b73c26ff1afd8b40bef05503aa141a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0621571925138e90e219a9aaac5595a5b332a6ac9bba3357f360bcb579b89f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9a4c3f4ca1b3418eabfb36b56c4b51c1349df8fd1dae21155a53d988a792ee1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e74099060a600ccc2946c0405ea2ad833d3513e75c6ce99c997fd68c0547757"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61ee86a03797524d2196ab430ab57eab6a92eff05981c938c5e9787c6e953b52"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d408197f553ea716ff31cbff5edaee823fed53bb935506df310f1a01a5c039e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e87deffaa0770d2b223a8a820238d6478790e1616a66f37bdc15f2a2d7d81a73"
   end
 
   on_linux do

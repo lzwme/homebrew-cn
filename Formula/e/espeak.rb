@@ -31,6 +31,7 @@ class Espeak < Formula
   # SourceForge page (https://sourceforge.net/projects/espeak/) says:
   # "As of 2021-11-17, this project can be found here." and links to `espeak-ng`.
   deprecate! date: "2025-11-13", because: :unmaintained, replacement_formula: "espeak-ng"
+  disable! date: "2026-11-13", because: :unmaintained, replacement_formula: "espeak-ng"
 
   depends_on "portaudio"
 

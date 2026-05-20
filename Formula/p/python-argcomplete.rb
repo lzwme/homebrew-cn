@@ -12,6 +12,7 @@ class PythonArgcomplete < Formula
   end
 
   deprecate! date: "2026-02-13", because: "does not meet homebrew/core's requirements for Python library formulae"
+  disable! date: "2026-08-13", because: "does not meet homebrew/core's requirements for Python library formulae"
 
   depends_on "python@3.14"
 

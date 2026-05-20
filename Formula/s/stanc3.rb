@@ -2,17 +2,17 @@ class Stanc3 < Formula
   desc "Stan transpiler"
   homepage "https://github.com/stan-dev/stanc3"
   url "https://github.com/stan-dev/stanc3.git",
-      tag:      "v2.38.0",
-      revision: "e05ba2b1c68af5abf6bb4ce4279e82b6d1059f8b"
+      tag:      "v2.39.0",
+      revision: "739471362446086911f1d6472c19ae0749c366ea"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "052f27eccaa5dd5a4b9c441846e3741cee2b3e5e733d52094db2c3e39e7dca54"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d835afe8912f71f5772dcf3384bc177b4dacea3906acb13e116e1dd9adb7322"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb02b223a6c2b33b7284e59ce8f068816246aa13057430eb6a5269de7cca0964"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0bc2c520dc35d62340f74eea4243e70921af2d4c4e8b991edee6016e77781405"
-    sha256                               arm64_linux:   "e0581e5129dd2feeb742d8bf10db92be453f5fc081c55bbf490f37eb9b6769c6"
-    sha256                               x86_64_linux:  "3b13da81774f275c774e28c92965d9469e136f9afbf2389d1f76cceace80ddb3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02b4e25206b4be239bcad0c3837ff720b16a376d3bc5b24531ab72c3da42adae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "09a7162513f3499e616c3358585bfce78d8ea40eb09851133048c2ac90d4d11b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48d84f89522a49cafd3563e5f883426ac01086de3a0c04a911d74e727fdcccc3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1dd2b661994371d8d740b9bae9ef8301d199d78800a68a2113a0b9f838052541"
+    sha256                               arm64_linux:   "e0bd96aa2ce46d8fe0f460f2c5816298a9d1d9293423da28250e39fb45e12ce6"
+    sha256                               x86_64_linux:  "04b8f67709e2391c1adc4d55e154723f0282e9fae34b6dfda67e7b1d05ddadab"
   end
 
   depends_on "ocaml" => :build

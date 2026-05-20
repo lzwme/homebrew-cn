@@ -17,6 +17,7 @@ class Neverest < Formula
   end
 
   deprecate! date: "2025-09-20", because: :does_not_build
+  disable! date: "2026-09-20", because: :does_not_build
 
   depends_on "rust" => :build
 

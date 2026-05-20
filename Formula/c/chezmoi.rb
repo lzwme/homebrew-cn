@@ -1,8 +1,8 @@
 class Chezmoi < Formula
   desc "Manage your dotfiles across multiple diverse machines, securely"
   homepage "https://chezmoi.io/"
-  url "https://ghfast.top/https://github.com/twpayne/chezmoi/releases/download/v2.70.3/chezmoi-2.70.3.tar.gz"
-  sha256 "57a6f985f74f3015ffbe2bcba72db551f2a711c0504332148c3ddcd28f877118"
+  url "https://ghfast.top/https://github.com/twpayne/chezmoi/releases/download/v2.70.4/chezmoi-2.70.4.tar.gz"
+  sha256 "a70137b51f83a894d113b64d67095ca8d5609cbe783b9ea9fb72fb77b80bff4b"
   license "MIT"
   head "https://github.com/twpayne/chezmoi.git", branch: "master"
 
@@ -14,12 +14,12 @@ class Chezmoi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4446b47397d5b392c8b7a9ddfe4a6c04a41e2fe4dc52aac5110ce9f8b4c45bc4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf4754b55768cdc567ec3724035a0b40fc427a332aa8953ae80aee607030d1b2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4918d3431e1a9eac0a023cca522beae8799b6e5df58724b727325f21a284e3e7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d8b88aa07b7a48198a9b35e8d73a76afa877da5596853feebcd7c9a365b7e558"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6fee5d27b8faabcf656dbc8f3d8b5a108b5f79048018e8a8922f3527f9cd44b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "080dec3d1f0f82827a0f141b9031f35ca3274d7cbefb121689a0e8d33f503dfc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "867d684e7322e34fc0ae0a0afdad89a8be346702387f7ad12f9699e56980ecab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f5941f5cfc9a739847b28975c4de04019fbd8f8587d97775172a281f1b7630c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0552c76ae3511f2d27a62fddf6998f6487c8060027471657125d6b59edac96b5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5b4e1e6235d3134664de30686bed0808dc04239c9a6bc70cc6cb2d975d76b2b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a09f16c389f4508d9a5656cad4ccf8cca1590c5548436597e51669dd5a220075"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa5a4b157830dfde99af18785deb541d569e1c3fea8a64613a311aed836bf044"
   end
 
   depends_on "go" => :build

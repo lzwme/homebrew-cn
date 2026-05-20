@@ -18,6 +18,7 @@ class Ki < Formula
 
   # not compatible with kotlin 2.0+, https://github.com/Kotlin/kotlin-interactive-shell/issues/131
   deprecate! date: "2025-10-26", because: :unmaintained
+  disable! date: "2026-10-26", because: :unmaintained
 
   depends_on "maven" => :build
   depends_on "openjdk@21"

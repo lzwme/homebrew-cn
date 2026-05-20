@@ -3,18 +3,18 @@ class Black < Formula
 
   desc "Python code formatter"
   homepage "https://black.readthedocs.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/22/58/0a9d9b1195c159d206000c541c3e05897e339be754f0e4d8b29445ab536e/black-26.5.0.tar.gz"
-  sha256 "5cbe4cc4037ffca34cdb0a6a9a046f104b262d0bd63c30fd4a88c7adc2049b1d"
+  url "https://files.pythonhosted.org/packages/c0/37/5628dd55bf2b34257fc7603f0fe97c40e3aaf24265f416a9c85c95ca1436/black-26.5.1.tar.gz"
+  sha256 "dd321f668053961824bcc1be1cc1df748b2d7e4fa28086b08331e577b0100a73"
   license "MIT"
   head "https://github.com/psf/black.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cccfe9dfda5259837ca556ed7df734cd28dbededb7e4a7ca57b1d89c1f6b2f33"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74e6392fc4c24a6221e62476f9809e024a149b3d2ea075f2138c9debcb829bcc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61be1347202755b13af19a18123eb2d7d78483e108e3827493ce41a1bdbfc5a6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b6cdbb69f187dbd03a34d2f18a2ab93a4ce5bca7ff39553b8b7352b0fe607331"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d80a7b30bdd2ba2e9d90ad0812df72edad489bb378d80bcc63f86ba47c0ecb07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b720ad2efc5146c34a37e8ed6227c339f71a7c193ee07312e1fca6efa29eed4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ca80fc051ab3300330e0ad5c7aba239df90dd1a6ac5850eaf0c0e10b583087f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d48268368ae9b51e4308367a309b3ec8f30b77970a34a2f546c429dd4512b4a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac03e4ab2abd1de8ae94fe9e60597cfe94debe1127b83fb96d276000a623dbfb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "19c5db7f165a856a878fc7cdaee47fa893741e84ef331e145bebda3506d25d58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fd730f931c4aab04435dbcdaca880c3101d1674b13af69fcd9a52bfd6ec1f77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26e6f020a6b3ec0c2f1805825759f08f05021ead46536ee1f842dad2951a8180"
   end
 
   depends_on "rust" => :build # pytokens -> mypy -> ast-serialize
@@ -43,8 +43,8 @@ class Black < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "frozenlist" do

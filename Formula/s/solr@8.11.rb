@@ -15,6 +15,7 @@ class SolrAT811 < Formula
   # Solr 8 reached end of life (EOL) on 2024-10-25:
   # https://solr.apache.org/news.html#solr-8-reaches-end-of-life
   deprecate! date: "2025-11-07", because: :unsupported
+  disable! date: "2026-11-07", because: :unsupported
 
   depends_on "openjdk"
 

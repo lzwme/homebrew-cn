@@ -23,6 +23,7 @@ class Rmcast < Formula
 
   # 503 error for https://www.land.ufrj.br
   deprecate! date: "2025-09-15", because: :repo_removed
+  disable! date: "2026-09-15", because: :repo_removed
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

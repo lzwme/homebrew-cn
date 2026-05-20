@@ -1,8 +1,8 @@
 class Micromamba < Formula
   desc "Fast Cross-Platform Package Manager"
   homepage "https://github.com/mamba-org/mamba"
-  url "https://ghfast.top/https://github.com/mamba-org/mamba/archive/refs/tags/2.6.1.tar.gz"
-  sha256 "2e8135891b97560f1aedaae8114b711f5b036af0e338ed84c4e7db31c0f679ae"
+  url "https://ghfast.top/https://github.com/mamba-org/mamba/archive/refs/tags/2.6.2.tar.gz"
+  sha256 "cf085e4bbc5a3b2ec9c58761586287431453b604f75a87ea5990e252cab026fe"
   license "BSD-3-Clause"
   head "https://github.com/mamba-org/mamba.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Micromamba < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a7342ecc340c6f70d79fc8ad875c523d9a4182f07aac17f1fcaba2641e64a6bf"
-    sha256 cellar: :any,                 arm64_sequoia: "08596fde24f30dd11a225759c21ad7e9bd4ee03d629431244a535f82548f2717"
-    sha256 cellar: :any,                 arm64_sonoma:  "e6bb20b3cff91cf8cb27f4efe0e95dbb2d35975d1cdadb8c076aa41259d07762"
-    sha256 cellar: :any,                 sonoma:        "08a350736f23c79dd13625fc5d790667a4383f509c7ce723b154578dd6e98b71"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c495c12e36d9f56cca2e942b6952451b54fc8c8625c0c2f33c676700bfea4aa5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c38f0cda9d86a4046f052ebd6486e2876800fcf9debf9696b11d12d0bd3232d"
+    sha256 cellar: :any,                 arm64_tahoe:   "927863984a6955fc7af8df1b26bb726990333357a9fb5845d45362021098dd94"
+    sha256 cellar: :any,                 arm64_sequoia: "fe5278ef1fbdec7d7ec23c216fe4a8992f7491c274cb4bb9b118d815e3ac17a1"
+    sha256 cellar: :any,                 arm64_sonoma:  "b4f0e19ff35f7babc3bb3fd4c30a06bf18e86c3341db2b1bf017482492fbda04"
+    sha256 cellar: :any,                 sonoma:        "d65d89a3e057a879cd6fbc73cb91aa50de4ba61babee1f1c07ac951eb5eddd30"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "67f89bd8aae6d648b177f5a13ab7af4d864c9e74b7f6c11a5ad28e161efafd11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f46713829a5ffc5136e0be69363d25ca0901c30d0bfaed0a5387ecf6d663201c"
   end
 
   depends_on "cli11" => :build

@@ -1,19 +1,18 @@
 class Passenger < Formula
   desc "Server for Ruby, Python, and Node.js apps via Apache/NGINX"
   homepage "https://www.phusionpassenger.com/"
-  url "https://ghfast.top/https://github.com/phusion/passenger/releases/download/release-6.1.2/passenger-6.1.2.tar.gz"
-  sha256 "94400a52e536cfdd8acf2accb47badb7a67dc309452f1b05600da67343f25bf8"
+  url "https://ghfast.top/https://github.com/phusion/passenger/releases/download/release-6.1.3/passenger-6.1.3.tar.gz"
+  sha256 "98c56592769b95bd63b579be4ec3f71af6e9cf377717545c529e0163f95ed722"
   license "MIT"
-  revision 5
   head "https://github.com/phusion/passenger.git", branch: "stable-6.1"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "506a6ff95659c97e6e5c03894649b32eb3db9d794ba81b75b9644bc8a9df7458"
-    sha256 cellar: :any,                 arm64_sequoia: "2fb9da4a33dd365b7398acf03644f811be2d77187e0d397bfb4bc3a0408801b6"
-    sha256 cellar: :any,                 arm64_sonoma:  "61fd5cb3ca587ced7157387ced357e1074bd416e07be19d885ffc656b8502916"
-    sha256 cellar: :any,                 sonoma:        "52efca6a3d8b3948d0096deaceebf93649e9605ceb3452843554478fdece6a48"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a96c5aaaaf30aaba03ac7e18d88ecd18cb53743d30b27eea468fafd57990cf8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22063795644345fbf34720cfc0058e9a17905d5bc6ce0f8423f92549db6f3591"
+    sha256 cellar: :any,                 arm64_tahoe:   "2a455260f978cab3d196ee0802486c64f5c9e7547e9cef87da1dd0a3d64e68c3"
+    sha256 cellar: :any,                 arm64_sequoia: "16dda47d543797ff7b54feeba1f0050a6a52769f7be1c2aab4acdaff12e6650b"
+    sha256 cellar: :any,                 arm64_sonoma:  "f0a52503920324f36b524dc3bb3dbf026ef526e7b20afbb4ec254d0a4ac18151"
+    sha256 cellar: :any,                 sonoma:        "ea2e4e1b81edd3e28eca2fc87a7f234e0a4c0fe3ecbe6e8b421f486b523d269b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0be7be922b3b4858a304c521174d62b1c6709270e7e7503e71e10f60d713ad1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "225eed5100eba0ed32487a53034c142f6c8fe23d765b1f291005597aa0fbc6da"
   end
 
   depends_on "httpd" => :build # to build the apache2 module

@@ -30,6 +30,10 @@ class Globjects < Formula
     depends_on "glbinding"
   end
 
+  # Last release on 2016-11-18. Also removed by Debian 13 / Ubuntu 26.04
+  deprecate! date: "2026-05-18", because: :unmaintained
+  disable! date: "2027-05-18", because: :unmaintained
+
   depends_on "cmake" => :build
   depends_on "glm"
 

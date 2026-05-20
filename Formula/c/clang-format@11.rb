@@ -16,6 +16,7 @@ class ClangFormatAT11 < Formula
   end
 
   deprecate! date: "2026-02-18", because: :unmaintained, replacement_formula: "clang-format"
+  disable! date: "2027-02-18", because: :unmaintained, replacement_formula: "clang-format"
 
   depends_on "cmake" => :build
 

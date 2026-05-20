@@ -26,6 +26,7 @@ class ProtobufAT29 < Formula
   # Support for protoc 29.x (protobuf C++ 5.29.x) will end on 2026-03-31
   # Ref: https://protobuf.dev/support/version-support/#cpp
   deprecate! date: "2026-03-31", because: :versioned_formula
+  disable! date: "2027-03-31", because: :versioned_formula
 
   depends_on "cmake" => :build
   depends_on "googletest" => :build

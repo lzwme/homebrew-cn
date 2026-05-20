@@ -25,6 +25,10 @@ class GlbindingAT2 < Formula
 
   keg_only :versioned_formula
 
+  # Last release on 2018-02-22
+  deprecate! date: "2026-05-18", because: :unmaintained
+  disable! date: "2027-05-18", because: :unmaintained
+
   depends_on "cmake" => :build
 
   on_linux do

@@ -23,6 +23,7 @@ class Legitify < Formula
 
   # no release since 2024-07-09, fails with go 1.25+ https://github.com/Legit-Labs/legitify/pull/350
   deprecate! date: "2026-01-15", because: :unmaintained
+  disable! date: "2027-01-15", because: :unmaintained
 
   depends_on "go@1.24" => :build
 

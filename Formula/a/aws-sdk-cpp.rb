@@ -1,8 +1,8 @@
 class AwsSdkCpp < Formula
   desc "AWS SDK for C++"
   homepage "https://github.com/aws/aws-sdk-cpp"
-  url "https://ghfast.top/https://github.com/aws/aws-sdk-cpp/archive/refs/tags/1.11.795.tar.gz"
-  sha256 "dcded0fd7c2bed73502a6ba802fc2f714acae0d26abdf09cdf701a84463af60f"
+  url "https://ghfast.top/https://github.com/aws/aws-sdk-cpp/archive/refs/tags/1.11.810.tar.gz"
+  sha256 "73164b355d19bb15ff64b9bce8ee1ae5dbdd444534e900aaf869c1e08dbe03b1"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/aws/aws-sdk-cpp.git", branch: "main"
@@ -12,12 +12,12 @@ class AwsSdkCpp < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "ba4b7a0a972cb6ea1ce8acbfe92dcd650ee46750278aebbe5d27dd14f0c8ab74"
-    sha256                               arm64_sequoia: "1d210b882fb5a49246ba42f859a85cfd3ddef6768c681890a79d15b3ba258113"
-    sha256                               arm64_sonoma:  "ec7c9ca61ac643b205bcf6b1e765b97ae3ecc172c2daf41fed3217f32b680e81"
-    sha256 cellar: :any,                 sonoma:        "392967904b64c63fe3ed767a76b74b430fc72944fa53ef31da0845ac74c3e636"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "726c8c5cadad1ee474766b25f3d0e4553fbe60a4813eea2b4f2c6922713e8b23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52c296e2d718fb024d99b50915bf5ad4658388ea65ba1d33fd78f6465db563ff"
+    sha256                               arm64_tahoe:   "4492028b8e1d71b520b0e945c50918b8324a823feeddb40d11db21eb1e41a6fa"
+    sha256                               arm64_sequoia: "a39aafda735345b66c3fe002a70cb285ee9e18493a2bba17f85edd475779617b"
+    sha256                               arm64_sonoma:  "b4c177011ccc3a793d579e16b52f62a6909652decdfb32e3a9fc92d97514fb7f"
+    sha256 cellar: :any,                 sonoma:        "0052ff8e8c3cadfa866c1d3fd171498a3f24f4446f6de5fb01e56e13c849927b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5357d74ca5c5f8a2784e6c4e4b5d8334985a646ed85b044ca52a5004b2a23146"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a732e1330a1c8589bf3a786f1512723347434aa526c7cbdca9d69c944eb1723"
   end
 
   depends_on "cmake" => :build

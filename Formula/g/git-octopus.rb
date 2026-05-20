@@ -11,6 +11,7 @@ class GitOctopus < Formula
   end
 
   deprecate! date: "2025-12-14", because: :repo_archived
+  disable! date: "2026-12-14", because: :repo_archived
 
   def install
     system "make", "build"

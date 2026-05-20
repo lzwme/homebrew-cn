@@ -16,6 +16,7 @@ class Wiki < Formula
   end
 
   deprecate! date: "2025-09-12", because: :unmaintained
+  disable! date: "2026-09-12", because: :unmaintained
 
   depends_on "go" => :build
 

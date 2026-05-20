@@ -1,18 +1,18 @@
 class Imgproxy < Formula
   desc "Fast and secure server for resizing and converting remote images"
   homepage "https://imgproxy.net"
-  url "https://ghfast.top/https://github.com/imgproxy/imgproxy/archive/refs/tags/v4.0.0.tar.gz"
-  sha256 "02190571e68cfef01d7c0714654df1042e36b5bffcfa6ce28562bdd2a2e7dc62"
+  url "https://ghfast.top/https://github.com/imgproxy/imgproxy/archive/refs/tags/v4.0.1.tar.gz"
+  sha256 "1bca6c09ac3a31734b3253f41da13c6ccddd5ebbc3aa2b5906d44a95a2a12734"
   license "Apache-2.0"
   head "https://github.com/imgproxy/imgproxy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "69c058b424eb4879f86cb49c1210130c2eb5f6cf470e5340f0bec80c635fdc26"
-    sha256 cellar: :any,                 arm64_sequoia: "b0f7159ce7ea0ca2de45f7bbac35da164705e3d79a393c1cde715fcc76902fa5"
-    sha256 cellar: :any,                 arm64_sonoma:  "715106a0d8984108daa95d0f262f8e7b8aa7953f0af9f0fc72950e1b880ae7ce"
-    sha256 cellar: :any,                 sonoma:        "24261246d3f8455fe4c8950a79d81df433ebb55f87656f9a8c3b8e9c80c02636"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b2f0e717851639afdae8862ba0be6bdc989b330413fba2f85e446a0a9d3b5ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbc3cefb1677aa767187f0a3a6e0c91b6cee10daf89362a1369f528efc17a5d7"
+    sha256 cellar: :any,                 arm64_tahoe:   "d643d05461b2bebb8ebc259c85463c468059ec914f64db43b980be753b9730a7"
+    sha256 cellar: :any,                 arm64_sequoia: "dde89b7cf82141aa20040ce8788b0ba3c22ef16e0d25e10776f7fb07afa1ad03"
+    sha256 cellar: :any,                 arm64_sonoma:  "da5da7ea1535e4dcbae6ab78bdbe55e328e23dbbce5e476bc9b2fde4ea5a4ecd"
+    sha256 cellar: :any,                 sonoma:        "11eb48302c674186f198096c635a058a6e6991d6f1d2c160be51e2a156203e56"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "079ad1123df35fa4b2377a9ca19245396beadffab14306eeb402372b01c261d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8180caaef69522f4162459960c1f48cc3aa5cc991bcdf13cd32e43a71e6df4bf"
   end
 
   depends_on "go" => :build

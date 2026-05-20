@@ -3,17 +3,17 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/e9/9b/f2cccdef674c87072bd4866cf5260361f1c1950659cdd7a13a0ac4b7f473/flexget-3.19.19.tar.gz"
-  sha256 "369110718cc9bab99c5bd2e9bf06fdd17623dcf058bb3beda587f5de62fd399e"
+  url "https://files.pythonhosted.org/packages/56/aa/9f9c0ab585b49ad600bd72cfc32e7760894eeec691916f7e5281673459d3/flexget-3.19.20.tar.gz"
+  sha256 "a922082660a2223c4555dec4da6af4549c247df867acb4bfb8fb891b8ce17bec"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "14f87515fd2a03b9c7a61955d83c5a2f59105cdc8e3300c2066b7be390e6739f"
-    sha256 cellar: :any,                 arm64_sequoia: "ac7f97ed7b1e00977b025367b8f31e22d15f653f96b2c6bf5aaa10aff7d3b6d2"
-    sha256 cellar: :any,                 arm64_sonoma:  "2b7cd496c06885756acd5dfb268af68418030b62420fbdf7c9813e024b538127"
-    sha256 cellar: :any,                 sonoma:        "fffb3f305b3b5e9600d06e6c8fb90a66aada9a7fff06cc84d6ef6964cd72dc0e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "80bccedaf9660677bf79e1d6b146c14201aba8a4be2ce26a0dd4ea64de0b7a1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0040381e4bfd6fb755631d947c3be884685790963b10a9e902b1bd561ae4d37b"
+    sha256 cellar: :any,                 arm64_tahoe:   "5dbad949e163b760c0e0e3aa05b10ad03b1a7b6873cfc78125c6147cff8d1884"
+    sha256 cellar: :any,                 arm64_sequoia: "a4c481e0108d5f9c6268d1e23073e2c3fc3ff8d478f17130da0b23ff4c415fff"
+    sha256 cellar: :any,                 arm64_sonoma:  "4870496a6327cf4c16fbcf83921c5fc078e98fd1f61c7d700546c3e11db67611"
+    sha256 cellar: :any,                 sonoma:        "1d236b8d4d2bc179e353e2823ff7b3c90a88a099fd03f5dd6194bbe36da1987f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63c8bded6e7d28d7cca59835281659986fca4c296378cb146eb9eabeb87b3e84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef28102986dc7b1cf260de335a0dd4e262b943db8f0fbc674db18d4b7dadaeee"
   end
 
   depends_on "rust" => :build
@@ -81,8 +81,8 @@ class Flexget < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "feedparser" do
@@ -145,8 +145,8 @@ class Flexget < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "importlib-resources" do
@@ -170,8 +170,8 @@ class Flexget < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
-    sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
+    url "https://files.pythonhosted.org/packages/36/cf/ea4ef2920830dea3f5ab2ea4da6fb67724e6dca80ee2553788c3607243d0/jaraco_functools-4.5.0.tar.gz"
+    sha256 "3bb5665ea4a020cf78a7040e89154c77edadb3ca74f366479669c5999aa70b03"
   end
 
   resource "jaraco-text" do
@@ -285,8 +285,8 @@ class Flexget < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "rich" do

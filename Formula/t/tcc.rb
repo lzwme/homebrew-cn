@@ -28,6 +28,7 @@ class Tcc < Formula
   # Last release on 2017-12-17 and currently only builds on single runner (x86_64 linux).
   # The HEAD mob branch unmoderated so not ideal to use an arbitrary commit.
   deprecate! date: "2025-09-16", because: :unsupported
+  disable! date: "2026-09-16", because: :unsupported
 
   def install
     # Add appropriate include paths for macOS or Linux.

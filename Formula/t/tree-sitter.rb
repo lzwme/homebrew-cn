@@ -1,8 +1,8 @@
 class TreeSitter < Formula
   desc "Incremental parsing library"
   homepage "https://tree-sitter.github.io/"
-  url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.26.8.tar.gz"
-  sha256 "e6826b7533ec3a885aba598377a6d20b5a6321ff3db76968e960c2352d3a5077"
+  url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.26.9.tar.gz"
+  sha256 "8e14780500933f43d86662fcaa1b0ce99ebe9c220f4680bc929dce09a0e0cfc6"
   license "MIT"
   compatibility_version 1
   head "https://github.com/tree-sitter/tree-sitter.git", branch: "master"
@@ -13,12 +13,12 @@ class TreeSitter < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1b84a34a7503d55b4a6c9a41d9ee014cd46c1683482d1529a4ba39ca005455f8"
-    sha256 cellar: :any,                 arm64_sequoia: "67064145858e934d849ed6ff66fea03d542ea1138d836de57614e012c6670938"
-    sha256 cellar: :any,                 arm64_sonoma:  "8d5e9c4a7761ed99f1282abb821b3203d8140f2b11befac93ce6741f7dbd7b2b"
-    sha256 cellar: :any,                 sonoma:        "41767f3b5b96222571b9bcb2b8bbb8036a9e00f2f609c2f38993f2e1af6a27a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ac13abe298720b57758408a01085ceaa69314dc01d574e5b55dcb041f6a4853"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d491ffcccdcad3004b01226f7a2ea8348f598bbd6a55aebdf83e76272644086e"
+    sha256 cellar: :any,                 arm64_tahoe:   "1877f8dfe17f3b673ee80260afa5e2e02c4d7a966cff1e938982ebe5eb7adcd0"
+    sha256 cellar: :any,                 arm64_sequoia: "14c6c001055fb88669ff6f9dbe50d0c749ea7918b7aa5dd7e96b8043de9ee54d"
+    sha256 cellar: :any,                 arm64_sonoma:  "08e49eaf87b519b66617d46e7fca951c22a03d6cdc063c80063da3d3995e3ebf"
+    sha256 cellar: :any,                 sonoma:        "38ff8be56b6a5c39875a93e57350e51522d6ce6e2a78baea8ebdadc65650a0f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f1218072c309f8ec39f864a8da47e3040e38e3044ccf2656f4ad0a05820ea41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd344be8e97233097f338472b95c9c0b81b925e988ce3633ba36e7cb8b880fb2"
   end
 
   def install

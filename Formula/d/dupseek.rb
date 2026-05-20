@@ -11,6 +11,7 @@ class Dupseek < Formula
   end
 
   deprecate! date: "2026-01-05", because: "is not available via HTTPS"
+  disable! date: "2027-01-05", because: "is not available via HTTPS"
 
   def install
     bin.install "dupseek"

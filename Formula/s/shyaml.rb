@@ -21,6 +21,7 @@ class Shyaml < Formula
 
   # Last release in 2020, needs patch to build with modern setuptools
   deprecate! date: "2025-10-26", because: :unmaintained, replacement_formula: "yq"
+  disable! date: "2026-10-26", because: :unmaintained, replacement_formula: "yq"
 
   depends_on "libyaml"
   depends_on "python@3.14"

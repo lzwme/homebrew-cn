@@ -18,6 +18,7 @@ class GitSeries < Formula
 
   # https://github.com/git-series/git-series/issues/74#issuecomment-2394973654
   deprecate! date: "2025-09-14", because: :unmaintained
+  disable! date: "2026-09-14", because: :unmaintained
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build

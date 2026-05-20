@@ -36,6 +36,7 @@ class CdDiscid < Formula
 
   # Last commit was 9 years ago, upstream site is gone
   deprecate! date: "2025-10-16", because: :unmaintained
+  disable! date: "2026-10-16", because: :unmaintained
 
   def install
     system "make", "CC=#{ENV.cc}"

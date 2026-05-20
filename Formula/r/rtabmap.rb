@@ -4,7 +4,7 @@ class Rtabmap < Formula
   url "https://ghfast.top/https://github.com/introlab/rtabmap/archive/refs/tags/0.23.1.tar.gz"
   sha256 "8f0463d0b46418921da0503d5f991c7d0b8308b4926a069d9fe4ec811113502f"
   license "BSD-3-Clause"
-  revision 5
+  revision 6
   head "https://github.com/introlab/rtabmap.git", branch: "master"
 
   # Upstream doesn't create releases for all tagged versions, so we use the
@@ -15,12 +15,12 @@ class Rtabmap < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "276b2a5f34573ae5292c22107a6acbffbc43ad69931460deb668cc22d4c63643"
-    sha256                               arm64_sequoia: "fca5f4f98289929ad0ac7f46fcc663908790509a4476eda26dfd7808b48878ab"
-    sha256                               arm64_sonoma:  "9f19ee11fe5e2b87b34f44920d5795654fc5fa430ee15cb8821a4599adbb86f3"
-    sha256                               sonoma:        "b38495aa9acac75244d00de8b006092cbe87fef8cdaef34d62e1af6d1ad26037"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9bfc01078fb69e5eb7be561e653236868fcb3ba1c9b891827ab8478dba4269fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0111e4d4c1b260d425febca278e8c0f2413a598501af825ff6f20f4f38504ea7"
+    sha256                               arm64_tahoe:   "bad150ad1d044ada4b9e7037d6c0d86549b0dbfa995bf587b74b9b3ba86b3247"
+    sha256                               arm64_sequoia: "3889fef2001e4890a9e0877abc74cfd637e21c342b7d555ead7ac2caf64e0d70"
+    sha256                               arm64_sonoma:  "f40dcb5f757435085bd47dc572b62c843249efb3c6781a930be906b0609453e2"
+    sha256                               sonoma:        "f65bad47abf83cd58f1d01fc97867289d13a78f6cd50e8231f06673faef018b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "143ddd95e9bbf188a62b8559ba4300ee80f9fc72d75140234d06225c173fffd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4a48b86799d12405cab5d49450f4815b361d21a4d97685b65e3d46a6bcc9bdf"
   end
 
   depends_on "cmake" => [:build, :test]

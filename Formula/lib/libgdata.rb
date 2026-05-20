@@ -21,6 +21,7 @@ class Libgdata < Formula
   # [^2]: https://gitlab.gnome.org/GNOME/libgdata/-/merge_requests/47#note_2030129
   # [^3]: https://gitlab.gnome.org/GNOME/gnome-build-meta/-/merge_requests/1854
   deprecate! date: "2025-09-05", because: :unmaintained
+  disable! date: "2026-09-05", because: :unmaintained
 
   depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build

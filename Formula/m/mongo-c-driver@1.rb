@@ -22,6 +22,7 @@ class MongoCDriverAT1 < Formula
   keg_only :versioned_formula
 
   deprecate! date: "2026-04-01", because: :unmaintained
+  disable! date: "2027-04-01", because: :unmaintained
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
