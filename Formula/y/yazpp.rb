@@ -1,8 +1,8 @@
 class Yazpp < Formula
   desc "C++ API for the Yaz toolkit"
   homepage "https://www.indexdata.com/resources/software/yazpp/"
-  url "https://ftp.indexdata.com/pub/yazpp/yazpp-1.9.1.tar.gz"
-  sha256 "7fe5487d66fafdb0a3c2ceeec2b7ad27d8d8718c57f5d6d7a5598d724ccee5d2"
+  url "https://ftp.indexdata.com/pub/yazpp/yazpp-1.9.2.tar.gz"
+  sha256 "92516d1d889dd6ff617d92b3af0ba28861dbd1fc436cfcadd0fde65ca9f34fe9"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,24 +11,20 @@ class Yazpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "677c4daba736dcf25027fbf4f5959ee72362f7f5fe48dadcc486c7d825c9d370"
-    sha256 cellar: :any,                 arm64_sequoia: "bc9fd6e68ba2530c7fb772b73ed7d02a7bc9e23f5f6ec7fc95cb65802aa85ba1"
-    sha256 cellar: :any,                 arm64_sonoma:  "a23e37c0b8def3ccae0b1017b8ebc738d0b1c3ef62d328d2201fbc1b18ac4841"
-    sha256 cellar: :any,                 sonoma:        "9de8a746324a0f109f6925a679ada8ce20d36e459354b135318a7486bda5e26d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec4cb7a2b40cc13cb050563725363088cfa8f5865fa2823ecea89e4dcd1b96cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4795313aadd5eb1836d8299386570dd872993f28226031de66d371de07ff3161"
+    sha256 cellar: :any,                 arm64_tahoe:   "e8c2b70a18bbe278927fa06a069100b0340dfabfe590f10d08579736adaa2e3e"
+    sha256 cellar: :any,                 arm64_sequoia: "281fafaad2b0f09ef41c9ce57858635b84aab0e944526998680d87bf1c92f631"
+    sha256 cellar: :any,                 arm64_sonoma:  "3f20f879fb18ad2c7ce22675ab7d02e65105828865e3ecd8ff13b28bbe2f19e2"
+    sha256 cellar: :any,                 sonoma:        "ea001141255c11f6fecaa9f3944343b32fe8f258e28de326125469ddbef27854"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e657f22fabc2f1c1ab9dce23ced9fb4de0ccd9b497e8949b6a22fccf26321fd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd4606ca4186394c36e38a8a4c45a7e32a83eca100988492a97f50c4747e7fb2"
   end
 
   depends_on "pkgconf" => :build
   depends_on "yaz"
 
   def install
-    ENV.cxx11 if OS.linux? # due to `icu4c` dependency in `libxml2`
     system "./configure", *std_configure_args
     system "make", "install"
-
-    # Replace `yaz` cellar paths, which break on `yaz` version or revision bumps
-    inreplace bin/"yazpp-config", Formula["yaz"].prefix.realpath, Formula["yaz"].opt_prefix
   end
 
   test do

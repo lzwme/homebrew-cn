@@ -1,8 +1,8 @@
 class Fakeroot < Formula
   desc "Provide a fake root environment"
   homepage "https://tracker.debian.org/pkg/fakeroot"
-  url "https://deb.debian.org/debian/pool/main/f/fakeroot/fakeroot_1.38.orig.tar.gz"
-  sha256 "37504619270923546f36d98107f44a3c3be41c8ccd57dfd722311819623fe002"
+  url "https://deb.debian.org/debian/pool/main/f/fakeroot/fakeroot_1.38.1.orig.tar.gz"
+  sha256 "37c5063942efe2e2aeefd6e71ae2690bcb9b7d512c53bc6409b54d0730cbdac1"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Fakeroot < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9d2b0242f4612306919b19c2ee463fde14495144d70329b0aa82d67a3f19c3e9"
-    sha256 cellar: :any,                 arm64_sequoia: "7bc64eaaf6b80bd54d220e12dbd2f1b487e667325879e3e6f38c0651c1e04a78"
-    sha256 cellar: :any,                 arm64_sonoma:  "3296bf87a1e7fa0bd694b74942e994ad852d6d0f43a420d72049176c54b0e2f5"
-    sha256 cellar: :any,                 sonoma:        "0aa3e7aeb3ae0480e04a6c2bac7777363c9119283b48bdd0351b4e8882e19a95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d75d7233964210958a50890ed027f53d64e7e7b4a9fcf70b873221a57676863"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93e29b0bdd38508e50e48273f1c784d363a1890a01e2198fedb2e04ad908c85f"
+    sha256 cellar: :any,                 arm64_tahoe:   "3300c90039736122ee899f2dfb1bb57b12aa0d29fb5328e29f71b5e0951cb3fb"
+    sha256 cellar: :any,                 arm64_sequoia: "439acd646fff5532553acc2b51e162f0690208eb68423911d772b8f30363d06e"
+    sha256 cellar: :any,                 arm64_sonoma:  "ec1b39ba637fd10579c42f39c28c51d0709b22d82823c68b0150542c7711ee3e"
+    sha256 cellar: :any,                 sonoma:        "eb58b257bb81209525a84f82a7968d680975c1eec008676ad4d1c1245545ba9a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c88511d07e9050d2382a48cdc0efb697fc1b364bfce99afd7648a688bc479580"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3b9b3e36b9b9ffdffc724d47cda22e5f419639b6bf236ecb12fb5cbf8c843eb"
   end
 
   on_linux do

@@ -1,18 +1,22 @@
 class Jackett < Formula
   desc "API Support for your favorite torrent trackers"
   homepage "https://github.com/Jackett/Jackett"
-  url "https://ghfast.top/https://github.com/Jackett/Jackett/archive/refs/tags/v0.24.1894.tar.gz"
-  sha256 "35cc55ccdd0ceadace8dea49b76e612425c078cd0e43cf8567f05ac757251773"
+  url "https://ghfast.top/https://github.com/Jackett/Jackett/archive/refs/tags/v0.24.1905.tar.gz"
+  sha256 "cc247a1be76915e0ab3533ae8f0278e636fc47e664e707774603ea1698807331"
   license "GPL-2.0-only"
   head "https://github.com/Jackett/Jackett.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "68dce6b664a8c4b348ec6917f7c6fd26463edaf59fd107b8d31770a2acdde0da"
-    sha256 cellar: :any,                 arm64_sequoia: "910ed1db32cdff7cf915a2cf03e065efeae695a071d706df3ffd5c818af50810"
-    sha256 cellar: :any,                 arm64_sonoma:  "975aa0de295ac3064fa7e3fca79a1a8a53a9d4784ace235a674cf0f439a88814"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74d3ea00e84996c78fbdf2857fcad703ae6c481a4227382e3d76b6403a4de755"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b065a6079fb83b3682e6e1483a243ca1215c20f3718b30108b0563923cb7f7f"
+    sha256 cellar: :any,                 arm64_tahoe:   "a7d5e248d5b0924c3a330324ec80ff1bf8d7da7df8f4e73f2ac37225cfb7b8b8"
+    sha256 cellar: :any,                 arm64_sequoia: "474c461fc93180ffb02c78af07ac006f16513db9c5beca9f384e14698d7ecc18"
+    sha256 cellar: :any,                 arm64_sonoma:  "056acfc6b9f328d135a6eb5dd0aee8de3a14267164a3effcdbe93c674d7474ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7de783a916e66c35a3f4cea68658309320b0d39e5a44e3f5cd8ab2edad3da633"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5cb3e0391df199d62d66612b461b925d4fea995e6966ca31228d7b67818f16b"
   end
+
+  # Aligned to .NET dependency. Can remove if updated to latest .NET
+  deprecate! date: "2026-11-10", because: "needs end-of-life .NET 9"
+  disable! date: "2027-11-10", because: "needs end-of-life .NET 9"
 
   depends_on "dotnet@9"
 

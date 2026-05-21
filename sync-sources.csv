@@ -429,7 +429,6 @@ Homebrew-homebrew-core/Formula/a/azure-core-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azure-dev.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azure-storage-blobs-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azure-storage-common-cpp.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/azure-storage-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azurehound.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azurite.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/b2-tools.rb, Homebrew/homebrew-core, 0
@@ -1902,6 +1901,7 @@ Homebrew-homebrew-core/Formula/e/erlang@24.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang@25.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang@26.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang@27.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/erlang@28.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang_ls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erofs-utils.rb, Homebrew/homebrew-core, 0
@@ -5370,6 +5370,7 @@ Homebrew-homebrew-core/Formula/o/openjdk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openjdk@11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openjdk@17.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openjdk@21.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/openjdk@25.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openjdk@8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openjpeg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openjph.rb, Homebrew/homebrew-core, 1
@@ -5390,7 +5391,7 @@ Homebrew-homebrew-core/Formula/o/opensaml.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opensc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opensca-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opensearch-dashboards.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/o/opensearch.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/opensearch.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openshift-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openskills.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openslide.rb, Homebrew/homebrew-core, 1
@@ -6170,6 +6171,7 @@ Homebrew-homebrew-core/Formula/q/quazip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/questdb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/quex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/quick-lint-js.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/q/quickjs-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/quickjs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/quicktype.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/quictls.rb, Homebrew/homebrew-core, 1
@@ -6864,7 +6866,7 @@ Homebrew-homebrew-core/Formula/s/snooze.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/snort.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/snow.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snowball.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/snowflake-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/snowflake-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snowflake.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snownews.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sntop.rb, Homebrew/homebrew-core, 0

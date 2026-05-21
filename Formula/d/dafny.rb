@@ -15,6 +15,10 @@ class Dafny < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "af77022b146755d7d3504323a153d62fd2d234fd23b831884555d1d6a037e16f"
   end
 
+  # Aligned to .NET dependency. Can remove if updated to latest .NET
+  deprecate! date: "2026-11-10", because: "needs end-of-life .NET 8"
+  disable! date: "2027-11-10", because: "needs end-of-life .NET 8"
+
   # Upstream uses v8 and v9 is not yet compatible
   depends_on "gradle@8" => :build
   depends_on "openjdk" => [:build, :test]

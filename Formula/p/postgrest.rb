@@ -1,8 +1,8 @@
 class Postgrest < Formula
   desc "Serves a fully RESTful API from any existing PostgreSQL database"
   homepage "https://github.com/PostgREST/postgrest"
-  url "https://ghfast.top/https://github.com/PostgREST/postgrest/archive/refs/tags/v14.11.tar.gz"
-  sha256 "876f29cd3826d44b73cff3f49bf85e653650cd76cfb1f9cf6feaf3af3b3a4721"
+  url "https://ghfast.top/https://github.com/PostgREST/postgrest/archive/refs/tags/v14.12.tar.gz"
+  sha256 "44728a5909511cdeadfffa1af4a5eb091c7a21c5edbc95993469d87e54396ae2"
   license "MIT"
   head "https://github.com/PostgREST/postgrest.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Postgrest < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9da8cf8329cdad2c37a7ffb604b5cec0f0d022cc51f53bc89bc28af1a1181e59"
-    sha256 cellar: :any,                 arm64_sequoia: "29212a0e544f7684075e666893b8504c16949067dbcdaa0336c4624cfe8d1cb8"
-    sha256 cellar: :any,                 arm64_sonoma:  "dabaf5d3920fbff4c49ec114160dd0e029e952287043e5ff7cc33d5233c17b5d"
-    sha256 cellar: :any,                 sonoma:        "9db3f887fd13cfeec00a51a9da1de4febd5cd9308964c160e23faca20649c94e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbf3715361f66de61630ac5818db485ba1c394c56c437c4a828055ee7bc05149"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bd4f564149828617b0b4234306644c686cfbe2c575542c6e42ce25f8e38865a"
+    sha256 cellar: :any,                 arm64_tahoe:   "3d36359a7493f203d2a40a0cf621fc24a45fb1dfaa36687c6ebc4ade7923c1b9"
+    sha256 cellar: :any,                 arm64_sequoia: "a1f1ab204b6afe1ad1c0c1f24a4818d3748e521aad1a05ba2ae43048e9693a02"
+    sha256 cellar: :any,                 arm64_sonoma:  "126c0c8e41cd0ba67e73c8c10ec658153d50103375aca29fb366c12b8149e29e"
+    sha256 cellar: :any,                 sonoma:        "7cdcc3a9fefbff29cd6f843edcff6acdf5119cec6932e13431fc319acabebb4b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb327b540fa268eca8d83d064b7bbc6196018b23098ea35fce268057335a7ee2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46897db591aab909dc4890cf6629b0f504fd261db84e7a2a7212bfe27eaed55a"
   end
 
   depends_on "cabal-install" => :build

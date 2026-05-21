@@ -6,15 +6,15 @@ class Bbot < Formula
   url "https://files.pythonhosted.org/packages/6a/83/24a0087894d853703f64ab2044927ef56c831edb379295a873b05f34eb92/bbot-2.8.4.tar.gz"
   sha256 "2ed4d3eda85ddb7261318a48f8a41e8543888b5d9b9eb8876aaff0e813a2429c"
   license "AGPL-3.0-only"
-  revision 4
+  revision 5
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9589fbfe9e570c923407f77d06030e61d3396a9582e73313634202b1cc4a022c"
-    sha256 cellar: :any,                 arm64_sequoia: "d754343ceb20e37dbede83e48c7def815f3fc41c89b2835a3b64dd2ec79758f0"
-    sha256 cellar: :any,                 arm64_sonoma:  "0eff7b21ca1fa8a80b7e1cd59d0e457d25bbe53c48c5d31053d22b0433385b96"
-    sha256 cellar: :any,                 sonoma:        "5b0459e2d6f7729a48644f4208f2617df987adc59e05c11ed4c089aa9d3bed89"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "80d8d1c93e36cd40ea628df33d3b4ae8b223c40bad9bec08f54d3c82117ea937"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1d1ca2bb608913da1c44c330755fa796e93a9efca3fc36f1a26e99bbe380648"
+    sha256 cellar: :any,                 arm64_tahoe:   "bf1bda80d27ac1c3e9b1ce785a0e0014ffddad40774203dacd2459731a27ce02"
+    sha256 cellar: :any,                 arm64_sequoia: "2d46ffa4ee7fce335668d9664d2afb0825f19874bb8f46ea0b074e4c5245459c"
+    sha256 cellar: :any,                 arm64_sonoma:  "2f2d6aafe4057d686341ef92bfd8b951a59eac1409479725eb2a1c9c6429c530"
+    sha256 cellar: :any,                 sonoma:        "604124785ab8d17b0d9b9de281e9464d97832043fc94b44ee15d6be050f36314"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "feecae1e7ffc90ca0fc4775aba9d75c3c35a22df317c1b4f7d4e5b4416be1aa3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "297175121720b0eba3a4b36d5820de5144980af1523e49fd1512ee610b2decac"
   end
 
   depends_on "cmake" => :build
@@ -36,8 +36,8 @@ class Bbot < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pydantic]
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/9d/ec/690cc73e38c3546eabc8ef4118e0d7be1758a598bc23eed3e24ca1f346a7/ansible_core-2.20.5.tar.gz"
-    sha256 "82e3049d95e6e02e5d20d4a5a8e10533a55e0cc52e878e4cf77166c45410f16f"
+    url "https://files.pythonhosted.org/packages/a3/f6/8da4912a93e1319292bada5e5185e82b1a12cf212da7a7cc4589064f3247/ansible_core-2.21.0.tar.gz"
+    sha256 "28ccd0e2d1849f1c7272cec39a74a8a5c83f3d51314658fa5ca57ea85a87f454"
   end
 
   resource "ansible-runner" do
@@ -106,8 +106,8 @@ class Bbot < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jinja2" do
@@ -121,8 +121,8 @@ class Bbot < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
-    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
+    url "https://files.pythonhosted.org/packages/05/3b/aab6728cae887456f409b4d75e8a01856e4f04bd510de38052a47768b680/lxml-6.1.1.tar.gz"
+    sha256 "ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40"
   end
 
   resource "markupsafe" do
@@ -211,8 +211,8 @@ class Bbot < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "requests-file" do

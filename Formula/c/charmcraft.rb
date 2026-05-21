@@ -6,16 +6,16 @@ class Charmcraft < Formula
   url "https://files.pythonhosted.org/packages/fa/77/cc5efd656ece6d18ee7481b2aad7c4d1d60fa0f29b4d37637b902f305ee7/charmcraft-4.2.1.tar.gz"
   sha256 "7dab07f85c7eea06baf5efa99c4977df1d631d032ce8ebf26f253fdc556ecdee"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/canonical/charmcraft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f6f7e4a042e8442bd3793cf5ea9b0bc80c91c4326cf21199126b569e85b0fc61"
-    sha256 cellar: :any,                 arm64_sequoia: "f0c82e9274a4dba4a6746750eb52eb733dbaeafce654c26a7321817dbaa70e7b"
-    sha256 cellar: :any,                 arm64_sonoma:  "35d0239e4bd18db6587ef81407abba028cfc4e717a9f81246050ddfaf5ea3b41"
-    sha256 cellar: :any,                 sonoma:        "b64913ca86450868bf04f1d9dc0a046acafe794aa7b1d624b94225806b74381a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "feb1f526636a116cccebda6916ee5ba448bbc1e2ef6c07a4593ae9ade2621c95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ffa2e54eee6b2ec077e9c2e12be2f0fc6c3aa3bef67efba270bc5efa7ea544b"
+    sha256 cellar: :any,                 arm64_tahoe:   "ec0f360045b2cc69c4416e0c12fba61d68e63c3011896220e868b062d9040640"
+    sha256 cellar: :any,                 arm64_sequoia: "a6ed4b473cf53ce0eab8f5fcc92bba71c789b812cee496aef7e093c3c51aa3c4"
+    sha256 cellar: :any,                 arm64_sonoma:  "df9a1d28560fd0ba14b1d729bf182bbfb585fdc8f29c1eb6f561b0974f984317"
+    sha256 cellar: :any,                 sonoma:        "eb42943be82a0701fc8f3a3b3ea338abbf0d6a5102e810252a4daaa942bf5c78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "64acfaf67ed0f4fe6c45b747122e7c30f1f71a93878f3c247098ed83f53d8001"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2034e97a79f408f32b233ed5ffa08827a22b978e532ab0906a2f3829df02255a"
   end
 
   depends_on "certifi" => :no_linkage
@@ -134,8 +134,8 @@ class Charmcraft < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jaraco-classes" do
@@ -149,8 +149,8 @@ class Charmcraft < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
-    sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
+    url "https://files.pythonhosted.org/packages/36/cf/ea4ef2920830dea3f5ab2ea4da6fb67724e6dca80ee2553788c3607243d0/jaraco_functools-4.5.0.tar.gz"
+    sha256 "3bb5665ea4a020cf78a7040e89154c77edadb3ca74f366479669c5999aa70b03"
   end
 
   resource "jeepney" do
@@ -199,8 +199,8 @@ class Charmcraft < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
-    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
+    url "https://files.pythonhosted.org/packages/05/3b/aab6728cae887456f409b4d75e8a01856e4f04bd510de38052a47768b680/lxml-6.1.1.tar.gz"
+    sha256 "ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40"
   end
 
   resource "macaroonbakery" do
@@ -299,8 +299,8 @@ class Charmcraft < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "requests-toolbelt" do

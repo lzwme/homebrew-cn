@@ -1,17 +1,17 @@
 class Mjml < Formula
   desc "JavaScript framework that makes responsive-email easy"
   homepage "https://mjml.io"
-  url "https://registry.npmjs.org/mjml/-/mjml-5.2.1.tgz"
-  sha256 "46fe1d2acba67453e242c4224cbb2eacac560050ae0a37bdfef23703ceceab9c"
+  url "https://registry.npmjs.org/mjml/-/mjml-5.2.2.tgz"
+  sha256 "f59d63fc921f11bf64941aef67225708162b0012cda36a4273f80ec7d7ad4514"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bdb02df8ef52fe641f3169adbf2724939c1efb01593d00ee8ee5cb15b7ab1885"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "226d91dfcf30484728e9f901ec280b22a4c2c23275e15d5d53e415a77240f770"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "226d91dfcf30484728e9f901ec280b22a4c2c23275e15d5d53e415a77240f770"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4c3f33a127c18af0a9c484649cdc75e60f8ba7c3d788a6fe26fe94e7c7872e3c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "65185bdbde58bedbe93177f8978fe9dc3801f99dbb4b1160260022d8340f20f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65185bdbde58bedbe93177f8978fe9dc3801f99dbb4b1160260022d8340f20f4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e3f21cbf9b4c1222081c6e2d5560bb8c9cdec32b7b6a38814908807e7f98e05"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac25931ac32af203b7bc370932e829c2190763a58a1fc9e595407b7d85678652"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac25931ac32af203b7bc370932e829c2190763a58a1fc9e595407b7d85678652"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f5e1180502aaf7acddafc0c1b99efb489e1e4760f045545d53389eab583a0773"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9483fcbdf9c823d7df38007564cf43fdd9760194896dc8c7d0735353cc15acc9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9483fcbdf9c823d7df38007564cf43fdd9760194896dc8c7d0735353cc15acc9"
   end
 
   depends_on "node"

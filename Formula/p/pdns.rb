@@ -1,8 +1,8 @@
 class Pdns < Formula
   desc "Authoritative nameserver"
   homepage "https://www.powerdns.com"
-  url "https://downloads.powerdns.com/releases/pdns-5.0.4.tar.bz2"
-  sha256 "36e96d929999efc88bcb734f94dc45f8e292d1040ced0891e664bd0a8edf9d0e"
+  url "https://downloads.powerdns.com/releases/pdns-5.0.5.tar.bz2"
+  sha256 "c144feb23cfc2cd47ebf335132aea0afab605adb4ff4f30955be3445034e0def"
   license "GPL-2.0-or-later"
 
   # The first-party download page (https://www.powerdns.com/downloads) isn't
@@ -16,12 +16,12 @@ class Pdns < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b9194aa7d94dce35e33afb2f97f750fa7ccab70eca2ebbcad25e9f91c299766c"
-    sha256 arm64_sequoia: "0ce5c41c31e1bc2b65c73ede43a3206ab1d4663173c10c79d7569836e42830f3"
-    sha256 arm64_sonoma:  "4f84698bc26aafa37357db9f9816026e2e441ef9b3f91fe34856c8483a3ba8d8"
-    sha256 sonoma:        "e66299b1e91793d36b4b32c9f17c5cdece38a422324e27665f54c84796a05555"
-    sha256 arm64_linux:   "d0fada533f2b5bf030fb646921f767f24c20c9a679162c79f24ea89eb01d8fd0"
-    sha256 x86_64_linux:  "207f5111cbb5a79a4e041007186c82b61f4e61c4b83e6ee0fe3c7e8acaec7929"
+    sha256 arm64_tahoe:   "58434faaef436b5a4b22e0bdeba81263a213eb81899e6bb7475682845db02fe7"
+    sha256 arm64_sequoia: "88786bdb99d70b478f6bc32acdee5a781a543ba9fc56e50d24c26ca0f6c3f212"
+    sha256 arm64_sonoma:  "0521a357a321cf2ccece2f3cc3c410eed10b5929e5ff553c235f778da839704a"
+    sha256 sonoma:        "9102d10498b94b90af504d35a4624b8d9ea3057c1306ccf33a9585da8eb09209"
+    sha256 arm64_linux:   "646da0f7523dc5e15d1285bcaf4d26d08e430fd0b2abde5f8ae5bfa66fce5c50"
+    sha256 x86_64_linux:  "6ff637703429b14bbdc893bbc4c3fa9a2ab6024595cbd57d3bc34b2c181bbce3"
   end
 
   head do

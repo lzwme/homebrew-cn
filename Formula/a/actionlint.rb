@@ -7,12 +7,13 @@ class Actionlint < Formula
   head "https://github.com/rhysd/actionlint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26f21384f90e1fe7e5848ccbbac509e0cba82ba74c69646cd4851710fadc5af2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26f21384f90e1fe7e5848ccbbac509e0cba82ba74c69646cd4851710fadc5af2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26f21384f90e1fe7e5848ccbbac509e0cba82ba74c69646cd4851710fadc5af2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "797ec6a88750f7a59e9c2505de5a6a1da1ac4e91d7637420b90eb105693c9992"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec7c45d83bbd0b7b62cb934893f04c15ff3e77d07f97bb519448f65e3da0abdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "facbd39a3a2cc99217cd995b80b9fc2970b8f41f589ca7622be272acafb6495a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf32eeac6a6f6dcd816944d78ad0c1553952c3c2b5c72c71ea4fb71aa777ca75"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf32eeac6a6f6dcd816944d78ad0c1553952c3c2b5c72c71ea4fb71aa777ca75"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf32eeac6a6f6dcd816944d78ad0c1553952c3c2b5c72c71ea4fb71aa777ca75"
+    sha256 cellar: :any_skip_relocation, sonoma:        "288e9dd084bbc163fe8be8cf49817b1db5cca7ce47366b0dc2c499be59c3ef91"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fd8db6e4cf4685bea81a6225478b142635d8b9bd14cb664101a870760e57a21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d32ef049f0af2e06ab5f948e1850988f4e9ffb758f26e86279c7ebc395c25b7"
   end
 
   depends_on "go" => :build
@@ -20,16 +21,22 @@ class Actionlint < Formula
   depends_on "shellcheck"
 
   def install
-    ldflags = "-s -w -X github.com/rhysd/actionlint.version=#{version}"
+    ldflags = %W[
+      -s -w
+      -X "github.com/rhysd/actionlint.version=#{version}"
+      -X "github.com/rhysd/actionlint.installedFrom=installed from Homebrew"
+    ]
     # FIXME: we shouldn't need this, but patchelf.rb does not seem to work well with the layout of Aarch64 ELF files
-    ldflags += " -extld #{ENV.cc}" if OS.linux? && Hardware::CPU.arm?
+    ldflags << " -extld #{ENV.cc}" if OS.linux? && Hardware::CPU.arm?
     system "go", "build", *std_go_args(ldflags:), "./cmd/actionlint"
     system "ronn", "man/actionlint.1.ronn"
     man1.install "man/actionlint.1"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/actionlint --version 2>&1")
+    output = shell_output("#{bin}/actionlint --version 2>&1")
+    assert_match version.to_s, output
+    assert_match "installed from Homebrew", output
 
     (testpath/"action.yaml").write <<~YAML
       name: Test

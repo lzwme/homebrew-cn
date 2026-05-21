@@ -3,22 +3,21 @@ class Fava < Formula
 
   desc "Web interface for the double-entry bookkeeping software Beancount"
   homepage "https://beancount.github.io/fava/"
-  url "https://files.pythonhosted.org/packages/57/d4/9cb24ac4fd50f017fcf8c16d354ebc2d715efdfcba96f67c0b5f92dfad1c/fava-1.30.12.tar.gz"
-  sha256 "7c87145635c36605dcadfea877198d683f9c565239af166d5557e39ee3de8145"
+  url "https://files.pythonhosted.org/packages/07/66/cdcafeec2c75f6c94779951f63f4afbb014ccec3ab7ece784d58c05351f2/fava-1.30.13.tar.gz"
+  sha256 "2a38ee0544c3b45f6c052678fd06bd852fdcd74ebfe8a9c1db489202cdcc3f3f"
   license "MIT"
-  revision 1
   head "https://github.com/beancount/fava.git", branch: "main"
 
   # FIXME: Fails trying to resolve beancount as pip tries compiling it but cannot find bison
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c5dfa77cf426e69d636b08244f2b80db82cf3f60c588744e89e0b0e12dd4f0fb"
-    sha256 cellar: :any,                 arm64_sequoia: "254fab0f6b5742d6e655b5b96a120637d0d75322fdeb0292107b2e329c987c52"
-    sha256 cellar: :any,                 arm64_sonoma:  "5a4bfd4004656d5ecb3a7be28178ac0a6c384a751def690386bc4e0dae0e8aa2"
-    sha256 cellar: :any,                 sonoma:        "f6165ab8ae035a968688a3801f86a6551a28b428e448a431261cf491658496bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "35209eb49fcaaf3ee1f419dfe9ce539c6d7dd47898caf990fceaafd919681f51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f44183ce0efdd7fec17f39de6e48617b7ecaddb79fde79572f0a3fe7a860ce5d"
+    sha256 cellar: :any,                 arm64_tahoe:   "bdd5789a9ad99e63fcf0a7ea7ffb7003d9ce1bda2138f615b780a52cc571f74f"
+    sha256 cellar: :any,                 arm64_sequoia: "3ae8b9d6557890653952f3fc070fda16ae5e39ce9a216fac9a8d11abbb29c1b4"
+    sha256 cellar: :any,                 arm64_sonoma:  "0654ee59d7552daba005d559b74319c971c2e4915344620b8aca488bc9ba47ff"
+    sha256 cellar: :any,                 sonoma:        "252737dadc9fbc22d73c2ee0ed0b6e5aebca2c03abf172269f54b4aa87a44b3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "acd577e4d8f2b6e27469cf82f91e8332be7a2f5fc24b67550f1682b5503431e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b58aba8c966ccf9dc6dc46edc1988b014ea4916d565242bef5ad850297549184"
   end
 
   depends_on "bison" => :build # for beancount
@@ -49,8 +48,8 @@ class Fava < Formula
   end
 
   resource "beancount" do
-    url "https://files.pythonhosted.org/packages/f8/9d/aa97bb5d354cc853faca60d0b0bf0728af11300cd6276769314885b4b9a8/beancount-3.2.2.tar.gz"
-    sha256 "7f9a3919152232c262c826998fb2620046b47249624c665d79fa4b0a72f78bfc"
+    url "https://files.pythonhosted.org/packages/eb/21/ed48e671a5e474c620762a7ea9c6b7f402f847d74dd2b73ceb5d2dec79a3/beancount-3.2.3.tar.gz"
+    sha256 "f52c4d237bcb092cbf02a29373d3e59d95349c2828a91491818ae437ee220f74"
   end
 
   resource "beangulp" do
@@ -84,8 +83,8 @@ class Fava < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "flask" do
@@ -99,8 +98,8 @@ class Fava < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "itsdangerous" do
@@ -109,8 +108,8 @@ class Fava < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
-    sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
+    url "https://files.pythonhosted.org/packages/36/cf/ea4ef2920830dea3f5ab2ea4da6fb67724e6dca80ee2553788c3607243d0/jaraco_functools-4.5.0.tar.gz"
+    sha256 "3bb5665ea4a020cf78a7040e89154c77edadb3ca74f366479669c5999aa70b03"
   end
 
   resource "jinja2" do
@@ -119,8 +118,8 @@ class Fava < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
-    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
+    url "https://files.pythonhosted.org/packages/05/3b/aab6728cae887456f409b4d75e8a01856e4f04bd510de38052a47768b680/lxml-6.1.1.tar.gz"
+    sha256 "ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40"
   end
 
   resource "markdown2" do
@@ -154,13 +153,13 @@ class Fava < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/56/db/b8721d71d945e6a8ac63c0fc900b2067181dbb50805958d4d4661cf7d277/pytz-2026.1.post1.tar.gz"
-    sha256 "3378dde6a0c3d26719182142c56e60c7f9af7e968076f31aae569d72a0358ee1"
+    url "https://files.pythonhosted.org/packages/ff/46/dd499ec9038423421951e4fad73051febaa13d2df82b4064f87af8b8c0c3/pytz-2026.2.tar.gz"
+    sha256 "0e60b47b29f21574376f218fe21abc009894a2321ea16c6754f3cad6eb7cdd6a"
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/cb/0e/3a246dbf05666918bd3664d9d787f84a9108f6f43cc953a077e4a7dfdb7e/regex-2026.4.4.tar.gz"
-    sha256 "e08270659717f6973523ce3afbafa53515c4dc5dcad637dc215b6fd50f689423"
+    url "https://files.pythonhosted.org/packages/dc/0e/49aee608ad09480e7fd276898c99ec6192985fa331abe4eb3a986094490b/regex-2026.5.9.tar.gz"
+    sha256 "a8234aa23ec39894bfe4a3f1b85616a7032481964a13ac6fc9f10de4f6fca270"
   end
 
   resource "simplejson" do
@@ -189,8 +188,8 @@ class Fava < Formula
   end
 
   resource "watchfiles" do
-    url "https://files.pythonhosted.org/packages/c2/c9/8869df9b2a2d6c59d79220a4db37679e74f807c559ffe5265e08b227a210/watchfiles-1.1.1.tar.gz"
-    sha256 "a173cb5c16c4f40ab19cecf48a534c409f7ea983ab8fed0741304a1c0a31b3f2"
+    url "https://files.pythonhosted.org/packages/cd/41/5e1a4bb12aac5f1493fa1bdc11154eca3b258ca4eba65d39c473fe19d8e9/watchfiles-1.2.0.tar.gz"
+    sha256 "c995fba777f1ea992f090f9236e9284cf7a5d1a0130dd5a3d82c598cacd76838"
   end
 
   resource "werkzeug" do

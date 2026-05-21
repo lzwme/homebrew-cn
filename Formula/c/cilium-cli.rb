@@ -1,8 +1,8 @@
 class CiliumCli < Formula
   desc "CLI to install, manage & troubleshoot Kubernetes clusters running Cilium"
   homepage "https://cilium.io"
-  url "https://ghfast.top/https://github.com/cilium/cilium-cli/archive/refs/tags/v0.19.2.tar.gz"
-  sha256 "8bc461a4401a370e646431e336f595fcbb4de67fb1f4421ff62dcb7e65aa0321"
+  url "https://ghfast.top/https://github.com/cilium/cilium-cli/archive/refs/tags/v0.19.4.tar.gz"
+  sha256 "488a53df69685f5bd6a39de166ce9509fb3b5c4eca660b570c3e40c3946cf17c"
   license "Apache-2.0"
   head "https://github.com/cilium/cilium-cli.git", branch: "main"
 
@@ -15,12 +15,12 @@ class CiliumCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54eba32d3d61fd60049204b95b7ff9af619c662b509a9c93b5678d499fb95bb6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14753fa7919582262483e59d3136ade3085a8be53c11dd0d480e61839063eea8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "370205fc6b8cd62d261fc437aec4a09462c8cde7266d299c1f6496e82a4e9187"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d6a2820b9d2f7624108d07036300e28994101eac65c5362cd21855d4a9c41ddc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d1b32d342ea69ccfe10e83e9269a939eb38a1bd2ec6b850e08f0f2ec66fc1fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f690811ae700c1272ef28a56c8ccd973b7b163106ebd7ea1ae087b397432ae2d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b8ec3a2e375b0680248926ceae7ce3a62ece31d91f9c4a1567d489e111380e7f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "365c14c6cb05b9eb584c0b8609cd7cf97a163472269b01ee4fda5b7082922dce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab3bc1eff4e41d17760222f1b8c38afac6188987c5bf12eeeddec0fbab87fe66"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ee0442ca001960088dd7e588eb5a4defff09f62de7011cfe2238ab98398a538e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe57781c328b462925ce385e38b1dc7fc908b006bfba274c91f341ab099cfd06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "239f92e5da47427006cb77afa522a8f2cdc89c875946137016c57728dc66f175"
   end
 
   depends_on "go" => :build

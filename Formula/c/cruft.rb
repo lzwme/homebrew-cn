@@ -6,16 +6,16 @@ class Cruft < Formula
   url "https://files.pythonhosted.org/packages/d1/7e/0e20012f2aa156e5d6a70483a8d90accb7ed4966dddb0c58987d9f6eba12/cruft-2.16.0.tar.gz"
   sha256 "184662853fbc1c16c0137fe0e9444e0cbe95e40362f5ebb2d9fae33d9223e73f"
   license "MIT"
-  revision 9
+  revision 10
   head "https://github.com/cruft/cruft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3f22c3b858f4dde0ceab2b934ddd33b3cf0094c5eda79140324a4e269d28aef2"
-    sha256 cellar: :any,                 arm64_sequoia: "fc9ec63cc82b9e34fec6f9688b5679b4e32ed4ab32a15862acdb52a7e20d48e7"
-    sha256 cellar: :any,                 arm64_sonoma:  "089154b9e674ebbef638fae6079071aba5413ee954dfba6ff8440222d146e8a3"
-    sha256 cellar: :any,                 sonoma:        "9012c69327918734c4e5a2264560f7e4f975719c8e8ac4424e50042b753be463"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "44eea011b366de40b2e915051f46a8c1765b5bf9bc1a7b84b04c9412ce314822"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07eb24ee28a01d5f7ee2bb2ab22e05d59d9a48931c222aef29d464cadfa4eb99"
+    sha256 cellar: :any,                 arm64_tahoe:   "8f1adee72e76186818e596a1e3718ba2ec621d405207f3eb69bb9f28e04b814e"
+    sha256 cellar: :any,                 arm64_sequoia: "4848315fe64efa801419f1dc98ebd110f7428a708f366d5992874715f660997b"
+    sha256 cellar: :any,                 arm64_sonoma:  "f343196feb9a6e7f96e402a089687a5221d9e0afef6d7d69fe16258ad7a3384a"
+    sha256 cellar: :any,                 sonoma:        "49dd02295e473736e4fcb54a374a66bbda828de09289adba4c8a0d0f6f9840f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "221f4c6a5441edcae215ed9636e6738496315360e3a6c73bbb6050bcd1714e98"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b35b6338ddc28b091eca8bab29a559ab7bcd3cb36b4615a23bc122feefeff31c"
   end
 
   depends_on "certifi" => :no_linkage
@@ -45,8 +45,8 @@ class Cruft < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "cookiecutter" do
@@ -65,8 +65,8 @@ class Cruft < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jinja2" do
@@ -110,8 +110,8 @@ class Cruft < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "rich" do

@@ -23,6 +23,10 @@ class SbomTool < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ee862f5f6b5c288e44ae1be6f39976b76e7a52a3c5c1cbcae09a076822d4ff5"
   end
 
+  # Aligned to .NET dependency. Can remove if updated to latest .NET
+  deprecate! date: "2026-11-10", because: "needs end-of-life .NET 8"
+  disable! date: "2027-11-10", because: "needs end-of-life .NET 8"
+
   depends_on "dotnet@8"
 
   on_linux do

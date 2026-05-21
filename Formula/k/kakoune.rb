@@ -1,8 +1,8 @@
 class Kakoune < Formula
   desc "Selection-based modal text editor"
   homepage "https://github.com/mawww/kakoune"
-  url "https://ghfast.top/https://github.com/mawww/kakoune/releases/download/v2026.04.12/kakoune-2026.04.12.tar.bz2"
-  sha256 "ce67adc8af7b20550463332c38e389cacfdd80f709e14b9940c127091aab0681"
+  url "https://ghfast.top/https://github.com/mawww/kakoune/releases/download/v2026.05.21/kakoune-2026.05.21.tar.bz2"
+  sha256 "be1deb3fe9808a0733ab1057309da380bb757307e8fdbb22dc478b674b6bad34"
   license "Unlicense"
   head "https://github.com/mawww/kakoune.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Kakoune < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f1ee56c158d482267bfb4c9eb5f2d96e0ef33efbe6516816c9d41c1958451562"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae33d8f505d6f7fd5215ad9f44dbd02e9073934fa93ff63e7103791bd3d10c3f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3f49d2965e588dcef96fcbfa88a142f4f97a67937fd43c511c0e12c55d47a1f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "77f74b0da3c22963649a16510192d1f645716bcba78a6bd62f7779029a33d7b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "12cad1af9c8f3fc3ceb27093bea551ed44d920867943d2c0587ab65a56615f3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b075607361f95116269ae2b1a9fb3356f257228a64add1ed9b445eff75335d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d375c58634657d49ffc5543574588b5d7ce8bda921cc291d61d3884b770fc33a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e83a79da9f216318348230b255ecf9421f03a043e919306fb8a94c7183ee3137"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5e8ad502f2b63af404a27855b597bb35e17d7911ba10017f833267014e5f3e7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8f86ddc70a29bb35c9879cee744a515eb47bd7d71952578ba581e0d75b088bdb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1dddb947e2720d0ddb250ecd6e9454b89f76a53f60b64825c84c32b1fe1105f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2735ec518c0e6ffe6fdb89f2981e7e4f9f19c2fd50b35c404611220cdd42b10e"
   end
 
   on_catalina :or_older do

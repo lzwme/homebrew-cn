@@ -24,8 +24,8 @@ class Gnuradio < Formula
   end
 
   # Can undeprecate if new release with Qt 6 support is available.
-  deprecate! date: "2026-05-19", because: "is for end-of-life Qt 5"
-  disable! date: "2027-05-19", because: "is for end-of-life Qt 5"
+  # TODO: Remove `gr-qtgui` support after 6 months of deprecation if Qt 6 support is not added
+  deprecate! date: "2026-05-19", because: "needs end-of-life Qt 5. gr-qtgui support will be removed after 2026-11-19"
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build

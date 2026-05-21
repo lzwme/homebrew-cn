@@ -1,20 +1,20 @@
 class Boring < Formula
   desc "Simple command-line SSH tunnel manager that just works"
   homepage "https://github.com/alebeck/boring"
-  url "https://ghfast.top/https://github.com/alebeck/boring/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "c74a771e98750bcd745e282d29dbbd0cc9282adc9674e0ff44381ab2a46dae17"
+  url "https://ghfast.top/https://github.com/alebeck/boring/archive/refs/tags/v0.14.0.tar.gz"
+  sha256 "b23ce3f9bdb707250b4e138dc059a2b50716e6e310c0d344cf821c4ff150afcf"
   license "MIT"
   head "https://github.com/alebeck/boring.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2384dc6773cf751772120eda88d4560031950d4a1352919543277214c0b008d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2384dc6773cf751772120eda88d4560031950d4a1352919543277214c0b008d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2384dc6773cf751772120eda88d4560031950d4a1352919543277214c0b008d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dea86e35c0c2c6705dc7c95bf7d3030c28dea712ee494d8136083a99ad0edcd4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "42d37ae685cb3c766845846486a22afb63a828d5805d0229b8fa779051f053d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1801f7f39c1acb1b5fb941fee2e38eb7e06d465e5e59508768cd0e8d3a03a15"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ecdb262cb1e37df15a49ca89e0ba630a8fdf84b836730d1d6becdcf707eec91a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ecdb262cb1e37df15a49ca89e0ba630a8fdf84b836730d1d6becdcf707eec91a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ecdb262cb1e37df15a49ca89e0ba630a8fdf84b836730d1d6becdcf707eec91a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "36ecd69ba28e5cc60a701e764fdaf3373ca1f6aaac2a9f1e56978c56ffeffcb9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f8574a9916db9ea7f9be75fbb5e984f8268a6b6670f7d71ffe71751f79ad80a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d65613883b8ca9fb97bdc35577fe50624e3eccdbbc58e30cfd1eaeaebc19a85e"
   end
 
   depends_on "go" => :build

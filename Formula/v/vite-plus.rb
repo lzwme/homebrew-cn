@@ -1,18 +1,18 @@
 class VitePlus < Formula
   desc "Unified toolchain and entry point for web development"
   homepage "https://viteplus.dev"
-  url "https://ghfast.top/https://github.com/voidzero-dev/vite-plus/archive/refs/tags/v0.1.21.tar.gz"
-  sha256 "b568736e52a3d89f0809f4b59d8039c227a3c14f5b8b245360a94899a0e83031"
+  url "https://ghfast.top/https://github.com/voidzero-dev/vite-plus/archive/refs/tags/v0.1.22.tar.gz"
+  sha256 "b1e6951592ae7af2f7a6044e92fc1d1802288bf8c0c4039a982ba3d58a46e797"
   license "MIT"
   head "https://github.com/voidzero-dev/vite-plus.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "14e125414b22b04cd18cb9e7e43fedfcf65a127c5757db79b0ebe40cdb0af0dc"
-    sha256 cellar: :any, arm64_sequoia: "d0da15892307e54530e8455dc466ac7b357bdfc7d98063d1891b60c8c39e01ee"
-    sha256 cellar: :any, arm64_sonoma:  "0523d2febafa06cd15e593a221c8c4610401a61e0448b12cc79a4ed20bb6f6c7"
-    sha256 cellar: :any, sonoma:        "6596e27c2c8c0efb87cd39eca545d7c21e285ff4712735381fcdec1990942fbc"
-    sha256               arm64_linux:   "80223971591979f8799f2172f5507ebccbcfb0bbb9b059128d3efb7f17aa6485"
-    sha256               x86_64_linux:  "eaa4f396fa96c028a02d92b416aba2f7b56810a1a93b4fcbbda680156426b35b"
+    sha256 cellar: :any, arm64_tahoe:   "8665d09f2c8d972a472448884820b9355e41d1aaf7f137586262841cb9552fee"
+    sha256 cellar: :any, arm64_sequoia: "b6614e403237661780af51b8672df57617afb04b408723f2854f91d703b9eb59"
+    sha256 cellar: :any, arm64_sonoma:  "d60043a4a7937aee0ef96bcbc8b47355b08751ef602467c5798914995af1da92"
+    sha256 cellar: :any, sonoma:        "ec02d73c4f1e12a78b8e425d8208d5ab47a12443bc491ec27460da21c7a494ab"
+    sha256               arm64_linux:   "f96f5d1ff290ece17662ea4f0ae4a7978326225ffc38409f0212409c54f5fb12"
+    sha256               x86_64_linux:  "a64d17555235833cce623249a229ed52885855892276d5c73416d3c0caf2861b"
   end
 
   depends_on "cmake" => :build
@@ -56,8 +56,6 @@ class VitePlus < Formula
     # fspy requires nightly Cargo's `-Z bindeps`.
     # Use a stable-Rust stub to keep the CLI buildable without nightly.
     ENV["RUSTC_BOOTSTRAP"] = "1"
-
-    inreplace "crates/vite_global_cli/Cargo.toml", 'version = "0.0.0"', "version = \"#{version}\""
 
     system "just", "build"
     system "cargo", "install", *std_cargo_args(path: "crates/vite_global_cli")

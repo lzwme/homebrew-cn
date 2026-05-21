@@ -23,7 +23,9 @@ class Mintoolkit < Formula
   depends_on "go" => :build
 
   on_linux do
-    depends_on "btrfs-progs" => :build
+    on_intel do
+      depends_on "btrfs-progs" => :build
+    end
   end
 
   conflicts_with "mint", because: "both install `mint` binaries"

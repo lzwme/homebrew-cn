@@ -1,8 +1,8 @@
 class Yaz < Formula
   desc "Toolkit for Z39.50/SRW/SRU clients/servers"
   homepage "https://www.indexdata.com/resources/software/yaz/"
-  url "https://ftp.indexdata.com/pub/yaz/yaz-5.37.1.tar.gz"
-  sha256 "0d78e6ef056597712387ff6833ec393e1cd9c5dff6a41a486dd68f97ef83154d"
+  url "https://ftp.indexdata.com/pub/yaz/yaz-5.37.3.tar.gz"
+  sha256 "975d7878b272cc999e5acbd02dc272a46607f95e6ee4f35ac655e8e4d333bf2b"
   license "BSD-3-Clause"
   compatibility_version 1
 
@@ -14,12 +14,12 @@ class Yaz < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "256cdd1b758ae2e952bff529afcaf7811d6dd037f39eb59f1d06a4685bb96b98"
-    sha256 cellar: :any,                 arm64_sequoia: "39408a1279a7667e4061b69e06bda29c6d544301bb199b1710810d134b79de23"
-    sha256 cellar: :any,                 arm64_sonoma:  "3ac07046ac6ae805127d20383166c134ffc7d5a8a0103c94523040c4f46375ff"
-    sha256                               sonoma:        "6860b72b3f2128353085f8fd392ac7425535ae28821674099d6f945183324eae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0876685a51ba192763ead71653481d62e908424721ed8e8be09b53478a593bbf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d203ff486f49040b69f3b492133b271b6b89f5840dfb75ff970492accab5243d"
+    sha256 cellar: :any,                 arm64_tahoe:   "21374c5d02ec10857f5cc7c12f37d1035f001547f35f649d5d359eb06d10aa8a"
+    sha256 cellar: :any,                 arm64_sequoia: "7eb44015254a310103859d3172720cdd5f092f27c1a82116f1fab657f2ea8989"
+    sha256 cellar: :any,                 arm64_sonoma:  "dc2039b63dfe0fa72a26b585ba17d295e0cbaa9a964474aa8f6594f722fe9345"
+    sha256                               sonoma:        "39bb8ed0161802212d5e1476fab94e061885cd57a848c062440b4f62d43feb48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6dd2603434b35320caeb7dee8b3723f8bcaf2d18127d4842ae60b8e7660bc0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb7bd01dd86c37eafbad7ec17a36a102e5412bab432f4c5be99b98776b6b2044"
   end
 
   head do

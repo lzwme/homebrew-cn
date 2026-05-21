@@ -39,13 +39,8 @@ class Sysdig < Formula
   depends_on "uthash" # for `falcosecurity-libs`
   depends_on "yaml-cpp"
 
-  # for `falcosecurity-libs`
   on_linux do
-    depends_on "abseil"
-    depends_on "curl"
-    depends_on "elfutils"
-    depends_on "grpc"
-    depends_on "protobuf"
+    depends_on "elfutils" # for `falcosecurity-libs`
     depends_on "zlib-ng-compat" # for `falcosecurity-libs`
   end
 

@@ -6,16 +6,16 @@ class Awscurl < Formula
   url "https://files.pythonhosted.org/packages/54/a3/fcbc64c5e038b87394e72a03131643109e451a697d467a7f90c6b6413ee9/awscurl-0.42.tar.gz"
   sha256 "c19d05427a104c11f0080d74063e607e438fb3eaf789150c84bf6b28639f6937"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cb44bc6f506dbf4f5d9a814e4bce672192d87e4d0935c615df6a11d85c4a2dc3"
-    sha256 cellar: :any,                 arm64_sequoia: "86ef9ec524767dbdde7161f54615c45224bbf9c221b750512392718dd4b8a95e"
-    sha256 cellar: :any,                 arm64_sonoma:  "0a7391f37e53adeddb41f1c92209b32e8c0777b4e3cb1a4e19c4e2301fd15151"
-    sha256 cellar: :any,                 sonoma:        "9dfea527dd9d38251e717fb3555c2dd176d975a8c29eb174f98b14c2d15f74ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0bb3f84f5a3efdde0f3f65f6593e77c998367abe9f12c0e60d6a713669faadcb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f75b7c77e05697ef1e183cd1d8a7cb062af417c42535391fc7f627ea6fb66d10"
+    sha256 cellar: :any,                 arm64_tahoe:   "d449ccb76c4f4c740bc82be6554a03d1e97660c3021f79ba04e498e3d2e224d4"
+    sha256 cellar: :any,                 arm64_sequoia: "f2dc0582369e5689182348ba63217ec5168ca9867955d0314ed6ef3fff00561b"
+    sha256 cellar: :any,                 arm64_sonoma:  "348ba2c42beb449fc2efa6b22a63a4904f26dfca717411fbc37d7ec04fb4098a"
+    sha256 cellar: :any,                 sonoma:        "1f66c60224f1a617eade035c67a0f105eda0e21bbe6a764de34905001eaa3755"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b7c05688b0f6c10d7f8f8b13d1e8a0955cbec17885401f59fc607c63f41fb6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb20086fe15c25d5af20a3073212e05794746ca3e84a65e6dd2935d165222b92"
   end
 
   depends_on "cmake" => :build # for `awscrt`
@@ -45,13 +45,13 @@ class Awscurl < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0a/37/78c630d1308964aa9abf44951d9c4df776546ff37251ec2434944e205c4e/boto3-1.43.6.tar.gz"
-    sha256 "e6315effaf12b890b99956e6f8e2c3000a3f64e4ee91943cec3895ce9a836afb"
+    url "https://files.pythonhosted.org/packages/ff/27/ae1a71e945ce7bde39b0677b252fe7d8a0ad7fa3d6b724d78b81469c08fe/boto3-1.43.10.tar.gz"
+    sha256 "27342e5d5f6170fcc8d1e21cdd939af2448d58ac56b08d494250eaad998e30c7"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/79/a7/23d0f5028011455096a1eeac0ddf3cbe147b3e855e127342f8202552194d/botocore-1.43.6.tar.gz"
-    sha256 "b1e395b347356860398da42e61c808cf1e34b6fa7180cf2b9d87d986e1a06ba0"
+    url "https://files.pythonhosted.org/packages/e2/4e/c127dd0628c551f10cb890e279a9c0e367523b880c4cd3e81a1e76886174/botocore-1.43.10.tar.gz"
+    sha256 "2f4af585b41dbccdfc9f49677d7bd72d713a12ef89a1dc9c8538a927649498bf"
   end
 
   resource "charset-normalizer" do
@@ -70,8 +70,8 @@ class Awscurl < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jmespath" do
@@ -85,8 +85,8 @@ class Awscurl < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "s3transfer" do

@@ -130,6 +130,9 @@ class OpensslAT3 < Formula
 
       and run
         #{opt_bin}/c_rehash
+
+      OpenSSL 3.6 is only supported until 2026-11-01 so the `openssl@3`
+      formula will be downgraded to OpenSSL 3.5 (LTS) in a future update.
     EOS
   end
 

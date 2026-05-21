@@ -1,18 +1,17 @@
 class Libdpp < Formula
   desc "C++ Discord API Bot Library"
   homepage "https://github.com/brainboxdotcc/DPP"
-  url "https://ghfast.top/https://github.com/brainboxdotcc/DPP/archive/refs/tags/v10.1.4.tar.gz"
-  sha256 "f11b6d3fc5cc8febcf672b573ca74293ead6c6ea48a66ac0316ab9a5cbd09441"
+  url "https://ghfast.top/https://github.com/brainboxdotcc/DPP/archive/refs/tags/v10.1.5.tar.gz"
+  sha256 "0446993c2bca5fc40882386804598b33652fc7ee466fa237f7846f2be0cb8a1e"
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "ed4381735ffe387ad60865f7c1097d9814a81d32ff40e02441cc06f98fc54a5e"
-    sha256 cellar: :any,                 arm64_sequoia: "fcc5344b1764a84cbd1278f8e6b4eb7d8701ddd705d4ca6fac097c347c44e689"
-    sha256 cellar: :any,                 arm64_sonoma:  "d8ef8e060fc8d453cd1dda3504682fa14964e50b4007b646229e1bf4726a034f"
-    sha256 cellar: :any,                 sonoma:        "daf05786e8cba8e07e9e26e8cdd10f9c8503538c4d33b755e2b79e8f2d1285dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cacb6b011fc2123d3e09824694b2f54c902b7918f8e6b2929afe89e03b2696e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "447038751ce0cd976352472c2ce51c945c9e26317b15bfb6ed35866699b591d8"
+    sha256 cellar: :any,                 arm64_tahoe:   "52721d668fe65274b79c71fcba6b77ede190f532b2858ab6bcc72b929db97f78"
+    sha256 cellar: :any,                 arm64_sequoia: "2a34e475d821eee082988e14d8e8f1494018718b5af4804331977ce0062fd2f2"
+    sha256 cellar: :any,                 arm64_sonoma:  "174111ad5af6951d8f57663c55320fff08961394e0701857cc5db2b30d5441d1"
+    sha256 cellar: :any,                 sonoma:        "31178f47a6a9c68dc541b281c3b9cee3873192482338682ad9cfc21f317709dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "169f138525e538ae77dd3a5bbaf97b0c80eb2e72b2f4e829df680144ebcfbb9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d822ac5d4a864aa85d87f17070cae0e8e1da12668540398648fd6746ad64fa8"
   end
 
   depends_on "cmake" => :build

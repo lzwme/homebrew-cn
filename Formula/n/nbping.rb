@@ -1,17 +1,17 @@
 class Nbping < Formula
   desc "Ping Tool in Rust with Real-Time Data and Visualizations"
   homepage "https://github.com/hanshuaikang/Nping"
-  url "https://ghfast.top/https://github.com/hanshuaikang/Nping/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "48d46e11cec3c69e6c28e91fefbba47f4773aab1c9d8c1f15e276311f79c43ec"
+  url "https://ghfast.top/https://github.com/hanshuaikang/Nping/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "344d49df5a117be5b52662113c84581f8b8c245b3f50cae40bbb944a4fce89c0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "431941c8712b6981348065f4a865033d34c80dfef91ec7ce96abe5f487312a70"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "440744007b50d7a9a93eb793a1cce71ec83063cf11bf0cbf7b0c0c7db22fbbb9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf8df3fd2a114c3f850bdf55daf0c5210443718251a96fd7ff1d5dfc89e8ac44"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5fa582923df94fedb96125a9103c6b06788fb82ba6e513fb64133e28238fde6e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d09fffb3d8f23113b8b7fc3f8d4b621f04461e3a5d963e1880de665638f5f94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3a84486b4e069a4b8db18578295337209d4504ea001926606eb5e6e80c6c936"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "625e690b7582d4d189badfebff0500f2e9441e4898cef08bbea8c5c293f00933"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44177c9497a794ae77d79d80d92edd5cc79b0bb8f545f929886ab64489cde4e2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7dfe5cab7431bc0057affd87d89f58fbbf7d32aaefcddbbc81a9e3e93c8d94f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ffa1c814f94c2683f16361f473068bc4b7dabecd7626a118df74f77b6678935d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b469f18b32f694f0610b98cad74975fc1781d82e4832cb265d0beea09bba5d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77e799254eeb959040edec57f0efb47c877b2a776ff7afcb9682ec4eebc7ea8f"
   end
 
   depends_on "rust" => :build

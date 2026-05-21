@@ -1,8 +1,8 @@
 class Camlp5 < Formula
   desc "Preprocessor and pretty-printer for OCaml"
   homepage "https://camlp5.github.io/"
-  url "https://ghfast.top/https://github.com/camlp5/camlp5/archive/refs/tags/8.05.00.tar.gz"
-  sha256 "30e6b6faa91a7c448a17dc4ecde0448ae3a7d5ba5b2b057014149d27014a6481"
+  url "https://ghfast.top/https://github.com/camlp5/camlp5/archive/refs/tags/8.05.01.tar.gz"
+  sha256 "7aa71c393cf4f24860051a5aa78da8925d73cb79ba045df442dff2343b1283d7"
   license "BSD-3-Clause"
   head "https://github.com/camlp5/camlp5.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Camlp5 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "2fdb994f04bec3485130aee96483a96c255a4f74619b78b8e7f31a105b4c2855"
-    sha256 arm64_sequoia: "f6dfd8724ff6cea9dcf4f20293fea0a25467724318950c9d5d4b15fb762c33f8"
-    sha256 arm64_sonoma:  "b6ee53d7bd779d0c2b148785be2597df3398706fef3cc011754dd3836425d61b"
-    sha256 sonoma:        "4e29b60a70f0ca63b913ff6d6c0472f6540b2ab97ec7cfb4cecbdf92a88ea583"
-    sha256 arm64_linux:   "60361697d96922fdbe9a4e8d5d9b5f0ddd04658b00183f9cb22ece010437f441"
-    sha256 x86_64_linux:  "424320c4773f5b183c9c38ee72ce47a9b10c8ed7e6edc437d96e065726c993de"
+    sha256 arm64_tahoe:   "5a94d909d184b49e53c16568d433a640de32532bdf074160bf49555a4ab67e4f"
+    sha256 arm64_sequoia: "a1358d7b0af3b148ae2da1ed3b9151c6c62ac5ed31f3433de8ebf96c8914191d"
+    sha256 arm64_sonoma:  "560065f1b9ea7468bdbf3eac1ea8706d53079d0a3b8e781edd9ebfd27f1d8bd4"
+    sha256 sonoma:        "9f06e11758fef2de54d31ee5c38dc38df1bdacc25b42ddb9c78f64efb77477b0"
+    sha256 arm64_linux:   "9f85fd511805dfebb2bda27fe6d375f0ac8e230c2185a3969c82e08c4f76f266"
+    sha256 x86_64_linux:  "c0430741e1dd1dd2f71aafa8e134a4d50a99031863c3f607b4a021a656c393fc"
   end
 
   depends_on "ocaml-findlib" => :build
@@ -39,7 +39,7 @@ class Camlp5 < Formula
     system "./configure", "--prefix", prefix, "--mandir", man
     system "opam", "exec", "--", "make", "world.opt"
     system "opam", "exec", "--", "make", "install"
-    (lib/"ocaml/camlp5").install "etc/META"
+    (lib/"camlp5").install "etc/META"
     libexec.install opamroot/"ocaml-system/lib/stublibs/dllpcre2_stubs.so"
     bin.env_script_all_files libexec, CAML_LD_LIBRARY_PATH: libexec
   end
@@ -52,9 +52,9 @@ class Camlp5 < Formula
       # ocaml files are in sync with the camlp5 files.  If camlp5 has been
       # compiled with an older version of the ocaml compiler, then an error
       # "interface mismatch" will occur.
-      shell_output("#{bin}/camlp5 #{lib}/ocaml/camlp5/pa_o.cmo " \
-                   "#{lib}/ocaml/camlp5/o_keywords.cmo " \
-                   "#{lib}/ocaml/camlp5/pr_o.cmo " \
+      shell_output("#{bin}/camlp5 #{lib}/camlp5/pa_o.cmo " \
+                   "#{lib}/camlp5/o_keywords.cmo " \
+                   "#{lib}/camlp5/pr_o.cmo " \
                    "#{ocaml.opt_lib}/ocaml/str/str.cma hi.ml")
   end
 end

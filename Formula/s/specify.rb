@@ -3,17 +3,17 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.com/github/spec-kit"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.8.11.tar.gz"
-  sha256 "d4c45b7331ee1a66d00331c6f54fe71fcda5a9eae9021e0871ddcab97c3894e5"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.8.12.tar.gz"
+  sha256 "7b8933f1cf71c9defa1590072496dbc8e9142edee28b24bb1088de4f7e2e9060"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f51fcb3dd32243c1effe638a4e3cf90013c27aa3880bf05649e2ba280cae6993"
-    sha256 cellar: :any,                 arm64_sequoia: "972e561f1d2e831d979b23527f4ebe38ec3199a06e8f22f8a78606839525f92c"
-    sha256 cellar: :any,                 arm64_sonoma:  "1b1cbc5f7fe04c68f6a28c262d160eced982d8646f0320a67cde4b61b6a99554"
-    sha256 cellar: :any,                 sonoma:        "dbd72b51f173978bcc04d48e8cd8217c69e9b4105c2ae1037f9662d86c7c2bb1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f2ee774bf1d845c7b2f80886dfff842140d70af5296ed7ffc88d9bc5442cb5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc4ec90d529217de73e728ab6194276c156c0345151a5fa13f74c77e16e6665c"
+    sha256 cellar: :any,                 arm64_tahoe:   "2a21a98936e06f6b8c70e7a25fda1df8ff65f9cac91214b99334374baf4be042"
+    sha256 cellar: :any,                 arm64_sequoia: "2b64b1ef39c0c72833df54ab4851356ba958880b9316e5ab820ba07280cd6ec6"
+    sha256 cellar: :any,                 arm64_sonoma:  "8db0c29677f67f6e7c49b4027b1d9d64b1e86b599cae2b022c4140817c4a1821"
+    sha256 cellar: :any,                 sonoma:        "66485e98c3ad1e2072557a536c09dc36ccc550fe40db1af4b77a99576c36514b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a39966238bb716a3c5eef95566396fe1ffd0a17981069cf5d18015c57c6f9d4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c08db88dbf5e90086b20cfa8fc36ea3700a307b5180ec7e9740279a97be2895a"
   end
 
   depends_on "certifi" => :no_linkage
@@ -28,8 +28,8 @@ class Specify < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "json5" do

@@ -18,7 +18,7 @@ class Couchdb < Formula
   depends_on "autoconf" => :build
   depends_on "autoconf-archive" => :build
   depends_on "automake" => :build
-  depends_on "erlang" => :build
+  depends_on "erlang@28" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
   depends_on "icu4c@78"

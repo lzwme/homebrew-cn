@@ -6,15 +6,16 @@ class Bzt < Formula
   url "https://files.pythonhosted.org/packages/df/e6/d75c947034e3c1166707717bf2f735ed8de0a562de35cbfffdf613a91a2d/bzt-1.16.50.tar.gz"
   sha256 "3c7ce335fcb88835c7613d2c8768b5017f74c5b2952032d93dee2dffa8988b0c"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "faa62c32ba2ec81cd16077eb465d5f5b2a86e560d70806d7180f92c0d5ba1ca8"
-    sha256 cellar: :any,                 arm64_sequoia: "3cf134e5aefb89f37b3e4a7623650db70f1244482ebc47701d39a6a69e1ca925"
-    sha256 cellar: :any,                 arm64_sonoma:  "120272a28e73c8dd5687224dafa47629681a7c82f78e1a59e2013f7f102e540d"
-    sha256 cellar: :any,                 sonoma:        "00dbc5b1acb467346175a26c1c6abc49d5301ae6c9f3069e4b797e04af115ed9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2005952217fd470cb0ef8c8bc6b0b814b373676b0985f009c04f3371063221a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0c4376158127add1e8e8bc47dc5c05a882c371fc7d2c69bd77954d3cf23ffe0"
+    sha256 cellar: :any,                 arm64_tahoe:   "b2d7cb05f247563abd1aa604e9510acca74df3b449a363100542bdc8bdd1b8b4"
+    sha256 cellar: :any,                 arm64_sequoia: "b1bb4063a8aa60faf7542145f0a83013502251f7173b611a6817dc1bdd3925a3"
+    sha256 cellar: :any,                 arm64_sonoma:  "0ac20fc3542296106bd0b15706f256d57d3d3a50196fec061f8202898078116d"
+    sha256 cellar: :any,                 sonoma:        "a65c8521ba3844a0132cf3505ad835c8f0bbd215cbfa8fcf655ad6c41cd6653e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bec5a4797509733707231f36a1e8ca62fe46fe20f472694fc4b0ff7fc9fab297"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6820db86ecfd105eb975bd03cf0d457b29314b34bf886e04db6e88d35e1dd987"
   end
 
   depends_on "cmake" => :build
@@ -116,8 +117,8 @@ class Bzt < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "influxdb" do
@@ -126,8 +127,8 @@ class Bzt < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
-    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
+    url "https://files.pythonhosted.org/packages/05/3b/aab6728cae887456f409b4d75e8a01856e4f04bd510de38052a47768b680/lxml-6.1.1.tar.gz"
+    sha256 "ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40"
   end
 
   resource "molotov" do
@@ -166,8 +167,8 @@ class Bzt < Formula
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/9e/da/e9fc233cf63743258bff22b3dfa7ea5baef7b5bc324af47a0ad89b8ffc6f/propcache-0.4.1.tar.gz"
-    sha256 "f48107a8c637e80362555f37ecf49abe20370e557cc4ab374f04ec4423c97c3d"
+    url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
+    sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
   end
 
   resource "psutil" do
@@ -191,8 +192,8 @@ class Bzt < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/56/db/b8721d71d945e6a8ac63c0fc900b2067181dbb50805958d4d4661cf7d277/pytz-2026.1.post1.tar.gz"
-    sha256 "3378dde6a0c3d26719182142c56e60c7f9af7e968076f31aae569d72a0358ee1"
+    url "https://files.pythonhosted.org/packages/ff/46/dd499ec9038423421951e4fad73051febaa13d2df82b4064f87af8b8c0c3/pytz-2026.2.tar.gz"
+    sha256 "0e60b47b29f21574376f218fe21abc009894a2321ea16c6754f3cad6eb7cdd6a"
   end
 
   resource "pyvirtualdisplay" do
@@ -211,8 +212,8 @@ class Bzt < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "setuptools" do
@@ -246,8 +247,8 @@ class Bzt < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz"
-    sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
+    url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
+    sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
   end
 
   resource "websocket-client" do

@@ -9,15 +9,17 @@ class AnsibleLint < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9e688ed820aeb2a4fb326e6dd7bd53c8279d49f1291de30a1c948281c017c12b"
-    sha256 cellar: :any,                 arm64_sequoia: "4098ebf13ed6f99ac48c7c3dc86596697ff13ca023e9aa02e37f4c2edfe5d26f"
-    sha256 cellar: :any,                 arm64_sonoma:  "f32570d4afbbdff0d4c7031d93ba5a33ad7333278c393b231a2c97a61ec12f59"
-    sha256 cellar: :any,                 sonoma:        "4cdd58519abd5b167d668131de1773b40c70c784c5f2ffd9bb4914f5123cf281"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a71f6cb7e7727ccf3b5be1bc94b9bbea0c45f8497ac85425544c2a9e140189e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85719acae273558cc096e7d35c22954e0083846a71818c167162c54825033f77"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "045ec9b6f1c291a6fd4ea040106719207533b5d6541f583098099f85f2f46a41"
+    sha256 cellar: :any,                 arm64_sequoia: "692813a0fa4e807c74e4b9258ecf0414b20bd17f8499d0f64e20607148cac4c0"
+    sha256 cellar: :any,                 arm64_sonoma:  "ceaf4feb9121b84968518473fe6a66827fc29be32c27d68b0ac7667fd1d47a3c"
+    sha256 cellar: :any,                 sonoma:        "95bd827fdec70f10d0ccb5d9a52f58a8f3065fd065148c6a5bcb7090805d4ff5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "16f699a29e083f03d01fc103787f8a53fe6aedb5f04b42639d537dcc1e7070b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "980b74404fc30a3cde420557b20e63c648c27d747045974c59bf8913e7388490"
   end
 
   depends_on "pkgconf" => :build
+  depends_on "rust" => :build
   depends_on "ansible" => :test
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
@@ -32,8 +34,8 @@ class AnsibleLint < Formula
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/9d/ec/690cc73e38c3546eabc8ef4118e0d7be1758a598bc23eed3e24ca1f346a7/ansible_core-2.20.5.tar.gz"
-    sha256 "82e3049d95e6e02e5d20d4a5a8e10533a55e0cc52e878e4cf77166c45410f16f"
+    url "https://files.pythonhosted.org/packages/0f/48/e33714f82eaae739f805ff3ebc65a19fb7b1ea87bc69231361561762d44f/ansible_core-2.20.6.tar.gz"
+    sha256 "3066c430e8cba46777bf736ebcd085c90b0d7664c3fbd8c5b85227f8579cdcbf"
   end
 
   resource "attrs" do
@@ -42,8 +44,8 @@ class AnsibleLint < Formula
   end
 
   resource "black" do
-    url "https://files.pythonhosted.org/packages/e1/c5/61175d618685d42b005847464b8fb4743a67b1b8fdb75e50e5a96c31a27a/black-26.3.1.tar.gz"
-    sha256 "2c50f5063a9641c7eed7795014ba37b0f5fa227f3d408b968936e24bc0566b07"
+    url "https://files.pythonhosted.org/packages/c0/37/5628dd55bf2b34257fc7603f0fe97c40e3aaf24265f416a9c85c95ca1436/black-26.5.1.tar.gz"
+    sha256 "dd321f668053961824bcc1be1cc1df748b2d7e4fa28086b08331e577b0100a73"
   end
 
   resource "bracex" do
@@ -52,8 +54,8 @@ class AnsibleLint < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
-    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "distro" do
@@ -92,8 +94,8 @@ class AnsibleLint < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/df/de/0d2b39fb4af88a0258f3bac87dfcbb48e73fbdea4a2ed0e2213f9a4c2f9a/packaging-26.1.tar.gz"
-    sha256 "f042152b681c4bfac5cae2742a55e103d27ab2ec0f3d88037136b6bfe7c9c5de"
+    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
+    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
   end
 
   resource "pathspec" do

@@ -21,12 +21,6 @@ class Kraftkit < Formula
   end
 
   depends_on "go" => :build
-  depends_on "pkgconf" => :build
-  depends_on "gpgme"
-
-  on_linux do
-    depends_on "btrfs-progs"
-  end
 
   def install
     ENV["CGO_ENABLED"] = "1"

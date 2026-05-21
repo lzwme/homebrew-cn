@@ -3,18 +3,18 @@ class Badkeys < Formula
 
   desc "Tool to find common vulnerabilities in cryptographic public keys"
   homepage "https://badkeys.info"
-  url "https://files.pythonhosted.org/packages/5b/b8/9c5fdec4eb0b0a8b2e6a5a7a2d6da0fa5a905601a5e6a8c1f2aecb22f5c7/badkeys-0.0.17.tar.gz"
-  sha256 "5562f2276a0343c5cfa5ecc54dc0e658e1b65fd36016858c04af9f33f7e9f826"
+  url "https://files.pythonhosted.org/packages/15/85/39d573936d3f6a208c795f17f9fdc3ebd8cd4edd46d17f9852a5f2f56cad/badkeys-0.0.18.tar.gz"
+  sha256 "273403cd277f79d6e5b9c262611bdb763a0be8703b82f9818a5d121ce39669de"
   license "MIT"
   head "https://github.com/badkeys/badkeys.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ff514f83c3e336777e658ed4113ae33d55003a5ea623aa3ace810e94fa9d00fe"
-    sha256 cellar: :any,                 arm64_sequoia: "bfb4ee029aa483e8e65bfe142d9b8a69587fad6fd7e81a4152d62e635e506a95"
-    sha256 cellar: :any,                 arm64_sonoma:  "65f571cbfb9b3f9a5b7152bce08edfb7f4b794a317636d24e9b6d4c0c1b592ac"
-    sha256 cellar: :any,                 sonoma:        "c4d385ff9e584c3289891e8eb78f4b35158995da701895458ff8e9fab6d4b0d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "342bf80dcfc695ac6fe4ee708ebad245ed26211cd4bbba4345b262d20ecc8680"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "449c92c21e80fed4714358834e26b652047fdd9865bf75c53e8f494328f0afac"
+    sha256 cellar: :any,                 arm64_tahoe:   "939345102044d4cb5b91f19ce47af8dabd04a966ffb986dffa8d03bae09b38ee"
+    sha256 cellar: :any,                 arm64_sequoia: "e047092e5a4a6fe5c1a415c2a00cb8c7f848caef707cd9e7749a9b067e6b49f9"
+    sha256 cellar: :any,                 arm64_sonoma:  "7a4bef0f516a7358a1e96335a6492f98aa8e88fdd82e1fd6609afc005e297942"
+    sha256 cellar: :any,                 sonoma:        "e7e16b9c22829fbc43f911fba0b21f66dd9936d06376377cf72b354dffca95ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a803a4856fa1cb43932359e8b248ec6d7c5539f8151cd235794c3d3a071c182"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "869b2ef1b634c2c9e8225bb461576ea781a827d05bc899edd85fb14d47a430af"
   end
 
   depends_on "cryptography" => :no_linkage

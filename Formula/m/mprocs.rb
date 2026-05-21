@@ -1,18 +1,18 @@
 class Mprocs < Formula
   desc "Run multiple commands in parallel"
   homepage "https://github.com/pvolok/mprocs"
-  url "https://ghfast.top/https://github.com/pvolok/mprocs/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "1eefc5346f3c8b24ee6bf74582312fc61284ea54d4d384a4a8226d4b75ddb98b"
+  url "https://ghfast.top/https://github.com/pvolok/mprocs/archive/refs/tags/v0.9.3.tar.gz"
+  sha256 "806b46bc2a3b4369c4e1e35cf4c6e57949ee14919d1b2ff09bd1a21a57cb7a56"
   license "MIT"
   head "https://github.com/pvolok/mprocs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c869339d62813971e67d8f884c12fedd6a97e32a2abdd3ca4857fca92eb6b35a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98308e0626104774fc560cba95bdc6508ccd618ec195d3b8433aeeccc8401837"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1af5c10c627a687a41443f8d7d0a116eea05c23bb03dcf11ea21114afd060ee6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b9ac96d9aa27c7e627d2e5a7860670c6114be2e879b8c545a8768fc588b4919e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "719870a0ac991acfa4730e1ac474e7c2dab96ee3fbfa51273d0d9463076aa0f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "238de7c5d39519ea7b25cd5848d74698600ed8ff18a01502fd8b39ba8bb21b55"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f71ae0895c4e9daa8111b5b32809b240dcc4ff0b516aa2eee5e482a2450c517"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78c7c91c92fdd5dcb7095f48e862585027cd74f72378e073351a643bc8184737"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93dc1f8857042c52495b296ffb6689ff517e02ae878247062f633e54f412b668"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c8e03d510c206f730f2582c4a97b487a4c5aacd9fb9df7c2fc77ece1c5217c93"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b0a6e63f1d6aec549819e47be6c3673d2d3fc33b0605e0162a470d6b5c8d063"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e97920a8825b34775df141ff374b5c4031ae17fcd0b5e52d04c5f5cbd65f2646"
   end
 
   depends_on "rust" => :build

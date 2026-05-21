@@ -15,7 +15,11 @@ class Marksman < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d7dc81a783f1866894aaaa40d440034da2230c09389c74a4411697ea9293990"
   end
 
-  depends_on "dotnet@9"
+  # Aligned to .NET dependency. Can remove if updated to latest .NET
+  deprecate! date: "2026-11-10", because: "needs end-of-life .NET 9"
+  disable! date: "2027-11-10", because: "needs end-of-life .NET 9"
+
+  depends_on "dotnet@9" # https://github.com/artempyanykh/marksman/pull/446
 
   on_linux do
     depends_on "zlib-ng-compat"

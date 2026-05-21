@@ -10,8 +10,8 @@ class Bind < Formula
   version_scheme 1
 
   stable do
-    url "https://downloads.isc.org/isc/bind9/9.20.22/bind-9.20.22.tar.xz"
-    sha256 "cba92ff631b949655f475fe4b54290f6860fd0070d399f2279f6437c0d383ec6"
+    url "https://downloads.isc.org/isc/bind9/9.20.23/bind-9.20.23.tar.xz"
+    sha256 "5d4475aed3f9e500ef554b2b14d972bdb83d33de214a9b3be92918ea46908371"
 
     depends_on "readline" # TODO: Remove in 9.22
   end
@@ -24,12 +24,12 @@ class Bind < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "fb375ac33749724b2c9be2b869f0a20c5a3c10ebcc970f5dbd05ad55df4a723d"
-    sha256 arm64_sequoia: "d785ddd16c8f41f16d30e2742a1d70698f83aae6ebd38c9f5b26914efabad187"
-    sha256 arm64_sonoma:  "a079b80dc5c7893f097b0ae72a95745a06b7c436fb7e5f2b80419b1b286b781a"
-    sha256 sonoma:        "4e539dcb32fc26442a7ea9b537c99201a78d992bd6d001a34f5c0992aff157b3"
-    sha256 arm64_linux:   "2c3f7cbe44fdcbbfa12a7b94659718d80e0b2ceb9dc216f16898d62d0cc968da"
-    sha256 x86_64_linux:  "d016b1f6e728a085e613a7c14af6b4ffdaddc6c3cb7bb10cff4f0a4af3e45619"
+    sha256 arm64_tahoe:   "93151221ca73214a1f992e215b280ec87d1c3bd53fb43a5a05527c2cd7a0f868"
+    sha256 arm64_sequoia: "cca566614ba3b3fa204693fec065bb48424652418ef68f08cce65041b782c80e"
+    sha256 arm64_sonoma:  "5ba72f515f31f3fb2999b2947c7c83481a02b8805dfa951f32f9757e7672c651"
+    sha256 sonoma:        "eb0bd5f303cc68dda7b9d9a8406bec6ff68ca69e2df763802459d469956ea40b"
+    sha256 arm64_linux:   "2c32d81cf0fdb873286921a0f39194533bc790fff70e3edeba97eb3a1833fbc0"
+    sha256 x86_64_linux:  "6f177082d7794b932fd277c042a8c449980ace0530dc18eeb1ffbfe1c43296dd"
   end
 
   head do

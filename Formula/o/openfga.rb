@@ -1,18 +1,18 @@
 class Openfga < Formula
   desc "High performance and flexible authorization/permission engine"
   homepage "https://openfga.dev/"
-  url "https://ghfast.top/https://github.com/openfga/openfga/archive/refs/tags/v1.15.1.tar.gz"
-  sha256 "49f89d90e01ba8e8e4e5342dbf9d70c667b2f6d0e54293c22de31bee4c219420"
+  url "https://ghfast.top/https://github.com/openfga/openfga/archive/refs/tags/v1.16.0.tar.gz"
+  sha256 "b1c12ddd13faf8465799c6d8d3b29b14ae452f1d90437b5536627191d2586b0b"
   license "Apache-2.0"
   head "https://github.com/openfga/openfga.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ce465a2a753c7e3f147711075c0d1827213c9ba1c9034c441ef35dca4a8a1302"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5bdfbb83f787674bf9a9cd18f991191edc3549918d48f276305191e5bd0e483"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4db45f534872e73408a4b9f65075a2db3418b15022d40943bd4bbe5f25f15f4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "755769db87eb0ec91b7b9a470f12efe6f1008154e36a774974fa4fea6e0a477f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5093287e12cedbff035c163dec47e1de07ff2c23e8e1a0dbd2e66e5ea689369"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbf1f8585affaf29aacfc0b3a22bd138388fe8030fde652e6080d58df0b64009"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9fa6ce88c49ecb2ba7e2ca91052fdb954ab809fda2039aca6b1e9114875a7139"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ea69468b58416b95cabe211c91c6b309fcde0c89647ef3302cb47497f972f03"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a496bc04076c28bcef9df83216ed64d67a142313318aaec6d8a603514d8a136"
+    sha256 cellar: :any_skip_relocation, sonoma:        "95c73edc00f6342cc450efc94153e8f8771f0291201616cce535084838f1d0b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5bb7b6388bcd58bd19454bdb49e27a1b874bb519c9155d18d46cd54166975167"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcadff0ec2ba2906788ae5f34ec0bb17d7b124aad93d954894737b4cef4fb1e3"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class CodeCli < Formula
   desc "Command-line interface built-in Visual Studio Code"
   homepage "https://github.com/microsoft/vscode"
-  url "https://ghfast.top/https://github.com/microsoft/vscode/archive/refs/tags/1.120.0.tar.gz"
-  sha256 "59a0b1df599df9411f3f7b8768f9264f4d1527ad625a6ac5de5742c37a3e739c"
+  url "https://ghfast.top/https://github.com/microsoft/vscode/archive/refs/tags/1.121.0.tar.gz"
+  sha256 "e35ec54af68148d70996bcb3bb7d29e7726dee3c01f1a9e4dbd03ab6154b15de"
   license "MIT"
   head "https://github.com/microsoft/vscode.git", branch: "main"
 
@@ -12,13 +12,12 @@ class CodeCli < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ed9233b1d507fe45422382cd4d85403106b735cea16ded8652e99deb0519881f"
-    sha256 cellar: :any,                 arm64_sequoia: "d8b881e5a8a14864a816d3129e2dc87764f072b41d4958ad4256d4f4828cd87b"
-    sha256 cellar: :any,                 arm64_sonoma:  "db5815f72853e1018427cc0a4f9cfc71c3bf22d7a84d201a150552a3ada74dce"
-    sha256 cellar: :any,                 sonoma:        "07c5f5a8bb3dd2d80cfaace4e385364649216f65aa8e507a7b0788407f394116"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa6f338213408da421522074ccce3490d11bb27f427eaaada75819b61a6c28d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4df41cc25f2abf7e4515f2232afa245accbfcc63cd8b00713c47e8ee90ab2e70"
+    sha256 cellar: :any,                 arm64_tahoe:   "fefe9f8a03f2c6b08cf2287100bb019ffd8374c78c4d682651821694bd9bcf5e"
+    sha256 cellar: :any,                 arm64_sequoia: "8a3eee1c236235444d99040010652dc2b0134a79d8666798655b3ee8c5efa226"
+    sha256 cellar: :any,                 arm64_sonoma:  "a0d7ef0900312ac3d27800cb1dfe5ed28c9f3f7f14bece78fd9f061cfd6120ca"
+    sha256 cellar: :any,                 sonoma:        "f7e3d945e4306dcb011656a5b5a1ffed7afcf70f19c96da5c7bb86b0ef8424ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3ba80b206d6ddb1f2d484198eada45bb7a4fa823d3eb5c148395f1a2afba72f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce672ca111785d3f2b64173a8055b57714934fee00421a99f4eed7c738437e95"
   end
 
   depends_on "pkgconf" => :build

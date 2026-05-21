@@ -3,8 +3,8 @@ require File.expand_path("../../Abstract/portable-formula", __dir__)
 class PortableRuby < PortableFormula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.4.tar.gz"
-  sha256 "f35f6edfa3dabb3f723f9d0cf1906c6512ae77f4e412ab1e68cc6e91d230fa80"
+  url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.5.tar.gz"
+  sha256 "7d6149079a63f8ae1d326c9fa65c6019ba2dc3155eae7b39159817911c88958e"
   license "Ruby"
 
   # This regex restricts matching to versions other than X.Y.0.
@@ -14,10 +14,10 @@ class PortableRuby < PortableFormula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e666cc63add686cf3394d7b9f27c314b22d1871cd9a751aaef7e9d44cebf54e1"
-    sha256 cellar: :any_skip_relocation, catalina:      "a372ff770be6364313bb5e9bd9e5abb128a1c35cd9f98b8a591ca07f948c7491"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a2840e84ec25e4e29ef04c8c4ae14467d2d39eded15790b2f6078e801aff273"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e0dca6f678788420721478178944db366e9e90c5768765074ae38631ccd4558"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "d5dbe0bbfd7e00136344e7872fc26ad1db935cf7c6421c5888e42bab6cc2f6b3"
+    sha256 cellar: :any_skip_relocation, catalina:      "9ceb962508dce8cc2468095292fbff2b69fd86e0b9ecca813bf8ead72d4effa1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca91ffae5583800407ee3f87d682c986d72133c17959fa55f9d36ef1903e0a07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e759412bed0a0a57c8939634b35ccfba178bba4c9831000d0a28e1104d6942c"
   end
 
   depends_on "pkgconf" => :build
@@ -43,8 +43,8 @@ class PortableRuby < PortableFormula
   end
 
   resource "bootsnap" do
-    url "https://rubygems.org/downloads/bootsnap-1.24.3.gem"
-    sha256 "f7fa3d20597e2f0aa52b0a1aba83fb54d4f79e9c2e210ec4fa1e8895514dcad8"
+    url "https://rubygems.org/downloads/bootsnap-1.24.4.gem"
+    sha256 "a4d939fc2cc5242a83d3a7cb4fb97743ac58475afe91e0600479a3df6f117541"
 
     livecheck do
       url "https://rubygems.org/api/v1/versions/bootsnap.json"

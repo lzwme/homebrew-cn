@@ -3,8 +3,8 @@ class OpenAdventure < Formula
 
   desc "Colossal Cave Adventure, the 1995 430-point version"
   homepage "http://www.catb.org/~esr/open-adventure/"
-  url "https://gitlab.com/esr/open-adventure/-/archive/1.20/open-adventure-1.20.tar.bz2"
-  sha256 "d976df7b90d9b5cb3c93f3ac99b12392e60852557b2651e7c4dc15f51a74a5ad"
+  url "https://gitlab.com/esr/open-adventure/-/archive/1.21/open-adventure-1.21.tar.bz2"
+  sha256 "8ddff48254f868999957bef5f9a1606140d8cacae4a4d87f676fd819876e57c6"
   license "BSD-2-Clause"
   head "https://gitlab.com/esr/open-adventure.git", branch: "master"
 
@@ -16,13 +16,12 @@ class OpenAdventure < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5cd8f69998d91913b55151dd6d546ad6ae558913b5691a446313bb7c479abd4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a87d0c7a7e99a6170f9e899c298109ad6443bd4b1fefe8efbbcf68c245c5878"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb42895c9ea5740634c62e6c16f1680cd1f640b0c0a00cab5a6d3be53e92b039"
-    sha256 cellar: :any_skip_relocation, sonoma:        "703624eecbc0d021d1ea47e49738a074fb7f0f973d5b1b013c7532dd8da2ec75"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "11986ede6b55b722c796c6e80f3eed1ac1fa3d4757b3dbc7a04a1df37f509e08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0aa4f90ca96e69a747ffa5e90d2f8388248c077f0c5f9154322f8df690bf048"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e1e756daba18ba6acb0c2d8cb5ed79fb5cac368236cc721258ceed36c1c309ab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "346050e4b4607a2b6b8c1a7cfcc7637d65c7338e2c5a5b3dba17fe54b1f16933"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c901cfdd624cdba01051559e5a8e8821ed8217c942f4f93b5b3d8512b4243cb8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3fce249b0871056bb4f9dac69c8ca5f0c64be4ad05250cf5752f51f547342511"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "400454c31641b59ca8ec560bb119463501d9734f47bf4f2f52af013fa2241afc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b91344d5502ac8058a2ab367275a177da5e029edf4ee2d9a31068dade907beb"
   end
 
   depends_on "asciidoctor" => :build

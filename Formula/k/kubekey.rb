@@ -25,13 +25,6 @@ class Kubekey < Formula
   end
 
   depends_on "go" => :build
-  depends_on "pkgconf" => :build
-  depends_on "gpgme"
-
-  on_linux do
-    depends_on "btrfs-progs"
-    depends_on "device-mapper"
-  end
 
   def install
     project = "github.com/kubesphere/kubekey/v#{version.major}"

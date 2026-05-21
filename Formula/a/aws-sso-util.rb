@@ -6,16 +6,16 @@ class AwsSsoUtil < Formula
   url "https://files.pythonhosted.org/packages/4f/64/f00272ecbc60703d0f1a3b17ab75d893c05ec5d60b0e6e9d59ef9b8b9c61/aws_sso_util-4.33.0.tar.gz"
   sha256 "e48d7f5911443450d28e1ac1613f81b9aa15babb1b2055b4531df87db43a09df"
   license "Apache-2.0"
-  revision 7
+  revision 8
   head "https://github.com/benkehoe/aws-sso-util.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4c2426d3c4b95169ed9e93e0c459a5489f23dc308bd55b7c74e74a53cf3be27e"
-    sha256 cellar: :any,                 arm64_sequoia: "d3e825ce7409a250efd6b71bba060c0bba13256a25f066ce9fc5201456364809"
-    sha256 cellar: :any,                 arm64_sonoma:  "1bced41acee95e65ca7aae613a3af0885d1e3607de444fb68a4070ff0a4fe67b"
-    sha256 cellar: :any,                 sonoma:        "68de5f1a375be25344dc6cf3380fc97f3883da950ed2399f502e2247e48eef13"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "264874561b1485edf17432fcfef817e4d336e9e0ea9f4976a35453294dbdc2a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "caf8e03ba22bfff67fd3342ffa1e489a56e6143c243982f8e028643ba3b5b3a4"
+    sha256 cellar: :any,                 arm64_tahoe:   "c0ec5f26e1f32323f3f33c5f298496d7167f21b252655b62f2d70d1edf3f5b34"
+    sha256 cellar: :any,                 arm64_sequoia: "d158c7b623dcf94108697dfcda6429cba74d2d592d5d57a6df6714a704e6ee37"
+    sha256 cellar: :any,                 arm64_sonoma:  "161a7194a29609451272e4577c676bca89da36c2e9947d9c0ff66e084ccbd4dd"
+    sha256 cellar: :any,                 sonoma:        "02d461b17d7a418b10016373079fc67872cc34a6d663a7d799888560fb65c359"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3adca0b98302f367292636fd1aaf02a8d472a800cf7ffbac0853164fc561f228"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e61b456aef42c03eebda09682565c57e189911e0a26a76e4c43997e341fa3264"
   end
 
   depends_on "certifi" => :no_linkage
@@ -41,13 +41,13 @@ class AwsSsoUtil < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0a/37/78c630d1308964aa9abf44951d9c4df776546ff37251ec2434944e205c4e/boto3-1.43.6.tar.gz"
-    sha256 "e6315effaf12b890b99956e6f8e2c3000a3f64e4ee91943cec3895ce9a836afb"
+    url "https://files.pythonhosted.org/packages/ff/27/ae1a71e945ce7bde39b0677b252fe7d8a0ad7fa3d6b724d78b81469c08fe/boto3-1.43.10.tar.gz"
+    sha256 "27342e5d5f6170fcc8d1e21cdd939af2448d58ac56b08d494250eaad998e30c7"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/79/a7/23d0f5028011455096a1eeac0ddf3cbe147b3e855e127342f8202552194d/botocore-1.43.6.tar.gz"
-    sha256 "b1e395b347356860398da42e61c808cf1e34b6fa7180cf2b9d87d986e1a06ba0"
+    url "https://files.pythonhosted.org/packages/e2/4e/c127dd0628c551f10cb890e279a9c0e367523b880c4cd3e81a1e76886174/botocore-1.43.10.tar.gz"
+    sha256 "2f4af585b41dbccdfc9f49677d7bd72d713a12ef89a1dc9c8538a927649498bf"
   end
 
   resource "charset-normalizer" do
@@ -56,13 +56,13 @@ class AwsSsoUtil < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jmespath" do
@@ -96,8 +96,8 @@ class AwsSsoUtil < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "s3transfer" do

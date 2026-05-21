@@ -7,8 +7,8 @@ class Ruby < Formula
 
   stable do
     # TODO: enable default_user_install when updating to Ruby 4.1
-    url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.4.tar.gz"
-    sha256 "f35f6edfa3dabb3f723f9d0cf1906c6512ae77f4e412ab1e68cc6e91d230fa80"
+    url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.5.tar.gz"
+    sha256 "7d6149079a63f8ae1d326c9fa65c6019ba2dc3155eae7b39159817911c88958e"
 
     # Should be updated only when Ruby is updated (if an update is available).
     # The exception is Rubygem security fixes, which mandate updating this
@@ -30,12 +30,12 @@ class Ruby < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "736c3a9c1770d7d8d9da0e3a07d1500f58983838d424f46a4892b994d46721ec"
-    sha256 arm64_sequoia: "2fde993a88b53325d141a8c4c5298dd37db9e4a0b96779ef9647424a627d2694"
-    sha256 arm64_sonoma:  "94a3877749d418010c43ed8bbd3da8d73440c21c5081cb5ff7422ea9b109b05a"
-    sha256 sonoma:        "39c3572e2a74c3eb90a7386ccc7b875bb2be1942c7158190f0a0d8acc168ba0b"
-    sha256 arm64_linux:   "3dfadd63188aec5cff359d26cd5178fd45c98f21869e3073417de0fbd47ce171"
-    sha256 x86_64_linux:  "b59f8912934627fe6901f2c7613d1f4f7089136a01b30b665102373ea49dc8bd"
+    sha256 arm64_tahoe:   "9f26dccd8e5aa2158a31170edfdc346624c1f7c66e7dd44b8d56138a50c2b3d4"
+    sha256 arm64_sequoia: "c6c940945bcef445e4e0cd3cfd2e9d7470fb64b41263cd6c03891aa7be9abd04"
+    sha256 arm64_sonoma:  "00b565a069e511790c3c2ea9dc8b05bd8c38acb5064aa0191d041f15a85d5367"
+    sha256 sonoma:        "1180f95a02f846601d88ec663cf3e1c7fb73eba70cf9f204db448616d2bb6979"
+    sha256 arm64_linux:   "96d9f4050272e1834b7454d87a197c250d6061b28043defc97a870ca5fabcf2d"
+    sha256 x86_64_linux:  "caccd8916a52e2ab4c4500ef72e502bac005a4fe091a206e858dd68c89ec757b"
   end
 
   keg_only :provided_by_macos

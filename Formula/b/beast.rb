@@ -12,28 +12,27 @@ class Beast < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f6bea503ebf5a08dec482d702efc5deb9a582e508b02c0801676e5b12d81cc38"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b8a6e27f0f6d7d2ea5975527fcaeb26e12e85084ada04504faf8648e49c68aa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14251bfb6655c4a41182c877f335e7a52d94b0cf19944b6a84503114ffe9d225"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0d3c7f2ada5fe41129297cb1d3982c820795caf49df73ef195809a105b6fc7b1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "26662c5e73e42985a75df7fb1fa10f74eff789aa3271daf497323c8c66725dee"
-    sha256 cellar: :any_skip_relocation, ventura:       "293196654c48f797b253a1d07ce9bab5836d5682fbe1772f26a6dc8f64875977"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "68647073986327f94f8ee9ec7e8d4b0e34cb8555378591e99e0ab19f480d9e83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34a93fd16e042a40f5d18973a31931ea504884cacb750acaabb1772a891435d3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b107a5edd728816ef7165865357969675e088181f19e83c6a9a2b5ce2e116312"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d872467d67eaf343cf3f19f857dcadf1801081fde1b0def66a5c5e6c1de0e12"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e172d94ce8e6d5e1f4e71d96e3badd35a781f7de4a35ec9f3547ebecfb1ea821"
+    sha256 cellar: :any_skip_relocation, sonoma:        "271c25efad35403b8c49c6caa31c6a21a2f486624ea0f5203174691a6dfaa613"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63b7d3b4fe5dc9a4468424a86832701ea99c690481040dc444d832528b6680f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ac4f0df6c90dd7dddd0b19757f1c1ad14462b253743d09cafb94f6b20367b65"
   end
 
   depends_on "ant" => :build
   depends_on "beagle"
-  depends_on "openjdk"
+  depends_on "openjdk@25"
 
   def install
-    ENV["JAVA_HOME"] = Language::Java.java_home
+    ENV["JAVA_HOME"] = Language::Java.java_home("25")
     system "ant", "linux"
     libexec.install Dir["release/Linux/BEAST_X_v*/*"]
     pkgshare.install_symlink libexec/"examples"
     bin.install Dir[libexec/"bin/*"]
 
-    env = Language::Java.overridable_java_home_env
+    env = Language::Java.overridable_java_home_env("25")
     env["PATH"] = "${JAVA_HOME}/bin:${PATH}" if OS.linux?
     bin.env_script_all_files libexec/"bin", env
     inreplace libexec/"bin/beast", "/usr/local", HOMEBREW_PREFIX

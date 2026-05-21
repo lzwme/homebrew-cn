@@ -6,15 +6,16 @@ class Cycode < Formula
   url "https://files.pythonhosted.org/packages/0c/7b/4959bfa39310ea7bfd9ee51aec212f443b2b1002276a663cd3d5723d9e73/cycode-3.15.2.tar.gz"
   sha256 "4058a91648ca7416f089bff125fd728a219ceeff43c00989e2abadbd114b0c40"
   license "MIT"
+  revision 1
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5172849afcfb3bf44c43ba50be3d21ef1d00ee3d317b7dd8d4e320418df58961"
-    sha256 cellar: :any,                 arm64_sequoia: "a1dccded6788198a438811315b7d47979bc971146d7450899ec166080c750656"
-    sha256 cellar: :any,                 arm64_sonoma:  "dda6ab5a6859937cfc635247bb925da746e1b7311f581a524db8083c5c80d587"
-    sha256 cellar: :any,                 sonoma:        "27b3352df113513e49b84ebf7ccfad35fd512496602d16db8cefd398c860e4da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "802b80ae80160638e7c3b1d799f091a7766a9f69d665fe8aa14860419acde148"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b9d533d658d49a3ce8afb85c4e3b2a4620dcf123f384ee1f104865d728e1f95"
+    sha256 cellar: :any,                 arm64_tahoe:   "2839c201f0bbd597db24b5c3fee82d1dd16ee718cafd9be90002dd8249a0fa63"
+    sha256 cellar: :any,                 arm64_sequoia: "e2f2c116cd7217f87905b68733950ead66b6f27383f47499dfc51a0ce911ba1a"
+    sha256 cellar: :any,                 arm64_sonoma:  "f39786b34539084ce7c82f73007ace26a686f445b648bf69224d1e90fe4d9774"
+    sha256 cellar: :any,                 sonoma:        "dd9d619767095637167573508c414afa744f916a641b670a0f4cb361c7dd6efa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "887737c1e6a5b72b6af85b408d4bfa0318fe887f901c0435ffbff627b703dbd1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2dec4cf020028b07ad103aa23d88542669c4614d43277f7d0c31080be93676f9"
   end
 
   depends_on "certifi" => :no_linkage
@@ -87,8 +88,8 @@ class Cycode < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jsonschema" do
@@ -162,8 +163,8 @@ class Cycode < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/82/54/a85eb421fbdd5007bc5af39d0f4ed9fa609e0fedbfdc2adcf0b34526870e/python_multipart-0.0.28.tar.gz"
-    sha256 "8550da197eac0f7ab748961fc9509b999fa2662ea25cef857f05249f6893c0f8"
+    url "https://files.pythonhosted.org/packages/4e/fe/70bd71a6738b09a0bdf6480ca6436b167469ca4578b2a0efbe390b4b0e70/python_multipart-0.0.29.tar.gz"
+    sha256 "643e93849196645e2dbdd81a0f8829a23123ad7f797a84a364c6fb3563f18904"
   end
 
   resource "pyyaml" do
@@ -177,8 +178,8 @@ class Cycode < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
-    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "rich" do
@@ -202,8 +203,8 @@ class Cycode < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/64/13/3cafb96bceb02949f265bbdf1cbcea2810271ae709e4aa35e980f90c07fd/sse_starlette-3.4.3.tar.gz"
-    sha256 "a7f6d87cf482cf38b911c31075811c7f8b4efbada8ac9d5199a8e239fed513c9"
+    url "https://files.pythonhosted.org/packages/f7/2b/58abc2d1fd397e7dde08e947e05c884d8ef2f78d5e2588c17a12d42d6994/sse_starlette-3.4.4.tar.gz"
+    sha256 "07e0fa0460138baf25cdd5fb28683472c3995dc1642225191b3832d62526bcb0"
   end
 
   resource "starlette" do
@@ -232,8 +233,8 @@ class Cycode < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/1f/93/041fca8274050e40e6791f267d82e0e2e27dd165627bd640d3e0e378d877/uvicorn-0.46.0.tar.gz"
-    sha256 "fb9da0926999cc6cb22dc7cd71a94a632f078e6ae47ff683c5c420750fb7413d"
+    url "https://files.pythonhosted.org/packages/f6/b1/8e7077a8641086aea449e1b5752a570f1b5906c64e0a33cd6d93b63a066b/uvicorn-0.47.0.tar.gz"
+    sha256 "7c9a0ea1a9414106bbab7324609c162d8fa0cdcdcb703060987269d77c7bb533"
   end
 
   def install

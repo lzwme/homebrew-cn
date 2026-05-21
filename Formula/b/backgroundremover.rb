@@ -6,15 +6,15 @@ class Backgroundremover < Formula
   url "https://files.pythonhosted.org/packages/f5/8d/ebc742ef2c427bfec9047096b28ed380d390a566bf294fe0772a2b044940/backgroundremover-0.4.1.tar.gz"
   sha256 "3afa098d4538f44fd0bb44f9b77b63c29716fe7860dc79a3d51053d8cba2f753"
   license "MIT"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "baabb43835d21dd7d0768649cdace14ec7f2818b4a12787e19c475b4e6e00ef9"
-    sha256 cellar: :any,                 arm64_sequoia: "45a9af94d76cae8af675f399c925f513851641ab04702beecac2512edadaba41"
-    sha256 cellar: :any,                 arm64_sonoma:  "30ba7552a1da03903d24717b3939dd33dbac9a79f6b0a3331284fc26cb13784c"
-    sha256 cellar: :any,                 sonoma:        "9f0deb9ce77b6fea6256c3f4fa2ee8d3d150b878831cbc67bef92ff5d1e0f7ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b5bcf773e696a4b5a08499e917c7e1934869444160181875dd2b36567560fd8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff6dfb1772f35284bf8f4a0a7d5583db4d68d3b756b06a02a39c2c493df54e4f"
+    sha256 cellar: :any,                 arm64_tahoe:   "92247c82af2c24d42be9d0c8b131f8655fa54fb28c20acef748701bba6d256f3"
+    sha256 cellar: :any,                 arm64_sequoia: "fea7fd39ea2ec934112a116e534a085e81112355f7d9c1c0c3df15bfa434a78e"
+    sha256 cellar: :any,                 arm64_sonoma:  "07b87c6f6957849940aac423966577dabf5ff7073fc55659d5601a60e937f44e"
+    sha256 cellar: :any,                 sonoma:        "c2e5b482562580b3a712b1f994738e17d9df3bff60453ccebdeff80829868189"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "002195e384bbb9469364d2d9d1ab9f1d0a7bd5fda3e864191ff82fe16cdc7370"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef8ffd31a40163f550bca19c71a123718fc043ae4ce37a0fc49cc1925090bfbc"
   end
 
   depends_on "cmake" => :build
@@ -49,8 +49,8 @@ class Backgroundremover < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "commandlines" do
@@ -59,8 +59,8 @@ class Backgroundremover < Formula
   end
 
   resource "decorator" do
-    url "https://files.pythonhosted.org/packages/43/fa/6d96a0978d19e17b68d634497769987b16c8f4cd0a7a05048bec693caa6b/decorator-5.2.1.tar.gz"
-    sha256 "65f266143752f734b0a7cc83c46f4618af75b8c5911b00ccb61d0ac9b6da0360"
+    url "https://files.pythonhosted.org/packages/60/8b/32f9823da46cde7df2087faa08cd98d01b908f8dcab982cdba9c84e85355/decorator-5.3.1.tar.gz"
+    sha256 "4cbcdd55a6efadb9dbea26b858f4fb3264567b52d69ca0d25b721b553f60ea82"
   end
 
   resource "ffmpeg-python" do
@@ -89,8 +89,8 @@ class Backgroundremover < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "imageio" do
@@ -129,8 +129,8 @@ class Backgroundremover < Formula
   end
 
   resource "numpy" do
-    url "https://files.pythonhosted.org/packages/d7/9f/b8cef5bffa569759033adda9481211426f12f53299629b410340795c2514/numpy-2.4.4.tar.gz"
-    sha256 "2d390634c5182175533585cc89f3608a4682ccb173cc9bb940b2881c8d6f8fa0"
+    url "https://files.pythonhosted.org/packages/d0/ad/fed0499ce6a338d2a03ebae59cd15093910c8875328855781952abf6c2fe/numpy-2.4.6.tar.gz"
+    sha256 "f3a3570c4a2a16746ac2c31a7c7c7b0c186b95ce902e33db6f28094ed7387dda"
   end
 
   resource "pillow-heif" do
@@ -159,8 +159,8 @@ class Backgroundremover < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "six" do

@@ -18,7 +18,9 @@ class Egctl < Formula
   depends_on "go" => :build
 
   on_linux do
-    depends_on "btrfs-progs"
+    on_intel do
+      depends_on "btrfs-progs" => :build
+    end
   end
 
   def install

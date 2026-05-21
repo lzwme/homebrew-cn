@@ -6,16 +6,16 @@ class Cookiecutter < Formula
   url "https://files.pythonhosted.org/packages/92/03/f4c96d8fd4f5e8af0210bf896eb63927f35d3014a8e8f3bf9d2c43ad3332/cookiecutter-2.7.1.tar.gz"
   sha256 "ca7bb7bc8c6ff441fbf53921b5537668000e38d56e28d763a1b73975c66c6138"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
   head "https://github.com/cookiecutter/cookiecutter.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "927364234ec2d017ec5baea6e7b8907f086f464c06051187de04f2e243301724"
-    sha256 cellar: :any,                 arm64_sequoia: "a37da11dc0c3abeb2aeecdcf9c14fdcfd28dfb4c2da48533aab7f786b5f20b46"
-    sha256 cellar: :any,                 arm64_sonoma:  "3193e1838fdb094ced801b742feb8c52e173229f0d6c520e9a00b4e1177b3c17"
-    sha256 cellar: :any,                 sonoma:        "5cfab2840bbc72c4e138fe32ddc797dce0f83f4247a9845cd91722381b7a4088"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "62a714d80cd47db928edba57f078e0b1e4db919e7b05fd25225fffbe4c2a6775"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27c9e43a3a6a35fec5f4c31363c6a41c8bb44948879547414367b7d37a9b7abe"
+    sha256 cellar: :any,                 arm64_tahoe:   "6dc62ce8dc4063550bcfd19dcf5d635f66a75fec3b2ecab3c2d52d11e9d2703d"
+    sha256 cellar: :any,                 arm64_sequoia: "37bc94e1364792e019a3a4caa1292e181bb33617446048e4fab9af0012815dd4"
+    sha256 cellar: :any,                 arm64_sonoma:  "d10d36cbebb83b12bc18b3645978cadd5c3cbba1bdbe651c2687ffe110ce7649"
+    sha256 cellar: :any,                 sonoma:        "543da37e1598e2480a55abf51c0d255eda847df5fe16a44cc0c99df76137215c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d37f1460e1749491fce22a6b27199c7c2b2525103323587571eb987e2f7f5e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ebf52f67bca17fd1909c90cc23db67586f1c26012391819d4ef13d8e666906a"
   end
 
   depends_on "certifi" => :no_linkage
@@ -40,13 +40,13 @@ class Cookiecutter < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jinja2" do
@@ -90,8 +90,8 @@ class Cookiecutter < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "rich" do

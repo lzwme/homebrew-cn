@@ -17,10 +17,10 @@ class SnowflakeCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc5c7437e0e891da9b2c047d1e307b5127aae66dcc62edaccaa1ef93213ec752"
   end
 
+  depends_on "protobuf" => :build
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "protobuf"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.13" # `snowflake-*-python` doesn't support Python 3.14, https://github.com/snowflakedb/snowflake-cli/issues/2669
 
@@ -257,12 +257,6 @@ class SnowflakeCli < Formula
   resource "snowflake-snowpark-python" do
     url "https://files.pythonhosted.org/packages/f3/3c/cc3a4b4c02aa080dc13ec47f4069cfe08557f67f33f9cd772b42dc317175/snowflake_snowpark_python-1.41.0.tar.gz"
     sha256 "19c90354eb103c37c6502e5b880b47235db6abb0fac1910c022aa98740331785"
-
-    # Remove `protoc-wheel-0` dependency, it can be replaced with `protobuf` formula
-    patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/0861b15cab638c9e7b66743dae68abf12149b919/Patches/snowflake-cli/snowflake-snowpark-python.diff"
-      sha256 "ef7b5a62b4083a08514b6eeb392c8810730c5e19b41e28bf68e71eded9e91a83"
-    end
   end
 
   resource "sortedcontainers" do
@@ -306,8 +300,13 @@ class SnowflakeCli < Formula
   end
 
   def install
-    without = %w[jeepney secretstorage] unless OS.linux?
+    without = %w[snowflake-snowpark-python]
+    without += %w[jeepney secretstorage] unless OS.linux?
     venv = virtualenv_install_with_resources(without:)
+
+    # run separately to avoid `protoc-wheel-0` dependency
+    ENV.append_path "PATH", venv.root/"bin"
+    venv.pip_install(resource("snowflake-snowpark-python"), build_isolation: false)
 
     generate_completions_from_executable(bin/"snow", shell_parameter_format: :typer)
 

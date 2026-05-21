@@ -20,6 +20,8 @@ class Quickjs < Formula
     sha256 x86_64_linux:  "547f293bb0c5b1de7fe993352bc26192627f16a36128d64bb9b9dbd9b2afca2e"
   end
 
+  conflicts_with "quickjs-ng", because: "both install a `qjs` binary"
+
   def install
     system "make", "install", "PREFIX=#{prefix}", "CONFIG_M32="
   end
