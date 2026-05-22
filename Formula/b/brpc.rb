@@ -5,16 +5,16 @@ class Brpc < Formula
   mirror "https://archive.apache.org/dist/brpc/1.16.0/apache-brpc-1.16.0-src.tar.gz"
   sha256 "4d5e84048e12512c008d24e52c9e0baa876b5f3f9b06f0aead38b55ea248fdc3"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ebabc283ea8e626a983d4cf1c48dd32ffae3c081deb39573ef0ce375961f49ce"
-    sha256 cellar: :any, arm64_sequoia: "f3702240ec477b32fe005e5ed1028c882eb9247fe33f64b17aaebf20632fdec0"
-    sha256 cellar: :any, arm64_sonoma:  "8a5f179fdc117860db24efc3c5b36d5556b781d8ef5c3e4f47065b4fdf61ca17"
-    sha256 cellar: :any, sonoma:        "c6efc1a0eee458b2e01fcfe4d05d6ce62286c2790bcfa289c4d9ea54eb3158c7"
-    sha256               arm64_linux:   "6adb8de5e2c4af0845231c9e4360960fb26f29912279dab9c0f45482bd3f0177"
-    sha256               x86_64_linux:  "6cad6081a79ede06ffe2442a5d449bdbc823d0ca9c55b099803ec4774d6e0e06"
+    sha256 cellar: :any, arm64_tahoe:   "d1bc8451f5886ddc12870b28f65e4567e0466b31f716f3233d6c8eda1ddc8005"
+    sha256 cellar: :any, arm64_sequoia: "f306f972a67b84cbd3c1ee74351524051367679322ad0bd807a19a384e2ea041"
+    sha256 cellar: :any, arm64_sonoma:  "292b412d1a4767a13566f95dff6ab2e49e09fd95965a4a39587b252270070f52"
+    sha256 cellar: :any, sonoma:        "28063f3693b279bfe391c739c7bdacb72d7cea13950c7a3859792f18a0b0c4d2"
+    sha256               arm64_linux:   "de977ffebfe75e6da99dc89fa1c667755c4638f64a1b5963b396ccd85cd7a576"
+    sha256               x86_64_linux:  "9b30c2043f5900ffb2f94b774106911f1fa86dc4bb5a6456303d6cd7f6834b79"
   end
 
   depends_on "cmake" => :build
@@ -22,7 +22,7 @@ class Brpc < Formula
   depends_on "gflags"
   depends_on "leveldb"
   depends_on "openssl@3"
-  depends_on "protobuf"
+  depends_on "protobuf@33"
 
   on_linux do
     depends_on "pkgconf" => :test
@@ -79,7 +79,7 @@ class Brpc < Formula
       }
     CPP
 
-    protobuf = Formula["protobuf"]
+    protobuf = Formula["protobuf@33"]
     flags = %W[
       -I#{include}
       -I#{protobuf.opt_include}

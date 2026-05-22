@@ -6,18 +6,19 @@ class Esphome < Formula
   url "https://files.pythonhosted.org/packages/56/e4/b8ae3d191aadefea154552230b7acbc7941ae52e166f2d0e5e47d4df2c5c/esphome-2026.4.5.tar.gz"
   sha256 "f8cdb42b7690a29862e9afe51b92b88c4a7f214e68aebba3ca6137959b1059a4"
   license "MIT"
+  revision 1
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
   # Issue ref: https://github.com/Homebrew/homebrew-core/issues/257992
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "05f6fe07a58022febde41b08e1a0c8d6d56dbeb979595a8ff1085a0c5a39a90e"
-    sha256 cellar: :any,                 arm64_sequoia: "952c568eb475c2824d8eef2830ff026b1c58048c8f688f39f14e585b7b5f3252"
-    sha256 cellar: :any,                 arm64_sonoma:  "f24ac782676727be435335cac2ba3a8519406f311152e9cbdc53db195b2bd2f5"
-    sha256 cellar: :any,                 sonoma:        "8137c697a2a5996138757461f7630594465b732c48c000348583085b38e89c51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "01f8992f42ee28d2c5c63f10038b484c1a159e8280d8b45c8aef2fbc95bbc80e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdf56b5816ffe4b12f961781841c3315aa198a71966e6e332a9561c54bfd168f"
+    sha256 cellar: :any,                 arm64_tahoe:   "8c4256367afd362fea1d31f875b83f29d5983b972fdfeaee33fc30894eb472b7"
+    sha256 cellar: :any,                 arm64_sequoia: "8790f0edd6c5e00c00f0c744d672e51f9c93f1f6f052691890bda13f3587c032"
+    sha256 cellar: :any,                 arm64_sonoma:  "de5786a39df058b3bd09f6a34419d5b76e7765bf5cf1037d8135924892cf9d09"
+    sha256 cellar: :any,                 sonoma:        "5a403fe0e645ad4a381ee4b0df834f0e79ac1b18aff2a6594df2f1a4c72975d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d3532aac29d9f453e262f84ac79b2e497fefccac2e8fffdcda7cf944698a225"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9305e607cdd46a7217f43d2574f4ca8e8cbf4a1be5d2fe7cb84ace47ce78b46"
   end
 
   depends_on "rust" => :build
@@ -126,8 +127,8 @@ class Esphome < Formula
   end
 
   resource "dbus-fast" do
-    url "https://files.pythonhosted.org/packages/5f/cd/402b0e524bdf37d8b1d22b1d926c538bf1d2eedf115ea1d401c6c08a7d81/dbus_fast-4.0.4.tar.gz"
-    sha256 "43137f0b73a7adbf7d5c0e9eb9d8d34df9e6e0aeafade2166e641c52dfe0a853"
+    url "https://files.pythonhosted.org/packages/41/4f/9f90a5ebea080b08f7a1ce0e2bcdb181e5428dc48933e191d311255773cd/dbus_fast-5.0.0.tar.gz"
+    sha256 "b02dc5329ed901833fb9cd57ad64460f07088539431b7992a85ad5757f985e94"
   end
 
   resource "esphome-dashboard" do
@@ -161,8 +162,8 @@ class Esphome < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "ifaddr" do
@@ -221,8 +222,8 @@ class Esphome < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/6b/6b/a0e95cad1ad7cc3f2c6821fcab91671bd5b78bd42afb357bb4765f29bc41/protobuf-7.34.1.tar.gz"
-    sha256 "9ce42245e704cc5027be797c1db1eb93184d44d1cdd71811fb2d9b25ad541280"
+    url "https://files.pythonhosted.org/packages/60/fd/5b1491d9e4b586d621c54f4c36b888714164b6875f8d6afa3f9072906a51/protobuf-7.35.0.tar.gz"
+    sha256 "a2efd84605f41e559f1881b0912b44099d0a2ac9bf46b3474823f10fb393b0e6"
   end
 
   resource "puremagic" do
@@ -356,8 +357,8 @@ class Esphome < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   resource "uvicorn" do

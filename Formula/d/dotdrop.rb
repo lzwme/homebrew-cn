@@ -7,14 +7,15 @@ class Dotdrop < Formula
   url "https://ghfast.top/https://github.com/deadc0de6/dotdrop/archive/refs/tags/v1.16.2.tar.gz"
   sha256 "d70376b06a84166db533dfdfa7657cece10560f8370eb1bb2ba8a27a21c5457a"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c12f1c0ba7a8178b63a42a90efa54bdb35a95f2edc9567cdcdf8d04b7d7077b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f11d015123db2f9e4d6bca176453ea6bdfe91a1b35af7258e6fb3b290423232"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3bd07dccc0ee76201329fb4d097426a8db252083fb5c42134105aceffb944ecb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cc77703385f5d5aa475ed0c4dde10bace90e911a4df7c6a12fec332c24179a91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a6450d337c3e592792c21ee739dcd6aa3bd8f060329dc13935fb989e139c5b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7275d4bc821d7c143e3a16f116d41b9d3a9cdd870f150acc0167aebf09c0bd26"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad90e5e8d2a1342b8d9a0badc1902effbf85f31473b9cb9327bc261b35a08e23"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4807494d54446c9b631cd0438c45f66915c125687b55e7338c46d01e9e2a9d37"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c22f9655d57e2efdbaa6c922eae2812af3a8d632153c7d8975e4212ee1e5f3a9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "193aa17dd383127ed36b592d7fa945cfc7cf56eebcddb25e8d6a5def3c81edd3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ee48678f5099481826972f25939c71ddb329200111dc0feb444ba63cb105ffe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f59307a670ec1f722beebb55b6502f2fb6c44e4bd75d96ec954a31c6f344775"
   end
 
   depends_on "certifi" => :no_linkage
@@ -39,8 +40,8 @@ class Dotdrop < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jinja2" do
@@ -64,8 +65,8 @@ class Dotdrop < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
-    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "ruamel-yaml" do

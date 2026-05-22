@@ -4,6 +4,7 @@ class Netdata < Formula
   url "https://ghfast.top/https://github.com/netdata/netdata/releases/download/v2.10.3/netdata-v2.10.3.tar.gz"
   sha256 "d7f178b89dc327f4f761aeaf5bd6e76a13ba220497c64c30f587f98ddc65b42b"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,12 +13,12 @@ class Netdata < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e3e572ada685aa45952c503bfd9b5de9878537174955a9f8fa6c87e8a47d8e44"
-    sha256 arm64_sequoia: "0a08ac629594c82354673a4fcfd616a8043162b7ff94dedc8fdde4d3b6ce4477"
-    sha256 arm64_sonoma:  "78e3c09e9957bd5255893794ecb4722f1018f1ced6dff512317aa39bed07e828"
-    sha256 sonoma:        "d62309ce252327b089befedf6770184d500ff5fb9e23a2b50df1dbb718b68545"
-    sha256 arm64_linux:   "38e20baacdfa029e6bf3fc6a1fd9a295b31cc2ccb83b76ddb88c731d05cc9973"
-    sha256 x86_64_linux:  "ca4f8eb3e602f1ca2113597931a82859f54e77ddb36227032ff3eaf8740c9d5a"
+    sha256 arm64_tahoe:   "6375da5e4618576f58bbd4e285298826c4485d935c6ea00a7b965714850053b8"
+    sha256 arm64_sequoia: "d420522db7cb9a477f50b9adfd37c121b4af5dbf3aa40b49bb10ca40846a4f9e"
+    sha256 arm64_sonoma:  "bc2a821a16b70b6451df36a584b8231a80a7976b118754c44a6235658cbda8d8"
+    sha256 sonoma:        "0ee473d790a1fa90d2c510e740c832d395b01f30f919a6173dd147ed3734b3d6"
+    sha256 arm64_linux:   "1e2d12694148700cb65d5f0100bf93325063243b1743d7b31cfce0986ef8d2a0"
+    sha256 x86_64_linux:  "e1d472edda6be3f427701d2d39127bc78321d622a7534621a9beef858dd00936"
   end
 
   depends_on "cmake" => :build

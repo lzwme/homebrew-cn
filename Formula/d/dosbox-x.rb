@@ -4,6 +4,7 @@ class DosboxX < Formula
   url "https://ghfast.top/https://github.com/joncampbell123/dosbox-x/archive/refs/tags/dosbox-x-v2026.05.02.tar.gz"
   sha256 "5ab3584870bec378b495242f20f03ecbef2cd032a128ee3394a88ff7a53cd914"
   license "GPL-2.0-or-later"
+  revision 1
   version_scheme 1
   head "https://github.com/joncampbell123/dosbox-x.git", branch: "master"
 
@@ -19,12 +20,12 @@ class DosboxX < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "aa7c0be78cb0c7b7c56b04685d7cbae859da3e62a5d2c7e9981b99ee6a407615"
-    sha256                               arm64_sequoia: "3515f02bbd5bf8bf5bc4d593d23c811b0e3e1d948259c1cb037cbce74e4bc229"
-    sha256                               arm64_sonoma:  "a23326b7f93c1c4f7c5ccf0e10118cc5a0dcd6dbd4dedec0c76cf3bfe996843b"
-    sha256                               sonoma:        "fb2c2fe72cab690158fdc35e8e9a9b1a654cd5ce1e539c1de49d801be64055f9"
-    sha256                               arm64_linux:   "c20a6d7605e58ca2b45e20cb12cf9ec7b1faf8ec7c1ca6b3262564acf8e516fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "356c3b1cb67a2cec8114579d897531bfd71fa1ced22a62391e6643850e5d7c80"
+    sha256                               arm64_tahoe:   "b93097b7d97c5d1b260b1c59cca9de3b217f0babe26e1606554a0a4e5d7af1ef"
+    sha256                               arm64_sequoia: "71a04385d8976a33ed730dd95555839bda1dfd22487beef288ce17a9248db6b4"
+    sha256                               arm64_sonoma:  "bbf0d71bca5601228233c2b7410bf70338131a264ed24a5f02d8eef79ca1c0c1"
+    sha256                               sonoma:        "e267b5f70cbd50cb2c46fa18d0f03bfbe843a7754c13cebcf729a6a07e20a2ed"
+    sha256                               arm64_linux:   "b550472038030cad19fc72235354143ec65b00c3a197df601d0a97692ee53a00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "805d703e27fc980a4a9e0595d7ef9039693d3f66d8be2ab54c140030459a465c"
   end
 
   depends_on "autoconf" => :build
@@ -37,6 +38,7 @@ class DosboxX < Formula
   depends_on "libpng"
   depends_on "libslirp"
   depends_on "sdl2"
+  depends_on "sdl2_net"
 
   uses_from_macos "ncurses"
 

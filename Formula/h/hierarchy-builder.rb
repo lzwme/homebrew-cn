@@ -4,7 +4,7 @@ class HierarchyBuilder < Formula
   url "https://ghfast.top/https://github.com/math-comp/hierarchy-builder/releases/download/v1.10.2/hierarchy-builder-1.10.2.tar.gz"
   sha256 "bdd7dccc5248e7500e02fd1745fd17faa41920f43a32ca2de2b2139212ee53b5"
   license "MIT"
-  revision 3
+  revision 4
 
   livecheck do
     url :stable
@@ -12,12 +12,12 @@ class HierarchyBuilder < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63f91b9b0b9c51d2a3c09f51b90d2050d39e000afc197915f64e7adcec0d36df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c53e865547b235b1c40e219068637d575cf851482e496c655eb179a936bbc02f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55bbe600514b9a25d73c478a71e4859d4075c30cd99ab38b8796453e8cfafb03"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e9b283e817570664490222fd61427bdc2a5135ccabf1863aa848f2ee890e0de7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4b7b4222fceff15e9b120e2f003b6b72d1a2eeac2358c02f4ce87f2983d31df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "701e62ae84c7ccfba1c751d3daab8fac91243e84ff064c9541d546225b5fa5b0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "edc11fa3e8253c2058fd25f195f89b3fd5056838dec7342975d16903a2757cd8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df34f47ebb916cddc88a4cd7474c155df6004dca53ef7f0f59b16f0cf6251171"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e1ed20ca222c990fec8c74f1658f39132cb3f8bc43fead4868a733e698eb122"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b21d207ae42cbb5466eec8e31c0a2b1a6eaaf3e921735b75197f7d549641d753"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ebb13c22ff6a196c9cccd8134bce760662e1b024c09da3402a862faa556b39f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca8f1dae64c88a25d2df84e25549980dd3bde8aa8fa3546ee957e82520f373e3"
   end
 
   depends_on "rocq"

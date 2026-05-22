@@ -1,10 +1,10 @@
 class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
   homepage "https://protobuf.dev/"
-  url "https://ghfast.top/https://github.com/protocolbuffers/protobuf/releases/download/v34.1/protobuf-34.1.tar.gz"
-  sha256 "e4e6ff10760cf747a2decd1867741f561b216bd60cc4038c87564713a6da1848"
+  url "https://ghfast.top/https://github.com/protocolbuffers/protobuf/releases/download/v35.0/protobuf-35.0.tar.gz"
+  sha256 "8f907baca4b34a3b4854103ba5811e418fb6e2ff11fe0d8df9e8280b11d79926"
   license "BSD-3-Clause"
-  compatibility_version 2
+  compatibility_version 3
 
   livecheck do
     url :stable
@@ -12,12 +12,12 @@ class Protobuf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "052999e2596cd873392cfc3e9b351892d5dc839776dfb8a115eddf638c6baf04"
-    sha256 cellar: :any, arm64_sequoia: "a6779ffa7ee2bc25076bc0338b558387ac18136d455ee822a6123c4bb76b8d3b"
-    sha256 cellar: :any, arm64_sonoma:  "ba01f35bd0814496dc1d8b92aa519984da76decd084ef7dcfa145f6e952fa5e9"
-    sha256 cellar: :any, sonoma:        "06892ef0f54c26fbbca4a01e8620079b1b83bcce53a82ffe04f19290f7df35a2"
-    sha256               arm64_linux:   "ed890928c4ce477d2ea2ac38e44a253d161882ac2545eab91b974fde89592336"
-    sha256               x86_64_linux:  "c439d6602fb48906ddd0f1adc80a49b51f71c23b03815de740fdf8b7e13934d4"
+    sha256 cellar: :any, arm64_tahoe:   "617e6318aac9524afc8f49763138d869ca3b1ad3455bc2b759e36615641a6ddf"
+    sha256 cellar: :any, arm64_sequoia: "f2383446f2eb60ed37f4c7d5193ce4baad0f170b3cf7660456808da80d246e4c"
+    sha256 cellar: :any, arm64_sonoma:  "f40f92474ad7fcdde1bbe8e3b6a60fbe0e15c47ff0c492b7ddc015f31880fbd7"
+    sha256 cellar: :any, sonoma:        "5f23e95b8621046cce9f3dad81903e4ac0c638b476d712774d934f35683124d3"
+    sha256               arm64_linux:   "78a5ca3a49f180bd859fb4e80168b3faed3b5acff398815f37175b22dbfa8a25"
+    sha256               x86_64_linux:  "b995fb44ae245df9abca05b821761fdd7120236b5bd543cba806f1180a5b16fd"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class Fifechan < Formula
   desc "C++ GUI library designed for games"
   homepage "https://fifengine.github.io/fifechan/"
-  url "https://ghfast.top/https://github.com/fifengine/fifechan/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "df3cba475716346fd27f963b9b027a02a92f697466596a3cc215a2b97d543c76"
+  url "https://ghfast.top/https://github.com/fifengine/fifechan/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "8295ba2f2988f13f7c574cbc53eb1d30bc35ea78c79e53c2728ca23e30635425"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Fifechan < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3afa19376cef9580d0dccec234ad9f2b47fe5746c0f0767a24e6f9873726de95"
-    sha256 cellar: :any,                 arm64_sequoia: "ea6f782dd2abca88671b5035a092c2045b967970a5e6d21a1a716a91cad564d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "c9f12983f479864f035e376ad5146b7a52f1047d7827969837db31a23fd12c2c"
-    sha256 cellar: :any,                 sonoma:        "76b45ab899098163e2456b1512e6b406b632ac1344574486f607ae81d724aab8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a81504342348c5a0788969fdb1bb8d47ccab747ac60fc55023b74fe7b33737a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "265e67f5dca8783d14e90deeab28638a7f473028091f1138306499fb61995575"
+    sha256 cellar: :any,                 arm64_tahoe:   "d2fe502b6de6f822f394a4287b0579c50c4bccc81d8b0d44753e111dea35d3ac"
+    sha256 cellar: :any,                 arm64_sequoia: "3c4ca83c13a2952eca7fa7aa5d18df1b572413fa7ab1972cf95f2aebb9a99c6d"
+    sha256 cellar: :any,                 arm64_sonoma:  "1e45b4fdff8986a6413f001ae8c04a377103a9a788120dcb1c4c4287c0c35ecc"
+    sha256 cellar: :any,                 sonoma:        "e4e6aacbe86bc0513cc804c67d1b95109dd6c7682165a597352ed8fbeece93b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6bdae04454c0c7cd0f8bb94a90e8b1e884bb8802fb2d5e593728b3f52f3fdc4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0062d1190d4640cd4b8cd0181817fad98330da448db762477690994594b5660c"
   end
 
   depends_on "cmake" => :build

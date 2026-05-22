@@ -8,19 +8,20 @@ class Moto < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1456a628eb96b87cbdaccb265c0962d69df5e2bdfd1f6e264d0303838ab6876f"
-    sha256 cellar: :any,                 arm64_sequoia: "117224b415957c172e2a1ada8b7bdc93bf898638bae68f2a10c65e490cab7711"
-    sha256 cellar: :any,                 arm64_sonoma:  "c0f49e8aa1342b1272b713c5e3e073120ea7f9c030891b72d0796b9a4da9e1de"
-    sha256 cellar: :any,                 sonoma:        "0bb938c9c29c4dc7706c673021c35aaa1a50fe6030bbde1c32db37b13d234ae7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0803c62780ae0e369bd0abc267a05167fe25156d2c44dcd498170ba6b60f76ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c381fc5c1ed1089c60b99f9c0dabac75489ab817cbdcb8b0f52cd04f44d1b54"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "3abbdf92f07aee6bcb087d68b6450cccfd1e7525e103b5c2571b8ed0c883dd85"
+    sha256 cellar: :any,                 arm64_sequoia: "d65fbcdf04684bd5972413bea2fa366378429bc9e80f65c4bbd2ccf7bb54b878"
+    sha256 cellar: :any,                 arm64_sonoma:  "d0ec9a10a8a7286be1a9b74627bd362607c094701059de42022d84ba32782119"
+    sha256 cellar: :any,                 sonoma:        "ec57f51bdca8a9efec0ba99f3f2c27fbbdd536ebd4f5f5d707b58cef9f5a84c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e2bc45d272f8b5bb17f632944ab91f8c6fa6d99cac15d3a4e242f70eded302d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4e652d2bcf224303c201b5fdec8e1dbda45cbaf2449249b306727677b846bdf"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13" # Pydantic v1 is incompatible with Python 3.14, issue ref: https://github.com/aws/serverless-application-model/issues/3831
+  depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages package_name:     "moto[all,server]",
@@ -37,8 +38,8 @@ class Moto < Formula
   end
 
   resource "aws-sam-translator" do
-    url "https://files.pythonhosted.org/packages/e0/09/f62aa8d076f6ba85080ec6291e61af345e9be0daf8a4094101555e054ec7/aws_sam_translator-1.109.0.tar.gz"
-    sha256 "0c5e60223ae8434ce0c6bdb9a491d69ba3ec97e15c0d825d3803f7806382d804"
+    url "https://files.pythonhosted.org/packages/6e/2f/adeed2ce2bc62eca7ead7b3ae70fdd2cf84eecd582cd69a9529e6da89876/aws_sam_translator-1.110.0.tar.gz"
+    sha256 "466ee0e8200992c51b7fd5ede5e56ca2e8dd5473cc551e8495c14f2f4d636127"
   end
 
   resource "aws-xray-sdk" do
@@ -52,18 +53,18 @@ class Moto < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0a/37/78c630d1308964aa9abf44951d9c4df776546ff37251ec2434944e205c4e/boto3-1.43.6.tar.gz"
-    sha256 "e6315effaf12b890b99956e6f8e2c3000a3f64e4ee91943cec3895ce9a836afb"
+    url "https://files.pythonhosted.org/packages/1e/02/195d56d36b900ba28a75fc4c47c858a16237811acfde8f22f6de08236dae/boto3-1.43.11.tar.gz"
+    sha256 "3567c6a1f31d8e6bf151c95f76a2b1f239cce243a768a31747c2ba141c9a0570"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/79/a7/23d0f5028011455096a1eeac0ddf3cbe147b3e855e127342f8202552194d/botocore-1.43.6.tar.gz"
-    sha256 "b1e395b347356860398da42e61c808cf1e34b6fa7180cf2b9d87d986e1a06ba0"
+    url "https://files.pythonhosted.org/packages/e9/fa/4bec16fa5a4cde7b593e549238bfeb8ed1bdba9d427888a18c460a1f2352/botocore-1.43.11.tar.gz"
+    sha256 "d7d479cc2809ec2728f2898521003adfb79bfe6a4615c59dfd222ec52b0cee6b"
   end
 
   resource "cfn-lint" do
-    url "https://files.pythonhosted.org/packages/18/32/4a76cf04726f363fc213512a5e1d685ffe63c81e9a517f63ef23c1c30dd5/cfn_lint-1.50.1.tar.gz"
-    sha256 "10df565e9774e41c4a5a1b6dca7d09765cd534bdf22dc24add5e4ad1e118699a"
+    url "https://files.pythonhosted.org/packages/5e/ea/bc4954dcbff3ecb500e2593e4b64d0e9a552973249b2a27dd22eee3fb5b0/cfn_lint-1.51.0.tar.gz"
+    sha256 "05d2a59708c99363afe3af6ac7325de95a5b37f8eef7728f41ae567d088a61f1"
   end
 
   resource "charset-normalizer" do
@@ -72,8 +73,8 @@ class Moto < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "docker" do
@@ -97,8 +98,8 @@ class Moto < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "itsdangerous" do
@@ -232,8 +233,8 @@ class Moto < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "responses" do
@@ -287,7 +288,7 @@ class Moto < Formula
   end
 
   def python3
-    which("python3.13")
+    which("python3.14")
   end
 
   def install

@@ -12,8 +12,6 @@ class Gh < Formula
     strategy :github_latest
   end
 
-  no_autobump! because: :bumped_by_upstream
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4eb5c69f4666a1cac19d67ecf870389c76257130db90075c870587f1afcec75a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3192c6e260a00cae347ce9d1e16f3a5680f9adfbf03f6046e92ebd08add93e44"

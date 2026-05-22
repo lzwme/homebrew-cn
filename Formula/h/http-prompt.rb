@@ -6,16 +6,16 @@ class HttpPrompt < Formula
   url "https://files.pythonhosted.org/packages/bf/e2/bc5b0df107afcac65fde7015df48cbe9b4d877d1d0818203544ed1a41d4c/http-prompt-2.1.0.tar.gz"
   sha256 "eee71a00fed0b8a2a35bb338b269be7a20e8a1a6f6465a65561d76a21521e7f3"
   license "MIT"
-  revision 18
+  revision 19
   head "https://github.com/httpie/http-prompt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a1443c301fceeb0430c81c5e3d534b79c2c33146c1b3edfeb60a7e6e62589f96"
-    sha256 cellar: :any,                 arm64_sequoia: "ca5a0d60894941af5f720acbbfcf2ae0adaeb3a76a8990eaaa3cd7609da9a10a"
-    sha256 cellar: :any,                 arm64_sonoma:  "eba2c62e2f67b7b9cb9c59fd8201e01f28419561e8f78e895f08a5162469a8ad"
-    sha256 cellar: :any,                 sonoma:        "7345a83068e71f2c2ba68563ee6cf7b99ef398a567dd3a1672a04d71506c4f2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbd2a12dcee695d255103b6f657b0d641880da1e09f3b29b3381932608b10ed8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa556c2a5a1ab88e86dffb66dd46561122bf29bc633c7d9b80bc77f20152089f"
+    sha256 cellar: :any,                 arm64_tahoe:   "5d221ddd746ead7dad46466af26fa3ae0fbc9389d8a1ee2174615a15d34ebe55"
+    sha256 cellar: :any,                 arm64_sequoia: "fd2caed47c69bf2c1983a5e92e3b768655e97e337ecd77a6f1095fc5e74bd928"
+    sha256 cellar: :any,                 arm64_sonoma:  "07a7912b340b97f95c933371505e1e8485a25c977a8beae8a449099c923dc3b3"
+    sha256 cellar: :any,                 sonoma:        "c2924d61e3d14890c02769d63790de52c9704e3c9a71870812ca63ca0737e132"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bce57696274f82ac719e17aafd1f54c580fc78c4a3222027ed49fdd62988ce9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "785b3c15df602ab5ca594a966b9c86e5558c3124148fffb89fb6d7f9807488d0"
   end
 
   depends_on "certifi" => :no_linkage
@@ -30,8 +30,8 @@ class HttpPrompt < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "defusedxml" do
@@ -45,8 +45,8 @@ class HttpPrompt < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "markdown-it-py" do
@@ -95,8 +95,8 @@ class HttpPrompt < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
-    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "requests-toolbelt" do

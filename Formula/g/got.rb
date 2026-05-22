@@ -1,9 +1,9 @@
 class Got < Formula
   desc "Version control system"
   homepage "https://gameoftrees.org/"
-  url "https://gameoftrees.org/releases/portable/got-portable-0.125.tar.gz"
-  mirror "https://pkg.freebsd.org/ports-distfiles/got-portable-0.125.tar.gz"
-  sha256 "add61980107364372aeb81687bc58a66c0d0c9e0a2c4a9bbb6d3714fb452baac"
+  url "https://gameoftrees.org/releases/portable/got-portable-0.126.tar.gz"
+  mirror "https://pkg.freebsd.org/ports-distfiles/got-portable-0.126.tar.gz"
+  sha256 "ad75dd883186af10a2f8ba25f5b4e6e9b2974d392f35c8e0a393b4ff134b482d"
   license "ISC"
 
   # Since GitHub runners are not able to access the homepage, our Linux build
@@ -16,12 +16,12 @@ class Got < Formula
   no_autobump! because: "GitHub runners are not abile to access the homepage or livecheck URL"
 
   bottle do
-    sha256 arm64_tahoe:   "7faa3e8a48268e37b1c1517a34f2dac757ee08675c5612d14d8cb4cf40021775"
-    sha256 arm64_sequoia: "a207de936f380349643f69a121dc9611b06cd7eb786084b53ad9cb52258d086d"
-    sha256 arm64_sonoma:  "09cd922085ea32ad3debe69480e4701f968f69bfcca75a3dcdfd1103da3d0b55"
-    sha256 sonoma:        "66e4946b354d7612f20691728afece3f1ba37a228e35ea3fcb69fa94dfae4abd"
-    sha256 arm64_linux:   "c8cf9c5c62d817b12d31adbaef4e63bf7412c7c87f94b16aabf4316f06d9e3d6"
-    sha256 x86_64_linux:  "a9def351b3b65bca9e1bf3bcbaefc0c15aea86533830ffe2c5986fe1ad91ce00"
+    sha256 arm64_tahoe:   "af262d81a1c3ff6d47329240cb1aaaea318be94c4d9492456262ab79f0fe58e2"
+    sha256 arm64_sequoia: "9c395b8c84ac488348964e723655f81ee22e27a4779f965463a6ada5e67fe82c"
+    sha256 arm64_sonoma:  "ecc70448c43d219f394dfaed855517660e186b8bd67ef65608c46f3c535bfe51"
+    sha256 sonoma:        "3bca57f533a9ae47dc9cb3a8e5e101a427618e57e5fe0bbb7a9b30e26925f4cc"
+    sha256 arm64_linux:   "6108ca5607dcdad03205c21e918999859dea0e44c00ca89d6db08ad70b65df0b"
+    sha256 x86_64_linux:  "d4e6b6b6325cc54896b42567197bbd827db818b9e20e35a6f8a4ac11b214cea3"
   end
 
   depends_on "bison" => :build

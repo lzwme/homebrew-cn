@@ -2,11 +2,10 @@ class RocqElpi < Formula
   desc "Elpi extension language for Rocq"
   homepage "https://github.com/LPCIC/coq-elpi"
   # Update resources based on https://github.com/LPCIC/coq-elpi/blob/v#{version}/rocq-elpi.opam#L18-L26
-  url "https://ghfast.top/https://github.com/LPCIC/coq-elpi/releases/download/v3.3.1/rocq-elpi-3.3.1.tar.gz"
-  sha256 "97468eea82299c7276ea5e1047342e8897de5a437a357e595a5728183ea66721"
+  url "https://ghfast.top/https://github.com/LPCIC/coq-elpi/releases/download/v3.4.0/rocq-elpi-3.4.0.tar.gz"
+  sha256 "fe81750ca2e5f5976f16e658979a133cfaa2011ae5591e552a1222ceaacaaf06"
   license "LGPL-2.1-or-later"
-  revision 1
-  compatibility_version 1
+  compatibility_version 2
 
   livecheck do
     url :stable
@@ -14,12 +13,12 @@ class RocqElpi < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "bf16e11e81aed811ff3370122873ec135f0476d5330b19b23d7739e170bf6713"
-    sha256 arm64_sequoia: "5f85a3d033ed19eb30ccf6e830beafeebcb7e103c7499ba6286499f09e91250b"
-    sha256 arm64_sonoma:  "633a069ba51abb921442b4e1595ed42afe8b04457642fb8dbec23bc4538a8012"
-    sha256 sonoma:        "f97723ee6985064bae456a0ac66f9a1aa2a4c6bce468b9c7a9c8f2d43154a390"
-    sha256 arm64_linux:   "f41e452874613a8407aa014a926e1d5f9ff9bbfd602f915012f4e4cbf817dd00"
-    sha256 x86_64_linux:  "e43ac552f0e02fc52356122e1069a60266d814aff7082300e4869bbad7d64259"
+    sha256 arm64_tahoe:   "be46c35509fb00d34ac6281bb2f92b3b23976b245f6be9b0d6e52747ddb73fa0"
+    sha256 arm64_sequoia: "6fe13be6129aec70c23503d8c38c6239ca3ad10e21089f0a7e06c6a70f19fe0e"
+    sha256 arm64_sonoma:  "a0e51fbf32f3a31fa1dbf775b1d9624d1cb758bb967aa6e99b2db163a1115d71"
+    sha256 sonoma:        "c0bc1bd3ac36f0328e2cc0177912705c556590ef24feb63bc7b24c1855367317"
+    sha256 arm64_linux:   "689571286f302ffed321656f9873de1fe385a4c977e0bc1c0abc8cfd829300f7"
+    sha256 x86_64_linux:  "562101224fde20fa87e828d9fc0c848ab4864bfef3ef5042baf6c20c0ceef9de"
   end
 
   depends_on "dune" => :build
@@ -33,7 +32,7 @@ class RocqElpi < Formula
   # The result is similar to using `--deps-only` in other formulae. We can't
   # run that here as it installs a duplicate copy of `rocq`.
   resource "elpi" do
-    url "https://ghfast.top/https://raw.githubusercontent.com/LPCIC/elpi/refs/tags/v3.6.1/elpi.opam"
+    url "https://ghfast.top/https://raw.githubusercontent.com/LPCIC/elpi/refs/tags/v3.7.1/elpi.opam"
     sha256 "24e253b1cd5afb678f0f1e0d7f340ac3c549cf974a5c029a402c2fab5d582635"
   end
 
@@ -58,7 +57,6 @@ class RocqElpi < Formula
     libexec.install_symlink libexec.glob("ocaml-system/*")
 
     ENV["OCAMLFIND_CONF"] = libexec/"lib/findlib.conf"
-    system "make", "dune-files"
     system "dune", "build", "-p", name, "@install"
     system "dune", "install", name, "--prefix=#{prefix}",
                                     "--libdir=#{lib}/ocaml",

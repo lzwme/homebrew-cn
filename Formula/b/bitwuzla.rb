@@ -1,8 +1,8 @@
 class Bitwuzla < Formula
   desc "SMT solver for bit-vectors, floating-points, arrays and uninterpreted functions"
   homepage "https://bitwuzla.github.io"
-  url "https://ghfast.top/https://github.com/bitwuzla/bitwuzla/archive/refs/tags/0.9.0.tar.gz"
-  sha256 "e15420eaaef586c0d02d4b46cf3bdf203ba2511147b0decab99a9df9c9f115ca"
+  url "https://ghfast.top/https://github.com/bitwuzla/bitwuzla/archive/refs/tags/0.9.1.tar.gz"
+  sha256 "42707f38900a20bb18108e426ba667560d1fd2ccce0d4f75aa60439b546488b4"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Bitwuzla < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1aefec513dad32a1fa2276294090522577a32bb2423fe07574099d972652488b"
-    sha256 cellar: :any, arm64_sequoia: "56117956505409a4b853ce4d3feda40a26373bfe3ad615da607dbb6e6d79f0dc"
-    sha256 cellar: :any, arm64_sonoma:  "4e5aa34b585af95119fe5e4909efc00abc3cb390dda43d23ba5b81fb2160fb13"
-    sha256 cellar: :any, sonoma:        "f11a33d62af85cd1d026e685466c793bafa7e0610e889e8342963aa9d21493e3"
-    sha256               arm64_linux:   "8347a56e18adc32eef4d53e6ae3f3e7e046ff9aa592fe380c051471f5f6bc56b"
-    sha256               x86_64_linux:  "3de69500d8b2cbc2ee2c85a0a07e4be5aade0bd1b315926d3b83641f620d6c32"
+    sha256 cellar: :any, arm64_tahoe:   "e41762ff9c458e975a603d629d80a2fc7d16706be2a75bf84bea3da723acd36d"
+    sha256 cellar: :any, arm64_sequoia: "6c21172734c5fc4f840f4645001daa0372bb916b7ecf03cf2a71bb5f4b5106be"
+    sha256 cellar: :any, arm64_sonoma:  "f0e8fc8e07781e375cbc121c8065964d9d007adcf25770003f1622468ce2e644"
+    sha256 cellar: :any, sonoma:        "d2718f108e8027774c108021fb006069a3153b2356e9f2cf16938661891775fb"
+    sha256               arm64_linux:   "7e52048ed6be0632426a33eb8bb932a46bcf65c7e79dd0daf3f2b7207836375d"
+    sha256               x86_64_linux:  "9a31b954433598ee45f3eb15f04ace680ab97113f44f1ab61c28cb406276a0f5"
   end
 
   depends_on "meson" => :build

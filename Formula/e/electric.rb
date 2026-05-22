@@ -1,8 +1,8 @@
 class Electric < Formula
   desc "Real-time sync for Postgres"
   homepage "https://electric-sql.com"
-  url "https://ghfast.top/https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.6.6.tar.gz"
-  sha256 "f40bb3277bfa68c727d8788410422f96bfa91bb22538fbb52aaf218a86d84be1"
+  url "https://ghfast.top/https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.6.7.tar.gz"
+  sha256 "1abdd6611b70f40e4fcf5ff4e8af882d6a7f9f8e17e20e4fbebef193aa3075a0"
   license "Apache-2.0"
 
   livecheck do
@@ -11,17 +11,17 @@ class Electric < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f5d09563224160c1040b59cda9ea61227ac575789ca71c165bcc0dd8b9fc076c"
-    sha256 cellar: :any, arm64_sequoia: "b9d2c129a4046dd849b5aee435900ec5d90025a13f393ced332032671bda3a9a"
-    sha256 cellar: :any, arm64_sonoma:  "d885c6b2c4f82fdc63491a13f7c64db8baa86cef6c2cd1d1caf00f7bb91ea650"
-    sha256 cellar: :any, sonoma:        "90b3b767df8beac9a80fe540901e7e608a9d8632da0a2ea7fa6f624038afcc0b"
-    sha256               arm64_linux:   "608debaac90baef43ebeb0943042d907ef34332a3c58f7cdc778908cbdfed6b6"
-    sha256               x86_64_linux:  "55146f98da7d6c190ca09132c1d69f1ed02234527d78dd511b9bcdab6fcb7b84"
+    sha256 cellar: :any, arm64_tahoe:   "28bdac79094620024b24948d6767bb4c60263eb1ea825f8cec625a27cbcc85a2"
+    sha256 cellar: :any, arm64_sequoia: "df8f51be2b5b1ca4c2e21d6aa2c37c322695e831dbe7f776bf624df2aab7f886"
+    sha256 cellar: :any, arm64_sonoma:  "7b8c4cfeb6e703da4f405087597f8eea333024f309e7f25b3bda6d1d68f8f2da"
+    sha256 cellar: :any, sonoma:        "f2c53831b669238b74c58d54cd64681e9f6b9afaa70bcd64bf998b2979f6be22"
+    sha256               arm64_linux:   "a862b0adf91a355bdde5c29af54132b639e38eda1d0e3dfdbbce12e0009381a5"
+    sha256               x86_64_linux:  "d1521d1f0d19ec6a9779979ab165dd47a9da58f7aedd2e81acdad029aa3fbfea"
   end
 
   depends_on "elixir" => :build
+  depends_on "erlang@28" => :build # https://github.com/electric-sql/electric/pull/3992
   depends_on "postgresql@18" => :test
-  depends_on "erlang"
   depends_on "openssl@3"
 
   uses_from_macos "ncurses"
@@ -37,16 +37,8 @@ class Electric < Formula
     cd "packages/sync-service" do
       system "mix", "deps.get"
       system "mix", "compile"
-      system "mix", "release"
-      libexec.install Dir["_build/application_prod/rel/electric/*"]
+      system "mix", "release", "--path", libexec
       bin.write_exec_script libexec.glob("bin/*")
-    end
-
-    # Remove non-native libraries
-    os = OS.kernel_name.downcase
-    arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch
-    libexec.glob("lib/ex_sqlean-0.8.8/priv/*").each do |f|
-      rm_r(f) unless f.basename.to_s.match?("#{os}-#{arch}")
     end
   end
 

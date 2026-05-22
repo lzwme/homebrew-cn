@@ -1,8 +1,8 @@
 class NodeAT24 < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v24.15.0/node-v24.15.0.tar.xz"
-  sha256 "a4f653d79ed140aaad921e8c22a3b585ca85cfdab80d4030f6309e4663a8a1c8"
+  url "https://registry.npmmirror.com/-/binary/node/v24.16.0/node-v24.16.0.tar.xz"
+  sha256 "2ff84a6de70b6165290111b0fc656ded1ad207a799816fe720cc7c31232df30f"
   license "MIT"
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class NodeAT24 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f08293c7e6496ffe8191d051d5cf8786b614ecab5825b824ba8e9031aa517d25"
-    sha256 cellar: :any,                 arm64_sequoia: "85e36590cd3944b672a2257d13bc342e14aba780bdac15dbcdaf33fc93fda370"
-    sha256 cellar: :any,                 arm64_sonoma:  "82f8ec8f619ff5e5f2c62febb9962d5c6fc09ffae1b9f0a18190ae5b3b6c7e27"
-    sha256 cellar: :any,                 sonoma:        "afc81a9ee3c219d3054da056b19d653dc39e6fc396c9d531b0d03988f56b1884"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "420f56970527dc9e47f1024edc47435ccf389532e0fde6a6b1e6b14ffefc70c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fac5be0f58fd355c54dd71ebce48b49309c078b4f15098e201054611ea7be3a"
+    sha256 cellar: :any,                 arm64_tahoe:   "c487f4c8dcb5f6a81e3a3ac074d6f0df8e6e0e23160e901af98d6ef0f01d8b08"
+    sha256 cellar: :any,                 arm64_sequoia: "d0208bdc66f721afb0847ee46611523316bfbb28c28c704a4426d1702bf2d230"
+    sha256 cellar: :any,                 arm64_sonoma:  "80ddd5c54e7d4b7c059c7cc65b3c987ae18943df3cb4cdf01fb51b90419c113f"
+    sha256 cellar: :any,                 sonoma:        "f7dbfd735308a6f63ab41f1af83224c0ce5182576e2fd5eb9eae405438a3d522"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ccc8c7a133d1c88ba6aa8f76b88896feab769e83c1eb44a2b509a447daa2776"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c170a3f4e9809ce06db9739014b7ed4fe95e4446789d7a3b019da325b5bc44f"
   end
 
   keg_only :versioned_formula

@@ -1,18 +1,18 @@
 class CargoAuditable < Formula
   desc "Make production Rust binaries auditable"
   homepage "https://github.com/rust-secure-code/cargo-auditable"
-  url "https://ghfast.top/https://github.com/rust-secure-code/cargo-auditable/archive/refs/tags/v0.7.4.tar.gz"
-  sha256 "4ce3fefc10d704db496c8701d8b2c8623abfbf5af1c673ff607fd1afa6c68052"
+  url "https://ghfast.top/https://github.com/rust-secure-code/cargo-auditable/archive/refs/tags/v0.7.5.tar.gz"
+  sha256 "8e6566cf51444f6f6d10230e62487979fa79247fe027d0a8acafaa88e6af0fd7"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rust-secure-code/cargo-auditable.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3fce86e8db8ffe764d2ba4316d86dd1ee8ae2947f581e29e43c0a2730e09359"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c27346d4bcda316d8618b7e7b88ca673ba24d2df3c0c96c30360af2c2f61417b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9748e63e96fe055d2eac69a31e1117269f69be8052f09e71969802543e47deb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5bd3dbb96e21148f93e8f20fa136ab151c325bc850d2e776c2e9781015f625da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "df75796af0beced442d90fcf41d5849174d05acabf8b9c282b29ba48aa3d52a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e1c83ef6cd06c3df7d29e57937050e2779c90d08d18ff316c422f08a05d4edf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42bdecc89ab0895ee11bf997ba9a52bed7be341f8baddc9e7961710eeae7c9dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a72c019bb5ac44deb1e13aff89dbecb5e0922ba90498a540ba7520e967945df5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a5cbd5232cf0738c77480f22178f64dcc7e682312d4d98c7ca1387cd86c616e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d7c94a54624d9888e777e39ac53e94527b024fd5432055000c0f71c5c07aa651"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70a04a8da2bb327cca8a8103e134c9bf533175b3a576d950511c3535f3f4f52f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f37f3010df2271d49f04a84587789de3530bf13e29037b2432cf5d5142f188d4"
   end
 
   depends_on "rust" => :build

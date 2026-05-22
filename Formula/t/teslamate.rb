@@ -14,10 +14,10 @@ class Teslamate < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "15897cb1032f908f271565db40062499ee6fb30b4793a657600c559470ec242b"
   end
 
+  depends_on "elixir" => :build
+  depends_on "erlang" => :build
   depends_on "node" => :build
   depends_on "postgresql@18" => :test
-  depends_on "elixir"
-  depends_on "erlang"
   depends_on "openssl@3"
 
   uses_from_macos "ncurses"

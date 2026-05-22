@@ -6,16 +6,16 @@ class Httpie < Formula
   url "https://ghfast.top/https://github.com/httpie/cli/archive/refs/tags/3.2.4.tar.gz"
   sha256 "b185cd8d81325f97c773582e50f1c5e047c2d8575b53d676469c9daf2a52f341"
   license "BSD-3-Clause"
-  revision 9
+  revision 10
   head "https://github.com/httpie/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a99349179731656ec6997014e1abf90bda37bd88f85532d6ed42e8f4944c693"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b647a0ebd3d511e1a284ace94f328684f1520a716f97a6cc1fd4f2eb5a3808f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab34bfc74af4f70790f4b8b238fbae233c9d471519ef501f643cc323dbeb653e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a10f3b5f4c78b20fbe1dc27b195cedda23f4e4c2c5256616f49dfbe59fc8c88"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ad51a1b0bfb4a9bf62a1aad74651599263d8562c759b855b3f43a42fb2066de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61fc236a044ee9e4ac699175df1a6d1c8b4e801144bca84dbb5de3b1b83a8c9c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31241b4a5d0d8f82bc7c27b3d1936ffa34e2a4f8416bcf93ed0d220b34d13181"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17bf32605b35962b8e01ddff9dd9b4e4f12490801cd267b20a017d9316036554"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1f969c4a64fcb4573d0ee5d7b9336b62023deabe2f7e26155b3fd0019404474"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7c62f93b3fcf287209c2f165939c1b91c969d26c5a07e16a44fbc45bd8208ceb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ce759ccb92d4bad22c8ac0646a205c2fecde216995c982a7d44d77be53e9a79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1c2a3dd855b5b98084a0b48bc8c2bc810fc5c1c3f674b29bbf95e3d7902ac84"
   end
 
   depends_on "certifi"
@@ -35,8 +35,8 @@ class Httpie < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "markdown-it-py" do
@@ -65,8 +65,8 @@ class Httpie < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
-    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "requests-toolbelt" do

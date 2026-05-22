@@ -1,19 +1,17 @@
 class Snowball < Formula
   desc "Stemming algorithms"
   homepage "https://snowballstem.org"
-  url "https://ghfast.top/https://github.com/snowballstem/snowball/archive/refs/tags/v3.0.1.tar.gz"
-  sha256 "80ac10ce40dc4fcfbfed8d085c457b5613da0e86a73611a3d5527d044a142d60"
+  url "https://ghfast.top/https://github.com/snowballstem/snowball/archive/refs/tags/v3.1.0.tar.gz"
+  sha256 "e49fa0a641be9b93d6b4040785007e82d7b5c74eaca51a6d40e47b516a528927"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ab44ad284224fc7948a61026b26c2909ca0c95132c0476a82d86b3d7d0a64ab2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00c79db6c8ba404a5ad086c5e50a7102d0df266ee3fb3b5deafe4ed8e7184c71"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d7f77bad2cee9519cbe39492c5234455b01f1de41381279e8d63d6762f4c2f4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "42cd2f37f93d279ad348fb7933739db82bdbb2602d1f7e1f40b6b0113dd4dc3a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "58eadab9b1887a26cb95506a264f0e53bf9a23d9d1cf6fe589533c8f20daa7c2"
-    sha256 cellar: :any_skip_relocation, ventura:       "cd975136128f07351d331ec0c05bcc7bae659059e9f7a42c1c19d3d03d88a751"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a90617188624e914be73ec75078cebac9e2ee7458f0006225dba41da4fd2e431"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b8fd0e7fee01a520f36dfd8631171bb7fcfab8ddccb8ed9c37b069f338b6ca9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8832e3a8b61dfd5eab2e1c6b5ea4e4dd0924bb4863e7ce9a2238361f9c83547"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "817a7892a41e2be04705b07f92e6bd252ab150e67df1300ab7ba9ec9afbe2c43"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0832bda4060bb98c1117f6c837cf124d82fa12c4e994c7c01e5eba80a0bd36b6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b21d0a40c0fec2d7f9b00e7617960da1ffc55e5ba7db78da03d4f43e59356b24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c931ba1a4017fed2ccf0448f78340a04440d5d0bcdf0a9e8082f379e995aa60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e107b0c82bc1ee45569e2cb0d8de09abf62e363dd45756d1b2b8652a4382a321"
   end
 
   def install

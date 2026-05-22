@@ -1,18 +1,18 @@
 class CargoGenerate < Formula
   desc "Use pre-existing git repositories as templates"
   homepage "https://github.com/cargo-generate/cargo-generate"
-  url "https://ghfast.top/https://github.com/cargo-generate/cargo-generate/archive/refs/tags/v0.23.9.tar.gz"
-  sha256 "c02da6b831aa5b80eb7b3b23589664db41037dbf487aaef989db6e8a2044af26"
+  url "https://ghfast.top/https://github.com/cargo-generate/cargo-generate/archive/refs/tags/v0.23.10.tar.gz"
+  sha256 "3cec2d0a6fe45fb6bb4d1341abb1758cc799a348bd5e59b3c0551e4dabe94369"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/cargo-generate/cargo-generate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2aa914b3aa8fb66d7f7901402d1063d417a587c42ce5fd76e3c539e37eb491cf"
-    sha256 cellar: :any,                 arm64_sequoia: "0a61c0ee158b06020418e804c5328c9a1c198f08946dc0c1d8fc0581f1f50a21"
-    sha256 cellar: :any,                 arm64_sonoma:  "c632bbaf644fbe5e0d6aacf95a4730f02dee6796d86cf3522c7bd3c51716ba6c"
-    sha256 cellar: :any,                 sonoma:        "2a6bff9c66c505651dcce00dc8ec8be4f94f7935e3c3638d48d7ec8b3a8c193c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e264007dd9432106ce7ceac3c29c43d47ebf5c59e2aa3f74d01139fa28b70126"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fea1903b4e2dbe113512791adf90b3ec11952953143336de15b0fc3f1c0ff4d5"
+    sha256 cellar: :any,                 arm64_tahoe:   "ccf195fbc3a555ecd6802f2adc7e1b0739fc0568b30d2252e016cf712e2f19ca"
+    sha256 cellar: :any,                 arm64_sequoia: "c34a5774385311cc9f25b3608f9f145919ff83c7c6d3ef493d77c59aec82be8c"
+    sha256 cellar: :any,                 arm64_sonoma:  "6a82339ae502bc5b7e24c0b1676d564b8edb22698cc6eb8202fc2b82ae839f5b"
+    sha256 cellar: :any,                 sonoma:        "d0eaab10f2dac54239f8d6f6c77e2d976baffde29a5d3787d9661b98d1100909"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9850328368f989ad58c60035d8b7a95b1fb20b7b06e6a5fbf959551d9c9bde9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f32eb7fe2a1621cbbcb96d9eb63c833177f91249871b119e93cc453fdf433a8e"
   end
 
   depends_on "pkgconf" => :build

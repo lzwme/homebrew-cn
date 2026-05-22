@@ -7,12 +7,13 @@ class Dasel < Formula
   head "https://github.com/TomWright/dasel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "edd9c409645378f7d12e2e3f9002ce32a5999b19e2357b87cb1fa44dc63dda5b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edd9c409645378f7d12e2e3f9002ce32a5999b19e2357b87cb1fa44dc63dda5b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "edd9c409645378f7d12e2e3f9002ce32a5999b19e2357b87cb1fa44dc63dda5b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cea72a8195466e311e35f6f7009629f9449b44a7eeb479ea87812f33df9bb647"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f548b8f448cc4379472764353bba6d718454b4a2096e9a931a5c8db649359bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73458d056860a1bd38aa9beaad39eae09daef04d7266963a083327ef6e394972"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8119bb802beef388364f8452a16e1927c49b8e221dbd14cbd93159561a5bdef8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8119bb802beef388364f8452a16e1927c49b8e221dbd14cbd93159561a5bdef8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8119bb802beef388364f8452a16e1927c49b8e221dbd14cbd93159561a5bdef8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "60fff45bd36da2e38ea1e4df041d02907436d8538e075fbf6738084e43f6c08a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "126e9dd4af5f0e758157a773e0c467c60afdc9ba39d4bc6e7b63a810d894d065"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb733ad20e36af93a8f438bfec87bc205727f83d5a71a13ca1c0685f6ef69eeb"
   end
 
   depends_on "go" => :build
@@ -22,6 +23,8 @@ class Dasel < Formula
     system "go", "build", *std_go_args(ldflags:), "./cmd/dasel"
 
     generate_completions_from_executable(bin/"dasel", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+
+    (man1/"dasel.1").write Utils.safe_popen_read(bin/"dasel", "man")
   end
 
   test do

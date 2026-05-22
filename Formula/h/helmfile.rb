@@ -1,19 +1,19 @@
 class Helmfile < Formula
   desc "Deploy Kubernetes Helm Charts"
   homepage "https://github.com/helmfile/helmfile"
-  url "https://ghfast.top/https://github.com/helmfile/helmfile/archive/refs/tags/v1.5.1.tar.gz"
-  sha256 "255fc08c0be480cb876b0e98da70a0ec17b5131c749b462799f52d52e1570d60"
+  url "https://ghfast.top/https://github.com/helmfile/helmfile/archive/refs/tags/v1.5.2.tar.gz"
+  sha256 "3dee262fba1211a0bb7f90433bd44ac8f8ed05cfb49ed799e340e278d132be9b"
   license "MIT"
   version_scheme 1
   head "https://github.com/helmfile/helmfile.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "99b311e3a4dcbbe032275bd3c46a01e8a78b989af359eb403a3ff6991351b352"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "177d46f508b71cd387e1c54db0af09be2935cc3e4b4aa552e09a77d7957b1971"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37e6b7fb08d182a9824a6f8d54a057dcdfcbe92daa2021d7824882eef4c4d1fe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eaa9b4d4c0f793edcb132bbe581f05f9582f106644d585be24156f97c04d2689"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a939e71a2bb491bacda13df025d75d8f95a1b973f713f59a3b5de3a7e7f48556"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f944cc3a837a3c240ab1d5dc06dec5433a82cb80506a39355223fd4dd1c32f0c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ba52b3fc65412e05f9c51d484ea5cfce36a964501e28f3fe17b7081670281ed3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c22f43bbbf3ce3bc2b5cda9aa60e028761bed9a22540cf25eb06d8c138302555"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc68923d7cb1993ea197349caad922d013bf6381184a04106eb69477c84a7213"
+    sha256 cellar: :any_skip_relocation, sonoma:        "85f421893a6aedc6d2921f777b677b552418e772f3532e837d00885a30ae23dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2c56e6624402c19a3f9fa2772c093d7a75b5e104c03caaaf1291147becb44e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b4c7d012993710989d9901f657ad6db4783e3c546e42cf4f5bcbad340e19f15"
   end
 
   depends_on "go" => :build

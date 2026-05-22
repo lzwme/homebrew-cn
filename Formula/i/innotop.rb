@@ -1,19 +1,18 @@
 class Innotop < Formula
   desc "Top clone for MySQL"
   homepage "https://github.com/innotop/innotop/"
-  url "https://ghfast.top/https://github.com/innotop/innotop/archive/refs/tags/v1.15.2.tar.gz"
-  sha256 "cfedf31ba5617a5d53ff0fedc86a8578f805093705a5e96a5571d86f2d8457c0"
+  url "https://ghfast.top/https://github.com/innotop/innotop/archive/refs/tags/v1.16.0.tar.gz"
+  sha256 "45645f20e70d54adc5208b5098beb378f5f29fc5e0447237351311418cc9933b"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
-  revision 1
   head "https://github.com/innotop/innotop.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f1f7200e8bc7f549dd1ac59d991d20fc90fefbd86e1aaa94e6c1106e02b651f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f1f7200e8bc7f549dd1ac59d991d20fc90fefbd86e1aaa94e6c1106e02b651f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f1f7200e8bc7f549dd1ac59d991d20fc90fefbd86e1aaa94e6c1106e02b651f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5f1f7200e8bc7f549dd1ac59d991d20fc90fefbd86e1aaa94e6c1106e02b651f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f2878c0dbd65584c8a7d7c7a04a569412c1301654a02ecc227f1b509df65a8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "994567fc14ad431d0d5e464dd59887da03c8ea478d712b24492c20f5a3b5c827"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f30a13ed3194557816cbc8be5a8449079346cb98977f8ce7b24d5c1dc3fa544c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f30a13ed3194557816cbc8be5a8449079346cb98977f8ce7b24d5c1dc3fa544c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f30a13ed3194557816cbc8be5a8449079346cb98977f8ce7b24d5c1dc3fa544c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f30a13ed3194557816cbc8be5a8449079346cb98977f8ce7b24d5c1dc3fa544c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "61058c8a1eaf372375401dc6514c8ce0de39126104dfd8c4dabe68a029c5b215"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ddbaf6f86f44a0fbeef939e5ce3e24986e987d7c63932414fb3fb9488868296"
   end
 
   depends_on "perl-dbd-mysql"

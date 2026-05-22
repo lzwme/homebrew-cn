@@ -1,18 +1,18 @@
 class Render < Formula
   desc "Command-line interface for Render"
   homepage "https://render.com/docs/cli"
-  url "https://ghfast.top/https://github.com/render-oss/cli/archive/refs/tags/v2.17.0.tar.gz"
-  sha256 "1e0da1ddd02003416af8633073b631c4efc43e8d9c7fbf3071161103a962d39a"
+  url "https://ghfast.top/https://github.com/render-oss/cli/archive/refs/tags/v2.18.0.tar.gz"
+  sha256 "9e34fb095b4f960ad62593a66d1511ab46db525780a9abbd737db03e34a2a29d"
   license "Apache-2.0"
   head "https://github.com/render-oss/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b887056a36922c19185cbe37bcda1a2b84cce701613b33feade8da42b881b9d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b887056a36922c19185cbe37bcda1a2b84cce701613b33feade8da42b881b9d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b887056a36922c19185cbe37bcda1a2b84cce701613b33feade8da42b881b9d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6c20b8f35f1dc00cb40046aa4a485dfa79df3a7525334a5175ae13c25f0d9a7c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba2d54850fd8f7d13d51a8b8ab6209d50d66fd81afc11a491a0745199650ffa9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6d5bf7b78d353fa5aa0ffda91417a873189cc3f0b69d8350f67e3740376abe4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f92f449185926034d22c57960c3b6947f4ad9d43eae2717c5494b04fb59f0276"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f92f449185926034d22c57960c3b6947f4ad9d43eae2717c5494b04fb59f0276"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f92f449185926034d22c57960c3b6947f4ad9d43eae2717c5494b04fb59f0276"
+    sha256 cellar: :any_skip_relocation, sonoma:        "412c5af3b07ce2d950c8d789c7065838dc8822e24f33bea93c2101b97365e46b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f21e1fd392a4334f108d83dac2e25fb01ef892301d48f1586b696bdfe2ed5b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc9bd24c0fa082d9f40f6115e5f0121919657d7045214eb4d2b5040ec625b75e"
   end
 
   depends_on "go" => :build

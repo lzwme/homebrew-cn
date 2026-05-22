@@ -6,15 +6,16 @@ class Lexicon < Formula
   url "https://files.pythonhosted.org/packages/4b/37/291063606930c749681b2ad0612952b1bc5374ab2037346566812ba8f2c9/dns_lexicon-3.25.2.tar.gz"
   sha256 "a377bf2b4017ee46de8d5515cf2c204bfda74b49032dc5420bd3100993f28deb"
   license "MIT"
+  revision 1
   head "https://github.com/dns-lexicon/dns-lexicon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "42a20a74977588f9938052ff74730fe4d0c873bae52d39bf16b7ede4c0b96536"
-    sha256 cellar: :any,                 arm64_sequoia: "2b6463eb5951ae7c9746fff1268f148a22c8ce357cb19cf3d8008932b1398bdc"
-    sha256 cellar: :any,                 arm64_sonoma:  "df8ca414fe9aab0e9e9d2d11d1bf7f1dda628b8b8922e89d347e361f8c3d1431"
-    sha256 cellar: :any,                 sonoma:        "352d1ec10df2dfb2ce381d982a813955a409ce1fde7d79eeb2b99a4f9a534634"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9553347e7956119dad60342729b72f1892df863b592566a0087d01057adc2bce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ade9980e9cea4d7edec3ba090a1c08d3aaff3e2c19d5003f2968c59280d01c2"
+    sha256 cellar: :any,                 arm64_tahoe:   "55b9bba54b98d1350518829b3c9c27501f7d4b11ca4a3884555c4823fff5e8ea"
+    sha256 cellar: :any,                 arm64_sequoia: "8d77fdaf2faad760d1051eb2020405abdf87d233b2ba049361f1a736309a1331"
+    sha256 cellar: :any,                 arm64_sonoma:  "3496850b88c6db04060fda3b4bd563e25471bef98a8803827589106835348e1d"
+    sha256 cellar: :any,                 sonoma:        "6a1eae849eb61f729b9cf49f8c99f24e58f80b13b5363cc93f5638e447fde8ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b6182a141eb575513ec216dfd5632a1d34585cb9b5f69f7b12fabc5d0340d72"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e6d0f76d08eee312d3d1e6fa223f9d311dccda82fbba77152a4afcc93efeaba"
   end
 
   depends_on "certifi" => :no_linkage
@@ -39,13 +40,13 @@ class Lexicon < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0a/37/78c630d1308964aa9abf44951d9c4df776546ff37251ec2434944e205c4e/boto3-1.43.6.tar.gz"
-    sha256 "e6315effaf12b890b99956e6f8e2c3000a3f64e4ee91943cec3895ce9a836afb"
+    url "https://files.pythonhosted.org/packages/1e/02/195d56d36b900ba28a75fc4c47c858a16237811acfde8f22f6de08236dae/boto3-1.43.11.tar.gz"
+    sha256 "3567c6a1f31d8e6bf151c95f76a2b1f239cce243a768a31747c2ba141c9a0570"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/79/a7/23d0f5028011455096a1eeac0ddf3cbe147b3e855e127342f8202552194d/botocore-1.43.6.tar.gz"
-    sha256 "b1e395b347356860398da42e61c808cf1e34b6fa7180cf2b9d87d986e1a06ba0"
+    url "https://files.pythonhosted.org/packages/e9/fa/4bec16fa5a4cde7b593e549238bfeb8ed1bdba9d427888a18c460a1f2352/botocore-1.43.11.tar.gz"
+    sha256 "d7d479cc2809ec2728f2898521003adfb79bfe6a4615c59dfd222ec52b0cee6b"
   end
 
   resource "charset-normalizer" do
@@ -59,8 +60,8 @@ class Lexicon < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "dnspython" do
@@ -74,8 +75,8 @@ class Lexicon < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "isodate" do
@@ -94,8 +95,8 @@ class Lexicon < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
-    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
+    url "https://files.pythonhosted.org/packages/05/3b/aab6728cae887456f409b4d75e8a01856e4f04bd510de38052a47768b680/lxml-6.1.1.tar.gz"
+    sha256 "ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40"
   end
 
   resource "markdown-it-py" do
@@ -109,8 +110,8 @@ class Lexicon < Formula
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/8b/c9/4161259038d4ec2bb446eaf368ea10706f95b940a013a06e5d01c2428714/oci-2.173.1.tar.gz"
-    sha256 "bcbd34d8163e23f10f573ca4e828c702eb063b76b900fe03ffc1cf20baf8d93f"
+    url "https://files.pythonhosted.org/packages/a8/a0/aa6dc0477cab7d977042c245b4014d787c3d9c287c23a51bd58b3d5c79c0/oci-2.175.0.tar.gz"
+    sha256 "a2c0f7a61e26a430cb5d2f611226eca6ee49f113ba6326ca97c8608be54f168c"
   end
 
   resource "platformdirs" do
@@ -154,8 +155,8 @@ class Lexicon < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "requests-file" do
@@ -199,8 +200,8 @@ class Lexicon < Formula
   end
 
   resource "tencentcloud-sdk-python" do
-    url "https://files.pythonhosted.org/packages/f2/78/da83edfeb19e855a95cf1e1c0a46c61aba7389ff5c6989aa43e575698166/tencentcloud_sdk_python-3.1.93.tar.gz"
-    sha256 "b8e7a110ab68eb0ecff4e2ec5d04f24e5b4e355afa3b7018bf3bf9a6369cd289"
+    url "https://files.pythonhosted.org/packages/9c/0d/4dcb96017e360884fbf13217457b613429ac2a9b60828d983701e9dfc83c/tencentcloud_sdk_python-3.1.100.tar.gz"
+    sha256 "cdf5429cecfa9757fbcd2bb4ad608177c9f9125dc2febf224682e1b9c705e13f"
   end
 
   resource "tldextract" do

@@ -6,16 +6,16 @@ class GalleryDl < Formula
   url "https://files.pythonhosted.org/packages/a2/fc/a65a29335aa618a90bcde6289e8bc9e87f4c706fd38a37a859a3b2603185/gallery_dl-1.32.1.tar.gz"
   sha256 "b59f1c3b58783c9c904d38ba24cb64e2004341c84100903564913340fb97767f"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
   head "https://github.com/mikf/gallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3c22b1a217f51866d943acb637c5be2308c5ae318525424928f92956733c1641"
-    sha256 cellar: :any,                 arm64_sequoia: "e1e2f8f91c3d8af4058437992794bc0fffcaef0067806274b09d210f25a97357"
-    sha256 cellar: :any,                 arm64_sonoma:  "b66fbc1e1db603c789d8f107cc549cb6da2139f45cd0e82729d819393122f13e"
-    sha256 cellar: :any,                 sonoma:        "aa9793e19825f1a5b9ef301212185a6ab8a3a871c515874037bbe04cb9ad13de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75c45477aea0436c33db1e4d14d9e33f9ac091be990c10c748989ea2ae60ae32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1884d8953c99b1b3d243b8b3df6d6b3e79cb45ff265ccdab8e1a28867389b4b4"
+    sha256 cellar: :any,                 arm64_tahoe:   "f28fb3c0705c12229f7f9fc52bbec507ef8f189f3e21e89ba15bd880c62a01e1"
+    sha256 cellar: :any,                 arm64_sequoia: "994ff40aad7ea1e063710ae59058d2d69981c47397a34850cb38849e954d7b24"
+    sha256 cellar: :any,                 arm64_sonoma:  "4ee79c950ebffc939c8c7378202b57268a9e2adb036d2205af0beaa2bff15ae8"
+    sha256 cellar: :any,                 sonoma:        "6d3b1903bf9f35baccf64cc1bb57aaf2f395ce21ff0745ebd13ee2414ca1d8a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7acc241732f4963e1cfc5b1757a8181aa796aaa483c3544dced2b57c4a55ca9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0732a1bc924741cbe5b6780ab727f029594a649de65f2dcf78be0a20ce787441"
   end
 
   depends_on "certifi" => :no_linkage
@@ -39,8 +39,8 @@ class GalleryDl < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jeepney" do
@@ -79,8 +79,8 @@ class GalleryDl < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
-    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "secretstorage" do

@@ -3,18 +3,18 @@ class SnowflakeCli < Formula
 
   desc "CLI for snowflake"
   homepage "https://docs.snowflake.com/developer-guide/snowflake-cli/index"
-  url "https://files.pythonhosted.org/packages/43/cd/29c582105d11a3014cd74bf5856bb8a100aadb6b5fd9e0224f1a061ba532/snowflake_cli-3.17.1.tar.gz"
-  sha256 "48db42dc176b20ce0c9c26ec636a03e7ab39f1770431558b4c88fc4fc1d31f9a"
+  url "https://files.pythonhosted.org/packages/8c/4a/170986f7e78a4c88d7207928e0774cdbe7cf7aef1fad044d6c0909c1c5db/snowflake_cli-3.18.0.tar.gz"
+  sha256 "35bcfb0be0b6f2e6c8ec526c759ccc296d877e02206316b0acde55524586de38"
   license "Apache-2.0"
   head "https://github.com/snowflakedb/snowflake-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6d8b51d0cd22e057b9e9daf04cbd7dcece7a81e8a0e9acdff312c1739d369e06"
-    sha256 cellar: :any,                 arm64_sequoia: "efdad2fd8ba4a56d59096cf6c621094f6aeb6a653c17831634a92b659cb92fcf"
-    sha256 cellar: :any,                 arm64_sonoma:  "ec21fdc64c793fcfb1bbf9fe57813eed6ac1bade566e8625876bc136a954e65b"
-    sha256 cellar: :any,                 sonoma:        "9f514c6c6fe8969300fe96a8f58e87e8e7e76534d43c00e856335a289552c6a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "875435225bd4504c8e53b5be59dda79436d83c286f1b0a924e7b2d9d20296a77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc5c7437e0e891da9b2c047d1e307b5127aae66dcc62edaccaa1ef93213ec752"
+    sha256 cellar: :any,                 arm64_tahoe:   "03e0d1bfa1dec3c7b6ef7c2880a19a9aecaa41cfa7d777c4eaa8e900da58d152"
+    sha256 cellar: :any,                 arm64_sequoia: "92803d277b04cab05447c40f79d8e727e8f8ceaac2949cb187328a878ded9422"
+    sha256 cellar: :any,                 arm64_sonoma:  "675859b7108d4cecc058e94fd9805773abf5497d184291fd2791fae18a7af3fc"
+    sha256 cellar: :any,                 sonoma:        "4f7fea98ad915ef4c23ec3f2538093f1612ce330bae69e377c6f28a9d4a6b46a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9000c5a1fc6de867e11005681c52a8756780bdeff40eaa6c40b0f99a461dd74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0c979f6fcee71cb599794500ba301be3b8205db08fa4ce43c844bfebcef89a2"
   end
 
   depends_on "protobuf" => :build
@@ -35,13 +35,13 @@ class SnowflakeCli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0a/37/78c630d1308964aa9abf44951d9c4df776546ff37251ec2434944e205c4e/boto3-1.43.6.tar.gz"
-    sha256 "e6315effaf12b890b99956e6f8e2c3000a3f64e4ee91943cec3895ce9a836afb"
+    url "https://files.pythonhosted.org/packages/1e/02/195d56d36b900ba28a75fc4c47c858a16237811acfde8f22f6de08236dae/boto3-1.43.11.tar.gz"
+    sha256 "3567c6a1f31d8e6bf151c95f76a2b1f239cce243a768a31747c2ba141c9a0570"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/79/a7/23d0f5028011455096a1eeac0ddf3cbe147b3e855e127342f8202552194d/botocore-1.43.6.tar.gz"
-    sha256 "b1e395b347356860398da42e61c808cf1e34b6fa7180cf2b9d87d986e1a06ba0"
+    url "https://files.pythonhosted.org/packages/e9/fa/4bec16fa5a4cde7b593e549238bfeb8ed1bdba9d427888a18c460a1f2352/botocore-1.43.11.tar.gz"
+    sha256 "d7d479cc2809ec2728f2898521003adfb79bfe6a4615c59dfd222ec52b0cee6b"
   end
 
   resource "charset-normalizer" do
@@ -70,8 +70,8 @@ class SnowflakeCli < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/c0/89/37df0b71473153574a5cdef8f242de422a0f5d26d7a9e231e6f169b4ad14/gitpython-3.1.44.tar.gz"
-    sha256 "c87e30b26253bf5418b01b0660f818967f3c503193838337fe5e573331249269"
+    url "https://files.pythonhosted.org/packages/33/f6/354ae6491228b5eb40e10d89c4d13c651fe1cf7556e35ebdded50cff57ce/gitpython-3.1.50.tar.gz"
+    sha256 "80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc"
   end
 
   resource "id" do
@@ -95,8 +95,8 @@ class SnowflakeCli < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
-    sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
+    url "https://files.pythonhosted.org/packages/36/cf/ea4ef2920830dea3f5ab2ea4da6fb67724e6dca80ee2553788c3607243d0/jaraco_functools-4.5.0.tar.gz"
+    sha256 "3bb5665ea4a020cf78a7040e89154c77edadb3ca74f366479669c5999aa70b03"
   end
 
   resource "jeepney" do
@@ -245,8 +245,8 @@ class SnowflakeCli < Formula
   end
 
   resource "snowflake-connector-python" do
-    url "https://files.pythonhosted.org/packages/01/b1/11c03e05bd2a2da590c1b77c8455f40eb505888a2683c4e41b487d79568c/snowflake_connector_python-4.4.0.tar.gz"
-    sha256 "648f49029d699591af0f253e81c5bf60efc4411c7b0149ef074a59a038210a3b"
+    url "https://files.pythonhosted.org/packages/99/e7/f0ab30895256c4d8e0b6e33857150d10d465bdfaef3f0ed471ba83b1444f/snowflake_connector_python-4.5.0.tar.gz"
+    sha256 "376eb9d956f6b9287df448e483ec862b94fb9ccb06cefc945b68ddac1c7d1c48"
   end
 
   resource "snowflake-core" do
@@ -275,8 +275,8 @@ class SnowflakeCli < Formula
   end
 
   resource "types-protobuf" do
-    url "https://files.pythonhosted.org/packages/05/1b/4ae76c732caa3ff5786ac9039d592d526ff2db898da93176c40b63e0b110/types_protobuf-7.34.1.20260508.tar.gz"
-    sha256 "1c93e8c294281b76a5255fc21c747db0004694463ac6ea9866ee06da969fa555"
+    url "https://files.pythonhosted.org/packages/29/59/e2b13b499d15e6720150c4b1a8d91e31fcacf716b432397475b3151ff7e4/types_protobuf-7.34.1.20260518.tar.gz"
+    sha256 "28cfaded25889cb83ebfb63cfb0a43628f0b6f3785767bec17287dc6468795f2"
   end
 
   resource "tzlocal" do
@@ -292,6 +292,11 @@ class SnowflakeCli < Formula
   resource "wcwidth" do
     url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
     sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
+  end
+
+  resource "websocket-client" do
+    url "https://files.pythonhosted.org/packages/2c/41/aa4bf9664e4cda14c3b39865b12251e8e7d239f4cd0e3cc1b6c2ccde25c1/websocket_client-1.9.0.tar.gz"
+    sha256 "9e813624b6eb619999a97dc7958469217c3176312b3a16a4bd1bc7e08a46ec98"
   end
 
   resource "wheel" do

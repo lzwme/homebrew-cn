@@ -1,8 +1,8 @@
 class Picoclaw < Formula
   desc "Ultra-efficient personal AI assistant in Go"
   homepage "https://picoclaw.io/"
-  url "https://ghfast.top/https://github.com/sipeed/picoclaw/archive/refs/tags/v0.2.8.tar.gz"
-  sha256 "1e75f68d12a70a6ba5c79c578d0ec52cca491aa2a3f553cead89c8e2ae054418"
+  url "https://ghfast.top/https://github.com/sipeed/picoclaw/archive/refs/tags/v0.2.9.tar.gz"
+  sha256 "e0e1dd419c836255c2db30739c3ed1cd340275d34a896bbcb6f8627aec6dcca0"
   license "MIT"
   head "https://github.com/sipeed/picoclaw.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Picoclaw < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41d0a8ce8869d74a4bc31810c4a29bb3eea231df8735517762f73c135d34631c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41d0a8ce8869d74a4bc31810c4a29bb3eea231df8735517762f73c135d34631c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41d0a8ce8869d74a4bc31810c4a29bb3eea231df8735517762f73c135d34631c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "61b3968ac4c0dd72d8443797df58516441e7b8f7f625bbf4c2166e67d2b4789f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad3c043734a262b2b071cf64a742dec1ed5bf34e42a632f2111121ea5abde337"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6997dd9e60973701d091928e4b39931e0851b22c14b4b15850bc47f38643eaa4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "47652805fa532c0a702cfbde2feff2b2e0dc5bd6c809f537b8fc36df1861a187"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47652805fa532c0a702cfbde2feff2b2e0dc5bd6c809f537b8fc36df1861a187"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "47652805fa532c0a702cfbde2feff2b2e0dc5bd6c809f537b8fc36df1861a187"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d1fd286082d44520ccdc595effbd3c69edd42d720c9776bb29d03464f87e9bfb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39251be25aae978550659aee78a1a09af362ca02f1f9879e53d83e9af6e566a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6219887f3bcaa15dc151ae087d819fd16e091266142e6d662316803f3738f8c8"
   end
 
   depends_on "go" => :build

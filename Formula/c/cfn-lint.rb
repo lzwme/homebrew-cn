@@ -8,17 +8,18 @@ class CfnLint < Formula
   license "MIT-0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "038b9d5f1ca73593a362cb08848398d77231d6a94b1106c44b1c5f84d9adcfba"
-    sha256 cellar: :any,                 arm64_sequoia: "04e50d922967f4ff1e016b347f4f1dc7a9a957f94be548e45dde1e1fb4363ed8"
-    sha256 cellar: :any,                 arm64_sonoma:  "1da908c8effbd12e9e2decc234da0e2a79fa6dd1237b74ac3e6725fb9e104732"
-    sha256 cellar: :any,                 sonoma:        "814ff143b0139e3fe2bda372e9465bde7a8d25c1b9a443b67f4eea6137a513d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6330fab24c87d6e5fdc70e7320bff2d6acc1189aed3f27a686964d1599fb3a30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0465bcf1dcb98e8fe32982409117ac48c8f921e0fbaafb8147b173ed5aec8999"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e55e6c20cfa4b3b163282157194687a9486074e464c71ea71f43811cbf647e8c"
+    sha256 cellar: :any,                 arm64_sequoia: "993c799dfce0539881e526825b306b0b7e3f3459dfa5a67e68f789895a1b0eff"
+    sha256 cellar: :any,                 arm64_sonoma:  "0cbc58f2b11eb4233314528e99e96ca11931e69fb0d96babece58ea04b0ea5f2"
+    sha256 cellar: :any,                 sonoma:        "4e1ee16e1b8e2afb9a266d7cd714de2d85381649027e1e5abc5847f345447215"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5003b503d7949b8bc416fe061b34be10790b6e14aff3fe76d59fdba7cc4ed7d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16ae06fc8413a32425b4176ccc395d79e3147e13bd0650e461a8073158177d05"
   end
 
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13" # Pydantic v1 is incompatible with Python 3.14, issue ref: https://github.com/aws/serverless-application-model/issues/3831
+  depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages exclude_packages: ["pydantic", "rpds-py"]
@@ -29,18 +30,18 @@ class CfnLint < Formula
   end
 
   resource "aws-sam-translator" do
-    url "https://files.pythonhosted.org/packages/e0/09/f62aa8d076f6ba85080ec6291e61af345e9be0daf8a4094101555e054ec7/aws_sam_translator-1.109.0.tar.gz"
-    sha256 "0c5e60223ae8434ce0c6bdb9a491d69ba3ec97e15c0d825d3803f7806382d804"
+    url "https://files.pythonhosted.org/packages/6e/2f/adeed2ce2bc62eca7ead7b3ae70fdd2cf84eecd582cd69a9529e6da89876/aws_sam_translator-1.110.0.tar.gz"
+    sha256 "466ee0e8200992c51b7fd5ede5e56ca2e8dd5473cc551e8495c14f2f4d636127"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0a/37/78c630d1308964aa9abf44951d9c4df776546ff37251ec2434944e205c4e/boto3-1.43.6.tar.gz"
-    sha256 "e6315effaf12b890b99956e6f8e2c3000a3f64e4ee91943cec3895ce9a836afb"
+    url "https://files.pythonhosted.org/packages/1e/02/195d56d36b900ba28a75fc4c47c858a16237811acfde8f22f6de08236dae/boto3-1.43.11.tar.gz"
+    sha256 "3567c6a1f31d8e6bf151c95f76a2b1f239cce243a768a31747c2ba141c9a0570"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/79/a7/23d0f5028011455096a1eeac0ddf3cbe147b3e855e127342f8202552194d/botocore-1.43.6.tar.gz"
-    sha256 "b1e395b347356860398da42e61c808cf1e34b6fa7180cf2b9d87d986e1a06ba0"
+    url "https://files.pythonhosted.org/packages/e9/fa/4bec16fa5a4cde7b593e549238bfeb8ed1bdba9d427888a18c460a1f2352/botocore-1.43.11.tar.gz"
+    sha256 "d7d479cc2809ec2728f2898521003adfb79bfe6a4615c59dfd222ec52b0cee6b"
   end
 
   resource "jmespath" do

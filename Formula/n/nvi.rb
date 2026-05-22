@@ -27,6 +27,12 @@ class Nvi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8eb6c0c8a8eef36a09bf55e35ced6d2e2afb4d75a70d93d96e88d9cbd5c4b56"
   end
 
+  # Last release in 2007 and build requires many patches from MacPorts and Debian.
+  # Also, nvi has been removed from Alpine, Fedora, FreeBSD Ports and Gentoo
+  # See: https://repology.org/project/nvi/history
+  deprecate! date: "2026-05-21", because: :unmaintained
+  disable! date: "2027-05-21", because: :unmaintained
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

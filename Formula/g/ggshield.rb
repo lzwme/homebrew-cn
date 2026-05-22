@@ -6,15 +6,16 @@ class Ggshield < Formula
   url "https://files.pythonhosted.org/packages/1c/71/4d0ce13e8277a8de027e2ec510871a0f0cf4205bc7bf2f92a9cb6c31692d/ggshield-1.50.4.tar.gz"
   sha256 "179b01c1f7e089359dde84cdf034734b8f03cc5fde1222d19988984c016c42d7"
   license "MIT"
+  revision 1
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f759f59256c3748ecd5318e81d02a05a5b2acae07fcb27e574800dd3cb88513c"
-    sha256 cellar: :any,                 arm64_sequoia: "22f1e19cfe7868b7062aad6d8b77f72dffed371ee6da04138f6307ec283bc883"
-    sha256 cellar: :any,                 arm64_sonoma:  "30238722f39b158524a197e657b5d7bb6524eb3e1454aa1435312dbf3d978896"
-    sha256 cellar: :any,                 sonoma:        "3d45e4d316b36d33ed149aeb085b5ad2b6504be831199b4ff45c7e942caa7b58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "516c465f4729d0c152ec5c111d2864f09838fc949be3bca5fb0cf93217c2ffb9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19894c6128e100bbd7b614e4c03cb0794d4e24d0ee219265e9fd386660b2ff26"
+    sha256 cellar: :any,                 arm64_tahoe:   "37ba2a3365be816071a1cedb960b39f83329cadc95858ea263e343fcf9b70446"
+    sha256 cellar: :any,                 arm64_sequoia: "dfe148fb813d80e4fff6c4edc09754ddaed72cf9840a2cebcb2bd54d06bacc36"
+    sha256 cellar: :any,                 arm64_sonoma:  "585819b4cca639400757c1244f08bc4e3f06c3920ac8d6e2f11125cdb6332857"
+    sha256 cellar: :any,                 sonoma:        "30771eb080f1950ca3afc5d0215b29d60e398fc4caca9dedfa1c02d37a00c70d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4081a14d289f6cce1bc56291398fae2a966191d2128d984e0f09339e435c9c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb5ab69cac50e9a8fb21297aac01cf7529c5badfb1b43c41245f7c5685f036c9"
   end
 
   depends_on "pkgconf" => :build # for `rfc3161_client`
@@ -55,8 +56,8 @@ class Ggshield < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jaraco-classes" do
@@ -70,8 +71,8 @@ class Ggshield < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
-    sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
+    url "https://files.pythonhosted.org/packages/36/cf/ea4ef2920830dea3f5ab2ea4da6fb67724e6dca80ee2553788c3607243d0/jaraco_functools-4.5.0.tar.gz"
+    sha256 "3bb5665ea4a020cf78a7040e89154c77edadb3ca74f366479669c5999aa70b03"
   end
 
   resource "jeepney" do

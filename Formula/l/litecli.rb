@@ -6,15 +6,15 @@ class Litecli < Formula
   url "https://files.pythonhosted.org/packages/e3/d5/afec99cc3eaba96214d77e76438d7fe5e6ea54704b0e47dd97d9696ccd6c/litecli-1.17.1.tar.gz"
   sha256 "e2f7191eaba830b24dbbfc9171a495c62562df923ba1cc3b2db2652547c1bac8"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f2493332fe63e0fa356629dd41b7c1be5d675d777b7832f29d3c9539f88e5c99"
-    sha256 cellar: :any,                 arm64_sequoia: "ca364b402477a17637d916f3a2030bbb03e3382430143182a7579914c25b8975"
-    sha256 cellar: :any,                 arm64_sonoma:  "472816c82bada47787f0cb901304183c0fac5b5d7fd252dfab0e79295c515b48"
-    sha256 cellar: :any,                 sonoma:        "461495c9411d8a5b5a053408bd07bc0067df706b3eb93be3592f0ce350a8b546"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f1a9451dc310b2d7dddcf243fa95f1c28c3e43a611695170b798f2fa074d875"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "539589a1d6d15c87b1238f227b17306eed89ba89a4aa632c50feb1a94aaec50d"
+    sha256 cellar: :any,                 arm64_tahoe:   "8461f281d2c089033b7abe786e2a6d8fe5032d8e4499793f2ccd233ecf477cd2"
+    sha256 cellar: :any,                 arm64_sequoia: "77bc04c43cc5cb35bc93f81b6fb221f49e89099ae4504f6629eb5fb36023d6b1"
+    sha256 cellar: :any,                 arm64_sonoma:  "aa066a8461d79e8661c5ac8cb5705a2b591b48aabdf1f3558040ec914922dcbc"
+    sha256 cellar: :any,                 sonoma:        "1c268b53b830c6e4bb621111ac11d492d820bc420189fe0d3b48026e90874c8e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "edcf1634c61e636531c06320f8423ab2aa1ab71e4c536ad0bd2e1611ed85c4c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b49f14c20387a3d053c91df3474184608b3ba60636c74b2c1dfa6651753eacd"
   end
 
   depends_on "rust" => :build # for jiter
@@ -34,13 +34,13 @@ class Litecli < Formula
   end
 
   resource "cli-helpers" do
-    url "https://files.pythonhosted.org/packages/c6/fd/b2ac313fa77176cf784ef27cdfc041c691a2f166b2af28a6f9182e556e5b/cli_helpers-2.12.0.tar.gz"
-    sha256 "599dd10b2bdca3f50e272c3d265eefada78659f22559d2304461ee8ab400d490"
+    url "https://files.pythonhosted.org/packages/5e/d1/f83191ae4a8f6584876bc63e5e1ae39360f4de7ed74cce76f266ef9d5d10/cli_helpers-2.15.0.tar.gz"
+    sha256 "c2c5a1a5fd6a8ad51b1b99e80685cd04c006b0e29cacf4c24b1ba8a440ea8d4d"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "click-default-group" do
@@ -79,23 +79,23 @@ class Litecli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/0d/5e/4ec91646aee381d01cdb9974e30882c9cd3b8c5d1079d6b5ff4af522439a/jiter-0.13.0.tar.gz"
-    sha256 "f2839f9c2c7e2dffc1bc5929a510e14ce0a946be9365fd1219e7ef342dae14f4"
+    url "https://files.pythonhosted.org/packages/66/b5/55f06bb281d92fb3cc86d14e1def2bd908bb77693183e7cb1f5a3c388b0c/jiter-0.15.0.tar.gz"
+    sha256 "4251acc80e2b7c9b7b8823456ea0fceeb0734dac2df7636d3c711b38476b5a76"
   end
 
   resource "llm" do
-    url "https://files.pythonhosted.org/packages/e4/5a/c882d099a623f9d9d10a2718a6179aca87e541d3f60939e751d565efda87/llm-0.29.tar.gz"
-    sha256 "75256631dc8bb990253f46be315ba43f21c0350ac47b09f673024191ebcf93cc"
+    url "https://files.pythonhosted.org/packages/7d/f2/3a81744fdaf3a92fe9020dc298dd2e4c144e2e7fcab863e1a132ea537cab/llm-0.31.tar.gz"
+    sha256 "c7701408fdc53cbdf1db6a43f35c7dd410c291dda36cc38a14db4b482b274fa4"
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/88/15/52580c8fbc16d0675d516e8749806eda679b16de1e4434ea06fb6feaa610/openai-2.30.0.tar.gz"
-    sha256 "92f7661c990bda4b22a941806c83eabe4896c3094465030dd882a71abe80c885"
+    url "https://files.pythonhosted.org/packages/32/50/5901f01ef14e6c27788beb91e54fef5d6204fb5fb9e97402fc8a14de2e32/openai-2.37.0.tar.gz"
+    sha256 "f4bc562cc5f3a43d40d678105572d9d44765f6e0f50c125f63055419b72f4bd9"
   end
 
   resource "pluggy" do
@@ -109,8 +109,8 @@ class Litecli < Formula
   end
 
   resource "puremagic" do
-    url "https://files.pythonhosted.org/packages/eb/df/3725f4b848095ef634c0b2226c97901e64ee2d5a82981d89d4b784ae8ce1/puremagic-2.1.1.tar.gz"
-    sha256 "b156c4ae63d84842f92a85cd49c9b9029a4f107f98ad14e7584ed652954feff4"
+    url "https://files.pythonhosted.org/packages/24/74/ce5987ab9b8aec4ced06e2723ebb604205c9eb58abdad91453da93166380/puremagic-2.2.0.tar.gz"
+    sha256 "eb4bddf07c177c4b434554b92165b67449f5a51e152b976202d6254498810eef"
   end
 
   resource "pygments" do
@@ -174,8 +174,8 @@ class Litecli < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz"
-    sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
+    url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
+    sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
   end
 
   def install

@@ -1,8 +1,8 @@
 class DartSass < Formula
   desc "Reference implementation of Sass, written in Dart"
   homepage "https://sass-lang.com/dart-sass"
-  url "https://ghfast.top/https://github.com/sass/dart-sass/archive/refs/tags/1.99.0.tar.gz"
-  sha256 "5f969b2eedf86384d90a9a339824b6652a4600e9e5f32784a7e48e453e145016"
+  url "https://ghfast.top/https://github.com/sass/dart-sass/archive/refs/tags/1.100.0.tar.gz"
+  sha256 "d4f1fa35b6911c4a3fcb9bb8723e4ed6724c2aea71813dfce49ce65aed20b57d"
   license "MIT"
 
   # Some tags are used for sass-api/sass-parser
@@ -12,12 +12,12 @@ class DartSass < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "04b68917e5fa15257e4015a7464bd866627c4676c48f0c9c4f42cbdff47c8f10"
-    sha256 cellar: :any,                 arm64_sequoia: "504e7c9ab687facfd63978bb335f3bc3cddaedb5c0494093e13b503a0f055d21"
-    sha256 cellar: :any,                 arm64_sonoma:  "d0ea9ce1bd01db3b76a7c64edb75da8716883d1eca1e7d9e62a11ebcb4e28b6b"
-    sha256 cellar: :any,                 sonoma:        "74939be86282ef7692b4d0460af6a819aebe8de9efa2ca53d4bff5641bbeb485"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1452e98b3a7c6bfd511cb657a9e91e709bfc60da565c18b77b6ef8f17c70858"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cedfbfb2a3ac93d3a27c965fe8b235ad56d5b17e3a5396660dac891a01e99ec6"
+    sha256 cellar: :any,                 arm64_tahoe:   "bb4d25f3c16fd142ec858935759984dd4f865524059c659da4d48551391f7f0e"
+    sha256 cellar: :any,                 arm64_sequoia: "0125d3451250f8265eee83077871e018d682bb1255dcd4e6cb6119da50a8ce3d"
+    sha256 cellar: :any,                 arm64_sonoma:  "732d94aee5714474a8c9a1771a0a805832a77267576d86fe150ccb09cbcf4c6a"
+    sha256 cellar: :any,                 sonoma:        "c4b988a6bf51ed052020143120790899826f5103b9216fc19bc4ef8292b9a619"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d320bc4a82911d2108249d3b9fa7d676196335ed5fe26365badcbf11010cec3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0adf5b9564d1a4bec5ca2bb1f6d43d724fd694b864023198ef608f0f95659fb7"
   end
 
   depends_on "buf" => :build

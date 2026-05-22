@@ -1,8 +1,8 @@
 class Bbtools < Formula
   desc "Brian Bushnell's tools for manipulating reads"
   homepage "https://bbmap.org/"
-  url "https://downloads.sourceforge.net/bbmap/BBMap_39.85.tar.gz"
-  sha256 "8cedb08064eba414eb6e0573927294ca35500f53eb178bb9bc7357a894482e01"
+  url "https://downloads.sourceforge.net/bbmap/BBMap_39.86.tar.gz"
+  sha256 "b08c23b44adc5d71dfa41ddfbd84f5866906c3d5cf2c16c6615e077a78298024"
   license "BSD-3-Clause"
 
   # Check for the patched versions
@@ -12,12 +12,12 @@ class Bbtools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7ca54b7b60111a5fbc5753b2dfb78d34ab7a0accf41e85f9080dcdd762f41e57"
-    sha256 cellar: :any,                 arm64_sequoia: "5dcb1d9a2433136d7d49b28d127ba116fc5de1a2e7b4bfba8282e7b5611998ab"
-    sha256 cellar: :any,                 arm64_sonoma:  "d12dac30cedfb9ee47759ca0424eb7035d8e3bd5becc62d40879ccdcdfd217a8"
-    sha256 cellar: :any,                 sonoma:        "c0c838f257b589f8e0cfd19500cc5a4aad480775cbfbbfa5a4571d3daaca13f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6aab9b7df57e9f15ad5d6466c0215d8ff0aace9e6ed0c19ab1729635def429ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee098fe790cfb5ebbfa4ebb7234956a258777fec24f9a52b7e4b013af5045af5"
+    sha256 cellar: :any,                 arm64_tahoe:   "4c8444f550e36be68d4dd40228e6f8eb53ebed0849ab982146f6bcf685e37b23"
+    sha256 cellar: :any,                 arm64_sequoia: "9aeade60b2de33b4c2b81edd9586faafa331b706969a7636d8b1542fcc5a45b9"
+    sha256 cellar: :any,                 arm64_sonoma:  "9bc51248e6c1d489d0a1f76c16748613a45cfd0ff81fbc5986d37a1a77dfdaff"
+    sha256 cellar: :any,                 sonoma:        "b1b5f256fd79f00c2453a4e7114d788a669575f61f8ecb9ebdffa337747b5bfb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "348d3b9005c91def1a456fbe0ddc588cbeedeb0a1fe1bb165406d3f951129a0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7909d35fdd2ed7a14b784869f633983337df413804eb1ec62d44860c5a2e371"
   end
 
   depends_on "openjdk"

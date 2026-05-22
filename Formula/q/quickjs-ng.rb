@@ -1,18 +1,18 @@
 class QuickjsNg < Formula
   desc "QuickJS, the Next Generation: a mighty JavaScript engine"
   homepage "https://quickjs-ng.github.io/quickjs/"
-  url "https://ghfast.top/https://github.com/quickjs-ng/quickjs/archive/refs/tags/v0.14.0.tar.gz"
-  sha256 "928e9406addd99eb8623348f2cfcd916eade9a263c60d42be79bc7aee4ee8453"
+  url "https://ghfast.top/https://github.com/quickjs-ng/quickjs/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "d65f951fa9d347a912a53ec2c151bd0ac79bf73d445788e67670ca1b894c67c4"
   license "MIT"
   head "https://github.com/quickjs-ng/quickjs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "98e26762e04daa7df0bfeefd040bf4a5dc7577b7f0b70ab828a5469933d6f939"
-    sha256 cellar: :any,                 arm64_sequoia: "d5d7d6c5f9d3a8e239ba64dd7407c1eb779f8617026fa597fcb9faf9ca538559"
-    sha256 cellar: :any,                 arm64_sonoma:  "708397c7fee74e6be66139d9a9d58a88fc8ebe11547a5e1b5b63a74875cff022"
-    sha256 cellar: :any,                 sonoma:        "55c8a19c7caf3f8390b1fe28959b742c32c4061c9d3736b26a25c1aba3fe18bc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6351c96a16c15bda44009c7fd2b23dee1e7f91f16a29a25bdcd47ab2d1e4507c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d212e7e31078ffb149ec5116d1736a5fd61f20078114a3baddfa36361d5d0e3"
+    sha256 cellar: :any,                 arm64_tahoe:   "8d0326e987b2597ce42a18e90865672e4df9cf019651bc379cabe4da0bf78aec"
+    sha256 cellar: :any,                 arm64_sequoia: "082b95deeb080c8d31cc153f13ec864f3dc64e1c090fc6eb0241df4ffb280942"
+    sha256 cellar: :any,                 arm64_sonoma:  "aafbd22aef82c3f5695e8657f8376e2ca3c1ae9eb399211796e165a249d0dc05"
+    sha256 cellar: :any,                 sonoma:        "f9856e0970b849488d657874038eec532ea3f7adae02aa150529254a5edd05f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "25514a8a6d60a97c975d599659648188c9ca23d7f91a86bebd0d41be0c30c650"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22b9c9023be0f239784dc4259ec89c29096356da036f3b7e19be45d47246b73b"
   end
 
   depends_on "cmake" => :build

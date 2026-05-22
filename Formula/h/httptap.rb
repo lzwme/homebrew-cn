@@ -6,9 +6,10 @@ class Httptap < Formula
   url "https://files.pythonhosted.org/packages/d0/2c/5bed1aa81b9387a81eb11fa81c5f45fc1c3220b97713a7f7f47b9623b9ba/httptap-0.5.2.tar.gz"
   sha256 "0bd73b5c5b337af2b1545194f2ab2fe3b5f878daf37af67817c1fbfe4d85f09b"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "99fc7618068a1ac48576ddc543a1dd4a0ad6e6a29033bce28a3a385ef3716d0e"
+    sha256 cellar: :any_skip_relocation, all: "56257197e174d40f1f6c2364c5048a6bcc3e13610ec8c23bf58c9838d4784588"
   end
 
   depends_on "rust" => :build
@@ -64,13 +65,13 @@ class Httptap < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
   resource "mdurl" do

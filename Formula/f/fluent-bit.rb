@@ -1,8 +1,8 @@
 class FluentBit < Formula
   desc "Fast and Lightweight Logs and Metrics processor"
   homepage "https://github.com/fluent/fluent-bit"
-  url "https://ghfast.top/https://github.com/fluent/fluent-bit/archive/refs/tags/v5.0.5.tar.gz"
-  sha256 "7bff8842d0b2b24683a10e67a12e336e29f8053edf63fb3d7b6d37323628c158"
+  url "https://ghfast.top/https://github.com/fluent/fluent-bit/archive/refs/tags/v5.0.6.tar.gz"
+  sha256 "bffe424e9010e89f412fbc0bbd054040aa4f447b9f2f20ffd5b42110db9b2fa3"
   license "Apache-2.0"
   head "https://github.com/fluent/fluent-bit.git", branch: "master"
 
@@ -12,12 +12,12 @@ class FluentBit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "94f91eb73183ff946c703059c71b1bc2544490c6a0cf0183a1442a68433fe959"
-    sha256 cellar: :any,                 arm64_sequoia: "7f923d47b560e21fe09b1f6338cb569664e13a92af661ef998d363bda483f17c"
-    sha256 cellar: :any,                 arm64_sonoma:  "d2dfa7d99fa0a982cdc6a2f677c43fd1d7cc7ca92b362891893d3e6e5825dd47"
-    sha256 cellar: :any,                 sonoma:        "e8b9bb4e4e5b841fc268f5ecb98876aec5c2fa43a17b0e3a364ceb5ac6046a2b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75948045035a978f540968829300c39270dfcea7f277b4e0e67a8fa77a2c8849"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4e5bdc6f57de2fc316bf171968af5796e04fc638b54665e6e01d0d15e5f748b"
+    sha256 cellar: :any,                 arm64_tahoe:   "605c58fac9b375951bbea871e540331806cc146d735364e9b083e521a111dcb8"
+    sha256 cellar: :any,                 arm64_sequoia: "5993d3c5cda43bddf7fb21d63af07d7d116871ba576e3eeb4e54087d6709f74a"
+    sha256 cellar: :any,                 arm64_sonoma:  "f4b4fd4b196706f4b910ffcde4b65ddce0860d7bfb8a0b2d82374b7bef596e5f"
+    sha256 cellar: :any,                 sonoma:        "673cb1457a9b71f57c6185503b9664357052ef5c2ceb1386e93b0aba75396dc6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3788354aaaa38e103d9e02b261a47bd5578541bc5470a72c0214d0067e5ff706"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7c555f9335b6e4e21595b9f398dd4c1688c5a48f4d34121d7f68ff46cfecfdf"
   end
 
   depends_on "bison" => :build

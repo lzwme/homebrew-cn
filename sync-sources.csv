@@ -886,7 +886,7 @@ Homebrew-homebrew-core/Formula/c/ccm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cconv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/ccrypt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cctz.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/ccusage.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/ccusage.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cd-discid.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cdargs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cdb.rb, Homebrew/homebrew-core, 0
@@ -8551,6 +8551,7 @@ Homebrew-homebrew-cask/Casks/a/ankerwork.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/anki.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/another-redis-desktop-manager.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/antconc.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/antigravity-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/antigravity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/antinote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/anybar.rb, Homebrew/homebrew-cask, 1

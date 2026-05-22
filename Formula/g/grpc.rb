@@ -5,6 +5,7 @@ class Grpc < Formula
       tag:      "v1.80.0",
       revision: "f5e2d6e856176c2f6b7691032adfefe21e5f64c1"
   license "Apache-2.0"
+  revision 1
   compatibility_version 2
   head "https://github.com/grpc/grpc.git", branch: "master"
 
@@ -20,12 +21,12 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e07f534a474548118ba1879799be8e560678911b0e91bbd52a27e3d6abfde6cb"
-    sha256 cellar: :any, arm64_sequoia: "19e1c98632a105338cffbb308dd587cc04ef3cacee688ff4892af2861602f5d8"
-    sha256 cellar: :any, arm64_sonoma:  "06e533173dfe0d814cee4f83324c43fd5d8dec9b694e1574fe1fd67d438bb21f"
-    sha256 cellar: :any, sonoma:        "97db373cd4f8f885a4ebd22f1e8328a26d6918a2f128c6fc6886de4ea3d39456"
-    sha256               arm64_linux:   "19c584caa0b6853cf6d67c271d3e524826aaea629a3adcfe520f7e65e5c9aec3"
-    sha256               x86_64_linux:  "c7c4c58471157c69b9faf935d2e9d91846af8c68b39015fbcff5670211718bb7"
+    sha256 cellar: :any, arm64_tahoe:   "5d194fbbec4e07bfb7902dd80250ee7974f1fa9adb7b9c2d0d9c89bc5c3c69cb"
+    sha256 cellar: :any, arm64_sequoia: "71c71f6390b0b009acba3a8643bf64822c6783c80380ab694b9b93c91ff0c16f"
+    sha256 cellar: :any, arm64_sonoma:  "308323560699df85e60524d790652751ec3c4754bae413bfee20612c22e9c19d"
+    sha256 cellar: :any, sonoma:        "a04c2fa21fd41ebe0e9386c93562fd9d8e5b175ce631003e2fb23c72b8b51195"
+    sha256               arm64_linux:   "fe39b795a937c90fce0302cd94d564699563c5b4f4125da0bee6fc24a602bd64"
+    sha256               x86_64_linux:  "9e28066484621151c8ba7f140f75768a27da65e367e7e2275d87e6e59ef4ea3c"
   end
 
   depends_on "cmake" => :build

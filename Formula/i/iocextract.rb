@@ -6,16 +6,16 @@ class Iocextract < Formula
   url "https://files.pythonhosted.org/packages/ad/4b/19934df6cd6a0f6923aabae391a67b630fdd03c12c1226377c99a747a4f1/iocextract-1.16.1.tar.gz"
   sha256 "ec1389a76a5083f643652579610e8313d27ed5821fc57e7b046c23ddec181d44"
   license "GPL-2.0-only"
-  revision 12
+  revision 13
   head "https://github.com/InQuest/iocextract.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f03ba0b32a33f7d7ff7fab111ce7a5d2b01b77f811c63681a7408fd85869e3c8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a98beab58fb5b82b234c225094ae229255652f5427acd45dc1073a633ba6b3a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d7da28b1dc8a4b40499ba05b4b88395b54f341f392c0d1f109b1cb70192309f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e48cce6e41b10514c61ec89f008574e1daf7a091faed131cb714146c7f5956d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c2c68bf6aaab19009a72c5eb1e6c07a26f489a9c58943b4d72c8da05ce786e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acba31762b7b7b1107997837b36610b3009cd90eeb50839f1a58e04082d7450a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "678eacbff5d7f660daf54559440fd9403ce68f0e09b6e8283a13477eae206434"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39ac7a0731470063b623bc631d871c553d061aeb051fc1a5e9dc9a41ae76c0e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0cbd10bc50b10263673c3d79b52f0f1c744c3dfd14f53d97c9675d0ad0270e11"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4cdb826e2132ccf964fcd9db39b981d0997e2e0f520bee41d085de539b005bd7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2631cfef31b2272dd06cb1c5fb4307cda8e1515fa28a601d79229b44e9a7feae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8325f8fcc14dcf1d40f0992b9fc8ff18b2defa77ba66811944cc2f958a914540"
   end
 
   depends_on "certifi" => :no_linkage
@@ -30,8 +30,8 @@ class Iocextract < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "regex" do
@@ -40,8 +40,8 @@ class Iocextract < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
-    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "urllib3" do

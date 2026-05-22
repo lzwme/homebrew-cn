@@ -6,16 +6,16 @@ class Gcalcli < Formula
   url "https://files.pythonhosted.org/packages/68/b8/c3f3b8c73c9740eeb592e31f3f1092485ce8809fd7137d7c776a0b0d3567/gcalcli-4.5.1.tar.gz"
   sha256 "bbc8d6b9ce40d0be0535ffec3bb3384761400c7fbf1d67716e7d0e5fe9c6f2d5"
   license "MIT"
-  revision 11
+  revision 12
   head "https://github.com/insanum/gcalcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "276c18e6d747e4bff5a0660baa173683c345ee1b771c7c92b8ee27d2ef3c348a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44853706a12383b6c901a16792588b678daee054c89f3b6ae266e1d9b470aedc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62874551f2dc35cd5ea024d55a34ff57861bef30258d85276cb6d577ddff2dc2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a7f00a3bd2b67b6b1060e3bd616dbd3d4f58a3eea06b2c0668ac9da3671d5a17"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be4d04d72b10abd6a6cb87eb2ac3813d1d939a6b81f8460eb8cb7ec653ae6de0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09d7655f482d0687c5908d70563823fa622fa959285978c1065d16c11d01e231"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0d428a140bced7a29ab6a5516d2fcebbcb8455189caeca8d1473c96496c85b6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b20179d2adf43fba2b1e84d154d44192e239b35150654685291d8ebf0d09122b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6a0b7edf38c2f44b7cb3d6365eec5fee64a6fc8851616f31a7cd3da22341bcf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dd94828a21578d470e6a6bb73b67d658f3a9824e0e503b95793c28184add7cf8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fd08e638029d6c9196d3a45cd91d39b29b555a7defdbdb338cef686c5fa72c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4672d2e3245a968cfa4885162a01e223a28d14f99d0e191d2623b759aca36a25"
   end
 
   depends_on "certifi" => :no_linkage
@@ -52,8 +52,8 @@ class Gcalcli < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/d4/f8/80d2493cbedece1c623dc3e3cb1883300871af0dcdae254409522985ac23/google_auth-2.52.0.tar.gz"
-    sha256 "01f30e1a9e3638698d89464f5e603ce29d18e1c0e63ec31ac570aba4e164aaf5"
+    url "https://files.pythonhosted.org/packages/c6/ad/ff781329bbbdc0974a098d996e89c9e1f7024262f9e3eec442fbb9ad1ac6/google_auth-2.53.0.tar.gz"
+    sha256 "e7e6aa16f6bee7b2b264830fd04f08087a1d5a836df516251a5d15327b246c9c"
   end
 
   resource "google-auth-httplib2" do
@@ -77,8 +77,8 @@ class Gcalcli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "oauthlib" do
@@ -102,8 +102,8 @@ class Gcalcli < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/6b/6b/a0e95cad1ad7cc3f2c6821fcab91671bd5b78bd42afb357bb4765f29bc41/protobuf-7.34.1.tar.gz"
-    sha256 "9ce42245e704cc5027be797c1db1eb93184d44d1cdd71811fb2d9b25ad541280"
+    url "https://files.pythonhosted.org/packages/60/fd/5b1491d9e4b586d621c54f4c36b888714164b6875f8d6afa3f9072906a51/protobuf-7.35.0.tar.gz"
+    sha256 "a2efd84605f41e559f1881b0912b44099d0a2ac9bf46b3474823f10fb393b0e6"
   end
 
   resource "pyasn1" do
@@ -127,8 +127,8 @@ class Gcalcli < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
-    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "requests-oauthlib" do

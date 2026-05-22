@@ -6,16 +6,16 @@ class Glances < Formula
   url "https://files.pythonhosted.org/packages/8a/c1/8801d7646a0fd0eea9b1afa047013b6887f29260fd5886b23d15df52c782/glances-4.5.4.tar.gz"
   sha256 "c7fca4ff414d6a2e177fdc5998b982da8bbe8e77168ef0471d4d8f4b6d47b025"
   license "LGPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/nicolargo/glances.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9935bb2b24743bf4f42b476dd27f72cdba035660c96d345011222e3a768460ec"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81ebec3b7ab21ffa9bd5edec4a8084e6a85797b254dbc38da4cd103ee7f1a6e5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fae0cac57fb3bc6d5c9b5b45417c99a13c2ff6c6ffe17866dbd4d203b62db9bd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "722dea48003c25a6cee24d434bffa0fa1c109754461a33162d936b776255035c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5165132d390bde9ac0039313d4bcfacb33261e9fb0eb9453a8a2f62a3fd7f370"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "808b0f0425b8ab70b123fec0e835c245973e3053c389faaa1ec8f68696e6278f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "29d928f81d38a7e874ca5f68b590473251faf75d653d042a03a6cd8d796c8dc2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fdcaefe2efec7e33076e03a94da77ecc5ff5fe41f4ab611ba90d752c09d8e495"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20bdf999224ae0c67f250330ff998e988190097fe738bedce894d0ff1a93210f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cc8c73d0210ade9fb4873206bc0554a646fcda3c3c3b5292899d480bfb22774d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "61ccfa2b6a6698f0b9c3892ac4062402207dec45969f2a988be93c3aabb84691"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75d22d6233dee84c63e266a4f5172495fcc958a9dcb9ab5bc7dd6cc6ff06be27"
   end
 
   depends_on "rust" => :build # for annotated-docs
@@ -44,8 +44,8 @@ class Glances < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "defusedxml" do
@@ -74,8 +74,8 @@ class Glances < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jinja2" do
@@ -129,8 +129,8 @@ class Glances < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
-    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "requests-toolbelt" do
@@ -164,8 +164,8 @@ class Glances < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/1f/93/041fca8274050e40e6791f267d82e0e2e27dd165627bd640d3e0e378d877/uvicorn-0.46.0.tar.gz"
-    sha256 "fb9da0926999cc6cb22dc7cd71a94a632f078e6ae47ff683c5c420750fb7413d"
+    url "https://files.pythonhosted.org/packages/f6/b1/8e7077a8641086aea449e1b5752a570f1b5906c64e0a33cd6d93b63a066b/uvicorn-0.47.0.tar.gz"
+    sha256 "7c9a0ea1a9414106bbab7324609c162d8fa0cdcdcb703060987269d77c7bb533"
   end
 
   resource "ws4py" do

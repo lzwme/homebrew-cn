@@ -1,6 +1,6 @@
 cask "granola" do
-  version "7.227.6"
-  sha256 "5d558a7565f1ccb1b9d3b41165916a4a0198c0351faea0829ff7a843af35a437"
+  version "7.255.6"
+  sha256 "4b83958195692e068378b1962d5c0ccd707650567acda4926d5b92d3283cb83e"
 
   url "https://dr2v7l5emb758.cloudfront.net/#{version}/Granola-#{version}-mac-universal.dmg",
       verified: "dr2v7l5emb758.cloudfront.net/"

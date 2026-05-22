@@ -6,6 +6,7 @@ class KnotResolver < Formula
   url "https://secure.nic.cz/files/knot-resolver/knot-resolver-6.3.0.tar.xz"
   sha256 "b87306197f7436b49079c633364bc5df71a393236fb25e9fce7d04480bc7518e"
   license all_of: ["CC0-1.0", "GPL-3.0-or-later", "LGPL-2.1-or-later", "MIT"]
+  revision 1
   head "https://gitlab.labs.nic.cz/knot/knot-resolver.git", branch: "master"
 
   livecheck do
@@ -14,12 +15,12 @@ class KnotResolver < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f1fd52d337afe9aca1610dfbd0c6cb99e97baab56d6c0646e4de2a7a6b31e18b"
-    sha256 arm64_sequoia: "1e8451ffdd19fed73a06ef06dc7765b46a2301e8efef2f8478a19a16ce52f1f2"
-    sha256 arm64_sonoma:  "baee416c5509faf5facad958749aba9a9aec61b91a016b987d1ee5421ac27f36"
-    sha256 sonoma:        "0eb382b2809cc20eb1cf36fa4c1a3103fcf4164a75c276f93974f4dab30cb716"
-    sha256 arm64_linux:   "2a133f172581f8b1b0c6d523c775fbc11242bba0f7134d281c947bc0fb468c7d"
-    sha256 x86_64_linux:  "ad36b3192b33b7b89dc95550ce3eab75e062fab072db163a2f408ed346951880"
+    sha256 arm64_tahoe:   "f56559a52a45a318c6a67dc1af918bb5beaaef55df7ff1d5f97e427140c4227d"
+    sha256 arm64_sequoia: "a9ecbcdae8bed138b0f9ee977249b52fe79f061f5eae30a5e66038c53236e957"
+    sha256 arm64_sonoma:  "11fa6c0eaa79faf2d05713e82f5880555de0523ae88d121fd08f4c7bb9ad09c3"
+    sha256 sonoma:        "ee9bb80327cbcbaec6071332cf43d7eb0ff6acf98f67c01fb8479b71884da053"
+    sha256 arm64_linux:   "4979e353f638a743928d5bd1ef5fc7067381478945565e3702e57483c0f5fdca"
+    sha256 x86_64_linux:  "4b2a69ae64dc434850f994ca731b92d627eda19dee4d827a3fa1443f1c8ea8d7"
   end
 
   depends_on "meson" => :build
@@ -73,8 +74,8 @@ class KnotResolver < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jinja2" do
@@ -98,8 +99,8 @@ class KnotResolver < Formula
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/9e/da/e9fc233cf63743258bff22b3dfa7ea5baef7b5bc324af47a0ad89b8ffc6f/propcache-0.4.1.tar.gz"
-    sha256 "f48107a8c637e80362555f37ecf49abe20370e557cc4ab374f04ec4423c97c3d"
+    url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
+    sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
   end
 
   resource "pyyaml" do
@@ -123,8 +124,8 @@ class KnotResolver < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/23/6e/beb1beec874a72f23815c1434518bfc4ed2175065173fb138c3705f658d4/yarl-1.23.0.tar.gz"
-    sha256 "53b1ea6ca88ebd4420379c330aea57e258408dd0df9af0992e5de2078dc9f5d5"
+    url "https://files.pythonhosted.org/packages/79/12/1e8f37460ea0f7eb59c221fdaf0ed75e7ac43e97f8093b9c6f411df50a78/yarl-1.24.2.tar.gz"
+    sha256 "9ac374123c6fd7abf64d1fec93962b0bd4ee2c19751755a762a72dd96c0378f8"
   end
 
   def install

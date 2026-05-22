@@ -3,19 +3,18 @@ class CryticCompile < Formula
 
   desc "Abstraction layer for smart contract build systems"
   homepage "https://github.com/crytic/crytic-compile"
-  url "https://files.pythonhosted.org/packages/f4/cb/669ed02fbfe17091998f52a7e3326ac276409117ea10a2c36b2a852a22f9/crytic_compile-0.3.11.tar.gz"
-  sha256 "d4e2253d5d81ec3a75deb3ab9fc2c2d2db56e835001cf07f3703911d74b56716"
+  url "https://files.pythonhosted.org/packages/00/61/2d8ceccc95ec62fbcb4f65b0c2e3e8536f68eae4f73f6a7a0bb0f926de03/crytic_compile-0.4.1.tar.gz"
+  sha256 "4b777728af8d84fbbdf3188dd054443bd97791561043014f906700a8fcc6c945"
   license "AGPL-3.0-only"
-  revision 6
   head "https://github.com/crytic/crytic-compile.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c6ea374ab5ebc92a75ccb98ff1f219fb7f06964ee1bd3c5a13fd3bb4f9732110"
-    sha256 cellar: :any,                 arm64_sequoia: "9a852022e679ba440d72d140c1f64666fdbe79799efb66f3714fd7ca2ce8cfe7"
-    sha256 cellar: :any,                 arm64_sonoma:  "286840e1cf89b266a81102aaafbb425f12f5db2a2311cd2040abee8b53b466fc"
-    sha256 cellar: :any,                 sonoma:        "8e8c9efa1867156d5e72c5afd112767f105a5300ee6210cede519701ced34a59"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c52ef611e9558e2befd545b96e87e3a40b27870a5935eca0990dacfa6711922d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "407d0fbbb0ed83ae75986b3530e627c1783ce42ac87f63fc8de92081150a4ead"
+    sha256 cellar: :any,                 arm64_tahoe:   "58c9d0e677660fc95222e15fb5082841f4535607ef8a6cdda4ad2f97d8a67126"
+    sha256 cellar: :any,                 arm64_sequoia: "c28439d9a2e49a8dac26d60880685dca48914e3a3258adfa5c645c288d8c45ee"
+    sha256 cellar: :any,                 arm64_sonoma:  "bf65c50a7a241973df13fdb1621ea48f3fbbf1b0ca7780dee202f92c300666e8"
+    sha256 cellar: :any,                 sonoma:        "34b8d9f599bf86659e1bcf75ff6f2ccb085328a9b3c95322f2f909539f449d02"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f389ac6d7347ab3724c329c01702452ab0ec926de9e36b8a9b09474686a7d6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a6c05a39e47a6b02c3fa9b53a3de73bda0b8615350411b955b4113681c33d9e"
   end
 
   depends_on "rust" => :build # for `cbor2`

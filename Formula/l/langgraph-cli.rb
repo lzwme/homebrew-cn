@@ -6,14 +6,15 @@ class LanggraphCli < Formula
   url "https://files.pythonhosted.org/packages/5d/94/6864c94fcc998d7b72f60a4166222f003483426446a10979c0215220dd65/langgraph_cli-0.4.26.tar.gz"
   sha256 "d81867e45bc198f4c61a4064e8f347aba9e6ffa256db387d8daae594c59bf0f6"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5b4bd9fc5a1976e59e6f30f88b609510bd598e9588475cf45c90aa3349a3c3e9"
-    sha256 cellar: :any,                 arm64_sequoia: "fdfa0655d05b80d6266593ccfd3c38b73dba6bfa1b7cedc35cd9cf32c80c1025"
-    sha256 cellar: :any,                 arm64_sonoma:  "6055993cba9b73b41d32eacf6822409e98dfe61034de4cf02188c0d0e90f3276"
-    sha256 cellar: :any,                 sonoma:        "6bce3ebf9a8889d030a6ac54b5aa94137d61c426361e2cb88cf56eb21e831e57"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef975cbcb9af6f0fd49076c40c790c3d5dc14c6954c5ae556a353f811b028db4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0331d5713fc699f0b7e03f8b3c93f0a3e9137dfd043e5f22ac0954050f07ada"
+    sha256 cellar: :any,                 arm64_tahoe:   "225433e38f7e97c26c7b17cd06bc53021aaa57c4099926354235bb785e0740af"
+    sha256 cellar: :any,                 arm64_sequoia: "25e7e10b1632783039c4b2fb499b5c0d1a4c1cab6d600c5a84d74aa19c0d0590"
+    sha256 cellar: :any,                 arm64_sonoma:  "bdd8e138ceeb13e2b919c27aa90a82e354e690d543044ab2ff96d5a1b57d775a"
+    sha256 cellar: :any,                 sonoma:        "3b709c06b348dc18f95c4e887d8fbc2450e69032f8329cbb48fd7d1d416400fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "168d0f94d0d1357286a4c88ccd93982bff3de489b6fe948fb413336883123713"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65e9b76f9095e7f0c52eed6a56322ab912d4b2b5a267d0d26da21314b5a40a2b"
   end
 
   depends_on "rust" => :build # for orjson
@@ -29,8 +30,8 @@ class LanggraphCli < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "h11" do
@@ -49,8 +50,8 @@ class LanggraphCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "langgraph-sdk" do

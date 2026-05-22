@@ -6,18 +6,18 @@ class HomeassistantCli < Formula
   url "https://files.pythonhosted.org/packages/42/9b/9b92e5db7510336aadfe20481eee705d09f01f2a445683cea04140015895/homeassistant_cli-1.0.0.tar.gz"
   sha256 "de7cc54de6f2a8bdbde3bfea75913f35ee82faa17fe272e840a2da0c93b1a7df"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/home-assistant-ecosystem/home-assistant-cli.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6762358727f8a1e08546c3da33d6e8b6e7d97b269946d28e73cb1779c317174c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e36a4355e864ebf3ee169f81b4f7cc966fb65efbfd552bac6701108dda565ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77e405e33478036fcffa5c76a4fed161d9b92599ed0db6622738b346123bc47b"
-    sha256 cellar: :any_skip_relocation, tahoe:         "fc5a5a2c0f554f7e2c3c917a003e9af8ad8ae697a3f1644ab4163c51f58a94cf"
-    sha256 cellar: :any_skip_relocation, sequoia:       "080e94b2b085a57cd196ad53a37786dd69ebaa7e5900e1d7361174e2bc9b4001"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e88c0d20515d3e3f7b29b535886ea9b7d8f83f338407d213128cce097f299435"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d69e332f949efa626ca83e9b1a049ba433c3fc1310c34c929a5124b789534eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4954beb480deae7c180a5280ed2d3ae59a3920131d555de6782ee20be1e5ce96"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2dafa82d339968cdcf4e9c4712722bf50a6ad58ef3fe82e5a244d32569a10b1f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f502ad8bca455f92fb7c157d660635b46d496b631cbf60d730de3a81a0f1d3c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab6a67ae14702caa1b1f7fede3216fef10d567abab85b9f562ba97055ab7ada2"
+    sha256 cellar: :any_skip_relocation, tahoe:         "8a4a6ebd23a3494281cb75ac5be91d4bbec767865b230c3f98513c54528ee2c6"
+    sha256 cellar: :any_skip_relocation, sequoia:       "1eb7f2b174c7111ebf84efcf985f92fcbe6abc0994c1da8f0c33555cd26c75d7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f6ec44b0d96478d8558f2efddc95264322b9c4907f9b97dc19cd243c26315b80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8dacf83eeefabb98db85e10604934509529d2cebd1a5e9eda3fa8e12d1e77071"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75877ad202aa15c5bd7d80a974e0ef6f492fff8373c4f0ad13a6ae8ad0a23ef4"
   end
 
   depends_on "certifi" => :no_linkage
@@ -51,8 +51,8 @@ class HomeassistantCli < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "click-log" do
@@ -71,8 +71,8 @@ class HomeassistantCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "ifaddr" do
@@ -131,8 +131,8 @@ class HomeassistantCli < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
-    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "ruamel-yaml" do
@@ -161,13 +161,13 @@ class HomeassistantCli < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/23/6e/beb1beec874a72f23815c1434518bfc4ed2175065173fb138c3705f658d4/yarl-1.23.0.tar.gz"
-    sha256 "53b1ea6ca88ebd4420379c330aea57e258408dd0df9af0992e5de2078dc9f5d5"
+    url "https://files.pythonhosted.org/packages/79/12/1e8f37460ea0f7eb59c221fdaf0ed75e7ac43e97f8093b9c6f411df50a78/yarl-1.24.2.tar.gz"
+    sha256 "9ac374123c6fd7abf64d1fec93962b0bd4ee2c19751755a762a72dd96c0378f8"
   end
 
   resource "zeroconf" do
-    url "https://files.pythonhosted.org/packages/67/46/10db987799629d01930176ae523f70879b63577060d63e05ebf9214aba4b/zeroconf-0.148.0.tar.gz"
-    sha256 "03fcca123df3652e23d945112d683d2f605f313637611b7d4adf31056f681702"
+    url "https://files.pythonhosted.org/packages/c5/22/d1784ebd2f1552673198625c086c08eb729e3f2571907ba93781c2640374/zeroconf-0.149.9.tar.gz"
+    sha256 "f4c161ca89681f170790916159e2d71841250ff55917d621d9432faec395e4e8"
   end
 
   def install
