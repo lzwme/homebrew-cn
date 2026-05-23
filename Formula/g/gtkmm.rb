@@ -24,6 +24,9 @@ class Gtkmm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b8ee9aae96d13469d2ca251d59582d5577122d69769f9038e62b1792c08c861"
   end
 
+  deprecate! date: "2026-05-22", because: :unmaintained
+  disable! date: "2027-05-22", because: :unmaintained
+
   depends_on "pkgconf" => [:build, :test]
 
   depends_on "atkmm@2.28"

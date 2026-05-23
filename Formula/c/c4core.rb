@@ -1,17 +1,17 @@
 class C4core < Formula
   desc "C++ utilities"
   homepage "https://github.com/biojppm/c4core"
-  url "https://ghfast.top/https://github.com/biojppm/c4core/releases/download/v0.2.12/c4core-0.2.12-src.tgz"
-  sha256 "7b59eafe79a31413b974065d12bab28eaea55a01255c7127e26832d98bccf7be"
+  url "https://ghfast.top/https://github.com/biojppm/c4core/releases/download/v0.3.0/c4core-0.3.0-src.tgz"
+  sha256 "47a5634c785f84a6bef07c04c3cc3c063ff61c5c7554b95c35298712e2f306fd"
   license all_of: ["MIT", "BSL-1.0"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c42087bbdf8afd2aec78d2ee2cf4c6fe435c83efa0156d16b658eaf97ee1f096"
-    sha256 cellar: :any,                 arm64_sequoia: "2291c1cc7c314e7c489eeb19447ac8d880bb522316801299c578f57d5aa6ee8f"
-    sha256 cellar: :any,                 arm64_sonoma:  "083dde3e0202406a814c751160c26ac8405c546c6500b7e262abecd7ea90286f"
-    sha256 cellar: :any,                 sonoma:        "2f353aea87a810ffaa91c959c0fe60e27184463eb4db94a0bdd67b53a5d61baa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec8e71a11f619d06a18d2accea21af933b855fdc5627d3b640b326f4475dc7c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "982dbacb2332d43ff89154989ef5bdc894514fb512d9e9b38717593d74ab2097"
+    sha256 cellar: :any,                 arm64_tahoe:   "daf4b936378ccef4c49ca3580556569e1d3fbb864d32ee5b898e0357d6896656"
+    sha256 cellar: :any,                 arm64_sequoia: "89bae5b4f4575e1d80d30a133931cb764405191abb52abbb11d7de00b3a1df42"
+    sha256 cellar: :any,                 arm64_sonoma:  "8368dbd011f108f58f1740839413e564dc99fed22c6dd30a26c464e8186fcb35"
+    sha256 cellar: :any,                 sonoma:        "60f0bd983ac7706ca59a367655cd612bca99facac7505f4140c265a0f335d76e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2dde5241446d5b7df18a6d9e04ce1b1858ae67f32eebece416b2dcf91f7400b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dbaff4f4a7bf0e53d8c1bdaf6181ed431b62286f80934f536b7492697a5faef"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -1,8 +1,8 @@
 class Less < Formula
   desc "Pager program similar to more"
   homepage "https://www.greenwoodsoftware.com/less/index.html"
-  url "https://www.greenwoodsoftware.com/less/less-692.tar.gz"
-  sha256 "61300f603798ecf1d7786570789f0ff3f5a1acf075a6fb9f756837d166e37d14"
+  url "https://www.greenwoodsoftware.com/less/less-702.tar.gz"
+  sha256 "242a64c00f02d96f8ee208cf638ae1728b727c7f5fdf82a7d4f4cae32fb084e2"
   license "GPL-3.0-or-later"
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class Less < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b722c9aa81a00fae94f5db080f405fe169691d739adfe87773538f911b4f7f6b"
-    sha256 cellar: :any,                 arm64_sequoia: "49025d79f5e34f8d10a247b84c108113473d7bc4286f3cedcfdf527f6d7b006a"
-    sha256 cellar: :any,                 arm64_sonoma:  "d3ad99fc4a0d87f3b9d8fbb6ae632f9b346edcade504df137b237c8e2feaccbb"
-    sha256 cellar: :any,                 sonoma:        "11411cbab4a546b0017adcc73aad460a36698512f8c7db96e7a483667cf8ccf8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7aa23eb672f228b03513584c06a12a182bfb31bc48ba23bda1d46b3e8c7eaba0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4ebb640487e5fde5b887326fe22373eafc0af64bbc9da3ad9d03a5d65c8e92b"
+    sha256 arm64_tahoe:   "ba3d1a4959f48493e0f62dd5ae2d210a52b44d08a1025c3117a408712ff61b8e"
+    sha256 arm64_sequoia: "3c77d010172cb2fa00f9c483483df5f879e111d0b60af97f7ae8dbff18203cd6"
+    sha256 arm64_sonoma:  "7c4b6c8c1eb4030d224c70609339ace52d9aad2792052a65b45438c3fbbfd128"
+    sha256 sonoma:        "6fc61e79fecad590a141626aad341200c0a84141ba748cffb987e806bba5f04a"
+    sha256 arm64_linux:   "d6b37c701690c6e9ba4803be022830c1dcc21c49be2a110d1ad0de8e0f589c4e"
+    sha256 x86_64_linux:  "b18c5b761c425510ba9bec59c612a4eeda2795c33ff8f22e943632e130dbc7fc"
   end
 
   head do

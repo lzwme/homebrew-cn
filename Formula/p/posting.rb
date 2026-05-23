@@ -6,14 +6,15 @@ class Posting < Formula
   url "https://files.pythonhosted.org/packages/5e/81/8e3c84cba1f0e83e0e2d0263e6cd2370ec66ebedfd58fa9fd330095965e1/posting-2.10.0.tar.gz"
   sha256 "4563f7c34bb0827a74b097490189f925fab825b1096e787c22171657531147f1"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d6f1531d0f2dba63b6b5793b7f73ccface81d54df2ed46664373a5ce5193d35c"
-    sha256 cellar: :any,                 arm64_sequoia: "80fcdbf6933ad1e16e6f1575b7208ca7fd6f89d5a4782734a5f3aa6fa279b16e"
-    sha256 cellar: :any,                 arm64_sonoma:  "0b8d9a035962bc89be89db130a9da2338718d316cc4feccc2355dd37b27697bc"
-    sha256 cellar: :any,                 sonoma:        "76993d31ee596716ee96385ae4b8b99954d788f56807e9a64b1540e4d0e71985"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f096abd53ddf7a3ad63d6c598d958044e4da78dce7980e8d2a586eca8bb893b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d900293ac70d31530853f49743aafb83224e78d324cf587a1c73013c378f039a"
+    sha256 cellar: :any,                 arm64_tahoe:   "ede47906169e5af227a5859326c09bc1a865d301649f9a134c4f333ab9486e8e"
+    sha256 cellar: :any,                 arm64_sequoia: "b0bd4272077714fd93c8dfd52be04f057f63da89b98e1567126f2ae30b83c4a7"
+    sha256 cellar: :any,                 arm64_sonoma:  "4be2a91fb1ac9525efaeda4bf7a6e46c5fed92e601eb91761a05c43728cead93"
+    sha256 cellar: :any,                 sonoma:        "cf65e69c4cdad097450701fc3e67b3f4cf3f8b8d3ea4adc40ee7cb8340921a78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a56f685d5ffe45cdb1ddd6797b42af303b6d04bc85ac3b84c0dd79f3a31e6ccb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bcb33eccc3646ecef05229b70a7ee92241b46d6217a44b782610e43734e02fd"
   end
 
   depends_on "cmake" => :build
@@ -39,8 +40,8 @@ class Posting < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "click-default-group" do
@@ -64,8 +65,8 @@ class Posting < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "linkify-it-py" do
@@ -74,13 +75,13 @@ class Posting < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
   resource "mdit-py-plugins" do
-    url "https://files.pythonhosted.org/packages/b2/fd/a756d36c0bfba5f6e39a1cdbdbfdd448dc02692467d83816dff4592a1ebc/mdit_py_plugins-0.5.0.tar.gz"
-    sha256 "f4918cb50119f50446560513a8e311d574ff6aaed72606ddae6d35716fe809c6"
+    url "https://files.pythonhosted.org/packages/59/fc/f8d0863f8862f25602c0404d75568e89fb6b4109804645e5cdfb1be5cf56/mdit_py_plugins-0.6.1.tar.gz"
+    sha256 "a2bca0f039f39dbd35fb74ae1b5f998608c437463371f0ff7f49a19a17a114d0"
   end
 
   resource "mdurl" do
@@ -94,13 +95,13 @@ class Posting < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/19/56/8d4c30c8a1d07013911a8fdbd8f89440ef9f08d07a1b50ab8ca8be5a20f9/platformdirs-4.9.4.tar.gz"
-    sha256 "1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934"
+    url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
+    sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/52/6d/fffca34caecc4a3f97bda81b2098da5e8ab7efc9a66e819074a11955d87e/pydantic_settings-2.13.1.tar.gz"
-    sha256 "b4c11847b15237fb0171e1462bf540e294affb9b86db4d9aa5c01730bdbe4025"
+    url "https://files.pythonhosted.org/packages/07/60/1d1e59c9c90d54591469ada7d268251f71c24bdb765f1a8a832cee8c6653/pydantic_settings-2.14.1.tar.gz"
+    sha256 "e874d3bec7e787b0c9958277956ed9b4dd5de6a80e162188fdaff7c5e26fd5fa"
   end
 
   resource "pygments" do
@@ -124,8 +125,8 @@ class Posting < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
-    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
+    url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
+    sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
   end
 
   resource "textual" do
@@ -224,8 +225,8 @@ class Posting < Formula
   end
 
   resource "watchfiles" do
-    url "https://files.pythonhosted.org/packages/c2/c9/8869df9b2a2d6c59d79220a4db37679e74f807c559ffe5265e08b227a210/watchfiles-1.1.1.tar.gz"
-    sha256 "a173cb5c16c4f40ab19cecf48a534c409f7ea983ab8fed0741304a1c0a31b3f2"
+    url "https://files.pythonhosted.org/packages/cd/41/5e1a4bb12aac5f1493fa1bdc11154eca3b258ca4eba65d39c473fe19d8e9/watchfiles-1.2.0.tar.gz"
+    sha256 "c995fba777f1ea992f090f9236e9284cf7a5d1a0130dd5a3d82c598cacd76838"
   end
 
   resource "xdg-base-dirs" do

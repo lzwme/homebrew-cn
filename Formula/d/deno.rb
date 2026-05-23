@@ -1,19 +1,19 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.com/"
-  url "https://ghfast.top/https://github.com/denoland/deno/releases/download/v2.7.14/deno_src.tar.gz"
-  sha256 "617bc7247da4c8b031e3f155e10bfcb085ddd8f51625a73318dfd02fa5e939d0"
+  url "https://ghfast.top/https://github.com/denoland/deno/releases/download/v2.8.0/deno_src.tar.gz"
+  sha256 "63873c643e516f10f20d5708e271ed55186a02cef04f5df632c987a91fbd25ac"
   license "MIT"
   compatibility_version 1
   head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c173b2146fa9e32723bdaa17d09064effc6983e49ae43ece4f3ac7d01dad403a"
-    sha256 cellar: :any,                 arm64_sequoia: "d88372bf695f4379cbc8cd060c5c523cb2f83e67cbfd6065a19d7579dbde5eec"
-    sha256 cellar: :any,                 arm64_sonoma:  "54d8559067a5d4cdcc31a67b9d75f2476ce25db00ab4d33d530347f279c47fb2"
-    sha256 cellar: :any,                 sonoma:        "dfb4f1efc615757e5ece82ec58aae9443ba44592edd095e2fe105ae42f5b6158"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "97993bdecbd458f1abca22c1031883e25f90f60c1cf866536e350d9c098a0752"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "921b5f93391c4995d9b853100a10a35403fa57e1b646fd718ed1a11e7ee942cc"
+    sha256 cellar: :any,                 arm64_tahoe:   "938933f4ed577979d25ae24074813c63ea109478f2e4aa7e53b864050d3cdcee"
+    sha256 cellar: :any,                 arm64_sequoia: "fe4ef771634b708e60edd0285c1b381dd39c927033c311bc6cdd15271d31f1c5"
+    sha256 cellar: :any,                 arm64_sonoma:  "5380c57b00ed7c4b2bb10d9f241fa0a58c2e6f11313fe7694d860a28d924412f"
+    sha256 cellar: :any,                 sonoma:        "c34b50160a2f0107faa4e4f371114ec94682ef994f808acf3389b78a99a6045a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26f01ad27e641f981a49e3008f42d635acec218a0276de3358dc400ba473f46f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bc856fce50831d9acbdb68f158ff54afffde9e1c8c16168e8ee89df98602a4d"
   end
 
   depends_on "cmake" => :build
@@ -47,8 +47,7 @@ class Deno < Formula
       s.gsub!(/^lto = true$/, 'lto = "thin"')
 
       # Avoid vendored dependencies.
-      s.gsub!(/^libffi-sys = "(.+)"$/,
-              'libffi-sys = { version = "\\1", features = ["system"] }')
+      s.gsub!(/^libffi = "(.+)"$/, 'libffi = { version = "\\1", features = ["system"] }')
       s.gsub!(/^rusqlite = { version = "(.+)", features = \["unlock_notify", "bundled", "session"/,
               'rusqlite = { version = "\\1", features = ["unlock_notify", "session"')
     end

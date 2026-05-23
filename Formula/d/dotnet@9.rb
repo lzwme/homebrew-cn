@@ -13,11 +13,13 @@ class DotnetAT9 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d0210ac9abe86301be17f2ef799950b29e673048a5e686c1eff4129f25cf07a5"
-    sha256 cellar: :any,                 arm64_sequoia: "8c50dc8fff007cc4c89e56249b168e98c7733cbcb57ad065a537c5081561035e"
-    sha256 cellar: :any,                 arm64_sonoma:  "0b8c0f69051f57cd3339a6173cf28b65d575ec1acf16f8c3b0613b5abc5a4abc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f3fedb5b3fdb90696e1b19e25eef83ef312d5d4656f77d91f7f17e12094bfb2"
-    sha256                               x86_64_linux:  "91b020b30ee7c6e901e227c70413a68a85adc96c7e7d52dcae7c53155ec6573e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "9be59e13a389ea6aea15badc5a1ef1359fff6e8ab90d3765e43d37126539916c"
+    sha256 cellar: :any,                 arm64_sequoia: "7b3229e5c80b6c645c6b69ea4294fea4203ee7cb32a310be974528683d764e7c"
+    sha256 cellar: :any,                 arm64_sonoma:  "2d62e8a2c80cb8148c0a05e13735eacb8695affaffff3e8a16d12dbc4389eafd"
+    sha256 cellar: :any,                 sonoma:        "938c0929a7e46e06ad23aae7d3909a88688ffed3ea9b80f18394a8c102909c66"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad0f8b87c442f48592c633a4b69592b6eb7e576bf369346229afd98230140ea3"
+    sha256                               x86_64_linux:  "47ccecbea66200e89901f58d2cb4c27528c91490c47c3e3712fbc42b55fae93c"
   end
 
   keg_only :versioned_formula
@@ -52,12 +54,6 @@ class DotnetAT9 < Formula
         cause "Illegal instruction when running crossgen2"
       end
     end
-  end
-
-  on_intel do
-    # Building on Intel Sonoma or later results in stack overflow on restore.
-    # See https://github.com/Homebrew/homebrew-core/issues/197546
-    depends_on maximum_macos: [:ventura, :build]
   end
 
   resource "release.json" do

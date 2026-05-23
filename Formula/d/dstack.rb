@@ -3,17 +3,17 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://dstack.ai/"
-  url "https://files.pythonhosted.org/packages/f6/38/c0f4526461c396fb6201105694ffa5d1787bedeba7a6a13a674336cea364/dstack-0.20.20.tar.gz"
-  sha256 "98c1cd826d76e9147caec04f55101aecee5fc0f3f2af80c3041e65f7d98b350c"
+  url "https://files.pythonhosted.org/packages/a0/bd/97d6e99f5d4ecf343db1970816892a7ee970d7e3ca74bdb2b46ab826dccf/dstack-0.20.21.tar.gz"
+  sha256 "918ed717b2dbbd1767a1c2502d42349ae9b7ee82cea451df232eac0469a62bba"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e20f11ce0b58b92183e8c6ec15d0c2b79f1529631cdbfe40ad8342c058b190a3"
-    sha256 cellar: :any,                 arm64_sequoia: "6ce31542a404014201da437ee2c44c5bb300c11b3e208c7dd4ba49c414a52e79"
-    sha256 cellar: :any,                 arm64_sonoma:  "1136f076e5b684c22e7ac094d326487567cfc50f7bc0e0484938a1430d41b41d"
-    sha256 cellar: :any,                 sonoma:        "1b4a59558e2f2285da5ea081924c14ff3b6af8505657b260c04f5bd5a0688815"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "322efd007fb6a57c47785de4733fe16a2674e74294803cf709210b4ea06f6cd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5529df23f06fb3fd0457928bdff73e898ef8720f323dacb0dee1734ef9a786b"
+    sha256 cellar: :any,                 arm64_tahoe:   "68b01e5371749ec7474f9918dfc0e54db1137effe4af702ad38efea3c39fc35b"
+    sha256 cellar: :any,                 arm64_sequoia: "c173da7dab4a16176e722afb7a93ddae4dd72dd3f6a3a94f7580c32e19fdf168"
+    sha256 cellar: :any,                 arm64_sonoma:  "837e6b4840152d5985cc6bc00ee10c059ec1b595819f051d8b41a26392557954"
+    sha256 cellar: :any,                 sonoma:        "8d03efe55eabec9fd5e1b2c72bde614e7c62a4e9fc12b371df1f325b239e60fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "09af5dc59c75280f273df03c453d9c6ace8d2d2d5052a00b490522e919a1255a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28322adbbfe013c5885bbb67cfa30a7ae3146014a9a989f29ffeb90bd0c808ed"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -140,13 +140,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/c5/a8/5422bd25bd2520a6122cb82b2dfa280c66e380102533761b96e7a10f1a4d/boto3-1.43.8.tar.gz"
-    sha256 "d1235602d715c727c1923ef4bcdb5612a20575a9a5e4f2db00d571e0ea1f85fc"
+    url "https://files.pythonhosted.org/packages/67/2f/c4159fa45079b41f11ad17d8c5df8e1d10169b94d1e4240df5be116d3f0a/boto3-1.43.12.tar.gz"
+    sha256 "4a60cdf02c52cb0a60f8dbc986142ce2c31e87e3df1438ffe6755b83008f3e4e"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/1c/bb/7c1f5d12e1fbaf88a03d504bfa2f03fa6913f127051a7b121fe3bcaadefb/botocore-1.43.8.tar.gz"
-    sha256 "611ad8b1f60661373cd39d9391ff16f1eaf8f5cb1d0a691563a4201d1a2603ce"
+    url "https://files.pythonhosted.org/packages/6d/a1/95ec376c2300e605225998619c46f7093c515710b9d6d65f891f126f32b6/botocore-1.43.12.tar.gz"
+    sha256 "7608ecd51687132e22aa8b82acb89a5917b1b68ec0563c25d82c3e16adab9bc0"
   end
 
   resource "cached-classproperty" do
@@ -165,8 +165,8 @@ class Dstack < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "cursor" do
@@ -210,8 +210,8 @@ class Dstack < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/d4/f8/80d2493cbedece1c623dc3e3cb1883300871af0dcdae254409522985ac23/google_auth-2.52.0.tar.gz"
-    sha256 "01f30e1a9e3638698d89464f5e603ce29d18e1c0e63ec31ac570aba4e164aaf5"
+    url "https://files.pythonhosted.org/packages/c6/ad/ff781329bbbdc0974a098d996e89c9e1f7024262f9e3eec442fbb9ad1ac6/google_auth-2.53.0.tar.gz"
+    sha256 "e7e6aa16f6bee7b2b264830fd04f08087a1d5a836df516251a5d15327b246c9c"
   end
 
   resource "google-auth-httplib2" do
@@ -275,13 +275,13 @@ class Dstack < Formula
   end
 
   resource "gpuhunt" do
-    url "https://files.pythonhosted.org/packages/d8/18/0ca48a8a424b96c8600caa93a42052cf64ec9cc3a9512966f7c42824d2ac/gpuhunt-0.1.21.tar.gz"
-    sha256 "8f056de208c484ead0a55d38a88ad5054d8d77c48403257535696da7e07584ec"
+    url "https://files.pythonhosted.org/packages/5e/f3/fb534abbd60979441452136b4bf672902169a148fe794be19202f5c60534/gpuhunt-0.1.22.tar.gz"
+    sha256 "fc1f72b54104f0f334d4e0e6874e82d81f1b736ec67922ffcb7d5fb39d68b498"
   end
 
   resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/3c/3f/dbf99fb14bfeb88c28f16729215478c0e265cacd6dc22270c8f31bb6892f/greenlet-3.5.0.tar.gz"
-    sha256 "d419647372241bc68e957bf38d5c1f98852155e4146bd1e4121adea81f4f01e4"
+    url "https://files.pythonhosted.org/packages/6d/6e/802acd792aebb2256fbbee8cacf2727faaeb6f240ac11008f09eae4414bc/greenlet-3.5.1.tar.gz"
+    sha256 "5a56aeb7d5d9cc4b3a735efb5095bd4b4f6f0e4f93e5ca876d0e2315137b7829"
   end
 
   resource "grpc-google-iam-v1" do
@@ -332,11 +332,6 @@ class Dstack < Formula
   resource "ignore-python" do
     url "https://files.pythonhosted.org/packages/f4/4a/37928a560a345c6efb207452cf81d3c14f25a6d83df0fa5a00752c0c912b/ignore_python-0.3.3.tar.gz"
     sha256 "dc80ac80ace112da6d02f44681b6beb2ccecb68d6ac2b5e1b82d7f84347e1cf6"
-  end
-
-  resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/f3/49/3b30cad09e7771a4982d9975a8cbf64f00d4a1ececb53297f1d9a7be1b10/importlib_metadata-8.7.1.tar.gz"
-    sha256 "49fef1ae6440c182052f407c8d34a68f72efc36db9ca90dc0113398f2fdde8bb"
   end
 
   resource "invoke" do
@@ -410,8 +405,8 @@ class Dstack < Formula
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/fa/fc/b7564cbef36601aef0d6c9bc01f7badb64be8e862c2e1c3c5c3b43b53e4f/opentelemetry_api-1.41.1.tar.gz"
-    sha256 "0ad1814d73b875f84494387dae86ce0b12c68556331ce6ce8fe789197c949621"
+    url "https://files.pythonhosted.org/packages/86/ca/25288069c399be6769159d9fb7b1190b603537d82aad2fa2746a0cc2c8c6/opentelemetry_api-1.42.0.tar.gz"
+    sha256 "ea84c893ad177791d138e0349d6ceebd8d3bf006440900400ce220008dafc372"
   end
 
   resource "orjson" do
@@ -515,8 +510,8 @@ class Dstack < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/82/54/a85eb421fbdd5007bc5af39d0f4ed9fa609e0fedbfdc2adcf0b34526870e/python_multipart-0.0.28.tar.gz"
-    sha256 "8550da197eac0f7ab748961fc9509b999fa2662ea25cef857f05249f6893c0f8"
+    url "https://files.pythonhosted.org/packages/4e/fe/70bd71a6738b09a0bdf6480ca6436b167469ca4578b2a0efbe390b4b0e70/python_multipart-0.0.29.tar.gz"
+    sha256 "643e93849196645e2dbdd81a0f8829a23123ad7f797a84a364c6fb3563f18904"
   end
 
   resource "pyyaml" do
@@ -625,8 +620,8 @@ class Dstack < Formula
   end
 
   resource "watchfiles" do
-    url "https://files.pythonhosted.org/packages/c2/c9/8869df9b2a2d6c59d79220a4db37679e74f807c559ffe5265e08b227a210/watchfiles-1.1.1.tar.gz"
-    sha256 "a173cb5c16c4f40ab19cecf48a534c409f7ea983ab8fed0741304a1c0a31b3f2"
+    url "https://files.pythonhosted.org/packages/cd/41/5e1a4bb12aac5f1493fa1bdc11154eca3b258ca4eba65d39c473fe19d8e9/watchfiles-1.2.0.tar.gz"
+    sha256 "c995fba777f1ea992f090f9236e9284cf7a5d1a0130dd5a3d82c598cacd76838"
   end
 
   resource "wcwidth" do
@@ -647,11 +642,6 @@ class Dstack < Formula
   resource "www-authenticate" do
     url "https://files.pythonhosted.org/packages/a7/2d/5567291a8274ef5d9b6495a1ec341394ab68933e2396936755b157f87b43/www-authenticate-0.9.2.tar.gz"
     sha256 "cf75fc2ea5effb0f9342d7de7619b736f2a7d4b223331a53e296863a286e9dcb"
-  end
-
-  resource "zipp" do
-    url "https://files.pythonhosted.org/packages/30/21/093488dfc7cc8964ded15ab726fad40f25fd3d788fd741cc1c5a17d78ee8/zipp-3.23.1.tar.gz"
-    sha256 "32120e378d32cd9714ad503c1d024619063ec28aad2248dc6672ad13edfa5110"
   end
 
   def install

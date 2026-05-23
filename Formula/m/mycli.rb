@@ -6,14 +6,15 @@ class Mycli < Formula
   url "https://files.pythonhosted.org/packages/99/6b/1eb91cb05765fa25c9fd11c37e52c515afacaba0f27fd496888197fa2f84/mycli-1.72.1.tar.gz"
   sha256 "c79f00cdda7d8af22bca609ed0a258236d3062469b34311cde15467dbdc5085a"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "21753813ea75baa53aeec46558df6152c6b5d49a494168c9855c102f9c07a8a9"
-    sha256 cellar: :any,                 arm64_sequoia: "a62ea96c58a46ba416a0c6cd94adb771c4d19348347a4a030a2bdc6cec3d916a"
-    sha256 cellar: :any,                 arm64_sonoma:  "588e0f1e3ca24f5854af3e1710659f908b2cc139e662e144771e5196d5596405"
-    sha256 cellar: :any,                 sonoma:        "baf5ce6c449aa71f5b57f9bbe07bcc367d3d1b9d08e082789bb1a6079b293047"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "28ca746403f29753b59ae08d576b95324b7897de42c9cd80596f4d6c39a06719"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc11e0168e7bb34aa42df9dadd3efccd6038d30d59eee76efba805bf3cd07d3d"
+    sha256 cellar: :any,                 arm64_tahoe:   "3e618585907a0e792d231f1c0875f41536973eea3e011bdb2dc51c3d8e1501b3"
+    sha256 cellar: :any,                 arm64_sequoia: "8a2f58ebc017141ef3027cee372e314b5cb6417228757d950f498b40c6795a7f"
+    sha256 cellar: :any,                 arm64_sonoma:  "c13d80dbfaf3bb58b21975ed65834b30895b7d6b7f9f2555ebbe713bcc13d5a9"
+    sha256 cellar: :any,                 sonoma:        "4c61cc594e5e0ab00d8a74d09d17a65a8b747010f9c4ca07fd7d1edecaf43096"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae5d2a3f9c14f50cfe0bffd92037aa1b788cc016715d60b20dbb6621f9e574cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69e233a6bd78d270833478b24918af8b233145e78898439680263812e0706ee5"
   end
 
   depends_on "rust" => :build # for jiter, sqlglotrs
@@ -85,8 +86,8 @@ class Mycli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jaraco-classes" do
@@ -100,8 +101,8 @@ class Mycli < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
-    sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
+    url "https://files.pythonhosted.org/packages/36/cf/ea4ef2920830dea3f5ab2ea4da6fb67724e6dca80ee2553788c3607243d0/jaraco_functools-4.5.0.tar.gz"
+    sha256 "3bb5665ea4a020cf78a7040e89154c77edadb3ca74f366479669c5999aa70b03"
   end
 
   resource "jeepney" do
@@ -110,8 +111,8 @@ class Mycli < Formula
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/6e/c1/0cddc6eb17d4c53a99840953f95dd3accdc5cfc7a337b0e9b26476276be9/jiter-0.14.0.tar.gz"
-    sha256 "e8a39e66dac7153cf3f964a12aad515afa8d74938ec5cc0018adcdae5367c79e"
+    url "https://files.pythonhosted.org/packages/66/b5/55f06bb281d92fb3cc86d14e1def2bd908bb77693183e7cb1f5a3c388b0c/jiter-0.15.0.tar.gz"
+    sha256 "4251acc80e2b7c9b7b8823456ea0fceeb0734dac2df7636d3c711b38476b5a76"
   end
 
   resource "keyring" do
@@ -130,8 +131,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/f4/a1/4d5e84cf51720fc1526cc49e10ac1961abcccb55b0efb3d970db1e9a2728/openai-2.36.0.tar.gz"
-    sha256 "139dea0edd2f1b30c33d46ae1a6929e03906254140318e4608e98fe8c566f2e7"
+    url "https://files.pythonhosted.org/packages/32/50/5901f01ef14e6c27788beb91e54fef5d6204fb5fb9e97402fc8a14de2e32/openai-2.37.0.tar.gz"
+    sha256 "f4bc562cc5f3a43d40d678105572d9d44765f6e0f50c125f63055419b72f4bd9"
   end
 
   resource "pluggy" do

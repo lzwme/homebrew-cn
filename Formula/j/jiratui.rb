@@ -3,18 +3,18 @@ class Jiratui < Formula
 
   desc "Textual User Interface for interacting with Atlassian Jira from your shell"
   homepage "https://jiratui.sh/"
-  url "https://files.pythonhosted.org/packages/90/63/8ee44e6749b6b8a26273dbd20e8a386d36c7709df31aa22993e1070e7b93/jiratui-1.8.0.tar.gz"
-  sha256 "8fc2d83365a1897aef10d0cfff126fd9e7f2d156758dd97070de7b5590629518"
+  url "https://files.pythonhosted.org/packages/8f/d9/8dbcaae220cfd52a18ded521baff36365b9459dcacec09aeddea7ed7eaea/jiratui-1.8.1.tar.gz"
+  sha256 "30e2f0a265ffd7fc81bc2da256b9ea53a2c7e1e88d881544803853ed25c63cc5"
   license "MIT"
   head "https://github.com/whyisdifficult/jiratui.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "27093877c59f02c37e7d8289648f310758e3cf1b8e3051f60c192009e9d6666a"
-    sha256 cellar: :any,                 arm64_sequoia: "d9c1d3622a12f64807c36f2f3905db79b93afdb50c4359c2b09619d94a87088a"
-    sha256 cellar: :any,                 arm64_sonoma:  "5d838f7c94f5b404a195fc4be5215d3142ccdcfab85891bfa84a4cbf32f03549"
-    sha256 cellar: :any,                 sonoma:        "3fc7280426ac46068f5e71932e81e56dd915942c32daf5af7051a76e0d07961a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cec3275b440fe341b518adc258e9cb82a860ed674c0054f542433a27a354468"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83eac44d0059e13015a0cf30c20906bf348081dc270a8404041995035bfb2047"
+    sha256 cellar: :any,                 arm64_tahoe:   "6aecc6e2e9ef8fab11140fa0144584271fbea49ee78609c2c5a5b58611c9a977"
+    sha256 cellar: :any,                 arm64_sequoia: "301c41e0aacdbaf4235e0bf343548e158f58f5ffae85b439ebec5e3545f750d3"
+    sha256 cellar: :any,                 arm64_sonoma:  "bcedb490f9012b79ad3bfd9799e610f7712143ddf4c387bf71d986f0471a11a3"
+    sha256 cellar: :any,                 sonoma:        "6fec167333f8120c8467667ffe06694dc8d0def6a2d9a6056d73b624e432d52d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18c2b3baca6365503c91bd4e544a9c2cb32f05df2f1877e877b73db1a8e71e20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1671d7ddc2585b82d70b562f8844e8a03e6c0726713f5c4d34ad399beff4348"
   end
 
   depends_on "rust" => :build
@@ -45,8 +45,8 @@ class Jiratui < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "gitdb" do
@@ -165,8 +165,8 @@ class Jiratui < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/1c/b3/b62658f6cf808d28e4d16a07509728a7b17824f55a6d3533f017fd4566b0/textual-8.2.6.tar.gz"
-    sha256 "cef3714498a120a99278b98d4c165c278844e73db50f1db039aaabd89f2d1b63"
+    url "https://files.pythonhosted.org/packages/9b/7a/c519db0aba5024f86e71e9631810bfdd6866ed2c8695bd7fa34b90e7ef59/textual-8.2.7.tar.gz"
+    sha256 "658f568ff81e30ed43890c3e07520390e5cf1b4763822006e060656b0a88f105"
   end
 
   resource "textual-autocomplete" do
@@ -265,8 +265,8 @@ class Jiratui < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   resource "xdg-base-dirs" do

@@ -12,6 +12,10 @@ class FregeRepl < Formula
     sha256 cellar: :any_skip_relocation, all: "f68a61801c7e99908489f6339d178107252377a08db65607849027d869df9bd0"
   end
 
+  # Last release on 2015-10-18, last commit on 2019-02-22.
+  deprecate! date: "2026-05-22", because: :unmaintained
+  disable! date: "2027-05-22", because: :unmaintained
+
   # TODO: Switch to `openjdk` on next release.
   depends_on "openjdk@17"
 

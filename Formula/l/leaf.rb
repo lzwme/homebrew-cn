@@ -25,6 +25,7 @@ class Leaf < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "leaf-md", because: "both install `leaf` binaries"
   conflicts_with "leaf-proxy", because: "both install `leaf` binaries"
 
   def install

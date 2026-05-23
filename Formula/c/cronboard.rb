@@ -3,18 +3,17 @@ class Cronboard < Formula
 
   desc "Terminal-based dashboard for managing cron jobs locally and on servers"
   homepage "https://github.com/antoniorodr/cronboard"
-  url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v0.5.4.tar.gz"
-  sha256 "6b3ca130c5772c2d6d664fd376e3ba40d944fe6dce92414f192448684df35e37"
+  url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "6e61df7d6946bad59e0eb4b23eb73e3c9442fa4ba60c66e5d288558728246a6f"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b2d79247b5d4a01a9451139299b865a17c488b01620bc9533d59ae95af53a77a"
-    sha256 cellar: :any,                 arm64_sequoia: "721df9040e33373c750cb385b97091add61b6aeaf963020e6bdc1c3b25b2e8ae"
-    sha256 cellar: :any,                 arm64_sonoma:  "ac5ecb9f130aadc8d9c0c2c0d7d0f86c533fe61e30086d0a3a602430a78a1c40"
-    sha256 cellar: :any,                 sonoma:        "00bb4504ca58ef93aa755b13bb538761c70826f9556359b3783ba4c5ed2c7901"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c8c92309c1d23573556be5ce01add2862357db0a698a55cc1e52d90211c6114"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15be6224c76183858da73a13119072baeeda4bd87efed0a60a89a0b47ee2a5bf"
+    sha256 cellar: :any,                 arm64_tahoe:   "3d9d772377b209773c330eef0aefe86b5be438a2e521d2c1edbfa96ee5e18998"
+    sha256 cellar: :any,                 arm64_sequoia: "134a99903466341c38a995449c0cf4228e616e2f8ff6ae15d8a4b432f2affd2b"
+    sha256 cellar: :any,                 arm64_sonoma:  "32efe95886e5fefb218a6f37688f97fd2c52e14bcf5d66ee8fe29c29bdcf4e20"
+    sha256 cellar: :any,                 sonoma:        "d306043d09d1a7f5100f1168d69f507a2f6d2b6f7aa513db25475818fac3d1d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9503bdf36c3c6e5faae0ec4a1fd2068567ef92b3fc9cbb00ab00e4122038f10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf2bfc94c50cbacffb89e5268a8b4c2b646f53ee9b76c7c641578720ce0b1c57"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -57,8 +56,8 @@ class Cronboard < Formula
   end
 
   resource "mdit-py-plugins" do
-    url "https://files.pythonhosted.org/packages/d8/3d/e0e8d9d1cee04f758120915e2b2a3a07eb41f8cf4654b4734788a522bcd1/mdit_py_plugins-0.6.0.tar.gz"
-    sha256 "2436f14a7295837ac9228a36feeabda867c4abc488c8d019ad5c0bda88eee040"
+    url "https://files.pythonhosted.org/packages/59/fc/f8d0863f8862f25602c0404d75568e89fb6b4109804645e5cdfb1be5cf56/mdit_py_plugins-0.6.1.tar.gz"
+    sha256 "a2bca0f039f39dbd35fb74ae1b5f998608c437463371f0ff7f49a19a17a114d0"
   end
 
   resource "mdurl" do
@@ -107,8 +106,8 @@ class Cronboard < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/62/1e/1eedc5bac184d00aaa5f9a99095f7e266af3ec46fa926c1051be5d358da1/textual-8.2.5.tar.gz"
-    sha256 "6c894e65a879dadb4f6cf46ddcfedb0173ff7e0cb1fe605ff7b357a597bdbc90"
+    url "https://files.pythonhosted.org/packages/9b/7a/c519db0aba5024f86e71e9631810bfdd6866ed2c8695bd7fa34b90e7ef59/textual-8.2.7.tar.gz"
+    sha256 "658f568ff81e30ed43890c3e07520390e5cf1b4763822006e060656b0a88f105"
   end
 
   resource "textual-autocomplete" do

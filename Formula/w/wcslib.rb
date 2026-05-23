@@ -1,8 +1,8 @@
 class Wcslib < Formula
   desc "Library and utilities for the FITS World Coordinate System"
   homepage "https://www.atnf.csiro.au/computing/software/wcs/"
-  url "https://www.atnf.csiro.au/computing/software/wcs/wcslib-releases/wcslib-8.7.tar.bz2"
-  sha256 "792fe05c09544433a9a4ea5480facdbec2da6d28058275b5e9006a1f28c56465"
+  url "https://www.atnf.csiro.au/computing/software/wcs/wcslib-releases/wcslib-8.8.tar.bz2"
+  sha256 "dcd5b952e68016d0e2459e1f0f9866343e78b939635db64429fcf478e1ea4bfc"
   license "LGPL-3.0-or-later"
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class Wcslib < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7862b82a3edb40c92b1db6bd17d33b150ff46b3354a6072dea7c53c4a21875d8"
-    sha256 cellar: :any,                 arm64_sequoia: "80d43d74309563e70cb7e81d545b86a96ff6e3fe4e6e8ed74d92258e83586a74"
-    sha256 cellar: :any,                 arm64_sonoma:  "dc562a7d28d614c06344dd69d1cd625125e21b674cc0cc1bb5a5d32f30e08912"
-    sha256 cellar: :any,                 sonoma:        "3aee2b3fc19089b1a2e25619c2b8d120467960d54f987990c05a039b6057daec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a3e05e8f3590410d0d6dedce0e9a168f5e071c36814d489de4e558873bee325"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9448426b45eec907d0d711aafea4afe8ef1ed8de083e3f07f247ae8c3d38a79c"
+    sha256 cellar: :any,                 arm64_tahoe:   "32af7b69d67e10611976c037cb15da8b2d0be1b5ea9c38ae428e2ef81f1f3721"
+    sha256 cellar: :any,                 arm64_sequoia: "08444a8aeebb67b87578fea1d5832b0035327f509c9cdbc419c37c449af694ac"
+    sha256 cellar: :any,                 arm64_sonoma:  "817e9784586d45b9b7ff021d2931e6b154cf059d38666a5b122d6761680ef550"
+    sha256 cellar: :any,                 sonoma:        "92216f4d05f77b604d842bb0b06d0218cedbbcc8e1e8b087f542f3a1a1396506"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b7528a640dcc0e6f8e0a105a6b1b404fc0ed2449a2c10398846a5096612929c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3a8f06e621d144e25e8e0c96c9a01ad3fbfc3d5540bee4a0aae4d54f9505365"
   end
 
   depends_on "cfitsio"

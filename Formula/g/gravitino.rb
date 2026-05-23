@@ -19,10 +19,9 @@ class Gravitino < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c1188ad8f1efc7dc453bf6f75f65044c77d8f77bce38745d33f417e7e40c183"
   end
 
-  # Issue ref: https://github.com/apache/gravitino/issues/8571
-  depends_on "gradle@8" => :build
+  depends_on "gradle@8" => :build # Gradle 9 issue ref: https://github.com/apache/gravitino/issues/8571
   depends_on "node" => :build
-  depends_on "openjdk@17"
+  depends_on "openjdk@17" # OpenJDK 21 issue ref: https://github.com/apache/gravitino/issues/7976
 
   def install
     ENV["JAVA_HOME"] = Language::Java.java_home("17")

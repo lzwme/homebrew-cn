@@ -1,20 +1,18 @@
 class Putty < Formula
   desc "Implementation of Telnet and SSH"
   homepage "https://putty.software/"
-  url "https://the.earth.li/~sgtatham/putty/0.83/putty-0.83.tar.gz"
-  sha256 "718777c13d63d0dff91fe03162bc2a05b4dfc8b0827634cd60b51cefdff631c6"
+  url "https://the.earth.li/~sgtatham/putty/0.84/putty-0.84.tar.gz"
+  sha256 "06057862ae198f1dbd219d0c7493080d59f606194bb5056c549e342aa01b69fe"
   license "MIT"
   head "https://git.tartarus.org/simon/putty.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4435fad45783e698f8e87ac2a9c4a99aa0341cbe7b5a3f4f200cb8e8daa6852f"
-    sha256 cellar: :any,                 arm64_sequoia: "d1f1bb98a018698957ee04e663858ef5c0ccbcb2467d611043b0e71c3f2d62f0"
-    sha256 cellar: :any,                 arm64_sonoma:  "188ad54b237bb00dfcea34a591d99fb6b6cbeb2595300b2e010c029c282194d6"
-    sha256 cellar: :any,                 arm64_ventura: "3e07713c84bc44c06f74d946194006f3f3b3e231ab2a16bd7d55bdd6663eb80b"
-    sha256 cellar: :any,                 sonoma:        "4578c6f0f69004373c7e7f99d7a5c11a46884bc361aa3817f02ea89a1a78c4bf"
-    sha256 cellar: :any,                 ventura:       "41a0e25f2b1fedad2710a1aceb2f399eb3c0b6ab52f4efb8509d3153c70aad34"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8ecc1dafeb153935ef7ea554f65257fa91109f67b1a569e92d750f07c4d6445"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7401a1dd4eeb3dd9d0ff69ac9c60f88a3174cc143bbc321803b604d00249e8e2"
+    sha256 cellar: :any,                 arm64_tahoe:   "892f91f39035e15f001113fdaaba92845b6e554d1c5e3945f7d06c814c2e3673"
+    sha256 cellar: :any,                 arm64_sequoia: "294e693b1708ff661d9a68afd4a4340500465142ba7b6ad33fd27577c0e912d8"
+    sha256 cellar: :any,                 arm64_sonoma:  "da9014973e707444aaba812f9270657f0b9839375e2e5fe594ca600640cc36e2"
+    sha256 cellar: :any,                 sonoma:        "67eb5e27869b0781f9fc833960ddd8c307d6030072c609c30504af4532bd5bd7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2dbe37239a805fca18b7844a70fa5ed6b917e651b69288ee623c6cf1b048c6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c76fdc30ed072fe433722b84f2084cd7fe93b687d11da9f7e73622857a40391b"
   end
 
   depends_on "cmake" => :build
@@ -31,6 +29,7 @@ class Putty < Formula
 
   on_linux do
     depends_on "libx11"
+    depends_on "libxrender"
   end
 
   conflicts_with "pssh", because: "both install `pscp` binaries"

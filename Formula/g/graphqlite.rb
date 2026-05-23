@@ -5,6 +5,11 @@ class Graphqlite < Formula
   sha256 "f70840ab7fcf934c01ac13b6db6eee8b5511b8992abe350e898f618e12f94de9"
   license "MIT"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "4e68d851871d4adb0df91cfb644e16da7ba2bd81bc26b5288d17f5262f93adff"
     sha256 cellar: :any,                 arm64_sequoia: "65ffe8aa1006828ff672175e753e3c5fe10e5c7e4c5b7570205ae8bb1e6d4ab8"

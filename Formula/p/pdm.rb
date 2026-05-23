@@ -3,18 +3,18 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm-project.org"
-  url "https://files.pythonhosted.org/packages/58/eb/d80e61738585b5e0417e591e2e68d12c53cb2b3b2f3842c062a9d95cc339/pdm-2.26.9.tar.gz"
-  sha256 "6f7279b5e54b2948db3dcc1495197e9d0b2c8643e8159cc835e22d8f9af083b5"
+  url "https://files.pythonhosted.org/packages/d5/c7/f7e256e8e82e2dc535d466dcb7731a1f569de0c71e9cb4006ff83d3d245f/pdm-2.27.0.tar.gz"
+  sha256 "dbfbc484065d0150fa5b29484ead908354313d8699cf74c099d4531826bd04de"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0dbcdf4218a7a08affff4da29908dbe8473b9eefbf39664cfd0242e14aa39878"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "efa4169fdc5c7777016e024d771744ca6041b3f9e36f6908f3b826e09c07a4c2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e0776941667a4714ddc0e26138410c29bdc50e7c0e0a4fcbe04bb88d99f6d9f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ec2399e6553f51c68c8cfa20f97195984c108c12de23f8c494af855b4b9ed1e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e9c94ebea72112470b77caba276104fc440c5dfb9aa1e5d228c734814f092f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "adb79d625c30e16327a7e11ea3fcadea0aadabc3d48242a9f727caa28194bd14"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6779b14a778c6455f3b1fde31744d5718a9388bcf4205d29ab984ee6a83ad0f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e142ffdcfe89c28fc262417320ba5c6d9b8fe5d0b55b9ca932bcc3696de001c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9471c7f4829e24cba57dcb1bb8bc231cb4df851642bae0c86b21c1ec05aee722"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d26083c3a27d29c34e06e1d3b942dd97faddb010e801c4ab36a31145dfa39294"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ae1b0dfea8f51ac5baf565c1b13efd12f6099c1beec2392602b39e30ce89bcd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "723ce7c78f98412081879e5c141576e8c5fdff633f00033edeb08c2f6fa74840"
   end
 
   depends_on "certifi" => :no_linkage
@@ -38,8 +38,8 @@ class Pdm < Formula
   end
 
   resource "dep-logic" do
-    url "https://files.pythonhosted.org/packages/d8/00/93a90a4ce514e63a181486c6408ea50e8cdf7cdb73ab5580a6f7f5e5a496/dep_logic-0.5.2.tar.gz"
-    sha256 "f8dc4a74d1bad0d35a45c236572cf5d6534b5c2e84de87f2a354c849eec7e562"
+    url "https://files.pythonhosted.org/packages/fa/36/fda3791e19337f2cd5949cf695394f24b0ccd51c1c76e9ab7b99a355e3dc/dep_logic-0.6.0.tar.gz"
+    sha256 "0468874dd86caafd67f28e19257ef86c96f19b2236994f9fe9d793f9d92a6433"
   end
 
   resource "distlib" do
@@ -83,13 +83,13 @@ class Pdm < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "installer" do
-    url "https://files.pythonhosted.org/packages/5f/ef/230b70e66db6ab01d5cbb93329688ed1f06b2b0618a74925e36384ff0fba/installer-1.0.0.tar.gz"
-    sha256 "c6d691331621cf3fec4822f5c6f83cab3705f79b316225dc454127411677c71f"
+    url "https://files.pythonhosted.org/packages/06/fe/b9f481cf0cc867958a21338baa900357b7b7d86cac9b025948049d77923c/installer-1.0.1.tar.gz"
+    sha256 "052c7fc3721d54c696e2dea019be67539d7b144e924f559f54beb3121831c364"
   end
 
   resource "markdown-it-py" do
@@ -113,8 +113,8 @@ class Pdm < Formula
   end
 
   resource "pbs-installer" do
-    url "https://files.pythonhosted.org/packages/2a/96/916334df9b6cda485d3be7efb89739823159ec4d16fc199ff6e234bf7a54/pbs_installer-2026.5.8.tar.gz"
-    sha256 "a3b491b44ad2d25566de9347444bfc0d43522c80621922c3d876f1881a8e9c74"
+    url "https://files.pythonhosted.org/packages/4c/86/2c703512b331d4764fb957622fc1349961f689beaf02d7ba8cbe7d5b672c/pbs_installer-2026.5.10.tar.gz"
+    sha256 "d05a47229c6a54ce0efa0270f37d4e00516f78279d610ffa0ef41b709d3f655e"
   end
 
   resource "platformdirs" do
@@ -133,8 +133,8 @@ class Pdm < Formula
   end
 
   resource "python-discovery" do
-    url "https://files.pythonhosted.org/packages/ae/e0/cc5a8653e9a24f6cf84768f05064aa8ed5a83dcefd5e2a043db14a1c5f44/python_discovery-1.3.0.tar.gz"
-    sha256 "d098f1e86be5d45fe4d14bf1029294aabbd332f4321179dec85e76cddce834b0"
+    url "https://files.pythonhosted.org/packages/48/60/e88788207d81e46362cfbef0d4aaf4c0f49efc3c12d4c3fa3f542c34ebec/python_discovery-1.3.1.tar.gz"
+    sha256 "62f6db28064c9613e7ca76cb3f00c38c839a07c31c00dfe7ed0986493d2150a6"
   end
 
   resource "python-dotenv" do
@@ -194,8 +194,8 @@ class Pdm < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/ec/0d/915c02c94d207b85580eb09bffab54438a709e7288524094fe781da526c2/virtualenv-21.3.1.tar.gz"
-    sha256 "c2305bc1fddeec40699b8370d13f8d431b0701f00ce895061ce493aeded4426b"
+    url "https://files.pythonhosted.org/packages/15/ba/1f6e8c957e4932be060dcdc482d339c12e0216351478add3645cdaa53c05/virtualenv-21.3.3.tar.gz"
+    sha256 "f5bda277e553b1c2b3c1a8debfc30496e1288cc93ce6b7b71b3280047e317328"
   end
 
   def install

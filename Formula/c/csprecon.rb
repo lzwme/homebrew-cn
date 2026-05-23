@@ -1,18 +1,18 @@
 class Csprecon < Formula
   desc "Discover new target domains using Content Security Policy"
   homepage "https://github.com/edoardottt/csprecon"
-  url "https://ghfast.top/https://github.com/edoardottt/csprecon/archive/refs/tags/v0.4.5.tar.gz"
-  sha256 "9e68dc2c52d5190c6c70e84c7b9b0123d9eca60f8cda2587be614b31d6e3bff5"
+  url "https://ghfast.top/https://github.com/edoardottt/csprecon/archive/refs/tags/v0.4.6.tar.gz"
+  sha256 "99deab536e5dc436d43f1971222b196e82fdaa1ba9b43684239ef8b723b01f6d"
   license "MIT"
   head "https://github.com/edoardottt/csprecon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16471a1ffafcfa28450a4deb51341cf3d1f39a8ea84ab56a10205c81718b808f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16471a1ffafcfa28450a4deb51341cf3d1f39a8ea84ab56a10205c81718b808f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16471a1ffafcfa28450a4deb51341cf3d1f39a8ea84ab56a10205c81718b808f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fae62de187f6a650ea1fc6a5c17c17432b78305bb5c3479eb4aff3afef984ef7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "331b45fd65026af5ef82138c3811551010af89a4e7ddaf77e6e976bc7892f95f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2369a16215ade907d0d530672bf4a7256036cc7832871a36c4625463ee5e57a2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5c5d071902795993ac9ac7c907c9aa1e5df57f98e41fde922ce7a4df5cf28e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5c5d071902795993ac9ac7c907c9aa1e5df57f98e41fde922ce7a4df5cf28e6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5c5d071902795993ac9ac7c907c9aa1e5df57f98e41fde922ce7a4df5cf28e6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "caa5d34e826837d065db28302463a92d9bd0ca678dcec9b8cd34f745cde84a67"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e69bbbc30582405a0881769b8f280bb3f4ceef96f2f8810e5ed8c5150a9627d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acee474f9bc3d53e0229b40feacfdd11c988a95c53ffa0bfa1341a044767d14c"
   end
 
   depends_on "go" => :build

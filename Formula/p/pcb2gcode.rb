@@ -12,35 +12,26 @@ class Pcb2gcode < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "373eb016147cacaae8a92764e90174ec55bcc27171d9238f289ec76f4f45255a"
-    sha256 cellar: :any,                 arm64_sequoia: "9496f3dd204ab47ec120a55e19102691846fb618890a774d9ace72b0ee7f9683"
-    sha256 cellar: :any,                 arm64_sonoma:  "56041fcc4f7cba2195b3aa1d9e56faa22188de2e8efea840d2ce51f62a3ca411"
-    sha256 cellar: :any,                 sonoma:        "c65064eac44c6d3e2b7358fff30ac7ae2a4d7c8bd475c1368367664d336ddb58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "83faded151315a4904655a62a8db3282c5894ded28fe620a81ea7512324c4961"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8e41931226ba97f4a05603125be2831a1e3d2f987ca88b920d3ebf8ca1adc3b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "a0ee0759888cdc1df63db194da77d2d1964e3ca80149364809117b388090cdbb"
+    sha256 cellar: :any,                 arm64_sequoia: "1cb1185825413d823d5c5db4886a69942d932a909627a4136df485c8375c883d"
+    sha256 cellar: :any,                 arm64_sonoma:  "9c6d3d7d32f25c17bdaf908eff61bd3ff2660fde46d03baf3336f422f488723d"
+    sha256 cellar: :any,                 sonoma:        "67c13b9634a892c495204267d66b00635dbeb7ffe24ee088bffc61c18528f058"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ccf34a378edf5529f4a112acbc65ce4ddf2ff209eb5651221615ea014009ba44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0788506858ed2a230f70518f05581ea109f6425593e7a74f78667067272a3215"
   end
 
-  depends_on "cairomm@1.14" => :build
   depends_on "cmake" => :build
-  depends_on "glibmm@2.66" => :build
-  depends_on "gtkmm" => :build
-  depends_on "librsvg" => :build
-  depends_on "libsigc++@2" => :build
-  depends_on "pangomm@2.46" => :build
   depends_on "pkgconf" => :build
-  depends_on "at-spi2-core"
   depends_on "boost"
-  depends_on "cairo"
-  depends_on "gdk-pixbuf"
   depends_on "gerbv"
-  depends_on "gettext"
   depends_on "glib"
-  depends_on "gtk+"
-  depends_on "harfbuzz"
-  depends_on "pango"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    args = ["-DPCB2GCODE_USE_CCACHE=OFF"]
+    args << "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

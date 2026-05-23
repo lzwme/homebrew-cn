@@ -1,10 +1,10 @@
 class Crossplane < Formula
   desc "Build control planes without needing to write code"
-  homepage "https://github.com/crossplane/crossplane"
-  url "https://ghfast.top/https://github.com/crossplane/crossplane/archive/refs/tags/v2.2.1.tar.gz"
-  sha256 "ad9061b726f1e47f47253b1769883bd967e2127c2e17d75b86ded4c15ca96cec"
+  homepage "https://github.com/crossplane/cli"
+  url "https://ghfast.top/https://github.com/crossplane/cli/archive/refs/tags/v2.3.0.tar.gz"
+  sha256 "c4bd32825dd32c2ff5028c4c450168b9894bbefe54109e6f5056ac648a080f2c"
   license "Apache-2.0"
-  head "https://github.com/crossplane/crossplane.git", branch: "main"
+  head "https://github.com/crossplane/cli.git", branch: "main"
 
   livecheck do
     url :stable
@@ -12,12 +12,12 @@ class Crossplane < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "71035ed1f8dc8b3e3d1e767e50e549b4821625e50134c212be5e4a3353e9f677"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97cf587120505ac1ea7a7e62d48e42ec1ca00c47630d643f2ab7e1c1da7943bf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1694dc6c83a6af8144032decd61a89e8c31f6bcea3d413da0109b20086eb318"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f20709f65e01dce680b7464e759b96657a989a8bc2fdbd353080a52700bc3be1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f7c57c7115dba546088c0a5cbdc5170537597cfe51ba1273c4d7f1883bcf975"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb81d05a4015a6646b61ab88d550197a8bf28d5fcc8a4c53cb07d095c5976a98"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ba62b5174daaedbc38d97e28ecdf518971a0f3f8831809e741389b0d0ee79d92"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1736b4232af35bfc8dd98419b98eecd2ef42cb2ac3623249f4f35a536253c90"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36cc10dd37628bd8f5138d36438a0b919c74c4403990a87b0e7dea66f48c9195"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4c4688619cc30106d0a1be3cb76d0352ff64947f49516cd61dbfcd9282d43dbb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7adc620c1ffd84fd04a88f36e9c6004830d55e8554481ba1f6ccce5c4e17a61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa5263c3c233cd83e7679c48983e185e5f434a3b745e05a1e8f4af4959729d80"
   end
 
   depends_on "go" => :build
@@ -25,9 +25,9 @@ class Crossplane < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/crossplane/crossplane/v#{version.major}/internal/version.version=v#{version}
+      -X github.com/crossplane/crossplane-runtime/v#{version.major}/pkg/version.version=v#{version}
     ]
-    system "go", "build", *std_go_args(ldflags:), "./cmd/crank"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/crossplane"
   end
 
   test do
@@ -49,7 +49,7 @@ class Crossplane < Formula
               name: example-function
     YAML
 
-    output = shell_output("#{bin}/crossplane beta convert composition-environment " \
+    output = shell_output("#{bin}/crossplane composition convert composition-environment " \
                           "composition.yaml -o converted.yaml 2>&1")
     assert_match "No changes needed", output
   end

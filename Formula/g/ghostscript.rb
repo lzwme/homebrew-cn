@@ -1,8 +1,8 @@
 class Ghostscript < Formula
   desc "Interpreter for PostScript and PDF"
   homepage "https://www.ghostscript.com/"
-  url "https://ghfast.top/https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10070/ghostpdl-10.07.0.tar.xz"
-  sha256 "ba1366006a93b91e615f74aad9c0905fae503d3f5b04078ce2ddbe360bd2f9df"
+  url "https://ghfast.top/https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10071/ghostpdl-10.07.1.tar.xz"
+  sha256 "56f6a82907c3a73bba95de1319e029adf16477e34df2dea180d390e71e7c4053"
   license "AGPL-3.0-or-later"
   compatibility_version 1
 
@@ -20,16 +20,16 @@ class Ghostscript < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "f0ad91f4bc1139f9c68bd1fa4ffdd2d9b9fcc1013df88e54b7850ee994260d9b"
-    sha256 arm64_sequoia: "927302f491a471b2d973b4e22c48591bfe008f68f200cc06ca61f8873b2b2a17"
-    sha256 arm64_sonoma:  "f4ea965a4fbb561fc0c7d4fa68c433e1ced5a354f02aebefe5dba73fdac278c2"
-    sha256 sonoma:        "8fa0a33626c3d1223f1fa8bec57d1337f2b9e6e1789080b6eebd7d1839858708"
-    sha256 arm64_linux:   "70c8e6aa211d92e9469f8dcb4e72aa722a55f04c880abbecf89101d1a15d6bc7"
-    sha256 x86_64_linux:  "0a622fa3b8f596c6cc6e5b7d5e88c7f1a453043640138c086e59ec64a48f2002"
+    sha256 arm64_tahoe:   "6a3f21338c5e00b6d99930d96bdd12c9884147d033ae03f0ba3f3ae9d3f5ed06"
+    sha256 arm64_sequoia: "9011189c67f9727d4ada8f29201d320d0b0fb478dbc56449a1cbf4d44fa1aa2c"
+    sha256 arm64_sonoma:  "bbfa666526be13321a6ad2dfb557661b318c085ac12df041f10501486179406e"
+    sha256 sonoma:        "44e942ac04a6dd9f856f989483c86b372e8b86aac831acba7fc8b754292bc3e3"
+    sha256 arm64_linux:   "7c27cf6a1db4ccbaf969f57d15af41a18b5547424b1c9e3683ea320a0d69c241"
+    sha256 x86_64_linux:  "82acdc247c1252a412cb239f5de814e6bc4b8f6cfff4050b64716b0244d55bdb"
   end
 
   head do
-    url "https://git.ghostscript.com/ghostpdl.git", branch: "master"
+    url "https://github.com/ArtifexSoftware/ghostpdl.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build

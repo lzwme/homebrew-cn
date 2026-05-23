@@ -6,15 +6,16 @@ class Octodns < Formula
   url "https://files.pythonhosted.org/packages/6e/54/ae4ca569227e34102c2ac80bdcf795052cce20dd9407fd66c1b4ed7e07f5/octodns-1.17.0.tar.gz"
   sha256 "76087921c14cab2a31dfb6da3ee3a1a8d741f509a409656fe198afa05095d7d1"
   license "MIT"
+  revision 1
   head "https://github.com/octodns/octodns.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ccab52d471bc7fb2602a691608ae0d19a7b259a65d61f41dfa90825bc42c2988"
-    sha256 cellar: :any,                 arm64_sequoia: "17dccfda6ebf10bcd2a8c0cca3aa173e52152a13c1f8d28454942cc4885d87bd"
-    sha256 cellar: :any,                 arm64_sonoma:  "ad01e802b38f4117c5dd3ff67793ef0022072bb2e80d7dfebb5359e75bd0f0e2"
-    sha256 cellar: :any,                 sonoma:        "330b895361d8ed355c3b91522fd379b6ee7254a229faa46ebe15d7e400014e5e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c21bad624544e7131c42970f7ef8b23d91c471a3cb69b4beb4abc8cd69d42bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da9d52cd9fdaad360f22d450c75cf4f8d9bfd11a306e2bccd536e0ee358c0ac9"
+    sha256 cellar: :any,                 arm64_tahoe:   "09f339bf0ef1fc4a148274e7a89cfe9eb1657c51751cbc670c9f99b5a5e516e1"
+    sha256 cellar: :any,                 arm64_sequoia: "6253282a3a98994a7daa7189b907f82b989ca5388068e2bd0d91ca67316109b7"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac6402075d08d85e69f7c9f6e76777571d18e622ee9ab4500c2ab2a6b9556cb1"
+    sha256 cellar: :any,                 sonoma:        "f149db7f7291d5df09b797b7f1d2497a269cd7faaad8ffc7c1fa8e04227b6e92"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a40d93c23b1acd64a83769f7f373c841563e0267150870851721509cc67c11a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ea7881ebbcba35cc32abfbd54b615736232c00463eb5c079dac34301828f9aa"
   end
 
   depends_on "libyaml"
@@ -31,8 +32,8 @@ class Octodns < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "natsort" do

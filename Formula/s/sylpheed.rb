@@ -22,6 +22,15 @@ class Sylpheed < Formula
     sha256 x86_64_linux:  "822cdb64a23e28873bc5171be5527d324ac69ab52f3c58f423df3ff90b94bc4a"
   end
 
+  # Last release on 2018-01-31 with outstanding CVE-2021-37746. Last commit on 2022-09-13.
+  # Still needs EOL `gtk+`. Multiple repositories made a similar decision:
+  # * Alpine 3.24 - https://gitlab.alpinelinux.org/alpine/aports/-/merge_requests/95746
+  # * Debian 14 / Ubuntu 26.04 - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1129594
+  # * Gentoo - https://gitweb.gentoo.org/repo/gentoo.git/commit/?id=b0fca6e9ac605eecb019c47cdc23f38cbcae8474
+  # * nixpkgs - https://github.com/NixOS/nixpkgs/pull/512634
+  deprecate! date: "2026-05-22", because: :unmaintained
+  disable! date: "2027-05-22", because: :unmaintained
+
   depends_on "pkgconf" => :build
 
   depends_on "cairo"

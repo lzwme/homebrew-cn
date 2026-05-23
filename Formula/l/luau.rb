@@ -1,8 +1,8 @@
 class Luau < Formula
   desc "Fast, safe, gradually typed embeddable scripting language derived from Lua"
   homepage "https://luau.org"
-  url "https://ghfast.top/https://github.com/luau-lang/luau/archive/refs/tags/0.721.tar.gz"
-  sha256 "b36924a114a76b4a48f02bcfbd14dfd0bb1c5b3a2f4bf246f254db50c031c061"
+  url "https://ghfast.top/https://github.com/luau-lang/luau/archive/refs/tags/0.722.tar.gz"
+  sha256 "b69d7dd42540dc3892c5aa2f5c733897a8350ad64f09a0e0984a8c42ba29961b"
   license "MIT"
   version_scheme 1
   head "https://github.com/luau-lang/luau.git", branch: "master"
@@ -13,12 +13,12 @@ class Luau < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6b2728400e4b043b5a35cc518d0f1e9aa21f06d11578a84e438491ba5adcaedc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2807813f4ecf91389f7b2dce455b797ab1aadc6f46406049277fb6b860e22ebc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e40e6f67838fc083f3705859eb17f9e4a848891b93edd6bedf5c30d507f305b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "17bfc895972cc63d8941fc39796d9fb985ebf62ad0a31b8194272cecea5acfb2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6bca9f286d71015725747810641f2ff7856350e1ea61d94ec0bbd252b7ad099b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4eed42f3807e272ca7f9414f55ef833d67a0799aa8b15b18274ca561111e5c88"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e74630d7602f35d0667b02bf17028680ac42c9e65ffd017c1b820fc3569aa24"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b41fcc38238e4a77a6d28e034fdb7321e2f31b68c9ee44e400ce8ec4c7a3fafd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17d84e0823b58f8b3fc690e79e69278bb57d3b6849303bf9d94681aa26c2945a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a7736ddc5c28e3005adb7463a82b1e2b7e8fcfe45537151409026ff6e63beac6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf22b530c67f233d705565ef08201c033f0f87aaa8acd9eef45201bb0ba71e49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af6c1df9674e7acd51fcf73f9165083b8fac0f282728b6c6be8078d9f5680a75"
   end
 
   depends_on "cmake" => :build

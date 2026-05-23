@@ -6,16 +6,16 @@ class Pwntools < Formula
   url "https://files.pythonhosted.org/packages/f2/5c/9ae3d94c98b0b038ffd7f09ebdac506d346fe1b964999f71c96c8a904efd/pwntools-4.15.0.tar.gz"
   sha256 "d99a917298c1ca7241b51bba9ad2212f2af441ef66488059b2426508e9a2a776"
   license "MIT"
-  revision 8
+  revision 9
   head "https://github.com/Gallopsled/pwntools.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fdf2b18eb37a58d59c9064c338f132882d10861c269d5682e572368d7885612b"
-    sha256 cellar: :any,                 arm64_sequoia: "8aec0a8b0336818921d31612c17d05368dff7266ce84dd63dde298cce03aaf95"
-    sha256 cellar: :any,                 arm64_sonoma:  "bd459772d0a45220774091de270255ff6f1e37170204dc82de6b6854adde5e36"
-    sha256 cellar: :any,                 sonoma:        "5920447b0de3b4fc4f8e6e4789db4270b187639ec1155b90d8732fbcdb6d919d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f32e38b3a681d495d60b37405f5bf2e1d289cb5e2fe62f14b3486d4884cad78f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45fc0e6822e41bfa02d8a964636d1ec71be2248703e7ac6089a1dc2cd8968741"
+    sha256 cellar: :any,                 arm64_tahoe:   "655a41387b66e81e9f19ba38c10ebd60f1e1c58eee906c496664a00d7cd78a96"
+    sha256 cellar: :any,                 arm64_sequoia: "31717b47cd598062f41046a704eb81842d8a5f7a0a0592a8f2eb8d97f319d037"
+    sha256 cellar: :any,                 arm64_sonoma:  "3a70c602527dc897fcf31ed97c14892d814380e7ce8e2f8b0140ccd7f28ecfeb"
+    sha256 cellar: :any,                 sonoma:        "74339090a4c076b4e1e0322ed573d601ddad901860c12af90522e3323ac30a22"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d13bd50525bf29406eaeff17c2b603bc3433252217aa10e25e0db083dd1ae809"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb54ec67e20321137136d10dd7efb850e4d04a7415604f81017617ed144b9a5f"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -52,8 +52,8 @@ class Pwntools < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "intervaltree" do
@@ -127,8 +127,8 @@ class Pwntools < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "ropgadget" do

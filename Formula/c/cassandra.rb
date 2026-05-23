@@ -5,6 +5,7 @@ class Cassandra < Formula
   desc "Eventually consistent, distributed key-value store"
   homepage "https://cassandra.apache.org"
   # TODO: Switch to `python@3.13` after https://github.com/apache/cassandra/pull/4628
+  # TODO: Switch to `openjdk@21` in 6.0, https://issues.apache.org/jira/browse/CASSANDRA-18831
   url "https://www.apache.org/dyn/closer.lua?path=cassandra/5.0.8/apache-cassandra-5.0.8-bin.tar.gz"
   mirror "https://archive.apache.org/dist/cassandra/5.0.8/apache-cassandra-5.0.8-bin.tar.gz"
   sha256 "1579d7d3f2d812741a28cd2c2cbe29e83541bb4d25fb21ec2c00c1e4fb3b9a8f"

@@ -6,6 +6,7 @@ class S3ql < Formula
   url "https://ghfast.top/https://github.com/s3ql/s3ql/releases/download/s3ql-6.1.0/s3ql-6.1.0.tar.gz"
   sha256 "b4ac7c81a89e790999fa4473e302bf5e1b5bb8abe3303f88f6fdb73beecc7cfc"
   license "GPL-3.0-only"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,8 +14,8 @@ class S3ql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "c818f589fbdf39d7efcfcbbf81a22f8826a3fcc15a70969225ca9b2e5dcb7c49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1bfe4b9ca1017c415ede3e7de3719af488a6b4081361a808260826043871f693"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "ac56cb95968f639e492879c0ea08d43657550e03ad0c239c12ddb69c9647f100"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "aadd188d691eae3f81bea7455450ae36b5a7ca3032259b82e3c2dd73776cc50d"
   end
 
   depends_on "pkgconf" => :build
@@ -54,8 +55,8 @@ class S3ql < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/d4/f8/80d2493cbedece1c623dc3e3cb1883300871af0dcdae254409522985ac23/google_auth-2.52.0.tar.gz"
-    sha256 "01f30e1a9e3638698d89464f5e603ce29d18e1c0e63ec31ac570aba4e164aaf5"
+    url "https://files.pythonhosted.org/packages/c6/ad/ff781329bbbdc0974a098d996e89c9e1f7024262f9e3eec442fbb9ad1ac6/google_auth-2.53.0.tar.gz"
+    sha256 "e7e6aa16f6bee7b2b264830fd04f08087a1d5a836df516251a5d15327b246c9c"
   end
 
   resource "google-auth-oauthlib" do
@@ -64,8 +65,8 @@ class S3ql < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "oauthlib" do
@@ -94,8 +95,8 @@ class S3ql < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "requests-oauthlib" do

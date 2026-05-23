@@ -3,19 +3,18 @@ class Standardebooks < Formula
 
   desc "Tools for producing ebook files"
   homepage "https://github.com/standardebooks/tools"
-  url "https://files.pythonhosted.org/packages/c6/90/ca0014663fe4c431e213d4e7e710edcb65713111a9b47df3a1c20f030ac5/standardebooks-3.0.3.tar.gz"
-  sha256 "f794b71758892532609111b225a2b8c38c6c6e12c60b9d596c4f435a912183f6"
+  url "https://files.pythonhosted.org/packages/87/e3/5ab87cbbe9acaaa2d7cd059636c009aadd053473052e9383c640a5ea91d0/standardebooks-3.0.4.tar.gz"
+  sha256 "47166b17c72bc94685bafb1a54ca94a66f2795771fef5fe7e07461a8a6a0c9e8"
   license "GPL-3.0-or-later"
-  revision 2
   head "https://github.com/standardebooks/tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "54d271a538299ea2ef6080d330086f8501afd0213a16f688ecba33d2fc36fc25"
-    sha256 cellar: :any,                 arm64_sequoia: "f1b3bf0804264b8a76077c1a3373c463ebae38d037bfd22277081c566a08bf2b"
-    sha256 cellar: :any,                 arm64_sonoma:  "848b818abeddd3dd26edf2007a5a2d9ce5eb49a29c4c053f4971101b32603ec9"
-    sha256 cellar: :any,                 sonoma:        "aae37b68a6d6b69ccd9d22924f3949231d81740bf134ea058f322b59a5e52942"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd0b6adb185cf1f83484d85243c3859cfb2edb175dce9f6d87803310ecd357e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1909837a405e855bc9f41dcdf7843663faf7520c132033ddec0a369f7e0b19e8"
+    sha256 cellar: :any,                 arm64_tahoe:   "ba40e8562ea4b6891912c65567a862e32a97fb02a66213fec7be61bc577a784c"
+    sha256 cellar: :any,                 arm64_sequoia: "406448e63fe6ebe0fcd6c5fc03efeb9f6cc3439dfcd27f69c43d31ef1d2b7aa8"
+    sha256 cellar: :any,                 arm64_sonoma:  "2e7a54f9414440c77ccfdf6d90e45e130836185e97a3490e131ca21970d2391d"
+    sha256 cellar: :any,                 sonoma:        "115e0138f84fa317b9bca8b79ef38bccb31a1f340de06178ddd3f7335f9fdedb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5aeba55d994ca58846ccdfef6d4174e7a507f427ceb2a7942f7e0370d08aed1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "539d4d9f00ee063b369051cb73c34891450637f270750513932157c5fed08332"
   end
 
   depends_on "rust" => :build # for selenium
@@ -92,8 +91,8 @@ class Standardebooks < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/df/b5/59d16470a1f0dfe8c793f9ef56fd3826093fc52b3bd96d6b9d6c26c7e27b/gitpython-3.1.46.tar.gz"
-    sha256 "400124c7d0ef4ea03f7310ac2fbf7151e09ff97f2a3288d64a440c584a29c37f"
+    url "https://files.pythonhosted.org/packages/33/f6/354ae6491228b5eb40e10d89c4d13c651fe1cf7556e35ebdded50cff57ce/gitpython-3.1.50.tar.gz"
+    sha256 "80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc"
   end
 
   resource "h11" do
@@ -112,8 +111,8 @@ class Standardebooks < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz"
-    sha256 "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
+    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
+    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
   end
 
   resource "markdown-it-py" do
@@ -177,8 +176,8 @@ class Standardebooks < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "rich" do

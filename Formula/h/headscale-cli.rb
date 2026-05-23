@@ -5,6 +5,11 @@ class HeadscaleCli < Formula
   sha256 "cb38683998d13d2700df258a81c00add199dccb999b1dacc4491305cdaa67db3"
   license "BSD-3-Clause"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ffb957c9bfde2f1a540934b0eac1b5cd110235afc6e58a4533312655021da1a"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "11c70bd09101790e322bb822dd1769752403cc936441b740c697a95121631b76"

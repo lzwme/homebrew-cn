@@ -6,16 +6,16 @@ class Mk < Formula
   url "https://files.pythonhosted.org/packages/75/9e/dcc7813d9f7133f8d384eca24a4d4bb0cb056abcc53f1f170b8353084feb/mk-3.0.0.tar.gz"
   sha256 "0a041a3620057165f155b8372469d8ab55ae94dd91d6e27723ab9a7de1aa2086"
   license "MIT"
-  revision 7
+  revision 8
   head "https://github.com/pycontribs/mk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f95459e4c970b6e7f395a0539038aa49a0f0e44b178bcfa99eb1277b237ddbf7"
-    sha256 cellar: :any,                 arm64_sequoia: "16c8e51983d9a60118cde38cdc854c78d4bee7e370277c8f4da6c5ee147c4fbc"
-    sha256 cellar: :any,                 arm64_sonoma:  "febce0ea7da1998ce0b5574597ff37496674771fe47cf25daf6a813f32f1fb83"
-    sha256 cellar: :any,                 sonoma:        "a7971d8bb17cf82f0b1e0cabebfc8d034b8a454921c7f6fcbbb8bfbf51df07a5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29d524783493b169b99e9bdfe5f265a78cca866e094af21ed9f1ec522876af78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b9439d8644855f659d6ac20d75fed3b4beed676654220ed416e16382b560cee"
+    sha256 cellar: :any,                 arm64_tahoe:   "4e7b9461ef4a1c6ba7119b32b417e7284122193ad9d932a31cbd475177c7454c"
+    sha256 cellar: :any,                 arm64_sequoia: "3efab941fdf4ce4930fbf2736c104856f7b92708b3d10d4880957633d6cb26b2"
+    sha256 cellar: :any,                 arm64_sonoma:  "d897a24498dd7a785e5fa0e762db9842d8c5e1e813bb9c90230e126451bff37d"
+    sha256 cellar: :any,                 sonoma:        "bacfee26056e5b9db0a20db60da11a7ac21b93c487444ec982f09b7beae182bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b386f5613c11cb4e78789c63a2b9b02105f62f96401ff9141ae07ac622212bd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a0b3fccc6949534271368b08fa1d1907c69c07ad1f480d868380377d1e1575b"
   end
 
   depends_on "rust" => :build
@@ -46,8 +46,8 @@ class Mk < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "diskcache" do
@@ -76,8 +76,8 @@ class Mk < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jaraco-classes" do
@@ -91,8 +91,8 @@ class Mk < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
-    sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
+    url "https://files.pythonhosted.org/packages/36/cf/ea4ef2920830dea3f5ab2ea4da6fb67724e6dca80ee2553788c3607243d0/jaraco_functools-4.5.0.tar.gz"
+    sha256 "3bb5665ea4a020cf78a7040e89154c77edadb3ca74f366479669c5999aa70b03"
   end
 
   resource "jeepney" do
@@ -156,8 +156,8 @@ class Mk < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "requests-toolbelt" do

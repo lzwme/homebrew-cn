@@ -6,15 +6,15 @@ class Dvc < Formula
   url "https://files.pythonhosted.org/packages/13/1e/957a50eab8af18a5837bf47f148b90dac36650150faca840d5c020272098/dvc-3.67.1.tar.gz"
   sha256 "0a941016a10ac8c99b5342e5a964c9bff29c191f7b3539ff3e04910d828f82ab"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "967d1afd6e3ff55f2f0d6b9a5d46bae01abe9b2f291d34b3746f4cd205718011"
-    sha256 cellar: :any,                 arm64_sequoia: "d52412de020462c6ebe21d7b73cda06a32aa9f5a0b0f8ed4889692846ef58c66"
-    sha256 cellar: :any,                 arm64_sonoma:  "bcef0e6a6b5bbeeaf29b7fe41bbf1492177a6b82089b97538a1252bb4c422810"
-    sha256 cellar: :any,                 sonoma:        "ece455bd6b1df19cd199d7a2c087359515cc7a7a1053894e8b1592b025907bd6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "70da6f1cd10b4cd7b4c26d970246e74e09111942f536ceaee5fe98115039b665"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e1f824f427cc8212014a88d7afeaeaaa5478c762eac5355187f763244cb4548"
+    sha256 cellar: :any,                 arm64_tahoe:   "cec42064d8684ef7ded929d4c7aa913f37026b6ae4f3262a80e14d9b3716fdcb"
+    sha256 cellar: :any,                 arm64_sequoia: "acbe68d156bab4d022662a7fa14bd05e0e323dfa3e2ee5aff0a7a1abdc3c605b"
+    sha256 cellar: :any,                 arm64_sonoma:  "dd673fa25060ba3175091e9ff978aef272a4df9ed3afb2c74d1f5df68b40223c"
+    sha256 cellar: :any,                 sonoma:        "67b68cc7a41943d1234bbd5141dfa49d26e9f06f3bf0eaeb994186a27f6fd775"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "039454e801e98a6ef28748dec33639aa49d744a74f581fbb249e28526406a2e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf556ef9955dbf60ef5e5236b7ac12c571a58e9dc62d280e7d835c378e5a7fa6"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -146,8 +146,8 @@ class Dvc < Formula
   end
 
   resource "azure-storage-blob" do
-    url "https://files.pythonhosted.org/packages/71/24/072ba8e27b0e2d8fec401e9969b429d4f5fc4c8d4f0f05f4661e11f7234a/azure_storage_blob-12.28.0.tar.gz"
-    sha256 "e7d98ea108258d29aa0efbfd591b2e2075fa1722a2fae8699f0b3c9de11eff41"
+    url "https://files.pythonhosted.org/packages/59/25/fdcf1e381922dbab8ba23d6fd78d397fe6cbac6b480310218834b7bc91fe/azure_storage_blob-12.29.0.tar.gz"
+    sha256 "2824ddd7ebc9056034ebc76b17971a38e9aa5835abb0d565b9700493f2a6c657"
   end
 
   resource "bcrypt" do
@@ -181,8 +181,8 @@ class Dvc < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
+    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
   end
 
   resource "click-didyoumean" do
@@ -216,8 +216,8 @@ class Dvc < Formula
   end
 
   resource "decorator" do
-    url "https://files.pythonhosted.org/packages/43/fa/6d96a0978d19e17b68d634497769987b16c8f4cd0a7a05048bec693caa6b/decorator-5.2.1.tar.gz"
-    sha256 "65f266143752f734b0a7cc83c46f4618af75b8c5911b00ccb61d0ac9b6da0360"
+    url "https://files.pythonhosted.org/packages/60/8b/32f9823da46cde7df2087faa08cd98d01b908f8dcab982cdba9c84e85355/decorator-5.3.1.tar.gz"
+    sha256 "4cbcdd55a6efadb9dbea26b858f4fb3264567b52d69ca0d25b721b553f60ea82"
   end
 
   resource "dictdiffer" do
@@ -381,8 +381,8 @@ class Dvc < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/d4/f8/80d2493cbedece1c623dc3e3cb1883300871af0dcdae254409522985ac23/google_auth-2.52.0.tar.gz"
-    sha256 "01f30e1a9e3638698d89464f5e603ce29d18e1c0e63ec31ac570aba4e164aaf5"
+    url "https://files.pythonhosted.org/packages/c6/ad/ff781329bbbdc0974a098d996e89c9e1f7024262f9e3eec442fbb9ad1ac6/google_auth-2.53.0.tar.gz"
+    sha256 "e7e6aa16f6bee7b2b264830fd04f08087a1d5a836df516251a5d15327b246c9c"
   end
 
   resource "google-auth-httplib2" do
@@ -473,11 +473,15 @@ class Dvc < Formula
   resource "hydra-core" do
     url "https://files.pythonhosted.org/packages/6d/8e/07e42bc434a847154083b315779b0a81d567154504624e181caf2c71cd98/hydra-core-1.3.2.tar.gz"
     sha256 "8a878ed67216997c3e9d88a8e72e7b4767e81af37afb4ea3334b269a4390a824"
+
+    # Drop `pkg_resources` import for setuptools >= 82
+    # PR ref: https://github.com/facebookresearch/hydra/pull/3149
+    patch :DATA
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "isodate" do
@@ -496,8 +500,8 @@ class Dvc < Formula
   end
 
   resource "knack" do
-    url "https://files.pythonhosted.org/packages/fd/e1/22a24a310799459b66a91709a95b4cb57da85326b73e04af97cdf3aae7a4/knack-0.13.0.tar.gz"
-    sha256 "dda35b4ff4c576b2501a18f0ec2f2fe0a3a5f9cce8265d4066d311e5ed4b5bc6"
+    url "https://files.pythonhosted.org/packages/58/ce/0e9597a4b2348dade473d3e177ce32ca570f67b479ab9a292a90cb88f892/knack-0.14.0.tar.gz"
+    sha256 "2ddd32fd6343ec9b6ed0da729b212362d0e6b1208c0162633c90cb6f94a05877"
   end
 
   resource "kombu" do
@@ -548,6 +552,12 @@ class Dvc < Formula
   resource "omegaconf" do
     url "https://files.pythonhosted.org/packages/09/48/6388f1bb9da707110532cb70ec4d2822858ddfb44f1cdf1233c20a80ea4b/omegaconf-2.3.0.tar.gz"
     sha256 "d5d4b6d29955cc50ad50c46dc269bcd92c6e00f5f90d23ab5fee7bfca4ba4cc7"
+
+    # Drop `pkg_resources` import for setuptools >= 82
+    patch do
+      url "https://github.com/omry/omegaconf/commit/bb7b9b97ccb171479f767b78183b294dd4f8f87c.patch?full_index=1"
+      sha256 "a9a679c51cd69715d16281315f2f31eae15b31111341492d78993bb61f7107f6"
+    end
   end
 
   resource "orjson" do
@@ -588,10 +598,6 @@ class Dvc < Formula
   resource "propcache" do
     url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
     sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
-
-    # Revert commit by upstream for setuptools restriction, remove in next release
-    # PR ref: https://github.com/aio-libs/propcache/pull/225
-    patch :DATA
   end
 
   resource "proto-plus" do
@@ -685,8 +691,8 @@ class Dvc < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
-    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "requests-oauthlib" do
@@ -835,8 +841,8 @@ class Dvc < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/23/6e/beb1beec874a72f23815c1434518bfc4ed2175065173fb138c3705f658d4/yarl-1.23.0.tar.gz"
-    sha256 "53b1ea6ca88ebd4420379c330aea57e258408dd0df9af0992e5de2078dc9f5d5"
+    url "https://files.pythonhosted.org/packages/79/12/1e8f37460ea0f7eb59c221fdaf0ed75e7ac43e97f8093b9c6f411df50a78/yarl-1.24.2.tar.gz"
+    sha256 "9ac374123c6fd7abf64d1fec93962b0bd4ee2c19751755a762a72dd96c0378f8"
   end
 
   resource "zc-lockfile" do
@@ -845,11 +851,6 @@ class Dvc < Formula
   end
 
   def install
-    # Workaround for https://github.com/facebookresearch/hydra/issues/3131
-    odie "Check if setuptools workaround can be removed!" if resource("hydra-core").version > "1.3.2"
-    (buildpath/"build-constraints.txt").write "setuptools<82\n"
-    ENV["PIP_BUILD_CONSTRAINT"] = buildpath/"build-constraints.txt"
-
     # dvc-hdfs uses fsspec.implementations.arrow.HadoopFileSystem which is
     # a wrapper on top of pyarrow.fs.HadoopFileSystem.
     ENV["PYARROW_WITH_HDFS"] = "1"
@@ -880,16 +881,25 @@ class Dvc < Formula
 end
 
 __END__
-diff --git a/pyproject.toml b/pyproject.toml
-index a6a3296cc8a963a92d1f92312698e761c75ca582..0c80849770c574423662e19d83c3e3e8a975dd8f 100644
---- a/pyproject.toml
-+++ b/pyproject.toml
-@@ -4,7 +4,7 @@ requires = [
-   # NOTE: provisioning of the in-tree build backend located under
-   # NOTE: `packaging/pep517_backend/`.
-   "expandvars",
--  "setuptools >= 82.0.1",  # Minimum required for `version = attr:`
-+  "setuptools >= 47",  # Minimum required for `version = attr:`
-   "tomli; python_version < '3.11'",
- ]
- backend-path = ["packaging"]  # requires `pip >= 20` or `pep517 >= 0.6.0`
+diff --git a/setup.py b/setup.py
+index fac05c60051f34aacffd28122bbae6fadd5fa2a5..f0fd2ff2ce8518e1ce602d23af27fea4d7ff4387 100644
+--- a/setup.py
++++ b/setup.py
+@@ -2,7 +2,6 @@
+ # type: ignore
+ import pathlib
+
+-import pkg_resources
+ from setuptools import find_namespace_packages, setup
+
+ from build_helpers.build_helpers import (
+@@ -16,8 +15,9 @@
+
+ with pathlib.Path("requirements/requirements.txt").open() as requirements_txt:
+     install_requires = [
+-        str(requirement)
+-        for requirement in pkg_resources.parse_requirements(requirements_txt)
++        stripped
++        for line in requirements_txt
++        if (stripped := line.strip()) and not stripped.startswith("#")
+     ]

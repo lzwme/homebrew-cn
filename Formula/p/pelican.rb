@@ -6,14 +6,15 @@ class Pelican < Formula
   url "https://files.pythonhosted.org/packages/c4/8d/da26b77f0d9827d341bdedea357ccb5670717e3a9b4142e3e44c7f34db44/pelican-4.12.0.tar.gz"
   sha256 "3983b5d2dc84c7bdf967154359077a2b78c0bbd2f7dcc55292133a7779609458"
   license "AGPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "23a21dd4c29026f3395409c414246df6661e1e7e1b11f3b4dc675cbb8f28879b"
-    sha256 cellar: :any,                 arm64_sequoia: "7f29a50d8afa4169eb8070c163d6d2c8c583632f5d572a5567db172bd005ef2e"
-    sha256 cellar: :any,                 arm64_sonoma:  "987414f9a159092c7f8e260c5ea9ea4e85c082ed5b50f1b2725d6417c374caa3"
-    sha256 cellar: :any,                 sonoma:        "98bf6d351b3bd43126f1245fe9bba29fca89bc8d4e4d8c6dad94affa65f50580"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4d21eb90d05297dbc47ff31780e664c7fd9776e2fe0ada56902e43d301649e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7bc58367a9e752569423646777cc844921f237121c390dd4156e9ca4b145dd7"
+    sha256 cellar: :any,                 arm64_tahoe:   "575a26128b8a21c976fd9726c5a00596fcaa13541aaede1423f7955df0a77be0"
+    sha256 cellar: :any,                 arm64_sequoia: "8a2de8dac1d853cb45c6506f3047f3c28a4d534c3537265702802f044ae37e52"
+    sha256 cellar: :any,                 arm64_sonoma:  "12bcfb7eaeff51b9815f3e92339b5f5bcebb4fa608e7f56e22803b6d5dd8cb95"
+    sha256 cellar: :any,                 sonoma:        "73bcfc23553b0ff495be0418a87b8c445cae1a3495470b0c2f1cc1145d8e7433"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3c168ff276f6d90bedb0f4b71f096d2a9e452988d9123009b208bc3d64c30ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "340a351673764f9a8b95436827415b0372cac78fd70b6048c001ee6d1dc47dbb"
   end
 
   depends_on "rust" => :build # for `watchfiles`
@@ -42,8 +43,8 @@ class Pelican < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jinja2" do
@@ -57,8 +58,8 @@ class Pelican < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
   resource "markupsafe" do
@@ -102,8 +103,8 @@ class Pelican < Formula
   end
 
   resource "watchfiles" do
-    url "https://files.pythonhosted.org/packages/c2/c9/8869df9b2a2d6c59d79220a4db37679e74f807c559ffe5265e08b227a210/watchfiles-1.1.1.tar.gz"
-    sha256 "a173cb5c16c4f40ab19cecf48a534c409f7ea983ab8fed0741304a1c0a31b3f2"
+    url "https://files.pythonhosted.org/packages/cd/41/5e1a4bb12aac5f1493fa1bdc11154eca3b258ca4eba65d39c473fe19d8e9/watchfiles-1.2.0.tar.gz"
+    sha256 "c995fba777f1ea992f090f9236e9284cf7a5d1a0130dd5a3d82c598cacd76838"
   end
 
   def install

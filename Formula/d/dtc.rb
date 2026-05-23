@@ -12,25 +12,36 @@ class Dtc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e651c82ed69b6efd392728727fe0a9d4831cbcd1decca9b6a17bf307e44d81cb"
-    sha256 cellar: :any,                 arm64_sequoia: "4b99efbc9d6522d1237038a22fc3417fa282d979e94db58a783a4b0ef934a9bb"
-    sha256 cellar: :any,                 arm64_sonoma:  "20ee0f26c62898f07838b78489cad21b358d329f1dd3fa57bd63916e479db084"
-    sha256 cellar: :any,                 arm64_ventura: "0bc0e5c7f5681e49a92833da2abecfbd10d11d7c938cab0c668df1aedec703da"
-    sha256 cellar: :any,                 sonoma:        "e4eb4991109e9112f5edb62b92cec046239268ecedf2de275e21c9be7302016b"
-    sha256 cellar: :any,                 ventura:       "e3702ff36779cb65af9bf30d5ae6be3bf2a03320567edbf0821251abc66c4113"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca5cc69857d826ebc8b792e60d7fbc695785443f5a03bff22cd6a80d96953e52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a73d1c865cba2244acd9bb059eae7fa4377506b64438ce12608f8f87d01e6640"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "133ee4841d6cf363f2b7b98e4d201dc1871e06dbee385543b3e3d5f892b4fa98"
+    sha256 cellar: :any, arm64_sequoia: "4779a33b18a4e44c365d9ecd8f2788ec4c3d15e21552c16c53b41aa67dc46846"
+    sha256 cellar: :any, arm64_sonoma:  "e6efb3fd92b69e97e9bbf4688aac3094407f712d37f40b57dca8f2b26131f7b7"
+    sha256 cellar: :any, sonoma:        "9622337a07593353fe43755d48049544279456780bc9f9c2f536e8addbf9c401"
+    sha256               arm64_linux:   "49e1b560741233f808f3b372a78c767b8033db1c57f5a45c2ee3e6c5193f86f6"
+    sha256               x86_64_linux:  "e928d006c6c45bc690e91e6e918384ed2536873135305ee3ab92997bcb3e4491"
   end
 
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkgconf" => :build
+
+  depends_on "libyaml"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
 
   def install
-    inreplace "libfdt/Makefile.libfdt", "libfdt.$(SHAREDLIB_EXT).1", "libfdt.1.$(SHAREDLIB_EXT)" if OS.mac?
-    system "make", "NO_PYTHON=1"
-    system "make", "NO_PYTHON=1", "DESTDIR=#{prefix}", "PREFIX=", "install"
+    args = %w[
+      -Dpython=disabled
+      -Dtests=false
+      -Dvalgrind=disabled
+      -Dwerror=false
+      -Dyaml=enabled
+    ]
+
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do

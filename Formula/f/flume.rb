@@ -11,6 +11,12 @@ class Flume < Formula
     sha256 cellar: :any_skip_relocation, all: "48db8221f283446a57987c14a36acd4cc21848c24ca31b00f45b59ed12bf3710"
   end
 
+  # From https://flume.apache.org/
+  # > This project is not maintained anymore!
+  # > It has been marked as dormant by Apache Logging Services consensus on 2024-10-10.
+  deprecate! date: "2026-05-22", because: :unmaintained
+  disable! date: "2027-05-22", because: :unmaintained
+
   depends_on "hadoop"
   depends_on "openjdk@17"
 

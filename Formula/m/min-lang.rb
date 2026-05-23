@@ -1,18 +1,17 @@
 class MinLang < Formula
   desc "Small but practical concatenative programming language and shell"
   homepage "https://min-lang.org"
-  url "https://ghfast.top/https://github.com/h3rald/min/archive/refs/tags/v0.46.0.tar.gz"
-  sha256 "017178f88bd923862b64f316098772c1912f2eef9304c1164ba257829f1bbfc2"
+  url "https://ghfast.top/https://github.com/h3rald/min/archive/refs/tags/v0.47.1.tar.gz"
+  sha256 "49dd7c4661e21c3a40fc4ec03a6860dfe7f60efe0a358c5dd917f84029b3959e"
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "2ef803c82853b1b321beeafc765188f15dbec742127101fec848307fd3fe98d2"
-    sha256 cellar: :any,                 arm64_sequoia: "71000cdcf6ff4197db8463e2bcdcfdbe06aeca5015b5d99bc2540bc586203a03"
-    sha256 cellar: :any,                 arm64_sonoma:  "d2c9b6fa074041130942ce3d6920b72fbcafa19cdd430d3cb7d5aa587c472145"
-    sha256 cellar: :any,                 sonoma:        "1b6a74a5d1854800edb8eab49013a818352c7f9b081324de871aa82adf49da21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb035bc0b1423297e5f251ae2ad2c3833f03ae343fda90867668eb73ea6f0b43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8eb616acafc4d01b6a464c3d034ab13990837c1a0a2f7b808892fe877988ea82"
+    sha256 cellar: :any,                 arm64_tahoe:   "6ee77466373606d86016068213bbcc90805cb6d2b4dbdf59516902d60e947bd0"
+    sha256 cellar: :any,                 arm64_sequoia: "9f8a40e25b3635acc1c8ec1ec1a43208caeb7936f04fb874840df97719ee3023"
+    sha256 cellar: :any,                 arm64_sonoma:  "ca8d3528196a222aa81545e670b4694800efb01e9fa4f5868e10e0f37977768b"
+    sha256 cellar: :any,                 sonoma:        "b30e6214370dbbd7d48218738dbab1a4c42a6c2eb0f4e73cc1692651a2e0b973"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ee8581caa4b05a46090d4163de1478aa03eb7769b85a8c7f04168df1d3e877e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ff578dfbc5b12c83d750d2ed9ae7e935e797d03bdc41de2736cd102149044d5"
   end
 
   depends_on "nim"

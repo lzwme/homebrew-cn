@@ -1,18 +1,18 @@
 class Gitu < Formula
   desc "TUI Git client inspired by Magit"
   homepage "https://github.com/altsem/gitu"
-  url "https://ghfast.top/https://github.com/altsem/gitu/archive/refs/tags/v0.41.0.tar.gz"
-  sha256 "eba1cd649339ee1c6f02c39bcd9fc3092df8e374bfbcd194750a966b09cb5e55"
+  url "https://ghfast.top/https://github.com/altsem/gitu/archive/refs/tags/v0.42.0.tar.gz"
+  sha256 "f7071a88344262df5642a62188e332a703f28b746224578962914e874cc84778"
   license "MIT"
   head "https://github.com/altsem/gitu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e26a16a99458e8ba03255708da91ace7d2412990bbaa07f406ace1832a10c312"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64139abb25b6584ac88caaee6ec40ec0d7897b6c3e806f723216bf79102d2cb1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a8f3f9192d82ad1ae655e43334fb65015a9203c27cabe05ca85fa879c5392e7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dd8756d20bb8aefc83f82b9f1cdb99b77df4c5426857bee2e3cc5c2291e7b0c1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "934a83b1dbf1b243fc07cd615cf14caba3254e468ec9bdd0d137f13f726f56c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56115a186420b966d1ebb0c245d6c7ef552dc16c93da418e568b3c47e4296907"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54f451eded0361ab9eafc767de0ef0bd214eab7b631d908acd7f582f748734bf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb0527b9ff6599332a6abc75ef44c55034ded445d541d065730693b174b9fd1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c0755be7768e10cf94daf299af2e97dcf7bb86218e7e8d101bafb70863ddc3c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6fd561bd4037220f4ddbe46b0dbb180f07fff1a3e0748138ec8b562b09c417d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a351ca19ba53e2458aed1c1d5e3817c112a46d5ae5a5c881a16e218aa3ee00a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a774b26d639179487493ebffc78384872c334a9b25cf0c76ad7fd317e71fe72"
   end
 
   depends_on "rust" => :build

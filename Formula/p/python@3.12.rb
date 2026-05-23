@@ -13,14 +13,15 @@ class PythonAT312 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "bb198d273ef41a95d48aa16e330864608f103a58ef7c0a6c167e07866e32eeb0"
-    sha256 arm64_sequoia: "c378b0875288fc0490603e4ccece8f289a230c4068c27ea9dfa7a9a69d3c3b12"
-    sha256 arm64_sonoma:  "7becd6da101c7f3f406cac1a3350384618520f5b3fab5d46c57bf62b740d460b"
-    sha256 tahoe:         "3ff89a0955bfece8fe97f17d90f45d92fc87d5391d821294d6409795cd264ebb"
-    sha256 sequoia:       "b41f94ee7704c74be76d1a54fc9e394dd356770d13aa29be023cc1c33387f82a"
-    sha256 sonoma:        "3f2d37fb95ed10cd050222c174d642e04178e1da23538ed5f3a9d142381027b6"
-    sha256 arm64_linux:   "31924f4cc9d1d71638a231185e1c74a9a5e1919198d332b1ccb10f6a2ad31c92"
-    sha256 x86_64_linux:  "1375b78e136989dfbea7b7e6cc8c54a70e2ddcd9bbeab8eb04b7d3b250b8f2d4"
+    rebuild 1
+    sha256 arm64_tahoe:   "4b8570dd741b4ff7c60740afaee29d4a1c18898a5b85575dc046b9d00185d2e3"
+    sha256 arm64_sequoia: "164d26d87880f2ef10d8ee73eb13277dfa9b6897b1a8ffe138505158130ed468"
+    sha256 arm64_sonoma:  "b82910bcb770012a476defa1571a80978cc4bedb2e9f638844e273492148ce91"
+    sha256 tahoe:         "e2afcde62a063a7e835c92a5110e1b32b9abb25143ec2cf7419193f8edc85a60"
+    sha256 sequoia:       "63b38c07aaf7a9ac4eb564057e31b57be11595bed832ae86a701d95050350c8f"
+    sha256 sonoma:        "ec2abd1f0955cd22e10d73530ef48c9c00f092763cb55fa1ea3b5a35f4a7624c"
+    sha256 arm64_linux:   "c90154d5f9422618c6d7d65c3ad455e66745001c18c6a0ee0d257db30af80fa0"
+    sha256 x86_64_linux:  "24864538382abd41a945190df298a56918d6029d20fcc6bf61a3966e27617a26"
   end
 
   depends_on "pkgconf" => :build
@@ -38,7 +39,6 @@ class PythonAT312 < Formula
   uses_from_macos "unzip"
 
   on_linux do
-    depends_on "berkeley-db@5"
     depends_on "libnsl"
     depends_on "libtirpc"
     depends_on "zlib-ng-compat"
@@ -152,7 +152,7 @@ class PythonAT312 < Formula
       args << "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
     else
       args << "--enable-shared"
-      args << "--with-dbmliborder=bdb"
+      args << "--with-dbmliborder="
     end
 
     if OS.linux?
@@ -449,6 +449,11 @@ class PythonAT312 < Formula
   end
 
   def caveats
+    dbm_is = "`dbm.gnu` is"
+    on_linux do
+      dbm_is = "`dbm.gnu` and `dbm.ndbm` are"
+    end
+
     <<~EOS
       Python is installed as
         #{HOMEBREW_PREFIX}/bin/python#{version.major_minor}
@@ -463,7 +468,10 @@ class PythonAT312 < Formula
       `idle#{version.major_minor}` requires tkinter, which is available separately:
         brew install python-tk@#{version.major_minor}
 
-      See: https://docs.brew.sh/Homebrew-and-Python
+      #{dbm_is} available separately:
+        brew install python-gdbm@#{version.major_minor}
+
+      For more information about Homebrew and Python, see: https://docs.brew.sh/Homebrew-and-Python
     EOS
   end
 
@@ -492,7 +500,8 @@ class PythonAT312 < Formula
     assert_match "ModuleNotFoundError: No module named '_gdbm'",
                  shell_output("#{python3} -Sc 'import dbm.gnu' 2>&1", 1)
 
-    # Verify that the selected DBM interface works
+    # Verify that the selected DBM interface works on macOS.
+    # Linux requires installing python-gdbm formula
     (testpath/"dbm_test.py").write <<~PYTHON
       import dbm
 
@@ -503,7 +512,7 @@ class PythonAT312 < Formula
           assert b"foo \\xbd" in db
           assert db[b"foo \\xbd"] == b"bar \\xbd"
     PYTHON
-    system python3, "dbm_test.py"
+    system python3, "dbm_test.py" if OS.mac?
 
     system bin/"pip#{version.major_minor}", "list", "--format=columns"
 
