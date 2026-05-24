@@ -1,19 +1,22 @@
 class Utf8cpp < Formula
   desc "UTF-8 with C++ in a Portable Way"
   homepage "https://github.com/nemtrif/utfcpp"
-  url "https://ghfast.top/https://github.com/nemtrif/utfcpp/archive/refs/tags/v4.1.0.tar.gz"
-  sha256 "9a45cbeefacf512879971eaf57fe52133b73a0152d5354f3adeaf8d103cff0f3"
+  url "https://ghfast.top/https://github.com/nemtrif/utfcpp/archive/refs/tags/v4.1.1.tar.gz"
+  sha256 "1ca68016f0abc24172998e39ce0d8f8e2b7a26f7579a0ff85d4e1b9a7aea56f8"
   license "BSL-1.0"
   version_scheme 1
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "36d388fbfcaf87948e7117b33ea4e83b997628327fe7fc9541b24cd7b8715532"
+    sha256 cellar: :any_skip_relocation, all: "c2d5fe6f46a5fa0b84ea324e5ebc90bef8b27324e6061bd682f99d8e9473b92f"
   end
 
   depends_on "cmake" => [:build, :test]
 
   def install
+    # Temporary fix, remove in next release
+    inreplace "CMakeLists.txt", "VERSION 4.1.0", "VERSION #{version}"
+
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

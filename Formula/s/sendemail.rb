@@ -13,6 +13,7 @@ class Sendemail < Formula
 
   # Upstream homepage is gone
   deprecate! date: "2026-01-05", because: :repo_removed
+  disable! date: "2027-01-05", because: :repo_removed
 
   # Reported upstream: https://web.archive.org/web/20191013154932/caspian.dotconf.net/menu/Software/SendEmail/#comment-1119965648
   patch do

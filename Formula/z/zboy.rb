@@ -30,10 +30,7 @@ class Zboy < Formula
   depends_on "sdl2"
 
   def install
-    sdl2 = Formula["sdl2"]
-    ENV.append_to_cflags "-std=gnu89 -D__zboy4linux__ -DNETPLAY -DLFNAVAIL -I#{sdl2.include} -L#{sdl2.lib}"
-    inreplace "Makefile.linux", "zboy.o", "zboy.o drv_sdl2.o"
-    system "make", "-f", "Makefile.linux", "CFLAGS=#{ENV.cflags}"
+    system "make", "-f", "Makefile.linux"
     bin.install "zboy"
   end
 

@@ -6,14 +6,15 @@ class Schemathesis < Formula
   url "https://files.pythonhosted.org/packages/47/27/d41c4f23fc7adc2c85e5dd7856020ba9008f75c584aec55ccc782d4a9953/schemathesis-4.19.0.tar.gz"
   sha256 "15f34816630438f47b3e2f8a71f2181c1023aa458d414317e01fce40001d0066"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6704fa68e2f071cdf8d9568af0d2cad0b8f11ec0d34d94545c0fd7aa53fd854a"
-    sha256 cellar: :any,                 arm64_sequoia: "4a23746180c69620accdf21b9fc74ec8bda1245f679a24a55be153f87bd22fe1"
-    sha256 cellar: :any,                 arm64_sonoma:  "9dd5347c5578029e820e57465b736180a3cde9320557af96ca71be30dd49747e"
-    sha256 cellar: :any,                 sonoma:        "fddb1bf0a1bec8251341791bea010b0a96fbe5694ade58f36da8988848147959"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "88bc07ed16f97df907d5cab790d4dacb47d96139ac17c617e6992b46ee256443"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e2365802e10db546126a702c3a6f02793dfef048fc6d6303a7416529b69c893"
+    sha256 cellar: :any,                 arm64_tahoe:   "307a42dcef44a6f7134c8003fb791fe0836564edb3f9fe5474a52328be5ae1d1"
+    sha256 cellar: :any,                 arm64_sequoia: "cab18caef19088585c510de9ffed63aaafcf859acd5cb80ce8793e6c90b5e27a"
+    sha256 cellar: :any,                 arm64_sonoma:  "debcdb47eb14b734c8e7e2e0c44b853e52f1fb48219d78e4137be8889d47a80d"
+    sha256 cellar: :any,                 sonoma:        "68da6f9bca90826c8a2f673fa677f31058006c5b5c09592013bc38f9ea07909f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10af0aa4b473cd2b568107bc6bf7caca0b9726cb2c1a976bd81d5e05887cf48d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06a1a4d029d99ca1b0688808b3be030f07c866eda2c9bfa327584f34d8fa428d"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
@@ -42,8 +43,8 @@ class Schemathesis < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
-    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
+    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
+    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
   end
 
   resource "graphql-core" do
@@ -72,8 +73,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/ac/81/9260841df522f923a1c9b5879f2192e237db22e68d3594939866a97f1120/hypothesis-6.152.8.tar.gz"
-    sha256 "9c0dd56c6ce5649ef3289555ae9fec40663401cf7134a99f926acf1b91fb6d9f"
+    url "https://files.pythonhosted.org/packages/3b/fb/a5651eb0cd03ecee644e8f4d8cd2027b40a08bf1488f46201e794aebe9b5/hypothesis-6.152.9.tar.gz"
+    sha256 "de4711d69ce3a18009047c3b44882810fd0c0348c1558e920a4b0d2c45f59e1e"
   end
 
   resource "hypothesis-graphql" do
@@ -87,8 +88,8 @@ class Schemathesis < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
+    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
   end
 
   resource "iniconfig" do
@@ -187,8 +188,8 @@ class Schemathesis < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/81/69/17425771797c36cded50b7fe44e850315d039f28b15901ab44839e70b593/starlette-1.0.0.tar.gz"
-    sha256 "6a4beaf1f81bb472fd19ea9b918b50dc3a77a6f2e190a12954b25e6ed5eea149"
+    url "https://files.pythonhosted.org/packages/08/a3/84e821cc54b4ab50ae6dbc6ac3800a651b65ec35f045cc73785380654057/starlette-1.0.1.tar.gz"
+    sha256 "512399c5f1de7fac99c88572212ded9ddeddef2fb32afa82d724000e88b38f4f"
   end
 
   resource "starlette-testclient" do

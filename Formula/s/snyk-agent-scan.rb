@@ -6,14 +6,15 @@ class SnykAgentScan < Formula
   url "https://files.pythonhosted.org/packages/15/27/fecd79eb70b9cabb28139b3030d28783ca4f48c1a985345ec370f0a7c593/snyk_agent_scan-0.5.4.tar.gz"
   sha256 "9c9c8f6009883d5480f62b2c9e1f86da3ec1752851f9eb8ac3a2d513a95eee5a"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "80c3c94b006b8186903539af3fa1e1a81181e20d9bd975fba3fef6dd9a73cf35"
-    sha256 cellar: :any,                 arm64_sequoia: "d380fdb2b0947ad1e8e6fa87400700b3fb5cc901bcd1f4b4726381618b7c30ae"
-    sha256 cellar: :any,                 arm64_sonoma:  "ae3063b2a81bbf8975dead4b855781192769916f58d438b4e38819572ac3d3cb"
-    sha256 cellar: :any,                 sonoma:        "a9daa369a787dae888fc9e51998f39772c976bb87ce23b34287ad97807635891"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ffa91e78dda39fa8144b771b3c32a68d59bf80da9cc6ee3125289da2d92b636"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdfb3b0b4577915f5c5d922541baa06af0e051841566977dfc92e90f1ad7aeef"
+    sha256 cellar: :any,                 arm64_tahoe:   "df88ab1d952d9d0997fb92d78eda48ea7e33048906234b72ebb2d00f0f85a32f"
+    sha256 cellar: :any,                 arm64_sequoia: "8bbc14c1d412cd40fa4f6e52d98b2ae420e320587ff6581dfaf2288083217319"
+    sha256 cellar: :any,                 arm64_sonoma:  "4019b43f255b8bbab1fdbc5beb778512333a5b42b4a04036545a35596db37229"
+    sha256 cellar: :any,                 sonoma:        "56c8f699645f42775a9935d9bd638feb602c5c1e4405ebc97ea795a9e609b3a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "424d57b4bf504f706d647126dd2f9a243ef82b96a2b51e36f912fb6d6f320792"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ceffefa2609a4b681e2e7f0df674800df58f563843a86f72b42d91a037afbc9f"
   end
 
   depends_on "certifi" => :no_linkage
@@ -61,8 +62,8 @@ class SnykAgentScan < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
-    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
+    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
+    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
   end
 
   resource "detect-secrets" do
@@ -96,8 +97,8 @@ class SnykAgentScan < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
+    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
   end
 
   resource "jsonschema" do
@@ -161,8 +162,8 @@ class SnykAgentScan < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/c2/27/a3b6e5bf6ff856d2509292e95c8f57f0df7017cf5394921fc4e4ef40308a/pyjwt-2.12.1.tar.gz"
-    sha256 "c74a7a2adf861c04d002db713dd85f84beb242228e671280bf709d765b03672b"
+    url "https://files.pythonhosted.org/packages/3b/81/58d0ac84e1ef3a3843791d6954d94c0b33d526c75eeb1efbce9d0a4c4077/pyjwt-2.13.0.tar.gz"
+    sha256 "41571c89ca91598c79e8ef18a2d07367d4810fbbd6f637794879baf1b7703423"
   end
 
   resource "python-dotenv" do
@@ -216,8 +217,8 @@ class SnykAgentScan < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/81/69/17425771797c36cded50b7fe44e850315d039f28b15901ab44839e70b593/starlette-1.0.0.tar.gz"
-    sha256 "6a4beaf1f81bb472fd19ea9b918b50dc3a77a6f2e190a12954b25e6ed5eea149"
+    url "https://files.pythonhosted.org/packages/08/a3/84e821cc54b4ab50ae6dbc6ac3800a651b65ec35f045cc73785380654057/starlette-1.0.1.tar.gz"
+    sha256 "512399c5f1de7fac99c88572212ded9ddeddef2fb32afa82d724000e88b38f4f"
   end
 
   resource "truststore" do

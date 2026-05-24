@@ -49,9 +49,6 @@ class OpenBabel < Formula
   conflicts_with "surelog", because: "both install `roundtrip` binaries"
 
   def install
-    # Fix to error: ‘clock’ was not declared in this scope on Linux
-    inreplace "include/openbabel/obutil.h", "#include <math.h>", "#include <ctime>\n\\0"
-
     args = %W[
       -DINCHI_INCLUDE_DIR=#{Formula["inchi"].opt_include}/inchi
       -DOPENBABEL_USE_SYSTEM_INCHI=ON
@@ -61,16 +58,21 @@ class OpenBabel < Formula
       -DPYTHON_INSTDIR=#{prefix/Language::Python.site_packages(python3)}
     ]
 
-    # Workaround to build with CMake 4
-    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
-    inreplace "CMakeLists.txt", "cmake_policy(SET CMP0042 OLD)",
-                                "cmake_policy(SET CMP0042 NEW)"
+    if build.stable?
+      # Workaround to build with CMake 4
+      args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+      inreplace "CMakeLists.txt", "cmake_policy(SET CMP0042 OLD)",
+                                  "cmake_policy(SET CMP0042 NEW)"
 
-    # Workaround to build with eigen 5.0.0
-    # Issue ref: https://github.com/openbabel/openbabel/issues/2839
-    args += %W[-DEIGEN3_FOUND=ON -DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3]
-    inreplace "CMakeLists.txt", "set (CMAKE_CXX_STANDARD 11)", "set (CMAKE_CXX_STANDARD 14)"
-    rm "cmake/modules/FindEigen3.cmake"
+      # Workaround to build with eigen 5.0.0
+      # Issue ref: https://github.com/openbabel/openbabel/issues/2839
+      args += %W[-DEIGEN3_FOUND=ON -DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3]
+      inreplace "CMakeLists.txt", "set (CMAKE_CXX_STANDARD 11)", "set (CMAKE_CXX_STANDARD 14)"
+      rm "cmake/modules/FindEigen3.cmake"
+
+      # Fix to error: ‘clock’ was not declared in this scope on Linux
+      inreplace "include/openbabel/obutil.h", "#include <math.h>", "#include <ctime>\n\\0"
+    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

@@ -6,16 +6,16 @@ class Gptme < Formula
   url "https://files.pythonhosted.org/packages/1a/20/57d7b444abc582b5aa09b98aa6821fefa728eb056a1c4371d475d19514dd/gptme-0.31.0.tar.gz"
   sha256 "96e17e9dd82c409743b1b81dad08c6c024ace108d829f80c557be8eb2c429ffb"
   license "MIT"
-  revision 10
+  revision 11
   head "https://github.com/ErikBjare/gptme.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6fbf478d159f3fe0e0a68e334f256736c51cee9001102d1fa31dabf894c8fc43"
-    sha256 cellar: :any,                 arm64_sequoia: "09c6413bde83940449384b0eaaae644c64e5ce59117a67ada5ff8c3a2b481521"
-    sha256 cellar: :any,                 arm64_sonoma:  "52d4b531c4b5ec28de67d95c72796b92c4d31a550d788b492842375b9f6c1f80"
-    sha256 cellar: :any,                 sonoma:        "e0b483667c89f110b12514be68eadc8fb6ff1317fa6197c456fc51951a65e15c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e22e24b54386d604b4464a42c995267230567e6fbd72e78bcd11fdf1fe0aaad0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17c134c1834352fce1e78039dec098ddf42d3f800463fc69cf3cfb52ff12e394"
+    sha256 cellar: :any,                 arm64_tahoe:   "3b250eef9868027cb253af99fb4cf830f9c328a2202599859278a57b010cb937"
+    sha256 cellar: :any,                 arm64_sequoia: "b817edb445a666a1087f71e81a1d6582e170f4d07d20cd0181acb678bad937b9"
+    sha256 cellar: :any,                 arm64_sonoma:  "a634128381aa3b5eba7eacdf089ae3254a6daff043c72586fc8e82a2ab484395"
+    sha256 cellar: :any,                 sonoma:        "bda98f51e03bb1dce93c3ae991f6c6a96bbe85bdd59fc2f5488f93d53cb79d11"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ee0803b4ac99577301dd479b8aa024ef0cfebc800a8c0ba95964c0c1c072b92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4816db87668cf4a68affa37292fccf5b1b3788a3e27ad2fd0ac679d01249dd8"
   end
 
   depends_on "rust" => :build # for jitter
@@ -63,8 +63,8 @@ class Gptme < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
-    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
+    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
+    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
   end
 
   resource "click-default-group" do
@@ -113,8 +113,8 @@ class Gptme < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
+    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
   end
 
   resource "ipython" do
@@ -228,8 +228,8 @@ class Gptme < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/c2/27/a3b6e5bf6ff856d2509292e95c8f57f0df7017cf5394921fc4e4ef40308a/pyjwt-2.12.1.tar.gz"
-    sha256 "c74a7a2adf861c04d002db713dd85f84beb242228e671280bf709d765b03672b"
+    url "https://files.pythonhosted.org/packages/3b/81/58d0ac84e1ef3a3843791d6954d94c0b33d526c75eeb1efbce9d0a4c4077/pyjwt-2.13.0.tar.gz"
+    sha256 "41571c89ca91598c79e8ef18a2d07367d4810fbbd6f637794879baf1b7703423"
   end
 
   resource "python-dateutil" do
@@ -298,8 +298,8 @@ class Gptme < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/81/69/17425771797c36cded50b7fe44e850315d039f28b15901ab44839e70b593/starlette-1.0.0.tar.gz"
-    sha256 "6a4beaf1f81bb472fd19ea9b918b50dc3a77a6f2e190a12954b25e6ed5eea149"
+    url "https://files.pythonhosted.org/packages/08/a3/84e821cc54b4ab50ae6dbc6ac3800a651b65ec35f045cc73785380654057/starlette-1.0.1.tar.gz"
+    sha256 "512399c5f1de7fac99c88572212ded9ddeddef2fb32afa82d724000e88b38f4f"
   end
 
   resource "tabulate" do
@@ -343,8 +343,8 @@ class Gptme < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/2e/64/925f213fdcbb9baeb1530449ac71a4d57fc361c053d06bf78d0c5c7cd80c/wrapt-2.1.2.tar.gz"
-    sha256 "3996a67eecc2c68fd47b4e3c564405a5777367adfd9b8abb58387b63ee83b21e"
+    url "https://files.pythonhosted.org/packages/e2/f0/5e969d268d59e6035f2f1960da9e82fe6db24a7b8abe8e36a78c27cb3e2b/wrapt-2.2.0.tar.gz"
+    sha256 "b70a0b75b0a5a58d04aad06b3f167d49e729381d3417413656220c0cd7617847"
   end
 
   def install

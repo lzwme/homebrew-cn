@@ -1,17 +1,17 @@
 class Manifold < Formula
   desc "Geometry library for topological robustness"
   homepage "https://github.com/elalish/manifold"
-  url "https://ghfast.top/https://github.com/elalish/manifold/releases/download/v3.4.1/manifold-3.4.1.tar.gz"
-  sha256 "c0283695648886df3a0ab35ead473622338782a05a247664925eb3c41ced0181"
+  url "https://ghfast.top/https://github.com/elalish/manifold/releases/download/v3.5.0/manifold-3.5.0.tar.gz"
+  sha256 "ad75aab26438a81fc4ffdd816104753bc95f0219f325a988ea89859b5de91b78"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "aa1b6aaf8f53281c221c85243a4857958878b5c438cf394e1f9148bde3c95dbc"
-    sha256 cellar: :any,                 arm64_sequoia: "bd78a4a16e4367941bab70bf3b838ee256235ef3f241f704b05f10f0af24821a"
-    sha256 cellar: :any,                 arm64_sonoma:  "523b788337489adc047b5a754a1863bb1095383c3ddea2970bcad1f3b6cf3e13"
-    sha256 cellar: :any,                 sonoma:        "69af5b7f329fd5921321da5d0711c01a80fb2c4591111dc5d3937763e58cab00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ca61fbcfb6a53c3ba4ec5f3d7c8deed9c2787abe870f8e38b2946ddae75f5b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79739a087311fa1e90f161f8bcfb53fe2eae82a13fced9e4db37a5d5cc970d14"
+    sha256 cellar: :any,                 arm64_tahoe:   "aebe32718c867e0458e5992e302fb514e036fde35cf6fcd64e6353d7c9d26147"
+    sha256 cellar: :any,                 arm64_sequoia: "0a699ed1cadd406c3556c058802cb8850d8c3b666c8f754427610503666d25a6"
+    sha256 cellar: :any,                 arm64_sonoma:  "09e39b664ae5d408d9cec45fad6322a18af36e2778448a277f7a873d6a995c97"
+    sha256 cellar: :any,                 sonoma:        "058002aa8807e559156498b38ddd49de455b8906d648d49dcf778972f0e5b406"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "628e0da7c6addd6a7365f1e246d47c5f2132357731c483fbc52309bfcf611ce4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a85bf153f32fef04b36d069b310cec189bb48f3092660c0b7a9e7bd7a9e2492"
   end
 
   depends_on "cmake" => :build

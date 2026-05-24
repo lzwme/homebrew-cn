@@ -33,9 +33,14 @@ class Libmpeg2 < Formula
   depends_on "libtool" => :build
   depends_on "sdl12-compat"
 
+  on_linux do
+    depends_on "libx11"
+    depends_on "libxext"
+  end
+
   def install
     # Otherwise compilation fails in clang with `duplicate symbol ___sputc`
-    ENV.append_to_cflags "-std=gnu89"
+    ENV.append "CFLAGS", "-std=gnu89"
 
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *std_configure_args

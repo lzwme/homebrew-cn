@@ -1,21 +1,21 @@
 class WebtorrentCli < Formula
   desc "Command-line streaming torrent client"
   homepage "https://webtorrent.io/"
-  url "https://registry.npmjs.org/webtorrent-cli/-/webtorrent-cli-5.1.3.tgz"
-  sha256 "54a53ecdacbccf0f6855bd4ef18f4f154576f8346e3b7aef3792b66dd5aaaa1b"
+  url "https://registry.npmjs.org/webtorrent-cli/-/webtorrent-cli-6.0.0.tgz"
+  sha256 "958821f50355ea13cd6f2272c3ca8b023388b14a917e279e0bf63f2547498d72"
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "4f3bda6aa26bcf929db135e31c3fb3822ef250a7738438b4256c0706abc736b6"
-    sha256 arm64_sequoia: "2455bfe4e4762ecf6d4110b6e3db3160d6b6f7ed455062fea983f230b127b127"
-    sha256 arm64_sonoma:  "89c52aa581dbbf5676cb8fd1e7837f9e7830b35ee33fda3b1dba4b37484b33d7"
-    sha256 sonoma:        "6ba628acde26d8a0b2c90c235cbb4b55739c860781a3974160556e5bfc4169f6"
-    sha256 arm64_linux:   "a44f21e2d862608a8087a7ec516b56d181ebdf61246c2ac7c21d92af9a3b38db"
-    sha256 x86_64_linux:  "9760ecc99259186588ceccdfa3e25a12296ba01b852c2c3411c2c7eeadc3e0ee"
+    sha256 arm64_tahoe:   "d0eef5abf6e01e1bfa8330bce0f2cbdf45afa4749480e07cc08ea3e3c7efb2b0"
+    sha256 arm64_sequoia: "1d37da2d7d7865819ac6a77548adefaec6d638e8a3054d0dc85d6199512b7de7"
+    sha256 arm64_sonoma:  "dc73ce373313a7c9a4bb7d6cf1efadb9d8657945091264bcf966d4429cf866aa"
+    sha256 sonoma:        "3f933ceee91ee375a014da72820f676a6e8ecaa200090d5a3f3229a5f9a0c7ab"
+    sha256 arm64_linux:   "4cc65c1a5649f21e8cbb982334bb10854bccfc40a24df872deabda523692beae"
+    sha256 x86_64_linux:  "aef5a3aebb182b7486a37ed9fba1e097c5a64f712b2ba973b2446c758d8f6472"
   end
 
   deprecate! date: "2025-10-28", because: "uses deprecated node@20"
+  disable! date: "2026-10-28", because: "uses deprecated node@20"
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
@@ -24,10 +24,7 @@ class WebtorrentCli < Formula
   depends_on "node@20"
 
   def install
-    # Workaround for CMake 4 until node-datachannel -> libdatachannel -> plog is updated
-    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
-
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(ignore_scripts: false)
     bin.install_symlink libexec.glob("bin/*")
 
     nm = libexec/"lib/node_modules/webtorrent-cli/node_modules"
@@ -35,9 +32,7 @@ class WebtorrentCli < Formula
     # Remove node-datachannel dev dependencies which were installed via
     # `npm install --ignore-scripts --production=false` to build node-datachannel.node
     # Also remove prebuild-install which was needed at install time due to install script
-    node_domexception = nm/"node-datachannel/node_modules/node-domexception"
-    rm_r(nm.glob("node-datachannel/node_modules/*") - [node_domexception])
-    odie "node-domexception not found! Check if it is still a dependency." unless node_domexception.exist?
+    rm_r(nm.glob("node-datachannel/node_modules/*"))
 
     # Remove node-datachannel CMake build directory other than the final binary
     node_datachannel_release_dir = nm/"node-datachannel/build/Release"
@@ -54,9 +49,6 @@ class WebtorrentCli < Formula
       rm_r(dir) if platforms.exclude?(dir.basename.to_s)
       dir.glob("*.musl.node").map(&:unlink) if OS.linux?
     end
-
-    # Replace universal binaries with native slices
-    deuniversalize_machos
   end
 
   test do

@@ -26,6 +26,19 @@ class Pcre < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0ad29b4ac581f0b18367f131f43583b10d2fd4832d80a47e8b80364f939257d"
   end
 
+  # Final release on 2021-06-22. As an exception, PCRE is given an extended
+  # deprecation period with removal set for 10 years after last release.
+  #
+  # PCRE was also removed in major Linux distros like Debian 13, RHEL 10,
+  # Ubuntu 26.04 and Fedora 45.
+  #
+  # The dates set should allow most maintained projects to migrate as it
+  # happens after:
+  # * Debian 12 LTS ends on 2028-06-30 removing PCRE from all maintained Debian
+  # * Ubuntu 24.04 security support ends on 2029-05-31 which will lead to
+  #   removal from CI runners like GitHub Actions
+  disable! date: "2030-06-22", because: :unmaintained, replacement_formula: "pcre2"
+
   uses_from_macos "bzip2"
 
   on_linux do

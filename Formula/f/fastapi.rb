@@ -6,15 +6,15 @@ class Fastapi < Formula
   url "https://files.pythonhosted.org/packages/5d/45/c130091c2dfa061bbfe3150f2a5091ef1adf149f2a8d2ae769ecaf6e99a2/fastapi-0.136.1.tar.gz"
   sha256 "7af665ad7acfa0a3baf8983d393b6b471b9da10ede59c60045f49fbc89a0fa7f"
   license "MIT"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "282e7b9411f2cd7d3dfbedddcdd23614d6b3050665724cd885f578fe8f3809d0"
-    sha256 cellar: :any,                 arm64_sequoia: "d54f1f2cfbc6164a23b22ba00dc4297bf3fd6c65b7e074bde936e5437bb7d756"
-    sha256 cellar: :any,                 arm64_sonoma:  "6118659cdb9f50a9e70114a80ffbd74828f45d5a34312c117daf775e68ba6ec4"
-    sha256 cellar: :any,                 sonoma:        "7f69cbec17fab18057153077ad168cbca19d6e7f7bf8c9b287abd9498a5a04f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51609eeae10978dad2beb1914e981c00f93315141bcd4cedf3a5160d5c982127"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e1e2919ad66874e3efeea432cc4292cb4b23e073dfe5aa60e36b0061eb1d121"
+    sha256 cellar: :any,                 arm64_tahoe:   "40236d09e9ea07c2de7b2ba4d225d4cc8f9aa5994d6dae35609e2e184e8ba455"
+    sha256 cellar: :any,                 arm64_sequoia: "b8710d60df37c487d8f777f9b4bf31738d3968e6b48e39f39b60b935c069c0d9"
+    sha256 cellar: :any,                 arm64_sonoma:  "c2aedf4b7cd328e591ef8ef9c5e01f6558534fbb0a6ac0c69cb79299ad5af9dd"
+    sha256 cellar: :any,                 sonoma:        "90c8296415228002de9d01f0cc0317c1a287c56e3c3acc7354ae5d0ba6c557f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa48f5594e398d3ad2fba6f1f3e5c35f7e1bcb1694cb176402c9610980dd5737"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d9a030be627d1d853962000d3102a1c6f12fee092a547197ce3ff81d605e776"
   end
 
   depends_on "rust" => :build # for annotated-doc
@@ -37,8 +37,8 @@ class Fastapi < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
-    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
+    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
+    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
   end
 
   resource "dnspython" do
@@ -87,8 +87,8 @@ class Fastapi < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
+    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
   end
 
   resource "jinja2" do
@@ -147,8 +147,8 @@ class Fastapi < Formula
   end
 
   resource "rich-toolkit" do
-    url "https://files.pythonhosted.org/packages/8f/10/dc6e64e85244971671981dc26b09353a1564f5e61b977c80180dc42ad90b/rich_toolkit-0.19.9.tar.gz"
-    sha256 "fce5c6f41f79382ecf60a79851b2543f627568e3e07c78ab4b8542e1ca247d1c"
+    url "https://files.pythonhosted.org/packages/fa/02/32217f3657ae91a0ea7cf1d74ade78f44352f830d00c468f753ddb3d4980/rich_toolkit-0.19.10.tar.gz"
+    sha256 "dc2e8c515ef9fbb4894e62bd41a2d2960dd7c2f505b5084894604d5ccfee3f09"
   end
 
   resource "rignore" do
@@ -167,8 +167,8 @@ class Fastapi < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/81/69/17425771797c36cded50b7fe44e850315d039f28b15901ab44839e70b593/starlette-1.0.0.tar.gz"
-    sha256 "6a4beaf1f81bb472fd19ea9b918b50dc3a77a6f2e190a12954b25e6ed5eea149"
+    url "https://files.pythonhosted.org/packages/08/a3/84e821cc54b4ab50ae6dbc6ac3800a651b65ec35f045cc73785380654057/starlette-1.0.1.tar.gz"
+    sha256 "512399c5f1de7fac99c88572212ded9ddeddef2fb32afa82d724000e88b38f4f"
   end
 
   resource "typer" do

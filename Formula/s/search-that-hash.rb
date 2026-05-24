@@ -13,6 +13,9 @@ class SearchThatHash < Formula
     sha256 cellar: :any_skip_relocation, all: "42e0c7eb93061ad01c4644c50bce1039d5561830e92cbc12e7a8507e0e3f5360"
   end
 
+  deprecate! date: "2026-05-23", because: :unmaintained
+  disable! date: "2027-05-23", because: :unmaintained
+
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 

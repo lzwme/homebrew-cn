@@ -1,8 +1,6 @@
 class Libassuan < Formula
   desc "Assuan IPC Library"
   homepage "https://www.gnupg.org/related_software/libassuan/"
-  # TODO: On next release, check if `-std=gnu89` workaround can be removed.
-  # Ref: https://dev.gnupg.org/T7246
   url "https://gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.2.tar.bz2"
   mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/libassuan/libassuan-3.0.2.tar.bz2"
   sha256 "d2931cdad266e633510f9970e1a2f346055e351bb19f9b78912475b8074c36f6"
@@ -32,9 +30,6 @@ class Libassuan < Formula
   depends_on "libgpg-error"
 
   def install
-    # Fixes duplicate symbols errors - https://lists.gnupg.org/pipermail/gnupg-devel/2024-July/035614.html
-    ENV.append_to_cflags "-std=gnu89"
-
     system "./configure", "--disable-silent-rules",
                           "--enable-static",
                           *std_configure_args

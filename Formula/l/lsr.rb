@@ -19,6 +19,7 @@ class Lsr < Formula
 
   # Aligned to `zig@0.14` formula. Can be removed if upstream updates to newer Zig.
   deprecate! date: "2026-08-19", because: "does not build with Zig >= 0.15"
+  disable! date: "2027-08-19", because: "does not build with Zig >= 0.15"
 
   depends_on "zig@0.14" => :build # https://tangled.sh/@rockorager.dev/lsr/issues/13
 

@@ -23,8 +23,7 @@ class BazelAT8 < Formula
 
   # https://bazel.build/release#support-matrix
   deprecate! date: "2028-01-01", because: :unsupported
-  # FIXME: brew currently cannot handle `disable!` on future deprecation
-  # disable! date: "2029-01-01", because: :unsupported
+  disable! date: "2029-01-01", because: :unsupported
 
   depends_on "openjdk@21"
 

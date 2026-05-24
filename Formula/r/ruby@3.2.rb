@@ -23,6 +23,7 @@ class RubyAT32 < Formula
 
   # EOL: 2026-03-31
   deprecate! date: "2026-05-07", because: :unsupported
+  disable! date: "2027-05-07", because: :unsupported
 
   depends_on "autoconf" => :build
   depends_on "bison" => :build

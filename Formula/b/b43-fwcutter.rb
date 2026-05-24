@@ -1,9 +1,8 @@
 class B43Fwcutter < Formula
   desc "Extract firmware from Braodcom 43xx driver files"
   homepage "https://wireless.docs.kernel.org/en/latest/en/users/drivers/b43.html"
-  url "https://bues.ch/b43/fwcutter/b43-fwcutter-019.tar.bz2"
-  mirror "https://launchpad.net/ubuntu/+archive/primary/+files/b43-fwcutter_019.orig.tar.bz2"
-  sha256 "d6ea85310df6ae08e7f7e46d8b975e17fc867145ee249307413cfbe15d7121ce"
+  url "https://bues.ch/b43/fwcutter/b43-fwcutter-020.tar.xz"
+  sha256 "bae58321c0926827b99afd4fddaebbc934c781d8e010fe62e1ddc4af83046214"
   license "BSD-2-Clause"
 
   livecheck do
@@ -12,20 +11,12 @@ class B43Fwcutter < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "5e27ebebb8d25a8d3c1ddd0e03b4a9f174117c1cb977c590b1c5300f5b45629f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "feebcb5d44b93e56fb3057568f06a25214d0c0aa2b03c48c0e8a068ecf5a1986"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "de90ea58c943e6a3a4da88710cfc5b1e29e646e1033ca280dac8730184346572"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e4d24a045df3b788ed629cd5f67509f5a0c5bff70fcd213f72107c2db166e3d9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "22dc022f54852b54e28b799378fcbd2ca877eb815332d90199881dbfe291d84b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0c68725ddd4ab0d3467c8eab623682712e51d180e4517e1fa04518c0aac4c65a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c24cffe8c519050b9e9810e28038cb84815a5526089e5aa15f239c8061c131f2"
-    sha256 cellar: :any_skip_relocation, ventura:        "5158aa819495b8aa8692bee35210299f865b62fb3cb4e559019290e1964b5ac5"
-    sha256 cellar: :any_skip_relocation, monterey:       "a5c8994d63b3a39547fc9675b60c163575b6c88d24634d6ef0c0f29ebf1dbecf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d71a9a74998af98e4593b5593ff415aa4e6f868a9fe7b7fa4814fd27a4b6652d"
-    sha256 cellar: :any_skip_relocation, catalina:       "65b60abba52b848bd47386245505719c4c2218429719cf008a6720a4fbcac36a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "13ef19f39b23087c593c3f7b9c61e0eec77695230bd14018c4af95600f56450b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "730c1aaf1eca6cdcc4abab681ca38e7629699e85ac20bb0082b15abbf317a5ca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4e5e81ff865b2905041a0fea85e776c1ee09b134c3ab75f1b875458be7bea210"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56b4f1d7cacb06e6e7de79de8013c0d5df2dd5c3edc79c4642d64d4f5d10a572"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5324a1cf7a15dbdd27cb2635fc3b29334e532d6d97fecf4d4ee89941b598d950"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d48b82edbc8a9dabe2799c9f5fa6a1d45001658db8aa2c1a617b5080f026e5b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2c8d93464e6b0487659822b8593bceeb6abfa702bd684cc681139d23a2b914e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a37b812c01e5e0ddedd9106aa5b18643da573d0ad4359ec8764806ec27a10094"
   end
 
   def install

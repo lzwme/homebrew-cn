@@ -1,19 +1,17 @@
 class Gssdp < Formula
   desc "GUPnP library for resource discovery and announcement over SSDP"
   homepage "https://wiki.gnome.org/GUPnP/"
-  url "https://download.gnome.org/sources/gssdp/1.6/gssdp-1.6.4.tar.xz"
-  sha256 "ff97fdfb7f561d3e6813b4f6a2145259e7c2eff43cc0e63f3fd031d0b6266032"
+  url "https://download.gnome.org/sources/gssdp/1.6/gssdp-1.6.5.tar.xz"
+  sha256 "34fd824c36ef9f575594d5572728412ddb8c522f606b6c913ef8b5a800aafc4e"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "757813a4572ec251ec2b0b5d08fac402448d7eb07e798f4ddae34beafb4dd786"
-    sha256 cellar: :any, arm64_sequoia: "ebe88f533fe10a5c8bcd40124a1eba3be1fb2d7b1f519b8d52c8e5d72de9a252"
-    sha256 cellar: :any, arm64_sonoma:  "583257d286536b6fbb04901b527beeb0782578c667e13cf9fa943bb59bde6a36"
-    sha256 cellar: :any, arm64_ventura: "259745694e0f5e9ec0cf3590c2e2e7cfb5ef85a606be7b5399a0e5af5cbaff47"
-    sha256 cellar: :any, sonoma:        "bc05bf33af411e1488903ff6cd774eef71232b4ac8da91bbcab9089ccbef0c16"
-    sha256 cellar: :any, ventura:       "e2a98e88c932592c7dc25135c1d142159531c5c247621eae87d01ddaefe9b1e4"
-    sha256               arm64_linux:   "30d8f9d8c169ad2f144275e2d20a6594aed7532e8050f236dd0ccf208e6a1392"
-    sha256               x86_64_linux:  "912c3889c750253f08a991711db1d2cf6cfa44e99933d733c7441d42665251c3"
+    sha256 cellar: :any, arm64_tahoe:   "11eeb536299fe7b73abef10de18c75828b8e600c6b8e75dea28fb353e99c8c3c"
+    sha256 cellar: :any, arm64_sequoia: "02fa2e830c238c8de15acda86ae0fcca5b1894955ec691de32a1a02dd05d76df"
+    sha256 cellar: :any, arm64_sonoma:  "f7abf203a981a9c60f74687194c46682655f4106ce4270592b5b91d3bff46b99"
+    sha256 cellar: :any, sonoma:        "d05c95feba8ff9a61786d491a8511b326047c7b1d576a241ba4d11b8fea9db54"
+    sha256               arm64_linux:   "79fdb44abfd486bb395554650aabae71ab754f4b1a4c072f0715162c41f886af"
+    sha256               x86_64_linux:  "e878abe338a5c0b9e3dcc340ccc86e9781f6060f7db09aae12c07b1c1467a519"
   end
 
   depends_on "gobject-introspection" => :build

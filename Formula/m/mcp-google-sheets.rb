@@ -6,14 +6,15 @@ class McpGoogleSheets < Formula
   url "https://files.pythonhosted.org/packages/b2/29/7f4c35619a25f39d27e133e39d0642fb9c9c44a419a9acc6fc2993b7a21d/mcp_google_sheets-0.6.3.tar.gz"
   sha256 "d41ca5b5367af1426a7db860010473d5c1a7f3df02e4f8db30f75f9c66030e18"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26460eae73b80c8e67f52cdbd360d0924aa9ede8f6501ae6a6463cd76b2bf6d7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17b6736c04058f641817ea4a95157bacc37fe9028e496878570a91b41aff3ca9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce6f0986878d0b02f54d8ec62bc6d314448142e442433ae89b3309d8569c8857"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a3bc32e93975882e9ca722f0983b126ad8aedeeec4ad5b035e1ac7d4bb2d4f26"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "922de745770ada082dcc5ded36d7cb3cd5e4a8cdb3f9ea86f1ae905c6bd80bab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e67559bef4c0ccec003b15a91ccb7c98dccfb88ac27c3cff12efe8e2d895824"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4907194c18cf4657ba9b2dc110f994c4f3ab34f08a5ccfb075b567161f142d8a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe8ed96e16e3183f433b1eaeae71768895052a6bb121d83584fdca2598be43f6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "095951ff4b4febe77c46e3a49d583ea932f705d91e2b3f3977ceb87e406b5a86"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a4b21b9f931c34ee32fb3a9d412bdc0257f24993261127be77dca19349c67e11"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fba48d28e1eef286b175fdcb55215572ec2dd55c2e1c8029283b3d710f4f6cc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c4f22edc5c5fab281caacc4164bf86375d8edbe026a5a60927101f6278dea2b"
   end
 
   depends_on "certifi" => :no_linkage
@@ -40,8 +41,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
+    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
   end
 
   resource "google-api-core" do
@@ -55,8 +56,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/d4/f8/80d2493cbedece1c623dc3e3cb1883300871af0dcdae254409522985ac23/google_auth-2.52.0.tar.gz"
-    sha256 "01f30e1a9e3638698d89464f5e603ce29d18e1c0e63ec31ac570aba4e164aaf5"
+    url "https://files.pythonhosted.org/packages/c6/ad/ff781329bbbdc0974a098d996e89c9e1f7024262f9e3eec442fbb9ad1ac6/google_auth-2.53.0.tar.gz"
+    sha256 "e7e6aa16f6bee7b2b264830fd04f08087a1d5a836df516251a5d15327b246c9c"
   end
 
   resource "google-auth-httplib2" do
@@ -100,8 +101,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
+    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
   end
 
   resource "jsonschema" do
@@ -130,8 +131,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/6b/6b/a0e95cad1ad7cc3f2c6821fcab91671bd5b78bd42afb357bb4765f29bc41/protobuf-7.34.1.tar.gz"
-    sha256 "9ce42245e704cc5027be797c1db1eb93184d44d1cdd71811fb2d9b25ad541280"
+    url "https://files.pythonhosted.org/packages/60/fd/5b1491d9e4b586d621c54f4c36b888714164b6875f8d6afa3f9072906a51/protobuf-7.35.0.tar.gz"
+    sha256 "a2efd84605f41e559f1881b0912b44099d0a2ac9bf46b3474823f10fb393b0e6"
   end
 
   resource "pyasn1" do
@@ -150,8 +151,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/c2/27/a3b6e5bf6ff856d2509292e95c8f57f0df7017cf5394921fc4e4ef40308a/pyjwt-2.12.1.tar.gz"
-    sha256 "c74a7a2adf861c04d002db713dd85f84beb242228e671280bf709d765b03672b"
+    url "https://files.pythonhosted.org/packages/3b/81/58d0ac84e1ef3a3843791d6954d94c0b33d526c75eeb1efbce9d0a4c4077/pyjwt-2.13.0.tar.gz"
+    sha256 "41571c89ca91598c79e8ef18a2d07367d4810fbbd6f637794879baf1b7703423"
   end
 
   resource "pyparsing" do
@@ -165,8 +166,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/82/54/a85eb421fbdd5007bc5af39d0f4ed9fa609e0fedbfdc2adcf0b34526870e/python_multipart-0.0.28.tar.gz"
-    sha256 "8550da197eac0f7ab748961fc9509b999fa2662ea25cef857f05249f6893c0f8"
+    url "https://files.pythonhosted.org/packages/4e/fe/70bd71a6738b09a0bdf6480ca6436b167469ca4578b2a0efbe390b4b0e70/python_multipart-0.0.29.tar.gz"
+    sha256 "643e93849196645e2dbdd81a0f8829a23123ad7f797a84a364c6fb3563f18904"
   end
 
   resource "referencing" do
@@ -190,8 +191,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/81/69/17425771797c36cded50b7fe44e850315d039f28b15901ab44839e70b593/starlette-1.0.0.tar.gz"
-    sha256 "6a4beaf1f81bb472fd19ea9b918b50dc3a77a6f2e190a12954b25e6ed5eea149"
+    url "https://files.pythonhosted.org/packages/08/a3/84e821cc54b4ab50ae6dbc6ac3800a651b65ec35f045cc73785380654057/starlette-1.0.1.tar.gz"
+    sha256 "512399c5f1de7fac99c88572212ded9ddeddef2fb32afa82d724000e88b38f4f"
   end
 
   resource "uritemplate" do

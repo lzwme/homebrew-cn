@@ -1,18 +1,21 @@
 class GeminiCli < Formula
   desc "Interact with Google Gemini AI models from the command-line"
   homepage "https://github.com/google-gemini/gemini-cli"
-  url "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-0.42.0.tgz"
-  sha256 "c809dcd0d68ac9f105e88b796069b947cb434d6860ac4acfdf304bda7fd30a8f"
+  url "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-0.43.0.tgz"
+  sha256 "65488d68d19bd6b2bfb623cd64a2a1f2ad1c5301722613d1449b9576e9d24fa5"
   license "Apache-2.0"
 
   bottle do
-    sha256                               arm64_tahoe:   "439d194db033d12c67a5a68ae7f9eb064a94e350353edf4a6b42f0109a6aa106"
-    sha256                               arm64_sequoia: "2d55c84b054c6e160347e4ea20f991a92f9330e84b15a6ee14d2c303c4daffe3"
-    sha256                               arm64_sonoma:  "8f6dabbff06a9a82d2b60e37bd31fecbcd7f0fed55fc7d5eb75f26de7c88bd5b"
-    sha256                               sonoma:        "af44a5778d7e3cbd11c0313a040940d3665516e041889f0e86ec4a293693a3de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0da891ef34aa25e7c0180acbe804a4fb0daf4d7d925330c8159dd4caf75438c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27a2575e2e656637dbf33cae716de2efc0c6c282394daae9e18cb91634e77f6f"
+    sha256                               arm64_tahoe:   "29dadbf554861192c670b8d6e9e8b2a93ff91b63f3d372595aa718295948e47a"
+    sha256                               arm64_sequoia: "c73b1c763d0cd4e4aba10eb5a9ae7fabfa035b495d97585767797ba7442bc9d2"
+    sha256                               arm64_sonoma:  "36ba8a72ed1b26f2b7fb070da27668c957039e796ce2a66ef4c4d89d812dd0f6"
+    sha256                               sonoma:        "03a36463964ae109e7a5467add25dbc34def3ee397ed50b362aade1590c3ce3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b4928857ad7a3bc0e365112f0c0bd9c001ca6b53d78e6082eae39cb54d6c6c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f24c9cc13ab892508fc2aefdecb0781ce422df2bb3ae7feae94e3774363d7ddc"
   end
+
+  deprecate! date: "2026-06-18", because: :unsupported, replacement_cask: "antigravity-cli"
+  disable! date: "2026-12-18", because: :unsupported, replacement_cask: "antigravity-cli"
 
   depends_on "node"
 

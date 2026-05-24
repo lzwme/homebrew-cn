@@ -1,18 +1,18 @@
 class Xleak < Formula
   desc "Terminal Excel viewer with an interactive TUI"
   homepage "https://github.com/bgreenwell/xleak"
-  url "https://ghfast.top/https://github.com/bgreenwell/xleak/archive/refs/tags/v0.2.5.tar.gz"
-  sha256 "190a0458a3c61c49c22b97046f8ae6f8ead1c74aa213777c575b8c4ee634f029"
+  url "https://ghfast.top/https://github.com/bgreenwell/xleak/archive/refs/tags/v0.2.6.tar.gz"
+  sha256 "79d3ff3ff2b6bf6c67ff03d8b2728b3e4678e4155c3b89abecd257283bb408cc"
   license "MIT"
   head "https://github.com/bgreenwell/xleak.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3bc979de348ff1ec6be5242e9a8463e54e424a97ed7edcfa4c0f94e843708e64"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "893e86d3d5f99517b31573fb0ac0cd2f415a639578105391ab2a2d7bc2b25db2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a75c0adea7fa0ba82415e90224757ee356e4a0d24e3a27569d9a8fbdd059ed17"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d38c9643c3ec5123ee32e4c7df475882fa9dcdfe70e338571229065f4445cd73"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "508d6a9bf70e935b1b7d6a12fe94a9a240c0529cb00c39673a154725deef1aa9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18ec2991f6222a7a083d933ead2ba84537da49c1827fbe5498a871a103cade11"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a4345f10aa442799b997922a5b20cfca50fb113225bf664c71433085bf43009"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a70a3933cb3c4dcd72610501c8a6daf30d712af1301ecbf7f4cff35420e51d39"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59bdb6e305d06f1dcce2b529e971187cb6b2a66db4ba6eca65d8a31ad46fd6c7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a9cd2ad6c3e8c3e48077c112bba3e0d8f53a7c3aa366e0e7adcbd05c4c14a706"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "af30ca4efbc3d65597495183954fb7f4224c47f3a2bcc1cacb46a2d1fd8c4c21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "240c8ad7c7117ddfe275fab219521d6e7f63cab5d4d24c7522e620cbee6de25e"
   end
 
   depends_on "rust" => :build

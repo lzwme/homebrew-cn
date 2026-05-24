@@ -24,6 +24,7 @@ class ProtobufAT33 < Formula
   # Support for protoc 33.x (protobuf C++ 6.33.x) will end on 2027-03-31
   # Ref: https://protobuf.dev/support/version-support/#cpp
   deprecate! date: "2027-03-31", because: :versioned_formula
+  disable! date: "2028-03-31", because: :versioned_formula
 
   depends_on "cmake" => :build
   depends_on "googletest" => :build

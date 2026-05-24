@@ -2,17 +2,17 @@ class ThorsAnvil < Formula
   desc "Set of modern C++20 libraries for writing interactive Web-Services"
   homepage "https://github.com/Loki-Astari/ThorsAnvil"
   url "https://github.com/Loki-Astari/ThorsAnvil.git",
-      tag:      "10.2.1",
-      revision: "e24214a39762dc262741cfcc6721c9ded9bd76aa"
+      tag:      "10.2.2",
+      revision: "0d2d3c469dad4a046d91901f04f049c531234e7e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "96502f8791ae60d8de450ed66e0b5067b511146359c99074429b0a8d3b9a1e0e"
-    sha256 cellar: :any,                 arm64_sequoia: "621ceaf14889b12b1772d1495f545a952e9dae1626942f560d3f76b26a53e0ce"
-    sha256 cellar: :any,                 arm64_sonoma:  "4d979f73da2b1c30a253646f79d972d7b070105b48e0095b5a9b9ccad0b6b2b6"
-    sha256 cellar: :any,                 sonoma:        "0b2e24df98abc0089da7e543f004a44d20c2ffb65d92192afcf9e82e66043c4a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4593d08a526821e3d0a025f4fd0b387d70a0fce71dcd2e25e93c547820123ec3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f5636c37c864d947424c968f23bf6375d31b5fefb7da61d16d235f62019958c"
+    sha256 cellar: :any,                 arm64_tahoe:   "02462f56b6fd87ad30130a3243789b1c030c7fc27e63568242d13ac2de0fc28f"
+    sha256 cellar: :any,                 arm64_sequoia: "c7a531274619a1590fe71ef10a7ff2a1bb5c4656d4d6d89260f68fcce984f0ed"
+    sha256 cellar: :any,                 arm64_sonoma:  "d53291e651e1113d3db01fc44228072e63c80fda81ff083a33421ef1f1582d61"
+    sha256 cellar: :any,                 sonoma:        "17f0a6bdab1e5f98d9d57e84a15e88e6933ad96c1b8063e0bf7525470eefc310"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a189a6b0bee1189cda7edf66b100d2a63a7b1cf3502e1872d308d3c47f08fa93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a9b382551a92d17123b18b81c96263db1ad27bc0ac1b12f24482332b6c06188"
   end
 
   depends_on "cmake" => :build

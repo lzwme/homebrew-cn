@@ -23,6 +23,7 @@ class LibpqAT16 < Formula
 
   # https://endoflife.date/postgresql
   deprecate! date: "2028-11-09", because: :unmaintained, replacement_formula: "libpq"
+  disable! date: "2029-11-09", because: :unmaintained, replacement_formula: "libpq"
 
   depends_on "pkgconf" => :build
   depends_on "icu4c@78"

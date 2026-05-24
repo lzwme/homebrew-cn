@@ -22,8 +22,8 @@ class NodeAT20 < Formula
   keg_only :versioned_formula
 
   # https://github.com/nodejs/release#release-schedule
-  # disable! date: "2026-04-30", because: :unsupported
   deprecate! date: "2025-10-28", because: :unsupported
+  disable! date: "2026-10-28", because: :unsupported
 
   depends_on "pkgconf" => :build
   depends_on "python@3.13" => :build

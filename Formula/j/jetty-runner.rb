@@ -15,7 +15,8 @@ class JettyRunner < Formula
   end
 
   # See: https://github.com/jetty/jetty.project/issues/1905#issuecomment-409662335
-  deprecate! date: "2018-08-02", because: :deprecated_upstream
+  deprecate! date: "2025-06-04", because: :deprecated_upstream
+  disable! date: "2026-06-04", because: :deprecated_upstream
 
   depends_on "openjdk"
 

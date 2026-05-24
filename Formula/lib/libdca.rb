@@ -33,7 +33,7 @@ class Libdca < Formula
   def install
     # Fixes "duplicate symbol ___sputc" error when building with clang
     # https://github.com/Homebrew/homebrew/issues/31456
-    ENV.append_to_cflags "-std=gnu89"
+    ENV.append "CFLAGS", "-std=gnu89"
 
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *std_configure_args

@@ -6,15 +6,15 @@ class Gitingest < Formula
   url "https://files.pythonhosted.org/packages/d6/fe/a915f0c32a3d7920206a677f73c185b3eadf4ec151fb05aedd52e64713f7/gitingest-0.3.1.tar.gz"
   sha256 "4587cab873d4e08bdb16d612bb153c23e0ce59771a1d57a438239c5e39f05ebf"
   license "MIT"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a473dc21587aaa8e47c29393cee8ab57ce56dd79c5cc37942b842a37e2e24e96"
-    sha256 cellar: :any,                 arm64_sequoia: "b41c41b1671184d6825d27d0d22cbaade2cf7a135583b2369b47fada5ec8117c"
-    sha256 cellar: :any,                 arm64_sonoma:  "3cdc2f32697934060c8216ae35df15d1a3dd9dae7f5f65d6036635d59ce31325"
-    sha256 cellar: :any,                 sonoma:        "c2193d28a730ba5f0892deaafe7ea19fbe2d350054c850032cefabc0f18e37b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be72aeebd84a51df9c07e7739b01cedd67fd93b153ec4579e0c0684196bdb9d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "929687ef6d79893ad0d8d7407f113b27eb59b6e61a80ab108afea20de523e291"
+    sha256 cellar: :any,                 arm64_tahoe:   "a5108551300c0633539d7a629bdf4e2bef9e4584b45514d2e87c255a7ae9481b"
+    sha256 cellar: :any,                 arm64_sequoia: "3209dc735bec1211ba789d54c491db75b6b30a58543a9becf003f3ea287f0900"
+    sha256 cellar: :any,                 arm64_sonoma:  "754b0b2bcc2ec9fe232621adfdabdae6191daf4878278a8150e7784b8e49cd97"
+    sha256 cellar: :any,                 sonoma:        "78683ca587aec2edb2301dedcafe8d7913391c6eb5047cc2c473799ae05d9079"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "99dabb878c0d46f8ae9c11b95d5b7dec275884a4f95d3eb7caa9524e08149c8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ecd6b692fbfa8423772d39ff13cf2447ded4122b8e05bb618c29920acac1d755"
   end
 
   depends_on "rust" => :build # for tiktoken
@@ -35,8 +35,8 @@ class Gitingest < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
-    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
+    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
+    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
   end
 
   resource "h11" do
@@ -55,8 +55,8 @@ class Gitingest < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
+    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
   end
 
   resource "loguru" do
@@ -85,8 +85,8 @@ class Gitingest < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/81/69/17425771797c36cded50b7fe44e850315d039f28b15901ab44839e70b593/starlette-1.0.0.tar.gz"
-    sha256 "6a4beaf1f81bb472fd19ea9b918b50dc3a77a6f2e190a12954b25e6ed5eea149"
+    url "https://files.pythonhosted.org/packages/08/a3/84e821cc54b4ab50ae6dbc6ac3800a651b65ec35f045cc73785380654057/starlette-1.0.1.tar.gz"
+    sha256 "512399c5f1de7fac99c88572212ded9ddeddef2fb32afa82d724000e88b38f4f"
   end
 
   resource "tiktoken" do

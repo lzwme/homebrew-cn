@@ -3,19 +3,18 @@ class Parsedmarc < Formula
 
   desc "DMARC report analyzer and visualizer"
   homepage "https://domainaware.github.io/parsedmarc/"
-  url "https://files.pythonhosted.org/packages/11/7c/efd5f107db676c8bc9fe1bf87820fd22261d42b52fe906edf2226edb470b/parsedmarc-9.11.2.tar.gz"
-  sha256 "687b77a10c90ab21b37e61f282839b77d1765df82839b7000fa68441a0311d2b"
+  url "https://files.pythonhosted.org/packages/e8/01/d5d2da552d9744a8085958b09d40f0151f163f9053f6dbfd432b479bc217/parsedmarc-10.0.0.tar.gz"
+  sha256 "3b62bdf5172e4a554be2233409d7549ad9b07e0d0d3a37e432a18e18b7ca6edd"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2d9f48934a705ff09e307dfec114f8c2c37b1e5bc431b8345e5bddd36ed89e81"
-    sha256 cellar: :any,                 arm64_sequoia: "940eb4bd3d6bce8e8986742fabf9dc4dec8d85a9f1750f6ecabe119e998de45c"
-    sha256 cellar: :any,                 arm64_sonoma:  "5aca1665d4b8e73f2f9cc07507aaab1725ec85d6fdf693fe8e0f8dde50b657a2"
-    sha256 cellar: :any,                 sonoma:        "cac420edbb15c24519e0e0709e3e70ad2931bfab05727268a0c4f6d1a56cd48c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e50bf5aafc8dd9b21a6c08b9fb88bbf7b33146fdb679446a17e73541e4761f75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3f5f164f0a7970a2de98e4f05d41a02b57e27c06a2cd36ebf5a40cbee64c8d7"
+    sha256 cellar: :any,                 arm64_tahoe:   "d7ed72673e5de6fa245574ba05afe3cba5cebd4ef19b9d14c1727db61f06e84e"
+    sha256 cellar: :any,                 arm64_sequoia: "77040d843561de457d236fdb803148ed7f56bb80cf56ed552b2f20877e53a5b3"
+    sha256 cellar: :any,                 arm64_sonoma:  "ab62335b2d2616b594bec3b666140aa93b1618a5129bd3d8fc2d0da4f191efc4"
+    sha256 cellar: :any,                 sonoma:        "76356f61cc1d4fc174d1cabf48aa9059cc2a97e119d5dcbd15267cd93d7632a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3af32ed4823be33b8e8f3bddf06691acb2af190e53595dc2ff0a2edcd7b24679"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3b86de4f6658f0b89d7a818e9159fd4799b7db5782f735aa2268eb3921bf853"
   end
 
   depends_on "rust" => :build
@@ -70,13 +69,13 @@ class Parsedmarc < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/67/2f/c4159fa45079b41f11ad17d8c5df8e1d10169b94d1e4240df5be116d3f0a/boto3-1.43.12.tar.gz"
-    sha256 "4a60cdf02c52cb0a60f8dbc986142ce2c31e87e3df1438ffe6755b83008f3e4e"
+    url "https://files.pythonhosted.org/packages/21/f3/40abb5e3df93f31b3e7c6ca334e82dff584f9afeeed73d7ad9b2640b926a/boto3-1.43.13.tar.gz"
+    sha256 "bd909b509c459e784dcfcafb3e130cf2891ab26d2d323003bcddaf15a948c9e8"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/6d/a1/95ec376c2300e605225998619c46f7093c515710b9d6d65f891f126f32b6/botocore-1.43.12.tar.gz"
-    sha256 "7608ecd51687132e22aa8b82acb89a5917b1b68ec0563c25d82c3e16adab9bc0"
+    url "https://files.pythonhosted.org/packages/c3/34/58790c6d2e8e074e7a6286ec9d41c26237edd453c573aaf613eb621d8ae9/botocore-1.43.13.tar.gz"
+    sha256 "10df003c71847b4f1501b98b1c03e1cb6399583b6cc5136ca7ff849e00c4797f"
   end
 
   resource "charset-normalizer" do
@@ -235,8 +234,8 @@ class Parsedmarc < Formula
   end
 
   resource "mailsuite" do
-    url "https://files.pythonhosted.org/packages/e8/f5/9312eb33a5f3565c2704e88f6dfed0398bc8407d5bf09523cb6144aab3ca/mailsuite-2.0.2.tar.gz"
-    sha256 "a5f50eeb86b21ff52645fdc3cab2b6532cf9f65e03262e2bcaaede50bfe0e0bd"
+    url "https://files.pythonhosted.org/packages/22/e2/6880e54dd9c6d91925d853798b20c1761fc9908b232a9284756b5048c4e5/mailsuite-2.1.0.tar.gz"
+    sha256 "711cee29e378867de0eea7056ced400b8872ae2920896d319e4c1ed580cb8b45"
   end
 
   resource "maxminddb" do
@@ -320,18 +319,18 @@ class Parsedmarc < Formula
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/86/ca/25288069c399be6769159d9fb7b1190b603537d82aad2fa2746a0cc2c8c6/opentelemetry_api-1.42.0.tar.gz"
-    sha256 "ea84c893ad177791d138e0349d6ceebd8d3bf006440900400ce220008dafc372"
+    url "https://files.pythonhosted.org/packages/b4/1c/125e1c936c0873796771b7f04f6c93b9f1bf5d424cea90fda94a99f61da8/opentelemetry_api-1.42.1.tar.gz"
+    sha256 "56c63bea9f77b62856be8c47600474acad853b2924b99b1687c4cb6297166716"
   end
 
   resource "opentelemetry-sdk" do
-    url "https://files.pythonhosted.org/packages/b7/c9/dabaaf1c754a57b82b5a36aeca3806d92c1877ccfb12a697b65f88bf027c/opentelemetry_sdk-1.42.0.tar.gz"
-    sha256 "2479e462cc69357825c2c847ce4a601bc1b17e1279aa7f80d3490f0ae614d0e5"
+    url "https://files.pythonhosted.org/packages/40/f7/b390bd9bfd703bf98a68fea1f27786c6872331fd617164a54b8a59bdc008/opentelemetry_sdk-1.42.1.tar.gz"
+    sha256 "8c834e8f8c9ba4171d4ec843d0cb8a67e4c7394d3f9e9297e582cbd9456ddbf7"
   end
 
   resource "opentelemetry-semantic-conventions" do
-    url "https://files.pythonhosted.org/packages/20/f8/be4625838aae098c2f9fbdc062a1b3128ebb9e799b891b654ee8cad94897/opentelemetry_semantic_conventions-0.63b0.tar.gz"
-    sha256 "cfea295264654fa324fcef24aa56fb1836fdc0da27db128645dc6aa76115cc6c"
+    url "https://files.pythonhosted.org/packages/93/99/4d7dd6df64795951413ce6e815f8cf1eb191daf7196ae86574589643d5f3/opentelemetry_semantic_conventions-0.63b1.tar.gz"
+    sha256 "3daf963611334b365e98a57438183eb012d3bfb40b2d931a9af613476b8701a9"
   end
 
   resource "propcache" do
@@ -375,8 +374,8 @@ class Parsedmarc < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/c2/27/a3b6e5bf6ff856d2509292e95c8f57f0df7017cf5394921fc4e4ef40308a/pyjwt-2.12.1.tar.gz"
-    sha256 "c74a7a2adf861c04d002db713dd85f84beb242228e671280bf709d765b03672b"
+    url "https://files.pythonhosted.org/packages/3b/81/58d0ac84e1ef3a3843791d6954d94c0b33d526c75eeb1efbce9d0a4c4077/pyjwt-2.13.0.tar.gz"
+    sha256 "41571c89ca91598c79e8ef18a2d07367d4810fbbd6f637794879baf1b7703423"
   end
 
   resource "pyparsing" do

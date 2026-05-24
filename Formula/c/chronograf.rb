@@ -16,7 +16,7 @@ class Chronograf < Formula
   end
 
   depends_on "go" => :build
-  depends_on "node@22" => :build
+  depends_on "node" => :build
   depends_on "pkg-config-wrapper" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
@@ -26,16 +26,14 @@ class Chronograf < Formula
 
   def install
     ENV["PKG_CONFIG"] = Formula["pkg-config-wrapper"].opt_bin/"pkg-config-wrapper"
-
     ENV["CGO_ENABLED"] = "1" if OS.linux?
-
     ENV["npm_config_build_from_source"] = "true"
 
     system "yarn", "--cwd=ui", "install"
     system "yarn", "--cwd=ui", "build", "--no-cache"
 
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/chronograf/main.go"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/chronograf"
     system "go", "build", *std_go_args(ldflags:, output: bin/"chronoctl"), "./cmd/chronoctl"
   end
 
@@ -49,11 +47,10 @@ class Chronograf < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/chronograf --version")
+
     port = free_port
     pid = spawn bin/"chronograf", "--port=#{port}"
-    sleep 10
-    output = shell_output("curl -s 0.0.0.0:#{port}/chronograf/v1/")
-    sleep 1
+    output = shell_output("curl -s --retry 5 --retry-connrefused 0.0.0.0:#{port}/chronograf/v1/")
     assert_match "/chronograf/v1/layouts", output
   ensure
     Process.kill("SIGTERM", pid)

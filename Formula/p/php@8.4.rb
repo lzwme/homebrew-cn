@@ -50,6 +50,7 @@ class PhpAT84 < Formula
   # Security Support Until 31 Dec 2028
   # https://www.php.net/supported-versions.php
   deprecate! date: "2028-12-31", because: :unsupported
+  disable! date: "2029-12-31", because: :unsupported
 
   depends_on "httpd" => [:build, :test]
   depends_on "pkgconf" => :build

@@ -23,6 +23,7 @@ class BazelAT7 < Formula
 
   # https://bazel.build/release#support-matrix
   deprecate! date: "2027-01-01", because: :unsupported
+  disable! date: "2028-01-01", because: :unsupported
 
   depends_on "openjdk@21"
 

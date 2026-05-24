@@ -23,6 +23,7 @@ class PostgresqlAT16 < Formula
 
   # https://www.postgresql.org/support/versioning/
   deprecate! date: "2028-11-09", because: :unsupported
+  disable! date: "2029-11-09", because: :unsupported
 
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build

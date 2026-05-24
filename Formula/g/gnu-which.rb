@@ -17,7 +17,7 @@ class GnuWhich < Formula
   end
 
   def install
-    ENV.append_to_cflags "-std=gnu17"
+    ENV.append "CFLAGS", "-std=gnu17" if DevelopmentTools.clang_build_version >= 1700
 
     args = %W[
       --prefix=#{prefix}
@@ -31,9 +31,8 @@ class GnuWhich < Formula
     if OS.mac?
       (libexec/"gnubin").install_symlink bin/"gwhich" => "which"
       (libexec/"gnuman/man1").install_symlink man1/"gwhich.1" => "which.1"
+      (libexec/"gnubin").install_symlink "../gnuman" => "man"
     end
-
-    (libexec/"gnubin").install_symlink "../gnuman" => "man"
   end
 
   def caveats

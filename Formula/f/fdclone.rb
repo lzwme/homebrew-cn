@@ -23,6 +23,7 @@ class Fdclone < Formula
 
   # Upstream homepage is gone and doesn't build on macOS Sequoia and later
   deprecate! date: "2026-01-05", because: :repo_removed
+  disable! date: "2027-01-05", because: :repo_removed
 
   depends_on maximum_macos: [:sonoma, :build]
   depends_on "nkf" => :build

@@ -23,6 +23,7 @@ class PostgresqlAT17 < Formula
 
   # https://www.postgresql.org/support/versioning/
   deprecate! date: "2029-11-08", because: :unsupported
+  disable! date: "2030-11-08", because: :unsupported
 
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
