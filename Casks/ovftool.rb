@@ -8,6 +8,8 @@ cask "ovftool" do
   desc "VMware OVF Tool"
   homepage "https://code.vmware.com/tool/ovf"
 
+  depends_on :macos
+
   pkg "VMWare OVF Tool.pkg", allow_untrusted: true
   binary "/Applications/VMWare OVF Tool/ovftool"
 

@@ -1,17 +1,17 @@
 class LsHpack < Formula
   desc "HTTP/2 HPACK header compression library"
   homepage "https://github.com/litespeedtech/ls-hpack"
-  url "https://ghfast.top/https://github.com/litespeedtech/ls-hpack/archive/refs/tags/v2.3.4.tar.gz"
-  sha256 "4abeeb786d6211d0aaf13ef3df7651c765c2ffb58cd226ec5c9e6e8b6d801ca1"
+  url "https://ghfast.top/https://github.com/litespeedtech/ls-hpack/archive/refs/tags/v2.3.5.tar.gz"
+  sha256 "430a1a36029e0ae1c81eaa0b2356920f1e65fde1cdd722351c671ebe513b7a96"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1f91663e7b38b1f45409a01931768ffdb3bc2c51718213bdfdaa71b2eb0a2358"
-    sha256 cellar: :any,                 arm64_sequoia: "bd14209d3b86ebd0eaf6918a9b21b9f2539a88812c7523ec95320495bd3ce487"
-    sha256 cellar: :any,                 arm64_sonoma:  "2d8e795e730e48b08df95f10b0a11c16541894bba05028fb6306c833e4577b9a"
-    sha256 cellar: :any,                 sonoma:        "311fc1dc37b213162568e624a2b80142023fbce581443f4245b0d2c83b388d2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb97b47e4d51ebc3e308a82d206d8d7e1763be91b2a351619b09093def373860"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6edeb50e88418f23113ed87ebfc7e39d834f718e2c379750869e60d2cb7bf7f"
+    sha256 cellar: :any,                 arm64_tahoe:   "1e9c54570dbe137cbebfb5d7fb4ac142305e907baac4b3143601bf9377963589"
+    sha256 cellar: :any,                 arm64_sequoia: "2210697f2a76087a665c87ce4c7d1f61a0cabc7c6629a3a533dfbe2a5437241f"
+    sha256 cellar: :any,                 arm64_sonoma:  "0828958f22dfcf643cd04d89e4722252ba5ec1f5cbce07ebc617b9d06500ce20"
+    sha256 cellar: :any,                 sonoma:        "0db67bc747169d4d1cbd5ca392087a999bc1d685174d884f969fc218be5c1051"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4647ce2255e0b71bb050c04d4d6c54907fdc13440005a1e8867b76074f420a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a62bc271fe85f47c2bfdd282938e0b531f325731780ef93bb381d49377600f8f"
   end
 
   depends_on "cmake" => :build

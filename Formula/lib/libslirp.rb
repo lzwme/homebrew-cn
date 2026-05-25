@@ -1,20 +1,23 @@
 class Libslirp < Formula
   desc "General purpose TCP-IP emulator"
   homepage "https://gitlab.freedesktop.org/slirp/libslirp"
-  url "https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v4.9.1/libslirp-v4.9.1.tar.gz"
-  sha256 "3970542143b7c11e6a09a4d2b50f30a133473c41f15ed0bdcc3b7a1c450d9a5c"
+  url "https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v4.9.2/libslirp-v4.9.2.tar.gz"
+  sha256 "fb3c0d3db56174016c96803882378e262e5b59a7bd38feb107d915a79aad5288"
   license "BSD-3-Clause"
   compatibility_version 1
 
+  livecheck do
+    url :stable
+    regex(/^v(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "18d81f7392c77441d299e5ea36b08c85553919f407fb5433fb009c032a099b39"
-    sha256 cellar: :any, arm64_sequoia: "12a9e671b10f09a59a51c9eb9010baa5d5a787f8404ff7a3ed709444ccd6c1c6"
-    sha256 cellar: :any, arm64_sonoma:  "9f5be8a2ff62099f8eedcb100f94ba8d0738f6ac4b0f2008672f61115c0a73c4"
-    sha256 cellar: :any, arm64_ventura: "4fc26d7834da55420b1c52fc3485af3a5b9185011c4f279890fb191450acf359"
-    sha256 cellar: :any, sonoma:        "ff2054700a614d655e435078c3893cff4af6df3ac42790ed47ffb2e32c266e44"
-    sha256 cellar: :any, ventura:       "0697734d15f13ff118f98ed958203810b089b67e0e3e2495b253e8cd8158eb77"
-    sha256               arm64_linux:   "15990492fa251d8234d1e03dca795409da45482cc49ffce227922c1287de1b5a"
-    sha256               x86_64_linux:  "ffa7400789bef355d7d42bf479655ca8de737e514f8ae261a6669b128404903a"
+    sha256 cellar: :any, arm64_tahoe:   "d0171cb94a4bb6fa8917fa34f7c422c895114e8a84385893d24df840741340aa"
+    sha256 cellar: :any, arm64_sequoia: "6da1738bf1605f2d953dfb4f28d7803823b0c07564de8fa2614409dfb6b35def"
+    sha256 cellar: :any, arm64_sonoma:  "aa31df598208831518baaa9661c95355e05eb9e24e3231c256746553cafa9b4b"
+    sha256 cellar: :any, sonoma:        "7dc437eda2a79857783e6e16645b62cdec194aeb87986b9566a550a68ca3e464"
+    sha256               arm64_linux:   "2135d9b0354100ce5145f64699fc1a1d4f18fd3f40940ad3c5140fa46743c7af"
+    sha256               x86_64_linux:  "132fe1faad6351ee23dbdc2a2041c729599ab222854fed3c698587aef2cfcba9"
   end
 
   depends_on "meson" => :build

@@ -18,7 +18,7 @@ class PySpy < Formula
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "python@3.13" => :test # https://github.com/benfred/py-spy/issues/750
+    depends_on "python@3.14" => :test
     depends_on "libunwind"
   end
 
@@ -32,7 +32,7 @@ class PySpy < Formula
       output = shell_output("#{bin}/py-spy record python3 2>&1", 1)
       assert_match "Try running again with elevated permissions by going", output
     else
-      python = "python3.13"
+      python = "python3.14"
       output = shell_output("#{bin}/py-spy record -- #{python} -c 'import time; time.sleep(1)' 2>&1")
       assert_match(/Samples: \d+ Errors: 0/, output)
     end

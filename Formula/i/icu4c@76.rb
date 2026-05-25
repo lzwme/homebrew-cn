@@ -4,7 +4,7 @@ class Icu4cAT76 < Formula
   url "https://ghfast.top/https://github.com/unicode-org/icu/releases/download/release-76-1/icu4c-76_1-src.tgz"
   version "76.1"
   sha256 "dfacb46bfe4747410472ce3e1144bf28a102feeaa4e3875bac9b4c6cf30f4f3e"
-  license "ICU"
+  license "Unicode-3.0"
   revision 2
 
   bottle do

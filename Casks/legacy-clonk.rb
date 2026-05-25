@@ -12,6 +12,8 @@ cask "legacy-clonk" do
     url :stable
   end
 
+  depends_on :macos
+
   app "clonk.app", target: "LegacyClonk/clonk.app"
   binary "c4group"
 

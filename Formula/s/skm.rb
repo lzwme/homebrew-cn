@@ -1,18 +1,18 @@
 class Skm < Formula
   desc "Simple and powerful SSH keys manager"
   homepage "https://timothyye.github.io/skm"
-  url "https://ghfast.top/https://github.com/TimothyYe/skm/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "5ed6c41b5684ddecbd2aa166d470d7355a37dced3f6afcb0537e5acd5cdce6ae"
+  url "https://ghfast.top/https://github.com/TimothyYe/skm/archive/refs/tags/v0.9.3.tar.gz"
+  sha256 "6afce1a7d42167285fe074187708ff7538b866ac051c671a82f97b746d9f5204"
   license "MIT"
   head "https://github.com/TimothyYe/skm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cfe5495f525bc4092c3f77d30e2c16c55a05d146221b84cb85497725752928df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cfe5495f525bc4092c3f77d30e2c16c55a05d146221b84cb85497725752928df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cfe5495f525bc4092c3f77d30e2c16c55a05d146221b84cb85497725752928df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df73779f20013ab62f2f7e952f54df11fb34d4826fc32906a3445df7a4f8149b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab8b6b74dbea969e748ba9451174dd372eac187ef6d25fa2978f01c69bdf2fe4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb6b4236301e346c9f28dc34646a16863b721e26e545d482abbad7fc8ecbefeb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ed415bd3d35429d897fa14d0a1aec89c66c03e7705c87550160403acc33c7c6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ed415bd3d35429d897fa14d0a1aec89c66c03e7705c87550160403acc33c7c6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ed415bd3d35429d897fa14d0a1aec89c66c03e7705c87550160403acc33c7c6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "476ebbe10e2315191ecee0084d39217ece4018f043a13707c5efd511f8381da5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "67f9dfebeb08cb10427d1729bf8b16941eafcf8ddeeff4ce4d884e82766a4cac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf4f321b5568eecb58d94f5b2daa5b5867234778fab0724c71f75e5c806a2e06"
   end
 
   depends_on "go" => :build

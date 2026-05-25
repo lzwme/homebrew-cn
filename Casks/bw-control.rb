@@ -8,5 +8,7 @@ cask "bw-control" do
   desc "Bowers & Wilkins Control app for wireless speakers"
   homepage "https://www.bowerswilkins.com/de-de/wireless-speakers-control-app"
 
+  depends_on :macos
+
   app "Bowers & Wilkins Control.app"
 end

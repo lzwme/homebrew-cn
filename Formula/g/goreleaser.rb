@@ -2,8 +2,8 @@ class Goreleaser < Formula
   desc "Deliver Go binaries as fast and easily as possible"
   homepage "https://goreleaser.com/"
   url "https://github.com/goreleaser/goreleaser.git",
-      tag:      "v2.15.4",
-      revision: "fd20dc1995cd5eb3fded997d6613c7f694ab448b"
+      tag:      "v2.16.0",
+      revision: "d76fb400136f96af3aaa7202776257885c9a6097"
   license "MIT"
   head "https://github.com/goreleaser/goreleaser.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Goreleaser < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "413de1ef6add46617f0a21a0e8ae5d4d28e69968ce7ad299b45323e2f89eb61f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a93a46ead6698b067df9d4ce63223a266a00da49c2a9a7089efc4ff5dc167ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "582403fc72d5344c5d656c53072040238ca5ce574f2a9b64b47db745f768d2d6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f8833327fb80333f27fca2ae565633498be3fdae6b4c5b3f84452634cf26d479"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d69f83a67b219a4f7508e4d975b219b07499ba5ba27e693fa99fc8d91752943c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae60095b42ed594654430c293a159b5f65f42bd14852505b65a093aff4d035be"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5cec2ba08030226cc034c3d8961a862b20b01f7f749176acf047d5c6a3aa467a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a319bfff81a1cae3f9c14b1d9497783370dd93c220595c325a22bfedcc2b32e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4621ff1cdfa8a75227b6f358ec99a7e0698c72699aef0dc239f4f9b090fb12af"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ed200ba76725cb40472e58429cfad196d4b4dc3f17bc322173b5d1a9df4f0362"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6cde000760bddfeca58bf974fb30b389a54350c0120ea2feae44d03e02bfb727"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18399388e05b0cab2a8769c86046c48c7cb23c1339fe06bdd4a67ed94cb3abab"
   end
 
   depends_on "go" => :build

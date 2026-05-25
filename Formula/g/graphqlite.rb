@@ -1,8 +1,8 @@
 class Graphqlite < Formula
   desc "SQLite graph database extension"
   homepage "https://colliery-io.github.io/graphqlite/"
-  url "https://ghfast.top/https://github.com/colliery-io/graphqlite/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "cf358d833f8d6dc47019a103a351335b3a1171b2a3eeb648957bccd4a8a97e07"
+  url "https://ghfast.top/https://github.com/colliery-io/graphqlite/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "2a1b3033d3690e84d59181ca91bb91f404b2157bb95c677a669215b0a72f5455"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Graphqlite < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d6851c4b85847086011b1178e9a6c91f6b3433aa613c3811a45f437a13563819"
-    sha256 cellar: :any,                 arm64_sequoia: "193c4017dde987a5ba4f74eb177bf43ec82a4b5d39bcaa7a33c49b20f885301d"
-    sha256 cellar: :any,                 arm64_sonoma:  "0c68affc6a492ca12b3c00144a43aff02011b9d65c216006034ce3183370c6ef"
-    sha256 cellar: :any,                 sonoma:        "ac92bef1b806b4e47d3f011cebaffed460cb77619cbc5a722cccc4d221301689"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0666cf22e8dd76e0ecc8c4bc92f8d592d1fadddbb4671f195f78a33d6c0c1b0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32b23d15619d5683681322ea8ce4d93a43a45a72c846260b40564c057f0e0947"
+    sha256 cellar: :any,                 arm64_tahoe:   "07165af9bbda35056e3848ea5fbf13847b388a586d8798866da4f2baff2049fe"
+    sha256 cellar: :any,                 arm64_sequoia: "bcfcb49b4aa7a4992adb60ddddbb582de07f0dc2826da45d7cba35f0201e2486"
+    sha256 cellar: :any,                 arm64_sonoma:  "cc98c31802429ac5e1e08ef14567b76f0f7aa17c1c73fd98a62c1c3918aa3ca0"
+    sha256 cellar: :any,                 sonoma:        "bea55c157ede9d869dc995db591e11aceeab159ea3cf1351cb6ada07c11f8307"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecb2c4633e9b8728c3ba12e1c4fa6c74407649d1da77a62f863a7f791aa6ab75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "361d2dae1f5f76421130aafb167593e657f4493321e1333022cfa822292c9b59"
   end
 
   depends_on "bison" => :build # macOS bison is too old

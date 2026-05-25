@@ -3,18 +3,17 @@ class JenkinsJobBuilder < Formula
 
   desc "Configure Jenkins jobs with YAML files stored in Git"
   homepage "https://docs.openstack.org/infra/jenkins-job-builder/"
-  url "https://files.pythonhosted.org/packages/bc/1d/66a4e12c3e93716130bc6a8eba717216e9ccb0b5b5f5f1e1c7d8e262a30a/jenkins_job_builder-6.4.4.tar.gz"
-  sha256 "ecfa420e97b728b469b7e47f36efaac5d0f12ca595a938823cade3fa735aba6f"
+  url "https://files.pythonhosted.org/packages/af/c9/b2fa858f3825c0347a201d0e542c0235605167fcb61b161648585b5ab248/jenkins_job_builder-6.5.0.tar.gz"
+  sha256 "f44ded591f68969019ae5a21fddc6c233b73d8f2497d126b3d4cccbe9b8b149d"
   license "Apache-2.0"
-  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8441b7bc10ea5b82e71a7c8ae05bd5f35f65cfbca33f97339a8f6d7f200bad4d"
-    sha256 cellar: :any,                 arm64_sequoia: "5ac0cbe4cb3549635893e6a23e5b9ba52cb32729664b0d6d01012c46fcc2e034"
-    sha256 cellar: :any,                 arm64_sonoma:  "609ce9a95adff7e055747ba451f9fafc827432b418fb30fed3bd68faf3a8cde6"
-    sha256 cellar: :any,                 sonoma:        "fad324c8f9aa46048cf8463c6cef690797683497dfe085910ee6599478636d84"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fe771d9ceb2784f06d1591ff4c294a82e0fa6b696c1a0715cc7dbba20876280"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44451373159d5447903c49bcaf655cd92989896ab2d4ac010a2a15e1b9f0f53e"
+    sha256 cellar: :any,                 arm64_tahoe:   "a010bc981f2356a0888d8e7c7d91479430defd398c36a4d658c50cd9166d234b"
+    sha256 cellar: :any,                 arm64_sequoia: "72c5c859c0c96cf150ff91db85358af71fd16b0fcee786d14b89f4fa1ea4316a"
+    sha256 cellar: :any,                 arm64_sonoma:  "77911296f51ae95bcc9ed6afa3e599a3b365ceeb7bfce4d728681af069a9e6b7"
+    sha256 cellar: :any,                 sonoma:        "86314e1fac74f6c786e50ac119a9dfa809a7d12705bfdfd11e8864cfbd1e6d37"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6e7d5fd7e6e9a554b3167224eb61cd4eb290004ad495e50380b7adb490a4ac9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "071eedfaec3e1edf323df4df5151664a9809bd3b2b7c85f272d28998f00abcfe"
   end
 
   depends_on "certifi"
@@ -35,8 +34,8 @@ class JenkinsJobBuilder < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
+    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
   end
 
   resource "jinja2" do

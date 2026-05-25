@@ -1,17 +1,18 @@
 class Jackett < Formula
   desc "API Support for your favorite torrent trackers"
   homepage "https://github.com/Jackett/Jackett"
-  url "https://ghfast.top/https://github.com/Jackett/Jackett/archive/refs/tags/v0.24.1914.tar.gz"
-  sha256 "80c2240213d7843b1daf251b7fe77e49bbd2d3999604cf45d185868520a6e951"
+  url "https://ghfast.top/https://github.com/Jackett/Jackett/archive/refs/tags/v0.24.1926.tar.gz"
+  sha256 "77151237ecd23c38de43517dad1763596103f028969df460f32e5928e2f7acf7"
   license "GPL-2.0-only"
   head "https://github.com/Jackett/Jackett.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ef24c4d1e5b2e63921f84844195932f1be5c2ef7a85a2f30433b884316527a8d"
-    sha256 cellar: :any,                 arm64_sequoia: "6f39d9e92f00554b20934af7c984b43175a2633b9adba27cc33f412c9a7161b3"
-    sha256 cellar: :any,                 arm64_sonoma:  "fe2f88ae8ffe0ce83d5db85d39b72d05063242922b951add205aeb151721c48c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "35dc1d1814687f0dd97e0f65c125680447c9636f3e9043a9f4a5a8d38245f1eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d45404af237714cbb220e77b8e02b793244cd581ac91a122c124f222ba2ad2a8"
+    sha256 cellar: :any,                 arm64_tahoe:   "25c2c4d85d9740360a94dee1a90c06c45826a891dba0b1930ccc22b8c3d31410"
+    sha256 cellar: :any,                 arm64_sequoia: "c8090f666b61d895e823552f74b6db7ea1e46cf6c64a835729f4866eb57a24ec"
+    sha256 cellar: :any,                 arm64_sonoma:  "bccebbe235d52399cd4e24f0e6526bf9cc3c1e97f22fe89487cee615d9d3c6b2"
+    sha256 cellar: :any,                 sonoma:        "e2c41580aee9e3dc0f15dc28abd2d7d0512e21fea4e3e704c7f9f87b7a270d6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e4b230528f9d2eec78aa80f38cf1f17119c3060228866c44be879f3fe7f0ae4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2f9047ba12f0c59a492332f037d4470f5cc3a805d8281d752ce400c3dae0e3d"
   end
 
   # Aligned to .NET dependency. Can remove if updated to latest .NET

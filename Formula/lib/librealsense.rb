@@ -1,9 +1,10 @@
 class Librealsense < Formula
   desc "Intel RealSense D400 series and SR300 capture"
   homepage "https://github.com/IntelRealSense/librealsense"
-  url "https://ghfast.top/https://github.com/IntelRealSense/librealsense/archive/refs/tags/v2.57.7.tar.gz"
-  sha256 "02eae8aa49d52d39ea5483836116fee2596e1146254274db6b76d7a62092d9e8"
+  url "https://ghfast.top/https://github.com/IntelRealSense/librealsense/archive/refs/tags/v2.58.1.tar.gz"
+  sha256 "14409c3b810bf1508b87f46d47608a89018743b8a73d5855ab5d1ad18763fd8c"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/IntelRealSense/librealsense.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class Librealsense < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ba740c06638228e96a74553a83e9ab3b861ed5dce1c869befeabc0c05b956f18"
-    sha256 cellar: :any,                 arm64_sequoia: "8f9b88eb42c685a7d1cbd615263c8bd22fd7aa2869090bf6c1ed407b4b6b9fc1"
-    sha256 cellar: :any,                 arm64_sonoma:  "219961d51d65f252e6f436ae6b6ee6005083d1ea1686b3774416fb6e968c3ddc"
-    sha256 cellar: :any,                 sonoma:        "7fb045dc094cae4e538727955c725c950257b39ab721f856914b791d306c17dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc6cb411e5b83e2546f995da168cc081c5ad7dedaa1431a928520853b1019e4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b894ff145cb546fa7904714bf115039ad373397e081d6e23daa07480c13837c1"
+    sha256 cellar: :any,                 arm64_tahoe:   "2c4d794f26976a966926005f03ad74f057e401d11a4d6dee78f6744539839710"
+    sha256 cellar: :any,                 arm64_sequoia: "bce8442051cdcf8d918bf361bcfb0021c1f8682c4a8fe9bec0bde9086989b233"
+    sha256 cellar: :any,                 arm64_sonoma:  "3fe96b1aa8adb7f0317bad5c6152ea3c990f6da8560778596d7f91345f10820b"
+    sha256 cellar: :any,                 sonoma:        "fed4f0dcd5656e8f63f6924baa82df424d6135a6910783d24cc715eaa4867b38"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "33a28593638cf8040e82c23a9a59e3cc3e99fbd69e30cda17ae898a98da9dde9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae00b77402699f25c89d7c8494476d0891746fb4b5fcc85be1f544e100f96a8c"
   end
 
   depends_on "cmake" => :build

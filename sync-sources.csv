@@ -3655,6 +3655,7 @@ Homebrew-homebrew-core/Formula/k/kyverno.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lab.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/labctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lacework-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/ladder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ladspa-sdk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/ladybug.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lager.rb, Homebrew/homebrew-core, 1
@@ -7138,7 +7139,7 @@ Homebrew-homebrew-core/Formula/s/suite-sparse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/summarize.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sundials.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/supabase-mcp-server.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/supabase.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/supabase.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/superfile.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/superhtml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/superlu.rb, Homebrew/homebrew-core, 1
@@ -9053,6 +9054,7 @@ Homebrew-homebrew-cask/Casks/c/chromedriver@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chromium-gost.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chromium.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chronoagent.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/chronoid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chronos.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chronosync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chronycontrol.rb, Homebrew/homebrew-cask, 0
@@ -9536,6 +9538,7 @@ Homebrew-homebrew-cask/Casks/d/duplicate-annihilator-for-photos.rb, Homebrew/hom
 Homebrew-homebrew-cask/Casks/d/duplicate-file-finder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/duplicateaudiofinder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/duplicati.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dusklight.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dust3d.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dvdstyler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dwarf-fortress-lmp.rb, Homebrew/homebrew-cask, 0
@@ -15402,6 +15405,7 @@ Homebrew-homebrew-cask/Casks/t/tinypng4mac.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tip.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tiptoi-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tla+-toolbox.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/tldraw.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tlv.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tm-error-logger.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tmpdisk.rb, Homebrew/homebrew-cask, 1
@@ -15472,6 +15476,7 @@ Homebrew-homebrew-cask/Casks/t/trex.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/trezor-bridge-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/trezor-suite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tribler.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/trickster.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/trilium-notes.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/trim-enabler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/trimmy.rb, Homebrew/homebrew-cask, 1

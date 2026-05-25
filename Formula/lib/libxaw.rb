@@ -3,7 +3,12 @@ class Libxaw < Formula
   homepage "https://www.x.org/"
   url "https://www.x.org/archive/individual/lib/libXaw-1.0.16.tar.xz"
   sha256 "731d572b54c708f81e197a6afa8016918e2e06dfd3025e066ca642a5b8c39c8f"
-  license "MIT"
+  license all_of: [
+    "MIT-open-group",    # "The Open Group"
+    "X11",               # "The XFree86 Project, Inc."
+    "HPND",              # "Digital Equipment Corporation", "Prentice Hall"
+    "HPND-sell-variant", # "OMRON Corporation"
+  ]
   revision 1
   compatibility_version 1
 

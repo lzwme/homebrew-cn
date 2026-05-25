@@ -11,6 +11,8 @@ cask "favtool" do
     url :stable
   end
 
+  depends_on :macos
+
   app "Favtool.app"
 
   zap trash: [

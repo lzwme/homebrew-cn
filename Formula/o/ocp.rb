@@ -1,8 +1,8 @@
 class Ocp < Formula
   desc "UNIX port of the Open Cubic Player"
   homepage "https://stian.cubic.org/project-ocp.php"
-  url "https://stian.cubic.org/ocp/ocp-3.3.0.tar.xz"
-  sha256 "e3436e2520d6358f3cb9836a78e1da97189ee709f21c714ba8356520dee5265a"
+  url "https://stian.cubic.org/ocp/ocp-3.3.1.tar.xz"
+  sha256 "924c07f53d45e2bda3e9a4c404ff520dfa49ffed7718ebe6f1d352479bca9ad3"
   license "GPL-2.0-or-later"
   head "https://github.com/mywave82/opencubicplayer.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Ocp < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9d365318e06c48523b98ca49ea5133987deea0041e3aeabf986e7858615f9d56"
-    sha256 arm64_sequoia: "3170674e43fc17daa67a5b4a1ded74f5676c07d3c38d574e84566edde97966a9"
-    sha256 arm64_sonoma:  "927266f1b78ba17101c376db05a69fee6c9c7a0aa11eb25114e91f7ddb68f86e"
-    sha256 sonoma:        "b308c3db7960902dea5df870749478d9bb3960d988431f75c9042261ac4eb000"
-    sha256 arm64_linux:   "aeb3027f4c99e4d010c1b0698c52fd68c702564c008c1839e76009f8c598b989"
-    sha256 x86_64_linux:  "a5df4490efe85e5aa321758400c58cb77bf92eaf8f0a8d1ded6ed0aa36e0ea81"
+    sha256 arm64_tahoe:   "425581f0286925a8dd284435cf64a6f58de1cc70d68925634dfdf26007d74c3b"
+    sha256 arm64_sequoia: "174a49cea9b579bb1e5f84590fadeb644b9c1d188158d244b603a9dd97fd18c5"
+    sha256 arm64_sonoma:  "7efda933b50036b71ada2ef5dcbbac1fe3d8f71d2af070b2fbeec8611bb9f695"
+    sha256 sonoma:        "25ac3da1aa03447608c1b6daa75bd30f9870cb90cf3a81a517495090a8ddacc9"
+    sha256 arm64_linux:   "45abf429ba52975346f5956a6d575b70594c98ad02c2a6c34ed97309e8d18695"
+    sha256 x86_64_linux:  "b2b5b971a9489b9c584a8996a442754a81159cf772d3c7f683f5060d303df9a9"
   end
 
   depends_on "pkgconf" => :build
@@ -50,8 +50,8 @@ class Ocp < Formula
 
   # https://github.com/mywave82/opencubicplayer/blob/master/mingw/versionsconf.sh#L20
   resource "unifont" do
-    url "https://ftpmirror.gnu.org/gnu/unifont/unifont-17.0.03/unifont-17.0.03.tar.gz"
-    sha256 "9a26aa9adfa8eb1f91b0cd9b83e7f95ea9e14c6e85be71aa3ab0df5cb4e69c35"
+    url "https://ftpmirror.gnu.org/gnu/unifont/unifont-17.0.04/unifont-17.0.04.tar.gz"
+    sha256 "5c52c5d56ef98089ddbca62e68560ceccc57ea88940b9d38cc3c888fe3b59a34"
   end
 
   def install

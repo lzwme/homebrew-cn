@@ -1,8 +1,8 @@
 class Libplctag < Formula
   desc "Portable and simple API for accessing AB PLC data over Ethernet"
   homepage "https://github.com/libplctag/libplctag"
-  url "https://ghfast.top/https://github.com/libplctag/libplctag/archive/refs/tags/v2.6.16.tar.gz"
-  sha256 "467d76fd8847819d412762df7ec70dbc2fc4f8f0ef4ce6d79bb0349ed3a4ea61"
+  url "https://ghfast.top/https://github.com/libplctag/libplctag/archive/refs/tags/v2.7.0.tar.gz"
+  sha256 "2c734305d1a2dba2b270ad4b7f780b1b68dbfcadf3d21ccef834b3e8b5289eac"
   license any_of: ["LGPL-2.0-or-later", "MPL-2.0"]
 
   livecheck do
@@ -11,12 +11,12 @@ class Libplctag < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d3f745eb3e7792b7327de8c94ee99459ff54f45cecbb6b5c8bb65024e5bd30d7"
-    sha256 cellar: :any,                 arm64_sequoia: "afba7335b90edde759d68698c3f093970bce3e5a4bf4889aa90c24a156cf85e4"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd1adab23619ccf16b8311445a1b6ddf821ada8b6ebd6143073422028b38c87b"
-    sha256 cellar: :any,                 sonoma:        "8eed7d78cee2d90bd9f7a3c0552b28aaedc60f063ba5a8413c94d87d97b8a677"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "559885be94842ee2f91a872aabe47b395849d428bde1ed8c53f9cf481c19d415"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "effba46edd11f2a975567c884e281992a150a143136cfc2a98395c22bdde4ade"
+    sha256 cellar: :any,                 arm64_tahoe:   "953fe36579a3aa5720f61ef25ddb8e8ee0b5cd919431b8d3a8e8e17a31c0a0c9"
+    sha256 cellar: :any,                 arm64_sequoia: "67dc4be3995bfbf1a214bd9397a2b529c85a7a59a8a283aac44ed6e831b8f5da"
+    sha256 cellar: :any,                 arm64_sonoma:  "43bda34f7e861618962084f0bd0622e9655d2e1d3352b6dfc681102bc58a6a58"
+    sha256 cellar: :any,                 sonoma:        "09203ef37f37e9405d04c0f6049fd4f8a6d05511fa19c2c7e232b4c74e34408f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84a9135ab80f07ca1cb450565d713495bb64eb4904feefd5481caefff34a2c38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4567170fa0f438bce0083baa89f1f00a50293137fe87214c45d348eb68b37cba"
   end
 
   depends_on "cmake" => :build
@@ -28,6 +28,8 @@ class Libplctag < Formula
   end
 
   def install
+    # Vendored libyafl uses MAP_ANONYMOUS which requires _GNU_SOURCE on Linux
+    ENV.append "CFLAGS", "-D_GNU_SOURCE" if OS.linux?
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

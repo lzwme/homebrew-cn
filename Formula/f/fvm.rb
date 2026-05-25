@@ -4,14 +4,15 @@ class Fvm < Formula
   url "https://ghfast.top/https://github.com/leoafarias/fvm/archive/refs/tags/4.1.0.tar.gz"
   sha256 "44f24d6bef61f78fef509415bc8974fcd60c5ffe937f9a4d9b17fe26c55670a2"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b136a3ca2e6c6b52ac8a18b61435c219feff003939926d24f90aba239a5e3a00"
-    sha256 cellar: :any,                 arm64_sequoia: "72c092b3c9635d25884e21b6a9c0f390651322b0ea13fa45192d46d806e8f54e"
-    sha256 cellar: :any,                 arm64_sonoma:  "967420bd0a848a536209f474981d15bd8dc45692c7640ec85930f5d851f752a0"
-    sha256 cellar: :any,                 sonoma:        "b8fe0f897c8c65131555d20e3e804ecf3d1786e315953f75174c2db6d4dc01c2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c1b6591d53657867adaad6abf38ac7994b25f580c2a80a8d4e4e21900d9be07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f875db19eae96f1ff96674587a15dbb73e139bc0b3b8d99ebe8bf127926c320"
+    sha256 cellar: :any,                 arm64_tahoe:   "306779d3a95581b6b0f9cc4540b42310d77f002e8957b0e7b9e5091506699247"
+    sha256 cellar: :any,                 arm64_sequoia: "8a4cc0244dc98b62cef612361118a3e081bd4c28c7544645a2494903dab5c8fc"
+    sha256 cellar: :any,                 arm64_sonoma:  "29d59fff6e21f2764e00aadda71d3f5c5b9401889dba35fe976fa31df41cf919"
+    sha256 cellar: :any,                 sonoma:        "6eb237e35bc9eb8d145c3ced9e768ff6e07ea555ed70682446a4b51454b1701e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "17a20c78703d90133b1570c1d017052194aa31caae7c2ff8e6baa6625c271017"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fd713c6000b8dc6e6311f9bcf27f570d759d3b6ee89078b91df05f302b9a2fc"
   end
 
   depends_on "dart-sdk" => :build

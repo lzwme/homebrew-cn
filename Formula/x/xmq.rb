@@ -1,17 +1,17 @@
 class Xmq < Formula
   desc "Tool and language to work with xml/html/json"
   homepage "https://libxmq.org"
-  url "https://ghfast.top/https://github.com/libxmq/xmq/archive/refs/tags/4.1.0.tar.gz"
-  sha256 "a8637d1e95d0015e14b9f51a76798324ebd00a0135d44f686b9f5a446cd14af0"
+  url "https://ghfast.top/https://github.com/libxmq/xmq/archive/refs/tags/4.2.0.tar.gz"
+  sha256 "a8fa90f53611a168ee3052c49f4c4b241481fd35c72fe04fd9d925b102ca91ee"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "83aacb3ab6931c777f82fce09adcde72ad04446970fa0eac93f488b074a2a326"
-    sha256 cellar: :any,                 arm64_sequoia: "2bcb7c3d49912a598504b1215f3a7d0a998649ab747de64161d5f64081df00f4"
-    sha256 cellar: :any,                 arm64_sonoma:  "18aa2ebc522fcf2078cbc228bfae9dac262e9e97f7e871e29cd73863c9c988d6"
-    sha256 cellar: :any,                 sonoma:        "631bffb5aee8fbd0c2de142080aae3724a033c30ae0af03b1bd3e20eeebf6e37"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "386b859219e1af64955da7f123b1680fee7a4e2567c53093141e18a378400e47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb5936a16ccc4b624a786c1336e66598b9bba1bf5cacac8927d9cb8844eeafbe"
+    sha256 cellar: :any,                 arm64_tahoe:   "bdc20cb9f508992bee5fb53bbe862f264e56c98a8f5d6d0de0c0e889fe909527"
+    sha256 cellar: :any,                 arm64_sequoia: "1dc74dc83b9ce24f0d76916e4d3d23fd86abf1b5d19fda5775b16dec7f0a6cfc"
+    sha256 cellar: :any,                 arm64_sonoma:  "e2bcaa7333fcf926c8b649d0e5398cf00c8c8d7886162a26c38a240ad87dc999"
+    sha256 cellar: :any,                 sonoma:        "d38de2b4ed0217d7ebf53abdadbc1c9a61b7ba357ba42ecbd1c78f22f8741f37"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea5266812b24443d965ae2b37d5d682b9b93a59e5be72fa4ed3673fa5d6e4e2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e1905dad96f7e4df997769d3224025cf6a5f238153d719dc9206535aac4e295"
   end
 
   head do

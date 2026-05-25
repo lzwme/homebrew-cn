@@ -3,20 +3,20 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/e9/45/b62ea250bcd25c020ce4e4e917856cf5344084b509530f6f0beaa2358602/keepercommander-18.0.2.tar.gz"
-  sha256 "7e011f1cb117d07bacd5976e61835482ca4934b1721a9b570dbfb985c0b5cea9"
+  url "https://files.pythonhosted.org/packages/e7/13/c9839da01b16e288e4444b39fee5677d1d00dccb59859b5bd1009a0980a8/keepercommander-18.0.3.tar.gz"
+  sha256 "24fb1c0ff300d2b57b1e2524d5cbce3ff3b88fb67ccbde8a97d46a505f6fda03"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "455bc892df182775a91f15adcb806c521f636822b8850f58ff459da51c13c0c5"
-    sha256 cellar: :any,                 arm64_sequoia: "a2a0d60ba774135afa0d15d4590440996ecea66611c0eb38a995257c8352fdf0"
-    sha256 cellar: :any,                 arm64_sonoma:  "13198f2a3ad8db3e567cde9f33afd18902de1713890fc96affe40e9efbeee137"
-    sha256 cellar: :any,                 sonoma:        "65603e6fe23ed49eb4ad9ef73364978ca31eb36a3b45fd5cb345c5dd3720bee8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2bc302bc9932ab15010536dc94852e5ffb186d456b17e75960c1dcb570426ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e518664039a9f836eb1a2855a6ceea3eba6bc8a7b9a4f4e88862ec4def37065"
+    sha256 cellar: :any,                 arm64_tahoe:   "aff07b162d439bb83ae64b84ae527943c9b6ee055b20f90b9213514d37dd847f"
+    sha256 cellar: :any,                 arm64_sequoia: "acbbf34b892bf0054f94be64d8223c19134180131cb56167ce40da9bf7fd3ddf"
+    sha256 cellar: :any,                 arm64_sonoma:  "c07ad4ee04294c95cf37c58b687b47cb658836d417c4a4552b9bf7c023ed0c01"
+    sha256 cellar: :any,                 sonoma:        "96689f5bbc096c1868bc4ea8844f10bc8df5bdc329848406ac8be26c623d3e3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bca57605bdbceaf71a573f704e78d0512646505ef9bec3b9edff70af5d9cf47b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee2ec66b66011bd2e6cdda71791dd9c1ad7209109b331562f24aaaf37b73b49e"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -77,8 +77,8 @@ class KeeperCommander < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
-    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
+    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
+    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
   end
 
   resource "colorama" do
@@ -127,13 +127,28 @@ class KeeperCommander < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
+    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
   end
 
   resource "itsdangerous" do
     url "https://files.pythonhosted.org/packages/9c/cb/8ac0172223afbccb63986cc25049b154ecfb5e85932587206f42317be31d/itsdangerous-2.2.0.tar.gz"
     sha256 "e0050c0b7da1eea53ffaf149c0cfbb5c6e2e2b69c4bef22c81fa6eb73e5f6173"
+  end
+
+  resource "jaraco-classes" do
+    url "https://files.pythonhosted.org/packages/06/c0/ed4a27bc5571b99e3cff68f8a9fa5b56ff7df1c2251cc715a652ddd26402/jaraco.classes-3.4.0.tar.gz"
+    sha256 "47a024b51d0239c0dd8c8540c6c7f484be3b8fcf0b2d85c13825780d3b3f3acd"
+  end
+
+  resource "jaraco-context" do
+    url "https://files.pythonhosted.org/packages/af/50/4763cd07e722bb6285316d390a164bc7e479db9d90daa769f22578f698b4/jaraco_context-6.1.2.tar.gz"
+    sha256 "f1a6c9d391e661cc5b8d39861ff077a7dc24dc23833ccee564b234b81c82dfe3"
+  end
+
+  resource "jaraco-functools" do
+    url "https://files.pythonhosted.org/packages/36/cf/ea4ef2920830dea3f5ab2ea4da6fb67724e6dca80ee2553788c3607243d0/jaraco_functools-4.5.0.tar.gz"
+    sha256 "3bb5665ea4a020cf78a7040e89154c77edadb3ca74f366479669c5999aa70b03"
   end
 
   resource "jinja2" do
@@ -154,6 +169,11 @@ class KeeperCommander < Formula
   resource "keeper-secrets-manager-core" do
     url "https://files.pythonhosted.org/packages/f3/77/1d75b0ea109f4ddf7c18fb82c5d222f8eb66b3d00e37fb1b2328d3595763/keeper_secrets_manager_core-17.2.1.tar.gz"
     sha256 "2414abf10711f7f6918edb47454706986a08099affbfeb92b1fad626cb37dd11"
+  end
+
+  resource "keyring" do
+    url "https://files.pythonhosted.org/packages/43/4b/674af6ef2f97d56f0ab5153bf0bfa28ccb6c3ed4d1babf4305449668807b/keyring-25.7.0.tar.gz"
+    sha256 "fe01bd85eb3f8fb3dd0405defdeac9a5b4f6f0439edbb3149577f244a2e8245b"
   end
 
   resource "limits" do
@@ -184,6 +204,11 @@ class KeeperCommander < Formula
   resource "mdurl" do
     url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
+  resource "more-itertools" do
+    url "https://files.pythonhosted.org/packages/de/1d/f4da6f02cdffe04d6362210b807146a26044c88d839208aec273bb0d9184/more_itertools-11.1.0.tar.gz"
+    sha256 "48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d"
   end
 
   resource "ordered-set" do
@@ -317,8 +342,8 @@ class KeeperCommander < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/e2/f0/5e969d268d59e6035f2f1960da9e82fe6db24a7b8abe8e36a78c27cb3e2b/wrapt-2.2.0.tar.gz"
-    sha256 "b70a0b75b0a5a58d04aad06b3f167d49e729381d3417413656220c0cd7617847"
+    url "https://files.pythonhosted.org/packages/2d/9f/06263fcd8ad6c405f05a3905fd7a84dd3176eb5ad46e44bccc0cd16348bb/wrapt-2.2.1.tar.gz"
+    sha256 "6744f504375775d7609c82c8d3d94af1c9a6f05586984536905908ba905277b9"
   end
 
   resource "zxcvbn" do

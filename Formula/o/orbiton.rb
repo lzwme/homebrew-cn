@@ -1,8 +1,8 @@
 class Orbiton < Formula
   desc "Fast and config-free text editor and IDE limited by VT100"
   homepage "https://roboticoverlords.org/orbiton/"
-  url "https://ghfast.top/https://github.com/xyproto/orbiton/archive/refs/tags/v2.74.2.tar.gz"
-  sha256 "9596d633da001a1b1049ef51e03fdc98189befef35a8a674198da30d9e09d57b"
+  url "https://ghfast.top/https://github.com/xyproto/orbiton/archive/refs/tags/v2.74.3.tar.gz"
+  sha256 "d1e4353ba7d5c75627216a5a27892ff1ad38fcb6651f59ce9d86dac5b8a1700b"
   license "BSD-3-Clause"
   head "https://github.com/xyproto/orbiton.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Orbiton < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30cdb6da8b4c4dc368b91a6b4094c651757cef8221fb94b99743a880ff4e0fb4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30cdb6da8b4c4dc368b91a6b4094c651757cef8221fb94b99743a880ff4e0fb4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30cdb6da8b4c4dc368b91a6b4094c651757cef8221fb94b99743a880ff4e0fb4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "de1bfc5fa4c83ea62c8a16f70c005eeabb6396bda093ada558a4ab622caa7f09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e31e1f6cbf4b9ef4ba056428ca5558a695d9c9623277e323daa522ae77d19bd4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7214cc1beb5c3b75bfdc741bd7018f45dc53ae4be3e72632c8c66d6c629c5283"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb9323f4091412048f89023675837b0f415762827d6df46e85bfcac6e10474ab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb9323f4091412048f89023675837b0f415762827d6df46e85bfcac6e10474ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb9323f4091412048f89023675837b0f415762827d6df46e85bfcac6e10474ab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d09c77d3f4a9df12919199351f85bc902967352a27c8c00c6289315f80569c33"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bcd700eba4fa52cb5b26afb601de91b937b5e2c19114de995715c556ec6afe41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07b170036ca9f5823bd0bf81392ed3f1b3abd3d92be1a11c1d4ee8a2fa6a902b"
   end
 
   depends_on "go" => :build

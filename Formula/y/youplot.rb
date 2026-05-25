@@ -1,26 +1,24 @@
 class Youplot < Formula
   desc "Command-line tool that draw plots on the terminal"
   homepage "https://github.com/red-data-tools/YouPlot/"
-  url "https://ghfast.top/https://github.com/red-data-tools/YouPlot/archive/refs/tags/v0.4.6.tar.gz"
-  sha256 "126278103f6dbc4e28983b9e90a4e593f17e78b38d925a7df16965b5d3c145a4"
+  url "https://ghfast.top/https://github.com/red-data-tools/YouPlot/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "2d17a58a5faf684d5df1008d373caed796a88f880dab1d36023bacae97096180"
   license "MIT"
-  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "eeb8d9717d60ae7b9dfcd78aacdc79015d4ca8295b7f97fe1edd475ae4792d91"
-    sha256 cellar: :any,                 arm64_sequoia: "b2dbf2a7fa893c9113ea3f231d61bde826361916aeab171ffcda8c19f62d7513"
-    sha256 cellar: :any,                 arm64_sonoma:  "895212146959ad158fd3ed9a352f23f044abe05cac8f08a2288dc969a7d02ca8"
-    sha256 cellar: :any,                 sonoma:        "ef0afa69f04a5b1b718d24ff46ebd7c285ff6d520d54c1f4369c0d4887b45e54"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dedea3ca0dcb2c889d0f26e9fe2f06f9eb506db2457950066ca15cae852fcc60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "823bd972bb4b954f066ef5503fdba09fa90b1c097143201817e06ff4e1be4724"
+    sha256 cellar: :any,                 arm64_tahoe:   "dc94ee1841953db68429b184f1ccf38608174114f6560ecf9469f72c1e95f7bf"
+    sha256 cellar: :any,                 arm64_sequoia: "9136892172c5aa99186e6dcf0fdef334339f4b0cb0c15efa580d28b1ac72c6b3"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe8890b71a8dcd5ed49f2697b4d28b5ebce4ac8af848fc89163d6d7b61275305"
+    sha256 cellar: :any,                 sonoma:        "b4881454d9f25cc985533b8ac3bb4258fd55d93e79a4d06e332bd2c02a883d73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "27d6f5919c287738dda830625f2e474d8b3902aaf6c5b96e2f87b4288cca59cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d52bd59e045e634d0f5f5a476235989bf766615bcf6d76912aa4f34d7e237744"
   end
 
   depends_on "ruby"
 
   resource "enumerable-statistics" do
-    url "https://rubygems.org/downloads/enumerable-statistics-2.0.8.gem"
-    sha256 "1e0d69fcdec1d188dd529e6e5b2c27e8f88029c862f6094663c93806f6d313b3"
+    url "https://rubygems.org/downloads/enumerable-statistics-2.0.9.gem"
+    sha256 "9d92f049489b6ad794789814250e8a40e40e5aa6fc742bc7c6192e1ac52cbe3c"
   end
 
   resource "unicode_plot" do
@@ -53,12 +51,12 @@ class Youplot < Formula
       D,50
     CSV
     expected_output = [
-      "     ┌           ┐ ",
-      "   A ┤■■ 20.0      ",
-      "   B ┤■■■ 30.0     ",
-      "   C ┤■■■■ 40.0    ",
-      "   D ┤■■■■■ 50.0   ",
-      "     └           ┘ ",
+      "     ┌          ┐ ",
+      "   A ┤■■ 20       ",
+      "   B ┤■■■■ 30     ",
+      "   C ┤■■■■■ 40    ",
+      "   D ┤■■■■■■ 50   ",
+      "     └          ┘ ",
       "",
     ].join("\n")
     output_youplot = shell_output("#{bin}/youplot bar -o -w 10 -d, #{testpath}/test.csv")

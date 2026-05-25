@@ -14,5 +14,7 @@ cask "ultrastar-manager" do
     url :stable
   end
 
+  depends_on :macos
+
   app "UltraStarManager.app"
 end

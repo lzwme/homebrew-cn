@@ -20,6 +20,15 @@ class Mactop < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
+  service do
+    run [opt_bin/"mactop", "-p", "9101", "--headless"]
+    keep_alive true
+    log_path var/"log/mactop.log"
+    error_log_path var/"log/mactop.error.log"
+    process_type :background
+    nice 10
+  end
+
   test do
     test_input = "This is a test input for brew"
     assert_match "Test input received: #{test_input}", shell_output("#{bin}/mactop --test '#{test_input}'")

@@ -6,13 +6,14 @@ cask "stirling-pdf" do
       verified: "github.com/Stirling-Tools/Stirling-PDF/"
   name "Stirling-PDF"
   desc "PDF utility"
-  homepage "https://stirlingpdf.com/"
+  homepage "https://stirling.com/"
 
   depends_on :macos
 
   app "Stirling-PDF.app"
 
   zap trash: [
+    "~/Library/Application Support/Stirling-PDF",
     "~/Library/Application Support/stirling.pdf.dev",
     "~/Library/Caches/stirling.pdf.dev",
     "~/Library/Logs/Stirling-PDF",

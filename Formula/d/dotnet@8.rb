@@ -13,11 +13,13 @@ class DotnetAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "375d54b83eced43741e1eba23a9bac7f13be90e0018c17dd0d58e1aa3874d618"
-    sha256 cellar: :any,                 arm64_sequoia: "3af9274710961f0461f0d721ff94eccef385721c2984262a50b2cd3c1a5d7911"
-    sha256 cellar: :any,                 arm64_sonoma:  "88d92b83a55f91897c3fdcbab1dc7306a2eb9d6c53c55db2990755e5462b681c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "db4182b21e002e8cf0912e2938c0baa99b0bb4bb1ed3f6fc5be4a9de25edc6bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85e30de99894cd38bfe2fe0cd3c6537e362d21e3da0333c48e4cceb782d1435e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "dfbf3013e1d8eae8013eb5ce48a656f416dd7fbd3aae934ca5e77117b1906fe5"
+    sha256 cellar: :any,                 arm64_sequoia: "d5f1168e532075eb57dc26c29e51d2afe2b799229d1230a9da9d66830c61a3f5"
+    sha256 cellar: :any,                 arm64_sonoma:  "55d9d4600aee4d956e4529bad658a8c6f81fb4d028274bec9cf43b3cb63bce9b"
+    sha256 cellar: :any,                 sonoma:        "9b5c4c81c429844de8e8d3947588bf8638f4a0c90120f03eed13b0d56fac5bac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ff17b1b01aee66fdfeecb42375d47e88e554ad9790dc1744d705d477c126b64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a11744f60c554af9db36adc63dd7931c3ba5c105cc64d90c0b68092cb340df4"
   end
 
   keg_only :versioned_formula
@@ -51,12 +53,6 @@ class DotnetAT8 < Formula
         cause "Fatal error. Internal CLR error"
       end
     end
-  end
-
-  on_intel do
-    # Building on Intel Sonoma or later results in stack overflow on restore.
-    # See https://github.com/Homebrew/homebrew-core/issues/197546
-    depends_on maximum_macos: [:ventura, :build]
   end
 
   resource "release.json" do

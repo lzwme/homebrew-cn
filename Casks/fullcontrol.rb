@@ -7,6 +7,8 @@ cask "fullcontrol" do
   desc "Helper application for the FullControl server"
   homepage "https://fullcontrol.cescobaz.com/"
 
+  depends_on :macos
+
   app "FullControlHelper.app"
 
   zap trash: [

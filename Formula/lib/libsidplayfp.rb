@@ -1,8 +1,8 @@
 class Libsidplayfp < Formula
   desc "Library to play Commodore 64 music"
   homepage "https://github.com/libsidplayfp/libsidplayfp"
-  url "https://ghfast.top/https://github.com/libsidplayfp/libsidplayfp/releases/download/v3.0.0/libsidplayfp-3.0.0.tar.gz"
-  sha256 "b22fe5d3cc1e228733b23dd175573b00e677cf4d2a2b277fcdb7ababc0ff66a2"
+  url "https://ghfast.top/https://github.com/libsidplayfp/libsidplayfp/releases/download/v3.0.1/libsidplayfp-3.0.1.tar.gz"
+  sha256 "6b8ffedc2f631a4ca53258e60468eab3e6a2dc4e1369b2e59e3a5955f99a2143"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Libsidplayfp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9802ac3fc20b374564905242bd8db9ab6973bc7f7d6b69f4dc84b8d1b3220ea8"
-    sha256 cellar: :any,                 arm64_sequoia: "65228ab9338c057178d5992a6dcd7cddb4f559f366aeb760d508112a10303e48"
-    sha256 cellar: :any,                 arm64_sonoma:  "c8582d2c83ca7a3be4085e003399b83c78b1d74cff2db0fec074bdc3f38c4eb1"
-    sha256 cellar: :any,                 sonoma:        "d5fb3b14b6bf4bb5b502ecb7ea69602fb33da379cebd0dfae541b9b5cbb459ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4be84c8b2db0127b2f5635b774e9a742c33252707ad7549bf852461031d8cd2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbbf31d7a2bb9cd835717a480469d428f23e56a97fef0227392c65d6dd2205db"
+    sha256 cellar: :any,                 arm64_tahoe:   "69c4987324a6eaa1065f86f163ffec361c69ce68a96c34feed4312ea4b4cd128"
+    sha256 cellar: :any,                 arm64_sequoia: "25229d51be5e28a3c2158025c7fd5da6baa7ba35a8f559f9e4fb1302ededed9d"
+    sha256 cellar: :any,                 arm64_sonoma:  "dd06a02193b11356d6986e7c7f8358ca4e8cc21343329e8ed4606027d7c44f25"
+    sha256 cellar: :any,                 sonoma:        "de7a17072056d0ee80c192b6d9c54f69ac68d0dd705a422a785560015d0dba69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac464c1c9e7b3f970a76e954311ab604faca3fba1cb8580edf2f98fc8ac696e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e14acb29bdb264ff2b1d8b89cf469196b004d95d940051dbe8ae2361a63350f3"
   end
 
   head do

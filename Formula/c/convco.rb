@@ -1,18 +1,18 @@
 class Convco < Formula
   desc "Conventional commits, changelog, versioning, validation"
   homepage "https://convco.github.io"
-  url "https://ghfast.top/https://github.com/convco/convco/archive/refs/tags/v0.6.3.tar.gz"
-  sha256 "ea178bb268e45d507fd358e391fd6bbb552b8d9f6801f0193b4422e172fc6917"
+  url "https://ghfast.top/https://github.com/convco/convco/archive/refs/tags/v0.6.4.tar.gz"
+  sha256 "907a7db94f0f49c2ee547c0aebfff50500a9d886a7e575bc0288d6937101972b"
   license "MIT"
   head "https://github.com/convco/convco.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5d02ab94f2d6e468fee2255a72771a89f545c0869e5d0021350c93b8b17f27c0"
-    sha256 cellar: :any,                 arm64_sequoia: "602743c1056d2e6d46eabeba444d0050a6743bcf4076551080e1b348c869faa5"
-    sha256 cellar: :any,                 arm64_sonoma:  "fba023ca348a3ddef9647129f25ee79ea2db78fc1e8b9cfc5af146cca67c9667"
-    sha256 cellar: :any,                 sonoma:        "18aad1e5093825a344db20f15e992b149ec3948828008ec673069ae0074a9bf4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f48b217348b2f0ff2118a4cbd0f87d2574d6986fc700266910048655a09fd02"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ddde9364a84fcd9acbbb88c1537560d7b01795bd4c9dc7ae6f6ffa6a608a259"
+    sha256 cellar: :any,                 arm64_tahoe:   "f4a0969e3b60c01c5fcc1dceefa0b7544f80d73c2374bba526b5953e7360069c"
+    sha256 cellar: :any,                 arm64_sequoia: "08a739ef2b32e8dd522246aa3ecd6b293cbde33cc82ddded91262c9a9670560f"
+    sha256 cellar: :any,                 arm64_sonoma:  "cb8eb3d9475713310a35b1602ae42a89021e11c6f0bf6e77334887d08c13cfe2"
+    sha256 cellar: :any,                 sonoma:        "6ff6540112f11725e5607b1dedeb254ead9001bbf43708468ee87c75edb995e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e8aeb9afaeee368d3dd271b6e60abd205568586f6d134d9f0a9f5c75f70fd61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "685ab707d227454b95c081fa542636997400a46160af144019e411fafc15cc36"
   end
 
   depends_on "pkgconf" => :build

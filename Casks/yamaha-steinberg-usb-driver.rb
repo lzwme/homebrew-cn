@@ -13,6 +13,7 @@ cask "yamaha-steinberg-usb-driver" do
   end
 
   auto_updates false
+  depends_on :macos
 
   pkg "YSUSB_V#{version.no_dots}_Mac/Yamaha Steinberg USB Driver V#{version}.pkg"
 

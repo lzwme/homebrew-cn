@@ -17,12 +17,13 @@ class Kdoctools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3c3341c3fa07a358214dc460be3bb66498ca3d1d1e13f41c3d641886ac9cdbf6"
-    sha256 cellar: :any,                 arm64_sequoia: "4a281ce724264bb07e81a01019fda0b60781af1293ba516135183b436681e583"
-    sha256 cellar: :any,                 arm64_sonoma:  "191fe1cba93ae9f0a3f9cc95e43eae45b7142c6b881b6f8b07baca26b8e453f0"
-    sha256 cellar: :any,                 sonoma:        "9aee05c228e252ae3ac05e04fba98df34fcf2779d35eac39b71fe54d435f09a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "05c746591ebf63aecc7ab4a2180b10795c624bbe4baf6cfac402f080001de734"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77754557cfddf2be96e8470a8df15918735b97c8c343d9e19e2bdaa3943194a3"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "e8833cc271c9d6bab73c9bfef8d442454eae7bf1a33077d35157269704886ba2"
+    sha256 cellar: :any,                 arm64_sequoia: "879f16987fff661f7aba032d9c3e12e073ce13a45cd443e63ccb8a5b2b8807ea"
+    sha256 cellar: :any,                 arm64_sonoma:  "f4c1fe796f10c4d37c085e99d409c640d901b28d7b86f50c8c52589a927e80b8"
+    sha256 cellar: :any,                 sonoma:        "b4e32a93fe19a1737910773c18d3a9704fb0378cd77b832afc94a19aeea3091c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "36e8cf47214eb6288b97006e2eecf34de737cf3dc0c749aa85f0db0680e11a40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ebf8247240f8d0e9ae459f5d608d30253f2b2d989bbc69a669be4923632c8f3"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -35,9 +36,9 @@ class Kdoctools < Formula
   depends_on "karchive"
   depends_on "qtbase"
 
+  uses_from_macos "perl" => :build
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
-  uses_from_macos "perl"
 
   resource "URI::Escape" do
     on_linux do
@@ -48,11 +49,10 @@ class Kdoctools < Formula
 
   def install
     if OS.linux?
-      ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
-      ENV.prepend_path "PERL5LIB", libexec/"lib"
+      ENV.prepend_create_path "PERL5LIB", buildpath/"lib/perl5"
 
       resource("URI::Escape").stage do
-        system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
+        system "perl", "Makefile.PL", "INSTALL_BASE=#{buildpath}"
         system "make", "install"
       end
     end

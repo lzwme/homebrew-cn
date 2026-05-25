@@ -1,8 +1,8 @@
 class Mt32emu < Formula
   desc "Multi-platform software synthesiser"
   homepage "https://github.com/munt/munt"
-  url "https://ghfast.top/https://github.com/munt/munt/archive/refs/tags/libmt32emu_2_8_1.tar.gz"
-  sha256 "569c0a0fc106438d6eb612fb022a62c7b5fe7536d2759f5f0eb3a2c9c58f7280"
+  url "https://ghfast.top/https://github.com/munt/munt/archive/refs/tags/libmt32emu_2_8_2.tar.gz"
+  sha256 "d4778cf89b054ba7ab410ffcb02ecf1629fa32b5b60838addec99eb93804fdcb"
   license "LGPL-2.1-or-later"
   head "https://github.com/munt/munt.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Mt32emu < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4038a43e8d23a5bbf07b6e58edb840ae60afbd8f8d30ca39a92ee7091685f464"
-    sha256 cellar: :any,                 arm64_sequoia: "d58ceed4c9722e5ce3425106052692c48a50363d67efff4ee2afc7e6c4ca49f3"
-    sha256 cellar: :any,                 arm64_sonoma:  "82579909d52e3186a682e86f6ba62c0c9bdaa85c10994d48a68dce9762ce35e7"
-    sha256 cellar: :any,                 sonoma:        "ac7910dd3887b839b350b4ba00391365cb572134b27d79f3e3a02a96461d2957"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c6c2fdf8b90cd65bc7b75bde2bd57d6be12298c053d4e4cd398869066bd67fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "924ca99f0011442a48f9bd498486f80643f925c182f2fc659c7ef7ea4e901d16"
+    sha256 cellar: :any,                 arm64_tahoe:   "0b798d8a0e855ce0ab76eb0b02d7a2fe16335bcc9185017ce65a95adad49ffa2"
+    sha256 cellar: :any,                 arm64_sequoia: "ddc5d6afc7e863326d3aa540f2ecd3b4b1218785259d5beb6706a7ba81589c04"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a4fbe85aaa7ca8845d46518780fde3e7caf42b1e984c7115430cf916125b051"
+    sha256 cellar: :any,                 sonoma:        "8fa7063046ba4a099dd910436177f32667875e0430480457d15dd0a48624cc57"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fb476d5e104930546b6535407353220bd256d2ea01a8c60e4f4719a57155783"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55a6a022c263ea3b0c816b80b7e93e19dbbc13c24431ed334f95a51ce67d166d"
   end
 
   depends_on "cmake" => :build

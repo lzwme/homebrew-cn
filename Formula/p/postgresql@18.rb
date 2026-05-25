@@ -11,12 +11,13 @@ class PostgresqlAT18 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "51c114096263c4b3c5e4ba7d77ce6b7cd8e9ad36b9911ebd2df65ccea4048a6e"
-    sha256 arm64_sequoia: "2010179240638613e0f57510f27a7f01bddca5fe8cd23d663a9a818a1d74c423"
-    sha256 arm64_sonoma:  "5505ee5810e82508ac5568f7bb446eafb6d6a643621f864d61f6e75c227b86a0"
-    sha256 sonoma:        "adb9bf954134a2b99507e175f4cb4b8f42d9d4b4b2f1111759d3b0b68e354a8a"
-    sha256 arm64_linux:   "6cc505c46caa72f7c29a0a5e082b14a6377407fc38bfc74d728298c6d7e17ac5"
-    sha256 x86_64_linux:  "27c024ccd19ad7c8a91a61f5bb44937744da833ff55ec57a7ebf64df58372e9b"
+    rebuild 1
+    sha256 arm64_tahoe:   "3dd3a49b3cda7f61de2c8d27697c6a48a3dfe990f74a4eaed8733455a1401bc8"
+    sha256 arm64_sequoia: "edf0f9a317242e09efbdfa2e1a56d36f2466c0386e86b4a6cf51ba780f62e314"
+    sha256 arm64_sonoma:  "3b2416636b872589d07e7cd02a1a5bb408b5827d259cbaca9e8b558991d9a0b3"
+    sha256 sonoma:        "b138867601984b90b7e7e67ee615e47b73c3cf25007321d47984b0f9839d2dd6"
+    sha256 arm64_linux:   "a588c6d7bab03cd7936de98889ebc07a2ff86e268db92050948a218d08473c24"
+    sha256 x86_64_linux:  "652990f1ed2c117bcf7ee7baec44b80bfc72a4c59f97b9080ee53dff4e765ac0"
   end
 
   keg_only :versioned_formula
@@ -40,6 +41,7 @@ class PostgresqlAT18 < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
+  uses_from_macos "curl"
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
   uses_from_macos "openldap"
@@ -89,6 +91,7 @@ class PostgresqlAT18 < Formula
       --with-lz4
       --with-zstd
       --with-openssl
+      --with-libcurl
       --with-pam
       --with-perl
       --with-uuid=e2fs
@@ -188,5 +191,6 @@ class PostgresqlAT18 < Formula
       assert_equal "#{HOMEBREW_PREFIX}/include/#{name}/server", shell_output("#{pg_config} --includedir-server").chomp
       assert_match "-I#{Formula["gettext"].opt_include}", shell_output("#{pg_config} --cppflags") if OS.mac?
     end
+    assert_path_exists lib/"postgresql/#{shared_library("libpq-oauth-18")}"
   end
 end
