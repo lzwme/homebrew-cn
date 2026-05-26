@@ -4,6 +4,7 @@ class Kore < Formula
   url "https://kore.io/releases/kore-4.2.3.tar.gz"
   sha256 "f9a9727af97441ae87ff9250e374b9fe3a32a3348b25cb50bd2b7de5ec7f5d82"
   license "ISC"
+  revision 1
   head "https://github.com/jorisvink/kore.git", branch: "master"
 
   livecheck do
@@ -12,26 +13,19 @@ class Kore < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:    "059c350956eced72b4ef7d31a358fac3e5df1b7132fabad051c2fef4a9f55c34"
-    sha256 arm64_sequoia:  "b25dd99e236b7cf5cdfec8d1128dfb125d271400aef79e29a6877fd47f86a4a2"
-    sha256 arm64_sonoma:   "d984004ecf128c881234240035fe13f5e2c9af10c9bb0552f4ee0a321d2f5bdb"
-    sha256 arm64_ventura:  "2079b1a823ee0915cb18e0148f04514d04638dc91807d2b3ef27c32129f7303a"
-    sha256 arm64_monterey: "0a22c98bd62f85f7cb1dcd41ef763c95bb97c4d77592432770de250e97dde75c"
-    sha256 arm64_big_sur:  "37860487cb7c2ec1efeb924857b32da30d3bd6dd07f7eff4da3ad42d24134252"
-    sha256 sonoma:         "87b0774ca1be1fadbe6353582a6af3fc01e53e80f31891fc152458584e3ac9b0"
-    sha256 ventura:        "a826de0cab4f5e9b7cef6d7a08573d38b476cefda028e3ace20a8c1b79b7d414"
-    sha256 monterey:       "4a013753ae526626e4afd5519a41521c5c2e2a004b741306617b7d23f6c7b218"
-    sha256 big_sur:        "13917b8cf36d5fb5b57fb5028aa49fd421bd4ec930742b697d194ee0c0e1bb21"
-    sha256 arm64_linux:    "38438db7080ee244c41fb90a46e7515d73171187f3e2ea7bc8a6c6b26277dda9"
-    sha256 x86_64_linux:   "8f982ba054916139a8560c8826a450b30784e08c672aaebcc8736d6ca88e4eb0"
+    sha256 arm64_tahoe:   "3147b297014a79e06b6a7ee03cbeab03736d02b1d94fd2886263309e79426aad"
+    sha256 arm64_sequoia: "89189fa27de08b5e348fe2fade868237614af312b3e5793d265d3317df0f176e"
+    sha256 arm64_sonoma:  "75c9eb9e12ca1023275eeb0517dddbcd88c1acc2435b601f373a408c3308f997"
+    sha256 sonoma:        "be43b043c4baa1ce0094c7a071b9ab0e6a690a01b0b7b643ecfd3c7ea77029fe"
+    sha256 arm64_linux:   "9b465cc894bb5c79b694074b46492285b9890bd684e7a7b7b856841e16598a61"
+    sha256 x86_64_linux:  "71c449df397bf69830432c1cc213c428b6211a1bb3fe551279036d55ab9ca1a5"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
-    openssl = Formula["openssl@3"]
+    openssl = Formula["openssl@4"]
 
     # We modify Makefile variables to save OpenSSL paths which get used at runtime.
     # We don't directly override FEATURES_INC as Makefile uses 'FEATURES_INC+='.

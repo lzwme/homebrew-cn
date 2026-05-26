@@ -3,7 +3,7 @@ class Mozjpeg < Formula
   homepage "https://github.com/mozilla/mozjpeg"
   url "https://ghfast.top/https://github.com/mozilla/mozjpeg/archive/refs/tags/v4.1.5.tar.gz"
   sha256 "9fcbb7171f6ac383f5b391175d6fb3acde5e64c4c4727274eade84ed0998fcc1"
-  license "BSD-3-Clause"
+  license all_of: ["IJG", "Zlib", "BSD-3-Clause"]
 
   livecheck do
     url :stable
@@ -26,14 +26,20 @@ class Mozjpeg < Formula
   keg_only "it conflicts with the standard libjpeg"
 
   depends_on "cmake" => :build
-  depends_on "nasm" => :build
   depends_on "libpng"
 
+  on_intel do
+    depends_on "nasm" => :build
+  end
+
+  # Backport fix for CMake 4
+  patch do
+    url "https://github.com/mozilla/mozjpeg/commit/1644bdb7d2fac66cd0ce25adef7754e008b5bc1e.patch?full_index=1"
+    sha256 "bcb23a9c7aec269f472b30b44a31aea5ccc60ea1fc8342325999420e61e4efbd"
+  end
+
   def install
-    args = std_cmake_args - %w[-DCMAKE_INSTALL_LIBDIR=lib]
-    # Workaround to build with CMake 4
-    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
-    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_LIBDIR=#{lib}", *args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_libdir: lib)
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

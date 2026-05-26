@@ -16,12 +16,15 @@ class Mvtools < Formula
   end
 
   depends_on "meson" => :build
-  depends_on "nasm" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
 
   depends_on "fftw"
   depends_on "vapoursynth"
+
+  on_intel do
+    depends_on "nasm" => :build
+  end
 
   def install
     # Replace vendored path to homebrew formula path

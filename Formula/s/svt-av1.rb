@@ -22,7 +22,10 @@ class SvtAv1 < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "nasm" => :build
+
+  on_intel do
+    depends_on "nasm" => :build
+  end
 
   def install
     # Features are enabled based on compiler support, and then the appropriate

@@ -6,10 +6,10 @@ class Metals < Formula
   license "Apache-2.0"
 
   # Some version tags don't become a release, so it's necessary to check the
-  # GitHub releases instead.
+  # scala-lang instead.
   livecheck do
-    url :stable
-    strategy :github_latest
+    url "https://index.scala-lang.org/api/v1/projects/scalameta/metals/versions/latest"
+    regex(/"(\d+(?:\.\d+)+)"/i)
   end
 
   bottle do

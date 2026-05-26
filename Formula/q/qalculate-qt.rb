@@ -1,18 +1,18 @@
 class QalculateQt < Formula
   desc "Multi-purpose desktop calculator"
   homepage "https://qalculate.github.io/"
-  url "https://ghfast.top/https://github.com/Qalculate/qalculate-qt/releases/download/v5.10.0/qalculate-qt-5.10.0.tar.gz"
-  sha256 "961d3e6e1718485d2ed23b7f3d065462eac977a087fd12082edc6627b00f8c50"
+  url "https://ghfast.top/https://github.com/Qalculate/qalculate-qt/releases/download/v5.11.0/qalculate-qt-5.11.0.tar.gz"
+  sha256 "c6bf9831bc6c2d43077fd8a1167c3c47154edecf9cc91c84bf2c8fe7f1b7f620"
   license "GPL-2.0-or-later"
   head "https://github.com/Qalculate/qalculate-qt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "905a016e7290b91393e8ca908ea6f530d95e821225e6074e5600549e1c99a29a"
-    sha256 cellar: :any,                 arm64_sequoia: "14b4117a9a26bc2e8be58e10662cab2f74821bbcfcd8a7803147b9e21818ce70"
-    sha256 cellar: :any,                 arm64_sonoma:  "3acfb701a3c529a3e77227a745c95efc7d3441126cef72ea31de3855c1473920"
-    sha256 cellar: :any,                 sonoma:        "a3ad2048cd6dff0defd061ce38b4eda1b08e9a2e6fb29b930dcc4cbe77df2ac3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22a695008554c07791020ee845c654ba6700d77ffe0f826b8de56b1598d2f09c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a8315bf03a7c2b8825646eb35bc946039eb3296a8a64c393e3dfac25a746561"
+    sha256 cellar: :any,                 arm64_tahoe:   "2c3c0f4e9bbcaeddcb4c31cb9fc251f8dd69d8c4a055384e3a0e1cba04e4f899"
+    sha256 cellar: :any,                 arm64_sequoia: "12ad9d586b37be15cdc11d3ab4c133eb3a1d28f7c8385ad6b45f2c24f2244911"
+    sha256 cellar: :any,                 arm64_sonoma:  "251759ceb371536339f33a3123263c996f90705e8d44a8edfda3f993c556c46a"
+    sha256 cellar: :any,                 sonoma:        "d45b3df3297e583e53865f0b9c8fe2da24f3d72c5197413ef96aa19094971a34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e781b41fc0786ee7cd282fe06d5114a457af1e16c25664d6e70d9f02a9c7f772"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d997ca60aade57e693ebce7eac8824c29c785c960b957bd4a6d9d9086369052"
   end
 
   depends_on "pkgconf" => :build

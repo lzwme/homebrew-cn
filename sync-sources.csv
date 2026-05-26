@@ -1106,6 +1106,7 @@ Homebrew-homebrew-core/Formula/c/cloudfoundry-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudfox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudiscovery.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cloudlist.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cloudmonkey.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudpan189-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudprober.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudquery.rb, Homebrew/homebrew-core, 1
@@ -2991,6 +2992,7 @@ Homebrew-homebrew-core/Formula/h/helmify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helmsman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/help2man.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hercules.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/herdr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hermes-agent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hermit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/heroku.rb, Homebrew/homebrew-core, 0
@@ -4764,6 +4766,7 @@ Homebrew-homebrew-core/Formula/m/minizip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mintoolkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minuit2.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mips-linux-gnu-binutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mipsel-linux-gnu-binutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/miruo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mise.rb, Homebrew/homebrew-core, 1
@@ -7872,6 +7875,7 @@ Homebrew-homebrew-core/Formula/v/vramsteg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vrc-get.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vroom.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vrpn.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vs-preview.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vsce.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vscli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vscode-langservers-extracted.rb, Homebrew/homebrew-core, 0
@@ -13375,6 +13379,7 @@ Homebrew-homebrew-cask/Casks/m/macintoshjs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macjournal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macloggerdx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macloggerdx@beta.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/macmd-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macmediakeyforwarder.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macmorpheus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macpacker.rb, Homebrew/homebrew-cask, 0

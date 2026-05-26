@@ -20,6 +20,11 @@ class Monkeysphere < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1914ebe00f06674a892da92c25d236f87e05dfe185728a961fa19373ba9d0c42"
   end
 
+  # Original site is gone. We currently use Debian URLs but Debian removed package
+  # in Debian 12 (Bookworm) and prior Debian 11 (Bullseye) LTS ends on 2026-08-31.
+  deprecate! date: "2026-05-25", because: :unmaintained
+  disable! date: "2027-05-25", because: :unmaintained
+
   depends_on "gnu-sed" => :build
   depends_on "pkgconf" => :build
   depends_on "gnupg"

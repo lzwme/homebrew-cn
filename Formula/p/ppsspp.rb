@@ -17,7 +17,6 @@ class Ppsspp < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "yasm" => :build
 
   depends_on "libzip"
   depends_on "miniupnpc"
@@ -50,6 +49,12 @@ class Ppsspp < Formula
     # See https://github.com/Homebrew/homebrew-core/issues/84737.
     cd "ffmpeg" do
       if OS.mac?
+        # Yasm is unmaintained and has multiple CVEs so will be deprecated
+        # soon in Homebrew/core. The bundled FFmpeg 3 build system is not
+        # able to correctly detect nasm so just disabling x86_64 asm which
+        # matches Linux build script.
+        ENV["extraopts"] = "--disable-yasm"
+
         rm_r("macosx")
         system "./mac-build.sh"
       else

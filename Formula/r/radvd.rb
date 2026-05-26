@@ -1,17 +1,17 @@
 class Radvd < Formula
   desc "IPv6 Router Advertisement Daemon"
   homepage "https://radvd.litech.org/"
-  url "https://ghfast.top/https://github.com/radvd-project/radvd/releases/download/v2.20/radvd-2.20.tar.xz"
-  sha256 "25d2960fb977ac35c45a8d85b71db22ed8af325db7dbf4a562fb03eab2848dcd"
+  url "https://ghfast.top/https://github.com/radvd-project/radvd/releases/download/v2.21/radvd-2.21.tar.xz"
+  sha256 "91df2ed7faca0716bbd726a17d6467ed92fcb2b6e45b57d9e619f9686ab99e1b"
   license "radvd"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d37d87602c7c0ca6e9b088215c1ca3a7bf01e8b62aa3be7b76ada6a9823f9078"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eec560f303de91f1806f46c6f54f4e51ec080f1dfc229fa569d2c0baab0711e2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54485d998b57f3e9a199f53216530e0ca07e2da6d6a54872f5a2f4d1b4642a1b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a4f4a3af815645871d6eadf2574adad2450da398f767876acdbdd06fe04fb93b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad3ddab263acc0d7b55b37cb661117c8f1c72c4b3a87347bfef40e94552799b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4e8076563de9d02831b7ebfcedca64b085732111b2363ed46da86faeb382c51"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d64fa035f9ba5b0ac270c6371632a00245fabaa7b1672da886973cfaed249ac3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e297345eb63b45c4a464c83887ed49cb664fa638a75bad620a2d64354c9fa66"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee4ac2ae84b7b542415c377ae60f33d36f6a36f9d8f5c9d917edefdda9b0f7bd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e6dfb5b3126fc391a1388cddbd7e0077daa8944ef578f65ff5d1af87535696e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e1e42f18af7226393724e6a10156a9d9bfdcf39950bc20588bec1a1b9102e3f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93ae07bba1442d28744ce243d88f0f6218e5374cf39478cfb58b4ed3ce965388"
   end
 
   head do

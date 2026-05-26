@@ -1,8 +1,8 @@
 class Ov < Formula
   desc "Feature-rich terminal-based text viewer"
   homepage "https://noborus.github.io/ov/"
-  url "https://ghfast.top/https://github.com/noborus/ov/archive/refs/tags/v0.52.0.tar.gz"
-  sha256 "0e119032077f14370e3dbf9eacd272e791784b9199e35b4abddc7bfe9f312ad4"
+  url "https://ghfast.top/https://github.com/noborus/ov/archive/refs/tags/v0.53.0.tar.gz"
+  sha256 "b77dc59dc07738f5feb74c31c049f9d8731c71a51eb8687914a57c676aec467b"
   license "MIT"
   head "https://github.com/noborus/ov.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Ov < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "187741e6bac1eaf7bd979c193d88906c5235654f89306b6aca9af781deea8af4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "187741e6bac1eaf7bd979c193d88906c5235654f89306b6aca9af781deea8af4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "187741e6bac1eaf7bd979c193d88906c5235654f89306b6aca9af781deea8af4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b315a58b6c67766879b46dc284ddf0e57f425a998b424bc73039a99b0f2d74e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a783c257e361fb9b70c99950f78d3c98c28258de3f3328ca89bea2db4ae74ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d802d740d0097ceaebfe1ad33a032ecbacd514985e5b3c417bf077dff43e659c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f861ca85d00ddb59a4913b3c861f34bae3ce36dc1cb1cc9f845196589d00be7c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f861ca85d00ddb59a4913b3c861f34bae3ce36dc1cb1cc9f845196589d00be7c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f861ca85d00ddb59a4913b3c861f34bae3ce36dc1cb1cc9f845196589d00be7c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3280d7280ffa96af4216c417380b3f7ff47a00f77227165dda1da9580edbe86e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "beff1b32d331913d1cfb68ed300e3ce109f242fd276fda5905bedbef5f350b68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9df3914c634a5230dbf1a4688d712a38c59ee9e482f2a30ae7d7dddb9ec7b89c"
   end
 
   depends_on "go" => :build

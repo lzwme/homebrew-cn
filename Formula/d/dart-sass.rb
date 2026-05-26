@@ -4,7 +4,7 @@ class DartSass < Formula
   url "https://ghfast.top/https://github.com/sass/dart-sass/archive/refs/tags/1.100.0.tar.gz"
   sha256 "d4f1fa35b6911c4a3fcb9bb8723e4ed6724c2aea71813dfce49ce65aed20b57d"
   license "MIT"
-  revision 1
+  revision 2
 
   # Some tags are used for sass-api/sass-parser
   livecheck do
@@ -13,12 +13,12 @@ class DartSass < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ecaa37220cce0e08a8d1e78549e36c9eeb5fc0e0f563929fef4719651edf84a0"
-    sha256 cellar: :any,                 arm64_sequoia: "83eedd4baf4b82bc6eeda02bfacfe26f0180a7e9ab139075fb9d483ce2465e96"
-    sha256 cellar: :any,                 arm64_sonoma:  "267d723256748da7d326fae9bcde187b75c48123b841151322a2231380b6cf73"
-    sha256 cellar: :any,                 sonoma:        "2cc32bc7b5be9aeebce1e46d236a62bfae61465609daccae3db3d8c7cfcb36d7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75571dbc8008c9462d4cece310e2d18966134ddb812ba5777909cb2536d7bd22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "193d716f4d1bcb6a82c0f79edd9e41b3cc27da6fedf5c582af1666e15aeec4ad"
+    sha256 cellar: :any,                 arm64_tahoe:   "fe028e3dc2040b9ee9b125244b4b828ef510a25caf90345160ac0755025deb78"
+    sha256 cellar: :any,                 arm64_sequoia: "341ab4f37a99c5dac53caedd11d74292c058c185b77bcb84fe64346e5080b770"
+    sha256 cellar: :any,                 arm64_sonoma:  "20ea853363c9cab12105c2a7f5e7a4ef085fde44cecbf4572789345eabe7c48d"
+    sha256 cellar: :any,                 sonoma:        "c045c6860a8f2c407601fba3ecf5bc48c8af367f3fc0f8456fd37e11925f008b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "15fca2c18a0bc3b13a7556c4bc3dbda5a3f7e76da2725add088c34c5efae3c52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4541c06d78451c3311e70975203059710b97b18dc01862273b45c7444b3f741"
   end
 
   depends_on "buf" => :build
@@ -28,6 +28,11 @@ class DartSass < Formula
   resource "language" do
     url "https://ghfast.top/https://github.com/sass/sass/archive/refs/tags/embedded-protocol-3.2.0.tar.gz"
     sha256 "4e1f81684bc1666f03e52ddc790d0c2c22d99a5313fa2efe1dde4a5b5733c186"
+
+    livecheck do
+      url :url
+      regex(/embedded-protocol[._-]v?(\d+(?:\.\d+)+)/i)
+    end
   end
 
   def install

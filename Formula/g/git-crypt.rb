@@ -4,6 +4,7 @@ class GitCrypt < Formula
   url "https://www.agwa.name/projects/git-crypt/downloads/git-crypt-0.8.0.tar.gz"
   sha256 "540d424f87bed7994a4551a8c24b16e50d3248a5b7c3fd8ceffe94bfd4af0ad9"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :homepage
@@ -11,25 +12,23 @@ class GitCrypt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "406d6b431081540da5ffac631e736ad29046ad5a10d3f9765b03d53129846188"
-    sha256 cellar: :any,                 arm64_sequoia: "48614fc994fde691b6878a1ea9075d5d9da6b837555d882e5644fd2d55dd09b3"
-    sha256 cellar: :any,                 arm64_sonoma:  "cec4e48761c805edae828f411b4831f1aeff7fedb2ecf77a094ff627812e9173"
-    sha256 cellar: :any,                 sonoma:        "3f12d10fad264b7c738ff5c9afb4fdbda6d9178a2ba601507179fc57a446450a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e63acf43e312923852fef13c2ac54950fbb7c2dedbca177e7440b611cbc1b03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d076be65893a0c7a8125a6456cae3757557d660b3d3c5eabb42c1be6693f554"
+    sha256 cellar: :any,                 arm64_tahoe:   "7600d5908af7e3dcc489f1e973327cd8ac41b3d259d1490b7203b37aa0aff9a0"
+    sha256 cellar: :any,                 arm64_sequoia: "7b918e96fa98416e4f4bd3eadc188667c39668e59629011740d675802d6f1cb8"
+    sha256 cellar: :any,                 arm64_sonoma:  "1a317787886fe947557c08f4450a4be7d6e5e7815b8bcb214692784b638986a7"
+    sha256 cellar: :any,                 sonoma:        "c838c13b346548c0ec41951a7461f25af63aacdff96ffc41eb71c29f15834625"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1653fb825aa95ab80e3b8e52deedcd2272a60433ad8a12dba5b0c2a667a32e72"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6062bcc3728de1a25ba30976a81cfcca09887762639fbdf91318e579c9fc0db8"
   end
 
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "libxslt" => :build
 
   def install
     # fix docbook load issue
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
-
-    ENV.append_to_cflags "-DOPENSSL_API_COMPAT=0x30000000L"
 
     system "make", "ENABLE_MAN=yes", "PREFIX=#{prefix}", "install"
   end

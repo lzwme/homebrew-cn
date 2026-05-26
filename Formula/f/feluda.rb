@@ -1,8 +1,8 @@
 class Feluda < Formula
   desc "Detect license usage restrictions in your project"
   homepage "https://github.com/anistark/feluda"
-  url "https://ghfast.top/https://github.com/anistark/feluda/archive/refs/tags/v1.12.0.tar.gz"
-  sha256 "c9305dbbd25b35083d0458e60e538d038d0c646738606e9ba1092b84a8c3471c"
+  url "https://ghfast.top/https://github.com/anistark/feluda/archive/refs/tags/v1.13.0.tar.gz"
+  sha256 "a64231265f953dbdbb0e7c2eb1b680feccb7d8212613070463c8ff3cae715e29"
   license "MIT"
   head "https://github.com/anistark/feluda.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Feluda < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "769cc7fd5adc675de3135dc05b0d98bd546e73d074df254059e0112370bea5c8"
-    sha256 cellar: :any,                 arm64_sequoia: "f5730d3804c63681aa62df7e95ca1faae037b0203cffb6dd0a96e1e67dc79715"
-    sha256 cellar: :any,                 arm64_sonoma:  "0828e022fe411502f7e6a22b2f06e1e6c2ab8091b8fee43520c245ce1cf69499"
-    sha256 cellar: :any,                 sonoma:        "2cc81bb146fda4e4a103797ce3acbd62ab09873f164328095f3b62771e9f1b43"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7d7c2e37a2734de9e12d011fc29e0a5291253081c880b8256f7cc5da4339856"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81a4ee5c0855935aebba6cce98214a8aa5cc5128644c492fa1fc6f82368e0b47"
+    sha256 cellar: :any,                 arm64_tahoe:   "6c6804222ab3cc0914809b82911d213f5511992f9b9e01d624a0373e253bc7fa"
+    sha256 cellar: :any,                 arm64_sequoia: "8da8c437a6c39f57a104fd3926ace2257d481ba63a8c88244464c8849d8e45d1"
+    sha256 cellar: :any,                 arm64_sonoma:  "ba490fcdf5d46916b693e56d6cf537c0f8860707bec018dd85d9c21df075536c"
+    sha256 cellar: :any,                 sonoma:        "41992335171e29444a2cbed370053199a8281d947ecca64eab26bf4b96f0353e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b5020659abd9c2081821499ccc9533926c1df2607d1b058c7a70c36581b84344"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40706b4db091cc350912a1e45dd6b5dc3d0f801287fefdd87794f74f6515aa3e"
   end
 
   depends_on "pkgconf" => :build

@@ -1,8 +1,8 @@
 class Electric < Formula
   desc "Real-time sync for Postgres"
   homepage "https://electric-sql.com"
-  url "https://ghfast.top/https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.6.7.tar.gz"
-  sha256 "1abdd6611b70f40e4fcf5ff4e8af882d6a7f9f8e17e20e4fbebef193aa3075a0"
+  url "https://ghfast.top/https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.6.8.tar.gz"
+  sha256 "5bfc56cd26beb736fc72f6934d69748602b69101ece7412ffc2f8cc579932021"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Electric < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "28bdac79094620024b24948d6767bb4c60263eb1ea825f8cec625a27cbcc85a2"
-    sha256 cellar: :any, arm64_sequoia: "df8f51be2b5b1ca4c2e21d6aa2c37c322695e831dbe7f776bf624df2aab7f886"
-    sha256 cellar: :any, arm64_sonoma:  "7b8c4cfeb6e703da4f405087597f8eea333024f309e7f25b3bda6d1d68f8f2da"
-    sha256 cellar: :any, sonoma:        "f2c53831b669238b74c58d54cd64681e9f6b9afaa70bcd64bf998b2979f6be22"
-    sha256               arm64_linux:   "a862b0adf91a355bdde5c29af54132b639e38eda1d0e3dfdbbce12e0009381a5"
-    sha256               x86_64_linux:  "d1521d1f0d19ec6a9779979ab165dd47a9da58f7aedd2e81acdad029aa3fbfea"
+    sha256 cellar: :any,                 arm64_tahoe:   "a9379a57b1618ec82f8dbb107dc8be3a96703f78b8a50d6f7790f7ee37907a2c"
+    sha256 cellar: :any,                 arm64_sequoia: "21e6e365ecfdb3813a16591339c88cd315522a1739b57cf4b489c80ea0cd41bf"
+    sha256 cellar: :any,                 arm64_sonoma:  "a803ea4a686b5c5a08a91dc6ae1d7bed983aff7c52abe49e262017d3c54ddc4e"
+    sha256 cellar: :any,                 sonoma:        "3397a8bb238907886a1d93110aaf8acca41ad8557091ac59fe794e409231ea59"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20bb8b0589520c8100fc79dc892323978c4daf5aa5a1c3207b36861ec375421e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9467d3f59ff30797c40b8105db89f2e00f473995d2e6c7949b071436e47e345"
   end
 
   depends_on "elixir" => :build

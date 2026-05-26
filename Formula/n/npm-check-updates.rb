@@ -1,12 +1,12 @@
 class NpmCheckUpdates < Formula
   desc "Find newer versions of dependencies than what your package.json allows"
   homepage "https://github.com/raineorshine/npm-check-updates"
-  url "https://registry.npmjs.org/npm-check-updates/-/npm-check-updates-22.2.0.tgz"
-  sha256 "f36bccaf85d763b6f4f8d97c20daa12fe885bce9381753312f274f4166f7a948"
+  url "https://registry.npmjs.org/npm-check-updates/-/npm-check-updates-22.2.1.tgz"
+  sha256 "dc968a36ff84c9758013e3fdb9a6f633bd4502b6edb18d8507cfd96b01cdd86f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2a189f392015be95be9b088bf977802b69c993627e39883ac6c28d785b0b3de7"
+    sha256 cellar: :any_skip_relocation, all: "cef4985ca7a025bb9c384a4a5929ec2d3f4e633eb9907316d331e3366a2dd185"
   end
 
   depends_on "node"

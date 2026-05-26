@@ -1,20 +1,19 @@
 class SqlTranslator < Formula
   desc "Manipulate structured data definitions (SQL and more)"
   homepage "https://github.com/dbsrgits/sql-translator/"
-  url "https://cpan.metacpan.org/authors/id/I/IL/ILMARI/SQL-Translator-1.62.tar.gz"
-  sha256 "0acd4ff9ac3a2f8d5d67199aac02cdc127e03888e479c51c7bbdc21b85c1ce24"
+  url "https://cpan.metacpan.org/authors/id/V/VE/VEESH/SQL-Translator-1.66.tar.gz"
+  sha256 "f7ff7e369d8293a394cb3783b54b745e7faf44422e8a83bfcc359378a6e56145"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
-  revision 4
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6619655ae2fdbbcc5c2213ab55e2ffd0f45d964cf1f9eb1bef7db81e87e76b4e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6619655ae2fdbbcc5c2213ab55e2ffd0f45d964cf1f9eb1bef7db81e87e76b4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6619655ae2fdbbcc5c2213ab55e2ffd0f45d964cf1f9eb1bef7db81e87e76b4e"
-    sha256 cellar: :any_skip_relocation, tahoe:         "d66c552719a802570cc86bdbb667d0ec83c215b3e68dc3584e76a98cf0e3f245"
-    sha256 cellar: :any_skip_relocation, sequoia:       "d66c552719a802570cc86bdbb667d0ec83c215b3e68dc3584e76a98cf0e3f245"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d66c552719a802570cc86bdbb667d0ec83c215b3e68dc3584e76a98cf0e3f245"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "df14d63cd54e55fb81d663546e14f38ba6c58a49de115302d9dcd960b21f1ef3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "546f4079d19414f1b7fe9851c12f2b846e44869b6c9d4b44f600eea2a6c92a96"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34f3eb0d5923e69a001f4a993058c0be8a23bc023aca0bbc5f2a535f26aad749"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34f3eb0d5923e69a001f4a993058c0be8a23bc023aca0bbc5f2a535f26aad749"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34f3eb0d5923e69a001f4a993058c0be8a23bc023aca0bbc5f2a535f26aad749"
+    sha256 cellar: :any_skip_relocation, tahoe:         "8f8d39dc7182ba755238b95d0917e3aaf9fc81621fbd7894ae23d51b5f5e296b"
+    sha256 cellar: :any_skip_relocation, sequoia:       "8f8d39dc7182ba755238b95d0917e3aaf9fc81621fbd7894ae23d51b5f5e296b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8f8d39dc7182ba755238b95d0917e3aaf9fc81621fbd7894ae23d51b5f5e296b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9273903ceacc6788c9b65c640c89fcedba9f377bfc49bdb2c6a8ce66a113973"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "793d5e35befc2053f2090c6ace40a2df7f2fece6fe3246c98447b0c147e11944"
   end
 
   uses_from_macos "perl"
@@ -72,8 +71,8 @@ class SqlTranslator < Formula
   end
 
   resource "File::ShareDir::Install" do
-    url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/File-ShareDir-Install-0.13.tar.gz"
-    sha256 "45befdf0d95cbefe7c25a1daf293d85f780d6d2576146546e6828aad26e580f9"
+    url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/File-ShareDir-Install-0.14.tar.gz"
+    sha256 "8f9533b198f2d4a9a5288cbc7d224f7679ad05a7a8573745599789428bc5aea0"
   end
 
   resource "Package::Variant" do

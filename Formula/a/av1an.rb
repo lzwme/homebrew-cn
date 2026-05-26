@@ -22,11 +22,14 @@ class Av1an < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "358e252cb21347a5d92519bcb0eb7ba256a1f22410f8735efff523bc10a6ba05"
   end
 
-  depends_on "nasm" => :build
   depends_on "rust" => :build
   depends_on "ffmpeg"
   depends_on "mkvtoolnix"
   depends_on "vapoursynth"
+
+  on_intel do
+    depends_on "nasm" => :build
+  end
 
   def install
     ENV["VERGEN_GIT_COMMIT_DATE"] = time.iso8601

@@ -1,8 +1,8 @@
 class LibheifPlugins < Formula
   desc "ISO/IEC 23008-12:2017 HEIF file format decoder and encoder"
   homepage "https://www.libde265.org/"
-  url "https://ghfast.top/https://github.com/strukturag/libheif/releases/download/v1.22.0/libheif-1.22.0.tar.gz"
-  sha256 "8bd20cfa3201997b8f63266cddfabea2e1481467d7f992e6a2595e0bec691fc2"
+  url "https://ghfast.top/https://github.com/strukturag/libheif/releases/download/v1.22.2/libheif-1.22.2.tar.gz"
+  sha256 "eea48e4841f83fbe51d029337ffd2d14512d0203015dad40b90213d872958af3"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -10,12 +10,12 @@ class LibheifPlugins < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "22e51dde874edf10c40a6d5682d6979babef6e5a22ca1d84092dd374e947c3fe"
-    sha256 cellar: :any,                 arm64_sequoia: "9f6c0cbf2a06f9bfb8200f745955475ad27db72cf9f602508f9f080801d03660"
-    sha256 cellar: :any,                 arm64_sonoma:  "8cffa1f094f887be8e898251141d8207d0f31c1c0f463fb09a5a916e460c366c"
-    sha256 cellar: :any,                 sonoma:        "efbe49a4f1614beaade5da665106144fadb8b4ce8f6a08dca1b8ce295ab34da8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "edaf5d52b1e1ae096d2cffb827a6e4fdb47ef4b932665ad37daebe9f8ef88319"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "203d4b37e3c60615d188f05e1cb58a51cfc57727c82c4650f088a3120fa99538"
+    sha256 cellar: :any,                 arm64_tahoe:   "4897edd3bc1e959759c6276f2a3e4104b1bc550dbd76c9ca71d6edf6c8c7ce51"
+    sha256 cellar: :any,                 arm64_sequoia: "0631f2c8e59746d8a77d2e8ee61db64ec44461c4d14da74391b6d49226a9725a"
+    sha256 cellar: :any,                 arm64_sonoma:  "e7869456a11f12a001fc279a931e41ff73a86b1e005ab7c89fbd40b03aaa77c4"
+    sha256 cellar: :any,                 sonoma:        "0451fda57be3f2c781e56ca16e86916b4dbe3be0c5a236b43e78cb3d7087e3cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd5ec134000b169c20ed2cb626de922615f76739fce297ebbb6ed112d194025d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e80006fcff8bd90b00f0db39123e7eb552f59007a01c2ff7ad9e11fd56fb1db8"
   end
 
   depends_on "cmake" => :build
@@ -30,12 +30,6 @@ class LibheifPlugins < Formula
   depends_on "rav1e"
   depends_on "svt-av1"
   depends_on "x264"
-
-  # Fix for missed common_utils.cc in OpenJPEG_DECODER plugin's sources, remove in next release
-  patch do
-    url "https://github.com/strukturag/libheif/commit/b5ccea15c1f62d6dc2301bd0551194f433e91217.patch?full_index=1"
-    sha256 "b74848c61f41e076534511d7b42d9c72f9e9e9c7a3bc6dd1c104381681d7f3e9"
-  end
 
   def install
     # Enabling plugins for "popular" formulae

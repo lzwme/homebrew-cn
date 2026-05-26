@@ -12,8 +12,7 @@ class Bloaty < Formula
     # Support system Abseil. Needed for Protobuf 22+.
     # Backport of: https://github.com/google/bloaty/pull/347
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/bloaty/system-abseil.patch"
-      sha256 "d200e08c96985539795e13d69673ba48deadfb61a262bdf49a226863c65525a7"
+      file "Patches/bloaty/system-abseil.patch"
     end
   end
 

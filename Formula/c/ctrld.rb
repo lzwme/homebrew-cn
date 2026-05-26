@@ -1,17 +1,17 @@
 class Ctrld < Formula
   desc "Highly configurable, multi-protocol DNS forwarding proxy"
   homepage "https://github.com/Control-D-Inc/ctrld"
-  url "https://ghfast.top/https://github.com/Control-D-Inc/ctrld/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "48d7546ac270941be1f3628962201b64b3ab8f654c2e7c4b84d3939b4feb5cff"
+  url "https://ghfast.top/https://github.com/Control-D-Inc/ctrld/archive/refs/tags/v1.5.1.tar.gz"
+  sha256 "7b5eb490a6f96a992136a6b8a7ce69e740ccfd6e02553410e4902dbc1b7e0e8e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4324a921f28ffc1b9fc425e0fa5c5e77146956b24160844ad869e0faffa0d035"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4324a921f28ffc1b9fc425e0fa5c5e77146956b24160844ad869e0faffa0d035"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4324a921f28ffc1b9fc425e0fa5c5e77146956b24160844ad869e0faffa0d035"
-    sha256 cellar: :any_skip_relocation, sonoma:        "64e2211fc1c4e507d447c34e40abb14df01dc9afe57808f2f0ff914c3ef53329"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f4696a6ce4d9e81e1ddbc7372aa054a6326043af7089689759463a6a9376242"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b02388cf42314eafcff3ae5b51b01455c2a99698a574e73bdc42562c0351dac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "424413e31f44b0d0bb841b20fe6695fa15884cc8e34ca12fca6a798780f2c812"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "424413e31f44b0d0bb841b20fe6695fa15884cc8e34ca12fca6a798780f2c812"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "424413e31f44b0d0bb841b20fe6695fa15884cc8e34ca12fca6a798780f2c812"
+    sha256 cellar: :any_skip_relocation, sonoma:        "75f06c0cf7b753c93e1cc87af9ade6111f09a910ef8be2ab3ee8d8d47a6fdc2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b31250cbf99926cc0736fcf50d9f5f8eb10e284875fa7d2e8776fe96ca63c2fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b8aafee7788bca1178de153322427a737ef3578ec8121f56bf4875a5208b409"
   end
 
   depends_on "go" => :build

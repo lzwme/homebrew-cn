@@ -1,19 +1,18 @@
 class Circumflex < Formula
   desc "Hacker News in your terminal"
   homepage "https://github.com/bensadeh/circumflex"
-  url "https://ghfast.top/https://github.com/bensadeh/circumflex/archive/refs/tags/4.1.1.tar.gz"
-  sha256 "c5900e13c41d2e5a1da2d45e0d63b38d345dca584edfbf8e60b4daa7cda88cae"
+  url "https://ghfast.top/https://github.com/bensadeh/circumflex/archive/refs/tags/4.2.tar.gz"
+  sha256 "3ae8e670e9d546437a074d5fc5c1ab0bd7f81609fd49880729d9d3f5d0988eaa"
   license "MIT"
   head "https://github.com/bensadeh/circumflex.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "950e2d99874688e36c1b0950dacbca36068b0d22a8b2be58fa49761de5461b70"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "950e2d99874688e36c1b0950dacbca36068b0d22a8b2be58fa49761de5461b70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "950e2d99874688e36c1b0950dacbca36068b0d22a8b2be58fa49761de5461b70"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a34efb5434e33d6f180906091ffbf36f6d8ae97f5f3ec5ea23b31797f96f4fe6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "110ac9e04a50ca218c7590a158608d23babc29001f90a942d568183e1a613280"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9045e704896543669129c725e4aae147a51e49b516126ce7960163164f8b670d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd04f37d5111280fe5bd63a35cf4b8232d609adb8fe21e0e87a9a6f90497264f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd04f37d5111280fe5bd63a35cf4b8232d609adb8fe21e0e87a9a6f90497264f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd04f37d5111280fe5bd63a35cf4b8232d609adb8fe21e0e87a9a6f90497264f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b94285b6f18e341a94173c5113f44a460f6caf432850141dfedbb46a446b7bd0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a17df59e81a6f83cfae29c9892266b656ed8c6e2bf36e6e71fbbaf2dd1d97d73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d58f00e8e1a1e2b3c1f7b452a0614e0946977106bc5589f56d5c32179860168"
   end
 
   depends_on "go" => :build

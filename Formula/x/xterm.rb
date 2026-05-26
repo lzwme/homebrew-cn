@@ -4,7 +4,7 @@ class Xterm < Formula
   url "https://invisible-mirror.net/archives/xterm/xterm-410.tgz"
   mirror "https://deb.debian.org/debian/pool/main/x/xterm/xterm_410.orig.tar.gz"
   sha256 "7ba9fbb303dd3d95d06ca24360d019048d84e5822dc6fe722cd77369bdbf231f"
-  license "X11"
+  license all_of: ["X11", "HPND"]
 
   livecheck do
     url "https://invisible-mirror.net/archives/xterm/"
@@ -36,10 +36,7 @@ class Xterm < Formula
   uses_from_macos "ncurses"
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

@@ -16,8 +16,11 @@ class Dssim < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cf26940ab54503cb8be6c091610aa90b2e12cd46b05c9a5b8a7a15298ecb190"
   end
 
-  depends_on "nasm" => :build
   depends_on "rust" => :build
+
+  on_intel do
+    depends_on "nasm" => :build
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

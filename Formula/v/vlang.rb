@@ -46,17 +46,10 @@ class Vlang < Formula
     sha256 "45fb47de9a17dc391728cc37db2c6409c7ec8915f753179bf9f40eb707451234"
   end
 
-  def install
-    # upstream discussion, https://github.com/vlang/v/issues/16776
-    inreplace "vlib/builtin/builtin_d_gcboehm.c.v" do |s|
-      s.gsub! "#flag -I @VEXEROOT/thirdparty/libgc/include",
-              "#flag -I #{Formula["bdw-gc"].opt_include}"
-      s.gsub! "$if (prod && !tinyc && !debug) || !(amd64 || arm64 || i386 || arm32 || rv64) {",
-              "$if (!macos && prod && !tinyc && !debug) || !(amd64 || arm64 || i386 || arm32 || rv64) {"
-      s.gsub! "#flag @VEXEROOT/thirdparty/tcc/lib/libgc.a",
-              "#flag #{Formula["bdw-gc"].opt_lib}/libgc.a"
-    end
+  # upstream discussion, https://github.com/vlang/v/issues/16776
+  patch :DATA
 
+  def install
     # upstream-recommended packaging, https://github.com/vlang/v/blob/master/doc/packaging_v_for_distributions.md
     %w[up self].each do |cmd|
       (buildpath/"cmd/tools/v#{cmd}.v").delete
@@ -89,8 +82,45 @@ class Vlang < Formula
   end
 
   test do
+    require "utils/linkage"
+
     cp pkgshare/"examples/hello_world.v", testpath
     system bin/"v", "-o", "test", "hello_world.v"
     assert_equal "Hello, World!", shell_output("./test").chomp
+    assert !Utils.binary_linked_to_library?("test", Formula["bdw-gc"].opt_lib/shared_library("libgc")),
+            "v should not produce binary dynamically linked to bdw-gc! Check the patch in the formula!"
   end
 end
+
+__END__
+diff --git a/vlib/builtin/builtin_d_gcboehm.c.v b/vlib/builtin/builtin_d_gcboehm.c.v
+index 444a014..159e5a1 100644
+--- a/vlib/builtin/builtin_d_gcboehm.c.v
++++ b/vlib/builtin/builtin_d_gcboehm.c.v
+@@ -43,24 +43,13 @@ $if dynamic_boehm ? {
+ 	$if macos || linux {
+ 		#flag -DGC_BUILTIN_ATOMIC=1
+-		#flag -I @VEXEROOT/thirdparty/libgc/include
+-		$if (prod && !tinyc && !debug) || !(amd64 || arm64 || i386 || arm32 || rv64) {
++		#flag -I @@HOMEBREW_PREFIX@@/include
++		$if (!macos && prod && !tinyc && !debug) || !(amd64 || arm64 || i386 || arm32 || rv64) {
+ 			// TODO: replace the architecture check with a `!$exists("@VEXEROOT/thirdparty/tcc/lib/libgc.a")` comptime call
+ 			#flag @VEXEROOT/thirdparty/libgc/gc.o
+ 		} $else {
+ 			$if !use_bundled_libgc ? {
+-				$if macos {
+-					#flag -L@VEXEROOT/thirdparty/tcc/lib
+-					#flag -lgc
+-					$if tinyc {
+-						// this is a problem for compiler paths, containing spaces and commas, but tcc does not support -Xlinker :-|
+-						#flag -Wl,-rpath,"@VEXEROOT/thirdparty/tcc/lib"
+-					} $else {
+-						#flag -Xlinker -rpath -Xlinker "@VEXEROOT/thirdparty/tcc/lib"
+-					}
+-				} $else {
+-					#flag @VEXEROOT/thirdparty/tcc/lib/libgc.a
+-				}
++				#flag @@HOMEBREW_PREFIX@@/lib/libgc.a
+ 			}
+ 		}
+ 		$if macos {

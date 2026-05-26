@@ -25,7 +25,9 @@ class Openh264 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a5b7c2ddbf8e02c9590b66e49e25119cf06ca2ff1ca48bb85f89c498828304e"
   end
 
-  depends_on "nasm" => :build
+  on_intel do
+    depends_on "nasm" => :build
+  end
 
   def install
     system "make", "install-shared", "PREFIX=#{prefix}"

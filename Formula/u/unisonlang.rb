@@ -4,12 +4,12 @@ class Unisonlang < Formula
   license "MIT"
 
   stable do
-    url "https://ghfast.top/https://github.com/unisonweb/unison/archive/refs/tags/release/1.2.0.tar.gz"
-    sha256 "743c359b1a214ca33dbf8d3276298e59c5c41cddef0fbe987d05aedbbe949273"
+    url "https://ghfast.top/https://github.com/unisonweb/unison/archive/refs/tags/release/1.3.0.tar.gz"
+    sha256 "9a9c53fcb7a6913504d3356b5661eae33c28271d6253fd5cb08cb5e93bd67295"
 
     resource "local-ui" do
-      url "https://ghfast.top/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/1.2.0.tar.gz"
-      sha256 "11ca248cd9ef5abd8d628ee6d1f91f90b13de6c59b2b63789c39d3255c56730b"
+      url "https://ghfast.top/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/1.3.0.tar.gz"
+      sha256 "80e097c82b6a38f16d3c3b42463c331e3e63f4d39f4360d894c82dd447237bee"
 
       livecheck do
         formula :parent
@@ -23,12 +23,12 @@ class Unisonlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "98936d34a386126a0aa4fc9a31deee125d8fb4614c1efa1259a3612551ac2358"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2190617e7ee4b96e657a8f462c2ed74620eddc40a6488a8a621c19ccb2df7df8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ec40311e5cd29dcd4dbdf797e1f895991926938c73377e6379770a67d6956b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "28d7f7349b8ef6e04d2cc5e294aac0b45864b527fdbb8811406288383cbc2813"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9fd6b7a209f23f16e66159d9fc823f9f74bf209c7d08239a1bb2089fd5404b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "737989266a2649eeac5e8698e6fa0cb50a68043c2766ab577434664eccba6558"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "50b548317e8ae9e4b68c46c38476e07c1dbdcd79b90b05632a2794f734371ae4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "101a75f0f7a0bfa4610de3d805d77ffc5ead27f8ed4ef28abc681adec545d30f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81d6f282fb3efd78061596c0720b2af8e15cfb5f3e9de3e335788c47d615453d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b801fe79e52ef7161d77e896fd68dcd42ee49ce04e32c9893cbf2b8124ef8757"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "86fafa0dd2cec4f0869ad0f0694214f399209e48b8b7d2de8cf50fc3aed9a690"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52e224fa610d3c36dbcc8d66145fb9b7e27b53d3918aca948667d76f228c6ebb"
   end
 
   head do

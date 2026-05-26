@@ -1,18 +1,18 @@
 class Zlint < Formula
   desc "X.509 Certificate Linter focused on Web PKI standards and requirements"
   homepage "https://zmap.io/"
-  url "https://ghfast.top/https://github.com/zmap/zlint/archive/refs/tags/v3.7.0.tar.gz"
-  sha256 "b90aa52e3a2ade269783209982c644a834cda509cbc51f3ad91bddfae66519c9"
+  url "https://ghfast.top/https://github.com/zmap/zlint/archive/refs/tags/v3.7.1.tar.gz"
+  sha256 "90b501bafd7533fc0831643ddd6d595751f8d0a1403d0bf0201a2a18da712eb8"
   license "Apache-2.0"
   head "https://github.com/zmap/zlint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22919c9a29772eead8fffb5028d346a8ce755083e398fb08079d8dbd78a26d2a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22919c9a29772eead8fffb5028d346a8ce755083e398fb08079d8dbd78a26d2a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22919c9a29772eead8fffb5028d346a8ce755083e398fb08079d8dbd78a26d2a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82d307c4768a18120a1c9bef27b72b2d451d2740866a2d815f368b3a65532e6d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fed9751aca8b2a99f88eeb4d96afbf9404d994dd351c232a73c637a7445fc663"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9259c2aa524ed1a44f286fe3777bdce95740f819622d584c43a91ccecc99b975"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5dc0f61552d33bac3b5181bdb7d43a04e603bbc84e895fd474a513f730332ffa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5dc0f61552d33bac3b5181bdb7d43a04e603bbc84e895fd474a513f730332ffa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5dc0f61552d33bac3b5181bdb7d43a04e603bbc84e895fd474a513f730332ffa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ccaaef0a3d695c7c99f6359fb97ec6bafa91e728463ba086a864088d34ae67ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26bc9975cd6c4fcc5368fd69138aef01a885265a42c4770ed6328c1eb2cea779"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5a16d321aafcd9ae1aa26ba851c4caf7c74132aa271242e6e3c49ce56f7f322"
   end
 
   depends_on "go" => :build

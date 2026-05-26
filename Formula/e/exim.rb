@@ -2,6 +2,7 @@ class Exim < Formula
   desc "Complete replacement for sendmail"
   homepage "https://exim.org"
   url "https://ftp.exim.org/pub/exim/exim4/exim-4.99.3.tar.xz"
+  mirror "https://ftp.exim.org/pub/exim/exim4/old/exim-4.99.3.tar.xz"
   sha256 "663e76d2a0d9b8fc5b373d0008e44ae044f10feb22bc9dbae8c7f21345ebfb3b"
   license "GPL-2.0-or-later"
 
@@ -29,12 +30,13 @@ class Exim < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0b683f9e446133795b69d5c73452e7b5cb2fd7870239c285bac2ad8b342a2567"
-    sha256 arm64_sequoia: "11fa32e4965b7f009f3b1ad8e026318956073d293f6520f06ebd4a0c6f01d86b"
-    sha256 arm64_sonoma:  "84135e0de59b9aec71e9081de5af58dd1eb0463fb75009b482e5321255041d5e"
-    sha256 sonoma:        "43c0bc8de5106c05d3071ae6ec4e018af6220eb7930311bbceffe8a956947e33"
-    sha256 arm64_linux:   "2fbd7c7da2f78e8a0ada30497a03df17d97ef8fc77f2d85e32826c8c474005da"
-    sha256 x86_64_linux:  "255d5ee31f35c74694d5e098c10602f3b2abbe9a1968c185ff4a1596fdbf9758"
+    rebuild 1
+    sha256 arm64_tahoe:   "a9462931316f9465a3843bb6f3ecad432229acedac4df3ecdfff68a3a8bbb3f8"
+    sha256 arm64_sequoia: "0ba0b986a85043d7c66fb7ceaf462ed41039ce9b51c104c6de67debda12ab869"
+    sha256 arm64_sonoma:  "cde9e4fe2a7e94e24694cd380cb7247b98e667bfd0cebd2b44256318bc441f65"
+    sha256 sonoma:        "f4d656e9502f5be1e4253a8fc2c73b8e0294d5e23d0bf1ed5e7beccb5f143629"
+    sha256 arm64_linux:   "deda7b13028201751202fb8ca5ead530a785a5f50cc44326e2cc657ebca820a9"
+    sha256 x86_64_linux:  "37c8fb0dc5ac9253852a5cabb9ad031e5fb6bad5a4817668aa6c140f491eea5c"
   end
 
   depends_on "openssl@3"
@@ -44,14 +46,13 @@ class Exim < Formula
   uses_from_macos "perl"
   uses_from_macos "sqlite"
 
-  resource "File::Next" do
-    url "https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/File-Next-1.18.tar.gz"
-    sha256 "f900cb39505eb6e168a9ca51a10b73f1bbde1914b923a09ecd72d9c02e6ec2ef"
-  end
-
   resource "File::FcntlLock" do
     url "https://cpan.metacpan.org/authors/id/J/JT/JTT/File-FcntlLock-0.22.tar.gz"
     sha256 "9a9abb2efff93ab73741a128d3f700e525273546c15d04e7c51c704ab09dbcdf"
+
+    livecheck do
+      url :url
+    end
   end
 
   def install
@@ -73,7 +74,11 @@ class Exim < Formula
 
     cp "src/EDITME", "Local/Makefile"
     inreplace "Local/Makefile" do |s|
-      s.change_make_var! "EXIM_USER", ENV["USER"]
+      # Defer uid lookup on Linux to runtime
+      exim_user = ENV["USER"]
+      exim_user = "ref:#{exim_user}" if build.bottle? && OS.linux?
+
+      s.change_make_var! "EXIM_USER", exim_user
       s.change_make_var! "SYSTEM_ALIASES_FILE", etc/"aliases"
       s.gsub! "/usr/exim/configure", etc/"exim.conf"
       s.gsub! "/usr/exim", prefix

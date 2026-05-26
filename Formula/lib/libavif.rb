@@ -16,7 +16,6 @@ class Libavif < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "nasm" => :build
   depends_on "aom"
   depends_on "dav1d"
   depends_on "jpeg-turbo"
@@ -28,7 +27,13 @@ class Libavif < Formula
 
   resource "libargparse" do
     url "https://ghfast.top/https://github.com/kmurray/libargparse/archive/ee74d1b53bd680748af14e737378de57e2a0a954.tar.gz"
+    version "ee74d1b53bd680748af14e737378de57e2a0a954"
     sha256 "7727b0498851e5b6a6fcd734eb667a8a231897e2c86a357aec51cc0664813060"
+
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/AOMediaCodec/libavif/refs/tags/v#{LATEST_VERSION}/cmake/Modules/LocalLibargparse.cmake"
+      regex(/\(AVIF_LIBARGPARSE_GIT_TAG (\h+)\)/i)
+    end
   end
 
   def install

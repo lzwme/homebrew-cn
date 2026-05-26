@@ -3,7 +3,7 @@ class Xrdb < Formula
   homepage "https://gitlab.freedesktop.org/xorg/app/xrdb"
   url "https://www.x.org/releases/individual/app/xrdb-1.2.2.tar.xz"
   sha256 "31f5fcab231b38f255b00b066cf7ea3b496df712c9eb2d0d50c670b63e5033f4"
-  license "MIT-open-group"
+  license all_of: ["MIT-open-group", "HPND-DEC"]
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "c4b0e238c08eae84fdc82bf3f4cfbb3ef02301126c875565a50ac269fe69b170"

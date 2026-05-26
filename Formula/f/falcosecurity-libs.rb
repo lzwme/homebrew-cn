@@ -1,8 +1,8 @@
 class FalcosecurityLibs < Formula
   desc "Core libraries for Falco and Sysdig"
   homepage "https://falcosecurity.github.io/libs/"
-  url "https://ghfast.top/https://github.com/falcosecurity/libs/archive/refs/tags/0.25.1.tar.gz"
-  sha256 "fdd41357003fc8cd25dd1af03afb3a9b93b52978aef9ea7b5f242941bca11a70"
+  url "https://ghfast.top/https://github.com/falcosecurity/libs/archive/refs/tags/0.25.2.tar.gz"
+  sha256 "136327d148154f91f73ff81366bd707a2930e72bbd2e491d68ba7ee62afaffa0"
   license all_of: [
     "Apache-2.0",
     { any_of: ["GPL-2.0-only", "MIT"] }, # driver/
@@ -15,12 +15,12 @@ class FalcosecurityLibs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "41dbee226e045a46578c533ddb8345a616608b22436b268fd7be73549d289d98"
-    sha256 cellar: :any,                 arm64_sequoia: "7cdcf0f7e07208c5fe3d943e9aeb7e052ea2339831e15ec5495b3357a310dac7"
-    sha256 cellar: :any,                 arm64_sonoma:  "38728f4152fc02b71823da6ac325bbd65aea9e58e061c0ad479c3ff6e0c8e012"
-    sha256 cellar: :any,                 sonoma:        "c269e662560e1972255614b19e036815630885310870ba95a86224115e4b2c5f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e73250139c32c5ef05b025ff09aa64e5b82596255a9b91c65370c755a31cc94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c554082745be75f3e5894d2fc6c6b7307a3bb2fe5ddaa97309f434fa85827536"
+    sha256 cellar: :any,                 arm64_tahoe:   "7a5a151013b1dca20761ea0088aab98ee4158eedd4afa3e52e47cd3ace1f4d68"
+    sha256 cellar: :any,                 arm64_sequoia: "f9b280c14d897f3fd5c559f2a06cc0cac31054748b050d9729732ec332fb330e"
+    sha256 cellar: :any,                 arm64_sonoma:  "cf428a479d6e39ac1f1025c72d912845d42a10973528d000380441c01e396e31"
+    sha256 cellar: :any,                 sonoma:        "2cd94d575f66b408586202c3295ae18b26d8d013fa8d6010174654695f8b1920"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "daf2dceb283c0470f0c03d2bd480084b59dd98c1b3e14c25791b2e7bdca2d4dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "144f2e81e88ff8f3a3cf89b22d17b89c9f04f70540f331a203c2066dc528b7c1"
   end
 
   depends_on "cmake" => :build

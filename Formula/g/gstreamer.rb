@@ -47,7 +47,6 @@ class Gstreamer < Formula
   depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
-  depends_on "nasm" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
@@ -136,6 +135,10 @@ class Gstreamer < Formula
     depends_on "pulseaudio"
     depends_on "wayland"
     depends_on "zlib-ng-compat"
+  end
+
+  on_intel do
+    depends_on "nasm" => :build
   end
 
   def python3

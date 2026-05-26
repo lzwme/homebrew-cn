@@ -1,18 +1,18 @@
 class Libheif < Formula
   desc "ISO/IEC 23008-12:2017 HEIF file format decoder and encoder"
   homepage "https://www.libde265.org/"
-  url "https://ghfast.top/https://github.com/strukturag/libheif/releases/download/v1.22.0/libheif-1.22.0.tar.gz"
-  sha256 "8bd20cfa3201997b8f63266cddfabea2e1481467d7f992e6a2595e0bec691fc2"
+  url "https://ghfast.top/https://github.com/strukturag/libheif/releases/download/v1.22.2/libheif-1.22.2.tar.gz"
+  sha256 "eea48e4841f83fbe51d029337ffd2d14512d0203015dad40b90213d872958af3"
   license "LGPL-3.0-or-later"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1f3e43af36614e0ac6fd9415e29b6eb142d0e32a1defafd0214a90527b7eb1dd"
-    sha256 cellar: :any,                 arm64_sequoia: "b33e8f022966a1a1f8c26b78ff83c725868313a4245180f75fc1618bfeba07ab"
-    sha256 cellar: :any,                 arm64_sonoma:  "dbdc427e50935cc75110a4f4d993f4313f9517655d9a464f6a59b7702cbfd18d"
-    sha256 cellar: :any,                 sonoma:        "e84d7d1f6c6c8b92ee45308ffc07f8f89a454a40b0a3db10f35f6103f8061507"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "38eca108f6b72bb0112a5740c9d683b258726f6c9bb8b7daee6df68da58f25a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e88f68728cf651f75a143fdbf4e38abd3b211bcaa907d6efad67a2a51117a740"
+    sha256 cellar: :any,                 arm64_tahoe:   "3742a19dc7df0bfc23c25da1cf02a22b6b93881641a51c8a07c34f7e15e32c26"
+    sha256 cellar: :any,                 arm64_sequoia: "b945e91b53937c3004c2230ea31b442405b78c3d78c103f725c361894bdb1ca9"
+    sha256 cellar: :any,                 arm64_sonoma:  "cf7234f7f494d9dc606e44772deaab906d75f5665542c27949fa7f7fc0b882f0"
+    sha256 cellar: :any,                 sonoma:        "0ef8daff53f3c2103afaafc2e7fdaf2695454b9b957012bcce884958e1b1dbf2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e62a646b6ed98f8b9c6f749b9558b34df1c20e95bda4abd9075b90524f8d97f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b4fd00ad20d6c5b5103402bbda83919da6603b67f7508633e466dace9fd343b"
   end
 
   depends_on "cmake" => :build

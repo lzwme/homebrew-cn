@@ -1,18 +1,18 @@
 class Skip < Formula
   desc "Tool for building Swift apps for Android"
   homepage "https://skip.dev"
-  url "https://ghfast.top/https://github.com/skiptools/skipstone/archive/refs/tags/1.8.19.tar.gz"
-  sha256 "9cf587b1be4bbcfb610727047be124a553649dbbe383abf5f5178e7eb4476263"
+  url "https://ghfast.top/https://github.com/skiptools/skipstone/archive/refs/tags/1.9.2.tar.gz"
+  sha256 "0e5b29e698fa8bf35600e2effb275b67f1a5e635d33a41e7f76aa63de6646ea0"
   license "AGPL-3.0-only"
   head "https://github.com/skiptools/skipstone.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "f50f78aa9ad049afbe2a69c36644d4a8a743ae209a804275053bb0c7c159aed7"
-    sha256                               arm64_sequoia: "0d313b44ae5a4b40ed5c27ba8c1c11225191f276f3e9cf259625029f05516d8d"
-    sha256                               arm64_sonoma:  "47c7786d0d6d773b084d32a4e3d6c6db066f70f3d997474842d940d73112cf5f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5b0ef15115c7b3f37a95e37fc12f4377f970b6c2401362272b8c0e9a167f39c0"
-    sha256                               arm64_linux:   "b38a0c3587500d5e7e9b6a588d8086da1305ef8368caff84b8284090ca14fedb"
-    sha256                               x86_64_linux:  "12afbec17550f280509ca70fa65e8a1d3e6526882c36474da972164833f39146"
+    sha256                               arm64_tahoe:   "b90be65c7f90170b499092922a813439c04794935d7f604954b8ecc686a29b55"
+    sha256                               arm64_sequoia: "d895a60eec6646c43b6257bb9ee799b4840e75de995613b2bd6c058da176036a"
+    sha256                               arm64_sonoma:  "03a19a42efc43b0ae769db89a686225de675b9b43d6f36c81a5764d00170e94c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f4edef18015ab372c43c6d63ff2a6c40a07cca4c091d8495cf3693b3d2356ca4"
+    sha256                               arm64_linux:   "03e1aa82724bf322fc63fc559d9c417c41f4b45bcda9c875528d5ed8e69104ee"
+    sha256                               x86_64_linux:  "b5aa39ee6933f504513ebeaeb4d63a6814275c1c812124268d833bad4e792d69"
   end
 
   depends_on xcode: :build
@@ -30,8 +30,8 @@ class Skip < Formula
   end
 
   resource "skipsubmodule" do
-    url "https://ghfast.top/https://github.com/skiptools/skip/archive/refs/tags/1.8.19.tar.gz"
-    sha256 "9403ad09eae587ca5816344bda6939b688c277ef4667539e5c6a1137ca96dfd9"
+    url "https://ghfast.top/https://github.com/skiptools/skip/archive/refs/tags/1.9.2.tar.gz"
+    sha256 "29ed02b7054d781898f786aa9cb4ce1b509921704ee40b86b33352f7dca3b5cb"
 
     livecheck do
       formula :parent
