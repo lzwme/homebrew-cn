@@ -3,17 +3,17 @@ class Cronboard < Formula
 
   desc "Terminal-based dashboard for managing cron jobs locally and on servers"
   homepage "https://github.com/antoniorodr/cronboard"
-  url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "6e61df7d6946bad59e0eb4b23eb73e3c9442fa4ba60c66e5d288558728246a6f"
+  url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "2a036db31bba8abf3e09ca321453e84f53c2d55734e62bc27ded19568774b1dc"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3d9d772377b209773c330eef0aefe86b5be438a2e521d2c1edbfa96ee5e18998"
-    sha256 cellar: :any,                 arm64_sequoia: "134a99903466341c38a995449c0cf4228e616e2f8ff6ae15d8a4b432f2affd2b"
-    sha256 cellar: :any,                 arm64_sonoma:  "32efe95886e5fefb218a6f37688f97fd2c52e14bcf5d66ee8fe29c29bdcf4e20"
-    sha256 cellar: :any,                 sonoma:        "d306043d09d1a7f5100f1168d69f507a2f6d2b6f7aa513db25475818fac3d1d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9503bdf36c3c6e5faae0ec4a1fd2068567ef92b3fc9cbb00ab00e4122038f10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf2bfc94c50cbacffb89e5268a8b4c2b646f53ee9b76c7c641578720ce0b1c57"
+    sha256 cellar: :any,                 arm64_tahoe:   "223c4ba214e7a21d64f4e08d71e97154e9de793b17f79c2fb3ceb752c1aa24f0"
+    sha256 cellar: :any,                 arm64_sequoia: "8d7935c2aeb5ef090d99642926c83cb0c8ded152223cc3264ca8d284dc10c304"
+    sha256 cellar: :any,                 arm64_sonoma:  "677d5489ebf15f31ea02cb323b6aa283e842b7220977712b18e3cd6739ea9940"
+    sha256 cellar: :any,                 sonoma:        "10ec985e393594cb8245998cbc0b689ee8fd4e783a4c5ed53fc8240523df2437"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c700fe1eb7e8edb04b6a3738b096ac78282fa2759cd9958223b2478de56bad7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bae7036d09f1e44830a190c2441c507372da24cac57598ee19de85b2f324f9ee"
   end
 
   # `pkgconf` and `rust` are for bcrypt

@@ -1,17 +1,17 @@
 class Ktfmt < Formula
   desc "Kotlin code formatter"
   homepage "https://facebook.github.io/ktfmt/"
-  url "https://ghfast.top/https://github.com/facebook/ktfmt/archive/refs/tags/v0.62.tar.gz"
-  sha256 "266c4d774be0f61de17687a49b3acf454d5674dd30caace947c086ec2e00cd42"
+  url "https://ghfast.top/https://github.com/facebook/ktfmt/archive/refs/tags/v0.63.tar.gz"
+  sha256 "1f284160c50b3309d2a61ce22f9bd60aa7c8fc86d16aae0bac55ac132b242460"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a78b1d6dd17daf32f24b39c56462fd9b64fe78e110ee03f5cce9d7e720eaf1b1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a78b1d6dd17daf32f24b39c56462fd9b64fe78e110ee03f5cce9d7e720eaf1b1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a78b1d6dd17daf32f24b39c56462fd9b64fe78e110ee03f5cce9d7e720eaf1b1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a78b1d6dd17daf32f24b39c56462fd9b64fe78e110ee03f5cce9d7e720eaf1b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8730ebfede680e8298d21438c5bad4cf3a088d088b3e8adaf1275fec54a18a3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8730ebfede680e8298d21438c5bad4cf3a088d088b3e8adaf1275fec54a18a3a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "106bb88438645dd8c6637d63045e8939d234cef082b53bd0dd862f4d1fdd6e31"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "106bb88438645dd8c6637d63045e8939d234cef082b53bd0dd862f4d1fdd6e31"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "106bb88438645dd8c6637d63045e8939d234cef082b53bd0dd862f4d1fdd6e31"
+    sha256 cellar: :any_skip_relocation, sonoma:        "106bb88438645dd8c6637d63045e8939d234cef082b53bd0dd862f4d1fdd6e31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac48dd69361bd524166f0197bb1d2a30fa954c113c859f8ea329fe84252f830b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac48dd69361bd524166f0197bb1d2a30fa954c113c859f8ea329fe84252f830b"
   end
 
   depends_on "gradle" => :build

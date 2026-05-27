@@ -1,18 +1,18 @@
 class Jackett < Formula
   desc "API Support for your favorite torrent trackers"
   homepage "https://github.com/Jackett/Jackett"
-  url "https://ghfast.top/https://github.com/Jackett/Jackett/archive/refs/tags/v0.24.1947.tar.gz"
-  sha256 "d69ddc5acb82656d7f5d4fe1b078c9b2755e79236fdb402e3c818e6570d2b4a0"
+  url "https://ghfast.top/https://github.com/Jackett/Jackett/archive/refs/tags/v0.24.1954.tar.gz"
+  sha256 "03b9a1578cc27aa49b1844ca556f0d117e311e71e3f5c74a8b6e8f60d35b76ad"
   license "GPL-2.0-only"
   head "https://github.com/Jackett/Jackett.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "de092021987242dc84a816d4baded3c33454ee9413be449f1862b9b40fe49d07"
-    sha256 cellar: :any,                 arm64_sequoia: "071c4442ea56edd7852d493027a76358dbf406d9d0ee1e41b3cc3d1d2129cb9f"
-    sha256 cellar: :any,                 arm64_sonoma:  "b699fa52c6c3504a3dd31c10c61bdc016098cda30ae8ef40c01b9daa9819ef13"
-    sha256 cellar: :any,                 sonoma:        "3ddd24be43987b8e9841cdf05a5aae1738d0940121b2578f07add53275041081"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9351aef71d8ab9afebc9e376d5a87e7d0ccc4202fb0124cc2040515dae159f6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdec4ec21fae9586e8ef6693e3b9bd057c678b88eadfaa29955d701571702b11"
+    sha256 cellar: :any,                 arm64_tahoe:   "8efefed634151fcf056c2eb246db7fa2692f220bb61d60ec38104caa31c5a79d"
+    sha256 cellar: :any,                 arm64_sequoia: "c20482baddcfb9befe8ab4279a91befc73673a088df0c1e15420c741d1c79034"
+    sha256 cellar: :any,                 arm64_sonoma:  "3d7ee5e65ba80ec5166779414abb538a082382030e70902d47ebbd44b593328a"
+    sha256 cellar: :any,                 sonoma:        "3289def8c156bef8cbc2c681e8100362371843817d32cc4f2d42d25ad69da7f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b5233b240289b47acef45ae1c4727c2e2cd31e276f07a0c5a806b4789979eb6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8b58162ea55181e8a1f441d6d18dc5425856f07a8648bb053a7e752a4efd0c5"
   end
 
   # Aligned to .NET dependency. Can remove if updated to latest .NET

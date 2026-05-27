@@ -1,18 +1,18 @@
 class Libavif < Formula
   desc "Library for encoding and decoding .avif files"
   homepage "https://github.com/AOMediaCodec/libavif"
-  url "https://ghfast.top/https://github.com/AOMediaCodec/libavif/archive/refs/tags/v1.4.1.tar.gz"
-  sha256 "d4aea31a4becb3273ba7968221be2e48148ba05eb8a68d14e671963e17785648"
+  url "https://ghfast.top/https://github.com/AOMediaCodec/libavif/archive/refs/tags/v1.4.2.tar.gz"
+  sha256 "2b645287340ba5a631d268b551dc2d72bd73ac33335962dd36dcdb6d8366921d"
   license "BSD-2-Clause"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "44d57589d5dcaedb19f883c8e4e1d328c9041494d0380c60d97272854a13f749"
-    sha256 cellar: :any,                 arm64_sequoia: "697f6dfd4acd6e06053a7ad50378e80889199b0ccf834d0a1578a497a0cf0aff"
-    sha256 cellar: :any,                 arm64_sonoma:  "cd850b316534c631ba07b625d33eed0d4d5c6001d73bb5783055be1ac2376ebb"
-    sha256 cellar: :any,                 sonoma:        "12d4cc2b73516496876a3e93f821858bad28e47a76fadd3b15c7dcefdc495734"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6806097bffeb1f1635b3545c8e35c24eecf9a7d89ab7a04b6ff7620f65e1e8c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8631446bdda8ac7f2dfe1142369d91b9d09b317806c2d15263adad5ef67b4ae5"
+    sha256 cellar: :any,                 arm64_tahoe:   "584d41a9ad0fd601fac27735b928483c3f8494d4e08d6461599f7fabc915783b"
+    sha256 cellar: :any,                 arm64_sequoia: "0d1a9ce6320d9ddacb3e7ca31bb2ef3216529755ab1df24eac833fec27b25c95"
+    sha256 cellar: :any,                 arm64_sonoma:  "0c6314fd072001e7cb03d1cc065d7934dcf25edca3e8d413008ca268f1429582"
+    sha256 cellar: :any,                 sonoma:        "5ebfe4ae085f4dd3e13a6c833b104939ac11d6abc28ea7a2413f471548444e68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "99cf708f4f061f25e916e4212cd9ba2159daa5a498689f94b25995edbe7f734f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "824125e726a4ea8c4495ef60d538ef5b769037bd9c4acc7c5a757d0cd03c4819"
   end
 
   depends_on "cmake" => :build

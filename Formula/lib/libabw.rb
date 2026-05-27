@@ -1,10 +1,9 @@
 class Libabw < Formula
   desc "Library for parsing AbiWord documents"
   homepage "https://wiki.documentfoundation.org/DLP/Libraries/libabw"
-  url "https://dev-www.libreoffice.org/src/libabw/libabw-0.1.3.tar.xz"
-  sha256 "e763a9dc21c3d2667402d66e202e3f8ef4db51b34b79ef41f56cacb86dcd6eed"
+  url "https://dev-www.libreoffice.org/src/libabw/libabw-0.1.4.tar.xz"
+  sha256 "fa2685a3440da6e03a66a778480d93cb95f6064e4541e58e37397680760fd6a0"
   license "MPL-2.0"
-  revision 1
 
   livecheck do
     url "https://dev-www.libreoffice.org/src/libabw/"
@@ -12,13 +11,12 @@ class Libabw < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "94f750ee7bbbf84e58e7673ab8c00d6f5ac7805e3866887ef3a598f10465d555"
-    sha256 cellar: :any,                 arm64_sequoia: "615103d929d3d41b86505ec51bca88f383c9a890588bd6cfa1ac17de264e2575"
-    sha256 cellar: :any,                 arm64_sonoma:  "36fd000ef3d1a511d89e6f050465b3dbdc6ced760615222779812ea836df25d9"
-    sha256 cellar: :any,                 sonoma:        "5874a09fd09d99442394994ce591cdde79b201131e1f33c5268ebef8b0f3d02f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d5c1ad4d34c3dbab41b53d369abbe5bda59801caed9e238de74a12a04d18bb5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e3863e042c26afed865f3857ae6b63054bd082b829bdf7f9ea6118aa8a1ae94"
+    sha256 cellar: :any,                 arm64_tahoe:   "bfcad8f4a2996c41ca06abc385ebd8e66b095c21d68201b318e21100893cb8d8"
+    sha256 cellar: :any,                 arm64_sequoia: "7a0bcfd97859385bb0715aac6a71ddb2d34e646e876deea0d6dd88da6241f708"
+    sha256 cellar: :any,                 arm64_sonoma:  "6fd5c335fb18734ac2e029f63769e0ea0b732b2992f4c96968df3ed117d591a8"
+    sha256 cellar: :any,                 sonoma:        "4fe56f440a8dd385fe68167f7a936e4dbece09fe30917ff8e0885a8e9436a17b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ce1c97e8ac4279b10a84206b7215885aafb0f916b5fc1e7a9ac99dc438ba972"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1782f975551cec71df80485f6c6ca2f5c4cefb0bda2dac9fdb5c81ad7f44c8a"
   end
 
   depends_on "boost" => :build

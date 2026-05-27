@@ -1,18 +1,18 @@
 class Ironclaw < Formula
   desc "Security-first personal AI assistant with WASM sandbox channels"
   homepage "https://github.com/nearai/ironclaw"
-  url "https://ghfast.top/https://github.com/nearai/ironclaw/archive/refs/tags/ironclaw-v0.28.2.tar.gz"
-  sha256 "5ef57be870ca678cc5fbd6237416edd2a298e88be9ec977ccaadb65766902a4c"
+  url "https://ghfast.top/https://github.com/nearai/ironclaw/archive/refs/tags/ironclaw-v0.29.0.tar.gz"
+  sha256 "3657c9928b6bd81e285783a610a0bc7ad71a2e6aa2e8780452c72f1931260539"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/nearai/ironclaw.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f95eccf4898ee8c4c151cca3baaa33e417587cd25ff34c40d7eef95ac31ff953"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b445e60956b382ba381d4c2f2ec90c6a5cef5603169110d6c73652422f6e96dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4d2e842960d2aee05c55f3ad755741e34e90a42f694bca48a45e6d0cee75c23"
-    sha256 cellar: :any_skip_relocation, sonoma:        "de1a22b10ded70f7a0dcfe095ef7a1863221fdf99a8ef27f4f47d229c9818890"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "16e7c1d0758261305e7313950ba12e4b430c9764d2b82ddd58d85b2c11259238"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c24a74906052cde2aaa2e19ad5648f1fc503aae003808dd59c39a726a919a78"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1bb0cdbb4fca0f623d3d5d18934bd435b7fb6cc4938385e2cdaac0c6f1830689"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf6b3f1f7f8514f636c405e70c67e8e19352b1425642770ff6a11fe0d568d5ed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b3514fcc131a7ffaae67f7bab42da35f32dec5b5dd46c7a45ff39c7d0788d48"
+    sha256 cellar: :any_skip_relocation, sonoma:        "603ecfe1dbf881523a83fbc055453bc2e573962bebdc1b3b5fdf9695d169e58a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c064ed8b1bc92b4ce00cd2b2d2bee8b823126f16347b0c91478606812d5b1767"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c891d3d65154d77360f746c656df16a00f28a52fdf0a1812e9b652e8548856ef"
   end
 
   depends_on "pkgconf" => :build

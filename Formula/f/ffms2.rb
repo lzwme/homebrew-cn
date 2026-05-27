@@ -7,7 +7,7 @@ class Ffms2 < Formula
   # The FFMS2 source is licensed under the MIT license, but its binaries
   # are licensed under the GPL because GPL components of FFmpeg are used.
   license "GPL-2.0-or-later"
-  revision 3
+  revision 4
   head "https://github.com/FFMS/ffms2.git", branch: "master"
 
   livecheck do
@@ -16,28 +16,34 @@ class Ffms2 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "762d4b37cda59b4d929851bb8a206922fe2b5e59919152dd78f4a53e27082217"
-    sha256 cellar: :any,                 arm64_sequoia: "e3982aedb8762c68a69e4f0e8ec2f6bf36f72ef6d8970b0bc2ad6b0c652f394d"
-    sha256 cellar: :any,                 arm64_sonoma:  "0ebad5227e698f8a477de1eec61e08f39afd387a08bf6d68812cea68a79f8174"
-    sha256 cellar: :any,                 sonoma:        "4bbc6ca72fa21c5ba1ab5cf8cc380ed30c4fce7983890ad55e169b942cb60655"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd0c0cbf02ecdc775ec98aa0db63dff6bbac02e3c1fbbefecba4eb12d1085098"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "122322cb5af8f95bfac1fda7cfe7043b91d4205c940382f17ab463037b1fb43a"
+    sha256 cellar: :any,                 arm64_tahoe:   "d457c72653fbc70e59fef5f37bf1921e3b282452d4e84194f16edfb3a49d3260"
+    sha256 cellar: :any,                 arm64_sequoia: "4dae8616980c06dd68cd85802fe951093470fcb84153db6bf480e5e4d33befec"
+    sha256 cellar: :any,                 arm64_sonoma:  "11e888ef33d21dfc94592b867dd2b166334f7ec8e8356cdc87a5d063ef9b4091"
+    sha256 cellar: :any,                 sonoma:        "f58fff43b6b8363fa8f82a0aaafc8820c5ee8b2750da42d637798f6accd9f079"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b01d6a3f90ead613af15aa9c6c2730150d1a38221431b131c03b4d53285278c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3325cc6b72c476f0a99963dfd702df356d3e0bc2fb76ea4f0d01469b45e2a679"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
+  depends_on "python@3.14" => [:build, :test]
+  depends_on "vapoursynth" => :test
   depends_on "ffmpeg"
 
   on_linux do
     depends_on "zlib-ng-compat"
   end
 
+  def python3 = "python3.14"
+
   def install
     system "./autogen.sh", "--enable-avresample", *std_configure_args
     system "make", "install"
+
+    vapoursynth_plugins = prefix/Language::Python.site_packages(python3)/"vapoursynth/plugins"
+    vapoursynth_plugins.install_symlink lib/shared_library("libffms2")
   end
 
   test do
@@ -51,5 +57,10 @@ class Ffms2 < Formula
       system bin/"ffmsindex", "lm20.avi"
       assert_path_exists Pathname.pwd/"lm20.avi.ffindex"
     end
+
+    # Test VapourSynth support which verifies Python versions are aligned
+    cp test_fixtures("test.mp4"), testpath
+    system python3, "-c", "from vapoursynth import core; core.ffms2.Source('test.mp4')"
+    assert_path_exists "test.mp4.ffindex"
   end
 end

@@ -2695,6 +2695,7 @@ Homebrew-homebrew-core/Formula/g/gocryptfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/godap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goenv.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/goenv@2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goffice.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gofumpt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gogcli.rb, Homebrew/homebrew-core, 1
@@ -4071,7 +4072,7 @@ Homebrew-homebrew-core/Formula/lib/libfontenc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libforensic1394.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libformfactor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libfreefare.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libfreehand.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libfreehand.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libfreenect.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libfs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libftdi.rb, Homebrew/homebrew-core, 1
@@ -6049,7 +6050,6 @@ Homebrew-homebrew-core/Formula/p/pyrefly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyright.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyscn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyside.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/pyside@2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyspelling.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pystring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pytest.rb, Homebrew/homebrew-core, 0
@@ -8561,7 +8561,6 @@ Homebrew-homebrew-cask/Casks/a/anka-build-cloud-controller.rb, Homebrew/homebrew
 Homebrew-homebrew-cask/Casks/a/anka-build-cloud-registry.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/anka-virtualization.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ankama.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/a/ankermake.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/ankerwork.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/anki.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/another-redis-desktop-manager.rb, Homebrew/homebrew-cask, 1

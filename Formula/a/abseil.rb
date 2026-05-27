@@ -19,6 +19,8 @@ class Abseil < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "googletest" => :build # For test helpers
 
+  deny_network_access!
+
   def install
     ENV.runtime_cpu_detection
 

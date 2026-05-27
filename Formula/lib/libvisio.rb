@@ -1,10 +1,9 @@
 class Libvisio < Formula
   desc "Interpret and import Visio diagrams"
   homepage "https://wiki.documentfoundation.org/DLP/Libraries/libvisio"
-  url "https://dev-www.libreoffice.org/src/libvisio/libvisio-0.1.10.tar.xz"
-  sha256 "9e9eff75112d4d92d92262ad7fc2599c21e26f8fc5ba54900efdc83c0501e472"
+  url "https://dev-www.libreoffice.org/src/libvisio/libvisio-0.1.11.tar.xz"
+  sha256 "2a6efd40b6d9dbcb70fba3be53112366882ba97b57151df3698dfa478c8d8dd3"
   license "MPL-2.0"
-  revision 2
 
   livecheck do
     url "https://dev-www.libreoffice.org/src/"
@@ -12,12 +11,12 @@ class Libvisio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e241eb77c998c706f44a477749306d05bbc0b8217679cba715b97ede9f9ec2b6"
-    sha256 cellar: :any,                 arm64_sequoia: "9cdbc5cb4a38eb26f6d184e381df163a62eba6f29611c4f7e7be3bd2b0658ec7"
-    sha256 cellar: :any,                 arm64_sonoma:  "e392fa4282309aa0d095e2a736a1f4e390d74d072edbe27e8b2451779fcdc750"
-    sha256 cellar: :any,                 sonoma:        "26419e2bf884b48b7d94dfdf19de9bbc8f118c89585f1d83818b90e46742c867"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f05a917fed1e4685878ed8b3821a5ba5cfc481ce5f4dca4ec6195bb985e4b6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69d9ebc9fa47e7fb49aa8d379935dee191957a24dbabb7b40d23ec0c0bd76159"
+    sha256 cellar: :any,                 arm64_tahoe:   "abb91d81b72750126191fb3a554cbce3acc3d818a40fa486ac63a24ad006fc5c"
+    sha256 cellar: :any,                 arm64_sequoia: "3867b68556bba12e953a1a6e09beb68ad9431c8a66222ce8dc1f152b62537c55"
+    sha256 cellar: :any,                 arm64_sonoma:  "523315829cb4aff25a06d1863a6e16602c7fdeaeeda94056f26e1b60bc222d6c"
+    sha256 cellar: :any,                 sonoma:        "9d6d4f6ede6d71b76fb8d57195129927429c0d77b6ce1eeb433d974efb614c81"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "569b4e56d3341421f740f3677036961235fbe9d9cfc044d344cc23aa161480b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb5d2b1e7fef85b28cabbbe070360b116d75ed5219a916a14374a9f8a4c1e38a"
   end
 
   depends_on "boost" => :build

@@ -4,33 +4,34 @@ class VapoursynthOcr < Formula
   url "https://ghfast.top/https://github.com/vapoursynth/vs-ocr/archive/refs/tags/R3.tar.gz"
   sha256 "e9da11b7f5f3e4acfee5890729769217aa5b385bb573cb303c2661d8d8a83712"
   license "MIT"
+  revision 1
   version_scheme 1
   head "https://github.com/vapoursynth/vs-ocr.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "7170ccabb3adf8e0a5bd54ca6c531b3d0d54b2c7f8455aa912096ed3458ca048"
-    sha256 cellar: :any,                 arm64_sequoia: "59e7198e55f020269ef5dba9f54c07b67c5a789379df455ec634e6b236a129b0"
-    sha256 cellar: :any,                 arm64_sonoma:  "780ee3e48072500cbe2847c42e301fae220ec8a6d5cb2104c5c43cecc7a7feb7"
-    sha256 cellar: :any,                 arm64_ventura: "cd5724d21e95a31025bf0d0bad580406d2b3921a1afbd0778a3fafe123809b70"
-    sha256 cellar: :any,                 sonoma:        "2106c78c52a64e3dee5fffaf924358216e2a4d962614d47dc1055721d0e535fe"
-    sha256 cellar: :any,                 ventura:       "04e3d8edb77293bb176d2757f36ad28deb8d1c4fd571c7de3a95e04395ed731f"
-    sha256                               arm64_linux:   "4e8060e44aa0bb280d0338e204154016949a9d54e5c9216849c0ef3f276fba73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ba3f2ce6d29c86e69853b445c6b8a4a4f95c26f88dc7e3947ecea9845009882"
+    sha256 cellar: :any, arm64_tahoe:   "4ccfbd44ff93e0f78643332c798346e6479fb87045fdcf50f29843155ad9c377"
+    sha256 cellar: :any, arm64_sequoia: "5617d9225a32445a33dee971980b3cea4917b1b26ffc7d37811417daaed1d19a"
+    sha256 cellar: :any, arm64_sonoma:  "5a0b6dbc7cf8fbb2cd5eea410badfa459ad28a09ea5b01d44e20b482fc427bb1"
+    sha256 cellar: :any, sonoma:        "f704f5d1c64d57421f3b68e10cae855197757b841e232657ed387b6fa2410ba3"
+    sha256               arm64_linux:   "be8cdbe8e26862454aff1e05c0b6edac7b05cebe5c22ed724908834ef667756a"
+    sha256               x86_64_linux:  "6f48fa48839bcd4c6bfe4c6b0c687ee3ce91048b953096f0027bd136ba25ea5c"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
+  depends_on "python@3.14"
   depends_on "tesseract"
   depends_on "vapoursynth"
+
+  def python3 = "python3.14"
 
   def install
     # Upstream build system wants to install directly into vapoursynth's libdir and does not respect
     # prefix, but we want it in a Cellar location instead.
     inreplace "meson.build",
               "install_dir : join_paths(vapoursynth_dep.get_pkgconfig_variable('libdir'), 'vapoursynth')",
-              "install_dir : '#{lib}/vapoursynth'"
+              "install_dir : '#{prefix/Language::Python.site_packages(python3)}/vapoursynth/plugins'"
 
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -38,10 +39,6 @@ class VapoursynthOcr < Formula
   end
 
   test do
-    python = Formula["vapoursynth"].deps
-                                   .find { |d| d.name.match?(/^python@\d\.\d+$/) }
-                                   .to_formula
-                                   .opt_libexec/"bin/python"
-    system python, "-c", "from vapoursynth import core; core.ocr"
+    system python3, "-c", "from vapoursynth import core; core.ocr"
   end
 end

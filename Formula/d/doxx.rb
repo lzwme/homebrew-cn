@@ -1,18 +1,18 @@
 class Doxx < Formula
   desc "Terminal document viewer for .docx files"
   homepage "https://github.com/bgreenwell/doxx"
-  url "https://ghfast.top/https://github.com/bgreenwell/doxx/archive/refs/tags/v0.1.2.tar.gz"
-  sha256 "3627e65f39e437d954e1d4f02c30911fef1c5c99388bf6098564e1e89722e80d"
+  url "https://ghfast.top/https://github.com/bgreenwell/doxx/archive/refs/tags/v0.1.4.tar.gz"
+  sha256 "72af676ca30b27adc7a13b17a48aac88589c940accba28453f3d94a861bed961"
   license "MIT"
   head "https://github.com/bgreenwell/doxx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "74d4459038beac34f058430c6989791384f2eaba6c256795bf4d9b29c491898f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bde2050546c17f2d57df8e6049d872e2550df1939b1248244a6ce5a927e254fc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "441aefb5e628bac7267beebd1b46b33dd5aefb5e275857b25bbdeccc9f2abca0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bf34c611bbcc29e096312963252fd2089794b69ed19a5f6b94fc78cc01526099"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2535f0667b90ab6e9000a1fdbab39c30c1d20caefca51f2dde257b1fabfed196"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3c9e40fbf75a99b5e5ce1f77714445f771553291f6d05c42f9d1d219a441afd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6be0a3aa1a03e30b38cb28427107453bcb32129ab15b54f5532ca9101ee3c177"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5fe939787e7e4ef12201afd9c362ae7ae9f94b3e060c7ad7bbec0937a5702d5d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "068b83c66b43c33997dfd0669cb170d476a707d64510e23cb143117afba3243d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e993e41817de2f241127a11f5ce599acca6dc725049a02af141d2724fd1a867f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9698760fceae5df8da6e88f7856d3e43b8a636a920191dbbc0ac5b3088e40789"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5551f74f41a521804764a0dc823515a94681b63c13663e03583680df2432b14d"
   end
 
   depends_on "rust" => :build

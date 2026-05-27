@@ -4,16 +4,17 @@ class VapoursynthSub < Formula
   url "https://ghfast.top/https://github.com/vapoursynth/subtext/archive/refs/tags/R6.tar.gz"
   sha256 "536e2f056c7b318b0104b8b9050bb17c00d8ca60b0e5fdecf1ee92879c5f9165"
   license "MIT"
+  revision 1
   version_scheme 1
   head "https://github.com/vapoursynth/subtext.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1dd9d606c3dc95220bd01768d3915b93ab012db6948741cf7eec09bdbe3e4a85"
-    sha256 cellar: :any, arm64_sequoia: "3a1306e4e00e4e2631402a144aec9fa28901e7a673cd465506305da5e3a7e139"
-    sha256 cellar: :any, arm64_sonoma:  "499a8f53ac127e63fb8057db07100fdbc2e577feaeb5d281a52b4dea5a3f940a"
-    sha256 cellar: :any, sonoma:        "6431bf13a69ca6b48151dd5acbf301d969f7dba02710f6db9afd502dce711eb9"
-    sha256               arm64_linux:   "6cba3bd1647da2fe3c4784b57a79dd0392f23aba641567ce64f4543ab62f1369"
-    sha256               x86_64_linux:  "d1b277613210ac4fcd61d6f09ef9c5a81feb45001c7569bfef090e3cfd580b49"
+    sha256 cellar: :any, arm64_tahoe:   "e72c530140ff3bce81a7456029227c2a3859fbae3c5091405b9dc6c6788ddd1e"
+    sha256 cellar: :any, arm64_sequoia: "3df48df43f512e50f4763e543b95635a11a634e688ca408703a38e866e23d4f0"
+    sha256 cellar: :any, arm64_sonoma:  "a5db7fd939deb265993977a742827c0a8cd5ba0ed99eebc9fc56b9fa7d5f7c02"
+    sha256 cellar: :any, sonoma:        "396b89abb44cb82ae675eb8cd9e807a5d073c91a5d327ace62ef02d7173e647a"
+    sha256               arm64_linux:   "49b9af9319e5d58e32704946ae287872b3a975825373d5affdc63d9ea9f1837a"
+    sha256               x86_64_linux:  "a5dbbb47bb1afa5d0dba1422c737fb5e526330c9f91601d03d692854f945bc5a"
   end
 
   depends_on "meson" => :build
@@ -21,27 +22,21 @@ class VapoursynthSub < Formula
   depends_on "pkgconf" => :build
   depends_on "ffmpeg"
   depends_on "libass"
+  depends_on "python@3.14"
   depends_on "vapoursynth"
 
-  def install
-    # Upstream build system wants to install directly into vapoursynth's libdir and does not respect
-    # prefix, but we want it in a Cellar location instead.
-    inreplace "meson.build" do |s|
-      s.gsub!(/^incdir = include_directories\(.*?^\)/m,
-              "incdir = include_directories('#{Formula["vapoursynth"].opt_include}/vapoursynth')")
-      s.gsub! "install_dir: py.get_install_dir() / 'vapoursynth/plugins'", "install_dir: '#{lib}/vapoursynth'"
-    end
+  def python3 = "python3.14"
 
-    system "meson", "setup", "build", *std_meson_args
+  def install
+    # Work around Homebrew's python prefix patch
+    args = %W[-Dpython.platlibdir=#{prefix/Language::Python.site_packages(python3)}]
+
+    system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 
   test do
-    python = Formula["vapoursynth"].deps
-                                   .find { |d| d.name.match?(/^python@\d\.\d+$/) }
-                                   .to_formula
-                                   .opt_libexec/"bin/python"
-    system python, "-c", "from vapoursynth import core; core.sub"
+    system python3, "-c", "from vapoursynth import core; core.sub"
   end
 end

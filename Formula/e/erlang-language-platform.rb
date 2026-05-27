@@ -6,21 +6,22 @@ class ErlangLanguagePlatform < Formula
       tag:      "2026-02-27",
       revision: "3a65019ef3b85a7b0f58c998f5d5a545d7394b15"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https://github.com/WhatsApp/erlang-language-platform.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e5a498d14918e123192b9ab0f2da6a88b23118bd0f04889742fb6afcb7f843e9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3a78107e784f20cfd77f2a7ecb8c71fa116059764cf7d0c875e85fb408e37ac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e7e2d78e18a19f5d5ca4dea447335b282436ccc00e65f057beeb8524f88c81a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d9984214c9bd155fad1fb9b28664819abfdfd18dfe64863c6571d0cd0ba92600"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "26e2191aaf4cfac4d1bf79c62c1181b5c70f81bfaf37abec5bccfa9277ef4d41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb4947af38046be0fdd8a8424f68448c1ed0f42f8ffd5609622b5ce3be67495b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8576d3b5737facfdf4eb2337763f3e161a5ed02d5072fb80d674697f3d301b3d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "951b548a94eddf55a00d497154356f0dd536bd5f6c743982b0b8171cf4cf9f77"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf6944548b7f14fbfb4e420f593e3279e2b89496dc2273859f5ce04c39afcc75"
+    sha256 cellar: :any_skip_relocation, sonoma:        "89e23670e8fd9e570690e6b893f6240b76ec74c5a7487470a6c3e029786a59b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "efc14ca44ba1e1fd97f240e33f5b143589d97d8a19a11be57049008cbb5cba99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d73ccda29804be2a0d64c887a20a7e6210a2320efe97a158ba13dda52ce61474"
   end
 
   depends_on "rust" => :build
   depends_on "sbt" => :build
   depends_on "scala" => :build
-  depends_on "erlang"
+  depends_on "erlang@28"
   depends_on "openjdk"
   depends_on "rebar3"
 
@@ -38,6 +39,7 @@ class ErlangLanguagePlatform < Formula
     system "cargo", *build_args, *std_cargo_args.reject { |arg| arg["--root"] || arg["--path"] }
     bin.install "target/release/elp"
     generate_completions_from_executable(bin/"elp", "generate-completions")
+    bin.env_script_all_files libexec, PATH: "#{Formula["erlang@28"].opt_bin}:${PATH}"
   end
 
   test do

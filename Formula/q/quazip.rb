@@ -1,18 +1,17 @@
 class Quazip < Formula
   desc "C++ wrapper over Gilles Vollant's ZIP/UNZIP package"
   homepage "https://github.com/stachenov/quazip/"
-  url "https://ghfast.top/https://github.com/stachenov/quazip/archive/refs/tags/v1.5.tar.gz"
-  sha256 "405b72b6e76c8987ff41a762523b8f64876ba406d8a831d268ee0b63f1369582"
+  url "https://ghfast.top/https://github.com/stachenov/quazip/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "61c73926d4e98bf4c38becc15ba10437ab2af9e746a3982b86f7d720bd5823b4"
   license "LGPL-2.1-only"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "ce8d0c6f5b6d725631a9023470fd138c99d9db401f03902f828f555140fee77b"
-    sha256 cellar: :any,                 arm64_sequoia: "7272d9b6eec18911f7fef8cd0c5deb264b655463396bb220220974d32a3227dc"
-    sha256 cellar: :any,                 arm64_sonoma:  "445a4429e3a6a27ffb00565a01b994b45b8af48c6b9aa8bcba68263a3e81ec87"
-    sha256 cellar: :any,                 sonoma:        "1252f9215183b55908a1df0caf982f7dd7f209289d461a9eb3c5cd7e3146796f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7faf8e516ab4ecff091c0fe8bdc1d0d1ecdcf12ac06562fd7aa96626e58363b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "834a87bcf3b62f24ea5446e5ab3400ac499042d56a1c0065a0eb3cfea929e9a4"
+    sha256 cellar: :any,                 arm64_tahoe:   "118ae1186d4190a5766348243b7c2656b4b2875c63e3793b9fd52904d0688a82"
+    sha256 cellar: :any,                 arm64_sequoia: "81d3a6092c4c4d6766619abf7ac6ceacdfa64f7e46da720abb8860d890b528d6"
+    sha256 cellar: :any,                 arm64_sonoma:  "41d9ec180841dffccfef13497c12c3cfe4080121d19b4451f7549df935074d31"
+    sha256 cellar: :any,                 sonoma:        "28492619487288526e9dae263354cbea43ed299ca505a5fe817a27bb11b7448c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47759e5395f3d0eca9302885d4039cc6d023e0a79e0497ee1dd93a983b5acb2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fe359ef7e9b9e3f425d64f760302eb43249f87cb557cff595b726e9c1352f41"
   end
 
   depends_on "cmake" => :build

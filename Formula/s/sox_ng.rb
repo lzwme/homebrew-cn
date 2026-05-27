@@ -1,8 +1,8 @@
 class SoxNg < Formula
   desc "Sound eXchange NG"
   homepage "https://codeberg.org/sox_ng/sox_ng"
-  url "https://codeberg.org/sox_ng/sox_ng/releases/download/sox_ng-14.8.0/sox_ng-14.8.0.tar.gz"
-  sha256 "341777dda6fd13376418d788c2e20e8c362b95c4a896ea42700d8b4566879d73"
+  url "https://codeberg.org/sox_ng/sox_ng/releases/download/sox_ng-14.8.0.1/sox_ng-14.8.0.1.tar.gz"
+  sha256 "7698a1b2699499b0b38fa95a15bb56c68928d97b144bce03b7ecb76fe9c46698"
   license "GPL-2.0-only"
   head "https://codeberg.org/sox_ng/sox_ng.git", branch: "main"
 
@@ -12,12 +12,12 @@ class SoxNg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8e9a9ee03d0cbaf756149ac5cca26311c1149010c0537827dd30c328958bee05"
-    sha256 cellar: :any,                 arm64_sequoia: "df574337c20dc1d30fbc2c91ea62a7cd8fa2110ffc9c933f220c91ecb552e2fc"
-    sha256 cellar: :any,                 arm64_sonoma:  "01ae6785fdc1956600a2e45c212d69d3dd363072f0357e050831c784a53c9b2d"
-    sha256 cellar: :any,                 sonoma:        "eb11ec680e6589196b5dbbf416c55e2858b4875699aa459c83b5808af01bc32d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a36dfdfdfd351728fe46cf47d7c97e68aa1269486cf38e0f46352c1087c73f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02ec2d6fc9189f0c1cc0c999a175da634ad11a82c50623e0761d7095873dd92e"
+    sha256 cellar: :any,                 arm64_tahoe:   "4a4d52ed310f5ddb396d2a235e15cefe0e5269ed00ef34c084c9bfe563d9e535"
+    sha256 cellar: :any,                 arm64_sequoia: "e5bb6fa3a3aa38caca455bc76e16a50287b2ffe5746421a53bd46966517e4159"
+    sha256 cellar: :any,                 arm64_sonoma:  "d4eaa4c4cbd2d3e47376c99c2e4b68907a4a6e0a2e9de04c8a3754859865ec13"
+    sha256 cellar: :any,                 sonoma:        "659c665a53e183f33a82d83ec1e23f3364eea2ee291033538ea77e4f3a604f4e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ed8a2459e0acfc8f49bb6d5518bf78eeb73e8aa7cf843160a19657335bb7dba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "775fc2fe7dcbd4f8df3494c625525f934202d800c3e94b7943a349519fd629ec"
   end
 
   depends_on "pkgconf" => :build

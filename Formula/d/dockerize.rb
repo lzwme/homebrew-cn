@@ -1,18 +1,18 @@
 class Dockerize < Formula
   desc "Utility to simplify running applications in docker containers"
   homepage "https://github.com/jwilder/dockerize"
-  url "https://ghfast.top/https://github.com/jwilder/dockerize/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "47582c1a07fc7d886ba7bda51ee2d8ab17580003b23f50792fc30512b29e7910"
+  url "https://ghfast.top/https://github.com/jwilder/dockerize/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "431e8f17b43a56c5dfd667a13a8d77d4201ef551345e4008ab30b25333f66e3a"
   license "MIT"
   head "https://github.com/jwilder/dockerize.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5ec84fb8fbb2ab6d3175e63a541974373bc0f2e2464ae9076137db779200bb5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5ec84fb8fbb2ab6d3175e63a541974373bc0f2e2464ae9076137db779200bb5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5ec84fb8fbb2ab6d3175e63a541974373bc0f2e2464ae9076137db779200bb5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "822b1c647fdd56d7f0b240aed0baf832a6126a497b0cc02318ae2ba1b1d5e15f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5310cfbff0584493f275849cbabdc079a0c1ed5d066a3ca42dd077723b85cd52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "910b1f7c1c83b9373a0718f221296c001f3652b359c885ab61b23202a6cae623"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1850165820717335089619abc5cddc112158efb7bb530e800d94ecc0a642e3d7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1850165820717335089619abc5cddc112158efb7bb530e800d94ecc0a642e3d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1850165820717335089619abc5cddc112158efb7bb530e800d94ecc0a642e3d7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e7f92601c3e91de64922d44c485bbb58077ce58578db540e1f7c1c89597e8520"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb6646cdac24967fc24d93ea743b8ee4bd1ba9939d1f5b0ccbf89e04df3d9b80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5436d635687a80680206ccc1601978913d7ab91c0d3aabb81392c85b27874838"
   end
 
   depends_on "go" => :build

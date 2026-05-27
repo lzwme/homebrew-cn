@@ -3,12 +3,12 @@ class LizardAnalyzer < Formula
 
   desc "Extensible Cyclomatic Complexity Analyzer"
   homepage "https://github.com/terryyin/lizard"
-  url "https://files.pythonhosted.org/packages/b3/c7/776f75710b0033d69249b45ed571f8a314c1a8980c1d3c64e3c12f541869/lizard-1.22.1.tar.gz"
-  sha256 "29fe26f3746f8539227ba909a6143c749548690271e13a3f73204b22e2e62590"
+  url "https://files.pythonhosted.org/packages/03/6f/11abc1b580312fd50e0f592659ceeec8911e59a5d4fc127d2509979daf51/lizard-1.22.2.tar.gz"
+  sha256 "39f6a44fb04b8d5edb9c4b95194fd3f8a7d29b2ec4ef30c6774a68f3561bd362"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3d7f0e651d81240d53ca95a793da7d9553ae3749ee63c63349108cf1f7bc4ca7"
+    sha256 cellar: :any_skip_relocation, all: "f585fcbe2d8782c7dcf82c118b700f83a2832eff828ccd1e8ecd406c86d8aa18"
   end
 
   depends_on "python@3.14"
@@ -16,8 +16,8 @@ class LizardAnalyzer < Formula
   conflicts_with "lizard", because: "both install `lizard` binaries"
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/2e/17/9c3094b822982b9f1ea666d8580ce59000f61f87c1663556fb72031ad9ec/pathspec-1.1.0.tar.gz"
-    sha256 "f5d7c555da02fd8dde3e4a2354b6aba817a89112fa8f333f7917a2a4834dd080"
+    url "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz"
+    sha256 "17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a"
   end
 
   resource "pygments" do

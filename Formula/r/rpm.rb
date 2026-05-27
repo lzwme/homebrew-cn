@@ -24,7 +24,7 @@ class Rpm < Formula
 
   livecheck do
     url "https://rpm.org/releases/"
-    regex(/RPM\s+v?(\d+(?:\.\d+)+)/i)
+    regex(/RPM\s+v?(\d+(?:\.\d+)+)(?=<)/i)
   end
 
   bottle do

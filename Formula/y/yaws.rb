@@ -1,10 +1,19 @@
 class Yaws < Formula
   desc "Webserver for dynamic content (written in Erlang)"
   homepage "https://erlyaws.github.io/"
-  url "https://ghfast.top/https://github.com/erlyaws/yaws/archive/refs/tags/yaws-2.2.0.tar.gz"
-  sha256 "39318736472c165d4aec769c89ac4edfe3cab7ff7759f32de0a4e699ef6c88e8"
   license "BSD-3-Clause"
   head "https://github.com/erlyaws/yaws.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/erlyaws/yaws/archive/refs/tags/yaws-2.2.0.tar.gz"
+    sha256 "39318736472c165d4aec769c89ac4edfe3cab7ff7759f32de0a4e699ef6c88e8"
+
+    # Backport support to build with Erlang 29
+    patch do
+      url "https://github.com/erlyaws/yaws/commit/b325caea6cf9df1411b1b1f0c362a1ac28058654.patch?full_index=1"
+      sha256 "f20f083d36ef1b0f9719f8b43084dd6085573119aa14c76b3f1448e375683691"
+    end
+  end
 
   livecheck do
     url :stable
@@ -37,18 +46,12 @@ class Yaws < Formula
   skip_clean "lib/yaws/examples/include"
 
   def install
-    extra_args = if OS.mac?
-      # Ensure pam headers are found on Xcode-only installs
-      %W[
-        --with-extrainclude=#{MacOS.sdk_path}/usr/include/security
-      ]
-    else
-      %W[
-        --with-extrainclude=#{Formula["linux-pam"].opt_include}/security
-      ]
-    end
+    # Ensure pam headers are found on Xcode-only installs
+    pam_include = OS.mac? ? "#{MacOS.sdk_path}/usr/include" : Formula["linux-pam"].opt_include
+    args = %W[--with-extrainclude=#{pam_include}/security]
+
     system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", *extra_args, *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make", "install", "WARNINGS_AS_ERRORS="
     system "make", "-C", "applications/yapp", "install"
 

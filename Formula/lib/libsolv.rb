@@ -1,8 +1,8 @@
 class Libsolv < Formula
   desc "Library for solving packages and reading repositories"
   homepage "https://github.com/openSUSE/libsolv"
-  url "https://ghfast.top/https://github.com/openSUSE/libsolv/archive/refs/tags/0.7.37.tar.gz"
-  sha256 "ad6a38624dde26fc59c41427608536c443b76f90dcb6bb96c2e70b8e3ee20419"
+  url "https://ghfast.top/https://github.com/openSUSE/libsolv/archive/refs/tags/0.7.38.tar.gz"
+  sha256 "08487f070e6178e024a3f36f9d8759e0466dc1d13e30bfe31cab5bbef2fa7be1"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Libsolv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b65aca1a7f1876cde376dbb21c43deecbda2644934ead2a5b5e7d090997593bb"
-    sha256 cellar: :any,                 arm64_sequoia: "975c816a8e47eb9f8a9ee8b244c7039094971d38411e7a6bf3039bc3624febd5"
-    sha256 cellar: :any,                 arm64_sonoma:  "be33a46245533a8a0e7672dff3b1adebb7b23cde1fa5d07ade115d5f738ae7dd"
-    sha256 cellar: :any,                 sonoma:        "4fac39badbbf4a2662e9aecd4170957cd8c901ce641aad5bbabb91e9302b8030"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13fb5494c75df1f113dbbc51e649f3006f4471da2ad297be6f213780e3c70a4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f43a05ae93e5e41be66adf05a44e9fa681b09a8708600c6943932b705967dfe9"
+    sha256 cellar: :any,                 arm64_tahoe:   "e83e0a9de6d9cbf3c2d9322bb620d61b8f64033f3283658d2a6ed7f6b9c3c5c4"
+    sha256 cellar: :any,                 arm64_sequoia: "5f9d0996ea4e98f02706544952386796dde376eb536ecd5ca9681938dbe7a987"
+    sha256 cellar: :any,                 arm64_sonoma:  "f5f18bab60e06db98ecc9a21a65edd74454fb9ed1d6ddd442e0e18d6b7753b39"
+    sha256 cellar: :any,                 sonoma:        "720522ea6e3419bbb936095f95a529653a847086d31b99940f08fad45b421ca6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fdeccd1b0a6957057bce004ef1fd28eae48d073bdfb3e463c8e7dc8cc5e5a9ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0b66426fbedb40b42f7c8bd93db2ccbb313a7ad147f3659f2ab917fc0344d52"
   end
 
   depends_on "cmake" => :build

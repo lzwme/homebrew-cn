@@ -1,18 +1,19 @@
 class Mvtools < Formula
   desc "Filters for motion estimation and compensation"
-  homepage "https://github.com/dubhater/vapoursynth-mvtools"
-  url "https://ghfast.top/https://github.com/dubhater/vapoursynth-mvtools/archive/refs/tags/v27.tar.gz"
+  homepage "https://github.com/dubhatervapoursynth/vapoursynth-mvtools"
+  url "https://ghfast.top/https://github.com/dubhatervapoursynth/vapoursynth-mvtools/archive/refs/tags/v27.tar.gz"
   sha256 "b3b93ae7243d91d058a2b101ca725b949350b3edf20c080a8735ab76993c9df8"
   license "GPL-2.0-or-later"
-  head "https://github.com/dubhater/vapoursynth-mvtools.git", branch: "master"
+  revision 1
+  head "https://github.com/dubhatervapoursynth/vapoursynth-mvtools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "14809c01efd7e53351c96d8d1defba2a9325e547fa0db9036d1b6f16ac650f02"
-    sha256 cellar: :any, arm64_sequoia: "a1b4a4b4db3ce08f36b2232cba673af8588b8c5a32d47b1c092a88040358e539"
-    sha256 cellar: :any, arm64_sonoma:  "f6bfb7057960f5aa77cdbbd89acd1dcb97b22625e9dde04194d613796590d381"
-    sha256 cellar: :any, sonoma:        "1c92246993863db2da8f4d30f40c1030a0431dc47386e26f43f583ebde716adc"
-    sha256               arm64_linux:   "efe41d8791343d134a6951a75274e5714baff052ab75863455991ec5aa17fa0c"
-    sha256               x86_64_linux:  "33c670e57b5f02ee2070c48438aea149d0d5162fd8b987e6fa91ea2e1a99f28a"
+    sha256 cellar: :any, arm64_tahoe:   "922c17ab994c1746bab6cadc6ad3c8bd322b1f095d03209693108f9bf1efbb45"
+    sha256 cellar: :any, arm64_sequoia: "3732b0662adf7e50dc1cba54300f446889acdc3de29c2abfebfa6940fb709696"
+    sha256 cellar: :any, arm64_sonoma:  "96eefb764fde2c1e3ddaae8f94d3423045788607600f55f92bcd03516042bf0e"
+    sha256 cellar: :any, sonoma:        "a4248298ad37f853b77433101d0b21efda25bef404a6d8d48a682089245c0628"
+    sha256               arm64_linux:   "547c0ccfe8af8b15ccfef0ae402c287a072a0c463dd570694b138f319db2cc65"
+    sha256               x86_64_linux:  "89a9a36bb67e42393c38bc8d668265a1a3becff37c1681503386805fdac9f2be"
   end
 
   depends_on "meson" => :build
@@ -20,46 +21,29 @@ class Mvtools < Formula
   depends_on "pkgconf" => :build
 
   depends_on "fftw"
+  depends_on "python@3.14"
   depends_on "vapoursynth"
 
   on_intel do
     depends_on "nasm" => :build
   end
 
-  def install
-    # Replace vendored path to homebrew formula path
-    inreplace "meson.build" do |s|
-      s.gsub!(/^incdir = include_directories\(.*?^\)/m,
-        "incdir = include_directories('#{Formula["vapoursynth"].opt_include}/vapoursynth')")
-      s.gsub! "py.get_install_dir() / 'vapoursynth/plugins'", "'#{lib}'"
-    end
+  def python3 = "python3.14"
 
-    system "meson", "setup", "build", *std_meson_args
+  def install
+    # Work around Homebrew's python prefix patch
+    args = %W[-Dpython.platlibdir=#{prefix/Language::Python.site_packages(python3)}]
+
+    system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
-
-    # Create a symlink for the old library name for compatibility
-    ln_sf lib/shared_library("mvtools"), lib/shared_library("libmvtools")
-  end
-
-  def caveats
-    <<~EOS
-      MVTools will not be autoloaded in your VapourSynth scripts. To use it
-      use the following code in your scripts:
-
-        vs.core.std.LoadPlugin(path="#{HOMEBREW_PREFIX}/lib/#{shared_library("libmvtools")}")
-    EOS
   end
 
   test do
     script = <<~PYTHON.split("\n").join(";")
       import vapoursynth as vs
-      vs.core.std.LoadPlugin(path="#{lib/shared_library("libmvtools")}")
+      vs.core.mv.Super(vs.core.std.BlankClip(format=vs.GRAY8))
     PYTHON
-    python = Formula["vapoursynth"].deps
-                                   .find { |d| d.name.match?(/^python@\d\.\d+$/) }
-                                   .to_formula
-                                   .opt_libexec/"bin/python"
-    system python, "-c", script
+    system python3, "-c", script
   end
 end

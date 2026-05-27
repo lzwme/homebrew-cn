@@ -1,8 +1,8 @@
 class AtkmmAT228 < Formula
   desc "Official C++ interface for the ATK accessibility toolkit library"
   homepage "https://www.gtkmm.org/"
-  url "https://download.gnome.org/sources/atkmm/2.28/atkmm-2.28.4.tar.xz"
-  sha256 "0a142a8128f83c001efb8014ee463e9a766054ef84686af953135e04d28fdab3"
+  url "https://download.gnome.org/sources/atkmm/2.28/atkmm-2.28.5.tar.xz"
+  sha256 "ae449192a582a2582a95e0602b15d792bbd639e836339b81ef916aa87540ac5c"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,16 +11,12 @@ class AtkmmAT228 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:    "e8931497dd646ec78caf0f60b31040f777a584af67d3b46439f4811812c0645c"
-    sha256 cellar: :any, arm64_sequoia:  "666a7ab1c48c5013fe80065747861be3df354221fd8f2dc4fa6fc312961f3edc"
-    sha256 cellar: :any, arm64_sonoma:   "f456190b4929828e7786823167e1b49e017314b86018a02d5730921db647b61f"
-    sha256 cellar: :any, arm64_ventura:  "9258ea3392df7963c73faaeebb0d1daa29bef3e3d29a2fb3ba0ec75d70a5be9b"
-    sha256 cellar: :any, arm64_monterey: "0c6cab78734bf9ba2566cc9226d100ac78fc7b50e3576df09bdccdca3cd17995"
-    sha256 cellar: :any, sonoma:         "23fc5fb3345c060262e193aa31f07fe347f297a3e365090d77697b0c3531111e"
-    sha256 cellar: :any, ventura:        "d7e72faf7d1f8cec802a2cf3ffc36a24e0c763d7aa5c350796d1d49255fad66a"
-    sha256 cellar: :any, monterey:       "d48e4769f508c8f4b3147fa598020da42d42cdce9ad5ac4377763f508d3e228b"
-    sha256               arm64_linux:    "96e07ff462123e77d619943a5bba6ac854387c209a58547ecc7d772172521b44"
-    sha256               x86_64_linux:   "fc9b8e9286aaf97bc9255158fae66cb4ea5c6a2c2c8f6cbb3681a69cd9fa39f3"
+    sha256 cellar: :any, arm64_tahoe:   "705de48adab70c424550dc780e5605f793cdded64693e31ac89dfc89b6cc78b8"
+    sha256 cellar: :any, arm64_sequoia: "33cf53b6543685306f355219df4868756989754d68241ed2261f60166a1e9d84"
+    sha256 cellar: :any, arm64_sonoma:  "d529dc45c703e2701ea071875a552df76a88dbad5952e25bc1508a68a07177c6"
+    sha256 cellar: :any, sonoma:        "8d00c4665d3776f37519d276675fe3f678a6d763a23103f3f33d10168be23655"
+    sha256               arm64_linux:   "8eaf1ae166256b15fd53483a1eb2bb799e813e9f0af7c86b983a754d9a8d6a12"
+    sha256               x86_64_linux:  "66fe6c72737ac6e46980d801c614b3960e2d4f3883f884ba28820c87e9a339bc"
   end
 
   depends_on "meson" => :build

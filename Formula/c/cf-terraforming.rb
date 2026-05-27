@@ -1,18 +1,18 @@
 class CfTerraforming < Formula
   desc "CLI to facilitate terraforming your existing Cloudflare resources"
   homepage "https://github.com/cloudflare/cf-terraforming"
-  url "https://ghfast.top/https://github.com/cloudflare/cf-terraforming/archive/refs/tags/v0.26.0.tar.gz"
-  sha256 "f2bd281ae08038efa858acbc7af937b305e5f4a042f81574cfc0922fde5cc8e8"
+  url "https://ghfast.top/https://github.com/cloudflare/cf-terraforming/archive/refs/tags/v0.27.0.tar.gz"
+  sha256 "cd76f85a4a1664769521c870985ca12281c8c1c195d501430f80049ae59ed37d"
   license "MPL-2.0"
   head "https://github.com/cloudflare/cf-terraforming.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8db1dbbef5153721bfd2b7433066140b47fe75534236e4f1f76b500d2d41b0b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8db1dbbef5153721bfd2b7433066140b47fe75534236e4f1f76b500d2d41b0b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8db1dbbef5153721bfd2b7433066140b47fe75534236e4f1f76b500d2d41b0b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b49067d58b3cdf602dc8fdc532334293358e0afcf3de42f20733df16906651f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1479a298af9d8205d42318c5eb61145d93fb964e9046776ba38445393c176483"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba3b2b3c64d6bb58debdb0b30bd7648f21627e85e68f84e994b16b874da46155"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df8a464242d1631c2d600f78fbf17c6b294f5b413534e428de944b28d149ad47"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df8a464242d1631c2d600f78fbf17c6b294f5b413534e428de944b28d149ad47"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df8a464242d1631c2d600f78fbf17c6b294f5b413534e428de944b28d149ad47"
+    sha256 cellar: :any_skip_relocation, sonoma:        "46e00a47a7505787324b4d886da4ad7c61068d92c960cc0fc7033f7785dc8461"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a77b463d126089f4eda1be2dd354d98a41984845b7bb4950b289cd512e11843"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dea4ee0dec5c2b53e6a9e48e30633ec3f659c1d07b75e16c2db71ba5f5a1a36"
   end
 
   depends_on "go" => :build

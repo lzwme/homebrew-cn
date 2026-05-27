@@ -1,17 +1,17 @@
 class StripeMock < Formula
   desc "Mock HTTP server that responds like the real Stripe API"
   homepage "https://github.com/stripe/stripe-mock"
-  url "https://ghfast.top/https://github.com/stripe/stripe-mock/archive/refs/tags/v0.199.0.tar.gz"
-  sha256 "c0ad9d71656cc42dca9055a35fbcf3b5910f3ead3f04c7f2473c682ab3d55eef"
+  url "https://ghfast.top/https://github.com/stripe/stripe-mock/archive/refs/tags/v0.200.0.tar.gz"
+  sha256 "5b3cda961b0b8d16f9fa6ba7b75318977abb06f1aa39362eba259dab01e9c632"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89a448ce245d332667812752611deafdeccd4ea2f6ada31d4b3a12374d6af870"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89a448ce245d332667812752611deafdeccd4ea2f6ada31d4b3a12374d6af870"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89a448ce245d332667812752611deafdeccd4ea2f6ada31d4b3a12374d6af870"
-    sha256 cellar: :any_skip_relocation, sonoma:        "da853eee894e22557ea070aa9b006f54791577e0d3d2c3fe50925d2d95fc6910"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "122d455d39d5b05c5d8a9e18e0a9b76965be208cb95cdd1d41e7df469902d281"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "203efa75d6b1596d67960ea1de1a65196754c5f6ec25ef2e9c10d04235e66eba"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b563625eb840ce1eb2b4af21cc5fa5a8816e40e08c24fd7538925ff76dd62fc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b563625eb840ce1eb2b4af21cc5fa5a8816e40e08c24fd7538925ff76dd62fc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b563625eb840ce1eb2b4af21cc5fa5a8816e40e08c24fd7538925ff76dd62fc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e460a3c24194b66428f68d53cd7c3c7e87e9394873179814a2d48108ed3c3029"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "208b03a0a30c3aa4c0484621171dfbe9da0ed31485a045ef500c1cb8ae56ac2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36444f97d3e8bc3f17058d2a1eac0b42bf46193971f509148f8d2e4dc5bfa9e9"
   end
 
   depends_on "go" => :build

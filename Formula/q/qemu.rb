@@ -4,6 +4,7 @@ class Qemu < Formula
   url "https://download.qemu.org/qemu-11.0.0.tar.xz"
   sha256 "c04ca36012653f32d11c674d370cf52a710e7d3f18c2d8b63e4932052a4854d6"
   license "GPL-2.0-only"
+  revision 1
   compatibility_version 1
   head "https://gitlab.com/qemu-project/qemu.git", branch: "master"
 
@@ -13,12 +14,12 @@ class Qemu < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a1a3f3bec0d8bbc6976822f8b38758486430809ceb1b6b8d9d98dacb8b961a3b"
-    sha256 arm64_sequoia: "469b7fe45e19e5c0516c5369bcba23890412f3e2c243f72690ac65fcb382fe67"
-    sha256 arm64_sonoma:  "0d80c35b4760cd5ba1da1c08c6a89511b6c31fba7d9b52f812d255d30ca6bf6e"
-    sha256 sonoma:        "a7bd0dd4d00305921af70c535ebd40f972ce6c9c4670fd3c93532da4de533f34"
-    sha256 arm64_linux:   "0a18129011938f3bde7689f42855f6f7b2ecea4eb278ed30341bbe0fb6042f15"
-    sha256 x86_64_linux:  "e8e6c18ad6782f533e82858b9e832ca2a05e0d641e1e99ae22e31531248dc489"
+    sha256 arm64_tahoe:   "fa88159d5242be33deb3e1ad6f84293de50e4100082837d5aa0970034577ab84"
+    sha256 arm64_sequoia: "febd2e7c191898e740bce6eee61431d7256dbdbfd0aea469ec99b1d08eb00964"
+    sha256 arm64_sonoma:  "e5fd63c5610f4310139c8092376541e70c5f791f27c7aad06694f0844c9c1506"
+    sha256 sonoma:        "9bf7d36b1f66dfbd95aac9d47d5a17b8c8cb66d93a487532ebb211ab09af87b7"
+    sha256 arm64_linux:   "ce673c0046f4c56eb5e5b8b204a2565f54228c8f7c976fa50843f2e40d9a8b81"
+    sha256 x86_64_linux:  "c754bf4de85c2954df052e8c166ff72bac8e54d286cfd670fcc29433f6fa36c1"
   end
 
   depends_on "libtool" => :build

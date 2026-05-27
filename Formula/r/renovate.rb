@@ -2,8 +2,8 @@ class Renovate < Formula
   desc "Automated dependency updates. Flexible so you don't need to be"
   homepage "https://github.com/renovatebot/renovate"
   # TODO: Switch to npm registry URL when https://github.com/renovatebot/renovate/discussions/42965 is fixed
-  url "https://ghfast.top/https://github.com/renovatebot/renovate/archive/refs/tags/43.195.0.tar.gz"
-  sha256 "fae882b76440d9e552d765c7649e68818d3f006cf0c2ee8f40a09e3cde05010a"
+  url "https://ghfast.top/https://github.com/renovatebot/renovate/archive/refs/tags/43.196.0.tar.gz"
+  sha256 "6634baff3e034456217ca5d8ac3c2b44d4af552de0bd6fb37ff86758b960dfc8"
   license "AGPL-3.0-only"
 
   # livecheck needs to surface multiple versions for version throttling but
@@ -19,7 +19,7 @@ class Renovate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8e9422ff59c3d6421494610794526af4c1ac117f212cc8a8c988d1b4e2731b7f"
+    sha256 cellar: :any_skip_relocation, all: "b73c6f93b82cce0b3d0e69959e836652af30d5aa1969da8f28fff657f58a594e"
   end
 
   depends_on "node@24"

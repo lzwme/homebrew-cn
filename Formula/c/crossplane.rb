@@ -1,8 +1,8 @@
 class Crossplane < Formula
   desc "Build control planes without needing to write code"
   homepage "https://github.com/crossplane/cli"
-  url "https://ghfast.top/https://github.com/crossplane/cli/archive/refs/tags/v2.3.0.tar.gz"
-  sha256 "c4bd32825dd32c2ff5028c4c450168b9894bbefe54109e6f5056ac648a080f2c"
+  url "https://ghfast.top/https://github.com/crossplane/cli/archive/refs/tags/v2.3.1.tar.gz"
+  sha256 "6e7e5a7aaf745dd6d9fcf04fa19fc555d4f0a2df865f50a3c6a071173bb66373"
   license "Apache-2.0"
   head "https://github.com/crossplane/cli.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Crossplane < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ba62b5174daaedbc38d97e28ecdf518971a0f3f8831809e741389b0d0ee79d92"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1736b4232af35bfc8dd98419b98eecd2ef42cb2ac3623249f4f35a536253c90"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36cc10dd37628bd8f5138d36438a0b919c74c4403990a87b0e7dea66f48c9195"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4c4688619cc30106d0a1be3cb76d0352ff64947f49516cd61dbfcd9282d43dbb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7adc620c1ffd84fd04a88f36e9c6004830d55e8554481ba1f6ccce5c4e17a61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa5263c3c233cd83e7679c48983e185e5f434a3b745e05a1e8f4af4959729d80"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cad59d19848d4942b664a835f038b9ac1757090488fe9343d2f5fa109959b22d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78d5e7eec42dc287d8e9505a37752fdc7ac64b80f1dd68b3f001b3c9e5797207"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fdcd74df714ee0f5e58aee452d837d8715df1fb1346f7fbc98c5b60f9aab5fcd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d57d89ea1b69300f772645d5ba6a8abbbd62998c0b2d4447c25d5a6c14dc149b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcc1ee70d50ae4c27696ee53de116de2b00d6c5de2bde4e4c45a95c598fccb23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6c3c2d10cf20cc0fc12a50eb498100f26d86c110bda9f0d4fbac6edc68b2c95"
   end
 
   depends_on "go" => :build

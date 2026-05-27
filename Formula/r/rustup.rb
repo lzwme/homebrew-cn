@@ -9,12 +9,13 @@ class Rustup < Formula
   head "https://github.com/rust-lang/rustup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "040e2eb689f99acefa1849bd9c5f7591ba100fda29323901859b7a86e68d6bf5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94400995ac4847eee9753117cf8833beed89d9154304a5ea58d736e4d297b9c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f977dd0fd72ed019b2c6aef6195e1052e5d09e502a846f1c65b6b49f3e5c501d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d6b80251f606dee170ceb341dc13b4f890dcc24b5a7d65eeaa0e14aec1506c21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "98763babc2873c4af6a48531c80314659bd8f13ce782d7ed6d427868085f7526"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81179ed5f8f61f32cd181b5f278a60616a345f8b01e39949501674f0ec85e744"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1adfcf92959af43b31eb55007ec19dccb0236b9e44804025aeda84f931d7a427"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39caad94c4db4d5bc3ca121a7dfcdc41281281088b36b11afb24a92de653b5c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00e1f91ea9c03796a1808726abe397935567903a8dbcd22e2f3db3c9ee0d2bbf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "282513938fc4e7cbb73d1c29ec969295b021cf725036b571f701bee2b25f38f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e9c1c73a958abd26ba816d34fa017e762cf048db5a9664ba0a6e404c44f5320"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bff7c94142160615a5919c3c673b36c62093bd19290e053f3b4738ebda500665"
   end
 
   keg_only "it conflicts with rust"
@@ -48,6 +49,12 @@ class Rustup < Formula
     bin.env_script_all_files libexec/"bin", RUSTUP_OVERRIDE_UNIX_FALLBACK_SETTINGS: pkgetc/"settings.toml"
 
     generate_completions_from_executable(libexec/"bin/rustup", "completions")
+    [:zsh, :bash].each do |shell|
+      generate_completions_from_executable(
+        libexec/"bin/rustup", "completions", shell.to_s, "cargo", shells: [shell], base_name: "cargo",
+        shell_parameter_format: :none
+      )
+    end
   end
 
   def post_install

@@ -1,10 +1,9 @@
 class Libcdr < Formula
   desc "C++ library to parse the file format of CorelDRAW documents"
   homepage "https://wiki.documentfoundation.org/DLP/Libraries/libcdr"
-  url "https://dev-www.libreoffice.org/src/libcdr/libcdr-0.1.8.tar.xz"
-  sha256 "ced677c8300b29c91d3004bb1dddf0b99761bf5544991c26c2ee8f427e87193c"
+  url "https://dev-www.libreoffice.org/src/libcdr/libcdr-0.1.9.tar.xz"
+  sha256 "f7bb6abdd7f226820f288a93dd8d07759833c0250d9e202af90f9b312c4665a3"
   license "MPL-2.0"
-  revision 2
 
   livecheck do
     url "https://dev-www.libreoffice.org/src/"
@@ -12,13 +11,12 @@ class Libcdr < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "e2428718f47c0d05853f80bc0e4578a223468a269320f8e5ca52c87e99afb96a"
-    sha256 cellar: :any,                 arm64_sequoia: "6a858bcf883c4308b08456b366f0b31c337f40d041c0cbddb2bd1994db708758"
-    sha256 cellar: :any,                 arm64_sonoma:  "df8a1571909caa08bad2913505550031b0cb6acc053d41ce5c70579c76cad69d"
-    sha256 cellar: :any,                 sonoma:        "60e655184d0b933bb7c985e87d4b179e371421992d9cd68f3db6ca84c2612306"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3425841969e05fc71350437f2f13388bc9e67fb3c1fb487f10e78cf227c8439c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79639eeb9420eed8e22b2757b6270bc7e5720ed7d8d28aa54a408a9533557b46"
+    sha256 cellar: :any,                 arm64_tahoe:   "5d82d39e2a9d1767965befc3873337ddddfe1e5623a433c79276b348479242a0"
+    sha256 cellar: :any,                 arm64_sequoia: "9583474ebb254aeeab8a81c8862ecebc268acb3de3f4396bb4a83e3f856bd274"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe3cee6fa9830c162fd068bf8a88ce7ca97a96f8c8a930f3d85a18693041ec96"
+    sha256 cellar: :any,                 sonoma:        "3275f34494561a0e9d0e07e453f2704fb980beee725a31d31157767e91798941"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3dffcc35d0d4b1424eb1faf29b3456b96d65b7283b88e208960b68d846c91574"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ebb5d2f2b63c1088bd4056d1c85494802aedee661624eded24d75a1a9ccdb1b"
   end
 
   depends_on "boost" => :build
