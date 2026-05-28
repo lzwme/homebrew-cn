@@ -1,11 +1,10 @@
 class Lynx < Formula
   desc "Text-based web browser"
   homepage "https://invisible-island.net/lynx/"
-  url "https://invisible-mirror.net/archives/lynx/tarballs/lynx2.9.2.tar.bz2"
-  mirror "https://fossies.org/linux/www/lynx2.9.2.tar.bz2"
-  sha256 "7374b89936d991669e101f4e97f2c9592036e1e8cdaa7bafc259a77ab6fb07ce"
+  url "https://invisible-mirror.net/archives/lynx/tarballs/lynx2.9.3.tar.bz2"
+  mirror "https://fossies.org/linux/www/lynx2.9.3.tar.bz2"
+  sha256 "174b7f2866a60f3247ba75f5c7dbb10b124aede4a1359312de15f3bfebd2050f"
   license "GPL-2.0-only" # with non-SPDX exception in COPYHEADER to use OpenSSL and other libs
-  revision 1
 
   livecheck do
     url "https://invisible-mirror.net/archives/lynx/tarballs/?C=M&O=D"
@@ -13,12 +12,12 @@ class Lynx < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b09ddbe33e1e219183d99898e65aad94084ac685657203a1ac1f64a584e45c22"
-    sha256 arm64_sequoia: "6eb6e6941ef97b8a19cb4dbc39c27dbd3accb6a3f8d64f1700f4f32ed2810d57"
-    sha256 arm64_sonoma:  "34ab10d18649a2d01a70358ca8b7e37b6a4f6f5ddf8a35e5d8058914c912ff8c"
-    sha256 sonoma:        "d4647fcb2b60ec32056e395eebf2fece4d20dbce9968e4c8046133be6f701be6"
-    sha256 arm64_linux:   "af87f614a7653a2f5aa891b467721b781ae1e3f8b746f68d1c4eb7a4753c39cf"
-    sha256 x86_64_linux:  "955b23500f5f853d2baf9fe16c82347e078e183f75db73001efcd7705d92a143"
+    sha256 arm64_tahoe:   "7402f2557043f9bcf6c927c53c83a2b656d3080d8a90127b7eb033a1941325c0"
+    sha256 arm64_sequoia: "6455e96b5abc00fd0baac1dc6363261600b1265b0755411d5cdfb2cc5462c5e8"
+    sha256 arm64_sonoma:  "624b9803ceb52e0d43c4f2702ed2efbf9848617d708559858ed67c26bbbeaf2b"
+    sha256 sonoma:        "b9731435704ba12929ba5ef169655e0aafdfd112ea9613155894394d9feef6e7"
+    sha256 arm64_linux:   "9b5dd269a12f18d6141cbdfbc333fa06f01e40753a56d7ce69a82b462ff8c972"
+    sha256 x86_64_linux:  "6bb1b89675b6b39d7c532d1f767eae567b53b232b9e94e3048df3e1c577c0b05"
   end
 
   # Move to brew ncurses to fix screen related bugs

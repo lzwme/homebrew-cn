@@ -4,7 +4,7 @@ class DartSass < Formula
   url "https://ghfast.top/https://github.com/sass/dart-sass/archive/refs/tags/1.100.0.tar.gz"
   sha256 "d4f1fa35b6911c4a3fcb9bb8723e4ed6724c2aea71813dfce49ce65aed20b57d"
   license "MIT"
-  revision 2
+  revision 3
 
   # Some tags are used for sass-api/sass-parser
   livecheck do
@@ -13,12 +13,12 @@ class DartSass < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fe028e3dc2040b9ee9b125244b4b828ef510a25caf90345160ac0755025deb78"
-    sha256 cellar: :any,                 arm64_sequoia: "341ab4f37a99c5dac53caedd11d74292c058c185b77bcb84fe64346e5080b770"
-    sha256 cellar: :any,                 arm64_sonoma:  "20ea853363c9cab12105c2a7f5e7a4ef085fde44cecbf4572789345eabe7c48d"
-    sha256 cellar: :any,                 sonoma:        "c045c6860a8f2c407601fba3ecf5bc48c8af367f3fc0f8456fd37e11925f008b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15fca2c18a0bc3b13a7556c4bc3dbda5a3f7e76da2725add088c34c5efae3c52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4541c06d78451c3311e70975203059710b97b18dc01862273b45c7444b3f741"
+    sha256 cellar: :any,                 arm64_tahoe:   "7224e7b6b24b34cdeb0e0186a3853d58cf987d0ef967c7f3b44efda6c9888848"
+    sha256 cellar: :any,                 arm64_sequoia: "196fd41886378a073bfd4f8bcbf9a658b67b49aa6998b4fe4595315e926067b4"
+    sha256 cellar: :any,                 arm64_sonoma:  "758ec341fc2dc881d54b0165fac1c7aae111e194a2b43c20b5d84eccf9a33985"
+    sha256 cellar: :any,                 sonoma:        "0172382b8574a84ed256f501694288f0def9d8dd1e405d073097883e56dcde96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "71155eb9fe36336158a2f1a69b20a8c1cb763425b56b615576fedd9d1c67d350"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afaf1c4c95277a8f8bf28c0f5c3be607172a23f288bb1b69bbca21ac01d91f57"
   end
 
   depends_on "buf" => :build

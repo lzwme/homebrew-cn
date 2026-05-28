@@ -1,18 +1,18 @@
 class DartSdk < Formula
   desc "Dart Language SDK, including the VM, dart2js, core libraries, and more"
   homepage "https://dart.dev"
-  url "https://ghfast.top/https://github.com/dart-lang/sdk/archive/refs/tags/3.12.0.tar.gz"
-  sha256 "c5eac0499935b6c13189a03d502a8e6aa0afa8c299a0458258d97f4234ccf512"
+  url "https://ghfast.top/https://github.com/dart-lang/sdk/archive/refs/tags/3.12.1.tar.gz"
+  sha256 "75aeca0e067865646636ffc8cfd4f1763b29bc75692ae6ed5ee69de8ec674e22"
   license "BSD-3-Clause"
-  compatibility_version 1
+  compatibility_version 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "96ce56dd2a090c44eb7e293b4d46f0100616660d3613bf9e3fb526bd915dc395"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8cd66bd28f7d966978c097dffc27f4982c7f3c0f74f09098e08fc3f41c6370ab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78ded9508e309c2a291bf197bd4e34ecfad67b131c9211807b6cc3190ef93e64"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2e87c4a42ce89e36fce9d480b4ea42ba1254b8e8d50834de4251b2efca7a528b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "009693145a96f7083512c2f7a1c546671bb84c2a9c17c172643f7c5781b4ae06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd8f4ebf10ad79876dcf9cc1a868fb6a934ab00c645e4386b6d2147cdc86c0dc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92d1c592f12900045dcb9e54114f32c908a9e7958e4d3fb544a39574ae7eae49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1945fc695994a2f3b78cb651a061ac42ec39435fc7d3826f7e0a43292ebb118a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6997d245b2cb1d8216a82f8638e0520f9f6be3be2f56d8915a54cd8bf1f42be4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1f43dd8597d2bd5bfa3b02bd7f14761122069c25880baa9f0b3157d8cd0e6e05"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e14374b436c66662534d272769421bd71152d45c4785c59d09f0e943915e57c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62e8663f0afd7902752a8124c3f457e8191e2327623aded8d41e12f27e004c97"
   end
 
   depends_on "ninja" => :build

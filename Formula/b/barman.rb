@@ -3,17 +3,17 @@ class Barman < Formula
 
   desc "Backup and Recovery Manager for PostgreSQL"
   homepage "https://www.pgbarman.org/"
-  url "https://ghfast.top/https://github.com/EnterpriseDB/barman/releases/download/release%2F3.19.0/barman-3.19.0.tar.gz"
-  sha256 "1c3ef54559908c779b0d96fd0d875d90939a809e14b84b1185fd20cfacf7dc20"
+  url "https://ghfast.top/https://github.com/EnterpriseDB/barman/releases/download/release%2F3.19.1/barman-3.19.1.tar.gz"
+  sha256 "2f71c4a1f1ba53f694cbdf838bb9906d8ba02b97d1fd3041196e8999bec7a1ee"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "375b1c07b901e7857934b8d83a281763b728a96324e6d85a8057b6583977e01e"
-    sha256 cellar: :any,                 arm64_sequoia: "8489ab6f1ded27f5a6e031fd8eaaa431b5e15aeb8f09d26548ae938c5fa4cf1e"
-    sha256 cellar: :any,                 arm64_sonoma:  "0554cd8a2516938cbf6e9a58a4f8064642188f078270d70271a2a93ff2037969"
-    sha256 cellar: :any,                 sonoma:        "c295a571af796d49d9bcf181c35f473751897f1b9655017ce8e662e7978232fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "170ae6e3fe2cff946ae4463d0c604f995feea1c2be0701e82853cbde9e470391"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4db6857ebdf1503458ba5bb484e7167b1cbdaa3a4e32106c40cf79b7e598694c"
+    sha256 cellar: :any,                 arm64_tahoe:   "238fae0eaf5353ff5ce5d49a915678ddcf54fe746c6bc9e2aaa35a919bdf1d16"
+    sha256 cellar: :any,                 arm64_sequoia: "bf705af8b0e6dd0d627c7a5a96a49144434d6a6909b562dbb389bb6441aa6997"
+    sha256 cellar: :any,                 arm64_sonoma:  "434ba26147d2d248c4b9af59ca05ad145911b5364b4257b0bba7c8834833087f"
+    sha256 cellar: :any,                 sonoma:        "0e3b71ce18a1c8e4f8dbed22fc824939cd9067bca186f68cba8c7b051536ea08"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "208680e61edf927fe9bb46430653b5fbfb9a7a2093c63462e08e3718b1c3a377"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f5011eb88f1b8b29e54acd4926426939cea609a95da5c3b0b20f81736c542ed"
   end
 
   depends_on "libpq"

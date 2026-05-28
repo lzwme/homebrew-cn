@@ -24,7 +24,6 @@ class YtDlp < Formula
     depends_on "pandoc" => :build
   end
 
-  depends_on "node" => :build # https://github.com/yt-dlp/ejs/issues/37
   depends_on "certifi"
   depends_on "deno"
   depends_on "python@3.14"

@@ -4,24 +4,19 @@ class Ctpv < Formula
   url "https://ghfast.top/https://github.com/NikitaIvanovV/ctpv/archive/refs/tags/v1.1.tar.gz"
   sha256 "29e458fbc822e960f052b47a1550cb149c28768615cc2dddf21facc5c86f7463"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "891ba106991bf7d6a64f1216540cb3332c5eed558e8b7c30733d1d47b766d5dc"
-    sha256 cellar: :any,                 arm64_sequoia:  "37152d389946123d23de9ee5d1bcda011032a94ba42e1df5ce82363c4224ae56"
-    sha256 cellar: :any,                 arm64_sonoma:   "5b92c898bfc950574c2a7b15d19dc064610d2a7df9c0825839ae83d864d49a35"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "07d558283ff80cd3054aee902b229c0c0b23ae63190cb2ea1d0b235e1263ec15"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5071c8b89a29f293d184780ec3214faca02fc5196329043f99a8cff76657982a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "98372ed14dc5b89f3b3e6fabdd24b51c754d081e04a5177dbf0f3fd2a8aa3eea"
-    sha256 cellar: :any,                 sonoma:         "0b11166fde3dd51d0ca4419bbf8457858f139e1eeb23cdba43749b3742b71c7f"
-    sha256 cellar: :any_skip_relocation, ventura:        "885b4e98aa3ba62f36f7924dd6a4006aaf873bed1c5aeb30fc6599413e48ca03"
-    sha256 cellar: :any_skip_relocation, monterey:       "7749f4c22614e7fbb0724661417495a36559551debb40f76e5e85cf507d2a86b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "13ba1dd46f7dd11e21a82467ed1fd1640308482e789b8236fffe612e0f4280b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "cc5045108cb40264a0d6870ca7c21f4d32be00b365d47af2d659523a46406f84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8c9583347b626f784679ab68dccf83766e98d58b0fb1357a4852271f92a1161"
+    sha256 cellar: :any,                 arm64_tahoe:   "4255d6a7a1a4b093609a9b614adaaacf563011c758916c1c3aa804defbe89e93"
+    sha256 cellar: :any,                 arm64_sequoia: "7dd57d5d3080b7ed19c8cd9b27bd26673ad2ce6df9ae1543a449f62820284cdc"
+    sha256 cellar: :any,                 arm64_sonoma:  "3afc3e19e6d42a56723344456a005cb43f0ea91a30b6fd7b8123a42fe40ee8cd"
+    sha256 cellar: :any,                 sonoma:        "c2d0711117c2451fd739091152c5098e2cfb07881f2b25f791475c28819a3cfc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee9c91478a3c912d51de6a67e22ca99f97b549e933ceddf535b0582f85b20a58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "899ad1cf4f12ee2219a694446219373d81b5c9274087c7e1797a4cca2f5a5bc7"
   end
 
   depends_on "libmagic"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   fails_with :clang do
     build 1300
@@ -37,7 +32,7 @@ class Ctpv < Formula
 
   test do
     file = test_fixtures("test.diff")
-    output = shell_output("#{bin}/ctpv #{file}")
+    output = shell_output("#{bin}/ctpv #{file}").gsub(/\e\[[\d;]*m/, "")
     assert_match shell_output("cat #{file}"), output
   end
 end

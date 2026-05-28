@@ -1,8 +1,8 @@
 class Gh < Formula
   desc "GitHub command-line tool"
   homepage "https://cli.github.com/"
-  url "https://ghfast.top/https://github.com/cli/cli/archive/refs/tags/v2.92.0.tar.gz"
-  sha256 "ad18928ce4e2695d7fc1adefa0f5e0496e570a430016cee4c22d7bf87e5d9c1d"
+  url "https://ghfast.top/https://github.com/cli/cli/archive/refs/tags/v2.93.0.tar.gz"
+  sha256 "8f3369ade41fe7a04ff93ec6029d5b0a8a94ccb4bb59f338d5c445aa695f0753"
   license "MIT"
   compatibility_version 1
   head "https://github.com/cli/cli.git", branch: "trunk"
@@ -13,12 +13,12 @@ class Gh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4eb5c69f4666a1cac19d67ecf870389c76257130db90075c870587f1afcec75a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3192c6e260a00cae347ce9d1e16f3a5680f9adfbf03f6046e92ebd08add93e44"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b2c23c140b798061e5cadbfcc26d7333537db438e53aa7b05461948382ca147"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e4499c7bf9b0505558bbe22785da6b5eae16c2340595c8355175a33d3e57916f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8874100fb84540e05574fb4d46851b01411fb0db891591bc5cf8dc96f980e7d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58e6d1574edb2524749a4c4c35cff610a696a3b2cf0a8c1ba8903adf1ecb1e38"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c15ca98ef2e2c53f085f2137d1b9ce9baa0ae3e0eccdcf556f7ac84fff4a2288"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebd838dccb32187e2a4243f27a767303c3a7dcd1b369c9801d1d9002fb01fb73"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a4c0d5143944005dd35b5c42e13358a94eeeea890a86246ad819cb67ed4637e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a11bedc4a89b51936bca89f23a22da77bcfbc5232e9b41917bc76abad4b24215"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a67d6d93638a61932d4a1067faed92dba05116758c59c0cbe8bfdef08cfa064"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "192d3379fd81a4cf45daa8b4d0523c7445094eabeab4ace7b02023a3f598728d"
   end
 
   depends_on "go" => :build

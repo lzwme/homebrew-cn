@@ -1,8 +1,8 @@
 class Weaviate < Formula
   desc "Open-source vector database that stores both objects and vectors"
   homepage "https://weaviate.io/developers/weaviate/"
-  url "https://ghfast.top/https://github.com/weaviate/weaviate/archive/refs/tags/v1.37.5.tar.gz"
-  sha256 "2044c8cf0f29938801eab103664b9c8ffcb4ce7d9466206bdb7e20cf7b3231a9"
+  url "https://ghfast.top/https://github.com/weaviate/weaviate/archive/refs/tags/v1.37.6.tar.gz"
+  sha256 "a647fa70a7348221dd0a8924ea491ff9f172e83573e826202106fd9d1d9a01ef"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Weaviate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "59557c5b75593649331752c42d2920767975ca1c32fd66c51062abca2e46b205"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59557c5b75593649331752c42d2920767975ca1c32fd66c51062abca2e46b205"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59557c5b75593649331752c42d2920767975ca1c32fd66c51062abca2e46b205"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c376fe39be14923f1ef861bb456836cbdb0e9f45daf7772f33051fd67533d8e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f95a49067df4a54aa266ba1aa4fd054741bcec07e7bb8cd4e9498c6a50ee293e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be4c9a882b8eeab404cc82cd1c64098fd6d1b7e277a34f37ef4ca905ff6ffd22"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1e1e257809f07b82d55f46397aa133bd4dab12ca18698237e8d0fde0cf9946a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1e1e257809f07b82d55f46397aa133bd4dab12ca18698237e8d0fde0cf9946a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1e1e257809f07b82d55f46397aa133bd4dab12ca18698237e8d0fde0cf9946a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e794fb6ba4b69354bbddcd37e213451ffb458eaed0417dd4fc1cef0f18817321"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a5b1ddbb314f5f6ac1b95feb0820525eabde8ca4577d1b6175dfaa1c276f047"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f58a72f2686ed7fae176f4a9c378e5c456ac1140564469be94f94789e2b56a5a"
   end
 
   depends_on "go" => :build

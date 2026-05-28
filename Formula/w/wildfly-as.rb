@@ -1,8 +1,8 @@
 class WildflyAs < Formula
   desc "Managed application runtime for building applications"
   homepage "https://www.wildfly.org/"
-  url "https://ghfast.top/https://github.com/wildfly/wildfly/releases/download/39.0.1.Final/wildfly-39.0.1.Final.tar.gz"
-  sha256 "30ce0874378d1100289d4820fce1f7646ab1278f8c30c7ae9bb84c16cbd510cb"
+  url "https://ghfast.top/https://github.com/wildfly/wildfly/releases/download/40.0.0.Final/wildfly-40.0.0.Final.tar.gz"
+  sha256 "6b75f6de39dcf7e94b96f82006b96ec257b6358fc769a29d9817284c31c1e793"
   license "Apache-2.0"
 
   livecheck do
@@ -11,34 +11,177 @@ class WildflyAs < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "517a2a569b58e638fca4cb6fe98229af72d3ae567a7293d6d2516df00a05ceb8"
-    sha256 cellar: :any, arm64_sequoia: "71e35def71769915026776c48a02d4aaaa5f2bb0286a054b8cb146f336c97dcf"
-    sha256 cellar: :any, arm64_sonoma:  "71e35def71769915026776c48a02d4aaaa5f2bb0286a054b8cb146f336c97dcf"
-    sha256 cellar: :any, sonoma:        "f64f965a4165eccc9a83ddf2ed5358eff7ac790c904c59d801c36baa54e54d13"
+    sha256 cellar: :any,                 arm64_tahoe:   "6c67d1861063a65f1ab9ef20879e18ba8c94777731a741a3e359393d7daa16b4"
+    sha256 cellar: :any,                 arm64_sequoia: "579965426c87302233a400557885720a1e444ea60ecad112247054f067ebd702"
+    sha256 cellar: :any,                 arm64_sonoma:  "ab4426117b4f66fccb9f791dff5b1b777d10631679da611d09978305fb22c483"
+    sha256 cellar: :any,                 sonoma:        "1eaa7ed390ec3d276515575d17ab8b81f1635e8a2436cdd2d2b74ac16a010c99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a85e794f5f823c7bba7a4e089d73a908c1e2173e5a415843b662bea0ae27998"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8aa73f9afb99fbdc86904069617fcb1b10d44fc174c999ed473d362942311b86"
   end
 
-  # Installs a pre-built `libartemis-native-64.so` file with linkage to libaio.so.1
-  depends_on :macos
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
+  depends_on "maven" => :build
   depends_on "openjdk"
 
-  def install
-    buildpath.glob("bin/*.{bat,ps1}").map(&:unlink)
-    rm_r buildpath.glob("**/win-x86_64")
-    rm_r buildpath.glob("**/linux-i686")
-    rm_r buildpath.glob("**/linux-s390x")
-    rm_r buildpath.glob("**/linux-x86_64")
-    rm_r buildpath.glob("**/netty-transport-native-epoll/**/native")
-    if Hardware::CPU.intel?
-      buildpath.glob("**/*_aarch_64.jnilib").map(&:unlink)
-    else
-      rm_r buildpath.glob("**/macosx-x86_64")
-      buildpath.glob("**/*_x86_64.jnilib").map(&:unlink)
+  on_linux do
+    depends_on "cmake" => :build
+    depends_on "libaio"
+  end
+
+  resource "artemis-native" do
+    url "https://ghfast.top/https://github.com/apache/artemis-native/archive/refs/tags/2.0.0.tar.gz"
+    sha256 "b19033e702398dd794130e123f9f3978868f67ff9667c8354b48488ac7a3d4ea"
+
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/wildfly/wildfly/refs/tags/#{LATEST_VERSION}.Final/pom.xml"
+      strategy :xml do |xml|
+        xml.get_elements("//project/properties/version.org.apache.activemq.artemis.native").map(&:text)
+      end
     end
+  end
+
+  resource "netty" do
+    url "https://ghfast.top/https://github.com/netty/netty/archive/refs/tags/netty-4.1.133.Final.tar.gz"
+    sha256 "6335f5255307668c58818629cada4c3ecf11e30771df714c219b9af3a5e7db7d"
+
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/wildfly/wildfly/refs/tags/#{LATEST_VERSION}.Final/pom.xml"
+      regex(/^v?(\d+(?:\.\d+)+)(?:\.Final)?$/i)
+      strategy :xml do |xml, regex|
+        xml.get_elements("//project/properties/version.io.netty").map { |item| item.text[regex, 1] }
+      end
+    end
+  end
+
+  resource "wildfly-openssl-natives" do
+    url "https://ghfast.top/https://github.com/wildfly-security/wildfly-openssl-natives/archive/refs/tags/2.3.0.Final.tar.gz"
+    sha256 "a70e8c04759f2acc8088f885a2c505c2000f1b247514c47e731e6ce1ae345992"
+
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/wildfly/wildfly/refs/tags/#{LATEST_VERSION}.Final/pom.xml"
+      regex(/<version\.org\.wildfly\.openssl\.natives>v?(\d+(?:\.\d+)+)(?:\.Final)?</i)
+      strategy :xml do |xml, regex|
+        core_version = xml.get_elements("//project/properties/version.org.wildfly.core").map(&:text).first
+        next unless core_version
+
+        core_url = "https://ghfast.top/https://raw.githubusercontent.com/wildfly/wildfly-core/refs/tags/#{core_version}/pom.xml"
+        core_page = Homebrew::Livecheck::Strategy.page_content(core_url)[:content]
+        next unless core_page
+
+        core_page.scan(regex).map(&:first)
+      end
+    end
+  end
+
+  def build_artemis_native
+    libdir = buildpath/"modules/system/layers/base/org/apache/activemq/artemis/journal/main/lib"
+    on_macos do
+      rm_r(libdir)
+      return
+    end
+
+    libartemis = shared_library("libartemis-native-#{Hardware::CPU.bits}")
+    arch = "aarch64"
+    on_intel do
+      arch = "x86_64"
+      # Make sure the install paths are correct
+      odie "Unable to find #{libartemis} in #{libdir}!" unless (libdir/"linux-#{arch}"/libartemis).exist?
+    end
+
+    rm_r(libdir)
+
+    resource("artemis-native").stage do
+      with_env(CMAKE_POLICY_VERSION_MINIMUM: "3.5") do
+        system "mvn", "compile", "-Pbare-metal"
+        (libdir/"linux-#{arch}").install "target/output/lib/linux-#{arch}/#{libartemis}"
+      end
+    end
+  end
+
+  def build_netty_transport_native
+    arch = "aarch_64"
+    on_intel do
+      arch = "x86_64"
+    end
+    os = "osx"
+    ext = "jnilib"
+    io = "kqueue"
+    on_linux do
+      os = "linux"
+      ext = "so"
+      io = "epoll"
+    end
+
+    # Make sure the install paths are correct
+    netty_dir = buildpath/"modules/system/layers/base/io/netty"
+    common_dir = netty_dir/"netty-transport-native-unix-common/main"
+    common_jar = "netty-transport-native-unix-common-#{resource("netty").version}.Final-#{os}-#{arch}.jar"
+    native_dir = netty_dir/"netty-transport-native-#{io}/main/lib/META-INF/native"
+    native_lib = "libnetty_transport_native_#{io}_#{arch}.#{ext}"
+    odie "Unable to find #{common_jar} in #{common_dir}!" unless (common_dir/common_jar).exist?
+    odie "Unable to find #{native_lib} in #{native_dir}!" unless (native_dir/native_lib).exist?
+
+    rm_r(netty_dir.glob("netty-transport-native-unix-common/main/*{linux,osx}*.jar"))
+    rm_r(netty_dir/"netty-transport-native-kqueue/main/lib/META-INF/native")
+    rm_r(netty_dir/"netty-transport-native-epoll/main/lib/META-INF/native")
+
+    resource("netty").stage do
+      cd "transport-native-unix-common" do
+        system "mvn", "install", "-DskipTests"
+        common_dir.install "target/#{common_jar}"
+      end
+      cd "transport-native-#{io}" do
+        system "mvn", "package", "-DskipTests"
+        native_dir.install "target/classes/META-INF/native/#{native_lib}"
+      end
+    end
+  end
+
+  # https://github.com/wildfly/wildfly/blob/main/docs/src/main/asciidoc/_elytron/OpenSSL.adoc#building-the-native-library
+  def build_wildfly_openssl_natives
+    arch = "aarch64"
+    on_intel do
+      arch = "x86_64"
+    end
+    os = "macosx"
+    skip_check = false
+    on_linux do
+      os = "linux"
+      on_arm do
+        skip_check = true # JAR doesn't have arm64 linux library
+      end
+    end
+
+    # Make sure the install paths are correct
+    libdir = buildpath/"modules/system/layers/base/org/wildfly/openssl/main/lib"
+    arch_libdir = libdir/"#{os}-#{arch}"
+    libwfssl = shared_library("libwfssl")
+    odie "Unable to find #{libwfssl} in #{arch_libdir}!" if !skip_check && !(arch_libdir/libwfssl).exist?
+
+    rm_r(libdir)
+
+    resource("wildfly-openssl-natives").stage do
+      cd "build/#{os}-#{arch}" do
+        system "mvn", "compile"
+        arch_libdir.install "target/classes/#{os}-#{arch}/#{libwfssl}"
+      end
+    end
+  end
+
+  def install
+    rm buildpath.glob("bin/*.{bat,ps1}")
+
+    # Replace prebuilts with source-build native binaries
+    build_artemis_native
+    build_netty_transport_native
+    build_wildfly_openssl_natives
 
     inreplace "bin/standalone.sh", /JAVA="[^"]*"/, "JAVA='#{Formula["openjdk"].opt_bin}/java'"
 
     libexec.install Dir["*"]
-    mkdir_p libexec/"standalone/log"
+    (libexec/"standalone/log").mkpath
   end
 
   def caveats

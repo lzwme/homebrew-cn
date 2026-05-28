@@ -3,18 +3,17 @@ class Copyparty < Formula
 
   desc "Portable file server"
   homepage "https://github.com/9001/copyparty"
-  url "https://files.pythonhosted.org/packages/4f/0e/81965fdccef8dbd6d0ab22c421df3bc50e0bb27a5b8eaa79f046f208a4e1/copyparty-1.20.14.tar.gz"
-  sha256 "a662935f75eb67232b16624621886325b26afeb0b860af506ad6f3ff2af161c6"
+  url "https://files.pythonhosted.org/packages/52/7f/1c2183316defdc7d8532502554cf2486f3378e0a0d5eb594223e8f617292/copyparty-1.20.16.tar.gz"
+  sha256 "47751fb83659c50571d3852ea34a4af9cc4682ae7b51b459e8bb0279e89075e5"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6789199516279685ae0a653de087cc4cc02ba888094bc15148892b1e08a9146e"
-    sha256 cellar: :any,                 arm64_sequoia: "fd57b8db23351efca10b7324232740d84f55f1e09d9baf930934fa12e5dbb91f"
-    sha256 cellar: :any,                 arm64_sonoma:  "aa37262549571fbddf28e5008dcd90aa98f9c90398ca620e5005eb44074af27d"
-    sha256 cellar: :any,                 sonoma:        "17090702f04b5925342afa5201d869641e9ee8ed1e47468deb29a4c9ec325338"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "62d8be327c071dc4c745445997d537e7533108784d8e9790f0b0dedc0f9cf2ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f1ede8091160886d25a719998382b1c54be7596aa20071c2107e1afdcd7b671"
+    sha256 cellar: :any,                 arm64_tahoe:   "5f19725a574ccc8346aa532d72cc04e42337bc808c6f3d66f43c60110ac41834"
+    sha256 cellar: :any,                 arm64_sequoia: "8ad0946c8d4fecebf741fe2fc70fc86ff14bca56aa68b08044891caf94b4a0ae"
+    sha256 cellar: :any,                 arm64_sonoma:  "c88af665cbd851fccbd27e610a9e115f1eecc273f0af40f54001d17790fc0551"
+    sha256 cellar: :any,                 sonoma:        "4c2136dbff0ad7009a68f0de272a60f395711a9297fea0d9038a6b011449d26f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c333de07484e8a5ccb945a5d7635fe4dcc2242b0086b3f377b8a4cd32d4ff6c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4496252efea8f3d004e6ddc68b9215fb932e2029c0dbe7b5743bfc1639ce6b08"
   end
 
   # `pkgconf` and `rust` are for bcrypt

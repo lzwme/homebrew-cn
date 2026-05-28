@@ -1,8 +1,8 @@
 class Ryelang < Formula
   desc "Rye is a homoiconic programming language focused on fluid expressions"
   homepage "https://ryelang.org/"
-  url "https://ghfast.top/https://github.com/refaktor/rye/archive/refs/tags/v0.2.8.tar.gz"
-  sha256 "59e9cf98ba9335691bda8d2eea5d1133e1ceb7c960b8de7c9e8cf64108663e03"
+  url "https://ghfast.top/https://github.com/refaktor/rye/archive/refs/tags/v0.2.9.tar.gz"
+  sha256 "2b6962dd01deff4e659bb62465cfecc35f160f94fcca63bca061a3147a877276"
   license "BSD-3-Clause"
   head "https://github.com/refaktor/rye.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Ryelang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc478a9c3191fa93d577b26e3e0a7c5ede1d9b1184891127d1e96d6e9460db3c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa87ab56e928dcf49b4cf9be4af39b6f838f6135cfa7cef1702b0c6787feba68"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ec54cea9631a9857b6b24d5fce3214658d76c51b718582beec71e9efc99048d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "12ce7fe1e0aa058fa00d16dc885473f309f203bf9ad44c43cb10ba423828be87"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4083ed799fff9e95711ff51318009c7e8376a4fc90b8eccd5eeaa0e838b813e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9221df7cb765529b4fdb2e930e5db8a7f4fcd350c5eaf5c1837fde41507fd5e2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3d1fb1e6a6eddd20856d0f7f71cfdf153af72b3e4ee1d11d11545bf92440e465"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e58a499322bf420fc2f4369a3fef74b47b83fd9572c59856d5b5e776e03d2ce2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9536833020d25e9db43d88035226dcfcb3c39c861aa32fe4dca0e44c32f8f841"
+    sha256 cellar: :any_skip_relocation, sonoma:        "65586e12c99dca07b8036d5470197722034ba0c71899b3e483283f398a2fd39d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ec8d2303c7790dd451d0ce65c11486743fc640aa3b98010b25df803bf9605a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68398f7ec2a3f6bdaffae3cda1288389fde574c7157b82b2620a60167987a426"
   end
 
   depends_on "go" => :build

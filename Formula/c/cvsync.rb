@@ -4,6 +4,7 @@ class Cvsync < Formula
   url "https://www.cvsync.org/dist/cvsync-0.24.20.tar.bz2"
   sha256 "38fe7ed5e5b8e93858cf59484e0c3e661a52fb82177f73ce29e6170d3069a2a5"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :homepage
@@ -11,15 +12,15 @@ class Cvsync < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b81c4d24167e797f64465c3060f8a8d28529255c229998c8bb726be119aa1028"
-    sha256 cellar: :any,                 arm64_sequoia: "7309da9877789f2a01a29b5adca987e3d5cca4825ee349042c9211eea0f96774"
-    sha256 cellar: :any,                 arm64_sonoma:  "a7e5a9da3977ccc2c20daa0eeac3ac6069dd5d026bb6d86aa40c4219432c9040"
-    sha256 cellar: :any,                 sonoma:        "5759b950487eb0317d3424292d3ab47866bc408ff81909d731cbda79c80d5954"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd83b23b9450d46c8c72da4f914d969f359073dceb5b48cbaea6bd464123cc2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34a2636df942bc8fabaf8112d319f14b037e04dd3a43c9f8948ca0be77cca8fd"
+    sha256 cellar: :any,                 arm64_tahoe:   "3c2601073ec5771e6ab2104ec21df0e1f5e8f4cd5a6a5cfcd28095b97dc76b01"
+    sha256 cellar: :any,                 arm64_sequoia: "97e69645f32fa5a2da98aacd8d6faf2097199f3286646a80ea8ff7d4a3a8e9c6"
+    sha256 cellar: :any,                 arm64_sonoma:  "aab979cd1f10bcc4c3d9c7d66d22e994a66828b9db91ac347a27d95b6f5fa59d"
+    sha256 cellar: :any,                 sonoma:        "78f157d2bf12df8c597c79bab3e219c60b066f160df5573fc15ffce1532dca73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "58f5f85beca9a525eb6c1bf14a704f787cb5df82e663f44c6d5ef355694c3d87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85f8e458723da82ca2a67ada72485c5c6e58b6e7790ea707dc527ae3f996a560"
   end
 
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"

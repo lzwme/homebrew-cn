@@ -6,14 +6,8 @@ class Qnm < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "360bcebfd1a8e6fba957b45863d7601122002474f16895e74e6fbc56100939f8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "360bcebfd1a8e6fba957b45863d7601122002474f16895e74e6fbc56100939f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "360bcebfd1a8e6fba957b45863d7601122002474f16895e74e6fbc56100939f8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "360bcebfd1a8e6fba957b45863d7601122002474f16895e74e6fbc56100939f8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ba15766ca2e00720af7c0022eb8c05dbe2bcf2744fd61fa5ededd82da4a0d441"
-    sha256 cellar: :any_skip_relocation, ventura:       "ba15766ca2e00720af7c0022eb8c05dbe2bcf2744fd61fa5ededd82da4a0d441"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "360bcebfd1a8e6fba957b45863d7601122002474f16895e74e6fbc56100939f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "360bcebfd1a8e6fba957b45863d7601122002474f16895e74e6fbc56100939f8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "5cc808b7443c54ea3ef60687da80c4f7845ac3bae1f7fa3aabb211eff6b5ee9e"
   end
 
   depends_on "node"
@@ -21,12 +15,15 @@ class Qnm < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
+
+    # Build an `:all` bottle
+    inreplace libexec/"lib/node_modules/qnm/dist/xdg-open", "/usr/local", HOMEBREW_PREFIX
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/qnm --version")
 
-    (testpath/"package.json").write <<~EOS
+    (testpath/"package.json").write <<~JSON
       {
         "name": "test",
         "version": "0.0.1",
@@ -34,15 +31,15 @@ class Qnm < Formula
           "lodash": "^4.17.21"
         }
       }
-    EOS
+    JSON
 
     # Simulate a node_modules directory with lodash to avoid `npm install`
-    (testpath/"node_modules/lodash/package.json").write <<~EOS
+    (testpath/"node_modules/lodash/package.json").write <<~JSON
       {
         "name": "lodash",
         "version": "4.17.21"
       }
-    EOS
+    JSON
 
     # Disable remote fetch with `--no-remote`
     output = shell_output("#{bin}/qnm --no-remote lodash")
