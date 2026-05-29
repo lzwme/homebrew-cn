@@ -1,8 +1,8 @@
 class Dtc < Formula
   desc "Device tree compiler"
   homepage "https://git.kernel.org/pub/scm/utils/dtc/dtc.git"
-  url "https://mirrors.edge.kernel.org/pub/software/utils/dtc/dtc-1.8.0.tar.xz"
-  sha256 "b298e24ce4824bd2e2af60cf6a3d2815e555b3e44c431eadad0b52798c83a833"
+  url "https://mirrors.edge.kernel.org/pub/software/utils/dtc/dtc-1.8.1.tar.xz"
+  sha256 "23526015a6f1550e0541a53fe7acea1b5a11e3697cdf3a3bdc076abc38f6045d"
   license any_of: ["GPL-2.0-or-later", "BSD-2-Clause"]
   compatibility_version 1
   head "https://git.kernel.org/pub/scm/utils/dtc/dtc.git", branch: "master"
@@ -13,12 +13,12 @@ class Dtc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c79f2ad44942a6cb4848a1f54a8a9102d84d4ae7d9d1708b492078a609a57edc"
-    sha256 cellar: :any, arm64_sequoia: "1fdf5d3e57d68b4caea46c0ed88d4f0df0ec1832c4d465f663ca96a87bcfacff"
-    sha256 cellar: :any, arm64_sonoma:  "7106d0b0d8f1c696063b0f96e87672e9e30caece6aa7a69897b6b945c84c32d5"
-    sha256 cellar: :any, sonoma:        "2a14eb58e013bb553cd56d336b6f35e8b514155b93606392e069cee6678720fb"
-    sha256               arm64_linux:   "922c0f401b78e666fea4c07a176a8bfb336a2bdd14c532e7aba9b65818037f44"
-    sha256               x86_64_linux:  "ddb4a660c0af9334566d919b1198760ee0becc107b87b35a0b4a20dfb17b026d"
+    sha256 cellar: :any, arm64_tahoe:   "c85117d5237ea464866d8712ff9fc264a1701eca34d9d470d720a935c79f61ba"
+    sha256 cellar: :any, arm64_sequoia: "2b800aed01f5ebfc9cbb685536ad1625d1d702ab850bd34639865d3457c4f2e8"
+    sha256 cellar: :any, arm64_sonoma:  "5096223d06fe3abcc5d668b1dbc86c8f9b3b96d96c382afb16dfa580000b3379"
+    sha256 cellar: :any, sonoma:        "12e87f7f007759ce7137f039520358afeb48aae1d8f52c4a4bfe5f1acfb4f31c"
+    sha256               arm64_linux:   "45cf765efbad445c3dbd17ec9caa151a4a0908ba451c0bebbbe19b56e792508e"
+    sha256               x86_64_linux:  "0829b345a6d8fe1529a5676dc569fc5f445085ddf3b20863c787c596f650c358"
   end
 
   depends_on "meson" => :build

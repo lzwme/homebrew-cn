@@ -3,13 +3,13 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https://virtualenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/15/ba/1f6e8c957e4932be060dcdc482d339c12e0216351478add3645cdaa53c05/virtualenv-21.3.3.tar.gz"
-  sha256 "f5bda277e553b1c2b3c1a8debfc30496e1288cc93ce6b7b71b3280047e317328"
+  url "https://files.pythonhosted.org/packages/8b/6c/0035877ba9536338c8db2f3fcdc7a0384099fa546089e8c31d7c9ce59241/virtualenv-21.4.0.tar.gz"
+  sha256 "8d401ab6ee040a7c679f2d3947faa9ed07edf284c0a4e7bda9edd2f34b1fe500"
   license "MIT"
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0017ec1858b705484fdd098913cbb793a4038c725166fff276989935ce7870d5"
+    sha256 cellar: :any_skip_relocation, all: "e31a5ca1ceb7c3e05cf4170edc6f2e3d7048b2a7c3dff76e5046162b154771c9"
   end
 
   depends_on "python@3.14"
@@ -30,8 +30,8 @@ class Virtualenv < Formula
   end
 
   resource "python-discovery" do
-    url "https://files.pythonhosted.org/packages/48/60/e88788207d81e46362cfbef0d4aaf4c0f49efc3c12d4c3fa3f542c34ebec/python_discovery-1.3.1.tar.gz"
-    sha256 "62f6db28064c9613e7ca76cb3f00c38c839a07c31c00dfe7ed0986493d2150a6"
+    url "https://files.pythonhosted.org/packages/a6/12/38c1a0b1e64806780c9563e3fc9f6e472251839662587cfbe9bfaf2ae10a/python_discovery-1.4.0.tar.gz"
+    sha256 "eb8bc7daad3c226c147e45bb4e970a1feb1bf4048ee178e6db59e197b8010ce3"
   end
 
   def install

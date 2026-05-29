@@ -18,21 +18,11 @@ class FishLsp < Formula
   depends_on "node"
 
   def install
-    ENV.append "CXXFLAGS", "-std=c++20"
-
-    # tree-sitter<0.22 fails with clang>=18 but is actually unused
-    system "npm", "uninstall", "tree-sitter", "--package-lock-only"
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
     man1.install "man/fish-lsp.1"
     generate_completions_from_executable(bin/"fish-lsp", "complete", shells: [:fish])
-
-    # Remove incompatible pre-built binaries
-    os = OS.kernel_name.downcase
-    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    libexec.glob("lib/node_modules/fish-lsp/node_modules/tree-sitter/prebuilds/*")
-           .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
   end
 
   test do

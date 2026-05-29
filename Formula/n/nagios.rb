@@ -1,19 +1,18 @@
 class Nagios < Formula
   desc "Network monitoring and management system"
   homepage "https://www.nagios.org/"
-  url "https://ghfast.top/https://github.com/NagiosEnterprises/nagioscore/releases/download/nagios-4.5.12/nagios-4.5.12.tar.gz"
-  sha256 "9a9fd281ea6ab3d55611efda036ffb9fe76c98423083440900e28012248d5961"
+  url "https://ghfast.top/https://github.com/NagiosEnterprises/nagioscore/releases/download/nagios-4.5.13/nagios-4.5.13.tar.gz"
+  sha256 "43d533d2bb58a81221741ab2f0c27b478fc0a80fb98f83b748ecc56327c68718"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/NagiosEnterprises/nagioscore.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "1d524bcd5a8f97604396f7969ce07b562dccecbd0e2f0f4e64cc2d149fa6b0bd"
-    sha256 arm64_sequoia: "df7ba48825b6f3ff74769a763c8128621beda40bdecf3b13d259776766ed248c"
-    sha256 arm64_sonoma:  "5c65c296ff0a0f2d97593f8b4f3b0c576c177305bc8674aec44faf7f819791e1"
-    sha256 sonoma:        "d78bdc8ff14af5f05e2dcb738e99dfa5a8fb8bcacb677c13a8d3d2c2fd9616d7"
-    sha256 arm64_linux:   "edbadc0b772d969302fa4b34025732451b56eb0ef9989a39c9de3e76ee81070d"
-    sha256 x86_64_linux:  "0bcbba0785cf2f8cc846196ce8d7307d700b7502ffe7368d1b86406e906213eb"
+    sha256 arm64_tahoe:   "c0d07c87b4f62d659234ec635d4e0d79ee72ad6672fdaf4039b07091d3a7dcc5"
+    sha256 arm64_sequoia: "f4d256346a7c47542eb266c8ec37b435437fd75fbb6c671e56c20bee0eaf4158"
+    sha256 arm64_sonoma:  "decae65011b78d9c79b7e2cd6d493d98a3b3ef911a765f8577e5f2c8384c1b9d"
+    sha256 sonoma:        "b7bc3bfbcd8be5e1fec6189fa818562b3fefa2dc312becef93148443a1f9ac25"
+    sha256 arm64_linux:   "10e48717e0f9b2e6bf108afe61d9164784d090de56527d4dcf693766bdc039ee"
+    sha256 x86_64_linux:  "4744176b2007837b89090e670c571d5780ad19afd0fb2f58cafcc1dd1fa58b5c"
   end
 
   depends_on xcode: :build

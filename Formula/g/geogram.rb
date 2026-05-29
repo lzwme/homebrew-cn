@@ -1,8 +1,8 @@
 class Geogram < Formula
   desc "Programming library of geometric algorithms"
   homepage "https://github.com/BrunoLevy/geogram/wiki"
-  url "https://ghfast.top/https://github.com/BrunoLevy/geogram/releases/download/v1.9.9/geogram_1.9.9.tar.gz"
-  sha256 "65402f3ce4b40efab178874c4ec1a8852f0ca1ab4567d72000d53efcaff52214"
+  url "https://ghfast.top/https://github.com/BrunoLevy/geogram/releases/download/v1.10.0/geogram_1.10.0.tar.gz"
+  sha256 "2ef9f4fd992c6f0b4fc7075145d5d9c735208c6d844ff456271c4ab968423a5b"
   license all_of: ["BSD-3-Clause", :public_domain, "LGPL-3.0-or-later", "MIT"]
   head "https://github.com/BrunoLevy/geogram.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Geogram < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "593f6a7159f6b29e38195337ce04dcfb32a7c1fefad91546a7de652bf5355e5c"
-    sha256 cellar: :any,                 arm64_sequoia: "aa58b4d13b829ff41faa32fd887d93afc98063f5ff8b017b021a5778e6483968"
-    sha256 cellar: :any,                 arm64_sonoma:  "c8ebe4e61dc9e10b336eff0aeab433b797e87809a28f7926ce0754788fc9a248"
-    sha256 cellar: :any,                 sonoma:        "d0ce34b07db5d07b7536f0ce06ae4812e808f4981d9e9c2410e3b600f846ff55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae2cdc67498632efba06345add7b145d3eec9a09e0efd1e01d7fdc98e4875960"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbd24cf08a9f404207b1c09c273ca686f738a36d60bb8b2b0165750deba2972e"
+    sha256 cellar: :any,                 arm64_tahoe:   "7dea041507c173c11ee287a7aad72cadd835ff4e305593a23f33751509aef5c4"
+    sha256 cellar: :any,                 arm64_sequoia: "ba6d12968c2d4b87a57b5195b01aa16a1ac3cea300134a356202aa132e19cf40"
+    sha256 cellar: :any,                 arm64_sonoma:  "62b1820072198e0112de7359118eb7c5e0f1361dca248e8d5ff40e0b0c7afded"
+    sha256 cellar: :any,                 sonoma:        "65ab6d0ad20a91aaa5aad14c3134c1bc9933bb76fbce0e8a20b6815fa981dc81"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1fd67409ff23f9de80a6014194b77ea7c1eec955d71aa88eb4b1af94b1b6779e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7d5561f88a6fda3083a7e0019bb2f0d5b914704cf96ae247c778477dd7c1e9c"
   end
 
   depends_on "cmake" => :build
@@ -26,6 +26,7 @@ class Geogram < Formula
   on_linux do
     depends_on "doxygen" => :build
     depends_on "libx11"
+    depends_on "tbb"
   end
 
   def install

@@ -1,17 +1,17 @@
 class CargoEdit < Formula
   desc "Utility for managing cargo dependencies from the command-line"
   homepage "https://killercup.github.io/cargo-edit/"
-  url "https://ghfast.top/https://github.com/killercup/cargo-edit/archive/refs/tags/v0.13.10.tar.gz"
-  sha256 "f0c085d9e25bbfea568baf521a199290eb95bf162ddca586a7f87b2634d9a573"
+  url "https://ghfast.top/https://github.com/killercup/cargo-edit/archive/refs/tags/v0.13.11.tar.gz"
+  sha256 "bf67d37526a4c7c4381b37780d0839dd71545c058eb3cb1a15ea051f973f67eb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b0085678b01b83ae70e9af72018f959dbe3a2057c6d87322b151d38ac7884770"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a235c03a28f85057c27255f3310011f9cb1ebb8e4f984e80b95253d7f196b79f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32becd94b5fb088db38afb872ba48032f3daf1657c0a8b636ee8c732763da913"
-    sha256 cellar: :any_skip_relocation, sonoma:        "603cb95b90ebdc503e3e0d7662e0d79d37a2f0c7e37441fe47e87a08677091b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca7137e71288b24c1006e8920f55c79558c79f8d0a8a46339ccc34f65dfb8b5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ee65c29d06c124652508bd85b00a288629dff7bfc3b7d67e00906f2cd40c18d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b259d3fd8c29722056744d1bd2280a054ab54c9492fb8c0edc82f3e087d37bf6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f426727b781a993bdc710662c3fe8ee695dbe2f7770414b6a72d06527045422"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "212d55b4a2a5a426e24d064c5ffae91d93a7614136439c1c07af74d5c979cbfd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "486cb1799c6423f38167296f779183105885169398197238e36eaed809c5d93f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ec04ddd3a7740964b18f74445a3fcba93edbd3c9817dbecfa7943be60553a65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87429f7bf1876a473e17a7ff0b5f52ef690e5c495741b4bd0b96d5d412d1a9df"
   end
 
   depends_on "pkgconf" => :build

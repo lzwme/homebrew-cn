@@ -1,17 +1,17 @@
 class FreshEditor < Formula
   desc "Text editor for your terminal: easy, powerful and fast"
   homepage "https://sinelaw.github.io/fresh/"
-  url "https://ghfast.top/https://github.com/sinelaw/fresh/archive/refs/tags/v0.3.9.tar.gz"
-  sha256 "c742f292db877de400a16e92528fbba6efb4be43967c4d84c3a488327467a0ca"
+  url "https://ghfast.top/https://github.com/sinelaw/fresh/archive/refs/tags/v0.3.10.tar.gz"
+  sha256 "1e4592e19cf7a95df5901e21d350f88534caf7fec9348801b76eabbf8d8d9c1d"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b546dd3506398745fc4ac8281ea62f48b2e11b657ffe1638608f39ed6ac1ee3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f85829d928f9625ef8694659ea2d105e7dbb9ea30311ff00077e3779998acbc7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b10c438f9252bbb607a71794c7cd1b3be18e7f60bf2e2b91973f7249ab61be9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "627d3cc7be11d783d4f675f054ed1e5caf420450b3f16546dbf8d0943c647edf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb7144919d5fa06715cc1888b75624056ab8ce1cd327ffd26d37645f947db5b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83c3393176ca77d9cccdc8f192e9b2d1ed5b1fabba4f788ea5ef6a1eb5cfc88a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05e7e355de9e8b02884aa57e3d3308f9c66638affb8768e53f41775c36ee114b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ba94f7dc49cfd0a42f93e91665831a3f35fd19005d7eaf0976682e773e18334"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02008b2c1807e4eadd73442699de8383f92deb8b20e324de9937a6225c31ef74"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c745943e748ff422b17ab6aa8765336b141a717c8260fd8bea2547a4323b2539"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa2e27fa802a72ff7b88f5ccf1703170c2dd8831e483f7d31f70c2ea31775588"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d094c4cf40bb28b735e2112bbffcb237d19f31b6c7ea4fb675925aaf8dc785a5"
   end
 
   depends_on "rust" => :build

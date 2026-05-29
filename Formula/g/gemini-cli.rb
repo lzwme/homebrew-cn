@@ -1,17 +1,17 @@
 class GeminiCli < Formula
   desc "Interact with Google Gemini AI models from the command-line"
   homepage "https://github.com/google-gemini/gemini-cli"
-  url "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-0.43.0.tgz"
-  sha256 "65488d68d19bd6b2bfb623cd64a2a1f2ad1c5301722613d1449b9576e9d24fa5"
+  url "https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-0.44.0.tgz"
+  sha256 "d5efa70cc25ee4bf06df3169621ab8f7bf83e57481e6018d837164123d4a3c89"
   license "Apache-2.0"
 
   bottle do
-    sha256                               arm64_tahoe:   "29dadbf554861192c670b8d6e9e8b2a93ff91b63f3d372595aa718295948e47a"
-    sha256                               arm64_sequoia: "c73b1c763d0cd4e4aba10eb5a9ae7fabfa035b495d97585767797ba7442bc9d2"
-    sha256                               arm64_sonoma:  "36ba8a72ed1b26f2b7fb070da27668c957039e796ce2a66ef4c4d89d812dd0f6"
-    sha256                               sonoma:        "03a36463964ae109e7a5467add25dbc34def3ee397ed50b362aade1590c3ce3e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b4928857ad7a3bc0e365112f0c0bd9c001ca6b53d78e6082eae39cb54d6c6c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f24c9cc13ab892508fc2aefdecb0781ce422df2bb3ae7feae94e3774363d7ddc"
+    sha256                               arm64_tahoe:   "501af1ef7acbb9f4d4849ab1d75f51a62938ba106b654f2f42a297d4147bb028"
+    sha256                               arm64_sequoia: "dd5dd3aeb849366b4d891533fbb02aeb5f0c3b040a894e5f74cfdd0b085acb77"
+    sha256                               arm64_sonoma:  "35de224fa972ace72ca829cf0ed0ab4abe840df6f47dff0ff7525ae90bf3487e"
+    sha256                               sonoma:        "c99108db7f5dd027b2b38242e83375c0bcd0f742b46ace7169662283a81ba32e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20ea4c79b43e33416aee6799d2ca016324b05b60a8e0f1de61dc5ef22f32e9be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b4a079ee4e900db032e2dad0bba244915467518f402a73780cd814c93b6ef52"
   end
 
   deprecate! date: "2026-06-18", because: :unsupported, replacement_cask: "antigravity-cli"

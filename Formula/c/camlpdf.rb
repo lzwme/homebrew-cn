@@ -1,18 +1,17 @@
 class Camlpdf < Formula
   desc "OCaml library for reading, writing and modifying PDF files"
   homepage "https://github.com/johnwhitington/camlpdf"
-  url "https://ghfast.top/https://github.com/johnwhitington/camlpdf/archive/refs/tags/v2.9.tar.gz"
-  sha256 "2bbc222eb6e1be4ef6ec2900a1bba1da652704ff1343e742726689e077d35a27"
+  url "https://ghfast.top/https://github.com/johnwhitington/camlpdf/archive/refs/tags/v2.9.1.tar.gz"
+  sha256 "08e13a341362fb586a8bb02daf85fc1ef62250b63e6b58812b9c361e3d1c9951"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2ae180c8730f1552db117b06df7f2abe50abd3eb2eb6d42e3136864c0dd92d31"
-    sha256 cellar: :any,                 arm64_sequoia: "f8411747409bcb8ccc1a65bdbe81f6e07d96d98aa4af4120a76ee8781d932720"
-    sha256 cellar: :any,                 arm64_sonoma:  "a74fbd0854dffb24c77f9e30bb61ae5513e1ea22f76b5f5e3d30b43fb21879e0"
-    sha256 cellar: :any,                 sonoma:        "2919f746cc7d16eb9603f1e84543f7097672acd73964cc008c1af1006b380cc7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc2ddfc666ce2a4e7977c2936ffbc4a8f949a828863c1254c2c1669bf525d5e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd11b6341f7102de7f52997ae11557fd8c3e95ce86f4ab741c39d839d6cd9b46"
+    sha256 cellar: :any,                 arm64_tahoe:   "aa896a33737039b1138992fbe9d116ed0408771bbd6c8607bd5179f608de775e"
+    sha256 cellar: :any,                 arm64_sequoia: "3476bf243e8391a6b136c19231a3d464378579d170e67f285bc91b253bd80eb1"
+    sha256 cellar: :any,                 arm64_sonoma:  "3121e1630692a9cfad61ee9a2d9ed87a54f0fa83c5aacb5d9ad197166e5136ba"
+    sha256 cellar: :any,                 sonoma:        "fb78b3997a770f02b4bec027d2b96fbe189fee5dfeebeb3934a5c6300d83549a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68e83f2c6a67bc4a48c8e7cca718aa05a63ae5a194e16c277a82804902dc6901"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02297b0672b4fe3015cec7916b5ee1d5f67d94d904fdb6cb6753a7796d6a9748"
   end
 
   depends_on "ocaml-findlib" => :build

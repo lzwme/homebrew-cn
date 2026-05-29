@@ -3,21 +3,20 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://github.com/MoonshotAI/kimi-cli"
-  url "https://files.pythonhosted.org/packages/fc/d4/612707e894bb4acf44bd82162eeae4321fba6ad81e45b8f8e55044991bcf/kimi_cli-1.44.0.tar.gz"
-  sha256 "da261b7670e18b07582ed9d1844eb6130c51f1a8009a1aeae58cb4bcb80dd1c8"
+  url "https://files.pythonhosted.org/packages/54/74/e04e9b2215f600164f0f2ae839bef16bf1d1ebc6e19e14f8cf79bd28887c/kimi_cli-1.45.0.tar.gz"
+  sha256 "f1d2c79574f8c7fb7341440677482d4ca00c16c722892605608ab59a6a90395d"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4b8ec6426680d61127e22c3a6e9eb9cee3e38419b5733b35594a1639984dd15e"
-    sha256 cellar: :any,                 arm64_sequoia: "05e9fcb808973c3cc9cababe6fbbe1c8b10c8b3b1c77f3caa10b20c8697bf025"
-    sha256 cellar: :any,                 arm64_sonoma:  "874b98aa9ca7838e948264abd3ad2b3dec6e4b3cc7a7e263fdd053d845d4a338"
-    sha256 cellar: :any,                 sonoma:        "cd759d5245875b2026edf73468cca659b55cb760f610efbd0aa5f64ba85a23a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "710e2758cf30969909fff2d9e044b0b5063b0ae8804c2b6cb5757933ce06ce81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ebd5fc0d1ccac0c144de40e91991ff38f54995cf93c931ebcf214bfd7466827"
+    sha256 cellar: :any,                 arm64_tahoe:   "eb018d34b4ae292c87c8a71e1749d78be555796ea2a4a1f6aa91c2d24aa9851a"
+    sha256 cellar: :any,                 arm64_sequoia: "f181877af4e0971972cf4fb97452c1060f5f323c4bf8b7b4d3b9bb89cf5bdba3"
+    sha256 cellar: :any,                 arm64_sonoma:  "a69210a8e652e420eba3c2f558b5437dd79ec5fb4f534129d5083b58bc1c7a3e"
+    sha256 cellar: :any,                 sonoma:        "a8ff533f7867e1e57da0d39de8f87c4c5a4aac9de9f1033ee8ade981fabe23e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d5168118388b29a007ed08e68f55688de32eeafe397f64e873b7d3d1d67bf6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d8bb900f8ea9b95b1e553b0ad5b724d0f174bc8489eda479167436d2a8b5a69"
   end
 
   depends_on "pkgconf" => :build
@@ -89,8 +88,8 @@ class KimiCli < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/0f/01/8bfa68b886aa436775325a108700f7da39e290870199ce9251934de3e4aa/anthropic-0.104.0.tar.gz"
-    sha256 "1ae8ef4709e90cc2068c8e8a63c1ecb63cc5360d325a4bef8b296aad76148be3"
+    url "https://files.pythonhosted.org/packages/22/c7/7a655b948916f777354648ce979f68b94d5b8dbdb5f61fed1f37fad9378c/anthropic-0.104.1.tar.gz"
+    sha256 "17362b6c45f527afcc9b0fdf62011ffd359726ab2ebcb1978ea0cc41bd8d8d40"
   end
 
   resource "anyio" do
@@ -159,8 +158,8 @@ class KimiCli < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/bb/fe/da593db56d872f53fd1abfeb0c801310d3b7629a3b50873c2e13c5a3cac4/cyclopts-4.15.0.tar.gz"
-    sha256 "3b5655581bcb759880abf1aeebf6fd370a3a4da8cf1248dd71061e357a525a34"
+    url "https://files.pythonhosted.org/packages/34/07/bf61d13de86d96a4c46aff00c9ca0eced44bcc8c3e16280605c1253e5720/cyclopts-4.16.1.tar.gz"
+    sha256 "8aa47bf92a5fb33abca5af05e576eecdb0d2f79893ad29238046df78370fc4a8"
   end
 
   resource "dateparser" do
@@ -194,8 +193,8 @@ class KimiCli < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/5d/45/c130091c2dfa061bbfe3150f2a5091ef1adf149f2a8d2ae769ecaf6e99a2/fastapi-0.136.1.tar.gz"
-    sha256 "7af665ad7acfa0a3baf8983d393b6b471b9da10ede59c60045f49fbc89a0fa7f"
+    url "https://files.pythonhosted.org/packages/81/2d/ff8d91d7b564d464629a0fd50a4489c97fcb836ac230bf3a7269232a9b1f/fastapi-0.136.3.tar.gz"
+    sha256 "e487fae93ad408e6f47641ee4dfe389864fd7bec92e547ea8498fc13f43e83ab"
   end
 
   resource "fastmcp" do
@@ -254,8 +253,8 @@ class KimiCli < Formula
   end
 
   resource "httptools" do
-    url "https://files.pythonhosted.org/packages/b5/46/120a669232c7bdedb9d52d4aeae7e6c7dfe151e99dc70802e2fc7a5e1993/httptools-0.7.1.tar.gz"
-    sha256 "abd72556974f8e7c74a259655924a717a2365b236c882c3f6f8a45fe94703ac9"
+    url "https://files.pythonhosted.org/packages/43/e5/d471fcb0e14523fe1c3f4ba58ca52480e7bd70ad7109a3846bc75892f7fb/httptools-0.8.0.tar.gz"
+    sha256 "6b2a32f18d97e16e90827d7a819ffa8dbd8cc245fc4e1fa9d1095b54ef4bd999"
   end
 
   resource "httpx" do
@@ -304,8 +303,8 @@ class KimiCli < Formula
   end
 
   resource "joserfc" do
-    url "https://files.pythonhosted.org/packages/3b/dc/5f768c2e391e9afabe5d18e3221346deb5fb6338565f1ccc9e7c6d7befdd/joserfc-1.6.5.tar.gz"
-    sha256 "1482a7db78fb4602e44ed89e51b599d052e091288c7c532c5b694e20149dec48"
+    url "https://files.pythonhosted.org/packages/5d/ac/d4fd5b30f82900eac60d765f179f0ba005825ac462cc8ced6e13ec685ab3/joserfc-1.6.8.tar.gz"
+    sha256 "878620c553a6ebdd76ccdc356782fee3f735f21a356d079a546b42a4670ace5f"
   end
 
   resource "jsonref" do
@@ -389,8 +388,8 @@ class KimiCli < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/a2/f7/139d22fef48ac78127d18e01d80cf1be40236ae489769d17f35c3d425293/more_itertools-11.0.2.tar.gz"
-    sha256 "392a9e1e362cbc106a2457d37cabf9b36e5e12efd4ebff1654630e76597df804"
+    url "https://files.pythonhosted.org/packages/de/1d/f4da6f02cdffe04d6362210b807146a26044c88d839208aec273bb0d9184/more_itertools-11.1.0.tar.gz"
+    sha256 "48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d"
   end
 
   resource "multidict" do
@@ -605,8 +604,8 @@ class KimiCli < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/08/a3/84e821cc54b4ab50ae6dbc6ac3800a651b65ec35f045cc73785380654057/starlette-1.0.1.tar.gz"
-    sha256 "512399c5f1de7fac99c88572212ded9ddeddef2fb32afa82d724000e88b38f4f"
+    url "https://files.pythonhosted.org/packages/95/66/4d20cdf39a8d6a51e663b7038e3b828ff211d3891a43a713fe7e4643f3a8/starlette-1.1.0.tar.gz"
+    sha256 "e83c7fe0ddecd8719c5b840080325aec0260acec86e9832899e377b91d65e90f"
   end
 
   resource "streamingjson" do
@@ -765,8 +764,8 @@ class KimiCli < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/f6/b1/8e7077a8641086aea449e1b5752a570f1b5906c64e0a33cd6d93b63a066b/uvicorn-0.47.0.tar.gz"
-    sha256 "7c9a0ea1a9414106bbab7324609c162d8fa0cdcdcb703060987269d77c7bb533"
+    url "https://files.pythonhosted.org/packages/e6/bf/f6544ba992ddb9a6077343a576f9844f7f8f06ab819aefd00206e9255f18/uvicorn-0.48.0.tar.gz"
+    sha256 "a5504207195d08c2511bf9125ede5ac4a4b71725d519e758d01dcf0bc2d31c37"
   end
 
   resource "uvloop" do

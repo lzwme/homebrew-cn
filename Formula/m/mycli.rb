@@ -3,18 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/99/6b/1eb91cb05765fa25c9fd11c37e52c515afacaba0f27fd496888197fa2f84/mycli-1.72.1.tar.gz"
-  sha256 "c79f00cdda7d8af22bca609ed0a258236d3062469b34311cde15467dbdc5085a"
+  url "https://files.pythonhosted.org/packages/fe/3e/17e080e996433b837099f14d2b062d11f08c3811243d1492e4392907c298/mycli-1.73.0.tar.gz"
+  sha256 "2f68acb201cb9b07a6805330f57523afbecc8e9ae3897d211cc640ea32212e13"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3e618585907a0e792d231f1c0875f41536973eea3e011bdb2dc51c3d8e1501b3"
-    sha256 cellar: :any,                 arm64_sequoia: "8a2f58ebc017141ef3027cee372e314b5cb6417228757d950f498b40c6795a7f"
-    sha256 cellar: :any,                 arm64_sonoma:  "c13d80dbfaf3bb58b21975ed65834b30895b7d6b7f9f2555ebbe713bcc13d5a9"
-    sha256 cellar: :any,                 sonoma:        "4c61cc594e5e0ab00d8a74d09d17a65a8b747010f9c4ca07fd7d1edecaf43096"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae5d2a3f9c14f50cfe0bffd92037aa1b788cc016715d60b20dbb6621f9e574cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69e233a6bd78d270833478b24918af8b233145e78898439680263812e0706ee5"
+    sha256 cellar: :any,                 arm64_tahoe:   "880fb533e85ae2a7e5bfea93567d010fe60bfa237ffaee0fdd090cbd973ae28f"
+    sha256 cellar: :any,                 arm64_sequoia: "437ed85c5a6df8668e520f7778814e91269047925841cb3341616e73d890adf3"
+    sha256 cellar: :any,                 arm64_sonoma:  "48d64ea58cd036c2aecdf1da9ae22e6fda97a46ae48bfce03a1e34c76c3e8974"
+    sha256 cellar: :any,                 sonoma:        "b6f0b3db6b6e2e08c5fa56693b90ee8544ef7adaa021d9ccefbb3161597bf6f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "efb90104cfd41b9f1c4a87b53659a7a9f8c5b8f1516b850c5e144978ca7e4903"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6651306d6b922f4b72d567c892e89e990948c98f50e4b93a893914fa05e8a53"
   end
 
   depends_on "rust" => :build # for jiter, sqlglotrs
@@ -36,8 +35,8 @@ class Mycli < Formula
   end
 
   resource "cli-helpers" do
-    url "https://files.pythonhosted.org/packages/95/ea/e6e224f35191f9347a506dcf7fa03d839599625798bd037faf1fb8820654/cli_helpers-2.14.0.tar.gz"
-    sha256 "798e0731f2f4d425767cb12a3ad966bf28b5de77a5651662061bb4a66bee8f35"
+    url "https://files.pythonhosted.org/packages/5e/d1/f83191ae4a8f6584876bc63e5e1ae39360f4de7ed74cce76f266ef9d5d10/cli_helpers-2.15.0.tar.gz"
+    sha256 "c2c5a1a5fd6a8ad51b1b99e80685cd04c006b0e29cacf4c24b1ba8a440ea8d4d"
   end
 
   resource "click" do
@@ -86,8 +85,8 @@ class Mycli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
+    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
   end
 
   resource "jaraco-classes" do
@@ -126,13 +125,13 @@ class Mycli < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/a2/f7/139d22fef48ac78127d18e01d80cf1be40236ae489769d17f35c3d425293/more_itertools-11.0.2.tar.gz"
-    sha256 "392a9e1e362cbc106a2457d37cabf9b36e5e12efd4ebff1654630e76597df804"
+    url "https://files.pythonhosted.org/packages/de/1d/f4da6f02cdffe04d6362210b807146a26044c88d839208aec273bb0d9184/more_itertools-11.1.0.tar.gz"
+    sha256 "48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d"
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/32/50/5901f01ef14e6c27788beb91e54fef5d6204fb5fb9e97402fc8a14de2e32/openai-2.37.0.tar.gz"
-    sha256 "f4bc562cc5f3a43d40d678105572d9d44765f6e0f50c125f63055419b72f4bd9"
+    url "https://files.pythonhosted.org/packages/8f/12/cfa322c5f5dd8fa21aab9a7a8e979e7a11123800f86ca8d82eb68a83d213/openai-2.38.0.tar.gz"
+    sha256 "798694c6cf74145541fda94325b6f8f72d8e1fd0262cc137c8d728177a6a4ce3"
   end
 
   resource "pluggy" do

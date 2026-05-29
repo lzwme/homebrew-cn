@@ -1,8 +1,8 @@
 class Capstone < Formula
   desc "Multi-platform, multi-architecture disassembly framework"
   homepage "https://www.capstone-engine.org/"
-  url "https://ghfast.top/https://github.com/capstone-engine/capstone/archive/refs/tags/5.0.8.tar.gz"
-  sha256 "467e128736227a12a2066c562cfe69a2b7c45353fab3f02a0522d9cd62ccf0f6"
+  url "https://ghfast.top/https://github.com/capstone-engine/capstone/archive/refs/tags/5.0.9.tar.gz"
+  sha256 "0619da31af08152600af95c481527ef6d756c0a8404fca7544a4fdf6dfc2c0f9"
   license "BSD-3-Clause"
   compatibility_version 1
   head "https://github.com/capstone-engine/capstone.git", branch: "next"
@@ -13,12 +13,12 @@ class Capstone < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "923bcd14ef518df04f6ecb6ee5cebbe98445c88b62b07e8ed36cc63b3ecd1ddc"
-    sha256 cellar: :any,                 arm64_sequoia: "6bc2f05c4fd271659382e4e2439704a0d62442b1d15e498798c5b94de9def463"
-    sha256 cellar: :any,                 arm64_sonoma:  "efba0ec954702daa9b6e601b21150de9f4933ef26d86ee95d3c803dc6825dcff"
-    sha256 cellar: :any,                 sonoma:        "6ebde69977e1a62f611f49f1d4f2b7dfe090fd64e2a18e43602f508b4b71ac2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e70412696fc099abb8a2fc20cc57ec49cf8c2bc44a317e0cd419a44f8ec0a3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe908ade334d04a6dbc2b0581ed54f230bdaa164a9f042694ddffdf7fc7ba475"
+    sha256 cellar: :any,                 arm64_tahoe:   "136ef83fb2c78de33a0500d8e9d3628eb1db37d4ef00496e8027e00a5918eb33"
+    sha256 cellar: :any,                 arm64_sequoia: "a6fbf1343829afa5521e8fdba9f0d05246cad3c8caf4833af6d826baaf0db795"
+    sha256 cellar: :any,                 arm64_sonoma:  "bbe5f0825fb2511229677b4cd56d88b7c85efc88b537acfc77c41266424983ae"
+    sha256 cellar: :any,                 sonoma:        "4c2563fd3750dcfc7bff7a99876034b68257f9979c336fa16da730435736832c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e62999052f399dc5c10cf74036108f585789ae2a2b28842aa1677ca99e027b08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c724d5267658f8e1d10a4e050e5e56ed3db99f4ef454e9340a43e0eaafe7050"
   end
 
   on_macos do

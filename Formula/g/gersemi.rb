@@ -3,17 +3,17 @@ class Gersemi < Formula
 
   desc "Formatter to make your CMake code the real treasure"
   homepage "https://github.com/BlankSpruce/gersemi"
-  url "https://files.pythonhosted.org/packages/12/57/5423766eddb6f73a56e57e3dc09f863c8298493e2f7a7654d1f595fb3d17/gersemi-0.27.6.tar.gz"
-  sha256 "5cd2d0aa57638384e9967994953d29fd43009541f2e6010139a48c98260eb055"
+  url "https://files.pythonhosted.org/packages/01/45/93f06bcc8fd631e50875ae70c542de7a46e6a06b9e19f39fb903b61e8ac8/gersemi-0.27.7.tar.gz"
+  sha256 "f598d62bd2bee0b6cbfc4e71f82c86f768ab31d135a312585fabbd7e57b64e09"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "433540c3222e7f6708d1c549522d22d06874b1c228a78417fa86910c2cab2f14"
-    sha256 cellar: :any,                 arm64_sequoia: "53835b3e5dc59d94814c1257affbb96b01d4a76fbd920e5f217163f3a9467a9a"
-    sha256 cellar: :any,                 arm64_sonoma:  "e32109b0591b88ba711f2b66379bcd7198833598b2702af04f8386521a79e3ee"
-    sha256 cellar: :any,                 sonoma:        "073f7e293f40793e8505101fd0b449dc2e4c8f835d7c32b7bf4600550a152b4e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e030dd47c031694c41a9be529a6f447a265b3f6a31befef6e92ff504b40cdec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b83d307ae52d43ccbd5873e59bbedbb55e5595044b2139207dd76f42cbdaa74"
+    sha256 cellar: :any,                 arm64_tahoe:   "40f514ed646f3bf4011cfb96147ddc9cb28082abf22570852f721d6318ebf8fd"
+    sha256 cellar: :any,                 arm64_sequoia: "a3a38b689dc042b47791b588bcba5a0448ef5c4890c052397de5a5f3d35adcf8"
+    sha256 cellar: :any,                 arm64_sonoma:  "57bafcf2c4fe5ec9c02ced9efcce5b2f8c62f67c7698ac5361340b427adec6df"
+    sha256 cellar: :any,                 sonoma:        "9bc9bb2a19cabc5c012e66248b0a8c8a2bb13af7255b713498b8eab71de6fd99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2eef01191c2f4bd8de66b0375069d379051efd53eaa25c847b4cfff864ddd09e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d94f56fb57bb2ca8b7352b835a2a20b01860bde387f519b4353a22da8ed5da1c"
   end
 
   depends_on "rust" => :build

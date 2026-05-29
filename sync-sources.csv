@@ -704,6 +704,7 @@ Homebrew-homebrew-core/Formula/b/bsdmake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bsdsfv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bstring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/btcli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/btdu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/btfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/btllib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/btop.rb, Homebrew/homebrew-core, 1
@@ -6560,6 +6561,7 @@ Homebrew-homebrew-core/Formula/s/samtools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/samurai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sandvault.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sane-backends.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/sanity.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sapling.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sarif-fmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sarif-tools.rb, Homebrew/homebrew-core, 0
@@ -8430,6 +8432,7 @@ Homebrew-homebrew-cask/Casks/a/acronis-true-image.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/active-trader-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/activedock.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/activitywatch.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/activitywatch@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/actual-odbc-pack.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/actual.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/adapter.rb, Homebrew/homebrew-cask, 0

@@ -3,19 +3,18 @@ class HermesAgent < Formula
 
   desc "Self-improving AI agent that creates skills from experience"
   homepage "https://hermes-agent.nousresearch.com"
-  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.5.16.tar.gz"
-  sha256 "c0a554050a50ee9a62f3fa5cd288a167ba5640c42d647d100cdea084b7294143"
+  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.5.28.tar.gz"
+  sha256 "fecbbf9ca8bcb33abb3f4b847e97d0827b578dfe4187accd44b76575046a822d"
   license "MIT"
-  revision 1
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "21e310927033ba0249585fb13989f11fb04a72bedcf6b03cacd05ca18f36c0d7"
-    sha256 cellar: :any,                 arm64_sequoia: "07d68ba498b771d823ed6142bd89f71b8fe348d66a3c6a5372ac5acfa9ea3d15"
-    sha256 cellar: :any,                 arm64_sonoma:  "3f58223fe0aef9cb1b2d45e40c44148e6bee04fdaa1c7ed6d43ac7a90c0d5782"
-    sha256 cellar: :any,                 sonoma:        "cbc361e834305c9dbd26c5172eb639b9480dc974340ae4eb00193e95a7eef298"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ba6d4e9f607c024b085ed8241d60c43748a8d97787abc42ce44f42dffe5c1cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c810beca50bf2b1225151f526107d109b8ac3f10cc23b932d0622c57e4eecbc0"
+    sha256 cellar: :any,                 arm64_tahoe:   "86c9e9c0a68d66bbd07eec13931491302b29179074a357cfd0da34b936b35b6b"
+    sha256 cellar: :any,                 arm64_sequoia: "17c6fc39f58224ed8d9fbc6e0aedb9341bab7633a7ae6e1e1139e430d4fcaeac"
+    sha256 cellar: :any,                 arm64_sonoma:  "dd499b65655666aefbb6f1444d033b4b8f73b089ca61efdf0afc9b2661f7aa9e"
+    sha256 cellar: :any,                 sonoma:        "908b6d2dfdd14751dfa6886d249431b4f5cea925872836eedaace553e27db0e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b58789fb5f2b0a322a97c8495ba25eb5656b3d25ca5f4337f4f4da8d1288d719"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a011b9f4325f1acf0f690ecf7a6092546b9563accbacd0c4f9f6f33af06684f8"
   end
 
   depends_on "pkgconf" => :build
@@ -69,8 +68,8 @@ class HermesAgent < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
+    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
   end
 
   resource "jinja2" do
@@ -129,8 +128,8 @@ class HermesAgent < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
-    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
+    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
+    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
   end
 
   resource "pytz" do

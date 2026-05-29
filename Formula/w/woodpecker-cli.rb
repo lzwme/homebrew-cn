@@ -1,18 +1,18 @@
 class WoodpeckerCli < Formula
   desc "CLI client for the Woodpecker Continuous Integration server"
   homepage "https://woodpecker-ci.org/"
-  url "https://ghfast.top/https://github.com/woodpecker-ci/woodpecker/archive/refs/tags/v3.14.1.tar.gz"
-  sha256 "f84115ea73513b9728570c90d85fef09ac07879232e2f1741f766a9368a2a954"
+  url "https://ghfast.top/https://github.com/woodpecker-ci/woodpecker/archive/refs/tags/v3.15.0.tar.gz"
+  sha256 "14acf419b5a8b349fc73662ac272e238b8492477911ad27c95701f8efbbdc5c2"
   license "Apache-2.0"
   head "https://github.com/woodpecker-ci/woodpecker.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7f0761766b946953df9e88c43c2fb168e844bb2616f0b69b6d331231be199e4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7f0761766b946953df9e88c43c2fb168e844bb2616f0b69b6d331231be199e4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7f0761766b946953df9e88c43c2fb168e844bb2616f0b69b6d331231be199e4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0b653301f4ec83d3886de632fcd8ea8884e0f0354a4de5ff9306c9cc004b350f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de101794908d6ca5db19b144e3d86d47bfb4831af2dc0efa3d23d6df05b1d33e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99e5490ac11dfe37ed5ef8b4dff424f008823592c88d01c48cf8bd4070a04601"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb2935fca19a06b02a8f3bd54cf1883642c9bb19f2110e833112a7dd38134a46"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb2935fca19a06b02a8f3bd54cf1883642c9bb19f2110e833112a7dd38134a46"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb2935fca19a06b02a8f3bd54cf1883642c9bb19f2110e833112a7dd38134a46"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ba8a3c6c7b5f140c7ce7bbb3f2430cb64d53d335ef8a943434b10890b0e3c768"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f607d6523a605145992a8fd91edb79d2f19aa72180f284ab6af9edf9fee6304"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea82afa883bb00c9128d2dc6114c6557f8f1ab8ab1bf820a73336869edccf68c"
   end
 
   depends_on "go" => :build

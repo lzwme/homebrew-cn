@@ -1,18 +1,18 @@
 class ConfigFileValidator < Formula
   desc "CLI tool to validate different configuration file types"
   homepage "https://boeing.github.io/config-file-validator/"
-  url "https://ghfast.top/https://github.com/Boeing/config-file-validator/archive/refs/tags/v2.2.1.tar.gz"
-  sha256 "157a6bc36df10d6bfa462f3977d1035439dd7b67c50f169543be58496c54e1ee"
+  url "https://ghfast.top/https://github.com/Boeing/config-file-validator/archive/refs/tags/v2.2.2.tar.gz"
+  sha256 "43d2a3000424cb1e4eeb38c7ddd444930140f2ae106ac1ac66ef7b2f9451d631"
   license "Apache-2.0"
   head "https://github.com/Boeing/config-file-validator.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4bc5be0c97cddaf53a02d368784a2ccea34df5d964770399bb5347c6157caba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4bc5be0c97cddaf53a02d368784a2ccea34df5d964770399bb5347c6157caba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4bc5be0c97cddaf53a02d368784a2ccea34df5d964770399bb5347c6157caba"
-    sha256 cellar: :any_skip_relocation, sonoma:        "47902773c3a0db15ca9f5516697294f6ac66ac4f3be15af17047e9e410c07fc8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "43b08797cc41e65ac7b7a02d24db1cb044012514b0de2b5247147a33d6a2a134"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "819c8397da06c55f0f53bffc3fb73d459195950412813becba8d04113ae9207d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a750309e0c8f2186c579c45cf6d5fb34f3350827727bfc74d7d6f9655f894de4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a750309e0c8f2186c579c45cf6d5fb34f3350827727bfc74d7d6f9655f894de4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a750309e0c8f2186c579c45cf6d5fb34f3350827727bfc74d7d6f9655f894de4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2f60bf413121ce1a00314d5e1b4b012318d14a1c9753d1ac16030165ea0d8de2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a525a5b218f00a8969fb43abdd75130bfb106a300ffee1db070ecad3b8ecfa45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db4130366a742fb8ae1e27619989a1c14d3e2fb778fb492d6d6c57d99b93ad04"
   end
 
   depends_on "go" => :build

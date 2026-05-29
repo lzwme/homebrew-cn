@@ -1,8 +1,8 @@
 class Lazygit < Formula
   desc "Simple terminal UI for git commands"
   homepage "https://github.com/jesseduffield/lazygit/"
-  url "https://ghfast.top/https://github.com/jesseduffield/lazygit/archive/refs/tags/v0.61.1.tar.gz"
-  sha256 "2a550c9b609c5eb0e1c2640e8114ac05b94c671803f77e08a9dcdbd66372e2c4"
+  url "https://ghfast.top/https://github.com/jesseduffield/lazygit/archive/refs/tags/v0.62.1.tar.gz"
+  sha256 "198602c75c0d971b56088d6d364aaf9b2fd52bcadcb0e6a8548df0ed43e4dac2"
   license "MIT"
   head "https://github.com/jesseduffield/lazygit.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Lazygit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b9bcbe1de4005a065c87110f3ae0993a88e67efec96b0c9a863f0c35ec1460f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b9bcbe1de4005a065c87110f3ae0993a88e67efec96b0c9a863f0c35ec1460f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b9bcbe1de4005a065c87110f3ae0993a88e67efec96b0c9a863f0c35ec1460f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "af6d4ee7cd246a3602867d42d5ac9a22130d9beffaa0596d0b89e3099befc94e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebd8536410f6863541a6f88e06f0fe0592556cd1a381974bd1ec42c8ee97ed09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59188b1a68d4c954d0557a2e714abfe93ded706ff378ed6c3aab6cb73b212591"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52f2783c3879749744a9b2a9ee2e8d701838b32e6cd75e69a95c14b25e2438eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52f2783c3879749744a9b2a9ee2e8d701838b32e6cd75e69a95c14b25e2438eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52f2783c3879749744a9b2a9ee2e8d701838b32e6cd75e69a95c14b25e2438eb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1f60454d6cea26e0500dfa6e19b2b27d43e041621dfa1acc431de5bec261c452"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e2af8a8dd848fc13c802def4ed99ed8844d40e6a65b4eed8b72b539554f24a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c3d643e582be489e03c6c7bccca819948f55a215a2c64c1b194fb201cfae7e0"
   end
 
   depends_on "go" => :build
@@ -29,11 +29,16 @@ class Lazygit < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/lazygit -v")
+
     system "git", "init", "--initial-branch=main"
 
-    output = shell_output("#{bin}/lazygit log 2>&1", 1)
-    assert_match "errors.errorString terminal not cursor addressable", output
-
-    assert_match version.to_s, shell_output("#{bin}/lazygit -v")
+    s = testpath/"test.txt"
+    pid = spawn(bin/"lazygit", "-l", out: s.to_s, err: [:child, :out])
+    sleep 2
+    assert_match "Log file does not exist. Run `lazygit --debug` first to create the log file", s.read
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end

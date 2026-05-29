@@ -1,8 +1,8 @@
 class RancherCli < Formula
   desc "Unified tool to manage your Rancher server"
   homepage "https://github.com/rancher/cli"
-  url "https://ghfast.top/https://github.com/rancher/cli/archive/refs/tags/v2.14.1.tar.gz"
-  sha256 "38b05e840228a1a3c4a18541b297ccb58d171343eb6a697b9946d8bef6c993e3"
+  url "https://ghfast.top/https://github.com/rancher/cli/archive/refs/tags/v2.14.2.tar.gz"
+  sha256 "971df2cf1f433e2b79688ffd880f6ea5b7f1c90cf63b8c1582a3bca7e7ea6b6c"
   license "Apache-2.0"
   head "https://github.com/rancher/cli.git", branch: "main"
 
@@ -15,12 +15,12 @@ class RancherCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8cf3bf65f19590e05148935e872cf1157a6da4ed027ea802f1e5e65d761d3e2b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c139c5eaed0537556fe113a7355f45e4db4634ca330a0113076587c77daabbe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95b380a751c54a616b97a40c91eff4850f7a124ee37b90d9a6ad9a0d35ee7ef1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7aa3d2c8993388234970cb0016710673d9d4ee16e47806500ad3d1401c19da32"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ef056160cc892ffad81212f7a288938da0d30c17430530a0d591b8a7d230417"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bd2fad5a7138808f0237e480769334d954e8093ca3485f77aaa844232e00dfc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b6859f85cc52d56cae03b8cc32e2665b5e86e964433e0cf3ccdec0611f09ae2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bdcbcce0e7659e8eb630829f8b38841a460492b13caf1f98aeb5598a2a7cca20"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f17728df1c7c55b80a89058b5dd47897e4c6f8e4bbb407eef2330f6e11794eb2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "49dc43c15467f19c431fc1e8ac1f92ac0e3f63e3546ebda5176def3343654ffd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e63547f300b0328da1f382d6816a8eccfd7900e0dc6104d9b8c352b7a807af31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94088d3a0505c4f54bfb95970307648101cef0963465a12453161f3249b10516"
   end
 
   depends_on "go" => :build

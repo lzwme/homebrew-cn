@@ -1,18 +1,18 @@
 class Herdr < Formula
   desc "Agent multiplexer that lives in your terminal"
   homepage "https://herdr.dev"
-  url "https://ghfast.top/https://github.com/ogulcancelik/herdr/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "3a0563db82a3c574a26c910a7c61617ca3d80864715b6f5572efe09d7e95ec8f"
+  url "https://ghfast.top/https://github.com/ogulcancelik/herdr/archive/refs/tags/v0.6.4.tar.gz"
+  sha256 "4f83fb17d6ce0796bf50b19ee4919806d55cdb66cfc7f7b5b5893d4f8978bfa1"
   license "AGPL-3.0-or-later"
   head "https://github.com/ogulcancelik/herdr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eac906e5a5fbd32d837e367c4afaf5cc5316ee246c8c438c5f3b71621517a5d2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04bb22ef92fb6399087daefca31423f92102f2b1077e3433716500b75457ffa5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c8c3d20abeac57e8122a6cd0dd94bbf95e84ff1c4fe1f8779962beba3a28e51"
-    sha256 cellar: :any_skip_relocation, sonoma:        "11654b69d263019071bf6a9402e2efd003f74ef003e8138d6c8c032cedf73a2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "312dfeaadb455b64f84a5a8fd34bde5caf40f31bfc6a92320e2fc2d63d989bd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05194f62d3da8e14f3d2b804cb0bfab0d7dca52ae60d60dde025b82a88fb2ac3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "330fb918b1d12dd4530a55a0f157fc50ab626e1f2313e22cde259104c832cf43"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6e9f16ecc99a650803d71e87c314ca68e61fa2fe34b37a40ff690ba3b9b32ca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2f694f6688ab089b6b89c613b3c98147edbd006f91652281e0ed470e8f56de4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8866c7e34c48fba97ae5d3b16528b57743ccb5bf80c413fb2772a374982242a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9370ebeec2da2a4fe431770f455aeff12bba023d71c243bae66b76dd54ca0713"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c2df2d7c273ab2700f1c6357c895524b2f57aeac6d924487094d53233a95a1d"
   end
 
   depends_on "rust" => :build
@@ -20,15 +20,6 @@ class Herdr < Formula
 
   def install
     ENV.prepend_path "PATH", Formula["zig@0.15"].opt_bin
-
-    # Avoid building the unused macOS xcframework for the vendored terminal library.
-    # upstream pr, https://github.com/ogulcancelik/herdr/pull/286
-    inreplace "build.rs",
-      '.arg(format!("-Dversion-string={version_string}"))',
-      <<~RUST
-        .arg(format!("-Dversion-string={version_string}"))
-        .arg("-Demit-xcframework=false")
-      RUST
 
     system "cargo", "install", *std_cargo_args
   end

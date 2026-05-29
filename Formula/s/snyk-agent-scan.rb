@@ -3,17 +3,17 @@ class SnykAgentScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/snyk/agent-scan"
-  url "https://files.pythonhosted.org/packages/88/73/fd1a3030e410b1a3220469e4ae1f185e4fef0b6c99deadb5510d2e10e1cb/snyk_agent_scan-0.5.5.tar.gz"
-  sha256 "780e8842720664fefc0b4f1b6dd2378b0d655a97dc0321568a09ab66752816ec"
+  url "https://files.pythonhosted.org/packages/ab/6b/f6b2954e264ac3c0e7cfe44db10f07d1292c6f92bd0c7a0a3b81b9113879/snyk_agent_scan-0.5.6.tar.gz"
+  sha256 "55e62717e2d84b886c33499cef851794cfd2c9ced17ca7804983173a1e5c4522"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7eafc553b65df80b356b8d7e94bb9fe7ba9a75df020a623c8ecc4747ee7f4875"
-    sha256 cellar: :any,                 arm64_sequoia: "977daf76f1008c4f46076e0648a274d031ffe45e0882e3c9d287ab5687468bc8"
-    sha256 cellar: :any,                 arm64_sonoma:  "dd4f907ead9b349880db967abb15a5c837c991bd8f96f2f63d7ca479d7937b4b"
-    sha256 cellar: :any,                 sonoma:        "c00561fa54816012532512fa9e631b36618ffe1cd425bf4694bfeaa321e6b3e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a91ae0e32a27b3ca41ff0a98afcaac379e5cf788753f824bb2f3d49ab360dc44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86edc88dd4dacabcd9a4cd620b9c0f0adb54706fb5dd0cdce9ec0b850f51a491"
+    sha256 cellar: :any,                 arm64_tahoe:   "231b781f11c202e5df458960174f81c85a515f1c028064980b759e96d8758af9"
+    sha256 cellar: :any,                 arm64_sequoia: "7c50948cde16acd6ffe6ff1af741ce807edcb5784e83d2e648225e63f294b694"
+    sha256 cellar: :any,                 arm64_sonoma:  "581af5991124091d401cbd5eef110843adbfa01ee64ff880dd1bf0aab6daa759"
+    sha256 cellar: :any,                 sonoma:        "31382f744ec7c13da793b5e96519dab29851c65ad102a933a5c711b74adda92d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9dd1d05c803d238b8984e74dd5d7e131101b792f0ba342d99df93f60c34030f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6e0655c22105b6a40bda0a1b925dd521c99478aae683bd547e287fc62871abc"
   end
 
   depends_on "certifi" => :no_linkage
@@ -226,8 +226,8 @@ class SnykAgentScan < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/e4/51/9aed62104cea109b820bbd6c14245af756112017d309da813ef107d42e7e/typer-0.25.1.tar.gz"
-    sha256 "9616eb8853a09ffeabab1698952f33c6f29ffdbceb4eaeecf571880e8d7664cc"
+    url "https://files.pythonhosted.org/packages/67/a5/756f2e6bc81a7dd79aa3c625dd01b74cabc4516628cace2caaec09ca6ff2/typer-0.26.2.tar.gz"
+    sha256 "9b4f19e08fcc9427a822d1ef467b1fe76737a2f65c7926bdeba2337d73569b68"
   end
 
   resource "urllib3" do

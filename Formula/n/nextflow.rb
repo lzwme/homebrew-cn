@@ -1,8 +1,8 @@
 class Nextflow < Formula
   desc "Reproducible scientific workflows"
   homepage "https://nextflow.io"
-  url "https://ghfast.top/https://github.com/nextflow-io/nextflow/archive/refs/tags/v26.04.2.tar.gz"
-  sha256 "bb86b692dd407dab89abe9b0f8caa34578c126d81673829b656815b81fdfedfa"
+  url "https://ghfast.top/https://github.com/nextflow-io/nextflow/archive/refs/tags/v26.04.3.tar.gz"
+  sha256 "4bebe394c419f089402291040d4f240a2cff98d91957fadc6d6667763d79ea28"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Nextflow < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9780e904b1dbf3592674a68b03d0ee0e65c926616b17f43c5d7bf248d19533d9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0eae6283f93a7e95ba7f238b9ab94baaf5617515b0f2ed4e4ae9d5bfd1a48d4a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75715715e2b9231f475b9a33aee76e23e75b190613ccbe4890afe0511051c0ef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e4977b653995fb03c953662f806987a15907d15acd718af1e0963165995e2aab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "25984ee1163f29d0696c57626046d5656830080beab02fb4af52e256e6dcbd8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a7959591353fc96d523dc2762136df6875a1c5e7de6febab193faece45f3546"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "56e87c0f196c0d02c5a8bdc8ca77fa45ebc1d80e1692940043f77e4eaca86ed6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "912b418c7eb8bf19f4e0d91ec49b8f545d6034eec142da624919d775db8d4c3c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86c34387cfeb89c3a930788f0e0ba5cc6fe96886cd769bf493af60932673cc31"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3f480cf13b01efc176226c82b9e978ed0763e31b010420f8540f252db82c6839"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bdf8bc0a9a49974d9d3be64b80e336b6c1e5f4c340dbe0f6120e5790884083d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fccad61d57ca0ce82fadcce38b051fef70b169ae885d435580e3c9860dcb92a"
   end
 
   depends_on "gradle" => :build
