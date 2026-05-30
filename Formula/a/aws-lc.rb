@@ -1,8 +1,8 @@
 class AwsLc < Formula
   desc "General-purpose cryptographic library"
   homepage "https://github.com/aws/aws-lc"
-  url "https://ghfast.top/https://github.com/aws/aws-lc/archive/refs/tags/v1.73.0.tar.gz"
-  sha256 "e33ae89e7d09d7b23a900f68b62088d8813c260ac564b016e543ee3540ebcce3"
+  url "https://ghfast.top/https://github.com/aws/aws-lc/archive/refs/tags/v5.0.0.tar.gz"
+  sha256 "b4e1ea639d526c54243b8fbd9d21e101360423965bca5cbd72b862e7c9efdb12"
   license all_of: ["Apache-2.0", "ISC", "OpenSSL", "MIT", "BSD-3-Clause"]
 
   livecheck do
@@ -11,12 +11,12 @@ class AwsLc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "33ef936404fa4c93a4d7bfb54ed773aa8b1d53c73176d9c611755c3592a840e3"
-    sha256 cellar: :any,                 arm64_sequoia: "82bb3a5b0fe5f6213d9e1b41fb186cc71fac33211285fecafee9d4869382bf46"
-    sha256 cellar: :any,                 arm64_sonoma:  "94c8c79c4745b1112b9b8d74b4eeb08e19bc648f07bf3f67a4b038d18c3d6a80"
-    sha256 cellar: :any,                 sonoma:        "b7b8e0f66e8569a9cc68027d0bd5b211758804f6756002d80af76bb20a65964b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "56446f774eef6fdb097597afa9c8cb5f791a41197eee872da98bf10f9df1bf42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6b3ae9e6786fdf949351f6d311d5b270a04032b345acf30ed7cf3f94cf24e31"
+    sha256 cellar: :any, arm64_tahoe:   "5e1a9718056e72daa7fe889bfa06797eacbbbabdafcccd9c7f7c8d1df566ad21"
+    sha256 cellar: :any, arm64_sequoia: "02ecb717ab3a33e38742232e23e43745c79d93ec0112e07aad2f7bb39bfcd8f2"
+    sha256 cellar: :any, arm64_sonoma:  "3ee88c1ea43780dcd55466593a9dee9559b839e2076216b64ec74dc796700ca1"
+    sha256 cellar: :any, sonoma:        "0d3b2e1b2476509dcda41ea2c1cf538af496b3cfc2a32552b5398963909003e5"
+    sha256 cellar: :any, arm64_linux:   "50efb2839bdacd8468bf3fbfc56b60240618c70fceb879886243fcc82de94b2b"
+    sha256 cellar: :any, x86_64_linux:  "aadc156db6980cba6649074b6a0fd7601d7d05f532cde21f22ae14d2998230ca"
   end
 
   keg_only "it conflicts with OpenSSL"

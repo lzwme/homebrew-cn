@@ -20,10 +20,9 @@ class Libmicrohttpd < Formula
   depends_on "gnutls"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--enable-https",
-                          "--prefix=#{prefix}"
+                          *std_configure_args
     system "make", "install"
     (pkgshare/"examples").install Dir.glob("doc/examples/*.c")
   end

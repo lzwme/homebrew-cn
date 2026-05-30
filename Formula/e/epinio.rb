@@ -1,8 +1,8 @@
 class Epinio < Formula
   desc "CLI for Epinio, the Application Development Engine for Kubernetes"
   homepage "https://epinio.io/"
-  url "https://ghfast.top/https://github.com/epinio/epinio/archive/refs/tags/v1.13.10.tar.gz"
-  sha256 "1cff0c45f710196a944d43bee1ccabc7c68a89d51ecb95af02f71e4bed38f3de"
+  url "https://ghfast.top/https://github.com/epinio/epinio/archive/refs/tags/v1.14.0.tar.gz"
+  sha256 "56950229cdcf52ca9014c10ab98b3050bf824656340eede8585ef33b501f70ac"
   license "Apache-2.0"
 
   # Upstream creates a stable version tag ahead of release but a version isn't
@@ -14,12 +14,12 @@ class Epinio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5bd5c4830e5858377c5d887c72f0bee48f0f9da263eac9a84636fe4e51c95d12"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8a3b106c4ca1a96c0a4c9c9a935d4b95d18080eb3e44820c65cef4de355dde3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f427c8fc544c38ab855dbc339ced1792836fef3eb402f1ea72720abb018292b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cc3735950c3324c1e7c97e94a0fe56531bcb167e2c7d82aa732df3b127ff8f33"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9693ed125c1731b454b4a69d820804026bd216a454c3141cf5578caafb8d5e36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d670343719a604d2324efc88f426858d53c08842ef36017935de5f3250181e0d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c22c05083f4dab2bc01d06f0d3d6f03e5c524a72b1b8ea7f27538b89d306ebb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae71c5e48dac0f11d66e2805fe03a360f6032c0b3a4105feaf698781f6e568dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a228733d40f0f8375ec9498c1b99bdb1885e9246ef9ab0d06d5752f3e4d9d3f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "69f2ae0cb1380c725d565ca50f210f83fabd96eef26336bc319999bd5033a1bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7b350ea2e3ad69b96f22f9d912da41486d8beabee39fe94c5b383af1bb824fe"
+    sha256 cellar: :any,                 x86_64_linux:  "f792d6f559a6b94e3b4442fb5a6a2b009fab2c396afa4000e5b139ce6b6d7b50"
   end
 
   depends_on "go" => :build

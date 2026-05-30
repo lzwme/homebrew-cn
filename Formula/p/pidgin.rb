@@ -64,7 +64,6 @@ class Pidgin < Formula
     depends_on "gi-docgen" => :build
     depends_on "gobject-introspection" => :build
     depends_on "gstreamer" => :build
-    depends_on "libsoup" => :build
     depends_on "mercurial" => :build
     depends_on "meson" => :build
     depends_on "ninja" => :build
@@ -74,6 +73,7 @@ class Pidgin < Formula
     depends_on "gtksourceview5"
     depends_on "json-glib"
     depends_on "libadwaita"
+    depends_on "libsoup"
     depends_on "libspelling"
     depends_on "sqlite"
   end

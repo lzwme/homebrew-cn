@@ -1,9 +1,9 @@
 class Basex < Formula
   desc "Light-weight XML database and XPath/XQuery processor"
   homepage "https://basex.org"
-  url "https://files.basex.org/releases/12.3/BaseX123.zip"
-  version "12.3"
-  sha256 "e412cabfa94d93b91e1ceff999c235f837426e025ae7f1ad9ef604cfb2ed4050"
+  url "https://files.basex.org/releases/12.4/BaseX124.zip"
+  version "12.4"
+  sha256 "a88680cb4e55e49519f98bae7ac15e702bdda42628666d3f756167227a47bca1"
   license "BSD-3-Clause"
 
   livecheck do
@@ -14,7 +14,7 @@ class Basex < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "78d270a5afd8224434e6abec6d9ded8d42ae9af18ae881c26e8060d69695b69b"
+    sha256 cellar: :any_skip_relocation, all: "9573833187e0f024b87540b26f2f02f8f83b2c9b561572be92410cbeb64915c6"
   end
 
   depends_on "openjdk"
@@ -31,6 +31,6 @@ class Basex < Formula
   end
 
   test do
-    assert_equal "1\n2\n3\n4\n5\n6\n7\n8\n9\n10", shell_output("#{bin}/basex '1 to 10'")
+    assert_equal "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n", shell_output("#{bin}/basex '1 to 10'")
   end
 end

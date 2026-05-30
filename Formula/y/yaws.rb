@@ -1,19 +1,10 @@
 class Yaws < Formula
   desc "Webserver for dynamic content (written in Erlang)"
   homepage "https://erlyaws.github.io/"
+  url "https://ghfast.top/https://github.com/erlyaws/yaws/archive/refs/tags/yaws-2.3.1.tar.gz"
+  sha256 "a65110377b007693c6ddccdb061a57c6bd5b5bad88b976d75d6213aaabc8f5c5"
   license "BSD-3-Clause"
   head "https://github.com/erlyaws/yaws.git", branch: "master"
-
-  stable do
-    url "https://ghfast.top/https://github.com/erlyaws/yaws/archive/refs/tags/yaws-2.2.0.tar.gz"
-    sha256 "39318736472c165d4aec769c89ac4edfe3cab7ff7759f32de0a4e699ef6c88e8"
-
-    # Backport support to build with Erlang 29
-    patch do
-      url "https://github.com/erlyaws/yaws/commit/b325caea6cf9df1411b1b1f0c362a1ac28058654.patch?full_index=1"
-      sha256 "f20f083d36ef1b0f9719f8b43084dd6085573119aa14c76b3f1448e375683691"
-    end
-  end
 
   livecheck do
     url :stable
@@ -22,13 +13,12 @@ class Yaws < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4479efc9ab84cd8f012651d05d28a2ce94dbe56eb3c5bbfba8bed95652dff27a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "845f04a03d4cc7fae790142bbeab2cc65efa0a51e0049e6a616138470089119d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78bf0b4af2d43b0a2bdc77134dc85b9fea30a672b9f19f62f8057a97b708e10a"
-    sha256                               sonoma:        "d2d4b74599fa98fdf09ac21cd21112418036dbfa5619cd3871810836b96172f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c69ad4c9bdbcfa150427057eda6fff5827d3b9e1548bc52124dd1a572e0c0c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5585acc49cfeca4dc82ffb280b1ade5a2f8cb6164b801435718b9ee97858c77"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0629320e62e14c5dbfed5c834bfa166dd1077cd5d0df943ba18d5d721c0b7cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0cb3c87cc60dd5dacb0b6acc9cb7fe99ffd0ab073ec160fd373c91f2be09489d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79a01410336e2eb53d37f2e1af63d0d09430ad29209a42e16e77f7615ee338ca"
+    sha256                               sonoma:        "de5689a0f5e8831bf8d79aaaaa02c7c20ef0eeed497c30d21773381235f7d071"
+    sha256 cellar: :any,                 arm64_linux:   "0047af968c92cda969bd782b0103eb07c95540cbc379d1be7ac53568294834f6"
+    sha256 cellar: :any,                 x86_64_linux:  "5cd1962303c9ed3937fa80bb578ec4cd637cdff756dde2d7235968f885080fd6"
   end
 
   depends_on "autoconf" => :build

@@ -1,18 +1,18 @@
 class Edgevpn < Formula
   desc "Immutable, decentralized, statically built p2p VPN"
   homepage "https://mudler.github.io/edgevpn"
-  url "https://ghfast.top/https://github.com/mudler/edgevpn/archive/refs/tags/v0.32.2.tar.gz"
-  sha256 "9e0dec7937143d0cf1f728e3c15ef93a1d6ef1df4f19e87f5eee88d29baf0a13"
+  url "https://ghfast.top/https://github.com/mudler/edgevpn/archive/refs/tags/v0.32.3.tar.gz"
+  sha256 "3dbfa1f95e020b8b26dbcc662e34340c2bc54cf45143d7429f1aad598f811821"
   license "Apache-2.0"
   head "https://github.com/mudler/edgevpn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf99407a6b02090bd8ad5f317d0139f39837eff9cc72f5e7cc67a8addad2e82a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf99407a6b02090bd8ad5f317d0139f39837eff9cc72f5e7cc67a8addad2e82a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf99407a6b02090bd8ad5f317d0139f39837eff9cc72f5e7cc67a8addad2e82a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "087a826a5f114bfc080e37a27e53d14f276f3a81b0f33970b58c14ff6f4ffbbc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb19556b9a7413243dca6cbfd9625e675f0646593d855534d7c1838a6a69403e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a7dc1f3171fb98127c0c01a50c87934da2250566ab8d3db36d1959de0d9d9ba"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3c0c607e2a92cf7a8d50ceca27d4acf1c6828bf81a08fd6d3a98b5831718829"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3c0c607e2a92cf7a8d50ceca27d4acf1c6828bf81a08fd6d3a98b5831718829"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3c0c607e2a92cf7a8d50ceca27d4acf1c6828bf81a08fd6d3a98b5831718829"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eeb431cce764210f7090427df3b0fa29cb35eaa7f5108a32aeb6e207c415dea0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b3a621cb4a971be54fc8f8af7cfead690aee952025a7cbe22be28d03f78ae13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e27978b9e9ea24bbf135c5fbfff7b7e812ac3a7c914d6b74530c30c04322d9ba"
   end
 
   depends_on "go" => :build

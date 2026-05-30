@@ -4,16 +4,16 @@ class OpentelemetryCpp < Formula
   url "https://ghfast.top/https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.27.0.tar.gz"
   sha256 "d09c2e8dd95bbc1d6ee493a89f32a4736879948d0eb59ad58c855022d1f55cc1"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/open-telemetry/opentelemetry-cpp.git", branch: "main"
 
   bottle do
-    sha256               arm64_tahoe:   "a9629ac5170263dfefdfb4bff9ba4faa5f924be107985c4c8b97fdb2bb0d3a97"
-    sha256               arm64_sequoia: "c70d2fb3900f4384c9d1cd5c83a14e98fb81fa3ea0699e5e833a1d4d2b865665"
-    sha256               arm64_sonoma:  "28941cccb00c31e73fe3bcc05355ac341c68bc23d68e15e98f2f1ed30048b2ea"
-    sha256 cellar: :any, sonoma:        "31988b4c9887d4f8f43273099bd384b7105d53123458bdf4de7f16cdafd08298"
-    sha256               arm64_linux:   "0c38073a006329b161dcaf054596891d96a2279cf8087395a9cfec76e03a78ed"
-    sha256               x86_64_linux:  "277d97ca485a910a8fd74574406cd5b0ff695007066b11c9e82d0cffa57f0b92"
+    sha256               arm64_tahoe:   "1d6e4924c4595730929a414fbc5c70162de1e4551960ac7e264697d0d8294bf7"
+    sha256               arm64_sequoia: "0f3b572df41115a20f9d479524daad59397c274cab06794c2dc238779eb9d3a5"
+    sha256               arm64_sonoma:  "c8bd45c11516082476e101d4fa229beff6620fa3622025d13bdc51ac1af08187"
+    sha256 cellar: :any, sonoma:        "f3182e6a3d71c5772e1fa4fd8765c0fa6a0dab026f213088f2bab2f2325a5c33"
+    sha256               arm64_linux:   "8286c3612d422969666558f4cbcb47dfe0973308394d138e0b21e343a02fcb69"
+    sha256               x86_64_linux:  "05d496201d7c644ee73b36f73abbede8b3a056923c9d32966a4ade3416c5752c"
   end
 
   depends_on "cmake" => :build

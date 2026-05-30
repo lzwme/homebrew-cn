@@ -6,16 +6,16 @@ class Breezy < Formula
   url "https://files.pythonhosted.org/packages/59/1d/68956e351c1af8116ec8525c85faf82ed2484f38f6f4fed4755759073500/breezy-3.3.21.tar.gz"
   sha256 "70a5a810690ad8d5def1798a1351e7588be7f89f821eb7a6fae277aacd33d3be"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/breezy-team/breezy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "02e57bd632438e1936ae53bb43e38a4905e8a0a9000da55a84c25c88181db0ce"
-    sha256 cellar: :any,                 arm64_sequoia: "e3c7228b2c4dd8d55de75cc6e73afea452fc500ce421b003dfb5da4cbc4ec971"
-    sha256 cellar: :any,                 arm64_sonoma:  "ee89c9f86974e278e09f9f8ec0f4b363f20c68d6c5da2f7dbf73ba468af48838"
-    sha256 cellar: :any,                 sonoma:        "e5b887cbed0fd24dd1326e0c3bb93f960331239bedcd2af6cc43958a2b86c2da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29c4ac4e6b5295e554805d0da523ecb1eccbf8761f85836932ba12c487e28cbf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ba3cffe76997d0caad44da9ce049ac59e511b0f6a923e62e7dee99e70f94f5d"
+    sha256 cellar: :any, arm64_tahoe:   "d70657b0dcc78fb47bc19f5c5ab15340ebef7f94e70ab90408308c3505413419"
+    sha256 cellar: :any, arm64_sequoia: "57bea812633593d311e11f3797d3e2e5e08f7a662cf2fecda8b24bc901085d50"
+    sha256 cellar: :any, arm64_sonoma:  "d3c7e968d4a61af3ece8ee9f55b9d096f74392397b979555643c3fc3a097c687"
+    sha256 cellar: :any, sonoma:        "8cb0ec5467bef85f5efc99cd03e02efac56e6a5f2ea9fd6300f450de9bd0d7f6"
+    sha256 cellar: :any, arm64_linux:   "3e7158e7a3746767fb16d23795621c80888894a4973f17174a9dd25ba5e525ec"
+    sha256 cellar: :any, x86_64_linux:  "d946f2c5587bfe63c8ee8d94ed2ac10f3e913c5cb8e7cb0782323eb74e62e062"
   end
 
   depends_on "gettext" => :build
@@ -29,8 +29,8 @@ class Breezy < Formula
   end
 
   resource "dulwich" do
-    url "https://files.pythonhosted.org/packages/72/0f/46df53e30b03cc8fee9d1bbd7ca624b4d1b579ce2e4efeaa1cb712d119b0/dulwich-1.2.1.tar.gz"
-    sha256 "ba43bfb3a7cad40d9607170561e8c3be42e7083b4b57af89a5f54e01577ff791"
+    url "https://files.pythonhosted.org/packages/43/67/db7dfe7bd7a585e39c938f5f79ccb91235df5f8818f9273590ed6d0f9fdf/dulwich-1.2.4.tar.gz"
+    sha256 "72fc77c4e2c7e4358a78c6f71383baceea496ee0cedb13508f52a1a7656e8bb9"
   end
 
   resource "fastbencode" do

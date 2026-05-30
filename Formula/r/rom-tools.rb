@@ -1,9 +1,9 @@
 class RomTools < Formula
   desc "Tools for Multiple Arcade Machine Emulator"
   homepage "https://www.mamedev.org/"
-  url "https://ghfast.top/https://github.com/mamedev/mame/archive/refs/tags/mame0287.tar.gz"
-  version "0.287"
-  sha256 "85f5e91b0f31f0c398834b888cd5a83dc2466569250069cb6e3712158d015f44"
+  url "https://ghfast.top/https://github.com/mamedev/mame/archive/refs/tags/mame0288.tar.gz"
+  version "0.288"
+  sha256 "244d916eb3fb8bcd71f2ac51ae71ab6af8cf99869ea7b85d7efc7339ea56c563"
   license "GPL-2.0-or-later"
   head "https://github.com/mamedev/mame.git", branch: "master"
 
@@ -14,12 +14,12 @@ class RomTools < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c61bcf511c9e7d15aa8255d66175fd97a8204816ba900f280cfc77e567d25592"
-    sha256 cellar: :any,                 arm64_sequoia: "8e790ac5295d563abe94fc78706e7ddb5da0c6f6d90c5fc187b3c01c8ea30fa5"
-    sha256 cellar: :any,                 arm64_sonoma:  "1fa738d6d64a501e611dab154f7678ea6062e8593bec6ac504ad1b08a72a3a10"
-    sha256 cellar: :any,                 sonoma:        "fc18ee5f7ab45ff9d53bc75683b5f76a6a4c07c340b7ce056aad4b375753cf6a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9776746aeec25dcd7315cebf5f7d420ac4be7a689a7c55f9fd043db474ed6336"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70bfba55bf1bdc438480357fcec21142889285cc997c5f1e4998f3eedce8d8d8"
+    sha256 cellar: :any, arm64_tahoe:   "bc8fda39191f1c1b6c72ea0f627df2646cc6249db7c261161008f473361f2935"
+    sha256 cellar: :any, arm64_sequoia: "3ab7646d02faf9877713e55a19c41e602bd487a4802fc5e8e1056e4d8de2141c"
+    sha256 cellar: :any, arm64_sonoma:  "d393114d8cd44633d5ffe7f392a7a53d04bebdf5e1ef462488f6ed0fe86b3761"
+    sha256 cellar: :any, sonoma:        "62163186c33b9aeebced3ede43d697d0f0b2d1186cd7564832d7210b41f7121c"
+    sha256 cellar: :any, arm64_linux:   "384b2039757dcb7735ec63d1b4ace36a7756e22d4f186bac6ff4f0d29d09a90b"
+    sha256 cellar: :any, x86_64_linux:  "6ac2b3df9ae778d723eb7bef1140db58f20d03a1e45a2b48acad806615407a3d"
   end
 
   depends_on "asio" => :build
@@ -72,7 +72,6 @@ class RomTools < Formula
       nltool nlwav pngcmp regrep romcmp srcclean testkeys unidasm
     ]
     bin.install "split" => "rom-split"
-    bin.install "aueffectutil" if OS.mac?
     man1.install Dir["docs/man/*.1"]
   end
 

@@ -1,9 +1,8 @@
 class TinyRemapper < Formula
   desc "Tiny, efficient tool for remapping JAR files using \"Tiny\"-format mappings"
   homepage "https://fabricmc.net/"
-  # TODO: Check if we can use `openjdk` 25+ when bumping the version.
-  url "https://maven.fabricmc.net/net/fabricmc/tiny-remapper/0.13.1/tiny-remapper-0.13.1-fat.jar"
-  sha256 "55e0ae6ff30f3267fdc557cd0286638ba89ba70c32402618a5b5424ae624d9f8"
+  url "https://maven.fabricmc.net/net/fabricmc/tiny-remapper/0.14.0/tiny-remapper-0.14.0-fat.jar"
+  sha256 "9dbaf8030981338373abe029cd9c07732bff437887a56de1735ba2c3c76b0acf"
   license "LGPL-3.0-only"
 
   livecheck do
@@ -12,19 +11,18 @@ class TinyRemapper < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "00afeb8ecf9ab39259b1ffc4749d1372d47266b231b19e620f179f9aa69672fa"
+    sha256 cellar: :any_skip_relocation, all: "ad03f9960d6d25762e84e6de5633a06828b3592b3779d8b06d0dd3374fd84270"
   end
 
-  depends_on "openjdk@21"
+  depends_on "openjdk"
 
   def openjdk
-    Formula["openjdk@21"]
+    Formula["openjdk"]
   end
 
   def install
     libexec.install "tiny-remapper-#{version}-fat.jar"
-    bin.write_jar_script libexec/"tiny-remapper-#{version}-fat.jar", "tiny-remapper",
-                         java_version: "21"
+    bin.write_jar_script libexec/"tiny-remapper-#{version}-fat.jar", "tiny-remapper"
   end
 
   test do

@@ -1,19 +1,19 @@
 class Beads < Formula
   desc "Memory upgrade for your coding agent"
   homepage "https://github.com/steveyegge/beads"
-  url "https://ghfast.top/https://github.com/steveyegge/beads/archive/refs/tags/v1.0.4.tar.gz"
-  sha256 "60b0ea0399fcb409af41d25b26521a04ed8f8fbcd6a080fff5bb1c84cd7ddbe5"
+  url "https://ghfast.top/https://github.com/steveyegge/beads/archive/refs/tags/v1.0.5.tar.gz"
+  sha256 "06e52a953b2e46044c70bc41421554c5d006370b1a25905b752d02eb0b337f0d"
   license "MIT"
   compatibility_version 1
   head "https://github.com/gastownhall/beads.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e8e2852b34419f5bbb7ad5df001bb478e784390fa1123fc4b843deba3b43c394"
-    sha256 cellar: :any,                 arm64_sequoia: "d3940cea827805a40b0863b8fa6ca8389c1bd8d67bdd1663ba393231fc91ae88"
-    sha256 cellar: :any,                 arm64_sonoma:  "cb555fe56f011981232a8159b28b9b372ff91b26be0bd26255f2dc088e040480"
-    sha256 cellar: :any,                 sonoma:        "e4ec19f94cd8418b8f6c51b660e098f80bbd3e5a029eb4f03060c982cc8f2754"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45f3e4cb31c9e50af6a4704b9c9f116e8f2d7fd6be472912fd98df061a786ebf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0f8342473e2b1ef5f81f9430f790c66bb5c18867fbccd5a7bedae50c66ebeec"
+    sha256 cellar: :any,                 arm64_tahoe:   "f8fa08df32fb88a784f1487aeb7221e3cbebb9c4fcebfb37bdab4e6f0501b02a"
+    sha256 cellar: :any,                 arm64_sequoia: "6701bd6dd45af074ab1fd2fa679819daf717636d9c49542502b0f3e1a61595bd"
+    sha256 cellar: :any,                 arm64_sonoma:  "adc276608d86df0e2872a65588a91be2185e72ee54233ab314b3799258ec7398"
+    sha256 cellar: :any,                 sonoma:        "873801f3e80106f3a8533705ea4b818dc43c71fd56a0f808f02f0b668bd099c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e1ac41bcb03058ceac7373fb1e6a4b384164c8b99449ba3e98c13fe780a5f00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35357e5e576dbbb9144bb87a325d15c7ed01f067d22c8d77e0d22ae23653eccc"
   end
 
   depends_on "go" => :build

@@ -3,18 +3,23 @@ class HermesAgent < Formula
 
   desc "Self-improving AI agent that creates skills from experience"
   homepage "https://hermes-agent.nousresearch.com"
-  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.5.28.tar.gz"
-  sha256 "fecbbf9ca8bcb33abb3f4b847e97d0827b578dfe4187accd44b76575046a822d"
+  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.5.29.2.tar.gz"
+  sha256 "465ee7a8da014d89e8d381fd13b862469862b7aa6d42b2e9b938351d3787b48e"
   license "MIT"
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "86c9e9c0a68d66bbd07eec13931491302b29179074a357cfd0da34b936b35b6b"
-    sha256 cellar: :any,                 arm64_sequoia: "17c6fc39f58224ed8d9fbc6e0aedb9341bab7633a7ae6e1e1139e430d4fcaeac"
-    sha256 cellar: :any,                 arm64_sonoma:  "dd499b65655666aefbb6f1444d033b4b8f73b089ca61efdf0afc9b2661f7aa9e"
-    sha256 cellar: :any,                 sonoma:        "908b6d2dfdd14751dfa6886d249431b4f5cea925872836eedaace553e27db0e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b58789fb5f2b0a322a97c8495ba25eb5656b3d25ca5f4337f4f4da8d1288d719"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a011b9f4325f1acf0f690ecf7a6092546b9563accbacd0c4f9f6f33af06684f8"
+    sha256 cellar: :any, arm64_tahoe:   "0b348a1df85be939c3e8b309a21ea04f27c6ae1107ac4fd96fb06be8c93473c2"
+    sha256 cellar: :any, arm64_sequoia: "5cecf4fff72426747b56d127bd8662fc2715c8d69e7a88c9c2b17b2551134216"
+    sha256 cellar: :any, arm64_sonoma:  "a5b0d61f0231510bacef7dbb3be026c8d8cdbda7ebe8eba95e81d25900691ffd"
+    sha256 cellar: :any, sonoma:        "4b5ea06e1c0fabba11af146413b0708d96f7f12542dd48b1b2ca83a9f0911b5f"
+    sha256 cellar: :any, arm64_linux:   "b93d4a5900a468196817b8909561618a8ac0889da8aca1a11b6526f9b0931af4"
+    sha256 cellar: :any, x86_64_linux:  "eaf31057c0d6ef34b0a3636f40c703febe6273f3e809205a8c0a4a114356632d"
   end
 
   depends_on "pkgconf" => :build
@@ -68,8 +73,8 @@ class HermesAgent < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
-    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
   end
 
   resource "jinja2" do

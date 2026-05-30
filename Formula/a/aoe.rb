@@ -1,18 +1,18 @@
 class Aoe < Formula
   desc "Terminal session manager for AI coding agents"
   homepage "https://github.com/njbrake/agent-of-empires"
-  url "https://ghfast.top/https://github.com/njbrake/agent-of-empires/archive/refs/tags/v1.9.3.tar.gz"
-  sha256 "7d231d02b34ae1cf910bc35517a89abde77aeb6f1cf0b6bc3cd1fe9b73779112"
+  url "https://ghfast.top/https://github.com/njbrake/agent-of-empires/archive/refs/tags/v1.9.5.tar.gz"
+  sha256 "84effe9ccd322e140d9fc9f4856babaed4b99bd7176f2229e0f7293323590916"
   license "MIT"
   head "https://github.com/njbrake/agent-of-empires.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5d719cfa89e9783fea12c9686b9e6afa55d8f4739f4076f0f2d156886891cf26"
-    sha256 cellar: :any,                 arm64_sequoia: "bfb27b0eb6e716a3fd693d40dc63d15bb47dbdd6ef23161936aea93f20ad9286"
-    sha256 cellar: :any,                 arm64_sonoma:  "3b1e75b9dcbf8b9824c77f2b3b0d509e89577960e222a85034fc59cc8fb2ffca"
-    sha256 cellar: :any,                 sonoma:        "9a03669693ee93dc50be4a72375a6f3cae0b542ffeaf7c2b4144f49ba0857892"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ad3aa992f42acd077b772c6dd0e4890912ebcd24c85661be6a275f5f43c7f81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7b6513be9bd1a1096043ff3aea5e508cb9475ca09b578cd6650933c21d82a25"
+    sha256 cellar: :any, arm64_tahoe:   "93d6bac81057de6eef19db8bdaadbd3e486414189a71d9799f39281ef2bc09ac"
+    sha256 cellar: :any, arm64_sequoia: "ca70a9c15d00b5b46c159dd86fef4723b1d1faf7b6653309f7b707c61f46fede"
+    sha256 cellar: :any, arm64_sonoma:  "f1cb2d3b4e2c78af1ddef0e3f3f51dcefefcddea49db141a817b22e8462e99f1"
+    sha256 cellar: :any, sonoma:        "3cbfc0544d612c73260619b9a0794fd5e31e63cb001e8282610e920041b6e706"
+    sha256 cellar: :any, arm64_linux:   "2791f86be7c85e77bdc7ffaa71c0e14c47e1722509717e2fdb5a5a4addc82995"
+    sha256 cellar: :any, x86_64_linux:  "46822045cab2fbb5efccde27db6090e817a7f34b984064f0b20136043add1925"
   end
 
   depends_on "node" => :build

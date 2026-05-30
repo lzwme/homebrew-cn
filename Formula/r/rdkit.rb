@@ -2,8 +2,8 @@ class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https://rdkit.org/"
   # NOTE: Make sure to update RPATHs if any "@rpath-referenced libraries" show up in `brew linkage`
-  url "https://ghfast.top/https://github.com/rdkit/rdkit/archive/refs/tags/Release_2026_03_2.tar.gz"
-  sha256 "9bea418c32b553920dc3491b282bbfc47e10728ad20ea874ca47c38cc1b0818b"
+  url "https://ghfast.top/https://github.com/rdkit/rdkit/archive/refs/tags/Release_2026_03_3.tar.gz"
+  sha256 "21e22e5e6b3a313527256fbde41c757f22d834b19caf2908e3c2dd11061e1fea"
   license "BSD-3-Clause"
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
@@ -16,12 +16,12 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "7e059ba243e1da259262ecbb9c435f493cc5c4888256bbf7c04e4f309db768c2"
-    sha256                               arm64_sequoia: "81e4568299c1209b8b38bb40ebe81a79f7917539e49f81b0420f14e02da727f0"
-    sha256                               arm64_sonoma:  "afd73c8c46b3d4861a8ce534c371e5adf53410e0d160ae87e365a1efd243ff44"
-    sha256 cellar: :any,                 sonoma:        "dca18afab829375096577293fa1f26e37c40511704bb8a5e5cfdf0393459cdcd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6fac5f2832693a133c004400ad4ea96f2d5f5a1efc49b8c3b00132e2e40ab68"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d6b0e790c75f72dd2c75240f02e39c436c286fe31adfb84f925c8bf03d00a19"
+    sha256               arm64_tahoe:   "5aabba619ade43b01f70db66387c5b93bf89a9bc5c4124e5ade6a7d64e0c1ac0"
+    sha256               arm64_sequoia: "b2b000b7aad1c6237e67809b6b70c3d1630b8d80290eba98a99275bfe73750a1"
+    sha256               arm64_sonoma:  "392f0456e50e67ad323cef5044ef3ea93474f9a2dd58e1a323bef5a087e0b90b"
+    sha256 cellar: :any, sonoma:        "cf7b72d3cb5dc2a1c5a8fb3d6e3473f9986ba894ba2ddad7a4576177625baa2b"
+    sha256 cellar: :any, arm64_linux:   "d37e17e1a2c2e8e5454887cb4885fd2d7fc50221b0462e0a2e333bcb3f1bc720"
+    sha256 cellar: :any, x86_64_linux:  "6480b255f3f442b60bac912744ba4e6f81b1abd7f02cc05063246fb3c8c216d7"
   end
 
   depends_on "catch2" => :build
@@ -97,8 +97,6 @@ class Rdkit < Formula
       s.sub!(/^find_package\(PostgreSQL/, "find_package(Cairo REQUIRED)\nfind_package(rdkit REQUIRED)\n\\0")
       s.sub! 'set(pgRDKitLibs "${pgRDKitLibs}${pgRDKitLib}', 'set(pgRDKitLibs "${pgRDKitLibs}RDKit::${pgRDKitLib}'
       s.sub! ";${INCHI_LIBRARIES};", ";"
-      # Add RPATH for PostgreSQL cartridge
-      s.sub! '"-Wl,-dead_strip_dylibs ', "\\0-Wl,-rpath,#{loader_path}/.. "
     end
     ENV["DESTDIR"] = "/" # to force creation of non-standard PostgreSQL directories
 

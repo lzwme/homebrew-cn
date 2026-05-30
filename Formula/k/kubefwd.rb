@@ -1,18 +1,18 @@
 class Kubefwd < Formula
   desc "Bulk port forwarding Kubernetes services for local development"
   homepage "https://kubefwd.com"
-  url "https://ghfast.top/https://github.com/txn2/kubefwd/archive/refs/tags/v1.25.14.tar.gz"
-  sha256 "6b44f9e7d0280c5d181130a0e1d2e54b2b60dbc521d468917becbb53deefb869"
+  url "https://ghfast.top/https://github.com/txn2/kubefwd/archive/refs/tags/v1.25.15.tar.gz"
+  sha256 "a4e446ab5f5c9eb3e11d4f682961c194d478c7dfe5c64d4d5162a054b0843043"
   license "Apache-2.0"
   head "https://github.com/txn2/kubefwd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01fcec076c3a35ddfae21d85e14e873dfb69a64a5b488e653783ceeacced8a8b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9df44b82c1bcf10af395577140ada5b5e4aa7c15a1021a6ee796a65ff6ce1268"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6b53025c97080859c135023c770601a639190551154632b0dbb79d6d8f9045e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "69719ec939e51cd04524efe46e9ab254d5cff89bbe34dacacbfff489d2a2014d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d24469bb2f0a2111f32cb16f5375e66ba3f402d511ecf4f61864fdb11b6aaaab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9522f0b549854c42c5d7db91ed46cad333fbb576ea521554e2797a8f47a0346"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a1b25099ae6c7bac8155f2929ce2e6f3e39e819f48fcb62af9af17100735ea98"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53e378498281143dc34d1e26c5fd6248624d2bd72b8a77bf99b4c6eaadc0fd1d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3e40880a0067a0c2cc9f85778091d39bedac493987658aa710cc5633c3f6a2a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "df1878e01735eafaf173adccdcfe89c28db2092ea9280313b5b60601a647304f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e5373d45ea5e334092e9ca9f6e5e3c81958376b17077bca7f38f3d4c7b43bc6"
+    sha256 cellar: :any,                 x86_64_linux:  "62a9451e1b8d4ef3bb456b0754823c7349c1f1b49c7f8db588f7ac219fa70266"
   end
 
   depends_on "go" => :build

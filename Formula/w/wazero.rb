@@ -1,8 +1,8 @@
 class Wazero < Formula
   desc "Zero dependency WebAssembly runtime"
   homepage "https://wazero.io"
-  url "https://ghfast.top/https://github.com/tetratelabs/wazero/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "a785f0eabe510e454a01e0d187675a913f96814d0c7e38c4717e03f6d5420ed4"
+  url "https://ghfast.top/https://github.com/tetratelabs/wazero/archive/refs/tags/v1.12.0.tar.gz"
+  sha256 "81afcc5576db589dda5403f71aa5ae2593222a7ba9671007484bf0ce6e21e7ba"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Wazero < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9eb11965062b5259c0dac49f69ff488d9e38bd96aebf78d7169984d288e931b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9eb11965062b5259c0dac49f69ff488d9e38bd96aebf78d7169984d288e931b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9eb11965062b5259c0dac49f69ff488d9e38bd96aebf78d7169984d288e931b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1791849ae4bc71b21c16f5411234a8b6147d730cdfaeb4feada8ccfcd952fdac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45288c26d39cf14c8fab4921edf826540965ae2280cac66580678ba3061aedec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4191f33d9b5007bb554ce3240aa0b242eab381ccfc6ea1fd51157601448801d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b48c99c3b9ee63f59d9ed32d7f5ae4c40551248686bd4cd2434044d16c59b03"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b48c99c3b9ee63f59d9ed32d7f5ae4c40551248686bd4cd2434044d16c59b03"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b48c99c3b9ee63f59d9ed32d7f5ae4c40551248686bd4cd2434044d16c59b03"
+    sha256 cellar: :any_skip_relocation, sonoma:        "820d56ab8fdc93c8305eb50378f794c2aff267ce59efc008cace240fd0674332"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "112def4207427435ec33263a919ba870e0e75332ae0e8113a92bfb1ca6f9f70f"
+    sha256 cellar: :any,                 x86_64_linux:  "3100242d33d61d5d21e3c19b9962e392cc5c4a5077725005a12f3d20bc9ca553"
   end
 
   depends_on "go" => :build

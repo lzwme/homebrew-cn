@@ -30,20 +30,15 @@ class Allureofthestars < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # TODO: Remove resource once new release is available or hackage revision (r2+) with
-  # equivalent changes (https://hackage.haskell.org/package/sdl2-2.5.5.0/revisions/).
+  # TODO: Remove resource once sdl2 >= 2.5.5.1
   resource "sdl2" do
-    url "https://hackage.haskell.org/package/sdl2-2.5.5.0/sdl2-2.5.5.0.tar.gz"
-    sha256 "23fdaa896e528620f31afeb763422d0c27d758e587215ff0c1387d6e6b3551cd"
+    url "https://hackage.haskell.org/package/sdl2-2.5.5.1/sdl2-2.5.5.1.tar.gz"
+    sha256 "25b3e2410129c16c2cea56137319206fa1b792dec6634f07a7ea4d9031ffc0cc"
 
-    # Backport increased upper bounds for dependencies
+    # Backport fix
     patch do
-      url "https://github.com/haskell-game/sdl2/commit/7d77a910b176c395881da3bf507a6e1936a30023.patch?full_index=1"
-      sha256 "eee6b20184b9a86adf3fdfb36b5565bde2e0845f0b0d9edf37872d6abfe3248e"
-    end
-    patch do
-      url "https://github.com/haskell-game/sdl2/commit/5c92d46bebf188911d6472ace159995e47580290.patch?full_index=1"
-      sha256 "570ad5c52892709e19777eb2e9aa6773c0626ce993fbc775c1d1a3ae3674af2f"
+      url "https://github.com/haskell-game/sdl2/commit/73db004e1ffefe5767edb62271c51ee3e8b6af48.patch?full_index=1"
+      sha256 "22daee1181c49f218592085912ff8b0ba1dc2487948759d11ab42bfc054faed5"
     end
   end
 
@@ -53,11 +48,8 @@ class Allureofthestars < Formula
     (buildpath/"cabal.project.local").write "packages: . sdl2/"
     (buildpath/"sdl2").install resource("sdl2")
 
-    # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
-    args = ["--allow-newer=base,containers,template-haskell", "--constraint=enummapset>=0.7"]
-
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *args, *std_cabal_v2_args
+    system "cabal", "v2-install", *std_cabal_v2_args
   end
 
   test do

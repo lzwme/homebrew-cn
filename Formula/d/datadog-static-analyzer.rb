@@ -1,8 +1,8 @@
 class DatadogStaticAnalyzer < Formula
   desc "Static analysis tool for code quality and security"
   homepage "https://docs.datadoghq.com/security/code_security/static_analysis/"
-  url "https://ghfast.top/https://github.com/DataDog/datadog-static-analyzer/archive/refs/tags/0.8.4.tar.gz"
-  sha256 "b442a0db20dd09d40746fade2fbcb92cf1d4e7a5e775bc6e3a94c1c5864dce60"
+  url "https://ghfast.top/https://github.com/DataDog/datadog-static-analyzer/archive/refs/tags/0.8.5.tar.gz"
+  sha256 "e7266293b0f721991fc871f8fd6b63271ca4011174ff5e3d2de895642107993e"
   license "Apache-2.0"
   head "https://github.com/DataDog/datadog-static-analyzer.git", branch: "main"
 
@@ -12,12 +12,12 @@ class DatadogStaticAnalyzer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6559e9f88409e521604df014691d6d59ece1be267a1e81aa6d14a3839c3f10f5"
-    sha256 cellar: :any,                 arm64_sequoia: "05efbff383dce0fe3361e647184b11288e37c487b0c50bb796b65bdb4e2c1266"
-    sha256 cellar: :any,                 arm64_sonoma:  "1cd70a5f73230ddf02fa1d4922ca66def2984cdb89fc9c2c1976f13ca3477e57"
-    sha256 cellar: :any,                 sonoma:        "eb3412dfe212288ff7f897378a38048e891704a8fc4493f1ff28d26a60ffa840"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "70fe5e1682122c079f1c0d6348791ceed19e49452de24203cf66183dcd59a58e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90af02968ae27233c2ab53770cd7a36b00b7b8d2f558b0e16c5b2f7ac1ec7bce"
+    sha256 cellar: :any, arm64_tahoe:   "9a2f612822b01453c1d368fed58e7af6e6a22c70b064e1dd34b8d2f85530b279"
+    sha256 cellar: :any, arm64_sequoia: "a7d7fc844caddc9cb150c4728f2092c0b088137bc1e1d9a25f50632e572e7db1"
+    sha256 cellar: :any, arm64_sonoma:  "8a0aca7ecdadad1215a49f9288c84beaeeddbb653529c03bda95f100d59285f7"
+    sha256 cellar: :any, sonoma:        "0b567c17485f71f8042ee044dce37a220c1fef0def063dfc39e36932e03ddff5"
+    sha256 cellar: :any, arm64_linux:   "6c1c5e0c98e353b8dc9e9332c0c96dee27e795c3a4e94f8f5457c3b54e652253"
+    sha256 cellar: :any, x86_64_linux:  "69d8203b80ba46c3dc3587962d88338425d3ec1f37031ab65d699e0f3af46090"
   end
 
   depends_on "pkgconf" => :build

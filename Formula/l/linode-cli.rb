@@ -3,19 +3,18 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://github.com/linode/linode-cli"
-  url "https://files.pythonhosted.org/packages/22/74/c07f3fb070b2c9d602fbd5c163fde70aeb3ec304e0f63f424bc6ac97daed/linode_cli-5.67.0.tar.gz"
-  sha256 "b5dc21013e86c4a5f775fb7237093920e01e50fd4bda877ae0f4dd3cce4b4497"
+  url "https://files.pythonhosted.org/packages/f4/53/a924ab651cffe044575bfd114a9c39f58b27974356ffcf2e52c2d54bfd98/linode_cli-5.68.0.tar.gz"
+  sha256 "c3af1dc617f8bc164baa9e98020e979b20c5ee6b6d35414276f3c2681d983507"
   license "BSD-3-Clause"
-  revision 2
   head "https://github.com/linode/linode-cli.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ff513614f873ccd3a3a076b424b11e77a396c893e671e34a02ba3e363c673768"
-    sha256 cellar: :any,                 arm64_sequoia: "0fe4894a8eb9c569d25b148c0d9547e28c864ebab535ab3685e921c98570b4de"
-    sha256 cellar: :any,                 arm64_sonoma:  "56a030f59cfe2ae46982e2b04b23695037fdb6fb30947bef16598439693c6c6a"
-    sha256 cellar: :any,                 sonoma:        "fe098a7c547d66d289ecec5dfb7155c35eba3da65f4e0127af7b9278ef740dc7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c326f3627b746a2799d8c3f8aa19f883d760337ce8603c2c1cfcc0ce73a75eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7762b580657f2f7c9d24ab00582fb601e9812b2df82cc7e03cfc10d4a56752be"
+    sha256 cellar: :any, arm64_tahoe:   "fc06b9ff1d15c03322ee17431990c9dbb737513b948a212c22a7079fe7dbbb1b"
+    sha256 cellar: :any, arm64_sequoia: "3f8d7cab08d9a43c84c051569df576a13ffc43eba2fc61b384b1ef5142ae353e"
+    sha256 cellar: :any, arm64_sonoma:  "2d521a7c8310a2e22ac394b6c750140304726ea88091cc68767f514787ce2122"
+    sha256 cellar: :any, sonoma:        "2aef1d2deab146ed93ba255affbc3dfe7c4cf7c53674968d64245d75f98c3ea4"
+    sha256 cellar: :any, arm64_linux:   "2868522a37e99d2b87d76196cc688f085221641b6ca82f63176d80c384394510"
+    sha256 cellar: :any, x86_64_linux:  "e6cf354017a1c1681348559517efb04cf2a9e66ec823135041678bd94acfae98"
   end
 
   depends_on "certifi" => :no_linkage
@@ -50,8 +49,8 @@ class LinodeCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
   end
 
   resource "linode-metadata" do

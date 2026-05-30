@@ -3,14 +3,13 @@ class Internetarchive < Formula
 
   desc "Python wrapper for the various Internet Archive APIs"
   homepage "https://github.com/jjjake/internetarchive"
-  url "https://files.pythonhosted.org/packages/68/e6/594ecd2469fca16f92e9538c40c010c87cc1d5b166dea67d266b405b08e3/internetarchive-5.8.0.tar.gz"
-  sha256 "0dff14d51bafa3da587f32a8cb6478327e20c2d040a61fbfb4ad30d592062cc2"
+  url "https://files.pythonhosted.org/packages/f0/5e/d973864fff7092f9a6cf3ca449228ba8c42baf0b23a9dd302d2528ec07e9/internetarchive-5.9.0.tar.gz"
+  sha256 "91f3e17217e744d8658848051454f87c8f2431afc450e0491ed4f490b7e37fba"
   license "AGPL-3.0-or-later"
-  revision 3
   head "https://github.com/jjjake/internetarchive.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2c22103fca050085c7a1a067022ee7204420ee1e3e25684d9766cd9e08d62a4f"
+    sha256 cellar: :any_skip_relocation, all: "d37c9c50c4e2c2b17b98a05799e07e4aa8b8a2151d5b379900d1aad4e06f5e59"
   end
 
   depends_on "certifi"
@@ -24,8 +23,8 @@ class Internetarchive < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
   end
 
   resource "jsonpatch" do

@@ -1,18 +1,18 @@
 class Herdr < Formula
   desc "Agent multiplexer that lives in your terminal"
   homepage "https://herdr.dev"
-  url "https://ghfast.top/https://github.com/ogulcancelik/herdr/archive/refs/tags/v0.6.4.tar.gz"
-  sha256 "4f83fb17d6ce0796bf50b19ee4919806d55cdb66cfc7f7b5b5893d4f8978bfa1"
+  url "https://ghfast.top/https://github.com/ogulcancelik/herdr/archive/refs/tags/v0.6.5.tar.gz"
+  sha256 "2fbae009cbce588f2bfba81f88ec0ecf0e134dae3a9e6f35318afcb8342fc215"
   license "AGPL-3.0-or-later"
   head "https://github.com/ogulcancelik/herdr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "330fb918b1d12dd4530a55a0f157fc50ab626e1f2313e22cde259104c832cf43"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6e9f16ecc99a650803d71e87c314ca68e61fa2fe34b37a40ff690ba3b9b32ca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2f694f6688ab089b6b89c613b3c98147edbd006f91652281e0ed470e8f56de4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8866c7e34c48fba97ae5d3b16528b57743ccb5bf80c413fb2772a374982242a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9370ebeec2da2a4fe431770f455aeff12bba023d71c243bae66b76dd54ca0713"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c2df2d7c273ab2700f1c6357c895524b2f57aeac6d924487094d53233a95a1d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dbd9bf24ec15792e3588dea99eae1e661068043e1b5e27c37cd85154ae7dfcea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82b3c26246a0463462cf2be339f69bb687daa5f391f32cb42414fa705d5bb257"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5fccf84dca280e56fc77786607316880bf6b5c1c957ba789f956e416dce7e803"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0542f280466f3eced417405c5147e699e3ff1d178ef7c5e8b12153b89c28e2bc"
+    sha256 cellar: :any,                 arm64_linux:   "168684b9cc16429118d3fd2cef4178c9aeee8ee4862edb1352b1d7cc9cf059cf"
+    sha256 cellar: :any,                 x86_64_linux:  "ef7e9b4dc13b5830ee1ab2c40c9e3069018285396f191b4724a2a8faa97c7e99"
   end
 
   depends_on "rust" => :build

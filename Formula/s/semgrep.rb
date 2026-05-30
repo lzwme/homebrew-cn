@@ -5,8 +5,8 @@ class Semgrep < Formula
   homepage "https://semgrep.dev"
   # Pull from git tag to get submodules, https://github.com/semgrep/semgrep/issues/10877
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.157.0",
-      revision: "caad1d53f48a40fa55cec9e41bf4820f115889b3"
+      tag:      "v1.164.0",
+      revision: "887f1f48a6f35e692870e68651100db7496036cf"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -15,16 +15,13 @@ class Semgrep < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  # see: https://github.com/Homebrew/homebrew-core/pull/277363
-  no_autobump! because: "tags past 1.157.0 includes breaking build changes that is incompatible w/semgrep.rb"
-
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a8f7a274d5361dff6d168963aad5f275c40094cb161e03cafcf3e3013894d75f"
-    sha256 cellar: :any, arm64_sequoia: "88b273c18ccfd1c41a5b72a6719f3910e9c8cbd7e4601524fd06c33cb3f17dc4"
-    sha256 cellar: :any, arm64_sonoma:  "7e66decfc20bd0338a70e31e320016667f7aa75850f06742d3c44702b5bf1632"
-    sha256 cellar: :any, sonoma:        "bee3905a9fd77ea029cabc6cc49c5be6664fc283f29d0761708c970e06ef3d92"
-    sha256               arm64_linux:   "b5529bdc1074c2b7e21d50936922f39c0cece4235be879b2ba7dc753e245104b"
-    sha256               x86_64_linux:  "520dd985aeef9302af17d6a471e10c326c84d7402b9be9028d51413a2b834d3c"
+    sha256 cellar: :any, arm64_tahoe:   "7d579cf49995ca49f0211c39260aa7d93f964ede9d0e60697a9e35d383a1a277"
+    sha256 cellar: :any, arm64_sequoia: "b867b740e267472291ddf4e4cb27e2f68667e5ffb99729ab4fdec0c1c7f1baf4"
+    sha256 cellar: :any, arm64_sonoma:  "9d7b8419b1769ff1708a7ecdb7ab44fa32e42bba9ae26e6ef6ae52f627c5900e"
+    sha256 cellar: :any, sonoma:        "78d50e0a1f7f4c5dba0c49f54522514c2860e112a8f1f88a06ce08c046349926"
+    sha256               arm64_linux:   "97b4237591bed76157032ed90a0b9253970ea8acdf686e87dcfa262d0e6c3e26"
+    sha256               x86_64_linux:  "0a0947ef854c382479f9c154b054d611c7b1f0c50b19c230edbdeb02a67ad8aa"
   end
 
   depends_on "ocaml" => :build

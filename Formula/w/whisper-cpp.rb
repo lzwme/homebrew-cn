@@ -1,8 +1,8 @@
 class WhisperCpp < Formula
   desc "Port of OpenAI's Whisper model in C/C++"
   homepage "https://github.com/ggml-org/whisper.cpp"
-  url "https://ghfast.top/https://github.com/ggml-org/whisper.cpp/archive/refs/tags/v1.8.4.tar.gz"
-  sha256 "b26f30e52c095ccb75da40b168437736605eb280de57381887bf9e2b65f31e66"
+  url "https://ghfast.top/https://github.com/ggml-org/whisper.cpp/archive/refs/tags/v1.8.5.tar.gz"
+  sha256 "cd702189cb5e608c8bc487f4b151db593c4455925b37cc06ef76b44861911db1"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ggml-org/whisper.cpp.git", branch: "master"
@@ -13,12 +13,12 @@ class WhisperCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fca60c843fa6658257b7a7664eb7d47b84ddb5439e76ffc3c2d9aaf3c58c1c83"
-    sha256 cellar: :any,                 arm64_sequoia: "d794efe84571c76ef12c49c09298c3607034957b71c521eacc1cd31f63321ce3"
-    sha256 cellar: :any,                 arm64_sonoma:  "188da204b568997bb9d9536a7059c85de3225bcdba14a0cd57042c4fc750d3a4"
-    sha256 cellar: :any,                 sonoma:        "e0a6d4f8cb3e1fb7a31185c31fef44741e068af4632b46226c1a4a0f545b3e86"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e42db9f12aa9c39d0238717f29d568464b10ae6fbcca6c0a03d3a7d6760be9aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1932e53d5a3c28174411c00939d2c74e3c328a07b8e62b75b3e90053b114629"
+    sha256 cellar: :any, arm64_tahoe:   "6672c752c9aafd6ee9c19dcf3920b7d76e4585309dcdc4e71bf7aa26dd43612e"
+    sha256 cellar: :any, arm64_sequoia: "f8cf25bbc77f4cc36e47cd5fc72ff4d6760b7d401b73d26d4e848d088ef1d361"
+    sha256 cellar: :any, arm64_sonoma:  "6d722bde723a03ec956a51a2d5d328051a046d86f5336309924535f828c7034f"
+    sha256 cellar: :any, sonoma:        "5c9ed3830a2e7981dea3f0f04ebed94cb09d05b77ffa0fb2824be2a3f1f5f035"
+    sha256 cellar: :any, arm64_linux:   "81ae8a9cfed589929603162fe72b891dde53238b3ed5b5298a17aae4e43140ed"
+    sha256 cellar: :any, x86_64_linux:  "aa8fbcedb807e57f7de47acce715a8d414d4b1a344ca841d027510c6218c02a9"
   end
 
   depends_on "cmake" => :build

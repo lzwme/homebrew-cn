@@ -1,8 +1,8 @@
 class Kraftkit < Formula
   desc "Build and use highly customized and ultra-lightweight unikernel VMs"
   homepage "https://unikraft.org/docs/cli"
-  url "https://ghfast.top/https://github.com/unikraft/kraftkit/archive/refs/tags/v0.12.11.tar.gz"
-  sha256 "25eff0cbe79527a3ccb792d238a7df8a76c4d505db6015f16b27be1d8be40e51"
+  url "https://ghfast.top/https://github.com/unikraft/kraftkit/archive/refs/tags/v0.12.13.tar.gz"
+  sha256 "be13ed7ba3e7d640075c3b8b34c6149209c17d67cdbe07d951612456a70f2bde"
   license "BSD-3-Clause"
   head "https://github.com/unikraft/kraftkit.git", branch: "staging"
 
@@ -12,12 +12,12 @@ class Kraftkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fa76637f084c45dce2a0c02389e8c9beb333587664f5e779d8cc16cee7c2f1c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65f4f4f24b07ee417c8b96ab0b8e3712cbe78537e595ad898ea850c2d60868d8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c53916d5576bca5553a24fcc56a6b2d5a2249374bede73fd1485911b2ddd60f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "46bf368d7a9ff9381ba4b329377594334bda8ea90ef22313c4dc4f58ad33183e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e472f1bbbf79857f32c7893c4b815b6ee953d5b498075dcd5198c6f211f68bfe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25ae0c93927fdd73e40d0921b5b25b418d215b04fdb08a696c04a16de8d0fa99"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5734c5fe0827a7c016beb94f612e7e4b6d98e4c99ea953fd42319c991ba52d19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "884e4a62f40ebd26de51e88052b7aa347f0a2ab17ea639a55849410f0a939500"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25a39d438a2327d4e8065339866c994fb49ec830adae4357daa0bb6e72ecc667"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d7ca1800a455ff60530bd50d8d975c0c0de7868b91479e15c8a33d553874474"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3844345bee2029a4ef07742c69f412e1a35409271cf7f5358fedd34f86712974"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "396d3c3fe402989dc2fb43199996113e8bbf5592fd97af24b4c5b70e297f04e4"
   end
 
   depends_on "go" => :build
@@ -42,11 +42,7 @@ class Kraftkit < Formula
   end
 
   test do
-    expected = if OS.mac?
-      "could not determine hypervisor and system mode"
-    else
-      "finding unikraft.org/helloworld:latest"
-    end
+    expected = "finding 1 unikraft.org/helloworld:latest"
     assert_match expected, shell_output("#{bin}/kraft run unikraft.org/helloworld:latest 2>&1", 1)
 
     assert_match version.to_s, shell_output("#{bin}/kraft version")

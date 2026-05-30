@@ -25,7 +25,7 @@ class Gauche < Formula
   end
 
   depends_on "ca-certificates"
-  depends_on "mbedtls@3"
+  depends_on "mbedtls@3" # https://github.com/shirok/Gauche/issues/1181, https://github.com/shirok/Gauche/issues/1206
 
   uses_from_macos "libxcrypt"
 

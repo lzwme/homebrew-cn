@@ -1,18 +1,18 @@
 class GitSync < Formula
   desc "Clones a git repository and keeps it synchronized with the upstream"
   homepage "https://github.com/kubernetes/git-sync"
-  url "https://ghfast.top/https://github.com/kubernetes/git-sync/archive/refs/tags/v4.6.0.tar.gz"
-  sha256 "a54cec1a8b30380f08cae5230783fd21a5d8ee6a0e185048d7ca80847ddde19b"
+  url "https://ghfast.top/https://github.com/kubernetes/git-sync/archive/refs/tags/v4.7.0.tar.gz"
+  sha256 "e63fba896f024f72849d134f0832dfca475126c90e8efd55ed5241fe57bf3a8a"
   license "Apache-2.0"
   head "https://github.com/kubernetes/git-sync.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "33136f82f71d403ea6a970959d8ca21be7a4ab7f3a210c164ccd307b0382c80c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33136f82f71d403ea6a970959d8ca21be7a4ab7f3a210c164ccd307b0382c80c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "33136f82f71d403ea6a970959d8ca21be7a4ab7f3a210c164ccd307b0382c80c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f8875c890add3925df8921568bde2fb11787816f6dff076ab999007aaabd30bc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4815981f65fd5aee96c003f15d3ceba5a0bf71c3ff846f00bec2622a796121d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c2ce5c40f72786e09684cc3d1225e182a6165e057fe5474383cf474fe174136"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52a12ad908d18009ef8f38dedeecbf8672c6d6afb895bc6b24d9894475dca274"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52a12ad908d18009ef8f38dedeecbf8672c6d6afb895bc6b24d9894475dca274"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52a12ad908d18009ef8f38dedeecbf8672c6d6afb895bc6b24d9894475dca274"
+    sha256 cellar: :any_skip_relocation, sonoma:        "428947d92e83b438801c57112198f7af62154a6438ede53a8cd79187842469ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c0a75d438711a383243e683efdaa3376c52d4e711443edbbf27f32b7a3f933e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78bdd78eda50c128574c46ddf2eff8347ab7d811dd9e9c3310c737cda3acbc75"
   end
 
   depends_on "go" => :build

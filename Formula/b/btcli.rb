@@ -3,18 +3,18 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https://docs.bittensor.com/btcli"
-  url "https://files.pythonhosted.org/packages/51/c4/976097f2faa8b850b15af4db79b0dc3e6e46b2ad948a202bcc2dc7c809a3/bittensor_cli-9.21.2.tar.gz"
-  sha256 "055b79fde5c348038f199a26eab0f5f29cc7b2b4450b0676cd737cdf56d25cd4"
+  url "https://files.pythonhosted.org/packages/35/8d/18b67fde1bf5c109f60b15e084e38221533814698f46134870e9b217ad51/bittensor_cli-9.22.0.tar.gz"
+  sha256 "d289e098ad32e5ff5fba7a6d8d5f709ec2d971e4b87e0b9d75962ee1b5407068"
   license "MIT"
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dfa9148e2c1363dc8da94625a66de9fba96c91254b265f2e042f8fba99fa7afd"
-    sha256 cellar: :any,                 arm64_sequoia: "a7839ca0872b03d0906cb9ad58bc417d7b11f5da36a53e86ec6e88feab82262e"
-    sha256 cellar: :any,                 arm64_sonoma:  "6c94b1cbc4edab180323d765d00867cde407bf5842672198fb9039c582778937"
-    sha256 cellar: :any,                 sonoma:        "ae97b41fbf335bc7f9cd2e67ab228745408dea486a61adb3be8b2c0a2b64aac7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfd2a0cbe0b943103f3982f00e698785ab244a9236a83451d3ad8e3aa6136c28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "501143dc9aa05bbc7afd2c1b666550c85986f389f123017b415db0f459affd48"
+    sha256 cellar: :any, arm64_tahoe:   "657a845c40fc64a93127f6911bf8d8ebc21aebb51ebd1dc202718679d5ee3e9d"
+    sha256 cellar: :any, arm64_sequoia: "b39206f3f470501852a4ecd673d72d7c54f9f1057dc87bf1c8b074933fb4a2cb"
+    sha256 cellar: :any, arm64_sonoma:  "4f398c3869bef6ce0fd4e5a96c1b061c243febf2cbd5ca1db0b8f06179ed8bf6"
+    sha256 cellar: :any, sonoma:        "ac9d86dc9b2c14a46f91f1f899b6bbd77930358884cbf198b18c0c70883165d7"
+    sha256 cellar: :any, arm64_linux:   "765d0e7a600d5b26b1dae07cc255d72998233e534d97536f986342507c8c194e"
+    sha256 cellar: :any, x86_64_linux:  "03a4a59ec46a826fce25adf80d3e59970b03c2dd5c33f423d32bf4fe483eb5fd"
   end
 
   depends_on "rust" => :build # for bittensor-wallet, plotly
@@ -30,8 +30,8 @@ class Btcli < Formula
   pypi_packages exclude_packages: %w[certifi numpy]
 
   resource "aiohappyeyeballs" do
-    url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"
-    sha256 "c3f9d0113123803ccadfdf3f0faa505bc78e6a72d1cc4806cbd719826e943558"
+    url "https://files.pythonhosted.org/packages/33/c6/61a2d7b7572279226bb2e7f61d7a19ca7c90da0329c93fa0d560cbf288d8/aiohappyeyeballs-2.6.2.tar.gz"
+    sha256 "e202810ee718bd01fc6ef49e8ea53d023d5cb6b581076d7925aa499fa55dbe64"
   end
 
   resource "aiohttp" do
@@ -70,13 +70,8 @@ class Btcli < Formula
   end
 
   resource "bittensor-wallet" do
-    url "https://files.pythonhosted.org/packages/74/69/8e5eb1131e3fb750ead1c1b1d2b628dede7b41edfad835cb78764dd88ceb/bittensor_wallet-4.0.1.tar.gz"
-    sha256 "edc2588d5e272835285e4171dd3daf862149f617015bf52e43d433d8e5c297c5"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/a0/30/7eb06cfd5d901d2cd3760a8b85d66c7b84f96f03d6d0402b306fdf8b6a2d/bittensor_wallet-4.1.0.tar.gz"
+    sha256 "f0f34641a4b9110def9e35fe22498195fcb31d143dc4f76dd9022db374ccd484"
   end
 
   resource "cyscale" do
@@ -100,8 +95,8 @@ class Btcli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
   end
 
   resource "jinja2" do
@@ -130,8 +125,8 @@ class Btcli < Formula
   end
 
   resource "narwhals" do
-    url "https://files.pythonhosted.org/packages/2d/0e/3ad61eb87088cc4932e0d851531fa82f845a6230b68b091a0e298cc7e537/narwhals-2.21.0.tar.gz"
-    sha256 "7c6e7f50528e62b7a967dd864d7e117d2955d38d4f730653ce46a9861358e2dc"
+    url "https://files.pythonhosted.org/packages/cf/a0/6198c56d42ef2f3c6ed0c42ba30dbcefdc86a91262d7d449010770ae085b/narwhals-2.21.2.tar.gz"
+    sha256 "5c5b2d0b47aef7c73ea412cfcbcd467f2f2d5be73e3c2ab19d78f4a97718790a"
   end
 
   resource "netaddr" do
@@ -170,8 +165,8 @@ class Btcli < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/e9/67/cae617f1351490c25a4b8ac3b8b63a4dda609295d8222bad12242dfdc629/rich-14.3.4.tar.gz"
-    sha256 "817e02727f2b25b40ef56f5aa2217f400c8489f79ca8f46ea2b70dd5e14558a9"
+    url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
+    sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
   end
 
   resource "shellingham" do
@@ -185,8 +180,8 @@ class Btcli < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/e4/51/9aed62104cea109b820bbd6c14245af756112017d309da813ef107d42e7e/typer-0.25.1.tar.gz"
-    sha256 "9616eb8853a09ffeabab1698952f33c6f29ffdbceb4eaeecf571880e8d7664cc"
+    url "https://files.pythonhosted.org/packages/cc/15/f5fc7be23b7196bc065b282d9589a372392fb10860c80f9c1dd7eb008662/typer-0.26.3.tar.gz"
+    sha256 "3e2b9352f535e5303ef27806dadc2c8647687bdca5c902f03fec3fb88f46a46a"
   end
 
   resource "websockets" do
@@ -205,8 +200,8 @@ class Btcli < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/23/6e/beb1beec874a72f23815c1434518bfc4ed2175065173fb138c3705f658d4/yarl-1.23.0.tar.gz"
-    sha256 "53b1ea6ca88ebd4420379c330aea57e258408dd0df9af0992e5de2078dc9f5d5"
+    url "https://files.pythonhosted.org/packages/79/12/1e8f37460ea0f7eb59c221fdaf0ed75e7ac43e97f8093b9c6f411df50a78/yarl-1.24.2.tar.gz"
+    sha256 "9ac374123c6fd7abf64d1fec93962b0bd4ee2c19751755a762a72dd96c0378f8"
   end
 
   def install

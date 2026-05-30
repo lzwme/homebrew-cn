@@ -1,19 +1,18 @@
 class Nixfmt < Formula
   desc "Command-line tool to format Nix language code"
   homepage "https://github.com/NixOS/nixfmt"
-  url "https://ghfast.top/https://github.com/NixOS/nixfmt/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "2b148abdf3c2ae9fca2b5898709cde5e4474e09cb32b892da51651c479f1f73a"
+  url "https://ghfast.top/https://github.com/NixOS/nixfmt/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "db202a4be0d773def5c97ce16bb8f02e99406264ccaaab2cc84e642296ad0c54"
   license "MPL-2.0"
   head "https://github.com/NixOS/nixfmt.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "b71aff03f7696495f6aeaa305421f0e462be0c0b2562e6d5db82cd185e9a683e"
-    sha256 cellar: :any,                 arm64_sequoia: "0c2088b203f4106a6b4b1ce9a22a3708d69b7a9337c5d078c00ba67d11c3134d"
-    sha256 cellar: :any,                 arm64_sonoma:  "922ac0db5eb171679585614a696f207fa7e0d364bf533b476613d647af84513f"
-    sha256 cellar: :any,                 sonoma:        "44a612a71f335bc9596ce3186977f9921b1357520777f4a0c0254559727ebf76"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fbbe3f5a299fee9dd1ebb269f8a0224547245625cb249bf44f52d7e4a71b8aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e25fd4284efa455be202300498501be2098a8bed7f6ea7e831902b2c5b37706"
+    sha256 cellar: :any, arm64_tahoe:   "5e4d38f05567e78c6a023e449c6cf6b44cc579c3e023be120a0477cbff8fc4a0"
+    sha256 cellar: :any, arm64_sequoia: "f346debad05bc3a16e66ae666f1857ace15e723c44189416b6fb6674679a8ce4"
+    sha256 cellar: :any, arm64_sonoma:  "cb9249a6ad498ac8ff92b9e0556be6066d7d0ce26628674ee0674cf42e657a03"
+    sha256 cellar: :any, sonoma:        "bab8f87fd704af52153b67bf16938d84abb12f87e57b7f390a062c170bb14fe3"
+    sha256 cellar: :any, arm64_linux:   "58ca44fc9a7e5d74564fc1066c47b38ce3485f95e3a6b36f190eca9b11c9b61a"
+    sha256 cellar: :any, x86_64_linux:  "48371ae96c58fcf951df92d872b18913aabc54e98a592e32df9806bd614ec037"
   end
 
   depends_on "cabal-install" => :build

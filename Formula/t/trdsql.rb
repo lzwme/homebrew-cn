@@ -1,18 +1,18 @@
 class Trdsql < Formula
   desc "CLI tool that can execute SQL queries on CSV, LTSV, JSON, YAML and TBLN"
   homepage "https://github.com/noborus/trdsql"
-  url "https://ghfast.top/https://github.com/noborus/trdsql/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "58a4b5987e80ed313bf878b070b4d94768fae658f2cf56f353284d762937a84a"
+  url "https://ghfast.top/https://github.com/noborus/trdsql/archive/refs/tags/v1.2.3.tar.gz"
+  sha256 "23a80d1c7cf44f458440ad9b6ffc5dc9305e98f191fbce102f47bf6be2c4fb17"
   license "MIT"
   head "https://github.com/noborus/trdsql.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a36be03abad1308d14daf19945a9f3c38fa012124105caec8a1021f2db73f84b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "983749de62078d684a988c2f21a0075ee1343373f0bbda3e271f6900492b749f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da216f2410476f2e44eaf333bc0b2b3e1be06b1e8af19a5cb0ba7f96169b8702"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d9d2cdb717612a4abbe4b0827d23d8c3b1dbe6f0cc72f5f3828ef65cc779e365"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de3cc6d52134fbf901bdd5d930b7f483f055e0f0c34ebd3213bde389f4f63d05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a00bfda8aaa8de57509af6cdf77d5b486859bd928ea10c569051bf3f04b3545c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "268e31cc727f5055600192d83c3b4ca00bf38c89e2550afdb69862928db6b6a2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33f040dc8f9911b618184533319b1b651dd8cbb175762d81ecc3f01d471fe68f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d93bbe7dd869d467a2e9342d2a5e5c8d9cc62d40e05c36be4261510c4df6c6b4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bf71f1dca12dae6f7d038f5732095a3a4c74e318b6aa7dace2618dc064bb93cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4fbfc43e89d765b828025d06b031fdec75b3c81492eb1e1fe8b65ad9af60a32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d45f3e36af3a0c9268046776b09bc09bcfb820ada2aeb3fd8416dcf74ce1ff0"
   end
 
   depends_on "go" => :build

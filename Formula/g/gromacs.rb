@@ -11,12 +11,13 @@ class Gromacs < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "f7d6b364c85b86c259ae897a580572d159a7f3e733f0427b3b6d0ebb4361c4af"
-    sha256                               arm64_sequoia: "1fdcf2f62d117a7e11bfab13d57b49dc843c3c31a3b0d6e4e12c2651be2a926b"
-    sha256                               arm64_sonoma:  "0c633a5fb8387d5298677eb57d970556d2730b3d41aa59a2300df2c93336a338"
-    sha256                               sonoma:        "ee62f78155a3da81456b5b153aae50c075d3474f6e2376119c2d5d8eebaf581e"
-    sha256                               arm64_linux:   "921eb74e182de10ccbf46025f92f3745cfb9780a11c66a00acae96f8b0b211b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4094c3d1a0840f21bfcff79c011e0cfbb8bc84186897f82726c89af65eff20ce"
+    rebuild 1
+    sha256                               arm64_tahoe:   "d4b6551d8a2b82d4cc457f75b741900535f02deee6fb8bbaeed6195d48bd25e5"
+    sha256                               arm64_sequoia: "6076b370560e7c6928ee38baebf929c076e2b0b5af7d9bc1b662776040a8c820"
+    sha256                               arm64_sonoma:  "73321917f0f4cb6aa1c70c88ab131d1087245c3000c39c3db69892c035b056fa"
+    sha256                               sonoma:        "fd3400ec25d38e71c0962d51d31f4453b3b65f39a0f9b05bd05bac09dbc28e60"
+    sha256                               arm64_linux:   "dff057ce590437a44d026993aa71bb061ede049dcf6f391e40a9f86e2f60eb34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1364fb0da96dc7a23b2075ad71590668336fd404473c2acb3feb89960815487c"
   end
 
   depends_on "cmake" => :build
@@ -38,6 +39,8 @@ class Gromacs < Formula
     # Non-executable GMXRC files should be installed in DATADIR
     inreplace "scripts/CMakeLists.txt", "CMAKE_INSTALL_BINDIR",
                                         "CMAKE_INSTALL_DATADIR"
+    # Completion workaround
+    inreplace "scripts/GMXRC.bash.cmakein", "$GMXBIN/gmx-completion", bash_completion/"gmx-completion"
 
     # Avoid superenv shim reference
     cc = DevelopmentTools.locate(ENV.cc)
@@ -78,9 +81,9 @@ class Gromacs < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    bash_completion.install "build/scripts/GMXRC" => "gromacs-completion.bash"
     bash_completion.install bin/"gmx-completion-gmx.bash" => "gmx-completion-gmx.bash"
     bash_completion.install bin/"gmx-completion.bash" => "gmx-completion.bash"
+    bash_completion.install "build/scripts/GMXRC.bash" => "gromacs"
     zsh_completion.install "build/scripts/GMXRC.zsh" => "_gromacs"
   end
 

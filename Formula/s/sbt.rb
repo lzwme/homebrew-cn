@@ -5,6 +5,7 @@ class Sbt < Formula
   mirror "https://sbt-downloads.cdnedge.bluemix.net/releases/v1.12.11/sbt-1.12.11.tgz"
   sha256 "5f972a79d2a5bf8f29141a74c35e686bb0860a6b6ec677af892f94cf9b124645"
   license "Apache-2.0"
+  revision 1
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
   # but are labeled as "pre-release" on GitHub.
@@ -14,7 +15,7 @@ class Sbt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d40f761ca31e4e5232e6ff1414a2f3118a36cdf84a14063162bf70a54f37380d"
+    sha256 cellar: :any_skip_relocation, all: "3fddd70ae85fab8f43abfcc201adc9a44cc218cbc218edfb3cf3c6a4cfee1fa5"
   end
 
   depends_on "openjdk"

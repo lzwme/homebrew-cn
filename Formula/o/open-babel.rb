@@ -1,29 +1,18 @@
 class OpenBabel < Formula
   desc "Chemical toolbox"
   homepage "https://github.com/openbabel/openbabel"
+  url "https://ghfast.top/https://github.com/openbabel/openbabel/archive/refs/tags/openbabel-3-2-0.tar.gz"
+  sha256 "9aadf9f01b3d0ff15d49fcd28d7d76b923218d70bf10f99ea4cc466607f4c7e2"
   license "GPL-2.0-only"
-  revision 5
   head "https://github.com/openbabel/openbabel.git", branch: "master"
 
-  stable do
-    url "https://ghfast.top/https://github.com/openbabel/openbabel/releases/download/openbabel-3-1-1/openbabel-3.1.1-source.tar.bz2"
-    sha256 "a6ec8381d59ea32a4b241c8b1fbd799acb52be94ab64cdbd72506fb4e2270e68"
-
-    # Backport support for configuring PYTHON_INSTDIR to avoid Setuptools
-    patch do
-      url "https://github.com/openbabel/openbabel/commit/f7910915c904a18ac1bdc209b2dc9deeb92f7db3.patch?full_index=1"
-      sha256 "f100bb9bffb82b318624933ddc0027eeee8546bf4d6deda5067ecbd1ebd138ea"
-    end
-  end
-
   bottle do
-    rebuild 1
-    sha256                               arm64_tahoe:   "2c456fe61ba2215e23fa09d39cb689657c1ca8f73d46eac8e9216171e3464ac1"
-    sha256                               arm64_sequoia: "e7d58eda61ed6ac0d01c9025485ffa6c8cd5ed22948dcc3111aabaf64f157637"
-    sha256                               arm64_sonoma:  "f93aaad06396b9f3b960319baa8c6579a4e7b6ceb21f0f4c64f139b00f8a95e0"
-    sha256                               sonoma:        "97be0b112e05a4f9ab90c96895d8893316edb68e05deffff11b9d0ccdb7e8a47"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "89bea578b4834dc7ec4e571d6d5902f997d1bc98dbc0ae2b47354eb714e514c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af664d295e831c8bb50b88cf5457936d37843930d17685b7d2b7cddcf4e7a960"
+    sha256               arm64_tahoe:   "fe47f3f9a0fcbdc70c449469cd5d8caee18e1861e31d69e8fb4187c585bc078d"
+    sha256               arm64_sequoia: "86b1026f7992fe9c7b8f7ddbca7426267764ad3471b92ba1d64ca0dad7bf7d3d"
+    sha256               arm64_sonoma:  "ee4285d661a4c74da24bc9b3523672a7ff10cbe65a86ab7302afb10bdcc67ebb"
+    sha256               sonoma:        "8a764adf6425fa7b3c505f9af5a91a19f5f5da856a7fee9000c41634bc37f816"
+    sha256 cellar: :any, arm64_linux:   "f5060a0e0d493709b247645fe9da90e5f20b041863fdadf1deae220fd50559ce"
+    sha256 cellar: :any, x86_64_linux:  "8de4b7ab8579307729ddccb05e959d2eded32475c57a34ee3c37777bcfc458e2"
   end
 
   depends_on "cmake" => :build
@@ -57,22 +46,6 @@ class OpenBabel < Formula
       -DPYTHON_EXECUTABLE=#{which(python3)}
       -DPYTHON_INSTDIR=#{prefix/Language::Python.site_packages(python3)}
     ]
-
-    if build.stable?
-      # Workaround to build with CMake 4
-      args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
-      inreplace "CMakeLists.txt", "cmake_policy(SET CMP0042 OLD)",
-                                  "cmake_policy(SET CMP0042 NEW)"
-
-      # Workaround to build with eigen 5.0.0
-      # Issue ref: https://github.com/openbabel/openbabel/issues/2839
-      args += %W[-DEIGEN3_FOUND=ON -DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3]
-      inreplace "CMakeLists.txt", "set (CMAKE_CXX_STANDARD 11)", "set (CMAKE_CXX_STANDARD 14)"
-      rm "cmake/modules/FindEigen3.cmake"
-
-      # Fix to error: ‘clock’ was not declared in this scope on Linux
-      inreplace "include/openbabel/obutil.h", "#include <math.h>", "#include <ctime>\n\\0"
-    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

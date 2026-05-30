@@ -32,7 +32,7 @@ class CargoLlvmLines < Formula
     system "cargo", "new", "hello_world", "--bin"
     cd "hello_world" do
       output = shell_output("cargo llvm-lines 2>&1")
-      assert_match "core::ops::function::FnOnce::call_once", output
+      assert_match(/core\[\h{16}\]::ops::function::FnOnce<\(\)>>::call_once/, output)
     end
   end
 end
