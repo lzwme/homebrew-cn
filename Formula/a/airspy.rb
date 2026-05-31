@@ -1,29 +1,12 @@
 class Airspy < Formula
   desc "Driver and tools for a software-defined radio"
   homepage "https://airspy.com/"
+  url "https://ghfast.top/https://github.com/airspy/airspyone_host/archive/refs/tags/v1.0.10.tar.gz"
+  sha256 "fcca23911c9a9da71cebeffeba708c59d1d6401eec6eb2dd73cae35b8ea3c613"
   license "GPL-2.0-or-later"
-  head "https://github.com/airspy/airspyone_host.git", branch: "master"
 
-  stable do
-    url "https://ghfast.top/https://github.com/airspy/airspyone_host/archive/refs/tags/v1.0.10.tar.gz"
-    sha256 "fcca23911c9a9da71cebeffeba708c59d1d6401eec6eb2dd73cae35b8ea3c613"
-
-    # CMake 4 build patch, remove in the next release
-    # PR refs:
-    # - https://github.com/airspy/airspyone_host/pull/80
-    # - https://github.com/airspy/airspyone_host/pull/103
-    patch do
-      url "https://github.com/airspy/airspyone_host/commit/7290309a663ced66e1e51dc65c1604e563752310.patch?full_index=1"
-      sha256 "982559d6b900aa9aa2de546197153aae4e0de7b852d0cf4404a92ec3c5f00d11"
-    end
-    patch do
-      url "https://github.com/airspy/airspyone_host/commit/3cf6f97976611c2ff6363f7927fe76c465995801.patch?full_index=1"
-      sha256 "0d78db431a2c11622200655cbd446cae3543c333eb6fa2fa1a0909b6d72d24e2"
-    end
-    patch do
-      url "https://github.com/airspy/airspyone_host/commit/f467acd587617640741ecbfade819d10ecd032c2.patch?full_index=1"
-      sha256 "5b7cc28179b55245caf379b002ed54eb52ee48b66cc8814b6740bc3d94dc48cf"
-    end
+  livecheck do
+    skip "cannot update due to non-FOSS terms in newer code"
   end
 
   bottle do
@@ -42,9 +25,43 @@ class Airspy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1705571f2f7cc979706ceb8340ee737fde0b538002c3942145f35355b9b41d3"
   end
 
+  # libairspy/src/iqconverter_* files were modified to a non-FOSS license.
+  # https://github.com/airspy/airspyone_host/blob/master/libairspy/src/iqconverter_float.c#L10-L12
+  #
+  # > Any redistribution, publication, sublicensing, or commercial use outside the
+  # > Airspy ecosystem is strictly prohibited without prior written consent from the
+  # > copyright holders.
+  #
+  # This has been pointed out by one of the main authors:
+  # * https://github.com/airspy/airspyone_host/pull/103#issuecomment-3359538126
+  #
+  # Fedora thread also agrees this is non-free:
+  # * https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/ZODYXEUOUNFYAYKQKRKK2RTIHEVVGMPN/
+  #
+  # Can be undeprecated if upstream switches to a FOSS license.
+  deprecate! date: "2026-05-30", because: "has code relicensed to non-FOSS after 1.0.10"
+  disable! date: "2027-05-30", because: "has code relicensed to non-FOSS after 1.0.10"
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "libusb"
+
+  # CMake 4 build patch, remove in the next release
+  # PR refs:
+  # - https://github.com/airspy/airspyone_host/pull/80
+  # - https://github.com/airspy/airspyone_host/pull/103
+  patch do
+    url "https://github.com/airspy/airspyone_host/commit/7290309a663ced66e1e51dc65c1604e563752310.patch?full_index=1"
+    sha256 "982559d6b900aa9aa2de546197153aae4e0de7b852d0cf4404a92ec3c5f00d11"
+  end
+  patch do
+    url "https://github.com/airspy/airspyone_host/commit/3cf6f97976611c2ff6363f7927fe76c465995801.patch?full_index=1"
+    sha256 "0d78db431a2c11622200655cbd446cae3543c333eb6fa2fa1a0909b6d72d24e2"
+  end
+  patch do
+    url "https://github.com/airspy/airspyone_host/commit/f467acd587617640741ecbfade819d10ecd032c2.patch?full_index=1"
+    sha256 "5b7cc28179b55245caf379b002ed54eb52ee48b66cc8814b6740bc3d94dc48cf"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

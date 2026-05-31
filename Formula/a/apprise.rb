@@ -3,18 +3,17 @@ class Apprise < Formula
 
   desc "Send notifications from the command-line to popular notification services"
   homepage "https://pypi.org/project/apprise/"
-  url "https://files.pythonhosted.org/packages/2f/74/9c16829d3e7e45ce7daf1b704687fa4fde7ea00d72eafe8de18c72bf5995/apprise-1.10.0.tar.gz"
-  sha256 "b768f32d99e45ed5f4c3eef1f67903e803c97f97ba61a531a5d0a45d40df90a8"
+  url "https://files.pythonhosted.org/packages/a8/f8/83f4e2aaaa0342dc67f783bf84427d9ff5cfa4ecde3a52d9b587740a91ee/apprise-1.11.0.tar.gz"
+  sha256 "3b1e6f5365b302d1fae270c0c8007958e54224b9b7808acec69006ea27f5b8a2"
   license "BSD-3-Clause"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "65e93747468219e5760a7ce3b5b0bad3d575eb0668a7881f0630f0284b691bd0"
-    sha256 cellar: :any,                 arm64_sequoia: "ff8a7a5fcd60e785cfee7ba85ff8747d252d7a1ecd319cf7528a8d6e65ebf0e2"
-    sha256 cellar: :any,                 arm64_sonoma:  "b36869bccaeeb06ab5f4a6417cb31b7c009e07a080a4499e39484b5b88deb399"
-    sha256 cellar: :any,                 sonoma:        "eab9154602efd4b1403e9daf32212e32001e74084c4cc8f28840b63d0192b410"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "94ce990261da4b3384f467587ec7c579391dfe181b0a0ab5483a786e5d159f5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36e90fe7f4b6b3f15d5bf95c8b81ffab9e47d0a915f54df745955fd894a34711"
+    sha256 cellar: :any, arm64_tahoe:   "e83eaf381d97317610cee20482b7298fe7ed1c752a8f5ad538a31806803e54ef"
+    sha256 cellar: :any, arm64_sequoia: "a18d28aa001fa6754914d30b2b72f67b400c6b6555c8e3c792de276aaa2ac3ff"
+    sha256 cellar: :any, arm64_sonoma:  "2e2acf535628eef8a746b80753df70680e88707827c3dcc7c2ad6d8c9e602065"
+    sha256 cellar: :any, sonoma:        "69580d263a44cf450ca4c2a89824a28017d75a004d5aea28afefd8f93ddcd4a3"
+    sha256 cellar: :any, arm64_linux:   "8374d8c21c5ab599643ba2e6937a3296ae618514eb255e12ba54c4f17396eaa2"
+    sha256 cellar: :any, x86_64_linux:  "d5c183c47ed152dc58225520ba14eb252c95db378001b5cb0c3d4a786561737f"
   end
 
   depends_on "certifi"
@@ -29,13 +28,13 @@ class Apprise < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
-    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
+    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
+    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
   end
 
   resource "markdown" do

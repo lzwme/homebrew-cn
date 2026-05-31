@@ -6,15 +6,15 @@ class Dvc < Formula
   url "https://files.pythonhosted.org/packages/13/1e/957a50eab8af18a5837bf47f148b90dac36650150faca840d5c020272098/dvc-3.67.1.tar.gz"
   sha256 "0a941016a10ac8c99b5342e5a964c9bff29c191f7b3539ff3e04910d828f82ab"
   license "Apache-2.0"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4325f5ffdf54f10722968de30b44b9f969e43416f3b42527bfd61ca9d4a63f12"
-    sha256 cellar: :any, arm64_sequoia: "9333e22e6109cd311bb32ae308e37a88ea5be8837be17a3b6a5d2ba11d87998d"
-    sha256 cellar: :any, arm64_sonoma:  "acb0086f39d143357cd9b3fdaba3416e3c3c3cab083488ddd937938464c7f611"
-    sha256 cellar: :any, sonoma:        "5d724b0f42b821b889af470c19018544e9fa6636f22fe3bf83764094f916844b"
-    sha256 cellar: :any, arm64_linux:   "8bb4ec514fdcb40623e1492443137d6cba6b89765dec8c82af256f90db65e0ad"
-    sha256 cellar: :any, x86_64_linux:  "e2769230e82e4b2891afb5be0baa69534f6a732bb8c2c182019e57172e4d3860"
+    sha256 cellar: :any, arm64_tahoe:   "95198e967902213e7766158c10c73e909bb9772a49b26686b12e398490353734"
+    sha256 cellar: :any, arm64_sequoia: "2fc8b3ae8aa26a429a7afd31f7eb6c6fdfd3a13e038f18a311b8c0d0ac9e14a5"
+    sha256 cellar: :any, arm64_sonoma:  "438fe28ff8185f0012bb743b44fd7764ba14bc7d28b2cc804366ffde976ac18c"
+    sha256 cellar: :any, sonoma:        "9e214385aa8dfd65bea2994fdb29368ed0f3b29c2fdb3da4c146f2922413f93e"
+    sha256 cellar: :any, arm64_linux:   "62ce1a37eded29ac75ecf5ecc093d4b8f55a1497dcd5f983f7cfd824287ea9c5"
+    sha256 cellar: :any, x86_64_linux:  "a9e32862e76723a32f043a9fd92d62d6f1a86719194801c058a05a58dbcb2bb4"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -241,8 +241,8 @@ class Dvc < Formula
   end
 
   resource "dulwich" do
-    url "https://files.pythonhosted.org/packages/43/67/db7dfe7bd7a585e39c938f5f79ccb91235df5f8818f9273590ed6d0f9fdf/dulwich-1.2.4.tar.gz"
-    sha256 "72fc77c4e2c7e4358a78c6f71383baceea496ee0cedb13508f52a1a7656e8bb9"
+    url "https://files.pythonhosted.org/packages/7f/85/ceb8ecff5cdeee4ceeebb86b599476dee559041dacc6c2c50cc0d4711549/dulwich-1.2.5.tar.gz"
+    sha256 "0395b2c8924c3424bafe2d9c1edd5348cc4b21ce9c1d6655bf01f9a5c47164c8"
   end
 
   resource "dvc-azure" do
@@ -376,8 +376,8 @@ class Dvc < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/6d/f3/34ef8aca7909675fe327f96c1ed927f0520e7acf68af19157e96acc05e76/google_api_python_client-2.196.0.tar.gz"
-    sha256 "9f335d38f6caaa2747bcf64335ed1a9a19047d53e86538eda6a1b17d37f1743d"
+    url "https://files.pythonhosted.org/packages/22/09/081d66357118bd260f8f182cb1b2dd5bd32ca88e3714d7c93896cab946fc/google_api_python_client-2.197.0.tar.gz"
+    sha256 "32e03977eda4a66eafc6ae58dc9ec46426b6025636d5ef019c5703013eddd4e5"
   end
 
   resource "google-auth" do
@@ -480,8 +480,8 @@ class Dvc < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
-    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
   end
 
   resource "isodate" do
@@ -791,8 +791,8 @@ class Dvc < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/67/a5/756f2e6bc81a7dd79aa3c625dd01b74cabc4516628cace2caaec09ca6ff2/typer-0.26.2.tar.gz"
-    sha256 "9b4f19e08fcc9427a822d1ef467b1fe76737a2f65c7926bdeba2337d73569b68"
+    url "https://files.pythonhosted.org/packages/cc/15/f5fc7be23b7196bc065b282d9589a372392fb10860c80f9c1dd7eb008662/typer-0.26.3.tar.gz"
+    sha256 "3e2b9352f535e5303ef27806dadc2c8647687bdca5c902f03fec3fb88f46a46a"
   end
 
   resource "tzdata" do

@@ -1,18 +1,18 @@
 class SemCli < Formula
   desc "Semantic version control CLI with entity-level diffs and blame"
   homepage "https://github.com/Ataraxy-Labs/sem"
-  url "https://ghfast.top/https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "c6ab7027039c8a2184bb270073403b40b84e99d496bfdd13df2a180a3be898d1"
+  url "https://ghfast.top/https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "23fd062db52398d13d61a1d4d8a07944487312f71d221497729968f508c4d7ef"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/Ataraxy-Labs/sem.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "07e1a77998f5a43056499f58869796bcbc2cd85167f89863eac8025dbaf17273"
-    sha256 cellar: :any,                 arm64_sequoia: "59b83e71e01fdcc6e43c3b5188821e679a2ad8ed24e46070d35d3167e66d1ffd"
-    sha256 cellar: :any,                 arm64_sonoma:  "83646955c7f8c236f196ce2c58f99239172dd1277d6d3ffa03378d2921c7840e"
-    sha256 cellar: :any,                 sonoma:        "43b0134cc4147e3fd3d3c7322e6b20d3a51a9c7bbbf18a65e0f06e72a4fb93dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1003b4e310ea1906bfcddac7eb841389681b2b47b9a81f3e7fb9c436ccc89713"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ab50f6ceb27f2be7923adf9c1e49691c8b1bba51121ae94ead6bcebe7eea74d"
+    sha256 cellar: :any, arm64_tahoe:   "441e1f60a26e53d3a368c199f90abd456ec83e4e66eedb29a7122c4437d217ae"
+    sha256 cellar: :any, arm64_sequoia: "1136d4d8c0eeae9206c3fe3c168720ed7ce8d24ec628902956ba9a8567f611c7"
+    sha256 cellar: :any, arm64_sonoma:  "54fe092da31038c41748ca6f48a8fc1df9ae722be654a23825382bf76200ef75"
+    sha256 cellar: :any, sonoma:        "adb2361157ab865a3f56aacf44ab2e7b0c10ed6d110de2f8474044e46fcd5cbf"
+    sha256 cellar: :any, arm64_linux:   "4092e06dad2cd6aef4dd9a788ff6df9cfee30888ca530f24291278f514b6915b"
+    sha256 cellar: :any, x86_64_linux:  "5123d75dd3cc42b2df6f3ef2b72d16ac1a7ec0f16621a8f91a15d48def3aa3d4"
   end
 
   depends_on "pkgconf" => :build

@@ -1,18 +1,18 @@
 class Kubelogin < Formula
   desc "OpenID Connect authentication plugin for kubectl"
   homepage "https://github.com/int128/kubelogin"
-  url "https://ghfast.top/https://github.com/int128/kubelogin/archive/refs/tags/v1.36.1.tar.gz"
-  sha256 "7569969b178f9f771a8e0238afb41665dcfd3250e30865aac08e0887bebf3b76"
+  url "https://ghfast.top/https://github.com/int128/kubelogin/archive/refs/tags/v1.36.2.tar.gz"
+  sha256 "c8188b81c19d60952e988aebca0779a4f5bd34ee41ea8949b2fec15d2e3ee101"
   license "Apache-2.0"
   head "https://github.com/int128/kubelogin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "872e75021d159daa73ae002498608025dae2608f2594a45489586d31e5f1504b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "872e75021d159daa73ae002498608025dae2608f2594a45489586d31e5f1504b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "872e75021d159daa73ae002498608025dae2608f2594a45489586d31e5f1504b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83eda92bb14896ca7f41448dcdd482f36028b07adb63febb4b8616a033e99414"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "59c544195c6f46111fc14a033affe11008c7fdaefbe149684b20912fac6a62eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47f545eea4c470f69e8afd8726c7153b80c0db31e524eaab30990b41421d33af"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "acdb40136da6814bd5173c1dc24a04a8c255cc1d58e7ee14b575ccf6ea1a829f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acdb40136da6814bd5173c1dc24a04a8c255cc1d58e7ee14b575ccf6ea1a829f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "acdb40136da6814bd5173c1dc24a04a8c255cc1d58e7ee14b575ccf6ea1a829f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f9a506973b4e1d6a5655fafda012f4cfe578fafe2732ea5c7d0a26a400fbef2d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56b93bddca335925ff86171000a0d79255fc4106e7d503199e046a1ae954131f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32304d06093b0b2770a05b825121af4e057090d11c07a4c9a586b09800ca2bc0"
   end
 
   depends_on "go" => :build

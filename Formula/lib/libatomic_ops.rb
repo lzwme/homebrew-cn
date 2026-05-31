@@ -3,7 +3,11 @@ class LibatomicOps < Formula
   homepage "https://github.com/bdwgc/libatomic_ops/"
   url "https://ghfast.top/https://github.com/bdwgc/libatomic_ops/releases/download/v7.10.0/libatomic_ops-7.10.0.tar.gz"
   sha256 "0db3ebff755db170f65e74a64ec4511812e9ee3185c232eeffeacd274190dfb0"
-  license all_of: ["GPL-2.0-or-later", "MIT"]
+  license all_of: [
+    "MIT",
+    "Boehm-GC",         # include/atomic_ops/sysdeps/gcc/
+    "GPL-2.0-or-later", # lib/libatomic_ops_gpl.*
+  ]
   head "https://github.com/bdwgc/libatomic_ops.git", branch: "master"
 
   livecheck do
@@ -12,19 +16,20 @@ class LibatomicOps < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b3dae32f7ff10faaa84a3a5ee3486cf65496feb75519dcaa2cf2d171be73fd7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4378fe1188ad59424d8f452c9123fd04d117a44644a94ba8cc6376a6dcee2a00"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81c1175fc0dc5c6c001328997b805cb39be52690b3609df78ccead64b655f694"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ab9bc50267eab633db6d61166db93be0e5bf365b09106e1aeaaf581c093f3c46"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "241c6cae391092c83e9d29d593085476df8ace090d633578d7e387bbbe730765"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11be1a0fc988f891a83af51dcaa1712b17e4475acf92abf19f4f15a7ae92364e"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "3248b78c7c787a075c8f8b94d7aebebb19f078352a302f0c014809fbb563c7e5"
+    sha256 cellar: :any, arm64_sequoia: "cf518c8ee38c9ad886165accc2c3ed5b4dffa99f95ee58c737ab375e2c2c02a5"
+    sha256 cellar: :any, arm64_sonoma:  "ef2dad1436dccb313a89eececf1237ce9a824372b7980322775624e15f991587"
+    sha256 cellar: :any, sonoma:        "49f7a54247d1c918a747f8201a535edd9895268aac91f90ff25cdf52222fe709"
+    sha256 cellar: :any, arm64_linux:   "297ecee2246dafa946f78d6c5bcb66d58346f418ae2cafb6419cdc3a4447023d"
+    sha256 cellar: :any, x86_64_linux:  "07762d801e2f011b5be65fb4b19ae5a0becd151acab4964f4e47f1eb71d1d79a"
   end
 
   depends_on "cmake" => :build
 
   def install
     system "cmake", "-S", ".", "-B", "build",
-                    "-DBUILD_SHARED_LIBS=ON",
+                    "-DAO_BUILD_SHARED_LIBS=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     "-Dbuild_tests=ON",
                     *std_cmake_args,

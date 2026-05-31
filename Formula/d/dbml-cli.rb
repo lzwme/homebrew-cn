@@ -1,17 +1,17 @@
 class DbmlCli < Formula
   desc "Convert DBML file to SQL and vice versa"
   homepage "https://www.dbml.org/cli/"
-  url "https://registry.npmjs.org/@dbml/cli/-/cli-8.2.2.tgz"
-  sha256 "6ecaf25d0d5d12bfc9923d3d30ef4862178333847edcdd7ccc916476d692e954"
+  url "https://registry.npmjs.org/@dbml/cli/-/cli-8.2.3.tgz"
+  sha256 "0f2d65c158761559c4012c0584faf602d39e0f083d5da34f8259f9cbb98c2274"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9eb4e1b48e4edc274520c7e041687c145a9eda9d312c65d0dd4ebf0d4edca423"
-    sha256 cellar: :any,                 arm64_sequoia: "deed08396334daf64c4a69e495db07897dd5003ee0726e06422d80cf20735ce1"
-    sha256 cellar: :any,                 arm64_sonoma:  "deed08396334daf64c4a69e495db07897dd5003ee0726e06422d80cf20735ce1"
-    sha256 cellar: :any,                 sonoma:        "94e9173422f343dd31f081704f4112b79aca315965e692468da6b9252905e418"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "048a91119bce150d312c0cef1099cbe5aefe28b8263433b9f1e31e8065976fe6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2b9a3b27f9aac776d050f916b807266d1d752fa1b08612430b86e69a2232e77"
+    sha256 cellar: :any,                 arm64_tahoe:   "055de3aaef447160bef25fec89d0f503bf9f42915c4623b5adbfdc1b18efd215"
+    sha256 cellar: :any,                 arm64_sequoia: "2c43390c3ad6f57bc96c49b724588d0f3e66f7b93d69b7079b60c06a4685fd48"
+    sha256 cellar: :any,                 arm64_sonoma:  "2c43390c3ad6f57bc96c49b724588d0f3e66f7b93d69b7079b60c06a4685fd48"
+    sha256 cellar: :any,                 sonoma:        "07c75d682ca9f4bf63de9de1a48e1d70266b7af6697ebeda3b04042fc11ee13c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc744f059118fd5554613307683ca517ac157ef6eeb0fb5a2a87f6fdb6171cd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "783e587ec7995431cf4776f35df477d75631b513dcc66c63713aae47f69d348c"
   end
 
   depends_on "node"

@@ -4299,6 +4299,7 @@ Homebrew-homebrew-core/Formula/lib/librdkafka.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libre.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libreadline-java.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/librealsense.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libredwg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libreplaygain.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libresample.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/librespot.rb, Homebrew/homebrew-core, 1
@@ -4966,7 +4967,6 @@ Homebrew-homebrew-core/Formula/m/mussh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mutt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mvfst.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mvnvm.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mvtools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mycli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mycorrhiza.rb, Homebrew/homebrew-core, 1
@@ -6192,6 +6192,7 @@ Homebrew-homebrew-core/Formula/q/quickjs-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/quickjs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/quicktype.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/quictls.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/q/quien.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/quill.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/quilt-installer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/quilt.rb, Homebrew/homebrew-core, 0
@@ -7299,6 +7300,7 @@ Homebrew-homebrew-core/Formula/t/tektoncd-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/teku.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/telegraf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/telegram-downloader.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/telegram-send.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/teleport.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/television.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/teller.rb, Homebrew/homebrew-core, 1
@@ -7773,6 +7775,7 @@ Homebrew-homebrew-core/Formula/v/vapoursynth-bestsource.rb, Homebrew/homebrew-co
 Homebrew-homebrew-core/Formula/v/vapoursynth-bm3d.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vapoursynth-descale.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vapoursynth-imwri.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vapoursynth-mvtools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vapoursynth-ocr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vapoursynth-sub.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vapoursynth.rb, Homebrew/homebrew-core, 1
@@ -11360,6 +11363,7 @@ Homebrew-homebrew-cask/Casks/font/font-m/font-monsieur-la-doulaise.rb, Homebrew/
 Homebrew-homebrew-cask/Casks/font/font-m/font-montaga.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-montagu-slab.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-montecarlo.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-m/font-montenegrin-gothic-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-montez.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-montserrat-alternates.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-montserrat-subrayada.rb, Homebrew/homebrew-cask, 0
@@ -15051,6 +15055,7 @@ Homebrew-homebrew-cask/Casks/s/spatterlight.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/specter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spectra-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spectrolite.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/speechify-ai-assistant.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/speedcrunch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/speedify.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spike.rb, Homebrew/homebrew-cask, 0

@@ -1,18 +1,18 @@
 class CargoHack < Formula
   desc "Cargo subcommand to provide options for testing and continuous integration"
   homepage "https://github.com/taiki-e/cargo-hack"
-  url "https://ghfast.top/https://github.com/taiki-e/cargo-hack/archive/refs/tags/v0.6.44.tar.gz"
-  sha256 "63dd630915e31995899291d602c49a5cfae062af619e1a75ec04e53687552d04"
+  url "https://ghfast.top/https://github.com/taiki-e/cargo-hack/archive/refs/tags/v0.6.45.tar.gz"
+  sha256 "b7b921beacdbb815dc89a04024f48f1b1735daef890d2398e04f27f006c1d38e"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/taiki-e/cargo-hack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22fcc1e849186d4c3716650fca9a7ed2283e5b9718814051b180d258615942b8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56c3be7d257d7d32390db110afac2571d7283ef95742fe9c87b5ae0b824a07a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a5f9b1de98c01bfc84eec7b0ba141691a4e7e21dbf6b4e90309dfdc0a7b59a1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "353c88c1c4988a0f0be55600a7125a4ed982640a68cb02572cf6694b53868ee3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1d1622968f4cae78f4444d45695744a3e6cd7abadf412be9a544e36a2a062b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bfbf0b389ffcfe4d1b18f2e43404176a28413021cf75db0decf54f61d15815d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9e50f3c181e6f16ada390245c44f98e5a144054641d204af6a58f1014a3e24e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "837e30bbc7b1a77cbe4310087aa941565ccd8de3f254e3118fff947560034221"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6183f8ce8db9f71975f5083f30e4091f91aebd39cd1b70df67891684e95f09f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7f538aed8e5fa35d18617ddffb1038ba985c1302da7f2382da660b807545f486"
+    sha256 cellar: :any,                 arm64_linux:   "8d91afc015d47a8765077ec2f0e896ca995804522ad1986dc1214e9fdeebca81"
+    sha256 cellar: :any,                 x86_64_linux:  "2036d4b41c6932d54e701c28d7069c67ada44c8aa6bdf8d6a56ea571ae8f529e"
   end
 
   depends_on "rust" => :build

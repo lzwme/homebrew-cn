@@ -1,8 +1,8 @@
 class Netatalk < Formula
   desc "File server for Macs, compliant with Apple Filing Protocol (AFP)"
   homepage "https://netatalk.io"
-  url "https://ghfast.top/https://github.com/Netatalk/netatalk/releases/download/netatalk-4-4-3/netatalk-4.4.3.tar.xz"
-  sha256 "863d640ecc99f4923ead6c58e8d3406ab3a1ca9dd3b0d47ccdf6fdebb6efe3ab"
+  url "https://ghfast.top/https://github.com/Netatalk/netatalk/releases/download/netatalk-4-5-0/netatalk-4.5.0.tar.xz"
+  sha256 "62d77f5a491e69086c1706ff7d9e016912e0e48b43d0c3a7ae60c384b6d625b3"
   license all_of: [
     "GPL-2.0-or-later",
 
@@ -20,12 +20,12 @@ class Netatalk < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "042b6b1d40fd13796fec48ffa3cc7d414bee5d57397de5e900ffa1cfcc35d9c8"
-    sha256 arm64_sequoia: "f80a29fe3c78e245cbfb5e90b924da5fa86a0e98832d667c03d6e62cbcc636f4"
-    sha256 arm64_sonoma:  "17de978a5d35cc04c6a7a1e89addb3764e47004bf640c84ff1d0d78933c5ec29"
-    sha256 sonoma:        "c66cb7e6ecc6608c1048742846737d0a7741edfc14472c1d28420d6c36ee0ba5"
-    sha256 arm64_linux:   "dbe86d95776a543d735832f1e878215a052a69c94c74e152ee240ca1b933a941"
-    sha256 x86_64_linux:  "200f9019295e1e04a107f20f34cc7966a1b680acfca5e206d58f408c73403a9b"
+    sha256 arm64_tahoe:   "2a0d171674ac7a8dfba99b5f62716d2eecf27638bac933d262192b1afadcc333"
+    sha256 arm64_sequoia: "bb70f55a6a018ec02d82a92b92745b5c8fd76c1001b7999288cfdf2950d204df"
+    sha256 arm64_sonoma:  "b7152fcc4d907dc33c906fcf957da3e268fdc63ade405f4ef39209828250b85a"
+    sha256 sonoma:        "455ec0fc6132ff9c346a8d5f77b774856426df4ab88a4ec7f45a4ac53ffb8abb"
+    sha256 arm64_linux:   "5b170636ff4d3e19274004525dae4fce8fbf4d13ae6401172dd487850a3a4ab7"
+    sha256 x86_64_linux:  "14bdaaaf50e44249e04fb30847c21d41dd9af6d2de4ba941e7dcf9dc59083e8c"
   end
 
   depends_on "cmark-gfm" => :build
@@ -62,7 +62,6 @@ class Netatalk < Formula
     bdb5_rpath = rpath(target: Formula["berkeley-db@5"].opt_lib)
     ENV.append "LDFLAGS", "-Wl,-rpath,#{bdb5_rpath}" if OS.linux?
     args = [
-      "-Dwith-afpstats=false",
       "-Dwith-appletalk=#{OS.linux?}", # macOS doesn't have an AppleTalk stack
       "-Dwith-bdb-path=#{Formula["berkeley-db@5"].opt_prefix}",
       "-Dwith-cups-libdir-path=#{libexec}",

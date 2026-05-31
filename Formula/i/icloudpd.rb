@@ -5,19 +5,18 @@ class Icloudpd < Formula
   homepage "https://github.com/icloud-photos-downloader/icloud_photos_downloader"
   # We use a git checkout as scripts/patch_version runs git commands to update SHA
   url "https://github.com/icloud-photos-downloader/icloud_photos_downloader.git",
-      tag:      "v1.32.2",
-      revision: "dd5a421ecdbf9af485223b2dc75ea820053602a3"
+      tag:      "v1.32.3",
+      revision: "9857dd88c4c7de49deb712b7d6b12193e23864b9"
   license "MIT"
   head "https://github.com/icloud-photos-downloader/icloud_photos_downloader.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b27f3e721044bb6a01e7fe0d9d3d381f11abe082bc73f95743b84c21eef222ea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0e981683b84a00b7804cd50141cba2e7a77901ee818adeb14314830c2f0b62c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70554f8a4c24c34eadc3a86c4adaa311ce8b0d85fd1f157ae1de61457d90ba53"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2b3bf0438be993bc7fca2433930f2e39ab6fdb607352db1a51d8f7e4d91031b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "14ce26b4d8d9fcb4e0412baf9b0ba7b70c1d76be127185723730ddd86db80341"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa3fbac50cf6116afae3249ec0e6f91cb286b4c1a960f4291b45576ed82491d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d75e98879c1870a38623ec5c57e62b0dcf3e3d4354233c72e75d3ec0389ee2af"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b411400cc917e43b07f6feca4c9a0f513bc7412dc35ed83d9b3ba45bfa2d9a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "919b68524b2b13f644ad2b4421cca7549ca6240f42710cf5660a3dab3ef1688b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8e54f37c8b10858aa97b1f9883b2cb08d3d4b6953b00dfe2fd87c43b68bdb4d4"
+    sha256 cellar: :any,                 arm64_linux:   "2413d6830e5b5d2f31004b41dd8103c819cbb7ce4ab9ac95eeb522a2eab4e481"
+    sha256 cellar: :any,                 x86_64_linux:  "fa2b74d975436de8237a387cf9d155faada39587641d57941d434175d3ff26ec"
   end
 
   depends_on "certifi" => :no_linkage

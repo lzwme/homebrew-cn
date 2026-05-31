@@ -1,18 +1,18 @@
 class Jackett < Formula
   desc "API Support for your favorite torrent trackers"
   homepage "https://github.com/Jackett/Jackett"
-  url "https://ghfast.top/https://github.com/Jackett/Jackett/archive/refs/tags/v0.24.1970.tar.gz"
-  sha256 "9badcea6e7471aa81803f632ac1aad980304784ffa393359632bd62a2e4e5cf7"
+  url "https://ghfast.top/https://github.com/Jackett/Jackett/archive/refs/tags/v0.24.1974.tar.gz"
+  sha256 "3956ffa294f52ca2e4575d63d0ab48734ae9e5a58a5fc39eaf281d79293d118b"
   license "GPL-2.0-only"
   head "https://github.com/Jackett/Jackett.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "58549c239d0dbab29a5c3bd12e100249b32064173282fb3e4b48474d9ad8d035"
-    sha256 cellar: :any,                 arm64_sequoia: "964b6482b57b6072a0066bda2244924bf9aa3131a28fea28690414fa2babd877"
-    sha256 cellar: :any,                 arm64_sonoma:  "f8f2f46a5bd126d2451e940b983cfca0c5672d4c7ae86d811f6fbab9d3a7e90b"
-    sha256 cellar: :any,                 sonoma:        "060102cb18aba45384622feec6356d3a43f4948d65c74fda03c447312605e000"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4afe524ff1a56c183a3d2541598446f111d2f1c3fc791ba49f6ccc438e00edfe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "784f8133c0ea30e9602c3ab8789ff3f67d297c1da75d02d198fd2806b5dd2367"
+    sha256 cellar: :any, arm64_tahoe:   "6f04ba4cbfa6a96e1a73a0cbb945d58edd69f3e9cf4ee42e5386ba1ec5b925a9"
+    sha256 cellar: :any, arm64_sequoia: "198e40df317ffa9da4051f4325f37eb65ade67fa179c56dbe6165e33afe14ace"
+    sha256 cellar: :any, arm64_sonoma:  "7eb5ba413fef3a306d37811c1fa5d7eb9cc962591898add7125031ec2b641d64"
+    sha256 cellar: :any, sonoma:        "34b0d837c90e564c568319d245c957d77876c31c81cf5c95b3e7fb6cd87b65f1"
+    sha256 cellar: :any, arm64_linux:   "e152b9cfcb1aba30aad3d382ff1358eff670a7acf2bd195e704598669d5c2946"
+    sha256 cellar: :any, x86_64_linux:  "3cdc41c232432fe74a3b72915ad88107ea12c26ba7d6cab65894fc0823e33fd9"
   end
 
   # Aligned to .NET dependency. Can remove if updated to latest .NET

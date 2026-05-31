@@ -1,10 +1,9 @@
 class UutilsCoreutils < Formula
   desc "Cross-platform Rust rewrite of the GNU coreutils"
   homepage "https://uutils.github.io/coreutils/"
-  url "https://ghfast.top/https://github.com/uutils/coreutils/archive/refs/tags/0.8.0.tar.gz"
-  sha256 "03f765fd23e9cc66f8789edc6928644d8eae5e5a7962d83795739d0a8a85eaef"
+  url "https://ghfast.top/https://github.com/uutils/coreutils/archive/refs/tags/0.9.0.tar.gz"
+  sha256 "dafe0126ee4ed55c7cd60c6b559f43724a74751deed3c1b078f4f510311acab2"
   license "MIT"
-  revision 1
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
   livecheck do
@@ -13,12 +12,12 @@ class UutilsCoreutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3dca4194eb52ee1018d7245b8c8a7e3bd7196c61bfe4efe052f16f53c78b5156"
-    sha256 cellar: :any,                 arm64_sequoia: "6f093fbe0c368002408b0b95d3140f18dee0363bb09025a4e0ff698cae92c047"
-    sha256 cellar: :any,                 arm64_sonoma:  "79902e7e0b7694995e314b3c3da68168b108035e33caa0e705d05fefb53e0a4e"
-    sha256 cellar: :any,                 sonoma:        "03a3427054fceb821c369225b2105bd45e7dff653a10150bc9f43c0a4cf1b2a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d7323360044c84ebc07d70ac0791647c191d4c6ec79abdba2307b1be6ceaf4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "303487e992bd9bff355d0ef51d8f7d5282fb6337a3f5f9f8f4e937e427b42a9e"
+    sha256 cellar: :any, arm64_tahoe:   "27ecf2c1a51c1d3d5c67f4b3ac500dd025e6313da28fb06d5b7581b451b25db1"
+    sha256 cellar: :any, arm64_sequoia: "d4db7458e28c3c734ad7464fa8b4054a81eaf72f013ab62cbdc66445231bf212"
+    sha256 cellar: :any, arm64_sonoma:  "15ba4294d5e6888fce1fa8896010a19bb29120a5a16542e96dede46565b923b6"
+    sha256 cellar: :any, sonoma:        "f2bde95fd1e238cf67ea2086e6a1607d67a1713f5c49a700650f78c56d2e8242"
+    sha256 cellar: :any, arm64_linux:   "d67bcf18226fd103a0f51f14820f08e25d3f5c0b54ec7898a5b94414feb8cbd1"
+    sha256 cellar: :any, x86_64_linux:  "1957325110ada226f799121f1070ed2e24a4c7edea87ecf673ed150ca927d24d"
   end
 
   depends_on "rust" => :build

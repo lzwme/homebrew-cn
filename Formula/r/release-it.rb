@@ -1,8 +1,8 @@
 class ReleaseIt < Formula
   desc "Generic CLI tool to automate versioning and package publishing related tasks"
   homepage "https://github.com/release-it/release-it"
-  url "https://registry.npmjs.org/release-it/-/release-it-20.0.1.tgz"
-  sha256 "9a1ce384b24fb2be3a9543b9e9053e618b1fa915351f93248c01265c6564c3e2"
+  url "https://registry.npmjs.org/release-it/-/release-it-20.2.0.tgz"
+  sha256 "2768b4253d0d83d9fc02e5ecd7f2c60620575800be03954ecd4ec0545aecb25c"
   license "MIT"
 
   livecheck do
@@ -11,7 +11,7 @@ class ReleaseIt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "25dbf6cb7babb0045d3fdc60cc9d0036e37a7c989b52c9191fc26dae54e5a76b"
+    sha256 cellar: :any_skip_relocation, all: "3401677a475411d9fb557aacb5ac3981af9706679e8478bea899ff53c799c35d"
   end
 
   depends_on "node"

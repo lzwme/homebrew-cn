@@ -1,18 +1,18 @@
 class Ekphos < Formula
   desc "Terminal-based markdown research tool inspired by Obsidian"
-  homepage "https://ekphos.xyz"
-  url "https://ghfast.top/https://github.com/hanebox/ekphos/archive/refs/tags/v0.20.10.tar.gz"
-  sha256 "536d19bc93c2404bcb031b595e68012a5f369e400157b0637824b9c8b443da5b"
+  homepage "https://ekphos.netlify.app/docs"
+  url "https://ghfast.top/https://github.com/hanebox/ekphos/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "0aa0b4985db562bd2320b95291506ef8d734ebc2bbc66d6b21339f55fa412ff4"
   license "MIT"
   head "https://github.com/hanebox/ekphos.git", branch: "release"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ccf301529373a873b634deb8f5afc01c61a06ddb8140e2a62cc4074cf7d2f7ff"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67e03426e9a9619f9136556b92350f9fc08eb42bdaa931ea52801669a15a5be2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c9c00694d5272bc33e6a378baa92a75a343c712f0f87aafdd06da7429f6416b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "43f8e742cac3b608e60377ca7d59705d5cf1e7f85240abd44234290665fba439"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca64eb1e1443d052a3241b1b2a4703407b811d90c397f3ce4d14912538945896"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85d779ad9e4f45e1c708a0e72be365ee7ddd5a9cb824c7565e45fa81a20a861f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ae5e790796ce8ff6ba1fdb420eca0b4b4075d909505418203dafe0e577e346f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85b4c47ee11e1f7acf088a92c35f6f74b94fa7c5ba61f890b06fa68793acd473"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c73b23b69b26d8003ec6650583480f774e38e0ed45799169bfcc46395ac874aa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "140f814be013c2cec1c43e9375bb5e182821fbb81890379c1eb06639e560d198"
+    sha256 cellar: :any,                 arm64_linux:   "a82d6fb7c792f48757dcf8ccd6c7a9678b8859f93d06079315d99e8c0caa5483"
+    sha256 cellar: :any,                 x86_64_linux:  "b807e2286166d3d1acecb91d0357355ada4a9d7e59fdd0b7f363ac532e2844c8"
   end
 
   depends_on "rust" => :build

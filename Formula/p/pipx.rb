@@ -3,13 +3,13 @@ class Pipx < Formula
 
   desc "Execute binaries from Python packages in isolated environments"
   homepage "https://pipx.pypa.io"
-  url "https://files.pythonhosted.org/packages/6b/b8/dcf992895f73b29d66ba21ad8032c68fd6d3ff02ac4bb9357d3a7369eb02/pipx-1.12.0.tar.gz"
-  sha256 "a25ae54944c116b7dc53440aab71975f29f4f9fe4bc478cf9ddb123bed3e00f5"
+  url "https://files.pythonhosted.org/packages/2f/ca/0f14561741f069231d9bb62306d80ac959e1288981d8a50dcba6de81eaac/pipx-1.13.0.tar.gz"
+  sha256 "d754c19d070893aab5d1ddb3d622ef57ec082b79f53c2664183165dbd2868c0e"
   license "MIT"
   head "https://github.com/pypa/pipx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cc1d2afd2d26517058563da939cbaab8bb4b3ec7a97c2cde78f455d761ef3cb8"
+    sha256 cellar: :any_skip_relocation, all: "405bd21520c250173c5411e225a69e7870d6e07985b8a26119d28414b76a88c4"
   end
 
   depends_on "python@3.14"
@@ -20,8 +20,8 @@ class Pipx < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
+    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
   end
 
   resource "packaging" do
@@ -30,8 +30,8 @@ class Pipx < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
-    sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
+    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
+    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
   end
 
   resource "userpath" do

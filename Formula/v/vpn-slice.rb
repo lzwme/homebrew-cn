@@ -3,11 +3,21 @@ class VpnSlice < Formula
 
   desc "Vpnc-script replacement for easy and secure split-tunnel VPN setup"
   homepage "https://github.com/dlenski/vpn-slice"
-  url "https://files.pythonhosted.org/packages/74/fd/6c9472e8ed83695abace098d83ba0df4ea48e29e7b2f6c77ced73b9f7dce/vpn-slice-0.16.1.tar.gz"
-  sha256 "28d02dd1b41210b270470350f28967320b3a34321d57cc9736f53d6121e9ceaa"
   license "GPL-3.0-or-later"
   revision 1
   head "https://github.com/dlenski/vpn-slice.git", branch: "master"
+
+  stable do
+    url "https://files.pythonhosted.org/packages/74/fd/6c9472e8ed83695abace098d83ba0df4ea48e29e7b2f6c77ced73b9f7dce/vpn-slice-0.16.1.tar.gz"
+    sha256 "28d02dd1b41210b270470350f28967320b3a34321d57cc9736f53d6121e9ceaa"
+
+    # Backport commit to drop setuptools dep
+    # https://github.com/dlenski/vpn-slice/pull/149
+    patch do
+      url "https://github.com/dlenski/vpn-slice/commit/4e26adbfd14de2be5e77933e96d353ea7d200107.patch?full_index=1"
+      sha256 "e80b63d2da61f47011d924fbcc48de9a7461c76a6cc977ee08fce99995bb155b"
+    end
+  end
 
   bottle do
     rebuild 2
@@ -29,13 +39,6 @@ class VpnSlice < Formula
   resource "setproctitle" do
     url "https://files.pythonhosted.org/packages/8d/48/49393a96a2eef1ab418b17475fb92b8fcfad83d099e678751b05472e69de/setproctitle-1.3.7.tar.gz"
     sha256 "bc2bc917691c1537d5b9bca1468437176809c7e11e5694ca79a9ca12345dcb9e"
-  end
-
-  # Drop setuptools dep
-  # https://github.com/dlenski/vpn-slice/pull/149
-  patch do
-    url "https://github.com/dlenski/vpn-slice/commit/5d0c48230854ffed5042192d921d8d97fbe427be.patch?full_index=1"
-    sha256 "0ae3a54d14f1be373478820de2c774861dd97f9ae156fef21d27c76cee157951"
   end
 
   def install

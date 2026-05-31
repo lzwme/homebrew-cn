@@ -1,18 +1,18 @@
 class Firefoxpwa < Formula
   desc "Tool to install, manage and use Progressive Web Apps in Mozilla Firefox"
   homepage "https://pwasforfirefox.filips.si/"
-  url "https://ghfast.top/https://github.com/filips123/PWAsForFirefox/archive/refs/tags/v2.18.2.tar.gz"
-  sha256 "a6956631ba62442d108cddfd8139d69d39f47004e8d36390a042ab8580d08021"
+  url "https://ghfast.top/https://github.com/filips123/PWAsForFirefox/archive/refs/tags/v2.18.3.tar.gz"
+  sha256 "597bb57eb7041829940bf6d6592f7d312d76386c246b29e3f1a000fea255d6cf"
   license "MPL-2.0"
   head "https://github.com/filips123/PWAsForFirefox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b6b9242665adc6a44a2da0dbe17f926b7ce8226fadf71fe0b1dc51af4ce4349"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5dacc0bfd9f6abe22991e60443dfc60cf6dc16d06dda1dcc9499ca14eecd7266"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "423a273b3a6790cfdc9c0e871f9c931a492ec679824263e659cd8b26358a9a8c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c3aee9faf6712ebfa4be77443228e2b428749bc854fedd2fb380fca4452b95e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a03b4f7d82c1c97eac6cb742419c6ecb8d0efb82b44b4d8f23c635d96660159f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5ae69012de7e629ff5e8413ba71525ff56615d7bfb05715eb493753db2ad466"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "604a474022bb1b6aec25a17b2b8d73c2a3c81793ae655339a11b7c4d4755d74a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b63f58763451149a49b3bda63258dd7fe8c20ff12360de87e5084ab815ac3ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d9b8013f9aa037ecb7b158409ba383ea3289661a572be01a1fb8792f8d3575c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "01df9ba07b5a9cd63077dccb93298979d26f8d44434830aff5a9524bd77d0881"
+    sha256 cellar: :any,                 arm64_linux:   "c94a2cef843c0db91990348603a68cea036575178ffd91710f46fd4a26b2db9c"
+    sha256 cellar: :any,                 x86_64_linux:  "1e69963282e7265a98327adc5b403e051790c2327314d6f674c7722270d7e985"
   end
 
   depends_on "pkgconf" => :build

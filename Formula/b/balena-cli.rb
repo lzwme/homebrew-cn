@@ -1,10 +1,9 @@
 class BalenaCli < Formula
   desc "Command-line tool for interacting with the balenaCloud and balena API"
   homepage "https://docs.balena.io/reference/balena-cli/latest/"
-  url "https://registry.npmjs.org/balena-cli/-/balena-cli-25.1.6.tgz"
-  sha256 "1f526868af152797136a680d76096ad3e48f0dac6e45411b0c5cc426ffcede47"
+  url "https://registry.npmjs.org/balena-cli/-/balena-cli-25.1.7.tgz"
+  sha256 "a47c845e1c0168c9b81103d825cc9435346aae6840f3c281256385e8d9832250"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url "https://registry.npmjs.org/balena-cli/latest"
@@ -14,12 +13,12 @@ class BalenaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3d6635cf90d54d1ba5121ed57cf58e26efe5f2dac9977c8828b2786ab126ce99"
-    sha256 cellar: :any,                 arm64_sequoia: "b713cac8902d75c79540cc080daf7707074324c1b5ddee947fef57df8afc8b23"
-    sha256 cellar: :any,                 arm64_sonoma:  "b713cac8902d75c79540cc080daf7707074324c1b5ddee947fef57df8afc8b23"
-    sha256 cellar: :any,                 sonoma:        "1df8b9e69593b5914500d8c544f37d0696c7d247120e8d5956868f96f848231f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd33ee3a1ec476a745ce81e783d8db9c6015f83990f1e4987ff077e3e4484269"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27a9e96d461f657a2d010d74fe188676f7b6836a6756feaf98c3fe678636caa7"
+    sha256 cellar: :any, arm64_tahoe:   "60afabb49fa2f17cb8ce680ed9acc69759def97731a814e0dcb8237695990951"
+    sha256 cellar: :any, arm64_sequoia: "197bf36beeaa2a25092c1e63165c4ad9e945c3e8468017db3b000768110c67db"
+    sha256 cellar: :any, arm64_sonoma:  "197bf36beeaa2a25092c1e63165c4ad9e945c3e8468017db3b000768110c67db"
+    sha256 cellar: :any, sonoma:        "8b87ee37a298c0bef496d14fa0786dc2bedaf08da771dd40ede4d718e04b46a6"
+    sha256 cellar: :any, arm64_linux:   "262c1aac8a4e647114dbd635f40b634d38794df36de5e874c9e46c117a07155f"
+    sha256 cellar: :any, x86_64_linux:  "b9b0eae89bc6a18285572945da2cc437ea0c9acb5d0e66cda4af8c10b4148fa5"
   end
 
   depends_on "go" => :build

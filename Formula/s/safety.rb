@@ -3,18 +3,18 @@ class Safety < Formula
 
   desc "Checks Python dependencies for known vulnerabilities and suggests remediations"
   homepage "https://safetycli.com/product/safety-cli"
-  url "https://files.pythonhosted.org/packages/c0/3c/7252c05d15e64c2714a72ca80d0a5cb8d08c0ee24fe8224d507558af15a4/safety-3.8.0.tar.gz"
-  sha256 "24b2cd7b873ee0dd4bc7f4f65933d2bfaf7041741f371449c12b5c8572ccb727"
+  url "https://files.pythonhosted.org/packages/c2/7b/8e1d580c5178f0736b806b7199827e61e2a2569eec5b49ec75da6273bbdf/safety-3.8.1.tar.gz"
+  sha256 "e646123b976bbb6707cfaacae8c926e2f886b744a60e0f410e8610a3a4eaf7be"
   license "MIT"
   head "https://github.com/pyupio/safety.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "104c124b001ea47cb5ff62d428e7118d59e1b69a2c8fdc252bf3e8c1f540033e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "231a495249c9685a86066925b62613f7c56c7313f950119dacb88ab247f6a378"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce553e55cd19bd310ceb315a460ef9e77469351b98f9f1a777f90f44ba6dda9a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "113ff9851404a30969a32812851ecfc20b78b1887a8c633338a2b6ca98e6135d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea0489de938fb399f57cff5306dc6fb2d04a77115108a6361dd9cf2512983a57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a39fbf7f3839c7ce730ee703b76e5630b41be54f69f9ef196c2ddad5c9f6340c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c539eec5462c9aaa6cc6bcc271f4b04f9bdbef2af15dd5b1573a6f8244bd5cba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5308a76f4d01a34f28463af39f23d4c269bf4cea0c4b9ee0e6cbaec44228f4b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4c4d3d75f04996ad53f2ce5b1b01fd797362814101ec4285243d37f625aa31b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1543a9d884d941edeb2ae79388fe98e41ff99c8e75b04582231e55f187367600"
+    sha256 cellar: :any,                 arm64_linux:   "7143ef2da07fb48af6cf9ebd5b30cd7499b4b0e9f75035c498eedc4e9107bb67"
+    sha256 cellar: :any,                 x86_64_linux:  "01335f7bd650ee401441c2a744431a403a22d28bd3d7fae6abe948228fac33a5"
   end
 
   depends_on "certifi" => :no_linkage
@@ -70,8 +70,8 @@ class Safety < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
-    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
   end
 
   resource "jinja2" do
@@ -85,8 +85,8 @@ class Safety < Formula
   end
 
   resource "joserfc" do
-    url "https://files.pythonhosted.org/packages/1b/cb/52e479f20804904f5df20ac4539d292dcecd1287aaa33cba1d1def1d9d8e/joserfc-1.6.7.tar.gz"
-    sha256 "6999fe89457069ecacd8cc797c88a805f83054dd883333fa0409f74b46479fd7"
+    url "https://files.pythonhosted.org/packages/5d/ac/d4fd5b30f82900eac60d765f179f0ba005825ac462cc8ced6e13ec685ab3/joserfc-1.6.8.tar.gz"
+    sha256 "878620c553a6ebdd76ccdc356782fee3f735f21a356d079a546b42a4670ace5f"
   end
 
   resource "markdown-it-py" do
