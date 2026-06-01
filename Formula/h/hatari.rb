@@ -1,10 +1,13 @@
 class Hatari < Formula
   desc "Atari ST/STE/TT/Falcon emulator"
   homepage "https://www.hatari-emu.org/"
-  url "https://framagit.org/hatari/releases/-/raw/main/v2.6.1/hatari-2.6.1.tar.bz2"
-  sha256 "b7dc09ebffc1b77da6837d37b116bc5a9b2fd46affff1021124101e3f6e76bc5"
   license "GPL-2.0-or-later"
-  head "https://framagit.org/hatari/hatari.git", branch: "main"
+
+  stable do
+    url "https://framagit.org/hatari/releases/-/raw/main/v2.6.1/hatari-2.6.1.tar.bz2"
+    sha256 "b7dc09ebffc1b77da6837d37b116bc5a9b2fd46affff1021124101e3f6e76bc5"
+    depends_on "sdl2"
+  end
 
   bottle do
     rebuild 1
@@ -16,9 +19,17 @@ class Hatari < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ab439d6a576b5afe27ad1546ffe23fab4bc7cc8ec92ac71fef92dc098c48182"
   end
 
+  head do
+    url "https://framagit.org/hatari/hatari.git", branch: "main"
+    depends_on "sdl3"
+  end
+
   depends_on "cmake" => :build
   depends_on "libpng"
-  depends_on "sdl2"
+
+  on_macos do
+    depends_on xcode: :build # for ibtool
+  end
 
   on_linux do
     depends_on "libx11"
@@ -38,6 +49,9 @@ class Hatari < Formula
   end
 
   def install
+    # Allow finding ibtool even if CLT is active in user environment
+    ENV["DEVELOPER_DIR"] = ENV["HOMEBREW_DEVELOPER_DIR"] if OS.mac?
+
     # Set .app bundle destination
     inreplace "src/CMakeLists.txt", "/Applications", prefix
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_OSX_ARCHITECTURES=#{Hardware::CPU.arch}", *std_cmake_args

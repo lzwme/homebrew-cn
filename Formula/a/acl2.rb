@@ -4,7 +4,7 @@ class Acl2 < Formula
   url "https://ghfast.top/https://github.com/acl2/acl2/archive/refs/tags/8.7.tar.gz"
   sha256 "d6013c22e190cbd702870d296b5370a068c14625bf7f9d305d2d87292b594d52"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -12,11 +12,9 @@ class Acl2 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c526485ed9937bc0cd24e076520257028f5a01a69ef76d758e8e89b8ca73c144"
-    sha256 arm64_sequoia: "3d0392544e4be896de4e168ad25155684b3d722a6bb4de1ab813fe90a3af8c2a"
-    sha256 arm64_sonoma:  "f88370c88e5bebf5f429d39d30b60bcae26331d6d91572b8c0467c961c3f0bbf"
-    sha256 sonoma:        "f170178ce3a8b0577e11e7cb7358a22d4f3541ae6d0057aeca3d9c1711ad6fcb"
-    sha256 x86_64_linux:  "c2736a40e200bed1397548d013de718ce118c03c4632b747057a378bad9e4858"
+    sha256 arm64_tahoe:   "6559de7cf39d0c435ab09883b540b413698c4827e40d502dc6e37f6ad5a96062"
+    sha256 arm64_sequoia: "0fdd11e0379a2570626fbbd21b12349d25ee32b60fb662416d238506b8d45651"
+    sha256 x86_64_linux:  "e3e40ab5bb221f2deffde4678e142b6037c22938ef26d8adddfe0e1843b0cd60"
   end
 
   depends_on "sbcl"

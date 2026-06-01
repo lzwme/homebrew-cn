@@ -20,12 +20,13 @@ class Netatalk < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "2a0d171674ac7a8dfba99b5f62716d2eecf27638bac933d262192b1afadcc333"
-    sha256 arm64_sequoia: "bb70f55a6a018ec02d82a92b92745b5c8fd76c1001b7999288cfdf2950d204df"
-    sha256 arm64_sonoma:  "b7152fcc4d907dc33c906fcf957da3e268fdc63ade405f4ef39209828250b85a"
-    sha256 sonoma:        "455ec0fc6132ff9c346a8d5f77b774856426df4ab88a4ec7f45a4ac53ffb8abb"
-    sha256 arm64_linux:   "5b170636ff4d3e19274004525dae4fce8fbf4d13ae6401172dd487850a3a4ab7"
-    sha256 x86_64_linux:  "14bdaaaf50e44249e04fb30847c21d41dd9af6d2de4ba941e7dcf9dc59083e8c"
+    rebuild 1
+    sha256 arm64_tahoe:   "a34ddecb88d6c79ab8b1bc149a26dcf7bbd82c300f6dad2d5c604d0fafa2ada8"
+    sha256 arm64_sequoia: "d8ccfee9249cbdc7c3eb75e0d6eed1ee731b7c8c18bed51d446f62adbe5bee2c"
+    sha256 arm64_sonoma:  "6f557473b242401dda3c38c1b4bd57271e4dfdce53cd9b796880069947a18d89"
+    sha256 sonoma:        "59d535e9ad0d6ed14b30cb37931ff08f3b5952c38a71c6e60693f3b1e3ed8e2b"
+    sha256 arm64_linux:   "6e7765cb1e13aac3cd28119be04bc12716ee1d6ff8e2e4f1fb98e4afe02646d2"
+    sha256 x86_64_linux:  "d157c8e2aa8d8150f9eb114149ec9add8addcf73670d7a5cac96f7aeac153c7c"
   end
 
   depends_on "cmark-gfm" => :build
@@ -41,6 +42,7 @@ class Netatalk < Formula
   depends_on "libgcrypt"
   depends_on "mariadb-connector-c"
   depends_on "openldap" # macOS LDAP.Framework is not fork safe
+  depends_on "talloc"
 
   uses_from_macos "krb5"
   uses_from_macos "libxcrypt"
@@ -74,7 +76,7 @@ class Netatalk < Formula
       "-Dwith-lockfile-path=#{var}/run",
       "-Dwith-pam-config-path=#{etc}/pam.d",
       "-Dwith-pkgconfdir-path=#{pkgetc}",
-      "-Dwith-spotlight=false",
+      "-Dwith-spotlight=true",
       "-Dwith-statedir-path=#{var}",
       "-Dwith-testsuite=true",
     ]

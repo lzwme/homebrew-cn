@@ -1,17 +1,17 @@
 class Cpdf < Formula
   desc "PDF Command-line Tools"
   homepage "https://github.com/johnwhitington/cpdf-source"
-  url "https://ghfast.top/https://github.com/johnwhitington/cpdf-source/archive/refs/tags/v2.9.tar.gz"
-  sha256 "944e2e578fc9653ccf09df4cf0c0b60beb3fb702ddd5b76640624d7324ae3cdb"
+  url "https://ghfast.top/https://github.com/johnwhitington/cpdf-source/archive/refs/tags/v2.9.1.tar.gz"
+  sha256 "8f96f92b2b19b42a6ee3aeb5986e7223a9fcfc8c65e534b6b45cb9525251ca80"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4decfc5e1b18bf1cc8d7d3ae01308c08f9ccb89f681ba7b529e68f9a773e9e95"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f0f7da1259f83e9a2ffd56ad5b893a83221a1a93cd338b70ef16eb175f3c4a4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb2824a1b3ed8389a6b6b71c64a6786b108080eedfb218662d3365867a6cb660"
-    sha256 cellar: :any_skip_relocation, sonoma:        "280d6ec4fe43c9889b7f7e4f5c7c8749eddec1e8886c4a190004020ca50a89c1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4935bd4039c9e7c9ea54eaab59500fcd382d3cda01ba8f54909aeac271e90e2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f19a3b6a5a202f4d93511fb785dc4f462e2492b19cc70f4f45710d9f8e458b5d"
+    sha256 cellar: :any, arm64_tahoe:   "37bcc7e29c86c7fdc51113f4ab25638d86ac204174774d2f56800b488919803a"
+    sha256 cellar: :any, arm64_sequoia: "202ca43f03553ff792742a73d31dbbbca50a4be00e23b69caa2c29a2c3472e9c"
+    sha256 cellar: :any, arm64_sonoma:  "ed1f564702633df6e4fd5bcfdc012dd2e5dea2882c554193d31d5646d9fc4e66"
+    sha256 cellar: :any, sonoma:        "c1f5c5901b4676c3fd881900309d4c56bce3122861ca5a154fdf6da61c3199e5"
+    sha256 cellar: :any, arm64_linux:   "62f68c4c883ffab8b7f916eb325d4226cc6d013de16aefa53b21adad9d677310"
+    sha256 cellar: :any, x86_64_linux:  "b9a7a19d6a2c06a43c303fcc26c2a623a62c770e53379af0959ec2a07a0b93a6"
   end
 
   depends_on "ocaml-findlib" => :build

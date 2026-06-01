@@ -8,13 +8,13 @@ class Stella < Formula
   head "https://github.com/stella-emu/stella.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "41e3a16e64aaf77fe123ddbd981aeeba3e994390c7d89c0c65f1c2925e7b7e9a"
-    sha256 cellar: :any,                 arm64_sequoia: "91cbc6e702faf484f0f8155e09bc0c58b554d8ad83806f6fbccc175a5a2ee029"
-    sha256 cellar: :any,                 arm64_sonoma:  "0b918bf3b40909f05f9efb55ffd1ea30edc2c5559f4bdbe005be7701e2d78364"
-    sha256 cellar: :any,                 sonoma:        "bdf6adb03cc6b6c704ef07ba259ed76dd8079c8188ec6bffa533143da369f42e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecb978e4c694527a4ff05657d3eeee7afada54f357e13c145e1f49a61dec59cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "217c38a50c75643714b44317e94b3eef8118cd15ec1327277641a5cdaf76f78a"
+    rebuild 3
+    sha256 cellar: :any, arm64_tahoe:   "8ab71c51931ddfdb6b82d247fff9eb58e9942d32fc8c13c0abed4459a58344d9"
+    sha256 cellar: :any, arm64_sequoia: "24140c78a4102e4848abe711f49760549cfe2f0ad5a6dd322868d37d0c82c12f"
+    sha256 cellar: :any, arm64_sonoma:  "d6de66a30620b32033947bc6ca98b86ccc825526e5d14f3e29cf47a4eadabc4c"
+    sha256 cellar: :any, sonoma:        "c7d9e81150b03eed64cd3a3c2255473b8437429feb2a63b9091569f2e5157fed"
+    sha256 cellar: :any, arm64_linux:   "37c6ee529603c602a8f17d73731109a8a0d041a360ea2e818ac0f9c857240a19"
+    sha256 cellar: :any, x86_64_linux:  "3293d2efacfbe3e6ccd827e518906400430ab70090efcc75558fc0395a60b42c"
   end
 
   depends_on "pkgconf" => :build
@@ -26,12 +26,6 @@ class Stella < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # ventura build patch, upstream pr ref, https://github.com/stella-emu/stella/pull/1064
-  patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/stella/7.0c-ventura.patch"
-    sha256 "6295953eced4509376f4deb7b1ab511df5fed10cff4fab40feaa4ca8c53922ad"
   end
 
   def install

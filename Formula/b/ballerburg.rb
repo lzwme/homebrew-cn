@@ -1,10 +1,13 @@
 class Ballerburg < Formula
   desc "Castle combat game"
   homepage "https://baller.frama.io/"
-  url "https://framagit.org/baller/ballerburg/-/archive/v1.2.3/ballerburg-v1.2.3.tar.bz2"
-  sha256 "2e55087c70e10a827a270493732d3928f8fb0abb6b583661f80cbbe1efac80f7"
   license "GPL-3.0-or-later"
-  head "https://framagit.org/baller/ballerburg.git", branch: "main"
+
+  stable do
+    url "https://framagit.org/baller/ballerburg/-/archive/v1.2.3/ballerburg-v1.2.3.tar.bz2"
+    sha256 "2e55087c70e10a827a270493732d3928f8fb0abb6b583661f80cbbe1efac80f7"
+    depends_on "sdl2"
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "cccde44114f408fbef049352adf60ffd2bfcdca158cde6b665cbbf03801daaa6"
@@ -17,8 +20,12 @@ class Ballerburg < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1aa85f3ee1fc21cda5916659e10333c563cd918356d3eca5016847a48ff03e57"
   end
 
+  head do
+    url "https://framagit.org/baller/ballerburg.git", branch: "main"
+    depends_on "sdl3"
+  end
+
   depends_on "cmake" => :build
-  depends_on "sdl2"
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

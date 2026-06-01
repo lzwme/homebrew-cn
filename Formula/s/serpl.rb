@@ -1,17 +1,17 @@
 class Serpl < Formula
   desc "Simple terminal UI for search and replace"
   homepage "https://github.com/yassinebridi/serpl"
-  url "https://ghfast.top/https://github.com/yassinebridi/serpl/archive/refs/tags/0.3.5.tar.gz"
-  sha256 "ac53081d4610da6597b90ee785c4f6dbf553e7653bcebc0689a26931e1a4dd76"
+  url "https://ghfast.top/https://github.com/yassinebridi/serpl/archive/refs/tags/0.3.6.tar.gz"
+  sha256 "d794e020e3e6535ac2c0cee3613ffb9122e4df7a47d4e5c466e8b35e59e08312"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b88504be53fd6c6d0f4aedfafa8b85242e6f35383517fe9c5886ab52aa55ea25"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad317368e476c6488b780e9910742ab649c6563e3fe2c8296801603c3915f9ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa13125f545f6dccc7766f4dd49a5e4632b8dc9bab43fef97e414134c5d709d3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "89f5f9abd344d6f2401d42f476de2fe68c615aa2af5d707fb94d74c4303f3a6d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b69c0b32ca5b58b5c8a3181b0ccc601bc9f8a7361f35bd26c99e5979f5ebc9fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a119bda728e51a5938e737cd0a5609212daf6701aeab6216ead96b1550dbc2b7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "691d73b56ebd15a6b95cfb0290639a2b708d58cb4dcbd896689fed79f3f3f2ea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8cc7b7dad763673aae27fc5dba3c4a95bd6c170ce52e497111110dfa374a3959"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88bf27db3054865d754aeb1ef375dc4251562bcbba7c1141130309603ef67169"
+    sha256 cellar: :any_skip_relocation, sonoma:        "69998a4447ab18444ee915ddf89869dcf47810b94aa33bc84ae54f722b98f979"
+    sha256 cellar: :any,                 arm64_linux:   "b6b72ecbe27cdb0daac5649d0a4d350f3eb3e8785a790b1363c83e7bcf6f1fee"
+    sha256 cellar: :any,                 x86_64_linux:  "55f90b322c27459a3e3d113b1a8f6bed4d34df6f8cca622b68039c72c4c34849"
   end
 
   depends_on "rust" => :build

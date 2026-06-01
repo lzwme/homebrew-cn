@@ -1,8 +1,8 @@
 class Lisette < Formula
   desc "Language inspired by Rust that compiles to Go"
   homepage "https://lisette.run"
-  url "https://ghfast.top/https://github.com/ivov/lisette/archive/refs/tags/lisette-v0.2.15.tar.gz"
-  sha256 "fa66eed905d541f88fcea1ed5f5720c12d56ac0c92d0d6a137c29c35a5fa722e"
+  url "https://ghfast.top/https://github.com/ivov/lisette/archive/refs/tags/lisette-v0.2.16.tar.gz"
+  sha256 "dbbf9d0f4d4ec5ba0ab9c01fa1a3c5c14b8fe023d19efab66acfbc696090a481"
   license "MIT"
   head "https://github.com/ivov/lisette.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Lisette < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "11cd30184978e8defbf2358006d3f8b0bf3099e704aabce41174b5ef84cab660"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c20cd82f9ab35a5f4c892616048188681aef39d239570dc0db06345d15ad5f2f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "140cd8d98fa2e74615f2f0c89d915a3b57540ef58815bb2d2365da8ec96ec52f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9e7dfd6d9f5259caffa07f6441b46d31af4114bec63feb8bb72a32009353155e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca4a2f4f7d07b4223d593987eaf428676f345e1b736af4415dc519436f52b0c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f7317f3e4f942d1235334c3c1b8bf67ef16a43602e90fc48efdb80350fd86d4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37352749b3023a16b9937741f3e63411c0f2de929f567c36f726fbcde7e8d821"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "033a90c0390d0bb20c08345ffc12be7ab3bd5e397140a194d6bdffb96b2a1847"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65d932d5a968aac2dad155205c88a3b1470f1ccf9cd86fab2c5206c0e77f3658"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0de67830b4773a3c4d915cfa65cd5b60650477733235015216a946dd2a5c2492"
+    sha256 cellar: :any,                 arm64_linux:   "42dc265a5972d7195d84f6821b13416c5559279a03a1601699d7a0bff0a8455b"
+    sha256 cellar: :any,                 x86_64_linux:  "484a1c02ed7dd82a3c9a3773c49e3dcebf2e7b1cf550363d1d889b9a46fb6f7e"
   end
 
   depends_on "rust" => :build

@@ -7,6 +7,11 @@ class Cabin < Formula
   revision 3
   head "https://github.com/cabinpkg/cabin.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_tahoe:   "ceb0df820b6831bad382ee05ec258c8170c9a4f6ed52faac9e42928bc3e99d10"

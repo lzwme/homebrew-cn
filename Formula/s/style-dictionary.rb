@@ -1,12 +1,12 @@
 class StyleDictionary < Formula
   desc "Build system for creating cross-platform styles"
   homepage "https://github.com/style-dictionary/style-dictionary"
-  url "https://registry.npmjs.org/style-dictionary/-/style-dictionary-5.4.0.tgz"
-  sha256 "fa196d9d251347a072e342932751d56e6dda49fa1e440694b857a32659131807"
+  url "https://registry.npmjs.org/style-dictionary/-/style-dictionary-5.4.2.tgz"
+  sha256 "df8875fe3d046e6229bda240ed6f4ff01be69b6aa2356a4e6fc060142a2cc834"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "95dbd9912f05056ab936f782863e2490d2096ec7aeaebb9dae6b4db497bffcee"
+    sha256 cellar: :any_skip_relocation, all: "3a02253ae8e32c47a1dd2cad8d8c79767f96d8fbdac354273d74884f4ef4aec6"
   end
 
   depends_on "node"
@@ -31,6 +31,7 @@ class StyleDictionary < Formula
     assert_path_exists testpath/"config.json"
 
     output = shell_output("#{bin}/style-dictionary build")
-    assert_match "Token collisions detected", output
+    assert_match "✔︎ build/css/_variables.css", output
+    assert_path_exists testpath/"build/css/_variables.css"
   end
 end

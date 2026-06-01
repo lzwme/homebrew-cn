@@ -1,10 +1,13 @@
 class Exult < Formula
   desc "Recreation of Ultima 7"
   homepage "https://exult.sourceforge.io/"
-  url "https://ghfast.top/https://github.com/exult/exult/archive/refs/tags/v1.12.1.tar.gz"
-  sha256 "5e5113e31dd8010b8dfd00b6b08f76681dc1e88254d357c92f15c202f7ed7e1f"
   license "GPL-2.0-or-later"
-  head "https://github.com/exult/exult.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/exult/exult/archive/refs/tags/v1.12.1.tar.gz"
+    sha256 "5e5113e31dd8010b8dfd00b6b08f76681dc1e88254d357c92f15c202f7ed7e1f"
+    depends_on "sdl2"
+  end
 
   livecheck do
     url :stable
@@ -21,6 +24,11 @@ class Exult < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "11fa142c33631b28b7d65fa2adc30b3e795cf98a845ff7a2475acc4d0f3ee1e1"
   end
 
+  head do
+    url "https://github.com/exult/exult.git", branch: "master"
+    depends_on "sdl3"
+  end
+
   depends_on "autoconf" => :build
   depends_on "autoconf-archive" => :build
   depends_on "automake" => :build
@@ -29,7 +37,6 @@ class Exult < Formula
 
   depends_on "libogg"
   depends_on "libvorbis"
-  depends_on "sdl2"
 
   on_linux do
     depends_on "alsa-lib"

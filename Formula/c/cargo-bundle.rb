@@ -1,18 +1,18 @@
 class CargoBundle < Formula
   desc "Wrap rust executables in OS-specific app bundles"
   homepage "https://github.com/burtonageo/cargo-bundle"
-  url "https://ghfast.top/https://github.com/burtonageo/cargo-bundle/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "8777ddbfaadf4def5f261d37c3b0b04a6ee27cdbd4e18569827ad0dee7e35b34"
+  url "https://ghfast.top/https://github.com/burtonageo/cargo-bundle/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "b97d0abdfc97c3ed17bba5c07ef97f0daeec39b938e507735d109dd96aebc8b1"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/burtonageo/cargo-bundle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4314c3eafa5f0f536d922ddfb69008be6c35a47193f1a9eb224d8f0fad787c28"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3dfb4e342067506ec34a71e1c078145b8928dff18322a00ac9f831b7590a1722"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ef15f006adb11984837907dff71478d2cf0cac5069ad66e86e5f6576fa27d25"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6a18a9459c1c400d12e5ee3c4f151bac8c933c123434bed9db7d5bf98d44b5f6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd9635077c69ed673b0eb30fc744faea59571b0778aaeffb2a3aec9bc95ac5f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d1a6bb6315ed444543895c018728a36dd13ac589bdd38a33feb0778f9eda2bb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d90ead8844e0d2a937132fb9f59a6d547f024efc24e2d8e1e84fe1d39db53748"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1244930efa3939e12dcbdf74e4195e0330491d3f87d504311e511d17a526e315"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2147b5460f747be986c3930c64622e744f5a21e77cf16e29a3ed75ff0aa41b71"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a25d957a67641f4bf3ed6ab61462a72aed20b13bf7c9013d98c536b23f7bf670"
+    sha256 cellar: :any,                 arm64_linux:   "c85d8f26eb34760821105d9f8b48a96ff609fd0f20e41e438501d0f0652cb7fc"
+    sha256 cellar: :any,                 x86_64_linux:  "53e8cf1605f5eadf0a26920e2c5477cca6e9411e46629e83b7c71c9dfa596232"
   end
 
   depends_on "pkgconf" => :build
@@ -55,7 +55,7 @@ class CargoBundle < Formula
           identifier = "test.brew"
         TOML
       end
-      system "cargo", "bundle", "--release"
+      system "cargo", "bundle", "--release", "--format", OS.mac? ? "osx" : "deb"
     end
 
     bundle_subdir = if OS.mac?

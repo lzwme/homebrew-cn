@@ -1,19 +1,18 @@
 class PostgresLanguageServer < Formula
   desc "Language Server for Postgres"
   homepage "https://pg-language-server.com/"
-  url "https://ghfast.top/https://github.com/supabase-community/postgres-language-server/archive/refs/tags/0.25.0.tar.gz"
-  sha256 "274ba04ca851e2ff930fc1870d6840e138384825e47d3e557b637f4cd82a5066"
+  url "https://ghfast.top/https://github.com/supabase-community/postgres-language-server/archive/refs/tags/0.25.1.tar.gz"
+  sha256 "392b876c67841809d2fc5e1af9d7ad9498d942155d01fcfe7d2f9ee9d128d6a5"
   license "MIT"
-  revision 1
   head "https://github.com/supabase-community/postgres-language-server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8067d1c2920c8c0f6870f9ed1517c897314336d4d646ec0f655ffaf3704d20c4"
-    sha256 cellar: :any,                 arm64_sequoia: "cc6db2f42c9d8dadfd7e47fc3d594bf6ce2d520c9445c9358a5ad1f9e30b1e84"
-    sha256 cellar: :any,                 arm64_sonoma:  "d9359069efba585bf037e5b3c1b5f7750d6ce3c8a282205eb8dd09d9080f2efc"
-    sha256 cellar: :any,                 sonoma:        "512b689c7548660868bb080d0f3929104cc754b4b7308ba87c5e16282fba1247"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "794c3fe9d145007eb489f2bec3eb8ed18f804087b4729d5f3ac9bdfb7e371610"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78940cd5baf973009ba8b2b49d3393560891ce081d020ba30d2ab2abdca454b5"
+    sha256 cellar: :any, arm64_tahoe:   "e3c114ea0a7d85b5a87803e1966498dc3302f5b52abe4433aa64b6aa8c636f4a"
+    sha256 cellar: :any, arm64_sequoia: "9c3c6c8ff18f1935ed3534d73cdc23d950844d46638cf49ce20f355579d45a2a"
+    sha256 cellar: :any, arm64_sonoma:  "2683936ba0d69c1c8bd73ddee5ef29bede60d06f89ab804e5ba10ebb05a2abd1"
+    sha256 cellar: :any, sonoma:        "54fb38ee1867e685c21e587822eb1518b28f5e07d8cf670bda0acc0053d5fcc2"
+    sha256 cellar: :any, arm64_linux:   "9497ca238a0346c22ffcfaf3501eab1708a11d1f5192cd23ef84fc7e1322df99"
+    sha256 cellar: :any, x86_64_linux:  "5b2edb61456e409f77fca09f640fd85effb8e63a9385ac4a6a9d04b0f63aa921"
   end
 
   depends_on "llvm" => :build

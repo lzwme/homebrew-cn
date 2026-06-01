@@ -30,7 +30,11 @@ class Cdo < Formula
   uses_from_macos "python" => :build
 
   on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
+  end
+
+  on_sequoia do
+    depends_on xcode: ["26.0", :build] if DevelopmentTools.clang_build_version >= 1700
   end
 
   on_linux do
@@ -38,17 +42,11 @@ class Cdo < Formula
   end
 
   fails_with :clang do
-    build 1500
-    cause "Requires C++20 support"
+    build 1699
+    cause "needs C++20 std::jthreads"
   end
 
   def install
-    # Upstream switched std::thread → std::jthread in 2.6.1 but doesn't use any jthread-specific feature.
-    # macOS 14/15 SDK libc++ lacks std::jthread, so revert to std::thread.
-    if OS.mac? && MacOS.version <= :sequoia
-      inreplace ["src/workerthread.h", "src/workerthread.cc"], "std::jthread", "std::thread"
-    end
-
     args = %W[
       --disable-openmp
       --with-eccodes=#{Formula["eccodes"].opt_prefix}

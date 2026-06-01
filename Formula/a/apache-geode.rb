@@ -1,14 +1,14 @@
 class ApacheGeode < Formula
   desc "In-memory Data Grid for fast transactional data processing"
   homepage "https://geode.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=geode/2.0.1/apache-geode-2.0.1.tgz"
-  mirror "https://archive.apache.org/dist/geode/2.0.1/apache-geode-2.0.1.tgz"
-  mirror "https://downloads.apache.org/geode/2.0.1/apache-geode-2.0.1.tgz"
-  sha256 "96a361d4e1869507c20ce0c7a845f2d0e1a58f2b52f48702655d720ba39a5cf2"
+  url "https://www.apache.org/dyn/closer.lua?path=geode/2.0.2/apache-geode-2.0.2.tgz"
+  mirror "https://archive.apache.org/dist/geode/2.0.2/apache-geode-2.0.2.tgz"
+  mirror "https://downloads.apache.org/geode/2.0.2/apache-geode-2.0.2.tgz"
+  sha256 "a1a875d5df88d80ae2953def1b0811ee8a466010a5b897682356740bdf19bb7c"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "31ed9e5e1d0354ae49bb366bd19a35a060572422d83380030fcb96c8d6e1beb8"
+    sha256 cellar: :any_skip_relocation, all: "e41164b7cec8d07f262d3b39cccc2910f73e7762973b0c3de300d9dc15600b94"
   end
 
   depends_on "openjdk"

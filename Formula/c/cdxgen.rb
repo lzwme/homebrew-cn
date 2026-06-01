@@ -1,17 +1,17 @@
 class Cdxgen < Formula
   desc "Creates CycloneDX Software Bill-of-Materials (SBOM) for projects"
   homepage "https://github.com/CycloneDX/cdxgen"
-  url "https://registry.npmjs.org/@cyclonedx/cdxgen/-/cdxgen-12.4.4.tgz"
-  sha256 "9e29ff32834b6ed2ee75acc2a16968efffb037a24fd728c6fcfb73385be5ba30"
+  url "https://registry.npmjs.org/@cyclonedx/cdxgen/-/cdxgen-12.5.0.tgz"
+  sha256 "01b3c241216884c9d3aceee908bedba951fda81bf1974dd1028103ca7e15407c"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "33b42e8d559edef26681ebef9135e1b70823a625953113fffb93365d6c70d378"
-    sha256 cellar: :any,                 arm64_sequoia: "3e4d0441fe85ce9851755357182ed9bc7450d41c5ffd2856162c74851dda656f"
-    sha256 cellar: :any,                 arm64_sonoma:  "4173acc650f6752d20194225e8465c2bf393d4016a84ebf558a86fa013bfb0bb"
-    sha256 cellar: :any,                 sonoma:        "deeb2aedc60daf5eab8f12bdf478d40bc0964011c6a04bc1ca637f2cc6bda51d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb1d3c6d4808f08677a55042488dad502656fd4813baa4b1d524f675446b6739"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d907014c88f7d80352e7fa63965582984551ba8dec4f007d39951542ca40ffb"
+    sha256 cellar: :any, arm64_tahoe:   "3935e696e1f1b9daf5028eabc70216ae7c9db64c15fdb898ae039f4124c8e80c"
+    sha256 cellar: :any, arm64_sequoia: "d926a7bb0abe2c1b4f1d5bc68e7c7d0536060afdf7662a86fe788d2195f1d56d"
+    sha256 cellar: :any, arm64_sonoma:  "6d20b5e37eb428d25dd9e026ff6bde0b3603bb9df7d557e95f9b94e1e07c2178"
+    sha256 cellar: :any, sonoma:        "d2dadf0b44855f877d6fa8e3a3902eb2377a85263959bfc3d35b4cd9ac9087fa"
+    sha256 cellar: :any, arm64_linux:   "473e5e5add24eb5259d37a4189280a6910e23a3044e01825781f841518fc05dc"
+    sha256 cellar: :any, x86_64_linux:  "c26cd796bf6e6637465aa41e8d1905fb0e218b5039e3812f7f3a37bed065eba0"
   end
 
   depends_on "dotnet" # for dosai
@@ -21,8 +21,8 @@ class Cdxgen < Formula
   depends_on "trivy"
 
   resource "dosai" do
-    url "https://ghfast.top/https://github.com/owasp-dep-scan/dosai/archive/refs/tags/v3.0.4.tar.gz"
-    sha256 "9bb66d51dd6e1e04c5bc083a5e16689305df6f955c7eb33f8f76c651cf78a041"
+    url "https://ghfast.top/https://github.com/owasp-dep-scan/dosai/archive/refs/tags/v3.0.5.tar.gz"
+    sha256 "38229e1c3a909e18a76aea6dd126ce7d148c2787da8fdc431857db2af2b83715"
   end
 
   def install

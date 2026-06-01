@@ -1,10 +1,13 @@
 class Openjazz < Formula
   desc "Open source Jazz Jackrabit engine"
   homepage "https://www.alister.eu/jazz/oj/"
-  url "https://ghfast.top/https://github.com/AlisterT/openjazz/archive/refs/tags/20260301.tar.gz"
-  sha256 "9c117a8d9aa539c4dcb3fb5788130563a83ca1d9819e538f233721d823f7a650"
-  license "GPL-2.0-only"
-  head "https://github.com/AlisterT/openjazz.git", branch: "master"
+  license "GPL-2.0-or-later"
+
+  stable do
+    url "https://ghfast.top/https://github.com/AlisterT/openjazz/archive/refs/tags/20260301.tar.gz"
+    sha256 "9c117a8d9aa539c4dcb3fb5788130563a83ca1d9819e538f233721d823f7a650"
+    depends_on "sdl2"
+  end
 
   bottle do
     sha256 arm64_tahoe:   "6bfc89162e63bb17558bc08624c060105ff815e076fbb396d145b5e635ca2ea6"
@@ -15,13 +18,12 @@ class Openjazz < Formula
     sha256 x86_64_linux:  "f616f9102db1c8e95a380643842bee98afda25af124666c3b4734437070d47c6"
   end
 
-  depends_on "cmake" => :build
-  depends_on "sdl2"
-  depends_on "sdl2_net"
-
-  on_linux do
-    depends_on "zlib-ng-compat"
+  head do
+    url "https://github.com/AlisterT/openjazz.git", branch: "master"
+    depends_on "sdl3"
   end
+
+  depends_on "cmake" => :build
 
   # From LICENSE.DOC:
   # "Epic MegaGames allows and encourages all bulletin board systems and online
@@ -33,7 +35,14 @@ class Openjazz < Formula
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DDATAPATH=#{pkgshare}", *std_cmake_args
+    args = ["-DDATAPATH=#{pkgshare}"]
+    if build.head?
+      args << "-DSDL_VERSION=3"
+    elsif version > "20260301"
+      odie "Switch to SDL3!"
+    end
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 

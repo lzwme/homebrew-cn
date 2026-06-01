@@ -4,16 +4,14 @@ class Fricas < Formula
   url "https://ghfast.top/https://github.com/fricas/fricas/archive/refs/tags/1.3.13.tar.gz"
   sha256 "7ae03c0f566c4b2bbbd6da1b02965e2a5492b1b8e4f8f2f1d1329c72d44e42a2"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
   head "https://github.com/fricas/fricas.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "53d8672901ac00c6333f1620c4905c92c9278f4c4ce2969a7f5db031eb06363f"
-    sha256 cellar: :any,                 arm64_sequoia: "f700f1e750acde4f24b5c0e5beae756e7a01404dc64b097507280b8f891e5e34"
-    sha256 cellar: :any,                 arm64_sonoma:  "ae8c6b033badb886d78df2c5b965baf185bfb5b05a4318ceed639a6a068c07fe"
-    sha256 cellar: :any,                 sonoma:        "8d4c7867cc9b020443356de4fa79ca4143c23adc06281a65a8f0a771e410ba22"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6083895532bc3694710227554e23e6b62d8a7bc1372b0b83222d489c22b1c1cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72cdc97e2a8642503959c6d3a5975a341c04e991db0e6c2ff5c9bd465ae808e2"
+    sha256 cellar: :any, arm64_tahoe:   "0629eaad116aba12e5f30e19fca8ae9556e7e7042a4fb621df7fcf6aa2c8aebc"
+    sha256 cellar: :any, arm64_sequoia: "236ac0b7b6d01f57f52bb908fcbaaa2ac471ff5dac9f096bc7bde5ba38793189"
+    sha256 cellar: :any, arm64_linux:   "143b16b3ad697545d4fa52815ec74db47aa6683a9af44f51f15b1d07a33f574d"
+    sha256 cellar: :any, x86_64_linux:  "bef1a54566053c50103638eff23395e51f9e5c30384d2e72875a887df409c6f4"
   end
 
   depends_on "gmp"

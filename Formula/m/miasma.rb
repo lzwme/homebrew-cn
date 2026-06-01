@@ -1,20 +1,22 @@
 class Miasma < Formula
   desc "Trap AI web scrapers in an endless poison pit"
   homepage "https://github.com/austin-weeks/miasma"
-  url "https://ghfast.top/https://github.com/austin-weeks/miasma/archive/refs/tags/v0.2.5.tar.gz"
-  sha256 "081bdccc2cfe1a9889dbb842006a4ee6fb5764dd5835a42955d46f36d8ba3db2"
+  url "https://ghfast.top/https://github.com/austin-weeks/miasma/archive/refs/tags/v0.2.6.tar.gz"
+  sha256 "c257e453154d50e07abf1b98cf8bcbad2ca1e23bf606b1d0d0e3076469f607e6"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b23fa9fb097c0bb070daa070d29f7555f504f851dfad804632c5fc0a3bdd4a31"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "483be9679c5633dc9d9f8a18a7660eaaf7a9a849adc7ae67ff76f6b39163abf6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d6950283bcda86e503cbf1549861f46595d56031fc79fa4c25123485317a8f5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "154af996816185e10b9202672020cbf9b988f08ec5eedb9e7e68360f6347259c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "18d99ab3815f333b67df3b125eb7397e1a6aa023ebd9d33d2fb095ea7a89d4c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cfaa70dc5a5b1a3a1cd1906053b28ae754dbb7f88ace50c30049ce8f7dad38a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d30dabd5fb6229a73391033bbb78184feb37904b7436828eac798ccedb21068e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebfb4b3550897391fe89e19bc14e2c76a8a6501e2a45236c2335625115c4ff1f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbdc19de887e0144a0b2a59e5d29dbe762659e26eb92b82febf3e43667a2233a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d83876cadd8417ead51830b6dd0c559625c9e2d72717225984e4d4afadf10b70"
+    sha256 cellar: :any,                 arm64_linux:   "714a2ed0e337681791d31c84308dfc6c791d9d883b0e178b94e537707ff68867"
+    sha256 cellar: :any,                 x86_64_linux:  "f23e6e4e9ed03eaa9334a0f4422217dde36235307c52a5faa7dd227a25dec9fe"
   end
 
   depends_on "rust" => :build
+
+  uses_from_macos "sqlite"
 
   def install
     system "cargo", "install", *std_cargo_args

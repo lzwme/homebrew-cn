@@ -3,10 +3,9 @@ class S3ql < Formula
 
   desc "POSIX-compliant FUSE filesystem using object store as block storage"
   homepage "https://github.com/s3ql/s3ql"
-  url "https://ghfast.top/https://github.com/s3ql/s3ql/releases/download/s3ql-6.1.0/s3ql-6.1.0.tar.gz"
-  sha256 "b4ac7c81a89e790999fa4473e302bf5e1b5bb8abe3303f88f6fdb73beecc7cfc"
+  url "https://ghfast.top/https://github.com/s3ql/s3ql/releases/download/s3ql-6.2.0/s3ql-6.2.0.tar.gz"
+  sha256 "450e04bc5bcba32becc146858c5625804e406e9352744f788628118c770b5c0e"
   license "GPL-3.0-only"
-  revision 1
 
   livecheck do
     url :stable
@@ -14,8 +13,8 @@ class S3ql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "ac56cb95968f639e492879c0ea08d43657550e03ad0c239c12ddb69c9647f100"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "aadd188d691eae3f81bea7455450ae36b5a7ca3032259b82e3c2dd73776cc50d"
+    sha256 cellar: :any, arm64_linux:  "e8c32ff33dfe02258f7e7dd978d77ee76eaae6a5aae5ffd7ee7e753986962bef"
+    sha256 cellar: :any, x86_64_linux: "20e052ef1ab9ed315e9e4df7998ce21a8da69adc08fb59e05ae5ee0490046ce5"
   end
 
   depends_on "pkgconf" => :build
@@ -64,9 +63,24 @@ class S3ql < Formula
     sha256 "18b5e28880eb8eba9065c436becdc0ee8e4b59117a73a510679c82f70cd363d2"
   end
 
+  resource "h11" do
+    url "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz"
+    sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
+  end
+
+  resource "httpcore" do
+    url "https://files.pythonhosted.org/packages/06/94/82699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cb/httpcore-1.0.9.tar.gz"
+    sha256 "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
+  end
+
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
+  end
+
+  resource "more-itertools" do
+    url "https://files.pythonhosted.org/packages/de/1d/f4da6f02cdffe04d6362210b807146a26044c88d839208aec273bb0d9184/more_itertools-11.1.0.tar.gz"
+    sha256 "48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d"
   end
 
   resource "oauthlib" do
@@ -126,23 +140,9 @@ class S3ql < Formula
 
   def install
     virtualenv_install_with_resources
-
-    # Create temporary compatibility executables for previous patched names.
-    # Remove them after 2 minor releases, i.e. 6.2.0, or next major release.
-    odie "Remove compatibility scripts!" if version >= "6.2.0"
-    %w[mkfs fsck mount umount].each do |cmd|
-      old_cmd = "#{cmd}_s3ql"
-      new_cmd = "#{cmd}.s3ql"
-      (bin/old_cmd).write <<~SHELL
-        #!/bin/bash
-        echo "WARNING: #{old_cmd} has been renamed to #{new_cmd}; #{old_cmd} will be removed in 6.2.0." >&2
-        exec "#{bin/new_cmd}" "$@"
-      SHELL
-    end
   end
 
   test do
-    assert_match "S3QL ", shell_output("#{bin}/mount_s3ql --version") # TODO: remove in 6.2.0
     assert_match "S3QL ", shell_output("#{bin}/mount.s3ql --version")
 
     # create a local filesystem, and run an fsck on it

@@ -1,20 +1,20 @@
 class Libngtcp2 < Formula
   desc "IETF QUIC protocol implementation"
   homepage "https://nghttp2.org/ngtcp2/"
-  url "https://ghfast.top/https://github.com/ngtcp2/ngtcp2/releases/download/v1.22.1/ngtcp2-1.22.1.tar.xz"
-  mirror "http://fresh-center.net/linux/www/ngtcp2-1.22.1.tar.xz"
-  sha256 "dfd2c68bd64b89847c611425b9487105c46e8447b5c21e6aeb00642c8fbe2ca8"
+  url "https://ghfast.top/https://github.com/ngtcp2/ngtcp2/releases/download/v1.23.0/ngtcp2-1.23.0.tar.xz"
+  mirror "http://fresh-center.net/linux/www/ngtcp2-1.23.0.tar.xz"
+  sha256 "59d5b4211e96970f2d3d5e6876f73dce03414800ba04aa56835b132fce8de730"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ngtcp2/ngtcp2.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9b5ecd7bfaa9480d125e9dd5bf96ab2cde59557e9a8797f04ec6ee1af66ad9b5"
-    sha256 cellar: :any,                 arm64_sequoia: "ea867de81e1a2fbb1a8f8c76bbffbca05db53fede0b3da50f0ba7c9f1541158a"
-    sha256 cellar: :any,                 arm64_sonoma:  "c05e1d6ea7186865188cabe53b5e1f79afee3646fdaa408998ea7bdceb5414be"
-    sha256 cellar: :any,                 sonoma:        "6ef4ea330fbbbbfe6a94ad85d7bad8a4f78586bbe91f2824756c3a3eb0d2e48c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "275827e764af82be486645dd0e4e27409f8b2c4883f68c58fdeb1fbbddc2f3aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cb712caac1c531346ad50dd0b40c30b7ba768aa5e3d332da82673f3dd16793a"
+    sha256 cellar: :any, arm64_tahoe:   "798cd3f4b88f1fb53ff9067e51e4d6f7b0a57cc7b47be96abcfc545e0e5d283b"
+    sha256 cellar: :any, arm64_sequoia: "79b0e50ce0fa528d0d6c7bcd744b9260257c1d768391f287ff4576fb653ab7b3"
+    sha256 cellar: :any, arm64_sonoma:  "7c101f5aa117fb0e98df0186bbf045f67e61be7739a9504c24cb9fcc9d6844a9"
+    sha256 cellar: :any, sonoma:        "842f478870d73ee5b494a14b11779f1fde95931b2f091f1b8de4ff24f77e773d"
+    sha256 cellar: :any, arm64_linux:   "f0f06b92ae156c94ea648f533e9210f7fb87baef8aa8d0ac08725b2c9018975b"
+    sha256 cellar: :any, x86_64_linux:  "c13a3e1f73a38654d9f9d6b1dcb39f36c6cac0af08f7117198728c62f8459077"
   end
 
   depends_on "pkgconf" => :build
