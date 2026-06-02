@@ -1,12 +1,12 @@
 class Cspell < Formula
   desc "Spell checker for code"
   homepage "https://cspell.org"
-  url "https://registry.npmjs.org/cspell/-/cspell-10.0.0.tgz"
-  sha256 "55fb0a6b22adb900674cb01728bff1ad85ec3a60235471fac8d6b1d41655ff64"
+  url "https://registry.npmjs.org/cspell/-/cspell-10.0.1.tgz"
+  sha256 "38cd11c080c113521ab9d2cf13ed9056886d6feed3c4e171654178b17edfc8ce"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "01892d23d03c972a0390ee89d25f320b69e66dacfb046409f1fb6cc664fd4422"
+    sha256 cellar: :any_skip_relocation, all: "f7f689d281463a7a5ce628439b8741635b3d831b969dde57df12d8d23868b801"
   end
 
   depends_on "node"

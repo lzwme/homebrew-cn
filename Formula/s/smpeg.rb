@@ -32,6 +32,10 @@ class Smpeg < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b98076e9055fbe29549fd5c340deb22c733c24f3ab754a638dd24c425ba076d3"
   end
 
+  # This formula is for usage with old SDL 1.2 with last release from 2013-02-17
+  deprecate! date: "2026-06-01", because: :unmaintained
+  disable! date: "2027-06-01", because: :unmaintained
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
@@ -53,7 +57,7 @@ class Smpeg < Formula
       --disable-sdltest
     ]
     # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     system "./autogen.sh"
     system "./configure", *args, *std_configure_args

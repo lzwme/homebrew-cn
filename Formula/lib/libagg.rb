@@ -17,26 +17,29 @@ class Libagg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "317463b1e1bc918e340935b5f8d4069df1a044ba7bd1e9607c9c9c6f1ea5ab48"
-    sha256 cellar: :any,                 arm64_sequoia:  "057104fa9a817af5b41e424b9faa49446cc8c40b4d61c41186afd3a71e7e2e2c"
-    sha256 cellar: :any,                 arm64_sonoma:   "eabb00483a8c5c955cc4f4b6351692d4c97709c7a1a14cf465767c7d52c132a7"
-    sha256 cellar: :any,                 arm64_ventura:  "65786b5cc83db391b6f39b5032498024cd710832705934d34030f780bd239914"
-    sha256 cellar: :any,                 arm64_monterey: "397cc6cc076ad6e8105a1888112e7e0c5cc310d4f192ad2f3b479eb13a41c4b3"
-    sha256 cellar: :any,                 arm64_big_sur:  "fe56ee8021062f9fc853290fa07ffbcc9adab30eeffd566cbdbb041fca7d5044"
-    sha256 cellar: :any,                 sonoma:         "fdf64bc8570ca6c042299e9f40486aeb6f510327406e5ece26f67ecc41d6075d"
-    sha256 cellar: :any,                 ventura:        "4c449bc35ecb76cc867700f885087c22abeccc8840a00adfeda0c36b1cf32a0b"
-    sha256 cellar: :any,                 monterey:       "af427a27e940353797d88a3b3224a43ad15ad51681494902dad975d5c5270d27"
-    sha256 cellar: :any,                 big_sur:        "12d797bfc9b2a1414787aa3028c1704a5b6f1f000b80ed5e4cd200029f10f160"
-    sha256 cellar: :any,                 catalina:       "d6770fea6a2589b7641fbeda183ff58835ae463cbbab3178096654b36a99b232"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "b3fbb4b5c878b6566d343983213d2f21df250d77193d207637942d457bb8e049"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cee5823d550698b94dc7e494af8b5f8a83acebec701264a4c20dec2d828c2240"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "2a584e6f356275a80289a9969392fb203b5dad15796747deda4f2c8388fd7350"
+    sha256 cellar: :any, arm64_sequoia: "a3f905d901e3d9d54c9839a5239270140b6108c6c1d72b366d2bec5aef7af9af"
+    sha256 cellar: :any, arm64_sonoma:  "2342ac49f1de17c8d34d9259df4ec886f4ac514222887a8b602eb7e916b036ab"
+    sha256 cellar: :any, sonoma:        "22e814733d51edae4810e942a97e56013945f4d64942ef98e3b7d9ba823fa74e"
+    sha256 cellar: :any, arm64_linux:   "ae450d15738a6ace6569f1baa389068c2d06b102032ee3d9d57a907430bb0d98"
+    sha256 cellar: :any, x86_64_linux:  "1b894c3e5385ed4bbeca50ab77c5f84f782d428d1a150f24746bbc364036e811"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
-  depends_on "sdl12-compat"
+
+  # Apply MacPorts patch to allow building without SDL
+  patch :p0 do
+    url "https://ghfast.top/https://raw.githubusercontent.com/macports/macports-ports/2c1525dfa5e9b3d60ec0a02cbbd9a5c21a4e05eb/graphics/antigraingeometry/files/patch-configure.in.diff"
+    sha256 "c3f22ef7d57cf5f88e4a72fd2ff5c5416610ad9953953fb87f4286bdeee96031"
+  end
+  patch :p0 do
+    url "https://ghfast.top/https://raw.githubusercontent.com/macports/macports-ports/2c1525dfa5e9b3d60ec0a02cbbd9a5c21a4e05eb/graphics/antigraingeometry/files/patch-src-platform-Makefile.am.diff"
+    sha256 "be4b7a6a118833722f3aaf378d0bcdf4dc56ed8f003edff5bc73fe2b83a49bee"
+  end
 
   # Fix build with clang; last release was in 2006
   patch :DATA

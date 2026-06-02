@@ -1,18 +1,18 @@
 class Gogcli < Formula
   desc "Google Suite CLI"
   homepage "https://gogcli.sh"
-  url "https://ghfast.top/https://github.com/steipete/gogcli/archive/refs/tags/v0.20.0.tar.gz"
-  sha256 "e5e6ffa881222e652eacf037df4b65f8f53149215fe72160069e8e983d753a1e"
+  url "https://ghfast.top/https://github.com/steipete/gogcli/archive/refs/tags/v0.21.0.tar.gz"
+  sha256 "45ebff8e4f740a195abfea54594d12d978d15577afe2ea4d0fe80151b988f1f5"
   license "MIT"
   head "https://github.com/steipete/gogcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf35dff5bf14e139b0b05f9d3db03f27f3604d64d55984a9a289c8b4ab1ca22d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd0cace4b3868495010bb0b98a97e1a77c4389485eec836c33d7cded91740a85"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7df642aac052227eb5df53c9d1f78a0c8597c245dc50eb977758b506c5aee55b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "739769fe143883a0a36f790cdea539a77e110d0be33b6d82c7a4e3d6780b568a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6732a3c0a70db833e2e3885ae111246f7da0a3c7e9f061b8e03922e554e7e817"
-    sha256 cellar: :any,                 x86_64_linux:  "4ef197a9ecb388d60059bf22d2333ee171de95ad7ebde723ae46eedbc55eca0c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b14520cd48676e2ced0a454b8ca65e91882f775d6806a74a87017560be6bdc8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ec36075d1cc7834bd4e7f62236a085de73e72595413c48d006cc190dd960cb8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72bcfd7ea697d14cf403bfab4a8af62d0866fbd27055848f9e160714ca934f7f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "703740844a58c713dcb7e2e6b2865832fd52fbad6181b2be59530dd8a5fe7951"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2d2634ef9a98db7d0bb0626f8006d7367caaa286d6c37f91698122ee62e1444"
+    sha256 cellar: :any,                 x86_64_linux:  "a7228db7d78cf13bc336ebb7718a861aaf00aa3ad028848cab4e47bdb20aafd9"
   end
 
   depends_on "go" => :build

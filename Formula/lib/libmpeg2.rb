@@ -13,25 +13,18 @@ class Libmpeg2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:    "774f58a1e39f846fdcb40c1b05446f9867836cc95e66fe25d2d829f8e98c88a4"
-    sha256 cellar: :any,                 arm64_sequoia:  "2db4b583e04a71b456045c2bf9f7d08f1ee332e8305c0944d4b101c83ab71990"
-    sha256 cellar: :any,                 arm64_sonoma:   "0174a78b3200ac177017167c6dd73a31202da4a819c4a282b424e36a346b2496"
-    sha256 cellar: :any,                 arm64_ventura:  "a5522ab17783c821344f34583781d561c6c579ab60c28483fb934e66fddfc93f"
-    sha256 cellar: :any,                 arm64_monterey: "aa96e119c487436a7b9e36820137e17fa84007f174c8476e70f74d6a41972036"
-    sha256 cellar: :any,                 arm64_big_sur:  "53f205eb140836cb0593cb34318a62a9381d950fcdf7c949e861e1024dbf352f"
-    sha256 cellar: :any,                 sonoma:         "ed0fe49e971640418eb765c153ab7c846dc6e93911140534b0a0a0f7e026b4cd"
-    sha256 cellar: :any,                 ventura:        "013738fd28fb6f8a52d1a9346c24cee9b4a2e09e0260c3b4f9917146a49de3fa"
-    sha256 cellar: :any,                 monterey:       "fb3ad194c995a22c85768c3032a0d04b195a2e3b4684b1256f6498581d87bc5a"
-    sha256 cellar: :any,                 big_sur:        "81fede3e5bf51daaed591f1eab2ecb777b092f5c99386b2a751618b059c7d2f1"
-    sha256 cellar: :any,                 catalina:       "c25d746458652a4e7f87e67478b1451924da48a82d98a8eae83e36cceb336428"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "2fabce057d7c15bb18b7320230edb8a748206664185c4c0a00e174615ec0094f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04a7bbf5129d11b695a6a57eff6091f6519e3b4554dc77f84bca351a4f17acaa"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "d62eb9cd43b94dcf7a1d4541a2be2e97648406beb993217d36ce32e4c7982e39"
+    sha256 cellar: :any, arm64_sequoia: "c97f23520800dc78b5e7cce85248756223f4710db7668405562b6ef0b4a38cbf"
+    sha256 cellar: :any, arm64_sonoma:  "cb8c3561c4a446fe308cd04b95270872cf3068c119d1dfa6874b8b386d0385f3"
+    sha256 cellar: :any, sonoma:        "21e8bc63e7b98bbdd12231e6544560c0b5067d40f9610a635ea000dc23e2f7f8"
+    sha256 cellar: :any, arm64_linux:   "0c75d7a0837586a34d08a42d6802ab58ca456b47d0cfce47bbc33d0ac1a18b5e"
+    sha256 cellar: :any, x86_64_linux:  "91162a4ef667f5b1d34cfa72aeeedd4f14d1035117d3f0faf9cf79e753046c30"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "sdl12-compat"
 
   on_linux do
     depends_on "libx11"
@@ -43,7 +36,8 @@ class Libmpeg2 < Formula
     ENV.append "CFLAGS", "-std=gnu89"
 
     system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", *std_configure_args
+    # Build without old SDL 1.2 similar to Debian and Arch Linux
+    system "./configure", "--disable-sdl", *std_configure_args
     system "make", "install"
     pkgshare.install "doc/sample1.c"
   end

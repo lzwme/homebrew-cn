@@ -47,8 +47,8 @@ class GrafanaAgent < Formula
     system "go", "build", *args, "-o", bin/"grafana-agentctl", "./cmd/grafana-agentctl"
   end
 
-  def post_install
-    (etc/"grafana-agent").mkpath
+  post_install_steps do
+    mkdir_p "grafana-agent", base: :etc
   end
 
   def caveats

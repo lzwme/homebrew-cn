@@ -1,8 +1,8 @@
 class OsrmBackend < Formula
   desc "High performance routing engine"
   homepage "https://project-osrm.org/"
-  url "https://ghfast.top/https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v26.5.0.tar.gz"
-  sha256 "3e4f5ed09ac0c77158314ef99b5f8c9e336a80339b3f0e62da48abd06acafef9"
+  url "https://ghfast.top/https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v26.6.0.tar.gz"
+  sha256 "5904234d4fd328718b79f7ee376daa94da1da364238df7dde704b76691a21dcb"
   license "BSD-2-Clause"
   head "https://github.com/Project-OSRM/osrm-backend.git", branch: "master"
 
@@ -12,12 +12,12 @@ class OsrmBackend < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "84138f03e657f278268fec3452528a0a16ae00d2bf1a379c0a36b00d291e0336"
-    sha256 cellar: :any,                 arm64_sequoia: "f304c8b3b0cf01f32755c7f472cd928ccbf1a49a7e8c4b30fa98a4f1646b39d0"
-    sha256 cellar: :any,                 arm64_sonoma:  "eeb8842755930eacd3d118fc2c063ab681bc6b4e6aa46d59c5fa560dab7540b3"
-    sha256 cellar: :any,                 sonoma:        "b31a1876ed038d5c877406d3c97a9886889e0966b166809f4e09e9c01f314efb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d055964b2f1e882312880082a475cc8c25bdf8297605e2a828b6f721964d005e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bdece55d0dd9e5d1b482c0b309d9847f47dea5276320acd9649923541e22108"
+    sha256 cellar: :any, arm64_tahoe:   "066509a98edf5bd04d5fd20044adeace640c4effbde1ed00174348f5de6f5f7c"
+    sha256 cellar: :any, arm64_sequoia: "db79dfc222b8b94c174559c891b1e8acf8334d97832e9ce3892347b6c725e8ed"
+    sha256 cellar: :any, arm64_sonoma:  "3f49cbb68b0e65c9fe105ba1c2d7f375f62f0d6bad05d31cad83199ba032549c"
+    sha256 cellar: :any, sonoma:        "48246994db514cb74eaf1cb8b7592c8daf19f1e622be613219e2f16a65630dba"
+    sha256 cellar: :any, arm64_linux:   "343bdac44803881725f1efd3e57a92c1109b9ec35e2b148fad7e9f16db031be2"
+    sha256 cellar: :any, x86_64_linux:  "2185ec832e933a80d9ca06da8da1003cf2aa572003d37058c9a7d7ec8f10198f"
   end
 
   depends_on "cmake" => :build

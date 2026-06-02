@@ -1,19 +1,18 @@
 class XorgServer < Formula
   desc "X Window System display server"
   homepage "https://www.x.org"
-  url "https://www.x.org/releases/individual/xserver/xorg-server-21.1.22.tar.xz"
-  sha256 "1a242c8917c49ba29ccc1f6021613d8a2b9805dd0d271a66ae9d09f4b0bb06b3"
+  url "https://www.x.org/releases/individual/xserver/xorg-server-21.1.23.tar.xz"
+  sha256 "e39832e5617dadaf072fdf9f0e19e5d2e1c2a13607ac280bac1aba9f8fe14634"
   license all_of: ["MIT", "APSL-2.0"]
-  revision 1
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "b840de14dfb1b8a476f2fdc696bbd2e92ea96e63efbb10faca7900b2ed693b24"
-    sha256 arm64_sequoia: "81c166fb025d68ce98daf7af6dd937bf4a4c83610617975af12f84d33092a612"
-    sha256 arm64_sonoma:  "b4cc8508bc4464fb7f77b8903b98d7f22c7449251a180703a7495a5861973426"
-    sha256 sonoma:        "a40b1803026fa8fe796a74edaf7d56385fd6aec081103c5e79992d7af70e3c9e"
-    sha256 arm64_linux:   "e74fd2bb6713116014d89485dd35e0342b51e3be29ef5c914cf0140badcda358"
-    sha256 x86_64_linux:  "ed198c21d52193553afef630306c548429bb8aaa3a8240e599813b342eb68368"
+    sha256 arm64_tahoe:   "5eb5288787f02f75e41d4fe9491f36213dea58c6d1ca0cc2f53418fc35580db8"
+    sha256 arm64_sequoia: "6ece7c1e1979624191d5d0906a6e5b6a40966432a1633e3f5da8a751e1d73a83"
+    sha256 arm64_sonoma:  "65c196817c2dd27b1c52b556a2cdc2f866212aff7311f230a29c0604351798f1"
+    sha256 sonoma:        "d1134ab8bfa1fb1711a471b3412ebce9cb11f475056b6d0dd492120232ead4ce"
+    sha256 arm64_linux:   "bbb6c1df36e85af051256da93d91c36e89ac2165a7a32df4d301a65fe3f264f1"
+    sha256 x86_64_linux:  "e9c7c7537e53ab4279f1b9febacd5c3d17ca0906877e78bcf87e6cd0b61e712b"
   end
 
   depends_on "font-util"   => :build

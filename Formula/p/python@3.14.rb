@@ -12,14 +12,15 @@ class PythonAT314 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "fbdf4ab07fa7cf3acd10aa15f59198f8a156660c7456108ad142bbea02f6404a"
-    sha256 arm64_sequoia: "f35b53b5191334456d8e28bccde0762d3c9f212325d0014a5351eace83ff21fe"
-    sha256 arm64_sonoma:  "7c837e923154cd311ea1ca49e79508f00ef2cc8f554deb111d594c297493e2dc"
-    sha256 tahoe:         "42f56660bdfc64b7b00d3fbd751efd2cfe748d5a27d908997312ba598dc5d46a"
-    sha256 sequoia:       "598e9450029cca8630774cd67cfd598e94d7d2dea01224da8250fbc5afc4f346"
-    sha256 sonoma:        "def3965c68e321b5d5cd8754bbdfb5ffa8647d722fe1d42676b99611c51c8638"
-    sha256 arm64_linux:   "fb78ff7e4f774ce10db10273ec5f3f68ab0d6c6307e22701329cf9ad101734ed"
-    sha256 x86_64_linux:  "414894dbed9e3caee6c6819a8174161b370d9199f06a8b8b10d9cc4fd3980940"
+    rebuild 1
+    sha256 arm64_tahoe:   "33e46f26d1a58385beeb5b1125cd9ad4366905b8a55e0dae31fff1fdbd6ba5ea"
+    sha256 arm64_sequoia: "09904f32b1434f1aafea41c04a20f3e34f5f566c8a42cd33b212b87e270c1fa7"
+    sha256 arm64_sonoma:  "de453b02581e5b0231fef36cbd565319990068866a8b54fd8650b88578280959"
+    sha256 tahoe:         "4db715cec07967355d54363dea87fb250640fd5f4ed3e0ef564c205c07fa509e"
+    sha256 sequoia:       "97b43308b41d4c7f1d81159399a5323e7962e3fa1b801febd483c4fc03aefa27"
+    sha256 sonoma:        "0b5511f6c6d310787e111f737810a6b2479b9b84a69b0f859b0eb0b6959f7685"
+    sha256 arm64_linux:   "7e99bbbf98ecf737452bedbcc7339240cf9a926d8d2181bd9b6f0464fed6873a"
+    sha256 x86_64_linux:  "06c318efea579fefbc94aca69ea49965ab78197ab6d62c6cb17528383b9009fc"
   end
 
   depends_on "pkgconf" => :build
@@ -105,6 +106,8 @@ class PythonAT314 < Formula
   def altinstall? = name != Formula["python3"].name
 
   def python3 = bin/"python#{version.major_minor}"
+
+  deny_network_access!
 
   def install
     # Unset these so that installing pip and setuptools puts them where we want

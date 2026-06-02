@@ -11,20 +11,13 @@ class MecabKo < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:    "2b3b6779398b30383fba5b14388221f8291a5fe46401f1219b728934ba4d0a1c"
-    sha256 arm64_sequoia:  "3c1c199bd50bf6df285b924549652b4cf357cad624603cd393b9d88b80353a80"
-    sha256 arm64_sonoma:   "d1d8ceeb481323ec477598ad8c68fa706c75dd3292e09de28c1ba41fe4aeaa56"
-    sha256 arm64_ventura:  "3b7edb46e117b0dd5df069ae3ce9be8d46df3a1905f2b5141550bf5f2be2124e"
-    sha256 arm64_monterey: "188bfe25ec8b456e29e7668a704da223ef5999b5e9f5ff0dafb0b344e7094734"
-    sha256 arm64_big_sur:  "bed085afe970086d2415a7412c95b09ecd016d40c7a0b0b041edc70a6e53b069"
-    sha256 sonoma:         "304fec23771bee3167fa29acb1d818808f37e0a00751e3f8686c58392f6e407b"
-    sha256 ventura:        "bfa6ae7a3d0da90d1089d0a3b2dfd83f229ef482ab51302a1a28a2599c073f4f"
-    sha256 monterey:       "78a7f912badfb92dd7b251ac0b62b958e9f6e4b09fe43b5fc6251beefb5454dc"
-    sha256 big_sur:        "5a551a2a040daff922d7eebc686a56fa89ca310aab415e8f1ddd743983442926"
-    sha256 catalina:       "d9655e7122ee6a56194faf5e44062c3bf3c2bf145ba6f8f7b3e6dd1154bf7516"
-    sha256 arm64_linux:    "207ec6dd09f1e79dd4fc75135376ccfd0b998f0d9ccaf13d7832b2708b0c2a23"
-    sha256 x86_64_linux:   "15f29ad6bf47615efaeab3db5f5108ee7232fc3c31cd905c7524b619d0bab818"
+    rebuild 2
+    sha256               arm64_tahoe:   "1dc0d604faa74cae746946732a15747d93933ebb2c5f8f4b04c9a2a491e7d430"
+    sha256               arm64_sequoia: "c50f25a8f6a26b3a337386a95f81db1d8f4a5a70b836735dee5b07c054fe74c0"
+    sha256               arm64_sonoma:  "7225f4c8b17030c06056d9123b2b715f6c3549a406530bbd0ea1dc74a9d098f2"
+    sha256 cellar: :any, sonoma:        "00322405984f46e8b910bc00b7ab65df1337e20dcb61713906db6c65f4b81687"
+    sha256               arm64_linux:   "d4e7c616122f4d0a3eaefcdd6dcf6a653290cfdbf2082397eee355ab791ce51e"
+    sha256               x86_64_linux:  "1c35b1a6767129996a080135a1091d9c3f732056d1c84fc0d00db95e04953b12"
   end
 
   conflicts_with "mecab", because: "both install mecab binaries"
@@ -41,8 +34,8 @@ class MecabKo < Formula
     inreplace [bin/"mecab-config", etc/"mecabrc"], "#{lib}/mecab/dic", "#{HOMEBREW_PREFIX}/lib/mecab/dic"
   end
 
-  def post_install
-    (HOMEBREW_PREFIX/"lib/mecab/dic").mkpath
+  post_install_steps do
+    mkdir_p "lib/mecab/dic", base: :homebrew_prefix
   end
 
   test do

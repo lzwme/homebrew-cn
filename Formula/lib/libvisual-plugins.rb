@@ -6,18 +6,13 @@ class LibvisualPlugins < Formula
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
-    sha256 arm64_tahoe:    "a9b39959db7f36a26c8ab16323abf734c9f9778ccc3bfd6e07ebef6c2287f39d"
-    sha256 arm64_sequoia:  "0203c2ea44c5978e092b682a966a72ec4099bca267a56814bdcb1d350ffac738"
-    sha256 arm64_sonoma:   "2f8be28190eb7037ae6b9d2022e52b97f9fd16f0b7ce663f12725fec703951de"
-    sha256 arm64_ventura:  "09cc228afa0d75814145656bd4ccc19417bd91267f76e536a031e1e6774fd09b"
-    sha256 arm64_monterey: "1ed5a81fc26770e18092cf6ed205635a0a14986a2a9f8b7d1b066125a31db4bc"
-    sha256 arm64_big_sur:  "d52b13029a9a4e0d7343edde6d215c43394a236d7eb47cd91d725f6b0c310909"
-    sha256 sonoma:         "6b7d4460b4809101e65b924665b3f864d413fb38d083017108b30a80028b34d6"
-    sha256 ventura:        "2ee6827428dd600d21412a543dda3adfd279f80645850904860722bbab683d4f"
-    sha256 monterey:       "977213a56b8ee0e6dc046a117ca5578d2c3e03e9d9430f32365a16ef224eddf4"
-    sha256 big_sur:        "b2202a454a452bb02d49db40379395481fd4a21888a73a0a462b4675ef703052"
-    sha256 arm64_linux:    "1a8aa255c27a5600d66d0eba73ac39aa0708439481d577482008523119914708"
-    sha256 x86_64_linux:   "dfb02d238ee8abe6fa95c0a0d1d9f4fdc77e5d1946ef670b4bfdae9f481f95b3"
+    rebuild 1
+    sha256 arm64_tahoe:   "cee3c8717fa02d4ae61e93f3c5c18a3715b82ff6b66536b0433177f7c85b3b90"
+    sha256 arm64_sequoia: "23cb3d6dfaf0b7a7fa70f093e800bde199612aed1a5a36a8be3b1a3fc15c5b17"
+    sha256 arm64_sonoma:  "9eb6300887acb38de62a8542d9e788cbb5669b1e5c70d496d2449df0be903ab5"
+    sha256 sonoma:        "8cb3635fca546794cc10609553167e5afff55b617c0c5f1406b1256a5387a699"
+    sha256 arm64_linux:   "6d4b21f6ac9b7b5cf97d907870b3770aa9b8dbbbc6a03a6285d7009ac6ffe662"
+    sha256 x86_64_linux:  "2f2d4dd00ede7314b3243fc7def5ad770b90539c83b0b921e58b6f86e6f57808"
   end
 
   depends_on "pkgconf" => :build
@@ -25,10 +20,12 @@ class LibvisualPlugins < Formula
 
   depends_on "jack"
   depends_on "libvisual"
-  depends_on "portaudio"
-  depends_on "sdl12-compat"
 
   uses_from_macos "bison" => :build
+
+  on_macos do
+    depends_on "portaudio"
+  end
 
   on_linux do
     depends_on "alsa-lib"
@@ -55,12 +52,13 @@ class LibvisualPlugins < Formula
   test do
     libvisual = Formula["libvisual"]
     lv_tool = libvisual.bin/"lv-tool-#{libvisual.version.major_minor}"
+    audio = OS.mac? ? "portaudio" : "pulseaudio"
 
     # Test that locating key plugins works properly
     plugin_help_output = shell_output("#{lv_tool} --plugin-help 2>&1")
     assert_match " (debug)", plugin_help_output
     assert_match " (lv_gltest)", plugin_help_output
-    assert_match " (portaudio)", plugin_help_output
+    assert_match " (#{audio})", plugin_help_output
 
     # Tests that lv-tool starts up without crashing
     xvfb_pid = fork do

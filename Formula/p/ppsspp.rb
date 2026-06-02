@@ -7,20 +7,23 @@ class Ppsspp < Formula
   head "https://github.com/hrydgard/ppsspp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "463c172edc891360f52a17fb04fafe771d3f8bc8a7efddf08d8aee3edf1be25f"
-    sha256 cellar: :any, arm64_sequoia: "37dccc9e4b8a6207c2f2d892a05e2102d5b0a4232dc6ed8093ee80096bc03477"
-    sha256 cellar: :any, arm64_sonoma:  "17637b0dd8d1802ce22e47db93aff44270c4388530e7f82f95400ea7c44a85f8"
-    sha256 cellar: :any, sonoma:        "76ca2f5322fa7e4fc114025f8a976557c72e7d2f9f0d38df727750023c6b1c98"
-    sha256               arm64_linux:   "cd159a025e2681cb590cadb56c6e700cb5ef9deb68a8f4aa9b3ff67657769be8"
-    sha256               x86_64_linux:  "69dbbeff7c7e0dde71f68a8cc93ec9a0c1d3cfec891b720fca5cebf28f6a5a58"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "822fe417a8375d4e2c0e5198051f96ca6f26f1f76860eacf3b0646d7fe3b7d31"
+    sha256 cellar: :any, arm64_sequoia: "50582846511f08c2de05611b5ccb9d3c1bb150eadfa995045edf6263df1ffc87"
+    sha256 cellar: :any, arm64_sonoma:  "e066b15fbd67a5e0f5bb5bd963303dc43330e0ee9664765e1c848485e8af9846"
+    sha256 cellar: :any, sonoma:        "5587c7e40e5fec600c02ca548623abe932dc17ba8efa8ae8468a4558b8278234"
+    sha256               arm64_linux:   "f11a8d5c8bffecf29232b54df2ef0673950535742ca3de334563e6d2c3655986"
+    sha256               x86_64_linux:  "2b2a7269d65268764f50754131d9d74cd080d417e57fc4efa70d2e5f5eafc7dd"
   end
 
   depends_on "cmake" => :build
+  depends_on "freetype" => :build
   depends_on "pkgconf" => :build
 
   depends_on "libzip"
   depends_on "miniupnpc"
   depends_on "sdl2"
+  depends_on "sdl2_ttf"
   depends_on "snappy"
   depends_on "zstd"
 
@@ -31,6 +34,7 @@ class Ppsspp < Formula
   end
 
   on_linux do
+    depends_on "fontconfig"
     depends_on "glew"
     depends_on "mesa"
     depends_on "zlib-ng-compat"
@@ -72,6 +76,7 @@ class Ppsspp < Formula
     vulkan_frameworks.install_symlink Formula["molten-vk"].opt_lib/"libMoltenVK.dylib"
 
     args = %w[
+      -DUSE_SYSTEM_FREETYPE=ON
       -DUSE_SYSTEM_LIBZIP=ON
       -DUSE_SYSTEM_SNAPPY=ON
       -DUSE_SYSTEM_LIBSDL2=ON

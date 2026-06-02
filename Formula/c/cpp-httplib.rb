@@ -1,12 +1,12 @@
 class CppHttplib < Formula
   desc "C++ header-only HTTP/HTTPS server and client library"
   homepage "https://github.com/yhirose/cpp-httplib"
-  url "https://ghfast.top/https://github.com/yhirose/cpp-httplib/archive/refs/tags/v0.46.0.tar.gz"
-  sha256 "4b91c970132cd140586ba880beab099fd16f0dc48425a5a60c418422c04d9fc1"
+  url "https://ghfast.top/https://github.com/yhirose/cpp-httplib/archive/refs/tags/v0.46.1.tar.gz"
+  sha256 "8a7764d062c55c38872e114abbf9b3fc9923623ddc401adb9af3974c015f6116"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "63acf0d6929e3e3aa4d5c8050f3611a243e4d6e90a3c39c2ceff52b85daa8be7"
+    sha256 cellar: :any_skip_relocation, all: "e2b6c8764bd060b559c42f7eb30687630c9abdc46e9f5c346b5131a5f0a553dd"
   end
 
   depends_on "cmake" => :build

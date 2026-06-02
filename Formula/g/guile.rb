@@ -8,12 +8,13 @@ class Guile < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "badcd01f64dd30d067e31fa2658b3d12760c13b897616200c6e6154e946b3515"
-    sha256 arm64_sequoia: "2dec620b6eaf36a87eff83f35bf926145cc8ae8067b0d5469570c4f09bbe4ace"
-    sha256 arm64_sonoma:  "efd9a224d852b9378594099290cb21e973c92404bf4f24835e7167b51e3055ed"
-    sha256 sonoma:        "253c9d486cccc6e6a9447c484625f7498329cbf16a7c0f28c7beafdd66a24b5a"
-    sha256 arm64_linux:   "e9277ab2de50eec2a837d1d0d51456bff3a47737e787e7966df1220ba2b24b74"
-    sha256 x86_64_linux:  "be5c49d28eb86b89484e9a5dc33dc4097d9af484b67bde26aae77bf5841771b9"
+    rebuild 1
+    sha256 arm64_tahoe:   "c5217a09fe9edb92bd01541c97db23e71a413fb872f438031ba530d408ea8706"
+    sha256 arm64_sequoia: "e9412ea2b150589e74d235f8167026f4985181bd24094ee1e32430f575e47ced"
+    sha256 arm64_sonoma:  "04581c5246352a08276404e843a158e2009f93f574becd4dd62b5cc5912c5148"
+    sha256 sonoma:        "c5a25d17598f7f205bc98e949b61200eb9fe1de2d25c2a56a96b8c27cd19796d"
+    sha256 arm64_linux:   "32d945ee3f4b915f77ef763feb554c7719c613c768fe0c535e79cfd687b67f33"
+    sha256 x86_64_linux:  "d294d135b43a05d95e3d17375d89e98eeb0ddb4c967b13b63c20603b95dff1ef"
   end
 
   head do
@@ -73,11 +74,10 @@ class Guile < Formula
     (share/"gdb/auto-load").install Dir["#{lib}/*-gdb.scm"]
   end
 
-  def post_install
-    # Create directories so installed modules can create links inside.
-    (HOMEBREW_PREFIX/"lib/guile/3.0/site-ccache").mkpath
-    (HOMEBREW_PREFIX/"lib/guile/3.0/extensions").mkpath
-    (HOMEBREW_PREFIX/"share/guile/site/3.0").mkpath
+  post_install_steps do
+    mkdir_p "lib/guile/3.0/site-ccache", base: :homebrew_prefix
+    mkdir_p "lib/guile/3.0/extensions", base: :homebrew_prefix
+    mkdir_p "share/guile/site/3.0", base: :homebrew_prefix
   end
 
   def caveats

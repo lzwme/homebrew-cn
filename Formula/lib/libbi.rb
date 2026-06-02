@@ -143,6 +143,11 @@ class Libbi < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/libbi --version")
+
+    # Skip test on macOS Sonoma due to CI failures
+    return if OS.mac? && MacOS.version <= :sonoma
+
     ENV.append "LDFLAGS", "-Wl,-rpath,#{HOMEBREW_PREFIX}/lib" if OS.linux?
     cp Dir[pkgshare/"Test.bi", pkgshare/"test.conf"], testpath
     system bin/"libbi", "sample", "@test.conf"

@@ -16,12 +16,13 @@ class Minio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e2fa706f5b973ff2927c21538d1e0be160aced2d5f646742f40291a7529d484"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80b0d45a0099d2077e7b1c6b219c74a243f5a50520aab2973f54a46843ce7f53"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac206377ae9be883cd86cab99f522898668608614837eee76cc9ac657d3e9233"
-    sha256 cellar: :any_skip_relocation, sonoma:        "54154dcdba031f5a053608848ca767dd7549a1c1a2d7fb419c09d0e7f8c463c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9111c9baff73c9c8e552b1147114b606fddf35ffb0e4e164085ab5b715b277ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4eec0924999ec02512516b58be63a3c29dc75a2d9e46494d4f6197d457d7846a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f399aa93691336acf3ef6f79c08f97f2d43784ecf14d1f535c77bd3813082ee1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70f9defde59619293b7a906256a5ae47901e138fa3d34e56f37254041adee9ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8e0395a3145bc094c61b7da79df655d708d9c610b8aec82d765fdeca940d6cd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4fee9c7ff052812ef350126d9c1d7861072119ac4f3443025260c42ef53234fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4097405967ef5849556ed9d301a74545d53a725bd64fe8617dc5d3f039f4f77"
+    sha256 cellar: :any,                 x86_64_linux:  "a36e522f309bb9a9c4487133ccab4c1b8c62b1f31f5afb177f090ea3e3eb78e5"
   end
 
   deprecate! date: "2026-02-17", because: :repo_archived
@@ -48,9 +49,9 @@ class Minio < Formula
     end
   end
 
-  def post_install
-    (var/"minio").mkpath
-    (etc/"minio").mkpath
+  post_install_steps do
+    mkdir_p "minio"
+    mkdir_p "minio", base: :etc
   end
 
   service do

@@ -1,11 +1,11 @@
 class Openrtsp < Formula
   desc "Command-line RTSP client"
   homepage "http://www.live555.com/openRTSP"
-  url "https://download.live555.com/live.2026.05.30.tar.gz"
-  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2026.05.30.tar.gz"
-  mirror "https://pkg.freebsd.org/ports-distfiles/live.2026.05.30.tar.gz"
+  url "https://download.live555.com/live.2026.06.01.tar.gz"
+  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2026.06.01.tar.gz"
+  mirror "https://pkg.freebsd.org/ports-distfiles/live.2026.06.01.tar.gz"
   # Keep a mirror as upstream tarballs are removed after each version
-  sha256 "6e0948920ff8e8a7b76519c526efdcd51493862fbad2a1b6becdf2071d43d5f7"
+  sha256 "d95338592c28a15dce572285f0bdc7f4fe009baa2652af1a5296f22560206d2a"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -14,12 +14,12 @@ class Openrtsp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "91a825c6c0e441ee4403d9fecd303e46a991a91e09b21d1be4a6273a9e421a1c"
-    sha256 cellar: :any, arm64_sequoia: "cac0f55a8c415ed4fd7a3d58cda88e3df99af5f3109907c8bbd52f7366307af8"
-    sha256 cellar: :any, arm64_sonoma:  "0549429da73f9e235d1495e45c34cfc789ab17448c108b5a78a28471b1d16b8b"
-    sha256 cellar: :any, sonoma:        "59b677aae7b64b9480bc718bf3f62fcd080d529906e26c9022044a0a61454062"
-    sha256 cellar: :any, arm64_linux:   "905a2598587466051c434a1dd41177a81b0e72c39940b4314026124d0112266f"
-    sha256 cellar: :any, x86_64_linux:  "c5feb1ddc1a7426413b88a66f0eb275de39474caf94199688facdc170505ee45"
+    sha256 cellar: :any, arm64_tahoe:   "bae363e1561bc157b5cb8c1e37134a06e5dcd02edb52d8f7e7a0e574a3992e31"
+    sha256 cellar: :any, arm64_sequoia: "8e0bb2635bd0b129b9daf66063d2bd7ba00e7fe7a651e686fd15721e66d4ff88"
+    sha256 cellar: :any, arm64_sonoma:  "2fe16bfe6e1bc0de58633d764080676c6ce0c49701c175ea9658e307fd927ec7"
+    sha256 cellar: :any, sonoma:        "532a249687e51291f347ff24970d1e739ea968d2b5577b5746efd7689b1deaba"
+    sha256 cellar: :any, arm64_linux:   "1348874d209e3c3a34e60dd5b2662f2be69b2378636189ccc06cc17fac52ce5a"
+    sha256 cellar: :any, x86_64_linux:  "35d77882b6591aa6b7ece84eb308afe78ef88351273fde3007b399ec85af98fe"
   end
 
   depends_on "openssl@3"

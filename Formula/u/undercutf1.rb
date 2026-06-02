@@ -7,12 +7,13 @@ class Undercutf1 < Formula
   head "https://github.com/JustAman62/undercut-f1.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d5a76a0957d7221443a2b0a9ffdb2da97f9da96a9aa204ced1cea24e3182a930"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "636fb74fcc464a7dee3e89469cf6e0eda6a38a6c862692031a2f9f2018a5e4b0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7c180f328d328902a9f64626ce60a692aa2f992e1fba2e99664ad462e95ca99"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ff0bd0274390a25821e1026ac4b0b65f94466b8f8b36833bc65a7aacd73692a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca39ca36ba4e65f0af2814230cbbf1a4c9a4838aee8279b64e58661e2a55f668"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "398f8c9c166613878887076202094aa7934cbf8309d8aa08a2a4145d4ee3d9ab"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73cbe2f0cf106ffeb29f876ee764e0c47379772e4996bbf24f6a39faaca6a2f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6977b4550c42c623a41ff3e10c5aa7a4f36047d0478e81a7e2ef128adb58bd5d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7955fc95391477944e6e7b1bbeefd5c35b8cc9c39b0055e6b11763774318be68"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7c90735ce759a058eb45028c09bc87c7077e76884a9541a0ab7041f7c51c965e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "17c3ac65cb398ef23fc219c0d0dd305568003465f9f9cea4c966791c0f94b84b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "436628a26fefd5f8cd4a3dd004841331fff07ec7fff72ee1da7ba6eedaed78d1"
   end
 
   depends_on "dotnet"
@@ -52,6 +53,6 @@ class Undercutf1 < Formula
     assert_match version.to_s, shell_output("#{bin}/undercutf1 --version")
 
     output = shell_output("#{bin}/undercutf1 import 2026")
-    assert_match "Available Meetings", output
+    assert_match "Received HTTP response headers after", output
   end
 end

@@ -2,8 +2,8 @@ class Flagd < Formula
   desc "Feature flag daemon with a Unix philosophy"
   homepage "https://github.com/open-feature/flagd"
   url "https://github.com/open-feature/flagd.git",
-      tag:      "flagd/v0.15.7",
-      revision: "1c7f7bc7c7612332bc873cd0a9bceefdbc5b5096"
+      tag:      "flagd/v0.16.0",
+      revision: "80b9e9548163c1adbd28d45ca52364956e7fa08f"
   license "Apache-2.0"
   head "https://github.com/open-feature/flagd.git", branch: "main"
 
@@ -18,12 +18,12 @@ class Flagd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b4d9eac3bd9235d1a2a184ce678bebd43e265cbe6262f9f15d90fa8911865d6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0efc94cd9aff4ab4aaa4cf41817cf69d68c74353f1bb42670829deb80b9b8f1c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f7333eed995fc59c70ab4037f93ba3ccac28d2b14c8be46afac4533f007b38f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df6936c80564e086842a21c3d0efade721ad78c5d19d18653d30242e97e8c5ba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8890b0a7e414472305b51692215d17ae8668820762f6e91320d98d274cf66eff"
-    sha256 cellar: :any,                 x86_64_linux:  "85ea2bf1afe343f751e060d8eceeb6a6c9c5533d41499fc36771305aeeadefbd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8581d2077862dc033418e8732352b776a94e8f61e067d2129494e3a8ae7244f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be8818904d771753ac4f7a13aa48512b97dfbec25ccdf6b5c36d98f8ae108dfa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "56b40a77d38f430655eff223f542b974963973f21dc1228615036e54c0a143c2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a350e3bfef2e64733709bc7e9f09eec79d24135c98e0efbb29bfa3db9a0cdc46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82bc009fcdbe2f76fe1b8727c490cc2b550559aca1c6884cd097cd024329c1e7"
+    sha256 cellar: :any,                 x86_64_linux:  "44efbc94f7d377582551d237f7c73858f77e714c13c7e386811085bb993d2855"
   end
 
   depends_on "go" => :build

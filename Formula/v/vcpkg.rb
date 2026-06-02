@@ -1,8 +1,8 @@
 class Vcpkg < Formula
   desc "C++ Library Manager"
   homepage "https://github.com/microsoft/vcpkg"
-  url "https://ghfast.top/https://github.com/microsoft/vcpkg-tool/archive/refs/tags/2026-04-08.tar.gz"
-  sha256 "90c592ec10643c54365cc98af2ed6791f66b191e87861fc5b3db993d6faa6ae2"
+  url "https://ghfast.top/https://github.com/microsoft/vcpkg-tool/archive/refs/tags/2026-05-27.tar.gz"
+  sha256 "9167b2348ae58bfb707cf5e18f055f51d9cdedc2cc251a475d5c2ca3d901e8ae"
   license "MIT"
   head "https://github.com/microsoft/vcpkg-tool.git", branch: "main"
 
@@ -20,12 +20,12 @@ class Vcpkg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c09d0287fb118f1bcb20c97376ea2b81b592e0855b8bea42fa7321f142e505a6"
-    sha256 cellar: :any,                 arm64_sequoia: "3845d7fb084b796c8fc8b22d6f616d638ba6a928e3b81eb571bf0431acf8d971"
-    sha256 cellar: :any,                 arm64_sonoma:  "1d92ec032b89d40256a0cd61643482d8de4c87796c9b7254164b641fd284f47f"
-    sha256 cellar: :any,                 sonoma:        "0275fdf05ead062bca134337292b47e883fc3881403e0eab7a039d251b3bb8c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9fb27cb4b59a64e60d330500598c509cd4bf692a8bb20e1fbf64c14a10df33a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5bab9084f75c7217c4d3aa4065115148da3f10fe117766042c984a91620a483"
+    sha256 cellar: :any, arm64_tahoe:   "d6e182c65815c2c079fe58f1c08f9960c6e260f80f7a531ecfcde417c0edf297"
+    sha256 cellar: :any, arm64_sequoia: "f5a9098a4a86a4a1699da552e7d6849ae4dd7ca3af0d091957e9616c6c064326"
+    sha256 cellar: :any, arm64_sonoma:  "f3e79a520916be65dbbd288a2f5e211ad473b104d0ae1c47881de5d3e38e92b0"
+    sha256 cellar: :any, sonoma:        "4fc76b4911c1ae5436621ecd5ab90ed1d51fb5e77d9006ac5b7a7140e3bee032"
+    sha256 cellar: :any, arm64_linux:   "14eb49f7116a08f8cdc8bbdad848a54e771493cfc90697f0946ebcf3b3290f7f"
+    sha256 cellar: :any, x86_64_linux:  "2cdf3a9557139f4e6cab0b5eee64f1091bf54de77b4e394afe01e4eebe76330c"
   end
 
   depends_on "cmake" => :build

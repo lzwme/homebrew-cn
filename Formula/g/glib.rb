@@ -9,12 +9,13 @@ class Glib < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "19495ddf4fa8bb0ecad0f50d5949c24d77a80444deb8d22678389e33caff56cb"
-    sha256 arm64_sequoia: "01d28ac41525b9a68dda55df84dd160657a87389b39998ae1ea96ca499f5ff59"
-    sha256 arm64_sonoma:  "1082dc2952e68cb2d3331e8c5eb0a15235188a23d052e63410b616f28c41f4cf"
-    sha256 sonoma:        "0d824cf6e238361f7909cb9300724abc07dd7b2909a98515729372a1e53ef180"
-    sha256 arm64_linux:   "bd7f17e78242fa888e11b902becdbf8dac51370c63488f9651f86e8ac03df0f1"
-    sha256 x86_64_linux:  "2fce9dbcffbca3412cc89222c4b4717aca6e8a23edd3ce92cf1b380e53c85b71"
+    rebuild 1
+    sha256 arm64_tahoe:   "bc99921948ea4943961b8d97e33c6493438d213424ce6de4817c0236016f6375"
+    sha256 arm64_sequoia: "5a272e7c8d7fb0ec8ca0365758a2d3c9fd578d538eaf95ea38f646c656b7f63d"
+    sha256 arm64_sonoma:  "3150238b4703af5bc41fea321a10c46de9270b8877a189c06c867df2f03ec675"
+    sha256 sonoma:        "2ebabe8d075f2a3fa4d7f7086dd29bd9f2af84fa5137fc6a6b9e04e70dd4e9ac"
+    sha256 arm64_linux:   "3df03ebf206bc5e0851ac4dda577916d8f40b3767169624128016bb3269a5616"
+    sha256 x86_64_linux:  "989f663ad507d9b38444972f49f48f10e8c952109de8737f7ec61c30c746a752"
   end
 
   depends_on "bison" => :build # for gobject-introspection
@@ -130,8 +131,8 @@ class Glib < Formula
     end
   end
 
-  def post_install
-    (HOMEBREW_PREFIX/"lib/gio/modules").mkpath
+  post_install_steps do
+    mkdir_p "lib/gio/modules", base: :homebrew_prefix
   end
 
   test do

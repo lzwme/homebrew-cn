@@ -1,18 +1,18 @@
 class Goodls < Formula
   desc "CLI tool to download shared files and folders from Google Drive"
   homepage "https://github.com/tanaikech/goodls"
-  url "https://ghfast.top/https://github.com/tanaikech/goodls/archive/refs/tags/v3.3.1.tar.gz"
-  sha256 "78f866c19da30d4ade3217673d24e214a86508dd4426dc87fb106d7022f7df15"
+  url "https://ghfast.top/https://github.com/tanaikech/goodls/archive/refs/tags/v3.4.0.tar.gz"
+  sha256 "5acda68a159e8bc7d8dfe164a2bb44a8868240db9394b6c5eff93233260a4b8b"
   license "MIT"
   head "https://github.com/tanaikech/goodls.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03ea8da334ab4c08252de8ba618cc62ddfb462e04a0c038c402923d4b2e0c258"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03ea8da334ab4c08252de8ba618cc62ddfb462e04a0c038c402923d4b2e0c258"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03ea8da334ab4c08252de8ba618cc62ddfb462e04a0c038c402923d4b2e0c258"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1e03593824cbf3bf4d8039ce3c14f393e9d481ca79f795751cca8918ec1fe283"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "82ba5cbf890c88ade56c2de77d1bc673d5aeefed1f069def4758fa8785c38a59"
-    sha256 cellar: :any,                 x86_64_linux:  "330e5c6c8e4566781ccf5e3af4d548db544608518c549022c12903d554046461"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b0351feee58be0f96c55c2a71854e2deda7707b69685200fbe2132068389e54"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b0351feee58be0f96c55c2a71854e2deda7707b69685200fbe2132068389e54"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b0351feee58be0f96c55c2a71854e2deda7707b69685200fbe2132068389e54"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a03ad46f4c37342d4d60f88208b8e76f67c73ccbe9f34667ea9a09f5ca7750ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5498aa2f4261bfc45b227b230dba46863e5abcf03ee6234490e9e931e686553c"
+    sha256 cellar: :any,                 x86_64_linux:  "f5dc144914d27a638b272bd967342f9fa6cd0bce2861875fbf557035bb72481a"
   end
 
   depends_on "go" => :build
@@ -24,11 +24,7 @@ class Goodls < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/goodls --version")
 
-    expected = if OS.mac?
-      "URL is wrong"
-    else
-      "no URL data"
-    end
-    assert_match expected, shell_output("#{bin}/goodls -u https://drive.google.com/file/d/1dummyURL 2>&1", 1)
+    output = shell_output("#{bin}/goodls -u https://drive.google.com/file/d/1dummyURL 2>&1", 1)
+    assert_match "URL is wrong", output
   end
 end

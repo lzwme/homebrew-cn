@@ -17,13 +17,13 @@ class OpenSceneGraph < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_tahoe:   "e3174f80b6cec2585f35be266d182172c198b4ae8e0d10adf55e023d5d670b6c"
-    sha256                               arm64_sequoia: "9b882e330c5007ae1ee55bbbd357aa19d48f3a6315aaf1e393e3100ab77cdba4"
-    sha256                               arm64_sonoma:  "3403ff3e8a5135a92d60f30207ca12120b9463a92cb461e0f05e9f5a8192c0d2"
-    sha256                               sonoma:        "40f22b2e52822a8497bd217b8e6f4911a85a5a687741aae2c1d4c7c9d7732861"
-    sha256                               arm64_linux:   "b5ac9df2c542db731f565e9d13b4082c54976160e98ca3db80b23b57fb33dbe1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ff70fc25d3113a46721cccb3498b4e21e90b81246d08bbb6f725c19b8a35c3d"
+    rebuild 2
+    sha256               arm64_tahoe:   "98b12a674ce6d9934b3242ee26c7f19019e7b6d3f853270aac328069e5154dfd"
+    sha256               arm64_sequoia: "581fe650587d4f4754ca98ef918c4d0ea5ade5511be34c59fbc4f0ac78f2d6d2"
+    sha256               arm64_sonoma:  "39d01e3a2744d0883e813155f5147c3d2527a3b9627b89d21a49af8699bbd4d8"
+    sha256               sonoma:        "6df520ae97f3f4483057f2a1700d3cad92f5bb58605e3f84af2999ae145e44ae"
+    sha256               arm64_linux:   "c2ae7b0358fe9fd5828f69a7af80d061f642a96cdbe49b6580ed568045f484ae"
+    sha256 cellar: :any, x86_64_linux:  "30c478b397a355079032f8837c093077fdafd9ad2becfd0c3e6703b25f24bf11"
   end
 
   depends_on "cmake" => :build
@@ -68,7 +68,10 @@ class OpenSceneGraph < Formula
     if OS.mac?
       arch = Hardware::CPU.arm? ? "arm64" : "x86_64"
 
+      # Adding RPATH to hide `brew linkage` failure. Not using CMAKE_INSTALL_RPATH
+      # to preserve upstream RPATH handling and to only add RPATH to plugins
       args += %W[
+        -DCMAKE_MODULE_LINKER_FLAGS=-Wl,-rpath,#{loader_path}/..
         -DCMAKE_OSX_ARCHITECTURES=#{arch}
         -DOSG_DEFAULT_IMAGE_PLUGIN_FOR_OSX=imageio
         -DOSG_WINDOWING_SYSTEM=Cocoa

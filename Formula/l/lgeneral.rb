@@ -6,17 +6,16 @@ class Lgeneral < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 3
-    sha256 arm64_tahoe:   "a65fba44b56f1ae92c209b5542e45371b8566fd465a8eb1c39913a4bdf334793"
-    sha256 arm64_sequoia: "ff23d123436ef67a86f2b93d07eac7fd03288ccd96745e32f571638cf0b69a22"
-    sha256 arm64_sonoma:  "fea145ba99b260a67c2435e7c2841df67cc8cd95ea292d97de29dae08b7fe5d4"
-    sha256 sonoma:        "1c8ea19f1051169fc4f4cc6cc8d8b64111fea88e7c149fce7de18178b1747670"
-    sha256 arm64_linux:   "b9b4ccb1fd4edcea2fcd56e5a167ec41a5f3ef8dd8ca175f46508493ae251d9f"
-    sha256 x86_64_linux:  "feadf3058a4c903237b6cf8d09b61f97ba5fb5656a6ff3819f96660dd0d4400b"
+    rebuild 4
+    sha256 arm64_tahoe:   "cb647aa60174371e139c2b586625b198de640d9f29d26435b09ddfb73db04db9"
+    sha256 arm64_sequoia: "07051ec2b86ffce75ae82c818b71752b2b868c7b4a076eb11b143f63afa67536"
+    sha256 arm64_sonoma:  "280f6bc05daf76a9668906f0400f27e4a0a1b27e5d3be40bc8364f0a81abdebf"
+    sha256 sonoma:        "440bf71a90bff16e1e29c78ae3df4ad0cf199e8fb14027f8cdb706cac94e5368"
+    sha256 arm64_linux:   "23c00f61a0e2fd389f288ed849f4a46724160aeaf2406ae54e52677cd9032f64"
+    sha256 x86_64_linux:  "25b0c6d313caff4b7ca397bcabc1712b5c98aff7f47ee1cf238f61686c39273c"
   end
 
   depends_on "sdl12-compat"
-  depends_on "sdl2"
 
   on_macos do
     depends_on "gettext"

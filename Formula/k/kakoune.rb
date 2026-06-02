@@ -12,12 +12,13 @@ class Kakoune < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d375c58634657d49ffc5543574588b5d7ce8bda921cc291d61d3884b770fc33a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e83a79da9f216318348230b255ecf9421f03a043e919306fb8a94c7183ee3137"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5e8ad502f2b63af404a27855b597bb35e17d7911ba10017f833267014e5f3e7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8f86ddc70a29bb35c9879cee744a515eb47bd7d71952578ba581e0d75b088bdb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1dddb947e2720d0ddb250ecd6e9454b89f76a53f60b64825c84c32b1fe1105f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2735ec518c0e6ffe6fdb89f2981e7e4f9f19c2fd50b35c404611220cdd42b10e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "af949c2fa7e4f6f6e0b31f51f70b4e72594e251f16dc4613e92242a0f93bd6da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0395267de4d2c982d25951d65219ba1327df38c19bcbd9c9575b71d84550ba8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "609dd30082a5dd8f0f22cf29a2077c9b23f6b18d60af2104f1e0e18b3c619fd3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1d9858048c95de9968cde5b364ce02131993c269b8fe2e7f20535dbba6acfd60"
+    sha256 cellar: :any,                 arm64_linux:   "6ee1adf9a500941b4b72f4870dfd68880904fd7da4dcd3b95a3a319d3eb74e53"
+    sha256 cellar: :any,                 x86_64_linux:  "e278d31043e2b11dde3115cf6f0a2263db88c7cc3ced7fea0a631f2eab863d7a"
   end
 
   on_catalina :or_older do
@@ -37,13 +38,6 @@ class Kakoune < Formula
   fails_with :gcc do
     version "10.2"
     cause "Requires GCC >= 10.3"
-  end
-
-  # Fix to error: no matching function for call to ‘lower_bound`
-  # PR ref: https://github.com/mawww/kakoune/pull/5472
-  patch do
-    url "https://github.com/mawww/kakoune/commit/9d5fb1992e0149130706aa6c9cb3ab474c580597.patch?full_index=1"
-    sha256 "3b777df6d6773daeb23cd5fc59a8732fcfbb62294b37c1108ba7e3d8da9524d1"
   end
 
   def install

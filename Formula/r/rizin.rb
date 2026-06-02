@@ -7,13 +7,13 @@ class Rizin < Formula
   head "https://github.com/rizinorg/rizin.git", branch: "dev"
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "b46c736276c060f36dccbb6bafc5216d7010b8ec4d5864b5f4ec8536d611bfde"
-    sha256 arm64_sequoia: "72fb388c5879904773c4e4da645ede12114e1c0e678fd20019477256d6b58f1c"
-    sha256 arm64_sonoma:  "9fe0bec7ad14cf2256eb8161792dc4e7c7652e7356d404726c19b2eea0c645d1"
-    sha256 sonoma:        "4af3b7d816afea6cd2c8410faed4ba8b4239820b1927eb599f4633a7d3f6318c"
-    sha256 arm64_linux:   "c7546ce2d1464e6f8650a589e503466e789aacf59c368ba076ea9d66021fd12e"
-    sha256 x86_64_linux:  "07d86a1c8573f66cc6b7f0f76a7cc04dc98a1d46d4788986ad8a644458ee6be0"
+    rebuild 2
+    sha256 arm64_tahoe:   "ca31e037dd1d34dcff7f37406c9af109ca12522d52922d28c0abce9b8b747db6"
+    sha256 arm64_sequoia: "f7190fe7bca63a8c2ca2e8c4f72c14e7fc815de189b6af7c382a86a7af2f64de"
+    sha256 arm64_sonoma:  "20f58e7fb1b38b90ba58bf8ab6762444dd67ec4c12e91be4986426570085df31"
+    sha256 sonoma:        "697b5eddf496c84d87f05f500a4d46228e2f68be1832633b21f2da3a28073c12"
+    sha256 arm64_linux:   "a7233e35d553f36274edee99addc90cf9790f6f1cefd8d6cf43154108b4e0006"
+    sha256 x86_64_linux:  "8f0724ae3761b7a6cddf5392cc3c73fe141b37e14d7bab03147c94d0cf13145a"
   end
 
   depends_on "cmake" => :build
@@ -66,8 +66,8 @@ class Rizin < Formula
     system "meson", "install", "-C", "build"
   end
 
-  def post_install
-    (HOMEBREW_PREFIX/"lib/rizin/plugins").mkpath
+  post_install_steps do
+    mkdir_p "lib/rizin/plugins", base: :homebrew_prefix
   end
 
   def caveats

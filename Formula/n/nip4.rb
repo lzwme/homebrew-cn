@@ -1,18 +1,18 @@
 class Nip4 < Formula
   desc "Image processing spreadsheet"
   homepage "https://github.com/jcupitt/nip4"
-  url "https://ghfast.top/https://github.com/jcupitt/nip4/releases/download/v9.1.3/nip4-9.1.3.tar.xz"
-  sha256 "9800c28ca3769e32d83b24d8a9b860d6b34a80fdb8a401d4545e70c9291fba29"
+  url "https://ghfast.top/https://github.com/jcupitt/nip4/releases/download/v9.1.4/nip4-9.1.4.tar.xz"
+  sha256 "589c5ab5ae8ed03fc64b6408f8a3ef3e827c2b1220a4d05c88821b00147b9ac3"
   license "GPL-2.0-or-later"
   head "https://github.com/jcupitt/nip4.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "920feccd53084c42b5f25fe6bb9acd6284ca74710b26d2f62560ecf8481a1861"
-    sha256 cellar: :any, arm64_sequoia: "1a2a807bcf5f992def9552a04517923bd6b983e6aade716773e19cd2083c29a4"
-    sha256 cellar: :any, arm64_sonoma:  "65a042b2e012bd70fda7ee91ad9808e6b5ef39086f2a2e47ee5a73a6755a6eff"
-    sha256 cellar: :any, sonoma:        "0b478798c2e47b620e04662c9a64d439ed6326b7bcfba93c14905bbfedd6e566"
-    sha256               arm64_linux:   "424bada6c0e71dac69b647f5fb6969e217f6ab99788568f4c0913a123e5a73f8"
-    sha256               x86_64_linux:  "58e78546735e1b65eb4a3d70d611cdfb86ace1c4767eb717906041a870ee9022"
+    sha256 cellar: :any, arm64_tahoe:   "9e2c021a5447a5ce57a676227b17d8d3f7dc1e73a0e8bae014c74a5055d8bae6"
+    sha256 cellar: :any, arm64_sequoia: "7e9c732d464b8492a26358ee5616cdbde826045e3b7e4f7042f22986aa1db451"
+    sha256 cellar: :any, arm64_sonoma:  "8ce3d8fd6adaa52273d29b350c81b5c860bdd6adff8fbf6c5ac5047c43c34b2f"
+    sha256 cellar: :any, sonoma:        "942d6e12c69f78977efb6f70f651f75bc9141213e02293eb5cc47f325e353ff2"
+    sha256               arm64_linux:   "3f3580a1311fa118f948251025afec0639476ba6867651dbd940d75ae03a3dde"
+    sha256               x86_64_linux:  "8f8344e179adc6e947c66c358628fdd4cf9fb18b86441ed8880cd55632b2d20e"
   end
 
   depends_on "bison" => :build

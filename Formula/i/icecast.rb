@@ -17,12 +17,13 @@ class Icecast < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4529a76a5b5c21b5214c556fb5d351df235150634aebdc35da57de778a9822b6"
-    sha256 cellar: :any,                 arm64_sequoia: "1db70e82f5d1940e4a47b197d1035fbb10e59424e93228dfce20e33b39dde16b"
-    sha256 cellar: :any,                 arm64_sonoma:  "ce404b7e770f3dc7ef5cfed40e2b6752f9104b0ffc952e6ee847ab76e7abb29c"
-    sha256 cellar: :any,                 sonoma:        "47cb310dc10fb7169072e22dd97397e7918f6ff3c7bb561b632f6f314b3374dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "194c895b07fadfaee954a587d5129eba86923bf832c1a017f68ec87a43d82588"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1712b36a4b604ada1227303bdbcf679e4c5ab392af44cbce8f75f7b6af6b3ec0"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "5fff6c2e934272b3b0dc2075d9abfa52942d77b1dac0dd38d54ed0e76c311a52"
+    sha256 cellar: :any, arm64_sequoia: "0e6c57ce5aad591029a75887504ba8da456032bbfcf58f99ce2c643a38313d6f"
+    sha256 cellar: :any, arm64_sonoma:  "afece122c6e2f7cd6d9fa10fc048ba180766cfa869b0688160f7300e2b6d4cbe"
+    sha256 cellar: :any, sonoma:        "66f6127375f34afd6f2fcafeb5ffd95550a32718c388f1060f7934e76e213160"
+    sha256 cellar: :any, arm64_linux:   "0da5d82c397a820b701610da5a6d7963cad3a1e2f9b4c6c182bb3a4b89f93801"
+    sha256 cellar: :any, x86_64_linux:  "f86153d8d8a2238285668371f217282bfdea77bad2411db56320b3a9400787dd"
   end
 
   depends_on "pkgconf" => :build
@@ -47,10 +48,10 @@ class Icecast < Formula
     system "make", "install"
   end
 
-  def post_install
-    (var/"log/icecast").mkpath
-    touch var/"log/icecast/access.log"
-    touch var/"log/icecast/error.log"
+  post_install_steps do
+    mkdir_p "log/icecast"
+    touch "log/icecast/access.log"
+    touch "log/icecast/error.log"
   end
 
   test do

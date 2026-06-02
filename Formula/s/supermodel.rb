@@ -8,12 +8,13 @@ class Supermodel < Formula
   head "https://github.com/trzy/Supermodel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2929b217c1e92dc9d2ff73fe83e5915da3ac2ea7559c9ce97f86d503edfff2ec"
-    sha256 cellar: :any,                 arm64_sequoia: "4d8c6d8178feb8162a33aaf3908f742e0fd187d452c4ad57f8d51e7d7a877512"
-    sha256 cellar: :any,                 arm64_sonoma:  "b3273de0cef1922f10cea4e1f3e4f2e25f582f916e0576e3149a37bb40395fa5"
-    sha256 cellar: :any,                 sonoma:        "e73a99db9b6df4feb68cdcdcce8db6eafde93c2f9a7646d140c8582aea88f7a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f482a9624c7a6b1b35c5736c84ae5f0645a1e54e01d91f410627b520defc30b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7d7be1a064af499046617848425a7330470b493655021b84aef7ead1b5ad845"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "8caefa29784e10bec7b0d5c2b56224c335fd17cb108c30a71ad0484839d4f361"
+    sha256 cellar: :any, arm64_sequoia: "30a0c3e5fcb08ea841e4e02532cfa3502ed76b1a09fc763fd78693b4456cb033"
+    sha256 cellar: :any, arm64_sonoma:  "4fccf349cd37905cde410dd78c971284bdd8dfc9057ac7446dcc9ac521adf17c"
+    sha256 cellar: :any, sonoma:        "bad3083a9e53bc18a86cc1b25f8930b28bcc8defccc5c254347ec15b5c76ffd6"
+    sha256 cellar: :any, arm64_linux:   "7942ee2e3317ff8f134b3a102644782dc1ec17f2720110727355728a38f80e9d"
+    sha256 cellar: :any, x86_64_linux:  "d743cefb87a3c9a5c3c0b27a161e31925a7353666752c65caaecf96f72c7ad49"
   end
 
   depends_on "sdl2"
@@ -25,28 +26,16 @@ class Supermodel < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
-    os = OS.mac? ? "OSX" : "UNIX"
-    makefile_dir = "Makefiles/Makefile.#{os}"
+    # Workaround for build environment as sdl2-config uses paths relative to executable.
+    # TODO: Remove after moving to `sdl2-compat` which uses paths set at build-time.
+    ENV.remove "PATH", Formula["sdl2"].opt_bin
+    ENV.append_path "PATH", HOMEBREW_PREFIX/"bin"
 
-    ENV.deparallelize
-    # Set up SDL2 library correctly
-    inreplace makefile_dir, "-framework SDL2", "`sdl2-config --libs`" if OS.mac?
-    inreplace "Src/OSD/SDL/SDLIncludes.h", "SDL_net.h", "SDL2/SDL_net.h" if OS.linux?
-
-    system "make", "-f", makefile_dir
-    bin.install "bin/supermodel"
-
-    (var/"supermodel/Saves").mkpath
-    (var/"supermodel/NVRAM").mkpath
-    (var/"supermodel/Logs").mkpath
-  end
-
-  def caveats
-    <<~EOS
-      Config, Saves, and NVRAM are located in the following directory:
-        #{var}/supermodel/
-    EOS
+    # Not using Makefile.OSX as it uses prebuilt frameworks
+    system "make", "-f", "Makefiles/Makefile.UNIX", "BIN_DIR=#{bin}"
   end
 
   test do

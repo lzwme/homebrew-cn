@@ -21,7 +21,7 @@ class Libvisual < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "sdl12-compat"
+  depends_on "sdl12-compat" # SDL 2 issue: https://github.com/Libvisual/libvisual/issues/193
 
   def install
     # NOTE: Other formulae would not be able to install to libvisual's cellar

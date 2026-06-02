@@ -82,11 +82,18 @@ class Cataclysm < Formula
     end
     user_config_dir.mkpath
 
-    # run cataclysm for 30 seconds
+    # "Error while initializing the interface: SDL_Init failed: No available video device"
+    ENV["SDL_VIDEODRIVER"] = "dummy" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
+    # run cataclysm for 50 seconds
+    tries = 0
     pid = spawn bin/"cataclysm"
     begin
-      sleep 50
+      sleep 5
       assert_path_exists user_config_dir/"config", "User config directory should exist"
+    rescue Minitest::Assertion
+      retry if (tries += 1) < 10
+      raise
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

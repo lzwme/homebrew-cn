@@ -1,8 +1,8 @@
 class Goenv < Formula
   desc "Go version management"
   homepage "https://github.com/go-nv/goenv"
-  url "https://ghfast.top/https://github.com/go-nv/goenv/archive/refs/tags/3.1.1.tar.gz"
-  sha256 "8c107c1ec31cd544bbf59dc822676ef1966811a13e006aa35ba09546a74c4d9b"
+  url "https://ghfast.top/https://github.com/go-nv/goenv/archive/refs/tags/3.1.2.tar.gz"
+  sha256 "9edafa9c0e5a2245c62caaa7bf7d7c3bb9291991f0ba55f60f3a724367c04ca0"
   license "MIT"
   version_scheme 1
   # TODO: Uncomment when default branch is changed from 'master' to 'main'
@@ -14,12 +14,12 @@ class Goenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "837b6e4bff590588c8aad04799de851220c19b95fe06167ddd6a9bcece81a82c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "837b6e4bff590588c8aad04799de851220c19b95fe06167ddd6a9bcece81a82c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "837b6e4bff590588c8aad04799de851220c19b95fe06167ddd6a9bcece81a82c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0f7a26d066ec80953a4036e8abd1625bbe169b4e97a2f10ef1264434ad0ef0f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8088ae118a1dbdd36d3cb55aea571e139d78a9acc42dc2cb11ed670dc48a5c28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2578892fc7eb443d45b0807eb977e96425ab6f0afc29cd5624e4c2abe5072def"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e673d0c6a6231481b4543ce7981a871665e17bd08374de7fa9bf2aec66570082"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e673d0c6a6231481b4543ce7981a871665e17bd08374de7fa9bf2aec66570082"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e673d0c6a6231481b4543ce7981a871665e17bd08374de7fa9bf2aec66570082"
+    sha256 cellar: :any_skip_relocation, sonoma:        "959352abfbb0512053e1d666cbdd7d82ddb18b9245c819cec0afaf5db268e954"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "df764c1551b36710f461992c59a1bd63b5e592f6cf0825bf833ef45e137690f5"
+    sha256 cellar: :any,                 x86_64_linux:  "2de4a3d47019f20b56adc444d74a3c4c0fc3c25501542dfa739682583b93ecee"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class Binaryen < Formula
   desc "Compiler infrastructure and toolchain library for WebAssembly"
   homepage "https://webassembly.org/"
-  url "https://ghfast.top/https://github.com/WebAssembly/binaryen/archive/refs/tags/version_129.tar.gz"
-  sha256 "326f03e3a8b9eddc63cd9d6ff943bee86dae6f736c9f217e58530350381b011a"
+  url "https://ghfast.top/https://github.com/WebAssembly/binaryen/archive/refs/tags/version_130.tar.gz"
+  sha256 "20d727e7f3011cfe604b8ebdc873edbb4831c6b148209cb15bc2bedcded036ee"
   license "Apache-2.0"
   head "https://github.com/WebAssembly/binaryen.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Binaryen < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "62f236956783f0acb1846eabe1a74fdff6199fe39bcb1168dec4a183f7de0b02"
-    sha256 cellar: :any,                 arm64_sequoia: "1b10ced6728968be30b291524fb53b55feaa411a49b95b1403d657e86405485f"
-    sha256 cellar: :any,                 arm64_sonoma:  "665475a0a58387e3055e7a8441c5d4c2af861dcb1128671668bf5624781b8d39"
-    sha256 cellar: :any,                 sonoma:        "b58c190f68b72e017bfa64a1c3f997e7b9385be986e3fa2a9b3cd451e9ce2501"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f0aa2afab9f0bd16a5fb44cdc03fdbfd6ba637e1da7978fde2511ef1a81331c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "060f1a6e3cfa3d8318782812eeb3bf107ce3598d738df87468fbe515f8026100"
+    sha256 cellar: :any, arm64_tahoe:   "e52b96c270f249b401b93534ad4b4c9354decbad56fc6ae7e19c545bf3a5b826"
+    sha256 cellar: :any, arm64_sequoia: "9c12bb864df5a2b0171006973ec103226d442b8975c507e2e2babbe317c9cbd9"
+    sha256 cellar: :any, arm64_sonoma:  "986b318e8ea118863634f40be604fabbb343047561cf91f631bc01e788a39a09"
+    sha256 cellar: :any, sonoma:        "d6981b50229871db75eb5205ac50a79deacabce02b6b8f1ec0bf1d5141c60d9f"
+    sha256 cellar: :any, arm64_linux:   "661e78af99e8e0391843e90fb4a8a85737d7411b67a3f2e4eddee058f56bb81d"
+    sha256 cellar: :any, x86_64_linux:  "2dcdac798f8d62ef984630c0001e36ad258288fb07e0d870ed3d0fe1d25eb775"
   end
 
   depends_on "cmake" => :build

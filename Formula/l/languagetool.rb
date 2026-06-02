@@ -13,12 +13,13 @@ class Languagetool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6f1f9c9689a9c44484d7bdaeebec9bd9c5ade21f2d0a31bc229cf8862564a0c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d8adb5386f04909c226e5655817e944b05c888608e032ded305c3f99618b8c2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e22c41d9a141788580600f4e5296c9ea75e41f24bb55f3501c3a330fd7e07ae2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6f7f36ab6f9345d9c0b76e550fdf36b2d3162ebcea8ff93f1f189d4b3142db75"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0c7bc609cc7f0f1a820a3726de8b5c768e44035834209ab3d3d3d30e755a1a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62426512fa454101a223b9a178e4983f43b48aed3782352c268b04f4e9859273"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0852645061218500b2acc536cdff5f58b3305daea56e790fe361d47e27ff9985"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eca9255a12e1d6b29c0e445236f2ecdac5fd13ea0e60af4bc41063d804260e26"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca0dde2a879fc3f36eda9229734aa90414c8c5ca69a6b1eee3c1442cf0e1d663"
+    sha256 cellar: :any_skip_relocation, sonoma:        "26a949f8abece230c92188b3972fc0b5d26a15ad9480d8174f6324ad1da92b94"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "035b4062e1b4cb4698c05b2299f4c73f67cba7f42324d08194339a938d591af4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "765c0246dd18db9ab58dd13da1cd5f492b02b42f2dcb0a6755994d0ff3ce5d0b"
   end
 
   depends_on "maven" => :build
@@ -48,8 +49,8 @@ class Languagetool < Formula
     pkgetc.install "server.properties"
   end
 
-  def post_install
-    (var/"log/languagetool").mkpath
+  post_install_steps do
+    mkdir_p "log/languagetool"
   end
 
   service do

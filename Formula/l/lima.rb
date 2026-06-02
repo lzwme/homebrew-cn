@@ -1,19 +1,19 @@
 class Lima < Formula
   desc "Linux virtual machines"
   homepage "https://lima-vm.io/"
-  url "https://ghfast.top/https://github.com/lima-vm/lima/archive/refs/tags/v2.1.1.tar.gz"
-  sha256 "c1cb9f2a5d35715937bbf21566d58f89fc221ab285a42ddcc30fd6fdaab2c15a"
+  url "https://ghfast.top/https://github.com/lima-vm/lima/archive/refs/tags/v2.1.2.tar.gz"
+  sha256 "23fa5f4621e355236a10200c4e4f61eae9f69c805c57a107247847b51522ab8a"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/lima-vm/lima.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "462f6900e8dc2b6f4390890ca6421773c566fc6b8a550ea83b4a9a048ca1765f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ece22d8fbab8b1699fa3cd2cbe2937ca7a1d40c9e61618fefa978a245a98d4e6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5918d41acdba805a115daf0b1f5d453c11454d111cc34d42285eea31d082993"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8b99753b1837b0b543a2dbc253cbad7ff10a0fb87d52dc44416262f49db58873"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e18e339ebd27059a8ca8910707085c2eab77f66d002f4e19e39cc73bd08aac1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efafb05f8d5813c49215291472c47951ec436711af53ac42d95c826afc2833cd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b762e573046db099d16a730ac5b0561ad61b823a337d73c0528750ca2d4f9bd6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dcda869caf799be40a9b22b00a4f109cb2e9a50e95340eb4f77e9198d4e4c45e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93bc48f6d86f1a4d78601e2d5a7e1736e9ad4a4fd14337b9996dec2926e47fa6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0e3b4b0f51cb5a08467b6eada8bf23fae67c967ea25c11170c4b6704a885d5da"
+    sha256 cellar: :any,                 arm64_linux:   "2c2440995c7ae53ca76494f96f926c70ade7332ede2755b0c96209596b47a4a5"
+    sha256 cellar: :any,                 x86_64_linux:  "80fe13c85ee20db766fd1f5cfcc7e10a393df7924f379cfd9c49fac39e041390"
   end
 
   depends_on "go" => :build

@@ -1,26 +1,32 @@
 class Stella < Formula
   desc "Atari 2600 VCS emulator"
   homepage "https://stella-emu.github.io/"
-  url "https://ghfast.top/https://github.com/stella-emu/stella/archive/refs/tags/7.0c.tar.gz"
-  version "7.0c"
-  sha256 "b9309198aa5746cd568e91caaea10bbeab4ca8155493d0243694b41bdb39d7ca"
   license "GPL-2.0-or-later"
-  head "https://github.com/stella-emu/stella.git", branch: "master"
+  revision 1
+
+  stable do
+    url "https://ghfast.top/https://github.com/stella-emu/stella/archive/refs/tags/7.0c.tar.gz"
+    version "7.0c"
+    sha256 "b9309198aa5746cd568e91caaea10bbeab4ca8155493d0243694b41bdb39d7ca"
+    depends_on "sdl2"
+  end
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any, arm64_tahoe:   "8ab71c51931ddfdb6b82d247fff9eb58e9942d32fc8c13c0abed4459a58344d9"
-    sha256 cellar: :any, arm64_sequoia: "24140c78a4102e4848abe711f49760549cfe2f0ad5a6dd322868d37d0c82c12f"
-    sha256 cellar: :any, arm64_sonoma:  "d6de66a30620b32033947bc6ca98b86ccc825526e5d14f3e29cf47a4eadabc4c"
-    sha256 cellar: :any, sonoma:        "c7d9e81150b03eed64cd3a3c2255473b8437429feb2a63b9091569f2e5157fed"
-    sha256 cellar: :any, arm64_linux:   "37c6ee529603c602a8f17d73731109a8a0d041a360ea2e818ac0f9c857240a19"
-    sha256 cellar: :any, x86_64_linux:  "3293d2efacfbe3e6ccd827e518906400430ab70090efcc75558fc0395a60b42c"
+    sha256 cellar: :any, arm64_tahoe:   "703f3018a3b24a427048fbdccfc071351ad394c18de036ecad0d3ad1e315755a"
+    sha256 cellar: :any, arm64_sequoia: "8827c4413e4115e2112db911ea5e1452c6fda6ae7107c1a8978b52a217aff422"
+    sha256 cellar: :any, arm64_sonoma:  "4196ed342ac1beb49afa9a24aebe632edae3428b7609db964304c599730de83e"
+    sha256 cellar: :any, sonoma:        "e8bc2f7983e6ea2f42cafb9a8e2096a4ea9d3299b5680473fbbc4a44f724157d"
+    sha256 cellar: :any, arm64_linux:   "d01cea3aa44e1b08101353e9aaff609b1912648969665b4ab861bb2dbe0bc1c6"
+    sha256 cellar: :any, x86_64_linux:  "b2370389aec764f2df7f6bdbafb6e66008dbb3044fa4a982fd3b61b0d2335242"
+  end
+
+  head do
+    url "https://github.com/stella-emu/stella.git", branch: "master"
+    depends_on "sdl3"
   end
 
   depends_on "pkgconf" => :build
-  depends_on xcode: :build # for xcodebuild
   depends_on "libpng"
-  depends_on "sdl2"
 
   uses_from_macos "sqlite"
 
@@ -29,40 +35,18 @@ class Stella < Formula
   end
 
   def install
-    sdl2 = Formula["sdl2"]
-    libpng = Formula["libpng"]
-    if OS.mac?
-      cd "src/os/macos" do
-        inreplace "stella.xcodeproj/project.pbxproj" do |s|
-          s.gsub! %r{(\w{24} /\* SDL2\.framework)}, '//\1'
-          s.gsub! %r{(\w{24} /\* png)}, '//\1'
-          s.gsub!(/(HEADER_SEARCH_PATHS) = \(/,
-                  "\\1 = (#{sdl2.opt_include}/SDL2, #{libpng.opt_include},")
-          s.gsub!(/(LIBRARY_SEARCH_PATHS) = ("\$\(LIBRARY_SEARCH_PATHS\)");/,
-                  "\\1 = (#{sdl2.opt_lib}, #{libpng.opt_lib}, \\2);")
-          s.gsub!(/(OTHER_LDFLAGS) = "((-\w+)*)"/, '\1 = "-lSDL2 -lpng \2"')
-        end
-        xcodebuild "-arch", Hardware::CPU.arch, "SYMROOT=build", "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
-        prefix.install "build/Release/Stella.app"
-        bin.write_exec_script "#{prefix}/Stella.app/Contents/MacOS/Stella"
-      end
-    else
-      system "./configure", "--prefix=#{prefix}",
-                            "--bindir=#{bin}",
-                            "--enable-release",
-                            "--with-sdl-prefix=#{sdl2.prefix}",
-                            "--with-libpng-prefix=#{libpng.prefix}",
-                            "--with-zlib-prefix=#{Formula["zlib-ng-compat"].prefix}"
-      system "make", "install"
-    end
+    # Remove bundled libraries
+    inreplace "configure", /^\s*_libsqlite3=no$/, "" if OS.mac?
+    rm_r(["src/lib/libpng", "src/lib/sqlite", "src/lib/zlib"])
+
+    system "./configure", "--enable-release", *std_configure_args
+    system "make", "install"
   end
 
   test do
-    if OS.mac?
-      assert_match "E.T. - The Extra-Terrestrial", shell_output("#{bin}/Stella -listrominfo").strip
-    else
-      assert_match "failed to initialize: unable to open database file",
-        shell_output("#{bin}/stella -listrominfo").strip
-    end
+    # "ERROR: Couldn't initialize SDL: No available video device"
+    ENV["SDL_VIDEODRIVER"] = "dummy" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
+    assert_match "E.T. - The Extra-Terrestrial", shell_output("#{bin}/stella -listrominfo").strip
   end
 end

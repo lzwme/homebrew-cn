@@ -22,6 +22,10 @@ class Mp3blaster < Formula
     sha256 x86_64_linux:   "2ecc188df98ee829da61e43203f0f1d9601eb7a362b4821638ab08bba6f8c2b5"
   end
 
+  # Last release on 2017-05-15 and still needs SDL 1.2
+  deprecate! date: "2026-06-01", because: :unmaintained
+  disable! date: "2027-06-01", because: :unmaintained
+
   depends_on "sdl12-compat"
 
   uses_from_macos "ncurses"

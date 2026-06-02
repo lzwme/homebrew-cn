@@ -5,6 +5,7 @@ class ElixirLs < Formula
   sha256 "d8e6c1b7ffc2a122c280ab9790de3cc22b2c12cf98caeabca66e222c8b6a8da1"
   license "Apache-2.0"
   revision 1
+  head "https://github.com/elixir-lsp/elixir-ls.git", branch: "master"
 
   livecheck do
     url :stable
