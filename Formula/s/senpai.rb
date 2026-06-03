@@ -1,20 +1,18 @@
 class Senpai < Formula
   desc "Modern terminal IRC client"
   homepage "https://sr.ht/~delthas/senpai/"
-  url "https://git.sr.ht/~delthas/senpai/archive/v0.4.1.tar.gz"
-  sha256 "ab786b7b3cffce69d080c3b58061e14792d9065ba8831f745838c850acfeab24"
+  url "https://git.sr.ht/~delthas/senpai/archive/v0.5.0.tar.gz"
+  sha256 "1793259dca5321f1365cae9d24316d5d4cd01df648d895eaa03eacb49f433db8"
   license "MIT"
   head "https://git.sr.ht/~delthas/senpai", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3babf5b4950b6fe98db4af1331a97661168b54b4d1c9a6648b8ef0da5bafbf90"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25e62cb0dbef74b43914cfe94dc91d975c97ed53d9042d9be3fc422ef4a37dcb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4cbb49d7aa9a8343dead0ad9638e7fc738a723b5ce652d041b52364a3cba7f7a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6828b6aa784aebd607c3d536d946f764385a0b80d67edfff5978e6026ca56c99"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6fdd32340fc297f5d1eef67bfd938089a2c0d07ce57d49bde8d7447adff97c32"
-    sha256 cellar: :any_skip_relocation, ventura:       "817074dd4e63738680fb92c3746221928a4c95312d4c70b8c42e5d97ff16d123"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f9b02ed34a5b67f8641080d8df39172a50382982dd08f8663f9c7ce8678d469"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e40211b47b193298d47b6aed526b5ac662f6e5ff3fe39dc71c7e6f7dbf187c8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5724cc8895caf1ae2551df3008691d90aebe3b2ea8101008116a0e93dd314d91"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6dd4c3925c12a40411fec2abf6eb9f7287fc8fdf941d2bb20bce3153b5926220"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac2209b8b407f6561ad23cb6126620c76155ee468d00a0a2ec14a3fc7b3d9be9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c611bebb1863f41db55d470baba39d73a10c29c47e07b21f0363cd69d0550f3d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f4136cbdeea29e109e05b058bfa2aa916da0f4e3bc2f5a9bb0ef7f0d2116296"
+    sha256 cellar: :any,                 x86_64_linux:  "0fe721097a47263dfe04462d6d81fae32ef8fbdb29ad234d6c534e8944693d1a"
   end
 
   depends_on "go" => :build

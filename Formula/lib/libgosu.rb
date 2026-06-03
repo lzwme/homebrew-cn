@@ -26,6 +26,7 @@ class Libgosu < Formula
   depends_on "sdl2"
 
   on_linux do
+    depends_on "xorg-server" => :test
     depends_on "fontconfig"
     depends_on "mesa"
     depends_on "mesa-glu"
@@ -66,6 +67,12 @@ class Libgosu < Formula
     CPP
 
     system ENV.cxx, "test.cpp", "-o", "test", "-L#{lib}", "-lgosu", "-I#{include}", "-std=c++17"
-    system "./test"
+    if OS.linux? && ENV.exclude?("DISPLAY")
+      # SDL3 (via sdl2-compat) fails if no video driver is available and "dummy"
+      # workaround doesn't work as libgosu needs OpenGL support in video driver
+      system Formula["xorg-server"].bin/"xvfb-run", "./test"
+    else
+      system "./test"
+    end
   end
 end

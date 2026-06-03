@@ -1,17 +1,17 @@
 class Snowball < Formula
   desc "Stemming algorithms"
   homepage "https://snowballstem.org"
-  url "https://ghfast.top/https://github.com/snowballstem/snowball/archive/refs/tags/v3.1.0.tar.gz"
-  sha256 "e49fa0a641be9b93d6b4040785007e82d7b5c74eaca51a6d40e47b516a528927"
+  url "https://ghfast.top/https://github.com/snowballstem/snowball/archive/refs/tags/v3.1.1.tar.gz"
+  sha256 "d8714aa91ed4333654708472a7a98b529c867a8f99b05c5e66febf4ca72c44c7"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8832e3a8b61dfd5eab2e1c6b5ea4e4dd0924bb4863e7ce9a2238361f9c83547"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "817a7892a41e2be04705b07f92e6bd252ab150e67df1300ab7ba9ec9afbe2c43"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0832bda4060bb98c1117f6c837cf124d82fa12c4e994c7c01e5eba80a0bd36b6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b21d0a40c0fec2d7f9b00e7617960da1ffc55e5ba7db78da03d4f43e59356b24"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c931ba1a4017fed2ccf0448f78340a04440d5d0bcdf0a9e8082f379e995aa60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e107b0c82bc1ee45569e2cb0d8de09abf62e363dd45756d1b2b8652a4382a321"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5566027ab94581a13285689f1479ce695ec96d4d9c6b9f87eda836247e51c70c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a634241627159542a29285520728bcecf54534fa78c28064b0bf92a03a22555"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a255c2862ebcb8262f1cfada3300d38a8fa6c38de660e7a8a7bdb528c425ce3b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4a014d428f0bb2db2dca1f7252999c35116946c287f6f084bdfb2b958f231a8e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3aa3302095e530c8f6f77ff6bd10e45ee9f353fb633aa0696dff27e6267bd8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a3d6265d87d44f677aa6ff9474fac9ff2a953f11383b661395c279a4e543fe2"
   end
 
   def install

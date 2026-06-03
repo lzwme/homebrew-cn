@@ -1,8 +1,8 @@
 class Vsd < Formula
   desc "Download video streams over HTTP, DASH (.mpd), and HLS (.m3u8)"
   homepage "https://github.com/clitic/vsd"
-  url "https://ghfast.top/https://github.com/clitic/vsd/archive/refs/tags/vsd-0.4.3.tar.gz"
-  sha256 "a50a7e749693dc38c48d8ea64178da8c513895f381f6c8a2516925c7442a7bfc"
+  url "https://ghfast.top/https://github.com/clitic/vsd/archive/refs/tags/vsd-0.5.0.tar.gz"
+  sha256 "d47092ce89c22d36d0fd976bd558fa9f895384025cb98e568adbf9793134d7dc"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,12 @@ class Vsd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a6afb8eff7a7b62ee6b5c4d500f621c407afa66bf212fa4397fe8af7aa4ee87f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8abaffcc19f3666772c38792b46a2371e945e0eaf5941ebbaa754437d39f318c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5da1799a9df3a4d1e053aa31986682cc986327c729a4df782a4d7cecd9c62f47"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e3f732f0b2d6b00d959aa08289ee2f1c4a98ed5c397796034d27c11a291fd116"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0a583dc975ea90844e8fa056cdcbccd99584fee50e59ae00d663cc4173457cb7"
-    sha256 cellar: :any_skip_relocation, ventura:       "29d474e46b2c8a02689e43515f647a85782a9047ce1806722ee71a904092ed2a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9eb0ce725f4b3592b446e05387e2a5f159c4b1e3c2223154093843cfeb18169"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51be065f05066ab65664c99440369eeee9b629919fd635bef1e169849f0ce720"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2824d1545037a038493c3ea5dc2ef33d168793e55c256ad165e5ace9892f34ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f420d304a245d8d8ec270f04f7071eea800f65661bf1e905b8fd67da1c7c25e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cac2b1c8306daf6220a6ef4e1791d1d9308cf18cce7eb308151f9809181ae4de"
+    sha256 cellar: :any_skip_relocation, sonoma:        "26e2ab4d646c354ca91cd73e8012eefb3fa5032ac80e2f3aae9fc1de8b5fa64b"
+    sha256 cellar: :any,                 arm64_linux:   "e881b922206a2cb5a53ac4cd339618f4fe989357032e7aa634e05cc2d9dfd150"
+    sha256 cellar: :any,                 x86_64_linux:  "9cf551ab8f7248233379b7bd4245de341380deb146e780d207c579b8c0271517"
   end
 
   depends_on "pkgconf" => :build
@@ -33,10 +31,7 @@ class Vsd < Formula
   def install
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
 
-    inreplace "vsd/Cargo.toml" do |s|
-      s.gsub! ", path = \"../mp4decrypt\"", ""
-      s.gsub! ", path = \"../vsd-mp4\"", ""
-    end
+    inreplace "vsd/Cargo.toml", ", path = \"../vsd-mp4\"", ""
 
     system "cargo", "install", *std_cargo_args(path: "vsd")
   end

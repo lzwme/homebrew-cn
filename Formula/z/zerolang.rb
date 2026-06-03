@@ -1,18 +1,18 @@
 class Zerolang < Formula
   desc "Programming language for agents with explicit effects and predictable memory"
   homepage "https://zerolang.ai/"
-  url "https://ghfast.top/https://github.com/vercel-labs/zero/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "6bbaf60c7710916c215b0bdfe75165455410527b764891e8aa5ef4c3c2438a15"
+  url "https://ghfast.top/https://github.com/vercel-labs/zero/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "3d6d1e0ec37d0f4c13fa4f470f6f8679788ebdf19c266b36bfe45f0734e8f5c6"
   license "Apache-2.0"
   head "https://github.com/vercel-labs/zero.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "837d118b2392972740f5a586efd622597f063bfed10cd26b92150f894d14ce17"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9986b0996553708211fa35555e444eac2693ee1f61daf31de1595b4285dd8358"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9aaf1b85c57408e465e23ceac8f528a60cd5b7b4953c4155660570709c58a33"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6bb0fe5b0ba1f00989b7a505b3dd084137cb45ab1d6dff5d9a2f525c66a7ee37"
-    sha256 cellar: :any,                 arm64_linux:   "6fc72ed573d325de3c6c8b7df59c31b4565dc639ed1df5a2cb596aa23f33e6b7"
-    sha256 cellar: :any,                 x86_64_linux:  "d137997eaa80b76786fe2a9baa0e0ba024e2382133820efd0479d163bac9394d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e50c18ef87d17ada36cc3c0667c76d55fecd86833c46a7771206e09a8f788c47"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d06f2d324418a053f36dde44659066699e6946aab62dd9e75ce5133efa6c0c75"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10a083ee7659958b6785dce3f82a50b23d6743399e3a19b2458a4f722e4896d3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cf4986382b00f92ea8a9006eb06b60d2d77b88111b295df887efe035642f7658"
+    sha256 cellar: :any,                 arm64_linux:   "f4d13de37330b62882c29be95a25e9ea106db8a3be51244534b3ce20bae35c98"
+    sha256 cellar: :any,                 x86_64_linux:  "37717973d25434fa27c604cc59805b23ed31afc185f2295c3d49edb899b255cc"
   end
 
   def install

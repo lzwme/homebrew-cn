@@ -1,19 +1,19 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https://github.com/facebook/mvfst"
-  url "https://ghfast.top/https://github.com/facebook/mvfst/archive/refs/tags/v2026.05.25.00.tar.gz"
-  sha256 "ec88bcabc7f8689348ad7b3a5ee4313f0dd196df16959e16ea62ab6cbd46d337"
+  url "https://ghfast.top/https://github.com/facebook/mvfst/archive/refs/tags/v2026.06.01.00.tar.gz"
+  sha256 "e722629b16cb60639f43c61d220ad8f3e08edb6d38b8e059e07e931061dd087d"
   license "MIT"
   compatibility_version 1
   head "https://github.com/facebook/mvfst.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "064b0a4d52f29e64ded8ca44f55bf168b4bcb4a74454659c554b145d587de84f"
-    sha256 cellar: :any,                 arm64_sequoia: "12b1a224e3ca226ffa843f758582fb572ccf112ca635923988248cca1840e5e9"
-    sha256 cellar: :any,                 arm64_sonoma:  "acaae2163874026e05bb9e39d6b02559587050ab4ae30b45e61b315af3f20b9f"
-    sha256 cellar: :any,                 sonoma:        "f49264e1f1a4982df5526f325e085e4093b84e45de6f16c903060690241adaf0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "db0e936961757fb54e9d1547f18e462ad70256fc8a5f4fc8b022dfbf76f8e2ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "420f12f46b1e44ae6d1aca0f5eb2f5425300b6fbdbc5af2a7640f1cf1827df28"
+    sha256 cellar: :any, arm64_tahoe:   "a61d59a73fd0cdb2a1ab140c5fd077a2a4f492070eb7450318da2e3f361441ff"
+    sha256 cellar: :any, arm64_sequoia: "1ba2a977615c13a376439c334aa74198d2ef60146da4f0aaba7a5d45d89fdafb"
+    sha256 cellar: :any, arm64_sonoma:  "a1b713f78ef386b5de008f2ab750d296c608a283f8531fae5d9045ef9e024978"
+    sha256 cellar: :any, sonoma:        "0cf9bb95021183fb088765df78eadff87826520b5611699f43e0930d689cfca3"
+    sha256 cellar: :any, arm64_linux:   "28a21a2d6020eb25054af4603cee569133cbbea2d61f961be4aa81b1e410ca25"
+    sha256 cellar: :any, x86_64_linux:  "76509b58ffbcbeaf2f57dcd064fd6bc7005e1c31125c09750c22823e3e556659"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -54,6 +54,7 @@ class Mvfst < Formula
         quic/samples/echo/main.cpp
         quic/common/test/TestUtils.cpp
         quic/common/test/TestPacketBuilders.cpp
+        quic/common/test/TestTransportUtils.cpp
       )
       target_link_libraries(echo mvfst::mvfst fizz::fizz_test_support GTest::gmock)
       target_include_directories(echo PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})

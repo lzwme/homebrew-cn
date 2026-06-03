@@ -1,12 +1,12 @@
 class AnsibleLanguageServer < Formula
   desc "Language Server for Ansible Files"
   homepage "https://github.com/ansible/vscode-ansible"
-  url "https://registry.npmjs.org/@ansible/ansible-language-server/-/ansible-language-server-26.5.0.tgz"
-  sha256 "cdace3a89292c8c73ba9f7fa80688e9211a5e0d29f679034d86bb9f2d21f8d8a"
+  url "https://registry.npmjs.org/@ansible/ansible-language-server/-/ansible-language-server-26.6.0.tgz"
+  sha256 "b9774c8755003dc921c822ea63cef63175807d9c0d3f7eb0f53602a31e447948"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fdf0d90c1ea5863e9acab4f7b5c57ff1a5c22d28821e76e05afbd03c318fe15f"
+    sha256 cellar: :any_skip_relocation, all: "c669fa7e8a2e4f823b6a09c953a4de371310e690e9233faa05fdc8f3f997d2f1"
   end
 
   depends_on "node"

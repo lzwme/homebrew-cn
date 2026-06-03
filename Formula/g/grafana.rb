@@ -1,8 +1,8 @@
 class Grafana < Formula
   desc "Gorgeous metric visualizations and dashboards for timeseries databases"
   homepage "https://grafana.com"
-  url "https://ghfast.top/https://github.com/grafana/grafana/archive/refs/tags/v13.0.1.tar.gz"
-  sha256 "0bf4d3275c9fe32184ad6c79004928da7436d8a94e0cfb7ded4216080940b54a"
+  url "https://ghfast.top/https://github.com/grafana/grafana/archive/refs/tags/v13.0.2.tar.gz"
+  sha256 "3f6ccffda94137c9679d0993312a83a76815406efd3df7dabbb8f99467e7e8c6"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/grafana.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Grafana < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "11c5af829e3c0b5ef2e03871ef967ef50d9eec5742ed84e15e0db4d114ad65c0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd7835e215cadb1ed1c8335a0b31b7beddc4224834116ec685500e3bb558353c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a52f2e5fc95bfd3b82f9b6aba637f091dbe83c5b47bfa14402c0404d5ea0ccc4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9e3eb8a91c40ccaf0afe6d5fc2d11f21f2b1d7e56db7599b550b59a00a34292b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "08b7fcf520bb525019f379c49f4781a93720772c5890c7ebbafc7d58354d76bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fd1336042149f9f72aee302dcbe3176915f623a7acb9d812d70a28b5cdae7b2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30ba252670534f70743352246d39fe1e38061520cd3297361f872197b3d43e4e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84438a1b70ab4ce83881739cb6ca2b8d77e721b79e8afa75d7214e8f5606a790"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b95703b95ddbd3a0d10ae65cf266a60cfd2d50cd8352aa60bd03f107ffeb6e0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1e720ede1c1860c92e46a22ed985f2c79dc61fef7c14a2dd377756ef5789e6bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5282a0205e5c8e2ad9191519a757a3f966d60b73db36cdc50578596cbdb2adc4"
+    sha256 cellar: :any,                 x86_64_linux:  "f812eb3408a056d01fb086630ab385e7a77f3169ff00360086dc75b1f008653f"
   end
 
   depends_on "go" => :build
@@ -36,9 +36,6 @@ class Grafana < Formula
   end
 
   def install
-    # Fix version and should remove in next release
-    inreplace "package.json", "13.0.0-pre", "13.0.1-pre"
-
     ENV["COMMIT_SHA"] = tap.user
     ENV["BUILD_NUMBER"] = revision.to_s
     ENV["NODE_OPTIONS"] = "--max-old-space-size=8000"

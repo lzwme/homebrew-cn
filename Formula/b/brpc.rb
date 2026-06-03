@@ -1,20 +1,19 @@
 class Brpc < Formula
   desc "Better RPC framework"
   homepage "https://brpc.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=brpc/1.16.0/apache-brpc-1.16.0-src.tar.gz"
-  mirror "https://archive.apache.org/dist/brpc/1.16.0/apache-brpc-1.16.0-src.tar.gz"
-  sha256 "4d5e84048e12512c008d24e52c9e0baa876b5f3f9b06f0aead38b55ea248fdc3"
+  url "https://www.apache.org/dyn/closer.lua?path=brpc/1.17.0/apache-brpc-1.17.0-src.tar.gz"
+  mirror "https://archive.apache.org/dist/brpc/1.17.0/apache-brpc-1.17.0-src.tar.gz"
+  sha256 "30fc544c74ef51419d262d279571c2c1b5db7dda1bc3bad893b1397d676fd02a"
   license "Apache-2.0"
-  revision 3
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d1bc8451f5886ddc12870b28f65e4567e0466b31f716f3233d6c8eda1ddc8005"
-    sha256 cellar: :any, arm64_sequoia: "f306f972a67b84cbd3c1ee74351524051367679322ad0bd807a19a384e2ea041"
-    sha256 cellar: :any, arm64_sonoma:  "292b412d1a4767a13566f95dff6ab2e49e09fd95965a4a39587b252270070f52"
-    sha256 cellar: :any, sonoma:        "28063f3693b279bfe391c739c7bdacb72d7cea13950c7a3859792f18a0b0c4d2"
-    sha256               arm64_linux:   "de977ffebfe75e6da99dc89fa1c667755c4638f64a1b5963b396ccd85cd7a576"
-    sha256               x86_64_linux:  "9b30c2043f5900ffb2f94b774106911f1fa86dc4bb5a6456303d6cd7f6834b79"
+    sha256 cellar: :any, arm64_tahoe:   "daca5a0d5b1e3b3ee96394ad5301777b87451677b56c17803009b0bcb5db2cd0"
+    sha256 cellar: :any, arm64_sequoia: "5d9242419a240381ac02894d91e6a03153f929f61e08056a7ae0f8523053b254"
+    sha256 cellar: :any, arm64_sonoma:  "653469081290fca0db0ef3f37000000f6f382d5c02e7d8c9a88cb7452367a7d1"
+    sha256 cellar: :any, sonoma:        "c9c2af8f8336c18d2df385f961a2695262d2d7b7e3332941f98874747e9f246c"
+    sha256               arm64_linux:   "b33cd126ad8db5eb35efbd8fe43ec1db492cd7bc8abc716fa77a997721ffcb5d"
+    sha256               x86_64_linux:  "43287073c0dcc4e94e63f346e2023399fc735d529b8e995e2bda312260651223"
   end
 
   depends_on "cmake" => :build
@@ -28,11 +27,11 @@ class Brpc < Formula
     depends_on "pkgconf" => :test
   end
 
-  # Apply open PR to support Protobuf 34
-  # PR ref: https://github.com/apache/brpc/pull/3241
+  # Guard the Linux-only SO_BINDTODEVICE socket option, which is missing from the macOS 14 SDK
+  # PR ref: https://github.com/apache/brpc/pull/3320
   patch do
-    url "https://github.com/apache/brpc/commit/09b50d2c144e20e687c53829c89138caa7f1f31c.patch?full_index=1"
-    sha256 "85536080d6ef84b446c7a3277dd0a6b8ac9672366bde8709abb4e592dc5f61b5"
+    url "https://github.com/apache/brpc/commit/d7fb5e33bc3b39a349eef619d7d6cacd623abf4c.patch?full_index=1"
+    sha256 "0d7d064dd77360995c643cc7e10b9bc42b04f5cccf33992160288e654e588098"
   end
 
   def install

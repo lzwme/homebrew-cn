@@ -1,18 +1,18 @@
 class Proxygen < Formula
   desc "Collection of C++ HTTP libraries"
   homepage "https://github.com/facebook/proxygen"
-  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2026.05.25.00/proxygen-v2026.05.25.00.tar.gz"
-  sha256 "d4ee1dc235b49c797f2aafef426ad9f4c510fb969ba966d052c7ba0320818ba0"
+  url "https://ghfast.top/https://github.com/facebook/proxygen/releases/download/v2026.06.01.00/proxygen-v2026.06.01.00.tar.gz"
+  sha256 "be8fd10646c07b1fa4b37dfc2328f27f80912de2f6fe9a2f91c6cc496c2a0ea1"
   license "BSD-3-Clause"
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fbace62995ef4ea63e3113c1589de0fecf50ab7bb714c1d2268ba7e3a28b8e54"
-    sha256 cellar: :any,                 arm64_sequoia: "3ccb44f1286e0e46779972ee2b57e8b19f197d63b7cdf8d1beb58e0159bc27c7"
-    sha256 cellar: :any,                 arm64_sonoma:  "4ab472ff60a3aa0fd80f3328189460ce3cefb8bfb91d4762c6271b6928aa46d7"
-    sha256 cellar: :any,                 sonoma:        "bd6686d512b2f4e6ae55d7b76490bfd2a995ca6dea1ba60fbec47c949aa4963c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec84e2e75d13e59e2316fd3f06275780d8fd7ed231f292b030a8b1f18f36a425"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f3e4c8408041aeb00a3e5031607efbe6ee81424f40d74c453a791db6a06ab02"
+    sha256 cellar: :any, arm64_tahoe:   "438139f15f9edba9cac63ca7bb1cbafeee53b57f6fdfa9d5db51d044642e398d"
+    sha256 cellar: :any, arm64_sequoia: "73cd2ec0e900df93b849165d5ffd6c4aa1607703d4b588ce7147a4f7c6de33ba"
+    sha256 cellar: :any, arm64_sonoma:  "99dab02dfe21024b02f53ec675978f5c6bf8a5d78a29fcbe2fd5ec8f006e071f"
+    sha256 cellar: :any, sonoma:        "e14101ee6a20c1d0c81e5376189e076698b418db85275280e28c5c9d954fb1ff"
+    sha256 cellar: :any, arm64_linux:   "dc29514d25a161462609809b36161d740cf4c33d200cffefd29440c450777b28"
+    sha256 cellar: :any, x86_64_linux:  "39e6db32fc1b808afbafec8b8da45d105ac9b2d3e54a59a2f5ee170d88a0acbd"
   end
 
   depends_on "cmake" => :build

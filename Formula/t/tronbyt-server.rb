@@ -1,18 +1,18 @@
 class TronbytServer < Formula
   desc "Manage your apps on your Tronbyt (flashed Tidbyt) completely locally"
   homepage "https://github.com/tronbyt/server"
-  url "https://ghfast.top/https://github.com/tronbyt/server/archive/refs/tags/v2.3.0.tar.gz"
-  sha256 "35b2bc2973259541ffba6f87f87f6ace5da5e57d4f61be206e43ca538ee62526"
+  url "https://ghfast.top/https://github.com/tronbyt/server/archive/refs/tags/v2.3.1.tar.gz"
+  sha256 "9ff87569b6a30fec6cc7be0599c1441ec19130cc4d69a00287722e98fcd4adc4"
   license "Apache-2.0"
   head "https://github.com/tronbyt/server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b6e912add0143302b56dc0001f31518f14329a47f4382ad7c86bebc33b21033e"
-    sha256 cellar: :any,                 arm64_sequoia: "995f0264ddd79fa23b684318a4a43cfd1f5e3f85e857dd0c8063123e274efba1"
-    sha256 cellar: :any,                 arm64_sonoma:  "a3e38e62ed73fded89bc9b7a62dcbebfa85f0b72da0d228d41a582e1f49257aa"
-    sha256 cellar: :any,                 sonoma:        "181609bea399fe283971aa93daa99036dc478ff18d256c6c7b04c5a94052b00b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a8aa6c476c7092227dcd5bc15f02895855b78c376146c6c0b80ace10a340859"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb246859833ec66f0adb599e34fdd7c9b150011cfce9b6ad5530803d961db063"
+    sha256 cellar: :any, arm64_tahoe:   "28ad3b9769cc8021282b221695a9dd616747d466a3b2f1f1533e5506729afa8e"
+    sha256 cellar: :any, arm64_sequoia: "2ae079d887ed0b8555ec5a03bc5e929ed712277be680e8eb53bed5d97b45e935"
+    sha256 cellar: :any, arm64_sonoma:  "a453b1453d9531afa122da7209c566e0c281000a2314c648674ed2130721b8ac"
+    sha256 cellar: :any, sonoma:        "dd85ef388a0cfb895f0f41bedfdf9c11d15420c0bba2cd88180a683d098a92ed"
+    sha256 cellar: :any, arm64_linux:   "90050a62ed25ac2f94694df3358a6ce42a8422b5e9c54ce692b3cae671366fbc"
+    sha256 cellar: :any, x86_64_linux:  "e5e1d8c9d5a0286e113a0d3fe126cd00201d516fb9068de69ed21535d41b8a95"
   end
 
   depends_on "go" => :build

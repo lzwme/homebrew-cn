@@ -3,14 +3,13 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/82/1c/5da9c427e4fe3d431aa226a34e544d8781a1840b84308c0097cfb51871d6/borgmatic-2.1.5.tar.gz"
-  sha256 "4f4f84ea8a727ebef3c5f3f8e0e94dba1aac750ca2ece7485e2139af7d742da5"
+  url "https://files.pythonhosted.org/packages/00/20/4f28c29b14876bee6438d8dd698b80f9188cad066258b8068e3f40676a4e/borgmatic-2.1.6.tar.gz"
+  sha256 "320c7c3e719f4dae63ebee774559ed3c76b91032406363500b77ef9b2463db86"
   license "GPL-3.0-or-later"
-  revision 2
   head "https://projects.torsion.org/borgmatic-collective/borgmatic.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9a6454be199f4da34532e3a0b7ab9aef03308d8c3d99085745d7e756f83298a6"
+    sha256 cellar: :any_skip_relocation, all: "c312444da81d043316febdc6a224da60cc16061b5fda85d65afc0bceba19881c"
   end
 
   depends_on "certifi" => :no_linkage
@@ -30,8 +29,8 @@ class Borgmatic < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
   end
 
   resource "jsonschema" do

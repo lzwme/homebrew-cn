@@ -3,18 +3,17 @@ class Esptool < Formula
 
   desc "ESP8266 and ESP32 serial bootloader utility"
   homepage "https://docs.espressif.com/projects/esptool/en/latest/esp32/"
-  url "https://files.pythonhosted.org/packages/77/25/7b50d81a66f600a60f23258fa134201e97e854271b478ca4e21e9f694355/esptool-5.2.0.tar.gz"
-  sha256 "9c355b7d6331cc92979cc710ae5c41f59830d1ea29ec24c467c6005a092c06d6"
+  url "https://files.pythonhosted.org/packages/82/ca/aa2a6aafe214b3338eb56c5dc941e7e83a0f9e8b9bd05ac91b5d1a6ee9c9/esptool-5.3.0.tar.gz"
+  sha256 "0a077cb3ee8e60e223882c06ab7dae9b3686816c2547904d7472a42e6284e7de"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e4fde24b5b7d942e3f091675e1c133f6b2619aec4ea51cbb05d4702405807bf8"
-    sha256 cellar: :any,                 arm64_sequoia: "f52f68f89a2c8b2effae29cb2a4f335bd1908c9dddb7e53c3dfe9ec505951395"
-    sha256 cellar: :any,                 arm64_sonoma:  "26d7cfaef912a8bc6fa669548ec304f5606cf3a9173240e6c4866992a0fdf144"
-    sha256 cellar: :any,                 sonoma:        "9b49016881ac03f695a8efde30413c2d3dc6486ef679f8d9bd3858c27db5e170"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dacfbb30327d9c1402bf2c34abec27a1424f03c4de0d9028175c6d7eefdb4cd4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb2c8f82ff5aa62b609205149baff17f0b0633cda09aec6122de254a5095aff1"
+    sha256 cellar: :any, arm64_tahoe:   "ea0938f9706fa3cb5fea6e962bf8ada742a979d45c423b31a81675950b2d1ab2"
+    sha256 cellar: :any, arm64_sequoia: "1cd1942932d1ad215244e0005da5b8af22f282f69c1b5d4109b3e28455a8cd4c"
+    sha256 cellar: :any, arm64_sonoma:  "f1f275629637aa446b685ac7539181db2a477527bf1fa1c6a503600657e2d1de"
+    sha256 cellar: :any, sonoma:        "26bf847663ad5c32acb0242c18b3a8a26c8e62121a8fc3074e43a8e2088c7ba1"
+    sha256 cellar: :any, arm64_linux:   "1f9c6b234d249172ccc21336eb626db14e6208384e8b3381cb07ee8363dc9312"
+    sha256 cellar: :any, x86_64_linux:  "a17ac6c8b3a281f907999951bf90f35b87997a6198167566fe190702bdd6be91"
   end
 
   depends_on "rust" => :build # for tibs
@@ -25,8 +24,8 @@ class Esptool < Formula
   pypi_packages exclude_packages: "cryptography"
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/95/06/92fdc84448d324ab8434b78e65caf4fb4c6c90b4f8ad9bdd4c8021bfaf1e/bitarray-3.8.0.tar.gz"
-    sha256 "3eae38daffd77c9621ae80c16932eea3fb3a4af141fb7cc724d4ad93eff9210d"
+    url "https://files.pythonhosted.org/packages/fc/47/b5da717e7bbe97a6dc4c986f053ca55fd3276078d78f68f9e8b417d1425a/bitarray-3.8.1.tar.gz"
+    sha256 "f90bb3c680804ec9630bcf8c0965e54b4de84d33b17d7da57c87c30f0c64c6f5"
   end
 
   resource "bitstring" do
@@ -35,8 +34,8 @@ class Esptool < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
+    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
   end
 
   resource "intelhex" do
@@ -45,8 +44,8 @@ class Esptool < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
   resource "mdurl" do
@@ -75,13 +74,13 @@ class Esptool < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
-    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
+    url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
+    sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
   end
 
   resource "rich-click" do
-    url "https://files.pythonhosted.org/packages/04/27/091e140ea834272188e63f8dd6faac1f5c687582b687197b3e0ec3c78ebf/rich_click-1.9.7.tar.gz"
-    sha256 "022997c1e30731995bdbc8ec2f82819340d42543237f033a003c7b1f843fc5dc"
+    url "https://files.pythonhosted.org/packages/f7/ea/21e4867ea0ef881ffd4c0550fc21a061435e50d6324bcd034396633cbc18/rich_click-1.9.8.tar.gz"
+    sha256 "4008f921da88b5d91646c134ec881c1500e5a6b3f093e90e8f29400e09608371"
   end
 
   resource "tibs" do

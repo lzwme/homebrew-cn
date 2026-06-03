@@ -1,18 +1,18 @@
 class LolHtml < Formula
   desc "Low output latency streaming HTML parser/rewriter with CSS selector-based API"
   homepage "https://github.com/cloudflare/lol-html"
-  url "https://ghfast.top/https://github.com/cloudflare/lol-html/archive/refs/tags/v2.9.0.tar.gz"
-  sha256 "92ae8c20cdc30a09c596b331a59b6fc0f35f4e735d2f9e2e59cd66cd58083103"
+  url "https://ghfast.top/https://github.com/cloudflare/lol-html/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "41ed4231fd05b1c73c0664f1f05f18b0d96a34aabf488e6cb601c3bdc7306af9"
   license "BSD-3-Clause"
   head "https://github.com/cloudflare/lol-html.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8cfa473b47043e5b2b9f79d0ef76a4bc564342f99909203a091e7182b3017f73"
-    sha256 cellar: :any,                 arm64_sequoia: "da4120648589c454a6ac76a242cde093bb38d0318c7139d4848f2b8d3cb7ae12"
-    sha256 cellar: :any,                 arm64_sonoma:  "378c0e3b8b3df82070dcc465fbaa5b7e26834895f50395fcd492911e03f88386"
-    sha256 cellar: :any,                 sonoma:        "518c5176e97ab58006a6da50a8a8fe7565a292b5dd7dec6edf7787d026cffd00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0458e14c42e720c5fb1bea25746ce145e89358cabdb816c622d0e36c4c19118"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a390425b7cc7005dd41a87c1eed2659d05038562d170629bdf1b0473b4d74513"
+    sha256 cellar: :any, arm64_tahoe:   "996e618aec3e11c7545a6b17599769272e5713b50fa9b9b13630a6c11430122e"
+    sha256 cellar: :any, arm64_sequoia: "0d077d68c9b36ef2d73477d554b5bde706978ad8b2e7426d184f61cdefe470e6"
+    sha256 cellar: :any, arm64_sonoma:  "de61944da3bd3ac5f462ace058a1c6d688d862db275fb4b55d1330d10208177a"
+    sha256 cellar: :any, sonoma:        "d4401724831f7ca8897e20f39707ce932d542e8980509eeea7aa83397d6102fc"
+    sha256 cellar: :any, arm64_linux:   "2e5da20ecb2c9c47860af9f6c78000fd784ea9f0f9795484ef1d122eab536f31"
+    sha256 cellar: :any, x86_64_linux:  "56f4047c7c7f34d1b184997bcb290dcd2d597434efca9023469fb0c3cff85d99"
   end
 
   depends_on "cargo-c" => :build

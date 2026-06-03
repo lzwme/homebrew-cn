@@ -1,19 +1,19 @@
 class Fb303 < Formula
   desc "Thrift functions for querying information from a service"
   homepage "https://github.com/facebook/fb303"
-  url "https://ghfast.top/https://github.com/facebook/fb303/archive/refs/tags/v2026.05.25.00.tar.gz"
-  sha256 "9b26aa824847d113716d3523b4098d369f18a665eee51b9a076e6776027f2030"
+  url "https://ghfast.top/https://github.com/facebook/fb303/archive/refs/tags/v2026.06.01.00.tar.gz"
+  sha256 "3e9e00b7fc5768571d8e426f57b911f62c5a65f4d6a969d1541c53632660b59b"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/fb303.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "9798ab5e9e8293afb73244ed6c7ed3483203eaccc2913a4fdfc2a139e83cdd0a"
-    sha256                               arm64_sequoia: "0a8aff74784de2801f293e6847f762263afd4e912c90e6d83d92bc76a9c9cee8"
-    sha256                               arm64_sonoma:  "8add59eb0026e1f461f9b4d6dd86480a46f095f8cde693d479a9b435d4be1562"
-    sha256 cellar: :any,                 sonoma:        "f21cbdd0b8f720610b908f3da7fa8ba35490cdf0121dc24540951247713365a4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "49f8bb01e2105b122dd9a8c3dcde6719b465ebafc7aad87b0271bbe01c4fa136"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55771621ba105275676076af9c03e85cbafe0638a9d0ab83f96ae941f4d1767c"
+    sha256               arm64_tahoe:   "76def15e9fcbce65f0a4508d534d2a1927d574e9725d6ae9db211bdfbd3a2a27"
+    sha256               arm64_sequoia: "8119fc16357c005a08ae0a21a71dfe0c2e5a4a4fda6a24e300b9c5e90d885c92"
+    sha256               arm64_sonoma:  "4a01df0b6d631570c9300d77a73e97ccb3b1422777011de487602e9e80a7075b"
+    sha256 cellar: :any, sonoma:        "40613f0827daecb27121e3e87047ed6032bf19a679302296f1f9b807f03476a2"
+    sha256 cellar: :any, arm64_linux:   "fa7934b33317d5e7e3adcc6f88b2b6c2ede0570679451a550a4685dee1120371"
+    sha256 cellar: :any, x86_64_linux:  "725cdb392a85ce24a596bf81dc6de17178e01313930ecf30deb60c485c636933"
   end
 
   depends_on "cmake" => [:build, :test]

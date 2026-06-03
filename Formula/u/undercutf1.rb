@@ -1,19 +1,18 @@
 class Undercutf1 < Formula
   desc "F1 Live Timing TUI for all F1 sessions with variable delay to sync to your TV"
   homepage "https://github.com/JustAman62/undercut-f1"
-  url "https://ghfast.top/https://github.com/JustAman62/undercut-f1/archive/refs/tags/v4.0.73.tar.gz"
-  sha256 "458e4a0ec263ff742adfb36ffa76b510c0639c5e671f440f10d2db8b21e4b6dc"
+  url "https://ghfast.top/https://github.com/JustAman62/undercut-f1/archive/refs/tags/v4.0.89.tar.gz"
+  sha256 "80541923a4d7296bc39355848429627428a58d5de5cd5765115be38bb02bbf1b"
   license "GPL-3.0-only"
   head "https://github.com/JustAman62/undercut-f1.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73cbe2f0cf106ffeb29f876ee764e0c47379772e4996bbf24f6a39faaca6a2f3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6977b4550c42c623a41ff3e10c5aa7a4f36047d0478e81a7e2ef128adb58bd5d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7955fc95391477944e6e7b1bbeefd5c35b8cc9c39b0055e6b11763774318be68"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7c90735ce759a058eb45028c09bc87c7077e76884a9541a0ab7041f7c51c965e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "17c3ac65cb398ef23fc219c0d0dd305568003465f9f9cea4c966791c0f94b84b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "436628a26fefd5f8cd4a3dd004841331fff07ec7fff72ee1da7ba6eedaed78d1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0cc53e858084ef9faa6f27253ff89ad1c9542816d0944fa26d5cfe83d7c5f53"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39b38c84d1370aa2f47b6538c9e9c0c3bdb356dee808664d5f182a7aa511d10e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31f64c2801511624db8738326e9881ba0b0ea296677d89f046012c498f21c7d5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a97dab65fd5398f7e147c086151bc18a6f22a3e092be4a6cda1d0bc0e3d38c72"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "225b9500ce33d7b241fddc6fe9d89f4343c09b8fa2918ea7a8ff4bf999778aa1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ccb562d136d8d494fd2ff75d0dbef8ab47d6a6598bd279454e548d10f702b56"
   end
 
   depends_on "dotnet"

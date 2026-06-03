@@ -43,7 +43,7 @@ class Assimp < Formula
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
 
-    system "cmake", " -S", ".", "-B", "build", "-G", "Ninja", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-G", "Ninja", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

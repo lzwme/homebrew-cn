@@ -33,6 +33,7 @@ class Projectm < Formula
   depends_on "sdl2"
 
   on_linux do
+    depends_on "xorg-server" => :test
     depends_on "mesa"
   end
 
@@ -74,6 +75,11 @@ class Projectm < Formula
     CPP
     flags = shell_output("pkgconf libprojectM sdl2 --cflags --libs").split
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
-    system "./test"
+    if OS.linux? && ENV.exclude?("DISPLAY")
+      # SDL3 (via sdl2-compat) fails if no video driver is available and "dummy" workaround doesn't work
+      system Formula["xorg-server"].bin/"xvfb-run", "./test"
+    else
+      system "./test"
+    end
   end
 end

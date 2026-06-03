@@ -1,8 +1,8 @@
 class Yek < Formula
   desc "Fast Rust based tool to serialize text-based files for LLM consumption"
   homepage "https://github.com/mohsen1/yek"
-  url "https://ghfast.top/https://github.com/mohsen1/yek/archive/refs/tags/v0.25.2.tar.gz"
-  sha256 "9e8dc80daafcadff586cff6d1e3f586e25cd43cd60bc7bbec1ac8b1a96a359da"
+  url "https://ghfast.top/https://github.com/mohsen1/yek/archive/refs/tags/v0.25.3.tar.gz"
+  sha256 "9fc458cadd6eb1c97dc84f2d9dd166c8579a4320faca7d0b82e1313d656be1b3"
   license "MIT"
   head "https://github.com/mohsen1/yek.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Yek < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "7c708d2466411a06f586155d5fcd3b2a2a8047280d82eb2f8b8475370b47dce9"
-    sha256 cellar: :any,                 arm64_sequoia: "ea895a535de86d4aa18601d5334e7f26e525448f5945ffc7d2eda186caa1a2e9"
-    sha256 cellar: :any,                 arm64_sonoma:  "75686e073310efef5eed37caf9b515ea48e290f8f7273ce73e3c36ec060ed823"
-    sha256 cellar: :any,                 sonoma:        "50f16ea3b12bda86ae072fd28bac2bc6294868bafc92184e5639729d41b24ca5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "70c00518e83711b7ba8b1a9c3f6fab4fa87f4aeb6200620bc647832715b2bb1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "482dd8f60fe32a2a7c8f3611757d343b3e7ab0e6c503683b52446a9c94c14324"
+    sha256 cellar: :any, arm64_tahoe:   "b1cf3e736236db4cb7c0fc86c643649b618f6886eff9834f8fb6b8af00615e33"
+    sha256 cellar: :any, arm64_sequoia: "12a2dcd97caa2bbf02a0361c4bc492e06504b7e95dc40b9136f991602cfc5734"
+    sha256 cellar: :any, arm64_sonoma:  "0e5a8ecd38910e06fd9f62661f7c6e08e42a4a11017c8020f37a5ebfd5d07714"
+    sha256 cellar: :any, sonoma:        "2655754ad2d2cc6d417d36ec93e255acb804a9831a4682fda1a23fcf086439e4"
+    sha256 cellar: :any, arm64_linux:   "0ba9eb2bbf1dbba364a2aa875fe6d6fa3f3262239996dec4ee472efe3a709d4c"
+    sha256 cellar: :any, x86_64_linux:  "59ffd6f996dbdc9a6ce39449ba4ee54ed18d54b6b8b70dd8a46c9b73b31a4940"
   end
 
   depends_on "pkgconf" => :build

@@ -1,8 +1,8 @@
 class Pgrok < Formula
   desc "Poor man's ngrok, multi-tenant HTTP/TCP reverse tunnel solution"
   homepage "https://github.com/pgrok/pgrok"
-  url "https://ghfast.top/https://github.com/pgrok/pgrok/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "98599e07212151639e1acc5817f3d142dba6d533fbbee5c1d3f87d9588e2002d"
+  url "https://ghfast.top/https://github.com/pgrok/pgrok/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "9d5173d71e223fe77cfbbc9e22dd49a81e2d6452c1d1697b448de81053906213"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Pgrok < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75be3a6be051c2eff9e0de5eb1a5fc4e446996d3e926267486de7ac6fa5ec205"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75be3a6be051c2eff9e0de5eb1a5fc4e446996d3e926267486de7ac6fa5ec205"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75be3a6be051c2eff9e0de5eb1a5fc4e446996d3e926267486de7ac6fa5ec205"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6604f9c6a795e8d918dd4ea3c33ab35663030ceecac0c22d7cd7b0e3408f455d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dfd934007760baa470550c6cfb2293bc78800cebbc5dcb2d5cd2de1a7aa530d"
-    sha256 cellar: :any,                 x86_64_linux:  "2ddaab02fc796b6169edb106c97b43a8532f2647364d3028b747fa6a155eff40"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3cc4316588fc9dd8256529e2603af087cb25a773c75edfe144cdcdcb9eb4b3df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3cc4316588fc9dd8256529e2603af087cb25a773c75edfe144cdcdcb9eb4b3df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3cc4316588fc9dd8256529e2603af087cb25a773c75edfe144cdcdcb9eb4b3df"
+    sha256 cellar: :any_skip_relocation, sonoma:        "65a83fa6b41e44398de7b7483ebb76cb42364af6f6aeaf8b87aed387e34392cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "417bcb806c49c3558edf96cd78c65f59c45ad6e9e0ce88cdee17cd9bab36536b"
+    sha256 cellar: :any,                 x86_64_linux:  "313a290f8352249c5febcd021621a41ddd78c3a66e8cefc778147e8535e94e23"
   end
 
   depends_on "go" => :build

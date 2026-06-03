@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/11/f2/f1a37124f5855579865345a5c64573de4de3b3a2e63594d2f1d3dc341caf/snakemake-9.21.1.tar.gz"
-  sha256 "495cd9438fd530b8f1d207112decd71ab2ac3699194b1756960f9488f98c26e7"
+  url "https://files.pythonhosted.org/packages/42/62/333b00dc3b85516e81aec60e87a4bbe18f99f590b4cd09045b7546263abb/snakemake-9.22.0.tar.gz"
+  sha256 "7c276c775a04a85c5a2de3e28f123a1dda6974ce5d6d52de758cd37b5d839cc7"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "052463ba7f9e8ea19bd0174818980a721bca34ed85f19bbc81fb86cd5661ef44"
-    sha256 cellar: :any, arm64_sequoia: "bff4564096dd30f7529a61cc21af80143de230ac27bf72cc7820f70caf5595d2"
-    sha256 cellar: :any, arm64_sonoma:  "f60ba78aa6634f95dfab7db1fc5477cf21c93d3c469eb4ee91cc3029039fdcc6"
-    sha256 cellar: :any, sonoma:        "3f5daa9f0a5d1895154b0ec9e9208ac7f6022eb2189982971ff4f9c584247113"
-    sha256 cellar: :any, arm64_linux:   "53910f336b30aa5a7504beaa87414b91ef7a83e184c72c4936cf08f6874b94ce"
-    sha256 cellar: :any, x86_64_linux:  "f3bbb3c51cde727073b942db4db1d71b1f4e6fbdd802520fbc50032c5cff2c23"
+    sha256 cellar: :any, arm64_tahoe:   "a9a340c26b1f077ae6192e8bb84e8bcd79b33a3a0c72c9913efb733df73cdb2b"
+    sha256 cellar: :any, arm64_sequoia: "fb1eca392a6f038c1992eec2bc4444e083598f58809561a6507b902eeb088612"
+    sha256 cellar: :any, arm64_sonoma:  "1fead8ad0dfecc5fbb0c7649ebaafe31893f3f332c9d48db1e659ff631ffec6a"
+    sha256 cellar: :any, sonoma:        "1ef6adc9cdd2ed9c5fad0ca03ec7c61b88dd0387f348737cea16d4f3866b8909"
+    sha256 cellar: :any, arm64_linux:   "bac16bef7da25795996847eb7f684b3e5be3b1b3f0fb428b418d73da6647c199"
+    sha256 cellar: :any, x86_64_linux:  "d1a691291777b9fb82a27d1365434548fae285555243958fdf88f532d6fb3dd2"
   end
 
   depends_on "rust" => :build # for appdirs

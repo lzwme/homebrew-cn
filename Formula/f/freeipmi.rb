@@ -1,18 +1,18 @@
 class Freeipmi < Formula
   desc "In-band and out-of-band IPMI (v1.5/2.0) software"
   homepage "https://www.gnu.org/software/freeipmi/"
-  url "https://ftpmirror.gnu.org/gnu/freeipmi/freeipmi-1.6.17.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/freeipmi/freeipmi-1.6.17.tar.gz"
-  sha256 "16783d10faa28847a795cce0bf86deeaa72b8fbe71d1f0dc1101d13a6b501ec1"
+  url "https://ftpmirror.gnu.org/gnu/freeipmi/freeipmi-1.6.18.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/freeipmi/freeipmi-1.6.18.tar.gz"
+  sha256 "8098b23820038ad0aa39abf0f9a012e24683d384d9f91e760acb2a68b465e0fe"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "8c9647d3bedfc8a9fc4cd609502036da7a78a087c3ab56b0ab371aa1dd83bb24"
-    sha256 arm64_sequoia: "b99597f1175f068d29f4865527e55c6d6dfa491dd2efa788d0362ce3d79efe78"
-    sha256 arm64_sonoma:  "e91664b3e01da15001dcc80a597314518a855f5bb2c021175734ae36beafa83e"
-    sha256 sonoma:        "5379ce9470e4c8da88a26a8ebdc95d58b9eca974284b1f217464c55db169c305"
-    sha256 arm64_linux:   "363a2a4daa1faca593df8ef801fd46d2906df95ea72d580a81eec828079b51e4"
-    sha256 x86_64_linux:  "520654b8bdb7cf948034704cc4206f33fc1e70bf82f7d400dba639df4bc9f51e"
+    sha256 arm64_tahoe:   "9d7d6455f4f39dbb2d4ca9e2ba8f0c6f70b154076714af62c7ea27dadfe0d3df"
+    sha256 arm64_sequoia: "1489a97fd239243c5470a4354efb84e335c363ab941ee443903f5cafbc9d4c05"
+    sha256 arm64_sonoma:  "49fa11c2ed4abd96e3503951433031b657ced44fdb67149a3c6f0f7e350907fa"
+    sha256 sonoma:        "f711da760cbb1e6870665764fa23ceb835da106b06e95ca27c27e7dbd42eb956"
+    sha256 arm64_linux:   "53f437f835d8607f3f1f123d28a778c2c8271d2fe59c7471cb1160cb9a8056e9"
+    sha256 x86_64_linux:  "f72a49b937b18745dda867b623ebed942304f60f5eba7a53c6cb47fa378d6bfb"
   end
 
   depends_on "texinfo" => :build

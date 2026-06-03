@@ -1,9 +1,9 @@
 cask "agentsmesh" do
   arch arm: "-arm64"
 
-  version "0.40.0"
-  sha256 arm:   "9c2897eb4589a3e5a4958aeb67ed28c79b702f3c4c5d6127b7e409a63435314a",
-         intel: "eb204fded1e8448dbaef8e2c82c040de113ab190e929fc816d7bee9a1895a725"
+  version "0.40.2"
+  sha256 arm:   "f5f040f1443b38cc4ca6055e9925fabfd2848e73083a952bedda6c0bad3ba2e6",
+         intel: "139c68bd3e8a6e18beaed3b7bf564d55fdd71e2d6586dded83ba3a9193c32407"
 
   url "https://ghfast.top/https://github.com/AgentsMesh/AgentsMesh/releases/download/v#{version}/AgentsMesh-#{version}#{arch}.dmg",
       verified: "github.com/AgentsMesh/AgentsMesh/"

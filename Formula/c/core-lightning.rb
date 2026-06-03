@@ -3,10 +3,9 @@ class CoreLightning < Formula
 
   desc "Lightning Network implementation focusing on spec compliance and performance"
   homepage "https://github.com/ElementsProject/lightning"
-  url "https://ghfast.top/https://github.com/ElementsProject/lightning/releases/download/v26.04.1/clightning-v26.04.1.zip"
-  sha256 "304b19e463c263aabf48d3bec5c92d7c6882654560978a7ba5d30e8aa22a1493"
+  url "https://ghfast.top/https://github.com/ElementsProject/lightning/releases/download/v26.06/clightning-v26.06.zip"
+  sha256 "39de07cf5e28e2a4fcbcdff36899d9379709d5533ddb6889b16d93662b5a8d6f"
   license "MIT"
-  revision 1
   head "https://github.com/ElementsProject/lightning.git", branch: "master"
 
   livecheck do
@@ -16,12 +15,12 @@ class CoreLightning < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f6008567e89089f73bd1c9eccd82fca78aa26c79a60e24774dcff794a26c2855"
-    sha256 arm64_sequoia: "a91617bba195a2d274f2b205c45dd84fc9a15de3831dfaccccdb8cfd7e5a9aa1"
-    sha256 arm64_sonoma:  "b74ae6daec5034359723c9eafe40bdf9f40cd2f73213792f4d53320a9913981c"
-    sha256 sonoma:        "4ec177de2735c50eace7a6586429c9e5385834052ae514f6a68f92287b57bba2"
-    sha256 arm64_linux:   "8b588adc32592f09e7b527507aaa6d238c26378fcccf81c4fcd7e4d45183d413"
-    sha256 x86_64_linux:  "1b6fdeaa529bbe14742b2d21513a215d4a19bab3ea35f9c3664f0b854028f11d"
+    sha256 arm64_tahoe:   "9126d042eeeafc470919f99d2e193cb0a7e4f427cc210dba9e1b30b241a3ea32"
+    sha256 arm64_sequoia: "62916b8c0542d5426af3f7c2829a61ac76eb6b39c32822daabf26c7763fddde8"
+    sha256 arm64_sonoma:  "50afb9f20c8f41a07e8d3e05e0f073beef735699f58ce0fe7914bb5d71448b3f"
+    sha256 sonoma:        "45b848dcdf84a410c33e89ff57119eb84319281fab196a4cf869d20727764290"
+    sha256 arm64_linux:   "1210b1af987ba83c1c8271419421272986bb8a78a8af33aa96b1c15c063ec84c"
+    sha256 x86_64_linux:  "7c0c3da227c1e28b8692d0f7634ba82ad2671816a9b08388c89f73c36b8cbdf1"
   end
 
   depends_on "autoconf" => :build
@@ -33,6 +32,7 @@ class CoreLightning < Formula
   depends_on "protobuf" => :build
   depends_on "python@3.14" => :build
   depends_on "rust" => :build
+  depends_on "uv" => :build
   depends_on "bitcoin"
   depends_on "libsodium"
   depends_on "sqlite"
@@ -66,18 +66,15 @@ class CoreLightning < Formula
     sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
   end
 
-  # Fix `configure` to build on macOS
-  # PR ref: https://github.com/ElementsProject/lightning/pull/9072
-  patch do
-    url "https://github.com/ElementsProject/lightning/commit/94cc566ce345748d4cfc38a67eacecc09ab36114.patch?full_index=1"
-    sha256 "aa0e74593d2d4ba3faefaa5528143c0cdf6d2ea0e384b000f020ed7e18e9d8ff"
-  end
-
   def install
     venv = virtualenv_create(buildpath/"venv", "python3.14")
     venv.pip_install resources
     ENV.prepend_path "PATH", venv.root/"bin"
     ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin" if OS.mac?
+
+    # Fix `configure` to build on macOS
+    # PR ref: https://github.com/ElementsProject/lightning/pull/9072
+    inreplace "configure", "-Wl,--gc-sections -c $TMPCFILE", "-Wl,--gc-sections $TMPCFILE"
 
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"

@@ -3,18 +3,18 @@ class Watchman < Formula
 
   desc "Watch files and take action when they change"
   homepage "https://github.com/facebook/watchman"
-  url "https://ghfast.top/https://github.com/facebook/watchman/archive/refs/tags/v2026.05.25.00.tar.gz"
-  sha256 "ff7b3f7a7dd483300d3b6f9852fddf506b1e67de262eab54a487477e73597150"
+  url "https://ghfast.top/https://github.com/facebook/watchman/archive/refs/tags/v2026.06.01.00.tar.gz"
+  sha256 "678ad731bd5102f5090fab2cd8abdadeb5d9b18a2e580f7dba03d40f501978c2"
   license "MIT"
   head "https://github.com/facebook/watchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fbdb7675bef61c217f2307be1fd29ef57d531a54c742b428e660993b96e351a5"
-    sha256 cellar: :any,                 arm64_sequoia: "406c0d291d18d47d812a08405986723113e5f9d533af8fd1ac9132f3a4f9a30e"
-    sha256 cellar: :any,                 arm64_sonoma:  "3c02cbbb259b61ba67e8e50d9c7d8823d7b90d3dba18bcd5253b75312953b5a5"
-    sha256 cellar: :any,                 sonoma:        "6a5fdeccaf64f0a1ecd7b04e674fd5db45fe68cff74b23864ef35d9b49e68e50"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e28d980a776044aacc8b0d126edbab36d67c56d7bebf34be50efac01329f7ca5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61df7321f861031cac72793398e251eb557d9680d9be4e1bd9d8b976c0024ae3"
+    sha256 cellar: :any, arm64_tahoe:   "c8a7abe08f9485b1492bb86360259ff893e398c168caab025e02c15e0a3183fd"
+    sha256 cellar: :any, arm64_sequoia: "53649b36f607d8421bce095429d02e17fd674d954ed9972d7d9e62737bf5423d"
+    sha256 cellar: :any, arm64_sonoma:  "ea72dec06784570a6a56cab7fd06f4f4d64a9dc3802cc5dce2fc69dc3d17c9a5"
+    sha256 cellar: :any, sonoma:        "a1356aad420ecc3bedf5f9a2418bcb41be4c3527d99a6bed694d660b6355bee2"
+    sha256 cellar: :any, arm64_linux:   "de960ec7bd1f0c66d570aab93fe94c07b744a5e1dd46fa9b79d8ad572f116eb6"
+    sha256 cellar: :any, x86_64_linux:  "7b535f658dad5c417b2b23d767b16350a6cb1724800c7af5038ec2ad8f29bcc1"
   end
 
   depends_on "cmake" => :build

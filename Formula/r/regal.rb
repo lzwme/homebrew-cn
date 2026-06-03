@@ -1,18 +1,23 @@
 class Regal < Formula
   desc "Linter and language server for Rego"
   homepage "https://www.openpolicyagent.org/projects/regal"
-  url "https://ghfast.top/https://github.com/open-policy-agent/regal/archive/refs/tags/v0.40.0.tar.gz"
-  sha256 "6ceaec611652af634cf9c8384a322af74038c1c8b874b5dbc1da350ce4565797"
+  url "https://ghfast.top/https://github.com/open-policy-agent/regal/archive/refs/tags/v0.41.1.tar.gz"
+  sha256 "fe9e4b275af61c781403bc21d5b1841c573036372e21200ca7884590679fefbe"
   license "Apache-2.0"
   head "https://github.com/open-policy-agent/regal.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cec6c02fe7011597626821c8d2aa93693e857b9f622339e8e114c87f72c9f891"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cec6c02fe7011597626821c8d2aa93693e857b9f622339e8e114c87f72c9f891"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cec6c02fe7011597626821c8d2aa93693e857b9f622339e8e114c87f72c9f891"
-    sha256 cellar: :any_skip_relocation, sonoma:        "39fe2905bef26492872ceaba4e96669a44ff0e2e5c6f8b21130b63522244d12e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "14bb6488833bab5cfb7995200c9e549a3e68e3b7c9ad2da54c59cfd842beaa33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e169c07644b0ea9af9733e45d1668b036fb1db015a2d13f99b799e6878addbe1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1dce0c3a37effd102b7149fdeca327eb9d9e99a15c9a0da1baa815702e14482"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1dce0c3a37effd102b7149fdeca327eb9d9e99a15c9a0da1baa815702e14482"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1dce0c3a37effd102b7149fdeca327eb9d9e99a15c9a0da1baa815702e14482"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cc3cf66523d9bb1b89d559068a259228e127f660aa7af58dd891962b41c3f1ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ee3e51677cacff5b174d0120f29359f2b375c28b5ab9af0128cc4a15ddc1a1b"
+    sha256 cellar: :any,                 x86_64_linux:  "b6136ab94722bda8abdba91efefa93db6b654b782bb72848708195a413f5d7e5"
   end
 
   depends_on "go" => :build

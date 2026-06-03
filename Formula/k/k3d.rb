@@ -1,8 +1,8 @@
 class K3d < Formula
   desc "Little helper to run CNCF's k3s in Docker"
   homepage "https://k3d.io"
-  url "https://ghfast.top/https://github.com/k3d-io/k3d/archive/refs/tags/v5.8.3.tar.gz"
-  sha256 "2ef51e029f43e70dcda616de98980017ca7de18848265525bf7882d2bd66f9f2"
+  url "https://ghfast.top/https://github.com/k3d-io/k3d/archive/refs/tags/v5.9.0.tar.gz"
+  sha256 "969cce82c4871bb829be798655abe2b6709b77cc0f42f7ff69293c621dfbbab0"
   license "MIT"
   head "https://github.com/k3d-io/k3d.git", branch: "main"
 
@@ -12,13 +12,12 @@ class K3d < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "061ed00413355c51552cd12f0ed027d4ceb710503b3632a6e2f47d657015801f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "061ed00413355c51552cd12f0ed027d4ceb710503b3632a6e2f47d657015801f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "061ed00413355c51552cd12f0ed027d4ceb710503b3632a6e2f47d657015801f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "626f581c808ed6b5d5560637a2d47a5214acfee40caf07ec54a7dc2c3695fcf0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7f61f211d7beed0e3a590f86881ae37aff69a88bf5cf29c8a7df3718ea473ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ba066d4441eae8a538f73024c93cc4e27ddc224ad24240ea37983d617d37ae5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "507e196862ab3bf947ab40adfd7e8aa3b4b9d4c19c5efbea2ca7a3ac8d2f31e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "507e196862ab3bf947ab40adfd7e8aa3b4b9d4c19c5efbea2ca7a3ac8d2f31e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "507e196862ab3bf947ab40adfd7e8aa3b4b9d4c19c5efbea2ca7a3ac8d2f31e0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "04b8420aa0d90fd24eced7168b80d7f7703e9fa61d5ba52110362c954b5b0be3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "950bcd988e70b7ca46c7aeb358c346dbde14e122484d5831849b305bbe38248d"
+    sha256 cellar: :any,                 x86_64_linux:  "9c034896fcfd31ef193488171a8652fec9a865795fa4f357394bc60b13d58e3b"
   end
 
   depends_on "go" => :build

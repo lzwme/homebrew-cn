@@ -1,18 +1,18 @@
 class Fn < Formula
   desc "Command-line tool for the fn project"
   homepage "https://fnproject.io"
-  url "https://ghfast.top/https://github.com/fnproject/cli/archive/refs/tags/0.6.58.tar.gz"
-  sha256 "aa708e4d384fdf46e7feedc69c90ec4e021bcba0e48f9957c11e5575ef49d2fc"
+  url "https://ghfast.top/https://github.com/fnproject/cli/archive/refs/tags/0.6.60.tar.gz"
+  sha256 "d614fd3d6e2a741d416e8fec752f1c5f9961208fae546f30b688f5fb2ebc2fc6"
   license "Apache-2.0"
   head "https://github.com/fnproject/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5016319e6a0b2d5e92f6f95dba1d256a2207e5be4c002ce05eb18273a7e7bf98"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5016319e6a0b2d5e92f6f95dba1d256a2207e5be4c002ce05eb18273a7e7bf98"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5016319e6a0b2d5e92f6f95dba1d256a2207e5be4c002ce05eb18273a7e7bf98"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a5c685272de8c589f03bcb688b76550376c5ab024990df7c85c6db6c7972ec98"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f0d0c12c0cebdf8a067d37b9d5df2b20c9f034aafcfb6357dd78b2bf94e57c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cec8f8f3490f948c6e145453006253362f5cd51739a2a3d9a6525f2061abe421"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "645df28f810cdac3e31df511670e240b5e27cd3cb2d460d8e721b9502cae3632"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "645df28f810cdac3e31df511670e240b5e27cd3cb2d460d8e721b9502cae3632"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "645df28f810cdac3e31df511670e240b5e27cd3cb2d460d8e721b9502cae3632"
+    sha256 cellar: :any_skip_relocation, sonoma:        "819c1fe550394a806dfaa8681726a5f63585218fe9d234f37b5b0c018bdc8c85"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ce455d010d527b8b66eb3b4ea0fe3d33f23ff02bbd21a1a4523c9a7e07690d6"
+    sha256 cellar: :any,                 x86_64_linux:  "5d5a00ee519572666e534b7f3846418e923233aebeb450ed9a37c67d41438854"
   end
 
   depends_on "go" => :build

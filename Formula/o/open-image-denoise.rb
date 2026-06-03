@@ -1,17 +1,17 @@
 class OpenImageDenoise < Formula
   desc "High-performance denoising library for ray tracing"
   homepage "https://openimagedenoise.github.io"
-  url "https://ghfast.top/https://github.com/RenderKit/oidn/releases/download/v2.4.1/oidn-2.4.1.src.tar.gz"
-  sha256 "9c7c77ae0d57e004479cddb7aaafd405c2cc745153bed4805413c21be610e17b"
+  url "https://ghfast.top/https://github.com/RenderKit/oidn/releases/download/v2.5.0/oidn-2.5.0.src.tar.gz"
+  sha256 "96c3a46122759803d5f6701ffba4bef6eac0981dced5279e66f2815e3ed3c2cc"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d95bf70457651d34cf5332b662c167b9dbc8e4f27678b7252e4aa7262ce62098"
-    sha256 cellar: :any,                 arm64_sequoia: "cbb4ea3a39c5e5b64a4a335e8c1971f0da2cffd9136955b0011d96e12b17745d"
-    sha256 cellar: :any,                 arm64_sonoma:  "287e948aa84160719b9d6e92ce4c4466ec6423629e2b3d5a7bd7572c62812bdc"
-    sha256 cellar: :any,                 sonoma:        "fa836c9d2fffa3e005bc4d57ed16ac62b2c6f3e9244a974beba6f5f053876f1c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4bd0407c5f6e91debe6c129737804d4de434029c0244a9a1777708b9be6a9ad4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cc9345944f34aac48dfe6e2b38c0f79d0a586ecf424f291f1fe829073878a43"
+    sha256 cellar: :any, arm64_tahoe:   "c847ad77d983808044f23298075ed4506c25ac50759f847e594a525ec5a0edba"
+    sha256 cellar: :any, arm64_sequoia: "20f502dd744adb1256a860877e752ebfd32576e808f9c2a89b7a18ac13651259"
+    sha256 cellar: :any, arm64_sonoma:  "f174f1c578e057a6390739cd39a693cb9e1952b4087e8af15efa0b96354b6dc2"
+    sha256 cellar: :any, sonoma:        "28dee6c1a6fb8693bf0ec2b11b7fbd8e03ab89d95e98fec8deec441172d0140d"
+    sha256 cellar: :any, arm64_linux:   "8f8a3bb36d4d955887635daa2b5da9c527c4919ae8577ddea15e97e69eb655ac"
+    sha256 cellar: :any, x86_64_linux:  "04bd9d01f484f2660597e20b6b306b5ae80e2a8ad5e7fd79f42ce7f30948c6aa"
   end
 
   depends_on "cmake" => :build

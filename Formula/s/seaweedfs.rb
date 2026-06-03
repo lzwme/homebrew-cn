@@ -2,8 +2,8 @@ class Seaweedfs < Formula
   desc "Fast distributed storage system"
   homepage "https://github.com/seaweedfs/seaweedfs"
   url "https://github.com/seaweedfs/seaweedfs.git",
-      tag:      "4.30",
-      revision: "34be9170f0d461bd16ec7458fff106f277c0eb75"
+      tag:      "4.31",
+      revision: "2a46d457ac3afd04d3572722a0a0244904d98938"
   license "Apache-2.0"
   head "https://github.com/seaweedfs/seaweedfs.git", branch: "master"
 
@@ -13,13 +13,12 @@ class Seaweedfs < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6582c54757add7d84ef2b201429cfbacea8d03656a947ddedd8eaed87ede94ff"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69040c3b7350744bd0c0b2dc2ed591acb6f5436fb90c67f1aea49e5794ed164f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8e40e6a245d13e61a90b8e788baf865eb78438e17c2791cdd270a8c95ba323c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3cb972a3b52138c90c6e79edc28d7a38711b13325a3bcef1d1f3e12581861f37"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "56c06718552953a79295e49a5cef6294a6679ebfd4f5ea4cdb4ed5100fa2b13d"
-    sha256 cellar: :any,                 x86_64_linux:  "6ead55f480dd66abeb64a70d8780b3f7bd4597d85a864f224a09333f44fcd957"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d78b419ca6e0094add4a037a958fdcda4458486c4ea184f2ec915277177642f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd12e092fbface5f4c3ca6fe8916f8f0b067610f6250ef5d494e6cd185f4a8bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b6736f22ea9c06b89ca0f46f355c5509359c5d1a929d6179f175a33b95c4f45"
+    sha256 cellar: :any_skip_relocation, sonoma:        "34bb69773ab001669af0fa717654d07d8e7ee0dbc53ce785fce2d0eb2c6cdeec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a03295923e2a73277b52a48d518d1c37335e52fecd4e63f110abb17aa650755f"
+    sha256 cellar: :any,                 x86_64_linux:  "a81b14555aa154e33d82b073840260c676ac7d3ef39a1ca11363ec699929ebe3"
   end
 
   depends_on "go" => :build

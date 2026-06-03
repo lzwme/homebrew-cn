@@ -12,14 +12,16 @@ class Scummvm < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "eafd8445aa49bbf8247d5380b5d21fafd02ed092c600091c6f029329ad1f0fb6"
-    sha256 arm64_sequoia: "01e515ec6a9adba2246458cafe739339b730b30ac24c6266dc1fc587cc7cff25"
-    sha256 arm64_sonoma:  "ff098c5d5f81416f9710d5201b1a26d1de3efcafc23ddc1f1b0937c94105abcd"
-    sha256 sonoma:        "9e261a9ae5575bf012567d412ec387b847c4171758436586f4591f9d8c8bce20"
-    sha256 arm64_linux:   "afebdf0abbb5231b0381a3246a72d083a4bdec2a00b5fbf49a02b80f590353e4"
-    sha256 x86_64_linux:  "db0f23cfe965073d71e226dcdf9e6dbbb218bf64a8ce885ca1cdfdae85ddc08e"
+    rebuild 1
+    sha256 arm64_tahoe:   "28eae45fe254698e495155987803cfa9ede667682124f4dbacdb16da91b5ad18"
+    sha256 arm64_sequoia: "8259d58dea5c612c26ca91df72076be7406acf3c97306748549d4ed8073ea90c"
+    sha256 arm64_sonoma:  "94ccc195af9ff92fc84716c29969d5feb73b1980bbbeb9db93080491a19ac302"
+    sha256 sonoma:        "a37ea7f4b0d16ce19305f73e9ae3ee03e59861237325ccb3d813429458550103"
+    sha256 arm64_linux:   "cbd5dc269a1630d9123fc72ff7574e91c7c9f0a74ec23087af2eb9867d32c486"
+    sha256 x86_64_linux:  "fa38ba1ba6f25288be0d34df59acd0a47b6ef8f805f132efd29ea7504d1ed8b4"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "a52dec"
   depends_on "faad2"
   depends_on "flac"
@@ -35,7 +37,7 @@ class Scummvm < Formula
   depends_on "libvorbis"
   depends_on "libvpx"
   depends_on "mad"
-  depends_on "sdl2"
+  depends_on "sdl3"
   depends_on "theora"
 
   on_macos do
@@ -48,7 +50,7 @@ class Scummvm < Formula
   end
 
   def install
-    system "./configure", "--enable-release", "--with-sdl-prefix=#{Formula["sdl2"].opt_prefix}", *std_configure_args
+    system "./configure", "--enable-release", "--with-sdl-prefix=#{Formula["sdl3"].opt_prefix}", *std_configure_args
     system "make", "install"
 
     rm_r(share/"pixmaps")

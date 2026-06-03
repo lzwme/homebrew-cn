@@ -24,7 +24,7 @@ class VulkanVolk < Formula
   depends_on "vulkan-headers" => [:build, :test]
   depends_on "vulkan-loader"
 
-  conflicts_with "volk" => "both install volkConfig.cmake"
+  conflicts_with "volk", because: "both install volkConfig.cmake"
 
   def volk_static_defines
     res = ""

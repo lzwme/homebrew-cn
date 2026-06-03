@@ -25,6 +25,8 @@ class Volk < Formula
   depends_on "orc"
   depends_on "python@3.14"
 
+  conflicts_with "vulkan-volk", because: "both install volkConfig.cmake"
+
   pypi_packages package_name:   "",
                 extra_packages: "mako"
 

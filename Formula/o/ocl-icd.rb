@@ -1,18 +1,18 @@
 class OclIcd < Formula
   desc "OpenCL ICD loader"
   homepage "https://github.com/OCL-dev/ocl-icd/"
-  url "https://ghfast.top/https://github.com/OCL-dev/ocl-icd/archive/refs/tags/v2.3.4.tar.gz"
-  sha256 "1a302b71b7304cca5a36f69d017b1af2b762cc4c2dd1c0c0e2fc1933db25c9cc"
+  url "https://ghfast.top/https://github.com/OCL-dev/ocl-icd/archive/refs/tags/v2.3.5.tar.gz"
+  sha256 "cdd7984425fa92d37273eee4180b5f57b047eda6dd8fd623e58498f844b09b75"
   license "BSD-2-Clause"
   head "https://github.com/OCL-dev/ocl-icd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7d9be02fbfaf871daf5cb668b8b4ea97d663f80417b91f472170505b9ef9789b"
-    sha256 cellar: :any,                 arm64_sequoia: "08c6eb98086b19296a76f35e4e7f4d7449e4f80901d2640d201ef04db9b0e0d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "88c084b65ff3a60594b313196d284d80f6abd7eacfd03a991216a29a3672e2a0"
-    sha256 cellar: :any,                 sonoma:        "77ce6f71726a4c043d727ff7826b590fe3245ac7c59ae433a746494b8d4ae89d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "913ab871ddcffee2b49fd8ccc776758b5c918f7ab7141b72286aac0005469bd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cd60c1551f2f69e72c1be4b68440afd95960ac2e272e5ff34e12ea84c00a3ae"
+    sha256 cellar: :any, arm64_tahoe:   "a7516791a7b101b8b28008e91152a41d4bccef8e432ec57f5176d058ce316425"
+    sha256 cellar: :any, arm64_sequoia: "850088b50e703f2ac49f1aba5174e9b2d02120407c3091c5bd0098e172cfdc50"
+    sha256 cellar: :any, arm64_sonoma:  "78f5a4c7128cf8823f22c211de7496af79a8b07c141ffd082aa3c175b314e53d"
+    sha256 cellar: :any, sonoma:        "13f114294b4cb291958abecbc83cc3b44661dd24e8392944ae90c732c06204d1"
+    sha256 cellar: :any, arm64_linux:   "b17b8aab84f730877784d6defa8bc9086457d0bde5bc635feafdca61d2ee02b8"
+    sha256 cellar: :any, x86_64_linux:  "86b5bd9b0f6d3d7bca91b916bda8ade6349c47a227392f559d93177cc41b39e2"
   end
 
   keg_only :shadowed_by_macos, "macOS provides OpenCL.framework"

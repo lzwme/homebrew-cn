@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/4d/12/416685c86758e5f80b85b7f3a45a9ac544df1789c51d32c16cca1caa0c34/prowler-5.28.1.tar.gz"
-  sha256 "e1dd338dabe6fd8f8271c425c770ca6b9ca1b51498058b2449bea5763d8f6499"
+  url "https://files.pythonhosted.org/packages/4f/66/3a1c879dac694193d50b0f082483821d8254905bd759d6f5607ac1a6e597/prowler-5.29.0.tar.gz"
+  sha256 "2bb3a18105135b16ba5f2049407446d5066632650af3f92c72168e6816db7d2a"
   license "Apache-2.0"
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "739f034979cc5718f53fb2f79a9b10b2e5ea765705245f802516a5e6852f64d2"
-    sha256 cellar: :any,                 arm64_sequoia: "a44c13bcbc0509e31cd88c50b1ecc15abf0c0903fd7a17c0d28d0883e82015b0"
-    sha256 cellar: :any,                 arm64_sonoma:  "3b448d5df1994a89b61ecfe9612c5f5c0b898abe0da733a7aa085404981c2873"
-    sha256 cellar: :any,                 sonoma:        "20dbb6e438ef5d60dfdd911befe4aad7fc40c97425538b1a1809d5307caf6e8e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee376f4535e03f8070bc2b2b24ff759740850aa589ddfd12a276fd6bd6b6c996"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "412720d9d2fbdc5f5375f4c85ea88c66af06556fb5f5f73c3916fc56ba850e29"
+    sha256 cellar: :any, arm64_tahoe:   "4dbc55c586b3e4b5c6e776293af83f0d30fbad8d670fd4c14275cd92b74ad735"
+    sha256 cellar: :any, arm64_sequoia: "b7d58039bc57572a0c9f1253a2cc32597155ad3d48884e1d5dc287cc4b479655"
+    sha256 cellar: :any, arm64_sonoma:  "d36a4c8eda4c0830f1a4c5928f059d685a1f68423ff14ce2af8b41b85081df20"
+    sha256 cellar: :any, sonoma:        "8b815c7f9f33b965829a092098e4eae73dbe52f8ea514d257d5cab661645b7f5"
+    sha256 cellar: :any, arm64_linux:   "ab6d352000df422be68dc13ebd49de2b3d53a04b2cafafb3a3d759091bd37f1d"
+    sha256 cellar: :any, x86_64_linux:  "596f23378ef51ea8c6129d93baad5cbcbe17cfd345eb6870df8ac37ae6d93b9c"
   end
 
   depends_on "cmake" => :build
@@ -604,13 +604,13 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/a4/eb/8099e0faa1403eb74063cf3458aa2239280582ca9fe5d38f3f930bd7f488/iamdata-0.1.202605261.tar.gz"
-    sha256 "f6856d2a43b5c22f0b3aa4374d2ea02abc39dee75478c87be9b4ee1898a6c123"
+    url "https://files.pythonhosted.org/packages/83/96/635c6e27f1ef5a024e6e46c77c791652cee74deb97fdd5e66d37535105b9/iamdata-0.1.202606011.tar.gz"
+    sha256 "ec4808a6ce1b800a55c9ae97ff9d84937c31e4a14f59bb5163f27738e17c5a55"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
-    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
   end
 
   resource "importlib-metadata" do
@@ -729,8 +729,8 @@ class Prowler < Formula
   end
 
   resource "msal" do
-    url "https://files.pythonhosted.org/packages/de/cb/b02b0f748ac668922364ccb3c3bff5b71628a05f5adfec2ba2a5c3031483/msal-1.36.0.tar.gz"
-    sha256 "3f6a4af2b036b476a4215111c4297b4e6e236ed186cd804faefba23e4990978b"
+    url "https://files.pythonhosted.org/packages/9a/99/d840198ecf6e8057bbc937f129ae940404485d736cda73253bbff9537f01/msal-1.37.0.tar.gz"
+    sha256 "1b1672a33ee467c1d70b341bb16cafd51bb3c817147a95b93263794b03971bec"
   end
 
   resource "msal-extensions" do
@@ -759,8 +759,8 @@ class Prowler < Formula
   end
 
   resource "narwhals" do
-    url "https://files.pythonhosted.org/packages/cf/a0/6198c56d42ef2f3c6ed0c42ba30dbcefdc86a91262d7d449010770ae085b/narwhals-2.21.2.tar.gz"
-    sha256 "5c5b2d0b47aef7c73ea412cfcbcd467f2f2d5be73e3c2ab19d78f4a97718790a"
+    url "https://files.pythonhosted.org/packages/9c/1c/c80cb7719721a44846c6301ef118434bae30a423924bfad3a47f16bdc064/narwhals-2.22.0.tar.gz"
+    sha256 "6486282bb7e4b4ab55963efbd8be1451b764cc4874b74d1fd625eba9dc60b86f"
   end
 
   resource "nest-asyncio" do
@@ -835,8 +835,8 @@ class Prowler < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
-    sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
+    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
+    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
   end
 
   resource "plotly" do
@@ -980,8 +980,8 @@ class Prowler < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/20/af/3f2f423103f1113b36230496629986e0ef7e199d2aa8392452b484b38ced/rpds_py-0.30.0.tar.gz"
-    sha256 "dd8ff7cf90014af0c0f787eea34794ebf6415242ee1d6fa91eaba725cc441e84"
+    url "https://files.pythonhosted.org/packages/2e/43/25a8dcd3feedd735039a8f0b5b7e3b118232b5eae288c4fd9ab200d41094/rpds_py-2026.5.1.tar.gz"
+    sha256 "07b24fea40541e28570e5b795a4a38fbdcd12550c06bd0748005ecc8116ca256"
   end
 
   resource "s3transfer" do
@@ -1027,6 +1027,21 @@ class Prowler < Formula
   resource "sniffio" do
     url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
     sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
+  end
+
+  resource "stackit-core" do
+    url "https://files.pythonhosted.org/packages/24/90/20f9ec7387eec4067cfd3d29055d0e2b5e1e0322c601a7f48125fd8ea35f/stackit_core-0.2.0.tar.gz"
+    sha256 "b8af91877cdb060d6969a303d8cf20bc0b33b345afd91f679c44a987381e2d47"
+  end
+
+  resource "stackit-iaas" do
+    url "https://files.pythonhosted.org/packages/52/07/24e65278300d5c3cb19cb1660bff924c80812cf8aad3e715f826bae5aa80/stackit_iaas-1.4.0.tar.gz"
+    sha256 "93523b23442350c7ebefd9129485c4c2a539f694a9c36a0f8edfaba9862057ea"
+  end
+
+  resource "stackit-resourcemanager" do
+    url "https://files.pythonhosted.org/packages/23/2d/f458f18e48ed2b1c83df52cff7dbdfd5dd904fb2980ffd9385876e47bbd9/stackit_resourcemanager-0.8.0.tar.gz"
+    sha256 "f44542beab4130857f5a7f465cf02defeef657bdf63c1beeb3102f0ba3c003fe"
   end
 
   resource "std-uritemplate" do

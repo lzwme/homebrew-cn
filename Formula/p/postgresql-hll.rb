@@ -1,17 +1,17 @@
 class PostgresqlHll < Formula
   desc "PostgreSQL extension adding HyperLogLog data structures as a native data type"
   homepage "https://github.com/citusdata/postgresql-hll"
-  url "https://ghfast.top/https://github.com/citusdata/postgresql-hll/archive/refs/tags/v2.20.tar.gz"
-  sha256 "c78c7bde66bfd3b5873db85baf481cc798513ce87a5e3685625c8ad55b5be1ca"
+  url "https://ghfast.top/https://github.com/citusdata/postgresql-hll/archive/refs/tags/v2.21.tar.gz"
+  sha256 "808de7603e6f954690b7f1a4514f264ce0557f8c4bb9a0e8c0ba0249df4098ce"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dbf5459380112349efbfe4f8aa143af045a9b7ab64cdd4c3a9f56d58845826d6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92c66ce82d2aae8a39c3cd124f46ebfae009bbba60ff6bd4ac8cbae408b0e6d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f996014fc935ccf79b0fc3fca715d517dc9a7e56e7aaaf58d0cb8463c618d9f6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d06e7a5d0a41d0d14b0cff1b46fb8d95d6887f38d239e0a0f15fefe6dd629fab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "32802c95ae67c50ee896b5529afc8997fc0dd146062b12963d719415418abaa5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5247f662b7f7d4cb0cacc28ab9aecb0d16303c0d4fabfddcfe0f004aee08dac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d976ab79f3c4a3e76c076595e7fbe27a9b569feb4038ec8f5b9ecc6f1ff1b2bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4944479c33930ec01cc3acf769af2d6c43efe2cbb9683302c391f4f029d00545"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e75fe6ce1773d2a412b055d8c6db68aae2a258f357242e0cdf1ca4c6cf29c7c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8ca3ad63351e33fae0bf5feaf84cc94846b4bac2d4d3fc33cf12947f79214dad"
+    sha256 cellar: :any,                 arm64_linux:   "61fdcf4b1d383cba248b587b0a2be070783d190397273afdcd86edba2b3039f6"
+    sha256 cellar: :any,                 x86_64_linux:  "561466d0e9a1c2c60eee2c7dac9051726ac7e3fafb1a1ddd9174c04dfd4eabc3"
   end
 
   depends_on "postgresql@17" => [:build, :test]

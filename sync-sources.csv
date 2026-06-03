@@ -9026,6 +9026,7 @@ Homebrew-homebrew-cask/Casks/c/catch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/catlight.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cavalry.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cave-story.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/cc-pocket.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cc-switch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/ccleaner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/ccmenu.rb, Homebrew/homebrew-cask, 1
@@ -13648,6 +13649,7 @@ Homebrew-homebrew-cask/Casks/m/mirrordisplays.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mission-control-plus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/missive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mist.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/mister-plimsoll.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mit-app-inventor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mitmproxy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mitti.rb, Homebrew/homebrew-cask, 0
@@ -14005,6 +14007,7 @@ Homebrew-homebrew-cask/Casks/o/opcode.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-data-editor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-eid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/open-in-code.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/open-island.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-video-downloader.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-webui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openaudible.rb, Homebrew/homebrew-cask, 1
@@ -15289,6 +15292,7 @@ Homebrew-homebrew-cask/Casks/t/tales-of-majeyal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/talon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tana.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tandem.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/tangleguard-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/taobao.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tap-forms.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/taphouse.rb, Homebrew/homebrew-cask, 0
