@@ -1,8 +1,8 @@
 class Convox < Formula
   desc "Command-line interface for the Convox PaaS"
   homepage "https://convox.com/"
-  url "https://ghfast.top/https://github.com/convox/convox/archive/refs/tags/3.24.8.tar.gz"
-  sha256 "67662790549bdbc8e6d1257490ae85917629f9faebfef7ef5d3c7a3bb7d8a65c"
+  url "https://ghfast.top/https://github.com/convox/convox/archive/refs/tags/3.24.9.tar.gz"
+  sha256 "c3a3977b4cd3431350a5a37018a6b7f3b03cb2551e0f077d57473441b8f9b064"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/convox/convox.git", branch: "master"
@@ -13,12 +13,12 @@ class Convox < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6183a0f8ddd6e40c783b360e79dc65b7a1d6aeb858d3f9c678a8fcf6ecfabc9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4ba516331bcfee838ae038f4dc3f6e7f35e0cc34d6aed82adff8833f41ddbb3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb159d7ab46eebfb032d5b2ba838f8a51185d712d4e2df01f80e6465bbf4c96d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "439ce53c5b973d567610f7ac2ac051a974f972b26d802fe70877ebd1a892f57b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6bb4f38f8aae92649c438f3427abf7daa24d41cd5f0342e874f4f35376ae3fb5"
-    sha256 cellar: :any,                 x86_64_linux:  "7acec692418b2abe84cc26fd1f533dff680d949ddd9a41d6948029516da8075f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a79b99306da889cab4a76a80fa4bd410a955345c4f164167c3b0d1ec047f3ab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d7a587ccf1c5150e5dab2b7a9e290725c052fd221c655d210db7451adcc5f07"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df5a0b2dab18b1c46f281ce090016db40bfc95e1bf96707506c78397101ff19d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1a6317fc0f3bd25935d785eeff571997292111898ca9573e0f5dceb49796111e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "87566fb775ccade20b4e34bb622735b626ec0c2b2165fc173dc44c44f2acf7f6"
+    sha256 cellar: :any,                 x86_64_linux:  "95ca97dbeecd50434a9cf85ce9d4f0604633c6628737da813230b79175ef3fbf"
   end
 
   depends_on "go" => :build

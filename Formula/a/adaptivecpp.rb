@@ -30,6 +30,8 @@ class Adaptivecpp < Formula
     depends_on "numactl"
   end
 
+  deny_network_access!
+
   def install
     args = if OS.mac?
       libomp_root = Formula["libomp"].opt_prefix

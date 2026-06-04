@@ -17,6 +17,8 @@ class Ad < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access! [:postinstall, :test]
+
   def install
     system "cargo", "install", *std_cargo_args
     man.install buildpath/"docs/man/ad.1"

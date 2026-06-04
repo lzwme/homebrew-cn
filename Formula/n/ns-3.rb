@@ -1,18 +1,17 @@
 class Ns3 < Formula
   desc "Discrete-event network simulator"
   homepage "https://www.nsnam.org/"
-  url "https://gitlab.com/nsnam/ns-3-dev/-/archive/ns-3.47/ns-3-dev-ns-3.47.tar.gz"
-  sha256 "d74850986ee83ac50269711686d504487dfa5b57a65b90b87f91ae256846fd64"
+  url "https://gitlab.com/nsnam/ns-3-dev/-/archive/ns-3.48/ns-3-dev-ns-3.48.tar.gz"
+  sha256 "23a4c2606281ca534e0d4ab4b90d47ed3d4f82f52c94667b890bbb90ea113e9e"
   license "GPL-2.0-only"
 
   bottle do
-    rebuild 1
-    sha256                               arm64_tahoe:   "cdf607dc89940207d2e7982674e81f87f387c3811a0410fdb61b003c1bc1da63"
-    sha256                               arm64_sequoia: "6f5337ebc42ceec3f7a49d32231cc01bec5485cd1daf20b13c750cd5743d93fa"
-    sha256                               arm64_sonoma:  "5efeafd44257400eac0ad1f841492b4924e839a7dd14fc925a670504f38399d0"
-    sha256                               sonoma:        "7f321975447753e729e7a5768c6bc107b2706c093bb21a40b7edb08dbb586a38"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8492c3ca7c872d76fd1ba938a1e0ee32e5b1e89a302c69106382a9722c8263a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "214b69cc493eb45e7682b23fb027b586cf223a84f16a5652257c8ab3e6d3231d"
+    sha256               arm64_tahoe:   "7f01602985607329ad35fa27eadcd484c8b8f26a5642c92836c31c297995f9bf"
+    sha256               arm64_sequoia: "6dfa93ac72c007e371a363cd1956effaa3cd2a542b2dbed2b45c57c38d4d3547"
+    sha256               arm64_sonoma:  "9b9a0e7ae9ac9ffcfa010c55cbb87eb3a77ae702b0e75c945ba24622ceb802f6"
+    sha256               sonoma:        "19e4aafa35b9e75b371921013c70e42404cdc6c9f77fbcb480bc94bb81d9af95"
+    sha256 cellar: :any, arm64_linux:   "86cb6535b65f1f125def0b5a55ebba9e334a9dcf47ec083c2396bd922d6739ba"
+    sha256 cellar: :any, x86_64_linux:  "f55522488a2ee0e0aa53cfe92a392ca7a3e032d2248d3176a571926725fe6f37"
   end
 
   depends_on "boost" => :build

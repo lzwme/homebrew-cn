@@ -47,6 +47,8 @@ class Aarch64ElfGdb < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     target = "aarch64-elf"
     args = %W[

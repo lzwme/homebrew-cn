@@ -19,6 +19,8 @@ class A2ps < Formula
   depends_on "bdw-gc"
   depends_on "libpaper"
 
+  deny_network_access!
+
   def install
     system "./configure", "--sysconfdir=#{etc}",
                           "--with-lispdir=#{elisp}",

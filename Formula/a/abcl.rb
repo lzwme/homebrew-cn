@@ -34,6 +34,8 @@ class Abcl < Formula
   depends_on "openjdk"
   depends_on "rlwrap"
 
+  deny_network_access! [:postinstall, :test]
+
   def install
     ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
 

@@ -19,8 +19,7 @@ class Ty < Formula
 
   def install
     ENV["TY_COMMIT_SHORT_HASH"] = tap.user
-    # Not using `time` since SOURCE_DATE_EPOCH is set to 2006
-    ENV["TY_COMMIT_DATE"] = Time.now.utc.strftime("%F")
+    ENV["TY_COMMIT_DATE"] = time.strftime("%F")
     system "cargo", "install", *std_cargo_args(path: "ruff/crates/ty")
     generate_completions_from_executable(bin/"ty", "generate-shell-completion")
   end
@@ -28,10 +27,10 @@ class Ty < Formula
   test do
     assert_match version.major_minor_patch.to_s, shell_output("#{bin}/ty --version")
 
-    (testpath/"bad.py").write <<~PY
+    (testpath/"bad.py").write <<~PYTHON
       def f(x: int) -> str:
           return x
-    PY
+    PYTHON
 
     output = shell_output("#{bin}/ty check #{testpath} 2>&1", 1)
     assert_match "error[invalid-return-type]: Return type does not match returned value", output

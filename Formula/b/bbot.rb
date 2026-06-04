@@ -6,15 +6,15 @@ class Bbot < Formula
   url "https://files.pythonhosted.org/packages/6a/83/24a0087894d853703f64ab2044927ef56c831edb379295a873b05f34eb92/bbot-2.8.4.tar.gz"
   sha256 "2ed4d3eda85ddb7261318a48f8a41e8543888b5d9b9eb8876aaff0e813a2429c"
   license "AGPL-3.0-only"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bf1bda80d27ac1c3e9b1ce785a0e0014ffddad40774203dacd2459731a27ce02"
-    sha256 cellar: :any,                 arm64_sequoia: "2d46ffa4ee7fce335668d9664d2afb0825f19874bb8f46ea0b074e4c5245459c"
-    sha256 cellar: :any,                 arm64_sonoma:  "2f2d6aafe4057d686341ef92bfd8b951a59eac1409479725eb2a1c9c6429c530"
-    sha256 cellar: :any,                 sonoma:        "604124785ab8d17b0d9b9de281e9464d97832043fc94b44ee15d6be050f36314"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "feecae1e7ffc90ca0fc4775aba9d75c3c35a22df317c1b4f7d4e5b4416be1aa3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "297175121720b0eba3a4b36d5820de5144980af1523e49fd1512ee610b2decac"
+    sha256 cellar: :any, arm64_tahoe:   "f6455f3ed82ea28616dd5f877b821e036cc7191f83adde18568d430665e3fc79"
+    sha256 cellar: :any, arm64_sequoia: "4e4e5953a3a058a177afa7b325b573db95a2b3e34c78836325607daeef77c9b6"
+    sha256 cellar: :any, arm64_sonoma:  "b1fd3a3569db4031c2d69935726cc6b0dd8c3d484d57ea0b70c1ed7009ed9e1c"
+    sha256 cellar: :any, sonoma:        "8b8b8f20da870b1fb0686283ee9c76259ba956469251e53e3ff0e31f52eff5c0"
+    sha256 cellar: :any, arm64_linux:   "585634e4db288faf5a689243e7ce2ece063387d64a10230bf99eabeb413da58e"
+    sha256 cellar: :any, x86_64_linux:  "29bb888e5650c715148008afb3d36eeaf649d338533afe7fc01c708d1e6edd73"
   end
 
   depends_on "cmake" => :build
@@ -106,8 +106,8 @@ class Bbot < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
   end
 
   resource "jinja2" do
@@ -181,8 +181,8 @@ class Bbot < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/c2/27/a3b6e5bf6ff856d2509292e95c8f57f0df7017cf5394921fc4e4ef40308a/pyjwt-2.12.1.tar.gz"
-    sha256 "c74a7a2adf861c04d002db713dd85f84beb242228e671280bf709d765b03672b"
+    url "https://files.pythonhosted.org/packages/3b/81/58d0ac84e1ef3a3843791d6954d94c0b33d526c75eeb1efbce9d0a4c4077/pyjwt-2.13.0.tar.gz"
+    sha256 "41571c89ca91598c79e8ef18a2d07367d4810fbbd6f637794879baf1b7703423"
   end
 
   resource "python-daemon" do
@@ -242,8 +242,8 @@ class Bbot < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/7b/ae/2d9c981590ed9999a0d91755b47fc74f74de286b0f5cee14c9269041e6c4/soupsieve-2.8.3.tar.gz"
-    sha256 "3267f1eeea4251fb42728b6dfb746edc9acaffc4a45b27e19450b676586e8349"
+    url "https://files.pythonhosted.org/packages/47/2c/0a5f6f8ee0d5589e48c7640213ed5175d52cf540a06725b628cc1a45d6ce/soupsieve-2.8.4.tar.gz"
+    sha256 "e121fd02e975c695e4e9e8774a5ee35d74714b59307868dcc5319ad2d9e3328e"
   end
 
   resource "tabulate" do

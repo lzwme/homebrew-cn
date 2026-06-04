@@ -1,17 +1,17 @@
 class MinLang < Formula
   desc "Small but practical concatenative programming language and shell"
   homepage "https://min-lang.org"
-  url "https://ghfast.top/https://github.com/h3rald/min/archive/refs/tags/v0.47.1.tar.gz"
-  sha256 "49dd7c4661e21c3a40fc4ec03a6860dfe7f60efe0a358c5dd917f84029b3959e"
+  url "https://ghfast.top/https://github.com/h3rald/min/archive/refs/tags/v0.48.0.tar.gz"
+  sha256 "20b836d87a99a801859b99e5f08ef39fe1b787d642f053926db5e39955ddf4d4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6ee77466373606d86016068213bbcc90805cb6d2b4dbdf59516902d60e947bd0"
-    sha256 cellar: :any,                 arm64_sequoia: "9f8a40e25b3635acc1c8ec1ec1a43208caeb7936f04fb874840df97719ee3023"
-    sha256 cellar: :any,                 arm64_sonoma:  "ca8d3528196a222aa81545e670b4694800efb01e9fa4f5868e10e0f37977768b"
-    sha256 cellar: :any,                 sonoma:        "b30e6214370dbbd7d48218738dbab1a4c42a6c2eb0f4e73cc1692651a2e0b973"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ee8581caa4b05a46090d4163de1478aa03eb7769b85a8c7f04168df1d3e877e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ff578dfbc5b12c83d750d2ed9ae7e935e797d03bdc41de2736cd102149044d5"
+    sha256 cellar: :any, arm64_tahoe:   "ea94a2c1f41db54447f306f26bba8bcfea7e163083cf8f68ce29818a36efb54f"
+    sha256 cellar: :any, arm64_sequoia: "f9bc539aa6b39e96d6d796c5011922ad488556370190d2c333561fdc305168a8"
+    sha256 cellar: :any, arm64_sonoma:  "6bc01f2fafa372cd6f80600e639cdea1b5952eee18a51ab286c4339879b59736"
+    sha256 cellar: :any, sonoma:        "f8163ffea30e28d48bf203dd80da5711b30f338cc9626340fd4a3cc5d6303245"
+    sha256 cellar: :any, arm64_linux:   "6378198c85520572b86c5dba8d33696cb143e11730f1f5e9bc16cce0cdbf3a99"
+    sha256 cellar: :any, x86_64_linux:  "95f14a18f33b0921984b0104232f015d67ed5a5069ca814bf1677ac47554dab1"
   end
 
   depends_on "nim"

@@ -1,18 +1,18 @@
 class Caddy < Formula
   desc "Powerful, enterprise-ready, open source web server with automatic HTTPS"
   homepage "https://caddyserver.com/"
-  url "https://ghfast.top/https://github.com/caddyserver/caddy/archive/refs/tags/v2.11.3.tar.gz"
-  sha256 "de751e6b7ca769f0dc1f9b0a1949c7b149c115efde3aaf53182da2bf6a94c825"
+  url "https://ghfast.top/https://github.com/caddyserver/caddy/archive/refs/tags/v2.11.4.tar.gz"
+  sha256 "2c3d02078286a6282cdb4d1d8744077788d556659dac0b64d8ed5886a7e5aeb9"
   license "Apache-2.0"
   head "https://github.com/caddyserver/caddy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "155d5d2dc956208de5c2493ed58e3813fa06005a5a5b84c69da98c531d998336"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "155d5d2dc956208de5c2493ed58e3813fa06005a5a5b84c69da98c531d998336"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "155d5d2dc956208de5c2493ed58e3813fa06005a5a5b84c69da98c531d998336"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a6c53b0eb4f944bca82094cc93750d9d7317ebbf73d8eefae22919277b78b5fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "96290352448bf0a300cb2499ceff406b29266db24f0400bbe91c4355149146da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81dc7c9a7b4fde37f21d3896d3360a3f6387bd1ed513bbf9af6f2357f03321ae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e9aa3be3d01ea8128bd16cdb0de0b274da276dba4882addedd43b8748ad94d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e9aa3be3d01ea8128bd16cdb0de0b274da276dba4882addedd43b8748ad94d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e9aa3be3d01ea8128bd16cdb0de0b274da276dba4882addedd43b8748ad94d3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "27b2aa14d92c02c159a265f1604240cfd55963e6ba5563b7ccac752937624859"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "24e586256f93f81b80de38b8bce008cbaf788f925b81e6aedecf98c7d3612385"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccfdb7ee4df4bbcbcba207c4a7009fc7d5859435df1277c784421b67d7127639"
   end
 
   depends_on "go" => :build

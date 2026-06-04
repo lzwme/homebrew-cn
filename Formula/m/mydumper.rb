@@ -1,8 +1,8 @@
 class Mydumper < Formula
   desc "MySQL logical backup tool"
   homepage "https://github.com/mydumper/mydumper"
-  url "https://ghfast.top/https://github.com/mydumper/mydumper/archive/refs/tags/v1.0.1-3.tar.gz"
-  sha256 "d6fcd06d0382c7620359189cb060019291df10bba94bacb279e2df1cebd5953a"
+  url "https://ghfast.top/https://github.com/mydumper/mydumper/archive/refs/tags/v1.0.3-1.tar.gz"
+  sha256 "5ffec51824d758589db788d138804b04e1b8ce51198137be3a0cd2eb855f02a7"
   license "GPL-3.0-or-later"
   head "https://github.com/mydumper/mydumper.git", branch: "master"
 
@@ -13,12 +13,12 @@ class Mydumper < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ed381e58aa4bd80a40d35e1d5570015c2253ee3f590e8130610a5f4c6ab9c06c"
-    sha256 cellar: :any,                 arm64_sequoia: "a81408838fae9f8a3597e69b39891608077fa6477b80a047e10d215564681304"
-    sha256 cellar: :any,                 arm64_sonoma:  "322a9011ac037bace2d95dfb52664a38431a453c29e163a0797209737551721a"
-    sha256 cellar: :any,                 sonoma:        "07b6dc566deffe8f2ea70342370e3a703f26fb572a20c391422a4ceb0bbf58f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "064fcbb4b80e6a8d17bba2b2e41c4fca6a591db8693b7d67727339cc58784897"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edcb404207cb1e73c6ea3a0f385097f44ffe8795b199330de401c7b8755672bf"
+    sha256 cellar: :any, arm64_tahoe:   "4ff05b2f370679159d24158134c0fd226303a968ad775ab5a4d7d484ca230bd5"
+    sha256 cellar: :any, arm64_sequoia: "5e327a90cad25fbf8ab63d0322f89952e37fac1e41979712c9b3c1a9a7ce2ec8"
+    sha256 cellar: :any, arm64_sonoma:  "e94b39dbedd181c73100e90d9cc11cfe9841972df959c351d831be8d83f60046"
+    sha256 cellar: :any, sonoma:        "3d18d9a9d29298b47fbf70ea6e4cb60483e726a757cb17d59d5ce9fcfeb51adf"
+    sha256 cellar: :any, arm64_linux:   "f4ce9a421765d32e66be5523c3d977bceca9609687ca7bb8260c6ff77cd9aaa4"
+    sha256 cellar: :any, x86_64_linux:  "1209c4add0bee04773fc19a1abfb4d6fbfba4b5348d9b0ed6e51ff6c1a1c39c6"
   end
 
   depends_on "cmake" => :build

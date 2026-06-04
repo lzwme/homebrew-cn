@@ -28,6 +28,8 @@ class Ack < Formula
 
   uses_from_macos "perl"
 
+  deny_network_access!
+
   def install
     if build.head?
       ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"

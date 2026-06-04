@@ -56,6 +56,8 @@ class Adios2 < Formula
   # Apple clang version 14.0.0 (clang-1400.0.29.202)
   fails_with :clang if DevelopmentTools.clang_build_version == 1400
 
+  deny_network_access!
+
   def python3
     "python3.14"
   end

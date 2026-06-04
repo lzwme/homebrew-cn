@@ -26,6 +26,8 @@ class Abcm2ps < Formula
     depends_on "gnu-sed" => :build
   end
 
+  deny_network_access!
+
   def install
     if OS.mac?
       ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin"

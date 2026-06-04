@@ -18,6 +18,7 @@ class Gssh < Formula
   end
 
   deprecate! date: "2025-05-25", because: :repo_archived
+  disable! date: "2026-06-03", because: :repo_archived
 
   depends_on "gradle@8" => :build
   depends_on "openjdk@21"

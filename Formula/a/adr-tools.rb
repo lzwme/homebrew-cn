@@ -10,6 +10,8 @@ class AdrTools < Formula
     sha256 cellar: :any_skip_relocation, all: "893bca3baa1fdb9dfad37f81cc58ccc5d6e3c3b7b9c03336d5ac365700eeec10"
   end
 
+  deny_network_access!
+
   def install
     config = buildpath/"src/adr-config"
 

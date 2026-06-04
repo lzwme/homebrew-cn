@@ -12,12 +12,13 @@ class NodeAT22 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "02324491602549ef17b82677db2d4b662d7940c9ff1040400f2ac9826edc0415"
-    sha256 cellar: :any,                 arm64_sequoia: "6caf12083a7b916b4c8d758546eab03e92ab423b621468897d9f462c1d9509ee"
-    sha256 cellar: :any,                 arm64_sonoma:  "b14e0f06928ef072e8a55761cb4e067f1965821f2fa0e65005a850b32785a1d8"
-    sha256 cellar: :any,                 sonoma:        "1d9aec34dfa3fd8ee6fa25a184234524e20537fea71697b9b7b761c38de3b4e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da5c9cdb6cbbea3ccdc77aa3b44869dfbd06618b5cc5bceb650c246f55a30df5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f76e8ef91851f01b80cc5f17b2c9b5b1d12baa2968b468eec72bfaf591d15788"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "b816f097e858bd782fdabaa7c43cdf6d9b61e40798ddd596413b8368c491cf49"
+    sha256 cellar: :any, arm64_sequoia: "2a6149417ac1727912ae188e597bf00a0629a8e513e3f370c5c0c30c59693af9"
+    sha256 cellar: :any, arm64_sonoma:  "382349bf29b095ab27fdfb85b1b22ddd6750237cdd4080dfd23303aea7ecbbb7"
+    sha256 cellar: :any, sonoma:        "8f871c730de49ba722d15bb6c0b29a9d56b9401bea7fb4927144616acdf18ea8"
+    sha256 cellar: :any, arm64_linux:   "9908fc1f7cc87b3b3ff6709a1761c9604d8103056504fa9d252b7b3b9014920f"
+    sha256 cellar: :any, x86_64_linux:  "5ef46a3ae4c97d48ce205bebaa642088783ed58d93fcba5f3a85ff7a86313a14"
   end
 
   keg_only :versioned_formula
@@ -132,16 +133,11 @@ class NodeAT22 < Formula
 
     system "./configure", *args
     system "make", "install"
-  end
 
-  def post_install
     (lib/"node_modules/npm/npmrc").atomic_write("prefix = #{HOMEBREW_PREFIX}\n")
   end
 
   test do
-    # Make sure Mojave does not have `CC=llvm_clang`.
-    ENV.clang if OS.mac?
-
     path = testpath/"test.js"
     path.write "console.log('hello');"
 
@@ -165,5 +161,7 @@ class NodeAT22 < Formula
     assert_path_exists bin/"npx", "npx must exist"
     assert_predicate bin/"npx", :executable?, "npx must be executable"
     assert_match "< hello >", shell_output("#{bin}/npx --yes cowsay hello")
+
+    assert_equal HOMEBREW_PREFIX.to_s, shell_output("#{bin}/npm config get prefix").chomp
   end
 end

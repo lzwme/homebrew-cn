@@ -22,6 +22,8 @@ class Abduco < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2129c6039968a818f71997e800575b581128b56f8783eeb32c990f8a5e8b81ad"
   end
 
+  deny_network_access!
+
   def install
     ENV.append_to_cflags "-D_DARWIN_C_SOURCE"
     system "make", "PREFIX=#{prefix}", "install"

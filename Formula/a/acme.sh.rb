@@ -9,6 +9,8 @@ class AcmeSh < Formula
     sha256 cellar: :any_skip_relocation, all: "f323095950742f7e7899c48f5295433b55c6edfb7092eade86e16fcc74618037"
   end
 
+  deny_network_access!
+
   def install
     libexec.install [
       "acme.sh",

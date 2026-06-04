@@ -10,6 +10,7 @@ class Dafny < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "296346300fcb84014e88bcd5e6a43a3f59c1f5b90f6c4f9c9ff5e6664459f104"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "399f9dc444e83573e736e553df66faeb0c492abe5efc5d547c64b6f5732825e4"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "212a957c6cff6a2b3709544c5ed25d75231aa25cd7c46f0dd2b4b7407add8b8f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e8ee8d3e51738626a0f1ec731d0f8616310c13028b9557b792eea2078c1c7d97"
     sha256 cellar: :any_skip_relocation, ventura:       "531c8d8608f45143c240ebcdb7c7bc92a47cf23d20b972f9d0d435318198a569"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "61c5799971f66478103d85b42562172496531a3aa2e8e8566befc75079bb7154"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "af77022b146755d7d3504323a153d62fd2d234fd23b831884555d1d6a037e16f"

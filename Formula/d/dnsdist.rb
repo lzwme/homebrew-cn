@@ -44,10 +44,7 @@ class Dnsdist < Formula
   end
 
   def install
-    # Fix to error: use of undeclared identifier 'vinfolog'
-    inreplace "dnsdist-protobuf.cc", '#include "dnsdist-protobuf.hh"', "\\0\n#include \"dolog.hh\""
-
-    venv = virtualenv_create(buildpath/"bootstrap", "python3")
+    venv = virtualenv_create(buildpath/"bootstrap", "python3.14")
     venv.pip_install resources
     ENV.prepend_path "PATH", venv.root/"bin"
 
@@ -60,7 +57,7 @@ class Dnsdist < Formula
                           "--enable-dns-over-https",
                           "--enable-dnscrypt",
                           "--with-re2",
-                          "--sysconfdir=#{etc}/dnsdist",
+                          "--sysconfdir=#{pkgetc}",
                           *std_configure_args
     system "make", "install"
   end

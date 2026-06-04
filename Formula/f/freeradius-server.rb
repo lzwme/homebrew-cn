@@ -1,8 +1,8 @@
 class FreeradiusServer < Formula
   desc "High-performance and highly configurable RADIUS server"
   homepage "https://freeradius.org/"
-  url "https://ghfast.top/https://github.com/FreeRADIUS/freeradius-server/archive/refs/tags/release_3_2_9.tar.gz"
-  sha256 "c00e36fa6a2558cca3f2f63cf203d8f8f902d0bc5a75843881ffb05ab1005de9"
+  url "https://ghfast.top/https://github.com/FreeRADIUS/freeradius-server/archive/refs/tags/release_3_2_10.tar.gz"
+  sha256 "3e9f24439ce976c04e4c56441722a3bd18677a61dd17f67bc8863eb4ed36cd4b"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   head "https://github.com/FreeRADIUS/freeradius-server.git", branch: "master"
 
@@ -15,12 +15,12 @@ class FreeradiusServer < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b332b021020a37e119119f41fbea654f18f43edcce2603876ff8265bbd65d02a"
-    sha256 arm64_sequoia: "83beadffd7a9743b995d575e385b676048902038d3608b5a10eb019292ca0613"
-    sha256 arm64_sonoma:  "13460e30f10bda4d81afa099e1e197b9f045f2e8840eae7a143186f3a5b0b0a7"
-    sha256 sonoma:        "ce971c04a30d80b6bd975596a9c99ba3cb770d1c3081825d64886829268822fb"
-    sha256 arm64_linux:   "a0592f6eb8adb343cd6ea5af8ad04f3f5da8ef62592fcc649c434521b448b4eb"
-    sha256 x86_64_linux:  "33cbdfd02e3537c3ae84b0a5aa741a4a3e50c7c7f137d00cb1ed804e6b8db220"
+    sha256 arm64_tahoe:   "dfc3ace4d474b7b7e9e9dea74986ab82403720b532ba3d1b462a79b4b5ed3b5c"
+    sha256 arm64_sequoia: "f83189a7c21c8d9e445ca71cd0622e4e18f59cb05aad8005c7bdd6d29243c583"
+    sha256 arm64_sonoma:  "7e7497a7089fb2aef6e8ecef8073225989568edda94d2d5c693030d18347591f"
+    sha256 sonoma:        "5465c168e3a941f1264e8951f365dddedb890e7d7f0235320f62efe738ce02d1"
+    sha256 arm64_linux:   "31927c5b14d5546ad24f26139cd3d49768699e7266d350e36dc00fc237d417bb"
+    sha256 x86_64_linux:  "4e608e205987fc041bcfe76c32dedcb21b217a0be7df3208e61124a2a66efd39"
   end
 
   depends_on "collectd"

@@ -1,8 +1,8 @@
 class BlockGooseCli < Formula
   desc "Open source, extensible AI agent that goes beyond code suggestions"
   homepage "https://block.github.io/goose/"
-  url "https://ghfast.top/https://github.com/block/goose/archive/refs/tags/v1.36.0.tar.gz"
-  sha256 "b0d0f6b5c539d988f0015943b4485b48c61b141f5cb2c8975029e261b9dd2ba3"
+  url "https://ghfast.top/https://github.com/block/goose/archive/refs/tags/v1.37.0.tar.gz"
+  sha256 "e037a24517d422eca06575ac90cd74b46e0bb256483ecfec3b5fa2d03159be47"
   license "Apache-2.0"
   head "https://github.com/block/goose.git", branch: "main"
 
@@ -12,12 +12,12 @@ class BlockGooseCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "39a4013d9ff90026fbce603245e05cf60f5f5cea1bd483e27b46a47270bd49e4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e6e4118f43d6fa954b9fbc3f20088a9f59ae29e0d4cd8e18359380fb4a5549a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be3b14ec29bd9e904c4622afd0d9ca17394325c3c0f5867f88cdb59bc027faf3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2018ab2ef33bf270e39db84a4d446e312074fa59965f82a03d560973c3f6c4c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "04845a3eef7c646306e749b036d00289531ba83321baa2bccac4dcc13529432c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94f562016ac849d18433af2332532fc237f213318c3743d5fedf21278224b464"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27538c6a089965be86da3932d421e6b683d9ff67af50788e5f67310743be1e79"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbb8fb695f0fdf438dc00c3541e4ab3c07e56fbe9b0bb7d71ff18d41c983fe4d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3655f70d08a512bb60c8f0cb83c8e434c90632da6bc90f5485224a792d26d96"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2d703d5a1f742a474bec10d2908e76d5266ae96370e14796bcc9a33cb0aaa2fc"
+    sha256 cellar: :any,                 arm64_linux:   "49de0a0aa78d3f975ba14e582e53e898dcf28aac71621d520b34f433562ab43d"
+    sha256 cellar: :any,                 x86_64_linux:  "da589d399e6a19a98e16b517f8b9af1fa5a3fa0ba3158a5bf833010db6adaab2"
   end
 
   depends_on "cmake" => :build

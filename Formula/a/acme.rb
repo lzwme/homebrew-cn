@@ -29,6 +29,8 @@ class Acme < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcb14a109abee4d1af24a79bc4991a851a6b1b75fd64999e815715fc54a4c834"
   end
 
+  deny_network_access!
+
   def install
     system "make", "-C", "src", "install", "BINDIR=#{bin}"
     doc.install Dir["docs/*"]

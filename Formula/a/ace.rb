@@ -23,6 +23,8 @@ class Ace < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f7c1c5865d3faf699ed79c109fa3828aab4f08d0886619a02cb4d12d2ecdbab"
   end
 
+  deny_network_access!
+
   def install
     os = OS.mac? ? "macosx" : "linux"
     ln_sf "config-#{os}.h", "ace/config.h"

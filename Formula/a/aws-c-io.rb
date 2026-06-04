@@ -1,27 +1,25 @@
 class AwsCIo < Formula
   desc "Event driven framework for implementing application protocols"
   homepage "https://github.com/awslabs/aws-c-io"
-  url "https://ghfast.top/https://github.com/awslabs/aws-c-io/archive/refs/tags/v0.26.3.tar.gz"
-  sha256 "521fd0848fca661130bbb7278a414d7a38bdcb9bc8ffa89f6660d84e5838a303"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-io/archive/refs/tags/v0.27.0.tar.gz"
+  sha256 "e89a1f784e7c97e4197031ffdcf30f67d66d7c14f8a391edf5764f17dae982ee"
   license "Apache-2.0"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f96cf4e4319785524c71a88e1cb2f1d065bf5f4b0111c77887115777fbd8dc38"
-    sha256 cellar: :any,                 arm64_sequoia: "3fa6c3a84abe7104e2161f822f6a653ba5b825c4d6f69ac829e61d2dd26257fd"
-    sha256 cellar: :any,                 arm64_sonoma:  "4daec1224842c5e4cf4406c8ed9a04d331533e1107e0d192bde1f370035b7109"
-    sha256 cellar: :any,                 sonoma:        "a2076fe1abd39e628ea7e796d1fea5595585e52ffa7e0884a5ebee3b419e599f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a16bcbe7b75b407602af6e23e84bcb9cbb96d6780d0f7c9642fcfbb8957bbc3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c2b99161cba1c51c6562c0959ede8b4a9d2b468da23dc672aa1428c0ae5ce5a"
+    sha256 cellar: :any, arm64_tahoe:   "e609e8b96dc257a38ee7bbe52216bd2c2e0983f7c75cb0fc07218d9a57ebb40f"
+    sha256 cellar: :any, arm64_sequoia: "19f3a0d35b13ae26e07790f699148a08b6d5346eaa1c0dcded9bd793d8dbf813"
+    sha256 cellar: :any, arm64_sonoma:  "8eab3782eab03b3be86af04734ee6f419e1953a8cc4c6ac8152b8c09105b9bfd"
+    sha256 cellar: :any, sonoma:        "5e88ffa1c99a653fe3418b1a5e0994ed9f66fc939ee4cfe35bbf60d8f71f207a"
+    sha256 cellar: :any, arm64_linux:   "31ea4e543100feededec8de4e3eb62e66354e120e8ea7e858d2b3d0f40b35550"
+    sha256 cellar: :any, x86_64_linux:  "311e815f05c2e5b2db6b4503331dcd06813611aeb1eeda49c2f7a949a1451935"
   end
 
   depends_on "cmake" => :build
   depends_on "aws-c-cal"
   depends_on "aws-c-common"
-
-  on_linux do
-    depends_on "s2n"
-  end
+  depends_on "openssl@3"
+  depends_on "s2n"
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args

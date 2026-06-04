@@ -20,6 +20,8 @@ class Actionlint < Formula
   depends_on "ronn" => :build
   depends_on "shellcheck"
 
+  deny_network_access! [:postinstall, :test]
+
   def install
     ldflags = %W[
       -s -w

@@ -25,6 +25,8 @@ class Abnfgen < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "76f35d17e3a1bad80de9ef0c2fb654882619b43a70f00cc23293b7d63c3fc513"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args
     system "make", "install"

@@ -21,8 +21,9 @@ class Bde < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.14" => :build
   depends_on "pcre2"
+
+  uses_from_macos "python" => :build
 
   resource "bde-tools" do
     url "https://ghfast.top/https://github.com/bloomberg/bde-tools/archive/refs/tags/4.38.0.0.tar.gz"
@@ -45,7 +46,7 @@ class Bde < Formula
     args = %W[
       -DBdeBuildSystem_DIR=#{buildpath}/bde-tools/BdeBuildSystem/
       -DCMAKE_INSTALL_RPATH=#{rpath}
-      -DPython3_EXECUTABLE=#{which("python3.14")}
+      -DPython3_EXECUTABLE=#{which("python3")}
       -DCMAKE_CXX_STANDARD=17
       -DCMAKE_CXX_FLAGS=-fsized-deallocation
     ]

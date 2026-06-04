@@ -10,6 +10,8 @@ class AdamstarkAudiofile < Formula
     sha256 cellar: :any_skip_relocation, all: "dce0123d95e01e4609051018ea590c2811908a0e75cb97f7c445c491d21de87e"
   end
 
+  deny_network_access!
+
   def install
     include.install "AudioFile.h"
   end

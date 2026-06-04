@@ -1,8 +1,8 @@
 class OsrmBackend < Formula
   desc "High performance routing engine"
   homepage "https://project-osrm.org/"
-  url "https://ghfast.top/https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v26.6.1.tar.gz"
-  sha256 "e573c9c76ffdb06e0589935d7d17d92a8e8ade60c17cd874d45531a9c3d626f3"
+  url "https://ghfast.top/https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v26.6.4.tar.gz"
+  sha256 "d886f6e7c7bcb5e486ed36b88b397df6b9bcf29173860c5fbea9ca0c65edcb2a"
   license "BSD-2-Clause"
   head "https://github.com/Project-OSRM/osrm-backend.git", branch: "master"
 
@@ -12,12 +12,12 @@ class OsrmBackend < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2c0e4771061661a07063e674bb53829444e6fb01eeb6871fdfce81410a1b7a6b"
-    sha256 cellar: :any, arm64_sequoia: "8dcac24cbaf0e0de82bacd58348c5f681038af101eec1286c16ebd8871aa12ee"
-    sha256 cellar: :any, arm64_sonoma:  "b3b162d6392804a47f0b7007068ce2a1001a123ba04f60680ddc2202edc3c1cf"
-    sha256 cellar: :any, sonoma:        "9f1730de92e40272731ba66c7957ddd0d188d6a6ec0f3ff02533b4de48c42dcd"
-    sha256 cellar: :any, arm64_linux:   "44b65fc287ca99112627d6628b802cfe557361c0af828ba226a98ed0ba00cadb"
-    sha256 cellar: :any, x86_64_linux:  "d1fbfa0aab0a96ea0823065a0186b51461560d98724d194f66e02b9530b88943"
+    sha256 cellar: :any, arm64_tahoe:   "52b1f589173a4a114b38cf91b022d9e03d6aeb9f001d175d31d4eb87172d6827"
+    sha256 cellar: :any, arm64_sequoia: "32995c66368e45d0f8a44e375246d2ff797ac51d341466b5fa3eb666f981327b"
+    sha256 cellar: :any, arm64_sonoma:  "4da9253e4513fba3522df0888269d6413fc92cf9a2c44c177d73fa316469e44b"
+    sha256 cellar: :any, sonoma:        "600e616a00f2431da6b021afd198fc6a0cda5e8d4d264cab094075b8a79aeed9"
+    sha256 cellar: :any, arm64_linux:   "b3076b6986d6e92d1d85875b332beefbf0b303e4a0670fb170ca0b4c9350096c"
+    sha256 cellar: :any, x86_64_linux:  "33f8546a96d76d563739f330858e92379b15d2065b0eced8820b339785b7000f"
   end
 
   depends_on "cmake" => :build

@@ -31,6 +31,8 @@ class Adplay < Formula
     depends_on "alsa-lib"
   end
 
+  deny_network_access! [:build, :postinstall]
+
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
     # SDL output works better than libao

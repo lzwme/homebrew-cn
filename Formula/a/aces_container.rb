@@ -24,6 +24,8 @@ class AcesContainer < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 
+  deny_network_access!
+
   def install
     # Workaround for newer Clang
     ENV.append_to_cflags "-Wno-c++11-narrowing" if DevelopmentTools.clang_build_version >= 1403

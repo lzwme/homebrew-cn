@@ -21,6 +21,8 @@ class Admesh < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d06691e618a708b7c30459acdc5e70f2abed11d5a2f8c7622b1fc6f8ef353f8"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",

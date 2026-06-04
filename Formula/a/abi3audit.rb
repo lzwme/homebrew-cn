@@ -118,6 +118,10 @@ class Abi3audit < Formula
     sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
+  # Although the virtualenv_install_with_resources uses the package resources listed above,
+  # pip still needs to fetch the project's chosen build system via the network.
+  deny_network_access! [:postinstall]
+
   def install
     virtualenv_install_with_resources
   end

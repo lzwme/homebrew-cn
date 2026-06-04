@@ -11,12 +11,13 @@ class NodeAT20 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "cfab6d6c08ea8cef44130a4903d1c006686a837f4b69d3fb20b62577b3173ae3"
-    sha256 arm64_sequoia: "cba9df52d19c5c11b09ecba5b8a8e38e9a3db1aa2a2ccfed849ada4a73c224b0"
-    sha256 arm64_sonoma:  "29fb1d06f966cb33effea66a8319ae85666731eb0899bb4eedf7d63e7de05d4b"
-    sha256 sonoma:        "fc5d3c9b95e5151bce6dc7bcfb71e8adbaa185c620b31f8293e6fff946e3d9ca"
-    sha256 arm64_linux:   "61d93138a6ceea6f3e69541930d741281a915ff05d202762af2a44d00ad07529"
-    sha256 x86_64_linux:  "1f6bd6a359bd340669d24fbd562a073cf296c5aa5a25be432feb45c4fd5a351c"
+    rebuild 1
+    sha256 arm64_tahoe:   "ecdcb6357c02e973fe7bed1b85fa142166e743aecde394046a4278e8d7acfa65"
+    sha256 arm64_sequoia: "76829440870e8535079d7b600a15e3c2c66f31499981ac91bd4f6b7a10af91ed"
+    sha256 arm64_sonoma:  "b85e5e17778b5d29753616507b9c54bc1a98f07094f1deecd829b1310098f0f2"
+    sha256 sonoma:        "51df24b083cec403185e1cc43b79e2845600a3c8936340ae6578cac011b6ce81"
+    sha256 arm64_linux:   "220c54e9d8cf434846cd20392f6e73b156e5e67a51f1b24d99fa70585579dbda"
+    sha256 x86_64_linux:  "6f741ad57671a0997c93de0bbfeef6d22769eadd7de4ca6f333aeedbfc901f8f"
   end
 
   keg_only :versioned_formula
@@ -87,9 +88,7 @@ class NodeAT20 < Formula
 
     system "./configure", *args
     system "make", "install"
-  end
 
-  def post_install
     (lib/"node_modules/npm/npmrc").atomic_write("prefix = #{HOMEBREW_PREFIX}\n")
   end
 
@@ -117,5 +116,7 @@ class NodeAT20 < Formula
     assert_path_exists bin/"npx", "npx must exist"
     assert_predicate bin/"npx", :executable?, "npx must be executable"
     assert_match "< hello >", shell_output("#{bin}/npx --yes cowsay hello")
+
+    assert_equal HOMEBREW_PREFIX.to_s, shell_output("#{bin}/npm config get prefix").chomp
   end
 end

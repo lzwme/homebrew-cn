@@ -1,18 +1,18 @@
 class IntelliShell < Formula
   desc "Like IntelliSense, but for shells"
   homepage "https://lasantosr.github.io/intelli-shell/"
-  url "https://ghfast.top/https://github.com/lasantosr/intelli-shell/archive/refs/tags/v3.4.1.tar.gz"
-  sha256 "b5c1f0be3212f8818122fbb1a011c5990cbba0ff005b26d793ee065136563843"
+  url "https://ghfast.top/https://github.com/lasantosr/intelli-shell/archive/refs/tags/v3.4.3.tar.gz"
+  sha256 "de3846628332a19740f372f9e6cd3ce84d1d079de75dbbdfa1e92715a08d0f9a"
   license "Apache-2.0"
   head "https://github.com/lasantosr/intelli-shell.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f1def62e97bd8b80353677f9cf28300a41f5e93e6f36d8e117841fc81518538b"
-    sha256 cellar: :any,                 arm64_sequoia: "ba515a6e8e991f5d221ca586d53f9ca6056010305ed5bf2af40a3c2ebe056d46"
-    sha256 cellar: :any,                 arm64_sonoma:  "461b990b141a88175075993117f22a9f1012fe2e233fb74b070526e0fc386236"
-    sha256 cellar: :any,                 sonoma:        "48ddd3027f10de5c7180207299347f27e40752b37d5f0b4823a93f3a9687171c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "46bb96298b8d895db04ed5a8fafb21ebb31c229cdb6fc30f99936fb1ea1a891d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48a264c5a5f815074e7be18caa3e2c1d5462f29005bdb8916a818f470f8eae5c"
+    sha256 cellar: :any, arm64_tahoe:   "88374861d3d0c47640d805d76968f578aa65b19c5587608b34e0ec36db242c61"
+    sha256 cellar: :any, arm64_sequoia: "d523d7de4149f9312578a3e09bdc5178c4d06ceb15cd01b4f3ff18acb1a60931"
+    sha256 cellar: :any, arm64_sonoma:  "7c0c02e34c5f46749cf362452eb7de4dec8397b10dd58af751dcbbe06c501572"
+    sha256 cellar: :any, sonoma:        "6a948965fd995aaf064d1a0a2024ca3e2294f6f9f3bb7d9f97d31558891e82f9"
+    sha256 cellar: :any, arm64_linux:   "f7494b2486d25220707ff8b56ad6be32aa666b488314e4dcf79e79988a2f2f78"
+    sha256 cellar: :any, x86_64_linux:  "31e8cf8e18ebbb3ad87a123fe7bf4675ca4db9b776fb19ecbb887e039be150eb"
   end
 
   depends_on "pkgconf" => :build

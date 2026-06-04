@@ -814,10 +814,6 @@ class KimiCli < Formula
     # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
     ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}" if OS.mac?
 
-    # hatch does not support a SOURCE_DATE_EPOCH before 1980.
-    # Remove after https://github.com/pypa/hatch/pull/1999 is released.
-    ENV["SOURCE_DATE_EPOCH"] = "1451574000"
-
     # Turn on shell completions option
     inreplace "src/kimi_cli/cli/__init__.py", "add_completion=False", "add_completion=True"
 

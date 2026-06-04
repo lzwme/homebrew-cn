@@ -3,31 +3,30 @@ class Pgcli < Formula
 
   desc "CLI for Postgres with auto-completion and syntax highlighting"
   homepage "https://pgcli.com/"
-  url "https://files.pythonhosted.org/packages/98/9d/193acc7d3236e5941c02044787bd33afb668d33f72375d1ba3b4f5e92128/pgcli-4.4.0.tar.gz"
-  sha256 "bd5f8d68af28fd69551a3cb48a2849cad5f6854aa48022e9d98c6236d109eeae"
+  url "https://files.pythonhosted.org/packages/e0/ca/b081f0ae381425f87dd751b449c33aca7398c2183799fc56501fe7c26975/pgcli-4.5.0.tar.gz"
+  sha256 "9dce07f5b628068156256cb818e5191a773afe6eeb7054f210fa892813625e3e"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21497c1cc9dab6467ec1626493e20ec9d125ae131137d14169322ed241711623"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2730c5acf8b4d6ab516cc4e009b62226a72db8ce6efa80e5c025a580437f9c40"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2d4a6109c09a0d6e84d62c07f0879112843c526352ac73385fbf31f135b61ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ec716c423c5c6600be75653bf73d1f771f7f64f5aab84d64ac499aa677404ab3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7491c1ae2d418107138a85b53904388a4cc00c9e1da5659bf67a0c7c0cbb3c2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93e80655202fa910c69e7ba8bf388eae479d0ad3e467dcb050a31b31484fbb80"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06c83ddbb81fa0e4d307a2398b21c5cb9a2f44a5b415e3c6a85e74acc4b1028a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3d50f821bcfd38fcc49c0f7c930055537919dcf1811e385d7845b438966f8af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3064eb2ace850c26aebbfd1a9eb687571aba4d777293bb10436387afa21b9ea"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6686534b552e5361011ba4509a17e0216b5566ceabda76cc847a94d27ce3245b"
+    sha256 cellar: :any,                 arm64_linux:   "951722d37b58ee9bf328392f1b6ed96936e1e3d271fc1ca5eb23c9141abe16ac"
+    sha256 cellar: :any,                 x86_64_linux:  "cfaea142b4106f8d6b6f81a4bba46b3144096193bc2a12878528ee400b34105b"
   end
 
   depends_on "libpq"
   depends_on "python@3.14"
 
   resource "cli-helpers" do
-    url "https://files.pythonhosted.org/packages/c6/fd/b2ac313fa77176cf784ef27cdfc041c691a2f166b2af28a6f9182e556e5b/cli_helpers-2.12.0.tar.gz"
-    sha256 "599dd10b2bdca3f50e272c3d265eefada78659f22559d2304461ee8ab400d490"
+    url "https://files.pythonhosted.org/packages/5e/d1/f83191ae4a8f6584876bc63e5e1ae39360f4de7ed74cce76f266ef9d5d10/cli_helpers-2.15.0.tar.gz"
+    sha256 "c2c5a1a5fd6a8ad51b1b99e80685cd04c006b0e29cacf4c24b1ba8a440ea8d4d"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
+    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
   end
 
   resource "configobj" do
@@ -46,8 +45,8 @@ class Pgcli < Formula
   end
 
   resource "psycopg" do
-    url "https://files.pythonhosted.org/packages/d3/b6/379d0a960f8f435ec78720462fd94c4863e7a31237cf81bf76d0af5883bf/psycopg-3.3.3.tar.gz"
-    sha256 "5e9a47458b3c1583326513b2556a2a9473a1001a56c9efe9e587245b43148dd9"
+    url "https://files.pythonhosted.org/packages/db/2f/cb91e5502ec9de1de6f1b76cfbf69531932725361168bb06963620c77e2e/psycopg-3.3.4.tar.gz"
+    sha256 "e21207764952cff81b6b8bdacad9a3939f2793367fdac2987b3aac36a651b5bc"
   end
 
   resource "pygments" do
@@ -76,8 +75,8 @@ class Pgcli < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz"
-    sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
+    url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
+    sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
   end
 
   def install

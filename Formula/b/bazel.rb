@@ -1,8 +1,8 @@
 class Bazel < Formula
   desc "Google's own build tool"
   homepage "https://bazel.build/"
-  url "https://ghfast.top/https://github.com/bazelbuild/bazel/releases/download/9.1.0/bazel-9.1.0-dist.zip"
-  sha256 "229e999cec4f408946d368af6c33c5137fe999e9966538562f8c90b0de7aa0ad"
+  url "https://ghfast.top/https://github.com/bazelbuild/bazel/releases/download/9.1.1/bazel-9.1.1-dist.zip"
+  sha256 "a6f66e26c8f4ca04fa83c796a404eff0544bd78336fbbcd122c9e10cbec4a5d7"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Bazel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6f6a09f7221133c823ca220d2b0df8c1ad8ab575217c43a0fa9cc32385fec305"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1a47b64aba0218706b54479eb7c91ff4e7b6543f7aed0b7e429289d47e2201f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6b8f2b416d552e1df5180db51ccfb550a354be41f896bcc7e6349c69a22e695"
-    sha256 cellar: :any_skip_relocation, sonoma:        "60a20b60523a016d0b5f8fa6bd23366bb7c785faca5247515342be0c8dd74883"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f2e54e56604c18dabdfa524e4a18c24fe3557e7d781b1d1c45ff0ea1f9cde3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e2aa4c1e062880351eb6266a02e0805a2cda1aee5cb381c075529665c780f56"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d2357021cd84bef04db22bdbd20b5e201b5afb914769734d3dc0ac51bde990f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6da0f97fb7c27935a03956b723a1646411fc6a29d1a5a054f002d0752fa1c2a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5c73ab7f2161c03f58c94f8bff88872053f631c5fd2cee27a7d109600cd5e03"
+    sha256 cellar: :any_skip_relocation, sonoma:        "70858f8e66c1e6a6bc0dcede9c169fb61c9060060ea292637fbe38a781c245d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1927333c7c66cd1632a004bdf34ad05a3fca0aa7be2ffa68c34b402d7a42f52a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "278ab2d481cbcdfc8efdbaeaa250ec26e0d7752d7f70ec82c02b78aa228afcce"
   end
 
   depends_on "openjdk@21"

@@ -10,12 +10,13 @@ class Otterdog < Formula
   head "https://github.com/eclipse-csi/otterdog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3edc8254af2d0380401fcae86cad8d8f8a15826b8d8fbf29e60366aad08c3c03"
-    sha256 cellar: :any,                 arm64_sequoia: "19a16e55f7c3fc596a3d045b5de1a4e02aa96575db6ab88dc00f89786e9b1b73"
-    sha256 cellar: :any,                 arm64_sonoma:  "e65d75a45983ed4a2a3403273296b75ec2bc687e59458b5e0032020abf03a4df"
-    sha256 cellar: :any,                 sonoma:        "371b83bfe4d196f3602af4b10254187c693113fb0c60f69bcd01427591076571"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "107f0cf649742a473a9442f86a517833a7971462dd62fe72dd4c3076c9148dc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d9fa69b23aaa08f1472a0a284c8428f3680b7833371d46c17b28337ca5c61c1"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "9506eebaf5801c19e54f09592986b3e1c473feb0b050d92558480446560cb457"
+    sha256 cellar: :any, arm64_sequoia: "ecb29c72afcace58e19d59bd80767b543b14ee869bada5686e965afa8ba32f3a"
+    sha256 cellar: :any, arm64_sonoma:  "c31ab8df84c63595146fe5131ae33963a32d9e1ee03c6b1ea25aa82774997907"
+    sha256 cellar: :any, sonoma:        "4a8bf038920065a7a8be9d4d69486735b49697dd33fc086e1710237bdee21207"
+    sha256 cellar: :any, arm64_linux:   "89b5524656f8e783eeaddc20ed1bdc5993d2a822a27b8747598f295de902d360"
+    sha256 cellar: :any, x86_64_linux:  "12ffc606e5291fc8bf8eb1a293ac57d4e38d2d53678238a2115b002887ba670a"
   end
 
   depends_on "rust" => :build # for rjsonnet
@@ -269,9 +270,6 @@ class Otterdog < Formula
   end
 
   def install
-    # hatch does not support a SOURCE_DATE_EPOCH before 1980.
-    # Remove after https://github.com/pypa/hatch/pull/1999 is released.
-    ENV["SOURCE_DATE_EPOCH"] = "1451574000"
     ENV["SETUPTOOLS_SCM_PRETEND_VERSION_FOR_PLAYWRIGHT"] = resource("playwright").version
     venv = virtualenv_install_with_resources
 

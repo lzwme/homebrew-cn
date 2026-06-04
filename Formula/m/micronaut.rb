@@ -1,8 +1,8 @@
 class Micronaut < Formula
   desc "Modern JVM-based framework for building modular microservices"
   homepage "https://micronaut.io/"
-  url "https://ghfast.top/https://github.com/micronaut-projects/micronaut-starter/archive/refs/tags/v5.0.1.tar.gz"
-  sha256 "fb6b62b5f204e194b160eab8a2c3c43c860574b441fdbede87f13ceaef63bdc5"
+  url "https://ghfast.top/https://github.com/micronaut-projects/micronaut-starter/archive/refs/tags/v5.0.2.tar.gz"
+  sha256 "e6815d58c00e5da7c7bbb3d984be124cbc2413b78017175d2ce3fbd26d1d9cd5"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Micronaut < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e181976653c76b0f87ff574a42cb6924c254f14506407bcb4324a1e92039765"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cffe8ece263b25e64cc84ff5a7d82eb07f04e2d56b16b51e3641254fbcefc317"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb0b5aa05bd0df5c7fd2122f6f6c521e6a1b6753f8bb15c9ebde5f32d24f14a2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b875d93f046ec4e087e6b9fd2cd8cd4d79739143a0395eea2dab78f0a07cf023"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ecd98cc1396ac7cd3fd4dd20e96a249c02320ed868f76ca741656d56b99a8b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d3917e01e94c1ad6cc4d1bbe8c8d57b1990a430f45ace9e42d5f2a0d41ea4e7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5fd99e27e33ccfc5416f59741dd789e45326bdba3426b8994712447e410a0db1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0bde8c7b9302b46127a21d52ed1b8306a70856c5e48f584ca91aaa85d0192c0e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74fc80f9be699271a2b398781cc63193f2ab9bad093df579ee9cbf9cc795373c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "21bb976303641da1eeff64136250b5eb4516a58f5afe29cb4620f58c455ed9ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fce21de872fca74290d78a10ff91aa8ae23153bbb25df171a13f5b716091a4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "487531f1d04372a47ab68692ef3ef6d9ec2f848b7b192fc78e7ce7942c12e680"
   end
 
   depends_on "gradle" => :build

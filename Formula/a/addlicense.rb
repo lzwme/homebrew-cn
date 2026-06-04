@@ -19,6 +19,8 @@ class Addlicense < Formula
 
   depends_on "go" => :build
 
+  deny_network_access! [:postinstall, :test]
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end

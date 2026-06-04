@@ -17,6 +17,8 @@ class Act < Formula
 
   depends_on "go" => :build
 
+  deny_network_access! [:postinstall]
+
   def install
     system "make", "build", "VERSION=#{version}"
     bin.install "dist/local/act"

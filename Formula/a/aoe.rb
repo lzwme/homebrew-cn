@@ -1,18 +1,18 @@
 class Aoe < Formula
   desc "Terminal session manager for AI coding agents"
   homepage "https://github.com/njbrake/agent-of-empires"
-  url "https://ghfast.top/https://github.com/njbrake/agent-of-empires/archive/refs/tags/v1.9.5.tar.gz"
-  sha256 "84effe9ccd322e140d9fc9f4856babaed4b99bd7176f2229e0f7293323590916"
+  url "https://ghfast.top/https://github.com/njbrake/agent-of-empires/archive/refs/tags/v1.10.0.tar.gz"
+  sha256 "358f1a989ba60d5004160afb82e80954f6af3e39e8eef7b2f6836142d0854745"
   license "MIT"
   head "https://github.com/njbrake/agent-of-empires.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "93d6bac81057de6eef19db8bdaadbd3e486414189a71d9799f39281ef2bc09ac"
-    sha256 cellar: :any, arm64_sequoia: "ca70a9c15d00b5b46c159dd86fef4723b1d1faf7b6653309f7b707c61f46fede"
-    sha256 cellar: :any, arm64_sonoma:  "f1cb2d3b4e2c78af1ddef0e3f3f51dcefefcddea49db141a817b22e8462e99f1"
-    sha256 cellar: :any, sonoma:        "3cbfc0544d612c73260619b9a0794fd5e31e63cb001e8282610e920041b6e706"
-    sha256 cellar: :any, arm64_linux:   "2791f86be7c85e77bdc7ffaa71c0e14c47e1722509717e2fdb5a5a4addc82995"
-    sha256 cellar: :any, x86_64_linux:  "46822045cab2fbb5efccde27db6090e817a7f34b984064f0b20136043add1925"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19c5c1cca38582f5ab70833af531eee976c57f755635b5ab4b10fd00be94ce4e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd253e0d784b0fd692f568bc0516709547216c205ed3d4cc61ac6dcc192d155c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a58fad9ebbdcc15632c1ff0efaa64456ae6d030104401f01ba41c5ce1260d030"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b4f3c0c50538c1ade7176d5d3d704043791b82be4fb31b38dcc9e2ba25d7355a"
+    sha256 cellar: :any,                 arm64_linux:   "f778424a9dd9a347e9696b9beb88dcb268d3a4ebd777ff975d1778319a9e2245"
+    sha256 cellar: :any,                 x86_64_linux:  "424a91402baea7779a1bc470a3f8a112c0446c73985bb7f1c80de6919dd1012f"
   end
 
   depends_on "node" => :build

@@ -19,6 +19,8 @@ class Abcmidi < Formula
     sha256 cellar: :any,                 x86_64_linux:  "9a7f2b7ded54f642f6ace343cfe92fdf9566f4f6d25f350d0abd46f857c65d27"
   end
 
+  deny_network_access!
+
   def install
     # Work around incompatible function pointer types with newer Clang
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500

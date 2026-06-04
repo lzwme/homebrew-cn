@@ -8,18 +8,18 @@ class Duplicity < Formula
   url "https://files.pythonhosted.org/packages/16/96/fc07257297b433c19162764f8c3b8649cf788201890c2563476570e1167e/duplicity-3.0.7.tar.gz"
   sha256 "464245217285012e8e0c74ad3edf16be7ff4801caa5272745f10d93a2a7de44e"
   license "GPL-2.0-or-later"
-  revision 11
+  revision 12
 
   # FIXME: Fails trying to resolve lxml as needs `libxml2`/`libxslt` installed
   no_autobump! because: "`update-python-resources` cannot determine dependencies"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "133921e1e665c8efe5852c36d51f5ba32f5fdbaddbbc3f532c95371e3be739fa"
-    sha256 cellar: :any,                 arm64_sequoia: "406906412e1d30b9bd3a8efb2becbf08ac807467758c263c6303965f08a09173"
-    sha256 cellar: :any,                 arm64_sonoma:  "e4b354f8f689659f74ff405a6aa191e8b2c8f0a225b20acec9b9ab51e5794afc"
-    sha256 cellar: :any,                 sonoma:        "47273518b300479cc9283e414225bc647271cc04038e725e98be53ac4632fbf8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3022c84667c168a7baa1d2898e84142eb49089e2d2f1a562f81ba517ed6402a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ede900799f47cf7cc4a6ee2a315a3ffc3a5975adec027378b1dd8c737e269fe0"
+    sha256 cellar: :any, arm64_tahoe:   "138a3701109e31ad697f2960768a58ebdb79a231eb8d66f2e6311d6a083fe231"
+    sha256 cellar: :any, arm64_sequoia: "bc0369ebd667ef1fdb8ff280ba1ca1cbff374ff9254b5dd053802bcbd52c2243"
+    sha256 cellar: :any, arm64_sonoma:  "698658ff91a7f82d4c2cd2e0cbc94b70ddb5f47a223fb7b539fb796fd591d779"
+    sha256 cellar: :any, sonoma:        "60f4b652f92b1276b780280502851bccd89a4f421b1f877a9c6e28323b193e2e"
+    sha256 cellar: :any, arm64_linux:   "8218d74df610b964fb36b730bd2be61ec6b3501bed01755cce39e586bc2bb191"
+    sha256 cellar: :any, x86_64_linux:  "dcd5d275f63bb841348c981b61e3c6f277972e1137488a4ba559cb9d7773f87b"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -72,18 +72,18 @@ class Duplicity < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/1e/02/195d56d36b900ba28a75fc4c47c858a16237811acfde8f22f6de08236dae/boto3-1.43.11.tar.gz"
-    sha256 "3567c6a1f31d8e6bf151c95f76a2b1f239cce243a768a31747c2ba141c9a0570"
+    url "https://files.pythonhosted.org/packages/97/da/229987ebb70daf5928f959aa8f4dd77dfcf425e6b0e7ff03aaef61ccc333/boto3-1.43.19.tar.gz"
+    sha256 "8b84704719dd3960ac12a8f37d9ff5adb853715baa9742f84fdbe2de0305c4cb"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/e9/fa/4bec16fa5a4cde7b593e549238bfeb8ed1bdba9d427888a18c460a1f2352/botocore-1.43.11.tar.gz"
-    sha256 "d7d479cc2809ec2728f2898521003adfb79bfe6a4615c59dfd222ec52b0cee6b"
+    url "https://files.pythonhosted.org/packages/e2/a7/298986789785b74a954e2347114993be7e6b070417159125a6865f2687b6/botocore-1.43.19.tar.gz"
+    sha256 "18ac2fdd76c89b940707eb10493ff58678adad337d03215caec2d408ccd43cc0"
   end
 
   resource "boxsdk" do
-    url "https://files.pythonhosted.org/packages/2a/65/9be6dc935456c78deb6bb70404d1fb3863645fcbc54f5c0dcceddff4803e/boxsdk-10.9.0.tar.gz"
-    sha256 "109766c728c8bd0c164df9f6409b508779775577ec4a654a5647b2633ca2943a"
+    url "https://files.pythonhosted.org/packages/74/be/cad794e956732c7b5433c7977d9a586c68a8891689d50234ceebb050bee1/boxsdk-10.10.0.tar.gz"
+    sha256 "37523472558f5c28ea485287194296c800bcc5fd71ce8fec4dd5dd8ff7b8a20b"
   end
 
   resource "chardet" do
@@ -99,11 +99,6 @@ class Duplicity < Formula
   resource "clint" do
     url "https://files.pythonhosted.org/packages/3d/b4/41ecb1516f1ba728f39ee7062b9dac1352d39823f513bb6f9e8aeb86e26d/clint-0.5.1.tar.gz"
     sha256 "05224c32b1075563d0b16d0015faaf9da43aa214e4a2140e51f08789e7a4c5aa"
-  end
-
-  resource "debtcollector" do
-    url "https://files.pythonhosted.org/packages/ad/57/1bbe02be744995408d944cf46b8c818cf072873064b1cd3c79c11618b216/debtcollector-3.1.0.tar.gz"
-    sha256 "278a45608cf16e79c0ae10851d869185c6b78f86610df8f27a451a18c1fec732"
   end
 
   resource "dropbox" do
@@ -132,8 +127,8 @@ class Duplicity < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/6d/f3/34ef8aca7909675fe327f96c1ed927f0520e7acf68af19157e96acc05e76/google_api_python_client-2.196.0.tar.gz"
-    sha256 "9f335d38f6caaa2747bcf64335ed1a9a19047d53e86538eda6a1b17d37f1743d"
+    url "https://files.pythonhosted.org/packages/22/09/081d66357118bd260f8f182cb1b2dd5bd32ca88e3714d7c93896cab946fc/google_api_python_client-2.197.0.tar.gz"
+    sha256 "32e03977eda4a66eafc6ae58dc9ec46426b6025636d5ef019c5703013eddd4e5"
   end
 
   resource "google-auth" do
@@ -167,8 +162,8 @@ class Duplicity < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
   end
 
   resource "invoke" do
@@ -257,8 +252,8 @@ class Duplicity < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/a2/f7/139d22fef48ac78127d18e01d80cf1be40236ae489769d17f35c3d425293/more_itertools-11.0.2.tar.gz"
-    sha256 "392a9e1e362cbc106a2457d37cabf9b36e5e12efd4ebff1654630e76597df804"
+    url "https://files.pythonhosted.org/packages/de/1d/f4da6f02cdffe04d6362210b807146a26044c88d839208aec273bb0d9184/more_itertools-11.1.0.tar.gz"
+    sha256 "48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d"
   end
 
   resource "msgpack" do
@@ -312,8 +307,8 @@ class Duplicity < Formula
   end
 
   resource "oslo-utils" do
-    url "https://files.pythonhosted.org/packages/3b/c0/65cc8b02eec2fdfb1af8d195b9b528dda5f80fac48f5d997bc90ce689863/oslo_utils-10.0.1.tar.gz"
-    sha256 "21bfc29bb4c1cd9afb4ef741fb8e39468fa5485e60717f4f90f3ad3dce8a1f22"
+    url "https://files.pythonhosted.org/packages/29/b4/fc9575a7a3d8f929ce2d24184069b0f1f45b7d550b2f6de4f5749a0a12e3/oslo_utils-10.1.0.tar.gz"
+    sha256 "e6bb17b5fb9000c5f3d472623f290b9bf3fea04f2c33de99a726ffd9e782ba99"
   end
 
   resource "packaging" do
@@ -382,8 +377,8 @@ class Duplicity < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/c2/27/a3b6e5bf6ff856d2509292e95c8f57f0df7017cf5394921fc4e4ef40308a/pyjwt-2.12.1.tar.gz"
-    sha256 "c74a7a2adf861c04d002db713dd85f84beb242228e671280bf709d765b03672b"
+    url "https://files.pythonhosted.org/packages/3b/81/58d0ac84e1ef3a3843791d6954d94c0b33d526c75eeb1efbce9d0a4c4077/pyjwt-2.13.0.tar.gz"
+    sha256 "41571c89ca91598c79e8ef18a2d07367d4810fbbd6f637794879baf1b7703423"
   end
 
   resource "pynacl" do
@@ -477,8 +472,8 @@ class Duplicity < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/9b/ec/7c692cde9125b77e84b307354d4fb705f98b8ccad59a036d5957ca75bfc3/s3transfer-0.17.0.tar.gz"
-    sha256 "9edeb6d1c3c2f89d6050348548834ad8289610d886e5bf7b7207728bd43ce33a"
+    url "https://files.pythonhosted.org/packages/e0/1f/12417f7f493fc45e1f9fd5d4a9b6c125cf8d2cf3f8ddbdfab3e76406e9d6/s3transfer-0.18.0.tar.gz"
+    sha256 "3760b8b7ec1315da54048b2d626276732bee4300d054d492d4e1d43e20d4ecbd"
   end
 
   resource "secretstorage" do
@@ -529,11 +524,6 @@ class Duplicity < Formula
   resource "wcwidth" do
     url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
     sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
-  end
-
-  resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/2e/64/925f213fdcbb9baeb1530449ac71a4d57fc361c053d06bf78d0c5c7cd80c/wrapt-2.1.2.tar.gz"
-    sha256 "3996a67eecc2c68fd47b4e3c564405a5777367adfd9b8abb58387b63ee83b21e"
   end
 
   def install

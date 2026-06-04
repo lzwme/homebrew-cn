@@ -34,8 +34,9 @@ class Goproxy < Formula
     begin
       server = IO.popen("#{bin}/goproxy -proxy=https://goproxy.io -listen=#{bind_address}", err: [:child, :out])
       sleep 1
+      sleep 2 if OS.mac? && Hardware::CPU.intel?
       ENV["GOPROXY"] = "http://#{bind_address}"
-      system "go", "install", "golang.org/x/tools/cmd/guru@latest"
+      system "go", "install", "golang.org/x/tools/cmd/goimports@latest"
     ensure
       Process.kill("SIGINT", server.pid)
     end

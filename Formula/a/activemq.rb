@@ -18,6 +18,8 @@ class Activemq < Formula
   depends_on "java-service-wrapper"
   depends_on "openjdk"
 
+  deny_network_access!
+
   def install
     if OS.mac?
       wrapper_dir = "macosx"

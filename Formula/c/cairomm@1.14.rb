@@ -1,8 +1,8 @@
 class CairommAT114 < Formula
   desc "Vector graphics library with cross-device output support"
   homepage "https://cairographics.org/cairomm/"
-  url "https://cairographics.org/releases/cairomm-1.14.5.tar.xz"
-  sha256 "70136203540c884e89ce1c9edfb6369b9953937f6cd596d97c78c9758a5d48db"
+  url "https://cairographics.org/releases/cairomm-1.14.6.tar.xz"
+  sha256 "7e0d5c7f29175d573a03ab5c45aef63f48dd91a5caf335a404cd763e4b7cea4a"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -11,16 +11,12 @@ class CairommAT114 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:    "3c84812ac04258b3fe766341479b99b1e28a9572b995e7bd33e3184fdb29055a"
-    sha256 cellar: :any, arm64_sequoia:  "87bd872e7129feb2db9ca965fe5e065ebef30f6a196f0c80d8012b60cef66bf2"
-    sha256 cellar: :any, arm64_sonoma:   "cf8e7aa143ab206a8986997621217fc40e219d23a88e09d5a3d1ee1ce58d78c2"
-    sha256 cellar: :any, arm64_ventura:  "76dbfad402d8573c6acfdbbf785ce70eb13e626318aa0c8f241864b43a8c8ee2"
-    sha256 cellar: :any, arm64_monterey: "bd41c2293acda52bcef8fa7332b90860007ecb37b864677f59d624f1fff457df"
-    sha256 cellar: :any, sonoma:         "48cd095943b2001726bd9b8f678424725e73c3ac4d088e61cff65b973641ae0c"
-    sha256 cellar: :any, ventura:        "a642e54afb60394f1dc138b3611b0c729f09d9aa0217a351823b1ae75816bcf2"
-    sha256 cellar: :any, monterey:       "4ef3f6806bae703ef82e302f33c28d96136d3bbbdef56c36f9032cf6aaa10c46"
-    sha256               arm64_linux:    "d23cd3b782f7fbaa3bdf7445334de4f170ab6349feefc443e3362944515a0190"
-    sha256               x86_64_linux:   "4fce5fb84ea0095ce2f9e0996c926fc8bb54f55a458a9eb1be50a40241f8a6e5"
+    sha256 cellar: :any, arm64_tahoe:   "6657f08fd9b8775951f39f9c97a1cc917e3ae77e9bd4a4aa9df3ca55cfade320"
+    sha256 cellar: :any, arm64_sequoia: "e33f2d072d63f550e21c87789221905a84f4d9437719edf3120723dd63dc7a3f"
+    sha256 cellar: :any, arm64_sonoma:  "ef5168a5a841031385526072af775570265b9647617682b4e61cdbc3e0c4ee94"
+    sha256 cellar: :any, sonoma:        "bf98c509c631f27d850fd822af7027f02acbc08ddf56cfd30d741bfc29f96e3c"
+    sha256               arm64_linux:   "d2784e171727d5b1848c9bbd02fdc3f023f3b682f62c0b9356f7a4a3ee177ecb"
+    sha256               x86_64_linux:  "bc2b29bfdd4694ce73af6df152c134d9d6b289ba801de6580ed7b430038e8e54"
   end
 
   depends_on "meson" => :build

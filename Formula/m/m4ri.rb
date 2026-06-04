@@ -3,7 +3,7 @@ class M4ri < Formula
   homepage "https://github.com/malb/m4ri"
   url "https://ghfast.top/https://github.com/malb/m4ri/releases/download/20260122/m4ri-20260122.tar.gz"
   sha256 "7e033ca1fd36be8861e2f67d9d124c398fc0d830209bb0226462485876346404"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "86ce9e345f247c809a92ddd82507f17b08e045257d79bfc7ec46ad4586a84bb4"
@@ -22,7 +22,7 @@ class M4ri < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <m4ri/m4ri.h>
 
       const size_t m = 1024;
@@ -71,7 +71,7 @@ class M4ri < Formula
           return -1;
         }
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lm4ri", "-o", "test"
     system "./test"
   end

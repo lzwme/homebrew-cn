@@ -22,6 +22,8 @@ class Adns < Formula
 
   uses_from_macos "m4" => :build
 
+  deny_network_access!
+
   def install
     system "./configure", "--prefix=#{prefix}", "--disable-dynamic"
     system "make"

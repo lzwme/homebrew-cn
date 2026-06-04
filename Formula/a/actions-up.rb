@@ -11,6 +11,8 @@ class ActionsUp < Formula
 
   depends_on "node"
 
+  deny_network_access! [:postinstall]
+
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")

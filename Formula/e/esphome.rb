@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/08/80/07a46db883b6ca06ffb551f036c4f1c666cd7af9bb71e2df3d9d883f094f/esphome-2026.5.1.tar.gz"
-  sha256 "2fb524b207c435375205760bf8f4f586a47aad0213322d0e6cdf8267b84d6a4b"
+  url "https://files.pythonhosted.org/packages/e2/e0/f86009bcec8d92d37d0e4add0191157815acb06d7d8183f073ae85503fb8/esphome-2026.5.2.tar.gz"
+  sha256 "d1b9cfd58ed07b9fd86e358b500d38d65087b37dcf24252ebf9af011d05c2649"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -12,12 +12,12 @@ class Esphome < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7edabcceb4869fa875d297677895b1c63608dbd2ee66c809ee0a8ea2128c1beb"
-    sha256 cellar: :any,                 arm64_sequoia: "f2d86585c730937aab7bf8dc5f7a77a555cab9793f69c70544567e17268d1d2e"
-    sha256 cellar: :any,                 arm64_sonoma:  "7a91e2b92bbd90518746bca8e985c0097b312085d0e86db47c2c1bfef8abdc1e"
-    sha256 cellar: :any,                 sonoma:        "0a0460fd1aa05c45c8ea0840943af2a0973171a576e7f92c2232afe358e09bac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c858620683f211e249c449ea0f1ac9eb3ae289d1ebfb2c9ef4d3a589868643a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c5283f4a886fbc15b8bb40050b2ba1545a177756071317e07741631de1085b6"
+    sha256 cellar: :any, arm64_tahoe:   "3e057ea5f746d9e32588163aedd485801b1a9a01e76563a7c8c742d5ecfddcf7"
+    sha256 cellar: :any, arm64_sequoia: "d05fa609ef2ae9061d49494c5957c8269ee2746d7c43639f505d92ded65191f8"
+    sha256 cellar: :any, arm64_sonoma:  "d44a43d95ce7e515ba461bc4f0ad14252153ebd62b3bbf87ff8bcd35ec5afdd6"
+    sha256 cellar: :any, sonoma:        "f43bdb89b328a4fb03cf8a9937353466f7346071c50a5aef8df3cc76d25a075c"
+    sha256 cellar: :any, arm64_linux:   "b55edb870527af2a048742ef3ed060933eaf6beb5706b8a8d76a20f77de092de"
+    sha256 cellar: :any, x86_64_linux:  "4e3bde067ad3d888d84629cd3bce95baa2fa00728dbfc32ccb3c0e1cccef76cc"
   end
 
   depends_on "rust" => :build
@@ -126,8 +126,8 @@ class Esphome < Formula
   end
 
   resource "dbus-fast" do
-    url "https://files.pythonhosted.org/packages/4c/f0/7d26505ee2a53bc0c47aef4182609b6e1e18845be35ce9a0c6ea2c21f232/dbus_fast-5.0.15.tar.gz"
-    sha256 "a992fcbefb609ad2eebb881c18eeb429bfe814ebe51e535a8710386f54dbdb94"
+    url "https://files.pythonhosted.org/packages/c3/a3/7dec17915085ee776c14a211c1defc58c8f0e51ea235bc8e750f1744ceca/dbus_fast-5.0.17.tar.gz"
+    sha256 "c8dbe4c30adeee61d2c84005a1ad1bccfd2961fee7d995e876db5117f502a20f"
   end
 
   resource "esphome-dashboard" do
@@ -161,8 +161,8 @@ class Esphome < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
-    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
   end
 
   resource "ifaddr" do
@@ -231,8 +231,8 @@ class Esphome < Formula
   end
 
   resource "pyelftools" do
-    url "https://files.pythonhosted.org/packages/b9/ab/33968940b2deb3d92f5b146bc6d4009a5f95d1d06c148ea2f9ee965071af/pyelftools-0.32.tar.gz"
-    sha256 "6de90ee7b8263e740c8715a925382d4099b354f29ac48ea40d840cf7aa14ace5"
+    url "https://files.pythonhosted.org/packages/a3/11/767522582afab1b884d277de0e6e011640cb9d7292a38694b4b1a1df1ae8/pyelftools-0.33.tar.gz"
+    sha256 "660d82dcbeb8e83d1702bd97f223f761625da06111c0cc988eac6b8ab0c1b61f"
   end
 
   resource "pygments" do
@@ -241,23 +241,23 @@ class Esphome < Formula
   end
 
   resource "pyobjc-core" do
-    url "https://files.pythonhosted.org/packages/b8/b6/d5612eb40be4fd5ef88c259339e6313f46ba67577a95d86c3470b951fce0/pyobjc_core-12.1.tar.gz"
-    sha256 "2bb3903f5387f72422145e1466b3ac3f7f0ef2e9960afa9bcd8961c5cbf8bd21"
+    url "https://files.pythonhosted.org/packages/2a/e8/a6cc12669211e7c9b29e8f26bf2159e67c7a73555dc229018abf46d8167a/pyobjc_core-12.2.tar.gz"
+    sha256 "51d7de4cfa32f508c6a7aac31f131b12d5e196a8dcf588e6e8d7e6337224f66d"
   end
 
   resource "pyobjc-framework-cocoa" do
-    url "https://files.pythonhosted.org/packages/02/a3/16ca9a15e77c061a9250afbae2eae26f2e1579eb8ca9462ae2d2c71e1169/pyobjc_framework_cocoa-12.1.tar.gz"
-    sha256 "5556c87db95711b985d5efdaaf01c917ddd41d148b1e52a0c66b1a2e2c5c1640"
+    url "https://files.pythonhosted.org/packages/6d/cc/927169225e72bab9c9b44285656768fb75052a0bc85fdbca62740e1ca43c/pyobjc_framework_cocoa-12.2.tar.gz"
+    sha256 "20b392e2b7241caad0538dfde12143343e5dfe48f72e7df660a7548e635903dc"
   end
 
   resource "pyobjc-framework-corebluetooth" do
-    url "https://files.pythonhosted.org/packages/4b/25/d21d6cb3fd249c2c2aa96ee54279f40876a0c93e7161b3304bf21cbd0bfe/pyobjc_framework_corebluetooth-12.1.tar.gz"
-    sha256 "8060c1466d90bbb9100741a1091bb79975d9ba43911c9841599879fc45c2bbe0"
+    url "https://files.pythonhosted.org/packages/52/df/bee7ba216f9fb513710aac1701b78c97b087b37fca8ec1806f8572e0bbb3/pyobjc_framework_corebluetooth-12.2.tar.gz"
+    sha256 "8b4e5ca99953c360c391a695b0782a5328fcecafd56fdf790ad709e932feb306"
   end
 
   resource "pyobjc-framework-libdispatch" do
-    url "https://files.pythonhosted.org/packages/26/e8/75b6b9b3c88b37723c237e5a7600384ea2d84874548671139db02e76652b/pyobjc_framework_libdispatch-12.1.tar.gz"
-    sha256 "4035535b4fae1b5e976f3e0e38b6e3442ffea1b8aa178d0ca89faa9b8ecdea41"
+    url "https://files.pythonhosted.org/packages/1b/fe/e23be301e46c30450955cdb096f16f6a86e7609787a4b8225ec24d6fdc9d/pyobjc_framework_libdispatch-12.2.tar.gz"
+    sha256 "4a41879ef7716b73d70f2e40ff39353d686cbc59d48c93217ed362d2b2baf1ba"
   end
 
   resource "pyparsing" do
@@ -296,8 +296,8 @@ class Esphome < Formula
   end
 
   resource "rich-click" do
-    url "https://files.pythonhosted.org/packages/04/27/091e140ea834272188e63f8dd6faac1f5c687582b687197b3e0ec3c78ebf/rich_click-1.9.7.tar.gz"
-    sha256 "022997c1e30731995bdbc8ec2f82819340d42543237f033a003c7b1f843fc5dc"
+    url "https://files.pythonhosted.org/packages/f7/ea/21e4867ea0ef881ffd4c0550fc21a061435e50d6324bcd034396633cbc18/rich_click-1.9.8.tar.gz"
+    sha256 "4008f921da88b5d91646c134ec881c1500e5a6b3f093e90e8f29400e09608371"
   end
 
   resource "ruamel-yaml" do

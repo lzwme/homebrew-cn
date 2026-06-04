@@ -26,21 +26,13 @@ class F3d < Formula
   depends_on "cmake" => :build
   depends_on "alembic"
   depends_on "assimp"
-  depends_on "glew"
-  depends_on "jsoncpp"
   depends_on "opencascade"
   depends_on "vtk"
 
   on_macos do
-    depends_on "freetype"
-    depends_on "glew"
     depends_on "hdf5"
     depends_on "imath"
-    depends_on "libaec"
     depends_on "netcdf"
-    depends_on "tbb"
-    depends_on "tcl-tk@8"
-    depends_on "zstd"
   end
 
   on_linux do

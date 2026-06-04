@@ -28,6 +28,10 @@ class AdbEnhanced < Formula
     sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
   end
 
+  # Although the virtualenv_install_with_resources uses the package resources listed above,
+  # pip still needs to fetch the project's chosen build system via the network.
+  deny_network_access! [:postinstall, :test]
+
   def install
     virtualenv_install_with_resources
   end

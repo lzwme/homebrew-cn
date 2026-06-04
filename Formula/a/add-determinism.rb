@@ -24,6 +24,10 @@ class AddDeterminism < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # Although the virtualenv_install_with_resources uses the package resources listed above,
+  # pip still needs to fetch the project's chosen build system via the network.
+  deny_network_access! [:postinstall, :test]
+
   def install
     ENV["RUSTFLAGS"] = "-C link-arg=-lselinux" if OS.linux?
     system "cargo", "install", *std_cargo_args

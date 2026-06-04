@@ -31,6 +31,8 @@ class Adplug < Formula
     depends_on "texinfo" => :build
   end
 
+  deny_network_access! [:build, :postinstall]
+
   def install
     # Workaround for arm64 linux, issue ref: https://github.com/adplug/adplug/issues/246
     ENV.append_to_cflags "-fsigned-char" if OS.linux? && Hardware::CPU.arm?

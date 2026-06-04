@@ -16,6 +16,8 @@ class AbiDumper < Formula
   depends_on "universal-ctags"
   depends_on "vtable-dumper"
 
+  deny_network_access!
+
   def install
     # We pass `--program-prefix=elfutils-` when building `elfutils`.
     inreplace "abi-dumper.pl", "eu-readelf", "elfutils-readelf"

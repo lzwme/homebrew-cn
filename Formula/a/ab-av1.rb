@@ -19,6 +19,8 @@ class AbAv1 < Formula
   depends_on "rust" => :build
   depends_on "ffmpeg"
 
+  deny_network_access! [:postinstall, :test]
+
   def install
     system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"ab-av1", "print-completions", shells: [:bash, :zsh, :fish, :pwsh])

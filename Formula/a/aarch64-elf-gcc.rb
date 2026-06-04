@@ -30,6 +30,8 @@ class Aarch64ElfGcc < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     target = "aarch64-elf"
     mkdir "aarch64-elf-gcc-build" do

@@ -24,6 +24,8 @@ class Acpica < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "m4" => :build
 
+  deny_network_access!
+
   def install
     # ACPI_PACKED_POINTERS_NOT_SUPPORTED:
     # https://github.com/acpica/acpica/issues/781#issuecomment-1718084901

@@ -39,6 +39,8 @@ class Abyss < Formula
     depends_on "libomp"
   end
 
+  deny_network_access! [:build, :postinstall]
+
   def install
     # Help link to libomp on macOS
     ENV["ac_cv_prog_cxx_openmp"] = "-Xpreprocessor -fopenmp -lomp" if OS.mac?

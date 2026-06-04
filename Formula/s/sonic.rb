@@ -1,17 +1,17 @@
 class Sonic < Formula
   desc "Fast, lightweight & schema-less search backend"
   homepage "https://github.com/valeriansaliou/sonic"
-  url "https://ghfast.top/https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.5.1.tar.gz"
-  sha256 "578fb553a064f4343297462408e0841ccb00e3c90003ec1201c1ff27651d3d48"
+  url "https://ghfast.top/https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "52fb402422dfc8cbf42826309f0836bd255916b9caab1eb8990424d1ca603147"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2f073d0e2a67773d38113c298b8d1993eebfa2b0b3fcca536830191a2da047f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e12384125994ff6c832ea246d8229f7d07915f5de9c0beb752af77ec728f56f3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62ab22e8378010be388adcff073fb95394b30e29e37af1f870d13fa5d0e4777a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2831e350c6998ed702e55f4a4771cad1680dcecd7231e7cbc6fdda5f79fbd9cf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9baf69f7a10e95efd51f63a6cba93bc6aa7674d526ed1c4bf52f585b14e0f941"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfd40fdf74bb19ea133b8e6d147c176da288a9aad460fe0eb2f20a5bdb885104"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e628ba0b3fd23ff4f6437130f74327f8d4837214f12722fdc8bd80c13b1a2300"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc876ad1a89d8e5620e74ca54dbe31daa28996c1df0aab8b1a4abc1cde1cf4e1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f555e6a5d85c4d4129d75e33fdc185ca502adc9c4faaaf081ef372395e56a76"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eafc2c84ce00855eda2a20c3a0b52a60ae040286919ecf9e6c162dafd6bdbed6"
+    sha256 cellar: :any,                 arm64_linux:   "7aa741fba67bf375b8df82e790ecd5045bd240b80421a4489f2de71bd75239a7"
+    sha256 cellar: :any,                 x86_64_linux:  "d5e833de13dd121136808bcd6f3f163962c9b065be7dcf523139c473c6e3ea79"
   end
 
   depends_on "rust" => :build
@@ -19,7 +19,7 @@ class Sonic < Formula
   uses_from_macos "llvm" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "server")
     inreplace "config.cfg", "./", var/"sonic/"
     etc.install "config.cfg" => "sonic.cfg"
   end

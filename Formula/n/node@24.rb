@@ -12,12 +12,13 @@ class NodeAT24 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c487f4c8dcb5f6a81e3a3ac074d6f0df8e6e0e23160e901af98d6ef0f01d8b08"
-    sha256 cellar: :any,                 arm64_sequoia: "d0208bdc66f721afb0847ee46611523316bfbb28c28c704a4426d1702bf2d230"
-    sha256 cellar: :any,                 arm64_sonoma:  "80ddd5c54e7d4b7c059c7cc65b3c987ae18943df3cb4cdf01fb51b90419c113f"
-    sha256 cellar: :any,                 sonoma:        "f7dbfd735308a6f63ab41f1af83224c0ce5182576e2fd5eb9eae405438a3d522"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ccc8c7a133d1c88ba6aa8f76b88896feab769e83c1eb44a2b509a447daa2776"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c170a3f4e9809ce06db9739014b7ed4fe95e4446789d7a3b019da325b5bc44f"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "5121cfd30e74636fb2e68f049f0547f93d2d5c4332c6538d77ce875857c175f7"
+    sha256 cellar: :any, arm64_sequoia: "8158cdc05f05f520d70a5dc47818aa3dc88760d01959265455d2fff3733073cb"
+    sha256 cellar: :any, arm64_sonoma:  "0d239da024c3a3782d737a09f61aad51575b01e502ad9e29b591eb6d8badcecc"
+    sha256 cellar: :any, sonoma:        "c4bf23a92f6a4521e725c66963bf8f08d143271f37e9d6b4a764faa85d2fb17b"
+    sha256 cellar: :any, arm64_linux:   "ea62f644e77cb3b007effa3b7c06f8b177c3737abbf6c843326654d8fa021e5b"
+    sha256 cellar: :any, x86_64_linux:  "38d332bad403d573569a0551f00cd06051c1863b740d1d2c538af5cdf824efc3"
   end
 
   keg_only :versioned_formula
@@ -153,9 +154,7 @@ class NodeAT24 < Formula
 
     system "./configure", *args
     system "make", "install"
-  end
 
-  def post_install
     (lib/"node_modules/npm/npmrc").atomic_write("prefix = #{HOMEBREW_PREFIX}\n")
   end
 
@@ -183,6 +182,8 @@ class NodeAT24 < Formula
     assert_path_exists bin/"npx", "npx must exist"
     assert_predicate bin/"npx", :executable?, "npx must be executable"
     assert_match "< hello >", shell_output("#{bin}/npx --yes cowsay hello")
+
+    assert_equal HOMEBREW_PREFIX.to_s, shell_output("#{bin}/npm config get prefix").chomp
 
     # Test `uvwasi` is linked correctly
     (testpath/"wasi-smoke-test.mjs").write <<~JAVASCRIPT

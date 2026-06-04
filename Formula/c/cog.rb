@@ -21,13 +21,8 @@ class Cog < Formula
   end
 
   depends_on "go" => :build
-  depends_on "python@3.14" => :build
 
   conflicts_with "cocogitto", "cogapp", because: "both install `cog` binaries"
-
-  def python3
-    "python3.14"
-  end
 
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
