@@ -3,17 +3,17 @@ class Cronboard < Formula
 
   desc "Terminal-based dashboard for managing cron jobs locally and on servers"
   homepage "https://github.com/antoniorodr/cronboard"
-  url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "32ac5b6853fe8a7f0114932c6d912d012862b602c3cacce8c75d9c520d2ac3a8"
+  url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "c4802a9bf22b7eff1e5726f91e03ceff7d502ada363ba43a55225682a79f2131"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1e8a71337fcc4451c2619867e5a943a35579b8509c35bf326b41e8f01805925c"
-    sha256 cellar: :any,                 arm64_sequoia: "f05642389ca742352da7f953b4b16353b0b8cba5b81570c0e04b4feb20949a69"
-    sha256 cellar: :any,                 arm64_sonoma:  "761ac15e810edd3e720a8daede2f7a4d5e5879756599c34a8f2007f7dfd5222d"
-    sha256 cellar: :any,                 sonoma:        "59d958cd73f3cb29855dffaa237b22b8fe7857ed480624faba0f69894ee653f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63b1f412edfd29da794dd5a82639706b6d303988b06891164e74350a24210e92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4057d5ed11d3577725a9e3e1b27bba21b73d3f5aa3463d2f97bf52c67c8a2c6a"
+    sha256 cellar: :any, arm64_tahoe:   "ffb8bb9c04114f383a0d4050f5a120c5ed66e7a3dd7bb272e7d3f145e34c2ef1"
+    sha256 cellar: :any, arm64_sequoia: "20ac0cbded70db9a9a20aff84e78c5506b0dfe897f180f1d4b526581ecb9dc7d"
+    sha256 cellar: :any, arm64_sonoma:  "8d985a127a9def7e4896c8b6e4b0a1b922da2e02b6a88b52eaa26a4a6bb2f79c"
+    sha256 cellar: :any, sonoma:        "104650e3d404fe3cbad70c175fe43367ae70147b6f09cf22faa90413bd62cede"
+    sha256 cellar: :any, arm64_linux:   "9a4e4d62d8e46fe6fd858f27b667caa110ac224163d06e21f50c9266fc6b9e55"
+    sha256 cellar: :any, x86_64_linux:  "e5a20be5c8b7ce7dc0bb73f9b6f1a05d77da0734643cc10b0253ba32e896545e"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -31,8 +31,8 @@ class Cronboard < Formula
   end
 
   resource "cron-descriptor" do
-    url "https://files.pythonhosted.org/packages/f2/ce/cd3cc454ea73e8a38be79723b925611d2556037f938372ad594373f187b4/cron_descriptor-2.0.8.tar.gz"
-    sha256 "7e487efe14a99a3c1c23bb5302bb75c8bf5d54bca82931bf71f5ae2855939772"
+    url "https://files.pythonhosted.org/packages/91/75/b44b05ae7d1e49b59a27a917c44e04ce9aa4cebdd05dac42ba7df06a91b4/cron_descriptor-2.1.0.tar.gz"
+    sha256 "ecddb8b2f6c5286398949aaefe185364666af74f33b01877c61378e1fd4e38e6"
   end
 
   resource "croniter" do
@@ -71,8 +71,8 @@ class Cronboard < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
-    sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
+    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
+    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
   end
 
   resource "pygments" do

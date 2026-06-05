@@ -2,8 +2,8 @@ class Colima < Formula
   desc "Container runtimes on MacOS (and Linux) with minimal setup"
   homepage "https://colima.run"
   url "https://github.com/abiosoft/colima.git",
-      tag:      "v0.10.2",
-      revision: "1afe7c4771501eaae2dc1cbe506c4a67609ed151"
+      tag:      "v0.10.3",
+      revision: "00f6c297e92a82c04a4ab507db0a61435650d7e8"
   license "MIT"
   head "https://github.com/abiosoft/colima.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Colima < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26bb71917e2fee7cc8673f441d3e022dccf3f85a150b10b234a8ef6e49810806"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01b6ef5ead03112e93da7794f30612d92252c46827c5ecffbbbd66aba5fe2599"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e266f985d9e61ff71695d5c5a35d59bdf468497e1c5dbc1fcfbbcba852e8f6c4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c7045a74d38b5f0f02d1f42034e425a9d1795b6a12e5b371a1d99e323696d6b8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f5d6bd6c0cf519d0f32c96318be9a1815bcb915a2717287dfb0fb0dadc5577e"
-    sha256 cellar: :any,                 x86_64_linux:  "65414ffb494d8fe9cf1ebbffe48f5c06c114adf1a8323619ff6c49d28e007fef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a9dfd1fa0a4aee62fef75974f39f174e4da774f7ba495c43dd0bcc23633381b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56ea218ab2b408e940c4d690a547c082b5be3cd3cf581ddbfe0f3a0166434ae1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9ad2203b00fde63c5060b236277fcb8e041b8e78f325efc433b701a55a881c3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "47bdc2c0e4c973fd07e0855800aca386d77db7d22063069210e32a5169e76209"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49146e4d5b549033572324cc922404cd783951c11d725a31c8cdea1d38bd1aa0"
+    sha256 cellar: :any,                 x86_64_linux:  "e97b386468c0b511c53253c31a5f34cbfdf7bb976a5db656bcf31ebe90edbe63"
   end
 
   depends_on "go" => :build

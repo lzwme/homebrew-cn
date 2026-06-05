@@ -11,32 +11,43 @@ class X3270 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5eaa66210bd1a24f0aaa2636301f0a6886a31b96a244708861383d00b4ec0d48"
-    sha256 arm64_sequoia: "f4fd0e4943283791da2f444454fc598a3ad8a185142d1d97659ccef54f16f6b7"
-    sha256 arm64_sonoma:  "5b2dd7e19c4e313d15979367de0bc23267192dec8109dc4f42b9851e4ef6f5d9"
-    sha256 sonoma:        "a8484001d4dc7017037da1946adfe25d79a59aa62e955d268f8142baa65a0453"
-    sha256 arm64_linux:   "7e3bb3c8cdf506cc4256a6b32526c2bf8757dab5bdfbc4e2b2409d36bb1a3644"
-    sha256 x86_64_linux:  "b339cd5bc13a6ae5c4f5567e700d1b1fa8b65f52c2218170553b6983cc523ad2"
+    rebuild 1
+    sha256 arm64_tahoe:   "40bacb8fca3aaec8c2c541906da72f5901e48fc9c32e08df7d9e8955ddba3177"
+    sha256 arm64_sequoia: "619e4f821224699da21abbbf4ce8c5038bdb22bec06734be199045a4c5504a40"
+    sha256 arm64_sonoma:  "a3fa3dfdcb1b8a3c10922c1f930b049d88b050330b982d96ada2e54bed2391c5"
+    sha256 sonoma:        "38a014060680924480e757610fe29aeff72f5bd0fce56032c76d3044fe71b2fd"
+    sha256 arm64_linux:   "5fa38afa032d8c01d4ba0340d6bd429636fa63d2266a7ce4ca2428e6dd1f0276"
+    sha256 x86_64_linux:  "cfc79e9762353f5b22bbf0bf4a5066e3d4df54cb7e0bec61d31944bfcf426512"
   end
 
   depends_on "openssl@3"
   depends_on "readline"
-  depends_on "tcl-tk@8"
 
   uses_from_macos "python" => :build
   uses_from_macos "expat"
   uses_from_macos "ncurses"
 
-  def install
-    ENV.append "CPPFLAGS", "-I#{Formula["tcl-tk@8"].opt_include}/tcl-tk"
+  on_linux do
+    depends_on "bdftopcf" => :build
+    depends_on "mkfontscale" => :build
+    depends_on "libx11"
+    depends_on "libxaw"
+    depends_on "libxmu"
+    depends_on "libxt"
+  end
 
+  def install
     args = %w[
-      --disable-x3270
       --enable-c3270
       --enable-pr3287
       --enable-s3270
-      --enable-tcl3270
     ]
+    args += if OS.mac?
+      %w[--disable-x3270 --enable-tcl3270]
+    else
+      %w[--enable-x3270 --disable-tcl3270]
+    end
+
     system "./configure", *args, *std_configure_args
     system "make", "install"
     system "make", "install.man"

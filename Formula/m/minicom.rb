@@ -1,8 +1,8 @@
 class Minicom < Formula
   desc "Menu-driven communications program"
   homepage "https://packages.debian.org/sid/minicom"
-  url "https://deb.debian.org/debian/pool/main/m/minicom/minicom_2.10.orig.tar.bz2"
-  sha256 "90e7ce2856b3eaaa3f452354d17981c49d32c426a255b6f0d3063a227c101538"
+  url "https://deb.debian.org/debian/pool/main/m/minicom/minicom_2.11.1.orig.tar.bz2"
+  sha256 "87cf0da91af0531357cd61b8e1906b907edd2c9ef82f9ae74c277e1893d0f98c"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class Minicom < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "33a6f5dbbe7ca27534ae675480528a30c197ceee9bfe12a6662b88d20b923c11"
-    sha256 arm64_sequoia: "80e14a35d53c8bee7865f9dca76d9b674b5790d18d3dd1b468847ed99970c96f"
-    sha256 arm64_sonoma:  "00ee0220e0307094c74374572ffbca318368f33083b9881b22783d36d4a12ca6"
-    sha256 arm64_ventura: "f004fb2db42fbdd149fc40eae5bc653b15860f06506f2d91f3be7b7e3b62f4e1"
-    sha256 sonoma:        "ae861c3e3530b8dd98ddd8256aa243a3205a6dac85e04f9351f5fc157d3948bf"
-    sha256 ventura:       "7e524e53bc69ffd181757cff6564264674e1bc2c46255792c58b3265f9fe61dc"
-    sha256 arm64_linux:   "4b8d28ea107b2c8577fa25a16f3607f4b85bcc230d67657b2c4e90db42466159"
-    sha256 x86_64_linux:  "5de5bb5448b6444e3ddcdcbb615bd96fb138df6d216c565e661e101ebd507208"
+    sha256 arm64_tahoe:   "a7ccffde0108b847384bfd1b59b65de15b2fa0038243b4b89929469f9d8e3a31"
+    sha256 arm64_sequoia: "c1046b7a4d8540dded35f2d6c758132ca368ff643ace8a43830c93933dde4211"
+    sha256 arm64_sonoma:  "40e8ee3f381fd2f7d947d3d225d90a3ae7ad8d57da02a62f17e982c027594ebb"
+    sha256 sonoma:        "87c70d667abc34630459c7f77fcb4ccbaf6999c99a0bf41b2c8c64e3fe9cefa2"
+    sha256 arm64_linux:   "a0e36a528830ec4e3c82e15d2e33c73cfc58aaf6f4ece7bfe6994f31e48c43dd"
+    sha256 x86_64_linux:  "7d3b7a1bfe3f23bc11c7b8b437d0673b6b86363e9c92b39ae5ccfadf164a9737"
   end
 
   head do
@@ -26,6 +24,8 @@ class Minicom < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
+
+  depends_on "pkgconf" => :build
 
   uses_from_macos "ncurses"
 

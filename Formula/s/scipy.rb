@@ -44,10 +44,6 @@ class Scipy < Formula
     end
   end
 
-  def post_install
-    HOMEBREW_PREFIX.glob("lib/python*.*/site-packages/scipy/**/*.pyc").map(&:unlink)
-  end
-
   test do
     (testpath/"test.py").write <<~PYTHON
       from scipy import special

@@ -53,6 +53,7 @@ class Vim < Formula
 
   conflicts_with "ex-vi", because: "vim and ex-vi both install bin/ex and bin/view"
   conflicts_with "macvim", because: "vim and macvim both install vi* binaries"
+  conflicts_with "vim-classic", because: "vim and vim-classic both install vi* binaries"
 
   def extra_deps = deps.select { |dep| dep.build? && dep.test? }
 

@@ -27,7 +27,7 @@ class ExVi < Formula
   uses_from_macos "ncurses"
 
   conflicts_with "macvim", because: "both install `vi` and `view` binaries"
-  conflicts_with "vim", because: "both install `ex` and `view` binaries"
+  conflicts_with "vim", "vim-classic", because: "both install `ex` and `view` binaries"
 
   def install
     # Fix compile with newer Clang

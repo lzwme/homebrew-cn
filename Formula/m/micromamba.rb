@@ -1,8 +1,8 @@
 class Micromamba < Formula
   desc "Fast Cross-Platform Package Manager"
   homepage "https://github.com/mamba-org/mamba"
-  url "https://ghfast.top/https://github.com/mamba-org/mamba/archive/refs/tags/2.6.2.tar.gz"
-  sha256 "cf085e4bbc5a3b2ec9c58761586287431453b604f75a87ea5990e252cab026fe"
+  url "https://ghfast.top/https://github.com/mamba-org/mamba/archive/refs/tags/2.7.0.tar.gz"
+  sha256 "56f378f3cc91ec9efb22881fa0d405eebdcabf6cc2180662a62c65f16df300dd"
   license "BSD-3-Clause"
   head "https://github.com/mamba-org/mamba.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Micromamba < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "927863984a6955fc7af8df1b26bb726990333357a9fb5845d45362021098dd94"
-    sha256 cellar: :any,                 arm64_sequoia: "fe5278ef1fbdec7d7ec23c216fe4a8992f7491c274cb4bb9b118d815e3ac17a1"
-    sha256 cellar: :any,                 arm64_sonoma:  "b4f0e19ff35f7babc3bb3fd4c30a06bf18e86c3341db2b1bf017482492fbda04"
-    sha256 cellar: :any,                 sonoma:        "d65d89a3e057a879cd6fbc73cb91aa50de4ba61babee1f1c07ac951eb5eddd30"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67f89bd8aae6d648b177f5a13ab7af4d864c9e74b7f6c11a5ad28e161efafd11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f46713829a5ffc5136e0be69363d25ca0901c30d0bfaed0a5387ecf6d663201c"
+    sha256 cellar: :any, arm64_tahoe:   "04c3bd6ec5fdc76b1a50a475f8c19dc95d927e8578ea260c656c4fa88ec19f3a"
+    sha256 cellar: :any, arm64_sequoia: "4443efb9218c232d169b6e96da5b1f67f6da864618b1c08d3b6433648e7188e3"
+    sha256 cellar: :any, arm64_sonoma:  "25d811044977570753f999e09f8aff4926d527e3e7a94967caec76f2a41d35ac"
+    sha256 cellar: :any, sonoma:        "d284b29c0f84a20abf6c94eb2168f16685f5d21f6399e7d5ad5fa9d51c6f342e"
+    sha256 cellar: :any, arm64_linux:   "4ce98e3e413e7fa3ca0ebcbf15605315ccb6f4be83f4da1f410ccf156e161797"
+    sha256 cellar: :any, x86_64_linux:  "a62322c97ff9f620d8b153cee46246468de02d5367ad87af5bebf0fd6cb28f3d"
   end
 
   depends_on "cli11" => :build

@@ -1,8 +1,8 @@
 class Lisette < Formula
   desc "Language inspired by Rust that compiles to Go"
   homepage "https://lisette.run"
-  url "https://ghfast.top/https://github.com/ivov/lisette/archive/refs/tags/lisette-v0.2.17.tar.gz"
-  sha256 "4da67408ed23b01ff7f446c0defe57c62630740916b16807c3ce0b54879914f6"
+  url "https://ghfast.top/https://github.com/ivov/lisette/archive/refs/tags/lisette-v0.3.0.tar.gz"
+  sha256 "603240495851c8975e29377f2131ad8eb34130811932b596dd002f2664205e39"
   license "MIT"
   head "https://github.com/ivov/lisette.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Lisette < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "671c1e06bfa0f66d7a5033e39eb05f6d47942a0c814572322c1347b7200afe37"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6259a9522e5abb8bd8b2a9b8d6f04349c2b57d5cc8a2a7d58190ff629d4c3673"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84a50b2d0c140077609940f97265ffb9051f93cfdfb76860ea4f2b6758859155"
-    sha256 cellar: :any_skip_relocation, sonoma:        "af744900f467945a3ae93e530ad21c60bf39008b0322a39855b4fba572fbabbf"
-    sha256 cellar: :any,                 arm64_linux:   "a4dacd4df34e36200cebae8cbe9389d69d6a2108a80cda8fb73733717649b8ab"
-    sha256 cellar: :any,                 x86_64_linux:  "5bd4033789991d51aa4cce5ea2e2322af6ad5542b130536a817319711cecbb55"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0cf66cf6cb8bd7d300a777857fe06080c52bd2b56efb0bfb292c80a1858c696"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "259700c8f69f04a81b8cdc690934fa776f8b57ffd7beffa5e40760e1a6e679b2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e1b05c5b172f3872016f9e48ac2f242a035c907f91067cd9e5f1aa599d2ef77"
+    sha256 cellar: :any_skip_relocation, sonoma:        "52eefd19f195c8da757d7a8760b78d2a49efb0731846021655fda934e3fca58e"
+    sha256 cellar: :any,                 arm64_linux:   "f2825554eef7a1c72ed856f52eb4aeda706b238315357b9dd2f154adc0efcb0c"
+    sha256 cellar: :any,                 x86_64_linux:  "facdad21d48cd7dde9858d85dc36f245f25edff8e1f387ebf63efb25c42105ad"
   end
 
   depends_on "rust" => :build

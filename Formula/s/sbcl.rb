@@ -12,19 +12,17 @@ class Sbcl < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f6438b0ff5f4264bd10ffbfda00dc04b98152a021a91b76df05eb4ed49d114dc"
-    sha256 cellar: :any, arm64_sequoia: "66e2d15622f353c172c03ba051eb664eebabb26870d2806ca34efd469a5f110f"
-    sha256 cellar: :any, arm64_linux:   "0b608df7127b6ff44f80f962cdde2e8c73f6ea1ff6a96508898fe3ae18daf3d8"
-    sha256 cellar: :any, x86_64_linux:  "a7509542c1ea7cd79c935e1463077b2ddfcc91e67e4a0fb7e5a24eda8f8ec7d9"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "d83ae56bfe2a99778119834125191a6e44a76a6565f1c1d0be67fd6523c060c2"
+    sha256 cellar: :any, arm64_sequoia: "38c848a6886690ee54a5441f77a6b3580f881f3d0b02bb16b48ffca77011b773"
+    sha256 cellar: :any, arm64_sonoma:  "88f7b071b70fcd7af0818b015d75a5a30bc5726bfc912436ec10687c7f5faa59"
+    sha256 cellar: :any, sonoma:        "20cb98356f17afb98d69c9ea1f42cfc4e03a493c4c847ae42005d848944c0ead"
+    sha256 cellar: :any, arm64_linux:   "da6cb66f75e79943d27fa45fc55ff97aa65ee18362bf28b2c753049315b684d1"
+    sha256 cellar: :any, x86_64_linux:  "d92e42e8935af3d40c539195ca034a05fbf37f44e41332451809c29aabaa53a9"
   end
 
   depends_on "ecl" => :build
   depends_on "zstd"
-
-  # `ecl` does not support older versions
-  on_macos do
-    depends_on macos: :sequoia
-  end
 
   def install
     # Remove non-ASCII values from environment as they cause build failures

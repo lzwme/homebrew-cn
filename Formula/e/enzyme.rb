@@ -1,18 +1,18 @@
 class Enzyme < Formula
   desc "High-performance automatic differentiation of LLVM"
   homepage "https://enzyme.mit.edu"
-  url "https://ghfast.top/https://github.com/EnzymeAD/Enzyme/archive/refs/tags/v0.0.263.tar.gz"
-  sha256 "00d1304fcdee6bbf1f28014b14ea7dd494a0fb12025e279c98c792616ace9562"
+  url "https://ghfast.top/https://github.com/EnzymeAD/Enzyme/archive/refs/tags/v0.0.264.tar.gz"
+  sha256 "4c4a3148777d6b72e96693cb91d248fccdc25e323875e02cf58b2e598b1754a1"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/EnzymeAD/Enzyme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "97e3eb07fd75ee9668df1d1bb8da38f5a778cf3eeec0e6655dabd611529a852f"
-    sha256 cellar: :any,                 arm64_sequoia: "5d1d79975a10fd49a785f3111190e5fdaa275d6cb16bf0d52f157a7dfd9c5aa7"
-    sha256 cellar: :any,                 arm64_sonoma:  "c366ecc5d0388f3ec630f6e8ecd93164e7a7d6f13028bd8caf73495783755084"
-    sha256 cellar: :any,                 sonoma:        "4223844e2e2ff34f68a3b6ed91bd85a490526f42642283ab263910340a26559c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cee2a4b5eb4075ac91c5ada67520abae9255cf5ee4a690f3e09efd31e6402e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "661112e9cf29042200273a50a06ebad46e1bcacc043f89b6b4f7d8ae45d2eb22"
+    sha256 cellar: :any, arm64_tahoe:   "343fa4409423c11a498a1479d446b4e2267ac5b7232a3d86887496684b68c7c2"
+    sha256 cellar: :any, arm64_sequoia: "2b01653159d6b906cdff7dea41479408dcf4ad0af98cee24fc8e298e8ffcf9b7"
+    sha256 cellar: :any, arm64_sonoma:  "fffe700fd83e3850aeec4fae4c203c8f0293b102f2b66bb357235ade1c6998ce"
+    sha256 cellar: :any, sonoma:        "390bebd17bc969015442df80058c40bc18952e35b3f9720bc7333d2355e169d1"
+    sha256 cellar: :any, arm64_linux:   "fd81892c464e12437c3d626672a8d46cbdfaae2d1612cb9bdc56a63a217e5fc5"
+    sha256 cellar: :any, x86_64_linux:  "cbbdd84d9c1f91b0d6df7103d2b48404f7e9b5d4b2123931860da95765dfbb19"
   end
 
   depends_on "cmake" => :build

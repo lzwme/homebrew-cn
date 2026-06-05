@@ -1,18 +1,18 @@
 class Pscale < Formula
   desc "CLI for PlanetScale Database"
   homepage "https://www.planetscale.com/"
-  url "https://ghfast.top/https://github.com/planetscale/cli/archive/refs/tags/v0.286.0.tar.gz"
-  sha256 "d9d81857176c78104927d2d71385e7a7e42fcff06959e47634fd5b803dfaffde"
+  url "https://ghfast.top/https://github.com/planetscale/cli/archive/refs/tags/v0.287.0.tar.gz"
+  sha256 "6b2675a61312d5604c1118f41217638442fed4f9c836a6a6862cf7dec77a64db"
   license "Apache-2.0"
   head "https://github.com/planetscale/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fb6468ad11a5efb966a6dbfaa9d4a1bc65e61b270c6ddb3aacf2124752b8ab64"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "316cbc8a561143d9c77d45225640dd0c6b3bb0d1028d3017b74bf7771bb78559"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d059af6c9af923c39d52cf824603f65c0bb639f55ea0ccfbea534b3ab4e0acba"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a649ccc00e99b9cecd21d9bea94f17012aac9560409e1c912bd27e92f83551aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9e5150719d54f8764a130a822eabb75e107743a2f5fb3f30e04d0a8d9448a6d"
-    sha256 cellar: :any,                 x86_64_linux:  "4a60b10cdff3656a63f87b73e713fe5e41128d9b8f037512bcf6748998465d2c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b08726f4e6eb3db964fecbaacb4d28e9de1ca535e5f6c6d00dbf28f12f321abb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36e6e90c093dd9a489afd89e131fba872c9c8187ee6f97205fae6ee345490a23"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "97e2ddb84861df10ae0a16d6d0a45f351ae1a5c656ed305a4741a4b84afead35"
+    sha256 cellar: :any_skip_relocation, sonoma:        "64694eb86f9ba7ed20f211ab3ce23c7ddd965145a1885a50312a3848fdf69b12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3fc5e78142eabdeab135ae881b325c201fe463d510433f55927493d9935c5c4"
+    sha256 cellar: :any,                 x86_64_linux:  "da3d7322a4e9154fbb951ad04324e6e5a5b51992a6895607e90daa0b2235bc17"
   end
 
   depends_on "go" => :build

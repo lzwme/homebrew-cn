@@ -3,18 +3,18 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/69/b6/10d463f7a48c0cba5f3bec1aca47c7f7ccc66af87ee1b011c97f986b6a61/vunnel-0.59.0.tar.gz"
-  sha256 "e488b68841e5418895c7f80d6b3aea9324ef7b5b1513e5b97af2d249a8b26b54"
+  url "https://files.pythonhosted.org/packages/a9/da/ebc522ddf6486b7a4427c370939f72a6c15842c969068af07ca5263d1cca/vunnel-0.60.0.tar.gz"
+  sha256 "c827f502928191c1ada666af156917011847fc51407f47a084cbe8ee8381a06b"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "123f95c11c1b7e9edf5ec4e1059b916e7c869b5fb2725480d66d7ac9e4b68de8"
-    sha256 cellar: :any, arm64_sequoia: "b435935298539201745c6e243639984d44de43c926c622a410877a94f7c47d72"
-    sha256 cellar: :any, arm64_sonoma:  "099c2608a2a7a6b1034c6568ea4a9263e03afa968e906341aefd2b6328d18c90"
-    sha256 cellar: :any, sonoma:        "3230981f1b5514dc0fde3380ab585512480347f61ce7a8a0986865c673c68111"
-    sha256 cellar: :any, arm64_linux:   "f7ee776d2bef569fa5f1e791a7340a0dc3fd9db01782077ccde1be7b406f5fdc"
-    sha256 cellar: :any, x86_64_linux:  "5eaeff08c8ff433ed35718894607692ecdb1cabd21dbf3e62eca9b3daf7122e9"
+    sha256 cellar: :any, arm64_tahoe:   "4ae65491edfc0a922610c9c774b35ab14cab218525c779dafe7f4085454e0225"
+    sha256 cellar: :any, arm64_sequoia: "b355012ab8d7ed8dd6181c33a8f52e17e9bd3b5122e2b1acceab0fba04dae12e"
+    sha256 cellar: :any, arm64_sonoma:  "68e9701085864a2029ff43b0204918053d35be21e06c90d9bbacc80b1f71340a"
+    sha256 cellar: :any, sonoma:        "ec4661390c8f16256aa409dfc0958ea3be344b02922b4454e0e0d8a214d5587d"
+    sha256 cellar: :any, arm64_linux:   "692a9a50f5ed6ef4f3840b08475e148b2445519ba8516c02c3520a6306d54176"
+    sha256 cellar: :any, x86_64_linux:  "3a111e03d8c0b4ef036c6177f4f305f1ab4f2d927bb7e4f800a1eb930d1e574c"
   end
 
   depends_on "rust" => :build
@@ -64,8 +64,8 @@ class Vunnel < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
-    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "ijson" do

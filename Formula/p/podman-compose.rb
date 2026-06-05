@@ -3,18 +3,17 @@ class PodmanCompose < Formula
 
   desc "Alternative to docker-compose using podman"
   homepage "https://github.com/containers/podman-compose"
-  url "https://files.pythonhosted.org/packages/24/91/b168a685ca6813ff9b467d76a7365a099aec16a1032b6edf39b0cd19f6c3/podman_compose-1.5.0.tar.gz"
-  sha256 "5cc09362852711ce5d27648e41cb5fd058ea5a75acbcdec2f8d0b0c114a18e8e"
+  url "https://files.pythonhosted.org/packages/1f/80/a6ada19562b12ed466dac5c3e02aef5ed7c8d0881864d80e0d94d0dc71f5/podman_compose-1.6.0.tar.gz"
+  sha256 "c83fd9bcbaa635100d581ce52a7a4b712ee0d457481232aff392efe3ebc5a217"
   license "GPL-2.0-only"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c4075c4404daf3f94d39235b1a40462bf49f5e4c4911e1d7e59ded6759b39a97"
-    sha256 cellar: :any,                 arm64_sequoia: "cd35948edbd452b89c207d31977627f5cac993d98a065a6da098b2ff9223e4fd"
-    sha256 cellar: :any,                 arm64_sonoma:  "f5333d43282d786736756fc0faff6ef7ca5243e980e82e87f6b4c2ae0b143006"
-    sha256 cellar: :any,                 sonoma:        "a20a968c26f5b4ebc8cac628503495bb11ab4762fb108ab744470a2bbb1f4649"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d128d731587aaa9d77b308ff9f8396dcfaaa6d18b346acedc1d552d49af71461"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1201faa12c2393e1254c9e122d6363177528e472f42c6c5a2056eb6d528de237"
+    sha256 cellar: :any, arm64_tahoe:   "97704e9501523ee9e8a58a863fbee60ac0a28d92dafda898c144787e70272d61"
+    sha256 cellar: :any, arm64_sequoia: "cb8a6a4c0109b92c3bb4380c6b25af0d013b2dc91806a23e28ddd28ab6a3558c"
+    sha256 cellar: :any, arm64_sonoma:  "20b45f872570323c8c7adb78792911df1f440d06022b8d62c3c2760b17766240"
+    sha256 cellar: :any, sonoma:        "bd14f22447ff9ebb5fbf2837a13e7cfc65c0b1dbaa6923df7a5b0b253192453b"
+    sha256 cellar: :any, arm64_linux:   "581329e037c0965d3e573193524d879bbbf53f1b10e2d03d9bb3b46fe6231701"
+    sha256 cellar: :any, x86_64_linux:  "dc6f0c240db6ec3a0e3bf878c1d955c997b18e4b89c1ccf21edf8a8e8f12c52a"
   end
 
   depends_on "libyaml"

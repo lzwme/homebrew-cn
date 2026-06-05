@@ -2,18 +2,18 @@ class SourceToImage < Formula
   desc "Tool for building source and injecting into docker images"
   homepage "https://github.com/openshift/source-to-image"
   url "https://github.com/openshift/source-to-image.git",
-      tag:      "v1.6.1",
-      revision: "906fe48afe651f5cc79e1f3f8c0a9110d45a845e"
+      tag:      "v1.6.2",
+      revision: "038c647b1a9046569c07e6159641786a67a990fc"
   license "Apache-2.0"
   head "https://github.com/openshift/source-to-image.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ecfaba218333be558d243c14f0eb058343e9db76a38d66ba09bc1b30a1b70455"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1296bca7775e383b42c3c44ba07da4147b501489e1b872901e3bf440b9976a1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "958b65fdbf6e6519bb94eb54a18672719f8c0330bb41a98769661e300e121c28"
-    sha256 cellar: :any_skip_relocation, sonoma:        "89e5a7f8027084ee2bd5319349a631df7b746b3b40e54c6037de162c65570aee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "960537ce378df0c19d3b7fb8464cab4ec3cd47011cec92f4fee2d6f5a28bcc25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f413097b782eea537b0e6faa1aaf4d4df37130e86de0240670aad3dd545e0a0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc60210d55e1b120ebfb37af3be797ee4ac9ea41d46db3d7415b290e49d8e803"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0358433a08fd678fedbcba82228db3d49da01a46989368c33cf1c4ab6ddc04fc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f94951dfd598acbd9d6c0bc86c8e3e73a2a33f2fb7997616dc97e9b61bfede83"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8e998d3c73938bfd1adaff8b89571746a19114d25a2b1bdad445b1b0f6500c9e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "704b4035043fed114078330f1a746b0c30045254475bded3b077384fa07085d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9983b5c7dcc291cdcf4896906e5c3c52495ef7b9e8c8c1382130266b7299c81a"
   end
 
   depends_on "go" => :build

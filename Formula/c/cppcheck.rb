@@ -1,8 +1,8 @@
 class Cppcheck < Formula
   desc "Static analysis of C and C++ code"
   homepage "https://sourceforge.net/projects/cppcheck/"
-  url "https://ghfast.top/https://github.com/danmar/cppcheck/archive/refs/tags/2.20.0.tar.gz"
-  sha256 "7be7992439339017edb551d8e7d2315f9bb57c402da50c2cee9cd0e2724600a1"
+  url "https://ghfast.top/https://github.com/danmar/cppcheck/archive/refs/tags/2.21.0.tar.gz"
+  sha256 "f028ff75ca5372738f3737c8b3e8611426a6526b6aea2ef01301ab0f5902f044"
   license "GPL-3.0-or-later"
   head "https://github.com/danmar/cppcheck.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Cppcheck < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "518523694d41423a85550fde51b3599dbe612a3489961b0b9103780b336bec2d"
-    sha256 arm64_sequoia: "54a03bd83c1b09be713a064c801a01be591d17727ed71549aacb7d6d7d29e7c8"
-    sha256 arm64_sonoma:  "9d4984fcc1648cccfafc5ad24678ccd4c31637696190d54debb32df35af39ec8"
-    sha256 sonoma:        "a87f5f73792a9c8b76daeb39c3327f6fb0ca2fa851edff328d67eba555cfc46d"
-    sha256 arm64_linux:   "a3811cd45325bb8d14fe93f42f2c7753c3f31415f4878e39d570d00b4f2e123c"
-    sha256 x86_64_linux:  "164b387841e454ba37f7521c9034fc6543221577e1a4df17a23f142410fb30cd"
+    sha256 arm64_tahoe:   "e7aa9fd6d8b26b46f2aa1c0a9ad725b441879f015bc9ea00f74897e70f174ade"
+    sha256 arm64_sequoia: "a4fcdca779d6a6816a96dca58cc116633559386f7c93be6aa9a35f98bd65e8c8"
+    sha256 arm64_sonoma:  "405485182f62e046556e95528496913ca5f88378f5d182ca1581b90832d6f66a"
+    sha256 sonoma:        "6c75ce3a821d3fe3e829551ad0132fddf532cc2df96d3d2ab54d78b8aaaa60b2"
+    sha256 arm64_linux:   "e0f23d00ee3ab5f90b22eb72b4d2f8c54c2e5493072fc4e16163369e75921433"
+    sha256 x86_64_linux:  "92afc58d79bf245bfeef31e25ea99eba731899d094e1bdb35be36964796af85a"
   end
 
   depends_on "cmake" => :build

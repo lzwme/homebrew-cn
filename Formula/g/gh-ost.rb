@@ -1,8 +1,8 @@
 class GhOst < Formula
   desc "Triggerless online schema migration solution for MySQL"
   homepage "https://github.com/github/gh-ost"
-  url "https://ghfast.top/https://github.com/github/gh-ost/archive/refs/tags/v1.1.9.tar.gz"
-  sha256 "0c5450e61cac940a6daaff22463ee6205b84c256b981ef047e0b4c430a25eb4b"
+  url "https://ghfast.top/https://github.com/github/gh-ost/archive/refs/tags/v1.1.10.tar.gz"
+  sha256 "70222d979e6d442befbbc11cdb16d420bc84ae7be277d79648c420e4458251c4"
   license "MIT"
   head "https://github.com/github/gh-ost.git", branch: "master"
 
@@ -12,12 +12,12 @@ class GhOst < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a1c71250037404630df76c18f252118facc474b5e2a6769c6558fa5f04a105cf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0f0e3f8dc64ab186702813b749dd5fec589dbc4be6476b8f6ae11f6a436b1ca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b4400397d24ec74720312b23d489c8b18d0e6c7086bc48c09a6f7b7d094a1197"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a874f959a202e74254c85181ec8d97b8036f735692b05cd6793785a4330efcc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a5a7358c74cb32e12754c3a2aad575f6cd6268b222a122b99522add63a2ef20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53e1ba3b16e29e6d0c3069a50adb4fb3d6bc7bb8e2c21a9146fa84bf48040c66"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "088bbdff67ea6ca883a89dfee690cd9f3eb9a53ceab47497c514d6f3d4ceeccc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4398593cdf31cacc2e8428c80123efd955872d9d58c59700d127ba5d5ce601e1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23273fb6afb4ccfa6cbd7e33f3761c7fbb6cdabb07291b7d0ed45cd2c2679949"
+    sha256 cellar: :any_skip_relocation, sonoma:        "770cce63021f23bbc4d49a1b2427858bb7bd40da01e00f8481ce8548bb06d81f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb363c67f07d6a8acc41348636d7bb77b2af7de6d14a0b0d8bebfd4f58596014"
+    sha256 cellar: :any,                 x86_64_linux:  "fb1f6c26267d2bad1165eeb0cd314f1c56f7a39f6c82cc25da5d84e25e7595f8"
   end
 
   depends_on "go" => :build

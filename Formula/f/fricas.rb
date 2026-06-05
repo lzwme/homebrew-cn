@@ -10,6 +10,8 @@ class Fricas < Formula
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "0629eaad116aba12e5f30e19fca8ae9556e7e7042a4fb621df7fcf6aa2c8aebc"
     sha256 cellar: :any, arm64_sequoia: "236ac0b7b6d01f57f52bb908fcbaaa2ac471ff5dac9f096bc7bde5ba38793189"
+    sha256 cellar: :any, arm64_sonoma:  "f330526f154535e395c683e008f8fc26cd9705f49ca6842af81cff2ee2271150"
+    sha256 cellar: :any, sonoma:        "d0e9dc9aac9426b06b69537e019b62d2e45ba96ff3414613b4f653fe1c3ee5a8"
     sha256 cellar: :any, arm64_linux:   "143b16b3ad697545d4fa52815ec74db47aa6683a9af44f51f15b1d07a33f574d"
     sha256 cellar: :any, x86_64_linux:  "bef1a54566053c50103638eff23395e51f9e5c30384d2e72875a887df409c6f4"
   end

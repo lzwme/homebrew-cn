@@ -1,18 +1,18 @@
 class Fallow < Formula
   desc "Codebase intelligence for TypeScript and JavaScript"
   homepage "https://docs.fallow.tools"
-  url "https://ghfast.top/https://github.com/fallow-rs/fallow/archive/refs/tags/v2.88.2.tar.gz"
-  sha256 "88a79a566c241629f56db369bc5dc69a869c4a85476bc9dd72fe5521f9b41656"
+  url "https://ghfast.top/https://github.com/fallow-rs/fallow/archive/refs/tags/v2.88.3.tar.gz"
+  sha256 "fb90b4f2357dc8422de7b6e3cc1b5713072d9af7c8743412e233eb5cec30602b"
   license "MIT"
   head "https://github.com/fallow-rs/fallow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9bad2b4930037d217f73754bbeacea796825abf3f45284372c459ba4fd021dc2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9c437825449c1b685ac9d4b3f781899b0ee522953ad53d5b6153dd556ffe45d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c47bda977880e39a3c3e9873c39698b73273ead3d0420c6323c8d5a87daca0bb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ef4a0461f2e485470eb6f7db4be3c3dfa6da9d1b94b45d2f344e657cb4c3ad8b"
-    sha256 cellar: :any,                 arm64_linux:   "5487ee88719a4b8911cd4a640dacbfb27ed3912de3e22e45cba59a7b55d82839"
-    sha256 cellar: :any,                 x86_64_linux:  "d4c524143ab8216651e7ddcb7a9738643ee7cb442d5296ca06b8a9fe6f8f9316"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5205feff5545f725847f3cdf1500c498a7103527f4bebabad0ff012f70b6a58"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7680d313a4ed1653cdeb62b86915f646812f43f46d6fa041a563834373e37c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71f9695d4bba52b32c6f6ba01a229bb4d34c1bf29691666ad2105719ed11dade"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d7b314a331181342503eb7e08cb6b0bc783ec80bd82b24c6f81b6d22543e6d31"
+    sha256 cellar: :any,                 arm64_linux:   "f41caad6fc30aedd100057f96a1602f959a600a268cbfd268525044cd70f33ab"
+    sha256 cellar: :any,                 x86_64_linux:  "bd16beb5f3f7c0536c9cca3a3979a1c74e53254a2003b0ce46dad7cfc8a8791f"
   end
 
   depends_on "rust" => :build

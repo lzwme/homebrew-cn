@@ -41,7 +41,7 @@ class Macvim < Formula
   depends_on "ruby"
 
   conflicts_with "ex-vi", because: "both install `vi` and `view` binaries"
-  conflicts_with "vim", because: "both install vi* binaries"
+  conflicts_with "vim", "vim-classic", because: "both install vi* binaries"
   conflicts_with cask: "macvim-app"
 
   def install

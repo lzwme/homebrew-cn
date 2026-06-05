@@ -1,8 +1,8 @@
 class Ice < Formula
   desc "Comprehensive RPC framework"
   homepage "https://zeroc.com"
-  url "https://ghfast.top/https://github.com/zeroc-ice/ice/archive/refs/tags/v3.8.1.tar.gz"
-  sha256 "87aa0381f2347715467686547bccf253fa208948bf2a462584872d2d0f8b1720"
+  url "https://ghfast.top/https://github.com/zeroc-ice/ice/archive/refs/tags/v3.8.2.tar.gz"
+  sha256 "d350ebbcdd7971fafccebfdf1e99db139dc6d121f5a5dcdc4036256206735078"
   # See https://github.com/zeroc-ice/ice/blob/main/ICE_LICENSE for a special
   # exception to combine Ice with the OpenSSL library and Apache-2.0 libraries
   license "GPL-2.0-only"
@@ -13,12 +13,12 @@ class Ice < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e73d5cc15f629eb8381d7dbbb6dc196f67234bba957ca78bc6f7884e925eb763"
-    sha256 cellar: :any,                 arm64_sequoia: "fa69325f0ba3ad72906a3f86e40cb52908b6f89aea97c68424256ac3d537db81"
-    sha256 cellar: :any,                 arm64_sonoma:  "31fffc8a580481083e88786d2996e47fadf8ddde7478e1018db0aec5d470605d"
-    sha256 cellar: :any,                 sonoma:        "32f6816651a201d6c364b04745e2df920777bbaac0d3d5599e1edf0477a2097c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9586db5fca4281079514d7b00c50f9c40204d789d81abd854d99274e2261c595"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8440c54d6797e2ccfdc0bd26dc0b64d6e3563b976a8d19936dbe4e2dd6280a8b"
+    sha256 cellar: :any, arm64_tahoe:   "e5531b89902400d1d4c92be7fba9f2f23d698cf1d294c7df5acbccd4560973d4"
+    sha256 cellar: :any, arm64_sequoia: "0e908f79827033d24305469f2e446aaee91cd7cec82f4e5340a49de087f6ee5c"
+    sha256 cellar: :any, arm64_sonoma:  "554344817bb31eba6bf45a8ca40f545612eb22bbabdbe2dd86bd4f9302125420"
+    sha256 cellar: :any, sonoma:        "0f68d166703bf0a112710432b7f366334d4d781a8ebc0dffb19a3c2871246e1c"
+    sha256 cellar: :any, arm64_linux:   "89bb7e85d0ea9aaca429730a46207589bfbd9dfc8f749c9226646a446eaa8d75"
+    sha256 cellar: :any, x86_64_linux:  "dd11f21ce440a415e2652185e6cea0e8e8dde2eba6d365da127a70289f1de9c3"
   end
 
   depends_on "lmdb"

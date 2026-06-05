@@ -6,12 +6,13 @@ class Skopeo < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a93a144e4d21454d330d20537a175192818eff12bd3bf39b24bcd9df59c3ef11"
-    sha256 cellar: :any, arm64_sequoia: "4a4dec053c4455b697ad281764db577f65df8e38b6229b523c7a2b80f19e308e"
-    sha256 cellar: :any, arm64_sonoma:  "f19eda35caa3f43719974c12b493e6b01a22daf429171a852fda8e7faaa7405d"
-    sha256 cellar: :any, sonoma:        "a57bd1550d62257a16cbba71ed575978b1098f2b3767ae341aff61e0cc089d7d"
-    sha256 cellar: :any, arm64_linux:   "ae5b682c693390a7130d47c4086fc4537390fb3ff95a488e05d8e50bd0ab22c6"
-    sha256 cellar: :any, x86_64_linux:  "7afc74962f447ba96d1ace2fba34d88894549adf366ebadb5be7e35f3d94c31f"
+    rebuild 1
+    sha256               arm64_tahoe:   "b9bb3aa152bc76483a65dece4a7b9b4ffc09078bb0fe6c1c470145d901792eeb"
+    sha256               arm64_sequoia: "42bd2618325948979d3d415758bbb9c237c3cc5b13c266604fcb8e3147f800d0"
+    sha256               arm64_sonoma:  "e5d87f4b7cd3a682bfb5e244fd85a525a1e65af6ef0b45bc2b2e562ce34ae6c0"
+    sha256 cellar: :any, sonoma:        "2ba12cb7f52c5935b83bc9fe3aeda780fdbbf718cb962609c8125dbc20341d79"
+    sha256               arm64_linux:   "907ddddc81dcf26d0ca0b47621fd32c57efb0ad5f942346a0858ebd621f5a7ad"
+    sha256               x86_64_linux:  "e992c01b75e47191bd4ed4c4d8cc10266a1812345374b4d987aff199e8b6b1d5"
   end
 
   depends_on "go" => :build
@@ -34,13 +35,14 @@ class Skopeo < Formula
       Utils.safe_popen_read("hack/libsubid_tag.sh").chomp,
     ].uniq
 
-    ldflag_prefix = "go.podman.io/image/v5"
+    ldflag_image_prefix = "go.podman.io/image/v5"
+    ldflag_storage_prefix = "go.podman.io/storage"
     ldflags = %W[
       -X main.gitCommit=
-      -X #{ldflag_prefix}/docker.systemRegistriesDirPath=#{etc}/containers/registries.d
-      -X #{ldflag_prefix}/internal/tmpdir.unixTempDirForBigFiles=/var/tmp
-      -X #{ldflag_prefix}/signature.systemDefaultPolicyPath=#{etc}/containers/policy.json
-      -X #{ldflag_prefix}/pkg/sysregistriesv2.systemRegistriesConfPath=#{etc}/containers/registries.conf
+      -X #{ldflag_image_prefix}/docker.systemRegistriesDirPath=#{etc}/containers/registries.d
+      -X #{ldflag_image_prefix}/internal/tmpdir.unixTempDirForBigFiles=/var/tmp
+      -X #{ldflag_storage_prefix}/pkg/configfile.systemConfigPath=#{etc}/containers
+      -X #{ldflag_image_prefix}/pkg/sysregistriesv2.systemRegistriesConfPath=#{etc}/containers/registries.conf
     ]
 
     system "go", "build", *std_go_args(ldflags:, tags:), "./cmd/skopeo"
@@ -57,11 +59,9 @@ class Skopeo < Formula
     output = shell_output(cmd)
     assert_match "docker.io/library/busybox", output
 
-    expected = if OS.mac?
-      "Error loading trust policy"
-    else
-      "Invalid destination name test"
-    end
-    assert_match expected, shell_output("#{bin}/skopeo copy docker://alpine test 2>&1", 1)
+    # https://github.com/Homebrew/homebrew-core/pull/47766
+    # https://github.com/Homebrew/homebrew-core/pull/45834
+    assert_match(/Invalid destination name test: Invalid image name .+, expected colon-separated transport:reference/,
+                 shell_output("#{bin}/skopeo copy docker://alpine test 2>&1", 1))
   end
 end

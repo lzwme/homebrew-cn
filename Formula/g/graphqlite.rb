@@ -1,8 +1,8 @@
 class Graphqlite < Formula
   desc "SQLite graph database extension"
   homepage "https://colliery-io.github.io/graphqlite/"
-  url "https://ghfast.top/https://github.com/colliery-io/graphqlite/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "2a1b3033d3690e84d59181ca91bb91f404b2157bb95c677a669215b0a72f5455"
+  url "https://ghfast.top/https://github.com/colliery-io/graphqlite/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "ea5a3e6d333b24e9805ae165980585026fbb310eb61ab4f3f4c52a228aa331b8"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Graphqlite < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "07165af9bbda35056e3848ea5fbf13847b388a586d8798866da4f2baff2049fe"
-    sha256 cellar: :any,                 arm64_sequoia: "bcfcb49b4aa7a4992adb60ddddbb582de07f0dc2826da45d7cba35f0201e2486"
-    sha256 cellar: :any,                 arm64_sonoma:  "cc98c31802429ac5e1e08ef14567b76f0f7aa17c1c73fd98a62c1c3918aa3ca0"
-    sha256 cellar: :any,                 sonoma:        "bea55c157ede9d869dc995db591e11aceeab159ea3cf1351cb6ada07c11f8307"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecb2c4633e9b8728c3ba12e1c4fa6c74407649d1da77a62f863a7f791aa6ab75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "361d2dae1f5f76421130aafb167593e657f4493321e1333022cfa822292c9b59"
+    sha256 cellar: :any, arm64_tahoe:   "167afb813803602177be49f6500f08f119af7f8743e89ca9ead5a6fb8a1c1924"
+    sha256 cellar: :any, arm64_sequoia: "572f27a23036574986cc4723a044fdf06f22a2229cb42bcc8bbb92fb1d015fde"
+    sha256 cellar: :any, arm64_sonoma:  "bb423248e45a679435edf554357f938dd57c77dc884f2871f002611ca6f5afb3"
+    sha256 cellar: :any, sonoma:        "20c38d78502747772277db3858153541463c5e24ab0a8a08adc7228032b5eb81"
+    sha256 cellar: :any, arm64_linux:   "5db0fab0edc0c9386e1418e38653672dfaa81f25202ab39626be921d3a6e5480"
+    sha256 cellar: :any, x86_64_linux:  "75a00f6cfb83a6482efa03ea0ce3c4c08c0301e15fec9c5747fa7ea7a542dc23"
   end
 
   depends_on "bison" => :build # macOS bison is too old

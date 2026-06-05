@@ -60,10 +60,6 @@ class ScikitImage < Formula
     virtualenv_install_with_resources
   end
 
-  def post_install
-    HOMEBREW_PREFIX.glob("lib/python*.*/site-packages/skimage/**/*.pyc").map(&:unlink)
-  end
-
   test do
     (testpath/"test.py").write <<~PYTHON
       import skimage as ski
