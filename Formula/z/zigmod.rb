@@ -1,8 +1,8 @@
 class Zigmod < Formula
   desc "Package manager for the Zig programming language"
   homepage "https://nektro.github.io/zigmod/"
-  url "https://ghfast.top/https://github.com/nektro/zigmod/archive/refs/tags/r99.tar.gz"
-  sha256 "b2bb91cfae4cb470c6b5e461f6a8bc33b0d4df8a8b0ddf35505ac9bf42b76072"
+  url "https://ghfast.top/https://github.com/nektro/zigmod/archive/refs/tags/r103.tar.gz"
+  sha256 "965bd1aacbe4fee5c3dbbe0715d40f5b6a6413065bf5dc0385ba1ba1acc6c2e2"
   license "MIT"
 
   livecheck do
@@ -11,22 +11,23 @@ class Zigmod < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fcd2ad3392aae6c20b201de6a0ae1885d1d05e6ab2fb1c9166a3c258d92dd1c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72f2899614daf31c4786d3bb3c9df2aac398ff49f150c87c8fc1d80b4f8d6ee7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7fb4c072fbe0055ecdcd5420c8ab54b9fc50fcaa3dfb24c5f6d76326253e278"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ae568a5381dbba1ca1dd0e8864cf4cd3d098d5e1b65bdc507706e7bb99e653ab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6667190a84c317f48674c5ea1c9d67c7f0c2267d1c407ffc24acafae5c241e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "404076d214fae1b64dcc4f17ec37606fc303fa18f475342933cfd93331817323"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ef437f4e9b2f69a1be4adaa651df67f580cfd84f34fe9efc3f20001361e303e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84e496ca7896cdd75e684c8640aa3fed836274cb3dfb8d02454a03910d98b7ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa5303dd5bb7b26327a14ae30734651f0904d1247f5aa18458bd4a737ad75fe2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "018603bd82921507439ac811e64a345a812d8c8ec1c70244372b91e791c25806"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49762f0cd3b574d5b33a269347537dc5636c94c4dd61f5b7a6c2ea1b234863f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cc6fc70bf0c8af0294cbe4319ad37118c9ebe83c9f4ec940961d6b04c03b625"
   end
 
-  # Aligned to `zig@0.14` formula. Can be removed if upstream updates to newer Zig.
-  deprecate! date: "2026-08-19", because: "does not build with Zig >= 0.15"
-  disable! date: "2027-08-19", because: "does not build with Zig >= 0.15"
-
   depends_on "pkgconf" => :build
-  depends_on "zig@0.14" # https://github.com/nektro/zigmod/issues/113
+  depends_on "zig@0.15"
+  uses_from_macos "git" => :test
 
   def install
+    # Avoid zig-nfs mkdirat failure when creating absolute cache paths on macOS x86_64.
+    inreplace "src/common.zig", "try nfs.cwd().makePath(cachepath);",
+                                "try std.fs.cwd().makePath(cachepath);"
+
     # Fix illegal instruction errors when using bottles on older CPUs.
     # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case Hardware.oldest_cpu
@@ -50,6 +51,26 @@ class Zigmod < Formula
   end
 
   test do
+    (testpath/"dependency/src").mkpath
+    (testpath/"dependency/zigmod.yml").write <<~YAML
+      id: 8w9skd2bi3x7vh6z6xcu3taaz1tww2ghbjt5p1e9fyj1pgsu
+      name: zigmod-test-dependency
+      main: src/lib.zig
+      license: MIT
+      description: Test zig.mod dependency
+      min_zig_version: 0.11.0
+      dependencies:
+    YAML
+    (testpath/"dependency/src/lib.zig").write <<~ZIG
+      pub fn message() []const u8 {
+        return "Hello from zigmod dependency!";
+      }
+    ZIG
+    system "git", "-C", testpath/"dependency", "init"
+    system "git", "-C", testpath/"dependency", "add", "."
+    system "git", "-C", testpath/"dependency", "-c", "user.name=Homebrew",
+                  "-c", "user.email=brew@test-bot.local", "commit", "-m", "init"
+
     (testpath/"zigmod.yml").write <<~YAML
       id: 89ujp8gq842x6mzok8feypwze138n2d96zpugw44hcq7406r
       name: zigmod
@@ -58,7 +79,7 @@ class Zigmod < Formula
       description: Test zig.mod
       min_zig_version: 0.11.0
       dependencies:
-        - src: git https://github.com/nektro/zig-yaml
+        - src: git #{testpath}/dependency
     YAML
 
     (testpath/"src/lib.zig").write <<~ZIG

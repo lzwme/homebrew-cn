@@ -7,18 +7,20 @@ class Xan < Formula
   head "https://github.com/medialab/xan.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12ac017ed3c25361db6c5a995c5e01f5365655f4efdbf18428c66647e8ff48bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed21c82dd4aba4d564300e67e5612c92f6bdd0a6d1eb91cc6928ef4779faf542"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d5e8ccc2bafa52ea64e1bb034791ddf4d1fefc18525b9eac28d88266bf65c44"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7c6927b7edcf30bb88bd03c3d44fe3cbd6fccc261b337bcfd551e066cc466e5e"
-    sha256 cellar: :any,                 arm64_linux:   "cffe2007c9a30aad0d3cebb29efa8de3ab19dd07202a4110c6da2347b75300f7"
-    sha256 cellar: :any,                 x86_64_linux:  "40a5c6adcf7acc3586ae8308550e0893a0ad81fe687d38a8fe6a30dc9f7c4f7b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a28b8df224e26a93e7527add059cfd67854abd18077b77788052322c099597c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e7e71a0ce416933e992777583c5b68ccc2fd97d6772d8ba6a4dc73cdf016d0ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19332ea90f4e247f9cdbb511904d72cf399521c0d9bb2e166d8a29c752e30507"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9fec45f395a4e1d617cae72e938e79fa10c68ea23f326633429829973e93b498"
+    sha256 cellar: :any,                 arm64_linux:   "60b9aef54d1fe969fbbfb566241538e6fa22af47e393a978c23e0300682c87f0"
+    sha256 cellar: :any,                 x86_64_linux:  "2fa7e9799b0e169fc0c076f5553932c68a6133189e9f70626386ea5dd7cb1c7f"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args(features: "parquet")
+    generate_completions_from_executable(bin/"xan", "completions", shells: [:bash, :zsh])
   end
 
   test do

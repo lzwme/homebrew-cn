@@ -1,8 +1,8 @@
 class DatadogStaticAnalyzer < Formula
   desc "Static analysis tool for code quality and security"
   homepage "https://docs.datadoghq.com/security/code_security/static_analysis/"
-  url "https://ghfast.top/https://github.com/DataDog/datadog-static-analyzer/archive/refs/tags/0.8.5.tar.gz"
-  sha256 "e7266293b0f721991fc871f8fd6b63271ca4011174ff5e3d2de895642107993e"
+  url "https://ghfast.top/https://github.com/DataDog/datadog-static-analyzer/archive/refs/tags/0.8.6.tar.gz"
+  sha256 "e5b0d9190240d5e2eb72a37438ab5a7c1a0e6107d465dc368b389ee288262926"
   license "Apache-2.0"
   head "https://github.com/DataDog/datadog-static-analyzer.git", branch: "main"
 
@@ -12,12 +12,12 @@ class DatadogStaticAnalyzer < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9a2f612822b01453c1d368fed58e7af6e6a22c70b064e1dd34b8d2f85530b279"
-    sha256 cellar: :any, arm64_sequoia: "a7d7fc844caddc9cb150c4728f2092c0b088137bc1e1d9a25f50632e572e7db1"
-    sha256 cellar: :any, arm64_sonoma:  "8a0aca7ecdadad1215a49f9288c84beaeeddbb653529c03bda95f100d59285f7"
-    sha256 cellar: :any, sonoma:        "0b567c17485f71f8042ee044dce37a220c1fef0def063dfc39e36932e03ddff5"
-    sha256 cellar: :any, arm64_linux:   "6c1c5e0c98e353b8dc9e9332c0c96dee27e795c3a4e94f8f5457c3b54e652253"
-    sha256 cellar: :any, x86_64_linux:  "69d8203b80ba46c3dc3587962d88338425d3ec1f37031ab65d699e0f3af46090"
+    sha256 cellar: :any, arm64_tahoe:   "157b8827cf9df85a74dc1ba9a6db15efe47cc407204517bb5e2a55a4044f927f"
+    sha256 cellar: :any, arm64_sequoia: "712dcf653ff1cdaec08fe53dc25f0bd4c1c38e6ad9ddaca93060bc526819d137"
+    sha256 cellar: :any, arm64_sonoma:  "c53c5f00ae351e2c34dc791943a7438f8e66cd56a1c92f93910a0d14eb9740e0"
+    sha256 cellar: :any, sonoma:        "e006203e1c8e1eb16973fc268ab616b5d6ebf09268e5e6b85cc949b06cc9ad30"
+    sha256 cellar: :any, arm64_linux:   "3439db7cdd782cc89191a9e55af0ba1f94fa4411a49b246747e8c5d44dec6e90"
+    sha256 cellar: :any, x86_64_linux:  "06955383c55744d3e3161e7ed64d6210bb261fb184809222b01bd355a549b961"
   end
 
   depends_on "pkgconf" => :build

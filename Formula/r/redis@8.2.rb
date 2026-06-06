@@ -1,8 +1,8 @@
 class RedisAT82 < Formula
   desc "Persistent key-value database, with built-in net interface"
   homepage "https://redis.io/"
-  url "https://download.redis.io/releases/redis-8.2.6.tar.gz"
-  sha256 "78dd7326c5c959202c6c3849d3ea9c61896d78d647c20f6542b52c0917f96eac"
+  url "https://download.redis.io/releases/redis-8.2.7.tar.gz"
+  sha256 "afaae66030c193b06720a714ba7a558136b82689027536e0e24f53908c18cbe9"
   license all_of: [
     "AGPL-3.0-only",
     "BSD-2-Clause", # deps/jemalloc, deps/linenoise, src/lzf*
@@ -17,13 +17,12 @@ class RedisAT82 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "cd4eb1b96b016ccd7523220dfbb54d2ec43a6353f1d5e6a37b69a3d5826b862d"
-    sha256 cellar: :any,                 arm64_sequoia: "ba77d3318b97296371305f5d86483f6df37a53eadb6cefaa376e978cd0ba60ab"
-    sha256 cellar: :any,                 arm64_sonoma:  "9232f49d3f05f9d29f7b2f249f321fbea058f9b1dc975911b8feb93b08f70483"
-    sha256 cellar: :any,                 sonoma:        "d0c41543bd1793e73ce558c9a562d038afe9c9fb73e2e0648a867e29d66225ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "124f3979fad86b60148a68312f19a3c5d86f392e76419dcb34d1ea28fa5b77f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0049cf89efab45893c62e3ef076c19dece57d7b25d3b0ca1679b4af2a6c5cfd"
+    sha256 cellar: :any, arm64_tahoe:   "1cf6390113cbcd2bad484da8025b3abe64db922fa840c68ae4fb8a0d1cf9fa61"
+    sha256 cellar: :any, arm64_sequoia: "dd942b85f5553aaa5b894d92f2acb44feb13d2fa0f806d800152569aa6d9efb6"
+    sha256 cellar: :any, arm64_sonoma:  "cf29b2b5231531b39336ec1c917c778ee9863323540c2dc662a813427cd9e7ad"
+    sha256 cellar: :any, sonoma:        "cde7db2925582ccbc86ecdc75ba573914fe260e28df69112400c905dcfde55f0"
+    sha256 cellar: :any, arm64_linux:   "672034d1a8f096756cdee2fb28bc06f12a5d2beb0f2c1b116950b5d42cf51a10"
+    sha256 cellar: :any, x86_64_linux:  "bc2a27bb2d5646feefb088e73426225eef200cbf78da21bc621b0358ac01e003"
   end
 
   keg_only :versioned_formula

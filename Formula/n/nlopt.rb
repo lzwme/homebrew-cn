@@ -1,18 +1,18 @@
 class Nlopt < Formula
   desc "Free/open-source library for nonlinear optimization"
   homepage "https://nlopt.readthedocs.io/"
-  url "https://ghfast.top/https://github.com/stevengj/nlopt/archive/refs/tags/v2.10.1.tar.gz"
-  sha256 "30d13ce16da119db3e987784f7864e35a562ec62c186352fae55cd003e6c58ff"
+  url "https://ghfast.top/https://github.com/stevengj/nlopt/archive/refs/tags/v2.11.0.tar.gz"
+  sha256 "53e552d83e9294d67db37f0f4a23f15933a9ef698485301a18b98b40004cf0de"
   license "MIT"
   head "https://github.com/stevengj/nlopt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "895d8e1a5b7257380f335c5992c674660a122c64ee1d67eea566e65cdb1e0b84"
-    sha256 cellar: :any,                 arm64_sequoia: "9773396412cfffe1c6dc4a3c2f1f82d32c8da396ac44733b7e117d20a15166ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "97e616890c809b51cbe8a8efffa8fe3ef6d69a319d7fbd7253d9738064c919f8"
-    sha256 cellar: :any,                 sonoma:        "c468957d29935740a3e7bf6248709d088b7876f944379c3f33bf65c38b7fba47"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce2cfb1d74dfb5f66022516311d416acacf8beb7186dcc89fbe0f975c1eb6a2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca3f9218108faa8cf151c88d784b7af7a090162f2efea0085d358eeb4164b5df"
+    sha256 cellar: :any, arm64_tahoe:   "40617e9ce8f9f757ec76fcd4db8d2340bd82cf1778d05eadfec77a350b7d010a"
+    sha256 cellar: :any, arm64_sequoia: "e7fb15da5e5f7c6c775912dd6d1f61717eb32b0f6e82a3a7767e5916e21bec96"
+    sha256 cellar: :any, arm64_sonoma:  "c71ce17adc4665fcc9704fb1a906da4211f3f25ef86af8202607c500c4bba4b9"
+    sha256 cellar: :any, sonoma:        "cf3cacdc2592ac3496535423c695dbe65e5fea88d1ce44d258667b650ad785e2"
+    sha256 cellar: :any, arm64_linux:   "455fafa25c9edb817bb3b31d64369a15f060ae05ed96dd4f0a467a1c2c24b4bf"
+    sha256 cellar: :any, x86_64_linux:  "fc367e57d589db083066b92f517e49ee760e9ee1be45082a4b937ae24ac4c6ef"
   end
 
   depends_on "cmake" => [:build, :test]

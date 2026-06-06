@@ -3,17 +3,17 @@ class Sqlfluff < Formula
 
   desc "SQL linter and auto-formatter for Humans"
   homepage "https://docs.sqlfluff.com/"
-  url "https://files.pythonhosted.org/packages/b4/a1/3430aebc4fae35d7e466e793b5da2f36c2245af092311520dc1d3d3146d6/sqlfluff-4.2.1.tar.gz"
-  sha256 "32f43fbf6721e57f1a5a87d71df0d94b84ecba6ed65727266c7fa60991110fb9"
+  url "https://files.pythonhosted.org/packages/af/a3/fa28d6db93930f349a7c99774ae7b4b9c85865a780f98ef1ddeb52abdf5a/sqlfluff-4.2.2.tar.gz"
+  sha256 "0ee2bcd5d704d0bef56bf80b8f0da9b519ab3e9e0bb1d5e6e4b7e3944d3f5606"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1d3c981e5b192ae2a28a2b541cae473d90e8b8fd78946d9c3af4022877246965"
-    sha256 cellar: :any,                 arm64_sequoia: "ca33dfb4cffa1a7626e09793c9af9664f122fc7db7b1897c210cbea5dce391fb"
-    sha256 cellar: :any,                 arm64_sonoma:  "e03ca1bb4d4e1fc9e16e19b7aa0645e6acb1d3c9b011ebcbae6223ed8bc185b7"
-    sha256 cellar: :any,                 sonoma:        "ad56e18b8602a63a3e86bf87c97a5cff8d1facb2f16202d58b3a5fec85538d0d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "584c0bece80e92f520dcb910d85f8198c0c7d815d096909115b34454a62067bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4cd2785b6be94ec3791cc2facb14b8188f84ef4327c1403c5d17bb4f2d874fd"
+    sha256 cellar: :any, arm64_tahoe:   "0e303b7fc3c79ceb1ab36cb1c903db0f7dc50de84c4c959120b4be731798ec82"
+    sha256 cellar: :any, arm64_sequoia: "be70866ce2aac9309887a9032e9fb9aeee975792904bc4028147b4cf2170d29a"
+    sha256 cellar: :any, arm64_sonoma:  "9bd67347c7ad0c576273e5226bccdb70e2441c673044fe676d215a7d85c5072e"
+    sha256 cellar: :any, sonoma:        "3f374a397b97c2775d98f7be7d76264e88fe534b01260625342b8afebc90716a"
+    sha256 cellar: :any, arm64_linux:   "cabda593c83efea1bb9ca842eb9afc5001015c835d18aca4c842cd04579104a6"
+    sha256 cellar: :any, x86_64_linux:  "13bf53d89a54b14e1e5c04d8d11b7ff889cd41fde1632ce1f7576c86d8c3d449"
   end
 
   depends_on "libyaml"
@@ -35,8 +35,8 @@ class Sqlfluff < Formula
   end
 
   resource "diff-cover" do
-    url "https://files.pythonhosted.org/packages/99/b4/eee71d1e338bc1f9bd3539b46b70e303dac061324b759c9a80fa3c96d90d/diff_cover-10.2.0.tar.gz"
-    sha256 "61bf83025f10510c76ef6a5820680cf61b9b974e8f81de70c57ac926fa63872a"
+    url "https://files.pythonhosted.org/packages/35/21/057e816125c162662d2a2cc2ebcd72dd333e78e51678298d07dd3146011a/diff_cover-10.3.0.tar.gz"
+    sha256 "474dbc63e815fbb7567d7b7ca5b104123e96129f25426ebdbc9a1bdbb935b2c6"
   end
 
   resource "jinja2" do
@@ -55,8 +55,8 @@ class Sqlfluff < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
-    sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
+    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
+    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
   end
 
   resource "pluggy" do

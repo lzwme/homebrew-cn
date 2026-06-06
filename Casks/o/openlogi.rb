@@ -1,9 +1,9 @@
 cask "openlogi" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "0.4.1"
-  sha256 arm:   "9a32560f0405fb8aa88c7b2b27ff0a9271ae22e3b8e85a75be0b2236fd5a6a01",
-         intel: "1284dec8dbb25aa1606be022c8d81877fab24334e7a4f778c6e6a1b304bd5212"
+  version "0.5.2"
+  sha256 arm:   "70888537a2b8c420711ef1ca9a8f72f6866b5c102ac4935403f0bf983caabcbf",
+         intel: "efb010b92017c5b006529e40813893e9fae203bad32428fd447cdb03fb8cdc3a"
 
   url "https://updates.openlogi.org/releases/v#{version}/OpenLogi-v#{version}-macos-#{arch}.dmg"
   name "OpenLogi"

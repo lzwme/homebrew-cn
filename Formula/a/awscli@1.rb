@@ -25,6 +25,10 @@ class AwscliAT1 < Formula
 
   keg_only :versioned_formula
 
+  # https://aws.amazon.com/blogs/developer/cli-v1-maintenance-mode-announcement/
+  deprecate! date: "2026-07-15", because: :deprecated_upstream, replacement_formula: "awscli"
+  disable! date: "2027-07-15", because: :deprecated_upstream, replacement_formula: "awscli"
+
   depends_on "libyaml"
   depends_on "python@3.14"
 

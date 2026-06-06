@@ -1,18 +1,18 @@
 class Kiota < Formula
   desc "OpenAPI based HTTP Client code generator"
   homepage "https://aka.ms/kiota/docs"
-  url "https://ghfast.top/https://github.com/microsoft/kiota/archive/refs/tags/v1.32.1.tar.gz"
-  sha256 "9c854867858cb448ff6a4fd133b2b19cec0a32774ca2007eea050a3c609c219a"
+  url "https://ghfast.top/https://github.com/microsoft/kiota/archive/refs/tags/v1.32.2.tar.gz"
+  sha256 "2008cc39f0f3201cad3bc77030b3d5be58b73efab21bcc345268880cd2339191"
   license "MIT"
   head "https://github.com/microsoft/kiota.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0c02c3fdd42a247b3ac84ec0d92bee1c45c6a366dd32ea370e8dce51539fc3fe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "311c73089a02bb8750e96637739562a3a3077d3b4351c669e679d1b939f9c8c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e019b984a6d861599840a46a676f092ee7a52c404963c65b9900eab2ef9ebdb1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3aa1536672a4e960fc59c74d3fa3193ba25e2b8f3ad15cb6c381d51adb7a6801"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da68e2129b5f7d39bdb6864be029a3011178db9f97b7e31be1719a4160b6a4ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3efe99a2975554cba0b670ee7ea58c3f0ebcaf30b6533a3ee342a1addcc6c2a5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ae3f671acf6f0be46c023174f50f51631b007f4bac8e38002db3406d88eb335"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1594f47830380645dce4ccc847b8e8ecc254c79f26c5613fd7d333103414cd39"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93add8482c7b35d6e5cbcd5f98998e9a2f231927db34aad2be35820114e5b866"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9789cb030adff2cbc59a573fd8edd343db3b032630dc32a69119c47bc7348a11"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "91c4b442f6eab050a4c9a558d3e043135eb56e5691c20f2dbac80abfd2870993"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba4ba5ca470ef0a11ad8b12bf7fbf23894b9600f8b0ba69c6b6b758833fc56d4"
   end
 
   depends_on "dotnet"

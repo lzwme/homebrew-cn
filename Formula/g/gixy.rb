@@ -3,17 +3,17 @@ class Gixy < Formula
 
   desc "NGINX configuration static analyzer focused on security"
   homepage "https://gixy.getpagespeed.com/"
-  url "https://files.pythonhosted.org/packages/3d/88/ef2d8958a63d901a32bb97aa94f2c00817d288ca876b734ae34fc7b5aefc/gixy_ng-0.2.47.tar.gz"
-  sha256 "6729f4ae6b24ce554925bce51cbbca9e51785c31a2f85b923834c40c8d200dd1"
+  url "https://files.pythonhosted.org/packages/d4/82/f998db5d438acbf6ad892fe42fe4da7e6f2288680febef0581d1b8cb972d/gixy_ng-0.2.48.tar.gz"
+  sha256 "d1c104ef8b76addd290f652cc688dba3583a7fd77a59d3ce04c6b7a65ae6ab06"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a30384b8f9bc80569038c265d514b768e08b10c79a2511562fef0bd13d7b82de"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50f868e601223a4aef9e540147a945eccd3448b4ea003bb35969117ff1165f6d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9a83f796cfa79fbbddee70b7c3de5cffbf250da1a31d03f439ae74f3ebc6e51"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cc7a9b71c8623cbc513ff208c56d78441d2b9c0741203b800ad1c643405ab1e5"
-    sha256 cellar: :any,                 arm64_linux:   "d6b5b0e35eea7245d48ecd0fcd4aba3bd31f7c5755d299d2db3daa142b2a71b6"
-    sha256 cellar: :any,                 x86_64_linux:  "a3a605c5c9202e4413d2c8387a51884ea06cb18a26e35ab9b88c74876c552581"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ad245d7f8af7e664cbb2efc86418a1cfbdd5e068523bda1547b751306b13e7b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b408bd74683412cac4669526ccbc78f996af870d675a069256eb95f62fbae8d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fedad50ce2d47f8ce1c9e4fa38a8ed342d78f4e8ff9bdb2e2605377563c97406"
+    sha256 cellar: :any_skip_relocation, sonoma:        "51e99a6386206305139307da1b50a30e3d32dd12efa190f7e24728d7b6074626"
+    sha256 cellar: :any,                 arm64_linux:   "3b5eeb85df2a4eab17e259d5dfa22bf2c2b28232549baeb08d1aa332529c07dc"
+    sha256 cellar: :any,                 x86_64_linux:  "48fbc3f61342c4a9b0417be40a4c50a40efad9abc8b120dd35683fa02afc666d"
   end
 
   depends_on "python@3.14"

@@ -1,9 +1,9 @@
 class SqliteRsync < Formula
   desc "SQLite remote copy tool"
   homepage "https://www.sqlite.org/"
-  url "https://www.sqlite.org/2026/sqlite-src-3530100.zip"
-  version "3.53.1"
-  sha256 "1b2b5755d9064c4d5d1b0bf5307b48b089963e291c40cc7351318aa1b61c460e"
+  url "https://www.sqlite.org/2026/sqlite-src-3530200.zip"
+  version "3.53.2"
+  sha256 "cafff764c03f6d720968f746e2f47a986bbf12bf4c18904f1eb131c0b0b592d3"
   license "blessing"
 
   livecheck do
@@ -13,14 +13,14 @@ class SqliteRsync < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256                               arm64_tahoe:   "78b35d4058d0922b7bbf7e4372e470758da01aa38c3ee7b37b1bf2345464317a"
-    sha256                               arm64_sequoia: "9843a5d7b946d26f892db0e9c904b08f04644af2e193fac5110d12464b598280"
-    sha256                               arm64_sonoma:  "a39e3b3b3fb78fa6d7da302ceb0bd0f42571517260807af36eb3c110f3140f25"
-    sha256 cellar: :any,                 tahoe:         "aa3eda6725436b49781fe913de6b1e8bed04808192833796cbc630f7ad8374c3"
-    sha256 cellar: :any,                 sequoia:       "007e1a03092d307b4684c396381c0cf415ba265047463f2c9e2055bd63ca7616"
-    sha256 cellar: :any,                 sonoma:        "25d8e6b252541b73641e506221adc733831f0be6adc76523c4f41e357204e45f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd250fdb687441a6d485ff6542e3507de21c492ebbe254b1e120d4507d550627"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0be7f580cc58002a672b19b34c8c45deb1051695f914c352339c9dd6355dd07e"
+    sha256               arm64_tahoe:   "1c9752c3d49b2bba49db2ceb85ca57b5b98280dfadc509aeaf43b752b1f58acb"
+    sha256               arm64_sequoia: "99cc429c2baf8b5631ed1124d0ce504de700932c72da161e2812742aa9a96f44"
+    sha256               arm64_sonoma:  "6239ed45024a471e62b29458ce4aa56de7ed71dae77d51c21b45c1d91c2484c8"
+    sha256 cellar: :any, tahoe:         "3b9fbcae9a4fb6e9f4db8a786e5f49781aa998b03c8444e1b6905090244a4ae2"
+    sha256 cellar: :any, sequoia:       "a93988fb5811cc178ea3c80fc8379903a895f391c620f3a15aebae2eef1e6970"
+    sha256 cellar: :any, sonoma:        "8a47818d4b855eb4fb9061908f00fe7f1f3bafbb5dc85c0acaae6be79f54f6f1"
+    sha256 cellar: :any, arm64_linux:   "b40f8a075eb72b31360b5ca2c6e43b42f5dbed024c112baec0a8366936c8e9ad"
+    sha256 cellar: :any, x86_64_linux:  "374d8c8f76390d44e1a33874d7e4407791287c4336c7aad863cae68bbfb6cd48"
   end
 
   uses_from_macos "tcl-tk" => :build

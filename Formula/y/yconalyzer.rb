@@ -22,6 +22,11 @@ class Yconalyzer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c416d91d76c10a6331d9703d23597b5e03fb67c97155247cb6e5e3f852f89953"
   end
 
+  # Last release on 2010-06-29. Also zero installs in last 90 days:
+  # "install: 0 (30 days), 0 (90 days), 20 (365 days)"
+  deprecate! date: "2026-06-05", because: :unmaintained
+  disable! date: "2027-06-05", because: :unmaintained
+
   uses_from_macos "libpcap"
 
   # Fix build issues issue on OS X 10.9/clang

@@ -1,8 +1,8 @@
 class Qmmp < Formula
   desc "Qt-based Multimedia Player"
   homepage "https://qmmp.ylsoftware.com/"
-  url "https://qmmp.ylsoftware.com/files/qmmp/2.3/qmmp-2.3.2.tar.bz2"
-  sha256 "4d8bbae619e99cfd665d96c3688d2d306f5ffc30144e07b37ca701a99e326365"
+  url "https://qmmp.ylsoftware.com/files/qmmp/2.3/qmmp-2.3.3.tar.bz2"
+  sha256 "51c964e9e685cf67266b2e8e3135ee4504b6bf6b2283f46bbfd4abe36ae3690d"
   license "GPL-2.0-or-later"
   livecheck do
     url "https://qmmp.ylsoftware.com/downloads.php"
@@ -10,13 +10,12 @@ class Qmmp < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "9d03ff5bfcc0fbba96e84e791d03ba977b65cfc121436b1d66c05381a5e70dc0"
-    sha256 cellar: :any,                 arm64_sequoia: "6cd2fb64ba6b2b840bc0afb65a42d711242b82afba083e1d845a9c9ead80e530"
-    sha256 cellar: :any,                 arm64_sonoma:  "c79c9a4ba9e420423177ea92934fbe20c515521a156d5b42486799c4e6cd3a08"
-    sha256 cellar: :any,                 sonoma:        "29615da1ed9e7311f7199f881eac6ff69783c70e201ff6d3a0b53db50d858b96"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9db1616a8dc11b5b89dd45f8925a5548b48572bc559415c91cb1060dc82a351b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fb506ef7761e01022e4b3943be52d9ca5e0e9860f764b01d8361e512c0f9e54"
+    sha256 cellar: :any, arm64_tahoe:   "493ef1cf3ffbbe1077c3b3ac692655cc830fdcaf73a1cc688d0b2bddf162d08b"
+    sha256 cellar: :any, arm64_sequoia: "b3c77711013fb3f6347510b948d4fd204b18f97559ab74cbb5301aa84a25aa6e"
+    sha256 cellar: :any, arm64_sonoma:  "768b02ecf88020f60ce1b899329e2fd2af1808e93a8505da448a83d2e8f80a50"
+    sha256 cellar: :any, sonoma:        "1898df5b393ff1e17cb428f5c3815700f1fcb11caa662fb38d3b0c28a4099d72"
+    sha256 cellar: :any, arm64_linux:   "f8874d45bc43b02a3e37dd9c63b56559110a58fccac53721f57b8bc166c5b6a5"
+    sha256 cellar: :any, x86_64_linux:  "b2e7460a40f924c619146d4918a044895b58b293712b562b816092dfe243a44b"
   end
 
   depends_on "cmake" => :build
@@ -72,8 +71,8 @@ class Qmmp < Formula
   end
 
   resource "qmmp-plugin-pack" do
-    url "https://qmmp.ylsoftware.com/files/qmmp-plugin-pack/2.3/qmmp-plugin-pack-2.3.0.tar.bz2"
-    sha256 "a23c202f90faaf6aebb97a9c02ee21fb3c8164b07755514349ccb3e1acb81ab5"
+    url "https://qmmp.ylsoftware.com/files/qmmp-plugin-pack/2.3/qmmp-plugin-pack-2.3.1.tar.bz2"
+    sha256 "58c940cf6a6a1e9a820e75e50aaed621b0936fdeadedc77939d602adc966d371"
 
     livecheck do
       url "https://qmmp.ylsoftware.com/plugins.php"

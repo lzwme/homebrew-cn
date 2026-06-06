@@ -7,7 +7,8 @@ class AbiDumper < Formula
   head "https://github.com/lvc/abi-dumper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "14aca33685e8f65c9ebbdf53768ce137170dfb150ae31413b43a1b28279558c7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "6683098a4edbe870557bb889c3ca199ea503f8aeafd53134707ce74ad4fbe1b8"
   end
 
   depends_on "elfutils"
@@ -19,8 +20,6 @@ class AbiDumper < Formula
   deny_network_access!
 
   def install
-    # We pass `--program-prefix=elfutils-` when building `elfutils`.
-    inreplace "abi-dumper.pl", "eu-readelf", "elfutils-readelf"
     system "make", "prefix=#{prefix}", "install"
   end
 

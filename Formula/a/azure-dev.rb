@@ -25,7 +25,11 @@ class AzureDev < Formula
               'Join(exeDir, "..", "libexec", ".installed-by.txt")'
 
     # Version should be in the format "<version> (commit <commit_hash>)"
-    azd_version = "#{version} (commit 0000000000000000000000000000000000000000)"
+    azd_version = if build.stable?
+      "#{version} (commit 0000000000000000000000000000000000000000)"
+    else
+      "#{File.read("cli/version.txt").strip} (commit #{Utils.git_head})"
+    end
     ldflags = %W[
       -s -w
       -X "github.com/azure/azure-dev/cli/azd/internal.Version=#{azd_version}"

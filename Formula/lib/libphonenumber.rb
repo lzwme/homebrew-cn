@@ -1,8 +1,8 @@
 class Libphonenumber < Formula
   desc "C++ Phone Number library by Google"
   homepage "https://github.com/google/libphonenumber"
-  url "https://ghfast.top/https://github.com/google/libphonenumber/archive/refs/tags/v9.0.31.tar.gz"
-  sha256 "dcb2f38bea286c74500c20efdd83300829f2990adeb94dde863c6b12e8670d68"
+  url "https://ghfast.top/https://github.com/google/libphonenumber/archive/refs/tags/v9.0.32.tar.gz"
+  sha256 "fef1a587ff4793d02cf10dc87d083e7a230e0caf56e8dfdf0da6a15f78420ed8"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f7e6b1deb1312832ef0b15716bc915d04acf4d534132f228a49e7adbb0bf3b33"
-    sha256 cellar: :any,                 arm64_sequoia: "5701dc104d1643ab57c79c695bd0c075e1204e3bd242730396afb1d1ffa9ea95"
-    sha256 cellar: :any,                 arm64_sonoma:  "5851a03f92c16f1c5060caa21253cb343f8cb94634582a837273f16931d70977"
-    sha256 cellar: :any,                 sonoma:        "6a3466ed98ffd38d61256e29deb33f8536e82034f9e479a6d4335bb5a50bd601"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e0bb26710f773d47b0e33de9ff07db160a15ce9e6e8dc81e8d980e288218418"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3edc7237c700a385448bcb80f5edc69e9aebbb786fac2fcaac3227c2d15d88b7"
+    sha256 cellar: :any, arm64_tahoe:   "26a3e1a50bc78deffd6ae7e97e9fe195af0bd2a0d0da4c821e5ab2414e303265"
+    sha256 cellar: :any, arm64_sequoia: "b9013547ce78cf0df8159692bed99314a92e6404ac56a8244a9593873dc7e54c"
+    sha256 cellar: :any, arm64_sonoma:  "11cfa540e9a135d886ef938669265841dfdcbc6088251fcd8634a8a623fc9a44"
+    sha256 cellar: :any, sonoma:        "1448c35a7997aa9aa3e9a5be8c0e611ffb412e95da2ff1add76ceb404f4a0f57"
+    sha256 cellar: :any, arm64_linux:   "1a3c3f77c06ecc20acc4f0381ce62a9b0c56497d205b98f7bc169db05a8cbbea"
+    sha256 cellar: :any, x86_64_linux:  "637d5fc2ad82d150b435ec8e671a84e1d32e6ba40f97a07f41848d5df15a065a"
   end
 
   depends_on "cmake" => [:build, :test]
