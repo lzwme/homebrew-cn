@@ -1,18 +1,18 @@
 class Hpack < Formula
   desc "Modern format for Haskell packages"
   homepage "https://github.com/sol/hpack"
-  url "https://hackage.haskell.org/package/hpack-0.39.5/hpack-0.39.5.tar.gz"
-  sha256 "605e69f2ffe5974bfb6cbc4be203e998389ad79c1590bcf0faafa8d7c085a471"
+  url "https://hackage.haskell.org/package/hpack-0.39.6/hpack-0.39.6.tar.gz"
+  sha256 "267459c3961bf66428a1570a71b3aac577c11a07b775b91872282634418ea936"
   license "MIT"
   head "https://github.com/sol/hpack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9c63bf51f742f354df756076e4537f0daee440196c447b3a102b8f7d1d96fd4e"
-    sha256 cellar: :any,                 arm64_sequoia: "50edbd437691c7a12380dd7e64ed87ee86ab0d422e1cf3718c7efbc29fa68686"
-    sha256 cellar: :any,                 arm64_sonoma:  "6ddfd83e7f792ba921aa18571b591ef20052b0837bbc73326057476055246072"
-    sha256 cellar: :any,                 sonoma:        "55e7285ac21f468fe254055ddb675da6ba57daeb2ae7de3a51ff53523a40a9e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22a17acb78b91a7e969109f14f55b9c645342e8ae1373d045d3a2b12b4bd8f6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04939517de7233ba372a0ff33e873474ed832aeaf2ab1e02a415b11f8ef82e5d"
+    sha256 cellar: :any, arm64_tahoe:   "cbeb93984ca220d9a0198fd017f3bf825a4e03939d52b2965f1eaac90047e060"
+    sha256 cellar: :any, arm64_sequoia: "548cfd994750ab91c7c4f6671f66b38f1e04b37c6e1e8107777cbe81047e046f"
+    sha256 cellar: :any, arm64_sonoma:  "c74bb0f485278329ee7ce5e7e384cb5f72b3499823ccc27664b2f4ca86a2e3fd"
+    sha256 cellar: :any, sonoma:        "cc1d838228b244f8fd919a5c6d33114081ec01db1cc2b4448ce68896e8495b7f"
+    sha256 cellar: :any, arm64_linux:   "e0ce950252b70b59e9a1dc2c9d86b34f1df707c8ca9d366441042612618b1fb5"
+    sha256 cellar: :any, x86_64_linux:  "a3c3008d4b1ad91ce6e9b9b38973236757d83c871d5f9698f266b66a61249c8b"
   end
 
   depends_on "cabal-install" => :build

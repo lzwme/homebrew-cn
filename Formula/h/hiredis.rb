@@ -1,21 +1,19 @@
 class Hiredis < Formula
   desc "Minimalistic client for Redis"
   homepage "https://github.com/redis/hiredis"
-  url "https://ghfast.top/https://github.com/redis/hiredis/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "25cee4500f359cf5cad3b51ed62059aadfc0939b05150c1f19c7e2829123631c"
+  url "https://ghfast.top/https://github.com/redis/hiredis/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "5fa6e719e59cd4f8ae435c52a18ac4035d135251f9ee54e7a045bccf59107ed8"
   license "BSD-3-Clause"
-  compatibility_version 1
+  compatibility_version 2
   head "https://github.com/redis/hiredis.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a56da7fea50b3da5242b05db22d6311b0edd6f885b8793687572098d5bf02f12"
-    sha256 cellar: :any,                 arm64_sequoia: "d3bb6a7fd40584c74321d404d0c459f11e3d612c329a5f95367c372cb21bbdca"
-    sha256 cellar: :any,                 arm64_sonoma:  "68e9423a13a8c5dc27884296ec0ee6ab25930aaa85d3b6e5e8726855fd864211"
-    sha256 cellar: :any,                 arm64_ventura: "fa65af1fbbc772155907ee6332c3a21c8780a3ce8491b762470d05cf3ae57c85"
-    sha256 cellar: :any,                 sonoma:        "d7ed68aa281c0ccd51c7e28ffe6eef652478b7a03cd0e7ffd239cdd54f9412c6"
-    sha256 cellar: :any,                 ventura:       "d08d4992b894522efb41ad2f502a1fa4b0e48b7a3ada25a87c7b73a03bbb6cfb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0760d1e33d3c044724b3c8c1053514f85a6fc12d55edfa3745cec4ed5dcf0fa3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0280a87a599747410042bebf2811c9c20bbe2ca577e066daa784a5ad5e1ffa31"
+    sha256 cellar: :any, arm64_tahoe:   "6b790b72b583f7b80fb6fa10477286fc24f58e05b15f814fda74c77fb1dcb139"
+    sha256 cellar: :any, arm64_sequoia: "77068c6a45f408fd3f9fa56d6253a157f2e961be310c502ce4095fbdb6ca0de3"
+    sha256 cellar: :any, arm64_sonoma:  "c1594add8d86832e003d0e4ecca2aea251fe06f0fe09f29d87ca352b8084bac7"
+    sha256 cellar: :any, sonoma:        "a6a7bc59e6a82b54671376725bdfe06fa77181c2aba9715e47930811883c8a9c"
+    sha256 cellar: :any, arm64_linux:   "8514ba4a07e070151d9b15399398125ddc33ea2a3e6a214de005af458fc33cea"
+    sha256 cellar: :any, x86_64_linux:  "b41adf32ce488a7cf126674175993c7ea9f19c9f4c1d6fc168bde86c6c12c337"
   end
 
   depends_on "openssl@3"

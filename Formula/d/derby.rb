@@ -7,8 +7,8 @@ class Derby < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "a4ec775f18dc3de32bd09a237f3ed1eba99aa4b137cf4eedb529232a03e85201"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "e7ed627ed2f1ea6529efac7f4b480874f4903e5ff671b1f9b885d470132231ab"
   end
 
   # Project is retired and will have no further releases
@@ -25,7 +25,6 @@ class Derby < Formula
                        KEYS docs javadoc demo]
     bin.install Dir["bin/*"]
     bin.env_script_all_files libexec/"bin", env
-    (var/"derby").mkpath
   end
 
   service do

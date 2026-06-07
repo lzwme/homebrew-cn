@@ -27,14 +27,14 @@ class Sugarjar < Formula
 
     system "bundle", "install"
     system "gem", "build", "#{name}.gemspec"
-    system "gem", "install", "#{name}-#{version}.gem"
+    system "gem", "install", "--ignore-dependencies", "#{name}-#{version}.gem"
 
     bin.install libexec/"bin/sj"
     bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
     bash_completion.install "extras/sugarjar_completion.bash" => "sj"
 
     # Remove mkmf.log files to avoid shims references
-    rm Dir["#{libexec}/extensions/*/*/*/mkmf.log"]
+    rm libexec.glob("extensions/*/*/*/mkmf.log")
   end
 
   test do

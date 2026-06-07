@@ -14,12 +14,13 @@ class Mosquitto < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dd40843dd4c3abf5f5d2ad89f221fc02439a354857e808d7f9b243f8f39f4671"
-    sha256 cellar: :any,                 arm64_sequoia: "b74d967ddee4b766879377d5105dc7a6d696439a71e7dbb2d81034ce70601336"
-    sha256 cellar: :any,                 arm64_sonoma:  "175bc6e9e6dbfa0b16beeb2c17332db6393fb46c483e4de9d77e54365ceed255"
-    sha256 cellar: :any,                 sonoma:        "ae293e339a16b9f4fe4088a560fc7eda47078030948be656c913d2a19e3270f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfac26df2cee898d81613a7dc486b15d5e00a95470a628b7482b76ffa0a8bec9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "160ad334e165168957eb3adf047fa8fe6e040157920f9c457afbcd44d3b73e82"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "675c3115d192817ed3e8581991ec8b550f0ca88ba3509d99a76d8030b2220014"
+    sha256 cellar: :any, arm64_sequoia: "0e3b6e88355b17ee6b3ba9fe2c49998dd9fefe45d89419ce2a4561c36ddd4e86"
+    sha256 cellar: :any, arm64_sonoma:  "42015e87839e23880b3256658549851747ded188645d81ca91cbb047390eeb9d"
+    sha256 cellar: :any, sonoma:        "79c0b0e9ab76295bb4cfbadfc32da88a680950b854d38023cb2dbc1b983e4813"
+    sha256 cellar: :any, arm64_linux:   "6c4103f1b093feecfc4659a001cd4662cf7b548f904363ade5d67ffff3509a67"
+    sha256 cellar: :any, x86_64_linux:  "a8725b3326e97d9a4f99f8cc38f13f741004baefaa90772655d10730381f2b0d"
   end
 
   depends_on "cmake" => :build
@@ -47,8 +48,6 @@ class Mosquitto < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-
-    (var/"mosquitto").mkpath
   end
 
   def caveats

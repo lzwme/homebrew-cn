@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/e2/e0/f86009bcec8d92d37d0e4add0191157815acb06d7d8183f073ae85503fb8/esphome-2026.5.2.tar.gz"
-  sha256 "d1b9cfd58ed07b9fd86e358b500d38d65087b37dcf24252ebf9af011d05c2649"
+  url "https://files.pythonhosted.org/packages/98/5b/65893169443a255da044c6676e46e71bdf3f7b50df5408404f58bd6aaab6/esphome-2026.5.3.tar.gz"
+  sha256 "6ec2e5a64009a3401fde582d251b127a5e436f00b300076edf192d06be8439a9"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -12,12 +12,12 @@ class Esphome < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3e057ea5f746d9e32588163aedd485801b1a9a01e76563a7c8c742d5ecfddcf7"
-    sha256 cellar: :any, arm64_sequoia: "d05fa609ef2ae9061d49494c5957c8269ee2746d7c43639f505d92ded65191f8"
-    sha256 cellar: :any, arm64_sonoma:  "d44a43d95ce7e515ba461bc4f0ad14252153ebd62b3bbf87ff8bcd35ec5afdd6"
-    sha256 cellar: :any, sonoma:        "f43bdb89b328a4fb03cf8a9937353466f7346071c50a5aef8df3cc76d25a075c"
-    sha256 cellar: :any, arm64_linux:   "b55edb870527af2a048742ef3ed060933eaf6beb5706b8a8d76a20f77de092de"
-    sha256 cellar: :any, x86_64_linux:  "4e3bde067ad3d888d84629cd3bce95baa2fa00728dbfc32ccb3c0e1cccef76cc"
+    sha256 cellar: :any, arm64_tahoe:   "9b597d1be5bfb155d79d982a25b45ab59eb678d2fa09c3b7feca4523ab598f5b"
+    sha256 cellar: :any, arm64_sequoia: "245740204780e96aac70a61c9ba4817b7ce2d8294fe1a9ae0c9d5549ba4bde2f"
+    sha256 cellar: :any, arm64_sonoma:  "ee69805046343c13fa2f7d34908575881e8bf0462bcd487272363dd7683c6551"
+    sha256 cellar: :any, sonoma:        "3d2e1ae6ac1246df1c50546193be0d138d13fd875d19d64067bc154c05f0cbb5"
+    sha256 cellar: :any, arm64_linux:   "7d6266b211f9f8621b8d9ebb73d5ad435826890b0441440d2b1e3778366d4b94"
+    sha256 cellar: :any, x86_64_linux:  "ce3929c332fd8ea3aa667a304357019af1e1258344fffc829f5fe8f613e82919"
   end
 
   depends_on "rust" => :build
@@ -126,8 +126,8 @@ class Esphome < Formula
   end
 
   resource "dbus-fast" do
-    url "https://files.pythonhosted.org/packages/c3/a3/7dec17915085ee776c14a211c1defc58c8f0e51ea235bc8e750f1744ceca/dbus_fast-5.0.17.tar.gz"
-    sha256 "c8dbe4c30adeee61d2c84005a1ad1bccfd2961fee7d995e876db5117f502a20f"
+    url "https://files.pythonhosted.org/packages/b1/56/102440b6459e562cdec6245e1406de04472a8811ce11c56ed05fccb90a4b/dbus_fast-5.0.19.tar.gz"
+    sha256 "71c157bbcd6a48aca532783fdaaaf64eb529d0456a9c9917d74cf7ca3d4bdb81"
   end
 
   resource "esphome-dashboard" do
@@ -161,8 +161,8 @@ class Esphome < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
-    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "ifaddr" do
@@ -316,8 +316,8 @@ class Esphome < Formula
   end
 
   resource "smp" do
-    url "https://files.pythonhosted.org/packages/26/3d/2fff3d2fb96f371eaa2621e1d5478db3f27fe11c8c01e8c7320997fb71d5/smp-4.0.2.tar.gz"
-    sha256 "11ea847fb6ebfdd4fe9240bfa48c03e7030f74a1372c1fb1672a9988aab8d87f"
+    url "https://files.pythonhosted.org/packages/0b/3a/2a5017d4ed321389f242f26392d1cadfa36d9c6f235206b26491df83aafb/smp-4.1.0.tar.gz"
+    sha256 "def270346a9f67e99e526a3c789a814e6e2203afa4d913cb11bb5a9bda6423a9"
   end
 
   resource "smpclient" do

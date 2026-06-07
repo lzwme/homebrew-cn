@@ -15,15 +15,13 @@ class Znapzend < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f04b481b943342f0ffe5a58835319c20820041f31311f29547f16e6ef72366e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "405bbba19b8422e333e11f67f73eb0c61a66150e551428f0c04b12aca2c1db99"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd97162625dcc01bf084c870bdf6fd3ba45e3e0967c9b5108fec6cef9f11919b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d72402cd84c52f88fe2fcd86892efdd79f379ac886ef71fcf4143651d1e190db"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4c9f4aaa841ce75048b37c4c1c54a6860f40903f2e2463c8bbb5f95c1994d3b2"
-    sha256 cellar: :any_skip_relocation, ventura:       "f6273d56bb1e0c20ded2d6f4079cf7548dfd99bbab933ab4fc0b4cffae136869"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e713956866b46b71f518756ae9590023be91a54fa339a80fa05b30b6989ed43c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b66995be03c18d0b108924cc165fc08c19eb6ac27c4810669af9187ef16d7c99"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea799c57b440adbdc77ba6ac320986ddaa9982a6d040f06e628199801a1e0d90"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fd88085dc29488d60953ff5a8ef5b3a9caf44c65b3416e7075e3c69b1ff12ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28986d6e5249820a854bd781ab6c86bc3c3805e981ecbe9008c846ebb9690682"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e20d2953b88bce6a242c79f3185b59338ee3d91dfc5cbf157009a695ca5d6f8d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "476a5b5219ae8a7df5feaa10ccedbbc9917b4ceb39985ea731cf8e5046d86395"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5e6733464d84b87cf38f5cf1bd1d91d22c18ddceefc2ccda442c3f197418bb9"
   end
 
   uses_from_macos "perl", since: :big_sur
@@ -32,7 +30,6 @@ class Znapzend < Formula
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
     (var/"log/znapzend").mkpath
-    (var/"run/znapzend").mkpath
   end
 
   service do

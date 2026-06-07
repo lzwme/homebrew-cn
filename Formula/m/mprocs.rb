@@ -1,18 +1,18 @@
 class Mprocs < Formula
   desc "Run multiple commands in parallel"
   homepage "https://github.com/pvolok/mprocs"
-  url "https://ghfast.top/https://github.com/pvolok/mprocs/archive/refs/tags/v0.9.5.tar.gz"
-  sha256 "315159b86a2033f89363674fd194cb4fa89b13862f4773e295de075f308ef980"
+  url "https://ghfast.top/https://github.com/pvolok/mprocs/archive/refs/tags/v0.9.6.tar.gz"
+  sha256 "62488726fc5539772a41863428026f51b4c03d5ac27c56191775e5a721ae90c2"
   license "MIT"
   head "https://github.com/pvolok/mprocs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "869116e41b4963e0ed240bca8dd6b545138c57d5ada2e7cbe972e69a46824938"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b8cd729e9fcb0c840c3cccf8b2cfba2db14e1bc9be2e323451517fe5c571378"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b244e32c17bb0cd1dfe057369c54569212e7884995061afcccc324cfff6227fc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e66992c6bf279b9e42e5fede70b1510876cb78b7908fb0adc82ed6a4d300951d"
-    sha256 cellar: :any,                 arm64_linux:   "e9166c6807c6434b07861d6f8528065235416a69b7677dc15c000b581cc02e0b"
-    sha256 cellar: :any,                 x86_64_linux:  "6fdaa6256688f652f599c82bd5e1f4213fe20d199b15572c1b5b108f410ac775"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f394b0b592afda66436defbe72b0995a7471ad92bb8839d34158f1d2fa570854"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "526b3adb479f79436d72e7ad163fb596124e4d57d7ef528b55241b43003ca6fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f59490acf88577eb898b54d1eb234f8da47d04e53ef3cfe031b1ad593613cf2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "23c84d9dac182c973b49e4021347ecf3272930b098aac8d0ed79d6dd2b2852b7"
+    sha256 cellar: :any,                 arm64_linux:   "f8c9637453f3b78582dca1d2d580a71ea247b99e282539581cce5524de6a36a1"
+    sha256 cellar: :any,                 x86_64_linux:  "35aff5529f3a2c7e5263a59046edd602cdaa77648eac82cea5d8c2ba22009936"
   end
 
   depends_on "rust" => :build

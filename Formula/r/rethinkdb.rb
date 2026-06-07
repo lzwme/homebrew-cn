@@ -56,8 +56,6 @@ class Rethinkdb < Formula
     system "make"
     system "make", "install-binaries"
 
-    (var/"log/rethinkdb").mkpath
-
     inreplace "packaging/assets/config/default.conf.sample",
               /^# directory=.*/, "directory=#{var}/rethinkdb"
     etc.install "packaging/assets/config/default.conf.sample" => "rethinkdb.conf"

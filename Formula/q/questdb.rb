@@ -11,7 +11,8 @@ class Questdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "03463458aa018a322c513f5d76026f7201b1d334b6037cd16af2860658429731"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "1baba62938969cbf2be7e4fdccdb94ae56ebe90607cff986cf0a95031e887810"
   end
 
   depends_on "openjdk"
@@ -23,7 +24,6 @@ class Questdb < Formula
     inreplace libexec/"questdb.sh", "/usr/local/var/questdb", var/"questdb"
 
     # Make sure the var/questdb directory exists
-    (var/"questdb").mkpath
   end
 
   service do

@@ -17,13 +17,14 @@ class Classifier < Formula
   depends_on "ruby"
 
   def install
+    ENV["BUNDLE_FORCE_RUBY_PLATFORM"] = "1"
     ENV["BUNDLE_VERSION"] = "system"
     ENV["BUNDLE_WITHOUT"] = "development:test"
     ENV["GEM_HOME"] = libexec
 
     system "bundle", "install"
-    system "gem", "build", "classifier.gemspec"
-    system "gem", "install", "classifier-#{version}.gem"
+    system "gem", "build", "#{name}.gemspec"
+    system "gem", "install", "--ignore-dependencies", "#{name}-#{version}.gem"
 
     bin.install libexec/"bin/classifier"
     bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])

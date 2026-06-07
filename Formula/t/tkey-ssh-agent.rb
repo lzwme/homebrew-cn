@@ -11,12 +11,13 @@ class TkeySshAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12f0f2068128036add825cab6c379ff57b17288e675ef771e44931fa8fb1aba1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83e57ea747aea61d45c1099babd1eab023581b3e43f56d3df3409bf02cd6a947"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3323c0dc0b5ea7e421a341443472bfbbfdc6934625c8d957dc1b80677df4fa7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "207012f364b1ee24f1a1da21b05949e528ed3c09ef611fe593089ff3166ca2f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "843332db81352ee2130ed860b1ee03a30da62e881abc6d1a5b435ab0e2f5e68d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6dcd2f951740ed9dd9814e7009e66dbc3f7409cd8095083ca5f2e813e8d7723b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "edb893d7da405b29310a28fa7cbb7116243741146d95045e84adfc84fd8aefd8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d208c163295411b0f2960d7874601f9ebcb20981a46ce13af48c7562aeb90225"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "080190575410f16394819365b25c8771fce80fe6903ac8385b0a9cc56d5f668a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0af3495f4d19250e7e8d148d644c69424a46b54b8c0e79c1d438f92827699743"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d884e14bcc18eb6f6c43d09c7bb9717ed09e43bc0af7e628453c835de8500ff"
+    sha256 cellar: :any,                 x86_64_linux:  "666f849c40edfdad37adb16b00e1e3de3d9af5f23a301c17a8d9d152fa411942"
   end
 
   depends_on "go" => :build
@@ -35,7 +36,6 @@ class TkeySshAgent < Formula
     man1.install "system/tkey-ssh-agent.1"
 
     (var/"run").mkpath
-    (var/"log").mkpath
   end
 
   def caveats

@@ -1,8 +1,8 @@
 class Mt32emu < Formula
   desc "Multi-platform software synthesiser"
   homepage "https://github.com/munt/munt"
-  url "https://ghfast.top/https://github.com/munt/munt/archive/refs/tags/libmt32emu_2_8_2.tar.gz"
-  sha256 "d4778cf89b054ba7ab410ffcb02ecf1629fa32b5b60838addec99eb93804fdcb"
+  url "https://ghfast.top/https://github.com/munt/munt/archive/refs/tags/libmt32emu_2_8_3.tar.gz"
+  sha256 "81f8c462f46bc8901618762ae34cf9de93894ff81f41db73c79472fa3baef875"
   license "LGPL-2.1-or-later"
   head "https://github.com/munt/munt.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Mt32emu < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0b798d8a0e855ce0ab76eb0b02d7a2fe16335bcc9185017ce65a95adad49ffa2"
-    sha256 cellar: :any,                 arm64_sequoia: "ddc5d6afc7e863326d3aa540f2ecd3b4b1218785259d5beb6706a7ba81589c04"
-    sha256 cellar: :any,                 arm64_sonoma:  "2a4fbe85aaa7ca8845d46518780fde3e7caf42b1e984c7115430cf916125b051"
-    sha256 cellar: :any,                 sonoma:        "8fa7063046ba4a099dd910436177f32667875e0430480457d15dd0a48624cc57"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fb476d5e104930546b6535407353220bd256d2ea01a8c60e4f4719a57155783"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55a6a022c263ea3b0c816b80b7e93e19dbbc13c24431ed334f95a51ce67d166d"
+    sha256 cellar: :any, arm64_tahoe:   "c72627b553abc212c63efd0a279de21cc979bf81880fb96ed2d521c15af0abac"
+    sha256 cellar: :any, arm64_sequoia: "a49a518125544c61c8e507c6ffa44c3c6c876dc87dfc6bfa3790cb7a18cf126c"
+    sha256 cellar: :any, arm64_sonoma:  "a1788beface4b91d9bb71df403c1e84a6b4ba50a3e475b4862066b3582714312"
+    sha256 cellar: :any, sonoma:        "45cc84af934a95c6889140ad2db5559caf324188515c1db135a308ab490b3149"
+    sha256 cellar: :any, arm64_linux:   "a3a63d148fc6418f2673dc151cd6f74b2003f1dc9ac0732dbb87dc4451f7906a"
+    sha256 cellar: :any, x86_64_linux:  "7df62e1e241f1946bb3a65e27f9c4c582b334d3bdcf90e982abe53979f70e6ce"
   end
 
   depends_on "cmake" => :build

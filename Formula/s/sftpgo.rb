@@ -6,12 +6,13 @@ class Sftpgo < Formula
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 arm64_tahoe:   "7e2b53259f9912cce20ba38d857475e0b6557c35518014f143d2fc6ac79dff1b"
-    sha256 arm64_sequoia: "b29545b73d53cb794c63373ce3172777042b697ad7b40a65928a901356930435"
-    sha256 arm64_sonoma:  "9cb242ae5f4731b237a5025e3195f51682948ca26c97d9d428c302371329b0a2"
-    sha256 sonoma:        "504d618ebc9c0fe640873b97a30065634fdb6f2a7c26bb436899ee1d2d6d928b"
-    sha256 arm64_linux:   "0cbc34dcc7e8dbffed3a4bd687e7a8d141d931231e89da884d2fc64ef1f5c54b"
-    sha256 x86_64_linux:  "6d15538b5d9d9f288826dd689f7070e66cbc236e70ec2e85b4e29073c5136618"
+    rebuild 1
+    sha256 arm64_tahoe:   "bafd105714d30c78a25a772e704b93975443fdf6844fdd53c7a67036693f3a71"
+    sha256 arm64_sequoia: "ce33f44bfe6cf79d146b3bb20ad2f874e4fb5fde7b68ac599b69c190279de524"
+    sha256 arm64_sonoma:  "38cbdd353fa2e70b103c970db7aac708fdc8bff44fea83a0dae864816b372509"
+    sha256 sonoma:        "796b7e65bf5912d1b619a7158765de36997099f796f49a1d4805eb1f56b10425"
+    sha256 arm64_linux:   "f9d1356cc8fdf4f770706fe431419d5022bc366f0feeab34297ee6e1401117dd"
+    sha256 x86_64_linux:  "d6802a8b86a83e2f5ecef23dc6704ed4ee7fcdeff82c21fb7b5c72cc190357b9"
   end
 
   depends_on "go" => :build
@@ -41,7 +42,6 @@ class Sftpgo < Formula
 
     pkgetc.install "sftpgo.json"
     pkgshare.install "static", "templates", "openapi"
-    (var/"sftpgo").mkpath
     (var/"sftpgo/env.d").mkpath
   end
 

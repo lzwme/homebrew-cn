@@ -4,6 +4,7 @@ class Dynare < Formula
   url "https://www.dynare.org/release/source/dynare-7.1.tar.xz"
   sha256 "fdd294a99c67c81208da8d682bf12e68fdbda75012b218d8702a4de163058a4e"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://git.dynare.org/Dynare/dynare.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class Dynare < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b5b12dcb04b23175892b8cdeb61d4820021ef76ab53a4be910f420a1ba8fbb3c"
-    sha256 cellar: :any, arm64_sequoia: "ebf3065abe0961bec5e575871653ac5a68de8c77ab07733528ccda8ee5d00ddc"
-    sha256 cellar: :any, arm64_sonoma:  "b90d1774896556bd89730efd30925880f89e45602ac183614269af3918415a89"
-    sha256 cellar: :any, sonoma:        "6ecf9cde7c271c1699b7fc45d3fcfdfc55a7a8d7c03b5490ec91e7ee9d4ee8f7"
-    sha256               arm64_linux:   "d47dd33d8e6bf6bacf501f5db7db1da1768e843435199a7367835acd4f9225fa"
-    sha256               x86_64_linux:  "e6d1f7b5b5e8cb35f5498d021944a5b22a913444a61180ce0a2cbd884b6dd7d2"
+    sha256 cellar: :any, arm64_tahoe:   "edb01020ea75b2549dbac94e452f57b1849c8797be344215161182e2667bb7eb"
+    sha256 cellar: :any, arm64_sequoia: "d28bb114a5897ade6fe0590fc587cc5a5a878819e475f4bcddb94b539f68e17b"
+    sha256 cellar: :any, arm64_sonoma:  "8ec14189bdf0be7d4cd327be0d7e9edb0285af4083aafbaca66cd788b730aa4f"
+    sha256 cellar: :any, sonoma:        "06fc4ff606f076fcb43365515f26e238c11bc2b4ca6e08cf9e74fb19df237a2c"
+    sha256               arm64_linux:   "7f1752b6e8b7a4d08100ccda65672294a0197855c80731b17abd382b27367580"
+    sha256               x86_64_linux:  "afbee497e701fd6e60c1984e2fc54ee5d5e400154dcc14e22bf379d1a248dae2"
   end
 
   depends_on "bison" => :build

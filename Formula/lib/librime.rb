@@ -2,18 +2,17 @@ class Librime < Formula
   desc "Rime Input Method Engine"
   homepage "https://rime.im"
   url "https://github.com/rime/librime.git",
-      tag:      "1.16.1",
-      revision: "de4700e9f6b75b109910613df907965e3cbe0567"
+      tag:      "1.17.0",
+      revision: "33e78140250125871856cdc5b42ddc6a5fcd3cd4"
   license "BSD-3-Clause"
-  revision 6
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "21737e60726a17d3b1ce4dd8ad4a848f808e6109f9c8c771aff6ec77b4b20557"
-    sha256 cellar: :any,                 arm64_sequoia: "010388c8c5a81a1ae1304fc234394c3c262c0215615db977a966ec2bd362347f"
-    sha256 cellar: :any,                 arm64_sonoma:  "1c58609643cc19cbfbeb1543e77ae2b06329662907a474472c6d5cdf4fe0d0e1"
-    sha256 cellar: :any,                 sonoma:        "20290e7b8546179f8f3fcc00c47c072192d5c416190a62991b75eccba46e468b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a80f16e21d10d61c5355c334b823a65fa02dd4e58ccf640c6747bf132ecfc97e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "117859283351aa84015d9b110895685ccfa77ebc16003f3510112d6cc781412b"
+    sha256 cellar: :any, arm64_tahoe:   "ade53b498af1fc609c50c57e610c55b814d62ef915e3cf2b1e12b73d5fefdb95"
+    sha256 cellar: :any, arm64_sequoia: "878bc2330e4751244c161346740addd9a1e8bb3fc93ffc59aa488581a8087d7f"
+    sha256 cellar: :any, arm64_sonoma:  "bc3c0da35c6eb21fc1200709eac478588d22b8696c3adc060260417d2f8ef8bc"
+    sha256 cellar: :any, sonoma:        "28c25a329d898f6a9bd35f66e14e2bcf524c80e02e6d8b7a122e5bfdb67156e5"
+    sha256 cellar: :any, arm64_linux:   "938e31799c53dd261d3bad655623347b08f39ad835c22c047cfb1b201215f2c8"
+    sha256 cellar: :any, x86_64_linux:  "532c5eb19b66b6e998b81a33f109f077f04dff21cccef81661421cc3c626c0b8"
   end
 
   depends_on "boost" => :build
@@ -31,8 +30,8 @@ class Librime < Formula
   depends_on "yaml-cpp"
 
   resource "lua" do
-    url "https://ghfast.top/https://github.com/hchunhui/librime-lua/archive/68f9c364a2d25a04c7d4794981d7c796b05ab627.tar.gz"
-    sha256 "3c4a60bacf8dd6389ca1b4b4889207b8f6c0c6a43e7b848cdac570d592a640b5"
+    url "https://ghfast.top/https://github.com/hchunhui/librime-lua/archive/ec52e48ea18f11af37717a01c337f853215cf70b.tar.gz"
+    sha256 "73247eb0b506934f8518459d303fe4a31f681a9c1623867b20889a985c4b6e8e"
   end
 
   resource "octagram" do

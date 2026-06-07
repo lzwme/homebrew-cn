@@ -11,7 +11,8 @@ class Arcadedb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "33bf668fd2340f7fb67359961778225762b4a921622729cb4c9816669a2dabd4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "833271368c91b691e42f1bbb397d1c0b3a6b533d11e189bc06e6b88229445c42"
   end
 
   depends_on "openjdk"
@@ -31,7 +32,6 @@ class Arcadedb < Formula
     (var/"arcadedb/databases").mkpath
     (var/"arcadedb/backups").mkpath
     (var/"arcadedb/config").mkpath
-    (var/"log/arcadedb").mkpath
   end
 
   def post_install

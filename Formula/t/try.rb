@@ -19,14 +19,14 @@ class Try < Formula
 
   def install
     ENV["BUNDLE_FORCE_RUBY_PLATFORM"] = "1"
+    ENV["BUNDLE_VERSION"] = "system" # Avoid installing Bundler into the keg
     ENV["BUNDLE_WITHOUT"] = "development test"
-    ENV["BUNDLE_VERSION"] = "system"
     ENV["GEM_HOME"] = libexec
 
     gem_name = "try-cli"
     system "bundle", "install"
     system "gem", "build", "#{gem_name}.gemspec"
-    system "gem", "install", "#{gem_name}-#{version}.gem"
+    system "gem", "install", "--ignore-dependencies", "#{gem_name}-#{version}.gem"
 
     bin.install libexec/"bin/#{name}"
     bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])

@@ -1,22 +1,22 @@
 class Ctl < Formula
   desc "Programming language for digital color management"
-  homepage "https://github.com/ampas/CTL"
-  url "https://ghfast.top/https://github.com/ampas/CTL/archive/refs/tags/ctl-1.5.5.tar.gz"
+  homepage "https://github.com/aces-aswf/CTL"
+  url "https://ghfast.top/https://github.com/aces-aswf/CTL/archive/refs/tags/ctl-1.5.5.tar.gz"
   sha256 "b6a36ac31e0a79224216e4fc41b56982939cec7a1afd4e80165cec3f1c37d265"
   license "AMPAS"
-  head "https://github.com/ampas/CTL.git", branch: "master"
+  head "https://github.com/aces-aswf/CTL.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ca511a0c2b48007131b0582bb71116f5cc0eac17087434738e6f7a6c50397d91"
-    sha256 cellar: :any,                 arm64_sequoia: "45d8158cce14a51d6974e9cc1603b88c0329e26c76574ccbeaf9372d687bf05d"
-    sha256 cellar: :any,                 arm64_sonoma:  "46d3f74998db9417edb5725421b181e05a11e1a35dbd6cd19aa961a443c7b04c"
-    sha256 cellar: :any,                 sonoma:        "29d9deebf5250fa3faa927ce5ee71a4488ea49dd00c595c1f6443006e8106899"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ec0a75ad70ea5c05ce1165095a98a1a69cf898cf09eb7206c7885e752fb7045"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d035e411659b169fb4d073389599ddb0337c3a5b43cdb088e57496cff47709e"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "47ab02f6566688c853c02238bcbd7eb1c625c58ec5715a10699ec2d3254f968b"
+    sha256 cellar: :any, arm64_sequoia: "cae61bd17827cf4258fd0ed62d3b0cc4c1e5f225cdcefd0f93d1f2714f9ed2ba"
+    sha256 cellar: :any, arm64_sonoma:  "ae55a5403c29344467d027fbe63f833d239c25a8e98a866bb1bbbb5289d4a0cd"
+    sha256 cellar: :any, sonoma:        "b992a7caddeacea47fe70eac3a6472a0469182352049d12df3505d17ada69eef"
+    sha256 cellar: :any, arm64_linux:   "d81b51797f7a0d4924d4a25718f98140e11f0fda57f39264fc8d79df9885b990"
+    sha256 cellar: :any, x86_64_linux:  "ccf4269d792537b2a2af10e3c4c1afb6ee37ffd97038e0583713ba20941765be"
   end
 
   depends_on "cmake" => :build
-  depends_on "aces_container"
   depends_on "imath"
   depends_on "libtiff"
   depends_on "openexr"

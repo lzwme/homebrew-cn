@@ -12,12 +12,13 @@ class Immudb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "50d9b88b928c183aceecbfb26ef2a61f1d4d78841d7af7413ec2215fcd1bc7c8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6efcde16ebe6efa951340e90f88cebd880313709baa5543586f4d79aaf41bcf8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a58211a9ca3f8c55c12acbb1a7ae8f50ad5d88861a25b81724152ab6d8a27c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "727ad82cd0b9a890a9d1b02c1acfa76bc3ca1dd2e97d696f53277e1969516723"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15e79ad8608c3241ca1fbf0ac6cb39cfc8be1a6c3313c284061d34430659a96c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e405bf9a9557af00bc893301f8c7460584ace1b36d751cc65ac3263bc88eb3a8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f18ecfcb07a201bc6c11e605cbaca3362dc2b83c780ba964928c766ca83de2d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ff85f8d887022854a66985e86ced6eb92821ac7f484163284af2787db31723e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7825246f18fde7624bfd81a734044d0821f948e18372347b348f67b9ed53b45"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9a1c28e4f3d2e30920997f04d2618c0f67b778393bd07632b671d44d78255623"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1aca578a0cb448a8b5b173a604f7c8c9ff4eb7756f8be80790799b358beef7b"
+    sha256 cellar: :any,                 x86_64_linux:  "5ddee31a230eff3e62ab2c21058e3076977b40d71008bac636f8856bfde6745d"
   end
 
   depends_on "go" => :build
@@ -30,8 +31,6 @@ class Immudb < Formula
       bin.install binary
       generate_completions_from_executable(bin/binary, shell_parameter_format: :cobra)
     end
-
-    (var/"immudb").mkpath
   end
 
   service do

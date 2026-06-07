@@ -1,8 +1,8 @@
 class Yek < Formula
   desc "Fast Rust based tool to serialize text-based files for LLM consumption"
   homepage "https://github.com/mohsen1/yek"
-  url "https://ghfast.top/https://github.com/mohsen1/yek/archive/refs/tags/v0.25.3.tar.gz"
-  sha256 "9fc458cadd6eb1c97dc84f2d9dd166c8579a4320faca7d0b82e1313d656be1b3"
+  url "https://ghfast.top/https://github.com/mohsen1/yek/archive/refs/tags/v0.25.4.tar.gz"
+  sha256 "337e126814f745c6ec5d948d7aec33bd1d42066e764e17b6482679f77927e102"
   license "MIT"
   head "https://github.com/mohsen1/yek.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Yek < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b1cf3e736236db4cb7c0fc86c643649b618f6886eff9834f8fb6b8af00615e33"
-    sha256 cellar: :any, arm64_sequoia: "12a2dcd97caa2bbf02a0361c4bc492e06504b7e95dc40b9136f991602cfc5734"
-    sha256 cellar: :any, arm64_sonoma:  "0e5a8ecd38910e06fd9f62661f7c6e08e42a4a11017c8020f37a5ebfd5d07714"
-    sha256 cellar: :any, sonoma:        "2655754ad2d2cc6d417d36ec93e255acb804a9831a4682fda1a23fcf086439e4"
-    sha256 cellar: :any, arm64_linux:   "0ba9eb2bbf1dbba364a2aa875fe6d6fa3f3262239996dec4ee472efe3a709d4c"
-    sha256 cellar: :any, x86_64_linux:  "59ffd6f996dbdc9a6ce39449ba4ee54ed18d54b6b8b70dd8a46c9b73b31a4940"
+    sha256 cellar: :any, arm64_tahoe:   "59107fb3fed6bb1932d97063fdf0947d93e627226c67b3466d2217a3118ae1e1"
+    sha256 cellar: :any, arm64_sequoia: "6b7307433a733c29ab866e3f6935daf3e49dfb650da6df3819e431097ed30873"
+    sha256 cellar: :any, arm64_sonoma:  "52a480c9d5c26edb14c98b2cd3ef159b9012e8ad86feab593be35e48c00ec9c4"
+    sha256 cellar: :any, sonoma:        "1d2a61cef60b1cc3a104004b9b312e24eb0b967666c71867969c14c6c690d6eb"
+    sha256 cellar: :any, arm64_linux:   "4539e527afb3f67939b87abf6f50a20de4c54092786f7ee26c1d30f34e764a89"
+    sha256 cellar: :any, x86_64_linux:  "b30777bfc5feafdaab3802bf5de4a4e3611c83ca4a5e7d8e2bbb11a33cbf2e18"
   end
 
   depends_on "pkgconf" => :build

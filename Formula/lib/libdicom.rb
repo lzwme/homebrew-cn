@@ -1,8 +1,8 @@
 class Libdicom < Formula
   desc "DICOM WSI read library"
   homepage "https://github.com/ImagingDataCommons/libdicom"
-  url "https://ghfast.top/https://github.com/ImagingDataCommons/libdicom/releases/download/v1.2.1/libdicom-1.2.1.tar.xz"
-  sha256 "7a448d295b179a4c0b311c09f5253655446a44bf66b3b7d2aa4c09d15f02f1f8"
+  url "https://ghfast.top/https://github.com/ImagingDataCommons/libdicom/releases/download/v1.3.0/libdicom-1.3.0.tar.xz"
+  sha256 "75f1167f5153c659cdd58f2b432d2592bf0477abe0087e195bc621b5594ef10a"
   license "MIT"
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class Libdicom < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e9a14120d4cfa52dd2071bbcb9d43523b712b43f19a06204ed6d6e87bb3b98d2"
-    sha256 cellar: :any,                 arm64_sequoia: "03152b93d7e51c7e967a3d5774f6c5f4a487e6404c06ff79780da38fc6085bbe"
-    sha256 cellar: :any,                 arm64_sonoma:  "6a70bf18be8cdab41295bcb8c702caaa02e41b10c40fcfda08698d86fa2a9e66"
-    sha256 cellar: :any,                 sonoma:        "1005712c39f20e0ed08bd41f71e356928ce8900bda502a3440c10b67afe4f121"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a013097c92ecc377e3001ef0ecf42d716d34b68af3adb8d4dc0b3854ef27e03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "940adb9a8ec118f961c3fba37a15b8594718895a5d12c485926632aea6b5613b"
+    sha256 cellar: :any, arm64_tahoe:   "9c79eab7fd6a8172a56e70bc79ae146e61ce972dae33a4f96a241cfbc350aa80"
+    sha256 cellar: :any, arm64_sequoia: "bfd30b76fbad43ca1d1b9e2a7495d6e3f3fc4db0fd2bc5dbf329b7fe30a8cab5"
+    sha256 cellar: :any, arm64_sonoma:  "55b41d87132d9ea42038fcfb8f21c6d32c60af94cad291e425384f229f632347"
+    sha256 cellar: :any, sonoma:        "823c0d5d29e8de0dc7d121bdcc101c8e075e40cf5f08468944efde504b0dc843"
+    sha256 cellar: :any, arm64_linux:   "c1055732177b2605ac2b7e152baf6f34a6f3bbca97ab97bdad0af3dedfbd55dc"
+    sha256 cellar: :any, x86_64_linux:  "436e5320b8cfa3712e428943cdf5f7a8dc26386a470d7ad9b4da733b4b1b6925"
   end
 
   depends_on "meson" => :build

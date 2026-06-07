@@ -1,17 +1,17 @@
 class Latexindent < Formula
   desc "Add indentation to LaTeX files"
   homepage "https://latexindentpl.readthedocs.io"
-  url "https://ghfast.top/https://github.com/cmhughes/latexindent.pl/archive/refs/tags/V4.0.1.tar.gz"
-  sha256 "7b3d7517199473ae8f0b7e61ab274b7ce215ee7cc349495b7139cdf06c1f52f0"
+  url "https://ghfast.top/https://github.com/cmhughes/latexindent.pl/archive/refs/tags/V4.0.2.tar.gz"
+  sha256 "06b70cd1cc2ca6509c66a9f0a29a01d38ff22122b2fd559549f6df075bad1693"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f509f3706c8ba8bbf6498201633b37bf9e5453dbbf7de0577c8b762c3cde6680"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa02c299d3385a7a50d46c154cd8553e14d597ef5bdefe2538bdabfc358dc424"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f9ca5e3530c75bbb84cb650898e345f449016cfaff95ac5a24bca5f0585c582"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3292e2338c0c2942615f61d507e40f0c5f0f28c78d87bf124723b210f3945fbd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc64f81c87e7fafb450608624b4f8e3c26bc28076fa0a906eb22c8d832acbada"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35e5a4f592ec7844318a13e9a8a3297453ec65305289ccf0e738c5f4c85ecb6d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "348a392973760277f2d2da4f85dcc7de18af341cd513add168c03dfc20bd6cf3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3934cc3e5082d159179727ede4a2428b63b2849afc3b685842f3404c4ce57e4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1aba7aca1a414493ba36c528a4a930e1442c5e397a798c09580f4c9e79a685e3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0f9344acb685e6e3b32fbdbf1309ea571295c4a8c8e67f3efec013e3b7d19282"
+    sha256 cellar: :any,                 arm64_linux:   "9a0ae066f795970b10185195db9da1dd3f040bff2b0dc5b6b743a016c773a928"
+    sha256 cellar: :any,                 x86_64_linux:  "f0dcfb9dd98da2a1da4b5ce3c775754c96c4e15c492652f29b874637d6b98689"
   end
 
   depends_on "perl"
@@ -119,13 +119,13 @@ class Latexindent < Formula
   end
 
   resource "Role::Tiny" do
-    url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Role-Tiny-2.002004.tar.gz"
-    sha256 "d7bdee9e138a4f83aa52d0a981625644bda87ff16642dfa845dcb44d9a242b45"
+    url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Role-Tiny-2.002005.tar.gz"
+    sha256 "4618ec524618c104dc28a8cc86af129a00cad282aea7f4c75060ba05d4c8f4d7"
   end
 
   resource "Specio" do
-    url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Specio-0.52.tar.gz"
-    sha256 "aa770a8f5f61af37cd34b81b6ea8039e431b0e3b070f251617024abacdfadbdc"
+    url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Specio-0.53.tar.gz"
+    sha256 "0d0eecfb9e89bd0f5f710fac42e1200a882d513a862f98497eaef5927ac6c183"
   end
 
   resource "Sub::Exporter::Progressive" do
@@ -139,13 +139,13 @@ class Latexindent < Formula
   end
 
   resource "Sub::Quote" do
-    url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Sub-Quote-2.006008.tar.gz"
-    sha256 "94bebd500af55762e83ea2f2bc594d87af828072370c7110c60c238a800d15b2"
+    url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Sub-Quote-2.006009.tar.gz"
+    sha256 "967282d54d2d51b198c67935594f93e4dea3e54d1e5bced158c94e29be868a4b"
   end
 
   resource "Test::Fatal" do
-    url "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Test-Fatal-0.017.tar.gz"
-    sha256 "37dfffdafb84b762efe96b02fb2aa41f37026c73e6b83590db76229697f3c4a6"
+    url "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Test-Fatal-0.018.tar.gz"
+    sha256 "b8d2cccf9ee467271bc478f9cf7eba49545452be9302ae359bc538b8bf687cd6"
   end
 
   resource "Try::Tiny" do

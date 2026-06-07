@@ -6,14 +6,13 @@ class GlibNetworking < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256               arm64_tahoe:   "4529f9f2580208ce7fc05c8246fe2204e01dfcaa4a5449437297bce2bf2cbe55"
-    sha256               arm64_sequoia: "3a602d6d04b23f9ea7e3220f9d15f3665df3effb3e23755647ddc37290043851"
-    sha256               arm64_sonoma:  "f4dbd6b6633a8e45f1290c90fd6e97a9ee60e2e0553cea6ff174d8c817beee7d"
-    sha256               arm64_ventura: "f9907f3da38a5bee59b1a5b8dd794c2fa761595befc27c7f9c1abcda599c6275"
-    sha256 cellar: :any, sonoma:        "42ed98bed547bbeae647d95e0b5f0da4a85e7416cb722efbc4a6e9f975c1bdf0"
-    sha256 cellar: :any, ventura:       "051b59d9c1a7d2403a8d34628d6c0acad7c25f50e9d25d4756095c998975e128"
-    sha256               arm64_linux:   "151f752cd064606506e02b137a07b5a40aadb3a1df99ac5849b65e0eb83f3063"
-    sha256               x86_64_linux:  "c20490896cab94dc36f83a54bb58ccefea822fb311c03de4a5624e34b09c68ed"
+    rebuild 1
+    sha256               arm64_tahoe:   "ae0e5bf817df76e53439bb005204453a44a1c142d0b0ee47cd5d6e789e2d7276"
+    sha256               arm64_sequoia: "b2c118026358bc57f302b83f4e39784929b384d81ddff0b19dbd9c4c22b0c72c"
+    sha256               arm64_sonoma:  "284f9bb9a95e69608868574a74b1dc89d70b84bfa97a8442793aa6896bb06d3a"
+    sha256 cellar: :any, sonoma:        "96f9cc104e18a43db2842c092b198fc25d24ac0c218b3708830fd144bfcc1c60"
+    sha256               arm64_linux:   "bcfcaf0897ca867f2970f6b09c826c6a38b7ea574d81faaaeb82a1d23437a13c"
+    sha256               x86_64_linux:  "8aebdfee3449082444c36fc6351e6a2a331aa2d37f85c6caf55b0e519c6e0833"
   end
 
   depends_on "meson" => :build
@@ -44,8 +43,8 @@ class GlibNetworking < Formula
     system "meson", "install", "-C", "build"
   end
 
-  def post_install
-    system Formula["glib"].opt_bin/"gio-querymodules", HOMEBREW_PREFIX/"lib/gio/modules"
+  post_install_steps do
+    gio_querymodules
   end
 
   test do

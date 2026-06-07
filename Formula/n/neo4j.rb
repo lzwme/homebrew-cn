@@ -12,7 +12,8 @@ class Neo4j < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "27453b689ade9cfedd76cc875b3135dbd79dda6b71a14dce5bde6aeeabf16f28"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "99c3b6312e312ae52f285f036c7c60b480e5c73d2c25792c731e90d4d3a1eeb0"
   end
 
   depends_on "cypher-shell"
@@ -42,7 +43,6 @@ class Neo4j < Formula
     EOS
 
     (var/"log/neo4j").mkpath
-    (var/"neo4j").mkpath
   end
 
   service do

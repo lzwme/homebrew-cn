@@ -15,12 +15,13 @@ class NewrelicInfraAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2eb4a6e926d89586a5fbaadd42a7cace77b755e8907f33c6bf3c668581f7027a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72363a97702cbb67b90ec9dc9706ec76e51f228baaeb8a578037086c9e56859b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "956342da7e0188a0a08c319491c37d35804f8b65f2e8a8f0c297d3fcad4a44e2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ac8d8bb6df1de437fbfa7e6ea1f5fdcf70b9704d90312e26a3142efcac840ea2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8774185306d10df472fb37905b276f9a9f5aa9e57a0efc94ce27595fc2a3524"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64d7649a6bb1d19b2951bbf26f64402886a88a578d849f991b70c2aece2c4ebc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "870e4c5356a001bc83d1ee6201765c9cb96753783f54dbd65791a9bf77b9d2c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff40e4f0011272dba162ece168849877b63853a91cc7af3c35c466c0f712ab61"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7cb2848a5649ba3a1a1b9e034b301d8d732b5a2ee596351c6e34b2dd1e9c883"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5d8d87ad5d537f89f9028e03f631b2038df12b69cece02decb7a30b02a7d22ed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "73f10cde8da281f916337dfe9d14258e861b1d754b9e3e6307817f6d840c7fd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dd0302f65f6b1958ffb8de808946704236471843908fd952bf751f01564ae92"
   end
 
   depends_on "go" => :build
@@ -39,7 +40,6 @@ class NewrelicInfraAgent < Formula
     bin.install "dist/#{os}-newrelic-infra-service_#{os}_#{goarch}/newrelic-infra-service"
     (var/"db/newrelic-infra").install "assets/licence/LICENSE.macos.txt" if OS.mac?
     (etc/"newrelic-infra").mkpath
-    (var/"log/newrelic-infra").mkpath
   end
 
   service do

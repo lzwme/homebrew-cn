@@ -3,17 +3,17 @@ class Ramalama < Formula
 
   desc "Goal of RamaLama is to make working with AI boring"
   homepage "https://github.com/containers/ramalama"
-  url "https://files.pythonhosted.org/packages/93/54/0cb849ecca09f127dcb221293bca15e7fddf57d749d4783b0a6f77b6dba7/ramalama-0.21.0.tar.gz"
-  sha256 "03a8bd4dfa85089ca70cd4dd6b2ae433a5d3bcbb87cab1fc36185156b627642e"
+  url "https://files.pythonhosted.org/packages/a7/b4/f35697d69a8f0ed26da2f8cb2da8c42cffd19959ea449de3e9fa3cfe291d/ramalama-0.22.0.tar.gz"
+  sha256 "90733e64a8d83a1b96d8fc614d0191794e64aba002007a100f4244febb417f3c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "46cc25622d9076634f3c6435d3d588c8e04e4003078287c91e838be7a3fa5c9b"
-    sha256 cellar: :any,                 arm64_sequoia: "5fa66f11d10205fe8bd5caa33dd1fbb9269fa034083b4d854bf1a14941fcda57"
-    sha256 cellar: :any,                 arm64_sonoma:  "c31a9f5a9383d2321030d188da341ecfd537d24e16ab08ff0375ae294a2f214d"
-    sha256 cellar: :any,                 sonoma:        "e83639ae63b2668044884415dcde5b816398801ec5f72f6dd22e37b9776efbf3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba0bf24d5bf78a8641f132aba7faebe5575958bc4281653350aa04055c7d2a5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "161a14afb8aa2ad6b82f8f3bc0e1f96163bdaab811e9fa9c0a4fe4830e251e35"
+    sha256 cellar: :any, arm64_tahoe:   "26edfe41cb61bee6e36721b617935d89defbce07995d4db039048e6171400829"
+    sha256 cellar: :any, arm64_sequoia: "7b378706ccd5129bff1641bf206bb7901c823fe886272864fc80b2f91a8fb00c"
+    sha256 cellar: :any, arm64_sonoma:  "503e3b18548329ed7627f5d470a89b8d66ba67728ea32a2e9242d967aeaf14ac"
+    sha256 cellar: :any, sonoma:        "8869ef2e2ba921376571912164b657c1aa8836b625a214cecc5d3979f65200f2"
+    sha256 cellar: :any, arm64_linux:   "4d994ae18dc5e847d7da44d1879c9c394704f3d7e086b6f3dee54e400cbb50ad"
+    sha256 cellar: :any, x86_64_linux:  "65d036288697637c2d4de9a539bd73c6c34e59ea63b39de4b3adb67b6a2c5038"
   end
 
   depends_on "libyaml"

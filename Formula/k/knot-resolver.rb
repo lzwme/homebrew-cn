@@ -15,12 +15,13 @@ class KnotResolver < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f56559a52a45a318c6a67dc1af918bb5beaaef55df7ff1d5f97e427140c4227d"
-    sha256 arm64_sequoia: "a9ecbcdae8bed138b0f9ee977249b52fe79f061f5eae30a5e66038c53236e957"
-    sha256 arm64_sonoma:  "11fa6c0eaa79faf2d05713e82f5880555de0523ae88d121fd08f4c7bb9ad09c3"
-    sha256 sonoma:        "ee9bb80327cbcbaec6071332cf43d7eb0ff6acf98f67c01fb8479b71884da053"
-    sha256 arm64_linux:   "4979e353f638a743928d5bd1ef5fc7067381478945565e3702e57483c0f5fdca"
-    sha256 x86_64_linux:  "4b2a69ae64dc434850f994ca731b92d627eda19dee4d827a3fa1443f1c8ea8d7"
+    rebuild 1
+    sha256 arm64_tahoe:   "ecbd87f8840958061630b56ce481b318022c04e7a61f81451f3fe80552f62899"
+    sha256 arm64_sequoia: "696f38480bfdb8a482d5b05965605c6af936de1ecb55e09b67936266b1239355"
+    sha256 arm64_sonoma:  "bdca7ed87aaa019b8e1ed4e92ffc1ecc9ad266cef4ab7f427340b4e4960d7974"
+    sha256 sonoma:        "df958d459b9d6d8db7e4fcaf9caaa28fbf0a26d635ecf60b7df22c98aaad939c"
+    sha256 arm64_linux:   "b67753fa578eb8df6e3de122fee0cb9f22344894d0fbe6318e0f8e8f037a9004"
+    sha256 x86_64_linux:  "f29ce6b70f76eca587ce8a717dc1f4f981b2bd05985259ba963970263d3db627"
   end
 
   depends_on "meson" => :build
@@ -151,7 +152,6 @@ class KnotResolver < Formula
     pkgetc.install "etc/config/config.yaml"
 
     (var/"cache/knot-resolver").mkpath
-    (var/"run/knot-resolver").mkpath
   end
 
   service do
@@ -164,7 +164,6 @@ class KnotResolver < Formula
   end
 
   test do
-    assert_path_exists var/"run/knot-resolver"
     system sbin/"kresd", "--version"
 
     assert_match "Basic validation was successful", shell_output("#{bin}/kresctl validate")

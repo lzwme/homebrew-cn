@@ -3,18 +3,18 @@ class Fastmcp < Formula
 
   desc "Fast, Pythonic way to build MCP servers and clients"
   homepage "https://gofastmcp.com/getting-started/welcome"
-  url "https://files.pythonhosted.org/packages/64/24/519739e98daf92ebc64580e9d3320649bf9a1612c029a913dd88c3474d73/fastmcp-3.4.0.tar.gz"
-  sha256 "29055fb6816f4862c615aabaf0112ae8feb8b469740db13403a0ce5b799ec1dc"
+  url "https://files.pythonhosted.org/packages/29/18/46beaec18c9f86a599ae3f9cdf6677dd6b50240cfd844d18233710b47f13/fastmcp-3.4.2.tar.gz"
+  sha256 "b468722946fc467c3796a6572f7a14d93d48c014cf8fea12910245220cbbe4e1"
   license "Apache-2.0"
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "982ea71fe20b09b47a6ca1a27d3845fc45c433699e172b0446e5fecd7fefe32c"
-    sha256 cellar: :any, arm64_sequoia: "f2d9e65c8a8bd546d9d31230b0fed704122b6fe9c821af15cddc497f96a58a59"
-    sha256 cellar: :any, arm64_sonoma:  "8cc014728a073dd66760d8886eb8f6c19287e4e407042a39effd907dd7a6e952"
-    sha256 cellar: :any, sonoma:        "436b8c4fb20e25d62572fff379d868413333f2fbece5dc5c8ebe9f116bf97633"
-    sha256 cellar: :any, arm64_linux:   "586f8aa78f461fcfda0ae2207e15892b043772f853cef145d35d0f8a0814fb7e"
-    sha256 cellar: :any, x86_64_linux:  "1c4e5f1664af4bdcbd00909c98ffa292064fa4398ddccd71ba2afe3ab52bcf51"
+    sha256 cellar: :any, arm64_tahoe:   "8d2f06dd62e7c30ca425d014281bb4769246b166a1201ea553c028dde10059a9"
+    sha256 cellar: :any, arm64_sequoia: "4af4f9e5d44ca7561503a478df94805aafabe17658be42a488bc484047cad049"
+    sha256 cellar: :any, arm64_sonoma:  "e633212cad12341336ea6222f42c5e7392f14e69bd233b861375646da086e3bd"
+    sha256 cellar: :any, sonoma:        "0352f210c5d9afb9d515f0ce8c6a6003ade97a10ab4cf8cd7c1d46340d41a330"
+    sha256 cellar: :any, arm64_linux:   "9f76a76a654bd6363ce3bed59153cc59eff03989e1c4daec34a14166c745bf55"
+    sha256 cellar: :any, x86_64_linux:  "f8557324baaeb4ce1298c7d162af39bb2a4b43880c7ee993200b532b21efcc6f"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -95,8 +95,8 @@ class Fastmcp < Formula
   end
 
   resource "fastmcp-slim" do
-    url "https://files.pythonhosted.org/packages/e7/b0/4da6078c2d6aa0a38a8b1ae0271e1ed400f9e2cd1b3b46e6453fb1fe2b75/fastmcp_slim-3.4.0.tar.gz"
-    sha256 "faa0ccf16e85ec4b9f79c006fed3546b866d7e6dba3f60cd32cd98e84753a496"
+    url "https://files.pythonhosted.org/packages/a3/2e/d627b28b7403ecc526991ef732921b08bde010006e6148635f053fd29f4c/fastmcp_slim-3.4.2.tar.gz"
+    sha256 "290646e0955a516235a317151034559aa48336cb843d3f006131aedad8759bb4"
   end
 
   resource "griffelib" do
@@ -255,8 +255,8 @@ class Fastmcp < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/4b/82/c8cd43a6e0719bf5a3b034f6726dd701f75829c08944c83d4b95d02ed0e8/python_multipart-0.0.30.tar.gz"
-    sha256 "0edfe0475c1f46ddd3ff7785a626f6118af32bdcf359bb21260367313bb32118"
+    url "https://files.pythonhosted.org/packages/5b/42/55c32bb9b12693c092ad250a0e82edb5b31ddeda6eb772de5f308b3804ad/python_multipart-0.0.32.tar.gz"
+    sha256 "be54b7f3fa167bb83e4fcd936b887b708f4e57fe75911c02aebf53efaf8d938e"
   end
 
   resource "pyyaml" do
@@ -300,8 +300,8 @@ class Fastmcp < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/e6/bf/f6544ba992ddb9a6077343a576f9844f7f8f06ab819aefd00206e9255f18/uvicorn-0.48.0.tar.gz"
-    sha256 "a5504207195d08c2511bf9125ede5ac4a4b71725d519e758d01dcf0bc2d31c37"
+    url "https://files.pythonhosted.org/packages/c4/1f/fa18009dea8469069cca78a4e877a008ab78f08b064bfc9ab891579077ff/uvicorn-0.49.0.tar.gz"
+    sha256 "ebf4271aa580d9de97f93192d4595176df6e91f9aae919ca73e4fc07df1e66a3"
   end
 
   resource "watchfiles" do

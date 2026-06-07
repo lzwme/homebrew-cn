@@ -63,7 +63,18 @@ class DsdaDoom < Formula
   end
 
   def post_install
-    doomwaddir(HOMEBREW_PREFIX).mkpath
+    path = doomwaddir(HOMEBREW_PREFIX)
+
+    # "share/games/" can be a symlink to another formula's keg so we need to
+    # convert it to a real directory to avoid writing into another keg.
+    # Could make "share/games/" into a :mkpath directory in brew to avoid this.
+    if (parent = path.parent).symlink?
+      original_path = parent.resolved_path
+      rm(parent)
+      parent.install_symlink original_path.children if original_path.exist?
+    end
+
+    path.mkpath
   end
 
   def caveats

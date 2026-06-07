@@ -7,21 +7,19 @@ class Nsq < Formula
   head "https://github.com/nsqio/nsq.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a22f058697307ea3179db86098d939c2a0bab28729af92fc2237fa9ec46b843"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "164a08f1fe7e3007fddbb6f4111ed19863d08888501a00a7b0328234801636f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f1248437269d3aa06758ad5e02fb3fd13bf6ab46f7296b39c80bf9cf02cb1cf6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "353cac603cccbd9e62920f680f8328b17cc02baa391a3665b03345bc90edb1e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c88ffbec2368aae0d432ebb3cb2b7dbe08b654bbc0d86f842a0034b9afa9a74e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5066cbc44a03c78e4604cd45f34ba5eefadc51e876f61a7af5814ccc095096d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "174c639dceac725941538d1b137001671ffdda041952e3f656d15e34d8655a8e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f5d80fef901dbc92e4f9b37f37da27917e47f3d5447ee6cdfbffd4580fec614"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c928cf0c92aa4db6375e103c4180aa405584bb0c97fcf0557a05ca37f7700b72"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ad8054ad2253e25507210a0ba8790ca64726c5bd70c9b31334f0c72037d3425e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d33d9581089fdc927316c560b2c48425a9350bd46a8d2ba8f177310f5f108968"
+    sha256 cellar: :any,                 x86_64_linux:  "b71120783261906d3cc8d386856616cbe17f172d5155c7a5ff59c90ac8454f87"
   end
 
   depends_on "go" => :build
 
   def install
     system "make", "DESTDIR=#{prefix}", "PREFIX=", "install"
-    (var/"log").mkpath
-    (var/"nsq").mkpath
   end
 
   service do

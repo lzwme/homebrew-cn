@@ -9,12 +9,13 @@ class Mediamtx < Formula
   head "https://github.com/bluenviron/mediamtx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c67e4d9fe23dd44f179972b8790ee651674a4d24f0daa04719b24bb032a7e35a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c67e4d9fe23dd44f179972b8790ee651674a4d24f0daa04719b24bb032a7e35a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c67e4d9fe23dd44f179972b8790ee651674a4d24f0daa04719b24bb032a7e35a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "de713dcc9a84ce471810ba846c38935be55f7583a69ced50351d3e0c25bf6f6c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbc63645e6f0124c9a89c3c7897102f5ba491e94bd8eb744f33aedc5456293d9"
-    sha256 cellar: :any,                 x86_64_linux:  "2d3914ae83b0db6c73feb7abf68fb94f783a5c26556745644f5ed067c2e70f1f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06211308bafe37ed9a63fe772c0f909d341907c583953ecf528605db0df2b269"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "06211308bafe37ed9a63fe772c0f909d341907c583953ecf528605db0df2b269"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06211308bafe37ed9a63fe772c0f909d341907c583953ecf528605db0df2b269"
+    sha256 cellar: :any_skip_relocation, sonoma:        "46eff6e5c13a19f68c5d3a8cb4b8247bf8a7b11d220f0492498a5ec66bfaa1f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "94b1a645b778cfe5fd03cd0f8746f22066a518ac2cfc1bfb7cc0a3a204d4109a"
+    sha256 cellar: :any,                 x86_64_linux:  "717ad7c820a7c35fee94104594924248b2a771b02613f7937b75535c78b78bc6"
   end
 
   depends_on "go" => :build
@@ -25,8 +26,6 @@ class Mediamtx < Formula
 
     # Install default config
     pkgetc.install "mediamtx.yml"
-
-    (var/"log/mediamtx").mkpath
   end
 
   service do

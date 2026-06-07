@@ -3,8 +3,8 @@ class HermesAgent < Formula
 
   desc "Self-improving AI agent that creates skills from experience"
   homepage "https://hermes-agent.nousresearch.com"
-  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.5.29.2.tar.gz"
-  sha256 "465ee7a8da014d89e8d381fd13b862469862b7aa6d42b2e9b938351d3787b48e"
+  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.6.5.tar.gz"
+  sha256 "09ae9eef4ea88d3a6689b2071e7c927a4a2ee10e737c0974afd5a19402c090ee"
   license "MIT"
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
@@ -14,12 +14,12 @@ class HermesAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0b348a1df85be939c3e8b309a21ea04f27c6ae1107ac4fd96fb06be8c93473c2"
-    sha256 cellar: :any, arm64_sequoia: "5cecf4fff72426747b56d127bd8662fc2715c8d69e7a88c9c2b17b2551134216"
-    sha256 cellar: :any, arm64_sonoma:  "a5b0d61f0231510bacef7dbb3be026c8d8cdbda7ebe8eba95e81d25900691ffd"
-    sha256 cellar: :any, sonoma:        "4b5ea06e1c0fabba11af146413b0708d96f7f12542dd48b1b2ca83a9f0911b5f"
-    sha256 cellar: :any, arm64_linux:   "b93d4a5900a468196817b8909561618a8ac0889da8aca1a11b6526f9b0931af4"
-    sha256 cellar: :any, x86_64_linux:  "eaf31057c0d6ef34b0a3636f40c703febe6273f3e809205a8c0a4a114356632d"
+    sha256 cellar: :any, arm64_tahoe:   "831dceec1607e98cc50c85578af38b65c62c7869c9f115472afd52c46bea8032"
+    sha256 cellar: :any, arm64_sequoia: "0f7253ebf61d4e81de73976c939fd8081d710be8a0ab99892067ecdc77332d18"
+    sha256 cellar: :any, arm64_sonoma:  "e72efa34bbf421ac46965e5c38df4a08ccb95ba37ec206d08ae5de06c2481565"
+    sha256 cellar: :any, sonoma:        "970390b145a8c031271e434b9cf9c7fded858a50916099a6438dc35a5bc336ab"
+    sha256 cellar: :any, arm64_linux:   "0b2d9abde834ed7609505945859367549e2476bb5c05176a2b8ca2cd56c04fdf"
+    sha256 cellar: :any, x86_64_linux:  "1cd4503d0a8c065e9241aeb06b86d7c5e8104ede48f7d7525bfe60932524536f"
   end
 
   depends_on "pkgconf" => :build
@@ -214,6 +214,9 @@ class HermesAgent < Formula
   end
 
   def install
+    # Allow to build with Python 3.14
+    inreplace "pyproject.toml", "requires-python = \">=3.11,<3.14\"", "requires-python = \">=3.11,<3.15\""
+
     virtualenv_install_with_resources
   end
 

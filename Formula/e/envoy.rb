@@ -1,8 +1,8 @@
 class Envoy < Formula
   desc "Cloud-native high-performance edge/middle/service proxy"
   homepage "https://www.envoyproxy.io/index.html"
-  url "https://ghfast.top/https://github.com/envoyproxy/envoy/archive/refs/tags/v1.38.0.tar.gz"
-  sha256 "dfc86489802788f053956d9d1ad5c1fef5d982eddf7a9df69a0184a3a1ac4184"
+  url "https://ghfast.top/https://github.com/envoyproxy/envoy/archive/refs/tags/v1.38.1.tar.gz"
+  sha256 "ca1dac4f1a9d27cac4b63ab1925a48f024c6f685889961a10ad9d4d7296b6a7c"
   license "Apache-2.0"
   head "https://github.com/envoyproxy/envoy.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Envoy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c5a42a61bf6e211b7391bb79d66c4b72a759b113b2b5568d60cf7feb2bce4097"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d8ff9b7ad9edee2ef92144328cf697f69373ab022a178c21eef511db424b6e0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4c8fbce8679ed2728a36428a35db4d6fd118de84e1ce8ea919bf147385c42e0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "da740563a4a283764bfce68f22c8887834a0f8c0f926bf90a31d0a1015763457"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4c48997c3e784e8132a2514c329c20b7b93520e55ed4941b45f76132bf00b8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74283a702e21898ea8fcb816a81d2c90b9cfa7a04294096e4ddef3c18b7087c7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1863ed5883dbe58a301e427d693f5e95ebb50fae39ccc82f4e1a9c884ad19b4f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68dc939f6ef847f467eb80af04ccfd43a2ae5ea7cdf5546322c9592c6ee6bf4c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "242e383e262b8562db2118a5343fb1d2defa27c7562f977f78c1b52ae92a1089"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ebb44042cfb040e648e95c4bf8f1061c2001b4edab9995669332bfc22b0fcf22"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "096845e6c6157f3b3ad43e3533938ab730ac36918d7d30262d588410f174bc2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dc74257171c9dbf93792f8202dfded01fc2026c809d411d21f5fd5bc877b516"
   end
 
   depends_on "autoconf" => :build

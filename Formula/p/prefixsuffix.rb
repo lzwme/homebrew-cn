@@ -7,16 +7,13 @@ class Prefixsuffix < Formula
   revision 10
 
   bottle do
-    sha256                               arm64_tahoe:    "9685f6462cb7c8c464ba24562d8d79038c4982fa6e173765570d11d7d2fef6bb"
-    sha256                               arm64_sequoia:  "30ef0ba35485343f36734f212295160cedd798991dfa2abd35a6b60f7f95405e"
-    sha256                               arm64_sonoma:   "6e197205c70b3923ae50f5f33bd203810348f2846a3eabaf86839a978c598426"
-    sha256                               arm64_ventura:  "8a718e3a241904ac15db3d608b23d2450743cd649168f623d3033717ef604939"
-    sha256                               arm64_monterey: "c61092d6a233b89eba50ad58cd33acdf79110cececfe86b4b9c00c1a8713af58"
-    sha256                               sonoma:         "e5750bf2bc2db7e78a87ce10a8e348c15b6cc8f560a1ee4f97dafcd3968a8dc9"
-    sha256                               ventura:        "5226011c5383e3328b4872a1e559ce249b5da4f817c7d4bfab2d417ce0fc095f"
-    sha256                               monterey:       "4a0a8c588c5d78a1bffbeeeb1f6dc566fb1ff39de91900ce2d089af27e19fd5e"
-    sha256                               arm64_linux:    "74bcf8905a1953a54f17b65d4c68b48d0fb78e0d5f3988204e99620aa6b474bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bd8de221d43b7d0d511a7a0cb6ebd3a35f045524a02917cf839eb426ae65d41"
+    rebuild 1
+    sha256               arm64_tahoe:   "67f1d60548d347f793c3416522ea4f6b5ea884f58cdfe6d7ef4f468345818fb3"
+    sha256               arm64_sequoia: "ea1addddc2ca75fe7a5af2115e1aac889b31427ec090b2bcfda18424762a0db2"
+    sha256               arm64_sonoma:  "5f40e86d1a0aed0f708e54ba07d2b7eb7b51a7b0f08c6d25930d1e5e3b7966f0"
+    sha256               sonoma:        "65103955a0c43a6d89ff7cb87d923040d488b64076ffc174cc8a54de2dd15d88"
+    sha256               arm64_linux:   "cce97dd8441e779ba1c5795bdb542328504993d5c9d2f9672508d89f2d458d1d"
+    sha256 cellar: :any, x86_64_linux:  "ad9e1a4dc06e55b7a45c586eae321c5862fc520d978a283b4f4715af1ac804ac"
   end
 
   depends_on "gettext" => :build
@@ -24,6 +21,7 @@ class Prefixsuffix < Formula
   depends_on "pkgconf" => :build
 
   depends_on "atkmm@2.28"
+  depends_on "cairomm@1.14"
   depends_on "glib"
   depends_on "glibmm@2.66"
   depends_on "gtk+3"
@@ -35,7 +33,6 @@ class Prefixsuffix < Formula
   on_macos do
     depends_on "at-spi2-core"
     depends_on "cairo"
-    depends_on "cairomm@1.14"
     depends_on "gdk-pixbuf"
     depends_on "gettext"
     depends_on "harfbuzz"
@@ -57,8 +54,8 @@ class Prefixsuffix < Formula
     system "make", "install"
   end
 
-  def post_install
-    system Formula["glib"].opt_bin/"glib-compile-schemas", HOMEBREW_PREFIX/"share/glib-2.0/schemas"
+  post_install_steps do
+    compile_gsettings_schemas
   end
 
   test do

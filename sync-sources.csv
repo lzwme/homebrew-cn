@@ -842,6 +842,7 @@ Homebrew-homebrew-core/Formula/c/cargo-public-api.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-release.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-run-bin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-shear.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cargo-show-asm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-shuttle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-sort.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-spellcheck.rb, Homebrew/homebrew-core, 1
@@ -8979,6 +8980,7 @@ Homebrew-homebrew-cask/Casks/b/butler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/butt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/buttercup.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/butterkit.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/buzz.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bwana.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bzflag.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/c0re100-qbittorrent.rb, Homebrew/homebrew-cask, 1
@@ -9451,6 +9453,7 @@ Homebrew-homebrew-cask/Casks/d/devtunnel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/devutils.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dexed.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dfcf.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dfu-blaster-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dhs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/diagnostics.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dialpad.rb, Homebrew/homebrew-cask, 0
@@ -12742,6 +12745,7 @@ Homebrew-homebrew-cask/Casks/g/gridtracker2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/grisbi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/groestlcoin-core.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/grok-build.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/groove-omnidialer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/grs-bluewallet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gstreamer-development.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gstreamer-runtime.rb, Homebrew/homebrew-cask, 0
@@ -13101,7 +13105,7 @@ Homebrew-homebrew-cask/Casks/j/jupyterlab-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/juxtacode.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jyutping.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/k6-studio.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/k/k8studio.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/k/k8studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kactus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kakapo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kaku.rb, Homebrew/homebrew-cask, 1
@@ -14401,6 +14405,7 @@ Homebrew-homebrew-cask/Casks/p/pot.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/powder-player.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/powder.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/power-manager.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/power-monitor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/powerpanel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/powerphotos.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/powershell@preview.rb, Homebrew/homebrew-cask, 1

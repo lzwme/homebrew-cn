@@ -1,22 +1,22 @@
 class PgpoolIi < Formula
   desc "PostgreSQL connection pool server"
   homepage "https://www.pgpool.net/mediawiki/index.php/Main_Page"
-  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.7.1.tar.gz"
-  sha256 "9ee55642dd4450191a6452a0aa6de6d1c5f717ac64cbca0b9367b7c5808ae142"
+  url "https://www.pgpool.net/source/pgpool-II-4.7.2.tar.gz"
+  sha256 "e72b9d0ff3620f7da7e33a58dda44b77919d056752dc9bd86b2985c4988d1938"
   license all_of: ["HPND", "ISC"] # ISC is only for src/utils/strlcpy.c
 
   livecheck do
-    url "https://www.pgpool.net/mediawiki/index.php/Downloads"
+    url "https://www.pgpool.net/download/source/"
     regex(/href=.*?pgpool-II[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
-    sha256               arm64_tahoe:   "898916cee76fefbf45347cc364f3fce32a05b0071740a4ab491ce779803ed179"
-    sha256               arm64_sequoia: "5420df37f58cfaf70852073307b6c901fa3e84e1b17af3dd76a33158391000fe"
-    sha256               arm64_sonoma:  "4d558e1eb95a2af64ff322fa9727b720d64d576ed3490d9f39e34c816f9e5c05"
-    sha256 cellar: :any, sonoma:        "24476956742b91a87968d2642b5b6b7c4b876afc00dc33eed699538a154ba08c"
-    sha256               arm64_linux:   "a0c94479e17ef08a249523d3218ae1bdb5973832309743f88879a854594fd07c"
-    sha256               x86_64_linux:  "a3856790fbe145805893209d93eff5538d25a3408e85c2683239df9d8c7a471b"
+    sha256               arm64_tahoe:   "3806b34a57e6d14816d509815a5d20677cbaa384ee2a1b59882400bafa9cb15e"
+    sha256               arm64_sequoia: "8d2ccc431f16cf61383927700db7093b5daf1716196fc29d38c9a89d3afd9b79"
+    sha256               arm64_sonoma:  "8d84be999d0621382adcfcc1542e052f3b5dde0745fd6ecda5776bc072be5efb"
+    sha256 cellar: :any, sonoma:        "3dc9d2b61e2665bb17261337f9604832dab5fec058e656db37c5c99f4090fc2f"
+    sha256               arm64_linux:   "14a5c29f49ff4d7a1f6df15503efcbe8653730735c7527114301018e9a728750"
+    sha256               x86_64_linux:  "16b632529ebf79e4bcc79ba949a2474e872b5285103238168ad0849c4f5c9c3b"
   end
 
   depends_on "libmemcached"
@@ -25,6 +25,13 @@ class PgpoolIi < Formula
   uses_from_macos "libxcrypt"
 
   def install
+    if OS.mac?
+      # Work around old libtool's macOS 11+ version detection:
+      # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=97865
+      inreplace "configure", "$wl-flat_namespace $wl-undefined ${wl}suppress",
+                "$wl-undefined ${wl}dynamic_lookup"
+    end
+
     # Workaround for use of `strchrnul`, which is not available on macOS
     inreplace "src/utils/pool_process_reporting.c",
               "*(strchrnul(status[i].value, '\\n')) = '\\0';",
@@ -44,7 +51,6 @@ class PgpoolIi < Formula
     end
     etc.install etc/"pgpool.conf.sample" => "pgpool.conf"
 
-    (var/"log").mkpath
     (var/"pgpool-ii").mkpath
   end
 

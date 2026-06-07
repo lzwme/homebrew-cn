@@ -17,8 +17,7 @@ class Reposurgeon < Formula
 
   depends_on "asciidoctor" => :build
   depends_on "go" => :build
-
-  uses_from_macos "ruby"
+  depends_on "ruby" => :build # same Ruby as asciidoctor
 
   on_system :linux, macos: :catalina_or_older do
     depends_on "gawk" => :build
@@ -26,7 +25,6 @@ class Reposurgeon < Formula
 
   def install
     ENV.append_path "GEM_PATH", Formula["asciidoctor"].opt_libexec
-    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
     elisp.install "reposurgeon-mode.el"

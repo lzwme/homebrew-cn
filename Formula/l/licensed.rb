@@ -7,22 +7,38 @@ class Licensed < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "ea77d11cb8ea2da19a84ab0f0364879377e11d303aa963d0ac049bf1703cbbd5"
-    sha256 cellar: :any,                 arm64_sequoia: "82a43ae41ae886071174c26305626fcbd3d73345e84dc834640c66d5aedc6d8e"
-    sha256 cellar: :any,                 arm64_sonoma:  "c4956552d915a6d6e92587842fdaea142c15bbaba25e90bb938829a6b1893cad"
-    sha256 cellar: :any,                 sonoma:        "7af95dd4e135fca493ff97db9ff2a7deeef984d9a978b3f3556e7e3cb7a69695"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f68d0c9c90ba091329670f3c55db2dab668310c0706bc549cb4ddd4a1ac484b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f587002eec90446e70bfacce15a00a64481313940db75c5cf5cb983271e3aa36"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "12b2cddfdf4d6d8c1dc2f0ff4429d2c44dc4f2ea4dee4085fbdee5b2a76f0f5f"
+    sha256 cellar: :any, arm64_sequoia: "46c79b35931c3e943ee005a4d99a2c1ccf08ce3899357c48d1f56a1af0640d8b"
+    sha256 cellar: :any, arm64_sonoma:  "99109301a0936326e65ca219ebdb1cbdf8902ecd7fd35910e3478f7d18c90f5e"
+    sha256 cellar: :any, sonoma:        "1bdc8956cf16cf765a198e67c9c41ef476190a95cca2b0fe10f81ed047cabe5f"
+    sha256 cellar: :any, arm64_linux:   "11eb0613dcffa3a921615fdcaba762404491fb9b2a91a44aab1fa725de86be62"
+    sha256 cellar: :any, x86_64_linux:  "6c613e206e9b571fc3fe0edb0f0a19f996c5745a9320caf007a35b66daeb0ef4"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
+  depends_on "libgit2"
   depends_on "ruby"
-  depends_on "xz"
+
+  uses_from_macos "libxml2"
+  uses_from_macos "libxslt"
 
   on_linux do
-    depends_on "openssl@3"
     depends_on "zlib-ng-compat"
+  end
+
+  # TODO: Remove resource when there is a new release
+  resource "rugged" do
+    url "https://github.com/libgit2/rugged.git",
+        tag:      "v1.9.0",
+        revision: "5b28daf1fca547f875489650345bf9067e78fa25"
+
+    # Backport fix to use brew libgit2
+    patch do
+      url "https://github.com/libgit2/rugged/commit/5fee507fef1a322efabceee6f938195795d90eea.patch?full_index=1"
+      sha256 "4495f461391564df09ece50e7eb16bc8242af11c7a732180f9ce76e8b824e660"
+    end
   end
 
   def install
@@ -31,24 +47,19 @@ class Licensed < Formula
     ENV["BUNDLE_WITHOUT"] = "development test"
     ENV["GEM_HOME"] = libexec
 
+    resource("rugged").stage do |r|
+      system "gem", "build", "rugged.gemspec"
+      system "gem", "install", "--ignore-dependencies", "rugged-#{r.version}.gem", "--", "--use-system-libraries"
+    end
+
+    system "bundle", "config", "set", "build.nokogiri", "--use-system-libraries"
+    system "bundle", "config", "set", "build.rugged", "--use-system-libraries"
     system "bundle", "install"
     system "gem", "build", "#{name}.gemspec"
     system "gem", "install", "#{name}-#{version}.gem"
 
     bin.install libexec/"bin/#{name}"
     bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
-
-    # Avoid references to the Homebrew shims directory
-    shims_references = Dir[
-      libexec/"extensions/**/rugged-*/gem_make.out",
-      libexec/"extensions/**/rugged-*/mkmf.log",
-      libexec/"gems/rugged-*/vendor/libgit2/build/CMakeCache.txt",
-      libexec/"gems/rugged-*/vendor/libgit2/build/**/CMakeFiles/**/*",
-    ].select { |f| File.file? f }
-    inreplace shims_references,
-              Superenv.shims_path.to_s,
-              "<**Reference to the Homebrew shims directory**>",
-              audit_result: false
   end
 
   test do

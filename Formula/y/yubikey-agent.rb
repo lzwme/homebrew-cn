@@ -7,13 +7,13 @@ class YubikeyAgent < Formula
   head "https://github.com/FiloSottile/yubikey-agent.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13a582964b590f21b2fdd7c29ae6f76c2d598fc9a9e50e3f7e0086f6bb50fda1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bae16f841b3847ab59cbc42ef0a9c8944100b4817f0d20b7c0eb8c721a38dfe4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d18f07e88226c171546f67e9d598a6a91f0b2f6749c7359ff6d0b94951bb37ae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "554a94f134c4d2440a678a7a99d3cab10fa1956d1f07d9f3165572d907c6a6ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5151c4f4e1453cc1caca9fe4dd45361a6ffd88a0e5eb6005c248d5d8f1ae97a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "950ac75f5a78e63b0f9797db9f239f80269c785ad5bef591d470521bd7eddc28"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "58e734ee1f173c8f04aa349617af6f29276a966ecaa6d0a9e0c0988994493f6b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9496f56ac8c4afd814f2edcadbaa15be410ea87b55b1b60876233b52bd28cdf6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de350f79ac010b4b1e0ba8d8844fd1a44da4281076c1ab69612169b227e5f5a0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2ba5fbcf44305440bec2b3d13c56b60003fd22bd44ed31369babf4b541de8e8e"
+    sha256 cellar: :any,                 arm64_linux:   "f575668710835537bb2d24d6860360209e786ba6a2795fdad598627541bf58dd"
+    sha256 cellar: :any,                 x86_64_linux:  "eb8a7a4740d2bdfccfd6499c5f1d935a71feea2451928c7735d7caf7d21f954b"
   end
 
   depends_on "go" => :build
@@ -29,7 +29,6 @@ class YubikeyAgent < Formula
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=v#{version}")
     (var/"run").mkpath
-    (var/"log").mkpath
   end
 
   def caveats

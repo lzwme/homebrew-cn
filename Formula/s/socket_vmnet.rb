@@ -7,11 +7,11 @@ class SocketVmnet < Formula
   head "https://github.com/lima-vm/socket_vmnet.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "15b3703e48a5f03c38e5f854d8c50dc24a532138af2fc94587767d19d7e2eea5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be269d31b6494cf8c4b14e5421201409e7dbd63337046befd3712c6c926a8562"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "489e6807062d831fb5f961946b7f89576c8d48eaf35833dfb3f891f275294946"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a9c7d0037ddec9a8e178f8ac0dfa567a625be9412a690d42818b59acf5ea94d2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3120039f523d59fe299b4f3595b0db5f59af486def3c7108ffe22579292227e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8734ebe53397638b77dd5bf51c15cb6eaf4aabf297a315868bef2ef6505c31d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fdbf14d02df41c08c6e6c54059df2138133af4864e6709b37c10ac1a94c0c279"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3248770360fa1ea37347b33fce263982e0362e7176c253d5bf7e4e41443f9c79"
   end
 
   keg_only "it should not be in Homebrew's bin directory, which is often writable by a non-admin user"
@@ -23,7 +23,6 @@ class SocketVmnet < Formula
     system "make", "install.bin", "install.doc", "VERSION=#{version}", "PREFIX=#{prefix}"
 
     (var/"run").mkpath
-    (var/"log/socket_vmnet").mkpath
   end
 
   def caveats

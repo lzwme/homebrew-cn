@@ -4,18 +4,17 @@ class Rustup < Formula
   url "https://ghfast.top/https://github.com/rust-lang/rustup/archive/refs/tags/1.29.0.tar.gz"
   sha256 "de73d1a62f4d5409a2f6bdb1c523d8dc08aa6d9d63588db62493c19ca8f8bf55"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/rust-lang/rustup.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1adfcf92959af43b31eb55007ec19dccb0236b9e44804025aeda84f931d7a427"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39caad94c4db4d5bc3ca121a7dfcdc41281281088b36b11afb24a92de653b5c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00e1f91ea9c03796a1808726abe397935567903a8dbcd22e2f3db3c9ee0d2bbf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "282513938fc4e7cbb73d1c29ec969295b021cf725036b571f701bee2b25f38f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e9c1c73a958abd26ba816d34fa017e762cf048db5a9664ba0a6e404c44f5320"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bff7c94142160615a5919c3c673b36c62093bd19290e053f3b4738ebda500665"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "64be4eda51e96b7372ca85f1e9c224a46ed3ff45c1fd6a5f4ec75400d2123841"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "359c352d6b02d76d4a8d7499d12cd887a599432af5b99f334125aa2d7109fe99"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d751f814b493e7ef4412512219aceaccc4a16974ba88118a35b2734f7641dc7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e68c9a5c36eb99862049114b415a2502aff64fb11e815c4f441e3d21a646c2a5"
+    sha256 cellar: :any,                 arm64_linux:   "5f6d0fa5e4cf9be2d1e4e784072a1d54f165e2188c2af262b4d7a889b2dbbb70"
+    sha256 cellar: :any,                 x86_64_linux:  "59486bb4ea00d23c54817e5f28220058ae8525deff4d839ee0cf19192541077f"
   end
 
   keg_only "it conflicts with rust"
@@ -48,17 +47,21 @@ class Rustup < Formula
     pkgetc.install "settings.toml"
     bin.env_script_all_files libexec/"bin", RUSTUP_OVERRIDE_UNIX_FALLBACK_SETTINGS: pkgetc/"settings.toml"
 
-    generate_completions_from_executable(libexec/"bin/rustup", "completions")
-    [:zsh, :bash].each do |shell|
+    generate_completions_from_executable(libexec/"bin/rustup", "completions", shells: [:bash, :zsh, :fish, :pwsh])
+    [:bash, :zsh].each do |shell|
       generate_completions_from_executable(
-        libexec/"bin/rustup", "completions", shell.to_s, "cargo", shells: [shell], base_name: "cargo",
-        shell_parameter_format: :none
+        libexec/"bin/rustup", "completions", shell.to_s, "cargo",
+        shells: [shell], base_name: "cargo", shell_parameter_format: :none
       )
     end
   end
 
   def post_install
     (HOMEBREW_PREFIX/"bin").install_symlink bin/"rustup"
+    (HOMEBREW_PREFIX/"etc/bash_completion.d").install_symlink bash_completion/"rustup"
+    (HOMEBREW_PREFIX/"share/zsh/site-functions").install_symlink zsh_completion/"_rustup"
+    (HOMEBREW_PREFIX/"share/fish/vendor_completions.d").install_symlink fish_completion/"rustup.fish"
+    (HOMEBREW_PREFIX/"share/pwsh/completions").install_symlink pwsh_completion/"_rustup.ps1"
 
     # Remove the old Homebrew-created symlink during upgrades, but leave any
     # user-managed `rustup-init` file alone.

@@ -4,16 +4,16 @@ class LibjsonRpcCpp < Formula
   url "https://ghfast.top/https://github.com/cinemast/libjson-rpc-cpp/archive/refs/tags/v1.4.1.tar.gz"
   sha256 "7a057e50d6203e4ea0a10ba5e4dbf344c48b177e5a3bf82e850eb3a783c11eb5"
   license "MIT"
-  revision 5
+  revision 6
   head "https://github.com/cinemast/libjson-rpc-cpp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "90009f5dccd487daf8353a4e34d46cc7e2b4dc88261daa2cfd73269685686613"
-    sha256 cellar: :any,                 arm64_sequoia: "258f462530444dda7c57ba05dff26d861a7f4779e1f932b13be8fcc7383bd6fd"
-    sha256 cellar: :any,                 arm64_sonoma:  "c9310d16222ac14c96de196af4c598064e47a5ced65280743c1036709fc72264"
-    sha256 cellar: :any,                 sonoma:        "b13814601b1409b3d2bd6a2b714adb238c0853efe75cdb06a80bb657843c5c23"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "af46b21b0d61e4ed19640672030c305c8a368bce66e9a43582fc61455d9a171e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e25df228081f30d9cab7785837ef4354978d11007ad815a61fdad087e6fea536"
+    sha256 cellar: :any, arm64_tahoe:   "b7f8ed2efd15cc6f35428761c6354a684116c137850e5d878ce61e768d117ecb"
+    sha256 cellar: :any, arm64_sequoia: "5585f289461a653af4910f3a7b4284ab4be73b9459dde38a7598ea522d8e0f43"
+    sha256 cellar: :any, arm64_sonoma:  "57c8d3cc9e4d815700357b788435bc97a2ccdebea864b45a0a9ee0bd41d3ebc2"
+    sha256 cellar: :any, sonoma:        "8cdec171f1ebcbcdf81a5b16e3c6455bd0139c6d4c7c74cd1559b40f2971d6ca"
+    sha256 cellar: :any, arm64_linux:   "0ad30aa84d8e1c1c3a3ffec2fca43221accc269f6f41f3d0fd626b2f13d5fae2"
+    sha256 cellar: :any, x86_64_linux:  "3bf887396ca51c1a8258ede205ef9141f1477337c44c3e2d381f9f2203e6ca93"
   end
 
   depends_on "cmake" => :build

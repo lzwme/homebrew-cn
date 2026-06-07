@@ -1,8 +1,8 @@
 class Dolt < Formula
   desc "Git for Data"
   homepage "https://github.com/dolthub/dolt"
-  url "https://ghfast.top/https://github.com/dolthub/dolt/archive/refs/tags/v2.1.3.tar.gz"
-  sha256 "42b391e7c632ede8010a4ab2f570d0b2fa07ec89ebf3f8c4b12e94b0b2bf059a"
+  url "https://ghfast.top/https://github.com/dolthub/dolt/archive/refs/tags/v2.1.4.tar.gz"
+  sha256 "b356237e92ff546e252356fc898682df6baf2e01366d195783e656e78930c4de"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/dolthub/dolt.git", branch: "main"
@@ -13,12 +13,13 @@ class Dolt < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "351534c30ad417623fc60a5232d3f9b6eafd941eab9d654b2a714e968346f326"
-    sha256 cellar: :any, arm64_sequoia: "f679da87170a35e560355018938e5db2c1c6181cd088eff9a45614440eafe768"
-    sha256 cellar: :any, arm64_sonoma:  "c58a110008fe84452a97b6aa681b1bde60dd3f588e2933c72a6cc00b90f8d27a"
-    sha256 cellar: :any, sonoma:        "16c6c9e644f80b3a74428d8253c243559501513e0be4db3fcf42c604cde28844"
-    sha256 cellar: :any, arm64_linux:   "1c301d6af0973f619090bd88757c7cedafb1cca06e88a1543dedfd69b90b540b"
-    sha256 cellar: :any, x86_64_linux:  "ff357ab553ac4664cfa9b96d7058ce535def15f4f54218351ec015a991bf26a1"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "236b54ee3e53df9ab1a96f52de49f9949edea3cedf39058f93ea7849e9bc445d"
+    sha256 cellar: :any, arm64_sequoia: "593d64d7549634b2036b123b6887d96fb5b522630c53ff22f1fed2999313b18f"
+    sha256 cellar: :any, arm64_sonoma:  "51e55d75ad9c02459c4807101019fd79f3da8401dc2e3149196984b8e09f6d45"
+    sha256 cellar: :any, sonoma:        "615504e7776c3b4c8d956ee67ad3ba6c243985a2b13a1f6bd5ea75c087c400f5"
+    sha256 cellar: :any, arm64_linux:   "9f47b3472563e314396aa8609aa6ebc2c9d422532b8eaf605881df2666352dc2"
+    sha256 cellar: :any, x86_64_linux:  "d19d3aff4beaa29b6080429c6526f5e2f04f9f7845e7ccb259be1ff3ce53fcc1"
   end
 
   depends_on "go" => :build
@@ -29,8 +30,6 @@ class Dolt < Formula
 
     system "go", "build", "-C", "go", *std_go_args(ldflags: "-s -w"), "./cmd/dolt"
 
-    (var/"log").mkpath
-    (var/"dolt").mkpath
     (etc/"dolt").mkpath
     touch etc/"dolt/config.yaml"
   end

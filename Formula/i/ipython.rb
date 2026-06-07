@@ -3,18 +3,18 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https://ipython.org/"
-  url "https://files.pythonhosted.org/packages/21/c2/c0064cf15d026501a1ef70e42efd9c3f818663089399aacc5e37a82901c1/ipython-9.14.0.tar.gz"
-  sha256 "6f27ff0f1d9ea050e0551f71568bc4b34d8aba579e8f111c5b4175f44ac6b4aa"
+  url "https://files.pythonhosted.org/packages/e2/23/3a27530575643c8bb7bfc757a28e2e7ef80092afbf59a2bc5716320b6602/ipython-9.14.1.tar.gz"
+  sha256 "f913bf74df06d458e46ced84ca506c23797590d594b236fe60b14df213291e7b"
   license "BSD-3-Clause"
   head "https://github.com/ipython/ipython.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f073f4b3f3617ab33623b09e90d029d46ef341f138522b62513f397e22345752"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24fad1f63e6ad905ae30794fc45565b86725426b5c2921ad3ce455ee494427c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc38c2453f77215e216c69cf386730717e40dceffdf2fca046c42e41e2368278"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b2fb56c1e59377606af3697ea227f3fc155ca54a6d9ee73094b5ad80a4beb39e"
-    sha256 cellar: :any,                 arm64_linux:   "bd36094682e7e94a66a73ee1dd05134284417311955d37cdcd4cbcd5dbb1a01f"
-    sha256 cellar: :any,                 x86_64_linux:  "609e30cae493a78e3a968089b5751ec0c20aaea537941747a5c90b3908463b0d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7dfcb6094874fb3ebe359726ed07d3b1e9c53f2d9a554d05d899ca06f3b26b1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1cf1c11f148a3ccc73d0cdd698e1560e07f6313583b512f63624fe67aae2b05"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53a6ad8d9e9f9880817af47dd85b2c1b54ac7b1548e2148becdfd7c3f3461b0d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d0084fd7d629a2fb9a277d1c4e44a2041a71f8157f922ecb492136bfc7f0e4a"
+    sha256 cellar: :any,                 arm64_linux:   "0b79dd344224fe0e4698acba7d4ae3d688c51cc577970a1c513bff5078f729bb"
+    sha256 cellar: :any,                 x86_64_linux:  "aaf18cd2f7a74cdb225e9cc64b887239e9dd94ff7960e374b1104a6fcfa52ca9"
   end
 
   depends_on "python@3.14"
@@ -90,8 +90,8 @@ class Ipython < Formula
   end
 
   resource "traitlets" do
-    url "https://files.pythonhosted.org/packages/1b/22/40f55b26baeab80c2d7b3f1db0682f8954e4617fee7d90ce634022ef05c6/traitlets-5.15.0.tar.gz"
-    sha256 "4fead733f81cf1c4c938e06f8ca4633896833c9d89eff878159457f4d4392971"
+    url "https://files.pythonhosted.org/packages/57/a9/a2584b8313b89f94869ddb3c4074617a691de1812a614d2d50e32ca5a7a6/traitlets-5.15.1.tar.gz"
+    sha256 "7b1c07854fe25acb39e009bae49f11b79ff6cbb2f27999104e9110e7a6b53722"
   end
 
   resource "wcwidth" do

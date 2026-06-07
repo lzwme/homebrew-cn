@@ -3,25 +3,25 @@ class Urlscan < Formula
 
   desc "View/select the URLs in an email message or file"
   homepage "https://github.com/firecat53/urlscan"
-  url "https://files.pythonhosted.org/packages/e9/17/ef014dd0323fd063c4948136dea6cb9fb0ef739539d3245e34dfbbd57349/urlscan-1.0.8.tar.gz"
-  sha256 "15c1dc59a2c0c9d697acec1e4823f4a801aa79c176eff603c93d79b413003757"
+  url "https://files.pythonhosted.org/packages/88/96/10143ccf034ce03a92e299530d877862c3db59de4dc1fecbf5dc6c73960e/urlscan-1.0.9.tar.gz"
+  sha256 "067087895077762807ff028ed332e4e1ab6e1a7c249188dc846f6d160afba7ff"
   license "GPL-2.0-or-later"
   head "https://github.com/firecat53/urlscan.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1eacf4173845d925cae61292b6fb05a8b11322fbc76e220674f3c440c012e897"
+    sha256 cellar: :any_skip_relocation, all: "f55b54c7f10b4bdb6e968a642e7406561709dd50721772caf42c7eaa162b051d"
   end
 
   depends_on "python@3.14"
 
   resource "urwid" do
-    url "https://files.pythonhosted.org/packages/bb/d3/09683323e2290732a39dc92ca5031d5e5ddda56f8d236f885a400535b29a/urwid-3.0.3.tar.gz"
-    sha256 "300804dd568cda5aa1c5b204227bd0cfe7a62cef2d00987c5eb2e4e64294ed9b"
+    url "https://files.pythonhosted.org/packages/98/b8/9ed1c288eb7e9236ee83a3f847d15dfa879841219b9a7d174c6c2ef33f53/urwid-4.0.2.tar.gz"
+    sha256 "6962bd04ab98002326b67a431c59b2fb35e8b5abe2e095feda3ee7d8ea8f1228"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/95/fc/44799c4a51ff0da0de0ff27e68c9dea3454f3d9bf15ffb606aeb6943e672/wcwidth-0.3.5.tar.gz"
-    sha256 "7c3463f312540cf21ddd527ea34f3ae95c057fa191aa7a9e043898d20d636e59"
+    url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
+    sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
   end
 
   def install

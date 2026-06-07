@@ -11,12 +11,13 @@ class Varnish < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "9bc364d2ce1c2fa7d3a2400959fc35c8b0aaf7dc5f209a848e69cd0e5979813b"
-    sha256 arm64_sequoia: "bcc038aa04dd5c5cd7a00ece939ee456f62cb955dd97bf3289695e0529291442"
-    sha256 arm64_sonoma:  "4f79ce550e36b4d6aa2b868df9bf50192102371bb1baf92d70ea35b481817d7f"
-    sha256 sonoma:        "855a5c992fc7fa2f13597597f1d966ed8022c22b8c898da30b1120668c97784f"
-    sha256 arm64_linux:   "7c236bb7320009d0b1dfa405dfd14f6a59408409c77dee3a975a8b4af4f38bd8"
-    sha256 x86_64_linux:  "a9227348792ecdf765b221fc6a6ccc5668d4e0cf31e81eb6fbda47eb72c1cd40"
+    rebuild 1
+    sha256 arm64_tahoe:   "4b155b95d54d1219d675c68e74678e74a41832c38f5599520ed1b8e8a5c174d3"
+    sha256 arm64_sequoia: "e2777c2eebc9ebfa75ac21b38e97f9849cf56d1ba0dc094539c92a6342e8f386"
+    sha256 arm64_sonoma:  "39920fb27511634853cf75b455acd11fd758c0eb9f9d2581a38b18fbb3010459"
+    sha256 sonoma:        "60428bf227dcffc1ec13a1e5c98abf1147b1f0eca4a5a62ae6ee6dfd501a5066"
+    sha256 arm64_linux:   "cd6a933aefd04c2160203f85113a6d6698b967aa2a1d1ebdeed069d20c0ebd55"
+    sha256 x86_64_linux:  "8a4241f6aea15847b0bbbb4bc0b76ad9240d2e3259c52105727406da9cc92c15"
   end
 
   depends_on "docutils" => :build
@@ -45,7 +46,6 @@ class Varnish < Formula
     system "make", "install", "CFLAGS=#{ENV.cflags}"
 
     (etc/"varnish").install "etc/example.vcl" => "default.vcl"
-    (var/"varnish").mkpath
 
     (pkgshare/"tests").install buildpath.glob("bin/vinyltest/tests/*.vtc")
     (pkgshare/"tests/vmod").install buildpath.glob("vmod/tests/*.vtc")

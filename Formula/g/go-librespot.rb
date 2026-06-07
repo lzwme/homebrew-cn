@@ -7,12 +7,13 @@ class GoLibrespot < Formula
   head "https://github.com/devgianlu/go-librespot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f7951004183495f564e6d11ddb6b76c204c460d6f5bff581aec1455d85f3d7ec"
-    sha256 cellar: :any,                 arm64_sequoia: "18c976a6f7b4a0b4e11b2e402407dcada08f02846d02353d7610883f2fd9d81b"
-    sha256 cellar: :any,                 arm64_sonoma:  "3c284fe53febbb69fac8f8014435e82638dd73ca0dbc93ca5ce4e3b7590c96e7"
-    sha256 cellar: :any,                 sonoma:        "652358213dcca042ff7a4999bcf46fd23d126436de4446259c28cf19cc42a5f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "93e1e5c7510774a248817d6d1a2798a73b798e4bf6ad5544875b3f8f968762e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f37f34716728ab26f4cf066db34fecf85ab9437146e37133210afe93dc2a2f2"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "25cbc26ff1387c9c65f2a43297ff04c4698d4396b5a6236765978b659cf86a5c"
+    sha256 cellar: :any, arm64_sequoia: "3a38e6e49ab7d0c28f275754b081fce8c80d421f29d39cb90836f53e7b6e21a0"
+    sha256 cellar: :any, arm64_sonoma:  "7c970aab3435e9fc8bdf68a5423d575805fc4b7d45dd28bdfe752edab5355bad"
+    sha256 cellar: :any, sonoma:        "1d9c603465abe2b8c3dda02eccde5f3df0f8f84cc79d994cf07158d52ac363e0"
+    sha256 cellar: :any, arm64_linux:   "d8027d97fd232c5400645e1f5a493c4720fe9fc576e1a7c252d29b4b649c0700"
+    sha256 cellar: :any, x86_64_linux:  "58b26281fe0e9ccd12260ccec575462aa46a4c80d51213351ac15a62a3d7d6c0"
   end
 
   depends_on "go" => :build
@@ -35,7 +36,6 @@ class GoLibrespot < Formula
     ldflags << "-X github.com/devgianlu/go-librespot.commit=#{Utils.git_short_head(length: 8)}" if build.head?
 
     system "go", "build", *std_go_args(output: bin/"go-librespot", ldflags:), "./cmd/daemon"
-    (var/"log").mkpath
 
     # On macOS, create a minimal config that selects the correct backend.
     return unless OS.mac?

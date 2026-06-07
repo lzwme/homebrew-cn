@@ -27,9 +27,6 @@ class Grafana < Formula
   uses_from_macos "python" => :build
 
   on_linux do
-    # Workaround for old `node-gyp` that needs distutils.
-    # TODO: Remove when `node-gyp` is v10+
-    depends_on "python-setuptools" => :build
     depends_on "fontconfig"
     depends_on "freetype"
     depends_on "zlib-ng-compat"

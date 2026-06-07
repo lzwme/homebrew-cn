@@ -4,16 +4,16 @@ class Ntopng < Formula
   url "https://ghfast.top/https://github.com/ntop/ntopng/archive/refs/tags/6.6.tar.gz"
   sha256 "2e97fbd26c2f9ac526214e2a2e22ecb218e38f5e99a688c25ae6cedbbc3a892c"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/ntop/ntopng.git", branch: "dev"
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "ad21a48529fb2d9342fae2ccd7917ea2ec48db11f39f1502b295a08d0014ab0c"
-    sha256 arm64_sequoia: "8aca05d9e9e80b09d69c3840cbfca39c10ce988433b7a3855df7d6479c3598e0"
-    sha256 arm64_sonoma:  "6af02e8b862c98dcd92ecd8447f4b1b8a3ff31c4a7be6fa8c958e85b8c2402ad"
-    sha256 sonoma:        "70de138eb5a6b07cc28c555f784011e9c423cb61b0758ee24440f68debb8af8f"
-    sha256 arm64_linux:   "febfe7fde846b678bcfd8f2aefeea4d807315d4a490cb9e8daee9ae34f6c7792"
-    sha256 x86_64_linux:  "94c2efe3b6277a3f4942865476a329ae413a58c73047a9faed559344a9103654"
+    sha256 arm64_tahoe:   "678240618abb8e6af0bc0c4bf8b6a120b1bb986ca4c88d842ffb97042c6f8a68"
+    sha256 arm64_sequoia: "c1256937da21c4f16c39faefecd81f0511cfc61be90433ae1e91b565d8b9272c"
+    sha256 arm64_sonoma:  "bea740dd573b3e4d9c8b0778a3538f6c8620aafbb723675c5e9b5f9be67e5e9c"
+    sha256 sonoma:        "2c272f207cc31ad8030b1afdf3587ccfded7be50c511825b8fb49007e9fb03f3"
+    sha256 arm64_linux:   "279a28665086ba1f41861b94013e6576d3f1e6481d4afa66fbc0cff422b86033"
+    sha256 x86_64_linux:  "8eb7bc1027a51bdc9444e52a971064029710bb3f0cc601f7454638d18833cf26"
   end
 
   depends_on "autoconf" => :build

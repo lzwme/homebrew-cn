@@ -17,6 +17,7 @@ class Foreman < Formula
 
   depends_on "ruby"
 
+  # List with `gem install --explain foreman -v #{version}`
   resource "thor" do
     url "https://rubygems.org/gems/thor-1.4.0.gem"
     sha256 "8763e822ccb0f1d7bee88cde131b19a65606657b847cc7b7b4b82e772bcd8a3d"
@@ -26,12 +27,10 @@ class Foreman < Formula
     ENV["GEM_HOME"] = libexec
 
     resources.each do |r|
-      system "gem", "install", r.cached_download, "--ignore-dependencies",
-             "--no-document", "--install-dir", libexec
+      system "gem", "install", r.cached_download, "--ignore-dependencies", "--no-document", "--install-dir", libexec
     end
-
     system "gem", "build", "#{name}.gemspec"
-    system "gem", "install", "#{name}-#{version}.gem"
+    system "gem", "install", "--ignore-dependencies", "#{name}-#{version}.gem"
     bin.install libexec/"bin/#{name}"
     bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
     man1.install "man/foreman.1"

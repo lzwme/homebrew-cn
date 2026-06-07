@@ -6,12 +6,13 @@ class GiteaRunner < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2350621e3153d7bc7f17bf64f0e509ddfc7eadf344672e488362f84fd3404791"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf22941b9ac22a62e4fe7b705800f5f22fe159a4833df258034538e83712feb7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "568d12b7167e74960763f25c6c1bae7d22fc276639566a934c3ec005bd02e873"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c44d82a9b366dfbf76e943f8d51abe22ea57a2b9570b03c80f4c252af067a65f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "afff4029456bd90fabfdc73e185b347eaba642f2628cfec24654b721554590b0"
-    sha256 cellar: :any,                 x86_64_linux:  "fae828cc0306d450379e6fd0213b9c9091ff3b78c719ed51ca9c5ccff4d5d4d7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f08c33e64e94c385154207e3f931667420d124392c13dd29589ad58b3ed1a7c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6786fc030ca8fc7e95c8f0268840863fa7cd7d9976e5ec50fb7ed2d06f829e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aeaa464da219a87b5ccbd6001a31383a7f6ee851a4a770a9c7dc1c1753cfd90e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b978f156ecfe7cb6948feefbd4f619f4d3a3fdd88564de6a569038b10fd514e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "393f98826e795d8f92992c5c67423d81e0ddf8c7e357ae744a06b530523a13c9"
+    sha256 cellar: :any,                 x86_64_linux:  "2649b7b58b59be0e0814a492f36b0894b2839ee5b14affe5691d7fd75008c3b9"
   end
 
   depends_on "go" => :build
@@ -27,7 +28,6 @@ class GiteaRunner < Formula
     (buildpath/"config.yaml").write Utils.safe_popen_read(bin/"gitea-runner", "generate-config")
     pkgetc.install "config.yaml"
     # Create working dir for services
-    (var/"lib/gitea-runner").mkpath
   end
 
   def caveats
