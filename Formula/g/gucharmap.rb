@@ -6,12 +6,13 @@ class Gucharmap < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "5fc83a139aa1bb44ec10100cac01cb80cc6de3b046da3406d2147597ec5a54cc"
-    sha256 arm64_sequoia: "13ce180c2332dbda87492fc51ef9ff747464bb03cadbc200650ba01be2f4de16"
-    sha256 arm64_sonoma:  "b8df5266fab6c39cdf699ba70535f3184687be314ffdd77677f61d659567b13b"
-    sha256 sonoma:        "7a79b0b4a15a78c5e3b2126bc0eafcfff51bb1ec11f05946b098f6db951f9b38"
-    sha256 arm64_linux:   "3d44d54def012e053f477f66873c4bd94b750e315332de559ef9aeb856e14319"
-    sha256 x86_64_linux:  "4ad31d5c48706a229a6ac584583f06163b431e9b0f98d9df4e59ba6978fe47fd"
+    rebuild 1
+    sha256 arm64_tahoe:   "09cb32a02e2edb50223d4f9ebe8412245e9c83891e5a3fb2a490268a7bcbb8b0"
+    sha256 arm64_sequoia: "fdcad739389029c24449e013293d83fa598de25b676ce79fb6552482a3eddada"
+    sha256 arm64_sonoma:  "61ff6905c2c143cbfc0db25c2dd130a488acae6fee1f38df06b73cc419e2bb1c"
+    sha256 sonoma:        "7bfd643c6ea7027e1ff9b0fb33f6d70535deed333b55107e3b6278c417b154ed"
+    sha256 arm64_linux:   "28d9ab835720e30da0ca28cb2ca9622f7601c64181589e5d8efb702d0b90c4e2"
+    sha256 x86_64_linux:  "daca552d1c157d3b348489af518a968aa9e3e5122d507db32db78866a1994509"
   end
 
   depends_on "desktop-file-utils" => :build
@@ -72,8 +73,8 @@ class Gucharmap < Formula
     system "meson", "install", "-C", "build"
   end
 
-  def post_install
-    system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
+  post_install_steps do
+    compile_gsettings_schemas
   end
 
   test do

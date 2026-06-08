@@ -14,14 +14,15 @@ class Mercurial < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "b314da34e74eee6b843b2a2bc2141e7c77c2129b1340b4367873c8e53caa2b2b"
-    sha256 arm64_sequoia: "eb887e2837d02a2b43f72b5e60783f684bdec624424936da1815a9d2b5ae7672"
-    sha256 arm64_sonoma:  "dcc8b398239b62564b5f4dba1c93ab28afbfbc76c4e723b8c9262806ec5ce6e0"
-    sha256 tahoe:         "8926c3ed03a73f54083cefd3d6df30defed4302ca1ca00f478bee73f67a39d1d"
-    sha256 sequoia:       "4a13d61d6dff17789f5184ab8e598645f8c767c8c345fd3c5f0e1f4fd0b6756e"
-    sha256 sonoma:        "ae95fd5003ca3c57b9c52fcacc624522fff1332ad914f269fff36095908f0805"
-    sha256 arm64_linux:   "3c58bf407be023e33b32ed507322f86f5751e59ee5e7bbb58ec758f31f9c078f"
-    sha256 x86_64_linux:  "102cd57c321bd30309e3752172776b44a7a039ab7e75137383ad45abf2e7cbc2"
+    rebuild 1
+    sha256 arm64_tahoe:   "3f23c96102f486deb07929d7d463ca56e004fb83a7d265a09739494a98a6b39d"
+    sha256 arm64_sequoia: "8f38a7369f1c3534814df0161f16b557dd0bf0d7ef6e816619867691e4d186f2"
+    sha256 arm64_sonoma:  "50f59d6380b7941faf5ae93e5beb6a5062cd15eacfb164e8052d012edac753fc"
+    sha256 tahoe:         "697c91e7458980320413fbb7854b43de0198eda8f3464dc47fae3d00b94d6bd3"
+    sha256 sequoia:       "89927f08339b4f7a7b026695ca86f207914a654fbbcf485ec967d00794fa7c9b"
+    sha256 sonoma:        "4fd2dd0923dbc0ee547fe8ed6daa9309a0a111459240d55c2c7733bcd6b4d88a"
+    sha256 arm64_linux:   "6dc47f8a40ed7e5905b02d0a3966c01abc2793ced66a65f2e259f790f2fe54f8"
+    sha256 x86_64_linux:  "809732bbaea666c4ff3565da49007ece08c23e4495e7ad5e5e1c3b2d0b97f99d"
   end
 
   depends_on "python@3.14"
@@ -47,23 +48,6 @@ class Mercurial < Formula
 
     # Move the bash completion script
     bash_completion.install share/"bash-completion/completions/hg"
-  end
-
-  def post_install
-    return unless (opt_bin/"hg").exist?
-    return unless deps.all? { |d| d.build? || d.test? || d.to_formula.any_version_installed? }
-
-    cacerts_configured = `#{opt_bin}/hg config web.cacerts`.strip
-    return if cacerts_configured.empty?
-
-    opoo <<~EOS
-      Homebrew has detected that Mercurial is configured to use a certificate
-      bundle file as its trust store for TLS connections instead of using the
-      default OpenSSL store. If you have trouble connecting to remote
-      repositories, consider unsetting the `web.cacerts` property. You can
-      determine where the property is being set by running:
-        hg config --debug web.cacerts
-    EOS
   end
 
   test do

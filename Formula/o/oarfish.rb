@@ -1,17 +1,17 @@
 class Oarfish < Formula
   desc "Long read RNA-seq quantification"
   homepage "https://github.com/COMBINE-lab/oarfish"
-  url "https://ghfast.top/https://github.com/COMBINE-lab/oarfish/archive/refs/tags/v0.9.4.tar.gz"
-  sha256 "d991443d224edd97d6951b5d99c17bc1c920dc137fb0c606bc3dc5b9f3d25b62"
+  url "https://ghfast.top/https://github.com/COMBINE-lab/oarfish/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "f8715c6fc2a23c1041d30303fa1a9d7a6e463ed5cc8e543526c085a64d5abfe9"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12b890e8f49a81c2187ada86430d011e2c82dce7845fed0b1939f1a47c2a3b06"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6a2879736b570eb10a1573db41b94b5dc89971d26b129e70500fac42588e950"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14fe4b957e0505a07d7226cf75fd3926d2f0da368be0ba2ebce28c2c6bcff1db"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5853e72f7739fce7c0db125d2ad1c0753e59bf3a06ee50e8587b954cc0d39245"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "87b8dca3f609adb67d5a50bce43ca50e3fd5431c1b0b23a5333e36aab77c94b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c39a1ef9df8e29ecd014dca0df060ba3c196dcf82b6f525aa051284e8f661338"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "97b191385b9c87a080f4114487766148bd881481e9385771c86d48225160bd3e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab18a2ca9ce121fc380b4b0aa577b3694c6841a8ba5afb5cdbb848e86514c1d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0fb702c0ff0a6f5925860f37f6cb8d6ff98aa81d8ce4e16d32b59e9aa09d547"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9df4db569d3a4e1ac35af390c4b7f34fdf20ff424637757522657970d5233440"
+    sha256 cellar: :any,                 arm64_linux:   "7636627e3e9dfc3e6a6fe5ef86c405fcab5bc0b6bfdab55afcb721ccebc0ede8"
+    sha256 cellar: :any,                 x86_64_linux:  "6c12bfb6d937fdd394f97fe00e4aedba33ddf6ee3854870667e29df98cf61f5c"
   end
 
   depends_on "rust" => :build

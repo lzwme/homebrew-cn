@@ -8,7 +8,8 @@ class E1s < Formula
 
   livecheck do
     url :stable
-    strategy :github_latest
+    strategy :github_releases
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do

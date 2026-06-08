@@ -47,7 +47,7 @@ class Ghc < Formula
       # R_AARCH64_JUMP26 against symbol `ghczm9zi12zi2zminplace_GHCziUtilsziPanic_showGhcException_info'
       # defined in .text.ghczm9zi12zi2zminplace_GHCziUtilsziPanic_showGhcException_info section in
       # _build/stage1/compiler/build/GHC/Utils/Panic.p_dyn_o
-      depends_on "gcc@12" => :build
+      depends_on "binutils" => :build
     end
   end
 

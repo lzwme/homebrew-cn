@@ -48,7 +48,6 @@ class Node < Formula
   end
 
   on_linux do
-    depends_on "llvm" => :build if DevelopmentTools.gcc_version < 13
     depends_on "zlib-ng-compat"
   end
 
@@ -82,8 +81,6 @@ class Node < Formula
   end
 
   def install
-    ENV.llvm_clang if OS.linux? && deps.map(&:name).any?("llvm")
-
     # Backport fix for bundled LIEF's bundled spdlog's bundled fmt.
     # Should be fixed when new LIEF version with following commit is released and used by node:
     # https://github.com/lief-project/LIEF/commit/710637216b1f6f19569002d62e43fca201b9d91c

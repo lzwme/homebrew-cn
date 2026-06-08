@@ -7,12 +7,13 @@ class Gjs < Formula
   head "https://gitlab.gnome.org/GNOME/gjs.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "812b6a7f5c6131bc34c59ec5c31bb2fba45d74729b4062565ec8704cfee017fc"
-    sha256 arm64_sequoia: "4809c33460fed027d9fce6c63a5c4ff93733944b7e25eda3e54b5af293c36d71"
-    sha256 arm64_sonoma:  "85972643a8124ccdb5fcc2006029322b46dd1932b6809808b3a8e57457e64e91"
-    sha256 sonoma:        "77ef68855a431351639f441fe0bd1d9ea868df24a7e26e43df73e47f006eb418"
-    sha256 arm64_linux:   "0c39907f6fce1361e240a49a84f118bf9cfae1031cb5fac2e835d874ba84122b"
-    sha256 x86_64_linux:  "79b3c19b526140b65ff193f2710d5aed8c9e242e1dec065a6ca8fad482d4b8c6"
+    rebuild 1
+    sha256 arm64_tahoe:   "5d0a14b4ac86338949a15e5f374e208d38887514075d22f22c144a364dfe8557"
+    sha256 arm64_sequoia: "22f7d9bc15419b48a6fce97f6ff0cc8fec2f2508aa157e887ef01b10d779ee69"
+    sha256 arm64_sonoma:  "c768be21228e57f2837bc9be96b3b10d59438a85c33bb1ef4145b05a772537c4"
+    sha256 sonoma:        "0174fe5ca9ccfd3176d986aed546dbd8cde0b86c717d66213c2d17c55d18cd35"
+    sha256 arm64_linux:   "47c4e9ebbb18242cac5ff5c1b8276c15aa4d77882eb1cf6a94282380af0d4f16"
+    sha256 x86_64_linux:  "500a526ee59d19864fd08b18a441d3e01e2759236928b6e5257697ec4e7a2995"
   end
 
   depends_on "meson" => :build
@@ -52,8 +53,8 @@ class Gjs < Formula
     system "meson", "install", "-C", "build"
   end
 
-  def post_install
-    system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
+  post_install_steps do
+    compile_gsettings_schemas
   end
 
   test do

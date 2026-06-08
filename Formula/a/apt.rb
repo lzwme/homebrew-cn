@@ -12,8 +12,9 @@ class Apt < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "e732261545696d954189756c36a6c75062239d4fff91be6b8a6ddc5dedb74dcb"
-    sha256 x86_64_linux: "2d093a16fb414d2a22bd92762abd4dd57879cad56d22282b3cb562470e965cf6"
+    rebuild 1
+    sha256 arm64_linux:  "a6826d1bf9633466fcd4ed4405c4328da5fb5278c2f3ca5caf48a5287555da1f"
+    sha256 x86_64_linux: "f278561afbeeb0c7bbb399a478d47806ef25b7070435b8dbdfb1f17a8564fa29"
   end
 
   keg_only "it conflicts with system apt"
@@ -33,7 +34,6 @@ class Apt < Formula
   depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL-3.0 restrictions
   depends_on "bzip2"
   depends_on "dpkg"
-  depends_on "gcc"
   depends_on :linux
   depends_on "lz4"
   depends_on "openssl@3"

@@ -4,16 +4,16 @@ class Osm2pgrouting < Formula
   url "https://ghfast.top/https://github.com/pgRouting/osm2pgrouting/archive/refs/tags/v3.0.0.tar.gz"
   sha256 "3d3042aa0dd30930d27801c9833ebfbe16eba0ab0e5d6277636ce17b157f2a0f"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/pgRouting/osm2pgrouting.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a91a2713349eee362e0573e68b3ec50eb81b9f9cfcb2eef36b9e487df9311da5"
-    sha256 cellar: :any,                 arm64_sequoia: "aea29e697c550c06589149f97088db0dca3cf7ebd577f62bd3901eb7ea042c49"
-    sha256 cellar: :any,                 arm64_sonoma:  "1eb36bc2d0a5fd533413f64d56b4a076636c42a6e56cc08833aae60a9eabc8d0"
-    sha256 cellar: :any,                 sonoma:        "dabb062d43c2eb3c333325fc23e21c0c8ef4f10cf1cc25702fea5ef6971a3479"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ca30d07f2c57c79fe534fe378a27df5be505ee58f30abb0295e5985650dbb6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4f6bed7ff0a1a0bfffc5c4a25a5e5874cb5fbad7c151ec861916bd8bf63d70c"
+    sha256 cellar: :any, arm64_tahoe:   "1fcd4a920e939a6953262a4223c5e73782f6aa17c695e46807cd9b5902b30e51"
+    sha256 cellar: :any, arm64_sequoia: "b082dd87b77f015d5021c2079de15629499e59960c9b8ba169905e6350cc1123"
+    sha256 cellar: :any, arm64_sonoma:  "422a2b59418f73786569967cb6ffd8bb54b82c650d905e13a2d648d1d09c532a"
+    sha256 cellar: :any, sonoma:        "48e74c83ba4f29c30417e18916c580e4359090876e8fae77c2236ea64e2fc078"
+    sha256 cellar: :any, arm64_linux:   "2236f7147e6de328dba217b854abc604e6d4f9a6a1287a4fb9b5dffc5fcc0f14"
+    sha256 cellar: :any, x86_64_linux:  "5b42f463cb1de46fdf3f64540298e021f8b6878d21cca57713ad957a79315b70"
   end
 
   depends_on "cmake" => :build
@@ -37,7 +37,11 @@ class Osm2pgrouting < Formula
   def install
     remove_brew_expat if OS.mac? && MacOS.version < :sequoia
 
-    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
+    # Workaround until upstream fix for newer libpqxx
+    # PR ref: https://github.com/pgRouting/osm2pgrouting/pull/328
+    inreplace "CMakeLists.txt", "set(CMAKE_CXX_STANDARD 17)", "set(CMAKE_CXX_STANDARD 20)"
+
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

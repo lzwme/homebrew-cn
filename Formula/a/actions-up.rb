@@ -35,8 +35,14 @@ class ActionsUp < Formula
             - run: npm install && npm test
     YAML
 
-    assert_match "Updates applied successfully!", shell_output("#{bin}/actions-up --yes")
-
-    assert_match(%r{.*?actions/checkout@[a-f0-9]{40}}, test_file.read)
+    begin
+      output = shell_output("#{bin}/actions-up --yes")
+    rescue Minitest::Assertion
+      # Ignore GitHub API rate limit errors which are common on CI runs
+      assert_match "⚠️ Rate Limit Exceeded", shell_output("#{bin}/actions-up --yes 2>&1", 1)
+    else
+      assert_match "Updates applied successfully!", output
+      assert_match(%r{.*?actions/checkout@[a-f0-9]{40}}, test_file.read)
+    end
   end
 end

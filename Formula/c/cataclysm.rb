@@ -1,9 +1,9 @@
 class Cataclysm < Formula
   desc "Fork/variant of Cataclysm Roguelike"
   homepage "https://github.com/CleverRaven/Cataclysm-DDA"
-  url "https://ghfast.top/https://github.com/CleverRaven/Cataclysm-DDA/archive/refs/tags/0.H-RELEASE.tar.gz"
-  version "0.H"
-  sha256 "9fbd80d13321321d6ed1f5a736ab874e06d335429f2a51a39eefd2fa51feae68"
+  url "https://ghfast.top/https://github.com/CleverRaven/Cataclysm-DDA/archive/refs/tags/0.I.tar.gz"
+  version "0.I"
+  sha256 "1e4a6e1f70d805d01c97c71294eb45aad47f56f1e895fa783127e20298ee3249"
   license "CC-BY-SA-3.0"
 
   livecheck do
@@ -13,13 +13,12 @@ class Cataclysm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "492b7c7f2a66af205374ca334b4424cfe0beed549aacaac6e9380e1132cb366e"
-    sha256 cellar: :any,                 arm64_sequoia: "c7262395e501e9f37bddc7a552c4b4e0f3b920f0aabef1eab3b26de586a43dd3"
-    sha256 cellar: :any,                 arm64_sonoma:  "4f34105d17b58a4c9f6a807d524107d38f29d47fbb09eea1134708a1fab2ee8d"
-    sha256 cellar: :any,                 sonoma:        "a7b35b49b7b630c8e30748a52cd20e9224a9bdb3b44ec0019124f6c5a6d9f416"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "11de987a3cc2dea85f666402020210db6c9af56ba5c9f3594c3bb6169c58ef9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60f13c7d80e9b622b4153053872837e318be0aa3116535deaa138f49fc0a7a3b"
+    sha256 cellar: :any, arm64_tahoe:   "b85a378c456fe642a8a754371375e5976d5f03e2ea7bfc3973dad42c7f3ca5f1"
+    sha256 cellar: :any, arm64_sequoia: "f864e5b641aeb05177f24ffb6ec6af6496060c021400227790017cde54587bfd"
+    sha256 cellar: :any, arm64_sonoma:  "f4bbdcf29fa295fc2f1935afbaf85956d43047cd6ef65a97a4ccb4e968aa0055"
+    sha256 cellar: :any, sonoma:        "9de90362620a41e99a2d3f03cd42ac473f59ce60f03ae97e6e47761f8267dc7e"
+    sha256 cellar: :any, arm64_linux:   "643c8d9c04d3f8cec7a38943d29cc4ff05a295847b872b7feb8ab10f8478b4c4"
+    sha256 cellar: :any, x86_64_linux:  "c2cdfdc0d0b74612b9c345a5b42ebf0494fbdf4a4e628cbfdabfeeb32aefb6dd"
   end
 
   head do
@@ -31,6 +30,7 @@ class Cataclysm < Formula
 
   depends_on "gettext" => :build # for msgfmt
   depends_on "pkgconf" => :build
+  depends_on "freetype"
   depends_on "libogg"
   depends_on "libvorbis"
   depends_on "sdl2"

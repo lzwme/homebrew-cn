@@ -1,18 +1,18 @@
 class Asyncapi < Formula
   desc "All in one CLI for all AsyncAPI tools"
   homepage "https://github.com/asyncapi/cli"
-  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-6.0.0.tgz"
-  sha256 "c5939aca4cb9c64cacb404f78bc1ae242d95a6c07151db1698505ae3ed607327"
+  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-6.0.2.tgz"
+  sha256 "25ecd3a3c04cf47158bf4572136c3f95aface7c0df63a1c9ab8930c9ee7b7258"
   license "Apache-2.0"
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "966ff0b86f86e32a7e397003765c796806e0a0998e9e473a377f3d46a8d7593c"
-    sha256 cellar: :any,                 arm64_sequoia: "1cf61ab278ae0707914ac18f70ab9ace15bc6d2c279cdcb000d9f0d6a575f84c"
-    sha256 cellar: :any,                 arm64_sonoma:  "1cf61ab278ae0707914ac18f70ab9ace15bc6d2c279cdcb000d9f0d6a575f84c"
-    sha256 cellar: :any,                 sonoma:        "0eb19ea51d5b2bb701dc566186b33b8e6b83aa2bd7226a8b3facb960e5694350"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3dfa4934db0c269c77235d553a71580a431feb2689bf02c4557f5c981a279b1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c2714c128d47db98239819bcbac0d3fe738ef170a0eecd2590f95feb4781295"
+    sha256 cellar: :any, arm64_tahoe:   "cba3743eb9834bf40e238097d40f5b78972e7e0bc057f097a9227a9c09128b9a"
+    sha256 cellar: :any, arm64_sequoia: "14a8493220875fdbfe09991fc0439df95a0df61ea0829759f8b26772018af3b8"
+    sha256 cellar: :any, arm64_sonoma:  "14a8493220875fdbfe09991fc0439df95a0df61ea0829759f8b26772018af3b8"
+    sha256 cellar: :any, sonoma:        "f7bbe2a92d7b4991feb047276694c1bec6b863380d46beb8868f3b64d631d871"
+    sha256 cellar: :any, arm64_linux:   "77ee2374e17b18baaf325dfc841d7e6e9a02e6977e9d33ad07b849a0fc2cc1dd"
+    sha256 cellar: :any, x86_64_linux:  "9149c8c6629dc5f6019056a8ca416c3a95de0fa3e772d73703f3d4f5824ad582"
   end
 
   depends_on "node"
@@ -30,6 +30,12 @@ class Asyncapi < Formula
 
     # Replace universal binaries with their native slices
     deuniversalize_machos node_modules/"fsevents/fsevents.node"
+
+    # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-url` binaries
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
+                .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
 
     (var/"log/asyncapi").mkpath
   end

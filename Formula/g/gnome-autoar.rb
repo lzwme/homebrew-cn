@@ -14,16 +14,13 @@ class GnomeAutoar < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:    "21f6cb50309fa7fac08d920133ce5d38ef1cc733a11f742617dbeb336c8b7a9e"
-    sha256 cellar: :any, arm64_sequoia:  "82a0ecb8777d13f3ce427459f14143f538e2a7cb709b17436e8bfdd5418e2330"
-    sha256 cellar: :any, arm64_sonoma:   "dd87d22bf4ee53a96407ff2516c9893ed0e8ed49f22300b166908756fa424092"
-    sha256 cellar: :any, arm64_ventura:  "a3cca1e7e9e0f12e2f25dcbad3698ccbc249e943d0d659225f03631f819bff3a"
-    sha256 cellar: :any, arm64_monterey: "4067fd35e3d4905a49adf80fddd05785b69981e77a0d3ca5d48b55362b837eea"
-    sha256 cellar: :any, sonoma:         "9f4b8685e8bd77328158b651a82d8bf0e746ee94dcab600a8ce8fbc3a695d245"
-    sha256 cellar: :any, ventura:        "07977233fa05e74baadaaf3767fbf16925aa9ea6b8a767491d5820f8fa6fc196"
-    sha256 cellar: :any, monterey:       "6a277a2676b485946d376fa51f6ceed08394b68d3b616d2db8692ad4b982c13e"
-    sha256               arm64_linux:    "d6d7a1143bac8c867757bf8255e712bf6e6cb87c09ef9936da0fa77677b80069"
-    sha256               x86_64_linux:   "7fbef3923b41a565fb1b76d5cde929366f917d22e0342da607b7d8a15827a8bc"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "e989aba6c89f26eb5a551f54006af3f52408071a32cf0a6e32befa60c79cfe61"
+    sha256 cellar: :any, arm64_sequoia: "83d4a5f33857515b1a11149a955dd293411f6648b983304a8388f8cb2dbc6174"
+    sha256 cellar: :any, arm64_sonoma:  "5b8a042462f7b953f9d0ca1ee8dcbf7f8802fccf79b666b253368923d06cdbd2"
+    sha256 cellar: :any, sonoma:        "2785109ee3638584ee08d1ac71cd1a5ac71520b2309c81ad41da1102b35b5540"
+    sha256               arm64_linux:   "5c4524e591a8f0475cc70d08c9515467b643514164adfd165e4a1cf2454033c4"
+    sha256               x86_64_linux:  "7130c2c436ce821f2a7154113ddf5028eb3e4b9674b5b9e50e0ae64d11e96aab"
   end
 
   depends_on "meson" => :build
@@ -49,8 +46,8 @@ class GnomeAutoar < Formula
     system "meson", "install", "-C", "build"
   end
 
-  def post_install
-    system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
+  post_install_steps do
+    compile_gsettings_schemas
   end
 
   test do

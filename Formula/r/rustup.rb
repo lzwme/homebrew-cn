@@ -74,7 +74,7 @@ class Rustup < Formula
       To use rustup, ensure you have "$(brew --prefix rustup)/bin" in your $PATH:
         #{Formatter.url("https://rust-lang.github.io/rustup/installation/already-installed-rust.html")}
 
-      This formula does not provide `rustup-init`.
+      This formula no longer provides `rustup-init`.
     EOS
   end
 
@@ -96,5 +96,13 @@ class Rustup < Formula
 
     # Check that Homebrew only exposes the packaged `rustup` entrypoint.
     refute_path_exists bin/"rustup-init"
+
+    # Check for stale symlinks
+    testpath.install_symlink libexec/"bin/rustup" => "rustup-init"
+    system testpath/"rustup-init", "-y"
+    bins = bin.glob("*").to_set(&:basename)
+    expected = testpath.glob(".cargo/bin/*").to_set(&:basename)
+    assert (extra = bins - expected).empty?, "Symlinks need to be removed: #{extra.join(",")}"
+    assert (missing = expected - bins).empty?, "Symlinks need to be added: #{missing.join(",")}"
   end
 end

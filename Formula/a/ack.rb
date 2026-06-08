@@ -1,8 +1,8 @@
 class Ack < Formula
   desc "Search tool like grep, but optimized for programmers"
   homepage "https://beyondgrep.com/"
-  url "https://beyondgrep.com/ack-v3.9.0"
-  sha256 "b8916abc9d42ebe8cc82264e047ccff5cbc976401e32a3dc6fc01c551c0cb5f8"
+  url "https://beyondgrep.com/ack-v3.10.0"
+  sha256 "28a740de59bdb52000a281aa89dc9d44a24a1f144cdfe4bc24b7d0582b40e90e"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,8 +11,7 @@ class Ack < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "8d040693538ad8d489770cf4186a47364fc2bbe4d47e863c491b863e04b4df30"
+    sha256 cellar: :any_skip_relocation, all: "0f50e7b207da891500f42b5671413f290d4db5fea49943cfefcc74a3684760d9"
   end
 
   head do

@@ -31,7 +31,6 @@ class Protobuf < Formula
   end
 
   on_linux do
-    depends_on "llvm" => :build if DevelopmentTools.gcc_version < 13
     depends_on "zlib-ng-compat"
   end
 
@@ -41,10 +40,6 @@ class Protobuf < Formula
   end
 
   def install
-    # TODO: Remove after moving CI to Ubuntu 24.04. Cannot use newer GCC as it
-    # will increase minimum GLIBCXX in bottle resulting in a runtime dependency.
-    ENV.llvm_clang if OS.linux? && deps.map(&:name).any?("llvm")
-
     # Keep `CMAKE_CXX_STANDARD` in sync with the same variable in `abseil.rb`.
     abseil_cxx_standard = 17
     cmake_args = %W[

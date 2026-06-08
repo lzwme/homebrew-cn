@@ -1,18 +1,18 @@
 class HtmlToMarkdown < Formula
   desc "Transforms HTML (even entire websites) into clean, readable Markdown"
   homepage "https://html-to-markdown.com"
-  url "https://ghfast.top/https://github.com/JohannesKaufmann/html-to-markdown/archive/refs/tags/v2.5.1.tar.gz"
-  sha256 "9a4d8337f9456fa757ec0e4690ff720a60aef91ee64461ebba15d87def553da0"
+  url "https://ghfast.top/https://github.com/JohannesKaufmann/html-to-markdown/archive/refs/tags/v2.5.2.tar.gz"
+  sha256 "1086b066a17bf49d8bec8fa493e07a54580924ad866ed7e8052692accba706dc"
   license "MIT"
   head "https://github.com/JohannesKaufmann/html-to-markdown.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a9148389dc9d798f2179634075e5a9ce03e275b40de6dc559304c225b56476b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a9148389dc9d798f2179634075e5a9ce03e275b40de6dc559304c225b56476b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a9148389dc9d798f2179634075e5a9ce03e275b40de6dc559304c225b56476b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e0ec0cd26e7399d889af6cdc4c3c6a5dbb5d7e5d3f70d4d0e04b4133b4297f0a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2521b9d95d0cc45e536aa00a9305b0756830f4bd7b6c6ca8e2c472ea24bb1ea2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee389423f2c32f6593c87af28122ec98acbc59b9e8054849c20f49b45f895f16"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "890516745fd0ca1ad2392c147e8f7629b20535371c0e12eb44bf125a1ae1c6b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "890516745fd0ca1ad2392c147e8f7629b20535371c0e12eb44bf125a1ae1c6b9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "890516745fd0ca1ad2392c147e8f7629b20535371c0e12eb44bf125a1ae1c6b9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2cde44a3c2d177f08ca563da427e166d9cd4aeaf1d00cab95d179d0948909563"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c3433f9c390f2cc6c51eb5115a26e3f83cde996cb2676ce4ff690192e5843c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76828ac73abe7f228159b2db84d4dfb1d59cea463a3bb26c9aa62173c0dd0989"
   end
 
   depends_on "go" => :build

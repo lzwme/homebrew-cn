@@ -49,7 +49,6 @@ class Mysql < Formula
   end
 
   on_linux do
-    depends_on "llvm" => :build if DevelopmentTools.gcc_version < 13
     depends_on "patchelf" => :build
     depends_on "libtirpc"
   end
@@ -78,10 +77,6 @@ class Mysql < Formula
     (buildpath/"extra").each_child { |dir| rm_r(dir) unless keep.include?(dir.basename.to_s) }
 
     if OS.linux?
-      # TODO: Remove after moving CI to Ubuntu 24.04. Cannot use newer GCC as it
-      # will increase minimum GLIBCXX in bottle resulting in a runtime dependency.
-      ENV.llvm_clang if deps.map(&:name).any?("llvm")
-
       # Disable ABI checking
       inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
     elsif MacOS.version <= :ventura

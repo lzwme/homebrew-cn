@@ -12,12 +12,13 @@ class Efl < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5fe006170652a5269733d7fd8643c1db0f6d67f2cb2e7d10549eedcdaf4aee0c"
-    sha256 arm64_sequoia: "25d4bbc4da7b19433ffa889dad44565407b216983791ae935d2d69073ad6a6f9"
-    sha256 arm64_sonoma:  "c1521f318595cf0b58bf66d8fabfb2b211a3b9ef50b585c843cb1f88a89543bb"
-    sha256 sonoma:        "a2f12d7c110188bc6f61fd0234dddef8b09062665a9ee8a957343f64229f8003"
-    sha256 arm64_linux:   "3f921af530e562f7fe1983a788cfc9461323fc20cd99c6f68dc487ed3c87e72e"
-    sha256 x86_64_linux:  "1f7826b4a3c65d4aa9b7cbb8a225872d60264095c32eaea60535fc453854fb66"
+    rebuild 1
+    sha256 arm64_tahoe:   "d2242b482406cdda474ae53894167b08f0c9e0345fdc50b6ad3b0891fd49d4dc"
+    sha256 arm64_sequoia: "37327b3f19bb2e83606a6181581b525b8b921c458f8338c4a42032096d8665fe"
+    sha256 arm64_sonoma:  "e4bc6b982f812f73f1a72a33d2cd44cb0e2d1e8151e5f4e80fc2f69dffdb5f7e"
+    sha256 sonoma:        "c69495ceac0e9dcf5986ebdd1908da0052fe628a005338e65d392422936f7d41"
+    sha256 arm64_linux:   "602cdcf9532c25b04eb3fe1467e3b3b8a9a4529961ac6c3d631a64fdb702a15b"
+    sha256 x86_64_linux:  "27a691839e076fe9bd8b88aa671e44d4d80c07991205e0cb4bd791eb05b9e4b5"
   end
 
   depends_on "meson" => :build
@@ -102,8 +103,8 @@ class Efl < Formula
     system "meson", "install", "-C", "build"
   end
 
-  def post_install
-    system Formula["shared-mime-info"].opt_bin/"update-mime-database", "#{HOMEBREW_PREFIX}/share/mime"
+  post_install_steps do
+    update_mime_database
   end
 
   test do

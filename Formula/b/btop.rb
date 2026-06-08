@@ -7,12 +7,13 @@ class Btop < Formula
   head "https://github.com/aristocratos/btop.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "844f051db2955c0a0a11ee1634313b635ec192b3922ecb519dcf050f60a610ef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "853866a08592bf895324bbd637148d623cb83b1cd36e7a080c7d414f463c00a7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70955db3ee586eb4144a6f2032d66bbe2291dec28e1dcf2b306d9d080d107424"
-    sha256                               sonoma:        "faecdc31554282d43c9e2a4bb10ec563a573fdd29269284556941fdea59911af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8fb6c3c6b161915d97b8a51b962ccb16f663f6dcfd4c915f4c7d7ed80bcdaa9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b07bba0ef5de2cc919669e86f3deb131d5f548e72d32198c4cde58bfb8bcdc34"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37a9d33566825cff7b0e3e0c4941b2f0a7718405c3c493fb71eaf7100049f429"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00c8110d1d3714206e0dd238c1945e98509940507c8d692a01c5589853f2474f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "edc6d6e2c5919d8ccc0d921928091935fecf7ef6f6ecfca5af229e4c8a729817"
+    sha256                               sonoma:        "83b0b284cda00fe757da9d09946e0095a4992e450c5ca46607e4d714558170be"
+    sha256 cellar: :any,                 arm64_linux:   "83e59931ea0c68cc39c0cf48a3831756293d37bc1a1f42ad682210dc1f20d402"
+    sha256 cellar: :any,                 x86_64_linux:  "6c471b70902a92ca7820d4e6b1dcb28e45c3d041ccaeba5e7eeee2fdd78a48cd"
   end
 
   depends_on "lowdown" => :build
@@ -23,7 +24,8 @@ class Btop < Formula
   end
 
   on_linux do
-    depends_on "gcc"
+    # Ubuntu 24.04 has GCC 14 libstdc++ so we can build with brew GCC 14 without impacting GLIBCXX
+    depends_on "gcc@14" => :build if DevelopmentTools.gcc_version < 14
   end
 
   fails_with :clang do
@@ -37,7 +39,14 @@ class Btop < Formula
   end
 
   def install
-    ENV.append "CC", "-D_GNU_SOURCE" if OS.linux? && Hardware::CPU.intel?
+    if OS.linux? && deps.map(&:name).any?("gcc@14")
+      # Since brew will prioritize newer GCC versions if installed, we force usage of gcc-14
+      ENV.method(:"gcc-14").call
+
+      # Avoid using the postinstalled specs file which automatically adds an RPATH to gcc@14 libraries
+      libgcc = Pathname.new(Utils.safe_popen_read(ENV.cc, "-print-libgcc-file-name")).parent
+      ENV.append "CXX", "-specs=#{libgcc}/specs.orig"
+    end
 
     system "make", "CXX=#{ENV.cxx}", "STRIP=true"
     system "make", "PREFIX=#{prefix}", "install"

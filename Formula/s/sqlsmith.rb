@@ -5,6 +5,7 @@ class Sqlsmith < Formula
   url "https://ghfast.top/https://github.com/anse1/sqlsmith/archive/refs/tags/v1.5.tar.gz"
   sha256 "828ee3e816b94848627e8132d32ade6339dbcbba5469437dc9a6a8335d4dab23"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/anse1/sqlsmith.git", branch: "master"
 
   livecheck do
@@ -13,12 +14,12 @@ class Sqlsmith < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1c547bc945c73c4e8d0b7dfedb71bb8b4372068fa260fbf4ecde161efaf4fb3a"
-    sha256 cellar: :any,                 arm64_sequoia: "35efb66704fb6cf29d832823e6cab48a92f1c0a30df4bb7b9d4699788e94720b"
-    sha256 cellar: :any,                 arm64_sonoma:  "ab8f73e1969c5f24008cf28c94d0a1b73910b1908e5060bb3f6cd976d7ff9857"
-    sha256 cellar: :any,                 sonoma:        "73809eac58b1f707bb5f135987bef0139f2fe055cc1200069a360069058c8726"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "34e8398625f314822fafceecb894a9ad9f49a2512c3e09934676da77177b0c5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c973b5468170072a581d3be4639718a2daf6268bc79c88d3e0f22807fc15bbba"
+    sha256 cellar: :any, arm64_tahoe:   "292e6cfdf04ed8f5230af4fe96a82070bdd3d5556944f704ecf9040f7bcc7097"
+    sha256 cellar: :any, arm64_sequoia: "c1ea6cb97d77862f8fb57d9bf930c271fc3b7ab31f94ff44a95dbf6a1721dbb0"
+    sha256 cellar: :any, arm64_sonoma:  "e1ad91268c06dd1ed90e9ce1d3d6a0c406d4b3906c5a35382f55738c20dfe75d"
+    sha256 cellar: :any, sonoma:        "553c79f094d5dac3a281f8453c459d83a23bd56bee125a29eb136e5be88bd89c"
+    sha256 cellar: :any, arm64_linux:   "f7640ea2c2d47008487595723c9b6380cf936a439ff8a25960e26f60e3e35dff"
+    sha256 cellar: :any, x86_64_linux:  "e391dbb5aad821b71e981cfa40d6a9fcdcecc8e022fe5fa45be01fecb6452dc4"
   end
 
   depends_on "autoconf" => :build

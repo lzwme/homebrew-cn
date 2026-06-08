@@ -7,12 +7,13 @@ class GsettingsDesktopSchemas < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "898b6804a80dcbdd84c7ce0fc1a2fe8068204bcfda38dcee4e85532aeef0b3c6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "898b6804a80dcbdd84c7ce0fc1a2fe8068204bcfda38dcee4e85532aeef0b3c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "898b6804a80dcbdd84c7ce0fc1a2fe8068204bcfda38dcee4e85532aeef0b3c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "898b6804a80dcbdd84c7ce0fc1a2fe8068204bcfda38dcee4e85532aeef0b3c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b3944c3e35f72d75d9d5fc7117cb81e2629d29471995aa4fd49d6421ac4b817"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b3944c3e35f72d75d9d5fc7117cb81e2629d29471995aa4fd49d6421ac4b817"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "61bf07681a37eef20b67ade4f31370875c84847669bf34c4a8cb103e63b239c6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61bf07681a37eef20b67ade4f31370875c84847669bf34c4a8cb103e63b239c6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61bf07681a37eef20b67ade4f31370875c84847669bf34c4a8cb103e63b239c6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61bf07681a37eef20b67ade4f31370875c84847669bf34c4a8cb103e63b239c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "effe443ddfa766d16152d18b3fd847671928830e5654047786f1885e45e11cb0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "effe443ddfa766d16152d18b3fd847671928830e5654047786f1885e45e11cb0"
   end
 
   depends_on "gettext" => :build
@@ -29,9 +30,8 @@ class GsettingsDesktopSchemas < Formula
     system "meson", "install", "-C", "build"
   end
 
-  def post_install
-    # manual schema compile step
-    system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
+  post_install_steps do
+    compile_gsettings_schemas
   end
 
   test do

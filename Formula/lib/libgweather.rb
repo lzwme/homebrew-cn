@@ -16,12 +16,13 @@ class Libgweather < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ac0399364b4299b04ae70b9be4364d5e7ccd08e23f5cc841adceea96cbea463a"
-    sha256 arm64_sequoia: "0d6fd8e92f625d3e6baa9ef99627e19b4504ccbb4ad5f5d887d21d6a24772146"
-    sha256 arm64_sonoma:  "d968d586e39ceb5a9ca8e7c1ecd047ac36c7abdd06ec415739f053786f502bc7"
-    sha256 sonoma:        "df230a6fe7d85a3860238afa322703f616e1d7b5d873c20a7ad32c5927315f6e"
-    sha256 arm64_linux:   "6ae4d2326fbcf68ad6b4902dc7315ad87a551a1c4ac0fc2de9487eb40b63cff6"
-    sha256 x86_64_linux:  "b6b4dcb96c53ab71fb3c243a7ed9e804c074a86061cb6e277f4e0228e656cef6"
+    rebuild 1
+    sha256 arm64_tahoe:   "9fd00f76cad9cad7c3458915abfd3c74822a820d0f742bd06136590ec3eb6f37"
+    sha256 arm64_sequoia: "d782557928860afcaede44976c28aaa2cbd1395cd309a1b9d277f7e1477f8991"
+    sha256 arm64_sonoma:  "35aa98175b736e757aae5d496c4ab55c987fb59fe318e35b9717b2d2fe26ca77"
+    sha256 sonoma:        "39143bc46d845f310f70ec476c76282f8f242cf41aa7625fc4ba8d043e89fbc8"
+    sha256 arm64_linux:   "d519c7073bef541b39bc8c07db8e5880621b7beb770859f5a68ba4d9a6ac9e33"
+    sha256 x86_64_linux:  "4c4db1d9ff76e7ec17e4c8d5b6694da60ee7d4634aecf1e175036e5f76585f4e"
   end
 
   depends_on "gettext" => :build
@@ -63,8 +64,8 @@ class Libgweather < Formula
     system "meson", "install", "-C", "build"
   end
 
-  def post_install
-    system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
+  post_install_steps do
+    compile_gsettings_schemas
   end
 
   test do

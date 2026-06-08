@@ -42,7 +42,7 @@ class Libdap < Formula
 
     on_arm do
       # FIXME: illegal instruction in test_simple_3_error_1 with Ubuntu GCC
-      depends_on "gcc@12" => :build
+      depends_on "gcc@13" => :build
     end
   end
 

@@ -6,20 +6,17 @@ class Ladybug < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0a9eea76de542cce842fa6234ed230bf12fdccdd5efc21dcc8fa2944a57539b6"
-    sha256 cellar: :any, arm64_sequoia: "6252631fd50cc3539db37cfa0d10a70e2d00c5b4037d70220b89d69223a057ac"
-    sha256 cellar: :any, arm64_sonoma:  "86bfc7e7f06b1be2bbf27bb1087550594d82d107b98cd2f276f05d81a3c06ec9"
-    sha256 cellar: :any, sonoma:        "25f4e69cd6b3dd501aa51026f94fa5607a4df38239c4e8f5e8c093c69f140dd5"
-    sha256 cellar: :any, arm64_linux:   "5adff10770cc354fcf62426488a27f02c25e822fdb40d3ff43d5801dee33753d"
-    sha256 cellar: :any, x86_64_linux:  "c180516b2f37ead1d521cc68e538ff4fab5960d0b77d7430af8732ca225ceef6"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "b198fe97227451de96bf723be14f1c8813b3066363ca6be42f9f562faa9bee4f"
+    sha256 cellar: :any, arm64_sequoia: "a6e3492d5ee00867ff5b2abb926b43da76536109538b6541c461d6a7e98b1f75"
+    sha256 cellar: :any, arm64_sonoma:  "663f6250fad9521ed14c67f860e0a047be118fbb94b91eeb7bb4ec58f6cf21c4"
+    sha256 cellar: :any, sonoma:        "69b7769b68c458985dd59e3f6dfe5b60aa9c3ae02e41af79264b686747741eb4"
+    sha256 cellar: :any, arm64_linux:   "7d4b4668820173cf482125121d8cb4f4ebd0d1e1d1886391d3fa995dfd0a07a3"
+    sha256 cellar: :any, x86_64_linux:  "d839b21b9f05e8ec5b85ca6d739cd7d26cad332417b171a88bcd60a20d4aa4c8"
   end
 
   depends_on "cmake" => :build
   uses_from_macos "python" => :build
-
-  on_linux do
-    depends_on "gcc"
-  end
 
   fails_with :gcc do
     version "12"

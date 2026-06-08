@@ -25,17 +25,18 @@ class Macvim < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a24c9c958d1549ea630fb4b95d84e1afec46b271c075178bf378633ad36e60cd"
-    sha256 cellar: :any, arm64_sequoia: "2938d6ef858cb5c1da056df3bd40b4b9baed98c8132bbb3a78069a4628a4b7ff"
-    sha256 cellar: :any, arm64_sonoma:  "0275b6aa54cedf4bae7a749be2c67447d302a18c729796634b4b1a9c0102bd24"
-    sha256 cellar: :any, sonoma:        "4021bac7a55c4de66c04ef3f7d20e6c8e16c33a50d2cd27f0a68b2cf7fa11bd3"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "f518614c9ee190fb118daffe731cd3d863c72813b0edae39ce769f7127bfb477"
+    sha256 cellar: :any, arm64_sequoia: "2fe3d9e559e07493cd4242b8d1af7878b3a35634c6d7d7e685cda86ed0981280"
+    sha256 cellar: :any, arm64_sonoma:  "293c2d5e2396c0672b3909bb76a80f4928dedd0d33ccaa4361e79b431586f8f7"
+    sha256 cellar: :any, sonoma:        "16e427c43e2708455b2a9812aaba204c627d3275bb860b14f1615d448f7e53b5"
   end
 
   depends_on "gettext" => :build
   depends_on "libsodium" => :build
   depends_on xcode: :build # for xcodebuild
   depends_on "cscope"
-  depends_on "lua@5.4" # Lua 5.5 doesn't work for now, see https://github.com/vim/vim/issues/19639
+  depends_on "lua"
   depends_on :macos
   depends_on "python@3.14"
   depends_on "ruby"
@@ -45,18 +46,9 @@ class Macvim < Formula
   conflicts_with cask: "macvim-app"
 
   def install
-    # Avoid issues finding Ruby headers
-    ENV.delete("SDKROOT")
-
-    # MacVim doesn't have or require any Python package, so unset PYTHONPATH
-    ENV.delete("PYTHONPATH")
-
     # We don't want the deployment target to include the minor version on Big Sur and newer.
     # https://github.com/Homebrew/homebrew-core/issues/111693
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
-
-    # make sure that CC is set to "clang"
-    ENV.clang
 
     system "./configure", "--with-features=huge",
                           "--enable-multibyte",
@@ -69,7 +61,7 @@ class Macvim < Formula
                           "--with-local-dir=#{HOMEBREW_PREFIX}",
                           "--enable-cscope",
                           "--enable-luainterp",
-                          "--with-lua-prefix=#{Formula["lua@5.4"].opt_prefix}",
+                          "--with-lua-prefix=#{Formula["lua"].opt_prefix}",
                           "--enable-luainterp",
                           "--enable-python3interp",
                           "--disable-sparkle",

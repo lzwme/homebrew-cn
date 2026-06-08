@@ -4,41 +4,18 @@ class Redex < Formula
 
   desc "Bytecode optimizer for Android apps"
   homepage "https://fbredex.com/"
+  url "https://ghfast.top/https://github.com/facebook/redex/archive/refs/tags/v2026.04.30.tar.gz"
+  sha256 "60c638403ce608b7d96d76592f4e2bfcb5e541b2eee33f97d06f771f2c147880"
   license "MIT"
-  revision 1
   head "https://github.com/facebook/redex.git", branch: "main"
 
-  stable do
-    url "https://ghfast.top/https://github.com/facebook/redex/archive/refs/tags/v2025.09.18.tar.gz"
-    sha256 "49be286761fb89a223a9609d58faa141e584a0c6866bf083d8408357302ee2f8"
-
-    # Patch to fix build with Python 3.14.
-    # TODO: Remove in the next release.
-    patch do
-      url "https://github.com/facebook/redex/commit/b9c7d5abf922eea7e38bc6031607eb30e8482f38.patch?full_index=1"
-      sha256 "6e644764d2e2b3a7b8e69c8887e738fc6c6099f5f4a3bb6738eae6fd5677da6a"
-    end
-
-    # Patch to remove stub_resource_optimizations
-    patch do
-      url "https://github.com/facebook/redex/commit/f2cc84464a7392fdb266136e9c0b4b37d26a0801.patch?full_index=1"
-      sha256 "043f6b77e91033b64244734d92534de3aaae05b828436cd3cb19af7af1338ec4"
-    end
-
-    # Patch FindZlib.cmake to handle macOS SDK zlib via ZLIB_HOME.
-    patch do
-      url "https://github.com/facebook/redex/commit/a885d52ce6121ed96b78c511d1920116de10ff86.patch?full_index=1"
-      sha256 "ca1321b1fb500203110f5da701106eaab89f61ecbdc62182e94f8747b17cfc65"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "24b6ffd1214ecd6ebf1eaeb04d031e55986e5e253deea222719a3d70d64487b1"
-    sha256 cellar: :any,                 arm64_sequoia: "39f605172a8cc139285503af1b4025a1d05ab9f307dcf87c21d03f6b4abb951d"
-    sha256 cellar: :any,                 arm64_sonoma:  "cf8f57ce89907754720d4362bc7e968c94e13ef837b3d53e7116e909de17b45e"
-    sha256 cellar: :any,                 sonoma:        "5478b429978e610107b019efe17ef056574745d401854e9e4c668db03e0fab93"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebb117a92cfd36ffe458acc31dbba4b1588c870cc9337bb4f4a59cb96437e9b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ad8d5114f1a3431a9b88a8fd74e654143149a207383e655994fc4c456fd303a"
+    sha256 cellar: :any, arm64_tahoe:   "32f739c723e58daaf41aa654de4131ab30615c9e58b3cc236fbbf1b3d3e614e7"
+    sha256 cellar: :any, arm64_sequoia: "c93576486cf574355e2ca3d80ccc585dfa27da29c43bbcbbcc6921e376a1c8a3"
+    sha256 cellar: :any, arm64_sonoma:  "b00f40d922448092e969721c8bdc157853bccace0163d088df48ae2035576112"
+    sha256 cellar: :any, sonoma:        "2e57edc7c2c16f166a50ddca433909053602769a67577852acf2eed99315f06f"
+    sha256 cellar: :any, arm64_linux:   "65153d035700f0859adb7fcb523ef9d1ff13b972231be182e683bc4ba8a440ec"
+    sha256 cellar: :any, x86_64_linux:  "3c2b5fb75e403a1356a4fab208a21554ff26fd59e68ed0bd3005294004d48a9f"
   end
 
   depends_on "cmake" => :build
@@ -67,6 +44,13 @@ class Redex < Formula
   patch do
     url "https://github.com/facebook/redex/commit/f1d9211256ac03d92a4176bea36fb97bee581f41.patch?full_index=1"
     sha256 "d3ce5c0b758ae7f61c30ca7ebea115d782abe43af61672454874be9810201ce1"
+  end
+
+  # Backport macOS SDK .tbd zlib detection, missing from the v2026.04.30 release
+  # PR: https://github.com/facebook/redex/pull/980
+  patch do
+    url "https://github.com/facebook/redex/commit/a885d52ce6121ed96b78c511d1920116de10ff86.patch?full_index=1"
+    sha256 "ca1321b1fb500203110f5da701106eaab89f61ecbdc62182e94f8747b17cfc65"
   end
 
   def install

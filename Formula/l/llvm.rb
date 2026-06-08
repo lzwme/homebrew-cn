@@ -7,8 +7,8 @@ class Llvm < Formula
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
-    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.6/llvm-project-22.1.6.src.tar.xz"
-    sha256 "6e0b376a1f6d9873e7dfb09ae6e04b9c7024400f01733fa4c29be69d5c138bc2"
+    url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.7/llvm-project-22.1.7.src.tar.xz"
+    sha256 "5cc4a3f12bba50b6bdfb4b61bdc852117a0ff2517807c3902fc13267fb93562e"
 
     # Fix triple config loading for clang-cl
     # https://github.com/llvm/llvm-project/pull/111397
@@ -24,12 +24,12 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "3383e798980bd6e77492db3c51373a51920c6c32ddfde6db5328e2bfd53214ba"
-    sha256                               arm64_sequoia: "e747049efb63e1cb21dcf59e514e5d47ed47b34159ccc2c4d26a8d8f3e608af8"
-    sha256                               arm64_sonoma:  "16c692976c63457f7640b23aad866600fa492c41eb7f9744c6d3f0328667efb1"
-    sha256 cellar: :any,                 sonoma:        "bffabc78fa2408abe64c2377627782f21c249a38dea70ef378cae4141dd1867c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa7e33a89af470dafac30fc63367c2e3c8740c062c6e6e1f2841a0ea617cc61a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0268f0a7620550bcf39bb555587b8f0cc1e207718fe49cb6884f0f2f8fd36c4"
+    sha256               arm64_tahoe:   "c8aa5e14d31a5ef708ef437b6b280a024ee16b388dbe29cd0ab6bf24e39d69ee"
+    sha256               arm64_sequoia: "3681a3f037a1f503e0704079da958bfc6444fd930690fecc069ddbf4b2fbb937"
+    sha256               arm64_sonoma:  "5006a8d5247fb028278271cdbe968c095ce0a0f505e7737accb7a46ca60e09f9"
+    sha256 cellar: :any, sonoma:        "cbb91e42a142996518ee54c5d0b5204c3710fd45eb39eccd26b5ce5a0d9f91e5"
+    sha256 cellar: :any, arm64_linux:   "57703ae39181a4e004b1b64f8583688cc58eb548dde2bb86f2ed9700865d5b5d"
+    sha256 cellar: :any, x86_64_linux:  "7601c4fcfbf0ebaf64a9be438a6570a65122fbd381408b53412083031ad9129a"
   end
 
   keg_only :provided_by_macos

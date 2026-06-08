@@ -1,6 +1,6 @@
 cask "stats" do
-  version "2.12.16"
-  sha256 "8beab818b582d057e763c6b5537b8b8515427f942990a1a83906da92e607c29d"
+  version "3.0.1"
+  sha256 "02366ebec9fed6d1ae3e3b968d63f72f0b7feb6d79cdc0acc8801ae800bae006"
 
   url "https://ghfast.top/https://github.com/exelban/stats/releases/download/v#{version}/Stats.dmg"
   name "Stats"
@@ -8,7 +8,7 @@ cask "stats" do
   homepage "https://github.com/exelban/stats"
 
   auto_updates true
-  depends_on macos: :big_sur
+  depends_on macos: :monterey
 
   app "Stats.app"
 

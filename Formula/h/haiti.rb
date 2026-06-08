@@ -29,9 +29,9 @@ class Haiti < Formula
     # commonmarker fails to build with parallel jobs
     ENV.deparallelize { system "bundle", "install" }
     system "gem", "build", "#{name}.gemspec"
-    system "gem", "install", "#{name}-hash-#{version}.gem"
+    system "gem", "install", "--ignore-dependencies", "#{name}-hash-#{version}.gem"
 
-    bin.install Dir[libexec/"bin/#{name}"]
+    bin.install libexec/"bin/#{name}"
     bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
   end
 

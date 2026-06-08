@@ -1,13 +1,12 @@
 class Pegtl < Formula
   desc "Parsing Expression Grammar Template Library"
   homepage "https://github.com/taocpp/PEGTL"
-  url "https://ghfast.top/https://github.com/taocpp/PEGTL/archive/refs/tags/3.2.8.tar.gz"
-  sha256 "319e8238daebc3a163f60c88c78922a8012772076fdd64a8dafaf5619cd64773"
-  # license got changed to BSL-1.0 in main per https://github.com/taocpp/PEGTL/commit/c7630f1649906daf08b8ddca1420e66b542bae2b
-  license "MIT"
+  url "https://ghfast.top/https://github.com/taocpp/PEGTL/archive/refs/tags/4.0.0.tar.gz"
+  sha256 "6181ea42478e0aba84512be59595476adac781881b5e372224ed9b730994bd8e"
+  license "BSL-1.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4cc6917959a4a5589e44b04a3f60a2c6be767b2d5ef302af832b62804af8a342"
+    sha256 cellar: :any_skip_relocation, all: "fe5eedfeae61697749bf8476edc4106a79acb7ad6e1f31237ab6fbc006db094f"
   end
 
   depends_on "cmake" => :build
@@ -23,8 +22,8 @@ class Pegtl < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    rm "src/example/pegtl/CMakeLists.txt"
-    (pkgshare/"examples").install (buildpath/"src/example/pegtl").children
+    rm "src/example/CMakeLists.txt"
+    (pkgshare/"examples").install (buildpath/"src/example").children
   end
 
   test do

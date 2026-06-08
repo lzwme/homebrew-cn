@@ -1,30 +1,22 @@
 class LiquidDsp < Formula
   desc "Digital signal processing library for software-defined radios"
   homepage "https://liquidsdr.org/"
-  url "https://ghfast.top/https://github.com/jgaeddert/liquid-dsp/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "33c42ebc2e6088570421e282c6332e899705d42b4f73ebd1212e6a11da714dd4"
+  url "https://ghfast.top/https://github.com/jgaeddert/liquid-dsp/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "abef8b2ddfd58c0a84ecda4f62158c4824b916144af4a2b07776e1a144d8cda4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "de67d0f577325b67c1130c3c0b851da268184c5b0d7110f61dcaa24166dc6a74"
-    sha256 cellar: :any,                 arm64_sequoia: "b8a80ea89fa4390be08e71b263f9117e094277ca8832db34a2ade2acc4442766"
-    sha256 cellar: :any,                 arm64_sonoma:  "1959fe41645657d0d27b65a27e4106b8ebb7453b6b4933dc89f4e971df308c1d"
-    sha256 cellar: :any,                 arm64_ventura: "ef0b0fffea38cbbd424d1cea2398c998f62fc1b000bd990217fec502b25514d8"
-    sha256 cellar: :any,                 sonoma:        "45c2eacbc105dc60a05650f8a26b1030d8d68f2e1ad5658b3aac69e55a935fac"
-    sha256 cellar: :any,                 ventura:       "034053ad567403a05e58d450dc7d5c717a663f1ed8e2f46dfebe0a3e4830c70f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "17cc4d0a408358eaa7c80819e7ac7ba89142626be83feeea495252b0b73a0653"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "677337e96a58a18d51ac014d4471b111a0b00ce735eea54cc1a788fac95cccd1"
+    sha256 cellar: :any, arm64_tahoe:   "13bd8212fa1f9842b35be703f1248db51e90d4bf70e468c73b6244bd3e502201"
+    sha256 cellar: :any, arm64_sequoia: "fc20729e4ac1c4f0f773e74e4050cd8ecee3cf28a99db9875df569693b9ae3d4"
+    sha256 cellar: :any, arm64_sonoma:  "bcb5a50a25401bd8b2c27fa713c3aaeab945dfdba4d3eceef9203fb8a4bef668"
+    sha256 cellar: :any, sonoma:        "6dff966c147c7beda0c0a4fda7ba755e332bbd42470eb54a856dd501cb3c268a"
+    sha256 cellar: :any, arm64_linux:   "73c77bd93263cc8f3a57a225fb3a771fb174975eaf21c3149dbe21d4f515483a"
+    sha256 cellar: :any, x86_64_linux:  "853c405307d305281dede43b1dd652610c44edef57cd0905ecbeade835d89f2f"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "fftw"
-
-  # Backport fix for ARM64 Linux
-  patch do
-    url "https://github.com/jgaeddert/liquid-dsp/commit/3a5e1f578ad5e73d7665e71781e764765608c2a2.patch?full_index=1"
-    sha256 "8dcece1e5e612b5dad77030dfd453f0f47755fdb41e6201c0c8b6b7123f053b9"
-  end
 
   def install
     system "./bootstrap.sh"

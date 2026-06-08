@@ -1,18 +1,18 @@
 class Gomi < Formula
   desc "Functions like rm but with the ability to restore files"
   homepage "https://gomi.dev"
-  url "https://ghfast.top/https://github.com/babarot/gomi/archive/refs/tags/v1.6.3.tar.gz"
-  sha256 "7a1c7962d4e33b5a80133119330bfc21b13ae805c0e7d2862d73c36ffac9fbb9"
+  url "https://ghfast.top/https://github.com/babarot/gomi/archive/refs/tags/v1.6.4.tar.gz"
+  sha256 "27d4bfca8473a5c01c3ead075f2674b47b586b6de8afc7fb31ade1c01d7e5b8a"
   license "MIT"
   head "https://github.com/babarot/gomi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ded41d13d8a6f36622607150d47235c6e508ce5d9bc2cecaf24519ce828f3506"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ded41d13d8a6f36622607150d47235c6e508ce5d9bc2cecaf24519ce828f3506"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ded41d13d8a6f36622607150d47235c6e508ce5d9bc2cecaf24519ce828f3506"
-    sha256 cellar: :any_skip_relocation, sonoma:        "be76fbedc938009d975403b07195b29d9d7436125e8b7c3a016f4cfeec94d8ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2057ca7d2e1c6edc7b0ab4c1092e6af1a3308537637fc77ebb350959d8b44903"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02e8c178d9bd76dc0267847d3b5570ad1096a0185b370827e7f260bbcef2dad2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1fecaf395a97f00138d66db5f9ba75037e3c19a9d135cbd7d7cfa1da693fc0ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1fecaf395a97f00138d66db5f9ba75037e3c19a9d135cbd7d7cfa1da693fc0ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1fecaf395a97f00138d66db5f9ba75037e3c19a9d135cbd7d7cfa1da693fc0ff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2c0fd9e1636f7987981d0c1ecfb6bc5435a8d7cf907dcbd9a60a715a04d0301c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff0a7fdcddc36e8a11c0e6201285913f4ec4a360b03dbbd525645157a295dd36"
+    sha256 cellar: :any,                 x86_64_linux:  "0990e439fbb42af9fa3beb401a1540384f0b9e670a69665045352d835f1e1320"
   end
 
   depends_on "go" => :build

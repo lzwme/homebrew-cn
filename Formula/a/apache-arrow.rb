@@ -80,14 +80,7 @@ class ApacheArrow < Formula
       -DPARQUET_BUILD_EXECUTABLES=ON
     ]
     args << "-DARROW_MIMALLOC=ON" unless Hardware::CPU.arm?
-    args << if OS.mac?
-      "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" # Reduce overlinking
-    else
-      # TODO: Remove after moving CI to Ubuntu 24.04. Cannot use newer GCC as it
-      # will increase minimum GLIBCXX in bottle resulting in a runtime dependency.
-      ENV.llvm_clang
-      "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,--as-needed"
-    end
+    args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac? # Reduce overlinking
     # ARROW_SIMD_LEVEL sets the minimum required SIMD. Since this defaults to
     # SSE4.2 on x86_64, we need to reduce level to match oldest supported CPU.
     # Ref: https://arrow.apache.org/docs/cpp/env_vars.html#envvar-ARROW_USER_SIMD_LEVEL

@@ -44,10 +44,6 @@ class Mdk < Formula
     depends_on "gettext"
   end
 
-  on_linux do
-    depends_on "llvm" => :build if DevelopmentTools.gcc_version < 13
-  end
-
   fails_with :clang do
     build 1599
     cause "Requires relaxed variadic args"
@@ -59,7 +55,6 @@ class Mdk < Formula
   end
 
   def install
-    ENV.llvm_clang if OS.linux? && deps.map(&:name).any?("llvm")
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "CFLAGS=-std=gnu2x"
     system "make", "install"

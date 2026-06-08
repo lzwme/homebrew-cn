@@ -54,9 +54,6 @@ class GnomeBuilder < Formula
   end
 
   def install
-    # TODO: Remove after switching to Ubuntu 24.04
-    ENV.llvm_clang if OS.linux?
-
     # Prevent Meson post install steps from running
     ENV["DESTDIR"] = "/"
 

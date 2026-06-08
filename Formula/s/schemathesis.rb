@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/1c/8b/344b6b91f4b35a91d59f56b8528fd02bf13233828dea8dcdf6c6c91c81f6/schemathesis-4.21.0.tar.gz"
-  sha256 "38228318f94024cd1186b632761a2eaef21a4b22db73b6dbddd59cccb92643bb"
+  url "https://files.pythonhosted.org/packages/53/2c/71294d06b86c27522d7524738b40e6f00683616f12c8f03f3f9bb2b49de1/schemathesis-4.21.1.tar.gz"
+  sha256 "58e1530d0fa8b9c96b65bc0952ffbc7dff61e2ca86b46156716fe471aefd28b0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4380f26048c1bec145128bf6cb2cbea49e65d8095d1062bb113b6e6d1a54259b"
-    sha256 cellar: :any, arm64_sequoia: "cf8f7e22f664559e04d4ccee54e912fa0448db368c0cf41266b7305e129d199e"
-    sha256 cellar: :any, arm64_sonoma:  "480ba8933e86aa79c9b603674c97de8545fa72018d9f2d126f685e0e0cd67faa"
-    sha256 cellar: :any, sonoma:        "a567ee520f0862068800940bfa688c0a33e5a56f2e4e0f627a9f120930b23592"
-    sha256 cellar: :any, arm64_linux:   "aab18d04414f8243a54a18211a23f236cf44a08f29ffdc612d40881b8dd760ae"
-    sha256 cellar: :any, x86_64_linux:  "e21a468a96d18427bf665502b74c007fc30a5fa5357fdce75ef0e54bb37ba611"
+    sha256 cellar: :any, arm64_tahoe:   "5782134d0eb5b8ca2efc68d7f5b91df3053bfdb97a6bf00f29956f27fd825b9d"
+    sha256 cellar: :any, arm64_sequoia: "a653ba84e5346d52ade1843bac17429a0aa35ef6822bebe1b14a8d21be6c5a9c"
+    sha256 cellar: :any, arm64_sonoma:  "a4621725efa87f9ccb08895fd105a89fac6b878928b555292a88f579bcf0ad50"
+    sha256 cellar: :any, sonoma:        "30c331e8a3d38361583652c8876a7b93102b0a7d11dbb3904375eed03aba54b1"
+    sha256 cellar: :any, arm64_linux:   "58f86fe4df22928863261b0b6bf5445fa502fedbd4ed9ea778b50a05ec5dcf29"
+    sha256 cellar: :any, x86_64_linux:  "a142b3a95725dd37d8672f8282bba2f71d7dad8526dff68e1495119d4d30ab51"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
@@ -47,8 +47,8 @@ class Schemathesis < Formula
   end
 
   resource "graphql-core" do
-    url "https://files.pythonhosted.org/packages/68/c5/36aa96205c3ecbb3d34c7c24189e4553c7ca2ebc7e1dd07432339b980272/graphql_core-3.2.8.tar.gz"
-    sha256 "015457da5d996c924ddf57a43f4e959b0b94fb695b85ed4c29446e508ed65cf3"
+    url "https://files.pythonhosted.org/packages/4d/90/f2aff026ab4aebd80eb71905106a0885f4cfde85dcf965543f45bed0d9ee/graphql_core-3.2.11.tar.gz"
+    sha256 "e7e156d10beb127cab5c89ff0da71416fc73d27c484a4757d3b2d35633774802"
   end
 
   resource "h11" do
@@ -72,8 +72,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/49/ef/4a94c12429986a90076057513e084bf32106a9bdc62c8e29f58673dd85a2/hypothesis-6.155.1.tar.gz"
-    sha256 "07c102031612b98d7c1be15ca3608c43e1234d9d07e3a190a53fa01536700196"
+    url "https://files.pythonhosted.org/packages/f5/04/64032a1dccd2233615c8a3f701bbb563558575ed017496a24b6d81762c91/hypothesis-6.155.2.tar.gz"
+    sha256 "ae36880287c9c5defe9f199d3d2b67d9947a4da2a46e6c57373cbdf2345b20e1"
   end
 
   resource "hypothesis-graphql" do
@@ -87,8 +87,8 @@ class Schemathesis < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
-    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "iniconfig" do
@@ -147,8 +147,8 @@ class Schemathesis < Formula
   end
 
   resource "pyrate-limiter" do
-    url "https://files.pythonhosted.org/packages/33/0c/6e78218e6ef726be35a4c0a5e2e281e36ddd940566800219e96d13de99ad/pyrate_limiter-4.1.0.tar.gz"
-    sha256 "be1ac413a263aa410b98757d1b01a880650948a1fc3a959512f15865eb58dbf3"
+    url "https://files.pythonhosted.org/packages/ab/38/e6cd98b345e4a476d00d28c30e767ea2456cc6a77fd721603ab0c45df62b/pyrate_limiter-4.2.0.tar.gz"
+    sha256 "d28fab36fde5c9ab84848c972f13e8e6e81e928e4cc26a7fd2aaee9ae63206b4"
   end
 
   resource "pytest" do

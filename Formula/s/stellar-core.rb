@@ -32,17 +32,11 @@ class StellarCore < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libpq"
-  depends_on "libpqxx"
-  depends_on "libsodium"
 
   uses_from_macos "flex" => :build
 
   on_sonoma :or_older do
     depends_on "coreutils" => :build # for sha256sum
-  end
-
-  on_linux do
-    depends_on "libunwind"
   end
 
   # https://github.com/stellar/stellar-core/blob/master/INSTALL.md#build-dependencies

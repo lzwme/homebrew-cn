@@ -31,10 +31,6 @@ class OpentelemetryCpp < Formula
     depends_on "re2"
   end
 
-  on_linux do
-    depends_on "llvm" => :build if DevelopmentTools.gcc_version < 13
-  end
-
   fails_with :gcc do
     version "12"
     cause "fails handling PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED"
@@ -46,13 +42,6 @@ class OpentelemetryCpp < Formula
   end
 
   def install
-    # TODO: Remove after moving CI to Ubuntu 24.04. Cannot use newer GCC as it
-    # will increase minimum GLIBCXX in bottle resulting in a runtime dependency.
-    if OS.linux? && deps.map(&:name).any?("llvm")
-      ENV.llvm_clang
-      ENV.append "LDFLAGS", "-Wl,--as-needed"
-    end
-
     (buildpath/"opentelemetry-proto").install resource("opentelemetry-proto")
 
     ENV.append "LDFLAGS", "-Wl,-undefined,dynamic_lookup" if OS.mac?

@@ -7,12 +7,13 @@ class Czkawka < Formula
   head "https://github.com/qarmin/czkawka.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1b1137ad14a3250af05268e885371bb199becdfe7d32284446071073771e755e"
-    sha256 cellar: :any,                 arm64_sequoia: "be7130f184c8c7971eb969f8e498c18f773a6ad108bfaeb5e30b20940c752be6"
-    sha256 cellar: :any,                 arm64_sonoma:  "e480ebc78cc41f7661215626ebb0d17e6246aa2f228f70176800b1d6bca5a68f"
-    sha256 cellar: :any,                 sonoma:        "2ecd2be335f5e988461b7808eae9d0834ab5b6c0c8a397fbac9c3f7b8a8c306f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "95d0d648452d82c9faf8b2a72871dfa0d5ceb94118cc029f76ce3e548503390c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f642d209d45b9316ca74edeb7f8da1b31ebfd0867471fa0d78381590fa604590"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "94cd50c796446b7b54dbdb497b7d3ab136522203a3239ee6af13ca3611407970"
+    sha256 cellar: :any, arm64_sequoia: "d57e96dc78a6eff71ca82bd29efabb81eb15367a63dd1d0581ba570a84ddd0dd"
+    sha256 cellar: :any, arm64_sonoma:  "a2d0d569a27eb29107f0a89450a49429b4361aa42f82e0e693e7ba5e06d531f2"
+    sha256 cellar: :any, sonoma:        "31044c083fdf428e49206b4345275f0094b23ada1fbe2cf1db495d7f43cd7d6a"
+    sha256 cellar: :any, arm64_linux:   "12c7c0336a8a2c11968857331e39e6ffc1b14adf0ff9ec68eb3b5d56149054e0"
+    sha256 cellar: :any, x86_64_linux:  "81f42c65b7d9ce15214821c1a3ef0494c26302011cc5355d3f80a96f47137f11"
   end
 
   depends_on "rust" => :build
@@ -44,9 +45,8 @@ class Czkawka < Formula
     end
   end
 
-  def post_install
-    system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
-    ENV.prepend_path "XDG_DATA_DIRS", HOMEBREW_PREFIX/"share"
+  post_install_steps do
+    compile_gsettings_schemas
   end
 
   def caveats

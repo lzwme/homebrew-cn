@@ -1,9 +1,9 @@
 class Glassfish < Formula
   desc "Java EE application server"
   homepage "https://glassfish.org/"
-  url "https://download.eclipse.org/ee4j/glassfish/glassfish-8.0.2.zip"
-  mirror "https://ghfast.top/https://github.com/eclipse-ee4j/glassfish/releases/download/8.0.2/glassfish-8.0.2.zip"
-  sha256 "14da58fc0372d9c52d30f5051bd17c98e3537b6aef9a191b5b11f9023f31812f"
+  url "https://download.eclipse.org/ee4j/glassfish/glassfish-8.0.3.zip"
+  mirror "https://ghfast.top/https://github.com/eclipse-ee4j/glassfish/releases/download/8.0.3/glassfish-8.0.3.zip"
+  sha256 "52e7101c48c17d41883d49e3328ca1fa3d208b408781ac1f798b81caeef7b4ca"
   license "EPL-2.0"
 
   livecheck do
@@ -12,8 +12,7 @@ class Glassfish < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "d475ba3a6ccbd9d6fcbda40526b605faa4125ea27092cf3e1850c5939e99fdea"
+    sha256 cellar: :any_skip_relocation, all: "9452fe8084db896d8f638eec37740d6d9af1bcce463f4d88696820bfdc2df575"
   end
 
   depends_on "openjdk@25"
@@ -28,7 +27,7 @@ class Glassfish < Formula
     bin.install libexec.glob("bin/*")
 
     env = Language::Java.overridable_java_home_env
-    env["GLASSFISH_HOME"] = libexec
+    env[:GLASSFISH_HOME] = libexec
     bin.env_script_all_files libexec/"bin", env
 
     File.open(libexec/"glassfish/config/asenv.conf", "a") do |file|

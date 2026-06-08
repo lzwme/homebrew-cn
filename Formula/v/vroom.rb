@@ -7,12 +7,13 @@ class Vroom < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b8b5b8201eb2a208ccf15450bc41fe368b6370b99f396b42fe8ca86b243ac6b7"
-    sha256 cellar: :any,                 arm64_sequoia: "4ef7a45d8ddb7fa202817b2abe984bd735c8af3e72ecda4a616ffa750c440def"
-    sha256 cellar: :any,                 arm64_sonoma:  "167932e93c1bbb4bac127ab8cbbbe3e5ef540ed38c24bac411afecaac39a6fce"
-    sha256 cellar: :any,                 sonoma:        "368891c8f744c684cb6a247453d24c00669a4ee2f74087dd83f33b77ede9e46c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4843c6585ed3a4f3577343def96dbb5b642310a295c44960bafaeafd7d7909f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdf83b02f2274b91d4cda4ab204050768833b00a8db87b3f85744742e271bf20"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "7744afdfd4869482feafc33eb89ec4a3879aa0834e7e42a89ad9778ca61bd769"
+    sha256 cellar: :any, arm64_sequoia: "0b0d31f32ec9ef559d948f558527632afcc5388456569801e98e3647cb82ec66"
+    sha256 cellar: :any, arm64_sonoma:  "4cf49df44fd7999cc2083a3e526ea48daa0aa2cb3662e3e8a552f94c2d655a39"
+    sha256 cellar: :any, sonoma:        "1a3b3a8de929a276843f4a331c001dbf2b05b0ed8a3ab252913917ec54c3108e"
+    sha256 cellar: :any, arm64_linux:   "a2a1d04eb068ee7dfae180aafe0dab114be21a4216e6cc23da1a7a5f3d7e4c31"
+    sha256 cellar: :any, x86_64_linux:  "ae5cf02e2d7babb46ded692739e45eff866e7bfee3900fefba3dc42a402fea40"
   end
 
   depends_on "asio" => :build
@@ -27,10 +28,6 @@ class Vroom < Formula
 
   on_sequoia do
     depends_on xcode: ["26.0", :build] if DevelopmentTools.clang_build_version >= 1700
-  end
-
-  on_linux do
-    depends_on "gcc" # TODO: remove and rebuild bottle on Ubuntu 24.04
   end
 
   fails_with :clang do

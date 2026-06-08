@@ -6,6 +6,11 @@ class Ghalint < Formula
   license "MIT"
   head "https://github.com/suzuki-shunsuke/ghalint.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc6245ebb383c63ad0be81107c0a6d6082bd049c8733a488ce7f8750fca1a087"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc6245ebb383c63ad0be81107c0a6d6082bd049c8733a488ce7f8750fca1a087"

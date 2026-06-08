@@ -1,17 +1,17 @@
 class Rapidyaml < Formula
   desc "Library to parse and emit YAML, and do it fast"
   homepage "https://github.com/biojppm/rapidyaml"
-  url "https://ghfast.top/https://github.com/biojppm/rapidyaml/releases/download/v0.14.0/rapidyaml-0.14.0-src.tgz"
-  sha256 "6e6e67e6b766c5a1c5fcb8b80292c7e7c15a3033c01730b41f4a91eb8a31767c"
+  url "https://ghfast.top/https://github.com/biojppm/rapidyaml/releases/download/v0.15.0/rapidyaml-0.15.0-src.tgz"
+  sha256 "02b6f99c72315b8d20b1aa47f4e941e80069d9edd5bae4ba2fdf7e83d8f52d34"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "24149099b4598da120aed04a26b8763c99030adb482d285a52577d54688c8843"
-    sha256 cellar: :any, arm64_sequoia: "74c97730f84445a8b3a18dcddc672d5e2d57695752033fa306e2bd9f3f530fe5"
-    sha256 cellar: :any, arm64_sonoma:  "9b46586b42adeb123c211d449930f107f4b69b4cfccdb09e56194297710dc165"
-    sha256 cellar: :any, sonoma:        "74e2a21f9945a9080bfdf8f78e07c10ddfa8b29dfefa056b34347724e2b89be4"
-    sha256 cellar: :any, arm64_linux:   "08fdcfe431849a9962c6b5e136436128c2819894d04be916dc0a42231457a1cc"
-    sha256 cellar: :any, x86_64_linux:  "93e9e4fe044b21c196c3307f53338b64ed46884a7d54d9c013b9e4d19c873c26"
+    sha256 cellar: :any, arm64_tahoe:   "accdea4d1278cd42b890654db0e346cc054a027e21b5479cd8f375cbb5d13e49"
+    sha256 cellar: :any, arm64_sequoia: "f223496f5fe07830469aef8439dba15093abbd171e612d96720b6b3fedc07534"
+    sha256 cellar: :any, arm64_sonoma:  "dc2152109024145f0e98f748695037bea078eb51d74d937044e06439964b4d3a"
+    sha256 cellar: :any, sonoma:        "41823362c98eb37a584ccec0ae970b030554fb9215448d6afc07a3372f241f5d"
+    sha256 cellar: :any, arm64_linux:   "f875ca9f1d56231c26137032b7a1a3db70a211349fa713b888daa896907414a3"
+    sha256 cellar: :any, x86_64_linux:  "1e8226461008a7b0f642a84a1b7badf94a5b1ef8775b2c4d384bfdfb07e19a81"
   end
 
   depends_on "cmake" => :build

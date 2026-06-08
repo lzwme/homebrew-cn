@@ -1,8 +1,8 @@
 class Sdl2Sound < Formula
   desc "Abstract soundfile decoder for SDL"
   homepage "https://icculus.org/SDL_sound/"
-  url "https://ghfast.top/https://github.com/icculus/SDL_sound/releases/download/v2.0.4/SDL2_sound-2.0.4.tar.gz"
-  sha256 "f73f6720dba2e677c0bf70d0c76ca3c96d865d04025e49a8b161711685961931"
+  url "https://ghfast.top/https://github.com/icculus/SDL_sound/releases/download/v2.0.6/SDL2_sound-2.0.6.tar.gz"
+  sha256 "63be57cc80bcd29aeed6c29700759871c44c90251a7508b8d0eacd8d9cece30c"
   license all_of: [
     "Zlib",
     any_of: ["Artistic-1.0-Perl", "LGPL-2.1-or-later"], # timidity
@@ -14,14 +14,12 @@ class Sdl2Sound < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e926f2202a49bfb323a9e603e308e44f5eae6d76a5f60dd867e00b03cd0cf6dd"
-    sha256 cellar: :any,                 arm64_sequoia: "ebf816ab8b81d1c57a8fa8464015be9e6e7c1bb59e6756cb1ab955193468933d"
-    sha256 cellar: :any,                 arm64_sonoma:  "1a336df9cbf4dbecdf17c4bd11f1d4fa86a8f8d7b4e31f90e2cd61f80d12b211"
-    sha256 cellar: :any,                 arm64_ventura: "92094e5c2c9ec2fd6962e76d3c61be76c1f87789052a30dfed282ebf268163d5"
-    sha256 cellar: :any,                 sonoma:        "91a1de8932cf5e4dc446e771044d807f000101c18dcbd5f421d5ac0b3d78160d"
-    sha256 cellar: :any,                 ventura:       "fa892b1c33146ebd0a36d74065f18100a787cd4d59d76db28e907ccf8b53a543"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "05781d5093994a57c5634764fda5a783aabb96b4a81bf39c4e1ce91d455eb450"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2e558d66a31ac41604bab87abc6c42b41c8a7624bcc4c64ecb75c614b4916d3"
+    sha256 cellar: :any, arm64_tahoe:   "043e49d5dd24b993e88ba11b15d339f43ce0a86109912eb1476a9464605a0848"
+    sha256 cellar: :any, arm64_sequoia: "b322993196e931dd4fcce8e36f12c957246b039fef91322fffeadbd9654a7c62"
+    sha256 cellar: :any, arm64_sonoma:  "97d62e44d53adfb1c1abc7e25bdfbe57ac0becb6a9971991b446fe6d59d94cfb"
+    sha256 cellar: :any, sonoma:        "37d9acd0a11a6d9a13826a2557633b634dbd8398496c6a693ad13bc518dfcd88"
+    sha256 cellar: :any, arm64_linux:   "6eafbbb7cebbb0f50739623661c4df2260d991c94307371cca150fa89bc86ebd"
+    sha256 cellar: :any, x86_64_linux:  "a6b722aa0138e078f6c44781a4d963b6bcf731cced90108ea414a92bf7d488b4"
   end
 
   depends_on "cmake" => :build
@@ -70,13 +68,6 @@ class Sdl2Sound < Formula
          Written by Torbjörn Andersson <d91tan@Update.UU.SE>.
          https://modplug-xmms.sourceforge.net/
 
-       * MPEG-1 Audio Layer I-III
-         File extension "MP3"
-         File extension "MP2"
-         File extension "MP1"
-         Written by Ryan C. Gordon <icculus@icculus.org>.
-         https://icculus.org/SDL_sound/
-
        * Microsoft WAVE audio format
          File extension "WAV"
          Written by Ryan C. Gordon <icculus@icculus.org>.
@@ -116,6 +107,13 @@ class Sdl2Sound < Formula
        * Free Lossless Audio Codec
          File extension "FLAC"
          File extension "FLA"
+         Written by Ryan C. Gordon <icculus@icculus.org>.
+         https://icculus.org/SDL_sound/
+
+       * MPEG-1 Audio Layer I-III
+         File extension "MP3"
+         File extension "MP2"
+         File extension "MP1"
          Written by Ryan C. Gordon <icculus@icculus.org>.
          https://icculus.org/SDL_sound/
     EOS

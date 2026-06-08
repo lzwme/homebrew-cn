@@ -6,12 +6,13 @@ class Libunicode < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "96923a903c4727cd0981cb838046323df0d2387c79a25d4168dbc41cd21c980e"
-    sha256 cellar: :any,                 arm64_sequoia: "64eaf35131519b22d28be7a936fe9c6c5819004d2e996236af0bb84ce77eae03"
-    sha256 cellar: :any,                 arm64_sonoma:  "502a5dde6335ff9655503fc4050089880255a3929874dbf7bf3a6f9e3290985d"
-    sha256 cellar: :any,                 sonoma:        "2366882adc5714fd78db3068a72a17c55c938925f39439e90c2889c32ac8e6c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f600c3d79303271fa845b4c79718a85c49c130d3da5b271b1a620e553f0ba96f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1feb81594418e9764f9e612a504f5a97a3df8363c9a101fc1d8ad5fa6648bc68"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "a59d7a6698079f276d08c20ad555efa2273a98e6407193618fa8e4495b859f87"
+    sha256 cellar: :any, arm64_sequoia: "6aa720c62da5a654f1cb4faf4aafc0a66762742db9c098de751bf4e89bf04df2"
+    sha256 cellar: :any, arm64_sonoma:  "545646dc6547e84c7890538748ff2cd3a40563370ac150f1aa7e11406f21df9e"
+    sha256 cellar: :any, sonoma:        "de941d5e0f87e197c003dbaf6efbd852cd2b76a18e0282af3914c1688643b2d7"
+    sha256 cellar: :any, arm64_linux:   "d6597137a777d6e9024a5987b816f1627b4cce071274f90b233b306c46022700"
+    sha256 cellar: :any, x86_64_linux:  "d97e821272ea860ce785e7c650ba3f1224384ecc14c91c3df612f258220e978c"
   end
 
   depends_on "cmake" => :build
@@ -20,10 +21,6 @@ class Libunicode < Formula
 
   on_macos do
     depends_on "llvm" if DevelopmentTools.clang_build_version <= 1500
-  end
-
-  on_linux do
-    depends_on "gcc" # TODO: remove and rebuild bottle on Ubuntu 24.04
   end
 
   fails_with :clang do

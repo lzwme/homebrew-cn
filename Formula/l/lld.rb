@@ -1,8 +1,8 @@
 class Lld < Formula
   desc "LLVM Project Linker"
   homepage "https://lld.llvm.org/"
-  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.6/llvm-project-22.1.6.src.tar.xz"
-  sha256 "6e0b376a1f6d9873e7dfb09ae6e04b9c7024400f01733fa4c29be69d5c138bc2"
+  url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.7/llvm-project-22.1.7.src.tar.xz"
+  sha256 "5cc4a3f12bba50b6bdfb4b61bdc852117a0ff2517807c3902fc13267fb93562e"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   compatibility_version 1
@@ -13,12 +13,12 @@ class Lld < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a31b068684bb8d00709d6ddb4599ad3c882951e8da8f6038ca38f2e3ed2c540f"
-    sha256 cellar: :any,                 arm64_sequoia: "4df2947859b69d09f812b8061a3f7c8064cec017960f2dc6e34dfe3322c3da43"
-    sha256 cellar: :any,                 arm64_sonoma:  "301c6e2979c6ebd84bb615951485f7c2f1d112e71d469ea50af6cc2539c134f4"
-    sha256 cellar: :any,                 sonoma:        "0ce0177373c987e05f9a103fcb71e60b4e915e93233a9ff852e9c26f3a6b9d85"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb54c8f962f3b542f31356de7f5dcb29d1a99399122b7ab52e87dc4907999b1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a8192739b1938b639a3b1e0f9c84ce9468e81e25dabbe8c0e894b8f3adb296a"
+    sha256 cellar: :any, arm64_tahoe:   "27313c2faf8c535fdf997a27aa9b84bdc3af4855981d4ea5e8efe6b92176ff94"
+    sha256 cellar: :any, arm64_sequoia: "b5597f79d3759e0374daff35d12264a5e51639032f7ec318bfee2014867f29ef"
+    sha256 cellar: :any, arm64_sonoma:  "680b25edaf59c89ce0a934d17db7c1d7d06d40938346399da45de751fead02cb"
+    sha256 cellar: :any, sonoma:        "427562857dd6d2a42a8c7caf60651fa5a32cb8254f3452c856228f4ab70f0c15"
+    sha256 cellar: :any, arm64_linux:   "f7e541100d50aec9da7e6a738adfcb85d575914552fb09453631d073f95668f1"
+    sha256 cellar: :any, x86_64_linux:  "44a6d5f037da5e86c222cb57ca7ff607d3fa9071e78479bc88d5b15958639183"
   end
 
   depends_on "cmake" => :build
