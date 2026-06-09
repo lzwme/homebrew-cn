@@ -1,8 +1,8 @@
 class Podofo < Formula
   desc "Library to work with the PDF file format"
   homepage "https://github.com/podofo/podofo"
-  url "https://ghfast.top/https://github.com/podofo/podofo/archive/refs/tags/1.1.0.tar.gz"
-  sha256 "f34b4413b613e33ab9fe83ff5aa7e2827a6425fcbcd343339458d614b7d6a951"
+  url "https://ghfast.top/https://github.com/podofo/podofo/archive/refs/tags/1.1.1.tar.gz"
+  sha256 "16943528b37798d8663ffedc97190803e525d0a1dcb021fdbf9d35242831890a"
   license all_of: [
     { any_of: ["LGPL-2.0-or-later", "MPL-2.0"] },
     "GPL-2.0-or-later", # tools/
@@ -23,12 +23,12 @@ class Podofo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0d628a7b8ce12d2277c159bd65b4a78c21472c6fee2b2ae6b956aaadd4a23635"
-    sha256 cellar: :any,                 arm64_sequoia: "0e724b4940581265d4a3c6abaed093accd3e3c0bbbcb79b04fa04feea8fa4290"
-    sha256 cellar: :any,                 arm64_sonoma:  "eb359eccdba70fb8d4e5a055f04076323ec55809b773b464644abd39030e310d"
-    sha256 cellar: :any,                 sonoma:        "95f03766fe17321d56805e4210bdd7c10d094981c07f60327e2cdb5b5f192fcb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45fe13051bc05a001a633d3f3fe0bdcbd84aaf7d9fc084c8616457e7e66f573e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e826440973049706f57dc0bdaa02b473e3085a42fb33a5505fbdf9d514006a96"
+    sha256 cellar: :any, arm64_tahoe:   "392967d1daf8e82fdb3f43b5c5fa7af7383eaf92e70a7a81ca735f1fe03f2a77"
+    sha256 cellar: :any, arm64_sequoia: "969d630f0087fac546cf3ed96f36bd66370390f1e0119739554355970a03186e"
+    sha256 cellar: :any, arm64_sonoma:  "a3c7013c1329701490223c332a0fd568137d326026741c43c445a7b7b6980bd9"
+    sha256 cellar: :any, sonoma:        "bb6da5715b993941a7f2b0b2566faf4f732715cd9b373fa5bdd3b6f916d2d04f"
+    sha256 cellar: :any, arm64_linux:   "3d0530719f1b7feff9728dd94ac791cc00b5dc7072d31810bd181c54eeda63f6"
+    sha256 cellar: :any, x86_64_linux:  "e3e5c3282e015433aacc9b1bbf362beec5f533e03507a85c28301ee007c7be86"
   end
 
   depends_on "cmake" => :build

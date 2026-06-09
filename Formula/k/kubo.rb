@@ -1,8 +1,8 @@
 class Kubo < Formula
   desc "Peer-to-peer hypermedia protocol"
   homepage "https://docs.ipfs.tech/how-to/command-line-quick-start/"
-  url "https://ghfast.top/https://github.com/ipfs/kubo/archive/refs/tags/v0.41.0.tar.gz"
-  sha256 "e9f6056c4d66da55f2632ec814f2d3d8dc61d8d97b9e4d2f0ed4cfa5a9d63537"
+  url "https://ghfast.top/https://github.com/ipfs/kubo/archive/refs/tags/v0.42.0.tar.gz"
+  sha256 "8b80786f547b2afbfb0b52811462020f5c38c0887d067436238e4804f4727fc6"
   license all_of: [
     "MIT",
     any_of: ["MIT", "Apache-2.0"],
@@ -15,12 +15,12 @@ class Kubo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37f5dbc50e7f6783ae7964128d57da8b2ee4dc76b3a7cdd41ea4e63a99356708"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51f32b605d44e4ac2dd7c034ad725a5edf640ccf25ad568e8c5fcc9e21f116b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b9903d3b654416b4113e220a90c4391cf3cb4879ef037a3909796b46a8f3609"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eb425c48b7955ec36dd97ac2839610c98b3b9f8ed647f8d9015929a534709216"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "91dc48d6fc1d8e70d53b89004f03bbcffaa130511c3cd7455c3604fa32d9b03e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd1f7667174afa2a2b4b41ef86374fcede775c04124b559f425adf01bda64a66"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9dce31a2b225cc7b69c3031e4a073cc2956d220d0c9b191d5069a8314a2e833"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc02b7eed90fb66b21a9e87a7d4fdb97ba3a396adcb55a789b396959b9b58fdc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a711ffb354b9972cc596daaf8517a8501a3adc5ec22d9b72333f3ee7c36d26d8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "71d97a538009a55da3c640ba03a670e7f17b9c6a716f1f4f8a00777c8d7baff8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "947b7eac7747658d9d0c490caf5bf96e033540ea1e112184e2376775dd6565c2"
+    sha256 cellar: :any,                 x86_64_linux:  "f7a8d32d94dbf8c6eaf6a1988e9fa41ca20312cb0e5bd0fb1952069c9118c8e3"
   end
 
   depends_on "go" => :build

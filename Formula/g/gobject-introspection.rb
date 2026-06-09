@@ -65,9 +65,6 @@ class GobjectIntrospection < Formula
     ENV.prepend_path "PATH", venv.root/"bin"
 
     ENV["GI_SCANNER_DISABLE_CACHE"] = "true"
-    if OS.mac? && MacOS.version == :ventura && DevelopmentTools.clang_build_version == 1500
-      ENV.append "LDFLAGS", "-Wl,-ld_classic"
-    end
 
     inreplace "giscanner/transformer.py", "/usr/share", "#{HOMEBREW_PREFIX}/share"
     inreplace "meson.build",
@@ -76,6 +73,7 @@ class GobjectIntrospection < Formula
 
     system "meson", "setup", "build", "-Dpython=#{venv.root}/bin/python",
                                       "-Dextra_library_paths=#{HOMEBREW_PREFIX}/lib",
+                                      "-Dtests=false",
                                       *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"

@@ -1,10 +1,10 @@
 class Z3 < Formula
   desc "High-performance theorem prover"
   homepage "https://github.com/Z3Prover/z3"
-  url "https://ghfast.top/https://github.com/Z3Prover/z3/archive/refs/tags/z3-4.15.4.tar.gz"
-  sha256 "dae526252cb0585c8c863292ebec84cace4901a014b190a73f14087dd08d252b"
+  url "https://ghfast.top/https://github.com/Z3Prover/z3/archive/refs/tags/z3-4.16.0.tar.gz"
+  sha256 "c68c3e5e4810b16126b8cb4c47eee85c1ac3e24a81914c8e371b40de9dd33ac7"
   license "MIT"
-  compatibility_version 1
+  compatibility_version 2
   head "https://github.com/Z3Prover/z3.git", branch: "master"
 
   livecheck do
@@ -14,18 +14,23 @@ class Z3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9f57f90f63a0995a9b56b6f4c94a1c29bd8fd9a474e09f78cba7f64aaf25708c"
-    sha256 cellar: :any,                 arm64_sequoia: "df9a167ac9c51be88180cbe464e09c46315c6145e775ca8da76de4d4e261354c"
-    sha256 cellar: :any,                 arm64_sonoma:  "734ca95d3bcb87f5c62e27294ea3485698ac160a8bc0cb6eafa68ca73f792ce0"
-    sha256 cellar: :any,                 sonoma:        "daa3779a2ee08f218dd714c80ce78e9451b81340c65efee8a1f44f16dee8aa07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "02148c88d3b6adc67f7cb43fc1eb3f8a1a7317838a567e7de95c60cffc4fd208"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aecd2a8e5cc6512f5ad5cc3ba78602236642ac02d4471fc9635383976012236d"
+    sha256 cellar: :any, arm64_tahoe:   "ee99aab378c77dfd90c002bcceb28164c1c78d9705df789151e781dfa26f0177"
+    sha256 cellar: :any, arm64_sequoia: "08478660968932e8353796d24fee205a57321a4945d48991e8f82dae723d97a3"
+    sha256 cellar: :any, arm64_sonoma:  "39fedb4ba76f08619e473adc746bd9637a77c3b3265f92c2112281519e65532b"
+    sha256 cellar: :any, sonoma:        "a520309ac4d170897f5bcd9b238231bdec1cbb4f0f326c62abe7eb06b7616975"
+    sha256 cellar: :any, arm64_linux:   "8c7a3224690e55f5d676f9c11c03279c97e7dcee5e82a7476aea430688f602a4"
+    sha256 cellar: :any, x86_64_linux:  "3cbce2db8b73bd7095b0ad82606a338e4ef7c262f0d6e6f182c32141d53f9ac2"
   end
 
   depends_on "cmake" => :build
   # Has Python bindings but are supplementary to the main library
   # which does not need Python.
   depends_on "python@3.14" => [:build, :test]
+
+  fails_with :gcc do
+    version "12"
+    cause "Requires C++20 std::format, https://gcc.gnu.org/gcc-13/changes.html#libstdcxx"
+  end
 
   def python3
     which("python3.14")

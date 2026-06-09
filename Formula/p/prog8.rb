@@ -1,8 +1,8 @@
 class Prog8 < Formula
   desc "Compiled programming language targeting the 8-bit 6502 CPU family"
   homepage "https://prog8.readthedocs.io"
-  url "https://ghfast.top/https://github.com/irmen/prog8/archive/refs/tags/v12.1.1.tar.gz"
-  sha256 "34ede7105af1c5eabc6e457d1eed0b9ef5655498d215197739bbb1c1ed71cc7a"
+  url "https://ghfast.top/https://github.com/irmen/prog8/archive/refs/tags/v12.2.tar.gz"
+  sha256 "731efbf7cbdfef2202e7e664f9c9ef2193662c613f2366dd323bb2af26abf6a8"
   license "GPL-3.0-only"
 
   livecheck do
@@ -11,12 +11,12 @@ class Prog8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ba0938701b0d057c9e8e37a0465854cad58077ad0a2ea371d57c49ac6c55118a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e31e094f79aef84ef2f706b1a6d65d1f55657e793e83a290021cb92fdd37617"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d5adf3941983e932c50416ddb34c455bfdea187387915212f057e0cdfcbfa7d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9ba0760196e702e6b2ce31eb89b30bbc52f2ef9644c34e0bc143a3b427d7301e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be5491e2071cecbe66a83e4fa5da9b4e3a9ef58f0af25c0eb9b4b5324e83ecf1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7aaaf99528177558c2f1cc6109efd62281810ed8aad6dc307d703dedc763f387"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c4394410424480a860b7c46d9e17a544bbe74252550ed50dfdb9dcea86365cbd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed695b23a80989394306a1cbd422731da3c0a27d4affbdd9572d4252ba207c33"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d32015534fed4cfc76093e52678806ba74cb353b62059c5e679385855374757e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7c5d2aa66dbb29942c14105231f570407dc2b4af49998fe787f553fbf90da070"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf78de2d1ec83e235686a097c9e42c09b0b00e1f9fc781b3f067a4fbfb93171e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0970031d7b075492c30a4263021c4c673305e4a3fd14a33f528c66b4142b3b5"
   end
 
   depends_on "gradle" => :build

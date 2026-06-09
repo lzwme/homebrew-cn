@@ -7,15 +7,13 @@ class Minidlna < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "9fc0ed3ac5675b3dbfe74a361c9b43f7d82a29a65a12abc56ac1b9efd30d1258"
-    sha256 cellar: :any,                 arm64_sequoia: "f7e718095ef9388cd38793641bcc399107f037cbf6bc744705ce58a5deb9c291"
-    sha256 cellar: :any,                 arm64_sonoma:  "a848bf8fdcace687463088fbbbb1095d0259bd65de13e580f76c05673bf31cc3"
-    sha256 cellar: :any,                 arm64_ventura: "014e64f8d81857532e0a65c2aaf361d18090fe2ff791ef351ea02311ccd69410"
-    sha256 cellar: :any,                 sonoma:        "ff6b2f6bd3fcad653e0db52c02c40db6edb23d7bfbeb9647ed13c97e7607a9d1"
-    sha256 cellar: :any,                 ventura:       "a95db24b987a5f9139174ccffbb740b561dca9218a2f683b89aeff6ce5156985"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb6c7d8e54a0dda78af8f46d94643bcbd11914bf8e6b20b534d4470127e4d492"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12eec6b926c5633f8fd7565e772a4e334f2f61fa0ab9dfd3a2dfd654e594c997"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "3b2a0c48265f03090c984a5cda3f33b5aefeb4971d929fd979436e994527a142"
+    sha256 cellar: :any, arm64_sequoia: "6ec3fef5800203a454903f44e9076e1e41cd3e2382ae6b4727e4e5d9990833aa"
+    sha256 cellar: :any, arm64_sonoma:  "3457530f1b8101109604864ed14dc1e2d27148df78f0f2ca1817ddbc799ab123"
+    sha256 cellar: :any, sonoma:        "54c1e14b7dfed36b83b7baab7e4d7f338b43dacec2129e5ae50494f139d8a85f"
+    sha256 cellar: :any, arm64_linux:   "c2dfb2a33179895d051aa64f7152f9be1b9b4a1a52846c2a42354b459aa0df5f"
+    sha256 cellar: :any, x86_64_linux:  "7195f61a472be5dd8c0e7e6855761daecf3637e71c6da100fd8b7c88248964b2"
   end
 
   head do
@@ -56,26 +54,8 @@ class Minidlna < Formula
     system "make", "install"
   end
 
-  def post_install
-    conf = <<~EOS
-      friendly_name=Mac DLNA Server
-      media_dir=#{Dir.home}/.config/minidlna/media
-      db_dir=#{Dir.home}/.config/minidlna/cache
-      log_dir=#{Dir.home}/.config/minidlna
-    EOS
-
-    (pkgshare/"minidlna.conf").write conf unless (pkgshare/"minidlna.conf").exist?
-  end
-
   def caveats
-    <<~EOS
-      Simple single-user configuration:
-
-      mkdir -p ~/.config/minidlna
-      cp #{opt_pkgshare}/minidlna.conf ~/.config/minidlna/minidlna.conf
-      ln -s YOUR_MEDIA_DIR ~/.config/minidlna/media
-      minidlnad -f ~/.config/minidlna/minidlna.conf -P ~/.config/minidlna/minidlna.pid
-    EOS
+    "To use `brew services`, put your configuration at ~/.config/minidlna/minidlna.conf"
   end
 
   service do

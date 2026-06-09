@@ -17,7 +17,7 @@ class Fanyi < Formula
   end
 
   test do
-    assert_match "爱", shell_output("#{bin}/fanyi love 2>/dev/null")
+    assert_match ".fanyirc", shell_output("#{bin}/fanyi config list ")
     assert_match version.to_s, shell_output("#{bin}/fanyi --version")
   end
 end

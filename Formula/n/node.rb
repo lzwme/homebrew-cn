@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v26.0.0/node-v26.0.0.tar.xz"
-  sha256 "fcb5e5c06a5c2ec9e669801248657aafaa2291f8760dac7bfb639f878318c592"
+  url "https://registry.npmmirror.com/-/binary/node/v26.3.0/node-v26.3.0.tar.xz"
+  sha256 "319ad5d7d20cc622e55eb75b9f1a2546b77a08bd462b67030d0c89316c2c2349"
   license "MIT"
   compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
@@ -13,12 +13,12 @@ class Node < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d8a6c3a17de8735c6bd79f532af5a404b647c4c067217d7328394315a2583966"
-    sha256 cellar: :any,                 arm64_sequoia: "fbff668a5b3d655dbc8b80dd7181da1a375d40f4ed9aac2197195e889ae53fe0"
-    sha256 cellar: :any,                 arm64_sonoma:  "cf5a4ea9d7283ab08bcf4d2db27c97fb944338dbe05d5b60d81bb68ffedc538d"
-    sha256 cellar: :any,                 sonoma:        "a0a56171de4dc10563d6e10363b6d1003b70552c1c0aba25b57f4fefabb5d77b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e037638495afa9776bc3dddc5b1bb13cb14cee78f340f1b8ebc9bedcc29a6190"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db99f551170ae6811682fa342a1e52a9f6f5f5c5f632176af684f09c5c0d9c39"
+    sha256 cellar: :any, arm64_tahoe:   "73328a7b90db0ad75a65520b4556ffe993f1f53a16d765b5ed9bca9b93e64b13"
+    sha256 cellar: :any, arm64_sequoia: "c09cb25a96cb596e7697fa3774033d1fba007976646cd406953db1ad74128e5a"
+    sha256 cellar: :any, arm64_sonoma:  "2a4ff0a4262e6adc654efb94dc7576cdbd089db034bd58afbb03b83335f55475"
+    sha256 cellar: :any, sonoma:        "c329f1d8a9bb12f0a5e22b18b76884ccb49271362f0b6566001f34895bf25349"
+    sha256 cellar: :any, arm64_linux:   "20d3ea38bff4e5ab311ef05021484ea2953c986e50d665d26b82b7a8d174184b"
+    sha256 cellar: :any, x86_64_linux:  "594e786bd3c4e16a25c16ef969feec0be1275c371cf6384459df5417e1093bec"
   end
 
   depends_on "pkgconf" => :build
@@ -28,6 +28,7 @@ class Node < Formula
   depends_on "c-ares"
   depends_on "hdrhistogram_c"
   depends_on "icu4c@78"
+  depends_on "libffi" # System `libffi` is missing some definitions used by node
   depends_on "libnghttp2"
   depends_on "libnghttp3"
   depends_on "libngtcp2"
@@ -69,8 +70,8 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-11.12.1.tgz"
-    sha256 "e679850e663b16f5f146ee425d0eb0e3442c1d2bda3d513bbfd7c81f5ee5db38"
+    url "https://registry.npmjs.org/npm/-/npm-11.16.0.tgz"
+    sha256 "30fc15697c771002878665c29f49dddde9aa8667fa5719854b2f52d3cd19230b"
 
     livecheck do
       url "https://raw.githubusercontent.com/nodejs/node/refs/tags/v#{LATEST_VERSION}/deps/npm/package.json"
@@ -113,6 +114,7 @@ class Node < Formula
       "ada"           => ["ada",             "ada-url"],
       "brotli"        => ["brotli",          "brotli"],
       "cares"         => ["cares",           "c-ares"],
+      "ffi"           => ["libffi",          "libffi"],
       "hdr-histogram" => ["histogram",       "hdrhistogram_c"],
       "http-parser"   => ["llhttp",          "llhttp"],
       "libuv"         => ["uv",              "libuv"],

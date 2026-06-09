@@ -1,8 +1,8 @@
 class Fastlane < Formula
   desc "Easiest way to build and release mobile apps"
   homepage "https://fastlane.tools"
-  url "https://ghfast.top/https://github.com/fastlane/fastlane/archive/refs/tags/2.235.0.tar.gz"
-  sha256 "828845aeac27d6252b9355cb4e79915a137f2074f3950dfadd26066401d071f7"
+  url "https://ghfast.top/https://github.com/fastlane/fastlane/archive/refs/tags/2.236.0.tar.gz"
+  sha256 "2b6f5a88acf6947b95cbe7386eb0ed370ef95aa2c9df9acbab70021857dffa34"
   license "MIT"
   head "https://github.com/fastlane/fastlane.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Fastlane < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "85982ce9c083141680af2a88d4ba804f25384f5f402701ac25245ef633a7cd1f"
-    sha256 cellar: :any,                 arm64_sequoia: "0ae9673722e7667ac2f231d2167e7b8cb5f8462ebee5cfc05934b51b35188e66"
-    sha256 cellar: :any,                 arm64_sonoma:  "260e5debb1e810837e3e980d4a18b1e575c882bc38dee9c48a99ef7f51641284"
-    sha256 cellar: :any,                 sonoma:        "69d57180c0d0fe5b562ca8ba529f941cb569d41b713563f584715fc6448c7c25"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb45b14210d294b099c75cd863f31244d0c0291fe8e949efb39e8bc92d0e0963"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27892af4c9bfad60572006e4d8ba7dc5f8fac1d53b04643a017d53d8c43919a1"
+    sha256 cellar: :any, arm64_tahoe:   "6805a42de9cc3d2aff37dedc1695d1c0367e727a0e05284b392a46dc7b9d29e9"
+    sha256 cellar: :any, arm64_sequoia: "9e25558299511a381007d1533cd2b25abcac04cf075130fbeca42023dd6ab2d9"
+    sha256 cellar: :any, arm64_sonoma:  "020d80c08c422bec614bca9ddba44c22ba969ba785eed75e50cf00bb167b5dd5"
+    sha256 cellar: :any, sonoma:        "61f4ace522860f414ef04a4ab7ede8f097b005adb3ba1332bf56823c72ede42e"
+    sha256 cellar: :any, arm64_linux:   "7935748d99c0eb6f697d0cacab660fa1842e9a83e36b1468d18eda563d104b98"
+    sha256 cellar: :any, x86_64_linux:  "d6e2ee738fafbc71b81d79a2ba3829ed7485f7c94838583fa58768ccbdb72a0d"
   end
 
   depends_on "ruby"

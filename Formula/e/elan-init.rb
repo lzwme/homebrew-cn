@@ -1,8 +1,8 @@
 class ElanInit < Formula
   desc "Lean Theorem Prover installer and version manager"
   homepage "https://github.com/leanprover/elan"
-  url "https://ghfast.top/https://github.com/leanprover/elan/archive/refs/tags/v4.2.2.tar.gz"
-  sha256 "b1f151659be6f2a9c840049ec40bff126847de0fcceef7c42da04627e34b1712"
+  url "https://ghfast.top/https://github.com/leanprover/elan/archive/refs/tags/v4.2.3.tar.gz"
+  sha256 "7094a5063378225598a420b13eded60f58c21f49fc2e009c68a6506da5d62580"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/leanprover/elan.git", branch: "master"
 
@@ -12,12 +12,12 @@ class ElanInit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a90893f8379a0d4ed86b5221ceb9f695c4d02cc3119f4fcfeb9040a49335945"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd6cec38e28d57af748a4ca5448d569ccb98f21d9b78d6cb4e037d974434a54f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e87d7ac0d97409f6b56a459bbc5f8f129886132d3a9c91e51771b4c784a6ddba"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0cf1dc6d52084d03f5925c37a0024d7200d5a12d2ad2c76067ee48274f7ead7c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "35070ba93d6f92605c4cc92a911811b599e5683befd4a89a1fa77d5842f61db5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1779d9405be3a6603585061405937fd2de0001e595f3caac78aa376c1bfb6a96"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d56c9a2feed740f0eb61e5e45c18f350057649ab70904a0639ce621864c40bdd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95c6059bf4969b891585eab9d96b179d4ca2e2d3f08fe6f0f8531cf55fece429"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "303a5825d263d9348a699aa3d3b1f1a6fb6ba8f73a12bcf1d1397385aaf2e4f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9eab0dffe139cc8316551030634f0ca89dd743e3eabe825e9b9237d2064d5b4b"
+    sha256 cellar: :any,                 arm64_linux:   "9b5f98d89886f0beff1eb92baaf3ef2a3f9c79befe8ba996ab4e1b0d1ef1d9f9"
+    sha256 cellar: :any,                 x86_64_linux:  "f2f6c3b396202085ab6e7eb4b95b8a7cdc4b87bb15d81fee436e11c653c1f177"
   end
 
   depends_on "pkgconf" => :build

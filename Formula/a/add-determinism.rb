@@ -6,12 +6,13 @@ class AddDeterminism < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4acaeccbe7f1e8390d00e81f85104468a061865aa885de7bd2c5980583d47ca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca533c86ffccf0438b6498f38fc7ec05fd10bb74bb8afeaef4a22f378ca6eb42"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "913e2ae4671e6be498e000325049cbe2637b2f6ebb480e8ff12a174132e61325"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a6e9027ec99269def2d6823502b933e3290ab59fd64003cb68ce3836d0d65a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f81478dd7b06b5f7d120447e2552aad28a48edb0ac53c77d402137d27ecbc6f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e38dcf219d4522e98b3b313c830f480c0bc318fa8243b0586e7053cde7691aac"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5d281e4f15e96d4606740e527799c7450430928e88ffdca11a511148fd6fa13"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76ff0f034490afe0dcfd9ede927a82df63edc8bcb5a5ed7b8a7720d55420c8a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "049e1501ac4a7e8f706ecc796b9e3ae99eec3f02d97b32336e4a9ce0b3858268"
+    sha256 cellar: :any_skip_relocation, sonoma:        "459744163fb5d530b3d30e1dca2186d8a90cfaf4c56a7736da8245959b81354f"
+    sha256 cellar: :any,                 arm64_linux:   "c5cfefa351739bb541a5323f575ba9f2f64ab56f350e882f5d15623a2cdf74f5"
+    sha256 cellar: :any,                 x86_64_linux:  "ff1cd4d20bc9e232344102e664a5a540ad9e53178bb23fceae4aedf9fb8ce5e0"
   end
 
   depends_on "pkgconf" => :build
@@ -29,7 +30,7 @@ class AddDeterminism < Formula
   deny_network_access! [:postinstall, :test]
 
   def install
-    ENV["RUSTFLAGS"] = "-C link-arg=-lselinux" if OS.linux?
+    ENV.append_to_rustflags "-C link-arg=-lselinux" if OS.linux?
     system "cargo", "install", *std_cargo_args
   end
 

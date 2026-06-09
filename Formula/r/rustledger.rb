@@ -18,8 +18,6 @@ class Rustledger < Formula
   depends_on "rust" => :build
 
   def install
-    ENV.append "RUSTFLAGS", "-C link-arg=-Wl,-ld_classic" if OS.mac?
-
     system "cargo", "install", *std_cargo_args(path: "crates/rustledger")
     system "cargo", "install", *std_cargo_args(path: "crates/rustledger-lsp")
 

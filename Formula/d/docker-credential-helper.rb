@@ -1,18 +1,18 @@
 class DockerCredentialHelper < Formula
   desc "Platform keystore credential helper for Docker"
   homepage "https://github.com/docker/docker-credential-helpers"
-  url "https://ghfast.top/https://github.com/docker/docker-credential-helpers/archive/refs/tags/v0.9.7.tar.gz"
-  sha256 "28ee1cb4be24f88b9fe76bfd99b7d51af7af618085850c98cf473e520f67c736"
+  url "https://ghfast.top/https://github.com/docker/docker-credential-helpers/archive/refs/tags/v0.9.8.tar.gz"
+  sha256 "7954c8bcb271021a7b3a8a992a5eb2828af3b5668659582112f2dd672c5242ba"
   license "MIT"
   head "https://github.com/docker/docker-credential-helpers.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b14bd94d9d32f9d5f25079a927ad02f72d5159e48f9f34135f9bc4f5079000df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4ed1dcd6a8f7ce21b88bc290f8a93c6c9154f65a45ac3d54766013da5f096da"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b73481561d41ab78cdea464e1e0003a9597548dd583062ae42961efe9aee2cd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "933fb05d3666968e099a098bde4050a6ff8ed7169eec323b7d682b10a174196f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "660cfb25bc61c35814ae2b574e55055511b5ded229352ac4c964285889bc0a5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bac9866125abbf43bdc1c071b34d14c3bf790d7703738429d780adcb9c785f2f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0c3baf4fad995b8be4e951f7ef654d6e60bff6756e7c048d0d2d936e8e260eb0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f49797296707edc78d3ca7d152016a99767849288605bd9f52a9f4763106ab4a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf81d34a381b3d9a79465d2187c5a66c3bb2a0fd3df86b0ea85df0ca4d27116b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cebff49822e5c7e7e668ac296196c8a2c3942fd915845e9d73c00750134297a8"
+    sha256 cellar: :any,                 arm64_linux:   "ec12662a1ab5e3f770de3074125c9d575ac6c6e81c4b425fe9584394322bfa27"
+    sha256 cellar: :any,                 x86_64_linux:  "ece0f2baea8f0a30d6e8740c355cf1101758bcaf24f88934ba00329e3609dc37"
   end
 
   depends_on "go" => :build

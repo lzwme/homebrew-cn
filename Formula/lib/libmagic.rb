@@ -1,8 +1,8 @@
 class Libmagic < Formula
   desc "Implementation of the file(1) command"
   homepage "https://www.darwinsys.com/file/"
-  url "https://astron.com/pub/file/file-5.47.tar.gz"
-  sha256 "45672fec165cb4cc1358a2d76b5d57d22876dcb97ab169427ac385cbe1d5597a"
+  url "https://astron.com/pub/file/file-5.48.tar.gz"
+  sha256 "ed14656883b23a364b4057c05595d93252da9bc473d30106519519d0da141283"
   license all_of: ["BSD-2-Clause-Darwin", "BSD-2-Clause", :public_domain]
   compatibility_version 1
 
@@ -11,12 +11,12 @@ class Libmagic < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f7aa29830da3062c82a1573bcadb35df0951de214d908543db23f89d55fdb831"
-    sha256 arm64_sequoia: "6f52d18caa98d2f3aee461cff07e20ee353476e5612bad6ab0865f5d0b90921b"
-    sha256 arm64_sonoma:  "8fb3f8f7fdd14723f494b82c85a7c83fdedaf88a042d8c33dae09ed02e2382ae"
-    sha256 sonoma:        "b386f869ea612420b8835424308c886c7ce72667b1e9e41d08fb8358daa918cb"
-    sha256 arm64_linux:   "c66a9827c4498d168f68346243ea5ab6772b9a707b9a79dadccb59f5ec847574"
-    sha256 x86_64_linux:  "2fd518dd644a4e1b94cde7150b7d1d7f24403940a20c0a175dda85465d207b99"
+    sha256 arm64_tahoe:   "c8c01258938e218cf9dcff85eaf7580b299821fab53f4d6706679d41d55b476b"
+    sha256 arm64_sequoia: "c6e5827a76630cd9d8d7cb5ec0372c372cca1da5d80d4a578931020332ee3e88"
+    sha256 arm64_sonoma:  "a581bb51e86bbc6fd8b8f8791a1cb5ba8794ced3c2dd567ab1c310b43a91f529"
+    sha256 sonoma:        "5bc1a546f556add81790941a504fc0abaa83c08f2bec4a030e8528c3481152b2"
+    sha256 arm64_linux:   "139b9039a0093c9a9c8d18566b9c0932f85f85389d0dfa65cd21ddd16d65be5a"
+    sha256 x86_64_linux:  "506b8b31dfc6c4478ef078a281b3ed90d6fc9399b7f4625ba619df8a9d1e02b3"
   end
 
   depends_on "pkgconf" => :test

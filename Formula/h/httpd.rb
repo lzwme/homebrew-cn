@@ -1,19 +1,19 @@
 class Httpd < Formula
   desc "Apache HTTP server"
   homepage "https://httpd.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=httpd/httpd-2.4.67.tar.bz2"
-  mirror "https://downloads.apache.org/httpd/httpd-2.4.67.tar.bz2"
-  sha256 "66cd206637b0d5c446fa7dabe75fe03525da8fb55855876c46288cd88b136aa4"
+  url "https://www.apache.org/dyn/closer.lua?path=httpd/httpd-2.4.68.tar.bz2"
+  mirror "https://downloads.apache.org/httpd/httpd-2.4.68.tar.bz2"
+  sha256 "68c74d4df38c26bed4dfbdb8f3baf1eb532f3872357becc1bba5d136f6b63c06"
   license "Apache-2.0"
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "1623fae82840fbb9b73c746c241ddd112f8d91be4c022fb521f0daf9f34fe789"
-    sha256 arm64_sequoia: "0b6cbcdbb78a361972b589288e5499c3eea6fee8230207857a041fe27b34fe1b"
-    sha256 arm64_sonoma:  "90809b1baec19d8f53cfb605015c34e1e86d135d8973ae340e6b0282761110e4"
-    sha256 sonoma:        "d47615974bd21b6140187635cd5448c9151520c4864a780de168c17b3f4fde84"
-    sha256 arm64_linux:   "3984a3f47c40a80abbbccb0d80a100d48d6165547dcd19d1532c56ed598ef938"
-    sha256 x86_64_linux:  "97c191c10a5c6686cc7d01166daf4b0d531c2768489b0b9ced973d9849cb9056"
+    sha256 arm64_tahoe:   "e021f36bba83fcceb2d9b7e182f81d6a5616ec23c2ce0bb4a3435bf7fa53f61c"
+    sha256 arm64_sequoia: "0549386596be75710f999a1f5e7b45804c020bec2c2347613f416e67d4cc0ba4"
+    sha256 arm64_sonoma:  "5835c1181a511b8c0eb5729dc27734669387a1c2d0dd95322ec6ae6b2a3f0bfc"
+    sha256 sonoma:        "50b619ada5467134fbd92ee54c1fed89f4f8c3b4598ae6c9c197993e40e447aa"
+    sha256 arm64_linux:   "356a06f03b55c39098fc33df6a098785a9097253afe40251f6300cb93a82a372"
+    sha256 x86_64_linux:  "a0e54338a4716e465093269159fc55bc979608755a7a09c49f3d9d5d7fcce755"
   end
 
   depends_on "apr"

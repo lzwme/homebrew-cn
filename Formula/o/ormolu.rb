@@ -16,7 +16,7 @@ class Ormolu < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.12" => :build # GHC 9.14 PR: https://github.com/tweag/ormolu/pull/1175
+  depends_on "ghc" => :build
   depends_on "gmp"
 
   uses_from_macos "libffi"

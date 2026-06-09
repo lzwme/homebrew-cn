@@ -1,10 +1,9 @@
 class Postgis < Formula
   desc "Adds support for geographic objects to PostgreSQL"
   homepage "https://postgis.net/"
-  url "https://download.osgeo.org/postgis/source/postgis-3.6.3.tar.gz"
-  sha256 "58ff19ae133e470280efb4949ef92e0364d4c2a66bef8c57e69477348d815ea3"
+  url "https://download.osgeo.org/postgis/source/postgis-3.6.4.tar.gz"
+  sha256 "ed8dc6679f1e06f7b113592b04cde2a7e00f1b1e681294c8ca2204058990cec6"
   license "GPL-2.0-or-later"
-  revision 1
   compatibility_version 1
 
   livecheck do
@@ -13,12 +12,12 @@ class Postgis < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "76e50abf27ea188a2298618e77867d5a003e5b1b28016a43864df8bd6423e4db"
-    sha256 cellar: :any,                 arm64_sequoia: "720c39802e66ade4bfe97f6d57d5c0362c7efcd5e8c8c0d51167055cc34780c5"
-    sha256 cellar: :any,                 arm64_sonoma:  "e517c208fb8b21a932819bc4251c2f3d156e984bb7b4865a4770c1aef2c3ce4d"
-    sha256 cellar: :any,                 sonoma:        "f9048498357a13e693cf12e17fbb6be3b1568befbb12bce54ba6f604c165b61c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7cdf2a9a9be552650a8e183e1a83e86757a54ac92679eec40b9b9a7ee0d0a8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1ec215c26b3861791270c4e0683836efbd99cd7f19f5387f0b0b55a82b6a3d2"
+    sha256 cellar: :any, arm64_tahoe:   "637de6faada08ae27145297d3d94d630e171d90bb8d67620713e58bfb593589e"
+    sha256 cellar: :any, arm64_sequoia: "bf6dd20ac38e4d74c8375a5201918ee3ef4e63e0d855a76f82bebae731b78424"
+    sha256 cellar: :any, arm64_sonoma:  "787dc636eb2c94e894b13149e8b3f44104abdea3f7c7df84ddc1888871465e29"
+    sha256 cellar: :any, sonoma:        "4521f98cd466216438b9c75d4ff227cbc487ea9b302b19f06824d7747378d2f4"
+    sha256 cellar: :any, arm64_linux:   "036c0694f6d771035e2bcd2429d94f8e3017fef7b9e69faf80643c29fe66003d"
+    sha256 cellar: :any, x86_64_linux:  "97abab90cc0c00d566d74927e13d47987831972a91864f285d20c95586419f76"
   end
 
   head do

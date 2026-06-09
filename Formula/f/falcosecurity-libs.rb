@@ -1,8 +1,8 @@
 class FalcosecurityLibs < Formula
   desc "Core libraries for Falco and Sysdig"
   homepage "https://falcosecurity.github.io/libs/"
-  url "https://ghfast.top/https://github.com/falcosecurity/libs/archive/refs/tags/0.25.2.tar.gz"
-  sha256 "136327d148154f91f73ff81366bd707a2930e72bbd2e491d68ba7ee62afaffa0"
+  url "https://ghfast.top/https://github.com/falcosecurity/libs/archive/refs/tags/0.25.3.tar.gz"
+  sha256 "72af77e5cc3f0c20011f6623d7b5558113f1a9ca65df1ece9d97c09ada870e2e"
   license all_of: [
     "Apache-2.0",
     { any_of: ["GPL-2.0-only", "MIT"] }, # driver/
@@ -15,12 +15,12 @@ class FalcosecurityLibs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7a5a151013b1dca20761ea0088aab98ee4158eedd4afa3e52e47cd3ace1f4d68"
-    sha256 cellar: :any,                 arm64_sequoia: "f9b280c14d897f3fd5c559f2a06cc0cac31054748b050d9729732ec332fb330e"
-    sha256 cellar: :any,                 arm64_sonoma:  "cf428a479d6e39ac1f1025c72d912845d42a10973528d000380441c01e396e31"
-    sha256 cellar: :any,                 sonoma:        "2cd94d575f66b408586202c3295ae18b26d8d013fa8d6010174654695f8b1920"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "daf2dceb283c0470f0c03d2bd480084b59dd98c1b3e14c25791b2e7bdca2d4dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "144f2e81e88ff8f3a3cf89b22d17b89c9f04f70540f331a203c2066dc528b7c1"
+    sha256 cellar: :any, arm64_tahoe:   "96931708ec5d23c00919fcea35300979f5320bcf606f0f76a36c3057927dd903"
+    sha256 cellar: :any, arm64_sequoia: "bccea6b28e4d61dfb4b7fc92fc939fd958d83506d7e694f27cee79d7d9088968"
+    sha256 cellar: :any, arm64_sonoma:  "a315030a0081a2b55916ba18fcf9425b4dbc6b8ef1526b8660afde7a9a95aca4"
+    sha256 cellar: :any, sonoma:        "7dd3485ccf89c976f7f5f59bba34e18baec8d85b0fb1bcc4d0c9eb7a81d6aada"
+    sha256 cellar: :any, arm64_linux:   "04561a112ffaf56309fadc1940f9111e9bac34a6594657fa0e2de54c14b6132a"
+    sha256 cellar: :any, x86_64_linux:  "a64d02e4f67b8e226d47adfd1418eff762ff9ecb8e6b46923b41924f05622845"
   end
 
   depends_on "cmake" => :build

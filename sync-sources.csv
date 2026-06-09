@@ -1201,6 +1201,7 @@ Homebrew-homebrew-core/Formula/c/comrak.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/comtrya.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/conan.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/conan@1.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/concord.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/concurrencykit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/concurrentqueue.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/conda-lock.rb, Homebrew/homebrew-core, 0
@@ -3624,6 +3625,7 @@ Homebrew-homebrew-core/Formula/k/kubecolor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubeconform.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectl-ai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectl-cnpg.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kubectl-explore.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectl-rook-ceph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectl-tree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectx.rb, Homebrew/homebrew-core, 1

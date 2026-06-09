@@ -1,18 +1,18 @@
 class Termframe < Formula
   desc "Terminal output SVG screenshot tool"
   homepage "https://github.com/pamburus/termframe"
-  url "https://ghfast.top/https://github.com/pamburus/termframe/archive/refs/tags/v0.8.5.tar.gz"
-  sha256 "b0210b80cb56fd8e6d0b1adb8e3fab0389ce6eca737266707cac2733764325e6"
+  url "https://ghfast.top/https://github.com/pamburus/termframe/archive/refs/tags/v0.8.6.tar.gz"
+  sha256 "7e9fe9b19da85eb1b2cd7d644b4a2d74cdda7c5e4ae4b01dc3eb1f61acc3b482"
   license "MIT"
   head "https://github.com/pamburus/termframe.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1ddc7b3cd96bdce2b7bdd6c13aa671b49cf67045705ced9a5a01262c3d5548a8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97bcbb0f1c9667d34efe500f8e19d09245ac7f505c516f3834bcd1a92cc5a86e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9a872033edf2195c52136ba5a38c1f022202429a589e73a7aeb55de6598c9ea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f6931e26ccf476cadb38029969f80a0e69e5d2e4d2b8379042218033323f95e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "742069528599c38f971da5de0d20280e0b0adb84d58f6c29487ba68e9490a7f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0143c34b297832ffe12b1091c96bee570c1ebc774b502ace875a4a819376c395"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8cf87f422b485583fe6a5628e158f7be664c153fbe1f27fd5d732aca87783f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "421a247e1f3e2b9ce771c67cebeda0fb660c3e09ccc7cb8a302bb0946163a2ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a24665dfe58ac246e7d7d1e89b9ad973255cc1432e58054f0025564c5012627"
+    sha256 cellar: :any_skip_relocation, sonoma:        "af113cc986ab1502aa1c94d73abed53a3d652eb08fe92dce53b9e3c66109bc06"
+    sha256 cellar: :any,                 arm64_linux:   "e563647a1bebae14a4ec71f783d5c69dbd21a6f456f62fb63b21ec88c6c3e3b9"
+    sha256 cellar: :any,                 x86_64_linux:  "ea221016f2e1f3ea4fd4803d93c6fdf5b8ca8fe9bfad208e7f83198b14eb9be7"
   end
 
   depends_on "rust" => :build

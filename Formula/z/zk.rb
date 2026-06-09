@@ -1,8 +1,8 @@
 class Zk < Formula
   desc "Plain text note-taking assistant"
   homepage "https://zk-org.github.io/zk/"
-  url "https://ghfast.top/https://github.com/zk-org/zk/archive/refs/tags/v0.15.4.tar.gz"
-  sha256 "024b5a1615c8ac1924ec3338b36031c36131bad5de77dcce05adce35659b7489"
+  url "https://ghfast.top/https://github.com/zk-org/zk/archive/refs/tags/v0.15.5.tar.gz"
+  sha256 "a3260eb1c6309a70a27d0e81c32fce58a9856905e781ea4138aa87d523e910aa"
   license "GPL-3.0-only"
   head "https://github.com/zk-org/zk.git", branch: "dev"
 
@@ -12,12 +12,12 @@ class Zk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d1199b12a32b2a8b2205721d7d9e0b1909ee5e7da79e12c6b7d7cee355771ed6"
-    sha256 cellar: :any,                 arm64_sequoia: "da9a090f84ad99042001f312c812238d0dfcb8e307b45623dd1cb2c45f502513"
-    sha256 cellar: :any,                 arm64_sonoma:  "2454098ebe5d7e54fc1c2b88a07056c97f691469382ff23ad20f247f896b41f0"
-    sha256 cellar: :any,                 sonoma:        "f2c54b6ad8308bd145bdc0d302f3f0994c544ec092861546c24b29d5e985f4df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dbf7460386fb6507ab299db1087633d101806834577755f8d01d699c2600da7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5614a228da713bdd80367821902b49a5da8563de49d825ab16cad269352d7dec"
+    sha256 cellar: :any, arm64_tahoe:   "fd5a26e3163acc9ed2c44788594a3374c5f9049a1838f15ffe46a2b2cf369dc2"
+    sha256 cellar: :any, arm64_sequoia: "a56e02e6a2be6804eabfc51c7b00a4e4be071dee1b7080f0ccc30cc7308c6d0e"
+    sha256 cellar: :any, arm64_sonoma:  "b98538e297470a91e21a57148fe1c3aa0226dfc68ea7e2f16d6972312d806263"
+    sha256 cellar: :any, sonoma:        "6c27636944aa3e758ffd1328eb4b6d1d6d6fa2467bdaa4e472450514811bead0"
+    sha256 cellar: :any, arm64_linux:   "252c76eae815d1af8887493001cede24b3f8b0bcffeb559ab05ecf68e9408fa3"
+    sha256 cellar: :any, x86_64_linux:  "2d5ab432f142f7343cb369e4786e72d1980e28fbb7f5c66ba4d6698543e435fb"
   end
 
   depends_on "go" => :build

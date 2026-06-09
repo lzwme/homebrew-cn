@@ -1,19 +1,19 @@
 class Ggml < Formula
   desc "Tensor library for machine learning"
   homepage "https://github.com/ggml-org/ggml"
-  url "https://ghfast.top/https://github.com/ggml-org/ggml/archive/refs/tags/v0.13.1.tar.gz"
-  sha256 "ce4c6d51902d6379568ce4ce39700a6f948d9969ca2b0ded026adc88b10bd266"
+  url "https://ghfast.top/https://github.com/ggml-org/ggml/archive/refs/tags/v0.14.0.tar.gz"
+  sha256 "4e301d97b235ca01c35308eb0aa5770fdcc0f7dd4933a7e2f94247b027e1368d"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ggml-org/ggml.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "705430393590f76e5d2708ec7a0f1b4c3216e0a05c3319747378f4b79e48fe71"
-    sha256 arm64_sequoia: "04e72b9aadef2bfa56a24d872e0bf84a4346d8dd95688188a0d52296b995e3bf"
-    sha256 arm64_sonoma:  "c510c4e73b86b6ee5dce5469c19515b521e557a9493b0518cbe5b64e61bbc2a1"
-    sha256 sonoma:        "e781f143fcd2ce6f9eb7ecac602c99c68a2da862e7a6f398026e7244f46b0bdc"
-    sha256 arm64_linux:   "cd6f8785abe4191847698697fdf4262a0e436a3b9057c91ea84565ea75984775"
-    sha256 x86_64_linux:  "b68e094921c077e266f9cd02cf1b6e6709b2b900a8636cfd6f31526914604caf"
+    sha256 arm64_tahoe:   "d246f5889042b7886449910920c089bd057166c0b98ebfe7d1298c55fce2dd29"
+    sha256 arm64_sequoia: "8c48348c12b87e75bd559535c8b1d2cbd777a6954c35a2101720a33b6288b4d7"
+    sha256 arm64_sonoma:  "c9603cc6cde227bf032e4269c4c1573616a26f59469d2a0adeb84da179b5b083"
+    sha256 sonoma:        "5bc0fa42991bf462d47dc80555887b89ea9735a11761302b727fb219043d118f"
+    sha256 arm64_linux:   "d1c289ac2df1f7910ba4852070fb301e39be79e4d94d138c03a68ea2858ead76"
+    sha256 x86_64_linux:  "c190524e745dfa0070aabb3b59e6443d8494916265f67276a6ea9b4f9b195501"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -30,13 +30,26 @@ class Ggml < Formula
     depends_on "vulkan-loader"
   end
 
+  on_arm do
+    on_linux do
+      # Ubuntu 24.04 has GCC 14 libstdc++ so we can build with brew GCC 14 without impacting GLIBCXX.
+      # We don't use LLVM Clang as it defaults to linking to libomp rather than libgomp
+      depends_on "gcc@14" => :build if DevelopmentTools.gcc_version < 14
+    end
+
+    fails_with :gcc do
+      version "13"
+      cause "error: invalid feature modifier 'sme' in '-march=armv9.2-a+dotprod+i8mm+nosve+sme'"
+    end
+  end
+
   # These were previously provided by `llama.cpp`
   link_overwrite "include/ggml*", "include/gguf.h", "lib/cmake/ggml/", "lib/libggml*"
 
   # Lengthy test so not worth installing. Shorter examples/tests haven't been ported to new DL backend
   resource "test-backend-ops.cpp" do
-    url "https://ghfast.top/https://raw.githubusercontent.com/ggml-org/ggml/refs/tags/v0.13.1/tests/test-backend-ops.cpp"
-    sha256 "64f5adb2b78f9858482ba02ea390f4df61123feeb0550f6b1ae48a91923028df"
+    url "https://ghfast.top/https://raw.githubusercontent.com/ggml-org/ggml/refs/tags/v0.14.0/tests/test-backend-ops.cpp"
+    sha256 "cdf5ca89d548764b69547c8d1e95e58e70f9a936595e19d0a356a44ca4d3bb3e"
 
     livecheck do
       formula :parent
@@ -47,10 +60,9 @@ class Ggml < Formula
     # CPU detection is needed to build multiple backends, particularly on ARM (e.g. `-march=armv8.x-a+...`)
     ENV.runtime_cpu_detection
 
-    # TODO: Workaround for GCC 12 as armv9.2-a was added in GCC 13. Remove after Ubuntu 24.04 migration
-    if Hardware::CPU.arm? && ENV.compiler.to_s.start_with?("gcc") && DevelopmentTools.gcc_version(ENV.compiler) < 13
-      inreplace "src/ggml-cpu/CMakeLists.txt", "if (GGML_INTERNAL_SME)", "if (OFF)"
-    end
+    # Workaround as brew will prioritize unversioned GCC versions which increases GLIBCXX
+    # TODO: Remove once CI defaults to GCC 14+
+    ENV.method(:"gcc-14").call if OS.linux? && deps.map(&:name).any?("gcc@14")
 
     args = %W[
       -DBUILD_SHARED_LIBS=ON
@@ -65,15 +77,15 @@ class Ggml < Formula
       -DGGML_LTO=ON
       -DGGML_NATIVE=OFF
     ]
+    args << "-DGGML_CPU_ALL_VARIANTS=ON" if build.bottle?
 
     # Enabling OpenBLAS for BLAS support and Vulkan for GPU support on Linux
     args += %w[-DGGML_BLAS_VENDOR=OpenBLAS -DGGML_VULKAN=ON] if OS.linux?
 
-    # Not building Metal backend and CPU variants on Intel macOS
+    # Not building Metal backend and Sapphire Rapids on Intel macOS
     if OS.mac? && Hardware::CPU.intel?
       args += %w[-DGGML_METAL=OFF -DGGML_METAL_EMBED_LIBRARY=ON]
-    elsif build.bottle?
-      args << "-DGGML_CPU_ALL_VARIANTS=ON"
+      inreplace "src/CMakeLists.txt", /^(\s*)(ggml_add_cpu_backend_variant\(sapphirerapids)/, "\\1# \\2"
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -92,6 +104,8 @@ class Ggml < Formula
       add_executable(test test-backend-ops.cpp)
       target_link_libraries(test PRIVATE ggml::ggml)
     CMAKE
+
+    ENV.method(DevelopmentTools.default_compiler).call if OS.linux? && Hardware::CPU.arm?
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

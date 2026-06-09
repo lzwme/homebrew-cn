@@ -1,8 +1,8 @@
 class Homebank < Formula
   desc "Manage your personal accounts at home"
   homepage "https://www.gethomebank.org/en/index.php"
-  url "https://www.gethomebank.org/public/sources/homebank-5.10.0.tar.gz"
-  sha256 "783fd8bb2ebba09713e5d7c183d454f4a4393e828af5763f768b48afabc54386"
+  url "https://www.gethomebank.org/public/sources/homebank-5.10.1.tar.gz"
+  sha256 "67512d3188ea45f92a6f9326e829c142af5ad509306702f3b0457a1ab611d42a"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Homebank < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "aee02dc3fff432117ece240c1eaf45c01698a96cc7b56526b6c36370f6aed519"
-    sha256 arm64_sequoia: "a7de2cf81bb1f9ec967095a62de4f0156315670399bb5ea29dbabb9bbd93b99b"
-    sha256 arm64_sonoma:  "4bde5b38338f1e4b5ad88e6f19321c8f3bd45d34a19e4d90ea046e015da70ff3"
-    sha256 sonoma:        "fb96d22c3544f1468447fb8aa6bf32d4d1a05d188a5bc51261d6e59b358d4c7b"
-    sha256 arm64_linux:   "a1b95c04cd7c6d3f41eff4866919b92313f0b1b7874d528187e81b14c66fdaea"
-    sha256 x86_64_linux:  "4a1c4fe05561650143adf5bb451e1aa28e35e199f2519636d4ef42c12b36b1f8"
+    sha256 arm64_tahoe:   "6675d91078291a5d38e722fdcb85c7613538ff1d1ab010e0159b84ec5080da3d"
+    sha256 arm64_sequoia: "64419ff08f0dceb87bb27259e70191807bd5c4980f2dc5487864aa7b2de321b4"
+    sha256 arm64_sonoma:  "da8d22e8ea33a33ab20d7b938ea42d899b3e04a6d0211d93669e8e43dcf14334"
+    sha256 sonoma:        "1ec095eb3de4ae80fd706907311fd76af450cd337228a4a619eecfd6ffedb4bf"
+    sha256 arm64_linux:   "dd1316f6e064335d3c0cfad23d5a9627d29ad7b714e8435e08b8b9ca7e777af0"
+    sha256 x86_64_linux:  "411a0295c13caf4e07e16c4744b650b3d226c1359d613f84b9f4f3a2b1702f80"
   end
 
   depends_on "intltool" => :build
@@ -27,6 +27,7 @@ class Homebank < Formula
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "gdk-pixbuf"
+  depends_on "gettext"
   depends_on "glib"
   depends_on "gtk+3"
   depends_on "hicolor-icon-theme"
@@ -38,7 +39,6 @@ class Homebank < Formula
 
   on_macos do
     depends_on "at-spi2-core"
-    depends_on "gettext"
     depends_on "harfbuzz"
   end
 

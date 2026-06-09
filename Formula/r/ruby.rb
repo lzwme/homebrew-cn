@@ -38,8 +38,6 @@ class Ruby < Formula
     sha256 x86_64_linux:  "caccd8916a52e2ab4c4500ef72e502bac005a4fe091a206e858dd68c89ec757b"
   end
 
-  keg_only :provided_by_macos
-
   depends_on "autoconf" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build

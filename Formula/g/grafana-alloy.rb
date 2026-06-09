@@ -1,18 +1,18 @@
 class GrafanaAlloy < Formula
   desc "OpenTelemetry Collector distribution with programmable pipelines"
   homepage "https://grafana.com/oss/alloy-opentelemetry-collector/"
-  url "https://ghfast.top/https://github.com/grafana/alloy/archive/refs/tags/v1.16.2.tar.gz"
-  sha256 "ddda175415f6fae1d941ccd709ec6e41dcc3adf02e9e74a7923ad41fb8e72cf6"
+  url "https://ghfast.top/https://github.com/grafana/alloy/archive/refs/tags/v1.16.3.tar.gz"
+  sha256 "ed43108bca6cbae25c130e16a229f517b3c66e0f22d3ade39aaddaae2639f490"
   license "Apache-2.0"
   head "https://github.com/grafana/alloy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42966e8d056b6e518b7d0c65c48342d20937da680989337c1baa464ee91f1ba0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dce8fe1daabcf78ca2d3fa6be06c7e42f1a4cc6c9f620295a9cbedddb1a28508"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21bc8c52c36db57ffb1a1bca9e24be40f0454a422cf0c896ebd50cd830c13355"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e22065bcea365020a476694c7309a0f317241e95042e5738ab3c24485132459c"
-    sha256 cellar: :any,                 arm64_linux:   "6d1f9c25be0f7c7faf42f1f8bfe8b2f1490a7c85097a210db313a36ad360c7ce"
-    sha256 cellar: :any,                 x86_64_linux:  "3334201a905637e1356630c9aec6c30ddf968d65b04918d117cbf47188ceaeb6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f305c48a5e85ea5d82ced399e9623b59f10f480d661fe12bf0d372c680ae4acf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2a4c6bd0c1909c70306a1e8b334aa61d0306f17e8b45ccf77f834ae5c7fa9ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c87505c2020a13eae2b41f4df3ff51fa3b27641016a3f3aadfb21aae5c0ef5b7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d3cc7b7048cff44da7132c4304afcb4ec6fed23c9dfbb0efb58102e96cfaeefe"
+    sha256 cellar: :any,                 arm64_linux:   "ddc1177e8e8c500def093d56285963d5e3ae76ffd70c4559713797d4fe701e66"
+    sha256 cellar: :any,                 x86_64_linux:  "cefec32ea797426de8217a3bc3f83eabed8dc6f27d2409363e7eaf10497a485c"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class GithubMcpServer < Formula
   desc "GitHub Model Context Protocol server for AI tools"
   homepage "https://github.com/github/github-mcp-server"
-  url "https://ghfast.top/https://github.com/github/github-mcp-server/archive/refs/tags/v1.1.2.tar.gz"
-  sha256 "fbe867ad8608e2ef41064b8c9bf6f059a28b57f82cec815c3074def3a1dd3bd8"
+  url "https://ghfast.top/https://github.com/github/github-mcp-server/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "02b3865518fa189d066a14d81b891e939e93b60bb1723eeea728f4720d1a1e60"
   license "MIT"
   head "https://github.com/github/github-mcp-server.git", branch: "main"
 
@@ -12,12 +12,12 @@ class GithubMcpServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca7acfeab72628df93190ba6568c2274e0b367cecba8609086ca9ea43ff8d828"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca7acfeab72628df93190ba6568c2274e0b367cecba8609086ca9ea43ff8d828"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca7acfeab72628df93190ba6568c2274e0b367cecba8609086ca9ea43ff8d828"
-    sha256 cellar: :any_skip_relocation, sonoma:        "710c282933dff39bfd449abcb3e74fa8f0e528a75bdca18824b077502d5dbdae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6df3729fb7ff23c9cf89f0b33554f4b6960d358876831c01970e99399a5fece8"
-    sha256 cellar: :any,                 x86_64_linux:  "c10d834184307f6a36b9083a5358a278cd5ddb75f90253c9df69f23e281d19b5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d8d5537fad13de7d2843b0f7e6996f6e8631bef599e388b57f4c52b2659c1c7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d8d5537fad13de7d2843b0f7e6996f6e8631bef599e388b57f4c52b2659c1c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d8d5537fad13de7d2843b0f7e6996f6e8631bef599e388b57f4c52b2659c1c7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "39ea0c3cc4a6b94fbdfff2fe55dd0fc2af7467162ba504dd2f6a2c6120085202"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ceb4cf01551f0df16a8388775b588e9eaa8ffd74ef93aedcc1e5cde65a8a6ba"
+    sha256 cellar: :any,                 x86_64_linux:  "ebeeb28df59753131cf200eeb8cfb0c6702fd8dedc6c2298a78457027ca888c9"
   end
 
   depends_on "go" => :build

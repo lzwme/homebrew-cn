@@ -3,18 +3,18 @@ class Offlineimap < Formula
 
   desc "Synchronizes emails between two repositories"
   homepage "https://github.com/OfflineIMAP/offlineimap3"
-  url "https://ghfast.top/https://github.com/OfflineIMAP/offlineimap3/archive/refs/tags/v8.0.2.tar.gz"
-  sha256 "c299cbbab92d48215ea37ec06ec68699d17e59ab97a1b98e792f75e0a507b306"
+  url "https://ghfast.top/https://github.com/OfflineIMAP/offlineimap3/archive/refs/tags/v8.0.3.tar.gz"
+  sha256 "967a8ca24e5f665cd22941ba1173db10cbd908085ec22ab9b0e4a64c94007d85"
   license "GPL-2.0-or-later"
   head "https://github.com/OfflineIMAP/offlineimap3.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "47c364fb81fe40a2118707e9bf9b7761a05733a925167597e2696fd1b98a0f07"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47c364fb81fe40a2118707e9bf9b7761a05733a925167597e2696fd1b98a0f07"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "47c364fb81fe40a2118707e9bf9b7761a05733a925167597e2696fd1b98a0f07"
-    sha256 cellar: :any_skip_relocation, sonoma:        "01573f83d5463c999e6340dd61caaf870acb6f710aa164f32a718b92e101f89d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "01573f83d5463c999e6340dd61caaf870acb6f710aa164f32a718b92e101f89d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01573f83d5463c999e6340dd61caaf870acb6f710aa164f32a718b92e101f89d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4eccc0d43e8b36dcd8dec895503cd05df802d67d7d1231d56fa6bd46bc254b8a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4eccc0d43e8b36dcd8dec895503cd05df802d67d7d1231d56fa6bd46bc254b8a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4eccc0d43e8b36dcd8dec895503cd05df802d67d7d1231d56fa6bd46bc254b8a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c64a553101c61a8103658a1c6472d2201440441352d5221b46faf010f07543b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c64a553101c61a8103658a1c6472d2201440441352d5221b46faf010f07543b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c64a553101c61a8103658a1c6472d2201440441352d5221b46faf010f07543b1"
   end
 
   depends_on "certifi"

@@ -14,7 +14,6 @@ class Likec4 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cce7b74d3c8bff1837f3556c6af07ce49fed46a2fc2a5bd735738bc48df037f3"
   end
 
-  depends_on "pnpm" => :build
   depends_on "graphviz"
   depends_on "node"
 

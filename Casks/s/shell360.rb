@@ -1,9 +1,9 @@
 cask "shell360" do
   arch arm: "aarch64", intel: "x64"
 
-  version "0.1.20"
-  sha256 arm:   "8e55baf1aba5e1044be94c8894bad0a8cc141a1d8fd7f0f5e50a20d3595dbaa0",
-         intel: "d34311eb1ee75604c88ee517990f56b0a313f125e695443c511ed51782dba45a"
+  version "0.2.1"
+  sha256 arm:   "149dbb763a20c1f5a6e4831ee7180315f9d182c797f2221a0c4d03dacc42f640",
+         intel: "647d9f285e3cc0d68ce9e8eee4f2207c595b730c0c70c12a572fc53eb9443e87"
 
   url "https://ghfast.top/https://github.com/nashaofu/shell360/releases/download/v#{version}/Shell360_#{version}_#{arch}.dmg"
   name "Shell360"
@@ -14,6 +14,8 @@ cask "shell360" do
     url :url
     strategy :github_latest
   end
+
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   auto_updates true
   depends_on :macos

@@ -28,6 +28,9 @@ class GhcAT96 < Formula
 
   keg_only :versioned_formula
 
+  deprecate! date: "2026-06-08", because: :versioned_formula
+  disable! date: "2027-06-08", because: :versioned_formula
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "python@3.14" => :build

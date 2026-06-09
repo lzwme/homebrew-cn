@@ -46,13 +46,15 @@ class SblimSfcc < Formula
       # Work around "backend/cimxml/grammar.c:305:9: error: call to undeclared function 'guessType'"
       # Ref: https://sourceforge.net/p/sblim/bugs/2767/
       ENV.append_to_cflags "-Wno-implicit-function-declaration"
+
       # Work around "ld: unknown file type in '.../cimc/libcimcclient.Versions'"
-      ENV.append "LDFLAGS", "-Wl,-ld_classic"
+      # due to ELF symbol version files. Upstream is no longer actively maintained
+      inreplace "Makefile.in", /\\\n\s*@HOST_LDFLAGS@,\$\(srcdir\)\S+\.Versions\n/, "\n"
     end
 
     args = []
     # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     system "./configure", *args, *std_configure_args
     system "make", "install"

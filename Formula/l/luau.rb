@@ -1,8 +1,8 @@
 class Luau < Formula
   desc "Fast, safe, gradually typed embeddable scripting language derived from Lua"
   homepage "https://luau.org"
-  url "https://ghfast.top/https://github.com/luau-lang/luau/archive/refs/tags/0.723.tar.gz"
-  sha256 "74bf6b8842e00d236d390f9431205c73d0cf887c973f9d0656396bbf1eb987bd"
+  url "https://ghfast.top/https://github.com/luau-lang/luau/archive/refs/tags/0.724.tar.gz"
+  sha256 "4631f584b409a985b7daf52697dfdf26b2688bd7395afb09ef0f3937e7fb876d"
   license "MIT"
   version_scheme 1
   head "https://github.com/luau-lang/luau.git", branch: "master"
@@ -13,12 +13,12 @@ class Luau < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3143cc05c77e54570dc4be0823d0225a4dddea68a487af9119105e35e10c8473"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9c5807e53fa9912cee206119ed06d3df2b57354be9e9c5207712f8703dc44d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2dccdafc69360dbbcecd3e3d0de3f4f3a44dc46d897b7ef51c2204bd7d522fa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7821b62c1f9b7d2aacc8fb7f65a7a9b652ad6aaed6c4be12c0b9f6ca4f71a38c"
-    sha256 cellar: :any,                 arm64_linux:   "c5fe8cf839c3d4f028782957083026847335a3344419192d9c2b1d0bc88d17c3"
-    sha256 cellar: :any,                 x86_64_linux:  "0d13d29c16b8d1bb96f556709efecb33ece81bdfb47685b8b01571c8eaffb881"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "475faa1d3325d9899952768bd434aa9d10bfc98487be5228de53bc68e6dcda13"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2cad43101a5a1450496dea66f0c9c4205dc157144a7cb617f80758bc3df33cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8303bb9bc4877009f00e081b6860c0aecb54f1e817c2318a187476983440b908"
+    sha256 cellar: :any_skip_relocation, sonoma:        "85f9b2af44a453b94fedde2a8597de3ba52f8d0fb914321c44d293ff33f6694e"
+    sha256 cellar: :any,                 arm64_linux:   "0578b8ec38b7c77f1d41825ac458211a4096ea355c665a0eecdf5eb4278c165f"
+    sha256 cellar: :any,                 x86_64_linux:  "db88cbadf3884cb4d93fd3a45de034a0cf0fa292235046fa477b6106b42624b7"
   end
 
   depends_on "cmake" => :build

@@ -1,17 +1,17 @@
 class JoplinCli < Formula
   desc "Note taking and to-do application with synchronization capabilities"
   homepage "https://joplinapp.org/"
-  url "https://registry.npmjs.org/joplin/-/joplin-3.5.1.tgz"
-  sha256 "28182c1e0a2cf8ea05af62a3b7bf732a32d4872afb35346356bcd42bae25b3ab"
+  url "https://registry.npmjs.org/joplin/-/joplin-3.6.2.tgz"
+  sha256 "909656e86f66014c47520fa6453deeb13c9f724044a5c7311c83167305e951e5"
   license "MIT"
 
   bottle do
-    sha256                               arm64_tahoe:   "4c814f93dde7c7aec94b51f2747700986fb2792215c8ab6d7689f99456df414f"
-    sha256                               arm64_sequoia: "0972a4c594197e043f10ad8b603141523e1baac35fc75ba654a9f9a0d6137c51"
-    sha256                               arm64_sonoma:  "cd72755f17716d535812daf624f3fb650f459352568f39fb0a86ab92305548bf"
-    sha256                               sonoma:        "da78de3b3d94131a52bbba1379b2eeeb4cc25fed188afa97e78e105fab24b65d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a90ee5357fc60e44d44175c9b88a32ce05acd0e6e0afda3301d79a0049a23588"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7410c5b61863a8f7547ab4b979bdebcff44a658512bdb7681f1c70a8268b912e"
+    sha256               arm64_tahoe:   "2a3d3d848132f43555617067b2cb07a1e1a22d2559872e08f608ec25a34762d4"
+    sha256               arm64_sequoia: "8d326f547af34305e48ea35b81ff727d5cb47229c3aaa968541d07527aa2779c"
+    sha256               arm64_sonoma:  "9c92138d6768cac7b7c7f3e058cdceefae37222e87160ac9243a5ae5a879ccf9"
+    sha256               sonoma:        "e48a04ac906216d2b5993183b14213fd1287d5bd36e4421312a96aac122e6a30"
+    sha256 cellar: :any, arm64_linux:   "a7f8a626568e486d22123ef5dde63ea942171a024505fff54b22c6088e847df9"
+    sha256 cellar: :any, x86_64_linux:  "6b45e5a47646286de124317a1d0055836a7f97f25615cd4044261c3454658d6f"
   end
 
   depends_on "pkgconf" => :build
@@ -33,9 +33,10 @@ class JoplinCli < Formula
   end
 
   def install
+    inreplace "command-version.js", "require('../package.json')", "require('./package.json')"
     # Need node-addon-api v7+: https://github.com/lovell/sharp/issues/3920
     system "npm", "add", "node-addon-api@8.0.0"
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(ignore_scripts: false)
     bin.install_symlink libexec.glob("bin/*")
 
     node_notifier_vendor_dir = libexec/"lib/node_modules/joplin/node_modules/node-notifier/vendor"

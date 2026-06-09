@@ -36,6 +36,8 @@ class AdaUrl < Formula
     cause "Requires C++20"
   end
 
+  deny_network_access!
+
   def install
     # ld: unknown options: --gc-sections
     if OS.mac? && DevelopmentTools.clang_build_version <= 1500

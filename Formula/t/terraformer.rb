@@ -17,6 +17,10 @@ class Terraformer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdfe4cd7d86eb95d6c0a08849778d3c0813ccbf2ac6b7dc2face163688ad01e4"
   end
 
+  # https://github.com/GoogleCloudPlatform/terraformer/commit/1807affdde9e392b8b8749932d8cd1daa5e4986e
+  deprecate! date: "2026-06-08", because: :repo_archived
+  disable! date: "2027-06-08", because: :repo_archived
+
   depends_on "go" => :build
 
   def install

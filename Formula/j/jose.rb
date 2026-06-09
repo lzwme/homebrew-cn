@@ -1,18 +1,17 @@
 class Jose < Formula
   desc "C-language implementation of Javascript Object Signing and Encryption"
   homepage "https://github.com/latchset/jose"
-  url "https://ghfast.top/https://github.com/latchset/jose/releases/download/v14/jose-14.tar.xz"
-  sha256 "cee329ef9fce97c4c025604a8d237092f619aaa9f6d35fdf9d8c9052bc1ff95b"
+  url "https://ghfast.top/https://github.com/latchset/jose/releases/download/v15/jose-15.tar.xz"
+  sha256 "1d055c445392aa48d709ecd6e56220384ae2b480496e270818bddf1f219c8659"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1d1b44fa59d852fc5088c893377558254626666ed7d0a28b40aff059b7453359"
-    sha256 cellar: :any, arm64_sequoia: "c3766ad0a6e7d09b4ca772789051e0ed65b1d60136ccb21668df7fda68900928"
-    sha256 cellar: :any, arm64_sonoma:  "7533d3b756c99c3cc68847697bd3605114907ea901e3c169d7037ffaf2aea6d5"
-    sha256 cellar: :any, sonoma:        "4bfce15bb7ef905f0329b293ef0a774f47d9549842909b162b684a7ec4ee8f59"
-    sha256               arm64_linux:   "fb5ffc55b53631aeabc6510efcff62b5efa329d81e49f914e7a7c13a2ff48294"
-    sha256               x86_64_linux:  "82bb7d5297fdb066ffc49d5995ad133dee5943b7b80915651a95197d52de164a"
+    sha256 cellar: :any, arm64_tahoe:   "ebeacbca6fbc189e7b40371c0e6645a1a01403df4be6c4f12f073e79381332dd"
+    sha256 cellar: :any, arm64_sequoia: "0fccea7942cf37c3ada334a0edaaec4344182cba2cde93c741688d8d260e479f"
+    sha256 cellar: :any, arm64_sonoma:  "2f2a2ba153eaa7a4a0a27be387117bc111f385baf2618c9febcb775a7909fecf"
+    sha256 cellar: :any, sonoma:        "38f781c8547b8e2a03c958b9365ba886b697832036afa8aa921c0061dc94aa69"
+    sha256               arm64_linux:   "c58b5053903cf8aa825273689558d7d028be30cad22c18f7075ee554f0e07839"
+    sha256               x86_64_linux:  "bad3165cfa1980a89b0dcaa066bb8f68ef172462b337853665d70dbdba20d716"
   end
 
   depends_on "meson" => :build
@@ -23,13 +22,6 @@ class Jose < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # Apply upstream PR to fix build on macOS to use `-exported_symbol`
-  # PR ref: https://github.com/latchset/jose/pull/163
-  patch do
-    url "https://github.com/latchset/jose/commit/228d6782235238ed0d03eb2443caf530b377ffd5.patch?full_index=1"
-    sha256 "14e147b1541a915badefa46535999c17fe3f04d2ba4754775b928e4d5e97ce1a"
   end
 
   def install

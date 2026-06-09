@@ -67,6 +67,8 @@ class Go < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     libexec.install Dir["*"]
     (buildpath/"gobootstrap").install resource("gobootstrap")

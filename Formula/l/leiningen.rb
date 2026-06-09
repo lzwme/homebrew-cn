@@ -1,20 +1,20 @@
 class Leiningen < Formula
   desc "Build tool for Clojure"
   homepage "https://github.com/technomancy/leiningen"
-  url "https://ghfast.top/https://github.com/technomancy/leiningen/archive/refs/tags/2.12.0.tar.gz"
-  sha256 "a190d92325b552621b1709a42a2cb78c74ffd795269f48e7619031e1127ad542"
+  url "https://ghfast.top/https://github.com/technomancy/leiningen/archive/refs/tags/2.13.0.tar.gz"
+  sha256 "a71aaf44eaf7796198943bd6db7662c99664bb6441f8dc7216d4a87fa4ea4dad"
   license "EPL-1.0"
   head "https://github.com/technomancy/leiningen.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c5e5aa03c54b6c0060b283f46a1ac092f5fcaf771804e714c0126472f4024dd8"
+    sha256 cellar: :any_skip_relocation, all: "e6eb47ee48cf7217ee2b8b7d3a77359a0581d18cb0a6e27e46fb98e24bc14da5"
   end
 
   depends_on "openjdk"
 
   resource "jar" do
-    url "https://ghfast.top/https://github.com/technomancy/leiningen/releases/download/2.12.0/leiningen-2.12.0-standalone.jar"
-    sha256 "b721a573af631784f27ccb52e719e6d1287d9d3951ad56d316d38f7ecfa81aa2"
+    url "https://ghfast.top/https://github.com/technomancy/leiningen/releases/download/2.13.0/leiningen-2.13.0-standalone.jar"
+    sha256 "5f5231f06c3c7924e3241e3dfa52885577fb44ddf8a9ea373d2c5e2f27217565"
 
     livecheck do
       formula :parent

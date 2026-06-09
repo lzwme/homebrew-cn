@@ -1,10 +1,10 @@
 class Rsync < Formula
   desc "Utility that provides fast incremental file transfer"
   homepage "https://rsync.samba.org/"
-  url "https://rsync.samba.org/ftp/rsync/rsync-3.4.3.tar.gz"
-  mirror "https://mirrors.kernel.org/gentoo/distfiles/rsync-3.4.3.tar.gz"
-  mirror "https://www.mirrorservice.org/sites/rsync.samba.org/rsync-3.4.3.tar.gz"
-  sha256 "c72e63ca3021cbc80ba86ec30102773f4c5631fbc492b52e773b3958f82a53d3"
+  url "https://rsync.samba.org/ftp/rsync/rsync-3.4.4.tar.gz"
+  mirror "https://mirrors.kernel.org/gentoo/distfiles/rsync-3.4.4.tar.gz"
+  mirror "https://www.mirrorservice.org/sites/rsync.samba.org/rsync-3.4.4.tar.gz"
+  sha256 "bd88cf82fa653da32314fb229136407c5c90f80d1758d8f4b091767877d8fa96"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -13,12 +13,12 @@ class Rsync < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bb2711db3dec95d397ef2fb65be4a136e214081cef86c71467349cf98d2a1c1f"
-    sha256 cellar: :any,                 arm64_sequoia: "06cf0bdab94e743a9fd4c6cc3545effdd15a518d55c35230298d0d5c5ba308de"
-    sha256 cellar: :any,                 arm64_sonoma:  "4cc8ecff92564b6f1a1c7a0d7c1683d62764742697a7f39d63e833708844a561"
-    sha256 cellar: :any,                 sonoma:        "19354ee75efeaa1a508a308ad8f7112c533ddce972a607ce4f301adaf33e60ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "599739bb2c17e5c44bb6a9c8936daf10a2c1625132655c028c5a47f766c98e44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa7bbf0d8d541a86bc474ae9ecfebcd1a47900bfc00238e78f5210b60b15df38"
+    sha256 cellar: :any, arm64_tahoe:   "47a6219946891014eeaa93105f1c2716e1260f068f7d9b9dab43d47e13b04ad2"
+    sha256 cellar: :any, arm64_sequoia: "327275b831b2117cfbffa6d73a37daefe26f04e443489f2200b3996ebf680b29"
+    sha256 cellar: :any, arm64_sonoma:  "889ce36094a0ed9272c15adb1ae1a9149c608d7450b1bcb25d8e80579864fe80"
+    sha256 cellar: :any, sonoma:        "8334f68dbe60dc8bd73e54366164c01e89b32cf3a2c10648f1b328fd778e26f3"
+    sha256 cellar: :any, arm64_linux:   "62fd03ffedabb0d878d8324779a5d748a5cd8b4d6797cbca595889b05136ef18"
+    sha256 cellar: :any, x86_64_linux:  "b7fdfd50dd31bc48d1b590b5df638e66f26a2f850c4eabdb1c6be099df2d80b9"
   end
 
   depends_on "autoconf" => :build

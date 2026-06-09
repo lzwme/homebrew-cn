@@ -7,18 +7,19 @@ class Klee < Formula
   url "https://ghfast.top/https://github.com/klee/klee/archive/refs/tags/v3.2.tar.gz"
   sha256 "83d9b9ce0ba187e48c0e55623bf1a68b5eb61376da7ce82551c9d885715a21dd"
   license "NCSA"
-  revision 2
+  revision 3
   head "https://github.com/klee/klee.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "203c689927268d04179ff379f721d67f07ed0891740c6bb594b320537e0c87bc"
-    sha256 arm64_sequoia: "fce18a6e0a204338ffab96d595a1970732f87c36f6fe5399c438da9ddee9375e"
-    sha256 arm64_sonoma:  "aec64589dcd505701a20bec26fd753302044077cb312f605c149d7d92a94748a"
-    sha256 sonoma:        "f421ee878c444e10d0baef47e564b9a4bd57172f9fbc022743c2d5aa7c98729d"
-    sha256 x86_64_linux:  "13447a3a22f6de2d472b98c971b193ed8dd89396b370c8f5184c4e1dc96cd908"
+    sha256 arm64_tahoe:   "9f070c721c8e8c4e075259bf6384bda01bec9697843d3276f5c3bb516f13fb77"
+    sha256 arm64_sequoia: "b3781d0486741928c3c86ad082da7ac45c23b937672470686cba022375f9da0f"
+    sha256 arm64_sonoma:  "9a47aacbf1d5400f215e7789d7f271cbc8ddbd7ba63175cdfb4bf0c7765e9213"
+    sha256 sonoma:        "838b310fc517c17a9cce3801f4cec11d93eaad941db365641c9b460a50d1be0f"
+    sha256 x86_64_linux:  "a59fa6de22b279e1c4be53603e0c19cc3e84c857c8f519960a30f3f92bb623de"
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "cryptominisat"
   depends_on "gperftools"
@@ -107,7 +108,7 @@ class Klee < Formula
       -DKLEE_LIBCXXABI_SRC_DIR=#{libcxx_src_dir}/libcxxabi
       -DLLVM_CONFIG_BINARY=#{llvm.opt_bin}/llvm-config
       -DM32_SUPPORTED=OFF
-      -DENABLE_KLEE_ASSERTS=ON
+      -DENABLE_KLEE_ASSERTS=OFF
       -DENABLE_KLEE_LIBCXX=ON
       -DENABLE_SOLVER_STP=ON
       -DENABLE_TCMALLOC=ON
