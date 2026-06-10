@@ -273,6 +273,7 @@ Homebrew-homebrew-core/Formula/a/arxiv_latex_cleaner.rb, Homebrew/homebrew-core,
 Homebrew-homebrew-core/Formula/a/as-tree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asak.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/asccli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ascii.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ascii2binary.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asciidoc.rb, Homebrew/homebrew-core, 0
@@ -1799,6 +1800,7 @@ Homebrew-homebrew-core/Formula/e/e2b.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/e2fsprogs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/e2tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/earthly.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/e/eas-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/easeprobe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eask-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/easy-rsa.rb, Homebrew/homebrew-core, 1
@@ -3428,7 +3430,7 @@ Homebrew-homebrew-core/Formula/j/jruby.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/js-beautify.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jsawk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jsbeautifier.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/j/jscpd.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/j/jscpd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jsdoc3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jshon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jsign.rb, Homebrew/homebrew-core, 1
@@ -6982,6 +6984,7 @@ Homebrew-homebrew-core/Formula/s/specify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spectra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spectral-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/speech-tools.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/speech.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/speedbump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/speedread.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/speedtest-cli.rb, Homebrew/homebrew-core, 1
@@ -8107,6 +8110,7 @@ Homebrew-homebrew-core/Formula/w/wush.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wv2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wwwoffle.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/wx-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wxlua.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wxmaxima.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wxpython.rb, Homebrew/homebrew-core, 0

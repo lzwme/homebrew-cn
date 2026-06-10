@@ -1,18 +1,18 @@
 class Restic < Formula
   desc "Fast, efficient and secure backup program"
   homepage "https://restic.net/"
-  url "https://ghfast.top/https://github.com/restic/restic/archive/refs/tags/v0.18.1.tar.gz"
-  sha256 "4b8e2b6cb20e9707e14b9b9d92ddb6f2e913523754e1f123e2e6f3321e67f7ca"
+  url "https://ghfast.top/https://github.com/restic/restic/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "800779b6c4c2396971c0567b09ccdd435e03155e1a0ec94e8bbf3d98641a8bc2"
   license "BSD-2-Clause"
   head "https://github.com/restic/restic.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6fd5d1ca0cacb7629f7bc480c81dfa36c551bb610e5559e9a86a0712b4bc2a9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6fd5d1ca0cacb7629f7bc480c81dfa36c551bb610e5559e9a86a0712b4bc2a9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6fd5d1ca0cacb7629f7bc480c81dfa36c551bb610e5559e9a86a0712b4bc2a9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7d6d0d3486f2a8c77bef02e15e860c3ee9ecb2a78c217dffda26c125d4f0b3ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf1e673d725c5d20dd4829062da1a18710f0ce9780eb8a0f41613d913bd0397e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f787724e226c9f3ee6a6e1a94feb01262102ce1053d1a09ed18f5f8d835a6f96"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b69c21f735a13de6c74d6a097199fc6e98fd794c48e287a035dbff434bfcae41"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b69c21f735a13de6c74d6a097199fc6e98fd794c48e287a035dbff434bfcae41"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b69c21f735a13de6c74d6a097199fc6e98fd794c48e287a035dbff434bfcae41"
+    sha256 cellar: :any_skip_relocation, sonoma:        "88bd2806d4f39f51283c47acc731fdb4f40be48fecc8dc21b4052fec4adfeb06"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dcbdd753bbc27c3f5a799759e604f4ba766b2d0f9e955f96b240be0c18e4d61b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67694c26cba2e014f9cba9fa7e00ae8b8d43610ab7a9fea58cae3a3c57919928"
   end
 
   depends_on "go" => :build

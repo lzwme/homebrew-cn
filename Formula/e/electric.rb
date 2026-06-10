@@ -1,8 +1,8 @@
 class Electric < Formula
   desc "Real-time sync for Postgres"
   homepage "https://electric-sql.com"
-  url "https://ghfast.top/https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.6.9.tar.gz"
-  sha256 "9432e5a0686b5fb3a90dce08e20e48c556e2e1e283903971015680b4265d9cc8"
+  url "https://ghfast.top/https://github.com/electric-sql/electric/archive/refs/tags/@core/sync-service@1.6.10.tar.gz"
+  sha256 "550f26a6543310e27678e96eaa7eb0f78ad8050a767edde894c2a830c2acfc3c"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Electric < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2ca7a458be1fc09a232b6afe5185295620cb0f2ef8881d114aa619f41f026ab0"
-    sha256 cellar: :any,                 arm64_sequoia: "342ac751c0da46be5baf1308cda357f3be6d454ffe5ba966bb873ed437bd1bde"
-    sha256 cellar: :any,                 arm64_sonoma:  "741b6285fe55bdff741378efb14407083cc41290e593fda8064710a9e1b0bde4"
-    sha256 cellar: :any,                 sonoma:        "1cb13e7bf205ff2e45f2578ec7340aa516184184154d09a85a78d40dfd1ac310"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "07ee7fab7be4ecf0f3bb1fd3e3a9e8dbfcef7e1f17da4643a1242fa2218698b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f6cf1431a69731d45277c65cdefcf4ee6ea98f571093e5525b6db550ea604d8"
+    sha256 cellar: :any, arm64_tahoe:   "8ded64ee4e03ba7f80ac9fccf939fe7fc8cdbf09df7639a57097e9dd076bed76"
+    sha256 cellar: :any, arm64_sequoia: "5c83ff63bb0921ebe4c9489ce7c11c4d1e4e04ffd5f49d32c6406d5323383f10"
+    sha256 cellar: :any, arm64_sonoma:  "63eb3b96d0007afdb93ff237d86e49cdd916d90ffdb5289a68684658cc7514c5"
+    sha256 cellar: :any, sonoma:        "07184072d1beb1dda7e1dce336b720783bb89c8925de87c398bd5dcc782ce1c4"
+    sha256 cellar: :any, arm64_linux:   "24f1223261d5ac22bf8696897b415d63289ee8e58c5e2d1a8f39c4344573f1d0"
+    sha256 cellar: :any, x86_64_linux:  "11253c5cc2f09282cd19f7facb429df2d0a9edacdb2c9d0e3b38613d03b44322"
   end
 
   depends_on "elixir" => :build

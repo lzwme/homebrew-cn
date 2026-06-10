@@ -1,19 +1,18 @@
 class UutilsFindutils < Formula
   desc "Cross-platform Rust rewrite of the GNU findutils"
   homepage "https://uutils.github.io/findutils/"
-  url "https://ghfast.top/https://github.com/uutils/findutils/archive/refs/tags/0.8.0.tar.gz"
-  sha256 "932f153d256f7a4cf40255a948689bf59a10f14c8804151817ab50fa1b46429a"
+  url "https://ghfast.top/https://github.com/uutils/findutils/archive/refs/tags/0.9.0.tar.gz"
+  sha256 "8b3eb813cac9fe519b77ee36705fdcd46b188d8807e98c0bb7126fabd8f64dda"
   license "MIT"
   head "https://github.com/uutils/findutils.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "6eb3e88da89772a813c0147b7c3a0f62832b7661ff428c6c2fdbf52a03d63593"
-    sha256 cellar: :any,                 arm64_sequoia: "0a7c3c5b37302609771a28be11cc84443a759ecd8825c3ee1532f578d3428ba6"
-    sha256 cellar: :any,                 arm64_sonoma:  "1e2926212ba80f571e8a9c9a4e240e2418c828d28a4c73afd11263771c78f522"
-    sha256 cellar: :any,                 sonoma:        "4504ecdf9e500e9bc9c56ebacd087bd056fab8d0e039e7cdc6021e9d3ac82afb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a3d9faebb6fa34813ab9f17a87f2a10e68a5f08267791487d70e1a09376da5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2edddc168292e0f75bde8380d1e6ff5f11c053f9aeb9d25752ce327410083bd2"
+    sha256 cellar: :any, arm64_tahoe:   "2177bb345ea17795a16743aa6e4687cd236647b7e6cc8bd6d2286a95091e1e47"
+    sha256 cellar: :any, arm64_sequoia: "c63585b24856bd7f886b76161c16e9f61ad0f62100e965dad1d71f5ad19e533b"
+    sha256 cellar: :any, arm64_sonoma:  "4626039dd6d347327b2d68d0313f3368eee9387c507a812ec99d1bd231644527"
+    sha256 cellar: :any, sonoma:        "00df1b94bad75914d80c82460a9d473528b2e4636eb09d141d707fae02f64cc9"
+    sha256 cellar: :any, arm64_linux:   "eefabd0078e2de5db7053401427a5d55622c7a058e89e8385bc8489388075fc5"
+    sha256 cellar: :any, x86_64_linux:  "eb41cfe4b034b32e52ef0e4fc214140c4c8fb9b3d5ed3a1027a943cf993dd00c"
   end
 
   depends_on "pkgconf" => :build
@@ -69,10 +68,7 @@ class UutilsFindutils < Formula
     assert_match "HOMEBREW", shell_output("#{opt_libexec}/uubin/find .")
 
     expected_linkage = {
-      libexec/"uubin/find"  => [
-        Formula["oniguruma"].opt_lib/shared_library("libonig"),
-      ],
-      libexec/"uubin/xargs" => [
+      libexec/"uubin/find" => [
         Formula["oniguruma"].opt_lib/shared_library("libonig"),
       ],
     }

@@ -1,6 +1,6 @@
 class Mbedtls < Formula
   desc "Cryptographic & SSL/TLS library"
-  homepage "https://tls.mbed.org/"
+  homepage "https://www.trustedfirmware.org/projects/mbed-tls/"
   url "https://ghfast.top/https://github.com/Mbed-TLS/mbedtls/releases/download/mbedtls-4.1.0/mbedtls-4.1.0.tar.bz2"
   sha256 "377a09cf8eb81b5fb2707045e5522d5489d3309fed5006c9874e60558fc81d10"
   license "Apache-2.0"

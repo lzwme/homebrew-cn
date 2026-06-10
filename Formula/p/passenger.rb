@@ -1,18 +1,18 @@
 class Passenger < Formula
   desc "Server for Ruby, Python, and Node.js apps via Apache/NGINX"
   homepage "https://www.phusionpassenger.com/"
-  url "https://ghfast.top/https://github.com/phusion/passenger/releases/download/release-6.1.4/passenger-6.1.4.tar.gz"
-  sha256 "e5023c12734895cfb7bd56ed3f5385de97c42176c53c12caa295e3c3d6fa9e23"
+  url "https://ghfast.top/https://github.com/phusion/passenger/releases/download/release-6.1.5/passenger-6.1.5.tar.gz"
+  sha256 "f5e7ba5f811dcc7dcf9d06c29a580db6f991f51275debf233b6302d283d28cab"
   license "MIT"
   head "https://github.com/phusion/passenger.git", branch: "stable-6.1"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "498b2f4c8aefe4bff18ddb5ae1f1436696db02ace75a450fe62de2682afc7a2e"
-    sha256 cellar: :any, arm64_sequoia: "7adae8e3a8789d6c9b1d87ff006e6ff48f93c3b7cba6ddfad5cbdfd17a4b5424"
-    sha256 cellar: :any, arm64_sonoma:  "e2593d8ba73aabe17cc2acfbf2cc422ebf87b25d116ca2d56eef415a4b59ab3d"
-    sha256 cellar: :any, sonoma:        "87cf6703efc56ffb0f62db27051c4fa97a77c128ae38a0dfa6181c684d421c3a"
-    sha256 cellar: :any, arm64_linux:   "a88beb118d207318a969b799195c8f164efce1e923016b2f115888fed5caab6a"
-    sha256 cellar: :any, x86_64_linux:  "8915e121355ce850fb41b940d3f9655074bcfa47a5e492f26afe11bca6da31eb"
+    sha256 cellar: :any, arm64_tahoe:   "0269d4e5bef6ad57fee5c81197d9fdefe9c34c46437e7ce7a0a71631c56cfe01"
+    sha256 cellar: :any, arm64_sequoia: "ee4ba260efe55379c3790a39701285da87492e26720af579e32edb72d07be713"
+    sha256 cellar: :any, arm64_sonoma:  "cd763d54a0c20b987875bc37fb978e2ee3748dad83ee872d9eabaf493accaf19"
+    sha256 cellar: :any, sonoma:        "0bce75a46a1cb87f88d0bac7b2a8831ef741567a7d8de0e8f0f79b987462c2b4"
+    sha256 cellar: :any, arm64_linux:   "6841cf14d7732e7fbca32841329af297e370473367ae713242e7d0a4c247fba4"
+    sha256 cellar: :any, x86_64_linux:  "b3415dba568781ba6622f99fc640fe7584a588ba64439e720c0ace2a891dc904"
   end
 
   depends_on "httpd" => :build # to build the apache2 module

@@ -3,18 +3,18 @@ class MistralVibe < Formula
 
   desc "Minimal CLI coding agent"
   homepage "https://github.com/mistralai/mistral-vibe"
-  url "https://files.pythonhosted.org/packages/c1/e8/761d9f07e80cd1d7167b16ce09cf17c2cac709ae6f5df15cc7d9374e5bb2/mistral_vibe-2.14.0.tar.gz"
-  sha256 "cb87996ad256a203b8194bc1d9833df9bad890e76176c937a674447845dbc7a4"
+  url "https://files.pythonhosted.org/packages/20/6a/6f1f69a0e97604b3f948afde3ea4a40775cd63307d97e61010928b5289e3/mistral_vibe-2.14.1.tar.gz"
+  sha256 "62d707b4e15204cb9cfdd51052034cb357d17167510c587934a7167cb00375ba"
   license "Apache-2.0"
   head "https://github.com/mistralai/mistral-vibe.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d24838cbd1e5c16b8e51010caaafa9ec3a320cb3ff9291f86676c5ba901ca810"
-    sha256 cellar: :any, arm64_sequoia: "9771727502e714a6d384f89cb4965a651754dd5394e2dd79dc511a5c3f799623"
-    sha256 cellar: :any, arm64_sonoma:  "d36682cd65c5e2e42f7a3bc53a413cc005239d74d4cbaed8f5bade78dc3ecc39"
-    sha256 cellar: :any, sonoma:        "4408778565d942ff2104dbdeb513179ae0ed0114424e851e91916663f62ccfb8"
-    sha256 cellar: :any, arm64_linux:   "7b7b6608f6a55e8ef5111823dd68c3e962abbf67dc38db9230e2a1331f270ce0"
-    sha256 cellar: :any, x86_64_linux:  "4e30fbefbd0106e5abcd3c1137bdd47468a6cf3243850571e24bba335d058abc"
+    sha256 cellar: :any, arm64_tahoe:   "2feb1c55d13133c28bb7708ee02ae19f31b9c96be7866a98cf12125f95761518"
+    sha256 cellar: :any, arm64_sequoia: "26f455a31f08668d5e5df22c46dad854d91729440c80be338e843726532a39ea"
+    sha256 cellar: :any, arm64_sonoma:  "d2d8e5045dfe93aa0171f7bf8d9230a2c208d548401bb7c805ed6c69259714a9"
+    sha256 cellar: :any, sonoma:        "dc6c91ca75e2d48146bff42c79d30aa1e426a2e5188d70a76e6f2af530ac692b"
+    sha256 cellar: :any, arm64_linux:   "b46516f9e54aeccb5e78b0d9df9a9eaa43fef9b94c69380136d9d9b0b29ca4ec"
+    sha256 cellar: :any, x86_64_linux:  "d1fbb56c2bc55a920dc43f305b95365823a5eb4ae60c5db8a0bd65e705bebbc9"
   end
 
   depends_on "rust" => :build

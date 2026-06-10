@@ -62,7 +62,7 @@ class PerlDbdMysql < Formula
       # Work around macOS DBI generating broken Makefile
       inreplace "Makefile" do |s|
         old_dbi_instarch_dir = s.get_make_var("DBI_INSTARCH_DIR")
-        new_dbi_instarch_dir = "#{MacOS.sdk_path_if_needed}#{old_dbi_instarch_dir}"
+        new_dbi_instarch_dir = "#{MacOS.sdk_path}#{old_dbi_instarch_dir}"
         s.change_make_var! "DBI_INSTARCH_DIR", new_dbi_instarch_dir
         s.gsub! " #{old_dbi_instarch_dir}/Driver_xst.h", " #{new_dbi_instarch_dir}/Driver_xst.h"
       end

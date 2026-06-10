@@ -6,15 +6,15 @@ class Airshare < Formula
   url "https://files.pythonhosted.org/packages/cb/a2/d59c18cd6a143bf860c29acb70552b7351fd7e0f56213be86b624601106b/Airshare-0.1.6.tar.gz"
   sha256 "138976933bcf2c0bc99f18901242544919e9fafe43735b4f83b19d4ae5964be7"
   license "MIT"
-  revision 23
+  revision 24
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a3c1ab5b6abb609964f1a81657ed542b1cbbfd2962fb338a46bf74ae30568280"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3cd34f5dd7b16134614ac0d5a99073d4b4f91d0eaf37fbb28f290da337df047d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "820ead23359bd40318bde8da6a0fa0918e32528eae9ff0e74251ba75d1b931e3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0409be5cfb55a08349b4c1d2554b412ae9a13989054e37da8b3a350b0446bd8a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b15217d34d5bf5e42c2060afbac3da17a7aff817b58f8d7d005f21c609fd24eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdce941ced3f3b684ded8076edc152ce6826182fc01f13c898d8067a3c0eebf8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cfd05970249774ee4c51cb1a89194ce85cafdeaaf705dc1a6419bdc55e2cfe97"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7caaf1a5a20501643a444462d6e038e6463d06a8745149ebf8fdbefb31c87e17"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c2f305165587ea2dd2bd4d1e27b66bff5a9c67697603e04941229096a595533"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7d62c8b8792d4bb3d418a965b147549331aeed3db75cd73d886c6fbfd74534c7"
+    sha256 cellar: :any,                 arm64_linux:   "fcb3686f67c89b742f17aa261f72560e8ddeef933204f5671256359d2cd4eb6e"
+    sha256 cellar: :any,                 x86_64_linux:  "fe3f758d85783410ff2e7dcac3d2cd2394ba8c17770ac4403b7a26ddd3bcbc6d"
   end
 
   depends_on "certifi" => :no_linkage
@@ -28,8 +28,8 @@ class Airshare < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
-    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
+    url "https://files.pythonhosted.org/packages/82/78/8ea7308cac6934de8c74a14f3d5f65d1c89287426688be79538d0e5c013d/aiohttp-3.14.1.tar.gz"
+    sha256 "307f2cff90a764d329e77040603fa032db89c5c24fdad50c4c15334cba744035"
   end
 
   resource "aiosignal" do
@@ -73,8 +73,8 @@ class Airshare < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
-    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "ifaddr" do
@@ -113,8 +113,8 @@ class Airshare < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/09/a9/6ba95a270c6f1fbcd8dac228323f2777d886cb206987444e4bce66338dd4/tqdm-4.67.3.tar.gz"
-    sha256 "7d825f03f89244ef73f1d4ce193cb1774a8179fd96f31d7e1dcde62092b960bb"
+    url "https://files.pythonhosted.org/packages/06/b3/36c8ecf72e8925200671613332db156d84b99b3aee742a41c1938ebb0808/tqdm-4.68.1.tar.gz"
+    sha256 "fc163d96b287bd031e1aa24421ce4411b25559bd0a1be4fe649bdaa4d2c02bf5"
   end
 
   resource "urllib3" do

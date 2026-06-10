@@ -6,7 +6,7 @@ class KnotResolver < Formula
   url "https://secure.nic.cz/files/knot-resolver/knot-resolver-6.3.0.tar.xz"
   sha256 "b87306197f7436b49079c633364bc5df71a393236fb25e9fce7d04480bc7518e"
   license all_of: ["CC0-1.0", "GPL-3.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 1
+  revision 2
   head "https://gitlab.labs.nic.cz/knot/knot-resolver.git", branch: "master"
 
   livecheck do
@@ -15,13 +15,12 @@ class KnotResolver < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "ecbd87f8840958061630b56ce481b318022c04e7a61f81451f3fe80552f62899"
-    sha256 arm64_sequoia: "696f38480bfdb8a482d5b05965605c6af936de1ecb55e09b67936266b1239355"
-    sha256 arm64_sonoma:  "bdca7ed87aaa019b8e1ed4e92ffc1ecc9ad266cef4ab7f427340b4e4960d7974"
-    sha256 sonoma:        "df958d459b9d6d8db7e4fcaf9caaa28fbf0a26d635ecf60b7df22c98aaad939c"
-    sha256 arm64_linux:   "b67753fa578eb8df6e3de122fee0cb9f22344894d0fbe6318e0f8e8f037a9004"
-    sha256 x86_64_linux:  "f29ce6b70f76eca587ce8a717dc1f4f981b2bd05985259ba963970263d3db627"
+    sha256 arm64_tahoe:   "e76db9d2e76457db0234fc434c237a4ba71c80c2455d313183ffd3ef4e072039"
+    sha256 arm64_sequoia: "8c091b80b5605ead6242f5c0aa2db46333cede0c0c4c9d00395b7a0109132f27"
+    sha256 arm64_sonoma:  "b9ae6aad7cb382004fd6d8aa6c2825b774278fa2b2e1c59248ff637085d4a601"
+    sha256 sonoma:        "6cc00e5e46826e4a0feb830d5b3cfe5f89adfd13560b5e1472793c1a4b8815b4"
+    sha256 arm64_linux:   "c840857d90292b6a6a705bee296888b30610698f589b117463898ef7ec211753"
+    sha256 x86_64_linux:  "e12b8cdb8057e63be9374eced0d607c08093ceed4f684e6808cee25d7724e8d3"
   end
 
   depends_on "meson" => :build
@@ -50,13 +49,13 @@ class KnotResolver < Formula
                 extra_packages: %w[aiohttp jinja2 prometheus-client pyyaml supervisor typing-extensions watchdog]
 
   resource "aiohappyeyeballs" do
-    url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"
-    sha256 "c3f9d0113123803ccadfdf3f0faa505bc78e6a72d1cc4806cbd719826e943558"
+    url "https://files.pythonhosted.org/packages/33/c6/61a2d7b7572279226bb2e7f61d7a19ca7c90da0329c93fa0d560cbf288d8/aiohappyeyeballs-2.6.2.tar.gz"
+    sha256 "e202810ee718bd01fc6ef49e8ea53d023d5cb6b581076d7925aa499fa55dbe64"
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
-    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
+    url "https://files.pythonhosted.org/packages/82/78/8ea7308cac6934de8c74a14f3d5f65d1c89287426688be79538d0e5c013d/aiohttp-3.14.1.tar.gz"
+    sha256 "307f2cff90a764d329e77040603fa032db89c5c24fdad50c4c15334cba744035"
   end
 
   resource "aiosignal" do
@@ -75,8 +74,8 @@ class KnotResolver < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "jinja2" do

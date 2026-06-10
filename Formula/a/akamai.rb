@@ -1,18 +1,18 @@
 class Akamai < Formula
   desc "CLI toolkit for working with Akamai's APIs"
   homepage "https://github.com/akamai/cli"
-  url "https://ghfast.top/https://github.com/akamai/cli/archive/refs/tags/v2.0.3.tar.gz"
-  sha256 "75859266f9a4f0967bd06f86a6b8d83629fbe549e437a259dfc61c5ad13c7ca6"
+  url "https://ghfast.top/https://github.com/akamai/cli/archive/refs/tags/v2.0.4.tar.gz"
+  sha256 "5f0d5217e3434fc57bfc821519379a1705ed749ae754853ea1d40ff65e21eb69"
   license "Apache-2.0"
   head "https://github.com/akamai/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fb554e08aa91f7aaec34966c012e58c9a16efe682e51f9259b6665fcfc190b98"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb554e08aa91f7aaec34966c012e58c9a16efe682e51f9259b6665fcfc190b98"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb554e08aa91f7aaec34966c012e58c9a16efe682e51f9259b6665fcfc190b98"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e065c36ef1531fd4b8e4ec09796bb3df95df2e3224999d0509f447a1c38a42ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3369b35aa27f90554855999fcf74a54f33004bfdf148983396c912624081cce7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bc4621795165f0218f2381b9df0059f168c94fced7327396e4ae73102b70a2d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dedaaaa6a7fcfc8572806b0d144c2247d6c0183e5c61e4a2eafd0a226b1cd6fd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dedaaaa6a7fcfc8572806b0d144c2247d6c0183e5c61e4a2eafd0a226b1cd6fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dedaaaa6a7fcfc8572806b0d144c2247d6c0183e5c61e4a2eafd0a226b1cd6fd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d7dadc36ca24042ac563d79c38702241441c3e612068fb4d5dc0cc8cd560c4d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "80d9bbb4b17ea216ee17f55fb8a1ee62bc5da795a6ff31d06e79d5c42026db70"
+    sha256 cellar: :any,                 x86_64_linux:  "f31fa9703eff54b8664821e7c16644d405cd9976635abe2e273dae0b46256a64"
   end
 
   depends_on "go" => [:build, :test]

@@ -1,8 +1,8 @@
 class Infracost < Formula
   desc "Cost estimates for Terraform, Terragrunt, and CloudFormation"
   homepage "https://www.infracost.io/docs/"
-  url "https://ghfast.top/https://github.com/infracost/cli/archive/refs/tags/v2.2.7.tar.gz"
-  sha256 "db61a4d3aca3df9953b17fcb38ceefd78921ae5ff83bf1e766c987bb97e5946f"
+  url "https://ghfast.top/https://github.com/infracost/cli/archive/refs/tags/v2.2.9.tar.gz"
+  sha256 "04dbb314b7f4a06ab428a868b3cc1189e0381dfb17c55caf483c4e747bbe451e"
   license "Apache-2.0"
   head "https://github.com/infracost/cli.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Infracost < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4dd1043b189baf226ba3fc05a12cf176c51e883d3ad4e6c29ee36729ea39fdf4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4dd1043b189baf226ba3fc05a12cf176c51e883d3ad4e6c29ee36729ea39fdf4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4dd1043b189baf226ba3fc05a12cf176c51e883d3ad4e6c29ee36729ea39fdf4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d1c7ad62a1216d46aa0ed0fc1e1e3fc733dd31dd5f1e3222643d7a962986806f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "31f11ba48140b9867d7dff2d5d5cf3788aefadc9903a9fe402bcf74abf57a9ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce3b4b9e24085860bdcf894217cd4df45ef0d8e1d8acb9d693bc76cdd02c329c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6497c099c175489883f544aa0a2490ceb1bc12da9700cc2631682ee6f4ca9f1a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6497c099c175489883f544aa0a2490ceb1bc12da9700cc2631682ee6f4ca9f1a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6497c099c175489883f544aa0a2490ceb1bc12da9700cc2631682ee6f4ca9f1a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "73e2450ca67fe104b72580e83957245c3009c72e58ab6acabbaf922eb3442579"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4556a4573b3d6b681bdb72f06e1193c09829fb49c31d7cf6393f865d6c85dcf2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52f8d3e01148d7000080fa06c1bb810d76305b8c237157aebf3a2474dbae4bd9"
   end
 
   depends_on "go" => :build

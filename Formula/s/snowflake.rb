@@ -1,18 +1,18 @@
 class Snowflake < Formula
   desc "Pluggable Transport using WebRTC, inspired by Flashproxy"
   homepage "https://www.torproject.org"
-  url "https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/archive/v2.13.1/snowflake-v2.13.1.tar.gz"
-  sha256 "3102c0782422205f6cea7609ab67cb5fd080e048880712ebe0c85540138cc09f"
+  url "https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/archive/v2.14.0/snowflake-v2.14.0.tar.gz"
+  sha256 "abdf625e24160ca748650da151ca76d6e7dbc2cca23772a3ae3b3104b255d5fa"
   license "BSD-3-Clause"
   head "https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e9d502d18291cff25a1d6fb8873cae776a88b31d2d70024be8071fdb7df145c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea6144e621813d0e449e08c206e20f378b751cabb4f3c9cc6bd45e00cc59aaf9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f62bf084a5afac0481c4699638d1fc1eb00bc7af281f8b1a65b90cf010890a1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a5a697d1e4ab2dcd05a9915b9f0f0c6fe9c571f322e8a3e89854abdbf98972c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e30f2bbe0e0ac44b57769a4445b780cc636fd93618065860efdd954311a64afa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cd412a0d820bcc5fb1d9448bb742275c06cce9ef54a9fb3359202cf41928450"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d2da64638489acce54a138cb888858dc105d12cc7517d14e737f30968a6de25"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98388e4e430dc6e6197bc792351f438b958fbac411547cc241335969f6597300"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abbeed4d821f43ef5bf3fb97e1ed142a2da57a3ffb2cfcfceacfbfe4882235d6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4fcfa622c9ce540364bf4bf284660e3fd814209eb0065fe769fb220fa5add9d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1fc40ecdf8353073ff6efe48ea944bd843fdcb7da1b2ed465a75d42d4589c2b1"
+    sha256 cellar: :any,                 x86_64_linux:  "6ba8f19660fc8bdea9642fbee6c57e247c5fad3dac10ac7f1b1476d0ff5d0d18"
   end
 
   depends_on "go" => :build

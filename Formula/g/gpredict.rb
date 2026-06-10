@@ -35,7 +35,6 @@ class Gpredict < Formula
   depends_on "cairo"
   depends_on "gdk-pixbuf"
   depends_on "glib"
-  depends_on "goocanvas"
   depends_on "gtk+3"
   depends_on "hamlib"
   depends_on "pango"

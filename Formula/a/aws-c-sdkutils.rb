@@ -1,20 +1,18 @@
 class AwsCSdkutils < Formula
   desc "C99 library implementing AWS SDK specific utilities"
   homepage "https://github.com/awslabs/aws-c-sdkutils"
-  url "https://ghfast.top/https://github.com/awslabs/aws-c-sdkutils/archive/refs/tags/v0.2.4.tar.gz"
-  sha256 "493cbed4fa57e0d4622fcff044e11305eb4fc12445f32c8861025597939175fc"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-sdkutils/archive/refs/tags/v0.2.5.tar.gz"
+  sha256 "13a03ea87aa67c7db414bf245fbcc623555c783a34d8ba1d7d701fd42717c366"
   license "Apache-2.0"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d0f34c54b3e8be0bbff43be46378156e8b5177f90091499dbd51c27969e1de2a"
-    sha256 cellar: :any,                 arm64_sequoia: "507738d55485b9455c59f6bff4a7280445483dce69963ac052190135bc53bccf"
-    sha256 cellar: :any,                 arm64_sonoma:  "a5583794b7a383d70c8a3814609660b0a886482b10e520c7bbfa403b4d7a6c98"
-    sha256 cellar: :any,                 arm64_ventura: "24a84103b826055429f427388ab4c3591724cc5acc68ff9fb1118f9ee81935ce"
-    sha256 cellar: :any,                 sonoma:        "6159606530f7ed2acd4b495413389c2efc43cc65a7cbb7b86dfcecfd5cf677cb"
-    sha256 cellar: :any,                 ventura:       "15f6671877aa6cb73bcfc14c91b040265c5e57cbc29b523cfec3457bc9e5aeaa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "50513535d8578d5536701e223d3b31f0ded0977a1d1350ce96b70913f556515f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "775f9fce83bb072b3a9d381a496bded25d40fba78a1d6a609888e58e573d3fbe"
+    sha256 cellar: :any, arm64_tahoe:   "c72db8f20cfb94e0d771c20c916362d4597693e1c5e97a5482fd190470c6e88d"
+    sha256 cellar: :any, arm64_sequoia: "6c4e4fbceeefeb1a55a9ccb9e5bad341ca5f661a65c1ebe8709c68193cf853e6"
+    sha256 cellar: :any, arm64_sonoma:  "720f35bcb3c50215a3eb99194f91b7e645e77d23939f569924751d6b66022501"
+    sha256 cellar: :any, sonoma:        "9debf7f306ba663508e030e8e75aee0d81b8cbeae24c0133bb762d00fa9f2272"
+    sha256 cellar: :any, arm64_linux:   "c3e52291f52b019bcd8a9f8081110501b76128203a54e1bb2f546deb9013f0be"
+    sha256 cellar: :any, x86_64_linux:  "446a2499a0723015330032c5766f6a0069c823db4426dc05dcf178e2627ee264"
   end
 
   depends_on "cmake" => :build

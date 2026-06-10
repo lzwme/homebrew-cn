@@ -22,14 +22,10 @@ class Mas < Formula
   depends_on :macos
 
   uses_from_macos "swift" => :build, since: :sequoia # swift 6.2+
+  uses_from_macos "jq", since: :sequoia
 
   on_sequoia :or_newer do
     depends_on xcode: ["26.0", :build]
-  end
-
-  on_sonoma :or_older do
-    depends_on "swift" => :build
-    depends_on "jq"
   end
 
   def install

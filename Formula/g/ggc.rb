@@ -1,18 +1,18 @@
 class Ggc < Formula
   desc "Modern Git CLI"
   homepage "https://github.com/bmf-san/ggc"
-  url "https://ghfast.top/https://github.com/bmf-san/ggc/archive/refs/tags/v8.6.6.tar.gz"
-  sha256 "ca77320f81bf535924d68f910ba48cda26d635cda80d86ad99f26e6aeddd93d9"
+  url "https://ghfast.top/https://github.com/bmf-san/ggc/archive/refs/tags/v8.6.7.tar.gz"
+  sha256 "2d7be9d13035ec8ab059e7bde4a042f541dcdbce28aeb6843cf2aa7479e1c1d3"
   license "MIT"
   head "https://github.com/bmf-san/ggc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dec9cc57a2b118138176af7c107ee69472036c30d746cf2135ad81b424d1a560"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dec9cc57a2b118138176af7c107ee69472036c30d746cf2135ad81b424d1a560"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dec9cc57a2b118138176af7c107ee69472036c30d746cf2135ad81b424d1a560"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b568f83120650dd37329432e19497ff6de33c1cccdcf81be3ff012132968a4d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a17ae8ec4106ce5734ba646b70007c825f95905abff47cff811db03403d5dc9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04f7bcbfcbebf53a212de2948fc2e5bd6b2edd751c5864ae01f6e2460ded2c48"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a2620504a95c23c077c06bbbde3a82a2a355e7c6f55cca1c852b3f60fd0f8e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a2620504a95c23c077c06bbbde3a82a2a355e7c6f55cca1c852b3f60fd0f8e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a2620504a95c23c077c06bbbde3a82a2a355e7c6f55cca1c852b3f60fd0f8e9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f627b37e7a5ad4168d20a2eddc21e5bce2825a7bfa7b7c947fa680257fd97ecd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a20a9bed714336a157700c9fa8df1dbcca1a176f78cdec0b0bc4cad662801a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b985643b1d6a4f7522910163acf722509b4073d4e41fea6c687dc75346036b7f"
   end
 
   depends_on "go" => :build

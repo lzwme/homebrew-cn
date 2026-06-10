@@ -1,17 +1,17 @@
 class StripeCli < Formula
   desc "Command-line tool for Stripe"
   homepage "https://docs.stripe.com/stripe-cli"
-  url "https://ghfast.top/https://github.com/stripe/stripe-cli/archive/refs/tags/v1.42.1.tar.gz"
-  sha256 "3cd8054df1ca218723be53538389fe027739f4a8aae1674100108a931b318cc0"
+  url "https://ghfast.top/https://github.com/stripe/stripe-cli/archive/refs/tags/v1.42.10.tar.gz"
+  sha256 "457d7bc76dec2cce2d284ecdead7f10c8e9397316b3c0840b089855988a65e7c"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb974761cef95446d37cad4d847d68649c09aa0a322d4b252971f4a75b24ba4f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22fb98c54f9077d5c82b24a615d53002695254f87e01fc8300facfdb3bf27af0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "825ed170e062570875b53973fe2daab98fac5300544de3926f6eec879e4d0024"
-    sha256 cellar: :any_skip_relocation, sonoma:        "98f12c7039021acf7d19b2a6bf7ace1e28399716b19912c97f57689ff0af8917"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "40cb7706c7676dfc9e4c5ba8af3317fdafd01e57da6b17346016179101006806"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e8500f6d85149ced938af74f554f4f48516498e5f2ef76569ddd988c070aeb5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7ec5002765bcb5c520313315fb868c607b987a752a4cc02c65d64c402a47186"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5413f0a03d3d45f59316df357abfb2a2d5eeec809f52dc3964dc7f3b6c600abf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1491296746c6539c4195a51a635222ec2d8d9936065413e31eaa687a305c1bc4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8c15bb58a3803dac551d9e4c2d67bbcb63be7ec5b312812df150e3a00e6389e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d10f40053cc2e89c10562d237db20b800615c656714dc51aa55ad7081de5b8d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6b83766c34c247dd746268409e42685c3b0b07c99f93b6f861a4cf5089b1adb"
   end
 
   depends_on "go" => :build

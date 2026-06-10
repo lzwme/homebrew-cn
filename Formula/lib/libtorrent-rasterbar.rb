@@ -1,8 +1,8 @@
 class LibtorrentRasterbar < Formula
   desc "C++ bittorrent library with Python bindings"
   homepage "https://www.libtorrent.org/"
-  url "https://ghfast.top/https://github.com/arvidn/libtorrent/releases/download/v2.0.12/libtorrent-rasterbar-2.0.12.tar.gz"
-  sha256 "25b898d02e02e43ee9a8ea5480c20007f129091b5754d0283f94e4d51d11a19e"
+  url "https://ghfast.top/https://github.com/arvidn/libtorrent/releases/download/v2.0.13/libtorrent-rasterbar-2.0.13.tar.gz"
+  sha256 "892cb75c06318e2420de0faf9f63a908069d3d237676e2459fd30abe0cb3b1bf"
   license "BSD-3-Clause"
   head "https://github.com/arvidn/libtorrent.git", branch: "RC_2_0"
 
@@ -12,12 +12,12 @@ class LibtorrentRasterbar < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "4255708e576d6b2c498248df030073c028cc48b9c7952bc07ed0f3affc702e01"
-    sha256 cellar: :any,                 arm64_sequoia: "1c4bd2f4fa99881269417869070c3bbc40d0a2ccdc2c2f7f862bbd5178dd2cdd"
-    sha256 cellar: :any,                 arm64_sonoma:  "8290140206a01587132933168b983084dce61be37b8d3b28541d7b4c61cfcee3"
-    sha256 cellar: :any,                 sonoma:        "ccaa971dc8b4ad10998a0b7998a9e1fdc805196300f0827abc326e35cc821719"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "40e68b9edb4a76ebef6d619b69b13e70aa9951769a858ff6797456eccf182b74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67709387cbaf02f41f5b5ad3088c0b23e806941e82ae5a7f4dd282fd45e6c7cb"
+    sha256 cellar: :any, arm64_tahoe:   "7c6c7c569e3914d7aaf3611421c97701603b451996352c117dcdbb8dae6843a4"
+    sha256 cellar: :any, arm64_sequoia: "0a20e0b67256205a28e3fba069cf0baf4a357f5702636b48e75e2aeb6240c6f9"
+    sha256 cellar: :any, arm64_sonoma:  "7657759880002e58a07d247525f028efd6b3c9737827e60591db4ab336d6168a"
+    sha256 cellar: :any, sonoma:        "434a92b20015be9d5cff7553c425ebce2f5cef880e95239334805ec6c49d14fc"
+    sha256 cellar: :any, arm64_linux:   "93a72e3ea40c7734ca3f35dd26dbdfcb544fab8a7ceef0919e4e6c098037dcf2"
+    sha256 cellar: :any, x86_64_linux:  "781c5608acb4267c8e57c50a82fc02913cc01d5b942f877fe5609c5b679f084d"
   end
 
   depends_on "cmake" => :build

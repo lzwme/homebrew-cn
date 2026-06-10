@@ -1,8 +1,8 @@
 class Msgpack < Formula
   desc "Library for a binary-based efficient data interchange format"
   homepage "https://msgpack.org/"
-  url "https://ghfast.top/https://github.com/msgpack/msgpack-c/releases/download/c-7.0.0/msgpack-c-7.0.0.tar.gz"
-  sha256 "0f1b34a42ea20b35350ad774e56666f64e860ce22d787626f2b3d2ab67061639"
+  url "https://ghfast.top/https://github.com/msgpack/msgpack-c/releases/download/c-7.0.1/msgpack-c-7.0.1.tar.gz"
+  sha256 "2d80f190ab89b73b513025d8aef09b144e5c07b3734dfe99dd0137725d355504"
   license "BSL-1.0"
   head "https://github.com/msgpack/msgpack-c.git", branch: "c_master"
 
@@ -12,12 +12,12 @@ class Msgpack < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5b0be627f681dd9b08da1608e4708003180a8f8610c94b7ab7734a1b192dcb27"
-    sha256 cellar: :any, arm64_sequoia: "efe585511f515eeffd8dbb903f343c7eb8149c10f9998766b7bc02b0870b2be7"
-    sha256 cellar: :any, arm64_sonoma:  "f9b682e64bfd163ebac34b8b49b6e2113a23bc29c1b906120e49031edb14082b"
-    sha256 cellar: :any, sonoma:        "3a9905fc993e223505b40c4648e5cbce4fdfb3e47f0a35bc0c63aa89efa28d77"
-    sha256 cellar: :any, arm64_linux:   "2909eff3eba27a3c1cb8f6a2c4c023ee30bcf0cdf3706082e93463242b6b7d75"
-    sha256 cellar: :any, x86_64_linux:  "76e87896a3bdede1a668b14cb5bd6365d792308ed7f58ebd984611f9f2ba2b46"
+    sha256 cellar: :any, arm64_tahoe:   "18a3e8c60e3c9df37207ebc335a72bc59aafb905285e6a59b0dc99e057643adf"
+    sha256 cellar: :any, arm64_sequoia: "4588765193c757f81374fbdb7e024364bbf8529d82e85bbcc6feb329a022240a"
+    sha256 cellar: :any, arm64_sonoma:  "bb5d2a471c69fefdd5f4bb1cd8f4b56b211f6408091ac1c0ee586a1cf68a63b1"
+    sha256 cellar: :any, sonoma:        "fd5a092650d378550f34ff8f7fce9caa98509a7e5543d1b38b654ebf5ddbb18d"
+    sha256 cellar: :any, arm64_linux:   "44a1dfbe8973a63b47c248fdb13c9c7afec231283569b83354f77ac30995639c"
+    sha256 cellar: :any, x86_64_linux:  "4b29c4f5cc173b3153388bfd01e85dac8ad54fc0915bd29cc88100faef391b7b"
   end
 
   depends_on "cmake" => :build

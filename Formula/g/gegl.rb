@@ -24,7 +24,7 @@ class Gegl < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "babl"
   depends_on "cairo"
@@ -44,16 +44,6 @@ class Gegl < Formula
   end
 
   def install
-    ### Temporary Fix ###
-    # Temporary fix for a meson bug
-    # Upstream appears to still be deciding on a permanent fix
-    # See: https://gitlab.gnome.org/GNOME/gegl/-/issues/214
-    inreplace "subprojects/poly2tri-c/meson.build",
-      "libpoly2tri_c = static_library('poly2tri-c',",
-      "libpoly2tri_c = static_library('poly2tri-c', 'EMPTYFILE.c',"
-    touch "subprojects/poly2tri-c/EMPTYFILE.c"
-    ### END Temporary Fix ###
-
     args = %w[
       -Ddocs=false
       -Djasper=disabled
@@ -76,13 +66,9 @@ class Gegl < Formula
         return 0;
       }
     C
-    system ENV.cc, "test.c", "-o", "test",
-                   "-I#{Formula["babl"].opt_include}/babl-0.1",
-                   "-I#{Formula["glib"].opt_include}/glib-2.0",
-                   "-I#{Formula["glib"].opt_lib}/glib-2.0/include",
-                   "-I#{include}/gegl-0.4",
-                   "-L#{lib}", "-lgegl-0.4",
-                   "-L#{Formula["glib"].opt_lib}", "-lgobject-2.0", "-lglib-2.0"
+
+    flags = shell_output("pkgconf --cflags --libs gegl-#{version.major_minor}").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
 end

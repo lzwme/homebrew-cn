@@ -30,7 +30,7 @@ class Modsecurity < Formula
   def install
     system "autoreconf", "--force", "--install", "--verbose"
 
-    libxml2 = OS.mac? ? "#{MacOS.sdk_path_if_needed}/usr" : Formula["libxml2"].opt_prefix
+    libxml2 = OS.mac? ? "#{MacOS.sdk_path}/usr" : Formula["libxml2"].opt_prefix
 
     args = [
       "--disable-debug-logs",

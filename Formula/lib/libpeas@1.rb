@@ -6,6 +6,11 @@ class LibpeasAT1 < Formula
   license "LGPL-2.1-or-later"
   revision 1
 
+  livecheck do
+    url :stable
+    regex(/libpeas[._-]v?(1\.([0-8]\d*?)?[02468](?:\.\d+)*?)\.t/i)
+  end
+
   bottle do
     rebuild 2
     sha256 arm64_tahoe:   "6ae295b72edb4f0aab90390ee118cd2864f9ef7cb57b3f318341663c0eaad4d6"

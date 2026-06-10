@@ -6,17 +6,17 @@ class Twtxt < Formula
   url "https://files.pythonhosted.org/packages/fc/4c/cff74642212dbca8d4d9059119555cd335324b3da0b52990a414a0257756/twtxt-1.3.1.tar.gz"
   sha256 "f15e580f8016071448b24048402b939b9e8dec07eabacd84b1f2878d751b71ff"
   license "MIT"
-  revision 9
+  revision 10
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4da0d7fa07305dc7dad6b71aed421626102847026bb6818b681a16178b2a2b94"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a22e560f054c0cfca6967f7359abc552ab901c764c61b57851f44a18ef90aa9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "185ea415acdd5da86115376df2ad72da890631a282a271e78da2dc0d907473cc"
-    sha256 cellar: :any_skip_relocation, tahoe:         "4936ef19bed04ceeb5c773456c54a3e78e76732a8330e35052f426720adfc4b2"
-    sha256 cellar: :any_skip_relocation, sequoia:       "9077b2a1a678a8b57a1af2f33c1d25d26ab99e7128d4d257aac0866d211b5e0c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3c82107ecb80dfe23eee937eb1b721cf4163778acef735441161eef66fb99a4f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "051b16f53db21e3996651467c79266ed465eae8bde3f53e7b84a25a93f99c100"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c618c08ce9c05a98a937afd0d99fdf5fb6f64f5c36508901b00691b69130ac2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f2be9b024a5aace411943fc3ceef3d18011a92aa270316abce3273cf92a7671f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4467be00daa04d39ba5ff8745160961a98078a65e88348ff2a2366a297cd8fca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "489d7db6a9e40526f2b4f55e5bee6b1ad2893203645371496859747c43706a28"
+    sha256 cellar: :any_skip_relocation, tahoe:         "fc3bad4354388dc11f0dfc1da75bf8d29af967abf7d027535b57b214e794c8e5"
+    sha256 cellar: :any_skip_relocation, sequoia:       "fab8f165eb93c7d46d3d0e1debf22706bb25822f3126e54a871d0442461a5faf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "903143192084430dfdcb955b1a6615a767370ac93a2b8d1310aeb469f1493b6a"
+    sha256 cellar: :any,                 arm64_linux:   "28753dbc569e2d21b4d4999ef589c462407334db57a3a4781a950eed076f7e45"
+    sha256 cellar: :any,                 x86_64_linux:  "811ae459a52ab70168735b81fbc01ee600cb7d447b77e2581fe3d714578d45c2"
   end
 
   depends_on "python@3.14"
@@ -27,8 +27,8 @@ class Twtxt < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
-    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
+    url "https://files.pythonhosted.org/packages/82/78/8ea7308cac6934de8c74a14f3d5f65d1c89287426688be79538d0e5c013d/aiohttp-3.14.1.tar.gz"
+    sha256 "307f2cff90a764d329e77040603fa032db89c5c24fdad50c4c15334cba744035"
   end
 
   resource "aiosignal" do
@@ -42,8 +42,8 @@ class Twtxt < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
-    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
+    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
+    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
   end
 
   resource "frozenlist" do
@@ -57,8 +57,8 @@ class Twtxt < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "multidict" do

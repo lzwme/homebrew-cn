@@ -1,8 +1,8 @@
 class RattlerIndex < Formula
   desc "Index conda channels using rattler"
   homepage "https://github.com/conda/rattler"
-  url "https://ghfast.top/https://github.com/conda/rattler/archive/refs/tags/rattler_index-v0.30.3.tar.gz"
-  sha256 "88cc1eb7ffa9fc9977ed1cd2630ab5c1de633a52e5b424f54d35636309de026c"
+  url "https://ghfast.top/https://github.com/conda/rattler/archive/refs/tags/rattler_index-v0.30.4.tar.gz"
+  sha256 "1d61cbdc7da215150c01e34f07c0dd7e9b557b25c922d1215767eef519f09af8"
   license "BSD-3-Clause"
   head "https://github.com/conda/rattler.git", branch: "main"
 
@@ -12,12 +12,12 @@ class RattlerIndex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0d353c3b02e086b6738c2d0bc3de34bbaed2a5e1aa5ded9f7c2aba3ae6b2906"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26f08608149d20327ed2782417491976feb3ab14e17f006f523592256c6023cc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8525fd22120cfc4b045e0eac0946dbbf2a59d3e23f0cb24753d2856f83d3d25d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2a3b21aad22d25183507eb6b839ace70ffd022233ff9566d6342055789c74a77"
-    sha256 cellar: :any,                 arm64_linux:   "b8add3f853cf28d89060d259448716a79b28b1a09a56be65e13a8b9a16b68882"
-    sha256 cellar: :any,                 x86_64_linux:  "17e6c60f13dcbd12ead41684faa530c24616ed95bf1833c203c9f32570797216"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c32fe061bc6a643c49d269e58037f3f3fcd33db1ac42dbbf71f063bc153aa31c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab3aad12dabc6f261506dad0f788080cea42feb109d82670515e21c78b063f81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac4b1668a1a6f0b8d1f044ce1f8889cfc6e50404fae61769d90647665aa61f13"
+    sha256 cellar: :any_skip_relocation, sonoma:        "45771ed9164c780b20d025e694444eea9d34c9357ff86e1b0bb65b2e3e2908f3"
+    sha256 cellar: :any,                 arm64_linux:   "7be370e9e3fae2633fa4ccd036fd26204850710ee023c17fb63fe4ef3f71362d"
+    sha256 cellar: :any,                 x86_64_linux:  "82ce14bbe4e640dfc7b87d7666b7a42461d2da077d780c137971bd8dfae03a71"
   end
 
   depends_on "pkgconf" => :build

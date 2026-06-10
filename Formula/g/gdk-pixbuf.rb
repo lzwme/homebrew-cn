@@ -4,15 +4,16 @@ class GdkPixbuf < Formula
   url "https://download.gnome.org/sources/gdk-pixbuf/2.44/gdk-pixbuf-2.44.6.tar.xz"
   sha256 "140c2d0b899fcf853ee92b26373c9dc228dbcde0820a4246693f4328a27466fa"
   license "LGPL-2.1-or-later"
+  revision 1
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "023b480ec88e40ba0b7879663177a7baaa009d93853cf74b313ce1029f8e7c5b"
-    sha256 arm64_sequoia: "eed711bc1bc0a308e57ddcdcb0c5ab3e40cd03d47ecf82f344b508e1f4317475"
-    sha256 arm64_sonoma:  "f05616e33ac2730638a5e31d6f2835b05b17b08d94feabf773e8c3a92322016a"
-    sha256 sonoma:        "af601b57fead60ddd3d08af5025d41876d37d6f1cf9348bd79e03611b6d56ff7"
-    sha256 arm64_linux:   "2cf25e29b84262b52aa087c5ea8d8f113160e1ed107f50410203cd4d3244e7aa"
-    sha256 x86_64_linux:  "de021570fbdc6b613d5d620620f8ca735371d7fd5f442fbb127eb2e0331a56df"
+    sha256               arm64_tahoe:   "a4d80fb6524b4ec95c4a71265bc60f99d9711c7ecb9d98520eadd29ae2688f3e"
+    sha256               arm64_sequoia: "01ab57939eed589824d5d0cb6cbd26a9b00e661de9ccf4daae99a66f2faf17b1"
+    sha256               arm64_sonoma:  "be42103cc1078118b7951be72ac3d2db784569bea8460052b7b8e497067891b0"
+    sha256 cellar: :any, sonoma:        "0d01ce5d645b83497d53663b845122cd367c5011cf3b12331c3135e0a5a1b9c8"
+    sha256               arm64_linux:   "765dfa450fef639af2c7777c82bffcb0112273c816e5f03633310273d8d2dccb"
+    sha256               x86_64_linux:  "a66f6c5bab0d04f877d6cbe785d3d7af1ce804102995f61b727443c6ae4ba507"
   end
 
   depends_on "docutils" => :build # for rst2man
@@ -34,24 +35,13 @@ class GdkPixbuf < Formula
     depends_on "shared-mime-info"
   end
 
-  # gdk-pixbuf has an internal version number separate from the overall
-  # version number that specifies the location of its module and cache
-  # files, this will need to be updated if that internal version number
-  # is ever changed (as evidenced by the location no longer existing)
-  def gdk_so_ver
-    "2.0"
-  end
-
-  def gdk_module_ver
-    "2.10.0"
-  end
-
   def install
-    inreplace "gdk-pixbuf/meson.build",
-              "-DGDK_PIXBUF_LIBDIR=\"@0@\"'.format(gdk_pixbuf_libdir)",
-              "-DGDK_PIXBUF_LIBDIR=\"@0@\"'.format('#{HOMEBREW_PREFIX}/lib')"
+    # Use HOMEBREW_PREFIX to find modules installed by dependents without
+    # needing environment variables or inreplaces. In order to support this,
+    # we need install into a staging directory.
+    meson_args = std_meson_args.map { |s| s.sub prefix, HOMEBREW_PREFIX }
+    ENV["DESTDIR"] = buildpath/"stage"
 
-    ENV["DESTDIR"] = "/"
     system "meson", "setup", "build", "-Drelocatable=false",
                                       "-Dnative_windows_loaders=false",
                                       "-Dtests=false",
@@ -64,26 +54,14 @@ class GdkPixbuf < Formula
                                       "-Dothers=enabled",
                                       "-Dintrospection=enabled",
                                       "-Dglycin=disabled",
-                                      *std_meson_args
+                                      *meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
-
-    # Other packages should use the top-level modules directory
-    # rather than dumping their files into the gdk-pixbuf keg.
-    inreplace lib/"pkgconfig/gdk-pixbuf-#{gdk_so_ver}.pc" do |s|
-      s.change_make_var! "prefix", HOMEBREW_PREFIX
-    end
+    prefix.install Pathname(File.join("stage", HOMEBREW_PREFIX)).children
   end
 
-  # The directory that loaders.cache gets linked into, also has the "loaders"
-  # directory that is scanned by gdk-pixbuf-query-loaders in the first place
-  def module_dir
-    "#{HOMEBREW_PREFIX}/lib/gdk-pixbuf-#{gdk_so_ver}/#{gdk_module_ver}"
-  end
-
-  def post_install
-    ENV["GDK_PIXBUF_MODULEDIR"] = "#{module_dir}/loaders"
-    system bin/"gdk-pixbuf-query-loaders", "--update-cache"
+  post_install_steps do
+    gdk_pixbuf_query_loaders
   end
 
   test do
@@ -95,8 +73,17 @@ class GdkPixbuf < Formula
         return 0;
       }
     C
-    flags = shell_output("pkgconf --cflags --libs gdk-pixbuf-#{gdk_so_ver}").chomp.split
+
+    gdk_pixbuf_pc = lib.glob("pkgconfig/gdk-pixbuf-*.pc").first.basename(".pc")
+    flags = shell_output("pkgconf --cflags --libs #{gdk_pixbuf_pc}").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
+
+    # Check that HOMEBREW_PREFIX paths are used
+    gdk_pixbuf_cache_file = shell_output("pkgconf --variable=gdk_pixbuf_cache_file #{gdk_pixbuf_pc}").chomp
+    loaders = shell_output(bin/"gdk-pixbuf-query-loaders")
+    assert_match "#{HOMEBREW_PREFIX}/lib/", gdk_pixbuf_cache_file
+    assert_match "LoaderDir = #{HOMEBREW_PREFIX}/lib/gdk-pixbuf-", loaders
+    refute_match prefix.realpath.to_s, loaders
   end
 end

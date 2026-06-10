@@ -58,7 +58,7 @@ class Libsbol < Formula
       -DRASQAL_INCLUDE_DIR=#{Formula["rasqal"].opt_include}
     ]
 
-    if OS.mac? && (sdk = MacOS.sdk_path_if_needed)
+    if OS.mac? && (sdk = MacOS.sdk_path)
       args << "-DCURL_LIBRARY=#{sdk}/usr/lib/libcurl.tbd"
       args << "-DLIBXSLT_INCLUDE_DIR=#{sdk}/usr/include/"
       args << "-DLIBXSLT_LIBRARIES=#{sdk}/usr/lib/libxslt.tbd"

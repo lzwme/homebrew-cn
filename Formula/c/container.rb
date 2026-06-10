@@ -1,14 +1,14 @@
 class Container < Formula
   desc "Create and run Linux containers using lightweight virtual machines"
   homepage "https://apple.github.io/container/documentation/"
-  url "https://ghfast.top/https://github.com/apple/container/archive/refs/tags/0.12.3.tar.gz"
-  sha256 "aa5e4225b46b416b8c6c8f0a7f8d2b4ed3166278313fe45f7eb2d7a469c34403"
+  url "https://ghfast.top/https://github.com/apple/container/archive/refs/tags/1.0.0.tar.gz"
+  sha256 "9f5379d400d23b6f296b7bae8f71f982dfdc1d52bf072ac81318472a734d21f7"
   license "Apache-2.0"
   head "https://github.com/apple/container.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "f6ee6ab7fd98797b2e2961e3a6e28bbcdbf8abe95c3d20ee3eba1ea83aa4beb8"
-    sha256 arm64_sequoia: "a3a060599d6bb02e12b3fe4571844261c12e317d12182fe2173e51f27c025243"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90c8c729df08ff62c39c11a06c64fc9e966fc5db37a5048f1313d83a8be5d5f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4ad56a2548b02a20824284c768c24d4debfe8c6406debb53ef3461afb4bad54"
   end
 
   depends_on xcode: ["26.0", :build]
@@ -20,18 +20,6 @@ class Container < Formula
       ENV["GIT_COMMIT"] = Utils.git_head
     else
       ENV["RELEASE_VERSION"] = version
-    end
-
-    # Replace variable install root path with Homebrew prefix
-    inreplace [
-      "./Sources/ContainerCommands/Application.swift",
-      "./Sources/ContainerCommands/DefaultCommand.swift",
-      "./Sources/ContainerPlugin/InstallRoot.swift",
-    ] do |s|
-      s.gsub!("CommandLine.executablePathUrl",
-      "URL(fileURLWithPath: \"#{prefix}\")")
-      s.gsub!(/\n\s*\.deletingLastPathComponent\(\)/, "")
-      s.gsub!(/\n\s*\.appendingPathComponent\(".."\)/, "")
     end
 
     system "swift", "build", "--disable-sandbox", "--configuration", "release"

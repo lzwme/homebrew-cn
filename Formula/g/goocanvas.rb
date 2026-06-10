@@ -19,6 +19,10 @@ class Goocanvas < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "33355d4dbdef036db01c5948d764d8202047838d08a68c1de6d323e5f18bc6ef"
   end
 
+  # https://gitlab.gnome.org/Archive/goocanvas
+  deprecate! date: "2026-06-09", because: :repo_archived
+  disable! date: "2027-06-09", because: :repo_archived
+
   depends_on "gobject-introspection" => :build
   depends_on "pkgconf" => :build
 

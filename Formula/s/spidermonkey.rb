@@ -35,6 +35,12 @@ class Spidermonkey < Formula
   uses_from_macos "llvm" => :build # for llvm-objdump
   uses_from_macos "m4" => :build
 
+  on_macos do
+    # Use LLD to work around lack of support for modern Apple ld
+    # Issue ref: https://bugzilla.mozilla.org/show_bug.cgi?id=1844694
+    depends_on "lld" => :build if DevelopmentTools.clang_build_version >= 1500
+  end
+
   on_linux do
     depends_on "zlib-ng-compat"
   end
@@ -72,6 +78,7 @@ class Spidermonkey < Formula
 
   def install
     ENV.runtime_cpu_detection
+    ENV.O3 if DevelopmentTools.clang_build_version >= 1500 # lld doesn't support -Os
 
     # Vendored encoding_rs 0.8.35 fails to build with rust 1.95 (Mask::select moved
     # to a trait method). Use cargo's `[patch.crates-io]` to redirect to the upstream
@@ -86,9 +93,6 @@ class Spidermonkey < Formula
 
     if OS.mac?
       inreplace "build/moz.configure/toolchain.configure" do |s|
-        # Help the build script detect ld64 as it expects logs from LD_PRINT_OPTIONS=1 with -Wl,-version
-        # Issue ref: https://bugzilla.mozilla.org/show_bug.cgi?id=1844694
-        s.sub! '"-Wl,--version"', '"-Wl,-ld_classic,-v"' if DevelopmentTools.clang_build_version >= 1500
         # Allow using brew libraries on macOS (not officially supported)
         s.sub!(/^(\s*def no_system_lib_in_sysroot\(.*\n\s*if )bootstrapped and value:/, "\\1False:")
         # Work around upstream only allowing build on limited macOS SDK (14.4 as of Spidermonkey 128)

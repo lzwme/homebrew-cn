@@ -13,12 +13,13 @@ class Node < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "73328a7b90db0ad75a65520b4556ffe993f1f53a16d765b5ed9bca9b93e64b13"
-    sha256 cellar: :any, arm64_sequoia: "c09cb25a96cb596e7697fa3774033d1fba007976646cd406953db1ad74128e5a"
-    sha256 cellar: :any, arm64_sonoma:  "2a4ff0a4262e6adc654efb94dc7576cdbd089db034bd58afbb03b83335f55475"
-    sha256 cellar: :any, sonoma:        "c329f1d8a9bb12f0a5e22b18b76884ccb49271362f0b6566001f34895bf25349"
-    sha256 cellar: :any, arm64_linux:   "20d3ea38bff4e5ab311ef05021484ea2953c986e50d665d26b82b7a8d174184b"
-    sha256 cellar: :any, x86_64_linux:  "594e786bd3c4e16a25c16ef969feec0be1275c371cf6384459df5417e1093bec"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "b4e808869c4e2e264524f3a54279d942321d96d4a1497c06e02533db0863ad81"
+    sha256 cellar: :any, arm64_sequoia: "094aa37e3df29929745fb544e90d27fa975a65cc32ab0baf4764f1610777498a"
+    sha256 cellar: :any, arm64_sonoma:  "d641eb32238d9d618926a5b1fde22c09db786fa4f766b262aa4b88d39a4bf64b"
+    sha256 cellar: :any, sonoma:        "b6e58457b021c00f06785efbcfc2226abf718831c4df29615d757a604e46798b"
+    sha256 cellar: :any, arm64_linux:   "298e09c8d546e06422e524ea3fabbc64384bbaaf829debc3d87f449c097af2e1"
+    sha256 cellar: :any, x86_64_linux:  "3f6963fdec1025e7fcb114aeda76fe792827e9f536061772270289c832970d02"
   end
 
   depends_on "pkgconf" => :build
@@ -80,6 +81,8 @@ class Node < Formula
       end
     end
   end
+
+  deny_network_access! [:build, :postinstall]
 
   def install
     # Backport fix for bundled LIEF's bundled spdlog's bundled fmt.

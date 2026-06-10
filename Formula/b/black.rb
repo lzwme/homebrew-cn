@@ -6,15 +6,16 @@ class Black < Formula
   url "https://files.pythonhosted.org/packages/c0/37/5628dd55bf2b34257fc7603f0fe97c40e3aaf24265f416a9c85c95ca1436/black-26.5.1.tar.gz"
   sha256 "dd321f668053961824bcc1be1cc1df748b2d7e4fa28086b08331e577b0100a73"
   license "MIT"
+  revision 1
   head "https://github.com/psf/black.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ca80fc051ab3300330e0ad5c7aba239df90dd1a6ac5850eaf0c0e10b583087f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d48268368ae9b51e4308367a309b3ec8f30b77970a34a2f546c429dd4512b4a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac03e4ab2abd1de8ae94fe9e60597cfe94debe1127b83fb96d276000a623dbfb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "19c5db7f165a856a878fc7cdaee47fa893741e84ef331e145bebda3506d25d58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fd730f931c4aab04435dbcdaca880c3101d1674b13af69fcd9a52bfd6ec1f77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26e6f020a6b3ec0c2f1805825759f08f05021ead46536ee1f842dad2951a8180"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "968c1d8e32ad0d8f538ef7298ee505345ed298ce423a5f58c5e47b454b96ca44"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0aab0f93b5427d88423015117d4e7096b5d135056dcf467e079f3c3a05119c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "606d40477fafc2837f0f9df4537604fde77564de4a62f04f7d1465cd96b5bd3e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "10aff771af1464d63a84fb96439b3933193d093981dc0d9701451ce3cc339c72"
+    sha256 cellar: :any,                 arm64_linux:   "17aeff03e1655035ef1ba23efed534c7912d69eff64cef3f9215b0e89702ad4b"
+    sha256 cellar: :any,                 x86_64_linux:  "ece508a303f4f023e73b968904163f044ca38ee7ed0710da7159ecadef2ab3ae"
   end
 
   depends_on "rust" => :build # pytokens -> mypy -> ast-serialize
@@ -23,13 +24,13 @@ class Black < Formula
   pypi_packages package_name: "black[d]"
 
   resource "aiohappyeyeballs" do
-    url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"
-    sha256 "c3f9d0113123803ccadfdf3f0faa505bc78e6a72d1cc4806cbd719826e943558"
+    url "https://files.pythonhosted.org/packages/33/c6/61a2d7b7572279226bb2e7f61d7a19ca7c90da0329c93fa0d560cbf288d8/aiohappyeyeballs-2.6.2.tar.gz"
+    sha256 "e202810ee718bd01fc6ef49e8ea53d023d5cb6b581076d7925aa499fa55dbe64"
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
-    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
+    url "https://files.pythonhosted.org/packages/82/78/8ea7308cac6934de8c74a14f3d5f65d1c89287426688be79538d0e5c013d/aiohttp-3.14.1.tar.gz"
+    sha256 "307f2cff90a764d329e77040603fa032db89c5c24fdad50c4c15334cba744035"
   end
 
   resource "aiosignal" do
@@ -43,8 +44,8 @@ class Black < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
-    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
+    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
+    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
   end
 
   resource "frozenlist" do
@@ -53,8 +54,8 @@ class Black < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "multidict" do
@@ -78,8 +79,8 @@ class Black < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
-    sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
+    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
+    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
   end
 
   resource "propcache" do
@@ -93,8 +94,8 @@ class Black < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/23/6e/beb1beec874a72f23815c1434518bfc4ed2175065173fb138c3705f658d4/yarl-1.23.0.tar.gz"
-    sha256 "53b1ea6ca88ebd4420379c330aea57e258408dd0df9af0992e5de2078dc9f5d5"
+    url "https://files.pythonhosted.org/packages/79/12/1e8f37460ea0f7eb59c221fdaf0ed75e7ac43e97f8093b9c6f411df50a78/yarl-1.24.2.tar.gz"
+    sha256 "9ac374123c6fd7abf64d1fec93962b0bd4ee2c19751755a762a72dd96c0378f8"
   end
 
   def install

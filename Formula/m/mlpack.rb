@@ -1,18 +1,18 @@
 class Mlpack < Formula
   desc "Scalable C++ machine learning library"
   homepage "https://www.mlpack.org"
-  url "https://mlpack.org/files/mlpack-4.7.0.tar.gz"
-  sha256 "a3f0fb530e51d51f8d7eceb7998b4699906d628000b158ada80541465595324e"
+  url "https://mlpack.org/files/mlpack-4.8.0.tar.gz"
+  sha256 "0ab06e5c506c7ed5f072faa4c04477c65624e4a1ff62eee8c0d996ef850ec51c"
   license all_of: ["BSD-3-Clause", "MPL-2.0", "BSL-1.0", "MIT"]
   head "https://github.com/mlpack/mlpack.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9b331d69b57ed9d4d0019c88e06df3279b143bfcee03f081675d6224e611e83d"
-    sha256 cellar: :any,                 arm64_sequoia: "0a562de79e6c8e22c4434b626af424ba666bc04ed83ae904a5c397a7899da4aa"
-    sha256 cellar: :any,                 arm64_sonoma:  "45cac3d79a3e818acec4701d478e3e6b868f6d5590ba347f24a1fa192a76674d"
-    sha256 cellar: :any,                 sonoma:        "85365a6ce18c3e3d22cf43e84867e82dfd804176c1bf83ebeb714e51e6eb3bfc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22de66681bdcf9d2e8345a9211add0e8baa16f0fb26afdb8f888040bc3c52887"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e85b017257022ffc33619d39237a1b612453b594c0aa04179cae05c241c36fcf"
+    sha256 cellar: :any, arm64_tahoe:   "2e6b526883e1455de59704ca34e42e2775df5f78bd4d2e04497eb0b5cc9f420f"
+    sha256 cellar: :any, arm64_sequoia: "75c24e1ad876fe3a34c4c07a86cec2988c7d3d40e41b81c57f883f345cca2840"
+    sha256 cellar: :any, arm64_sonoma:  "d9cccf1f37ecd870e0441b8602339e0fad4fa45638f7e21c62a87618ca80ce2c"
+    sha256 cellar: :any, sonoma:        "e7c72b5ecc5ddb54eff470da1c312508a98d78a269d1b0e7c28682157c9cb00d"
+    sha256 cellar: :any, arm64_linux:   "ebae5bee89f2b4dab5fd04eb9d142922260d99967b1c64a952567b752e01056e"
+    sha256 cellar: :any, x86_64_linux:  "2750a2505f386a5dd7fd4d31247b0f3b52a4b21b57d121937dba27569e240cb2"
   end
 
   depends_on "cmake" => :build

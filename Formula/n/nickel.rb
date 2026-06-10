@@ -1,8 +1,8 @@
 class Nickel < Formula
   desc "Better configuration for less"
   homepage "https://nickel-lang.org/"
-  url "https://ghfast.top/https://github.com/tweag/nickel/archive/refs/tags/1.16.0.tar.gz"
-  sha256 "32a449ebc4d463dd193eb8ce8aced5324655188095e709a9c0addb7b3ceeaec3"
+  url "https://ghfast.top/https://github.com/tweag/nickel/archive/refs/tags/1.17.0.tar.gz"
+  sha256 "8cc47b3a2b9ed4e3b7fca06f36a8a295d231e9f8bb112d0cc02081583c189f75"
   license "MIT"
   head "https://github.com/tweag/nickel.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Nickel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f316961ea89f7b1a77eb0b41f48309bfa04d44cdb38933ab6c451b8f9f27304d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a789f9851923d7a0af677ddf00efbaa1f514c110e300059abac0778012971c7b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5dcc83c98279bd606086e798c3c86e62a26c03aaba5f4ab654d866bf1c7fe167"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8cc26de79d5d969db534b40647e280b09a593ed2850b361368bc15c11f9a9cd2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4784a57659030969606e685be6ae02acb143aa849e8b44c4aaee46756e7355ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "415e3d13763bee6ac4eadc9e3dcb71d15452b9db84ee92c70fd61ddf4d7e186d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6875ae526b5317e5b824da193b518278f173c1bf8ba761c80dd05b687fc0829e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "186bbfe02ec83530416cfa0ab6118e6106678f0fb18df3e0c39375b12627ec41"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c31aac65bfb49ae35b3452131d08ab16e27d8ba904a28591cd1747f9ba62b8d2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6ffa5283e6d0edc08f154866d860dec2241944e5c21fa1de636727783f7a05c7"
+    sha256 cellar: :any,                 arm64_linux:   "14d154463145a173970c3b3273a10425007ca4c3bd47f10859ce27f0dc98b2e2"
+    sha256 cellar: :any,                 x86_64_linux:  "579f29d30bdbf86bc9a327cdd08234baad151a8a0389addc246a56194e5b94d3"
   end
 
   depends_on "rust" => :build

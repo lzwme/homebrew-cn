@@ -1,18 +1,18 @@
 class Crit < Formula
   desc "Your feedback loop with the agent: review plans and code locally"
   homepage "https://crit.md/"
-  url "https://ghfast.top/https://github.com/tomasz-tomczyk/crit/archive/refs/tags/v0.16.1.tar.gz"
-  sha256 "fe017755f9e1939a5a880fd89230bdf342170b340e72052019bfa34d50cabe88"
+  url "https://ghfast.top/https://github.com/tomasz-tomczyk/crit/archive/refs/tags/v0.16.2.tar.gz"
+  sha256 "d927b4ef81d5c05b97c304157057f342ae1a4aa88a8781497afab6b1e665c50a"
   license "MIT"
   head "https://github.com/tomasz-tomczyk/crit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "661fab3e95cc2a4f673c14f01eb9a89f718aa1b55d1739b625e9254ed6673023"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "661fab3e95cc2a4f673c14f01eb9a89f718aa1b55d1739b625e9254ed6673023"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "661fab3e95cc2a4f673c14f01eb9a89f718aa1b55d1739b625e9254ed6673023"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6b149165986109b4723976b01b7ac0f3ccaaea0ab3b98d057c4fa0e277a3209c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74dff7a4b763666524a6de6e602dea11de7cc2e546ea99baa25134a63a4810b3"
-    sha256 cellar: :any,                 x86_64_linux:  "3f9efd3fe316b9d327de5dcf43ae3ee89ef10ac20489d0c6006954f45222fdb7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8771c8d1264e067ffa686f486d72663b3625425e2841065c991fa8fa2d9eeb03"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8771c8d1264e067ffa686f486d72663b3625425e2841065c991fa8fa2d9eeb03"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8771c8d1264e067ffa686f486d72663b3625425e2841065c991fa8fa2d9eeb03"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6cd1e5c63a25cabff7ff05d443910bf2bf3b6fdeb669912c783efc6c3e61c8b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8643c3a124393e6c48d511872bd7a7c6538b0ef8a7e755b99bbf7861c1df595a"
+    sha256 cellar: :any,                 x86_64_linux:  "d9e3327f28d8466751c4f8e72d5b77da8c56905e39c9ec45606361c309b2c6d5"
   end
 
   depends_on "go" => :build
@@ -24,7 +24,7 @@ class Crit < Formula
       -X main.commit=brew
       -X main.date=#{time.iso8601[0, 10]}
     ]
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags:), "./cmd/crit"
   end
 
   test do

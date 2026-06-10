@@ -43,11 +43,7 @@ class Djbdns < Formula
     (buildpath/"conf-home").write prefix
     (buildpath/"conf-ld").write "gcc"
 
-    usr = if OS.mac? && MacOS.sdk_path_if_needed
-      "#{MacOS.sdk_path}/usr"
-    else
-      "/usr"
-    end
+    usr = "#{MacOS.sdk_path if OS.mac?}/usr"
     # `-Wno-implicit-function-declaration` fixes compile with newer Clang
     (buildpath/"conf-cc").write "gcc -O2 -include #{usr}/include/errno.h -Wno-implicit-function-declaration"
 

@@ -3,13 +3,12 @@ class B2Tools < Formula
 
   desc "B2 Cloud Storage Command-Line Tools"
   homepage "https://github.com/Backblaze/B2_Command_Line_Tool"
-  url "https://files.pythonhosted.org/packages/15/01/9c875162cadaf41910617876ea52bf843056cfe1d031c7e4e3d89a2d604f/b2-4.7.0.tar.gz"
-  sha256 "d8031be600382f3c166564bb84a02fa0f2cd8991e93728b03db56576799c9ba6"
+  url "https://files.pythonhosted.org/packages/c9/81/d53f7f6826032f4a0e2e360de105d62b0be0a1a2ec6b69b7f7329caf7b0e/b2-4.7.1.tar.gz"
+  sha256 "a6e571d01f559cd6baca822bcec17aba7326c9c878f34439fb590b717a1c6d60"
   license "MIT"
-  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "222fa98b633539d085f94c570e34c826e83bf0829f7e8b22049a58ee361134d7"
+    sha256 cellar: :any_skip_relocation, all: "b7808d12aebb2e2af69ac41a98afd4fc7ff0d61a5edf29ead3289e06f5898557"
   end
 
   depends_on "certifi"
@@ -50,8 +49,8 @@ class B2Tools < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "logfury" do
@@ -60,8 +59,8 @@ class B2Tools < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
-    sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
+    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
+    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
   end
 
   resource "python-dateutil" do
@@ -90,8 +89,8 @@ class B2Tools < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/09/a9/6ba95a270c6f1fbcd8dac228323f2777d886cb206987444e4bce66338dd4/tqdm-4.67.3.tar.gz"
-    sha256 "7d825f03f89244ef73f1d4ce193cb1774a8179fd96f31d7e1dcde62092b960bb"
+    url "https://files.pythonhosted.org/packages/06/b3/36c8ecf72e8925200671613332db156d84b99b3aee742a41c1938ebb0808/tqdm-4.68.1.tar.gz"
+    sha256 "fc163d96b287bd031e1aa24421ce4411b25559bd0a1be4fe649bdaa4d2c02bf5"
   end
 
   resource "tzdata" do

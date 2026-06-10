@@ -33,7 +33,7 @@ class Never < Formula
   uses_from_macos "libffi"
 
   def install
-    ENV.append_to_cflags "-I#{MacOS.sdk_path_if_needed}/usr/include/ffi" if OS.mac?
+    ENV.append_to_cflags "-I#{MacOS.sdk_path}/usr/include/ffi" if OS.mac?
 
     # Workaround for CMake 4 compatibility
     args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]

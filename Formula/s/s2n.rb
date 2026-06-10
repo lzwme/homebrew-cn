@@ -1,8 +1,8 @@
 class S2n < Formula
   desc "Implementation of the TLS/SSL protocols"
   homepage "https://github.com/aws/s2n-tls"
-  url "https://ghfast.top/https://github.com/aws/s2n-tls/archive/refs/tags/v1.7.3.tar.gz"
-  sha256 "9b7c52aa76b1773218ce9033875a35cb59f29fa7ce2d8de16132648bd75c2194"
+  url "https://ghfast.top/https://github.com/aws/s2n-tls/archive/refs/tags/v1.7.4.tar.gz"
+  sha256 "d2fbf45c0e039bdb6f253a392fc8bbdd258bfe0bd586f3516a2c97bb138b8e17"
   license "Apache-2.0"
   head "https://github.com/aws/s2n-tls.git", branch: "main"
 
@@ -12,12 +12,12 @@ class S2n < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "02b7ab8883617006419f55d46d981b3325bd71aa0ae5f53642321ff98c0ebfae"
-    sha256 cellar: :any,                 arm64_sequoia: "3a357898ffa381e8daee5d524f72017be87f11e5d2459edb1b66e4c67606d2dd"
-    sha256 cellar: :any,                 arm64_sonoma:  "a49bfc5a42e165372c1b7787bacaf88098ea85da249cc4e464e3d51367a50e77"
-    sha256 cellar: :any,                 sonoma:        "b646752e7d2e6e496521186a485c1ac2d673dd70f475dfe06668a590d4ff0c76"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba362086f09ceca977b272a954c37ebf27ce60188d060fa406c0edb2875c6e89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "069c78d5bc56e9ba00795702f2ba52749c395bc9d92e20be74144bf0903e2246"
+    sha256 cellar: :any, arm64_tahoe:   "4e8d684df4c4f704376811d509b47418d90293fd8930ebcd238dd666e2e33ca8"
+    sha256 cellar: :any, arm64_sequoia: "cda12e1be5e745c7f53645ef0e86c2140e612c007d7596436d03ca375551a7dc"
+    sha256 cellar: :any, arm64_sonoma:  "6cc4b38f738b3bd1ea9f16142e8bb20d272f2e96307c6643f0d14d07c724b25c"
+    sha256 cellar: :any, sonoma:        "fc9e6f0ac2899351310591a23656af4d2a364066eddbf971dd4f53bbcf75b8d0"
+    sha256 cellar: :any, arm64_linux:   "f4a9c53dfdfa858165b4645d4f9d2431654d6a3e2ce242e80c5f157bf878cd12"
+    sha256 cellar: :any, x86_64_linux:  "a73955f9ba9760fb2fad36cf433e922bf68616f347d672a64e4ba612572bc471"
   end
 
   depends_on "cmake" => :build

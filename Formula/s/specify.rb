@@ -3,17 +3,17 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.com/github/spec-kit"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.9.5.tar.gz"
-  sha256 "c7da5f34015c077443723786de8a6e4e06fa20db1f649570d16382aeb4915928"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "ff25383fbad81002a9096e29198615f74c750bdde930b51f4a43621d894aa836"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fb78b180c52485c115f8e32ec8aa5a6c7240ad0f82f86d34a2c4254fb1f3950a"
-    sha256 cellar: :any, arm64_sequoia: "660d897605073fba88a8dd6378d466b27feefe2426f1dae3446c5a6a0b5ec1d3"
-    sha256 cellar: :any, arm64_sonoma:  "5ad1bacb5aa7ff13619e8b78a77810eaf2252dce42772d3a7c65e55dad5f3076"
-    sha256 cellar: :any, sonoma:        "976bc52bf46dbf49ac2a7b9f5000bd78c5540cff453242eb23cb1728ecf0f567"
-    sha256 cellar: :any, arm64_linux:   "23c7988a8d9772f3e133598c6fc2fba73918453863a41055b6679f2465a529b6"
-    sha256 cellar: :any, x86_64_linux:  "0ebe029944576e370a4236b7796cdd63d42268420309df219a5a8953f01d2e92"
+    sha256 cellar: :any, arm64_tahoe:   "6d5dce6fbc0d9c1be7cb4b77f5eb4bf873fbdbe5b08ba34d169fc0457ba07a37"
+    sha256 cellar: :any, arm64_sequoia: "679ad34b8493804c56e83ba639720f740cef2ac9231c9a02209e13e8ee280496"
+    sha256 cellar: :any, arm64_sonoma:  "478d51652958cd258d1ee92cced207a1ffdbe474549e1150cf9c6fc61fdb60ad"
+    sha256 cellar: :any, sonoma:        "d1840cad423e65f837d39f0631b24ce94ea3ce08ba8991ed24aaf2c69daf78b7"
+    sha256 cellar: :any, arm64_linux:   "1412637680e70e8cfb2c28658103696d00e45c61a8f747d2dbf469b70eca6463"
+    sha256 cellar: :any, x86_64_linux:  "06372258f31682cb2aa62a9f638bf6b68b57467e1150345e4407b9adc9d6f65f"
   end
 
   depends_on "certifi" => :no_linkage
@@ -102,7 +102,7 @@ class Specify < Formula
   end
 
   test do
-    system bin/"specify", "init", "test-project", "--ai", "copilot", "--script", "sh", "--ignore-agent-tools"
+    system bin/"specify", "init", "test-project", "--integration", "copilot", "--script", "sh", "--ignore-agent-tools"
     assert_path_exists testpath/"test-project/.specify/memory/constitution.md"
 
     assert_match "Specify CLI is ready to use", shell_output("#{bin}/specify check")

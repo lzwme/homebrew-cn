@@ -1,8 +1,8 @@
 class Pay < Formula
   desc "HTTP client that automatically handles 402 Payment Required"
   homepage "https://github.com/solana-foundation/pay"
-  url "https://ghfast.top/https://github.com/solana-foundation/pay/archive/refs/tags/pay-v0.17.0.tar.gz"
-  sha256 "cb55623c0be1b26c9ca84d6ae491c8dcc628e45a0ffed4b2ac3b5a5e3158c38c"
+  url "https://ghfast.top/https://github.com/solana-foundation/pay/archive/refs/tags/pay-v0.18.0.tar.gz"
+  sha256 "20fbc747bd56274324fd2e03b6937dc2c80c6ab4ee01cd6f38ad5ad0f92ec2a3"
   license "MIT"
   head "https://github.com/solana-foundation/pay.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Pay < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2bbbc9a23dc8934130dde46f7d97c4b66c75c96e441e31c03bbb1d0026ad4928"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18d6316ce298a3bfa45fed5c88483c7f8ee5d207d7d548a68b3614e1071597a7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e82f46172fccd2e14129f12d64b32312b731e7b99cb63469d71567b008d91e05"
-    sha256 cellar: :any_skip_relocation, sonoma:        "af89d9e69ba4b13b53cc7f04238584c5fa0e7586cabde4b96d7db07e8695cd93"
-    sha256 cellar: :any,                 arm64_linux:   "36576d07b0fa81c4f7741b526dec5170929f1e0ae93561f894aa8f3652db5d53"
-    sha256 cellar: :any,                 x86_64_linux:  "a9d5fac8d3f424608d1f6f199878f416911c660d7b29491485263f24bb079fa7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "486cbf11eca39ff9d18e9e58c5a3f5865fdc8bef79bb3cde9279aa5d883072db"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c974ad050176c87b079e85b1304c6db3f16f5f9e4cd47b1bd3a8fe69f29678b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4831ea76acab32f6be042d923da9d8d2d028590c4bd438e0d5d0636d7f019806"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c07a30614b0f96f7061bae85f4baaf9678be42e01f4e88eed937cbe59ff8bab5"
+    sha256 cellar: :any,                 arm64_linux:   "a823eea8e53b10bacff0b63a20c3023b71070c2cb8898c48f94ea17a085dfb1d"
+    sha256 cellar: :any,                 x86_64_linux:  "c6fb59ed1a157deda95380fd10a099d53242003943179200d6082d4fe02004f5"
   end
 
   depends_on "just" => :build

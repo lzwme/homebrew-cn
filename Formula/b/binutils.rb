@@ -1,19 +1,19 @@
 class Binutils < Formula
   desc "GNU binary tools for native development"
   homepage "https://www.gnu.org/software/binutils/binutils.html"
-  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.46.0.tar.bz2"
-  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.46.0.tar.bz2"
-  sha256 "0f3152632a2a9ce066f20963e9bb40af7cf85b9b6c409ed892fd0676e84ecd12"
+  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.46.1.tar.bz2"
+  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.46.1.tar.bz2"
+  sha256 "324ed40ada2633a28eaa5d104ca5db165fd3cc3162cc1d48a7b7fa9c932da439"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later", "LGPL-2.0-or-later", "LGPL-3.0-only"]
   compatibility_version 1
 
   bottle do
-    sha256                               arm64_tahoe:   "274e1e41ddb008e2089fe5faaa832a0383abdda48acf26134ee59510cb8aac63"
-    sha256                               arm64_sequoia: "79e6d99c1d38ad33264131e8a7cc37e897416aeb39a099a62dd92f3c09fc59bd"
-    sha256                               arm64_sonoma:  "b2e3b4aa403f52a721ccd90ec6b71fdb0546280f20dfc117d158e6de527fdfc3"
-    sha256                               sonoma:        "9f4c9c9923a27f2be826e8d20d16ff9c1de50cd87aab5b10a1bd0e2641028d5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8ffe8d70c5462a8cd0364aa70ceb484707683e1a87e2f56d8315820ddf5beb5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "016d03201f1fa5f3c65a17a041f176f2e9037ae6a9c888dcad56b4710aa629c1"
+    sha256               arm64_tahoe:   "0fa7427cfdd1f13ed418e1c0b68a6ccd0bec6a42a332fdcbca082f86c2f41df0"
+    sha256               arm64_sequoia: "0718674cdd51382532b1380b172b52c0083faad78aad689192a85c3d63f66cd0"
+    sha256               arm64_sonoma:  "d59df6b8728e9b2b74f92e4613a3351e0bbb728cc76037c1a7ba1bea2c323a6e"
+    sha256               sonoma:        "fb1e98cfd6d046d05f13648231a8bc59576927120def25ba1315a49d6b9b972c"
+    sha256 cellar: :any, arm64_linux:   "668e2da50d0cabc4c3a5d09c31e19a2ae7e3aec3b33980254a6a54a943e32e58"
+    sha256 cellar: :any, x86_64_linux:  "3fa1925f8132d50e5602c543637c04b7dd7e50370b1ad7715da8458f2f99e71a"
   end
 
   keg_only "it shadows the host toolchain"

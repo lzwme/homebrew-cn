@@ -1,18 +1,18 @@
 class DartSdk < Formula
   desc "Dart Language SDK, including the VM, dart2js, core libraries, and more"
   homepage "https://dart.dev"
-  url "https://ghfast.top/https://github.com/dart-lang/sdk/archive/refs/tags/3.12.1.tar.gz"
-  sha256 "75aeca0e067865646636ffc8cfd4f1763b29bc75692ae6ed5ee69de8ec674e22"
+  url "https://ghfast.top/https://github.com/dart-lang/sdk/archive/refs/tags/3.12.2.tar.gz"
+  sha256 "e84861c0a725990b6efbec1ec3be7cbf38352983871f8e74c3d42bc259a0a0d8"
   license "BSD-3-Clause"
   compatibility_version 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92d1c592f12900045dcb9e54114f32c908a9e7958e4d3fb544a39574ae7eae49"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1945fc695994a2f3b78cb651a061ac42ec39435fc7d3826f7e0a43292ebb118a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6997d245b2cb1d8216a82f8638e0520f9f6be3be2f56d8915a54cd8bf1f42be4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1f43dd8597d2bd5bfa3b02bd7f14761122069c25880baa9f0b3157d8cd0e6e05"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e14374b436c66662534d272769421bd71152d45c4785c59d09f0e943915e57c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62e8663f0afd7902752a8124c3f457e8191e2327623aded8d41e12f27e004c97"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d98d388dfe2b2af3b1888fa5fd4ec4f722b4e8fc09dd6fb5df45fc5e338f7795"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "577e003e50e2735ca3cde53b2a1b51938b26c01098f6e82b2c57293f0d4e7c44"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a922f73ab00ffea950699afabaa91673fb0e88c9831123680a963138c6e24584"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e2d9edd7488c0659e4b39d45f09e450bac870cea68204cac2c90c7645a6e4aa7"
+    sha256 cellar: :any,                 arm64_linux:   "391cd9ba088a5b24372ec0613b7dde2785bf125a2b60b48f12b026720a1a4fb6"
+    sha256 cellar: :any,                 x86_64_linux:  "8393459aa9cada1b4a07cd5b12e0f4faa53ed358e84b02f5dac621e885bab05a"
   end
 
   depends_on "ninja" => :build

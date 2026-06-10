@@ -2,18 +2,17 @@ class Opensearch < Formula
   desc "Open source distributed and RESTful search engine"
   homepage "https://github.com/opensearch-project/OpenSearch"
   url "https://github.com/opensearch-project/OpenSearch.git",
-      tag:      "3.6.0",
-      revision: "4ca747d8d47f80162db323019357447126732e35"
+      tag:      "3.7.0",
+      revision: "72121f014083f9ca010fd5a7da83b2ec4886027f"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d4c2365ca4db4bdeeeacc439b2862fdc2ec1669debb0112ecd68fd3e1f2d375"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6485d06559c900bb2e84410fc897998a803c7c62757f152b504bddd1e40e5c1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6622bed240cc4c5cabd443bfbf1a1db97db8abef445310d4842d25237dfba320"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8ce4783200e4fc7a550732e3e9bfed8d74d273a5209fef18e2473e7edde439ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4766c1cd628f563b7a97b162ad7673990f55e20bc45284d0d12d848937e46d56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8f399ee6a63960c551fa3415c060a72d35f5c816656eff6ae27442c99402508"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "418e7068af25b035d8c73cde5ec31c562e2d94d726ff1bd2eda7011f0cb2916c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d155153c11c823656d1bc6d5691be5b9615a9564312513c06605ae53420ac91"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6389deceddb31f08816e4de2f82e518c1bd56af87c30b5be3d552133d1944f81"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b02d817c8de1d16abc9196971c33327a068975d6dd60f74ce5e0a802b91ad91f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "084a293e4e80e8e45f2f81bd699e05a1d2a7c03223d9936d0851899514e96d60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77efff352a3ad0637f535711d3e9aac2d7c957aaea9e245fd3c7e5903d9f3275"
   end
 
   # TODO: Use the vendored Gradle wrapper until its minor version matches Homebrew's `gradle`.

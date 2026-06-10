@@ -12,12 +12,13 @@ class Cherrytree < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7dbc04ed755d02d8724cacd678c924441cdf4c9b2e331d00e429741057219805"
-    sha256 arm64_sequoia: "e68888440aff463a046f5924ea8713c138d7743fe852c93d825ffd7f1d41e056"
-    sha256 arm64_sonoma:  "a2ff02aafe9daffa8fd60201e1e0718d2b8f2332c14fdbf3a3473d7cecf060bf"
-    sha256 sonoma:        "c7ac4467a86d1d0a616b52f0d3ba48bb171cd9b89cfc695b67acfed121565031"
-    sha256 arm64_linux:   "a38b5c830991a85a5cdc62aebac7e44b31c63cc6d6fe4d2c702a7667f45e1492"
-    sha256 x86_64_linux:  "98fcaa71eef71b86a1e478bacbfa4b8cb51546cf2992cdb959645b93640d0866"
+    rebuild 1
+    sha256 arm64_tahoe:   "69028fccdb4940366e4899b076b72c06394c46584f31396ac6ff3a3100b5c4b8"
+    sha256 arm64_sequoia: "d2d959e8f6ea6e2995a6d2b3f1a51a9aba46e4b81711e04500ec4d3fa4a97bd5"
+    sha256 arm64_sonoma:  "5b6c0e37f75eb06117d5341136123aef89dc1c5816a7d9e6c0fa4acdf33a9452"
+    sha256 sonoma:        "4c8cdcb77ac393abe7dd37ab91ce4a44064f4e8ad8588f2a954656e6e38853ac"
+    sha256 arm64_linux:   "816176b3d3e80e7665dec6f9828b5fcaaf20152556ccedc79b519e2662f8fa31"
+    sha256 x86_64_linux:  "4b3c44433183760324c412060c37edc5a039fc52b0e565ad57f3700124c7e585"
   end
 
   depends_on "cmake" => :build
@@ -39,6 +40,7 @@ class Cherrytree < Formula
   depends_on "gtkmm3"
   depends_on "gtksourceview4"
   depends_on "harfbuzz"
+  depends_on "librsvg" => :no_linkage # for SVG icon support
   depends_on "libsigc++@2"
   depends_on "libxml++"
   depends_on "pango"

@@ -1,18 +1,18 @@
 class CargoUpdate < Formula
   desc "Cargo subcommand for checking and applying updates to installed executables"
   homepage "https://github.com/nabijaczleweli/cargo-update"
-  url "https://ghfast.top/https://github.com/nabijaczleweli/cargo-update/archive/refs/tags/v20.0.0.tar.gz"
-  sha256 "7e9898ae686fe64c4cf75be5c4e9e6d5f6141371182a12e4bdaa806cfe321806"
+  url "https://ghfast.top/https://github.com/nabijaczleweli/cargo-update/archive/refs/tags/v20.0.2.tar.gz"
+  sha256 "729d47a7fb4c97e3460393bd70b1f3f0efce391397e0aac70618bed80c2336d5"
   license "MIT"
   head "https://github.com/nabijaczleweli/cargo-update.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fe4438edd2b0ad384e385bfbb32f460ccad51413b7f80c0a1024ea194aaf31a5"
-    sha256 cellar: :any,                 arm64_sequoia: "4892acbd6dcb1f707c16d96e20c38bb99c5e58eedec66a3136cdb7e063247f26"
-    sha256 cellar: :any,                 arm64_sonoma:  "f2d8d6e3acd8dfcbaacae64d47c2f5c62a4d9c8ab56d714b58e34c147904ca17"
-    sha256 cellar: :any,                 sonoma:        "54b3b6fdffd16d8801b31091058a99f3868f824620686e7e875067744fc8951a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "983090fde7ee534126ef080f10eac11643ca76b4ff40d4422c5bd809d22265c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd00fe026dc90276e90e94c76c7e7e2bcd3f5cc361e3321f72bfa67eed3ce9cf"
+    sha256 cellar: :any, arm64_tahoe:   "1a63a75b036853703b5f341ebe2a7c1904f7c23cd1cd43d877eefecb8d47df15"
+    sha256 cellar: :any, arm64_sequoia: "7a7dab56606b164560a70722aac791759b1f28d957b275985c0c0439277a6d73"
+    sha256 cellar: :any, arm64_sonoma:  "cf41a9c267ffbdc63b83b44c8f3b3ae1d03f414b4c24e0f4c7c3f0568c24d327"
+    sha256 cellar: :any, sonoma:        "59d2fbc276591c39f8728f7d51444557bf993eecd6e011fbff73202d3e85fc55"
+    sha256 cellar: :any, arm64_linux:   "424482c6424f3bba02c229cc56b4b97e92326f9797c88dd238760feba80d716e"
+    sha256 cellar: :any, x86_64_linux:  "9f3e5810b15e8fdd4b4f422a70fbae68efa82c216a97cea865eed02a8b4a321a"
   end
 
   depends_on "pkgconf" => :build

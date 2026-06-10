@@ -1,8 +1,8 @@
 class Abcmidi < Formula
   desc "Converts abc music notation files to MIDI files"
   homepage "https://ifdo.ca/~seymour/runabc/top.html"
-  url "https://ifdo.ca/~seymour/runabc/abcMIDI-2026.06.06.zip"
-  sha256 "6e895116d4fb17d679d166234966bf31e0f4ec0043d94027a9f003c427cbbb94"
+  url "https://ifdo.ca/~seymour/runabc/abcMIDI-2026.06.09.zip"
+  sha256 "4b19d93b66cf382e0a50e91206b1ac2082bdceeaa29d29f8b61738b576db8c40"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Abcmidi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77556970e60930fc282492d6712ee22deb9ff27b98ddcbbd548cf6e505c903f0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71053439084a390546130076063360b892c17204f03d64823de1ded1bb95d953"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd924797fc078805fd3591bc1dc9d6581a4ca5a241a903d89a0a8d82f86f9606"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5e4988460b17fc041f429fb8dfe56d89c9b203b58d04927810d30b552af242cb"
-    sha256 cellar: :any,                 arm64_linux:   "41d0f2ee013f9ca9a4b40becdb3c99f3c35cee6c02efb30205cb969a4fc9c8ae"
-    sha256 cellar: :any,                 x86_64_linux:  "f38c6d974fc6aa227af3b115182bed2639dbcfa3496cc7de8670ca46ade24169"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86749a5a4c79becbee4804bc41318352f5d5e22c0891a62ed850041453a60722"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f10831d262cc38cdc705f6d9ffed1b0b48be94281d89daca214b0eab8145314"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a7680bfd65269ed9c71517d8a9be0dbb3cb82148152da38d98cf9dd81ffe3ce"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cdc40e360405b88af8f4b7323b5002c11e8facabf6e29d907baa347a14518de7"
+    sha256 cellar: :any,                 arm64_linux:   "21e2b48aff01d92d055bc4962ee83a76b52b84160d68195f9425935f9a739dcf"
+    sha256 cellar: :any,                 x86_64_linux:  "469d41a626fbf6344c0d137ab4056117f490737f77527b3a3e82391f4a4160f3"
   end
 
   deny_network_access!

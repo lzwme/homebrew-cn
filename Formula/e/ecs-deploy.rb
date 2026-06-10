@@ -3,13 +3,12 @@ class EcsDeploy < Formula
 
   desc "CLI tool to simplify Amazon ECS deployments, rollbacks & scaling"
   homepage "https://github.com/fabfuel/ecs-deploy"
-  url "https://files.pythonhosted.org/packages/b3/66/c382012fc501aafc5257237440677506134863b623a0b7385221d5071f46/ecs_deploy-1.15.2.tar.gz"
-  sha256 "81fe02900caa4721c8277629ea371eb38f2cf854ff57b0443b17990ab377f5da"
+  url "https://files.pythonhosted.org/packages/56/1d/c2ab14c5660f45c668ec631cd22af2b1a373e13a9a8c03bcd379ffaf6387/ecs_deploy-1.16.3.tar.gz"
+  sha256 "ae26f972cfe2fd22f3312a09ce68e04d74b60f8ffe9b288ba95460b74ef24197"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "85f784b6db86fe7f4674c8984d837e9e72ad3704ffcf1c9a52c7b9c837d289f1"
+    sha256 cellar: :any_skip_relocation, all: "abe021bc9b059468cf68d11b5067bdcfd7e4f0c846434120f7deecd126474f69"
   end
 
   depends_on "certifi"
@@ -18,13 +17,13 @@ class EcsDeploy < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/1e/02/195d56d36b900ba28a75fc4c47c858a16237811acfde8f22f6de08236dae/boto3-1.43.11.tar.gz"
-    sha256 "3567c6a1f31d8e6bf151c95f76a2b1f239cce243a768a31747c2ba141c9a0570"
+    url "https://files.pythonhosted.org/packages/f3/8f/94dfa39ec618ecb2fe5b5b79428c95100e3ae3c1aa5083c283dd3cfb5ecd/boto3-1.43.24.tar.gz"
+    sha256 "ba5afa266bf7265e0c1a454fcfd48bffe5939cb16ed223bebc669c3dc8ee0bc8"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/e9/fa/4bec16fa5a4cde7b593e549238bfeb8ed1bdba9d427888a18c460a1f2352/botocore-1.43.11.tar.gz"
-    sha256 "d7d479cc2809ec2728f2898521003adfb79bfe6a4615c59dfd222ec52b0cee6b"
+    url "https://files.pythonhosted.org/packages/78/67/55d0611b341482bc9649d16df765f849a1862184ac3709356decf632279f/botocore-1.43.24.tar.gz"
+    sha256 "0c02f2b40e99419d496ece0ea2dcdedb5c45998c16fd1674276c7dbb30767a16"
   end
 
   resource "charset-normalizer" do
@@ -33,8 +32,8 @@ class EcsDeploy < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
-    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
+    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
+    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
   end
 
   resource "click-log" do
@@ -47,14 +46,9 @@ class EcsDeploy < Formula
     sha256 "17bacf5fbfe613ccf1b6d512bd766e6b21fb798822a133aa86098b8ac9997578"
   end
 
-  resource "future" do
-    url "https://files.pythonhosted.org/packages/a7/b2/4140c69c6a66432916b26158687e821ba631a4c9273c474343badf84d3ba/future-1.0.0.tar.gz"
-    sha256 "bd2968309307861edae1458a4f8a4f3598c03be43b97521076aebf5d94c07b05"
-  end
-
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "jmespath" do
@@ -68,13 +62,13 @@ class EcsDeploy < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/4c/d2/70fc708727b62d55bc24e43cc85f073039023212d482553d853c44e57bdb/requests-2.29.0.tar.gz"
-    sha256 "f2e34a75f4749019bb0e3effb66683630e4ffeaf75819fb51bebef1bf5aef059"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/9b/ec/7c692cde9125b77e84b307354d4fb705f98b8ccad59a036d5957ca75bfc3/s3transfer-0.17.0.tar.gz"
-    sha256 "9edeb6d1c3c2f89d6050348548834ad8289610d886e5bf7b7207728bd43ce33a"
+    url "https://files.pythonhosted.org/packages/e0/1f/12417f7f493fc45e1f9fd5d4a9b6c125cf8d2cf3f8ddbdfab3e76406e9d6/s3transfer-0.18.0.tar.gz"
+    sha256 "3760b8b7ec1315da54048b2d626276732bee4300d054d492d4e1d43e20d4ecbd"
   end
 
   resource "six" do
@@ -83,8 +77,8 @@ class EcsDeploy < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/e4/e8/6ff5e6bc22095cfc59b6ea711b687e2b7ed4bdb373f7eeec370a97d7392f/urllib3-1.26.20.tar.gz"
-    sha256 "40c2dc0c681e47eb8f90e7e27bf6ff7df2e677421fd46756da1161c39ca70d32"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   def install

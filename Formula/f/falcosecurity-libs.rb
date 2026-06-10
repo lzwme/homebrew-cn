@@ -1,8 +1,8 @@
 class FalcosecurityLibs < Formula
   desc "Core libraries for Falco and Sysdig"
   homepage "https://falcosecurity.github.io/libs/"
-  url "https://ghfast.top/https://github.com/falcosecurity/libs/archive/refs/tags/0.25.3.tar.gz"
-  sha256 "72af77e5cc3f0c20011f6623d7b5558113f1a9ca65df1ece9d97c09ada870e2e"
+  url "https://ghfast.top/https://github.com/falcosecurity/libs/archive/refs/tags/0.25.4.tar.gz"
+  sha256 "272a5a0c05e7c10a658ed9649023e6179061a4ab29e012602893586ac64b5938"
   license all_of: [
     "Apache-2.0",
     { any_of: ["GPL-2.0-only", "MIT"] }, # driver/
@@ -15,12 +15,12 @@ class FalcosecurityLibs < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "96931708ec5d23c00919fcea35300979f5320bcf606f0f76a36c3057927dd903"
-    sha256 cellar: :any, arm64_sequoia: "bccea6b28e4d61dfb4b7fc92fc939fd958d83506d7e694f27cee79d7d9088968"
-    sha256 cellar: :any, arm64_sonoma:  "a315030a0081a2b55916ba18fcf9425b4dbc6b8ef1526b8660afde7a9a95aca4"
-    sha256 cellar: :any, sonoma:        "7dd3485ccf89c976f7f5f59bba34e18baec8d85b0fb1bcc4d0c9eb7a81d6aada"
-    sha256 cellar: :any, arm64_linux:   "04561a112ffaf56309fadc1940f9111e9bac34a6594657fa0e2de54c14b6132a"
-    sha256 cellar: :any, x86_64_linux:  "a64d02e4f67b8e226d47adfd1418eff762ff9ecb8e6b46923b41924f05622845"
+    sha256 cellar: :any, arm64_tahoe:   "c2fb9fce6c52339aecd0188eeba179ce9b892687facbd4e8ceb26d00afe21672"
+    sha256 cellar: :any, arm64_sequoia: "666d3a149e4236d5a030634d0d4c3b868a1e1c0651e945a0ff5d2426876e038d"
+    sha256 cellar: :any, arm64_sonoma:  "07c8c8fc98294c63bd51935fc20e460556305d14c2b94ffca49cae90db07db00"
+    sha256 cellar: :any, sonoma:        "c3afe8a1760123bd7a34857399f282bff14e497c3350fa1138c6f2df73d529d8"
+    sha256 cellar: :any, arm64_linux:   "a68fe882d7876b866ed31b9bb5f9b78e2b2fa2b4fdc5461935166e7c4de88e52"
+    sha256 cellar: :any, x86_64_linux:  "194c569e1d36ec07246cc6353eccad3ba3813e02c52faeab5e0b59d0c705aa5f"
   end
 
   depends_on "cmake" => :build

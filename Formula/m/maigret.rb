@@ -6,15 +6,16 @@ class Maigret < Formula
   url "https://files.pythonhosted.org/packages/e3/d6/2e342593372b0e215f3080af6c0c3493250a1321c3348a54a018fc173963/maigret-0.6.1.tar.gz"
   sha256 "e1cc37b008ccf83ec64039c0b5c7219c607da8bcd1423157f299c3c58aa84dce"
   license "MIT"
+  revision 1
   head "https://github.com/soxoj/maigret.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f44b1ac193f3f604e0b9ac642a5477f91a98bc18c2c0881c307a6d299191f188"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97f6cb596cc3d7d4dad84b932e0285f3aa6a82afb1c260b538d6e22d2b350aff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec425c25bbc8bd629e36c5bb910131922de5f5b0ccb0e388e5d8a4273575beac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "32b920b4f88e8d766dd7a35c1c3266872790132eea9f3c11a65d70a337b921b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b45a1803e795f3c1fb47c7bcdb653f6ebb08d0273d2f29b1290704f3ac4c665"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "832944194968f4255e30d02b104a2b12858866c245fbb4807900f122ce210eaf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b4ad879dfd4bbaa104ef850efd1190fb78930a180342063747ef9b1cb896909"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2f363b797e7a509ca757d6fb690e1b9257ad296381f75855f9072df1c5bf1c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46a064ea7dbcf7c8dde6655cf4a63ee3f6dc77d549fb974af1fe494fbe86531e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "77e568508307b22bc1d259a5dc14513cb9d8512c84ef61f10d0d1792b19ab32c"
+    sha256 cellar: :any,                 arm64_linux:   "be725ca75377d3b1e25b12de7e286b00d4f686dc631f93fcaaf71cc2d5f96dee"
+    sha256 cellar: :any,                 x86_64_linux:  "6c08667ae24313c32d5498f682c03f9fbaa3d1f4a840ab165359b8663227ce91"
   end
 
   depends_on "cmake" => :build # for pycares
@@ -39,18 +40,18 @@ class Maigret < Formula
   end
 
   resource "aiodns" do
-    url "https://files.pythonhosted.org/packages/7f/70/2047b454e8210a19876c263b801a4a1b3649f48af044bd076be468a8bd65/aiodns-4.0.3.tar.gz"
-    sha256 "33c53dc0e83826a18d6feb3f99df7bf520c0e79ac6ede0daf9aa7af8ffe81358"
+    url "https://files.pythonhosted.org/packages/9b/22/a2d928e0e42baad0471d12ec44c71152ac870486e8298dddb2893b888c29/aiodns-4.0.4.tar.gz"
+    sha256 "cb10e0c0d2591636716ad2fe402e977c16d71bdaf76bb8cb49e8a6633596f736"
   end
 
   resource "aiohappyeyeballs" do
-    url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"
-    sha256 "c3f9d0113123803ccadfdf3f0faa505bc78e6a72d1cc4806cbd719826e943558"
+    url "https://files.pythonhosted.org/packages/33/c6/61a2d7b7572279226bb2e7f61d7a19ca7c90da0329c93fa0d560cbf288d8/aiohappyeyeballs-2.6.2.tar.gz"
+    sha256 "e202810ee718bd01fc6ef49e8ea53d023d5cb6b581076d7925aa499fa55dbe64"
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
-    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
+    url "https://files.pythonhosted.org/packages/82/78/8ea7308cac6934de8c74a14f3d5f65d1c89287426688be79538d0e5c013d/aiohttp-3.14.1.tar.gz"
+    sha256 "307f2cff90a764d329e77040603fa032db89c5c24fdad50c4c15334cba744035"
   end
 
   resource "aiohttp-socks" do
@@ -114,8 +115,8 @@ class Maigret < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
+    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
   end
 
   resource "cloudscraper" do
@@ -134,8 +135,8 @@ class Maigret < Formula
   end
 
   resource "decorator" do
-    url "https://files.pythonhosted.org/packages/43/fa/6d96a0978d19e17b68d634497769987b16c8f4cd0a7a05048bec693caa6b/decorator-5.2.1.tar.gz"
-    sha256 "65f266143752f734b0a7cc83c46f4618af75b8c5911b00ccb61d0ac9b6da0360"
+    url "https://files.pythonhosted.org/packages/60/8b/32f9823da46cde7df2087faa08cd98d01b908f8dcab982cdba9c84e85355/decorator-5.3.1.tar.gz"
+    sha256 "4cbcdd55a6efadb9dbea26b858f4fb3264567b52d69ca0d25b721b553f60ea82"
   end
 
   resource "executing" do
@@ -178,16 +179,23 @@ class Maigret < Formula
       url "https://github.com/html5lib/html5lib-python/commit/b90dafff1bf342d34d539098013d0b9f318c7641.patch?full_index=1"
       sha256 "779f8bab52308792b7ac2f01c3cd61335587640f98812c88cb074dce9fe8162d"
     end
+
+    # Python 3.14 with setuptools 81+ compatibility (`pkg_resources` removal)
+    # upstream pr ref, https://github.com/html5lib/html5lib-python/pull/592
+    patch do
+      url "https://github.com/html5lib/html5lib-python/commit/1dbc19cd6db72cb919885827bc4883423e0cb647.patch?full_index=1"
+      sha256 "5951b823f353dd70806ad6e163ab8f46899496c1e8bb53970c99abe8d1df1a78"
+    end
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "ipython" do
-    url "https://files.pythonhosted.org/packages/cd/c4/87cda5842cf5c31837c06ddb588e11c3c35d8ece89b7a0108c06b8c9b00a/ipython-9.13.0.tar.gz"
-    sha256 "7e834b6afc99f020e3f05966ced34792f40267d64cb1ea9043886dab0dde5967"
+    url "https://files.pythonhosted.org/packages/e2/23/3a27530575643c8bb7bfc757a28e2e7ef80092afbf59a2bc5716320b6602/ipython-9.14.1.tar.gz"
+    sha256 "f913bf74df06d458e46ced84ca506c23797590d594b236fe60b14df213291e7b"
   end
 
   resource "ipython-pygments-lexers" do
@@ -211,13 +219,13 @@ class Maigret < Formula
   end
 
   resource "jsonpickle" do
-    url "https://files.pythonhosted.org/packages/e4/a6/d07afcfdef402900229bcca795f80506b207af13a838d4d99ad45abf530c/jsonpickle-4.1.1.tar.gz"
-    sha256 "f86e18f13e2b96c1c1eede0b7b90095bbb61d99fedc14813c44dc2f361dbbae1"
+    url "https://files.pythonhosted.org/packages/8d/c0/dde9b4b42cc415b9579573f967f12efbb034e427a2a37e93ad5139891d87/jsonpickle-4.1.2.tar.gz"
+    sha256 "8afed18aa189fd81e2e833b426bb4af485594921f0b1d36c2001fc5637a2f210"
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
-    sha256 "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13"
+    url "https://files.pythonhosted.org/packages/05/3b/aab6728cae887456f409b4d75e8a01856e4f04bd510de38052a47768b680/lxml-6.1.1.tar.gz"
+    sha256 "ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40"
   end
 
   resource "markdown-it-py" do
@@ -266,8 +274,8 @@ class Maigret < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
-    sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
+    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
+    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
   end
 
   resource "prompt-toolkit" do
@@ -385,8 +393,8 @@ class Maigret < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/7b/ae/2d9c981590ed9999a0d91755b47fc74f74de286b0f5cee14c9269041e6c4/soupsieve-2.8.3.tar.gz"
-    sha256 "3267f1eeea4251fb42728b6dfb746edc9acaffc4a45b27e19450b676586e8349"
+    url "https://files.pythonhosted.org/packages/47/2c/0a5f6f8ee0d5589e48c7640213ed5175d52cf540a06725b628cc1a45d6ce/soupsieve-2.8.4.tar.gz"
+    sha256 "e121fd02e975c695e4e9e8774a5ee35d74714b59307868dcc5319ad2d9e3328e"
   end
 
   resource "stack-data" do
@@ -410,8 +418,8 @@ class Maigret < Formula
   end
 
   resource "traitlets" do
-    url "https://files.pythonhosted.org/packages/1b/22/40f55b26baeab80c2d7b3f1db0682f8954e4617fee7d90ce634022ef05c6/traitlets-5.15.0.tar.gz"
-    sha256 "4fead733f81cf1c4c938e06f8ca4633896833c9d89eff878159457f4d4392971"
+    url "https://files.pythonhosted.org/packages/57/a9/a2584b8313b89f94869ddb3c4074617a691de1812a614d2d50e32ca5a7a6/traitlets-5.15.1.tar.gz"
+    sha256 "7b1c07854fe25acb39e009bae49f11b79ff6cbb2f27999104e9110e7a6b53722"
   end
 
   resource "typing-extensions" do
@@ -425,8 +433,8 @@ class Maigret < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
-    sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
+    url "https://files.pythonhosted.org/packages/49/b4/51fe890511f0f242d07cb1ebe6a5b6db417262b9d2568b460347c57d95cc/wcwidth-0.8.1.tar.gz"
+    sha256 "faf5b4a5366a72dc49cad48cdf21f52bdf63bdda995178e483ba247ff79089b9"
   end
 
   resource "webencodings" do
@@ -445,16 +453,11 @@ class Maigret < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/23/6e/beb1beec874a72f23815c1434518bfc4ed2175065173fb138c3705f658d4/yarl-1.23.0.tar.gz"
-    sha256 "53b1ea6ca88ebd4420379c330aea57e258408dd0df9af0992e5de2078dc9f5d5"
+    url "https://files.pythonhosted.org/packages/79/12/1e8f37460ea0f7eb59c221fdaf0ed75e7ac43e97f8093b9c6f411df50a78/yarl-1.24.2.tar.gz"
+    sha256 "9ac374123c6fd7abf64d1fec93962b0bd4ee2c19751755a762a72dd96c0378f8"
   end
 
   def install
-    # Workaround for https://github.com/html5lib/html5lib-python/issues/593
-    odie "Check if setuptools workaround can be removed!" if resource("html5lib").version > "1.1.0"
-    (buildpath/"build-constraints.txt").write "setuptools<82\n"
-    ENV["PIP_BUILD_CONSTRAINT"] = buildpath/"build-constraints.txt"
-
     virtualenv_install_with_resources
   end
 

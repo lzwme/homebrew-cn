@@ -4,12 +4,12 @@ class Audacious < Formula
   license "BSD-2-Clause"
 
   stable do
-    url "https://distfiles.audacious-media-player.org/audacious-4.6.tar.bz2"
-    sha256 "03988a6a114e46f91dabcd4d0dae29fcad19f6029e3c28737938d1bd525979dd"
+    url "https://distfiles.audacious-media-player.org/audacious-4.6.1.tar.bz2"
+    sha256 "62a5a609267eca7f6e3ce52ef6f42d5618d2961e3b4ddc227c6a5859026965d9"
 
     resource "plugins" do
-      url "https://distfiles.audacious-media-player.org/audacious-plugins-4.6.tar.bz2"
-      sha256 "ce708bca0194d3a1b2b8a89a2892e1c7798f374593563fb21c4c64b24ab8d83a"
+      url "https://distfiles.audacious-media-player.org/audacious-plugins-4.6.1.tar.bz2"
+      sha256 "22e58a8a2c3f3caa9687434353618c822963cc8846cd239de36d4e8e5bd166a6"
 
       livecheck do
         formula :parent
@@ -23,12 +23,12 @@ class Audacious < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7cefd7462e7f7a259655947ee317357d4196350167eb20533630dd8ee911bd20"
-    sha256 arm64_sequoia: "0dcd01cbfbb15866216c1f16cb04fe0eff533f3f86afe1824e10541da97d6452"
-    sha256 arm64_sonoma:  "cbc3a8ea2d971737721cf8755f9437877ef517fc0e26d8fd68df08aec3334cc7"
-    sha256 sonoma:        "8c51e959c828e4473cd518797745aba2d436441c4df16421c2d2077387f2e46e"
-    sha256 arm64_linux:   "bd9809b62b88d81ade5b2db2367890e4cd2ac73a1bf48905f257765704e93f92"
-    sha256 x86_64_linux:  "0ec9e9f1ed395a8f43bf637056a8a613ba8ff0378168f6d3f08af7a7c9b2489a"
+    sha256 arm64_tahoe:   "04cde63b7247dccdeb11b5b3e308ed067c81815b8bf4cf7826341b05e7585ce7"
+    sha256 arm64_sequoia: "f0c2565c9c49186b656d1e301bfcbca37cbdd105a70ddd602b6a5b5129473446"
+    sha256 arm64_sonoma:  "13decdae5843a78ee442b4c25ca790a6eec08f565dd4e4a762ba249af49a9944"
+    sha256 sonoma:        "14a74c3c1abe1f6e9ec8e2508283599951ff92c28f91b99216fb9ec4c1a0982d"
+    sha256 arm64_linux:   "c73ddbc98ea710461e86f986c17cc5397e1bace4f84f869d7840c8ae5b723f2b"
+    sha256 x86_64_linux:  "66e656d2e30eb02c64fbae93ba946e5ecd8e1b6c525f99224cefff70d1c66379"
   end
 
   head do

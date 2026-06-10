@@ -6,16 +6,16 @@ class SlitherAnalyzer < Formula
   url "https://files.pythonhosted.org/packages/b0/e8/bf6efe567dffbab0d850bd2395a7a1db68fe1a95bfb507854be00571832c/slither_analyzer-0.11.5.tar.gz"
   sha256 "d90af76b86bdf7ced56fc4c8eea8792cde1ec2c375372d5e70298c2ff998d5e1"
   license "AGPL-3.0-only"
-  revision 5
+  revision 6
   head "https://github.com/crytic/slither.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f737df4fd2f78b12ff406fa78f34a315891a2ce69f2d5c2ea2dcc9ecbc6d6695"
-    sha256 cellar: :any,                 arm64_sequoia: "e8490f649d5404f54a50f60241436eface7aa7fb0cd1f5d3d90fa5e16c148af7"
-    sha256 cellar: :any,                 arm64_sonoma:  "0937a73f547f5e8971e7887676d3f668c607a31bc466ab472d60a80ce04534e0"
-    sha256 cellar: :any,                 sonoma:        "833ec4b36376ac9f3e93cff46a5ecf7074cc1d61313a190d829f98db8557c803"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "03adf6c717d86063dfe8830814f07e0a2c3c43d06e67f82a59a2091666f09976"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "482db96c26ac32b9138491f973645c110e1f12fbf61d14bdadf635fc0bd1cd4f"
+    sha256 cellar: :any, arm64_tahoe:   "a0e87a0ada099509498b17f632d23a21ee8b285429ad73a8d54be8a29cfa3ba3"
+    sha256 cellar: :any, arm64_sequoia: "b46d1e04c4fca0fd6b96d52e36faab8b1c8f2a3abeb66dd4f00ac76d501d573d"
+    sha256 cellar: :any, arm64_sonoma:  "2f3c2860bca4fcdd5ec9add0cf02cf015add37803cb643deaf8fb37cbd38eba9"
+    sha256 cellar: :any, sonoma:        "bea21f8cbbbbc3c03b85b1296dbed6b5684a4f10d6e95142709152fbcb933548"
+    sha256 cellar: :any, arm64_linux:   "c7fa5d78709b97953a986a391d7c1925353fe4c6d05b9551de215ecb5ceedf42"
+    sha256 cellar: :any, x86_64_linux:  "27dfc847ac5fb6c8c65ee00bf65473795d9725df8be105d4f90c49a33fea7176"
   end
 
   depends_on "rust" => :build # for cbor2
@@ -26,13 +26,13 @@ class SlitherAnalyzer < Formula
   pypi_packages exclude_packages: ["certifi", "pydantic"]
 
   resource "aiohappyeyeballs" do
-    url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"
-    sha256 "c3f9d0113123803ccadfdf3f0faa505bc78e6a72d1cc4806cbd719826e943558"
+    url "https://files.pythonhosted.org/packages/33/c6/61a2d7b7572279226bb2e7f61d7a19ca7c90da0329c93fa0d560cbf288d8/aiohappyeyeballs-2.6.2.tar.gz"
+    sha256 "e202810ee718bd01fc6ef49e8ea53d023d5cb6b581076d7925aa499fa55dbe64"
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
-    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
+    url "https://files.pythonhosted.org/packages/82/78/8ea7308cac6934de8c74a14f3d5f65d1c89287426688be79538d0e5c013d/aiohttp-3.14.1.tar.gz"
+    sha256 "307f2cff90a764d329e77040603fa032db89c5c24fdad50c4c15334cba744035"
   end
 
   resource "aiosignal" do
@@ -51,8 +51,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "cbor2" do
-    url "https://files.pythonhosted.org/packages/04/31/74b54539251d2c617875bee73df0b0473dc0b2eabcafa274a85eb69227f9/cbor2-6.1.0.tar.gz"
-    sha256 "7a988431ef0e0e24dab2c701d78b48d23389c24b96a7c82dbd90353af335e141"
+    url "https://files.pythonhosted.org/packages/75/af/473c241e41c142ea06ebef8d1f660fa6ff928fb97210e7bec8ee5974f8cd/cbor2-6.1.2.tar.gz"
+    sha256 "6b43037a66947dee5af0abb1a4c3a13b3abac5a4a3f32f9771efbbcd030fd909"
   end
 
   resource "charset-normalizer" do
@@ -126,8 +126,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "multidict" do
@@ -171,8 +171,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
-    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "rlp" do
@@ -191,8 +191,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "types-requests" do
-    url "https://files.pythonhosted.org/packages/6d/f7/3228dd3794941bcb92ca6ca2045a6671a828ec0b47becbef23310bc45559/types_requests-2.33.0.20260513.tar.gz"
-    sha256 "bd845450e954e751373d5d33526742592f298808a3ee3bda7e858e46b839b57f"
+    url "https://files.pythonhosted.org/packages/e0/01/c5a19253fe1ac159159ddf9a3a07cec8bb5e486ec4d9002ad2821da0e5d2/types_requests-2.33.0.20260518.tar.gz"
+    sha256 "df7bd3bfe0ca8402dfb841e7d9be714bb5578203283d66d7dc4ef69343449a5e"
   end
 
   resource "urllib3" do
@@ -201,8 +201,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
-    sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
+    url "https://files.pythonhosted.org/packages/49/b4/51fe890511f0f242d07cb1ebe6a5b6db417262b9d2568b460347c57d95cc/wcwidth-0.8.1.tar.gz"
+    sha256 "faf5b4a5366a72dc49cad48cdf21f52bdf63bdda995178e483ba247ff79089b9"
   end
 
   resource "web3" do
@@ -216,8 +216,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/23/6e/beb1beec874a72f23815c1434518bfc4ed2175065173fb138c3705f658d4/yarl-1.23.0.tar.gz"
-    sha256 "53b1ea6ca88ebd4420379c330aea57e258408dd0df9af0992e5de2078dc9f5d5"
+    url "https://files.pythonhosted.org/packages/79/12/1e8f37460ea0f7eb59c221fdaf0ed75e7ac43e97f8093b9c6f411df50a78/yarl-1.24.2.tar.gz"
+    sha256 "9ac374123c6fd7abf64d1fec93962b0bd4ee2c19751755a762a72dd96c0378f8"
   end
 
   def install

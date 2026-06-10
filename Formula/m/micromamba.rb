@@ -1,8 +1,8 @@
 class Micromamba < Formula
   desc "Fast Cross-Platform Package Manager"
   homepage "https://github.com/mamba-org/mamba"
-  url "https://ghfast.top/https://github.com/mamba-org/mamba/archive/refs/tags/2.8.0.tar.gz"
-  sha256 "f1354cea86ebed1ff9cdcef29b800de704b2eec823fe7f1ccbafdbf6fe999f95"
+  url "https://ghfast.top/https://github.com/mamba-org/mamba/archive/refs/tags/2.8.1.tar.gz"
+  sha256 "5f8f206ed5951e45dc3c9bf5aad80d38312d34d9fadc9cc00886e6ab93569e53"
   license "BSD-3-Clause"
   head "https://github.com/mamba-org/mamba.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Micromamba < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "856d868fa08fb9e6af377f70e088efc31b13bcc69aa44b66b81332adede28d6a"
-    sha256 cellar: :any, arm64_sequoia: "dbac5c71aaada1dc25f7b85ebb629e665247907333e40a8530b8b6938b0967f3"
-    sha256 cellar: :any, arm64_sonoma:  "32b868fc76f52061d3c7f203ed229c4d5d65a6feb74f1a939973f0944b61b61b"
-    sha256 cellar: :any, sonoma:        "915ce4d8f29a191f5092d8e4626bf5156b0bb13ca5d0ccf2c52f8b9b4613ced3"
-    sha256 cellar: :any, arm64_linux:   "4b0ecae5d814c849efb1bc94ed2dec4edb83299f4bc2053045d6a35ac3d656ad"
-    sha256 cellar: :any, x86_64_linux:  "2c01150fab5f357f2e15f3a974dfea016232eee7b7631731778067efa8ae5a56"
+    sha256 cellar: :any, arm64_tahoe:   "69a0d32b9abf065ad5de2d6cba2e4e39f42013f4af3248941ff75a00edc90ae9"
+    sha256 cellar: :any, arm64_sequoia: "e6455f21f75c24488997e5dce18fc2c5e0c287a79ac8a6533b3c7889d54da74d"
+    sha256 cellar: :any, arm64_sonoma:  "a0becb5092713db1c755d170554ee67394e5fbe2191de67f181ffb0548185b11"
+    sha256 cellar: :any, sonoma:        "9892e0439655a57c9c4ef94f4e3a2d719f70d27e06d314952bbca274166c04b2"
+    sha256 cellar: :any, arm64_linux:   "4b602161c654ab3ff0aed2ae372ade5631bfba0fc4d540ad1c5627818aec6ec9"
+    sha256 cellar: :any, x86_64_linux:  "faf2ff732be7ef1880e5d79d39c49dab036c736095c45a796955ff777815df28"
   end
 
   depends_on "cli11" => :build

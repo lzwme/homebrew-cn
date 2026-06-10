@@ -16,12 +16,13 @@ class Ffmpeg < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "77ffdd3eb03f079eaf2a815143ca4bc6352ad694c88d03e4e5798d6d1f3c881d"
-    sha256 arm64_sequoia: "8d0e790194705d684e7baba9d75f24aa220811600861061e9121df7b5db7e3f7"
-    sha256 arm64_sonoma:  "dbc651c6f6b4e9dce0980e29dceab9672bb676d1266447b5b1aecb24d90d0ef8"
-    sha256 sonoma:        "2651703294b954a745b5dfb93d20537b92b86d6e6fc8c15cb27dd1d626ba1dfc"
-    sha256 arm64_linux:   "9e11c2041abb2877b5770e4493e37f9fbe78562b3854c93b107f3978bb091a29"
-    sha256 x86_64_linux:  "865d382f79f56d505703c903769459c8d6ce6e4c2b1dfa32f3fd3b389bb66310"
+    rebuild 1
+    sha256 arm64_tahoe:   "1d2ef725aa9eb91b3d470a3d6e19257563c927e18a49ba94f619714a2081f3bc"
+    sha256 arm64_sequoia: "b7e349b89442406114070817698304fc124b523e0e76ba33cbb40f3021ef53f0"
+    sha256 arm64_sonoma:  "be2cf1454e80af1a13544df9081d5c5e51d76b81deaa18a4535182f34ecc3198"
+    sha256 sonoma:        "9f89a6a409346ea953a15a0ee27011ccdf660e09fb600ae2a064f4d637b0517e"
+    sha256 arm64_linux:   "2b4868d28550b7a87666d3ce7c431b6fe1de1021b6284addec53e456033a527a"
+    sha256 x86_64_linux:  "85a0a35aa20c97721c647f6a973f13bd56194b9d767b007376abb41e4d2709e1"
   end
 
   depends_on "pkgconf" => :build
@@ -55,6 +56,8 @@ class Ffmpeg < Formula
   on_intel do
     depends_on "nasm" => :build
   end
+
+  deny_network_access!
 
   def install
     # The new linker leads to duplicate symbol issue https://github.com/homebrew-ffmpeg/homebrew-ffmpeg/issues/140

@@ -57,7 +57,7 @@ class Pkgconf < Formula
     args = %W[
       --disable-silent-rules
       --with-pkg-config-dir=#{pc_path.uniq.join(File::PATH_SEPARATOR)}
-      --with-system-includedir=#{MacOS.sdk_path_if_needed if OS.mac?}/usr/include
+      --with-system-includedir=#{MacOS.sdk_path if OS.mac?}/usr/include
       --with-system-libdir=/usr/lib
     ]
 

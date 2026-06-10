@@ -1,6 +1,6 @@
 class Libgee < Formula
   desc "Collection library providing GObject-based interfaces"
-  homepage "https://wiki.gnome.org/Projects/Libgee"
+  homepage "https://gitlab.gnome.org/GNOME/libgee"
   url "https://download.gnome.org/sources/libgee/0.20/libgee-0.20.8.tar.xz"
   sha256 "189815ac143d89867193b0c52b7dc31f3aa108a15f04d6b5dca2b6adfad0b0ee"
   license "LGPL-2.1-or-later"
@@ -28,14 +28,6 @@ class Libgee < Formula
   end
 
   def install
-    # ensures that the gobject-introspection files remain within the keg
-    inreplace "gee/Makefile.in" do |s|
-      s.gsub! "@HAVE_INTROSPECTION_TRUE@girdir = @INTROSPECTION_GIRDIR@",
-              "@HAVE_INTROSPECTION_TRUE@girdir = $(datadir)/gir-1.0"
-      s.gsub! "@HAVE_INTROSPECTION_TRUE@typelibdir = @INTROSPECTION_TYPELIBDIR@",
-              "@HAVE_INTROSPECTION_TRUE@typelibdir = $(libdir)/girepository-1.0"
-    end
-
     system "./configure", *std_configure_args
     system "make", "install"
   end

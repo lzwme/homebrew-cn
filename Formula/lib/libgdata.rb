@@ -48,7 +48,7 @@ class Libgdata < Formula
     ENV.prepend_path "XDG_DATA_DIRS", Formula["libsoup@2"].opt_share
     ENV.prepend_path "XDG_DATA_DIRS", HOMEBREW_PREFIX/"share"
 
-    curl_lib = OS.mac? ? "#{MacOS.sdk_path_if_needed}/usr/lib" : Formula["curl"].opt_lib
+    curl_lib = OS.mac? ? "#{MacOS.sdk_path}/usr/lib" : Formula["curl"].opt_lib
     ENV.append "LDFLAGS", "-L#{curl_lib} -lcurl"
 
     args = %w[

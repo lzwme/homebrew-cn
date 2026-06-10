@@ -6,15 +6,15 @@ class Codelimit < Formula
   url "https://files.pythonhosted.org/packages/b7/e5/36aae3a408a00642a7ffa95c200799bdcecb8402e495f4ceffca44a7ab13/codelimit-0.21.0.tar.gz"
   sha256 "bd43892398acd2e20fa97d37cb6180e679745c6125253a055a55f75357bf8afb"
   license "GPL-3.0-or-later"
-  revision 7
+  revision 8
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "942fd693206f1b654ceaf521d3026fd5f4f7af390eab80406a53e3099bbf50b9"
-    sha256 cellar: :any,                 arm64_sequoia: "501f42211744ec29359f9516083a4bad3157c64243bbaeb78e32769a29c35905"
-    sha256 cellar: :any,                 arm64_sonoma:  "0c7346ea32e685114c95296998b824e9fd2e081a599785d8308d04e17dbf2096"
-    sha256 cellar: :any,                 sonoma:        "d75813401645aed3588cdf4c749a6d5e2f3d56dc15d1fdc8be29719d5ab2a70d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "25ab502fed25dca1feee7068efabaccf53eb739d259dcd0a648a398eb8ada7d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7763c44be52f5b6158c3c8c5d65cfe97263a218c9f0a3a03ea7ee27530e2fda0"
+    sha256 cellar: :any, arm64_tahoe:   "54cbc6908386fda0ae3543e9a1e776bd65d1d6e1c92d7fe3278696cd76f82945"
+    sha256 cellar: :any, arm64_sequoia: "9264b0545efe5650395c552f4d7bf48d5c8ee525fd48256e0a09933437cf6b43"
+    sha256 cellar: :any, arm64_sonoma:  "464506149237a75d46c56fd59924f420cd84dedd0a3c61b0601ef5a3824b3f18"
+    sha256 cellar: :any, sonoma:        "65408546ab085a0757cdd114ada3f223738f81e0c290e6cdc91a8671d8805bd6"
+    sha256 cellar: :any, arm64_linux:   "25d8a843e906fe95948e480a68829d3171d8eeed951b1f568a4517ba156318c4"
+    sha256 cellar: :any, x86_64_linux:  "86bb7597bbea7dfdb7714988338cc324539d40d35c8449ce81c011633bc309da"
   end
 
   depends_on "certifi" => :no_linkage
@@ -24,13 +24,13 @@ class Codelimit < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "aiohappyeyeballs" do
-    url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"
-    sha256 "c3f9d0113123803ccadfdf3f0faa505bc78e6a72d1cc4806cbd719826e943558"
+    url "https://files.pythonhosted.org/packages/33/c6/61a2d7b7572279226bb2e7f61d7a19ca7c90da0329c93fa0d560cbf288d8/aiohappyeyeballs-2.6.2.tar.gz"
+    sha256 "e202810ee718bd01fc6ef49e8ea53d023d5cb6b581076d7925aa499fa55dbe64"
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
-    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
+    url "https://files.pythonhosted.org/packages/82/78/8ea7308cac6934de8c74a14f3d5f65d1c89287426688be79538d0e5c013d/aiohttp-3.14.1.tar.gz"
+    sha256 "307f2cff90a764d329e77040603fa032db89c5c24fdad50c4c15334cba744035"
   end
 
   resource "aiosignal" do
@@ -64,8 +64,8 @@ class Codelimit < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "markdown-it-py" do
@@ -119,8 +119,8 @@ class Codelimit < Formula
   end
 
   resource "sh" do
-    url "https://files.pythonhosted.org/packages/59/52/f43920223c93e31874677c681b8603d36a40d3d8502d3a37f80d3995d43e/sh-2.2.2.tar.gz"
-    sha256 "653227a7c41a284ec5302173fbc044ee817c7bad5e6e4d8d55741b9aeb9eb65b"
+    url "https://files.pythonhosted.org/packages/cf/20/4601f39e47d84c281a2d66c15e0052a4a2b2256b46116758a5baee72ea8d/sh-2.2.6.tar.gz"
+    sha256 "0cb3fac1a202a213b843d0fb9fa713da2444d4fc2e75d4ae83cd96e2a2095465"
   end
 
   resource "shellingham" do
@@ -129,8 +129,8 @@ class Codelimit < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/fd/07/b822e1b307d40e263e8253d2384cf98c51aa2368cc7ba9a07e523a1d964b/typer-0.23.1.tar.gz"
-    sha256 "2070374e4d31c83e7b61362fd859aa683576432fd5b026b060ad6b4cd3b86134"
+    url "https://files.pythonhosted.org/packages/5e/ed/ef06584ccdd5c410df0837951ecd7e15d9a6144ea1bd4c73cecab1a89891/typer-0.26.7.tar.gz"
+    sha256 "e314a34c617e419c091b2830dda3ea1f257134ff593061a8f5b9717ab8dddb3a"
   end
 
   resource "urllib3" do
@@ -139,8 +139,8 @@ class Codelimit < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/23/6e/beb1beec874a72f23815c1434518bfc4ed2175065173fb138c3705f658d4/yarl-1.23.0.tar.gz"
-    sha256 "53b1ea6ca88ebd4420379c330aea57e258408dd0df9af0992e5de2078dc9f5d5"
+    url "https://files.pythonhosted.org/packages/79/12/1e8f37460ea0f7eb59c221fdaf0ed75e7ac43e97f8093b9c6f411df50a78/yarl-1.24.2.tar.gz"
+    sha256 "9ac374123c6fd7abf64d1fec93962b0bd4ee2c19751755a762a72dd96c0378f8"
   end
 
   def install
