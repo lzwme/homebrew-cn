@@ -1,20 +1,18 @@
 class ShuttleCli < Formula
   desc "CLI for handling shared build and deploy tools between many projects"
   homepage "https://github.com/lunarway/shuttle"
-  url "https://ghfast.top/https://github.com/lunarway/shuttle/archive/refs/tags/v0.24.3.tar.gz"
-  sha256 "4a8b93f01e9e21e543c393f59214145850895c89c2c6924a7faac6f8f12292cb"
+  url "https://ghfast.top/https://github.com/lunarway/shuttle/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "dddc84927c985ec29cbbad7952d8c5e3d6c1fe1bcd5732c49269d0f517000f90"
   license "Apache-2.0"
   head "https://github.com/lunarway/shuttle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5e8bb4b72731ce957e8642a4dc363c0119c12298a191e3f774d130e0d947db0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6239f4fa616ca21a781595b6da437d6debcb1ad013242c33c3a54aba9764da64"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6239f4fa616ca21a781595b6da437d6debcb1ad013242c33c3a54aba9764da64"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6239f4fa616ca21a781595b6da437d6debcb1ad013242c33c3a54aba9764da64"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5aed20ea25a270dd87249277003e75da31e91988fb461b95596b727bb35df25c"
-    sha256 cellar: :any_skip_relocation, ventura:       "5aed20ea25a270dd87249277003e75da31e91988fb461b95596b727bb35df25c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0b8712fd91bde4dc653e8e37e4cb0030b864707178c2ec10b358fea9b14a0ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be0bb28ca0505b75b4c6606f528eac6a2b6fdbb1e40e1ed3fb788793114daaff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e155472f49226c07b7e6aed2b2b171988b7eb72dbf8f6c0c726272907048a6ba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e155472f49226c07b7e6aed2b2b171988b7eb72dbf8f6c0c726272907048a6ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e155472f49226c07b7e6aed2b2b171988b7eb72dbf8f6c0c726272907048a6ba"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ea4c203c0e820940809b3947ca17c1612ddee2f7e58a301181a414acaf906739"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "74cde4615cf2909bcfc049ddcceb1b4361c08511f7cfb7ff1f938d6055090428"
+    sha256 cellar: :any,                 x86_64_linux:  "1fbd93fcc9cae06d68da50868b6a86ce49c9fd591872d4250f32de76e51f8d46"
   end
 
   depends_on "go" => :build

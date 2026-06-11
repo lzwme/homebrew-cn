@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/25/df/6765ad800b06b5ab8ec62213f19c369f718d0cbdbd3e355789827b11faec/prowler-5.29.2.tar.gz"
-  sha256 "e1fda2299c8d109cf148ccabe69480286992caa2de572b1eec3afc75586a199c"
+  url "https://files.pythonhosted.org/packages/71/3d/ff4bd23300940b47c0ae266a2beabb7672285864bc8c867a3de75c00cf79/prowler-5.29.3.tar.gz"
+  sha256 "36c5a6e132cb0aba3ae556ef091e8260d6c7c7a30cb89621cce64a49e211752d"
   license "Apache-2.0"
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "15b1bed259af7bc395e6d120b9d3dfbc30400d4ac7e401e01cebb92b10ed7abe"
-    sha256 cellar: :any, arm64_sequoia: "594aea89278b2d0fbb0e1109eb732f52ed2043886190296281c9fbd5c411d1e7"
-    sha256 cellar: :any, arm64_sonoma:  "24338c375769021eea3d2d31dce9403c27d771ded16e3413aec9b244f2eecc74"
-    sha256 cellar: :any, sonoma:        "5b11ea1b9cf3e3705af351539f3f399706371215fef618e288ffa7b3eba057c2"
-    sha256 cellar: :any, arm64_linux:   "61ade9cdcb85ce55f1605d6f390fcccb1e0aa1b49b6cdeb16f00585507f4c226"
-    sha256 cellar: :any, x86_64_linux:  "91630e25b27c30debabb6a7b62ec36aa30c12e723d1700e3ad1278bfcc2f29df"
+    sha256 cellar: :any, arm64_tahoe:   "cbd501f263fe3afccf8664d53f7062fe663899a8ac6d6a1f55efcf3f2a337b36"
+    sha256 cellar: :any, arm64_sequoia: "56670a0f7f99822294ce9937e5d3d3419c38181590e21113881c555b566495f9"
+    sha256 cellar: :any, arm64_sonoma:  "37d76474b1602e1d035d55b7749b3d861393aa328f842aca29aa5ffad0c7702c"
+    sha256 cellar: :any, sonoma:        "fed11694f53a5271ec6fb6ed272bf06c8d8b2e3a786edb899939bbe294ba2b55"
+    sha256 cellar: :any, arm64_linux:   "30143f105655ed52a5dba4e9a7e4452a35ab1464fcca6d8cb50786e52c6765dc"
+    sha256 cellar: :any, x86_64_linux:  "d417c1eed94e873830014aa5fa5d703c3c4d4d73a6925dfbcbf17c407dceecb6"
   end
 
   depends_on "cmake" => :build
@@ -59,8 +59,8 @@ class Prowler < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/ee/ab/93ce242f899b68c51b0578c027aafa791ab3614cb9345fa5d37b5f5c8e3e/aiohttp-3.14.0.tar.gz"
-    sha256 "2882de819734c715fd1b9c11c97e09fa020d14438203d1d354d8ed1702791c9b"
+    url "https://files.pythonhosted.org/packages/82/78/8ea7308cac6934de8c74a14f3d5f65d1c89287426688be79538d0e5c013d/aiohttp-3.14.1.tar.gz"
+    sha256 "307f2cff90a764d329e77040603fa032db89c5c24fdad50c4c15334cba744035"
   end
 
   resource "aiosignal" do
@@ -604,8 +604,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/cb/8d/4fd6fb49aeddac47152bfe4dfe36b572a2fafa100244be55f5e7108ec8f5/iamdata-0.1.202606031.tar.gz"
-    sha256 "a699420b57ce7247c4d0e34a06c84cee93a970c1072a8928e1a2f3528aec5041"
+    url "https://files.pythonhosted.org/packages/cb/4f/40c52425e2020b595feddc5a4d560c611cff9f029eed4e7514128e697812/iamdata-0.1.202606091.tar.gz"
+    sha256 "12952bdf7b9b0908ffd6dd9942a89e756e48de1c38cd5f3e4d8a7fb25cb7054d"
   end
 
   resource "idna" do
@@ -759,8 +759,8 @@ class Prowler < Formula
   end
 
   resource "narwhals" do
-    url "https://files.pythonhosted.org/packages/9c/1c/c80cb7719721a44846c6301ef118434bae30a423924bfad3a47f16bdc064/narwhals-2.22.0.tar.gz"
-    sha256 "6486282bb7e4b4ab55963efbd8be1451b764cc4874b74d1fd625eba9dc60b86f"
+    url "https://files.pythonhosted.org/packages/62/3c/c4ef2164a71c1a63d7f1ae411c4082c5fa872405106db60a4b7114989ad7/narwhals-2.22.1.tar.gz"
+    sha256 "d62920805a0a43b7ff8b54b0c0d3142d796f8a9301836ada37e573d6a33cbcd9"
   end
 
   resource "nest-asyncio" do
@@ -840,8 +840,8 @@ class Prowler < Formula
   end
 
   resource "plotly" do
-    url "https://files.pythonhosted.org/packages/3a/7f/0f100df1172aadf88a929a9dbb902656b0880ba4b960fe5224867159d8f4/plotly-6.7.0.tar.gz"
-    sha256 "45eea0ff27e2a23ccd62776f77eb43aa1ca03df4192b76036e380bb479b892c6"
+    url "https://files.pythonhosted.org/packages/94/fd/d72c292d78aadb93d1a9bcd76bf3c678271040c7cf10abe5788b33040a39/plotly-6.8.0.tar.gz"
+    sha256 "e088e7ddc68d4f70e3d66659224727a45296d71d2b8284181862d3d8f1f0d88f"
   end
 
   resource "propcache" do

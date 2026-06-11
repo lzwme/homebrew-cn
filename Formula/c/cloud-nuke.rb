@@ -1,8 +1,8 @@
 class CloudNuke < Formula
   desc "CLI tool to nuke (delete) cloud resources"
   homepage "https://gruntwork.io/"
-  url "https://ghfast.top/https://github.com/gruntwork-io/cloud-nuke/archive/refs/tags/v0.50.0.tar.gz"
-  sha256 "d671d1cb65808ddc8e82be9933cafd69071afe68a4acaa575c91efe980019e5f"
+  url "https://ghfast.top/https://github.com/gruntwork-io/cloud-nuke/archive/refs/tags/v0.51.0.tar.gz"
+  sha256 "5626bc0f319b9c9d621cf5060d6c53edf719f5b997b69f35a39777301e2a90b4"
   license "MIT"
   head "https://github.com/gruntwork-io/cloud-nuke.git", branch: "master"
 
@@ -12,12 +12,12 @@ class CloudNuke < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79a41e20b99567677c3d422c02b1578600603a2a6ebb1de1b5e4d9562fdc121c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79a41e20b99567677c3d422c02b1578600603a2a6ebb1de1b5e4d9562fdc121c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79a41e20b99567677c3d422c02b1578600603a2a6ebb1de1b5e4d9562fdc121c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "475822f2de605169e00a90b025aca5af5d77c334a34a9c328d58f3ca329edbdc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a04124cbcdf234abc6f8d5b999713d7f1cf0dc91949c406e84c789c4aa68e54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de64b89683079736b6f71867449050fa4e15d101f8f8b60172c589475f3d0446"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f4330d065d065a1c6568ac44d1d8ddb401fad328cdca7a5632315522facd9565"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4330d065d065a1c6568ac44d1d8ddb401fad328cdca7a5632315522facd9565"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4330d065d065a1c6568ac44d1d8ddb401fad328cdca7a5632315522facd9565"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5ecf6b986b6007d99c9dba4d7dee314700ed820bcc74450722cd22f69d728334"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "58e698172bd618fa3e99693f5e8b121ed478536fb69782a170d20ad3e2209dd1"
+    sha256 cellar: :any,                 x86_64_linux:  "78401dca02a0b87ae0bd659d8d9ca22e517189210a180f27ba85a6c11a4436c1"
   end
 
   depends_on "go" => :build

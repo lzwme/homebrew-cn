@@ -1,19 +1,18 @@
 class Micropython < Formula
   desc "Python implementation for microcontrollers and constrained systems"
   homepage "https://www.micropython.org/"
-  url "https://ghfast.top/https://github.com/micropython/micropython/releases/download/v1.27.0/micropython-1.27.0.tar.xz"
-  sha256 "9874b20646c3bbe81d524f779a16875e5d088b7065e175ffd2aa2a02f50573c9"
+  url "https://ghfast.top/https://github.com/micropython/micropython/releases/download/v1.28.0/micropython-1.28.0.tar.xz"
+  sha256 "4e43c59657b8da33b4bc503509a827cc3ea6cb66c446475c57776cf4467ba215"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5392dcf56b201508f151c1a149296b693aa9f91fb48478365c967cf5351fc257"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e27ce56e280a609a42f302ffa2ece5ba1dde88e70b3713c02096cca7f0c0e8d2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "484b01b9e68a5ae8d6826ef89494d3a7d96065b74349a0eb334584dfc106efa1"
-    sha256 cellar: :any_skip_relocation, tahoe:         "df392e2818faded81b4596d98073a2ace572493f081337b0c861021124b3f4b4"
-    sha256 cellar: :any_skip_relocation, sequoia:       "018c5e63b1d8c8b180fd9e7f512e0e372715a2314deea95daa38ddedcaae1c87"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e7fd12774208d0d5578bb9b2bf69b271b54edf3aaf6f5332134555d1209dd7a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "501a9d4456b62405f9be50f9774e3213afc0b17d2164eaade991ea0c7329585b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5be6aa91a71cb44c4e7a312e81452450428587cb04b4f0051ff163c5a6731758"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9e246967c3fca0f66bf6c65d9937f76fc14a738d04e233c98eb810a8b3ea60a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e04aeea3bbcf80513ca0d2741c48048e29ebebe864dc0086fa6789f6215eee2e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82c1047381990879ebd8f9a69e7bcb084bc6ae305630a94dae765e4869cd48db"
+    sha256 cellar: :any_skip_relocation, sequoia:       "5c0f58c5e679575f31601cc74a39eb282b7c46c4372106f0ae02860ec2b829a4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4deb6dbd68198e3539a1de7b7ae3f66b8ed5c92582d6c08c0bbecc2057c087b1"
+    sha256 cellar: :any,                 arm64_linux:   "68b57d700836bfcd7d6f490a68dc7a232c3ac96700f326fbb827a7fca6d4e4e3"
+    sha256 cellar: :any,                 x86_64_linux:  "0e529deb327b8e56e20f9d92317de3f08ee7d65609b66342189a77e3b922afea"
   end
 
   depends_on "pkgconf" => :build

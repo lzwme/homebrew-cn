@@ -1,8 +1,8 @@
 class Par2 < Formula
   desc "Parchive: Parity Archive Volume Set for data recovery"
   homepage "https://github.com/Parchive/par2cmdline"
-  url "https://ghfast.top/https://github.com/Parchive/par2cmdline/releases/download/v1.1.1/par2cmdline-1.1.1.tar.bz2"
-  sha256 "aa13effa3a27bee2fecf0eb228b631b0323bc2e085c88bbdc7f4518f8fedcee3"
+  url "https://ghfast.top/https://github.com/Parchive/par2cmdline/releases/download/v1.2.0/par2cmdline-1.2.0.tar.bz2"
+  sha256 "9064bbe14834b51d8c2701e8b5c8b9178a1c2b7fe8345baac0499c86c4fa649c"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Par2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a449305e4be7adb1b596244fad50ae6a07fc3658e42add5aae92d0b81a6baa9f"
-    sha256 cellar: :any,                 arm64_sequoia: "9275aaa1eb7db8896690c01dba586b4373358195312db5cce0ab8d16361fd70d"
-    sha256 cellar: :any,                 arm64_sonoma:  "f27cbf72540996d8baf8e1d4b7ce54fbfd7ebaf567c87914b3411567bc1cf621"
-    sha256 cellar: :any,                 sonoma:        "359f789647be0891efa3967ed182ce475990278ab1c63fe3e50bb1b56f33924e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9c8a87271b664df8703eddb89092cb9c8adc9759b34e7328ad3d090b90d1340"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cecb502688d0f159c4780146b95e2836966519944acf903f33007b92c19bbb48"
+    sha256 cellar: :any, arm64_tahoe:   "b03a0f588c447caa805ac52e46b5431915c4b1c3a9a39aa5e03506952dddea2e"
+    sha256 cellar: :any, arm64_sequoia: "7e2938b70739f755bd5e45f0acc769e83be547ca74e9b4b97ebf8c7b5c555dba"
+    sha256 cellar: :any, arm64_sonoma:  "869c77aef9b3562131d2d56d3f72a43e90ba7abe2369a1a744e6fba22b47f205"
+    sha256 cellar: :any, sonoma:        "429261221cf9dd280f3d242cda9872fa4e6645f74c326d01c95b60464e5c9603"
+    sha256 cellar: :any, arm64_linux:   "2966e50269074e751f0194d5cd9de1cde917e618ae550d8667785faf9363a7d9"
+    sha256 cellar: :any, x86_64_linux:  "c4f7fa104f716fa9837976ca278112543ca4a88c99aa3c9cdf5a829de20a4169"
   end
 
   on_macos do

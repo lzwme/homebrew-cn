@@ -3,18 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/b9/03/ae2c9b96163ceceaaa8e1c9ae30d94ead8b8c6fb42fb6383b6e15ed00d4f/cycode-3.16.0.tar.gz"
-  sha256 "6a6c1a6e2167e31d476270e29ecb68950f1353d7f22c8171c62ebd074e5ce0e9"
+  url "https://files.pythonhosted.org/packages/55/77/e64b52827512469700974a09e075af6833832e3cee4c0a43d70a2c5e6864/cycode-3.16.1.tar.gz"
+  sha256 "403d6b4e6949f0c60a5c5651bbb5fdfc60f891babcd7ef42a24dd5b82e4e2cfb"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4706204e18a62888815101983a2440c701693428fc5d3f0ae6486299cc2886f7"
-    sha256 cellar: :any, arm64_sequoia: "425b5f1af2a6faa1254a1fceb6765941c8c85b14e234a97d99f50443e5b7f90b"
-    sha256 cellar: :any, arm64_sonoma:  "ac4cfe54223e51a0ae9b2009119839f56dd47f8ec3477f3685542881979e4b55"
-    sha256 cellar: :any, sonoma:        "2ad123170511b717d6be3e6ad582bc2dbe28863fd8725b0d9895a4aafd9fd949"
-    sha256 cellar: :any, arm64_linux:   "482b93fbc49cad1afff93849e4953c77d9e570ce2611521f854e248e1d4623da"
-    sha256 cellar: :any, x86_64_linux:  "bef82ed659149257afacfa8d3b6a18bb6fb05684231f969d6b2c6891132cb0d6"
+    sha256 cellar: :any, arm64_tahoe:   "9355edef7deb4e00f522684d14f4378bd48ddf1124e993a71b1fb5cbf1de51f6"
+    sha256 cellar: :any, arm64_sequoia: "403b4840d1c1f15277b32bb39fdd603ebdf050094891985a18d5a2edbba83f8c"
+    sha256 cellar: :any, arm64_sonoma:  "6426c5defad459e8c2297441c55fe448ce65662d2992fec2ba33b85d8937ff92"
+    sha256 cellar: :any, sonoma:        "ae3862d348d29f7a17335418cd6f52267e33233ff538fcd5a2e99081832df753"
+    sha256 cellar: :any, arm64_linux:   "04b06134bca931793a955045946e1a437a2f1d89d95de5830cd93a323350681c"
+    sha256 cellar: :any, x86_64_linux:  "e5818c43578786c85e756eb849eb555ec4f2f9e4f3efdb9416a4fd678ca3b82a"
   end
 
   depends_on "certifi" => :no_linkage
@@ -27,8 +27,8 @@ class Cycode < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
   end
 
   resource "arrow" do
@@ -87,8 +87,8 @@ class Cycode < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
-    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "jsonschema" do
@@ -162,8 +162,8 @@ class Cycode < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/4b/82/c8cd43a6e0719bf5a3b034f6726dd701f75829c08944c83d4b95d02ed0e8/python_multipart-0.0.30.tar.gz"
-    sha256 "0edfe0475c1f46ddd3ff7785a626f6118af32bdcf359bb21260367313bb32118"
+    url "https://files.pythonhosted.org/packages/5b/42/55c32bb9b12693c092ad250a0e82edb5b31ddeda6eb772de5f308b3804ad/python_multipart-0.0.32.tar.gz"
+    sha256 "be54b7f3fa167bb83e4fcd936b887b708f4e57fe75911c02aebf53efaf8d938e"
   end
 
   resource "pyyaml" do
@@ -237,8 +237,8 @@ class Cycode < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/e6/bf/f6544ba992ddb9a6077343a576f9844f7f8f06ab819aefd00206e9255f18/uvicorn-0.48.0.tar.gz"
-    sha256 "a5504207195d08c2511bf9125ede5ac4a4b71725d519e758d01dcf0bc2d31c37"
+    url "https://files.pythonhosted.org/packages/c4/1f/fa18009dea8469069cca78a4e877a008ab78f08b064bfc9ab891579077ff/uvicorn-0.49.0.tar.gz"
+    sha256 "ebf4271aa580d9de97f93192d4595176df6e91f9aae919ca73e4fc07df1e66a3"
   end
 
   def install

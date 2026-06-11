@@ -15,12 +15,12 @@ class TemplateGlib < Formula
   end
 
   depends_on "bison" => :build # does not appear to work with system bison
+  depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "vala" => :build
   depends_on "glib"
-  depends_on "gobject-introspection"
 
   uses_from_macos "flex" => :build
 

@@ -1,18 +1,18 @@
 class Darklua < Formula
   desc "Command-line tool that transforms Lua code"
   homepage "https://darklua.com/"
-  url "https://ghfast.top/https://github.com/seaofvoices/darklua/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "3d2813da25c40cca8c65ac493261af233d90b7f8dc5bb592b34b8a97d527df27"
+  url "https://ghfast.top/https://github.com/seaofvoices/darklua/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "6f2ce6d6f29aa256ca1ec47e33a25937a6964b1ada1083d427ebcc6a7d4ab43f"
   license "MIT"
   head "https://github.com/seaofvoices/darklua.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d75b5dfc5bb01ba4126aa2a48b6bd6ddb94cf2c843a50a71e78078574bcbae81"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d234e8f977edaa7473671c8f0da099805aef75cab38e872805730167700920d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "327e86457e5af32729ce01bb9065be098036aa94394971f4b220ea030f836cff"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1f171eea57cb29510c7d46e50b0d6feabd5717fba8851981f756c6910944d44e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "995c9b8899b8654edc6e2d70b59239a9bbc017fafc0614249c756524bd4ace58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8c31316a1a51f22df6a25d57e81101e36672afc7c4c6e588dc345c16120ea68"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "907bcc4d12da0c96577cfed0a4ddcaa11976458542911e43231ec5404a074b7e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "468089a06881e0183d019ae9b652c01b0f1ee8f8f6af8cf00a42f0735db70066"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3180d2f2e21e7d37ce66581ae90a1cb8477889221455a0f30296f8fd7856c74e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "42075c3d2cea8d47433efe6352d7a5ccac9774b2d4140671203c0bd496cf47b8"
+    sha256 cellar: :any,                 arm64_linux:   "8ad8ed90fb4521262b66dab8a26667db6114fe5784382023cf7169437917db1b"
+    sha256 cellar: :any,                 x86_64_linux:  "94c09f96d8cc06821efe035d6e634840d9d6b3a662e31dfa76413d10c9cdd50c"
   end
 
   depends_on "rust" => :build

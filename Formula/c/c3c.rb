@@ -1,8 +1,8 @@
 class C3c < Formula
   desc "Compiler for the C3 language"
   homepage "https://github.com/c3lang/c3c"
-  url "https://ghfast.top/https://github.com/c3lang/c3c/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "808175cfb4a45f10fa0a23f04de6a51b3d27f8c1c282a19e98b91c80c5eeebfb"
+  url "https://ghfast.top/https://github.com/c3lang/c3c/archive/refs/tags/v0.8.1.tar.gz"
+  sha256 "fb4091d3c8e33c3d348124396ee46a826289428c2e9e4afde23c936245bbda30"
   license "LGPL-3.0-only"
   head "https://github.com/c3lang/c3c.git", branch: "master"
 
@@ -15,12 +15,12 @@ class C3c < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "26101c50c6964de8834fbc1f128ad1919ad3cc8b8cade1a88b5b57ef53dab7f9"
-    sha256 cellar: :any,                 arm64_sequoia: "8d726c291078460dabe0afc8b0434139ad52b0ad8639fd7d4116a5a298ff2c5c"
-    sha256 cellar: :any,                 arm64_sonoma:  "e8b2006d6d751787d1b451671d8905eac93984a24915523896a5c89d2d425b89"
-    sha256 cellar: :any,                 sonoma:        "202a6d51b538ab12b1f429006ec0017d6e5c1a87b4d1be9f6dfc3d62461dd33f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eafea707789ab0d63bfc268e0f6ee2990ccdb1be0c0ab5fe8610cb00f36b42a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aac1fac9bd211b62ea18898bc68fa92ca34b0a0157978732ef314957aed537ca"
+    sha256 cellar: :any, arm64_tahoe:   "6902d6235e69d002b0d7732d722cfcae83ceaf780dee666b71b2298b0e1b9b6c"
+    sha256 cellar: :any, arm64_sequoia: "ff26c3bfd47571bf139704d6293cdd65c246f8712b10fa4bd6c057a9d72080c6"
+    sha256 cellar: :any, arm64_sonoma:  "193de560f952089f3e7e7683074d09dcbd17d5c97980e36f3a5c676cce2484f3"
+    sha256 cellar: :any, sonoma:        "48076fbffd49c02e12617c5825474febfcfed413c801a1e62ee4e269afbbd974"
+    sha256 cellar: :any, arm64_linux:   "82d831e9cef2e13ed9ac879f7c457cf4fa94dbe56347439ab2c550a866f2ed06"
+    sha256 cellar: :any, x86_64_linux:  "72802d43e345d5a09f9a2fceb75c2e4d163d09b007b7c33db954ae44d8e063cd"
   end
 
   depends_on "cmake" => :build

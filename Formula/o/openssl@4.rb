@@ -1,9 +1,9 @@
 class OpensslAT4 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl-library.org"
-  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-4.0.0/openssl-4.0.0.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/openssl-4.0.0.tar.gz"
-  sha256 "c32cf49a959c4f345f9606982dd36e7d28f7c58b19c2e25d75624d2b3d2f79ac"
+  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-4.0.1/openssl-4.0.1.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/openssl-4.0.1.tar.gz"
+  sha256 "2db3f3a0d6ea4b59e1f094ace2c8cd536dffb87cdc39084c5afa1e6f7f37dd09"
   license "Apache-2.0"
 
   livecheck do
@@ -12,12 +12,12 @@ class OpensslAT4 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "cc677e527a2cb766c742704915adc4cf1a702fbe55f4ec56bf0b22017015aeda"
-    sha256 arm64_sequoia: "fd15bbff0e6801cbf44086d6da82ee0e0249d49e35e0cdc75c0d1bbd255d56eb"
-    sha256 arm64_sonoma:  "d2d9d77fd41ba1780e75588a904ca90b3ed8d0fcc3ce02d844adbefd46e70ff3"
-    sha256 sonoma:        "131cb00dec6e5b9bc08d5c8b32164e566cf3f7ec2b587a489bdf5acf0f985b35"
-    sha256 arm64_linux:   "bc35fd431f97f9690073e5ff63bd06d7a1534db49ea0711a0b75fb0665581d8e"
-    sha256 x86_64_linux:  "1bdf042909da31d2f8a5101ab45c84094eb453aeb89a437773e6d929caf73224"
+    sha256 arm64_tahoe:   "600b0e85eaf68c17c1cfd1cb714575d9b28c46442e01f4c276a13aa6f87048dc"
+    sha256 arm64_sequoia: "48127fccd6b0dd9274e34997d88e9a5b382ba78e65c62a38aa5a95a4bcbf8db2"
+    sha256 arm64_sonoma:  "f471c7871b69622f33216fe0572b9c2b18d2dcfd80067eca7edbc02ed03d2457"
+    sha256 sonoma:        "4ccf1cca7a19c4dd9f5d1cb58f4503fa38e85d0e60aa7adfc07f0f91cd183767"
+    sha256 arm64_linux:   "3990fdc30f834df7b28ab9084e8ae3d72022b52eb2de25b32b3be4c87f109195"
+    sha256 x86_64_linux:  "cefa553fc18a5680854feae91bbb0a0a4fcf74b570e0ebe58525bf4b91b99a4f"
   end
 
   keg_only :versioned_formula
@@ -32,9 +32,9 @@ class OpensslAT4 < Formula
     end
 
     resource "Test::More" do
-      url "https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302219.tar.gz"
-      mirror "http://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302219.tar.gz"
-      sha256 "420600911230de768427f6646758d89b6c07977b565e5b40118e5b8440dbb30b"
+      url "https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302220.tar.gz"
+      mirror "http://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302220.tar.gz"
+      sha256 "bbca30d9fb64a67a28ccd9086cdc08cdb6046423fa032d9101f978d7ccd46cf9"
     end
 
     resource "ExtUtils::MakeMaker" do

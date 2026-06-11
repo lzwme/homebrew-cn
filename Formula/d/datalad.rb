@@ -3,18 +3,18 @@ class Datalad < Formula
 
   desc "Data distribution geared toward scientific datasets"
   homepage "https://www.datalad.org"
-  url "https://files.pythonhosted.org/packages/e3/cc/2fcd68403ca53afbf3d17340b34afaecfe06ef3565da4b39967de67ee7aa/datalad-1.5.0.tar.gz"
-  sha256 "30dcbb393170bff55348496d8a17cb641874f7fef2cc347ce94b30aa4d3c3588"
+  url "https://files.pythonhosted.org/packages/e5/b3/a6241175a59a6c4c5ca172f7b0d71e942f951ac508778ae90b11b6e0009d/datalad-1.6.0.tar.gz"
+  sha256 "612a8a60c31d50df435f859ef065fd528a5fc1c6c5b4bebd78edc6cea6e5f409"
   license "MIT"
   head "https://github.com/datalad/datalad.git", branch: "maint"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "129b8b3cdac90b32a784a7fc9559723b6f5a388959da69e1b9264d780955ef19"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2399b5c3c478300b338d0c24f009bcb75bd2d88ca29ff47a8175ecf118b946fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9dae428dee4ce3760d33225a346a1f081dc09d4e1e2e65222c4dcf7001eec75d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "13461016e537435a1523c6b7f8cac85e65aeba350a229461b4f78d4fe19ec367"
-    sha256 cellar: :any,                 arm64_linux:   "1146763456d771a3b1a9608612af8a8a39a3cf3e045d66d5d3ecf3aa3cd57a87"
-    sha256 cellar: :any,                 x86_64_linux:  "4769abf85aabdd42aed26576517bad5bd650b02328fa346960234b1be131405b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b219827cf6bef4a4a35bdc1ef730b252735b0534b89e17b2be6f617321ee028"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f934770b05048ff6337d31aabe3123b5c0d1105a7bc84d81abbe5dd88ecbd96a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d0109c90f871d5ed4df46c77d69a054fba23a07c75378ce7e9f8bbb49dc03c8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "652bb6f1c45b31bf71b22d29985525b5fde5320a0e96c51a1a295364820d8b5e"
+    sha256 cellar: :any,                 arm64_linux:   "4a6528a834f9d3fa0db9827e465b358bc44fac09b31e0bb3764a498d5b2770a2"
+    sha256 cellar: :any,                 x86_64_linux:  "05e7d854879bd0613b9c471c78ff93d29d42be55ebd3d86c185f2e17e665ec86"
   end
 
   depends_on "certifi" => :no_linkage
@@ -38,13 +38,13 @@ class Datalad < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/64/31/32388d5ec332ffe81d8f3650860f94b66294009172d188c390cad58c6f5f/boto3-1.43.22.tar.gz"
-    sha256 "2a7fe12d8e0731bb8aa7c1e59b4ccc770fda031b8659c2f6f497393bdcec3051"
+    url "https://files.pythonhosted.org/packages/e8/6a/fede22427b4e8e56bae102de50351f1a02519be86f8c8dd5347c377cfceb/boto3-1.43.26.tar.gz"
+    sha256 "33f027b7911dffe84f4896b66024c228eb856f4cf8c1ff3465be0eae1f413731"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/76/cf/840f1b8db16d45e3807c23d1ea779723eed1cd9cf3b6c49e16f372d2a777/botocore-1.43.22.tar.gz"
-    sha256 "b00de525e538289ed4a7a85263f1be4e47473c124cec87be6b23be49356bf745"
+    url "https://files.pythonhosted.org/packages/76/ba/aa37cd4e72aa8b70fdb93f47129ef3b79887edcfb343bd41df2783a72f12/botocore-1.43.26.tar.gz"
+    sha256 "fd9280ac868194afcee59c7def62e0031fb4b599f7ef85360d30c7e42357c1dc"
   end
 
   resource "chardet" do
@@ -65,6 +65,11 @@ class Datalad < Formula
   resource "fasteners" do
     url "https://files.pythonhosted.org/packages/2d/18/7881a99ba5244bfc82f06017316ffe93217dbbbcfa52b887caa1d4f2a6d3/fasteners-0.20.tar.gz"
     sha256 "55dce8792a41b56f727ba6e123fcaee77fd87e638a6863cec00007bfea84c8d8"
+  end
+
+  resource "giturlparse" do
+    url "https://files.pythonhosted.org/packages/09/35/7f25a604a406be7d7d0f849bfcbc1603df084e9e58fe6170980c231138e4/giturlparse-0.14.0.tar.gz"
+    sha256 "0a13208cb3f60e067ee3d09d28e01f9c936065986004fa2d5cd6db7758e9f6e6"
   end
 
   resource "humanize" do
@@ -193,8 +198,8 @@ class Datalad < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/09/a9/6ba95a270c6f1fbcd8dac228323f2777d886cb206987444e4bce66338dd4/tqdm-4.67.3.tar.gz"
-    sha256 "7d825f03f89244ef73f1d4ce193cb1774a8179fd96f31d7e1dcde62092b960bb"
+    url "https://files.pythonhosted.org/packages/85/05/0d5260f1f1ca784f4a4a0def9cbe6affe587f5b4025328d446c3d67765f4/tqdm-4.68.2.tar.gz"
+    sha256 "89c230e8dbc67c7615c142487111222f878c77427ea09549960f62389e258add"
   end
 
   resource "urllib3" do

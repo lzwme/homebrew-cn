@@ -1,17 +1,17 @@
 class CppPeglib < Formula
   desc "Header-only PEG (Parsing Expression Grammars) library for C++"
   homepage "https://github.com/yhirose/cpp-peglib"
-  url "https://ghfast.top/https://github.com/yhirose/cpp-peglib/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "81b226c4dc3e9beca5f3081c25f7c5ea4fe167f2c74b44424594bd2280a64b6c"
+  url "https://ghfast.top/https://github.com/yhirose/cpp-peglib/archive/refs/tags/v1.12.0.tar.gz"
+  sha256 "15984e66941e63f1ee7f537dcc1c0f327a3f95146966bbc4fe3d424dd72903c5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d714b45dc6c9aa4e347df1af68af3c7da56145aa05193560069ea00b41049189"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90cf04056d9c3e79e9eb4c45677d7a14fd6293c5d3cee95e83e20f1d33023bbb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dabf176d36e0aeafb4b3f89940fb58d3d1ea6bda5002acf8a3b39f007bf93333"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9020206c212aca51d65c3f2e4b87e8c469eed3f4a528b4a122af0163a1d377da"
-    sha256 cellar: :any,                 arm64_linux:   "217aa10a4fc10098dd1295517c1ee151a0353babd58674be9892eea0a51defa8"
-    sha256 cellar: :any,                 x86_64_linux:  "836d279da2765a57a731bed8c098385b8e1f64218979a07f96942efa56fdb467"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "97378cc14facf12e1e9695b60ed9769bff221e6a6101c216b23ca36cbed1a943"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa5fce72d9dfc1b307c678547b1de4058b335880e01a75c7a8c4f6dbd8e75f8a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a094542e26aa302e8d0dbcc4f191c754a1992a6760b3a3f2e3b34af8bfa1706"
+    sha256 cellar: :any_skip_relocation, sonoma:        "00a160131deaafb8c6115913bb5b8c64c3fce3308c9c9ca2cfc822a876c856ed"
+    sha256 cellar: :any,                 arm64_linux:   "50cfa7df713f701de863121add7a17bc3df89abe2e36cbe0f8aebf9d562dc189"
+    sha256 cellar: :any,                 x86_64_linux:  "4d6a29a9a6c0d130f5b59aaf8bda7942674577ba66eb335b6cf4f72920e42532"
   end
 
   depends_on "cmake" => :build

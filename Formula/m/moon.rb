@@ -1,8 +1,8 @@
 class Moon < Formula
   desc "Task runner and repo management tool for the web ecosystem, written in Rust"
   homepage "https://moonrepo.dev/moon"
-  url "https://ghfast.top/https://github.com/moonrepo/moon/archive/refs/tags/v2.3.2.tar.gz"
-  sha256 "ad93ca6c53b5fbb7f937be0d177ccc932d51064df940d75167600d9694e26004"
+  url "https://ghfast.top/https://github.com/moonrepo/moon/archive/refs/tags/v2.3.3.tar.gz"
+  sha256 "7664538e0d2673420885527255ff26b305883af9fa93173eae249690a1c38150"
   license "MIT"
   head "https://github.com/moonrepo/moon.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Moon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5447a9afeadb0337eef09f9559b618d69e63b1e166b7ce6c52b33a46809ab03"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78bcfbffde5a736b66ec0eeb7e6472458a06d4d06a8342a49cd8941660da1e4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "851e88e3f0434e37af04a5944ad70dbceefbcd97a577afca3bc398aa9627c53c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4d134811bdb3f9182450a994f8b00777644ab2331a479b4ae2341e94fd4c7412"
-    sha256 cellar: :any,                 arm64_linux:   "cc084e83d993aaa1e19aa81c687fcb1e1c0aa1dec50bf0f6968cfa95179cad7d"
-    sha256 cellar: :any,                 x86_64_linux:  "7a30320eb3fdee194f03396a900d44875d55807e358e2fb5f64bccd464c9aa62"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "49e0e2545c4e935cc5563a1795ab8d646ee40712ab553654244197befa0b3b89"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8212b313c80a41bf8c6745a5d1911b153e2a76b81d3b26108ede36f42315962"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0dc0e912c2c4dd14ee6e6915ecfbc1da20337acab9789f07a573b7320d9a7856"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5b200ad587a46a58ecdc0d4d92b925f3f680e2e03787324f8849351e98791776"
+    sha256 cellar: :any,                 arm64_linux:   "d31dccd037ab335a524b7787fe482296195387c701cd0948ec5186028f0c3eda"
+    sha256 cellar: :any,                 x86_64_linux:  "8e874817a5a3ec60d701572ce8f46f9ce7aae0b86f8b748d7cebc0a0a14da8fa"
   end
 
   depends_on "pkgconf" => :build

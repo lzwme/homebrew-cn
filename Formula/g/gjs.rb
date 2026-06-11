@@ -16,12 +16,13 @@ class Gjs < Formula
     sha256 x86_64_linux:  "500a526ee59d19864fd08b18a441d3e01e2759236928b6e5257697ec4e7a2995"
   end
 
+  depends_on "gobject-introspection" => :build # for generate_gir
   depends_on "meson" => :build
   depends_on "ninja" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "cairo"
   depends_on "glib"
-  depends_on "gobject-introspection"
   depends_on "libx11"
   depends_on "readline"
   depends_on "spidermonkey"

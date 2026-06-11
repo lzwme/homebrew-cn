@@ -1,8 +1,8 @@
 class PopplerQt5 < Formula
   desc "PDF rendering library (based on the xpdf-3.0 code base)"
   homepage "https://poppler.freedesktop.org/"
-  url "https://poppler.freedesktop.org/poppler-26.04.0.tar.xz"
-  sha256 "b0955163114af96bc0106f68cb24daf973a629462453d8b82775f81b0d4e0693"
+  url "https://poppler.freedesktop.org/poppler-26.06.0.tar.xz"
+  sha256 "4cb4e5a3dc8cb5eec751c8a23c8ba19f61f96dedc0cd07d2aee6b0c8e2cf6ba4"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"] # see README-XPDF
   compatibility_version 1
   head "https://gitlab.freedesktop.org/poppler/poppler.git", branch: "master"
@@ -12,13 +12,12 @@ class PopplerQt5 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "bee38516cb7a8a3417615eae7c07a3f92a3557131fc619949fb75efc1af02161"
-    sha256 arm64_sequoia: "830bd40bd7832856b415d1b30d2e8326f25f7c9862a54d81d986deedb3569e60"
-    sha256 arm64_sonoma:  "ce7f53d9d584acd0fb02e3e2460f17e60f47b8ac54614a45e4d81c2e1cf7691d"
-    sha256 sonoma:        "a0bd36a59abf205d3998bfb78750b252eba1b7e7af4ff7122998253303090529"
-    sha256 arm64_linux:   "3a7764bb4f098957677728f0506b3a2423a4cd1c37e6fc27cbc89b117eed7e15"
-    sha256 x86_64_linux:  "3bb8f819256198559fe62e783d3b0e5c004494530e7bab36c91e9f727226c7c1"
+    sha256 arm64_tahoe:   "94e9e2697e7ace41b641ad97f7bcf983a1cb2b7612a6bd49633ccebf5646222f"
+    sha256 arm64_sequoia: "54c22774b66ec889625c16a1a4129e94167daaf2e22bb2f37d222016f566611f"
+    sha256 arm64_sonoma:  "4b3f39a8c8594ee7c3c9e862f21a292afefe09a27476e2c0d36388453f941a99"
+    sha256 sonoma:        "5e6230874f4255edae8dc7bfdcb40c0b1934a1dd6ccbbe3b05840f64ed38b1c7"
+    sha256 arm64_linux:   "fe20a64a6d05bcaeeb7f5445ba2238e612cb61ff434ffb946389bb6b0ff7a282"
+    sha256 x86_64_linux:  "7b1948273b2e4d8e01406c7f000ed33dae3fceac07660a1aa5ac02b5fd80ae10"
   end
 
   keg_only "it conflicts with poppler"

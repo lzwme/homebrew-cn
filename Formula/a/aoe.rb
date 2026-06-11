@@ -1,18 +1,18 @@
 class Aoe < Formula
   desc "Terminal session manager for AI coding agents"
   homepage "https://github.com/njbrake/agent-of-empires"
-  url "https://ghfast.top/https://github.com/njbrake/agent-of-empires/archive/refs/tags/v1.10.1.tar.gz"
-  sha256 "4a910c2b051793926191f214c005e1f66054987785a9f37bae3265d6a40e3a45"
+  url "https://ghfast.top/https://github.com/njbrake/agent-of-empires/archive/refs/tags/v1.11.0.tar.gz"
+  sha256 "141b327b03c328458a1a93760315236c315629aa125b18a477c7cc344c19d329"
   license "MIT"
   head "https://github.com/njbrake/agent-of-empires.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7deeb13d1a36aa7ec63c35cdbac424db40daa6755736ac218fd889b652eed267"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4502f9cb2932f844705c0e748c287d07bc7aad6ea5532591435ae91388270d18"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "530bd5570f6822916471bc0037f0d103851445449b21a830769a61ed11ffbfd2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2d99d55f7dd9c41b22716c97dce93592bea858290fde3e98f2f17a285a5e7738"
-    sha256 cellar: :any,                 arm64_linux:   "92e523d8f2805e48729ec9df67c8657a5634c9a964e7b152a60dc4a416a6e26c"
-    sha256 cellar: :any,                 x86_64_linux:  "d16a84669098f66e1c82703a508cc5b11353fc676df14da8fc6fecd55de91ea3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f7bce8b59c4a4b4e16a0b0e3f2485c111d770251bd8b67a8a86a805a35082a3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b117fbad020e4593a768692f43703f9c55adf91aa21c39522625f55550d37d66"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36dabb7de012fef5e3974da722124f9922bde573d9b519cdb8ee32f13233bddb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ae02e6e7271a9fe7c7b44a44b7fa6981f7cbd6b10593a8b2fa4a0f0251d82863"
+    sha256 cellar: :any,                 arm64_linux:   "d570f142bd5732cf59e07d4f9e4bc66f616f2a6a0cec9ce6671fbea62f20ba9c"
+    sha256 cellar: :any,                 x86_64_linux:  "6faf8c2b8f6e8c12208cffd1c7791b551d005d21ac163972feb443bd4eacf4fe"
   end
 
   depends_on "node" => :build

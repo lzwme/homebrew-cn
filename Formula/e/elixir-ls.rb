@@ -1,8 +1,8 @@
 class ElixirLs < Formula
   desc "Language Server and Debugger for Elixir"
   homepage "https://elixir-lsp.github.io/elixir-ls"
-  url "https://ghfast.top/https://github.com/elixir-lsp/elixir-ls/archive/refs/tags/v0.31.0.tar.gz"
-  sha256 "291eeee88e3fb63524832e9a2c7a9fc7d0b0e6ee14d475dc162078052014fb14"
+  url "https://ghfast.top/https://github.com/elixir-lsp/elixir-ls/archive/refs/tags/v0.31.1.tar.gz"
+  sha256 "915dcf461411bf5a1ff5a13639dee832616b9b11b6efe911a86927c3d1930b67"
   license "Apache-2.0"
   head "https://github.com/elixir-lsp/elixir-ls.git", branch: "master"
 
@@ -12,7 +12,7 @@ class ElixirLs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4f2d11cfd9d0c26719620de155e7cc06dcebe8d391b62c1e6b422f7fa8f73617"
+    sha256 cellar: :any_skip_relocation, all: "0788f842a7ba329056572b0aaf459f265d1044e7493de645ac9e83c3713021d0"
   end
 
   depends_on "elixir"

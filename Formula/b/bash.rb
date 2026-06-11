@@ -11,7 +11,7 @@ class Bash < Formula
     mirror "https://mirrors.kernel.org/gnu/bash/bash-5.3.tar.gz"
     mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-5.3.tar.gz"
     sha256 "0d5cd86965f869a26cf64f4b71be7b96f90a3ba8b3d74e27e8e9d9d5550f31ba"
-    version "5.3.12"
+    version "5.3.15"
 
     # Add new patches using this format:
     #
@@ -34,6 +34,9 @@ class Bash < Formula
       010 cf76f1cce2ea300c18bff9f002d21f280cc931acd17c28518110b93fe6e72569
       011 0298df8f5ea2a31d3be43ed7d269c5b3c7c342dd5b570bea7f64d66dcbbe7531
       012 d71379b39bebaedaf123414414e77fb458a0a43b9ad3116594c6df7ca6754573
+      013 042f9cda967e24bf4211944697441e93d06ff42b4b998629a98a1b249279f200
+      014 bd4360b401d38507e358783dcad8536a99c6789f0d3a5bd0cfb8c4a34144696c
+      015 55b79ceee2fc27f6767eed697e939a7eb2fe2a28c01556bd75f18d581014f46e
     ]
 
     patch_checksum_pairs.each_slice(2) do |p, checksum|
@@ -86,12 +89,12 @@ class Bash < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "9486b6f596773ba51583edd014ef1048bb6c702cdd2f3fccf7952f673420bb5f"
-    sha256 arm64_sequoia: "154a7b93541be9c95e674c2bcab58bfc622a45ca2165bad0bf51f1f4713ccf0f"
-    sha256 arm64_sonoma:  "cb6381f87c96df2bb32f7ef7e7b70b83d19604d4a21300d7386abfec5a12fdaa"
-    sha256 sonoma:        "a50ec4f5b3706273944a92ef2819bbe2bbb6d743effe12fc2c5204ae37a93dfe"
-    sha256 arm64_linux:   "c4d986c56959f5382cca8eb2c18d6c13a7867437ae886a130b20e58d9523294b"
-    sha256 x86_64_linux:  "dc57517ad99d1c54210935fcdba9a9d010b68fe09cd4ee1747acc50896f2c9ee"
+    sha256 arm64_tahoe:   "12bd38b55cf84424a79cc301d7d09f98265a04b2bc23004e78f2a8095703d3f1"
+    sha256 arm64_sequoia: "1edad0d594c10d5b510a10112025af644c40ee0114cebe1aa2463d7785797040"
+    sha256 arm64_sonoma:  "c2d4235260c69c4a25017c046a96a9da837725ed2e1f9a92e43ec54503d1b781"
+    sha256 sonoma:        "08169a5a5ac9762bd3dc6f63c20b0530b95d9de8befae8b69ff140ff371b0c92"
+    sha256 arm64_linux:   "97a537b34619f8531a179a6977ee7188adbba6291be44dba89e4b0b5de344be6"
+    sha256 x86_64_linux:  "418fed6af88531fc84aa55ec2785ae9075bb76a598377a08e2c40e7ca47311b9"
   end
 
   # System ncurses lacks functionality

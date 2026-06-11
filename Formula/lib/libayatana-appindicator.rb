@@ -1,13 +1,13 @@
 class LibayatanaAppindicator < Formula
   desc "Ayatana Application Indicators Shared Library"
   homepage "https://github.com/AyatanaIndicators/libayatana-appindicator"
-  url "https://ghfast.top/https://github.com/AyatanaIndicators/libayatana-appindicator/archive/refs/tags/0.5.94.tar.gz"
-  sha256 "884a6bc77994c0b58c961613ca4c4b974dc91aa0f804e70e92f38a542d0d0f90"
+  url "https://ghfast.top/https://github.com/AyatanaIndicators/libayatana-appindicator/archive/refs/tags/0.6.0.tar.gz"
+  sha256 "23be92ad8eb9625ce93b23b14f82f3cf88a4970c31d48581945ddfbac0441d06"
   license any_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "253407ddf4628cd2a8c9343aa35df588d239bff65dff68779078e8ad93851ac9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "589e5c203dbcf5befc48f6e13e0e2e723312ceb2f59b65c7490b6f2e80587dab"
+    sha256 cellar: :any, arm64_linux:  "13bd14ba25b3593099af562a4b0ef90bc9b87557498af47bf604a00976a0b19f"
+    sha256 cellar: :any, x86_64_linux: "80c2e02be8fe93584887da8f49a0220fc55ef1f8e4bf0f87cd0d6f09580f4c13"
   end
 
   depends_on "at-spi2-core" => :build

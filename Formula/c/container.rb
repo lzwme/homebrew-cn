@@ -4,11 +4,12 @@ class Container < Formula
   url "https://ghfast.top/https://github.com/apple/container/archive/refs/tags/1.0.0.tar.gz"
   sha256 "9f5379d400d23b6f296b7bae8f71f982dfdc1d52bf072ac81318472a734d21f7"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/apple/container.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90c8c729df08ff62c39c11a06c64fc9e966fc5db37a5048f1313d83a8be5d5f2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4ad56a2548b02a20824284c768c24d4debfe8c6406debb53ef3461afb4bad54"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "371fc0f685b7ca0499117a9a0b9d28498bc3bd178918f7bd79c233a7fb0674e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3bf19c9addbff90135818cadbd3bcc6fcbb76a22a886706888538e6f57ca3f5d"
   end
 
   depends_on xcode: ["26.0", :build]
@@ -34,22 +35,38 @@ class Container < Formula
     codesign "--identifier=com.apple.container.cli", bin/"container"
     codesign "--identifier=com.apple.container.apiserver", bin/"container-apiserver"
 
-    {
-      "container-core-images"   => "CoreImages",
-      "container-network-vmnet" => "NetworkVMNet",
-      "container-runtime-linux" => "RuntimeLinux",
-    }.each do |bin_name, source|
-      (libexec/"container-plugins/#{bin_name}/bin").install release_dir/bin_name
-      (libexec/"container-plugins/#{bin_name}").install "Sources/Plugins/#{source}/config.toml"
+    plugins = {
+      "container-core-images"   => { source: "CoreImages",       entitlements: false },
+      "container-network-vmnet" => { source: "NetworkVMNet",     entitlements: true  },
+      "container-runtime-linux" => { source: "RuntimeLinux",     entitlements: true  },
+      "machine-apiserver"       => { source: "MachineAPIServer", entitlements: false,
+                                     resources: ["init", "create-user.sh"] },
+    }
+    plugins.each do |bin_name, opts|
+      plugin_dir = libexec/"container-plugins/#{bin_name}"
+      (plugin_dir/"bin").install release_dir/bin_name
+      plugin_dir.install "Sources/Plugins/#{opts[:source]}/config.toml"
+      opts[:resources]&.each do |resource|
+        (plugin_dir/"resources").install "Sources/Plugins/#{opts[:source]}/Resources/#{resource}"
+      end
 
       entitlement_args = []
-      entitlement_args << "--entitlements=signing/#{bin_name}.entitlements" if bin_name != "container-core-images"
+      entitlement_args << "--entitlements=signing/#{bin_name}.entitlements" if opts[:entitlements]
 
       codesign "--prefix=com.apple.container.", *entitlement_args,
-libexec/"container-plugins/#{bin_name}/bin/#{bin_name}"
+               plugin_dir/"bin/#{bin_name}"
     end
 
     generate_completions_from_executable bin/"container", "--generate-completion-script"
+
+    # Relocate the binaries under libexec and replace them in bin with shim
+    # wrappers. The CLI resolves its install root as the lexical grandparent
+    # of the running executable (see Sources/ContainerPlugin/InstallRoot.swift),
+    # so the binaries must live one directory below the keg root for the
+    # bundled plugins under libexec/container-plugins/ to be discovered.
+    # CONTAINER_INSTALL_ROOT is also exported by the wrappers for the code
+    # paths that honour the environment variable.
+    bin.env_script_all_files libexec, CONTAINER_INSTALL_ROOT: opt_prefix
   end
 
   def codesign(*args)

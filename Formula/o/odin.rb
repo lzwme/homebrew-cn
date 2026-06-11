@@ -2,19 +2,19 @@ class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https://odin-lang.org/"
   url "https://github.com/odin-lang/Odin.git",
-      tag:      "dev-2026-05",
-      revision: "ea5175d865c2034b033ebf5653d83638f10bba54"
-  version "2026-05"
+      tag:      "dev-2026-06",
+      revision: "285f6d87bc86b17329fb23416fd512da4393885b"
+  version "2026-06"
   license "Zlib"
   head "https://github.com/odin-lang/Odin.git", branch: "master"
 
   bottle do
-    sha256                               arm64_tahoe:   "4d69ba3ed64310b3458b1792204c246bc627793de21dc08cb2388583deb06af2"
-    sha256                               arm64_sequoia: "6c5c368d2ef2b74cabb6a64401c05fca66ea38cd4ba5ebeeb478e2a82c6af6f5"
-    sha256                               arm64_sonoma:  "016aa9dee55093b8641b46d19186684c6c2152f509d5b085bbb9c9cf8e438004"
-    sha256 cellar: :any,                 sonoma:        "4492bbd6b23da0b0b1e529ad702b6ece2432ad9e8e14c8d01b7fe1a42a829ddc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ede27443b9c8adb5e16c8fe194aa94f6eb3b036f21e857f57b412fc6c25b821f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7d5741924b1dbed92b9773e80de4c7bf741a13b3234d4764780a5b30a46bba9"
+    sha256               arm64_tahoe:   "525c550b357f0217eb92994b3601fb987515d29dbcfbed8bd80ae945bbf82685"
+    sha256               arm64_sequoia: "24c55850bd625d163c6f9987ac7005f6db967ec69d658cd2bf71907b691fb886"
+    sha256               arm64_sonoma:  "384639cfdea65e418965d91e2be35b73b5de2dc0fa1b4c67cfbab58072b38e3d"
+    sha256 cellar: :any, sonoma:        "9552a57935eab3ca4230907f1f83ff09cac970c963018627d96ed773570f242f"
+    sha256 cellar: :any, arm64_linux:   "262475f761d4f06c7b9e1d9ca686bdca1ea031f63ae80376ec9314d0a03e2cd5"
+    sha256 cellar: :any, x86_64_linux:  "288b049665dbdf70a81e260468e174c85bd2a5b4a85b03d9e83359d8fda4c444"
   end
 
   depends_on "glfw" => :no_linkage

@@ -74,11 +74,7 @@ class ArgyllCms < Formula
     inreplace "Jamtop" do |s|
       openssl = Formula["openssl@3"]
       libname = shared_library("lib$(lcase)")
-      usr = if OS.mac?
-        "#{MacOS.sdk_path_if_needed}/usr"
-      else
-        "/usr"
-      end
+      usr = "#{MacOS.sdk_path if OS.mac?}/usr"
 
       # These two inreplaces make sure all Homebrew and SDK libraries can be found by the Jamfile
       s.gsub! "[ GLOB /usr/include$(subd) : $(lcase).h $(lcase)lib.h ]",

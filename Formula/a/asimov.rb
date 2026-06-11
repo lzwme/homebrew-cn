@@ -7,8 +7,8 @@ class Asimov < Formula
   head "https://github.com/stevegrunwell/asimov.git", branch: "develop"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "86f8b1f739784ed4e90e99090a27454e9b2852787fe6110f9bf15b991e3fe4c4"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "3af345aae1664e1077e95f587e8439f5f580da014a3dc4b0ffea7058d14492dd"
   end
 
   def install
@@ -19,7 +19,6 @@ class Asimov < Formula
   service do
     run opt_bin/"asimov"
     run_type :interval
-    require_root true
     interval 86400 # 24 hours = 60 * 60 * 24
   end
 

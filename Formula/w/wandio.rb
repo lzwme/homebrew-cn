@@ -1,9 +1,9 @@
 class Wandio < Formula
   desc "Transparently read from and write to zip, bzip2, lzma or zstd archives"
   homepage "https://github.com/LibtraceTeam/wandio"
-  url "https://ghfast.top/https://github.com/LibtraceTeam/wandio/archive/refs/tags/4.2.6-1.tar.gz"
-  version "4.2.6"
-  sha256 "f035d4d6beadf7a7e5619fb73db5a84d338008b5f4d6b1b8843619547248ec73"
+  url "https://ghfast.top/https://github.com/LibtraceTeam/wandio/archive/refs/tags/4.2.7-1.tar.gz"
+  version "4.2.7"
+  sha256 "45021795b5c4d1609ba509358e730ea605c4c9621704d75214abb003f37602ab"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -15,13 +15,12 @@ class Wandio < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "5673ce841d6d082afc1432971b3b2e28596c4f931aa409b22f86e74317039ec4"
-    sha256 cellar: :any,                 arm64_sequoia: "ad387944b49303444e1a8216a656e20bed139bc0c6d689310f582077b19d0767"
-    sha256 cellar: :any,                 arm64_sonoma:  "76f48d461a4ddef56aa15f61c6e758d64da0dbd1abc9ee25daff508765ce828f"
-    sha256 cellar: :any,                 sonoma:        "8ee2891b8d44dbcf55985d9b08528b728c097704e5479e8c82b5d863f949246d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9be468d23893b34c86f3c4f6bb69ec719f82174b8e876d3a6a86f59afa64288"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89523d49509881d50d6e96f15f1c36127f38ba6b8337c9f0dd7b08dc3075389a"
+    sha256 cellar: :any, arm64_tahoe:   "56ba2de2f56757135f4e1c9d46641493dde28ba90b355508d245bf2ce21197c1"
+    sha256 cellar: :any, arm64_sequoia: "e56952eebbac33e9e4fca5a66b9dbde26a7cca8ff2deb2aeb3fde9dd1ab93c2b"
+    sha256 cellar: :any, arm64_sonoma:  "99dd94a319b9517c0429e5e0697a2a604aee164c90ad6242a5eaa870b4ff705b"
+    sha256 cellar: :any, sonoma:        "4a020f80eb8e8a164c697d3a0650fe852b5fd1ca07f3da301da5a682775c2871"
+    sha256 cellar: :any, arm64_linux:   "be506895e4d94dfc0a339377a1c8ee14e6410421eade2f0c513317f1ceb55646"
+    sha256 cellar: :any, x86_64_linux:  "1614fe1d92fc980cb7221900d99a477a078767cb8c61ae237d3d4026a4fa4c62"
   end
 
   depends_on "autoconf" => :build

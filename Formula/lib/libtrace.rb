@@ -1,9 +1,9 @@
 class Libtrace < Formula
   desc "Library for trace processing supporting multiple inputs"
   homepage "https://github.com/LibtraceTeam/libtrace"
-  url "https://ghfast.top/https://github.com/LibtraceTeam/libtrace/archive/refs/tags/4.0.32-1.tar.gz"
-  version "4.0.32"
-  sha256 "97ae2ae44c3603957f75f41ce1124698057ebc24ee0fa36f5c902bbb23d9ec2e"
+  url "https://ghfast.top/https://github.com/LibtraceTeam/libtrace/archive/refs/tags/4.0.33-1.tar.gz"
+  version "4.0.33"
+  sha256 "fb8cb15a3411ee8100c07d5c719309e6a0bb8e3a729b1b812fe7989b0bbe8c9c"
   license all_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
 
   livecheck do
@@ -15,12 +15,12 @@ class Libtrace < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b4f8f78341237cbf0f5b787adfa0dc5738bec660f8006e1db81366b02ed7cbe1"
-    sha256 cellar: :any, arm64_sequoia: "72218d4cf4941ef363860b63e9116f5f10bc9a90cde61eb88caf87b5696c717d"
-    sha256 cellar: :any, arm64_sonoma:  "0750fd5ca6eed2b58e0cd7d161664af9c1ec7b691436e4cce713e8bc2503a900"
-    sha256 cellar: :any, sonoma:        "6cdc0131a7b7fef52374ea62f6ded2620501ca3c47f6a2301ebc13301a5e8819"
-    sha256 cellar: :any, arm64_linux:   "d23c416965ede20d1fdadb606fc7c2ead36ddf0231c8817b074c81c3592d7b87"
-    sha256 cellar: :any, x86_64_linux:  "d90f930894133f34e04f7945ac2494aab204d9deb601ff59b82fcaf097ace634"
+    sha256 cellar: :any, arm64_tahoe:   "23df8c589a9cae7c3453118292aff407ac9b83350cfb11b4e529c2b16ec8c6e3"
+    sha256 cellar: :any, arm64_sequoia: "511460467e7cc7db556874bbf8ac6bdacd11538be67d7823043ebc3c19efaba1"
+    sha256 cellar: :any, arm64_sonoma:  "f8bf558325e4eb6484ebdf429ad05a487ef4f876becc701449482a32796a3ae8"
+    sha256 cellar: :any, sonoma:        "67b3bc6ff60c084766272d4a745fd3ef60621f89cbca51ebf095d2e6821f7202"
+    sha256 cellar: :any, arm64_linux:   "2230061e26263889ff2780062fdbc2f8e1bafd445c057cce1f99d5f5ebe68fa1"
+    sha256 cellar: :any, x86_64_linux:  "0371cb54dbd31f06abfbb07a33c5a556e056a303093cb605292bf160712ffab6"
   end
 
   depends_on "autoconf" => :build

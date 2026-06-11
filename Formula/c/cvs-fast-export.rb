@@ -3,8 +3,8 @@ class CvsFastExport < Formula
 
   desc "Export an RCS or CVS history as a fast-import stream"
   homepage "http://www.catb.org/~esr/cvs-fast-export/"
-  url "https://gitlab.com/esr/cvs-fast-export/-/archive/2.0/cvs-fast-export-2.0.tar.bz2"
-  sha256 "9eb3d54d4631c5447b6f8c12ca8c08a32ee4255768c90dea66dbfef5b8a6a624"
+  url "https://gitlab.com/esr/cvs-fast-export/-/archive/2.1/cvs-fast-export-2.1.tar.bz2"
+  sha256 "1fd660ddccbeba8f4514ca4268a234be4fb6e3ad6370574b865e4720cd876f68"
   license "GPL-2.0-or-later"
   head "https://gitlab.com/esr/cvs-fast-export.git", branch: "master"
 
@@ -16,12 +16,12 @@ class CvsFastExport < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f402cec3473616edec6bee65fb940a45e06e76151bce1856927c3f37787c795"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f402cec3473616edec6bee65fb940a45e06e76151bce1856927c3f37787c795"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f402cec3473616edec6bee65fb940a45e06e76151bce1856927c3f37787c795"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe8f9e74e688482a9cf911a0b211a194c9e2498db827dedd4e714903f7235056"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c304514ded6cd90284d11f0d5c7f6a0823a3996096bafaddc3800ece3c0a0638"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1f89215bad4fdb70df12de12150ee211910ab6ccc931c09d74ce35f22d4043a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e1a28987df0517bcef7fec664e1c2ecc6b85ecbf14816f958523f77ed89c7658"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1a28987df0517bcef7fec664e1c2ecc6b85ecbf14816f958523f77ed89c7658"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1a28987df0517bcef7fec664e1c2ecc6b85ecbf14816f958523f77ed89c7658"
+    sha256 cellar: :any_skip_relocation, sonoma:        "28c891f5cd1f694e55e3faf758d2a02033cdd1ae6bbcf454c343e7ef3a1e441d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8b1db898718bf60129280d96119e1f14cdd95da002aa4d4b1710d651d6ed82c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0098d3debbbd34751c019cfba95503b5ce7db3cce1aa731479f39293c0e8d1e"
   end
 
   depends_on "asciidoctor" => :build
