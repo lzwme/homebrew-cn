@@ -23,7 +23,7 @@ class Nessie < Formula
     ENV["JAVA_HOME"] = Language::Java.java_home("21")
     system "gradle", ":nessie-quarkus:assemble"
     libexec.install Dir["servers/quarkus-server/build/quarkus-app/*"]
-    bin.write_jar_script libexec/"quarkus-run.jar", "nessie"
+    bin.write_jar_script libexec/"quarkus-run.jar", "nessie", java_version: "21"
   end
 
   service do

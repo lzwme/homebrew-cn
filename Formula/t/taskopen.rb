@@ -1,10 +1,11 @@
 class Taskopen < Formula
   desc "Tool for taking notes and open urls with taskwarrior"
-  homepage "https://github.com/jschlatow/taskopen"
+  homepage "https://codeberg.org/jschlatow/taskopen"
+  # TODO: Switch to codeberg on next release. Deferred to avoid checksum change
   url "https://ghfast.top/https://github.com/jschlatow/taskopen/archive/refs/tags/v2.0.3.tar.gz"
   sha256 "fe16f839279e8baff96dcead55feb03997aebdaa3cee7a421dadc8e7cb8c1581"
   license "GPL-2.0-only"
-  head "https://github.com/jschlatow/taskopen.git", branch: "master"
+  head "https://codeberg.org/jschlatow/taskopen.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "88c6ca32bc458061057c90fa56237a7e0d0c7e7325a9b8f18e8750b6bb822b5f"
@@ -19,6 +20,9 @@ class Taskopen < Formula
   depends_on "task"
 
   def install
+    # Workaround for https://codeberg.org/jschlatow/taskopen/issues/180
+    inreplace "taskopen.nimble", '"2.0.0alpha"', "\"#{stable.version}\"" if build.head?
+
     system "make", "install", "PREFIX=#{prefix}", "VERSION=#{version}"
   end
 

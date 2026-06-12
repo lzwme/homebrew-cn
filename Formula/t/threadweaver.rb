@@ -1,8 +1,8 @@
 class Threadweaver < Formula
   desc "Helper for multithreaded programming"
   homepage "https://api.kde.org/threadweaver-index.html"
-  url "https://download.kde.org/stable/frameworks/6.26/threadweaver-6.26.0.tar.xz"
-  sha256 "ad32daeafac62077590885f3abc4bcac1abbc6faeb34c20b32f6040648f7de1b"
+  url "https://download.kde.org/stable/frameworks/6.27/threadweaver-6.27.0.tar.xz"
+  sha256 "6be89d43b4d7cfd4ce519ed24b8bcf8400c93bcfc6f42d9931cd0f852269bdcb"
   license "LGPL-2.0-or-later"
   head "https://invent.kde.org/frameworks/threadweaver.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Threadweaver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "627c4c8885115f8425b66378dbd1e6879cfaaa852d294b332717697791382dae"
-    sha256 cellar: :any,                 arm64_sequoia: "600d4c43166fdf04b0fedfbbe00bb5ab3414234e5421a790584cecec91f71239"
-    sha256 cellar: :any,                 arm64_sonoma:  "4226dac613e03263fb8c173a4a4fd3e1580686cc9b6d52a0286989b194ddbd47"
-    sha256 cellar: :any,                 sonoma:        "6f482400682d0ff515c958f13b4450ef97bd242bff2447e6cf8a911ccc5da38f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d60cfb3c94f90563eb26e784ac6f032ee0854a59f57dd27d2c227d3eb7983d60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "add6d78c8241ebafb773fa08de3d20ec0d03a6fa23822fdac9feba8798650cb3"
+    sha256 cellar: :any, arm64_tahoe:   "fd3d4fb670cce7f9c6c768f7dbd4e506444780a0d1c40ec46e10849c5b2ad45f"
+    sha256 cellar: :any, arm64_sequoia: "6c890db0039dbf655010a2e312d4ff7ee6be250dabaca7606cba1890f37bae01"
+    sha256 cellar: :any, arm64_sonoma:  "965b98bf9f384cb24de82d69d5d30ba02d21e9e2b1b4e675bc653b6e49dd7888"
+    sha256 cellar: :any, sonoma:        "675e7b0eaefd1bfd2069a4c1919f71a2588ef66fb1e87baa21b051a1ffc7fbce"
+    sha256 cellar: :any, arm64_linux:   "a3664cb2493b7e0e2d34b4c5c22258d278490ac68ab479163926e5653d468d7f"
+    sha256 cellar: :any, x86_64_linux:  "97411b318b848b504fbdd96139aaf053fe382621496245b1e0403fb8a84565af"
   end
 
   depends_on "cmake" => [:build, :test]

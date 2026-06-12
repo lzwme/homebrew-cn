@@ -1,17 +1,17 @@
 class CargoInsta < Formula
   desc "Snapshot testing CLI for Rust"
   homepage "https://insta.rs"
-  url "https://ghfast.top/https://github.com/mitsuhiko/insta/archive/refs/tags/1.47.2.tar.gz"
-  sha256 "487c7348fc8865fd3218c4252f2603238af1b6ae3501fe51577fb5abd4fe5323"
+  url "https://ghfast.top/https://github.com/mitsuhiko/insta/archive/refs/tags/1.48.0.tar.gz"
+  sha256 "acd7140f00155f3fe50b723296fb828dea9de68297f3e26f8a7e442bcc62fa79"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f011c92e70e9f1f7517c67ae3476b57afa3d95571462868eb61e863092299380"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "703b943e5a9c46aa55e47b406a31d2b3962f1b2c9ab5ba4dd329e0a724d74165"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83cedafd07e5d36b24f2691913c6fe41985e60202440033fb9e2c07b5979b3e0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8a6664d076b94b6ae0f21949db218e377c8bf2872b4f5a516d705cf07bcf3118"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "69d6002f03be6c565732ad355c2eda8348212e72a7f7f1931d4834a7fadf1486"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06d76b025860494437510db2d2e51b37b626bbc3858fffc325c4b55bad468d22"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b48fff37f4381671d507159a9cd4122857d3ba888fa8c6dc17b925cdb5341174"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d6a9055ddbc17aae68feece40ace6a57be0677fcbcdd6339cb0d9d55b49bd56"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b17ad755ae64ce2ca35e18362ba9e123931668347d01fed461c94bf77e31ab9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bbc9eb83989f9f6e98744b16424d2d042162a8a303b272cfd63d8ac7f60b7fb0"
+    sha256 cellar: :any,                 arm64_linux:   "9fdaaa8b6a695e3535361b5870138c878ef5a91f20c0bd2e6aca03ec0780c272"
+    sha256 cellar: :any,                 x86_64_linux:  "3360339dadaff05b5f0d9de7df6868e952f823cc8ddfa38942d44e544746bda8"
   end
 
   depends_on "rust" => :build

@@ -3,10 +3,9 @@ class Checkov < Formula
 
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
-  url "https://files.pythonhosted.org/packages/e6/3b/ded1d2334acf842cc141e1bd91055fc24a7404820ecd40bdd217b061d23b/checkov-3.2.530.tar.gz"
-  sha256 "b925a3601cbb13a9eac04b171dbdf411b7b05c45b3d3e3297b27d32767d1fd27"
+  url "https://files.pythonhosted.org/packages/9c/0a/03002542731935763af6bb5eb7473cc1e99818c818608d5fd54240c590e2/checkov-3.3.0.tar.gz"
+  sha256 "1d241480d402bc1e4d5e0eaec5fef159f4c0cd4da73c4d8253cdb897cd0f2c7d"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url "https://pypi.org/rss/project/checkov/releases.xml"
@@ -18,12 +17,12 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d36d5596552b1b6f363a0e1a436262ecb66a0fb3c82b3b85743462df45201faf"
-    sha256 cellar: :any, arm64_sequoia: "265733221cb37b880c4bc774efb73e247848dd5177f16b2d5f173c5dff1e6ea5"
-    sha256 cellar: :any, arm64_sonoma:  "d7e30a7b68ce31a6a70d996d0bfcf5462f3d1fad193c742d72bc31a4378b39d3"
-    sha256 cellar: :any, sonoma:        "d899aa2c4fec20690e86e72afcfea881b121e4544d786924497dab89ee046cb2"
-    sha256 cellar: :any, arm64_linux:   "2e73d6c5cfaafb75d6c61405b865a897dc1599954dae32955e06138839bbdadc"
-    sha256 cellar: :any, x86_64_linux:  "1b58c7aab708a5aa0e9408fcd7941af2972c7b7e20ea29198e495034d8cd7d74"
+    sha256 cellar: :any, arm64_tahoe:   "4b2b07fe001a6d055e42a36c8c1b7c65cbce29ba3713b2c4279b044e150a029f"
+    sha256 cellar: :any, arm64_sequoia: "d54a003ab9ba7d100a2e782eb4c602b4b26c9fbf4444dfc5289f705c05de3d5c"
+    sha256 cellar: :any, arm64_sonoma:  "c60c28d8eca636d776ac2e450eb4bddb781af3978d143a513aa59c99386ede74"
+    sha256 cellar: :any, sonoma:        "19c96f00e99407e026676462d6a5dc8f454cf835c6aad98c145b69e755c63344"
+    sha256 cellar: :any, arm64_linux:   "c95380a987f3b127a951f0794998df2040997d1b595171e4e8eb1e9614079737"
+    sha256 cellar: :any, x86_64_linux:  "8d2b9cbd9bba4f60900ec4de7648758a2392a2eaa8f3ad9d4847a4637a0bf3ee"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -52,8 +51,8 @@ class Checkov < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/82/78/8ea7308cac6934de8c74a14f3d5f65d1c89287426688be79538d0e5c013d/aiohttp-3.14.1.tar.gz"
-    sha256 "307f2cff90a764d329e77040603fa032db89c5c24fdad50c4c15334cba744035"
+    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
+    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
   end
 
   resource "aiomultiprocess" do
@@ -194,6 +193,11 @@ class Checkov < Formula
   resource "dpath" do
     url "https://files.pythonhosted.org/packages/1f/2c/a4213cdbbc43b8fdf34b6e2afb415fd5d46e171d32a4bb92e7924548aa9f/dpath-2.1.3.tar.gz"
     sha256 "d1a7a0e6427d0a4156c792c82caf1f0109603f68ace792e36ca4596fd2cb8d9d"
+  end
+
+  resource "ecdsa" do
+    url "https://files.pythonhosted.org/packages/25/ca/8de7744cb3bc966c85430ca2d0fcaeea872507c6a4cf6e007f7fe269ed9d/ecdsa-0.19.2.tar.gz"
+    sha256 "62635b0ac1ca2e027f82122b5b81cb706edc38cd91c63dda28e4f3455a2bf930"
   end
 
   resource "frozenlist" do
@@ -422,8 +426,8 @@ class Checkov < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/06/b3/36c8ecf72e8925200671613332db156d84b99b3aee742a41c1938ebb0808/tqdm-4.68.1.tar.gz"
-    sha256 "fc163d96b287bd031e1aa24421ce4411b25559bd0a1be4fe649bdaa4d2c02bf5"
+    url "https://files.pythonhosted.org/packages/85/05/0d5260f1f1ca784f4a4a0def9cbe6affe587f5b4025328d446c3d67765f4/tqdm-4.68.2.tar.gz"
+    sha256 "89c230e8dbc67c7615c142487111222f878c77427ea09549960f62389e258add"
   end
 
   resource "unidiff" do

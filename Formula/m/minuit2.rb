@@ -1,8 +1,8 @@
 class Minuit2 < Formula
   desc "Physics analysis tool for function minimization"
   homepage "https://root.cern.ch/doc/master/Minuit2Page.html"
-  url "https://root.cern.ch/download/root_v6.40.00.source.tar.gz"
-  sha256 "676f8fde8926ce05902be7f44ce7d492a4a2060022fcab0e3d1c44f6dc0fbde8"
+  url "https://root.cern.ch/download/root_v6.40.02.source.tar.gz"
+  sha256 "f631eebee3dbea128f1415f4b784f5e83637a2b431193bce75f10385f71efc56"
   license "LGPL-2.1-or-later"
   head "https://github.com/root-project/root.git", branch: "master"
 
@@ -11,12 +11,12 @@ class Minuit2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9aa7a1f85d57ca601a02436acb6a96e67bb9f4b6f7cc7baab8d5d077b7295382"
-    sha256 cellar: :any,                 arm64_sequoia: "2c107e35c37e5f8ca47462391111188a06b0d4fd522a2843c554823a332fd5cc"
-    sha256 cellar: :any,                 arm64_sonoma:  "5a288fc91edbff975b071f720513ecd5f1270cd909199ba1c1f5260b44a8fd0b"
-    sha256 cellar: :any,                 sonoma:        "804d9df81e3dde8a0552a49a97a715e02e48b727d912b7bc1bb3a45e9d670f07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb15a622b794c75f6f521003e8273f3c04cf819b9bd943e3ac4b91443ce6976d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23d51c99791c20bf97c3e131c33f6dbc26fa102b1a741eabb73ce68b37e91dc6"
+    sha256 cellar: :any, arm64_tahoe:   "ef68fe1ba7d43d170a5358cded925bccfe6cceb4292fa446c4c4555a26c490a1"
+    sha256 cellar: :any, arm64_sequoia: "d79b38cc0ba70b05a113fd20fc6807ae11c44244f40156c220175a77695d6573"
+    sha256 cellar: :any, arm64_sonoma:  "9f834f73d9915a2f062bb272a3c52815bf19df044011f9f7107290f0584ae765"
+    sha256 cellar: :any, sonoma:        "43ec264a53311f3e9a2e20c68a85ec784aa5b922e111a672633a84824d765b64"
+    sha256 cellar: :any, arm64_linux:   "56a8baec56d5854ba54bafe3f73e2bf5e035c9adca14eb9fabf9e62e7dcf70e8"
+    sha256 cellar: :any, x86_64_linux:  "df5355a064419cb52cca303571bc10f825aeaa43fc3a75a66b008e51d7e4297a"
   end
 
   depends_on "cmake" => :build

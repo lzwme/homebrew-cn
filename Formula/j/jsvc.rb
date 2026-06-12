@@ -1,19 +1,19 @@
 class Jsvc < Formula
   desc "Wrapper to launch Java applications as daemons"
   homepage "https://commons.apache.org/daemon/jsvc.html"
-  url "https://www.apache.org/dyn/closer.lua?path=commons/daemon/source/commons-daemon-1.6.0-src.tar.gz"
-  mirror "https://archive.apache.org/dist/commons/daemon/source/commons-daemon-1.6.0-src.tar.gz"
-  sha256 "32da7dd4bbbcbcfa96d0aa7edc99377f7a0c2b9beb40b5516e591af3e11b4231"
+  url "https://www.apache.org/dyn/closer.lua?path=commons/daemon/source/commons-daemon-1.6.1-src.tar.gz"
+  mirror "https://archive.apache.org/dist/commons/daemon/source/commons-daemon-1.6.1-src.tar.gz"
+  sha256 "15ea9386b760ba74f2926fbc0a6853c1088a4c0dd5c46d0d1866f9ff091a6364"
   license "Apache-2.0"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f004c11e26f1f66ccb604b916dd3d714efd6cbbd808e5780c73df571c7591bcf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "053bf48b48cc247fd9ac60c82f1f0ff8d7d08afcb1cbad25764baa31842e530a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf56af66872f2c702a83d478577ed9d9c9f56e6b082eb9ab709a122bf82cd097"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8f68dbffcdfc75d1ac47a79a49536ae1355c454d49e8306119b30591bb20107f"
-    sha256 cellar: :any,                 arm64_linux:   "40d37209e5bbeae4f6870bd66a2428e928b6885f03aca55fbcf6f6621a541b37"
-    sha256 cellar: :any,                 x86_64_linux:  "e191f404809b4d0c5d0cbfed4318a88c872785cf0644684d2f723a987a1e673d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bfb95067226cb4e693882972be5e517fa75fa82eb1d5593a64ac849b2661291a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aea93d34c2841c28e484ee9a9c12ab8ed6512c8ce1aca82f1d6436d7edb64de8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "096291cdc0d0335ed80a5b15249f975282f535d72cef0a3e8f49a16a5c6ed826"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ec4e8730bd147c2dea34d9f64774ca9fbb65ec70f1e70197e78b4f5ff9e86f0c"
+    sha256 cellar: :any,                 arm64_linux:   "215c20075db1e372de2e4a8e842f57b3688304b1dfb557ebe74d53831e7bca8b"
+    sha256 cellar: :any,                 x86_64_linux:  "8d7c506feafa56783dab019856bcf495f3ee5836791e8a6eae748ce155c33764"
   end
 
   depends_on "autoconf" => :build

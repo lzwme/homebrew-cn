@@ -6,8 +6,8 @@ class Neovim < Formula
   head "https://github.com/neovim/neovim.git", branch: "master"
 
   stable do
-    url "https://ghfast.top/https://github.com/neovim/neovim/archive/refs/tags/v0.12.2.tar.gz"
-    sha256 "ef9f58da7d687ed4d1dad9715542bf0dabdeedbfe8089e2ce17fff21b920a268"
+    url "https://ghfast.top/https://github.com/neovim/neovim/archive/refs/tags/v0.12.3.tar.gz"
+    sha256 "36a6c66bfbba5d96fa512110aecddb981148a4d013b5ecd01a42877c49855a41"
 
     # Keep resources updated according to:
     # https://github.com/neovim/neovim/blob/v#{version}/cmake.deps/deps.txt
@@ -83,12 +83,12 @@ class Neovim < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a046bc422bef6a739a907ae40566f2b42ba9b0a503d74a71e074b213803455a8"
-    sha256 arm64_sequoia: "789e5daeea230726979c302383705a36191567ce8538d8a7ae71e33f022b772a"
-    sha256 arm64_sonoma:  "4beba7ae33deedc69fe4dd54043d6c8244bb96639507afaab84ac4a4ac8d9c5e"
-    sha256 sonoma:        "4f1db011cc4aaee47dd4bf04054aa9319b7a704ca5aa2f26df9572269111e5dc"
-    sha256 arm64_linux:   "5ba96cc4499bd45272692d81eba9dde916545cddbd89994393006d63fb1d8e20"
-    sha256 x86_64_linux:  "bab773c7c0bd3905f326114ed5269fdc478232aecff6202db792004788f1afeb"
+    sha256 arm64_tahoe:   "c6afc7ce2d91a302dd5945ac1699e32a72bd6122de9e101d32484eafb358414b"
+    sha256 arm64_sequoia: "4f346d05ead887cfc11e6531cc8fabf39c95fb3ee47809524f5a547489854e5e"
+    sha256 arm64_sonoma:  "ad3f08b6ea7c78a92fe187d6aec7e6be7a32b7958bf63555abbda7bbf57d6976"
+    sha256 sonoma:        "b9df347458b8c059c94576f422225e9dc950ae580cd08bfe6f1d55611ebf2d89"
+    sha256 arm64_linux:   "5cfafd456ed6fb8d4dfe2a797cc5467f5ed6622be1d87fb7ff789ab7d095dce0"
+    sha256 x86_64_linux:  "7f7b6c58f93f8a9916c6990ca77ae84b72424ff7afb3ce53d42da34154070f64"
   end
 
   depends_on "cmake" => :build

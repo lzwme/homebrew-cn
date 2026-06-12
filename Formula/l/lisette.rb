@@ -1,8 +1,8 @@
 class Lisette < Formula
   desc "Language inspired by Rust that compiles to Go"
   homepage "https://lisette.run"
-  url "https://ghfast.top/https://github.com/ivov/lisette/archive/refs/tags/lisette-v0.3.3.tar.gz"
-  sha256 "d7e7d8aa7ca4d1de92f037e41c2d97b0628dd1891f9368ec0efeceea222c6d32"
+  url "https://ghfast.top/https://github.com/ivov/lisette/archive/refs/tags/lisette-v0.3.4.tar.gz"
+  sha256 "2463c36f1c2f8c647ab2f6c7ef452462472a27740b715cb2ce0cf15fc80b5faa"
   license "MIT"
   head "https://github.com/ivov/lisette.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Lisette < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8ea05ceff9243acba69dc33bba1ff3f8d088c255e8bd492b411ef221eccaa7d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "985da173a59d46486c665a5420b4aa2bb74a9ba5b5c1c7d905c2ca8aebb763c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8faa01eda2181c3ab1594240959ac26c644f48c091cc83e7ed479863eb6b230"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8415d7cbee2e3ecb6c36bb036b8f240197d7ab7b2baf3ac75da8e2819f1dfc24"
-    sha256 cellar: :any,                 arm64_linux:   "fd3a06991f70ff678aa1ca648e944459fac7110fe514b32db9f394a2b2114ed1"
-    sha256 cellar: :any,                 x86_64_linux:  "c0eb8e1a1918e0f8317e8c7fdc65e2954856e0a98373e3c91dad92aac4a885c5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68cbb6d1b77c9776eba3dd9bdf949646547b0f0701ac0159ae09377e8856e734"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4520b0c6d06c740b4724a17fd4e3796d181933dc200b6df0b58e56c4539eaa8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d86a8853a7d921cbaed7c83ddcd62394f58067eca92e580843b5e84744858fc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "85f614bffc2571fff70ee856fc8f311ee070cb575180f7ce53ba902c03eba41e"
+    sha256 cellar: :any,                 arm64_linux:   "857686288237c56d03d484a34e91cba3da3054462ed5c8885b4c6f967bd1dcb1"
+    sha256 cellar: :any,                 x86_64_linux:  "aefb1f076c7dab76d2fff5e1206acc16094bee2147d341dd5988e66b2a935fd6"
   end
 
   depends_on "rust" => :build

@@ -1,8 +1,8 @@
 class Herdr < Formula
   desc "Agent multiplexer that lives in your terminal"
   homepage "https://herdr.dev"
-  url "https://ghfast.top/https://github.com/ogulcancelik/herdr/archive/refs/tags/v0.6.9.tar.gz"
-  sha256 "c61edee82f9cd7ac0137b883ef61586e0ff89fe8358dfc2763ea6cb515f8d56a"
+  url "https://ghfast.top/https://github.com/ogulcancelik/herdr/archive/refs/tags/v0.6.10.tar.gz"
+  sha256 "6fdb1cfe62ea89718c12e32ac097f5e35c1e223b5e3e529d1a7360295c329518"
   license "AGPL-3.0-or-later"
   head "https://github.com/ogulcancelik/herdr.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Herdr < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbc54547e038cf68d0c97b90abeaf5825a0432727524ebe5943263b111e99737"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fea630f24e2ef7446406ad64ea58b5c980b49b3113064878fccf6f43d7c66a3d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5faa907d0adc27291b40006e87cba9583ff781d31173806e4fc8a37c9f4dba6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "be5b81fc677197b00944a3ae6e12c6ba3f04327e6271ba187c5dc18bceceb940"
-    sha256 cellar: :any,                 arm64_linux:   "834c09f3550ac4e7b6649e0372490928e7460efc2dfa53feefe7b138cb912945"
-    sha256 cellar: :any,                 x86_64_linux:  "e57c30f27ddbc59171c3a4c81762bd10302e113e8a712ba8f76bdf2b1c1625c4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6810301b200fc9c98968e664a90b870ebb1a0f1330c5275f63d8211d159881ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd9abd785077d9ff83374b143e4aed2a09476932eaa4ab1c7d27e70d9c114dab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5fb5e81014e8129869cb2662c4a74211280e1b0e23e947499a2ab0a06c28eb8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d4e45d18955db11eabdf0c2439f1b45c9029ea325640ee1db5981c419bbe0cad"
+    sha256 cellar: :any,                 arm64_linux:   "a4dd597c81f39f6c796530e2a8541776a92a1eac50004b3c035e49b05d0cc9b8"
+    sha256 cellar: :any,                 x86_64_linux:  "6a00bd55508debe5ae3b5ac8adc013088a2139fa43b93a5e739da54c4fe36598"
   end
 
   depends_on "rust" => :build

@@ -1,8 +1,8 @@
 class Ldns < Formula
   desc "DNS library written in C"
   homepage "https://nlnetlabs.nl/projects/ldns/"
-  url "https://nlnetlabs.nl/downloads/ldns/ldns-1.9.0.tar.gz"
-  sha256 "abaeed2858fbea84a4eb9833e19e7d23380cc0f3d9b6548b962be42276ffdcb3"
+  url "https://nlnetlabs.nl/downloads/ldns/ldns-1.9.2.tar.gz"
+  sha256 "b524fa21994b6e834200ceb8c27f1b84bda5982fe35706f058196c079db94d5d"
   license "BSD-3-Clause"
   compatibility_version 1
 
@@ -14,12 +14,12 @@ class Ldns < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "629f7a51a1a2803dd5416db7237b7c640e72b04614f2012df5fe08cd9639636f"
-    sha256 cellar: :any,                 arm64_sequoia: "714d554e3c767062e77498ba92c0ff91b0871d86197ad91f90da65d9db3ab254"
-    sha256 cellar: :any,                 arm64_sonoma:  "81f4fd69ea66890b1b1db8122b5da93744270950657363ba40c32dec57b0df80"
-    sha256 cellar: :any,                 sonoma:        "190aaba1359ad4d26285d31902e53da00ee506610528baafdc1fbf539fb4f9a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ee79e560ef1f4d78924cf2070eb8dadca89a504f0f5417a99d3bd3730589d70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ad62627c746df971912e4cafba581db58e81f0bd90cb93bba6292213467237f"
+    sha256 cellar: :any, arm64_tahoe:   "18ef267d76b2a85fc04987398e0012eded3bdc47fd409711a6b012c7655b6e3c"
+    sha256 cellar: :any, arm64_sequoia: "ded4e6317d7f9f548fc24fcd44a93371768d610664effa4c1485dea5fa77633d"
+    sha256 cellar: :any, arm64_sonoma:  "2274979d269fdc864a4d34410d558fde8fd52910a228ffe5a021412536aeed94"
+    sha256 cellar: :any, sonoma:        "536900427dfdf4c4df1fa9606ebc6436e38747a2d55b69f215aa50239a61e8c7"
+    sha256 cellar: :any, arm64_linux:   "80b38e17dcc951e58f13c928ea207f55fbff3387f817f89bb84bdf12d6268162"
+    sha256 cellar: :any, x86_64_linux:  "f5e402ae93090399f76159c897d61d2b3ff258613d8a198b510b3bf0690b6959"
   end
 
   depends_on "swig" => :build

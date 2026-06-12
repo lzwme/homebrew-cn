@@ -142,11 +142,11 @@ class PythonAT39 < Formula
       args << "--enable-framework=#{frameworks}"
       args << "--with-dtrace"
 
-      if MacOS.sdk_path_if_needed
+      if (sdk_path = MacOS.sdk_path)
         # Help Python's build system (setuptools/pip) to build things on SDK-based systems
         # The setup.py looks at "-isysroot" to get the sysroot (and not at --sysroot)
-        cflags  << "-isysroot #{MacOS.sdk_path}"
-        ldflags << "-isysroot #{MacOS.sdk_path}"
+        cflags  << "-isysroot #{sdk_path}"
+        ldflags << "-isysroot #{sdk_path}"
       end
       # Avoid linking to libgcc https://mail.python.org/pipermail/python-dev/2012-February/116205.html
       args << "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"

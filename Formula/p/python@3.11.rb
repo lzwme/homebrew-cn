@@ -4,7 +4,7 @@ class PythonAT311 < Formula
   url "https://www.python.org/ftp/python/3.11.15/Python-3.11.15.tgz"
   sha256 "f4de1b10bd6c70cbb9fa1cd71fc5038b832747a74ee59d599c69ce4846defb50"
   license "Python-2.0"
-  revision 1
+  revision 3
   compatibility_version 1
 
   livecheck do
@@ -13,13 +13,13 @@ class PythonAT311 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "abaacb2e82e32b769740e858730428b002cee22ae504f843d73a04cd8beb630e"
-    sha256 arm64_sequoia: "62f553d780355491bae1947d400cba7e507a32635775a04f814ad2280fa73dbe"
-    sha256 arm64_sonoma:  "aca94837020f9e365ea7a91c95317f589c883bb08d0777643640fcb5846d9bb4"
-    sha256 sequoia:       "efa4ff7214ed3d6ded539b4b178a73d21070e87fc017505d4ea497055554299b"
-    sha256 sonoma:        "ad1368aa265328d053233afea65c1c77ab84a76c7398fc0a033b19bded91e791"
-    sha256 arm64_linux:   "5a7a0da63d7a3f71dbdb483b317917a32ec019aef328f6cab2d9c2d9cc16fde3"
-    sha256 x86_64_linux:  "df042532f7a65999e50c38536f00d5dc628afdc7d81ded658258a66c4efa0658"
+    sha256 arm64_tahoe:   "22c7bc7c10968be23aaa88c655fc1befc6a1dba782a2ac64f3da2552cd2a0d22"
+    sha256 arm64_sequoia: "a9fa7c96cbedf914490bd462ad090ca39781bd1bba04d9f91051d46ad0a5eb99"
+    sha256 arm64_sonoma:  "aa008e3df26404e1690c59c6db9045cbae5c61d05b39d4b0b7fe861fae98c703"
+    sha256 sequoia:       "b566606b4064c26f304146dc0d16b60cb84c9159eb00bb946e6c948f9e8bd4e3"
+    sha256 sonoma:        "5ace5bed117fa34da4cdfd8b629ad00c5a0b281c487ec472c2f7e9b3b0134cb7"
+    sha256 arm64_linux:   "c2b85780c36fdfca490b0604b2e24ee95d3d4129fb524a9aefe30f24324eec9a"
+    sha256 x86_64_linux:  "7a6ad764d18f6e51252f9e2081d86d180c1a42b12fa077019327262a861cd12c"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -62,8 +62,8 @@ class PythonAT311 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/73/7e/d2b04004e1068ad4fdfa2f227b839b5d03e602e47cdbbf49de71137c9546/pip-26.1.tar.gz"
-    sha256 "81e13ebcca3ffa8cc85e4deff5c27e1ee26dea0aa7fc2f294a073ac208806ff3"
+    url "https://files.pythonhosted.org/packages/01/91/47e7d486260f618783899587af63ccf7980fb60245c3e63dd4571c6b57ad/pip-26.1.2.tar.gz"
+    sha256 "f49cd134c61cf2fd75e0ce2676db03e4054504a5a4986d00f8299ae632dc4605"
   end
 
   resource "setuptools" do
@@ -165,11 +165,11 @@ class PythonAT311 < Formula
       args << "--with-dtrace"
       args << "--with-dbmliborder=ndbm"
 
-      if MacOS.sdk_path_if_needed
+      if (sdk_path = MacOS.sdk_path)
         # Help Python's build system (setuptools/pip) to build things on SDK-based systems
         # The setup.py looks at "-isysroot" to get the sysroot (and not at --sysroot)
-        cflags  << "-isysroot #{MacOS.sdk_path}"
-        ldflags << "-isysroot #{MacOS.sdk_path}"
+        cflags  << "-isysroot #{sdk_path}"
+        ldflags << "-isysroot #{sdk_path}"
       end
       # Avoid linking to libgcc https://mail.python.org/pipermail/python-dev/2012-February/116205.html
       args << "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"

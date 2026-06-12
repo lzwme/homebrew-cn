@@ -6,15 +6,17 @@ class Sugarjar < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c24e09c050d7729887c3299e6704df14debe539f8b3b588479987d27fd7cbab1"
-    sha256 cellar: :any, arm64_sequoia: "4fe5d0c94d8cba6560c23a3bfb14a013c9dbd071cc7463f345c8a44d3b2fcf64"
-    sha256 cellar: :any, arm64_sonoma:  "ac20983c555688bc31694896bbce74a540f3590b057d55abe743f3855056dada"
-    sha256 cellar: :any, sonoma:        "cc26b3ddeac0543918008c402c83821d43d8b2eaa855853a81b8a9a1f2102d48"
-    sha256 cellar: :any, arm64_linux:   "33b7e1cf0382e1b9ec1f2cb3ffaf81a47d6caec1ded38fd5e7723a82d1880f64"
-    sha256 cellar: :any, x86_64_linux:  "8e8f4b87137d2c5e7b9e821a3f8acc5cd7b225adbb190565b42ca03bc5c6b7c4"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "d3b0cff1f4580225d6a3e7eac8c851309a4b7a634608dde778093d5f84319439"
+    sha256 cellar: :any, arm64_sequoia: "83694e0b651543ea1b51ce0311b93ff03574bffcaab978de7bbd6704b6841ff9"
+    sha256 cellar: :any, arm64_sonoma:  "443c66a932d97244812ab60754d2051e56f145c321f0e2caa9ccb3ced226cc51"
+    sha256 cellar: :any, sonoma:        "cb2dd88eb42cb99ab3b015b8a29e046148b6e8afc39b6d5647b4b9d52fda5e25"
+    sha256 cellar: :any, arm64_linux:   "8c70dca9d32ea5845a28baf1ed56a7b81d064b8bed430a0e03f06a5fca11ca3b"
+    sha256 cellar: :any, x86_64_linux:  "1d175b8ff9dfcc10e818bcf6ea390d6a02cd2b3fb1b33079603b009d740875f6"
   end
 
   depends_on "gh"
+  depends_on "glab"
   depends_on "ruby"
 
   uses_from_macos "libffi"

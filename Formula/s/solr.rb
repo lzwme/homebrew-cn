@@ -22,7 +22,7 @@ class Solr < Formula
     prefix.install "licenses", "modules", "server"
     bin.install "bin/solr"
 
-    env = Language::Java.overridable_java_home_env
+    env = Language::Java.overridable_java_home_env("21")
     env["SOLR_HOME"] = "${SOLR_HOME:-#{var}/lib/solr}"
     env["SOLR_LOGS_DIR"] = "${SOLR_LOGS_DIR:-#{var}/log/solr}"
     env["SOLR_PID_DIR"] = "${SOLR_PID_DIR:-#{var}/run/solr}"

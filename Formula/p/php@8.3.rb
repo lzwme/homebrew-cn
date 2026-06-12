@@ -220,7 +220,7 @@ class PhpAT83 < Formula
     if OS.mac?
       args << "--enable-dtrace"
       args << "--with-ldap-sasl"
-      args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
+      args << "--with-os-sdkpath=#{MacOS.sdk_path}"
     else
       args << "--disable-dtrace"
       args << "--without-ldap-sasl"

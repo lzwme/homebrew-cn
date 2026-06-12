@@ -4,7 +4,7 @@ class Gitg < Formula
   url "https://download.gnome.org/sources/gitg/44/gitg-44.tar.xz"
   sha256 "342a31684dab9671cd341bd3e3ce665adcee0460c2a081ddc493cdbc03132530"
   license "GPL-2.0-or-later"
-  revision 8
+  revision 9
 
   livecheck do
     url :stable
@@ -12,12 +12,12 @@ class Gitg < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7e0c120472cfb2223b7615d56e431e51a865850aa768160458f27c8b0e8ba30a"
-    sha256 arm64_sequoia: "6d64e919f7a876eb31d1f3e21b5d2122a7848d85c7255c58cebc041c2ca0d76b"
-    sha256 arm64_sonoma:  "f039601407fbfc1a05514dad5ca9554fc7579b896f0295e96d2600d9f84b1089"
-    sha256 sonoma:        "b010e10497311ebb97003411fc0bb89e6ba1f0d65369ce9f7d0a47c6ee99cbd6"
-    sha256 arm64_linux:   "175fd3c4967bc7c203ffccf8a49b95c918f238d4c586194131c3f2307c9d38cf"
-    sha256 x86_64_linux:  "9367ce2434837207a786ae3faaec0362f577fe08d8820bf02436d0d01ce5572d"
+    sha256 arm64_tahoe:   "41fe2e32ec7285168a5ddc42e5ea5d1c2f8e754e96e2ed14b23b4bc535dcbf33"
+    sha256 arm64_sequoia: "3d5c60e8a49d2a0af425ea4927666d587cd923305625eb31ab762d60dc8f40a3"
+    sha256 arm64_sonoma:  "6e17e52112c02ea6a3e398cd175840a7c684837c6fef392b4e08a1c4a3d99f70"
+    sha256 sonoma:        "00214501c8d98397ac9e1dbe67a2c72c4a697e1016a44557d9485cb28267306c"
+    sha256 arm64_linux:   "edd407c606f84337f4b3a980232199c2b13c80fede622f43035c864c1c5efe9e"
+    sha256 x86_64_linux:  "6f55ce2297cbc4c5a3234586eadf7cd349599fb8ad8053a9550688a3a1f85351"
   end
 
   depends_on "gettext" => :build # for `msgfmt`
@@ -55,6 +55,12 @@ class Gitg < Formula
   def install
     # Work-around for build issue with Xcode 15.3: https://gitlab.gnome.org/GNOME/gitg/-/issues/465
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
+    # Drop girepository-1.0 typelib loading (Python loader only, disabled here)
+    # as it conflicts with libpeas 1.38's girepository-2.0.
+    inreplace "gitg/gitg-plugins-engine.vala" do |s|
+      s.gsub!(/\t\tvar repo = Introspection\.Repository.*?\n\t\tcatch \(Error e\)\n\t\t\{.*?return;\n\t\t\}\n/m, "")
+    end
 
     ENV["DESTDIR"] = "/"
     system "meson", "setup", "build", "-Dpython=false", *std_meson_args

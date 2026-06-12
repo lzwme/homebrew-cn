@@ -7,8 +7,9 @@ class Bubblewrap < Formula
   head "https://github.com/containers/bubblewrap.git", branch: "main"
 
   bottle do
-    sha256 arm64_linux:  "654879c969ae5a3b5f9a4b534396a062c884bc3f71c70fadb64921a9fd76d54b"
-    sha256 x86_64_linux: "8fe7e4992959171c1ba5872337de8a930e6142360c8164e737b3b3e6b818b01e"
+    rebuild 1
+    sha256 cellar: :any, arm64_linux:  "1be658fea4319af1e26aed12b197251215d7a0a6229aeeae72078bcb3b144cf9"
+    sha256 cellar: :any, x86_64_linux: "8974772f1aa74d7c9fcc05385be11de4bca20edc37dc7547895c5463db21952f"
   end
 
   depends_on "docbook-xsl" => :build
@@ -21,7 +22,11 @@ class Bubblewrap < Formula
   depends_on :linux
 
   def install
-    args = %w[
+    # Meson modifies RPATHs during install but cannot handle paths injected by
+    # our shim and results in a non-relocatable binary. Instead, we can remove
+    # the shim RPATHs and pass them via the available meson option.
+    args = %W[
+      -Dinstall_rpath=#{ENV.delete("HOMEBREW_RPATH_PATHS")}
       -Dselinux=disabled
     ]
     system "meson", "setup", "build", *args, *std_meson_args

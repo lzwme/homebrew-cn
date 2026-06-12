@@ -1,8 +1,8 @@
 class Shimmy < Formula
   desc "Small local inference server with OpenAI-compatible GGUF endpoints"
   homepage "https://github.com/Michael-A-Kuykendall/shimmy"
-  url "https://ghfast.top/https://github.com/Michael-A-Kuykendall/shimmy/archive/refs/tags/v1.9.0.tar.gz"
-  sha256 "d761c96a497263a19a2d4a78ddfe248e5c8c0b896ff535d15ac31b47032761e4"
+  url "https://ghfast.top/https://github.com/Michael-A-Kuykendall/shimmy/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "5f53a33fd0204407f334769e76b53e361292251ff87a649f2feba55b16973039"
   license "Apache-2.0"
   head "https://github.com/Michael-A-Kuykendall/shimmy.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Shimmy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d85b61e80d9813435cf33fa36e3eea5ff340ade69716ae62ec5bb0b6504ca4a0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61033bda5f5d7a6a5ac77ac2b90b0ecd9eb1c05d46c6759f092d20c56a3ec605"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de47e2e1b3ff8dcb2a1aebe33545a2db69456413959eeacf3b9a2ee86770064b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "280c53fde0c1db2f4402a2d366b9e82e36debf79a4737b3f4c181c74b7b12ac8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "125faf23f0288a2fe2d6fd046ad38041e82f70ee5f4d05cacac1ea97821134cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9a2c596f5a1309fa9aea970c9cbdd1a95d1232b1c486c60a299b693bd933e29"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "542aaef864c44ae4b6b033e2775ca7bea89875f7003358db91e45e9f2f91175f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a932834afda1859565ffb527ea5c5b394910c0c5582457e36e34998f9f41661b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e966c9f59bd0a496edeb804b52b118139195abadd58c4c8c4bc3986eb6e7c15e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "382e67a240761b877a7976c9f3497f285c4438f46020a35822fc22b3da0fdef4"
+    sha256 cellar: :any,                 arm64_linux:   "ba7e5f23867f4bf0a1fc82ac22b7c294bc51dca0f2966513dfae7fa3dbcbb31d"
+    sha256 cellar: :any,                 x86_64_linux:  "dbdbfc29f3e6512855a4a564aec7dbce2218dd72f2775b8531ee7cd525d6ebdd"
   end
 
   depends_on "cmake" => :build # for llama-cpp-sys-2
@@ -37,7 +37,14 @@ class Shimmy < Formula
   end
 
   test do
+    resource "test-gguf" do
+      url "https://huggingface.co/ChristianAzinn/gte-small-gguf/resolve/main/gte-small.Q2_K.gguf?download=true"
+      sha256 "71bc9beaecd0a3c5f075b8959f84c4cdf6c27dbc39930b0ab4d7c443b9373bc6"
+    end
+
     assert_match version.to_s, shell_output("#{bin}/shimmy --version")
+
+    resource("test-gguf").stage testpath/"models"
     output = shell_output("#{bin}/shimmy list")
     assert_match "Total available models: 1", output
   end

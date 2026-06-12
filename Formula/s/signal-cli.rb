@@ -1,8 +1,8 @@
 class SignalCli < Formula
   desc "CLI and dbus interface for WhisperSystems/libsignal-service-java"
   homepage "https://github.com/AsamK/signal-cli"
-  url "https://ghfast.top/https://github.com/AsamK/signal-cli/archive/refs/tags/v0.14.4.1.tar.gz"
-  sha256 "5da46d70fe591205f9a3ac48b57880e4547964202f004a95a779be60eb51c366"
+  url "https://ghfast.top/https://github.com/AsamK/signal-cli/archive/refs/tags/v0.14.5.tar.gz"
+  sha256 "eddf9dc10958b920fcd145ad0767db6e6c56997d984b914ec37052415ab9d837"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,11 +11,11 @@ class SignalCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5139252f9e6ba6a1d08d1a0b78aebbf90503c96daec2d248f379dea2dfa2ec04"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64cb5e395b6d6098a2940ae0a317f10f70e9614065f7e7b44a5292213ab0673b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be2046753c87852588c82849e59dadd5d2080ccbcdeaf280f0ebf65ea49eed21"
-    sha256                               arm64_linux:   "3dddf7a2a48f89efaaafacca41ca243b4856b4234e85d9e3ed0d8be2b5d288e4"
-    sha256                               x86_64_linux:  "e351b856f50a6e5844b158077d6802c8b2cef0e2e6b64a2aba7f2f39f5a387d9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "08b04c930f521d55880e224b1490cf0e8514c1bdacd554fc10f08c6345af7fa7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c3bc15fcdc6ff8009db67ed475ef50e3fc67e184db5a9bc063a60a07c577d62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b711b449ae0caee34693df678b80ce3b49af830e15aaa296eac93400feb34fd"
+    sha256                               arm64_linux:   "96a09bdc04e577ed68f2d46dc3dd0674422359434f9379db7a0be8b1541c9c14"
+    sha256                               x86_64_linux:  "8af7d86205dde6f8b1332c4186a15e09ca2a87668f2e196f80b937a6f186bec2"
   end
 
   depends_on "asciidoc" => :build
@@ -36,8 +36,8 @@ class SignalCli < Formula
   end
 
   resource "libsignal-client" do
-    url "https://ghfast.top/https://github.com/signalapp/libsignal/archive/refs/tags/v0.94.1.tar.gz"
-    sha256 "2d7081d66066e3fa257707eeb41b2114ae618197ed4377dc379156fc9d9374ca"
+    url "https://ghfast.top/https://github.com/signalapp/libsignal/archive/refs/tags/v0.94.4.tar.gz"
+    sha256 "ca8fb5fb3437c083263138079f512988581a94c65e407c8fe1c7c9c6310e60fa"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/AsamK/signal-cli/refs/tags/v#{LATEST_VERSION}/libsignal-version"

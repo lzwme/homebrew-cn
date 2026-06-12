@@ -1,10 +1,10 @@
 class LibpeasAT1 < Formula
   desc "GObject plugin library"
   homepage "https://wiki.gnome.org/Projects/Libpeas"
-  url "https://download.gnome.org/sources/libpeas/1.36/libpeas-1.36.0.tar.xz"
-  sha256 "297cb9c2cccd8e8617623d1a3e8415b4530b8e5a893e3527bbfd1edd13237b4c"
+  url "https://download.gnome.org/sources/libpeas/1.38/libpeas-1.38.1.tar.xz"
+  sha256 "e82fd328adcac1aba34b64136bdfcbbacf2b3258a8bc4e5f480a72502a611ae9"
   license "LGPL-2.1-or-later"
-  revision 1
+  compatibility_version 1
 
   livecheck do
     url :stable
@@ -12,13 +12,12 @@ class LibpeasAT1 < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "6ae295b72edb4f0aab90390ee118cd2864f9ef7cb57b3f318341663c0eaad4d6"
-    sha256 arm64_sequoia: "0d7a24fa0a9dc00416ac677f708addc5ea6354063c27b8435dee4744367fbcb2"
-    sha256 arm64_sonoma:  "d3c58402100eae7994d0a510a8ef9ac00201d3c8077356034b351ab61454a126"
-    sha256 sonoma:        "c7fcf4479a9de9332df0b79885f77439b8bc9d855fb897309ee0de01b4890d3e"
-    sha256 arm64_linux:   "983fb2f22bcc97d2c814e53251b0fd2027898eeae80ce22a1d04527e507f6459"
-    sha256 x86_64_linux:  "bbc312a0e2b0510a2cf0a7fec5ff551f8b845958ad7bcbac1a59c85a5933cefd"
+    sha256 arm64_tahoe:   "a72b082abb085d326fc3e144815f977d7be22f56e1ea6069f973355517d7cbc4"
+    sha256 arm64_sequoia: "c1c8cf6d9c0b5d0b64894d883b0ab62ec28c8ac4d1adbd2055bf4640af7eb4e3"
+    sha256 arm64_sonoma:  "31e03f2b631adfaa428c1f387256b64386c6aaee72ac7120a08b84762b6bbdd0"
+    sha256 sonoma:        "4aab17c710c1a86ceca29536194de50abd4a44dc2757f3a5911128708ccfc0ea"
+    sha256 arm64_linux:   "02b0153cf47f4970d7d7277c3698e69cf41ced94e3f2a2d3a7202d3cf02c7425"
+    sha256 x86_64_linux:  "cba275dc7195f4c2537d9d9e7ae6e9f81009d57d29f1da5310e86ac768b3724e"
   end
 
   depends_on "meson" => :build

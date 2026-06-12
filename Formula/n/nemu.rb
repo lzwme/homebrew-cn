@@ -1,18 +1,17 @@
 class Nemu < Formula
   desc "Ncurses UI for QEMU"
   homepage "https://github.com/nemuTUI/nemu"
-  url "https://ghfast.top/https://github.com/nemuTUI/nemu/archive/refs/tags/v3.4.0.tar.gz"
-  sha256 "e272b3e80623f8aef66c3ecb5e2d8846ac89b2514a4bbb5026e74f51c1a5ef42"
+  url "https://ghfast.top/https://github.com/nemuTUI/nemu/archive/refs/tags/v3.5.0.tar.gz"
+  sha256 "a956b23a492c1d6362a04ef7a88fb62763c2ba5e019d13841e42dec4f3d0d707"
   license "BSD-2-Clause"
-  revision 1
 
   bottle do
-    sha256 arm64_tahoe:   "e6f30abdf8f40e196974dad2c6f80ffb5353c98997f4a0733c388c0515e34ae8"
-    sha256 arm64_sequoia: "4069114fbb7f617e8f43ed1e3c3fb0f7c61bc99802ad84ae933b34526814d236"
-    sha256 arm64_sonoma:  "fff82177fe56ae398e0c174948400f1c36821185bcdbf96d04accc7f461dbe0c"
-    sha256 sonoma:        "bd4227695993da67ba07b55f0ee3eb3e671f33444dd013a62b060c76937489d2"
-    sha256 arm64_linux:   "53aa94025e389c228af7eae6478da28df2bc57dcae31ed8c19b594a923bff202"
-    sha256 x86_64_linux:  "cc06ac5e231324623d7ef68c67c5a77c545b8c33aa1a1170357b6e62d8af8f21"
+    sha256 arm64_tahoe:   "8b0f547045eeb45bed56f2e2e94afe95839fe6980238b7e2ab88b9f77e24bc62"
+    sha256 arm64_sequoia: "f5999e45447d2c4a6aa7dcbc37c9cac3954337ee435dc90947de12e0b7091367"
+    sha256 arm64_sonoma:  "1b7228daf1116bade34ca09e93894c26c29b4fa53b0272aadc08decc45ccb543"
+    sha256 sonoma:        "5b68f304698644c440396d1231340c070085d06f2491baee91f795ab6d052915"
+    sha256 arm64_linux:   "84cba712847c252430dd9ea00b2cf00fbe892cff4b14c57619b76bf1b74c852d"
+    sha256 x86_64_linux:  "eb07752126a372cd97200e2493f265c7dc9d36f6af78c55d02ebb70de98a5bc3"
   end
 
   depends_on "cmake" => :build

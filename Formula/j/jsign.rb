@@ -33,7 +33,7 @@ class Jsign < Formula
       -Dbasename=jsign
       -Dlog4j2.loggerContextFactory=net.jsign.log4j.simple.SimpleLoggerContextFactory
     ]
-    bin.write_jar_script libexec/"jsign-#{version}.jar", "jsign", args.join(" ")
+    bin.write_jar_script libexec/"jsign-#{version}.jar", "jsign", args.join(" "), java_version: "21"
     bash_completion.install "jsign/src/deb/data/usr/share/bash-completion/completions/jsign"
     man1.install "jsign/src/deb/data/usr/share/man/man1/jsign.1"
   end

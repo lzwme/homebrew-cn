@@ -17,12 +17,13 @@ class SharedMimeInfo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fa674742c5c404fb7265f93a797e483c3ddec4a405180c467d73ffa3a4c2ad86"
-    sha256 cellar: :any, arm64_sequoia: "e67c7e8b3bb8386eaebdcaae85eae6a93b8ff0c0f5a710f80c114885edd8d784"
-    sha256 cellar: :any, arm64_sonoma:  "a3364bac447af0df2a587c1383b846f425fecd8ce465d804ddfda36ddb64dd94"
-    sha256 cellar: :any, sonoma:        "b5060956f4a630be979756cd6a331c223d6537951ee60d925f5e756ad15a1cdb"
-    sha256               arm64_linux:   "a1d39e8208f92717cee852ccc2f2fede36477a6e35bad0c95d2473989c789262"
-    sha256               x86_64_linux:  "fa1730cfb12535854fbbefeadec508fc4d066b8284b17ed3e89be9405ab8ddc2"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "5411356847e0e209c1ae3622200b3a8ad25dd4b3d7ccc760b69d24f3e414ef08"
+    sha256 cellar: :any, arm64_sequoia: "8dfd77c8baca230f856f57d5c5ffd518c5c147234cb2fb150389909fb0b05acf"
+    sha256 cellar: :any, arm64_sonoma:  "c2c4802af57990d5629237264955223bce6f504a3baab475396d0b66c5621c57"
+    sha256 cellar: :any, sonoma:        "ecf64a0a5743b0726c449ede6e36d9043693ecd5e104d981049d912f00e3edfb"
+    sha256               arm64_linux:   "3397d58c69d02e9cfdca3c01faebe5312c0c6ae45d374444eb2c61f42c9e8c7a"
+    sha256               x86_64_linux:  "ceafdff20dab55cbcb38a71cecf82e71fd1c41b3dbdfb2f6c621f9f85d152354"
   end
 
   depends_on "gettext" => :build
@@ -35,31 +36,19 @@ class SharedMimeInfo < Formula
 
   uses_from_macos "libxml2"
 
+  # This used to be copied rather than symlinked
+  link_overwrite "share/mime/packages/freedesktop.org.xml"
+
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
-    # Disable the post-install update-mimedb due to crash
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
-    pkgshare.install share/"mime/packages"
-    rm_r(share/"mime") if (share/"mime").exist?
   end
 
-  def post_install
-    global_mime = HOMEBREW_PREFIX/"share/mime"
-    cellar_mime = share/"mime"
-
-    # Remove bad links created by old libheif postinstall
-    rm_r(global_mime) if global_mime.symlink?
-
-    rm_r(cellar_mime) if cellar_mime.exist? && !cellar_mime.symlink?
-    ln_sf(global_mime, cellar_mime)
-
-    (global_mime/"packages").mkpath
-    cp (pkgshare/"packages").children, global_mime/"packages"
-
-    system bin/"update-mime-database", global_mime
+  post_install_steps do
+    update_mime_database
   end
 
   test do

@@ -1,18 +1,18 @@
 class Zix < Formula
   desc "C99 portability and data structure library"
   homepage "https://gitlab.com/drobilla/zix"
-  url "https://gitlab.com/drobilla/zix/-/archive/v0.8.0/zix-v0.8.0.tar.gz"
-  sha256 "51d70d63e970214db84e32d55377d84090c02145f5768265ab140d117f2b8e24"
+  url "https://gitlab.com/drobilla/zix/-/archive/v0.8.2/zix-v0.8.2.tar.gz"
+  sha256 "a2464cdc11fa359b5e713b3c82bf0b476952efe397a02374ddbc1b62eee04f13"
   license "ISC"
   head "https://gitlab.com/drobilla/zix.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a2caa9a4a3c1d808886349f7e83a4faf142e9bd013b881047ecfcee1ce5b6338"
-    sha256 cellar: :any,                 arm64_sequoia: "c5af8595950f1294f8cec733c452c09742721ec154477103b3e4ad0270afa20e"
-    sha256 cellar: :any,                 arm64_sonoma:  "601886f43ccadbd571d61385ae8487f5bf40563cb1e2aec7b3925d0eb52ed6c6"
-    sha256 cellar: :any,                 sonoma:        "0d3ee7b239f61e53be24ca66fc61b1fa51e64709e855c705e4013c96c46b7e76"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "abb43fca2d5a4418b636b99560f30e051b1d83f57c16b2a171b5d4e9590624fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94d2a4ebb9e9d5f9a1bd1d991ed5da942df3630636b45b5c31db7537bc811e1c"
+    sha256 cellar: :any, arm64_tahoe:   "9b81090cc858205cb0e9df02cd9104e91ec96f5ffb5c22240e8850f7bda4b223"
+    sha256 cellar: :any, arm64_sequoia: "73ab925a8aa5e59105e03ceeff0b010eba86db3605f9fd9d8939afb755fa7561"
+    sha256 cellar: :any, arm64_sonoma:  "701f7c57b3d86135f5c93ff8b146c5c486fba0c01b9fbb38f302aac1f3876e56"
+    sha256 cellar: :any, sonoma:        "0ad2844db475641396028cbbdc412355676eddf15cada6b203b77389b32cefb4"
+    sha256 cellar: :any, arm64_linux:   "8a0603a74f3102f584c070c5d5d1ca29b1d06d440d6a567e0ea612b046bbb327"
+    sha256 cellar: :any, x86_64_linux:  "12807bb561e101cebe9d22ce4382b720b1285b2ade4dcfdfb4820fd21b48e39f"
   end
 
   depends_on "meson" => :build

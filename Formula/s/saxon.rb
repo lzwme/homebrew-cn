@@ -30,7 +30,7 @@ class Saxon < Formula
     bin.write_jar_script libexec/"saxon-he-#{version.major_minor}.jar", "saxon"
     (bin/"gizmo").write <<~EOS
       #!/bin/bash
-      export JAVA_HOME="#{Language::Java.overridable_java_home_env("11+")[:JAVA_HOME]}"
+      export JAVA_HOME="#{Language::Java.overridable_java_home_env[:JAVA_HOME]}"
       exec "${JAVA_HOME}/bin/java" -cp "#{libexec}/saxon-he-#{version.major_minor}.jar" net.sf.saxon.Gizmo "$@"
     EOS
   end

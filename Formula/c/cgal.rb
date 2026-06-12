@@ -1,8 +1,8 @@
 class Cgal < Formula
   desc "Computational Geometry Algorithms Library"
   homepage "https://www.cgal.org/"
-  url "https://ghfast.top/https://github.com/CGAL/cgal/releases/download/v6.1.2/CGAL-6.1.2.tar.xz"
-  sha256 "40411b97c5c64ddc1af1d153d57a39e424d21e947eef2b194fa05c5a8b002eea"
+  url "https://ghfast.top/https://github.com/CGAL/cgal/releases/download/v6.2/CGAL-6.2.tar.xz"
+  sha256 "fbc32816745e871a5cbdeb6245317e9dbf10ae1a957b0ab1edb00b4fde00ba8d"
   license "GPL-3.0-or-later"
   compatibility_version 1
 
@@ -12,7 +12,7 @@ class Cgal < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "44cd725cbd68d951fff166d2bcca949ae90f2902155ed91b3f0ad8754aabdfc8"
+    sha256 cellar: :any_skip_relocation, all: "d1bb0e37c68a4b20edc5df7ff186b70687975f48add6c65885bbf8df0ac8e982"
   end
 
   depends_on "cmake" => [:build, :test]

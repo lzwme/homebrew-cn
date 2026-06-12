@@ -1,18 +1,18 @@
 class Cyme < Formula
   desc "List system USB buses and devices"
   homepage "https://github.com/tuna-f1sh/cyme"
-  url "https://ghfast.top/https://github.com/tuna-f1sh/cyme/archive/refs/tags/v3.0.0.tar.gz"
-  sha256 "bd73a4b6f9fe502d140c9d5d3c972d85dccb53f4222afeb8260e97f1f95b96b0"
+  url "https://ghfast.top/https://github.com/tuna-f1sh/cyme/archive/refs/tags/v3.0.1.tar.gz"
+  sha256 "1d0f712d39f5d747f900829b6b9cccbfa943637b4c14d60e8a6a505162174c82"
   license "GPL-3.0-or-later"
   head "https://github.com/tuna-f1sh/cyme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34e187a22028771da734e7e097dbaf49523634c1c9c25e62fcd947fd28d33991"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73d54c89e27fff3e0f7a0542ca4b022c4f87b9bfd6665efab652954f662e08fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e048bc6e25bf4a7ea0035ce09d353743b57af4f0b9b13c731162f589b10432e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "db7277bfdebe5777098a8a19d3b598c905b9e74e76dd9a9436eab572faaf702f"
-    sha256 cellar: :any,                 arm64_linux:   "9f6d5a2a3dbc371596d841cec8a917f5b942738352363ee352e474df8551b757"
-    sha256 cellar: :any,                 x86_64_linux:  "33405ce85e7ab4f5bc5fd13689ea6eef5ec73a73cc1d967bfb9b7ff1e2f4a723"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1cc05bde0b3821753aeea827c615de39751c352f95f1a8efbd6df99709936a76"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2da52e6135880f44c37c189ed96598c90d0bd85788068651091c9ba47694e181"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc345525751acb619d78cbe4506b1e5d9d83b8da3942fabfebc8bc0a123d3e56"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7dfe0d7db63f71537976e9b2a06fbc9f740f84f2405880d9fd718b5501a4a494"
+    sha256 cellar: :any,                 arm64_linux:   "ca5e1a1f079ed227f7c376c65603d4df03326bff11b770ca33f0cd2d3ea17c47"
+    sha256 cellar: :any,                 x86_64_linux:  "9ff3f86ba6c3a73e4b51efd512a6a448b6564efe8fe3701b63af38950743fabd"
   end
 
   depends_on "rust" => :build

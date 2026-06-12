@@ -1,8 +1,8 @@
 class MdaLv2 < Formula
   desc "LV2 port of the MDA plugins"
   homepage "https://drobilla.net/software/mda-lv2.html"
-  url "https://download.drobilla.net/mda-lv2-1.2.10.tar.xz"
-  sha256 "aeea5986a596dd953e2997421a25e45923928c6286c4c8c36e5ef63ca1c2a75a"
+  url "https://download.drobilla.net/mda-lv2-1.2.12.tar.xz"
+  sha256 "8f2090433e60e90d9c4d0326970c845a3cb471951657cd9355d3dbca4040b873"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,17 +11,12 @@ class MdaLv2 < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:    "87a2bd9d397365ef18ac869774f67b94835d998465e5b78d4b8ec69a47a1aaa9"
-    sha256 cellar: :any,                 arm64_sequoia:  "03b6f32b385004d948a37114897d206e9a879834820b54316c755c637ebdabbf"
-    sha256 cellar: :any,                 arm64_sonoma:   "c2da908303e1eae13da7cc9cb09cd25664d3fd4a35d49453aa8017337cd5fb3d"
-    sha256 cellar: :any,                 arm64_ventura:  "f0e9e93e3e7d6a66b7a8a123e23e41a722443899a30351938dc98bdf5f37f4ec"
-    sha256 cellar: :any,                 arm64_monterey: "858cb75b9d207ea3a38a0f3752a1976bfd0c9f8bebb5f69581c9c5d0e1ea4252"
-    sha256 cellar: :any,                 sonoma:         "c46a62ff1bb9377ab6a6f3f919472792e9a4b133502dcfe6f5212f7258b34ad4"
-    sha256 cellar: :any,                 ventura:        "3e02aa678e179e136c89ff36a35e562d7034d5e2dbb6812f15ee024bf8deb73e"
-    sha256 cellar: :any,                 monterey:       "070fccf201ecb813049b8e852808d7f05feb5f673f11ea16f6b885d10c36ef30"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "dc0748c3fc037fec4e7620fcc70b40b9eb1da6e4c93ffbf617fe71555bd4110e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "688227bd6b707a8fba9ae71751c92d1267b1a6c1a3298ffc4bf57d4d04fe596f"
+    sha256 cellar: :any, arm64_tahoe:   "447ee93aeb3642b63ef2b53240819f591a759b3ba9f41fec46064ad2d65a0c81"
+    sha256 cellar: :any, arm64_sequoia: "5df0bbe04df736019264d64fc02e3804c3b60127e998195f52c1f540a70d3ee2"
+    sha256 cellar: :any, arm64_sonoma:  "f3d7a14ce565ffae347fa5f3bc7d2a925c50826fbcb592dbcf9e36c7de1a2afb"
+    sha256 cellar: :any, sonoma:        "b2b1b04ec9041f9bfcc79b9f4b4050431b1c32ea7621bc4593d3da2f21bd95d8"
+    sha256 cellar: :any, arm64_linux:   "cca05417c9ec37edfdcb755f73c90fca74243c3819ca581318178939d0a76a8a"
+    sha256 cellar: :any, x86_64_linux:  "258c42d6df9fa538203ade9c9c642cf881dabc02a0b973f51043145f2b5cf2e3"
   end
 
   depends_on "meson" => :build
