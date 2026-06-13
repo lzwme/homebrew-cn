@@ -17,6 +17,10 @@ class Cpprestsdk < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "810d1b3b84f31d6a55dc8fa8f2b757a97dd4d2f2479a7a1d34da7b0069dce398"
   end
 
+  # https://github.com/microsoft/cpprestsdk/commit/7c3f8782e36303c896d1b75a9d23160d4e76b4c7
+  deprecate! date: "2026-06-12", because: :repo_archived
+  disable! date: "2027-06-12", because: :repo_archived
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "boost"

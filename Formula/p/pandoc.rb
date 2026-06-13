@@ -1,19 +1,19 @@
 class Pandoc < Formula
   desc "Swiss-army knife of markup format conversion"
   homepage "https://pandoc.org/"
-  url "https://ghfast.top/https://github.com/jgm/pandoc/archive/refs/tags/3.9.0.2.tar.gz"
-  sha256 "c300c60ae4d47da6e5d265e93f89b896324cdc84ccbb504b88a9855bacd6b5d7"
+  url "https://ghfast.top/https://github.com/jgm/pandoc/archive/refs/tags/3.10.tar.gz"
+  sha256 "fc82815542c29802d087c25e2c1421146030806b71255ec40fc0e828fe1df877"
   license "GPL-2.0-or-later"
-  compatibility_version 3
+  compatibility_version 4
   head "https://github.com/jgm/pandoc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "40762c24f0337d9dc07466e365c0c3e0cb6023122bca9a6b36dcc0dd962f0b04"
-    sha256 cellar: :any,                 arm64_sequoia: "94e1a3309022f75f42f7aba3c9d17f14fa743ad6704c469090e555f30c1c2552"
-    sha256 cellar: :any,                 arm64_sonoma:  "400988089c12d7a44b9aa4f06214362ef3afd861a9fb2ef880787f287a91b989"
-    sha256 cellar: :any,                 sonoma:        "61e744c37e05f28910e506d594e4304ded58c5785a5ea81dd9a42ba2c9a4b73f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ff02fb459c083ca44395eb4cc5be0926a9623ef555eeb775181d7b6f8a88461"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "918d76d5425b6e862faa3eebb5f2cf3d1ccbc28fb63eb51623bea89c4947f90a"
+    sha256 cellar: :any, arm64_tahoe:   "5fb1bbd496bb7dabe3bdd89199759a17c6e6ad760d4cceb95a8b988308f19064"
+    sha256 cellar: :any, arm64_sequoia: "ff92446512f37d280f6f9ee81c3a112302e39b16807d5547eeabf662e72ad859"
+    sha256 cellar: :any, arm64_sonoma:  "d54dbe1affc75d52fd6d1e5f822ec08f5ec4a012dfe00f4575bb6e4bed0d337a"
+    sha256 cellar: :any, sonoma:        "213602b8c8032a28e1e12cc71c99882a2d598a8dd5ba50021d15c09e9b5f4a3e"
+    sha256 cellar: :any, arm64_linux:   "0d2710e2926fed8236965628cffaf6b0f361525bfb9a60441c3046a88118b75b"
+    sha256 cellar: :any, x86_64_linux:  "a9eb90312967775e88be6532e36894fdfbe482e46b9e4bbccd2394981abd1bf0"
   end
 
   depends_on "cabal-install" => :build

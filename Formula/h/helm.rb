@@ -2,18 +2,18 @@ class Helm < Formula
   desc "Kubernetes package manager"
   homepage "https://helm.sh/"
   url "https://github.com/helm/helm.git",
-      tag:      "v4.2.0",
-      revision: "06468084e85c244c712834933d25ea232a4c2093"
+      tag:      "v4.2.1",
+      revision: "d591a19b953bd9cfdf7d9ddd83c2f4ffdaeafb29"
   license "Apache-2.0"
   head "https://github.com/helm/helm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db869361ff24551d21564f56b151dcfb4b0c1488dc6c71e864bf1f3587233caf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a0dfc0069432aedf09ff9d07ad3f4cfda6959f6e5b6a9f0fdbfcca177e59793"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "acfc6210118225595a8928513f795f4b5067f7769c41f00930ffebd5bae06bcb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5a8652d7dc384d36be7fb8d79dcaf538f4715d1862c32af24dfe46366c744f9a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74383e4caaebe366a251e005511074410c2fe178f441f9af571cb4ae2c8029c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6432112437cdf9af2f680e34d96f9a87f6c0501ef4ca1697f9768301dbaf3103"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c4337a164b678cb91a5c41a6e123a5655da61d327949056a9b52b55be2b22b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d5b93d1e2551e65e5a7df11141e15885554c50c1aa62a8cea76fc9a835a9a0b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b435cad933fde8b3737b029fdf7486a325091e57ae3a600edf477dbed4e8167"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5ee83e533d86a2d728fd27cd2413dd09fa4e140f9cee206eeda908667d159940"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae9d6781dee7049fb57dfbf77a5f34cd9f1dc6096e78a7b19eec6602999a0c99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c1090d8f8f4cabf2840bcf0b1259831e9b72d3677ec460a7e9b8317dd28b7f6"
   end
 
   depends_on "go" => :build

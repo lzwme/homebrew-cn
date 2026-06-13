@@ -1,18 +1,18 @@
 class Bibtexconv < Formula
   desc "BibTeX file converter"
   homepage "https://github.com/dreibh/bibtexconv"
-  url "https://ghfast.top/https://github.com/dreibh/bibtexconv/archive/refs/tags/bibtexconv-2.2.2.tar.gz"
-  sha256 "352fb9757d25ce4b5f1ef3bebe70e55e27d01b78211aa1ad05efea18415d3d09"
+  url "https://ghfast.top/https://github.com/dreibh/bibtexconv/archive/refs/tags/bibtexconv-2.2.3.tar.gz"
+  sha256 "fa2e280d5653bef78a003f09cbb6efb2a64c25261964ccfcc8be6d4029548565"
   license "GPL-3.0-or-later"
   head "https://github.com/dreibh/bibtexconv.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3959447fae5909ab2c0841acdf07a4229f61b0f91e600e9693e74ba90e6201f8"
-    sha256 cellar: :any,                 arm64_sequoia: "dfe98ebf085370d2728fc0d296de340f7e6c7809136ea4a457f3cb0eb34bf7a6"
-    sha256 cellar: :any,                 arm64_sonoma:  "83ac4fc7fa37b15bd722b387a43baf0f760630ee37051cb906a53fb91cc29fa2"
-    sha256 cellar: :any,                 sonoma:        "be8cbae61bd9a9f1327f5c2e88f9a649979a8fcd9111a7e8469de9f476dd0286"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f707c7ed9a788add1a3aba7d14998c6d005b17cc4c56b4b8a79d57642d6232d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8035bb9a8d8f73304c7a6e92bd9b938ec9636c854aadb9607763867e1163a11"
+    sha256 cellar: :any, arm64_tahoe:   "b88bef8dd55698cb12cec26c62fda795c5e6c0b2508e03b8c7bd2a4fd4bff457"
+    sha256 cellar: :any, arm64_sequoia: "4afe3fe4173943858e92448cbb403d0d0c8631e5a50a0877df5d422fd9718dae"
+    sha256 cellar: :any, arm64_sonoma:  "ae8b949431cc8108acbd9b9135ef4a670031c913c662d356e2f9691e0c68b9bb"
+    sha256 cellar: :any, sonoma:        "cb55e6e6f209ce757930f062c12371d90375cac3d0cb82931165a76303f47a29"
+    sha256 cellar: :any, arm64_linux:   "1e2513dd4dfd6d36fa8179bc29d8604357ff0059763bb70dab5d343fa6bcbc42"
+    sha256 cellar: :any, x86_64_linux:  "a345a5aec2e2e87545ac9d488cd8b9988fd782a4429a2b2609974caef0732c1d"
   end
 
   depends_on "bison" => :build

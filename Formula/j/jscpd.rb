@@ -1,17 +1,17 @@
 class Jscpd < Formula
   desc "Copy/paste detector for programming source code"
   homepage "https://github.com/kucherenko/jscpd"
-  url "https://ghfast.top/https://github.com/kucherenko/jscpd/archive/refs/tags/v5.0.7.tar.gz"
-  sha256 "cfbf2d14029855c73ec52a3cef76f5cd0a7a707b0fff6ae67e7e35281808cb97"
+  url "https://ghfast.top/https://github.com/kucherenko/jscpd/archive/refs/tags/v5.0.8.tar.gz"
+  sha256 "382f6792f6280e35318d1928e76a64ea3798428079a43cb3cd2528103948e9f5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae120e07e1fd65bc7100f85afb4e34ad3860625adba9da11bc6293f763f29549"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6613e03a1d861713655220e04776820927d442123847fe97ae7c5de9991cdb7e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9423e401cad5f259ab9ce1bad145a7e028f7c9887fde6c408ea1dd7b91853bd8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d248126edb9767acf3199fcff50d6f8a33ac3a1fa53fa564fcea98107716a7db"
-    sha256 cellar: :any,                 arm64_linux:   "ba4b2ace628f8e49f9df23dfeccc7c944750f70a101bae281e7feaa0994651cc"
-    sha256 cellar: :any,                 x86_64_linux:  "8ce6d316b2d14ac23b8545b4ef734c6eec4b8b66979a91727ef3ff9ace5628b1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd360e97eb25e5ceae73f4976ff4fd7b444278487338cd7c162eefd77031ff1c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c5adde500a93031a190178198308960926e48f9a09fbcd18422d7ea84704f16"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ade9dd5bffd2b684be888f181096613e71a1cb1664d57b95d4af43000cfd5fbf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1189c00609cd65abe515faab73e435bc977f6b32d5611326f247f2a8f5b45dbb"
+    sha256 cellar: :any,                 arm64_linux:   "dacbcec9ffb05e83274b45e627a9b212a52198322e27012c984db673a341126b"
+    sha256 cellar: :any,                 x86_64_linux:  "35132a7689b499b2164c140f88575c719cf38d4614af82f7d1ccd621d3a40147"
   end
 
   depends_on "rust" => :build

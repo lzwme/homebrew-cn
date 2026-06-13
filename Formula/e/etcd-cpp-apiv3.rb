@@ -15,6 +15,9 @@ class EtcdCppApiv3 < Formula
     sha256               x86_64_linux:  "152716d9f292dbd62459145c6fb24a7c4b3b4b61a435819c9e813437e7121974"
   end
 
+  deprecate! date: "2026-06-12", because: "needs deprecated cpprestsdk"
+  disable! date: "2027-06-12", because: "needs deprecated cpprestsdk"
+
   depends_on "cmake" => [:build, :test]
   depends_on "etcd" => :test
 

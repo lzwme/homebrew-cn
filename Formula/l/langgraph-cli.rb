@@ -3,17 +3,17 @@ class LanggraphCli < Formula
 
   desc "Command-line interface for deploying apps to the LangGraph platform"
   homepage "https://www.github.com/langchain-ai/langgraph"
-  url "https://files.pythonhosted.org/packages/9c/f5/41f8c6741ee8333a84f048cfb3feb1de7a4c876ca44bd99e777d1ff6ce9a/langgraph_cli-0.4.28.tar.gz"
-  sha256 "b099316749ff41386582e0b61e7a7a61ba7aa08e3f21291b72f389e7deacd689"
+  url "https://files.pythonhosted.org/packages/01/f8/2219c8a62169c1fb1d803a35f912ed8b5bb3f9f7e80dc622b1db0600e7ff/langgraph_cli-0.4.29.tar.gz"
+  sha256 "7578122c81c3b12455686c75c3cbb71b8975d045fa9852e0fc7358d6f39014a1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "cf9b80e45691e82e04e4f8f85db628677e3bfd570ef6a317759ba37b3e5a397d"
-    sha256 cellar: :any, arm64_sequoia: "bf911aa10b30f8d4b5192af2ba9992792a7c4f8faa0686e6507816910448179b"
-    sha256 cellar: :any, arm64_sonoma:  "ada7fa6159b6aedd806d1139803aae99b73492d88a75a9ab462b266cc9217932"
-    sha256 cellar: :any, sonoma:        "ba6490c84e0abe936ee9fdabc48c800abebb1b6446089d913a8f7eed92b86e6e"
-    sha256 cellar: :any, arm64_linux:   "942ca0b3c7a6adc74096add4e97e53d7a267e8e1015bf2ceb31cf5e21bf72542"
-    sha256 cellar: :any, x86_64_linux:  "afc22728417966f8074b65e35f789775d9f966c2f23144b3aa6c592349c869f2"
+    sha256 cellar: :any, arm64_tahoe:   "924843f6e8d67924a0b3628a034284fcfaa16bae6712abae70f78958f83a0d4d"
+    sha256 cellar: :any, arm64_sequoia: "c8f08d300f3ac0bfad11b6ac6a831092ab84f4d60c0f2065c31cbb383c9728b7"
+    sha256 cellar: :any, arm64_sonoma:  "fc657e7b67c8d6caf9ea62c8dcfbe7e668f9ddf33e6c37a026e52fa2e99342e7"
+    sha256 cellar: :any, sonoma:        "d4da0429a4a74241ba8ba737c1e462704aa85fd28457c9234b70b85a92ca19a2"
+    sha256 cellar: :any, arm64_linux:   "63e7932245344d53d5fe012fcd2700656fa6a2a42a9ee00e6fccdfaef36f9a62"
+    sha256 cellar: :any, x86_64_linux:  "0203dba7caf5af5bceedaa8f4f982f3d1cbc039a68114e246436573cb76d5d7b"
   end
 
   depends_on "rust" => :build # for orjson
@@ -70,8 +70,8 @@ class LanggraphCli < Formula
   end
 
   resource "langchain-core" do
-    url "https://files.pythonhosted.org/packages/56/48/b2b8778039a09106660d32a4841336592da61e2078141bdfcff7545aa2df/langchain_core-1.4.3.tar.gz"
-    sha256 "c127f8ac6ee7f2a431689a61f6f004e6d909b93c4396e4ec71f1f53fe38a6b5d"
+    url "https://files.pythonhosted.org/packages/64/a7/1652f8f00e2a3ed8714a57c902670897c6d001b96488abe49625d8c7fa1b/langchain_core-1.4.6.tar.gz"
+    sha256 "fb8547f83587c8f646f2136b106b732a974ffbff5537799125d16ed4c326eb63"
   end
 
   resource "langchain-protocol" do
@@ -85,8 +85,8 @@ class LanggraphCli < Formula
   end
 
   resource "langsmith" do
-    url "https://files.pythonhosted.org/packages/08/ee/f2ab16a29e04c35946c87f50cd3bccf40fd61552877e204b82e8d4335bd2/langsmith-0.8.12.tar.gz"
-    sha256 "3b5989ae9fcbdcd31cf4109254027c0d6ca11085f5a0052e8ea79bd9e1eec052"
+    url "https://files.pythonhosted.org/packages/08/0c/9e4284d9c279490a2407249bd780e1075c2dd29bf6fa77e2b71e91859227/langsmith-0.8.14.tar.gz"
+    sha256 "a3e8feb178540a2866ed39faf11521a4b9e476bf94ab3acdb1491ee6f804cfda"
   end
 
   resource "orjson" do

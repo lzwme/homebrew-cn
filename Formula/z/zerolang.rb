@@ -1,8 +1,8 @@
 class Zerolang < Formula
   desc "Programming language for agents with explicit effects and predictable memory"
   homepage "https://zerolang.ai/"
-  url "https://ghfast.top/https://github.com/vercel-labs/zero/archive/refs/tags/v0.3.2.tar.gz"
-  sha256 "d2d6914255b2fd2dc0ef6fa85efa21dad87d8a1d64fddc5d20ebda6198a1ad96"
+  url "https://ghfast.top/https://github.com/vercel-labs/zero/archive/refs/tags/v0.3.3.tar.gz"
+  sha256 "3b97149b1dfa2a12bb5266cf047e84d9acbba94d7545f1984d0cdedcf53160da"
   license "Apache-2.0"
   head "https://github.com/vercel-labs/zero.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Zerolang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c306d6bad0e956fc7d405e3aef1a6c752c7645652119fc4dd7ac86325ded0a4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce7ef764aad748f0ea54685ecba911477086bf570fc559c16d1398ee13da48e3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f03b704464e4d0e66278c0af484b3f2585f68bdd1890123d2b9235f2053759fd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "94ef91c3dca408884e997501fcddb54c4c2c1dc4586d68cd20ff3ae698d7351a"
-    sha256 cellar: :any,                 arm64_linux:   "9ce75881d7df994d515ebf0ab650995aa0cdcf2f71458bc3095d7912d1670a73"
-    sha256 cellar: :any,                 x86_64_linux:  "5a1c9e8e30c156d0a0407b4bf4be56d16f9d256cfe06c39d55594cb586c153f8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1fc71d4f6657df250145563f048b292d33f6edcc25ae6601cf7ab4b81f853366"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ac99ca2b2b384aad770151ac408e15b305a43085e78c9a45c5aecb6ea1a22a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7cd68eac13148fa63a68a2bf7a15b37a77f21d4e18442605385a1050e2273be"
+    sha256 cellar: :any_skip_relocation, sonoma:        "00afcb902d7e291d48349617bb1ea7cfe32852d3d08eabe16ca17e414adae60b"
+    sha256 cellar: :any,                 arm64_linux:   "5b524ed12fe58e8c39edddfdfcd06b3ed69b6044493fb07dfaca0475cff1fc16"
+    sha256 cellar: :any,                 x86_64_linux:  "8f9579c7dd6861252cce38559142f4bc5aaffd37ecfdf2d3722ba1679fc20193"
   end
 
   def install

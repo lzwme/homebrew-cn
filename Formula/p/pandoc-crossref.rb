@@ -5,14 +5,15 @@ class PandocCrossref < Formula
   version "0.3.24a"
   sha256 "5b478c94b67d5b972c7b3d867a345be982d3af12475e2261dd9b37fc17e225d1"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "56885d16e051a5355f5fa2168e3198444406008b28bfbc6dd7425cc6a2b61e33"
-    sha256 cellar: :any,                 arm64_sequoia: "d022df5a62df6a7608a3fc2621bb5816da9c59f99b628336fe51f0f07d01b8a9"
-    sha256 cellar: :any,                 arm64_sonoma:  "88d25d295ba194f8cfceccbc80b4bb8d0364040b22ae0e894c7dc909ebf19041"
-    sha256 cellar: :any,                 sonoma:        "d6f51b871ce894c7f23d0dabb58588da549c9c50f935de8a0f5ef672838d863a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "595206134b10f581718fecfceb92825addab0c42ae886a8acfc39da34180804a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3230f07ffb12be2a6c559df5e531243ffcd22e62080939e4a906bfad712a574d"
+    sha256 cellar: :any, arm64_tahoe:   "50baeef7744c5014537ac4ce4d4ba833c2ebd453556ab68adabf731635a460ed"
+    sha256 cellar: :any, arm64_sequoia: "04da0b671513977bb99e916a9f01c760279a680e72b107b72c164899d52490c8"
+    sha256 cellar: :any, arm64_sonoma:  "62c04f3e1e89495a54cc6e7754ab2c7048b853780427fd294f079c1c6d658b92"
+    sha256 cellar: :any, sonoma:        "e84ee17b51a89680b70ffce5ea9c6e7e1b409e3cb9c82e83059fc250c403b518"
+    sha256 cellar: :any, arm64_linux:   "991863f6fb6897cbd9f7e522bb0ff85a2d28c38a55681619a803ebd23bde469d"
+    sha256 cellar: :any, x86_64_linux:  "b89082227fea2a883b17c35458a1fa38b68c3fbf2cf0668f0f51af58a19203c8"
   end
 
   depends_on "cabal-install" => :build
@@ -25,6 +26,13 @@ class PandocCrossref < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Workaround for pandoc 3.10.
+  # PR ref: https://github.com/lierdakil/pandoc-crossref/pull/510
+  patch do
+    url "https://github.com/lierdakil/pandoc-crossref/commit/d786c849c54841c809f2f13bda841c038a865e03.patch?full_index=1"
+    sha256 "df60d96e2e20f7d7d13582ebdbf690daff2cb1a05f130311cf6ef92459ca1691"
   end
 
   def install

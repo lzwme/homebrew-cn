@@ -1,8 +1,8 @@
 class Cdi < Formula
   desc "C and Fortran Interface to access Climate and NWP model Data"
   homepage "https://code.mpimet.mpg.de/projects/cdi"
-  url "https://code.mpimet.mpg.de/attachments/download/30199/cdi-2.6.1.tar.gz"
-  sha256 "145c0f987fd07db302159e839178187c813ea161e98f9b3360ab59cb72cdb99f"
+  url "https://code.mpimet.mpg.de/attachments/download/30212/cdi-2.6.2.tar.gz"
+  sha256 "b882be222dc15253203526865ac444c2a9c6378e86afda7a48b6cca7b2a3cd7f"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,12 +13,12 @@ class Cdi < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "aeb403836b34a222b394eb47145d981a04396fbd59a009139c27f025910a0eeb"
-    sha256 cellar: :any,                 arm64_sequoia: "09c5780f77cc82cddba29479344fe153f4fa85c0b02339c76d910b0c5634e88a"
-    sha256 cellar: :any,                 arm64_sonoma:  "fb8c6a39dc3ddf0e70e8076e1851d401b5204bbbaf6905cd22066ffa769d70ba"
-    sha256 cellar: :any,                 sonoma:        "7f39bf685d12e0a9c6e4b2be98957c97e6e562cf02c9e1de2eb8c20a55c8f375"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d48e6fee6bba5995489ed33158bf0628019afd6411b49772e0f8599984da23a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40aeee15c0c729d93759e0f9e02bf01e97cf7104dac71d6aafabc9f19f940853"
+    sha256 cellar: :any, arm64_tahoe:   "aaf8dd6ae7646e2db75d20d5b1b65e2081db05eaaaf3dba06019cbb1fdff409e"
+    sha256 cellar: :any, arm64_sequoia: "2e3432115afed3a529a6becc1d61e30f6a1d2881a76399dd0f49a8c39b712522"
+    sha256 cellar: :any, arm64_sonoma:  "b8f7dfbfa8f2f108fbb69f5e1d2a1437d601d278b195158b001d5c5b0f7e59de"
+    sha256 cellar: :any, sonoma:        "396532823c684e35b12bd892debdb195df96ad331bc9075660de2745276b1b5f"
+    sha256 cellar: :any, arm64_linux:   "cd2012586460700d55b5d4c0fdc1d878e8d1009e05340df64db837a803ff37ae"
+    sha256 cellar: :any, x86_64_linux:  "9e458721001ddb1d0983c51e7d8c49078c462522ea745dfa3a70d395771e3e63"
   end
 
   depends_on "eccodes"

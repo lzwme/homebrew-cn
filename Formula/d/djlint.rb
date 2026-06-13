@@ -3,18 +3,18 @@ class Djlint < Formula
 
   desc "Lint & Format HTML Templates"
   homepage "https://djlint.com"
-  url "https://files.pythonhosted.org/packages/aa/a7/5ba1032d01ceba641b92b1c76c758a0a06959585c6d36608371526809a08/djlint-1.39.0.tar.gz"
-  sha256 "75e7e1a0c592121751c48360104b3c402f4d6406ea862ba76f8867b3eb51ba97"
+  url "https://files.pythonhosted.org/packages/50/d8/119f35832801129dc6a4bdf82c163bb80d0095891eea9fc3543eaf8c9792/djlint-1.39.2.tar.gz"
+  sha256 "dd27ef03bd26d1e0a167da26ec2a6fcb511dddd032b2553abf71a5c31eaa8b34"
   license "GPL-3.0-or-later"
   head "https://github.com/djlint/djLint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "67427207436c67773aac0af9757ca0b3d0ac60af6a12684a1f44f05d4bc5b085"
-    sha256 cellar: :any, arm64_sequoia: "456a3b8d906e387029f3c6292aa92791a2f2b23578edc80a79fd9010d4c7e749"
-    sha256 cellar: :any, arm64_sonoma:  "9bfe4c5a770236984635cf8903bcd2a972f057d5b41bb6baca745ee4e3162df4"
-    sha256 cellar: :any, sonoma:        "40b462aecdc484a56e5ed66760db767b30b2e335deddf875cb5be6b53d50e3fb"
-    sha256 cellar: :any, arm64_linux:   "385108e2348f1d2ae85405ee0bf5141ac24d57e6a7885028ac784f0e686f3d05"
-    sha256 cellar: :any, x86_64_linux:  "d9dc22bd54d27bc15263b3e8fd43e69799cf2f48e9c2e8e8c53918fafb8f05a6"
+    sha256 cellar: :any, arm64_tahoe:   "a4ee7914e3c674f316a2bde81d32a30982d2072dc1ca5e307a0f24cca4b44e1d"
+    sha256 cellar: :any, arm64_sequoia: "08b4f37a094c6c87ee2132c68cc12ce00f4f8bc2de2738283d8ccb64f8bcfe9a"
+    sha256 cellar: :any, arm64_sonoma:  "6109259f7920ce238bdfe3038747d9db3ec33961cff26d766cbeed6be7c0b207"
+    sha256 cellar: :any, sonoma:        "4b2e268191a992bf785e762b8ceb0bd0f573bafea395e0bd3e0f4de41ccdedee"
+    sha256 cellar: :any, arm64_linux:   "94a806a46e2aa6baa8b5a3aa8ca74c25b093c37b45db7c1fddbe76a25da11258"
+    sha256 cellar: :any, x86_64_linux:  "bd056a2b43bbc54b8ba0b3fa0995e21a63e0336dfa218f78d949ba50d77b1de7"
   end
 
   depends_on "libyaml"
@@ -71,8 +71,8 @@ class Djlint < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/06/b3/36c8ecf72e8925200671613332db156d84b99b3aee742a41c1938ebb0808/tqdm-4.68.1.tar.gz"
-    sha256 "fc163d96b287bd031e1aa24421ce4411b25559bd0a1be4fe649bdaa4d2c02bf5"
+    url "https://files.pythonhosted.org/packages/85/05/0d5260f1f1ca784f4a4a0def9cbe6affe587f5b4025328d446c3d67765f4/tqdm-4.68.2.tar.gz"
+    sha256 "89c230e8dbc67c7615c142487111222f878c77427ea09549960f62389e258add"
   end
 
   def install

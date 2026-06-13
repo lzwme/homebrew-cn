@@ -1,17 +1,17 @@
 class StripeCli < Formula
   desc "Command-line tool for Stripe"
   homepage "https://docs.stripe.com/stripe-cli"
-  url "https://ghfast.top/https://github.com/stripe/stripe-cli/archive/refs/tags/v1.42.11.tar.gz"
-  sha256 "001659211dee07d685e0faa8218c9370755ff82858042016ee55dc660394514d"
+  url "https://ghfast.top/https://github.com/stripe/stripe-cli/archive/refs/tags/v1.42.13.tar.gz"
+  sha256 "5920bd906332c381fa6e5449f5a8e97fe8b0464fffd3b31c06b20b625890faa2"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30ea28f1b7c81e65f3e33eb7253d169fa0643bf80786101c3dfda934ed3131ef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3ee81e5c1460fd4848e50ed6044dc82624e23bd60890f9e39968018d334424a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a09dce5a24545ca1d8d136972666c8416c5fb6b061a4a11d620ccfb37251d01"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9f49c368410f535a4213f4068a04bf2960216ba418f2def221a35b427a146e6b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "92a31a865b6b2fdaa2ac66c48aa78e71ddf93a7a27ccf19ecb9ce4ec5660d837"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28e546f1c760e1c627ec586b4b1d4e25195925610a3af3910b0acdb1b5fec238"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e952c0a2daa3cae9046cbdc584c874e5c3567600ec3f86907a4bb891e7308f37"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58c1bbc6c7885f5538b92871c23e7ae4334ce86a76d1a40ffc61cfb1c0b78c9d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd7c465b23e362b251e6084b2c1121583471521456fbc936eeb4fbe22089fc71"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d5643435a5f3c38aee9afbda6f834ec3e3dea09c0ca9124ff4b2c749a85a3c46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fddcd54481c5ffbbcd03f692485101d7d60ff99bb162690aa4d3c03681c5c8e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bae23757dd42c223ca98079ede0527d0e449e1e0bc136e87b745546b7169af1c"
   end
 
   depends_on "go" => :build

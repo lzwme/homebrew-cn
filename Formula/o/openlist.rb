@@ -6,12 +6,13 @@ class Openlist < Formula
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d08f0758882ecf99e8665ad7e55638605f52c0148773155883d7418ca0b6e4b2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fcb7708943100948b4be9a6b993104c6785da13047b0a0f12922df44122573a4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4971443aa99a8b780b82edb2a1bc71c50e906e24460aef7d0282e53fa3de4d49"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2be6bf62c280d567b5f66038f17daa80cfb472a920921c49467e46155f2f6206"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb69c55d46b91fcc4f4d205513e842785351106f17973b79c89592a4abf157b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d5ef8dc97e97797ea5f8a37621fd50c0658943d096e261e241b144cfe3238ed"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25457e13ee6052ee325bd79f7777b6e2d7bc19dc3952575ac1432c32e1e19548"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0446065512ecab91224b5a1c56c20ab4fe4b350d8308ef745b2faf76375bcbaa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ad59fb944e46cacd494af5419c8081d6c591c4d5d114bb8030f87e0362b24b8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "400b81c28d4dac42d4af5866802d92a67b12f69dbf8989252167d920d5bc99ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "81fd500cfd6b7d13177c491d7c3a6375784e03a9797ebfb927022c7041d6d178"
+    sha256 cellar: :any,                 x86_64_linux:  "8459c09605ec10c29ecad12ed92d23b63192728e2140050fcc8e2246ef44a0dd"
   end
 
   depends_on "go" => :build
@@ -44,7 +45,7 @@ class Openlist < Formula
     resource("i18n").stage buildpath/"i18n"
 
     resource("frontend").stage do
-      cp_r buildpath/"i18n", Pathname.pwd/"src/lang"
+      cp_r Dir[buildpath/"i18n/*"], Pathname.pwd/"src/lang"
 
       system "pnpm", "install"
       system "pnpm", "build"

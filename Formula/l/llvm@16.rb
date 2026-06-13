@@ -31,6 +31,9 @@ class LlvmAT16 < Formula
 
   # https://llvm.org/docs/GettingStarted.html#requirement
   depends_on "cmake" => :build
+  # Fails to build with Xcode/CLT 26.4+. Also parts of test fail.
+  # sancov.cpp:521:42: error: chosen constructor is explicit in copy-initialization
+  depends_on maximum_macos: [:sequoia, :build]
   depends_on "ninja" => :build
   depends_on "swig" => :build
   depends_on "python@3.12"
@@ -348,7 +351,7 @@ class LlvmAT16 < Formula
     # These tests should ignore the usual SDK includes
     with_env(CPATH: nil) do
       # Testing Command Line Tools
-      if OS.mac? && MacOS::CLT.installed?
+      if OS.mac? && MacOS::CLT.installed? && MacOS::CLT.version < "26.4"
         toolchain_path = "/Library/Developer/CommandLineTools"
         cpp_base = (MacOS.version >= :big_sur) ? MacOS::CLT.sdk_path : toolchain_path
         system bin/"clang++", "-v",
@@ -364,7 +367,7 @@ class LlvmAT16 < Formula
       end
 
       # Testing Xcode
-      if OS.mac? && MacOS::Xcode.installed?
+      if OS.mac? && MacOS::Xcode.installed? && MacOS::Xcode.version < "26.4"
         cpp_base = (MacOS::Xcode.version >= "12.5") ? MacOS::Xcode.sdk_path : MacOS::Xcode.toolchain_path
         system bin/"clang++", "-v",
                "-isysroot", MacOS::Xcode.sdk_path,

@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/71/3d/ff4bd23300940b47c0ae266a2beabb7672285864bc8c867a3de75c00cf79/prowler-5.29.3.tar.gz"
-  sha256 "36c5a6e132cb0aba3ae556ef091e8260d6c7c7a30cb89621cce64a49e211752d"
+  url "https://files.pythonhosted.org/packages/ee/7f/179a64160bee3cc11177328e2fbe5f81edcede50e0441e104d1801ea422a/prowler-5.30.0.tar.gz"
+  sha256 "7428ebabb8cd95ee593e52119fa30f4622fe426dd87f744d189a805a40bdb4e9"
   license "Apache-2.0"
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "cbd501f263fe3afccf8664d53f7062fe663899a8ac6d6a1f55efcf3f2a337b36"
-    sha256 cellar: :any, arm64_sequoia: "56670a0f7f99822294ce9937e5d3d3419c38181590e21113881c555b566495f9"
-    sha256 cellar: :any, arm64_sonoma:  "37d76474b1602e1d035d55b7749b3d861393aa328f842aca29aa5ffad0c7702c"
-    sha256 cellar: :any, sonoma:        "fed11694f53a5271ec6fb6ed272bf06c8d8b2e3a786edb899939bbe294ba2b55"
-    sha256 cellar: :any, arm64_linux:   "30143f105655ed52a5dba4e9a7e4452a35ab1464fcca6d8cb50786e52c6765dc"
-    sha256 cellar: :any, x86_64_linux:  "d417c1eed94e873830014aa5fa5d703c3c4d4d73a6925dfbcbf17c407dceecb6"
+    sha256 cellar: :any, arm64_tahoe:   "3ab62188817da2208c8425f709adbab659bbe1b6d9392685a49969809fa77071"
+    sha256 cellar: :any, arm64_sequoia: "93b8535c7f15dc29fd26474a36b2e53d00de270b1657717980a969a017a3545c"
+    sha256 cellar: :any, arm64_sonoma:  "5508bd7ff5bcf5e51caf392a51496dd525f6b32c87ae52aa3490703751f41d52"
+    sha256 cellar: :any, sonoma:        "f6f41f623751af89a94b43e043b9a97502a306797ac61e83ab1189a74aa9fa92"
+    sha256 cellar: :any, arm64_linux:   "ba2b570eabee0fbb5bb38ca240169fc0b9ef79a32120772446fee9bf8d263e5c"
+    sha256 cellar: :any, x86_64_linux:  "eae43d49fe334964dc56b1c058a2100e58e04b6f62706489f2c2981174c6ecac"
   end
 
   depends_on "cmake" => :build
@@ -509,8 +509,8 @@ class Prowler < Formula
   end
 
   resource "dulwich" do
-    url "https://files.pythonhosted.org/packages/4b/ac/ba58cf420640c7bc77ae8e1b31e174d83c9117750c63cf9ea3b5e202e5c4/dulwich-0.23.0.tar.gz"
-    sha256 "0aa6c2489dd5e978b27e9b75983b7331a66c999f0efc54ebe37cab808ed322ae"
+    url "https://files.pythonhosted.org/packages/7f/85/ceb8ecff5cdeee4ceeebb86b599476dee559041dacc6c2c50cc0d4711549/dulwich-1.2.5.tar.gz"
+    sha256 "0395b2c8924c3424bafe2d9c1edd5348cc4b21ce9c1d6655bf01f9a5c47164c8"
   end
 
   resource "durationpy" do
@@ -524,8 +524,8 @@ class Prowler < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/1f/f9/f38573ed5844586db374d085911740a501ccfa373b455fc9413f09f85237/filelock-3.29.1.tar.gz"
-    sha256 "d97e6b1b9757569626c58caa07dc4beb1613f4a2938b1e8cc81afca398906c9e"
+    url "https://files.pythonhosted.org/packages/91/f5/3557bf28e0f1943e4849154c821533706e6dea010f96fb6aa0b6949037d1/filelock-3.29.3.tar.gz"
+    sha256 "7fc1b3f39cf172fd8203812043c57b8a65aef9969f38b6704f628b881f761a84"
   end
 
   resource "flask" do
@@ -604,8 +604,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/cb/4f/40c52425e2020b595feddc5a4d560c611cff9f029eed4e7514128e697812/iamdata-0.1.202606091.tar.gz"
-    sha256 "12952bdf7b9b0908ffd6dd9942a89e756e48de1c38cd5f3e4d8a7fb25cb7054d"
+    url "https://files.pythonhosted.org/packages/5e/55/81690ce906c0e8893c9d99e27c051e3717592eadacb8b086b1354d601701/iamdata-0.1.202606111.tar.gz"
+    sha256 "b45d90c3bd51e65f08b35e3d13ba3635e9ea89c51899cb11c831467009f61567"
   end
 
   resource "idna" do
@@ -1037,6 +1037,11 @@ class Prowler < Formula
   resource "stackit-iaas" do
     url "https://files.pythonhosted.org/packages/52/07/24e65278300d5c3cb19cb1660bff924c80812cf8aad3e715f826bae5aa80/stackit_iaas-1.4.0.tar.gz"
     sha256 "93523b23442350c7ebefd9129485c4c2a539f694a9c36a0f8edfaba9862057ea"
+  end
+
+  resource "stackit-objectstorage" do
+    url "https://files.pythonhosted.org/packages/90/80/b790756af40a5c6d979dd688b2557394ac54b594eb4c08edc33157ba890f/stackit_objectstorage-1.4.0.tar.gz"
+    sha256 "4a3812b4de102b199f061706a802909f9e53ae9b0858769d5bd720f814c8bdbe"
   end
 
   resource "stackit-resourcemanager" do

@@ -1,18 +1,18 @@
 class Betterleaks < Formula
   desc "Secrets scanner built for configurability and speed"
   homepage "https://github.com/betterleaks/betterleaks"
-  url "https://ghfast.top/https://github.com/betterleaks/betterleaks/archive/refs/tags/v1.4.1.tar.gz"
-  sha256 "ddebea272658c703c8ca9b3096f3e98eedb1495fdca1159f350e10e25d11bc9f"
+  url "https://ghfast.top/https://github.com/betterleaks/betterleaks/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "fcb0c51c10d181a42c9d5db545f0c1b43f8b55b48e38b281fae3b04736e858f8"
   license "MIT"
   head "https://github.com/betterleaks/betterleaks.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fa2724108d55020f962113c9dc3a1681e5a0b9f0c2e88bea36736f94bf5ee9a7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa2724108d55020f962113c9dc3a1681e5a0b9f0c2e88bea36736f94bf5ee9a7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa2724108d55020f962113c9dc3a1681e5a0b9f0c2e88bea36736f94bf5ee9a7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0e623be51910d9d60388ad86fd1d3f8a57d6eda732410a7c40521a53eab0767b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e7f9df39eaa2c8ab6b1b6c1486170379fbdf92eba5b0d4dd724fc41658bd6e5"
-    sha256 cellar: :any,                 x86_64_linux:  "8d0060004263c869e8fbf2e11d5b200ec7ba0cae7b1ec43600c0c240f3bf2663"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b0b3f31d31451228315dd91eb4c41bdfe36e2df87949c7203e0ea408d86f429"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b0b3f31d31451228315dd91eb4c41bdfe36e2df87949c7203e0ea408d86f429"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b0b3f31d31451228315dd91eb4c41bdfe36e2df87949c7203e0ea408d86f429"
+    sha256 cellar: :any_skip_relocation, sonoma:        "174e92d2d502ccf5aaf603b5c4572a2fd94994881c54286eb92ed61149c20c40"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8ed31c1f7d80fe0d53713bcdcdc19a9a3977be8f03bd34085b01e1746f28cd8"
+    sha256 cellar: :any,                 x86_64_linux:  "9084cdfb644528245e91475fd06da60d6912e8b9eec67ba707d8ab5ba9cd5c75"
   end
 
   depends_on "go" => :build

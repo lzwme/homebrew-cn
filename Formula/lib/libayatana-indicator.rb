@@ -1,13 +1,13 @@
 class LibayatanaIndicator < Formula
   desc "Ayatana Indicators Shared Library"
   homepage "https://github.com/AyatanaIndicators/libayatana-indicator"
-  url "https://ghfast.top/https://github.com/AyatanaIndicators/libayatana-indicator/archive/refs/tags/0.9.4.tar.gz"
-  sha256 "a18d3c682e29afd77db24366f8475b26bda22b0e16ff569a2ec71cd6eb4eac95"
+  url "https://ghfast.top/https://github.com/AyatanaIndicators/libayatana-indicator/archive/refs/tags/0.9.5.tar.gz"
+  sha256 "73d71c908b803f12e4a5ecd8392511b58afbdd0c82ad7909611a17bb7847c5c8"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "da9fc97cc1bb2c19f987eeef759158febcc99007450d7643c712d6e4612600ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "38823b368d0eb88a0cbaff12fe3d6dae2e78ac39092214bad70a290d44ccb7c1"
+    sha256 cellar: :any, arm64_linux:  "6c85a40732344dd09a745df53a87af7e203eed256ca48d2190bbc02f912367bc"
+    sha256 cellar: :any, x86_64_linux: "51b1d81aba0e7f193a4c424157fc86cf393fea36d884317eb97ed7c9291dbec7"
   end
 
   depends_on "cmake" => :build

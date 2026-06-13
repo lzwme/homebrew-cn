@@ -1,18 +1,18 @@
 class Qshell < Formula
   desc "Shell Tools for Qiniu Cloud"
   homepage "https://github.com/qiniu/qshell"
-  url "https://ghfast.top/https://github.com/qiniu/qshell/archive/refs/tags/v2.19.7.tar.gz"
-  sha256 "9ed3f5da59291af41200ba124c4fc15ba996182c1617f64ef3920a344651d1c4"
+  url "https://ghfast.top/https://github.com/qiniu/qshell/archive/refs/tags/v2.19.8.tar.gz"
+  sha256 "93a865e9186b6e9c7e4d404e6bc609ae76fef9ff499a70d7b954062585045a02"
   license "MIT"
   head "https://github.com/qiniu/qshell.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89175f20d38eb8bb3e700f23215456797029aae6d6110e3cd0c0bc46534edf59"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89175f20d38eb8bb3e700f23215456797029aae6d6110e3cd0c0bc46534edf59"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89175f20d38eb8bb3e700f23215456797029aae6d6110e3cd0c0bc46534edf59"
-    sha256 cellar: :any_skip_relocation, sonoma:        "364bb72c22d2939840d813fb87400d999c83bde839b45eb4bb62389654c8c667"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8ccd01c6299ad8e3cb28bac4c1a60d6e2f8f25f4ec7f02733ed3268bb572132"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "709e76134ec6e82ee64fd111415692968a14424da9082f20dee85aa99260f54b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6824bf302f3b943453042b57c17eb926af95ad9d51cc07430f7d5f6e5bd795f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6824bf302f3b943453042b57c17eb926af95ad9d51cc07430f7d5f6e5bd795f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6824bf302f3b943453042b57c17eb926af95ad9d51cc07430f7d5f6e5bd795f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "812003f767a1085d0a7a52cfba69eb1d87f235afb7ba49c7a1e93cf278373627"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fffe8d950e29065046d45ef5e5f2aba9ab34725cf141580370a71ec8a678ef00"
+    sha256 cellar: :any,                 x86_64_linux:  "829c6194368fd3d13ce1ec24e6bfbcf5d929bbc6bfb69ed932e10440edbccd77"
   end
 
   depends_on "go" => :build

@@ -138,8 +138,8 @@ class GhcAT912 < Formula
 
     if OS.mac?
       # https://gitlab.haskell.org/ghc/ghc/-/issues/22595#note_468423
-      args << "--with-ffi-libraries=#{MacOS.sdk_path_if_needed}/usr/lib"
-      args << "--with-ffi-includes=#{MacOS.sdk_path_if_needed}/usr/include/ffi"
+      args << "--with-ffi-libraries=#{MacOS.sdk_path}/usr/lib"
+      args << "--with-ffi-includes=#{MacOS.sdk_path}/usr/include/ffi"
     end
 
     system "./configure", "--prefix=#{prefix}", "--disable-numa", "--with-system-libffi", *args

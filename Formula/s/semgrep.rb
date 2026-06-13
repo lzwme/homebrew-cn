@@ -5,8 +5,8 @@ class Semgrep < Formula
   homepage "https://semgrep.dev"
   # Pull from git tag to get submodules, https://github.com/semgrep/semgrep/issues/10877
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.165.0",
-      revision: "4cc850aff696dce0f6beddd4bb72db7f4c9abbc0"
+      tag:      "v1.166.0",
+      revision: "e4ca79a75a579967fe08355396386589f059fe6f"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -16,12 +16,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fdb3edf188038b047b05789b0870ae79c01ad5df1d9fdd08eece31f0731082ba"
-    sha256 cellar: :any, arm64_sequoia: "0cdd1597e29dcd26cab4781b12f35a90b82fe23bbc08242551d57cdcbfbfb32b"
-    sha256 cellar: :any, arm64_sonoma:  "698f24dc2c07684fc77d7943e136e2e4aa590e2996200fb4c323ee423d1a9c7b"
-    sha256 cellar: :any, sonoma:        "5da9a1c9c89c62b6f67269bf98d2bc5b0265bd81690f837b0298d393ea67edb9"
-    sha256               arm64_linux:   "4a6030964062a8d7eed14081e3d6d525cb73612a862a0b89fba6f43b8174dd11"
-    sha256               x86_64_linux:  "ebad958f1edf6b69178eea4b6a62b74be1650d8dbbefe2deade584f7aa139273"
+    sha256 cellar: :any, arm64_tahoe:   "e1f9c9396ba9b095223a2dcd349d72a6af36e98d4d1f21cff25e10c40d2612ff"
+    sha256 cellar: :any, arm64_sequoia: "112c46b2245e2074def395797f3ab2be059387a06f299caacad66077c1c7e08f"
+    sha256 cellar: :any, arm64_sonoma:  "238c68ef0a6ed10e74708d616c29273e874e76a65bf734954b4d8097a50cbae6"
+    sha256 cellar: :any, sonoma:        "dae56eae013989b6b44ab0858fbbca638bc645b58e8728d00494fdb8e046ea6e"
+    sha256               arm64_linux:   "2670a73fe972887ca7097d2276b31c7382f4702163fe050c019ae895eba69a5e"
+    sha256               x86_64_linux:  "6dd2b0e33bb80132393bea75b286615c8b147e105f1843481662f8d7a8dacd17"
   end
 
   depends_on "ocaml" => :build
@@ -242,8 +242,8 @@ class Semgrep < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/c2/27/a3b6e5bf6ff856d2509292e95c8f57f0df7017cf5394921fc4e4ef40308a/pyjwt-2.12.1.tar.gz"
-    sha256 "c74a7a2adf861c04d002db713dd85f84beb242228e671280bf709d765b03672b"
+    url "https://files.pythonhosted.org/packages/3b/81/58d0ac84e1ef3a3843791d6954d94c0b33d526c75eeb1efbce9d0a4c4077/pyjwt-2.13.0.tar.gz"
+    sha256 "41571c89ca91598c79e8ef18a2d07367d4810fbbd6f637794879baf1b7703423"
   end
 
   resource "python-dotenv" do
@@ -252,8 +252,8 @@ class Semgrep < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/4b/82/c8cd43a6e0719bf5a3b034f6726dd701f75829c08944c83d4b95d02ed0e8/python_multipart-0.0.30.tar.gz"
-    sha256 "0edfe0475c1f46ddd3ff7785a626f6118af32bdcf359bb21260367313bb32118"
+    url "https://files.pythonhosted.org/packages/5b/42/55c32bb9b12693c092ad250a0e82edb5b31ddeda6eb772de5f308b3804ad/python_multipart-0.0.32.tar.gz"
+    sha256 "be54b7f3fa167bb83e4fcd936b887b708f4e57fe75911c02aebf53efaf8d938e"
   end
 
   resource "referencing" do
@@ -292,8 +292,8 @@ class Semgrep < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/25/44/ec35f1b6e83094b997da438a02c8c9b0ade2b1e84cfc48bd4656780760a6/starlette-1.2.1.tar.gz"
-    sha256 "9b9b5ebb992e67d6093741e63c2f59e4f6fff986f81163c087867bd7b924b3f6"
+    url "https://files.pythonhosted.org/packages/c1/37/cc24e33974e1439cf5ca62b0735b63026eabb768f472d8775f52d5851ed9/starlette-1.3.0.tar.gz"
+    sha256 "bb58cbb7a699da4ee4be9ed4cdfe4bc5b0390aa6dac1d1ac714ebebe8dc3c8df"
   end
 
   resource "tomli" do

@@ -1,8 +1,8 @@
 class Nss < Formula
   desc "Libraries for security-enabled client and server applications"
   homepage "https://firefox-source-docs.mozilla.org/security/nss/index.html"
-  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_124_RTM/src/nss-3.124.tar.gz"
-  sha256 "80da9f1cbcb267293b2248818d288bc02f874d6a34f1989a2828401d74a0bc9b"
+  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_125_RTM/src/nss-3.125.tar.gz"
+  sha256 "1ad541f10da7c58dec01f540ecc44d28cbbc033f741a57473de5a0893d91606d"
   license "MPL-2.0"
   compatibility_version 1
 
@@ -15,12 +15,12 @@ class Nss < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6441abee1d6e873bc100f92b9f7db22bfed703229778188af712a64a6aea5925"
-    sha256 cellar: :any,                 arm64_sequoia: "2867d46cfa3c28a508e9978de3536d446f14092fffdf00c07e7184ce2b856a35"
-    sha256 cellar: :any,                 arm64_sonoma:  "36f7e0e2e8a19948acea79abe4c2c443cfb3150424d30ceb862b5317044a731d"
-    sha256 cellar: :any,                 sonoma:        "ce5b1bed99de6f7859fd1c27fdf5c4eb0abf0f7614c83ae9fca60371e678ad93"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb1084c3378d57dda326c5f247c50edac553f08622dbc86649ed189eab78c63c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08e107f008b5aab4c7db5834886ce843ec057d2ef5ba9563177a00aa9ecb3d8b"
+    sha256 cellar: :any, arm64_tahoe:   "99da657267deb99a51facb01143a513b9276eb336966a7f718f4bb219bdd49f8"
+    sha256 cellar: :any, arm64_sequoia: "ac59ff8a44e171fca41b0e1b50bff4abeedf793f4fb88c331452fb1e1e9caed7"
+    sha256 cellar: :any, arm64_sonoma:  "b45369bcd4c8385d62e59990ebd0de89f9c51a1390bed14b02514c600ba7b6c2"
+    sha256 cellar: :any, sonoma:        "cd0e2f81ba3e9ead1191fffa53e4ef9307c7737ff77628bdd9d690cdd66ef486"
+    sha256 cellar: :any, arm64_linux:   "5072e49ddd8212360ef4bd4db5d8c6b2c784e56ac9c92e5efb8e86700fcb55b8"
+    sha256 cellar: :any, x86_64_linux:  "74baad24ad95c7c5a9e9b3f05272ad4bb8df562387527bcec07655e0f87f9864"
   end
 
   depends_on "nspr"

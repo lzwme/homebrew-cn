@@ -1,8 +1,8 @@
 class ScalaAT33 < Formula
   desc "JVM-based programming language"
   homepage "https://www.scala-lang.org/"
-  url "https://ghfast.top/https://github.com/scala/scala3/releases/download/3.3.7/scala3-3.3.7.tar.gz"
-  sha256 "ece510e2398b20bc31422b7d815ac344e968ac9e71c96445db5f136cd298c4d9"
+  url "https://ghfast.top/https://github.com/scala/scala3/releases/download/3.3.8/scala3-3.3.8.tar.gz"
+  sha256 "17a03dd9c2a790b4230a7d03b741cdedca6514096e50e7189bc5e2d299db250a"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class ScalaAT33 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "84cf0ec57b03e2a2bdac6cc375a87808b03805dfcb5fc82a8bf4bc72e6a11879"
+    sha256 cellar: :any_skip_relocation, all: "3e705c5f9dac3e80c4e8072004b72e87e366f5a4880f64470ec0e67da8c6e144"
   end
 
   keg_only :versioned_formula

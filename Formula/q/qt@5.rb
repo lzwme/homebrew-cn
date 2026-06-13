@@ -134,6 +134,13 @@ class QtAT5 < Formula
     end
   end
 
+  # Apply Debian patch to fix build with GCC 13+
+  patch do
+    url "https://salsa.debian.org/qt-kde-team/qt/qtlocation/-/raw/4ec161bda76cd4c80d2e50fff223a94594cc6b4c/debian/patches/gcc_13.diff"
+    sha256 "85ef9bb775540d639cea03894101ab2b7476f633cbb7ff49a1ea0a6bbca82168"
+    directory "qtlocation"
+  end
+
   def install
     # Remove QtWebEngine. It has a copy of Chromium with unfixed vulnerabilities,
     # requires dozens of patches to build and is becoming more unmaintainable.
