@@ -35,17 +35,6 @@ class NodeAT18 < Formula
   uses_from_macos "python"
   uses_from_macos "zlib"
 
-  on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1100
-  end
-
-  fails_with :clang do
-    build 1100
-    cause <<~EOS
-      error: calling a private constructor of class 'v8::internal::(anonymous namespace)::RegExpParserImpl<uint8_t>'
-    EOS
-  end
-
   # Backport support for ICU 76+
   patch do
     url "https://github.com/nodejs/node/commit/81517faceac86497b3c8717837f491aa29a5e0f9.patch?full_index=1"

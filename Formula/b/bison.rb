@@ -39,7 +39,7 @@ class Bison < Formula
   end
 
   test do
-    (testpath/"test.y").write <<~EOS
+    (testpath/"test.y").write <<~YACC
       %{ #include <iostream>
          using namespace std;
          extern void yyerror (char *s);
@@ -59,7 +59,7 @@ class Bison < Formula
       void yyerror (char *s) { cout << "fail"; exit(0); }
       int yylex () { cin.get(c); return c; }
       int main() { yyparse(); }
-    EOS
+    YACC
     system bin/"bison", "test.y"
     system ENV.cxx, "test.tab.c", "-o", "test"
     assert_equal "pass", pipe_output("./test", "((()(())))()\n", 0)

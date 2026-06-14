@@ -63,7 +63,7 @@ class C3c < Formula
   end
 
   test do
-    (testpath/"test.c3").write <<~EOS
+    (testpath/"test.c3").write <<~C3
       module hello_world;
       import std::io;
 
@@ -71,7 +71,7 @@ class C3c < Formula
       {
         io::printn("Hello, world!");
       }
-    EOS
+    C3
     system bin/"c3c", "compile", "test.c3", "-o", "test"
     assert_match "Hello, world!", shell_output("#{testpath}/test")
   end

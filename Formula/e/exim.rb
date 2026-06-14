@@ -123,7 +123,7 @@ class Exim < Formula
 
   # Inspired by MacPorts startup script. Fixes restart issue due to missing setuid.
   def startup_script
-    <<~EOS
+    <<~SH
       #!/bin/sh
       PID=#{var}/spool/exim/exim-daemon.pid
       case "$1" in
@@ -144,7 +144,7 @@ class Exim < Formula
         exit 1
         ;;
       esac
-    EOS
+    SH
   end
 
   def caveats

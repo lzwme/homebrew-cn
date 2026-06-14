@@ -3,17 +3,17 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/43/98/1501e70415157ec47c9020a682a0119c8ead46ae9f1aa79e007f779fda14/locust-2.44.1.tar.gz"
-  sha256 "962e6498431f152eca26d9cb158c23e3f61bf26e026f4f4171bed3f713379820"
+  url "https://files.pythonhosted.org/packages/29/dc/b6c5c6f23af38e0951de45b0255da8def1959a7710e6bd56b71047e7a4a5/locust-2.44.3.tar.gz"
+  sha256 "bf3c82843dfebf684c968b5778b8132e9c1f1abd400d25a91c63ea65200b7f29"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9d6e389d174800e024728ecc81b0db40aa5b801be6563b2ce4e92f600eb98544"
-    sha256 cellar: :any, arm64_sequoia: "a4cac4d92a1c029c683778459a916f6c92890706ef06c8441e6b213f02f568ee"
-    sha256 cellar: :any, arm64_sonoma:  "be8f2b3fbaaabf8ea15bc653118f34b1bced90fb88adf72bc637768816a9191c"
-    sha256 cellar: :any, sonoma:        "afad007e91373245b73434507d083272702f09026ba83c600ffc0b9ca566e509"
-    sha256 cellar: :any, arm64_linux:   "07b7f2d5e90899e26135f4f63d6f1ef1d1c865acba7b1e002b5b17b37a4ecd0e"
-    sha256 cellar: :any, x86_64_linux:  "62a28aa7d57647e0005dc0080a761964966ee3c90d09dab571e827ef21567009"
+    sha256 cellar: :any, arm64_tahoe:   "b2e2ca1dded434679f9a519994e0408da75996a8dff7706494843524e1f8dc05"
+    sha256 cellar: :any, arm64_sequoia: "fca1b680465a9a46d33dcc818da541bec16c7fda1afe0739c8c4693093c109ac"
+    sha256 cellar: :any, arm64_sonoma:  "ec76375a348e6d09494c4efba85e102627523aeeb499f8d7f6e02bd79d3a8f03"
+    sha256 cellar: :any, sonoma:        "ec3527e9b1e271a839b298e75783f38738aff63d59a2d28cd698e808814878a4"
+    sha256 cellar: :any, arm64_linux:   "924cf66f44ef318374362d17e1566f3145c7416ee856d31898a3e92120d7deea"
+    sha256 cellar: :any, x86_64_linux:  "ff3c8b336c75a5a65c31af9d10ff4068dc38838d0865bc867535508436794787"
   end
 
   depends_on "cmake" => :build # for pyzmq
@@ -60,8 +60,8 @@ class Locust < Formula
   end
 
   resource "flask-cors" do
-    url "https://files.pythonhosted.org/packages/70/74/0fc0fa68d62f21daef41017dafab19ef4b36551521260987eb3a5394c7ba/flask_cors-6.0.2.tar.gz"
-    sha256 "6e118f3698249ae33e429760db98ce032a8bf9913638d085ca0f4c5534ad2423"
+    url "https://files.pythonhosted.org/packages/47/03/4e464a50860f9adf08b5c1d3479cb8ea1f12af2aa69535c7042c6e628135/flask_cors-6.0.5.tar.gz"
+    sha256 "30c5031552cd59f620ac0c8211dac45b345d3b2df310e7721879e4f46ef9c601"
   end
 
   resource "flask-login" do
@@ -90,8 +90,8 @@ class Locust < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
-    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "iniconfig" do
@@ -115,8 +115,8 @@ class Locust < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/4d/f2/bfb55a6236ed8725a96b0aa3acbd0ec17588e6a2c3b62a93eb513ed8783f/msgpack-1.1.2.tar.gz"
-    sha256 "3b60763c1373dd60f398488069bcdc703cd08a711477b5d480eecc9f9626f47e"
+    url "https://files.pythonhosted.org/packages/92/23/6139781ca7aadf656fa8e384fa84693ffb13f299e6931b6526427fe5e297/msgpack-1.2.0.tar.gz"
+    sha256 "8e17af38197bf58e7e819041678f6178f4491493f5b8c8580414f40f7c2c3c41"
   end
 
   resource "packaging" do

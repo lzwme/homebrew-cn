@@ -113,7 +113,7 @@ class ErlangAT28 < Formula
   test do
     system bin/"erl", "-noshell", "-eval", "crypto:start().", "-s", "init", "stop"
 
-    (testpath/"factorial").write <<~EOS
+    (testpath/"factorial").write <<~ERLANG
       #!#{bin}/escript
       %% -*- erlang -*-
       %%! -smp enable -sname factorial -mnesia debug verbose
@@ -134,7 +134,7 @@ class ErlangAT28 < Formula
 
       fac(0) -> 1;
       fac(N) -> N * fac(N-1).
-    EOS
+    ERLANG
 
     chmod 0755, "factorial"
     assert_match "usage: factorial integer", shell_output("./factorial")

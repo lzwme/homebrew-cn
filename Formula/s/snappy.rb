@@ -21,16 +21,6 @@ class Snappy < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 
-  # Fix issue where Mojave clang fails due to entering a __GNUC__ block
-  on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1100
-  end
-
-  fails_with :clang do
-    build 1100
-    cause "error: invalid output constraint '=@ccz' in asm"
-  end
-
   # Fix issue where `snappy` setting -fno-rtti causes build issues on `folly`
   # `folly` issue ref: https://github.com/facebook/folly/issues/1583
   patch :DATA

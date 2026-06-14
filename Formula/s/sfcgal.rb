@@ -1,32 +1,28 @@
 class Sfcgal < Formula
   desc "C++ wrapper library around CGAL"
   homepage "https://sfcgal.gitlab.io/SFCGAL/"
-  url "https://gitlab.com/sfcgal/SFCGAL/-/archive/v2.2.0/SFCGAL-v2.2.0.tar.gz"
-  sha256 "bb6bb77ddb58523d8c229764de23699f99c1a7011d873419afd2a67df85602a2"
+  url "https://gitlab.com/sfcgal/SFCGAL/-/archive/v2.3.0/SFCGAL-v2.3.0.tar.gz"
+  sha256 "5f6aa1838e5ae31523ebf410cde0240b7a88d7e062b7ffff945e4fae2aaba0fa"
   license "LGPL-2.0-or-later"
-  revision 2
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e9c0f30ae28d7d8ef18675126864cc80f7806ecf8fefa079f29e9215c2c319c4"
-    sha256 cellar: :any,                 arm64_sequoia: "2d8f5fb00b500b9bc05b286393ca03e6814c0764fe7c3b214fc6386e17f3adde"
-    sha256 cellar: :any,                 arm64_sonoma:  "3d78c85d04cbf3032c2c61ae4bdebd921346635ecb1994b80a3e91daf5b115c5"
-    sha256 cellar: :any,                 sonoma:        "401ad303e69a6465a0f0bef39fa8f562dbe9bdba48334648f01021b442d0f1a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5031bd5b692ff5c189cf13c444788ef9609f26b2553fbc5de60ee1d341927e6d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a690b79a1a0d1170b952c122f419b4ec3889a69e2f431d7a68fb4cb4774091a4"
+    sha256 cellar: :any, arm64_tahoe:   "670b480cb5d2bc39b82cd44eb88036db3c5760662650f942ccdb0601fad7214e"
+    sha256 cellar: :any, arm64_sequoia: "9479bc005dd3623c205bbb219050dd6d8fd4126a49eefad7763ba9da8bf1371f"
+    sha256 cellar: :any, arm64_sonoma:  "2ab6ae6bdf02ffc9e14eddd124492cccc1e44ba6ff3b025bf3d127dc7c6a4af0"
+    sha256 cellar: :any, sonoma:        "947e01f26a488842713b55d4b2c6c378f0518233f253bc564e47f3572f925993"
+    sha256 cellar: :any, arm64_linux:   "4494d02b8b01087ff8ee0c2c8b6432f56942df2df68427d4f3bc3ed83480bb4d"
+    sha256 cellar: :any, x86_64_linux:  "76fba11c983750b09a694fb1ccb933d32990cc32da98027491f8de8772e83fb8"
   end
 
   depends_on "cmake" => :build
+  depends_on "nlohmann-json" => :build
   depends_on "boost"
   depends_on "cgal"
   depends_on "gmp"
   depends_on "mpfr"
 
   def install
-    # Workaround for Boost 1.89.0 until fixed upstream
-    # Issue ref: https://gitlab.com/sfcgal/SFCGAL/-/issues/306
-    inreplace "CMakeLists.txt", " SFCGAL_Boost_COMPONENTS thread system ", " SFCGAL_Boost_COMPONENTS thread "
-
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

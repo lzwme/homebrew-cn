@@ -6,22 +6,22 @@ class Livereload < Formula
   url "https://files.pythonhosted.org/packages/43/6e/f2748665839812a9bbe5c75d3f983edbf3ab05fa5cd2f7c2f36fffdf65bd/livereload-2.7.1.tar.gz"
   sha256 "3d9bf7c05673df06e32bea23b494b8d36ca6d10f7d5c3c8a6989608c09c986a9"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "116f5fca359f8496313310d42ec7b1dd307d209c463256f7a951d1d0b56294d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "651acd218fee0221cf2905deb8fa7a703c24272ffee9696936459741e93214e6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60aa96f61ffc238033fe728ffafaa12a8b66a7c1d96c91fa46894416c59ec2d6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ded998ab1338752e030f905b6806f575a6bb2329741969a837320a582f4c6ca5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9825e222b28fa8f334b6bbfb90374f1ec5d8b50778fb6641618ad605cffb0dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31fef9050f7a1e6604ba62e5dc09eaaedae232695864d9e8b7d42543d24a01a3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf0acf20fbf0ec3c1840cfd7834817fbbb96a501c01de4c8cc650d3c14679ff4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ccb6ff5538c00d18d803b3cf0e047983ddba8482b70012bcfd380f68d7c7b98c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27d72376258f54e293f6b78b967f8dc4b900a7ba1bd07f5dda30dc1e6c6c6e51"
+    sha256 cellar: :any_skip_relocation, sonoma:        "96711fd13739c2b37492806886e0968b56b23c27e73601cda5d51316a85610c6"
+    sha256 cellar: :any,                 arm64_linux:   "f4aae309881afbb4eb1cb6e4557fa5cb686fed609870f2407fc390859466236c"
+    sha256 cellar: :any,                 x86_64_linux:  "3edf30b01b850978cba1683527fb0d0ce9bbd622403e0dbf2890bdc5137d5a65"
   end
 
   depends_on "python@3.14"
 
   resource "tornado" do
-    url "https://files.pythonhosted.org/packages/f8/f1/3173dfa4a18db4a9b03e5d55325559dab51ee653763bb8745a75af491286/tornado-6.5.5.tar.gz"
-    sha256 "192b8f3ea91bd7f1f50c06955416ed76c6b72f96779b962f07f911b91e8d30e9"
+    url "https://files.pythonhosted.org/packages/64/24/95ec527ad67b76d59299e5465b3935d05e4294b7e0290a3924b7487df30b/tornado-6.5.7.tar.gz"
+    sha256 "66c513a76cda70d53907bc27cf1447557699c2e95aa48ba27a442ff61c3ddfc2"
   end
 
   def install

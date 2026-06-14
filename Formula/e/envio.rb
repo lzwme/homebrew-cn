@@ -49,7 +49,7 @@ class Envio < Formula
     mkdir testpath/".envio/profiles"
     touch testpath/".envio/setenv.sh"
 
-    (testpath/"batch.gpg").write <<~EOS
+    (testpath/"batch.gpg").write <<~GPG
       Key-Type: RSA
       Key-Length: 2048
       Subkey-Type: RSA
@@ -59,7 +59,7 @@ class Envio < Formula
       Expire-Date: 1d
       %no-protection
       %commit
-    EOS
+    GPG
 
     system Formula["gnupg"].opt_bin/"gpg", "--batch", "--gen-key", "batch.gpg"
     gpg = Formula["gnupg"].opt_bin/"gpg"

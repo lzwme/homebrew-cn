@@ -22,17 +22,7 @@ class Xgboost < Formula
   depends_on "cmake" => :build
 
   on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1100
     depends_on "libomp"
-  end
-
-  fails_with :clang do
-    build 1100
-    cause <<~EOS
-      clang: error: unable to execute command: Segmentation fault: 11
-      clang: error: clang frontend command failed due to signal (use -v to see invocation)
-      make[2]: *** [src/CMakeFiles/objxgboost.dir/tree/updater_quantile_hist.cc.o] Error 254
-    EOS
   end
 
   def install

@@ -35,11 +35,11 @@ class AutoconfArchive < Formula
   end
 
   test do
-    (testpath/"configure.ac").write <<~EOS
+    (testpath/"configure.ac").write <<~M4
       AC_INIT([test], [0.1])
       AX_CHECK_ENABLE_DEBUG
       AC_OUTPUT
-    EOS
+    M4
 
     system Formula["autoconf"].bin/"autoconf", "configure.ac"
     assert_path_exists testpath/"autom4te.cache"

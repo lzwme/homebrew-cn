@@ -1,18 +1,18 @@
 class BigqueryEmulator < Formula
   desc "Emulate a GCP BigQuery server on your local machine"
   homepage "https://github.com/goccy/bigquery-emulator"
-  url "https://ghfast.top/https://github.com/goccy/bigquery-emulator/archive/refs/tags/v0.7.2.tar.gz"
-  sha256 "e1df04babb193dfc5fb2ec75c6c00e2d2348dc5702128e6f8f4fd4a15c6a1f26"
+  url "https://ghfast.top/https://github.com/goccy/bigquery-emulator/archive/refs/tags/v0.8.1.tar.gz"
+  sha256 "b24e327f433ab5da38cc28946ea7cb3eca8c265fa6ab1f428c82c0522d4daefb"
   license "MIT"
   head "https://github.com/goccy/bigquery-emulator.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb07e01d8da2e5e2cc9063396a09b31bca769327e971247bc4e93f2c5ca9a4bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb07e01d8da2e5e2cc9063396a09b31bca769327e971247bc4e93f2c5ca9a4bd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb07e01d8da2e5e2cc9063396a09b31bca769327e971247bc4e93f2c5ca9a4bd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "086f38cd72ead6fd97faa59194af6b8e1394d323ee86c4003f1c07a81898a73d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5c0f6bafcea96fdd93f35b8343c76fe4f309b848b1b5a626958804a5ce8b94a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5637b0d0531a6de84579736e7959f129081fa6f485998f8ffbaf1c260491f956"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a397c8bc93742701c7799ee2ecddabfec3df714726796fcb4e8e6d61f14d1497"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a397c8bc93742701c7799ee2ecddabfec3df714726796fcb4e8e6d61f14d1497"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a397c8bc93742701c7799ee2ecddabfec3df714726796fcb4e8e6d61f14d1497"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f37f93ed098640539dfe797b8af9f8426ec20a0a8bb4d55cfa1e860bec5633f7"
+    sha256 cellar: :any,                 arm64_linux:   "e471034a6d450e9500fd3042723b98b87e337d2f8fb6c9e5531bb05139002fd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff25d427abf1af93767169775f4259745bebc4ec7a23085dc0a1b3bc49bf407f"
   end
 
   depends_on "go" => :build

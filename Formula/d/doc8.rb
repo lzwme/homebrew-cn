@@ -40,10 +40,10 @@ class Doc8 < Formula
   end
 
   test do
-    (testpath/"broken.rst").write <<~EOS
+    (testpath/"broken.rst").write <<~RST
       Heading
       ------
-    EOS
+    RST
     output = pipe_output("#{bin}/doc8 broken.rst 2>&1")
     assert_match "D000 Title underline too short.", output
   end

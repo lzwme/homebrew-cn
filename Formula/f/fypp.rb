@@ -33,13 +33,13 @@ class Fypp < Formula
     PYTHON
     system python3, testpath/"test_fypp.py"
 
-    (testpath/"hello.F90").write <<~EOS
+    (testpath/"hello.F90").write <<~FORTRAN
       program hello
       #:for val in [_SYSTEM_, _MACHINE_, _FILE_, _LINE_]
         print *, '${val}$'
       #:endfor
       end
-    EOS
+    FORTRAN
 
     system bin/"fypp", testpath/"hello.F90", testpath/"hello.f90"
     ENV.fortran

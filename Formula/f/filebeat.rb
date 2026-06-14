@@ -46,7 +46,7 @@ class Filebeat < Formula
       prefix.install "build/kibana"
     end
 
-    (bin/"filebeat").write <<~EOS
+    (bin/"filebeat").write <<~SH
       #!/bin/sh
       exec #{libexec}/bin/filebeat \
         --path.config #{etc}/filebeat \
@@ -54,7 +54,7 @@ class Filebeat < Formula
         --path.home #{prefix} \
         --path.logs #{var}/log/filebeat \
         "$@"
-    EOS
+    SH
 
     chmod 0555, bin/"filebeat" # generate_completions_from_executable fails otherwise
     generate_completions_from_executable(bin/"filebeat", "completion", shells: [:bash, :zsh])

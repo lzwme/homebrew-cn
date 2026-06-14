@@ -34,21 +34,8 @@ class Folly < Formula
 
   uses_from_macos "bzip2"
 
-  on_macos do
-    depends_on "llvm" if DevelopmentTools.clang_build_version <= 1100
-  end
-
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  fails_with :clang do
-    build 1100
-    # https://github.com/facebook/folly/issues/1545
-    cause <<~EOS
-      Undefined symbols for architecture x86_64:
-        "std::__1::__fs::filesystem::path::lexically_normal() const"
-    EOS
   end
 
   # Workaround for arm64 Linux error "Missing variable is: CMAKE_ASM_CREATE_SHARED_LIBRARY"

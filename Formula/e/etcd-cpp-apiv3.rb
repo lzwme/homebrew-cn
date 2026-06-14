@@ -50,6 +50,12 @@ class EtcdCppApiv3 < Formula
     sha256 "bce8ef02bc56f2ac430d580191217ff78210cc6e261d29c7031a22e65cd05693"
   end
 
+  # Backport GCC 13 build fix
+  patch do
+    url "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/commit/7c6e714f188f9576e25e0350cac4181139eec23e.patch?full_index=1"
+    sha256 "96c9e4cbadb46c9ebfc6f4f386125161b68df4c12f7c85feffda39dff41a7277"
+  end
+
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_CXX_STANDARD=17",

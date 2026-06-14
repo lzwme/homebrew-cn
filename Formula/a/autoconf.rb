@@ -44,12 +44,12 @@ class Autoconf < Formula
     cp pkgshare/"autotest/autotest.m4", "autotest.m4"
     system bin/"autoconf", "autotest.m4"
 
-    (testpath/"configure.ac").write <<~EOS
+    (testpath/"configure.ac").write <<~M4
       AC_INIT([hello], [1.0])
       AC_CONFIG_SRCDIR([hello.c])
       AC_PROG_CC
       AC_OUTPUT
-    EOS
+    M4
     (testpath/"hello.c").write "int foo(void) { return 42; }"
 
     system bin/"autoconf"

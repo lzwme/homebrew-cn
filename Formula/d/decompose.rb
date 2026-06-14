@@ -1,18 +1,18 @@
 class Decompose < Formula
   desc "Reverse-engineering tool for docker environments"
   homepage "https://github.com/s0rg/decompose"
-  url "https://ghfast.top/https://github.com/s0rg/decompose/archive/refs/tags/v1.11.7.tar.gz"
-  sha256 "31291c2ce93955bed0f85275c388a7123f2b23c83cf63df6eb4fcc37749daa05"
+  url "https://ghfast.top/https://github.com/s0rg/decompose/archive/refs/tags/v1.11.8.tar.gz"
+  sha256 "c68e57eb98d88d4d4221147229839b753b20640da88992b1e6ce143aec51459a"
   license "MIT"
   head "https://github.com/s0rg/decompose.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a100904be6e9d1d5d865911aeaea94bbb1ea962987bef525b982392ccd0de796"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a100904be6e9d1d5d865911aeaea94bbb1ea962987bef525b982392ccd0de796"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a100904be6e9d1d5d865911aeaea94bbb1ea962987bef525b982392ccd0de796"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c0780566e660fcb014ac2965c82d9afd57adc20b313b3b44640e3307a2412c50"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d5f62eac6e02f0ccac5576d178cb608800de3f2bfa04b3b42468e59ac68c72c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e81bfe4f25894836ebfa7e8b0f0beefd9e8d8d04543a345b72d29a6ee03e1312"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d71ca6bc293b1e9a262748b1cd755519c86d18df10e03f0b535e85aa089f9eb5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d71ca6bc293b1e9a262748b1cd755519c86d18df10e03f0b535e85aa089f9eb5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d71ca6bc293b1e9a262748b1cd755519c86d18df10e03f0b535e85aa089f9eb5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd73eb4e7e3e628dea303d47eccd83844c41e17a265de442cc95c901ea5528c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "62738aee22fbe289af889ba818ed0d152bac1ab2f8cc73b68394658b05ba0b62"
+    sha256 cellar: :any,                 x86_64_linux:  "60ca2687a4003079b52654f7b044efc0f7afa690203e91b6dd76e814b03a54bd"
   end
 
   depends_on "go" => :build

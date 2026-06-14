@@ -115,7 +115,7 @@ class Dmd < Formula
   end
 
   test do
-    (testpath/"hello.d").write <<~EOS
+    (testpath/"hello.d").write <<~D
       import std.stdio;
 
       void main(string[] args)
@@ -128,7 +128,7 @@ class Dmd < Formula
               writefln("args[%d] = '%s'", index, arg);
           }
       }
-    EOS
+    D
 
     system bin/"dmd", "-fPIC", "hello.d"
     system "./hello"

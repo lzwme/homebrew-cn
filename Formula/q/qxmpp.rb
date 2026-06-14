@@ -25,7 +25,7 @@ class Qxmpp < Formula
   end
 
   on_linux do
-    depends_on "llvm" => :build if DevelopmentTools.gcc_version < 13
+    depends_on "llvm" => :build if DevelopmentTools.gcc_version < 14
   end
 
   fails_with :clang do
@@ -34,8 +34,8 @@ class Qxmpp < Formula
   end
 
   fails_with :gcc do
-    version "12"
-    cause "Requires C++20"
+    version "13"
+    cause "Requires C++20 and GCC 13 crashes with ICE"
   end
 
   def install

@@ -23,7 +23,7 @@ class Asciidoctorj < Formula
   end
 
   test do
-    (testpath/"test.adoc").write <<~EOS
+    (testpath/"test.adoc").write <<~ASCIIDOC
       = AsciiDoc is Writing Zen
       Random J. Author <rjauthor@example.com>
       :icons: font
@@ -44,7 +44,7 @@ class Asciidoctorj < Formula
       - one
       - two
       - three
-    EOS
+    ASCIIDOC
     system bin/"asciidoctorj", "-b", "html5", "-o", "test.html", "test.adoc"
     assert_match "<h1>AsciiDoc is Writing Zen</h1>", File.read("test.html")
     system bin/"asciidoctorj", "-r", "asciidoctor-pdf", "-b", "pdf", "-o", "test.pdf", "test.adoc"

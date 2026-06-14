@@ -36,13 +36,13 @@ class CargoMsrv < Formula
     # Now proceed with creating your crate and calling cargo-msrv
     (testpath/"demo-crate/src").mkpath
     (testpath/"demo-crate/src/main.rs").write "fn main() {}"
-    (testpath/"demo-crate/Cargo.toml").write <<~EOS
+    (testpath/"demo-crate/Cargo.toml").write <<~TOML
       [package]
       name = "demo-crate"
       version = "0.1.0"
       edition = "2021"
       rust-version = "1.78"
-    EOS
+    TOML
 
     cd "demo-crate" do
       output = shell_output("#{bin}/cargo-msrv msrv show --output-format human --log-target stdout 2>&1")

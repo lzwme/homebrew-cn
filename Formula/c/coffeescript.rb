@@ -21,7 +21,7 @@ class Coffeescript < Formula
   end
 
   test do
-    (testpath/"test.coffee").write <<~EOS
+    (testpath/"test.coffee").write <<~COFFEESCRIPT
       square = (x) -> x * x
       list = [1, 2, 3, 4, 5]
 
@@ -31,7 +31,7 @@ class Coffeescript < Formula
         cube:   (x) -> x * square x
 
       cubes = (math.cube num for num in list)
-    EOS
+    COFFEESCRIPT
 
     system bin/"coffee", "--compile", "test.coffee"
     assert_path_exists testpath/"test.js", "test.js was not generated"

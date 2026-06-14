@@ -51,7 +51,7 @@ class ElanInit < Formula
     ENV["ELAN_HOME"] = testpath/".elan"
 
     system bin/"elan-init", "-y", "--default-toolchain=leanprover/lean4:stable"
-    (testpath/"hello.lean").write <<~EOS
+    (testpath/"hello.lean").write <<~LEAN
       def id' {α : Type} (x : α) : α := x
 
       inductive tree {α : Type} : Type
@@ -60,7 +60,7 @@ class ElanInit < Formula
       example (a b : Prop) : a ∧ b -> b ∧ a := by
           intro h; cases h with
           | intro ha hb => constructor; exact hb; exact ha
-    EOS
+    LEAN
     system bin/"lean", testpath/"hello.lean"
     system bin/"lake", "help"
   end

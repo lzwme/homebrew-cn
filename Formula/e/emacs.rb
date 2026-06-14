@@ -67,13 +67,13 @@ class Emacs < Formula
       system "./autogen.sh"
     end
 
-    File.write "lisp/site-load.el", <<~EOS
+    File.write "lisp/site-load.el", <<~LISP
       (setq exec-path (delete nil
         (mapcar
           (lambda (elt)
             (unless (string-match-p "Homebrew/shims" elt) elt))
           exec-path)))
-    EOS
+    LISP
 
     system "./configure", *args
     system "make"

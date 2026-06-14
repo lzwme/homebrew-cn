@@ -32,7 +32,7 @@ class Fop < Formula
 
   test do
     (testpath/"test.xml").write "<name>Homebrew</name>"
-    (testpath/"test.xsl").write <<~EOS
+    (testpath/"test.xsl").write <<~XML
       <?xml version="1.0" encoding="utf-8"?>
       <xsl:stylesheet version="1.0"
             xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -56,7 +56,7 @@ class Fop < Formula
           </fo:root>
         </xsl:template>
       </xsl:stylesheet>
-    EOS
+    XML
     system bin/"fop", "-xml", "test.xml", "-xsl", "test.xsl", "-pdf", "test.pdf"
     assert_path_exists testpath/"test.pdf"
   end

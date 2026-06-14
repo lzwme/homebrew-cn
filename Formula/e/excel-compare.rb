@@ -20,11 +20,11 @@ class ExcelCompare < Formula
   def install
     libexec.install Dir["lib/*"]
 
-    (bin/"excel_cmp").write <<~EOS
+    (bin/"excel_cmp").write <<~BASH
       #!/bin/bash
       export JAVA_HOME="${JAVA_HOME:-#{Formula["openjdk"].opt_prefix}}"
       exec "${JAVA_HOME}/bin/java" -ea -cp "#{libexec}/*" com.ka.spreadsheet.diff.SpreadSheetDiffer "$@"
-    EOS
+    BASH
   end
 
   test do

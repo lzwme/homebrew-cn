@@ -1,8 +1,8 @@
 class RattlerBuild < Formula
   desc "Universal conda package builder"
   homepage "https://rattler.build"
-  url "https://ghfast.top/https://github.com/prefix-dev/rattler-build/archive/refs/tags/v0.66.0.tar.gz"
-  sha256 "62c5319db95c64a29e35946d8cbec7aad3539752662022a4393d369d3a2f3a95"
+  url "https://ghfast.top/https://github.com/prefix-dev/rattler-build/archive/refs/tags/v0.66.1.tar.gz"
+  sha256 "1ea54bf5119dac0d4a2a3d9821f7cf620c0d8b39a8646894cd8515846e86dc64"
   license "BSD-3-Clause"
   head "https://github.com/prefix-dev/rattler-build.git", branch: "main"
 
@@ -15,12 +15,12 @@ class RattlerBuild < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d778cc4d60f003616968838f62c6eb3053bfac81f9bfa0c3afcbcc16ddfa7b4b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8f99f9646de69e4c72332860aac92186d93c8d171d69dd6997a9acc0a935a6f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50d014935c50bed29ee3f0605b515706e8be930e8b4bdf0416762ce91e1ab365"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ede028a9d22c5883bd674ab78f2e22db5c5bf7b46acb7d3037db78e004690638"
-    sha256 cellar: :any,                 arm64_linux:   "a5a756ebe8fb86e0986218fa1008d138cc1fd5a1ff10780b09aa2326bf080368"
-    sha256 cellar: :any,                 x86_64_linux:  "ebde439ee2178d92a6160809cbaa1633e6a6718960a843b3223ff205722f0be0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "29157312e5912cc76c381719506e91a7a6151b08554be2669567c78c3a3701c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a24da52e6b261f6970031d445fe9de69784a5c959b4ef6fd08efaa9866909a31"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b77900a53ed4bec8731b43f13aa5e0d8e665fc5fe2f9ff7f6c42bf75b914eac3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "77dedc9d2556f7908c069f05ff80046d2951f6fc55121c48e8139974a2e2d099"
+    sha256 cellar: :any,                 arm64_linux:   "faef040c0f4f13d1c9f34a3a6a40017b9d8cd2dbdaf5596bdce7f642f5d6faa8"
+    sha256 cellar: :any,                 x86_64_linux:  "24fc05004761ba80c9828cf8980bb6a4a24b60a1db1fc048eab969993086db3f"
   end
 
   depends_on "pkgconf" => :build

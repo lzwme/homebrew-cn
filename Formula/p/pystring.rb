@@ -1,18 +1,18 @@
 class Pystring < Formula
   desc "Collection of C++ functions for the interface of Python's string class methods"
   homepage "https://github.com/imageworks/pystring"
-  url "https://ghfast.top/https://github.com/imageworks/pystring/archive/refs/tags/v1.1.5.tar.gz"
-  sha256 "63c30c251b8017c897bd923826f400aee1d6e4f1c22ffbbd2104f150522a2040"
+  url "https://ghfast.top/https://github.com/imageworks/pystring/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "020a603a757ba1e429f4b1ea6feb3afbe0fb34bcafa355032e1f1b8a0019d198"
   license "BSD-3-Clause"
   head "https://github.com/imageworks/pystring.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8551e6f8746e71fcee64d4ed87bca6d2c36886a1f4e245cb43dc08a650ca3079"
-    sha256 cellar: :any,                 arm64_sequoia: "af49426e6d2d783b19bf9699a5941260b55f22fac04655e8093ac40bae0d8b04"
-    sha256 cellar: :any,                 arm64_sonoma:  "531f63ad88b34de8b36c3393aac6c7bb110285d53a72933c837dcaab580fa97a"
-    sha256 cellar: :any,                 sonoma:        "be6c46e4fb10684eaba28454ca699d034a217ce8f7f94dcc48e764c001be751f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d43bb1fabf32b855220881055ede17ed2541037b31ef4212e134c88b19f4ea2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "884db0f8d1d046ffb96bd65987f762e2da57b19426bd01ec403fa941d0075325"
+    sha256 cellar: :any, arm64_tahoe:   "33b316a29f203f8cec54fd08ba5b4309cc819720c9081e30ef0f6e818507da95"
+    sha256 cellar: :any, arm64_sequoia: "afdabdf9a48a659bf0c51f89a9d54a2170528b0986baaacaf7340a746b314947"
+    sha256 cellar: :any, arm64_sonoma:  "69d7a031c53081256eb1226352336ea9d2e3b69690f12d879c3d57a048874735"
+    sha256 cellar: :any, sonoma:        "e8b5146d3905be7be8c4682a7a95ad19224a7b1c65f59e64f2e9c68cc6bd0cb1"
+    sha256 cellar: :any, arm64_linux:   "60c5777af3e2c58d6977bae0d47ea5a6cdb99a9a60111f1da01b03d8ab656d90"
+    sha256 cellar: :any, x86_64_linux:  "6b565ee430bec5d7f4d892ba85d8cac665c273c802b9c06f9f447bf4ab5cfdf8"
   end
 
   depends_on "cmake" => :build

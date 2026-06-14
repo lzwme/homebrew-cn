@@ -37,19 +37,8 @@ class NodeAT20 < Formula
 
   uses_from_macos "python"
 
-  on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1100
-  end
-
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  fails_with :clang do
-    build 1100
-    cause <<~EOS
-      error: calling a private constructor of class 'v8::internal::(anonymous namespace)::RegExpParserImpl<uint8_t>'
-    EOS
   end
 
   def install

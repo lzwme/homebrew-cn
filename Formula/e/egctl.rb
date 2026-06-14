@@ -104,7 +104,7 @@ class Egctl < Formula
                   value: /
     YAML
 
-    expected = <<~EOS
+    expected = <<~YAML
       xds:
         default/eg:
           '@type': type.googleapis.com/envoy.admin.v3.RoutesConfigDump
@@ -141,7 +141,7 @@ class Egctl < Formula
                     upgradeConfigs:
                     - upgradeType: websocket
 
-    EOS
+    YAML
 
     output = shell_output("#{bin}/egctl x translate --from gateway-api --to xds -t route -f #{testpath}/input.yaml")
     assert_equal expected, output

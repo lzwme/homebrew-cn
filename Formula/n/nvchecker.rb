@@ -6,15 +6,15 @@ class Nvchecker < Formula
   url "https://files.pythonhosted.org/packages/e6/ab/2950ee964979aa31efb3e0e960f2055d6b1efec5c6239483f88ca6713fc9/nvchecker-2.20.tar.gz"
   sha256 "79cfc9eba3170405db5b1d74475f2e0b539d708c869a7212b40e803e033e0149"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1bca1850cccbe81c6a15eb58b0e5d9946dcf8040c201ea181358621ea3bb7577"
-    sha256 cellar: :any,                 arm64_sequoia: "4fa7d164d186be639e5c6291e52cfa548ee0af0fae7e107601229f8983a13a5b"
-    sha256 cellar: :any,                 arm64_sonoma:  "832c14f48d73dab8c7d2ee6bafe1c5d1897b23d53c9c283d5c9f2cc3b7688f3d"
-    sha256 cellar: :any,                 sonoma:        "499b438420acb117d89f6cc0b2cb19a8167b1b3d87cc3c916f77e91edee19570"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6924516ae78fbed84bee02e88866c7eaff317fae1945e1469f40d090a3a9552a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebfea056a82946370572ad1443e5cf25663f38ae58b54136a995b53b4e1ef4a7"
+    sha256 cellar: :any, arm64_tahoe:   "d699f142cc374c0a895e4a893a04c3b56e3575892de58128d974dc093a2a8768"
+    sha256 cellar: :any, arm64_sequoia: "64ce4747002595ab0d3c45e69cbe7bc81ce87522222242bb08a8ddd7d6e6cdbe"
+    sha256 cellar: :any, arm64_sonoma:  "82d6b76fd3b7ffa3a20c59f300afc44a55994a2c73b724f3def44f5849897efd"
+    sha256 cellar: :any, sonoma:        "dcdb283a0815f9176dbdfedfe9de641ed72b17d6e221d97b92beb028a6bf06d6"
+    sha256 cellar: :any, arm64_linux:   "5b6699ec829df0ae7cfa109f2e5cb9d84087dc709e0dd73764a3b0c2e3e4f023"
+    sha256 cellar: :any, x86_64_linux:  "92d4851e954d99535e3e7f5cd986f55adf24985c36644b517950e15f1c58e0a7"
   end
 
   depends_on "curl"
@@ -24,28 +24,28 @@ class Nvchecker < Formula
   pypi_packages package_name: "nvchecker[pypi]"
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
-    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
+    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/19/56/8d4c30c8a1d07013911a8fdbd8f89440ef9f08d07a1b50ab8ca8be5a20f9/platformdirs-4.9.4.tar.gz"
-    sha256 "1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934"
+    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
+    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
   end
 
   resource "pycurl" do
-    url "https://files.pythonhosted.org/packages/e3/3d/01255f1cde24401f54bb3727d0e5d3396b67fc04964f287d5d473155f176/pycurl-7.45.7.tar.gz"
-    sha256 "9d43013002eab2fd6d0dcc671cd1e9149e2fc1c56d5e796fad94d076d6cb69ef"
+    url "https://files.pythonhosted.org/packages/95/23/cc07b16591af8ca373494d29aafc8df13e547077579e6779bb865a3f5a7f/pycurl-7.46.0.tar.gz"
+    sha256 "422ed7005b98768fe60fe6b6cb8bb6a4e1fc18b5433402e8fbdaba91811c4604"
   end
 
   resource "structlog" do
-    url "https://files.pythonhosted.org/packages/ef/52/9ba0f43b686e7f3ddfeaa78ac3af750292662284b3661e91ad5494f21dbc/structlog-25.5.0.tar.gz"
-    sha256 "098522a3bebed9153d4570c6d0288abf80a031dfdb2048d59a49e9dc2190fc98"
+    url "https://files.pythonhosted.org/packages/5e/89/b4a0bcfdf4f71a3dea31379f095929613d7e4528a0996bca6aa964cd0dca/structlog-26.1.0.tar.gz"
+    sha256 "f63a716cbd1b1291cf7661de7794b455acfa4c43c5bcf1630e6ad5ddc1adb3b7"
   end
 
   resource "tornado" do
-    url "https://files.pythonhosted.org/packages/f8/f1/3173dfa4a18db4a9b03e5d55325559dab51ee653763bb8745a75af491286/tornado-6.5.5.tar.gz"
-    sha256 "192b8f3ea91bd7f1f50c06955416ed76c6b72f96779b962f07f911b91e8d30e9"
+    url "https://files.pythonhosted.org/packages/64/24/95ec527ad67b76d59299e5465b3935d05e4294b7e0290a3924b7487df30b/tornado-6.5.7.tar.gz"
+    sha256 "66c513a76cda70d53907bc27cf1447557699c2e95aa48ba27a442ff61c3ddfc2"
   end
 
   def install

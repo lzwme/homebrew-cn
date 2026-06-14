@@ -32,10 +32,10 @@ class Fortls < Formula
 
     # Disable automatic update check
     (bin/"fortls").unlink
-    (bin/"fortls").write <<~EOS
+    (bin/"fortls").write <<~SH
       #!/bin/sh
       exec #{libexec}/bin/python3 -m fortls --disable_autoupdate "$@"
-    EOS
+    SH
   end
 
   test do

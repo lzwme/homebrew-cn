@@ -1,8 +1,8 @@
 class SynergyCore < Formula
   desc "Synergy, the keyboard and mouse sharing tool"
   homepage "https://symless.com/synergy"
-  url "https://ghfast.top/https://github.com/symless/synergy/archive/refs/tags/v1.20.3.tar.gz"
-  sha256 "a64cbed157160c332f8569c406bfb33b556da282456bf1c7f41738b2e26e398d"
+  url "https://ghfast.top/https://github.com/symless/synergy/archive/refs/tags/v1.20.4.tar.gz"
+  sha256 "1fbcfeac4e1c516e4ab9f4e1c3186e507df737aa162540aff8297047730bc6e6"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
   head "https://github.com/symless/synergy.git", branch: "master"
 
@@ -17,12 +17,12 @@ class SynergyCore < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bc5ff76e3391fe8fe6a44f7be77cb8cad26cb9f784d9fc86779fe5602c9c9659"
-    sha256 cellar: :any, arm64_sequoia: "d2c581d293fde0b9bf9eeac58d0ae1e5ca2f199bc65d74c6d9fc58e9c38b2c96"
-    sha256 cellar: :any, arm64_sonoma:  "601f8380ab33f700974514e10d97665e16fd557219ef447e97b7daba0251bfa8"
-    sha256 cellar: :any, sonoma:        "a3b6614da5c342202567d2a864b97ecb3f3f63f85a634d0ba72a4b090ab624fa"
-    sha256 cellar: :any, arm64_linux:   "504e88c9573fe20ce24da98ebae3523097e66b93d41a327e0aa23999192b00d4"
-    sha256 cellar: :any, x86_64_linux:  "0fbc93d0da72112b86ac70b6c17e34caf2cbb9b75057bcd88f1c3e7a63fbc561"
+    sha256 cellar: :any, arm64_tahoe:   "14fdc5d12f9c4a69b425f8f27a16d20ca487eff465c784bc7332882d766e9aab"
+    sha256 cellar: :any, arm64_sequoia: "d7d3bb3d4e06fd61bed0117f84eddac9a302ae308827ac027e2e5fe8974697c5"
+    sha256 cellar: :any, arm64_sonoma:  "149f3c62320bf7bbe8305a1a606c6f38fb2f0856467ea11cf0034b0ae2558e35"
+    sha256 cellar: :any, sonoma:        "455c651259b1567e4d7f1396d9e43a2ecb7bc22ed03cb8cf09a04d29f03ef5f3"
+    sha256 cellar: :any, arm64_linux:   "5105a972356eea48bee3c0ffc10cf083f2adefa7e751af2442e025614446e135"
+    sha256 cellar: :any, x86_64_linux:  "4dbfd78cd444230426fe2e4a778a0442e59309026a9a0ed2b475c6895321deba"
   end
 
   depends_on "cmake" => :build
@@ -54,7 +54,7 @@ class SynergyCore < Formula
 
   resource "synergy-extra" do
     url "https://github.com/symless/synergy-extra.git",
-        revision: "d7195c502ce317924f03d6258d56852fc2575a2c"
+        revision: "706bdf4d815643c0db722389b67a273a365d2225"
 
     # Version.cmake in `synergy-extra` reads .git folder of `synergy`.
     # but it's submodule uses ssh protocol which will be failed in CI

@@ -31,7 +31,7 @@ class Credo < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/credo --version")
 
-    (testpath/"test.ex").write <<~EOS
+    (testpath/"test.ex").write <<~ELIXIR
       defmodule Test do
         @moduledoc """
         Test module for Credo.
@@ -40,7 +40,7 @@ class Credo < Formula
           [1, 2, 3] |> Enum.map(fn(x) -> x * x end)
         end
       end
-    EOS
+    ELIXIR
 
     assert_match "2 mods/funs, found no issues", shell_output("#{bin}/credo #{testpath}/test.ex")
   end

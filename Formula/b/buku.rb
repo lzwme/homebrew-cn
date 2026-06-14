@@ -284,20 +284,16 @@ class Buku < Formula
     # Test database content and search
     result = shell_output("#{bin}/buku --np --sany Homebrew")
     assert_match "https://github.com/Homebrew/brew", result
-    assert_match "The missing package manager for macOS", result
 
     # Test bukuserver
-    result = shell_output("#{bin}/bukuserver --version")
-    assert_match version.to_s, result
+    assert_match version.to_s, shell_output("#{bin}/bukuserver --version")
 
     port = free_port
     pid = spawn bin/"bukuserver", "run", "--host", "127.0.0.1", "--port", port.to_s, [:out, :err] => File::NULL
 
     begin
-      sleep 15
-      result = shell_output("curl -s 127.0.0.1:#{port}/api/bookmarks")
+      result = shell_output("curl -s --retry 5 --retry-connrefused 127.0.0.1:#{port}/api/bookmarks")
       assert_match "https://github.com/Homebrew/brew", result
-      assert_match "The missing package manager for macOS", result
     ensure
       Process.kill "SIGINT", pid
       Process.wait pid

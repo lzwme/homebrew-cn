@@ -3,17 +3,17 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://ocrmypdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/83/9f/03e10e757eeeeff63bfb20a5d9e1e371a138f065b9ea1ab786cc2efa3d4c/ocrmypdf-17.5.0.tar.gz"
-  sha256 "b4865cd5578614b69e759862035d66fa0a31c20bdad35dfa03b9322751f8d552"
+  url "https://files.pythonhosted.org/packages/51/3c/b5b5db9845b158e9e3dffb5f5dc692804bf6608f18f16e81737d10f27ac7/ocrmypdf-17.6.0.tar.gz"
+  sha256 "2ae7b09363774f0b4ae786520980e168c4dfafd3c43556dc123db0041c68ed43"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "da8e35bdbb8e4f255f1418b51ee370ec6b98c265e7b460613dfdfbb4d7f494c5"
-    sha256 cellar: :any,                 arm64_sequoia: "38575078420e2767747928b7eac22eb790f3578b6609e88fadcf6a6466b08d13"
-    sha256 cellar: :any,                 arm64_sonoma:  "8f48bcfbcd71e0f281251e052a3ff3348e17cf90249517f4b668a0e491070f3d"
-    sha256 cellar: :any,                 sonoma:        "2e5ef413553c314e9b65b3543e719f7a73324e5f686e9734eacd3b239b906487"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "41ed3f54291b7470ccc467e0f4d8621a1c84f56795b885ef3f1751c3c5633f6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c127cce8c0fa3b84ca1f5c60c4a2f488fa9df25df1417db08a6be82ed5a82bd3"
+    sha256 cellar: :any, arm64_tahoe:   "785f83992eb4f71472fe99634de7d9d8ca5510d1e92165d1e1ddce875bf50b37"
+    sha256 cellar: :any, arm64_sequoia: "3e958553ed5ed30ad755370e63cb753dd1cfc8c14119b4d113b84608d2592338"
+    sha256 cellar: :any, arm64_sonoma:  "ead4c1c589f6fb64bff5d413a91f7c1f5dc069329cf356fa547a135bd024be2e"
+    sha256 cellar: :any, sonoma:        "8e64fbc5d4358ee72ac8f27d0bc59c29d0c2c9348f615e29755332414c3c2d69"
+    sha256 cellar: :any, arm64_linux:   "714e2c1d9ee53d304cf567128650788e130a9c8accfc0e031d3591887f51ea5b"
+    sha256 cellar: :any, x86_64_linux:  "85b3f087c0cae47c2ba88a0559cba924afce53dd9022aa8b1edc5a59d4f20647"
   end
 
   depends_on "cmake" => :build # for pikepdf
@@ -96,13 +96,13 @@ class Ocrmypdf < Formula
   end
 
   resource "pi-heif" do
-    url "https://files.pythonhosted.org/packages/34/4a/4a18057a7b64254abdcc4f78d92503fc4f5b8fcc66da118ba87989111ee8/pi_heif-1.3.0.tar.gz"
-    sha256 "58151840d0d60507330654a466b06cbf7ca8fb3759eadb5234d70b4dc2bc990c"
+    url "https://files.pythonhosted.org/packages/6a/a2/70168b601b41bdf5726dfc8dc110eb4052a2e851fed9c9bdae95910e401d/pi_heif-1.4.0.tar.gz"
+    sha256 "e1199d9d41d9ecc877cf3ae7322ff099f6404574f2e62da47590cd4ecb9ec554"
   end
 
   resource "pikepdf" do
-    url "https://files.pythonhosted.org/packages/d3/14/3dc2afd965f0e4a032dbf7581bc88634c1b8717266f6d6067d4576278911/pikepdf-10.7.2.tar.gz"
-    sha256 "cddbe05a2398b19d99fc24aaab563695d05025a416f02deb4c2ac0a0068e3f65"
+    url "https://files.pythonhosted.org/packages/77/84/14c5c5cc211ac62356ae02db664153cec7d64440c1fe13d1d40247aa69f7/pikepdf-10.8.0.tar.gz"
+    sha256 "295259723a2b464942bc092acee854bb389dd6b520cd853590e4ca89f47bbf41"
   end
 
   resource "pluggy" do
@@ -116,8 +116,8 @@ class Ocrmypdf < Formula
   end
 
   resource "pypdfium2" do
-    url "https://files.pythonhosted.org/packages/6d/3d/dc934d3b606c51c3ecc95b6731d84b7dd7ab8e513a50b0e98a4da6c8a719/pypdfium2-5.8.0.tar.gz"
-    sha256 "049397c647e50f83115ee951c49394dab9e9ba52ebdd5a11ab1109390eb3d34e"
+    url "https://files.pythonhosted.org/packages/b0/98/6b44bf82ddb3c7a3e0249203772aad8981b4491d6227f182685f310faeff/pypdfium2-5.9.0.tar.gz"
+    sha256 "db1274bd27844db6fda17ef1dbcd0026c47d357437058d838e98060c0da9e92e"
   end
 
   resource "rich" do
@@ -126,8 +126,8 @@ class Ocrmypdf < Formula
   end
 
   resource "uharfbuzz" do
-    url "https://files.pythonhosted.org/packages/04/cf/f46264008f4f654f823c6a61e02556a4ca2ca04ac28df951a7ed7d11aa52/uharfbuzz-0.54.1.tar.gz"
-    sha256 "ded760c284c686f1f17f5c4bf44527857ef488b7f0aebceae4c1ef1903ddddb3"
+    url "https://files.pythonhosted.org/packages/0c/2d/25769d2262cafcea748aac7bfb2b9eeb0a9fe2a759b4154133a6d9f39870/uharfbuzz-0.55.0.tar.gz"
+    sha256 "a29bda4c147c35240a71051315423b1933b46eac558a72f55d9ffdc1f2bbb69f"
   end
 
   def install

@@ -33,9 +33,9 @@ class Algol68g < Formula
 
   test do
     path = testpath/"hello.alg"
-    path.write <<~EOS
+    path.write <<~ALGOL
       print("Hello World")
-    EOS
+    ALGOL
 
     assert_equal "Hello World", shell_output("#{bin}/a68g #{path}").strip
   end

@@ -35,20 +35,20 @@ class Dafny < Formula
     system "make", "exe"
     libexec.install Dir["Binaries/*", "Scripts/quicktest.sh"]
 
-    (bin/"dafny").write <<~EOS
+    (bin/"dafny").write <<~BASH
       #!/bin/bash
       exec "#{Formula["dotnet@8"].opt_bin}/dotnet" "#{libexec}/Dafny.dll" "$@"
-    EOS
+    BASH
   end
 
   test do
-    (testpath/"test.dfy").write <<~EOS
+    (testpath/"test.dfy").write <<~DAFNY
       method Main() {
         var i: nat :| true;
         assert i as int >= -1;
         print "hello, Dafny\\n";
       }
-    EOS
+    DAFNY
     assert_equal "\nDafny program verifier finished with 1 verified, 0 errors\n",
                   shell_output("#{bin}/dafny verify #{testpath}/test.dfy")
     assert_equal "\nDafny program verifier finished with 1 verified, 0 errors\nhello, Dafny\n",

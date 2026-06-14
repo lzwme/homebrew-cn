@@ -168,7 +168,7 @@ class Asciidoctor < Formula
 
   test do
     %w[rouge coderay].each do |highlighter|
-      (testpath/"test.adoc").atomic_write <<~EOS
+      (testpath/"test.adoc").atomic_write <<~ASCIIDOC
         = AsciiDoc is Writing Zen
         Random J. Author <rjauthor@example.com>
         :icons: font
@@ -190,7 +190,7 @@ class Asciidoctor < Formula
         - one
         - two
         - three
-      EOS
+      ASCIIDOC
       output = Utils.popen_read bin/"asciidoctor", "-b", "html5", "-o", "test.html", "test.adoc", err: :out
       refute_match(/optional gem '#{highlighter}' is not available/, output)
       assert_match "<h1>AsciiDoc is Writing Zen</h1>", File.read("test.html")

@@ -16,7 +16,7 @@ class DiffSoFancy < Formula
   end
 
   test do
-    diff = <<~EOS
+    diff = <<~DIFF
       diff --git a/hello.c b/hello.c
       index 8c15c31..0a9c78f 100644
       --- a/hello.c
@@ -28,7 +28,7 @@ class DiffSoFancy < Formula
       -    printf("Hello, world!\n");
       +    printf("Hello, Homebrew!\n");
        }
-    EOS
+    DIFF
     assert_match "modified: hello.c", pipe_output(bin/"diff-so-fancy", diff, 0)
   end
 end

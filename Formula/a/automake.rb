@@ -40,17 +40,17 @@ class Automake < Formula
     (testpath/"test.c").write <<~C
       int main() { return 0; }
     C
-    (testpath/"configure.ac").write <<~EOS
+    (testpath/"configure.ac").write <<~M4
       AC_INIT(test, 1.0)
       AM_INIT_AUTOMAKE
       AC_PROG_CC
       AC_CONFIG_FILES(Makefile)
       AC_OUTPUT
-    EOS
-    (testpath/"Makefile.am").write <<~EOS
+    M4
+    (testpath/"Makefile.am").write <<~MAKE
       bin_PROGRAMS = test
       test_SOURCES = test.c
-    EOS
+    MAKE
     system bin/"aclocal"
     system bin/"automake", "--add-missing", "--foreign"
     system "autoconf"

@@ -1139,7 +1139,7 @@ then
 
   if [[ -x "$(command -v apt-get)" ]]
   then
-    echo "    sudo apt-get install build-essential"
+    echo "    sudo apt-get install build-essential bubblewrap"
   elif [[ -x "$(command -v dnf)" ]]
   then
     # Fedora uses the lowercase `development-tools` group id; most other
@@ -1147,26 +1147,24 @@ then
     # shellcheck disable=SC1091
     if [[ -r /etc/os-release ]] && (. /etc/os-release && [[ "${ID:-}" == "fedora" ]])
     then
-      echo "    sudo dnf group install development-tools"
+      echo "    sudo dnf group install development-tools && sudo dnf install bubblewrap"
     else
-      echo "    sudo dnf group install 'Development Tools'"
+      echo "    sudo dnf group install 'Development Tools' && sudo dnf install bubblewrap"
     fi
   elif [[ -x "$(command -v yum)" ]]
   then
-    echo "    sudo yum groupinstall 'Development Tools'"
+    echo "    sudo yum groupinstall 'Development Tools' && sudo yum install bubblewrap"
   elif [[ -x "$(command -v pacman)" ]]
   then
-    echo "    sudo pacman -S base-devel"
+    echo "    sudo pacman -S base-devel bubblewrap"
   elif [[ -x "$(command -v apk)" ]]
   then
-    echo "    sudo apk add build-base"
+    echo "    sudo apk add build-base bubblewrap"
   fi
 
   cat <<EOS
   For more information, see:
     ${tty_underline}https://docs.brew.sh/Homebrew-on-Linux${tty_reset}
-- We recommend that you install GCC:
-    brew install gcc
 EOS
 fi
 

@@ -46,7 +46,7 @@ class CcConnect < Formula
   test do
     assert_match "cc-connect #{version}", shell_output("#{bin}/cc-connect --version")
 
-    (testpath/"config.toml").write <<~EOS
+    (testpath/"config.toml").write <<~TOML
       [[projects]]
       name = "brew-project"
 
@@ -62,7 +62,7 @@ class CcConnect < Formula
 
       [projects.platforms.options]
       token = "MTk4NjIyNDgzNDcOTY3NDUxMg.G8vKqh.xxx..."
-    EOS
+    TOML
 
     output = testpath/"output.txt"
 

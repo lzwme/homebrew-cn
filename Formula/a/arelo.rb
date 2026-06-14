@@ -25,10 +25,10 @@ class Arelo < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/arelo --version")
 
-    (testpath/"test.sh").write <<~EOS
+    (testpath/"test.sh").write <<~SH
       #!/bin/sh
       echo "Hello, world!"
-    EOS
+    SH
     chmod 0755, testpath/"test.sh"
 
     logfile = testpath/"arelo.log"

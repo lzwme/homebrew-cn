@@ -35,20 +35,8 @@ class Mavsdk < Formula
   depends_on "tinyxml2"
   depends_on "xz"
 
-  on_macos do
-    depends_on "llvm" if DevelopmentTools.clang_build_version <= 1100
-  end
-
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  fails_with :clang do
-    build 1100
-    cause <<~EOS
-      Undefined symbols for architecture x86_64:
-        "std::__1::__fs::filesystem::__status(std::__1::__fs::filesystem::path const&, std::__1::error_code*)"
-    EOS
   end
 
   # Git is required to fetch submodules

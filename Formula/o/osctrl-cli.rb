@@ -1,18 +1,18 @@
 class OsctrlCli < Formula
   desc "Fast and efficient osquery management"
   homepage "https://osctrl.net"
-  url "https://ghfast.top/https://github.com/jmpsec/osctrl/archive/refs/tags/v0.5.2.tar.gz"
-  sha256 "0104c25a1a08c5cee4db3ee070fdded7d35bbde9b9296eab6e035fe2a4d3ceac"
+  url "https://ghfast.top/https://github.com/jmpsec/osctrl/archive/refs/tags/v0.5.3.tar.gz"
+  sha256 "2c08afa0c33127809482136ff6d76d94960441b34f5b159258a945cbee09491a"
   license "MIT"
-  head "https://github.com/jmpsec/osctrl.git", branch: "main"
+  head "https://github.com/jmpsec/osctrl.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2fddbaf663a1018dc9fddbb2ccd3c47d7beab026d30f697cceeb7f48edecb006"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2ac3ee42a006f169c442a54cdf6a318ce488b7dda81c76b5b07c0404780bf7e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae05e0e391c51c2bb66f397a178557d4dd08ece01318781ca562f3a311691d69"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6a329b69ade5aae1f27a52cce940812a9de933c3005fa4b363a1824cdc3c352c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0aa3ec60592ea221443c666ea782d83da29480303ef9effebd5bb267c0ca416f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "174076558ae8a1b307c5f8a46301f6fa1b989db61b2ea65136bbac7b06d13c53"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6116d92d02033c4b32e7e4b184fdc75f339e8dc6353075d6eb92be2637fe2d2e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c075dd8a17a80a7265fd77d796d1f8e9b06d058aea472808890be7131ad63fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b626087aa2748604df9db8d9e153a3a7b634aceeb8549393400d28dfd7d30496"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5037e28099f7f734c7201c902f630062621e8d0a9f37d1746272445bf9afb595"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "353b2e6ebe280e67a639a331b0a12290f62e43a7f63b048d78687372f5fcf4f8"
+    sha256 cellar: :any,                 x86_64_linux:  "bdd3430c44e221a7c3d07b60c5524f2893e82079c98b92e26b3d41b8997306b5"
   end
 
   depends_on "go" => :build

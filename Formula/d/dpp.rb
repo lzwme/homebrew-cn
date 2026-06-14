@@ -92,13 +92,13 @@ class Dpp < Formula
       int twice(int i) { return i * 2; }
     C
 
-    (testpath/"foo.dpp").write <<~EOS
+    (testpath/"foo.dpp").write <<~D
       #include "c.h"
       void main() {
           import std.stdio;
           writeln(twice(FOO_ID(5)));
       }
-    EOS
+    D
 
     system ENV.cc, "-c", "c.c"
     system bin/"d++", "--compiler=ldc2", "foo.dpp", "c.o"

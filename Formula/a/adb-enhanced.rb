@@ -3,17 +3,17 @@ class AdbEnhanced < Formula
 
   desc "Swiss-army knife for Android testing and development"
   homepage "https://ashishb.net/tech/introducing-adb-enhanced-a-swiss-army-knife-for-android-development/"
-  url "https://files.pythonhosted.org/packages/6e/97/03a20670350acfba7f8f65bba41123dbebca48a81600563181647c5bfdd0/adb_enhanced-2.9.0.tar.gz"
-  sha256 "ea81e5ab640c1a129e4362156ef5ff5b37bb62c1145acd77e259f8c582ea262b"
+  url "https://files.pythonhosted.org/packages/ee/c9/5271daac716345394b51a0b28c8381b06936ad797cd63006a6395451a5d6/adb_enhanced-2.10.0.tar.gz"
+  sha256 "99146a68b664afdaf0e40a123daa4a0e4931dc82e995c21d9833d067945d7bd7"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2809efcb22479d95a018af5c386e206fbd4e48acdb26bd6b00671c8c9aeea1ed"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "495a8231c7f6a7d734bf1cc2cf809dbdb63e056415c55201e1aa86d2e026429a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06f941031ce453369ac43e745c8bfaf495bd3c49cc32d21613717f3fb3e6089e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b1445fb053288c04206e7ac49057b3d773a0fc0c5e7ea9b43cd69c407542e09a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d345e0905f33ffccf3ac629dd83efdde2a72c7aaf8a23cc4437ad01a86b4a895"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6027ff5d7de7244c1b9e90d25b3a60e644bc081d1419e218541f4690b66220a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "598f5c643ef3e4ad485be49316051c27ffd5003d3850ae2cd5386c3add740238"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c8f9ea9c3e022f9ad80764bad40b54e2b6423bfca356531aba1f9dc80804e2a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2cf005808fec965f0552f8aa398922548d614ad8209c3091d46f1e2c5f454df"
+    sha256 cellar: :any_skip_relocation, sonoma:        "04e387253a57fab8da0fd0c1a45eedbdcdd657e02fac6aaf7579e9ca75b7cd32"
+    sha256 cellar: :any,                 arm64_linux:   "b36d42380be384971c4912273c30150c117b09ba8ea11f13eefad156bdf8d907"
+    sha256 cellar: :any,                 x86_64_linux:  "71cec49520a5c3d2d8a4bfffed7082ac784af9988bbc5e03b0005d1bb7401497"
   end
 
   depends_on "python@3.14"

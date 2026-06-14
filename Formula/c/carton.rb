@@ -163,9 +163,9 @@ class Carton < Formula
   end
 
   test do
-    (testpath/"cpanfile").write <<~EOS
+    (testpath/"cpanfile").write <<~PERL
       requires 'Perl::Tutorial';
-    EOS
+    PERL
     system bin/"carton", "install"
 
     expected = <<~EOS

@@ -1,8 +1,8 @@
 class Faiss < Formula
   desc "Efficient similarity search and clustering of dense vectors"
   homepage "https://github.com/facebookresearch/faiss"
-  url "https://ghfast.top/https://github.com/facebookresearch/faiss/archive/refs/tags/v1.14.2.tar.gz"
-  sha256 "9a81835c98627f2225b55ca85402262b57956878717ec1bf8858033b9f7d1255"
+  url "https://ghfast.top/https://github.com/facebookresearch/faiss/archive/refs/tags/v1.14.3.tar.gz"
+  sha256 "7f3c4ed9aec3bd7524382862f5fcbd4d8984e2a8979ff3bdb2c0bcea5144149e"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Faiss < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "98d7793b8db89eaccec26754b9b971cfe3ee15418a8683c98f803042211b3008"
-    sha256 cellar: :any,                 arm64_sequoia: "8a6f9dc760079f6497d435f369a674625cf727c0cd16c39f6b7811b56cfcc8ab"
-    sha256 cellar: :any,                 arm64_sonoma:  "5846bbf3335fdb0a4ccb4347e72c9021b6df06bef21d4f1f299be7864e45b3ec"
-    sha256 cellar: :any,                 sonoma:        "5712c86281af7c291cdca73928fd56a9e90bb234d1555d9ee5d666ef3cbabd4c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d068c22e09778275a525025bb4a4b74d35b2ca8b6a159d18523dbcb152e5e32d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f06cee15f495c22ceb60e6fd8d967584a39c8b892cee3a55837ecede754a902e"
+    sha256 cellar: :any, arm64_tahoe:   "2fe9d0d0db7e4b0663db2501b4b479e4f0f9c24eb2bc4351d1842db01c46d0fa"
+    sha256 cellar: :any, arm64_sequoia: "460a4415deb11f1c13427b49e9b34c32c61a04a14bc86a893eaba453e47f85c1"
+    sha256 cellar: :any, arm64_sonoma:  "c887b8db3373111c3f91ea76008813978a878ba6af61d9e4f8defda88104f44b"
+    sha256 cellar: :any, sonoma:        "b0f1d1d150e01e2726c7b662fa61697c809d2d6a6afc5150d8f05b8cf79da883"
+    sha256 cellar: :any, arm64_linux:   "e0a91569d6c28fd854a149048cbe420a99311ac963323897be65f768e248fcf8"
+    sha256 cellar: :any, x86_64_linux:  "f4572192265b641a8020be585854aac0dc6bdd3df0a364ccc40a387c6d38c7e5"
   end
 
   depends_on "cmake" => :build

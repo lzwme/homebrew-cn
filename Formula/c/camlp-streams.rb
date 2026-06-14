@@ -30,9 +30,9 @@ class CamlpStreams < Formula
       ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec/"findlib.conf"
     end
 
-    (testpath/"test.ml").write <<~EOS
+    (testpath/"test.ml").write <<~OCAML
       let stream = Stream.of_list ([] : unit list)
-    EOS
+    OCAML
     system "ocamlfind", "ocamlopt", "-linkpkg", "-package", "camlp-streams",
                                     "-warn-error", "+3", "-o", "test", "test.ml"
     assert_path_exists testpath/"test"

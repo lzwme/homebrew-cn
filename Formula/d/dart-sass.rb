@@ -66,13 +66,13 @@ class DartSass < Formula
     (testpath/"test.scss").write(".class {property: 1 + 1}")
     assert_match "property: 2;", shell_output("#{bin}/sass test.scss 2>&1")
 
-    (testpath/"input.scss").write <<~EOS
+    (testpath/"input.scss").write <<~SCSS
       div {
         img {
           border: 0px;
         }
       }
-    EOS
+    SCSS
 
     assert_equal "div img{border:0px}",
     shell_output("#{bin}/sass --style compressed input.scss").strip

@@ -1,20 +1,18 @@
 class Ftxui < Formula
   desc "C++ Functional Terminal User Interface"
   homepage "https://github.com/ArthurSonzogni/FTXUI"
-  url "https://ghfast.top/https://github.com/ArthurSonzogni/FTXUI/archive/refs/tags/v6.1.9.tar.gz"
-  sha256 "45819c1e54914783d4a1ca5633885035d74146778a1f74e1213cdb7b76340e71"
+  url "https://ghfast.top/https://github.com/ArthurSonzogni/FTXUI/archive/refs/tags/v7.0.0.tar.gz"
+  sha256 "14bef1f8caff548c49af8eeadfca21910d66e93e68237f0c3d20236b60c01e7e"
   license "MIT"
   head "https://github.com/ArthurSonzogni/FTXUI.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "adf940aea1828f7238f701f4662016c1664347b830bba7463b50a40c2f0e7407"
-    sha256 cellar: :any,                 arm64_sequoia: "5b3e3442ed075b99e3604bea2a515ebb1cbbd9d806386e040d925d38a54692f8"
-    sha256 cellar: :any,                 arm64_sonoma:  "04064b1363f454f0f9cbbbeb16d98d8d5fef2daf3e0bef0c5e168a73e8b54b89"
-    sha256 cellar: :any,                 arm64_ventura: "2ea1f6c02f9a1c4cf135a928a6dd9c4ee0e839b113307f436963558c5acd3007"
-    sha256 cellar: :any,                 sonoma:        "dd41f7868452173504be6f2786966ed4836c1531d06c7f1f9c3b46fb8b587ba9"
-    sha256 cellar: :any,                 ventura:       "798c20dcbe2d7f97f44a52237d58d7097c3b80fb879427fc6be532467277f8f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf56dd804ae10402637a259399706b18d9db65477f5472282181c8beff69f9e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26a35edfd086bb2cdc76b5e8d699094882a633285a4a2ead8323bb8bb2fc9b78"
+    sha256 cellar: :any, arm64_tahoe:   "4af7d86552e7a549970fe0e49fc68249771356a8612f48d0e8914d8a0be526ba"
+    sha256 cellar: :any, arm64_sequoia: "f75973c6e9f3eda9f97478a5d2b49916a42b913dd728e34a8f4bb105cc90c3c7"
+    sha256 cellar: :any, arm64_sonoma:  "c8ec8a62a9c54c7a5077fe0b210b794286c632c2e5669a41bc595a1b6469b33d"
+    sha256 cellar: :any, sonoma:        "aa03722fb9703b014924a98505804e1cee1e928e2f0b2bd1d2deadfac24cff41"
+    sha256 cellar: :any, arm64_linux:   "e042cf6ebbb53936ec5d9e6155649c284532b7d066704f88a1575566b08437fd"
+    sha256 cellar: :any, x86_64_linux:  "3fcc617bd69dd3fcea9eb292dce5ac46b0cae40ea4ae042957d79c171b04afc8"
   end
 
   depends_on "cmake" => :build

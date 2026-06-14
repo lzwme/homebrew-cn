@@ -33,10 +33,10 @@ class Bas55 < Formula
   end
 
   test do
-    (testpath/"hello.bas").write <<~EOS
+    (testpath/"hello.bas").write <<~BASIC
       10 PRINT "HELLO, WORLD"
       20 END
-    EOS
+    BASIC
 
     assert_equal "HELLO, WORLD\n", shell_output("#{bin}/bas55 hello.bas")
   end

@@ -28,11 +28,6 @@ class Matplotplusplus < Formula
     depends_on "zlib-ng-compat"
   end
 
-  fails_with :clang do
-    build 1100
-    cause "cannot run simple program using std::filesystem"
-  end
-
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_SHARED_LIBS=ON",

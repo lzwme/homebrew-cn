@@ -28,18 +28,6 @@ class Pdnsrec < Formula
   uses_from_macos "python" => :build
   uses_from_macos "curl"
 
-  on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1100
-  end
-
-  fails_with :clang do
-    build 1100
-    cause <<~EOS
-      Undefined symbols for architecture x86_64:
-        "MOADNSParser::init(bool, std::__1::basic_string_view<char, std::__1::char_traits<char> > const&)"
-    EOS
-  end
-
   def install
     args = %W[
       --sysconfdir=#{etc}/powerdns
