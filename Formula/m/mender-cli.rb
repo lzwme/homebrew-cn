@@ -38,13 +38,13 @@ class MenderCli < Formula
     assert_match version.to_s, shell_output("#{bin}/mender-cli --version")
 
     # Try to log in with a fake config
-    (testpath/".mender-clirc").write <<~EOS
+    (testpath/".mender-clirc").write <<~JSON
       {
         "server": "https://nosuch.example.com",
         "username": "foo",
         "password": "bar"
       }
-    EOS
+    JSON
     output = shell_output("#{bin}/mender-cli login 2>&1", 1)
     assert_match "Using configuration file: " + (testpath/".mender-clirc"), output
     assert_match "FAILURE: POST /auth/login request failed", output

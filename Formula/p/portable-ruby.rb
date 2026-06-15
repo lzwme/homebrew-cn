@@ -176,10 +176,10 @@ class PortableRuby < PortableFormula
     libexec.mkpath
     cp openssl.libexec/"etc/openssl/cert.pem", libexec/"cert.pem"
     openssl_rb = lib/"ruby/#{abi_version}/openssl.rb"
-    inreplace openssl_rb, "require 'openssl.so'", <<~EOS.chomp
+    inreplace openssl_rb, "require 'openssl.so'", <<~RUBY.chomp
       ENV["PORTABLE_RUBY_SSL_CERT_FILE"] = ENV["SSL_CERT_FILE"] || File.expand_path("../../libexec/cert.pem", RbConfig.ruby)
       \\0
-    EOS
+    RUBY
   end
 
   test do
@@ -196,13 +196,13 @@ class PortableRuby < PortableFormula
       shell_output("#{ruby} -ropenssl -e 'puts OpenSSL::Digest::SHA256.hexdigest(\"\")'").chomp
     assert_match "200",
       shell_output("#{ruby} -ropen-uri -e 'URI.open(\"https://google.com\") { |f| puts f.status.first }'").chomp
-    system ruby, "-rrbconfig", "-e", <<~EOS
+    system ruby, "-rrbconfig", "-e", <<~RUBY
       Gem.discover_gems_on_require = false
       require "portable_ruby_gems"
       require "debug"
       require "fiddle"
       require "bootsnap"
-    EOS
+    RUBY
     system testpath/"bin/rake", "--version"
     system testpath/"bin/irb", "--version"
     system testpath/"bin/gem", "environment"

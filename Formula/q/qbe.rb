@@ -26,7 +26,7 @@ class Qbe < Formula
   end
 
   test do
-    (testpath/"main.ssa").write <<~EOS
+    (testpath/"main.ssa").write <<~SSA
       function w $add(w %a, w %b) {        # Define a function add
       @start
         %c =w add %a, %b                   # Adds the 2 arguments
@@ -39,7 +39,7 @@ class Qbe < Formula
         ret 0
       }
       data $fmt = { b "One and one make %d!\n", b 0 }
-    EOS
+    SSA
 
     system bin/"qbe", "-o", "out.s", "main.ssa"
     assert_path_exists testpath/"out.s"

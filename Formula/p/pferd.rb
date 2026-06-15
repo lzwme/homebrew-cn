@@ -149,11 +149,11 @@ class Pferd < Formula
 
     assert_match "Error Failed to load config", shell_output(bin/"pferd", 1)
 
-    (testpath/"pferd.cfg").write <<~EOS
+    (testpath/"pferd.cfg").write <<~CFG
       [crawl:Foo]
       type = kit-ilias-web
       target = 1234567
-    EOS
+    CFG
     assert_match "key 'auth': Missing value", shell_output("#{bin}/pferd -c #{testpath}/pferd.cfg", 1)
   end
 end

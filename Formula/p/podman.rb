@@ -150,14 +150,14 @@ class Podman < Formula
         {"default":[{"type":"insecureAcceptAnything"}]}
       JSON
 
-      (prefix/"etc/containers/storage.conf").write <<~EOS
+      (prefix/"etc/containers/storage.conf").write <<~CONF
         [storage]
         driver="overlay"
-      EOS
+      CONF
 
-      (prefix/"etc/containers/registries.conf").write <<~EOS
+      (prefix/"etc/containers/registries.conf").write <<~CONF
         unqualified-search-registries=["docker.io"]
-      EOS
+      CONF
 
       resource("catatonit").stage do
         system "./autogen.sh"

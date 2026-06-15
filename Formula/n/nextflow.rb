@@ -32,7 +32,7 @@ class Nextflow < Formula
   end
 
   test do
-    (testpath/"hello.nf").write <<~EOS
+    (testpath/"hello.nf").write <<~NF
       process hello {
         publishDir "results", mode: "copy"
 
@@ -47,7 +47,7 @@ class Nextflow < Formula
       workflow {
         hello()
       }
-    EOS
+    NF
 
     system bin/"nextflow", "run", "hello.nf"
 

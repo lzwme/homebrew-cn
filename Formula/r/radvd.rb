@@ -34,7 +34,7 @@ class Radvd < Formula
   end
 
   test do
-    (testpath/"radvd.conf").write <<~EOS
+    (testpath/"radvd.conf").write <<~CONF
       # Example config
       interface lo
       {
@@ -73,7 +73,7 @@ class Radvd < Formula
               AdvDNSSLLifetime 30;
           };
       };
-    EOS
+    CONF
     system sbin/"radvd", "-cC", testpath/"radvd.conf"
   end
 end

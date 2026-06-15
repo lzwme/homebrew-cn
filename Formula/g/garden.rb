@@ -23,7 +23,7 @@ class Garden < Formula
   end
 
   test do
-    (testpath/"garden.yaml").write <<~EOS
+    (testpath/"garden.yaml").write <<~YAML
       trees:
         current:
           path: ${GARDEN_CONFIG_DIR}
@@ -33,7 +33,7 @@ class Garden < Formula
         test: touch ${filename}
       variables:
         filename: $ echo output
-    EOS
+    YAML
     system bin/"garden", "-vv", "test", "current"
     assert_path_exists testpath/"current"
     assert_path_exists testpath/"output"

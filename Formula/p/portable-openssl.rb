@@ -97,7 +97,7 @@ class PortableOpenssl < PortableFormula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <openssl/evp.h>
       #include <stdio.h>
       #include <string.h>
@@ -117,7 +117,7 @@ class PortableOpenssl < PortableFormula
           printf("%02x", md[i]);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-lcrypto", "-o", "test"
     assert_equal "717ac506950da0ccb6404cdd5e7591f72018a20cbca27c8a423e9c9e5626ac61",
                  shell_output("./test 'This is a test string'")

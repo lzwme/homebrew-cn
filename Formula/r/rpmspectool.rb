@@ -41,7 +41,7 @@ class Rpmspectool < Formula
       %_tmppath %_topdir/tmp
     EOS
 
-    (testpath/"hello.spec").write <<~EOS
+    (testpath/"hello.spec").write <<~SPEC
       Name:           hello
       Version:        2.12.1
       Release:        1
@@ -72,7 +72,7 @@ class Rpmspectool < Formula
       %_mandir/man1/hello.1*
       %_bindir/hello
       %_infodir/hello.info*
-    EOS
+    SPEC
     system bin/"rpmspectool", "get", testpath/"hello.spec"
     assert_path_exists testpath/"hello-2.12.1.tar.gz"
   end

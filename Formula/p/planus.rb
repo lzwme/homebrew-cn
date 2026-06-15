@@ -25,7 +25,7 @@ class Planus < Formula
 
   test do
     test_fbs = testpath/"test.fbs"
-    test_fbs.write <<~EOS
+    test_fbs.write <<~FBS
       // example IDL file
 
       namespace MyGame.Sample;
@@ -52,7 +52,7 @@ class Planus < Formula
 
       root_type Monster;
 
-    EOS
+    FBS
 
     system bin/"planus", "format", test_fbs
     system bin/"planus", "check", test_fbs

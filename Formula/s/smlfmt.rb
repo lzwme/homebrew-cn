@@ -24,15 +24,15 @@ class Smlfmt < Formula
   end
 
   test do
-    (testpath/"source.sml").write <<~EOS
+    (testpath/"source.sml").write <<~SML
       fun foo x =     10
       val x = 5 val y = 6
-    EOS
-    expected_output = <<~EOS
+    SML
+    expected_output = <<~SML
       fun foo x = 10
       val x = 5
       val y = 6
-    EOS
+    SML
     system bin/"smlfmt", "--force", "source.sml"
     assert_equal expected_output, (testpath/"source.sml").read
   end

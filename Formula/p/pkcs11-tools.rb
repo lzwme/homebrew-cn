@@ -47,14 +47,14 @@ class Pkcs11Tools < Formula
     mkdir testpath/"tokens"
     softhsm_conf = testpath/"softhsm.conf"
 
-    softhsm_conf.write <<~EOS
+    softhsm_conf.write <<~CONF
       directories.tokendir = #{testpath}/tokens
       directories.backend = file
       log.level = INFO
       slots.removable = false
       slots.mechanisms = ALL
       library.reset_on_fork = false
-    EOS
+    CONF
 
     ENV["SOFTHSM2_CONF"] = softhsm_conf
     ENV["PKCS11LIB"] = Formula["softhsm"].lib/"softhsm/libsofthsm2.so"

@@ -122,7 +122,7 @@ class Netpbm < Formula
     (testpath/"test.pam").write fwrite
     system bin/"pamdice", "test.pam", "-outstem", testpath/"testing"
     assert_path_exists testpath/"testing_0_0.pam"
-    (testpath/"test.xpm").write <<~EOS
+    (testpath/"test.xpm").write <<~XPM
       /* XPM */
       static char * favicon_xpm[] = {
       "16 16 4 1",
@@ -146,7 +146,7 @@ class Netpbm < Formula
       "oooooooooooooooo",
       "XXXXXXXXXXXXXXXX",
       "XXXXXXXXXXXXXXXX"};
-    EOS
+    XPM
     ppmout = shell_output("#{bin}/xpmtoppm test.xpm")
     refute_predicate ppmout, :empty?
   end

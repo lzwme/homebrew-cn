@@ -61,9 +61,9 @@ class Pgslice < Formula
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath/"test"
-    (testpath/"test/postgresql.conf").write <<~EOS, mode: "a+"
+    (testpath/"test/postgresql.conf").write <<~CONF, mode: "a+"
       port = #{port}
-    EOS
+    CONF
     system pg_ctl, "start", "-D", testpath/"test", "-l", testpath/"log"
 
     begin

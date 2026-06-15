@@ -48,13 +48,13 @@ class GitCliff < Formula
     system "git", "add", "cliff.toml"
     system "git", "commit", "-m", "chore: initial commit"
 
-    assert_equal <<~EOS, shell_output("git cliff")
+    assert_equal <<~MARKDOWN, shell_output("git cliff")
       ## [unreleased]
 
       ### ⚙️ Miscellaneous Tasks
 
       - Initial commit
-    EOS
+    MARKDOWN
 
     require "utils/linkage"
     library = Formula["libgit2"].opt_lib/shared_library("libgit2")

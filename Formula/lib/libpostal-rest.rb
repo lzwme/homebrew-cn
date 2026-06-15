@@ -34,9 +34,9 @@ class LibpostalRest < Formula
     sleep 5
     sleep 10 if OS.mac? && Hardware::CPU.intel?
 
-    command = <<~EOS
+    command = <<~SH
       curl --silent --retry 5 --retry-connrefused -X POST -d '{"query": "100 main st buffalo ny"}' http://0.0.0.0:#{port}/parser
-    EOS
+    SH
     expected = [
       {
         "label" => "house_number",

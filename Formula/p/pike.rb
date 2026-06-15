@@ -72,12 +72,12 @@ class Pike < Formula
 
   test do
     path = testpath/"test.pike"
-    path.write <<~EOS
+    path.write <<~PIKE
       int main() {
         for (int i=0; i<10; i++) { write("%d", i); }
         return 0;
       }
-    EOS
+    PIKE
 
     assert_equal "0123456789", shell_output("#{bin}/pike #{path}").strip
   end

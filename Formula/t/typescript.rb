@@ -18,7 +18,7 @@ class Typescript < Formula
   end
 
   test do
-    (testpath/"test.ts").write <<~EOS
+    (testpath/"test.ts").write <<~TYPESCRIPT
       class Test {
         greet() {
           return "Hello, world!";
@@ -26,7 +26,7 @@ class Typescript < Formula
       };
       var test = new Test();
       document.body.innerHTML = test.greet();
-    EOS
+    TYPESCRIPT
 
     system bin/"tsc", "test.ts"
     assert_path_exists testpath/"test.js", "test.js was not generated"

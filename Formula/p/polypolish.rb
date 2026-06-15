@@ -24,10 +24,10 @@ class Polypolish < Formula
   end
 
   test do
-    (testpath/"test.fasta").write <<~EOS
+    (testpath/"test.fasta").write <<~FASTA
       >U00096.2:1-70
       AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
-    EOS
+    FASTA
     output = shell_output("#{bin}/polypolish polish test.fasta")
     assert_match "polypolish", output
   end

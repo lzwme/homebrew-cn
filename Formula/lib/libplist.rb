@@ -38,7 +38,7 @@ class Libplist < Formula
   end
 
   test do
-    (testpath/"test.plist").write <<~EOS
+    (testpath/"test.plist").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
       <plist version="1.0">
@@ -51,7 +51,7 @@ class Libplist < Formula
         </array>
       </dict>
       </plist>
-    EOS
+    XML
     system bin/"plistutil", "-i", "test.plist", "-o", "test_binary.plist"
     assert_path_exists testpath/"test_binary.plist", "Failed to create converted plist!"
   end

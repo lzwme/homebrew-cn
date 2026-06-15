@@ -72,10 +72,10 @@ class LuajitOpenresty < Formula
   end
 
   test do
-    system bin/"luajit", "-e", <<~EOS
+    system bin/"luajit", "-e", <<~LUA
       local ffi = require("ffi")
       ffi.cdef("int printf(const char *fmt, ...);")
       ffi.C.printf("Hello %s!\\n", "#{ENV["USER"]}")
-    EOS
+    LUA
   end
 end

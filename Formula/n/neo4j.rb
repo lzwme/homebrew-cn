@@ -36,11 +36,11 @@ class Neo4j < Formula
 
     # Adjust UDC props
     # Suppress the empty, focus-stealing java gui.
-    (libexec/"conf/neo4j.conf").append_lines <<~EOS
+    (libexec/"conf/neo4j.conf").append_lines <<~CONF
       server.jvm.additional=-Djava.awt.headless=true-Dunsupported.dbms.udc.source=homebrew
       server.directories.data=#{var}/neo4j/data
       server.directories.logs=#{var}/log/neo4j
-    EOS
+    CONF
 
     (var/"log/neo4j").mkpath
   end

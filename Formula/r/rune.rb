@@ -23,11 +23,11 @@ class Rune < Formula
   end
 
   test do
-    (testpath/"main.rn").write <<~EOS
+    (testpath/"main.rn").write <<~RN
       pub fn main() {
         println!("Hello, world!");
       }
-    EOS
+    RN
 
     assert_equal "Hello, world!", shell_output("#{bin/"rune"} run").strip
   end

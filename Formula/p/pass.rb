@@ -44,7 +44,7 @@ class Pass < Formula
   end
 
   test do
-    (testpath/"batch.gpg").write <<~EOS
+    (testpath/"batch.gpg").write <<~GPG
       Key-Type: RSA
       Key-Length: 2048
       Subkey-Type: RSA
@@ -54,7 +54,7 @@ class Pass < Formula
       Expire-Date: 1d
       %no-protection
       %commit
-    EOS
+    GPG
     begin
       system Formula["gnupg"].opt_bin/"gpg", "--batch", "--gen-key", "batch.gpg"
       system bin/"pass", "init", "Testing"

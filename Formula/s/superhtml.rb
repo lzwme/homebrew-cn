@@ -14,22 +14,13 @@ class Superhtml < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8874ee426039b691bb1faffd504ba20c22be4501f249d0bf8f84f2f46c636f5f"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.15" => :build # Blocked until Zig 0.17 is available which 0.7.0+ uses
 
   def install
-    # Fix illegal instruction errors when using bottles on older CPUs.
-    # https://github.com/Homebrew/homebrew-core/issues/92282
-    cpu = case ENV.effective_arch
-    when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
-    when :armv8 then "xgene1" # Closest to `-march=armv8-a`
-    else ENV.effective_arch
-    end
-
     # upstream issue: https://github.com/kristoff-it/superhtml/issues/108
     inreplace "build.zig", '"unknown"', "\"#{version}\"" # patch fallback version
-    args = ["-Dcpu=#{cpu}"] if build.bottle?
 
-    system "zig", "build", *args, *std_zig_args
+    system "zig", "build", *std_zig_args
   end
 
   test do

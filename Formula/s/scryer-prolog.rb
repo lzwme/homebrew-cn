@@ -26,10 +26,10 @@ class ScryerProlog < Formula
   end
 
   test do
-    (testpath/"test.pl").write <<~EOS
+    (testpath/"test.pl").write <<~PL
       test :-
         write('Hello from Scryer Prolog').
-    EOS
+    PL
 
     assert_equal "Hello from Scryer Prolog", shell_output("#{bin}/scryer-prolog -g 'test,halt' #{testpath}/test.pl")
   end

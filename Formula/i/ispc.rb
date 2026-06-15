@@ -55,13 +55,13 @@ class Ispc < Formula
       # This prevents the build from running the new 'ispc' binary for 32-bit targets it doesn't support.
       inreplace "cmake/CommonStdlibBuiltins.cmake",
                 "set(skip FALSE)",
-                <<~EOS
+                <<~CMAKE
                   if ("${bit}" STREQUAL "32" AND "${os}" STREQUAL "unix")
                     set(${out_skip} TRUE PARENT_SCOPE)
                     return()
                   endif()
                   set(skip FALSE)
-                EOS
+                CMAKE
     end
 
     args = %W[
@@ -79,7 +79,7 @@ class Ispc < Formula
   end
 
   test do
-    (testpath/"simple.ispc").write <<~EOS
+    (testpath/"simple.ispc").write <<~ISPC
       export void simple(uniform float vin[], uniform float vout[], uniform int count) {
         foreach (index = 0 ... count) {
           float v = vin[index];
@@ -90,7 +90,7 @@ class Ispc < Formula
           vout[index] = v;
         }
       }
-    EOS
+    ISPC
 
     if Hardware::CPU.arm?
       arch = "aarch64"

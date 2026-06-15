@@ -85,14 +85,14 @@ class Gnucobol < Formula
   end
 
   test do
-    (testpath/"hello.cob").write <<~EOS
+    (testpath/"hello.cob").write <<~COBOL
             * COBOL fixed-form must be indented
       000001 IDENTIFICATION DIVISION.
       000002 PROGRAM-ID. hello.
       000003 PROCEDURE DIVISION.
       000004 DISPLAY "Hello World!".
       000005 STOP RUN.
-    EOS
+    COBOL
 
     # create test executable and run it, with verbose output
     system bin/"cobc", "-x", "-j", "-v", "hello.cob"

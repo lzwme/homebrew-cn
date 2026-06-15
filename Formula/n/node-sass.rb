@@ -22,13 +22,13 @@ class NodeSass < Formula
   end
 
   test do
-    (testpath/"test.scss").write <<~EOS
+    (testpath/"test.scss").write <<~SCSS
       div {
         img {
           border: 0px;
         }
       }
-    EOS
+    SCSS
 
     assert_equal "div img{border:0px}",
     shell_output("#{bin}/sass --style=compressed test.scss").strip

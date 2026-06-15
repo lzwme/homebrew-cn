@@ -19,10 +19,10 @@ class Sqlparse < Formula
   end
 
   test do
-    expected = <<~EOS.chomp
+    expected = <<~SQL.chomp
       select *
         from foo
-    EOS
+    SQL
     output = pipe_output("#{bin}/sqlformat - -a", "select * from foo", 0)
     assert_equal expected, output
   end

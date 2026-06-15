@@ -1,8 +1,8 @@
 class Redress < Formula
   desc "Tool for analyzing stripped Go binaries compiled with the Go compiler"
   homepage "https://github.com/goretk/redress"
-  url "https://ghfast.top/https://github.com/goretk/redress/archive/refs/tags/v1.2.74.tar.gz"
-  sha256 "7fe7a7ad7e0bd87c16f046a4dd0bcb9927e84b57911a8daba55caaff4ee0340c"
+  url "https://ghfast.top/https://github.com/goretk/redress/archive/refs/tags/v1.2.75.tar.gz"
+  sha256 "ca44859e236db18b30b8cc67ed8560f7f9b822e5648f362048f1de5f09b406fc"
   license "AGPL-3.0-only"
   head "https://github.com/goretk/redress.git", branch: "develop"
 
@@ -12,12 +12,12 @@ class Redress < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a592614e2df9f06b7f250b7ffd4355575d1f661603469abc3366c8d6737bcf37"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8479987ea8ee601479f7ea87744eb967e98adca7bd3c5ff2340403e847b6c68d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46457b5a01dc4955dee80b1ba1d5d46e5b968536b0af3679ce1c4e0776f5252c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0540d6d7a10021d4d68274c7ea5454eb4feb6fa4c104f584476d447afdac54fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "783dfb349d06f3d4da5c0d468b15e84bf34221db44c865a949a0c8a07129157a"
-    sha256 cellar: :any,                 x86_64_linux:  "54dd47ec3c601e9c7dfec4ca151c51eb66c5113d8e7d75a7c454285ccb78469e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "087b64c75a8d1d6f0961ce6361770f9e4fbb5449c04574c3a0740e7131b1e413"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cc3b7cdbc4aecce17696a7677e0affe1418b6a481b41abc1be283e92b0f3dfd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5f0ff0fee0bd08634f74bdc3b4f7d9cc4b36d2f0eac9b0fca523e55ea72f7f1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8c712bd41dd87dafded75676073d177cbe2804b31c7518b5aef7d62ed670455d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c223baeab5464d64cedb5018e631d22eaefea60c826c4b57787b3c70dfe038d2"
+    sha256 cellar: :any,                 x86_64_linux:  "fe36fc0416ad90a17b62ddf8a18d2f0211ead1acf4fe483867c54efcff04daaa"
   end
 
   depends_on "go" => :build

@@ -15,11 +15,11 @@ class Galen < Formula
 
   def install
     libexec.install "galen.jar"
-    (bin/"galen").write <<~EOS
+    (bin/"galen").write <<~SH
       #!/bin/sh
       set -e
       exec "#{Formula["openjdk"].opt_bin}/java" -cp "#{libexec}/galen.jar:lib/*:libs/*" com.galenframework.GalenMain "$@"
-    EOS
+    SH
   end
 
   test do

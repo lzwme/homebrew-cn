@@ -28,10 +28,10 @@ class Svlint < Formula
   end
 
   test do
-    (testpath/"test.sv").write <<~EOS
+    (testpath/"test.sv").write <<~SYSTEMVERILOG
       module M;
       endmodule
-    EOS
+    SYSTEMVERILOG
 
     assert_match(/hint\s+:\s+Begin `module` name with lowerCamelCase./, shell_output("#{bin}/svlint test.sv", 1))
   end

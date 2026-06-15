@@ -1,19 +1,19 @@
 class Pygit2 < Formula
   desc "Bindings to the libgit2 shared library"
   homepage "https://github.com/libgit2/pygit2"
-  url "https://files.pythonhosted.org/packages/3a/a4/10ce00feef5c43eddacab19ae6610c4d4ef3ab77e544e9ee938772cd1c17/pygit2-1.19.2.tar.gz"
-  sha256 "cbeb3dbca9ca6ee3d5ea5d02f5e844c2d6084a2d5d6621e3e06aa2b11c645bfd"
+  url "https://files.pythonhosted.org/packages/a6/44/415aa93422b4bfc21a6448acb7e16280d5f33a9a3fae38a384e37b046ae4/pygit2-1.19.3.tar.gz"
+  sha256 "a543e6d4ebb43825564935758dc234e770016fed673b84370d46ae9580558831"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }
   compatibility_version 1
   head "https://github.com/libgit2/pygit2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bfdc0abcc0ccc4e69789f3dc14e728db7b3184e11fbebb305d9a05ad1bc7e4d6"
-    sha256 cellar: :any,                 arm64_sequoia: "2f8e22c0c4e9205e96ee57c6ce21006a0ea79cbede397d921a17aab5a9abbe55"
-    sha256 cellar: :any,                 arm64_sonoma:  "2c700aa068287e7bd398ee594beecefdfd98057cb43aa510ca29cb0669bb021b"
-    sha256 cellar: :any,                 sonoma:        "0b94b6108da12f11f0ac5c4acc8ccf7734a3adf879996d437ca1d1951cfaf9c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f03c9fc5a888a0054368674d740ee1b5d087c1ade0f4cd8c6408e26a237ccea6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "188d7b172fe47d0cef2bd4ce113d14b8269d9482c8195fba68b8a12903e0fbbc"
+    sha256 cellar: :any, arm64_tahoe:   "943128ffecf388b567b33a6af0bb156cf8e7331c864baff75e7293c4f989aaa3"
+    sha256 cellar: :any, arm64_sequoia: "1acaec4c8d2db3a3315059d8c52149151ea7b621116e6f75474eedf35e6d387f"
+    sha256 cellar: :any, arm64_sonoma:  "ebfb9fbc818fc003bdd0e1ae07ade23add6d89e2c3dc608b3c9e851d836f9935"
+    sha256 cellar: :any, sonoma:        "095cb288d14b0c91c8112df910614cb1e2a3e2ab805daf89210af355ffba785d"
+    sha256 cellar: :any, arm64_linux:   "d8d4bafa9c7119b8b35a8ccabc4b4f410e130be4c7355717c33c7f713db02f5e"
+    sha256 cellar: :any, x86_64_linux:  "708e65e2735fcb44c3d62e299cf528620a74844eb96dd4b8ecb5721562e19cbe"
   end
 
   depends_on "python@3.13" => [:build, :test]

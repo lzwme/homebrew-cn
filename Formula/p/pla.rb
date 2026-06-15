@@ -32,7 +32,7 @@ class Pla < Formula
   end
 
   test do
-    (testpath/"test.pla").write <<~EOS
+    (testpath/"test.pla").write <<~PLA
       [4] REF0 Install des serveurs
         color #8cb6ce
         child 1
@@ -45,7 +45,7 @@ class Pla < Formula
           color #8cb6ce
           dep 2
           dep 6
-    EOS
+    PLA
     system bin/"pla", "-i", testpath/"test.pla", "-o test"
   end
 end

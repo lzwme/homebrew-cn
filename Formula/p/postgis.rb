@@ -160,11 +160,11 @@ class Postgis < Formula
 
       datadir = testpath/postgresql.name
       system pg_ctl, "initdb", "-D", datadir
-      (datadir/"postgresql.conf").write <<~EOS, mode: "a+"
+      (datadir/"postgresql.conf").write <<~CONF, mode: "a+"
 
         shared_preload_libraries = 'postgis-3'
         port = #{port}
-      EOS
+      CONF
       system pg_ctl, "start", "-D", datadir, "-l", testpath/"log-#{postgresql.name}"
       begin
         system psql, "-p", port.to_s, "-c", "CREATE EXTENSION \"postgis\";", "postgres"

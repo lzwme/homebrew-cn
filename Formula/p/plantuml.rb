@@ -21,13 +21,13 @@ class Plantuml < Formula
   def install
     jar = "plantuml.jar"
     libexec.install "plantuml-#{version}.jar" => jar
-    (bin/"plantuml").write <<~EOS
+    (bin/"plantuml").write <<~BASH
       #!/bin/bash
       if [[ "$*" != *"-gui"* ]]; then
         VMARGS="-Djava.awt.headless=true"
       fi
       GRAPHVIZ_DOT="#{Formula["graphviz"].opt_bin}/dot" exec "#{Formula["openjdk"].opt_bin}/java" $VMARGS -jar #{libexec}/#{jar} "$@"
-    EOS
+    BASH
     chmod 0755, bin/"plantuml"
   end
 

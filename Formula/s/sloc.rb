@@ -25,10 +25,10 @@ class Sloc < Formula
       }
     C
 
-    std_output = <<~EOS
+    std_output = <<~CSV
       Path,Physical,Source,Comment,Single-line comment,Block comment,Mixed,Empty block comment,Empty,To Do
       Total,4,4,0,0,0,0,0,0,0
-    EOS
+    CSV
 
     assert_match std_output, shell_output("#{bin}/sloc --format=csv .")
   end

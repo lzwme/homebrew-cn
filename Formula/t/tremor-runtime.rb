@@ -91,7 +91,7 @@ class TremorRuntime < Formula
   test do
     assert_match "tremor #{version}\n", shell_output("#{bin}/tremor --version")
 
-    (testpath/"test.troy").write <<~EOS
+    (testpath/"test.troy").write <<~TROY
       define flow test
       flow
           use tremor::connectors;
@@ -124,7 +124,7 @@ class TremorRuntime < Formula
       end;
 
       deploy flow test;
-    EOS
+    TROY
 
     (testpath/"in.txt").write("hello")
 

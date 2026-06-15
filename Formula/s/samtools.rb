@@ -29,10 +29,10 @@ class Samtools < Formula
   end
 
   test do
-    (testpath/"test.fasta").write <<~EOS
+    (testpath/"test.fasta").write <<~FASTA
       >U00096.2:1-70
       AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
-    EOS
+    FASTA
     system bin/"samtools", "faidx", "test.fasta"
     assert_equal "U00096.2:1-70\t70\t15\t70\t71\n", (testpath/"test.fasta.fai").read
   end

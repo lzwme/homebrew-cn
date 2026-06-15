@@ -21,13 +21,13 @@ class TfstateLookup < Formula
   end
 
   test do
-    (testpath/"terraform.tfstate").write <<~EOS
+    (testpath/"terraform.tfstate").write <<~JSON
       {
         "version": 4,
         "terraform_version": "1.7.2",
         "resources": []
       }
-    EOS
+    JSON
 
     output = shell_output("#{bin}/tfstate-lookup -dump")
     assert_match "{}", output

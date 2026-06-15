@@ -49,17 +49,17 @@ class Urweb < Formula
   end
 
   test do
-    (testpath/"hello.ur").write <<~EOS
+    (testpath/"hello.ur").write <<~URS
       fun target () = return <xml><body>
         Welcome!
       </body></xml>
       fun main () = return <xml><body>
         <a link={target ()}>Go there</a>
       </body></xml>
-    EOS
-    (testpath/"hello.urs").write <<~EOS
+    URS
+    (testpath/"hello.urs").write <<~URS
       val main : unit -> transaction page
-    EOS
+    URS
     (testpath/"hello.urp").write "hello"
     system bin/"urweb", "hello"
     system "./hello.exe", "-h"

@@ -33,14 +33,14 @@ class JenkinsCli < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/jcli version")
 
-    (testpath/".jenkins-cli.yaml").write <<~EOS
+    (testpath/".jenkins-cli.yaml").write <<~YAML
       current: default
       configurations:
         default:
           url: http://localhost:8080
           username: admin
           token: admin
-    EOS
+    YAML
 
     assert_equal "Name URL Description", shell_output("#{bin}/jcli config list").chomp
     assert_match "Cannot found Jenkins", shell_output("#{bin}/jcli plugin list 2>&1", 1)

@@ -73,13 +73,13 @@ class Hashlink < Formula
   test do
     haxebin = Formula["haxe"].bin
 
-    (testpath/"HelloWorld.hx").write <<~EOS
+    (testpath/"HelloWorld.hx").write <<~HAXE
       class HelloWorld {
           static function main() Sys.println("Hello world!");
       }
-    EOS
+    HAXE
 
-    (testpath/"TestHttps.hx").write <<~EOS
+    (testpath/"TestHttps.hx").write <<~HAXE
       class TestHttps {
         static function main() {
           var http = new haxe.Http("https://www.google.com/");
@@ -91,7 +91,7 @@ class Hashlink < Formula
           http.request();
         }
       }
-    EOS
+    HAXE
 
     system "#{haxebin}/haxe", "-hl", "HelloWorld.hl", "-main", "HelloWorld"
     system "#{haxebin}/haxe", "-hl", "TestHttps.hl", "-main", "TestHttps"

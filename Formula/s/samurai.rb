@@ -26,11 +26,11 @@ class Samurai < Formula
   end
 
   test do
-    (testpath/"build.ninja").write <<~EOS
+    (testpath/"build.ninja").write <<~NINJA
       rule cc
         command = #{ENV.cc} $in -o $out
       build hello: cc hello.c
-    EOS
+    NINJA
     (testpath/"hello.c").write <<~C
       #include <stdio.h>
       int main() {

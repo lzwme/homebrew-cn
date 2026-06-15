@@ -35,12 +35,12 @@ class Lolcode < Formula
 
   test do
     path = testpath/"test.lol"
-    path.write <<~EOS
+    path.write <<~LOLCODE
       HAI 1.2
       CAN HAS STDIO?
       VISIBLE "HAI WORLD"
       KTHXBYE
-    EOS
+    LOLCODE
     assert_equal "HAI WORLD\n", shell_output("#{bin}/lci #{path}")
   end
 end

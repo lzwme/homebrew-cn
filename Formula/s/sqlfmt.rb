@@ -28,14 +28,14 @@ class Sqlfmt < Formula
 
   test do
     test_sql = "\"SELECT count(ID) AS count, foo FROM brewtest GROUP BY foo;\""
-    assert_equal <<~EOS, shell_output("#{bin}/sqlfmt --print-width 40 --stmt #{test_sql}")
+    assert_equal <<~SQL, shell_output("#{bin}/sqlfmt --print-width 40 --stmt #{test_sql}")
       SELECT
       \tcount(id) AS count, foo
       FROM
       \tbrewtest
       GROUP BY
       \tfoo;
-    EOS
+    SQL
 
     assert_match version.to_s, shell_output("#{bin}/sqlfmt --version")
   end

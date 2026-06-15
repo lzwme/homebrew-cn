@@ -51,13 +51,13 @@ class Gnutls < Formula
   depends_on "p11-kit"
 
   on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1400
     depends_on "gettext"
   end
 
-  fails_with :clang do
-    build 1400
-    cause "error: CRAU_MAYBE_UNUSED is not getting defined"
+  # Backport support for building with older clang
+  patch do
+    url "https://gitlab.com/gnutls/gnutls/-/commit/29c2027c963cf559817d0da37c1fc2efd0c1bd6a.diff"
+    sha256 "c0bfc0164ff131c9d2e1c4d0367430f8b767b64c9c21e0f408bd634d21fb0302"
   end
 
   def install

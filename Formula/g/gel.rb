@@ -28,10 +28,10 @@ class Gel < Formula
   end
 
   test do
-    (testpath/"Gemfile").write <<~EOS
+    (testpath/"Gemfile").write <<~RUBY
       source "https://rubygems.org"
       gem "gel"
-    EOS
+    RUBY
     system bin/"gel", "install"
   end
 end

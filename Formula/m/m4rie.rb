@@ -23,7 +23,7 @@ class M4rie < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <m4rie/m4rie.h>
 
       const size_t d = 3;
@@ -102,7 +102,7 @@ class M4rie < Formula
           return 0;
         }
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lm4rie", "-L#{Formula["m4ri"].lib}", "-lm4ri", "-o", "test"
     system "./test"
   end

@@ -33,7 +33,7 @@ class WasmTools < Formula
     (testpath/"sum.wasm").write(wasm)
     system bin/"wasm-tools", "validate", testpath/"sum.wasm"
 
-    expected = <<~EOS
+    expected = <<~WASM
       (module
         (type (;0;) (func (param i32 i32) (result i32)))
         (export "sum" (func 0))
@@ -43,7 +43,7 @@ class WasmTools < Formula
           i32.add
         )
       )
-    EOS
+    WASM
     assert_equal expected, shell_output("#{bin}/wasm-tools print #{testpath}/sum.wasm")
   end
 end

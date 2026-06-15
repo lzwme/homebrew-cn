@@ -38,12 +38,12 @@ class Smartdns < Formula
   test do
     port = free_port
 
-    (testpath/"smartdns.conf").write <<~EOS
+    (testpath/"smartdns.conf").write <<~CONF
       bind 127.0.0.1:#{port}
       server 8.8.8.8
       local-ttl 3
       address /example.com/1.2.3.4
-    EOS
+    CONF
     spawn sbin/"smartdns", "run", "-c", testpath/"smartdns.conf"
     sleep 2
     output = shell_output("dig @127.0.0.1 -p #{port} example.com.")

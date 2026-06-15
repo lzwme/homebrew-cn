@@ -49,7 +49,7 @@ class Ntfs3g < Formula
 
     # Install a script that can be used to enable automount
     File.open(sbin/"mount_ntfs", File::CREAT|File::TRUNC|File::RDWR, 0755) do |f|
-      f.puts <<~EOS
+      f.puts <<~BASH
         #!/bin/bash
 
         VOLUME_NAME="${@:$#}"
@@ -79,7 +79,7 @@ class Ntfs3g < Formula
           "$@" >> /var/log/mount-ntfs-3g.log 2>&1
 
         exit $?;
-      EOS
+      BASH
     end
   end
 

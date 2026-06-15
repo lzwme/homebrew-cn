@@ -39,10 +39,10 @@ class Sdlpop < Formula
     pkgvar = var/"sdlpop"
     pkgvar.install "SDLPoP.ini" unless (pkgvar/"SDLPoP.ini").exist?
 
-    (bin/"prince").write <<~EOS
+    (bin/"prince").write <<~BASH
       #!/bin/bash
       cd "#{pkgvar}" && exec "#{libexec}/prince" $@
-    EOS
+    BASH
   end
 
   def caveats

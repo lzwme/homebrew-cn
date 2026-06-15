@@ -30,10 +30,10 @@ class Just < Formula
   end
 
   test do
-    (testpath/"justfile").write <<~EOS
+    (testpath/"justfile").write <<~MAKE
       default:
         touch it-worked
-    EOS
+    MAKE
     system bin/"just"
     assert_path_exists testpath/"it-worked"
 

@@ -7,6 +7,7 @@ class SphinxDoc < Formula
   sha256 "7741722357dd75f8190766926071fed3bdc211c74dd2d7d4df5404da95930ddb"
   license "BSD-2-Clause"
   revision 4
+  head "https://github.com/sphinx-doc/sphinx.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ff64e4a8e208fcc215ea9dee59327cfb0bec3b2ec8db9978f5931668052d547"

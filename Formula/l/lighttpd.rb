@@ -1,8 +1,8 @@
 class Lighttpd < Formula
   desc "Small memory footprint, flexible web-server"
   homepage "https://www.lighttpd.net/"
-  url "https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.82.tar.xz"
-  sha256 "abfe74391f9cbd66ab154ea07e64f194dbe7e906ef4ed47eb3b0f3b46246c962"
+  url "https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.83.tar.xz"
+  sha256 "b3f878156480079f8a93903bd24d456074a0fbedb9b4d99fcd65df33b1f566f0"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,12 @@ class Lighttpd < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "8e6000d9ebee3364d83babba1271abfb827020f0ac611bd1f137c59229132b84"
-    sha256 arm64_sequoia: "50093f112787c67d9ca3d236eff0441751c453dd59ad065ec2c76b7ddfe47614"
-    sha256 arm64_sonoma:  "d50f7214b9644d56e9a5c2c048fb60b4ba10038e667ec19099abcf82b52287e6"
-    sha256 sonoma:        "cfdb31aa3e83547b1fc22979098f00453307751d367e5407825d1dcddb198123"
-    sha256 arm64_linux:   "84f45685dc6ea785eec1794bf41316bc38c85a3c11980d4d3dafa2b27cdae2ba"
-    sha256 x86_64_linux:  "1895e77ef23228f1640ac369440fecfb78acc4d8ce9fcbd56af8a8fc01947aa6"
+    sha256 arm64_tahoe:   "2e84aaf5e8b5e14fcd39b4980dc707c9627edba40a866635e7ad12f99e9c9503"
+    sha256 arm64_sequoia: "1dd3932f235911cd8065240fdc888927ba9527ed62f2d988c2758b67b1843629"
+    sha256 arm64_sonoma:  "a1ea14672f04121160dd2414281c259a97616320cf57b64a63106d516fe4a393"
+    sha256 sonoma:        "cf1773a5ba0cb42a3212d9036d5616edf4275521d7434a59f5f5ec8a933127ed"
+    sha256 arm64_linux:   "4418b119ba8937191c26281f9bbe71f27e8957b90cf7bcca31b77f1f184c0ec2"
+    sha256 x86_64_linux:  "a0a239ab61b27690f20cb2c0b34c9e55a65d73b858fdc7267097e687deee5f99"
   end
 
   depends_on "autoconf" => :build

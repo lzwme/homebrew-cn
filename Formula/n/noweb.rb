@@ -75,7 +75,7 @@ class Noweb < Formula
   end
 
   test do
-    (testpath/"test.nw").write <<~EOS
+    (testpath/"test.nw").write <<~NW
       \section{Hello world}
 
       Today I awoke and decided to write
@@ -108,7 +108,7 @@ class Noweb < Formula
 
       <<license>>=
       This work is placed in the public domain.
-    EOS
+    NW
     assert_match "this file was generated automatically by noweave",
                  pipe_output("#{bin}/htmltoc", shell_output("#{bin}/noweave -filter l2h -index -html test.nw"))
   end

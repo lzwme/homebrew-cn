@@ -1,8 +1,8 @@
 class Openimageio < Formula
   desc "Library for reading, processing and writing images"
   homepage "https://openimageio.readthedocs.io/en/stable/"
-  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v3.1.14.0.tar.gz"
-  sha256 "e6140dc6ffca92becbb1cc0ade2addb34a4b66df78f71cb9bc93380c0120e7de"
+  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v3.1.14.1.tar.gz"
+  sha256 "3c3e7c637aad57008b290ebee803df88fa7326c23e39712fdcb0a5b520032cd1"
   license "Apache-2.0"
   head "https://github.com/AcademySoftwareFoundation/OpenImageIO.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "78e6ffa51bde9d6ccbe9756a0979b0db860b9f550b5f6375b63914d8c7f58308"
-    sha256 cellar: :any, arm64_sequoia: "34903dd6c93c074c110f3d1c8158d349b98379869c91914f2cfa88534f3ee427"
-    sha256 cellar: :any, arm64_sonoma:  "149250e8b00fd10eb979f163a48b8391a8b7be47010f887864fa67b407cf2566"
-    sha256 cellar: :any, sonoma:        "f81cc36bbc132eae3333f34310b670fef1bf38256cadda71ba0839605b78f1ee"
-    sha256 cellar: :any, arm64_linux:   "b70ec3e916480cc32f959250a5c43376c3109468780d09da0098ca33f32861ea"
-    sha256 cellar: :any, x86_64_linux:  "656ca52d170c14ab0df9afb79f41c02c9cd8e307b09afef0c1e12bc0c2b53db5"
+    sha256 cellar: :any, arm64_tahoe:   "b98d86a7122e586646aeb5030d4df71b0e4f7d3b6620c03cb57026c4acf7c843"
+    sha256 cellar: :any, arm64_sequoia: "08445503f411ad19dafae5946cba18216fa2a7c47b01d12ade48c84423893e64"
+    sha256 cellar: :any, arm64_sonoma:  "d455882b1ae8291ec89b9f737b2c68160299744f8a5156eb24bd94b94910e8e4"
+    sha256 cellar: :any, sonoma:        "0b73337b7948af21b2608efb9b7053c00e417c5f385dab4d39705b3c15f0c37f"
+    sha256 cellar: :any, arm64_linux:   "c9cf268f7535205babb9c56bbf6aca9fd23082d9bc9f385eee1b20d3e14671be"
+    sha256 cellar: :any, x86_64_linux:  "33177f705b0d994ff4b30aa86183550db388347ddaddc87fbce491e92290b37b"
   end
 
   depends_on "cmake" => :build

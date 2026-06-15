@@ -19,11 +19,11 @@ class Graphqlviz < Formula
 
   test do
     test_file = testpath/"test.graphql"
-    test_file.write <<~EOS
+    test_file.write <<~GRAPHQL
       type Query {
         hello: String
       }
-    EOS
+    GRAPHQL
 
     output = pipe_output(bin/"graphqlviz", test_file.read)
     assert_match "digraph erd", output

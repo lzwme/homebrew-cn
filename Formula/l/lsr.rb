@@ -24,18 +24,7 @@ class Lsr < Formula
   depends_on "zig@0.14" => :build # https://tangled.sh/@rockorager.dev/lsr/issues/13
 
   def install
-    # Fix illegal instruction errors when using bottles on older CPUs.
-    # https://github.com/Homebrew/homebrew-core/issues/92282
-    cpu = case Hardware.oldest_cpu
-    when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
-    when :armv8 then "xgene1" # Closest to `-march=armv8-a`
-    else Hardware.oldest_cpu
-    end
-
-    args = []
-    args << "-Dcpu=#{cpu}" if build.bottle?
-
-    system "zig", "build", *args, *std_zig_args(release_mode: :small)
+    system "zig", "build", *std_zig_args(release_mode: :small)
   end
 
   test do

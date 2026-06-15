@@ -19,7 +19,7 @@ class Htmlhint < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/htmlhint --version")
 
-    (testpath/"invalid.html").write <<~EOS
+    (testpath/"invalid.html").write <<~HTML
       <!DOCTYPE html>
       <html>
       <head>
@@ -31,20 +31,20 @@ class Htmlhint < Formula
         <a href="#" target="_blank">Link</a>
       </body>
       </html>
-    EOS
+    HTML
 
     output = shell_output("#{bin}/htmlhint #{testpath}/invalid.html", 1)
     assert_match "Tag must be paired", output
     assert_match "Scanned 1 files, found 2 errors in 1 files", output
 
-    (testpath/"valid.html").write <<~EOS
+    (testpath/"valid.html").write <<~HTML
       <!DOCTYPE html>
       <html>
       <head>
         <title>Test</title>
       </head>
       </html>
-    EOS
+    HTML
 
     output = shell_output("#{bin}/htmlhint #{testpath}/valid.html")
     assert_match "Scanned 1 files, no errors found", output

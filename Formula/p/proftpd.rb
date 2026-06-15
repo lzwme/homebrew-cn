@@ -69,7 +69,7 @@ class Proftpd < Formula
     port = free_port
     install_user = ENV["USER"]
     install_group = Utils.safe_popen_read("groups").split.first
-    (testpath/"proftpd.conf").write <<~EOS
+    (testpath/"proftpd.conf").write <<~CONF
       ServerName      Homebrew-Test
       ServerType      standalone
       DefaultServer   on
@@ -81,7 +81,7 @@ class Proftpd < Formula
       Group           #{install_group}
       ScoreboardFile  #{testpath}/proftpd.scoreboard
       PidFile         #{testpath}/proftpd.pid
-    EOS
+    CONF
 
     pid = spawn sbin/"proftpd", "--config", testpath/"proftpd.conf", "--nodaemon"
     sleep 2

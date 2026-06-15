@@ -23,10 +23,10 @@ class Trimal < Formula
   end
 
   test do
-    (testpath/"test.fasta").write <<~EOS
+    (testpath/"test.fasta").write <<~FASTA
       >U00096.2:1-70
       AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
-    EOS
+    FASTA
     system bin/"trimal", "-in", "test.fasta", "-out", "out.fasta"
     assert_path_exists "out.fasta"
   end

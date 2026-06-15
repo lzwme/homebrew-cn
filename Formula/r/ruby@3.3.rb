@@ -249,10 +249,10 @@ class RubyAT33 < Formula
     ENV["GEM_HOME"] = testpath
     system bin/"gem", "install", "json"
 
-    (testpath/"Gemfile").write <<~EOS
+    (testpath/"Gemfile").write <<~RUBY
       source 'https://rubygems.org'
       gem 'github-markup'
-    EOS
+    RUBY
     system bin/"bundle", "exec", "ls" # https://github.com/Homebrew/homebrew-core/issues/53247
     system bin/"bundle", "install", "--binstubs=#{testpath}/bin"
     assert_path_exists testpath/"bin/github-markup", "github-markup is not installed in #{testpath}/bin"

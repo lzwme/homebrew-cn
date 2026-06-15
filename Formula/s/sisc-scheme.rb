@@ -12,10 +12,10 @@ class SiscScheme < Formula
 
   def install
     libexec.install Dir["*"]
-    (bin/"sisc").write <<~EOS
+    (bin/"sisc").write <<~SH
       #!/bin/sh
       SISC_HOME=#{libexec}
       exec #{libexec}/sisc "$@"
-    EOS
+    SH
   end
 end

@@ -27,10 +27,10 @@ class Ps2eps < Formula
     system ENV.cc, "src/C/bbox.c", "-o", "bbox"
     bin.install "bbox"
     (libexec/"bin").install "src/perl/ps2eps"
-    (bin/"ps2eps").write <<~EOS
+    (bin/"ps2eps").write <<~SH
       #!/bin/sh
       perl -S #{libexec}/bin/ps2eps "$@"
-    EOS
+    SH
     man1.install Dir["doc/*.1"]
     doc.install Dir["doc/*.pdf", "doc/*.html"]
   end

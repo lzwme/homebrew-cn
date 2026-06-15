@@ -23,7 +23,7 @@ class Libjodycode < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <libjodycode.h>
 
@@ -34,7 +34,7 @@ class Libjodycode < Formula
           int d = jc_strneq("foo", "FOO", 3);
           printf("%d\\n%d\\n%d\\n%d", a, b, c, d);
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-ljodycode", "-o", "test"
     assert_equal [0, 1, 0, 1], shell_output("./test").lines.map(&:to_i)
   end

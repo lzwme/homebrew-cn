@@ -39,13 +39,13 @@ class Sassc < Formula
   end
 
   test do
-    (testpath/"input.scss").write <<~EOS
+    (testpath/"input.scss").write <<~SCSS
       div {
         img {
           border: 0px;
         }
       }
-    EOS
+    SCSS
 
     assert_equal "div img{border:0px}",
     shell_output("#{bin}/sassc --style compressed input.scss").strip

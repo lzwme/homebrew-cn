@@ -74,7 +74,7 @@ class LuaAT54 < Formula
     # We ship our own pkg-config file as Lua no longer provide them upstream.
     libs = %w[-llua -lm]
     libs << "-ldl" if OS.linux?
-    (lib/"pkgconfig/lua.pc").write <<~EOS
+    (lib/"pkgconfig/lua.pc").write <<~PC
       V=#{version.major_minor}
       R=#{version}
       prefix=#{opt_prefix}
@@ -94,7 +94,7 @@ class LuaAT54 < Formula
       Requires:
       Libs: -L${libdir} #{libs.join(" ")}
       Cflags: -I${includedir}
-    EOS
+    PC
 
     # Fix some software potentially hunting for different pc names.
     bin.install_symlink "lua" => "lua#{version.major_minor}"

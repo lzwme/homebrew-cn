@@ -37,7 +37,7 @@ class Glm < Formula
 
     include.install "glm"
     lib.install "cmake"
-    (lib/"pkgconfig/glm.pc").write <<~EOS
+    (lib/"pkgconfig/glm.pc").write <<~PC
       prefix=#{prefix}
       includedir=${prefix}/include
 
@@ -45,7 +45,7 @@ class Glm < Formula
       Description: OpenGL Mathematics
       Version: #{version.to_s.match(/\d+\.\d+\.\d+/)}
       Cflags: -I${includedir}
-    EOS
+    PC
 
     cd "doc" do
       system "doxygen", "man.doxy"

@@ -35,11 +35,11 @@ class Poke < Formula
   end
 
   test do
-    (testpath/"test.pk").write <<~EOS
+    (testpath/"test.pk").write <<~PK
       .file #{bin}/poke
       dump :size 4#B :ruler 0 :ascii 0
       .exit
-    EOS
+    PK
     if OS.mac?
       assert_match "00000000: cffa edfe", shell_output("#{bin}/poke --quiet -s test.pk")
     else

@@ -27,9 +27,9 @@ class Zookeeper < Formula
   depends_on "openssl@3"
 
   def default_zk_env
-    <<~EOS
+    <<~ZSH
       [ -z "$ZOOCFGDIR" ] && export ZOOCFGDIR="#{pkgetc}"
-    EOS
+    ZSH
   end
 
   def install
@@ -53,12 +53,12 @@ class Zookeeper < Formula
 
       script_name = path.basename
       bin_name    = path.basename ".sh"
-      (bin+bin_name).write <<~EOS
+      (bin/bin_name).write <<~BASH
         #!/bin/bash
         export JAVA_HOME="${JAVA_HOME:-#{Formula["openjdk"].opt_prefix}}"
         . "#{pkgetc}/defaults"
         exec "#{libexec}/bin/#{script_name}" "$@"
-      EOS
+      BASH
     end
 
     (buildpath/"defaults").write(default_zk_env)

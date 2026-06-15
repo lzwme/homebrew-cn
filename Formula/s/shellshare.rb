@@ -1,18 +1,18 @@
 class Shellshare < Formula
   desc "Live Terminal Broadcast"
   homepage "https://github.com/vitorbaptista/shellshare"
-  url "https://ghfast.top/https://github.com/vitorbaptista/shellshare/archive/refs/tags/v2.0.5.tar.gz"
-  sha256 "68469121e9209eb9b916c2246d06af9f5408db66d9bc8fc916d0f9fed99001a0"
+  url "https://ghfast.top/https://github.com/vitorbaptista/shellshare/archive/refs/tags/v3.4.0.tar.gz"
+  sha256 "49ab3ef73c7fb77be482950a0ee36e9d2cb497b06259ade9f7a88f4db672e1bb"
   license "Apache-2.0"
-  head "https://github.com/vitorbaptista/shellshare.git", branch: "master"
+  head "https://github.com/vitorbaptista/shellshare.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a75120585874d126689d8dcc50415013565a05f9799e60841ca7c866562ff767"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7127478bbceeabeede943aadd7ec56d527ec4c181eb2575b4d4e2b73023d0d22"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7379c9be2667634f519714d767526841d810266dbcdde6929c8ff0da484da273"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2041ec7a35883314d0725f679e0e3415ffb8bc7ed533f33f888222d67661a27d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dde954a53f74d89b49b405d25aa2279426605cad5bad5ecf3db0d38b494a7c64"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b268e373ed7c1086a794db27afc947f3ace5580dfc203f1c6b938a6147ce3481"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07cf8063e892c8e7d5182964bfb69e7f8018ec96860da38d5c2a8e026e2a7faf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8c5b375dc28d83ef52146c9dcdd5924ed32173c5a9063fb7d5eafb17f526012"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01849ff8b7dc458956a429fce49179c3251ede0205cd68230296c4bdf6d4794a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6e191e6690c9416867a805f6680c4dfa658f28ae9b2d3d64221e16872239426e"
+    sha256 cellar: :any,                 arm64_linux:   "85ac44fc9b671ab639009758c9f0273f6b057b54c1a2ee014ae6584e7e55983e"
+    sha256 cellar: :any,                 x86_64_linux:  "4c712582c5083e580b031dad3c9d9b947ead124a5d71e39f95bff604b04118e0"
   end
 
   depends_on "rust" => :build
@@ -25,11 +25,11 @@ class Shellshare < Formula
     assert_match version.to_s, shell_output("#{bin}/shellshare --version")
 
     port = free_port
-
-    Open3.popen3(bin/"shellshare", "--server", "http://localhost:#{port}") do |_, stdout, _, w|
-      assert_match("Sharing terminal", stdout.readline)
-    ensure
-      Process.kill "TERM", w.pid
-    end
+    pid = spawn(bin/"shellshare", "server", "--port", port.to_s)
+    sleep 2
+    assert_match "shellshare", shell_output("curl --silent --max-time 5 http://localhost:#{port}")
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end

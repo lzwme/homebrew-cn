@@ -37,13 +37,13 @@ class Rancid < Formula
   end
 
   test do
-    (testpath/"rancid.conf").write <<~EOS
+    (testpath/"rancid.conf").write <<~CONF
       BASEDIR=#{testpath}; export BASEDIR
       CVSROOT=$BASEDIR/CVS; export CVSROOT
       LOGDIR=$BASEDIR/logs; export LOGDIR
       RCSSYS=git; export RCSSYS
       LIST_OF_GROUPS="backbone aggregation switches"
-    EOS
+    CONF
     system bin/"rancid-cvs", "-f", testpath/"rancid.conf"
   end
 end

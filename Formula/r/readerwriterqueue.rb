@@ -18,7 +18,7 @@ class Readerwriterqueue < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath/"test.cpp").write <<~CPP
       #include <cassert>
       #include <iostream>
       #include <readerwriterqueue/readerwriterqueue.h>
@@ -44,7 +44,7 @@ class Readerwriterqueue < Formula
 
         std::cout << "OK" << std::endl;
       }
-    EOS
+    CPP
 
     system ENV.cxx, "-I#{include}", "test.cpp", "-o", "test"
     assert_equal "OK\n", shell_output(testpath/"test")

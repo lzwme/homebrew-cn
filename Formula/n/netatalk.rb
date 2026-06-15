@@ -111,13 +111,13 @@ class Netatalk < Formula
   test do
     pidfile = var/"run/netatalk#{".pid" if OS.mac?}"
     port = free_port
-    (testpath/"afp.conf").write <<~EOS
+    (testpath/"afp.conf").write <<~CONF
       [Global]
       afp port = #{port}
       log file = #{testpath}/afpd.log
       log level = default:info
       signature = 1234567890ABCDEF
-    EOS
+    CONF
     fork do
       system sbin/"netatalk", "-d", "-F", testpath/"afp.conf"
     end

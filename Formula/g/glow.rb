@@ -25,7 +25,7 @@ class Glow < Formula
 
   test do
     test_file = testpath/"test.md"
-    test_file.write <<~EOS
+    test_file.write <<~MARKDOWN
       # header
 
       **bold**
@@ -33,7 +33,7 @@ class Glow < Formula
       ```
       code
       ```
-    EOS
+    MARKDOWN
 
     # failed with Linux CI run, but works with local run
     # https://github.com/charmbracelet/glow/issues/454

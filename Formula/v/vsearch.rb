@@ -27,10 +27,10 @@ class Vsearch < Formula
   end
 
   test do
-    (testpath/"test.fasta").write <<~EOS
+    (testpath/"test.fasta").write <<~FASTA
       >U00096.2:1-70
       AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
-    EOS
+    FASTA
     system bin/"vsearch", "--rereplicate", "test.fasta", "--output", "output.txt"
     assert_path_exists testpath/"output.txt"
   end

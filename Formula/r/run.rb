@@ -26,10 +26,10 @@ class Run < Formula
   test do
     text = "Hello Homebrew!"
     task = "hello"
-    (testpath/"Runfile").write <<~EOS
+    (testpath/"Runfile").write <<~MAKE
       #{task}:
         echo #{text}
-    EOS
+    MAKE
     assert_equal text, shell_output("#{bin}/#{name} #{task}").chomp
   end
 end

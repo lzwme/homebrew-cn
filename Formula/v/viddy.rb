@@ -1,20 +1,18 @@
 class Viddy < Formula
   desc "Modern watch command"
   homepage "https://github.com/sachaos/viddy"
-  url "https://ghfast.top/https://github.com/sachaos/viddy/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "59d5be862cf6b522ed069e276c28f927e5d2cea13525513959e1577a5ad6afd5"
+  url "https://ghfast.top/https://github.com/sachaos/viddy/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "c5de99390846029aacb23789ce20267142dc89f647c519a0a0bb4821334cc6e5"
   license "MIT"
   head "https://github.com/sachaos/viddy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7c01377ce6dc8d3cef31fa0ffefa6dcb6e2b3f0c4edc0519f937a0bf4e96a3a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "618af16f6d99f7f2309e65cc33b60eea874f15ae8a0965b873c1a8ef1f9bda41"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9475b43a3238107af27cd6d6f14621af0e5e0fd0504a3fddad1e33277f3b7af"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5132a22bfe77049378f62158a9c2fb9e52ab6f04c426e9cfdff4e7c78a0de06f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a635acfdd97d4fb6f785a0164db30c399430f156b8012b85ad82a3872f39b869"
-    sha256 cellar: :any_skip_relocation, ventura:       "81a7bf5985de9f5702b68665dfa75f562819d363b5d6a4c882c5ef9b778ed18d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f3f38348b9fd1683ec0e625e899e8254fd6a7d1f54d2f0e7d3b09dd887aca16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2936c3ac0cc4092280d63ccc8ef986cfaad49c117fc763266ae435edaa1626e2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1beb0eaca9c6e843f291dd98b759f5d37f51b1f966bdf44f1eaa6b0de5a6cf38"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44bb25f77068c5d9f414704f4855608a92d43924682a4f82d4448dd29155d2a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "566a1614459cab699a7404e731d5b15087de504008e2f3896a088292b679078a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fe934b5d579ce7e21fb51a261d53b991cd72d5f4f70af27ed17f0ba5951464f7"
+    sha256 cellar: :any,                 arm64_linux:   "f17083987844a04491c80a50a55fb50b2cf719c8501b9d3695bf2c33f872b255"
+    sha256 cellar: :any,                 x86_64_linux:  "bfbb113c020b82dd894965fe3ddd9641a72b68ed178015c7f3d9572a4de1b0b9"
   end
 
   depends_on "rust" => :build

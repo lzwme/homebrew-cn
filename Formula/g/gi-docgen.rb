@@ -71,7 +71,7 @@ class GiDocgen < Formula
       website_url = "https://brew.sh/"
     TOML
 
-    (testpath/"brew.gir").write <<~EOS
+    (testpath/"brew.gir").write <<~XML
       <?xml version="1.0"?>
       <repository version="1.2"
                   xmlns="http://www.gtk.org/introspection/core/1.0"
@@ -84,7 +84,7 @@ class GiDocgen < Formula
           </record>
         </namespace>
       </repository>
-    EOS
+    XML
 
     output = shell_output("#{bin}/gi-docgen generate -C brew.toml brew.gir")
     assert_match "Creating namespace index file for brew-1.0", output

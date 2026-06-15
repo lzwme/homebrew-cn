@@ -27,17 +27,8 @@ class Ncdu < Formula
   depends_on "zstd"
 
   def install
-    # Fix illegal instruction errors when using bottles on older CPUs.
-    # https://github.com/Homebrew/homebrew-core/issues/92282
-    cpu = case ENV.effective_arch
-    when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
-    when :armv8 then "xgene1" # Closest to `-march=armv8-a`
-    else ENV.effective_arch
-    end
-
     args = []
     args << "-Dpie=true" if OS.mac?
-    args << "-Dcpu=#{cpu}" if build.bottle?
 
     # Workaround for https://github.com/Homebrew/homebrew-core/pull/141453#discussion_r1320821081
     # Remove this workaround when the same is removed in `zig.rb`.

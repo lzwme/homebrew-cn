@@ -1,18 +1,18 @@
 class AwsSsoCli < Formula
   desc "Securely manage AWS API credentials using AWS SSO"
   homepage "https://synfinatic.github.io/aws-sso-cli/"
-  url "https://ghfast.top/https://github.com/synfinatic/aws-sso-cli/archive/refs/tags/v2.2.4.tar.gz"
-  sha256 "4dbc9e3394652d6f07d8544c10d2d3f8e147fb647493dd3b3a87da34061ee7c6"
+  url "https://ghfast.top/https://github.com/synfinatic/aws-sso-cli/archive/refs/tags/v2.2.5.tar.gz"
+  sha256 "e8999b3db5ee6f90f27f44fc5dd4c19a3365d6a9d57a59ac167537963b07484c"
   license "GPL-3.0-only"
   head "https://github.com/synfinatic/aws-sso-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "214046d701961185450171fbb622077a23fc22c408396b50fb102029eb1f7907"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53cd25b08b41c0aee8e406363fce502486c0c21abe880d9aeef7375f91eca903"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9853df75dfab00191cdbbe55412a0aa1dfbc2172527fdf92f0322200f8ed20e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6d61c9ee7cc6e8045a2945dbab3ac485ed9e7b905e324faa19ac3cd1fb6644c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf28ca6a0d5cf543cc81bc82a0289671ff08ade4a9709378ee0b4631892fc3ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e806ede43367e51127afeaaa25fc44dc325e42e032a1aece5ae2448a958cfa5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "786f8ccf3a1ee4f3288a2c8154dc8e3a10cba86364c833cc27aa2a1e69425b3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2775fe173c6da56cd5da255e16850c4ea5339cd80cac968a7b02cc44309b83e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9b03784e7a64962e3e526bc3df1999f91c067096e49df59a1b2e241d132dc6b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8ee3bc04fe5507cd0d2b77511758d3bacb4d3558ffe7af7da85ffe8e2608cbf5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3a71fb38f30b6e762241d85ad9ce09246cc25c26b4466f712dbf85a95ea639b"
+    sha256 cellar: :any,                 x86_64_linux:  "cf93f9ef86ab35474fb33a1a6f6c0f8ad19c802855d6d46bbf205b6d9e54a599"
   end
 
   depends_on "go" => :build

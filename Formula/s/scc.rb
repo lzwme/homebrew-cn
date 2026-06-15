@@ -37,10 +37,10 @@ class Scc < Formula
       }
     C
 
-    expected_output = <<~EOS
+    expected_output = <<~CSV
       Language,Lines,Code,Comments,Blanks,Complexity,Bytes,Files,ULOC
       C,4,4,0,0,0,50,1,0
-    EOS
+    CSV
 
     assert_match expected_output, shell_output("#{bin}/scc -fcsv test.c")
   end

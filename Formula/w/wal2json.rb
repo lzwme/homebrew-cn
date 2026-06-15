@@ -49,11 +49,11 @@ class Wal2json < Formula
 
       datadir = testpath/postgresql.name
       system pg_ctl, "initdb", "-D", datadir
-      (datadir/"postgresql.conf").write <<~EOS, mode: "a+"
+      (datadir/"postgresql.conf").write <<~CONF, mode: "a+"
 
         shared_preload_libraries = 'wal2json'
         port = #{port}
-      EOS
+      CONF
       system pg_ctl, "start", "-D", datadir, "-l", testpath/"log-#{postgresql.name}"
       system pg_ctl, "stop", "-D", datadir
     end

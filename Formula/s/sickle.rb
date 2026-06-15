@@ -25,12 +25,12 @@ class Sickle < Formula
   end
 
   test do
-    (testpath/"test.fastq").write <<~EOS
+    (testpath/"test.fastq").write <<~FASTQ
       @U00096.2:1-70
       AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
       +
       IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII0000000000
-    EOS
+    FASTQ
     cmd = "#{bin}/sickle se -f test.fastq -t sanger -o /dev/stdout"
     assert_equal "GTGTC\n", shell_output(cmd).lines[1][-6..]
   end

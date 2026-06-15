@@ -163,7 +163,7 @@ class Rpm < Formula
       (testpath/"rpmbuild/#{dir}").mkpath
     end
     specfile = testpath/"rpmbuild/SPECS/test.spec"
-    specfile.write <<~EOS
+    specfile.write <<~SPEC
       Summary:   Test package
       Name:      test
       Version:   1.0
@@ -188,7 +188,7 @@ class Rpm < Formula
 
       %changelog
 
-    EOS
+    SPEC
     system bin/"rpmbuild", "-ba", specfile
     assert_path_exists testpath/"rpmbuild/SRPMS/test-1.0-1.src.rpm"
     assert_path_exists testpath/"rpmbuild/RPMS/noarch/test-1.0-1.noarch.rpm"

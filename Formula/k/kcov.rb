@@ -49,10 +49,10 @@ class Kcov < Formula
   end
 
   test do
-    (testpath/"hello.bash").write <<~EOS
+    (testpath/"hello.bash").write <<~BASH
       #!/bin/bash
       echo "Hello, world!"
-    EOS
+    BASH
 
     system bin/"kcov", testpath/"out", testpath/"hello.bash"
     assert_path_exists testpath/"out/hello.bash/coverage.json"

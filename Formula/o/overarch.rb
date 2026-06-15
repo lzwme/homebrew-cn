@@ -29,7 +29,7 @@ class Overarch < Formula
   end
 
   test do
-    (testpath/"test.edn").write <<~EOS
+    (testpath/"test.edn").write <<~CLOJURE
       \#{
         {:el :person
          :id :test-customer}
@@ -51,8 +51,8 @@ class Overarch < Formula
               {:ref :test-customer}
               {:ref :test-system}
               {:ref :customer-uses-system}]}}
-    EOS
-    expected = <<~EOS.chomp
+    CLOJURE
+    expected = <<~CLOJURE.chomp
       Model Warnings:
       {:build-problems (),
        :unresolved-refs-in-views (),
@@ -67,7 +67,7 @@ class Overarch < Formula
        :relations-count 1,
        :synthetic-count {:normal 3},
        :external-count {:internal 3}}
-    EOS
+    CLOJURE
     assert_equal expected, shell_output("#{bin}/overarch --model-dir=#{testpath} --model-info").chomp
   end
 end

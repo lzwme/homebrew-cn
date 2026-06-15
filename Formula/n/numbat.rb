@@ -25,9 +25,9 @@ class Numbat < Formula
   end
 
   test do
-    (testpath/"test.nbt").write <<~EOS
+    (testpath/"test.nbt").write <<~NBT
       print("pi = {pi}")
-    EOS
+    NBT
 
     output = shell_output("#{bin}/numbat test.nbt")
 

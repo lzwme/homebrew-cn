@@ -52,7 +52,7 @@ class OpenSp < Formula
   end
 
   test do
-    (testpath/"eg.sgml").write <<~EOS
+    (testpath/"eg.sgml").write <<~SGML
       <!DOCTYPE TESTDOC [
 
       <!ELEMENT TESTDOC - - (TESTELEMENT)+>
@@ -62,7 +62,7 @@ class OpenSp < Formula
       <TESTDOC>
         <TESTELEMENT>Hello</TESTELEMENT>
       </TESTDOC>
-    EOS
+    SGML
 
     system bin/"onsgmls", "--warning=type-valid", "eg.sgml"
   end

@@ -34,15 +34,15 @@ class Gup < Formula
     (testpath/"bin").mkpath
 
     (testpath/"hello").mkpath
-    (testpath/"hello/go.mod").write <<~EOS
+    (testpath/"hello/go.mod").write <<~MOD
       module example.com/hello
       go 1.22
-    EOS
-    (testpath/"hello/main.go").write <<~EOS
+    MOD
+    (testpath/"hello/main.go").write <<~GO
       package main
       import "fmt"
       func main() { fmt.Println("hello") }
-    EOS
+    GO
 
     cd testpath/"hello" do
       system "go", "install", "."

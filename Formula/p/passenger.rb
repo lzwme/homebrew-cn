@@ -126,7 +126,7 @@ class Passenger < Formula
     ruby_libdir = `#{HOMEBREW_PREFIX}/bin/passenger-config --ruby-libdir`.strip
     assert_equal "#{libexec}/src/ruby_supportlib", ruby_libdir
 
-    (testpath/"nginx.conf").write <<~EOS
+    (testpath/"nginx.conf").write <<~CONF
       load_module #{opt_libexec}/modules/ngx_http_passenger_module.so;
       worker_processes 4;
       error_log #{testpath}/error.log;
@@ -154,7 +154,7 @@ class Passenger < Formula
           error_log #{testpath}/error.log;
         }
       }
-    EOS
+    CONF
     system "#{Formula["nginx"].opt_bin}/nginx", "-t", "-c", testpath/"nginx.conf"
   end
 end

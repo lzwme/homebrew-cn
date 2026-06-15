@@ -41,13 +41,13 @@ class RustypasteCli < Formula
               'address = "127.0.0.1:8000"',
               %Q(address = "#{address}")
 
-    (testpath/".config/rustypaste/config.toml").write <<~EOS
+    (testpath/".config/rustypaste/config.toml").write <<~TOML
       [server]
       address = "http://#{address}"
 
       [paste]
       oneshot = false
-    EOS
+    TOML
 
     begin
       server = spawn rustypaste.opt_bin/"rustypaste"

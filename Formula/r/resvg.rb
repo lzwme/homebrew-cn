@@ -30,11 +30,11 @@ class Resvg < Formula
   end
 
   test do
-    (testpath/"circle.svg").write <<~EOS
+    (testpath/"circle.svg").write <<~SVG
       <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" version="1.1">
         <circle cx="50" cy="50" r="40" />
       </svg>
-    EOS
+    SVG
 
     system bin/"resvg", testpath/"circle.svg", testpath/"test.png"
     assert_path_exists testpath/"test.png"

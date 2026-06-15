@@ -70,13 +70,13 @@ class Haxe < Formula
     system bin/"haxe", "-v", "Std"
     system bin/"haxelib", "version"
 
-    (testpath/"HelloWorld.hx").write <<~EOS
+    (testpath/"HelloWorld.hx").write <<~HAXE
       import js.html.Console;
 
       class HelloWorld {
           static function main() Console.log("Hello world!");
       }
-    EOS
+    HAXE
     system bin/"haxe", "-js", "out.js", "-main", "HelloWorld"
 
     cmd = if OS.mac?

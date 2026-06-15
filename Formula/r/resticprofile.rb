@@ -38,11 +38,11 @@ class Resticprofile < Formula
   test do
     (testpath/"repository").mkpath
     (testpath/"password.txt").write shell_output("#{bin}/resticprofile generate --random-key").strip
-    (testpath/"profiles.toml").write <<~EOS
+    (testpath/"profiles.toml").write <<~TOML
       [default]
       repository = "local:#{testpath}/repository"
       password-file = "#{testpath}/password.txt"
-    EOS
+    TOML
 
     (testpath/"file.txt").write "Hello, Homebrew!"
 

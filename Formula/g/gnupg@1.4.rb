@@ -86,7 +86,7 @@ class GnupgAT14 < Formula
   end
 
   test do
-    (testpath/"batchgpg").write <<~EOS
+    (testpath/"batchgpg").write <<~GPG
       Key-Type: RSA
       Key-Length: 2048
       Subkey-Type: RSA
@@ -95,7 +95,7 @@ class GnupgAT14 < Formula
       Name-Email: testing@foo.bar
       Expire-Date: 1d
       %commit
-    EOS
+    GPG
     system bin/"gpg1", "--batch", "--gen-key", "batchgpg"
     (testpath/"test.txt").write "Hello World!"
     system bin/"gpg1", "--armor", "--sign", "test.txt"

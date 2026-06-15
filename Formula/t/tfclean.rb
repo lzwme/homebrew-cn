@@ -32,7 +32,7 @@ class Tfclean < Formula
     assert_match version.to_s, shell_output("#{bin}/tfclean --version")
 
     # https://github.com/opentofu/opentofu/blob/main/internal/command/e2etest/testdata/tf-provider/test.tfstate
-    (testpath/"test.tfstate").write <<~EOS
+    (testpath/"test.tfstate").write <<~JSON
       {
         "version": 4,
         "terraform_version": "0.13.0",
@@ -46,7 +46,7 @@ class Tfclean < Formula
         },
         "resources": []
       }
-    EOS
+    JSON
 
     system bin/"tfclean", testpath, "--tfstate=#{testpath}/test.tfstate"
   end

@@ -28,9 +28,9 @@ class MinijinjaCli < Formula
   end
 
   test do
-    (testpath/"test.jinja").write <<~EOS
+    (testpath/"test.jinja").write <<~JINJA
       Hello {{ name }}
-    EOS
+    JINJA
 
     assert_equal "Hello Homebrew\n", shell_output("#{bin}/minijinja-cli test.jinja --define name=Homebrew")
   end

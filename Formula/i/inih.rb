@@ -60,7 +60,7 @@ class Inih < Formula
       }
     C
 
-    (testpath/"test.ini").write <<~EOS
+    (testpath/"test.ini").write <<~INI
       [protocol]             ; Protocol configuration
       version=6              ; IPv6
 
@@ -69,9 +69,9 @@ class Inih < Formula
       email = bob@smith.com  ; And comments (like this) ignored
       active = true          ; Test a boolean
       pi = 3.14159           ; Test a floating point number
-    EOS
+    INI
 
-    expected = <<~EOS
+    expected = <<~INI
       [protocol]
       version = 6
 
@@ -80,7 +80,7 @@ class Inih < Formula
       email = bob@smith.com
       active = true
       pi = 3.14159
-    EOS
+    INI
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-linih", "-o", "test"
     assert_equal expected, shell_output("./test test.ini")

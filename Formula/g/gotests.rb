@@ -29,7 +29,7 @@ class Gotests < Formula
       	return x + y
       }
     GO
-    expected = <<~EOS
+    expected = <<~GO
       Generated Test_add
       package main
 
@@ -55,7 +55,7 @@ class Gotests < Formula
       		})
       	}
       }
-    EOS
+    GO
     assert_equal expected, shell_output("#{bin}/gotests -all test.go")
   end
 end

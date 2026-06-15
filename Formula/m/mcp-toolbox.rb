@@ -31,12 +31,12 @@ class McpToolbox < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/toolbox --version")
 
-    (testpath/"tools.yaml").write <<~EOS
+    (testpath/"tools.yaml").write <<~YAML
       sources:
         my-sqlite-memory-db:
           kind: "sqlite"
           database: ":memory:"
-    EOS
+    YAML
 
     port = free_port
     pid = spawn bin/"toolbox", "--tools-file", testpath/"tools.yaml", "--port", port.to_s

@@ -28,11 +28,11 @@ class KubectlCnpg < Formula
     system "go", "build", *std_go_args(ldflags:), "./cmd/kubectl-cnpg"
     generate_completions_from_executable(bin/"kubectl-cnpg", shell_parameter_format: :cobra)
 
-    kubectl_plugin_completion = <<~EOS
+    kubectl_plugin_completion = <<~SH
       #!/usr/bin/env sh
       # Call the __complete command passing it all arguments
       kubectl cnpg __complete "$@"
-    EOS
+    SH
 
     (bin/"kubectl_complete-cnpg").write(kubectl_plugin_completion)
     chmod 0755, bin/"kubectl_complete-cnpg"

@@ -3,20 +3,20 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/0b/47/fc6693accfae4dc0cb8c11668d8bf15c2d8b5ed76738b34c0ef5cd58bfc8/keepercommander-18.0.7.tar.gz"
-  sha256 "90f422ae3edbd43921ce0e13d6d75aac1efa05229ec1b6636369317b4edab985"
+  url "https://files.pythonhosted.org/packages/2e/56/74bc590f17897075f44f79fa93a2b3f0258daefb42ae0c1d958d8508324b/keepercommander-18.0.8.tar.gz"
+  sha256 "aebb23132a715fb6dd940e546f704d7690eb94b63a858b09e13e1ac91888f699"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1c0e83130ed1a86d4d1066b32aebefed10f51fed6718dd40bdb409318307ff15"
-    sha256 cellar: :any, arm64_sequoia: "09e77e2ef2563cc9b24cca8717aa14dfd5c0089a9af78f062fe6b91d63554589"
-    sha256 cellar: :any, arm64_sonoma:  "507e29408c2b19c8172f7cfa535957785220eb079b7489ba64b01d7d0248185b"
-    sha256 cellar: :any, sonoma:        "5ff0e2b447db5fa4578e7bd3c5757b7dd183c1443671fe38104afc95fde489dd"
-    sha256 cellar: :any, arm64_linux:   "1383bb91d2b9a8764243e186b4fa5e2c6451969e2e5a7430efe48ad20d5385bb"
-    sha256 cellar: :any, x86_64_linux:  "2ce9a0bb64ddd693f9fa3a158f09e76eb99cb920a824a9e77036ad4f96534272"
+    sha256 cellar: :any, arm64_tahoe:   "f185e964e584e2a61f29b3829942f87fa0b731c1758fc73e6e6ddacf0788ecb0"
+    sha256 cellar: :any, arm64_sequoia: "009c8cc454c491587fa24cf911426e03abc8112370ca1d217830d4151c484b1c"
+    sha256 cellar: :any, arm64_sonoma:  "f73cabb005a089bd258fb3b09f6fdb5358f9a53b2035f38eb05c3b281db8e117"
+    sha256 cellar: :any, sonoma:        "8d7064b55523035a4a3cdbb0bdb48c42a695af2aae1b9a4fa7b494d697c63335"
+    sha256 cellar: :any, arm64_linux:   "a3876fd87e8599d1953bf6da01fde9038a77c62bcc9d61ddfd0e2f1c9d43375c"
+    sha256 cellar: :any, x86_64_linux:  "58e32f9e5630048444b6b4b6d518af4f402a786cc82f31a71cdb8ac69a605225"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -327,8 +327,8 @@ class KeeperCommander < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/af/44/c833e6b746ffb654e9abacf7ad6c2480a9c8c42e9637c1ae849964fb4dde/wcwidth-0.8.0.tar.gz"
-    sha256 "68a882ff6d14e3d14e0cae590b96a0551be64ce4905408112a8254434a1bdf69"
+    url "https://files.pythonhosted.org/packages/49/b4/51fe890511f0f242d07cb1ebe6a5b6db417262b9d2568b460347c57d95cc/wcwidth-0.8.1.tar.gz"
+    sha256 "faf5b4a5366a72dc49cad48cdf21f52bdf63bdda995178e483ba247ff79089b9"
   end
 
   resource "websockets" do

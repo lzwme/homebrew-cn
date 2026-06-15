@@ -37,7 +37,7 @@ class SarifFmt < Formula
       }
     CPP
 
-    (testpath/"test.sarif").write <<~EOS
+    (testpath/"test.sarif").write <<~JSON
       {
         "runs": [
           {
@@ -71,7 +71,7 @@ class SarifFmt < Formula
         ],
         "version": "2.1.0"
       }
-    EOS
+    JSON
 
     output = shell_output("#{bin}/sarif-fmt -i test.sarif")
     assert_match "warning: 'atoi' used to convert a string to an integer value", output

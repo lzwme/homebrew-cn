@@ -41,12 +41,12 @@ class Inlyne < Formula
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     test_markdown = testpath/"test.md"
-    test_markdown.write <<~EOS
+    test_markdown.write <<~MARKDOWN
       _lorem_ **ipsum** dolor **sit** _amet_
-    EOS
+    MARKDOWN
 
     script = (testpath/"test.exp")
-    script.write <<~EOS
+    script.write <<~EXPECT
       #!/usr/bin/env expect -f
       set timeout 2
 
@@ -55,7 +55,7 @@ class Inlyne < Formula
       send -- "q\r"
 
       expect eof
-    EOS
+    EXPECT
 
     system "expect", "-f", "test.exp"
   end

@@ -93,10 +93,10 @@ class Nu < Formula
     inreplace "Nukefile" do |s|
       s.gsub!('(SH "sudo ', '(SH "') # don't use sudo to install
       s.gsub!("\#{@destdir}/Library/Frameworks", "\#{@prefix}/Frameworks")
-      s.sub!(/^;; source files$/, <<~EOS)
+      s.sub!(/^;; source files$/, <<~LISP)
         ;; source files
         (set @framework_install_path "#{frameworks}")
-      EOS
+      LISP
     end
 
     # Remove bundled libffi

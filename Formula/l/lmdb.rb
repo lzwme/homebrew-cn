@@ -37,7 +37,7 @@ class Lmdb < Formula
   end
 
   def pc_file
-    <<~EOS
+    <<~PC
       prefix=#{opt_prefix}
       exec_prefix=${prefix}
       libdir=${prefix}/lib
@@ -49,7 +49,7 @@ class Lmdb < Formula
       Version: #{version}
       Libs: -L${libdir} -llmdb
       Cflags: -I${includedir}
-    EOS
+    PC
   end
 
   test do

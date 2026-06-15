@@ -28,18 +28,18 @@ class Saxon < Formula
   def install
     libexec.install Dir["*.jar", "doc", "lib", "notices"]
     bin.write_jar_script libexec/"saxon-he-#{version.major_minor}.jar", "saxon"
-    (bin/"gizmo").write <<~EOS
+    (bin/"gizmo").write <<~BASH
       #!/bin/bash
       export JAVA_HOME="#{Language::Java.overridable_java_home_env[:JAVA_HOME]}"
       exec "${JAVA_HOME}/bin/java" -cp "#{libexec}/saxon-he-#{version.major_minor}.jar" net.sf.saxon.Gizmo "$@"
-    EOS
+    BASH
   end
 
   test do
     (testpath/"test.xml").write <<~XML
       <test>It works!</test>
     XML
-    (testpath/"test.xsl").write <<~XSL
+    (testpath/"test.xsl").write <<~XML
       <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
         <xsl:template match="/">
           <html>
@@ -49,7 +49,7 @@ class Saxon < Formula
           </html>
         </xsl:template>
       </xsl:stylesheet>
-    XSL
+    XML
     assert_equal <<~HTML.chop, shell_output("#{bin}/saxon test.xml test.xsl")
       <!DOCTYPE HTML>
       <html>

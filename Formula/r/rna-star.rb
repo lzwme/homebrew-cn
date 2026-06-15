@@ -37,10 +37,10 @@ class RnaStar < Formula
   end
 
   test do
-    (testpath/"test.fasta").write <<~EOS
+    (testpath/"test.fasta").write <<~FASTA
       >U00096.2:1-70
       AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
-    EOS
+    FASTA
     out = shell_output("#{bin}/STAR --runMode genomeGenerate --genomeFastaFiles test.fasta --genomeSAindexNbases 2")
     assert_match "finished successfully", out
   end

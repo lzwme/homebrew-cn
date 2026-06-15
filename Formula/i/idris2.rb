@@ -36,13 +36,13 @@ class Idris2 < Formula
   end
 
   test do
-    (testpath/"hello.idr").write <<~EOS
+    (testpath/"hello.idr").write <<~IDRIS
       module Main
       main : IO ()
       main =
         let myBigNumber = (the Integer 18446744073709551615 + 1) in
         putStrLn $ "Hello, Homebrew! This is a big number: " ++ ( show $ myBigNumber )
-    EOS
+    IDRIS
 
     system bin/"idris2", "hello.idr", "-o", "hello"
     assert_equal "Hello, Homebrew! This is a big number: 18446744073709551616",

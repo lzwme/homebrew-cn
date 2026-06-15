@@ -27,11 +27,11 @@ class ParquetCli < Formula
       system "mvn", "dependency:copy-dependencies"
       libexec.install "target/parquet-cli-#{version}.jar"
       libexec.install Dir["target/dependency/*"]
-      (bin/"parquet").write <<~EOS
+      (bin/"parquet").write <<~SH
         #!/bin/sh
         set -e
         exec "#{Formula["openjdk@21"].opt_bin}/java" -cp "#{libexec}/*" org.apache.parquet.cli.Main "$@"
-      EOS
+      SH
     end
 
     (pkgshare/"test").install "parquet-avro/src/test/avro/stringBehavior.avsc"

@@ -46,11 +46,11 @@ class Qman < Formula
     else
       "mandb"
     end
-    inreplace pkgetc/"qman.conf", "[misc]", <<~EOS
+    inreplace pkgetc/"qman.conf", "[misc]", <<~CONF
       [misc]
       system_type=#{systype}
       groff_path=#{Formula["groff"].opt_bin}/groff
-    EOS
+    CONF
   end
 
   test do

@@ -44,11 +44,11 @@ class Licensefinder < Formula
     ENV["GEM_PATH"] = ENV["GEM_HOME"] = testpath
     ENV.prepend_path "PATH", Formula["ruby"].opt_bin
 
-    (testpath/"Gemfile").write <<~EOS
+    (testpath/"Gemfile").write <<~RUBY
       source 'https://rubygems.org'
       gem 'license_finder', '#{version}'
       gem 'racc'
-    EOS
+    RUBY
 
     system "bundle", "install"
     assert_match "license_finder, #{version}, #{license}",

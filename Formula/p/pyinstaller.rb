@@ -3,20 +3,20 @@ class Pyinstaller < Formula
 
   desc "Bundle a Python application and all its dependencies"
   homepage "https://pyinstaller.org/"
-  url "https://files.pythonhosted.org/packages/46/60/d03d52e6690d4e9caf333dcd14550cde634ce6c118b3bc8fa3112c3186fd/pyinstaller-6.20.0.tar.gz"
-  sha256 "95c5c7e03d5d61e9dfb8ef259c699cf492bb1041beb6dbe83696608cec07347a"
+  url "https://files.pythonhosted.org/packages/d5/4d/ec706c3fcf39e26888c35b39615ff4d5865d184069666c47492cff1fbe50/pyinstaller-6.21.0.tar.gz"
+  sha256 "bb9fab705983e393a2d1cac77d6972513057ad800215fd861dc15ff5272e98fd"
   license "GPL-2.0-or-later"
   head "https://github.com/pyinstaller/pyinstaller.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e7bde3effe6d5704f85e126f31b1f97cfdbc77193d49f80c1e349eb440e0c1a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3bf1cc164c94bf9fea352935c87ceea78cbd7741b40dd309055eaac31d6c1a1d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9098d66121dd0399504f4d1b4c71cee6048cb5bc1c07dbb754c9a77ef1be80f3"
-    sha256 cellar: :any_skip_relocation, tahoe:         "74d0bf37ef712691a6ad502ad773c8a9c9926b036c1c91fc0a54d5bb60507561"
-    sha256 cellar: :any_skip_relocation, sequoia:       "cc65d81b8970ec9e0e383410266a3a1cfc9d61c6e0060d8f0f8ec8e98b2bacac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68685e7133a973aecfa42ac084ff6e9d0012765c87eb49473416e078f2838f3f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d77020b961151ac0ed3e8eb32c9634ca1e4065e2c0211326e5c45be0cd7a254f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11a70ececf86df4d0430126c3b291368ed3cfd6af4983cfdd5a9b631ff00fcec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da3c4081f26d74c3b3b9a1a6050324bbbecfa65ecd2ab080b2215c12e1ff65a1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ffcfcb1e60af40ff315f2ac4b23cc4da2b594cb2540032e851caa4e145c9a407"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e7bf1936ab5258363d844bf46302dd0c7f1b5d388043d4865d180cca55489be"
+    sha256 cellar: :any_skip_relocation, tahoe:         "a288f3b4cc40729d3af05ab5837f433b1bcd9cc428053b9655e619d432164cfa"
+    sha256 cellar: :any_skip_relocation, sequoia:       "e25d1a82b8ec496c0caeb336cb5e679a1aec4fef826991df0ba5662c626a55d0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9350e81f28858c475be8d502afa8212041137733ce657c3dfcf4ce280d84d439"
+    sha256 cellar: :any,                 arm64_linux:   "5c92eb4b73ecb4367a13e92e077fbcaa644d2be676d2569715da0d5500c59dd3"
+    sha256 cellar: :any,                 x86_64_linux:  "4359ea7c62a43c94f182de3bbe9e2d67dacd835c6038d5d632b2e44dc3f7280f"
   end
 
   depends_on "python@3.14"
@@ -38,13 +38,13 @@ class Pyinstaller < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/df/de/0d2b39fb4af88a0258f3bac87dfcbb48e73fbdea4a2ed0e2213f9a4c2f9a/packaging-26.1.tar.gz"
-    sha256 "f042152b681c4bfac5cae2742a55e103d27ab2ec0f3d88037136b6bfe7c9c5de"
+    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
+    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
   end
 
   resource "pyinstaller-hooks-contrib" do
-    url "https://files.pythonhosted.org/packages/c7/fe/9278c29394bf69169febc21f96b4252c3ee7c8ec22c2fc545004bed47e71/pyinstaller_hooks_contrib-2026.4.tar.gz"
-    sha256 "766c281acb1ecc32e21c8c667056d7ebf5da0aabd5e30c219f9c2a283620eeaa"
+    url "https://files.pythonhosted.org/packages/94/5b/c9fe0db5e83ee1c39b2258fa21d23b15e1a60786b6c5990ee5074ead8bb6/pyinstaller_hooks_contrib-2026.6.tar.gz"
+    sha256 "bef5002c32f4f50bd55b005da12cff64eca8783e7eaf86a06a62410164bab725"
   end
 
   resource "setuptools" do

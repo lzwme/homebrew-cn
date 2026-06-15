@@ -31,7 +31,7 @@ class Jmeter < Formula
   end
 
   test do
-    (testpath/"test.jmx").write <<~EOS
+    (testpath/"test.jmx").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
         <hashTree>
@@ -65,7 +65,7 @@ class Jmeter < Formula
           </hashTree>
         </hashTree>
       </jmeterTestPlan>
-    EOS
+    XML
     refute_match "Uncaught Exception", shell_output("#{bin}/jmeter -n -t test.jmx 2>&1")
   end
 end

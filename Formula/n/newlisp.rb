@@ -47,10 +47,10 @@ class Newlisp < Formula
 
   test do
     path = testpath/"test.lsp"
-    path.write <<~EOS
+    path.write <<~LISP
       (println "hello")
       (exit 0)
-    EOS
+    LISP
 
     assert_equal "hello\n", shell_output("#{bin}/newlisp #{path}")
   end

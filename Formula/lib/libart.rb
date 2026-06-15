@@ -46,12 +46,12 @@ class Libart < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/libart2-config --version")
 
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <libart_lgpl/art_svp.h>
       int main(void) {
         return 0;
       }
-    EOS
+    C
 
     system ENV.cc, "-o", "test", "test.c", "-I#{include}/libart-2.0", "-L#{lib}", "-lart_lgpl_2"
     system "./test"

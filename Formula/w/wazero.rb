@@ -33,7 +33,7 @@ class Wazero < Formula
   test do
     assert_equal version.to_s, shell_output("#{bin}/wazero version").chomp
 
-    (testpath/"mount.wat").write <<~EOS
+    (testpath/"mount.wat").write <<~WASM
       ;; print the preopen directory path (guest side of the mount).
       (module
         (import "wasi_snapshot_preview1" "fd_prestat_get"
@@ -73,7 +73,7 @@ class Wazero < Formula
           (drop) ;; ignore the errno returned
         )
       )
-    EOS
+    WASM
 
     system "wat2wasm", testpath/"mount.wat", "-o", testpath/"mount.wasm"
 

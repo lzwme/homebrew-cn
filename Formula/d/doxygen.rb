@@ -14,29 +14,42 @@ class Doxygen < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e10e1a237c33f3aec3117f565c6a57edfc2267add2dfbeeb71bdb12edcdfc7dd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ef2bf9c4dcde66dddaac5fc04d52c83e4817f66d497c3de444e23991633145d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8978bef041590908436d0ac06f44552f4d69555071c1079a98c67d0a71f7ba7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3c92988ecdcac370c67bb4c8e95deffb5b954344385db6f66226542973a6f942"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ae11fe672b4e5d6fc8f77ae846e95da2e957c537f22d57efe93c3c9eeba9c60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37c3265613b0d5334666077a3fb8264bede87da235cdc6abfd223243fd714205"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "f7300b3bdd8a8220e964932b08cef4fe5e4e689ec4c2a80dd865e986bfeb8683"
+    sha256 cellar: :any, arm64_sequoia: "615adfdacb9b083f90f0a9ed91cbf11296b1f538f69aafb528423b194e3a5fdd"
+    sha256 cellar: :any, arm64_sonoma:  "98a9385f0827df88a9009d371784610cfd1e64fb8c2ea8b3c85de71d76155add"
+    sha256 cellar: :any, sonoma:        "973d4bc27b8a9626279d3e66ebf0fb4d322440e3eabac90c885388cc673bdebe"
+    sha256 cellar: :any, arm64_linux:   "aa3908c04fe32fc6f72130f455c64d94f640ed4047a15b22db049636b0f57329"
+    sha256 cellar: :any, x86_64_linux:  "a21382ddddf927450b1729fe595a133d2490f177615fa87b037aa3a021970c1b"
   end
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
+  depends_on "fmt"
+  depends_on "spdlog"
 
   uses_from_macos "flex" => :build, since: :big_sur
   uses_from_macos "python" => :build
+  uses_from_macos "sqlite"
 
   def install
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DPython_EXECUTABLE=#{which("python3")}",
-                    *std_cmake_args
+    # Remove bundled dependencies
+    rm_r(%w[
+      deps/fmt
+      deps/spdlog
+      deps/sqlite3
+    ])
+
+    args = %W[
+      -DPython_EXECUTABLE=#{which("python3")}
+      -Duse_sys_fmt=ON
+      -Duse_sys_spdlog=ON
+      -Duse_sys_sqlite3=ON
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-
-    system "cmake", "-S", ".", "-B", "build", "-Dbuild_doc=1", *std_cmake_args
-    man1.install buildpath.glob("build/man/*.1")
   end
 
   test do

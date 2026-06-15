@@ -45,13 +45,13 @@ class Never < Formula
   end
 
   test do
-    (testpath/"hello.nev").write <<~EOS
+    (testpath/"hello.nev").write <<~NEV
       func main() -> int
       {
         prints("Hello World!\\n");
         0
       }
-    EOS
+    NEV
     assert_match "Hello World!", shell_output("#{bin}/never -f hello.nev")
 
     (testpath/"test.c").write <<~C

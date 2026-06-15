@@ -33,7 +33,7 @@ class Spin < Formula
   end
 
   test do
-    (testpath/"test.pml").write <<~EOS
+    (testpath/"test.pml").write <<~PML
       mtype = { ruby, python };
       mtype = { golang, rust };
       mtype language = ruby;
@@ -47,7 +47,7 @@ class Spin < Formula
           printf("language is %e", language)
         od
       }
-    EOS
+    PML
     output = shell_output("#{bin}/spin #{testpath}/test.pml")
     assert_match "language is golang", output
   end

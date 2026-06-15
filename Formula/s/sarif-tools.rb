@@ -131,13 +131,13 @@ class SarifTools < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/sarif --version")
 
-    (testpath/"test.sarif").write <<~EOS
+    (testpath/"test.sarif").write <<~JSON
       {
         "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
         "version": "2.1.0",
         "runs": []
       }
-    EOS
+    JSON
 
     output = shell_output("#{bin}/sarif summary test.sarif")
     assert_match "error: 0\n\nwarning: 0\n\nnote: 0", output

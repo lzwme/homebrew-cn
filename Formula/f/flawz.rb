@@ -1,21 +1,18 @@
 class Flawz < Formula
   desc "Terminal UI for browsing security vulnerabilities (CVEs)"
   homepage "https://github.com/orhun/flawz"
-  url "https://ghfast.top/https://github.com/orhun/flawz/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "c5d30dfa1c07f5e5337f88c8a44c4c22307f5ade7ba117ef6370c39eb3e588b0"
+  url "https://ghfast.top/https://github.com/orhun/flawz/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "641264999d2a5d662bc3d9c3994fcc580b92a2e9051c79fbcb8fdb2220924f30"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/orhun/flawz.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "046a2a4a09bd81b23f85f689737a922f89312f70d3624f564930014e74d38e45"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c97b5cd0db7f806b02e8b7a22bfffd3c3305780a218d558ca0053220205ba882"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59c66cdabc185ffcb53cb7a481ad8ef5866aceae91ae3519f6e8222bb23f874a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0d41b1a2483d47ffff21a20a37b678d2b37ea25363010a592e5efe57ac9a5033"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0120b7ac67721ca6d74ec1fdf08e082fba851447998f54d698afb0a18f9f1d24"
-    sha256 cellar: :any_skip_relocation, ventura:       "63ea238fa5329800901bba640c22d65b23d7971d6b15a4096121baeb7848c496"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d9de54dbf400fb51a6b4a749309ee41df0e2a0dd0048c0ff73f349af5eafc41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76314b097693e33dfaffe268be3fd2dea5519df259c39958e6b6cffa334bfec2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c93092557f6fb166c0b746bb3e64abc4c15394d1fc90726219b814a4469b14b1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96d0de83f22314aad4ab7c0800ff3ccb2ee25640ae821c94c281960f201c7b1b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0bddc1c8e9c928e93d485d194148c9e6d996beadf9c50b303b057acc6d9986d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "65bdc4361aa4173feaa4351dfb68ae2315c35dd83103d398c902df5815ace1f0"
+    sha256 cellar: :any,                 arm64_linux:   "2c6c3e1564895ebdd2071af7b20936afaf36c94c0548ec5346e79588832d8b71"
+    sha256 cellar: :any,                 x86_64_linux:  "8d4caff11b22a623428797da9903d523353151292db51e18531fd8edadcf2b76"
   end
 
   depends_on "pkgconf" => :build
@@ -49,10 +46,12 @@ class Flawz < Formula
     assert_match version.to_s, shell_output("#{bin}/flawz --version")
 
     require "pty"
-    PTY.spawn(bin/"flawz", "--url", "https://nvd.nist.gov/feeds/json/cve/1.1") do |r, _w, _pid|
-      assert_match "Syncing CVE Data", r.read
-    rescue Errno::EIO
-      # GNU/Linux raises EIO when read is done on closed pty
-    end
+    output_log = testpath/"output.log"
+    pid = PTY.spawn(bin/"flawz", [:out, :err] => output_log.to_s).last
+    sleep 2
+    assert_match "Syncing CVE Data", output_log.read
+  ensure
+    Process.kill "TERM", pid
+    Process.wait pid
   end
 end

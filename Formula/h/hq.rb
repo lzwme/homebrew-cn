@@ -33,9 +33,9 @@ class Hq < Formula
 
   test do
     html = testpath/"test.html"
-    html.write <<~EOS
+    html.write <<~HTML
       <p class="foo">Test</p>
-    EOS
+    HTML
     output = shell_output("#{bin}/hq '{foo: .foo}' test.html")
     assert_match '{"foo":"Test"}', output
   end

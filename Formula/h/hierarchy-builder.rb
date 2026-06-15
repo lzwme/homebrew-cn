@@ -51,9 +51,9 @@ class HierarchyBuilder < Formula
     ROCQ
 
     ENV["OCAMLFIND_CONF"] = Formula["rocq-elpi"].libexec/"lib/findlib.conf"
-    assert_equal <<~EOS, shell_output("#{Formula["rocq"].bin}/rocq compile test.v")
+    assert_equal <<~ROCQ, shell_output("#{Formula["rocq"].bin}/rocq compile test.v")
       forall (M : AddComoid.type) (x : M), x + x = 0
            : Prop
-    EOS
+    ROCQ
   end
 end

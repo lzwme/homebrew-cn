@@ -3,18 +3,18 @@ class Parsedmarc < Formula
 
   desc "DMARC report analyzer and visualizer"
   homepage "https://domainaware.github.io/parsedmarc/"
-  url "https://files.pythonhosted.org/packages/c6/e2/e0a12251044896de5540be69c774ba3be6c70c59bde9e7c85dcc8672af85/parsedmarc-10.1.0.tar.gz"
-  sha256 "778a63babea72f63e59c3c007fa5f0cb354006582ff3f22ad4b18b87676bc50d"
+  url "https://files.pythonhosted.org/packages/fc/58/61d37e9ef3c49f2ea4a06022477a0b8b43321f062b5cc9346b27fb592bbc/parsedmarc-10.1.1.tar.gz"
+  sha256 "25fcacec2b6021d321060562fc2224bc35e4bae3903666765056eef9168bcc3e"
   license "Apache-2.0"
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a9a772850da416b31212f78906a64a9cf0cc637fa3649d0c22de93481eb02123"
-    sha256 cellar: :any, arm64_sequoia: "6e37b53666859ca95a9b421a06f58efdb6e2aa3d1c12de704142137b8a8852c4"
-    sha256 cellar: :any, arm64_sonoma:  "bb9e09f57db4bdd19d10cbdf15edae78ad89c257d3c56132a74f7a9ddfc26272"
-    sha256 cellar: :any, sonoma:        "cf9b753ce756cf93ed0c2858443373778cb19f3e1b195acbf4260f12b7a4e425"
-    sha256 cellar: :any, arm64_linux:   "badb10769d31fcdc5b47c284d333e220e528101867fc4bc4e27bf192e2393a46"
-    sha256 cellar: :any, x86_64_linux:  "9d134e88e78b5153db4bb13567d012c5d37fc677aac3e0934b3e0b8e9b636364"
+    sha256 cellar: :any, arm64_tahoe:   "4ae4e13b61d824aabc6958ea4bf4852a870993686816b85d99ef7ac0a498449b"
+    sha256 cellar: :any, arm64_sequoia: "0d2bb17c86f2b23ff87e56e4dd3b61bcd352aaf8eb5d4de6eba3b702ca3e0013"
+    sha256 cellar: :any, arm64_sonoma:  "7a84d3c71b207a34cc2853624ff3b5f1fc38d0b452f37e5154941f5f8e018e0f"
+    sha256 cellar: :any, sonoma:        "88acb30200806439d5b0b7eef630ba42eff8d76ec2a108b9784b5d1d12e474ea"
+    sha256 cellar: :any, arm64_linux:   "0fe678172dfcb26530d92f4f9a2f859e06bc53ea7496b008b188b59acba6f9c4"
+    sha256 cellar: :any, x86_64_linux:  "ae2de796fb748bd9f1d1cbcbd6c904afb343a2a592b1a1aeb7774dfaaff1b1c5"
   end
 
   depends_on "rust" => :build
@@ -239,8 +239,8 @@ class Parsedmarc < Formula
   end
 
   resource "mailsuite" do
-    url "https://files.pythonhosted.org/packages/6c/f9/657ec0d2af2f4ef80abdf5fa0980914bb7477369928b5802a2010457b8fc/mailsuite-2.2.1.tar.gz"
-    sha256 "66215e6e5f97e3696233083878ced20193df029fb450887a5bbbaca9cc8d903f"
+    url "https://files.pythonhosted.org/packages/9c/8f/e0119c739835bc0c7077e8c2f37a167771efbe65de090dbc8c70009f1bce/mailsuite-2.2.2.tar.gz"
+    sha256 "d1a45d3539e72022a5ee0966e9deb66924363f6121a3041a963d54725773e103"
   end
 
   resource "maxminddb" do

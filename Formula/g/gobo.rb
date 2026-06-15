@@ -81,7 +81,7 @@ class Gobo < Formula
       </system>
     XML
     mkdir "src" do
-      (testpath/"hello.e").write <<~EOS
+      (testpath/"hello.e").write <<~EIFFEL
         note
           description:
             "Hello World test program"
@@ -95,7 +95,7 @@ class Gobo < Formula
             std.output.put_string ("Hello, world!")
           end
         end
-      EOS
+      EIFFEL
     end
     system bin/"geant", "-v", "compile_ge"
     assert_equal "Hello, world!", shell_output(testpath/"hello")

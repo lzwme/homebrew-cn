@@ -32,12 +32,12 @@ class Jsbeautifier < Formula
 
   test do
     javascript = "if ('this_is'==/an_example/){of_beautifier();}else{var a=b?(c%d):e[f];}"
-    assert_equal <<~EOS.chomp, pipe_output(bin/"js-beautify", javascript)
+    assert_equal <<~JAVASCRIPT.chomp, pipe_output(bin/"js-beautify", javascript)
       if ('this_is' == /an_example/) {
           of_beautifier();
       } else {
           var a = b ? (c % d) : e[f];
       }
-    EOS
+    JAVASCRIPT
   end
 end

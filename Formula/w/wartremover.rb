@@ -30,14 +30,14 @@ class Wartremover < Formula
   end
 
   test do
-    (testpath/"foo").write <<~EOS
+    (testpath/"foo").write <<~SCALA
       object Foo {
         def foo() {
           var msg = "Hello World"
           println(msg)
         }
       }
-    EOS
+    SCALA
     cmd = "#{bin}/wartremover -traverser org.wartremover.warts.Unsafe foo 2>&1"
     assert_match "var is disabled", shell_output(cmd, 1)
   end

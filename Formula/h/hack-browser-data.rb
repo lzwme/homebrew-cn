@@ -1,18 +1,18 @@
 class HackBrowserData < Formula
   desc "Command-line tool for decrypting and exporting browser data"
   homepage "https://github.com/moonD4rk/HackBrowserData"
-  url "https://ghfast.top/https://github.com/moonD4rk/HackBrowserData/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "80d2b77ba764aaf88bae49d7a071c0309b8fb05f45af884b407ec58183b6478c"
+  url "https://ghfast.top/https://github.com/moonD4rk/HackBrowserData/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "8efd8b28d85ef96683ee5f501e882685108ce78a8e128d42a194c949da74465f"
   license "MIT"
   head "https://github.com/moonD4rk/HackBrowserData.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7b249fa7e8dc58e6e3aa31174dff9d67b788d91248866c5e9e60cf0c7e06c4e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7b249fa7e8dc58e6e3aa31174dff9d67b788d91248866c5e9e60cf0c7e06c4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7b249fa7e8dc58e6e3aa31174dff9d67b788d91248866c5e9e60cf0c7e06c4e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "04be65e5e5a9e26b6021468947d1052ce9453a07bc0c1daa2d02f3317e77fe89"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eea96e3264bb785543efea3792ff7f3167c530e5e11a134747ef386d4ae56123"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43ce0a5471d222a7edb530c9370199fc6db91475b6fb9c47f17f23d870708279"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3306f065ac1cc16c3b7413c2b9eeb461ea75028d056fcf9e7871c60877b018a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3306f065ac1cc16c3b7413c2b9eeb461ea75028d056fcf9e7871c60877b018a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3306f065ac1cc16c3b7413c2b9eeb461ea75028d056fcf9e7871c60877b018a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f95bb007e59bd617cf6dadaf0a653ec63378afd74bfd9f9ede855b4a27639591"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc707b30d1f2661aaf375cfa65b52fb07ae4eb370867beda460b40c0554320fb"
+    sha256 cellar: :any,                 x86_64_linux:  "0cd8211b663f69a5746c08e4edbb20411c137b72ce04610e8a468b050e042669"
   end
 
   depends_on "go" => :build

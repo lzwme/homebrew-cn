@@ -20,10 +20,10 @@ class Jslint4java < Formula
 
   test do
     path = testpath/"test.js"
-    path.write <<~EOS
+    path.write <<~JAVASCRIPT
       var i = 0;
       var j = 1  // no semicolon
-    EOS
+    JAVASCRIPT
     output = shell_output("#{bin}/jslint4java #{path}", 1)
     assert_match "2:10:Expected ';' and instead saw '(end)'", output
   end

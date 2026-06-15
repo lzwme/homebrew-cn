@@ -39,10 +39,10 @@ class Ryelang < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/rye --version")
 
-    (testpath/"hello.rye").write <<~EOS
+    (testpath/"hello.rye").write <<~RYE
       "Hello World" .replace "World" "Mars" |print
       "12 8 12 16 8 6" .load .unique .sum |print
-    EOS
+    RYE
     assert_path_exists testpath/"hello.rye"
     output = shell_output("#{bin}/rye hello.rye 2>&1")
     assert_match "Hello Mars\n42", output.strip

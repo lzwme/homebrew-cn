@@ -49,13 +49,13 @@ class Mlkit < Formula
   end
 
   test do
-    (testpath/"test.sml").write <<~EOS
+    (testpath/"test.sml").write <<~SML
       fun f(x) = x + 2
       val a = [1,2,3,10]
       val b = List.foldl (op +) 0 (List.map f a)
       val res = if b = 24 then "OK" else "ERR"
       val () = print ("Result: " ^ res ^ "\\n")
-    EOS
+    SML
     system bin/"mlkit", "-o", "test", "test.sml"
     assert_equal "Result: OK\n", shell_output("./test")
   end

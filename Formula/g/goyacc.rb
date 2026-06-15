@@ -24,7 +24,7 @@ class Goyacc < Formula
   end
 
   test do
-    (testpath/"test.y").write <<~EOS
+    (testpath/"test.y").write <<~YACC
       %{
       package main
       %}
@@ -44,7 +44,7 @@ class Goyacc < Formula
             | NUM           { $$ = $1; }
             ;
       %%
-    EOS
+    YACC
 
     system bin/"goyacc", "-o", "test.go", "test.y"
     assert_match "package main", (testpath/"test.go").read

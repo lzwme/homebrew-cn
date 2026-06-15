@@ -32,13 +32,13 @@ class Tcsh < Formula
   end
 
   test do
-    (testpath/"test.csh").write <<~EOS
+    (testpath/"test.csh").write <<~CSH
       #!#{bin}/tcsh -f
       set ARRAY=( "t" "e" "s" "t" )
       foreach i ( `seq $#ARRAY` )
         echo -n $ARRAY[$i]
       end
-    EOS
+    CSH
     assert_equal "test", shell_output("#{bin}/tcsh ./test.csh")
   end
 end

@@ -97,7 +97,7 @@ class Nss < Formula
   # A very minimal nss-config for configuring firefox etc. with this nss,
   # see https://bugzil.la/530672 for the progress of upstream inclusion.
   def config_file
-    <<~EOS
+    <<~SH
       #!/bin/sh
       for opt; do :; done
       case "$opt" in
@@ -106,11 +106,11 @@ class Nss < Formula
         *) exit 1;;
       esac
       pkg-config "$opt" nss
-    EOS
+    SH
   end
 
   def pc_file
-    <<~EOS
+    <<~PC
       prefix=#{prefix}
       exec_prefix=${prefix}
       libdir=${exec_prefix}/lib
@@ -122,6 +122,6 @@ class Nss < Formula
       Requires: nspr >= 4.12
       Libs: -L${libdir} -lnss3 -lnssutil3 -lsmime3 -lssl3
       Cflags: -I${includedir}
-    EOS
+    PC
   end
 end

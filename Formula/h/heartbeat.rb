@@ -38,7 +38,7 @@ class Heartbeat < Formula
       (libexec/"bin").install "heartbeat"
     end
 
-    (bin/"heartbeat").write <<~EOS
+    (bin/"heartbeat").write <<~SH
       #!/bin/sh
       exec #{libexec}/bin/heartbeat \
         --path.config #{etc}/heartbeat \
@@ -46,7 +46,7 @@ class Heartbeat < Formula
         --path.home #{prefix} \
         --path.logs #{var}/log/heartbeat \
         "$@"
-    EOS
+    SH
 
     chmod 0555, bin/"heartbeat" # generate_completions_from_executable fails otherwise
     generate_completions_from_executable(bin/"heartbeat", "completion", shells: [:bash, :zsh])

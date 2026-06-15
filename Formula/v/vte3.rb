@@ -51,7 +51,7 @@ class Vte3 < Formula
     depends_on "systemd"
   end
 
-  # https://en.cppreference.com/cpp/compiler_support/23#cpp_lib_out_ptr_202106L
+  # https://developer.apple.com/xcode/cpp/#c++23
   fails_with :clang do
     build 1699
     cause "Requires C++23 std::out_ptr"

@@ -21,11 +21,11 @@ class Kuto < Formula
     ENV["TERM"] = "xterm"
 
     test_file = testpath/"bundled.js"
-    test_file.write <<~EOS
+    test_file.write <<~JAVASCRIPT
       (function() {
           console.log("Hello, World!");
       })();
-    EOS
+    JAVASCRIPT
 
     assert_match <<~EOS, shell_output("#{bin}/kuto split #{test_file} out")
       stats {

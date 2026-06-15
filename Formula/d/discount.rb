@@ -1,8 +1,8 @@
 class Discount < Formula
   desc "C implementation of Markdown"
   homepage "https://www.pell.portland.or.us/~orc/Code/discount/"
-  url "https://www.pell.portland.or.us/~orc/Code/discount/discount-3.0.1.2.tar.bz2"
-  sha256 "ec670ca34fba6dd99cf30170b98f57fbd84ed51528cc3ae732b5ec298e738d9d"
+  url "https://www.pell.portland.or.us/~orc/Code/discount/discount-3.0.1.3.tar.bz2"
+  sha256 "a4e3d4ead2412905b9d07954331cfde30c30743c5e0e4c57f40b3c2659efa30e"
   license "BSD-3-Clause"
   head "https://github.com/Orc/discount.git", branch: "main"
 
@@ -12,14 +12,12 @@ class Discount < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53803cc185bc57647a2ec9cac0bf8ed0d12c925f64dea3eed62e9840c9db1bce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8f498e3b95800f7ee24c4319506d4ccd4fca6973405ae1681d6f64f6c262e0f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d8aea3828d1013f7e52ad43607e781f8d6afb5cfe40ab434f26bd49f9a0e545"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "565696d059a7e00a44a67c5e7fdadd7daa45f19e92edbc371d4ad66df2a94211"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f4c0c639fa731507a166bbe8e6697b0f22abca9ce446bd30f8eaeeb9406240a2"
-    sha256 cellar: :any_skip_relocation, ventura:       "3677d12c169e557d8cf391698826fbc0ccaf4695a582f224c7cc4e7a4e20a496"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8bfa31fc02e76df99bd7b31fbc81805217396662a0894d2f7a7fe5e3f67c368"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f6c76ead3a6e1c9e20f28b7774494aef4d3f8b5d9ac1f4cbf389e72adac5023"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c3ac17d7c61488e623460e15a5f68aa551861cd74b4703f17639e5f4b7f2883"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8d7862110dcd83e16019616bec578ac420dc83e3114506947733e904f8d4067"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d21f1ab8ca4ae336665b9f26d7757d8df71bbca06c8f06c367a231e747b998f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9877be726ce44371afc6e976c86dc6dca73cd0b6826ae65cfafcf0d193873aa1"
+    sha256 cellar: :any,                 arm64_linux:   "26f4c497eb1e707ed06fe69a4037e21224f6e887fda8935f7827fb973240df6e"
+    sha256 cellar: :any,                 x86_64_linux:  "beacb5c0d8983547323c500b029f4e1657a7d02abce4225e263a576ca3579972"
   end
 
   conflicts_with "markdown", because: "both install `markdown` binaries"

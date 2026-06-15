@@ -9,13 +9,13 @@ class Overturemaps < Formula
   head "https://github.com/OvertureMaps/overturemaps-py.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "cd42ccd1a917355e812f5a380665b0308f2bb9e5e78a5e4e4ac36ba33acd2488"
-    sha256 cellar: :any,                 arm64_sequoia: "3124deed456b34697a153c5e5ff46504d71054ca2feacb17ab61e18faf6030db"
-    sha256 cellar: :any,                 arm64_sonoma:  "88635d2797647da59448dd015a483b6864301780502692b1d7198e1005103682"
-    sha256 cellar: :any,                 sonoma:        "1bd3e2b9c55ca6e22c43cf0eede150c9ddfb50a8efe591ef99fdbccd0db03fef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "32e62456cd1deb519a245d10bf7bb7ec2e7169c240d21eca3fc1dfe7408316fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8135573f40797cad90933debd0446c610eec33fc6c8b895dedc6a4656d0e41e0"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "e436dc93a1b2b9f3825ad786a5b06e7bd2f0cbd81f6d7f0dee0c9a5ce3c0e678"
+    sha256 cellar: :any, arm64_sequoia: "8ffc9506084db3f3363043dad8fc165b02e19c89d93963d09c7e334c43670787"
+    sha256 cellar: :any, arm64_sonoma:  "467c0bb238224a829951ae88f76e5f25dbab1e68bb4290c5f7452b99e67ae2ab"
+    sha256 cellar: :any, sonoma:        "ae8e2849c3822aecaf321198012eaff9d0eaad6952762a647d037a0895b32f8a"
+    sha256 cellar: :any, arm64_linux:   "f1125bcf4580eb8370f2cd5fd1269aed88f3c03b9a73b990ae1be000690948fa"
+    sha256 cellar: :any, x86_64_linux:  "5e218c84add4dcbd46f627fe2d52a9ccca75fd50b9d81a007e3a80d532053895"
   end
 
   depends_on "cmake" => :build  # for pyarrow
@@ -77,6 +77,7 @@ class Overturemaps < Formula
     ENV.prepend "LDFLAGS", "-L#{geos_lib}"
 
     virtualenv_install_with_resources
+    generate_completions_from_executable(bin/"overturemaps", shell_parameter_format: :click)
   end
 
   test do

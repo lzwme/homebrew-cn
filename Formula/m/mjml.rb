@@ -17,7 +17,7 @@ class Mjml < Formula
   end
 
   test do
-    (testpath/"input.mjml").write <<~EOS
+    (testpath/"input.mjml").write <<~HTML
       <mjml>
         <mj-body>
           <mj-section>
@@ -29,7 +29,7 @@ class Mjml < Formula
           </mj-section>
         </mj-body>
       </mjml>
-    EOS
+    HTML
     compiled_html = shell_output("#{bin}/mjml input.mjml")
     assert_match "Hello Homebrew!", compiled_html
 

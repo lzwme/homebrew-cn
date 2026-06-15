@@ -21,33 +21,19 @@ class Zigmod < Formula
 
   depends_on "pkgconf" => :build
   depends_on "zig@0.15"
-  uses_from_macos "git" => :test
 
   def install
     # Avoid zig-nfs mkdirat failure when creating absolute cache paths on macOS x86_64.
     inreplace "src/common.zig", "try nfs.cwd().makePath(cachepath);",
                                 "try std.fs.cwd().makePath(cachepath);"
 
-    # Fix illegal instruction errors when using bottles on older CPUs.
-    # https://github.com/Homebrew/homebrew-core/issues/92282
-    cpu = case Hardware.oldest_cpu
-    when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
-    when :armv8 then "xgene1" # Closest to `-march=armv8-a`
-    else Hardware.oldest_cpu
-    end
-
-    # do not use std_zig_args
-    # https://github.com/nektro/zigmod/pull/109
     args = %W[
-      --prefix #{prefix}
       -Dtag=r#{version}
-      -Dmode=ReleaseSafe
       -Dstrip=true
-      -fno-rosetta
     ]
 
-    args << "-Dcpu=#{cpu}" if build.bottle?
-    system "zig", "build", *args
+    # Upstream doesn't use `-Doptimize`, see: https://github.com/nektro/zigmod/pull/109
+    system "zig", "build", *args, *std_zig_args.map { |s| s.sub "-Doptimize=", "-Dmode=" }
   end
 
   test do

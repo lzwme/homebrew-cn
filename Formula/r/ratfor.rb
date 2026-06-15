@@ -31,7 +31,7 @@ class Ratfor < Formula
   end
 
   test do
-    (testpath/"test.r").write <<~EOS
+    (testpath/"test.r").write <<~FORTRAN
       integer x,y
       x=1; y=2
       if(x == y)
@@ -58,7 +58,7 @@ class Ratfor < Formula
       603 format('x = ',i2)
       604 format('x = ',i2)
       end
-    EOS
+    FORTRAN
 
     system bin/"ratfor", "-o", "test.f", testpath/"test.r"
     system "gfortran", "test.f", "-o", "test"

@@ -46,7 +46,7 @@ class Mscgen < Formula
       }
     EOS
 
-    expected_svg = <<~EOS
+    expected_svg = <<~XML
       <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
        "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
       <svg version="1.1"
@@ -87,7 +87,7 @@ class Mscgen < Formula
       <line x1="399" y1="72" x2="399" y2="78" stroke="black"/>
       <line x1="665" y1="72" x2="665" y2="78" stroke="black"/>
       </svg>
-    EOS
+    XML
 
     system bin/"mscgen", "-Tsvg", "-o", testpath/"test.svg", testpath/"test.msc"
     assert_equal expected_svg, (testpath/"test.svg").read

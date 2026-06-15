@@ -29,9 +29,9 @@ class Livereload < Formula
   end
 
   test do
-    (testpath/"index.html").write <<~EOS
+    (testpath/"index.html").write <<~HTML
       <h1>Hello, world!</h1>
-    EOS
+    HTML
 
     port = free_port
     pid = spawn bin/"livereload", testpath, "--port=#{port}"

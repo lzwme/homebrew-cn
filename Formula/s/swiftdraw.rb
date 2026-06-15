@@ -31,12 +31,12 @@ class Swiftdraw < Formula
   end
 
   test do
-    (testpath/"fish.svg").write <<~EOS
+    (testpath/"fish.svg").write <<~SVG
       <?xml version="1.0" encoding="utf-8"?>
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="160" height="160">
         <path d="m 80 20 a 50 50 0 1 0 50 50 h -50 z" fill="pink" stroke="black" stroke-width="2" transform="rotate(45, 80, 80)"/>
       </svg>
-    EOS
+    SVG
     system bin/"swiftdraw", testpath/"fish.svg", "--format", "sfsymbol"
     assert_path_exists testpath/"fish-symbol.svg"
   end

@@ -22,7 +22,7 @@ class Terratag < Formula
   end
 
   test do
-    (testpath/"main.tf").write <<~EOS
+    (testpath/"main.tf").write <<~HCL
       provider "aws" {
         region = "us-east-1"
       }
@@ -31,7 +31,7 @@ class Terratag < Formula
         ami           = "ami-12345678"
         instance_type = "t2.micro"
       }
-    EOS
+    HCL
 
     output = shell_output("#{bin}/terratag -dir #{testpath} " \
                           "-tags '{\"environment\":\"test\",\"owner\":\"brew\"}' -rename=false 2>&1", 1)

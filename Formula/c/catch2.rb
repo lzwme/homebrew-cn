@@ -1,18 +1,18 @@
 class Catch2 < Formula
   desc "Modern, C++-native, test framework"
   homepage "https://github.com/catchorg/Catch2"
-  url "https://ghfast.top/https://github.com/catchorg/Catch2/archive/refs/tags/v3.15.0.tar.gz"
-  sha256 "9650c55e497759cc39b977e45524bc8acb15256061c112080916ab6cb0b1ea66"
+  url "https://ghfast.top/https://github.com/catchorg/Catch2/archive/refs/tags/v3.15.1.tar.gz"
+  sha256 "be23a52b85cf04cd9587612147a10b023d59ed9757fa1843cc99e615d6c0893c"
   license "BSL-1.0"
   head "https://github.com/catchorg/Catch2.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c92206feb2a389c32f3949d844a3105b2b1f46968a49d351b1383e423a0db051"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0720c225534efbfcbf20c0531012d7256eb8fe26c7c514bba6e2d8fcd97795ff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ea8f57fc5876fc50486478c5bd27029899120babe0ca4ffe20ccd635de77e1b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ad879c048656cdb4d9e7fc4bbd99ba6987a8c760d00385218534089f9eecd168"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "820786aea3fbe36d85cb479ee7190c1d785e6b599a0751249a00d8a670b2afce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a65b2724560568f65a3347d4cf033311f228b079452763ddececb781333096b3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "afa4627a6296e58c6fad7437c2b386ec3d1c99934f84507d5735a8f0b5ee32a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49aec47f88237d3721f6a441aad7fbce4c6d2e23569feaa0406b8aab383824b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f88232406903a5e0fbf27894f76ff15437e97f3f36a2125d0dee955ecf05849f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4e63a2daca556d3e6c640c850cc3e0ed46d90519de3fe3d43031b65c5cc680fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "482bd29bddc2a27f39e501a97b3ff2a46092e3b10d36d062e2c56780cae89811"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30edf1d7c906ceb9c605e89c239033db6f8dd4ac88807bb908dc650de29ffeaf"
   end
 
   depends_on "cmake" => :build

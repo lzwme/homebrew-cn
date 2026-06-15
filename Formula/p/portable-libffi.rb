@@ -21,7 +21,7 @@ class PortableLibffi < PortableFormula
   end
 
   test do
-    (testpath/"closure.c").write <<~EOS
+    (testpath/"closure.c").write <<~C
       #include <stdio.h>
       #include <ffi.h>
       /* Acts like puts with the file given at time of enclosure. */
@@ -60,7 +60,7 @@ class PortableLibffi < PortableFormula
         ffi_closure_free(closure);
         return 0;
       }
-    EOS
+    C
 
     flags = ["-L#{lib}", "-lffi", "-I#{include}"]
     system ENV.cc, "-o", "closure", "closure.c", *(flags + ENV.cflags.to_s.split)

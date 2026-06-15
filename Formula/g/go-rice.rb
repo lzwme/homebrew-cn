@@ -27,7 +27,7 @@ class GoRice < Formula
   test do
     (testpath/"testproject").mkpath
     cd "testproject" do
-      (testpath/"testproject/main.go").write <<~EOS
+      (testpath/"testproject/main.go").write <<~GO
         package main
 
         import (
@@ -43,7 +43,7 @@ class GoRice < Formula
           }
           fmt.Print(str)
         }
-      EOS
+      GO
 
       (testpath/"testproject/templates").mkpath
       (testpath/"testproject/templates/test.txt").write "Hello, rice!"

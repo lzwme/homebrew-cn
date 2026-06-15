@@ -5,7 +5,7 @@ class Powershell < Formula
       tag:      "v7.6.2",
       revision: "0d3c290a8737d4252ee75c052d16190ffcdb7d19"
   license "MIT"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -13,12 +13,12 @@ class Powershell < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2bc9c731a16c5ef15de3ea21f1aa2eec13668d9fb941dda93a1817c1b2853d6a"
-    sha256 cellar: :any,                 arm64_sequoia: "412a08cb06cf853f00ad1fb8c81a0b8144eb6df0fa337da30f69db29657dbf4d"
-    sha256 cellar: :any,                 arm64_sonoma:  "6fb67b4ec3a1a87baece31fdb884ec049d43b6557fdd1c38eed6f8c110434b64"
-    sha256 cellar: :any,                 sonoma:        "e9b9a8c8f5e3fb887083ec9b70be2b9245cb608e36976ba59dba9cbd44eb7444"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f5574bb5c3b2a64345804b6c1a2fa9b2725f596cdf68fa6278a23e9d9c8c4da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd7d648df2d2ae5586453f33e802b3cb420777dea9c960c30395de35b43c5cc1"
+    sha256 cellar: :any, arm64_tahoe:   "763d5c212af0da6948b6a160d3aa787ca71deb760aeb04be17f7dda95a810fe2"
+    sha256 cellar: :any, arm64_sequoia: "4b6c16263e473dde6e00f8d184becdd1212ed955b788e2d398abf8c5378af234"
+    sha256 cellar: :any, arm64_sonoma:  "2337d35c293a4395be135bfb33b2ecb7cf35cbb7e330f93b30aefa1fb5359f90"
+    sha256 cellar: :any, sonoma:        "6ca136a259ea33bb49b83ddbd1a1ab8a156eb22c8e570bbf40fe8bcf87f585eb"
+    sha256 cellar: :any, arm64_linux:   "f80bac3b99769d9a71286adbbc4c38629a918beb7b82da415321ea0fd44c32d2"
+    sha256 cellar: :any, x86_64_linux:  "432d625ef3d15e0e43f33b6696162b009761693bc1fc1de999eb0826cb4ae168"
   end
 
   depends_on "dotnet"

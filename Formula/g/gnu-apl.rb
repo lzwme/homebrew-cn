@@ -53,10 +53,10 @@ class GnuApl < Formula
   end
 
   test do
-    (testpath/"hello.apl").write <<~EOS
+    (testpath/"hello.apl").write <<~APL
       'Hello world'
       )OFF
-    EOS
+    APL
 
     pid = spawn bin/"APserver"
     begin

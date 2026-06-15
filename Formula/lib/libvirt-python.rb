@@ -38,14 +38,13 @@ class LibvirtPython < Formula
   test do
     pythons.each do |python|
       system python, "-c",
-             # language=Python
-             <<~EOS
+             <<~PYTHON
                import libvirt
 
                with libvirt.open('test:///default') as conn:
                    if libvirt.virGetLastError() is not None:
                        raise SystemError("Failed to open a test connection")
-             EOS
+             PYTHON
     end
   end
 end

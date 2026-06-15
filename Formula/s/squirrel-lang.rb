@@ -48,7 +48,7 @@ class SquirrelLang < Formula
   end
 
   def pc_file
-    <<~EOS
+    <<~PC
       prefix=#{opt_prefix}
       exec_prefix=${prefix}
       libdir=/${exec_prefix}/lib
@@ -63,13 +63,13 @@ class SquirrelLang < Formula
       Requires:
       Libs: -L${libdir} -lsquirrel -lsqstdlib
       Cflags: -I${includedir}
-    EOS
+    PC
   end
 
   test do
-    (testpath/"hello.nut").write <<~EOS
+    (testpath/"hello.nut").write <<~NUT
       print("hello");
-    EOS
+    NUT
     assert_equal "hello", shell_output("#{bin}/sq #{testpath}/hello.nut").chomp
   end
 end

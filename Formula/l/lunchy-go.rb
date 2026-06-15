@@ -37,7 +37,7 @@ class LunchyGo < Formula
 
   test do
     plist = testpath/"Library/LaunchAgents/com.example.echo.plist"
-    plist.write <<~EOS
+    plist.write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
       <plist version="1.0">
@@ -54,7 +54,7 @@ class LunchyGo < Formula
         <true/>
       </dict>
       </plist>
-    EOS
+    XML
 
     assert_equal "com.example.echo\n", shell_output("#{bin}/lunchy list echo")
 

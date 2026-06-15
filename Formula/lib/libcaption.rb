@@ -32,14 +32,14 @@ class Libcaption < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <caption/cea708.h>
       int main(void) {
         caption_frame_t ccframe;
         caption_frame_init(&ccframe);
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lcaption", "-o", "test"
     system "./test"
   end

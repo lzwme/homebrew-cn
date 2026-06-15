@@ -275,14 +275,14 @@ class GccAT14 < Formula
     # Modula-2 is temporarily disabled on macOS 15
     return if OS.mac? && MacOS.version >= :sequoia
 
-    (testpath/"hello.mod").write <<~EOS
+    (testpath/"hello.mod").write <<~MODULA2
       MODULE hello;
       FROM InOut IMPORT WriteString, WriteLn;
       BEGIN
            WriteString("Hello, world!");
            WriteLn;
       END hello.
-    EOS
+    MODULA2
     system bin/"gm2-#{version.major}", "-o", "hello-m2", "hello.mod"
     assert_equal "Hello, world!\n", shell_output("./hello-m2")
   end

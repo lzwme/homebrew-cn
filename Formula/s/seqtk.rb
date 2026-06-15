@@ -25,11 +25,11 @@ class Seqtk < Formula
   end
 
   test do
-    (testpath/"test.fasta").write <<~EOS
+    (testpath/"test.fasta").write <<~FASTA
       >U00096.2:1-70
       AGCTTTTCATTCTGACTGCAACGGGCAATATGTCT
       CTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
-    EOS
+    FASTA
     assert_match "TCTCTG", shell_output("#{bin}/seqtk seq test.fasta")
   end
 end

@@ -48,7 +48,7 @@ class Sip < Formula
       name = "fib"
     TOML
 
-    (testpath/"fib.sip").write <<~EOS
+    (testpath/"fib.sip").write <<~SIP
       // Define the SIP wrapper to the (theoretical) fib library.
 
       %Module(name=fib, language="C")
@@ -73,7 +73,7 @@ class Sip < Formula
               sipRes = b;
           }
       %End
-    EOS
+    SIP
 
     system bin/"sip-install", "--target-dir", "."
   end

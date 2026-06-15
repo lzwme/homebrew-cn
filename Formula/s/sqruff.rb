@@ -26,9 +26,9 @@ class Sqruff < Formula
 
     assert_match "AL01:	[aliasing.table]", shell_output("#{bin}/sqruff rules")
 
-    (testpath/"test.sql").write <<~EOS
+    (testpath/"test.sql").write <<~SQL
       SELECT * FROM user JOIN order ON user.id = order.user_id;
-    EOS
+    SQL
 
     output = shell_output("#{bin}/sqruff lint --format human #{testpath}/test.sql 2>&1")
     assert_match "All Finished", output

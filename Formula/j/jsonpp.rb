@@ -31,12 +31,12 @@ class Jsonpp < Formula
   end
 
   test do
-    expected = <<~EOS.chomp
+    expected = <<~JSON.chomp
       {
         "foo": "bar",
         "baz": "qux"
       }
-    EOS
+    JSON
     assert_equal expected, pipe_output(bin/"jsonpp", '{"foo":"bar","baz":"qux"}')
   end
 end

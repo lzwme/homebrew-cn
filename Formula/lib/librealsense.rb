@@ -1,8 +1,8 @@
 class Librealsense < Formula
   desc "Intel RealSense D400 series and SR300 capture"
   homepage "https://github.com/IntelRealSense/librealsense"
-  url "https://ghfast.top/https://github.com/IntelRealSense/librealsense/archive/refs/tags/v2.58.1.tar.gz"
-  sha256 "14409c3b810bf1508b87f46d47608a89018743b8a73d5855ab5d1ad18763fd8c"
+  url "https://ghfast.top/https://github.com/IntelRealSense/librealsense/archive/refs/tags/v2.58.2.tar.gz"
+  sha256 "1e164e424b4eeb207ec05caecc6fadc1f3ecdce0d6d36f0f2e4fe6a2a9b423ab"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/IntelRealSense/librealsense.git", branch: "master"
@@ -13,12 +13,12 @@ class Librealsense < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2c4d794f26976a966926005f03ad74f057e401d11a4d6dee78f6744539839710"
-    sha256 cellar: :any,                 arm64_sequoia: "bce8442051cdcf8d918bf361bcfb0021c1f8682c4a8fe9bec0bde9086989b233"
-    sha256 cellar: :any,                 arm64_sonoma:  "3fe96b1aa8adb7f0317bad5c6152ea3c990f6da8560778596d7f91345f10820b"
-    sha256 cellar: :any,                 sonoma:        "fed4f0dcd5656e8f63f6924baa82df424d6135a6910783d24cc715eaa4867b38"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33a28593638cf8040e82c23a9a59e3cc3e99fbd69e30cda17ae898a98da9dde9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae00b77402699f25c89d7c8494476d0891746fb4b5fcc85be1f544e100f96a8c"
+    sha256 cellar: :any, arm64_tahoe:   "709cdc56e5de484c73854bd44f6af61abf2efc43a9992dd595bd371441c9bbad"
+    sha256 cellar: :any, arm64_sequoia: "481bb874039210fcc14c649423596677ae51d2b18a3ee46b841b7236cda625ba"
+    sha256 cellar: :any, arm64_sonoma:  "d8b8fd7790f0bbdd7c64fe59275d4f6c31511235769a87079ea3cf68db615a7d"
+    sha256 cellar: :any, sonoma:        "b5810d547153cbd46eae5750207ab3cb70425928edb2e90eaa6021a67c7785e7"
+    sha256 cellar: :any, arm64_linux:   "1dd23b89c3818c7d11f744a38fdddf44b61fa439f4a0087e1c13d1ba67fabec8"
+    sha256 cellar: :any, x86_64_linux:  "1424ca38a899811163f2248523d33c3c6c6464a747f89772d151e8d589d91182"
   end
 
   depends_on "cmake" => :build

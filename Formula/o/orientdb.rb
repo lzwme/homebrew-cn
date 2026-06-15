@@ -28,10 +28,10 @@ class Orientdb < Formula
     libexec.install Dir["*"]
 
     inreplace "#{libexec}/config/orientdb-server-config.xml", "</properties>",
-       <<~EOS
+       <<~XML
          <entry name="server.database.path" value="#{var}/db/orientdb" />
          </properties>
-       EOS
+       XML
     inreplace "#{libexec}/config/orientdb-server-log.properties", "../log", "#{var}/log/orientdb"
     inreplace "#{libexec}/bin/orientdb.sh", "../log", "#{var}/log/orientdb"
     inreplace "#{libexec}/bin/server.sh", "ORIENTDB_PID=$ORIENTDB_HOME/bin", "ORIENTDB_PID=#{var}/run/orientdb"

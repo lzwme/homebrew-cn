@@ -19,11 +19,11 @@ class Htmlcompressor < Formula
 
   test do
     path = testpath/"index.xml"
-    path.write <<~EOS
+    path.write <<~HTML
       <foo>
         <bar /> <!-- -->
       </foo>
-    EOS
+    HTML
 
     output = shell_output("#{bin}/htmlcompressor #{path}").strip
     assert_equal "<foo><bar/></foo>", output

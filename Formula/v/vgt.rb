@@ -22,7 +22,7 @@ class Vgt < Formula
   end
 
   test do
-    (testpath/"test.go").write <<~EOS
+    (testpath/"test.go").write <<~GO
       package test
 
       import "testing"
@@ -30,7 +30,7 @@ class Vgt < Formula
       func TestExample(t *testing.T) {
         t.Log("Hello from sample test")
       }
-    EOS
+    GO
 
     output = pipe_output("#{bin}/vgt --print-html", "go test -json #{testpath}/sample_test.go", 0)
     assert_match "Test Results (0s 0 passed, 0 failed)", output

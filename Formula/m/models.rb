@@ -1,10 +1,10 @@
 class Models < Formula
   desc "Fast TUI and CLI for browsing AI models, benchmarks, and coding agents"
-  homepage "https://github.com/arimxyer/models"
-  url "https://ghfast.top/https://github.com/arimxyer/models/archive/refs/tags/v0.12.1.tar.gz"
+  homepage "https://reyamira.github.io/models/"
+  url "https://ghfast.top/https://github.com/reyamira/models/archive/refs/tags/v0.12.1.tar.gz"
   sha256 "f71376b084b690a292ba375985ae13326c2072400fcef4f1a4b4a27315219597"
   license "MIT"
-  head "https://github.com/arimxyer/models.git", branch: "main"
+  head "https://github.com/reyamira/models.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a146c6b1d67fb80f6051a84f68e10e50cc2cb546f86158bfef555b6bd4418a7"

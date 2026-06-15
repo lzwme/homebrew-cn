@@ -39,11 +39,11 @@ class Languagetool < Formula
 
     bin.write_jar_script(libexec/"languagetool-commandline.jar", "languagetool", java_version:)
     bin.write_jar_script(libexec/"languagetool.jar", "languagetool-gui", java_version:)
-    (bin/"languagetool-server").write <<~EOS
+    (bin/"languagetool-server").write <<~BASH
       #!/bin/bash
       export JAVA_HOME="#{Language::Java.overridable_java_home_env(java_version)[:JAVA_HOME]}"
       exec "${JAVA_HOME}/bin/java" -cp "#{libexec}/languagetool-server.jar" org.languagetool.server.HTTPServer "$@"
-    EOS
+    BASH
 
     touch buildpath/"server.properties"
     pkgetc.install "server.properties"

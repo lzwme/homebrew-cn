@@ -23,7 +23,7 @@ class Tengo < Formula
   end
 
   test do
-    (testpath/"main.tengo").write <<~EOS
+    (testpath/"main.tengo").write <<~TENGO
       fmt := import("fmt")
 
       each := func(seq, fn) {
@@ -37,7 +37,7 @@ class Tengo < Formula
 
       fmt.println(sum(0, [1, 2, 3]))   // "6"
       fmt.println(sum("", [1, 2, 3]))  // "123"
-    EOS
+    TENGO
     assert_equal "6\n123\n", shell_output("#{bin}/tengo #{testpath}/main.tengo")
   end
 end

@@ -43,12 +43,12 @@ class Wasmtime < Formula
     assert_equal "3\n",
       shell_output("#{bin}/wasmtime --invoke sum #{testpath/"sum.wasm"} 1 2")
 
-    (testpath/"hello.wat").write <<~EOS
+    (testpath/"hello.wat").write <<~WASM
       (module
         (func $hello (import "" "hello"))
         (func (export "run") (call $hello))
       )
-    EOS
+    WASM
 
     # Example from https://docs.wasmtime.dev/examples-c-hello-world.html to test C library API,
     # with comments removed for brevity

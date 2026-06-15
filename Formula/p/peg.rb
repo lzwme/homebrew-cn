@@ -34,9 +34,9 @@ class Peg < Formula
   end
 
   test do
-    (testpath/"username.peg").write <<~EOS
+    (testpath/"username.peg").write <<~PEG
       start <- "username"
-    EOS
+    PEG
 
     system bin/"peg", "-o", "username.c", "username.peg"
 

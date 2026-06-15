@@ -39,7 +39,7 @@ class Ragel < Formula
 
   test do
     testfile = testpath/"rubytest.rl"
-    testfile.write <<~EOS
+    testfile.write <<~RL
       %%{
         machine homebrew_test;
         main := ( 'h' @ { puts "homebrew" }
@@ -50,7 +50,7 @@ class Ragel < Formula
         %% write data;
         %% write init;
         %% write exec;
-    EOS
+    RL
     system bin/"ragel", "-Rs", testfile
   end
 end

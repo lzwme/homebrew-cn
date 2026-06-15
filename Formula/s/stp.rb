@@ -63,12 +63,12 @@ class Stp < Formula
   end
 
   test do
-    (testpath/"prob.smt").write <<~EOS
+    (testpath/"prob.smt").write <<~LISP
       (set-logic QF_BV)
       (assert (= (bvsdiv (_ bv3 2) (_ bv2 2)) (_ bv0 2)))
       (check-sat)
       (exit)
-    EOS
+    LISP
     assert_equal "sat", shell_output("#{bin}/stp --SMTLIB2 prob.smt").chomp
 
     (testpath/"test.c").write <<~C

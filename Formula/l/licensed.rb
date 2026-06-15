@@ -65,10 +65,10 @@ class Licensed < Formula
   test do
     assert_equal version.to_s, shell_output("#{bin}/licensed version").strip
 
-    (testpath/"Gemfile").write <<~EOS
+    (testpath/"Gemfile").write <<~RUBY
       source 'https://rubygems.org'
       gem 'licensed', '#{version}'
-    EOS
+    RUBY
 
     (testpath/".licensed.yml").write <<~YAML
       name: 'test'

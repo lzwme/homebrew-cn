@@ -1,17 +1,17 @@
 class Teslamate < Formula
   desc "Self-hosted data logger for your Tesla"
   homepage "https://docs.teslamate.org"
-  url "https://ghfast.top/https://github.com/teslamate-org/teslamate/archive/refs/tags/v4.0.0.tar.gz"
-  sha256 "ff5a69943b922b9ffa716ab8813df89927d5a7c343e712758ecfc36874e13500"
+  url "https://ghfast.top/https://github.com/teslamate-org/teslamate/archive/refs/tags/v4.0.1.tar.gz"
+  sha256 "508dea91bfcd331d3acfbde90b3e7fe4c5755bb4b8080577053cd8f111f4c3d1"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fe1c2b41a8144afa68347c0c939e806339d54c7d410ecef1d0637f2ff7388356"
-    sha256 cellar: :any, arm64_sequoia: "588d38e8911bbbe701b2803a6d4dd71619720754eff165f709569cabad038e04"
-    sha256 cellar: :any, arm64_sonoma:  "f5a80f8a90667ad574150f829282cf8821ab4ea8f19736b591b056f8bbd04a05"
-    sha256 cellar: :any, sonoma:        "541f6c85aa16f4009c37663a280ebb0d015015867821b34089b37dc184138ed5"
-    sha256 cellar: :any, arm64_linux:   "5274ddff9ce30671911449d1153f4ee7b24e028a00074a80c90dbd6a5262383c"
-    sha256 cellar: :any, x86_64_linux:  "b011c4c46a190209f8bdd78d354f620c03f91732c595740da4eabd84ded40c42"
+    sha256 cellar: :any, arm64_tahoe:   "c2b6b81913b478919a272635f32cb49b1a3f42b2ad32973788245625763c522c"
+    sha256 cellar: :any, arm64_sequoia: "8708c52ad2195f401ae551fda328d243526ef8d7da20ac9bdf7435b7e373fbf3"
+    sha256 cellar: :any, arm64_sonoma:  "62db33e7bd1cb265b103838a28f5199cbd8c5a6a914b2c2f8724e6172fdb4158"
+    sha256 cellar: :any, sonoma:        "7104643be2adf2f809e4809ce12b5e5fe45c89ad696761ff1d7b77319184a755"
+    sha256 cellar: :any, arm64_linux:   "773309a92574ff0eadeac2f6c9350a0b1a6382a2441eb34ef5fa036ac050db53"
+    sha256 cellar: :any, x86_64_linux:  "34d227f71557a1ff5d4ec89241a75fdf10606b76593dfe8e27a34efb986ce520"
   end
 
   depends_on "elixir" => :build
@@ -44,13 +44,13 @@ class Teslamate < Formula
     bin.install_symlink Dir["#{libexec}/bin/teslamate"]
 
     # Corresponds to https://github.com/teslamate-org/teslamate/blob/main/entrypoint.sh
-    (bin/"teslamate_brew_services").write <<~EOS
+    (bin/"teslamate_brew_services").write <<~BASH
       #!/bin/bash
       set -e
       source #{etc}/teslamate.env
       #{bin}/teslamate eval "TeslaMate.Release.migrate"
       exec #{bin}/teslamate start
-    EOS
+    BASH
   end
 
   service do

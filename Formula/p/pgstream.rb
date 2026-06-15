@@ -35,11 +35,11 @@ class Pgstream < Formula
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath/"test"
-    (testpath/"test/postgresql.conf").write <<~EOS, mode: "a+"
+    (testpath/"test/postgresql.conf").write <<~CONF, mode: "a+"
       port = #{port}
       shared_preload_libraries = 'wal2json'
       wal_level = logical
-    EOS
+    CONF
     system pg_ctl, "start", "-D", testpath/"test", "-l", testpath/"log"
 
     begin

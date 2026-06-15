@@ -71,32 +71,32 @@ class Libgxps < Formula
       (testpath/"_rels/"),
     ]
 
-    (testpath/"FixedDocumentSequence.fdseq").write <<~EOS
+    (testpath/"FixedDocumentSequence.fdseq").write <<~XML
       <FixedDocumentSequence>
       <DocumentReference Source="/Documents/1/FixedDocument.fdoc"/>
       </FixedDocumentSequence>
-    EOS
-    (testpath/"Documents/1/FixedDocument.fdoc").write <<~EOS
+    XML
+    (testpath/"Documents/1/FixedDocument.fdoc").write <<~XML
       <FixedDocument>
       <PageContent Source="/Documents/1/Pages/1.fpage"/>
       </FixedDocument>
-    EOS
-    (testpath/"Documents/1/Pages/1.fpage").write <<~EOS
+    XML
+    (testpath/"Documents/1/Pages/1.fpage").write <<~XML
       <FixedPage Width="1" Height="1" xml:lang="und" />
-    EOS
-    (testpath/"_rels/.rels").write <<~EOS
+    XML
+    (testpath/"_rels/.rels").write <<~XML
       <Relationships>
       <Relationship Target="/FixedDocumentSequence.fdseq" Type="http://schemas.microsoft.com/xps/2005/06/fixedrepresentation"/>
       </Relationships>
-    EOS
+    XML
     [
       "_rels/FixedDocumentSequence.fdseq.rels",
       "Documents/1/_rels/FixedDocument.fdoc.rels",
       "Documents/1/Pages/_rels/1.fpage.rels",
     ].each do |f|
-      (testpath/f).write <<~EOS
+      (testpath/f).write <<~XML
         <Relationships />
-      EOS
+      XML
     end
 
     zip = OS.mac? ? "/usr/bin/zip" : Formula["zip"].opt_bin/"zip"

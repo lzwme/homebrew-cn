@@ -27,16 +27,16 @@ class Ktfmt < Formula
 
   test do
     test_file = testpath/"Test.kt"
-    test_file.write <<~EOS
+    test_file.write <<~KOTLIN
       fun main() { println("Hello, World!") }
-    EOS
+    KOTLIN
 
     output = shell_output("#{bin}/ktfmt --google-style #{test_file} 2>&1")
     assert_match "Done formatting #{test_file}", output
-    assert_equal <<~EOS, test_file.read
+    assert_equal <<~KOTLIN, test_file.read
       fun main() {
         println("Hello, World!")
       }
-    EOS
+    KOTLIN
   end
 end

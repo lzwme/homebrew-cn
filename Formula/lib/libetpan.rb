@@ -1,19 +1,19 @@
 class Libetpan < Formula
   desc "Portable mail library handling several protocols"
   homepage "https://www.etpan.org/libetpan.html"
-  url "https://ghfast.top/https://github.com/dinhvh/libetpan/archive/refs/tags/1.10.tar.gz"
-  sha256 "0ca9a79f66155e12156727856a40031030f5760f7bc88b29119e851b9c96e9eb"
+  url "https://ghfast.top/https://github.com/dinhvh/libetpan/archive/refs/tags/1.10.1.tar.gz"
+  sha256 "87bacdc62661a2a7aa5fe9f1f28d2f7c7a53256633ac5129903916c59f80c4c2"
   license "BSD-3-Clause"
-  compatibility_version 1
+  compatibility_version 2
   head "https://github.com/dinhvh/libetpan.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "7b751456b516ad4ce3d15e75053ce2c13693f250f84f4cc339fbd6d4d491cd0f"
-    sha256 cellar: :any,                 arm64_sequoia: "bc76e7458e319ac837174b9877b4e17492239a9fc52c475aa9ceb34d99b577d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "12e8e61a77ad429e2e4dc7163dfa1c8380055233d8364711072da63d15212916"
-    sha256 cellar: :any,                 sonoma:        "415116a3745329af0cf70b55c94a899683f62508875c6ab7b974e63ee99e726d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27e0e49c2128bdae30a97860512cf0bcdfdd1299ddc461f44749e68d28b086a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9632a4d8a0e8d5d99b5f6be7b5315109594d2543749e3e89e16b44e314ca132"
+    sha256 cellar: :any, arm64_tahoe:   "7d45c5e4ad86f299c6ce0d66f4abbf970c8a1cb40d6788bb22a5e684a22ba28e"
+    sha256 cellar: :any, arm64_sequoia: "f0c7a9dc8202d2a608fc1498111ca6734f841dc39d9510d0754585e9b219b033"
+    sha256 cellar: :any, arm64_sonoma:  "99f5b95a2432b732f1422ff5ef45004589eb82762e75b98489a091f1ce7a402e"
+    sha256 cellar: :any, sonoma:        "0eb588f25e71265e87938f709a5f1940b9419699d419952e40869bb152054d31"
+    sha256 cellar: :any, arm64_linux:   "9cece4a93d0d34b081eee3941d51f0f044a2df21b04a9322c4d4d8e874e63190"
+    sha256 cellar: :any, x86_64_linux:  "efa0be8eae32c23f04482fe8dfee6b403b7b5eeb21e0560304a136d41b39a365"
   end
 
   depends_on "autoconf" => :build

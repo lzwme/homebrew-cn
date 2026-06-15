@@ -77,7 +77,7 @@ class Stunnel < Formula
     else
       ENV["USER"]
     end
-    (testpath/"tstunnel.conf").write <<~EOS
+    (testpath/"tstunnel.conf").write <<~CONF
       cert = #{etc}/stunnel/stunnel.pem
 
       setuid = #{user}
@@ -90,7 +90,7 @@ class Stunnel < Formula
       [imaps]
       accept  = 993
       connect = 143
-    EOS
+    CONF
 
     assert_match "successful", pipe_output("#{bin}/stunnel #{testpath}/tstunnel.conf 2>&1")
   end

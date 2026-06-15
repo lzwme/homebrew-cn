@@ -42,7 +42,7 @@ class Hpack < Formula
       library:
         exposed-modules: Homebrew
     YAML
-    expected = <<~EOS
+    expected = <<~CABAL
       name:           homebrew
       version:        0.0.0
       build-type:     Simple
@@ -55,7 +55,7 @@ class Hpack < Formula
         build-depends:
             base
         default-language: Haskell2010
-    EOS
+    CABAL
 
     system bin/"hpack"
 

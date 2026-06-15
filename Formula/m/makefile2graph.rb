@@ -33,13 +33,13 @@ class Makefile2graph < Formula
   end
 
   test do
-    (testpath/"Makefile").write <<~EOS
+    (testpath/"Makefile").write <<~MAKE
       all: foo
       all: bar
       foo: ook
       bar: ook
       ook:
-    EOS
+    MAKE
     system "make -Bnd >make-Bnd"
     system bin/"make2graph <make-Bnd"
     system bin/"make2graph --root <make-Bnd"

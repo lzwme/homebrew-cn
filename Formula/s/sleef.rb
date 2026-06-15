@@ -8,19 +8,23 @@ class Sleef < Formula
   head "https://github.com/shibatch/sleef.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6fe0e3a672461f15dd47162c7ba32505c6b81c41886524687a59c7690c16f0ea"
-    sha256 cellar: :any,                 arm64_sequoia: "10bd5e568d4abc431b8a8b604c5c3745106ba980dc71e1d22b607587e336bbf9"
-    sha256 cellar: :any,                 arm64_sonoma:  "ae22110074bfadf5d5d11ccebb7b211ddfed87724d79fe232c1ba551702747e8"
-    sha256 cellar: :any,                 arm64_ventura: "1dde65a699a3ec906047a473eab08828adac8f3592f91d87be5d6acab66f626c"
-    sha256 cellar: :any,                 sonoma:        "a26d81be375d9034c487372812dcd426c2573843173b610142214415cd635be7"
-    sha256 cellar: :any,                 ventura:       "aa5605545499143c1c1724ecb336205418686bcbed39080bca464794c8a0d924"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ffe74cf398e3979d201cba4686213e9719d71b2a0c24d9bdb1046d130b87e3be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c160ff9688e9d6f8c98f84d380c667e351f9ea9d0726d121f7b423e9a70ccf02"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "231f4874823402017c6c4d530da4880de1b75280be9efd3a3ed58f20f85355b4"
+    sha256 cellar: :any, arm64_sequoia: "43a0be3a50217071368ed54a8cf45a1c2ac07c4d512fb45a71e62a438666d077"
+    sha256 cellar: :any, arm64_sonoma:  "60a602bfb08d39afd06df530302aa477097aef6227f7b695bb929b482b36cf27"
+    sha256 cellar: :any, sonoma:        "4a7509699b9ca06f5ddcaa0590ee5676d994310485679d6f59537c1d0bf9df68"
+    sha256 cellar: :any, arm64_linux:   "55b6db57984f7952974af096e66d6ede6af5db879411e62b03d9899aa8ad6a58"
+    sha256 cellar: :any, x86_64_linux:  "08bcc0775f5e94b0fbb8044b9f406250d08111673a38e5f52ac07fb3dc0c78df"
   end
 
   depends_on "cmake" => :build
 
   def install
+    # Allow building SVE support for PyTorch.
+    # TODO: Check in SLEEF 4.0 if SVE is disabled by default:
+    # Ref: https://github.com/shibatch/sleef/discussions/673#discussioncomment-12610711
+    ENV.runtime_cpu_detection if OS.linux? && Hardware::CPU.arm?
+
     system "cmake", "-S", ".", "-B", "build",
                     "-DSLEEF_BUILD_INLINE_HEADERS=TRUE",
                     "-DSLEEF_BUILD_SHARED_LIBS=ON",

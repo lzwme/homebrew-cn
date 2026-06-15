@@ -1,22 +1,18 @@
 class Waffle < Formula
   desc "C library for selecting an OpenGL API and window system at runtime"
   homepage "https://waffle.freedesktop.org/"
-  url "https://waffle.freedesktop.org/files/release/waffle-1.8.1/waffle-1.8.1.tar.xz"
-  sha256 "f616c0ca6072d36bf81fb79a3695799973a978775e0213744bf0a39be6367425"
+  url "https://waffle.freedesktop.org/files/release/waffle-1.8.2/waffle-1.8.2.tar.xz"
+  sha256 "1254afcddc7e2971fd1f8a543c7d0882d254a09d154fab00fe9fb5f4037b9f1c"
   license "BSD-2-Clause"
   head "https://gitlab.freedesktop.org/mesa/waffle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:    "aac60d0464beecfe42add4b1be34ca27c1eaf49361202afb805df8acec7c024f"
-    sha256 cellar: :any, arm64_sequoia:  "eb655477acb0eb6fe4a81e4ef5ba36d9d489df1bee0081d8e928b81c420168cd"
-    sha256 cellar: :any, arm64_sonoma:   "0390ae70fb5f03b0625daaead204fdafe05e14452075f3251b589c1fd3e54515"
-    sha256 cellar: :any, arm64_ventura:  "f49b790d1b6852b8d3568de22cb147bb63762adf37929988d225caa76acadc2e"
-    sha256 cellar: :any, arm64_monterey: "1d9fe5d73c406d4026183163af71d1b59ba96a090bff3d3190eac32cf99928af"
-    sha256 cellar: :any, sonoma:         "a59ee0f3ad1c4f4a47c07661e1439f4156dd10b88038115765ef51173282d597"
-    sha256 cellar: :any, ventura:        "be09dc2b2af894dd48245599720c93135c7edd32fa01d5cc80bbd9fbfc0aec43"
-    sha256 cellar: :any, monterey:       "445f768e3b9d4bb8a5e53741cb57acafe5a64d01d3454528326dafdacda4ca34"
-    sha256               arm64_linux:    "2cdfe7169a64ad8138255aca48128fdc8d23b9885224cddac2a23bcdb3ceabc1"
-    sha256               x86_64_linux:   "e66ab6325cd9b5b39752985ee80e3724e9affd46a75d1d2c7b764f6fbbe87b9b"
+    sha256 cellar: :any, arm64_tahoe:   "f2b378a19c7db8dd6503b5e1bfd3effe5580fd91cb82d9b67c1d339d7f031ae0"
+    sha256 cellar: :any, arm64_sequoia: "d3e9d8cb0d6e7ee1b7526d2c03a2c75013ecd63f76d62844e6c5a236144cfc34"
+    sha256 cellar: :any, arm64_sonoma:  "1dc758c373579b8fabc18fdbccf1e82467a4c0cd175d61b251fab7cf82800ef6"
+    sha256 cellar: :any, sonoma:        "5b7a69dfb5adbd9bd9f00dc926da434ba788b61ef08e169e6986e3f4d67e8402"
+    sha256               arm64_linux:   "67044219cec4d300f29b7925db5c85422fa0569683c81fa50a1a358036b24067"
+    sha256               x86_64_linux:  "5222c94e098d3c6bcc26145aab343651db5bdb78d3436f7b7e3e898659acc48c"
   end
 
   depends_on "docbook-xsl" => :build

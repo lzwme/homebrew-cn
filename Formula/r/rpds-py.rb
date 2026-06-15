@@ -35,7 +35,7 @@ class RpdsPy < Formula
   end
 
   test do
-    (testpath/"test.py").write <<~EOS
+    (testpath/"test.py").write <<~PYTHON
       from rpds import HashTrieMap, HashTrieSet, List
 
       m = HashTrieMap({"foo": "bar", "baz": "quux"})
@@ -49,7 +49,7 @@ class RpdsPy < Formula
       L = List([1, 3, 5])
       assert L.push_front(-1) == List([-1, 1, 3, 5])
       assert L.rest == List([3, 5])
-    EOS
+    PYTHON
 
     pythons.each do |python3|
       system python3, "test.py"

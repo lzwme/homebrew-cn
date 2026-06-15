@@ -80,11 +80,11 @@ class Graphviz < Formula
   end
 
   test do
-    (testpath/"sample.dot").write <<~EOS
+    (testpath/"sample.dot").write <<~DOT
       digraph G {
         a -> b
       }
-    EOS
+    DOT
 
     system bin/"dot", "-Tpdf", "-o", "sample.pdf", "sample.dot"
   end

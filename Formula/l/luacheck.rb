@@ -32,19 +32,19 @@ class Luacheck < Formula
 
   test do
     test_foo = testpath/"foo.lua"
-    test_foo.write <<~EOS
+    test_foo.write <<~LUA
       local a = 1
       local b = 2
       local c = a + b
-    EOS
+    LUA
     assert_match "unused variable \e[0m\e[1mc\e[0m\n\n",
       shell_output("#{bin}/luacheck #{test_foo}", 1)
 
     test_bar = testpath/"bar.lua"
-    test_bar.write <<~EOS
+    test_bar.write <<~LUA
       local a = 1
       print("a is", a)
-    EOS
+    LUA
     assert_match "\e[0m\e[0m\e[1m0\e[0m errors in 1 file",
       shell_output("#{bin}/luacheck #{test_bar}")
 

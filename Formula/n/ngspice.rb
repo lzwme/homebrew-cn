@@ -73,7 +73,7 @@ class Ngspice < Formula
   end
 
   test do
-    (testpath/"test.cir").write <<~EOS
+    (testpath/"test.cir").write <<~CIR
       RC test circuit
       v1 1 0 1
       r1 1 2 1
@@ -84,7 +84,7 @@ class Ngspice < Formula
       quit
       .endc
       .end
-    EOS
+    CIR
     system bin/"ngspice", "test.cir"
   end
 end

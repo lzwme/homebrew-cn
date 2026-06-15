@@ -20,14 +20,14 @@ class Geoserver < Formula
 
   def install
     libexec.install Dir["*"]
-    (bin/"geoserver").write <<~EOS
+    (bin/"geoserver").write <<~SH
       #!/bin/sh
       if [ -z "$1" ]; then
         echo "Usage: $ geoserver path/to/data/dir"
       else
         cd "#{libexec}" && java -DGEOSERVER_DATA_DIR=$1 -jar start.jar
       fi
-    EOS
+    SH
   end
 
   def caveats

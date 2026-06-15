@@ -29,7 +29,7 @@ class Guichan < Formula
   end
 
   test do
-    (testpath/"helloworld.cpp").write <<~EOS
+    (testpath/"helloworld.cpp").write <<~CPP
       #include <guichan.hpp>
 
       int main(int argc, char **argv)
@@ -42,7 +42,7 @@ class Guichan < Formula
 
           return 0;
       }
-    EOS
+    CPP
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs guichan-0.8").chomp.split
     system ENV.cxx, "helloworld.cpp", *pkg_config_flags, "-o", "helloworld"

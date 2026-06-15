@@ -34,9 +34,9 @@ class HaskellStack < Formula
     # Remove locked dependencies which only work with a single patch version of GHC.
     # If there are issues resolving dependencies, then can consider bootstrapping with stack instead.
     (buildpath/"cabal.project").unlink
-    (buildpath/"cabal.project").write <<~EOS
+    (buildpath/"cabal.project").write <<~CABAL
       packages: .
-    EOS
+    CABAL
 
     # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
     args = ["--allow-newer=base,containers,template-haskell"]
