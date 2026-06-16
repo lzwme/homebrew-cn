@@ -2,7 +2,7 @@ class SaltLint < Formula
   include Language::Python::Virtualenv
 
   desc "Check for best practices in SaltStack"
-  homepage "https://github.com/warpnet/salt-lint"
+  homepage "https://salt-lint.readthedocs.io/en/latest/"
   url "https://files.pythonhosted.org/packages/e5/e9/4df64ca147c084ca1cdbea9210549758d07f4ed94ac37d1cd1c99288ef5c/salt-lint-0.9.2.tar.gz"
   sha256 "7f74e682e7fd78722a6d391ea8edc9fc795113ecfd40657d68057d404ee7be8e"
   license "MIT"

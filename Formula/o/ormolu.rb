@@ -1,6 +1,6 @@
 class Ormolu < Formula
   desc "Formatter for Haskell source code"
-  homepage "https://github.com/tweag/ormolu"
+  homepage "https://ormolu-live.tweag.io"
   url "https://hackage.haskell.org/package/ormolu-0.8.1.0/ormolu-0.8.1.0.tar.gz"
   sha256 "120f20bb158b756f8d4dbcac94c2fd0227816e072d3447d83c65c18bdae1f542"
   license "BSD-3-Clause"

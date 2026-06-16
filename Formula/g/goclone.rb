@@ -1,6 +1,6 @@
 class Goclone < Formula
   desc "Website Cloner"
-  homepage "https://github.com/goclone-dev/goclone"
+  homepage "https://goclone.dev"
   url "https://ghfast.top/https://github.com/goclone-dev/goclone/archive/refs/tags/v1.2.2.tar.gz"
   sha256 "1e005a045b3d2f5d4d0a7154f4552e537900c170256b668cc73aeac204d9defa"
   license "MIT"

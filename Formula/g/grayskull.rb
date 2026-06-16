@@ -2,7 +2,7 @@ class Grayskull < Formula
   include Language::Python::Virtualenv
 
   desc "Recipe generator for Conda"
-  homepage "https://github.com/conda/grayskull"
+  homepage "https://conda.github.io/grayskull/"
   url "https://files.pythonhosted.org/packages/7a/51/b7d181b55fd65f4ba0c0414b5f779f342f8296f991a52af2de2399b501bf/grayskull-3.1.1.tar.gz"
   sha256 "46ea09c3322f200c35c807dc34dfaf0fc203352fc39d6c222e31a5b065f2f690"
   license "Apache-2.0"

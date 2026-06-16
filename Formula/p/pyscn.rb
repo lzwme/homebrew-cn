@@ -1,18 +1,18 @@
 class Pyscn < Formula
   desc "Intelligent Python Code Quality Analyzer"
-  homepage "https://github.com/ludo-technologies/pyscn"
-  url "https://ghfast.top/https://github.com/ludo-technologies/pyscn/archive/refs/tags/v1.24.1.tar.gz"
-  sha256 "19b792f03eaee3a2997bf4d8e52cfd37c5c47b1dd5654bbc92772bc443b57299"
+  homepage "https://ludo-technologies.github.io/pyscn/"
+  url "https://ghfast.top/https://github.com/ludo-technologies/pyscn/archive/refs/tags/v1.24.2.tar.gz"
+  sha256 "926ff62e1ac7403f74daac2f98b426fe25cb64bada5ac930bd18ded815e3994c"
   license "MIT"
   head "https://github.com/ludo-technologies/pyscn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3505451583a55adacd3d0196142ba4486db6768d747afd662e3dbb2efd1a0e1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a063fcdcc34782a2a1e60d5eee8cd93e25d4242351e78071bfa871b3003c8887"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3473eb310a34aa3d88a1de22e5ec78107fcb5af245dd81129141cec6b959a102"
-    sha256 cellar: :any_skip_relocation, sonoma:        "94bedcec25649bdc4909c216b1ea1fa9f85a43e5d65bd358def21963229b3664"
-    sha256 cellar: :any,                 arm64_linux:   "a8d70c1cb1c40d67dfc299597c93483979fbecbd7b84362590d16d1b000af97f"
-    sha256 cellar: :any,                 x86_64_linux:  "bd8631da61f43803ebb2972a5711ab507183af17e57664488403994da830a031"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b6dc4bcde9e3d1a7096cc0c49a5a8491a4e9a67d6d51bd7d8317a97a00a0e84d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3268870666777d118e16f8a20c40fa543b79539fe62078af57be7d34fc698149"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "331c8d641446545b837b3bcdb4b22efb225055da8804cb2a491ace350cb104fc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9973657f4f6bd484c66ccc80ec20ed4c998982792e9637eccbac7b04e7263517"
+    sha256 cellar: :any,                 arm64_linux:   "7be9621e3bf7412ccd55038fb7f3db1d69e61c6dbab61b2ea88ee42b6fe662db"
+    sha256 cellar: :any,                 x86_64_linux:  "520f877e7108378506ffcd60b52b0bebfea725bb9ede17fda1b4947ae8dc2a02"
   end
 
   depends_on "go" => :build

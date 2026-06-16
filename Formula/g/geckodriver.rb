@@ -1,6 +1,6 @@
 class Geckodriver < Formula
   desc "WebDriver <-> Marionette proxy"
-  homepage "https://github.com/mozilla/geckodriver"
+  homepage "https://firefox-source-docs.mozilla.org/testing/geckodriver/"
   license "MPL-2.0"
   head "https://hg.mozilla.org/mozilla-central/", using: :hg
 

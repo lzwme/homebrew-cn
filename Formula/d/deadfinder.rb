@@ -1,6 +1,6 @@
 class Deadfinder < Formula
   desc "Finds broken links"
-  homepage "https://github.com/hahwul/deadfinder"
+  homepage "https://deadfinder.hahwul.com"
   url "https://ghfast.top/https://github.com/hahwul/deadfinder/archive/refs/tags/2.0.2.tar.gz"
   sha256 "13d3d4b0392d6b1548071d44dc03a14e790ea161781d5a57a196577316a97543"
   license "MIT"

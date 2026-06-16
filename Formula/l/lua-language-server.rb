@@ -1,6 +1,6 @@
 class LuaLanguageServer < Formula
   desc "Language Server for the Lua language"
-  homepage "https://github.com/LuaLS/lua-language-server"
+  homepage "https://luals.github.io"
   # pull from git tag to get submodules
   url "https://github.com/LuaLS/lua-language-server.git",
       tag:      "3.18.2",

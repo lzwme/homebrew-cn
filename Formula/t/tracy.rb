@@ -1,6 +1,6 @@
 class Tracy < Formula
   desc "Real-time, nanosecond resolution frame profiler"
-  homepage "https://github.com/wolfpld/tracy"
+  homepage "https://tracy.nereid.pl/"
   # NOTE: Do not report issues with dependencies upstream as they only support
   # vendored dependencies, see https://github.com/wolfpld/tracy/issues/1079
   url "https://ghfast.top/https://github.com/wolfpld/tracy/archive/refs/tags/v0.13.1.tar.gz"

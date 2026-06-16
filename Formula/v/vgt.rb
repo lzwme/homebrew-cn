@@ -1,6 +1,6 @@
 class Vgt < Formula
   desc "Visualising Go Tests"
-  homepage "https://github.com/roblaszczak/vgt"
+  homepage "https://threedots.tech/post/go-test-parallelism/"
   url "https://ghfast.top/https://github.com/roblaszczak/vgt/archive/refs/tags/v1.0.1.tar.gz"
   sha256 "c442980c2205d45d527205fc9f832f4d27f4d3e8c815f471f428266f6fcf33c6"
   license "MIT"

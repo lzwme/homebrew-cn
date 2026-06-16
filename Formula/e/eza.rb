@@ -1,6 +1,6 @@
 class Eza < Formula
   desc "Modern, maintained replacement for ls"
-  homepage "https://github.com/eza-community/eza"
+  homepage "https://eza.rocks"
   url "https://ghfast.top/https://github.com/eza-community/eza/archive/refs/tags/v0.23.4.tar.gz"
   sha256 "9fbcad518b8a2095206ac385329ca62d216bf9fdc652dde2d082fcb37c309635"
   license "EUPL-1.2"

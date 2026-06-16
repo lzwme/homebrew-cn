@@ -1,6 +1,6 @@
 class Agg < Formula
   desc "Asciicast to GIF converter"
-  homepage "https://github.com/asciinema/agg"
+  homepage "https://docs.asciinema.org/manual/agg/"
   url "https://ghfast.top/https://github.com/asciinema/agg/archive/refs/tags/v1.9.0.tar.gz"
   sha256 "8170119502ad2c1c697e5cd4d050d87c425ecee726c5f6c3c2140703bcb31bb3"
   license "GPL-3.0-or-later"

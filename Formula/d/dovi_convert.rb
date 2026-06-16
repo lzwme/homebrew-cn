@@ -2,7 +2,7 @@ class DoviConvert < Formula
   include Language::Python::Shebang
 
   desc "Dolby Vision Profile 7 to 8.1 MKV converter"
-  homepage "https://github.com/cryptochrome/dovi_convert"
+  homepage "https://docs.doviconvert.com"
   url "https://ghfast.top/https://github.com/cryptochrome/dovi_convert/archive/refs/tags/v8.2.0.tar.gz"
   sha256 "bf6d9a634d66415b96faa4ee90c0e60149b91b5ab0c53dfb4111cdb2f593ed40"
   license "GPL-3.0-only"

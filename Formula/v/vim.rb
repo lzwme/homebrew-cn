@@ -2,8 +2,8 @@ class Vim < Formula
   desc "Vi 'workalike' with many additional features"
   homepage "https://www.vim.org/"
   # vim should only be updated every 50 releases on multiples of 50
-  url "https://ghfast.top/https://github.com/vim/vim/archive/refs/tags/v9.2.0600.tar.gz"
-  sha256 "9bbfe0be244dbd57d2b0f9a3749e3504d215185376bbddfc3ad6420c113b4be1"
+  url "https://ghfast.top/https://github.com/vim/vim/archive/refs/tags/v9.2.0650.tar.gz"
+  sha256 "de9be55e39f7da67b3871974952d7cf61bab9d362434d9ff22d46fb2855a6dac"
   license "Vim"
   compatibility_version 1
   head "https://github.com/vim/vim.git", branch: "master"
@@ -26,12 +26,12 @@ class Vim < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "2c1a9cf9351d05e54da92387e19da4a42d30bb86dd5251506a2e5fff453f38f6"
-    sha256 arm64_sequoia: "ecee43999331560fcd164020c12fc564a0ebc9ce8392083d8a3b1716966e76ee"
-    sha256 arm64_sonoma:  "9e9960c0e075f291be7cbfa09e69f157f9e7611d78cc94154cb378b1b66640cc"
-    sha256 sonoma:        "d14bf7c5d5d75b662f494ab520fb59b7ff0c6718d8f93e16a5c2aa45ca6da893"
-    sha256 arm64_linux:   "254a6bb41e4bf623b40eb78b004fd6f739584e9f9b09e61848697478992e0930"
-    sha256 x86_64_linux:  "03bdaa10107590c16de5186d7c5936bc7ade14f3b677b20867a041a77a97fac3"
+    sha256 arm64_tahoe:   "da180237836700a7c12044b6f79214bc567e8a26522162d2bebca758bd4a58ca"
+    sha256 arm64_sequoia: "128cd809848721689a60cdbbced98d5100fdeb41c2ddee2fc62755328f32d746"
+    sha256 arm64_sonoma:  "aba8e3862841bd7773385f934dc160b6bccf21447aea9c793614189ad9c5e48c"
+    sha256 sonoma:        "451cbe994c53231d10decbae5b638d2b5bfa5e013d3d31371205adbe5aa02c1a"
+    sha256 arm64_linux:   "94db734821eb92630c4f953ce979834c873bce9ae4090fc2e890ac27fc2f833f"
+    sha256 x86_64_linux:  "fa3f7c2d4ce662ead54726bd6008f1ebe73185ec5d0bdb2744105b93af2636c1"
   end
 
   depends_on "gettext" => :build
@@ -59,8 +59,6 @@ class Vim < Formula
 
   def install
     ENV.prepend_path "PATH", Formula["python@3.14"].opt_libexec/"bin"
-
-    ENV.append_to_cflags "-mllvm -enable-constraint-elimination=0" if DevelopmentTools.clang_build_version == 1600
 
     # Allow dynamically loading formulae libraries when not linked
     extra_deps.each do |dep|

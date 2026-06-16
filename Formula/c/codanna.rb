@@ -1,6 +1,6 @@
 class Codanna < Formula
   desc "Code intelligence system with semantic search"
-  homepage "https://github.com/bartolli/codanna"
+  homepage "https://docs.codanna.sh/"
   url "https://ghfast.top/https://github.com/bartolli/codanna/archive/refs/tags/v0.9.22.tar.gz"
   sha256 "885e927e0db2559fdcd32c3120b58be309f5e2a1cba572184e90586f078ec5ae"
   license "Apache-2.0"

@@ -2,7 +2,7 @@ class C7n < Formula
   include Language::Python::Virtualenv
 
   desc "Rules engine for cloud security, cost optimization, and governance"
-  homepage "https://github.com/cloud-custodian/cloud-custodian"
+  homepage "https://cloudcustodian.io"
   url "https://ghfast.top/https://github.com/cloud-custodian/cloud-custodian/archive/refs/tags/0.9.51.0.tar.gz"
   sha256 "b13e6463b59a84950cdfe28a65b26e3fdee7dae16835adb46313ccad25adbf42"
   license "Apache-2.0"

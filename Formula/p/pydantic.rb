@@ -2,7 +2,7 @@ class Pydantic < Formula
   include Language::Python::Virtualenv
 
   desc "Data validation using Python type hints"
-  homepage "https://github.com/pydantic/pydantic"
+  homepage "https://pydantic.dev/docs/validation"
   url "https://files.pythonhosted.org/packages/18/a5/b60d21ac674192f8ab0ba4e9fd860690f9b4a6e51ca5df118733b487d8d6/pydantic-2.13.4.tar.gz"
   sha256 "c40756b57adaa8b1efeeced5c196f3f3b7c435f90e84ea7f443901bec8099ef6"
   license "MIT"

@@ -1,6 +1,6 @@
 class F2 < Formula
   desc "Command-line batch renaming tool"
-  homepage "https://github.com/ayoisaiah/f2"
+  homepage "https://f2.freshman.tech"
   url "https://ghfast.top/https://github.com/ayoisaiah/f2/archive/refs/tags/v2.2.2.tar.gz"
   sha256 "0785e40b1fd2adb55165f668dc2635d47559fd7534b0f1da33849f155c4e539b"
   license "MIT"

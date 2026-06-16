@@ -6,6 +6,11 @@ class Ahoy < Formula
   license "MIT"
   head "https://github.com/ahoy-cli/ahoy.git", branch: "master"
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a1d4f45c4c570160683c363f45827d0e8632297f68794018f8686ca1e88f02ee"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "39cc43e109a7f06f80f5bbea045f5877292645bebdc4e8dda3dcc60699bef370"

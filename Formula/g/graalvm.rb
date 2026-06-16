@@ -135,10 +135,6 @@ class Graalvm < Formula
     end
     args << "--with-extra-ldflags=#{ldflags.join(" ")}"
 
-    if DevelopmentTools.clang_build_version == 1600
-      args << "--with-extra-cflags=-mllvm -enable-constraint-elimination=0"
-    end
-
     cd labs_openjdk do
       system "bash", "configure", *args
 

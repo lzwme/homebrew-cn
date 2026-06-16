@@ -1,13 +1,13 @@
 class Zbar < Formula
   desc "Suite of barcodes-reading tools"
-  homepage "https://github.com/mchehab/zbar"
+  homepage "https://linuxtv.org/downloads/zbar/"
   url "https://linuxtv.org/downloads/zbar/zbar-0.23.93.tar.bz2"
   sha256 "83be8f85fc7c288fd91f98d52fc55db7eedbddcf10a83d9221d7034636683fa0"
   license "LGPL-2.1-only"
   revision 2
 
   livecheck do
-    url "https://linuxtv.org/downloads/zbar/"
+    url :homepage
     regex(/href=.*?zbar[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 

@@ -1,6 +1,6 @@
 class Liblxi < Formula
   desc "Simple C API for communicating with LXI compatible instruments"
-  homepage "https://github.com/lxi-tools/liblxi"
+  homepage "https://lxi-tools.github.io"
   url "https://ghfast.top/https://github.com/lxi-tools/liblxi/archive/refs/tags/v1.22.tar.gz"
   sha256 "d33ca3990513223880ec238eb2e5aa1cc93aff51c470ef0db9df3e0c332493d5"
   license "BSD-3-Clause"

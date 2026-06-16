@@ -34,7 +34,6 @@ class Nghttp2 < Formula
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
-    depends_on macos: :sonoma # Needs C++20 features not available on Ventura
   end
 
   on_linux do
@@ -52,10 +51,6 @@ class Nghttp2 < Formula
   end
 
   def install
-    # fix for clang not following C++14 behaviour
-    # https://github.com/macports/macports-ports/commit/54d83cca9fc0f2ed6d3f873282b6dd3198635891
-    inreplace "src/shrpx_client_handler.cc", "return dconn;", "return std::move(dconn);"
-
     # Don't build nghttp2 library - use the previously built one.
     inreplace "Makefile.in", /(SUBDIRS =) lib/, "\\1"
     inreplace Dir["**/Makefile.in"] do |s|

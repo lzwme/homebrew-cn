@@ -10,12 +10,13 @@ class Opencode < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "8584acb177d435cb2b6512bae0a50b1ff8b80192a00060640e2359c1a56c1319"
-    sha256                               arm64_sequoia: "8584acb177d435cb2b6512bae0a50b1ff8b80192a00060640e2359c1a56c1319"
-    sha256                               arm64_sonoma:  "8584acb177d435cb2b6512bae0a50b1ff8b80192a00060640e2359c1a56c1319"
-    sha256 cellar: :any_skip_relocation, sonoma:        "15fa965364bdb3b5ac096d9d403c25d8129beeb5155794bf543319b021523eaf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f49604cb707129c71ef2e1d815a9bf070affe8e0d3a76a17264c6faf5f1db91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bee06c04a874b0b8c2f70bc6ffcd5ff8c37f8f53c625d1ba40bb548a8ea0acc2"
+    rebuild 1
+    sha256                               arm64_tahoe:   "ca653eb8c0a682d6d18fccfdeff1294768df49a617a3d7c799948fe4d4f1467a"
+    sha256                               arm64_sequoia: "ca653eb8c0a682d6d18fccfdeff1294768df49a617a3d7c799948fe4d4f1467a"
+    sha256                               arm64_sonoma:  "ca653eb8c0a682d6d18fccfdeff1294768df49a617a3d7c799948fe4d4f1467a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "18f5988198e1c8804fb1f14358b59c9ae87a39940613a4dc7d6021266882ca26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "984002edcfa2b6cd6e1a9aac60fa633c405ba7c84eb4db30177a69a6dabfd09b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b94552644a7fa937b46efbdc86707969caa898a8131aa79561d8412ccc806da"
   end
 
   depends_on "node"
@@ -33,6 +34,8 @@ class Opencode < Formula
 
       rm_r d if d.basename.to_s != "opencode-#{os}-#{arch}"
     end
+
+    generate_completions_from_executable(bin/"opencode", "completion", shell_parameter_format: :none, shells: [:zsh])
   end
 
   test do

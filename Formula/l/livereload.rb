@@ -2,7 +2,7 @@ class Livereload < Formula
   include Language::Python::Virtualenv
 
   desc "Local web server in Python"
-  homepage "https://github.com/lepture/python-livereload"
+  homepage "https://livereload.readthedocs.io/en/latest/"
   url "https://files.pythonhosted.org/packages/43/6e/f2748665839812a9bbe5c75d3f983edbf3ab05fa5cd2f7c2f36fffdf65bd/livereload-2.7.1.tar.gz"
   sha256 "3d9bf7c05673df06e32bea23b494b8d36ca6d10f7d5c3c8a6989608c09c986a9"
   license "BSD-3-Clause"

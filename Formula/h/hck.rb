@@ -1,8 +1,8 @@
 class Hck < Formula
   desc "Sharp cut(1) clone"
   homepage "https://github.com/sstadick/hck"
-  url "https://ghfast.top/https://github.com/sstadick/hck/archive/refs/tags/v0.11.5.tar.gz"
-  sha256 "5ce5fc816e9e009dafe8c42a0bd6b9e6c8b7ca5a839af6a797fba9accc569242"
+  url "https://ghfast.top/https://github.com/sstadick/hck/archive/refs/tags/v0.11.6.tar.gz"
+  sha256 "b9821c4de35308d8d1d9e979da39f8a7effd82d2e0b1f4f7b1c83bc48ab8da20"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/sstadick/hck.git", branch: "master"
 
@@ -12,13 +12,12 @@ class Hck < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4df79cddcbf021932b7300c9a6cc6cdebc9b9d85a551353456d4f8c8c07538d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b3406b0ab689cba7e8d8ffe40033e3b3867ac0527a3c7a903915254532f6a6e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93ce77bb3b5310079ada1d764f560e692d96b4ca65aeaa90893195aa5d58abb0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f6a147eff8f1e3e69aeeaa681afd81dd69e19bd865e0b675b21fc680fb752c80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b6a6b21c1ecb5cf9da85863fbf8e23e05275e1a6883552199fb697f12f99e05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b46f9971e8d64866900c0b57f67903455d7c0dbeebb4a5fa59e093118b150ff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a299fca862a0c6622dcae57a753cb411b0d6a39d8b0769a52ad513d631bf0ae4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b3f4dca28753b43601bceed0990a538e717206e5193f7387443b5771da00521"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c4c249c67fd2db07f550538dc2b3ad5aec7b43a434204c3d185971a7fab85b6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "156411d96f2a679b84308e77137edcba0d5bd73c5f026261e420c71f7397891e"
+    sha256 cellar: :any,                 arm64_linux:   "124ab1103933fabc1a81cf28d307511ec3e8894f99e3298d65a08dc9c6cad122"
+    sha256 cellar: :any,                 x86_64_linux:  "daf36e53a6ad18ea2ecca1f86de5d4fca246f9cf5910b74c5a0a8a7cae58457c"
   end
 
   depends_on "cmake" => :build

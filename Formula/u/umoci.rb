@@ -1,6 +1,6 @@
 class Umoci < Formula
   desc "Reference OCI implementation for creating, modifying and inspecting images"
-  homepage "https://github.com/opencontainers/umoci"
+  homepage "https://umo.ci"
   url "https://ghfast.top/https://github.com/opencontainers/umoci/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "400a26c5f7ac06e40af907255e0e23407237d950e78e8d7c9043a1ad46da9ae5"
   license "Apache-2.0"

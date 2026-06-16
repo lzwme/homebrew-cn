@@ -1,8 +1,8 @@
 class Libjwt < Formula
   desc "JSON Web Token C library"
   homepage "https://libjwt.io/"
-  url "https://ghfast.top/https://github.com/benmcollins/libjwt/archive/refs/tags/v3.3.3.tar.gz"
-  sha256 "a562e5548a8e10ac6fcba64a5e6d326c15712211cb54d25242c15e8b3250b4f2"
+  url "https://ghfast.top/https://github.com/benmcollins/libjwt/archive/refs/tags/v3.4.0.tar.gz"
+  sha256 "4f5e41f49e51c3dea781218ad298e07083804c72a84186bf1a61e1a3c5211537"
   license "MPL-2.0"
   head "https://github.com/benmcollins/libjwt.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Libjwt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "07179f355e1f88d33ba8d15c97cd33670c9a8f37b36d3d702ea7150a37ef8e56"
-    sha256 cellar: :any,                 arm64_sequoia: "70e47ae8720a2bd8dd5c5dae002a078424d1957bef3624b7f1d0c5b2039c62bd"
-    sha256 cellar: :any,                 arm64_sonoma:  "6f798eb68dfe617f54728c86106efccb6014db02e52f55d7745199df4bc3c6c9"
-    sha256 cellar: :any,                 sonoma:        "9ab63d572d73ede9c4e209291d71836dc3828a03f941794c1df1e383b01120c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "485768794b70ea2045f4a74232d6e5a1726779f1e18aa2e61648311638dc246c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00d04ad57252c93f49ef409974364811825141e79c87a798eec1b64b7aa045d4"
+    sha256 cellar: :any, arm64_tahoe:   "49eceb5a3d3965c1c52f481ea0fa7d6d4685017fc24ca64fad5050193026ba08"
+    sha256 cellar: :any, arm64_sequoia: "04c63b5ffed09889457e1d55027b6418899af83949c11de1f8e14889fb9c38d0"
+    sha256 cellar: :any, arm64_sonoma:  "4178d96692e747acfcae13ad4f2c8883d7749b1acf1f0f97dccd4879c42ef867"
+    sha256 cellar: :any, sonoma:        "f3ad4317d4779b8f2519d7d4cb2f11feb0ee2e5edcf815890ab0ae5fa7fed961"
+    sha256 cellar: :any, arm64_linux:   "c41bd9550a9ac4f9008c0f59609653220d3bbda4785f80c4e397a784d6c6bbf5"
+    sha256 cellar: :any, x86_64_linux:  "a120ea74da7590c0b7def42a8d6f6f10ac4895206252fc447085442f9fbb6402"
   end
 
   depends_on "cmake" => :build

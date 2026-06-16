@@ -6,6 +6,11 @@ class PvMigrate < Formula
   license "Apache-2.0"
   head "https://github.com/utkuozdemir/pv-migrate.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "589185d9e27ab2a2ace05d316155a3e7fa8fad2d1d478054b6c69f1fcf17d80d"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "51f26866b7fb7c5896a279f975ed419a50ccd4757ecfaa8f66d87a79dc74eb68"

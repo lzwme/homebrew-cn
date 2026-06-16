@@ -2,7 +2,7 @@ class KimiCli < Formula
   include Language::Python::Virtualenv
 
   desc "CLI agent for MoonshotAI Kimi platform"
-  homepage "https://github.com/MoonshotAI/kimi-cli"
+  homepage "https://moonshotai.github.io/kimi-cli/"
   url "https://files.pythonhosted.org/packages/ce/44/00b9a43a57c683a21ec61a8b533039bf0145e23c1228f316577485288fef/kimi_cli-1.47.0.tar.gz"
   sha256 "10f4ca9a29c70d101a57929e9b793fc0927acebe2a08f7c26764b504abbbc8ee"
   license "Apache-2.0"

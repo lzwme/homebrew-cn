@@ -2,7 +2,7 @@ class PassImport < Formula
   include Language::Python::Virtualenv
 
   desc "Pass extension for importing data from most existing password managers"
-  homepage "https://github.com/roddhjav/pass-import"
+  homepage "https://www.passwordstore.org/"
   url "https://files.pythonhosted.org/packages/f1/69/1d763287f49eb2d43f14280a1af9f6c2aa54a306071a4723a9723a6fb613/pass-import-3.5.tar.gz"
   sha256 "e3e5ec38f58511904a82214f8a80780729dfe84628d7c5d6b1cedee20ff3fb23"
   license "GPL-3.0-or-later"

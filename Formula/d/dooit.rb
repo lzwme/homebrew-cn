@@ -2,7 +2,7 @@ class Dooit < Formula
   include Language::Python::Virtualenv
 
   desc "TUI todo manager"
-  homepage "https://github.com/dooit-org/dooit"
+  homepage "https://dooit-org.github.io/dooit/"
   url "https://files.pythonhosted.org/packages/a1/dd/96bfcde11415f846d8e4bf2ec494432aae4e6938c6b3ef1e9db3a854b45e/dooit-3.3.4.tar.gz"
   sha256 "ec9022168c4a4568693590840aba0b859cdbca27872f1bef84e39d64c044acd2"
   license "MIT"

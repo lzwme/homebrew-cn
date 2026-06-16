@@ -1,6 +1,6 @@
 class Codeburn < Formula
   desc "See where your AI coding tokens go - by task, tool, model, and project"
-  homepage "https://github.com/getagentseal/codeburn"
+  homepage "https://codeburn.app/"
   url "https://registry.npmjs.org/codeburn/-/codeburn-0.9.12.tgz"
   sha256 "549b183f277dfdf766b356dc7e0e20cb6ca070650cde7936bc126071ea2fe606"
   license "MIT"

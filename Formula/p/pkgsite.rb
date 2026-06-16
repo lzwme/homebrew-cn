@@ -1,8 +1,8 @@
 class Pkgsite < Formula
   desc "Documentation server for Go packages"
   homepage "https://pkg.go.dev/golang.org/x/pkgsite"
-  url "https://ghfast.top/https://github.com/golang/pkgsite/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "3984dfb940fda82700ec421de2f029730a6fddb89be0009efc64ea62e817b2ed"
+  url "https://ghfast.top/https://github.com/golang/pkgsite/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "e7091b7d1db3559b5cc2754c5f9fe6ab1ebf0d65462f8699f4855a18b15fc6b9"
   license "BSD-3-Clause"
   head "https://go.googlesource.com/pkgsite.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Pkgsite < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f92de73e02ca09a0d3a859a6c3cdaaeba62732dad04fe76eac9f3de690ea7dad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f92de73e02ca09a0d3a859a6c3cdaaeba62732dad04fe76eac9f3de690ea7dad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f92de73e02ca09a0d3a859a6c3cdaaeba62732dad04fe76eac9f3de690ea7dad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "204b1d2578cbe197d524ac32190d3ddc108dadb1b2bdb86698ea097c1a05fc12"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e0e4dd2f54190a3d34a76ebec736d89a56c49aa828e93c330fc593bae4c1cb8"
-    sha256 cellar: :any,                 x86_64_linux:  "c1a83ddfd2b0d09df02d15f25817ac95ff5087e6065a15d3fc6bf2c330d64e0f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81a69fc09bda084b278abbf2181e845ee492d853c7fd231dc42c942143ba5d64"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81a69fc09bda084b278abbf2181e845ee492d853c7fd231dc42c942143ba5d64"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81a69fc09bda084b278abbf2181e845ee492d853c7fd231dc42c942143ba5d64"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aff8659e1ec65827447c75cf4cfe9f48680aed9cefbf45ce7122023126634554"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b26829257cdb739e01d2aa4bb12985b5296f4d51f887d941f3fdc0d7d9b0e057"
+    sha256 cellar: :any,                 x86_64_linux:  "c79fdd8074e5cf46b6da34d07e5d9196d1e9e37f592b3de41cb323d695c74356"
   end
 
   depends_on "go" => [:build, :test]

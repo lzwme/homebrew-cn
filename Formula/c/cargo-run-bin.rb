@@ -1,6 +1,6 @@
 class CargoRunBin < Formula
   desc "Build, cache, and run binaries from Cargo.toml to avoid global installs"
-  homepage "https://github.com/dustinblackman/cargo-run-bin"
+  homepage "https://dustinblackman.com/posts/why-does-everyone-install-crates-globally/"
   url "https://ghfast.top/https://github.com/dustinblackman/cargo-run-bin/archive/refs/tags/v1.7.4.tar.gz"
   sha256 "fd492430a60ca488ad8c356f9c6389426f3fbcd59658e5b721855e171cb62841"
   license "MIT"

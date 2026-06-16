@@ -1,6 +1,6 @@
 class Fswatch < Formula
   desc "Monitor a directory for changes and run a shell command"
-  homepage "https://github.com/emcrisostomo/fswatch"
+  homepage "https://emcrisostomo.github.io/fswatch/"
   url "https://ghfast.top/https://github.com/emcrisostomo/fswatch/releases/download/1.21.0/fswatch-1.21.0.tar.gz"
   sha256 "881945bbe218d057c465e0cb0d8fe682df088918ee047295159616d700e67a2f"
   license all_of: ["GPL-3.0-or-later", "Apache-2.0"]

@@ -1,6 +1,6 @@
 class AskCli < Formula
   desc "CLI tool for Alexa Skill Kit"
-  homepage "https://github.com/alexa/ask-cli"
+  homepage "https://developer.amazon.com/en-US/docs/alexa/smapi/ask-cli-intro.html"
   url "https://registry.npmjs.org/ask-cli/-/ask-cli-2.30.7.tgz"
   sha256 "437b55f774064e053b0185956afc69ecb38a8b53c996a6e1e49960918b54f909"
   license "Apache-2.0"

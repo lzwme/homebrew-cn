@@ -1,6 +1,6 @@
 class JvmMon < Formula
   desc "Console-based JVM monitoring"
-  homepage "https://github.com/ajermakovics/jvm-mon"
+  homepage "https://ajermakovics.github.io/jvm-mon/"
   url "https://ghfast.top/https://github.com/ajermakovics/jvm-mon/archive/refs/tags/1.3.tar.gz"
   sha256 "71f27098bc130525c837ce5821481d795be1b315464f327dbe9d828a221338dd"
   license "Apache-2.0"

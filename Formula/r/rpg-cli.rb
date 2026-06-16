@@ -1,6 +1,6 @@
 class RpgCli < Formula
   desc "Your filesystem as a dungeon!"
-  homepage "https://github.com/facundoolano/rpg-cli"
+  homepage "https://olano.dev/blog/deconstructing-the-role-playing-videogame/"
   url "https://ghfast.top/https://github.com/facundoolano/rpg-cli/archive/refs/tags/1.2.0.tar.gz"
   sha256 "f3993abe7b73666bc3707760dcc650aa9190cd3e7f06be846a0b6adcbbc46663"
   license "MIT"

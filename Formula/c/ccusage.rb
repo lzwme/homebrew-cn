@@ -1,17 +1,17 @@
 class Ccusage < Formula
   desc "CLI tool for analyzing Claude Code usage from local JSONL files"
   homepage "https://github.com/ryoppippi/ccusage"
-  url "https://ghfast.top/https://github.com/ryoppippi/ccusage/archive/refs/tags/v20.1.0.tar.gz"
-  sha256 "210f291fbb1b1ca9abe6e59a806a2981130a173b37b8fe840bc6c007fafbec78"
+  url "https://ghfast.top/https://github.com/ryoppippi/ccusage/archive/refs/tags/v20.0.13.tar.gz"
+  sha256 "9e0924af376b97c899863ef0ca2827f9b3fb6c13dba37ec3bcb9e247170a207a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8cc8b54112f5a9eba3eb780479035f6eab1b0ef5097a4a4a246b7347d9451677"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a37153a59edde9c171994b8f8f50472eb66dc2140afa9f97a44f4f024782f784"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c23f54ff7baf7a552c88101850d9b6d581ab25d17ccea99509c6f785cf84d96"
-    sha256 cellar: :any_skip_relocation, sonoma:        "304f408b2e22a553fd61d221d22ce3199f7277a6cc0d7a15993dad2315a9eb5b"
-    sha256 cellar: :any,                 arm64_linux:   "d4dbd04ab65fb097e5449f727dfc96653e896e324524fe14995e4bf9c8dd8fb9"
-    sha256 cellar: :any,                 x86_64_linux:  "02c91bce3e6c60aa231c4c48415a74c232808427c4f03d58a9b1d8488a1c5612"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b9e57b81fdc69346c2e82000b248ac6fb950a791afba0b6e04cafe99b9bb9c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b71a5913cb7a805a6d9021378e554f152ba700293e13c5158d8855c0598fd52"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4586302b602e76d3a1b041c340989e64b6ba6becc7225bee8f55e76e58afb081"
+    sha256 cellar: :any_skip_relocation, sonoma:        "14100a519e41ea5823ba017535cd584caaf06694fab60e1a9aa122ceb6c2c2a1"
+    sha256 cellar: :any,                 arm64_linux:   "53c91203bfa74611368b6a42d647d6445c2d3b5bf59473c558a9566435acf14e"
+    sha256 cellar: :any,                 x86_64_linux:  "044863aaac7faf38067bfd7c607b459ca279e61b3ecf301022fe709e46c29b24"
   end
 
   depends_on "rust" => :build

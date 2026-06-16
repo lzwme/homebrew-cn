@@ -1,6 +1,6 @@
 class Fourstore < Formula
   desc "Efficient, stable RDF database"
-  homepage "https://github.com/4store/4store"
+  homepage "https://4store.github.io"
   url "https://ghfast.top/https://github.com/4store/4store/archive/refs/tags/v1.1.7.tar.gz"
   sha256 "e511f1adb094e2506545d4773a6005a462f6b4532731e91f1115b038ab25a8f0"
   license "GPL-3.0-or-later"

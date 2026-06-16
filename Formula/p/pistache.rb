@@ -1,6 +1,6 @@
 class Pistache < Formula
   desc "Modern, fast, elegant HTTP + REST C++17 framework with pleasant API"
-  homepage "https://github.com/pistacheio/pistache"
+  homepage "https://pistacheio.github.io/pistache/"
   url "https://ghfast.top/https://github.com/pistacheio/pistache/archive/refs/tags/v0.4.26.tar.gz"
   sha256 "29af6562547497acf6f49170661786fe8cf1ed3712ad80e69c53da4661c59544"
   license "Apache-2.0"

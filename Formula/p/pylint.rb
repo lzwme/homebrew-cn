@@ -2,13 +2,13 @@ class Pylint < Formula
   include Language::Python::Virtualenv
 
   desc "It's not just a linter that annoys you!"
-  homepage "https://github.com/pylint-dev/pylint"
-  url "https://files.pythonhosted.org/packages/e4/b6/74d9a8a68b8067efce8d07707fe6a236324ee1e7808d2eb3646ec8517c7d/pylint-4.0.5.tar.gz"
-  sha256 "8cd6a618df75deb013bd7eb98327a95f02a6fb839205a6bbf5456ef96afb317c"
+  homepage "https://pylint.readthedocs.io/en/latest/"
+  url "https://files.pythonhosted.org/packages/7d/1d/3bb57f303701549550d74bf7ced2b07412be97125c167a0c9d216aa9f762/pylint-4.0.6.tar.gz"
+  sha256 "52f19191bee08bf103f9705ad1a0ece4aa5a0a4ef2bdcbd969375a1e6f6579d5"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0dca7577ab14d501bddfc63c63bcfc56c872df55b7385d4d403712af1afd1cc8"
+    sha256 cellar: :any_skip_relocation, all: "0ac18b7ee012ce053289ff5d5ec35f95199c1843e85d84c890092422dace7869"
   end
 
   depends_on "python@3.14"
@@ -24,8 +24,8 @@ class Pylint < Formula
   end
 
   resource "isort" do
-    url "https://files.pythonhosted.org/packages/bf/e3/e72b0b3a85f24cf5fc2cd8e92b996592798f896024c5cdf3709232e6e377/isort-8.0.0.tar.gz"
-    sha256 "fddea59202f231e170e52e71e3510b99c373b6e571b55d9c7b31b679c0fed47c"
+    url "https://files.pythonhosted.org/packages/ef/7c/ec4ab396d31b3b395e2e999c8f46dec78c5e29209fac49d1f4dace04041d/isort-8.0.1.tar.gz"
+    sha256 "171ac4ff559cdc060bcfff550bc8404a486fee0caab245679c2abe7cb253c78d"
   end
 
   resource "mccabe" do
@@ -34,13 +34,13 @@ class Pylint < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/1b/04/fea538adf7dbbd6d186f551d595961e564a3b6715bdf276b477460858672/platformdirs-4.9.2.tar.gz"
-    sha256 "9a33809944b9db043ad67ca0db94b14bf452cc6aeaac46a88ea55b26e2e9d291"
+    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
+    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/c3/af/14b24e41977adb296d6bd1fb59402cf7d60ce364f90c890bd2ec65c43b5a/tomlkit-0.14.0.tar.gz"
-    sha256 "cf00efca415dbd57575befb1f6634c4f42d2d87dbba376128adb42c121b87064"
+    url "https://files.pythonhosted.org/packages/51/db/03eaf4331631ef6b27d6e3c9b68c54dc6f0d63d87201fed600cc409307fd/tomlkit-0.15.0.tar.gz"
+    sha256 "7d1a9ecba3086638211b13814ea79c90dd54dd11993564376f3aa92271f5c7a3"
   end
 
   def install

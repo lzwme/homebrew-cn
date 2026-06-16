@@ -1,6 +1,6 @@
 class Quantumxx < Formula
   desc "Modern C++ quantum computing library"
-  homepage "https://github.com/softwareQinc/qpp"
+  homepage "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0208073"
   url "https://ghfast.top/https://github.com/softwareQinc/qpp/archive/refs/tags/v7.0.3.tar.gz"
   sha256 "aecf8a56fa88bb68f53bc593f28150faa0a6e96207b0ab1d5022d0bd0b53a419"
   license "MIT"

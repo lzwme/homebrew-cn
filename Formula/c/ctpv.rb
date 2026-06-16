@@ -1,6 +1,6 @@
 class Ctpv < Formula
   desc "Image previews for lf file manager"
-  homepage "https://github.com/NikitaIvanovV/ctpv"
+  homepage "https://www.nikitaivanov.com/man1/ctpv"
   url "https://ghfast.top/https://github.com/NikitaIvanovV/ctpv/archive/refs/tags/v1.1.tar.gz"
   sha256 "29e458fbc822e960f052b47a1550cb149c28768615cc2dddf21facc5c86f7463"
   license "MIT"

@@ -2,7 +2,7 @@ class Sqlite3ToMysql < Formula
   include Language::Python::Virtualenv
 
   desc "Transfer data from SQLite to MySQL"
-  homepage "https://github.com/techouse/sqlite3-to-mysql"
+  homepage "https://techouse.github.io/sqlite3-to-mysql/"
   url "https://files.pythonhosted.org/packages/dd/a3/a39130ba3bbd9ad22ca794fd5ef93b20492474c16879ced76c6b05e60986/sqlite3_to_mysql-2.6.0.tar.gz"
   sha256 "2ac88e1a84fe035c732c83041c1965454bacc5ccf2a52bdb01fb4c5011bd7174"
   license "MIT"

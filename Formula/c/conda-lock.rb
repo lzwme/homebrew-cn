@@ -2,7 +2,7 @@ class CondaLock < Formula
   include Language::Python::Virtualenv
 
   desc "Lightweight lockfile for conda environments"
-  homepage "https://github.com/conda/conda-lock"
+  homepage "https://conda.github.io/conda-lock/"
   url "https://files.pythonhosted.org/packages/96/5d/fed650427a858cacf41f2827d8c00e5fcc6619c05d17ce352f3960bcaea3/conda_lock-4.0.0.tar.gz"
   sha256 "050305a490861baa98d6c3876ed7b394707a67587d939548aac5e20b91b41d36"
   license "MIT"

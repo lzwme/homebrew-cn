@@ -1,6 +1,6 @@
 class Xmrig < Formula
   desc "Monero (XMR) CPU miner"
-  homepage "https://github.com/xmrig/xmrig"
+  homepage "https://xmrig.com/"
   url "https://ghfast.top/https://github.com/xmrig/xmrig/archive/refs/tags/v6.26.0.tar.gz"
   sha256 "5005144e78571f26586410c2b2ede2b0c72afe22f97f1708ea24cfb253c3939b"
   license "GPL-3.0-or-later"

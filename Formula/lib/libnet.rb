@@ -1,6 +1,6 @@
 class Libnet < Formula
   desc "C library for creating IP packets"
-  homepage "https://github.com/libnet/libnet"
+  homepage "https://codedocs.xyz/libnet/libnet/"
   url "https://ghfast.top/https://github.com/libnet/libnet/releases/download/v1.3/libnet-1.3.tar.gz"
   sha256 "ad1e2dd9b500c58ee462acd839d0a0ea9a2b9248a1287840bc601e774fb6b28f"
   license "BSD-2-Clause"

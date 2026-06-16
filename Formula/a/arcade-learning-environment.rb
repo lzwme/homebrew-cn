@@ -1,6 +1,6 @@
 class ArcadeLearningEnvironment < Formula
   desc "Platform for AI research"
-  homepage "https://github.com/Farama-Foundation/Arcade-Learning-Environment"
+  homepage "https://ale.farama.org/"
   url "https://ghfast.top/https://github.com/Farama-Foundation/Arcade-Learning-Environment/archive/refs/tags/v0.12.0.tar.gz"
   sha256 "021bc469903d7b7ea39e5cc51116baa9068e4d8e3b34bf0516767f49b84fa5c1"
   license "GPL-2.0-only"

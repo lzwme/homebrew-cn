@@ -8,16 +8,14 @@ class Fava < Formula
   license "MIT"
   head "https://github.com/beancount/fava.git", branch: "main"
 
-  # FIXME: Fails trying to resolve beancount as pip tries compiling it but cannot find bison
-  no_autobump! because: "`update-python-resources` cannot determine dependencies"
-
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "bdd5789a9ad99e63fcf0a7ea7ffb7003d9ce1bda2138f615b780a52cc571f74f"
-    sha256 cellar: :any,                 arm64_sequoia: "3ae8b9d6557890653952f3fc070fda16ae5e39ce9a216fac9a8d11abbb29c1b4"
-    sha256 cellar: :any,                 arm64_sonoma:  "0654ee59d7552daba005d559b74319c971c2e4915344620b8aca488bc9ba47ff"
-    sha256 cellar: :any,                 sonoma:        "252737dadc9fbc22d73c2ee0ed0b6e5aebca2c03abf172269f54b4aa87a44b3c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "acd577e4d8f2b6e27469cf82f91e8332be7a2f5fc24b67550f1682b5503431e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b58aba8c966ccf9dc6dc46edc1988b014ea4916d565242bef5ad850297549184"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "bbd27ea99320e82de659570a0d3c8d5f0b69c4cad79ac597a6d509de42c06471"
+    sha256 cellar: :any, arm64_sequoia: "98917c541d0020b0a73a274fd75601a89d1a24e8e4e2e342543e96c2907e5d2a"
+    sha256 cellar: :any, arm64_sonoma:  "16758223c0bf79964f5e8b0f070a87180e789e5ab810db55984697f330a56fa8"
+    sha256 cellar: :any, sonoma:        "719ff24f1403be128586519f0b0c235185dba60691372bb23c396ed98ea007b5"
+    sha256 cellar: :any, arm64_linux:   "dc919cb5fd129424d88c53d33bde446fdab36de636c208528392a5f7cd3a4176"
+    sha256 cellar: :any, x86_64_linux:  "77c4e356b17a1d39e66e414c2a0b0cfa1271e8420793c25d0680f89c7af16213"
   end
 
   depends_on "bison" => :build # for beancount
@@ -63,8 +61,8 @@ class Fava < Formula
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/c3/b0/1c6a16426d389813b48d95e26898aff79abbde42ad353958ad95cc8c9b21/beautifulsoup4-4.14.3.tar.gz"
-    sha256 "6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86"
+    url "https://files.pythonhosted.org/packages/43/65/318323f98dbee45d42dff61d8f047181bc6f2268a9068cfad035a46be5af/beautifulsoup4-4.15.0.tar.gz"
+    sha256 "288e3ca7d54b06f2ac191970bc275c1939cb46d450b255bf6718b04aa37ab4f7"
   end
 
   resource "blinker" do
@@ -83,8 +81,8 @@ class Fava < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
-    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
+    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
+    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
   end
 
   resource "flask" do
@@ -98,8 +96,8 @@ class Fava < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "itsdangerous" do
@@ -133,8 +131,8 @@ class Fava < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/a2/f7/139d22fef48ac78127d18e01d80cf1be40236ae489769d17f35c3d425293/more_itertools-11.0.2.tar.gz"
-    sha256 "392a9e1e362cbc106a2457d37cabf9b36e5e12efd4ebff1654630e76597df804"
+    url "https://files.pythonhosted.org/packages/de/1d/f4da6f02cdffe04d6362210b807146a26044c88d839208aec273bb0d9184/more_itertools-11.1.0.tar.gz"
+    sha256 "48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d"
   end
 
   resource "ply" do
@@ -173,8 +171,8 @@ class Fava < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/7b/ae/2d9c981590ed9999a0d91755b47fc74f74de286b0f5cee14c9269041e6c4/soupsieve-2.8.3.tar.gz"
-    sha256 "3267f1eeea4251fb42728b6dfb746edc9acaffc4a45b27e19450b676586e8349"
+    url "https://files.pythonhosted.org/packages/47/2c/0a5f6f8ee0d5589e48c7640213ed5175d52cf540a06725b628cc1a45d6ce/soupsieve-2.8.4.tar.gz"
+    sha256 "e121fd02e975c695e4e9e8774a5ee35d74714b59307868dcc5319ad2d9e3328e"
   end
 
   resource "tatsu-lts" do

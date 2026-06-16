@@ -40,8 +40,6 @@ class VimClassic < Formula
   def install
     ENV.prepend_path "PATH", Formula["python@3.14"].opt_libexec/"bin"
 
-    ENV.append_to_cflags "-mllvm -enable-constraint-elimination=0" if DevelopmentTools.clang_build_version == 1600
-
     # Allow dynamically loading formulae libraries when not linked
     extra_deps.each do |dep|
       extra_rpath = dep.to_formula.opt_lib

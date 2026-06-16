@@ -1,6 +1,6 @@
 class R3 < Formula
   desc "High-performance URL router library"
-  homepage "https://github.com/c9s/r3"
+  homepage "https://c9s.github.io/r3/bench.html"
   license "MIT"
   head "https://github.com/c9s/r3.git", branch: "master"
 

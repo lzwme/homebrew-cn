@@ -1,6 +1,6 @@
 class Plow < Formula
   desc "High-performance and real-time metrics displaying HTTP benchmarking tool"
-  homepage "https://github.com/six-ddc/plow"
+  homepage "https://deepwiki.com/six-ddc/plow"
   url "https://ghfast.top/https://github.com/six-ddc/plow/archive/refs/tags/v1.4.0.tar.gz"
   sha256 "e1b706c8aa137a09dc4061bd9a01c12ad8bb8e175d28d6180008a2a296349d91"
   license "Apache-2.0"

@@ -1,6 +1,6 @@
 class Undercutf1 < Formula
   desc "F1 Live Timing TUI for all F1 sessions with variable delay to sync to your TV"
-  homepage "https://github.com/JustAman62/undercut-f1"
+  homepage "https://amandhoot.com"
   url "https://ghfast.top/https://github.com/JustAman62/undercut-f1/archive/refs/tags/v4.0.89.tar.gz"
   sha256 "80541923a4d7296bc39355848429627428a58d5de5cd5765115be38bb02bbf1b"
   license "GPL-3.0-only"

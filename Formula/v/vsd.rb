@@ -1,6 +1,6 @@
 class Vsd < Formula
   desc "Download video streams over HTTP, DASH (.mpd), and HLS (.m3u8)"
-  homepage "https://github.com/clitic/vsd"
+  homepage "https://clitic.github.io/vsd/"
   url "https://ghfast.top/https://github.com/clitic/vsd/archive/refs/tags/vsd-0.5.0.tar.gz"
   sha256 "d47092ce89c22d36d0fd976bd558fa9f895384025cb98e568adbf9793134d7dc"
   license "MIT"

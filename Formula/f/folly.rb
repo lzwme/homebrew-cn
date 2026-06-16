@@ -1,19 +1,19 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
   homepage "https://github.com/facebook/folly"
-  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2026.06.08.00.tar.gz"
-  sha256 "d6988f69cfc99a4845c3333b73646f318749efe01be5effd90eef33f7e7b8aae"
+  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2026.06.15.00.tar.gz"
+  sha256 "50c9140edea532bc3762c5615eaa5fb908796d4ff7dc99a4d8a1b0aae0ee90e2"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f2b3c44ecbf04028879dc94a44aede8d38160a21cbae858acafe1a6a0a36b80a"
-    sha256 cellar: :any, arm64_sequoia: "1dfcada5a8f43d022b4e008786dbbc43815d4d1c015b0aa197f0c7b3918279fa"
-    sha256 cellar: :any, arm64_sonoma:  "7a3b369cd6ee45fc3d620bbc9dbe790cd73c3d37930db74cc617cd966cfec67e"
-    sha256 cellar: :any, sonoma:        "c7b05af00aea72966bd56579c5524804d8734291e4e1478495baa89fb81c4878"
-    sha256 cellar: :any, arm64_linux:   "19915b7f99990b4580fa5679530666321e4f10127f9267e2cab33067b20ff297"
-    sha256 cellar: :any, x86_64_linux:  "7961c763b4bb815956f334fe7844491099ec9806e90629ee9f3b592b4197c45f"
+    sha256 cellar: :any, arm64_tahoe:   "f8fd81795aa7f46c8a597a5c26b04c0669d2a84fe55fa5f5493efa2a4ba37136"
+    sha256 cellar: :any, arm64_sequoia: "b0b2d11a06bb47b748c667ebb174b88811f548d6d9d1d0746453246570cb500f"
+    sha256 cellar: :any, arm64_sonoma:  "4ec9cf6b8cf1de806c98e362ba9928b2ab23646b24ae21265b99820ea27a13fe"
+    sha256 cellar: :any, sonoma:        "aee1480815f01cc7a70c50d7cb7397d6120fc621e8463e1d2e7629fdd07f03e9"
+    sha256 cellar: :any, arm64_linux:   "2ff746a2c3735e647c871f26fc6fc4db57bfebdbb7eda4245e303e0504df016a"
+    sha256 cellar: :any, x86_64_linux:  "6b721d2a1b44ebf8fb46c2ac3e9eb71636fbd6692e747ef8775cb2559542e3b9"
   end
 
   depends_on "cmake" => :build

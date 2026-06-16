@@ -2,7 +2,7 @@ class Aqtinstall < Formula
   include Language::Python::Virtualenv
 
   desc "Another unofficial Qt installer"
-  homepage "https://github.com/miurahr/aqtinstall"
+  homepage "https://aqtinstall.readthedocs.io/en/latest/"
   url "https://files.pythonhosted.org/packages/76/19/24a588de6c25d43169d172dab47e63a63cd0d8f90e98cf86487acbf00ac7/aqtinstall-3.3.0.tar.gz"
   sha256 "9c7d85fbe7258be2d7d23fda33f8aff2e8b7536817255eaeaaf4226da8546a31"
   license "MIT"

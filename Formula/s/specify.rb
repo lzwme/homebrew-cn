@@ -2,7 +2,7 @@ class Specify < Formula
   include Language::Python::Virtualenv
 
   desc "Toolkit to help you get started with Spec-Driven Development"
-  homepage "https://github.com/github/spec-kit"
+  homepage "https://github.github.com/spec-kit/"
   url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.10.2.tar.gz"
   sha256 "df2af09cd48361e92f959b6346b70db5a2b2704cafdc4fea88078e13e5f453af"
   license "MIT"

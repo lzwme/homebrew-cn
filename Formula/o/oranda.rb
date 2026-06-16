@@ -1,6 +1,6 @@
 class Oranda < Formula
   desc "Generate beautiful landing pages for your developer tools"
-  homepage "https://github.com/axodotdev/oranda"
+  homepage "https://axodotdev.github.io/oranda/"
   url "https://ghfast.top/https://github.com/axodotdev/oranda/archive/refs/tags/v0.6.5.tar.gz"
   sha256 "456baf2b8e36ad6492d5d7a6d2b47b48be87c957db9068500dfd82897462d5bd"
   license any_of: ["Apache-2.0", "MIT"]

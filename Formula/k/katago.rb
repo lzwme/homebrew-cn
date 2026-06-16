@@ -1,6 +1,6 @@
 class Katago < Formula
   desc "Neural Network Go engine with no human-provided knowledge"
-  homepage "https://github.com/lightvector/KataGo"
+  homepage "https://katagotraining.org/"
   # Occasionally check upstream docs in case recommended model/network is changed.
   # Ref: https://github.com/lightvector/KataGo?tab=readme-ov-file#other-questions
   url "https://ghfast.top/https://github.com/lightvector/KataGo/archive/refs/tags/v1.16.4.tar.gz"

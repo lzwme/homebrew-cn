@@ -1,6 +1,6 @@
 class Cayley < Formula
   desc "Graph database inspired by Freebase and Knowledge Graph"
-  homepage "https://github.com/cayleygraph/cayley"
+  homepage "https://cayley.io"
   url "https://github.com/cayleygraph/cayley.git",
       tag:      "v0.7.7",
       revision: "dcf764fef381f19ee49fad186b4e00024709f148"

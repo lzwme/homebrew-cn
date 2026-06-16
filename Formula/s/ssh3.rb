@@ -1,6 +1,6 @@
 class Ssh3 < Formula
   desc "Faster and richer secure shell using HTTP/3"
-  homepage "https://github.com/francoismichel/ssh3"
+  homepage "https://arxiv.org/abs/2312.08396"
   url "https://ghfast.top/https://github.com/francoismichel/ssh3/archive/refs/tags/v0.1.7.tar.gz"
   sha256 "23a88d0d7f54f80d752c22ee5f879fa1daf8c320ece364287209c58b3e98b6b5"
   license "Apache-2.0"

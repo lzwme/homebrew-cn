@@ -1,6 +1,6 @@
 class Topgit < Formula
   desc "Git patch queue manager"
-  homepage "https://github.com/mackyle/topgit"
+  homepage "https://repo.or.cz/topgit/pro.git"
   url "https://ghfast.top/https://github.com/mackyle/topgit/archive/refs/tags/topgit-0.19.14.tar.gz"
   sha256 "0556485ca8ddf0cf863de4da36b11351545aca74fbf71581ffe9f5a5ce0718cb"
   license "GPL-2.0-only"

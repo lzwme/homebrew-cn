@@ -2,7 +2,7 @@ class Bbot < Formula
   include Language::Python::Virtualenv
 
   desc "OSINT automation tool"
-  homepage "https://github.com/blacklanternsecurity/bbot"
+  homepage "https://www.blacklanternsecurity.com/bbot/"
   url "https://files.pythonhosted.org/packages/6a/83/24a0087894d853703f64ab2044927ef56c831edb379295a873b05f34eb92/bbot-2.8.4.tar.gz"
   sha256 "2ed4d3eda85ddb7261318a48f8a41e8543888b5d9b9eb8876aaff0e813a2429c"
   license "AGPL-3.0-only"

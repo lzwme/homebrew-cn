@@ -1,9 +1,9 @@
 class Seaweedfs < Formula
   desc "Fast distributed storage system"
-  homepage "https://github.com/seaweedfs/seaweedfs"
+  homepage "https://seaweedfs.com"
   url "https://github.com/seaweedfs/seaweedfs.git",
-      tag:      "4.33",
-      revision: "55010be19b6755d72b4de6ace2072417f70aa72f"
+      tag:      "4.34",
+      revision: "c6cf5a5bd7c87694c8d71ab41571f1412170ab2a"
   license "Apache-2.0"
   head "https://github.com/seaweedfs/seaweedfs.git", branch: "master"
 
@@ -13,12 +13,12 @@ class Seaweedfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4cfbf661393db5780e6a2fc70988d191e1330f2e84756795f41e9a63902e39a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e616bb401bf68545957095616cf2e934a35715155ca18dd89313a343d01242a7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c729c0bca29d3d7adf8118d475b16e56eb3d9fbcbfcd0063c9f72439012b84b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "54c01396ee0742288a78d5556b918b8d60976fb738e3bc4f1869d93b48315f00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e7d9a8fefa92c7b13acc4096277f79674834a8b902cd16fd1755c0f6290476a"
-    sha256 cellar: :any,                 x86_64_linux:  "6ec35c1a0d21eef07f3f7ade962e087ab0ed01509338a70c21cc7dac27606517"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f546b62b0c42db218fdc051a0eb81f6473d801bc7e760754e9de888d1ebe54c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5aeda0854479ce74544395abb8292c97b4d3ef0d6a515a26b8d6d7bfac3c898c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99c65018de9c87962bd71477c0a68933220db2c8cd4492374df8c950a3b710da"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0af1d1743fd9e372bb92bfe97da3c60189a0c05cef8296f908e399725d77e0df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f82932dfb2df58eaa2dab4b201b5d76dd92f3cae32fcd026f795ccb80927519"
+    sha256 cellar: :any,                 x86_64_linux:  "25d2ccf7023e56ea26d3d26114a13b7b5ec73310d6f8249ec05ddafb44c535ef"
   end
 
   depends_on "go" => :build

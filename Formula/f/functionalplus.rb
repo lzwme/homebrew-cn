@@ -1,6 +1,6 @@
 class Functionalplus < Formula
   desc "Functional Programming Library for C++"
-  homepage "https://github.com/Dobiasd/FunctionalPlus"
+  homepage "https://www.daiw.de/fplus-api-search/"
   url "https://ghfast.top/https://github.com/Dobiasd/FunctionalPlus/archive/refs/tags/v0.2.28.tar.gz"
   sha256 "8864a3e9bebde6ebed71b49ac2a036cedf9ae0f02ce758bc28c21e6a2ae15803"
   license "BSL-1.0"

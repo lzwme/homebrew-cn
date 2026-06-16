@@ -1,6 +1,6 @@
 class Buf < Formula
   desc "New way of working with Protocol Buffers"
-  homepage "https://github.com/bufbuild/buf"
+  homepage "https://buf.build"
   url "https://ghfast.top/https://github.com/bufbuild/buf/archive/refs/tags/v1.70.0.tar.gz"
   sha256 "7da0f12d42d00a4a4fabf89af37e2e02ad5958bc7e977a713e4bc01b2a232899"
   license "Apache-2.0"

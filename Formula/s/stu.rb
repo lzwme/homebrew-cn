@@ -1,6 +1,6 @@
 class Stu < Formula
   desc "TUI explorer application for Amazon S3 (AWS S3)"
-  homepage "https://github.com/lusingander/stu"
+  homepage "https://lusingander.github.io/stu/"
   url "https://ghfast.top/https://github.com/lusingander/stu/archive/refs/tags/v0.7.6.tar.gz"
   sha256 "b8d87203dcaf1ce55193afc28a3c436db98a460348a58a89e14b87449a76c1af"
   license "MIT"

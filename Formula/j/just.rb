@@ -1,6 +1,6 @@
 class Just < Formula
   desc "Handy way to save and run project-specific commands"
-  homepage "https://github.com/casey/just"
+  homepage "https://just.systems"
   url "https://ghfast.top/https://github.com/casey/just/archive/refs/tags/1.52.0.tar.gz"
   sha256 "cd869b45801f1434d26c05df7ca999b7b56c7d1d57fb1211cdfd2526ec28f130"
   license "CC0-1.0"

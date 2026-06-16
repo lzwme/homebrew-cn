@@ -1,6 +1,6 @@
 class Cdebug < Formula
   desc "Swiss army knife of container debugging"
-  homepage "https://github.com/iximiuz/cdebug"
+  homepage "https://iximiuz.com/en/posts/docker-debug-slim-containers/"
   url "https://ghfast.top/https://github.com/iximiuz/cdebug/archive/refs/tags/v0.0.19.tar.gz"
   sha256 "9bc1779fb342029e2e7b53ac4708ac939d2d55914974752cd64b040617c3b496"
   license "Apache-2.0"

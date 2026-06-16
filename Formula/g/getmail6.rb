@@ -3,8 +3,8 @@ class Getmail6 < Formula
 
   desc "Extensible mail retrieval system with POP3, IMAP4, SSL support"
   homepage "https://getmail6.org/"
-  url "https://ghfast.top/https://github.com/getmail6/getmail6/archive/refs/tags/v6.19.12.tar.gz"
-  sha256 "85bb39673d5160202e7ab32a02a22d95819ab01d81c3aca349e4617b98f8fb83"
+  url "https://ghfast.top/https://github.com/getmail6/getmail6/archive/refs/tags/v6.20.00.tar.gz"
+  sha256 "a78ce1f02a35c1aed95d6fd8bc9db47e514247ec66a87e00ef9eda80d800d9ad"
   license "GPL-2.0-only"
 
   # Upstream uses GitHub releases to indicate that a version is released
@@ -16,7 +16,7 @@ class Getmail6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e69c7b852da170af02893228765ab35a68eefd8de2cc7cbba36eb3661e85afe9"
+    sha256 cellar: :any_skip_relocation, all: "8cd5b0c2f2645f5102d69c7231e8acbc3d560160e2c075d90cb36ef151e2dc67"
   end
 
   uses_from_macos "python"

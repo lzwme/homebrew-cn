@@ -2,7 +2,7 @@ class MagicWormhole < Formula
   include Language::Python::Virtualenv
 
   desc "Securely transfers data between computers"
-  homepage "https://github.com/magic-wormhole/magic-wormhole"
+  homepage "https://magic-wormhole.readthedocs.io/en/latest/"
   url "https://files.pythonhosted.org/packages/d7/8c/964308aeed7b828ca726da4bbfcc8f2bc89713b39ba768e24ce6331b30f3/magic_wormhole-0.24.0.tar.gz"
   sha256 "c01b4815878e5fbcad7a22cfa190c529349bf271164189a0ad955a34a8d4cde0"
   license "MIT"

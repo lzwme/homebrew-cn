@@ -1,6 +1,6 @@
 class Codesnap < Formula
   desc "Generates code snapshots in various formats"
-  homepage "https://github.com/codesnap-rs/codesnap"
+  homepage "https://codesnap-docs.netlify.app/"
   url "https://ghfast.top/https://github.com/codesnap-rs/codesnap/archive/refs/tags/v0.13.4.tar.gz"
   sha256 "47a249efd507c0e1dcd8122da1d263b2bf00dcedfa27eed976a02909cefe0725"
   license "MIT"

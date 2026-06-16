@@ -1,6 +1,6 @@
 class Mediamtx < Formula
   desc "Zero-dependency real-time media server and media proxy"
-  homepage "https://github.com/bluenviron/mediamtx"
+  homepage "https://mediamtx.org"
   # need to use the tag to generate the version info
   url "https://github.com/bluenviron/mediamtx.git",
       tag:      "v1.19.1",

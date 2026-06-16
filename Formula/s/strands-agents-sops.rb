@@ -2,7 +2,7 @@ class StrandsAgentsSops < Formula
   include Language::Python::Virtualenv
 
   desc "Standard Operating Procedures for AI agents using natural language"
-  homepage "https://github.com/strands-agents/agent-sop"
+  homepage "https://aws.amazon.com/blogs/opensource/introducing-strands-agent-sops-natural-language-workflows-for-ai-agents/"
   url "https://files.pythonhosted.org/packages/6c/e7/59ac10769f9e691587d77305d57fc7907ccdd2d84b3108963de7b1c71d70/strands_agents_sops-1.1.2.tar.gz"
   sha256 "bfe0a906a0f5dd596abfe9ff4fda8958ad17f217a24aa6ae956023e6c06c8cbe"
   license "Apache-2.0"

@@ -1,6 +1,6 @@
 class Jinx < Formula
   desc "Embeddable scripting language for real-time applications"
-  homepage "https://github.com/JamesBoer/Jinx"
+  homepage "https://jamesboer.github.io/Jinx/"
   url "https://ghfast.top/https://github.com/JamesBoer/Jinx/archive/refs/tags/v1.3.10.tar.gz"
   sha256 "5b3a3e6c2c4b976dfdb16519aee7299c98dbf417b8179099a5509a5fd4d513ac"
   license "MIT"

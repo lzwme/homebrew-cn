@@ -2,7 +2,7 @@ class Litecli < Formula
   include Language::Python::Virtualenv
 
   desc "CLI for SQLite Databases with auto-completion and syntax highlighting"
-  homepage "https://github.com/dbcli/litecli"
+  homepage "https://litecli.com"
   url "https://files.pythonhosted.org/packages/e3/d5/afec99cc3eaba96214d77e76438d7fe5e6ea54704b0e47dd97d9696ccd6c/litecli-1.17.1.tar.gz"
   sha256 "e2f7191eaba830b24dbbfc9171a495c62562df923ba1cc3b2db2652547c1bac8"
   license "BSD-3-Clause"

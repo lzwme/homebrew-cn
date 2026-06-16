@@ -41,12 +41,17 @@ class Llvm < Formula
   depends_on "swig" => :build # for lldb
   depends_on "python@3.14"
   depends_on "xz" # for lldb
-  depends_on "z3"
   depends_on "zstd"
 
   uses_from_macos "libedit"
   uses_from_macos "libffi"
   uses_from_macos "ncurses" # for lldb
+
+  # Z3 needs C++20 std::format which is only available in Xcode 15.3 or later.
+  # To avoid a dependency loop, we disable Z3 support on older macOS.
+  on_system :linux, macos: :sonoma_or_newer do
+    depends_on "z3"
+  end
 
   on_linux do
     depends_on "binutils" => :build # needed for LLVMgold plugin
@@ -82,6 +87,7 @@ class Llvm < Formula
     ]
 
     unless versioned_formula?
+      enable_z3 = deps.map(&:name).include?("z3")
       projects << "lldb"
 
       if OS.mac?
@@ -118,7 +124,7 @@ class Llvm < Formula
       -DLLVM_INCLUDE_DOCS=OFF
       -DLLVM_INCLUDE_TESTS=OFF
       -DLLVM_INSTALL_UTILS=ON
-      -DLLVM_ENABLE_Z3_SOLVER=#{versioned_formula? ? "OFF" : "ON"}
+      -DLLVM_ENABLE_Z3_SOLVER=#{enable_z3 ? "ON" : "OFF"}
       -DLLVM_OPTIMIZED_TABLEGEN=ON
       -DLLVM_TARGETS_TO_BUILD=all
       -DLLVM_USE_RELATIVE_PATHS_IN_FILES=ON

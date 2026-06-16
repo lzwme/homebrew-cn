@@ -1,6 +1,6 @@
 class WoofDoom < Formula
   desc "Woof! is a continuation of the Boom/MBF bloodline of Doom source ports"
-  homepage "https://github.com/fabiangreffrath/woof"
+  homepage "https://fabiangreffrath.github.io/woof/"
   license all_of: [
     # Default license is GPL-2.0-or-later but `woof` binary ends up GPL-3.0-or-later
     "GPL-2.0-or-later",

@@ -2,7 +2,7 @@ class Khard < Formula
   include Language::Python::Virtualenv
 
   desc "Console carddav client"
-  homepage "https://github.com/lucc/khard"
+  homepage "https://khard.readthedocs.io/en/latest/"
   url "https://files.pythonhosted.org/packages/7d/10/01f3f4d875d3908d0d34fa32bb55d5015f68bc391257cfa1ceac27da763e/khard-0.20.1.tar.gz"
   sha256 "b3e5bfadf6b5d7e8f168d0c320c74b954e4d0ef4194b28791140fe577a48f948"
   license "GPL-3.0-only"

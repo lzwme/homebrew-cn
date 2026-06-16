@@ -1,6 +1,6 @@
 class EditorconfigChecker < Formula
   desc "Tool to verify that your files are in harmony with your .editorconfig"
-  homepage "https://github.com/editorconfig-checker/editorconfig-checker"
+  homepage "https://editorconfig-checker.github.io/"
   url "https://ghfast.top/https://github.com/editorconfig-checker/editorconfig-checker/archive/refs/tags/v3.7.0.tar.gz"
   sha256 "df08c7aa8eb33c147ba38b628f53aff7baf3877d44c577d8964d9899e8052c81"
   license "MIT"

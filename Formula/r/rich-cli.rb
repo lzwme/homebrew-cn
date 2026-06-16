@@ -2,7 +2,7 @@ class RichCli < Formula
   include Language::Python::Virtualenv
 
   desc "Command-line toolbox for fancy output in the terminal"
-  homepage "https://github.com/textualize/rich-cli"
+  homepage "https://www.textualize.io"
   url "https://files.pythonhosted.org/packages/57/7b/70878722e04b8eb8dba4d00429bce31cd012a6a4caf09dbf012bbf007104/rich_cli-1.8.1.tar.gz"
   sha256 "16992bcbd454974dc53671ba1a12e189148566164aaa7370bdf6648c8b1438c3"
   license "MIT"

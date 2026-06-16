@@ -1,6 +1,6 @@
 class ClickhouseOdbc < Formula
   desc "Official ODBC driver implementation for accessing ClickHouse as a data source"
-  homepage "https://github.com/ClickHouse/clickhouse-odbc"
+  homepage "https://clickhouse.com"
   license "Apache-2.0"
   revision 3
   head "https://github.com/ClickHouse/clickhouse-odbc.git", branch: "master"

@@ -1,6 +1,6 @@
 class Shortest < Formula
   desc "AI-powered natural language end-to-end testing framework"
-  homepage "https://github.com/antiwork/shortest"
+  homepage "https://shortest.com"
   url "https://registry.npmjs.org/@antiwork/shortest/-/shortest-0.4.9.tgz"
   sha256 "0e239bceeda97a65178b7e4b6be16cc88c67e047eeb71bfd2da04441156180f8"
   license "MIT"

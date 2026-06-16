@@ -2,7 +2,7 @@ class Dnstwist < Formula
   include Language::Python::Virtualenv
 
   desc "Test domains for typo squatting, phishing and corporate espionage"
-  homepage "https://github.com/elceef/dnstwist"
+  homepage "https://dnstwist.it"
   url "https://files.pythonhosted.org/packages/e7/0e/88b4c5c7f3077c0d2e8544a14e321fce80b3cf0148a46dec9724e27c61d3/dnstwist-20250130.tar.gz"
   sha256 "8b6dd9c42a643a0e8b087903c0e6d75c0f6cebf94920ab0b7760ac2522c6bb42"
   license "Apache-2.0"

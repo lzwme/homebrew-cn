@@ -1,6 +1,6 @@
 class Goku < Formula
   desc "HTTP load testing tool"
-  homepage "https://github.com/jcaromiq/goku"
+  homepage "https://goku.observabilityinsight.com/"
   url "https://ghfast.top/https://github.com/jcaromiq/goku/archive/refs/tags/v3.0.0.tar.gz"
   sha256 "95635c42cf748b64a4d1a04b5460397331366a78ddd890f7e13bf0e811c27976"
   license "MIT"

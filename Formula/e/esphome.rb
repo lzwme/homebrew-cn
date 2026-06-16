@@ -2,7 +2,7 @@ class Esphome < Formula
   include Language::Python::Virtualenv
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
-  homepage "https://github.com/esphome/esphome"
+  homepage "https://esphome.io/"
   url "https://files.pythonhosted.org/packages/98/5b/65893169443a255da044c6676e46e71bdf3f7b50df5408404f58bd6aaab6/esphome-2026.5.3.tar.gz"
   sha256 "6ec2e5a64009a3401fde582d251b127a5e436f00b300076edf192d06be8439a9"
   license "MIT"

@@ -1,6 +1,6 @@
 class Brush < Formula
   desc "Bourne RUsty SHell (command interpreter)"
-  homepage "https://github.com/reubeno/brush"
+  homepage "https://brush.sh"
   url "https://ghfast.top/https://github.com/reubeno/brush/archive/refs/tags/brush-shell-v0.4.0.tar.gz"
   sha256 "0cce607454972c18bc4a30d2f44a2c91fccf02c458475fda7720370a3dc8a4f0"
   license "MIT"

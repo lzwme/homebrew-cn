@@ -2,7 +2,7 @@ class SlitherAnalyzer < Formula
   include Language::Python::Virtualenv
 
   desc "Solidity static analysis framework written in Python 3"
-  homepage "https://github.com/crytic/slither"
+  homepage "https://blog.trailofbits.com/2018/10/19/slither-a-solidity-static-analysis-framework/"
   url "https://files.pythonhosted.org/packages/b0/e8/bf6efe567dffbab0d850bd2395a7a1db68fe1a95bfb507854be00571832c/slither_analyzer-0.11.5.tar.gz"
   sha256 "d90af76b86bdf7ced56fc4c8eea8792cde1ec2c375372d5e70298c2ff998d5e1"
   license "AGPL-3.0-only"

@@ -1,6 +1,6 @@
 class Pygit2 < Formula
   desc "Bindings to the libgit2 shared library"
-  homepage "https://github.com/libgit2/pygit2"
+  homepage "https://www.pygit2.org/"
   url "https://files.pythonhosted.org/packages/a6/44/415aa93422b4bfc21a6448acb7e16280d5f33a9a3fae38a384e37b046ae4/pygit2-1.19.3.tar.gz"
   sha256 "a543e6d4ebb43825564935758dc234e770016fed673b84370d46ae9580558831"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }

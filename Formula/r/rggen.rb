@@ -1,6 +1,6 @@
 class Rggen < Formula
   desc "Code generation tool for control and status registers"
-  homepage "https://github.com/rggen/rggen"
+  homepage "https://rggen.github.io/rggen-webui/"
   license "MIT"
 
   stable do

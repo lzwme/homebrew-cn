@@ -1,6 +1,6 @@
 class Harper < Formula
   desc "Grammar Checker for Developers"
-  homepage "https://github.com/Automattic/harper"
+  homepage "https://writewithharper.com"
   url "https://ghfast.top/https://github.com/Automattic/harper/archive/refs/tags/v2.5.0.tar.gz"
   sha256 "469ec352c9d0705b0e8702f8c704b3eac27045f9b209468864a467589ab8a0a7"
   license "Apache-2.0"

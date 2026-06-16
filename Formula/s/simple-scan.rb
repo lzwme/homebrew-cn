@@ -39,10 +39,6 @@ class SimpleScan < Formula
   end
 
   def install
-    # Work-around for build issue with Xcode 15.3
-    # upstream bug report, https://gitlab.gnome.org/GNOME/simple-scan/-/issues/386
-    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
-
     ENV["DESTDIR"] = "/"
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

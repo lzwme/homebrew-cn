@@ -1,6 +1,6 @@
 class PythonLauncher < Formula
   desc "Launch your Python interpreter the lazy/smart way"
-  homepage "https://github.com/brettcannon/python-launcher"
+  homepage "https://pythoncode.run"
   url "https://ghfast.top/https://github.com/brettcannon/python-launcher/archive/refs/tags/v1.0.1.tar.gz"
   sha256 "6f868da0217b74e05775e7ebcbec4779ce12956728397ea57fd59c8529c56b6d"
   license "MIT"

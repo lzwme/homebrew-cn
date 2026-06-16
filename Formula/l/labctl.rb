@@ -1,17 +1,17 @@
 class Labctl < Formula
   desc "CLI tool for interacting with iximiuz labs and playgrounds"
-  homepage "https://github.com/iximiuz/labctl"
-  url "https://ghfast.top/https://github.com/iximiuz/labctl/archive/refs/tags/v0.1.86.tar.gz"
-  sha256 "96eda5c03ccb9eab6f3715863f71cbe6aaa05ea653195e3ad93533ead850cc30"
+  homepage "https://labs.iximiuz.com/playgrounds"
+  url "https://ghfast.top/https://github.com/iximiuz/labctl/archive/refs/tags/v0.1.87.tar.gz"
+  sha256 "ac6b200e44d80d194dc7972959008e4c26a60447ed6c935d27330a331445eb55"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "052d2cd2c75b6964fddcb782804059154218263026f78c882a20b9b294d41c34"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "052d2cd2c75b6964fddcb782804059154218263026f78c882a20b9b294d41c34"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "052d2cd2c75b6964fddcb782804059154218263026f78c882a20b9b294d41c34"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c9b8260f8a75d0460b43e08819f5919154f0abbeeb7ea4c4175f7f41dc5bd4c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c528a8a691e0704bf703304063980873e9f510ac3b74618ed232d7717c03ebf"
-    sha256 cellar: :any,                 x86_64_linux:  "dcfca935f1dcd978f24aaef8f2d024102bbef0ea9ce52de68504a4113114e256"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6b5c2bbb76da98c45f469ca86e642f5476e7f645c502bdc615080537012d05e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6b5c2bbb76da98c45f469ca86e642f5476e7f645c502bdc615080537012d05e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6b5c2bbb76da98c45f469ca86e642f5476e7f645c502bdc615080537012d05e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9ab4892adfe622dd2d71fc1a6ee1d0b0346b20caf66af19078db1aa4f12fbd12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f596fc947e9c7ac84ff10b5b4d71772b01b8871c039f9b240236f189feadd26"
+    sha256 cellar: :any,                 x86_64_linux:  "0f1996ca1250aeca9f44d291bd01ce815657bee77931cd124987c68890fd87aa"
   end
 
   depends_on "go" => :build

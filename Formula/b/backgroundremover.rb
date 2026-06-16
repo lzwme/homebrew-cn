@@ -2,7 +2,7 @@ class Backgroundremover < Formula
   include Language::Python::Virtualenv
 
   desc "Remove background from images and video using AI"
-  homepage "https://github.com/nadermx/backgroundremover"
+  homepage "https://backgroundremoverai.com"
   url "https://files.pythonhosted.org/packages/b1/59/5713f3ddedb43b65c7bef017b5d46b586d2af2af9e31f6c0e2e618bcc35f/backgroundremover-0.4.4.tar.gz"
   sha256 "b10da99c69cac0c4f5076d3ae5ca3ad28353fbb541e6924ace9bfe05b2756a5b"
   license "MIT"

@@ -17,17 +17,8 @@ class Nanoflann < Formula
 
   depends_on "cmake" => :build
 
-  on_macos do
-    depends_on "gcc" => [:build, :test] if DevelopmentTools.clang_build_version <= 1200
-  end
-
-  fails_with :clang do
-    build 1200
-    cause "https://bugs.llvm.org/show_bug.cgi?id=23029"
-  end
-
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DNANOFLANN_BUILD_EXAMPLES=OFF"
+    system "cmake", "-S", ".", "-B", "build", "-DNANOFLANN_BUILD_EXAMPLES=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

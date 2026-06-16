@@ -1,6 +1,6 @@
 class JsonFortran < Formula
   desc "Fortran 2008 JSON API"
-  homepage "https://github.com/jacobwilliams/json-fortran"
+  homepage "https://jacobwilliams.github.io/json-fortran/"
   url "https://ghfast.top/https://github.com/jacobwilliams/json-fortran/archive/refs/tags/9.3.1.tar.gz"
   sha256 "301a8d205bc7510b21c731130c30babd552c33e3f20568ce732b5e165b1f7a86"
   license "BSD-3-Clause"

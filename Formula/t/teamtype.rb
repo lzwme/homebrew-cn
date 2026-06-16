@@ -1,6 +1,6 @@
 class Teamtype < Formula
   desc "Peer-to-peer, editor-agnostic collaborative editing of local text files"
-  homepage "https://github.com/teamtype/teamtype"
+  homepage "https://teamtype.github.io/teamtype/"
   url "https://ghfast.top/https://github.com/teamtype/teamtype/archive/refs/tags/v0.9.1.tar.gz"
   sha256 "8503411b340f00456ac6c1d586637de35a35886b7addbf2cec06816e05bc9873"
   license "AGPL-3.0-or-later"

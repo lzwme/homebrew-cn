@@ -1,6 +1,6 @@
 class Tproxy < Formula
   desc "CLI tool to proxy and analyze TCP connections"
-  homepage "https://github.com/kevwan/tproxy"
+  homepage "https://go-zero.dev"
   url "https://ghfast.top/https://github.com/kevwan/tproxy/archive/refs/tags/v0.9.2.tar.gz"
   sha256 "5376816b6f5d7765b401f74d3feb78fbf307cb6b725627b2e953ff9d02e8dc53"
   license "MIT"

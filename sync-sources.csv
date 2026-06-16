@@ -1515,6 +1515,7 @@ Homebrew-homebrew-core/Formula/d/dependency-check.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/deployer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/depot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/depqbf.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/depsguard.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/der-ascii.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/derby.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/descope.rb, Homebrew/homebrew-core, 1
@@ -3487,6 +3488,7 @@ Homebrew-homebrew-core/Formula/j/jvm-mon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jvmtop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jwt-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jwt-hack.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jwt-ui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jxl-oxide.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jxrlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jython.rb, Homebrew/homebrew-core, 0
@@ -8705,6 +8707,7 @@ Homebrew-homebrew-cask/Casks/a/ares-emulator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aria-maestosa.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aria2d.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/ariang.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/ariax.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/arkiwi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/arm-performance-libraries.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/armory.rb, Homebrew/homebrew-cask, 1
@@ -14905,6 +14908,7 @@ Homebrew-homebrew-cask/Casks/s/secretive.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/secure-pipes.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/securesafe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/securityspy.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/seekfast.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/segger-embedded-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/segger-jlink.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/segger-ozone.rb, Homebrew/homebrew-cask, 0
@@ -14995,6 +14999,7 @@ Homebrew-homebrew-cask/Casks/s/silhouette-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/silicon-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/silicon-info.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/silicon-labs-vcp-driver.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/silkypix-developer-studio-se.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/silnite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/silo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sim-daltonism.rb, Homebrew/homebrew-cask, 0

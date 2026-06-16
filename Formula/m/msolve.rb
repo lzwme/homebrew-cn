@@ -1,19 +1,18 @@
 class Msolve < Formula
   desc "Library for Polynomial System Solving through Algebraic Methods"
   homepage "https://msolve.lip6.fr"
-  url "https://ghfast.top/https://github.com/algebraic-solving/msolve/archive/refs/tags/v0.9.5.tar.gz"
-  sha256 "92b94775cd5a046de307e2ad0fc576d2631e43fbd0eb7749517a033d7e77ddf4"
+  url "https://ghfast.top/https://github.com/algebraic-solving/msolve/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "213caf0d0e19447d0adbc3bc946c03ba5054da79495c207b9cd8577fddf86a4c"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/algebraic-solving/msolve.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "30716afe32863d3ae227b5e02d9f4ada80216226a64534eb30f66a8def9a2d0a"
-    sha256 cellar: :any,                 arm64_sequoia: "4bce071a4be4e9b0ac054556ba7454dee68644b5b0cfc726cab9cbcb6b0e2082"
-    sha256 cellar: :any,                 arm64_sonoma:  "adc200dcd843f64e2f3cea57ee101d3ea07e2a2d38b6bc57a194548157718238"
-    sha256 cellar: :any,                 sonoma:        "b17cbde4349df5086a71dd597892df284967341c49c33e965f0b333d6e8e53d7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a62db2a516722def2394df7655f661ab243cb83b16eb259f51a615ad4701e4f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d182d4b071f035a780ea8214cf6a62453f6aaf2f92c8045dc432e7578b13b95b"
+    sha256 cellar: :any, arm64_tahoe:   "10270248ca53dbba45c49fa9e79f649845f90fdc76d0bcb84302bc9453e6b96f"
+    sha256 cellar: :any, arm64_sequoia: "a9f53f4cee39f9bf05d2744dfe351aa103bbd889e1561b9dd98dcd79abdb1a5c"
+    sha256 cellar: :any, arm64_sonoma:  "ed66818f6344c8ca648667a09e01dd8f71f35cea26b67b698adcafff10bdcee6"
+    sha256 cellar: :any, sonoma:        "278e5d198b57020323a90bdd4375bbd6415850955a6f52882dfc8e7d70aefda9"
+    sha256 cellar: :any, arm64_linux:   "64c1b5757894df7f871c17b68683f1c9a8d19b29408acc1e24a32766aed3af0c"
+    sha256 cellar: :any, x86_64_linux:  "c68e919956a1fac874534fa75a99aa31565ea09e3071ab3fcbc23bc9138f8a71"
   end
 
   depends_on "autoconf" => :build

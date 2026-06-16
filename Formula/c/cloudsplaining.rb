@@ -3,18 +3,18 @@ class Cloudsplaining < Formula
 
   desc "AWS IAM Security Assessment tool"
   homepage "https://cloudsplaining.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/3a/f8/f7519b704827a702c39f48676e8706564722d10f2c033b67b61a18ad8ad4/cloudsplaining-0.9.0.tar.gz"
-  sha256 "62eaa1f32843f33a8278fa441ff3d4bb9cc74a883034a26aae9c8b699ab7c061"
+  url "https://files.pythonhosted.org/packages/7c/89/bf53630e908aef0680a4c843c4e8acd0b96a22b196ffec5a94bcc5249f80/cloudsplaining-0.9.1.tar.gz"
+  sha256 "14ef4f786144b8a2147372aeaa810822dc70f75d3d7c53dd965a12d1a1167cb9"
   license "BSD-3-Clause"
   head "https://github.com/salesforce/cloudsplaining.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "73f073278a88632ac449dc3129e1773b4aaa3869d3788bfb648e7ad3c142d9a3"
-    sha256 cellar: :any, arm64_sequoia: "7a365345deb5dab0b7d844065cf7c457002324ea680f15164732adaf6b288b7f"
-    sha256 cellar: :any, arm64_sonoma:  "eaa296bade8a59acf61aa09e84b65b00c18b73ad86bb5709c39cc06a7628dd02"
-    sha256 cellar: :any, sonoma:        "2fdd3e608cc247788facbaab0ab1bc693cde3b8776b4c0b644a4be23480be5f5"
-    sha256 cellar: :any, arm64_linux:   "cb7d7d226991bb8f14c80563142689c05f9cc47f9f2f794cf2c39564a20b63ee"
-    sha256 cellar: :any, x86_64_linux:  "39a846d20659570a6897891ee952cb4f48aa4939b31340b041d67d4c8054da5e"
+    sha256 cellar: :any, arm64_tahoe:   "ebf93c9d04bec4843a52545c316738c34cacd1e3867bdd68960d934064629f91"
+    sha256 cellar: :any, arm64_sequoia: "8639cfd208c131fbf1d3be215e2e3f281607de774cfbdbe75440f49d4072eb03"
+    sha256 cellar: :any, arm64_sonoma:  "c4d811819a9e23bdf0e4954cba452592a821ce3bbffc2c13f3045a406b62042f"
+    sha256 cellar: :any, sonoma:        "293de1c38afc9b5c36aa0b02a5b1617667d9a349086120e5f813e52bdace0f49"
+    sha256 cellar: :any, arm64_linux:   "a6370bc12ee831cddd6e69a3bdc3040efc6f81b04a0b8734358d5ef921723342"
+    sha256 cellar: :any, x86_64_linux:  "20c4631c24b10ad64e746d6f83f672696e6ba16e30e088b9072a84b3cafc3197"
   end
 
   depends_on "rust" => :build # for orjson

@@ -1,6 +1,6 @@
 class GitGrab < Formula
   desc "Clone a git repository into a standard location organised by domain and path"
-  homepage "https://github.com/wezm/git-grab"
+  homepage "https://codeberg.org/wezm/git-grab"
   url "https://ghfast.top/https://github.com/wezm/git-grab/archive/refs/tags/4.0.1.tar.gz"
   sha256 "63c080d78dd1d5213b59ae0b98418b9f374c59ccfaa444c55e99b7004fd4fe13"
   license any_of: ["Apache-2.0", "MIT"]

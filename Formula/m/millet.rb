@@ -1,18 +1,18 @@
 class Millet < Formula
   desc "Language server for Standard ML (SML)"
   homepage "https://github.com/azdavis/millet"
-  url "https://ghfast.top/https://github.com/azdavis/millet/archive/refs/tags/v0.15.1.tar.gz"
-  sha256 "ba5651ab14a07b2f2f09aad11f151e0fe4e767ccc4064122a5c56308c0320244"
+  url "https://ghfast.top/https://github.com/azdavis/millet/archive/refs/tags/v0.15.2.tar.gz"
+  sha256 "dd0de00174182013543efe91e4755e56611fe872f40d5b9f1353b7a319d7f711"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/azdavis/millet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f4cc683cba304eb87085b60f70545616099a84d4281014ee93a30c2c366fb8b7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "642268eddf5678529e58fc16636ddb2e38657177b798c6b1801d305c82264b9d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6f8f6f5f7dcca843f574ff63d26e255518aba424c8e5fb7d49ec7ed0158f215"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e0dc30970f99720b85a440850626df262fc71db4b4f74787fa5613afb4f6c97c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4219b0fd1cc06b6c02951a80618a11a522d9ede6227a586849b9c76cf7190c86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e18791bb10394022f41891876fdfa52f9eb4ab95022a986a60e7627cab22cc5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ecd593350008c6e56cef1227b949472011e3a373ded1f177d120fff19c83f455"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79e6cf5cbe43cd791c0e7d7b056d84f7ad2efd17d16244e0dc46b026ad3821b3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4cde2ae38e21fb8ac20e67807b869ae61e3e046001bb5f12fcdc129d3b4ba9a6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ead9867137f148dfde3dde8b2ea9c995b0b8ea602d47f9c42544418ec97159a8"
+    sha256 cellar: :any,                 arm64_linux:   "76c1bee8d56109eeae4011b20288dc9d04bdab4ab79bb72902851e6f4e12d37f"
+    sha256 cellar: :any,                 x86_64_linux:  "c0a7daf887dc5a0aadfba3dff6f7108970f33fe4b99269019b1e2065a7cbc202"
   end
 
   depends_on "rust" => :build

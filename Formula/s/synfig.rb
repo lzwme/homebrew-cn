@@ -67,13 +67,6 @@ class Synfig < Formula
   def install
     ENV.cxx11
 
-    # Workaround to fix error: a template argument list is expected after
-    # a name prefixed by the template keyword [-Wmissing-template-arg-list-after-template-kw]
-    # PR ref: https://github.com/synfig/synfig/pull/3559
-    if DevelopmentTools.clang_build_version >= 1700
-      ENV.append_to_cflags "-Wno-missing-template-arg-list-after-template-kw"
-    end
-
     # missing install-sh in the tarball, and re-generate configure script
     # upstream bug report, https://github.com/synfig/synfig/issues/3398
     system "autoreconf", "--force", "--install", "--verbose"

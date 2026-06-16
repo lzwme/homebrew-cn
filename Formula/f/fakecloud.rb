@@ -1,18 +1,18 @@
 class Fakecloud < Formula
   desc "Free, open-source local AWS cloud emulator for integration testing"
   homepage "https://fakecloud.dev/"
-  url "https://ghfast.top/https://github.com/faiscadev/fakecloud/archive/refs/tags/v0.17.0.tar.gz"
-  sha256 "3fd6e838d92df4ddaedbd79f8bf7d6aa677c1f7fb1e51c4ce02185061d57133b"
+  url "https://ghfast.top/https://github.com/faiscadev/fakecloud/archive/refs/tags/v0.19.1.tar.gz"
+  sha256 "f02187f72063ce27153160dfb31990ec8d4af2d13866cd58fd20147a28fec79f"
   license "AGPL-3.0-or-later"
   head "https://github.com/faiscadev/fakecloud.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dda81bc5b738f4935e9070c4892f2564b0d4202573f3a23248a3b0813db57278"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "851d6ee6174dfb5e4297468d7ae5bb09120dccd191207262081e9713dd0503b1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd9ee9a9936402f8d71b35068bbe69f83b59a71cd2f3f3d6b8827e5e1d90b3f9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ea2d0be54d2ad29ad2722800bb6dffb3fbf4180f941219f58e31b648016cbc4e"
-    sha256 cellar: :any,                 arm64_linux:   "bf0dead358f6dea3363fcceb61184013b740fe0358e8a53c04d65c01e78cbe9e"
-    sha256 cellar: :any,                 x86_64_linux:  "e12f2aab1516bd2cac3f6cd92289053bf3cfb27f710647aa491dcb337867a2b9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76436d09f8df9899bc159319b4bc8210e9f50d68f3d82ed69431ab5da5adf9ea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5984a40d4790adfa085f538a1c9f096957ebb9caa69e2a57654d2b9c0a4b55bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5ec118611df38e7af67e60ade33a87117c6e6996d1e32081c68a37d5beaab6b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4d00c4294595977844a506aae51a0e26f638e409dd9a0ab17b457d759f09825f"
+    sha256 cellar: :any,                 arm64_linux:   "1f94b7082ba2cc4e3f7429864f42980bb31228936202f11e29bc6dd4d54140d9"
+    sha256 cellar: :any,                 x86_64_linux:  "19cc01d4dc0e631fecf9a4fe9018fe0e25ab52f876f85ec906a13149df1c3146"
   end
 
   depends_on "pkgconf" => :build

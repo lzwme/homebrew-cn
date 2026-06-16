@@ -1,6 +1,6 @@
 class PandocCrossref < Formula
   desc "Pandoc filter for numbering and cross-referencing"
-  homepage "https://github.com/lierdakil/pandoc-crossref"
+  homepage "https://lierdakil.github.io/pandoc-crossref/"
   url "https://ghfast.top/https://github.com/lierdakil/pandoc-crossref/archive/refs/tags/v0.3.24a.tar.gz"
   version "0.3.24a"
   sha256 "5b478c94b67d5b972c7b3d867a345be982d3af12475e2261dd9b37fc17e225d1"

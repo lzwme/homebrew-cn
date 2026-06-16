@@ -2,7 +2,7 @@ class Codelimit < Formula
   include Language::Python::Virtualenv
 
   desc "Your Refactoring Alarm"
-  homepage "https://github.com/getcodelimit/codelimit"
+  homepage "https://getcodelimit.github.io"
   url "https://files.pythonhosted.org/packages/b7/e5/36aae3a408a00642a7ffa95c200799bdcecb8402e495f4ceffca44a7ab13/codelimit-0.21.0.tar.gz"
   sha256 "bd43892398acd2e20fa97d37cb6180e679745c6125253a055a55f75357bf8afb"
   license "GPL-3.0-or-later"

@@ -1,8 +1,8 @@
 class Melange < Formula
   desc "Build APKs from source code"
   homepage "https://github.com/chainguard-dev/melange"
-  url "https://ghfast.top/https://github.com/chainguard-dev/melange/archive/refs/tags/v0.53.2.tar.gz"
-  sha256 "09f4fe08aaa5810d31ae51a413500921b7dddb64da22b7a2c5be990cc7147c18"
+  url "https://ghfast.top/https://github.com/chainguard-dev/melange/archive/refs/tags/v0.53.3.tar.gz"
+  sha256 "d0692e9d8b7897e4ae5cfb2681d191d16ef2ba06792b2ceb2acda15e0f5cace7"
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/melange.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Melange < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "326fde4fbe36874f4da4a554e631be65c834531e1edcad3899f6aef1dff7c510"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e25d49fd3ebb7e824b3403d14faf43d33a358e38a306ace28c5f84fd8ccbfeb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e4f3257bf8a9cbdcbac77cd521de81a4ef136ba8ee0cb934ca2964db32f3ec9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6351dede285107cf1bb604a6376798be9cb15d2203b1e2e6777d41f1283b13db"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "149d135455f6905f70b984262156f6e9a1cbb585084c1f07a8811716c2137757"
-    sha256 cellar: :any,                 x86_64_linux:  "b8ee6c8d4d7150b9e32985192e0aa761f9511e9d7b947563c3eee17e9b475ff1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0ea276b0a0b58bbc95f2247657ea63deccc00be7a42504f67b65cba45d932f4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e796c35082007b89b3a80ffc9ccbe0b3daca727710805e7da529422ef2ae65ca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8e6180568e2662ae3929265a94e3cf212dfbacd842760b983827c2e33e43fca"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e819ef1f7ea99341a9c3ee5e6154208ddfe0f1ba2b7a3e573c30f934c47dfa98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10635463cea92b4f61022d8b81b1b8dda6c20a98cab2d2197f7b286c698c2426"
+    sha256 cellar: :any,                 x86_64_linux:  "c21b775bed1742a8e7d026838933bdbdd0cff55f2b34118c76db3782f69db713"
   end
 
   depends_on "go" => :build

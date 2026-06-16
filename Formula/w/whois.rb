@@ -7,12 +7,13 @@ class Whois < Formula
   head "https://github.com/rfc1036/whois.git", branch: "next"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9b65a782bd5207b250ef0fb7754658493326c1d4b72bd5f89bfdbb815795ebd7"
-    sha256 cellar: :any,                 arm64_sequoia: "76cd02aff01bd38c1cb6363a0bb418d5582330754135f982d57044b6bcae0028"
-    sha256 cellar: :any,                 arm64_sonoma:  "c0660ae80290d002a9acb72bf7c1bbd62983616f96f71eb00078b1596ceb75f6"
-    sha256 cellar: :any,                 sonoma:        "fa5e4c41154dda1a222cab6cc7e94a325d1e65b81998306ff48766cde7f41a63"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b74ce0496d081d448ec321bd25789c5417a9a105104ccbe4cbc98b0a2686c094"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b994d8b2b6493b16adb403a54f455376383a0f368f9aa08f8906e365782aa2b3"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "b03c6f60e1696b0a4f35db508e63332de37554fe43cd114de5a85efaeef24d93"
+    sha256 cellar: :any, arm64_sequoia: "d05cb2e45d5f7022c7c3d93eef166a280b55d6a20fa8c68a81736186b9c419dc"
+    sha256 cellar: :any, arm64_sonoma:  "522d0ac940e860d4a263b93a9e7f643eb4182235006ad1ef17ca381e65c79ec7"
+    sha256 cellar: :any, sonoma:        "de547b318245853bcaed1893fefaab2e7e1ba228b2390af3531f54cb68db5f86"
+    sha256 cellar: :any, arm64_linux:   "7fe2718c85c7b8c984c420a2a919e156acfe5ff78ee1bae98df70367f05288f3"
+    sha256 cellar: :any, x86_64_linux:  "526baec1284e876ff39bb36dae17f1ff89c4ad4117eb6b50a309140f87b31004"
   end
 
   keg_only :provided_by_macos
@@ -23,16 +24,10 @@ class Whois < Formula
   def install
     ENV.append "LDFLAGS", "-L/usr/lib -liconv" if OS.mac?
 
-    # Fix compile with newer Clang
-    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+    # Workaround to expose strdup, https://github.com/rfc1036/whois/issues/171#issuecomment-4710871610
+    ENV.append_to_cflags "-D_DARWIN_C_SOURCE" if OS.mac?
 
-    have_iconv = if OS.mac?
-      "HAVE_ICONV=1"
-    else
-      "HAVE_ICONV=0"
-    end
-
-    system "make", "install-whois", "prefix=#{prefix}", have_iconv
+    system "make", "install-whois", "prefix=#{prefix}", "HAVE_ICONV=1"
   end
 
   test do

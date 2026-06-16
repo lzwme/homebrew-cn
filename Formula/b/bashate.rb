@@ -2,7 +2,7 @@ class Bashate < Formula
   include Language::Python::Virtualenv
 
   desc "Code style enforcement for bash programs"
-  homepage "https://github.com/openstack/bashate"
+  homepage "https://opendev.org/openstack/bashate"
   url "https://files.pythonhosted.org/packages/4d/0c/35b92b742cc9da7788db16cfafda2f38505e19045ae1ee204ec238ece93f/bashate-2.1.1.tar.gz"
   sha256 "4bab6e977f8305a720535f8f93f1fb42c521fcbc4a6c2b3d3d7671f42f221f4c"
   license "Apache-2.0"

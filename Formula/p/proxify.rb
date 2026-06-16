@@ -1,6 +1,6 @@
 class Proxify < Formula
   desc "Portable proxy for capturing, manipulating, and replaying HTTP/HTTPS traffic"
-  homepage "https://github.com/projectdiscovery/proxify"
+  homepage "https://projectdiscovery.io"
   url "https://ghfast.top/https://github.com/projectdiscovery/proxify/archive/refs/tags/v0.0.16.tar.gz"
   sha256 "a156d8094ac5a31bc92029c1a9e02300caa5e2f189dc13949410d792e9f4e63c"
   license "MIT"

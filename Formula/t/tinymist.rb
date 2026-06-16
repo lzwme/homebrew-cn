@@ -1,8 +1,8 @@
 class Tinymist < Formula
   desc "Services for Typst"
   homepage "https://myriad-dreamin.github.io/tinymist/"
-  url "https://ghfast.top/https://github.com/Myriad-Dreamin/tinymist/archive/refs/tags/v0.14.18.tar.gz"
-  sha256 "92491d5bcd7ba2a5fe66c3c5e4c3728c2dce19a01a7f755010a905d31ccd0d04"
+  url "https://ghfast.top/https://github.com/Myriad-Dreamin/tinymist/archive/refs/tags/v0.14.20.tar.gz"
+  sha256 "8b5aec9598102b0130a7b27ef8cc5e213670f528474183a42bed0d4549b86c5e"
   license "Apache-2.0"
   head "https://github.com/Myriad-Dreamin/tinymist.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Tinymist < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "29ef8f24bffd154e1bd8040a665bfb21d8416c23c26a1163f765fa355220534b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4efc162b599eb2f51696f807f5a2371cee67e96b6c8ed245318acd8823ee4532"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "388d5c3636b479c668ba9846bb8627c2b97e9c7e5c0501fa9933c5df18b517b6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ebb39e056c3d72829695bbbf2b0644af2fd0af1e38c843b9e7cf4c727e18a104"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9e00146f71009da8e4aa4caef8b5a3b5f33386ed640e1e1b6ac1b676f670b4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5cebc8608a0ffe6f04e0609b2ee9849714b12173972865db979fc06c1c5d5d5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ffbb704d799070e6180bd410798eaccf19338bc7c258aea67bc7044ea5c416ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64dded3490b979ac371256f3f92ae5edf7da2d58ea080eaacd76ed3e14f0d042"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c909fe8e9ee7e0f8ea8af8a3d8b2936b3ebeb9f9473d7ff760901b6797d1a8a1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "68c09af47608a622626393a548293ce7acbd36d34a67b006d933a28169ec6861"
+    sha256 cellar: :any,                 arm64_linux:   "43d1fd850d494b511fee10f8535afbe3fbf4b34addeb7abc173d84ceef2f6786"
+    sha256 cellar: :any,                 x86_64_linux:  "6087a087a6db6103af4e533ff88b18e79818f025b49f808a7c4774b075566187"
   end
 
   depends_on "rust" => :build

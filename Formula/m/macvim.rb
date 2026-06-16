@@ -1,7 +1,7 @@
 # Reference: https://github.com/macvim-dev/macvim/wiki/building
 class Macvim < Formula
   desc "GUI for vim, made for macOS"
-  homepage "https://github.com/macvim-dev/macvim"
+  homepage "https://macvim.org"
   url "https://ghfast.top/https://github.com/macvim-dev/macvim/archive/refs/tags/release-183.tar.gz"
   version "9.2.0321"
   sha256 "72de6be82087cd4db8d7b5b27ee079fe80d504f12b53065d68d29366fc7025f1"

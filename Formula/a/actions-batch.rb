@@ -1,6 +1,6 @@
 class ActionsBatch < Formula
   desc "Time-sharing supercomputer built on GitHub Actions"
-  homepage "https://github.com/alexellis/actions-batch"
+  homepage "https://blog.alexellis.io/github-actions-timesharing-supercomputer/"
   url "https://ghfast.top/https://github.com/alexellis/actions-batch/archive/refs/tags/v0.0.3.tar.gz"
   sha256 "9290b338e41ff71fb599de9996c64e33a58ec9aa4e8fdd7c4484ec2b085f2160"
   license "MIT"

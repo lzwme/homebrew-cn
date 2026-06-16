@@ -1,6 +1,6 @@
 class River < Formula
   desc "Reverse proxy application, based on the pingora library from Cloudflare"
-  homepage "https://github.com/memorysafety/river"
+  homepage "https://www.memorysafety.org/initiative/reverse-proxy/"
   url "https://ghfast.top/https://github.com/memorysafety/river/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "fe96d3693d60be06d0d1810954835f79139495b890b597f42c2b0bfa2bd8c7a6"
   license "Apache-2.0"

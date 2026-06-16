@@ -2,7 +2,7 @@ class Pympress < Formula
   include Language::Python::Virtualenv
 
   desc "Simple and powerful dual-screen PDF reader designed for presentations"
-  homepage "https://github.com/Cimbali/pympress/"
+  homepage "https://cimbali.github.io/pympress/"
   url "https://files.pythonhosted.org/packages/87/66/fb9f8f2975740ea8880de293eb16b543965387881c71ca323a00a5d77d8a/pympress-1.8.6.tar.gz"
   sha256 "243dc5dd225acd13fb6bae680e2de1816d521203b98a9cff588b66f141fffd9a"
   license "GPL-2.0-or-later"

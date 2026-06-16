@@ -2,7 +2,7 @@ class Cronboard < Formula
   include Language::Python::Virtualenv
 
   desc "Terminal-based dashboard for managing cron jobs locally and on servers"
-  homepage "https://github.com/antoniorodr/cronboard"
+  homepage "https://cronboard.dev/"
   url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v0.7.1.tar.gz"
   sha256 "fa5b4d907aead206124979681ea38b346c39f9ee6a5b3c7647d3e403455ad8a4"
   license "Apache-2.0"

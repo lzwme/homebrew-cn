@@ -1,28 +1,11 @@
 class Jsoncpp < Formula
   desc "Library for interacting with JSON"
   homepage "https://github.com/open-source-parsers/jsoncpp"
+  url "https://ghfast.top/https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/1.9.8.tar.gz"
+  sha256 "51828cf3574281d2b79ec2a1c56a9e4c20cc1103711321ea96384cffb8d2d904"
   license "MIT"
   compatibility_version 1
   head "https://github.com/open-source-parsers/jsoncpp.git", branch: "master"
-
-  stable do
-    url "https://ghfast.top/https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/1.9.7.tar.gz"
-    sha256 "830bf352d822d8558e9d0eb19d640d2e38536b4b6699c30a4488da09d5b1df18"
-
-    # Fix C++11 ABI breakage when compiled with C++17
-    # PR ref: https://github.com/open-source-parsers/jsoncpp/pull/1675
-    patch do
-      url "https://github.com/open-source-parsers/jsoncpp/commit/c67034e4b4c722579ee15fddb8e4af8f04252b08.patch?full_index=1"
-      sha256 "e25bdb33c92f6b8f11f7172e884f94ba38cde6a4efbde49b683e989681e142b3"
-    end
-
-    # chore: remove leftover CMake checks for std::string_view
-    # PR ref: https://github.com/open-source-parsers/jsoncpp/pull/1676
-    patch do
-      url "https://github.com/open-source-parsers/jsoncpp/commit/36f94b68d60774d2a5870a6881a92de02ed76eb1.patch?full_index=1"
-      sha256 "33e40d0e382a1a7e5b1693039703f55ea9e3c8e1e33e2c8c73ad0a92639d1471"
-    end
-  end
 
   livecheck do
     url :stable
@@ -30,12 +13,12 @@ class Jsoncpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5beaf350688283483e3f7c82726a8d11ec6cc88b389051916b09e21850a2b498"
-    sha256 cellar: :any,                 arm64_sequoia: "a71f80781827c5677bafdfeb474711cf3b5b48a3250adf99bbbbd49d07dd15c7"
-    sha256 cellar: :any,                 arm64_sonoma:  "362ddd256b7f2bd664bed9375c3697a7ffe11a19bc120f1c496fec56316b1534"
-    sha256 cellar: :any,                 sonoma:        "5f5d30dac714b5dfd17f4de27349692cd949f0144ccb3780860015b87a275b98"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b8d1661e7e6a7b5c6307c97ae08aea55e19bcb0587afe220e5c38a70f64a3f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7df8d9a070ee27066fb2287e2a48218ffe143ccc5bf607a701143a57dae242d3"
+    sha256 cellar: :any, arm64_tahoe:   "55ef2699e0d62974c6a003f1c749531f42bf6b037e6cb9b599ebba62f1924f57"
+    sha256 cellar: :any, arm64_sequoia: "6fb31a47e19e5b82609abc2f8d8ca6f60e1d194d3e2bc3704f1e57c4254cf157"
+    sha256 cellar: :any, arm64_sonoma:  "cf9175a5074e7a9624bdbac0d16cbc51d243f99706542b2872a4e544d78c0e04"
+    sha256 cellar: :any, sonoma:        "f6644b07c9763892e4494d76585cfce332ae5e58920018cec08024241fc5ef67"
+    sha256 cellar: :any, arm64_linux:   "e095696952c7a46c28423505848ee7b1b470cecdb37b520fd8bf5649d30af0f4"
+    sha256 cellar: :any, x86_64_linux:  "83f729c1a4d14b718ed349f9fda478e955b87809e80cca0a9c249313712c69c3"
   end
 
   # NOTE: Do not change this to use CMake, because the CMake build is deprecated.

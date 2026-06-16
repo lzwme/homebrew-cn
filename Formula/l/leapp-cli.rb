@@ -1,6 +1,6 @@
 class LeappCli < Formula
   desc "Cloud credentials manager cli"
-  homepage "https://github.com/noovolari/leapp"
+  homepage "https://www.leapp.cloud/"
   url "https://registry.npmjs.org/@noovolari/leapp-cli/-/leapp-cli-0.1.65.tgz"
   sha256 "a770256e2ce62f08c17650a30e785e46f92e7acb03e2bcbdec949054467b711c"
   license "MPL-2.0"
