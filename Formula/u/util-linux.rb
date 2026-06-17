@@ -1,8 +1,8 @@
 class UtilLinux < Formula
   desc "Collection of Linux utilities"
   homepage "https://github.com/util-linux/util-linux"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.1.tar.xz"
-  sha256 "82e9158eb12a9b0b569d84e1687fed9dd18fe89ccd8ef5ac3427218a7c0d7f7f"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.42/util-linux-2.42.2.tar.xz"
+  sha256 "03a05d3adf9602ef128f2da05b84b3205ce60c351e5737c0370f74000679ce8a"
   license all_of: [
     "BSD-3-Clause",
     "BSD-4-Clause-UC",
@@ -25,12 +25,12 @@ class UtilLinux < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3d9b6c9ed9786e56475bdbf1181d8a59aca9d0dd7bd01ecf782b1d2220033f22"
-    sha256 arm64_sequoia: "26073d37214d23bc3da03a92a6250e0b7461c9c3e58b53017bd03958b019f0c0"
-    sha256 arm64_sonoma:  "cb76a523dcaa1bfe9b01288c582c83ee165a964978dd6163e4f27a651b7be58f"
-    sha256 sonoma:        "9797d1d36e0e2726b41cdc002ed51204b3032a5c69899205790b51bdc2b6d01d"
-    sha256 arm64_linux:   "fe7287412da2b1494ac30408eee4e509aa4d137e62b445da9843ce6ce8ca8d55"
-    sha256 x86_64_linux:  "700f5145a2588ddc99b51c16504c934e81e34418731e07fba13bfa2949bb6c6e"
+    sha256 arm64_tahoe:   "3b2174542f34178348f62bccf804a06d8a1adb3dbd6767ce6b01fd618d63f9db"
+    sha256 arm64_sequoia: "190141242ffdeb5cf236a3b040342097019fce761e655a4c5a12eae18591d628"
+    sha256 arm64_sonoma:  "fbc17b9d39fd79e1da145bca8a5df65b7962d8fb823b7900db2b16f0b4dfb946"
+    sha256 sonoma:        "eeda32110a3b6d30accf88c5f5e3fbe05f180a8d10769aefcabb0df21deaf136"
+    sha256 arm64_linux:   "bc1ad29a5dc203dab6803165abece5a99a99a465e34486b792cd7ad0953bedbf"
+    sha256 x86_64_linux:  "2508e06eafa3451e885cc7bdfd6af035bf1aee5a7af090c22d5f4c6474f3fa50"
   end
 
   keg_only :shadowed_by_macos, "macOS provides the uuid.h header"

@@ -1,18 +1,18 @@
 class Chronograf < Formula
   desc "Open source monitoring and visualization UI for the TICK stack"
   homepage "https://docs.influxdata.com/chronograf/latest/"
-  url "https://ghfast.top/https://github.com/influxdata/chronograf/archive/refs/tags/1.11.3.tar.gz"
-  sha256 "63415015fa28c0f0ae751c34cc0044382e208279a46658a313a2a6fa41166605"
+  url "https://ghfast.top/https://github.com/influxdata/chronograf/archive/refs/tags/1.11.4.tar.gz"
+  sha256 "7d3c567b38e0c38807aedbc63fb0840db68ab08a8aeeb57a719c77f579baf538"
   license "AGPL-3.0-or-later"
   head "https://github.com/influxdata/chronograf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "39a024f7f0cad081864a828f1ede1aedc829254b53dda4ff08d86990ed13dea3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90240e1dcd0a50fffe50cd6fd629e5bc9b7bf29c148e797b49573e734ce166dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "869b974b8ed35d6cf3c3b7aa008a88a8acd1f764affcbbc00df28d5ca280ff40"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e3b33d1fdb09bcfd820d31915bb471e54a228505cd3b4e370da68096d58524aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "706ad899c0d8eaaf72ce0f532347c128680760ecb75ffff8f798f979d591381e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f813527615b4ee2b6b9833fa9370bd33407f00368b317261dba4f485107fcfb4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63591c0b2d1c58407fa48f7cc9ef301a034f8f31ad700fb2bd59123b42ac2606"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f8e16f1750b299531f8af4bac1185bd2f3d9d1ba79c723a4b505547b44587ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0fb59e16b35c89c3bbeed5873552284ca7af0fc9275a8bfe62e71431ef8b89a1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "21ed68920d4f87776d7e68da851846f014f43e65767a8cea6cb9e7ea81f373d5"
+    sha256 cellar: :any,                 arm64_linux:   "cde3301fc8726d5222ab878552a30f36b6de9f32e2d3cd7f519d0fc76bb10758"
+    sha256 cellar: :any,                 x86_64_linux:  "1c5d62019809a44024f5631e5448826e288bc1f7c0870fcfe56a85e9d70ea505"
   end
 
   depends_on "go" => :build

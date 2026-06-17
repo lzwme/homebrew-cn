@@ -1,8 +1,8 @@
 class Dumpling < Formula
   desc "Creating SQL dump from a MySQL-compatible database"
   homepage "https://github.com/pingcap/tidb"
-  url "https://ghfast.top/https://github.com/pingcap/tidb/archive/refs/tags/v26.3.2.tar.gz"
-  sha256 "b176a4328e77a965d370d6f9f34e8ebf2f7c11da54cb1fe0f47a3f32f5b27783"
+  url "https://ghfast.top/https://github.com/pingcap/tidb/archive/refs/tags/v26.3.3.tar.gz"
+  sha256 "28e7e5721589e6948c5adb31f429b75a17ff73e464c8b4c77af40d5705ee42dd"
   license "Apache-2.0"
   head "https://github.com/pingcap/tidb.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Dumpling < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d127a47686a7ef76fc82de96ded567ef08bc7b4651e080752260ae79e8c221bf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "240742f5cbdce35cc744bd63da668292d616a023b19d2165c3f5ec617b8447ad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75a8260efc84964d32f576d8b244ac3de83007d77373886e319a17cfc9fffa82"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1f453daa40ff68ea4df66c8e73ff49c1a595a1d84cfafaaae2ed1414b61e302f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "855441b1c24c7739fea4ef98764972e493d49cec54fe4f2326364d244d5c7cd3"
-    sha256 cellar: :any,                 x86_64_linux:  "f55b4a1e7a20b55609f4a4eed43def59e3a407201dadc5734fa5d579ced0a704"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4bf78f22ee5c0497685285547b1ef7cf74f0319990c7831e15aa56cba8e74d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f590659f10ec631e8cbef674386f683de5a0ac1e12e5e6561bcde3a379aed27e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2410834a29318dda98b3f224916850641e390c8f3c05d3f27b2c428770d49c1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1e98fcb37fc92060feaf1d6f33e50efe114325ae134ffcfe2571f5f607e75b19"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3de58d4532d66c287fb7b92edd2daaa504aa2ea12e9cef007837e1851dc7b11"
+    sha256 cellar: :any,                 x86_64_linux:  "28a12cc5ce32cff390e0f3abe9de29d6c074f21beedca459ca62695fb67783e4"
   end
 
   depends_on "go" => :build

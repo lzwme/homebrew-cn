@@ -4,6 +4,7 @@ class Scc < Formula
   url "https://ghfast.top/https://github.com/boyter/scc/archive/refs/tags/v3.7.0.tar.gz"
   sha256 "447233f70ebcc24f1dafb27b093afdd17d3a1d662de96e8226130c5308b02d01"
   license any_of: ["MIT", "Unlicense"]
+  head "https://github.com/boyter/scc.git", branch: "master"
 
   livecheck do
     url :homepage

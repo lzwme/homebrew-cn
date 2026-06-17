@@ -6,16 +6,16 @@ class GimmeAwsCreds < Formula
   url "https://files.pythonhosted.org/packages/63/73/9e508d37d4d301f6a3811fdc0b0a076696de87f82ad8a81ec28c3e6befb5/gimme_aws_creds-2.8.2.tar.gz"
   sha256 "12784f4b749617d7391bf2056373990277858dc9886328832b545e9e334f24d3"
   license "Apache-2.0"
-  revision 13
+  revision 14
   head "https://github.com/Nike-Inc/gimme-aws-creds.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "564cc36bd46ef195a59dcb35e3bfa3f356305c75626b22d5e363ab78c78b2309"
-    sha256 cellar: :any, arm64_sequoia: "eb439eda1403d7dabbe624400964327f7745aa6a1b8c3b45f87f17de79f0d5ca"
-    sha256 cellar: :any, arm64_sonoma:  "c3c4f3aba2a941b7ef7d360c9b947697afd7f1a13b3abb7726505b0890ac186c"
-    sha256 cellar: :any, sonoma:        "19eec3bd1db97409d75f02725c3a2fb89991d3924a4c4bb7aa9916b7b8640be3"
-    sha256 cellar: :any, arm64_linux:   "d28d264e5c3cb63b117579e4efbe32917e27ceebe18d6814cce343d834cf3855"
-    sha256 cellar: :any, x86_64_linux:  "d9dfd854eaa9a36e4312dd2cb7c0ad35a2333c626f9049d59a9996df9c3c08e8"
+    sha256 cellar: :any, arm64_tahoe:   "e9eb08b385c6176eb8da8c28c7bcfab1e64526518e7972cf0496367bde124159"
+    sha256 cellar: :any, arm64_sequoia: "130dc1e24ed444b253faddd991f7eaccd2912b444ef87099c0a48bbc1ddc1e8b"
+    sha256 cellar: :any, arm64_sonoma:  "46ca71590d50ad07fd4639d544ed550cba7557da8046f8409d69f191fd2b1b5f"
+    sha256 cellar: :any, sonoma:        "37fe350017a0446e99d1aa895289f33a2453eee4403fb35497d9a9a120e2b324"
+    sha256 cellar: :any, arm64_linux:   "cdd3adf93c667eaade692b74f0c50a2d743b3dc6e660ecc6d378190a5a4dd032"
+    sha256 cellar: :any, x86_64_linux:  "c7560841ac54f7c94ae0e9ddba130be89dd681c8835d2ff084eed007f94bc698"
   end
 
   depends_on "certifi"
@@ -60,8 +60,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/ee/ab/93ce242f899b68c51b0578c027aafa791ab3614cb9345fa5d37b5f5c8e3e/aiohttp-3.14.0.tar.gz"
-    sha256 "2882de819734c715fd1b9c11c97e09fa020d14438203d1d354d8ed1702791c9b"
+    url "https://files.pythonhosted.org/packages/82/78/8ea7308cac6934de8c74a14f3d5f65d1c89287426688be79538d0e5c013d/aiohttp-3.14.1.tar.gz"
+    sha256 "307f2cff90a764d329e77040603fa032db89c5c24fdad50c4c15334cba744035"
   end
 
   resource "aiosignal" do
@@ -75,18 +75,18 @@ class GimmeAwsCreds < Formula
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/c3/b0/1c6a16426d389813b48d95e26898aff79abbde42ad353958ad95cc8c9b21/beautifulsoup4-4.14.3.tar.gz"
-    sha256 "6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86"
+    url "https://files.pythonhosted.org/packages/43/65/318323f98dbee45d42dff61d8f047181bc6f2268a9068cfad035a46be5af/beautifulsoup4-4.15.0.tar.gz"
+    sha256 "288e3ca7d54b06f2ac191970bc275c1939cb46d450b255bf6718b04aa37ab4f7"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/97/da/229987ebb70daf5928f959aa8f4dd77dfcf425e6b0e7ff03aaef61ccc333/boto3-1.43.19.tar.gz"
-    sha256 "8b84704719dd3960ac12a8f37d9ff5adb853715baa9742f84fdbe2de0305c4cb"
+    url "https://files.pythonhosted.org/packages/85/a6/9c02ff00d08ea87908934351d244e35bb6fb5cbc169e1a14fc5bd80d124b/boto3-1.43.29.tar.gz"
+    sha256 "354006c512cdb87ef8214a095f2ade961c8145734475cd7a7e6b39260ff5494a"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/e2/a7/298986789785b74a954e2347114993be7e6b070417159125a6865f2687b6/botocore-1.43.19.tar.gz"
-    sha256 "18ac2fdd76c89b940707eb10493ff58678adad337d03215caec2d408ccd43cc0"
+    url "https://files.pythonhosted.org/packages/6f/54/df99c5ca5c9ef275e34b87e177782e3ca054fc35f1f462c40fe180936c81/botocore-1.43.29.tar.gz"
+    sha256 "dce39d33b707aa162aa3820975f99d7f8f746d46576169fb42ce4f2b3b56b261"
   end
 
   resource "charset-normalizer" do
@@ -139,8 +139,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
-    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "jaraco-classes" do

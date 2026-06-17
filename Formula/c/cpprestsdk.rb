@@ -91,7 +91,7 @@ class Cpprestsdk < Formula
                     "-lssl", "-lcrypto", "-lboost_random", "-lboost_chrono", "-lboost_thread",
                     "-lboost_filesystem", "-lcpprest",
                     "-o", "test_cpprest"
-    assert_match "The Missing Package Manager for macOS (or Linux)", shell_output("./test_cpprest")
+    assert_match "The Package Manager for Everywhere", shell_output("./test_cpprest")
   end
 end
 

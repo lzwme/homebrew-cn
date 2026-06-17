@@ -1,8 +1,8 @@
 class SentryCli < Formula
   desc "Command-line utility to interact with Sentry"
   homepage "https://docs.sentry.io/cli/"
-  url "https://ghfast.top/https://github.com/getsentry/sentry-cli/archive/refs/tags/3.5.0.tar.gz"
-  sha256 "0c6407ce0141f9576341bf21be2c64367d591a31b70289dca30621fa76cf5a4e"
+  url "https://ghfast.top/https://github.com/getsentry/sentry-cli/archive/refs/tags/3.5.1.tar.gz"
+  sha256 "ca12d6b5271bf1afbc451fc8bda1e1e768895a7875e94aa740ae16f32eb7d66c"
   license "BSD-3-Clause"
   head "https://github.com/getsentry/sentry-cli.git", branch: "master"
 
@@ -12,12 +12,12 @@ class SentryCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1a82420202bfa59da11289a6ed1c49e741dfc49f6fa0ec5896254052bc4fccc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1fd7daeafb604c78ef9f55791eca9c2e3ec1d2a82ef0edf5e279a8e09220361f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "580b04ffdea29aeee7cf07165a75c5672a0bd8d40b554f53f4f7e18d26b7c47e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a7cc1fd668c0095ab71c58cc4480586590065af6af8b1389919fb466d6d4677"
-    sha256 cellar: :any,                 arm64_linux:   "85b6783aa3f27e8a1132adf7d5b1445e318f2fc74bcaeb2d0d777de3ff6fdc38"
-    sha256 cellar: :any,                 x86_64_linux:  "63602681706c7f0f697158696e4f8e7510be50229af6503fc6b3a280b758f42e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f60287143eec553d760d77100052910cdfc0764b4d36603bf9c9b8b2fbcac9e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff064dae8b35cda9845bc5c73a8752a22a917b008c69cb51d4c43e7bec2e6e9c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6feefb9a5c6020dcb7b71d0a7194198cd8ea14475a8013b294b727d75c9d4cac"
+    sha256 cellar: :any_skip_relocation, sonoma:        "22dba6d0df8733f06f99393badae213ff5cfe8455905dca2507232f581514c16"
+    sha256 cellar: :any,                 arm64_linux:   "f07fa79a74a46446cc5e6a13f9399774d333aabe5c4fc35ac75054d657fe1f61"
+    sha256 cellar: :any,                 x86_64_linux:  "c3e9eda5f1b7e11e63a90efeea2ad1e5a7e67092f1ef53c29779296c3620c88d"
   end
 
   depends_on "pkgconf" => :build

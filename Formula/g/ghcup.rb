@@ -2,8 +2,8 @@ class Ghcup < Formula
   desc "Installer for the general purpose language Haskell"
   homepage "https://www.haskell.org/ghcup/"
   # There is a tarball at Hackage, but that doesn't include the shell completions.
-  url "https://ghfast.top/https://github.com/haskell/ghcup-hs/archive/refs/tags/v0.2.6.1.tar.gz"
-  sha256 "c020f4f94ea0802805c6808f493f748aaddf47dae3d29e9561542aaf6af6999e"
+  url "https://ghfast.top/https://github.com/haskell/ghcup-hs/archive/refs/tags/v0.2.6.2.tar.gz"
+  sha256 "a8b4657d235bb14fb8c4ed33cc3059297fbbb2dd98e239f4629c1ed1632041ed"
   license "LGPL-3.0-only"
   head "https://github.com/haskell/ghcup-hs.git", branch: "master"
 
@@ -14,12 +14,12 @@ class Ghcup < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d1c14306cc711a938967647ec79e63665cf0d32b4015d9afaa3ad0e448f14e6c"
-    sha256 cellar: :any, arm64_sequoia: "2ce17b8205a16f596732b606e152a092d7c6fc528187127386e66956482eef16"
-    sha256 cellar: :any, arm64_sonoma:  "7af93d6ab9b8290e777e28003da6dad580db32b30e8cb3ca88aeb8ad2871032b"
-    sha256 cellar: :any, sonoma:        "87fe68331c12804384e58d872e0583a767d34933412a9601f94932173e030a5b"
-    sha256 cellar: :any, arm64_linux:   "a4036e588e516b738d422ddfea253de116723cb4b4a0ce0dac25ec8e292b03af"
-    sha256 cellar: :any, x86_64_linux:  "c86a2e121ca673d82ea79d825b48d61dca1af66d87d912b6f7439bb4f9355cb1"
+    sha256 cellar: :any, arm64_tahoe:   "9327efca408425c3dc66ee2dcfa158ea15c7f44982a5c07ab06103eaf67a2fdb"
+    sha256 cellar: :any, arm64_sequoia: "afa78521778bbe8c86685bbb5e778a42e4b077ad48ce8ef62d8de19a5c1fa936"
+    sha256 cellar: :any, arm64_sonoma:  "ff1bab0922639100dc171a2db067787779ca87ac18f556e013fed82fe799b90f"
+    sha256 cellar: :any, sonoma:        "8775022f9037d4290f6b9801ddc64798ed25d98a71bee33bbafea6351a7a7585"
+    sha256 cellar: :any, arm64_linux:   "e2533fbbf02b03241aa9f9a10d554f280330100b8cee70062aca1047b8765e36"
+    sha256 cellar: :any, x86_64_linux:  "8387bae857f457db7fa3ba137395a5e6bf385cd2453ed4198e46d8f33c253708"
   end
 
   depends_on "cabal-install" => :build

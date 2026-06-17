@@ -129,10 +129,6 @@ class OpenjdkAT21 < Formula
     end
     args << "--with-extra-ldflags=#{ldflags.join(" ")}"
 
-    if DevelopmentTools.clang_build_version == 1600
-      args << "--with-extra-cflags=-mllvm -enable-constraint-elimination=0"
-    end
-
     system "bash", "configure", *args
 
     ENV["MAKEFLAGS"] = "JOBS=#{ENV.make_jobs}"

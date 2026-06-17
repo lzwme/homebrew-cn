@@ -1,8 +1,8 @@
 class Scotch < Formula
   desc "Package for graph partitioning, graph clustering, and sparse matrix ordering"
   homepage "https://gitlab.inria.fr/scotch/scotch"
-  url "https://gitlab.inria.fr/scotch/scotch/-/archive/v7.0.11/scotch-v7.0.11.tar.bz2"
-  sha256 "82fb468485b153a41031e50a7ca668fccbd3b8561d31dc7535da4210dde01f48"
+  url "https://gitlab.inria.fr/scotch/scotch/-/archive/v7.0.12/scotch-v7.0.12.tar.bz2"
+  sha256 "3bdba84f2067398ee8931de5d4b1f3608b483ac56316fd5f348f9c0a594d57ae"
   license "CECILL-C"
   head "https://gitlab.inria.fr/scotch/scotch.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Scotch < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d84363ab0cdc3b0a2b0d05347158a30361f2694e441db84e4fdd549ceb39ac31"
-    sha256 cellar: :any,                 arm64_sequoia: "cf99aaa54bdf7ca12122af0d4bf5adfee1227dd613789645ae37f7decda59885"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd4cdbffde2ed42d05c78fa4d0ff32a6acb18504a682d44b709c752a86b1425b"
-    sha256 cellar: :any,                 sonoma:        "70c317924634f70ef971e306832042b778c105ddf4708e9c2f51291c86a92d0c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e676c45f8ddabb75072cf687e37ab3be3ec7bbccb3636488c1bc07f498fd593"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df940782b8de2e7b436fc7c64bca5210cec1a38a9e5bb6c679bcb0f3c5d43e8a"
+    sha256 cellar: :any, arm64_tahoe:   "152624c343f650deb2c9583f4c5b45e0bf71aa412d57ebb6e40281a0d2345f36"
+    sha256 cellar: :any, arm64_sequoia: "d075c4d7f52199161c95e39b1296649814245ec030de46cd90024d8f54e54154"
+    sha256 cellar: :any, arm64_sonoma:  "09db3f367b1a100d4148be83137010faaa3ed70533d402d9fa49d3c652221b2e"
+    sha256 cellar: :any, sonoma:        "5dbdeb5ec40e99c3d04e218f719ed04046b0ca7a07cd2aa8850361109f3c4c33"
+    sha256 cellar: :any, arm64_linux:   "693f8fbe46a4184a2c8f4fd237903ed2b98a07355e5a13a04b2e6c65bc033ef8"
+    sha256 cellar: :any, x86_64_linux:  "095c3e63f49390a948d4b5d9a0990bba6cf66dd95f5105eda2fd97911f8deb0d"
   end
 
   depends_on "bison" => :build

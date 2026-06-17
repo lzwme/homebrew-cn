@@ -541,6 +541,7 @@ Homebrew-homebrew-core/Formula/b/bedtk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bedtools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bee.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/beecrypt.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/beets.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/befunge93.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/behaviortree.cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bench.rb, Homebrew/homebrew-core, 0
@@ -719,6 +720,7 @@ Homebrew-homebrew-core/Formula/b/btrfs-progs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bttf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bubblewrap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buf.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/buffa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buffrs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/build2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/buildapp.rb, Homebrew/homebrew-core, 1
@@ -1714,6 +1716,7 @@ Homebrew-homebrew-core/Formula/d/draco.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/draft.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/drafter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dragonbox.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/draw-things-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/driftctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/driftwood.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/drill.rb, Homebrew/homebrew-core, 1
@@ -8573,7 +8576,7 @@ Homebrew-homebrew-cask/Casks/a/akuity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alacritty.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aladin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alcom.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/a/alcove.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/alcove.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aldente.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aleph-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/alex313031-thorium.rb, Homebrew/homebrew-cask, 1
@@ -9217,7 +9220,6 @@ Homebrew-homebrew-cask/Casks/c/cloudmounter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cloudnet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cloudpouch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cloudup.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/c/cloudytabs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clover-chord-systems.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clover-configurator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cmake-app.rb, Homebrew/homebrew-cask, 0
@@ -12715,6 +12717,7 @@ Homebrew-homebrew-cask/Casks/g/go-agent.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/go-server.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/go-shiori.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/go2shell.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/go2tv.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/go64.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/godot-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/godot.rb, Homebrew/homebrew-cask, 1
@@ -14076,6 +14079,7 @@ Homebrew-homebrew-cask/Casks/o/opal-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opal-composer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opcode.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-data-editor.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/open-design.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-eid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/open-in-code.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-island.rb, Homebrew/homebrew-cask, 1

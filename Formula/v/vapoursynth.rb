@@ -3,20 +3,11 @@ class Vapoursynth < Formula
 
   desc "Video processing framework with simplicity in mind"
   homepage "https://www.vapoursynth.com"
+  url "https://ghfast.top/https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R77.tar.gz"
+  sha256 "f71653355983fc245ef811a64d2b8f5b0ba131c0bb330b3346d435e1926187e2"
   license "LGPL-2.1-or-later"
   compatibility_version 2
   head "https://github.com/vapoursynth/vapoursynth.git", branch: "master"
-
-  stable do
-    url "https://ghfast.top/https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R76.tar.gz"
-    sha256 "8c51aedc26a5fa2b79b5716bfe1160ffa45c69035c728b7e8740785cf790454b"
-
-    # Backport commit to avoid statically linking dependencies' libraries
-    patch do
-      url "https://github.com/vapoursynth/vapoursynth/commit/d398f465154ef141d447af78b2e65a025de28522.patch?full_index=1"
-      sha256 "3d19b95ed0ba5de76e450ed0dedf7ab7935c0de1e0d08affc3be914c6aefa511"
-    end
-  end
 
   livecheck do
     url :stable
@@ -24,12 +15,12 @@ class Vapoursynth < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f41497f7d9125d46e2a1107703c7ad0b50c525bfe35e91852ae662924bde8530"
-    sha256 cellar: :any,                 arm64_sequoia: "63c23ce0bba6205dc776841f3cd04a32eac7ea5c50c43f750fc95b041536ec57"
-    sha256 cellar: :any,                 arm64_sonoma:  "c560b8e6c2ac6c98311d70d503fea75992c63b77ed1acf873f2a5116c58a0a1f"
-    sha256 cellar: :any,                 sonoma:        "e8f82e6847aa3269a7ca164deb18e2b716a5542b683a63ae9f74c7ac52f39986"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "381d6e92a08cccc4ea948ecc5a17b1dd462a16914856e1db6a8d59ffee7b150f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fccb9b37413710801eaaab943b634c008026748584a50c327362b2810498c13"
+    sha256 cellar: :any, arm64_tahoe:   "5b81e80111c8a1f9db2bb554bbdcad5b9c959f763299890c164d837bdb0570ec"
+    sha256 cellar: :any, arm64_sequoia: "49643008017052b21d32126fd2e6f7726bf7d2a793780d14f0b3a9df979d8ebc"
+    sha256 cellar: :any, arm64_sonoma:  "7dad3b4db3d271d81010899df86455ee3b2f06093862e2ae0c555c49b70c4531"
+    sha256 cellar: :any, sonoma:        "6f97e77cc99a99e96c29dd95662da134b5026a32893ff43ab9246c59e5625294"
+    sha256 cellar: :any, arm64_linux:   "a354a21e2ce64835e1ff6198e992476392894b8238e0bbd13237b9f3bfd0c477"
+    sha256 cellar: :any, x86_64_linux:  "7a2a6713edee201c9edab54ad74f0201d347b8416ee6212332d62866086dbdda"
   end
 
   depends_on "ninja" => :build

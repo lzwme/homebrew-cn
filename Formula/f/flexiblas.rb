@@ -28,6 +28,10 @@ class Flexiblas < Formula
   depends_on "gcc" # for gfortran
   depends_on "openblas"
 
+  on_macos do
+    depends_on "libomp"
+  end
+
   def blas_backends
     backends = %w[OpenBLASOpenMP NETLIB]
     on_sonoma :or_newer do
@@ -40,8 +44,8 @@ class Flexiblas < Formula
   end
 
   def install
-    # Need to build with same GCC as GFortran for LTO on Linux
-    ENV["HOMEBREW_CC"] = Formula["gcc"].opt_bin/"gcc-#{Formula["gcc"].version.major}" if OS.linux?
+    # CMake FortranCInterface_VERIFY fails with LTO on Linux due to different GCC and GFortran versions
+    ENV.append "FFLAGS", "-fno-lto" if OS.linux?
 
     # Remove -flat_namespace usage
     flat_namespace_files = %w[

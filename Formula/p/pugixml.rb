@@ -1,8 +1,8 @@
 class Pugixml < Formula
   desc "Light-weight C++ XML processing library"
   homepage "https://pugixml.org/"
-  url "https://ghfast.top/https://github.com/zeux/pugixml/releases/download/v1.15/pugixml-1.15.tar.gz"
-  sha256 "655ade57fa703fb421c2eb9a0113b5064bddb145d415dd1f88c79353d90d511a"
+  url "https://ghfast.top/https://github.com/zeux/pugixml/releases/download/v1.16/pugixml-1.16.tar.gz"
+  sha256 "4cee1ca4aad395170f4c7a07824f3bdd41f28316c6e1e1090a1425b278ec0b4b"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,12 @@ class Pugixml < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "815d949fe34679a2c3e0df5d253b824ebe69305ae29ce28d03e4e2cd604ce46c"
-    sha256 cellar: :any,                 arm64_sequoia: "1d3349e3cf6dc0d06fffd2c52c62801b3c804e36cabcb01f46682738bb1485c2"
-    sha256 cellar: :any,                 arm64_sonoma:  "d648b349479d6bd41c0ee2e22fb9108abb33a553c5ab21584564a6a36fac04c6"
-    sha256 cellar: :any,                 arm64_ventura: "e6641fb533ddb45418980698aab6b06a02a3c5e763cae6ab7bb513289e5248d3"
-    sha256 cellar: :any,                 sonoma:        "32cc92f8679e9a6d8b0c45140a19f0ac5c330e470bbca5cddcf494c6511beae6"
-    sha256 cellar: :any,                 ventura:       "fc421bf66929e255b8a433eae74d0f32482ce73dea8b8da850f9f6efd1970a92"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfd7825a7cb16dab42a7884e8626dc8d7380081f0e163517037e28bd5136491f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2578c1114075b488ec20a5c627d9616af5a6e5f22d9f99e54d0bb6221a861f77"
+    sha256 cellar: :any, arm64_tahoe:   "8de9b221f2d31147de65ccf2a91f088baf8f16198c916e704618c74f04b2d93c"
+    sha256 cellar: :any, arm64_sequoia: "1483e3c7254de95b12568d9841f76c2d2324ddad5cc3902cd44facd14c751b66"
+    sha256 cellar: :any, arm64_sonoma:  "0631c09780b23a8b5ed5fb14031680a34715319aa6efe5b9919964c8095eca54"
+    sha256 cellar: :any, sonoma:        "2e2c27fa84a1103fe342398de9b3d8c92f2b39574ddfc2d21cf7f2308a0dc27d"
+    sha256 cellar: :any, arm64_linux:   "5093fae4721a6e05f51ae71c4ffe7b88c09a942cb38834560f98e7494e247401"
+    sha256 cellar: :any, x86_64_linux:  "856f8e8c6388191cdb0afa8d126e396c40bcb8870c3645ffa5eb965ff444dc98"
   end
 
   depends_on "cmake" => :build

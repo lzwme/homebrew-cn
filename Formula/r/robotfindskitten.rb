@@ -1,11 +1,10 @@
 class Robotfindskitten < Formula
   desc "Zen Simulation of robot finding kitten"
-  homepage "http://robotfindskitten.org/"
-  url "https://downloads.sourceforge.net/project/rfk/robotfindskitten-POSIX/ship_it_anyway/robotfindskitten-2.8284271.702.tar.gz"
+  homepage "https://robotfindskitten.org/"
+  url "https://codeberg.org/robotfindskitten/robotfindskitten/releases/download/2.8284271.702/robotfindskitten-2.8284271.702.tar.gz"
   sha256 "020172e4f4630f7c4f62c03b6ffe2eeeba5637b60374d3e6952ae5816a9f99af"
   license "GPL-2.0-or-later"
   revision 1
-  head "https://github.com/robotfindskitten/robotfindskitten.git", branch: "main"
 
   bottle do
     sha256 arm64_tahoe:    "f70167f4ada3ff8ec73fe948560bc08e582be51e57806612ed9d269ce0a1ed7e"
@@ -21,6 +20,13 @@ class Robotfindskitten < Formula
     sha256 catalina:       "fa1f963cf39fb320c4b8e0867a05c9e96944d59d6c18222a9d6b33acb4384622"
     sha256 arm64_linux:    "0d65f446d480696e567673ca1261f700413841a6196dac6bef7535f95727b167"
     sha256 x86_64_linux:   "7d44526e0b657e25b0bec3f36112f6bc9196f8a9a0b74ae2dec9e7b86801abe4"
+  end
+
+  head do
+    url "https://codeberg.org/robotfindskitten/robotfindskitten.git", branch: "main"
+
+    # Used for building shipped robotfindskitten.info from robotfindskitten.texi
+    depends_on "texinfo" => :build
   end
 
   depends_on "autoconf" => :build

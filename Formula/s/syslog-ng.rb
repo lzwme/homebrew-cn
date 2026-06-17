@@ -3,10 +3,9 @@ class SyslogNg < Formula
 
   desc "Log daemon with advanced processing pipeline and a wide range of I/O methods"
   homepage "https://www.syslog-ng.com"
-  url "https://ghfast.top/https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.11.0/syslog-ng-4.11.0.tar.gz"
-  sha256 "37ea0d4588533316de122df4e1b249867b0a0575f646c7478d0cc4d747462943"
+  url "https://ghfast.top/https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.12.0/syslog-ng-4.12.0.tar.gz"
+  sha256 "03a03d19ac203dca53c7ec79a7005c8a850665a95ff4cd0f1e7bb4c497c64d46"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  revision 7
   head "https://github.com/syslog-ng/syslog-ng.git", branch: "develop"
 
   livecheck do
@@ -15,12 +14,12 @@ class SyslogNg < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "bb6cdcaf635876266c7d8e1aae4dc93cc24efe086a6d909ae5ef02f520ac7ac5"
-    sha256 arm64_sequoia: "82e11789de2a5cca781b6a46ea46fb63a9fbbd792e969651cac3a2f0a9bf6043"
-    sha256 arm64_sonoma:  "20aa4465313434c64d4e1c510c9e58afc616a44ba407704a4b756bf3873f70d4"
-    sha256 sonoma:        "2e5b75174be296ba0cc61a234e7918a2412a4407dc1ac75840f46d4ec7f6cac9"
-    sha256 arm64_linux:   "5e15190f1104856fb0c894ab52092ea3491329b08c9cdd7a67beb2668b6b6349"
-    sha256 x86_64_linux:  "a8c397017023456c66d4ec72e4750b5d50f080986570c50ee3f9153cd76eddb0"
+    sha256 arm64_tahoe:   "6ef226cb8df9f8713dd9845a89ebf78f834dafe93d664f39ae539a1a5479d25a"
+    sha256 arm64_sequoia: "54249c9b90d203b6a8ab7803f2379e720c6c47d41354ef66f4b5ff63c87a381e"
+    sha256 arm64_sonoma:  "3ad006537b1d890d6e1bdb407b21d797012a8966a3e763392d71123a0ca40ccd"
+    sha256 sonoma:        "0ea037c006de5f4ac5201f5e77594e6fb36cf23fecce2407d4bb26b39b22a8a0"
+    sha256 arm64_linux:   "aa0391a47506bb6695a0b67b118e42197a6d118be46e3184fe039c90700cdce3"
+    sha256 x86_64_linux:  "01f037ca2835a98a4abbcf759cb7a3a335e94bc3a0a85c1c865bc949468417ff"
   end
 
   depends_on "pkgconf" => :build

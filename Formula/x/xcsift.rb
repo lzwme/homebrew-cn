@@ -1,18 +1,18 @@
 class Xcsift < Formula
   desc "Swift tool to parse xcodebuild output for coding agents"
   homepage "https://ldomaradzki.github.io/xcsift/"
-  url "https://ghfast.top/https://github.com/ldomaradzki/xcsift/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "d251e0912cd0f0b2b4e3c25a9a9f29c032ce7dcd770d8ba583325744229390cf"
+  url "https://ghfast.top/https://github.com/ldomaradzki/xcsift/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "47aa9295c04e53033805c74069c73fe2d6e091f4ccbba5889c74bfe10b138294"
   license "MIT"
   head "https://github.com/ldomaradzki/xcsift.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78d6aed832ed8a45fe1518ff3f2246056edec27dd17d90b0d6de75a3d24da240"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20947f465ae4c3981f3d2227500103aecbfcc441decdc858399aac057d8b11b4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "627251ad8568e9502cb2b931ee543d4f4a0b41a003a3a79da4454a75bf0eab6a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7f2fae12e9171a80b650e709b22785027a94a48e62034c34a405054fe4b16b77"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b58ec68c53a6aa66a31a12b6cd326fea69127d2706a4f1566459c537316c5bec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ecf262656a3188a0fedef9626681107b329a0fdeb316d5c3a007ced0f54866e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec142d86fa655ebc0d4024dfef55d255bfa2901b8708abeaef3f29f34338bc05"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f62b48cfbc2d4d7384c6f24172b03be3b129ee69268864bba5602541c6d6a1af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21e4bf2f2278704cdfe56c052c04198d20a72f9b0ec28a5338a4ffc35cc89546"
+    sha256 cellar: :any_skip_relocation, sonoma:        "77339974c2a08a80a272ea9b51d69d5f229a6ecc6b971267e13d42c6f2bbcab9"
+    sha256 cellar: :any,                 arm64_linux:   "2de2b2d90ea995cbbf44ca575197a7908b183f169fe77824e780d49c744af42d"
+    sha256 cellar: :any,                 x86_64_linux:  "5be4785031071d0b9821a9f010f33e6121fb01c25e634f6584a951b06abb8c82"
   end
 
   depends_on xcode: ["16.0", :build]

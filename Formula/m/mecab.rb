@@ -12,28 +12,29 @@ class Mecab < Formula
   end
 
   bottle do
-    rebuild 5
-    sha256 arm64_tahoe:   "ce74018f0a73c3efa12971c0b4b8eff444a991564a9cffd1e984438276d0cb63"
-    sha256 arm64_sequoia: "da7d689fab24f18de3af9b182f6d821c748c5144cfe5092c7d89dc78832b2625"
-    sha256 arm64_sonoma:  "6efae5f3ad07a50740b3ac5d6dff74c213f0a4750bc4531916c1addfebb01550"
-    sha256 sonoma:        "1e5516d0c56e44823b881d056d6590d5313821d4a4756729e38bf73786ffc8ec"
-    sha256 arm64_linux:   "ae96aae1d823505e8d2beeaa1bbe346b829285874c686c63b2d157f815a000ee"
-    sha256 x86_64_linux:  "4496203bcd5ad591b3f99b05fc7175c9f4ea29a3bac57e6d1b1eaf96f4e80475"
+    rebuild 6
+    sha256 arm64_tahoe:   "72298458bdf93c9012a74c60fb039ad00d77ad89839274c9857743bee97e22f0"
+    sha256 arm64_sequoia: "bf11401bae781f9ff7eb147a4c1c6b563bf2f34a8322e0ed5ed4ab5b96de7056"
+    sha256 arm64_sonoma:  "a519daec0927f8e41becdb52a94b6f907a86e61876f001be545912686fe203dd"
+    sha256 sonoma:        "152e6c5b2d2c3ce712382f25ecc88f0ebad662ed77688e8e9571827883505604"
+    sha256 arm64_linux:   "aee232893d116dc8431afa796f10d449236aaf57478e76ee3af5e74665ba12da"
+    sha256 x86_64_linux:  "61a01d5c68ef43a4e630e2ba229b5ea640e4da75569a3bee24ebfc8eb9a64abb"
   end
 
   conflicts_with "mecab-ko", because: "both install mecab binaries"
 
   def install
-    args = []
-    # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-
-    system "./configure", "--sysconfdir=#{etc}", *args, *std_configure_args
-    system "make", "install"
-
     # Put dic files in HOMEBREW_PREFIX/lib instead of lib
-    inreplace bin/"mecab-config", "#{lib}/mecab/dic", "#{HOMEBREW_PREFIX}/lib/mecab/dic"
-    inreplace etc/"mecabrc", "#{lib}/mecab/dic", "#{HOMEBREW_PREFIX}/lib/mecab/dic"
+    inreplace "mecab-config.in", "@libdir@/mecab/dic", HOMEBREW_PREFIX/"lib/mecab/dic"
+    inreplace "mecabrc.in", "@prefix@/lib/mecab/dic", HOMEBREW_PREFIX/"lib/mecab/dic"
+
+    # Help old config scripts identify arm64 linux
+    args = ["--build=aarch64-unknown-linux-gnu"] if OS.linux? && Hardware::CPU.arm64?
+
+    # Manually install etc files to avoid overwriting any existing files
+    system "./configure", "--sysconfdir=#{etc}", *args, *std_configure_args
+    system "make", "install", "sysconfdir=#{prefix}/etc"
+    etc.install (prefix/"etc").children
   end
 
   post_install_steps do

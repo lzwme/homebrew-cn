@@ -1,8 +1,8 @@
 class FaasCli < Formula
   desc "CLI for templating and/or deploying FaaS functions"
   homepage "https://www.openfaas.com/"
-  url "https://ghfast.top/https://github.com/openfaas/faas-cli/archive/refs/tags/0.18.8.tar.gz"
-  sha256 "4d0eaf6c01ebbd69dcee389c3446bb6ea0cf042cb6f92fd471b5ec7b2785db96"
+  url "https://ghfast.top/https://github.com/openfaas/faas-cli/archive/refs/tags/0.18.10.tar.gz"
+  sha256 "912125b727325ca12a98c0b8c3d2a50849fc030d1c379430b7641c2b5d3d8bff"
   license "MIT"
   head "https://github.com/openfaas/faas-cli.git", branch: "master"
 
@@ -12,12 +12,12 @@ class FaasCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "adaa4ef0ef1be410575ade58f0797c7a1e2c185d3b8d5ed96425070e3582c62c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "adaa4ef0ef1be410575ade58f0797c7a1e2c185d3b8d5ed96425070e3582c62c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "adaa4ef0ef1be410575ade58f0797c7a1e2c185d3b8d5ed96425070e3582c62c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "52dafaf0046bd274a4b6b574dc176741ac520dab34aefec7317901eb108448d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "061c10610fa92e25019ca8ae562376518cfe4d949f66dfa384df3c1e5cc20879"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b66e4b5d91605455a548ef4856d84cf75b515ec5020057db5c28f9b5bb3c90a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aba52186c03000dd1cc3fea55073a9126a84d43c20414aa2d9cb29a4b67c1fdc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aba52186c03000dd1cc3fea55073a9126a84d43c20414aa2d9cb29a4b67c1fdc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aba52186c03000dd1cc3fea55073a9126a84d43c20414aa2d9cb29a4b67c1fdc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5f5cba34f233acf3f802af8f6bb2c69491128c7620a4c146c562a64c12be0498"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fe73c1059aeb68839fa656bc3173309d8f9694304feef1e4f957cb949f7919f"
+    sha256 cellar: :any,                 x86_64_linux:  "68aba3706ffb78dc079465ff1bb1243d03bad3ca4db17afacbdbf5d61760f337"
   end
 
   depends_on "go" => :build
@@ -71,13 +71,13 @@ class FaasCli < Formula
     YAML
 
     begin
-      output = shell_output("#{bin}/faas-cli deploy --tls-no-verify -yaml test.yml 2>&1", 1)
+      output = shell_output("#{bin}/faas-cli deploy --tls-no-verify --yaml test.yml 2>&1", 1)
       assert_match "stat ./template/python/template.yml", output
 
       assert_match "dockerfile", shell_output("#{bin}/faas-cli template pull 2>&1")
       assert_match "node20", shell_output("#{bin}/faas-cli new --list")
 
-      output = shell_output("#{bin}/faas-cli deploy --tls-no-verify -yaml test.yml", 1)
+      output = shell_output("#{bin}/faas-cli deploy --tls-no-verify --yaml test.yml", 1)
       assert_match "Deploying: dummy_function.", output
 
       faas_cli_version = shell_output("#{bin}/faas-cli version")

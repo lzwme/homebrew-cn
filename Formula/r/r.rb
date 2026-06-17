@@ -12,12 +12,13 @@ class R < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4a957d7a3e249b81d97debba42c6514fe8ecbd773192cad77646246b19e852b6"
-    sha256 arm64_sequoia: "01ad34630d331cb3d8aa293ac72b8e3a65a372769b2601b8ba765d5701e48e01"
-    sha256 arm64_sonoma:  "32ade5e976a23a880d3b117a6cab56f89fa33212fd1935bbce27f122f9ec2fe5"
-    sha256 sonoma:        "53f03a43086420000970d0832d10caa63863c8589f7c286f41342f7f09404647"
-    sha256 arm64_linux:   "fc50c4fdf7b506ee24bb92c775a895a1a32bf44171e87859da6d67047a20aab9"
-    sha256 x86_64_linux:  "9f77a2bbcc93186326aff5e649b0eecc8550e3664fadc1f727e69e74cd8fee70"
+    rebuild 1
+    sha256 arm64_tahoe:   "204e9f6eafe5fc1e387886d42cb576630fd77363a89264229e8262736f741782"
+    sha256 arm64_sequoia: "201d30b8dafd28dfa836a52483cfe6f781a4ff2452cc6b591fbc84db5e962fb3"
+    sha256 arm64_sonoma:  "a4c55c9a4f93ed58e08550bb78c0a028432a59ead3e353be97b6d685cafd9f37"
+    sha256 sonoma:        "7ab82a398bda85ae94c59c5716d5ff94e41b5f632babebb592e352928e0e2979"
+    sha256 arm64_linux:   "e5ff1feae9761033f0b56a950471538308c5ce5574bfbdd310015e3dcbc771fa"
+    sha256 x86_64_linux:  "c3de6479d17aa701dfbd6a3398b0eab870d7f0f51494fecebc83eb2095c8a0da"
   end
 
   depends_on "pkgconf" => :build

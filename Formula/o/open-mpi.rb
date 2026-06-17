@@ -12,12 +12,13 @@ class OpenMpi < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "119ef41c5ad6afc83b70424570195864bdce1752bd2737c18ee98b0a47c80e8a"
-    sha256 arm64_sequoia: "47fb1020aa70751d01792423f9221d439b5fa0c215b5f5fa9e6e9550a6df856a"
-    sha256 arm64_sonoma:  "b0cc6ec34aacbf44ac19a79189871376c538a4b0ab1c7ce37b4039d357c6756d"
-    sha256 sonoma:        "f0e84995cf3094fa84b5aca6c397ca9ffc92040887d33aa9b24dbce9107027e7"
-    sha256 arm64_linux:   "45bcacd19a8f957b7a50c75f3a3790b10efe638320f541c832f433d669d96b75"
-    sha256 x86_64_linux:  "78dcbda8c3232048723fdcde5466761e4bfa84fdacbcc135761013223f90cb89"
+    rebuild 1
+    sha256 arm64_tahoe:   "cd28d2c171ababacf625797283aa0bf5e8320afb6153457a6f90388c4f1d4473"
+    sha256 arm64_sequoia: "eeed54525cd950a5a5d008b7511277e20c3a50eb762f45d160fd6c9de8c835d3"
+    sha256 arm64_sonoma:  "ddbff35130a0e77b5f8f5f4c503e929a510ce1c2949f6efa5a262f2fdb224526"
+    sha256 sonoma:        "77763194eeb86e1c20cc2fc7256bfe9c0b16eb8451c180b5957ddb7c2faee37c"
+    sha256 arm64_linux:   "fdde5d8440a00a052b04cd9925cbda0a3df436e9a15dad8e57e851656a3da32f"
+    sha256 x86_64_linux:  "05ac59d4efcfb8b0b77bdab7daf261c7639f62e9c48caa7c05d634457b3c9b99"
   end
 
   head do

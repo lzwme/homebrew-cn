@@ -1,8 +1,8 @@
 class Arkade < Formula
   desc "Open Source Kubernetes Marketplace"
   homepage "https://blog.alexellis.io/kubernetes-marketplace-two-year-update/"
-  url "https://ghfast.top/https://github.com/alexellis/arkade/archive/refs/tags/0.11.99.tar.gz"
-  sha256 "b0ffe1a5e04b4020d5ef41d4526051d6cac24b47b6223f03a1881344069f18b1"
+  url "https://ghfast.top/https://github.com/alexellis/arkade/archive/refs/tags/0.11.100.tar.gz"
+  sha256 "9975594eb52fea701f25bf7e4e5d63d9fede4697c255ce5d37e423454eb0201a"
   license "MIT"
   head "https://github.com/alexellis/arkade.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Arkade < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e919976d772ac329895c9a87364b71661f193569078924348c8787e7b2ff6744"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e919976d772ac329895c9a87364b71661f193569078924348c8787e7b2ff6744"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e919976d772ac329895c9a87364b71661f193569078924348c8787e7b2ff6744"
-    sha256 cellar: :any_skip_relocation, sonoma:        "586034f33b6e70b4835396e46ab0e85d9269684771c3c333958cbd5564f3c68a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb8aabff9de7815cedb1921f0289baa0a99c3a07ef0b7a84132b062e058b58de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c8ef8ce0823c6071a7419b41a0478d67f405245defd781173cd7e526a8a8f57"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0208a419ee065ce3989598c42bf1173704449075468f91c8471106ec77996b64"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0208a419ee065ce3989598c42bf1173704449075468f91c8471106ec77996b64"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0208a419ee065ce3989598c42bf1173704449075468f91c8471106ec77996b64"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ff54de15ee9ba5c8689533a4d37de0fb5d7a415e6c9cae0118a9b27f64b95ffe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c294ce0bdfb531519eea2a5cadb72d2be83be625eaddf0741bff9c4ce8c70df2"
+    sha256 cellar: :any,                 x86_64_linux:  "3fdfb8e1ffc5eab2a73f089256843d998cb6363163b5468927ffd3dc3baa3e51"
   end
 
   depends_on "go" => :build
@@ -38,7 +38,7 @@ class Arkade < Formula
   end
 
   test do
-    assert_match "Version: #{version}", shell_output("#{bin}/arkade version")
+    assert_match version.to_s, shell_output("#{bin}/arkade version")
     assert_match "Info for app: openfaas", shell_output("#{bin}/arkade info openfaas")
   end
 end

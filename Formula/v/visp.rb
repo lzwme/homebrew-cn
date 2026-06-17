@@ -12,12 +12,13 @@ class Visp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8c3b0272ffd83f11a560601fd14924dbe58eadb878bee8a6723b5acf1c2aff3a"
-    sha256 cellar: :any,                 arm64_sequoia: "af7afae0c8fa6d9350a64822b503463bbdd5c5b0e0c4ffe58f7ca279a89abc5d"
-    sha256 cellar: :any,                 arm64_sonoma:  "d2146363c3b90fc2e88222cf696b75ac01e4f89071f05a2389cba47943abeeb1"
-    sha256 cellar: :any,                 sonoma:        "d0373498e190ed33687f84445b60732e786f4d86ee26fa3b203ee00e5a5fc42a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "36c34de1969e7845837fdd8fdcdf54cef44e4854d289c141fbeb6fe81d1f1cc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3bd1219cf9091aed005f4656bcffd3de7c5fe86b622f48e84213a2e25e56182"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "28e77916e6bc1c9b039c2fc46cd5bf7ee081412d50dbf0a35fe6d41c2edb17c3"
+    sha256 cellar: :any, arm64_sequoia: "29a90e75efe00547d0bb7f110eca782e1a65c9a072a1980bc015b37f3f90e9d5"
+    sha256 cellar: :any, arm64_sonoma:  "d24f9d3cef7a4f66375344e15ec850ce1db683c862850af870935734293e246a"
+    sha256 cellar: :any, sonoma:        "7194d3147b58d2497b3831c6cac447999d0fc4b4a465c0e36ad27232c9f1bd17"
+    sha256 cellar: :any, arm64_linux:   "ddf422033881aac689f9710051ec0156637f7b9e3e5e31a6af1be2dcaa3f75fc"
+    sha256 cellar: :any, x86_64_linux:  "8ba9683179e77c4c5da4c1716ce3634b981ce2c3483ba8393fe5421f02f41538"
   end
 
   depends_on "cmake" => [:build, :test]

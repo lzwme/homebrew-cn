@@ -6,15 +6,16 @@ class Cycode < Formula
   url "https://files.pythonhosted.org/packages/55/77/e64b52827512469700974a09e075af6833832e3cee4c0a43d70a2c5e6864/cycode-3.16.1.tar.gz"
   sha256 "403d6b4e6949f0c60a5c5651bbb5fdfc60f891babcd7ef42a24dd5b82e4e2cfb"
   license "MIT"
+  revision 1
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9355edef7deb4e00f522684d14f4378bd48ddf1124e993a71b1fb5cbf1de51f6"
-    sha256 cellar: :any, arm64_sequoia: "403b4840d1c1f15277b32bb39fdd603ebdf050094891985a18d5a2edbba83f8c"
-    sha256 cellar: :any, arm64_sonoma:  "6426c5defad459e8c2297441c55fe448ce65662d2992fec2ba33b85d8937ff92"
-    sha256 cellar: :any, sonoma:        "ae3862d348d29f7a17335418cd6f52267e33233ff538fcd5a2e99081832df753"
-    sha256 cellar: :any, arm64_linux:   "04b06134bca931793a955045946e1a437a2f1d89d95de5830cd93a323350681c"
-    sha256 cellar: :any, x86_64_linux:  "e5818c43578786c85e756eb849eb555ec4f2f9e4f3efdb9416a4fd678ca3b82a"
+    sha256 cellar: :any, arm64_tahoe:   "b2568a6c1b3d626db6b91ee57481c7b8cf2da6b97c146054a70687a3969db0a0"
+    sha256 cellar: :any, arm64_sequoia: "90472c71736333dbf66b5579cf87633da50b8d76643d489408ca2752c425cd7d"
+    sha256 cellar: :any, arm64_sonoma:  "2526e9e7ae682a87f5d425d7118226e748a133888d95647b0cf1146f9c914e11"
+    sha256 cellar: :any, sonoma:        "18a1dd8a2b04df8104693d5b71d97315a1bc8455016374b8f0c9bb863e839392"
+    sha256 cellar: :any, arm64_linux:   "e0fd0b3a47147098f941700afcc68d4b900dfcdf004eb238e0d427665bf1d511"
+    sha256 cellar: :any, x86_64_linux:  "6560b5417e9cfdcb8e1dd9face9f6866551437eaea50512e62f0fa23bdced6b3"
   end
 
   depends_on "certifi" => :no_linkage
@@ -207,8 +208,8 @@ class Cycode < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/25/44/ec35f1b6e83094b997da438a02c8c9b0ade2b1e84cfc48bd4656780760a6/starlette-1.2.1.tar.gz"
-    sha256 "9b9b5ebb992e67d6093741e63c2f59e4f6fff986f81163c087867bd7b924b3f6"
+    url "https://files.pythonhosted.org/packages/eb/e3/7c1dc7381d9f8ab7d854328ebfa884e62cb3f3d8549ddfd37c7814f42afa/starlette-1.3.1.tar.gz"
+    sha256 "05d0213193f2fbaae60e2ecb593b4add4262ad4e46536b54abe36f11a71724e0"
   end
 
   resource "tenacity" do

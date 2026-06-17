@@ -22,12 +22,10 @@ class Lnav < Formula
   head do
     url "https://github.com/tstack/lnav.git", branch: "master"
 
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
     depends_on "re2c" => :build
   end
-
-  # TODO: Make autoconf and automake build deps on head only upon next release
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
 
   depends_on "rust" => :build
   depends_on "libarchive"

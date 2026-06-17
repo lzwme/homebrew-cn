@@ -6,15 +6,16 @@ class Theharvester < Formula
   url "https://ghfast.top/https://github.com/laramies/theHarvester/archive/refs/tags/4.11.1.tar.gz"
   sha256 "73a931f6e346972939203a82ae38fed24570b3137bfce5d1ae5517e8284df6df"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/laramies/theHarvester.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8f7bdc065448c925713197f3c18bab0ae26c7a73d7655feb049567d79849d8e4"
-    sha256 cellar: :any, arm64_sequoia: "1296bb8f3d485eb7efdf0323c12fdad904c078e6c0b0fd7232bc5c217f1d90a7"
-    sha256 cellar: :any, arm64_sonoma:  "6cdef76ae9152030506907e67605ef9f2dfaa329d1481fcb2dd29bb99378c77c"
-    sha256 cellar: :any, sonoma:        "2dbe580bdf0acb52017e45de2d2bca3a1d0df46c6d32762bf19a339e35f7f792"
-    sha256 cellar: :any, arm64_linux:   "855d22d2053cd03f14e50b0b406cbaf6b03bca6b90ce9a2fb7f439889c34a88c"
-    sha256 cellar: :any, x86_64_linux:  "75dcde55ab0485f072fc5fcf1c13604f5b75a6f95664ce0986f9a02d85d07408"
+    sha256 cellar: :any, arm64_tahoe:   "effc37c69921908f3bb2eaa12d9825964f634d4adb71d021b274b1e9d1825a85"
+    sha256 cellar: :any, arm64_sequoia: "b19b1c40eb9e4019f09a0ea5684ac3ab9278edbd52af1375c3da58107bb0e098"
+    sha256 cellar: :any, arm64_sonoma:  "25895c5c9f9d998be8342f8310cdadc4c841a1195f9b887cb9155ddb773bb86c"
+    sha256 cellar: :any, sonoma:        "f52fe47cf220e91d31d82051faab4410fd57214816c400592383451310ea0a8f"
+    sha256 cellar: :any, arm64_linux:   "3ef9cf52362d36abad4ff1ae2be750df11d0bc724535233cf65cfed5acb8ce40"
+    sha256 cellar: :any, x86_64_linux:  "cf3dc7c743db6008d9f59e30d401d3b990f3016d3ea9b551add1189d8861edfb"
   end
 
   depends_on "cmake" => :build
@@ -154,8 +155,8 @@ class Theharvester < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/b5/fe/997687a931ab51049acce6fa1f23e8f01216374ea81374ddee763c493db5/filelock-3.29.0.tar.gz"
-    sha256 "69974355e960702e789734cb4871f884ea6fe50bd8404051a3530bc07809cf90"
+    url "https://files.pythonhosted.org/packages/e6/dc/be6cbe99670cd6e4ad387123647cb08e0c32975e223f82551e914c5568a6/filelock-3.29.4.tar.gz"
+    sha256 "10cdb3656fc44541cdf30652a93fb10ec6b05325620eb316bd26893e4201538a"
   end
 
   resource "frozenlist" do
@@ -299,8 +300,8 @@ class Theharvester < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/25/44/ec35f1b6e83094b997da438a02c8c9b0ade2b1e84cfc48bd4656780760a6/starlette-1.2.1.tar.gz"
-    sha256 "9b9b5ebb992e67d6093741e63c2f59e4f6fff986f81163c087867bd7b924b3f6"
+    url "https://files.pythonhosted.org/packages/eb/e3/7c1dc7381d9f8ab7d854328ebfa884e62cb3f3d8549ddfd37c7814f42afa/starlette-1.3.1.tar.gz"
+    sha256 "05d0213193f2fbaae60e2ecb593b4add4262ad4e46536b54abe36f11a71724e0"
   end
 
   resource "tldextract" do

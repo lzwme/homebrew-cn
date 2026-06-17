@@ -176,9 +176,6 @@ class OpenjdkAT8 < Formula
         extra_cxxflags << "-F#{buildpath}"
       end
 
-      # Work around for Xcode 16 bug: https://bugs.openjdk.org/browse/JDK-8340341
-      extra_cflags << "-mllvm -enable-constraint-elimination=0" if DevelopmentTools.clang_build_version == 1600
-
       args << "--with-extra-cflags=#{extra_cflags.join(" ")}" unless extra_cflags.empty?
       args << "--with-extra-cxxflags=#{extra_cxxflags.join(" ")}" unless extra_cxxflags.empty?
     else

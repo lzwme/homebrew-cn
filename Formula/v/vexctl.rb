@@ -1,18 +1,17 @@
 class Vexctl < Formula
   desc "Tool to create, transform and attest VEX metadata"
   homepage "https://openssf.org/projects/openvex/"
-  url "https://ghfast.top/https://github.com/openvex/vexctl/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "ed77b48de3ead71af608fb3ae5e5f4e19647d87fe9dfe38d4ffce4ee1c1e7c3b"
+  url "https://ghfast.top/https://github.com/openvex/vexctl/archive/refs/tags/v0.4.4.tar.gz"
+  sha256 "c846b1288f837ebcbebef7817ec450e5b0a4b3d8f7b176717ae6f3198539d991"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f2c5b287cf8b296ef3e6d85b38212179eebea16f070bfce1baea6ac0d119e7cf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2c5b287cf8b296ef3e6d85b38212179eebea16f070bfce1baea6ac0d119e7cf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2c5b287cf8b296ef3e6d85b38212179eebea16f070bfce1baea6ac0d119e7cf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dcae34a87491e8efef1aa942274facd1fc985f36e76cf6b9671e4b0d66738335"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1adeeacdaf6ad3a33abafc10856dc356bfab928a5a18de8cfa69a015ad18f7ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9053ff8fcb65e7f520118e1d2a02dd377a0a9951b5dc3f4a667e640e81eb919"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0bc558faeddb53ca3757ebd389f6375fd7496715ad291a55175a4105011a022b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0bc558faeddb53ca3757ebd389f6375fd7496715ad291a55175a4105011a022b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0bc558faeddb53ca3757ebd389f6375fd7496715ad291a55175a4105011a022b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "49098be7d124647c73f0c51129f3670eba16f80e67f48f00d3d2f9a2c0579d49"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "123462400d6d82312c643e4b8b298df0f1aa96e8086cb2aa9db5b1537184e71c"
+    sha256 cellar: :any,                 x86_64_linux:  "e1c377bef98b3a2663c260aac54ef44127c04aedf036153c08e0d2a0c42367ae"
   end
 
   depends_on "go" => :build

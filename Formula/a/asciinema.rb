@@ -1,18 +1,18 @@
 class Asciinema < Formula
   desc "Record and share terminal sessions"
   homepage "https://asciinema.org"
-  url "https://ghfast.top/https://github.com/asciinema/asciinema/archive/refs/tags/v3.2.0.tar.gz"
-  sha256 "247c7c87481f38d7788c1fb1be12021c778676c0d0ab37e529ec528f87f487ce"
+  url "https://ghfast.top/https://github.com/asciinema/asciinema/archive/refs/tags/v3.2.1.tar.gz"
+  sha256 "e7e49a09c664a76afc5bc25ca09871eb090bfbe68a2ddbc72750d3cb215d36f1"
   license "GPL-3.0-only"
   head "https://github.com/asciinema/asciinema.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "957266f04bb63edbd0e5ef47a0b199d32f4ad6b5a79129aee3ffb2e5184468ae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f010b93dbcd8ffe51c1815b810c3c97950559223bd86700f9d32bc56117e5cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c05e6a4ad18495b3139defd17badd933d015ab8e999ed027728eb1c948afe0a5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e12009a260e5e4771ba681edd7580e19b7c1f19648ce0fcdab8e5f8d16681a94"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7780bb54f22c281c204d04348c55eeedec49908552927e69ed5c23c48d5ba8d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a65fffb9cbaa31616c6b8fbc74d24103950e02ef009a9409c354b3598f3bbf36"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0b8a518a74f9d270c61c7e892c5e837d1ce997bdf67b7f60c0b6d9572e4c009"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50c12d3a07d15ef99b30627d32d4b57dc1aca7bd566a58647abe7ef43b0afba7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7992bbfdf364fd63af72f443628ff06e4d33d2594f338fc23a94dc6eebbcd3e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7317032afdd51cee5f9da0a4578e71a138c26c80271e9a44a53e7e01cb5c0a13"
+    sha256 cellar: :any,                 arm64_linux:   "5cc7b73553b6a49eb9a7073cc51d54eb97ac20eeae2bc7462505c79aa024cde2"
+    sha256 cellar: :any,                 x86_64_linux:  "6c01022b87c51d17090647349980ea61a0cb0543affdb3d8ecdd1e26af2214d4"
   end
 
   depends_on "rust" => :build

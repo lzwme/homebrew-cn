@@ -3,19 +3,18 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https://gettaurus.org/"
-  url "https://files.pythonhosted.org/packages/df/e6/d75c947034e3c1166707717bf2f735ed8de0a562de35cbfffdf613a91a2d/bzt-1.16.50.tar.gz"
-  sha256 "3c7ce335fcb88835c7613d2c8768b5017f74c5b2952032d93dee2dffa8988b0c"
+  url "https://files.pythonhosted.org/packages/2c/1a/09bc3986815f899d27f8ce60e9e82527cb81afee3e2b5cdd318dfd810e52/bzt-1.16.51.tar.gz"
+  sha256 "f57f7c50302c3c1aa36365b2b3a761b51015522597580730f2447b939147bf8a"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0e2f968522b78f3f61cf76be2cc9d78e526153650767fe37ec235d57cc561a62"
-    sha256 cellar: :any, arm64_sequoia: "824bae6dea9da81a930abbade66ab0e53b74ff2fcb573e4a7032c06a555fc376"
-    sha256 cellar: :any, arm64_sonoma:  "15ea54a091035b5f06680d19433c291e78a05ceed0774516c006b30545e86a2f"
-    sha256 cellar: :any, sonoma:        "03cc4944e1bb1ff945d5fbe522db2085ecfe2ce003489e941659f46800737056"
-    sha256 cellar: :any, arm64_linux:   "51c3336cd32a36ce73a1fb1e115275352da23858376aa16bee12f6ef996db1cc"
-    sha256 cellar: :any, x86_64_linux:  "57db81202717a9052864e1bef011c71089a5b2d13edaf3ddce3f0c9868371f23"
+    sha256 cellar: :any, arm64_tahoe:   "5f448813d508b59899f8106a9b36b3e64957bdb4e8cb5f7e3b97f1e561a08905"
+    sha256 cellar: :any, arm64_sequoia: "9c16985e17290857a3cc3bdc85b023ecdedaac0071223647a6aeef5db023618c"
+    sha256 cellar: :any, arm64_sonoma:  "f66d75aafd418c5b3457a42d5ea4af0aa00b52f4beb4eb36b9783fa21fff199c"
+    sha256 cellar: :any, sonoma:        "472b362f9289596523d70618018c361118223c9071cd8018433d90586ba1bff2"
+    sha256 cellar: :any, arm64_linux:   "fe26feb86f1826f7aa50e41a2dde32c2621ddf6f8419009aafa4e3176ac76524"
+    sha256 cellar: :any, x86_64_linux:  "42209b43c9f1042d5d967a28cb28e24a52678b6174cfc64cd150c9d45e1405da"
   end
 
   depends_on "cmake" => :build
@@ -137,8 +136,8 @@ class Bzt < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/4d/f2/bfb55a6236ed8725a96b0aa3acbd0ec17588e6a2c3b62a93eb513ed8783f/msgpack-1.1.2.tar.gz"
-    sha256 "3b60763c1373dd60f398488069bcdc703cd08a711477b5d480eecc9f9626f47e"
+    url "https://files.pythonhosted.org/packages/92/23/6139781ca7aadf656fa8e384fa84693ffb13f299e6931b6526427fe5e297/msgpack-1.2.0.tar.gz"
+    sha256 "8e17af38197bf58e7e819041678f6178f4491493f5b8c8580414f40f7c2c3c41"
   end
 
   resource "multidict" do
@@ -237,8 +236,8 @@ class Bzt < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   resource "urwid" do

@@ -133,11 +133,6 @@ class OpenjdkAT11 < Formula
 
     args << "--with-extra-ldflags=#{ldflags.join(" ")}"
 
-    # Work around Xcode 16 bug: https://bugs.openjdk.org/browse/JDK-8340341
-    if DevelopmentTools.clang_build_version == 1600
-      args << "--with-extra-cflags=-mllvm -enable-constraint-elimination=0"
-    end
-
     # Fix: prevent clang C++ driver from receiving `-std=gnu23` (Homebrew CI macOS + Linux toolchains)
     args << "--with-extra-cxxflags=-std=gnu++17"
 

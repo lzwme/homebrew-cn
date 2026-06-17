@@ -1,17 +1,17 @@
 class Lsof < Formula
   desc "Utility to list open files"
   homepage "https://github.com/lsof-org/lsof"
-  url "https://ghfast.top/https://github.com/lsof-org/lsof/archive/refs/tags/4.99.6.tar.gz"
-  sha256 "2ce65158694e9c44dfc54916f5b843d887763c03128e0a1c77d62ae106537009"
+  url "https://ghfast.top/https://github.com/lsof-org/lsof/archive/refs/tags/4.99.7.tar.gz"
+  sha256 "bac1b0acbc50aede42fc97dffaa0b0475e97973e36a6351de5f349c6155afc68"
   license "lsof"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "723b4a385c26103601f2309aae631784ea0420ef8d8dcbd7d256ad87a63af911"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "420dd43dcedb7d1eee67d84de4a9683587962269489d010c2764229864f12546"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20e7f80ae4e4b0180843c28c3f2c2d98391398f3f85f37523cad93424bdd1493"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8c7c40e806f10f7dadca60932e52e6a8bd26f4d3126736deb24ec3bb27066cbb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b13c6ef92722757432ad9a88024de642764e9b6aa7e145b4ca64757a69802223"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf1994152f5a772548fc87218819a1384d2998b4105764b4424cbe5e8d43bde2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d70c25198d50a584362bcf3fa262950f3688a7e1a38f5661c33597438cda2aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0aee83daa6e09f430b35cda1095bdb7c94060d9ea3c30c5f3eefbebf44e4f705"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc80facd617cce34684707daa32f5cb8be27401119304bfa8a5bf5ae797443ba"
+    sha256 cellar: :any_skip_relocation, sonoma:        "edc597507a743085d6e84de313c3c5653b11b33c2f6a2f30d881310632680e2c"
+    sha256 cellar: :any,                 arm64_linux:   "5fd75c0e4249d0aafd41d519b6d683506e921bcf34a664f40aad01a9a30547df"
+    sha256 cellar: :any,                 x86_64_linux:  "3fe54fc89afd2788f825e86dec6cff5041fcac98c7380ea868db9616279fbc50"
   end
 
   keg_only :provided_by_macos

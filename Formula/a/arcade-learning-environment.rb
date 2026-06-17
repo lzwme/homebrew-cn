@@ -1,18 +1,19 @@
 class ArcadeLearningEnvironment < Formula
   desc "Platform for AI research"
-  homepage "https://ale.farama.org/"
-  url "https://ghfast.top/https://github.com/Farama-Foundation/Arcade-Learning-Environment/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "021bc469903d7b7ea39e5cc51116baa9068e4d8e3b34bf0516767f49b84fa5c1"
+  homepage "https://github.com/Farama-Foundation/Arcade-Learning-Environment"
+  url "https://files.pythonhosted.org/packages/96/f2/4256e8074df976edd3ba28be9b6a2f4b3fc47632134dabfead41d32b51be/ale_py-0.12.0.tar.gz"
+  sha256 "6030416b6a049d399bf95420ad2fdbf0ea8f83051b502774d27b477a06000dbc"
   license "GPL-2.0-only"
   head "https://github.com/Farama-Foundation/Arcade-Learning-Environment.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4abe8e5552022352f45e8b5d59d8b8b12cc69c67bf49664f6f010bb3a3ebbad5"
-    sha256 cellar: :any, arm64_sequoia: "e5c7e7d63ea63fd0061cd2d8b89abe78c9864e8bce25c5a51fe4e8918e39f49c"
-    sha256 cellar: :any, arm64_sonoma:  "48022de8ccf34458eecfce6bed4fcdb11e3ce12a0b1b248270fa3e0f48d686dd"
-    sha256 cellar: :any, sonoma:        "9ee4d956cff029839053a92090716c18b5c368663932b209dacdd2b86118efdb"
-    sha256 cellar: :any, arm64_linux:   "aa410e20717f006304b294ac303abd24c4fb156d5b0c08a723768c0a3402a31d"
-    sha256 cellar: :any, x86_64_linux:  "203fc30b16516bdfd294538c105aad11213c93739693328c747cff28ff405ed7"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "93c2116408dec539ac099675d9e8247a448efa0d1606b346e363b0d5bde5b843"
+    sha256 cellar: :any, arm64_sequoia: "9fbe9df4b54fa9a43abfe51209a406ccd4a7d64447327d06bff381ef83998b8b"
+    sha256 cellar: :any, arm64_sonoma:  "0be9c8aabc25649ec64a7080990ecc3a69f3cb3a2ca0aeb0c046c5c6c57a370f"
+    sha256 cellar: :any, sonoma:        "92c4560f1a4747f7e69cd0598e508800a1f98195112f802c5b9b92d34ea51a4c"
+    sha256 cellar: :any, arm64_linux:   "27eb967b8f7c951b8e4ed93e41e3c4ab69f9f9bf1d1a086595bfc0fad332bb06"
+    sha256 cellar: :any, x86_64_linux:  "2bea153cc0c1b7e4c4cdbf39cfc8e4cc23ca118523f5121b313259546321faff"
   end
 
   depends_on "cmake" => :build
