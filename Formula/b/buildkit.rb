@@ -1,8 +1,8 @@
 class Buildkit < Formula
   desc "Concurrent, cache-efficient, and Dockerfile-agnostic builder toolkit"
   homepage "https://github.com/moby/buildkit"
-  url "https://ghfast.top/https://github.com/moby/buildkit/archive/refs/tags/v0.30.0.tar.gz"
-  sha256 "d7ec8c8657ad0c8b1b29219d923afb693b3a6321748aac034c3afee2973b07c8"
+  url "https://ghfast.top/https://github.com/moby/buildkit/archive/refs/tags/v0.31.0.tar.gz"
+  sha256 "d000939ab93c32eab5a6d7c7a200bf4d42b1972a0e0dec5d5ebbe60c02667183"
   license "Apache-2.0"
   head "https://github.com/moby/buildkit.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Buildkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "49ec7ddcc7216653ea942ddf701c42b5cd09f7fb87955b954dfa6b6544dc7786"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49ec7ddcc7216653ea942ddf701c42b5cd09f7fb87955b954dfa6b6544dc7786"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49ec7ddcc7216653ea942ddf701c42b5cd09f7fb87955b954dfa6b6544dc7786"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c32d0f1e65034a50ef3f0a459b67ebf1030289558951108b372a07ac46d46794"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbd9164c4d45094907b7d08c19f2a142c58edd8fb6898e99a01f688ad6e4c1f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a42e5befe30d2dac8ae36bf18040d75ffdbdee846e17b75c075d5d65d5fea08b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ae7af33738dcde1fc617d211cbac5dab01b1f9113cc8f6a01a0b9e941f08575"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ae7af33738dcde1fc617d211cbac5dab01b1f9113cc8f6a01a0b9e941f08575"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ae7af33738dcde1fc617d211cbac5dab01b1f9113cc8f6a01a0b9e941f08575"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9b31defabcea6dc353eda34dfbb10d7d83a2cda8feaeb186f2a70a31dbdccc74"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee6afb0f7d6ca7499326b1c2f193594c13bcaa4f47dab1fb2d28395402cf237d"
+    sha256 cellar: :any,                 x86_64_linux:  "6559b13c5193c132dd6ad8fedf3797b56c99d16d6b4f53cf9e81b7b3f64cbc90"
   end
 
   depends_on "go" => :build

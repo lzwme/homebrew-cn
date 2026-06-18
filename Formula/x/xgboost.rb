@@ -1,8 +1,8 @@
 class Xgboost < Formula
   desc "Scalable, Portable and Distributed Gradient Boosting Library"
   homepage "https://xgboost.ai/"
-  url "https://ghfast.top/https://github.com/dmlc/xgboost/releases/download/v3.2.0/xgboost-src-3.2.0.tar.gz"
-  sha256 "16a31dfbc0c54544c9c36ab5f696fa7b646c125f161c52c814d757a58241a404"
+  url "https://ghfast.top/https://github.com/dmlc/xgboost/releases/download/v3.3.0/xgboost-src-3.3.0.tar.gz"
+  sha256 "22d4fba822fba5cd02299bf0c63ec68ff72606bc1b1bd910423d4b83c2f108ff"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Xgboost < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5a95ce8b876749dcc5ef5675674500ead83b3da69b64945455f20cc6765c8365"
-    sha256 cellar: :any,                 arm64_sequoia: "e346db9ed7ee1b5a718b0ee94ae7c311aa1baa31b7c0ed01db4ad93ae600d84b"
-    sha256 cellar: :any,                 arm64_sonoma:  "349ede65433762b092f684a0130fe9b63c134d8417e73cad766dd03cb35e9b5a"
-    sha256 cellar: :any,                 sonoma:        "bae04c0461e2a5e996e67a9e0c2e2648b7e58fa8cf9e9a35065ef1c8daa2b6cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5969e0b1577357773b3cf5daca4a7237fa62dae7dc3ce95c54dcae44944dd8f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbd350d38e5d16cc7f46993d316bdee723c7a4e7b9a53dab9e2d0912e5678e4f"
+    sha256 cellar: :any, arm64_tahoe:   "c7801b61e133e2a38583a825548ff11f2c9f59ca00073ab13a458fbacac30865"
+    sha256 cellar: :any, arm64_sequoia: "00ba34786549e5cde61f0adb1984e426b789a2ff7f655e2247dbaf3f9614053b"
+    sha256 cellar: :any, arm64_sonoma:  "e7a65021e8b01503cbd084b4280e2e1b015c2ce986ded669379bf8e7a9ed0bb5"
+    sha256 cellar: :any, sonoma:        "d4b38f0a8d4b4884cee14d5a37e280931e6782cda9d3cce686a651016eb44978"
+    sha256 cellar: :any, arm64_linux:   "f39733a574674cb4dc306f864bfba16b82954df315470332b2f6f7b99e2db6de"
+    sha256 cellar: :any, x86_64_linux:  "88bf96e227bf00b677ca5cf81e9ca1c7a88bab548818655b687e0fb143bddc8e"
   end
 
   depends_on "cmake" => :build

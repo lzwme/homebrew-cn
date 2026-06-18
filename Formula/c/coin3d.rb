@@ -4,8 +4,8 @@ class Coin3d < Formula
   license "BSD-3-Clause"
 
   stable do
-    url "https://ghfast.top/https://github.com/coin3d/coin/releases/download/v4.0.8/coin-4.0.8-src.tar.gz"
-    sha256 "aff6c7edf24cfb935edba46574ec5f83b543c47ff79e40c21fb92dc709b0f2c4"
+    url "https://ghfast.top/https://github.com/coin3d/coin/releases/download/v4.0.9/coin-4.0.9-src.tar.gz"
+    sha256 "599b561a2ea5dacdc77f544b122b0a985c1c7ff29a37ac4919836cd4f55af283"
 
     resource "soqt" do
       url "https://ghfast.top/https://github.com/coin3d/soqt/releases/download/v1.6.4/soqt-1.6.4-src.tar.gz"
@@ -19,12 +19,12 @@ class Coin3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c99f420721e92e91139456224982baac1eb95863a36880bcff3d7892f96dc777"
-    sha256 cellar: :any,                 arm64_sequoia: "e370d24b0e20aff5f37a7ddfa10cd4b262661863172f3a76d437e73b24ef9875"
-    sha256 cellar: :any,                 arm64_sonoma:  "45e831f7434645b2eb8ac03b66088fe24aec3792abe5ccf6cf08ddb81fca624c"
-    sha256 cellar: :any,                 sonoma:        "c97ccb81514a19c8e18fb1144e60cde5e9cb6979e2a0eb11a62030dc647073fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75155d00c26b9df819b006d8a4b0abfbeda5fffbde5f4dbc8ad09bedcc52b4dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d44311b6e8b687dcd7010a3aac45c37ee96f50586a0283712cb23405771e1582"
+    sha256 cellar: :any, arm64_tahoe:   "4ecb2df1bdc0b0d5c8af5ae23e1fb838c77f27df434609e8301b59a6ff35d78c"
+    sha256 cellar: :any, arm64_sequoia: "d9b324c3ed0702f5b93d9eac94f9ffbebbc30813b446fae7b795863326d41ea6"
+    sha256 cellar: :any, arm64_sonoma:  "9a758890ca8b08fbed41b34454e459a56a590082c1395ddca3f6ba41227957a6"
+    sha256 cellar: :any, sonoma:        "607a3c787737178fd6f03959e4579889db18b50f4db0f8bcddb15d92a3aaf4c2"
+    sha256 cellar: :any, arm64_linux:   "c05c23e1ed15a924bd1b907f50db7d9bac92207dca9284e2ea90619054012cf5"
+    sha256 cellar: :any, x86_64_linux:  "a12fd593ff2f956bccf6494d584c7cded43038cfe73c0f43bf27865a47235c1e"
   end
 
   head do

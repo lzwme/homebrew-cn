@@ -1,8 +1,8 @@
 class Wartremover < Formula
   desc "Flexible Scala code linting tool"
   homepage "https://www.wartremover.org/"
-  url "https://ghfast.top/https://github.com/wartremover/wartremover/archive/refs/tags/v3.5.8.tar.gz"
-  sha256 "0af3adfb9511dc239dec0ecf8be87f6ad10a51986a4b65b2a9846698845ddbb2"
+  url "https://ghfast.top/https://github.com/wartremover/wartremover/archive/refs/tags/v3.6.0.tar.gz"
+  sha256 "dbbc912106b47a8400b6513411c1a28288d021438f5a5e3b3c59165ee297ab6c"
   license "Apache-2.0"
   head "https://github.com/wartremover/wartremover.git", branch: "master"
 
@@ -12,19 +12,19 @@ class Wartremover < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f703c10d4ab2d18e743bfe6c9169aa7602955c275a0836f6c0f670313e07c91d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f703c10d4ab2d18e743bfe6c9169aa7602955c275a0836f6c0f670313e07c91d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f703c10d4ab2d18e743bfe6c9169aa7602955c275a0836f6c0f670313e07c91d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f703c10d4ab2d18e743bfe6c9169aa7602955c275a0836f6c0f670313e07c91d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6584a2237810bda94e9f03cceee46b93ed5138059ec38202d6101e0b4cc32dfd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6584a2237810bda94e9f03cceee46b93ed5138059ec38202d6101e0b4cc32dfd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2be56239faa201195f8874ae915f7ee17a70674c2629b46c80ccf47752cb9c1e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2be56239faa201195f8874ae915f7ee17a70674c2629b46c80ccf47752cb9c1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2be56239faa201195f8874ae915f7ee17a70674c2629b46c80ccf47752cb9c1e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2be56239faa201195f8874ae915f7ee17a70674c2629b46c80ccf47752cb9c1e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f247de211ef41f922fc501ad4d986a924ac5bfbc0659c5e90bddea0557537553"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f247de211ef41f922fc501ad4d986a924ac5bfbc0659c5e90bddea0557537553"
   end
 
   depends_on "sbt" => :build
   depends_on "openjdk"
 
   def install
-    system "sbt", "assembly"
+    system "sbt", "--server", "assembly"
     libexec.install "wartremover-assembly.jar"
     bin.write_jar_script libexec/"wartremover-assembly.jar", "wartremover"
   end

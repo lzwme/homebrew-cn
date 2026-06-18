@@ -3,19 +3,18 @@ class Fava < Formula
 
   desc "Web interface for the double-entry bookkeeping software Beancount"
   homepage "https://beancount.github.io/fava/"
-  url "https://files.pythonhosted.org/packages/07/66/cdcafeec2c75f6c94779951f63f4afbb014ccec3ab7ece784d58c05351f2/fava-1.30.13.tar.gz"
-  sha256 "2a38ee0544c3b45f6c052678fd06bd852fdcd74ebfe8a9c1db489202cdcc3f3f"
+  url "https://files.pythonhosted.org/packages/6b/a0/2c16c55c9b011fb6e7f73a40441f7dc533922b24782c57588a036781719f/fava-1.30.14.tar.gz"
+  sha256 "89999c130c80ffaf37d9507a44ed88b376abf94bff4669f5bf8f5e3f710c17ca"
   license "MIT"
   head "https://github.com/beancount/fava.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "bbd27ea99320e82de659570a0d3c8d5f0b69c4cad79ac597a6d509de42c06471"
-    sha256 cellar: :any, arm64_sequoia: "98917c541d0020b0a73a274fd75601a89d1a24e8e4e2e342543e96c2907e5d2a"
-    sha256 cellar: :any, arm64_sonoma:  "16758223c0bf79964f5e8b0f070a87180e789e5ab810db55984697f330a56fa8"
-    sha256 cellar: :any, sonoma:        "719ff24f1403be128586519f0b0c235185dba60691372bb23c396ed98ea007b5"
-    sha256 cellar: :any, arm64_linux:   "dc919cb5fd129424d88c53d33bde446fdab36de636c208528392a5f7cd3a4176"
-    sha256 cellar: :any, x86_64_linux:  "77c4e356b17a1d39e66e414c2a0b0cfa1271e8420793c25d0680f89c7af16213"
+    sha256 cellar: :any, arm64_tahoe:   "5a65149240ac1c97f32979cc64ce57e2ff9c111ce47cc167ccc0c5820834e6ff"
+    sha256 cellar: :any, arm64_sequoia: "ed43fb73a313a1eeaddce49a97e531df4ad788d97844fe735117d82489760768"
+    sha256 cellar: :any, arm64_sonoma:  "66b2d478ed33ea38d1d4312e1965ca11c584f9ed72fb29f90decf8b32d451edb"
+    sha256 cellar: :any, sonoma:        "9252040440bef2f12fe6d22d2fc5a0d5717cd5c27bdb69ea9a98fa1159695048"
+    sha256 cellar: :any, arm64_linux:   "650e6ce7e498c5b0312940d2749c1aec41bfe969ca62726754ff34b78f0d8f9a"
+    sha256 cellar: :any, x86_64_linux:  "de16e4275e8d0cc49f65551b8a7f755f37e0aa5a2ee5026c271cf45bec7bd1eb"
   end
 
   depends_on "bison" => :build # for beancount
@@ -36,8 +35,8 @@ class Fava < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
+    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
   end
 
   resource "babel" do

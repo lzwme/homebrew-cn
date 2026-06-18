@@ -1,19 +1,18 @@
 class Wmbusmeters < Formula
   desc "Read wired or wireless mbus protocol to acquire utility meter readings"
   homepage "https://github.com/wmbusmeters/wmbusmeters"
-  url "https://ghfast.top/https://github.com/wmbusmeters/wmbusmeters/archive/refs/tags/2.0.0.tar.gz"
-  sha256 "600beb099bc1ac1d4fd7a78dde89bb753b033cfd9de54ed6f25d3fc705c38042"
+  url "https://ghfast.top/https://github.com/wmbusmeters/wmbusmeters/archive/refs/tags/3.0.0.tar.gz"
+  sha256 "d1bfc90db81e0340b806151f6c05337e9a0be3d5418c625e18bb137f45fb6ed7"
   license "GPL-3.0-or-later"
   head "https://github.com/wmbusmeters/wmbusmeters.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "48ed2b6256fd4de5aae0ba88f168edff789455ebeddb45ec2c0b02dcf023ef50"
-    sha256 cellar: :any,                 arm64_sequoia: "d9e5e3b1e49de985190abb8b617f48a0f25fde23de7006bdf7fba515b33bccc4"
-    sha256 cellar: :any,                 arm64_sonoma:  "914a69c5bd54cc032acf7ea11da5d527e9767fd8028a9c9fc320cde7615bf486"
-    sha256 cellar: :any,                 sonoma:        "d6d9021668bcf95ff563644a53219ada239edea1f9b7985f4869855cf74f5f82"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5418013076180919d6d8beae685569da60970b1006ddb28d9c6304bd35156a3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8eb65c9637ca3517a45909a2ba750ea4c9c6bd3e11d41a90f9edcc818f971bd"
+    sha256 cellar: :any, arm64_tahoe:   "6fe2c42deaddacdd876bc496e814ee84c2821ee9d38f2cc86b760b7538bb42c5"
+    sha256 cellar: :any, arm64_sequoia: "c31c6432c57e2a1bcb220fbed474f5ec6a0b0c57bebb2d1cce2a355e4fa5673c"
+    sha256 cellar: :any, arm64_sonoma:  "9ffbd595ef709f53a2181a134d6f1d88230ecfcbbd10bb708a6779fc2994b831"
+    sha256 cellar: :any, sonoma:        "b925711df363a619dabd00d46f780d4a72e612be4cabb0554b444847a6a10d6b"
+    sha256 cellar: :any, arm64_linux:   "d012dacb1ad806412121128c76ed5c62dde3480efbaf2f14b2a94e411f559c32"
+    sha256 cellar: :any, x86_64_linux:  "29171c7a663c1f19b054d22c8f9f51153a614f3d88c7748bd6531565be40b603"
   end
 
   depends_on "pkgconf" => :build
@@ -22,9 +21,6 @@ class Wmbusmeters < Formula
   uses_from_macos "libxml2"
 
   def install
-    # TODO: remove on next version bump; fixed upstream in commit e9ef936d6f18f8
-    # Prevent configure from running `find /` to locate libxml2 headers
-    inreplace "configure", "LIBXML2INC=$(find / -name xpath.h)", "LIBXML2INC="
     system "./configure", *std_configure_args
     system "make", "TAG=#{version}", "BRANCH=", "COMMIT_HASH=", "CHANGES="
     bin.install "build/wmbusmeters"

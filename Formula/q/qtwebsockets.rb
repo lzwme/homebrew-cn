@@ -32,6 +32,8 @@ class Qtwebsockets < Formula
   depends_on "qtbase"
   depends_on "qtdeclarative"
 
+  conflicts_with "qt@5", because: "both link conflicting binaries"
+
   def install
     args = ["-DCMAKE_STAGING_PREFIX=#{prefix}"]
     args << "-DQT_NO_APPLE_SDK_AND_XCODE_CHECK=ON" if OS.mac?

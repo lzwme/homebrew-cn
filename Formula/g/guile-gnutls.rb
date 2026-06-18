@@ -1,17 +1,17 @@
 class GuileGnutls < Formula
   desc "Guile bindings for the GnuTLS library"
   homepage "https://codeberg.org/guile-gnutls/guile-gnutls"
-  url "https://codeberg.org/guile-gnutls/guile-gnutls/releases/download/v5.0.1/guile-gnutls-5.0.1.tar.gz"
-  sha256 "cc0067f3eeb421bc17247140962a49086df5450f0d3e71c55bf541a2d2b9ef2b"
+  url "https://codeberg.org/guile-gnutls/guile-gnutls/releases/download/v5.0.2/guile-gnutls-5.0.2.tar.gz"
+  sha256 "76ba2a0f47edde7fd2f583fc1162ed1ce8339bdaf7e9d9cc39387fcc95fb935b"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_tahoe:   "975e9b65e6b30080b9bbac5a87afd83e2a5722c2b72920c90fb9122a2f45144c"
-    sha256 arm64_sequoia: "95394cff621d1adab78963342fe6af29b5465190b0fbe67cc0df79f7219e735c"
-    sha256 arm64_sonoma:  "1e31541c1f148acff0657dc55a994409d31c6d8be13fc16c2282775d70c5b727"
-    sha256 sonoma:        "1046862293e93ae8a461b7a6dcaf2f823c4ec052ac4f24dd6ee8ac154196bce9"
-    sha256 arm64_linux:   "1bb943a6cbc6f7aab143dfb69b26e0b17ac316f9e88614e1b833a525d134ccc4"
-    sha256 x86_64_linux:  "e83b5913dec6fedd693056a6cc6a136b7036ffbc80ab83d21896c6a013244a1f"
+    sha256 arm64_tahoe:   "b313105e2382370a54d456742cd85f2a062ab9c39563826f6a325f77d56db83f"
+    sha256 arm64_sequoia: "6509147f21e260e84f94d730b129121ff2a4f7922666b3a2436d8e757cce7729"
+    sha256 arm64_sonoma:  "8ab04c813ed52b7671a1000733412cf4a7989559d92b98ea8ea346cea270db4d"
+    sha256 sonoma:        "750f3b5de59464e339d042f3232e384cb6793f9ff44ab10281ec314cad331970"
+    sha256 arm64_linux:   "8fbe51d775f07fcd3b4b192d593f3cf36e4435414fc695d7b7f5d72aa5516880"
+    sha256 x86_64_linux:  "3aea5102f38be22db21e73e51673a1909946aaf0ecff29ba6a45055f62ee40aa"
   end
 
   head do

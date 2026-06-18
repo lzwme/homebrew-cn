@@ -59,6 +59,8 @@ class Qtmultimedia < Formula
     depends_on "pulseaudio"
   end
 
+  conflicts_with "qt@5", because: "both link conflicting binaries"
+
   def install
     args = ["-DCMAKE_STAGING_PREFIX=#{prefix}"]
     if OS.mac?

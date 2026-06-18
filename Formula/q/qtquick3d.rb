@@ -44,6 +44,8 @@ class Qtquick3d < Formula
     depends_on "zlib-ng-compat"
   end
 
+  conflicts_with "qt@5", because: "both link conflicting binaries"
+
   def install
     rm_r("src/3rdparty/assimp")
 

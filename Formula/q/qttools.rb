@@ -39,6 +39,8 @@ class Qttools < Formula
     depends_on "gumbo-parser"
   end
 
+  conflicts_with "qt@5", because: "both link conflicting binaries"
+
   def install
     rm_r("src/assistant/qlitehtml/src/3rdparty/litehtml")
 

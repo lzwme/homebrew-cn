@@ -38,6 +38,8 @@ class Qtconnectivity < Formula
     depends_on "bluez"
   end
 
+  conflicts_with "qt@5", because: "both link conflicting binaries"
+
   def install
     args = ["-DCMAKE_STAGING_PREFIX=#{prefix}"]
     args << "-DQT_NO_APPLE_SDK_AND_XCODE_CHECK=ON" if OS.mac?

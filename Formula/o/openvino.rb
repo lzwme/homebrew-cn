@@ -3,10 +3,10 @@ class Openvino < Formula
 
   desc "Open Visual Inference And Optimization toolkit for AI inference"
   homepage "https://docs.openvino.ai"
-  url "https://ghfast.top/https://github.com/openvinotoolkit/openvino/archive/refs/tags/2026.2.0.tar.gz"
-  sha256 "886818c55f887ecc62893c900f259a39ec6c09555ce4dd3d379653ae5b0d6e62"
+  url "https://ghfast.top/https://github.com/openvinotoolkit/openvino/archive/refs/tags/2026.2.1.tar.gz"
+  sha256 "9255a1cd87ad330242ed5063c2bcb2d04cc6897ab50b9fc95da5ac4a4625ae4d"
   license "Apache-2.0"
-  compatibility_version 3
+  compatibility_version 4
   head "https://github.com/openvinotoolkit/openvino.git", branch: "master"
 
   livecheck do
@@ -15,12 +15,12 @@ class Openvino < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "aa6322133f0aa01919b110b4938a1871c59f5532a0965407e059181c1eb86873"
-    sha256 cellar: :any, arm64_sequoia: "db8c122ea01ed12e3f14d269311f7397e05c44b530700831bc6492ef84fe00ba"
-    sha256 cellar: :any, arm64_sonoma:  "d019bdc9278ce1801dab5329083a416631d067effdc87466f93dfaa42e8363b7"
-    sha256 cellar: :any, sonoma:        "86a2b2b2d3f9781f46a1b091f963180aa86f5a63415e56b78d534c6683b37436"
-    sha256               arm64_linux:   "c9a8ab3f377fec9f2cb40a6e13ce3f0f1e758776b24754f5d384ae8588e1bf4d"
-    sha256               x86_64_linux:  "90d2af8dbed2f7729d71ec7b733821351ec8e7273dbc5a7b408c9523c8cb2d15"
+    sha256 cellar: :any, arm64_tahoe:   "a7270654224e8dbc0edb98aac1f1dd64344df4f68db5be7990db4d52f7637f0e"
+    sha256 cellar: :any, arm64_sequoia: "03433a7c1f59bd8e0d239f19e996110823d8c8a2d1b52536396bb742841e2921"
+    sha256 cellar: :any, arm64_sonoma:  "4ef925edeea8af83712d9fca98d10a83f022483748cf2655ba2a65ede7a06aa5"
+    sha256 cellar: :any, sonoma:        "71184382ba9f4dbb0f84c9efc131c3c7e38d6ffc2b78cf284bfaf72f5225ce48"
+    sha256               arm64_linux:   "3ab1f59393bd4651d7a7e73cf6e4962c122166a2d4647b6c2606b3ff639e4ed4"
+    sha256               x86_64_linux:  "1b4290508d3b7e71a5da865de5879d512f6c9705a6b9e418b4e81e1315b3d242"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -84,6 +84,8 @@ class Qtbase < Formula
     pour_bottle? only_if: :default_prefix
   end
 
+  conflicts_with "qt@5", because: "both link conflicting binaries"
+
   def install
     # Allow -march options to be passed through, as Qt builds
     # arch-specific code with runtime detection of capabilities:

@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/9a/87/15cf3b592aee5e70537ce02db986e7f517521ee9fcfc0799f11463ff96e9/schemathesis-4.21.7.tar.gz"
-  sha256 "f2c8855591f2850671723bd7dd5d115430f78c20009d1ecea036e0e91814d240"
+  url "https://files.pythonhosted.org/packages/a0/6b/9faf5eecd4299b0151b0312465e21598e546ed87d63a3ac09ce52aab0caa/schemathesis-4.21.8.tar.gz"
+  sha256 "853f5167b15b4a8b23a9aa66d4fe3ab2ae055609aa0eb75806062ff5b6bc8b00"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "93bba3d8654c56e158ac76072c51dbba49dbb0688134c34f5d7892f4186b5bb1"
-    sha256 cellar: :any, arm64_sequoia: "8dea8fba9531f96d9bb4882f695c82fa20703ab3b90ee8615f75e6caf025a6fa"
-    sha256 cellar: :any, arm64_sonoma:  "e69cd0f26582bc2db4b963020f019b52afa80f707ebfaf7478813f9fb7feca1f"
-    sha256 cellar: :any, sonoma:        "08260cd3a1d1856077103bb9619e52327c3f8a793970d2f0d2013682c4b09870"
-    sha256 cellar: :any, arm64_linux:   "f442bd62b86e8fd613053160b134d31c758647a5557b44d049d144daf75f1201"
-    sha256 cellar: :any, x86_64_linux:  "2499d924e8e855f422606e54f9a6378c3973752ba46fe12bfadb31b9181253ba"
+    sha256 cellar: :any, arm64_tahoe:   "e281f51469569206b98c1b025973a3887a6199d13117cea7fad8e8fa4ca0e95f"
+    sha256 cellar: :any, arm64_sequoia: "c5c8dfa8e3b3350eb5e9bfe57d62ca17c58425b0b8dc45e84b21edcde34f1dd9"
+    sha256 cellar: :any, arm64_sonoma:  "b3c7984319d09718a51125c463a97d77a0300b36bd1221d7eb126984b3377a4d"
+    sha256 cellar: :any, sonoma:        "39d22df4bf239e8af2c83b2fc608e6430797db970f679dfe8a961df518849bda"
+    sha256 cellar: :any, arm64_linux:   "04c4aa11b081fca3178b858404c10bc943e99d49874261ebbbb60c5c7d59043a"
+    sha256 cellar: :any, x86_64_linux:  "25c5efc047df98aa0121ea20b58e3792ca8870fa08d38a4688de021f1e4522cc"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
@@ -27,8 +27,8 @@ class Schemathesis < Formula
   pypi_packages exclude_packages: %w[certifi rpds-py]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
+    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
   end
 
   resource "attrs" do
@@ -72,8 +72,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/f5/04/64032a1dccd2233615c8a3f701bbb563558575ed017496a24b6d81762c91/hypothesis-6.155.2.tar.gz"
-    sha256 "ae36880287c9c5defe9f199d3d2b67d9947a4da2a46e6c57373cbdf2345b20e1"
+    url "https://files.pythonhosted.org/packages/36/77/13ec9b6390bce44f5badab39837dd6789bbfe6342a2ac611a71537a7756f/hypothesis-6.155.3.tar.gz"
+    sha256 "1e34b17ae9873515384312cb7640abd773eb096c7eef8c0d9c614fa2c306e9bb"
   end
 
   resource "hypothesis-graphql" do

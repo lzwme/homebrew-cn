@@ -36,30 +36,19 @@ class Cabocha < Formula
   def install
     ENV["LIBS"] = "-liconv" if OS.mac?
 
-    inreplace "Makefile.in" do |s|
-      s.change_make_var! "CFLAGS", ENV.cflags || ""
-      s.change_make_var! "CXXFLAGS", ENV.cflags || ""
-    end
-
-    args = %W[
-      --disable-dependency-tracking
-      --prefix=#{prefix}
+    args = %w[
       --with-charset=UTF8
       --with-posset=IPA
     ]
     # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    md5 = if OS.mac?
-      "md5"
-    else
-      "md5sum"
-    end
+    md5 = OS.mac? ? "md5" : "md5sum"
     result = pipe_output(md5, pipe_output(bin/"cabocha", "CaboCha はフリーソフトウェアです。", 0))
     assert_equal "a5b8293e6ebcb3246c54ecd66d6e18ee", result.chomp.split.first
   end

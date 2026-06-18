@@ -6,23 +6,23 @@ class Restview < Formula
   url "https://files.pythonhosted.org/packages/3d/d4/36ed06051e9702d3dae5f7bb0296b79b18621ff5a1bf43247509cbfeff8d/restview-3.0.2.tar.gz"
   sha256 "8b4d75a0bed76b67b456ef7011f4eb6c98a556c9f837642df2202c7312fccc1a"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/mgedmin/restview.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "973609bbf38eb5733fed3c1d7a1051e10d519b1b0514a9197a52530f32bbf6a1"
+    sha256 cellar: :any_skip_relocation, all: "7fec6b20e863c3b009a03ae1506640d405c12b5ee81038b288b85e163d036fab"
   end
 
   depends_on "python@3.14"
 
   resource "bleach" do
-    url "https://files.pythonhosted.org/packages/07/18/3c8523962314be6bf4c8989c79ad9531c825210dd13a8669f6b84336e8bd/bleach-6.3.0.tar.gz"
-    sha256 "6f3b91b1c0a02bb9a78b5a454c92506aa0fdf197e1d5e114d2e00c6f64306d22"
+    url "https://files.pythonhosted.org/packages/48/3c/e12ac860709702bd5ebeb9b56a4fe334f1001246ee1b8f2b7ee28912df7d/bleach-6.4.0.tar.gz"
+    sha256 "4202482733d85cedd04e59fcb2f89f4e4c7c385a78d3c3c23c30446843a37452"
   end
 
   resource "docutils" do
-    url "https://files.pythonhosted.org/packages/ae/b6/03bb70946330e88ffec97aefd3ea75ba575cb2e762061e0e62a213befee8/docutils-0.22.4.tar.gz"
-    sha256 "4db53b1fde9abecbb74d91230d32ab626d94f6badfc575d6db9194a49df29968"
+    url "https://files.pythonhosted.org/packages/39/a4/5180d9afc57e8fca05601dd652bdff19604c218814037fe90ffc7625a50a/docutils-0.23.tar.gz"
+    sha256 "746f5060322511280a1e50eb76846ed6bf2342984b2ac04dc42caa1a8d78799e"
   end
 
   resource "pygments" do

@@ -1,18 +1,18 @@
 class Crane < Formula
   desc "Tool for interacting with remote images and registries"
   homepage "https://github.com/google/go-containerregistry"
-  url "https://ghfast.top/https://github.com/google/go-containerregistry/archive/refs/tags/v0.21.6.tar.gz"
-  sha256 "7ce44d0da35a4c4fd1db24d50fde075bec38d744a016b91b2d5c116e59d156a5"
+  url "https://ghfast.top/https://github.com/google/go-containerregistry/archive/refs/tags/v0.21.7.tar.gz"
+  sha256 "4fa695c6a1f79793598d804cab380a3ba4f03539c0dbd4f0b9f38cdaf175ef3b"
   license "Apache-2.0"
   head "https://github.com/google/go-containerregistry.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "32695c20f1c07b36937021d07f23e27772b79890e3b19c6be2625a9fa9a2ca22"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32695c20f1c07b36937021d07f23e27772b79890e3b19c6be2625a9fa9a2ca22"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32695c20f1c07b36937021d07f23e27772b79890e3b19c6be2625a9fa9a2ca22"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f818306197fc432c7954fec8bfbea3e5f27f1b5c3e77e5d98f647da845585441"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d337b14394fa03c0fbd5a7b8e1767464ebec628214f7411682909c1f942c74e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64b2f0eaad991cd71b5c90e80fc16b1a9dce55218c326aa23fcd526eb6b9524d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41df4ff442c4d4a0d59d7a56739b0cb05b372ec5b3c7639be3d02705fea0aa9e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41df4ff442c4d4a0d59d7a56739b0cb05b372ec5b3c7639be3d02705fea0aa9e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41df4ff442c4d4a0d59d7a56739b0cb05b372ec5b3c7639be3d02705fea0aa9e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5323c7846b2e619bedc98d330f39467d8786f5d4a00fcaade717210c72b3fd3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d571743d486b443e33591a2952a0e8fc532aef43bf7151540efe3b026afe7eb"
+    sha256 cellar: :any,                 x86_64_linux:  "97a90d0786bc4b5e59ebeb66ae723e7023c28a248a030320b5cc43b3168ce075"
   end
 
   depends_on "go" => :build

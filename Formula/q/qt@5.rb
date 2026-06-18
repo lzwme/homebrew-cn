@@ -87,6 +87,12 @@ class QtAT5 < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # Specify conflict due to auto-linking of keg-only versioned formulae
+  conflicts_with "qt3d", "qtbase", "qtcharts", "qtconnectivity", "qtdatavis3d", "qtdeclarative",
+                 "qtmultimedia", "qtnetworkauth", "qtpositioning", "qtquick3d", "qtremoteobjects", "qtscxml",
+                 "qtsensors", "qtserialport", "qtspeech", "qtsvg", "qttools", "qtwebchannel", "qtwebsockets",
+                 because: "both link conflicting binaries"
+
   # Fix build with ICU 75
   patch do
     on_linux do

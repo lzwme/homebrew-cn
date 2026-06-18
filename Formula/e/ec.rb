@@ -6,23 +6,25 @@ class Ec < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "777f6432331e4561b744a676cb8f5ab955016bd2f88d4f6204f794c1cbca341a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "777f6432331e4561b744a676cb8f5ab955016bd2f88d4f6204f794c1cbca341a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "777f6432331e4561b744a676cb8f5ab955016bd2f88d4f6204f794c1cbca341a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c911ab3e324756b8d124d455e29eb019a27529a9fcc4c8a06982dcdb0d47c7c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "47eddd74f5e819469ab11c03ae6bd5cfe7bfe677092f4d651ed4b3c98500cad0"
-    sha256 cellar: :any,                 x86_64_linux:  "4f4b80eb16a6dbbb9417a10b72c1fcd32cae387757bf6a4508457087c9a1b513"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a43dff355d32cd7d40cb11c1483ee1fc01ee4a88b0ea45f7a9298a313ece8548"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a43dff355d32cd7d40cb11c1483ee1fc01ee4a88b0ea45f7a9298a313ece8548"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a43dff355d32cd7d40cb11c1483ee1fc01ee4a88b0ea45f7a9298a313ece8548"
+    sha256 cellar: :any_skip_relocation, sonoma:        "de3be0619797e0575512802fa496cb3ee78dfdcf7a0706c4e9f5b035ef299b2f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02018e408c69c3a4fa65c3f9d952e7a7e6122098ec82f9d754308583aaa6ade0"
+    sha256 cellar: :any,                 x86_64_linux:  "8072200a975fbf9ecd984f791d9bcf29630b32cdd3adca8bd05a6ad91fa09150"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/ec"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/ec"
   end
 
   test do
-    system "git", "config", "--global", "init.defaultBranch", "main"
-    system "git", "init"
+    assert_match version.to_s, shell_output("#{bin}/ec --version")
+
+    system "git", "init", "--initial-branch=main"
     system "git", "config", "merge.tool", "ec"
     # force "theirs" merge strategy for non-interactive testing
     system "git", "config", "mergetool.ec.cmd",

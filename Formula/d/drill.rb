@@ -1,18 +1,18 @@
 class Drill < Formula
   desc "HTTP load testing application written in Rust"
   homepage "https://github.com/fcsonline/drill"
-  url "https://ghfast.top/https://github.com/fcsonline/drill/archive/refs/tags/0.9.0.tar.gz"
-  sha256 "ac486698c33daecb2d099fbb890d0b37ffd9baf3655d620f57932e1d398b44fc"
+  url "https://ghfast.top/https://github.com/fcsonline/drill/archive/refs/tags/0.9.1.tar.gz"
+  sha256 "79e90ba78e484e15bf6cc919d0be5fdd99155ff2d5b16581539e4361191a8bc7"
   license "GPL-3.0-or-later"
   head "https://github.com/fcsonline/drill.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13ae6a7c0008708c01518af46e904e89ad976758c366d4e01b532b705629bf57"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fcb1d6d7ba6a60c0b61a263bf89f8bf92e08f8c9086720640b9db232b741b430"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea68c80898ceea9c47daf7984c9fec885994d83c2c79c926ae5c60edf06faaf3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9a0743d5cb645e6323ed57e8775844a617e967f9b9736862a4065101617c0a96"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5dfdcd4ad9eb746c6742df724fa52365cf9284c14abd4dc4de5a76dcfb00ca6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6aa7af21ce2ba9c1963ba394dd94bc2f34156e93cb3a150faa794f0a0148e79c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5fe8459f6c6bf6d0f41b9e4344037bc1ec1ef675dab697f7d02d7a7fd1e1850"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5622dc4dca9eb03bcd4d038981ef8f3f5544e4402f167bde23d95fbd20d355b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cba26fd9736d68fee71942dfb45a7e6770de58eb07e0455e2e1e7f1528e7c7fe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "802bfb72a5af8c62d64645f610370ad547bf06ef465720832360e3f0809bad1a"
+    sha256 cellar: :any,                 arm64_linux:   "705357ccc4d65f57e2337488a8b7b78923c0a82c2ad6d06fed49deb325cbb08e"
+    sha256 cellar: :any,                 x86_64_linux:  "3ef18d22cb195df8a89e00b249c7f307960afe21df45b543c6a51cc0f5f25683"
   end
 
   depends_on "pkgconf" => :build

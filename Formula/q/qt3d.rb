@@ -37,6 +37,8 @@ class Qt3d < Formula
   depends_on "qtdeclarative"
   depends_on "qtshadertools"
 
+  conflicts_with "qt@5", because: "both link conflicting binaries"
+
   # Apply Arch Linux patches for assimp 6 support
   # Issue ref: https://bugreports.qt.io/browse/QTBUG-137996
   patch do

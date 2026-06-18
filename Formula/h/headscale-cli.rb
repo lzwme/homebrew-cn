@@ -1,8 +1,8 @@
 class HeadscaleCli < Formula
   desc "CLI for headscale, an open-source implementation of the Tailscale control server"
   homepage "https://github.com/juanfont/headscale"
-  url "https://ghfast.top/https://github.com/juanfont/headscale/archive/refs/tags/v0.28.0.tar.gz"
-  sha256 "cb38683998d13d2700df258a81c00add199dccb999b1dacc4491305cdaa67db3"
+  url "https://ghfast.top/https://github.com/juanfont/headscale/archive/refs/tags/v0.29.0.tar.gz"
+  sha256 "9ee04c5ade81fc36ed83e3a6d5ed28e9ab25e8ceb50f64ea7fa9a62394dd1cc8"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class HeadscaleCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ffb957c9bfde2f1a540934b0eac1b5cd110235afc6e58a4533312655021da1a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11c70bd09101790e322bb822dd1769752403cc936441b740c697a95121631b76"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "356166fd64fdd3cce34df954c560677180b003338cb625ef363814aaa8bd5214"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5698834718f5d740d0b62a61dab7fea00ad22e7933d3b3536def125729cfd4f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "abc2c20cf18a262b149af247135da5d287e7db75f1265eec43c6c7d83f547a45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea88cc0d6beb9e083bb135c0d2e578e21b4128da64daa2a1f10560e5517fa77b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "39c180a34f48cf8aeee6fc7beba84f8728d11a9bca631b8670e5e7a7f5e963ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5ee0f77a646e178724b1de75796c036340257f5e6ccb79e872ea537aa6a86ec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "063d6a6da1280b38be7b6f7f391e4d1f3f3ff5f7e10fa0527c471e117ffb7cb8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "36a5ea26c7d12336d5eca8f7246f3eebdf8b77499ac45c137dde3b687228b02a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f4d79336c3ce923c9dc040263ad5f7f73a3a1a7d1a819ef72798faf4e2584ac"
+    sha256 cellar: :any,                 x86_64_linux:  "4a886ced23974cd52404573ff3ad9cc7ca6f6b4d933cbf18adb53373cc6a8686"
   end
 
   depends_on "go" => :build
@@ -51,7 +51,7 @@ class HeadscaleCli < Formula
     YAML
 
     output = shell_output("#{bin}/headscale configtest --config #{testpath}/config.yaml 2>&1")
-    assert_match "No private key file at path, creating...", output
+    assert_match "no private key file at path, creating...", output
 
     assert_path_exists testpath/"noise_private.key"
   end

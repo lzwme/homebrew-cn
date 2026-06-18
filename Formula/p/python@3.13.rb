@@ -1,10 +1,9 @@
 class PythonAT313 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.13.13/Python-3.13.13.tgz"
-  sha256 "f9cde7b0e2ec8165d7326e2a0f59ea2686ce9d0c617dbbb3d66a7e54d31b74b9"
+  url "https://www.python.org/ftp/python/3.13.14/Python-3.13.14.tgz"
+  sha256 "5ae535a36af0ebca6fca176ecb8197f5db9c1cb8c8f0cd12cdf1787046db1f41"
   license "Python-2.0"
-  revision 1
   compatibility_version 1
 
   livecheck do
@@ -13,15 +12,14 @@ class PythonAT313 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "b9fcf3efe9f2b77cf649bba40c72dc1d216cafc94e7762bc45d99e07041021f6"
-    sha256 arm64_sequoia: "46c2c36ab19c56b360a6f3e05e19fbc5410552bc728a588c045d2a6107a53846"
-    sha256 arm64_sonoma:  "7fc4d080d28686d8d3b54bab9c2a1958d35abdf7d6bdb31ec58974ff55cf77df"
-    sha256 tahoe:         "d938748bf044ce7a50f622fbdfb039bddaeba3d13b6c5eb7536bc4973e806fe0"
-    sha256 sequoia:       "690991fc93c9d8a583be51bc1b8fe7d794fa1e5f8ae3ae8c614acef59a4af9b3"
-    sha256 sonoma:        "356e8604188a1446e4d281975d2c071f7645c4a0794476c50c70b8928567d6f0"
-    sha256 arm64_linux:   "26d1c264e1a631fe80c4349a349b40a6fd0b7fef0d030d014452e9f19ce15c45"
-    sha256 x86_64_linux:  "3066469631b118d7a05ff51e5c9d6e3d9839c0daf1b83c1dab0972a3822f4d89"
+    sha256 arm64_tahoe:   "314b017eb74ce5872332efbb28f31b2c82054720a9245321e2de75b923280795"
+    sha256 arm64_sequoia: "e28b97f34ec0040c9edd597e82d3af5dadecbc3b5e3d64abed82e19fcd1217f3"
+    sha256 arm64_sonoma:  "90a2cf9f5157c82892faf3c32d7e7d2e84b540fbeb04e3704b3d714481395616"
+    sha256 tahoe:         "4a525ad799f1b6cedee4a008e91c94d2d47471b1d894256fd0704a11e3e04416"
+    sha256 sequoia:       "4fcc6d536ed1744e31adf6f05506616863f7304ed83d12c047e043a84ffa29c5"
+    sha256 sonoma:        "34f801c9ab968141a350f7cd75e6b7d2ecb2b93a18f6732b05d21075830e65af"
+    sha256 arm64_linux:   "b62d907f19e4d96a6186d5077c71693e85e8ee864bc1b4e854e64aedc70b0a89"
+    sha256 x86_64_linux:  "4715f68e31696a0e46623440cbec2f005b6a93d3fcd514fbe87c6ac5be900798"
   end
 
   depends_on "pkgconf" => :build

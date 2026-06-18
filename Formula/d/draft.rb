@@ -1,18 +1,18 @@
 class Draft < Formula
   desc "Day 0 tool for getting your app on Kubernetes fast"
   homepage "https://github.com/Azure/draft"
-  url "https://ghfast.top/https://github.com/Azure/draft/archive/refs/tags/v0.17.14.tar.gz"
-  sha256 "515e739765ae855e9a19a6de94d6f2529b11eddb707e1f8ee61867be7cd2b06b"
+  url "https://ghfast.top/https://github.com/Azure/draft/archive/refs/tags/v0.17.15.tar.gz"
+  sha256 "23785d71403c0d155aee3d268f3914221e742cff62cea8c42f2abaae82bedadd"
   license "MIT"
   head "https://github.com/Azure/draft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d421ee84bd5e9645501210f787dbab90fb8397488f4886b100cfde2ea76056f7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa70d3160f12bcfcb745032d00f548e965e2c110ab8ea7b920d55d6724412f53"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08a267d3651f0c9a3cd68b09f4899adbcbe5dc866091da7d5ac1d1ca16014a91"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ad7fa2b985e02b879f9fa933fcf45d247293bab01ddfbd48cbf48ed7b398014b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a69f7663d99a27e99c89e5bf08c40cd0bd48102a4cf9817d298b95eddde7688b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9389136adfb076edbd6f0b449905aaefc9f0ad5905e10fe2e571e37f18c7a925"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76186fbbe34681e46a9862a5b1279344afa95b170ce818a151d6a8f02765301b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c39d3d6452629cc89c9a28911a8015a0d8b4c8ddcac9fa833c2f56ff906984e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a99e0f9a2ea4dea78288bfcdc22cca13a14e2be7e7bef812f6fc705099ff80d9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "004ab25ff84af3a6a1d261aa0eed9531a118e77217542857a7a749d39c88cb79"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e88c23179a3561b28a364525e6da35cedc8659579444ab745342bcafe0ee8373"
+    sha256 cellar: :any,                 x86_64_linux:  "474b205c1493774191f1e57e428a5a5d0a79706b2b31a116e2b6bff6f40dfdb1"
   end
 
   depends_on "go" => :build

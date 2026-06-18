@@ -2352,7 +2352,7 @@ Homebrew-homebrew-core/Formula/g/gaze.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gbox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcab.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gcalcli.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/g/gcc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gcc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gcc@10.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gcc@11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcc@12.rb, Homebrew/homebrew-core, 1
@@ -4119,7 +4119,7 @@ Homebrew-homebrew-core/Formula/lib/libfuse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libfuse@2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libfyaml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgadu.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libgccjit.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libgccjit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgcrypt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgda.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgdata.rb, Homebrew/homebrew-core, 0
@@ -6000,6 +6000,7 @@ Homebrew-homebrew-core/Formula/p/protoc-gen-grpc-swift.rb, Homebrew/homebrew-cor
 Homebrew-homebrew-core/Formula/p/protoc-gen-grpc-web.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-js.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protolint.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/proton-pass-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protozero.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prover9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/prowler.rb, Homebrew/homebrew-core, 0
@@ -7676,6 +7677,7 @@ Homebrew-homebrew-core/Formula/t/tuntox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/turso.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tut.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tuxedo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tvnamer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/twarc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tweak.rb, Homebrew/homebrew-core, 0
@@ -9810,7 +9812,6 @@ Homebrew-homebrew-cask/Casks/f/facescreen.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/factor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/factory.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fake.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/f/falcon-sql-client.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fanny.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fantastical.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fantasy-grounds.rb, Homebrew/homebrew-cask, 0
@@ -12786,6 +12787,7 @@ Homebrew-homebrew-cask/Casks/g/grayjay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/green-go-control.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/greenery.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/greenfoot.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/greensignal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gretl.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/grid-clock.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/grid.rb, Homebrew/homebrew-cask, 0
@@ -14637,7 +14639,7 @@ Homebrew-homebrew-cask/Casks/q/quicktune.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quickwhisper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quiet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quip.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/q/quit-all.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/q/quitall.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quitter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quodlibet.rb, Homebrew/homebrew-cask, 1
@@ -16127,7 +16129,6 @@ Homebrew-homebrew-cask/Casks/z/zenbeats.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zenmap.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zeplin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zerobranestudio.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/z/zeronet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zerotier-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zesarux.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zettelkasten.rb, Homebrew/homebrew-cask, 1

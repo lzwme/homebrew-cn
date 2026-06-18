@@ -19,13 +19,13 @@ class Git < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "3b629862dd0d9e1847b938ebb0f9a8059addf99330a32e53c9e882a3be240bec"
-    sha256 arm64_sequoia: "936c468eedfa2a1ecd75607635b0b3808a05ff28fcc64229073b6d5e01159ebe"
-    sha256 arm64_sonoma:  "d59a42f0cac8d3e8776b63a36062e9892f22e76d6c358678d70f30182c93a67a"
-    sha256 sonoma:        "299277e4b59fadd22d8e5d32039995a1c42234312aa2eda8eb20613e2fcbfa79"
-    sha256 arm64_linux:   "856e47d4c7a68285c42f94a46c8e825e3e2a51689a2d7ff59fc31a08e76e0d3e"
-    sha256 x86_64_linux:  "f46e69e12f1c252964fc767e6ff997714b6a955607ca0aefe28d206a66b8eb4c"
+    rebuild 2
+    sha256 arm64_tahoe:   "631dd8d46c16e37e827638953b00009741e6ef6007dc287e49dd904d7fb17ad5"
+    sha256 arm64_sequoia: "247e29b9be076e75b8f1c294665bc20eaf93ebdb9a0b2a6ba8ed79bfa189d8cb"
+    sha256 arm64_sonoma:  "18464d0dfa49ca25903f1aea3be66c1c0739b0af8096036b113137a7d0fc3a97"
+    sha256 sonoma:        "b1b54c9acd9777bfca354740fcf3e05179e57bb38a23a446ff8641dbe717d921"
+    sha256 arm64_linux:   "44ed639210d6d5edeeed420ce33f1612e123f93334af1cc6d6d84b3b1827ecf5"
+    sha256 x86_64_linux:  "edc8e8f1a7b3861e06e66ec3b337968a3c9e2c206da52cfd1e4f950d36ebfb30"
   end
 
   depends_on "gettext" => :build
@@ -173,6 +173,7 @@ class Git < Formula
     bash_completion.install "contrib/completion/git-prompt.sh"
     zsh_completion.install "contrib/completion/git-completion.zsh" => "_git"
     cp "#{bash_completion}/git-completion.bash", zsh_completion
+    cp "#{bash_completion}/git-prompt.sh", zsh_completion
 
     (share/"git-core").install "contrib"
 

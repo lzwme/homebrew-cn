@@ -7,8 +7,8 @@
 class OcamlAT4 < Formula
   desc "General purpose programming language in the ML family"
   homepage "https://ocaml.org/"
-  url "https://caml.inria.fr/pub/distrib/ocaml-4.14/ocaml-4.14.3.tar.xz"
-  sha256 "a5d583b8fbab9ea7bf6cf972ef9c38e7fedacbff6db7a34e3105115d343eb069"
+  url "https://caml.inria.fr/pub/distrib/ocaml-4.14/ocaml-4.14.4.tar.xz"
+  sha256 "531df6280ecf3d3029ed4404858d37c122470a04c9a4104e6b48ee4f762f175c"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
 
   livecheck do
@@ -17,12 +17,12 @@ class OcamlAT4 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ed89ebc0df114efbff9e61422150bea046920ff25fe869437e7dedd156c7d2ff"
-    sha256 arm64_sequoia: "b072da183ffa7871244b81bb38a90b40b3ad454d3b00ae4778f93a297e467eff"
-    sha256 arm64_sonoma:  "ecd5e126c817fc53a545cbdfb304acae5660d432f281c9e432a59403a81686dc"
-    sha256 sonoma:        "e0b74e8a66297d2cf97ed44df50ef8278e97b4f17943b349c67863c1d829ce19"
-    sha256 arm64_linux:   "f9eb45c7cf503266d07f5a06d2a76bbe57170aac527c22114d28ff8aa8525a67"
-    sha256 x86_64_linux:  "fe5876a3ee1afa08d1910efb79609527b88006f55d050ac086ba1f8e47515579"
+    sha256 arm64_tahoe:   "cc9600dc6d0595e10ed18ac67c03518dce597ede42b2cb45c848fb412e6bec21"
+    sha256 arm64_sequoia: "165d3e8dd8a68b44a1a65f51201166ab0c37c9941c3a0a4087cb4da595c52118"
+    sha256 arm64_sonoma:  "702a39a41b6587f1f5ed678866c8006e7e30c0094b5281cbabc098c220f4cfef"
+    sha256 sonoma:        "a4bb1f4e38b2caddcf49e6fa16ece91e5870871bb426a6a62e0b6dd99335ac66"
+    sha256 arm64_linux:   "9b18a8a82f54d73496427a73b959829c6bcb0c26cfafccbcf4d7151a55413dbf"
+    sha256 x86_64_linux:  "8dd150854fb5d24f34deb8b7676ea76a5e2135d1447b8bffe4a4723ecc57756e"
   end
 
   # The ocaml compilers embed prefix information in weird ways that the default

@@ -1,8 +1,8 @@
 class Artillery < Formula
   desc "Cloud-native performance & reliability testing for developers and SREs"
   homepage "https://www.artillery.io/"
-  url "https://registry.npmjs.org/artillery/-/artillery-2.0.32.tgz"
-  sha256 "796be4097eda9bd74ceb5164223f71eb046012fe967ffff288dca705531a60cd"
+  url "https://registry.npmjs.org/artillery/-/artillery-2.0.33.tgz"
+  sha256 "152fd876a408622e14fe62c1542cab4b164b197ff72448d14cad6b7546235c15"
   license "MPL-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Artillery < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "dca938d95f9e90f08a7b46fdfc651eadffed6a3038c7609d7fdd5df0362c210c"
-    sha256                               arm64_sequoia: "f384a9b4438e5f56f895a19164a21b06de4a4e0c646ad009c9d67e1eb989ac01"
-    sha256                               arm64_sonoma:  "08243ae957d929a2c23891d547c325ced2757e28619c5b4325827d802904b61e"
-    sha256                               sonoma:        "b6774f2604d9357122529cde913bff2b17fd301aca1e935dbad3a53d310c8bcb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "06fbbc99eb0a7741adf2977fc0e926526767ccf36a8a0c83625f45162c7aa484"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e58158349ebb45b9b4d44fa09ca6331e355f841a7004532abfe30a1310555b6"
+    sha256               arm64_tahoe:   "3daa223a0abcaa9330149d087d7ec85f76c25d9e5959e3c7cbd49c93a6d2aa5b"
+    sha256               arm64_sequoia: "c74f8e014b900136d56be84fb5d533a6fa937f5b4bfbad73e717c95cadb9b23f"
+    sha256               arm64_sonoma:  "8b8cef3fce08853ca9f5f2f2e1975466dda7eb7960b9252bf54c5d7f0928bb29"
+    sha256               sonoma:        "68fcd65103bdcadd67b691f50c39a6c891f208c4709510303c26de2fa92a2f33"
+    sha256 cellar: :any, arm64_linux:   "09b3946db26bf9c0c85a54aa03312e842ec01d614c7293bda262996f05431cf5"
+    sha256 cellar: :any, x86_64_linux:  "5b431dca4ebae8944de0b76584292174d47f1598bfda3c03d636aa71f5553833"
   end
 
   depends_on "node"
