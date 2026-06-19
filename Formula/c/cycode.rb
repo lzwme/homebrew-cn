@@ -3,19 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/55/77/e64b52827512469700974a09e075af6833832e3cee4c0a43d70a2c5e6864/cycode-3.16.1.tar.gz"
-  sha256 "403d6b4e6949f0c60a5c5651bbb5fdfc60f891babcd7ef42a24dd5b82e4e2cfb"
+  url "https://files.pythonhosted.org/packages/c3/c8/59c5ca217f00bc1b775503c518bf52bd2f329def47e48a181249fdb73aef/cycode-3.16.2.tar.gz"
+  sha256 "839fe5c182794cd206662090cb4e65615d1708535110b72969fd315b399440e9"
   license "MIT"
-  revision 1
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b2568a6c1b3d626db6b91ee57481c7b8cf2da6b97c146054a70687a3969db0a0"
-    sha256 cellar: :any, arm64_sequoia: "90472c71736333dbf66b5579cf87633da50b8d76643d489408ca2752c425cd7d"
-    sha256 cellar: :any, arm64_sonoma:  "2526e9e7ae682a87f5d425d7118226e748a133888d95647b0cf1146f9c914e11"
-    sha256 cellar: :any, sonoma:        "18a1dd8a2b04df8104693d5b71d97315a1bc8455016374b8f0c9bb863e839392"
-    sha256 cellar: :any, arm64_linux:   "e0fd0b3a47147098f941700afcc68d4b900dfcdf004eb238e0d427665bf1d511"
-    sha256 cellar: :any, x86_64_linux:  "6560b5417e9cfdcb8e1dd9face9f6866551437eaea50512e62f0fa23bdced6b3"
+    sha256 cellar: :any, arm64_tahoe:   "78226761cbca49fab770dd5fccdd1dfb929e99d28979a43db827f782fb4e3b45"
+    sha256 cellar: :any, arm64_sequoia: "acdb490f2cc4918d55e55e4a1dfcccc0dfc726e1546cbf5c1fdd219b1bdc0eb6"
+    sha256 cellar: :any, arm64_sonoma:  "1d9c849d35369d4b033bc626053cbeebf8666b72eaefadff1ebf7a52301846a0"
+    sha256 cellar: :any, sonoma:        "5f1f6e4b9751d675523e9ca2277118af5e1f6023f86248c79c1cb16f8d07f14c"
+    sha256 cellar: :any, arm64_linux:   "7741c799be3c862c7fda4f5d0e145ff35611b0186075a667cf7b3a3d7708b783"
+    sha256 cellar: :any, x86_64_linux:  "b82d9594c9736d717ffb55aa73fe818f6d96551e6379b4696d5f9c33121c0267"
   end
 
   depends_on "certifi" => :no_linkage
@@ -113,8 +112,8 @@ class Cycode < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/27/3c/347cf965d313f5d41764e7d46bea6ffe7d9ef13b983cc429b0340962a082/mcp-1.27.2.tar.gz"
-    sha256 "8e02db104096d1c25b28e64bde29a5c32b31bc241710213e12fd4d84985bdfef"
+    url "https://files.pythonhosted.org/packages/c1/ee/94c6c50ffc5b5cf4737052275d11b57367f32d1a8516e31dcd60591b3916/mcp-1.28.0.tar.gz"
+    sha256 "559d3f9943674cafbe5744c5d3794f3237e8b47f9bbc58e20c0fad680d8487c2"
   end
 
   resource "mdurl" do

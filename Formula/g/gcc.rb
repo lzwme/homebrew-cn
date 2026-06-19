@@ -2,19 +2,19 @@ class Gcc < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
-  compatibility_version 1
+  compatibility_version 2
   head "https://gcc.gnu.org/git/gcc.git", branch: "master"
 
   stable do
-    url "https://ftpmirror.gnu.org/gnu/gcc/gcc-15.3.0/gcc-15.3.0.tar.xz"
-    mirror "https://ftp.gnu.org/gnu/gcc/gcc-15.3.0/gcc-15.3.0.tar.xz"
-    sha256 "fa59c1beef8995f27c4d71c1df227587189315d3e6faff1bb4306e61b0c530eb"
+    url "https://ftpmirror.gnu.org/gnu/gcc/gcc-16.1.0/gcc-16.1.0.tar.xz"
+    mirror "https://ftp.gnu.org/gnu/gcc/gcc-16.1.0/gcc-16.1.0.tar.xz"
+    sha256 "50efb4d94c3397aff3b0d61a5abd748b4dd31d9d3f2ab7be05b171d36a510f79"
 
     # Branch from the Darwin maintainer of GCC, with a few generic fixes and
-    # Apple Silicon support, located at https://github.com/iains/gcc-15-branch
+    # Apple Silicon support, located at https://github.com/iains/gcc-16-branch
     patch do
       on_macos do
-        file "Patches/gcc/gcc-15.3.0.diff"
+        file "Patches/gcc/gcc-16.1.0.diff"
       end
     end
   end
@@ -25,14 +25,14 @@ class Gcc < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "0e7867533bce3ebfabf50024375b8daca379dc6a499dfce0a8c42fd902248adf"
-    sha256               arm64_sequoia: "f75785bb4cbd5c848ccfec8740b6f73ba78f282307b6b5a481c07d89b9a9451c"
-    sha256               arm64_sonoma:  "3892512abb9cec7fb9368fb9a95ec20272312f9e7789a549429bd2190fe46f67"
-    sha256               tahoe:         "06ba0b280945f87563b1d361617304a92e6f6ec4ad6c0da931a8942cdf794900"
-    sha256               sequoia:       "f417c496bd202b842b5c7971aa2c5f2ce6dd45159909ed2af88b5dafbd66f663"
-    sha256               sonoma:        "831fe1165a2c7689f3a1914a0a999e75381e3b1851f1c0f4c8aeba9bc6471822"
-    sha256 cellar: :any, arm64_linux:   "de8098a7a2dc0caadd73c2668f48e24a5601487789e95d9e02f8c68d195e643c"
-    sha256 cellar: :any, x86_64_linux:  "da03cfa86bbb6bf73703cc02fc7f2c04706cceb8c8935b8936603cd7149b75b6"
+    sha256 arm64_tahoe:   "144b48c317fe5406a36b57ca30171c78c0eddf91cd236b56246c3cf523f7d202"
+    sha256 arm64_sequoia: "924a3b36fe34a4ac9e2d281ef139cb0d331a0e36c41aac738ef6b4aac9a35421"
+    sha256 arm64_sonoma:  "6a17969b924c2dc491180f5bccf466339b4a7849f86c58bdf13d4d4f02ba4849"
+    sha256 tahoe:         "05c7d066d2bff334d820c221803ae27dd14dd59340e4fd23eccde2f1fd9b13b0"
+    sha256 sequoia:       "01b8293a065c6328517f4243f50c432ebcda7912b5b25e95767d6f6d8e8a4902"
+    sha256 sonoma:        "16a6a69c8c2a390272bb0a751b7e2dac7b11457192db807797f68c867b036166"
+    sha256 arm64_linux:   "a5cbd6e7bd013cb8f81fb79b65c46c3841f1d76b3a962a8b89d0a13417ed84a1"
+    sha256 x86_64_linux:  "a0ea9c0f9d2090ce7d3cce85c2f0c62566837d966d953edae48104613348c418"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -125,6 +125,9 @@ class Gcc < Formula
       # https://stackoverflow.com/a/54038769
       inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64="
       inreplace "gcc/config/aarch64/t-aarch64-linux", "lp64=../lib64", "lp64="
+
+      # Use our own (recent) binutils for as
+      args << "--with-as=#{Formula["binutils"].opt_bin}/as"
 
       ENV.append_path "CPATH", Formula["zlib-ng-compat"].opt_include
       ENV.append_path "LIBRARY_PATH", Formula["zlib-ng-compat"].opt_lib

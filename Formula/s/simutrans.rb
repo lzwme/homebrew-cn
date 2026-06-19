@@ -34,7 +34,7 @@ class Simutrans < Formula
   depends_on "freetype"
   depends_on "libpng"
   depends_on "miniupnpc"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "zstd"
 
   uses_from_macos "unzip" => :build

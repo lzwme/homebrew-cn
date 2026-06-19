@@ -87,6 +87,8 @@ class GorillaCli < Formula
   end
 
   test do
+    ENV["GIT_CONFIG_GLOBAL"] = "#{testpath}/.gitconfig"
+
     system "git", "config", "--global", "user.email", "BrewTestBot@example.com"
     (testpath/".gorilla-cli-userid").write "BrewTestBot"
     # FIXME: Upstream's API https://cli.gorilla-llm.com has expired SSL cert.

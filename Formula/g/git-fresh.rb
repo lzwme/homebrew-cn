@@ -16,6 +16,8 @@ class GitFresh < Formula
   end
 
   test do
+    ENV["GIT_CONFIG_GLOBAL"] = "#{testpath}/.gitconfig"
+
     system "git", "config", "--global", "init.defaultBranch", "master"
     system bin/"git-fresh", "-T"
   end

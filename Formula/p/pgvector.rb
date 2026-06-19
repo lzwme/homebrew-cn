@@ -1,17 +1,17 @@
 class Pgvector < Formula
   desc "Open-source vector similarity search for Postgres"
   homepage "https://github.com/pgvector/pgvector"
-  url "https://ghfast.top/https://github.com/pgvector/pgvector/archive/refs/tags/v0.8.2.tar.gz"
-  sha256 "69f4019389af05dc1c9548deb8628e62878e6e207c03907f2b8af2016472cdaa"
+  url "https://ghfast.top/https://github.com/pgvector/pgvector/archive/refs/tags/v0.8.3.tar.gz"
+  sha256 "dc080c511a6354a1628eb19f9bc8e77ce880dde16c889744a6814c8c0006e36c"
   license "PostgreSQL"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8cf8043ead096eaa3f792e14a89702ec73d0383178afe9d9c778130774800e9c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "399278fcbb54591159019a4e821cc19b651dc8df6d26fa5920c5cf6e6007f4f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0cad39c6f8e5f8d289fee2b5a801bc70795f4e6b4419de5fb0ed1b6dce40f04"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bd3324af174e284d6e2b2499061e744b9f259eebb3b03732abb96a38eaf1581f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13085e8a50a501137a1e19ee44d2dfcf1a186fc69aa3969bacebd5a4a58c29e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4654c76fc87533d553c91d2c5bc7f7452fbe28d54f7812f99ccb9b71833bafff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b2c532d9f719244dd76477694f71f2a03da67fc573a7f8564f847bb3f2e4fbc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8128e7e831182bf851c815cb5a7384c984b8529081ba9e600d6985001a640d61"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a65ac6d3b3a0ed694ca363124eafe9e52b89c0fc67c9366e1335d4ec98ff31c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6e4cb525195816cca54226536931c852d9ee4c2945432ca362098d45304961e0"
+    sha256 cellar: :any,                 arm64_linux:   "1264a108af7737449d0f73485ef866212e35c75133caa6b8ba1f1602fb96fa7c"
+    sha256 cellar: :any,                 x86_64_linux:  "424ae525194722ad39af83e843dd9361807a4f2258821c3d8566408456a0db14"
   end
 
   depends_on "postgresql@17" => [:build, :test]

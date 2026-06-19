@@ -24,7 +24,7 @@ class Tenyr < Formula
 
   depends_on "bison" => :build # tenyr requires bison >= 2.5
 
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "sdl2_image"
 
   uses_from_macos "flex" => :build

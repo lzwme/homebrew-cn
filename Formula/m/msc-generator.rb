@@ -36,7 +36,7 @@ class MscGenerator < Formula
   depends_on "glpk"
   depends_on "graphviz"
   depends_on "libpng"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "tinyxml2"
 
   on_macos do

@@ -1,18 +1,18 @@
 class Llhttp < Formula
   desc "Port of http_parser to llparse"
   homepage "https://llhttp.org/"
-  url "https://ghfast.top/https://github.com/nodejs/llhttp/archive/refs/tags/release/v9.4.1.tar.gz"
-  sha256 "86a8c16759fdcc7aa2c9841fbe8ba2e77ea98be7d5d45615f2604776d0ff78c7"
+  url "https://ghfast.top/https://github.com/nodejs/llhttp/archive/refs/tags/release/v9.4.2.tar.gz"
+  sha256 "ba717a2f99f340a0ee9796aaf2b1acca057e1e37682ffd2bc4def4d3b6bc4005"
   license "MIT"
   compatibility_version 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "008c27ccda18513f7b62a6ad142774acecc300cd6eeac9f5aac8fef748495ae0"
-    sha256 cellar: :any,                 arm64_sequoia: "2e8334042c1afd61dcbdde7e24472889cf323cbec3d251b669ba9f5e79476bee"
-    sha256 cellar: :any,                 arm64_sonoma:  "5cc1eba5deaab8a20bf1ba35469db8d693f6cf75726e0d88ae0c4170190df389"
-    sha256 cellar: :any,                 sonoma:        "9d0428367d420235836b13a4d9db987a55c341b4e8eeea4756824827c85c8c41"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "44cc7ec6552fbbb70d026809c0c2a88caacad11e7eeeba9a9c02b1aa6cb86ac3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6fa60dfe50e4abe067f2295ffea6c4668fbfdec401edd73c6e16d70b9a8c6de"
+    sha256 cellar: :any, arm64_tahoe:   "3514845e73dd4a73da75c3d1987bdc9f1fd2fe5fe105802949637d121574ba0e"
+    sha256 cellar: :any, arm64_sequoia: "34f797447d817be2a6270575dd02f76202df0e0d1efe3bab84886737ecc21367"
+    sha256 cellar: :any, arm64_sonoma:  "33c714e5e238acec82d0371f963eaa8562cd48e925991cd57e4f7b6b4bba05de"
+    sha256 cellar: :any, sonoma:        "6f59e2eb68c14183982772d0b1ab49772158ef7f61dc046a976eb6e102cd61e9"
+    sha256 cellar: :any, arm64_linux:   "3472902d226e0cdb2d06ec77635ddc0268d8ff4bfba8a4b995fd02d70d168b8e"
+    sha256 cellar: :any, x86_64_linux:  "ee8bd70c57f0fde4aa367f16d91ee109849a3da003e0b1e262c754986d01a06c"
   end
 
   depends_on "cmake" => :build

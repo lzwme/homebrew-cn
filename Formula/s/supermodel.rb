@@ -17,7 +17,7 @@ class Supermodel < Formula
     sha256 cellar: :any, x86_64_linux:  "d743cefb87a3c9a5c3c0b27a161e31925a7353666752c65caaecf96f72c7ad49"
   end
 
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "sdl2_net"
 
   on_linux do

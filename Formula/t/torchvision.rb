@@ -3,10 +3,9 @@ class Torchvision < Formula
 
   desc "Datasets, transforms, and models for computer vision"
   homepage "https://pytorch.org/vision/stable/index.html"
-  url "https://ghfast.top/https://github.com/pytorch/vision/archive/refs/tags/v0.27.0.tar.gz"
-  sha256 "04c588d80e63903e1e4444db8a1c32dc56e4080ed48782555e1d00752d6edb17"
+  url "https://ghfast.top/https://github.com/pytorch/vision/archive/refs/tags/v0.27.1.tar.gz"
+  sha256 "705d5ab7d01af9ece3bfbb1486eed3c23a2f68414fcc9c9a88910fb3c018c3db"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url :stable
@@ -14,12 +13,12 @@ class Torchvision < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5be36a465105945ca6e41c34dcc67a96f164efc7a7d06819d9ed08ad302fa425"
-    sha256 cellar: :any,                 arm64_sequoia: "7130dc7e851b4d030a09a00ce75a6ac222fd75a6ca0761711ceadc0fd1feac45"
-    sha256 cellar: :any,                 arm64_sonoma:  "a69ced65cdbeab062dc473a392e128fd9caf1b9a5478080026cd7e41432edb17"
-    sha256 cellar: :any,                 sonoma:        "eeab3fffba67c2ab8efc748fac02158828b489e67a7d3d99e71e183ef1d2961d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2682eb7a77112f2544a450a797dde005750988cc584e027914e8a5069f1b4748"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27d7ec72021cea4c654091c60d647901d83b5ab12a56b128b94f809bb9024f9f"
+    sha256 cellar: :any, arm64_tahoe:   "6cdbcce923d100be24139f1cf2a2bd822aaddf0067c4ff190949e02f14680bc0"
+    sha256 cellar: :any, arm64_sequoia: "a4b4d02b357636c81f56a1471359752e7b97cfe947817e420bbdb0c43d0e7f63"
+    sha256 cellar: :any, arm64_sonoma:  "440e9ff1c720965c4088c6a1abbf207362a5a2755bf559d0e2d89ce17966709c"
+    sha256 cellar: :any, sonoma:        "9b64a307d4247d60a3230f3b0af35d0f677257e95e869ddf0a8e36134b47e456"
+    sha256 cellar: :any, arm64_linux:   "9af8f4f10fbd0c39efdf83c417e06ec950e1baaeec32901fba07406e10f9a402"
+    sha256 cellar: :any, x86_64_linux:  "f0a737e66a54198a72ca17f13c2027394584639fe9f0d251c7bf2712d22e8031"
   end
 
   depends_on "cmake" => :build

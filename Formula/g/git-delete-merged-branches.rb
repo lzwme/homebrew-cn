@@ -40,8 +40,7 @@ class GitDeleteMergedBranches < Formula
     clone = testpath/"clone"
 
     cd origin do
-      system "git", "config", "--global", "init.defaultBranch", "master"
-      system "git", "init"
+      system "git", "init", "--initial-branch", "master"
       system "git", "config", "user.name", "BrewTestBot"
       system "git", "config", "user.email", "BrewTestBot@example.com"
       system "git", "commit", "--allow-empty", "-m", "Initial commit"

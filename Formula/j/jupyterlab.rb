@@ -3,22 +3,21 @@ class Jupyterlab < Formula
 
   desc "Interactive environments for writing and running code"
   homepage "https://jupyter.org/"
-  url "https://files.pythonhosted.org/packages/0e/74/089613e6099e851a6130816f2df592c839d8565f8746a701edada05a33e4/jupyterlab-4.5.8.tar.gz"
-  sha256 "af54d7242cc689a1e6c3ad213cc9b6d9781787d9ec67c52ec9a8f4707088cadd"
+  url "https://files.pythonhosted.org/packages/e8/52/a8d4895bef501ffeb6af448e8bf7079541c7772978211963aa653518c2d9/jupyterlab-4.5.9.tar.gz"
+  sha256 "dd79a073fecae7a39066ea99e4627ed6c76269ac926e95a810e1e1df6358d865"
   license all_of: [
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
-  revision 1
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0a3e5e620a2e674fc16d98913d19220a43bacf4d3f9cf0a8a5bb135fa0d70928"
-    sha256 cellar: :any, arm64_sequoia: "42c1929b57e6bc3dd720513c3fd3c04515802a5044249ea7717bdadae8681e59"
-    sha256 cellar: :any, arm64_sonoma:  "866ce7231d8c7c9cf9e736c942f49671e01595715ee47e760e2834a0b1fa7b93"
-    sha256 cellar: :any, sonoma:        "57f473477e9dfbc8896e65b9ddaa2c490654c8d7aef6e781c4062b1d3414dfb3"
-    sha256 cellar: :any, arm64_linux:   "4f3517be021cb8ee4e820edfab82b90a7f917378f810364371d93ba5512a480b"
-    sha256 cellar: :any, x86_64_linux:  "aa390041e56723a58fe11f16c96a7040afeb4c454977b42eb029763e252ff484"
+    sha256 cellar: :any, arm64_tahoe:   "4bcea2cf7cbbb074250b266fdbf558f3631b784445f5fbac416ccdb6dff814df"
+    sha256 cellar: :any, arm64_sequoia: "49d7bf5d8684117b6dd0ed3e3c7bdff287dbff46ca1c86b449612072dd1ab9cd"
+    sha256 cellar: :any, arm64_sonoma:  "a4f6ea67e04c82723b17d9ab7db96f99d8b8a2b6dbf86c120730b120309ae648"
+    sha256 cellar: :any, sonoma:        "6d5ab56482c6c10eebcfdb7a7db109218a9aa4a7a26281d2e1a7a1dbafe28c4a"
+    sha256 cellar: :any, arm64_linux:   "501d8283068fd483848e3f0a8cc0ca71ff732007894f543c901dc87805f6489a"
+    sha256 cellar: :any, x86_64_linux:  "1d53d155c03dcca9406d52d0d9cc2b845abd2ee01774f67d86336054d2ca97a3"
   end
 
   depends_on "cmake" => :build # for ipykernel
@@ -38,8 +37,8 @@ class Jupyterlab < Formula
                 exclude_packages: %w[certifi cffi rpds-py]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
+    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
   end
 
   resource "appnope" do
@@ -243,8 +242,8 @@ class Jupyterlab < Formula
   end
 
   resource "jupyter-server" do
-    url "https://files.pythonhosted.org/packages/76/a0/eb3c511f54df7b54ca5fc7bff3f4d2277d69052d6a7f521643dfed5279d6/jupyter_server-2.19.0.tar.gz"
-    sha256 "1731236bc32b680223e1ceb9d68209a845203475012ef68773a81434b46a31a7"
+    url "https://files.pythonhosted.org/packages/6b/dc/db3a582633170186f8c8b31298d7eb26ad0eb031a1f53476c258b64eed05/jupyter_server-2.20.0.tar.gz"
+    sha256 "b5778ba337d8015a3dc2b80803ecdd5ac18d3797fddf61a50ea5fb472b4ebe14"
   end
 
   resource "jupyter-server-terminals" do

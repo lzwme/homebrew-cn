@@ -1,11 +1,10 @@
 class Openconnect < Formula
   desc "Open client for Cisco AnyConnect VPN"
   homepage "https://www.infradead.org/openconnect/"
-  url "https://www.infradead.org/openconnect/download/openconnect-9.12.tar.gz"
-  mirror "https://deb.debian.org/debian/pool/main/o/openconnect/openconnect_9.12.orig.tar.gz"
-  sha256 "a2bedce3aa4dfe75e36e407e48e8e8bc91d46def5335ac9564fbf91bd4b2413e"
+  url "https://www.infradead.org/openconnect/download/openconnect-9.21.tar.gz"
+  mirror "https://deb.debian.org/debian/pool/main/o/openconnect/openconnect_9.21.orig.tar.gz"
+  sha256 "5b32369467db6e5f317aa1ed12cfcbb81ed00bdbc765450b6bfcbdc300944a58"
   license "LGPL-2.1-only"
-  revision 2
 
   livecheck do
     url "https://www.infradead.org/openconnect/download.html"
@@ -13,12 +12,12 @@ class Openconnect < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "02beb4be59b0efe19db016198efb1c0889470de85a7bcc8d456fb9e2d5105897"
-    sha256 arm64_sequoia: "9d315e5ff0430cf19b0ad916473773c9244e3d410d1eec526c52664b224ed941"
-    sha256 arm64_sonoma:  "e4023b61d9fa5a710c81db230ba7e81e1821c84622a7fff601260383a7931224"
-    sha256 sonoma:        "d636ccce3b05b014b8e9020564fafffef66d90fc3fd968e8f6703d884eea2417"
-    sha256 arm64_linux:   "f16036645922a933bcaa2eacdc011db910e5a402559fcfc1c1f9b21110fd2b97"
-    sha256 x86_64_linux:  "749eb218c2418c7c1223f79be220ca1bde8c43c649f905cea355d36a2dd69a68"
+    sha256 arm64_tahoe:   "f409aa8b1c88ff33f1b5ce49740814bb932dba4a3877bc6a124a0f16fd39bf9e"
+    sha256 arm64_sequoia: "e435e4d4b91995be58f866b8012adda7dcb7cfbdff02fa7abcbf017f0b389fc3"
+    sha256 arm64_sonoma:  "cc157cf32a317f138140feb5f2fa948135f504805ba5f16a28ac610806fe67b2"
+    sha256 sonoma:        "002d07d8c2aa42c02b8e9fa269b74fbccf0f1c0e1389da06f52e61c8309f4d45"
+    sha256 arm64_linux:   "3296f51486c2af4ac2f005cd309b5aa471594c3c18a8646117932b1d21f205fd"
+    sha256 x86_64_linux:  "34be5e6c7b3bec8f0ee6514998a588745a0cd1cbcec6596699c28aecb256a4fd"
   end
 
   head do
@@ -49,15 +48,8 @@ class Openconnect < Formula
   end
 
   resource "vpnc-script" do
-    url "https://gitlab.com/openconnect/vpnc-scripts/-/raw/5b9e7e4c8e813cc6d95888e7e1d2992964270ec8/vpnc-script"
-    sha256 "dee08feb571dc788018b5d599e4a79177e6acc144d196a776a521ff5496fddb8"
-  end
-
-  # Fix for GnuTLS v3.8.1
-  # https://gitlab.com/openconnect/openconnect/-/merge_requests/490
-  patch do
-    url "https://gitlab.com/openconnect/openconnect/-/commit/7512698217c4104aade7a2df669a20de68f3bb8c.diff"
-    sha256 "8a26be2116b88bf9ad491b56138498a2a18bd80bb081e90a386ee8817a1314c3"
+    url "https://gitlab.com/openconnect/vpnc-scripts/-/raw/ce9e961bd0f6b867e1c7c35f78f6fb973f6ff101/vpnc-script"
+    sha256 "f0c4d936a382f07711263242699b5e2d85d1ace37136bb78785d352997c17742"
   end
 
   def install

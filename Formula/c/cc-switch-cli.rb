@@ -1,25 +1,25 @@
 class CcSwitchCli < Formula
   desc "All-in-one assistant tool for Claude Code, Codex, Gemini, OpenCode and OpenClaw"
   homepage "https://github.com/SaladDay/cc-switch-cli"
-  url "https://ghfast.top/https://github.com/SaladDay/cc-switch-cli/archive/refs/tags/v5.8.3.tar.gz"
-  sha256 "d4648c09ff92ad2f2d3a36df59efe8b3e57e01b9d5e2d699a85e612958751aac"
+  url "https://ghfast.top/https://github.com/SaladDay/cc-switch-cli/archive/refs/tags/v5.8.4.tar.gz"
+  sha256 "d1c517cec98bbde45254aa7ebddc46bd80eb1cc628db5cda7983ae592f5e60f6"
   license "MIT"
   head "https://github.com/SaladDay/cc-switch-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "94bfcbbe5a05eeaf1d88edf4ca4ec07791b034fba1ea58cd58a28829ca90e40b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d5e358ed47710c3f252bdd0ba6a0f56df34f68d692b4381eaa560418acbf87d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "97c7ad6cd4580ba3ddc54ca7abf045294f714302985e91f1a2e028024172d0e9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "60f266c327ea47e9d0c6189622ae777ba94ee84293c38880773a0b72e1ee6aa6"
-    sha256 cellar: :any,                 arm64_linux:   "fe19f55dbc940afd6f7b7373b782f51a33e765b99218b11866355c55d5b5084e"
-    sha256 cellar: :any,                 x86_64_linux:  "4decc75e1e483cd73a7c8343d2edf60e5eac2873ad0dfdf88846e9e1b35cc530"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3bc97831c16636f650a99be392fd6b6889e5d6691253ff7e300277d7c3bc914"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc27132def65b65400457ac794ca07b96a4c2db39054479c2de877a2f83708b2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23a4b32e747fedbcabaf4127ad59b5e0b9fcbe1410559b5e96610b62b6ccf633"
+    sha256 cellar: :any_skip_relocation, sonoma:        "02d096fb9e832126423148fdaf89c1fcfe2e1236f2b58a06b805b72c77515c7b"
+    sha256 cellar: :any,                 arm64_linux:   "e73b9ad1df89844487736d16243e306b3afbe0d2ad48fcb88797af232ccb5075"
+    sha256 cellar: :any,                 x86_64_linux:  "836002e99d963f0e2ca35c5ce19302bb45607b1a77b8921fb3c9100628f62fe6"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args(path: "src-tauri")
-    generate_completions_from_executable(bin/"cc-switch", "completions", shells: [:bash, :zsh, :fish])
+    generate_completions_from_executable(bin/"cc-switch", "completions")
   end
 
   test do

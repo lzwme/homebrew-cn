@@ -24,7 +24,7 @@ class WhisperCpp < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :test
   depends_on "ggml" # NOTE: reject all PRs that try to bundle ggml
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
 
   def install
     args = %W[

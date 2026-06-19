@@ -23,7 +23,7 @@ class Mupen64plus < Formula
   depends_on "pkgconf" => :build
   depends_on "freetype"
   depends_on "libpng"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
 
   on_linux do
     depends_on "mesa"

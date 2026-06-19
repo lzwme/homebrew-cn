@@ -1,13 +1,13 @@
 class Wireplumber < Formula
   desc "Session / policy manager implementation for PipeWire"
   homepage "https://pipewire.pages.freedesktop.org/wireplumber/"
-  url "https://gitlab.freedesktop.org/pipewire/wireplumber/-/archive/0.5.14/wireplumber-0.5.14.tar.bz2"
-  sha256 "2807a9d1e97075ba10f8b7b8156e31175817d620fa7fc84442b5474123eff5db"
+  url "https://gitlab.freedesktop.org/pipewire/wireplumber/-/archive/0.5.15/wireplumber-0.5.15.tar.bz2"
+  sha256 "fb192f5d884155aedd6f01438e94cc12b263f482f0f39e5706c1e2cff9ad0c6d"
   license "MIT"
 
   bottle do
-    sha256 arm64_linux:  "63aa97e1c81daad64b6b6a17b116d7e35095b08acd4725cde05cd945e888e428"
-    sha256 x86_64_linux: "b8d54ad7f2f1fb5c45f26a7a4a3cfe5af03a12aeae689f3160a85b43ccccb0cc"
+    sha256 arm64_linux:  "626bf02702bd8f9b427795158edd1b708745f872e0e86c2000390499b0aba627"
+    sha256 x86_64_linux: "eb93a9c104982062707ef9c02ab7cd770535a1074702d59b0b2a437c5e7fb566"
   end
 
   depends_on "meson" => :build

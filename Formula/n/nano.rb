@@ -45,13 +45,7 @@ class Nano < Formula
   end
 
   def install
-    if build.head?
-      # `aclocal --print-ac-dir` returns automake's versioned path
-      # which fails the check for `pkg.m4` since it is not there
-      inreplace "configure.ac", "$(aclocal --print-ac-dir)", HOMEBREW_PREFIX/"share/aclocal"
-      system "./autogen.sh"
-    end
-
+    system "./autogen.sh" if build.head?
     system "./configure", "--enable-color",
                           "--enable-extra",
                           "--enable-multibuffer",

@@ -29,7 +29,7 @@ class Sdl2Image < Formula
   depends_on "libavif"
   depends_on "libpng"
   depends_on "libtiff"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "webp"
 
   def install
@@ -61,7 +61,7 @@ class Sdl2Image < Formula
           return result == INIT_FLAGS ? EXIT_SUCCESS : EXIT_FAILURE;
       }
     C
-    system ENV.cc, "test.c", "-I#{Formula["sdl2"].opt_include}/SDL2", "-L#{lib}", "-lSDL2_image", "-o", "test"
+    system ENV.cc, "test.c", "-I#{Formula["sdl2-compat"].opt_include}/SDL2", "-L#{lib}", "-lSDL2_image", "-o", "test"
     system "./test"
   end
 end

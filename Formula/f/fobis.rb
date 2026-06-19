@@ -8,7 +8,8 @@ class Fobis < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c4b1bba25ff145d61626d9b4039be88cc4e6e93082ec0242134c2ab07da3486a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "4fbc3f19877c82a75ed7eb88e95b2d98311845b8a9341d979f312354b76b79c3"
   end
 
   depends_on "gcc" # for gfortran
@@ -57,6 +58,7 @@ class Fobis < Formula
 
   def install
     virtualenv_install_with_resources
+    generate_completions_from_executable(bin/"fobis", shell_parameter_format: :typer)
   end
 
   test do

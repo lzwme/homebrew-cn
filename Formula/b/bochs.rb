@@ -23,7 +23,7 @@ class Bochs < Formula
 
   depends_on "pkgconf" => :build
   depends_on "libtool"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
 
   uses_from_macos "ncurses"
 

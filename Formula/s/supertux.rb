@@ -37,7 +37,7 @@ class Supertux < Formula
   depends_on "libvorbis"
   depends_on "openal-soft"
   depends_on "physfs"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "sdl2_image"
 
   uses_from_macos "curl"

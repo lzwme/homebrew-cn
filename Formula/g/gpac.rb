@@ -33,7 +33,7 @@ class Gpac < Formula
   depends_on "libxext"
   depends_on "openjpeg"
   depends_on "openssl@3"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "theora"
   depends_on "xz"
 

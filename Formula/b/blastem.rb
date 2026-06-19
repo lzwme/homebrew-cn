@@ -50,7 +50,7 @@ class Blastem < Formula
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
   depends_on "glew"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
 
   on_macos do
     # Can be undeprecated if upstream decides to support arm64 macOS

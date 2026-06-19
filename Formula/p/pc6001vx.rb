@@ -22,7 +22,7 @@ class Pc6001vx < Formula
   depends_on "ffmpeg"
   depends_on "qtbase"
   depends_on "qtmultimedia"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
 
   on_macos do
     depends_on "gettext"

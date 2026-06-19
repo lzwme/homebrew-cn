@@ -15,7 +15,7 @@ class VideoCompare < Formula
   end
 
   depends_on "ffmpeg"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "sdl2_ttf"
 
   def install

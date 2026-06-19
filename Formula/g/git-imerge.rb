@@ -29,8 +29,7 @@ class GitImerge < Formula
   end
 
   test do
-    system "git", "config", "--global", "init.defaultBranch", "master"
-    system "git", "init"
+    system "git", "init", "--initial-branch", "master"
     system "git", "config", "user.name", "BrewTestBot"
     system "git", "config", "user.email", "BrewTestBot@test.com"
 

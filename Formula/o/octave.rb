@@ -5,6 +5,7 @@ class Octave < Formula
   mirror "https://ftp.gnu.org/gnu/octave/octave-11.3.0.tar.xz"
   sha256 "2b80f3149b2de6d1f4f2fcb4fe6515a17eb363b52111bf57b90f37bf6f5e12e1"
   license "GPL-3.0-or-later"
+  revision 1
   compatibility_version 2
 
   # New tarballs appear on https://ftp.gnu.org/gnu/octave/ before a release is
@@ -15,13 +16,12 @@ class Octave < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "d3c218d74d58bebd282b93a6687a6bc31650ae767abf81dad19f9eac0adb92c8"
-    sha256 arm64_sequoia: "89a97479899974819e53ebf19c6886e4463b15d17c25de8ee5dc96093440c1c6"
-    sha256 arm64_sonoma:  "fa2c8b313b589e4f4c3cc8e48329c1e1c99f084020c741fd0313d27fa840d2e0"
-    sha256 sonoma:        "fb67f4b430106fa98959b36d6ed7fb05a8124cad44d6153e7d78ab2ba1a6531a"
-    sha256 arm64_linux:   "7c187fd7371ff123b67a73745932267c62f2d3e7c8c7d4766e68b680d3ca4207"
-    sha256 x86_64_linux:  "a88b31157c2c8eb0864a4448c309ba72aae030d5bc803d6f9588b763c3435f80"
+    sha256 arm64_tahoe:   "f244857ee56ac75e318a48ecc160228ffe285d38fabb3f27730d38fc8c9c66cd"
+    sha256 arm64_sequoia: "2f27b42ac0f3bedc9497a193df2f06cb583f78daa9aa1d9b2381887ca9aaab10"
+    sha256 arm64_sonoma:  "4528265504f6d16e79c9f1fb3390074c8626256ed68fd7c4ae5cc1d3b976e5b6"
+    sha256 sonoma:        "e79a12d1fb8c32ee94625e5273e67c25e74619372b4c29909f17c568f24d63a5"
+    sha256 arm64_linux:   "d9c8c3901aacb2fd1945751c40ae927106d1179f51df31e0fedf263d670273d6"
+    sha256 x86_64_linux:  "2bed748ae6fe1760aedc028b4b33285ea563cefb1f55feb6323038181559fe3f"
   end
 
   head do

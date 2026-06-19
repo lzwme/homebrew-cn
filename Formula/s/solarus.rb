@@ -31,7 +31,7 @@ class Solarus < Formula
   # https://gitlab.com/solarus-games/solarus/-/blob/dev/cmake/modules/FindOpenAL.cmake?ref_type=heads#L38
   depends_on "openal-soft"
   depends_on "physfs"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "sdl2_image"
   depends_on "sdl2_ttf"
 

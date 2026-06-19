@@ -25,6 +25,8 @@ class Gitwatch < Formula
   end
 
   test do
+    ENV["GIT_CONFIG_GLOBAL"] = "#{testpath}/.gitconfig"
+
     repo = testpath/"repo"
     system "git", "config", "--global", "user.email", "gitwatch-ci-test@brew.sh"
     system "git", "config", "--global", "user.name", "gitwatch"

@@ -73,6 +73,8 @@ class Gitless < Formula
   end
 
   test do
+    ENV["GIT_CONFIG_GLOBAL"] = "#{testpath}/.gitconfig"
+
     system "git", "config", "--global", "user.email", '"test@example.com"'
     system "git", "config", "--global", "user.name", '"Test"'
     system bin/"gl", "init"

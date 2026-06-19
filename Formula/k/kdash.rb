@@ -1,18 +1,18 @@
 class Kdash < Formula
   desc "Simple and fast dashboard for Kubernetes"
-  homepage "https://kdash.cli.rs/"
-  url "https://ghfast.top/https://github.com/kdash-rs/kdash/archive/refs/tags/v1.1.2.tar.gz"
-  sha256 "2f856914fc2612857c880a0f2f76ecf458a845874a11c6d4bf6527155f96b44e"
+  homepage "https://kdash-rs.github.io/"
+  url "https://ghfast.top/https://github.com/kdash-rs/kdash/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "81483cfcacb68ea04a278d576265eba786f44b3d1a7915efb7293e35b4d746f0"
   license "MIT"
   head "https://github.com/kdash-rs/kdash.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b3d0b504843778dce4d6116f257696ea1aae29bbb69514ea9c0ee9d09f68bdd8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d233c78d9b52144453323be5cbb4d6852f493b9f1158ff74194fe9700bb3d63a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e3622eac8ff5c068c2d49a4b5c515c756c83eedea02d0958cb7a1713d127670"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bc1269dd5d033f414e37f6fe8247d327a9adef04d4835d5ad210aaff31800186"
-    sha256 cellar: :any,                 arm64_linux:   "7ddc560e0c770f08e40dd8328d9db5be1d6cca6cc6371f67635a151edbab4bc4"
-    sha256 cellar: :any,                 x86_64_linux:  "9c6574965ffb8f33e09bc9cc0d9f57a06fbb16bb3be73597dc84da8b9fa114ee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e6cfd24486c1fee5a2438521f2f60f4649754602a5fd85f79e5f9389806046a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa876f24dd7c7c525976f8831cdf203e73b8f6048f625f7475cbd24301c304e2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15a76ea3e08cb0d8e6c3734076a4009a2f2872c7989c895c0a7644a8ba5d9f4f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bdfc6ad50c7f2ea413077018a950927739af5773d53391d5b044aae91a5d4014"
+    sha256 cellar: :any,                 arm64_linux:   "ec9335ac1f6f64e230ba2e0b8ff8ee6dd80d61eed229de34062b25a7079932c5"
+    sha256 cellar: :any,                 x86_64_linux:  "d0592850c0f3bf641b4b073e68ad26dcf08eacc82bc6da3773419b3ab9b920ef"
   end
 
   depends_on "rust" => :build
@@ -24,19 +24,19 @@ class Kdash < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/kdash --version")
 
-    # failed with Linux CI, `No such device or address (os error 6)` error
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    begin
-      output_log = testpath/"output.log"
-      pid = spawn bin/"kdash", [:out, :err] => output_log.to_s
-      sleep 1
-      output = output_log.read.gsub(%r{\e\[[\d;?]*[ -/]*[@-~]}, "")
-      assert_match "Active Context", output
-      assert_match "Resources", output
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
-    end
+    require "pty"
+    output_log = (testpath/"output.log")
+    r, w, pid = PTY.spawn("#{bin}/kdash", [:out, :err] => output_log.to_s)
+    r.winsize = [80, 130]
+    w.write "\e[80;130R"
+    sleep 1
+    r.close
+    w.close
+    output = output_log.read.gsub(%r{\e\[[\d;?]*[ -/]*[@-~]}, "")
+    assert_match "Active Context", output
+    assert_match "Resources", output
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end

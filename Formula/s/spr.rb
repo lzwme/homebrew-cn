@@ -32,11 +32,10 @@ class Spr < Formula
     spr = bin/"spr"
     assert_match "spr #{version}", shell_output("#{spr} --version")
 
-    system "git", "config", "--global", "user.email", "nobody@example.com"
-    system "git", "config", "--global", "user.name", "Nobody"
-    system "git", "config", "--global", "init.defaultBranch", "trunk"
-    system "git", "init", testpath/"test-repo"
+    system "git", "init", testpath/"test-repo", "--initial-branch", "trunk"
     cd "test-repo" do
+      system "git", "config", "user.email", "nobody@example.com"
+      system "git", "config", "user.name", "Nobody"
       system "git", "config", "spr.githubMasterBranch", "trunk"
 
       # Some bogus config

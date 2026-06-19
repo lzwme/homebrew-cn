@@ -14,7 +14,7 @@ class Decker < Formula
     sha256 cellar: :any, x86_64_linux:  "d8ba34286684e653294336f46e7e95d511ab6aa7815a4633a6678b26203b3a16"
   end
 
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "sdl2_image"
 
   on_linux do

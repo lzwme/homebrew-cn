@@ -30,7 +30,7 @@ class Projectm < Formula
   end
 
   depends_on "pkgconf" => [:build, :test]
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
 
   on_linux do
     depends_on "xorg-server" => :test

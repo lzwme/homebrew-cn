@@ -77,7 +77,7 @@ class QtAT5 < Formula
     depends_on "libxkbcommon"
     depends_on "mesa"
     depends_on "pulseaudio"
-    depends_on "sdl2"
+    depends_on "sdl2-compat"
     depends_on "systemd"
     depends_on "wayland"
     depends_on "xcb-util-image"

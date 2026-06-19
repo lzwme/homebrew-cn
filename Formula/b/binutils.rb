@@ -32,10 +32,6 @@ class Binutils < Formula
   link_overwrite "bin/dwp"
 
   def install
-    # Workaround https://sourceware.org/bugzilla/show_bug.cgi?id=28909
-    touch "gas/doc/.dirstamp", mtime: Time.utc(2022, 1, 1)
-    make_args = OS.mac? ? [] : ["MAKEINFO=true"] # for gprofng
-
     args = %W[
       --enable-deterministic-archives
       --infodir=#{info}
@@ -51,21 +47,21 @@ class Binutils < Formula
       --disable-nls
     ]
     system "./configure", *args, *std_configure_args
-    system "make", *make_args
-    system "make", "install", *make_args
+    system "make"
+    system "make", "install"
 
     if OS.mac?
-      Dir["#{bin}/*"].each do |f|
-        bin.install_symlink f => "g" + File.basename(f)
+      bin.each_child do |f|
+        bin.install_symlink f => "g#{f.basename}"
       end
     else
       # Reduce the size of the bottle.
       bin_files = bin.children.select(&:elf?)
       system "strip", *bin_files, *lib.glob("*.a")
-    end
 
-    # Allow ld to find brew glibc. A broken symlink falls back to /etc/ld.so.conf
-    (prefix/"etc").install_symlink etc/"ld.so.conf" if OS.linux?
+      # Allow ld to find brew glibc. A broken symlink falls back to /etc/ld.so.conf
+      (prefix/"etc").install_symlink etc/"ld.so.conf"
+    end
   end
 
   test do

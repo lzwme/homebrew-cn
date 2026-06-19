@@ -1,19 +1,17 @@
 class Ucloud < Formula
   desc "Official tool for managing UCloud services"
   homepage "https://www.ucloud.cn"
-  url "https://ghfast.top/https://github.com/ucloud/ucloud-cli/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "4b70919ce47d14fe92496be1686ac2264a23a5f898cba5faff1bcc0f38363686"
+  url "https://ghfast.top/https://github.com/ucloud/ucloud-cli/archive/refs/tags/v0.3.3.tar.gz"
+  sha256 "446d28bfca346d27509b9917c6de75db254e38119171432bb7ad15f105d19316"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5957d48f407072d115c3cad17b814e36e44083d12f88b7453db1b6ecc7589cdc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bad072862ba359124e3ed02553063f25772337376aafe978c3fc6633f1c3be14"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bad072862ba359124e3ed02553063f25772337376aafe978c3fc6633f1c3be14"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bad072862ba359124e3ed02553063f25772337376aafe978c3fc6633f1c3be14"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aa91bbe59f176048fa024ca08093692f67fcd8c815ef0288d00a8e631254d272"
-    sha256 cellar: :any_skip_relocation, ventura:       "aa91bbe59f176048fa024ca08093692f67fcd8c815ef0288d00a8e631254d272"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "feb403aaf56c604a31e3f49b6c7d05807b0c9ce4924ca4cad5f9cf9d8d41607b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8461b7142d140881f42abb9c283555dd751565fd50d33072c344ed3e6b02602f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f90c5f3537b7ebf48fcd326e7f55845f2e5417a49a96bfefde574d9cf6c8ea85"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f90c5f3537b7ebf48fcd326e7f55845f2e5417a49a96bfefde574d9cf6c8ea85"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f90c5f3537b7ebf48fcd326e7f55845f2e5417a49a96bfefde574d9cf6c8ea85"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dfbc344d2fb9de20f6420fc8ac4bfd7a293b1b23590f91704a1acea0200e761a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab5fc229a9e91de2489e3f3858131fe9b594e0de8e13fd500fb10f2f30237d5a"
+    sha256 cellar: :any,                 x86_64_linux:  "d4b20a8f54300dc723f7f6f77cb789fb1cc519a3d046522e490b687f6fd18299"
   end
 
   depends_on "go" => :build

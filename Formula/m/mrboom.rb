@@ -21,7 +21,7 @@ class Mrboom < Formula
   depends_on "cmake" => :build
   depends_on "libmodplug"
   depends_on "minizip"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "sdl2_mixer"
 
   def install

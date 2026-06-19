@@ -29,7 +29,7 @@ class Pce < Formula
 
   head do
     url "git://git.hampa.ch/pce.git", branch: "master"
-    depends_on "sdl2"
+    depends_on "sdl2-compat"
   end
 
   depends_on "nasm" => :build

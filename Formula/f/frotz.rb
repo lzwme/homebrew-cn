@@ -26,7 +26,7 @@ class Frotz < Formula
   depends_on "libsndfile"
   depends_on "libvorbis"
   depends_on "ncurses"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "sdl2_mixer"
 
   on_linux do

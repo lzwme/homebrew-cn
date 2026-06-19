@@ -34,7 +34,7 @@ class OpenSceneGraph < Formula
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "jpeg-turbo"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
 
   uses_from_macos "curl"
 

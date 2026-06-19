@@ -28,7 +28,7 @@ class Cahute < Formula
   depends_on "pkgconf" => [:build, :test]
   depends_on "python@3.14" => :build
   depends_on "libusb"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
 
   pypi_packages package_name:   "",
                 extra_packages: "toml"

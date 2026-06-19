@@ -24,7 +24,7 @@ class Fheroes2 < Formula
   depends_on "gettext" => :build
 
   depends_on "innoextract"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "sdl2_mixer"
 
   on_linux do

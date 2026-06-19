@@ -35,9 +35,9 @@ class Karn < Formula
         email: test@brew.sh
     YAML
     system "git", "init"
-    system "git", "config", "--global", "user.name", "Test"
-    system "git", "config", "--global", "user.email", "test@test.com"
-    system "git", "config", "--global", "user.signingkey", "test"
+    system "git", "config", "user.name", "Test"
+    system "git", "config", "user.email", "test@test.com"
+    system "git", "config", "user.signingkey", "test"
     system bin/"karn", "update"
   end
 end

@@ -1,8 +1,8 @@
 class VulkanVolk < Formula
   desc "Meta loader for Vulkan API"
   homepage "https://github.com/zeux/volk"
-  url "https://ghfast.top/https://github.com/zeux/volk/archive/refs/tags/vulkan-sdk-1.4.350.0.tar.gz"
-  sha256 "a04f26f76e9a4f9acf936bd2c159f5c4c8348f8ebaf118ff72ba6a9637ad3e80"
+  url "https://ghfast.top/https://github.com/zeux/volk/archive/refs/tags/vulkan-sdk-1.4.350.1.tar.gz"
+  sha256 "078a9411298e4e0f60f5f5398c890783427c25a414619294ca8e69587bbd5eae"
   license "MIT"
   head "https://github.com/zeux/volk.git", branch: "master"
 
@@ -12,12 +12,12 @@ class VulkanVolk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42737514660db3603287af33cba34c8284657afb65602d1c515f8559471f522b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b019c6e850ca86b1944fcfbf0ebb5f118152a2f1f2115ad25459927b53da37a0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b90c534582929c2324a7694986b254f3c2924f6b83e990e368e9187e3fc3daf8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "581afb0ef931e3e0d09a0f345037f76495b4cdb03349ceb9ca07134b4fb57e85"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22e9b161000d55a7a4a544168a8502d3d0a949a61d44321a1bbc49584db2362c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1192aef4a85f5fc28530ffde25c0e28f740bc495bf2359295968a51ce96c5bc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6496c743f4bc00291a77bb361ad5c7888cdb0bb97f996bffad7c23e29ae87aab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3106c0c0ad9941b09520e5587573aa075a034e79784877cddca5a2bd664acaf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "698accc547d0da7ba385776170dcdda8b4079ecd432bd807e038763936621a77"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3f484860b5114173d43c61608d43d454d21748c78b2f3be4d017ba23a8e828d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ccc8903d3a2bf07871e23cde12f5492022d0217a1536fb2933d526bc33ee270"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15aa58866338c3c39e5f3530de07975260a72ff8aa290c287e9728a06c2ca079"
   end
 
   depends_on "cmake" => :build

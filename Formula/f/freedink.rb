@@ -19,7 +19,7 @@ class Freedink < Formula
   depends_on "glm" => :build
   depends_on "pkgconf" => :build
   depends_on "fontconfig"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "sdl2_gfx"
   depends_on "sdl2_image"
   depends_on "sdl2_mixer"

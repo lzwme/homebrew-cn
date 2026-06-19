@@ -4,6 +4,7 @@ class Libadwaita < Formula
   url "https://download.gnome.org/sources/libadwaita/1.9/libadwaita-1.9.1.tar.xz"
   sha256 "2ae34dbb3ea56d270925707cefa36050482ec88a741f1810b7619a5377c41a66"
   license "LGPL-2.1-or-later"
+  revision 1
   compatibility_version 1
   head "https://gitlab.gnome.org/GNOME/libadwaita.git", branch: "main"
 
@@ -16,12 +17,12 @@ class Libadwaita < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e61393333e9371e7b320dbe0a127361f51c3eb0a634c313bf81c129af479f63a"
-    sha256 arm64_sequoia: "d8b47b8fba7beece58c3603476ee2e9043e7e20f876490d8f37d892f245728e0"
-    sha256 arm64_sonoma:  "1f7c245ad7490be870f94f7599404ac894e4111686d9bcc6a20c2ce21237d2d3"
-    sha256 sonoma:        "77d8a9ab15bdc744abbb97416ec08ac9ca35ff7b946a2cc97b0ec509c75ba0ba"
-    sha256 arm64_linux:   "274630b8a4f6ea4bd5301e1814f89e85914f6d10a74ce31cda89a92074e8072a"
-    sha256 x86_64_linux:  "ac23956b9d5cd9ebc397499069d120a0fac43864e65726f39e4592a28ad6a82c"
+    sha256 arm64_tahoe:   "717258a871b24b835c2fd93c9d6f466e31fbddfd7a648171c1d57d7f9036ca45"
+    sha256 arm64_sequoia: "3c0ce17e10719376356271efd8a216395bad59910cc714209f43dca80d5134e4"
+    sha256 arm64_sonoma:  "d2a49bfd805c38999bf277d000e1312858206639b6abe037700f151a47a089d0"
+    sha256 sonoma:        "fdee758f46aa7f87b8cc2dd52165e4f7ebaca8f79a587dded9fa1318900acadd"
+    sha256 arm64_linux:   "5565c474102b844e716ff1cdf0a3e722614e8b9b11567b5e1fba4519469a401c"
+    sha256 x86_64_linux:  "2aa1c7e7840b9fa446e40ec1f586783f6f7f1d63ae0c63f23e803f2a5f30c239"
   end
 
   depends_on "dart-sass" => :build
@@ -53,9 +54,12 @@ class Libadwaita < Formula
 
   def install
     # Replace deprecated `sassc` with `sass` in the meson build file
+    # Use `expanded`, not `compressed`: GTK's CSS parser rejects dart-sass
+    # compressed output ("Expected ';' at end of block"). `expanded`
+    # matches upstream's `sassc -t compact`.
     inreplace "src/stylesheet/meson.build" do |s|
       s.gsub! "'sassc'", "'sass'"
-      s.gsub! "'-a', '-M', '-t', 'compact'", "'--style', 'compressed'"
+      s.gsub! "'-a', '-M', '-t', 'compact'", "'--style', 'expanded'"
     end
 
     system "meson", "setup", "build", "-Dtests=false", *std_meson_args

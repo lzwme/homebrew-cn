@@ -34,7 +34,7 @@ class Hashlink < Formula
   depends_on "libvorbis"
   depends_on "mbedtls@3"
   depends_on "openal-soft"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
 
   uses_from_macos "sqlite"
 

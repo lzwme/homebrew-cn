@@ -36,7 +36,7 @@ class Mlt < Formula
   depends_on "qtbase"
   depends_on "qtsvg"
   depends_on "rubberband"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "sox"
 
   uses_from_macos "libxml2"

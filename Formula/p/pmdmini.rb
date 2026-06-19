@@ -21,7 +21,7 @@ class Pmdmini < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "40d7b0addf0328bbb2bd4ab80af954ce4feaa11d57fb76aecc21da90b522cf9e"
   end
 
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
 
   resource "test_song" do
     url "https://ftp.modland.com/pub/modules/PMD/Shiori%20Ueno/His%20Name%20Is%20Diamond/dd06.m"

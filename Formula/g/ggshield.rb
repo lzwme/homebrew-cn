@@ -3,18 +3,18 @@ class Ggshield < Formula
 
   desc "Scanner for secrets and sensitive data in code"
   homepage "https://www.gitguardian.com"
-  url "https://files.pythonhosted.org/packages/3d/71/2757ce97253ce0ba424fe9482d53b0d9c201949000bedf099d1947903494/ggshield-1.52.1.tar.gz"
-  sha256 "df056abe1f5c0594aaa8b6133d01795dbaedb63bca6651903f7013f1d5850050"
+  url "https://files.pythonhosted.org/packages/9d/f9/3f2b594156cda7ed2afba978daec90fc0fad5023a1896aacf120f259f9a1/ggshield-1.52.2.tar.gz"
+  sha256 "bcb3f485e0ac12adbca44b4e7135bb522e29b2a774842eaf942ffca972f2219a"
   license "MIT"
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b6013d22e86cbf4cc5e9063cb6b8c6eb06331c01420797b47a9df754b0b50875"
-    sha256 cellar: :any, arm64_sequoia: "8f4c4d5037b70c1ed109858d3a5bb173d30aa1e535100add495e7aad5e878fee"
-    sha256 cellar: :any, arm64_sonoma:  "2c915f5665c72fe90e96b9878298674d7cb8e6f6afff294edb204bb2b990c291"
-    sha256 cellar: :any, sonoma:        "9b3c60976914f503028beebb6d5d1f54a98b95eaade683abf33f79944d080bf1"
-    sha256 cellar: :any, arm64_linux:   "00120c0617408911c97c3f93a3795a6e2bc08eecc61ef85fcfeb9bbddc2a31a9"
-    sha256 cellar: :any, x86_64_linux:  "d7d21979301b62a0cd1914a639d83aadda0f1a03cf86df4b3c9ba433ece99409"
+    sha256 cellar: :any, arm64_tahoe:   "0954f76d7f4dd95d4542058602d3c28fd22b7f5104948545e77c7ab0a6739560"
+    sha256 cellar: :any, arm64_sequoia: "a7ff913391ff38628c44a28b7d27551b10100c2b95571c56a5a3466086cc64f6"
+    sha256 cellar: :any, arm64_sonoma:  "c0aa8811d8ded0fa847d2916d5a39f8a3743652f26b26c30983c6f962cbe2256"
+    sha256 cellar: :any, sonoma:        "e03f6132ff2bf12e2d1f5f8a0927c85239462b013a9de428a7b35523a13929f7"
+    sha256 cellar: :any, arm64_linux:   "ebf40ca65dfb42f9d76cd32c4f2af554e8f2c951f8f68a07cdc52959b0e156cb"
+    sha256 cellar: :any, x86_64_linux:  "69cc2f8b5cfb92aaf94a980515781bcd5943944deb42e71079aab64b70868528"
   end
 
   depends_on "pkgconf" => :build # for `rfc3161_client`
@@ -105,8 +105,8 @@ class Ggshield < Formula
   end
 
   resource "marshmallow" do
-    url "https://files.pythonhosted.org/packages/55/79/de6c16cc902f4fc372236926b0ce2ab7845268dcc30fb2fbb7f71b418631/marshmallow-3.26.2.tar.gz"
-    sha256 "bbe2adb5a03e6e3571b573f42527c6fe926e17467833660bebd11593ab8dfd57"
+    url "https://files.pythonhosted.org/packages/25/7e/1dbd4096eb7c148cd2841841916f78820bb85a4d80a0c25c02d30815a7fb/marshmallow-4.3.0.tar.gz"
+    sha256 "fb43c53b3fe240b8f6af37223d6ef1636f927ad9bea8ab323afad95dff090880"
   end
 
   resource "marshmallow-dataclass" do

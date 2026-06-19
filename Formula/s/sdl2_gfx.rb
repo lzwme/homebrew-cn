@@ -21,7 +21,7 @@ class Sdl2Gfx < Formula
     sha256 cellar: :any, x86_64_linux:  "63a286ac8e097c5048702a8b88c70a04f33148e0d98e1ba9aeb52a631538e53c"
   end
 
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
 
   def install
     args = []

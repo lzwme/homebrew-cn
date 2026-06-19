@@ -18,7 +18,9 @@ class GitMob < Formula
   end
 
   test do
-    system "git", "init", "--initial-branch=main"
+    ENV["GIT_CONFIG_GLOBAL"] = "#{testpath}/.gitconfig"
+
+    system "git", "init", "--initial-branch", "main"
     system "git", "config", "--global", "user.name", "Jane Doe"
     system "git", "config", "--global", "user.email", "jane@example.com"
 

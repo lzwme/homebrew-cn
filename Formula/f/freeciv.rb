@@ -45,7 +45,7 @@ class Freeciv < Formula
   depends_on "lua"
   depends_on "pango"
   depends_on "readline"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "sdl2_mixer"
   depends_on "xz"
   depends_on "zstd"

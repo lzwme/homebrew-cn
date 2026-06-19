@@ -37,7 +37,7 @@ class Ffmpeg < Formula
   depends_on "libvpx"
   depends_on "openssl@3"
   depends_on "opus"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "svt-av1"
   depends_on "x264"
   depends_on "x265"

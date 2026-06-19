@@ -29,7 +29,7 @@ class GitSplitDiffs < Formula
     system "git", "add", "test"
     system "git", "commit", "-m", "Second commit"
 
-    system "git", "config", "--global", "core.pager", "git-split-diffs --color | less -RFX"
+    system "git", "config", "core.pager", "git-split-diffs --color | less -RFX"
 
     assert_match "bar", shell_output("git diff HEAD^1...HEAD")
   end

@@ -25,7 +25,7 @@ class Lisette < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/cli")
 
-    generate_completions_from_executable(bin/"lis", "complete", shells: [:bash, :zsh, :fish])
+    generate_completions_from_executable(bin/"lis", "complete")
   end
 
   test do

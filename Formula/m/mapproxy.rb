@@ -3,17 +3,17 @@ class Mapproxy < Formula
 
   desc "Accelerating web map proxy"
   homepage "https://mapproxy.org/"
-  url "https://files.pythonhosted.org/packages/ba/00/d4adfd9099aa5047c7756e1607d52517f569542b684413df18578a73da95/mapproxy-6.1.0.tar.gz"
-  sha256 "2a5113d648583ca5f19312cc43fbf44f4b4a14b83387d59151160de6a19eb027"
+  url "https://files.pythonhosted.org/packages/65/1f/f53a4c633d8b202b28dae4b846e6efd93411d10c5e8775c41ed704530677/mapproxy-6.1.1.tar.gz"
+  sha256 "40a141d1e03a1b185c3f970a29991da1f6f7484217017b7b2b22d22f7866773c"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d6dabdf04a1716a0285147a1a83aee2f2f3c302e7420400828b306ad07020595"
-    sha256 cellar: :any, arm64_sequoia: "93b78690bcad7e7c47987075506e412eadf1b90201b7c7d60876ff81aeb064cb"
-    sha256 cellar: :any, arm64_sonoma:  "2bc9484999c46fdfaec0fb89036d5aee9a6cf3629a879179c0531cf61eee231c"
-    sha256 cellar: :any, sonoma:        "029df0467cd636ddc1481aa2fb9d496141d145f6b898a3e716601bded8aff53d"
-    sha256 cellar: :any, arm64_linux:   "e8666b62e2e6732fb5285265ad515d87ad17073a24c0160b1adc3c5f5e5ab712"
-    sha256 cellar: :any, x86_64_linux:  "fa47de064016f051745f91ad1a40b65ede497f5ab68a9aef03e1e7eda89587c2"
+    sha256 cellar: :any, arm64_tahoe:   "c2f8b62db9332725caa967a6183ffa6eb2637335903718b76e78b04f4b8ed11b"
+    sha256 cellar: :any, arm64_sequoia: "3cf2b43e13101e0a042e01e2a64f3eec1926f7c07eaec9d14563e7cbb295cc03"
+    sha256 cellar: :any, arm64_sonoma:  "7564a1572820660285492cfcefc5d4a689e8d3163b067d85aed1cca82e354489"
+    sha256 cellar: :any, sonoma:        "91e29c01060046b9e82709128013326c3e828732b3a19d678ac0747f7609c316"
+    sha256 cellar: :any, arm64_linux:   "e4c790608b77f4f88d1c8e11698ff23d71f9cdc4ec54a4340fa4379ff6b09196"
+    sha256 cellar: :any, x86_64_linux:  "d3dfa400a7e3d7ac920285c0451a0223ae229890957e5aab609daf0b508e9404"
   end
 
   depends_on "pkgconf" => :build

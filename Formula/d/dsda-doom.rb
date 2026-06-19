@@ -32,7 +32,7 @@ class DsdaDoom < Formula
   depends_on "libzip"
   depends_on "mad"
   depends_on "portmidi"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "sdl2_image"
   depends_on "sdl2_mixer"
 

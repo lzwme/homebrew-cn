@@ -41,7 +41,7 @@ class Openmsx < Formula
   depends_on "libogg"
   depends_on "libpng"
   depends_on "libvorbis"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "sdl2_ttf"
   depends_on "tcl-tk"
   depends_on "theora"

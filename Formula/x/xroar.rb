@@ -25,7 +25,7 @@ class Xroar < Formula
 
   depends_on "libpng"
   depends_on "libsndfile"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
 
   on_linux do
     depends_on "alsa-lib"

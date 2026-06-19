@@ -26,7 +26,7 @@ class Logstalgia < Formula
   depends_on "glew"
   depends_on "libpng"
   depends_on "pcre2"
-  depends_on "sdl2"
+  depends_on "sdl2-compat"
   depends_on "sdl2_image"
 
   on_linux do
