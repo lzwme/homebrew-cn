@@ -3,18 +3,18 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https://docs.bittensor.com/btcli"
-  url "https://files.pythonhosted.org/packages/15/d2/a176729047602c24692df3a330d089281fafb871ad6d41a4022f6502cda3/bittensor_cli-9.22.2.tar.gz"
-  sha256 "79c6a1ddca14f3e31d8c1532aee955fc88bcd356bc849e09f345dd3dd1cb95f0"
+  url "https://files.pythonhosted.org/packages/27/eb/45a9314ddd78527108aa4e0574ead5daaf93b77dd804b0e1b992c2fb0ef4/bittensor_cli-9.22.3.tar.gz"
+  sha256 "100d79311e5222fa028a5fc7c3e6879183536b9d032490744647785d0c9b4d8e"
   license "MIT"
   head "https://github.com/opentensor/btcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "acdff78a67ce21d9ef503458e793aa364d5360e0fb779232faf41eb4ffc5a4ca"
-    sha256 cellar: :any, arm64_sequoia: "80ff857dff451e8d6651883bd4cad3d5cb91a9791be6e0d840d9bcad3cacdf19"
-    sha256 cellar: :any, arm64_sonoma:  "9e9ee5568d55d90dfe83727d50881cf58e16c6694524721464b7cad7924393d0"
-    sha256 cellar: :any, sonoma:        "322e1f0cbe239ec43a3bbadc119d9cf0601042b2fa577c4a3f6b2586b556ab22"
-    sha256 cellar: :any, arm64_linux:   "8343511f1c206f4606b554927db2c7e37ce3e8a49b0242dbae69be9ad143f514"
-    sha256 cellar: :any, x86_64_linux:  "48a9a3c3f453e03a5983af61a79f6111fed37dffc99f690870a5b8925c4fca4c"
+    sha256 cellar: :any, arm64_tahoe:   "3edf92a75734edaefc86ddf9d9270334bbf5ccb42a1133bb8f59e48bad5ccd63"
+    sha256 cellar: :any, arm64_sequoia: "22bdc3b52c8c12962142c1b472298677385520c1644d62b2b7a41e6c232bf406"
+    sha256 cellar: :any, arm64_sonoma:  "05428b289aee988d9650b8b7bf42a4e889ef838687918491e48a3bf6c9a2bc7e"
+    sha256 cellar: :any, sonoma:        "815b52281fabee65a41d5e1028d7e04700a2c3bd655535c1f838f1f9af7c7741"
+    sha256 cellar: :any, arm64_linux:   "9d6ed663da919de66734991666f36019c6d3b60ede607de38c82c40681a4f322"
+    sha256 cellar: :any, x86_64_linux:  "407c2b2dcbca35ddf67261a0750625bec0aa9af90a76f732dc2bea0c3a08a924"
   end
 
   depends_on "rust" => :build # for bittensor-wallet, plotly

@@ -3,13 +3,13 @@ class BumpMyVersion < Formula
 
   desc "Version bump your Python project"
   homepage "https://callowayproject.github.io/bump-my-version/"
-  url "https://files.pythonhosted.org/packages/00/10/8802eeafdd5a993c64bc4953918b8049c8b82196d41873457b761d9db8d1/bump_my_version-1.4.0.tar.gz"
-  sha256 "3eea26b3ae6c4900ab9924ad0733365c0254db58e4bbe2d9a643752495bcfecb"
+  url "https://files.pythonhosted.org/packages/37/04/1ea0a95165d668eb86f6bee97199b7aa926706bed64902fe96600f70f840/bump_my_version-1.4.1.tar.gz"
+  sha256 "b4ad672b4e8b9f560f36a9ae0aff80088727ce2b3e0f1b7ea00d3f75846b09dd"
   license "MIT"
   head "https://github.com/callowayproject/bump-my-version.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "90d49de6eb8127dfa1860cbfda5551cd48188d11a8d20170f3c15d8919c987ba"
+    sha256 cellar: :any_skip_relocation, all: "efcc383009b02c64659c49a2f73177546e86c849fd22c548165a2e44c66d650d"
   end
 
   depends_on "certifi" => :no_linkage

@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/f2/76/a1ee34f3aafe5f0938f3cf6343f880e86cfd4c716b5ccd8a72ad606c4436/snakemake-9.23.0.tar.gz"
-  sha256 "1e764fa8f6bfed79b30ea9ccb5bb17af82163e51cef97e8f7de81a317600babf"
+  url "https://files.pythonhosted.org/packages/9e/c2/45aa858e55edbb7dbc243ed60859f4f3d92d63ecdd67a80632aa3659fe6b/snakemake-9.23.1.tar.gz"
+  sha256 "ef8d698bfce66a6669cc29df7e344b0b367fd90956c725e5ae0a79a556e8e93f"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9575520615d85f4651d3899c67b25d3c2e29a83d5ea36fdf2018e1b130bddd84"
-    sha256 cellar: :any, arm64_sequoia: "eae58f4361de89262e09e47cbbb285c204f2f3f2f5d981f597aef38e675dd51d"
-    sha256 cellar: :any, arm64_sonoma:  "1d190c4b18aa879578c9e83152a9ef84d88b9a34b0b8d32ea510ad62d60c54bd"
-    sha256 cellar: :any, sonoma:        "af180539beaedd6ee883271a6a70e068c075b904cb654f18b7e4fbc62812c545"
-    sha256 cellar: :any, arm64_linux:   "1da64d524beefd235e1d3eb0aae2c4df59a1783bac5c423733c04df434bba4b5"
-    sha256 cellar: :any, x86_64_linux:  "344b50325581a83211730c46eb79deb96ef12e83c7fb4a3cc47b7b228e5def36"
+    sha256 cellar: :any, arm64_tahoe:   "b6f555fa4642c2f0c1a69097f38819f7f098047ff9825d606b25b1bb29407408"
+    sha256 cellar: :any, arm64_sequoia: "f069dddc383ad8d546f2bcd9545aefc97f3021223d85de8c7160ea1a20272568"
+    sha256 cellar: :any, arm64_sonoma:  "249132c8dd862f88d38c6442d97054f9c0ff6ba6c0b54ff613c35bf73f9c9dc0"
+    sha256 cellar: :any, sonoma:        "f0a63c2f2111451dc5b0746cd58a58688b0a7ebc3444c2dc2c5eaf8158e73c66"
+    sha256 cellar: :any, arm64_linux:   "fa33eab6b87808f931e3f66239aaa31e8d8064257e3d6553e04257c44930cf3f"
+    sha256 cellar: :any, x86_64_linux:  "14b94b880c4a7e3124c0616ee28d8be1a55bad1f04589c89ee4b76ba901bccee"
   end
 
   depends_on "rust" => :build # for appdirs
@@ -83,8 +83,8 @@ class Snakemake < Formula
   end
 
   resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/6d/6e/802acd792aebb2256fbbee8cacf2727faaeb6f240ac11008f09eae4414bc/greenlet-3.5.1.tar.gz"
-    sha256 "5a56aeb7d5d9cc4b3a735efb5095bd4b4f6f0e4f93e5ca876d0e2315137b7829"
+    url "https://files.pythonhosted.org/packages/dd/8b/befc3cb36965f397d87e86fb3b00e3ec0dc67c1ecb0986d7f54ee528f018/greenlet-3.5.2.tar.gz"
+    sha256 "c1b906220d83c140361cdd12eef970fb5881a168b98ee58a43786426173da14c"
   end
 
   resource "humanfriendly" do
@@ -208,8 +208,8 @@ class Snakemake < Formula
   end
 
   resource "sqlalchemy" do
-    url "https://files.pythonhosted.org/packages/57/da/6fbf010c8ebb347679d0d100b22fe9ba5e13fd04046c5df7280d2f0bf706/sqlalchemy-2.0.50.tar.gz"
-    sha256 "af5607d11ef90fd6a5c0549fe0045dce1663d427426bcfb506dcb5346a85a3b9"
+    url "https://files.pythonhosted.org/packages/02/f1/a7a892f18d4d224e6b26f706531eafccc41e37594d37d304786969ee13cb/sqlalchemy-2.0.51.tar.gz"
+    sha256 "804dccd8a4a6242c4e30ad961e540e18a588f6527202f2d6791b01845d59fdc9"
   end
 
   resource "sqlmodel" do

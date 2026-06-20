@@ -1,18 +1,18 @@
 class Maturin < Formula
   desc "Build and publish Rust crates as Python packages"
   homepage "https://github.com/PyO3/maturin"
-  url "https://ghfast.top/https://github.com/PyO3/maturin/archive/refs/tags/v1.14.0.tar.gz"
-  sha256 "2737d32e7684a64df4758d7d58d1b19041697733a8bf254d4c987c416796c069"
+  url "https://ghfast.top/https://github.com/PyO3/maturin/archive/refs/tags/v1.14.1.tar.gz"
+  sha256 "435f8d5b267e52588fe699cab97a8234e3d98977a9f9e6efe873e04f7f85f92c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/PyO3/maturin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0fc7854d03741282ba53d26d2a58595964a44194d85630d193665775998ed3e9"
-    sha256 cellar: :any, arm64_sequoia: "ebde7591fecf61eee38f02104dd6138259dd467d34552d92e7d08c896a7affce"
-    sha256 cellar: :any, arm64_sonoma:  "02caca822112f0a5a2c1040b5155416a3089ddc0f094c77365a9377404c5ddd8"
-    sha256 cellar: :any, sonoma:        "b6e31622da8745d77364b59a418fb09260819a36a16ee440ce5d5a3290509e3f"
-    sha256 cellar: :any, arm64_linux:   "1490cbc9638ecf0ae38cd22a7a972deb4707689fe7e0ce082b10a23a59d4d87c"
-    sha256 cellar: :any, x86_64_linux:  "bf391a34b0f8d3a9bbcb68288654c4d3d01a7c42146cf71ff0023272bc90784e"
+    sha256 cellar: :any, arm64_tahoe:   "e7f3fbdf3e4fbe5e741d2d5193a7b795c7fcf94f088a0660f29765da19d49d7c"
+    sha256 cellar: :any, arm64_sequoia: "2ae6a629bc31debb54927902fae05a3265f6b271259b7b5e7cc8e6a7267e504e"
+    sha256 cellar: :any, arm64_sonoma:  "931c86d28ce3d635470124b14a89e431a63b83cec19b9e7502a6cd74904f2cb0"
+    sha256 cellar: :any, sonoma:        "c48d64cff918c530996b9cfdce8239ac88b63b2a0309d386d58c72d4fb4392b3"
+    sha256 cellar: :any, arm64_linux:   "e64c8ea180b4fc4f2b5a06b31a69f511f48407d6f32cb1e6a714600b02f859e7"
+    sha256 cellar: :any, x86_64_linux:  "0638356e04b848475ca1e278c152811befd547fd37f8dcd8f784602992c29990"
   end
 
   depends_on "pkgconf" => :build

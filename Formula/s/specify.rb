@@ -3,17 +3,17 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.github.com/spec-kit/"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.11.2.tar.gz"
-  sha256 "6345116ed4a135fc493463805ea9a5c17aa92ff1389ee8df069e0d7f4631ab73"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.11.3.tar.gz"
+  sha256 "78b37dbcda69648ab648f82b6af83da4b56e34b2a6c9b2027c0152819d6e0646"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0cd04c23b8ea60d13aa6e44cf3c4ad2bd61bfcdc95156b1dfdf5cda80ad6a215"
-    sha256 cellar: :any, arm64_sequoia: "8d1b789725c80152c080b902ea439ce61cd70c902820faf33516f3ff9dd91787"
-    sha256 cellar: :any, arm64_sonoma:  "b6b54cb83a20908dda6ecd3beb34d3eae8f45973070077c08b87e7619f180ef9"
-    sha256 cellar: :any, sonoma:        "31809b22888d0be9bfac086fea03f6ecedbb32065a357b5e62025240e6d022bb"
-    sha256 cellar: :any, arm64_linux:   "bfb0b8f9f964a6a175642db6b51e3a46adf1397f9b82402bc20bb33d0f718f9a"
-    sha256 cellar: :any, x86_64_linux:  "cf3b502d5eeb56a59cfd8ba20f25214055660ec1c19f6dc7fd900dce5a96639c"
+    sha256 cellar: :any, arm64_tahoe:   "0934268136a8adcc9ed03f64569d99b55256221d645659dae325fb9440ffe7e5"
+    sha256 cellar: :any, arm64_sequoia: "043dc27f8deb1846ea853d46283ccf607eb8b518ef288c0d5b70c6c5ee1fbd69"
+    sha256 cellar: :any, arm64_sonoma:  "64b7c2fe568d6566a015d9e0a68209f6b8102278683e62fcc70b68c348d6a6f7"
+    sha256 cellar: :any, sonoma:        "608fbe41a16fb5225a6b5d0fd269d8e45824f49d251d62ed51e05f0cceb58e73"
+    sha256 cellar: :any, arm64_linux:   "be0761bf3143e44d8d241224da9a4633c73d1fc96517e63246cdee4f5f62550e"
+    sha256 cellar: :any, x86_64_linux:  "1f4d374debe8c72a95d828d00248a3cc0d8d0a457a2419d44fd7de622e25600a"
   end
 
   depends_on "certifi" => :no_linkage
@@ -33,8 +33,8 @@ class Specify < Formula
   end
 
   resource "json5" do
-    url "https://files.pythonhosted.org/packages/9c/4b/6f8906aaf67d501e259b0adab4d312945bb7211e8b8d4dcc77c92320edaa/json5-0.14.0.tar.gz"
-    sha256 "b3f492fad9f6cdbced8b7d40b28b9b1c9701c5f561bef0d33b81c2ff433fefcb"
+    url "https://files.pythonhosted.org/packages/e4/7d/05c46a96a78147ae3bf99c2f4169ce144a70220b8d6fcd56f6ec368b8ce9/json5-0.15.0.tar.gz"
+    sha256 "7424d1f1eb1d56da6e3d70643f53619862b4ce81440bdb8ecfd6f875e5ba4a71"
   end
 
   resource "markdown-it-py" do

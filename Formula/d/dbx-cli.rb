@@ -1,17 +1,17 @@
 class DbxCli < Formula
   desc "Command-line interface for DBX database connections, schema, and safe queries"
   homepage "https://dbxio.com"
-  url "https://registry.npmjs.org/@dbx-app/cli/-/cli-0.4.10.tgz"
-  sha256 "bad1b207f4b77f18f18235a55df993edd0bd2c65f136f5765a62db813c3c0b31"
+  url "https://registry.npmjs.org/@dbx-app/cli/-/cli-0.4.11.tgz"
+  sha256 "ef704cda14c2199f4c8b8e44ef4e86217f6784356715ea77bc2de4431b3750fc"
   license "Apache-2.0"
 
   bottle do
-    sha256               arm64_tahoe:   "23c5349757dc717fec1f2a2fc453d183fccdfd42da8622708a0949505b871c69"
-    sha256               arm64_sequoia: "53fc9edd15999f56293c7d18cac654896916ec47f24b1fc8007d867ba7cd6737"
-    sha256               arm64_sonoma:  "7e1fcf688038b683172ba5b93beebacdbb48f19874d759644a06d149fe66b3aa"
-    sha256               sonoma:        "c39900053481102aa4c2d127f39d3e7ed6d815acbcb707fcd4eaf268115d3e69"
-    sha256 cellar: :any, arm64_linux:   "06e7b3a46c35b8b91c92d20bebfd2005c142b3724426cb9aaa83e076de8c1b10"
-    sha256 cellar: :any, x86_64_linux:  "eb054492d2ef8723eebf1812935e6da1b9b067b041a689498813841ec237a8ce"
+    sha256               arm64_tahoe:   "1488c2714ac30f54e0d23a1dbb1fe272a312309696a256a90a46ba4ec0508b92"
+    sha256               arm64_sequoia: "ca9a5b38886d4d09e76ad5cab9dbfd1ba6bdd0ae125ff21f1f6ff2352dce8c3e"
+    sha256               arm64_sonoma:  "1bef04d772c8e8175b455f1dac639254cc0500e85c677f7ebdb127c20efb8de2"
+    sha256               sonoma:        "6e98f0de466463fd4b6b9df0d27de0f8eb6900b0dfe0c60bb300238e15884a38"
+    sha256 cellar: :any, arm64_linux:   "2d1ef32a6f25c1403a8c05981ee8c911f05df22f17cf2162d29a3db95a57c743"
+    sha256 cellar: :any, x86_64_linux:  "a97dbe61fe40109278c25ce783197cb4ac492f6ea27414db6a93ea9b95b4cb4e"
   end
 
   depends_on "node"

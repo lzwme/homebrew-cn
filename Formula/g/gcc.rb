@@ -25,14 +25,15 @@ class Gcc < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "144b48c317fe5406a36b57ca30171c78c0eddf91cd236b56246c3cf523f7d202"
-    sha256 arm64_sequoia: "924a3b36fe34a4ac9e2d281ef139cb0d331a0e36c41aac738ef6b4aac9a35421"
-    sha256 arm64_sonoma:  "6a17969b924c2dc491180f5bccf466339b4a7849f86c58bdf13d4d4f02ba4849"
-    sha256 tahoe:         "05c7d066d2bff334d820c221803ae27dd14dd59340e4fd23eccde2f1fd9b13b0"
-    sha256 sequoia:       "01b8293a065c6328517f4243f50c432ebcda7912b5b25e95767d6f6d8e8a4902"
-    sha256 sonoma:        "16a6a69c8c2a390272bb0a751b7e2dac7b11457192db807797f68c867b036166"
-    sha256 arm64_linux:   "a5cbd6e7bd013cb8f81fb79b65c46c3841f1d76b3a962a8b89d0a13417ed84a1"
-    sha256 x86_64_linux:  "a0ea9c0f9d2090ce7d3cce85c2f0c62566837d966d953edae48104613348c418"
+    rebuild 1
+    sha256 arm64_tahoe:   "39faa08c413c043b9f44a6be5beb260d5acf7fd0bf035688c2579d3be48a8463"
+    sha256 arm64_sequoia: "083223989b47d242c7c42366abaf3e8509f7bdde84a370cb7381c9267a199847"
+    sha256 arm64_sonoma:  "9d4be966090f2585d27a717c96208077059e43c5ab5b510f1525b0efc2a21bb7"
+    sha256 tahoe:         "e60ded6de95e31669e493a2fa327bd308b205c272d696f61954ed860a7709bde"
+    sha256 sequoia:       "e47fbf21a46d5143dee9f944a6ae0059a40968460fd767c3693cc9cd8119c68f"
+    sha256 sonoma:        "b1d7ab5a739178d4b475438c128646256c1759205a4047cd83b7b53c87c8b9e4"
+    sha256 arm64_linux:   "235350076566b5b4db7e0bb1acf08c06f2ef4eff6a9a5879d0ceb3e2c48deafe"
+    sha256 x86_64_linux:  "c03913f7c701d33bb1faad0c8e576c8ee4e6af410eb4951bb89258b239d55be5"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -113,7 +114,10 @@ class Gcc < Formula
       # Avoid this semi-random failure:
       # "Error: Failed changing install name"
       # "Updated load commands do not fit in the header"
-      make_args = %w[BOOT_LDFLAGS=-Wl,-headerpad_max_install_names]
+      make_args = %w[
+        BOOT_LDFLAGS=-Wl,-headerpad_max_install_names
+        LDFLAGS_FOR_TARGET=-Wl,-headerpad_max_install_names
+      ]
     else
       # Fix Linux error: gnu/stubs-32.h: No such file or directory.
       args << "--disable-multilib"

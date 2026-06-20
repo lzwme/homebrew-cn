@@ -7,18 +7,19 @@ class Zchunk < Formula
   head "https://github.com/zchunk/zchunk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "46b7edb3748b367ba4b35700dbd3369744c16b37d31e2843492ca47af28333c1"
-    sha256 cellar: :any, arm64_sequoia: "46a25eac9dab8ba67c4c5180d5016806825d7adb3a1ace059616ff27a1a6ad47"
-    sha256 cellar: :any, arm64_sonoma:  "bc949e0284c77f8794636418979ebc1b45f26a3559bd41b9c566ec79b294733a"
-    sha256 cellar: :any, sonoma:        "39d1b2d55f294285fcdf94c11ead1d87e11ffbc80c541c059867c4d7bbcfe557"
-    sha256               arm64_linux:   "1f97cc161198905c6092068d829cdf206aae5b92609adf419b63cb6bb38edaf1"
-    sha256               x86_64_linux:  "45fae766d814be7734fd3815c7ed8e817feb045f901c270a243cb3d19e7f2e29"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "7feea8c537bef441a0f60256f5d3b2aeb6a638f457046193a9a4516cae340591"
+    sha256 cellar: :any, arm64_sequoia: "46d65e395c918847f94dcf2c15e2d70ae11bac1c958ef1327ef4938b0e6da602"
+    sha256 cellar: :any, arm64_sonoma:  "d29d020334ff33c8baf0e51e01abb8c10ebd015130113c1f7739e6c08985fb94"
+    sha256 cellar: :any, sonoma:        "4405ca51d11f44a125c9f8f01ba44f75a03291bde66614b0e2cf661f259b72ee"
+    sha256               arm64_linux:   "7b24464b573af8a39c03bc310a9b4459fb09b735859352f56522d78cb30dec1b"
+    sha256               x86_64_linux:  "2149273e6d030878b48169a874ad91eeec79bc53fb3ccdd13a9cdd6c4bb473a6"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "zstd"
 
   uses_from_macos "curl"

@@ -53,9 +53,9 @@ class Glibc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_linux:  "3afe478fb0d3f60b4817e3bc6a4055c6c18c986c9a6f6610be255bafcaa74afe"
-    sha256 x86_64_linux: "6a959a32fcfdcadcb1e27720f567c4921a289a2ccf0223abea7c271834780124"
+    rebuild 2
+    sha256 arm64_linux:  "8a092cc0773c766c14ac4af34fec15b825028aedba3ecb61995939fcbd4e46d2"
+    sha256 x86_64_linux: "a7e87f5dc33814f0d5aaf6beb6bebfbdd4b268ece9c0e45b5bcc6549db4e197d"
   end
 
   keg_only "it can shadow system glibc if linked"
@@ -310,9 +310,9 @@ class Glibc < Formula
     # Compile locale definition files
     mkdir_p lib/"locale"
 
-    # Get all extra installed locales from the system, except C locales
+    # Get all extra installed locales from the system, except C locale
     locales = ENV.filter_map do |k, v|
-      v if k[/^HOMEBREW_LANG$|^LANG$|^LC_/] && v != "C" && !v.start_with?("C.")
+      v if k[/^HOMEBREW_LANG$|^LANG$|^LC_/] && v != "C"
     end
 
     # en_US.UTF-8 is required by gawk make check

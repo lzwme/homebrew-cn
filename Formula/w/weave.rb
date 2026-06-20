@@ -24,6 +24,8 @@ class Weave < Formula
     depends_on "zlib-ng-compat"
   end
 
+  conflicts_with "texlive", because: "both install a `weave` binary"
+
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/weave-cli")
     system "cargo", "install", *std_cargo_args(path: "crates/weave-driver")

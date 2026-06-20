@@ -1,19 +1,18 @@
 class Openexr < Formula
   desc "High dynamic-range image file format"
   homepage "https://www.openexr.com/"
-  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.4.12.tar.gz"
-  sha256 "a455779c389f65c64220d45b63ead2900081e5f6337cdf93431cb1032c3e2686"
+  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.4.13.tar.gz"
+  sha256 "1ed0cee48ac8c77da235c8ca8ab85d031d43cd790eda36af87fed4cf316cf2df"
   license "BSD-3-Clause"
-  revision 2
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d0b5a323834dfdfd25787054fe3db4fb86857d7612dc551fdbd26096c859cd72"
-    sha256 cellar: :any, arm64_sequoia: "97e7ae22a45e0f5f704be253aa9854fa1e70802a983b79c3e4f37edd4a063117"
-    sha256 cellar: :any, arm64_sonoma:  "73487ff44046cc2fac74715807e766a5cd861ba79f6e8c7b45dd142fc39d71e8"
-    sha256 cellar: :any, sonoma:        "24b5e7e70cf9207c645854b32bada271b5e7052c6e3d905a25ac1460cae32297"
-    sha256 cellar: :any, arm64_linux:   "bb145a5af688b19b5f18334e2d80a755c6a345014aeb9a41ea6ca8d811463ab8"
-    sha256 cellar: :any, x86_64_linux:  "73910415d6f6642d1e49d4ef4544b46a85a9670494324fdd681262e06c5e148d"
+    sha256 cellar: :any, arm64_tahoe:   "529898adaffa9907550b288da1e0bba6f2494dbba75c9f89969b54eecfe6a452"
+    sha256 cellar: :any, arm64_sequoia: "56dcf4d80186c78d94310f76f4e792fb5ad27d3d939400bbe85ff21c35b33cfe"
+    sha256 cellar: :any, arm64_sonoma:  "2e2d593988653aa693c99d7a68324ea41daaaabf3a647cfff2dfa6d6ff240560"
+    sha256 cellar: :any, sonoma:        "7a7e29d83fd49954171591d242bfacc7ca5ee928d2a610b906d2da6072019549"
+    sha256 cellar: :any, arm64_linux:   "d76d649f2fc2019ed4bb41dcee1e5b72fd17a181c7fa36458faf27de7cd3fc88"
+    sha256 cellar: :any, x86_64_linux:  "cd7c4e82c9cba59dabcee49701c0ff7068e68ff23d8ffeefb9d4f9134cff7209"
   end
 
   depends_on "cmake" => :build

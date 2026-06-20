@@ -1,17 +1,17 @@
 class MarkdownOxide < Formula
   desc "Personal Knowledge Management System for the LSP"
   homepage "https://oxide.md"
-  url "https://ghfast.top/https://github.com/Feel-ix-343/markdown-oxide/archive/refs/tags/v0.25.10.tar.gz"
-  sha256 "67217dc2f460a21bf64493d2ebe860cb93563a62aa5eecc28c24cf38ee7100ed"
+  url "https://ghfast.top/https://github.com/Feel-ix-343/markdown-oxide/archive/refs/tags/v0.25.11.tar.gz"
+  sha256 "274446b861ebbf3098dcb7e0a5d3135df88df34b16a2c128288f900391dfbf75"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2d94fc7f454689e3cccf6a3533195721ed31f2bdf44035a63fd76edab000510"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c62677e78b51bfc6eb2c93f22be1f3c712abf74226a19af6798baf509afc491"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32ff78a4cc7cc1e2712103147cd87bd17bcdbc2265a0135e67c89fe5f501b12f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3d5df3ccfd67daf16cf143ddbe3568c9662bfadaa1762fba43b192f7d4deafc2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "65366cbd11a81ff7bcc17a0d0b7df2a969fececa77b6504404c3502ac1bfd02b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca06dfc9b71540e134322ed34ccf414b8d541555d0758201516d57cf30304627"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2f76bf140c6723068ad12b83f04fe23a75fc6ed18f5675e2026f0e4c13c32f62"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "207164b6f4e8ea2029a03e13e5dbe8dffcdaf7f9a7dbe9c4fa65bd2e07388ad0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63c230ab62fc892aaf1b633e294ec12fe01a17f02aac863ded63a2a7a9cf1c3c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a4ed32e1ad3cd20e40112e680c38b66718aa2d765641cc83920a910537789825"
+    sha256 cellar: :any,                 arm64_linux:   "bd5ebddfe0bd6dcd90fe471d521fddbc7a713a72649972bc41daa5106e9bf689"
+    sha256 cellar: :any,                 x86_64_linux:  "680c99e8884b9bf3d11f965ac96133dea7af2474b17bffcb137a04c3d06fc283"
   end
 
   depends_on "rust" => :build

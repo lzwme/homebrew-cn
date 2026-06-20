@@ -3,18 +3,18 @@ class Hf < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/88/27/629cfe58c582f92ded066c4a07d1a057ff617118ab7973200f770bd853cb/huggingface_hub-1.19.0.tar.gz"
-  sha256 "fd771622182d40977272a923953ee3b1b13538f9f8a7f5d78398f10af0f1c0bd"
+  url "https://files.pythonhosted.org/packages/e6/7e/fad82ad491b226e832d2da90a1a59f36acd4526cda8c726f639834754aa4/huggingface_hub-1.20.1.tar.gz"
+  sha256 "9f6d63bfbeab2d2a8357200a9bc4f18cd2c8bfac9579f792f5922e77bf6471d0"
   license "Apache-2.0"
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "af112cdb9ec54627ab4dd76e8e3378bae0d784496f441e417d88071631e8ff43"
-    sha256 cellar: :any, arm64_sequoia: "b9e7f9ba0d174569733ab26104fdae5dbfea9e320417f06c071f6e8947d4d46f"
-    sha256 cellar: :any, arm64_sonoma:  "bbdd68df179cbb727b9a504c3dff75362e1cd815116d87e0c651c4f2bb888180"
-    sha256 cellar: :any, sonoma:        "833056100f36a95677c1d3dec49effa919ad975c84238dd3a21c71180fcb1b68"
-    sha256 cellar: :any, arm64_linux:   "d64ded2a542cc070887da67bf9896d0576c16061919f2bff381bf805085b8954"
-    sha256 cellar: :any, x86_64_linux:  "b95d1ce722d22f19c906e906bb125dda9013af961e11db0ca75ed9fa64cd9485"
+    sha256 cellar: :any, arm64_tahoe:   "13dab666fc7bd501fe19ff3f07a0614fa3ddf15ace85b0af3674f1575dc7b481"
+    sha256 cellar: :any, arm64_sequoia: "08eb8778a166ac380c0ce9ed0dd2353a073f4cac9c07d22e27949fd0f7f6b123"
+    sha256 cellar: :any, arm64_sonoma:  "d4d40f5489b640a657bf75580c3d919c246652f8ef9c6ce69aab4e89bcc403dd"
+    sha256 cellar: :any, sonoma:        "2e22e3139d52bb77af7bc435d5a8db387a892c5a44b23ddbedc287b27b489d4d"
+    sha256 cellar: :any, arm64_linux:   "b0e25663a54b03cdd584d8b2aa803fcbe953fd7c845d4a795bad5ee82136fe5b"
+    sha256 cellar: :any, x86_64_linux:  "7f0fc49443580e2cd1a63bcfad374379bad493468c249ea971802e555b227008"
   end
 
   depends_on "pkgconf" => :build
@@ -38,8 +38,8 @@ class Hf < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
+    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
   end
 
   resource "click" do
@@ -48,13 +48,13 @@ class Hf < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/91/f5/3557bf28e0f1943e4849154c821533706e6dea010f96fb6aa0b6949037d1/filelock-3.29.3.tar.gz"
-    sha256 "7fc1b3f39cf172fd8203812043c57b8a65aef9969f38b6704f628b881f761a84"
+    url "https://files.pythonhosted.org/packages/e6/dc/be6cbe99670cd6e4ad387123647cb08e0c32975e223f82551e914c5568a6/filelock-3.29.4.tar.gz"
+    sha256 "10cdb3656fc44541cdf30652a93fb10ec6b05325620eb316bd26893e4201538a"
   end
 
   resource "fsspec" do
-    url "https://files.pythonhosted.org/packages/d5/8d/1c51c094345df128ca4a990d633fe1a0ff28726c9e6b3c41ba65087bba1d/fsspec-2026.4.0.tar.gz"
-    sha256 "301d8ac70ae90ef3ad05dcf94d6c3754a097f9b5fe4667d2787aa359ec7df7e4"
+    url "https://files.pythonhosted.org/packages/10/a1/ae4e3e5003468d6391d2c77b6fa1cd73bd5d13511d81c642d7b28ac90ed4/fsspec-2026.6.0.tar.gz"
+    sha256 "f5bac145310fe30e16e1471bd6840b2d990d609e872251d7e674241822abf01a"
   end
 
   resource "h11" do
@@ -118,8 +118,8 @@ class Hf < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/85/05/0d5260f1f1ca784f4a4a0def9cbe6affe587f5b4025328d446c3d67765f4/tqdm-4.68.2.tar.gz"
-    sha256 "89c230e8dbc67c7615c142487111222f878c77427ea09549960f62389e258add"
+    url "https://files.pythonhosted.org/packages/87/d7/0535a28b1f5f24f6612fb3ff1e89fb1a8d160fee0f976e0aa6803862134b/tqdm-4.68.3.tar.gz"
+    sha256 "00dfa48452b6b6cfae3dd9885636c23d3422d1ec97c66d96818cbd5e0821d482"
   end
 
   resource "typer" do

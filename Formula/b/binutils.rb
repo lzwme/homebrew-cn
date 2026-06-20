@@ -16,7 +16,7 @@ class Binutils < Formula
     sha256 cellar: :any, x86_64_linux:  "3fa1925f8132d50e5602c543637c04b7dd7e50370b1ad7715da8458f2f99e71a"
   end
 
-  keg_only "it shadows the host toolchain"
+  keg_only :shadowed_by_macos, "Apple's CLT provides the same tools"
 
   depends_on "pkgconf" => :build
   depends_on "zstd"

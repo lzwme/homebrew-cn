@@ -1,18 +1,18 @@
 class K8sgpt < Formula
   desc "Scanning your k8s clusters, diagnosing, and triaging issues in simple English"
   homepage "https://k8sgpt.ai/"
-  url "https://ghfast.top/https://github.com/k8sgpt-ai/k8sgpt/archive/refs/tags/v0.4.33.tar.gz"
-  sha256 "c09399453045a092b11da651788316103b55244ccc18db51900c1142dab26f24"
+  url "https://ghfast.top/https://github.com/k8sgpt-ai/k8sgpt/archive/refs/tags/v0.4.34.tar.gz"
+  sha256 "ea16939c8aea673e1779647b2dc7d77205192f567e9032bf8c8d3bace40a47d1"
   license "Apache-2.0"
   head "https://github.com/k8sgpt-ai/k8sgpt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21cd27b6ffd6d689b0e585fa1f88947014aead3eaca9c8bf93f965b46a7aa4e5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5e6cc95360d22f4ccea8780fda3ed26e4cec911e5e4b9bfb602a341aa036dae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f73e0938dc85284c0db7dc066c6aa88f324d56ba2c6d0a52a8da4563e7d6a25e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "edb96a1ed25fa4858466f0caeec317ca3be80131f1f77689a93286211006a182"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "68370a09d1492e8fe89affb075e82026a51d9c7fdc2a1643f7018b18f191a779"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a1cefb298bbaa09d97fabdaffd12ae7b47789727bcebcf149ce189f7f35b2bd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0485daa54857ac0122fa5d3ff188c2867d546562fe6a826a40c1825158e990ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0976c25c7e06d376d38653ff5bb1f0a8c1266364101949481da0914b855f2a9e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6bc5aa5555cf852eceab7961b6454e8cf9a551d16bf422e2658a1c9675eac302"
+    sha256 cellar: :any_skip_relocation, sonoma:        "19c1b09e56c22f12af8b3df745c4da4e9e699cc2e784efdbd13ebfbcc0c3bea2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b42037746f7849f9612f3f1a1ccbe5fed718ce0c2544fabc14b4387fa40a386"
+    sha256 cellar: :any,                 x86_64_linux:  "763b83f5ab167f90c2bde4d1e64e653acfe9b44619fa60a9afd052ab0de435ca"
   end
 
   depends_on "go" => :build
