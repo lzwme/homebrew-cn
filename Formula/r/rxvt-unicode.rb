@@ -45,8 +45,7 @@ class RxvtUnicode < Formula
   # Patches 1 and 2 remove -arch flags for compiling perl support
   # Patch 3 fixes `make install` target on case-insensitive filesystems
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/rxvt-unicode/9.22.patch"
-    sha256 "a266a5776b67420eb24c707674f866cf80a6146aaef6d309721b6ab1edb8c9bb"
+    file "Patches/rxvt-unicode/9.22.patch"
   end
 
   def install

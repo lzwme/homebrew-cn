@@ -41,8 +41,7 @@ class GccAT13 < Formula
   # Branch from the Darwin maintainer of GCC, with a few generic fixes and
   # Apple Silicon support, located at https://github.com/iains/gcc-13-branch
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/gcc/gcc-13.4.0.diff"
-    sha256 "60b22ae7f5f78b41e12c51d8c6e99ba933a7e124454fe8cdbff7200505167949"
+    file "Patches/gcc/gcc-13.4.0.diff"
   end
 
   def install

@@ -55,8 +55,7 @@ class Ctags < Formula
   # fixes https://sourceforge.net/p/ctags/bugs/312/
   patch :p2 do
     on_macos do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/ctags/5.8.patch"
-      sha256 "9b5b04d2b30d27abe71094b4b9236d60482059e479aefec799f0e5ace0f153cb"
+      file "Patches/ctags/5.8.patch"
     end
   end
 

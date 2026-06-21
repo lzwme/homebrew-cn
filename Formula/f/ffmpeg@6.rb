@@ -1,8 +1,8 @@
 class FfmpegAT6 < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-6.1.5.tar.xz"
-  sha256 "05fbe9db1f5452a3605bb1d9bf91da9d4bb08162891692e4f172b58c49109412"
+  url "https://ffmpeg.org/releases/ffmpeg-6.1.6.tar.xz"
+  sha256 "d4fcb164028dd3beee5d92c0ac72e46aac6973c75ea12dc14de07bf8f407370a"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   # Passing `--enable-version3` changes the license to GPL v3+.
@@ -15,12 +15,12 @@ class FfmpegAT6 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5fdf2e7192978cdae19d6c0954b8345adfa2bc4dcc4f760b85547785accc055c"
-    sha256 arm64_sequoia: "4362bd34d83f23ab8064ba0308be49fc2def1a8b9924a400100d2637e9491920"
-    sha256 arm64_sonoma:  "6cc4390a77bb5a403064fd888295fda55db0fc1ea694dea0ecb2efef3e3be339"
-    sha256 sonoma:        "0b08cf8dc141e194f83f616754f4b630dc07bf16b326886f676dbc48596d3e0e"
-    sha256 arm64_linux:   "fd4273e8ace72a2521f2195ab19109a023d90dca2639ad34791be3cda79c4e72"
-    sha256 x86_64_linux:  "dc64378e0453106fe41124f6f09f2e253b677994437071816291ea31eed75cf1"
+    sha256 arm64_tahoe:   "040dcf93f0b55fe58182892d720df49c735610e9c6adb74cf31afa44e6ac2184"
+    sha256 arm64_sequoia: "0af3c03ae1671dc96321d8190ff04c890ae6d1db51b1534e5f802261317f80e1"
+    sha256 arm64_sonoma:  "8482de317433ad045bfcde5dd374949af1c2090559049b90ba817709fbb8000f"
+    sha256 sonoma:        "28189f196ea71614f657abea4f7416aa8250225bed2ad646f67332e9cc0d9c8b"
+    sha256 arm64_linux:   "bb74db9349b97721a770117b4a072deec44d345c9965e47a93c05b26f9d4a47e"
+    sha256 x86_64_linux:  "592987dffef86c4fb2cb21fca4500250daff586a84ac8a2f0cbef3363996a55d"
   end
 
   keg_only :versioned_formula

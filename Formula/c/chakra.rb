@@ -14,15 +14,13 @@ class Chakra < Formula
     # Fix build with modern compilers.
     # Remove with 1.12.
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/chakra/clang10.patch"
-      sha256 "5337b8d5de2e9b58f6908645d9e1deb8364d426628c415e0e37aa3288fae3de7"
+      file "Patches/chakra/clang10.patch"
     end
 
     # Support Python 3.
     # Remove with 1.12.
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/chakra/python3.patch"
-      sha256 "61c61c5376bc28ac52ec47e6d4c053eb27c04860aa4ba787a78266840ce57830"
+      file "Patches/chakra/python3.patch"
     end
 
     # Backport fixes needed to build with newer Clang on Linux

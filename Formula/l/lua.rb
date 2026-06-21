@@ -23,8 +23,7 @@ class Lua < Formula
   # Be sure to build a dylib, or else runtime modules will pull in another static copy of liblua = crashy
   # See: https://github.com/Homebrew/legacy-homebrew/pull/5043
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/cd752b79c8dc7106cef6c95404308c1b1c400770/Patches/lua/lua-shared.patch"
-    sha256 "7774de7be06126805f189d321bcee595a676858c52d26f6777c79f5c1d789975"
+    file "Patches/lua/lua-shared.patch"
   end
 
   def install

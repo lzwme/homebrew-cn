@@ -27,8 +27,7 @@ class Breseq < Formula
     # Backport of https://github.com/samtools/htslib/commit/515f6df8ff7dab6c80d0e7aede6e60826ef5374
     # Currently not possible to easily unbundle htslib: https://github.com/barricklab/breseq/issues/399
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/acbb0d0473a8bbb75ea7fbb471457a2127ef2c2d/Patches/breseq/zlib-ng.patch"
-      sha256 "a15fd02db51bebb26cfa96c642d76959887cbf200edeb3a92b354bc00f269a5a"
+      file "Patches/breseq/zlib-ng.patch"
     end
   end
 

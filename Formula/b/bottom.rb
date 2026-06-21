@@ -1,8 +1,8 @@
 class Bottom < Formula
   desc "Yet another cross-platform graphical process/system monitor"
   homepage "https://clementtsang.github.io/bottom/"
-  url "https://ghfast.top/https://github.com/ClementTsang/bottom/archive/refs/tags/0.12.3.tar.gz"
-  sha256 "1c70894f0eceb7034075959ff3080cf4706c11d7c012912c24e777abe4e62b70"
+  url "https://ghfast.top/https://github.com/ClementTsang/bottom/archive/refs/tags/0.14.0.tar.gz"
+  sha256 "6509dde9477f4a83dca2cced99b09d6b89ec378aff99dab2eeb30e76d11a5df8"
   license "MIT"
   head "https://github.com/ClementTsang/bottom.git", branch: "main"
 
@@ -15,13 +15,12 @@ class Bottom < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dfba9f93eadffefbc588bd0d0f845a5e6b37b611d09a063e568e23d3255a7b76"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d539c22b4ee05344c309f32323cc5f62f92938a39a719900324a5a03b3cb1e0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "018067224e884195a741cb743e597b5c632c0533708894eef382abe56eac86ef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "07ed7e4e4a57ffee9c3355fa8ed4b18d9df11bc8f3cc3670cb0bd05eeff17bb1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b2f299ad71b9a03e4208575b7c87095fd6673c775b25d38578ac6856a1ec7ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85cf53c4df47b6f6f551887911783e01a36d26d3cbf80010e235107cb0c86dbd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e5e76cf1cedf543164c2cce53c71963865b2f42b8a75a4a638bc053f0e0e8cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cac1b5b1d9dca7acf6e8a9d0c4dc4b943e96788760e3164abfeaff087becf2e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "028017a72d2e06b67d220cdbac5bf82ea9de79f5918e1ef796dac74563d0896d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6fc62e7986138803b6db43db1f7170f593c4cd670ab47245d9208a5179c4effd"
+    sha256 cellar: :any,                 arm64_linux:   "e8b500c2b694b2a3a138a4201566826107006df4b46c99adaa2b0f1b74268ac5"
+    sha256 cellar: :any,                 x86_64_linux:  "e5495c30868e4715511ee4a1c4de206b81aaa0e34a7fc34a90a12adb61d498df"
   end
 
   depends_on "rust" => :build

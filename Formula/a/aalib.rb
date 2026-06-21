@@ -33,8 +33,7 @@ class Aalib < Formula
   # Fix underquoted definition of AM_PATH_AALIB in aalib.m4
   # Fix implicit function declarations
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/aalib/1.4rc5.patch"
-    sha256 "9843e109d580e7112291871248140b8657108faac6d90ce5caf66cd25e8d0d1e"
+    file "Patches/aalib/1.4rc5.patch"
   end
 
   deny_network_access!

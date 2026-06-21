@@ -1,11 +1,10 @@
 class Onnxruntime < Formula
   desc "Cross-platform, high performance scoring engine for ML models"
   homepage "https://github.com/microsoft/onnxruntime"
-  url "https://ghfast.top/https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.26.0.tar.gz"
-  sha256 "2a90eb9a306c1eeb29213f5b165a55008ac5cb7d27e0935c4458c51a49ef091d"
+  url "https://ghfast.top/https://github.com/microsoft/onnxruntime/archive/refs/tags/v1.27.0.tar.gz"
+  sha256 "b41d09905a3c2f3a25709d1dcce8ef3942a4c2799d1046f74be7b6bbebc45e6a"
   license "MIT"
-  revision 1
-  compatibility_version 3
+  compatibility_version 4
 
   livecheck do
     url :stable
@@ -13,12 +12,12 @@ class Onnxruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3b2f527fee7cdaa01e9bba89633c6996270d31b62e216217ecf6dd154fee0f74"
-    sha256 cellar: :any,                 arm64_sequoia: "878c771f4caf47d1910d5350a849f81b41f940ee56bc26ca8018edddc6ce9a10"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd2105f87fd5ef7918c4556b4128cc6100313fecfc3f2e4468de30539ee2f8c2"
-    sha256 cellar: :any,                 sonoma:        "afe69511a14f1b9351074b0bf9e5de65858d25a6795ab7f228ba78b149079c3d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f10c28845f8854adc8f4560f34437c37062b992b43e55d0e94471c2ccef761bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80ee97a0c725735cc31fb3ff5afab1da7ed05d61d29f32c3912170178f2d2ad2"
+    sha256 cellar: :any, arm64_tahoe:   "3283c5458b40a683aef63e156807743d4708a86dab4a6537d4c7125bfdd2fb48"
+    sha256 cellar: :any, arm64_sequoia: "a3eff28896f54cb4e33a298cff4950afcf6d196cab87e36c2bb6fd69a25b7135"
+    sha256 cellar: :any, arm64_sonoma:  "e277c4d7844a07ba44ea3b8f9848eb393454b4b816d3dd516ad820198631eba5"
+    sha256 cellar: :any, sonoma:        "3a73dc7f9cdb2e285f81ea3a425810474311c1452ebd7a8bd99ebfb4aa4a55ed"
+    sha256 cellar: :any, arm64_linux:   "374249bb61f47dd07b8a0d685fa657c998f587fa72befdb517a28e7f46e2cc2b"
+    sha256 cellar: :any, x86_64_linux:  "dda574fb7a5e472f38b33a538159159e1f003efeca10381f852176d6613025ef"
   end
 
   depends_on "boost" => :build

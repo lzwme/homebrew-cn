@@ -4,16 +4,17 @@ class Folly < Formula
   url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2026.06.15.00.tar.gz"
   sha256 "50c9140edea532bc3762c5615eaa5fb908796d4ff7dc99a4d8a1b0aae0ee90e2"
   license "Apache-2.0"
+  revision 1
   compatibility_version 1
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f8fd81795aa7f46c8a597a5c26b04c0669d2a84fe55fa5f5493efa2a4ba37136"
-    sha256 cellar: :any, arm64_sequoia: "b0b2d11a06bb47b748c667ebb174b88811f548d6d9d1d0746453246570cb500f"
-    sha256 cellar: :any, arm64_sonoma:  "4ec9cf6b8cf1de806c98e362ba9928b2ab23646b24ae21265b99820ea27a13fe"
-    sha256 cellar: :any, sonoma:        "aee1480815f01cc7a70c50d7cb7397d6120fc621e8463e1d2e7629fdd07f03e9"
-    sha256 cellar: :any, arm64_linux:   "2ff746a2c3735e647c871f26fc6fc4db57bfebdbb7eda4245e303e0504df016a"
-    sha256 cellar: :any, x86_64_linux:  "6b721d2a1b44ebf8fb46c2ac3e9eb71636fbd6692e747ef8775cb2559542e3b9"
+    sha256 cellar: :any, arm64_tahoe:   "2d5cee2b523f1b513592c4e3956aca5b59ece5108225afdb4897eee3b4937bbf"
+    sha256 cellar: :any, arm64_sequoia: "2d5539a13b4f20ca6ae4781e7bdd527806edb8f5e696605f13b689d4b982b85e"
+    sha256 cellar: :any, arm64_sonoma:  "609aad7f2b33d0e7542df3faf928f6145cd0f0b8d1b0c16fdfb885499e124334"
+    sha256 cellar: :any, sonoma:        "f3d8b6c86ec6dd5a37a4035db57929508f174142d642564a14578439ba99a939"
+    sha256 cellar: :any, arm64_linux:   "f7031d040e633227b430d1cd77419ccf6d458778e48e5acc6cdce6c1b1edb6db"
+    sha256 cellar: :any, x86_64_linux:  "03c5a402b0544ff1e409085256d95a3b0e81e38ec4db0e57e90c8f6e818b5cc8"
   end
 
   depends_on "cmake" => :build
@@ -36,6 +37,17 @@ class Folly < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Fix fmt 12.2 compat: https://github.com/facebook/folly/pull/2661
+  patch do
+    url "https://github.com/facebook/folly/commit/4091b8d53a07512d9f8ab2b42d2dd0fddef34e35.patch?full_index=1"
+    sha256 "52a2ed7475ba76e54cd902ae035cbc457af565ff0c2cc70453a58fc01b3bc7e9"
+  end
+
+  patch do
+    url "https://github.com/facebook/folly/commit/dd2a73e8a3b7a9e044918507d52a780cb181f63d.patch?full_index=1"
+    sha256 "3b6138a50d31d785817058df5009343b35d52a8386d494e8e5f62202efcc419e"
   end
 
   # Workaround for arm64 Linux error "Missing variable is: CMAKE_ASM_CREATE_SHARED_LIBRARY"

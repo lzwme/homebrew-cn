@@ -4,14 +4,15 @@ class ProtocGenGrpcJava < Formula
   url "https://ghfast.top/https://github.com/grpc/grpc-java/archive/refs/tags/v1.82.0.tar.gz"
   sha256 "079bdef3cb6343e5036e3dd86ce2f535a667e5df540e2b51284b47bfd00a359f"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "962180d23632a81e1df7584942efd6227d96b21c723bfc5249413fbe292f3fed"
-    sha256 cellar: :any, arm64_sequoia: "d6045279afbba64d873980020959f44aaf721b8d5f319f9ce39b1dcd1c6ea796"
-    sha256 cellar: :any, arm64_sonoma:  "22dd298bcdd124e5cc54ead1921045d8abde9755cc7086cf745873e419aef6bc"
-    sha256 cellar: :any, sonoma:        "aeb1791e5eef33bbd6b3c74d0661720997487406d5fb15872e56b5fb023050fb"
-    sha256 cellar: :any, arm64_linux:   "709a19e0fe92d0df73b09ef595b9c44906bf7c8cb28a8fc0b5aae843849835da"
-    sha256 cellar: :any, x86_64_linux:  "f2ee117d20724d56b4e4aa8ca4d905e6fa5e47d462c7099ee03e1b21c2755f2c"
+    sha256 cellar: :any, arm64_tahoe:   "e9eee8bba47ca232a9593f9ad8ee44fe5421d6eaefdd57916167f19c7555731c"
+    sha256 cellar: :any, arm64_sequoia: "62a0febcd7ad0b695ba914e640eb5ff15abcd3b8a80c7cf829402303ba2637d6"
+    sha256 cellar: :any, arm64_sonoma:  "26f165ade573dc3df69a963a7c9ffd4ce590764a94481533350943861123408f"
+    sha256 cellar: :any, sonoma:        "f83e7717a667bc6c23bf067e89d27954e8c6c6a6c873ff05c2d0ef9fcf784f2b"
+    sha256 cellar: :any, arm64_linux:   "3788f0beb822af4bf85f94ef41226e7734e3ddcf1c52313360d49016c78cf5c7"
+    sha256 cellar: :any, x86_64_linux:  "a5a9ecc1665fb475494836741a442bb7791cc5cd38f44f6ddb423c440e25cff8"
   end
 
   depends_on "gradle@8" => :build

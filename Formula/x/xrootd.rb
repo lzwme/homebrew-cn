@@ -1,20 +1,20 @@
 class Xrootd < Formula
   desc "High performance, scalable, fault-tolerant access to data"
   homepage "https://xrootd.slac.stanford.edu/"
-  url "https://ghfast.top/https://github.com/xrootd/xrootd/releases/download/v6.0.3/xrootd-6.0.3.tar.gz"
-  mirror "https://xrootd.slac.stanford.edu/download/v6.0.3/xrootd-6.0.3.tar.gz"
-  sha256 "4b02d60bdfd67177f55df2252f2463d5304fc22ae1fc33223d36f2a836d0f44e"
+  url "https://ghfast.top/https://github.com/xrootd/xrootd/releases/download/v6.1.0/xrootd-6.1.0.tar.gz"
+  mirror "https://xrootd.slac.stanford.edu/download/v6.1.0/xrootd-6.1.0.tar.gz"
+  sha256 "f50a835def0c5b2ff65d377ebbeed42cf1efe243ecd599218ff441a67854859e"
   license "LGPL-3.0-or-later"
   compatibility_version 1
   head "https://github.com/xrootd/xrootd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2d53116999d4cb901eb6486d6f5d252bd93d8945a73eefc73793288dfc10568c"
-    sha256 cellar: :any, arm64_sequoia: "c76219ff60f337829ccc5aac5ff9753603609f502ed6f5b6933a121148dee1b5"
-    sha256 cellar: :any, arm64_sonoma:  "7f4a6600744e60960cb00ffcc4c91c776ce182d8de30fb1282f1bfdea26fc433"
-    sha256 cellar: :any, sonoma:        "b14e76833b00fa43b95fe3bf23842b7da0b06f3d4c891bb76bcea650b4003743"
-    sha256 cellar: :any, arm64_linux:   "74ba7bf6c92c7a3ebf4f112813772808a104ed9850ce6002409296d95f5a46a6"
-    sha256 cellar: :any, x86_64_linux:  "74385d9450ede5025ea05ad03abe00b8ce63424d944c4c70f9ff82f0af633b0b"
+    sha256 cellar: :any, arm64_tahoe:   "665aa524c3901ce8f142ceb44d3e23cf137d9d5f71d42e4976506764d680c679"
+    sha256 cellar: :any, arm64_sequoia: "64f9e0034fc4eda46e9f2438e8cd5536f9018639e8abef951dc949e3baa60df2"
+    sha256 cellar: :any, arm64_sonoma:  "6e98f8766ef8cc52589aa11bf17a7c444362cca41c25dcec31d72fad50350c74"
+    sha256 cellar: :any, sonoma:        "0fc143346b699b549f301c547a30de6f7e162327a8b440db781421acb1424da0"
+    sha256 cellar: :any, arm64_linux:   "83e176d7678dd5c56a225135a63fd0a4f17d7addafc01b3ecea9862cd0840064"
+    sha256 cellar: :any, x86_64_linux:  "32eac51cf6d6b2609e822fc4bda415cc112a23487c59b5bd19708383d6d6ba26"
   end
 
   depends_on "cmake" => :build

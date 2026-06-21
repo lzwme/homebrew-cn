@@ -31,14 +31,12 @@ class KyotoTycoon < Formula
 
   # Build patch (submitted upstream)
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/kyoto-tycoon/0.9.56.patch"
-    sha256 "7a5efe02a38e3f5c96fd5faa81d91bdd2c1d2ffeb8c3af52878af4a2eab3d830"
+    file "Patches/kyoto-tycoon/0.9.56.patch"
   end
 
   # Homebrew-specific patch to support testing with ephemeral ports (submitted upstream)
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/kyoto-tycoon/ephemeral-ports.patch"
-    sha256 "736603b28e9e7562837d0f376d89c549f74a76d31658bf7d84b57c5e66512672"
+    file "Patches/kyoto-tycoon/ephemeral-ports.patch"
   end
 
   def install

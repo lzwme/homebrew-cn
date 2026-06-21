@@ -162,8 +162,7 @@ class Glibc < Formula
 
   # Backport of various test suite fixes
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/431b170696708f36aa0bd51139406e26ade0a7eb/Patches/glibc/2.39-test-fixes.patch"
-    sha256 "1a7a6481d03ce23bdc2385413ac1784684e3e1f72f68ce7f720755abfae2f4e9"
+    file "Patches/glibc/2.39-test-fixes.patch"
   end
 
   def install

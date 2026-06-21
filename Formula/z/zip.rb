@@ -53,8 +53,7 @@ class Zip < Formula
   # Fix compile with newer Clang
   # Otherwise configure thinks memset() and others are missing
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/zip/xcode15.diff"
-    sha256 "99cb7eeeb6fdb8df700f40bfffbc30516c94774cbf585f725d81c3224a2c530c"
+    file "Patches/zip/xcode15.diff"
   end
 
   def install

@@ -39,8 +39,7 @@ class Dirac < Formula
   # HACK: the configure script, which assumes any compiler that
   # starts with "cl" is a Microsoft compiler
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/dirac/1.0.2.patch"
-    sha256 "8f77a8f088b7054855e18391a4baa5c085da0f418f203c3e47aad7b63d84794a"
+    file "Patches/dirac/1.0.2.patch"
   end
 
   def install

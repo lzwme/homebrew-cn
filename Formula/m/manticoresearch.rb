@@ -1,8 +1,8 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https://manticoresearch.com"
-  url "https://ghfast.top/https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/25.0.0.tar.gz"
-  sha256 "9ee49b6a876ece2058c848aa5a2e87d2a4db8ebbcc925836fc760962a84fb0fb"
+  url "https://ghfast.top/https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/27.1.5.tar.gz"
+  sha256 "ddfc210ada19b0551b7274411ac9a46cbf7049722955cbf42b545cacf5aa5238"
   license all_of: [
     "GPL-3.0-or-later",
     "GPL-2.0-only", # wsrep
@@ -10,7 +10,7 @@ class Manticoresearch < Formula
     { any_of: ["Unlicense", "MIT"] }, # uni-algo (our formula is too new)
   ]
   version_scheme 1
-  head "https://github.com/manticoresoftware/manticoresearch.git", branch: "master"
+  head "https://github.com/manticoresoftware/manticoresearch.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -21,12 +21,12 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "67c2e79378210fdbd67a2e88ae51b043758a20c163653e59640e3faf387580ff"
-    sha256 arm64_sequoia: "8a505dfeba395d354ca33d866a62193bb573e4f1a88a7b148e66052a351426c9"
-    sha256 arm64_sonoma:  "8eaa016cb689a4b83a3d1c4f446f8a9b94cc6b83d491954669b9e15f8c2e31f8"
-    sha256 sonoma:        "b48c4066eef4c604caf32da79a9c4f2e92fb50aab483a17adb6180f8a050b860"
-    sha256 arm64_linux:   "8bd546d39cee024ff23644152d5bed12200d92a289ddf123e4731901293734fa"
-    sha256 x86_64_linux:  "831cec3202e72a4c5c09055d18066d93de1ca954bae902bfda833ffc86c5d87b"
+    sha256 arm64_tahoe:   "f474e41974ff478b117392cc63680a525bff5e5fc36f5de57d37c895b0758a19"
+    sha256 arm64_sequoia: "75fffa04365ad0bbb8999d15335820afc230e5c99db3f1f1e7239b1377089a23"
+    sha256 arm64_sonoma:  "a65459a446ebe231a604317cfa0ee84dd4cc1c83e274b14e43bae25f6be40cac"
+    sha256 sonoma:        "b1d7f4254125e44733a9ccd7c3d556cb1a62041c1b9ea7cc8a3dbd89faceca18"
+    sha256 arm64_linux:   "15dcc7fb608c63e725f374424882775dd9ae5a4e4bd7809e5ed64ed5f1ddf479"
+    sha256 x86_64_linux:  "7b46848ca148acafdfe73e498aa25a6b16dec6c0f1ae2d03f47675c29470b967"
   end
 
   depends_on "cmake" => :build
@@ -53,8 +53,12 @@ class Manticoresearch < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # Workaround for Boost 1.89.0 until fixed upstream.
-  # Issue ref: https://github.com/manticoresoftware/manticoresearch/issues/3673
+  # Workarounds for building with Boost 1.89+ and GCC, until fixed upstream:
+  # - galera: disable Boost (Boost.System stub removed in 1.89)
+  #   Issue ref: https://github.com/manticoresoftware/manticoresearch/issues/3673
+  # - searchdbuddy: include Boost.Process v1 environment header
+  #   (`<boost/process.hpp>` now pulls Process v2 where `environment` is a namespace)
+  # - sortergroup: drop redundant `using` that GCC rejects as private
   patch :DATA
 
   def install
@@ -130,3 +134,27 @@ index 0ffa9caf1..806c929b4 100644
 -# file configured from cmake/galera-imported.cmake.in
 \ No newline at end of file
 +# file configured from cmake/galera-imported.cmake.in
+diff --git a/src/searchdbuddy.cpp b/src/searchdbuddy.cpp
+index 39985f6..9c83062 100644
+--- a/src/searchdbuddy.cpp
++++ b/src/searchdbuddy.cpp
+@@ -24,6 +24,7 @@
+ #include <boost/process/v1/error.hpp>
+ #include <boost/process/v1/handles.hpp>
+ #include <boost/process/v1/io.hpp>
++#include <boost/process/v1/env.hpp>
+ #else
+ #include <boost/process.hpp>
+ #endif
+diff --git a/src/sortergroup.cpp b/src/sortergroup.cpp
+index 13c4feb..d1f91ad 100644
+--- a/src/sortergroup.cpp
++++ b/src/sortergroup.cpp
+@@ -347,7 +347,6 @@ protected:
+ 	using BaseGroupSorter_c::AggrSetup;
+ 	using BaseGroupSorter_c::AggrUpdate;
+ 	using BaseGroupSorter_c::AggrUngroup;
+-	using BaseGroupSorter_c::AggrDiscard;
+ 
+ 	using CSphMatchQueueTraits::m_iSize;
+ 	using CSphMatchQueueTraits::m_dData;

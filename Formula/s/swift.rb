@@ -150,8 +150,7 @@ class Swift < Formula
     # Workaround Homebrew sqlite3 not being found.
     # https://github.com/swiftlang/swift-llbuild/issues/901
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/swift/llbuild-sqlite3.patch"
-      sha256 "184ce34784c532ec72d71673218fedb72dc09fdff13fd94c2331e1696d329def"
+      file "Patches/swift/llbuild-sqlite3.patch"
     end
   end
 
@@ -174,8 +173,7 @@ class Swift < Formula
 
     # Fix for lld to find -lsqlite3 when auto-linking is done via CMake
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/swift/swiftpm-sqlite3.patch"
-      sha256 "78a13abd5a301a3172c3c72ad19a5f1bcfd6c7f142ee90b9417124923dbdd6d1"
+      file "Patches/swift/swiftpm-sqlite3.patch"
     end
   end
 
@@ -359,8 +357,7 @@ class Swift < Formula
   # This fixes output binaries from `swiftc` having a runpath pointing to the Cellar.
   # This should only be removed if an alternative solution is implemented.
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/swift/homebrew-resource-dir.diff"
-    sha256 "5210ca0fd95b960d596c058f5ac76412a6987d2badf5394856bb9e31d3c68833"
+    file "Patches/swift/homebrew-resource-dir.diff"
   end
 
   # Fix linkage test failure on Linux for missing libswiftCore.so as RPATH was not updated for

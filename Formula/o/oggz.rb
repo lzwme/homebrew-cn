@@ -27,8 +27,7 @@ class Oggz < Formula
 
   # build patch to include `<inttypes.h>` to fix missing printf format macros
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/liboggz/1.1.2-inttypes.patch"
-    sha256 "0ec758ab05982dc302592f3b328a7b7c47e60672ef7da1133bcbebc4413a20a3"
+    file "Patches/liboggz/1.1.2-inttypes.patch"
   end
 
   def install

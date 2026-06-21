@@ -46,8 +46,7 @@ class Dynare < Formula
     # [^2]: https://git.dynare.org/Dynare/dynare/-/commit/6ff7d4c56c26a2b7546de633dbcfe2f163bf846d
     # [^3]: https://git.dynare.org/Dynare/dynare/-/issues/1977
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/c49717c390cb2e587793b2db757c1f445f096219/Patches/dynare/clang.diff"
-      sha256 "2d174336fc8db4d8989cda214a972ef49c6302bb12a64d717140869e546e17d0"
+      file "Patches/dynare/clang.diff"
     end
   end
 

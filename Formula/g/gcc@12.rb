@@ -39,8 +39,7 @@ class GccAT12 < Formula
   # Branch from the Darwin maintainer of GCC, with a few generic fixes and
   # Apple Silicon support, located at https://github.com/iains/gcc-12-branch
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/8ce16876120a7c9b08682f6128e24aca41ebac60/Patches/gcc/gcc-12.4.0.diff"
-    sha256 "6178f6473bd2c225ed80745834d584e1c3beff9597f5afa982f249efb39ca084"
+    file "Patches/gcc/gcc-12.4.0.diff"
   end
   # Backport commits to build on Sonoma/Sequoia to allow rebottling.
   # TODO: create merged patch if https://github.com/iains/gcc-12-branch is synced to 12.5.0

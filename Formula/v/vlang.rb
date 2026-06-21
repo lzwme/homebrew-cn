@@ -34,8 +34,7 @@ class Vlang < Formula
 
     on_big_sur :or_older do
       patch do
-        url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/vlang/vc.patch"
-        sha256 "0e0a2de7e37c0b22690599c0ee0a1176c2c767ea95d5fade009dd9c1f5cbf85d"
+        file "Patches/vlang/vc.patch"
       end
     end
   end

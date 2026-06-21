@@ -4,10 +4,9 @@ class Pytorch < Formula
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
   # TODO: Restore pybind11 dependency after https://github.com/pytorch/pytorch/pull/175115
-  url "https://ghfast.top/https://github.com/pytorch/pytorch/releases/download/v2.12.0/pytorch-v2.12.0.tar.gz"
-  sha256 "7cc1deb309f402ad67e9f45bbe311a40def4db19d66fddb9b01950f9bfc5ccb1"
+  url "https://ghfast.top/https://github.com/pytorch/pytorch/releases/download/v2.12.1/pytorch-v2.12.1.tar.gz"
+  sha256 "757145cfd55c7c8c01f58c959f76230641cc67fdd1d8b6a130f93ad1bc116f5f"
   license "BSD-3-Clause"
-  revision 1
   compatibility_version 2
 
   livecheck do
@@ -16,12 +15,12 @@ class Pytorch < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fe4bab2d6ff953b2db268e51786b0ed45689c44512f262ac0a648501886e788e"
-    sha256 cellar: :any,                 arm64_sequoia: "31cfc14c428fb585cf25d9e036c8023f4e45828e8c32869fe901040bea446d2b"
-    sha256 cellar: :any,                 arm64_sonoma:  "4734e9f7318c09fd45ae7b56f4723d81cce70e143df0cbfbc2f6788c594cf78c"
-    sha256 cellar: :any,                 sonoma:        "64c341a1f073a5d5f913b7eff1a6795248af7c65cdb5fef0276f7f935bc62a62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "77642916937b802ec248a187f73cf05a291027c15217fef4750862c7e58cd867"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c619b91601afa5fdd7a291c916ccfa30268e464c263487474afa10b85ff76750"
+    sha256 cellar: :any, arm64_tahoe:   "4661b65e25c165688e42f0e3babdfeb5d9948f058cc695635772cbda8d4a9794"
+    sha256 cellar: :any, arm64_sequoia: "034bdfc3585bbc7f6544f5987d335a6d3c90ccdd0b6ecc1d3a79e5d546b8abc7"
+    sha256 cellar: :any, arm64_sonoma:  "0f79307560290303e94baa9cc13a7470f0bfad719a2e64fac0a8b70d1245a809"
+    sha256 cellar: :any, sonoma:        "c4deda145abd09239d85509d9a06bfbcbff62cd9f687ec6023425dab788c611e"
+    sha256 cellar: :any, arm64_linux:   "42b5668e304cc524a9473e6fbd4065b5551d3be1d6a8da7b7ad893a4761885cd"
+    sha256 cellar: :any, x86_64_linux:  "c8641b464051bef3f35b8fc499127f3749d4c21f970180fe3d7bb0ef79a3812c"
   end
 
   depends_on "cmake" => :build
@@ -46,16 +45,16 @@ class Pytorch < Formula
 
   pypi_packages package_name:     "torch[opt-einsum]",
                 extra_packages:   %w[pyyaml packaging],
-                exclude_packages: "numpy"
+                exclude_packages: %w[cuda-bindings numpy]
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/b5/fe/997687a931ab51049acce6fa1f23e8f01216374ea81374ddee763c493db5/filelock-3.29.0.tar.gz"
-    sha256 "69974355e960702e789734cb4871f884ea6fe50bd8404051a3530bc07809cf90"
+    url "https://files.pythonhosted.org/packages/e6/dc/be6cbe99670cd6e4ad387123647cb08e0c32975e223f82551e914c5568a6/filelock-3.29.4.tar.gz"
+    sha256 "10cdb3656fc44541cdf30652a93fb10ec6b05325620eb316bd26893e4201538a"
   end
 
   resource "fsspec" do
-    url "https://files.pythonhosted.org/packages/d5/8d/1c51c094345df128ca4a990d633fe1a0ff28726c9e6b3c41ba65087bba1d/fsspec-2026.4.0.tar.gz"
-    sha256 "301d8ac70ae90ef3ad05dcf94d6c3754a097f9b5fe4667d2787aa359ec7df7e4"
+    url "https://files.pythonhosted.org/packages/10/a1/ae4e3e5003468d6391d2c77b6fa1cd73bd5d13511d81c642d7b28ac90ed4/fsspec-2026.6.0.tar.gz"
+    sha256 "f5bac145310fe30e16e1471bd6840b2d990d609e872251d7e674241822abf01a"
   end
 
   resource "jinja2" do

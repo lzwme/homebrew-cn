@@ -7,16 +7,16 @@ class Pachi < Formula
     "GPL-2.0-only",
     "BSD-2-Clause", # `caffe`
   ]
-  revision 1
+  revision 2
   head "https://github.com/pasky/pachi.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "1bc55f25057fc75c31a45d3887c455d6f74809460ff50695c402ace6a044c7e4"
-    sha256 arm64_sequoia: "0f2b0239a24f99166fc25832f2464d75fd762fd3f220b469a777162de0d7a828"
-    sha256 arm64_sonoma:  "4a9bdbac1671bb9d336a527e3d6b2a3818d9ecbdc6f8971c8dd97cff1c4055c3"
-    sha256 sonoma:        "a874beecf09e5e832bdaca0fe0e11fb42f6c95e22af45e7cdd361c6e240641cd"
-    sha256 arm64_linux:   "52ec8533efb4237bdf8df80b2039dffd5bb3e3a2b4ea4f1b53d51f125e62f9c2"
-    sha256 x86_64_linux:  "5d5825090f41fb5f6df6bb0cad64e52c84459169e16b72ba00e00e7a04cea2c8"
+    sha256 arm64_tahoe:   "9c680fcecde6bc56ced1e2c279d637e8ff0be40dc926aaaf74f7066d9ebbe821"
+    sha256 arm64_sequoia: "28c46d0ac33419c4c2ec6b199f7873b11dad54edc17d8f226c3782f976adab35"
+    sha256 arm64_sonoma:  "6b13b8bf52eb3d56894d9b8aa9b45f11ef7adbb5f6c2bbbf8c7d09bbe03397a2"
+    sha256 sonoma:        "f1a10b33fa052a03675723ebc485a872f8d1a3b34bb5c6a4fee83fd76ab86f21"
+    sha256 arm64_linux:   "e87f49e19878ec55bbed986afb7a64e47d42e5a250a0924f6b6cc5fa42a0ac6d"
+    sha256 x86_64_linux:  "00eb1888e290b3ea8a1fd4b637c1daf792166872b58ca13c675d9fa8be053041"
   end
 
   depends_on "cmake" => :build
@@ -37,8 +37,7 @@ class Pachi < Formula
     # Modern-toolchain fixes: drop header-only boost::system, update
     # SetTotalBytesLimit for protobuf 3.6+, replace std::random_shuffle.
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/ea0b351d/Patches/pachi/caffe-modern-toolchain.patch"
-      sha256 "47c872c831ca1bcabe102fd2a68842d2c80086c9f295328e785814fae189d7a4"
+      file "Patches/pachi/caffe-modern-toolchain.patch"
     end
   end
 

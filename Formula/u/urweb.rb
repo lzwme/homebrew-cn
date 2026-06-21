@@ -26,14 +26,12 @@ class Urweb < Formula
 
   # Patch to fix build for icu4c 68.2
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/urweb/icu4c68-2.patch"
-    sha256 "8ec1ec5bec95e9feece8ff4e9c0435ada0ba2edbe48439fb88af4d56adcf2b3e"
+    file "Patches/urweb/icu4c68-2.patch"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+    file "Patches/libtool/configure-big_sur.diff"
   end
 
   def install

@@ -39,16 +39,13 @@ class Musepack < Formula
 
   # Backport upstream fixes from SVN for `-fno-common` and installing shared library
   patch :p0 do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/musepack/r479.patch"
-    sha256 "efef0421e3bb25c065c5e77d6c2e4bcdcc89fbcb03c7a7cfd7565ee5478fc8ba"
+    file "Patches/musepack/r479.patch"
   end
   patch :p0 do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/musepack/r482.patch"
-    sha256 "b147cc7effe9230401a0a865fdea1805be8eb26a24059bb36e39da1012e8da4b"
+    file "Patches/musepack/r482.patch"
   end
   patch :p0 do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/musepack/r491.patch"
-    sha256 "9003ff9c3e939dc880cc1ab1a46626eb9cf67a27b2610e7bac0945256bbb5cab"
+    file "Patches/musepack/r491.patch"
   end
 
   # Apply Gentoo patches for fixing parallel build and another `-fno-common` issue

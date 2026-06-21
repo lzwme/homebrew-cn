@@ -12,19 +12,22 @@ class Smlnj < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "93b1219027b0abcf80a71243e1607c50fc2a5849a734ae89190ce43d1168f5f6"
-    sha256 arm64_sequoia: "bb5a27da68e44310858f4df611cdc5f125c8da814d06c188191349ae0aafc113"
-    sha256 arm64_sonoma:  "13b5078c334318acab15ea2b2fd17ead939552f7a5e0c620d696f90feb42cf96"
-    sha256 sonoma:        "d6da8b8a343b1582f652980f6a08410d2f0f4e9ff0e6dd30ec32c2072347d3cc"
-    sha256 arm64_linux:   "141e547aa173e6a4c24667d29daa04547b2fefd2eaeeec702e3eb472036acb9a"
-    sha256 x86_64_linux:  "213f6ba81cdecb49d155373e72106177a625bb2310419df123e7292791dd06bf"
+    rebuild 1
+    sha256 arm64_tahoe:   "c7e181578cf2fc684e4894f40ca0537b6e1bf14eea5e6d024bf54e531f2848b5"
+    sha256 arm64_sequoia: "602e9365b6d5395cc83f40be0a26fb456a7d472deeef23a650f0f88cc466cb29"
+    sha256 arm64_sonoma:  "955e5427747a25e5faeddd7ad6fbc67ac15e09aaf5a037c76e8b40f24f5e4ecc"
+    sha256 sonoma:        "292a91c62f8b2d3c71564c27aea673e5a4158f76114cfad31aab3de2c2a6ba2b"
+    sha256 arm64_linux:   "e630cd54b1d783b275fcfca53f70755fd3bf3e7425832c67ed69f9b94c8bb6ff"
+    sha256 x86_64_linux:  "b9fdf377406f5c744d1b9d61909b4d47c427c307c7a1dcb68f0c91520790fc47"
   end
 
   depends_on "autoconf" => :build
   depends_on "cmake" => :build
   depends_on "python@3.14" => :build
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   resource "bootarchive" do
     on_arm do

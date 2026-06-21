@@ -11,8 +11,7 @@ class Cwb3 < Formula
     # Backport support for PCRE2 to help with EOL `pcre` deprecation
     # https://sourceforge.net/p/cwb/code/1831/
     patch :p0 do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/071dacd02a9613204ca265eeb18fe74a1a838329/Patches/cwb3/r1831.diff"
-      sha256 "b20d91efc9eb7bc515880ba9a29f49c553615cc9ab1cfbc6d09638ad677de4a7"
+      file "Patches/cwb3/r1831.diff"
     end
   end
 

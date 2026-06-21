@@ -15,13 +15,19 @@ class Anyquery < Formula
     sha256 cellar: :any,                 x86_64_linux:  "00a2af01fb4fa1804c998689309855c6b6cf080d2304d787c56e3e9d0bde4162"
   end
 
-  # unpin Go when Anyquery supports Go 1.26
-  # (when go.mod references vitess > v23.0.2, ref https://github.com/vitessio/vitess/pull/19367)
-  depends_on "go@1.25" => :build
+  depends_on "go" => :build
   depends_on "mysql-client" => :test
 
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
+    # TODO: remove when vitess has https://github.com/vitessio/vitess/pull/19367
+    # https://github.com/julien040/anyquery/issues/79
+    vitess_version = (buildpath/"go.mod").read.match(%r{vitess.io/vitess v(.*)})[1]
+    odie "Remove inreplace workaround!" if Version.new(vitess_version) > "0.23.2"
+    system "go", "mod", "vendor"
+    inreplace "vendor/vitess.io/vitess/go/hack/ensure_swiss_map.go", "!goexperiment.swissmap",
+                                                                     "!goexperiment.swissmap && !go1.26"
 
     tags = %w[
       vtable

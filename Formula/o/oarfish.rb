@@ -6,18 +6,22 @@ class Oarfish < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "97b191385b9c87a080f4114487766148bd881481e9385771c86d48225160bd3e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab18a2ca9ce121fc380b4b0aa577b3694c6841a8ba5afb5cdbb848e86514c1d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0fb702c0ff0a6f5925860f37f6cb8d6ff98aa81d8ce4e16d32b59e9aa09d547"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9df4db569d3a4e1ac35af390c4b7f34fdf20ff424637757522657970d5233440"
-    sha256 cellar: :any,                 arm64_linux:   "7636627e3e9dfc3e6a6fe5ef86c405fcab5bc0b6bfdab55afcb721ccebc0ede8"
-    sha256 cellar: :any,                 x86_64_linux:  "6c12bfb6d937fdd394f97fe00e4aedba33ddf6ee3854870667e29df98cf61f5c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d5ce9664be4d5ae8fcf8e7d4c0b35cedbf3e8da5023b1b1005c50840d47b24f6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3adb87ebc03995dd9df4c731f4b36058ef08fd2b3e7eb51e25680bcb8a782b39"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fde6f151d919ee41b3bdf46fb2a1b610b763d264a9e028446a133a55be6b4dd7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a73f608ab6699602d615e4e70e5d1203548ec53a97876889307ee610944c7094"
+    sha256 cellar: :any,                 arm64_linux:   "f8941d5ae8df1e577b50d16f76d60478d3c1860fadae6937a8845d3b0b4ef948"
+    sha256 cellar: :any,                 x86_64_linux:  "d18673039270574205c4d5cccb044877c97b9e927c3ac8a3572f2c08b2b966a8"
   end
 
   depends_on "rust" => :build
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

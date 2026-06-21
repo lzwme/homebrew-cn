@@ -40,14 +40,12 @@ class Irrlicht < Formula
 
   # Use libraries from Homebrew or macOS
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/d16313ce/Patches/irrlicht/use-system-libs.patch"
-    sha256 "70d2534506e0e34279c3e9d8eff4b72052cb2e78a63d13ce0bc60999cbdb411b"
+    file "Patches/irrlicht/use-system-libs.patch"
   end
 
   # Update Xcode project to use libraries from Homebrew and macOS
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/irrlicht/xcode.patch"
-    sha256 "2cfcc34236469fcdb24b6a77489272dfa0a159c98f63513781245f3ef5c941c0"
+    file "Patches/irrlicht/xcode.patch"
   end
 
   def install

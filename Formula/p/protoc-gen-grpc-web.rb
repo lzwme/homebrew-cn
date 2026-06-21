@@ -4,7 +4,7 @@ class ProtocGenGrpcWeb < Formula
   url "https://ghfast.top/https://github.com/grpc/grpc-web/archive/refs/tags/2.0.2.tar.gz"
   sha256 "0f0c8c0c1104306d67dad678be7c14efe52a698795a58b2b72ab67a8bb100c15"
   license "Apache-2.0"
-  revision 5
+  revision 6
 
   livecheck do
     url :stable
@@ -12,12 +12,12 @@ class ProtocGenGrpcWeb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "eca3efd24cbd6bbd502e6e85ad606fb34b6b4db00f9cc8648bdd3b28440e5abc"
-    sha256 cellar: :any,                 arm64_sequoia: "4d017bbf599ddf51e85fe2d2ecee539300e19e94c7dcf6547d90aeccc6363dc8"
-    sha256 cellar: :any,                 arm64_sonoma:  "72aab74e8cb9e4aac2e2ff3bd84010473e7f87d0e2b6a602e7472c0649263aeb"
-    sha256 cellar: :any,                 sonoma:        "a9269a12cdbb61272be1be21b8085ee356b3c27898eca1b8a518ddc1a0924843"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "12f2a1a5eb3605977bd2df8ae13e711369b78773a745e18473c09329a2e7c992"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8aee26e9c6442e2f46c7d2ed955fd7f477db739b2c0bc019738ed3f0dc465241"
+    sha256 cellar: :any, arm64_tahoe:   "9c631d0ad25f903f8cb8e91a37edd017cf195fe4c2726f05067d6578198543d6"
+    sha256 cellar: :any, arm64_sequoia: "e330c3e95cffbecd62f20b302e418c815329f33bafe6b1ddc8591c87e7c036cc"
+    sha256 cellar: :any, arm64_sonoma:  "3fe9bb2b2d8b8421fdebfbb1d2b297189ba99c658ada569554859fe2651d11ac"
+    sha256 cellar: :any, sonoma:        "4aa6d2b9dd9dcc5f5ea1962e2ce7d1d18729639702e1d3890ff4e333f3d7826b"
+    sha256 cellar: :any, arm64_linux:   "f75da1d59baf3fdb3354b13606544ab4b5f93454dce242fb0904449264a06d1d"
+    sha256 cellar: :any, x86_64_linux:  "589e1d374217322d70be03f32c8fb102e1a072a0de98a4679836186fe965a3f7"
   end
 
   depends_on "cmake" => :build
@@ -30,8 +30,7 @@ class ProtocGenGrpcWeb < Formula
 
   # Workaround to build with Protobuf 30+. Issue ref: https://github.com/grpc/grpc-web/issues/1522
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/d0b7cf85a11a9acfa1a422305948dff6621bbda9/Patches/protoc-gen-grpc-web/protobuf-30.diff"
-    sha256 "9c7e0ddf5ba68c179e7b8edc2c48de5b9b9d4801a6c8fd93ee199e27291aeebd"
+    file "Patches/protoc-gen-grpc-web/protobuf-30.diff"
   end
 
   def install

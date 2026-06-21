@@ -44,18 +44,15 @@ class Nvi < Formula
   # Patches per MacPorts
   # The first corrects usage of BDB flags.
   patch :p0 do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/nvi/patch-common__db.h"
-    sha256 "d6c67a129cec0108a0c90fd649d79de65099dc627b10967a1fad51656f519800"
+    file "Patches/nvi/patch-common__db.h"
   end
 
   patch :p0 do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/nvi/patch-dist__port.h.in"
-    sha256 "674adb27810da8f6342ffc912a54375af0ed7769bfa524dce01600165f78a63b"
+    file "Patches/nvi/patch-dist__port.h.in"
   end
 
   patch :p0 do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/nvi/patch-ex_script.c.diff"
-    sha256 "742c4578319ddc07b0b86482b4f2b86125026f200749e07c6d2ac67976204728"
+    file "Patches/nvi/patch-ex_script.c.diff"
   end
 
   patch :p0 do

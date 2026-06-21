@@ -46,8 +46,7 @@ class LlvmAT17 < Formula
   # Fix arm64 misoptimisation in some cases.
   # https://github.com/Homebrew/homebrew-core/issues/158957
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/llvm/17.x-arm64-opt.patch"
-    sha256 "0e312207fd9474bd26f4a283ee23d94b334d3ec8732086d30bce95f7c8dc2201"
+    file "Patches/llvm/17.x-arm64-opt.patch"
   end
 
   def python3

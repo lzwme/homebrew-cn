@@ -4,7 +4,7 @@ class Terragrunt < Formula
   url "https://ghfast.top/https://github.com/gruntwork-io/terragrunt/archive/refs/tags/v1.0.8.tar.gz"
   sha256 "a5cdd3703944646d5d3cf2ee0b168e1b5b4873fa40fc0e558f59e9286455746d"
   license "MIT"
-
+  head "https://github.com/gruntwork-io/terragrunt.git", branch: "main"
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
   # necessary to use the `GithubLatest` strategy.

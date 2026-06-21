@@ -29,8 +29,7 @@ class Dbxml < Formula
 
   # No public bug tracker or mailing list to submit this to, unfortunately.
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/2c3abc44ccac26dc8ecf09a8fb6cf33f47b5cfc9/Patches/dbxml/cxx11.patch"
-    sha256 "98d518934072d86c15780f10ceee493ca34bba5bc788fd9db1981a78234b0dc4"
+    file "Patches/dbxml/cxx11.patch"
   end
 
   def install

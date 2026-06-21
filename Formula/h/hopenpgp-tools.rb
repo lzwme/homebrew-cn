@@ -9,12 +9,13 @@ class HopenpgpTools < Formula
   head "https://salsa.debian.org/clint/hOpenPGP.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9ed34e785a3cbeff6ea95e7b39aeda7f414e0da121428eb90dd8642c4ec28226"
-    sha256 cellar: :any,                 arm64_sequoia: "91215b8ed2b56500b6827ddb3a0ffe02c97f11312a1bd23d2dee8e0c9597b243"
-    sha256 cellar: :any,                 arm64_sonoma:  "2892ccd7b57f203042e950e4806a1b1cfe970374a6d88a9a45de3ddba22cd050"
-    sha256 cellar: :any,                 sonoma:        "a483c64b027cd0275d5ff317052e708c706f79054f1b3b130e1fbf4ffc657e6a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "804a0866e6ee6e795186d87f5c963de1e33589899650792f925dfce6735fa569"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "caf063335e13be6ddb1511d2b586659bf80e345b0e53008283a12421ba548a68"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "108ae5759320ebe4feacea758cb57d45d663e855f2ac378d99ea25530dfa933d"
+    sha256 cellar: :any, arm64_sequoia: "c82c7ddb72e6dbacdca99f7003209a7c0c88680c88b667b9732293eb2941650e"
+    sha256 cellar: :any, arm64_sonoma:  "0d7733b2849d961e358155bf7d150dfb26bc5df0463d93feda52ec5d46e67d84"
+    sha256 cellar: :any, sonoma:        "11e58321ad99d82f7769b6a18cd3a43a29aaa1ff77fe65ffb25bdbc52cf9ce18"
+    sha256 cellar: :any, arm64_linux:   "70830db8a70bcfd675ae3d31aa51849a20c254314c492315c15e972c9d2163b4"
+    sha256 cellar: :any, x86_64_linux:  "a5b2216d0ed1cfc6946f2685c9807f56c7ae954a721d11b3c74ca90ee5e1d0f7"
   end
 
   depends_on "cabal-install" => :build
@@ -22,7 +23,7 @@ class HopenpgpTools < Formula
   depends_on "pkgconf" => :build
   depends_on "gnupg" => :test
   depends_on "gmp"
-  depends_on "nettle@3" # https://github.com/stbuehler/haskell-nettle/issues/12
+  depends_on "nettle"
 
   uses_from_macos "libffi"
 
@@ -44,10 +45,24 @@ class HopenpgpTools < Formula
     patch :DATA
   end
 
+  # TODO: remove resource after once haskell-nettle supports Nettle 4
+  # https://github.com/stbuehler/haskell-nettle/issues/12
+  resource "nettle" do
+    url "https://hackage.haskell.org/package/nettle-0.3.1.1/nettle-0.3.1.1.tar.gz"
+    sha256 "d548552c257ad0c64ddec7d4605456b0d0a672ca95eb6a3f761e19c6815acb42"
+
+    # Apply Arch Linux patch until upstream supports Nettle 4
+    patch do
+      url "https://gitlab.archlinux.org/archlinux/packaging/packages/haskell-nettle/-/raw/aeed8e35267fb46cb17b137ecb12d2d34caefdb2/nettle-4.patch"
+      sha256 "7de52534a84bff5f6893ac9267d268990ab2532d73016fa8dc31ef9169cc2c08"
+    end
+  end
+
   def install
     # Workaround to use newer GHC
-    (buildpath/"cabal.project.local").write "packages: . ixset-typed/"
-    (buildpath/"ixset-typed").install resource("ixset-typed")
+    (buildpath/"cabal.project.local").write "packages: . vendor/*/*.cabal"
+    (buildpath/"vendor/ixset-typed").install resource("ixset-typed")
+    (buildpath/"vendor/nettle").install resource("nettle")
 
     # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
     args = ["--allow-newer=base,containers,template-haskell", "--constraint=aeson>=2.2", "--constraint=errors>=2"]

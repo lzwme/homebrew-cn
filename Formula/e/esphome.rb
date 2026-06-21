@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://esphome.io/"
-  url "https://files.pythonhosted.org/packages/73/f5/0535417f6326f2976818c1a707b389255fd949be3499e66ed6bd285353ca/esphome-2026.6.0.tar.gz"
-  sha256 "e1f8085a117d39f71e2ecf005d862602b770f0bcf09b1f369d944af7a2863451"
+  url "https://files.pythonhosted.org/packages/f2/81/d504ec2580f77f413e3591041625a599a20d94ecb3da9031324f7cba5595/esphome-2026.6.1.tar.gz"
+  sha256 "c0313814e69e1bd172db80500a768223bb4439ae007269e8436a04eec1604a32"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -12,12 +12,12 @@ class Esphome < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d2234c0d14dc87f42d162bb2f352acf9f2930f9c4cb255a7ab91bb543bea0518"
-    sha256 cellar: :any, arm64_sequoia: "2f59a01595366d1d88b21915d6f22c5102a983093f5e67ad3e22baadef40982e"
-    sha256 cellar: :any, arm64_sonoma:  "8f4ec9c38de2cf5a8da4228e6711bc033c84d2d1682aec3298dacd83b804fece"
-    sha256 cellar: :any, sonoma:        "ab715df31d057b1ba3300c1ed96c93e1c0c67f38d8fd3b84a56128a7fc32377f"
-    sha256 cellar: :any, arm64_linux:   "f4a3205296cc0a3f66fb306b8c7144781c318d7a9d01b0fd4ed5ef7dab820683"
-    sha256 cellar: :any, x86_64_linux:  "7bde969433832687fe3dc1222b35b77f7e94b508a94e0acc3b31a58ce076390d"
+    sha256 cellar: :any, arm64_tahoe:   "543d9ece0b38783bce1ec6ac4b00d2edaedcf7b1c6fb3e463a18472a848ed378"
+    sha256 cellar: :any, arm64_sequoia: "18a22661f04fcfb3372ec23880feda8157b549dbbfe0cd0b8748ef1b47760f18"
+    sha256 cellar: :any, arm64_sonoma:  "3076e585d621a7538196f86e725711646083471073a1ce47b2194d84d2e19a66"
+    sha256 cellar: :any, sonoma:        "6fd7f2df446dfcda3be8f956d06f978aeb5a2a94ca4b6342ddeae751c122e691"
+    sha256 cellar: :any, arm64_linux:   "d1f29243f966d122f46869c3665edb6033011b23796e5ce8353a021e340ca896"
+    sha256 cellar: :any, x86_64_linux:  "6995ece671dce0ca5212adbb2bf66ecc7f88bf5a54ff955e5c456e870911734c"
   end
 
   depends_on "rust" => :build

@@ -153,11 +153,16 @@ class Pytr < Formula
   end
 
   test do
-    output = shell_output(
-      "#{bin}/pytr --debug-logfile pytr.log login -n +4912345678 -p 1234 2>&1", 1
-    )
-    assert_match "Retrieving AWS WAF token using Playwright", output
-    assert_path_exists testpath/"pytr.log"
-    assert_match "Looks like Playwright was just installed or updated", (testpath/"pytr.log").read
+    output_log = testpath/"pytr.log"
+    pid = spawn bin/"pytr", "--debug-logfile", output_log, "login", "-n", "+4912345678", "-p", "1234"
+    sleep 10
+    sleep 25 if OS.mac? && Hardware::CPU.intel?
+    # headless browser is downloading Playwright on first run, kill the process to avoid waiting for it
+    Process.kill("TERM", pid)
+    Process.wait(pid)
+
+    assert_path_exists output_log
+    assert_match "Retrieving AWS WAF token using Playwright", output_log.read
+    assert_match "Looks like Playwright was just installed or updated", output_log.read
   end
 end

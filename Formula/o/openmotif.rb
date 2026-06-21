@@ -35,8 +35,7 @@ class Openmotif < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+    file "Patches/libtool/configure-big_sur.diff"
   end
 
   # Fix 2-level namespace using MacPorts patch
@@ -51,8 +50,7 @@ class Openmotif < Formula
   # - https://github.com/justinmeiners/classic-colors/issues/12
   # - http://bugs.motifzone.com/show_bug.cgi?id=1715
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/b18bd78945e11e0b43be4445a52beaac3b37a274/Patches/openmotif/fix-anti-aliasing-performance.patch"
-    sha256 "12907f303766cf1601714181c6276d0ebf94d36624eb2bbd8592ec046342ed77"
+    file "Patches/openmotif/fix-anti-aliasing-performance.patch"
   end
 
   def install

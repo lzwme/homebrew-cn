@@ -77,8 +77,7 @@ class Pypy < Formula
   # - Disable Linux tcl-tk detection since the build script only searches system paths.
   #   When tcl-tk is not found, it uses unversioned `-ltcl -ltk`, which breaks build.
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/f3c99d21d0b8fe79a579ef1a7405f10fa18ccde8/Patches/pypy/tcl-tk.diff"
-    sha256 "ed10c9fc9d3a5b8f43ef51c23224605e0ac7bca07aa2e8dc20335b69d13a082f"
+    file "Patches/pypy/tcl-tk.diff"
   end
 
   def install

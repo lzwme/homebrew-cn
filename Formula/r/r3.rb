@@ -10,8 +10,7 @@ class R3 < Formula
 
     # Backport of https://github.com/c9s/r3/commit/c105117b40d1a7b2b9ddf1672cd08b11bd565bd9
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/7ecb03ef6d73f3ed71546fb0c34023f9a23dbd74/Patches/r3/1.3.4.patch"
-      sha256 "c00d9af0b30d94d918cf438834f2ca06e1f756ee56ed0205f9f6f82bf909cb0e"
+      file "Patches/r3/1.3.4.patch"
     end
   end
 

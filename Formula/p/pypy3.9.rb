@@ -56,8 +56,7 @@ class Pypy39 < Formula
   #   When tcl-tk is not found, it uses unversioned `-ltcl -ltk`, which breaks build.
   # Upstream issue ref: https://github.com/pypy/pypy/issues/3538
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/pypy/tcl-tk.diff"
-    sha256 "d17725c11842d83b5432312348715241b1b402173cd68166620c1b6bd8162fbd"
+    file "Patches/pypy/tcl-tk.diff"
   end
 
   def abi_version

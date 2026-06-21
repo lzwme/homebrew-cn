@@ -346,8 +346,7 @@ class AnsibleAT13 < Formula
     # And breaks unmaintained passlib: https://foss.heptapod.net/python-libs/passlib/-/issues/196
     # See also https://github.com/ansible/ansible/issues/85919
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/31c70b01322a41e3337c3c2443940e4b81110c3a/Patches/ansible/passlib-1.7.4.patch"
-      sha256 "16a8c2c3ebc0a1d494567f04a12c1b58fa4f50113b364c7ee8fb39d856882861"
+      file "Patches/ansible/passlib-1.7.4.patch"
     end
   end
 

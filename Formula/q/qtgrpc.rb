@@ -11,7 +11,7 @@ class Qtgrpc < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qtgrpcgen; qtprotobufgen
     "BSD-3-Clause", # *.cmake
   ]
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://code.qt.io/qt/qtgrpc.git", branch: "dev"
 
@@ -20,12 +20,12 @@ class Qtgrpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c2064dcf3e2f303dfec4fb594a63dcd1658c6fb274bcd919e53dca7aaab2fbe5"
-    sha256 cellar: :any,                 arm64_sequoia: "0777d094e44b1fed151d3530a53da034924c9308f7101cd6c72fd6191e1e76c5"
-    sha256 cellar: :any,                 arm64_sonoma:  "0c605f7af918bf9ede0d785fba0d4750fb28e5c5c81b0274b456596b0f3e8a53"
-    sha256 cellar: :any,                 sonoma:        "8c5351666f3a0d3074812a0b9628557180600cd45c8a6e84e34d9f6015639120"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f85344bb4b974e14e1c1c9760d4525a331984bcfa948b9238fb28c860a57d15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fbc28c0d1aa0e98670883fe96456c59216c3be4ce281bf93990573c9aa0dc2b"
+    sha256 cellar: :any, arm64_tahoe:   "d1001cea27ffcbecb05dd6e81fd52bb62672124665923ed0588fd9d8cd0cb385"
+    sha256 cellar: :any, arm64_sequoia: "b6fb4db87f92cd41c01ae366d4336f4baaa55a8a0b7212bd55a2cb2e74ae0d92"
+    sha256 cellar: :any, arm64_sonoma:  "f4a62eeef335d5cef9dac9646d95d5b871e96ae86b840bc725d63d036001bd82"
+    sha256 cellar: :any, sonoma:        "5dfa4f0341c8cde8117ca07298274045876e4885c7ad21dbccf283a4200be41c"
+    sha256 cellar: :any, arm64_linux:   "f5885598a63a9bfa26d519ffd4edee1bf7cfc11ddb5f7f1a27b947e31558bf1e"
+    sha256 cellar: :any, x86_64_linux:  "0b542cde2b2cfc4cbaf93c93967bf42e5a91f6dc8a1c10f3f4647001138a1a75"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -3,19 +3,18 @@ class Shub < Formula
 
   desc "Scrapinghub command-line client"
   homepage "https://shub.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/a7/a7/f812c9881fd8a89b72bdb1c1c4ddc34a7c6ceb4d6756c755abd3af44d247/shub-2.17.1.tar.gz"
-  sha256 "f288fcd9664a47bd9b0cf3c1b7fa7073c6d9a9bb99a0139dc5b9b3df0ed9d98e"
+  url "https://files.pythonhosted.org/packages/8b/f5/19dd9324e6da575a117634e4ee53900d5cb888f89ff4b560cd93c2585387/shub-2.18.0.tar.gz"
+  sha256 "4afb7b0afa7ce8d19946cfd2b5fdd32d6f01691f57d0a60d819d78917b6168c5"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/scrapinghub/shub.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "3cdd21b6c0297bec0f660371faa42f75657fefdd868cd3543718d4c4d8d691d2"
-    sha256 cellar: :any,                 arm64_sequoia: "3edec73d9e581b9f61855a353ed7dee026588f8cfe26ba8f1b0d42ae3a2ef10b"
-    sha256 cellar: :any,                 arm64_sonoma:  "0fba33e644698090059b6a9a5d48b7408ea61d1405566c12250d85266381bb78"
-    sha256 cellar: :any,                 sonoma:        "698f959bb29277dd3c22a1b5af0eb5feface43f24e00c78e9fc31250fa324af9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "01b038520658e437aff78e6836507dc15f0db8e7a71d6724a538db3f0def787e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "229e77e34885b9b3a1274c3238e852a90746a0a4ed8856cad444481d33bec3af"
+    sha256 cellar: :any, arm64_tahoe:   "da3053a3bf943b441b88a31c56ed2f6eb2416a93aa0ba72cbde26bd349c70ba5"
+    sha256 cellar: :any, arm64_sequoia: "6aa3ca21dda9d824fd90968acba67e22863770746574ccd8699b3baf9ddb0690"
+    sha256 cellar: :any, arm64_sonoma:  "b7c90f1132fbd3b58650f06ea963fb67b4cf8948ee5844e0646c01243a5c4999"
+    sha256 cellar: :any, sonoma:        "cbee83c9052945a23015bde90c78b8d408c8dc5ee1eebc9e3fb9ac66716888bc"
+    sha256 cellar: :any, arm64_linux:   "413a9ade416fba767aaeabd0172bd880e77ac592c38f9b795b226426bf8c70a5"
+    sha256 cellar: :any, x86_64_linux:  "549bc627ee9e21e8877fa2ef99ff141c2ab3a6670e3d27b064bb3041dab99cf0"
   end
 
   depends_on "certifi" => :no_linkage
@@ -30,8 +29,8 @@ class Shub < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
+    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
   end
 
   resource "docker" do
@@ -40,13 +39,18 @@ class Shub < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
     sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+  end
+
+  resource "python-dotenv" do
+    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
+    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
   end
 
   resource "pyyaml" do
@@ -55,8 +59,8 @@ class Shub < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
-    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "retrying" do

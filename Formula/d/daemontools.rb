@@ -31,14 +31,12 @@ class Daemontools < Formula
   # Fix build failure due to missing #include <errno.h> on Linux.
   # Patch submitted to author by email.
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/daemontools/errno.patch"
-    sha256 "b7beb4cfe150b5cad1f50f4879d91cd8fc72e581940da4a716b99467d3a14937"
+    file "Patches/daemontools/errno.patch"
   end
 
   # Fix build failure due to missing headers for POSIX-related functions.
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/daemontools/posix-headers.patch"
-    sha256 "288afdf9b7ba4f05a791f714ddea22b0a18020f54face020e45311135f0c92c1"
+    file "Patches/daemontools/posix-headers.patch"
   end
 
   def install

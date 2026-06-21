@@ -1,10 +1,19 @@
 class Sapling < Formula
   desc "Source control client"
   homepage "https://sapling-scm.com"
-  url "https://ghfast.top/https://github.com/facebook/sapling/archive/refs/tags/0.2.20260522-084851+1e764c94.tar.gz"
-  sha256 "2b2d3023ec10478e3d9d4db3240b71bc4068a63dd11f98f11d399372c62a5f9a"
   license "GPL-2.0-or-later"
   head "https://github.com/facebook/sapling.git", branch: "main"
+
+  stable do
+    url "https://ghfast.top/https://github.com/facebook/sapling/archive/refs/tags/0.2.20260522-084851+1e764c94.tar.gz"
+    sha256 "2b2d3023ec10478e3d9d4db3240b71bc4068a63dd11f98f11d399372c62a5f9a"
+
+    # Backport commit for Python 3.13
+    patch do
+      url "https://github.com/facebook/sapling/commit/3b640b74fe351c80d60954c8ea611d4b354187a4.patch?full_index=1"
+      sha256 "4d85e880b1455ebde41d0419f952572e6a71ddb772f4ea594e9abaf80802b4e6"
+    end
+  end
 
   livecheck do
     url :stable
@@ -15,12 +24,13 @@ class Sapling < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_tahoe:   "e1df1cfea4ba640bd468431452b111f3ccf1ac291eab9ab13cffabf48b3ab716"
-    sha256 arm64_sequoia: "5f6a363f717c3e61745f81d6e59190171341ac955847fbdb13ddbbc90846709e"
-    sha256 arm64_sonoma:  "5d20e2c3a4bba72331b754b82390b60cfcba76381dee3913d94e32ee39c726a2"
-    sha256 sonoma:        "b680c8f81da061ae08d5be28af6a80d0fbb40fb2e6e94a91fad5b6de2bc9aa6a"
-    sha256 arm64_linux:   "23ef5aa7df9545abbf8f6463dcf9808c7f53b546fe8a1c349cd2000205de6787"
-    sha256 x86_64_linux:  "92dc9b826802432e6fa75663f9e282b9e082fc4aa166d5f297356c20f40259a8"
+    rebuild 1
+    sha256 arm64_tahoe:   "9294201a8dec757bf5bd55c4a44376894363228b81024a5b3e4717455ad2fe52"
+    sha256 arm64_sequoia: "9e6fdbb40e7ec40cc405cfcec3c719203f0db744cba29e46463241a4c8963d5f"
+    sha256 arm64_sonoma:  "fc7e4f14c5849c393080bc3b9a7b5c33be2c37ad5e8bda36cb49465cbc6b4cc4"
+    sha256 sonoma:        "10738cb4a907d8364db3ade320f3bc7cbe92f95de2f2393c35f3ab80b37732f4"
+    sha256 arm64_linux:   "3c421260021a090f145878201fca5eb7693508d19ee9b446fe24f70f762b7331"
+    sha256 x86_64_linux:  "21e72a841ef9f852836eba10ba4a88a4a7ca074b7fd53585efd60eecf6efe4e3"
   end
 
   depends_on "cmake" => :build
@@ -32,7 +42,7 @@ class Sapling < Formula
   depends_on "libssh2"
   depends_on "node"
   depends_on "openssl@3"
-  depends_on "python@3.12" # Python 3.13 issue: https://github.com/facebook/sapling/issues/980
+  depends_on "python@3.13"
 
   uses_from_macos "llvm" => :build # for libclang
   uses_from_macos "bzip2"
@@ -92,10 +102,10 @@ class Sapling < Formula
       odie "Inreplace did not modify any branch usage in Cargo.toml manifests!" if no_modification
     end
 
-    python3 = "python3.12"
+    python3 = "python3.13"
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["PYTHON_SYS_EXECUTABLE"] = which(python3)
+    ENV["PYTHON_SYS_EXECUTABLE"] = ENV["PYO3_PYTHON"] = which(python3)
     ENV["SAPLING_VERSION"] = if build.stable?
       version
     else

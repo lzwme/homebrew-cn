@@ -6,15 +6,15 @@ class Bagels < Formula
   url "https://files.pythonhosted.org/packages/6e/04/e19a99e357221cb41e1e2f0352172e282ac8195fa2418b776345497fb260/bagels-0.3.12.tar.gz"
   sha256 "c3ebd4a727ddd62450528676a1ce3e475f92bd36edfed5f9c0b110bb24592608"
   license "GPL-3.0-or-later"
-  revision 12
+  revision 13
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9bd2465e246d40e86b37c78d580d7196688ba1c79371618b52ff4afdc1b996bd"
-    sha256 cellar: :any, arm64_sequoia: "cbcc0fd1eb99fa66ff6f25fda8219a995f5baa7ab326c36c6e4515b5c716e39c"
-    sha256 cellar: :any, arm64_sonoma:  "8efa0e7759d83281ad23dfe418045b17a4e1d3a5aab2b4b9b36a4053b94325fb"
-    sha256 cellar: :any, sonoma:        "54705705b93eeacfc9f40aafe39e3f12012376ed5683616f1af2453de320023c"
-    sha256 cellar: :any, arm64_linux:   "6d94d483cb1c75add6c95dd11aeb0731f5f86df4b533909a454cc4eb4504c7fa"
-    sha256 cellar: :any, x86_64_linux:  "8179ff1b89650113af0bfef95f1ceb9f2c8c762c780046b96205e623445d8052"
+    sha256 cellar: :any, arm64_tahoe:   "db8ef6faf610c3cbf10bb961a279b96685c7d5f6b30973d3860c1af045342785"
+    sha256 cellar: :any, arm64_sequoia: "276687b573a97ff95cb45176486d1673bce8ef93e653804e1c9cb812380832dc"
+    sha256 cellar: :any, arm64_sonoma:  "ff7d6f61683213a9f55bd64ff5468f519b5236526575828384d116219c8e7e7a"
+    sha256 cellar: :any, sonoma:        "d93a0b79f7c4cff4cd678cb81e5024bcfb5b1666ad7659f5b4f2a807b4e4e346"
+    sha256 cellar: :any, arm64_linux:   "e5a27fd0dba44bb4dc6fc213d48f76d17ed46908740579bfc4e411a8bb15844a"
+    sha256 cellar: :any, x86_64_linux:  "9c2276139fd32096fa913cfbb82618fda7010adace59a4ce08222837c0bc2302"
   end
 
   depends_on "certifi" => :no_linkage
@@ -116,8 +116,8 @@ class Bagels < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/4d/f2/bfb55a6236ed8725a96b0aa3acbd0ec17588e6a2c3b62a93eb513ed8783f/msgpack-1.1.2.tar.gz"
-    sha256 "3b60763c1373dd60f398488069bcdc703cd08a711477b5d480eecc9f9626f47e"
+    url "https://files.pythonhosted.org/packages/31/f9/c0a1c127f9049db9155afc316952ea571720dd01833ff5e4d7e8e6352dbb/msgpack-1.2.1.tar.gz"
+    sha256 "04c721c2c7448767e9e3f2520a475663d8ee0f09c31890f6d2bd70fd636a9647"
   end
 
   resource "multidict" do
@@ -176,8 +176,8 @@ class Bagels < Formula
   end
 
   resource "sqlalchemy" do
-    url "https://files.pythonhosted.org/packages/57/da/6fbf010c8ebb347679d0d100b22fe9ba5e13fd04046c5df7280d2f0bf706/sqlalchemy-2.0.50.tar.gz"
-    sha256 "af5607d11ef90fd6a5c0549fe0045dce1663d427426bcfb506dcb5346a85a3b9"
+    url "https://files.pythonhosted.org/packages/02/f1/a7a892f18d4d224e6b26f706531eafccc41e37594d37d304786969ee13cb/sqlalchemy-2.0.51.tar.gz"
+    sha256 "804dccd8a4a6242c4e30ad961e540e18a588f6527202f2d6791b01845d59fdc9"
   end
 
   resource "textual" do

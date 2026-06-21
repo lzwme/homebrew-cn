@@ -1,19 +1,18 @@
 class Onnx < Formula
   desc "Open standard for machine learning interoperability"
   homepage "https://onnx.ai/"
-  url "https://ghfast.top/https://github.com/onnx/onnx/archive/refs/tags/v1.21.0.tar.gz"
-  sha256 "42ffedcd8c9b6363694300c6ffec1ada77f9620176465719acb27b13a4d6f2de"
+  url "https://ghfast.top/https://github.com/onnx/onnx/archive/refs/tags/v1.22.0.tar.gz"
+  sha256 "70bb8b25cf31ea9b1d9f94baacfdc8c4fa27a760f9a10f5d93881bc9eede5fbc"
   license "Apache-2.0"
-  revision 1
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "318261d4f65731b8a9cde765378d5198a4b9968cab222dbf770460ac6c0d1b1e"
-    sha256 cellar: :any,                 arm64_sequoia: "11d8ee06f7e47432afc477c391a53a5ee6328e45053df06189f20351ac05e5fd"
-    sha256 cellar: :any,                 arm64_sonoma:  "0b34c5443e41ba3a11c4f494548e2de5a28b84aad5c815c5b2767ab9bc4995d3"
-    sha256 cellar: :any,                 sonoma:        "866c95d071c8f417bf786af5640d128bd8f3ab4a94a8e0e3461c999d8fcd73cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2832dfc30dac6dea46476082aecebac40a35656215f3f1afae7683bcc128a6b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "625b13ef9238957bc1313269772eaccc889b494414fbadf783d2a0ee1b6a6f5d"
+    sha256 cellar: :any, arm64_tahoe:   "fe20a16aee1e14330375f59273bd80ac4c8d4c128a84ce83c7a6b30c22824e41"
+    sha256 cellar: :any, arm64_sequoia: "4cc11ec406bb840dca78a08c65fd29bc1101751a2a446b6cb887d5b79a55d889"
+    sha256 cellar: :any, arm64_sonoma:  "633691c29d813e7cf8c4c20a859870d733be18dac720ef6906fbf295284ddaa2"
+    sha256 cellar: :any, sonoma:        "65fc51dfa759407ddde0ed56c7690e9cef84100ab8dc622786b3615d226ed76c"
+    sha256 cellar: :any, arm64_linux:   "bc53b47a774fc25230118a7ec0c4732724554b0ddcb9b3266666175de7d229f9"
+    sha256 cellar: :any, x86_64_linux:  "115c6b1c438fb6d7a675a257704583ab3ff4f9b5bac489dcfa0f20c542e98616"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -33,6 +32,10 @@ class Onnx < Formula
   end
 
   def install
+    # FIXME: From v1.22+, onnx internals are hidden by default, which breaks
+    # onnxruntime's usage of onnx as a dependency. We need to make them visible again.
+    inreplace "CMakeLists.txt", "CXX_VISIBILITY_PRESET hidden", "CXX_VISIBILITY_PRESET default"
+
     args = %W[
       -DBUILD_SHARED_LIBS=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
