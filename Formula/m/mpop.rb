@@ -22,9 +22,12 @@ class Mpop < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "gettext"
   depends_on "gnutls"
   depends_on "libidn2"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "./configure", *std_configure_args

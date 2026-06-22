@@ -6,15 +6,16 @@ class Jiratui < Formula
   url "https://files.pythonhosted.org/packages/e5/5f/3da090f6c33df7170b9d2a4793f5d1c1b42e8400e9c937c0c0ce32faef56/jiratui-1.9.1.tar.gz"
   sha256 "0fb0a303681dd8301ccf737beac974dde43f880035b8fb68eaf41d55c55857f3"
   license "MIT"
+  revision 1
   head "https://github.com/whyisdifficult/jiratui.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "de7361bffc6cf8e21abed79b5b57ef6b880b653a5d0d8cb54f9ce99cf6571d81"
-    sha256 cellar: :any, arm64_sequoia: "9128c5bd5b84963fae62de396e897bfad4a58518c48226c35e27e1118bd555fa"
-    sha256 cellar: :any, arm64_sonoma:  "f7cb3bcac441d480bdd6362f75af16a0c81a4d79d764dacb70bbeb99a3c49f6d"
-    sha256 cellar: :any, sonoma:        "accd0667b10506e81d3778cee58dae6428207a9af952d5b6babfc88cce2b07a0"
-    sha256 cellar: :any, arm64_linux:   "da864ccebdad364874af02bd4b57c4de0d6b6a3941b6efbc9e89e494001cbec7"
-    sha256 cellar: :any, x86_64_linux:  "2372921ba8726392282046c5d2990169ec1b7ced214105d73a10773a0b0a0851"
+    sha256 cellar: :any, arm64_tahoe:   "f6ee57e0aa376957b749251451829232fb20084d53dbe5ef621e28f4ab9b16b4"
+    sha256 cellar: :any, arm64_sequoia: "5427033776e9a29866158adf06f5fc2fcf68d4033a0ac6a8c29be88482577676"
+    sha256 cellar: :any, arm64_sonoma:  "c52d685aa9f9f97b9714878032389ac77a9d5c992470336d305c72c1dfc2e27f"
+    sha256 cellar: :any, sonoma:        "ba0d3987bca991533a3812fed43a1bc379771f8a55c32f585440add6dc4695ec"
+    sha256 cellar: :any, arm64_linux:   "702ef7f6c4893f8daedec34c2e47a686e3e93f870d3f235642f937847a583735"
+    sha256 cellar: :any, x86_64_linux:  "78d24194e65171e178602b64ca650f22d15e16f63975f8405379c95572af32cd"
   end
 
   depends_on "rust" => :build
@@ -120,8 +121,8 @@ class Jiratui < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/07/60/1d1e59c9c90d54591469ada7d268251f71c24bdb765f1a8a832cee8c6653/pydantic_settings-2.14.1.tar.gz"
-    sha256 "e874d3bec7e787b0c9958277956ed9b4dd5de6a80e162188fdaff7c5e26fd5fa"
+    url "https://files.pythonhosted.org/packages/5c/b5/8f48e906c3e0205276e8bd8cb7512217a87b2685304d64be27cad5b3019f/pydantic_settings-2.14.2.tar.gz"
+    sha256 "c19dd64b19097f1de80184f0cc7b0272a13ae6e170cbf240a3e27e381ed14a5f"
   end
 
   resource "pygments" do

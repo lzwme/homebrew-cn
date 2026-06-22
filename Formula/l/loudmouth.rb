@@ -43,12 +43,15 @@ class Loudmouth < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "gettext"
   depends_on "glib"
   depends_on "gnutls"
   depends_on "libidn"
 
   uses_from_macos "krb5"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "./autogen.sh", "-n" if build.head?

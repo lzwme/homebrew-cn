@@ -1,18 +1,18 @@
 class Dalfox < Formula
   desc "XSS scanner and utility focused on automation"
   homepage "https://dalfox.hahwul.com"
-  url "https://ghfast.top/https://github.com/hahwul/dalfox/archive/refs/tags/v3.1.0.tar.gz"
-  sha256 "48cb44ef215d8905135e36cf27605c5a5addf3123cff29ca48e11f95c681c6ee"
+  url "https://ghfast.top/https://github.com/hahwul/dalfox/archive/refs/tags/v3.1.1.tar.gz"
+  sha256 "77cb8837782b759c16ec55c0873c53e3fdb9d4578307ad60bc73db4cbb8ba109"
   license "MIT"
   head "https://github.com/hahwul/dalfox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e3c9a972aa3a74efd5e375b71d547e8688077c4035134a5b19b1d6130f68d79"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "709833b24c1a958b4ec2d4e53800aff793751a892139885c81419932be1c3fa7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37a5b50cb0b5ed87cdf32d466eb13aa30f8aafdcf63d0831857cf869205b0a2d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "101d74d0af76fc598bec1f97513f244ddf1105bd9d8c0b425cf99c6c71a1b4a5"
-    sha256 cellar: :any,                 arm64_linux:   "4956b02ac5acbc6a5d1562e5b6ef7e0b2b06d85b5f4eaf22e9c6c2be2a749a02"
-    sha256 cellar: :any,                 x86_64_linux:  "a9e220a0cf194bd88f640925122b5805d5efe018cc78afec7f2b9c782c736735"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10c177bd5e60148ced0329aed60826f622662f4dce418edd3b75634c5406e7f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8edb9391d2c4223c9a249e05254041bdd33e97ec2770d3efeb6728faf33929bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e830ea353165ae1b8f52628b1e6dcf9d5752cbaa72bde8ddbc1070942608ed09"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a9c518d024efbbc3d4cf2870708d08e7be7f37ebb92b62341f81555ebd8eb5be"
+    sha256 cellar: :any,                 arm64_linux:   "8a758316166d5eea590cb256d90afee9a27e5cdb6b8820a5b08c37d380978eea"
+    sha256 cellar: :any,                 x86_64_linux:  "dd53d2c51e6d12b0507ac19a92f90c0ad8486d7be9219c285839a653bf40e164"
   end
 
   depends_on "rust" => :build

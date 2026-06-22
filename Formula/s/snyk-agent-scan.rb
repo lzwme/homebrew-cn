@@ -6,14 +6,15 @@ class SnykAgentScan < Formula
   url "https://files.pythonhosted.org/packages/a7/96/32f76a96f947d90f9b8368d78e7d5cfcedb3d706e8fd67224493e5b8c0b5/snyk_agent_scan-0.5.11.tar.gz"
   sha256 "599073698ef5c538ed377d80316690d752a5136563c8bee3a4986a6b7de63eb6"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ba0cec7a250dfeddfc01c322de6e0940c1d1d33c2e23fb060cb0664323e98f11"
-    sha256 cellar: :any, arm64_sequoia: "930f7292881f93bdb2303e6adc8b661604d8db226e4e584a873edfaeb954081d"
-    sha256 cellar: :any, arm64_sonoma:  "c6530b0ac8a7f31fbad5d649af96c9cfdabd2b93f758eabc8d722cc993e6f58e"
-    sha256 cellar: :any, sonoma:        "f5a51c4acf7e018123b4f733f89c3b67b01a3f0e6be09a1e0c356cd0ac9f983d"
-    sha256 cellar: :any, arm64_linux:   "68dfa9149625a00d108f514e77def19cfe7416e94b7779ae1d0593d74b0741c6"
-    sha256 cellar: :any, x86_64_linux:  "b47813e5e3f13e51cab698422adad11adaa6e4d6d0acbf19784e2a14e59a6164"
+    sha256 cellar: :any, arm64_tahoe:   "ddff1422ca508aff961ab40097c59614751ea2218de309f29eb8c05017e50240"
+    sha256 cellar: :any, arm64_sequoia: "a164a400112f2e2aa8224959a8d330b6ba77df1d1c9f7b067226cc2b5f0c7cca"
+    sha256 cellar: :any, arm64_sonoma:  "16bbf16fa6dd611e3f2f644e79c107c8e77763fbde4221f11ce99253fbddfd0e"
+    sha256 cellar: :any, sonoma:        "db13160fa2d8b35e0a1c696eceebded7fac09270bdad37650651b7d916466a96"
+    sha256 cellar: :any, arm64_linux:   "b946a50fafe7529ffd2a5a9c514e8ba56a251eb717b1a73076abe65894ded5b5"
+    sha256 cellar: :any, x86_64_linux:  "d8f6df9efb8a569da4dcd5a3a39ec54d9430b39e8d4cb2450feb790c5c086df8"
   end
 
   depends_on "certifi" => :no_linkage
@@ -146,8 +147,8 @@ class SnykAgentScan < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/07/60/1d1e59c9c90d54591469ada7d268251f71c24bdb765f1a8a832cee8c6653/pydantic_settings-2.14.1.tar.gz"
-    sha256 "e874d3bec7e787b0c9958277956ed9b4dd5de6a80e162188fdaff7c5e26fd5fa"
+    url "https://files.pythonhosted.org/packages/5c/b5/8f48e906c3e0205276e8bd8cb7512217a87b2685304d64be27cad5b3019f/pydantic_settings-2.14.2.tar.gz"
+    sha256 "c19dd64b19097f1de80184f0cc7b0272a13ae6e170cbf240a3e27e381ed14a5f"
   end
 
   resource "pygments" do

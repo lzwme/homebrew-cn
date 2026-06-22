@@ -1,8 +1,8 @@
 class Ttyplot < Formula
   desc "Realtime plotting utility for terminal with data input from stdin"
   homepage "https://github.com/tenox7/ttyplot"
-  url "https://ghfast.top/https://github.com/tenox7/ttyplot/archive/refs/tags/1.7.1.tar.gz"
-  sha256 "d1624eea52abec5538c9b19bae00f81642c2d2886cd7755988466b74424ce9ca"
+  url "https://ghfast.top/https://github.com/tenox7/ttyplot/archive/refs/tags/1.7.5.tar.gz"
+  sha256 "c60c5fd0606f7413dbd2b9cfb1278568164a9f668cf668eac3c92fb77ecb383c"
   license "Apache-2.0"
 
   livecheck do
@@ -11,14 +11,12 @@ class Ttyplot < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "816129fa92f1f7570a96c8ef72b50739cdf8b61aa1e82757b39ef9c7167743b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91f2f451e768d21221e8ac31f5d6cfcac856315052a16bd213c5410166de3eb4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5b767fb22376073b1cba6e278d070248b8c8dd5823559360b36386218eed7f7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "39a3bd658a12d3eb8be9baa5ab23b4bc85c2cfacb96fd05aac64b8dfae705702"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a15fda21cf564d3fc84ec3930879758b07d6d462c08c086fab150957d56593e8"
-    sha256 cellar: :any_skip_relocation, ventura:       "e2aad133932bcf084b6cfae316e8ff6bd1cdc51b449cbb0a918365bfd9ae1788"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9477520982405b4c6dcc165fefbf076da0774c10cf32e0423b4be6f88cb45742"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b1a52187d8e41064b9d3e9d6a6c452fdb03e989591ee0d05a2d4829280579e3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10d001c601d5a11bb2cdcfb9a58add05b3bf4d28df51ff9de842bf47ffe6e688"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61dfab4a962a67ffe5a7b7b33b1e9e8c2a47ed96f5eb724a1d133f62ddf476fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02e2259dfd7092c5a28f4750b36b72b9ea8327f851e0311a47ea14fd3317359b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c79d1f39e250984e5ca5545c8bacf9f17a51f41538c5b94ce430a607938f758f"
+    sha256 cellar: :any,                 arm64_linux:   "54d759ee50c89ed7b6510f54fe8aa5f82ddfcc4eeddb9969f9b8b00242d03161"
+    sha256 cellar: :any,                 x86_64_linux:  "7b8ae99d9f466da9e0a127a858c18e10cfcd18267c5a9a7991d45d609fe1e65b"
   end
 
   depends_on "pkgconf" => :build

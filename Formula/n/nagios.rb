@@ -20,27 +20,19 @@ class Nagios < Formula
   depends_on "libpng"
   depends_on "openssl@4"
 
-  uses_from_macos "unzip"
+  uses_from_macos "unzip" => :build
 
   on_macos do
     depends_on "jpeg-turbo"
   end
 
-  def nagios_sbin
-    prefix/"cgi-bin"
-  end
+  def nagios_sbin = prefix/"cgi-bin"
 
-  def nagios_etc
-    etc/"nagios"
-  end
+  def nagios_etc = etc/"nagios"
 
-  def nagios_var
-    var/"lib/nagios"
-  end
+  def nagios_var = var/"lib/nagios"
 
-  def htdocs
-    pkgshare/"htdocs"
-  end
+  def htdocs = pkgshare/"htdocs"
 
   def user
     Utils.safe_popen_read("id", "-un").chomp

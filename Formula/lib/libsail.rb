@@ -1,17 +1,17 @@
 class Libsail < Formula
   desc "Missing small and fast image decoding library for humans (not for machines)"
   homepage "https://sail.software"
-  url "https://ghfast.top/https://github.com/HappySeaFox/sail/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "0f4957dd302165b3cfa23be7401b634d4ac87539552cdaf32f8c206febf9860a"
+  url "https://ghfast.top/https://github.com/HappySeaFox/sail/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "9534b24c491f4574b32560ff4e13ac5e1396050370a201a8a403e4a593d60dc0"
   license "MIT"
 
   bottle do
-    sha256 arm64_tahoe:   "0c6e2d5815cca5fae947843f201e51d25103118ca8b589f94f598fefaaba6556"
-    sha256 arm64_sequoia: "6c27e3146ccc99e9198fea0afd2d64b1cfcf72761b7b1f854a49911d1ae0ce70"
-    sha256 arm64_sonoma:  "83c77a33be7a6170366de89846920df7d3fbae6edb8a2eb60e1a959c13271e73"
-    sha256 sonoma:        "e4c7442d9caaca2a330f684d172aa77300e4f645a47ef64075caf7c5e6ec4a5a"
-    sha256 arm64_linux:   "59e7b2331219890eff05e102fffd7a34e9b6e35de08629c35a0520493863ed84"
-    sha256 x86_64_linux:  "bbcaafde52e6b8b68b4893b3f99a6af1986eb04954dba811e5697e7f40046039"
+    sha256 arm64_tahoe:   "0bc2f8ff3e30fe47461d3927acf30e03fa1f67dc5160ce4a246fe342da15364c"
+    sha256 arm64_sequoia: "f52bab9d9285e8a982434a5d1afa38190270fb271cf4ba2e759fb1caab8290b8"
+    sha256 arm64_sonoma:  "9a297e697d9c32906f3a05c4c45e69fb86f4238415d2d60db8647b28585e9c47"
+    sha256 sonoma:        "83840a2d0cdbaea5fdb406a734710e8bc7f2c38cd26b15bb7a5cdc3f7b868c7b"
+    sha256 arm64_linux:   "2c3b9c55635d96ccaf5ae66dd51af14cd4b20818ed579549f1f47723139b91a1"
+    sha256 x86_64_linux:  "7ecdda2cad47ca7ea14a57a4dcdad4488b68c949fd0a38a9fe79bc160149235c"
   end
 
   depends_on "cmake" => :build

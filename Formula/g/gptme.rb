@@ -6,16 +6,16 @@ class Gptme < Formula
   url "https://files.pythonhosted.org/packages/1a/20/57d7b444abc582b5aa09b98aa6821fefa728eb056a1c4371d475d19514dd/gptme-0.31.0.tar.gz"
   sha256 "96e17e9dd82c409743b1b81dad08c6c024ace108d829f80c557be8eb2c429ffb"
   license "MIT"
-  revision 12
+  revision 13
   head "https://github.com/ErikBjare/gptme.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "32ba87d60d49342aaf3f2ef23d8fb57f1fd70720a9e9e85a7d826347dbe8d9a5"
-    sha256 cellar: :any, arm64_sequoia: "5cba6edc77952988ddc06bb7bf1dbbe9858ce483505413b4aeff0ecdb4f3e7cd"
-    sha256 cellar: :any, arm64_sonoma:  "0e9621f2ba06144cc1cdad05d204b26de5d5c6b8274371beaed25d7874826ea0"
-    sha256 cellar: :any, sonoma:        "449d4b74319846d3fb454c51060f19b0de13c22fcc8962cbdf24f61db8d3b51c"
-    sha256 cellar: :any, arm64_linux:   "b8ec06b93123e36cd02bcf19fceb195b65027d03efbe1b0e267b30bd35c42433"
-    sha256 cellar: :any, x86_64_linux:  "8dfcd5a953e44d1b4ef22ed7dfcff8c720fed564cba8de6a017f31598c6cbb28"
+    sha256 cellar: :any, arm64_tahoe:   "b3298befee9dfd8f3dabed7c065414aa2dc0229df1964a189218fcbdc347ccc7"
+    sha256 cellar: :any, arm64_sequoia: "9e31d181c96cc003537abbdcaed9a12bb864843a3c32becd8a5ac2993f9d2710"
+    sha256 cellar: :any, arm64_sonoma:  "5e7fc7917df5e552597f51e75e728dd45f1568f1dc727d6c54ecefd59c4d47b5"
+    sha256 cellar: :any, sonoma:        "5e742076e5180a9b2a3002c5afd970a07c70dcc40b7770a28ff8d5f6f9c5c4ec"
+    sha256 cellar: :any, arm64_linux:   "02d3df1af828f0a5ba5d09ab2ca101c285185d1a4dc1905ad6d794903663a6ec"
+    sha256 cellar: :any, x86_64_linux:  "5d24c771de77222e3ab2cd01573594e7699b426deb064359071cc03f0799d456"
   end
 
   depends_on "rust" => :build # for jitter
@@ -38,8 +38,8 @@ class Gptme < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
+    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
   end
 
   resource "asttokens" do
@@ -163,8 +163,8 @@ class Gptme < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/27/3c/347cf965d313f5d41764e7d46bea6ffe7d9ef13b983cc429b0340962a082/mcp-1.27.2.tar.gz"
-    sha256 "8e02db104096d1c25b28e64bde29a5c32b31bc241710213e12fd4d84985bdfef"
+    url "https://files.pythonhosted.org/packages/c1/ee/94c6c50ffc5b5cf4737052275d11b57367f32d1a8516e31dcd60591b3916/mcp-1.28.0.tar.gz"
+    sha256 "559d3f9943674cafbe5744c5d3794f3237e8b47f9bbc58e20c0fad680d8487c2"
   end
 
   resource "mdurl" do
@@ -218,8 +218,8 @@ class Gptme < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/07/60/1d1e59c9c90d54591469ada7d268251f71c24bdb765f1a8a832cee8c6653/pydantic_settings-2.14.1.tar.gz"
-    sha256 "e874d3bec7e787b0c9958277956ed9b4dd5de6a80e162188fdaff7c5e26fd5fa"
+    url "https://files.pythonhosted.org/packages/5c/b5/8f48e906c3e0205276e8bd8cb7512217a87b2685304d64be27cad5b3019f/pydantic_settings-2.14.2.tar.gz"
+    sha256 "c19dd64b19097f1de80184f0cc7b0272a13ae6e170cbf240a3e27e381ed14a5f"
   end
 
   resource "pygments" do
@@ -318,8 +318,8 @@ class Gptme < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/85/05/0d5260f1f1ca784f4a4a0def9cbe6affe587f5b4025328d446c3d67765f4/tqdm-4.68.2.tar.gz"
-    sha256 "89c230e8dbc67c7615c142487111222f878c77427ea09549960f62389e258add"
+    url "https://files.pythonhosted.org/packages/87/d7/0535a28b1f5f24f6612fb3ff1e89fb1a8d160fee0f976e0aa6803862134b/tqdm-4.68.3.tar.gz"
+    sha256 "00dfa48452b6b6cfae3dd9885636c23d3422d1ec97c66d96818cbd5e0821d482"
   end
 
   resource "traitlets" do

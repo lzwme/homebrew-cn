@@ -7,12 +7,13 @@ class XorgServer < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "5eb5288787f02f75e41d4fe9491f36213dea58c6d1ca0cc2f53418fc35580db8"
-    sha256 arm64_sequoia: "6ece7c1e1979624191d5d0906a6e5b6a40966432a1633e3f5da8a751e1d73a83"
-    sha256 arm64_sonoma:  "65c196817c2dd27b1c52b556a2cdc2f866212aff7311f230a29c0604351798f1"
-    sha256 sonoma:        "d1134ab8bfa1fb1711a471b3412ebce9cb11f475056b6d0dd492120232ead4ce"
-    sha256 arm64_linux:   "bbb6c1df36e85af051256da93d91c36e89ac2165a7a32df4d301a65fe3f264f1"
-    sha256 x86_64_linux:  "e9c7c7537e53ab4279f1b9febacd5c3d17ca0906877e78bcf87e6cd0b61e712b"
+    rebuild 1
+    sha256 arm64_tahoe:   "8444c3c3bd84fe686f726f4301320eba1ffbc348907a2e31ff45073c796f5b9a"
+    sha256 arm64_sequoia: "e03c8d9bdde5fad8d91bc2525a5c6284ca3f73c8b2640e5091a5ab0f026d778c"
+    sha256 arm64_sonoma:  "9873e827a4824440242cdabb00bb900270936c41bada9f86098445f479e81fb2"
+    sha256 sonoma:        "bf1629e4c6697a74d5f8ddad7d73de856e48860ca823351db49017e474ab8eb5"
+    sha256 arm64_linux:   "59c5a809c95242bd7d48a09e3d67c20ee22967ee229cb4bb8cca0d5c413ce5b0"
+    sha256 x86_64_linux:  "255d28550a0af06de75fbd6f98cd1266625243ae26ffa561d59014c7e231c28a"
   end
 
   depends_on "font-util"   => :build
@@ -57,7 +58,7 @@ class XorgServer < Formula
     depends_on "libtirpc"
     depends_on "libxcvt"
     depends_on "libxshmfence"
-    depends_on "nettle"
+    depends_on "openssl@3"
     depends_on "systemd"
 
     resource "xvfb-run" do
@@ -83,13 +84,16 @@ class XorgServer < Formula
       -Dbuilder_addr=#{tap.remote}
       -Dbuilder_string=#{tap.name}
     ]
-    # macOS doesn't provide `authdes_cred` so `secure-rpc=false`
-    # glamor needs GLX with `libepoxy` on macOS
-    if OS.mac?
-      meson_args += %w[
+    meson_args += if OS.mac?
+      # macOS doesn't provide `authdes_cred` so `secure-rpc=false`
+      # glamor needs GLX with `libepoxy` on macOS
+      %w[
         -Dsecure-rpc=false
         -Dapple-applications-dir=libexec
       ]
+    else
+      # Linux dependency tree already includes OpenSSL
+      %w[-Dsha1=libcrypto]
     end
 
     # X11.app need startx etc. in the same directory

@@ -1,8 +1,8 @@
 class Libsidplayfp < Formula
   desc "Library to play Commodore 64 music"
   homepage "https://github.com/libsidplayfp/libsidplayfp"
-  url "https://ghfast.top/https://github.com/libsidplayfp/libsidplayfp/releases/download/v3.0.1/libsidplayfp-3.0.1.tar.gz"
-  sha256 "6b8ffedc2f631a4ca53258e60468eab3e6a2dc4e1369b2e59e3a5955f99a2143"
+  url "https://ghfast.top/https://github.com/libsidplayfp/libsidplayfp/releases/download/v3.0.2/libsidplayfp-3.0.2.tar.gz"
+  sha256 "d67ab120ab8ca10657c0e33a7fc21638484e1af4037738c36faa66fb7747cac3"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Libsidplayfp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "69c4987324a6eaa1065f86f163ffec361c69ce68a96c34feed4312ea4b4cd128"
-    sha256 cellar: :any,                 arm64_sequoia: "25229d51be5e28a3c2158025c7fd5da6baa7ba35a8f559f9e4fb1302ededed9d"
-    sha256 cellar: :any,                 arm64_sonoma:  "dd06a02193b11356d6986e7c7f8358ca4e8cc21343329e8ed4606027d7c44f25"
-    sha256 cellar: :any,                 sonoma:        "de7a17072056d0ee80c192b6d9c54f69ac68d0dd705a422a785560015d0dba69"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac464c1c9e7b3f970a76e954311ab604faca3fba1cb8580edf2f98fc8ac696e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e14acb29bdb264ff2b1d8b89cf469196b004d95d940051dbe8ae2361a63350f3"
+    sha256 cellar: :any, arm64_tahoe:   "50320df69e63567386233c1a6608af633f1ef2b56021e8177f3ad84381ab3235"
+    sha256 cellar: :any, arm64_sequoia: "a948282b22f4510ef90fb1c15477f63551f8940ab6dd6865220de3c2f3621f51"
+    sha256 cellar: :any, arm64_sonoma:  "f27a944d2b606a32c908bc4111d3c12c87c23c1cceed9db871c920fb8eaa0ecb"
+    sha256 cellar: :any, sonoma:        "3ad5e80d324dca8717301738e4677571523c04026ce2584df14b3dad9bb3cf6f"
+    sha256 cellar: :any, arm64_linux:   "307f50f0e1bd633cb70daa636d8a495acef108e27b83cbee4a4941755ebb3561"
+    sha256 cellar: :any, x86_64_linux:  "e8ddecf787083137430f7726f9c1492543b0520c93c73489a623c7a549926a94"
   end
 
   head do

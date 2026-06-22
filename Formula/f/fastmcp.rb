@@ -6,16 +6,16 @@ class Fastmcp < Formula
   url "https://files.pythonhosted.org/packages/29/18/46beaec18c9f86a599ae3f9cdf6677dd6b50240cfd844d18233710b47f13/fastmcp-3.4.2.tar.gz"
   sha256 "b468722946fc467c3796a6572f7a14d93d48c014cf8fea12910245220cbbe4e1"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/jlowin/fastmcp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8af5c50f1344569e258b8d2a19296fbd0ca17c089c099993d1ffbdf80e408d0c"
-    sha256 cellar: :any, arm64_sequoia: "d80990169e99067d4740015d2e69f9178e87ea57cbea816c08f973914a70006d"
-    sha256 cellar: :any, arm64_sonoma:  "7115f516fae7895d49c61a29c6171c11fe086e91ba10e8da9fdd9c5ebf8ae645"
-    sha256 cellar: :any, sonoma:        "490ba473b70a1d3d71135c0dc057b235b5d8fff05e9a4c68dd2aad124bf9e210"
-    sha256 cellar: :any, arm64_linux:   "999c6286cd36d1646d58c0995b8e8dc3d5b01e3be61cbbf94d9a43742421ad6a"
-    sha256 cellar: :any, x86_64_linux:  "05d856d7f988023ee0b8eeb3663f15ec2f3d9b572bf2d6133422908ff0c6b761"
+    sha256 cellar: :any, arm64_tahoe:   "91003288b88daecc1edbf12b5b8242cac3af32c132229ed238a588ce0dca6619"
+    sha256 cellar: :any, arm64_sequoia: "ccf53683992fab5d6ac46e99ef44babbb05ec555365b8ce507ed861117a845df"
+    sha256 cellar: :any, arm64_sonoma:  "c8ef58d9a4e84519831a79dffd4004058f92aecb07c8ed714b0bdfe7d1612663"
+    sha256 cellar: :any, sonoma:        "95a5e48428990f4c50fca4e12ddae197c8aacf3e585e85d7443b04a8a1c4db9d"
+    sha256 cellar: :any, arm64_linux:   "3e0e49f1ce8880d287675c1514b2e6cadb7a84178b7e90220c906bd7768a7da0"
+    sha256 cellar: :any, x86_64_linux:  "5426165fb917cafed85f3ee9abdb16c5b4f7c3ab8f6682356ff224925a30eb27"
   end
 
   depends_on "rust" => :build # for py_key_value_aio
@@ -36,8 +36,8 @@ class Fastmcp < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
+    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
   end
 
   resource "attrs" do
@@ -101,8 +101,8 @@ class Fastmcp < Formula
   end
 
   resource "griffelib" do
-    url "https://files.pythonhosted.org/packages/9d/82/74f4a3310cdabfbb10da554c3a672847f1ed33c6f61dd472681ce7f1fe67/griffelib-2.0.2.tar.gz"
-    sha256 "3cf20b3bc470e83763ffbf236e0076b1211bac1bc67de13daf494640f2de707e"
+    url "https://files.pythonhosted.org/packages/33/e4/8d187ea29c2e30b3a09505c567513077d6117861bde1fbd997a167f262ec/griffelib-2.1.0.tar.gz"
+    sha256 "762a186d2c6fd6794d4ea20d428d597ffb857cb56b66421651cbba15bdd5e813"
   end
 
   resource "h11" do
@@ -186,8 +186,8 @@ class Fastmcp < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/27/3c/347cf965d313f5d41764e7d46bea6ffe7d9ef13b983cc429b0340962a082/mcp-1.27.2.tar.gz"
-    sha256 "8e02db104096d1c25b28e64bde29a5c32b31bc241710213e12fd4d84985bdfef"
+    url "https://files.pythonhosted.org/packages/c1/ee/94c6c50ffc5b5cf4737052275d11b57367f32d1a8516e31dcd60591b3916/mcp-1.28.0.tar.gz"
+    sha256 "559d3f9943674cafbe5744c5d3794f3237e8b47f9bbc58e20c0fad680d8487c2"
   end
 
   resource "mdurl" do
@@ -231,8 +231,8 @@ class Fastmcp < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/07/60/1d1e59c9c90d54591469ada7d268251f71c24bdb765f1a8a832cee8c6653/pydantic_settings-2.14.1.tar.gz"
-    sha256 "e874d3bec7e787b0c9958277956ed9b4dd5de6a80e162188fdaff7c5e26fd5fa"
+    url "https://files.pythonhosted.org/packages/5c/b5/8f48e906c3e0205276e8bd8cb7512217a87b2685304d64be27cad5b3019f/pydantic_settings-2.14.2.tar.gz"
+    sha256 "c19dd64b19097f1de80184f0cc7b0272a13ae6e170cbf240a3e27e381ed14a5f"
   end
 
   resource "pygments" do

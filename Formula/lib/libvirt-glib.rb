@@ -22,7 +22,6 @@ class LibvirtGlib < Formula
 
   depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
-  depends_on "intltool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build

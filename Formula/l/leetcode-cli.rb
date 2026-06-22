@@ -1,18 +1,18 @@
 class LeetcodeCli < Formula
   desc "May the code be with you"
   homepage "https://github.com/clearloop/leetcode-cli"
-  url "https://ghfast.top/https://github.com/clearloop/leetcode-cli/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "3ee61769f40fd374461dfe9a7cccd113b38564e828bcccabf1875d9482b9ced9"
+  url "https://ghfast.top/https://github.com/clearloop/leetcode-cli/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "af8993b4f2d9988638223e9884b397c32c14bdf45a1ae3fd869e247e8900704f"
   license "MIT"
   head "https://github.com/clearloop/leetcode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2714994b45df5976c2f02d57e02a860397738ef3c1b33bae6edb32955636b241"
-    sha256 cellar: :any,                 arm64_sequoia: "5c17215533eadbc515621812fdbce284b89ce60e365dba38672d79a197d40302"
-    sha256 cellar: :any,                 arm64_sonoma:  "391a1860fad787cfcbef1fa1c0dc04335913621944da57999e89957955c67cf6"
-    sha256 cellar: :any,                 sonoma:        "655b0ad5fb1c9a7b7cdc9b09c42193fa11a10dda1008913ccb748bd6d24edf08"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6da7b9dd64506d8a577505d4b2716ce342bd0fdfd2b843d92996f35c7299b54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af6826c657dda9c1c44bcfe1f3c8b029168867e994a149cc4353e1fb849aec58"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "51edbeb76f293c0534cbce79182facb000dc916d0b12bdef14cb6d55de226c7b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7663844efcf9b2a3cff7f03266aec4bafdc57ce3a2317724779d47e4b800b0bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bed877ceb29394fdd6f90f54100eb4dda9f31f78d1c712a4dce50c8d17174844"
+    sha256 cellar: :any_skip_relocation, sonoma:        "051d713afeb0e42bc4a050ab5702c2c7955171c589eb4466819752b860a536c9"
+    sha256 cellar: :any,                 arm64_linux:   "fcad68c9a458808f6e9aee87b0997ce8a1ca11ccce136c460baf6dcd1034b17f"
+    sha256 cellar: :any,                 x86_64_linux:  "d5db3ea89bdb74584bbcfee66c5a831a112d8972af7820e47df14d40bf3e4818"
   end
 
   depends_on "pkgconf" => :build

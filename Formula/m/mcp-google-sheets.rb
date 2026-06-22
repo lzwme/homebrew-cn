@@ -6,15 +6,15 @@ class McpGoogleSheets < Formula
   url "https://files.pythonhosted.org/packages/b2/29/7f4c35619a25f39d27e133e39d0642fb9c9c44a419a9acc6fc2993b7a21d/mcp_google_sheets-0.6.3.tar.gz"
   sha256 "d41ca5b5367af1426a7db860010473d5c1a7f3df02e4f8db30f75f9c66030e18"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b8c93209ae7b9c655ef1859ed83ee8da1da76561934dc5487d116fbf298844b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c60582d98583b45d85a781f8c4c79e1a77e322a9aa039bc23acaeac0564969f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df2b6a72bc2a4636a0b525c86689fbe2c878899acf467d64d11d4e5015cc35df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b602b239db106a08076cdf4e53cd13fcd9a173b94cb855794cd597ce1ac47e07"
-    sha256 cellar: :any,                 arm64_linux:   "5587ae6d90216c57e851e4b24d4fb10121da1fce60d008007d169f1926a665c1"
-    sha256 cellar: :any,                 x86_64_linux:  "39acf5458dd12bc958c5ecaea9e2e151bb22d228484a61b4018825700fcc458a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd475040555ad27192f4a79dde6242869699c60e3dd43476a97f8105418f8b2f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c35705614ae517a549c194edf85c04569c75ff49218b3d8e01ef45b7aa5cfd67"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd6f782920366c57b8c243f206d5571f25483f4ff72d4b45febf6046abb103e2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "76fee1dc79c6951a5c280a39aca9c9d2f7cb671748327f30549c9515276fe014"
+    sha256 cellar: :any,                 arm64_linux:   "3ed38aa06ccf4543ec97b3d83c2b098b67b4dfb5bba6d5def627a29d53bec9a1"
+    sha256 cellar: :any,                 x86_64_linux:  "749ddb90bde64179c05c29c65d516bfb60aebab0d3d1b8d1432eb78796eadf9a"
   end
 
   depends_on "certifi" => :no_linkage
@@ -26,8 +26,8 @@ class McpGoogleSheets < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
+    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
   end
 
   resource "attrs" do
@@ -56,8 +56,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/15/f6/494e18317546d7def90c957b71d68b025d24f0e22e486c2606bc57765c48/google_auth-2.54.0.tar.gz"
-    sha256 "130f6fd5e3f497fdad897a23ed9489973437edf561238c4b92a4d02c435f8af9"
+    url "https://files.pythonhosted.org/packages/81/1c/70b23fc52b2bb3c70b379f3bd05c4a60ab3a873e30c6bd21c57e0154848a/google_auth-2.55.0.tar.gz"
+    sha256 "fcd3a130f575fa36403d38774af1c64a4fbfbca09215f0589d2372b5119697cb"
   end
 
   resource "google-auth-httplib2" do
@@ -116,8 +116,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/27/3c/347cf965d313f5d41764e7d46bea6ffe7d9ef13b983cc429b0340962a082/mcp-1.27.2.tar.gz"
-    sha256 "8e02db104096d1c25b28e64bde29a5c32b31bc241710213e12fd4d84985bdfef"
+    url "https://files.pythonhosted.org/packages/c1/ee/94c6c50ffc5b5cf4737052275d11b57367f32d1a8516e31dcd60591b3916/mcp-1.28.0.tar.gz"
+    sha256 "559d3f9943674cafbe5744c5d3794f3237e8b47f9bbc58e20c0fad680d8487c2"
   end
 
   resource "oauthlib" do
@@ -146,8 +146,8 @@ class McpGoogleSheets < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/07/60/1d1e59c9c90d54591469ada7d268251f71c24bdb765f1a8a832cee8c6653/pydantic_settings-2.14.1.tar.gz"
-    sha256 "e874d3bec7e787b0c9958277956ed9b4dd5de6a80e162188fdaff7c5e26fd5fa"
+    url "https://files.pythonhosted.org/packages/5c/b5/8f48e906c3e0205276e8bd8cb7512217a87b2685304d64be27cad5b3019f/pydantic_settings-2.14.2.tar.gz"
+    sha256 "c19dd64b19097f1de80184f0cc7b0272a13ae6e170cbf240a3e27e381ed14a5f"
   end
 
   resource "pyjwt" do

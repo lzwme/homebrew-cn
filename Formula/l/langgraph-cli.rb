@@ -6,15 +6,15 @@ class LanggraphCli < Formula
   url "https://files.pythonhosted.org/packages/f0/27/4b6a0f00c804f0b0831f741c0607b46a4cbddff14d1eab6bbd4ce5820837/langgraph_cli-0.4.30.tar.gz"
   sha256 "4948fdc77ff45fc5ef3d8330d17bbecfcb26cd9c4d3a4f00da84a41a0226cd72"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2fbc8c6586f0f79bc5a04f87150a74382699ad81741453993fc7ffc90f28436e"
-    sha256 cellar: :any, arm64_sequoia: "e61fc8e4f05e6ae41cd6645554bcc344626a0f2a66bbba12076d9602aab8b039"
-    sha256 cellar: :any, arm64_sonoma:  "61f8a97234e6627730f87d06cd8d8898540989fb209dd4c6e32e654488684706"
-    sha256 cellar: :any, sonoma:        "47b505702ff660698a53cd5a0e47d8d406d7cc57756bfbc707e6a7f6a538cd35"
-    sha256 cellar: :any, arm64_linux:   "640c0d6ad4123768b767133e2fb99889bb47e0bab20b11a4ba12efc01efda212"
-    sha256 cellar: :any, x86_64_linux:  "6dc53ad16d6d9cbe1e70aecc0a4ffebc1471ae0613524245d0442d03a28d16cc"
+    sha256 cellar: :any, arm64_tahoe:   "ad4c9d8ec75db7230513c37797a6054aaa015e5edc3fab3a9c0b526cc0886c03"
+    sha256 cellar: :any, arm64_sequoia: "d343071ecd83e9879aa16638c0f9e4cdae952e96eee92b843970c4a74cb06ffc"
+    sha256 cellar: :any, arm64_sonoma:  "93eeda1d53584308a84c1861c9feb7a54695b95c22cc217f3dd351e9815c1906"
+    sha256 cellar: :any, sonoma:        "fdf51931a16519504ca876d5da1379271ecbf1321fe11b83eff68af684d0937b"
+    sha256 cellar: :any, arm64_linux:   "a6a7a7447e172b89fc4dd20af74ff3ae9e8949427b56bdce5cccd408ab85601a"
+    sha256 cellar: :any, x86_64_linux:  "06cb5e9124a2dcfa154cbde9d19e7ac8c363752ceba870615f0ba5674c63d04e"
   end
 
   depends_on "rust" => :build # for orjson
@@ -86,8 +86,8 @@ class LanggraphCli < Formula
   end
 
   resource "langsmith" do
-    url "https://files.pythonhosted.org/packages/ad/aa/30295e5b27b86a607aaa21390cb1e10c84203916fdcf953ba0ff94a1dfaa/langsmith-0.8.17.tar.gz"
-    sha256 "dfedd6a2558cf8e420fdf8b9ee735537f02d97c329197c9499a5c7ecbe0f18fb"
+    url "https://files.pythonhosted.org/packages/9a/d9/a6681aa9847bbbc5ec21abe20a5e233b94e5edcfe39624db607ac7e8ccb4/langsmith-0.8.18.tar.gz"
+    sha256 "32dde9c0e67e053e0fb738921fc8ced768af7b8fa83d7a0e3fd63597cf8776dd"
   end
 
   resource "orjson" do

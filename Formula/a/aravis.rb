@@ -11,17 +11,17 @@ class Aravis < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ec4e6e6006fd2bd55fc2c88a2318fccafdea3ada23f6d7e4e4b1ebb4465b660f"
-    sha256 arm64_sequoia: "a8d4bd460bfa0d913b71792959d5e5a95ccc5794264b1171e67eb90f1c80b18e"
-    sha256 arm64_sonoma:  "0339abdd5f408a8eba88430494a3ebaa40e72e8877cc710be6c8cc1282430e9f"
-    sha256 sonoma:        "e019edb2783c6d1ccaa2ba4d9ebc36697565bafbfba45caf6b936f13d69b0f40"
-    sha256 arm64_linux:   "60c037bfb1d513b7120abb53716abc1a05d59ee7c91662cb2cfa5486caf29321"
-    sha256 x86_64_linux:  "bfca87730aad222743588257dd29c5a17d8d86f88540bd69f175cc0ef704baa6"
+    rebuild 1
+    sha256 arm64_tahoe:   "537d17384fb948e540e80663bc89316b316edade6579b6ffd27758ec293fba89"
+    sha256 arm64_sequoia: "b7428e845c2195858209c6f48658ffbb17b4d3161bdb91b6a9f06eaaa8e05572"
+    sha256 arm64_sonoma:  "993ae728bf17b3262994fc0f9ddb7e67fb197a0f382bf5cdd55f8bb7bf33dd42"
+    sha256 sonoma:        "7610a97a7b2ee924dbf0d666862e8de7804103e49fa43002308dccbb13367a44"
+    sha256 arm64_linux:   "2b3a034e680823f74ee5da8b7557312fde768fc766a790a9c939da070951ad17"
+    sha256 x86_64_linux:  "bd939dce9925da3b28fe35dbd9853a239cf460957853fc6ea14bc78dfcf1750e"
   end
 
   depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
-  depends_on "gtk-doc" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
@@ -30,19 +30,12 @@ class Aravis < Formula
   depends_on "glib"
   depends_on "gstreamer"
   depends_on "gtk+3"
-  depends_on "intltool"
-  depends_on "libnotify"
   depends_on "libusb"
 
   uses_from_macos "libxml2"
 
   on_macos do
-    depends_on "at-spi2-core"
-    depends_on "cairo"
-    depends_on "gdk-pixbuf"
     depends_on "gettext"
-    depends_on "harfbuzz"
-    depends_on "pango"
   end
 
   on_linux do

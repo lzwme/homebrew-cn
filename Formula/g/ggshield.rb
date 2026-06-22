@@ -6,15 +6,16 @@ class Ggshield < Formula
   url "https://files.pythonhosted.org/packages/9d/f9/3f2b594156cda7ed2afba978daec90fc0fad5023a1896aacf120f259f9a1/ggshield-1.52.2.tar.gz"
   sha256 "bcb3f485e0ac12adbca44b4e7135bb522e29b2a774842eaf942ffca972f2219a"
   license "MIT"
+  revision 1
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0954f76d7f4dd95d4542058602d3c28fd22b7f5104948545e77c7ab0a6739560"
-    sha256 cellar: :any, arm64_sequoia: "a7ff913391ff38628c44a28b7d27551b10100c2b95571c56a5a3466086cc64f6"
-    sha256 cellar: :any, arm64_sonoma:  "c0aa8811d8ded0fa847d2916d5a39f8a3743652f26b26c30983c6f962cbe2256"
-    sha256 cellar: :any, sonoma:        "e03f6132ff2bf12e2d1f5f8a0927c85239462b013a9de428a7b35523a13929f7"
-    sha256 cellar: :any, arm64_linux:   "ebf40ca65dfb42f9d76cd32c4f2af554e8f2c951f8f68a07cdc52959b0e156cb"
-    sha256 cellar: :any, x86_64_linux:  "69cc2f8b5cfb92aaf94a980515781bcd5943944deb42e71079aab64b70868528"
+    sha256 cellar: :any, arm64_tahoe:   "0db0f46febb96e361fd03109b959b11a9572053cfc7cd3763f05e8c87e80feab"
+    sha256 cellar: :any, arm64_sequoia: "611edebeb568f0b6eb11ea866f6744a2594a6e159ea914b61ca40ad02de7cb3f"
+    sha256 cellar: :any, arm64_sonoma:  "a33ba90f9ea3a860b7e79fa24f7bce71e002a8bc388a7d7e102561aff4c3b971"
+    sha256 cellar: :any, sonoma:        "e99f192cbf1f139ffbeb0efe04e6c7a60858e3ae7272f940d8f3f60bb4c24761"
+    sha256 cellar: :any, arm64_linux:   "eecac4a526bd0067d05bc7573e6d7c6cc5c755bbbe120a08e946e3243ac2b4ea"
+    sha256 cellar: :any, x86_64_linux:  "7684139cb158aa60f4bb2bfccf030a8174fb82fd93df14afddc77c539983f1c5"
   end
 
   depends_on "pkgconf" => :build # for `rfc3161_client`
@@ -170,8 +171,8 @@ class Ggshield < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/04/8c/cd89ad05804f8e3c17dea8f178c3f40eeab5694c30e0c9f5bcd49f576fc3/pyopenssl-25.1.0.tar.gz"
-    sha256 "8d031884482e0c67ee92bf9a4d8cceb08d92aba7136432ffb0703c5280fc205b"
+    url "https://files.pythonhosted.org/packages/74/b7/da07bae88f5a9506b4def6f2f4903cf4c3b8831e560dba8fa18ca08f758f/pyopenssl-26.3.0.tar.gz"
+    sha256 "589de7fae1c9ea670d18422ed00fc04da787bbde8e1454aea872aa57b49ad341"
   end
 
   resource "python-dotenv" do
@@ -222,6 +223,10 @@ class Ggshield < Formula
   resource "sigstore" do
     url "https://files.pythonhosted.org/packages/d6/63/1e44d9964d4f47617e641bdf6ce1b883b893d95b29ff07f97a8901df6b1c/sigstore-4.3.0.tar.gz"
     sha256 "3c4b566bddfcc53e73d3adc06acf4311d72be0d907a167133abdc815a472a59b"
+
+    # Allow cryptography 49.x and as a result of this patch, `pyopenssl` is also manually bumped to 26.3.0
+    # PR ref: https://github.com/sigstore/sigstore-python/pull/1811
+    patch :DATA
   end
 
   resource "sigstore-models" do
@@ -282,3 +287,16 @@ class Ggshield < Formula
     assert_match "unhealthy (Invalid API key.)", output
   end
 end
+
+__END__
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -26,7 +26,7 @@ classifiers = [
+   "Topic :: Security :: Cryptography",
+ ]
+ dependencies = [
+-  "cryptography >= 42, < 49",
++  "cryptography >= 42, < 50",
+   "id >= 1.1.0",
+   "importlib_resources ~= 5.7; python_version < '3.11'",
+   "pyasn1 ~= 0.6",

@@ -123,9 +123,15 @@ class Streamlink < Formula
   end
 
   test do
-    video = "https://player.vimeo.com/video/941078932"
-    system bin/"streamlink", video, "240p", "-o", "video.mp4"
-    expected = "video.mp4: ISO Media, MPEG v4 system, Dynamic Adaptive Streaming over HTTP"
+    video = "https://www.youtube.com/watch?v=IVdyt2pNxn8"
+    if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+      assert_match "Could not get video info - LOGIN_REQUIRED",
+        shell_output("#{bin}/streamlink \"#{video}\" worst -o video.mp4", 1)
+      return
+    end
+
+    system bin/"streamlink", video, "worst", "-o", "video.mp4"
+    expected = "video.mp4: ISO Media, MP4 v2 [ISO 14496-14]"
     assert_match expected, shell_output("file video.mp4")
 
     output = shell_output("#{bin}/streamlink --ffmpeg-no-validation -l debug #{video}")

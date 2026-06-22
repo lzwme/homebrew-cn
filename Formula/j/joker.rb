@@ -1,18 +1,18 @@
 class Joker < Formula
   desc "Small Clojure interpreter, linter and formatter"
   homepage "https://joker-lang.org/"
-  url "https://ghfast.top/https://github.com/candid82/joker/archive/refs/tags/v1.8.2.tar.gz"
-  sha256 "51281b77741f61cc8fbe8f11b9c6da49cadebc66565f9be91f71530d562db441"
+  url "https://ghfast.top/https://github.com/candid82/joker/archive/refs/tags/v1.8.3.tar.gz"
+  sha256 "94fced43603f382309944544c527e27042523feb2c253e5cd1661d91c656bd36"
   license "EPL-1.0"
   head "https://github.com/candid82/joker.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "45d58f6caa4f90cd93fa2ed4c7348ad034bef1405e2f24e52b825b1a1399d7df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45d58f6caa4f90cd93fa2ed4c7348ad034bef1405e2f24e52b825b1a1399d7df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45d58f6caa4f90cd93fa2ed4c7348ad034bef1405e2f24e52b825b1a1399d7df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6605ea1715b6fc19f8d87eb07626dab89a5843b1155fd388fa85786363008db9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fdef96748284b3e1ba5049dc22b2ec44043213895e339f58abbe1c80f022b09f"
-    sha256 cellar: :any,                 x86_64_linux:  "78e1ccfe1e28b5b71e177f24439879262807e7b90aa58481f04addd05ab6ee57"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "367f7b70bb431a644e0e9b8749c70d1059539ad449f4091d2fe260d0cf766ea0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "367f7b70bb431a644e0e9b8749c70d1059539ad449f4091d2fe260d0cf766ea0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "367f7b70bb431a644e0e9b8749c70d1059539ad449f4091d2fe260d0cf766ea0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ab3c407e8a3aa72ce287884e9c9a8026224d615f772f3f4a37060edbb86cbbe2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d150d2620954eab2bc730b43c7eb4a16fe648c8a3c4c8c986828a9a625ba895"
+    sha256 cellar: :any,                 x86_64_linux:  "5beb0a9af346db8bfe0453c3d12d5ca23f8c85a7942ff17c60b7ffb0d7b1f804"
   end
 
   depends_on "go" => :build

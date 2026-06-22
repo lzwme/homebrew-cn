@@ -12,8 +12,9 @@ class Ntfs3g < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "643403c977e03a706ed801af78100dcfb20c17d05bdcef97547919610a4f5fce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "da5a885ce0f084bf17f9ee5247babadd7f5330d66c6826721096c9afabc7a3f5"
+    rebuild 1
+    sha256 cellar: :any, arm64_linux:  "f00027c5b8c2f28b4f0ee76d9768a538c200cd72b9ecd60d48e03780f1723778"
+    sha256 cellar: :any, x86_64_linux: "e87f05d13c124ec310adc37e2a3f48984ab26a446b8474ffe86e8b2bd0133b5e"
   end
 
   head do
@@ -27,15 +28,15 @@ class Ntfs3g < Formula
 
   depends_on "pkgconf" => :build
   depends_on "coreutils" => :test
-  depends_on "gettext"
-  depends_on "libfuse@2" # FUSE 3 issue: https://github.com/tuxera/ntfs-3g/issues/54
   depends_on :linux # on macOS, requires closed-source macFUSE
 
   def install
-    args = std_configure_args + %W[
+    # Using upstream-maintained libfuse-lite similar to Debian and Fedora
+    # until FUSE 3 is supported: https://github.com/tuxera/ntfs-3g/issues/54
+    args = %W[
       --exec-prefix=#{prefix}
       --mandir=#{man}
-      --with-fuse=external
+      --with-fuse=internal
       --enable-extras
       --disable-ldconfig
     ]
@@ -43,7 +44,7 @@ class Ntfs3g < Formula
     system "./autogen.sh" if build.head?
     # Workaround for hardcoded /sbin
     inreplace Dir["{ntfsprogs,src}/Makefile.in"], "$(DESTDIR)/sbin/", "$(DESTDIR)#{sbin}/"
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
 

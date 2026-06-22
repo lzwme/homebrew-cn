@@ -1,19 +1,19 @@
 class Cryptography < Formula
   desc "Cryptographic recipes and primitives for Python"
   homepage "https://cryptography.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/12/45/870e7f4bef50e5f53b9f51d4428aee5290eedf58ba443f16b1ebb7ab8e66/cryptography-48.0.1.tar.gz"
-  sha256 "266f4ee051abb2f725b74ef8072b521ce1feacf685a3364fa6a6b45548db791a"
+  url "https://files.pythonhosted.org/packages/1f/99/d1c90d6041656cc6ee229dc99cd67fd0cd5aec3c5f7d72fffc27cc750054/cryptography-49.0.0.tar.gz"
+  sha256 "f89660a348f4f78a92366240a61404e337586ef7f5909a2fef59ca88ef505493"
   license any_of: ["Apache-2.0", "BSD-3-Clause"]
-  compatibility_version 1
+  compatibility_version 2
   head "https://github.com/pyca/cryptography.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fa249bbd5e0d89c5497bb295faf17fe14f9f403f1205a8b647171cd68dc8614f"
-    sha256 cellar: :any, arm64_sequoia: "1e39c60c625a9ca614205b785f5a9cb585b92a3774680d16bb435623d07bcb9a"
-    sha256 cellar: :any, arm64_sonoma:  "65979c5813365a3951454c0dac6dc1e09da56ef73ea03fadc534008f2cf482a0"
-    sha256 cellar: :any, sonoma:        "58efaad255cd7d09f7f8211fe8eaf54cfdedfbff542d7a1f1166662b1ab13a46"
-    sha256 cellar: :any, arm64_linux:   "9c3ce95d4f9b0d91f9dffb3dd6666a0aed37f838697db6385845236ecfd72431"
-    sha256 cellar: :any, x86_64_linux:  "32eb0f1b7592027cad7b41e8eeccbf9fbe73ab36a90efb3b56ba6691f6f5bc2f"
+    sha256 cellar: :any, arm64_tahoe:   "a908c19e09612e76cf34adf3257c4645490b3286579f603c37b4ce9db7d64d58"
+    sha256 cellar: :any, arm64_sequoia: "9103a017bd8e8ae8368d16cb5cae817918606955daf10ae476af36b2d5f02c8e"
+    sha256 cellar: :any, arm64_sonoma:  "68e119242f2013e50d71b01fd0b1018456a6731083d3e06c5e7fd00f4b8b65c3"
+    sha256 cellar: :any, sonoma:        "4a558a133a98bb863f575dab175809ffb46056d370b0dcf2716261110844fc96"
+    sha256 cellar: :any, arm64_linux:   "2db385fac389eb7d2bb158998ac61345816398cedad16c46b4b9c082d8b8bc1c"
+    sha256 cellar: :any, x86_64_linux:  "00541f724f24cf56e92779ae7ecaedea2187edaee4d9ac8508bd1a5ab06b36aa"
   end
 
   depends_on "maturin" => :build

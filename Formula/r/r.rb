@@ -13,21 +13,21 @@ class R < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "1fc7354d590dd398db9322f2d7cb4a0719dcb0aca9e908e47bf3547cd903d841"
-    sha256 arm64_sequoia: "160d1834f394b3cf36ea2778bec0fed27b27d2163bf0f77c33265989f9fe933b"
-    sha256 arm64_sonoma:  "99fb388640b1836b1a3b0959767b37f84ba4c302f1b65928f436c91851675b33"
-    sha256 sonoma:        "49d5221a6766d5644d63fea8ee96f7daaa8257f66c245fcb3628ebf21c1a2d27"
-    sha256 arm64_linux:   "a2c291072b7e7a40da4f8506dc6a2d722243a7e6536e42eb2bbe339a00f05adf"
-    sha256 x86_64_linux:  "0204e04af8d9e7e559cae5c11d20a67be28b0be62e2a13e2c362a94347ee3423"
+    rebuild 1
+    sha256 arm64_tahoe:   "c27638df632031a716fbf556de933101b9c835406a0784060c14b6768b0c4487"
+    sha256 arm64_sequoia: "478b39f4ee84db03cd06eb53964dc9eb3d82bd487817e9c4998cc6ac87c5831b"
+    sha256 arm64_sonoma:  "a9d34b5283f0b84bf36e831bd613b12baf1a0347e335945eb12578948e08bf52"
+    sha256 sonoma:        "6ef0b5a744ddc1306d07616f255d4ef918b08e227abb63b62081bba262183407"
+    sha256 arm64_linux:   "245e2c5772441e49d967ec758aef9a7755fc987062459946800a8559db82fb7d"
+    sha256 x86_64_linux:  "92c82ad6f3cbc5f96ac00ef1c7100a7a6d0b0760af029df93fd6677bcee0f029"
   end
 
   depends_on "pkgconf" => :build
   depends_on "cairo"
   depends_on "gcc" # for gfortran
-  depends_on "gettext"
   depends_on "jpeg-turbo"
   depends_on "libpng"
-  depends_on "libxext"
+  depends_on "libx11"
   depends_on "openblas"
   depends_on "pcre2"
   depends_on "readline"
@@ -37,27 +37,23 @@ class R < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "curl"
-  uses_from_macos "libffi"
 
   on_macos do
     depends_on "fontconfig"
     depends_on "freetype"
-    depends_on "libx11"
+    depends_on "gettext"
     depends_on "libxau"
     depends_on "libxcb"
     depends_on "libxdmcp"
+    depends_on "libxext"
     depends_on "libxrender"
     depends_on "pixman"
   end
 
   on_linux do
     depends_on "glib"
-    depends_on "harfbuzz"
     depends_on "icu4c@78"
-    depends_on "libice"
-    depends_on "libsm"
     depends_on "libtirpc"
-    depends_on "libx11"
     depends_on "libxt"
     depends_on "pango"
     depends_on "zlib-ng-compat"

@@ -17,6 +17,9 @@ class Securefs < Formula
     sha256 x86_64_linux: "551719741b79f0cbe3f7fcdaf60daa87f8b23fb1561162d00b8d360eb9457c8c"
   end
 
+  deprecate! date: "2026-06-21", because: "needs unmaintained `libfuse@2`"
+  disable! date: "2027-06-21", because: "needs unmaintained `libfuse@2`"
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "tclap" => :build

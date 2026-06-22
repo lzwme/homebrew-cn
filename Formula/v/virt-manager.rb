@@ -33,11 +33,12 @@ class VirtManager < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "06b07aaa4ed76e03e0d2db30af59ad04c436b2fd005eb519be03141c427b49ce"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "8d07cb463ff7898b94f6d6345907088f178ba21054c5e5b7e19fd416e605b7da"
   end
 
   depends_on "docutils" => :build
-  depends_on "intltool" => :build
+  depends_on "gettext" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
@@ -49,13 +50,16 @@ class VirtManager < Formula
   depends_on "libosinfo"
   depends_on "libvirt-glib"
   depends_on "libvirt-python" => :no_linkage
-  depends_on :macos
   depends_on "osinfo-db"
   depends_on "py3cairo" => :no_linkage
   depends_on "pygobject3" => :no_linkage
   depends_on "python@3.14"
   depends_on "spice-gtk"
   depends_on "vte3"
+
+  on_linux do
+    depends_on "xorg-server" => :test
+  end
 
   pypi_packages package_name:     "",
                 exclude_packages: "certifi",
@@ -105,22 +109,24 @@ class VirtManager < Formula
   end
 
   test do
-    libvirt_pid = spawn Formula["libvirt"].opt_sbin/"libvirtd", "-f", Formula["libvirt"].etc/"libvirt/libvirtd.conf"
+    pids = [spawn(Formula["libvirt"].opt_sbin/"libvirtd", "-f", Formula["libvirt"].etc/"libvirt/libvirtd.conf")]
+
+    if OS.linux? && ENV.exclude?("DISPLAY")
+      pids << spawn(Formula["xorg-server"].bin/"Xvfb", ":1")
+      ENV["DISPLAY"] = ":1"
+      sleep 10
+    end
 
     output = testpath/"virt-manager.log"
-    virt_manager_pid = fork do
-      $stdout.reopen(output)
-      $stderr.reopen(output)
-      exec bin/"virt-manager", "-c", "test:///default", "--debug"
-    end
+    pids << spawn(bin/"virt-manager", "-c", "test:///default", "--debug", [:out, :err] => output.to_s)
     sleep 20
     sleep 10 if OS.mac? && Hardware::CPU.intel?
 
     assert_match "conn=test:///default changed to state=Active", output.read
   ensure
-    Process.kill("TERM", libvirt_pid)
-    Process.kill("TERM", virt_manager_pid)
-    Process.wait(libvirt_pid)
-    Process.wait(virt_manager_pid)
+    pids.reverse_each do |pid|
+      Process.kill("TERM", pid)
+      Process.wait(pid)
+    end
   end
 end

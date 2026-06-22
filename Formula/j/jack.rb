@@ -28,7 +28,6 @@ class Jack < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
-  depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL-3.0 restrictions
   depends_on "libsamplerate"
 
   uses_from_macos "python" => :build
@@ -49,7 +48,9 @@ class Jack < Formula
   end
 
   def install
-    system "python3", "./waf", "configure", "--prefix=#{prefix}"
+    # Disabling metadata feature as it needs unmaintained Berkeley DB.
+    # Can restore if upstream switches to an alternative, https://github.com/jackaudio/jack2/issues/557
+    system "python3", "./waf", "configure", "--prefix=#{prefix}", "--db=no"
     system "python3", "./waf", "build"
     system "python3", "./waf", "install"
   end

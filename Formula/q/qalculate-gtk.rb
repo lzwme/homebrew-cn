@@ -15,7 +15,6 @@ class QalculateGtk < Formula
   end
 
   depends_on "gettext" => :build
-  depends_on "intltool" => :build
   depends_on "pkgconf" => :build
 
   depends_on "adwaita-icon-theme"
@@ -26,17 +25,11 @@ class QalculateGtk < Formula
   depends_on "libqalculate"
   depends_on "pango"
 
-  uses_from_macos "perl" => :build
-
   on_macos do
     depends_on "at-spi2-core"
     depends_on "gettext"
     depends_on "gtk-mac-integration"
     depends_on "harfbuzz"
-  end
-
-  on_linux do
-    depends_on "perl-xml-parser" => :build
   end
 
   def install

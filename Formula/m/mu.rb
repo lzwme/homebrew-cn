@@ -35,11 +35,14 @@ class Mu < Formula
   depends_on "pkgconf" => :build
   depends_on "texinfo" => :build
   depends_on "fmt"
-  depends_on "gettext"
   depends_on "glib"
   depends_on "gmime"
   depends_on "guile"
   depends_on "xapian"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   conflicts_with "mu-repo", because: "both install `mu` binaries"
 
@@ -56,7 +59,7 @@ class Mu < Formula
   # https://github.com/djcb/mu/issues/380
   # https://github.com/djcb/mu/issues/332
   test do
-    mkdir (testpath/"cur")
+    (testpath/"cur").mkpath
 
     (testpath/"cur/1234567890.11111_1.host1!2,S").write <<~EOS
       From: "Road Runner" <fasterthanyou@example.com>

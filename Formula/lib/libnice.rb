@@ -27,10 +27,6 @@ class Libnice < Formula
     depends_on "gettext"
   end
 
-  on_linux do
-    depends_on "intltool" => :build
-  end
-
   def install
     system "meson", "setup", "build", "-Dgstreamer=disabled", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

@@ -6,15 +6,16 @@ class Cycode < Formula
   url "https://files.pythonhosted.org/packages/c3/c8/59c5ca217f00bc1b775503c518bf52bd2f329def47e48a181249fdb73aef/cycode-3.16.2.tar.gz"
   sha256 "839fe5c182794cd206662090cb4e65615d1708535110b72969fd315b399440e9"
   license "MIT"
+  revision 1
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "78226761cbca49fab770dd5fccdd1dfb929e99d28979a43db827f782fb4e3b45"
-    sha256 cellar: :any, arm64_sequoia: "acdb490f2cc4918d55e55e4a1dfcccc0dfc726e1546cbf5c1fdd219b1bdc0eb6"
-    sha256 cellar: :any, arm64_sonoma:  "1d9c849d35369d4b033bc626053cbeebf8666b72eaefadff1ebf7a52301846a0"
-    sha256 cellar: :any, sonoma:        "5f1f6e4b9751d675523e9ca2277118af5e1f6023f86248c79c1cb16f8d07f14c"
-    sha256 cellar: :any, arm64_linux:   "7741c799be3c862c7fda4f5d0e145ff35611b0186075a667cf7b3a3d7708b783"
-    sha256 cellar: :any, x86_64_linux:  "b82d9594c9736d717ffb55aa73fe818f6d96551e6379b4696d5f9c33121c0267"
+    sha256 cellar: :any, arm64_tahoe:   "3bc43da40c11e254a3f134f5be4f0ba0809d239d9d95a346fe39cf573fca63b1"
+    sha256 cellar: :any, arm64_sequoia: "659022eefd900260bcf5a1d44107300441744a82ff2f51a0df3cccc66b3197d9"
+    sha256 cellar: :any, arm64_sonoma:  "54800ba00dda1d741160dbd9e9ea27db8742e8f1346c7e5f202b9bd17bc59dae"
+    sha256 cellar: :any, sonoma:        "7140fc568fc39d3fe8f4d7759c83a097535c36fde58ac2160694ecc8ece08b0f"
+    sha256 cellar: :any, arm64_linux:   "c7571b1605e10ab53abd21023e33b9169a14aa67bce864cff291e69861dbbaca"
+    sha256 cellar: :any, x86_64_linux:  "259f247d605212121d7a574ef424a5efff7a4505e14c48532ed6e5f74c1909ba"
   end
 
   depends_on "certifi" => :no_linkage
@@ -137,8 +138,8 @@ class Cycode < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/07/60/1d1e59c9c90d54591469ada7d268251f71c24bdb765f1a8a832cee8c6653/pydantic_settings-2.14.1.tar.gz"
-    sha256 "e874d3bec7e787b0c9958277956ed9b4dd5de6a80e162188fdaff7c5e26fd5fa"
+    url "https://files.pythonhosted.org/packages/5c/b5/8f48e906c3e0205276e8bd8cb7512217a87b2685304d64be27cad5b3019f/pydantic_settings-2.14.2.tar.gz"
+    sha256 "c19dd64b19097f1de80184f0cc7b0272a13ae6e170cbf240a3e27e381ed14a5f"
   end
 
   resource "pygments" do

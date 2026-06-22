@@ -23,7 +23,6 @@ class Nip4 < Formula
 
   depends_on "cairo"
   depends_on "gdk-pixbuf"
-  depends_on "gettext"
   depends_on "glib"
   depends_on "graphene"
   depends_on "gsl"
@@ -32,6 +31,10 @@ class Nip4 < Formula
   depends_on "libxml2"
   depends_on "pango"
   depends_on "vips"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     # Avoid running `meson` post-install script

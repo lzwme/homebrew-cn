@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/bd/e0/eb8420b504a0ae8dba742e82a4424df46e1b1540c2232da6206c2cc8bc64/mycli-1.74.1.tar.gz"
-  sha256 "f1413271e734596cd9816083c29939088a22cd4d1fea1d937ebdd9b7ffa2e359"
+  url "https://files.pythonhosted.org/packages/76/ae/abac2617d6504b803cab5c882040f7300426831fc677713765a2049b066f/mycli-1.76.0.tar.gz"
+  sha256 "3fd6424e60b7ed54029a51c128d625a31c2a99bc449db2979918490c5b644a73"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "06900d0c3645bf994e992a4d08d1fd05044236076de180abed998e4a7743f4df"
-    sha256 cellar: :any, arm64_sequoia: "c25a3d373ab7fd3efd33d37e897ec43e07852c09d93d6f22db7dc8e73f33b31e"
-    sha256 cellar: :any, arm64_sonoma:  "45aeedfc6825cbebe269b01a5c0b26ff8258fadf6672cfa4f3e0d8c7fafb704b"
-    sha256 cellar: :any, sonoma:        "f9304c01ac8f7f524fc75ae447d73bdf07c572901c245c7d69d6c02553ebab97"
-    sha256 cellar: :any, arm64_linux:   "9923f5c7e1f63bb85d0898008474b41240a5de33e28b23785adfa0c92b6341e4"
-    sha256 cellar: :any, x86_64_linux:  "955b2896a1efd5ad3bf97758deb50aa6fb68afee3c1599a771b11e506382f324"
+    sha256 cellar: :any, arm64_tahoe:   "b6a36208668e1f27121e595eaa58ab0b57b4a1ff28d1814b0ee3b991a54ba90a"
+    sha256 cellar: :any, arm64_sequoia: "1da3921cd37cd0b7bcfc32f298c6f531e1dd4893c7f3c9c112f9ab48fb6d7ea3"
+    sha256 cellar: :any, arm64_sonoma:  "eb86e8031e4350eb031dacb1aed4f5f4b906f68ac18ea39fd223c9ef8ee9c0bc"
+    sha256 cellar: :any, sonoma:        "051927c0ae50bad32be9c8d7876e7f99b702694f5a1201bb352f8978d2d861fc"
+    sha256 cellar: :any, arm64_linux:   "285ecd62b118c6000ff01186786ba8ab9027c76f2d7a10368d0c6b3008654f94"
+    sha256 cellar: :any, x86_64_linux:  "aa76a955d413a40b743c4d1e340059ea28c24e87cad0eedaa4bedc4091185711"
   end
 
   depends_on "rust" => :build # for jiter, sqlglotrs
@@ -249,6 +249,11 @@ class Mycli < Formula
     sha256 "e2cfde8f79420f6deeffdeda9aaec3b6bc5abce947655d17ac662b126e48a60d"
   end
 
+  resource "termcolor" do
+    url "https://files.pythonhosted.org/packages/46/79/cf31d7a93a8fdc6aa0fbb665be84426a8c5a557d9240b6239e9e11e35fc5/termcolor-3.3.0.tar.gz"
+    sha256 "348871ca648ec6a9a983a13ab626c0acce02f515b9e1983332b17af7979521c5"
+  end
+
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/87/d7/0535a28b1f5f24f6612fb3ff1e89fb1a8d160fee0f976e0aa6803862134b/tqdm-4.68.3.tar.gz"
     sha256 "00dfa48452b6b6cfae3dd9885636c23d3422d1ec97c66d96818cbd5e0821d482"
@@ -257,6 +262,11 @@ class Mycli < Formula
   resource "wcwidth" do
     url "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz"
     sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
+  end
+
+  resource "yaspin" do
+    url "https://files.pythonhosted.org/packages/8d/c5/826a862dcfcb9e85321f96d6f1b4b96b3b9bf37df6f63dce9cffd0b17053/yaspin-3.4.0.tar.gz"
+    sha256 "a83a81ac7a9d161e116fb668a7e4d10d87fb18d02b4b08a17b7e472f465f3c90"
   end
 
   def install

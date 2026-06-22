@@ -6,16 +6,16 @@ class McpAtlassian < Formula
   url "https://files.pythonhosted.org/packages/c3/44/d879210be4178c408fbd8971f8dd36e9abc7ba3d729f7ccd4b790e73c1f6/mcp_atlassian-0.21.1.tar.gz"
   sha256 "dff6c81541506cb0cc80d7ac9900ffdcb246fec7808e41e8df73c09dd4a28074"
   license "MIT"
-  revision 8
+  revision 9
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3980721389f3427c85b93699b50e0bc41d918294725f0cc1cee6707ff2006caa"
-    sha256 cellar: :any, arm64_sequoia: "148cf98c65121379e5d79d3d301e207ef2a9b520479687b6fddfab3e47c1b2f2"
-    sha256 cellar: :any, arm64_sonoma:  "f570a0fba37e5302e28e6305a3f2eb8ebd4e3f701fb230c155e23ab25eea8cea"
-    sha256 cellar: :any, sonoma:        "835e9ee8d59a9cf0bb3b8b5e29fad6c170a5cb0168bc1e01a8d6c93aca0e5050"
-    sha256 cellar: :any, arm64_linux:   "0b959167ee9efaff79f72830ed2b174eef2094170f99711edbf2af00eff69608"
-    sha256 cellar: :any, x86_64_linux:  "30815b8a9ada3623d5c6f04ee58b13e7e48c63d1ea3aec784aeb47083c6a4872"
+    sha256 cellar: :any, arm64_tahoe:   "15d407d763b11746b294e1fafdfaff003c3130fa3aeebe95987ac684f76f6462"
+    sha256 cellar: :any, arm64_sequoia: "d8998deeaa7a05fa104cec6a91bd36302f4d286c697ddad255372886fb53bf66"
+    sha256 cellar: :any, arm64_sonoma:  "547b66f815b7e59e7e885ce82af6c6e0ccc87057c053cbdb514a2384feda2aef"
+    sha256 cellar: :any, sonoma:        "40db0b4360faf497f46e3718db9d41f30625baf62832f36c39f16f627c585850"
+    sha256 cellar: :any, arm64_linux:   "de520d85766dd4685dff560b307bb0542bc3944626c6adbff2b9955b456fc680"
+    sha256 cellar: :any, x86_64_linux:  "3097bcb1bf515926c5d1bad60e6efcbac43e3e7f2ab3b0d35c29dc44f383e544"
   end
 
   depends_on "luajit" => :build # for lupa
@@ -40,8 +40,8 @@ class McpAtlassian < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
+    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
   end
 
   resource "atlassian-python-api" do
@@ -260,8 +260,8 @@ class McpAtlassian < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/27/3c/347cf965d313f5d41764e7d46bea6ffe7d9ef13b983cc429b0340962a082/mcp-1.27.2.tar.gz"
-    sha256 "8e02db104096d1c25b28e64bde29a5c32b31bc241710213e12fd4d84985bdfef"
+    url "https://files.pythonhosted.org/packages/c1/ee/94c6c50ffc5b5cf4737052275d11b57367f32d1a8516e31dcd60591b3916/mcp-1.28.0.tar.gz"
+    sha256 "559d3f9943674cafbe5744c5d3794f3237e8b47f9bbc58e20c0fad680d8487c2"
   end
 
   resource "mdurl" do
@@ -330,13 +330,13 @@ class McpAtlassian < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/07/60/1d1e59c9c90d54591469ada7d268251f71c24bdb765f1a8a832cee8c6653/pydantic_settings-2.14.1.tar.gz"
-    sha256 "e874d3bec7e787b0c9958277956ed9b4dd5de6a80e162188fdaff7c5e26fd5fa"
+    url "https://files.pythonhosted.org/packages/5c/b5/8f48e906c3e0205276e8bd8cb7512217a87b2685304d64be27cad5b3019f/pydantic_settings-2.14.2.tar.gz"
+    sha256 "c19dd64b19097f1de80184f0cc7b0272a13ae6e170cbf240a3e27e381ed14a5f"
   end
 
   resource "pydocket" do
-    url "https://files.pythonhosted.org/packages/88/5f/2f68c38ac3fdbff3cdec3ccfe31303ae5972f3e3f1c365d0ec71573dfd2e/pydocket-0.21.1.tar.gz"
-    sha256 "79d19d5f3be29caa23eba95226a516f8b2aed3ba1ad7830095fdce59f49b51f7"
+    url "https://files.pythonhosted.org/packages/20/c0/800c602c01a3fea829b2cb564b1ce667f983ac191ef6faf9dac8ba86bd30/pydocket-0.22.0.tar.gz"
+    sha256 "de6a6011df94e3da30279ff0b9732a793feaf77f9e6b23a09f2ae12b134993d6"
   end
 
   resource "pygments" do

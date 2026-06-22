@@ -14,6 +14,10 @@ class Cryfs < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "4d391a757720609a5f34600e573d517e8f061afddb31ff743d4f18737e2cf399"
   end
 
+  # Can be undeprecated if v2 is released or FUSE 3 support is added to v1
+  deprecate! date: "2026-06-21", because: "needs unmaintained `libfuse@2`"
+  disable! date: "2027-06-21", because: "needs unmaintained `libfuse@2`"
+
   depends_on "cmake" => :build
   depends_on "curl" => :build
   depends_on "pkgconf" => :build

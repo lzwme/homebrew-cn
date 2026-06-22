@@ -16,14 +16,10 @@ class Poke < Formula
     sha256 x86_64_linux:  "016bf647c3fad54272c7efde148cb755cd9015e3b3c7d394937f36a201667773"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "help2man" => :build
-  depends_on "libtool" => :build
   depends_on "pkgconf" => :build
-
   depends_on "bdw-gc"
-  depends_on "gettext"
+  depends_on "gettext" # needs libtextstyle
   depends_on "readline"
 
   uses_from_macos "ncurses"

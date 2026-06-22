@@ -1,17 +1,17 @@
 class LettaCode < Formula
   desc "Memory-first coding agent"
   homepage "https://docs.letta.com/letta-code"
-  url "https://registry.npmjs.org/@letta-ai/letta-code/-/letta-code-0.27.13.tgz"
-  sha256 "58b87bfbda0ca53a0924c5657004b6fb4716b0b4a12c10c1f03591617297d4ca"
+  url "https://registry.npmjs.org/@letta-ai/letta-code/-/letta-code-0.27.14.tgz"
+  sha256 "14375fe1fdcf7e4cab620f9c7a42d811ce6e265c6666e916a09b49077f190233"
   license "Apache-2.0"
 
   bottle do
-    sha256               arm64_tahoe:   "ca6c487143fa0df3db04968f595bd5c3cd8ee279b624c6bea335cf43fbdc76a3"
-    sha256               arm64_sequoia: "ee104d4da03261562a6c246733b6a3f712ebf4afcff64a8e037d00c0b4edf457"
-    sha256               arm64_sonoma:  "59e360f0697af97a25b3dc803d68ee9287ad23eca476ddf4a212802616909792"
-    sha256               sonoma:        "1c71750bb92f92173038c8e58923da7c183390de07fb7286afa07470462e074a"
-    sha256 cellar: :any, arm64_linux:   "23b04467efbea0e4239c6ae2982d8ea0b956fc37f587ef75b35aedfa31aeb02a"
-    sha256 cellar: :any, x86_64_linux:  "8b6e0c2d6caed003b194b9d7170eb0f4624320f463e4e003fe4289a0c1f1471f"
+    sha256               arm64_tahoe:   "83fba7816b50a3daadd8b998f773bd3b845585a9540cecfe9dcdb1c5e681f0c6"
+    sha256               arm64_sequoia: "0e244f8ab112d4693bbf28835846d60b6f29e8c8f7c16452d9296bd560182e71"
+    sha256               arm64_sonoma:  "17dce6b6eb6ceeff3d7fbbc5ec825cb5bce56fc3a4966f46e7d81d7e2577e68e"
+    sha256               sonoma:        "b6df6c2f863c2950ab13227ad39b2f38aa684b8adb9ffb0770b3a18ab45edaf1"
+    sha256 cellar: :any, arm64_linux:   "f7f8d9f95fab77fe7e577621fb0b4e02c3a7dca7307670427e19c326dda2e661"
+    sha256 cellar: :any, x86_64_linux:  "6a5b0ed3fd975c7e93617a8ebc063dd859de0595d37322a363de5725c5afdf14"
   end
 
   depends_on "pkgconf" => :build
@@ -69,6 +69,6 @@ class LettaCode < Formula
     assert_match version.to_s, shell_output("#{bin}/letta --version")
 
     output = shell_output("#{bin}/letta --info")
-    assert_match "Locally pinned agents: (none)", output
+    assert_match "Pinned agents: (none)", output
   end
 end

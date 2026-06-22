@@ -22,7 +22,7 @@ class Gtranslator < Formula
 
   depends_on "adwaita-icon-theme" => :no_linkage
   depends_on "cairo"
-  depends_on "gettext"
+  depends_on "gettext" # needs libgettextpo
   depends_on "glib"
   depends_on "gtk4"
   depends_on "gtksourceview5"

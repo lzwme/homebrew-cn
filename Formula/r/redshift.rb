@@ -31,6 +31,9 @@ class Redshift < Formula
     depends_on "libtool" => :build
   end
 
+  deprecate! date: "2026-06-21", because: :repo_archived
+  disable! date: "2027-06-21", because: :repo_archived
+
   depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "pkgconf" => :build

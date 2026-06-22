@@ -9,10 +9,6 @@ class LibfuseAT2 < Formula
   ]
   compatibility_version 1
 
-  livecheck do
-    skip "No longer developed or maintained"
-  end
-
   bottle do
     rebuild 1
     sha256 arm64_linux:  "df8b668765d688eb5a516eaa67a73d1750b5ce6bab91b1924def3b7fd0d85aac"
@@ -21,8 +17,9 @@ class LibfuseAT2 < Formula
 
   keg_only :versioned_formula
 
-  # TODO: Remove `autoconf`, `automake`, `gettext`, and `libtool` when we no longer need the patch.
-  # TODO: Consider generating a `configure` patch so that we don't need these.
+  deprecate! date: "2026-06-21", because: :unmaintained
+  disable! date: "2027-06-21", because: :unmaintained
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "gettext" => :build
@@ -45,7 +42,7 @@ class LibfuseAT2 < Formula
     ENV["INIT_D_PATH"] = etc/"init.d"
     ENV["UDEV_RULES_PATH"] = etc/"udev/rules.d"
     ENV["MOUNT_FUSE_PATH"] = bin
-    # TODO: Remove `autoreconf` when patch is no longer needed.
+
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--enable-lib", "--enable-util", "--disable-example", *std_configure_args
     system "make"

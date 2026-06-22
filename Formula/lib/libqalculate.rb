@@ -15,23 +15,17 @@ class Libqalculate < Formula
   end
 
   depends_on "gettext" => :build
-  depends_on "intltool" => :build
   depends_on "pkgconf" => :build
   depends_on "gmp"
   depends_on "gnuplot"
   depends_on "mpfr"
   depends_on "readline"
 
-  uses_from_macos "perl" => :build
   uses_from_macos "curl"
   uses_from_macos "libxml2"
 
   on_macos do
     depends_on "gettext"
-  end
-
-  on_linux do
-    depends_on "perl-xml-parser" => :build
   end
 
   def install

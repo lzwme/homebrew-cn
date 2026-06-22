@@ -1,18 +1,17 @@
 class Sherif < Formula
   desc "Opinionated, zero-config linter for JavaScript monorepos"
   homepage "https://github.com/QuiiBz/sherif"
-  url "https://ghfast.top/https://github.com/QuiiBz/sherif/archive/refs/tags/v1.11.1.tar.gz"
-  sha256 "4069bb60326caf7d50d06d15e85e838707206f061319461867101046e4fe01b8"
+  url "https://ghfast.top/https://github.com/QuiiBz/sherif/archive/refs/tags/v1.12.0.tar.gz"
+  sha256 "db9449256cfedc96c797237cc0ace54df20b8380697acef3df78787132c35d2a"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d81facdf032e213d960203de863bf618c1d6a5f057698bfe14fdc7978f3d68e4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2f0eeed242d165e3186234c46d99d71a5235d8e1e47a3f7ee42ccd53087b34a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b95376ac37e29a81cddddfa69a78eee8d35308fad1dc558c7dd6f02f2984617"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c757836175ed5ec663e39bd6bc447ad76420875d2df55ef6051b47a77826b4d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2bf55bd7259fdf733e2f00e1c5a15b6be9227a956874fc451bb8e18ea1ffd97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1194e9f1532b1564119bae43384fefe0f92a503c86b759bfa69768575b1b6b50"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d123f6dd6e4658b08d3cb2d3c41f4363bde133b2b244984b76107cfdf6debd8d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "857cdc303ce740664928d03e7101f4d94a276b016063f3c913c4ecdcfdf8c887"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7bd72050706f114c82dec5e5cf3a22cd0f43c9f600494b89a4344e4d866b29ca"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c761e20868b61568c2a7b15584647597c27216513fc82878e1e00b1377f67211"
+    sha256 cellar: :any,                 arm64_linux:   "7e65094a28bfac04a55bd55e27fd4b256a99549d2de141413bae459ea05b32dd"
+    sha256 cellar: :any,                 x86_64_linux:  "072f510d3824d4dca8bf7bb4d9808c9c2d95f7f7a59e542ab559504a74954131"
   end
 
   depends_on "rust" => :build
