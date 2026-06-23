@@ -30,7 +30,7 @@ class Helib < Formula
   test do
     cp pkgshare/"examples/BGV_country_db_lookup/BGV_country_db_lookup.cpp", testpath/"test.cpp"
     mkdir "build"
-    system ENV.cxx, "test.cpp", "-std=c++17", "-L#{lib}", "-L#{Formula["ntl"].opt_lib}",
+    system ENV.cxx, "test.cpp", "-std=c++17", "-L#{lib}", "-L#{formula_opt_lib("ntl")}",
                     "-pthread", "-lhelib", "-lntl", "-o", "build/BGV_country_db_lookup"
 
     cp_r pkgshare/"examples/tests", testpath

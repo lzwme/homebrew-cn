@@ -19,7 +19,7 @@ class DependencyCheck < Formula
     libexec.install Dir["*"]
 
     (bin/"dependency-check").write_env_script libexec/"bin/dependency-check.sh",
-      JAVA_HOME: Formula["openjdk"].opt_prefix
+      JAVA_HOME: formula_opt_prefix("openjdk")
 
     (var/"dependencycheck").mkpath
     libexec.install_symlink var/"dependencycheck" => "data"

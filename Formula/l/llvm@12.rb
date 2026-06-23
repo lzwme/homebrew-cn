@@ -47,7 +47,7 @@ class LlvmAT12 < Formula
     depends_on "pkgconf" => :build
     depends_on "binutils" # needed for gold
     depends_on "elfutils" # openmp requires <gelf.h>
-    depends_on "glibc" if Formula["glibc"].any_version_installed?
+    depends_on "glibc" if Utils::Path.formula_any_version_installed?("glibc")
 
     # Apply patches slated for the 12.0.x release stream
     # to allow building with GCC 5 and 6. Upstream bug:
@@ -138,7 +138,7 @@ class LlvmAT12 < Formula
     # gcc-5 fails at building compiler-rt. Enable PGO
     # build on Linux when we switch to Ubuntu 18.04.
     if OS.mac?
-      macos_sdk = MacOS.sdk_path_if_needed
+      macos_sdk = MacOS.sdk_path
       args << "-DFFI_INCLUDE_DIR=#{macos_sdk}/usr/include/ffi"
       args << "-DFFI_LIBRARY_DIR=#{macos_sdk}/usr/lib"
 
@@ -150,7 +150,7 @@ class LlvmAT12 < Formula
       ENV.append_to_cflags "-fpermissive -Wno-free-nonheap-object"
 
       args << "-DFFI_INCLUDE_DIR=#{Formula["libffi"].opt_include}"
-      args << "-DFFI_LIBRARY_DIR=#{Formula["libffi"].opt_lib}"
+      args << "-DFFI_LIBRARY_DIR=#{formula_opt_lib("libffi")}"
 
       # Disable `libxml2`, which isn't very useful.
       args << "-DLLVM_ENABLE_LIBXML2=OFF"

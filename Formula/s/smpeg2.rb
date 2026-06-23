@@ -43,7 +43,7 @@ class Smpeg2 < Formula
   patch :DATA
 
   def install
-    args = ["--with-sdl-prefix=#{Formula["sdl2-compat"].opt_prefix}", "--disable-sdltest"]
+    args = ["--with-sdl-prefix=#{formula_opt_prefix("sdl2-compat")}", "--disable-sdltest"]
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 

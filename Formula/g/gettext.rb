@@ -38,7 +38,7 @@ class Gettext < Formula
     ENV["am_cv_func_iconv_works"] = "yes" if OS.mac? && MacOS.version >= :sequoia
 
     args = [
-      "--with-libunistring-prefix=#{Formula["libunistring"].opt_prefix}",
+      "--with-libunistring-prefix=#{formula_opt_prefix("libunistring")}",
       "--disable-silent-rules",
       "--with-included-glib",
       "--with-included-libcroco",
@@ -59,7 +59,7 @@ class Gettext < Formula
       # your system somehow.
       "--with-included-gettext"
     else
-      "--with-libxml2-prefix=#{Formula["libxml2"].opt_prefix}"
+      "--with-libxml2-prefix=#{formula_opt_prefix("libxml2")}"
     end
 
     system "./configure", *std_configure_args, *args

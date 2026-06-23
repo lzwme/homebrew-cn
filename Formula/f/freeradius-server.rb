@@ -51,8 +51,8 @@ class FreeradiusServer < Formula
       --sbindir=#{bin}
       --localstatedir=#{var}
       --with-openssl-includes=#{Formula["openssl@3"].opt_include}
-      --with-openssl-libraries=#{Formula["openssl@3"].opt_lib}
-      --with-talloc-lib-dir=#{Formula["talloc"].opt_lib}
+      --with-openssl-libraries=#{formula_opt_lib("openssl@3")}
+      --with-talloc-lib-dir=#{formula_opt_lib("talloc")}
       --with-talloc-include-dir=#{Formula["talloc"].opt_include}
     ]
     args << "--without-rlm_python" if OS.mac?

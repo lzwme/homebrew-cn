@@ -120,7 +120,7 @@ class GhcAT96 < Formula
       binary_args = []
       if OS.linux?
         binary_args << "--with-gmp-includes=#{Formula["gmp"].opt_include}"
-        binary_args << "--with-gmp-libraries=#{Formula["gmp"].opt_lib}"
+        binary_args << "--with-gmp-libraries=#{formula_opt_lib("gmp")}"
       end
 
       system "./configure", "--prefix=#{binary}", *binary_args

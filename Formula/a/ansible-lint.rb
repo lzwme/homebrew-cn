@@ -159,7 +159,7 @@ class AnsibleLint < Formula
     refute_match "WARNING", output
 
     ansible_lint_core_version = output.match(/ansible-core:([\d.]+)/)[1]
-    ansible = Formula["ansible"].opt_bin/"ansible"
+    ansible = formula_opt_bin("ansible")/"ansible"
     assert_match "[core #{ansible_lint_core_version}]", shell_output("#{ansible} --version")
 
     ENV["ANSIBLE_REMOTE_TEMP"] = testpath/"tmp"

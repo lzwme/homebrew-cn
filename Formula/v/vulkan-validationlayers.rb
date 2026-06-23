@@ -42,11 +42,11 @@ class VulkanValidationlayers < Formula
   def install
     args = [
       "-DGLSLANG_INSTALL_DIR=#{Formula["glslang"].prefix}",
-      "-DSPIRV_HEADERS_INSTALL_DIR=#{Formula["spirv-headers"].opt_prefix}",
-      "-DSPIRV_TOOLS_INSTALL_DIR=#{Formula["spirv-tools"].opt_prefix}",
+      "-DSPIRV_HEADERS_INSTALL_DIR=#{formula_opt_prefix("spirv-headers")}",
+      "-DSPIRV_TOOLS_INSTALL_DIR=#{formula_opt_prefix("spirv-tools")}",
       "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].prefix}",
       "-DVULKAN_UTILITY_LIBRARIES_INSTALL_DIR=#{Formula["vulkan-utility-libraries"].prefix}",
-      "-DCMAKE_INSTALL_RPATH=#{rpath(target: Formula["vulkan-loader"].opt_lib)}",
+      "-DCMAKE_INSTALL_RPATH=#{rpath(target: formula_opt_lib("vulkan-loader"))}",
       "-DBUILD_TESTS=OFF",
       "-DUSE_ROBIN_HOOD_HASHING=OFF",
     ]

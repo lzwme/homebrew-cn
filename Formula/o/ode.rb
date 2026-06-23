@@ -51,7 +51,7 @@ class Ode < Formula
       }
     CPP
     system ENV.cc, "test.cpp", "-I#{include}/ode", "-L#{lib}", "-lode",
-                   "-L#{Formula["libccd"].opt_lib}", "-lccd", "-lm", "-lpthread",
+                   "-L#{formula_opt_lib("libccd")}", "-lccd", "-lm", "-lpthread",
                    "-o", "test"
     system "./test"
   end

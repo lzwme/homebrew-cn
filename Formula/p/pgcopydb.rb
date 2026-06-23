@@ -26,7 +26,7 @@ class Pgcopydb < Formula
     system "make", "bin"
     libexec.install "src/bin/pgcopydb/pgcopydb"
 
-    (bin/"pgcopydb").write_env_script libexec/"pgcopydb", PATH: "$PATH:#{Formula["libpq"].opt_bin}"
+    (bin/"pgcopydb").write_env_script libexec/"pgcopydb", PATH: "$PATH:#{formula_opt_bin("libpq")}"
 
     system "make", "-C", "docs", "man"
     man1.install Dir["docs/_build/man/*"]

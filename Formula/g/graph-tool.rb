@@ -126,7 +126,7 @@ class GraphTool < Formula
     # TODO: Consider adding a DSL for this or change how we handle Python's `expat` dependency
     if OS.mac? && MacOS.version < :sequoia
       env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
-      ENV.remove env_vars, /(^|:)#{Regexp.escape(Formula["expat"].opt_prefix)}[^:]*/
+      ENV.remove env_vars, /(^|:)#{Regexp.escape(formula_opt_prefix("expat"))}[^:]*/
       ENV.remove "HOMEBREW_DEPENDENCIES", "expat"
     end
 
@@ -154,7 +154,7 @@ class GraphTool < Formula
     # Enable openmp
     if OS.mac?
       ENV.append_to_cflags "-Xpreprocessor -fopenmp"
-      ENV.append "LDFLAGS", "-L#{Formula["libomp"].opt_lib} -lomp"
+      ENV.append "LDFLAGS", "-L#{formula_opt_lib("libomp")} -lomp"
       ENV.append "CPPFLAGS", "-I#{Formula["libomp"].opt_include}"
     end
 
@@ -162,7 +162,7 @@ class GraphTool < Formula
       PYTHON=#{python}
       --with-python-module-path=#{prefix/site_packages}
       --with-boost-python=boost_python#{xy.to_s.delete(".")}
-      --with-boost-libdir=#{Formula["boost"].opt_lib}
+      --with-boost-libdir=#{formula_opt_lib("boost")}
       --with-boost-coroutine=boost_coroutine
       --disable-silent-rules
     ]

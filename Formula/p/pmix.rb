@@ -55,8 +55,8 @@ class Pmix < Formula
       --disable-silent-rules
       --enable-ipv6
       --sysconfdir=#{etc}
-      --with-hwloc=#{Formula["hwloc"].opt_prefix}
-      --with-libevent=#{Formula["libevent"].opt_prefix}
+      --with-hwloc=#{formula_opt_prefix("hwloc")}
+      --with-libevent=#{formula_opt_prefix("libevent")}
       --with-sge
     ]
 

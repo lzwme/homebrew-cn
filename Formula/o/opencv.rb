@@ -90,7 +90,7 @@ class Opencv < Formula
     resource("contrib").stage buildpath/"opencv_contrib"
 
     # Avoid Accelerate.framework
-    ENV["OpenBLAS_HOME"] = Formula["openblas"].opt_prefix
+    ENV["OpenBLAS_HOME"] = formula_opt_prefix("openblas")
 
     # Remove bundled libraries to make sure formula dependencies are used
     libdirs = %w[ffmpeg libjasper libjpeg libjpeg-turbo libpng libtiff libwebp openexr openjpeg protobuf tbb zlib]
@@ -157,17 +157,17 @@ class Opencv < Formula
       # Disable precompiled headers and force opencv to use brewed libraries on Linux
       %W[
         -DENABLE_PRECOMPILED_HEADERS=OFF
-        -DJPEG_LIBRARY=#{Formula["jpeg-turbo"].opt_lib}/libjpeg.so
-        -DOpenBLAS_LIB=#{Formula["openblas"].opt_lib}/libopenblas.so
-        -DOPENEXR_ILMIMF_LIBRARY=#{Formula["openexr"].opt_lib}/libIlmImf.so
-        -DOPENEXR_ILMTHREAD_LIBRARY=#{Formula["openexr"].opt_lib}/libIlmThread.so
-        -DPNG_LIBRARY=#{Formula["libpng"].opt_lib}/libpng.so
-        -DPROTOBUF_LIBRARY=#{Formula["protobuf"].opt_lib}/libprotobuf.so
+        -DJPEG_LIBRARY=#{formula_opt_lib("jpeg-turbo")}/libjpeg.so
+        -DOpenBLAS_LIB=#{formula_opt_lib("openblas")}/libopenblas.so
+        -DOPENEXR_ILMIMF_LIBRARY=#{formula_opt_lib("openexr")}/libIlmImf.so
+        -DOPENEXR_ILMTHREAD_LIBRARY=#{formula_opt_lib("openexr")}/libIlmThread.so
+        -DPNG_LIBRARY=#{formula_opt_lib("libpng")}/libpng.so
+        -DPROTOBUF_LIBRARY=#{formula_opt_lib("protobuf")}/libprotobuf.so
         -DPROTOBUF_INCLUDE_DIR=#{Formula["protobuf"].include}
         -DPROTOBUF_PROTOC_EXECUTABLE=#{Formula["protobuf"].bin}/protoc
-        -DTIFF_LIBRARY=#{Formula["libtiff"].opt_lib}/libtiff.so
+        -DTIFF_LIBRARY=#{formula_opt_lib("libtiff")}/libtiff.so
         -DWITH_V4L=OFF
-        -DZLIB_LIBRARY=#{Formula["zlib-ng-compat"].opt_lib}/libz.so
+        -DZLIB_LIBRARY=#{formula_opt_lib("zlib-ng-compat")}/libz.so
       ]
     end
 

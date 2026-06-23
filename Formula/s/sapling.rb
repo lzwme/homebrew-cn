@@ -104,7 +104,7 @@ class Sapling < Formula
 
     python3 = "python3.13"
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
     ENV["PYTHON_SYS_EXECUTABLE"] = ENV["PYO3_PYTHON"] = which(python3)
     ENV["SAPLING_VERSION"] = if build.stable?
       version
@@ -133,11 +133,11 @@ class Sapling < Formula
     end
 
     dylibs = [
-      Formula["libssh2"].opt_lib/shared_library("libssh2"),
-      Formula["openssl@3"].opt_lib/shared_library("libssl"),
-      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+      formula_opt_lib("libssh2")/shared_library("libssh2"),
+      formula_opt_lib("openssl@3")/shared_library("libssl"),
+      formula_opt_lib("openssl@3")/shared_library("libcrypto"),
     ]
-    dylibs << (Formula["curl"].opt_lib/shared_library("libcurl")) if OS.linux?
+    dylibs << (formula_opt_lib("curl")/shared_library("libcurl")) if OS.linux?
 
     dylibs.each do |library|
       assert Utils.binary_linked_to_library?(bin/"sl", library),

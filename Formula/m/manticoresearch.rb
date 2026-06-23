@@ -67,8 +67,8 @@ class Manticoresearch < Formula
 
     ENV["ICU_ROOT"] = deps.find { |dep| dep.name.match?(/^icu4c(@\d+)?$/) }
                           .to_formula.opt_prefix.to_s
-    ENV["OPENSSL_ROOT_DIR"] = Formula["openssl@3"].opt_prefix.to_s
-    ENV["PostgreSQL_ROOT"] = Formula["libpq"].opt_prefix.to_s
+    ENV["OPENSSL_ROOT_DIR"] = formula_opt_prefix("openssl@3").to_s
+    ENV["PostgreSQL_ROOT"] = formula_opt_prefix("libpq").to_s
 
     args = %W[
       -DDISTR_BUILD=homebrew
@@ -80,8 +80,8 @@ class Manticoresearch < Formula
       -DCMAKE_REQUIRE_FIND_PACKAGE_re2=ON
       -DCMAKE_REQUIRE_FIND_PACKAGE_stemmer=ON
       -DCMAKE_REQUIRE_FIND_PACKAGE_xxHash=ON
-      -DMYSQL_CONFIG_EXECUTABLE=#{Formula["mariadb-connector-c"].opt_bin}/mariadb_config
-      -DRE2_LIBRARY=#{Formula["re2"].opt_lib/shared_library("libre2")}
+      -DMYSQL_CONFIG_EXECUTABLE=#{formula_opt_bin("mariadb-connector-c")}/mariadb_config
+      -DRE2_LIBRARY=#{formula_opt_lib("re2")/shared_library("libre2")}
       -DWITH_ICU_FORCE_STATIC=OFF
       -DWITH_RE2_FORCE_STATIC=OFF
       -DWITH_STEMMER_FORCE_STATIC=OFF

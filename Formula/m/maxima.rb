@@ -38,7 +38,7 @@ class Maxima < Formula
     system "./configure", "--enable-gettext",
                           "--enable-sbcl",
                           "--with-emacs-prefix=#{elisp}",
-                          "--with-sbcl=#{Formula["sbcl"].opt_bin}/sbcl",
+                          "--with-sbcl=#{formula_opt_bin("sbcl")}/sbcl",
                           *std_configure_args
     system "make"
     system "make", "install"

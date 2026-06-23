@@ -1,24 +1,26 @@
 class Pitchfork < Formula
   desc "CLI for managing daemons with a focus on developer experience"
   homepage "https://pitchfork.jdx.dev"
-  url "https://ghfast.top/https://github.com/jdx/pitchfork/archive/refs/tags/v2.13.1.tar.gz"
-  sha256 "4896b03f16e54d0bad34b5d80a72572721316f8c8b8d2af5f268bb500ff1426b"
+  url "https://ghfast.top/https://github.com/jdx/pitchfork/archive/refs/tags/v2.14.0.tar.gz"
+  sha256 "926307dab53a77052d5b23337d5ee3185ead450783e4f1dc06617704279b87f3"
   license "MIT"
   head "https://github.com/jdx/pitchfork.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd9cc0b6b591574a4c377ab4e3cb9f9a3f1a6ce423c0ca2cd103ceb5d4934379"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "304006d97a50a9858f5fd870eedd77ab2e3317183e2562bedf9667b48770b337"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "efbbcb676f1aa4d41f5ec12e65a27120dc7d9ee2e59613564b900d5285026554"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6c2d674ac3cd2b4a5ce53034a2b0d43a20cb466ca346245d6cd06b7c7064f561"
-    sha256 cellar: :any,                 arm64_linux:   "d0eae816ceed9426111ce03a0f8687d3969d97427994063117b412a9035b337e"
-    sha256 cellar: :any,                 x86_64_linux:  "b6c78bf07f54e38d0632442cd4635dcb2f2524bcbc4de657ca1ae3e590e13aed"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a157a55bc0eaad0ff303943e04af52fc4c2cb33e82486bbf12516af7cd3b7a49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dca9a13585db933b2cbfc6cb2d2f58222123b41d038826628d76bc524d8f7091"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d49f2981e0824318934e64bfef4fbeeb5e73ffca88712dd39c14c6f0307972de"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d3d9595bcd12efa9845ced5b71be65f8f63975cc58651ad9a59f62947e1101ea"
+    sha256 cellar: :any,                 arm64_linux:   "bf3b675b42cb22d059e4a80e79ea2f43f5612cdd503789bbd7b7aba1d0965e22"
+    sha256 cellar: :any,                 x86_64_linux:  "67b92cb101b20ccac68197fe4e30ce2bcefd130dcd6a2ec032ff8b667ad39422"
   end
 
   depends_on "rust" => :build
   depends_on "usage"
 
   def install
+    (buildpath/"ui/dist").mkpath
+
     system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"pitchfork", "completion")
   end

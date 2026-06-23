@@ -50,8 +50,8 @@ class Fb303 < Formula
       project(test LANGUAGES CXX)
       set(CMAKE_CXX_STANDARD 20)
 
-      list(APPEND CMAKE_MODULE_PATH "#{Formula["fizz"].opt_libexec}/cmake")
-      list(APPEND CMAKE_MODULE_PATH "#{Formula["fbthrift"].opt_libexec}/cmake")
+      list(APPEND CMAKE_MODULE_PATH "#{formula_opt_libexec("fizz")}/cmake")
+      list(APPEND CMAKE_MODULE_PATH "#{formula_opt_libexec("fbthrift")}/cmake")
       find_package(FBThrift CONFIG REQUIRED)
       find_package(wangle CONFIG REQUIRED)
       find_package(fb303 CONFIG REQUIRED)

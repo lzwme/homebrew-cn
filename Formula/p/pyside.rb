@@ -143,7 +143,7 @@ class Pyside < Formula
     if OS.linux?
       pyver = Language::Python.major_minor_version python3
       pylib += %W[
-        -Wl,-rpath,#{Formula["python@#{pyver}"].opt_lib}
+        -Wl,-rpath,#{formula_opt_lib("python@#{pyver}")}
         -Wl,-rpath,#{lib}
       ]
     end

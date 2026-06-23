@@ -38,7 +38,7 @@ class Libgnt < Formula
 
     # upstream bug report on this workaround, https://issues.imfreedom.org/issue/LIBGNT-15
     inreplace "meson.build", "ncurses_sys_prefix = '/usr'",
-                             "ncurses_sys_prefix = '#{Formula["ncurses"].opt_prefix}'"
+                             "ncurses_sys_prefix = '#{formula_opt_prefix("ncurses")}'"
 
     system "meson", "setup", "build", "-Dpython2=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -59,10 +59,10 @@ class Libgnt < Formula
 
     flags = [
       "-I#{Formula["glib"].opt_include}/glib-2.0",
-      "-I#{Formula["glib"].opt_lib}/glib-2.0/include",
+      "-I#{formula_opt_lib("glib")}/glib-2.0/include",
       "-I#{include}",
       "-L#{lib}",
-      "-L#{Formula["glib"].opt_lib}",
+      "-L#{formula_opt_lib("glib")}",
       "-lgnt",
       "-lglib-2.0",
     ]

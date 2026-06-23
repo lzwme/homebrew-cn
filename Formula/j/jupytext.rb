@@ -3,18 +3,18 @@ class Jupytext < Formula
 
   desc "Jupyter notebooks as Markdown documents, Julia, Python or R scripts"
   homepage "https://jupytext.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/ef/2d/15624c3d9440d85a280ff13d2d23afd989802f25470ac59932f4fef6f0c6/jupytext-1.19.3.tar.gz"
-  sha256 "713c3ed4441afe0f31474d28ea2e6b61a268c04c40fd78e5ccfd7f7ac9e9f766"
+  url "https://files.pythonhosted.org/packages/3b/52/e014296ac8f40ca783aeb73dae52e65edbb0eaae0dcdc1ea41bfaa8aebf7/jupytext-1.19.4.tar.gz"
+  sha256 "739bcd4bc12aa4fe298a38017cdb5ae27b08a6ba3a5470728d2fe9e04b155db1"
   license "MIT"
   head "https://github.com/mwouts/jupytext.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "fcf1dd6ee15227def4557114f43a7172124e3e7677340c477cb4fcad2e8fcd7f"
-    sha256 cellar: :any,                 arm64_sequoia: "beaad6f441b045e0c24bcd1f9ab75276916719f2841f24347efc46aecdf807cb"
-    sha256 cellar: :any,                 arm64_sonoma:  "749282c5632994fa047e5faf2e496b9b7a997bc2c5c84ecc5193785da70eb7c4"
-    sha256 cellar: :any,                 sonoma:        "96a4c30fabc17ceda48aa2586e41a00d8e5eb26ac1a76f8be9c767af298a60af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e8a30ee79bc2c3200c52c8a0fa4144c546c22090ca74c33a5f4bd7f962de615"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44f31a91edc52ee3c9e2a537a8ca0d1d9188adc99eb9f7546f23f72215574b9d"
+    sha256 cellar: :any, arm64_tahoe:   "ac3c88d6e758627f4f2ba088ea30f61b96497c0ee995a5e024bc22ad2d92fff3"
+    sha256 cellar: :any, arm64_sequoia: "4512a725de2c4ed161446df85c02ddce058a776fd982e833aae490b3f771b722"
+    sha256 cellar: :any, arm64_sonoma:  "26b4a5f88c33b1bbdd38ce29d1c07e04259dca600827009bcde27bd7f48f1358"
+    sha256 cellar: :any, sonoma:        "d797dc6ff274197d6d9846042181e73df2b397fb0bb131ee037aa454796b6ac0"
+    sha256 cellar: :any, arm64_linux:   "ff18c8b5e1aec801c71f5da3a3d3e45a1b48d669f482bbb46f1b1bd99a757994"
+    sha256 cellar: :any, x86_64_linux:  "062e4ea8ba11b5d9ed6328b3acb78068e2cf8f0e54e8d734a4d02b8e67e9b231"
   end
 
   depends_on "libyaml"
@@ -74,8 +74,8 @@ class Jupytext < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
-    sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
+    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
+    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
   end
 
   resource "pyyaml" do
@@ -89,8 +89,8 @@ class Jupytext < Formula
   end
 
   resource "traitlets" do
-    url "https://files.pythonhosted.org/packages/1b/22/40f55b26baeab80c2d7b3f1db0682f8954e4617fee7d90ce634022ef05c6/traitlets-5.15.0.tar.gz"
-    sha256 "4fead733f81cf1c4c938e06f8ca4633896833c9d89eff878159457f4d4392971"
+    url "https://files.pythonhosted.org/packages/57/a9/a2584b8313b89f94869ddb3c4074617a691de1812a614d2d50e32ca5a7a6/traitlets-5.15.1.tar.gz"
+    sha256 "7b1c07854fe25acb39e009bae49f11b79ff6cbb2f27999104e9110e7a6b53722"
   end
 
   def install

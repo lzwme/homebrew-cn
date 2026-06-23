@@ -41,7 +41,7 @@ class Tin < Formula
     rm_r buildpath/"pcre"
 
     system "./configure", "--mandir=#{man}",
-                          "--with-pcre2-config=#{Formula["pcre2"].opt_prefix}/bin/pcre2-config",
+                          "--with-pcre2-config=#{formula_opt_prefix("pcre2")}/bin/pcre2-config",
                           *std_configure_args
     system "make", "build"
     system "make", "install"

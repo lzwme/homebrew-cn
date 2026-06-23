@@ -51,7 +51,7 @@ class Planck < Formula
     ENV["JAVA_HOME"] = Language::Java.java_home
 
     if OS.linux?
-      ENV.prepend_path "PATH", Formula["openjdk"].opt_bin
+      ENV.prepend_path "PATH", formula_opt_bin("openjdk")
 
       # The webkitgtk pkg-config .pc file includes the API version in its name (ex. javascriptcore-4.1.pc).
       # We extract this from the filename programmatically and store it in javascriptcore_api_version

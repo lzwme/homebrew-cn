@@ -24,7 +24,7 @@ class PostgresLanguageServer < Formula
 
   def install
     ENV["PGLS_VERSION"] = version.to_s
-    ENV["LIBPG_QUERY_PATH"] = Formula["libpg_query"].opt_prefix
+    ENV["LIBPG_QUERY_PATH"] = formula_opt_prefix("libpg_query")
     system "cargo", "install", *std_cargo_args(path: "crates/pgls_cli")
   end
 

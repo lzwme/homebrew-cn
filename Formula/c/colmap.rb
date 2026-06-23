@@ -63,7 +63,7 @@ class Colmap < Formula
     args << "-DCMAKE_INSTALL_RPATH=#{loader_path}"
     # Set openssl@3 to avoid indirect linkage with openssl@4
     # TODO: switch to openssl@4
-    args << "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}"
+    args << "-DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@3")}"
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

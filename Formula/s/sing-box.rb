@@ -27,10 +27,10 @@ class SingBox < Formula
     ldflags_shared = File.read("release/LDFLAGS").strip
 
     if OS.linux?
-      ENV["CC"] = Formula["llvm"].opt_bin/"clang"
-      ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
+      ENV["CC"] = formula_opt_bin("llvm")/"clang"
+      ENV["CXX"] = formula_opt_bin("llvm")/"clang++"
       ENV["CGO_ENABLED"] = "1"
-      ENV["CGO_LDFLAGS"] = "-fuse-ld=#{Formula["lld"].opt_bin}/ld.lld"
+      ENV["CGO_LDFLAGS"] = "-fuse-ld=#{formula_opt_bin("lld")}/ld.lld"
     end
 
     ldflags = "-s -w -X github.com/sagernet/sing-box/constant.Version=#{version} #{ldflags_shared} -buildid="

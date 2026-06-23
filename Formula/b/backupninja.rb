@@ -32,7 +32,7 @@ class Backupninja < Formula
       --sysconfdir=#{etc}
       --localstatedir=#{var}
     ]
-    args << "BASH=#{Formula["bash"].opt_bin}/bash" if OS.mac?
+    args << "BASH=#{formula_opt_bin("bash")}/bash" if OS.mac?
 
     system "./configure", *args, *std_configure_args
     system "make", "install"

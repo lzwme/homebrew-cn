@@ -1,9 +1,8 @@
 class AliyunCli < Formula
   desc "Universal Command-Line Interface for Alibaba Cloud"
   homepage "https://github.com/aliyun/aliyun-cli"
-  url "https://github.com/aliyun/aliyun-cli.git",
-      tag:      "v3.3.23",
-      revision: "9eed7202cf6659c08c0cf223e2707d7888b054bc"
+  url "https://ghfast.top/https://github.com/aliyun/aliyun-cli/archive/refs/tags/v3.3.23.tar.gz"
+  sha256 "99050ed6f84c4a240b4f1170f0a65961e23fde90aa67ad473eb523384ee4e58a"
   license "Apache-2.0"
   head "https://github.com/aliyun/aliyun-cli.git", branch: "master"
 
@@ -23,7 +22,22 @@ class AliyunCli < Formula
 
   depends_on "go" => :build
 
+  resource "aliyun-openapi-meta" do
+    url "https://ghfast.top/https://github.com/aliyun/aliyun-openapi-meta/archive/2563691c22229a0b493606e11166b95896707095.tar.gz"
+    version "2563691c22229a0b493606e11166b95896707095"
+    sha256 "7ba54333e467ddf5b25cc93ef883742b1817b44c48568bfee699450544537e31"
+
+    livecheck do
+      url "https://api.github.com/repos/aliyun/aliyun-cli/contents/aliyun-openapi-meta?ref=v#{LATEST_VERSION}"
+      strategy :json do |json|
+        json["sha"]
+      end
+    end
+  end
+
   def install
+    (buildpath/"aliyun-openapi-meta").install resource("aliyun-openapi-meta")
+
     ldflags = "-s -w -X github.com/aliyun/aliyun-cli/v#{version.major}/cli.Version=#{version}"
     system "go", "build", *std_go_args(output: bin/"aliyun", ldflags:), "main/main.go"
   end

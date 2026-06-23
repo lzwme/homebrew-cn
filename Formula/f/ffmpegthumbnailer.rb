@@ -33,7 +33,7 @@ class Ffmpegthumbnailer < Formula
   end
 
   test do
-    ffmpeg = Formula["ffmpeg"].opt_bin/"ffmpeg"
+    ffmpeg = formula_opt_bin("ffmpeg")/"ffmpeg"
     png = test_fixtures("test.png")
     system ffmpeg.to_s, "-loop", "1", "-i", png.to_s, "-c:v", "libx264", "-t", "30",
                         "-pix_fmt", "yuv420p", "v.mp4"

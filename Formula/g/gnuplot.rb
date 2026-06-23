@@ -59,7 +59,7 @@ class Gnuplot < Formula
   def install
     args = %W[
       --disable-silent-rules
-      --with-readline=#{Formula["readline"].opt_prefix}
+      --with-readline=#{formula_opt_prefix("readline")}
       --disable-wxwidgets
       --with-qt
       --without-x

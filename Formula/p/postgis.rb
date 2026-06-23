@@ -78,14 +78,14 @@ class Postgis < Formula
       bin.install_symlink postgresql.opt_bin/"postgres"
 
       mkdir "build-pg#{postgresql.version.major}" do
-        system "../configure", "--with-projdir=#{Formula["proj"].opt_prefix}",
-                               "--with-jsondir=#{Formula["json-c"].opt_prefix}",
+        system "../configure", "--with-projdir=#{formula_opt_prefix("proj")}",
+                               "--with-jsondir=#{formula_opt_prefix("json-c")}",
                                "--with-pgconfig=#{postgresql.opt_bin}/pg_config",
-                               "--with-protobufdir=#{Formula["protobuf-c"].opt_bin}",
+                               "--with-protobufdir=#{formula_opt_bin("protobuf-c")}",
                                *std_configure_args
         # Force `bin/pgsql2shp` to link to `libpq`
         system "make", "PGSQL_FE_CPPFLAGS=-I#{Formula["libpq"].opt_include}",
-                       "PGSQL_FE_LDFLAGS=-L#{Formula["libpq"].opt_lib} -lpq"
+                       "PGSQL_FE_LDFLAGS=-L#{formula_opt_lib("libpq")} -lpq"
         # Override the hardcoded install paths set by the PGXS makefiles
         system "make", "install", "bindir=#{bin}",
                                   "docdir=#{doc}",

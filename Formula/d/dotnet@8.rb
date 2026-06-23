@@ -69,8 +69,8 @@ class DotnetAT8 < Formula
 
     # .NET built with Apple Clang 2100 (based on LLVM 21) sporadically crashes
     if DevelopmentTools.clang_build_version >= 2100
-      ENV["CC"] = Formula["llvm@20"].opt_bin/"clang"
-      ENV["CXX"] = Formula["llvm@20"].opt_bin/"clang++"
+      ENV["CC"] = formula_opt_bin("llvm@20")/"clang"
+      ENV["CXX"] = formula_opt_bin("llvm@20")/"clang++"
       ENV.append_to_cflags "-I#{HOMEBREW_PREFIX}/include"
     end
 

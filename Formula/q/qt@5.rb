@@ -215,7 +215,7 @@ class QtAT5 < Formula
     # Remove reference to shims directory
     inreplace prefix/"mkspecs/qmodule.pri",
               /^PKG_CONFIG_EXECUTABLE = .*$/,
-              "PKG_CONFIG_EXECUTABLE = #{Formula["pkgconf"].opt_bin}/pkg-config"
+              "PKG_CONFIG_EXECUTABLE = #{formula_opt_bin("pkgconf")}/pkg-config"
 
     # Install a qtversion.xml to ease integration with QtCreator
     # As far as we can tell, there is no ability to make the Qt buildsystem

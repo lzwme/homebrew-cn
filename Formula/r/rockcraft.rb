@@ -5,8 +5,8 @@ class Rockcraft < Formula
   homepage "https://documentation.ubuntu.com/rockcraft/"
   # git checkout needed for setuptools-scm
   url "https://github.com/canonical/rockcraft.git",
-      tag:      "1.19.0",
-      revision: "77be1bab830d1683791c004b3c0df856f294d805"
+      tag:      "1.19.1",
+      revision: "5a78bf4b84c41d730012932881c7966fcdac0170"
   license "GPL-3.0-only"
   head "https://github.com/canonical/rockcraft.git", branch: "main"
 
@@ -16,12 +16,12 @@ class Rockcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0992e3004a0840a83927bbded20bec9573373353b4be69d87eef0533557dea3d"
-    sha256 cellar: :any,                 arm64_sequoia: "3010ad0efbc8d85f09d7bd3ae85a8c841c236f570769544f3f086ec5baec737b"
-    sha256 cellar: :any,                 arm64_sonoma:  "6b50a4448346e810a45267c53b36ab72c5a6ee712728f6e288c12529e2851dff"
-    sha256 cellar: :any,                 sonoma:        "395ae769488a0d57566479e82d8e27ee57b112c90d366819ee8495048f6aa0d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2edf8bd5563ed1920ce78ab1e896ffc5d22832c95eb1c4b7b4f6085e91264ae1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6efcd86aacae528026bff4dd84c97850340e45eff6cc0cab0bffbb446a764117"
+    sha256 cellar: :any, arm64_tahoe:   "6936600ff6c66753f39f98032e86960e124bbd47c4622de9ed18eb827a67bcbc"
+    sha256 cellar: :any, arm64_sequoia: "5df96a9b53fccc8d5ffdad384bfb014f4e8522e861553bb22700483b5ae9306c"
+    sha256 cellar: :any, arm64_sonoma:  "656aeadcad7712a52692d4fe8d8692f105e986c5cf058f7c356b23a5f13761e7"
+    sha256 cellar: :any, sonoma:        "3dae40e6bde0d91fa6b1a2aa195468339f41dd54a2b7fe29f2795355c75e1e9d"
+    sha256 cellar: :any, arm64_linux:   "793e9c1dce8db4be6607158d18726871027185e45c75540e648c240bcab871cd"
+    sha256 cellar: :any, x86_64_linux:  "965383c563c53382d91e7d2d22427764332df936f422877d9db7893f28f3e488"
   end
 
   depends_on "certifi" => :no_linkage

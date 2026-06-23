@@ -40,7 +40,7 @@ class Asio < Formula
 
     system "./configure", "--disable-silent-rules",
                           "--without-boost",
-                          "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
+                          "--with-openssl=#{formula_opt_prefix("openssl@3")}",
                           *std_configure_args
     system "make", "install"
     pkgshare.install "src/examples"

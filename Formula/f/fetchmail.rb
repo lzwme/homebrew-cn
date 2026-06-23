@@ -31,7 +31,7 @@ class Fetchmail < Formula
   def install
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
-                          "--with-ssl=#{Formula["openssl@3"].opt_prefix}"
+                          "--with-ssl=#{formula_opt_prefix("openssl@3")}"
     system "make", "install"
   end
 

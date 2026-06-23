@@ -19,7 +19,7 @@ class ScmManager < Formula
 
   def install
     # Replace pre-built `jsvc` with formula to add Apple Silicon support
-    inreplace "bin/scm-server", %r{ \$BASEDIR/libexec/jsvc-.*"}, " #{Formula["jsvc"].opt_bin}/jsvc\""
+    inreplace "bin/scm-server", %r{ \$BASEDIR/libexec/jsvc-.*"}, " #{formula_opt_bin("jsvc")}/jsvc\""
     rm Dir["libexec/jsvc-*"]
     libexec.install Dir["*"]
 

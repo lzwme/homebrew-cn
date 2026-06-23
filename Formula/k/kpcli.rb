@@ -117,7 +117,7 @@ class Kpcli < Formula
 
       system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}",
                      "--includedir=#{Formula["readline"].opt_include}",
-                     "--libdir=#{Formula["readline"].opt_lib}"
+                     "--libdir=#{formula_opt_lib("readline")}"
       system "make", "install"
     end
 

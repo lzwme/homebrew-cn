@@ -58,8 +58,8 @@ class Xapian < Formula
       site_packages = Language::Python.site_packages(python3)
       ENV.prepend_create_path "PYTHON3_LIB", prefix/site_packages
 
-      ENV.append_path "PYTHONPATH", Formula["sphinx-doc"].opt_libexec/site_packages
-      ENV.append_path "PYTHONPATH", Formula["sphinx-doc"].opt_libexec/"vendor"/site_packages
+      ENV.append_path "PYTHONPATH", formula_opt_libexec("sphinx-doc")/site_packages
+      ENV.append_path "PYTHONPATH", formula_opt_libexec("sphinx-doc")/"vendor"/site_packages
 
       system "./configure", *std_configure_args, "--disable-silent-rules", "--with-python3"
       system "make", "install"

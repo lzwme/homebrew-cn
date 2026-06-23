@@ -41,7 +41,7 @@ class MonitoringPlugins < Formula
 
     args = %W[
       --libexecdir=#{libexec}/sbin
-      --with-openssl=#{Formula["openssl@3"].opt_prefix}
+      --with-openssl=#{formula_opt_prefix("openssl@3")}
     ]
 
     system "./configure", *args, *std_configure_args

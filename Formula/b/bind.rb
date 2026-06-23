@@ -79,8 +79,8 @@ class Bind < Formula
         "--sysconfdir=#{pkgetc}",
         "--localstatedir=#{var}",
         "--with-json-c",
-        "--with-libidn2=#{Formula["libidn2"].opt_prefix}",
-        "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
+        "--with-libidn2=#{formula_opt_prefix("libidn2")}",
+        "--with-openssl=#{formula_opt_prefix("openssl@3")}",
         "--without-lmdb",
       ]
 

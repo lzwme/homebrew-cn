@@ -66,7 +66,7 @@ class Vips < Formula
 
   def install
     # mozjpeg needs to appear before libjpeg, otherwise it's not used
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["mozjpeg"].opt_lib/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("mozjpeg")/"pkgconfig"
 
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -76,7 +76,7 @@ class Vips < Formula
       # `pkg-config --libs vips` includes libarchive, but that package is
       # keg-only so it needs to look for the pkgconfig file in libarchive's opt
       # path.
-      libarchive = Formula["libarchive"].opt_prefix
+      libarchive = formula_opt_prefix("libarchive")
       inreplace [lib/"pkgconfig/vips.pc", lib/"pkgconfig/vips-cpp.pc"] do |s|
         s.gsub!(/^Requires\.private:(.*)\blibarchive\b(.*?)(,.*)?$/,
                 "Requires.private:\\1#{libarchive}/lib/pkgconfig/libarchive.pc\\3")

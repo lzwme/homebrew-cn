@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://esphome.io/"
-  url "https://files.pythonhosted.org/packages/f2/81/d504ec2580f77f413e3591041625a599a20d94ecb3da9031324f7cba5595/esphome-2026.6.1.tar.gz"
-  sha256 "c0313814e69e1bd172db80500a768223bb4439ae007269e8436a04eec1604a32"
+  url "https://files.pythonhosted.org/packages/49/e4/29bf98d3b92dca7e6a0650a4b82d73eaba1bbb20eefa1ad0c53b41faf7d1/esphome-2026.6.2.tar.gz"
+  sha256 "9f8df255a9ad4e0953ef12dcce0a4d21fc6825ac8a351988ce6b56a7c7325d4a"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -12,12 +12,12 @@ class Esphome < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "543d9ece0b38783bce1ec6ac4b00d2edaedcf7b1c6fb3e463a18472a848ed378"
-    sha256 cellar: :any, arm64_sequoia: "18a22661f04fcfb3372ec23880feda8157b549dbbfe0cd0b8748ef1b47760f18"
-    sha256 cellar: :any, arm64_sonoma:  "3076e585d621a7538196f86e725711646083471073a1ce47b2194d84d2e19a66"
-    sha256 cellar: :any, sonoma:        "6fd7f2df446dfcda3be8f956d06f978aeb5a2a94ca4b6342ddeae751c122e691"
-    sha256 cellar: :any, arm64_linux:   "d1f29243f966d122f46869c3665edb6033011b23796e5ce8353a021e340ca896"
-    sha256 cellar: :any, x86_64_linux:  "6995ece671dce0ca5212adbb2bf66ecc7f88bf5a54ff955e5c456e870911734c"
+    sha256 cellar: :any, arm64_tahoe:   "024c2892d82aa312b104a77c8800d0767cc9e1f813595456466922b3a162648f"
+    sha256 cellar: :any, arm64_sequoia: "2d1990ad199a79ac92ffac87da260edb5b88ed6f5531cfd772e65d885e309bf0"
+    sha256 cellar: :any, arm64_sonoma:  "e7a44d53257c8917f645fadfab63cbd5df0e31b598b5a42d08dd558e736a18c7"
+    sha256 cellar: :any, sonoma:        "c0d9e9d27d68cbd19b125dcd5894f610884467fbd5dd16e154f584d86f29b21c"
+    sha256 cellar: :any, arm64_linux:   "722c08652e9570a15cd021dc5fa79c44f48c37a12d9501d0fd72b23b56756e0e"
+    sha256 cellar: :any, x86_64_linux:  "9faf260e035710109a1efeefa963f30c7ff7ab1aed405f7493d1c63c535fe7c0"
   end
 
   depends_on "rust" => :build
@@ -276,23 +276,23 @@ class Esphome < Formula
   end
 
   resource "pyobjc-core" do
-    url "https://files.pythonhosted.org/packages/2a/e8/a6cc12669211e7c9b29e8f26bf2159e67c7a73555dc229018abf46d8167a/pyobjc_core-12.2.tar.gz"
-    sha256 "51d7de4cfa32f508c6a7aac31f131b12d5e196a8dcf588e6e8d7e6337224f66d"
+    url "https://files.pythonhosted.org/packages/b4/b1/729f7458a63758bd21716648a8abcd9a0c8f2d2e9897763c8a1a1c7fd31b/pyobjc_core-12.2.1.tar.gz"
+    sha256 "7a7b9b018402342cf32bf1956366896350fbe5c0478cb3ef59778f77abed7f07"
   end
 
   resource "pyobjc-framework-cocoa" do
-    url "https://files.pythonhosted.org/packages/6d/cc/927169225e72bab9c9b44285656768fb75052a0bc85fdbca62740e1ca43c/pyobjc_framework_cocoa-12.2.tar.gz"
-    sha256 "20b392e2b7241caad0538dfde12143343e5dfe48f72e7df660a7548e635903dc"
+    url "https://files.pythonhosted.org/packages/51/34/fbe38a204643aa4e1b91391cdce07a34da565a69171ebcad08de7438a556/pyobjc_framework_cocoa-12.2.1.tar.gz"
+    sha256 "b94b37fe5730e5ae1fb0052912cd174e6ec329b0bfba4a012ae5db1014b5864b"
   end
 
   resource "pyobjc-framework-corebluetooth" do
-    url "https://files.pythonhosted.org/packages/52/df/bee7ba216f9fb513710aac1701b78c97b087b37fca8ec1806f8572e0bbb3/pyobjc_framework_corebluetooth-12.2.tar.gz"
-    sha256 "8b4e5ca99953c360c391a695b0782a5328fcecafd56fdf790ad709e932feb306"
+    url "https://files.pythonhosted.org/packages/d4/91/c76f3c5e8e80c7047e43c4c05b3e6fda9a7cefad5aae85487007674c966c/pyobjc_framework_corebluetooth-12.2.1.tar.gz"
+    sha256 "7dbb285295097205bebbcb11f55161e5faa02111108fb7b17536176e31971eb0"
   end
 
   resource "pyobjc-framework-libdispatch" do
-    url "https://files.pythonhosted.org/packages/1b/fe/e23be301e46c30450955cdb096f16f6a86e7609787a4b8225ec24d6fdc9d/pyobjc_framework_libdispatch-12.2.tar.gz"
-    sha256 "4a41879ef7716b73d70f2e40ff39353d686cbc59d48c93217ed362d2b2baf1ba"
+    url "https://files.pythonhosted.org/packages/d9/3f/561653aff3f19873457c95c053f0298da517be89fdfc0ec35115ed5b7030/pyobjc_framework_libdispatch-12.2.1.tar.gz"
+    sha256 "0d24eda41c6c258135077f60d410e704bc7b5a67adcb2ca463918896c7363795"
   end
 
   resource "pyparsing" do

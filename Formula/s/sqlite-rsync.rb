@@ -30,7 +30,7 @@ class SqliteRsync < Formula
     tcl = if OS.mac?
       MacOS.sdk_path/"System/Library/Frameworks/Tcl.framework"
     else
-      Formula["tcl-tk"].opt_lib
+      formula_opt_lib("tcl-tk")
     end
 
     system "./configure", "--disable-debug",

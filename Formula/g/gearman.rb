@@ -48,8 +48,8 @@ class Gearman < Formula
       --disable-libtokyocabinet
       --disable-ssl
       --enable-libmemcached
-      --with-boost=#{Formula["boost"].opt_prefix}
-      --with-memcached=#{Formula["memcached"].opt_bin}/memcached
+      --with-boost=#{formula_opt_prefix("boost")}
+      --with-memcached=#{formula_opt_bin("memcached")}/memcached
       --with-sqlite3
       --without-mysql
       --without-postgresql

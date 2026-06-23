@@ -37,7 +37,7 @@ class Libtiff < Formula
       --enable-zstd
       --enable-lzma
       --with-jpeg-include-dir=#{Formula["jpeg-turbo"].opt_include}
-      --with-jpeg-lib-dir=#{Formula["jpeg-turbo"].opt_lib}
+      --with-jpeg-lib-dir=#{formula_opt_lib("jpeg-turbo")}
       --without-x
     ]
     system "./configure", *args, *std_configure_args

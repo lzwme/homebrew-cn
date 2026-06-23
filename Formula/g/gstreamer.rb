@@ -142,7 +142,7 @@ class Gstreamer < Formula
   end
 
   def python3
-    Formula["python@3.14"].opt_bin/"python3.14"
+    formula_opt_bin("python@3.14")/"python3.14"
   end
 
   skip_clean "lib/gstreamer-1.0/libgstnice.dylib", "lib/gstreamer-1.0/libgstnice.so"
@@ -233,14 +233,14 @@ class Gstreamer < Formula
     ENV.append_to_rustflags "--codegen link-args=-Wl,#{rpath_args.join(",")}"
 
     # Make sure the `openssl-sys` crate uses our OpenSSL.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
 
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
 
     # Support finding the `libnice` plugin, which is in a separate formula.
-    libnice_gst_plugin = Formula["libnice-gstreamer"].opt_libexec/"gstreamer-1.0"/shared_library("libgstnice")
+    libnice_gst_plugin = formula_opt_libexec("libnice-gstreamer")/"gstreamer-1.0"/shared_library("libgstnice")
     gst_plugin_dir = lib/"gstreamer-1.0"
     ln_sf libnice_gst_plugin.relative_path_from(gst_plugin_dir), gst_plugin_dir
   end

@@ -47,7 +47,7 @@ class Envoy < Formula
   end
 
   def bazelisk
-    Formula["bazelisk"].opt_bin/"bazelisk"
+    formula_opt_bin("bazelisk")/"bazelisk"
   end
 
   def llvm_formula
@@ -59,7 +59,7 @@ class Envoy < Formula
 
     # rules_foreign_cc CMake try-compile can pick GNU ld from PATH and fail to link
     # against Envoy's configured sysroot/toolchain. Keep clang/llvm tools but drop binutils.
-    ENV.remove "PATH", ":#{Formula["binutils"].opt_bin}" if OS.linux?
+    ENV.remove "PATH", ":#{formula_opt_bin("binutils")}" if OS.linux?
     env_path = ENV["PATH"]
 
     # Drop hickory DNS: its rust SDK pulls in mockall (incompatible with macOS)
@@ -120,7 +120,7 @@ class Envoy < Formula
       # rules_foreign_cc expects "libtool" for AR on Darwin.
       ln_sf which("libtool"), llvm_path/"bin/libtool"
     end
-    ln_sf Formula["libtool"].opt_bin/"glibtool", llvm_path/"bin/glibtool"
+    ln_sf formula_opt_bin("libtool")/"glibtool", llvm_path/"bin/glibtool"
     ENV["BAZEL_LLVM_PATH"] = llvm_path
 
     # clang-common links these archives in foreign_cc bootstrap; provide them from brewed llvm.
@@ -137,7 +137,7 @@ class Envoy < Formula
       bazelisk, *bazel_args, "info", "output_base"
     ).chomp
     odie "Failed to determine bazel output_base" if output_base.empty?
-    yq_bin = Formula["yq"].opt_bin/"yq"
+    yq_bin = formula_opt_bin("yq")/"yq"
     platform_suffix = "yq_#{OS.kernel_name.downcase}_#{Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch}"
     ["yq", platform_suffix].each do |suffix|
       dir = Pathname(output_base)/"external"/suffix

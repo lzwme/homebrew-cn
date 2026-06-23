@@ -34,7 +34,7 @@ class SpirvTools < Formula
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DPython3_EXECUTABLE=#{which("python3")}",
-                    "-DSPIRV-Headers_SOURCE_DIR=#{Formula["spirv-headers"].opt_prefix}",
+                    "-DSPIRV-Headers_SOURCE_DIR=#{formula_opt_prefix("spirv-headers")}",
                     "-DSPIRV_SKIP_TESTS=ON",
                     "-DSPIRV_TOOLS_BUILD_STATIC=OFF",
                     *std_cmake_args

@@ -19,8 +19,8 @@ class Stringtie < Formula
 
   def install
     args = [
-      "HTSLIB=#{Formula["htslib"].opt_lib}",
-      "LIBS=-L#{Formula["htslib"].opt_lib} -lhts -lm",
+      "HTSLIB=#{formula_opt_lib("htslib")}",
+      "LIBS=-L#{formula_opt_lib("htslib")} -lhts -lm",
     ]
     system "make", "release", *args
     bin.install "stringtie"

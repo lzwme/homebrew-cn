@@ -25,7 +25,7 @@ class GitGui < Formula
     # the git makefiles don't install a .app for git-gui
     # We also tell git to use the homebrew-installed wish binary from tcl-tk.
     # See https://github.com/Homebrew/homebrew-core/issues/36390
-    tcl_bin = Formula["tcl-tk"].opt_bin
+    tcl_bin = formula_opt_bin("tcl-tk")
     args = %W[
       TKFRAMEWORK=/dev/null
       prefix=#{prefix}

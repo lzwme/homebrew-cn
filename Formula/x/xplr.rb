@@ -39,7 +39,7 @@ class Xplr < Formula
     end
 
     assert Utils.binary_linked_to_library?(bin/"xplr",
-                                Formula["luajit"].opt_lib/shared_library("libluajit")),
+                                formula_opt_lib("luajit")/shared_library("libluajit")),
            "No linkage with libluajit! Cargo is likely using a vendored version."
   end
 end

@@ -55,9 +55,9 @@ class Global < Formula
     args = %W[
       --disable-dependency-tracking
       --sysconfdir=#{etc}
-      --with-sqlite3=#{Formula["sqlite"].opt_prefix}
+      --with-sqlite3=#{formula_opt_prefix("sqlite")}
       --with-python-interpreter=#{venv.root}/bin/python
-      --with-universal-ctags=#{Formula["universal-ctags"].opt_bin}/ctags
+      --with-universal-ctags=#{formula_opt_bin("universal-ctags")}/ctags
     ]
 
     system "./configure", *args, *std_configure_args

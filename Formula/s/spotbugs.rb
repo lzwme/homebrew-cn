@@ -25,7 +25,7 @@ class Spotbugs < Formula
   conflicts_with "fb-client", because: "both install a `fb` binary"
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
+    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk")
     if build.head?
       system "gradle", "build"
       system "gradle", "installDist"

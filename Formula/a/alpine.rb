@@ -56,7 +56,7 @@ class Alpine < Formula
 
     args = %W[
       --disable-debug
-      --with-ssl-dir=#{Formula["openssl@3"].opt_prefix}
+      --with-ssl-dir=#{formula_opt_prefix("openssl@3")}
       --with-ssl-certs-dir=#{etc}/openssl@3
       --prefix=#{prefix}
       --with-bundled-tools

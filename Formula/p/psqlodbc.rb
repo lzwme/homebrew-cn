@@ -32,7 +32,7 @@ class Psqlodbc < Formula
   def install
     system "./bootstrap"
     system "./configure", "--prefix=#{prefix}",
-                          "--with-unixodbc=#{Formula["unixodbc"].opt_prefix}"
+                          "--with-unixodbc=#{formula_opt_prefix("unixodbc")}"
     system "make"
     system "make", "install"
   end

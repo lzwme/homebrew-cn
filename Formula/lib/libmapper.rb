@@ -1,17 +1,17 @@
 class Libmapper < Formula
   desc "Distributed system for media control mapping"
   homepage "http://www.libmapper.org"
-  url "https://ghfast.top/https://github.com/libmapper/libmapper/releases/download/2.5.2/libmapper-2.5.2.tar.gz"
-  sha256 "aff1aa623eada922a428b730dacbe9523016600d1db9a9a53212833a6bd31ddc"
+  url "https://ghfast.top/https://github.com/libmapper/libmapper/releases/download/2.6/libmapper-2.6.tar.gz"
+  sha256 "4a9a0a1609f9ccacf822d9b063ea902fd21ba298c7cbf7f2a6c6908c35759669"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "eebd88eb97dd64c5e05b8f19adbb3cb69a47fe99993f39007b3f812580e5f8e3"
-    sha256 cellar: :any,                 arm64_sequoia: "82d939b92a88017d0a579d916f0f35a10ed9d0c5df4bcb2cbf04f0622bf9ac2e"
-    sha256 cellar: :any,                 arm64_sonoma:  "bd99ce2671baa099d735a048187d541e2cdc4104f5fa0e705d767d8563031212"
-    sha256 cellar: :any,                 sonoma:        "b602930e4d2ffc1950c9b947f8bae65bc6f769ba5eb0d5bfa58403d4dcd2f38c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f864aea23dafa21f4226ab0e2695fd5165e54af46892f164eff4fe5309f9af59"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55c64edc6dadf0ad8f870a78960aa9b58c3d7f3a88f85249ce0d0f1da844d46d"
+    sha256 cellar: :any, arm64_tahoe:   "2c11132c8514c8c048b25474ac8828dbfb762774f68e7390f91274a70822ba5d"
+    sha256 cellar: :any, arm64_sequoia: "0b78ba79fc587977d4f0ce033129f679fce617260bf2678f4f046ac113fe4e67"
+    sha256 cellar: :any, arm64_sonoma:  "f0c5f56b353c1d6f9b2bc3b5d73d95fbf86ac1e6f9f9b4d6146112b90e9d9173"
+    sha256 cellar: :any, sonoma:        "884bed710f859411122e077a8dabde76fb31b85d70a4ec79e5b6fef043f6613a"
+    sha256 cellar: :any, arm64_linux:   "d7f7e273ecef9f05a6a303bf31d6c2774519d6ae6abba884d6d359fb16b9e375"
+    sha256 cellar: :any, x86_64_linux:  "ab99038b6467e204e57d2aafe2d2881f673a1149f2937530c339a9a810820356"
   end
 
   depends_on "autoconf" => :build

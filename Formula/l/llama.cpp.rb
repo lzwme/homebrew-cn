@@ -3,8 +3,8 @@ class LlamaCpp < Formula
   homepage "https://llama.app"
   # CMake uses Git to generate version information.
   url "https://github.com/ggml-org/llama.cpp.git",
-      tag:      "b9750",
-      revision: "bf533823cd06e7fb21552265eee1bf2fd2752974"
+      tag:      "b9760",
+      revision: "6ee0f65793da4bca2301826f70383aef2da60345"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ggml-org/llama.cpp.git", branch: "master"
@@ -20,12 +20,12 @@ class LlamaCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6c11d2e7e3c0fcad9e582cf8a7ead0005b534258735fb3e9c36ea9c5fb7ae68a"
-    sha256 cellar: :any, arm64_sequoia: "dc03e6484275d7a98c5092c659432d481ccf1536b0629be724b44179d77f4e5a"
-    sha256 cellar: :any, arm64_sonoma:  "8c1a8cd5afcee192a5c158a95865f3d7ac5313d1c518c44933c6a8c2c093b741"
-    sha256 cellar: :any, sonoma:        "f972024fc14e54f053a718ad3deab8486a5c90f3626b976936c08f5eb017f659"
-    sha256 cellar: :any, arm64_linux:   "3aea7d58a7ff2054f2bc958db8e3ad75b9ed5262333a5629e929dde47fc70a8e"
-    sha256 cellar: :any, x86_64_linux:  "18add9383c8d3dae8da822a627c34ca830c34182b4ff245379d0270e2b3794c8"
+    sha256 cellar: :any, arm64_tahoe:   "5152625f91924abfc17ccb4db6129cea3abf9622886cd6b64aafca7d5243f54b"
+    sha256 cellar: :any, arm64_sequoia: "eb059795655ab289f8af76a70ca28a4c256cbf7f4242c8fbfcdb5cd7693df453"
+    sha256 cellar: :any, arm64_sonoma:  "c32731ee937c54dbfb128137924d82050062ba5abbaa29daabce80e587c61275"
+    sha256 cellar: :any, sonoma:        "9919b5021d6a1fb2f898049307286b3652419467848a7dac93088523cec871d7"
+    sha256 cellar: :any, arm64_linux:   "6299ba6a22785c9c8e3232502f976d0c3e2bfb525cfc39cda4e2479977e2bb28"
+    sha256 cellar: :any, x86_64_linux:  "563a1013b5af151e065e9472e38623ba2a105244f8ad09364ae266b8139a7261"
   end
 
   depends_on "cmake" => [:build, :test]

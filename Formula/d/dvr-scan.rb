@@ -89,11 +89,13 @@ class DvrScan < Formula
 
   test do
     resource "sample-vid" do
-      url "https://download.samplelib.com/mp4/sample-5s.mp4"
-      sha256 "05bd857af7f70bf51b6aac1144046973bf3325c9101a554bc27dc9607dbbd8f5"
+      url "https://ghfast.top/https://raw.githubusercontent.com/Breakthrough/DVR-Scan/6afbff4374e435ce40d51311084e96bf087bf7aa/tests/resources/traffic_camera.mp4"
+      sha256 "cb8dd0170b28c6322b399d78464ff4515a32728b73c14de5e5c3729b98ce82aa"
     end
     resource("sample-vid").stage do
-      assert_match "Detected 1 motion event", shell_output("#{bin}/dvr-scan -i sample-5s.mp4 2>&1")
+      # https://github.com/Breakthrough/DVR-Scan/blob/main/tests/resources/traffic_camera.txt
+      output = shell_output("#{bin}/dvr-scan -i traffic_camera.mp4 -so -roi 631 532 210, 127")
+      assert_match "Detected 3 motion events", output
     end
   end
 end

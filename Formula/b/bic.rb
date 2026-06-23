@@ -73,8 +73,8 @@ class Bic < Formula
 
   def install
     unless OS.mac?
-      ENV.append_to_cflags "-I#{Formula["libedit"].opt_libexec}/include"
-      ENV.append "LDFLAGS", "-L#{Formula["libedit"].opt_libexec}/lib"
+      ENV.append_to_cflags "-I#{formula_opt_libexec("libedit")}/include"
+      ENV.append "LDFLAGS", "-L#{formula_opt_libexec("libedit")}/lib"
     end
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head? || (OS.mac? && Hardware::CPU.arm?)

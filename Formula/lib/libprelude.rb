@@ -67,7 +67,7 @@ class Libprelude < Formula
       --without-swig
       --without-python2
       --without-python3
-      --with-libgnutls-prefix=#{Formula["gnutls"].opt_prefix}
+      --with-libgnutls-prefix=#{formula_opt_prefix("gnutls")}
     ]
 
     system "./configure", *std_configure_args, *args

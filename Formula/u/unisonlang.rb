@@ -67,8 +67,8 @@ class Unisonlang < Formula
       system "npm", "install", *std_npm_args(prefix: false), "favicons"
 
       # Wire the real binaries into node_modules
-      ln_sf Formula["elm"].opt_bin/"elm", "node_modules/elm/bin/elm"
-      ln_sf Formula["elm-format"].opt_bin/"elm-format", "node_modules/elm-format/bin/elm-format"
+      ln_sf formula_opt_bin("elm")/"elm", "node_modules/elm/bin/elm"
+      ln_sf formula_opt_bin("elm-format")/"elm-format", "node_modules/elm-format/bin/elm-format"
 
       # HACK: Flaky command occasionally stalls build indefinitely so we force fail
       # if that occurs. Problem seems to happening while running `elm-json install`.

@@ -62,7 +62,7 @@ class Bullet < Formula
     python_prefix = if OS.mac?
       Formula["python@#{python_version}"].opt_frameworks/"Python.framework/Versions/#{python_version}"
     else
-      Formula["python@#{python_version}"].opt_prefix
+      formula_opt_prefix("python@#{python_version}")
     end
     prefix_site_packages = prefix/Language::Python.site_packages(python3)
 

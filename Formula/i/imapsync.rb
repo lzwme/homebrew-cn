@@ -191,7 +191,7 @@ class Imapsync < Formula
     end
 
     system "perl", "-c", "imapsync"
-    system "#{Formula["pod2man"].opt_bin}/pod2man", "imapsync", "imapsync.1"
+    system "#{formula_opt_bin("pod2man")}/pod2man", "imapsync", "imapsync.1"
     bin.install "imapsync"
     man1.install "imapsync.1"
     bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])

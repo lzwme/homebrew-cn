@@ -127,8 +127,8 @@ class Pidgin < Formula
       --enable-consoleui
       --enable-gnutls
       --with-ncurses-headers=#{Formula["ncurses"].opt_include}
-      --with-tclconfig=#{Formula["tcl-tk@8"].opt_lib}
-      --with-tkconfig=#{Formula["tcl-tk@8"].opt_lib}
+      --with-tclconfig=#{formula_opt_lib("tcl-tk@8")}
+      --with-tkconfig=#{formula_opt_lib("tcl-tk@8")}
     ]
     args << "--without-x" if OS.mac?
 
@@ -152,7 +152,7 @@ class Pidgin < Formula
   end
 
   def post_install
-    system Formula["glib"].opt_bin/"glib-compile-schemas", HOMEBREW_PREFIX/"share/glib-2.0/schemas" if build.head?
+    system formula_opt_bin("glib")/"glib-compile-schemas", HOMEBREW_PREFIX/"share/glib-2.0/schemas" if build.head?
   end
 
   test do

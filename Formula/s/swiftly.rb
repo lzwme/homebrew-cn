@@ -46,7 +46,7 @@ class Swiftly < Formula
         -Xswiftc -I#{HOMEBREW_PREFIX}/include
         -Xlinker -L#{HOMEBREW_PREFIX}/lib
       ]
-      ENV.prepend_path "LD_LIBRARY_PATH", Formula["libarchive"].opt_lib
+      ENV.prepend_path "LD_LIBRARY_PATH", formula_opt_lib("libarchive")
     end
     system "swift", "build", *args
     bin.install ".build/release/swiftly"

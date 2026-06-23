@@ -54,7 +54,7 @@ class XmlToolingC < Formula
       }
     CPP
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
-                    "-L#{lib}", "-lxmltooling", "-L#{Formula["xerces-c"].opt_lib}", "-lxerces-c"
+                    "-L#{lib}", "-lxmltooling", "-L#{formula_opt_lib("xerces-c")}", "-lxerces-c"
     output = shell_output("./test 2>&1")
     refute_match("libcurl lacks OpenSSL-specific options", output)
   end

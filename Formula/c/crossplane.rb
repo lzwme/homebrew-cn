@@ -1,8 +1,8 @@
 class Crossplane < Formula
   desc "Build control planes without needing to write code"
   homepage "https://github.com/crossplane/cli"
-  url "https://ghfast.top/https://github.com/crossplane/cli/archive/refs/tags/v2.3.2.tar.gz"
-  sha256 "dcafe7e43a2aa718b4c766754800cedf0ce5b7d8df9f6b013f26d24414460e71"
+  url "https://ghfast.top/https://github.com/crossplane/cli/archive/refs/tags/v2.3.3.tar.gz"
+  sha256 "8121844ba24b59cea86a0b21482f1d0c29a9b9c587d1516f9471670eb67040a5"
   license "Apache-2.0"
   head "https://github.com/crossplane/cli.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Crossplane < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "615972f2fd8fce3ea25835cccad1ed481f621492a34cf9851bf65f9e580c2aac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d201f391bc8a058fcd5d88f3fc90b2ce0e1c99aa464152c5da00c0d659e15aec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5161cb5f396bbf129fe0e546effe21bbda510670a78f970c8f3f66a26b412116"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0ed2fd00cdf06bc1019e51746c8ae5e89936049d0678a5200f1dfc8afe5ead8d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a13066c0571691fb14ea4690791b0e110b0d90728ca9a3bb7ba1989cb78a1fd"
-    sha256 cellar: :any,                 x86_64_linux:  "01fe2d0ac90d9e0227741d259b24e2628ca2419274303851ea8796c4e184f708"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc0319a804a93fd8951ec735ce6d585e87497505205bf06ba6b4124c35cb197c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c31abf0236d0c01b0862b4309f4e65069c8040e6de3862158dc6995ffb069f09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41ba1ff63456328a11076e94fad776244f2b22a2ea15c4b7c2749fc4de6dcbe0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "012e17a5c07b578eca19446ae98210426fbf68522cdce7a10e3c45b3ce70f0aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cb7739bbaf74a12a63c60b70c9a66840a9fd07acf7cd9090ddc4818502bd176"
+    sha256 cellar: :any,                 x86_64_linux:  "74ce6339978b0471f8946dd9b602d9da5aa17e4d7b34b63754507acfd7f3cc53"
   end
 
   depends_on "go" => :build

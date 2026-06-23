@@ -35,7 +35,7 @@ class Simgrid < Formula
     inreplace "src/smpi/smpicxx.in", "@CMAKE_CXX_COMPILER@", DevelopmentTools.locate(ENV.cxx)
 
     # Work around build error: ld: library not found for -lcgraph
-    ENV.append "LDFLAGS", "-L#{Formula["graphviz"].opt_lib}"
+    ENV.append "LDFLAGS", "-L#{formula_opt_lib("graphviz")}"
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DPython3_EXECUTABLE=#{which("python3")}",

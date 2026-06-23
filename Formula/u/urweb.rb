@@ -39,7 +39,7 @@ class Urweb < Formula
                 .to_formula
     system "./configure", *std_configure_args,
                           "--disable-silent-rules",
-                          "--with-openssl=#{Formula["openssl@4"].opt_prefix}",
+                          "--with-openssl=#{formula_opt_prefix("openssl@4")}",
                           "SITELISP=$prefix/share/emacs/site-lisp/urweb",
                           "ICU_INCLUDES=-I#{icu4c.opt_include}",
                           "ICU_LIBS=-L#{icu4c.opt_lib}"

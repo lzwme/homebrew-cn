@@ -29,9 +29,8 @@ class Openj9 < Formula
   depends_on "autoconf" => :build
   depends_on "bash" => :build
   depends_on "cmake" => :build
-  depends_on "openjdk" => :build # TODO: will need to use `openjdk@25` when JDK 26 is released
+  depends_on "openjdk@25" => :build
   depends_on "pkgconf" => :build
-  depends_on "fontconfig"
   depends_on "freetype"
   depends_on "giflib"
   depends_on "harfbuzz"
@@ -40,21 +39,22 @@ class Openj9 < Formula
   depends_on "little-cms2"
 
   uses_from_macos "m4" => :build
-  uses_from_macos "cups"
+  uses_from_macos "unzip" => :build
+  uses_from_macos "zip" => :build
+  uses_from_macos "cups" => :no_linkage
   uses_from_macos "libffi"
-  uses_from_macos "unzip"
-  uses_from_macos "zip"
 
   on_linux do
     keg_only "it conflicts with openjdk"
 
+    depends_on "libxt" => :build
     depends_on "alsa-lib"
+    depends_on "fontconfig" => :no_linkage
     depends_on "libx11"
     depends_on "libxext"
     depends_on "libxi"
-    depends_on "libxrandr"
+    depends_on "libxrandr" => :no_linkage
     depends_on "libxrender"
-    depends_on "libxt"
     depends_on "libxtst"
     depends_on "numactl"
     depends_on "zlib-ng-compat"
@@ -150,7 +150,7 @@ class Openj9 < Formula
       %W[
         --enable-dtrace
         --with-freetype-include=#{Formula["freetype"].opt_include}
-        --with-freetype-lib=#{Formula["freetype"].opt_lib}
+        --with-freetype-lib=#{formula_opt_lib("freetype")}
         --with-sysroot=#{MacOS.sdk_path}
       ]
     else
@@ -159,8 +159,8 @@ class Openj9 < Formula
 
       %W[
         --with-x=#{HOMEBREW_PREFIX}
-        --with-cups=#{Formula["cups"].opt_prefix}
-        --with-fontconfig=#{Formula["fontconfig"].opt_prefix}
+        --with-cups=#{formula_opt_prefix("cups")}
+        --with-fontconfig=#{formula_opt_prefix("fontconfig")}
         --with-stdc++lib=dynamic
       ]
     end

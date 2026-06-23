@@ -41,7 +41,7 @@ class Passenger < Formula
 
     inreplace "src/ruby_supportlib/phusion_passenger/platform_info/openssl.rb" do |s|
       s.gsub! "-I/usr/local/opt/openssl/include", "-I#{Formula["openssl@3"].opt_include}"
-      s.gsub! "-L/usr/local/opt/openssl/lib", "-L#{Formula["openssl@3"].opt_lib}"
+      s.gsub! "-L/usr/local/opt/openssl/lib", "-L#{formula_opt_lib("openssl@3")}"
     end
 
     system "rake", "apache2"
@@ -156,6 +156,6 @@ class Passenger < Formula
         }
       }
     CONF
-    system "#{Formula["nginx"].opt_bin}/nginx", "-t", "-c", testpath/"nginx.conf"
+    system "#{formula_opt_bin("nginx")}/nginx", "-t", "-c", testpath/"nginx.conf"
   end
 end

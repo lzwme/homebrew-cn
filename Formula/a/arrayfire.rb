@@ -50,8 +50,8 @@ class Arrayfire < Formula
 
     # Fix for: `ArrayFire couldn't locate any backends.`
     rpaths = [
-      rpath(source: lib, target: Formula["fftw"].opt_lib),
-      rpath(source: lib, target: Formula["openblas"].opt_lib),
+      rpath(source: lib, target: formula_opt_lib("fftw")),
+      rpath(source: lib, target: formula_opt_lib("openblas")),
       rpath(source: lib, target: HOMEBREW_PREFIX/"lib"),
     ]
 

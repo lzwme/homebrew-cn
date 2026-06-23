@@ -31,7 +31,7 @@ class RpkiClient < Formula
   end
 
   def install
-    system "./configure", "--with-rsync=#{Formula["rsync"].opt_bin}/rsync",
+    system "./configure", "--with-rsync=#{formula_opt_bin("rsync")}/rsync",
                           "--disable-silent-rules",
                           "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}",

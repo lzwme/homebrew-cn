@@ -36,14 +36,14 @@ class Pngcrush < Formula
   end
 
   def install
-    zlib = OS.mac? ? "#{MacOS.sdk_path}/usr" : Formula["zlib-ng-compat"].opt_prefix
+    zlib = OS.mac? ? "#{MacOS.sdk_path}/usr" : formula_opt_prefix("zlib-ng-compat")
     args = %W[
       CC=#{ENV.cc}
       LD=#{ENV.cc}
       CFLAGS=#{ENV.cflags}
       LDFLAGS=#{ENV.ldflags}
       PNGINC=#{Formula["libpng"].opt_include}
-      PNGLIB=#{Formula["libpng"].opt_lib}
+      PNGLIB=#{formula_opt_lib("libpng")}
       ZINC=#{zlib}/include
       ZLIB=#{zlib}/lib
     ]

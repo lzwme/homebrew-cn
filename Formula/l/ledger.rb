@@ -38,13 +38,13 @@ class Ledger < Formula
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.14"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", formula_opt_libexec("python@3.14")/"bin"
 
     args = %W[
       --jobs=#{ENV.make_jobs}
       --output=build
       --prefix=#{prefix}
-      --boost=#{Formula["boost"].opt_prefix}
+      --boost=#{formula_opt_prefix("boost")}
       --
       -DBUILD_DOCS=1
       -DBUILD_WEB_DOCS=1

@@ -19,15 +19,15 @@ class Hive < Formula
     # Hadoop currently supplies a newer version
     # and two versions on the classpath causes problems
     rm libexec/"lib/guava-22.0.jar"
-    guava = (Formula["hadoop"].opt_libexec/"share/hadoop/common/lib").glob("guava-*-jre.jar")
+    guava = (formula_opt_libexec("hadoop")/"share/hadoop/common/lib").glob("guava-*-jre.jar")
     ln_s guava.first, libexec/"lib"
 
     (libexec/"bin").each_child do |file|
       next if file.directory?
 
       (bin/file.basename).write_env_script file,
-        JAVA_HOME:   Formula["openjdk@21"].opt_prefix,
-        HADOOP_HOME: "${HADOOP_HOME:-#{Formula["hadoop"].opt_libexec}}",
+        JAVA_HOME:   formula_opt_prefix("openjdk@21"),
+        HADOOP_HOME: "${HADOOP_HOME:-#{formula_opt_libexec("hadoop")}}",
         HIVE_HOME:   libexec
     end
   end

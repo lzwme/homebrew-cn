@@ -69,9 +69,9 @@ class Overturemaps < Formula
 
   def install
     python3 = "python3.14"
-    numpy_include = Formula["numpy"].opt_lib/Language::Python.site_packages(python3)/"numpy/_core/include"
+    numpy_include = formula_opt_lib("numpy")/Language::Python.site_packages(python3)/"numpy/_core/include"
     geos_include = Formula["geos"].opt_include
-    geos_lib = Formula["geos"].opt_lib
+    geos_lib = formula_opt_lib("geos")
 
     ENV.prepend "CFLAGS", "-I#{numpy_include} -I#{geos_include}"
     ENV.prepend "LDFLAGS", "-L#{geos_lib}"

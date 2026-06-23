@@ -35,7 +35,7 @@ class ErofsUtils < Formula
 
   def install
     # Link to liblzma from brew rather than system
-    ENV.append "LDFLAGS", "-L#{Formula["xz"].opt_lib}"
+    ENV.append "LDFLAGS", "-L#{formula_opt_lib("xz")}"
 
     args = %w[
       --disable-silent-rules

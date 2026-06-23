@@ -43,7 +43,7 @@ class Tor < Formula
       --disable-silent-rules
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}
+      --with-openssl-dir=#{formula_opt_prefix("openssl@3")}
     ]
 
     system "./configure", *args, *std_configure_args

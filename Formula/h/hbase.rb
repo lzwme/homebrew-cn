@@ -66,7 +66,7 @@ class Hbase < Formula
       unless OS.mac?
         inreplace "src/native/configure",
         "#define HADOOP_LZO_LIBRARY ${ac_cv_libname_lzo2}",
-        "#define HADOOP_LZO_LIBRARY \"#{Formula["lzo"].opt_lib/shared_library("liblzo2")}\""
+        "#define HADOOP_LZO_LIBRARY \"#{formula_opt_lib("lzo")/shared_library("liblzo2")}\""
       end
 
       # Fixed upstream: https://github.com/cloudera/hadoop-lzo/blob/HEAD/build.xml#L235

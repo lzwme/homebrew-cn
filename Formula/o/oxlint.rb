@@ -1,8 +1,8 @@
 class Oxlint < Formula
   desc "High-performance linter for JavaScript and TypeScript written in Rust"
   homepage "https://oxc.rs/"
-  url "https://ghfast.top/https://github.com/oxc-project/oxc/archive/refs/tags/oxlint_v1.70.0.tar.gz"
-  sha256 "c0115773b4c879495f0bffa09347b4ebdd15bfa8f671b8d6efde82ce0325b7ca"
+  url "https://ghfast.top/https://github.com/oxc-project/oxc/archive/refs/tags/oxlint_v1.71.0.tar.gz"
+  sha256 "a078e297eb4f13df969f15133bf628e79f545e7dcb04a82a16c4ce8d6ebc514f"
   license "MIT"
   head "https://github.com/oxc-project/oxc.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Oxlint < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a00c128dd75b7931b866d10dc18597894056ca9ea1daa47d71df41e13436d91a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e8f7a4859ca4e9c8a5eee3b0c197f0b7cbbfd4276bf9153aba37192eb3e22f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b0814a24133da8215a120f0e5484aba9fab6dcf1a788e6084610cc3d3a655bc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "48e1b528304f3a32a7dd6d78f0cef41e17c04c3803b7ccab17a3a7098166bc96"
-    sha256 cellar: :any,                 arm64_linux:   "31e80aebfd0a121e7f854b4060f258e0c7abb68322e9be3996c5df229af28aac"
-    sha256 cellar: :any,                 x86_64_linux:  "b9905c53053595029f7b7206a2ad36733aabef4d5c9b64a5ccf13bb3b7bbac03"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25f62ad51bfcc439ca5bea7c822ddd62bfc21f1b86ef7d7aade4603ba83b6dc0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b35ae21a03cc559c646d93856b88f019950862f3bab53387afd6eebc45324d0b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e99fb974744c54dc021c7c8a09b95a5b398de171d965960a5ea1213a1d0644a5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f1289655024c027769e5ec0b9399f072a7bfb779da5b8c3d15a060c1ba7a1a52"
+    sha256 cellar: :any,                 arm64_linux:   "29a587bec1fab9eb8eaab28301c71686e99c7ff8ad45cca94fadf7f47316bbf9"
+    sha256 cellar: :any,                 x86_64_linux:  "3f761ebde838bf129eeca426effa103a6a78cdf645850711617ff23701567f13"
   end
 
   depends_on "rust" => :build

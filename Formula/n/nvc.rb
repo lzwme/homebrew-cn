@@ -42,7 +42,7 @@ class Nvc < Formula
 
     # In-tree builds are not supported.
     mkdir "build" do
-      system "../configure", "--with-llvm=#{Formula["llvm"].opt_bin}/llvm-config",
+      system "../configure", "--with-llvm=#{formula_opt_bin("llvm")}/llvm-config",
                              "--disable-silent-rules",
                              *std_configure_args
       system "make", "V=1"

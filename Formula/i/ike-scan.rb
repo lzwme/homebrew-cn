@@ -40,7 +40,7 @@ class IkeScan < Formula
   def install
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--mandir=#{man}",
-                          "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
+                          "--with-openssl=#{formula_opt_prefix("openssl@3")}",
                           *std_configure_args
     system "make", "install"
   end

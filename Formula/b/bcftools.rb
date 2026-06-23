@@ -26,7 +26,7 @@ class Bcftools < Formula
 
   def install
     system "./configure", "--prefix=#{prefix}",
-                          "--with-htslib=#{Formula["htslib"].opt_prefix}",
+                          "--with-htslib=#{formula_opt_prefix("htslib")}",
                           "--enable-libgsl"
     system "make", "install"
     pkgshare.install "test/query.vcf"

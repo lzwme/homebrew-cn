@@ -61,8 +61,8 @@ class Envio < Formula
       %commit
     GPG
 
-    system Formula["gnupg"].opt_bin/"gpg", "--batch", "--gen-key", "batch.gpg"
-    gpg = Formula["gnupg"].opt_bin/"gpg"
+    system formula_opt_bin("gnupg")/"gpg", "--batch", "--gen-key", "batch.gpg"
+    gpg = formula_opt_bin("gnupg")/"gpg"
     fingerprint_output = shell_output("#{gpg} --with-colons --list-secret-keys --fingerprint")
     fingerprint_line = fingerprint_output.lines.find { |line| line.start_with?("fpr:") }.to_s
     fingerprint = fingerprint_line.split(":").fetch(9, "").strip
@@ -80,7 +80,7 @@ class Envio < Formula
 
       assert_match version.to_s, shell_output("#{bin}/envio version")
     ensure
-      system Formula["gnupg"].opt_bin/"gpgconf", "--kill", "gpg-agent"
+      system formula_opt_bin("gnupg")/"gpgconf", "--kill", "gpg-agent"
     end
   end
 end

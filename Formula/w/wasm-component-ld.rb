@@ -43,7 +43,7 @@ class WasmComponentLd < Formula
       }
     C
 
-    clang = Formula["llvm"].opt_bin/"clang"
+    clang = formula_opt_bin("llvm")/"clang"
     clang_resource_dir = Pathname.new(shell_output("#{clang} --print-resource-dir").chomp)
     testpath.install_symlink clang_resource_dir/"include"
     resource("builtins").stage testpath/"lib/wasm32-unknown-wasip2"

@@ -20,7 +20,7 @@ class Mhonarc < Formula
 
     system "perl", "install.me",
            "-batch",
-           "-perl", Formula["perl"].opt_bin/"perl",
+           "-perl", formula_opt_bin("perl")/"perl",
            "-prefix", prefix
 
     bin.install "mhonarc"

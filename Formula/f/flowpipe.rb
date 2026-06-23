@@ -33,7 +33,7 @@ class Flowpipe < Formula
     system "corepack", "enable", "--install-directory", buildpath
 
     cd "ui/form" do
-      system Formula["corepack"].opt_bin/"corepack", "enable", "--install-directory", buildpath
+      system formula_opt_bin("corepack")/"corepack", "enable", "--install-directory", buildpath
       system buildpath/"yarn", "install", "--immutable"
       system buildpath/"yarn", "build"
     end

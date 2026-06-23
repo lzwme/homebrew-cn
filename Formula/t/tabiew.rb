@@ -22,7 +22,7 @@ class Tabiew < Formula
   conflicts_with "watcher", because: "both install `tw` binaries"
 
   def install
-    ENV["OPENSSL_DIR"] = Formula["openssl@4"].opt_prefix
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
     system "cargo", "install", *std_cargo_args
 
     man1.install "target/manual/tabiew.1" => "tw.1"

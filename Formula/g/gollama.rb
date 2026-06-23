@@ -28,7 +28,7 @@ class Gollama < Formula
     port = free_port
     ENV["OLLAMA_HOST"] = "localhost:#{port}"
 
-    pid = spawn Formula["ollama"].opt_bin/"ollama", "serve"
+    pid = spawn formula_opt_bin("ollama")/"ollama", "serve"
     begin
       sleep 3
       output = shell_output("#{bin}/gollama -h http://localhost:#{port} -s chatgpt")

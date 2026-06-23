@@ -55,15 +55,15 @@ class Zeek < Formula
                     "-DINSTALL_AUX_TOOLS=on",
                     "-DINSTALL_ZEEKCTL=on",
                     "-DUSE_GEOIP=on",
-                    "-DCARES_ROOT_DIR=#{Formula["c-ares"].opt_prefix}",
-                    "-DCARES_LIBRARIES=#{Formula["c-ares"].opt_lib/shared_library("libcares")}",
-                    "-DLibMMDB_LIBRARY=#{Formula["libmaxminddb"].opt_lib/shared_library("libmaxminddb")}",
-                    "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
+                    "-DCARES_ROOT_DIR=#{formula_opt_prefix("c-ares")}",
+                    "-DCARES_LIBRARIES=#{formula_opt_lib("c-ares")/shared_library("libcares")}",
+                    "-DLibMMDB_LIBRARY=#{formula_opt_lib("libmaxminddb")/shared_library("libmaxminddb")}",
+                    "-DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@3")}",
                     "-DPYTHON_EXECUTABLE=#{which("python3.14")}",
                     "-DZEEK_ETC_INSTALL_DIR=#{etc}",
                     "-DZEEK_LOCAL_STATE_DIR=#{var}",
                     "-DDISABLE_JAVASCRIPT=off",
-                    "-DNODEJS_ROOT_DIR=#{Formula["node@24"].opt_prefix}",
+                    "-DNODEJS_ROOT_DIR=#{formula_opt_prefix("node@24")}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

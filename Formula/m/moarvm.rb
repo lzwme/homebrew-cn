@@ -53,7 +53,7 @@ class Moarvm < Formula
       --has-libtommath
       --has-mimalloc
       --optimize
-      --pkgconfig=#{Formula["pkgconf"].opt_bin}/pkgconf
+      --pkgconfig=#{formula_opt_bin("pkgconf")}/pkgconf
       --prefix=#{prefix}
     ]
     # FIXME: brew `libuv` causes runtime failures on Linux, e.g.

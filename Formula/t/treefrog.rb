@@ -48,7 +48,7 @@ class Treefrog < Formula
     cd "hello" do
       assert_path_exists Pathname.pwd/"hello.pro"
 
-      system Formula["qtbase"].opt_bin/"qmake"
+      system formula_opt_bin("qtbase")/"qmake"
       assert_path_exists Pathname.pwd/"Makefile"
       system "make"
       system bin/"treefrog", "-v"

@@ -26,7 +26,7 @@ class IcpCli < Formula
 
   def install
     ENV["ICP_CLI_BUILD_DIST"] = "homebrew-core"
-    ENV["OPENSSL_DIR"] = Formula["openssl@4"].opt_prefix
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
 
     # Skip wasm32-wasip2 test fixture build in icp-sync-plugin (only used in tests)
     # https://github.com/dfinity/icp-cli/issues/543

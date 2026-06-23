@@ -32,7 +32,7 @@ class ProtocGenGrpcJava < Formula
       # Avoid build errors on ARM macOS from old minimum macOS deployment
       s.gsub! '"-mmacosx-version-min=10.7",', ""
       # Avoid static linkage on Linux
-      s.gsub! '"-Wl,-Bstatic"', "\"-L#{Formula["protobuf"].opt_lib}\""
+      s.gsub! '"-Wl,-Bstatic"', "\"-L#{formula_opt_lib("protobuf")}\""
       s.gsub! ', "-static-libgcc"', ""
     end
 

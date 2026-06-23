@@ -74,8 +74,8 @@ class Subversion < Formula
     if OS.mac?
       zlib = sqlite = MacOS.sdk_for_formula(self).path/"usr"
     else
-      zlib = Formula["zlib"].opt_prefix
-      sqlite = Formula["sqlite"].opt_prefix
+      zlib = formula_opt_prefix("zlib")
+      sqlite = formula_opt_prefix("sqlite")
     end
 
     perl = DevelopmentTools.locate("perl")
@@ -85,12 +85,12 @@ class Subversion < Formula
       --enable-optimize
       --disable-mod-activation
       --disable-plaintext-password-storage
-      --with-apr-util=#{Formula["apr-util"].opt_prefix}
-      --with-apr=#{Formula["apr"].opt_prefix}
+      --with-apr-util=#{formula_opt_prefix("apr-util")}
+      --with-apr=#{formula_opt_prefix("apr")}
       --with-apxs=no
       --with-ruby-sitedir=#{lib}/ruby
       --with-py3c=#{py3c_prefix}
-      --with-serf=#{Formula["apache-serf"].opt_prefix}
+      --with-serf=#{formula_opt_prefix("apache-serf")}
       --with-sqlite=#{sqlite}
       --with-swig-perl=#{perl}
       --with-swig-python=#{which(python3)}

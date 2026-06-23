@@ -40,7 +40,7 @@ class Got < Formula
 
   def install
     ENV["LIBTLS_CFLAGS"] = "-I#{Formula["libretls"].opt_include}"
-    ENV["LIBTLS_LIBS"] = "-L#{Formula["libretls"].opt_lib} -ltls"
+    ENV["LIBTLS_LIBS"] = "-L#{formula_opt_lib("libretls")} -ltls"
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end

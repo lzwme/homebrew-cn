@@ -24,7 +24,7 @@ class Msgvault < Formula
     ENV["CGO_ENABLED"] = "1"
     # DuckDB is linked dynamically against this formula via the duckdb_use_lib
     # tag, rather than the duckdb-go bindings' vendored static library.
-    ENV.append "CGO_LDFLAGS", "-L#{Formula["duckdb"].opt_lib}"
+    ENV.append "CGO_LDFLAGS", "-L#{formula_opt_lib("duckdb")}"
     # sqlite-vec's CGo binding #includes <sqlite3.h>; macOS provides it in the
     # SDK, while Linux needs Homebrew's sqlite headers.
     ENV.append "CGO_CFLAGS", "-I#{Formula["sqlite"].opt_include}" if OS.linux?

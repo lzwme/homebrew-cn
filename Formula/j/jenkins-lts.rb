@@ -17,7 +17,7 @@ class JenkinsLts < Formula
   depends_on "openjdk@21"
 
   def install
-    system "#{Formula["openjdk@21"].opt_bin}/jar", "xvf", "jenkins.war"
+    system "#{formula_opt_bin("openjdk@21")}/jar", "xvf", "jenkins.war"
     libexec.install "jenkins.war", "WEB-INF/lib/cli-#{version}.jar"
     bin.write_jar_script libexec/"jenkins.war", "jenkins-lts", java_version: "21"
     bin.write_jar_script libexec/"cli-#{version}.jar", "jenkins-lts-cli", java_version: "21"
@@ -30,8 +30,14 @@ class JenkinsLts < Formula
   end
 
   service do
-    run [Formula["openjdk@21"].opt_bin/"java", "-Dmail.smtp.starttls.enable=true", "-jar", opt_libexec/"jenkins.war",
-         "--httpListenAddress=127.0.0.1", "--httpPort=8080"]
+    run [
+      Utils::Path.formula_opt_bin("openjdk@21")/"java",
+      "-Dmail.smtp.starttls.enable=true",
+      "-jar",
+      opt_libexec/"jenkins.war",
+      "--httpListenAddress=127.0.0.1",
+      "--httpPort=8080",
+    ]
   end
 
   test do

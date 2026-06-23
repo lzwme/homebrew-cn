@@ -30,7 +30,7 @@ class ParquetCli < Formula
       (bin/"parquet").write <<~SH
         #!/bin/sh
         set -e
-        exec "#{Formula["openjdk@21"].opt_bin}/java" -cp "#{libexec}/*" org.apache.parquet.cli.Main "$@"
+        exec "#{formula_opt_bin("openjdk@21")}/java" -cp "#{libexec}/*" org.apache.parquet.cli.Main "$@"
       SH
     end
 

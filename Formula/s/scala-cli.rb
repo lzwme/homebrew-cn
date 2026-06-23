@@ -27,7 +27,7 @@ class ScalaCli < Formula
   end
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk@17"].opt_prefix
+    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk@17")
     ENV["USE_NATIVE_IMAGE_JAVA_PLATFORM_MODULE_SYSTEM"] = "false"
     ENV["COURSIER_CACHE"] = "#{HOMEBREW_CACHE}/coursier/v1"
     ENV["COURSIER_ARCHIVE_CACHE"] = "#{HOMEBREW_CACHE}/coursier/arc"
@@ -47,7 +47,7 @@ class ScalaCli < Formula
       # native-image doesn't propagate env vars to the gcc subprocess it spawns,
       # so LIBRARY_PATH won't reach the linker. Inject the path directly via
       # -H:CLibraryPath so native-image passes -L to the linker command.
-      zlib_lib = Formula["zlib-ng-compat"].opt_lib
+      zlib_lib = formula_opt_lib("zlib-ng-compat")
       extra = "'-H:CLibraryPath=#{zlib_lib}' '-H:NativeLinkerOption=-Wl,-rpath,#{zlib_lib}'"
       inreplace "generate-native-image.sh", "'--no-fallback'", "'--no-fallback' #{extra}"
     end
@@ -60,7 +60,7 @@ class ScalaCli < Formula
     ENV["SCALA_CLI_HOME"] = testpath
     ENV["COURSIER_CACHE"] = ENV["COURSIER_ARCHIVE_CACHE"] = testpath/".coursier_cache"
     ENV["COURSIER_JVM_CACHE"] = testpath/".coursier_jvm_cache"
-    ENV["JAVA_HOME"] = Formula["openjdk@17"].opt_prefix
+    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk@17")
 
     (testpath/"Hello.scala").write <<~SCALA
       @main def hello() = println("Hello from Scala CLI")

@@ -30,7 +30,7 @@ class Modsecurity < Formula
   def install
     system "autoreconf", "--force", "--install", "--verbose"
 
-    libxml2 = OS.mac? ? "#{MacOS.sdk_path}/usr" : Formula["libxml2"].opt_prefix
+    libxml2 = OS.mac? ? "#{MacOS.sdk_path}/usr" : formula_opt_prefix("libxml2")
 
     args = [
       "--disable-debug-logs",
@@ -38,9 +38,9 @@ class Modsecurity < Formula
       "--disable-examples",
       "--disable-silent-rules",
       "--with-libxml=#{libxml2}",
-      "--with-lua=#{Formula["lua@5.4"].opt_prefix}",
-      "--with-pcre2=#{Formula["pcre2"].opt_prefix}",
-      "--with-yajl=#{Formula["yajl"].opt_prefix}",
+      "--with-lua=#{formula_opt_prefix("lua@5.4")}",
+      "--with-pcre2=#{formula_opt_prefix("pcre2")}",
+      "--with-yajl=#{formula_opt_prefix("yajl")}",
       "--without-geoip",
     ]
 

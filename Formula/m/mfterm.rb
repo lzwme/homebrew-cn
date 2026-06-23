@@ -40,7 +40,7 @@ class Mfterm < Formula
 
   def install
     ENV.prepend "CPPFLAGS", "-I#{Formula["openssl@3"].opt_include}"
-    ENV.prepend "LDFLAGS", "-L#{Formula["openssl@3"].opt_lib}"
+    ENV.prepend "LDFLAGS", "-L#{formula_opt_lib("openssl@3")}"
 
     if build.head?
       chmod 0755, "./autogen.sh"

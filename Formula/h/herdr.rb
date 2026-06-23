@@ -24,7 +24,7 @@ class Herdr < Formula
   depends_on "zig@0.15" => :build # upstream issue, https://github.com/ogulcancelik/herdr/issues/285
 
   def install
-    ENV.prepend_path "PATH", Formula["zig@0.15"].opt_bin
+    ENV.prepend_path "PATH", formula_opt_bin("zig@0.15")
 
     system "cargo", "install", *std_cargo_args
   end

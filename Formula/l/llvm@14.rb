@@ -132,7 +132,7 @@ class LlvmAT14 < Formula
     builtins_cmake_args = []
 
     if OS.mac?
-      macos_sdk = MacOS.sdk_path_if_needed
+      macos_sdk = MacOS.sdk_path
       args << "-DFFI_INCLUDE_DIR=#{macos_sdk}/usr/include/ffi"
       args << "-DFFI_LIBRARY_DIR=#{macos_sdk}/usr/lib"
 
@@ -154,7 +154,7 @@ class LlvmAT14 < Formula
       ENV.append_to_cflags "-fpermissive -Wno-free-nonheap-object"
 
       args << "-DFFI_INCLUDE_DIR=#{Formula["libffi"].opt_include}"
-      args << "-DFFI_LIBRARY_DIR=#{Formula["libffi"].opt_lib}"
+      args << "-DFFI_LIBRARY_DIR=#{formula_opt_lib("libffi")}"
 
       # Disable `libxml2`, which isn't very useful.
       args << "-DLLVM_ENABLE_LIBXML2=OFF"

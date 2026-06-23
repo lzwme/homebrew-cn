@@ -51,7 +51,7 @@ class Sundials < Formula
       -lm
     ]
 
-    args += ["-I#{Formula["open-mpi"].opt_include}", "-L#{Formula["open-mpi"].opt_lib}"] if OS.mac?
+    args += ["-I#{Formula["open-mpi"].opt_include}", "-L#{formula_opt_lib("open-mpi")}"] if OS.mac?
 
     system ENV.cc, "test_nvector.c", "test_nvector_serial.c", "-o", "test", *args
 

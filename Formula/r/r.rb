@@ -70,16 +70,16 @@ class R < Formula
     args = [
       "--prefix=#{prefix}",
       "--enable-memory-profiling",
-      "--with-tcl-config=#{Formula["tcl-tk"].opt_lib}/tclConfig.sh",
-      "--with-tk-config=#{Formula["tcl-tk"].opt_lib}/tkConfig.sh",
-      "--with-blas=-L#{Formula["openblas"].opt_lib} -lopenblas",
+      "--with-tcl-config=#{formula_opt_lib("tcl-tk")}/tclConfig.sh",
+      "--with-tk-config=#{formula_opt_lib("tcl-tk")}/tkConfig.sh",
+      "--with-blas=-L#{formula_opt_lib("openblas")} -lopenblas",
       "--enable-R-shlib",
       "--disable-java",
       "--with-cairo",
       # This isn't necessary to build R, but it's saved in Makeconf
       # and helps CRAN packages find gfortran when Homebrew may not be
       # in PATH (e.g. under RStudio, launched from Finder)
-      "FC=#{Formula["gcc"].opt_bin}/gfortran",
+      "FC=#{formula_opt_bin("gcc")}/gfortran",
     ]
 
     if OS.mac?
@@ -96,13 +96,13 @@ class R < Formula
       ENV.remove "LDFLAGS", "-L#{HOMEBREW_PREFIX}/lib"
 
       ENV.append "CPPFLAGS", "-I#{Formula["libtirpc"].opt_include}/tirpc"
-      ENV.append "LDFLAGS", "-L#{Formula["libtirpc"].opt_lib}"
+      ENV.append "LDFLAGS", "-L#{formula_opt_lib("libtirpc")}"
     end
 
     # Help CRAN packages find gettext and readline
     ["gettext", "readline", "xz"].each do |f|
       ENV.append "CPPFLAGS", "-I#{Formula[f].opt_include}"
-      ENV.append "LDFLAGS", "-L#{Formula[f].opt_lib}"
+      ENV.append "LDFLAGS", "-L#{formula_opt_lib(f)}"
     end
 
     ENV["TZ"] = "UTC"
@@ -131,7 +131,7 @@ class R < Formula
 
     # avoid triggering mandatory rebuilds of r when gcc is upgraded
     inreplace lib/"R/etc/Makeconf", Formula["gcc"].prefix.realpath,
-                                    Formula["gcc"].opt_prefix,
+                                    formula_opt_prefix("gcc"),
                                     audit_result: OS.mac?
   end
 

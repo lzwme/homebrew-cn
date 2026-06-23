@@ -31,7 +31,7 @@ class Oxen < Formula
   uses_from_macos "llvm" => :build # for libclang
 
   def install
-    ENV["ROCKSDB_LIB_DIR"] = Formula["rocksdb"].opt_lib
+    ENV["ROCKSDB_LIB_DIR"] = formula_opt_lib("rocksdb")
     system "cargo", "install", *std_cargo_args(path: "crates/oxen-cli")
   end
 

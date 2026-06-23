@@ -59,7 +59,7 @@ class Ngspice < Formula
     system "make", "install"
 
     # fix references to libs
-    inreplace pkgshare/"scripts/spinit", lib/"ngspice/", Formula["libngspice"].opt_lib/"ngspice/"
+    inreplace pkgshare/"scripts/spinit", lib/"ngspice/", formula_opt_lib("libngspice")/"ngspice/"
 
     # remove conflict lib files with libngspice
     rm_r(Dir[lib/"ngspice"])

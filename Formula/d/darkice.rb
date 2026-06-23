@@ -44,9 +44,9 @@ class Darkice < Formula
       system "autoreconf", "--install", "--force", "--verbose"
 
       system "./configure", "--sysconfdir=#{etc}",
-                            "--with-lame-prefix=#{Formula["lame"].opt_prefix}",
-                            "--with-faac-prefix=#{Formula["faac"].opt_prefix}",
-                            "--with-fdkaac-prefix=#{Formula["fdk-aac"].opt_prefix}",
+                            "--with-lame-prefix=#{formula_opt_prefix("lame")}",
+                            "--with-faac-prefix=#{formula_opt_prefix("faac")}",
+                            "--with-fdkaac-prefix=#{formula_opt_prefix("fdk-aac")}",
                             "--with-twolame",
                             "--with-jack",
                             "--with-vorbis",

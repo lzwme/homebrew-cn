@@ -44,7 +44,7 @@ class Gource < Formula
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
 
     system "./configure", "--disable-silent-rules",
-                          "--with-boost=#{Formula["boost"].opt_prefix}",
+                          "--with-boost=#{formula_opt_prefix("boost")}",
                           "--without-x",
                           *std_configure_args
     system "make", "install"

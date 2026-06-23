@@ -43,7 +43,7 @@ class Libu2fServer < Formula
   def install
     ENV["LIBSSL_LIBS"] = "-lssl -lcrypto -lz"
     ENV["LIBCRYPTO_LIBS"] = "-lcrypto -lz"
-    ENV["PKG_CONFIG"] = "#{Formula["pkgconf"].opt_bin}/pkg-config"
+    ENV["PKG_CONFIG"] = "#{formula_opt_bin("pkgconf")}/pkg-config"
 
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"

@@ -37,7 +37,7 @@ class Tcpreplay < Formula
       --disable-silent-rules
       --prefix=#{prefix}
       --enable-dynamic-link
-      --with-libdnet=#{Formula["libdnet"].opt_prefix}
+      --with-libdnet=#{formula_opt_prefix("libdnet")}
     ]
 
     args << if OS.mac?
@@ -45,7 +45,7 @@ class Tcpreplay < Formula
 
       "--with-macosx-sdk=#{MacOS.version}"
     else
-      "--with-libpcap=#{Formula["libpcap"].opt_prefix}"
+      "--with-libpcap=#{formula_opt_prefix("libpcap")}"
     end
 
     system "./configure", *args

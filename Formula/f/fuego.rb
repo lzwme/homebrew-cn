@@ -39,7 +39,7 @@ class Fuego < Formula
 
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules",
-                          "--with-boost=#{Formula["boost"].opt_prefix}",
+                          "--with-boost=#{formula_opt_prefix("boost")}",
                           *std_configure_args
     system "make", "install", "LIBS=-lpthread"
   end

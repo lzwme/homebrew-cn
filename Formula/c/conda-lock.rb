@@ -286,7 +286,7 @@ class CondaLock < Formula
         - python=3.14
     YAML
     system bin/"conda-lock", "-p", "osx-64", "-p", "osx-arm64",
-                             "--conda", Formula["micromamba"].opt_bin/"mamba"
+                             "--conda", formula_opt_bin("micromamba")/"mamba"
     assert_path_exists testpath/"conda-lock.yml"
   end
 end

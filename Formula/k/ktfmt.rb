@@ -18,7 +18,7 @@ class Ktfmt < Formula
   depends_on "openjdk@17"
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk@17"].opt_prefix
+    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk@17")
 
     system "gradle", "shadowJar", "--no-daemon"
     libexec.install "core/build/libs/ktfmt-#{version}-with-dependencies.jar"

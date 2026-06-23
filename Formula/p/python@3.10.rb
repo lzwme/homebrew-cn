@@ -13,13 +13,14 @@ class PythonAT310 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c9d898ed70b1e70fdfe1c7f59aeeb8cc7f3b3c76d7f73003f1f15bc8dbb535e7"
-    sha256 arm64_sequoia: "e1811c47aab0741cfc674db32f737b63cf3b4e1da50763729115e170274fa3a0"
-    sha256 arm64_sonoma:  "7d694ce9c7795a74c588dc035025614023a832883896a2ea266f54a8bfc0e602"
-    sha256 sequoia:       "81185ceccf36e3e0e5c6e66be6ee295c881e97fb4e1afabda3553306776a93dd"
-    sha256 sonoma:        "2b312b67e7c4d73fbe86895a17eff3076f341a526ee03120cc2d1367e94a34f1"
-    sha256 arm64_linux:   "30767a30d2fe6b7e873f32451cb232a178219a52f3570b6fb42fb0c9a07af565"
-    sha256 x86_64_linux:  "aefc6613852d4a68aa09c9affa9dcf2018663cee8c8eb306ec79f70478fe9581"
+    rebuild 1
+    sha256 arm64_tahoe:   "de7175615115c2db775185d5357cd88aa78f22e28e863eb137ca225fc5020b43"
+    sha256 arm64_sequoia: "8b5217c9e82353613403d3e696eb8b848d37ae16c3554463383d2b80e26128bb"
+    sha256 arm64_sonoma:  "6817726fae0c75879d0edc0ba4b521a02efcce29510ca512fc74e3284c458fce"
+    sha256 sequoia:       "e0c7f7da79d1b5135c2c5b26a0d76d2f347faf580f01924e4e0e020ea555ba6f"
+    sha256 sonoma:        "3f4287a2efc311300dc248d29fa38fcc499cbe714dfc4318e5ad73ae3c63cac8"
+    sha256 arm64_linux:   "0d0428a944fcad97a3ca7dbe5335cb6cba3989380c1c3dd43b42c3fb04a595b4"
+    sha256 x86_64_linux:  "b79b0f153f6d4a8d18676d8b009d687f797ff188c47b8bd3c6832dc725ec999b"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -43,7 +44,6 @@ class PythonAT310 < Formula
   uses_from_macos "libffi"
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
-  uses_from_macos "unzip"
 
   on_linux do
     depends_on "libnsl"
@@ -138,7 +138,7 @@ class PythonAT310 < Formula
       --datadir=#{share}
       --without-ensurepip
       --enable-loadable-sqlite-extensions
-      --with-openssl=#{Formula["openssl@3"].opt_prefix}
+      --with-openssl=#{formula_opt_prefix("openssl@3")}
       --with-dbmliborder=gdbm:ndbm
       --enable-optimizations
       --with-system-expat
@@ -183,7 +183,7 @@ class PythonAT310 < Formula
     # superenv makes cc always find includes/libs!
     inreplace "setup.py",
       /do_readline = self.compiler.find_library_file\(self.lib_dirs,\s*readline_lib\)/,
-      "do_readline = '#{Formula["readline"].opt_lib/shared_library("libhistory")}'"
+      "do_readline = '#{formula_opt_lib("readline")/shared_library("libhistory")}'"
 
     inreplace "setup.py" do |s|
       s.gsub! "sqlite_setup_debug = False", "sqlite_setup_debug = True"
@@ -206,7 +206,7 @@ class PythonAT310 < Formula
     # `brew install enchant && pip install pyenchant`
     inreplace "./Lib/ctypes/macholib/dyld.py" do |f|
       f.gsub! "DEFAULT_LIBRARY_FALLBACK = [",
-              "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}/lib', '#{Formula["openssl@3"].opt_lib}',"
+              "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}/lib', '#{formula_opt_lib("openssl@3")}',"
       f.gsub! "DEFAULT_FRAMEWORK_FALLBACK = [", "DEFAULT_FRAMEWORK_FALLBACK = [ '#{HOMEBREW_PREFIX}/Frameworks',"
     end
 

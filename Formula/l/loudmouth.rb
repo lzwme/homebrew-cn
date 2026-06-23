@@ -65,10 +65,10 @@ class Loudmouth < Formula
   test do
     cp pkgshare/"examples/lm-send-async.c", testpath
     system ENV.cc, "lm-send-async.c", "-o", "test",
-      "-L#{lib}", "-L#{Formula["glib"].opt_lib}", "-lloudmouth-1", "-lglib-2.0",
+      "-L#{lib}", "-L#{formula_opt_lib("glib")}", "-lloudmouth-1", "-lglib-2.0",
       "-I#{include}/loudmouth-1.0",
       "-I#{Formula["glib"].opt_include}/glib-2.0",
-      "-I#{Formula["glib"].opt_lib}/glib-2.0/include"
+      "-I#{formula_opt_lib("glib")}/glib-2.0/include"
     system "./test", "--help"
   end
 end

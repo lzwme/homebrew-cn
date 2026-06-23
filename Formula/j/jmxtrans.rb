@@ -26,7 +26,7 @@ class Jmxtrans < Formula
   uses_from_macos "netcat" => :test
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk@8"].opt_prefix
+    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk@8")
 
     system "mvn", "package", "-DskipTests=true",
                              "-Dmaven.javadoc.skip=true",
@@ -48,7 +48,7 @@ class Jmxtrans < Formula
       doc.install Dir["doc/*"]
     end
 
-    (bin/"jmxtrans").write_env_script libexec/"jmxtrans.sh", JAVA_HOME: Formula["openjdk@8"].opt_prefix
+    (bin/"jmxtrans").write_env_script libexec/"jmxtrans.sh", JAVA_HOME: formula_opt_prefix("openjdk@8")
 
     # Delete 32-bit Linux binaries
     rm Dir[libexec/"target/generated-resources/appassembler/jsw/jmxtrans/{bin,lib}/*wrapper-linux-x86-32*"]

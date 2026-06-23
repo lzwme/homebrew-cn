@@ -18,7 +18,7 @@ class Jena < Formula
 
   def install
     env = {
-      JAVA_HOME: Formula["openjdk"].opt_prefix,
+      JAVA_HOME: formula_opt_prefix("openjdk"),
       JENA_HOME: libexec,
     }
 

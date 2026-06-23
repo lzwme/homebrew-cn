@@ -52,7 +52,7 @@ class Deno < Formula
               'rusqlite = { version = "\\1", features = ["unlock_notify", "session"')
     end
 
-    ENV["LCMS2_LIB_DIR"] = Formula["little-cms2"].opt_lib
+    ENV["LCMS2_LIB_DIR"] = formula_opt_lib("little-cms2")
     # env args for building a release build with our python3 and ninja
     ENV["PYTHON"] = which("python3")
     ENV["NINJA"] = which("ninja")
@@ -89,11 +89,11 @@ class Deno < Formula
     assert_match "hello deno", shell_output("#{bin}/dx -y cowsay hello deno")
 
     linked_libraries = [
-      Formula["sqlite"].opt_lib/shared_library("libsqlite3"),
+      formula_opt_lib("sqlite")/shared_library("libsqlite3"),
     ]
     unless OS.mac?
       linked_libraries += [
-        Formula["libffi"].opt_lib/shared_library("libffi"),
+        formula_opt_lib("libffi")/shared_library("libffi"),
       ]
     end
     linked_libraries.each do |library|

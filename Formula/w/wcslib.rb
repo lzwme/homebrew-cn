@@ -28,7 +28,7 @@ class Wcslib < Formula
     rm_r buildpath.glob("**/RCS/")
 
     system "./configure", "--disable-fortran",
-                          "--with-cfitsiolib=#{Formula["cfitsio"].opt_lib}",
+                          "--with-cfitsiolib=#{formula_opt_lib("cfitsio")}",
                           "--with-cfitsioinc=#{Formula["cfitsio"].opt_include}",
                           "--without-pgplot",
                           *std_configure_args

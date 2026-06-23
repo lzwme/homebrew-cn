@@ -33,7 +33,7 @@ class Synscan < Formula
     # Ideally we pass the prefix into --with-libpcap, but that option only checks "flat"
     # i.e. it only works if the headers and libraries are in the same directory.
     ENV.append_to_cflags "-I#{Formula["libpcap"].opt_include}"
-    ENV.append "LIBS", "-L#{Formula["libpcap"].opt_lib} -lpcap"
+    ENV.append "LIBS", "-L#{formula_opt_lib("libpcap")} -lpcap"
     system "./configure", "--prefix=#{prefix}",
                           "--with-libpcap=yes"
 

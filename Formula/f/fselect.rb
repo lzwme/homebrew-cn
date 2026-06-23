@@ -36,7 +36,7 @@ class Fselect < Formula
     assert_match "test.txt", shell_output(cmd).chomp
 
     linked_libraries = [
-      Formula["libgit2"].opt_lib/shared_library("libgit2"),
+      formula_opt_lib("libgit2")/shared_library("libgit2"),
     ]
     linked_libraries.each do |library|
       assert Utils.binary_linked_to_library?(bin/"fselect", library),

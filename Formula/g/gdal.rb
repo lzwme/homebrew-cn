@@ -99,7 +99,7 @@ class Gdal < Formula
   # TODO: Consider adding a DSL for this or change how we handle Python's `expat` dependency
   def remove_brew_expat
     env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
-    ENV.remove env_vars, /(^|:)#{Regexp.escape(Formula["expat"].opt_prefix)}[^:]*/
+    ENV.remove env_vars, /(^|:)#{Regexp.escape(formula_opt_prefix("expat"))}[^:]*/
     ENV.remove "HOMEBREW_DEPENDENCIES", "expat"
   end
 

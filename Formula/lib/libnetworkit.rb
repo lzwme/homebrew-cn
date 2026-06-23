@@ -28,7 +28,7 @@ class Libnetworkit < Formula
 
   def install
     system "cmake", "-S", ".", "-B", "build",
-                    "-DNETWORKIT_EXT_TLX=#{Formula["tlx"].opt_prefix}",
+                    "-DNETWORKIT_EXT_TLX=#{formula_opt_prefix("tlx")}",
                     "-DNETWORKIT_CXX_STANDARD=20",
                     *std_cmake_args
     system "cmake", "--build", "build"

@@ -42,7 +42,7 @@ class VulkanVolk < Formula
            "-DVOLK_INSTALL=ON",
            "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].prefix}",
            "-DVOLK_STATIC_DEFINES=#{volk_static_defines}",
-           "-DCMAKE_INSTALL_RPATH=#{rpath(target: Formula["vulkan-loader"].opt_lib)}",
+           "-DCMAKE_INSTALL_RPATH=#{rpath(target: formula_opt_lib("vulkan-loader"))}",
            *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -68,7 +68,7 @@ class VulkanVolk < Formula
            "-I#{include}", "-L#{lib}",
            "-I#{Formula["vulkan-headers"].include}",
            "-lvolk", "-D#{volk_static_defines}",
-           "-Wl,-rpath,#{Formula["vulkan-loader"].opt_lib}",
+           "-Wl,-rpath,#{formula_opt_lib("vulkan-loader")}",
            "-o", testpath/"test"
     system testpath/"test"
   end

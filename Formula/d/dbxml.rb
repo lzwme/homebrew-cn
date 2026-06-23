@@ -44,11 +44,11 @@ class Dbxml < Formula
     end
 
     args = %W[
-      --with-xqilla=#{Formula["xqilla"].opt_prefix}
-      --with-xerces=#{Formula["xerces-c"].opt_prefix}
-      --with-berkeleydb=#{Formula["berkeley-db"].opt_prefix}
+      --with-xqilla=#{formula_opt_prefix("xqilla")}
+      --with-xerces=#{formula_opt_prefix("xerces-c")}
+      --with-berkeleydb=#{formula_opt_prefix("berkeley-db")}
     ]
-    args << "--with-zlib=#{Formula["zlib-ng-compat"].opt_prefix}" unless OS.mac?
+    args << "--with-zlib=#{formula_opt_prefix("zlib-ng-compat")}" unless OS.mac?
     # Help old config scripts identify arm64 linux
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 

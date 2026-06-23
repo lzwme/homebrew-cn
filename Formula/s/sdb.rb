@@ -1,18 +1,18 @@
 class Sdb < Formula
   desc "Ondisk/memory hashtable based on CDB"
   homepage "https://www.radare.org/"
-  url "https://ghfast.top/https://github.com/radareorg/sdb/archive/refs/tags/2.4.4.tar.gz"
-  sha256 "48ed1f40a4a1903646c24fa17b8e2be13ac64c2a441758d5f301043820fab1b8"
+  url "https://ghfast.top/https://github.com/radareorg/sdb/archive/refs/tags/2.4.6.tar.gz"
+  sha256 "733ce468b8e232df28dcd920ff54d137923bc83dbeda37c0f114ea85cc85f552"
   license "MIT"
   head "https://github.com/radareorg/sdb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9ac5cc39aa93c9f87e59fa7711238049e070e993043e9515ecaf21d1824b2542"
-    sha256 cellar: :any,                 arm64_sequoia: "68e56bc60c4e046b57b802607f51d0fec19c2e908766be5b5819fb2d3d5faf02"
-    sha256 cellar: :any,                 arm64_sonoma:  "85a7766ab4196a62875694ba53775e04bc9507ed4cbbc6c0c0fe01f8a6e4d8eb"
-    sha256 cellar: :any,                 sonoma:        "f212c7fef7edb1bafc58516797ac92a02fc2b37962ee01b15d20605023876aa7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "624954e2711694f727e67a2900d7ef1d0295fd802d1c8d4279678cc92925fbf1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4854ed5f2a975879b9cffee64d82eda8a821cea53c0b15e043ed54950f26566"
+    sha256 cellar: :any, arm64_tahoe:   "dbed25ed0b58334f4ebdf890dfc13446f794978938c3b4f7db0e60c08353598a"
+    sha256 cellar: :any, arm64_sequoia: "0da9a18e5abd2438b00c6a655c1b2bfc2e8f99aacb9f89466101d0fbc7146041"
+    sha256 cellar: :any, arm64_sonoma:  "7e6dfe3f87500436f312ae1e3f252d6939710f79df559e2fd8e551638de9847c"
+    sha256 cellar: :any, sonoma:        "1b3867bb0deb02bb72b3f1f244d34101a9831b9335817f0c4bce2524cd4ea158"
+    sha256 cellar: :any, arm64_linux:   "4826c7cf39a0ac2d51387bd8dbb4b987f39cd271a567a1d3cec8e5df88a57cf6"
+    sha256 cellar: :any, x86_64_linux:  "2520f14db331e31812fc9e52e9ee6b0896ffb1df832e8c1440c8fcd10875321e"
   end
 
   depends_on "meson" => :build

@@ -64,7 +64,7 @@ class Librasterlite2 < Formula
               "#include <time.h>\n\n#ifndef DOXYGEN_SHOULD_SKIP_THIS"
 
     # Ensure Homebrew SQLite libraries are found before the system SQLite
-    ENV.append "LDFLAGS", "-L#{Formula["sqlite"].opt_lib} -lsqlite3"
+    ENV.append "LDFLAGS", "-L#{formula_opt_lib("sqlite")} -lsqlite3"
     system "./configure", *std_configure_args
     system "make", "install"
   end

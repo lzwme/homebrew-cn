@@ -46,9 +46,9 @@ class CKermit < Formula
     if OS.linux?
       inreplace "makefile" do |s|
         s.gsub! "/usr/include/ncurses", "#{Formula["ncurses"].opt_include}/ncurses"
-        s.gsub! "/usr/lib/libncurses", "#{Formula["ncurses"].opt_lib}/libncurses"
+        s.gsub! "/usr/lib/libncurses", "#{formula_opt_lib("ncurses")}/libncurses"
         s.gsub! "/usr/include/crypt", "#{Formula["libxcrypt"].opt_include}/crypt"
-        s.gsub! "/usr/lib/libcrypt", "#{Formula["libxcrypt"].opt_lib}/libcrypt"
+        s.gsub! "/usr/lib/libcrypt", "#{formula_opt_lib("libxcrypt")}/libcrypt"
       end
     end
 

@@ -357,20 +357,20 @@ class Semgrep < Formula
 
     # Ensure dynamic linkage to our libraries
     inreplace "src/main/flags.sh" do |s|
-      s.gsub!("$(brew --prefix libev)/lib/libev.a", Formula["libev"].opt_lib/shared_library("libev"))
-      s.gsub!("$(brew --prefix zstd)/lib/libzstd.a", Formula["zstd"].opt_lib/shared_library("libzstd"))
-      s.gsub!("$(pkg-config gmp --variable libdir)/libgmp.a", Formula["gmp"].opt_lib/shared_library("libgmp"))
+      s.gsub!("$(brew --prefix libev)/lib/libev.a", formula_opt_lib("libev")/shared_library("libev"))
+      s.gsub!("$(brew --prefix zstd)/lib/libzstd.a", formula_opt_lib("zstd")/shared_library("libzstd"))
+      s.gsub!("$(pkg-config gmp --variable libdir)/libgmp.a", formula_opt_lib("gmp")/shared_library("libgmp"))
       s.gsub!(
         "$(pkg-config tree-sitter --variable libdir)/libtree-sitter.a",
-        Formula["tree-sitter"].opt_lib/shared_library("libtree-sitter"),
+        formula_opt_lib("tree-sitter")/shared_library("libtree-sitter"),
       )
       s.gsub!(
         "$(pkg-config libpcre2-8 --variable libdir)/libpcre2-8.a",
-        Formula["pcre2"].opt_lib/shared_library("libpcre2-8"),
+        formula_opt_lib("pcre2")/shared_library("libpcre2-8"),
       )
       s.gsub!(
         '"$(brew --prefix dwarfutils)/lib/libdwarf.a"',
-        Formula["dwarfutils"].opt_lib/shared_library("libdwarf"),
+        formula_opt_lib("dwarfutils")/shared_library("libdwarf"),
       )
     end
 

@@ -16,7 +16,7 @@ class Rainbarf < Formula
   uses_from_macos "perl"
 
   def install
-    system "#{Formula["pod2man"].opt_bin}/pod2man", "rainbarf", "rainbarf.1"
+    system "#{formula_opt_bin("pod2man")}/pod2man", "rainbarf", "rainbarf.1"
     man1.install "rainbarf.1"
     bin.install "rainbarf"
   end

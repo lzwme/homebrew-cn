@@ -52,7 +52,7 @@ class Jruby < Formula
       ENV["LIBFFI_LIBS"] = if OS.mac?
         MacOS.sdk_for_formula(self).path/"usr/lib/libffi.tbd"
       else
-        Formula["libffi"].opt_lib/shared_library("libffi")
+        formula_opt_lib("libffi")/shared_library("libffi")
       end
 
       # Avoid building universal binaries. Cannot use change_make_var! due to indentation

@@ -48,7 +48,7 @@ class Lc0 < Formula
       args << "-Dmetal=disabled" if MacOS.version <= :big_sur
     else
       args << "-Dopenblas_include=#{Formula["openblas"].opt_include}"
-      args << "-Dopenblas_libdirs=#{Formula["openblas"].opt_lib}"
+      args << "-Dopenblas_libdirs=#{formula_opt_lib("openblas")}"
     end
 
     system "meson", "setup", "build", *args, *std_meson_args

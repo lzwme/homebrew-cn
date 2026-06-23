@@ -36,8 +36,8 @@ class Aamath < Formula
   def install
     unless OS.mac?
       inreplace "Makefile" do |s|
-        s.change_make_var! "CFLAGS", "#{s.get_make_var("CFLAGS")} -I#{Formula["libedit"].opt_libexec}/include"
-        s.change_make_var! "LFLAGS", "#{s.get_make_var("LFLAGS")} -L#{Formula["libedit"].opt_libexec}/lib"
+        s.change_make_var! "CFLAGS", "#{s.get_make_var("CFLAGS")} -I#{formula_opt_libexec("libedit")}/include"
+        s.change_make_var! "LFLAGS", "#{s.get_make_var("LFLAGS")} -L#{formula_opt_libexec("libedit")}/lib"
       end
     end
 

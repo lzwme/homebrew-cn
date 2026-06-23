@@ -28,7 +28,7 @@ class Wuppiefuzz < Formula
   end
 
   def install
-    ENV["Z3_LIBRARY_PATH_OVERRIDE"] = Formula["z3"].opt_lib
+    ENV["Z3_LIBRARY_PATH_OVERRIDE"] = formula_opt_lib("z3")
     ENV["Z3_SYS_Z3_HEADER"] = Formula["z3"].opt_include/"z3.h"
     system "cargo", "install", "--no-default-features", *std_cargo_args(features: ["std"])
   end

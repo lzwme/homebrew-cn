@@ -50,7 +50,7 @@ class BaculaFd < Formula
                           "--with-logdir=#{var}/log/bacula",
                           "--enable-client-only",
                           "--disable-conio",
-                          "--with-readline=#{Formula["readline"].opt_prefix}"
+                          "--with-readline=#{formula_opt_prefix("readline")}"
 
     system "make"
     system "make", "install"

@@ -60,7 +60,7 @@ class Mame < Formula
   end
 
   def install
-    ENV["QT_HOME"] = Formula["qtbase"].opt_prefix if OS.linux?
+    ENV["QT_HOME"] = formula_opt_prefix("qtbase") if OS.linux?
 
     # Cut sdl2-config's invalid option.
     inreplace "scripts/src/osd/sdl.lua", "--static", ""

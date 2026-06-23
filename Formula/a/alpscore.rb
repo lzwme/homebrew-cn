@@ -45,8 +45,8 @@ class Alpscore < Formula
     ]
 
     inreplace files_with_cellar_references do |s|
-      s.gsub!(Formula["open-mpi"].prefix.realpath, Formula["open-mpi"].opt_prefix)
-      s.gsub!(Formula["hdf5"].prefix.realpath, Formula["hdf5"].opt_prefix, audit_result: false)
+      s.gsub!(Formula["open-mpi"].prefix.realpath, formula_opt_prefix("open-mpi"))
+      s.gsub!(Formula["hdf5"].prefix.realpath, formula_opt_prefix("hdf5"), audit_result: false)
     end
   end
 

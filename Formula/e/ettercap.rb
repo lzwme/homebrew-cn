@@ -53,7 +53,7 @@ class Ettercap < Formula
       -DENABLE_PDF_DOCS=OFF
       -DENABLE_PLUGINS=ON
       -DGTK_BUILD_TYPE=GTK3
-      -DGTK3_GLIBCONFIG_INCLUDE_DIR=#{Formula["glib"].opt_lib}/glib-2.0/include
+      -DGTK3_GLIBCONFIG_INCLUDE_DIR=#{formula_opt_lib("glib")}/glib-2.0/include
       -DINSTALL_DESKTOP=ON
       -DINSTALL_SYSCONFDIR=#{etc}
     ]

@@ -68,11 +68,11 @@ class Libgccjit < Formula
       --disable-nls
       --enable-checking=release
       --with-gcc-major-version-only
-      --with-gmp=#{Formula["gmp"].opt_prefix}
-      --with-mpfr=#{Formula["mpfr"].opt_prefix}
-      --with-mpc=#{Formula["libmpc"].opt_prefix}
-      --with-isl=#{Formula["isl"].opt_prefix}
-      --with-zstd=#{Formula["zstd"].opt_prefix}
+      --with-gmp=#{formula_opt_prefix("gmp")}
+      --with-mpfr=#{formula_opt_prefix("mpfr")}
+      --with-mpc=#{formula_opt_prefix("libmpc")}
+      --with-isl=#{formula_opt_prefix("isl")}
+      --with-zstd=#{formula_opt_prefix("zstd")}
       --with-pkgversion=#{pkgversion}
       --with-bugurl=#{tap.issues_url}
       --with-system-zlib
@@ -83,7 +83,7 @@ class Libgccjit < Formula
       args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
 
       # System headers may not be in /usr/include
-      sdk = MacOS.sdk_path_if_needed
+      sdk = MacOS.sdk_path
       args << "--with-sysroot=#{sdk}" if sdk
 
       # Avoid this semi-random failure:
@@ -93,7 +93,7 @@ class Libgccjit < Formula
 
       # Fix linkage with `libgcc_s.1.1`. See: https://github.com/orgs/Homebrew/discussions/5364
       if Hardware::CPU.intel?
-        ldflags << "-Wl,-rpath,#{rpath(source: lib/"gcc/current", target: Formula["gcc"].opt_lib/"gcc/current")}"
+        ldflags << "-Wl,-rpath,#{rpath(source: lib/"gcc/current", target: formula_opt_lib("gcc")/"gcc/current")}"
       end
 
       make_args = %W[BOOT_LDFLAGS=#{ldflags.join(" ")}]
@@ -107,10 +107,10 @@ class Libgccjit < Formula
       inreplace "gcc/config/aarch64/t-aarch64-linux", "lp64=../lib64", "lp64="
 
       # Use our own (recent) binutils
-      args << "--with-as=#{Formula["binutils"].opt_bin}/as"
+      args << "--with-as=#{formula_opt_bin("binutils")}/as"
 
       ENV.append_path "CPATH", Formula["zlib-ng-compat"].opt_include
-      ENV.append_path "LIBRARY_PATH", Formula["zlib-ng-compat"].opt_lib
+      ENV.append_path "LIBRARY_PATH", formula_opt_lib("zlib-ng-compat")
     end
 
     # Building jit needs --enable-host-shared, which slows down the compiler.
@@ -182,7 +182,7 @@ class Libgccjit < Formula
     C
 
     gcc_major_ver = Formula["gcc"].any_installed_version.major
-    gcc = Formula["gcc"].opt_bin/"gcc-#{gcc_major_ver}"
+    gcc = formula_opt_bin("gcc")/"gcc-#{gcc_major_ver}"
     libs = HOMEBREW_PREFIX/"lib/gcc/current"
     test_flags = %W[-I#{include} test-libgccjit.c -o test -L#{libs} -lgccjit]
 

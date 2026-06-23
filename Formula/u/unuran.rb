@@ -44,7 +44,7 @@ class Unuran < Formula
           return 0;
       }
     C
-    system ENV.cc, "test.c", "-L#{Formula["gsl"].opt_lib}", "-L#{lib}",
+    system ENV.cc, "test.c", "-L#{formula_opt_lib("gsl")}", "-L#{lib}",
             "-lgsl", "-lgslcblas", "-lunuran", "-o", "test"
     system "./test"
   end

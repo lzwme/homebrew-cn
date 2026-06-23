@@ -32,10 +32,10 @@ class Swiftlint < Formula
     if OS.mac?
       args = ["--disable-sandbox"]
     else
-      libxml2_lib = Formula["libxml2"].opt_lib
+      libxml2_lib = formula_opt_lib("libxml2")
       args = [
         "--static-swift-stdlib",
-        "-Xlinker", "-L#{Formula["curl"].opt_lib}",
+        "-Xlinker", "-L#{formula_opt_lib("curl")}",
         "-Xlinker", "-L#{libxml2_lib}"
       ]
       ENV.prepend_path "LD_LIBRARY_PATH", libxml2_lib

@@ -1,23 +1,23 @@
 class Cozypkg < Formula
   desc "CLI for managing Cozystack packages"
   homepage "https://cozystack.io"
-  url "https://ghfast.top/https://github.com/cozystack/cozystack/archive/refs/tags/v1.4.4.tar.gz"
-  sha256 "892d2e500ebc5837aaa5a643ad7d2e6f70a82fa7c4988555a320d1e99e331334"
+  url "https://ghfast.top/https://github.com/cozystack/cozystack/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "00d57d95f9e5d522bee0f7bd98553ef96e4457880aa7e9e42f21cb49ab34351e"
   license "Apache-2.0"
   head "https://github.com/cozystack/cozystack.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "35a3164b46bf1feb96f6c8e3b6c082730846cd86c436a5e31efa2a6450f4e127"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "257f21a302a1e59aa85e92a06642464ceb593dd84876f8e5681f4994ced0254c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35045f851ac398f02cedc21a9bcd4ad682c9f704ee71bc3b1060a32d8f0c26b4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "acf1f6de60a9c38434937dd3dcc18dd4141a976e0663ecebb62aa67fbefa49f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33820e875a9a3447b8efa24fe1f5fc0704e99bc1ada500a40e36fbda3c04d959"
-    sha256 cellar: :any,                 x86_64_linux:  "a34340962c27e38377090ec4e2a707c0fb171d4caf9b2669c0fdc75e499af8e5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "29af1f948b19b1f6a301e1be22131793998440bd96d7457b5a224bfe992c936e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d432b19ec3c0061487f2ee3f1a9937c84cb97cd2e6611cf8203ff403329a58b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91d590fc572bb19a4bdfad525b4119a5d35bbfb108fe1282ed02c0361406570e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "44629d6b4c93fd1b98d91d980d4533963af3fa7ddbc1b2318d0b5e55bc05423b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a62e62a7d3ca2f48575e3c175636c13c12088a8b2148f87b31ab4e7087788d2e"
+    sha256 cellar: :any,                 x86_64_linux:  "4e9122253adb214048f258b83bd71284d10f09780af1d9efa85ce451c8746699"
   end
 
   depends_on "go" => :build

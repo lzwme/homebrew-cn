@@ -74,7 +74,7 @@ class Bazarr < Formula
     libexec.install Dir["*"]
     (bin/"bazarr").write_env_script venv.root/"bin/python", "#{libexec}/bazarr.py",
       NO_UPDATE:  "1",
-      PATH:       "#{Formula["ffmpeg"].opt_bin}:#{HOMEBREW_PREFIX}/bin:${PATH}",
+      PATH:       "#{formula_opt_bin("ffmpeg")}:#{HOMEBREW_PREFIX}/bin:${PATH}",
       PYTHONPATH: venv.site_packages
 
     pkgvar = var/"bazarr"

@@ -71,7 +71,7 @@ class AppstreamGlib < Formula
       }
     C
 
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("libarchive")/"pkgconfig"
     flags = shell_output("pkgconf --cflags --libs appstream-glib").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"

@@ -31,7 +31,7 @@ class Maeparser < Formula
     system ENV.cxx, "-std=c++11", "MainTestSuite.cpp", "UsageDemo.cpp", "-o", "test",
                     "-DTEST_SAMPLES_PATH=\"#{testpath}\"", "-DBOOST_ALL_DYN_LINK",
                     "-I#{include}/maeparser", "-L#{lib}", "-lmaeparser",
-                    "-L#{Formula["boost"].opt_lib}", "-lboost_filesystem", "-lboost_unit_test_framework"
+                    "-L#{formula_opt_lib("boost")}", "-lboost_filesystem", "-lboost_unit_test_framework"
     system "./test"
   end
 end

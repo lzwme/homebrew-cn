@@ -51,7 +51,7 @@ class Oscats < Formula
     if OS.mac?
       inreplace pkgshare/"examples/Makefile",
         Superenv.shims_path/"pkg-config",
-        Formula["pkgconf"].opt_bin/"pkg-config"
+        formula_opt_bin("pkgconf")/"pkg-config"
     else
       inreplace pkgshare/"examples/Makefile", Superenv.shims_path/"ld", "ld"
     end

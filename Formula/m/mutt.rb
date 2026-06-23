@@ -82,7 +82,7 @@ class Mutt < Formula
       --with-idn2
       --with-lmdb
       --with-sasl
-      --with-ssl=#{Formula["openssl@3"].opt_prefix}
+      --with-ssl=#{formula_opt_prefix("openssl@3")}
     ]
 
     configure = build.head? ? "./prepare" : "./configure"

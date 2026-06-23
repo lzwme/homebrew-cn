@@ -40,7 +40,7 @@ class Ginkgo < Formula
   end
 
   test do
-    flags = shell_output("#{Formula["pkgconf"].opt_bin}/pkgconf --libs ginkgo").chomp.split
+    flags = shell_output("#{formula_opt_bin("pkgconf")}/pkgconf --libs ginkgo").chomp.split
 
     (testpath/"version.cpp").write <<~CPP
       #include <iostream>
@@ -53,7 +53,7 @@ class Ginkgo < Formula
       }
     CPP
 
-    system Formula["open-mpi"].opt_bin/"mpic++", "version.cpp", "-std=c++17", *flags,
+    system formula_opt_bin("open-mpi")/"mpic++", "version.cpp", "-std=c++17", *flags,
            "-Wl,-rpath,#{lib}", "-o", "version"
 
     assert_match version.to_s, shell_output("./version")
@@ -87,7 +87,7 @@ class Ginkgo < Formula
       }
 
     CPP
-    system Formula["open-mpi"].opt_bin/"mpic++", "test.cpp", "-std=c++17", *flags,
+    system formula_opt_bin("open-mpi")/"mpic++", "test.cpp", "-std=c++17", *flags,
            "-Wl,-rpath,#{lib}", "-o", "test"
 
     assert_equal "REF: 17, 39\nOMP: 17, 39\n", shell_output("./test")

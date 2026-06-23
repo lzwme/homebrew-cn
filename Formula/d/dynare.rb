@@ -69,7 +69,7 @@ class Dynare < Formula
     octave = Formula["octave"]
     if OS.linux?
       ENV.append "LDFLAGS", "-Wl,-rpath,#{octave.opt_lib}/octave/#{octave.version.major_minor_patch}"
-      ENV["BOOST_ROOT"] = Formula["boost"].opt_prefix.to_s
+      ENV["BOOST_ROOT"] = formula_opt_prefix("boost").to_s
     end
 
     system "meson", "setup", "build", "-Dbuild_for=octave", *std_meson_args
@@ -117,7 +117,7 @@ class Dynare < Formula
       dynare bkk.mod console
     MATLAB
 
-    system Formula["octave"].opt_bin/"octave", "--no-gui",
+    system formula_opt_bin("octave")/"octave", "--no-gui",
            "--no-history", "--path", "#{lib}/dynare/matlab", "dyn_test.m"
   end
 end

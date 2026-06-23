@@ -3,18 +3,18 @@ class Octodns < Formula
 
   desc "Tools for managing DNS across multiple providers"
   homepage "https://github.com/octodns/octodns"
-  url "https://files.pythonhosted.org/packages/a5/ba/287143db4290e0990d67a542d7fbf8bec02652f4b811da3b3d01a03ac5d7/octodns-1.19.0.tar.gz"
-  sha256 "fc2f833fd7ad9bc2b604dc7756def49172a9be207ff4256cab0a46cffc9112a5"
+  url "https://files.pythonhosted.org/packages/6c/3f/efa3684728098eec6e406958920497704805e9d676a32cb75f2fa9abb439/octodns-1.20.0.tar.gz"
+  sha256 "35a556be684e8e07a02efb7f8c26669cbf16cb6a74c302d59410569cffb3a1e2"
   license "MIT"
   head "https://github.com/octodns/octodns.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fef753ad9ddd2de0bd262b3b584d74b51eb35b09ff7a1757abe61f36dcfc9b54"
-    sha256 cellar: :any, arm64_sequoia: "132be794e708cf55c4936867e39ab92bc3821e73acc59b7e8e7fe42126d40111"
-    sha256 cellar: :any, arm64_sonoma:  "4ae94ea037d3d670ffde61b5de801908fd22923bd358d17859ed1f5c0786eb16"
-    sha256 cellar: :any, sonoma:        "b8c5136b4ae35e1782434c1afc5e7a50a65eed778915ebf622ba913c09d2cd8e"
-    sha256 cellar: :any, arm64_linux:   "662aa007c991c7cc41318410fee4f39217ad75829c097d9579986399cc77489f"
-    sha256 cellar: :any, x86_64_linux:  "061c02a3b46b9e2477fae0118f946c40264cd442bb6a0cb798e4475baf080640"
+    sha256 cellar: :any, arm64_tahoe:   "05d38df4419b25199d2a31eb3367c78c4e47b011fa798e14f374bf228e784b4b"
+    sha256 cellar: :any, arm64_sequoia: "3d8d28646e796699d743c038bd3bfe70ce33cf861578d6b8d225e39e5638507e"
+    sha256 cellar: :any, arm64_sonoma:  "72a9e7c115c572cbf910bd31c05b465316cac0520637e28f8c60494333442b28"
+    sha256 cellar: :any, sonoma:        "4036ce816f8fe6327230c786169919a189ddd7aaebbd5df0782b5ef2ee18fec4"
+    sha256 cellar: :any, arm64_linux:   "c2d003b4bacd88d0fb1c35760ca11aa7178f552acdf22831abb5c535cc8a3790"
+    sha256 cellar: :any, x86_64_linux:  "65403e85d1b7e4b5b216b3135c0bb427e916fb50ea1b17fb7407e014ca8a4ecc"
   end
 
   depends_on "libyaml"

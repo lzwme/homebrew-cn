@@ -31,7 +31,7 @@ class Proto < Formula
   end
 
   def install
-    ENV["OPENSSL_DIR"] = Formula["openssl@4"].opt_prefix if OS.linux?
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4") if OS.linux?
     system "cargo", "install", *std_cargo_args(path: "crates/cli")
     generate_completions_from_executable(bin/"proto", "completions", "--shell")
 

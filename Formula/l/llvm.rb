@@ -154,7 +154,7 @@ class Llvm < Formula
     builtins_cmake_args = []
 
     if OS.mac?
-      macos_sdk = MacOS.sdk_path_if_needed
+      macos_sdk = MacOS.sdk_path
       args << "-DFFI_INCLUDE_DIR=#{macos_sdk}/usr/include/ffi"
       args << "-DFFI_LIBRARY_DIR=#{macos_sdk}/usr/lib"
 
@@ -176,7 +176,7 @@ class Llvm < Formula
       builtins_cmake_args += clt_sdk_support_flags
     else
       args << "-DFFI_INCLUDE_DIR=#{Formula["libffi"].opt_include}"
-      args << "-DFFI_LIBRARY_DIR=#{Formula["libffi"].opt_lib}"
+      args << "-DFFI_LIBRARY_DIR=#{formula_opt_lib("libffi")}"
 
       # Disable `libxml2` which isn't very useful.
       args << "-DLLVM_ENABLE_LIBXML2=OFF"
@@ -298,7 +298,7 @@ class Llvm < Formula
       if OS.linux?
         # Make sure brewed glibc will be used if it is installed.
         linux_library_paths = [
-          Formula["glibc"].opt_lib,
+          formula_opt_lib("glibc"),
           HOMEBREW_PREFIX/"lib",
         ]
         linux_linker_flags = linux_library_paths.map { |path| "-L#{path} -Wl,-rpath,#{path}" }

@@ -626,7 +626,7 @@ class Biber < Formula
 
   def install
     ENV["ALIEN_INSTALL_TYPE"] = "system"
-    ENV["OPENSSL_PREFIX"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@3")
     ENV["PERL_MM_USE_DEFAULT"] = "1"
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     ENV.prepend_path "PERL5LIB", libexec/"lib"

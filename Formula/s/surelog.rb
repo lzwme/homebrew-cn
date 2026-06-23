@@ -108,7 +108,7 @@ class Surelog < Formula
 
     flags = shell_output("pkgconf --cflags --libs Surelog").chomp.split
     system ENV.cxx, testpath/"test.cpp", "-o", "test",
-                    "-L#{Formula["antlr4-cpp-runtime"].opt_prefix}/lib",
+                    "-L#{formula_opt_prefix("antlr4-cpp-runtime")}/lib",
                     "-fPIC", "-std=c++17", *flags
     system testpath/"test"
   end

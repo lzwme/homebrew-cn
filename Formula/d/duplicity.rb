@@ -549,7 +549,7 @@ class Duplicity < Formula
       %commit
     GPG
 
-    system Formula["gnupg"].opt_bin/"gpg", "--batch", "--gen-key", "batch.gpg"
+    system formula_opt_bin("gnupg")/"gpg", "--batch", "--gen-key", "batch.gpg"
     begin
       (testpath/"test/hello.txt").write "Hello!"
       ENV["PASSPHRASE"] = "brew"
@@ -560,8 +560,8 @@ class Duplicity < Formula
       script = "import requests as r; r.get('https://mozilla-modern.badssl.com')"
       system libexec/"bin/python", "-c", script
     ensure
-      system Formula["gnupg"].opt_bin/"gpgconf", "--kill", "gpg-agent"
-      system Formula["gnupg"].opt_bin/"gpgconf", "--homedir", "keyrings/live",
+      system formula_opt_bin("gnupg")/"gpgconf", "--kill", "gpg-agent"
+      system formula_opt_bin("gnupg")/"gpgconf", "--homedir", "keyrings/live",
                                                  "--kill", "gpg-agent"
     end
   end

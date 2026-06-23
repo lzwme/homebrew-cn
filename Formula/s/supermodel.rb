@@ -31,7 +31,7 @@ class Supermodel < Formula
   def install
     # Workaround for build environment as sdl2-config uses paths relative to executable.
     # TODO: Remove after moving to `sdl2-compat` which uses paths set at build-time.
-    ENV.remove "PATH", Formula["sdl2"].opt_bin
+    ENV.remove "PATH", formula_opt_bin("sdl2")
     ENV.append_path "PATH", HOMEBREW_PREFIX/"bin"
 
     # Not using Makefile.OSX as it uses prebuilt frameworks

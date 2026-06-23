@@ -32,7 +32,7 @@ class Edbrowse < Formula
     cd "src" do
       make_args = [
         "QUICKJS_INCLUDE=#{Formula["quickjs"].opt_include}/quickjs",
-        "QUICKJS_LIB=#{Formula["quickjs"].opt_lib}/quickjs",
+        "QUICKJS_LIB=#{formula_opt_lib("quickjs")}/quickjs",
         "QUICKJS_LIB_NAME=quickjs",
       ]
 

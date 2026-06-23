@@ -36,7 +36,7 @@ class Lunasvg < Formula
       -I#{include}/lunasvg
       -I#{Formula["plutovg"].opt_include}/plutovg
       -L#{lib}
-      -L#{Formula["plutovg"].opt_lib}
+      -L#{formula_opt_lib("plutovg")}
       -llunasvg
       -lplutovg
     ]

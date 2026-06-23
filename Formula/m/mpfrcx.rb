@@ -42,7 +42,7 @@ class Mpfrcx < Formula
     Dir[pkgshare/"tests/*"].each do |src|
       testname = File.basename(src, ".c")
       system ENV.cc, src, "-I#{include}", "-L#{lib}",
-             "-L#{Formula["gmp"].opt_lib}", "-L#{Formula["libmpc"].opt_lib}", "-L#{Formula["mpfr"].opt_lib}",
+             "-L#{formula_opt_lib("gmp")}", "-L#{formula_opt_lib("libmpc")}", "-L#{formula_opt_lib("mpfr")}",
              "-lmpfrcx", "-lgmp", "-lmpc", "-lmpfr",
              "-o", testname
       system testpath/testname

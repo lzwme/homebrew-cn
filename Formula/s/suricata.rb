@@ -76,7 +76,7 @@ class Suricata < Formula
       ENV.append "LIBS", "-liconv" if MacOS.version >= :monterey
     else
       args << "--with-libpcap-includes=#{Formula["libpcap"].opt_include}"
-      args << "--with-libpcap-libraries=#{Formula["libpcap"].opt_lib}"
+      args << "--with-libpcap-libraries=#{formula_opt_lib("libpcap")}"
     end
 
     system "./configure", *args, *std_configure_args

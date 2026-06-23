@@ -24,13 +24,13 @@ class Cpdf < Formula
 
     # Work around for https://github.com/Homebrew/homebrew-test-bot/issues/805
     if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc/"findlib.conf").exist?
-      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec/"findlib.conf"
+      ENV["OCAMLFIND_CONF"] = formula_opt_libexec("ocaml-findlib")/"findlib.conf"
     end
 
     ENV["OCAMLFIND_DESTDIR"] = lib/"ocaml"
 
     (lib/"ocaml").mkpath
-    cp Formula["ocaml"].opt_lib/"ocaml/Makefile.config", lib/"ocaml"
+    cp formula_opt_lib("ocaml")/"ocaml/Makefile.config", lib/"ocaml"
 
     # install in #{lib}/ocaml not #{HOMEBREW_PREFIX}/lib/ocaml
     inreplace lib/"ocaml/Makefile.config" do |s|

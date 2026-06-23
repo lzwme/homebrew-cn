@@ -51,14 +51,14 @@ class Qjson < Formula
     flags = ["-I#{Formula["qt@5"].opt_include}"]
     flags += if OS.mac?
       [
-        "-F#{Formula["qt@5"].opt_lib}",
+        "-F#{formula_opt_lib("qt@5")}",
         "-framework", "QtCore"
       ]
     else
       [
         "-fPIC",
-        "-L#{Formula["qt@5"].opt_lib}", "-lQt5Core",
-        "-Wl,-rpath,#{Formula["qt@5"].opt_lib}",
+        "-L#{formula_opt_lib("qt@5")}", "-lQt5Core",
+        "-Wl,-rpath,#{formula_opt_lib("qt@5")}",
         "-Wl,-rpath,#{lib}"
       ]
     end

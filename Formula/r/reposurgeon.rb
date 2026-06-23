@@ -24,7 +24,7 @@ class Reposurgeon < Formula
   end
 
   def install
-    ENV.append_path "GEM_PATH", Formula["asciidoctor"].opt_libexec
+    ENV.append_path "GEM_PATH", formula_opt_libexec("asciidoctor")
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
     elisp.install "reposurgeon-mode.el"

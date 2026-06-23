@@ -77,9 +77,9 @@ class Dartsim < Formula
     CMAKE
     system ENV.cxx, "test.cpp", "-I#{Formula["eigen"].include}/eigen3",
                     "-I#{include}", "-L#{lib}", "-ldart",
-                    "-L#{Formula["assimp"].opt_lib}", "-lassimp",
-                    "-L#{Formula["libccd"].opt_lib}", "-lccd",
-                    "-L#{Formula["fcl"].opt_lib}", "-lfcl",
+                    "-L#{formula_opt_lib("assimp")}", "-lassimp",
+                    "-L#{formula_opt_lib("libccd")}", "-lccd",
+                    "-L#{formula_opt_lib("fcl")}", "-lfcl",
                     "-std=c++17", "-o", "test"
     system "./test"
     # build with cmake

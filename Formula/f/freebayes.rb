@@ -54,7 +54,7 @@ class Freebayes < Formula
       s.gsub! "incdir = include_directories(", "incdir = include_directories('contrib',"
 
       # add tabixpp to library directories, https://github.com/mesonbuild/meson/issues/8091
-      s.gsub! "find_library('tabixpp'", "\\0, dirs: '#{Formula["tabixpp"].opt_lib}'"
+      s.gsub! "find_library('tabixpp'", "\\0, dirs: '#{formula_opt_lib("tabixpp")}'"
     end
 
     # install intervaltree

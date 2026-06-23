@@ -25,7 +25,7 @@ class OcamlNum < Formula
     inreplace "src/Makefile", "cp META.num META", "mv META.num META"
 
     (lib/"ocaml").mkpath
-    cp Formula["ocaml"].opt_lib/"ocaml/Makefile.config", lib/"ocaml"
+    cp formula_opt_lib("ocaml")/"ocaml/Makefile.config", lib/"ocaml"
 
     # install in #{lib}/ocaml not #{HOMEBREW_PREFIX}/lib/ocaml
     inreplace lib/"ocaml/Makefile.config" do |s|
@@ -43,8 +43,8 @@ class OcamlNum < Formula
 
   test do
     cp_r pkgshare/"test/.", "."
-    system Formula["ocaml"].opt_bin/"ocamlopt", "-I", lib/"ocaml", "-I",
-           Formula["ocaml"].opt_lib/"ocaml", "-o", "test", "nums.cmxa",
+    system formula_opt_bin("ocaml")/"ocamlopt", "-I", lib/"ocaml", "-I",
+           formula_opt_lib("ocaml")/"ocaml", "-o", "test", "nums.cmxa",
            "test.ml", "test_nats.ml", "test_big_ints.ml", "test_ratios.ml",
            "test_nums.ml", "test_io.ml", "end_test.ml"
     assert_match "1... 2... 3", shell_output("./test")

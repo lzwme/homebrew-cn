@@ -35,7 +35,7 @@ class Glew < Formula
 
   def install
     args = ["-DCMAKE_INSTALL_RPATH=#{rpath}"]
-    args << "-DOPENGL_glx_LIBRARY=#{Formula["mesa"].opt_lib}/libGL.so" if OS.linux?
+    args << "-DOPENGL_glx_LIBRARY=#{formula_opt_lib("mesa")}/libGL.so" if OS.linux?
     system "cmake", "-S", "./build/cmake", "-B", "_build", *args,
                     *std_cmake_args(find_framework: "FIRST")
     system "cmake", "--build", "_build"

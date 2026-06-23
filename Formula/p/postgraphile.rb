@@ -22,7 +22,7 @@ class Postgraphile < Formula
     ENV["GRAPHILE_ENV"] = "development"
     assert_match "postgraphile", shell_output("#{bin}/postgraphile --help")
 
-    pg_bin = Formula["postgresql@18"].opt_bin
+    pg_bin = formula_opt_bin("postgresql@18")
     system pg_bin/"initdb", "-D", testpath/"test"
     pid = spawn("#{pg_bin}/postgres", "-D", testpath/"test")
 

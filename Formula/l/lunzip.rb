@@ -32,7 +32,7 @@ class Lunzip < Formula
     path.write original_contents
 
     # compress: data.txt -> data.txt.lz
-    system Formula["lzip"].opt_bin/"lzip", path
+    system formula_opt_bin("lzip")/"lzip", path
     refute_path_exists path
 
     # decompress: data.txt.lz -> data.txt

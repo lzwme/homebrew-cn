@@ -32,7 +32,7 @@ class Bibtexconv < Formula
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
-                    "-DCRYPTO_LIBRARY=#{Formula["openssl@3"].opt_lib}/#{shared_library("libcrypto")}"
+                    "-DCRYPTO_LIBRARY=#{formula_opt_lib("openssl@3")}/#{shared_library("libcrypto")}"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

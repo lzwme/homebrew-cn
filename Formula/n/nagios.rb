@@ -55,7 +55,7 @@ class Nagios < Formula
       "--with-nagios-group='#{group}'",
       "--with-command-user=#{user}",
       "--with-httpd-conf=#{share}",
-      "--with-ssl=#{Formula["openssl@4"].opt_prefix}",
+      "--with-ssl=#{formula_opt_prefix("openssl@4")}",
       "--disable-libtool",
     ]
     args << "--with-command-group=_www" if OS.mac?

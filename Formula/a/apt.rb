@@ -71,8 +71,8 @@ class Apt < Formula
     end
 
     system "cmake", "-S", ".", "-B", "build",
-                    "-DDPKG_DATADIR=#{Formula["dpkg"].opt_libexec}/share/dpkg",
-                    "-DDOCBOOK_XSL=#{Formula["docbook-xsl"].opt_prefix}/docbook-xsl",
+                    "-DDPKG_DATADIR=#{formula_opt_libexec("dpkg")}/share/dpkg",
+                    "-DDOCBOOK_XSL=#{formula_opt_prefix("docbook-xsl")}/docbook-xsl",
                     "-DBERKELEY_INCLUDE_DIRS=#{Formula["berkeley-db@5"].opt_include}",
                     "-DWITH_TESTS=OFF",
                     *std_cmake_args

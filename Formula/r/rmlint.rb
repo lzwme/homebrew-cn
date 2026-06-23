@@ -36,10 +36,10 @@ class Rmlint < Formula
     if OS.linux?
       ENV.append_to_cflags "-I#{Formula["util-linux"].opt_include}"
       ENV.append_to_cflags "-I#{Formula["elfutils"].opt_include}"
-      ENV.append "LDFLAGS", "-Wl,-rpath=#{Formula["elfutils"].opt_lib}"
-      ENV.append "LDFLAGS", "-Wl,-rpath=#{Formula["glib"].opt_lib}"
-      ENV.append "LDFLAGS", "-Wl,-rpath=#{Formula["json-glib"].opt_lib}"
-      ENV.append "LDFLAGS", "-Wl,-rpath=#{Formula["util-linux"].opt_lib}"
+      ENV.append "LDFLAGS", "-Wl,-rpath=#{formula_opt_lib("elfutils")}"
+      ENV.append "LDFLAGS", "-Wl,-rpath=#{formula_opt_lib("glib")}"
+      ENV.append "LDFLAGS", "-Wl,-rpath=#{formula_opt_lib("json-glib")}"
+      ENV.append "LDFLAGS", "-Wl,-rpath=#{formula_opt_lib("util-linux")}"
     end
 
     system "scons", "config"

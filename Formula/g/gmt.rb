@@ -62,10 +62,10 @@ class Gmt < Formula
       -DDCW_ROOT=#{buildpath}/dcw
       -DCOPY_DCW:BOOL=TRUE
       -DPCRE_ROOT=FALSE
-      -DFFTW3_ROOT=#{Formula["fftw"].opt_prefix}
-      -DGDAL_ROOT=#{Formula["gdal"].opt_prefix}
-      -DNETCDF_ROOT=#{Formula["netcdf"].opt_prefix}
-      -DPCRE2_ROOT=#{Formula["pcre2"].opt_prefix}
+      -DFFTW3_ROOT=#{formula_opt_prefix("fftw")}
+      -DGDAL_ROOT=#{formula_opt_prefix("gdal")}
+      -DNETCDF_ROOT=#{formula_opt_prefix("netcdf")}
+      -DPCRE2_ROOT=#{formula_opt_prefix("pcre2")}
       -DFLOCK:BOOL=TRUE
       -DGMT_INSTALL_MODULE_LINKS:BOOL=FALSE
       -DGMT_INSTALL_TRADITIONAL_FOLDERNAMES:BOOL=FALSE

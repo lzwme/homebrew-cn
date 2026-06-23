@@ -46,10 +46,10 @@ class Autopsy < Formula
     sha1 = "/usr/bin/shasum"
 
     on_linux do
-      grep = Formula["grep"].opt_bin/"grep"
-      file = Formula["file"].opt_bin/"file"
-      md5 = Formula["md5sha1sum"].opt_bin/"md5sum"
-      sha1 = Formula["md5sha1sum"].opt_bin/"sha1sum"
+      grep = formula_opt_bin("grep")/"grep"
+      file = formula_opt_bin("file")/"file"
+      md5 = formula_opt_bin("md5sha1sum")/"md5sum"
+      sha1 = formula_opt_bin("md5sha1sum")/"sha1sum"
     end
 
     <<~EOS
@@ -77,7 +77,7 @@ class Autopsy < Formula
 
 
       # Directories
-      $TSKDIR = '#{Formula["sleuthkit"].opt_bin}';
+      $TSKDIR = '#{formula_opt_bin("sleuthkit")}';
 
       # Homebrew users can install NSRL database and change this variable later
       $NSRLDB = '';

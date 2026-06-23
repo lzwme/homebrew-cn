@@ -39,7 +39,7 @@ class Dbcsr < Formula
     if OS.mac?
       args += %W[
         -DOpenMP_Fortran_LIB_NAMES=omp
-        -DOpenMP_omp_LIBRARY=#{Formula["libomp"].opt_lib}/libomp.dylib
+        -DOpenMP_omp_LIBRARY=#{formula_opt_lib("libomp")}/libomp.dylib
       ]
     end
 
@@ -52,9 +52,9 @@ class Dbcsr < Formula
   test do
     if OS.mac?
       require "utils/linkage"
-      libgomp = Formula["gcc"].opt_lib/"gcc/current/libgomp.dylib"
+      libgomp = formula_opt_lib("gcc")/"gcc/current/libgomp.dylib"
       refute Utils.binary_linked_to_library?(lib/"libdbcsr.dylib", libgomp), "Unwanted linkage to libgomp!"
-      ENV.append_path "CMAKE_PREFIX_PATH", Formula["libomp"].opt_prefix
+      ENV.append_path "CMAKE_PREFIX_PATH", formula_opt_prefix("libomp")
     end
 
     (testpath/"CMakeLists.txt").write <<~CMAKE

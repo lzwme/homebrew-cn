@@ -29,7 +29,7 @@ class Fernflower < Formula
       }
     JAVA
 
-    system Formula["openjdk"].opt_bin/"javac", "Main.java"
+    system formula_opt_bin("openjdk")/"javac", "Main.java"
     (testpath/"out").mkpath
     system bin/"fernflower", "Main.class", "out"
 

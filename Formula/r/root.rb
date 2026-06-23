@@ -95,7 +95,7 @@ class Root < Formula
       -DCMAKE_CXX_STANDARD=17
       -DCMAKE_INSTALL_ELISPDIR=#{elisp}
       -DPYTHON_EXECUTABLE=#{which(python3)}
-      -DXROOTD_ROOT_DIR=#{Formula["xrootd"].opt_prefix}
+      -DXROOTD_ROOT_DIR=#{formula_opt_prefix("xrootd")}
       -Dbuiltin_cfitsio=OFF
       -Dbuiltin_clang=ON
       -Dbuiltin_cling=ON

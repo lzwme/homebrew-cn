@@ -27,7 +27,7 @@ class Sdl12Compat < Formula
 
   def install
     args = ["-DSDL12TESTS=OFF"]
-    args << "-DCMAKE_INSTALL_RPATH=#{rpath(target: Formula["sdl2-compat"].opt_lib)}" if OS.mac?
+    args << "-DCMAKE_INSTALL_RPATH=#{rpath(target: formula_opt_lib("sdl2-compat"))}" if OS.mac?
 
     # We override install_prefix to make sure substituted CMAKE_INSTALL_FULL_* use
     # HOMEBREW_PREFIX path because most build scripts assume that all SDL modules

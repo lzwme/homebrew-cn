@@ -39,7 +39,7 @@ class Udptunnel < Formula
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
 
-    ENV["LIBS"] = "-L#{Formula["libnsl"].opt_lib}" if OS.linux?
+    ENV["LIBS"] = "-L#{formula_opt_lib("libnsl")}" if OS.linux?
 
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules", *std_configure_args

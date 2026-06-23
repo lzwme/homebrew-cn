@@ -15,7 +15,7 @@ class PhpCsFixer < Formula
     libexec.install "php-cs-fixer.phar"
 
     (bin/"php-cs-fixer").write <<~PHP
-      #!#{Formula["php"].opt_bin}/php
+      #!#{formula_opt_bin("php")}/php
       <?php require '#{libexec}/php-cs-fixer.phar';
     PHP
   end

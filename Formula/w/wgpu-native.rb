@@ -25,7 +25,7 @@ class WgpuNative < Formula
   end
 
   def install
-    ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib.to_s if OS.linux?
+    ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm").to_s if OS.linux?
     # Not using `cargo install` because wgpu-native doesn't ship binaries
     system "cargo", "build", "--jobs", ENV.make_jobs, "--lib", "--release", "--locked"
 

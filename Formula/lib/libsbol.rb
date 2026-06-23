@@ -44,8 +44,8 @@ class Libsbol < Formula
   def install
     if ENV.compiler == :clang && DevelopmentTools.clang_build_version >= 1700
       inreplace "source/CMakeLists.txt", 'set(CMAKE_OSX_ARCHITECTURES "x86_64")', ""
-      ENV["CC"] = Formula["llvm@18"].opt_bin/"clang"
-      ENV["CXX"] = Formula["llvm@18"].opt_bin/"clang++"
+      ENV["CC"] = formula_opt_bin("llvm@18")/"clang"
+      ENV["CXX"] = formula_opt_bin("llvm@18")/"clang++"
     end
 
     # upstream issue: https://github.com/SynBioDex/libSBOL/issues/215
@@ -71,7 +71,7 @@ class Libsbol < Formula
 
   test do
     if ENV.compiler == :clang && DevelopmentTools.clang_build_version >= 1700
-      ENV["CXX"] = Formula["llvm@18"].opt_bin/"clang++"
+      ENV["CXX"] = formula_opt_bin("llvm@18")/"clang++"
     end
 
     (testpath/"test.cpp").write <<~CPP
@@ -88,8 +88,8 @@ class Libsbol < Formula
     system ENV.cxx, "test.cpp", "-o", "test", "-std=c++11",
                     "-I#{Formula["raptor"].opt_include}/raptor2",
                     "-I#{include}", "-L#{lib}",
-                    "-L#{Formula["jsoncpp"].opt_lib}",
-                    "-L#{Formula["raptor"].opt_lib}",
+                    "-L#{formula_opt_lib("jsoncpp")}",
+                    "-L#{formula_opt_lib("raptor")}",
                     "-ljsoncpp", "-lcurl", "-lraptor2", "-lsbol"
     system "./test"
   end

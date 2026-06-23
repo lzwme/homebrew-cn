@@ -42,7 +42,7 @@ class Redka < Formula
     sleep 2
 
     begin
-      output = shell_output("#{Formula["valkey"].opt_bin}/valkey-cli -h 127.0.0.1 -p #{port} ping")
+      output = shell_output("#{formula_opt_bin("valkey")}/valkey-cli -h 127.0.0.1 -p #{port} ping")
       assert_equal "PONG", output.strip
     ensure
       Process.kill("TERM", pid)

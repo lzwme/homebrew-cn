@@ -51,7 +51,7 @@ class Shamrock < Formula
       -DCMAKE_INSTALL_PYTHONDIR=#{site_packages(python)}
       -DSYCL_IMPLEMENTATION=ACPPDirect
       -DCMAKE_CXX_COMPILER=acpp
-      -DACPP_PATH=#{Formula["adaptivecpp"].opt_prefix}
+      -DACPP_PATH=#{formula_opt_prefix("adaptivecpp")}
       -DSHAMROCK_EXTERNAL_FMTLIB=ON
       -DSHAMROCK_EXTERNAL_JSON=ON
       -DSHAMROCK_EXTERNAL_PYBIND11=ON

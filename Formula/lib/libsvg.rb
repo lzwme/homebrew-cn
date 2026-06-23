@@ -129,9 +129,9 @@ class Libsvg < Formula
 
     system ENV.cc, "test.c", "-o", "test",
                    "-I#{include}", "-L#{lib}", "-lsvg",
-                   "-L#{Formula["libpng"].opt_lib}", "-lpng",
-                   "-L#{Formula["jpeg-turbo"].opt_lib}", "-ljpeg",
-                   "-Wl,-rpath,#{Formula["jpeg-turbo"].opt_lib}",
+                   "-L#{formula_opt_lib("libpng")}", "-lpng",
+                   "-L#{formula_opt_lib("jpeg-turbo")}", "-ljpeg",
+                   "-Wl,-rpath,#{formula_opt_lib("jpeg-turbo")}",
                    "-Wl,-rpath,#{HOMEBREW_PREFIX}/lib"
     assert_equal "1\n2\n3\n4\n5\n6\nSUCCESS\n", shell_output("./test")
   end

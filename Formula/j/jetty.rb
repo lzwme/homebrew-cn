@@ -22,7 +22,7 @@ class Jetty < Formula
 
     (bin/"jetty").write <<~EOS
       #!/bin/bash
-      export JAVA_HOME="${JAVA_HOME:-#{Formula["openjdk"].opt_prefix}}"
+      export JAVA_HOME="${JAVA_HOME:-#{formula_opt_prefix("openjdk")}}"
       export JETTY_HOME="#{libexec}"
       exec "${JAVA_HOME}/bin/java" -jar "${JETTY_HOME}/start.jar" "$@"
     EOS

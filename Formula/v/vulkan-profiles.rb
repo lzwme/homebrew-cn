@@ -48,7 +48,7 @@ class VulkanProfiles < Formula
     inreplace "profiles/test/CMakeLists.txt", "jsoncpp_static", "jsoncpp"
 
     system "cmake", "-S", ".", "-B", "build",
-                    "-DCMAKE_INSTALL_RPATH=#{rpath(target: Formula["vulkan-loader"].opt_lib)}",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath(target: formula_opt_lib("vulkan-loader"))}",
                     "-DPython3_EXECUTABLE=#{which("python3")}",
                     "-DVALIJSON_INSTALL_DIR=#{Formula["valijson"].prefix}",
                     "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].prefix}",

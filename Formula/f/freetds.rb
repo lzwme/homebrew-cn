@@ -45,8 +45,8 @@ class Freetds < Formula
       --with-tdsver=7.3
       --mandir=#{man}
       --sysconfdir=#{etc}
-      --with-unixodbc=#{Formula["unixodbc"].opt_prefix}
-      --with-openssl=#{Formula["openssl@3"].opt_prefix}
+      --with-unixodbc=#{formula_opt_prefix("unixodbc")}
+      --with-openssl=#{formula_opt_prefix("openssl@3")}
       --enable-sybase-compat
       --enable-krb5
       --enable-odbc-wide

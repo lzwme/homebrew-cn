@@ -40,7 +40,7 @@ class Ogmtools < Formula
     ENV.append "CPPFLAGS", "-I#{Formula["libvorbis"].opt_include}"
     system "./configure", "--mandir=#{man}", *std_configure_args
 
-    system "make", "install", "LIBS=-L#{Formula["libvorbis"].opt_lib} -lvorbis -lvorbisenc"
+    system "make", "install", "LIBS=-L#{formula_opt_lib("libvorbis")} -lvorbis -lvorbisenc"
   end
 
   # Borrow warning from MacPorts

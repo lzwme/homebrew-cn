@@ -63,8 +63,8 @@ class Cwb3 < Formula
 
     # Avoid rebuilds when dependencies are bumped.
     inreplace bin/"cwb-config" do |s|
-      s.gsub! Formula["glib"].prefix.realpath, Formula["glib"].opt_prefix
-      s.gsub! Formula["pcre2"].prefix.realpath, Formula["pcre2"].opt_prefix
+      s.gsub! Formula["glib"].prefix.realpath, formula_opt_prefix("glib")
+      s.gsub! Formula["pcre2"].prefix.realpath, formula_opt_prefix("pcre2")
     end
   end
 

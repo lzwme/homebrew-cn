@@ -42,6 +42,6 @@ class PerlXmlParser < Formula
   end
 
   test do
-    system Formula["perl"].opt_bin/"perl", "-e", "require XML::Parser;"
+    system formula_opt_bin("perl")/"perl", "-e", "require XML::Parser;"
   end
 end

@@ -64,7 +64,7 @@ class Globjects < Formula
                     "-I#{include}/globjects",
                     "-I#{Formula["glbinding@2"].opt_include}",
                     "-I#{Formula["glm"].opt_include}/glm",
-                    "-L#{lib}", "-L#{Formula["glbinding@2"].opt_lib}",
+                    "-L#{lib}", "-L#{formula_opt_lib("glbinding@2")}",
                     "-lglobjects", "-lglbinding", *ENV.cflags.to_s.split
     system "./test"
   end

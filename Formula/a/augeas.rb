@@ -46,7 +46,7 @@ class Augeas < Formula
   uses_from_macos "libxml2"
 
   def install
-    ENV.append "LDFLAGS", "-L#{Formula["readline"].opt_lib}"
+    ENV.append "LDFLAGS", "-L#{formula_opt_lib("readline")}"
 
     configure = build.head? ? "./autogen.sh" : "./configure"
     system configure, *std_configure_args

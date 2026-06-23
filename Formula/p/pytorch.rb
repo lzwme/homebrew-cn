@@ -121,7 +121,7 @@ class Pytorch < Formula
     ENV["BUILD_CUSTOM_PROTOBUF"] = "OFF"
     ENV["BUILD_PYTHON"] = "ON"
     ENV["BUILD_TEST"] = "OFF"
-    ENV["OpenBLAS_HOME"] = Formula["openblas"].opt_prefix
+    ENV["OpenBLAS_HOME"] = formula_opt_prefix("openblas")
     ENV["PYTHON_EXECUTABLE"] = which(python3)
     ENV["PYTORCH_BUILD_VERSION"] = version.to_s
     ENV["PYTORCH_BUILD_NUMBER"] = "1"

@@ -115,7 +115,7 @@ class Rust < Formula
   def install
     # Ensure that the `openssl` crate picks up the intended library.
     # https://docs.rs/openssl/latest/openssl/#manual
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
 
     ENV["LIBGIT2_NO_VENDOR"] = "1"
     ENV["LIBSQLITE3_SYS_USE_PKG_CONFIG"] = "1"
@@ -228,15 +228,15 @@ class Rust < Formula
     # We only check the tools' linkage here. No need to check rustc.
     expected_linkage = {
       bin/"cargo" => [
-        Formula["libgit2"].opt_lib/shared_library("libgit2"),
-        Formula["libssh2"].opt_lib/shared_library("libssh2"),
-        Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
-        Formula["openssl@3"].opt_lib/shared_library("libssl"),
+        formula_opt_lib("libgit2")/shared_library("libgit2"),
+        formula_opt_lib("libssh2")/shared_library("libssh2"),
+        formula_opt_lib("openssl@3")/shared_library("libcrypto"),
+        formula_opt_lib("openssl@3")/shared_library("libssl"),
       ],
     }
     unless OS.mac?
       expected_linkage[bin/"cargo"] += [
-        Formula["curl"].opt_lib/shared_library("libcurl"),
+        formula_opt_lib("curl")/shared_library("libcurl"),
       ]
     end
     missing_linkage = []

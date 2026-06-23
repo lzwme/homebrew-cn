@@ -50,7 +50,7 @@ class Gxml < Formula
         return 0;
       }
     C
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libxml2"].opt_lib/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("libxml2")/"pkgconfig"
     flags = shell_output("pkgconf --cflags --libs libxml-2.0 gxml-0.20").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"

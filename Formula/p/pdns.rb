@@ -46,7 +46,7 @@ class Pdns < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}/powerdns
       --with-lua
-      --with-libcrypto=#{Formula["openssl@3"].opt_prefix}
+      --with-libcrypto=#{formula_opt_prefix("openssl@3")}
       --with-sqlite3
       --with-modules=gsqlite3
     ]

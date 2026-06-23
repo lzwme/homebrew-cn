@@ -48,7 +48,7 @@ class Wangle < Formula
       project(Echo LANGUAGES CXX)
       set(CMAKE_CXX_STANDARD 20)
 
-      list(APPEND CMAKE_MODULE_PATH "#{Formula["fizz"].opt_libexec}/cmake")
+      list(APPEND CMAKE_MODULE_PATH "#{formula_opt_libexec("fizz")}/cmake")
       find_package(gflags REQUIRED)
       find_package(folly CONFIG REQUIRED)
       find_package(fizz CONFIG REQUIRED)

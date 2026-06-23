@@ -40,7 +40,7 @@ class Openvpn < Formula
                           *std_configure_args
     inreplace "sample/sample-plugins/Makefile" do |s|
       if OS.mac?
-        s.gsub! Superenv.shims_path/"pkg-config", Formula["pkgconf"].opt_bin/"pkg-config"
+        s.gsub! Superenv.shims_path/"pkg-config", formula_opt_bin("pkgconf")/"pkg-config"
       else
         s.gsub! Superenv.shims_path/"ld", "ld"
       end

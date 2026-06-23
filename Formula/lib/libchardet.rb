@@ -50,7 +50,7 @@ class Libchardet < Formula
         }
       }
     C
-    flags = shell_output("#{Formula["pkgconf"].opt_bin}/pkgconf --cflags --libs chardet").strip.split
+    flags = shell_output("#{formula_opt_bin("pkgconf")}/pkgconf --cflags --libs chardet").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
 

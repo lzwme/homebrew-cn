@@ -98,7 +98,7 @@ class Ollama < Formula
 
     # Flags for MLX (Apple silicon only)
     if OS.mac? && Hardware::CPU.arm?
-      mlx_rpath = rpath(target: Formula["mlx-c"].opt_lib)
+      mlx_rpath = rpath(target: formula_opt_lib("mlx-c"))
       ldflags << "-extldflags '-Wl,-rpath,#{mlx_rpath}'"
       mlx_args << "-tags=mlx"
     end
@@ -113,7 +113,7 @@ class Ollama < Formula
     # Using `opt` keeps the link stable across mlx-c version bumps.
     if OS.mac? && Hardware::CPU.arm?
       (libexec/"lib/ollama/mlx_metal_v3").mkpath
-      ln_sf Formula["mlx-c"].opt_lib/"libmlxc.dylib", libexec/"lib/ollama/mlx_metal_v3/libmlxc.dylib"
+      ln_sf formula_opt_lib("mlx-c")/"libmlxc.dylib", libexec/"lib/ollama/mlx_metal_v3/libmlxc.dylib"
     end
   end
 

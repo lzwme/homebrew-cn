@@ -53,7 +53,7 @@ class TreeSitterGo < Formula
     C
     system ENV.cc, "test.c",
                    "-I#{include}", "-I#{Formula["tree-sitter"].opt_include}",
-                   "-L#{lib}", "-L#{Formula["tree-sitter"].opt_lib}",
+                   "-L#{lib}", "-L#{formula_opt_lib("tree-sitter")}",
                    "-ltree-sitter", "-ltree-sitter-go",
                    "-o", "test"
     expected = "(source_file (package_clause (package_identifier)) (import_declaration (import_spec path:" \

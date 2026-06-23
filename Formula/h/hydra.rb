@@ -31,21 +31,21 @@ class Hydra < Formula
     inreplace "configure" do |s|
       # Link against our OpenSSL
       # https://github.com/vanhauser-thc/thc-hydra/issues/80
-      s.gsub!(/^SSL_PATH=""$/, "SSL_PATH=#{Formula["openssl@3"].opt_lib}")
+      s.gsub!(/^SSL_PATH=""$/, "SSL_PATH=#{formula_opt_lib("openssl@3")}")
       s.gsub!(/^SSL_IPATH=""$/, "SSL_IPATH=#{Formula["openssl@3"].opt_include}")
       s.gsub!(/^SSLNEW=""$/, "SSLNEW=YES")
-      s.gsub!(/^CRYPTO_PATH=""$/, "CRYPTO_PATH=#{Formula["openssl@3"].opt_lib}")
-      s.gsub!(/^SSH_PATH=""$/, "SSH_PATH=#{Formula["libssh"].opt_lib}")
+      s.gsub!(/^CRYPTO_PATH=""$/, "CRYPTO_PATH=#{formula_opt_lib("openssl@3")}")
+      s.gsub!(/^SSH_PATH=""$/, "SSH_PATH=#{formula_opt_lib("libssh")}")
       s.gsub!(/^SSH_IPATH=""$/, "SSH_IPATH=#{Formula["libssh"].opt_include}")
-      s.gsub!(/^MYSQL_PATH=""$/, "MYSQL_PATH=#{Formula["mariadb-connector-c"].opt_lib}")
+      s.gsub!(/^MYSQL_PATH=""$/, "MYSQL_PATH=#{formula_opt_lib("mariadb-connector-c")}")
       s.gsub!(/^MYSQL_IPATH=""$/, "MYSQL_IPATH=#{Formula["mariadb-connector-c"].opt_include}/mariadb")
-      s.gsub!(/^PCRE_PATH=""$/, "PCRE_PATH=#{Formula["pcre2"].opt_lib}")
+      s.gsub!(/^PCRE_PATH=""$/, "PCRE_PATH=#{formula_opt_lib("pcre2")}")
       s.gsub!(/^PCRE_IPATH=""$/, "PCRE_IPATH=#{Formula["pcre2"].opt_include}")
       if OS.mac?
         s.gsub!(/^CURSES_PATH=""$/, "CURSES_PATH=#{MacOS.sdk_path}/usr/lib")
         s.gsub!(/^CURSES_IPATH=""$/, "CURSES_IPATH=#{MacOS.sdk_path}/usr/include")
       else
-        s.gsub!(/^CURSES_PATH=""$/, "CURSES_PATH=#{Formula["ncurses"].opt_lib}")
+        s.gsub!(/^CURSES_PATH=""$/, "CURSES_PATH=#{formula_opt_lib("ncurses")}")
         s.gsub!(/^CURSES_IPATH=""$/, "CURSES_IPATH=#{Formula["ncurses"].opt_include}")
       end
       # Avoid opportunistic linking of everything

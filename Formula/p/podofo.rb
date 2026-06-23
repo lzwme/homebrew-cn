@@ -59,7 +59,7 @@ class Podofo < Formula
     if OS.mac? && MacOS.version <= :ventura
       # When using Homebrew's superenv shims, we need to use HOMEBREW_LIBRARY_PATHS
       # rather than LDFLAGS for libc++ in order to correctly link to LLVM's libc++.
-      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib/"c++"
+      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", formula_opt_lib("llvm")/"c++"
       # Workaround for error: call to 'from_chars' is ambiguous
       inreplace "src/podofo/private/charconv_compat.h", "#define WANT_FROM_CHARS", ""
     end

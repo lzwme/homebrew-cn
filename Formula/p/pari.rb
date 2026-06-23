@@ -31,8 +31,8 @@ class Pari < Formula
     # Ref: https://pari.math.u-bordeaux.fr/cgi-bin/bugreport.cgi?bug=2608
     ENV.O1 if ENV.compiler == :clang
 
-    readline = Formula["readline"].opt_prefix
-    gmp = Formula["gmp"].opt_prefix
+    readline = formula_opt_prefix("readline")
+    gmp = formula_opt_prefix("gmp")
     system "./Configure", "--prefix=#{prefix}",
                           "--with-gmp=#{gmp}",
                           "--with-readline=#{readline}",

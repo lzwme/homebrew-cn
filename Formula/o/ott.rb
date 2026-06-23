@@ -32,7 +32,7 @@ class Ott < Formula
     ENV["OPAMYES"] = "1"
 
     # Work around https://github.com/ocaml/ocamlfind/issues/107 when `coq` is installed in build environment
-    ENV.prepend_path "OCAMLPATH", opamroot/"ocaml-system/lib" if Formula["coq"].any_version_installed?
+    ENV.prepend_path "OCAMLPATH", opamroot/"ocaml-system/lib" if formula_any_version_installed?("coq")
 
     system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
     system "opam", "install", ".", "--deps-only", "--yes", "--no-depexts"

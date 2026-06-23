@@ -27,7 +27,7 @@ class Fvm < Formula
 
     (bin/"fvm").write <<~BASH
       #!/bin/bash
-      exec "#{Formula["dartaotruntime"].opt_bin}/dartaotruntime" "#{libexec}/fvm.aot" "$@"
+      exec "#{formula_opt_bin("dartaotruntime")}/dartaotruntime" "#{libexec}/fvm.aot" "$@"
     BASH
   end
 

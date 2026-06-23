@@ -35,9 +35,9 @@ class Augustus < Formula
 
     system "make", "COMPGENEPRED=false",
                    "INCLUDE_PATH_BAMTOOLS=-I#{Formula["bamtools"].opt_include}/bamtools",
-                   "LIBRARY_PATH_BAMTOOLS=-L#{Formula["bamtools"].opt_lib}",
+                   "LIBRARY_PATH_BAMTOOLS=-L#{formula_opt_lib("bamtools")}",
                    "INCLUDE_PATH_HTSLIB=-I#{Formula["htslib"].opt_include}/htslib",
-                   "LIBRARY_PATH_HTSLIB=-L#{Formula["htslib"].opt_lib}"
+                   "LIBRARY_PATH_HTSLIB=-L#{formula_opt_lib("htslib")}"
 
     # Set PREFIX to prevent symlinking into /usr/local/bin/
     (buildpath/"tmp/bin").mkpath

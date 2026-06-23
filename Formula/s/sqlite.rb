@@ -61,7 +61,7 @@ class Sqlite < Formula
       "--disable-editline",
       "--enable-session",
       "--with-readline-cflags=-I#{Formula["readline"].opt_include}",
-      "--with-readline-ldflags=-L#{Formula["readline"].opt_lib} -lreadline",
+      "--with-readline-ldflags=-L#{formula_opt_lib("readline")} -lreadline",
     ]
     args << "--soname=legacy" if OS.linux?
 

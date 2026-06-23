@@ -62,7 +62,7 @@ class Exim < Formula
     ENV["TZ"] = "UTC"
 
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
-    inreplace "OS/Makefile-Default", "/usr/bin/perl", Formula["perl"].opt_bin/"perl" if OS.linux?
+    inreplace "OS/Makefile-Default", "/usr/bin/perl", formula_opt_bin("perl")/"perl" if OS.linux?
 
     resources.each do |r|
       r.stage do

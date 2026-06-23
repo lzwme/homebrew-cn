@@ -24,8 +24,8 @@ class S6 < Formula
       --disable-silent-rules
       --enable-shared
       --enable-pkgconfig
-      --with-pkgconfig=#{Formula["pkgconf"].opt_bin}/pkg-config
-      --with-sysdeps=#{Formula["skalibs"].opt_lib}/skalibs/sysdeps
+      --with-pkgconfig=#{formula_opt_bin("pkgconf")}/pkg-config
+      --with-sysdeps=#{formula_opt_lib("skalibs")}/skalibs/sysdeps
     ]
     system "./configure", *args, *std_configure_args
     system "make", "install"

@@ -501,8 +501,8 @@ class Swift < Formula
           -DSWIFT_HOST_LIBRARIES_RPATH=#{loader_path}
         ]
 
-        ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["sqlite"].opt_lib
-        ENV.remove "PKG_CONFIG_PATH", Formula["sqlite"].opt_lib/"pkgconfig"
+        ENV.remove "HOMEBREW_LIBRARY_PATHS", formula_opt_lib("sqlite")
+        ENV.remove "PKG_CONFIG_PATH", formula_opt_lib("sqlite")/"pkgconfig"
       end
       if OS.linux?
         # List of valid values in class StdlibDeploymentTarget in
@@ -532,7 +532,7 @@ class Swift < Formula
 
         # Use lld as Ubuntu 22.04 gold failed with "undefined symbol: _swift_registerConcurrencyRuntime".
         # We no longer include gold in `binutils` while bfd is less tested upstream and increases build time.
-        ENV.prepend_path "PATH", Formula["lld"].opt_bin
+        ENV.prepend_path "PATH", formula_opt_bin("lld")
         args << "--use-linker=lld"
       end
 

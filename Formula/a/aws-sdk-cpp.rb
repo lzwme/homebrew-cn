@@ -45,7 +45,7 @@ class AwsSdkCpp < Formula
 
     args = %W[
       -DBUILD_DEPS=OFF
-      -DCMAKE_MODULE_PATH=#{Formula["aws-c-common"].opt_lib}/cmake/aws-c-common/modules
+      -DCMAKE_MODULE_PATH=#{formula_opt_lib("aws-c-common")}/cmake/aws-c-common/modules
       -DCMAKE_SHARED_LINKER_FLAGS=#{linker_flags.join(" ")}
       -DENABLE_TESTING=OFF
     ]

@@ -33,7 +33,7 @@ class GitNow < Formula
   def install
     (buildpath/"shFlags").install resource("shFlags")
     system "make", "prefix=#{libexec}", "install"
-    (bin/"git-now").write_env_script libexec/"bin/git-now", PATH: "#{Formula["gnu-getopt"].opt_bin}:$PATH"
+    (bin/"git-now").write_env_script libexec/"bin/git-now", PATH: "#{formula_opt_bin("gnu-getopt")}:$PATH"
     zsh_completion.install "etc/_git-now"
   end
 

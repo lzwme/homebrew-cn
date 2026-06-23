@@ -31,17 +31,17 @@ class Unbound < Formula
   uses_from_macos "expat"
 
   def install
-    expat_prefix = OS.mac? ? "#{MacOS.sdk_for_formula(self).path}/usr" : Formula["expat"].opt_prefix
+    expat_prefix = OS.mac? ? "#{MacOS.sdk_for_formula(self).path}/usr" : formula_opt_prefix("expat")
     args = %W[
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --enable-event-api
       --enable-tfo-client
       --enable-tfo-server
-      --with-libevent=#{Formula["libevent"].opt_prefix}
+      --with-libevent=#{formula_opt_prefix("libevent")}
       --with-libexpat=#{expat_prefix}
-      --with-libnghttp2=#{Formula["libnghttp2"].opt_prefix}
-      --with-ssl=#{Formula["openssl@3"].opt_prefix}
+      --with-libnghttp2=#{formula_opt_prefix("libnghttp2")}
+      --with-ssl=#{formula_opt_prefix("openssl@3")}
     ]
 
     system "./configure", *args

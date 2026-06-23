@@ -47,7 +47,7 @@ class Libdill < Formula
 
   test do
     # Issue ref: https://github.com/sustrik/libdill/issues/208
-    ENV["CC"] = Formula["llvm"].opt_bin/"clang" if Hardware::CPU.arm?
+    ENV["CC"] = formula_opt_bin("llvm")/"clang" if Hardware::CPU.arm?
 
     (testpath/"test.c").write <<~C
       #include <libdill.h>

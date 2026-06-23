@@ -57,6 +57,6 @@ class Babl < Formula
     system ENV.cc, "-I#{include}/babl-0.1", testpath/"test.c", "-L#{lib}", "-lbabl-0.1", "-o", "test"
     system testpath/"test"
 
-    system Formula["gobject-introspection"].opt_bin/"g-ir-inspect", "--print-typelibs", "--print-shlibs", "Babl"
+    system formula_opt_bin("gobject-introspection")/"g-ir-inspect", "--print-typelibs", "--print-shlibs", "Babl"
   end
 end

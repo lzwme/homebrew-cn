@@ -39,7 +39,7 @@ class Sslsplit < Formula
   depends_on "openssl@3"
 
   def install
-    ENV["LIBNET_BASE"] = Formula["libnet"].opt_prefix
+    ENV["LIBNET_BASE"] = formula_opt_prefix("libnet")
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
   end

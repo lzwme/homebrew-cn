@@ -28,7 +28,7 @@ class RubyLsp < Formula
 
     bin.install libexec/"bin/#{name}"
     bin.env_script_all_files libexec/"bin",
-      PATH:     "#{Formula["ruby"].opt_bin}:$PATH",
+      PATH:     "#{formula_opt_bin("ruby")}:$PATH",
       GEM_HOME: ENV["GEM_HOME"]
   end
 

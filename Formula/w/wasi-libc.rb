@@ -44,9 +44,9 @@ class WasiLibc < Formula
     # We don't want to use superenv here, since we are targeting WASM.
     ENV.remove_cc_etc
     ENV.remove "PATH", Superenv.shims_path
-    ENV.prepend_path "PATH", Formula["lld"].opt_bin
+    ENV.prepend_path "PATH", formula_opt_bin("lld")
 
-    llvm_bin = Formula["llvm"].opt_bin
+    llvm_bin = formula_opt_bin("llvm")
     clang = llvm_bin/"clang"
     clang_resource_dir = Pathname.new(Utils.safe_popen_read(clang, "--print-resource-dir").chomp)
     inreplace "CMakeLists.txt", "add_compile_options(--target=${TARGET_TRIPLE})",
@@ -98,7 +98,7 @@ class WasiLibc < Formula
         return 0;
       }
     C
-    clang = Formula["llvm"].opt_bin/"clang"
+    clang = formula_opt_bin("llvm")/"clang"
     clang_resource_dir = Pathname.new(shell_output("#{clang} --print-resource-dir").chomp)
     testpath.install_symlink clang_resource_dir/"include"
     builtins_dir = testpath/"lib/wasm32-unknown-wasi"

@@ -54,7 +54,7 @@ class ProtobufC < Formula
       }
     PROTO
     (testpath/"test.proto").write testdata
-    system Formula["protobuf"].opt_bin/"protoc", "test.proto", "--c_out=."
+    system formula_opt_bin("protobuf")/"protoc", "test.proto", "--c_out=."
 
     testpath.glob("test.pb-c.*").map(&:unlink)
     system bin/"protoc-c", "test.proto", "--c_out=."

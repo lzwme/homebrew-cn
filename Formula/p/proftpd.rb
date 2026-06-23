@@ -86,7 +86,7 @@ class Proftpd < Formula
     pid = spawn sbin/"proftpd", "--config", testpath/"proftpd.conf", "--nodaemon"
     sleep 2
     output = pipe_output(
-      "#{Formula["inetutils"].opt_bin}/ftp --no-login --no-prompt --verbose",
+      "#{formula_opt_bin("inetutils")}/ftp --no-login --no-prompt --verbose",
       "open 127.0.0.1 #{port}\nuser anonymous anonymous\nquit\n",
       0,
     )

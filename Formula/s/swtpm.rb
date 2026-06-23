@@ -28,8 +28,6 @@ class Swtpm < Formula
   depends_on "libtpms"
   depends_on "openssl@3"
 
-  uses_from_macos "expect"
-
   on_macos do
     depends_on "gettext"
   end
@@ -46,7 +44,7 @@ class Swtpm < Formula
   end
 
   def install
-    system "./autogen.sh", "--with-openssl", *std_configure_args
+    system "./autogen.sh", "--disable-tests", "--with-openssl", *std_configure_args
     system "make"
     system "make", "install"
   end

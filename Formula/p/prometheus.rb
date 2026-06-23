@@ -29,8 +29,8 @@ class Prometheus < Formula
 
   def install
     ENV.deparallelize
-    ENV.prepend_path "PATH", Formula["gnu-tar"].opt_libexec/"gnubin"
-    ENV.prepend_path "PATH", Formula["node"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", formula_opt_libexec("gnu-tar")/"gnubin"
+    ENV.prepend_path "PATH", formula_opt_libexec("node")/"bin"
     mkdir_p buildpath/"src/github.com/prometheus"
     ln_sf buildpath, buildpath/"src/github.com/prometheus/prometheus"
 

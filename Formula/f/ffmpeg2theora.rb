@@ -55,7 +55,7 @@ class Ffmpeg2theora < Formula
     if OS.mac?
       args << "APPEND_LINKFLAGS=-headerpad_max_install_names"
     else
-      rpaths = "-Wl,-rpath,#{HOMEBREW_PREFIX}/lib -Wl,-rpath,#{Formula["ffmpeg@4"].opt_lib}"
+      rpaths = "-Wl,-rpath,#{HOMEBREW_PREFIX}/lib -Wl,-rpath,#{formula_opt_lib("ffmpeg@4")}"
       args << "APPEND_LINKFLAGS=#{rpaths}"
     end
     system "scons", "install", *args

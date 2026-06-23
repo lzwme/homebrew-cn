@@ -55,7 +55,7 @@ class Openssh < Formula
       --with-libedit
       --with-kerberos5
       --with-pam
-      --with-ssl-dir=#{Formula["openssl@3"].opt_prefix}
+      --with-ssl-dir=#{formula_opt_prefix("openssl@3")}
       --with-security-key-builtin
     ]
 

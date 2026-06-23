@@ -45,8 +45,8 @@ class Citus < Formula
     # The major soversion is hardcoded to at least make sure compatibility version hasn't changed.
     # If it does change, then need to confirm if API/ABI change impacts running on older PostgreSQL.
     libpq_args = %W[
-      libpq=#{Formula["libpq"].opt_lib/shared_library("libpq", 5)}
-      rpathdir=#{Formula["libpq"].opt_lib}
+      libpq=#{formula_opt_lib("libpq")/shared_library("libpq", 5)}
+      rpathdir=#{formula_opt_lib("libpq")}
     ]
 
     postgresqls.each do |postgresql|

@@ -149,7 +149,7 @@ class PerconaXtrabackupAT80 < Formula
 
     perl = "/usr/bin/perl"
     if OS.linux?
-      perl = Formula["perl"].opt_bin/"perl"
+      perl = formula_opt_bin("perl")/"perl"
       # Disable ABI checking
       inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
     end
@@ -167,8 +167,8 @@ class PerconaXtrabackupAT80 < Formula
       -DINSTALL_MANDIR=#{man}
       -DWITH_MAN_PAGES=ON
       -DINSTALL_MYSQLTESTDIR=
-      -DBISON_EXECUTABLE=#{Formula["bison"].opt_bin}/bison
-      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
+      -DBISON_EXECUTABLE=#{formula_opt_bin("bison")}/bison
+      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@3")}
       -DWITH_ICU=#{icu4c.opt_prefix}
       -DWITH_SYSTEM_LIBS=ON
       -DWITH_BOOST=#{buildpath}/boost
@@ -189,7 +189,7 @@ class PerconaXtrabackupAT80 < Formula
     system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    bin.env_script_all_files(libexec/"bin", PERL5LIB: Formula["perl-dbd-mysql"].opt_libexec/"lib/perl5")
+    bin.env_script_all_files(libexec/"bin", PERL5LIB: formula_opt_libexec("perl-dbd-mysql")/"lib/perl5")
 
     # remove conflicting library that is already installed by mysql
     (lib/"libmysqlservices.a").unlink

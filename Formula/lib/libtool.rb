@@ -23,7 +23,7 @@ class Libtool < Formula
   depends_on "m4"
 
   def install
-    ENV["M4"] = Formula["m4"].opt_bin/"m4"
+    ENV["M4"] = formula_opt_bin("m4")/"m4"
 
     args = %w[
       --disable-silent-rules

@@ -45,7 +45,7 @@ class Sol2 < Formula
     CPP
 
     system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}",
-                    "-L#{Formula["lua"].opt_lib}", "-llua", "-o", "test"
+                    "-L#{formula_opt_lib("lua")}", "-llua", "-o", "test"
     system "./test"
   end
 end

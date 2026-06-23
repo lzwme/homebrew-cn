@@ -73,7 +73,7 @@ class Ppsspp < Formula
 
     # Replace bundled MoltenVK dylib with symlink to Homebrew-managed dylib
     vulkan_frameworks = buildpath/"ext/vulkan/macOS/Frameworks"
-    vulkan_frameworks.install_symlink Formula["molten-vk"].opt_lib/"libMoltenVK.dylib"
+    vulkan_frameworks.install_symlink formula_opt_lib("molten-vk")/"libMoltenVK.dylib"
 
     args = %w[
       -DUSE_SYSTEM_FREETYPE=ON
@@ -95,7 +95,7 @@ class Ppsspp < Formula
 
       # Replace app bundles with symlinks to allow dependencies to be updated
       app_frameworks = prefix/"PPSSPPSDL.app/Contents/Frameworks"
-      ln_sf (Formula["molten-vk"].opt_lib/"libMoltenVK.dylib").relative_path_from(app_frameworks), app_frameworks
+      ln_sf (formula_opt_lib("molten-vk")/"libMoltenVK.dylib").relative_path_from(app_frameworks), app_frameworks
     else
       system "cmake", "--install", "build"
     end

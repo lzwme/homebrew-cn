@@ -23,7 +23,7 @@ class Testssl < Formula
     man1.install "doc/testssl.1"
     prefix.install "etc"
     env = {
-      PATH:                "#{Formula["openssl@4"].opt_bin}:$PATH",
+      PATH:                "#{formula_opt_bin("openssl@4")}:$PATH",
       TESTSSL_INSTALL_DIR: prefix,
     }
     bin.env_script_all_files(libexec/"bin", env)

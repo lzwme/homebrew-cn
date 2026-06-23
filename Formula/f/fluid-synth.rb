@@ -82,7 +82,7 @@ class FluidSynth < Formula
     if OS.mac?
       inreplace "build/fluidsynth.pc",
                 "readline",
-                "#{Formula["readline"].opt_lib}/pkgconfig/readline.pc"
+                "#{formula_opt_lib("readline")}/pkgconfig/readline.pc"
     end
 
     system "cmake", "--build", "build"

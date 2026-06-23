@@ -28,7 +28,7 @@ class GoBoring < Formula
   depends_on "go" => :build
 
   def install
-    ENV["GOROOT_BOOTSTRAP"] = Formula["go"].opt_libexec
+    ENV["GOROOT_BOOTSTRAP"] = formula_opt_libexec("go")
 
     cd "src" do
       ENV["GOROOT_FINAL"] = libexec

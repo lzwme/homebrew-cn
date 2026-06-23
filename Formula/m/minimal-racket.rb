@@ -59,8 +59,8 @@ class MinimalRacket < Formula
         --enable-useprefix
       ]
 
-      ENV["LDFLAGS"] = "-rpath #{Formula["openssl@3"].opt_lib}"
-      ENV["LDFLAGS"] = "-Wl,-rpath=#{Formula["openssl@3"].opt_lib}" if OS.linux?
+      ENV["LDFLAGS"] = "-rpath #{formula_opt_lib("openssl@3")}"
+      ENV["LDFLAGS"] = "-Wl,-rpath=#{formula_opt_lib("openssl@3")}" if OS.linux?
 
       system "./configure", *args
       system "make"
@@ -132,7 +132,7 @@ class MinimalRacket < Formula
       assert_match(%r{.*openssl@3/.*/libssl.*\.dylib}, output)
     else
       output = shell_output("LD_DEBUG=libs #{bin}/racket -e '(require openssl)' 2>&1")
-      assert_match "init: #{Formula["openssl@3"].opt_lib/shared_library("libssl")}", output
+      assert_match "init: #{formula_opt_lib("openssl@3")/shared_library("libssl")}", output
     end
   end
 end

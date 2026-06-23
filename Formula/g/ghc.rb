@@ -115,7 +115,7 @@ class Ghc < Formula
     binary = buildpath/"binary"
     args = %W[
       --with-gmp-includes=#{Formula["gmp"].opt_include}
-      --with-gmp-libraries=#{Formula["gmp"].opt_lib}
+      --with-gmp-libraries=#{formula_opt_lib("gmp")}
     ]
     resource("binary").stage do
       system "./configure", "--prefix=#{binary}", *args

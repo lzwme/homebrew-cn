@@ -27,7 +27,7 @@ class Valijson < Formula
 
       int main (void) { std::cout << "Hello world"; }
     CPP
-    system ENV.cxx, "test.cpp", "-std=c++17", "-L#{Formula["jsoncpp"].opt_lib}", "-ljsoncpp", "-o", "test"
+    system ENV.cxx, "test.cpp", "-std=c++17", "-L#{formula_opt_lib("jsoncpp")}", "-ljsoncpp", "-o", "test"
     system "./test"
   end
 end

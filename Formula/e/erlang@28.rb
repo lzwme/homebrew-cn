@@ -72,8 +72,8 @@ class ErlangAT28 < Formula
     wx_config = wxwidgets.opt_bin/"wx-config-#{wxwidgets.version.major_minor}"
     args = %W[
       --enable-dynamic-ssl-lib
-      --with-odbc=#{Formula["unixodbc"].opt_prefix}
-      --with-ssl=#{Formula["openssl@3"].opt_prefix}
+      --with-odbc=#{formula_opt_prefix("unixodbc")}
+      --with-ssl=#{formula_opt_prefix("openssl@3")}
       --without-javac
       --with-wx-config=#{wx_config}
     ]

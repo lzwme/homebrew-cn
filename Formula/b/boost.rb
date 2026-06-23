@@ -142,7 +142,7 @@ class Boost < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++17", "-o", "test", "-L#{lib}", "-lboost_iostreams",
-                    "-L#{Formula["zstd"].opt_lib}", "-lzstd"
+                    "-L#{formula_opt_lib("zstd")}", "-lzstd"
     system "./test"
   end
 end

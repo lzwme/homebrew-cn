@@ -61,13 +61,13 @@ class Metview < Formula
       -DENABLE_BUILD_TOOLS=OFF
       -DENABLE_ECKIT_CMD=OFF
       -DENABLE_TESTS=OFF
-      -DFFTW_PATH=#{Formula["fftw"].opt_prefix}
+      -DFFTW_PATH=#{formula_opt_prefix("fftw")}
     ]
 
     if OS.linux?
       args += %W[
         -DENABLE_CLANG_TIDY=OFF
-        -DRPC_PATH=#{Formula["libtirpc"].opt_prefix}
+        -DRPC_PATH=#{formula_opt_prefix("libtirpc")}
         -DRPC_INCLUDE_DIR=#{Formula["libtirpc"].opt_include}/tirpc
       ]
     end

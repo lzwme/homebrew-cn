@@ -32,12 +32,18 @@ class Gitbucket < Formula
   end
 
   service do
-    run [Formula["openjdk"].opt_bin/"java", "-Dmail.smtp.starttls.enable=true", "-jar", opt_libexec/"gitbucket.war",
-         "--host=127.0.0.1", "--port=8080"]
+    run [
+      Utils::Path.formula_opt_bin("openjdk")/"java",
+      "-Dmail.smtp.starttls.enable=true",
+      "-jar",
+      opt_libexec/"gitbucket.war",
+      "--host=127.0.0.1",
+      "--port=8080",
+    ]
   end
 
   test do
-    java = Formula["openjdk"].opt_bin/"java"
+    java = formula_opt_bin("openjdk")/"java"
     fork do
       $stdout.reopen(testpath/"output")
       exec "#{java} -jar #{libexec}/gitbucket.war --port=#{free_port}"

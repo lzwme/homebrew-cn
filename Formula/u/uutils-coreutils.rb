@@ -29,7 +29,7 @@ class UutilsCoreutils < Formula
     args = [
       "PROG_PREFIX=uu-",
       "PREFIX=#{prefix}",
-      "SPHINXBUILD=#{Formula["sphinx-doc"].opt_bin}/sphinx-build",
+      "SPHINXBUILD=#{formula_opt_bin("sphinx-doc")}/sphinx-build",
       "MULTICALL=y",
       "LN=ln -sf",
     ]

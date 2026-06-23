@@ -34,23 +34,23 @@ class Graalvm < Formula
   depends_on "libpng"
   depends_on "little-cms2"
 
-  uses_from_macos "cups"
-  uses_from_macos "unzip"
-  uses_from_macos "zip"
+  uses_from_macos "unzip" => :build
+  uses_from_macos "zip" => :build
+  uses_from_macos "cups" => :no_linkage
 
   on_macos do
     depends_on arch: :arm64
   end
 
   on_linux do
+    depends_on "libxt" => :build
     depends_on "alsa-lib"
-    depends_on "fontconfig"
+    depends_on "fontconfig" => :no_linkage
     depends_on "libx11"
     depends_on "libxext"
     depends_on "libxi"
-    depends_on "libxrandr"
+    depends_on "libxrandr" => :no_linkage
     depends_on "libxrender"
-    depends_on "libxt"
     depends_on "libxtst"
     depends_on "zlib-ng-compat"
   end
@@ -67,11 +67,7 @@ class Graalvm < Formula
   end
 
   def install
-    boot_jdk = if OS.mac?
-      Formula["openjdk@25"].opt_libexec/"openjdk.jdk/Contents/Home"
-    else
-      Formula["openjdk@25"].opt_libexec
-    end
+    boot_jdk = Language::Java.java_home("25")
     java_options = ENV.delete("_JAVA_OPTIONS")
 
     labs_openjdk = buildpath/"labs-openjdk"
@@ -122,7 +118,7 @@ class Graalvm < Formula
       args += %W[
         --enable-dtrace
         --with-freetype-include=#{Formula["freetype"].opt_include}
-        --with-freetype-lib=#{Formula["freetype"].opt_lib}
+        --with-freetype-lib=#{formula_opt_lib("freetype")}
         --with-sysroot=#{MacOS.sdk_path}
       ]
     else
@@ -152,7 +148,7 @@ class Graalvm < Formula
 
     odie "Failed to locate built LabsJDK image" if labsjdk_home.empty?
 
-    mx = Formula["mx"].opt_bin/"mx"
+    mx = formula_opt_bin("mx")/"mx"
 
     output = buildpath/"build"
 
@@ -215,7 +211,7 @@ class Graalvm < Formula
     JAVA
 
     if OS.linux?
-      ENV.prepend_path "LIBRARY_PATH", Formula["zlib-ng-compat"].opt_lib
+      ENV.prepend_path "LIBRARY_PATH", formula_opt_lib("zlib-ng-compat")
       ENV.prepend "NATIVE_IMAGE_OPTIONS", "-ELIBRARY_PATH"
     end
 

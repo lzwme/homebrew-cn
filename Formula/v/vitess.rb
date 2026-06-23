@@ -30,7 +30,7 @@ class Vitess < Formula
     peer_port = free_port
     cell = "testcell"
 
-    spawn Formula["etcd"].opt_bin/"etcd",
+    spawn formula_opt_bin("etcd")/"etcd",
           "--name=vitess_test",
           "--data-dir=#{testpath}/etcd",
           "--listen-client-urls=http://#{etcd_server}",
@@ -43,13 +43,13 @@ class Vitess < Formula
     sleep 3
 
     # Test etcd is responding before continuing
-    system Formula["etcd"].opt_bin/"etcdctl", "--endpoints", "http://#{etcd_server}", "endpoint", "health"
+    system formula_opt_bin("etcd")/"etcdctl", "--endpoints", "http://#{etcd_server}", "endpoint", "health"
 
     # Create necessary directory structure using etcd v3 API
-    system Formula["etcd"].opt_bin/"etcdctl", "--endpoints", "http://#{etcd_server}",
+    system formula_opt_bin("etcd")/"etcdctl", "--endpoints", "http://#{etcd_server}",
            "put", "/vitess/global", ""
 
-    system Formula["etcd"].opt_bin/"etcdctl", "--endpoints", "http://#{etcd_server}",
+    system formula_opt_bin("etcd")/"etcdctl", "--endpoints", "http://#{etcd_server}",
            "put", "/vitess/#{cell}", ""
 
     # Run vtctl with etcd2 implementation but using etcd v3 API

@@ -30,7 +30,7 @@ class Openbao < Formula
   def install
     # Build ui assets
     cd "ui" do
-      ENV.prepend_path "PATH", Formula["node@22"].opt_libexec/"bin" # for npm
+      ENV.prepend_path "PATH", formula_opt_libexec("node@22")/"bin" # for npm
       system "yarn", "install", "--immutable"
       system "yarn", "build"
     end

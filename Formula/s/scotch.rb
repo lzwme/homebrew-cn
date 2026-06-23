@@ -67,7 +67,7 @@ class Scotch < Formula
     C
 
     args = %W[-I#{include} -L#{lib} -lscotch -lscotcherr -pthread -lz -lm]
-    args << "-L#{Formula["zlib-ng-compat"].opt_lib}" if OS.linux?
+    args << "-L#{formula_opt_lib("zlib-ng-compat")}" if OS.linux?
 
     system ENV.cc, "test.c", *args
     assert_match version.to_s, shell_output("./a.out")

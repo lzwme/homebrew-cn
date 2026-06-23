@@ -35,7 +35,7 @@ class WebpPixbufLoader < Formula
 
   test do
     # Generate a .webp file to test with.
-    system Formula["webp"].opt_bin/"cwebp", test_fixtures("test.png"), "-o", "test.webp"
+    system formula_opt_bin("webp")/"cwebp", test_fixtures("test.png"), "-o", "test.webp"
 
     # Sample program to load a .webp file via gdk-pixbuf.
     (testpath/"test.c").write <<~C

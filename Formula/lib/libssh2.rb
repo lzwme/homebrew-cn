@@ -45,7 +45,7 @@ class Libssh2 < Formula
       --disable-examples-build
       --with-openssl
       --with-libz
-      --with-libssl-prefix=#{Formula["openssl@3"].opt_prefix}
+      --with-libssl-prefix=#{formula_opt_prefix("openssl@3")}
     ]
 
     system "./buildconf" if build.head?

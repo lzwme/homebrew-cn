@@ -40,9 +40,9 @@ class Wxpython < Formula
     wx_config = wxwidgets.opt_bin/"wx-config-#{wxwidgets.version.major_minor}"
     ENV["WX_CONFIG"] = wx_config.to_s
 
-    ENV.append_path "PYTHONPATH", Formula["cython"].opt_libexec/Language::Python.site_packages(python)
+    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages(python)
     ENV.cxx11
-    ENV["DOXYGEN"] = Formula["doxygen"].opt_bin/"doxygen"
+    ENV["DOXYGEN"] = formula_opt_bin("doxygen")/"doxygen"
     system python, "-u", "build.py", "dox", "touch", "etg", "sip", "build_py",
                    "--release",
                    "--use_syswx",

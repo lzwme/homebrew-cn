@@ -40,7 +40,7 @@ class Anubis < Formula
     webify_port = free_port
     anubis_port = free_port
 
-    webify_pid = spawn Formula["webify"].opt_bin/"webify", "-addr", ":#{webify_port}", "echo", "Homebrew"
+    webify_pid = spawn formula_opt_bin("webify")/"webify", "-addr", ":#{webify_port}", "echo", "Homebrew"
     anubis_pid = spawn bin/"anubis", "-bind", ":#{anubis_port}", "-target", "http://localhost:#{webify_port}",
       "-serve-robots-txt", "-use-remote-address", "127.0.0.1"
 

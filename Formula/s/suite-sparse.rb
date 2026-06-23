@@ -65,7 +65,7 @@ class SuiteSparse < Formula
     if OS.mac?
       # Avoid mixed OpenMP linkage
       require "utils/linkage"
-      libgomp = Formula["gcc"].opt_lib/"gcc/current/libgomp.dylib"
+      libgomp = formula_opt_lib("gcc")/"gcc/current/libgomp.dylib"
       lib.glob("*.dylib").map(&:realpath).uniq.each do |dylib|
         refute Utils.binary_linked_to_library?(dylib, libgomp), "Unwanted linkage to libgomp in #{dylib.basename}!"
       end

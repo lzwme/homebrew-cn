@@ -1,18 +1,18 @@
 class Gascity < Formula
   desc "Orchestration-builder SDK for multi-agent coding workflows"
   homepage "https://github.com/gastownhall/gascity"
-  url "https://ghfast.top/https://github.com/gastownhall/gascity/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "ec728d55175dacb5fa24e20c3f4fa3198c0414f748a16ce68dc19f83092d35fe"
+  url "https://ghfast.top/https://github.com/gastownhall/gascity/archive/refs/tags/v1.3.2.tar.gz"
+  sha256 "5ae0e1eb4cd3df2a8e745c61df9f60a092cb037ffdb8635d25330e9a36ec619b"
   license "MIT"
   head "https://github.com/gastownhall/gascity.git", branch: "main"
 
   bottle do
-    sha256                               arm64_tahoe:   "9d5e816bbea2fbb05db60a150b12a7883e5c8a751ebdd48a38e9cfcfe54008bb"
-    sha256                               arm64_sequoia: "b39b46164b99829fc6f471b3e7238d38259607a2dffa093e904fac4be6dcdf52"
-    sha256                               arm64_sonoma:  "5fd5c69d957508f6a17db2f177c5e3e0509454827738ee4d41eefe5d6bf917ae"
-    sha256 cellar: :any,                 sonoma:        "83ab6e18e4ef4560e84ee7a273516a66eec2397957c07d6174c4d5d9176f670e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e6c12e5b76ffb596aca0edb72e352148fbbeb74ec35d39161244c4aee1e7767"
-    sha256 cellar: :any,                 x86_64_linux:  "ed499ebfe4783bd195f2b10bc53ec02962130ec7fecbacc1c3c99d582e3e6043"
+    sha256                               arm64_tahoe:   "bd3c973a1bd6d367310b18f4e246057a405d8eed2665c813888e1cdd89b4b66b"
+    sha256                               arm64_sequoia: "7bd9ce0d444ff404a048ee470891b74831d42180280c537397aaa66320b53030"
+    sha256                               arm64_sonoma:  "26dc35b92549c9e9e8af9e67e6c6a28aec0ff9fa8e1090c01fa6a0ac4bee8440"
+    sha256 cellar: :any,                 sonoma:        "f2cbec725c1a9e3b5c9131e273d301f76b246132f16854811b93e5be2f8ee111"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b2c2b28c46161be78427cf0a871bed1f845d309a0f3d48383a3bb79b42d0cd3"
+    sha256 cellar: :any,                 x86_64_linux:  "7d5b7ec63fe4e476a945b1d2890f4d53bb8fd1f52f7692fb986a2421c4e0d7f2"
   end
 
   depends_on "go" => :build

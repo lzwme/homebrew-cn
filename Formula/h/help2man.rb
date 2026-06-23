@@ -35,7 +35,7 @@ class Help2man < Formula
     resource("Locale::gettext").stage do
       # Workaround for macOS perl as MakeMaker can only search libraries in perl compile-time paths
       # Issue ref: https://github.com/Perl-Toolchain-Gang/ExtUtils-MakeMaker/issues/277
-      inreplace "Makefile.PL", '$libs = "-lintl"', "$libs = \"-L#{Formula["gettext"].opt_lib} -lintl\"" if OS.mac?
+      inreplace "Makefile.PL", '$libs = "-lintl"', "$libs = \"-L#{formula_opt_lib("gettext")} -lintl\"" if OS.mac?
 
       system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}", "NO_MYMETA=1"
       system "make", "install"

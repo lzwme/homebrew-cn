@@ -140,7 +140,7 @@ class Abricate < Formula
   deny_network_access!
 
   def install
-    ENV.prepend_path "PERL5LIB", Formula["bioperl"].opt_libexec/"lib/perl5"
+    ENV.prepend_path "PERL5LIB", formula_opt_libexec("bioperl")/"lib/perl5"
 
     if OS.linux?
       ENV.prepend_create_path "PERL5LIB", libexec/"perl5/lib/perl5"

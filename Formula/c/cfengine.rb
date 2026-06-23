@@ -51,8 +51,8 @@ class Cfengine < Formula
 
     args = %W[
       --with-workdir=#{var}/cfengine
-      --with-lmdb=#{Formula["lmdb"].opt_prefix}
-      --with-pcre2=#{Formula["pcre2"].opt_prefix}
+      --with-lmdb=#{formula_opt_prefix("lmdb")}
+      --with-pcre2=#{formula_opt_prefix("pcre2")}
       --without-mysql
       --without-postgresql
     ]

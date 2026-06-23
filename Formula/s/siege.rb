@@ -34,10 +34,10 @@ class Siege < Formula
     # To avoid unnecessary warning due to hardcoded path, create the folder first
     (prefix/"etc").mkdir
 
-    zlib = OS.mac? ? "#{MacOS.sdk_path}/usr" : Formula["zlib-ng-compat"].opt_prefix
+    zlib = OS.mac? ? "#{MacOS.sdk_path}/usr" : formula_opt_prefix("zlib-ng-compat")
     args = %W[
       --localstatedir=#{var}
-      --with-ssl=#{Formula["openssl@4"].opt_prefix}
+      --with-ssl=#{formula_opt_prefix("openssl@4")}
       --with-zlib=#{zlib}
     ]
 

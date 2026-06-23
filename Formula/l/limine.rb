@@ -33,7 +33,7 @@ class Limine < Formula
   def install
     # Homebrew LLVM is not in path by default. Get the path to it, and override the
     # build system's defaults for the target tools.
-    llvm_bins = Formula["llvm"].opt_bin
+    llvm_bins = formula_opt_bin("llvm")
 
     system "./configure", *std_configure_args, "--enable-all",
            "TOOLCHAIN_FOR_TARGET=#{llvm_bins}/llvm-",

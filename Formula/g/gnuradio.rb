@@ -168,7 +168,7 @@ class Gnuradio < Formula
       s.gsub! "${CMAKE_CXX_COMPILER}", ENV.cxx
     end
 
-    qwt = Formula["qwt-qt5"].opt_lib
+    qwt = formula_opt_lib("qwt-qt5")
     qwt_lib = OS.mac? ? qwt/"qwt.framework/qwt" : qwt/"libqwt.so"
     qwt_include = OS.mac? ? qwt/"qwt.framework/Headers" : Formula["qwt-qt5"].opt_include
 
@@ -181,8 +181,8 @@ class Gnuradio < Formula
       -DPYTHON_VERSION_MAJOR=3
       -DQWT_LIBRARIES=#{qwt_lib}
       -DQWT_INCLUDE_DIRS=#{qwt_include}
-      -DCMAKE_PREFIX_PATH=#{Formula["qt@5"].opt_lib}
-      -DQT_BINARY_DIR=#{Formula["qt@5"].opt_bin}
+      -DCMAKE_PREFIX_PATH=#{formula_opt_lib("qt@5")}
+      -DQT_BINARY_DIR=#{formula_opt_bin("qt@5")}
       -DENABLE_TESTING=OFF
       -DENABLE_INTERNAL_VOLK=OFF
     ]
@@ -257,7 +257,7 @@ class Gnuradio < Formula
     boost = Formula["boost"]
     system ENV.cxx, testpath/"test.c++", "-std=c++17", "-I#{boost.opt_include}", "-L#{lib}",
                     "-lgnuradio-blocks", "-lgnuradio-runtime", "-lgnuradio-pmt",
-                    "-L#{Formula["fmt"].opt_lib}", "-lfmt",
+                    "-L#{formula_opt_lib("fmt")}", "-lfmt",
                     "-o", testpath/"test"
     system "./test"
 

@@ -2,8 +2,8 @@ class NewrelicInfraAgent < Formula
   desc "New Relic infrastructure agent"
   homepage "https://github.com/newrelic/infrastructure-agent"
   url "https://github.com/newrelic/infrastructure-agent.git",
-      tag:      "1.76.2",
-      revision: "0bca0cc8782bceffdb3ac2b60bc1c3418c9e5668"
+      tag:      "1.77.0",
+      revision: "d6f62484521ce820a0b14fc2d09097286184ff16"
   license "Apache-2.0"
   head "https://github.com/newrelic/infrastructure-agent.git", branch: "master"
 
@@ -15,12 +15,12 @@ class NewrelicInfraAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13954dbb2e94ff28683d24ae59ed1f41e2c7c94c965653e0761e2606a21c8a8e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5917f53a994536a709461e2c752e3a3d7986f6a1e8f5014a8a83d548596fa923"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f9ea3970da4a91a589fd81ec9973c5883694c26f9809b5eb6d40ef4c8e8f7cf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f7df8d23f258b020f4e9b9ebf8d9751611c87a3cf59dc32686f4df70642dea45"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef8b293cf6f40c37d36081453ae9e1dacbfbd71b99a854e87abe2147c8550148"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c46a5af7a8c72ed8015a0d82daae222da53d17661d78cf918e63d68854efcd79"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4e7cd427b996ab401d20f4d90d79dd404a3c100902fd4c8f8c958a678f587aff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4321b4d5603598d186776f8e54181131c7a90f77565aef0acdd0e4a5ef56bde7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9da254549c56e2fe9612bb1e357ca6d8e70d3368e44de7b31abdd773b17a26b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ce0238dc737d8256435ffa53629ca877be53f20803e0b229545fd0c4bdb8ae83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ec0ee3184166d258ef6272304c94bec791f8befd13ebec2305ca0f039e4b890"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6145ddc90415220258632319dd0b21f0c409171faddf5240037f4ea11b4c3f59"
   end
 
   depends_on "go" => :build

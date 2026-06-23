@@ -49,7 +49,7 @@ class Librcsc < Formula
 
     system "./bootstrap"
     system "./configure", "--disable-silent-rules",
-                          "--with-boost=#{Formula["boost"].opt_prefix}",
+                          "--with-boost=#{formula_opt_prefix("boost")}",
                           *boost_workaround,
                           *std_configure_args
     system "make", "install"

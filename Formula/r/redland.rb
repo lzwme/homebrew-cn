@@ -107,8 +107,8 @@ class Redland < Formula
 
     libs = %W[
       -L#{lib}
-      -L#{Formula["raptor"].opt_lib}
-      -L#{Formula["rasqal"].opt_lib}
+      -L#{formula_opt_lib("raptor")}
+      -L#{formula_opt_lib("rasqal")}
       -lrdf -lraptor2 -lrasqal
     ]
 

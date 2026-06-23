@@ -1,11 +1,11 @@
 cask "t3-code@nightly" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.0.21-nightly.20260417.58"
-  sha256 arm:   "cdc6dca37ec8546e0d1cdb97c7f5d6cc803cebd9e402719c5c2912934470d5b2",
-         intel: "b658af8136c3f1315f001825cb05e1371d21747a7194ff21862f5dce36694b4d"
+  version "0.0.28-nightly.20260623.629"
+  sha256 arm:   "e0ac23edb921dd49d27860ed0943421d030fbd965090834e8cebe3d707b35897",
+         intel: "b6b67005dc6b87100cc940557e9725cfd2d7bebe246acce12990e857e62cb69d"
 
-  url "https://ghfast.top/https://github.com/pingdotgg/t3code/releases/download/nightly-v#{version}/T3-Code-#{version}-#{arch}.dmg",
+  url "https://ghfast.top/https://github.com/pingdotgg/t3code/releases/download/v#{version}/T3-Code-#{version}-#{arch}.dmg",
       verified: "github.com/pingdotgg/t3code/"
   name "T3 Code Nightly"
   desc "Minimal GUI for AI code agents"
@@ -13,7 +13,7 @@ cask "t3-code@nightly" do
 
   livecheck do
     url "https://github.com/pingdotgg/t3code/releases"
-    regex(/^nightly-v?(\d+(?:\.\d+)+-nightly\.\d{8}\.\d+)$/i)
+    regex(/(\d+(?:\.\d+)+-nightly\.\d{8}\.\d+)$/i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next unless release["prerelease"]

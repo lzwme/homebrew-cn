@@ -42,11 +42,11 @@ class Openblas < Formula
     if ENV.compiler == :clang
       inreplace "Makefile.install" do |s|
         s.gsub! ":= -fopenmp", ":= -I#{Formula["libomp"].opt_include} -Xpreprocessor -fopenmp"
-        s.gsub! "+= -lgomp", "+= -L#{Formula["libomp"].opt_lib} -lomp"
+        s.gsub! "+= -lgomp", "+= -L#{formula_opt_lib("libomp")} -lomp"
       end
       inreplace "Makefile.system" do |s|
         s.gsub! "+= -fopenmp", "+= -Xpreprocessor -fopenmp"
-        s.gsub! "+= -lgfortran", "+= -L#{Formula["gcc"].opt_lib}/gcc/current -lgfortran"
+        s.gsub! "+= -lgfortran", "+= -L#{formula_opt_lib("gcc")}/gcc/current -lgfortran"
       end
     end
 
@@ -85,8 +85,8 @@ class Openblas < Formula
   test do
     if OS.mac?
       require "utils/linkage"
-      libgomp = Formula["gcc"].opt_lib/"gcc/current/libgomp.dylib"
-      libomp = Formula["libomp"].opt_lib/"libomp.dylib"
+      libgomp = formula_opt_lib("gcc")/"gcc/current/libgomp.dylib"
+      libomp = formula_opt_lib("libomp")/"libomp.dylib"
       refute Utils.binary_linked_to_library?(lib/"libopenblas.dylib", libgomp), "Unwanted linkage to libgomp!"
       assert Utils.binary_linked_to_library?(lib/"libopenblas.dylib", libomp), "Missing linkage to libomp!"
     end

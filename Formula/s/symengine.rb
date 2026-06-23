@@ -79,9 +79,9 @@ class Symengine < Formula
       }
     CPP
     lib_flags = [
-      "-L#{Formula["gmp"].opt_lib}", "-lgmp",
-      "-L#{Formula["mpfr"].opt_lib}", "-lmpfr",
-      "-L#{Formula["flint"].opt_lib}", "-lflint"
+      "-L#{formula_opt_lib("gmp")}", "-lgmp",
+      "-L#{formula_opt_lib("mpfr")}", "-lmpfr",
+      "-L#{formula_opt_lib("flint")}", "-lflint"
     ]
     system ENV.cxx, "test.cpp", "-std=c++11", "-L#{lib}", "-lsymengine", *lib_flags, "-o", "test"
 

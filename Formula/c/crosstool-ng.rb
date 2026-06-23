@@ -55,12 +55,12 @@ class CrosstoolNg < Formula
   def install
     system "./bootstrap" if build.head?
 
-    ENV["BISON"] = Formula["bison"].opt_bin/"bison"
-    ENV["M4"] = Formula["m4"].opt_bin/"m4"
-    ENV["PYTHON"] = Formula["python@3.14"].opt_bin/"python3.14"
+    ENV["BISON"] = formula_opt_bin("bison")/"bison"
+    ENV["M4"] = formula_opt_bin("m4")/"m4"
+    ENV["PYTHON"] = formula_opt_bin("python@3.14")/"python3.14"
 
     if OS.mac?
-      ENV["MAKE"] = Formula["make"].opt_bin/"gmake"
+      ENV["MAKE"] = formula_opt_bin("make")/"gmake"
       ENV.append "LDFLAGS", "-lintl"
     else
       ENV.append "CFLAGS", "-I#{Formula["ncurses"].include}/ncursesw"

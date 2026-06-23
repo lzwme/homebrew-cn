@@ -55,7 +55,7 @@ class Collectd < Formula
     # PROTO3 which is not the protoc maximum 2023.
     # Remove when fixed in `protobuf-c`:
     # https://github.com/protobuf-c/protobuf-c/pull/711
-    ENV["PROTOC_C"] = Formula["protobuf"].opt_bin/"protoc"
+    ENV["PROTOC_C"] = formula_opt_bin("protobuf")/"protoc"
 
     args = %W[
       --localstatedir=#{var}

@@ -101,7 +101,7 @@ class Memray < Formula
   def install
     if OS.linux?
       without = "elfutils"
-      libelf = Formula["elfutils"].opt_lib/"libelf.so"
+      libelf = formula_opt_lib("elfutils")/"libelf.so"
       resource("elfutils").stage do
         # https://github.com/bloomberg/memray/blob/main/pyproject.toml#L96-L104
         system "./configure", "--disable-debuginfod",

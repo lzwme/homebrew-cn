@@ -124,7 +124,7 @@ class Po4a < Formula
         # Workaround for macOS perl as MakeMaker can only search libraries in perl compile-time paths
         # Issue ref: https://github.com/Perl-Toolchain-Gang/ExtUtils-MakeMaker/issues/277
         if OS.mac? && r.name == "Locale::gettext"
-          inreplace "Makefile.PL", '$libs = "-lintl"', "$libs = \"-L#{Formula["gettext"].opt_lib} -lintl\""
+          inreplace "Makefile.PL", '$libs = "-lintl"', "$libs = \"-L#{formula_opt_lib("gettext")} -lintl\""
         end
 
         if File.exist?("Makefile.PL")

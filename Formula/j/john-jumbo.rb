@@ -82,7 +82,7 @@ class JohnJumbo < Formula
       ENV.append "CFLAGS", "-mno-sse4.1"
     end
 
-    ENV["OPENSSL_LIBS"] = "-L#{Formula["openssl@3"].opt_lib}"
+    ENV["OPENSSL_LIBS"] = "-L#{formula_opt_lib("openssl@3")}"
     ENV["OPENSSL_CFLAGS"] = "-I#{Formula["openssl@3"].opt_include}"
 
     cd "src" do

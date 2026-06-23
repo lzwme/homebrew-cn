@@ -36,8 +36,8 @@ class NextpnrIce40 < Formula
   end
 
   test do
-    yosys = Formula["yosys"].opt_bin/"yosys"
-    icepack = Formula["icestorm"].opt_bin/"icepack"
+    yosys = formula_opt_bin("yosys")/"yosys"
+    icepack = formula_opt_bin("icestorm")/"icepack"
     cp_r (pkgshare/"examples/blinky").children, testpath
     system yosys, "blinky.ys"
     system bin/"nextpnr-ice40", "--hx1k", "--package", "tq144", "--json", "blinky.json",

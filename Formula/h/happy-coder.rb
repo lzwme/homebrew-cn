@@ -37,8 +37,8 @@ class HappyCoder < Formula
     # Create tools/unpacked with symlinks to Homebrew versions
     unpacked = libexec/"lib/node_modules/happy-coder/tools/unpacked"
     unpacked.mkpath
-    unpacked.install_symlink Formula["difftastic"].opt_bin/"difft"
-    unpacked.install_symlink Formula["ripgrep"].opt_bin/"rg"
+    unpacked.install_symlink formula_opt_bin("difftastic")/"difft"
+    unpacked.install_symlink formula_opt_bin("ripgrep")/"rg"
   end
 
   test do

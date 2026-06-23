@@ -28,7 +28,7 @@ class Libcyaml < Formula
   test do
     flags = %W[
       -I#{include} -I#{Formula["libyaml"].opt_include}
-      -L#{lib} -L#{Formula["libyaml"].opt_lib}
+      -L#{lib} -L#{formula_opt_lib("libyaml")}
       -lcyaml -lyaml
       -o test
     ]

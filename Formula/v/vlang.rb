@@ -86,7 +86,7 @@ class Vlang < Formula
     cp pkgshare/"examples/hello_world.v", testpath
     system bin/"v", "-o", "test", "hello_world.v"
     assert_equal "Hello, World!", shell_output("./test").chomp
-    assert !Utils.binary_linked_to_library?("test", Formula["bdw-gc"].opt_lib/shared_library("libgc")),
+    assert !Utils.binary_linked_to_library?("test", formula_opt_lib("bdw-gc")/shared_library("libgc")),
             "v should not produce binary dynamically linked to bdw-gc! Check the patch in the formula!"
   end
 end

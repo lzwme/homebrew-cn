@@ -350,7 +350,7 @@ class Texlive < Formula
     # Install Perl resources
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     ENV["PERL_MM_USE_DEFAULT"] = "1"
-    ENV["OPENSSL_PREFIX"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@3")
 
     tex_resources = %w[texlive-extra install-tl texlive-texmf]
 

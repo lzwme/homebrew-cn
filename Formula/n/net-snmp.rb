@@ -48,7 +48,7 @@ class NetSnmp < Formula
       "--without-kmem-usage",
       "--disable-embedded-perl",
       "--without-perl-modules",
-      "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
+      "--with-openssl=#{formula_opt_prefix("openssl@3")}",
     ]
 
     system "autoreconf", "--force", "--install", "--verbose" if Hardware::CPU.arm?

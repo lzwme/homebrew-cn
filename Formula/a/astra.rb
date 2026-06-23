@@ -23,9 +23,9 @@ class Astra < Formula
 
   def install
     ENV["JAVA_HOME"] = if OS.mac?
-      Formula["graalvm"].opt_libexec/"graalvm.jdk/Contents/Home"
+      formula_opt_libexec("graalvm")/"graalvm.jdk/Contents/Home"
     else
-      Formula["graalvm"].opt_libexec
+      formula_opt_libexec("graalvm")
     end
 
     native_image_env = ENV.keys.grep(/^HOMEBREW_/).map { |key| "-E#{key}" }

@@ -31,7 +31,7 @@ class AsyncProfiler < Formula
 
   test do
     # Set JAVA_HOME for tools that need it (like jfrconv)
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
+    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk")
 
     # Verify version output
     output = shell_output("#{bin}/asprof --version")

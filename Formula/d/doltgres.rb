@@ -55,7 +55,7 @@ class Doltgres < Formula
     spawn bin/"doltgres", "--config", testpath/"config.yaml"
     sleep 5
 
-    psql = Formula["libpq"].opt_bin/"psql"
+    psql = formula_opt_bin("libpq")/"psql"
     connection_string = "postgresql://postgres:password@localhost:#{port}"
     output = shell_output("#{psql} #{connection_string} -c 'SELECT DATABASE()' 2>&1")
     assert_match "database \n----------\n postgres\n(1 row)", output

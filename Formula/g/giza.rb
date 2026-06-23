@@ -41,8 +41,8 @@ class Giza < Formula
       -I#{include}
       -I#{Formula["cairo"].opt_include}/cairo
       -L#{lib}
-      -L#{Formula["libx11"].opt_lib}
-      -L#{Formula["cairo"].opt_lib}
+      -L#{formula_opt_lib("libx11")}
+      -L#{formula_opt_lib("cairo")}
       -lX11
       -lcairo
       -lgiza

@@ -62,9 +62,9 @@ class OpenMpi < Formula
       --enable-ipv6
       --enable-mca-no-build=reachable-netlink
       --sysconfdir=#{etc}
-      --with-hwloc=#{Formula["hwloc"].opt_prefix}
-      --with-libevent=#{Formula["libevent"].opt_prefix}
-      --with-pmix=#{Formula["pmix"].opt_prefix}
+      --with-hwloc=#{formula_opt_prefix("hwloc")}
+      --with-libevent=#{formula_opt_prefix("libevent")}
+      --with-pmix=#{formula_opt_prefix("pmix")}
       --with-sge
     ]
 

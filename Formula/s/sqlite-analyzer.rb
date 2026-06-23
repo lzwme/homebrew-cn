@@ -29,7 +29,7 @@ class SqliteAnalyzer < Formula
   end
 
   def install
-    system "./configure", "--with-tcl=#{Formula["tcl-tk"].opt_lib}", *std_configure_args
+    system "./configure", "--with-tcl=#{formula_opt_lib("tcl-tk")}", *std_configure_args
     system "make", "sqlite3_analyzer"
     bin.install "sqlite3_analyzer"
   end

@@ -48,7 +48,7 @@ class PythonGdbmAT314 < Formula
       sources = ["_gdbmmodule.c"]
       include-dirs = ["#{Formula["gdbm"].opt_include}", "#{python_include}/internal"]
       libraries = ["gdbm"]
-      library-dirs = ["#{Formula["gdbm"].opt_lib}"]
+      library-dirs = ["#{formula_opt_lib("gdbm")}"]
     TOML
 
     (buildpath/"Modules/pyproject.toml").append_lines <<~TOML if OS.linux?
@@ -57,7 +57,7 @@ class PythonGdbmAT314 < Formula
       sources = ["_dbmmodule.c"]
       include-dirs = ["#{Formula["gdbm"].opt_include}", "#{python_include}/internal"]
       libraries = ["gdbm_compat"]
-      library-dirs = ["#{Formula["gdbm"].opt_lib}"]
+      library-dirs = ["#{formula_opt_lib("gdbm")}"]
       extra-compile-args = ["-DUSE_GDBM_COMPAT", "-DHAVE_GDBM_DASH_NDBM_H"]
     TOML
 

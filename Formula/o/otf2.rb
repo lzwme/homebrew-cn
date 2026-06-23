@@ -26,13 +26,11 @@ class Otf2 < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+    file "Patches/libtool/configure-big_sur.diff"
     directory "build-frontend"
   end
   patch do
-    url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+    file "Patches/libtool/configure-big_sur.diff"
     directory "build-backend"
   end
 
@@ -42,7 +40,7 @@ class Otf2 < Formula
 
   def install
     ENV["PYTHON"] = which(python3)
-    ENV["SPHINX"] = Formula["sphinx-doc"].opt_bin/"sphinx-build"
+    ENV["SPHINX"] = formula_opt_bin("sphinx-doc")/"sphinx-build"
 
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
@@ -69,12 +67,12 @@ class Otf2 < Formula
       assert_path_exists workdir/"ArchivePath/ArchiveName.otf2"
       system "./otf2_reader_example"
       rm_r("./ArchivePath")
-      system Formula["open-mpi"].opt_bin/"mpirun", "-n", "2", "./otf2_mpi_writer_example"
+      system formula_opt_bin("open-mpi")/"mpirun", "-n", "2", "./otf2_mpi_writer_example"
       assert_path_exists workdir/"ArchivePath/ArchiveName.otf2"
       2.times do |n|
         assert_path_exists workdir/"ArchivePath/ArchiveName/#{n}.evt"
       end
-      system Formula["open-mpi"].opt_bin/"mpirun", "-n", "2", "./otf2_mpi_reader_example"
+      system formula_opt_bin("open-mpi")/"mpirun", "-n", "2", "./otf2_mpi_reader_example"
       system "./otf2_reader_example"
       rm_r("./ArchivePath")
       system "./otf2_pthread_writer_example"

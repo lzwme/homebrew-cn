@@ -16,7 +16,7 @@ class TypescriptLanguageServer < Formula
     system "npm", "install", *std_npm_args
 
     node_modules = libexec/"lib/node_modules"
-    typescript = Formula["typescript"].opt_libexec/"lib/node_modules/typescript"
+    typescript = formula_opt_libexec("typescript")/"lib/node_modules/typescript"
     ln_sf typescript.relative_path_from(node_modules), node_modules
 
     bin.install_symlink libexec.glob("bin/*")

@@ -34,7 +34,7 @@ class Libxfont < Formula
       --localstatedir=#{var}
       --disable-silent-rules
       --enable-devel-docs=no
-      --with-freetype-config=#{Formula["freetype"].opt_bin}/freetype-config
+      --with-freetype-config=#{formula_opt_bin("freetype")}/freetype-config
       --with-bzip2
     ]
 

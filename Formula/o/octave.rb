@@ -96,10 +96,10 @@ class Octave < Formula
       "--enable-shared",
       "--disable-static",
       "--with-hdf5-includedir=#{Formula["hdf5"].opt_include}",
-      "--with-hdf5-libdir=#{Formula["hdf5"].opt_lib}",
-      "--with-java-homedir=#{Formula["openjdk"].opt_prefix}",
+      "--with-hdf5-libdir=#{formula_opt_lib("hdf5")}",
+      "--with-java-homedir=#{formula_opt_prefix("openjdk")}",
       "--with-x=no",
-      "--with-blas=-L#{Formula["openblas"].opt_lib} -lopenblas",
+      "--with-blas=-L#{formula_opt_lib("openblas")} -lopenblas",
       "--with-portaudio",
       "--with-sndfile",
     ]
@@ -110,7 +110,7 @@ class Octave < Formula
       args << "AUTOMAKE=automake"
 
       # Mesa OpenGL location must be supplied by LDFLAGS on Linux
-      args << "LDFLAGS=-L#{Formula["mesa"].opt_lib} -L#{Formula["mesa-glu"].opt_lib}"
+      args << "LDFLAGS=-L#{formula_opt_lib("mesa")} -L#{formula_opt_lib("mesa-glu")}"
 
       # Docs building is broken on Linux
       args << "--disable-docs"
@@ -127,13 +127,13 @@ class Octave < Formula
 
     # Avoid revision bumps whenever fftw's, gcc's or OpenBLAS' Cellar paths change
     inreplace "src/mkoctfile.cc" do |s|
-      s.gsub! Formula["fftw"].prefix.realpath, Formula["fftw"].opt_prefix
-      s.gsub! Formula["gcc"].prefix.realpath, Formula["gcc"].opt_prefix
+      s.gsub! Formula["fftw"].prefix.realpath, formula_opt_prefix("fftw")
+      s.gsub! Formula["gcc"].prefix.realpath, formula_opt_prefix("gcc")
     end
 
     # Make sure that Octave uses the modern texinfo at run time
     rcfile = buildpath/"scripts/startup/site-rcfile"
-    rcfile.append_lines "makeinfo_program(\"#{Formula["texinfo"].opt_bin}/makeinfo\");"
+    rcfile.append_lines "makeinfo_program(\"#{formula_opt_bin("texinfo")}/makeinfo\");"
 
     system "make", "install"
   end

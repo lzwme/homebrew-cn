@@ -35,11 +35,11 @@ class Solana < Formula
 
   def install
     # Work around librocksdb-sys build failure with Apple libclang, "Library not loaded: @rpath/libclang.dylib"
-    ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib.to_s if OS.mac?
+    ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm").to_s if OS.mac?
 
     # Use brew dependencies
-    ENV["PROTOC"] = Formula["protobuf"].opt_bin/"protoc"
-    ENV["ROCKSDB_LIB_DIR"] = Formula["rocksdb"].opt_lib
+    ENV["PROTOC"] = formula_opt_bin("protobuf")/"protoc"
+    ENV["ROCKSDB_LIB_DIR"] = formula_opt_lib("rocksdb")
 
     bins = %w[
       cli

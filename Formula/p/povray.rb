@@ -78,8 +78,8 @@ class Povray < Formula
       COMPILED_BY=#{tap&.user || "Homebrew"}
       --disable-optimiz
       --mandir=#{man}
-      --with-boost=#{Formula["boost"].opt_prefix}
-      --with-openexr=#{Formula["openexr"].opt_prefix}
+      --with-boost=#{formula_opt_prefix("boost")}
+      --with-openexr=#{formula_opt_prefix("openexr")}
       --without-libsdl
       --without-x
     ]

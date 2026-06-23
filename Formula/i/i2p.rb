@@ -25,7 +25,7 @@ class I2p < Formula
   depends_on "openjdk"
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
+    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk")
     os = OS.mac? ? "osx" : OS.kernel_name.downcase
     system "ant", "preppkg-#{os}-only"
 
@@ -34,7 +34,7 @@ class I2p < Formula
     # Replace vendored copy of java-service-wrapper with brewed version.
     rm libexec/"lib/wrapper.jar"
     rm_r(libexec/"lib/wrapper")
-    jsw_libexec = Formula["java-service-wrapper"].opt_libexec
+    jsw_libexec = formula_opt_libexec("java-service-wrapper")
     ln_s jsw_libexec/"lib/wrapper.jar", libexec/"lib"
     ln_s jsw_libexec/"lib/#{shared_library("libwrapper")}", libexec/"lib"
     cp jsw_libexec/"bin/wrapper", libexec/"i2psvc" # Binary must be copied, not symlinked.
@@ -61,8 +61,8 @@ class I2p < Formula
     inreplace libexec/"runplain.sh", "%SYSTEM_java_io_tmpdir", "$TMPDIR"
 
     # Wrap eepget and i2prouter in env scripts so they can find OpenJDK
-    (bin/"eepget").write_env_script libexec/"eepget", JAVA_HOME: Formula["openjdk"].opt_prefix
-    (bin/"i2prouter").write_env_script libexec/"i2prouter", JAVA_HOME: Formula["openjdk"].opt_prefix
+    (bin/"eepget").write_env_script libexec/"eepget", JAVA_HOME: formula_opt_prefix("openjdk")
+    (bin/"i2prouter").write_env_script libexec/"i2prouter", JAVA_HOME: formula_opt_prefix("openjdk")
     man1.install Dir["#{libexec}/man/*"]
   end
 

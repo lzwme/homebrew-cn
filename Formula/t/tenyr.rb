@@ -37,7 +37,7 @@ class Tenyr < Formula
     # multiple definition of `...'; ....o:(.bss+0x0): first defined here
     ENV.append_to_cflags "-fcommon" if OS.linux?
 
-    system "make", "BISON=#{Formula["bison"].opt_bin}/bison",
+    system "make", "BISON=#{formula_opt_bin("bison")}/bison",
                    "JIT=0", "BUILDDIR=build/homebrew"
 
     pkgshare.install "rsrc", "plugins"

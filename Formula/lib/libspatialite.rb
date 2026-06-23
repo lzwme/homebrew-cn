@@ -91,7 +91,7 @@ class Libspatialite < Formula
 
   test do
     # Verify mod_spatialite extension can be loaded using Homebrew's SQLite
-    pipe_output("#{Formula["sqlite"].opt_bin}/sqlite3",
+    pipe_output("#{formula_opt_bin("sqlite")}/sqlite3",
       "SELECT load_extension('#{opt_lib}/mod_spatialite');")
   end
 end

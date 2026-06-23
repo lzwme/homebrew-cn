@@ -62,8 +62,8 @@ class Gnupg < Formula
       system "../configure", "--disable-silent-rules",
                              "--enable-all-tests",
                              "--sysconfdir=#{etc}",
-                             "--with-pinentry-pgm=#{Formula["pinentry"].opt_bin}/pinentry",
-                             "--with-readline=#{Formula["readline"].opt_prefix}",
+                             "--with-pinentry-pgm=#{formula_opt_bin("pinentry")}/pinentry",
+                             "--with-readline=#{formula_opt_prefix("readline")}",
                              *std_configure_args
       system "make"
       system "make", "check"

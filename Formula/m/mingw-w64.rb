@@ -103,10 +103,10 @@ class MingwW64 < Formula
         --enable-languages=c,c++,objc,obj-c++,fortran
         --with-ld=#{arch_dir}/bin/#{target}-ld
         --with-as=#{arch_dir}/bin/#{target}-as
-        --with-gmp=#{Formula["gmp"].opt_prefix}
-        --with-mpfr=#{Formula["mpfr"].opt_prefix}
-        --with-mpc=#{Formula["libmpc"].opt_prefix}
-        --with-isl=#{Formula["isl"].opt_prefix}
+        --with-gmp=#{formula_opt_prefix("gmp")}
+        --with-mpfr=#{formula_opt_prefix("mpfr")}
+        --with-mpc=#{formula_opt_prefix("libmpc")}
+        --with-isl=#{formula_opt_prefix("isl")}
         --with-system-zlib
         --with-zstd
         --disable-multilib

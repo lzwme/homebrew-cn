@@ -131,7 +131,7 @@ class Spidermonkey < Formula
     # Avoid writing nspr's versioned Cellar path in js*-config
     inreplace bin/"js#{version.major}-config",
               Formula["nspr"].prefix.realpath,
-              Formula["nspr"].opt_prefix
+              formula_opt_prefix("nspr")
   end
 
   test do

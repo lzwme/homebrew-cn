@@ -35,7 +35,7 @@ class TomeeWebprofile < Formula
   end
 
   test do
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
+    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk")
     system "#{opt_libexec}/bin/configtest.sh"
   end
 end

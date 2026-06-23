@@ -17,7 +17,7 @@ class ClearlooksPhenix < Formula
   end
 
   def post_install
-    system "#{Formula["gtk+3"].opt_bin}/gtk3-update-icon-cache", "-f",
+    system "#{formula_opt_bin("gtk+3")}/gtk3-update-icon-cache", "-f",
            HOMEBREW_PREFIX/"share/themes/Clearlooks-Phenix"
   end
 

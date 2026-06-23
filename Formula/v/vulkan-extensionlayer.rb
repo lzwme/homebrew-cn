@@ -40,7 +40,7 @@ class VulkanExtensionlayer < Formula
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_TESTS=OFF",
-                    "-DCMAKE_INSTALL_RPATH=#{rpath(target: Formula["vulkan-loader"].opt_lib)}",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath(target: formula_opt_lib("vulkan-loader"))}",
                     "-DGLSLANG_INSTALL_DIR=#{Formula["glslang"].prefix}",
                     "-DSPIRV_HEADERS_INSTALL_DIR=#{Formula["spirv-headers"].prefix}",
                     "-DSPIRV_TOOLS_INSTALL_DIR=#{Formula["spirv-tools"].prefix}",

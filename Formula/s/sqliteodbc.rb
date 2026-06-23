@@ -48,9 +48,9 @@ class Sqliteodbc < Formula
     end
 
     lib.mkdir
-    args = ["--with-odbc=#{Formula["unixodbc"].opt_prefix}",
-            "--with-sqlite3=#{Formula["sqlite"].opt_prefix}"]
-    args << "--with-libxml2=#{Formula["libxml2"].opt_prefix}" if OS.linux?
+    args = ["--with-odbc=#{formula_opt_prefix("unixodbc")}",
+            "--with-sqlite3=#{formula_opt_prefix("sqlite")}"]
+    args << "--with-libxml2=#{formula_opt_prefix("libxml2")}" if OS.linux?
 
     system "./configure", "--prefix=#{prefix}", *args
     system "make"
@@ -59,7 +59,7 @@ class Sqliteodbc < Formula
   end
 
   test do
-    output = shell_output("#{Formula["unixodbc"].opt_bin}/dltest #{lib}/libsqlite3odbc.so")
+    output = shell_output("#{formula_opt_bin("unixodbc")}/dltest #{lib}/libsqlite3odbc.so")
     assert_equal "SUCCESS: Loaded #{lib}/libsqlite3odbc.so\n", output
   end
 end

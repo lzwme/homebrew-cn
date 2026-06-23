@@ -27,7 +27,7 @@ class Liboqs < Formula
   def install
     args = %W[
       -DOQS_USE_OPENSSL=ON
-      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
+      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@3")}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

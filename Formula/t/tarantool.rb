@@ -45,8 +45,8 @@ class Tarantool < Formula
       -DCMAKE_INSTALL_LOCALSTATEDIR=#{var}
       -DENABLE_DIST=ON
       -DICU_ROOT=#{icu4c.opt_prefix}
-      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
-      -DREADLINE_ROOT=#{Formula["readline"].opt_prefix}
+      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@3")}
+      -DREADLINE_ROOT=#{formula_opt_prefix("readline")}
       -DENABLE_BUNDLED_LIBCURL=OFF
       -DENABLE_BUNDLED_LIBUNWIND=OFF
       -DENABLE_BUNDLED_LIBYAML=OFF

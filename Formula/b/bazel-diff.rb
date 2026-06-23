@@ -18,7 +18,7 @@ class BazelDiff < Formula
   depends_on "openjdk"
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
+    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk")
     rm ".bazelversion"
 
     extra_bazel_args = %w[

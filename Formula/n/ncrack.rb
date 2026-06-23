@@ -42,7 +42,7 @@ class Ncrack < Formula
   end
 
   def install
-    system "./configure", "--with-openssl=#{Formula["openssl@3"].opt_prefix}", *std_configure_args
+    system "./configure", "--with-openssl=#{formula_opt_prefix("openssl@3")}", *std_configure_args
     system "make"
     system "make", "install"
   end

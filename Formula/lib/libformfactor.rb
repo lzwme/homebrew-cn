@@ -21,7 +21,7 @@ class Libformfactor < Formula
 
   def install
     system "cmake", "-S", ".", "-B", "build",
-                    "-DLibHeinz_DIR=#{Formula["libheinz"].opt_prefix}/cmake",
+                    "-DLibHeinz_DIR=#{formula_opt_prefix("libheinz")}/cmake",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

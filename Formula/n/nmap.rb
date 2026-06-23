@@ -51,13 +51,13 @@ class Nmap < Formula
     libpcap_path = if OS.mac?
       MacOS.sdk_path/"usr/"
     else
-      Formula["libpcap"].opt_prefix
+      formula_opt_prefix("libpcap")
     end
 
     args = %W[
-      --with-liblua=#{Formula["lua"].opt_prefix}
-      --with-libpcre=#{Formula["pcre2"].opt_prefix}
-      --with-openssl=#{Formula["openssl@3"].opt_prefix}
+      --with-liblua=#{formula_opt_prefix("lua")}
+      --with-libpcre=#{formula_opt_prefix("pcre2")}
+      --with-openssl=#{formula_opt_prefix("openssl@3")}
       --with-libpcap=#{libpcap_path}
       --without-nmap-update
       --disable-universal

@@ -7,24 +7,25 @@ class Lakekeeper < Formula
   head "https://github.com/lakekeeper/lakekeeper.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f593356ca9ef4074fd1d7e8c0b84b07949d1db598bc4bcdf0ab36837316eb0ae"
-    sha256 cellar: :any, arm64_sequoia: "239f34536bd8b1a920638ddc6dec5230c16e8b4037089d61a1a45ccacd9ff0cf"
-    sha256 cellar: :any, arm64_sonoma:  "0e687197bac79d67fec9f7d62254bc8578a321d1e45f6f81f0b522460f58d699"
-    sha256 cellar: :any, sonoma:        "0679b2e2c0a05a5fcf12caedca29771c1f6eb65268c5f2a88cf7edf95df53f7e"
-    sha256 cellar: :any, arm64_linux:   "73a74d47a2273fe258ec33d49cfaf7f8bdfc357c87d7f8c7d668777ad1b4df30"
-    sha256 cellar: :any, x86_64_linux:  "a096a855fc4f15fcc43d0e7ea76691d8ea7627630d1a0b3c73a0e86c6c3398c4"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "450f595b56689aee7e7802243b6e36ea9901500433400af2ed7d72fd19ec2ef6"
+    sha256 cellar: :any, arm64_sequoia: "1b501b0b516cc0c29a44ffcfc5cfcbd12dcb51169dcd068e554c93a9734068d7"
+    sha256 cellar: :any, arm64_sonoma:  "89fa374b3a94c07e60a6765dfa627f93bd9e98cf2f9bb041a852f1c17e84e8d9"
+    sha256 cellar: :any, sonoma:        "d4d56fce4bdf54014d042ef495d9caad3845d4ac8661dd924d6c9f2d51d8a7d1"
+    sha256 cellar: :any, arm64_linux:   "1e136fbcf15836c099e618e5c43aa789b7aa35537b50344a1901120daa4a127a"
+    sha256 cellar: :any, x86_64_linux:  "9405b94e255f5f310f380b73a967ce9f2511821941ba888f8a09749e2364ba84"
   end
 
   depends_on "cmake" => :build
   depends_on "rust" => :build
   depends_on "postgresql@18" => :test
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "llvm" => :build # for libclang
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
 
     system "cargo", "install", *std_cargo_args(path: "crates/lakekeeper-bin")
   end

@@ -19,7 +19,7 @@ class DitaOt < Formula
   def install
     rm(Dir["bin/*.bat", "config/env.bat", "startcmd.*"])
     libexec.install Dir["*"]
-    (bin/"dita").write_env_script libexec/"bin/dita", JAVA_HOME: Formula["openjdk"].opt_prefix
+    (bin/"dita").write_env_script libexec/"bin/dita", JAVA_HOME: formula_opt_prefix("openjdk")
 
     # Build an `:all` bottle by removing doc file.
     rm libexec/"docsrc/topics/installing-via-homebrew.dita"

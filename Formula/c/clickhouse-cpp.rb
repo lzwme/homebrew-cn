@@ -27,7 +27,7 @@ class ClickhouseCpp < Formula
     #   https://github.com/ClickHouse/clickhouse-cpp/pull/301#issuecomment-1520592157
     rm_r(Dir["contrib/*"] - ["contrib/cityhash"])
     args = %W[
-      -DOPENSSL_ROOT_DIR=#{Formula["openssl@4"].opt_prefix}
+      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@4")}
       -DWITH_OPENSSL=ON
       -DWITH_SYSTEM_ABSEIL=ON
       -DWITH_SYSTEM_CITYHASH=OFF
@@ -85,9 +85,9 @@ class ClickhouseCpp < Formula
 
     args = %W[
       -std=c++17 -I#{include} -L#{lib} -lclickhouse-cpp-lib
-      -L#{Formula["openssl@4"].opt_lib} -lcrypto -lssl
-      -L#{Formula["lz4"].opt_lib} -llz4
-      -L#{Formula["zstd"].opt_lib} -lzstd
+      -L#{formula_opt_lib("openssl@4")} -lcrypto -lssl
+      -L#{formula_opt_lib("lz4")} -llz4
+      -L#{formula_opt_lib("zstd")} -lzstd
     ]
     args << "-lcityhash" if OS.mac?
     system ENV.cxx, "main.cpp", *args, "-o", "test-client"

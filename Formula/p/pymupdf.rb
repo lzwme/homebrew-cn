@@ -29,9 +29,9 @@ class Pymupdf < Formula
     # https://github.com/pymupdf/PyMuPDF/blob/1.20.0/setup.py#L447
     ENV["PYMUPDF_SETUP_MUPDF_BUILD"] = ""
     ENV["PYMUPDF_INCLUDES"] = "#{Formula["mupdf"].opt_include}:#{Formula["freetype"].opt_include}/freetype2"
-    ENV["PYMUPDF_SETUP_SWIG"] = Formula["swig"].opt_bin/"swig"
+    ENV["PYMUPDF_SETUP_SWIG"] = formula_opt_bin("swig")/"swig"
 
-    mupdf_libpath = Formula["mupdf"].opt_lib.to_s
+    mupdf_libpath = formula_opt_lib("mupdf").to_s
     ENV["PYMUPDF_MUPDF_LIB"] = mupdf_libpath
     ENV.append "LDFLAGS", "-Wl,-rpath,#{mupdf_libpath}" if OS.mac?
 

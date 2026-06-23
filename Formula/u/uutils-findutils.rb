@@ -69,7 +69,7 @@ class UutilsFindutils < Formula
 
     expected_linkage = {
       libexec/"uubin/find" => [
-        Formula["oniguruma"].opt_lib/shared_library("libonig"),
+        formula_opt_lib("oniguruma")/shared_library("libonig"),
       ],
     }
     missing_linkage = []

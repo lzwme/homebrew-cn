@@ -60,7 +60,7 @@ class Mpich < Formula
       --enable-g=dbg
       --enable-romio
       --enable-shared
-      --with-hwloc=#{Formula["hwloc"].opt_prefix}
+      --with-hwloc=#{formula_opt_prefix("hwloc")}
       --with-pm=hydra
       --prefix=#{prefix}
       --mandir=#{man}
@@ -71,7 +71,7 @@ class Mpich < Formula
     if OS.linux?
       # Use libfabric https://lists.mpich.org/pipermail/discuss/2021-January/006092.html
       args << "--with-device=ch4:ofi"
-      args << "--with-libfabric=#{Formula["libfabric"].opt_prefix}"
+      args << "--with-libfabric=#{formula_opt_prefix("libfabric")}"
     end
 
     system "./configure", *args

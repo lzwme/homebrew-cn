@@ -281,7 +281,7 @@ class Otterdog < Formula
     # Replace bundled node
     bundled_node = venv.site_packages/"playwright/driver/node"
     rm(bundled_node)
-    ln_sf (Formula["node"].opt_bin/"node").relative_path_from(bundled_node.dirname), bundled_node
+    ln_sf (formula_opt_bin("node")/"node").relative_path_from(bundled_node.dirname), bundled_node
   end
 
   test do

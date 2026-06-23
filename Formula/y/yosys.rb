@@ -30,7 +30,7 @@ class Yosys < Formula
   end
 
   def install
-    ENV.append "LINKFLAGS", "-L#{Formula["readline"].opt_lib}"
+    ENV.append "LINKFLAGS", "-L#{formula_opt_lib("readline")}"
     system "make", "install", "PREFIX=#{prefix}", "PRETTY=0"
   end
 

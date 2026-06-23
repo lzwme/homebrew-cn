@@ -29,7 +29,7 @@ class Prog8 < Formula
     system "gradle", "installDist"
 
     libexec.install Dir["compiler/build/install/prog8c/*"]
-    (bin/"prog8c").write_env_script libexec/"bin/prog8c", JAVA_HOME: Formula["openjdk"].opt_prefix
+    (bin/"prog8c").write_env_script libexec/"bin/prog8c", JAVA_HOME: formula_opt_prefix("openjdk")
     rm_r(libexec/"bin/prog8c.bat")
 
     pkgshare.install "examples"

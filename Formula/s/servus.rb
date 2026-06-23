@@ -132,7 +132,7 @@ class Servus < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lServus", "-DBOOST_TEST_DYN_LINK",
-                    "-L#{Formula["boost"].opt_lib}", "-lboost_unit_test_framework",
+                    "-L#{formula_opt_lib("boost")}", "-lboost_unit_test_framework",
                     "-std=gnu++11", "-o", "test"
     system "./test"
   end

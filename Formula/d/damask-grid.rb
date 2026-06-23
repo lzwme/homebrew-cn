@@ -50,7 +50,7 @@ class DamaskGrid < Formula
     # Help link to libomp on macOS to avoid mixed OpenMP
     inreplace "cmake/Compiler-GNU.cmake", '"-fopenmp"', '"-Xpreprocessor -fopenmp -lomp"' if OS.mac?
 
-    ENV["PETSC_DIR"] = Formula["petsc"].opt_prefix
+    ENV["PETSC_DIR"] = formula_opt_prefix("petsc")
     args = %w[
       -DDAMASK_SOLVER=grid
     ]
@@ -65,7 +65,7 @@ class DamaskGrid < Formula
     if OS.mac?
       # Avoid mixed OpenMP linkage
       require "utils/linkage"
-      libgomp = Formula["gcc"].opt_lib/"gcc/current/libgomp.dylib"
+      libgomp = formula_opt_lib("gcc")/"gcc/current/libgomp.dylib"
       refute Utils.binary_linked_to_library?(bin/"DAMASK_grid", libgomp), "Unwanted linkage to libgomp!"
     end
 

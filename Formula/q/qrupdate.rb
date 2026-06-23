@@ -35,7 +35,7 @@ class Qrupdate < Formula
     system "gfortran", "-o", "test", pkgshare/"tch1dn.f", pkgshare/"utils.f",
                        "-fallow-argument-mismatch",
                        "-L#{lib}", "-lqrupdate",
-                       "-L#{Formula["openblas"].opt_lib}", "-lopenblas"
+                       "-L#{formula_opt_lib("openblas")}", "-lopenblas"
     assert_match "PASSED   4     FAILED   0", shell_output("./test")
   end
 end

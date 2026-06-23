@@ -33,7 +33,7 @@ class Jemalloc < Formula
     args << "--with-lg-page=16" if Hardware::CPU.arm64? && OS.linux?
 
     if build.head?
-      args << "--with-xslroot=#{Formula["docbook-xsl"].opt_prefix}/docbook-xsl"
+      args << "--with-xslroot=#{formula_opt_prefix("docbook-xsl")}/docbook-xsl"
       system "./autogen.sh", *args
       system "make", "dist"
     else

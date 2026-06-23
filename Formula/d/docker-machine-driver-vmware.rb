@@ -32,7 +32,7 @@ class DockerMachineDriverVmware < Formula
   end
 
   test do
-    docker_machine = Formula["docker-machine"].opt_bin/"docker-machine"
+    docker_machine = formula_opt_bin("docker-machine")/"docker-machine"
     output = shell_output("#{docker_machine} create --driver vmware -h")
     assert_match "engine-env", output
   end

@@ -49,7 +49,7 @@ class PythonTkAT314 < Formula
       define-macros = [["WITH_APPINIT", "1"], ["TCL_WITH_EXTERNAL_TOMMATH", "1"]]
       include-dirs = ["#{python_include}/internal", "#{Formula["tcl-tk"].opt_include/"tcl-tk"}"]
       libraries = ["tcl#{tcltk_version}", "tcl#{tcltk_version.major}tk#{tcltk_version}"]
-      library-dirs = ["#{Formula["tcl-tk"].opt_lib}"]
+      library-dirs = ["#{formula_opt_lib("tcl-tk")}"]
     TOML
     system python3, "-m", "pip", "install", *std_pip_args(prefix: false, build_isolation: true),
                                             "--target=#{libexec}", "./Modules"

@@ -1,18 +1,18 @@
 class Shellshare < Formula
   desc "Live Terminal Broadcast"
   homepage "https://shellshare.net"
-  url "https://ghfast.top/https://github.com/vitorbaptista/shellshare/archive/refs/tags/v3.6.1.tar.gz"
-  sha256 "7a6aeed3c4ebb22476c3319ecb3d825d40fad73dd7166f35c898ea8e2fc28dbd"
+  url "https://ghfast.top/https://github.com/vitorbaptista/shellshare/archive/refs/tags/v3.7.0.tar.gz"
+  sha256 "1eb33dae2fae7c74965c6e604bc09eaea5836a1e3a81a05659ee65ff2a9bcbb3"
   license "Apache-2.0"
   head "https://github.com/vitorbaptista/shellshare.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e5d004c3dfb51f2e52fdb605bc29ba7de91d03c71c0d8fbc0f7af105b4335c51"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac36b89e705984a640795ab0672141720fbc09982718127490569020911ee1cf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40ab02930d2a39f06a8d9b5faf64a99f10a6989063a83a2e940f5f719fbeb42f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ae5cfefe2c414bd611e00bdee454bdbe00e2588f37bb17454cc9e922cc4a0173"
-    sha256 cellar: :any,                 arm64_linux:   "9289f704af969326dc873eb2287425f9614f909f670c38db20ff4935677ef15a"
-    sha256 cellar: :any,                 x86_64_linux:  "5ae61f7c7f82a439504d487360d66bd212638687a4c6bf7b40aec61daf49aa2f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fb7c7145b78bf0f3db168f571e7114a8cac38fb246edb34727c56ce616c233d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c91cfc4012864f5b52b3787734331925497af067e868e31b374235e1176bdb84"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5d16c6ca3d852d35439fed3182bf124880a1f70bdece05f7fd1d0652bb13784"
+    sha256 cellar: :any_skip_relocation, sonoma:        "79d16132d75d0d4ce4a57d92e29caea7dfe5e1b272d537dc561bac6eabf3d285"
+    sha256 cellar: :any,                 arm64_linux:   "76d21bad00d8f1eaaa5d568868e46b527696217140c912c7fe5c4bb18a30f7ce"
+    sha256 cellar: :any,                 x86_64_linux:  "dd341a0f97efb5ffa6586db3cdddabc5a8a00f6655a37664ad00763a9aa85075"
   end
 
   depends_on "rust" => :build

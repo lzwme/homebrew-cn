@@ -42,7 +42,7 @@ class TechnitiumDns < Formula
 
     (bin/"technitium-dns").write <<~SHELL
       #!/bin/bash
-      export DYLD_FALLBACK_LIBRARY_PATH=#{Formula["libmsquic"].opt_lib}
+      export DYLD_FALLBACK_LIBRARY_PATH=#{formula_opt_lib("libmsquic")}
       export DOTNET_ROOT=#{dotnet.opt_libexec}
       exec #{dotnet.opt_libexec}/dotnet #{libexec}/DnsServerApp.dll #{etc}/technitium-dns "$@"
     SHELL

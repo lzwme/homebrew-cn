@@ -38,7 +38,7 @@ class Activemq < Formula
     libexec.install buildpath.children
     (bin/"activemq").write_env_script libexec/"bin/activemq", Language::Java.overridable_java_home_env
 
-    wrapper = Formula["java-service-wrapper"].opt_libexec
+    wrapper = formula_opt_libexec("java-service-wrapper")
     wrapper_dir = libexec/"bin"/wrapper_dir
     ln_sf wrapper/"bin/wrapper", wrapper_dir/"wrapper"
     libext = OS.mac? ? "jnilib" : "so"

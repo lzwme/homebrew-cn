@@ -129,8 +129,8 @@ class Beets < Formula
     ENV["LLVMLITE_SHARED"] = "1"
     ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup" if OS.mac?
     python = "python3.14"
-    ENV.append_path "PYTHONPATH", Formula["cython"].opt_libexec/Language::Python.site_packages(python)
-    ENV.append_path "PYTHONPATH", Formula["python-setuptools"].opt_prefix/Language::Python.site_packages(python)
+    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages(python)
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("python-setuptools")/Language::Python.site_packages(python)
 
     without = %w[lap numba]
     venv = virtualenv_install_with_resources(without:)

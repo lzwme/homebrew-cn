@@ -37,7 +37,7 @@ class Abcl < Formula
   deny_network_access! [:postinstall, :test]
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
+    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk")
 
     system "ant", "abcl.properties.autoconfigure.openjdk.8"
     system "ant"

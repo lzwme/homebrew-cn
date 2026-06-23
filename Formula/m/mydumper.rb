@@ -38,7 +38,7 @@ class Mydumper < Formula
 
     # Override location of mysql-client
     args = %W[
-      -DMYSQL_CONFIG_PREFER_PATH=#{Formula["mariadb-connector-c"].opt_bin}
+      -DMYSQL_CONFIG_PREFER_PATH=#{formula_opt_bin("mariadb-connector-c")}
       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     ]
 

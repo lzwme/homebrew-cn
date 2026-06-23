@@ -17,7 +17,7 @@ class ApacheOpennlp < Formula
     rm(Dir["bin/*.bat"])
 
     libexec.install Dir["*"]
-    (bin/"opennlp").write_env_script libexec/"bin/opennlp", JAVA_HOME:    Formula["openjdk"].opt_prefix,
+    (bin/"opennlp").write_env_script libexec/"bin/opennlp", JAVA_HOME:    formula_opt_prefix("openjdk"),
                                                             OPENNLP_HOME: libexec
   end
 

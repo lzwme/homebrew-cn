@@ -26,7 +26,7 @@ class Groovysdk < Formula
     libexec.install "conf", "lib", "src", "doc"
     bin.env_script_all_files libexec/"bin",
                              GROOVY_HOME: libexec,
-                             JAVA_HOME:   "${JAVA_HOME:-#{Formula["openjdk"].opt_prefix}}"
+                             JAVA_HOME:   "${JAVA_HOME:-#{formula_opt_prefix("openjdk")}}"
   end
 
   test do

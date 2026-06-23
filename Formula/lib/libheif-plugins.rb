@@ -4,19 +4,19 @@ class LibheifPlugins < Formula
   url "https://ghfast.top/https://github.com/strukturag/libheif/releases/download/v1.23.0/libheif-1.23.0.tar.gz"
   sha256 "4c9182b18897617182eed12ab5eb9f9d855b3aa3a736d6bdb31abc034ec7d393"
   license "LGPL-3.0-or-later"
-  revision 2
+  revision 3
 
   livecheck do
     formula "libheif"
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "845d6f5bc6c60db7243f5ca7e329b282d64da6375dd190ca22264580e7088158"
-    sha256 cellar: :any, arm64_sequoia: "328f4dd39597002192b4a8ffb15a59ffb0bfd1831e95243cb48f8c9c55573b58"
-    sha256 cellar: :any, arm64_sonoma:  "a3d678446689ad414665dcf580bfcb73e82b47bf586fd23f3fb06f7ff09893f2"
-    sha256 cellar: :any, sonoma:        "4cd0e6218e7cf096c615daad10ea001d028b319a2ca19597596993977ba1e1a5"
-    sha256 cellar: :any, arm64_linux:   "addfc733947efa0f2862707ec2bd134731249b4f2b51907c5831a6012d2a3f29"
-    sha256 cellar: :any, x86_64_linux:  "c955573f505b28904a4a659914ba76e519fc3a4c81724f5d8d0a62298adc6935"
+    sha256 cellar: :any, arm64_tahoe:   "9c9e0a4f02567cc8aaf18efca45bc3d13f776915a0d6a031db56cb217e0e45ae"
+    sha256 cellar: :any, arm64_sequoia: "74ae7f4cba148bcd5ff09d4083af9189f13c47098ce1791490b198912e826e59"
+    sha256 cellar: :any, arm64_sonoma:  "66816c3e87c240b57b5dc28cdc5e842d74aef3569c496282f8b3660a08db4cbc"
+    sha256 cellar: :any, sonoma:        "d48fdc509203e6b11f28b06d6d4ec0109af8111d335b483661d77651ac12a912"
+    sha256 cellar: :any, arm64_linux:   "0550c4b51464a98581b9dfa9d42273c57e078ea82243d2dac6d6b3a81cafa1f5"
+    sha256 cellar: :any, x86_64_linux:  "96d8d9f3a0814730dd66d2f785421363a491fccb4b2ac3d112732558143cb376"
   end
 
   depends_on "cmake" => :build
@@ -48,7 +48,7 @@ class LibheifPlugins < Formula
     ]
 
     args = %W[
-      -DCMAKE_INSTALL_RPATH=#{rpath(source: lib/"libheif", target: Formula["libheif"].opt_lib)}
+      -DCMAKE_INSTALL_RPATH=#{rpath(source: lib/"libheif", target: formula_opt_lib("libheif"))}
       -DPLUGIN_DIRECTORY=#{HOMEBREW_PREFIX}/lib/libheif
       -DPLUGIN_INSTALL_DIRECTORY=#{lib}/libheif
       -DWITH_AOM_DECODER=OFF

@@ -39,7 +39,7 @@ class Nuraft < Formula
                     "-I#{include}/libnuraft", "-I#{testpath}/echo",
                     "-I#{Formula["openssl@3"].opt_include}",
                     "-L#{lib}", "-lnuraft",
-                    "-L#{Formula["openssl@3"].opt_lib}", "-lcrypto", "-lssl"
+                    "-L#{formula_opt_lib("openssl@3")}", "-lcrypto", "-lssl"
     assert_match "hello world", shell_output("./test")
   end
 end

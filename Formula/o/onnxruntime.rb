@@ -99,9 +99,9 @@ class Onnxruntime < Formula
       -DHOMEBREW_ALLOW_FETCHCONTENT=ON
       -DFETCHCONTENT_FULLY_DISCONNECTED=ON
       -DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS
-      -DFETCHCONTENT_SOURCE_DIR_MP11=#{Formula["boost"].opt_prefix}
+      -DFETCHCONTENT_SOURCE_DIR_MP11=#{formula_opt_prefix("boost")}
       -DPython_EXECUTABLE=#{python3}
-      -DONNX_CUSTOM_PROTOC_EXECUTABLE=#{Formula["protobuf"].opt_bin}/protoc
+      -DONNX_CUSTOM_PROTOC_EXECUTABLE=#{formula_opt_bin("protobuf")}/protoc
       -Donnxruntime_BUILD_SHARED_LIB=ON
       -Donnxruntime_BUILD_UNIT_TESTS=OFF
       -Donnxruntime_GENERATE_TEST_REPORTS=OFF
@@ -116,7 +116,7 @@ class Onnxruntime < Formula
     end
 
     # Regenerate C++ bindings to use newer `flatbuffers`
-    flatc = Formula["flatbuffers"].opt_bin/"flatc"
+    flatc = formula_opt_bin("flatbuffers")/"flatc"
     system python3, "onnxruntime/core/flatbuffers/schema/compile_schema.py", "--flatc", flatc
     system python3, "onnxruntime/lora/adapter_format/compile_schema.py", "--flatc", flatc
 

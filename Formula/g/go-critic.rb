@@ -12,12 +12,13 @@ class GoCritic < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "36f3b8b5a46c5c69662d86c2ce02536aa8cd0852096f1292f732626b4a147e70"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36f3b8b5a46c5c69662d86c2ce02536aa8cd0852096f1292f732626b4a147e70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36f3b8b5a46c5c69662d86c2ce02536aa8cd0852096f1292f732626b4a147e70"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a362645959022e39c2b229e6159b79dc5b30f218d8fbe58fa53d69ecf3117d76"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0dd5e70661ab061df20bde3752473eddbc9f45e5f33a1cfcbe6e50d9d688d61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69d045cfbb182d91c41e6f11210579be1013377ad00ffb63aea243be86c1dc61"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8ac5976a9105aca2ee7a6c2de13b87f7b7ac3503e7a412134ed1a4b6be29dfd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8ac5976a9105aca2ee7a6c2de13b87f7b7ac3503e7a412134ed1a4b6be29dfd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8ac5976a9105aca2ee7a6c2de13b87f7b7ac3503e7a412134ed1a4b6be29dfd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "64b54f005973ee0c63292a78bc708d6945cc59796acad2b4cb3d15a0a73c2a46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8725ccacee3e88cffb3c2e3973910dfe0fe751499b12a48a45a74292c72843fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "591ca0248b7c16f1694750a06b359f45afeb70af8d293f7ff8fdb8551b8308aa"
   end
 
   depends_on "go"
@@ -25,10 +26,14 @@ class GoCritic < Formula
   def install
     ldflags = "-s -w"
     ldflags += " -X main.Version=v#{version}" if build.stable?
-    system "go", "build", *std_go_args(ldflags:, output: bin/"gocritic"), "./cmd/gocritic"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/go-critic"
+    bin.install_symlink bin/"go-critic" => "gocritic"
   end
 
   test do
+    assert_predicate bin/"gocritic", :symlink?
+    assert_equal "go-critic", (bin/"gocritic").readlink.to_s
+
     (testpath/"main.go").write <<~GO
       package main
 
@@ -42,7 +47,10 @@ class GoCritic < Formula
       }
     GO
 
-    output = shell_output("#{bin}/gocritic check main.go 2>&1", 1)
-    assert_match "sloppyLen: len(str) <= 0 can be len(str) == 0", output
+    output_go_critic = shell_output("#{bin}/go-critic check main.go 2>&1", 1)
+    assert_match "sloppyLen: len(str) <= 0 can be len(str) == 0", output_go_critic
+
+    output_gocritic = shell_output("#{bin}/gocritic check main.go 2>&1", 1)
+    assert_match "sloppyLen: len(str) <= 0 can be len(str) == 0", output_gocritic
   end
 end

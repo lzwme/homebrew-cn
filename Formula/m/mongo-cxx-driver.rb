@@ -30,7 +30,7 @@ class MongoCxxDriver < Formula
     pkgshare.install "examples"
     (buildpath / "examples/CMakeLists.txt").write ""
 
-    mongo_c_prefix = Formula["mongo-c-driver"].opt_prefix
+    mongo_c_prefix = formula_opt_prefix("mongo-c-driver")
     args = %W[
       -DBUILD_VERSION=#{version}
       -DLIBBSON_DIR=#{mongo_c_prefix}

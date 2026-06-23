@@ -44,7 +44,7 @@ class Libeatmydata < Formula
   def install
     # macOS before 12.3 does not support `readlink -f` as used by the `eatmydata` shell wrapper script
     if OS.mac? && MacOS.version <= :monterey
-      inreplace "eatmydata.sh.in", "readlink", "#{Formula["coreutils"].opt_bin}/greadlink"
+      inreplace "eatmydata.sh.in", "readlink", "#{formula_opt_bin("coreutils")}/greadlink"
     end
 
     system "autoreconf", "--force", "--install", "--verbose"
@@ -58,7 +58,7 @@ class Libeatmydata < Formula
     system bin/"eatmydata", "sync"
     return if OS.mac?
 
-    output = shell_output("#{bin}/eatmydata #{Formula["strace"].opt_bin}/strace sync 2>&1")
+    output = shell_output("#{bin}/eatmydata #{formula_opt_bin("strace")}/strace sync 2>&1")
     refute_match(/^[a-z]*sync/, output)
     refute_match("O_SYNC", output)
     assert_match(" exited with 0 ", output)

@@ -44,14 +44,14 @@ class Ncnn < Formula
       -DNCNN_BUILD_BENCHMARK=OFF
       -DNCNN_BUILD_EXAMPLES=OFF
       -DNCNN_SYSTEM_GLSLANG=ON
-      -DGLSLANG_TARGET_DIR=#{Formula["glslang"].opt_lib}/cmake
+      -DGLSLANG_TARGET_DIR=#{formula_opt_lib("glslang")}/cmake
       -DNCNN_VULKAN=ON
     ]
 
     if OS.mac?
       args += %W[
         -DVulkan_INCLUDE_DIR=#{Formula["molten-vk"].opt_include}
-        -DVulkan_LIBRARY=#{Formula["molten-vk"].opt_lib/shared_library("libMoltenVK")}
+        -DVulkan_LIBRARY=#{formula_opt_lib("molten-vk")/shared_library("libMoltenVK")}
       ]
 
       # Apple Clang 16 crashes compiling AVX-VNNI(-INT8) and AVX-512(BF16/FP16) intrinsics.

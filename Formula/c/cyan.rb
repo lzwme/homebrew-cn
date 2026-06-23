@@ -57,7 +57,7 @@ class Cyan < Formula
     if OS.linux?
       tools_dir = current_system_dir/tools_arch
       rm tools_dir/"lipo"
-      tools_dir.install_symlink Formula["llvm"].opt_bin/"llvm-lipo" => "lipo"
+      tools_dir.install_symlink formula_opt_bin("llvm")/"llvm-lipo" => "lipo"
     end
   end
 

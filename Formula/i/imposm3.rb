@@ -23,7 +23,7 @@ class Imposm3 < Formula
   depends_on "leveldb"
 
   def install
-    ENV["CGO_LDFLAGS"] = "-L#{Formula["geos"].opt_lib} -L#{Formula["leveldb"].opt_lib}"
+    ENV["CGO_LDFLAGS"] = "-L#{formula_opt_lib("geos")} -L#{formula_opt_lib("leveldb")}"
     ENV["CGO_CFLAGS"] = "-I#{Formula["geos"].opt_include} -I#{Formula["leveldb"].opt_include}"
 
     ldflags = "-s -w -X github.com/omniscale/imposm3.Version=#{version}"

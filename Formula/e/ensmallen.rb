@@ -33,7 +33,7 @@ class Ensmallen < Formula
       }
     CPP
 
-    system ENV.cxx, "test.cpp", "-std=c++14", "-I#{include}", "-L#{Formula["armadillo"].opt_lib}",
+    system ENV.cxx, "test.cpp", "-std=c++14", "-I#{include}", "-L#{formula_opt_lib("armadillo")}",
                     "-larmadillo", "-o", "test"
   end
 end

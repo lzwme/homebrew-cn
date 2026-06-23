@@ -35,7 +35,7 @@ class Gpgme < Formula
       # avoid triggering mandatory rebuilds of software that hard-codes this path
       s.gsub! prefix, opt_prefix
       # replace libassuan Cellar paths to avoid breakage on libassuan version/revision bumps
-      s.gsub! Formula["libassuan"].prefix.realpath, Formula["libassuan"].opt_prefix
+      s.gsub! Formula["libassuan"].prefix.realpath, formula_opt_prefix("libassuan")
     end
   end
 

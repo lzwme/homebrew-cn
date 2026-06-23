@@ -37,7 +37,7 @@ class Portless < Formula
     ENV["PORTLESS_STATE_DIR"] = (testpath/".portless").to_s
     ENV["PORTLESS_HTTPS"] = "0"
 
-    pid = spawn bin/"portless", "myapp", Formula["node"].opt_bin/"node", server
+    pid = spawn bin/"portless", "myapp", formula_opt_bin("node")/"node", server
 
     begin
       output = shell_output("curl --silent --fail --retry-connrefused --retry 5 #{expected_url}")

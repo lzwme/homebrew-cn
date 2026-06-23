@@ -51,7 +51,7 @@ class Dmd < Formula
     dmd_make_args = %W[
       INSTALL_DIR=#{prefix}
       SYSCONFDIR=#{etc}
-      HOST_DMD=#{Formula["ldc"].opt_bin}/ldmd2
+      HOST_DMD=#{formula_opt_bin("ldc")}/ldmd2
       ENABLE_RELEASE=1
       VERBOSE=1
     ]

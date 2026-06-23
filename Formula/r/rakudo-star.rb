@@ -55,7 +55,7 @@ class RakudoStar < Formula
       --has-libffi
       --has-libtommath
       --has-mimalloc
-      --pkgconfig=#{Formula["pkgconf"].opt_bin}/pkgconf
+      --pkgconfig=#{formula_opt_bin("pkgconf")}/pkgconf
     ]
     # FIXME: brew `libuv` causes runtime failures on Linux, e.g.
     # "Cannot find method 'made' on object of type NQPMu"
@@ -68,7 +68,7 @@ class RakudoStar < Formula
     # Help Readline module find brew `readline` on Linux
     inreplace "src/rakudo-star-modules/Readline/lib/Readline.pm",
               %r{\((\n *)('/lib/x86_64-linux-gnu',)},
-              "(\\1'#{Formula["readline"].opt_lib}',\\1\\2"
+              "(\\1'#{formula_opt_lib("readline")}',\\1\\2"
 
     ENV.deparallelize # An intermittent race condition causes random build failures.
 
@@ -77,10 +77,10 @@ class RakudoStar < Formula
     ENV["NO_NETWORK_TESTING"] = "1"
 
     # Help DBIish module find sqlite shared library
-    ENV["DBIISH_SQLITE_LIB"] = Formula["sqlite"].opt_lib/shared_library("libsqlite3")
+    ENV["DBIISH_SQLITE_LIB"] = formula_opt_lib("sqlite")/shared_library("libsqlite3")
 
     # openssl module's brew --prefix openssl probe fails so set value here
-    ENV["OPENSSL_PREFIX"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl@3")
 
     rm buildpath.glob("src/rakudo-star-modules/**/*.o")
     system "bin/rstar", "install", "-p", prefix.to_s

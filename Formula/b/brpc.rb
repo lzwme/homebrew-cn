@@ -41,7 +41,7 @@ class Brpc < Formula
       -DDOWNLOAD_GTEST=OFF
       -DWITH_DEBUG_SYMBOLS=OFF
       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
-      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
+      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@3")}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

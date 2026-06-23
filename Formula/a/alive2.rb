@@ -53,7 +53,7 @@ class Alive2 < Formula
       int main(void) { return 0; }
     C
 
-    clang = Formula["llvm"].opt_bin/"clang"
+    clang = formula_opt_bin("llvm")/"clang"
     system clang, "-O3", "test.c", "-S", "-emit-llvm",
                   "-fpass-plugin=#{lib/shared_library("tv")}",
                   "-Xclang", "-load",

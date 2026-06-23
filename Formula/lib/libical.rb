@@ -57,7 +57,7 @@ class Libical < Formula
 
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lical-glib",
                    "-I#{Formula["glib"].opt_include}/glib-2.0",
-                   "-I#{Formula["glib"].opt_lib}/glib-2.0/include"
+                   "-I#{formula_opt_lib("glib")}/glib-2.0/include"
     system "./test"
   end
 end

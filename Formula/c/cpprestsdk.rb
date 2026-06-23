@@ -69,7 +69,7 @@ class Cpprestsdk < Formula
                     # Disable websockets feature due to https://github.com/zaphoyd/websocketpp/issues/1157
                     # Needs upstream response and fix in `websocketpp` formula (do not use bundled copy)
                     "-DCPPREST_EXCLUDE_WEBSOCKETS=ON",
-                    "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
+                    "-DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@3")}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

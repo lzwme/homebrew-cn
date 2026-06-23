@@ -48,7 +48,7 @@ class Mlpack < Formula
       -DUSE_OPENMP=OFF
       -DARMADILLO_INCLUDE_DIR=#{Formula["armadillo"].opt_include}
       -DENSMALLEN_INCLUDE_DIR=#{Formula["ensmallen"].opt_include}
-      -DARMADILLO_LIBRARY=#{Formula["armadillo"].opt_lib/shared_library("libarmadillo")}
+      -DARMADILLO_LIBRARY=#{formula_opt_lib("armadillo")/shared_library("libarmadillo")}
       -DSTB_IMAGE_INCLUDE_DIR=#{include}/stb
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
@@ -79,7 +79,7 @@ class Mlpack < Formula
         Log::Warn << "A false alarm!" << std::endl;
       }
     CPP
-    system ENV.cxx, "-std=c++17", "test.cpp", "-I#{include}", "-L#{Formula["armadillo"].opt_lib}",
+    system ENV.cxx, "-std=c++17", "test.cpp", "-I#{include}", "-L#{formula_opt_lib("armadillo")}",
                     "-larmadillo", "-L#{lib}", "-o", "test"
     system "./test", "--verbose"
   end

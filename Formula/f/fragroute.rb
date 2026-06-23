@@ -63,14 +63,14 @@ class Fragroute < Formula
       --prefix=#{prefix}
       --mandir=#{man}
       --sysconfdir=#{etc}
-      --with-libevent=#{Formula["libevent"].opt_prefix}
-      --with-libdnet=#{Formula["libdnet"].opt_prefix}
+      --with-libevent=#{formula_opt_prefix("libevent")}
+      --with-libdnet=#{formula_opt_prefix("libdnet")}
     ]
 
     args << if OS.mac?
       "--with-libpcap=#{MacOS.sdk_path}/usr"
     else
-      "--with-libpcap=#{Formula["libpcap"].opt_prefix}"
+      "--with-libpcap=#{formula_opt_prefix("libpcap")}"
     end
 
     system "./configure", *args

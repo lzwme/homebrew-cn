@@ -60,7 +60,7 @@ class Cp2k < Formula
     if OS.mac?
       args += %W[
         -DOpenMP_Fortran_LIB_NAMES=omp
-        -DOpenMP_omp_LIBRARY=#{Formula["libomp"].opt_lib}/libomp.dylib
+        -DOpenMP_omp_LIBRARY=#{formula_opt_lib("libomp")}/libomp.dylib
       ]
     end
 
@@ -73,7 +73,7 @@ class Cp2k < Formula
   test do
     if OS.mac?
       require "utils/linkage"
-      libgomp = Formula["gcc"].opt_lib/"gcc/current/libgomp.dylib"
+      libgomp = formula_opt_lib("gcc")/"gcc/current/libgomp.dylib"
       refute Utils.binary_linked_to_library?(lib/"libcp2k.dylib", libgomp), "Unwanted linkage to libgomp!"
     end
 

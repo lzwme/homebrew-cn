@@ -56,7 +56,7 @@ class Flex < Formula
 
   def install
     if build.head?
-      ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
+      ENV.prepend_path "PATH", formula_opt_libexec("gnu-sed")/"gnubin"
 
       system "./autogen.sh"
     end

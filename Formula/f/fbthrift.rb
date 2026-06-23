@@ -44,7 +44,7 @@ class Fbthrift < Formula
     # Issue ref: https://github.com/facebook/fbthrift/issues/607
     ENV.append "CXXFLAGS", "-fno-assume-unique-vtables" if DevelopmentTools.clang_build_version >= 1600
 
-    ENV["OPENSSL_ROOT_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_ROOT_DIR"] = formula_opt_prefix("openssl@3")
 
     # The static libraries are a bit annoying to build. If modifying this formula
     # to include them, make sure `bin/thrift1` links with the dynamic libraries
@@ -90,7 +90,7 @@ class Fbthrift < Formula
       cmake_minimum_required(VERSION 4.0)
       project(test LANGUAGES CXX)
 
-      list(APPEND CMAKE_MODULE_PATH "#{Formula["fizz"].opt_libexec}/cmake")
+      list(APPEND CMAKE_MODULE_PATH "#{formula_opt_libexec("fizz")}/cmake")
       list(APPEND CMAKE_MODULE_PATH "#{opt_libexec}/cmake")
       find_package(gflags REQUIRED)
       find_package(FBThrift CONFIG REQUIRED)

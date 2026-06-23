@@ -52,7 +52,7 @@ class SwiftProtobuf < Formula
         Flavor flavor = 2;
       }
     PROTO
-    system Formula["protobuf"].opt_bin/"protoc", "test.proto", "--swift_out=."
+    system formula_opt_bin("protobuf")/"protoc", "test.proto", "--swift_out=."
     assert_path_exists testpath/"test.pb.swift"
   end
 end

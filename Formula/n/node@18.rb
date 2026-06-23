@@ -79,8 +79,8 @@ class NodeAT18 < Formula
     system "make", "install"
   end
 
-  def post_install
-    (lib/"node_modules/npm/npmrc").atomic_write("prefix = #{HOMEBREW_PREFIX}\n")
+  post_install_steps do
+    write "lib/node_modules/npm/npmrc", "prefix = {{HOMEBREW_PREFIX}}\n", base: :prefix, overwrite: true
   end
 
   test do

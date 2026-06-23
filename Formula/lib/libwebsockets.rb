@@ -55,7 +55,7 @@ class Libwebsockets < Formula
         return 0;
       }
     C
-    system ENV.cc, "test.c", "-I#{Formula["openssl@3"].opt_prefix}/include",
+    system ENV.cc, "test.c", "-I#{formula_opt_prefix("openssl@3")}/include",
                    "-L#{lib}", "-lwebsockets", "-o", "test"
     system "./test"
   end

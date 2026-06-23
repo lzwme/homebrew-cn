@@ -32,8 +32,8 @@ class Pdnsrec < Formula
     args = %W[
       --sysconfdir=#{etc}/powerdns
       --disable-silent-rules
-      --with-boost=#{Formula["boost"].opt_prefix}
-      --with-libcrypto=#{Formula["openssl@3"].opt_prefix}
+      --with-boost=#{formula_opt_prefix("boost")}
+      --with-libcrypto=#{formula_opt_prefix("openssl@3")}
       --with-lua
       --without-net-snmp
     ]

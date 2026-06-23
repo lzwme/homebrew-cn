@@ -84,7 +84,7 @@ class HopenpgpTools < Formula
       %commit
     GPG
 
-    gpg = Formula["gnupg"].opt_bin/"gpg"
+    gpg = formula_opt_bin("gnupg")/"gpg"
     begin
       system gpg, "--batch", "--gen-key", "batch.gpg"
       output = pipe_output("#{bin}/hokey lint", shell_output("#{gpg} --export Testing"), 0)

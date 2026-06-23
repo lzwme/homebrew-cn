@@ -264,7 +264,7 @@ class Agda < Formula
   end
 
   test do
-    ENV.prepend_path "PATH", Formula["ghc@9.12"].opt_bin
+    ENV.prepend_path "PATH", formula_opt_bin("ghc@9.12")
 
     Pathname("#{Dir.home}/.config/agda").install_symlink opt_pkgshare/"example-libraries" => "libraries"
     Pathname("#{Dir.home}/.config/agda").install_symlink opt_pkgshare/"example-defaults" => "defaults"

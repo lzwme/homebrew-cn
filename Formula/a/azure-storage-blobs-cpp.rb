@@ -59,7 +59,7 @@ class AzureStorageBlobsCpp < Formula
     CPP
     system ENV.cxx, "-std=c++14", "test.cpp", "-o", "test",
                     "-L#{lib}", "-lazure-storage-blobs",
-                    "-L#{Formula["azure-core-cpp"].opt_lib}", "-lazure-core"
+                    "-L#{formula_opt_lib("azure-core-cpp")}", "-lazure-core"
     system "./test"
   end
 end

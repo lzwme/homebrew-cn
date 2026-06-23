@@ -49,7 +49,7 @@ class Scummvm < Formula
   end
 
   def install
-    system "./configure", "--enable-release", "--with-sdl-prefix=#{Formula["sdl3"].opt_prefix}", *std_configure_args
+    system "./configure", "--enable-release", "--with-sdl-prefix=#{formula_opt_prefix("sdl3")}", *std_configure_args
     system "make", "install"
 
     rm_r(share/"pixmaps")

@@ -54,9 +54,9 @@ class Hdf5AT110 < Formula
       --enable-fortran
       --enable-cxx
       --prefix=#{prefix}
-      --with-szlib=#{Formula["libaec"].opt_prefix}
+      --with-szlib=#{formula_opt_prefix("libaec")}
     ]
-    args << "--with-zlib=#{Formula["zlib"].opt_prefix}" if OS.linux?
+    args << "--with-zlib=#{formula_opt_prefix("zlib")}" if OS.linux?
 
     system "./configure", *args
 

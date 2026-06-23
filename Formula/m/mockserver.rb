@@ -1,8 +1,8 @@
 class Mockserver < Formula
   desc "Mock HTTP server and proxy"
   homepage "https://www.mock-server.com/"
-  url "https://search.maven.org/remotecontent?filepath=org/mock-server/mockserver-netty/7.1.0/mockserver-netty-7.1.0-brew-tar.tar"
-  sha256 "3015741b496cbbc6142df8634929914d9baa7b84b0a2b803d60a7371032a18c7"
+  url "https://search.maven.org/remotecontent?filepath=org/mock-server/mockserver-netty/7.2.0/mockserver-netty-7.2.0-brew-tar.tar"
+  sha256 "81159e955a146c879f462b844099749ed0ed78fc0358239eca80a4addcfe1d83"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class Mockserver < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "21bd2da989e54b5a3c75a15722521853005773f5e21cb15438a5577269c0199a"
+    sha256 cellar: :any_skip_relocation, all: "2a7e1ed4415d2a8fb55b0ca71133d2b74d7cec1870aa0aad78bb7cdebc9a4a79"
   end
 
   depends_on "openjdk"
@@ -19,7 +19,7 @@ class Mockserver < Formula
   def install
     inreplace "bin/run_mockserver.sh", "/usr/local", HOMEBREW_PREFIX
     libexec.install Dir["*"]
-    (bin/"mockserver").write_env_script libexec/"bin/run_mockserver.sh", JAVA_HOME: Formula["openjdk"].opt_prefix
+    (bin/"mockserver").write_env_script libexec/"bin/run_mockserver.sh", JAVA_HOME: formula_opt_prefix("openjdk")
 
     lib.install_symlink "#{libexec}/lib" => "mockserver"
 

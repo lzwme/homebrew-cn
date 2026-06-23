@@ -79,7 +79,7 @@ class Ekg2 < Formula
 
     args = %W[
       --enable-unicode
-      --with-readline=#{Formula["readline"].opt_prefix}
+      --with-readline=#{formula_opt_prefix("readline")}
       --without-gtk
       --without-libgadu
       --without-perl

@@ -13,13 +13,15 @@ class PythonAT311 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "22c7bc7c10968be23aaa88c655fc1befc6a1dba782a2ac64f3da2552cd2a0d22"
-    sha256 arm64_sequoia: "a9fa7c96cbedf914490bd462ad090ca39781bd1bba04d9f91051d46ad0a5eb99"
-    sha256 arm64_sonoma:  "aa008e3df26404e1690c59c6db9045cbae5c61d05b39d4b0b7fe861fae98c703"
-    sha256 sequoia:       "b566606b4064c26f304146dc0d16b60cb84c9159eb00bb946e6c948f9e8bd4e3"
-    sha256 sonoma:        "5ace5bed117fa34da4cdfd8b629ad00c5a0b281c487ec472c2f7e9b3b0134cb7"
-    sha256 arm64_linux:   "c2b85780c36fdfca490b0604b2e24ee95d3d4129fb524a9aefe30f24324eec9a"
-    sha256 x86_64_linux:  "7a6ad764d18f6e51252f9e2081d86d180c1a42b12fa077019327262a861cd12c"
+    rebuild 1
+    sha256 arm64_tahoe:   "3e3efcccdcedbbdd540f9ed6ee9a8de72e3fa931284705d67d7693116b737d95"
+    sha256 arm64_sequoia: "44e1973b742963cd7b13333b3a17f9e43f5f97aebc9136f1de1e711e99274c54"
+    sha256 arm64_sonoma:  "a0f59d5db5219048501fc07c3fbb618fba2e584d73f7f5c5f926b9365aae1025"
+    sha256 tahoe:         "17f34c4a7c1436c3ec1b1b56c51080c492d733ba04818dd02c5d64de3f1be0b9"
+    sha256 sequoia:       "ffae7789008c718842f0d31bde3b59829a2ba3419110e993403ed52f05cccc51"
+    sha256 sonoma:        "7b796f180175cb6e94168b9d2e7508da661587ebec9ba168e2e7091e1a587bda"
+    sha256 arm64_linux:   "516234504a18d9b05d4b3d18a68bbb7072c721b925ba656e64eb0faaf154f18d"
+    sha256 x86_64_linux:  "476447c0bbd53c6445bd00911954df4717dd8d1173cc0f953818866813c4bf36"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -38,7 +40,6 @@ class PythonAT311 < Formula
   uses_from_macos "libffi"
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
-  uses_from_macos "unzip"
 
   on_linux do
     depends_on "berkeley-db@5"
@@ -136,7 +137,7 @@ class PythonAT311 < Formula
       --datadir=#{share}
       --without-ensurepip
       --enable-loadable-sqlite-extensions
-      --with-openssl=#{Formula["openssl@3"].opt_prefix}
+      --with-openssl=#{formula_opt_prefix("openssl@3")}
       --enable-optimizations
       --with-system-expat
       --with-system-libmpdec
@@ -181,7 +182,7 @@ class PythonAT311 < Formula
     if OS.linux?
       inreplace "setup.py",
         /do_readline = self.compiler.find_library_file\(self.lib_dirs,\s*readline_lib\)/,
-        "do_readline = '#{Formula["libedit"].opt_lib/shared_library("libedit")}'"
+        "do_readline = '#{formula_opt_lib("libedit")/shared_library("libedit")}'"
     end
 
     if OS.linux?
@@ -199,7 +200,7 @@ class PythonAT311 < Formula
     # `brew install enchant && pip install pyenchant`
     inreplace "./Lib/ctypes/macholib/dyld.py" do |f|
       f.gsub! "DEFAULT_LIBRARY_FALLBACK = [",
-              "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}/lib', '#{Formula["openssl@3"].opt_lib}',"
+              "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}/lib', '#{formula_opt_lib("openssl@3")}',"
       f.gsub! "DEFAULT_FRAMEWORK_FALLBACK = [", "DEFAULT_FRAMEWORK_FALLBACK = [ '#{HOMEBREW_PREFIX}/Frameworks',"
     end
 

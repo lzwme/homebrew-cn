@@ -56,7 +56,7 @@ class Soplex < Formula
       shell_output("#{bin}/soplex test.lp -f0 -o0 --readmode=1 --solvemode=2")
 
     system ENV.cxx, pkgshare/"example.cpp", "-std=c++14", "-L#{lib}", "-I#{include}",
-      "-L#{Formula["gmp"].opt_lib}", "-L#{Formula["mpfr"].opt_lib}",
+      "-L#{formula_opt_lib("gmp")}", "-L#{formula_opt_lib("mpfr")}",
       "-lsoplex", "-lz", "-lgmp", "-lmpfr", "-o", "test"
     system "./test"
   end

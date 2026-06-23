@@ -38,7 +38,7 @@ class Gjs < Formula
     ENV["DESTDIR"] = "/"
 
     # work around "Failed to load shared library 'libgobject-2.0.0.dylib'"
-    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(target: Formula["glib"].opt_lib)}" if OS.mac?
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(target: formula_opt_lib("glib"))}" if OS.mac?
 
     args = %w[
       -Dprofiler=disabled

@@ -22,7 +22,7 @@ class Arcadedb < Formula
     libexec.install Dir["*"]
 
     env = {
-      JAVA_HOME:                 Formula["openjdk"].opt_prefix,
+      JAVA_HOME:                 formula_opt_prefix("openjdk"),
       ARCADEDB_HOME:             libexec,
       ARCADEDB_SERVER_ROOT_PATH: var/"arcadedb",
     }

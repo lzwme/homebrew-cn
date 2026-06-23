@@ -30,7 +30,7 @@ class Zabbix < Formula
       --enable-ipv6
       --with-libpcre2
       --sysconfdir=#{pkgetc}
-      --with-openssl=#{Formula["openssl@4"].opt_prefix}
+      --with-openssl=#{formula_opt_prefix("openssl@4")}
     ]
 
     if OS.mac?

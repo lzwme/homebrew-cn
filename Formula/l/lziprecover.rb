@@ -36,7 +36,7 @@ class Lziprecover < Formula
     path.write original_contents
 
     # Compress data into archive
-    system Formula["lzip"].opt_bin/"lzip", path
+    system formula_opt_bin("lzip")/"lzip", path
     refute_path_exists path
 
     # Corrupt the archive to test the recovery process

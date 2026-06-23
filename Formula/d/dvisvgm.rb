@@ -34,9 +34,9 @@ class Dvisvgm < Formula
   def install
     args = [
       "--disable-silent-rules",
-      "--with-texlive=#{Formula["texlive"].opt_prefix}",
+      "--with-texlive=#{formula_opt_prefix("texlive")}",
     ]
-    args << "--with-zlib=#{Formula["zlib-ng-compat"].opt_prefix}" if OS.linux?
+    args << "--with-zlib=#{formula_opt_prefix("zlib-ng-compat")}" if OS.linux?
 
     system "./configure", *args, *std_configure_args
     system "make"

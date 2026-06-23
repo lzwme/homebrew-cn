@@ -69,7 +69,7 @@ class GitInteractiveRebaseTool < Formula
     assert_equal expected_git_rebase_todo, todo_file.read
 
     [
-      Formula["libgit2"].opt_lib/shared_library("libgit2"),
+      formula_opt_lib("libgit2")/shared_library("libgit2"),
     ].each do |library|
       assert Utils.binary_linked_to_library?(bin/"interactive-rebase-tool", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."

@@ -35,7 +35,7 @@ class Libpulsar < Formula
     args = %W[
       -DBUILD_TESTS=OFF
       -DCMAKE_CXX_STANDARD=17
-      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
+      -DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@3")}
       -DUSE_ASIO=OFF
     ]
     # Avoid over-linkage to `abseil`.

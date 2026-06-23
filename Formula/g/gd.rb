@@ -48,13 +48,13 @@ class Gd < Formula
   def install
     system "./bootstrap.sh" if build.head?
     system "./configure", *std_configure_args,
-                          "--with-fontconfig=#{Formula["fontconfig"].opt_prefix}",
-                          "--with-freetype=#{Formula["freetype"].opt_prefix}",
-                          "--with-jpeg=#{Formula["jpeg-turbo"].opt_prefix}",
-                          "--with-avif=#{Formula["libavif"].opt_prefix}",
-                          "--with-png=#{Formula["libpng"].opt_prefix}",
-                          "--with-tiff=#{Formula["libtiff"].opt_prefix}",
-                          "--with-webp=#{Formula["webp"].opt_prefix}",
+                          "--with-fontconfig=#{formula_opt_prefix("fontconfig")}",
+                          "--with-freetype=#{formula_opt_prefix("freetype")}",
+                          "--with-jpeg=#{formula_opt_prefix("jpeg-turbo")}",
+                          "--with-avif=#{formula_opt_prefix("libavif")}",
+                          "--with-png=#{formula_opt_prefix("libpng")}",
+                          "--with-tiff=#{formula_opt_prefix("libtiff")}",
+                          "--with-webp=#{formula_opt_prefix("webp")}",
                           "--without-x",
                           "--without-xpm"
     system "make", "install"

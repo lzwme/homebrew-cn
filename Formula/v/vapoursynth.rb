@@ -44,7 +44,7 @@ class Vapoursynth < Formula
 
   def install
     ENV.runtime_cpu_detection if Hardware::CPU.intel?
-    ENV.prepend "LDFLAGS", "-L#{Formula["llvm"].opt_lib}/c++" if OS.mac? && MacOS.version <= :ventura
+    ENV.prepend "LDFLAGS", "-L#{formula_opt_lib("llvm")}/c++" if OS.mac? && MacOS.version <= :ventura
 
     # NOTE: Cannot `pip install` into prefix as VapourSynth expects a standard
     # installation and won't work with Homebrew's symlink directory structure.

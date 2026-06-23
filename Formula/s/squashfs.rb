@@ -44,14 +44,14 @@ class Squashfs < Formula
   def install
     args = %W[
       EXTRA_CFLAGS=-std=gnu99
-      LZ4_DIR=#{Formula["lz4"].opt_prefix}
+      LZ4_DIR=#{formula_opt_prefix("lz4")}
       LZ4_SUPPORT=1
-      LZO_DIR=#{Formula["lzo"].opt_prefix}
+      LZO_DIR=#{formula_opt_prefix("lzo")}
       LZO_SUPPORT=1
-      XZ_DIR=#{Formula["xz"].opt_prefix}
+      XZ_DIR=#{formula_opt_prefix("xz")}
       XZ_SUPPORT=1
       LZMA_XZ_SUPPORT=1
-      ZSTD_DIR=#{Formula["zstd"].opt_prefix}
+      ZSTD_DIR=#{formula_opt_prefix("zstd")}
       ZSTD_SUPPORT=1
       XATTR_SUPPORT=1
     ]
@@ -63,7 +63,7 @@ class Squashfs < Formula
       bin.install commands
     end
 
-    ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
+    ENV.prepend_path "PATH", formula_opt_libexec("gnu-sed")/"gnubin"
     mkdir_p man1
     cd "squashfs-tools/generate-manpages" do
       commands.each do |command|

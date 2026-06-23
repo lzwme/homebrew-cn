@@ -25,7 +25,7 @@ class Chronograf < Formula
   depends_on "kapacitor"
 
   def install
-    ENV["PKG_CONFIG"] = Formula["pkg-config-wrapper"].opt_bin/"pkg-config-wrapper"
+    ENV["PKG_CONFIG"] = formula_opt_bin("pkg-config-wrapper")/"pkg-config-wrapper"
     ENV["CGO_ENABLED"] = "1" if OS.linux?
     ENV["npm_config_build_from_source"] = "true"
 

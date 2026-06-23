@@ -32,12 +32,12 @@ class Tracebox < Formula
     unless OS.mac?
       ENV.cxx11 # work around error: reference to 'byte' is ambiguous
       ENV.append_to_cflags "-I#{Formula["libpcap"].opt_include}"
-      ENV.append "LDFLAGS", "-L#{Formula["libpcap"].opt_lib}"
+      ENV.append "LDFLAGS", "-L#{formula_opt_lib("libpcap")}"
     end
     # Work around limited `libpcap` and `lua` search paths in configure.ac
     ENV.append "LIBS", "-lpcap -lm"
     ENV["LUA_INCLUDE"] = "-I#{Formula["lua"].opt_include}/lua"
-    ENV["LUA_LIB"] = "-L#{Formula["lua"].opt_lib} -llua"
+    ENV["LUA_LIB"] = "-L#{formula_opt_lib("lua")} -llua"
 
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules",

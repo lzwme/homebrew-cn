@@ -43,7 +43,7 @@ class Cava < Formula
     inreplace "autogen.sh", "libtoolize", "glibtoolize"
 
     ENV.append "CPPFLAGS", "-I#{Formula["iniparser"].opt_include}/iniparser"
-    ENV.append "LDFLAGS", "-L#{Formula["iniparser"].opt_lib}"
+    ENV.append "LDFLAGS", "-L#{formula_opt_lib("iniparser")}"
 
     system "./autogen.sh"
     system "./configure", "--disable-silent-rules", *std_configure_args

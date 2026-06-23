@@ -190,10 +190,10 @@ class Backgroundremover < Formula
     # We depend on the formula below, but they are separate formula, so install a `.pth` file to link them.
     # NOTE: This is an exception to our usual policy as building them is complicated
     site_packages = Language::Python.site_packages(venv.root/"bin/python3")
-    torchvision_pth_contents = "import site; site.addsitedir('#{Formula["torchvision"].opt_libexec/site_packages}')\n"
+    torchvision_pth_contents = "import site; site.addsitedir('#{formula_opt_libexec("torchvision")/site_packages}')\n"
     (venv.site_packages/"homebrew-torchvision.pth").write torchvision_pth_contents
 
-    skimage_pth_contents = "import site; site.addsitedir('#{Formula["scikit-image"].opt_libexec/site_packages}')\n"
+    skimage_pth_contents = "import site; site.addsitedir('#{formula_opt_libexec("scikit-image")/site_packages}')\n"
     (venv.site_packages/"homebrew-scikit-image.pth").write skimage_pth_contents
   end
 

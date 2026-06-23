@@ -71,7 +71,7 @@ class Mupdf < Formula
 
     # For python bindings needed by `pymupdf`: https://pymupdf.readthedocs.io/en/latest/packaging.html
     site_packages = Language::Python.site_packages("python3.14")
-    ENV.prepend_path "PYTHONPATH", Formula["llvm"].opt_prefix/site_packages
+    ENV.prepend_path "PYTHONPATH", formula_opt_prefix("llvm")/site_packages
 
     args = %W[
       build=release

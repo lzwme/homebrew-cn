@@ -69,7 +69,7 @@ class Duck < Formula
           libffi_libdir = if MacOS.version >= :monterey
             MacOS.sdk_path/"usr/lib"
           else
-            Formula["libffi"].opt_lib
+            formula_opt_lib("libffi")
           end
           # Add linker flags for libffi because Makefile call to pkg-config doesn't seem to work properly.
           s.change_make_var! "LIBS", "-L#{libffi_libdir} -lffi"

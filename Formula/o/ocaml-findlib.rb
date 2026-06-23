@@ -57,7 +57,7 @@ class OcamlFindlib < Formula
       open Findlib;;
       Findlib.init();
     OCAML
-    system Formula["ocaml"].opt_bin/"ocamlopt", "-I", lib/"ocaml/findlib", "-o", "test", "findlib.cmxa", "test.ml"
+    system formula_opt_bin("ocaml")/"ocamlopt", "-I", lib/"ocaml/findlib", "-o", "test", "findlib.cmxa", "test.ml"
     system "./test"
   end
 end

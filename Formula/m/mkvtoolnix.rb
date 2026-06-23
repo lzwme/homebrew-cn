@@ -69,15 +69,15 @@ class Mkvtoolnix < Formula
     extra_libs = ""
     features.each do |feature|
       extra_includes << "#{Formula[feature].opt_include};"
-      extra_libs << "#{Formula[feature].opt_lib};"
+      extra_libs << "#{formula_opt_lib(feature)};"
     end
     extra_includes << "#{Formula["utf8cpp"].opt_include}/utf8cpp;"
     extra_includes.chop!
     extra_libs.chop!
 
     system "./autogen.sh" if build.head?
-    system "./configure", "--with-boost=#{Formula["boost"].opt_prefix}",
-                          "--with-docbook-xsl-root=#{Formula["docbook-xsl"].opt_prefix}/docbook-xsl",
+    system "./configure", "--with-boost=#{formula_opt_prefix("boost")}",
+                          "--with-docbook-xsl-root=#{formula_opt_prefix("docbook-xsl")}/docbook-xsl",
                           "--with-extra-includes=#{extra_includes}",
                           "--with-extra-libs=#{extra_libs}",
                           "--disable-gui",

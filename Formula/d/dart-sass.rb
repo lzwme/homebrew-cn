@@ -56,7 +56,7 @@ class DartSass < Formula
 
     (bin/"sass").write <<~BASH
       #!/bin/bash
-      exec "#{Formula["dartaotruntime"].opt_bin}/dartaotruntime" "#{libexec}/sass.aot" "$@"
+      exec "#{formula_opt_bin("dartaotruntime")}/dartaotruntime" "#{libexec}/sass.aot" "$@"
     BASH
   end
 

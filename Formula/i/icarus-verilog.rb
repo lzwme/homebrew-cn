@@ -40,7 +40,7 @@ class IcarusVerilog < Formula
   def install
     system "autoconf"
     system "./configure", "--prefix=#{prefix}"
-    system "make", "install", "BISON=#{Formula["bison"].opt_bin}/bison"
+    system "make", "install", "BISON=#{formula_opt_bin("bison")}/bison"
   end
 
   test do

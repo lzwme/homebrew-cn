@@ -56,7 +56,7 @@ class ProtocGenGrpcSwift < Formula
         string text = 1;
       }
     PROTO
-    system Formula["protobuf"].opt_bin/"protoc", "echo.proto", "--grpc-swift-2_out=."
+    system formula_opt_bin("protobuf")/"protoc", "echo.proto", "--grpc-swift-2_out=."
     assert_path_exists testpath/"echo.grpc.swift"
   end
 end

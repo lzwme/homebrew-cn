@@ -36,7 +36,7 @@ class Kuttl < Formula
     assert_match version.to_s, version_output
     assert_match stable.specs[:revision].to_s, version_output
 
-    kubectl = Formula["kubernetes-cli"].opt_bin / "kubectl"
+    kubectl = formula_opt_bin("kubernetes-cli") / "kubectl"
     assert_equal version_output, shell_output("#{kubectl} kuttl version")
 
     (testpath / "kuttl-test.yaml").write <<~YAML

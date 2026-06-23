@@ -43,8 +43,8 @@ class KyotoTycoon < Formula
     ENV.append_to_cflags "-fpermissive" if OS.linux?
     ENV.append "CXXFLAGS", "-std=c++98"
     system "./configure", "--prefix=#{prefix}",
-                          "--with-kc=#{Formula["kyoto-cabinet"].opt_prefix}",
-                          "--with-lua=#{Formula["lua"].opt_prefix}"
+                          "--with-kc=#{formula_opt_prefix("kyoto-cabinet")}",
+                          "--with-lua=#{formula_opt_prefix("lua")}"
     system "make"
     system "make", "install"
   end

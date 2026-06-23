@@ -20,7 +20,7 @@ class SalesforceMcp < Formula
     # TODO: check formula works with nock@14 and then recover npm install.
     system "npm", "ci", "--omit=dev", "--ignore-scripts"
     libexec.install Dir["*"]
-    (bin/"sf-mcp-server").write_env_script libexec/"bin/run.js", PATH: "#{Formula["node"].opt_bin}:$PATH"
+    (bin/"sf-mcp-server").write_env_script libexec/"bin/run.js", PATH: "#{formula_opt_bin("node")}:$PATH"
   end
 
   test do

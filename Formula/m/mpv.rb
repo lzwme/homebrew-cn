@@ -102,7 +102,7 @@ class Mpv < Formula
     # `pkg-config --libs mpv` includes libarchive, but that package is
     # keg-only so it needs to look for the pkgconfig file in libarchive's opt
     # path.
-    libarchive = Formula["libarchive"].opt_prefix
+    libarchive = formula_opt_prefix("libarchive")
     inreplace lib/"pkgconfig/mpv.pc",
               /^Requires\.private:(.*)\blibarchive\b(.*?)(,.*)?$/,
               "Requires.private:\\1#{libarchive}/lib/pkgconfig/libarchive.pc\\3"

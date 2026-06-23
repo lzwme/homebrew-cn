@@ -39,7 +39,7 @@ class ErlangLanguagePlatform < Formula
     system "cargo", *build_args, *std_cargo_args.reject { |arg| arg["--root"] || arg["--path"] }
     bin.install "target/release/elp"
     generate_completions_from_executable(bin/"elp", "generate-completions")
-    bin.env_script_all_files libexec, PATH: "#{Formula["erlang@28"].opt_bin}:${PATH}"
+    bin.env_script_all_files libexec, PATH: "#{formula_opt_bin("erlang@28")}:${PATH}"
   end
 
   test do

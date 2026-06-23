@@ -1,9 +1,9 @@
 class TomcatAT10 < Formula
   desc "Implementation of Java Servlet and JavaServer Pages"
   homepage "https://tomcat.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=tomcat/tomcat-10/v10.1.55/bin/apache-tomcat-10.1.55.tar.gz"
-  mirror "https://archive.apache.org/dist/tomcat/tomcat-10/v10.1.55/bin/apache-tomcat-10.1.55.tar.gz"
-  sha256 "978a0d0890345eec52a38c9670a8e112d4cc8cf8cb10ef41d05d6b7178857495"
+  url "https://www.apache.org/dyn/closer.lua?path=tomcat/tomcat-10/v10.1.56/bin/apache-tomcat-10.1.56.tar.gz"
+  mirror "https://archive.apache.org/dist/tomcat/tomcat-10/v10.1.56/bin/apache-tomcat-10.1.56.tar.gz"
+  sha256 "4001c41d036752daa6cccca22ec45bbbc55a58b41f9fa301088b9b1f9fa6991d"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class TomcatAT10 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b85eae258e6810dbb90e1582b150be8490f560ebf7e3c0d49ac88cec5b681ec0"
+    sha256 cellar: :any_skip_relocation, all: "fd5b460a92b030c72ae1924df3a2b52eb7f3d83ce060c31eab608039b778662f"
   end
 
   keg_only :versioned_formula
@@ -30,7 +30,7 @@ class TomcatAT10 < Formula
     libexec.install_symlink pkgetc => "conf"
 
     libexec.install Dir["*"]
-    (bin/"catalina").write_env_script "#{libexec}/bin/catalina.sh", JAVA_HOME: Formula["openjdk"].opt_prefix
+    (bin/"catalina").write_env_script "#{libexec}/bin/catalina.sh", JAVA_HOME: formula_opt_prefix("openjdk")
   end
 
   def caveats

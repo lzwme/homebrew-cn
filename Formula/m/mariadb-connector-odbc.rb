@@ -33,12 +33,12 @@ class MariadbConnectorOdbc < Formula
 
   def install
     ENV.append_to_cflags "-I#{Formula["mariadb-connector-c"].opt_include}/mariadb"
-    ENV.append "LDFLAGS", "-L#{Formula["mariadb-connector-c"].opt_lib}/mariadb"
-    ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["mariadb-connector-c"].opt_lib}/mariadb" if OS.linux?
+    ENV.append "LDFLAGS", "-L#{formula_opt_lib("mariadb-connector-c")}/mariadb"
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{formula_opt_lib("mariadb-connector-c")}/mariadb" if OS.linux?
     args = [
       "-DMARIADB_LINK_DYNAMIC=1",
       "-DWITH_SSL=OPENSSL",
-      "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
+      "-DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@3")}",
       "-DWITH_IODBC=0",
       "-DICONV_INCLUDE_DIR=/usr/include",
     ]
@@ -59,7 +59,7 @@ class MariadbConnectorOdbc < Formula
   end
 
   test do
-    output = shell_output("#{Formula["unixodbc"].opt_bin}/dltest #{lib}/mariadb/#{shared_library("libmaodbc")}")
+    output = shell_output("#{formula_opt_bin("unixodbc")}/dltest #{lib}/mariadb/#{shared_library("libmaodbc")}")
     assert_equal "SUCCESS: Loaded #{lib}/mariadb/#{shared_library("libmaodbc")}", output.chomp
   end
 end

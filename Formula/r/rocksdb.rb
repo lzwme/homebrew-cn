@@ -80,9 +80,9 @@ class Rocksdb < Formula
                                 *extra_args,
                                 "-lz", "-lbz2",
                                 "-L#{lib}", "-lrocksdb",
-                                "-L#{Formula["snappy"].opt_lib}", "-lsnappy",
-                                "-L#{Formula["lz4"].opt_lib}", "-llz4",
-                                "-L#{Formula["zstd"].opt_lib}", "-lzstd"
+                                "-L#{formula_opt_lib("snappy")}", "-lsnappy",
+                                "-L#{formula_opt_lib("lz4")}", "-llz4",
+                                "-L#{formula_opt_lib("zstd")}", "-lzstd"
     system "./db_test"
 
     assert_match "sst_dump <db_dirs_OR_sst_files...>", shell_output("#{bin}/rocksdb_sst_dump --help 2>&1")

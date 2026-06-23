@@ -50,7 +50,7 @@ class AstrometryNet < Formula
 
     ENV["FITSIO_USE_SYSTEM_FITSIO"] = "1"
     ENV["NETPBM_INC"] = "-I#{Formula["netpbm"].opt_include}/netpbm"
-    ENV["NETPBM_LIB"] = "-L#{Formula["netpbm"].opt_lib} -lnetpbm"
+    ENV["NETPBM_LIB"] = "-L#{formula_opt_lib("netpbm")} -lnetpbm"
     ENV["SYSTEM_GSL"] = "yes"
     ENV["PYTHON"] = python3 = which("python3.14")
 

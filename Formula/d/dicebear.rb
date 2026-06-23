@@ -53,7 +53,7 @@ class Dicebear < Formula
 
     require "utils/linkage"
     sharp = libexec.glob("lib/node_modules/dicebear/node_modules/sharp/src/build/Release/sharp-*.node").first
-    libvips = Formula["vips"].opt_lib/shared_library("libvips")
+    libvips = formula_opt_lib("vips")/shared_library("libvips")
     assert sharp && Utils.binary_linked_to_library?(sharp, libvips),
            "No linkage with #{libvips.basename}! Sharp is likely using a prebuilt version."
   end

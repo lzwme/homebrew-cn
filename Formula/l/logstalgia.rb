@@ -39,7 +39,7 @@ class Logstalgia < Formula
 
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules",
-                          "--with-boost-libdir=#{Formula["boost"].opt_lib}",
+                          "--with-boost-libdir=#{formula_opt_lib("boost")}",
                           *std_configure_args
     system "make"
     system "make", "install"

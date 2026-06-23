@@ -55,7 +55,7 @@ class NeovimRemote < Formula
     file = testpath/"test.txt"
 
     nvim = spawn(
-      Formula["neovim"].opt_bin/"nvim", "--headless", "-i", "NONE", "-u", "NONE", "--listen", socket, file,
+      formula_opt_bin("neovim")/"nvim", "--headless", "-i", "NONE", "-u", "NONE", "--listen", socket, file,
       [:out, :err] => "/dev/null"
     )
     sleep 1 until socket.exist? && socket.socket?

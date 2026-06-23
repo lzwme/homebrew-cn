@@ -92,7 +92,7 @@ class Rpm < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
 
     resource("rpm-sequoia").stage do |r|
       with_env(PREFIX: prefix) do
@@ -115,7 +115,7 @@ class Rpm < Formula
 
     # ensure that pkg-config binary is found for dep generators
     inreplace "scripts/pkgconfigdeps.sh",
-              "/usr/bin/pkg-config", Formula["pkgconf"].opt_bin/"pkg-config"
+              "/usr/bin/pkg-config", formula_opt_bin("pkgconf")/"pkg-config"
 
     # work around Homebrew's prefix scheme which sets Python3_SITEARCH outside of prefix
     site_packages = prefix/Language::Python.site_packages(python3)

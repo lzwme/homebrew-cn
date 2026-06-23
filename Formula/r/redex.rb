@@ -55,7 +55,7 @@ class Redex < Formula
 
   def install
     zlib_home = if OS.linux?
-      Formula["zlib-ng-compat"].opt_prefix
+      formula_opt_prefix("zlib-ng-compat")
     else
       MacOS.sdk_for_formula(self).path/"usr"
     end

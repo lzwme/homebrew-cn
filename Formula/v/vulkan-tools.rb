@@ -56,13 +56,13 @@ class VulkanTools < Formula
       "-DBUILD_CUBE=ON",
       "-DBUILD_VULKANINFO=ON",
       "-DINSTALL_ICD=OFF", # we will manually place it in a nonconflicting location
-      "-DGLSLANG_INSTALL_DIR=#{Formula["glslang"].opt_prefix}",
-      "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].opt_prefix}",
-      "-DVULKAN_LOADER_INSTALL_DIR=#{Formula["vulkan-loader"].opt_prefix}",
-      "-DCMAKE_INSTALL_RPATH=#{rpath(target: Formula["vulkan-loader"].opt_lib)}",
+      "-DGLSLANG_INSTALL_DIR=#{formula_opt_prefix("glslang")}",
+      "-DVULKAN_HEADERS_INSTALL_DIR=#{formula_opt_prefix("vulkan-headers")}",
+      "-DVULKAN_LOADER_INSTALL_DIR=#{formula_opt_prefix("vulkan-loader")}",
+      "-DCMAKE_INSTALL_RPATH=#{rpath(target: formula_opt_lib("vulkan-loader"))}",
     ]
     args += if OS.mac?
-      ["-DMOLTENVK_REPO_ROOT=#{Formula["molten-vk"].opt_prefix}"]
+      ["-DMOLTENVK_REPO_ROOT=#{formula_opt_prefix("molten-vk")}"]
     else
       [
         "-DBUILD_WSI_DIRECTFB_SUPPORT=OFF",
@@ -81,8 +81,8 @@ class VulkanTools < Formula
     return unless OS.mac?
 
     targets = [
-      Formula["molten-vk"].opt_lib/shared_library("libMoltenVK"),
-      Formula["vulkan-loader"].opt_lib/shared_library("libvulkan", Formula["vulkan-loader"].version.to_s),
+      formula_opt_lib("molten-vk")/shared_library("libMoltenVK"),
+      formula_opt_lib("vulkan-loader")/shared_library("libvulkan", Formula["vulkan-loader"].version.to_s),
     ]
     prefix.glob("cube/*.app/Contents/Frameworks").each do |framework_dir|
       ln_sf targets, framework_dir, verbose: true

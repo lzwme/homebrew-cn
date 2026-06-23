@@ -37,7 +37,7 @@ class Convco < Formula
 
     # Verify that we are using the libgit2 library
     require "utils/linkage"
-    library = Formula["libgit2"].opt_lib/shared_library("libgit2")
+    library = formula_opt_lib("libgit2")/shared_library("libgit2")
     assert Utils.binary_linked_to_library?(bin/"convco", library),
            "No linkage with #{library.basename}! Cargo is likely using a vendored version."
   end

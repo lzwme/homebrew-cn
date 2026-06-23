@@ -45,7 +45,7 @@ class Ykpers < Formula
 
     args = %W[
       --disable-silent-rules
-      --with-libyubikey-prefix=#{Formula["libyubikey"].opt_prefix}
+      --with-libyubikey-prefix=#{formula_opt_prefix("libyubikey")}
     ]
     args << if OS.mac?
       "--with-backend=osx"

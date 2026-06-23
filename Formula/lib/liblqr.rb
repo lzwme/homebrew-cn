@@ -59,7 +59,7 @@ class Liblqr < Formula
     system ENV.cc, "test.c", "-o", "test",
                    "-I#{include}/lqr-1",
                    "-I#{Formula["glib"].opt_include}/glib-2.0",
-                   "-I#{Formula["glib"].opt_lib}/glib-2.0/include",
+                   "-I#{formula_opt_lib("glib")}/glib-2.0/include",
                    "-L#{lib}", "-llqr-1"
     system "./test"
   end

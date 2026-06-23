@@ -57,8 +57,8 @@ class Grok < Formula
     if OS.linux?
       ENV.append "EXTRA_CFLAGS", "-fcommon"
       ENV.append "EXTRA_CFLAGS", "-I#{Formula["libtirpc"].opt_include}/tirpc"
-      ENV.append "EXTRA_LDFLAGS", "-L#{Formula["libtirpc"].opt_lib} -ltirpc"
-      ENV["GPERF"] = Formula["gperf"].opt_bin/"gperf"
+      ENV.append "EXTRA_LDFLAGS", "-L#{formula_opt_lib("libtirpc")} -ltirpc"
+      ENV["GPERF"] = formula_opt_bin("gperf")/"gperf"
     end
 
     # Race condition in generating grok_capture_xdr.h

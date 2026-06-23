@@ -31,7 +31,7 @@ class AwsCrtCpp < Formula
     args = %W[
       -DBUILD_DEPS=OFF
       -DBUILD_SHARED_LIBS=ON
-      -DCMAKE_MODULE_PATH=#{Formula["aws-c-common"].opt_lib}/cmake
+      -DCMAKE_MODULE_PATH=#{formula_opt_lib("aws-c-common")}/cmake
     ]
     # Avoid linkage to `aws-c-compression`
     args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac?

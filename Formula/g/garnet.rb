@@ -73,7 +73,7 @@ class Garnet < Formula
     end
     sleep 3
 
-    output = shell_output("#{Formula["valkey"].opt_bin}/valkey-cli -h 127.0.0.1 -p #{port} ping")
+    output = shell_output("#{formula_opt_bin("valkey")}/valkey-cli -h 127.0.0.1 -p #{port} ping")
     assert_equal "PONG", output.strip
   end
 end

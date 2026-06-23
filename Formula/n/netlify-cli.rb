@@ -51,7 +51,7 @@ class NetlifyCli < Formula
       linux_dir = clipboardy_fallbacks_dir/"linux"
       linux_dir.mkpath
       # Replace the vendored pre-built xsel with one we build ourselves
-      ln_sf (Formula["xsel"].opt_bin/"xsel").relative_path_from(linux_dir), linux_dir
+      ln_sf (formula_opt_bin("xsel")/"xsel").relative_path_from(linux_dir), linux_dir
     end
 
     # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-url` binaries
@@ -66,7 +66,7 @@ class NetlifyCli < Formula
 
     require "utils/linkage"
     sharp = libexec.glob("lib/node_modules/netlify-cli/node_modules/sharp/src/build/Release/sharp-*.node").first
-    libvips = Formula["vips"].opt_lib/shared_library("libvips")
+    libvips = formula_opt_lib("vips")/shared_library("libvips")
     assert sharp && Utils.binary_linked_to_library?(sharp, libvips),
            "No linkage with #{libvips.basename}! Sharp is likely using a prebuilt version."
   end

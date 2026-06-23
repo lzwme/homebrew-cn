@@ -62,7 +62,7 @@ class EtcdCppApiv3 < Formula
                     "-DCMAKE_CXX_STANDARD_REQUIRED=TRUE",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
                     "-DBUILD_ETCD_TESTS=OFF",
-                    "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
+                    "-DOPENSSL_ROOT_DIR=#{formula_opt_prefix("openssl@3")}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -105,7 +105,7 @@ class EtcdCppApiv3 < Formula
 
     # prepare etcd
     etcd_pid = spawn(
-      Formula["etcd"].opt_bin/"etcd",
+      formula_opt_bin("etcd")/"etcd",
       "--force-new-cluster",
       "--data-dir=#{testpath}",
       "--listen-client-urls=http://127.0.0.1:#{port}",

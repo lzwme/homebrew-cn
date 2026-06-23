@@ -38,7 +38,7 @@ class Rustnet < Formula
       # dir that we place first on PATH; regular C compiles still go through
       # Homebrew's gcc as intended.
       (buildpath/"bpf-clang").mkpath
-      (buildpath/"bpf-clang"/"clang").make_symlink Formula["llvm"].opt_bin/"clang"
+      (buildpath/"bpf-clang"/"clang").make_symlink formula_opt_bin("llvm")/"clang"
       ENV.prepend_path "PATH", buildpath/"bpf-clang"
     end
 

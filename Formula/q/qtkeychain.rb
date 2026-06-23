@@ -41,14 +41,14 @@ class Qtkeychain < Formula
     flags = ["-I#{Formula["qtbase"].opt_include}"]
     flags += if OS.mac?
       [
-        "-F#{Formula["qtbase"].opt_lib}",
+        "-F#{formula_opt_lib("qtbase")}",
         "-framework", "QtCore"
       ]
     else
       [
         "-fPIC",
-        "-L#{Formula["qtbase"].opt_lib}", "-lQt6Core",
-        "-Wl,-rpath,#{Formula["qtbase"].opt_lib}",
+        "-L#{formula_opt_lib("qtbase")}", "-lQt6Core",
+        "-Wl,-rpath,#{formula_opt_lib("qtbase")}",
         "-Wl,-rpath,#{lib}"
       ]
     end

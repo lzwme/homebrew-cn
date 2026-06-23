@@ -69,7 +69,7 @@ class MscGenerator < Formula
     if OS.mac?
       args << "OBJCXX=/usr/bin/clang++"
       ENV.append_to_cflags "-DNDEBUG"
-      ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
+      ENV.prepend_path "PATH", formula_opt_libexec("gnu-sed")/"gnubin"
       ENV["MAKE"] = make = "gmake"
     end
 

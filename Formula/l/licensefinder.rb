@@ -42,7 +42,7 @@ class Licensefinder < Formula
 
   test do
     ENV["GEM_PATH"] = ENV["GEM_HOME"] = testpath
-    ENV.prepend_path "PATH", Formula["ruby"].opt_bin
+    ENV.prepend_path "PATH", formula_opt_bin("ruby")
 
     (testpath/"Gemfile").write <<~RUBY
       source 'https://rubygems.org'

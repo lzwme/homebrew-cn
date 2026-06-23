@@ -40,7 +40,7 @@ class Ponysay < Formula
            "--prefix=#{prefix}",
            "--cache-dir=#{prefix}/var/cache",
            "--sysconf-dir=#{prefix}/etc",
-           "--with-custom-env-python=#{Formula["python@3.14"].opt_bin}/python3.14",
+           "--with-custom-env-python=#{formula_opt_bin("python@3.14")}/python3.14",
            "install"
   end
 

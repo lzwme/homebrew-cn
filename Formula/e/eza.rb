@@ -60,7 +60,7 @@ class Eza < Formula
     assert_equal "--", eza_output.call
 
     require "utils/linkage"
-    library = Formula["libgit2"].opt_lib/shared_library("libgit2")
+    library = formula_opt_lib("libgit2")/shared_library("libgit2")
     assert Utils.binary_linked_to_library?(bin/"eza", library),
            "No linkage with #{library.basename}! Cargo is likely using a vendored version."
   end

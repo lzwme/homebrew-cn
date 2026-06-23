@@ -109,7 +109,7 @@ class Pyqt < Formula
     # HACK: there is no option to set the plugindir
     inreplace "project.py", "builder.qt_configuration['QT_INSTALL_PLUGINS']", "'#{share}/qt/plugins'"
 
-    sip_install = Formula["pyqt-builder"].opt_libexec/"bin/sip-install"
+    sip_install = formula_opt_libexec("pyqt-builder")/"bin/sip-install"
     site_packages = prefix/Language::Python.site_packages(python3)
     args = %W[
       --target-dir #{site_packages}

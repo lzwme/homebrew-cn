@@ -7,11 +7,6 @@ class Pypy310 < Formula
   revision 1
   head "https://github.com/pypy/pypy.git", branch: "main"
 
-  livecheck do
-    url "https://downloads.python.org/pypy/"
-    regex(/href=.*?pypy3\.10[._-]v?(\d+(?:\.\d+)+)-src\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "de425a276a64d92a0e2d69d589753d119733d0e3cc18aa985ae329aaf1bfa910"
     sha256 cellar: :any,                 arm64_sequoia: "311b947a1528ae90983edc2176864a00865fb678c13c2286efe24075463a1796"
@@ -22,6 +17,10 @@ class Pypy310 < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "6c838f8f2bde36ec834a8d390cd441e75aec83b1cc21126e8e974e05024a5d09"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4032a756625270ffb7945d97b0116ac7e9acb1e5731eab7590241874f2fb12d"
   end
+
+  # PyPy 3.10 was dropped in 7.3.20 and source tarballs have been removed
+  deprecate! date: "2026-06-22", because: :does_not_build
+  disable! date: "2027-06-22", because: :does_not_build
 
   depends_on "pkgconf" => :build
   depends_on "pypy" => :build
@@ -95,7 +94,7 @@ class Pypy310 < Formula
     ENV["PYTHONPATH"] = nil
     ENV["PYPY_USESSION_DIR"] = buildpath
 
-    python = Formula["pypy"].opt_bin/"pypy"
+    python = formula_opt_bin("pypy")/"pypy"
     cd "pypy/goal" do
       system python, buildpath/"rpython/bin/rpython",
              "-Ojit", "--shared", "--cc", ENV.cc, "--verbose",

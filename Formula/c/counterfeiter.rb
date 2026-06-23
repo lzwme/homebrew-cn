@@ -27,7 +27,7 @@ class Counterfeiter < Formula
   end
 
   test do
-    ENV["GOROOT"] = Formula["go"].opt_libexec
+    ENV["GOROOT"] = formula_opt_libexec("go")
 
     output = shell_output("#{bin}/counterfeiter -p os 2>&1")
     assert_path_exists testpath/"osshim"

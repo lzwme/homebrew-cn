@@ -46,10 +46,10 @@ class Reprepro < Formula
   def install
     system "./autogen.sh"
     system "./configure", "--disable-silent-rules",
-                          "--with-gpgme=#{Formula["gpgme"].opt_lib}",
-                          "--with-libarchive=#{Formula["libarchive"].opt_lib}",
+                          "--with-gpgme=#{formula_opt_lib("gpgme")}",
+                          "--with-libarchive=#{formula_opt_lib("libarchive")}",
                           "--with-libbz2=yes",
-                          "--with-liblzma=#{Formula["xz"].opt_lib}",
+                          "--with-liblzma=#{formula_opt_lib("xz")}",
                           *std_configure_args
     system "make", "install"
   end
