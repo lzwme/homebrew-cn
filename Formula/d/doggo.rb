@@ -1,18 +1,18 @@
 class Doggo < Formula
   desc "Command-line DNS Client for Humans"
   homepage "https://doggo.mrkaran.dev/"
-  url "https://ghfast.top/https://github.com/mr-karan/doggo/archive/refs/tags/v1.1.7.tar.gz"
-  sha256 "2aca54791810246bcc90380f194c2141392f7596c5f17734a6b20bf85a3d7384"
+  url "https://ghfast.top/https://github.com/mr-karan/doggo/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "ddea7da5f8e6263626ffbff57e3df5e84df4343a740b2f7a8dae2505aae645d9"
   license "GPL-3.0-or-later"
   head "https://github.com/mr-karan/doggo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d71e5f1f0343b075d9186fada93a221f6f098ca0fecf9671a78f4bb6e1591350"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d71e5f1f0343b075d9186fada93a221f6f098ca0fecf9671a78f4bb6e1591350"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d71e5f1f0343b075d9186fada93a221f6f098ca0fecf9671a78f4bb6e1591350"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a7e605d612639687d7c2de94d89e64080ce64377e65ae5963b3422ad94b2e7e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "70077a8f23d0090ba3dba9c928a6dba8a57dbebfa9871e99cc56b60e97acbaff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d1c045bc7b9ab9d2552ebcb8d43f425ab1b199f8f1c5a9355eb66f65010a9b0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c27a8992a155bbb40488dd2e0edd3f24bf017ab3823636182e2914017e31df4d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c27a8992a155bbb40488dd2e0edd3f24bf017ab3823636182e2914017e31df4d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c27a8992a155bbb40488dd2e0edd3f24bf017ab3823636182e2914017e31df4d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aee4c24d881c0b314301487ee2102fc47f9fcfd90ce609cafdf9e6bf52f7fbba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e53d055595dd3c8d489df2f789ac081bb8ebebde43efca842028d939fb91bfd"
+    sha256 cellar: :any,                 x86_64_linux:  "ac1a5ee3f873e292f60c4e33088036bbd93ddfc286175ed88ad4bdb41d5d20e9"
   end
 
   depends_on "go" => :build

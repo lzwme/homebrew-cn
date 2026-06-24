@@ -4,18 +4,16 @@ class Blockhash < Formula
   url "https://ghfast.top/https://github.com/commonsmachinery/blockhash/archive/refs/tags/v0.3.3.tar.gz"
   sha256 "3c48af7bdb1f673b2f3c9f8c0bfa9107a7019b54ac3b4e30964bc0707debdd3a"
   license "MIT"
-  revision 4
+  revision 5
   head "https://github.com/commonsmachinery/blockhash.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "67363b29a30df42d320f72595bd81ce0dc7e41ec7cf0ec5f620bc90e6256a681"
-    sha256 cellar: :any,                 arm64_sequoia: "da404e78c996ce8a8cc0f39fb53c7b98de1df04a20f3f04224ef34d181d427e1"
-    sha256 cellar: :any,                 arm64_sonoma:  "570d07a44d4c376152581378e09887c872ff761622c559dce4018466cb964c69"
-    sha256 cellar: :any,                 arm64_ventura: "702e383c365b207cb2100d72858ce30f40535e68122958bbb983d5f40052ebcd"
-    sha256 cellar: :any,                 sonoma:        "549ec4cab23c30f91e09ac9bb552be96444915ded6cf8b038e215cb7a0396b16"
-    sha256 cellar: :any,                 ventura:       "45c797c6b7554516ad75039b09aea8531253ab81c1a958bf55a1710fc0de5be2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "04e18532865185d071a00a063393586fe2af100b84f8e2124b230a5185504bf8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5281622fbde0603ec516b153e1a02e85d58e18c0074e4a6bc2b7df5670784aee"
+    sha256 cellar: :any, arm64_tahoe:   "297941265c168d976d6297f260117cfe2eb4ac08770e91f31be858185c7c6a2e"
+    sha256 cellar: :any, arm64_sequoia: "0f06536acdfcdb2af4ca91a520ff215a60a5653f41d292da3217e5a944e68b5f"
+    sha256 cellar: :any, arm64_sonoma:  "9a2282a0232e8f789e3378da993e545cd716e0973f4a13545633e0fb0f08184f"
+    sha256 cellar: :any, sonoma:        "97596ce370ad99e0eef46d0d803600d2ff846757f4e4128dc8365986570061d0"
+    sha256 cellar: :any, arm64_linux:   "b78247409bf305188f4d079a364735300efcd9ccc88e8deab5a4dbf3b7f8c7c9"
+    sha256 cellar: :any, x86_64_linux:  "86cd1bd0ba46599943380318355167bd6ac0c4ed230b30551e8cc1a9498aea4c"
   end
 
   depends_on "pkgconf" => :build
@@ -25,9 +23,6 @@ class Blockhash < Formula
 
   def install
     system "python3", "./waf", "configure", "--prefix=#{prefix}"
-    # pkg-config adds -fopenmp flag during configuring
-    # This fails the build on system clang, and OpenMP is not used in blockhash
-    inreplace "build/c4che/_cache.py", "-fopenmp", ""
     system "python3", "./waf"
     system "python3", "./waf", "install"
   end

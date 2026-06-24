@@ -1,18 +1,18 @@
 class Talhelper < Formula
   desc "Configuration helper for talos clusters"
   homepage "https://budimanjojo.github.io/talhelper/latest/"
-  url "https://ghfast.top/https://github.com/budimanjojo/talhelper/archive/refs/tags/v3.1.11.tar.gz"
-  sha256 "68d8298ef165fca454e2953dc61d403946060bb0b2154c0a4e1cbeb048c96eb6"
+  url "https://ghfast.top/https://github.com/budimanjojo/talhelper/archive/refs/tags/v3.1.12.tar.gz"
+  sha256 "7a219f444b5b56c0839bdd833090c8b90c29cb68953e02ffa153157a26d57c3f"
   license "BSD-3-Clause"
   head "https://github.com/budimanjojo/talhelper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc5f9e94995bf687b3d526198adf2fa391ea5a26c68a9a9b0b386708a6384f0b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc5f9e94995bf687b3d526198adf2fa391ea5a26c68a9a9b0b386708a6384f0b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc5f9e94995bf687b3d526198adf2fa391ea5a26c68a9a9b0b386708a6384f0b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2b6f26fc2563d734cd6dd3a8937d39d37979bda48590c7b277bf62807b73b2b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "277941b47c668c29b253eb93845c5b57ebbe98e21b7cf39b074f1f94c6141240"
-    sha256 cellar: :any,                 x86_64_linux:  "5a7ef848080a16e8084be9660a55a399f66f7bf09d43a00a1ace4eaec0cfcabc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f06ff9f50624a90e884ca9882054a35e554c6b6bc392313b051255afa468a9b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f06ff9f50624a90e884ca9882054a35e554c6b6bc392313b051255afa468a9b9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f06ff9f50624a90e884ca9882054a35e554c6b6bc392313b051255afa468a9b9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "528df38d3aba1dbcee0e048788e3ad07a216107005cb9a153d4b1fac017f0294"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f45b2b8fc0e4da9f6ed26fc4728ffd9756413e45dd6e2ae13f7ac2f102c19cdd"
+    sha256 cellar: :any,                 x86_64_linux:  "bc6482f6423fc3f9450eee146b67cca78d835ba022e045a830eb93904402b080"
   end
 
   depends_on "go" => :build

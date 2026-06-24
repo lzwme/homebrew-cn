@@ -1,18 +1,18 @@
 class Ortp < Formula
   desc "Real-time transport protocol (RTP, RFC3550) library"
   homepage "https://linphone.org/"
-  url "https://gitlab.linphone.org/BC/public/linphone-sdk/-/archive/5.5.6/linphone-sdk-5.5.6.tar.bz2"
-  sha256 "abde36ececa65bcd9b0241d6baadf7ad185732b3e3ecbd5ccbaffa315e82b926"
+  url "https://gitlab.linphone.org/BC/public/linphone-sdk/-/archive/5.5.7/linphone-sdk-5.5.7.tar.bz2"
+  sha256 "35d75edc131ddf017dba40ce5a7060b99bc806e2777be68ab69b876fe4f5bb91"
   license all_of: ["AGPL-3.0-or-later", "GPL-3.0-or-later"]
   head "https://gitlab.linphone.org/BC/public/linphone-sdk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "57c7ac102da5bacc37eacb4950929328218567be103360678fffbdd51652d6b4"
-    sha256 cellar: :any, arm64_sequoia: "ca383ebceff27c5fa502642e6cb6dc5b8eaf653863e7c3b008aef7780b7aa5d3"
-    sha256 cellar: :any, arm64_sonoma:  "ca71845b9f6ac9dd1a836b6b28600dd4be7a5c7a9e71e7814a3dcbf70a937652"
-    sha256 cellar: :any, sonoma:        "bd2bcd1b365aaed70e63b03a38b32f22b65d59ba45ee651bfeae80ebf2cc99c6"
-    sha256 cellar: :any, arm64_linux:   "ccea44433cd8b2222368b5aaf8dc4c9fc34ae0909932f2068c706618bb51b5e9"
-    sha256 cellar: :any, x86_64_linux:  "2c47b6dcee47da410f81fcea7f8887c26df941725249663aab29e77981160057"
+    sha256 cellar: :any, arm64_tahoe:   "fb934fce6969e3d585bd264f4542b19d0560129044bcefae0c5f0d491311963d"
+    sha256 cellar: :any, arm64_sequoia: "6761190151276c6bc5275e2222463c00694da4edebd77493d3bbb0e5a2825a82"
+    sha256 cellar: :any, arm64_sonoma:  "0287181221f0b4bac87c387a1d35728db9861c76d2fb7830ecdc89ba1142c3ab"
+    sha256 cellar: :any, sonoma:        "547814202e008c84be7081a4f70f40db3e09985856d5c3ca0f82bd483be28afa"
+    sha256 cellar: :any, arm64_linux:   "dcfc10252fc7b2fdba6f7673bc3782688284ed0829e0f06491555ac27e0e9b29"
+    sha256 cellar: :any, x86_64_linux:  "c731d2824c14d2fc83281620c057a3d131c7b86c49293a4d8c8f9e0bc05c36d3"
   end
 
   depends_on "cmake" => :build

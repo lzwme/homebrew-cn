@@ -4,17 +4,15 @@ class DmtxUtils < Formula
   url "https://ghfast.top/https://github.com/dmtx/dmtx-utils/archive/refs/tags/v0.7.6.tar.gz"
   sha256 "0d396ec14f32a8cf9e08369a4122a16aa2e5fa1675e02218f16f1ab777ea2a28"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 8
+  revision 9
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0d9a9f83919daef68ed7849bb0edeb5b0c99240b8854c4ea0b16aa95b061888a"
-    sha256 cellar: :any,                 arm64_sequoia: "266e690457d4ad1f3844c37e52e3228121803ab16f5df2a8441ac8f0380a2b12"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ed0bf91ff69184917d25840c46c8b1a390e116b468dba2bfebcfca4688326f4"
-    sha256 cellar: :any,                 arm64_ventura: "baccf696ad55b1eeda946e6e9e6f8085e6cee318bec01446bd260f774ec3ebd7"
-    sha256 cellar: :any,                 sonoma:        "e4166dd09301ba1d1bf09ca625d395b145b5271b6e8c6938c6299b1b6773eac7"
-    sha256 cellar: :any,                 ventura:       "57db09489948aa30d196602969ff17059e3668afd012b2bd21a56c1de4bf4e16"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "003e60bbcf5bf79f791eb3e4e695d45648ae4cdf6d2b600972d900484bc5440c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86b15ef564fc867cfe335573ed209b3c96cb509859ac0507794433316d8246b4"
+    sha256 cellar: :any, arm64_tahoe:   "07f22c3e96be28752be99d1a96fd530638d30b23dd468be55cb7f627b95988f8"
+    sha256 cellar: :any, arm64_sequoia: "13d8bf91ff9a5ea62b2a6e762ccd074f3d3f6f0078b6d523690d753af73c1df8"
+    sha256 cellar: :any, arm64_sonoma:  "17ad6a17f6adb6a85982ddcd6fc2a242f282eb30bd69432909a6304dc95b041b"
+    sha256 cellar: :any, sonoma:        "d37d812fcdcee3f277c69e699107da20cf2368e26427bd4d7b4e02134922bda8"
+    sha256 cellar: :any, arm64_linux:   "c29a21177f5fe932061b4b9ba394aae653a425a31f53423e02b8873e132e4324"
+    sha256 cellar: :any, x86_64_linux:  "1e63847b01d0955861ac4713c6f15a97be3db73558e26fd5c14d88a139711f64"
   end
 
   depends_on "autoconf" => :build
@@ -33,6 +31,13 @@ class DmtxUtils < Formula
     depends_on "liblqr"
     depends_on "libomp"
     depends_on "little-cms2"
+  end
+
+  # Workaround buffer overflow
+  # Upstream PR ref: https://github.com/dmtx/dmtx-utils/pull/16
+  patch do
+    url "https://github.com/dmtx/dmtx-utils/commit/f7b97efc3bd6fc2e4403803f46514ae28318743b.patch?full_index=1"
+    sha256 "e9a44b85bce58ed9c4af90f123c2317a9f4a4b9dade114a9014211e22bcc5c4d"
   end
 
   def install

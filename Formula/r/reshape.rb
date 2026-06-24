@@ -1,19 +1,18 @@
 class Reshape < Formula
   desc "Easy-to-use, zero-downtime schema migration tool for Postgres"
   homepage "https://github.com/fabianlindfors/reshape"
-  url "https://ghfast.top/https://github.com/fabianlindfors/reshape/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "516c68a38c22be1262f3e3da45a9b382457299a3c7503bd018f358088d6970b1"
+  url "https://ghfast.top/https://github.com/fabianlindfors/reshape/archive/refs/tags/v0.9.2.tar.gz"
+  sha256 "a613d1534c7a73fcf27e565453457291ca282bcd185cb91ae10cd6347baf9c1d"
   license "MIT"
   head "https://github.com/fabianlindfors/reshape.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "156d49068d0e0fac6b609c466875cedb2fedd39f1b5643c12ff37fbed78430ac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0ea97bab6357c273ac184e0e08ef31d9eec02634db82c4281ffe5f7be4dcf31"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0dd82e64b1a93122a81a23e198f3ca8a2b85d0e31bd4dad5e0197614e68fc62a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c136b7487d666d02b31c7778fe18a03bb35b2735037a21e74e98395b98a7bf3c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8073e96cf71f2e46e1d2e9ad085fa3253c1f7fd760b4525ff49a251f7045d95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8a848ec4c95b05cbc61023736b2d650d1048e708a4e015394600f3842412133"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4db3b20dbf4a9dca55f27858e71c701666980a9adb1bfbe8aed8a13d43da7cb0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c20de9037dc5dd2f6c35c3fae7fc19a7af985e65b9c01825d56d7848de1d57b5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c048ad94f9298a4be48a648c6869c8e2c5571351b8a77cc73f7709936799340"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1442f6c2a3fbd98287f1252e5529a416c85b32ec2f35d060bb976cf3d07c6190"
+    sha256 cellar: :any,                 arm64_linux:   "fe752faf0908c7851d802b148bd9e4720b65d83648b1e506c0347b8024fd2260"
+    sha256 cellar: :any,                 x86_64_linux:  "fae109baa04eda4d730ef4b3700691a082c1eb8ab9e653e7320a3da4d5fe8f67"
   end
 
   depends_on "pkgconf" => :build

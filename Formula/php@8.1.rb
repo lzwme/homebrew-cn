@@ -28,6 +28,7 @@ class PhpAT81 < Formula
     "Zlib",                  # 8
   ]
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -97,7 +98,7 @@ class PhpAT81 < Formula
     cause "Performs worse due to lack of general global register variables"
   end
 
-  deny_network_access! [:build, :postinstall]
+  deny_network_access! [:postinstall]
 
   def install
     # Work around to support `icu4c` 75, which needs C++17.

@@ -5468,6 +5468,7 @@ Homebrew-homebrew-core/Formula/o/opentelemetry-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opentimestamps-client.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opentofu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opentsdb.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/openturns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openvdb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openvi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openvino.rb, Homebrew/homebrew-core, 1
@@ -7861,6 +7862,7 @@ Homebrew-homebrew-core/Formula/v/vcs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vcsh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vde.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vdirsyncer.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/v/vdt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/veccore.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/veclibfort.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vectorscan.rb, Homebrew/homebrew-core, 1
@@ -9352,7 +9354,7 @@ Homebrew-homebrew-cask/Casks/c/couchbase-server-enterprise.rb, Homebrew/homebrew
 Homebrew-homebrew-cask/Casks/c/couleurs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/coverload.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cpu-info.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/c/cpuinfo.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/cpuinfo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/craft-agents.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/craft.rb, Homebrew/homebrew-cask, 0
@@ -12971,7 +12973,6 @@ Homebrew-homebrew-cask/Casks/i/ilok-license-manager.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/i/ilspy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/ilya-birman-typography-layout.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/image2icon.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/i/imagealpha.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/imagej.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/imageoptim.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/imagex.rb, Homebrew/homebrew-cask, 0
@@ -13331,6 +13332,7 @@ Homebrew-homebrew-cask/Casks/l/lemonlime.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lens.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/leocad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lepton.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/l/letos.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lets.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/letter-opener.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lexicon-dj.rb, Homebrew/homebrew-cask, 0
@@ -13645,6 +13647,7 @@ Homebrew-homebrew-cask/Casks/m/meshlab.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/messenger-native.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/messenger.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meta-quest-developer-hub.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/meta-quest-remote-desktop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/metabase-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/metaimage.rb, Homebrew/homebrew-cask, 0
@@ -14565,6 +14568,7 @@ Homebrew-homebrew-cask/Casks/p/puzzles-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pxplay.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pycharm-ce.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pycharm-edu.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/pycharm-oss.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pycharm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pyfa.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pym-player.rb, Homebrew/homebrew-cask, 0
@@ -14708,7 +14712,6 @@ Homebrew-homebrew-cask/Casks/r/recaf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/receiptquicklook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/receipts.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/recents.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/r/recipeui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rectangle-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rectangle.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/recut.rb, Homebrew/homebrew-cask, 0
@@ -15200,7 +15203,6 @@ Homebrew-homebrew-cask/Casks/s/sqlectron.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sqleditor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sqlight.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sqlitemanager.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/sqlitestudio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sqlpro-for-mssql.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sqlpro-for-mysql.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sqlpro-for-postgres.rb, Homebrew/homebrew-cask, 0
@@ -15853,7 +15855,6 @@ Homebrew-homebrew-cask/Casks/v/vlc@nightly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vlcstreamer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vmlx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vmpk.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/v/vmware-fusion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vnc-server.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vnc-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vnote.rb, Homebrew/homebrew-cask, 1

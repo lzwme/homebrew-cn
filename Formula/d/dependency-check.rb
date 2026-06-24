@@ -41,6 +41,7 @@ class DependencyCheck < Formula
     (testpath/"temp-props.properties").write <<~EOS
       cve.startyear=2017
       analyzer.assembly.enabled=false
+      analyzer.central.retry.count=10
       analyzer.dependencymerging.enabled=false
       analyzer.dependencybundling.enabled=false
     EOS

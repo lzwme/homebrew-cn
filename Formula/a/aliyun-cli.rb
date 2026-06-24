@@ -1,8 +1,8 @@
 class AliyunCli < Formula
   desc "Universal Command-Line Interface for Alibaba Cloud"
   homepage "https://github.com/aliyun/aliyun-cli"
-  url "https://ghfast.top/https://github.com/aliyun/aliyun-cli/archive/refs/tags/v3.3.23.tar.gz"
-  sha256 "99050ed6f84c4a240b4f1170f0a65961e23fde90aa67ad473eb523384ee4e58a"
+  url "https://ghfast.top/https://github.com/aliyun/aliyun-cli/archive/refs/tags/v3.4.0.tar.gz"
+  sha256 "308550dc232bcbb79df92e3fec0dd3cda47ceb5ab9e11cfb4286d5761bef2d84"
   license "Apache-2.0"
   head "https://github.com/aliyun/aliyun-cli.git", branch: "master"
 
@@ -12,12 +12,12 @@ class AliyunCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31ef3a91608627825464ee7cff1a82a92b1d27d8f5411e02ca6999ad8c44b835"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31ef3a91608627825464ee7cff1a82a92b1d27d8f5411e02ca6999ad8c44b835"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31ef3a91608627825464ee7cff1a82a92b1d27d8f5411e02ca6999ad8c44b835"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9e21b84e2c54e74a5fe9798fc4edd40e7c465d25798be3d93d3ba8dc4cfad4e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "72498868287db7473ce0065346d5e344c689fc36cdbc31a2a72c2eb9d73056c5"
-    sha256 cellar: :any,                 x86_64_linux:  "48f20c3f9ca136335038979e3225f308995edc91ec301d31b5bf0254193168b4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "91b9852eb6a218a0b3201829132109cf112ba035994f01cbc437dbe697031969"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91b9852eb6a218a0b3201829132109cf112ba035994f01cbc437dbe697031969"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91b9852eb6a218a0b3201829132109cf112ba035994f01cbc437dbe697031969"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b63184b7ca6818e9fafec3334dd5921c2d06b9fab3d7708e14a39f39ce06f4b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ffe7aa5fcd9f01641be6fa60b3d9a677879574ac8f88de8823e18825a249ea89"
+    sha256 cellar: :any,                 x86_64_linux:  "d83be5703e23a61940016d0fbebaf9af966f217ea744e85363eb9cdb267fb5e5"
   end
 
   depends_on "go" => :build

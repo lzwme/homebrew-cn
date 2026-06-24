@@ -4,7 +4,7 @@ class Zbar < Formula
   url "https://linuxtv.org/downloads/zbar/zbar-0.23.93.tar.bz2"
   sha256 "83be8f85fc7c288fd91f98d52fc55db7eedbddcf10a83d9221d7034636683fa0"
   license "LGPL-2.1-only"
-  revision 2
+  revision 3
 
   livecheck do
     url :homepage
@@ -12,14 +12,12 @@ class Zbar < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "cc7a5ed357e5cbfed0707cbaf736d9519473252cffa52dff1a449640be47a9af"
-    sha256 arm64_sequoia: "fe42da9d30318b93a75645b76806c1ffe684db56c7f6c0e608c718f9cc7f8f37"
-    sha256 arm64_sonoma:  "c6a2988931330f8b9330b259d53096e58b25c9c54a3dc167688774412f885993"
-    sha256 arm64_ventura: "22dcfaed8be4e8e396d6e7f6ca5b9dafc04d83e16c78674a665c0742ba9c0c67"
-    sha256 sonoma:        "63ecefc21c58f41dcc73346b81fd1defabf3f2db855ec4a18fd0b63ec0cd5326"
-    sha256 ventura:       "420f056fecb135dd17684d4f7c62825368e2a0a52df6aabbaaf9823c819d6ba6"
-    sha256 arm64_linux:   "53a60318800d01d8d5571cd82ada66c60dc14a7c739c5f4810358dbbbcbcd649"
-    sha256 x86_64_linux:  "ecb7269a350f91339a4c6c05d014e27f38311431e54e948fa575aacb2056f03e"
+    sha256 arm64_tahoe:   "b9b91bc4b8cf90973914291cd2c8a2c6d674188fb2e1129c6d3f162822ad7430"
+    sha256 arm64_sequoia: "a664b0c509afcc382dedc4c7a4e76f5d0177b8f0ab02f2d6ca89dd058b707430"
+    sha256 arm64_sonoma:  "f33f0c3e2046ecca88f96066a3e5fcd3a1c7d3d4f0acfc18bb98cb2dce51a70a"
+    sha256 sonoma:        "0b393b4b6aa6a645c82403834a89b5fe55a083fa34e946e9b4100f60da0fb212"
+    sha256 arm64_linux:   "26598780ca5835279c251ba7621eec3862b12e4c65c4e15a23c7d69545bd376a"
+    sha256 x86_64_linux:  "dfcb2b10e388d041fc4259db2d2fa4202a6eb8211acf5d6095a6e3e0d4fdf93f"
   end
 
   head do
@@ -54,6 +52,10 @@ class Zbar < Formula
 
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
+
+    # zbar uses gettext but upstream only links libintl on Windows, and the
+    # newer macOS linker no longer resolves it transitively. Link it explicitly.
+    ENV.append "LDFLAGS", "-lintl" if OS.mac?
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
 

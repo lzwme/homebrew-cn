@@ -1,19 +1,19 @@
 class Fbthrift < Formula
   desc "Facebook's branch of Apache Thrift, including a new C++ server"
   homepage "https://github.com/facebook/fbthrift"
-  url "https://ghfast.top/https://github.com/facebook/fbthrift/archive/refs/tags/v2026.06.15.00.tar.gz"
-  sha256 "722bce97ef9c753958caa9b014e047802607748842f7cb25a6a2d002b4fc5c13"
+  url "https://ghfast.top/https://github.com/facebook/fbthrift/archive/refs/tags/v2026.06.22.00.tar.gz"
+  sha256 "9214807e0e84bf0ce89184b4d1e6f40394eae2783a87f9b9ce6ddf3358d63061"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/fbthrift.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b9c1120c07ebd22a1fd062fafc8fdb635150c733333ebfeaf2b66c3e549b3c69"
-    sha256 cellar: :any, arm64_sequoia: "0a2562203a71deec4f8f2f9007dc22ebe1ee817bd1af721d217719cdd0479277"
-    sha256 cellar: :any, arm64_sonoma:  "49b791a0dfdad109fbf46a43593571cf6c62718f5441fcc6f94a54ab35712166"
-    sha256 cellar: :any, sonoma:        "4307187a3e5a642eaea34db1d6693b9b74e6e7821d554f02e3a8c6d37c80b9e7"
-    sha256 cellar: :any, arm64_linux:   "77dd05737c3e406b2343476ecae3a46de60b92de1496cb896672a1461bb835d4"
-    sha256 cellar: :any, x86_64_linux:  "2840be8eab488b94e0352130746665f959c2a74bc62881a1adf96941ace940b7"
+    sha256 cellar: :any, arm64_tahoe:   "3d532aa9216176b21dae56218d65a02abdc2459ff6ac67168fd615490d8d6c35"
+    sha256 cellar: :any, arm64_sequoia: "be06d224f76c2079c1257ecc979107d72174568c363c0d301f946f209c15d86b"
+    sha256 cellar: :any, arm64_sonoma:  "4aadae1fc79e978625a2c5d667cf7d0fb96b280aa012982b0648974bc8143fae"
+    sha256 cellar: :any, sonoma:        "ad79c4843bf311d7ed6aa64d4bae22425d4c4f08d3f49e8c531a21785302cc92"
+    sha256 cellar: :any, arm64_linux:   "ff0334aecc0de044980249631f574abc2514ed1fcbc4761b3fdbda62161c9e5c"
+    sha256 cellar: :any, x86_64_linux:  "5cd332847eb591e277d76cdb28e8e3b25d2f2f57f5e34283c1ff520f71197a3f"
   end
 
   depends_on "bison" => :build # Needs Bison 3.1+
@@ -38,11 +38,21 @@ class Fbthrift < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # GCC 13 libstdc++ no longer pulls in <cstring> for std::memcpy etc.
+  # PR ref: https://github.com/facebook/fbthrift/pull/703
+  patch do
+    url "https://github.com/facebook/fbthrift/commit/988aa3612c254e528d20024b2faf02d854927900.patch?full_index=1"
+    sha256 "a57ceff413e1ee2a9b72870aba85107a168ddaf40171a94982b94b566226f598"
+  end
+
   def install
     # Work around build failure with Xcode 16
     # Issue ref: https://github.com/facebook/fbthrift/issues/618
     # Issue ref: https://github.com/facebook/fbthrift/issues/607
     ENV.append "CXXFLAGS", "-fno-assume-unique-vtables" if DevelopmentTools.clang_build_version >= 1600
+    # Restore `<fmt/core.h>` pulling in `<fmt/format.h>` (dropped in fmt 12.2); #702 doesn't apply to this tag.
+    # PR ref: https://github.com/facebook/fbthrift/pull/702
+    ENV.append "CXXFLAGS", "-DFMT_DEPRECATED_HEAVY_CORE"
 
     ENV["OPENSSL_ROOT_DIR"] = formula_opt_prefix("openssl@3")
 

@@ -3,18 +3,18 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/17/cc/d87b094ef858c67febcd1d8902352c84b42c9ebc8221d6f2e9d553273358/commitizen-4.16.3.tar.gz"
-  sha256 "5cdca4c02715cc770312f4b505c65a6c39024c73ece41b943bccaf81c44436ed"
+  url "https://files.pythonhosted.org/packages/50/8a/4fccfa29c95536ac6dc98dc09a676cc2bce60d72f68b8e280278c6674669/commitizen-4.16.4.tar.gz"
+  sha256 "bb2fda50da381979e308d4a443d349598de2487d9e40d2e4f55a1f115ca38a8c"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "401b0951f4960acfdcff8804e13af80e45dfb5f80cf99350ca0f5b29d2917268"
-    sha256 cellar: :any, arm64_sequoia: "393b4d4c335161958494431ff80721715135212b82937cf9a542eb1ac8874a76"
-    sha256 cellar: :any, arm64_sonoma:  "28fbb55c74585a2f84b6392e4204d36508bbc1137152f6056ff1a2fc2d922707"
-    sha256 cellar: :any, sonoma:        "f98394c2534a2501f84e41e601c2ddda9f1a5b64d5b4aad3e832ebcda700e4f4"
-    sha256 cellar: :any, arm64_linux:   "7b0d91f4c2e47cfaf1853c636f04f5bed6bd553cf0d486fe58a8b3dbd82f56c8"
-    sha256 cellar: :any, x86_64_linux:  "e6db1deb903c0a15c829b2d7bac36094d5b0953ba8db2b9c407f35a41aaa8239"
+    sha256 cellar: :any, arm64_tahoe:   "7c7a96a1963e6d7ca6af89f55197f99b576b3b72f655523c9283cf2da86d0ce0"
+    sha256 cellar: :any, arm64_sequoia: "86a32d7d16fca11089148862bf020c62d74c6dbcfa5d902ce781cc885ce00667"
+    sha256 cellar: :any, arm64_sonoma:  "dbf40b4de62de124309211b6ede7e382d74557be660ecfd55d29c8561ac5e6e0"
+    sha256 cellar: :any, sonoma:        "ba30735f14df18c03c604a1933577d72f2cd178b1d11354c883abc4e0218c51d"
+    sha256 cellar: :any, arm64_linux:   "1fab4842294c8bd69255e2746ef170c0da6d3f0ccb427075cd8fc8f2dfc184e8"
+    sha256 cellar: :any, x86_64_linux:  "875531a3214e6e33adaa8485e4a125543ef504bda1e9555d9b98d1df75a71c52"
   end
 
   depends_on "maturin" => :build
@@ -88,13 +88,13 @@ class Commitizen < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
-    sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
+    url "https://files.pythonhosted.org/packages/49/b4/51fe890511f0f242d07cb1ebe6a5b6db417262b9d2568b460347c57d95cc/wcwidth-0.8.1.tar.gz"
+    sha256 "faf5b4a5366a72dc49cad48cdf21f52bdf63bdda995178e483ba247ff79089b9"
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/2d/9f/06263fcd8ad6c405f05a3905fd7a84dd3176eb5ad46e44bccc0cd16348bb/wrapt-2.2.1.tar.gz"
-    sha256 "6744f504375775d7609c82c8d3d94af1c9a6f05586984536905908ba905277b9"
+    url "https://files.pythonhosted.org/packages/fe/a4/282c8e64300a59fc834518a54bf0afabb4ff9218b5fa76958b450459a844/wrapt-2.2.2.tar.gz"
+    sha256 "0788e321027c999bf221b667bd4a54aaefd1a36283749a860ac3eb77daed0302"
   end
 
   def install

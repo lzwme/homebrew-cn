@@ -3,18 +3,18 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https://github.com/mikf/gallery-dl"
-  url "https://files.pythonhosted.org/packages/4b/0c/bd908d5de020ddddb4bb99757adbda4213028ed3af263eedb21226615906/gallery_dl-1.32.3.tar.gz"
-  sha256 "038059880b9b5bedea0f0226e04dc91f92e759c992ccf2a706d6912776db103b"
+  url "https://files.pythonhosted.org/packages/0f/68/19f4f5996f22ef68b975bd34c2845829e692bdf25aacf9d654755e326056/gallery_dl-1.32.4.tar.gz"
+  sha256 "9804e0584efa3fe41a4ab4f8d34132b6d4fa0dd1c57be324730461b6eb39a81d"
   license "GPL-2.0-only"
   head "https://github.com/mikf/gallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b6d816aa833faa883120e784cf47952d3d2f5f0f03db0e6bfc9cf659ce177fe2"
-    sha256 cellar: :any, arm64_sequoia: "a545a60e86a433a0335dfa3843162ee82141f01cab04521efcd3e661234622da"
-    sha256 cellar: :any, arm64_sonoma:  "d3f1215346c3b1bb6125018b75cb36f7868360a335749a5464aa13077a144623"
-    sha256 cellar: :any, sonoma:        "79110e233ba91439c15bd64e68f8b1529d574f19584070395fe519219af47ccd"
-    sha256 cellar: :any, arm64_linux:   "26fca862004a9ae8c5c60a4bef8316dcebade167bc0da86f36679c8fb997b72b"
-    sha256 cellar: :any, x86_64_linux:  "a679003dd18a9a38ef7c17302056326c50b06783ff7c5b0248458d08eacc4779"
+    sha256 cellar: :any, arm64_tahoe:   "ccef0b44d1a69148437c477cbda0f47f2525d7d73e4a14d8c8bcc8b8c4dd4962"
+    sha256 cellar: :any, arm64_sequoia: "446bc4fd76c4cea47ead4a9cfe0ceec750e111e30f45640d30330a330864f96c"
+    sha256 cellar: :any, arm64_sonoma:  "f2626d958a75217432226f6c5ec2a62f4f8811db7a75b915465d3004a42195c2"
+    sha256 cellar: :any, sonoma:        "5a518664f4bc30c303aef986bafe7d66f7c2d2ad21b46647d775e954054d5d44"
+    sha256 cellar: :any, arm64_linux:   "4440f128a1d80c00b4bb07d68f6b4d231e938257b434bda9dfee4a5b8bfbc67c"
+    sha256 cellar: :any, x86_64_linux:  "c0d9de32143e7ca1e82381a44cd95d47d56c68e4d9466da1809506bfd0a1d45f"
   end
 
   depends_on "certifi" => :no_linkage

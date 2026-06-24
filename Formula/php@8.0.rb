@@ -6,6 +6,7 @@ class PhpAT80 < Formula
   sha256 "790dd5d5a0d72a312239d77f04c42c7cb6b425aa22086fbc17879edab9ba9475"
   license "PHP-3.01"
   revision 10
+  compatibility_version 1
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
@@ -77,7 +78,7 @@ class PhpAT80 < Formula
   # Remove after the next patch release.
   patch :DATA
 
-  deny_network_access! [:build, :postinstall]
+  deny_network_access! [:postinstall]
 
   def install
     # PHP 8.0 still has K&R-style bcmath/intl sources that fail under C23.

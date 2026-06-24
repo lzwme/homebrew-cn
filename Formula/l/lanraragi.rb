@@ -4,15 +4,16 @@ class Lanraragi < Formula
   url "https://ghfast.top/https://github.com/Difegue/LANraragi/archive/refs/tags/v.0.9.71.tar.gz"
   sha256 "4dab46dddd2c227bd0428eef4318cad673fca1e2a1420eee1fa2110043827408"
   license "MIT"
+  revision 1
   head "https://github.com/Difegue/LANraragi.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "82f115b1051d6ae57411796a4a239c639106ee35ccdf1d73c4c4bb5b0979dcb1"
-    sha256 cellar: :any,                 arm64_sequoia: "e09a9184d798b6dfe60d293111c0f353546581f772b9ad3e45de40a851d50f53"
-    sha256 cellar: :any,                 arm64_sonoma:  "5656dc03498a8963e26890841f82298174fc928c8b5a6d0089b402fc97a0cf87"
-    sha256 cellar: :any,                 sonoma:        "339388cc5e250d86fe2022def364a219eebca2f0595f95bb6ac4685d3e897d9e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c177edbccbda0156e095788003c56ac911fc515d3ad941a079ac98d8ff4cb58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0157925219e3eb6d4b3ba454387d9b66d1eb41b9560e24da521d701b7d106f11"
+    sha256 cellar: :any, arm64_tahoe:   "89875874aa5c46261ce350c63ebfc4922d4b15d0859e4462aae951df499c4942"
+    sha256 cellar: :any, arm64_sequoia: "18cadd6d080fc970c499e5ab70dc365db0ebe58c49f8592a990dea2b147fb16c"
+    sha256 cellar: :any, arm64_sonoma:  "fa5a4735535dca2c4ee9906a348d81f50f23d830de8108e8080417b7261b2e2f"
+    sha256 cellar: :any, sonoma:        "39d16f7ecd56fce45cd48552a1b99872295f4445485f5a313da85f66a5c6f9eb"
+    sha256 cellar: :any, arm64_linux:   "977087f1069eff2dbd57f507eb950b93c4a4b5b6722f54379763645484bc07c2"
+    sha256 cellar: :any, x86_64_linux:  "148c57998fccbb681df22c8d66bf6ac9c5ef2384479f1e8ca835c60dc62019b2"
   end
 
   depends_on "cpanminus" => :build
@@ -21,13 +22,12 @@ class Lanraragi < Formula
   depends_on "ghostscript"
   depends_on "imagemagick"
   depends_on "libarchive"
+  depends_on "libffi" # TODO: uses_from_macos when node supports it
   depends_on "node"
   depends_on "openssl@3"
   depends_on "perl" # perl >= 5.36.0
   depends_on "redis" # TODO: migrate to `valkey`
   depends_on "zstd"
-
-  uses_from_macos "libffi"
 
   resource "Image::Magick" do
     url "https://cpan.metacpan.org/authors/id/J/JC/JCRISTY/Image-Magick-7.1.2-3.tar.gz"

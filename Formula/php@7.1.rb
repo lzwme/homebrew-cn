@@ -6,6 +6,7 @@ class PhpAT71 < Formula
   sha256 "edea2c9b62a4cfeecb8fe0e377a2c64553463b195db251385b000f32645e343b"
   license "PHP-3.01"
   revision 15
+  compatibility_version 1
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
@@ -70,7 +71,7 @@ class PhpAT71 < Formula
     depends_on "zlib-ng-compat"
   end
 
-  deny_network_access! [:build, :postinstall]
+  deny_network_access! [:postinstall]
 
   def install
     # Work around configure issues with Xcode 12

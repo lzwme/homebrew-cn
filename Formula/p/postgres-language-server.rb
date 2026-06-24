@@ -1,18 +1,18 @@
 class PostgresLanguageServer < Formula
   desc "Language Server for Postgres"
   homepage "https://pg-language-server.com/"
-  url "https://ghfast.top/https://github.com/supabase-community/postgres-language-server/archive/refs/tags/0.25.4.tar.gz"
-  sha256 "43b5305a268ffaa297b22adb05350e4e2c08a9a398dea45bf6cf990d1e9c94d0"
+  url "https://ghfast.top/https://github.com/supabase-community/postgres-language-server/archive/refs/tags/0.25.5.tar.gz"
+  sha256 "b2647e9f917efb04d7df39748e48c521fd55e169bae36ee08fbfe074c223293f"
   license "MIT"
   head "https://github.com/supabase-community/postgres-language-server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d5bae62fe118023912d0e76f19e7417fecaa54a76928b27a2ea459b6798767c9"
-    sha256 cellar: :any, arm64_sequoia: "6a5e473ce7555282e13de8ff1462d5d8b8d2ed9ec875d624cfff63b4e5ac06e9"
-    sha256 cellar: :any, arm64_sonoma:  "ae7440985288b2081f2876e263c2a064d3e344b4fb7fb69736470c300fc6d593"
-    sha256 cellar: :any, sonoma:        "5c14b751becf669e3e60c0b4188d4723d3c06e849c917d7b44159110a621699e"
-    sha256 cellar: :any, arm64_linux:   "02b2a22a3f0adbadd5d2964ff86de3c6890d828e637ae10545dedbe98cd8c40c"
-    sha256 cellar: :any, x86_64_linux:  "712f4e93860ef026c38dace0476af15153dcd8c05cbe512785fe85e46ccb4a01"
+    sha256 cellar: :any, arm64_tahoe:   "693f278b8a9747d247d0ca6a0a9b78d527c087bea62ae6936237d1ad0c4f488c"
+    sha256 cellar: :any, arm64_sequoia: "f8a97f70c18a75382d0669e2a96ed8e95c88f7650670826a3297b82e1ff9f35d"
+    sha256 cellar: :any, arm64_sonoma:  "084b762de291dcdd1dd5a9a72c9e365b4f859568b85f792138fd926205205289"
+    sha256 cellar: :any, sonoma:        "938cddccd164114814a7c1475cbaaeb9b4c274815b9a86b3d69e9860da5689c1"
+    sha256 cellar: :any, arm64_linux:   "63db8cd4c3a0175a30ed004673a7bee71da69c5536f20a9e3fab5a97050f6335"
+    sha256 cellar: :any, x86_64_linux:  "dd907a53f4ba1586e76a6aad112792c5db080b10752c7a382ff46ab29ca0d7df"
   end
 
   depends_on "llvm" => :build

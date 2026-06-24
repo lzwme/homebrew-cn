@@ -1,9 +1,9 @@
 class PhpAT86Debug < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/php/php-src/archive/0fff3ccce2f5f9e0695502a509fa8e8edf8f77d4.tar.gz?commit=0fff3ccce2f5f9e0695502a509fa8e8edf8f77d4"
+  url "https://ghfast.top/https://github.com/php/php-src/archive/e0113cd1d640144715059189ddae874a829f1669.tar.gz?commit=e0113cd1d640144715059189ddae874a829f1669"
   version "8.6.0"
-  sha256 "a3979880ee2b898df945979a84d5eef8eec33be3d2a2ccb6db7cb8e98744e04e"
+  sha256 "62f7cf1d468320aadf6a77f62003eb9795d28a83f197d4cad3753c5ca73f80ce"
   license all_of: [
     "PHP-3.01",
 
@@ -32,13 +32,13 @@ class PhpAT86Debug < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 89
-    sha256 arm64_tahoe:   "612c62ef36d1dad2fb8ac1e3c5747ef302d93268b33f553693332dd26520e0b5"
-    sha256 arm64_sequoia: "3680b6e20d3f78de27c2d38c241a0e0856ee1b046690f575e71a8a82e9744e92"
-    sha256 arm64_sonoma:  "7ec87510ff8c8c22796b2779e7155d15b980277d6fd40ce09dfae16258863924"
-    sha256 sonoma:        "f7acd0fcecc7016dc84ad71b4719a0768c05702311304b4800e5c6e1b52087cc"
-    sha256 arm64_linux:   "2082643cc6c0afa46b21f08b42e2fe719475dc16951d467f740692da7c4a8983"
-    sha256 x86_64_linux:  "f8acf87ae6d0eb043794603dd6f7ffc72bdaa31edec375823079279c6c996d5a"
+    rebuild 90
+    sha256 arm64_tahoe:   "f09de0a52a4b7bed40015012f72259397f2d71b3e1578a8c91f7d7f798a3ad77"
+    sha256 arm64_sequoia: "bce54e9c2e47547c91a823b6bb8fc0918456acfbb7191021f208d8e5f720445e"
+    sha256 arm64_sonoma:  "bba4841b8e939566a0e607721356dafa0e6377cece45d4de1ce684cd543c33e6"
+    sha256 sonoma:        "b6cf7135044b944e4aff8a52586015f19966ab81c852944dea99c6851311dbba"
+    sha256 arm64_linux:   "6d70f30fcc593bea97f54f0e551ff50ef0b53608b7a631980fcf7b6c249e2bf5"
+    sha256 x86_64_linux:  "ba2848b8edbb778011df02207a3b3fde33d4cb1275cc0e9534c4e306d1cded3c"
   end
 
   keg_only :versioned_formula
@@ -84,7 +84,7 @@ class PhpAT86Debug < Formula
     depends_on "zlib-ng-compat"
   end
 
-  deny_network_access! [:build, :postinstall]
+  deny_network_access! [:postinstall]
 
   def install
     # buildconf required due to system library linking bug patch

@@ -1,17 +1,17 @@
 class Sanity < Formula
   desc "Command-line interface for Sanity"
   homepage "https://www.sanity.io/"
-  url "https://registry.npmjs.org/@sanity/cli/-/cli-7.2.3.tgz"
-  sha256 "1683ccf22ef8dd793733d52a9c05ef88af204d45caed9f7e3ca3064ec9aa8a32"
+  url "https://registry.npmjs.org/@sanity/cli/-/cli-7.3.0.tgz"
+  sha256 "11b8b498a473a82429302b7d1438af0ba1d4ea67e63777eb13b548d94dfea9ca"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e59bc94886132b260ec5a06e9d579a31636008f4b5846b0c7080bb53a259806a"
-    sha256 cellar: :any, arm64_sequoia: "afe210afb1cfd5885d62ffd85d7b31bf03b6eaf09ec1a30570fe8d98187476c3"
-    sha256 cellar: :any, arm64_sonoma:  "afe210afb1cfd5885d62ffd85d7b31bf03b6eaf09ec1a30570fe8d98187476c3"
-    sha256 cellar: :any, sonoma:        "6a70068a8283ba4be508106307c53318aaf8733580ca219a6d164702ed400463"
-    sha256 cellar: :any, arm64_linux:   "0b7950361ef69d95aa7d826e30847a644264173873e35b1c2f76a5af73dea3c9"
-    sha256 cellar: :any, x86_64_linux:  "5ee5e9dcd746b66aa01b1ff23b2e8cb15552ca631cc28d866266ecab701de66a"
+    sha256 cellar: :any, arm64_tahoe:   "531a6987c03cf232b49aa3467b0f392551d20d378e298ad57ba2ebfc1dbdcc50"
+    sha256 cellar: :any, arm64_sequoia: "8d387f157b95579c4f07ce554fbd480e992fa77cf0bcee2736e5aca61f0bc281"
+    sha256 cellar: :any, arm64_sonoma:  "8d387f157b95579c4f07ce554fbd480e992fa77cf0bcee2736e5aca61f0bc281"
+    sha256 cellar: :any, sonoma:        "e32c0b7ed447a2b6f876535c22de87544513fc1775a402041b2c54e378aa5a4f"
+    sha256 cellar: :any, arm64_linux:   "4fcdbb8d9993e3be8a82622d62ede7425c7448f8e52ae32f36bfffa31084bfc5"
+    sha256 cellar: :any, x86_64_linux:  "0ef159ca820f5346e2589c4461168cc1d92e2a19d6d7f8a4c82606db9ac5bf87"
   end
 
   depends_on "node"

@@ -2,12 +2,11 @@ class Pmix < Formula
   desc "Process Management Interface for HPC environments"
   homepage "https://openpmix.github.io/"
   license "BSD-3-Clause"
-  revision 1
   compatibility_version 1
 
   stable do
-    url "https://ghfast.top/https://github.com/openpmix/openpmix/releases/download/v5.0.10/pmix-5.0.10.tar.bz2"
-    sha256 "78663f6b932589d68e24feaf7f8a948d60be68d91965f3effbacb4cd88cf9a95"
+    url "https://ghfast.top/https://github.com/openpmix/openpmix/releases/download/v5.0.11/pmix-5.0.11.tar.bz2"
+    sha256 "e10baa9821882140ebd134051702d65b1561fe91954d3978f7ea2c4e4cd36e7f"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -21,12 +20,12 @@ class Pmix < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5ae502e52b0701368cd61fd43b12f67df1c074bd2a6027bf5f1cbe1ef213817d"
-    sha256 arm64_sequoia: "2f1d03fa49fb8731e9e60c03b25670bfe10acbaeeafc20de491eab57bda31c26"
-    sha256 arm64_sonoma:  "6ff719706c1ace854d29922ddbe65a62a64f4f6f356b3af44d6eadcb7511e39e"
-    sha256 sonoma:        "d93205b42ae1181cbfd0b84ee6fe6697cb60f8c6472cfffddc16c6af10f4a174"
-    sha256 arm64_linux:   "d5c71a20e25fd1ad9d512dd40c882eef16c980a387a601e2617195913175c2b1"
-    sha256 x86_64_linux:  "93fd3b3e99b624b63f07fb8580d22684387aaacbcf8c3bf9a89536253b32ce09"
+    sha256 arm64_tahoe:   "70437341b2dd71465c623f30387e7a0f8710cb7d03416d37474f7023b67988b8"
+    sha256 arm64_sequoia: "2be2092875cfec5cbc1f7dbc677dcf345a8e1384647935ba2348a1255798b40d"
+    sha256 arm64_sonoma:  "82c2b66c2946743d826b683aa940d84da4c2e4536628df6a4054d83bc2671484"
+    sha256 sonoma:        "9129e22f8a7c833bf6828de9be914873dec882e083dc687a720643f5400e5be0"
+    sha256 arm64_linux:   "c867fa6d4de26b912c83996d9f074cb0b37b5b1ad6cc8f6125fa360c163dea82"
+    sha256 x86_64_linux:  "b6dd1be7b922b1974db230cfd94bc451a88a9f711661eaa60eaa6a731ccad0fa"
   end
 
   head do

@@ -3,18 +3,18 @@ class Yoke < Formula
   homepage "https://yokecd.github.io/docs/"
   # We use a git checkout since the build relies on tags for the version
   url "https://github.com/yokecd/yoke.git",
-      tag:      "v0.20.19",
-      revision: "8fd69e1e55999ac7b73c8cd43498b9cd3445b264"
+      tag:      "v0.20.20",
+      revision: "685940d43377f2a80aa3b19faf06c179f613e521"
   license "MIT"
   head "https://github.com/yokecd/yoke.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec41b8303f07217fbc6aba20e3e4aa5a75a9019eb39a82e52a552d9e146d5c4b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e7ca32dd5d1b1b7b8b01e873894ef15369200a5697dc2619ae89e86b03725c67"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdd528621827e5a4ca769ebacf2fef770407bcfdbf208163df33bbee76b84c22"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ccef0bf2bb90c9215acf9e91c6aaec69c2880e887553d3b344551d62fe7ab684"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "991dfd40cd473ca05c21ce93c08d9712c5460a13b41036465a536faf7e73b978"
-    sha256 cellar: :any,                 x86_64_linux:  "31b37aae935153af8ff9079ae1ec40a0bfe62b2cda0f5263a843a663911cdfc0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b590ffcaa413208b44a2ccf31353ca1a0dfdfeddda222490f09c7dc763065068"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "523e15e1ee147fab7235b5d3d2f161b773263dfa41e4a94f0ab7e6b8bd1bd4b5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3652a03f936db8b587073fbdf8536aa95829accd54925af7cfb4071b457ca73d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f1dd50db113dc07e9e9a617cc021d901d1305fb6814de21bd71ad0b3916aa0f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dabe13275045e5a6b457c56dca8e694bc5bc4205eedc23a1dabd7d89d00adc52"
+    sha256 cellar: :any,                 x86_64_linux:  "4b3e2cb0e5b34b9440d7e70b9d1097ba9ddfdae895cdf33f7a6d2e82ff85048d"
   end
 
   depends_on "go" => :build

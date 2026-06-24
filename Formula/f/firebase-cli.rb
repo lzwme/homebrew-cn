@@ -1,17 +1,17 @@
 class FirebaseCli < Formula
   desc "Firebase command-line tools"
   homepage "https://firebase.google.com/docs/cli/"
-  url "https://registry.npmjs.org/firebase-tools/-/firebase-tools-15.22.0.tgz"
-  sha256 "65af869807bf03d8fe2c30de78a85ffb10d781379b45034614abf92adbe93798"
+  url "https://registry.npmjs.org/firebase-tools/-/firebase-tools-15.22.1.tgz"
+  sha256 "2efcc8d9414da37e40fcfbb93a3b65e48e16f80a345d1e53671aaba8ada2ae33"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "57fec658d8af545127c41b1448688b11f29e75cc8adb35b701314115ed901149"
-    sha256 cellar: :any, arm64_sequoia: "3b95973e8303290e7d19e4f7a5a7fbb60dd39c8bd007da86de540467338b2235"
-    sha256 cellar: :any, arm64_sonoma:  "3b95973e8303290e7d19e4f7a5a7fbb60dd39c8bd007da86de540467338b2235"
-    sha256 cellar: :any, sonoma:        "efc5a308d13989fbb8b06470480f2879b20a2967caf7f626a278ac8b84e730b7"
-    sha256 cellar: :any, arm64_linux:   "f07bf42c918b3c02432d2797d2bec61efb28cc7f827c0b40523cee7a96841296"
-    sha256 cellar: :any, x86_64_linux:  "f0b6dd942a184e6ef337f969886f43d1cf9d8253497d6d3cf613241e2101c38c"
+    sha256 cellar: :any, arm64_tahoe:   "d6fea38a32add99cf377b4c5841e705f6efe51abdde0558a35a7caa71c82b905"
+    sha256 cellar: :any, arm64_sequoia: "c8d053e5a65ddd303c3328dad88bf16c35615b496be5560d2096828683556fd6"
+    sha256 cellar: :any, arm64_sonoma:  "c8d053e5a65ddd303c3328dad88bf16c35615b496be5560d2096828683556fd6"
+    sha256 cellar: :any, sonoma:        "f6b1f2b7e50aed48333714d55468299840d6df2fcc596c5b35c18933d5d14169"
+    sha256 cellar: :any, arm64_linux:   "2e2bad273225fc45e772273c2c9a6ab0d7576f0bc1d0b193a090dc803b9f5c08"
+    sha256 cellar: :any, x86_64_linux:  "bd8fbf5ffdd325565c8c02d2e51efb0d932c8fe5c3724f9ccd9baf6b405fc029"
   end
 
   depends_on "node"

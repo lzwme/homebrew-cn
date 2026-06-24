@@ -3,21 +3,20 @@ class KimiCli < Formula
 
   desc "CLI agent for MoonshotAI Kimi platform"
   homepage "https://moonshotai.github.io/kimi-cli/"
-  url "https://files.pythonhosted.org/packages/ce/44/00b9a43a57c683a21ec61a8b533039bf0145e23c1228f316577485288fef/kimi_cli-1.47.0.tar.gz"
-  sha256 "10f4ca9a29c70d101a57929e9b793fc0927acebe2a08f7c26764b504abbbc8ee"
+  url "https://files.pythonhosted.org/packages/e9/a9/3d25e80362abb7345a5dd05dc47cdcdc627e8d810d027943cc4647dcdb03/kimi_cli-1.48.0.tar.gz"
+  sha256 "313061b4c757bba58ef9039a30be8bae6853513e608c059532c43f389d7252f8"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/MoonshotAI/kimi-cli.git", branch: "main"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4ea2ced1806bbeadb51e036b94764969bb08af453a1fe6a5162e2df41a451de7"
-    sha256 cellar: :any, arm64_sequoia: "422145221b8ad9f10eec826b802a527fb0976a4c53416801840f7a37cf7da48a"
-    sha256 cellar: :any, arm64_sonoma:  "3e329b508687d7c15d61e59e51fdf187a17d9645b120874c8dafbdd27211e5e0"
-    sha256 cellar: :any, sonoma:        "f66f30cc8e8c65e14af31f49d7bf8c1021915228ffaf76ad7738f71614b2957b"
-    sha256 cellar: :any, arm64_linux:   "2bdec2eb15524385f78227f824ce3f3ab4c8d02cbe270c8db0f10c585a21f51b"
-    sha256 cellar: :any, x86_64_linux:  "560172feed3b35aa3f9ba57bb93b1492d46c1141623a7c81831c03d7463c0449"
+    sha256 cellar: :any, arm64_tahoe:   "e1bb7001790f7e44e73d6504cc631c74bccb47773b8ceec2ed030bab0b43f579"
+    sha256 cellar: :any, arm64_sequoia: "9b3c777c0bce4f7b47aa3b134cae9ff3ec3950e292f3ef1cff754fbe334cf273"
+    sha256 cellar: :any, arm64_sonoma:  "5f94f55483771cac2021aed6f5a983c5ef17bacc499ddedf08da816d7a510388"
+    sha256 cellar: :any, sonoma:        "c1076a59137c831ae18aa93543a09dbac12d66503ebb26cb46f734a7523abd12"
+    sha256 cellar: :any, arm64_linux:   "a6b073a277e133ec3ba23062195a4e452ef7e842180b95271d2678cbb51284c5"
+    sha256 cellar: :any, x86_64_linux:  "7021d98dca45e1efb96ab2a23e178d76a5b399520db862b383d1ba5c160ab63f"
   end
 
   depends_on "pkgconf" => :build
@@ -339,8 +338,8 @@ class KimiCli < Formula
   end
 
   resource "kosong" do
-    url "https://files.pythonhosted.org/packages/40/64/a6b4a926c23634d3841624d4c4ce896711f547e8d0c12213f217b059d189/kosong-0.53.0.tar.gz"
-    sha256 "00ff16decceec8ba16044d0b2727ae4812151619f8c0eebd49e2a937541e7fea"
+    url "https://files.pythonhosted.org/packages/2a/c6/6e476ca1f96501531f5106da6cbfcf1cd581c3b20b77f65389824a6be728/kosong-0.54.0.tar.gz"
+    sha256 "7b2b1b39c2db205f8b156aa2634501aae0a00d8d39268b42f46f98d981f86924"
   end
 
   resource "linkify-it-py" do
@@ -600,8 +599,8 @@ class KimiCli < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/f7/2b/58abc2d1fd397e7dde08e947e05c884d8ef2f78d5e2588c17a12d42d6994/sse_starlette-3.4.4.tar.gz"
-    sha256 "07e0fa0460138baf25cdd5fb28683472c3995dc1642225191b3832d62526bcb0"
+    url "https://files.pythonhosted.org/packages/d2/1b/bc9e3e7a72dcdad7dc7888758f5d00f56f8909ed5cfdff822bd72bb4c520/sse_starlette-3.4.5.tar.gz"
+    sha256 "83072538bc211a2f68b7b0422226c4af3e9b62e106e07034664b832ca019842a"
   end
 
   resource "starlette" do

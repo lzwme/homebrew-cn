@@ -3,18 +3,18 @@ class Watchman < Formula
 
   desc "Watch files and take action when they change"
   homepage "https://facebook.github.io/watchman/"
-  url "https://ghfast.top/https://github.com/facebook/watchman/archive/refs/tags/v2026.06.15.00.tar.gz"
-  sha256 "769b1d252f691d9437fb2a2e51289237a781591c80954567d2b0c57e715564ec"
+  url "https://ghfast.top/https://github.com/facebook/watchman/archive/refs/tags/v2026.06.22.00.tar.gz"
+  sha256 "25891d4abc83f053f81457ffd8c290d8c88972d804057b1adc02eef2a815c375"
   license "MIT"
   head "https://github.com/facebook/watchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5399d2df47e2ed9fe5d047620c8914d1cb7b6103b5d1e29d4e348cd4215fc340"
-    sha256 cellar: :any, arm64_sequoia: "50f1726264ee8a9177bbb7d5cad63f0806901e001b2c950193fe2ecacb4aa414"
-    sha256 cellar: :any, arm64_sonoma:  "33f3f8016373ed20ac73a600370bcb8e274f1277c166434a3519eec9f9f8a619"
-    sha256 cellar: :any, sonoma:        "1fce523c6580ed54aa6aa0c7ecd582725874a46b9b2e2ead94e6320fc4c83d7e"
-    sha256 cellar: :any, arm64_linux:   "790f9fdc77a2bc3d1832b5aa64d8195ec8a31325f37de90e1f1bdb236a1cb4e4"
-    sha256 cellar: :any, x86_64_linux:  "431e372ce5bf2c72ab99c64825aa38b9e83973cbacf782f1962b2f470d2e6cce"
+    sha256 cellar: :any, arm64_tahoe:   "ab0bc9f39baa9c8978326d0f1a825b0ddf297cb2176a12613050732bfe3f6890"
+    sha256 cellar: :any, arm64_sequoia: "824f3bd84dfe87e287d0ed97d5ce9814676976af119cfc8efdda5e6066fc2780"
+    sha256 cellar: :any, arm64_sonoma:  "c73c573f3f4081151c690a89d23b2e9ee8fdf8d73fa00451f71f7f84f8eedc11"
+    sha256 cellar: :any, sonoma:        "b0304854bd692e48a1bd8e92fe5f12e3bcbea46fbacf3a0bb05567f247f8ab2d"
+    sha256 cellar: :any, arm64_linux:   "0303d951c88ec209658ee731328f9d8f2aa8318dcbcdc1bc8e0b0c2b14ab7ca8"
+    sha256 cellar: :any, x86_64_linux:  "8411ba07b2871d582cd3d5b0c54c44bc4c52dacd2166d85395960ff93d5f24ba"
   end
 
   depends_on "cmake" => :build
@@ -40,6 +40,13 @@ class Watchman < Formula
     depends_on "boost"
     depends_on "libunwind"
     depends_on "openssl@4"
+  end
+
+  # fmt 12.2 dropped fmt::format from <fmt/core.h>; include <fmt/format.h> where used.
+  # PR ref: https://github.com/facebook/watchman/pull/1348
+  patch do
+    url "https://github.com/facebook/watchman/commit/7dbd77e849641ec756fee53a587da56d4502b4d1.patch?full_index=1"
+    sha256 "5855728d86bca5c11d08195db93659da91a813ce7a5c0293366aafe08970364a"
   end
 
   def install

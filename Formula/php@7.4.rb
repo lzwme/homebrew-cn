@@ -6,6 +6,7 @@ class PhpAT74 < Formula
   sha256 "30f4aa482e34bb2631a66450943256b220e8c13908940bd5c5d78fe743b3e5bd"
   license "PHP-3.01"
   revision 13
+  compatibility_version 1
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
@@ -78,7 +79,7 @@ class PhpAT74 < Formula
   # see https://github.com/php/php-src/issues/10680
   patch :DATA
 
-  deny_network_access! [:build, :postinstall]
+  deny_network_access! [:postinstall]
 
   def install
     # PHP 7.4 still has K&R-style bcmath/intl sources that fail under C23.
