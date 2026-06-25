@@ -3,17 +3,17 @@ class Copier < Formula
 
   desc "Utility for rendering projects templates"
   homepage "https://copier.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/ae/8f/c0e30c11a9c0e0bd6158a1ba33190f3faf2e3659da1295f8817ccab9002b/copier-9.15.2.tar.gz"
-  sha256 "58d07c62a3426c4f5b8c482c8cda59646de53733388536427356a8625116050c"
+  url "https://files.pythonhosted.org/packages/9c/c7/3cd18cd539ff41e8e7a95b0146dbace0ba332a4c97f468066b2c2daca2ed/copier-9.16.0.tar.gz"
+  sha256 "4db1a9861d0760f745cc6241f99be37b476f849b8ad700133e2f620b7df92eb2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a05f9645572f4af5cdc96cc4688d78734a20d159eb9112f8b7d81f3a189037d8"
-    sha256 cellar: :any, arm64_sequoia: "bb1618866b663a21b31b687a74b97bcab35719d408d8badf0646e6bb9a21731c"
-    sha256 cellar: :any, arm64_sonoma:  "48fe86f56a63b6d1275509470ce835c24cb2f466db90a387f7d64e7aea27dda1"
-    sha256 cellar: :any, sonoma:        "4ebb73003a95a659ed21b25e3c8fa3db0d979ecdb8cb771f3284ad12946f1537"
-    sha256 cellar: :any, arm64_linux:   "6c6faaef3314f5fc075163e929c03e4597c7c086d4e5d5b073923ac564b1b13e"
-    sha256 cellar: :any, x86_64_linux:  "d1c52169ca2b861471e72ac467ac2b579ddcb45a1a6ae56af80f4b59cf5797ba"
+    sha256 cellar: :any, arm64_tahoe:   "13c1fd19d1c21b5f74da70e3ff2e96e88c857efa1ed988af9f323b3e5b512448"
+    sha256 cellar: :any, arm64_sequoia: "e7c73e021ac25978c1ccecdebf37cfc44ae8eab720f09501fddb8d090b64fc37"
+    sha256 cellar: :any, arm64_sonoma:  "ec0f79b3b8c9c43204c68f4901774574157e4ffa32af801b35be2f67e5dd6e15"
+    sha256 cellar: :any, sonoma:        "81595b1adaceb0f36f3d4bcab61cfc4fdf1912fa39c16405c588dfc188cf6ccf"
+    sha256 cellar: :any, arm64_linux:   "cd32ca3f3f04f1d0fb35572880fd973f2a641d9535ddab7bea6c89231dda9f01"
+    sha256 cellar: :any, x86_64_linux:  "f4a2e7a1b8aaf74db93b99a9e61baaaa76ea37e82422190717a84c22b66d7fef"
   end
 
   depends_on "libyaml"

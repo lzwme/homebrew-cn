@@ -1,17 +1,17 @@
 class RvR < Formula
   desc "Declarative R package manager"
   homepage "https://a2-ai.github.io/rv-docs/"
-  url "https://ghfast.top/https://github.com/A2-ai/rv/archive/refs/tags/v0.21.0.tar.gz"
-  sha256 "666de33555efd68ab5342d9d10954a3c1b367eca7008b157637da64d22f61f40"
+  url "https://ghfast.top/https://github.com/A2-ai/rv/archive/refs/tags/v0.22.0.tar.gz"
+  sha256 "5acdfd81c134ac7b0ec33993bc8cb1b1b44e54263bdd4247737e706a6ffbf84d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d94a25605df1043403c9861d5e638206aee59835d2b378606bd139a789dfdb95"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9276b9c2f83f7565dafc33de5cb9ddef7a09e461d020782914270ef2cb29938d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "534ea3e2a25379c8c4155d080dd526096980ad88be7271fb936d5eba423c8de6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "779101b806d5fc37096f09cbaf2f4a6d8bd77acf727d6f1af84f2830f904f194"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "400f1e21f0091df2acbeadafb17ee7cbdc2d65ad043d5daf7569f251d187ed73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84d570f96cd5279b7d2650d85211ce14ec2a6b337fe52bb512182b30949d29e2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68b03e77ed74da01c2893fac182b6896cd67054a0e24e6ae0b256a36c4495e23"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a054b439b6ae08e1117c1a3c8bab8d3b8338777664bd44cd304cfa665505e43a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9e45f31a61d08cef3dbc9edb8db70ed50d338f006465b66383f8da7d07b54ed"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1da03b85901d4e09ac57b3acc3c325561df20e5e271e4d8296d62ce1480aaf8b"
+    sha256 cellar: :any,                 arm64_linux:   "ccef22798311a3daecbcb38f58097285c12cdf3917c716f3862d477afe576ecb"
+    sha256 cellar: :any,                 x86_64_linux:  "3c2e74fe1e6836ad46679b691bddda0ab7a5b9e7c21df45ba8bc32ecfcba8363"
   end
 
   depends_on "rust" => :build

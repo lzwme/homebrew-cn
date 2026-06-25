@@ -1,8 +1,8 @@
 class Cozypkg < Formula
   desc "CLI for managing Cozystack packages"
   homepage "https://cozystack.io"
-  url "https://ghfast.top/https://github.com/cozystack/cozystack/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "00d57d95f9e5d522bee0f7bd98553ef96e4457880aa7e9e42f21cb49ab34351e"
+  url "https://ghfast.top/https://github.com/cozystack/cozystack/archive/refs/tags/v1.5.1.tar.gz"
+  sha256 "c14b9880d1c6ad2a7092a679e903843db6e9cea79d9bbecb9b11fbc36af9b441"
   license "Apache-2.0"
   head "https://github.com/cozystack/cozystack.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Cozypkg < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "29af1f948b19b1f6a301e1be22131793998440bd96d7457b5a224bfe992c936e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d432b19ec3c0061487f2ee3f1a9937c84cb97cd2e6611cf8203ff403329a58b7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91d590fc572bb19a4bdfad525b4119a5d35bbfb108fe1282ed02c0361406570e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "44629d6b4c93fd1b98d91d980d4533963af3fa7ddbc1b2318d0b5e55bc05423b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a62e62a7d3ca2f48575e3c175636c13c12088a8b2148f87b31ab4e7087788d2e"
-    sha256 cellar: :any,                 x86_64_linux:  "4e9122253adb214048f258b83bd71284d10f09780af1d9efa85ce451c8746699"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c26e69d95b84d88fb3ddc0fa5e56de179f61b63393988af6c70cb7f5244c60b1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97b6bf5e4c5ebbdf5c138f707a9ee97ced407bb7f53c84980ffc258d13a5b775"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "beea0b59c96ef6ecd4fa4b644a2cc5d6a2f4d56eb100a2e73ab1104e7d8a3560"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8e11f186424e810ad448766f35be44f3468290f83d9c93e33159ac24a6d41827"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "098685be6f75d3f8938f826a95abff6081df3bdc1d5e710d42778fd5b52bc2f1"
+    sha256 cellar: :any,                 x86_64_linux:  "7a6942d60140503b95f61b4967402ef4f000024670e9268f78399fba7281f41d"
   end
 
   depends_on "go" => :build

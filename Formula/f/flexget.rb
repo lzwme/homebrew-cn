@@ -3,17 +3,17 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/43/26/5e475399b6846a4e1178e7794603b6ae92354cbb40791954c67dc9afe2dd/flexget-3.19.24.tar.gz"
-  sha256 "50faa9be33a95ce5e28850a11e013a0b3a851a2ef5c1a66fc005cb45ee566e52"
+  url "https://files.pythonhosted.org/packages/3f/bf/c26d7e5ac11a05e2b1dd3cb41849c3beac32ffe030f46c466582aa81b82f/flexget-3.19.25.tar.gz"
+  sha256 "7eff6a666cbd3a1229a7aec4b8afd327d4930161666317e94bd81c87b3b5393d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9dbfeb71a08f2500b247698beed6bc1d4a2f23f364462f513e4ef6bf38c4b4a0"
-    sha256 cellar: :any, arm64_sequoia: "1f230b35fbe32b30626913bec70d92f84de7cc2883b04efbae950c3734b26bce"
-    sha256 cellar: :any, arm64_sonoma:  "5f830adaba3982a3fcba788175f89eef0ef95ea53c2b63bd489950536507d12e"
-    sha256 cellar: :any, sonoma:        "6d534fb0335a2f98977d74e214ff36515865c2a9c036b5219d4d9d3dda202f82"
-    sha256 cellar: :any, arm64_linux:   "28004acffe399aaaceb0236bedd57204c8f1e679aa4ec24f9716d1240d4de752"
-    sha256 cellar: :any, x86_64_linux:  "26000f6a0472028b5946b34d9721130e433a6365163c05888c7e735a23f55254"
+    sha256 cellar: :any, arm64_tahoe:   "6cccc144532416a6c0f3dbeb01de4c929a2a59b1e23ebbe4cd5f9f9dd9393417"
+    sha256 cellar: :any, arm64_sequoia: "aee591fe27a4fe147abaf685a3bdf60a8f72c97e1048fb3d0afc58e09c9b8c0d"
+    sha256 cellar: :any, arm64_sonoma:  "cc32d751a3a048e2e59876c6e49988f98585d895657bf4a3f36e7c52ec16b0ef"
+    sha256 cellar: :any, sonoma:        "0cb1c2846989f745bdbdd97e0d0daf965e95050bf16517a925cee677d8bcac7f"
+    sha256 cellar: :any, arm64_linux:   "bbfc7eff63ebabce592150024e91db439edeee886910e5e7076531f22ed56acf"
+    sha256 cellar: :any, x86_64_linux:  "4941f1d883392b53bcf095e23accc0ad422b32d92994eaac2823ae6c38383aef"
   end
 
   depends_on "rust" => :build
@@ -23,7 +23,7 @@ class Flexget < Formula
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages package_name:     "flexget[transmission]",
-                exclude_packages: ["certifi", "rpds-py"]
+                exclude_packages: %w[certifi rpds-py]
 
   resource "aniso8601" do
     url "https://files.pythonhosted.org/packages/8b/8d/52179c4e3f1978d3d9a285f98c706642522750ef343e9738286130423730/aniso8601-10.0.1.tar.gz"

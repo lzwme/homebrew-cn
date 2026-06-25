@@ -94,29 +94,17 @@ class Pypy < Formula
   def distutils = libexec/"lib-python/2.7/distutils"
 
   def install
-    # Work-around for build issue with Xcode 15.3
-    # upstream bug report, https://github.com/pypy/pypy/issues/4931
-    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
-
     # Avoid statically linking to libffi
     inreplace "rpython/rlib/clibffi.py", '"libffi.a"', "\"#{shared_library("libffi")}\""
-
-    # The `tcl-tk` library paths are hardcoded and need to be modified for non-/usr/local prefix
-    tcltk = Formula["tcl-tk@8"]
-    inreplace "lib_pypy/_tkinter/tklib_build.py" do |s|
-      s.gsub! "['/usr/local/opt/tcl-tk/include']", "[]"
-      s.gsub! "(homebrew + '/opt/tcl-tk@8/include/tcl-tk')", "('#{tcltk.opt_include}/tcl-tk')"
-      s.gsub! "(homebrew + '/opt/tcl-tk@8/lib')", "('#{tcltk.opt_lib}')"
-    end
 
     if OS.mac?
       # Allow python modules to use ctypes.find_library to find homebrew's stuff
       # even if homebrew is not a /usr/local/lib. Try this with:
       # `brew install enchant && pip install pyenchant`
-      inreplace "lib-python/2.7/ctypes/macholib/dyld.py" do |f|
-        f.gsub! "DEFAULT_LIBRARY_FALLBACK = [",
+      inreplace "lib-python/2.7/ctypes/macholib/dyld.py" do |s|
+        s.gsub! "DEFAULT_LIBRARY_FALLBACK = [",
                 "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}/lib',"
-        f.gsub! "DEFAULT_FRAMEWORK_FALLBACK = [",
+        s.gsub! "DEFAULT_FRAMEWORK_FALLBACK = [",
                 "DEFAULT_FRAMEWORK_FALLBACK = [ '#{HOMEBREW_PREFIX}/Frameworks',"
       end
     end
@@ -153,12 +141,10 @@ class Pypy < Formula
     # we want to avoid putting PyPy's Python.h somewhere that configure
     # scripts will find it.
     bin.install_symlink libexec/"bin/pypy"
+    bin.install_symlink libexec/"bin/pip" => "pip_pypy"
+    bin.install_symlink libexec/"bin/easy_install" => "easy_install_pypy"
     lib.install_symlink libexec/"bin"/shared_library("libpypy-c")
     pkgshare.install_symlink (libexec/"bin").children
-
-    # Expose easy_install and pip with non-conflicting names
-    bin.install_symlink libexec/"bin/easy_install" => "easy_install_pypy"
-    bin.install_symlink libexec/"bin/pip" => "pip_pypy"
 
     # Symlink the prefix site-packages into the cellar.
     (lib/"pypy").install libexec/"site-packages"

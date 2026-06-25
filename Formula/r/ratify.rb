@@ -1,18 +1,25 @@
 class Ratify < Formula
   desc "Artifact Ratification Framework"
   homepage "https://ratify.dev"
-  url "https://ghfast.top/https://github.com/notaryproject/ratify/archive/refs/tags/v1.4.1.tar.gz"
-  sha256 "58db052b8a02a7d5cc78dde837530c5d7fe0f525facd84d8aac4ef7ab93f5ce2"
+  url "https://ghfast.top/https://github.com/notaryproject/ratify/archive/refs/tags/v1.4.2.tar.gz"
+  sha256 "08458f51a3e95f55e470f3ed91cec28345356fb3393e7555bc79d08f98906003"
   license "Apache-2.0"
   head "https://github.com/notaryproject/ratify.git", branch: "main"
 
+  # Upstream moves the tag until a release is finally made and marked as latest,
+  # so we have to use the `GithubLatest` strategy to avoid picking up a pre-release.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6fdbdf1f9e1245d66cdb6dfda5362bba5dd3f1b826f76100604b8d94a7e47e17"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b52b32cd9d05985a26682e45778cb96350625b7fb6bbee7b1d9727e9c1a98690"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "33e9edfb4e23350e884ed0b1cec13e68b3fe9f723a35323bf4f7863c05cf3ebb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "681c43566783f430dcf3a6ac6ed88956c579e6e62e83843607d15ce7dc5a413c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27a457749e095c1d67637103a5e9d492963d098f4cd41a667f2723aae843771e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95c21492f783fb26e8c404033a3a71ce79ad3c01db421c1dc69e5f71bd98ad09"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92c3e1f594c70dc816abf7b24e91a73e2feccad35adf5673b1e4022431bd97a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1c65d827c53793e1a8bd0078ffe99c6b55fe023abc3daafba83782481c6d26f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f55d8f731af55dc89a15beed95c0766d60dd5ed095a54193078a552e49b3889d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ac01292368f54e1c6f7bf4eb161c2d63a3226720222dd157959897b71c07bd1c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b817e6233981b76ba270ad7d22d0e49585f800a4cd473bde3a74eee4dae0409"
+    sha256 cellar: :any,                 x86_64_linux:  "bdca8caa5e4f8adfaff8244d57eca285a60e9d6029b10b8aa2f52b8cd2f7e19e"
   end
 
   depends_on "go" => :build

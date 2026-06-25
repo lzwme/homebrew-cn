@@ -362,7 +362,6 @@ Homebrew-homebrew-core/Formula/a/autojump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/automake.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/automysqlbackup.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/autopep8.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/a/autopsy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/autorest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/autorestic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/autossh.rb, Homebrew/homebrew-core, 0
@@ -1038,6 +1037,7 @@ Homebrew-homebrew-core/Formula/c/circleci.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/circumflex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/citus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cityhash.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/civetweb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/civl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cjdns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cjson.rb, Homebrew/homebrew-core, 1
@@ -6895,6 +6895,7 @@ Homebrew-homebrew-core/Formula/s/sleuthkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slicot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slides.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slimerjs.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/slint-compiler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slirp4netns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slither-analyzer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sloc.rb, Homebrew/homebrew-core, 0
@@ -8649,6 +8650,7 @@ Homebrew-homebrew-cask/Casks/a/anka-virtualization.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ankama.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ankerwork.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/anki.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/annotate.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/another-redis-desktop-manager.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/antconc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/antigravity-cli.rb, Homebrew/homebrew-cask, 0
@@ -9177,6 +9179,7 @@ Homebrew-homebrew-cask/Casks/c/citrix-workspace.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cityofzion-neon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/ckan-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clamxav.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/clarify.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clariti.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clash-mi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clash-party.rb, Homebrew/homebrew-cask, 1

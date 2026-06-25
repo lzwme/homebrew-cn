@@ -3,7 +3,6 @@ class Ruby < Formula
   homepage "https://www.ruby-lang.org/"
   license "Ruby"
   compatibility_version 1
-  head "https://github.com/ruby/ruby.git", branch: "master"
 
   stable do
     # TODO: enable default_user_install when updating to Ruby 4.1
@@ -38,13 +37,17 @@ class Ruby < Formula
     sha256 x86_64_linux:  "caccd8916a52e2ab4c4500ef72e502bac005a4fe091a206e858dd68c89ec757b"
   end
 
-  depends_on "autoconf" => :build
+  head do
+    url "https://github.com/ruby/ruby.git", branch: "master"
+
+    depends_on "autoconf" => :build
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libyaml"
   depends_on "openssl@3"
 
-  uses_from_macos "gperf"
   uses_from_macos "libffi"
   uses_from_macos "libxcrypt"
 

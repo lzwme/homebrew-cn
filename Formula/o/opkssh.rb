@@ -1,18 +1,18 @@
 class Opkssh < Formula
   desc "Enables SSH to be used with OpenID Connect"
   homepage "https://eprint.iacr.org/2023/296"
-  url "https://ghfast.top/https://github.com/openpubkey/opkssh/archive/refs/tags/v0.14.0.tar.gz"
-  sha256 "33f52bd71829a731782fef72acc4871477b0567f13d89fc1cef482d606a275f4"
+  url "https://ghfast.top/https://github.com/openpubkey/opkssh/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "036287cf27ce2baa3715fe917e2d6b300a499ee8766c1895bfb708690162502c"
   license "Apache-2.0"
   head "https://github.com/openpubkey/opkssh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75cd8f256c04f68eae4887d6cd7c76a6a34f5168f1345c67aadd1a5a286c3675"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75cd8f256c04f68eae4887d6cd7c76a6a34f5168f1345c67aadd1a5a286c3675"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75cd8f256c04f68eae4887d6cd7c76a6a34f5168f1345c67aadd1a5a286c3675"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b40cef57eaf2d9796186e37a3314356c1fe3d3e8dafe7927af39ca97f504fe14"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aeb363eb5be7cd1f301ef7599681c2487138cdbba94c4138f5f763d54a3e4bd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb41ada7d51db8265952374b9624627c1255c12fe152e3d7d4f81f66008085bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6385e6594a410713cae579bd55ab9bf74185a0ad1754c92cded7b651a5d52240"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6385e6594a410713cae579bd55ab9bf74185a0ad1754c92cded7b651a5d52240"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6385e6594a410713cae579bd55ab9bf74185a0ad1754c92cded7b651a5d52240"
+    sha256 cellar: :any_skip_relocation, sonoma:        "22be6ff5f00177ee219b180dc32e78b1464198ebeee3da1099310ac445928490"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "48b45a4e66d2111334a8e1c93c0c6001d999a9763a0d8f7906865fbb261efd8b"
+    sha256 cellar: :any,                 x86_64_linux:  "5657cc38114e16f0d9969f0f687811d9a41fd446f0c2b70e2fa837098dee75d8"
   end
 
   depends_on "go" => :build

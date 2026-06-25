@@ -3,19 +3,18 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm-project.org"
-  url "https://files.pythonhosted.org/packages/d5/c7/f7e256e8e82e2dc535d466dcb7731a1f569de0c71e9cb4006ff83d3d245f/pdm-2.27.0.tar.gz"
-  sha256 "dbfbc484065d0150fa5b29484ead908354313d8699cf74c099d4531826bd04de"
+  url "https://files.pythonhosted.org/packages/f9/d9/dd3739cb451b3ebe95ce27868e145fb108b8fc0d728d0768c6f3e51a83a0/pdm-2.28.0.tar.gz"
+  sha256 "ca7d21548955086985070d2fe4334a55e59093a466b25eebc6bb0769a0539e89"
   license "MIT"
-  revision 1
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ef371f24546241183d8220f877ef1f68e2e4c01a745b7bf72298d6af7b6dcfe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0662c90129d5e0b717ee61e14fb820c0eecd8c170687c998a2713bbb3660798"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5328de0c8b734740f21e7119745c126330a9ce7866df03ad566b6fa12c05c80"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5e227f0d85121bce15cdb925b5e8467d4f8e799ae23f6eaf7cc1ef3035e7ec59"
-    sha256 cellar: :any,                 arm64_linux:   "779758d4e2895bc53a86560f0fb5d7eb4139c187415e03e489d2a31545467fa5"
-    sha256 cellar: :any,                 x86_64_linux:  "79a073fa54b9b064d88b052eabec2006bb180455b0fc874dd8fc33a74219bac4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0794a8567fd011dcc5d5aa873ba3e6ebb55909ec23f890eb0ea87f2fe8564af7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ca0d1a4eefe9725c88aece00143b3305db5977916cb96273f96bbc48ec5e249"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee214c69135b3bcee54c506c617eea07dd58a3442aa7eacba61de55e6b09e275"
+    sha256 cellar: :any_skip_relocation, sonoma:        "45d6c5a689840ac4298eef6ce07a3e168dafa69241d57323cdeea81e52775509"
+    sha256 cellar: :any,                 arm64_linux:   "c06acc1598056c2f5c45a91e290d2478778570453901248022469d6764ba4786"
+    sha256 cellar: :any,                 x86_64_linux:  "bb9d0087f1cf23e2ee2343043dc18854805f46c6b58e800e84c91e62c857d0f8"
   end
 
   depends_on "certifi" => :no_linkage

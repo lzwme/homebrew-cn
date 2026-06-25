@@ -1,8 +1,8 @@
 class Teleport < Formula
   desc "Modern SSH server for teams managing distributed infrastructure"
   homepage "https://goteleport.com/"
-  url "https://ghfast.top/https://github.com/gravitational/teleport/archive/refs/tags/v18.9.0.tar.gz"
-  sha256 "4fa55291972767286af81ee4e0e682e38d27eb5541d222f7f288e59f257ac2bf"
+  url "https://ghfast.top/https://github.com/gravitational/teleport/archive/refs/tags/v18.9.1.tar.gz"
+  sha256 "e827433bbbc35999eab0415568bf36dd1f7d500a0fe477ce71c24784fcd6c429"
   license all_of: ["AGPL-3.0-or-later", "Apache-2.0"]
   head "https://github.com/gravitational/teleport.git", branch: "master"
 
@@ -18,12 +18,12 @@ class Teleport < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ce78c62d581f6ef140a8b0599b8426951b21e48926c3d0b006a97823a5942004"
-    sha256 cellar: :any, arm64_sequoia: "2c940495cb1f39938fd8d972322b70a3407074f39b16e4b9e6be608d15642a78"
-    sha256 cellar: :any, arm64_sonoma:  "5a9ae5b376dfd416721481122141e1f0bdaab02cb9646aae1cef8149f9ff2fef"
-    sha256 cellar: :any, sonoma:        "9f150a8e0c644af04b246e0ac0cffff9ae453268b7e95659b083de543fc53eb4"
-    sha256 cellar: :any, arm64_linux:   "9c43c39cc8b99d8ed644d752e1adc6d390ae0f18b4ac02f92d623c17a0e51f1c"
-    sha256 cellar: :any, x86_64_linux:  "8b6c56f04c32919aa1765a69f30df6875de68234e9e625da46bd57eb991f5205"
+    sha256 cellar: :any, arm64_tahoe:   "3e9bf06be6b6e377d823be9c515b654709ab9c2efe6f5e9edadc117235508a01"
+    sha256 cellar: :any, arm64_sequoia: "355d5d8a8685cb2a15ec366a20f0c94cf270fadd30eb9321845ddaad509b0f2c"
+    sha256 cellar: :any, arm64_sonoma:  "0035d44f87b16be2ed06629085fcb1abb116fc6da8d7cf7fc365cffacb6501be"
+    sha256 cellar: :any, sonoma:        "8f561038c5223055aa9feb6163c3c14228d927263a1b5a8b2c652b1c72fc3b89"
+    sha256 cellar: :any, arm64_linux:   "91c07fa58d6f296de40e7174bf794c91e795c9d0b29c747e4637647a72b16399"
+    sha256 cellar: :any, x86_64_linux:  "b1d93ace7835175d1e2c63ebd89eeeee21c0bba87bac35c0fb120cb2d748c2e1"
   end
 
   depends_on "binaryen" => :build

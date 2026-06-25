@@ -1,8 +1,8 @@
 class Reprepro < Formula
   desc "Debian package repository manager"
   homepage "https://salsa.debian.org/debian/reprepro"
-  url "https://deb.debian.org/debian/pool/main/r/reprepro/reprepro_5.4.8.orig.tar.xz"
-  sha256 "f25409cf50acfc8b01a8e1e7c4e176292107763beedb058b42d7bf8e56a8e9c2"
+  url "https://deb.debian.org/debian/pool/main/r/reprepro/reprepro_5.5.0.orig.tar.xz"
+  sha256 "efc317fba149e40bb7f96251d433ab8bbcffac1c12fe07db1327c6a25a27aac7"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,13 +11,12 @@ class Reprepro < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "6172bb6e3ed24a3262ba0347cd673cff1c21aa9070a19e19fd0080a824249827"
-    sha256 cellar: :any,                 arm64_sequoia: "3e5e78adbbf2fe3b280ad12b0c0280cc111cdbbe969d2f8d351e38a1ceb2d898"
-    sha256 cellar: :any,                 arm64_sonoma:  "71cb5d6c6c730747893a2824d488915df53b9ab2363db85151fffeb988e23d35"
-    sha256 cellar: :any,                 sonoma:        "f6c637c7a806b7593e34aabe0fd9a48e325c0badf49bc4ee832fa7e6daa0d94f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e597daa3f957ba29c07f0d49e3248304498da424db9a412f52786a8a59b16a0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cc1062a1b192a2454bcde2ed80996bebba8d6561382b19309b2e307fcb30786"
+    sha256 cellar: :any, arm64_tahoe:   "2f2b25c1d2cdeaf5cac54a2f96eaccd8d96fd07025d402e7c84c5866a1a0f769"
+    sha256 cellar: :any, arm64_sequoia: "afb1416cadd36f7ae2f5039116ea17fd09dd871b89b063a2ddbdf6aa9c6ca8b0"
+    sha256 cellar: :any, arm64_sonoma:  "a897736d0e1b99fce210a08fe735e2cb6dddd569235005905da2745698798f02"
+    sha256 cellar: :any, sonoma:        "655aac8599ed951be2c079a158d5ff0dfedd54b2bd852b6dd1d42d4c3b2e38da"
+    sha256 cellar: :any, arm64_linux:   "1bac0c344db85c479c697c85d5c3fa980cc0904bde2a953baa62d0025c46c65b"
+    sha256 cellar: :any, x86_64_linux:  "50f78047cddd1e7cbf5d0818e03e066d8fab00569c5c876922c487d734999e03"
   end
 
   depends_on "autoconf" => :build

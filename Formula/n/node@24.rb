@@ -1,8 +1,8 @@
 class NodeAT24 < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v24.17.0/node-v24.17.0.tar.xz"
-  sha256 "a7ab562ed2369a29c68b72fa00e3103bcdfe37063dff799c6acc8e404e275fcd"
+  url "https://registry.npmmirror.com/-/binary/node/v24.18.0/node-v24.18.0.tar.xz"
+  sha256 "e94afde24db08e0c564ee7110a2d5aab51ee0059382c9fd8233c54eec47b28f9"
   license "MIT"
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class NodeAT24 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3848d1d8ded8c2a314793be335a2ff009426bfd8a69a4f446b9d11b4ee983f2e"
-    sha256 cellar: :any, arm64_sequoia: "107a243667b44ff520411808d1de3ceeafbd1eaee57622ad49f947e12dd3041a"
-    sha256 cellar: :any, arm64_sonoma:  "220de3a0bcb40c59a884e5f488a00e36af28eea7849129fb3f728d7363c6ba3d"
-    sha256 cellar: :any, sonoma:        "4bf84731154f21c5be01918c8c766d4049cccc38f87c572fb7c39c6eba29f241"
-    sha256 cellar: :any, arm64_linux:   "daca2b97dae26d5b99b18510525568981e8db399de4dfd31a80eea6d9b489724"
-    sha256 cellar: :any, x86_64_linux:  "9c3cb5a617e2bed0644040d6d1d86332ab6b3c4da5726928294e79b24556b5ae"
+    sha256 cellar: :any, arm64_tahoe:   "234fdea7b598f3ad21e95baa52faf106fe3b6202dfa92e47cb5bec80e092d656"
+    sha256 cellar: :any, arm64_sequoia: "47f3edb73ff817a0e25cdb3589bad0e03257b254f39f7020e0d486d709b5a88c"
+    sha256 cellar: :any, arm64_sonoma:  "7d863de855509f306d9751e99d9817516a337bcb3929533ed3cf5b31b754b386"
+    sha256 cellar: :any, sonoma:        "b2b38a51ba21dd48a98ba7ca2b5d1dda21d647968c65809448b3e144338f597d"
+    sha256 cellar: :any, arm64_linux:   "1c19c6ec14a3593cd0c341d08795010373c49a1994b1a1203df87d7225aae8a9"
+    sha256 cellar: :any, x86_64_linux:  "d73665cb2fb2eda05ab269027de71db4323b31d3779325ff28d886f5de33926b"
   end
 
   keg_only :versioned_formula

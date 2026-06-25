@@ -1,8 +1,8 @@
 class Fish < Formula
   desc "User-friendly command-line shell for UNIX-like operating systems"
   homepage "https://fishshell.com"
-  url "https://ghfast.top/https://github.com/fish-shell/fish-shell/releases/download/4.7.1/fish-4.7.1.tar.xz"
-  sha256 "6f4d5b438a6338e3f5dcda19a28261e2ece7a9b7ff97686685e6abdc31dbb7df"
+  url "https://ghfast.top/https://github.com/fish-shell/fish-shell/releases/download/4.8.0/fish-4.8.0.tar.xz"
+  sha256 "33af62c7df2fa553e0e84fa81f6ea48acf98c2bfc50036eaacc70ac8ba63e707"
   license "GPL-2.0-only"
   compatibility_version 1
   head "https://github.com/fish-shell/fish-shell.git", branch: "master"
@@ -15,12 +15,12 @@ class Fish < Formula
   pour_bottle? only_if: :default_prefix
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d0748afd7677498d11bfba25a9f207637ab4c946a7e3ef44015fafe788b49087"
-    sha256 cellar: :any,                 arm64_sequoia: "72c35917c46817b8ffc7a29a88503dc1c69c480791c00d1153b3c6f080438f24"
-    sha256 cellar: :any,                 arm64_sonoma:  "d2ac9381c0c31e65807936a22878482d9e55e9fb5c3cb6839d14a04638f7b595"
-    sha256 cellar: :any,                 sonoma:        "99dd20315683a455a83a8bed7304b989e4cf6e374b14757bcc27a15f76efdfe0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "83111b56a3eb19014461ff189b9f5032fe216f5d02e197577e3eba9ecee3eae0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed24872ec681dfaf8c43449bb67242f76e7b4952a678b0b6564889baabc35950"
+    sha256 cellar: :any, arm64_tahoe:   "997643016a4e08dff753dd1e0e3ff309ddaa97cb275d6b0a3a58b6481fe81ae7"
+    sha256 cellar: :any, arm64_sequoia: "42eb74c806fcd8bc9063cc4062cb33d252332cd6e5b0e38cc9e4a5282700c8d1"
+    sha256 cellar: :any, arm64_sonoma:  "29df45ceb1e4661b944e4ac0cc4ee75e6e6fcf133abd06f9ce490cdd81b9390b"
+    sha256 cellar: :any, sonoma:        "86fd899be4526711c7390fa832728506da964bdaf00ce3399f46ff40a757e368"
+    sha256 cellar: :any, arm64_linux:   "220dd080c81fedb2bc9f96a41784c64be645035dcb6ea481c7849845eba931fa"
+    sha256 cellar: :any, x86_64_linux:  "9585d0abfcb0476a1620bc79b74894e4509435267b6d903c23265bff293cbb98"
   end
 
   depends_on "cmake" => :build

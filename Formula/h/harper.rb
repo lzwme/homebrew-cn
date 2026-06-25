@@ -1,8 +1,8 @@
 class Harper < Formula
   desc "Grammar Checker for Developers"
   homepage "https://writewithharper.com"
-  url "https://ghfast.top/https://github.com/Automattic/harper/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "469ec352c9d0705b0e8702f8c704b3eac27045f9b209468864a467589ab8a0a7"
+  url "https://ghfast.top/https://github.com/Automattic/harper/archive/refs/tags/v2.6.0.tar.gz"
+  sha256 "9cd55f642eb17c2a1c7e8bfb9f958fe5ea165ec98264b7ce568bedbc32dc8b18"
   license "Apache-2.0"
   head "https://github.com/Automattic/harper.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Harper < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8be5d794aedb2c4af0c22387f7b048c745b3ac7709c22426d924bf93f45af4d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9c261078774ffe78d7c9569218a5711c4c74e4fdc00809ac83ae1396f995e89"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e75559c4aa56586ac930a6a29eb67a627a947232edb0cfcf63c6b20e1d86bdd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3387ae6c6d64a7c3441fe956a5fbf0a468cb5fca6e008445a9836fb91026377a"
-    sha256 cellar: :any,                 arm64_linux:   "4bc586d1e48e4a2dec3214972648c830d403d57797b318afe2a26b850e44fc84"
-    sha256 cellar: :any,                 x86_64_linux:  "c49bd3102b05f25739b45c936db6f9698e774d5e3dffecb3150e8dc6e0cedb67"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8df1f2f59d132a5a6ad0179a616539af57758c3d3122ea317d26a75344d62be"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dcf4d14cb83879a46bab9e1936fc025c9432bfd623f772777ea8d29372328009"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7326fc9b7108bc29fe1dbfb0a2ae568c6f3a3eade606a4db9735fe83fe6a5209"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5393def18593c78a775f117004dc55fb8f2ce6f8cf3fe6e672b80ec4e373432b"
+    sha256 cellar: :any,                 arm64_linux:   "b77794cc36e01e64ce263ae831d9e8c766b545cfedf72c018a6ca9e9a5e5bc0b"
+    sha256 cellar: :any,                 x86_64_linux:  "ed8b2b4d729f83fc45e7b89c61764a2cb815ef1875a7067c29a1a88adbd369ff"
   end
 
   depends_on "rust" => :build

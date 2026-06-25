@@ -1,37 +1,35 @@
 class Libpsl < Formula
   desc "C library for the Public Suffix List"
   homepage "https://rockdaboot.github.io/libpsl"
-  url "https://ghfast.top/https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz"
-  mirror "http://distfiles.macports.org/libpsl/libpsl-0.21.5.tar.gz"
-  sha256 "1dcc9ceae8b128f3c0b3f654decd0e1e891afc6ff81098f227ef260449dae208"
+  url "https://ghfast.top/https://github.com/rockdaboot/libpsl/releases/download/0.22.0/libpsl-0.22.0.tar.gz"
+  mirror "http://distfiles.macports.org/libpsl/libpsl-0.22.0.tar.gz"
+  sha256 "c45c3aa17576b99873e05a9b09a44041b065bbfa390e6d474d06fbfaeb9c7722"
   license "MIT"
-  revision 2
   compatibility_version 1
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "612197fd840036fc2c946c3550d814b63d4ac5e29eba01bd889d6c2c4047e147"
-    sha256 cellar: :any, arm64_sequoia: "2baca54e155686829dbf5482311731c8f7978c7f5fbcf02a1f3826bf60f0d116"
-    sha256 cellar: :any, arm64_sonoma:  "0b4d77a6438667c54b645fb6314bcc8150ed0a79bfac3493dbec98a6d2569076"
-    sha256 cellar: :any, sonoma:        "df41fd194645b9d521a70cedd0cc1e5736ca7ad2d8002ffdaada282981b21fe5"
-    sha256 cellar: :any, arm64_linux:   "68e82e2e15d8512e8a1ca94d0598dc68c61dc0e53a8f7f60679594867984211e"
-    sha256 cellar: :any, x86_64_linux:  "b98808e409ada829e347489c6ed40a94d96f1f980688216b66e30d0c9c6c0b69"
+    sha256 cellar: :any, arm64_tahoe:   "b9c0535f986ef73fc909a54ce8e3570e2bec530476d30fad5cecd6ae47205018"
+    sha256 cellar: :any, arm64_sequoia: "e4bb0f02103334a3107985f0fe23618472874ad6b1ee4b414a20acf65bfbdc76"
+    sha256 cellar: :any, arm64_sonoma:  "2fa11192a21d8b4e0931eeaaf0c50d45acbd5b23045af4b04c25d3bb00dc2540"
+    sha256 cellar: :any, sonoma:        "9402eadd70dce0b9016917af3fa7335a334d272cae64b2806af7d180fcfd9061"
+    sha256 cellar: :any, arm64_linux:   "ae00eeff50059921329ea872abb32b1e9ee9038ebce23cd6a3d903a3f3f8dcde"
+    sha256 cellar: :any, x86_64_linux:  "4ef63f1349d8797f688d5552d911c4aaf55d6a0a640e92b25011132e1ffbadec"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "libidn2"
-  depends_on "libunistring"
 
-  uses_from_macos "python" => :build
+  on_system :linux, macos: :monterey_or_older do
+    depends_on "libidn2"
+    depends_on "libunistring"
+  end
 
   def install
-    # Reduce overlinking similar to Meson build
-    ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac?
-
-    args = %w[
+    runtime = (OS.linux? || MacOS.version <= :monterey) ? "libidn2" : "libicucore"
+    args = %W[
       --disable-silent-rules
       --enable-builtin
-      --enable-runtime=libidn2
+      --enable-runtime=#{runtime}
     ]
     system "./configure", *args, *std_configure_args
     system "make", "install"

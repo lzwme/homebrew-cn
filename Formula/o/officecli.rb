@@ -1,17 +1,17 @@
 class Officecli < Formula
   desc "Read, edit, and automate Office documents (.docx, .xlsx, .pptx)"
   homepage "https://github.com/iOfficeAI/OfficeCLI"
-  url "https://ghfast.top/https://github.com/iOfficeAI/OfficeCLI/archive/refs/tags/v1.0.118.tar.gz"
-  sha256 "d29f15d0131a5a7e8aaf4fefca620566145a9c18f677cdf53c0af4dae99e25e6"
+  url "https://ghfast.top/https://github.com/iOfficeAI/OfficeCLI/archive/refs/tags/v1.0.120.tar.gz"
+  sha256 "c1322e07d522fb83fa7b1b78fcaf7707d04b1519764a181964a0b61c4ff923d8"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ddedb9c70acfe5162083b2898c178841c9572fe1d4a357bcd34495195c43e38"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a05868584a09a7dcd730d3a36175f50ff07fad667ffb3e4c104736b1cf417476"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19854aa1b93a6ff5e711fcaeb997dca6084bcf391e3e986aa87301380c1178e6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f0a4456d64b3d3666ee381375aba8a948b96eeabe6f934877d612f48bb07a8d1"
-    sha256 cellar: :any,                 arm64_linux:   "fad64521dfd1ea689b2923cb6abf9fa8995f39b2357070a24e1e94a99919822c"
-    sha256 cellar: :any,                 x86_64_linux:  "450d0cf60209dff67c391c8ca39bb1e5581c07914e9e6e7ec9a65d9dc8a8c759"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "baa21936dfd798c45d39f06f24ed431bdec635e98736edda00a0175ece983efb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04a654e31537df5d811187cfc61142a6c8e205720d513ac3c91bbe59de9f3113"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4c1ddce38186b5c94e908c32ab0f1bad9e29b5721b11cb9dd94612d3914f95a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1e77092427eecbd6eb813f72a05e4136c3610ed889b9fffe731f35522609db8b"
+    sha256 cellar: :any,                 arm64_linux:   "7a729ff0470b25d7b17e6ce66b242c016b59ded751ce435cc9b945e263a6dfa2"
+    sha256 cellar: :any,                 x86_64_linux:  "bc5cf3153796953efc88770cef2524fb74e0de69341c59a510324b3e626a8523"
   end
 
   depends_on "dotnet"
