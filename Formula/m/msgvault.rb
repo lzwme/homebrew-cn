@@ -27,7 +27,7 @@ class Msgvault < Formula
     ENV.append "CGO_LDFLAGS", "-L#{formula_opt_lib("duckdb")}"
     # sqlite-vec's CGo binding #includes <sqlite3.h>; macOS provides it in the
     # SDK, while Linux needs Homebrew's sqlite headers.
-    ENV.append "CGO_CFLAGS", "-I#{Formula["sqlite"].opt_include}" if OS.linux?
+    ENV.append "CGO_CFLAGS", "-I#{formula_opt_include("sqlite")}" if OS.linux?
 
     ldflags = "-s -w -X go.kenn.io/msgvault/cmd/msgvault/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:, tags: "fts5 sqlite_vec duckdb_use_lib"), "./cmd/msgvault"

@@ -44,7 +44,7 @@ class Libsvg < Formula
     # Workaround to avoid segfault on arm64 linux. Upstream isn't actively maintained
     ENV.append_to_cflags "-include stdlib.h"
     # Workaround for error: unknown type name 'xmlParserCtxtPtr'
-    ENV.append_to_cflags "-I#{Formula["libxml2"].opt_include}/libxml2 -include libxml/tree.h" unless OS.mac?
+    ENV.append_to_cflags "-I#{formula_opt_include("libxml2")}/libxml2 -include libxml/tree.h" unless OS.mac?
 
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *std_configure_args

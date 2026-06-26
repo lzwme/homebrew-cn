@@ -35,11 +35,11 @@ class Vncsnapshot < Formula
                        "typedef unsigned int CARD32;"
 
     args = [
-      "JPEG_INCLUDE=-I#{Formula["jpeg-turbo"].opt_include}",
+      "JPEG_INCLUDE=-I#{formula_opt_include("jpeg-turbo")}",
       "JPEG_LIB=-L#{formula_opt_lib("jpeg-turbo")} -ljpeg",
     ]
     if OS.linux?
-      args << "ZLIB_INCLUDE=-I#{Formula["zlib-ng-compat"].opt_include}"
+      args << "ZLIB_INCLUDE=-I#{formula_opt_include("zlib-ng-compat")}"
       args << "ZLIB_LIB=-L#{formula_opt_lib("zlib-ng-compat")} -lz"
     end
 

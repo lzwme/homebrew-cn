@@ -3,20 +3,20 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/2e/56/74bc590f17897075f44f79fa93a2b3f0258daefb42ae0c1d958d8508324b/keepercommander-18.0.8.tar.gz"
-  sha256 "aebb23132a715fb6dd940e546f704d7690eb94b63a858b09e13e1ac91888f699"
+  url "https://files.pythonhosted.org/packages/08/44/61fc071b4b86d5d560640957d902fd491e36898509757bfe4286e5609626/keepercommander-18.0.9.tar.gz"
+  sha256 "1f28fba28e81d2dc96e1006dea42fda487dbb493100f611cf13b310ac4212460"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f185e964e584e2a61f29b3829942f87fa0b731c1758fc73e6e6ddacf0788ecb0"
-    sha256 cellar: :any, arm64_sequoia: "009c8cc454c491587fa24cf911426e03abc8112370ca1d217830d4151c484b1c"
-    sha256 cellar: :any, arm64_sonoma:  "f73cabb005a089bd258fb3b09f6fdb5358f9a53b2035f38eb05c3b281db8e117"
-    sha256 cellar: :any, sonoma:        "8d7064b55523035a4a3cdbb0bdb48c42a695af2aae1b9a4fa7b494d697c63335"
-    sha256 cellar: :any, arm64_linux:   "a3876fd87e8599d1953bf6da01fde9038a77c62bcc9d61ddfd0e2f1c9d43375c"
-    sha256 cellar: :any, x86_64_linux:  "58e32f9e5630048444b6b4b6d518af4f402a786cc82f31a71cdb8ac69a605225"
+    sha256 cellar: :any, arm64_tahoe:   "84cf585442683b1d5b068b3405b4d51a6caa0296caae8a39eb54b7793dbde5f9"
+    sha256 cellar: :any, arm64_sequoia: "0605cbd480660de021e6df69be88edabb973ba7ba717c8668a9fc42a68d22ae4"
+    sha256 cellar: :any, arm64_sonoma:  "dee1b116a3ee175038bd463092fff4f55aeb0218c0daa70c5eaa06caf4290eef"
+    sha256 cellar: :any, sonoma:        "4b8ae80208a5b5a12b6dc8122311e7f5fbdb325a1983180a717fc5a7329e6f20"
+    sha256 cellar: :any, arm64_linux:   "239d5157c315eeaf63c207e9cd20a9482aa28d9d25580fcccda3ef1a9ec23e60"
+    sha256 cellar: :any, x86_64_linux:  "b9bb1761942ebcd6244307fdc1c6e3ca121c8cea4bac258bb7294dcf9f0cd517"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -162,13 +162,13 @@ class KeeperCommander < Formula
   end
 
   resource "keeper-pam-webrtc-rs" do
-    url "https://files.pythonhosted.org/packages/cc/52/8213f5ecb9eaff5ecf3532d005a13ff98ce06e6b15469cead2503493adbb/keeper_pam_webrtc_rs-2.1.18.tar.gz"
-    sha256 "c61e0cf2468be04303828e1eace171b56d81b713ada244b294fae65910ee599c"
+    url "https://files.pythonhosted.org/packages/09/65/f1462f404d4bda4b126c0499df409f9e9ed771bfe22d3ebd93be94a377d5/keeper_pam_webrtc_rs-2.1.19.tar.gz"
+    sha256 "91c1aaf4fafaba03207a92b1e9241969d9b0095985b6ad298c924041f16cf0f9"
   end
 
   resource "keeper-secrets-manager-core" do
-    url "https://files.pythonhosted.org/packages/f3/77/1d75b0ea109f4ddf7c18fb82c5d222f8eb66b3d00e37fb1b2328d3595763/keeper_secrets_manager_core-17.2.1.tar.gz"
-    sha256 "2414abf10711f7f6918edb47454706986a08099affbfeb92b1fad626cb37dd11"
+    url "https://files.pythonhosted.org/packages/d6/55/fbf9b0952cc53ae473697302b71f00fbc60ee7486a28aaf91c14dcd8bf58/keeper_secrets_manager_core-17.3.0.tar.gz"
+    sha256 "dbd3c2b2160a92aed46c2f5355cbd793492f43ba260379d78957e7ad75a96acf"
   end
 
   resource "keyring" do
@@ -257,23 +257,23 @@ class KeeperCommander < Formula
   end
 
   resource "pyobjc-core" do
-    url "https://files.pythonhosted.org/packages/2a/e8/a6cc12669211e7c9b29e8f26bf2159e67c7a73555dc229018abf46d8167a/pyobjc_core-12.2.tar.gz"
-    sha256 "51d7de4cfa32f508c6a7aac31f131b12d5e196a8dcf588e6e8d7e6337224f66d"
+    url "https://files.pythonhosted.org/packages/b4/b1/729f7458a63758bd21716648a8abcd9a0c8f2d2e9897763c8a1a1c7fd31b/pyobjc_core-12.2.1.tar.gz"
+    sha256 "7a7b9b018402342cf32bf1956366896350fbe5c0478cb3ef59778f77abed7f07"
   end
 
   resource "pyobjc-framework-cocoa" do
-    url "https://files.pythonhosted.org/packages/6d/cc/927169225e72bab9c9b44285656768fb75052a0bc85fdbca62740e1ca43c/pyobjc_framework_cocoa-12.2.tar.gz"
-    sha256 "20b392e2b7241caad0538dfde12143343e5dfe48f72e7df660a7548e635903dc"
+    url "https://files.pythonhosted.org/packages/51/34/fbe38a204643aa4e1b91391cdce07a34da565a69171ebcad08de7438a556/pyobjc_framework_cocoa-12.2.1.tar.gz"
+    sha256 "b94b37fe5730e5ae1fb0052912cd174e6ec329b0bfba4a012ae5db1014b5864b"
   end
 
   resource "pyobjc-framework-localauthentication" do
-    url "https://files.pythonhosted.org/packages/3b/bb/68ff2b154ed783d39a1752cbbb7dc9d0ce55c17097dc00fe56d9080c6349/pyobjc_framework_localauthentication-12.2.tar.gz"
-    sha256 "e1d734db5ddf35093307e213115bd122ef8712463be048eabfa4062022373e21"
+    url "https://files.pythonhosted.org/packages/ea/e8/fcbea8814ab28d00e18e4f6fc84af2fbf58eee916bfe85a30685abef0729/pyobjc_framework_localauthentication-12.2.1.tar.gz"
+    sha256 "05162d6d603fe6a9bf8eba8d5df7da379bc2b8eaf2a405bf0132a71477f5ed1c"
   end
 
   resource "pyobjc-framework-security" do
-    url "https://files.pythonhosted.org/packages/e3/3c/7778dd8e196373feabc54841b87e495148da3fe20d305f39397546afaaee/pyobjc_framework_security-12.2.tar.gz"
-    sha256 "ef4d2d852a09360929e284c6f355964d84ac88b170207de1ac299fa1e1c33e40"
+    url "https://files.pythonhosted.org/packages/44/b8/4267b802d8dba6de468e7d0765b05cc4e146fa376ed9f55e0b6461016bef/pyobjc_framework_security-12.2.1.tar.gz"
+    sha256 "d7831b1537f4346892e7f2f0e2b09d79bee98919b0767f4061278d0e03028f2d"
   end
 
   resource "pyperclip" do
@@ -312,8 +312,8 @@ class KeeperCommander < Formula
   end
 
   resource "tzlocal" do
-    url "https://files.pythonhosted.org/packages/8b/2e/c14812d3d4d9cd1773c6be938f89e5735a1f11a9f184ac3639b93cef35d5/tzlocal-5.3.1.tar.gz"
-    sha256 "cceffc7edecefea1f595541dbd6e990cb1ea3d19bf01b2809f362a03dd7921fd"
+    url "https://files.pythonhosted.org/packages/48/55/15e2340963d2bfedcc6042da3911438fd336f8ae96b65bdbe3a29766da0c/tzlocal-5.4.3.tar.gz"
+    sha256 "3a8c9bc18cf47e1dcde252ea0e6a72a6cde320a400b6ac6db1f1f8cccd553c00"
   end
 
   resource "uc-micro-py" do
@@ -342,8 +342,8 @@ class KeeperCommander < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/2d/9f/06263fcd8ad6c405f05a3905fd7a84dd3176eb5ad46e44bccc0cd16348bb/wrapt-2.2.1.tar.gz"
-    sha256 "6744f504375775d7609c82c8d3d94af1c9a6f05586984536905908ba905277b9"
+    url "https://files.pythonhosted.org/packages/fe/a4/282c8e64300a59fc834518a54bf0afabb4ff9218b5fa76958b450459a844/wrapt-2.2.2.tar.gz"
+    sha256 "0788e321027c999bf221b667bd4a54aaefd1a36283749a860ac3eb77daed0302"
   end
 
   resource "zxcvbn" do

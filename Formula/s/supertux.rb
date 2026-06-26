@@ -52,7 +52,7 @@ class Supertux < Formula
       "-DINSTALL_SUBDIR_BIN=bin",
       "-DINSTALL_SUBDIR_SHARE=share/supertux",
       # Without the following option, Cmake intend to use the library of MONO framework.
-      "-DPNG_PNG_INCLUDE_DIR=#{Formula["libpng"].opt_include}",
+      "-DPNG_PNG_INCLUDE_DIR=#{formula_opt_include("libpng")}",
       "-DCMAKE_INSTALL_RPATH=#{rpath}",
     ]
 

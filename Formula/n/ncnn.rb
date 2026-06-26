@@ -50,7 +50,7 @@ class Ncnn < Formula
 
     if OS.mac?
       args += %W[
-        -DVulkan_INCLUDE_DIR=#{Formula["molten-vk"].opt_include}
+        -DVulkan_INCLUDE_DIR=#{formula_opt_include("molten-vk")}
         -DVulkan_LIBRARY=#{formula_opt_lib("molten-vk")/shared_library("libMoltenVK")}
       ]
 

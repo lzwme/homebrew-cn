@@ -1,18 +1,18 @@
 class Lavinmq < Formula
   desc "Message broker implementing the AMQP 0-9-1 and MQTT protocols"
   homepage "https://lavinmq.com"
-  url "https://ghfast.top/https://github.com/cloudamqp/lavinmq/archive/refs/tags/v2.8.2.tar.gz"
-  sha256 "f9241ee9e45b65db9923e85d80de705c1873fac41ad02795d440fcc629c3ed60"
+  url "https://ghfast.top/https://github.com/cloudamqp/lavinmq/archive/refs/tags/v2.9.0.tar.gz"
+  sha256 "2d7e4edc22f6acda2a77c66fca8179a5c2aacfd9d454063e30314ea8efb24c15"
   license "Apache-2.0"
   head "https://github.com/cloudamqp/lavinmq.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bc3468369b1c1c5a7a43cc26603782f300e064abab85e3734ca474da3501003e"
-    sha256 cellar: :any, arm64_sequoia: "e55bc558553f7a4156ba674068f622e66c4eae0765a29f0523c65a5133fc3032"
-    sha256 cellar: :any, arm64_sonoma:  "1fc348fc043f9ed038b926958a8446de901e756d9812624fabe4961c24cb8c91"
-    sha256 cellar: :any, sonoma:        "cf0da37bde4181383b2eb49ce060fcb81e286d67ccbefa3941abfecf7b92b3f5"
-    sha256 cellar: :any, arm64_linux:   "1594da570d91f54d0dc27fe53ad3a9487b5057c45eb93baf53ee73073fe98b0a"
-    sha256 cellar: :any, x86_64_linux:  "bbef6298b4eba84371efcb71611b30e9a420b02ff6a92a1e392dd4b3ff0dddeb"
+    sha256 cellar: :any, arm64_tahoe:   "668c7a118124810de0646810bb545103ee39018bfbd9b23887bc9c208461f8ec"
+    sha256 cellar: :any, arm64_sequoia: "c8a13dd102f40192a2ad2372088c7e3082de12a840149709fa65c1af8f222ed1"
+    sha256 cellar: :any, arm64_sonoma:  "94338bf938807e1278bf75329c2de2b365f037423d4c8f75b220c2a9d461a35a"
+    sha256 cellar: :any, sonoma:        "3cba2de138aae3696e6839f5274e6f85c74bc07e13c6883643c5264abd8fbd48"
+    sha256 cellar: :any, arm64_linux:   "4d1956f6041ee109d75848ac81b29c7d94363441fb496bc2a092e6133338eeb7"
+    sha256 cellar: :any, x86_64_linux:  "42a780215dda10ba8e1d1ca6598882e0a0390d36d257f68c084ac1cba2dafd62"
   end
 
   depends_on "crystal" => :build

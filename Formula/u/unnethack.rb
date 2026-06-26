@@ -63,7 +63,7 @@ class Unnethack < Formula
     # Ref: https://github.com/UnNetHack/UnNetHack/commit/00dd95ccad390e72d6a4fb2e058df48ed509b564
     ENV.append_to_cflags "-Wno-implicit-int" if DevelopmentTools.clang_build_version >= 1403
 
-    ENV["LUA_INCLUDE"] = "-I#{Formula["lua"].opt_include}/lua" if build.head?
+    ENV["LUA_INCLUDE"] = "-I#{formula_opt_include("lua")}/lua" if build.head?
 
     # directory for version specific files that shouldn't be deleted when
     # upgrading/uninstalling

@@ -118,7 +118,7 @@ class OpenjdkAT25 < Formula
 
       %W[
         --enable-dtrace
-        --with-freetype-include=#{Formula["freetype"].opt_include}
+        --with-freetype-include=#{formula_opt_include("freetype")}
         --with-freetype-lib=#{formula_opt_lib("freetype")}
         --with-sysroot=#{MacOS.sdk_path}
       ]

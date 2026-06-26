@@ -28,7 +28,7 @@ class Pymupdf < Formula
     # Makes setup skip build stage for mupdf
     # https://github.com/pymupdf/PyMuPDF/blob/1.20.0/setup.py#L447
     ENV["PYMUPDF_SETUP_MUPDF_BUILD"] = ""
-    ENV["PYMUPDF_INCLUDES"] = "#{Formula["mupdf"].opt_include}:#{Formula["freetype"].opt_include}/freetype2"
+    ENV["PYMUPDF_INCLUDES"] = "#{formula_opt_include("mupdf")}:#{formula_opt_include("freetype")}/freetype2"
     ENV["PYMUPDF_SETUP_SWIG"] = formula_opt_bin("swig")/"swig"
 
     mupdf_libpath = formula_opt_lib("mupdf").to_s

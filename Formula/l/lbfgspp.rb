@@ -69,7 +69,7 @@ class Lbfgspp < Formula
       }
     CPP
     system ENV.cxx, testpath/"test.cpp", "-std=c++14",
-           "-I#{include}", "-I#{Formula["eigen"].opt_include}/eigen3",
+           "-I#{include}", "-I#{formula_opt_include("eigen")}/eigen3",
            "-o", "test"
     assert_equal "1 1 1 1 1 1 1 1 1 1", shell_output(testpath/"test").chomp
   end

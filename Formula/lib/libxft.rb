@@ -44,6 +44,6 @@ class Libxft < Formula
         return 0;
       }
     C
-    system ENV.cc, "-I#{Formula["freetype"].opt_include}/freetype2", "test.c"
+    system ENV.cc, "-I#{formula_opt_include("freetype")}/freetype2", "test.c"
   end
 end

@@ -41,7 +41,7 @@ class PythonTkAT312 < Formula
     python_include = if OS.mac?
       Formula["python@#{xy}"].opt_frameworks/"Python.framework/Versions/#{xy}/include/python#{xy}"
     else
-      Formula["python@#{xy}"].opt_include/"python#{xy}"
+      formula_opt_include("python@#{xy}")/"python#{xy}"
     end
 
     cd "Modules" do
@@ -55,7 +55,7 @@ class PythonTkAT312 < Formula
               ext_modules = [
                 Extension("_tkinter", ["_tkinter.c", "tkappinit.c"],
                           define_macros=[("WITH_APPINIT", 1), ("TCL_WITH_EXTERNAL_TOMMATH", 1)],
-                          include_dirs=["#{python_include}/internal", "#{Formula["tcl-tk"].opt_include/"tcl-tk"}"],
+                          include_dirs=["#{python_include}/internal", "#{formula_opt_include("tcl-tk")/"tcl-tk"}"],
                           libraries=["tcl#{tcltk_version}", "tcl#{tcltk_version.major}tk#{tcltk_version}"],
                           library_dirs=["#{formula_opt_lib("tcl-tk")}"])
               ]

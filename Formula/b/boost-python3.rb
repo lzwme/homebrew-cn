@@ -89,7 +89,7 @@ class BoostPython3 < Formula
     # Fix the path to headers installed in `boost` formula
     cmake_configs = lib.glob("cmake/boost_{python,numpy}*/boost_{python,numpy}-config.cmake")
     inreplace cmake_configs, '(_BOOST_INCLUDEDIR "${_BOOST_CMAKEDIR}/../../include/" ABSOLUTE)',
-                             "(_BOOST_INCLUDEDIR \"#{Formula["boost"].opt_include}/\" ABSOLUTE)"
+                             "(_BOOST_INCLUDEDIR \"#{formula_opt_include("boost")}/\" ABSOLUTE)"
   end
 
   test do

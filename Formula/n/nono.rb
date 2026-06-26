@@ -1,7 +1,7 @@
 class Nono < Formula
   desc "Capability-based sandbox shell for AI agents with OS-enforced isolation"
   homepage "https://nono.sh"
-  url "https://ghfast.top/https://github.com/always-further/nono/archive/refs/tags/v0.65.1.tar.gz"
+  url "https://ghfast.top/https://github.com/nolabs-ai/nono/archive/refs/tags/v0.65.1.tar.gz"
   sha256 "a342deed7c16742c955b3a2bdef7ba558476bedcd298ee12c95b5dd47a381a9f"
   license "Apache-2.0"
 
@@ -11,12 +11,13 @@ class Nono < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b301668175b5ee7b22a75ec1ae66c3f3d29220098962dbfa2018d466d119c949"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64cb2d4cb9c8e9e217a201f6233b95a5b7c49f0e3bf8d0c828eae7fefeeb1252"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9627e218c78fd522618061663cbce2e5c2de85dbdf57abeb81d83bd97b6870c1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e7650c210b6c54fe7a70a852580c40d4a37d5b8ac0e8b451c06ae6036501175c"
-    sha256 cellar: :any,                 arm64_linux:   "a7a5dd83188b532f10c3fdc6191c7a1d51c76cbe4654decab723218fde6867e8"
-    sha256 cellar: :any,                 x86_64_linux:  "1c08329fccb17ed7de354f34f2d8c0918d52152ae85defba6b6b96f387bbbe3a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "691614867da113b2730516bb9fa70ec9358da748cc2f22923b6fdf089a5c776c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb6d5ded4f2c32e06face9126bf191964dd0bde3f286ec417b827fe1c6ae240f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25473188a03f14c8ef24efe2df5cf79775e143ae385b2c7f169be4d7298262a8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c4e94bb8ade0f947bf3d18ac97ee2a889ae70d1c22975fb2922068102125060c"
+    sha256 cellar: :any,                 arm64_linux:   "5e74a4d0debe3c61876dd7d855f7bacad326043771162c8ddcdae1d2e0d1cf47"
+    sha256 cellar: :any,                 x86_64_linux:  "895df7d5ee203b5862e65ce9c0fd1c5dcc6b0d413f002cc3be93d5ab6a65e2c9"
   end
 
   depends_on "pkgconf" => :build

@@ -76,9 +76,9 @@ class QwtQt5 < Formula
         "-I#{formula_opt_lib("qt@5")}/QtGui.framework/Versions/5/Headers"
     else
       system ENV.cxx,
-        "-I#{Formula["qt@5"].opt_include}",
-        "-I#{Formula["qt@5"].opt_include}/QtCore",
-        "-I#{Formula["qt@5"].opt_include}/QtGui",
+        "-I#{formula_opt_include("qt@5")}",
+        "-I#{formula_opt_include("qt@5")}/QtCore",
+        "-I#{formula_opt_include("qt@5")}/QtGui",
         "test.cpp",
         "-lqwt", "-lQt5Core", "-lQt5Gui",
         "-L#{formula_opt_lib("qt@5")}",

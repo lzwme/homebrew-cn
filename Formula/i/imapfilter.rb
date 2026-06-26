@@ -20,7 +20,7 @@ class Imapfilter < Formula
 
   def install
     # find Homebrew's libpcre and lua
-    ENV.append "CPPFLAGS", "-I#{Formula["lua"].opt_include}/lua"
+    ENV.append "CPPFLAGS", "-I#{formula_opt_include("lua")}/lua"
     ENV.append "LDFLAGS", "-L#{formula_opt_lib("pcre2")}"
     ENV.append "LDFLAGS", "-L#{formula_opt_lib("lua")}"
     ENV.append "LDFLAGS", "-liconv" if OS.mac?

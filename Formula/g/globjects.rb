@@ -62,8 +62,8 @@ class Globjects < Formula
     flags << "-stdlib=libc++" if OS.mac?
     system ENV.cxx, "-o", "test", "test.cpp", *flags,
                     "-I#{include}/globjects",
-                    "-I#{Formula["glbinding@2"].opt_include}",
-                    "-I#{Formula["glm"].opt_include}/glm",
+                    "-I#{formula_opt_include("glbinding@2")}",
+                    "-I#{formula_opt_include("glm")}/glm",
                     "-L#{lib}", "-L#{formula_opt_lib("glbinding@2")}",
                     "-lglobjects", "-lglbinding", *ENV.cflags.to_s.split
     system "./test"

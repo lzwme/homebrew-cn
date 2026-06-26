@@ -1,19 +1,18 @@
 class Pixlet < Formula
   desc "App runtime and UX toolkit for pixel-based apps"
   homepage "https://github.com/tronbyt/pixlet"
-  url "https://ghfast.top/https://github.com/tronbyt/pixlet/archive/refs/tags/v0.53.0.tar.gz"
-  sha256 "99711b79ee298d93bba7d9070e619c6a6879f5b3dd77a2322be9825748b6fa83"
+  url "https://ghfast.top/https://github.com/tronbyt/pixlet/archive/refs/tags/v0.53.1.tar.gz"
+  sha256 "35ba194885d5348b38f1bfad107dd9dafb3f835a227f1354d9e030658b135216"
   license "Apache-2.0"
   head "https://github.com/tronbyt/pixlet.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "0f8fe1b8eb10ad2834e877d8deee2b3d7e204250d9a344f66d4e2a0e0ff86f24"
-    sha256 cellar: :any, arm64_sequoia: "5ab235c910624846fdc7a223302fb692d11ebf3ded8e743c6c5799409737ceed"
-    sha256 cellar: :any, arm64_sonoma:  "d3edc58458a357ab5eacebeefc64314a2212dd6b8d8e38d8d1fa3e2058190e95"
-    sha256 cellar: :any, sonoma:        "8da0a3f582dcf7601097c665845044c7a36ab5592059f9a27cc1b511702289fe"
-    sha256 cellar: :any, arm64_linux:   "dc60cf7020cd4a81641aeae640670ac4a9bc7523f977ddcd29df38352942fffd"
-    sha256 cellar: :any, x86_64_linux:  "4abc3bcf0af08a59aab92e0e6bf99ae2e27f2ddbc39844bc979b91efe3770d78"
+    sha256 cellar: :any, arm64_tahoe:   "5111ba7966eb4a82fefdd85c16bf29867fa56fdcf4fc48303052756638d19d34"
+    sha256 cellar: :any, arm64_sequoia: "66db1abf90c3b052f46f73acc50bb475c8962c24a127e5568c4c853087e0105d"
+    sha256 cellar: :any, arm64_sonoma:  "03a31f36ad81ad44bf13b332ea96c3c5f9eababe32ebcc6d15b0e540a6a22583"
+    sha256 cellar: :any, sonoma:        "53b29bb12264d85880b63e1b8e420913622604167ad88b242c5585e874253485"
+    sha256 cellar: :any, arm64_linux:   "ea933088a1ec05dbc044270b34ed633e83b628264eea1a11f0e48a99a1d12447"
+    sha256 cellar: :any, x86_64_linux:  "1b8145ab62580fbb12e5fbdcc2b92d1762cd53ee760055aca5eb5b98b8977617"
   end
 
   depends_on "go" => :build

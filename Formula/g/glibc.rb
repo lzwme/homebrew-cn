@@ -147,6 +147,7 @@ class Glibc < Formula
     url "https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.39-0ubuntu8.7.debian.tar.xz"
     mirror "https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/glibc/2.39-0ubuntu8.7/glibc_2.39-0ubuntu8.7.debian.tar.xz"
     sha256 "9642284fbb90ca3b56af777e3e5d6989bf3f80ba5d0c37c4ec0c94fb37912b70"
+    type :backport
     apply "patches/any/CVE-2024-2961.patch",
           "patches/any/CVE-2024-33599.patch",
           "patches/any/CVE-2024-33600_1.patch",
@@ -163,6 +164,7 @@ class Glibc < Formula
   # Backport of various test suite fixes
   patch do
     file "Patches/glibc/2.39-test-fixes.patch"
+    type :backport
   end
 
   def install

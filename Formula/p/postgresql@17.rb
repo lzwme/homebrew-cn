@@ -65,13 +65,13 @@ class PostgresqlAT17 < Formula
     ENV.runtime_cpu_detection
     ENV.delete "PKG_CONFIG_LIBDIR"
     ENV.prepend "LDFLAGS", "-L#{formula_opt_lib("openssl@3")} -L#{formula_opt_lib("readline")}"
-    ENV.prepend "CPPFLAGS", "-I#{Formula["openssl@3"].opt_include} -I#{Formula["readline"].opt_include}"
+    ENV.prepend "CPPFLAGS", "-I#{formula_opt_include("openssl@3")} -I#{formula_opt_include("readline")}"
 
     # Fix 'libintl.h' file not found for extensions
     # Update config to fix `error: could not find function 'gss_store_cred_into' required for GSSAPI`
     if OS.mac?
       ENV.prepend "LDFLAGS", "-L#{formula_opt_lib("gettext")} -L#{formula_opt_lib("krb5")}"
-      ENV.prepend "CPPFLAGS", "-I#{Formula["gettext"].opt_include} -I#{Formula["krb5"].opt_include}"
+      ENV.prepend "CPPFLAGS", "-I#{formula_opt_include("gettext")} -I#{formula_opt_include("krb5")}"
     end
 
     args = %W[
@@ -186,7 +186,7 @@ class PostgresqlAT17 < Formula
       assert_equal "#{HOMEBREW_PREFIX}/lib/#{name}", shell_output("#{pg_config} --pkglibdir").chomp
       assert_equal "#{HOMEBREW_PREFIX}/include/#{name}", shell_output("#{pg_config} --pkgincludedir").chomp
       assert_equal "#{HOMEBREW_PREFIX}/include/#{name}/server", shell_output("#{pg_config} --includedir-server").chomp
-      assert_match "-I#{Formula["gettext"].opt_include}", shell_output("#{pg_config} --cppflags") if OS.mac?
+      assert_match "-I#{formula_opt_include("gettext")}", shell_output("#{pg_config} --cppflags") if OS.mac?
     end
   end
 end

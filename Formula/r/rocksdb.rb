@@ -1,19 +1,19 @@
 class Rocksdb < Formula
   desc "Embeddable, persistent key-value store for fast storage"
   homepage "https://rocksdb.org/"
-  url "https://ghfast.top/https://github.com/facebook/rocksdb/archive/refs/tags/v11.1.1.tar.gz"
-  sha256 "63f11183fe40725a0e89a9e392f2c86c94b90064f1d95f5173a02cfe40de13f7"
+  url "https://ghfast.top/https://github.com/facebook/rocksdb/archive/refs/tags/v11.1.2.tar.gz"
+  sha256 "3aba946031d27734eeea68ced7dd6f46629ba23a7b49945eb29aea68d1595311"
   license any_of: ["GPL-2.0-only", "Apache-2.0"]
   compatibility_version 1
   head "https://github.com/facebook/rocksdb.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "2c467e3e32497d7b2d083df17bce39f38e09cdedaee4e16f4bb6a0537dd0c9c2"
-    sha256 cellar: :any,                 arm64_sequoia: "139f202e34c9f459b3100dcdc72941bbbdc4da598e38bc08186027399d48945f"
-    sha256 cellar: :any,                 arm64_sonoma:  "889af840722499d72bb196f6cd9eb0263ecab5616767845488dd179609837ff7"
-    sha256 cellar: :any,                 sonoma:        "8df51978eb1ac052efb44f2fde78a35b38e72b5e2d00a66c443ac25493e931c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9f7f4e2f7382aec8707d84fa049e22355f33631a0fc72b85c218f1e778888c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25d9cdc531dc4c60490be75c53fd32d1180df3996894698124ef0cb856ddc410"
+    sha256 cellar: :any, arm64_tahoe:   "8592d659e3d02091f92e8d56d6e957f97e1c194948e41ae094d998bf425a83b3"
+    sha256 cellar: :any, arm64_sequoia: "e228befa618e9b544cabf1cc97a25ffc937fb9ac86e684a4f5a6c20316f5043c"
+    sha256 cellar: :any, arm64_sonoma:  "bd3f36d3009b60308d42dffc00070dc82660aae239052c3d549e9a4390f90ae8"
+    sha256 cellar: :any, sonoma:        "e63c0ec6f80221166cc622acbe1b37856a6c79d0317e206c1c29f4e29202f287"
+    sha256 cellar: :any, arm64_linux:   "84c243b567cdc3890b3d5ce2a4717cab24107062cc31dcdac45d2966fe60054e"
+    sha256 cellar: :any, x86_64_linux:  "326ab98530bcdb937e3ce30c69497372cdb0d31db58387c2cd25eecf552a2de3"
   end
 
   depends_on "cmake" => :build

@@ -58,7 +58,7 @@ class Kokkos < Formula
 
     # Platform-specific OpenMP linking flags
     extra_args = if OS.mac?
-      %W[-Xpreprocessor -fopenmp -I#{Formula["libomp"].opt_include} -L#{formula_opt_lib("libomp")} -lomp]
+      %W[-Xpreprocessor -fopenmp -I#{formula_opt_include("libomp")} -L#{formula_opt_lib("libomp")} -lomp]
     else
       # Linux - use GCC's built-in OpenMP
       %w[-fopenmp]

@@ -155,7 +155,7 @@ class GraphTool < Formula
     if OS.mac?
       ENV.append_to_cflags "-Xpreprocessor -fopenmp"
       ENV.append "LDFLAGS", "-L#{formula_opt_lib("libomp")} -lomp"
-      ENV.append "CPPFLAGS", "-I#{Formula["libomp"].opt_include}"
+      ENV.append "CPPFLAGS", "-I#{formula_opt_include("libomp")}"
     end
 
     args = %W[

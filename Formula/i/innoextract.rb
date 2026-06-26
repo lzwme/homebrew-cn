@@ -20,6 +20,8 @@ class Innoextract < Formula
     patch do
       url "https://github.com/dscharrer/innoextract/commit/264c2fe6b84f90f6290c670e5f676660ec7b2387.patch?full_index=1"
       sha256 "f968a9c0521083dd4076ce5eed56127099a9c9888113fc50f476b914396045cc"
+      type :backport
+      resolves "https://github.com/dscharrer/innoextract/pull/169"
     end
   end
 

@@ -39,7 +39,7 @@ class Mapcrafter < Formula
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
                     "-DOPT_SKIP_TESTS=ON",
-                    "-DJPEG_INCLUDE_DIR=#{Formula["jpeg-turbo"].opt_include}",
+                    "-DJPEG_INCLUDE_DIR=#{formula_opt_include("jpeg-turbo")}",
                     "-DJPEG_LIBRARY=#{formula_opt_lib("jpeg-turbo")/shared_library("libjpeg")}",
                     *std_cmake_args
     system "cmake", "--build", "build"

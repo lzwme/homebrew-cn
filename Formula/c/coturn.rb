@@ -28,7 +28,7 @@ class Coturn < Formula
   uses_from_macos "sqlite"
 
   def install
-    ENV["SSL_CFLAGS"] = "-I#{Formula["openssl@3"].opt_include}"
+    ENV["SSL_CFLAGS"] = "-I#{formula_opt_include("openssl@3")}"
     ENV["SSL_LIBS"] = "-L#{formula_opt_lib("openssl@3")} -lssl -lcrypto"
     system "./configure", "--disable-silent-rules",
                           "--mandir=#{man}",

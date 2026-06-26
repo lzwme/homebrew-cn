@@ -49,7 +49,7 @@ class Fceux < Formula
   def install
     # Workaround until upstream handles newer minizip 1.3.2 cflags after
     # https://github.com/madler/zlib/commit/7e6f0784cc0c33e8d5fcb368248168c6656f73c8
-    ENV.append_to_cflags "-I#{Formula["minizip"].opt_include}/minizip"
+    ENV.append_to_cflags "-I#{formula_opt_include("minizip")}/minizip"
 
     args = ["-DQT6=ON"]
     args << "-DPUBLIC_RELEASE=1" if build.stable?

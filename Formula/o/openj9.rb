@@ -149,13 +149,13 @@ class Openj9 < Formula
 
       %W[
         --enable-dtrace
-        --with-freetype-include=#{Formula["freetype"].opt_include}
+        --with-freetype-include=#{formula_opt_include("freetype")}
         --with-freetype-lib=#{formula_opt_lib("freetype")}
         --with-sysroot=#{MacOS.sdk_path}
       ]
     else
       # Override hardcoded /usr/include directory when checking for numa headers
-      inreplace "closed/autoconf/custom-hook.m4", "/usr/include/numa", Formula["numactl"].opt_include/"numa"
+      inreplace "closed/autoconf/custom-hook.m4", "/usr/include/numa", formula_opt_include("numactl")/"numa"
 
       %W[
         --with-x=#{HOMEBREW_PREFIX}

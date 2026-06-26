@@ -49,7 +49,7 @@ class Pachi < Formula
 
     resource("caffe").stage do
       # Abseil (via protobuf) is not on Caffe's default include path.
-      ENV.append_to_cflags "-I#{Formula["abseil"].opt_include}"
+      ENV.append_to_cflags "-I#{formula_opt_include("abseil")}"
 
       # Caffe's legacy FindGlog doesn't propagate modern glog's compile
       # definitions, leaving GLOG_EXPORT undefined in <glog/flags.h>.

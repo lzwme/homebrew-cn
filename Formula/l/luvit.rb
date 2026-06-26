@@ -4,16 +4,16 @@ class Luvit < Formula
   url "https://ghfast.top/https://github.com/luvit/luvit/archive/refs/tags/2.18.1.tar.gz"
   sha256 "b792781d77028edb7e5761e96618c96162bd68747b8fced9a6fc52f123837c2c"
   license "Apache-2.0"
-  revision 13
+  revision 14
   head "https://github.com/luvit/luvit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3228dd66b877b6bd59bbfda5b1e9cff9a981858bb9a5aac78ea89db86dacd492"
-    sha256 cellar: :any, arm64_sequoia: "fbab12c72f097a23c655f2477a6b0f73a5bd7ff4bda62580bf4354e33b4fedf7"
-    sha256 cellar: :any, arm64_sonoma:  "b8582d34357cabf196896b4695d3613a9690969616b1b3955ec6614570a4ec6e"
-    sha256 cellar: :any, sonoma:        "c5c338df34141323e3cabb5b1b94180e61e1f043f3f93fbf7cf20fcbf5cf2e63"
-    sha256 cellar: :any, arm64_linux:   "c3efe8bc58e62b9867c6567e8c444f7f810d6f61f2c29d395bc6ae7987143dfc"
-    sha256 cellar: :any, x86_64_linux:  "d459061c3e26067738a732c86677e2f780950a8a45bdf4e68ee89c67a558db80"
+    sha256 cellar: :any, arm64_tahoe:   "fd64468541d5575e02600831227942fafc58d363756286609bb9e05a0d4e9485"
+    sha256 cellar: :any, arm64_sequoia: "3e8f87570d2615a2ac7b1999584acd93f18c9e85ed151d6e45a96446ec8accd6"
+    sha256 cellar: :any, arm64_sonoma:  "d49731931e6d40a950514c6ae65f1d0aac0df5527bd09bcbb9ff8c408ddf1d92"
+    sha256 cellar: :any, sonoma:        "f70abaadea07fb6a80204fbca9695241ab66d4510e4db32e8ad4e3745b80ce30"
+    sha256 cellar: :any, arm64_linux:   "4896b781111098b7ebbb0914e51354efd08070a30ebc0c19ace69deeca4c7787"
+    sha256 cellar: :any, x86_64_linux:  "54a7f32e08ac14b456569334ce9d20d458b5bfd399838b043503266ac5e019bb"
   end
 
   depends_on "cmake" => :build

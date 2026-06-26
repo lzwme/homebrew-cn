@@ -42,7 +42,7 @@ class Ncmpcpp < Formula
   def install
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
     ENV.prepend "LDFLAGS", "-L#{formula_opt_lib("readline")}"
-    ENV.prepend "CPPFLAGS", "-I#{Formula["readline"].opt_include}"
+    ENV.prepend "CPPFLAGS", "-I#{formula_opt_include("readline")}"
     ENV.append "CXXFLAGS", "-D_XOPEN_SOURCE_EXTENDED"
 
     args = %w[

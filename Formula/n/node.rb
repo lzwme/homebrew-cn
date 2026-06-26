@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v26.3.1/node-v26.3.1.tar.xz"
-  sha256 "979b9b8308a8d2d4a27c662ed50448c85f970c0fd4f5ce8b98e8da78c441f2bc"
+  url "https://registry.npmmirror.com/-/binary/node/v26.4.0/node-v26.4.0.tar.xz"
+  sha256 "9eceb3621024069d91035b5471d2ebe86aa04d22dbeba72a782eaf36ff9183ac"
   license "MIT"
   compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
@@ -13,12 +13,12 @@ class Node < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e4f6873c607d71bd30361486b0691d198f3f671d6342268116c7f90dc4123eee"
-    sha256 cellar: :any, arm64_sequoia: "73f29a3f8154c941919f494e2e4bfe525ac47d87ce8784b0623682bdc251dfc0"
-    sha256 cellar: :any, arm64_sonoma:  "e9cfd521f6ac5b960396b19a1ec3a34c360e0dd5ff9a0e53ef4c354b53043f5d"
-    sha256 cellar: :any, sonoma:        "27474733cf95c49260f6253dfac4a3d380f826bc96baec2f8b8d700d54054f67"
-    sha256 cellar: :any, arm64_linux:   "44f44e8250884375c9a073bd3268fdb701d5c41f68004911dff35eb6e00e58b0"
-    sha256 cellar: :any, x86_64_linux:  "4e68166f546aeec7e7df37713ec6e95bb4b6a41cd0670e488e3e154e09d5d400"
+    sha256 arm64_tahoe:   "bbac60159fbed617a409fc241113a7d4824e115c6193df2661c9be6b6ed3f59f"
+    sha256 arm64_sequoia: "99cef8119eebd10eeedd277f9abd5ef22e1dabb7ee497c99fa4409c201ac9f4d"
+    sha256 arm64_sonoma:  "c8797fda23595d84fa8a8e68cedd62c63c5ff50228ac8a9fa3f6528da83a9e65"
+    sha256 sonoma:        "49a0dba0e9620845c2fb4a4eaec604ac90d013773e4e02945eca9e167d7e3be9"
+    sha256 arm64_linux:   "3cf5b744223b997a37f12a87a5cdaf09308c0575ffe245af1b1ebb9cdfb80f28"
+    sha256 x86_64_linux:  "4553aa69ff2ed12259d799b995fce3922861cf181db9c7ab51a868fe3fcefcef"
   end
 
   depends_on "pkgconf" => :build
@@ -70,8 +70,8 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-11.16.0.tgz"
-    sha256 "30fc15697c771002878665c29f49dddde9aa8667fa5719854b2f52d3cd19230b"
+    url "https://registry.npmjs.org/npm/-/npm-11.17.0.tgz"
+    sha256 "b290bbb35b9e72c3ef84edbe041f28c4479c4d9ee79f555817b8caafe7ce4bba"
 
     livecheck do
       url "https://raw.githubusercontent.com/nodejs/node/refs/tags/v#{LATEST_VERSION}/deps/npm/package.json"

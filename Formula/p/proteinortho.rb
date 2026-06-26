@@ -28,7 +28,7 @@ class Proteinortho < Formula
 
     # Enable OpenMP
     if OS.mac?
-      ENV.append_to_cflags "-Xpreprocessor -fopenmp -I#{Formula["libomp"].opt_include}"
+      ENV.append_to_cflags "-Xpreprocessor -fopenmp -I#{formula_opt_include("libomp")}"
       ENV.append "LDFLAGS", "-L#{formula_opt_lib("libomp")} -lomp"
     end
 

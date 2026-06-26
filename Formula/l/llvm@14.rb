@@ -153,7 +153,7 @@ class LlvmAT14 < Formula
     else
       ENV.append_to_cflags "-fpermissive -Wno-free-nonheap-object"
 
-      args << "-DFFI_INCLUDE_DIR=#{Formula["libffi"].opt_include}"
+      args << "-DFFI_INCLUDE_DIR=#{formula_opt_include("libffi")}"
       args << "-DFFI_LIBRARY_DIR=#{formula_opt_lib("libffi")}"
 
       # Disable `libxml2`, which isn't very useful.
@@ -161,7 +161,7 @@ class LlvmAT14 < Formula
       args << "-DLLVM_ENABLE_LIBCXX=OFF"
       args << "-DCLANG_DEFAULT_CXX_STDLIB=libstdc++"
       # Enable llvm gold plugin for LTO
-      args << "-DLLVM_BINUTILS_INCDIR=#{Formula["binutils"].opt_include}"
+      args << "-DLLVM_BINUTILS_INCDIR=#{formula_opt_include("binutils")}"
       # Parts of Polly fail to correctly build with PIC when being used for DSOs.
       args << "-DCMAKE_POSITION_INDEPENDENT_CODE=ON"
       runtimes_cmake_args += %w[

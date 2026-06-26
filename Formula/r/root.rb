@@ -15,19 +15,20 @@ class Root < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_tahoe:   "baf5c2489446cfd422debefa85e931675f79f6fd6af365f71416e99ed3b73896"
-    sha256 arm64_sequoia: "758274e9daa80d15ec20b70eb3bec38998d7060d69f007d714c3bf3971022f54"
-    sha256 arm64_sonoma:  "d87b063df7ccbccb2c0b1c92ceaaa4851a661c78e8f5e8ffd6f332b8df05cd62"
-    sha256 sonoma:        "8122ae9e8a8b8454cd4bdc84207eb75364a7ed892318f1bbfe74b9231baf279b"
-    sha256 arm64_linux:   "9711ce84f7e37065adee698cedfb3aff3280d9dc3daf875e7d9ac3c472a58f32"
-    sha256 x86_64_linux:  "866aa3ddb48ea0dc97a2ba200ae4b8aa2fb96fb2993c7fb11608fe24e7d322dd"
+    rebuild 5
+    sha256 arm64_tahoe:   "2806c9ba596172b7f7bf2343291a4ba74ccf744293e4a957cf302e341e167dc4"
+    sha256 arm64_sequoia: "56e252bd095b10e765cd63defce2bad0bec0459406095f5ff37afb9e18bff64f"
+    sha256 arm64_sonoma:  "99d1c73530171a61d0a253df9338b0c3711653f4ceba4faed4eb34142d9ef062"
+    sha256 sonoma:        "d6b055e16e8803f1eddf8481ce2fa5b33ca2f540a9c81c9e9931a377ee98a027"
+    sha256 arm64_linux:   "108760f6ae37eb344814d98ab8185fadb524abd8641e4cb844f4b6fdf403a619"
+    sha256 x86_64_linux:  "be9e2d2270d48bd458d1b181085374971f6d58a2cbe09493a28ad0644e08cb10"
   end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "cfitsio"
+  depends_on "civetweb"
   depends_on "davix"
   depends_on "fftw"
   depends_on "freetype"
@@ -35,7 +36,6 @@ class Root < Formula
   depends_on "gcc" # for gfortran
   depends_on "giflib"
   depends_on "gl2ps"
-  depends_on "glew"
   depends_on "graphviz"
   depends_on "gsl"
   depends_on "jpeg-turbo"
@@ -90,9 +90,6 @@ class Root < Formula
       inreplace "interpreter/cling/lib/Interpreter/CMakeLists.txt", '"MacOSX[.0-9]+\.sdk"', '"SKIP"'
     end
 
-    # Work around upstream overriding CMAKE_OSX_SYSROOT
-    inreplace "CMakeLists.txt", "include(cmake/modules/SetOSX_SDK.cmake)", ""
-
     args = %W[
       -DCLING_CXX_PATH=clang++
       -DCMAKE_CXX_STANDARD=17
@@ -100,6 +97,7 @@ class Root < Formula
       -DPYTHON_EXECUTABLE=#{which(python3)}
       -DXROOTD_ROOT_DIR=#{formula_opt_prefix("xrootd")}
       -Dbuiltin_cfitsio=OFF
+      -Dbuiltin_civetweb=OFF
       -Dbuiltin_clang=ON
       -Dbuiltin_cling=ON
       -Dbuiltin_cppzmq=OFF
@@ -108,7 +106,6 @@ class Root < Formula
       -Dbuiltin_freetype=OFF
       -Dbuiltin_ftgl=OFF
       -Dbuiltin_gl2ps=OFF
-      -Dbuiltin_glew=OFF
       -Dbuiltin_gsl=OFF
       -Dbuiltin_llvm=ON
       -Dbuiltin_lz4=OFF
@@ -121,10 +118,8 @@ class Root < Formula
       -Dbuiltin_unuran=OFF
       -Dbuiltin_vc=OFF
       -Dbuiltin_vdt=OFF
-      -Dbuiltin_veccore=OFF
       -Dbuiltin_xrootd=OFF
       -Dbuiltin_xxhash=OFF
-      -Dbuiltin_zeromq=OFF
       -Dbuiltin_zlib=OFF
       -Dbuiltin_zstd=OFF
       -Dcfitsio=ON
@@ -136,15 +131,10 @@ class Root < Formula
       -Dfortran=ON
       -Dfreetype=ON
       -Dgdml=ON
-      -Dgfal=OFF
       -Dgnuinstall=ON
       -Dimt=ON
       -Dmathmore=ON
-      -Docaml=OFF
-      -Doracle=OFF
-      -Dpgsql=OFF
       -Dpyroot=ON
-      -Dpythia6=OFF
       -Dpythia8=OFF
       -Droofit=ON
       -Dssl=ON

@@ -68,10 +68,10 @@ class Mkvtoolnix < Formula
     extra_includes = ""
     extra_libs = ""
     features.each do |feature|
-      extra_includes << "#{Formula[feature].opt_include};"
+      extra_includes << "#{formula_opt_include(feature)};"
       extra_libs << "#{formula_opt_lib(feature)};"
     end
-    extra_includes << "#{Formula["utf8cpp"].opt_include}/utf8cpp;"
+    extra_includes << "#{formula_opt_include("utf8cpp")}/utf8cpp;"
     extra_includes.chop!
     extra_libs.chop!
 

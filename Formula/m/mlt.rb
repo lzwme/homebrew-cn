@@ -1,18 +1,18 @@
 class Mlt < Formula
   desc "Author, manage, and run multitrack audio/video compositions"
   homepage "https://www.mltframework.org/"
-  url "https://ghfast.top/https://github.com/mltframework/mlt/releases/download/v7.38.0/mlt-7.38.0.tar.gz"
-  sha256 "b8f0a23c89e9250edc5038d745537c382367bf2ad3dad5d5c7cd13b0fe1c4144"
+  url "https://ghfast.top/https://github.com/mltframework/mlt/releases/download/v7.40.0/mlt-7.40.0.tar.gz"
+  sha256 "f11c30e21670f62a3dfc56a31306ac02f3feea00908a2821a4a0bf3e989d3d6a"
   license "LGPL-2.1-only"
   head "https://github.com/mltframework/mlt.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "d0d8cdc099296f231676fe28f13b5fcd0b6428e09aed6bb0cbb0dbfefab44edc"
-    sha256 arm64_sequoia: "fd830c5b8d17a78cc6786ded35b36bd7f644ea15782bec8d3d785aa94695ea24"
-    sha256 arm64_sonoma:  "8dc4129a794787deee30182412f18e43f15df46d232f0053ecf5dc6f769e3cb4"
-    sha256 sonoma:        "a2d6002992efc17a5ca53bfd219c7645189269ee0cced1c0f33da433bc6b85c5"
-    sha256 arm64_linux:   "3f584f88115f90ca62c6c67252aa51e12ba1b0123dba520c69e633177f7091d9"
-    sha256 x86_64_linux:  "3fab7905fc5fb4ff025f2a3cde2bb9100a7741f1f24eda53ab75b44e71909294"
+    sha256 arm64_tahoe:   "b739ab7c1ad1e2ef880755f87068360298331e0a96477bf4d2ece0989ef24528"
+    sha256 arm64_sequoia: "22e1a6dee4b0d31442a1148281e10d0bea0051f4446893f7df8e47691f8e085d"
+    sha256 arm64_sonoma:  "16ad25677d41af12031f4dc93707e4693882e5136c349c76fcc3dcfb801938e4"
+    sha256 sonoma:        "7a1bde391fbab5064bc8241dbf94cace9b2842eb197d19c775158a39385c8add"
+    sha256 arm64_linux:   "95064a672ee9fa80b2460bde39346e9ac7cda4022d3975d0b46ad15bc64b5de8"
+    sha256 x86_64_linux:  "9631ad8aa7a51fdb5aafe63d05118cafdda8e454d1655bf555d26c23d8e3ac3b"
   end
 
   depends_on "cmake" => :build
@@ -65,6 +65,7 @@ class Mlt < Formula
                     "-DMOD_QT6=ON",
                     "-DMOD_SDL1=OFF",
                     "-DMOD_MOVIT=OFF",
+                    "-DMOD_RNNOISE=OFF",
                     "-DRELOCATABLE=OFF",
                     *std_cmake_args
     system "cmake", "--build", "build"

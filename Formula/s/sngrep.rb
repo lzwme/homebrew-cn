@@ -31,7 +31,7 @@ class Sngrep < Formula
   end
 
   def install
-    ENV.append_to_cflags "-I#{Formula["ncurses"].opt_include}/ncursesw" if OS.linux?
+    ENV.append_to_cflags "-I#{formula_opt_include("ncurses")}/ncursesw" if OS.linux?
 
     system "./bootstrap.sh"
     system "./configure", "--disable-silent-rules",

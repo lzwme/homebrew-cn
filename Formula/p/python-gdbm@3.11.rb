@@ -35,7 +35,7 @@ class PythonGdbmAT311 < Formula
               version="#{version}",
               ext_modules = [
                 Extension("_gdbm", ["_gdbmmodule.c"],
-                          include_dirs=["#{Formula["gdbm"].opt_include}"],
+                          include_dirs=["#{formula_opt_include("gdbm")}"],
                           libraries=["gdbm"],
                           library_dirs=["#{formula_opt_lib("gdbm")}"])
               ]

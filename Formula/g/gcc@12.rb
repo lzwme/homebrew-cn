@@ -111,7 +111,7 @@ class GccAT12 < Formula
       inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64="
       inreplace "gcc/config/aarch64/t-aarch64-linux", "lp64=../lib64", "lp64="
 
-      ENV.append_path "CPATH", Formula["zlib-ng-compat"].opt_include
+      ENV.append_path "CPATH", formula_opt_include("zlib-ng-compat")
       ENV.append_path "LIBRARY_PATH", formula_opt_lib("zlib-ng-compat")
     end
 

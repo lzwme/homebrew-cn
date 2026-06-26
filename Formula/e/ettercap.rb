@@ -60,7 +60,7 @@ class Ettercap < Formula
 
     if OS.linux?
       # Fix build error on wdg_file.c: fatal error: menu.h: No such file or directory
-      ENV.append_to_cflags "-I#{Formula["ncurses"].opt_include}/ncursesw"
+      ENV.append_to_cflags "-I#{formula_opt_include("ncurses")}/ncursesw"
       args << "-DPOLKIT_DIR=#{share}/polkit-1/actions/"
     end
 

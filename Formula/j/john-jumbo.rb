@@ -83,7 +83,7 @@ class JohnJumbo < Formula
     end
 
     ENV["OPENSSL_LIBS"] = "-L#{formula_opt_lib("openssl@3")}"
-    ENV["OPENSSL_CFLAGS"] = "-I#{Formula["openssl@3"].opt_include}"
+    ENV["OPENSSL_CFLAGS"] = "-I#{formula_opt_include("openssl@3")}"
 
     cd "src" do
       system "./configure", "--disable-native-tests"

@@ -55,7 +55,7 @@ class VulkanLoader < Formula
         return (version >= VK_API_VERSION_1_1) ? 0 : 1;
       }
     C
-    system ENV.cc, "-o", "test", "test.c", "-I#{Formula["vulkan-headers"].opt_include}",
+    system ENV.cc, "-o", "test", "test.c", "-I#{formula_opt_include("vulkan-headers")}",
                    "-L#{lib}", "-lvulkan"
     system "./test"
   end

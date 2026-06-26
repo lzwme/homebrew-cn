@@ -1,8 +1,8 @@
 class Doltgres < Formula
   desc "Dolt for Postgres"
   homepage "https://github.com/dolthub/doltgresql"
-  url "https://ghfast.top/https://github.com/dolthub/doltgresql/archive/refs/tags/v0.56.4.tar.gz"
-  sha256 "b18fe514696ce211a98ee922eb19d85326c6935cff9fef5e4cde60dfa671473a"
+  url "https://ghfast.top/https://github.com/dolthub/doltgresql/archive/refs/tags/v0.56.5.tar.gz"
+  sha256 "0951083a0412baf7116274bfb91930e8c8930ddceae2a415895976df052c9156"
   license "Apache-2.0"
   head "https://github.com/dolthub/doltgresql.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Doltgres < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e59e4976f3396ec50588766dbe8af3fc44de8a127f5709998393c2e07ab3c949"
-    sha256 cellar: :any,                 arm64_sequoia: "0c59cca21f18e1abcda162c969aa293a3105b0de92e86b8f49a59ad2118c776a"
-    sha256 cellar: :any,                 arm64_sonoma:  "bbf4c3e61d48d6df06c9b11194d357afd993494303ca482be7b0a63075d37fe6"
-    sha256 cellar: :any,                 sonoma:        "2d0b64cd741d5ecd02e91d9e6d4a6f2eb82e94056550be3dac896957baa38a2a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2754e33f71b3d9efe5e1adaf65e17ca2e16893b174fa42f298b45b17c325a3d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35880ea4400e2ca1bf7873ddc4267b5668646a4326529e87770c039186413d0d"
+    sha256 cellar: :any, arm64_tahoe:   "56e494f03820bb23f0cb15e01e40e8116f427cfd26de6267ca7bd089bc391064"
+    sha256 cellar: :any, arm64_sequoia: "6aef2f7f415e2c6940b35e0f04c3a96c6b05898e7d7e8ddeed44ef8180aa8eed"
+    sha256 cellar: :any, arm64_sonoma:  "e8ac536fa318a0aaabced5d76870bf16f3748b603c798a619cf937b1f31599e9"
+    sha256 cellar: :any, sonoma:        "655f18b7ef4c3ed7f35990970f86d91877f0457d59002665caa37c14f9c7bcbe"
+    sha256 cellar: :any, arm64_linux:   "1b2ca5fb1fb5588ff9eb14c965ed860f30d0b42fb78ee45c2e6682b7ea4e917b"
+    sha256 cellar: :any, x86_64_linux:  "426e4375cc1ba3fc9377e4cbea3f00fd54c1773c152a1f70e03ef3c21ce47628"
   end
 
   depends_on "go" => :build

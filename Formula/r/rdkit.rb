@@ -69,7 +69,7 @@ class Rdkit < Formula
       -DCMAKE_REQUIRE_FIND_PACKAGE_maeparser=ON
       -DCMAKE_REQUIRE_FIND_PACKAGE_Inchi=ON
       -DFETCHCONTENT_SOURCE_DIR_BETTER_ENUMS=#{buildpath}/better_enums
-      -DINCHI_INCLUDE_DIR=#{Formula["inchi"].opt_include}/inchi
+      -DINCHI_INCLUDE_DIR=#{formula_opt_include("inchi")}/inchi
       -DRDK_INSTALL_INTREE=OFF
       -DRDK_BUILD_SWIG_WRAPPERS=OFF
       -DRDK_BUILD_AVALON_SUPPORT=ON

@@ -95,7 +95,7 @@ class Octave < Formula
       "--disable-silent-rules",
       "--enable-shared",
       "--disable-static",
-      "--with-hdf5-includedir=#{Formula["hdf5"].opt_include}",
+      "--with-hdf5-includedir=#{formula_opt_include("hdf5")}",
       "--with-hdf5-libdir=#{formula_opt_lib("hdf5")}",
       "--with-java-homedir=#{formula_opt_prefix("openjdk")}",
       "--with-x=no",

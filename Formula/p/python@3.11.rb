@@ -192,7 +192,7 @@ class PythonAT311 < Formula
       # See https://github.com/Homebrew/linuxbrew-core/pull/22307#issuecomment-781896552
       # We want our ncurses! Override system ncurses includes!
       inreplace "configure", 'CPPFLAGS="$CPPFLAGS -I/usr/include/ncursesw"',
-                             "CPPFLAGS=\"$CPPFLAGS -I#{Formula["ncurses"].opt_include}\""
+                             "CPPFLAGS=\"$CPPFLAGS -I#{formula_opt_include("ncurses")}\""
     end
 
     # Allow python modules to use ctypes.find_library to find homebrew's stuff

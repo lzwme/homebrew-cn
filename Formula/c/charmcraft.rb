@@ -3,18 +3,18 @@ class Charmcraft < Formula
 
   desc "Tool to build charms and publish them on Charmhub"
   homepage "https://charmhub.io"
-  url "https://files.pythonhosted.org/packages/0d/c7/177e92ac146923b39de80a8e036e41ce88390aa0cc221ec7b1c8583bb5b0/charmcraft-4.2.2.tar.gz"
-  sha256 "3f6de6e6ae87fa60a8a4e88c367feb0df5afcadc7c14b79b0fa41205aabeb6f8"
+  url "https://files.pythonhosted.org/packages/5f/42/70ca3f5a4337f80b555de3355876de64869c84f8fcd927d78431b9252f20/charmcraft-4.3.0.tar.gz"
+  sha256 "90e9f4f2d72223d0510e8752167bd8e0d45dc2b6c3fe3bac39990ffae1c6de20"
   license "Apache-2.0"
   head "https://github.com/canonical/charmcraft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5f3c413a9fa576f8bd9953292b32c8077fd830a508498f8361af2f70ffe75847"
-    sha256 cellar: :any, arm64_sequoia: "c6681c3367ed231a7a5f0edb09cbd35a32c62a2e0d1426969506a29fe4a1802b"
-    sha256 cellar: :any, arm64_sonoma:  "b86e61c76bac249cef6e2e472b0185777f601e102239a6fdaee4de8b378ce179"
-    sha256 cellar: :any, sonoma:        "faa0da3b6346e1d18005ec5bab329a407f0bfa4adc535be69321e1ba9855de64"
-    sha256 cellar: :any, arm64_linux:   "ceb63ecd1e2e23709b6a3bb7764947d5ba6961a07e4aa9e0311b422af9abb2b1"
-    sha256 cellar: :any, x86_64_linux:  "017d08df7724eaf35859e95cb314ad442d8944f1d66f5d98d8c2590bcb857044"
+    sha256 cellar: :any, arm64_tahoe:   "cd1f43f6cc6666e3d701e2f9ece7722ca55c68617690f5184e7198c391519e86"
+    sha256 cellar: :any, arm64_sequoia: "eccafe3132c01c9f0cfddff155f19e32d89d3601ee6b8c76555d8b1891ec8842"
+    sha256 cellar: :any, arm64_sonoma:  "65eeb9a044bd06c93f6f37fc4d7a66f2474a9dab81f95efdb1d2fc2353130619"
+    sha256 cellar: :any, sonoma:        "c50a5c53740811943533e0e9e93bc688a465bc45a5d23c12ab50fd5493be6be9"
+    sha256 cellar: :any, arm64_linux:   "ffecf805f984a54f72a4dd39175f134eb30b39a4194112e7a11ba8644bbc5a45"
+    sha256 cellar: :any, x86_64_linux:  "1dce5bebf409aba5d94804cf541a57d5a16bca733ee47cef32c3287c94931091"
   end
 
   depends_on "certifi" => :no_linkage
@@ -37,11 +37,6 @@ class Charmcraft < Formula
     sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
   end
 
-  resource "attrs" do
-    url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
-    sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
-  end
-
   resource "boolean-py" do
     url "https://files.pythonhosted.org/packages/c4/cf/85379f13b76f3a69bca86b60237978af17d6aa0bc5998978c3b8cf05abb2/boolean_py-5.0.tar.gz"
     sha256 "60cbc4bad079753721d32649545505362c754e121570ada4658b852a3a318d95"
@@ -53,8 +48,8 @@ class Charmcraft < Formula
   end
 
   resource "craft-application" do
-    url "https://files.pythonhosted.org/packages/31/88/1a31a8085bf01ca5f00aeda88a5f5e4cff314fd4e56ee2a629f2c1d95ca3/craft_application-6.4.0.tar.gz"
-    sha256 "02b6afaaad0462f752c1c4715b6da4d7b7ee57bcd71b4ca38234cb18220a4354"
+    url "https://files.pythonhosted.org/packages/b5/82/f364723d620fd5e96e2d1a2a4e0f975113f3be4650923cd028ae33f1c1a0/craft_application-7.0.0.tar.gz"
+    sha256 "f341e05992b8f64f1d86ec927e3bb66ec72abcecdbca02117a99fd3b4c093715"
   end
 
   resource "craft-archives" do
@@ -160,16 +155,6 @@ class Charmcraft < Formula
   resource "jinja2" do
     url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
     sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
-  end
-
-  resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
-    sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
-  end
-
-  resource "jsonschema-specifications" do
-    url "https://files.pythonhosted.org/packages/19/74/a633ee74eb36c44aa6d1095e7cc5569bebf04342ee146178e2d36600708b/jsonschema_specifications-2025.9.1.tar.gz"
-    sha256 "b540987f239e745613c7a9176f3edb72b832a4ac465cf02712288397832b5e8d"
   end
 
   resource "keyring" do
@@ -290,11 +275,6 @@ class Charmcraft < Formula
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
-  end
-
-  resource "referencing" do
-    url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
-    sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
   end
 
   resource "requests" do

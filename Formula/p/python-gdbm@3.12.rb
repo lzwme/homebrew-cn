@@ -32,7 +32,7 @@ class PythonGdbmAT312 < Formula
     python_include = if OS.mac?
       Formula["python@#{xy}"].opt_frameworks/"Python.framework/Versions/#{xy}/include/python#{xy}"
     else
-      Formula["python@#{xy}"].opt_include/"python#{xy}"
+      formula_opt_include("python@#{xy}")/"python#{xy}"
     end
 
     (buildpath/"Modules/pyproject.toml").write <<~TOML
@@ -47,7 +47,7 @@ class PythonGdbmAT312 < Formula
       [[tool.setuptools.ext-modules]]
       name = "_gdbm"
       sources = ["_gdbmmodule.c"]
-      include-dirs = ["#{Formula["gdbm"].opt_include}", "#{python_include}/internal"]
+      include-dirs = ["#{formula_opt_include("gdbm")}", "#{python_include}/internal"]
       libraries = ["gdbm"]
       library-dirs = ["#{formula_opt_lib("gdbm")}"]
     TOML
@@ -56,7 +56,7 @@ class PythonGdbmAT312 < Formula
       [[tool.setuptools.ext-modules]]
       name = "_dbm"
       sources = ["_dbmmodule.c"]
-      include-dirs = ["#{Formula["gdbm"].opt_include}", "#{python_include}/internal"]
+      include-dirs = ["#{formula_opt_include("gdbm")}", "#{python_include}/internal"]
       libraries = ["gdbm_compat"]
       library-dirs = ["#{formula_opt_lib("gdbm")}"]
       extra-compile-args = ["-DUSE_GDBM_COMPAT", "-DHAVE_GDBM_DASH_NDBM_H"]

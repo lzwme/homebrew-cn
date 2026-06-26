@@ -68,7 +68,7 @@ class Metview < Formula
       args += %W[
         -DENABLE_CLANG_TIDY=OFF
         -DRPC_PATH=#{formula_opt_prefix("libtirpc")}
-        -DRPC_INCLUDE_DIR=#{Formula["libtirpc"].opt_include}/tirpc
+        -DRPC_INCLUDE_DIR=#{formula_opt_include("libtirpc")}/tirpc
       ]
     end
 

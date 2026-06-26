@@ -75,7 +75,7 @@ class Suricata < Formula
       # Workaround for dyld[98347]: symbol not found in flat namespace '_iconv'
       ENV.append "LIBS", "-liconv" if MacOS.version >= :monterey
     else
-      args << "--with-libpcap-includes=#{Formula["libpcap"].opt_include}"
+      args << "--with-libpcap-includes=#{formula_opt_include("libpcap")}"
       args << "--with-libpcap-libraries=#{formula_opt_lib("libpcap")}"
     end
 

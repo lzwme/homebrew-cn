@@ -87,7 +87,7 @@ class Handbrake < Formula
                 "-DENABLE_CLI=OFF -DENABLE_SVE2=OFF"
     end
 
-    ENV.append "CFLAGS", "-I#{Formula["libxml2"].opt_include}/libxml2" if OS.linux?
+    ENV.append "CFLAGS", "-I#{formula_opt_include("libxml2")}/libxml2" if OS.linux?
 
     system "./configure", "--prefix=#{prefix}",
                           "--disable-xcode",

@@ -59,7 +59,7 @@ class Sdl2Ttf < Formula
           return success;
       }
     C
-    system ENV.cc, "test.c", "-I#{Formula["sdl2-compat"].opt_include}/SDL2", "-L#{lib}", "-lSDL2_ttf", "-o", "test"
+    system ENV.cc, "test.c", "-I#{formula_opt_include("sdl2-compat")}/SDL2", "-L#{lib}", "-lSDL2_ttf", "-o", "test"
     system "./test"
   end
 end

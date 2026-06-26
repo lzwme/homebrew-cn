@@ -30,7 +30,7 @@ class OsmiumTool < Formula
   end
 
   def install
-    protozero = Formula["protozero"].opt_include
+    protozero = formula_opt_include("protozero")
 
     system "cmake", "-S", ".", "-B", "build", "-DPROTOZERO_INCLUDE_DIR=#{protozero}", *std_cmake_args
     system "cmake", "--build", "build"

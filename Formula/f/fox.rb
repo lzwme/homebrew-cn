@@ -57,7 +57,7 @@ class Fox < Formula
 
   def install
     # Needed for libxft to find ftbuild2.h provided by freetype
-    ENV.append "CPPFLAGS", "-I#{Formula["freetype"].opt_include}/freetype2"
+    ENV.append "CPPFLAGS", "-I#{formula_opt_include("freetype")}/freetype2"
 
     system "./configure", "--enable-release",
                           "--with-x",

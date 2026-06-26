@@ -24,7 +24,7 @@ class Alpscore < Formula
     args = %W[
       -DALPS_BUILD_SHARED=ON
       -DALPS_CXX_STD=c++14
-      -DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3
+      -DEIGEN3_INCLUDE_DIR=#{formula_opt_include("eigen")}/eigen3
       -DENABLE_MPI=ON
       -DTesting=OFF
     ]

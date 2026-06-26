@@ -3,8 +3,8 @@ class Dnsdist < Formula
 
   desc "Highly DNS-, DoS- and abuse-aware loadbalancer"
   homepage "https://www.dnsdist.org/"
-  url "https://downloads.powerdns.com/releases/dnsdist-2.0.6.tar.xz"
-  sha256 "b861d74abb0da59cff4e58760266198196eee7c10f2bfe86a3f5ccbd6768626b"
+  url "https://downloads.powerdns.com/releases/dnsdist-2.0.7.tar.xz"
+  sha256 "58680f780517b787e64fee4cd4dcc57f439be607084f89ee4699789d7d626875"
   license "GPL-2.0-only" # with OpenSSL Exception (non-SPDX)
 
   livecheck do
@@ -13,12 +13,12 @@ class Dnsdist < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c474a338328ce3a3e6dfa1e3368e9f8847b28be3652b67330569f9662c6907a9"
-    sha256 arm64_sequoia: "df6310d7b0527638b952491ecbd47c71dc491729f1207e99f08e5a0659226130"
-    sha256 arm64_sonoma:  "c1f02099b3b93a832d9ac15f9952051dba5f744724e52f975c4700ceaa510b35"
-    sha256 sonoma:        "af027aaf15ff9d506080e2e794c1efb7d5d99e78781e154277790bc1fe9fd5c3"
-    sha256 arm64_linux:   "4e9fb0c0ebc70f49ca5b45eb6d9a24004ef81a0d748eb042797b2a9053facd72"
-    sha256 x86_64_linux:  "26a998e7a39cbad60707d951a36ad2360cf1cd127c1252702f3a3d3c63690906"
+    sha256 arm64_tahoe:   "a25880dd7ce15b033735f0be9c6eceb87c8864d292b2d39797701b8e3395b28c"
+    sha256 arm64_sequoia: "e53c951bf4e14280a8a944ccfed78dc631b18b64fa21f945fae786e956a79ae9"
+    sha256 arm64_sonoma:  "e4e8ab3b06ab476e84c675b4e7df60c05d518c38089d275cdaa5f60884bf34bd"
+    sha256 sonoma:        "af29bb5fc01415db991be1b6300c7cf49f8749d0780c5753ae776fc57f07cdf2"
+    sha256 arm64_linux:   "d15cc16526a2f26d48edac048da694ad5c64bb2846aab6c15b3409c345c9ff49"
+    sha256 x86_64_linux:  "12c81e80d62b5c1a4fb7c2177d72c84abcf8e9f754962d99efec97b9ecd36cef"
   end
 
   depends_on "boost" => :build

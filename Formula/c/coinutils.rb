@@ -32,9 +32,9 @@ class Coinutils < Formula
     args = [
       "--datadir=#{pkgshare}",
       "--includedir=#{include}/coinutils",
-      "--with-blas-incdir=#{Formula["openblas"].opt_include}",
+      "--with-blas-incdir=#{formula_opt_include("openblas")}",
       "--with-blas-lib=-L#{formula_opt_lib("openblas")} -lopenblas",
-      "--with-lapack-incdir=#{Formula["openblas"].opt_include}",
+      "--with-lapack-incdir=#{formula_opt_include("openblas")}",
       "--with-lapack-lib=-L#{formula_opt_lib("openblas")} -lopenblas",
     ]
 

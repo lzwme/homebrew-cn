@@ -72,7 +72,7 @@ class Ipopt < Formula
       "--with-blas=-L#{formula_opt_lib("openblas")} -lopenblas",
       "--with-mumps-cflags=-I#{buildpath}/mumps_include",
       "--with-mumps-lflags=-L#{lib} -ldmumps -lmpiseq -lmumps_common -lopenblas -lpord",
-      "--with-asl-cflags=-I#{Formula["ampl-asl"].opt_include}/asl",
+      "--with-asl-cflags=-I#{formula_opt_include("ampl-asl")}/asl",
       "--with-asl-lflags=-L#{formula_opt_lib("ampl-asl")} -lasl",
     ]
 

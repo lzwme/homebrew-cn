@@ -46,7 +46,7 @@ class Nss < Formula
       NSS_ALLOW_SSLKEYLOGFILE=1
       NSS_DISABLE_GTESTS=1
       NSS_USE_SYSTEM_SQLITE=1
-      NSPR_INCLUDE_DIR=#{Formula["nspr"].opt_include}/nspr
+      NSPR_INCLUDE_DIR=#{formula_opt_include("nspr")}/nspr
       NSPR_LIB_DIR=#{formula_opt_lib("nspr")}
       USE_64=1
     ]

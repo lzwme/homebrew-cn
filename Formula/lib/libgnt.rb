@@ -58,7 +58,7 @@ class Libgnt < Formula
     C
 
     flags = [
-      "-I#{Formula["glib"].opt_include}/glib-2.0",
+      "-I#{formula_opt_include("glib")}/glib-2.0",
       "-I#{formula_opt_lib("glib")}/glib-2.0/include",
       "-I#{include}",
       "-L#{lib}",

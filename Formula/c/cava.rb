@@ -42,7 +42,7 @@ class Cava < Formula
     # force autogen.sh to look for and use our glibtoolize
     inreplace "autogen.sh", "libtoolize", "glibtoolize"
 
-    ENV.append "CPPFLAGS", "-I#{Formula["iniparser"].opt_include}/iniparser"
+    ENV.append "CPPFLAGS", "-I#{formula_opt_include("iniparser")}/iniparser"
     ENV.append "LDFLAGS", "-L#{formula_opt_lib("iniparser")}"
 
     system "./autogen.sh"

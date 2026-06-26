@@ -36,7 +36,7 @@ class Gptfdisk < Formula
       system "make", "-f", "Makefile.mac"
     else
       %w[ncurses popt util-linux].each do |dep|
-        ENV.append_to_cflags "-I#{Formula[dep].opt_include}"
+        ENV.append_to_cflags "-I#{formula_opt_include(dep)}"
         ENV.append "LDFLAGS", "-L#{formula_opt_lib(dep)}"
       end
 

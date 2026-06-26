@@ -165,7 +165,7 @@ class Qt < Formula
       CONFIG  -= app_bundle
       TEMPLATE = app
       SOURCES += main.cpp
-      INCLUDEPATH += #{Formula["vulkan-headers"].opt_include}
+      INCLUDEPATH += #{formula_opt_include("vulkan-headers")}
     QMAKE
 
     (testpath/"main.cpp").write <<~CPP

@@ -57,12 +57,12 @@ class PostgresqlAT15 < Formula
     ENV.runtime_cpu_detection
     ENV.delete "PKG_CONFIG_LIBDIR"
     ENV.prepend "LDFLAGS", "-L#{formula_opt_lib("openssl@3")} -L#{formula_opt_lib("readline")}"
-    ENV.prepend "CPPFLAGS", "-I#{Formula["openssl@3"].opt_include} -I#{Formula["readline"].opt_include}"
+    ENV.prepend "CPPFLAGS", "-I#{formula_opt_include("openssl@3")} -I#{formula_opt_include("readline")}"
 
     # Fix 'libintl.h' file not found for extensions
     if OS.mac?
       ENV.prepend "LDFLAGS", "-L#{formula_opt_lib("gettext")}"
-      ENV.prepend "CPPFLAGS", "-I#{Formula["gettext"].opt_include}"
+      ENV.prepend "CPPFLAGS", "-I#{formula_opt_include("gettext")}"
     end
 
     args = std_configure_args + %W[
@@ -160,6 +160,6 @@ class PostgresqlAT15 < Formula
     assert_equal (opt_lib/"postgresql").to_s, shell_output("#{bin}/pg_config --pkglibdir").chomp
     assert_equal (opt_include/"postgresql").to_s, shell_output("#{bin}/pg_config --pkgincludedir").chomp
     assert_equal (opt_include/"postgresql/server").to_s, shell_output("#{bin}/pg_config --includedir-server").chomp
-    assert_match "-I#{Formula["gettext"].opt_include}", shell_output("#{bin}/pg_config --cppflags") if OS.mac?
+    assert_match "-I#{formula_opt_include("gettext")}", shell_output("#{bin}/pg_config --cppflags") if OS.mac?
   end
 end

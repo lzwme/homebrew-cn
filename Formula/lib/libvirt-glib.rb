@@ -55,7 +55,7 @@ class LibvirtGlib < Formula
     libxml2 = if OS.mac?
       "#{MacOS.sdk_path}/usr/include/libxml2"
     else
-      Formula["libxml2"].opt_include/"libxml2"
+      formula_opt_include("libxml2")/"libxml2"
     end
     system ENV.cxx, "-std=c++11", "test.cpp",
                     "-I#{libxml2}",

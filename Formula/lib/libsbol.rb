@@ -54,8 +54,8 @@ class Libsbol < Formula
     args = %W[
       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
       -DSBOL_BUILD_SHARED=ON
-      -DRAPTOR_INCLUDE_DIR=#{Formula["raptor"].opt_include}/raptor2
-      -DRASQAL_INCLUDE_DIR=#{Formula["rasqal"].opt_include}
+      -DRAPTOR_INCLUDE_DIR=#{formula_opt_include("raptor")}/raptor2
+      -DRASQAL_INCLUDE_DIR=#{formula_opt_include("rasqal")}
     ]
 
     if OS.mac? && (sdk = MacOS.sdk_path)
@@ -86,7 +86,7 @@ class Libsbol < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-o", "test", "-std=c++11",
-                    "-I#{Formula["raptor"].opt_include}/raptor2",
+                    "-I#{formula_opt_include("raptor")}/raptor2",
                     "-I#{include}", "-L#{lib}",
                     "-L#{formula_opt_lib("jsoncpp")}",
                     "-L#{formula_opt_lib("raptor")}",

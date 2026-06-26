@@ -30,6 +30,6 @@ class BoostBcp < Formula
   end
 
   test do
-    system bin/"bcp", "--boost=#{Formula["boost"].opt_include}", "--scan", "./"
+    system bin/"bcp", "--boost=#{formula_opt_include("boost")}", "--scan", "./"
   end
 end

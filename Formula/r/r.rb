@@ -93,13 +93,13 @@ class R < Formula
       # search those directories. Remove -LHOMEBREW_PREFIX/lib from LDFLAGS.
       ENV.remove "LDFLAGS", "-L#{HOMEBREW_PREFIX}/lib"
 
-      ENV.append "CPPFLAGS", "-I#{Formula["libtirpc"].opt_include}/tirpc"
+      ENV.append "CPPFLAGS", "-I#{formula_opt_include("libtirpc")}/tirpc"
       ENV.append "LDFLAGS", "-L#{formula_opt_lib("libtirpc")}"
     end
 
     # Help CRAN packages find gettext and readline
     ["gettext", "readline", "xz"].each do |f|
-      ENV.append "CPPFLAGS", "-I#{Formula[f].opt_include}"
+      ENV.append "CPPFLAGS", "-I#{formula_opt_include(f)}"
       ENV.append "LDFLAGS", "-L#{formula_opt_lib(f)}"
     end
 

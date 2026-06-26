@@ -39,7 +39,7 @@ class OpenBabel < Formula
 
   def install
     args = %W[
-      -DINCHI_INCLUDE_DIR=#{Formula["inchi"].opt_include}/inchi
+      -DINCHI_INCLUDE_DIR=#{formula_opt_include("inchi")}/inchi
       -DOPENBABEL_USE_SYSTEM_INCHI=ON
       -DRUN_SWIG=ON
       -DPYTHON_BINDINGS=ON

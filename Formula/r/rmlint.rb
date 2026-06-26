@@ -34,8 +34,8 @@ class Rmlint < Formula
 
   def install
     if OS.linux?
-      ENV.append_to_cflags "-I#{Formula["util-linux"].opt_include}"
-      ENV.append_to_cflags "-I#{Formula["elfutils"].opt_include}"
+      ENV.append_to_cflags "-I#{formula_opt_include("util-linux")}"
+      ENV.append_to_cflags "-I#{formula_opt_include("elfutils")}"
       ENV.append "LDFLAGS", "-Wl,-rpath=#{formula_opt_lib("elfutils")}"
       ENV.append "LDFLAGS", "-Wl,-rpath=#{formula_opt_lib("glib")}"
       ENV.append "LDFLAGS", "-Wl,-rpath=#{formula_opt_lib("json-glib")}"

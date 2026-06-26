@@ -52,8 +52,8 @@ class Vroom < Formula
     cd "include" do
       rm_r(["cxxopts", "rapidjson"])
       mkdir_p "cxxopts"
-      ln_s Formula["cxxopts"].opt_include, "cxxopts/include"
-      ln_s Formula["rapidjson"].opt_include, "rapidjson"
+      ln_s formula_opt_include("cxxopts"), "cxxopts/include"
+      ln_s formula_opt_include("rapidjson"), "rapidjson"
     end
 
     files = %w[

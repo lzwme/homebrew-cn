@@ -29,7 +29,7 @@ class Wcslib < Formula
 
     system "./configure", "--disable-fortran",
                           "--with-cfitsiolib=#{formula_opt_lib("cfitsio")}",
-                          "--with-cfitsioinc=#{Formula["cfitsio"].opt_include}",
+                          "--with-cfitsioinc=#{formula_opt_include("cfitsio")}",
                           "--without-pgplot",
                           *std_configure_args
     system "make", "install"

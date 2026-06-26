@@ -21,7 +21,7 @@ class Baresip < Formula
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
-      -DRE_INCLUDE_DIR=#{Formula["libre"].opt_include}/re
+      -DRE_INCLUDE_DIR=#{formula_opt_include("libre")}/re
     ]
     args += %w[EXE SHARED].map { |type| "-DCMAKE_#{type}_LINKER_FLAGS=-Wl,-dead_strip_dylibs" } if OS.mac?
 

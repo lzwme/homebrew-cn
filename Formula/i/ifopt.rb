@@ -37,7 +37,7 @@ class Ifopt < Formula
   test do
     cp pkgshare/"test/ex_test_ipopt.cc", "test.cpp"
     system ENV.cxx, "-std=c++14", "test.cpp", "-o", "test",
-                    "-I#{Formula["eigen"].opt_include}/eigen3",
+                    "-I#{formula_opt_include("eigen")}/eigen3",
                     "-L#{lib}", "-lifopt_core", "-lifopt_ipopt"
     assert_match "Optimal Solution Found", shell_output("./test")
   end

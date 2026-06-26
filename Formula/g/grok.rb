@@ -56,7 +56,7 @@ class Grok < Formula
 
     if OS.linux?
       ENV.append "EXTRA_CFLAGS", "-fcommon"
-      ENV.append "EXTRA_CFLAGS", "-I#{Formula["libtirpc"].opt_include}/tirpc"
+      ENV.append "EXTRA_CFLAGS", "-I#{formula_opt_include("libtirpc")}/tirpc"
       ENV.append "EXTRA_LDFLAGS", "-L#{formula_opt_lib("libtirpc")} -ltirpc"
       ENV["GPERF"] = formula_opt_bin("gperf")/"gperf"
     end

@@ -1,17 +1,17 @@
 class Classifier < Formula
   desc "Text classification with Bayesian, LSI, Logistic Regression, and kNN"
   homepage "https://rubyclassifier.com"
-  url "https://ghfast.top/https://github.com/cardmagic/classifier/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "6909fa70e2aa9b368d67adea0514fac78d706df3f22d1a6fc7d73a4b649a4b2b"
+  url "https://ghfast.top/https://github.com/cardmagic/classifier/archive/refs/tags/v2.6.0.tar.gz"
+  sha256 "ce136ed8722fbc3efe111235be0bf1e60e92d766a5591270d7aecbe4e426878d"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "143f77e5d052057709e55f0cd20a8ce1d9ca2b9b8cb117a473273ea5a720a2cc"
-    sha256 cellar: :any, arm64_sequoia: "c2f11321319b2fbad5bf48d3244e2ff849f7f32d6418467af07f0e8043627250"
-    sha256 cellar: :any, arm64_sonoma:  "9b24561f59adf18abb08594ab4eeb681588968b9d1fec07198937d9ba43c6204"
-    sha256 cellar: :any, sonoma:        "23bb5afa0cf18ed9f68fc2a106fef77c990ff5fce915fdb3440ff51731882169"
-    sha256 cellar: :any, arm64_linux:   "8bcae9925e5c5257a8bce0b8c0d0d50017aee92f4c3124cdbc5d1acce09f5068"
-    sha256 cellar: :any, x86_64_linux:  "455f272fb1c4eb361d8cc1ea0d15564803fa4f7f3e5124cfb16101bb36f29aa8"
+    sha256 cellar: :any, arm64_tahoe:   "f517e272ef19b311e0442ac00be67c338065b8ff9e6c5ab59127fe5e6637d2b3"
+    sha256 cellar: :any, arm64_sequoia: "4a6a04dab3f7be86c89c93d2824a464c780d42bedbba5239e7579fa4f1568d80"
+    sha256 cellar: :any, arm64_sonoma:  "0eeca562dcb188671d290103eb1ad759d4823eb05894c4c69273401deddc2910"
+    sha256 cellar: :any, sonoma:        "197a18f62032d8e1bef5d69abc8110c90ab004fe4e125fbd3a4a3bfcd42af124"
+    sha256 cellar: :any, arm64_linux:   "65ccc8d691a314949f8657067a9c94cfdcd11bca0b6715778a16376ffc704c30"
+    sha256 cellar: :any, x86_64_linux:  "3d969784bb27611af9ea46bc92639fb0f7f8077b2d14b79dabff3586d264f64f"
   end
 
   depends_on "ruby"

@@ -1,8 +1,8 @@
 class Ispc < Formula
   desc "Compiler for SIMD programming on the CPU"
   homepage "https://ispc.github.io"
-  url "https://ghfast.top/https://github.com/ispc/ispc/archive/refs/tags/v1.30.0.tar.gz"
-  sha256 "73b30c74fdfc56c3097015476df14d0a4bcb6705d9e286c6d51c1ed578d49e22"
+  url "https://ghfast.top/https://github.com/ispc/ispc/archive/refs/tags/v1.31.0.tar.gz"
+  sha256 "671c79bdff2d97aead3897da1a6b67a163af8c4e329350d07cf3e63d592955ff"
   license "BSD-3-Clause"
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
@@ -14,13 +14,12 @@ class Ispc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "066c6cbceb92fa5498064ad6cded8c771ee479c7ca4c745f69499435823ca1f2"
-    sha256 cellar: :any,                 arm64_sequoia: "abb0dc3dbeea2724625b3c46a31e009357ade922b026b9bc652ee03b9a842e77"
-    sha256 cellar: :any,                 arm64_sonoma:  "0502f0c6d3be0a8ae5cfb9ebee46c1abe780294eaf3066c242011203c4b60287"
-    sha256 cellar: :any,                 sonoma:        "f25e5c473bc951a15de6fc0b9f00a881cbfffb2d059c5fd3a194064ca50bfcad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6cf3dae91df21f4e97b9232bb017ef63b3f6e3829f2a4f2ad06101b6e63f07f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4bc30e194268208bc23db431ed09e368124a4ae72e77bd7dca7592306a97783"
+    sha256 cellar: :any, arm64_tahoe:   "ffdd73c5e458c0d49466e2360d14688c28ca228bac4e2ca39f695bb19a58fda1"
+    sha256 cellar: :any, arm64_sequoia: "cafff95451ca7067fbf72c6c8578743d4f6cb601ad5bfa910f2378b4aec5b041"
+    sha256 cellar: :any, arm64_sonoma:  "d36642f65f7e4b67159884021c869eb9965535cf5c571051312745c97c346e61"
+    sha256 cellar: :any, sonoma:        "fa87249c0024ea329cff337e8ec8b11b7368af319f0306a8a3a20d68b10b293e"
+    sha256 cellar: :any, arm64_linux:   "17d0ac4ee38b3a49c3ae58d03f9993fff4d09b5327172d889ca6c75394c8ccc1"
+    sha256 cellar: :any, x86_64_linux:  "674ccfdcca55acd48f89d43c2a21dc2368a3ffd48a3e6e02d95efd0aae4fee8f"
   end
 
   depends_on "bison" => :build

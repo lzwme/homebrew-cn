@@ -73,7 +73,7 @@ class G2o < Formula
     libs = %w[-lg2o_core -lg2o_solver_eigen -lg2o_stuff -lg2o_types_slam2d -lg2o_types_slam3d]
     cd "src" do
       system ENV.cxx, "simple_optimize.cpp",
-             "-I#{opt_include}", "-I#{Formula["eigen"].opt_include}/eigen3",
+             "-I#{opt_include}", "-I#{formula_opt_include("eigen")}/eigen3",
              "-L#{opt_lib}", *libs, "-std=c++17", "-o", testpath/"simple_optimize"
     end
 

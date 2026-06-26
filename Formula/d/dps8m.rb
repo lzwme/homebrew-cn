@@ -38,7 +38,7 @@ class Dps8m < Formula
       ENV["BREW_LLVM_PATH"] = formula_opt_prefix("llvm")
       ENV["NO_PGO_LIBUV"] = "1"
       ENV.append "LDFLAGS", "-Wl,-rpath,\"#{formula_opt_lib("libuv")}\" -L\"#{formula_opt_lib("libuv")}\" -luv"
-      ENV.append "CFLAGS", "-I\"#{Formula["libuv"].opt_include}\""
+      ENV.append "CFLAGS", "-I\"#{formula_opt_include("libuv")}\""
       system "./src/pgo/Build.PGO.Homebrew.Clang.sh", "LIBUV="
     end
     system "make", "install", "PREFIX=#{prefix}"

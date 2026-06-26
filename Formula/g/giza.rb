@@ -39,7 +39,7 @@ class Giza < Formula
 
     flags = %W[
       -I#{include}
-      -I#{Formula["cairo"].opt_include}/cairo
+      -I#{formula_opt_include("cairo")}/cairo
       -L#{lib}
       -L#{formula_opt_lib("libx11")}
       -L#{formula_opt_lib("cairo")}

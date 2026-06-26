@@ -57,7 +57,7 @@ class Gabedit < Formula
     opengl_headers = if OS.mac?
       MacOS.sdk_path/"System/Library/Frameworks/OpenGL.framework/Headers"
     else
-      Formula["mesa"].opt_include
+      formula_opt_include("mesa")
     end
 
     (buildpath/"brew_include").install_symlink opengl_headers => "GL"

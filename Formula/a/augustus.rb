@@ -34,9 +34,9 @@ class Augustus < Formula
     ENV.append "CXXFLAGS", "-std=c++14"
 
     system "make", "COMPGENEPRED=false",
-                   "INCLUDE_PATH_BAMTOOLS=-I#{Formula["bamtools"].opt_include}/bamtools",
+                   "INCLUDE_PATH_BAMTOOLS=-I#{formula_opt_include("bamtools")}/bamtools",
                    "LIBRARY_PATH_BAMTOOLS=-L#{formula_opt_lib("bamtools")}",
-                   "INCLUDE_PATH_HTSLIB=-I#{Formula["htslib"].opt_include}/htslib",
+                   "INCLUDE_PATH_HTSLIB=-I#{formula_opt_include("htslib")}/htslib",
                    "LIBRARY_PATH_HTSLIB=-L#{formula_opt_lib("htslib")}"
 
     # Set PREFIX to prevent symlinking into /usr/local/bin/

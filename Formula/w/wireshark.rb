@@ -64,10 +64,10 @@ class Wireshark < Formula
       -DENABLE_SNAPPY=OFF
       -DLUA_INCLUDE_DIR=#{lua.opt_include}/lua
       -DLUA_LIBRARY=#{lua.opt_lib/shared_library("liblua")}
-      -DCARES_INCLUDE_DIR=#{Formula["c-ares"].opt_include}
-      -DGCRYPT_INCLUDE_DIR=#{Formula["libgcrypt"].opt_include}
-      -DGNUTLS_INCLUDE_DIR=#{Formula["gnutls"].opt_include}
-      -DMAXMINDDB_INCLUDE_DIR=#{Formula["libmaxminddb"].opt_include}
+      -DCARES_INCLUDE_DIR=#{formula_opt_include("c-ares")}
+      -DGCRYPT_INCLUDE_DIR=#{formula_opt_include("libgcrypt")}
+      -DGNUTLS_INCLUDE_DIR=#{formula_opt_include("gnutls")}
+      -DMAXMINDDB_INCLUDE_DIR=#{formula_opt_include("libmaxminddb")}
       -DBUILD_wireshark=OFF
       -DBUILD_logray=OFF
       -DENABLE_APPLICATION_BUNDLE=OFF

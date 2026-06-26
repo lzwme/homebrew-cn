@@ -54,7 +54,7 @@ class Tgui < Formula
       }
     CPP
 
-    system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-I#{Formula["sfml"].opt_include}",
+    system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-I#{formula_opt_include("sfml")}",
       "-L#{lib}", "-L#{formula_opt_lib("sfml")}",
       "-ltgui", "-lsfml-graphics", "-lsfml-system", "-lsfml-window",
       "-o", "test"

@@ -42,7 +42,7 @@ class Pngcrush < Formula
       LD=#{ENV.cc}
       CFLAGS=#{ENV.cflags}
       LDFLAGS=#{ENV.ldflags}
-      PNGINC=#{Formula["libpng"].opt_include}
+      PNGINC=#{formula_opt_include("libpng")}
       PNGLIB=#{formula_opt_lib("libpng")}
       ZINC=#{zlib}/include
       ZLIB=#{zlib}/lib

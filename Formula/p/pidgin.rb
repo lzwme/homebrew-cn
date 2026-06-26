@@ -126,7 +126,7 @@ class Pidgin < Formula
       --disable-vv
       --enable-consoleui
       --enable-gnutls
-      --with-ncurses-headers=#{Formula["ncurses"].opt_include}
+      --with-ncurses-headers=#{formula_opt_include("ncurses")}
       --with-tclconfig=#{formula_opt_lib("tcl-tk@8")}
       --with-tkconfig=#{formula_opt_lib("tcl-tk@8")}
     ]
@@ -144,7 +144,7 @@ class Pidgin < Formula
     system "make", "install"
 
     resource("pidgin-otr").stage do
-      ENV.prepend "CFLAGS", "-I#{Formula["libotr"].opt_include}"
+      ENV.prepend "CFLAGS", "-I#{formula_opt_include("libotr")}"
       ENV.append_path "PKG_CONFIG_PATH", "#{lib}/pkgconfig"
       system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
       system "make", "install"

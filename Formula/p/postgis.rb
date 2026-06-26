@@ -84,7 +84,7 @@ class Postgis < Formula
                                "--with-protobufdir=#{formula_opt_bin("protobuf-c")}",
                                *std_configure_args
         # Force `bin/pgsql2shp` to link to `libpq`
-        system "make", "PGSQL_FE_CPPFLAGS=-I#{Formula["libpq"].opt_include}",
+        system "make", "PGSQL_FE_CPPFLAGS=-I#{formula_opt_include("libpq")}",
                        "PGSQL_FE_LDFLAGS=-L#{formula_opt_lib("libpq")} -lpq"
         # Override the hardcoded install paths set by the PGXS makefiles
         system "make", "install", "bindir=#{bin}",

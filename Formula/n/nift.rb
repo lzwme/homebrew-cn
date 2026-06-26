@@ -36,7 +36,7 @@ class Nift < Formula
   end
 
   def install
-    inreplace "Lua.h", "/usr/local/include", Formula["luajit"].opt_include
+    inreplace "Lua.h", "/usr/local/include", formula_opt_include("luajit")
     system "make", "BUNDLED=0", "LUAJIT_VERSION=2.1"
     system "make", "install", "PREFIX=#{prefix}"
   end

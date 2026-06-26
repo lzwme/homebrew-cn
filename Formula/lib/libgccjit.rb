@@ -109,7 +109,7 @@ class Libgccjit < Formula
       # Use our own (recent) binutils
       args << "--with-as=#{formula_opt_bin("binutils")}/as"
 
-      ENV.append_path "CPATH", Formula["zlib-ng-compat"].opt_include
+      ENV.append_path "CPATH", formula_opt_include("zlib-ng-compat")
       ENV.append_path "LIBRARY_PATH", formula_opt_lib("zlib-ng-compat")
     end
 

@@ -43,7 +43,7 @@ class Osmcoastline < Formula
   def install
     remove_brew_expat if OS.mac? && MacOS.version < :sequoia
 
-    protozero = Formula["protozero"].opt_include
+    protozero = formula_opt_include("protozero")
     args = %W[
       -DPROTOZERO_INCLUDE_DIR=#{protozero}
     ]

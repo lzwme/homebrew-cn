@@ -23,6 +23,7 @@ class Gecode < Formula
   patch do
     url "https://github.com/Gecode/gecode/commit/c0ca0e5f4406099be22f87236ea8547c2f31ded3.patch?full_index=1"
     sha256 "233b266a943c0619b027b4cb19912e2a8c9d1f8e4323a3627765cb32b47c59fe"
+    type :cherry_pick
   end
 
   def install

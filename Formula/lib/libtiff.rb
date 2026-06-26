@@ -36,7 +36,7 @@ class Libtiff < Formula
       --disable-webp
       --enable-zstd
       --enable-lzma
-      --with-jpeg-include-dir=#{Formula["jpeg-turbo"].opt_include}
+      --with-jpeg-include-dir=#{formula_opt_include("jpeg-turbo")}
       --with-jpeg-lib-dir=#{formula_opt_lib("jpeg-turbo")}
       --without-x
     ]

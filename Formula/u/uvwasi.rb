@@ -82,7 +82,7 @@ class Uvwasi < Formula
       }
     C
 
-    ENV.append_to_cflags "-I#{include} -I#{Formula["libuv"].opt_include}"
+    ENV.append_to_cflags "-I#{include} -I#{formula_opt_include("libuv")}"
     ENV.append "LDFLAGS", "-L#{lib}"
     ENV.append "LDLIBS", "-luvwasi"
 

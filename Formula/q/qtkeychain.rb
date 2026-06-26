@@ -38,7 +38,7 @@ class Qtkeychain < Formula
         return 0;
       }
     CPP
-    flags = ["-I#{Formula["qtbase"].opt_include}"]
+    flags = ["-I#{formula_opt_include("qtbase")}"]
     flags += if OS.mac?
       [
         "-F#{formula_opt_lib("qtbase")}",

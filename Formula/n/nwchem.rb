@@ -73,7 +73,7 @@ class Nwchem < Formula
       ENV["USE_HWOPT"] = "n"
       ENV["OPENBLAS_USES_OPENMP"] = "y"
       ENV["LIBXC_LIB"] = formula_opt_lib("libxc").to_s
-      ENV["LIBXC_INCLUDE"] = Formula["libxc"].opt_include.to_s
+      ENV["LIBXC_INCLUDE"] = formula_opt_include("libxc").to_s
       os = OS.mac? ? "MACX64" : "LINUX64"
       system "make", "nwchem_config", "NWCHEM_MODULES=all python gwmol bsemol", "USE_MPI=Y"
       system "make", "NWCHEM_TARGET=#{os}", "USE_MPI=Y"

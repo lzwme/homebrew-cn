@@ -25,7 +25,7 @@ class Tabixpp < Formula
   end
 
   def install
-    htslib_include = Formula["htslib"].opt_include
+    htslib_include = formula_opt_include("htslib")
     args = %W[
       INCLUDES=-I#{htslib_include}
       HTS_HEADERS=#{htslib_include}/htslib/bgzf.h #{htslib_include}/htslib/tbx.h

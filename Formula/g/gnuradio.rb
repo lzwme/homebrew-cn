@@ -170,7 +170,7 @@ class Gnuradio < Formula
 
     qwt = formula_opt_lib("qwt-qt5")
     qwt_lib = OS.mac? ? qwt/"qwt.framework/qwt" : qwt/"libqwt.so"
-    qwt_include = OS.mac? ? qwt/"qwt.framework/Headers" : Formula["qwt-qt5"].opt_include
+    qwt_include = OS.mac? ? qwt/"qwt.framework/Headers" : formula_opt_include("qwt-qt5")
 
     args = %W[
       -DGR_PKG_CONF_DIR=#{etc}/gnuradio/conf.d

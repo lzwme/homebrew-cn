@@ -34,7 +34,7 @@ class PythonTkAT313 < Formula
     python_include = if OS.mac?
       Formula["python@#{xy}"].opt_frameworks/"Python.framework/Versions/#{xy}/include/python#{xy}"
     else
-      Formula["python@#{xy}"].opt_include/"python#{xy}"
+      formula_opt_include("python@#{xy}")/"python#{xy}"
     end
 
     tcltk_version = Formula["tcl-tk"].any_installed_version.major_minor
@@ -51,7 +51,7 @@ class PythonTkAT313 < Formula
       name = "_tkinter"
       sources = ["_tkinter.c", "tkappinit.c"]
       define-macros = [["WITH_APPINIT", "1"], ["TCL_WITH_EXTERNAL_TOMMATH", "1"]]
-      include-dirs = ["#{python_include}/internal", "#{Formula["tcl-tk"].opt_include/"tcl-tk"}"]
+      include-dirs = ["#{python_include}/internal", "#{formula_opt_include("tcl-tk")/"tcl-tk"}"]
       libraries = ["tcl#{tcltk_version}", "tcl#{tcltk_version.major}tk#{tcltk_version}"]
       library-dirs = ["#{formula_opt_lib("tcl-tk")}"]
     TOML

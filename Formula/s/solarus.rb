@@ -45,10 +45,10 @@ class Solarus < Formula
                     "-DSOLARUS_ARCH=#{Hardware::CPU.arch}",
                     "-DSOLARUS_GUI=OFF",
                     "-DSOLARUS_TESTS=OFF",
-                    "-DVORBISFILE_INCLUDE_DIR=#{Formula["libvorbis"].opt_include}",
-                    "-DOGG_INCLUDE_DIR=#{Formula["libogg"].opt_include}",
-                    "-DGLM_INCLUDE_DIR=#{Formula["glm"].opt_include}",
-                    "-DPHYSFS_INCLUDE_DIR=#{Formula["physfs"].opt_include}",
+                    "-DVORBISFILE_INCLUDE_DIR=#{formula_opt_include("libvorbis")}",
+                    "-DOGG_INCLUDE_DIR=#{formula_opt_include("libogg")}",
+                    "-DGLM_INCLUDE_DIR=#{formula_opt_include("glm")}",
+                    "-DPHYSFS_INCLUDE_DIR=#{formula_opt_include("physfs")}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

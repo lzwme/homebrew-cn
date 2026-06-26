@@ -121,7 +121,7 @@ class GhcAT912 < Formula
 
     binary = buildpath/"binary"
     args = %W[
-      --with-gmp-includes=#{Formula["gmp"].opt_include}
+      --with-gmp-includes=#{formula_opt_include("gmp")}
       --with-gmp-libraries=#{formula_opt_lib("gmp")}
     ]
     resource("binary").stage do

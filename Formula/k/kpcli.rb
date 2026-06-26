@@ -116,7 +116,7 @@ class Kpcli < Formula
       ENV.refurbish_args
 
       system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}",
-                     "--includedir=#{Formula["readline"].opt_include}",
+                     "--includedir=#{formula_opt_include("readline")}",
                      "--libdir=#{formula_opt_lib("readline")}"
       system "make", "install"
     end

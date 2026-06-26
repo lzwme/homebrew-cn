@@ -5,8 +5,8 @@ class Semgrep < Formula
   homepage "https://semgrep.dev"
   # Pull from git tag to get submodules, https://github.com/semgrep/semgrep/issues/10877
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.167.0",
-      revision: "2e6416326945475af6032538f912742563dea08c"
+      tag:      "v1.168.0",
+      revision: "3167f9c4edb5ad588c558e311c5a1a03b7f593da"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -16,12 +16,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c7c331e45c18c963058141b1fe3ad73c7619b8a1698a9d7cd59990582e837197"
-    sha256 cellar: :any, arm64_sequoia: "0e222d34c156649223255d257c497e7fc60936c902167431a3f982261cb0a331"
-    sha256 cellar: :any, arm64_sonoma:  "5903781c29b4bd9f0fc986e71a19c1bd6d84fbde52bd545000d439bc4aadb181"
-    sha256 cellar: :any, sonoma:        "b65fc9b61a527adcfa5fa13fe57d657f0ce25b0e3ee0a8eb22191b8809e7fb26"
-    sha256               arm64_linux:   "a3a05870c406a11bf0d7ea244b6b33c97baf79bfbb6c5317c46b8f3e17f3e2b1"
-    sha256               x86_64_linux:  "c7224e898a9a3a41d6104ff675e33eeb946a5350754d7a677167a656d7290e28"
+    sha256 cellar: :any, arm64_tahoe:   "a04e6d2923b49e11b2d8f066d4a26835ef8963c5c850a64c5b5cf48ce5bad2c8"
+    sha256 cellar: :any, arm64_sequoia: "9304d53bcfaeef2a98a2af755e595678881ff9ba839fc93dccf8dd9beb6818de"
+    sha256 cellar: :any, arm64_sonoma:  "35328743d80e51a09b2a6c5ab765666d2fb45806d483834ce86cd045d4f1f890"
+    sha256 cellar: :any, sonoma:        "63744be44f4915c4981a85158a4db7adb9ab843eab7a96d7ecc06eade13510bc"
+    sha256               arm64_linux:   "fa6c114c477d853923862c814d60c6406937ee81d00f7b4ec9cdb7de013f9097"
+    sha256               x86_64_linux:  "1155583cf66d57fb40e08fcd83c1c917f6aa4e4b95e75722b12ee8334af152d7"
   end
 
   depends_on "ocaml" => :build
@@ -52,8 +52,8 @@ class Semgrep < Formula
                 exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
-    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
+    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
+    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
   end
 
   resource "attrs" do
@@ -97,8 +97,8 @@ class Semgrep < Formula
   end
 
   resource "face" do
-    url "https://files.pythonhosted.org/packages/24/4e/0e106b0ba486cc38c858fb5efe899002f2ec4765e0808b298d8e19a16efb/face-26.0.0.tar.gz"
-    sha256 "ae12136ff0052f124811f5319670a8d9d29b7d2caaaabe542813690967cc6bca"
+    url "https://files.pythonhosted.org/packages/53/fd/f84f0600bd72953d5a322f0dedbd4f900e2cedab718e6b6a093ae2d16aae/face-26.0.1.tar.gz"
+    sha256 "8183d94bc248baaea855a9f8445f97a22a9988908e60abddccc6e251da77c4c6"
   end
 
   resource "glom" do
@@ -232,8 +232,8 @@ class Semgrep < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/07/60/1d1e59c9c90d54591469ada7d268251f71c24bdb765f1a8a832cee8c6653/pydantic_settings-2.14.1.tar.gz"
-    sha256 "e874d3bec7e787b0c9958277956ed9b4dd5de6a80e162188fdaff7c5e26fd5fa"
+    url "https://files.pythonhosted.org/packages/5c/b5/8f48e906c3e0205276e8bd8cb7512217a87b2685304d64be27cad5b3019f/pydantic_settings-2.14.2.tar.gz"
+    sha256 "c19dd64b19097f1de80184f0cc7b0272a13ae6e170cbf240a3e27e381ed14a5f"
   end
 
   resource "pygments" do
@@ -287,8 +287,8 @@ class Semgrep < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/f7/2b/58abc2d1fd397e7dde08e947e05c884d8ef2f78d5e2588c17a12d42d6994/sse_starlette-3.4.4.tar.gz"
-    sha256 "07e0fa0460138baf25cdd5fb28683472c3995dc1642225191b3832d62526bcb0"
+    url "https://files.pythonhosted.org/packages/d2/1b/bc9e3e7a72dcdad7dc7888758f5d00f56f8909ed5cfdff822bd72bb4c520/sse_starlette-3.4.5.tar.gz"
+    sha256 "83072538bc211a2f68b7b0422226c4af3e9b62e106e07034664b832ca019842a"
   end
 
   resource "starlette" do

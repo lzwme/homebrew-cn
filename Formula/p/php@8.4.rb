@@ -139,7 +139,7 @@ class PhpAT84 < Formula
       # Homebrew's superenv can only discard these if using realpath of SDK
       ENV["HOMEBREW_SDKROOT"] = sdk_path.realpath
     else
-      ENV["SQLITE_CFLAGS"] = "-I#{Formula["sqlite"].opt_include}"
+      ENV["SQLITE_CFLAGS"] = "-I#{formula_opt_include("sqlite")}"
       ENV["SQLITE_LIBS"] = "-lsqlite3"
       ENV["BZIP_DIR"] = formula_opt_prefix("bzip2")
     end

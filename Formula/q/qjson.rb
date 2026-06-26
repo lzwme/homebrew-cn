@@ -48,7 +48,7 @@ class Qjson < Formula
         return 0;
       }
     CPP
-    flags = ["-I#{Formula["qt@5"].opt_include}"]
+    flags = ["-I#{formula_opt_include("qt@5")}"]
     flags += if OS.mac?
       [
         "-F#{formula_opt_lib("qt@5")}",

@@ -87,7 +87,7 @@ class Irrlicht < Formula
       cd "source/Irrlicht" do
         inreplace "Makefile" do |s|
           s.gsub! "/usr/X11R6/lib$(LIBSELECT)", formula_opt_lib("libx11")
-          s.gsub! "/usr/X11R6/include", Formula["libx11"].opt_include
+          s.gsub! "/usr/X11R6/include", formula_opt_include("libx11")
         end
         ENV.append "LDFLAGS", "-L#{formula_opt_lib("bzip2")} -lbz2"
         ENV.append "LDFLAGS", "-L#{formula_opt_lib("jpeg-turbo")} -ljpeg"
@@ -95,7 +95,7 @@ class Irrlicht < Formula
         ENV.append "LDFLAGS", "-L#{formula_opt_lib("zlib-ng-compat")} -lz"
         ENV.append "LDFLAGS", "-L#{formula_opt_lib("mesa")}"
         ENV.append "LDFLAGS", "-L#{formula_opt_lib("libxxf86vm")}"
-        ENV.append "CXXFLAGS", "-I#{Formula["libxxf86vm"].opt_include}"
+        ENV.append "CXXFLAGS", "-I#{formula_opt_include("libxxf86vm")}"
         args = %w[
           NDEBUG=1
           BZIP2OBJ=

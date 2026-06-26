@@ -41,7 +41,7 @@ class Openblas < Formula
     # https://cpufun.substack.com/p/is-mixing-openmp-runtimes-safe
     if ENV.compiler == :clang
       inreplace "Makefile.install" do |s|
-        s.gsub! ":= -fopenmp", ":= -I#{Formula["libomp"].opt_include} -Xpreprocessor -fopenmp"
+        s.gsub! ":= -fopenmp", ":= -I#{formula_opt_include("libomp")} -Xpreprocessor -fopenmp"
         s.gsub! "+= -lgomp", "+= -L#{formula_opt_lib("libomp")} -lomp"
       end
       inreplace "Makefile.system" do |s|

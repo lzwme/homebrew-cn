@@ -45,7 +45,7 @@ class Libnetworkit < Formula
         return 0;
       }
     CPP
-    omp_flags = OS.mac? ? ["-I#{Formula["libomp"].opt_include}"] : []
+    omp_flags = OS.mac? ? ["-I#{formula_opt_include("libomp")}"] : []
     system ENV.cxx, "-std=c++20", "test.cpp", "-L#{lib}", "-lnetworkit", "-o", "test", *omp_flags
     system "./test"
   end

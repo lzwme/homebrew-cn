@@ -163,7 +163,7 @@ class LlvmAT16 < Formula
       clt_sdk_support_flags = %w[I WATCH TV].map { |os| "-DCOMPILER_RT_ENABLE_#{os}OS=OFF" }
       builtins_cmake_args += clt_sdk_support_flags
     else
-      args << "-DFFI_INCLUDE_DIR=#{Formula["libffi"].opt_include}"
+      args << "-DFFI_INCLUDE_DIR=#{formula_opt_include("libffi")}"
       args << "-DFFI_LIBRARY_DIR=#{formula_opt_lib("libffi")}"
 
       # Disable `libxml2` which isn't very useful.
@@ -171,7 +171,7 @@ class LlvmAT16 < Formula
       args << "-DLLVM_ENABLE_LIBCXX=OFF"
       args << "-DCLANG_DEFAULT_CXX_STDLIB=libstdc++"
       # Enable llvm gold plugin for LTO
-      args << "-DLLVM_BINUTILS_INCDIR=#{Formula["binutils"].opt_include}"
+      args << "-DLLVM_BINUTILS_INCDIR=#{formula_opt_include("binutils")}"
       # Parts of Polly fail to correctly build with PIC when being used for DSOs.
       args << "-DCMAKE_POSITION_INDEPENDENT_CODE=ON"
       runtimes_cmake_args += %w[

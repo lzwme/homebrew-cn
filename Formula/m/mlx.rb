@@ -54,7 +54,7 @@ class Mlx < Formula
   end
 
   def install
-    ENV.append_to_cflags "-I#{Formula["nlohmann-json"].opt_include}/nlohmann"
+    ENV.append_to_cflags "-I#{formula_opt_include("nlohmann-json")}/nlohmann"
     (buildpath/"gguflib").install resource("gguflib")
 
     mlx_python_dir = prefix/Language::Python.site_packages(python3)/"mlx"

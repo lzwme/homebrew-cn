@@ -32,7 +32,7 @@ class Makensis < Formula
 
   def install
     if OS.linux?
-      ENV.append_to_cflags "-I#{Formula["zlib-ng-compat"].opt_include}"
+      ENV.append_to_cflags "-I#{formula_opt_include("zlib-ng-compat")}"
       ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}"
     end
 

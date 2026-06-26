@@ -32,7 +32,7 @@ class MariadbConnectorOdbc < Formula
   depends_on "unixodbc"
 
   def install
-    ENV.append_to_cflags "-I#{Formula["mariadb-connector-c"].opt_include}/mariadb"
+    ENV.append_to_cflags "-I#{formula_opt_include("mariadb-connector-c")}/mariadb"
     ENV.append "LDFLAGS", "-L#{formula_opt_lib("mariadb-connector-c")}/mariadb"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{formula_opt_lib("mariadb-connector-c")}/mariadb" if OS.linux?
     args = [

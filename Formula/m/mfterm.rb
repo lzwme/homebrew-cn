@@ -39,7 +39,7 @@ class Mfterm < Formula
   end
 
   def install
-    ENV.prepend "CPPFLAGS", "-I#{Formula["openssl@3"].opt_include}"
+    ENV.prepend "CPPFLAGS", "-I#{formula_opt_include("openssl@3")}"
     ENV.prepend "LDFLAGS", "-L#{formula_opt_lib("openssl@3")}"
 
     if build.head?

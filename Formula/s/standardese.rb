@@ -70,7 +70,7 @@ class Standardese < Formula
                     "-DBUILD_SHARED_LIBS=OFF",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
                     "-DCMARK_LIBRARY=#{formula_opt_lib("cmark-gfm")/shared_library("libcmark-gfm")}",
-                    "-DCMARK_INCLUDE_DIR=#{Formula["cmark-gfm"].opt_include}",
+                    "-DCMARK_INCLUDE_DIR=#{formula_opt_include("cmark-gfm")}",
                     "-DFETCHCONTENT_SOURCE_DIR_TYPE_SAFE=#{buildpath}/type_safe",
                     "-DSTANDARDESE_BUILD_TEST=OFF",
                     *std_cmake_args

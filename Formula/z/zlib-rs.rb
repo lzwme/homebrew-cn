@@ -38,7 +38,7 @@ class ZlibRs < Formula
     end
 
     testpath.install resource("zpipe.c")
-    ENV.append_to_cflags "-I#{Formula["zlib-ng-compat"].opt_include}" if OS.linux?
+    ENV.append_to_cflags "-I#{formula_opt_include("zlib-ng-compat")}" if OS.linux?
     system ENV.cc, "zpipe.c", *ENV.cflags.to_s.split, "-L#{lib}", "-lz_rs", "-o", "zpipe"
 
     text = "Hello, Homebrew!"

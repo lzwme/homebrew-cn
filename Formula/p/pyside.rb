@@ -93,7 +93,7 @@ class Pyside < Formula
   def install
     ENV.append_path "PYTHONPATH", buildpath/"build/sources"
 
-    extra_include_dirs = [Formula["qttools"].opt_include]
+    extra_include_dirs = [formula_opt_include("qttools")]
 
     # upstream issue: https://bugreports.qt.io/browse/PYSIDE-1684
     inreplace "sources/pyside6/cmake/Macros/PySideModules.cmake",

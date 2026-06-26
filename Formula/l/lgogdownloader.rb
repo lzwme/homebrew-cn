@@ -35,8 +35,8 @@ class Lgogdownloader < Formula
 
   def install
     args = %W[
-      -DJSONCPP_INCLUDE_DIR=#{Formula["jsoncpp"].opt_include}
-      -DBoost_INCLUDE_DIR=#{Formula["boost"].opt_include}
+      -DJSONCPP_INCLUDE_DIR=#{formula_opt_include("jsoncpp")}
+      -DBoost_INCLUDE_DIR=#{formula_opt_include("boost")}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

@@ -166,7 +166,7 @@ class PythonAT39 < Formula
     inreplace "setup.py" do |s|
       s.gsub! "sqlite_setup_debug = False", "sqlite_setup_debug = True"
       s.gsub! "for d_ in self.inc_dirs + sqlite_inc_paths:",
-              "for d_ in ['#{Formula["sqlite"].opt_include}']:"
+              "for d_ in ['#{formula_opt_include("sqlite")}']:"
     end
 
     if OS.linux?
@@ -176,7 +176,7 @@ class PythonAT39 < Formula
       # See https://github.com/Homebrew/linuxbrew-core/pull/22307#issuecomment-781896552
       # We want our ncurses! Override system ncurses includes!
       inreplace "configure", 'CPPFLAGS="$CPPFLAGS -I/usr/include/ncursesw"',
-                             "CPPFLAGS=\"$CPPFLAGS -I#{Formula["ncurses"].opt_include}\""
+                             "CPPFLAGS=\"$CPPFLAGS -I#{formula_opt_include("ncurses")}\""
     end
 
     # Allow python modules to use ctypes.find_library to find homebrew's stuff
@@ -380,8 +380,8 @@ class PythonAT39 < Formula
     end
 
     # Help distutils find brewed stuff when building extensions
-    include_dirs = [HOMEBREW_PREFIX/"include", Formula["openssl@3"].opt_include,
-                    Formula["sqlite"].opt_include]
+    include_dirs = [HOMEBREW_PREFIX/"include", formula_opt_include("openssl@3"),
+                    formula_opt_include("sqlite")]
     library_dirs = [HOMEBREW_PREFIX/"lib", formula_opt_lib("openssl@3"),
                     formula_opt_lib("sqlite")]
 

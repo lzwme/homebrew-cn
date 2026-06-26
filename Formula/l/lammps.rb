@@ -73,7 +73,7 @@ class Lammps < Formula
         "-DWITH_PNG=yes",
         "-DCMAKE_INSTALL_RPATH=#{rpath}"
       ]
-      args << "-DOpenMP_CXX_FLAGS=-I#{Formula["libomp"].opt_include}" if OS.mac?
+      args << "-DOpenMP_CXX_FLAGS=-I#{formula_opt_include("libomp")}" if OS.mac?
       system "cmake", *args, *std_cmake_args
       system "cmake", "--build", "build_#{variant}"
       system "cmake", "--install", "build_#{variant}"

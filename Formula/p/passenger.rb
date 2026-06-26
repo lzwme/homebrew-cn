@@ -40,7 +40,7 @@ class Passenger < Formula
     end
 
     inreplace "src/ruby_supportlib/phusion_passenger/platform_info/openssl.rb" do |s|
-      s.gsub! "-I/usr/local/opt/openssl/include", "-I#{Formula["openssl@3"].opt_include}"
+      s.gsub! "-I/usr/local/opt/openssl/include", "-I#{formula_opt_include("openssl@3")}"
       s.gsub! "-L/usr/local/opt/openssl/lib", "-L#{formula_opt_lib("openssl@3")}"
     end
 

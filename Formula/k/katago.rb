@@ -90,7 +90,7 @@ class Katago < Formula
       # Reserve header space for relocation (executable is linked by swiftc).
       ["-DUSE_BACKEND=METAL", "-GNinja", "-DCMAKE_Swift_FLAGS=-Xlinker -headerpad_max_install_names"]
     else
-      ["-DUSE_BACKEND=EIGEN", "-DEIGEN3_INCLUDE_DIRS=#{Formula["eigen"].opt_include}/eigen3"]
+      ["-DUSE_BACKEND=EIGEN", "-DEIGEN3_INCLUDE_DIRS=#{formula_opt_include("eigen")}/eigen3"]
     end
 
     system "cmake", "-S", "cpp", "-B", "build", *args, *std_cmake_args

@@ -45,7 +45,7 @@ class Libmng < Formula
 
   test do
     system ENV.cc, pkgshare/"mngtree.c", "-DMNG_USE_SO",
-           "-I#{Formula["jpeg-turbo"].opt_include}",
+           "-I#{formula_opt_include("jpeg-turbo")}",
            "-I#{include}", "-L#{lib}", "-lmng", "-o", "mngtree"
 
     resource("sample").stage do

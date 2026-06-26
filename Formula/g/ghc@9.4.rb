@@ -116,7 +116,7 @@ class GhcAT94 < Formula
     resource("binary").stage do
       binary_args = []
       if OS.linux?
-        binary_args << "--with-gmp-includes=#{Formula["gmp"].opt_include}"
+        binary_args << "--with-gmp-includes=#{formula_opt_include("gmp")}"
         binary_args << "--with-gmp-libraries=#{formula_opt_lib("gmp")}"
       end
 

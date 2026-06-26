@@ -57,7 +57,7 @@ class Opencascade < Formula
                     "-DBUILD_RELEASE_DISABLE_EXCEPTIONS=OFF",
                     "-D3RDPARTY_FREETYPE_DIR=#{formula_opt_prefix("freetype")}",
                     "-D3RDPARTY_RAPIDJSON_DIR=#{formula_opt_prefix("rapidjson")}",
-                    "-D3RDPARTY_RAPIDJSON_INCLUDE_DIR=#{Formula["rapidjson"].opt_include}",
+                    "-D3RDPARTY_RAPIDJSON_INCLUDE_DIR=#{formula_opt_include("rapidjson")}",
                     "-D3RDPARTY_TBB_DIR=#{formula_opt_prefix("tbb")}",
                     "-D3RDPARTY_TCL_DIR:PATH=#{tcltk.opt_prefix}",
                     "-D3RDPARTY_TK_DIR:PATH=#{tcltk.opt_prefix}",

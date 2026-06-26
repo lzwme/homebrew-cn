@@ -101,8 +101,8 @@ class Redland < Formula
 
     includes = %W[
       -I#{include}
-      -I#{Formula["raptor"].opt_include}/raptor2
-      -I#{Formula["rasqal"].opt_include}/rasqal
+      -I#{formula_opt_include("raptor")}/raptor2
+      -I#{formula_opt_include("rasqal")}/rasqal
     ]
 
     libs = %W[

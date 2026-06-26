@@ -122,7 +122,7 @@ class PhpAT81 < Formula
       ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path}/usr/include/sasl"
       ENV["SASL_LIBS"] = "-lsasl2"
     else
-      ENV["SQLITE_CFLAGS"] = "-I#{Formula["sqlite"].opt_include}"
+      ENV["SQLITE_CFLAGS"] = "-I#{formula_opt_include("sqlite")}"
       ENV["SQLITE_LIBS"] = "-lsqlite3"
       ENV["BZIP_DIR"] = formula_opt_prefix("bzip2")
     end

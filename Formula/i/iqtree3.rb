@@ -32,7 +32,7 @@ class Iqtree3 < Formula
     resource("lsd2").stage buildpath/"lsd2"
 
     args = %W[
-      -DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3
+      -DEIGEN3_INCLUDE_DIR=#{formula_opt_include("eigen")}/eigen3
       -DIQTREE_FLAGS=single
       -DUSE_CMAPLE=OFF
       -DUSE_TERRAPHAST=OFF

@@ -1,18 +1,18 @@
 class Berglas < Formula
   desc "Tool for managing secrets on Google Cloud"
   homepage "https://github.com/GoogleCloudPlatform/berglas"
-  url "https://ghfast.top/https://github.com/GoogleCloudPlatform/berglas/archive/refs/tags/v2.0.13.tar.gz"
-  sha256 "ea78f41bcbea5abd5446fc5c03863057bc6eb3484ff7ba55cf085d32b1e95672"
+  url "https://ghfast.top/https://github.com/GoogleCloudPlatform/berglas/archive/refs/tags/v2.0.14.tar.gz"
+  sha256 "ab03825412ab806f85b26a4726828d93bd22d3dd00bad1c9bd2653bc1d4ca616"
   license "Apache-2.0"
   head "https://github.com/GoogleCloudPlatform/berglas.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "af290a1925b93b7f5855ea1427806c79fbbf38a0d196d840cde07b7d39efd83f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af290a1925b93b7f5855ea1427806c79fbbf38a0d196d840cde07b7d39efd83f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af290a1925b93b7f5855ea1427806c79fbbf38a0d196d840cde07b7d39efd83f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "528b3de430c3438b2a4e95e5a9cc53f141e5378bfcc9c88d9f4dc37bd306d7dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c9105638db80c6da819ec2e0925431ae842164746832db5195d6c099f6aebb7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac83591bc43ee9f6e9aacedb6ddbe6158d3d6e6093e1928dbafda859df508d13"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5170e282f8975995e9d19b60973c37fe2ebcdbf70f3df826d622fadbc64bcef4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5170e282f8975995e9d19b60973c37fe2ebcdbf70f3df826d622fadbc64bcef4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5170e282f8975995e9d19b60973c37fe2ebcdbf70f3df826d622fadbc64bcef4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "40530723d37ea2f2aeb5cf4e7e41db22f30e416c6646546ebf3ab7e72183df7e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10818bee88f66e954af8d2227caa413596f71144bda5293880d33ea2cf56ef59"
+    sha256 cellar: :any,                 x86_64_linux:  "47ef123c642aed4624e67ea53a55397628330bfec5b4674382ec58305d013e65"
   end
 
   depends_on "go" => :build

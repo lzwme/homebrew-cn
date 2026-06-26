@@ -1,8 +1,8 @@
 class Gpgme < Formula
   desc "Library access to GnuPG"
   homepage "https://www.gnupg.org/related_software/gpgme/"
-  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-2.1.0.tar.bz2"
-  sha256 "841c5ea53fc26259f4fbf0e8bde982dea1b8a1ca0cb77e681c82b050566bf92b"
+  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-2.1.1.tar.bz2"
+  sha256 "6d7ee12b209d7dce75468db53f72a90e1ad3d21f4c304ef2c002612a52f5333a"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class Gpgme < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "0c10ccfca11d15aa56e4d1256f5937e42a014599476c8bf0fc205f8ccaec4ac8"
-    sha256                               arm64_sequoia: "364e7d5a64a11cff1fc174c45ae003edc05710647440d659497093e6e3f852e4"
-    sha256                               arm64_sonoma:  "806e6087437443c0f8e0eea337e6d1fd8358085c9d40042a9c3855045fc435e7"
-    sha256 cellar: :any,                 sonoma:        "20246e1dabf22226e2cb05d555807e564c89fd05c29ef9e6513ff4dc9ff5d453"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c083601bce346a536b7ea6541c4bd50428486ef8c2e71987c7b85938eeca4d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cca578994038bbe5e6ec56d04faf8c4f4f272ffbed1808bd574a004213c3037"
+    sha256               arm64_tahoe:   "c69dd342a1debd3dd07c2bfe8ad734a286a4f87bdd092d9b58bc7577e345765e"
+    sha256               arm64_sequoia: "e28c699a92b2bfe383a0ba097da58ed799996c88207f7fbcb2cbad2ef27a5ec8"
+    sha256               arm64_sonoma:  "fa07f1bb78191ba559c4d84ce73ebd9e52128744c3254a0ef627440f8129489f"
+    sha256 cellar: :any, sonoma:        "2378e7c91f90bf82330a4f89095897bec36b5fa613a38ba5cf050101d8080225"
+    sha256 cellar: :any, arm64_linux:   "bb6ac68adfb2be92c437885df334edd446bc8905cd62ca9d5c8095f4bf9bd973"
+    sha256 cellar: :any, x86_64_linux:  "ac95c5599657e7a938341a868c064c2272bacb03dc60645e47f7bf94c8460993"
   end
 
   depends_on "gnupg"

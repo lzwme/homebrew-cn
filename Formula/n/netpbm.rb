@@ -66,7 +66,7 @@ class Netpbm < Formula
       s.change_make_var! "PNGLIB", "-lpng"
       s.change_make_var! "ZLIB", "-lz"
       s.change_make_var! "JASPERLIB", "-ljasper"
-      s.change_make_var! "JASPERHDR_DIR", Formula["jasper"].opt_include/"jasper"
+      s.change_make_var! "JASPERHDR_DIR", formula_opt_include("jasper")/"jasper"
       s.gsub! "/usr/local/netpbm/rgb.txt", prefix/"misc/rgb.txt"
 
       if OS.mac?
