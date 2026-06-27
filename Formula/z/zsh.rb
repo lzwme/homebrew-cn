@@ -29,12 +29,13 @@ class Zsh < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "19d5c07ae6c903d410ce5d4a2bc7577b64d960d2f4fec8659a1855102efcdafd"
-    sha256 arm64_sequoia: "17ca8e77c287c86c8ef84cb6d29d04ba880a3640d8f568a33e2344cc71dbaa08"
-    sha256 arm64_sonoma:  "74aae0cb5ef080e857156a270ea11171b2d9209cf1ff3a0520291f6ff8bc3d67"
-    sha256 sonoma:        "0c831556a632b10585c62e12eac0043e23a2693b42c9e66eed35203535d01446"
-    sha256 arm64_linux:   "bee42cb9e4a63c5dfcaae67e0988946d536a474d5fcd876fd3e12139b2d5b461"
-    sha256 x86_64_linux:  "61309af530692ca2440f75459731e5e7260148e65877d4a05747122f4d628093"
+    rebuild 1
+    sha256 arm64_tahoe:   "e4732c259117569494b4c04b6ee03352c4bba396ddd38eaf5338f09576f6e545"
+    sha256 arm64_sequoia: "b5a6818bc0fac64b34be2f146bf2f5e88ac1bce7ccfaebeec041264dd17bcab6"
+    sha256 arm64_sonoma:  "ce3731931aa1596e1c430f52b6c1b85e81dbe6b2f4022259706a7fa8ba4d78bd"
+    sha256 sonoma:        "a194c399b7b4b1064b425ced7aef77cbb67144516d5dd1b6681c7cd86c95538c"
+    sha256 arm64_linux:   "dda9a28f94e4b732323869edfe11130b3252df3f47f36f56f02d4147db13877e"
+    sha256 x86_64_linux:  "663fd1cccd978d5eac68265cdd4b605783fded2f528557cb21aa9e590351873d"
   end
 
   head do
@@ -50,27 +51,26 @@ class Zsh < Formula
   end
 
   def install
-    # Fix compile with newer Clang. Remove in the next release
-    # Ref: https://sourceforge.net/p/zsh/code/ci/ab4d62eb975a4c4c51dd35822665050e2ddc6918/
-    ENV.append_to_cflags "-Wno-implicit-int" if DevelopmentTools.clang_build_version >= 1403
-
     system "Util/preconfig" if build.head?
 
-    system "./configure", "--prefix=#{prefix}",
-           "--enable-fndir=#{pkgshare}/functions",
-           "--enable-scriptdir=#{pkgshare}/scripts",
-           "--enable-site-fndir=#{HOMEBREW_PREFIX}/share/zsh/site-functions",
-           "--enable-site-scriptdir=#{HOMEBREW_PREFIX}/share/zsh/site-scripts",
-           "--enable-runhelpdir=#{pkgshare}/help",
-           "--enable-cap",
-           "--enable-maildir-support",
-           "--enable-multibyte",
-           "--enable-pcre",
-           "--enable-zsh-secure-free",
-           "--enable-unicode9",
-           "--enable-etcdir=/etc",
-           "--with-tcsetpgrp",
-           "DL_EXT=bundle"
+    args = %W[
+      --enable-fndir=#{pkgshare}/functions
+      --enable-scriptdir=#{pkgshare}/scripts
+      --enable-site-fndir=#{HOMEBREW_PREFIX}/share/zsh/site-functions
+      --enable-site-scriptdir=#{HOMEBREW_PREFIX}/share/zsh/site-scripts
+      --enable-runhelpdir=#{pkgshare}/help
+      --enable-maildir-support
+      --enable-multibyte
+      --enable-pcre
+      --enable-zsh-secure-free
+      --enable-unicode9
+      --enable-etcdir=/etc
+      --with-tcsetpgrp
+    ]
+
+    args << "--enable-cap" if OS.linux?
+
+    system "./configure", *args, *std_configure_args, "DL_EXT=bundle"
 
     # Do not version installation directories.
     inreplace ["Makefile", "Src/Makefile"],

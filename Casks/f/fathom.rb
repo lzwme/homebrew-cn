@@ -1,9 +1,9 @@
 cask "fathom" do
   arch arm: "arm64", intel: "x64"
 
-  version "3.2.2"
-  sha256 arm:   "09cdb2766f50259c267cb739d4ba80ea9414f5df8a75651a767477b226cfc8d4",
-         intel: "04f0dab59b84138c29f450e8b840ab248b8fefb200dfca104a5f4bf04366edf0"
+  version "3.3.1"
+  sha256 arm:   "22d442bbb902143deb649633ed26f5e2e705e2bc2fbcba152ff58b0541d6233a",
+         intel: "628ac9e31cc8a1e0f293cd500ab3ffc5371198d16da0df03df0d2622dc936503"
 
   url "https://electron-update.fathom.video/download/file/Fathom-darwin-#{arch}-#{version}.dmg"
   name "Fathom"

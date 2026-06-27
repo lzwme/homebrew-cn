@@ -10,7 +10,7 @@ class Pkgconf < Formula
 
   livecheck do
     url "https://distfiles.ariadne.space/pkgconf/"
-    regex(/href=.*?pkgconf[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(/href=.*?pkgconf[._-]v?(\d+\.\d+(?:\.[1-8]?\d(?:\.\d+)*)?)\.t/i)
   end
 
   bottle do

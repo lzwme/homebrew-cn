@@ -1,17 +1,17 @@
 class MimoCode < Formula
   desc "AI coding agent with cross-session memory"
   homepage "https://github.com/XiaomiMiMo/MiMo-Code"
-  url "https://registry.npmjs.org/@mimo-ai/cli/-/cli-0.1.1.tgz"
-  sha256 "8cc4aa84bb42e6db6a9a944fd5445e926f7714f972928b998b6ccdfc94490ab5"
+  url "https://registry.npmjs.org/@mimo-ai/cli/-/cli-0.1.3.tgz"
+  sha256 "a29ffed523c888368d2ade6c482656480cbe0cff83da34323cc896f31da8726d"
   license "MIT"
 
   bottle do
-    sha256                               arm64_tahoe:   "24ee9dc1723f272dd5f68caf2ff86484c43ba2057abe0ae50fce1cf81663eb15"
-    sha256                               arm64_sequoia: "24ee9dc1723f272dd5f68caf2ff86484c43ba2057abe0ae50fce1cf81663eb15"
-    sha256                               arm64_sonoma:  "24ee9dc1723f272dd5f68caf2ff86484c43ba2057abe0ae50fce1cf81663eb15"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9931340bdaee3b10e5f8d07ecd0ad1abb3eaeae121bc679b7bf9ec0d0091a5d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1a0669f50368bb07ed17dd09ac3fd5e4292a871fde4321ef9d7012a80c64910"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6743b0b0ff8cc714594c2069dd4a7701163061a02772fbaafc69ff2fd8055cf3"
+    sha256                               arm64_tahoe:   "225b286fba1f81f3ebc0a1590eba0a182120bd358d6be7df727917f5713d12b5"
+    sha256                               arm64_sequoia: "225b286fba1f81f3ebc0a1590eba0a182120bd358d6be7df727917f5713d12b5"
+    sha256                               arm64_sonoma:  "225b286fba1f81f3ebc0a1590eba0a182120bd358d6be7df727917f5713d12b5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "06b14a44896650afc70ae877b15d53a9b3b0c39220a873f9d7584efc3037c0ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "71670b7a2dd7c2f5c235f00d25a0928c33936b4c04dcf0671c476c6f41670ca1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ac395a09617ad7dbd67bf0230e7edb3ef0207dafd879f29ebdad65e3f1bd240"
   end
 
   depends_on "node"

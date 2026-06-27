@@ -1,17 +1,17 @@
 class IcpCli < Formula
   desc "Development tool for building and deploying canisters on ICP"
   homepage "https://dfinity.github.io/icp-cli/"
-  url "https://ghfast.top/https://github.com/dfinity/icp-cli/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "f7c36d262557d79f4b506f28b5e78769f6f62cf5e18e3d52e2e939445412d227"
+  url "https://ghfast.top/https://github.com/dfinity/icp-cli/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "e22b6ddbfadf6cc71c64129584e36cd421360b80ae32e6544a53380a1adec25d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fdd1af1bd8c6c5ce7e9c3d8f3123f5527c636617f382c41faac0a340fbf16f66"
-    sha256 cellar: :any, arm64_sequoia: "418d148efd2cf32a9f0bd0670f37d6a79f971d1dbff804759b2367a10d4d2284"
-    sha256 cellar: :any, arm64_sonoma:  "55b555acabe7d189081914ca4e4f86599819667b7a09038f1591455a86f0cd28"
-    sha256 cellar: :any, sonoma:        "e66c32edd21a1c19476a170ec66c7f6fef046d8ad6733670cc0cd498125b5b8b"
-    sha256 cellar: :any, arm64_linux:   "853336cc6f6707bd8e8c02947b276c7f1c01a145bd9c031716080581c16a2ab6"
-    sha256 cellar: :any, x86_64_linux:  "11d9e6369f450d34af3b057948fb77581daf8b5a369e07ac7d3a1ef286daac5a"
+    sha256 cellar: :any, arm64_tahoe:   "c8b381a0b59a06a8cc1b6b99ce45ddc5fcd69d9a7ad36bdfe522ce253b0c390b"
+    sha256 cellar: :any, arm64_sequoia: "83fce5eb8e72dfd1b6e6c174973e163f799de2464bfe045a408873b81bedbbdc"
+    sha256 cellar: :any, arm64_sonoma:  "c97e47c43ac3cb48ad03a27d3b00d51450ec9ce042b9206d6bd9359145979802"
+    sha256 cellar: :any, sonoma:        "726d8e2c8714d6926f4caf8ade0414e9330bd3cf55a9c0ec40249696be5d0f46"
+    sha256 cellar: :any, arm64_linux:   "b4262092c976ba4037bc943e52df94dc304d32dd376630bf70d1636b92b7e626"
+    sha256 cellar: :any, x86_64_linux:  "ad07962894436e153522f75221859e1c712a4ca127bc03fd247bd06d1d8fe2d6"
   end
 
   depends_on "rust" => :build

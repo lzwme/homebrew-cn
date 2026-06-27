@@ -1,8 +1,8 @@
 class Cabin < Formula
   desc "Package manager and build system for C/C++"
   homepage "https://cabinpkg.com"
-  url "https://ghfast.top/https://github.com/cabinpkg/cabin/archive/refs/tags/0.15.0.tar.gz"
-  sha256 "9f8b4904c1d4072cddb3f8316cde694cb55791bfb817b1f5818f49f1d156ded6"
+  url "https://ghfast.top/https://github.com/cabinpkg/cabin/archive/refs/tags/0.16.0.tar.gz"
+  sha256 "c6590ea64f228cecd47606518f50bbeb8e96a28a8aa55b4b3f7dd699b57b51fe"
   license "Apache-2.0"
   head "https://github.com/cabinpkg/cabin.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Cabin < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe46469b972ffe72dd3f142f2fdc5424524fb6fa2d0178dc0cbecd4ed95d54b5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "444683c0e1925aa6536bb4cf7f0dcb7010f1a0748e5e4039db58a15c08b8cdb3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04bc02e370c19a3aacb92be0d3851fe99ab4e62e358e66511bf6317d4a43abd2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "73aa93c00fbfea35a60584db78227bc3edb6891a76c2dc87c6197080fc09145f"
-    sha256 cellar: :any,                 arm64_linux:   "d7c38baafec3462f8b01e8e545a8a52232f80ab4ae99fc8c8113022e56b86225"
-    sha256 cellar: :any,                 x86_64_linux:  "cf2c61da5789eacd695739ae5364db79831af572f1dc74cf6decc01b8f9bc944"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4bce5ace9937055bef0a6fc3dfde2f2e8bdfc3229fa70cca2fc9da1a2385fa17"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bfb7dae5bda853c27dbc0ddee7cafafd952f1960aedf718330e1e132edd399d9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50c17ca6d62b85bb6421e5d85bf9f07eddff33b88353aeb21f667dffe386eae8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7ec14c54d3e7f14e96ef45ce5f9c75c59e06bb1f9e7c673aa44a4d50ef6358b9"
+    sha256 cellar: :any,                 arm64_linux:   "23e0bc964c7b5cdebf0033ee6103e3c38f3651941649b371219e35b44de60958"
+    sha256 cellar: :any,                 x86_64_linux:  "0fe7882f999af9e465bc3231fff9f57c62395b3ce0b989b22e70a6d1ffce1bf2"
   end
 
   depends_on "rust" => :build

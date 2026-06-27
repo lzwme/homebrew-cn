@@ -31,7 +31,7 @@ class JenkinsLts < Formula
 
   service do
     run [
-      Utils::Path.formula_opt_bin("openjdk@21")/"java",
+      formula_opt_bin("openjdk@21")/"java",
       "-Dmail.smtp.starttls.enable=true",
       "-jar",
       opt_libexec/"jenkins.war",

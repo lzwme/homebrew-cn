@@ -33,7 +33,7 @@ class Gitbucket < Formula
 
   service do
     run [
-      Utils::Path.formula_opt_bin("openjdk")/"java",
+      formula_opt_bin("openjdk")/"java",
       "-Dmail.smtp.starttls.enable=true",
       "-jar",
       opt_libexec/"gitbucket.war",

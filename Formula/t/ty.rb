@@ -1,18 +1,18 @@
 class Ty < Formula
   desc "Extremely fast Python type checker, written in Rust"
   homepage "https://docs.astral.sh/ty/"
-  url "https://files.pythonhosted.org/packages/96/87/d5a1d099a41ed22f939b9eec5af3c40bd907409e673cc0b8fcfd1e354ab2/ty-0.0.53.tar.gz"
-  sha256 "86e8c522b1a1ae267cd6442cc93c0c954a2a59b89565e4fb493c1133bd5a056e"
+  url "https://files.pythonhosted.org/packages/ae/c6/2ea90406d82cf82b0a68725130da2cc9de161bfa883c7dee4f0d94dbf3ce/ty-0.0.54.tar.gz"
+  sha256 "b6b3cfe174f27744413c898b2488ca52ea76070637095de131698e506b455055"
   license "MIT"
   head "https://github.com/astral-sh/ty.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f453f6a792363f035e657c6fe98ca1d95c22d208ecbfdaf5e757b62120059655"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e62ee821df60603e47d717b68cb57c81b335c68562cd0274fa4a2a0002eb82e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a05e58606bb703dc4e8b4b99fded1908913dfb9f911c2aa1b4ac21596fca32a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "88d5e3bcc71c23a45ee440f668ab572a08da24530860125064d23b4230edbcef"
-    sha256 cellar: :any,                 arm64_linux:   "9e53df20c1bc1b137ad82b252622b20d669c1591a6a3f61536fb3a2f9bdd503f"
-    sha256 cellar: :any,                 x86_64_linux:  "defb2aa3e0cfd4ec7ddca05b69bc41a2e74703227b3bbb691aa6ea92189bbc01"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "61e8b3d00028877fbf34eec60fb753ca4652e7c5533f0a237703ab987175ed75"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25cad8592a790eee6c30b99e7d18f95db3ee11fdd6ede0779ac203291f1bd6ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "522951ceb74ced1d34c39c07490c6fe122ddd432041e97e2cb8c120fd163392b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c0e5b47f08da25bac0558b3184696d84deec952e78f918169cfd7bd3238b4fd1"
+    sha256 cellar: :any,                 arm64_linux:   "e7fa9a4bb810652fc58cd3245560983eca29338c83d4bdf0fcfbbb46a44730cc"
+    sha256 cellar: :any,                 x86_64_linux:  "1ae5fae4870e54868722be7d49f3edd1a02ef8168568fd4eb90c388b85f27c09"
   end
 
   depends_on "rust" => :build

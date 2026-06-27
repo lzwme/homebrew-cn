@@ -1,18 +1,18 @@
 class IntelliShell < Formula
   desc "Like IntelliSense, but for shells"
   homepage "https://lasantosr.github.io/intelli-shell/"
-  url "https://ghfast.top/https://github.com/lasantosr/intelli-shell/archive/refs/tags/v3.4.4.tar.gz"
-  sha256 "480e5b5cfca9af5365f327867db375100b595c44aded05dc419fd11d5110c93a"
+  url "https://ghfast.top/https://github.com/lasantosr/intelli-shell/archive/refs/tags/v3.4.5.tar.gz"
+  sha256 "3bb19e59f65e5076c549379cdd8bbe37ab38ddb45187f2333d4356f49e5b1f41"
   license "Apache-2.0"
   head "https://github.com/lasantosr/intelli-shell.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "40d0d958f0bd01dde9381fb178072d2c5108bdc99341511aa5fe57cf62e86714"
-    sha256 cellar: :any, arm64_sequoia: "d5ab03946c7f1a15d62b9e3952b396d6adb796260cac1e6dabec04820688457a"
-    sha256 cellar: :any, arm64_sonoma:  "7ba08dae7b7c7dbe159967df6bf9bc175bad3762c5eedee33568818e4e402658"
-    sha256 cellar: :any, sonoma:        "fc0a68f12466193fead3bc463727e79866ca02178def5e5b7d902f384c2b0972"
-    sha256 cellar: :any, arm64_linux:   "ad6b73a088624bd386b2c84dcda55011b4a0134fa10bf604f9169d1675d47837"
-    sha256 cellar: :any, x86_64_linux:  "d656484db59c233599125e70da75ef0c521935537a015ec79162df8681a4819d"
+    sha256 cellar: :any, arm64_tahoe:   "22e5bc09de34b3ed8342a4bfb8787a4d29a8ae501fa59a094886b9ce64ec811e"
+    sha256 cellar: :any, arm64_sequoia: "5c36a03bcc346abecf17198df4e5f8b4975b1c5e4dbccfeadb97f66f9fa119a9"
+    sha256 cellar: :any, arm64_sonoma:  "52b7296107b8e6654ce6e83f6a951bc862e430d5c2e6df5219506f5c494c193f"
+    sha256 cellar: :any, sonoma:        "f3cabfd7921792db3bdbe48f4e56c36887fb983d52a51cdac9640179e228b8db"
+    sha256 cellar: :any, arm64_linux:   "bb9b8ab9d2c017970d08560bedb3864a7060c7da6918f31ab16f4d6de9f4b107"
+    sha256 cellar: :any, x86_64_linux:  "19db7acc6640f5ca464cbfc1360c4173e67cd017829ece87e5cdca2184761c62"
   end
 
   depends_on "pkgconf" => :build

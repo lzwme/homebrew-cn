@@ -1,8 +1,8 @@
 class Patchelf < Formula
   desc "Modify dynamic ELF executables"
   homepage "https://github.com/NixOS/patchelf"
-  url "https://ghfast.top/https://github.com/NixOS/patchelf/releases/download/0.18.0/patchelf-0.18.0.tar.bz2"
-  sha256 "1952b2a782ba576279c211ee942e341748fdb44997f704dd53def46cd055470b"
+  url "https://ghfast.top/https://github.com/NixOS/patchelf/releases/download/0.19.0/patchelf-0.19.0.tar.bz2"
+  sha256 "b189d3ec57730757895b9e7d3a1f136d3af96ec9228ae6ef0a07c20a213f28f5"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,18 +11,12 @@ class Patchelf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:    "3eca59098dfb9987773befef12384065102f4d6e6ab03fc4e3543d9c45d81b80"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "00f60cc5a6eda135bd0184aa3e4980da9017132553c2ab685b03842f4c196ea2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "25689776796afacaf452e8e74dd3805bf9ff129c00f3cc886c0857db9802c9db"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "37888c994e481e2b6a3a212c689195e2ca6dbeb681779845bbeda5a52262c1b5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd75a287bcecfb33a2ca07c92225435571804a8e73f30ecc4769a6a7443dc2d0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ef4527c4a98121dd6fabcef87f00b3a8dbbd6b9cbd24d49d972a057f49ee4080"
-    sha256 cellar: :any_skip_relocation, sonoma:         "730a1f960f0965576c25edf1525ac57c14177ff4ee5fa74d731f6892c0f519ef"
-    sha256 cellar: :any_skip_relocation, ventura:        "6b230c2ad0a046653bb8f2b5652d069f4f9e7c6f17bdb4d4e9b6dc35a94a3693"
-    sha256 cellar: :any_skip_relocation, monterey:       "37bd9ca1e04a76f8b160fdaf1f1f76c2f396a264f5d3af88670d3338c577638b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0c12fe3723bc1b72e6635713ff2f6c12cf7f13e8e9533fb58360a2c163187d4f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "e5ac0544c3916f7198d156d69a25d8f142905c694946ac1d430d5375f94f0bc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe8a76cdde4a5666cccbcdfc328bfb77f5d05b63a52ce103b487166be696ac6b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7981e70859aaa000f427cb4df304efd2f040cf3b2cd30f44b516b067fde7fcae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a3c0beb3bd9c8569bd183c57240a27af1c5bcb26f7d1ddde8cbe39bd1a8937d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01e20a850281a893c3326b841b340ef6512212586dc9bca3c7613f394b452c72"
+    sha256 cellar: :any_skip_relocation, sonoma:        "631672f1d3473fa042d0a900132f15e522e962b01343abe25bb162efda0b2ba8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8386c48440b6c227579edab6e018e4073294b934ed731c11f642b5fe09851da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5bc076abb6bf1b50cfe0d30db36f39f14d1712fdf5099c01a6048a198379a65"
   end
 
   head do

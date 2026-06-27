@@ -1,18 +1,18 @@
 class Infisical < Formula
   desc "CLI for Infisical"
   homepage "https://infisical.com/docs/cli/overview"
-  url "https://ghfast.top/https://github.com/Infisical/cli/archive/refs/tags/v0.43.98.tar.gz"
-  sha256 "de014735dff55d53eadf200dd8842accb21a284762dadec25f6c8fb078c3c405"
+  url "https://ghfast.top/https://github.com/Infisical/cli/archive/refs/tags/v0.43.99.tar.gz"
+  sha256 "ea59e6b700a345ed231593e2bd6a01f2fd3ccde7dd894633d37b2cacc9416264"
   license "MIT"
   head "https://github.com/Infisical/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5050e83a2541f81d320d7607a5fc527c5e662b1507dcd3992a4501b1748c9cb4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5050e83a2541f81d320d7607a5fc527c5e662b1507dcd3992a4501b1748c9cb4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5050e83a2541f81d320d7607a5fc527c5e662b1507dcd3992a4501b1748c9cb4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "386da778c7e885e1ac7da8b59193b6f363b227a88f7a9b47ca1c060307d20ecd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e395705f75e34acea7ce6b1cc3a5217c48df3652f6af47b640905bbb8470ef70"
-    sha256 cellar: :any,                 x86_64_linux:  "72e7cbfc913f3eac803b72bec563768c1ed9bd45523768266a8a2b24dc7c0205"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b675a28c8bc2f22073fe001e14240705788a4cfe6bbb31b45aeecbe5b2298c03"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b675a28c8bc2f22073fe001e14240705788a4cfe6bbb31b45aeecbe5b2298c03"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b675a28c8bc2f22073fe001e14240705788a4cfe6bbb31b45aeecbe5b2298c03"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f47630dd8a78b8266c6f28d0e20106e18dce7548e538d9ddd045768f6d1ee430"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5b5b1e2c65bf9f573cf22e878a955880bd8a8f60f13bd7312cf3487e90490de"
+    sha256 cellar: :any,                 x86_64_linux:  "3f740f5d1855d8bcbbb0b55e11ab705b817ebbbbf94ce5f407ce71c58b962b6e"
   end
 
   depends_on "go" => :build

@@ -36,6 +36,6 @@ class SlintCompiler < Formula
     SLINT
 
     system bin/"slint-compiler", "--format", "rust", "-o", testpath/"test.rs", testpath/"test.slint"
-    assert_path_exists testpath/"test.slint"
+    assert_path_exists testpath/"test.rs"
   end
 end
