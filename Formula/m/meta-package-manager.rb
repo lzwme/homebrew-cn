@@ -4,18 +4,18 @@ class MetaPackageManager < Formula
 
   desc "Wrapper around all package managers with a unifying CLI"
   homepage "https://kdeldycke.github.io/meta-package-manager/"
-  url "https://files.pythonhosted.org/packages/6f/05/0ffd4d97b74b3d90f140bec10a2e8052c9971fff40a79dc2ec710024799c/meta_package_manager-6.6.0.tar.gz"
-  sha256 "e3b9ce53777cfdfdbb5c945b45da7a06ae29bc5ed3e0e298f796d36c328732ee"
+  url "https://files.pythonhosted.org/packages/24/49/130f839ff68089d28828731cdb9d56979e0f775ad4ac7d528f835391098b/meta_package_manager-7.0.0.tar.gz"
+  sha256 "62a1f941e950d311b8e2e621fd6955d3d427bf6b25c00046853ac5e8bed840dc"
   license "GPL-2.0-or-later"
   head "https://github.com/kdeldycke/meta-package-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ea0b232f9e1207cb59c3786b8ee37c1170f2f9c8a0292096cdc763d5e8b99c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ea0b232f9e1207cb59c3786b8ee37c1170f2f9c8a0292096cdc763d5e8b99c3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ea0b232f9e1207cb59c3786b8ee37c1170f2f9c8a0292096cdc763d5e8b99c3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2dbe4fdb4a98bf5919f3599b768c502ba941957651c78314292ae52728816c18"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e195a3cb7f51d43413aa2a8382cbf0ba9a43a5cbd99e4fe5d3c747952ac0ba13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e195a3cb7f51d43413aa2a8382cbf0ba9a43a5cbd99e4fe5d3c747952ac0ba13"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc41f91efcd73ba6042706e7c88b9c94400ea1deaea89f47b1baf5a3b2f4baa9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc41f91efcd73ba6042706e7c88b9c94400ea1deaea89f47b1baf5a3b2f4baa9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc41f91efcd73ba6042706e7c88b9c94400ea1deaea89f47b1baf5a3b2f4baa9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9bc399770e99316da9879b9fc25bfd61a680ef205580320e23a4d13945d34f0d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "042b454aa49a9b4bca82b595818064173fa5b1f1adaba8e3647859f8866f3aa8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "042b454aa49a9b4bca82b595818064173fa5b1f1adaba8e3647859f8866f3aa8"
   end
 
   depends_on "rust" => :build
@@ -31,8 +31,8 @@ class MetaPackageManager < Formula
   pypi_packages exclude_packages: ["certifi", "rpds-py"]
 
   resource "boltons" do
-    url "https://files.pythonhosted.org/packages/63/54/71a94d8e02da9a865587fb3fff100cb0fc7aa9f4d5ed9ed3a591216ddcc7/boltons-25.0.0.tar.gz"
-    sha256 "e110fbdc30b7b9868cb604e3f71d4722dd8f4dcb4a5ddd06028ba8f1ab0b5ace"
+    url "https://files.pythonhosted.org/packages/7a/1f/60df922ae497d838c58b48caa518251e2c8e228d7fe93792fee69a3858d6/boltons-26.0.0.tar.gz"
+    sha256 "5566d6cfd5a1e873d8e8476496287a9f92979964611ad9a9cecb6b0ef29b1edd"
   end
 
   resource "bracex" do
@@ -40,19 +40,14 @@ class MetaPackageManager < Formula
     sha256 "98f1347cd77e22ee8d967a30ad4e310b233f7754dbf31ff3fceb76145ba47dc7"
   end
 
-  resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
-  end
-
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "click-extra" do
-    url "https://files.pythonhosted.org/packages/a6/83/ebc4b72d81720be9fb21c21158d6d9bcfd4927155fd203c9a16bba55ea2b/click_extra-7.19.0.tar.gz"
-    sha256 "886eeb46979749214ef776a52886dbbac8b3fd43d2698709581c4180d5ef2f44"
+    url "https://files.pythonhosted.org/packages/4c/ee/61eb8cadbf58b3570bab603106076e46466e890f7aba19ac4a420b27511f/click_extra-8.1.1.tar.gz"
+    sha256 "d9fa8de46b5fac91c7cbb0be5e1a788f04845d01a5580f210f90761f16be7cd6"
   end
 
   resource "cloup" do
@@ -61,28 +56,18 @@ class MetaPackageManager < Formula
   end
 
   resource "deepmerge" do
-    url "https://files.pythonhosted.org/packages/a8/3a/b0ba594708f1ad0bc735884b3ad854d3ca3bdc1d741e56e40bbda6263499/deepmerge-2.0.tar.gz"
-    sha256 "5c3d86081fbebd04dd5de03626a0607b809a98fb6ccba5770b62466fe940ff20"
+    url "https://files.pythonhosted.org/packages/2a/78/6e9e20106224083cfb817d2d3c26e80e72258d617b616721a169b87081e0/deepmerge-2.1.0.tar.gz"
+    sha256 "07ca7a7b8935df596c512fa8161877c0487ac61f691c07766e7d71d2b23bdd2f"
   end
 
   resource "extra-platforms" do
-    url "https://files.pythonhosted.org/packages/58/47/c761c7dcd279738db4c00a0afae6e0883100365e908ff4b79ddecddbaba1/extra_platforms-13.0.0.tar.gz"
-    sha256 "4f6870be428f6ffb38e880bfb9026c4c3f6432b527b374ac178dbabb1500c34a"
-  end
-
-  resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/9f/4d/b793283bf4d002e7ffa8ad45c125f1f2306b238c0a641677d6b3a7397f1a/extra_platforms-13.0.1.tar.gz"
+    sha256 "2194e5cd8d58fbbba42d2810f15fea3da072020109998ca8d7ec938abcf59717"
   end
 
   resource "packageurl-python" do
     url "https://files.pythonhosted.org/packages/f5/d6/3b5a4e3cfaef7a53869a26ceb034d1ff5e5c27c814ce77260a96d50ab7bb/packageurl_python-0.17.6.tar.gz"
     sha256 "1252ce3a102372ca6f86eb968e16f9014c4ba511c5c37d95a7f023e2ca6e5c25"
-  end
-
-  resource "requests" do
-    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
-    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "tabulate" do
@@ -93,11 +78,6 @@ class MetaPackageManager < Formula
   resource "tomli-w" do
     url "https://files.pythonhosted.org/packages/19/75/241269d1da26b624c0d5e110e8149093c759b7a286138f4efd61a60e75fe/tomli_w-1.2.0.tar.gz"
     sha256 "2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021"
-  end
-
-  resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   resource "wcmatch" do

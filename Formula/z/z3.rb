@@ -27,6 +27,13 @@ class Z3 < Formula
   # which does not need Python.
   depends_on "python@3.14" => [:build, :test]
 
+  # The following macOS conditional should be the inverse of LLVM's Z3 conditional
+  on_ventura :or_older do
+    fails_with :clang do
+      cause "Requires C++20 std::format, https://developer.apple.com/xcode/cpp/#c++20"
+    end
+  end
+
   fails_with :gcc do
     version "12"
     cause "Requires C++20 std::format, https://gcc.gnu.org/gcc-13/changes.html#libstdcxx"

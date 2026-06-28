@@ -12,14 +12,15 @@ class GccAT15 < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "85291c4be12f71cccc0aa9b91caa60adf3427839e3154b93865c4f185b28f209"
-    sha256               arm64_sequoia: "a81cc934a4c1137af62ebf51cc8307b2527920bff41e36f57e166f346f1f6212"
-    sha256               arm64_sonoma:  "ee90b877579753c313b6831473a664474edcd333432e1a12ad8b96e74458a86a"
-    sha256               tahoe:         "b6a4905798c1eaed7a8ffdab8d73c5518c6e29581ae35513aa82a6c5179d0fea"
-    sha256               sequoia:       "00899c6e53c51462b8982b5c70f8844a8a832d4dd0c65a650c8bbad3e0c32c41"
-    sha256               sonoma:        "613be6cf2514f7f84205a7e24b89cd435240e7669399968d8e1395d2edc9fe5d"
-    sha256 cellar: :any, arm64_linux:   "2346e93ac94737aebf25bb753615d0d57d44b67e45838a282e62411e60c724ab"
-    sha256 cellar: :any, x86_64_linux:  "0784305caaaa8674b8c77bb0a335b2e79e6daa374104151762b256ac5849ea81"
+    rebuild 1
+    sha256               arm64_tahoe:   "9d1a7c3069a0c1359c6b5453ad8030b3d7744696bb6c5c46a2bd54b46a3caabc"
+    sha256               arm64_sequoia: "6b2ef487a9bbe2f0f3aac11938fd4faf345447afa366f8511072b6be28f42342"
+    sha256               arm64_sonoma:  "0f461330c058f4e9dce23dfa3942d3a6e716ad0555abf70cfff6bee4a2621ca5"
+    sha256               tahoe:         "a32f2ecc0e5ac64a5eca96a13e439f4358553d234eaccee5f8ccf1ba7b6e7fb2"
+    sha256               sequoia:       "3414427989c7601d4294bdfac3690877ce230aeb920a047e3b6ae9d2273e6870"
+    sha256               sonoma:        "c5d05388d0bbd34d30cdd81a70db9d81c680712f96d4fa9a00bd7f43fc188d00"
+    sha256 cellar: :any, arm64_linux:   "683745e655a72723fdfe3ee2902dc994c449d6a7813c3a04ad277100a43e4a2c"
+    sha256 cellar: :any, x86_64_linux:  "926b74086c0e13dc7cfa9002d6d005ccc5cbebd8b64546d278f4ccae90f32b61"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -99,7 +100,10 @@ class GccAT15 < Formula
       # Avoid this semi-random failure:
       # "Error: Failed changing install name"
       # "Updated load commands do not fit in the header"
-      make_args = %w[BOOT_LDFLAGS=-Wl,-headerpad_max_install_names]
+      make_args = %w[
+        BOOT_LDFLAGS=-Wl,-headerpad_max_install_names
+        LDFLAGS_FOR_TARGET=-Wl,-headerpad_max_install_names
+      ]
     else
       # Fix Linux error: gnu/stubs-32.h: No such file or directory.
       args << "--disable-multilib"

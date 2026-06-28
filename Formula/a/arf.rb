@@ -1,17 +1,17 @@
 class Arf < Formula
   desc "Modern R console with syntax highlighting and fuzzy search"
   homepage "https://github.com/eitsupi/arf"
-  url "https://ghfast.top/https://github.com/eitsupi/arf/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "5a0e911eac32dd2660e1ef0d40afdbccbccd7ce257bb6be893d6b3dc1f6cb4f1"
+  url "https://ghfast.top/https://github.com/eitsupi/arf/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "eeaddc41d7bfc514e33ebdb9ee2b8b8aac642e4d6940c68b9d0a0bf036f09ed0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db0d43a2cceedfc0908d749e01f45d272863a2a2ee144be77ad852369739ee69"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "824e2e873ec3387279774ba5102fecafc19ad1695bfe4d851233a79ea814c69c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a5eb38a85098d1f8050ebfa0dc85c2152667a08e5064dc72e9ad9aa1541996c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0f0e01e334e5f26bc986135591131fd808f218bd2c9ea497f3e1adbd61a02c07"
-    sha256 cellar: :any,                 arm64_linux:   "af73e809a5811f819b2cb7e0541ade8ec7cac87bcd394d2a82f4badfddd47952"
-    sha256 cellar: :any,                 x86_64_linux:  "e12a9a50fe79bfed2cee76112c32a43ed5980050116f480543d873134d133dae"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "234f4bfe688bd1ec9e1595ae88e0f50ebe7895a11f03294f2e637c474e945ff5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2cf2e295666c4f1569e8bdbd5f6e3fbcf993b2f90c9451cd18d702086033636"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14979ff5eb8439ac30144c3be28dd02b6bd2de2494511e571b69e0f67ea143ff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "be90bacdc8babc213d9a0a6c4600f42a80aed1d5ef53bfc9a6c9f118b0b853c4"
+    sha256 cellar: :any,                 arm64_linux:   "0af934e239f5e7b6da156b34b74c0bb3dea51c812449de6421c184e3f366656a"
+    sha256 cellar: :any,                 x86_64_linux:  "ae102c0fa683ec02e1648ae87b702715d9e7868aaa265721134da6944065af8f"
   end
 
   depends_on "rust" => :build

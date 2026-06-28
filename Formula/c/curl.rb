@@ -16,12 +16,13 @@ class Curl < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8451a7abc6219aaea2f314e8453a8e4eaf02ebe0e8ba3b4af6f914c63314516f"
-    sha256 cellar: :any, arm64_sequoia: "1ee3b96f6648de2833b2643c50b0e48086275c62efbb139c41957fa63dc110e2"
-    sha256 cellar: :any, arm64_sonoma:  "188121382f5f8343752ae1b32a3d7845680786130ce57acb2dfa160f8f1d3f39"
-    sha256 cellar: :any, sonoma:        "bceca1c71bec909951651593a8ffa2b4c89c48e4a9fc72d2f79b399f279ae6a8"
-    sha256 cellar: :any, arm64_linux:   "029fa8f4e8e831792e5919e02770f875498dc911602ffba5b9f1a61d84ad85ab"
-    sha256 cellar: :any, x86_64_linux:  "9589fd42a20cfe50957e63a6fb159f507e0172474f6f415a159908a4d845fc17"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "7ceececba7b3be416aa9bdadd3ee68ab964c322d3df4890ae8761bf4c5e0ce50"
+    sha256 cellar: :any, arm64_sequoia: "432965ded4ed87b8ac7bc844f1d624b6ff6ce76d6985b76c8db76c9fede80d2a"
+    sha256 cellar: :any, arm64_sonoma:  "8f4561cbcbb9f858431c52a3f2d48e7f70e65e0c8b6eb1227735c08eb7d96aa8"
+    sha256 cellar: :any, sonoma:        "37bacf782cce6caef087200f41b4b632dd96c346818f1067f0fb98a1d4d8362d"
+    sha256 cellar: :any, arm64_linux:   "33f3d4388cc2c8c8a2703b54dfd3f9988af1bb5d3c4e9ba9b4167891108d2333"
+    sha256 cellar: :any, x86_64_linux:  "c17375ac0e06bc2dca81fb57b56002c52db22171d66438ae3a1db874dbac4793"
   end
 
   head do
@@ -39,6 +40,7 @@ class Curl < Formula
   depends_on "libnghttp2"
   depends_on "libnghttp3"
   depends_on "libngtcp2"
+  depends_on "libpsl"
   depends_on "libssh2"
   depends_on "openssl@3"
   depends_on "zstd"
@@ -76,7 +78,7 @@ class Curl < Formula
       --with-libssh2
       --with-nghttp3
       --with-ngtcp2
-      --without-libpsl
+      --with-libpsl
       --with-zsh-functions-dir=#{zsh_completion}
       --with-fish-functions-dir=#{fish_completion}
     ]
@@ -120,7 +122,7 @@ class Curl < Formula
 
     # Check dependencies linked correctly
     curl_features = shell_output("#{bin}/curl-config --features").split("\n")
-    %w[brotli GSS-API HTTP2 HTTP3 IDN libz SSL zstd].each do |feature|
+    %w[brotli GSS-API HTTP2 HTTP3 IDN libz PSL SSL zstd].each do |feature|
       assert_includes curl_features, feature
     end
     curl_protocols = shell_output("#{bin}/curl-config --protocols").split("\n")

@@ -2,20 +2,20 @@ class Swiftlint < Formula
   desc "Tool to enforce Swift style and conventions"
   homepage "https://github.com/realm/SwiftLint"
   url "https://github.com/realm/SwiftLint.git",
-      tag:      "0.64.1",
-      revision: "c12f1f860a489c1574b1f295f8a5070652caf331"
+      tag:      "0.65.0",
+      revision: "fd768ba9a0e8a4f96d550d98de6c4cf2af565cf1"
   license "MIT"
   head "https://github.com/realm/SwiftLint.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "714dd8792cdd70526d240e2e99bbea89fc9d9f24c4040885198a6243efe414e3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fce84ecb24d06bda0e85a0ec5cb914dd660c1782934ddde0f97a462d7002ffc5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd566faf75048bb22f2bfbf88970e318c961be45bab2407f1afed6f79ae8c122"
-    sha256 cellar: :any_skip_relocation, sonoma:        "151145fea94fee40219b126e23d1f306bb57352d4a3684b85310d793d519a767"
-    sha256 cellar: :any,                 arm64_linux:   "b9539f667a9c9fc07008421782f001311de6f6ec7c9239d763ff5383e6f28ed9"
-    sha256 cellar: :any,                 x86_64_linux:  "706e737c71895e6728e361457018ad01baeef9a4a358d889935d452671e3d200"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6ce40835012e9821e8224956856f6221ae491ab379accf85f4097a92a02939f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72190a63d2befafeec18c4b65176446e619ef35c3eaa7222decc52ea6fb576c8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8978e712634f0181842f3bfeeea4d16640ad5ce17e2bb56f9b811b9b5fb395c2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "00f9919b5533bfaf5a7a72a90f83f3c8e55e78e11e1b101187e8df15d7197b27"
+    sha256 cellar: :any,                 arm64_linux:   "d21d7f718ed3eec675f6065d7673be2824188376d2313daca2accb6aafd8402c"
+    sha256 cellar: :any,                 x86_64_linux:  "044eddb77c7511520fe475b78eaa7c242aa0938123c56cd45c284a027fc5e43c"
   end
 
   depends_on xcode: "8.0"

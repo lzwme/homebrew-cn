@@ -2,7 +2,6 @@ class Proftpd < Formula
   desc "Highly configurable GPL-licensed FTP server software"
   homepage "http://www.proftpd.org/"
   url "https://ghfast.top/https://github.com/proftpd/proftpd/archive/refs/tags/v1.3.9b.tar.gz"
-  mirror "https://fossies.org/linux/misc/proftpd-1.3.9b.tar.gz/"
   version "1.3.9b"
   sha256 "a4dd1820aa70abeac7be234d03a806c3ba1cc86566cf6069d2a14566fc5eb5af"
   license "GPL-2.0-or-later"
@@ -45,11 +44,11 @@ class Proftpd < Formula
       s.gsub! "nogroup", install_group
     end
 
-    system "./configure", "--prefix=#{prefix}",
+    system "./configure", "--enable-nls",
                           "--sbindir=#{sbin}",
                           "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}",
-                          "--enable-nls"
+                          *std_configure_args
     ENV.deparallelize
     system "make", "all"
     system "make", "INSTALL_USER=#{install_user}", "INSTALL_GROUP=#{install_group}", "install"

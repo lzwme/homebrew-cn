@@ -2,7 +2,6 @@ class Sbt < Formula
   desc "Build tool for Scala projects"
   homepage "https://www.scala-sbt.org/"
   url "https://ghfast.top/https://github.com/sbt/sbt/releases/download/v2.0.0/sbt-2.0.0.tgz"
-  mirror "https://sbt-downloads.cdnedge.bluemix.net/releases/v2.0.0/sbt-2.0.0.tgz"
   sha256 "63088bd6309c5c006986d91649357ee7694c4e4a42dc9b6f51989f2f21e0ab92"
   license "Apache-2.0"
 

@@ -1,12 +1,21 @@
 class Doxygen < Formula
   desc "Generate documentation for several programming languages"
   homepage "https://www.doxygen.nl/"
-  url "https://doxygen.nl/files/doxygen-1.17.0.src.tar.gz"
-  mirror "https://downloads.sourceforge.net/project/doxygen/rel-1.17.0/doxygen-1.17.0.src.tar.gz"
-  sha256 "fa4c3dd78785abc11ccc992bc9c01e7a8c3120fe14b8a8dfd7cefa7014530814"
   license "GPL-2.0-only"
   compatibility_version 1
   head "https://github.com/doxygen/doxygen.git", branch: "master"
+
+  stable do
+    url "https://doxygen.nl/files/doxygen-1.17.0.src.tar.gz"
+    mirror "https://downloads.sourceforge.net/project/doxygen/rel-1.17.0/doxygen-1.17.0.src.tar.gz"
+    sha256 "fa4c3dd78785abc11ccc992bc9c01e7a8c3120fe14b8a8dfd7cefa7014530814"
+
+    # Backport build fix for older Clang
+    patch do
+      url "https://github.com/doxygen/doxygen/commit/a9eb9243717b93a44dbd046cccd52b96bd7520d2.patch?full_index=1"
+      sha256 "fdf86872d157c764deec5061a229f697020bff1133b1d63ddca01c398e8fb9ea"
+    end
+  end
 
   livecheck do
     url "https://www.doxygen.nl/download.html"

@@ -2,7 +2,6 @@ class Nghttp2 < Formula
   desc "HTTP/2 C Library"
   homepage "https://nghttp2.org/"
   url "https://ghfast.top/https://github.com/nghttp2/nghttp2/releases/download/v1.69.0/nghttp2-1.69.0.tar.gz"
-  mirror "http://fresh-center.net/linux/www/nghttp2-1.69.0.tar.gz"
   sha256 "c866b7477cbb7512ab6863a685027adbb1bb8da8fc3bab7429ed43d3281d5aa9"
   license "MIT"
 

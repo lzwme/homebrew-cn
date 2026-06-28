@@ -1,12 +1,12 @@
 class Docmd < Formula
   desc "Minimal Markdown documentation generator"
   homepage "https://docmd.io"
-  url "https://registry.npmjs.org/@docmd/core/-/core-0.8.8.tgz"
-  sha256 "ff5809039739d3d8654750cca64cb7e7ff2ca307cce774269c676afb3683cba6"
+  url "https://registry.npmjs.org/@docmd/core/-/core-0.8.9.tgz"
+  sha256 "bc9c40e525e6558a8081eabfddfbea0916cb1c9d2e805f66fe2d73d56ec555cf"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7e56404c7b87d9ea7a1599768e0110ddb7a898184a5cb27621374130a8b52c36"
+    sha256 cellar: :any_skip_relocation, all: "0ff7e4ebba40b9affbdc93e2f76035440ee0a54d3f7e4c7cc77bc0621a837e56"
   end
 
   depends_on "esbuild" # for prebuilt binaries

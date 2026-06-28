@@ -5,6 +5,11 @@ class PhraseCli < Formula
   sha256 "c9fe35dee01381c8176a4f6255ebfda16776bcd765bf1699ae5da6f71112e8f3"
   license "MIT"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   no_autobump! because: :bumped_by_upstream
 
   bottle do

@@ -12,15 +12,15 @@ class GccAT14 < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256                               arm64_tahoe:   "aa76442b499cc647f5fe254808431f5d657120ee57bf3b0a9657755b6d38815c"
-    sha256                               arm64_sequoia: "cbb525d21563a9fdfc878a75817faad9e470190dad3150d853ab2e3c32649910"
-    sha256                               arm64_sonoma:  "877dda49bf352e911c1a12d9d7df02866fb2f173f0a79915bda55103e0f3f0d7"
-    sha256                               tahoe:         "77d3b260ac37e2746af49c25dd8053ac8a50a53d1232f7f7b48fb3cc491225a0"
-    sha256                               sequoia:       "eea5c507d54cdffcec60c5a69713c7acf2933eec0523f9dc01fbd02ba3c4ca75"
-    sha256                               sonoma:        "057cbf54618e7c73a3aae3ce5becbbb4e219390bdaa6f7900f26bc485761913c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d972d44e201e63410a28c3056c335d5dbb7903edf58c0e6543edc009a9d12f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcd375682eaffe0ff9c8d374d76d9ea8a02623adbbc8a39ea8009e419fdd13bc"
+    rebuild 4
+    sha256               arm64_tahoe:   "0684ab0865925ab2cde02c508212aaf063188b73a1d689e3b0be779a915b8d3b"
+    sha256               arm64_sequoia: "79d986d52057631cc4c648700a7b754ef4238aee5f34415d42654165f53fed34"
+    sha256               arm64_sonoma:  "465bb8f390a139c1ccc6d0dbef6afa34519a24c6f20b6aca68d1019c84349677"
+    sha256               tahoe:         "03a47eee7eea0796684bd67610bbee2ffc5661f7d4dd4636cb403ee3a2a1a499"
+    sha256               sequoia:       "461828cf985b6a5f033c509a5e246ce055021f89b6eb6f949b3c0ffd39abe4f5"
+    sha256               sonoma:        "14947bb24393d0ca3b59f80e274fd35549bd63ca199c528b0aa096a4ff9ed03f"
+    sha256 cellar: :any, arm64_linux:   "c09508dc42454fd6a12e69a6ddf91b3b5268da6bed33144947b7657be77a96bc"
+    sha256 cellar: :any, x86_64_linux:  "fa7011beba62b377bb18d0c19583de797d5148250a4075714e14a85a387175ee"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -99,7 +99,10 @@ class GccAT14 < Formula
       # Avoid this semi-random failure:
       # "Error: Failed changing install name"
       # "Updated load commands do not fit in the header"
-      make_args = %w[BOOT_LDFLAGS=-Wl,-headerpad_max_install_names]
+      make_args = %w[
+        BOOT_LDFLAGS=-Wl,-headerpad_max_install_names
+        LDFLAGS_FOR_TARGET=-Wl,-headerpad_max_install_names
+      ]
     else
       # Fix Linux error: gnu/stubs-32.h: No such file or directory.
       args << "--disable-multilib"

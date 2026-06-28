@@ -6,6 +6,11 @@ class GitSpice < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/abhinav/git-spice.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   no_autobump! because: :bumped_by_upstream
 
   bottle do

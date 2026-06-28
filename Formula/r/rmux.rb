@@ -1,17 +1,17 @@
 class Rmux < Formula
   desc "Terminal multiplexer with a tmux-style CLI and daemon runtime"
   homepage "https://rmux.io"
-  url "https://static.crates.io/crates/rmux/rmux-0.7.0.crate"
-  sha256 "a1058a8525f1c7e758fb59999a64f8d82e2111c56f52fa7a5fb8bce46567780a"
+  url "https://static.crates.io/crates/rmux/rmux-0.7.1.crate"
+  sha256 "84cd80513f308ee3f6fc47f81b6239797c32750d016e9321e43222d7c2c1754d"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7364993686eca27f308fc561e017b0701502a93993d8b265140d0fd1eb065258"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ac85a6659ce5c5a39c01a329368efc45c1cd920db7b2e56d1cba3102df9252e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8203379256b5d0ca2ee9f79a43e2ac2773d8a7f55e8299ed72146eeea9d59de5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c91f397556e784a93644f1c8cec5796105252714581379cbe54b5a342d929eba"
-    sha256 cellar: :any,                 arm64_linux:   "1360ef3ff4a6823865b4559561abfa9705d2961bb0d3d7187419640580779932"
-    sha256 cellar: :any,                 x86_64_linux:  "1c1e117acb1e63630243cafe704945ce4a1d9430bfe82b31126f6af175a7ac8d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b85d2b51f37fbd2506252a90eb1b69aad3c34b8146b8f740b45bd077208b9f4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d5cd60fa4c1f460c4ac21e2ec44bddc7894856f716d1e7cb01fe3be1dfafec2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "69a5e1a187bb44e938f1dfbbaa5df1c4da50873bc6ce767a3154d6200271a0b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fa461159bf7d5596efb461ad4eec4e8cc061be5db2f29ab6927808798cb98a8c"
+    sha256 cellar: :any,                 arm64_linux:   "9f6b28c17b2ae07ab48384e39700e7ffb099dfa07cac26ddb54a1d6e17f0ecf3"
+    sha256 cellar: :any,                 x86_64_linux:  "ccf852cba0ec64d8ec7def1de7ebc4027cd4deecef92ff7303bda13bc4f38577"
   end
 
   depends_on "rust" => :build

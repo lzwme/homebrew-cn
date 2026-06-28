@@ -75,7 +75,7 @@ class XorgServer < Formula
   def install
     # ChangeLog contains some non relocatable strings
     rm "ChangeLog"
-    meson_args = std_meson_args.map { |s| s.sub prefix, HOMEBREW_PREFIX } + %W[
+    meson_args = std_meson_args(prefix: HOMEBREW_PREFIX) + %W[
       -Dxephyr=true
       -Dxf86bigfont=true
       -Dxcsecurity=true

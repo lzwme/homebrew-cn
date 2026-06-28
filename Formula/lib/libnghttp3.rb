@@ -1,20 +1,20 @@
 class Libnghttp3 < Formula
   desc "HTTP/3 library written in C"
   homepage "https://nghttp2.org/nghttp3/"
-  url "https://ghfast.top/https://github.com/ngtcp2/nghttp3/releases/download/v1.16.0/nghttp3-1.16.0.tar.xz"
-  mirror "http://fresh-center.net/linux/www/nghttp3-1.16.0.tar.xz"
-  sha256 "776f59a99905c9a348846807b2e5ac9bb3485fc0f8c0250ba803018d5238a16e"
+  url "https://ghfast.top/https://github.com/ngtcp2/nghttp3/releases/download/v1.17.0/nghttp3-1.17.0.tar.xz"
+  mirror "http://fresh-center.net/linux/www/nghttp3-1.17.0.tar.xz"
+  sha256 "e8b798272b9282045cb83577dcf7bd7fcd22bb3a43aec0eb1a24f675b4cef0b8"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ngtcp2/nghttp3.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "772d72a87a7e8b71d1f088180059ab96654cd56acd4e121ae4e2925aba0f09d8"
-    sha256 cellar: :any, arm64_sequoia: "884f76eb493310492dbd50f3f331637e6f82904c9cf40244149f8b43e1ad7381"
-    sha256 cellar: :any, arm64_sonoma:  "bc258aa321f040002529543aa980a6b4b5c9fe5c4992ebb5a16ffe251214fe7b"
-    sha256 cellar: :any, sonoma:        "ec58e60d0f633355ad595ff7cee87bc1874b973a54842525ef6cc209cb9b5818"
-    sha256 cellar: :any, arm64_linux:   "20b22937ccd9cb8c6c0ccbd4066b5a9dcc5c43adbd78854133b62b030dfe376a"
-    sha256 cellar: :any, x86_64_linux:  "2db7779c13d68dde7683120d0202a12fb62e15f5c7d5f11190ce56994bdc594b"
+    sha256 cellar: :any, arm64_tahoe:   "1acc6f9318f853f1fc4d7c5f7f6ebb0c759c6a4ab6c200db30b8ea4beae8525a"
+    sha256 cellar: :any, arm64_sequoia: "1d42f9ea9932747c419026705966c81a2e6a19901f513777e959d320c09df162"
+    sha256 cellar: :any, arm64_sonoma:  "ee90ca5ffb5eea7f02fdc70fdf8ba2fc0c5b5d7365f32b1c3469274042015337"
+    sha256 cellar: :any, sonoma:        "bcd234c40a15e15c045a90f18a765a38dd4ea272819c9075a236fb5a2d14c084"
+    sha256 cellar: :any, arm64_linux:   "5b427388e61d712c177369d758c8f5fb618f1539ecca1b6c34354352b89b8db2"
+    sha256 cellar: :any, x86_64_linux:  "3a11e082441a81eb2f3d6f96a77fcfa0889c847c4574fee548b47ad469dc11b1"
   end
 
   depends_on "cmake" => :build

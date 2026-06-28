@@ -37,7 +37,6 @@ class ErlangAT27 < Formula
 
   resource "html" do
     url "https://ghfast.top/https://github.com/erlang/otp/releases/download/OTP-27.3.4.13/otp_doc_html_27.3.4.13.tar.gz"
-    mirror "https://fossies.org/linux/misc/otp_doc_html_27.3.4.13.tar.gz"
     sha256 "ad4e8db5bc086f5c73f9fc158ef6d76d955b74890b11456c73a68d11eafb1fe6"
 
     livecheck do

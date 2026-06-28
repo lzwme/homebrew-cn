@@ -2,7 +2,7 @@ class Mpich < Formula
   desc "Implementation of the MPI Message Passing Interface standard"
   homepage "https://www.mpich.org/"
   url "https://www.mpich.org/static/downloads/5.0.1/mpich-5.0.1.tar.gz"
-  mirror "https://fossies.org/linux/misc/mpich-5.0.1.tar.gz"
+  mirror "https://ghfast.top/https://github.com/pmodels/mpich/releases/download/v5.0.1/mpich-5.0.1.tar.gz"
   sha256 "8c1832a13ddacf071685069f5fadfd1f2877a29e1a628652892c65211b1f3327"
   license "mpich2"
 

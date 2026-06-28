@@ -8,13 +8,12 @@ class Container < Formula
   head "https://github.com/apple/container.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "371fc0f685b7ca0499117a9a0b9d28498bc3bd178918f7bd79c233a7fb0674e8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3bf19c9addbff90135818cadbd3bcc6fcbb76a22a886706888538e6f57ca3f5d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "371fc0f685b7ca0499117a9a0b9d28498bc3bd178918f7bd79c233a7fb0674e8"
   end
 
   depends_on xcode: ["26.0", :build]
   depends_on arch: :arm64
-  depends_on macos: :sequoia
+  depends_on macos: :tahoe
 
   def install
     if build.head?

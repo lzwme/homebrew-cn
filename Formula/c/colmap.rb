@@ -1,18 +1,17 @@
 class Colmap < Formula
   desc "Structure-from-Motion and Multi-View Stereo"
   homepage "https://colmap.github.io/"
-  url "https://ghfast.top/https://github.com/colmap/colmap/archive/refs/tags/4.0.4.tar.gz"
-  sha256 "200309abca2a3ee05970b1f8a48d545fc71f435dffe6764a8040f9f6f364da32"
+  url "https://ghfast.top/https://github.com/colmap/colmap/archive/refs/tags/4.1.0.tar.gz"
+  sha256 "fc944df46ee9c213d4256cec30c085a6baa67256e7e6e0be63b13ea43ce9fcf7"
   license "BSD-3-Clause"
-  revision 3
 
   bottle do
-    sha256               arm64_tahoe:   "ce1c248c6e6d7cb6d1eeba1938826d8bbcc1ab2ee712fe623d76a610f2e809b3"
-    sha256               arm64_sequoia: "c0452890cb7ffae3d50c67095365331b5835fab089f9535dc6c679a4a4d52d7b"
-    sha256               arm64_sonoma:  "8a62c1a1cf708053b9e7c54f39465b051d0f24e632654b3d2034b6d9ebc03e7a"
-    sha256 cellar: :any, sonoma:        "b259d8ea7322ddb2576f7debd5f18c45b405b186d5fc6ceb6e4ca3624a45213a"
-    sha256 cellar: :any, arm64_linux:   "752e73f48eb481fcc19107676f1ed620a1d032244144bd895d95d4dee33b4580"
-    sha256 cellar: :any, x86_64_linux:  "b6e707df8896cec1f06dba9a9cbe197428ad76ec61549e36b56fa959eb9a1691"
+    sha256               arm64_tahoe:   "8e8422441113d2e647af03b1080e3fd792b5e1764368e2977c73e948be3b5cd8"
+    sha256               arm64_sequoia: "f594e5e2cfccdc8f424395d95298b0062b0ba69fd8721815ede7674229af4966"
+    sha256               arm64_sonoma:  "6c38e1fd9bbb83a44f868294b3a1632f91ccc3440a91503ecac329441d8ba9f6"
+    sha256 cellar: :any, sonoma:        "9f6b4545d9688536ce00766357617e42fdddac7e45ae8fd8f4446acf69b02a96"
+    sha256 cellar: :any, arm64_linux:   "d0c8c4a4f93298137983cf36e470934ace232da13c854d3856ceecd987f20521"
+    sha256 cellar: :any, x86_64_linux:  "109588e3dddbc95036efd042c7c6572ab573cfe13908ccb4c1c32557ae566a07"
   end
 
   depends_on "cmake" => :build
@@ -28,12 +27,14 @@ class Colmap < Formula
   depends_on "gmp"
   depends_on "lz4"
   depends_on "metis"
+  depends_on "mpfr"
   depends_on "onnx"
   depends_on "onnxruntime"
   depends_on "openimageio"
   depends_on "openssl@3"
   depends_on "poselib"
   depends_on "qtbase"
+  depends_on "qtsvg"
   depends_on "suite-sparse"
 
   uses_from_macos "curl"
@@ -41,7 +42,6 @@ class Colmap < Formula
 
   on_macos do
     depends_on "libomp"
-    depends_on "mpfr"
     depends_on "sqlite"
   end
 

@@ -1,9 +1,9 @@
 class Socat < Formula
   desc "SOcket CAT: netcat on steroids"
   homepage "http://www.dest-unreach.org/socat/"
-  url "https://distfiles.alpinelinux.org/distfiles/edge/socat-1.8.1.2.tar.gz"
-  mirror "http://www.dest-unreach.org/socat/download/socat-1.8.1.2.tar.gz"
-  sha256 "daeb9eed37a99424cd14877208706e93745c91cb86fb917a355635f4df5c8499"
+  url "https://distfiles.alpinelinux.org/distfiles/edge/socat-1.8.1.3.tar.gz"
+  mirror "http://www.dest-unreach.org/socat/download/socat-1.8.1.3.tar.gz"
+  sha256 "06602ffd591e98c75b3dc1d66f0f19136cc666b0b2d95caad987d6ab2cb28097"
   license "GPL-2.0-only"
   compatibility_version 1
 
@@ -13,12 +13,12 @@ class Socat < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "12d001b7ebd38e11f543fdeaca6e871db281c06504c162d4649e91a54347ce07"
-    sha256 cellar: :any, arm64_sequoia: "de871e7e5581ff27cd78c214acbf5a700f54b2e812f1aad87eff6f095c3ddb68"
-    sha256 cellar: :any, arm64_sonoma:  "b350e679ea7090afdfba695efcd6755e9bedc8847c7bc971429d28f7752e1dff"
-    sha256 cellar: :any, sonoma:        "a1d88e0d64fb89e78a069a18778b9ab892637296243f43118ebb1c445d7b24df"
-    sha256 cellar: :any, arm64_linux:   "929da32103078345a0b8c9cfbe3a53491be953d7656e93db4699641964724071"
-    sha256 cellar: :any, x86_64_linux:  "b3c375fabafc8fd9f816c1976fdcee456f67ad75b6244074f09ef13b91ab269e"
+    sha256 cellar: :any, arm64_tahoe:   "0b4a8646ec47193f827860cd0c2254b18e96bfaa88fa08fcffc9a08394d6ba81"
+    sha256 cellar: :any, arm64_sequoia: "7d6705023258039de58e71b4eae4343443dcc47ce151c25385f90542c24588be"
+    sha256 cellar: :any, arm64_sonoma:  "b9e5c820a3038987f99e4381c30473ae915a9d0039bc706bc29ebd4089ab837e"
+    sha256 cellar: :any, sonoma:        "918748776fd6d2be50f4982251544048a6e64f9e3c13b577f35530a14077c40f"
+    sha256 cellar: :any, arm64_linux:   "e3587d33ea8c68ad45babcfcb4b15ec291345d3c9eb4138dd807449722822474"
+    sha256 cellar: :any, x86_64_linux:  "70e101e17362a4f49ea45c3bc72ddb05f90b04824b3ae7ce5fec08de758a9e45"
   end
 
   depends_on "openssl@3"

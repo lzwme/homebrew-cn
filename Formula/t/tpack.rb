@@ -6,12 +6,13 @@ class Tpack < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "99406ffcf113ae7c93f07d0c997f39dab0630432c7d89fd222648ba48f877751"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99406ffcf113ae7c93f07d0c997f39dab0630432c7d89fd222648ba48f877751"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99406ffcf113ae7c93f07d0c997f39dab0630432c7d89fd222648ba48f877751"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1597a4a1ad575da60b877957084e044e0f8654a3a83cd6439c58783d9f95a836"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7156513808bceb7a2d248a4fc10106f372867a2a765eef56810bba2b1118c40"
-    sha256 cellar: :any,                 x86_64_linux:  "03cd196325a244a579f3bbcad02ab33fc324e9d43319f3121e677d31d58c5cf5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a09b4d50694982e43ae67798adf40a1efd5b970409263781692d78552671274"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a09b4d50694982e43ae67798adf40a1efd5b970409263781692d78552671274"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a09b4d50694982e43ae67798adf40a1efd5b970409263781692d78552671274"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1016c0f4edf4056126377b7fabb9600b5baa4e8b040eac057e443a54396a403a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac99438a38463d840b8989cdb25ad671c0744afe3e024fddae22c8046db2fe74"
+    sha256 cellar: :any,                 x86_64_linux:  "5457e0fc2c537249fd88acd1cafa7b50fbad58c6f52068b23a577d6d724f8bbd"
   end
 
   depends_on "go" => :build
@@ -19,6 +20,7 @@ class Tpack < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/tpack"
+    generate_completions_from_executable(bin/"tpack", shell_parameter_format: :cobra)
   end
 
   test do

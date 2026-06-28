@@ -1,8 +1,8 @@
 class Oxen < Formula
   desc "Data VCS for structured and unstructured machine learning datasets"
   homepage "https://www.oxen.ai/"
-  url "https://ghfast.top/https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.50.6.tar.gz"
-  sha256 "674565712c542abb8a6ae63ee5de1d98b206fd414ad11808da680b0766ec30e1"
+  url "https://ghfast.top/https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.50.7.tar.gz"
+  sha256 "e3949d63ce2ad78937f75693e21834f4b7173fd60684c7835ea43563e96205ed"
   license "Apache-2.0"
   head "https://github.com/Oxen-AI/Oxen.git", branch: "main"
 
@@ -11,17 +11,18 @@ class Oxen < Formula
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "37dbb57f2289a3abd38b90cbfe0f83fe5fd6ed5dc054cbac867c23b2e4f06f59"
-    sha256 cellar: :any, arm64_sequoia: "54a85c57212b264f5b1d0706480904a2a2f4bfa951d39e7fc4aecf4c0d2d11cf"
-    sha256 cellar: :any, arm64_sonoma:  "c9369a9b7af0e4756155d5a3087e77cdd39f470e64ce18b26220a2f72aacdbe7"
-    sha256 cellar: :any, sonoma:        "5e97b4897c59b69c83863a8a2e519db5da2f8a1ffccb4753474bfca250d05c33"
-    sha256 cellar: :any, arm64_linux:   "15dc299a1fb688d23eabac03f3e90e477155d7f25593e1ab05ff2434de8d8479"
-    sha256 cellar: :any, x86_64_linux:  "aaef3893b6840c8ced6fb9febc989235c27d32c92c4b880498eed53f71555e15"
+    sha256 cellar: :any, arm64_tahoe:   "6f49caca46b378bb1074f7ace56133df9f78b6e4354d4d194b221de6f23190f8"
+    sha256 cellar: :any, arm64_sequoia: "9ba00641f30735b187d5eed5ec1f185b64f63ac3df0dbff5621956f404b7bce0"
+    sha256 cellar: :any, arm64_sonoma:  "6fa2eff5e1f9e6ca6018c0d8ac07a3d05345268244170e0ad305e5779290ef21"
+    sha256 cellar: :any, sonoma:        "09713a6d9e3a5681883a7017762cc3ed9f0cc4461aaecb717f4032fa809bba4b"
+    sha256 cellar: :any, arm64_linux:   "591dad085eb79f564e3f052c0ea2be584bbea9c289b1f364798f6f3ca8b05f39"
+    sha256 cellar: :any, x86_64_linux:  "b6e5c79f3355ca50887ad527d09b2b1c64656e4fa9fb67b47fc1caf1ac0c6d01"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys

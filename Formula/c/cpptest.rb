@@ -1,10 +1,17 @@
 class Cpptest < Formula
   desc "Unit testing framework handling automated tests in C++"
   homepage "https://cpptest.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/cpptest/cpptest/cpptest-2.0.0/cpptest-2.0.0.tar.bz2"
-  mirror "https://ghfast.top/https://github.com/cpptest/cpptest/releases/download/2.0.0/cpptest-2.0.0.tar.bz2"
-  sha256 "7c258936a407bcd1635a9b7719fbdcd6c6e044b5d32f53bbf6fbf6f205e5e429"
   license "LGPL-2.1-or-later"
+
+  stable do
+    url "https://ghfast.top/https://github.com/cpptest/cpptest/releases/download/2.0.0/cpptest-2.0.0.tar.bz2"
+    sha256 "7c258936a407bcd1635a9b7719fbdcd6c6e044b5d32f53bbf6fbf6f205e5e429"
+
+    # Fix -flat_namespace being used on Big Sur and later.
+    patch do
+      file "Patches/libtool/configure-big_sur.diff"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "b7ba7a08b1659d230bf822ed02e72535423504b3b5fe659cac6b16f6aa64d3bd"
@@ -22,14 +29,17 @@ class Cpptest < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebb0d38cb3fb4038067867b4b10ff93cdc330528dc0f163d4af0a87a427a7375"
   end
 
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    file "Patches/libtool/configure-big_sur.diff"
+  head do
+    url "https://github.com/cpptest/cpptest.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./autogen.sh" if build.head?
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 

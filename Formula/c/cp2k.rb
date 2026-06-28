@@ -4,7 +4,7 @@ class Cp2k < Formula
   url "https://ghfast.top/https://github.com/cp2k/cp2k/releases/download/v2026.1/cp2k-2026.1.tar.bz2"
   sha256 "4364c74bcffaa474bc234e11686b09550e4d06932acf2147a341e4f7679dd88e"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -12,12 +12,12 @@ class Cp2k < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "07bc22355e467c9d4e8b65013e9d370b01d099fd011e3758b1371ce1acf9b5a0"
-    sha256 arm64_sequoia: "76fb2d301939f06439dac5c3041d616e540facd946336d719aadbd0fb5d3c4d6"
-    sha256 arm64_sonoma:  "1abf089ae43d3df9b99fccb910c35d608d7afa3d84dd95ce65e2aff6da503a14"
-    sha256 sonoma:        "6bff1f36dd36d4a4da5d87625a4869e558d005388268638bb13065f3e58aa9fe"
-    sha256 arm64_linux:   "2df56fdcdadda4a0f684872a13095d462fa64a9436c0358e2036b318562ed715"
-    sha256 x86_64_linux:  "933366a7dfaa3353854c2e803c25bd9c8272a0fcd979e28c34abd230dab052a1"
+    sha256 arm64_tahoe:   "bd9a464326b7591cb5bf842b784d6952e25d7c0c21d39e765e0b67056156cbf2"
+    sha256 arm64_sequoia: "743932d72c7e8bf400567269abce5c17708a793b422ec516bf006ccc61d868e2"
+    sha256 arm64_sonoma:  "c4e0797a62da883c30016a3f11315afa13040ee5178e521c03623a4d1369d7c5"
+    sha256 sonoma:        "d45a04f72f52d4bab88b2c3589eb3125f52e70c48c0274115d4dfcf9c33da7f1"
+    sha256 arm64_linux:   "a0d75f2e4049cb258e44e05e8bfb911e329f1a2e499f8eb28a5116b72391095e"
+    sha256 x86_64_linux:  "41292262c9b62ce0818116e8acbca005888d7dbd9016bfa4a61325b8aad39b61"
   end
 
   depends_on "cmake" => :build

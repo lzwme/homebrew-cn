@@ -39,7 +39,6 @@ class GdkPixbuf < Formula
     # Use HOMEBREW_PREFIX to find modules installed by dependents without
     # needing environment variables or inreplaces. In order to support this,
     # we need install into a staging directory.
-    meson_args = std_meson_args.map { |s| s.sub prefix, HOMEBREW_PREFIX }
     ENV["DESTDIR"] = buildpath/"stage"
 
     system "meson", "setup", "build", "-Drelocatable=false",
@@ -54,7 +53,7 @@ class GdkPixbuf < Formula
                                       "-Dothers=enabled",
                                       "-Dintrospection=enabled",
                                       "-Dglycin=disabled",
-                                      *meson_args
+                                      *std_meson_args(prefix: HOMEBREW_PREFIX)
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
     prefix.install Pathname(File.join("stage", HOMEBREW_PREFIX)).children
