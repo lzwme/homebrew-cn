@@ -1,17 +1,17 @@
 class Pake < Formula
   desc "Turn any webpage into a desktop app with Rust with ease"
   homepage "https://github.com/tw93/Pake"
-  url "https://registry.npmjs.org/pake-cli/-/pake-cli-3.12.1.tgz"
-  sha256 "19b24005c5f8465ddc30e1c31c3d623244b33f866b90e29b4a4e5b62e8857ff8"
+  url "https://registry.npmjs.org/pake-cli/-/pake-cli-3.13.0.tgz"
+  sha256 "12f9316eb0cd57342904cd33135ba9e64c81fd82aee2849273e827b2efa52f4e"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "67a0a630a1ea331c340c29b4b51a5e889e25d0db9e57195e8653ce58fb2e8ace"
-    sha256 cellar: :any, arm64_sequoia: "fc1291c0fdc3fe883c248ea0c7a97f497c5b84a757dbc82d09ad3e6ca9ea9564"
-    sha256 cellar: :any, arm64_sonoma:  "fc1291c0fdc3fe883c248ea0c7a97f497c5b84a757dbc82d09ad3e6ca9ea9564"
-    sha256 cellar: :any, sonoma:        "fb194727822600f7a7b232c165f3ddb731504866664c2d9bc9088833a19124d6"
-    sha256 cellar: :any, arm64_linux:   "2e987ce232ca2a6f91d61af7d266a1e8d059ee18cf2f259808189b3bae7dc06e"
-    sha256 cellar: :any, x86_64_linux:  "2deeb09dd6209d28af83ffbe1ac65568c3855e61f2681ff2ee49e4283df54359"
+    sha256 cellar: :any, arm64_tahoe:   "cb9c0dc7dad4357507017cb57d9c78862ee33e1a8629690f619b9c1927148f71"
+    sha256 cellar: :any, arm64_sequoia: "98d82415395b10729e236001474becbf5d34a5d34a32451bc7c912960b92f49c"
+    sha256 cellar: :any, arm64_sonoma:  "98d82415395b10729e236001474becbf5d34a5d34a32451bc7c912960b92f49c"
+    sha256 cellar: :any, sonoma:        "905801d459f02bf34f2d59e9377c4313610a9ecd4f6a3a7a7ee6fa4513b7ee2c"
+    sha256 cellar: :any, arm64_linux:   "423649b68ac2576427c0918c1d208c736d6c70fb7576dd078983060625ae02df"
+    sha256 cellar: :any, x86_64_linux:  "b3a9c74e8d6e432f8e737b8099b8931b7efb7e48c4ebfe48ffad3dbdbd2aa81e"
   end
 
   depends_on "node"
@@ -22,8 +22,8 @@ class Pake < Formula
   # Resources needed to build sharp from source to avoid bundled vips
   # https://sharp.pixelplumbing.com/install/#building-from-source
   resource "node-addon-api" do
-    url "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.8.0.tgz"
-    sha256 "72528f1a8235a8bc19855e21cc5ae28252c276338afa73887dc7e54515bc76c5"
+    url "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.9.0.tgz"
+    sha256 "19b87e2ce3a77fec0121ac97d7db088aae28aacfff481adab50d5f61b70e68f4"
   end
 
   resource "node-gyp" do

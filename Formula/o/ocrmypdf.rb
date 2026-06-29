@@ -3,17 +3,17 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://ocrmypdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/0e/f4/7d8fcd1f255ce098ecb8daf40ae20eb3fd940ac0f40c5bc22f10711352f6/ocrmypdf-17.7.0.tar.gz"
-  sha256 "c0a351910e8fee09bdbfee6cc7ba0299b9d561bba42afbbf4df29edcc7d58bc6"
+  url "https://files.pythonhosted.org/packages/15/ac/30171791db306c7b1c705957a0b9bed9df443b9465533dfc1945a654805b/ocrmypdf-17.7.1.tar.gz"
+  sha256 "d61184b84e3001ebe7c5acb265041bd8591f924b8616bbefc746a5bdafab3eca"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "98c326a983785269d53268e8ec3fa9c1a1567fb55f456becb24b28e699bc56b6"
-    sha256 cellar: :any, arm64_sequoia: "faa6d37ba2e7b03869f5f22d55aa4c8fc8f1a2a0c642fe691e2d25a66ea863cf"
-    sha256 cellar: :any, arm64_sonoma:  "fdf9c31c7b5d25af9ff0b88125eedf8e19071049a90ae832bf16bf02fcb57752"
-    sha256 cellar: :any, sonoma:        "758b73cdeb465467934ecc7d1f2479dc9fbfa29c19199664031f7f9289318466"
-    sha256 cellar: :any, arm64_linux:   "5e5f30f9cf026f6a71e9ed088994983cc091922a8abdb9e5bbaf112f23d461fb"
-    sha256 cellar: :any, x86_64_linux:  "02b4591df9cda6cabfbe4421a44258d2b07721c7bddfc553f1fd0025f46bff24"
+    sha256 cellar: :any, arm64_tahoe:   "07b9b38bbf12a372b3245aca43e4889241fee5e7a58aa0052c9d65111034a4cb"
+    sha256 cellar: :any, arm64_sequoia: "c5ca2eba614dfa91097d115f6d9512642a3d2e40c9e2e75b2a7355a5c7ae8a7f"
+    sha256 cellar: :any, arm64_sonoma:  "dceb24b79b81b958638f2bc85f37a17b7e61d8bcf3b8a2a912e065ef765abc3e"
+    sha256 cellar: :any, sonoma:        "66e19e6a594d909006ea6c11ba3905ab1106f33d2d928a5fe0a7aa047e8e5670"
+    sha256 cellar: :any, arm64_linux:   "27cd2705b143a4f4e96d6f84945a1b58af3aa4f67a7726d57d7b8821165ad56a"
+    sha256 cellar: :any, x86_64_linux:  "2b019f987acfb3d9e9f84f335cd0011b4ac67908e81ddca79e042002a89e96ac"
   end
 
   depends_on "cmake" => :build # for pikepdf
@@ -101,8 +101,8 @@ class Ocrmypdf < Formula
   end
 
   resource "pikepdf" do
-    url "https://files.pythonhosted.org/packages/77/84/14c5c5cc211ac62356ae02db664153cec7d64440c1fe13d1d40247aa69f7/pikepdf-10.8.0.tar.gz"
-    sha256 "295259723a2b464942bc092acee854bb389dd6b520cd853590e4ca89f47bbf41"
+    url "https://files.pythonhosted.org/packages/41/0f/a796e796e1a83e7e75b0ee061fbbe3b52889305d79ddf495a557e365ad22/pikepdf-10.9.1.tar.gz"
+    sha256 "410fcf32bc9c8a0a96d94bbd6268ba7585333b1423b93a5fa2ef3c05f4eba3da"
   end
 
   resource "pluggy" do

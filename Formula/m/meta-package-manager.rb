@@ -4,18 +4,18 @@ class MetaPackageManager < Formula
 
   desc "Wrapper around all package managers with a unifying CLI"
   homepage "https://kdeldycke.github.io/meta-package-manager/"
-  url "https://files.pythonhosted.org/packages/24/49/130f839ff68089d28828731cdb9d56979e0f775ad4ac7d528f835391098b/meta_package_manager-7.0.0.tar.gz"
-  sha256 "62a1f941e950d311b8e2e621fd6955d3d427bf6b25c00046853ac5e8bed840dc"
+  url "https://files.pythonhosted.org/packages/88/8c/3a64fc201514510d906e7a9a37fc8f2d935f62aa939e2f9caa324d820e4a/meta_package_manager-7.0.1.tar.gz"
+  sha256 "4de3ba0d4da7de0bd29cc3a824c2e328d3098440a2391e78b29ee9c605629510"
   license "GPL-2.0-or-later"
   head "https://github.com/kdeldycke/meta-package-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc41f91efcd73ba6042706e7c88b9c94400ea1deaea89f47b1baf5a3b2f4baa9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc41f91efcd73ba6042706e7c88b9c94400ea1deaea89f47b1baf5a3b2f4baa9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc41f91efcd73ba6042706e7c88b9c94400ea1deaea89f47b1baf5a3b2f4baa9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9bc399770e99316da9879b9fc25bfd61a680ef205580320e23a4d13945d34f0d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "042b454aa49a9b4bca82b595818064173fa5b1f1adaba8e3647859f8866f3aa8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "042b454aa49a9b4bca82b595818064173fa5b1f1adaba8e3647859f8866f3aa8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a88fd74d12adfa5b641e2fbc89a8872fc21ba252a6c341be3aab05602ef0ac26"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a88fd74d12adfa5b641e2fbc89a8872fc21ba252a6c341be3aab05602ef0ac26"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a88fd74d12adfa5b641e2fbc89a8872fc21ba252a6c341be3aab05602ef0ac26"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fa7f7076319c8a641194b1408b429270643e609008c13d17be3afdfe958dc239"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf237afe33750f6ce4d9a6bb7fd45e2a313a715552ca3fd3c3baa0cf8bbfa5c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf237afe33750f6ce4d9a6bb7fd45e2a313a715552ca3fd3c3baa0cf8bbfa5c9"
   end
 
   depends_on "rust" => :build
@@ -46,8 +46,8 @@ class MetaPackageManager < Formula
   end
 
   resource "click-extra" do
-    url "https://files.pythonhosted.org/packages/4c/ee/61eb8cadbf58b3570bab603106076e46466e890f7aba19ac4a420b27511f/click_extra-8.1.1.tar.gz"
-    sha256 "d9fa8de46b5fac91c7cbb0be5e1a788f04845d01a5580f210f90761f16be7cd6"
+    url "https://files.pythonhosted.org/packages/b0/96/bb6ab6d01a5e3ed728f627988e931dc2179c0ef76ac0eab06add0ce2f015/click_extra-8.1.4.tar.gz"
+    sha256 "342e8194749278e7ce78c5f28f0c2fcfa935534150dc8a4d8021229870768449"
   end
 
   resource "cloup" do

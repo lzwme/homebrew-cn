@@ -1,8 +1,8 @@
 class Wstunnel < Formula
   desc "Tunnel all your traffic over Websocket or HTTP2"
   homepage "https://github.com/erebe/wstunnel"
-  url "https://ghfast.top/https://github.com/erebe/wstunnel/archive/refs/tags/v10.5.5.tar.gz"
-  sha256 "c4b675bad8668cb86a99e96b6e343a8bce3c6382f54c266875333aaca209b1f9"
+  url "https://ghfast.top/https://github.com/erebe/wstunnel/archive/refs/tags/v10.6.0.tar.gz"
+  sha256 "15504114bd2a275dde16999d075b17e7d84989b1c54e07dc0c91574d113752e2"
   license "BSD-3-Clause"
   head "https://github.com/erebe/wstunnel.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Wstunnel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e88e304b357698f00953a7fe92b066fdd98bea0168cf912c798ab9d34fa8b2e0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fcc186e59354940f7b80c1f355506b9cab495746ca02cf9433174894c2f27e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c11c08f73beea8ca67e6818a712a42aaa0aa7f0d5ca441d1195add3963cf1d0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d6521bb8d08428cb9bc58d609af0c926d83a0856b3e9aa7bd28726eaf4c9b0e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "38db0fb6258a45e6156597ad28cf166a2e498cb7481618762d89de9e5f243982"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c13f8518ac96dd33787b1bc6d0caf99bf7a17f3733e22ddd88cca76fdfc37319"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a44a7b386332a863467ba14ead1a95a749072df031a259f07212114eb563c5db"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37a930548f64b57765fb1985211b182b787ba559c96247f4bccf116fabbc7431"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cffc573d937ff83d8ff37b8afda701ea3aca00cc6b640b1fedb4a24db9e86605"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f4a282c4219c4f7377dc0e09d70a48ca7992b5270d971af3fd3e1f26fe53574f"
+    sha256 cellar: :any,                 arm64_linux:   "0c48e04919ca627872a9b782e73708d4bcdb7a9499fb808b709cc5d96ee723fe"
+    sha256 cellar: :any,                 x86_64_linux:  "7c8a0f950f7fbd973b80dcf3ff57313288886b20b17b1fa7abb62971f8250cf9"
   end
 
   depends_on "rust" => :build

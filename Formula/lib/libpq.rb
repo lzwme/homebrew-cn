@@ -12,12 +12,13 @@ class Libpq < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f94a7562414ac6fc936a1e5a4c8a9d15ab8ffa9e55f60d28de25829d940b0840"
-    sha256 arm64_sequoia: "330927e9bc9f8737be1f60ebf6c86c4e1b1b2cb0bf9d066d6b62d83ce4d1a742"
-    sha256 arm64_sonoma:  "296732cb2341b80b61bad7b17038cc63ea74b0adf775f5477bc78d8760892a81"
-    sha256 sonoma:        "e16b143662f9bec10d264e91e3ec77178ab8379f49897934ff3a202b389eb7e7"
-    sha256 arm64_linux:   "bce9273e2448b574f4a994aaf79dfe58c3b334f89d2c0ea15b0312fbe53a2ce7"
-    sha256 x86_64_linux:  "4a71086c769b0cd1c4dc273b26b958af2451f031ca6b0982238a27056d4a3769"
+    rebuild 1
+    sha256 arm64_tahoe:   "dc42d07661bb1abb1f023155fc506db7f61e5dcdbb236048654540699e4f1ee5"
+    sha256 arm64_sequoia: "1647097313da545e3742d17f2b9875a941079a96be8d743d1d11316895fa25d7"
+    sha256 arm64_sonoma:  "ee5d207f0924b765f19f7dda6802abc11aed8d790b8bc6b07564b3bfdddf6143"
+    sha256 sonoma:        "9a0549142e54c7aeaf023087a64729704e9209d200b867dd18aa0d8f072728fa"
+    sha256 arm64_linux:   "01389abb039d97d3178066b12a696c02151b767f0979e9ad520a993ddf6af9df"
+    sha256 x86_64_linux:  "6ba1e7e120c0e8208738bab6e22cf1adf316e7c1e299cc006454648dfbea7cc7"
   end
 
   keg_only "it conflicts with PostgreSQL"
@@ -30,6 +31,7 @@ class Libpq < Formula
   # See https://github.com/Homebrew/homebrew-core/issues/47494.
   depends_on "krb5"
   depends_on "openssl@3"
+  depends_on "readline"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
@@ -38,13 +40,14 @@ class Libpq < Formula
   uses_from_macos "curl"
 
   on_linux do
-    depends_on "readline"
     depends_on "zlib-ng-compat"
   end
 
   def install
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
     ENV.runtime_cpu_detection
+    ENV.prepend "CPPFLAGS", "-I#{formula_opt_include("readline")}"
+    ENV.prepend "LDFLAGS", "-L#{formula_opt_lib("readline")}"
 
     system "./configure", "--disable-debug",
                           "--prefix=#{prefix}",
@@ -96,5 +99,6 @@ class Libpq < Formula
     C
     system ENV.cc, "libpq.c", "-L#{lib}", "-I#{include}", "-lpq", "-o", "libpqtest"
     assert_equal "Connection to database attempted and failed", shell_output("./libpqtest")
+    assert_match "libreadline", shell_output("otool -L #{bin}/psql") if OS.mac?
   end
 end

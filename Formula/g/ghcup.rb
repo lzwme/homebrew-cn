@@ -35,12 +35,11 @@ class Ghcup < Formula
   end
 
   def install
-    # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
-    args = ["--allow-newer=base,containers,template-haskell"]
+    # Workaround to build with GHC 9.14 until serialise > 0.2.6.1 and dhall > 1.42.3 are released
+    args = ["--allow-newer=base,template-haskell"]
 
     system "cabal", "v2-update"
-    # `+disable-upgrade` disables the self-upgrade feature.
-    system "cabal", "v2-install", *args, *std_cabal_v2_args, "--flags=+disable-upgrade"
+    system "cabal", "v2-install", *args, *std_cabal_v2_args
 
     bash_completion.install "scripts/shell-completions/bash" => "ghcup"
     fish_completion.install "scripts/shell-completions/fish" => "ghcup.fish"

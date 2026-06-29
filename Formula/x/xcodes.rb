@@ -1,5 +1,5 @@
 class Xcodes < Formula
-  desc "Best command-line tool to install and switch between multiple versions of Xcode"
+  desc "Command-line tool to install and switch between multiple versions of Xcode"
   homepage "https://github.com/XcodesOrg/xcodes"
   url "https://ghfast.top/https://github.com/XcodesOrg/xcodes/archive/refs/tags/2.0.2.tar.gz"
   sha256 "67db730edd1c768f39c197dc8e8054bd22d0859de2dd96e49b525148579be907"

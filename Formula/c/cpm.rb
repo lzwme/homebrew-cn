@@ -1,18 +1,18 @@
 class Cpm < Formula
   desc "Fast CPAN module installer"
   homepage "https://metacpan.org/pod/cpm"
-  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-v1.1.2.tar.gz"
-  sha256 "982545c45fc59499f6eed70b27be62ff63160a6d417ded2716b9592e9da53136"
+  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-v1.1.4.tar.gz"
+  sha256 "97b13d3257f72991d2b056dfc0e30806f66c1a5b487ec0236e21f23617b6eabf"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https://github.com/skaji/cpm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bae5387cb885fae53b3d423da113ac511efbc24dc6bdc11fc3d854c5d55ba09b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bae5387cb885fae53b3d423da113ac511efbc24dc6bdc11fc3d854c5d55ba09b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bae5387cb885fae53b3d423da113ac511efbc24dc6bdc11fc3d854c5d55ba09b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8ba2ffde01011e56c1d58bd96dc459c241262580b425b3a6ad5a4669b990b9df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "630364081c9e6a8f16b3a2a4a17f28652ff6532861f79078555f216037020db1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb94f44adbccff9391616fb6de579ebd34c4506bdb4d358519404d25241985f9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "904ef7e854445b8b3b12c123d92897e3612b1ca5324ec52558ca4bed04eee303"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "904ef7e854445b8b3b12c123d92897e3612b1ca5324ec52558ca4bed04eee303"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "904ef7e854445b8b3b12c123d92897e3612b1ca5324ec52558ca4bed04eee303"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fa7a158b8fdde33bac38ec514fa6efb54f0ee8d38336710a79c8584c2cb43bef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4677bd15e12b338c2f513550e2986367877c1048ad7e5cd52bf85ed14de6d1e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "681c43234e068eefca0a5cf0609a41e39207afd530eedf67a00fad4ab1c9c555"
   end
 
   depends_on "perl"
@@ -150,8 +150,8 @@ class Cpm < Formula
   end
 
   resource "URI" do
-    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.34.tar.gz"
-    sha256 "de64c779a212ff1821896c5ca2bb69e74767d2674cee411e777deea7a22604a8"
+    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.35.tar.gz"
+    sha256 "89648964ce5ae006726951f42f718576fbefe9e98a41bd2212d57386163092d2"
   end
 
   resource "Win32::ShellQuote" do
@@ -160,8 +160,8 @@ class Cpm < Formula
   end
 
   resource "YAML::PP" do
-    url "https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-PP-v0.40.0.tar.gz"
-    sha256 "76c4d28d5c78f0a5cfec631f0032aff1baa68a705f21f6f4bfe70ad83dce2e33"
+    url "https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-PP-v0.41.0.tar.gz"
+    sha256 "3ddfb2bdd2e7ef2d949dbd8ffb51439164c84d22bff615e47dbd8ea48ba75cae"
   end
 
   resource "local::lib" do

@@ -1,18 +1,18 @@
 class Changie < Formula
   desc "Automated changelog tool for preparing releases"
   homepage "https://changie.dev/"
-  url "https://ghfast.top/https://github.com/miniscruff/changie/archive/refs/tags/v1.24.2.tar.gz"
-  sha256 "57eab8209ed18e938ddb033fb6e3bd62229d442da728f7e75027d4117716ba57"
+  url "https://ghfast.top/https://github.com/miniscruff/changie/archive/refs/tags/v1.25.0.tar.gz"
+  sha256 "a3ab6f739aaa98473db5da707eee7563b3fa803896e3472018f68add02737aa0"
   license "MIT"
   head "https://github.com/miniscruff/changie.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8501d7618a56655fde8baf855b57fd085a8df481e5252dd45f4997779156a55f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8501d7618a56655fde8baf855b57fd085a8df481e5252dd45f4997779156a55f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8501d7618a56655fde8baf855b57fd085a8df481e5252dd45f4997779156a55f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "081b7d9f6002c817366c768b86e5042a7c2b3fa227e01d2bd0495afff5baa8ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6daf8a737cf8e503180d588bce6fef87fa01e867e69756ed61d8b4e8f95cdc59"
-    sha256 cellar: :any,                 x86_64_linux:  "23cc7e1f660593c8591e3472b528f754055ed2b93d955902900d8a6e611aee4c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ecbe9308a22dd3b75cad71805121da530856abe8c7a856139709d5a97a08dc6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ecbe9308a22dd3b75cad71805121da530856abe8c7a856139709d5a97a08dc6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ecbe9308a22dd3b75cad71805121da530856abe8c7a856139709d5a97a08dc6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a8fd6679272764bd05eeeed555b4c1300eac700b15fa3d8870dc147c31ec91d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0106b88af23771e52b86ce954119d424b63a1e297bd42e4ffb91c559d781a74"
+    sha256 cellar: :any,                 x86_64_linux:  "daefcbc09b721108564c848800af80c93a53306c03089a966666ee48acb4aec3"
   end
 
   depends_on "go" => :build

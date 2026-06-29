@@ -4,14 +4,14 @@ class Periphery < Formula
   url "https://ghfast.top/https://github.com/peripheryapp/periphery/archive/refs/tags/3.7.4.tar.gz"
   sha256 "6e3eb93904d4ea3ba346526b3e7dd90d0d258d4eff91977b859b91115f028711"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/peripheryapp/periphery.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b8a3b74aa0c3f8c01aa5f9d479391017072d01f019c336d8e835b52dad47c68"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a1dc3ad761d6dd38204a9ca8cd513fd77f580dd47150c159691fbf842b71a97"
-    sha256                               arm64_linux:   "092a72a761a35ab7d3c14b7a08f673579695ef6c4e883b1c745dc4fe87e34919"
-    sha256                               x86_64_linux:  "24907907f0325d589e4ce5963553fc243b59a551d350c0deb994e100f36d34b6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "987dee5c4d72d83900414d8dea4c24474199babb6caca71715d079d763503663"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fa3b76c9726403809452f07bd93664e012ce72cd703fbe4d0d53871e529b0a4"
+    sha256                               arm64_linux:   "28aa02d6bf2541e2825b3ec0a2145c3668705a92a41e893d1e3efd2c42ea1dde"
+    sha256                               x86_64_linux:  "f0e6dcc81835afb7a346c45a39efbe697424ea24847a839da7adff179d96502c"
   end
 
   # We need the CLT installed for libIndexStore.dylib.

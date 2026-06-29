@@ -36,11 +36,8 @@ class Koka < Formula
   def install
     inreplace "src/Compile/Options.hs" do |s|
       s.gsub! '["/usr/local/lib"', "[\"#{HOMEBREW_PREFIX}/lib\""
-      s.gsub! '"-march=haswell"', "\"-march=#{ENV.effective_arch}\"" if Hardware::CPU.intel? && build.bottle?
+      s.gsub! '"-march=haswell"', "\"-march=#{ENV.effective_arch}\"" if Hardware::CPU.intel?
     end
-
-    # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
-    (buildpath/"cabal.project.local").write "allow-newer: base, containers, template-haskell\n"
 
     system "cabal", "v2-update"
     system "cabal", "v2-build", *std_cabal_v2_args.reject { |s| s["install"] }

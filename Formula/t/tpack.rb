@@ -1,18 +1,17 @@
 class Tpack < Formula
   desc "Drop-in replacement for tmux-plugin-manager (tpm) with a TUI"
   homepage "https://github.com/tmuxpack/tpack"
-  url "https://ghfast.top/https://github.com/tmuxpack/tpack/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "840942602e9b939106f4ce437b10f711976feb4666c687133c92622f5230f164"
+  url "https://ghfast.top/https://github.com/tmuxpack/tpack/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "282f417361e93f37c8cc9c882559d84c9194afbe7eabdca654352971e7955bf0"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a09b4d50694982e43ae67798adf40a1efd5b970409263781692d78552671274"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a09b4d50694982e43ae67798adf40a1efd5b970409263781692d78552671274"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a09b4d50694982e43ae67798adf40a1efd5b970409263781692d78552671274"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1016c0f4edf4056126377b7fabb9600b5baa4e8b040eac057e443a54396a403a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac99438a38463d840b8989cdb25ad671c0744afe3e024fddae22c8046db2fe74"
-    sha256 cellar: :any,                 x86_64_linux:  "5457e0fc2c537249fd88acd1cafa7b50fbad58c6f52068b23a577d6d724f8bbd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac478dad38e5c5bf71a383ba412171e334635997dadb31895fde9a64f7bafb6b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac478dad38e5c5bf71a383ba412171e334635997dadb31895fde9a64f7bafb6b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac478dad38e5c5bf71a383ba412171e334635997dadb31895fde9a64f7bafb6b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0e5ee411653e6727e00882ccd6f8410c3adc041b2daaaeffa293ed3a98837cc8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f01234ad7afa9a8dd68c47c533e861e8f8033c3ca5107c834aa07d8d82f66466"
+    sha256 cellar: :any,                 x86_64_linux:  "5c072c2074185be5d41d196d1227e4f45a48263efe4da7de24a45746f738f02a"
   end
 
   depends_on "go" => :build

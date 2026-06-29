@@ -1,8 +1,8 @@
 class GlibmmAT266 < Formula
   desc "C++ interface to glib"
   homepage "https://gtkmm.gnome.org/"
-  url "https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.8.tar.xz"
-  sha256 "64f11d3b95a24e2a8d4166ecff518730f79ecc27222ef41faf7c7e0340fc9329"
+  url "https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.9.tar.xz"
+  sha256 "5a026e5602085307c7dcb72b71b07261c40f80914277bef5f8d7f2ecab739bec"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -12,14 +12,12 @@ class GlibmmAT266 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0c1ef812fc07213aeda2ad8824cc2626a903114d01b327e2d420c97d1226fc94"
-    sha256 cellar: :any, arm64_sequoia: "23856032138e148a0d7103a50a4f52a3401dc95ce471db2e345500078af5af18"
-    sha256 cellar: :any, arm64_sonoma:  "e504bb467b2d501f1a51c18833d3230997065b3b7e709d26cd12edd0699bc9c6"
-    sha256 cellar: :any, arm64_ventura: "df3a2168179942bd0e30135c2d38acd4819bc7f60c88afe31095c130e1be62fc"
-    sha256 cellar: :any, sonoma:        "1c4613edf05f61e532e5841f44041293eef53189381b758b4cc60726246b4537"
-    sha256 cellar: :any, ventura:       "04edc9e5e563d89579423112db929789dff6e422835cbb8d7ce24871f9c24c69"
-    sha256               arm64_linux:   "c0c03f9078ccc7189c9945b060bd044830a446d8c6259bc9501e5a8970fe388a"
-    sha256               x86_64_linux:  "721d4fc5d0339dcc7b41a0429df354191030f838232c62066139b79ef149f643"
+    sha256 cellar: :any, arm64_tahoe:   "0dddfce8c9884ff8d1b4ebf7c9ec9a1176db31a653a17b01b53f0751e9d2ceb0"
+    sha256 cellar: :any, arm64_sequoia: "125c14df7e21522d602151d36567eb45364297cf4fc3b6d895e4da72f5b05c44"
+    sha256 cellar: :any, arm64_sonoma:  "e7e271b5a10e31e76962c268afe38d379d34e4cdd2123e2f18020fd1ec89ceb0"
+    sha256 cellar: :any, sonoma:        "07215c72613f10a96dd0f65d40926d71572f998930ce054a9ff6c1e1050ce851"
+    sha256               arm64_linux:   "9294ce1ab6164e78f6d84714685ca14ef0ed814ae4c6cbeb07c4ec829be40d58"
+    sha256               x86_64_linux:  "e2cc56e6739ebd052dec42688582d356c78f5680f1ae73da40c10375f06195bb"
   end
 
   depends_on "meson" => :build

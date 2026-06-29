@@ -27,10 +27,8 @@ class Hadolint < Formula
   end
 
   def install
-    # Workaround for GHC 9.12 until https://github.com/phadej/puresat/pull/7
-    # and base is updated in https://github.com/phadej/spdx
-    # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
-    args = ["--allow-newer=base,containers,template-haskell"]
+    # Workaround for GHC 9.14 until hadolint allows parallel >= 3.3
+    args = ["--allow-newer=base"]
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *args, *std_cabal_v2_args

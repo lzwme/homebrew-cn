@@ -46,7 +46,7 @@ class Nethack < Formula
   end
 
   depends_on "groff" => :build
-  uses_from_macos "ncurses"
+  depends_on "ncurses"
 
   def install
     # Build everything in-order; no multi builds.
@@ -67,11 +67,20 @@ class Nethack < Formula
 
       # Enable curses interface
       # Setting VAR_PLAYGROUND preserves saves across upgrades
-      inreplace "hints/#{hintfile}" do |s|
-        s.change_make_var! "HACKDIR", libexec
-        s.change_make_var! "CHOWN", "true"
-        s.change_make_var! "CHGRP", "true"
-        if build.stable?
+      if build.head?
+        inreplace "hints/include/dirs-perms.500" do |s|
+          s.change_make_var! "HACKDIR", libexec
+          s.change_make_var! "CHOWN", "true"
+          s.change_make_var! "CHGRP", "true"
+        end
+        inreplace "hints/#{hintfile}" do |s|
+          s.gsub! "#-POST", "CFLAGS+=-DVAR_PLAYGROUND='\"#{HOMEBREW_PREFIX}/share/nethack\"'\n#-POST"
+        end
+      else
+        inreplace "hints/#{hintfile}" do |s|
+          s.change_make_var! "HACKDIR", libexec
+          s.change_make_var! "CHOWN", "true"
+          s.change_make_var! "CHGRP", "true"
           s.gsub! "#NHCFLAGS+=-DLIVELOG",
                   "#NHCFLAGS+=-DLIVELOG\nCFLAGS+=-DVAR_PLAYGROUND='\"#{HOMEBREW_PREFIX}/share/nethack\"'"
         end

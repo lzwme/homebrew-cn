@@ -1,9 +1,9 @@
 class GccAT14 < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
-  url "https://ftpmirror.gnu.org/gnu/gcc/gcc-14.3.0/gcc-14.3.0.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/gcc/gcc-14.3.0/gcc-14.3.0.tar.xz"
-  sha256 "e0dc77297625631ac8e50fa92fffefe899a4eb702592da5c32ef04e2293aca3a"
+  url "https://ftpmirror.gnu.org/gnu/gcc/gcc-14.4.0/gcc-14.4.0.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/gcc/gcc-14.4.0/gcc-14.4.0.tar.xz"
+  sha256 "752b6f567beac83159c77a7680b1316bdd784738bff9a9d070112c09da90f6d9"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -12,15 +12,14 @@ class GccAT14 < Formula
   end
 
   bottle do
-    rebuild 4
-    sha256               arm64_tahoe:   "0684ab0865925ab2cde02c508212aaf063188b73a1d689e3b0be779a915b8d3b"
-    sha256               arm64_sequoia: "79d986d52057631cc4c648700a7b754ef4238aee5f34415d42654165f53fed34"
-    sha256               arm64_sonoma:  "465bb8f390a139c1ccc6d0dbef6afa34519a24c6f20b6aca68d1019c84349677"
-    sha256               tahoe:         "03a47eee7eea0796684bd67610bbee2ffc5661f7d4dd4636cb403ee3a2a1a499"
-    sha256               sequoia:       "461828cf985b6a5f033c509a5e246ce055021f89b6eb6f949b3c0ffd39abe4f5"
-    sha256               sonoma:        "14947bb24393d0ca3b59f80e274fd35549bd63ca199c528b0aa096a4ff9ed03f"
-    sha256 cellar: :any, arm64_linux:   "c09508dc42454fd6a12e69a6ddf91b3b5268da6bed33144947b7657be77a96bc"
-    sha256 cellar: :any, x86_64_linux:  "fa7011beba62b377bb18d0c19583de797d5148250a4075714e14a85a387175ee"
+    sha256               arm64_tahoe:   "32dbe52ac8b804ab1a908c22c0c53afa3f5fbbb8144afe5c9738690bf7434e40"
+    sha256               arm64_sequoia: "e526f5bad9ecb0b7189b7694cc4c5bf27ea194d7a6c87ce5afb7f9fd56e48ece"
+    sha256               arm64_sonoma:  "290f1725fa61cda123f659fece41051417810c97e24fa870f07efd878623614d"
+    sha256               tahoe:         "10aad2cd43edcfcf94855822d5ae2f2c687a0be472e9ff8b9f5ab6dd4e1ff3f0"
+    sha256               sequoia:       "61534065f14422d91e32d0469b8c5761ae8192f5f767568bda6fb2a23833c5f4"
+    sha256               sonoma:        "6f85c867f2c246c7621dd7f7c3d925b786a82a139c5267736ff11e1ae82d02ff"
+    sha256 cellar: :any, arm64_linux:   "f6bc7f2f70750893bfa2246c476475a085091a1640f1caeaee4c6c9889b1d9ae"
+    sha256 cellar: :any, x86_64_linux:  "08a1fc055fcd78fad1bdbe3db7060fa69d293e7c4100fb89086776fb1e843402"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -50,7 +49,7 @@ class GccAT14 < Formula
   # Apple Silicon support, located at https://github.com/iains/gcc-14-branch
   patch do
     on_macos do
-      file "Patches/gcc/gcc-14.3.0.diff"
+      file "Patches/gcc/gcc-14.4.0.diff"
     end
   end
 
