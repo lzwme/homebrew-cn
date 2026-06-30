@@ -65,6 +65,9 @@ class Nvi < Formula
   patch do
     url "https://deb.debian.org/debian/pool/main/n/nvi/nvi_1.81.6-17.debian.tar.xz"
     sha256 "4f81fa274e71093d212ca981dc510e9bf2f1d4716f3c447ec2402607aa394bca"
+    type :backport
+    # 31regex_heap_overflow.patch fixes the Henry Spencer regex overflow, see https://bugs.debian.org/778412
+    resolves "CVE-2015-2305"
     apply "patches/03db4.patch",
           "patches/19include_term_h.patch",
           "patches/20glibc_has_grantpt.patch",

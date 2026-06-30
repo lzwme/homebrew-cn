@@ -1,17 +1,17 @@
 class Concord < Formula
   desc "Terminal user interface client for Discord"
   homepage "https://github.com/chojs23/concord"
-  url "https://ghfast.top/https://github.com/chojs23/concord/archive/refs/tags/v2.2.8.tar.gz"
-  sha256 "2249338feec07860abbe92275fbb58323a0bf5d11b29b8678ca9a6b464f7f40e"
+  url "https://ghfast.top/https://github.com/chojs23/concord/archive/refs/tags/v2.2.9.tar.gz"
+  sha256 "3dd76d306d7bde6183145981893dd0418735271f20b92d9e584d34917e37eaf0"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "66ad2111b702db4d9fcb01d79658a41d6b0196a2481a76f4a95f80563fdc0914"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b02434d59a95287f77bfb1572fe715ed2e2a12861d9335527b8c54ed60e2596"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb762db0a4e42488bf32864debe81d9bf7b9657965739bc19727e5071d2a389d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a93b8341f1f252922c94fac8ad36af41b4190edcdb30cb16734d13624604b9d6"
-    sha256 cellar: :any,                 arm64_linux:   "3e96db0b519ef3ecc1bf47b4d37e943630da2f0b4bf9f6cd1165cec468e19d35"
-    sha256 cellar: :any,                 x86_64_linux:  "10dc1e3c72a71f023781f2792f381eb64eac9102e192e86108defba0d1a63155"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c02fd76764896749f1fbd8421e92c41e89aa15ed9f853735a843930d7aefd28"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05fca502fd56eba509bd70d1e4865295bce3cc2cac3585b88a1b3c13323672af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ed3db239d8110aa3087ffca175d8cac38fe967921f34345388fd434195be47d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bbe6a2a0541f4c142c0b4fa7258c56831f9f0edfbac368555d9303c0c357f98c"
+    sha256 cellar: :any,                 arm64_linux:   "36003e001bbc677f8af91ec269815b54996dc3be9620ecf4b127e97b995aa9a8"
+    sha256 cellar: :any,                 x86_64_linux:  "c53df1dc30e35e868a1f8b1acc4e79f8b05f12d62ec9de8e9fa33e3315bbaf0c"
   end
 
   depends_on "pkgconf" => :build

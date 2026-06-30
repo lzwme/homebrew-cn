@@ -1,8 +1,8 @@
 class Scarb < Formula
   desc "Cairo package manager"
   homepage "https://docs.swmansion.com/scarb/"
-  url "https://ghfast.top/https://github.com/software-mansion/scarb/archive/refs/tags/v2.18.0.tar.gz"
-  sha256 "2c24f599173cc69bcf1350b49b5aa4b2f97b50355469f77e4e648b833601761d"
+  url "https://ghfast.top/https://github.com/software-mansion/scarb/archive/refs/tags/v2.19.0.tar.gz"
+  sha256 "fa732a5fb6810fa509de8aee18377f18e7470924771ccf0ac065ee690f361874"
   license "MIT"
   head "https://github.com/software-mansion/scarb.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Scarb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c73861def66d01bdd578b7ed8b634c2362e480f6ffdb0d2da23b00008d668805"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7adf654ff015dec16fd76f62a3aca1274c2d36053e3f6e189e82eb69ac0d245"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c275505db4ef9c8fb1ddcc2d99b4de2ea3e0fe249b3b85f0631f3c01c08e698"
-    sha256 cellar: :any_skip_relocation, sonoma:        "35b30f39df715de4e675befd48b506c7ae4f1610e148f2eb242ff31067cc5bad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "05489e481bdfe73a4b31fa73cf0bed87421b343d5a8c5b7dfe499a7d30688793"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcc59824731f38034ed0a02e44b6a5758cd57d86a8344e3b0ae45e59df3f9b94"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c303a28dc4d4160b23704474a8ddf33dee68c2017ff6094dde01aa62222bcc3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7006688fa0ff6337599f738533b4ccf8cd9a8165c349266921d0fb9917614b26"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32181f8ea8821916778f6822c986f0da5e48ac49298e2b6c9136225b0f856eb2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b311f59e09baa5fdb81a50798815489e82e2c1d4cdeaa1deb457a14e981affe4"
+    sha256 cellar: :any,                 arm64_linux:   "e2f55ac46b6b45110f5b94502b28deefca0098310f83e6707667c70ae1908daf"
+    sha256 cellar: :any,                 x86_64_linux:  "6b5171b6d5e98b7b8cfdc27038e7ef2afa58174718aed465ef316d572abb947f"
   end
 
   depends_on "rust" => :build

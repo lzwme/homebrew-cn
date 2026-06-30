@@ -1,18 +1,18 @@
 class Gabo < Formula
   desc "Generates GitHub Actions boilerplate"
   homepage "https://ashishb.net/tech/common-pitfalls-of-github-actions/"
-  url "https://ghfast.top/https://github.com/ashishb/gabo/archive/refs/tags/v1.12.0.tar.gz"
-  sha256 "2d216d8829882d9bc4822851fa7974f1eb434fa407d1a961a6f4ef3f8bbf1fe9"
+  url "https://ghfast.top/https://github.com/ashishb/gabo/archive/refs/tags/v1.14.0.tar.gz"
+  sha256 "66798dc2043a48c50e3d61f819cc928588d13faa4b155f8ba4afb6bc736a8e15"
   license "Apache-2.0"
   head "https://github.com/ashishb/gabo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f12581b9e784a6f7157ac45c2cd4c3e5195862f71f8d5237140e01018feb6962"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f12581b9e784a6f7157ac45c2cd4c3e5195862f71f8d5237140e01018feb6962"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f12581b9e784a6f7157ac45c2cd4c3e5195862f71f8d5237140e01018feb6962"
-    sha256 cellar: :any_skip_relocation, sonoma:        "67dd3f0ebdf6b7e24341dc19f434be014963a1c26bc3e139c15b99db455c6681"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "88d40a76dfd2514264bcfd3f32161f315af210d59ce138aa90aff7a6047047dc"
-    sha256 cellar: :any,                 x86_64_linux:  "e382f0bde4aba3a6fe2eab8b4ba4995591ba29a59917090aac45933c2f80cc06"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "932a2098bb69d849d648f39f57561eb0a55d1fa1910d64739c701f01c4086e25"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "932a2098bb69d849d648f39f57561eb0a55d1fa1910d64739c701f01c4086e25"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "932a2098bb69d849d648f39f57561eb0a55d1fa1910d64739c701f01c4086e25"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9ab6474883a973613f9d51f26afc7b1f7ed84c6fe4bf5b5f0e5cb733a1e60b31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4b5397e49a2b1718944c39f9e33efff2f1f248696c3178423475bd84e7c7fe3"
+    sha256 cellar: :any,                 x86_64_linux:  "6a6b4948f1d35bc501a42cbc1a707f9685787764243a1dea5ee8a6113e30b0c3"
   end
 
   depends_on "go" => :build

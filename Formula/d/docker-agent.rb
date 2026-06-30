@@ -1,18 +1,18 @@
 class DockerAgent < Formula
   desc "Agent Builder and Runtime by Docker Engineering"
   homepage "https://docker.github.io/docker-agent/"
-  url "https://ghfast.top/https://github.com/docker/docker-agent/archive/refs/tags/v1.88.1.tar.gz"
-  sha256 "7819c21f44ae043c62a12d86e792ecddf7563e14a9655e10e51b3cc209cf5508"
+  url "https://ghfast.top/https://github.com/docker/docker-agent/archive/refs/tags/v1.90.0.tar.gz"
+  sha256 "f546912916315943f7eda467e1d2c31a40991968f66792e7d83294d5ebd197b2"
   license "Apache-2.0"
   head "https://github.com/docker/docker-agent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "46973274e87a97d976ae9e00431b8368d29b45224eef791f088afab60ce544fb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59b0b1bb6b8bee05a2cc5f5323f3fb57b8c2d6be67c55b4671c338dc75e98ad3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3385dae9636a8db09c044728e1e821eee2eab3aa94a45b18a0e1cbcd8429d64f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f5e0ffed0434238c451430aae9eec3fd69e7d18bab2284a63203e861c0d9c206"
-    sha256 cellar: :any,                 arm64_linux:   "01bade915ed8ea1e9f141584c1b5a0ec14799d78de706b21208ef544183c9e87"
-    sha256 cellar: :any,                 x86_64_linux:  "e8c9676f62ca903c41c859ebec69a90cbb955fb66c4c020fc2915a75b063c429"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e77734780a7293d2c9a9a16451dcd4a7a36239fead2b86fe43333770b8e37ac3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bfd07fa1882df4f658ac5b51e09c404b8e295ecff0e13c6bb0c12cf3402c4556"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "64999cf17402c5c8faad5581922fbd79fe9979d261764b9525c4a6f8023c352c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1cd32e5a35b57ef1d45ea1a96eb80666fc83d67d5335805f7635647ffd8daabc"
+    sha256 cellar: :any,                 arm64_linux:   "febdb109b664bf834859a717b1c9f8fe034072c5915048bf0a32430cd10c3bbb"
+    sha256 cellar: :any,                 x86_64_linux:  "f64d4d5890d637a8fef4b422841f8063cd5f3d0262fff740854382b5acaae193"
   end
 
   depends_on "go" => :build

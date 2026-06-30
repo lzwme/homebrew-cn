@@ -1,18 +1,18 @@
 class Ko < Formula
   desc "Build and deploy Go applications on Kubernetes"
   homepage "https://ko.build"
-  url "https://ghfast.top/https://github.com/ko-build/ko/archive/refs/tags/v0.19.0.tar.gz"
-  sha256 "76275e4262faf2aab10507b969a50728dbc3f48511e61d138c834243f60452b1"
+  url "https://ghfast.top/https://github.com/ko-build/ko/archive/refs/tags/v0.19.1.tar.gz"
+  sha256 "7accc1f4ad074285086573b084387bef5871872ef16e3f292d5818a99e4feeae"
   license "Apache-2.0"
   head "https://github.com/ko-build/ko.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "46c2cdc43550cd514557243e7caba53dd8365d8c55031ef1974454f18b71c57c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46c2cdc43550cd514557243e7caba53dd8365d8c55031ef1974454f18b71c57c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46c2cdc43550cd514557243e7caba53dd8365d8c55031ef1974454f18b71c57c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "12e6c3feeb606f461a7c1e07e6eecf15ebf6cd63bab649156bca18924f69346f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5790130d4f3ae7e28a03762ff50ad252b4a03ee6d7acf5712b19f8f021fb30b"
-    sha256 cellar: :any,                 x86_64_linux:  "2366d57b384117b2575ccaabef01f1fab6c49b36f682190750b524796ff9046c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dbde500ed751d4ff2c9e31c0253631653b527187d1dc6814a3d6f78d8eb38f90"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbde500ed751d4ff2c9e31c0253631653b527187d1dc6814a3d6f78d8eb38f90"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dbde500ed751d4ff2c9e31c0253631653b527187d1dc6814a3d6f78d8eb38f90"
+    sha256 cellar: :any_skip_relocation, sonoma:        "daed15d71cb650df58ab5d6aa8e3ee6a48499ac31560f3d3121bc3bea71d175d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3410988c67cb735edf75c617eb58a84970af090b22f9a0c305db2094fcb271a5"
+    sha256 cellar: :any,                 x86_64_linux:  "bde47c117e53e1b8fe0a955f83e07b77023f6b454366a64addc7f0a47cbff0a9"
   end
 
   depends_on "go" => :build

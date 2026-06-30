@@ -2,18 +2,18 @@ class Cue < Formula
   desc "Validate and define text-based and dynamic configuration"
   homepage "https://cuelang.org/"
   url "https://github.com/cue-lang/cue.git",
-      tag:      "v0.16.1",
-      revision: "6d609d768f1686f9a3a2a20197cacdbb70e5c79d"
+      tag:      "v0.17.0",
+      revision: "0fc639bbe9819f08ed132d3981a13ac2e3bf330f"
   license "Apache-2.0"
   head "https://github.com/cue-lang/cue.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3312dbb6e144f0594bd8fc1d5aec3583cd316cc17900a9665d4f09eb77e5517f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3312dbb6e144f0594bd8fc1d5aec3583cd316cc17900a9665d4f09eb77e5517f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3312dbb6e144f0594bd8fc1d5aec3583cd316cc17900a9665d4f09eb77e5517f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e5c4bff74f92bb2f489cba7a2738afc25e0b43c93529ac368fb6bfa6ef2d6e41"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1779d12d9c17b8d27e30772f7d8203f78408afed6cd8401922f5fb40b2735bb0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d57d40fa0b3785329070c48e0b8090c651eb9d100285bec72aa788185fb127f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84bc5b6804b0d9aee6a392fc04d626938bb1efcd00a8c6031458ef3705cbb2a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84bc5b6804b0d9aee6a392fc04d626938bb1efcd00a8c6031458ef3705cbb2a0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84bc5b6804b0d9aee6a392fc04d626938bb1efcd00a8c6031458ef3705cbb2a0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5e7995e27c4e34412f7976f9b2f7a44ad4bcfccf56005ffc1c0ff1f0e4f0d9a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbf75854cdb81399af064dd64a3059065a694e172476daf3e671da9a7e34c844"
+    sha256 cellar: :any,                 x86_64_linux:  "2b99970d0e11fbf6c94d353c760d6cc220280e855fcab20282d8026c4b17876a"
   end
 
   depends_on "go" => :build

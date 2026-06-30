@@ -1,18 +1,18 @@
 class Kdash < Formula
   desc "Simple and fast dashboard for Kubernetes"
   homepage "https://kdash-rs.github.io/"
-  url "https://ghfast.top/https://github.com/kdash-rs/kdash/archive/refs/tags/v2.0.1.tar.gz"
-  sha256 "81483cfcacb68ea04a278d576265eba786f44b3d1a7915efb7293e35b4d746f0"
+  url "https://ghfast.top/https://github.com/kdash-rs/kdash/archive/refs/tags/v2.0.2.tar.gz"
+  sha256 "8ace7afb62ce32ed0581528a583df1ab12cd0919ce05ae4233b8419dfa0e7344"
   license "MIT"
   head "https://github.com/kdash-rs/kdash.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e6cfd24486c1fee5a2438521f2f60f4649754602a5fd85f79e5f9389806046a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa876f24dd7c7c525976f8831cdf203e73b8f6048f625f7475cbd24301c304e2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15a76ea3e08cb0d8e6c3734076a4009a2f2872c7989c895c0a7644a8ba5d9f4f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bdfc6ad50c7f2ea413077018a950927739af5773d53391d5b044aae91a5d4014"
-    sha256 cellar: :any,                 arm64_linux:   "ec9335ac1f6f64e230ba2e0b8ff8ee6dd80d61eed229de34062b25a7079932c5"
-    sha256 cellar: :any,                 x86_64_linux:  "d0592850c0f3bf641b4b073e68ad26dcf08eacc82bc6da3773419b3ab9b920ef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "433d61edc91557131c32c3b72fb763e7cf0d225541625cd5c566e9f006e91b80"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0629663febbe134d225c5d77f34095228d8ec27df5644ceb329ebdb09f2811b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39b3d535558cd0328f55ebeedfbf58a2683613f026da2b90d29ff043af6e5ca1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ea266c9f362e31f4288f0f138c2e6db0f680865ac6fb06a7f64a20cee0ab441c"
+    sha256 cellar: :any,                 arm64_linux:   "dee05d2d9777508172fb6968598ed592997a43863d6d9f210fa4f1d8e9d85ffc"
+    sha256 cellar: :any,                 x86_64_linux:  "10782e857fa0e64b0c3818061924a68b8cfba48e7cf8ab88a5d69d7d408b3dda"
   end
 
   depends_on "rust" => :build

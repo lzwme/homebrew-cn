@@ -1,10 +1,10 @@
 class Highs < Formula
   desc "Linear optimization software"
   homepage "https://www.maths.ed.ac.uk/hall/HiGHS/"
-  url "https://ghfast.top/https://github.com/ERGO-Code/HiGHS/archive/refs/tags/v1.14.0.tar.gz"
-  sha256 "05931e8dd8c8cac514da8297003c31a206a0004d542b7da500810b85c87c20b9"
+  url "https://ghfast.top/https://github.com/ERGO-Code/HiGHS/archive/refs/tags/v1.15.0.tar.gz"
+  sha256 "c3fc3e9ee43e6d562361f8647b4c69f958c95356a1af8bc5a3647f5882230d44"
   license "MIT"
-  compatibility_version 3
+  compatibility_version 4
 
   # Upstream appears to use GitHub releases to indicate that a version is
   # released (and some tagged versions don't end up as a release), so it's
@@ -15,12 +15,12 @@ class Highs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5cef4f4d3548edb590d6bc8fdb2137131cc420c5def0b6a7a0569b951f399eb8"
-    sha256 cellar: :any,                 arm64_sequoia: "d26d1f6efe554d8fcefe6f88dbdb2e976dc9bf3e5f6fd3886ec9bc925a5cacbb"
-    sha256 cellar: :any,                 arm64_sonoma:  "4c6b8d197d4b6e20669a09bf7d7fdb0aa3c4ab288147b006a0f9840addf7b5fb"
-    sha256 cellar: :any,                 sonoma:        "98a9ace95fb8bef7337173bab209953c013b1a79dc8ef28e9b3cc156fb067e70"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "83217af7a3f47e9bfbb82a36fe7c87abad407c2b5a991d2945be13c93035baa5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "018bd3b27f5d43f0c80bc37bd9a0363d3a6e066970071bb7150ad519e3687b88"
+    sha256 cellar: :any, arm64_tahoe:   "d332e21116f09f12ea65f483a5a783485d662f8852458029868db658914d6657"
+    sha256 cellar: :any, arm64_sequoia: "6a4c1d879d4e03e5451efe8057c1a051e17c419d78ad1eb101be331872b1d3eb"
+    sha256 cellar: :any, arm64_sonoma:  "6e5125f35ec20445e93a81b3aa311610c68716a64e42de037e47c0fed61cc7c4"
+    sha256 cellar: :any, sonoma:        "eab9f3a7256919e960176b4b11cdc216d4c2298989cceb7c235a93902a365af6"
+    sha256 cellar: :any, arm64_linux:   "2f032590ea48bcbf9c6472cfdd9912b97fd7ddfbed48959a993b3236d96991b2"
+    sha256 cellar: :any, x86_64_linux:  "98591a802ca2c851507da186277bb9e34f841d82b441b4a94983e76a403d909e"
   end
 
   depends_on "cmake" => :build

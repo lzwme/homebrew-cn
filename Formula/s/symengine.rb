@@ -4,15 +4,15 @@ class Symengine < Formula
   url "https://ghfast.top/https://github.com/symengine/symengine/archive/refs/tags/v0.14.0.tar.gz"
   sha256 "11c5f64e9eec998152437f288b8429ec001168277d55f3f5f1df78e3cf129707"
   license "MIT"
-  revision 7
+  revision 8
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f2288896b8b0640c79042d9ae0f3affdb6a94c6526a7e264eac670ba3e957979"
-    sha256 cellar: :any,                 arm64_sequoia: "afc0896485540e6e212776a3a87c092f0a997f6a72d178025f9c2099ec39e9ae"
-    sha256 cellar: :any,                 arm64_sonoma:  "3010cbb359c9ad63fa5eac98a45141b798f04313a8ba37cf913a77da534af887"
-    sha256 cellar: :any,                 sonoma:        "36878b0e8342a4856f043a44212dc7731f10808b35892d639030fff4a0be0bb3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e623eca2e1cce8e068eada5290a48c06ecf1c48aaaca761a591964326d765657"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18af9b2b880650c127541e3c24079d46f566f54669a4456fcc98e8e8a221683f"
+    sha256 cellar: :any, arm64_tahoe:   "a95aa5994dbc12d8dba411d71d064834a65120359ce43e8cc70ab907e04ba0c3"
+    sha256 cellar: :any, arm64_sequoia: "6a60f10375dea781b228d21898563abcf2c247fb2ac75f21eac372ece1474230"
+    sha256 cellar: :any, arm64_sonoma:  "09b0f8531c31f92d1feb8add85b1b53d941ea38633338da13b06918c1b5a651d"
+    sha256 cellar: :any, sonoma:        "c4fc53287a57a5a23e52c28a26b34d3818cc26f3ea072b6c343834c811d50e64"
+    sha256 cellar: :any, arm64_linux:   "216e2f5564764584390b62942da76dec4963ebba7a95ccbd8472b0345eb8312b"
+    sha256 cellar: :any, x86_64_linux:  "9c27f6c21daef3545a662a2da1ea3572b126037eed8fd623dc3021ebb3001fff"
   end
 
   depends_on "cereal" => :build

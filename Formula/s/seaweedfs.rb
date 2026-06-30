@@ -2,8 +2,8 @@ class Seaweedfs < Formula
   desc "Fast distributed storage system"
   homepage "https://seaweedfs.com"
   url "https://github.com/seaweedfs/seaweedfs.git",
-      tag:      "4.36",
-      revision: "d0b90d29eb6c3cfad1f9c0f80d671c72c4ec1d27"
+      tag:      "4.37",
+      revision: "c06a2dca879cdbe742246d812431fbe2de01357b"
   license "Apache-2.0"
   head "https://github.com/seaweedfs/seaweedfs.git", branch: "master"
 
@@ -13,12 +13,12 @@ class Seaweedfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca6a4a3a4640e6eb8d90cc726d984574f257db9781d5fb7acc0f556194213438"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74eead81c7c6bdb5d219fb684e8f66c0a26852c3977301b791617d7fe0e50bd5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95beaf25250a2a59067a9be393422621a835ac99eec8a1fc10f35d89e0e613f4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3ddf547a947aede518c4219217456786ba34a1dadbe1878c704ac1adce521c4e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "808c23d56f3bcc973e740d554ac5503b8a2793b838029d54e552d3c24f0e22f1"
-    sha256 cellar: :any,                 x86_64_linux:  "5b712657ca95dc7d03e84acc2a5278f7c4907e409350025d94b927557b767847"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a0748919c62cd0f92cd192112acd74adcb7095a2114be6f2ce5093bf6e7891e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e2155b10a18123d060fec7e3b73b3bd725dd3f3fb7c78d7eda1ac7c99c7f7ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aac7bd448a3aaeaf5a76bff41a2e94143939c5d34e7ae3c6e5dde652543a3574"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ff45573439f760dda41404ed28f1723bbc53621f35f1b0346dbaff651f3eb22b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1955e877873f541f42909a0d22ceba8873e7614b1eeb6a09ab58fb2aa8d1f31a"
+    sha256 cellar: :any,                 x86_64_linux:  "ef78465aff0b59dca62a7e353b0d46593449385c4749a29dc3565d4cfa658fea"
   end
 
   depends_on "go" => :build
@@ -55,8 +55,9 @@ class Seaweedfs < Formula
           "-master.port.grpc=#{master_grpc_port}", "-volume.port.grpc=#{volume_grpc_port}"
     sleep 30
 
-    # Upload a test file
-    fid = JSON.parse(shell_output("curl http://localhost:#{master_port}/dir/assign"))["fid"]
+    # Upload a test file. Volumes are created lazily, so grow one first.
+    system "curl", "-s", "http://localhost:#{master_port}/vol/grow?count=1&replication=000"
+    fid = JSON.parse(shell_output("curl -s http://localhost:#{master_port}/dir/assign"))["fid"]
     system "curl", "-F", "file=@#{test_fixtures("test.png")}", "http://localhost:#{volume_port}/#{fid}"
 
     # Download and validate uploaded test file against the original

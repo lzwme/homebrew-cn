@@ -4,6 +4,7 @@ class Form < Formula
   url "https://ghfast.top/https://github.com/form-dev/form/releases/download/v5.0.1/form-5.0.1.tar.gz"
   sha256 "ce62530a54e5232dfefb6c1ff0e7047372a43941b3c0e0db08b5714fd868722c"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,12 +12,12 @@ class Form < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3cca001e2ef23bf212d8b0267453ea487480826e0271b660c641195e229a2e95"
-    sha256 cellar: :any, arm64_sequoia: "bde3419da164d5e129d122c6598f9aa340e2e3cd09fc9408db0f06797bf34a1c"
-    sha256 cellar: :any, arm64_sonoma:  "0e1f47450dac96ef23c1e46c9de972641c04666895b51bd3f1c4f4cb4d8e9551"
-    sha256 cellar: :any, sonoma:        "4d1e107895bfe029c0951e87d029570ceb4352bc352b73d27466a59cef73ec8f"
-    sha256 cellar: :any, arm64_linux:   "2a33cf375f46c341eff2000abc284a66ae1b701be6116df6b9484c0ee2e19045"
-    sha256 cellar: :any, x86_64_linux:  "87fa4e0ed548f5507d07f6da45354aee8833b6ff89a585a5cc5fcd14a0018396"
+    sha256 cellar: :any, arm64_tahoe:   "bb75ccd07f0cc125ffd856062ebf74ba0bb19f8acbb02be549c39fc4e3033684"
+    sha256 cellar: :any, arm64_sequoia: "f250314c8d59119c18883644a13183bb6f420a79422c900c3884335c9d4e452d"
+    sha256 cellar: :any, arm64_sonoma:  "811f978b7138d3982982836fdc271cfce2d3f15f7163d04ee5ed7f0a77ffa2d4"
+    sha256 cellar: :any, sonoma:        "45a57f910be5dbb5f6e39cc238d3ed1855fadb36d56fed3a36619c64aee2eb15"
+    sha256 cellar: :any, arm64_linux:   "e2b0714d5c30e5b1d2ae552cd87adc64eafc3c860645979f90a2ac6f98e8c602"
+    sha256 cellar: :any, x86_64_linux:  "f26e66ad0b1b7644cc4346b7170679be7fb42371031df212a854fcc8c848b588"
   end
 
   depends_on "flint"

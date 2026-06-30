@@ -1,10 +1,9 @@
 class Libadwaita < Formula
   desc "Building blocks for modern adaptive GNOME applications"
   homepage "https://gnome.pages.gitlab.gnome.org/libadwaita/"
-  url "https://download.gnome.org/sources/libadwaita/1.9/libadwaita-1.9.1.tar.xz"
-  sha256 "2ae34dbb3ea56d270925707cefa36050482ec88a741f1810b7619a5377c41a66"
+  url "https://download.gnome.org/sources/libadwaita/1.9/libadwaita-1.9.2.tar.xz"
+  sha256 "6920f813a76c4856591ca56ee842e94efbbe736e8ca2f445c9e9fc3b4e7076f0"
   license "LGPL-2.1-or-later"
-  revision 1
   compatibility_version 1
   head "https://gitlab.gnome.org/GNOME/libadwaita.git", branch: "main"
 
@@ -17,12 +16,12 @@ class Libadwaita < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "717258a871b24b835c2fd93c9d6f466e31fbddfd7a648171c1d57d7f9036ca45"
-    sha256 arm64_sequoia: "3c0ce17e10719376356271efd8a216395bad59910cc714209f43dca80d5134e4"
-    sha256 arm64_sonoma:  "d2a49bfd805c38999bf277d000e1312858206639b6abe037700f151a47a089d0"
-    sha256 sonoma:        "fdee758f46aa7f87b8cc2dd52165e4f7ebaca8f79a587dded9fa1318900acadd"
-    sha256 arm64_linux:   "5565c474102b844e716ff1cdf0a3e722614e8b9b11567b5e1fba4519469a401c"
-    sha256 x86_64_linux:  "2aa1c7e7840b9fa446e40ec1f586783f6f7f1d63ae0c63f23e803f2a5f30c239"
+    sha256 arm64_tahoe:   "6b37474404317018acb63933e10436da350ec85e9f73817296764f560a6a7a41"
+    sha256 arm64_sequoia: "8f5b1a5cd3516bcd596df08af4f3f27b8c868fdd7cba1096672d0dc3863b15fb"
+    sha256 arm64_sonoma:  "772079e3cfc6171057352bc8a6b01d112eb73ff8ffc2942a445d9e7854b29d31"
+    sha256 sonoma:        "fece73ee2ad02dd0b36787c24ff55aa48940661ce65b04ea1dbbce107484b7a4"
+    sha256 arm64_linux:   "da614a912af845e921f77c00696097f8a052a06595b97ff84d563778ff93e077"
+    sha256 x86_64_linux:  "25519d505fa3199a649136d631f2f677eac8fe026170fadd8a419987f56f5f15"
   end
 
   depends_on "dart-sass" => :build
@@ -62,7 +61,7 @@ class Libadwaita < Formula
       s.gsub! "'-a', '-M', '-t', 'compact'", "'--style', 'expanded'"
     end
 
-    system "meson", "setup", "build", "-Dtests=false", *std_meson_args
+    system "meson", "setup", "build", "-Dtests=false", "-Dexamples=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end

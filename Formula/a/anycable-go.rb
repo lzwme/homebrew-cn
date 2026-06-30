@@ -1,8 +1,8 @@
 class AnycableGo < Formula
   desc "WebSocket server with action cable protocol"
   homepage "https://anycable.io"
-  url "https://ghfast.top/https://github.com/anycable/anycable/archive/refs/tags/v1.6.14.tar.gz"
-  sha256 "7839edad42090f1a3465b8568d092950a6c77493edca2166b1f6c845fcd68f27"
+  url "https://ghfast.top/https://github.com/anycable/anycable/archive/refs/tags/v1.6.15.tar.gz"
+  sha256 "f0df891c2c658e05f1504461e66c00d8765e8eb614cf15219c5b07b85b42ec9e"
   license "MIT"
   head "https://github.com/anycable/anycable.git", branch: "main"
 
@@ -12,12 +12,12 @@ class AnycableGo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60461d2d482acaa20de367837b5b8f770a73191cbc766c880926a8c8bfa9a9a0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60461d2d482acaa20de367837b5b8f770a73191cbc766c880926a8c8bfa9a9a0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60461d2d482acaa20de367837b5b8f770a73191cbc766c880926a8c8bfa9a9a0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "20a22e86da9b176439231c6c4127914f4dddcc86146e3bba2db7035b48d48faf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "34159b2102175855979ab094711738396ecd5b717d0e206544ef168633a77b42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05ea28c69137893592868fcca3ee88335f4d2beba1cb84d0ed2cde735923da7b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed4c1454c9f72cf5bcc323651724ed6d41cfb1b7647a5f95232581e9b17845a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed4c1454c9f72cf5bcc323651724ed6d41cfb1b7647a5f95232581e9b17845a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed4c1454c9f72cf5bcc323651724ed6d41cfb1b7647a5f95232581e9b17845a7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f6d4a659055a7a02e5fb405cdd2eaf92d0e0121e48a21c9b4d597cd2f414ef19"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fad069e41fd12314407d417c712eb27f66966626115eb3e615b27def904347c"
+    sha256 cellar: :any,                 x86_64_linux:  "6fdfc4a687bc61cf93920cea5b3c8e732b042fe638b31ccba4630207a5a76477"
   end
 
   depends_on "go" => :build

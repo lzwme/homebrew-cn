@@ -1,19 +1,19 @@
 class Opencc < Formula
   desc "Simplified-traditional Chinese conversion tool"
   homepage "https://opencc.byvoid.com/"
-  url "https://ghfast.top/https://github.com/BYVoid/OpenCC/archive/refs/tags/ver.1.3.1.tar.gz"
-  sha256 "1cc663704ff15728d6ea41ced8cd9dcc086f7bd9a80e8531b2f8054d2f3b8733"
+  url "https://ghfast.top/https://github.com/BYVoid/OpenCC/archive/refs/tags/ver.1.3.2.tar.gz"
+  sha256 "8aaaca60b160cfba47f83589a2a20cf38ff360e5cb20546c94ee60af8dfa6594"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/BYVoid/OpenCC.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "591ba4f3b3d2a5c75f346450759a75645cf9d4ead293aee029711f4516710eb3"
-    sha256 arm64_sequoia: "7374ebb5b9fe32296913faf7e730a30e3bda9dc7c62e4e236bb9fecb321c2895"
-    sha256 arm64_sonoma:  "33ec0628c320472651c3dd80f5a32e8cdaf97b2ba7d0eb6cfd4163bc2aab8907"
-    sha256 sonoma:        "2e16308d74b6393e374667c7302647bdb8ca97e93731414142fc337272f39a56"
-    sha256 arm64_linux:   "c0ed290e76d711edb47f76cdaf5815f57b133e6ac7d56cb659dc7306fa241fc3"
-    sha256 x86_64_linux:  "c133c27d6f2216b72f4e5cad57507908b3f8ecf5dd9ea7f8ecc4f71ee6057ed6"
+    sha256 arm64_tahoe:   "40b4c637f5065d8d6822c4c0a5eae96bc9d596a65191cc2b034445248aba7136"
+    sha256 arm64_sequoia: "67ebd0ff2a827dead0b7cd39b9cdd5266ee51c5017a2fb9e79cc163d618d3bde"
+    sha256 arm64_sonoma:  "fcda4c8ea19061e936b68c8d24d39c7f7f5bfa8523b91ca1845f25596f8853bf"
+    sha256 sonoma:        "b3f57798652cdcc874bdbffd4dfb01b3aecf4d4deb8dea6513ffaad0f757c7df"
+    sha256 arm64_linux:   "3bdb883a65ff83a30ca85577f07db865e9db0338ea3598f7e42a2177bc9f8d4f"
+    sha256 x86_64_linux:  "5563253775e81677784928fff603d266e6c2af3594f1fc722020e5e512a72038"
   end
 
   depends_on "cmake" => :build

@@ -4,7 +4,7 @@ class Pinocchio < Formula
   url "https://ghfast.top/https://github.com/stack-of-tasks/pinocchio/releases/download/v3.9.0/pinocchio-3.9.0.tar.gz"
   sha256 "60553630d83de492bc0cf1126add2acc591c87f1bc8ea7f70693e7563fc103a3"
   license "BSD-2-Clause"
-  revision 3
+  revision 4
   head "https://github.com/stack-of-tasks/pinocchio.git", branch: "devel"
 
   livecheck do
@@ -13,12 +13,12 @@ class Pinocchio < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "a468c62bb5a339ab04c61095f1120aec9dca21ac7958b0c5ddcd1d498e8375c8"
-    sha256                               arm64_sequoia: "283246b15630dd2bc096f243551249b987bc329886b178fefccfc11aa384c1d6"
-    sha256                               arm64_sonoma:  "79ea5083a38361f50fdbc1b92a22a14d3df45011750c352f3212305526df7783"
-    sha256 cellar: :any,                 sonoma:        "15e9bf498912ca86f1f206554ea4cc1192bfa6643e6895436d6a897c32572e0b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "254a16737d86feeb25b5815d61d41e021d068a649ae601f6b7cd4f77a3d78e9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc28f6c90ce7eafa20127797154a6390fd62152bef58aa63866c6268cb23a93d"
+    sha256               arm64_tahoe:   "897077bb3831732264979cce5d37f9245caa2147d7588521727c217107ab6dbe"
+    sha256               arm64_sequoia: "70f57d18182795dcc31bb5bb14837d27544c612ed62c61a953914cd2edf4e9a0"
+    sha256               arm64_sonoma:  "75c11fa9d1bade8ea65872d3143fb8b5a56a70c421da45aad484de0b9a18e678"
+    sha256 cellar: :any, sonoma:        "a6d21087967370318b95e49d643e657a2880941a9bce894b2753bb31a059ba35"
+    sha256 cellar: :any, arm64_linux:   "33999aa20a653a680cb5c87002f2bf0f97584c1de09dbf31b7c404d6f1692211"
+    sha256 cellar: :any, x86_64_linux:  "aa6e31ea71b0eb715c4accf2183c968449bb7e43b4d4b3a0aeae24b35ef69ce2"
   end
 
   depends_on "cmake" => :build
