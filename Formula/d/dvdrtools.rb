@@ -5,11 +5,6 @@ class Dvdrtools < Formula
   sha256 "053d0f277f69b183f9c8e8c8b09b94d5bb4a1de6d9b122c0e6c00cc6593dfb46"
   license "GPL-2.0-or-later"
 
-  livecheck do
-    url "https://download.savannah.gnu.org/releases/dvdrtools/"
-    regex(/href=.*?dvdrtools[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "d9ce7dd044c0b813f15a0a53332e50bd2f4b85fca18f7bb9951796f061abdb24"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "57b79ee1791a3cbd816e11cbb178cf961f4fc0b5b71324233ea6c68a6c420db1"
@@ -26,8 +21,12 @@ class Dvdrtools < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0ded8f875ea08da1c4ac07675a925b475414f03e03071b6e4445ec690494d88"
   end
 
-  conflicts_with "cdrtools",
-    because: "both cdrtools and dvdrtools install binaries by the same name"
+  # Unmaintained fork of cdrtools that requires patches to build
+  # Last release on 2005-02-05. cdrtools added support for DVD in 2006.
+  deprecate! date: "2026-06-30", because: :unmaintained
+  disable! date: "2027-06-30", because: :unmaintained
+
+  conflicts_with "cdrtools", because: "both cdrtools and dvdrtools install binaries by the same name"
 
   # Below three patches via MacPorts.
   patch :p0 do

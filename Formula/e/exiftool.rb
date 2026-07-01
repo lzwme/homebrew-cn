@@ -2,15 +2,18 @@ class Exiftool < Formula
   desc "Perl lib for reading and writing EXIF metadata"
   homepage "https://exiftool.org"
   # Ensure release is tagged production before submitting.
-  # https://exiftool.org/history.html
-  url "https://exiftool.org/Image-ExifTool-13.55.tar.gz"
+  # https://exiftool.sourceforge.net/history.html
+  # TODO: Upstream temporarily uses SourceForge due to issues with DreamHost. Check if they resolve this
+  url "https://downloads.sourceforge.net/project/exiftool/Image-ExifTool-13.55.tar.gz"
+  mirror "https://exiftool.org/Image-ExifTool-13.55.tar.gz"
   mirror "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-13.55.tar.gz"
   sha256 "5f4c81d34ad406538c2871ad72dbfceb5d9b412b2f16cbbeb4d712d270846667"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   compatibility_version 1
+  head "https://git.code.sf.net/p/exiftool/code.git", branch: "master"
 
   livecheck do
-    url "https://exiftool.org/history.html"
+    url "https://exiftool.sourceforge.net/history.html"
     regex(/production release is.*?href=.*?Image[._-]ExifTool[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 

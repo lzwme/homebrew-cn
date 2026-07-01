@@ -7,7 +7,7 @@ class Libspatialite < Formula
 
   stable do
     url "https://www.gaia-gis.it/gaia-sins/libspatialite-sources/libspatialite-5.1.0.tar.gz"
-    mirror "https://ftp.netbsd.org/pub/pkgsrc/distfiles/libspatialite-5.1.0.tar.gz"
+    mirror "https://cdn.netbsd.org/pub/pkgsrc/distfiles/libspatialite-5.1.0.tar.gz"
     mirror "https://www.mirrorservice.org/sites/ftp.netbsd.org/pub/pkgsrc/distfiles/libspatialite-5.1.0.tar.gz"
     sha256 "43be2dd349daffe016dd1400c5d11285828c22fea35ca5109f21f3ed50605080"
 

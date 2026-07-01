@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://esphome.io/"
-  url "https://files.pythonhosted.org/packages/49/e4/29bf98d3b92dca7e6a0650a4b82d73eaba1bbb20eefa1ad0c53b41faf7d1/esphome-2026.6.2.tar.gz"
-  sha256 "9f8df255a9ad4e0953ef12dcce0a4d21fc6825ac8a351988ce6b56a7c7325d4a"
+  url "https://files.pythonhosted.org/packages/44/3d/10a5e49d85c354e765653e1647fd68f37d1d34b5c4d32e70e6372d1a3a69/esphome-2026.6.3.tar.gz"
+  sha256 "c4e1cbfa55968093a1446cb22cd33dc86db310cc32eda1f70d6d12df3b2a6a63"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -12,12 +12,12 @@ class Esphome < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "024c2892d82aa312b104a77c8800d0767cc9e1f813595456466922b3a162648f"
-    sha256 cellar: :any, arm64_sequoia: "2d1990ad199a79ac92ffac87da260edb5b88ed6f5531cfd772e65d885e309bf0"
-    sha256 cellar: :any, arm64_sonoma:  "e7a44d53257c8917f645fadfab63cbd5df0e31b598b5a42d08dd558e736a18c7"
-    sha256 cellar: :any, sonoma:        "c0d9e9d27d68cbd19b125dcd5894f610884467fbd5dd16e154f584d86f29b21c"
-    sha256 cellar: :any, arm64_linux:   "722c08652e9570a15cd021dc5fa79c44f48c37a12d9501d0fd72b23b56756e0e"
-    sha256 cellar: :any, x86_64_linux:  "9faf260e035710109a1efeefa963f30c7ff7ab1aed405f7493d1c63c535fe7c0"
+    sha256 cellar: :any, arm64_tahoe:   "adbc3713b56e771ad13ed5045771da48c288a6ba997ba1624fcadc2d929f813c"
+    sha256 cellar: :any, arm64_sequoia: "916388176bca36af467e5520a860b9479312d07a6edb8c9ccbcf5acdd59e866d"
+    sha256 cellar: :any, arm64_sonoma:  "fbb7a010cd00fc427033955cd2f3ad0b47d08e79a8649cad25a0d42d5f3d9467"
+    sha256 cellar: :any, sonoma:        "9ab4de5910a5ce8e4c214f1d8e0f06f9afffa90a25cde58094f323069d58d8f5"
+    sha256 cellar: :any, arm64_linux:   "631a8cd65f4257e14721b6a3a072134da5b515c47753015cf693bb6143fe9dc0"
+    sha256 cellar: :any, x86_64_linux:  "19997fde1dea648a10e69d8c895a4213959618d33e8fe84ee67d2a47e988e2e0"
   end
 
   depends_on "rust" => :build
@@ -56,8 +56,8 @@ class Esphome < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
-    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
+    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
+    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
   end
 
   resource "argcomplete" do
@@ -421,8 +421,8 @@ class Esphome < Formula
   end
 
   resource "zeroconf" do
-    url "https://files.pythonhosted.org/packages/83/34/c981e760690f7b7dc91532d4d4ad21e3922887aaa425a0e7bff8067152da/zeroconf-0.149.16.tar.gz"
-    sha256 "5e6b5a3b153c2cc2a8d9e6f6f189ec5638f7d9c86fc3e88a6c53eb6863761a5e"
+    url "https://files.pythonhosted.org/packages/09/ea/34bb185645ecaa18d34e5883bffea71aa9bffbbb994634884e8b2f3ad0c4/zeroconf-0.150.0.tar.gz"
+    sha256 "a5fe7feab1de6ef5e541e0a3d07e534fd91629b813fc27281593584100f63164"
   end
 
   def install

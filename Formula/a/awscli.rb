@@ -3,19 +3,19 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://ghfast.top/https://github.com/aws/aws-cli/archive/refs/tags/2.35.12.tar.gz"
-  sha256 "b1f25812829e368be4fe05610aa60a45d7dca8012fd79c70043e25f057194e89"
+  url "https://ghfast.top/https://github.com/aws/aws-cli/archive/refs/tags/2.35.13.tar.gz"
+  sha256 "58cc7d6ba5e643579ff48f6eecb6a8bbb02e04b340f02817b94d56f58a843b11"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "278f4f16bce4dcabc349126b5e32a7f04d457f70b8be7a32c03722946a453d5e"
-    sha256 cellar: :any, arm64_sequoia: "0b9727d6615ae5f3deac6c38f98ca6895f8c5ebf1414c9fbffd237043a79b626"
-    sha256 cellar: :any, arm64_sonoma:  "f167e1813e44dcf231bd7cff0b7e38114f038d43ea00dd0335267fe157577029"
-    sha256 cellar: :any, sonoma:        "202587337f48a442963e95d837a1aafbde9a2b2d9043dd787379d5e12a5ca514"
-    sha256 cellar: :any, arm64_linux:   "2b0915908e972c96f5083125036f38d459137422ace3c85c807a6697b0ebac87"
-    sha256 cellar: :any, x86_64_linux:  "68bf6c9aa1462fb8b7ed81ec7ccdbe38285a45b1ff40e80fca9ac7105051194c"
+    sha256 cellar: :any, arm64_tahoe:   "0c19859c4eeeec3a6d1123a8dc97f84fee66f6d994d0c45b79b40035c6fb228a"
+    sha256 cellar: :any, arm64_sequoia: "3a37ae210168a782e4ebd2ba184f0245755c1a7cbfdb7a229eaf0c733ff331ce"
+    sha256 cellar: :any, arm64_sonoma:  "c481f2a0c02a41d5575bcca57cb65af1933ddbf01327ad29dd56ad1f51c4daa8"
+    sha256 cellar: :any, sonoma:        "7125702842d8828c6ea483e06d4bb06ff54d9f5059fc22c7e6268895d1d780a8"
+    sha256 cellar: :any, arm64_linux:   "c8606f07414eadc0de1df6575e9d5f29f19ab6cef1a243da0f5eb049c2f3a4be"
+    sha256 cellar: :any, x86_64_linux:  "ad6c38003d7895f50d34bdb759acb5b01dfb941625789b7ce546347f0d2e65f8"
   end
 
   depends_on "cmake" => :build

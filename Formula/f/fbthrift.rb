@@ -1,19 +1,19 @@
 class Fbthrift < Formula
   desc "Facebook's branch of Apache Thrift, including a new C++ server"
   homepage "https://github.com/facebook/fbthrift"
-  url "https://ghfast.top/https://github.com/facebook/fbthrift/archive/refs/tags/v2026.06.22.00.tar.gz"
-  sha256 "9214807e0e84bf0ce89184b4d1e6f40394eae2783a87f9b9ce6ddf3358d63061"
+  url "https://ghfast.top/https://github.com/facebook/fbthrift/archive/refs/tags/v2026.06.29.00.tar.gz"
+  sha256 "e6a1d865752c434acd35b7170bd478f4f8eb2a18239f409f7c102baecca05778"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/fbthrift.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3d532aa9216176b21dae56218d65a02abdc2459ff6ac67168fd615490d8d6c35"
-    sha256 cellar: :any, arm64_sequoia: "be06d224f76c2079c1257ecc979107d72174568c363c0d301f946f209c15d86b"
-    sha256 cellar: :any, arm64_sonoma:  "4aadae1fc79e978625a2c5d667cf7d0fb96b280aa012982b0648974bc8143fae"
-    sha256 cellar: :any, sonoma:        "ad79c4843bf311d7ed6aa64d4bae22425d4c4f08d3f49e8c531a21785302cc92"
-    sha256 cellar: :any, arm64_linux:   "ff0334aecc0de044980249631f574abc2514ed1fcbc4761b3fdbda62161c9e5c"
-    sha256 cellar: :any, x86_64_linux:  "5cd332847eb591e277d76cdb28e8e3b25d2f2f57f5e34283c1ff520f71197a3f"
+    sha256 cellar: :any, arm64_tahoe:   "87d78b355e0770594ab10da7148a9d880c9e4c8ed97595d402a700998b14d86c"
+    sha256 cellar: :any, arm64_sequoia: "dd4639b80cce312e8ad670ff7ccacd7c4da66591dd73dd1af2b32f95424c8b80"
+    sha256 cellar: :any, arm64_sonoma:  "5f43c11c02b926f3a89c0e5fa821d110572e8c3eb9963c6403fa1cc8e9583758"
+    sha256 cellar: :any, sonoma:        "5aded98598115f8c986344a01db9d4b7a8f4f93b2fa9a15ff9b6105acde0a2c8"
+    sha256 cellar: :any, arm64_linux:   "120604fcde721c98ffa32bf7f9924867c378f54ba8cd5ba1d9cf4045ce2aaf05"
+    sha256 cellar: :any, x86_64_linux:  "f295639bbaf449160150748ce609bb04f6233d79701b704a0fc20431e750bfa0"
   end
 
   depends_on "bison" => :build # Needs Bison 3.1+
@@ -36,13 +36,6 @@ class Fbthrift < Formula
   on_linux do
     depends_on "boost"
     depends_on "zlib-ng-compat"
-  end
-
-  # GCC 13 libstdc++ no longer pulls in <cstring> for std::memcpy etc.
-  # PR ref: https://github.com/facebook/fbthrift/pull/703
-  patch do
-    url "https://github.com/facebook/fbthrift/commit/988aa3612c254e528d20024b2faf02d854927900.patch?full_index=1"
-    sha256 "a57ceff413e1ee2a9b72870aba85107a168ddaf40171a94982b94b566226f598"
   end
 
   def install

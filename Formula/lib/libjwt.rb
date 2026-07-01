@@ -12,22 +12,26 @@ class Libjwt < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b586af46bba3526ae59669856ec8d782681169a5f068ec2a07347280a477aa3e"
-    sha256 cellar: :any, arm64_sequoia: "023b65d38408089268a44c4326aadd68f5973a76d9c068e9c15627d32d588699"
-    sha256 cellar: :any, arm64_sonoma:  "48f1635bc477be3196b72cc1774277450a624836937f891a07e84fb73acc7d72"
-    sha256 cellar: :any, sonoma:        "e476cba0594dd05358eaab4e1013bfc14324640aafe9434d057203d894381c33"
-    sha256 cellar: :any, arm64_linux:   "3049cfd013f9bd7e554d4d4e339e155caa6bd4abf4daa48c1b3a9c6cb77c8012"
-    sha256 cellar: :any, x86_64_linux:  "9c4716bccba03602ab2d9a22f4c93d80c6b4794147e20ae31b40e4a690531cbd"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "61773960bcdf648e9ca898014d174d06892a040c24af12c257fb5069cf2ffa13"
+    sha256 cellar: :any, arm64_sequoia: "16500fd9d18377e8abdb79126639f58a9a85098e8960710717aa14204f8e8143"
+    sha256 cellar: :any, arm64_sonoma:  "36b4976416aa72340a3713494eb505a5734bfa002057c00216eadac413ecd52a"
+    sha256 cellar: :any, sonoma:        "3bca716a62e7011009c45c2d3b1ef0b737e2060d1989c164237bc6c56bad56a3"
+    sha256 cellar: :any, arm64_linux:   "282bb91e8bb37caf6c2e99aaf1a79c8163e7459fe97b839e25716edb43cc2dc9"
+    sha256 cellar: :any, x86_64_linux:  "71911a4882b10f56d58dc36f820be5ad41c50e7ce3a2cf7cf82341a5dde8804f"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "gnutls"
   depends_on "jansson"
   depends_on "openssl@3"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DWITH_TESTS=OFF", *std_cmake_args
+    args = %W[
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DWITH_TESTS=OFF
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

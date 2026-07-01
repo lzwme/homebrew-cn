@@ -27,6 +27,7 @@ class IcannRdap < Formula
   end
 
   test do
+    mkdir ".config"
     assert_match "icann-rdap-cli #{version}", shell_output("#{bin}/rdap -V")
     assert_match "icann-rdap-cli #{version}", shell_output("#{bin}/rdap-test -V")
 

@@ -2,8 +2,8 @@ class ScalaCli < Formula
   desc "Scala language runner and build tool"
   homepage "https://scala-cli.virtuslab.org/"
   url "https://github.com/VirtusLab/scala-cli.git",
-      tag:      "v1.14.0",
-      revision: "1fee08e21c8a776d44dce3a805c5ec827f9f6f63"
+      tag:      "v1.15.0",
+      revision: "ebc1847a1b14f4904e99046d76e066e75bea1951"
   license "Apache-2.0"
 
   livecheck do
@@ -12,12 +12,12 @@ class ScalaCli < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "be3f6bb369b06fb387f81abaf9becf04d32708b8138bd65c597cacf77d504b3e"
-    sha256                               arm64_sequoia: "fa87254e092fedd882c07d7a151523612fdfc7fe03eb833cfa89898f69279ca5"
-    sha256                               arm64_sonoma:  "fc603630923b6891bfaa8c0d5e7c960b9121ba9c0e0bb470f7cd9ad24644e2bb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "97b56fb84cb686f5286351a2101a04df5fa063212d53c2a25e83ddd50591b8b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "acf8c76a40b445c62719cbff54ce6730738b9d0e8a2af7780d40428f3d8a3721"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e76e12b646dcac1a6d871cc97562761bc8e61573d4b23a524ee325e3d864a5e3"
+    sha256                               arm64_tahoe:   "3df1bff0dbbaae4b572d0d440dfa61d55a71b348077bde6b5b2ac2a7d5a569f5"
+    sha256                               arm64_sequoia: "8300115b8a4b16a6dd739e3c8c1664d9621f35ebb906d9850f7c196cd075b562"
+    sha256                               arm64_sonoma:  "e60514701d770166845d8f2101adf877c91b5ec2e8c0ec0bff550de43891cbed"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9c917de09d9162bffe375fd3fe74b2c46716ac27977af5f885a19bdefa09f138"
+    sha256 cellar: :any,                 arm64_linux:   "fff56ba26cb2b02cfcc4f349fc441a306a44f088abdc1cc5b3766ff965869368"
+    sha256 cellar: :any,                 x86_64_linux:  "64e61573584840db5e0858c97ec6f0dea71bf003973194ddc39f21ad33dc8615"
   end
 
   depends_on "openjdk@17" => [:build, :test]

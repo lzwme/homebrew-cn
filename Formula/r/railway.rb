@@ -1,18 +1,18 @@
 class Railway < Formula
   desc "Develop and deploy code with zero configuration"
   homepage "https://railway.com/"
-  url "https://ghfast.top/https://github.com/railwayapp/cli/archive/refs/tags/v5.23.2.tar.gz"
-  sha256 "5f06d6366e76579df707e588f25134f26b6c5bfe51a4487a472fc5b53338268f"
+  url "https://ghfast.top/https://github.com/railwayapp/cli/archive/refs/tags/v5.23.3.tar.gz"
+  sha256 "0be0adbbf263c141137ec304690b0ebe2e09b56ea20c00ad74e2b56b899c1b36"
   license "MIT"
   head "https://github.com/railwayapp/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93843486147a8c0360e1a35f1cd83422501d84b8542201f158f7acf68f32a369"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f8ca85b48dbca0bbabdffa5e9364b8a301af12b8fb93320a6e1ce01c90df026"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c13168d792d3fcca67f919a1d0bd72394339fb5a34befca69039c9a68a33c3bf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dd35bcddd3b8805d8728cdb903d2ae189b57e0cc5ef55fc41435e51fd5142ad9"
-    sha256 cellar: :any,                 arm64_linux:   "266e3f5e1a108b72dec26d45fd6baf1ef46bac26a876b1e8c455756414b4b073"
-    sha256 cellar: :any,                 x86_64_linux:  "681d79f583bb600038a0f156efb52b1c38d0ba662d6982bedf574a72086027b7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc98dc930a7b8f90c7c241ccd87aa56f68338444400b08e9e3c5c42c8e29be96"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff34541ca97dab840f1b974775cbcedc10f06c9db8a32691d9fe80e5fcb8c3a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f70f7e5fd0df57828802fee9e7ce1540e0bec9d179e48d7762fc22d55a7f2b7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cb6c2f085b3153696eb9aeba653ec485e0913b0188acd4a389457f34e6b88635"
+    sha256 cellar: :any,                 arm64_linux:   "6fc7bb898fcade6ff657d31d503298842ee42a8a66fa20b96c7d4eb08ed3dd1d"
+    sha256 cellar: :any,                 x86_64_linux:  "7a0f47e33084996fd7c7f04f2501b06ecfe51b2e5e8ae1f235172a466fa5b9e2"
   end
 
   depends_on "rust" => :build

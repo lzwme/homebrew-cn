@@ -1,9 +1,9 @@
 class OpensslAT3 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl-library.org"
-  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-3.6.2/openssl-3.6.2.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/openssl-3.6.2.tar.gz"
-  sha256 "aaf51a1fe064384f811daeaeb4ec4dce7340ec8bd893027eee676af31e83a04f"
+  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-3.6.3/openssl-3.6.3.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/openssl-3.6.3.tar.gz"
+  sha256 "243a86649cf6f23eeb6a2ff2456e09e5d77dd9018a54d3d96b0c6bdd6ba6c7f1"
   license "Apache-2.0"
   compatibility_version 1
 
@@ -13,17 +13,17 @@ class OpensslAT3 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "6f3029073c7e53fcf8f777bed99f25dd2992c5deed3662d739d052e6b594ba60"
-    sha256 arm64_sequoia: "2cedb13f5dc6fb1480f3cb4c92dce58d6cfef2a7bfe46026dd4a5f7305d951ac"
-    sha256 arm64_sonoma:  "aaa5f4f3d87868ecd5f5fd6967da0c305eb335a58171faba193e9c7e39fbf35c"
-    sha256 tahoe:         "cd84b6d838d68506a8e75dfb94d3d528624ba5b37b3a51000da981a1662eb2b6"
-    sha256 sequoia:       "722be745fc5be0e1d8fa653482db3fdbc84f940456fe8f59ddd0b8f3f343e686"
-    sha256 sonoma:        "a49cb0d2f17fc2866ca7a5a212e2e0d2721718e1c3d4f7c3817d9afbb64142e9"
-    sha256 arm64_linux:   "00604552976a76cb23daac747aae0ef790d3332f08ef69b043c35850f6b00304"
-    sha256 x86_64_linux:  "3a0921a100c10db526e51889e874eb963ca6c450ef8bb08af3f0d714c598d983"
+    sha256 arm64_tahoe:   "235c30e706c96896ce2be9a38032bf54f46b2aaa1e7193d3cdd73446124fc7be"
+    sha256 arm64_sequoia: "638cbf9a395d2a3e97465c99997705736e228cd4c98db254c108946236c1de29"
+    sha256 arm64_sonoma:  "3e4d9ff94169f479e221cce2a20249c3969a8ce4caec036f1c386d839b0cf5f4"
+    sha256 tahoe:         "993f3d2010d96601e842bcb2691cd02bea288993c7a48e785ff8649da8e00d07"
+    sha256 sequoia:       "b44eb2badf15edf527f584f31483993fdb9e006005d704ef6641f05aa43538b3"
+    sha256 sonoma:        "f81141067a5482b149b6c936fc4c901d19e784a1800810da2f4f7a4ddeaf839d"
+    sha256 arm64_linux:   "26d8dbc4880e3e4c95639d72c194b03eeb91b302b847680cdbb2f5c66e42e79a"
+    sha256 x86_64_linux:  "2f71820c8bec00c0e957dc5f20e3b0a651ec07b9c0540d08397b69df2478e3d5"
   end
 
-  depends_on "ca-certificates"
+  depends_on "ca-certificates" => :no_linkage
 
   on_linux do
     resource "Test::Harness" do
@@ -33,9 +33,9 @@ class OpensslAT3 < Formula
     end
 
     resource "Test::More" do
-      url "https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302219.tar.gz"
-      mirror "http://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302219.tar.gz"
-      sha256 "420600911230de768427f6646758d89b6c07977b565e5b40118e5b8440dbb30b"
+      url "https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302222.tar.gz"
+      mirror "http://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302222.tar.gz"
+      sha256 "7cf84a18d6c9450e53ae8b4de5d5fa32c9fe99f3cebbe408fe59433f19921ec2"
     end
 
     resource "ExtUtils::MakeMaker" do
@@ -49,6 +49,24 @@ class OpensslAT3 < Formula
   link_overwrite "lib/libcrypto*", "lib/libssl*"
   link_overwrite "lib/pkgconfig/libcrypto.pc", "lib/pkgconfig/libssl.pc", "lib/pkgconfig/openssl.pc"
   link_overwrite "share/doc/openssl/*", "share/man/man*/*ssl"
+
+  # Backport commits to avoid test timing failures
+  patch do
+    url "https://github.com/openssl/openssl/commit/9061e9381306a053908177aca8509c262015cdf3.patch?full_index=1"
+    sha256 "9f68feae9abfaabe65f79d2877f3dde7aa0428c669ed6af45dc193544268438e"
+  end
+  patch do
+    url "https://github.com/openssl/openssl/commit/2e2438b494e7f661be5212e4732f7fab86bf6303.patch?full_index=1"
+    sha256 "543a5998951fe540444642123398ffaa6306938be573f95c0bc915f1e6af7a36"
+  end
+  patch do
+    url "https://github.com/openssl/openssl/commit/ea598f5dd23f1d64d8952e20fcf95d9f3a21d654.patch?full_index=1"
+    sha256 "05bb323a3495d68961fa8cf7a989edfb0fa6e6dcc7ccdcc4e55a4e3f946d2762"
+  end
+  patch do
+    url "https://github.com/openssl/openssl/commit/cffb97915813aeeef58ee9a0d33c05d3d45e1fe6.patch?full_index=1"
+    sha256 "fc34b4bf106c44a89ded746e35d587d73e8485393a93b52110ba95b06717dd69"
+  end
 
   # SSLv2 died with 1.1.0, so no-ssl2 no longer required.
   # SSLv3 & zlib are off by default with 1.1.0 but this may not
@@ -108,7 +126,9 @@ class OpensslAT3 < Formula
     system "make", "install", "MANDIR=#{man}", "MANSUFFIX=ssl"
     # AF_ALG support isn't always enabled (e.g. some containers), which breaks the tests.
     # AF_ALG is a kernel feature and failures are unlikely to be issues with the formula.
-    system "make", "HARNESS_JOBS=#{ENV.make_jobs}", "test", "TESTS=-test_afalg"
+    # `test_quick_tserver` intermittently fails on CI.
+    # It has been reported upstream with no resolution in over a year, so we skip it.
+    system "make", "HARNESS_JOBS=#{ENV.make_jobs}", "test", "TESTS=-test_afalg -test_quic_tserver"
 
     # Prevent `brew` from pruning the `certs` and `private` directories.
     touch %w[certs private].map { |subdir| openssldir/subdir/".keepme" }

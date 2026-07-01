@@ -3,26 +3,26 @@ class Djlint < Formula
 
   desc "Lint & Format HTML Templates"
   homepage "https://djlint.com"
-  url "https://files.pythonhosted.org/packages/63/6b/db4829f972157ef45a04563f3360d1bd6425c040c4cb488646755bbc1387/djlint-1.39.4.tar.gz"
-  sha256 "e9ea9b4558785a1193268ad06ac5766647613b3733c00fda5c20a479e031bdbd"
+  url "https://files.pythonhosted.org/packages/b1/64/5de9a070a4eb90fe3e590d5d2feb5d8fc5cbc1a4982b33e4c083a04ef321/djlint-1.39.5.tar.gz"
+  sha256 "07a74deb6d5e132723392635e2fe19de0546ac92e252ccddbe54d417862346e8"
   license "GPL-3.0-or-later"
   head "https://github.com/djlint/djLint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fd20ddf0b99432aa28baecb54b2ca642c78f76c1e3c8b66db457a6000aa26042"
-    sha256 cellar: :any, arm64_sequoia: "1208fe6a50ffb68ecb869ed23493faf06074876b324948abcb24040e50a84c14"
-    sha256 cellar: :any, arm64_sonoma:  "d212d5a02ed0914d81419aaeca1db98a51f78ec03470fa71ab893c2a908c1c90"
-    sha256 cellar: :any, sonoma:        "d88764e8c4beddb75a5929c7e388e4b9b5e77433ad5bcc93767ecc47ee6ec69d"
-    sha256 cellar: :any, arm64_linux:   "c5ac3e572729c834adefb3c9801f40acaafa4dddcd6cfbcec493fdf4d8eff45e"
-    sha256 cellar: :any, x86_64_linux:  "bbc7a60b56b88013ac8ebcafa2364bebb07a3d15cd957967412c16157099ae68"
+    sha256 cellar: :any, arm64_tahoe:   "747968fe3feba8588d18268c381c170beca7fdef9a05a29adeed33c0ebdc26df"
+    sha256 cellar: :any, arm64_sequoia: "f4c7f823bf8d7a882402f26c62e9cc4e453c71c885e96ee0fc95ef9927009514"
+    sha256 cellar: :any, arm64_sonoma:  "d7168636dc463e66b9125732992df0b6f584c572e36d8eca8cc0348175442cc7"
+    sha256 cellar: :any, sonoma:        "dc003d0561dade28584b402cf6cd5dfdb5d738883af35435582ab2a5fc1c4b8d"
+    sha256 cellar: :any, arm64_linux:   "9dd27d04c335c7d3aba46672a5eaef49d9876789d35dde6d957aa4d55bbec864"
+    sha256 cellar: :any, x86_64_linux:  "a27ff0cde84edb5bb8dccfd0aea11c2cb80450e4c1fc890e651a4c3959d014af"
   end
 
   depends_on "libyaml"
   depends_on "python@3.14"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "cssbeautifier" do
@@ -56,8 +56,8 @@ class Djlint < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/dc/0e/49aee608ad09480e7fd276898c99ec6192985fa331abe4eb3a986094490b/regex-2026.5.9.tar.gz"
-    sha256 "a8234aa23ec39894bfe4a3f1b85616a7032481964a13ac6fc9f10de4f6fca270"
+    url "https://files.pythonhosted.org/packages/f1/05/e4f219230e11e774a6c9987d2ab0d0c6b8573e13a17e143d0015bee710ef/regex-2026.6.28.tar.gz"
+    sha256 "3cb4b6c5cb3060cc31efdc1fbb27c25fb9b29044afd87e40601a1c4d9db54342"
   end
 
   def install

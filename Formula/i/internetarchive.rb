@@ -3,13 +3,13 @@ class Internetarchive < Formula
 
   desc "Python wrapper for the various Internet Archive APIs"
   homepage "https://github.com/jjjake/internetarchive"
-  url "https://files.pythonhosted.org/packages/f0/5e/d973864fff7092f9a6cf3ca449228ba8c42baf0b23a9dd302d2528ec07e9/internetarchive-5.9.0.tar.gz"
-  sha256 "91f3e17217e744d8658848051454f87c8f2431afc450e0491ed4f490b7e37fba"
+  url "https://files.pythonhosted.org/packages/b0/95/5d830762f4519bb932401953d4735697a196a48159d2be30c88343023244/internetarchive-5.10.1.tar.gz"
+  sha256 "7098b34d80ab7cd305d36999185415463207aa15b22ad8686bac06ed39037cae"
   license "AGPL-3.0-or-later"
   head "https://github.com/jjjake/internetarchive.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d37c9c50c4e2c2b17b98a05799e07e4aa8b8a2151d5b379900d1aad4e06f5e59"
+    sha256 cellar: :any_skip_relocation, all: "f479f1fe325d36e2de7191c7d463e9aa0145c45225e106e85f31fd62d9a765ea"
   end
 
   depends_on "certifi"
@@ -23,8 +23,8 @@ class Internetarchive < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
-    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "jsonpatch" do
@@ -43,8 +43,8 @@ class Internetarchive < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/09/a9/6ba95a270c6f1fbcd8dac228323f2777d886cb206987444e4bce66338dd4/tqdm-4.67.3.tar.gz"
-    sha256 "7d825f03f89244ef73f1d4ce193cb1774a8179fd96f31d7e1dcde62092b960bb"
+    url "https://files.pythonhosted.org/packages/87/d7/0535a28b1f5f24f6612fb3ff1e89fb1a8d160fee0f976e0aa6803862134b/tqdm-4.68.3.tar.gz"
+    sha256 "00dfa48452b6b6cfae3dd9885636c23d3422d1ec97c66d96818cbd5e0821d482"
   end
 
   resource "urllib3" do

@@ -1,18 +1,18 @@
 class SwiftOutdated < Formula
   desc "Check for outdated Swift package manager dependencies"
   homepage "https://github.com/kiliankoe/swift-outdated"
-  url "https://ghfast.top/https://github.com/kiliankoe/swift-outdated/archive/refs/tags/0.14.0.tar.gz"
-  sha256 "15551cf280b6262a573f4818d641aa8c526a1558efb2b40f4fc20e7805481a90"
+  url "https://ghfast.top/https://github.com/kiliankoe/swift-outdated/archive/refs/tags/0.15.0.tar.gz"
+  sha256 "1b44f8be65f80dbdf6de561955c046cfec761eb7bb8ca49415d4a4c0885540b3"
   license "MIT"
   head "https://github.com/kiliankoe/swift-outdated.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b4fdc3cdf8eab0dcfe662d594f4357c4e18ea13db4a9bcd982df83abb91f21ca"
-    sha256 cellar: :any,                 arm64_sequoia: "7b0a591a0b8d2198ab01ef5c3f86e021f86626d05bb8113473f4af4de686825b"
-    sha256 cellar: :any,                 arm64_sonoma:  "1f72cb70711b3a789f3b9cfb49a9eafa2771aaabb5cc0ba80ddf7ff2d48a7718"
-    sha256 cellar: :any,                 sonoma:        "8360393c9042d301845237c9aaa06574cff160ab580f01898e0b40a0498d0f2c"
-    sha256 cellar: :any,                 arm64_linux:   "1ee904df97a63a4feb1d0aba9ec6a7471bb3b4663bf7d0d4d7691c504a328860"
-    sha256 cellar: :any,                 x86_64_linux:  "515e7204de302fa9bdf4960ac64880810fd258acdfe0f0e1693aac64405d4598"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fb313eeadd4e164b7e8a571e32e75a70c37a399c47eed6cd4970ef4fdfc5ebce"
+    sha256 cellar: :any,                 arm64_sequoia: "6d0cc07ebcb69b57b44e1f3c6af29657c4b65a88aadb9d4d6360e1f444dd8319"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a649b0896a383a43f629d72d2f8ba2e7056be400b7fa4a618f4e6cfda1bb01d"
+    sha256 cellar: :any,                 sonoma:        "1cb7157a259d05c6087c27cd4cb1b639f5b7f9dc55de9befed8a52562878a1a6"
+    sha256 cellar: :any,                 arm64_linux:   "27b5d0fbe1e2c087fef8e38151b20680580d89b22db3c7ed10b19685c2f8062b"
+    sha256 cellar: :any,                 x86_64_linux:  "03418c47e8dcef38a0d88ac6549d12a98ffaabc34988317fea62a4dae9576ca5"
   end
 
   uses_from_macos "swift" => :build, since: :tahoe # swift 6.2+

@@ -1,18 +1,18 @@
 class Blocky < Formula
   desc "Fast and lightweight DNS proxy as ad-blocker for local network"
   homepage "https://0xerr0r.github.io/blocky/"
-  url "https://ghfast.top/https://github.com/0xerr0r/blocky/archive/refs/tags/v0.32.1.tar.gz"
-  sha256 "c61ef1b8e1ea194602be1cb617c8e6896f3a64c1226f877f20dd23bba46d695f"
+  url "https://ghfast.top/https://github.com/0xerr0r/blocky/archive/refs/tags/v0.33.0.tar.gz"
+  sha256 "b51b5a23727c1f74f976204524c77d571329439eb88c9a718b92916c16c93ca7"
   license "Apache-2.0"
   head "https://github.com/0xerr0r/blocky.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f7a545548e5620a05613d6cbd23b3df9386013f7afdf99053b40c9b2bc1b174"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "668e7efdd28d86d098b3c8f00b8dbfb74fe636bdfb27567159d127cfc18ad5ff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b4ca26b81557fb1ac33f7dfd0355b5309d593871f94da2c3a57540f729b0b59f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f2361d210364d4c340903a673f7bd675ddbb5aa78126181269d6dc7e4f842488"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b5f5a869a9f0e48bafa72f8b495160c5c08f8a345c9d883fd2efeb2c79fe6b9"
-    sha256 cellar: :any,                 x86_64_linux:  "d6b6c68c0544fc7c658d9d96d8a2716dffc4a1fdd1e544fd7e3cd3d89eb5980f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83a890a2c9ffeab8d71c99e9dadb4f7ecf5445fffe665c35a6b4fa4b5970dac3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8230ac7a9343edf2966cf52a1cc0d95738214e41a84fc270fcb83870ba73f266"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5093e8cd1ef61857646dd3076ed5497cee1fcf6cbba4c98bc8ec7b01b7e528df"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8c272fd2d366cbd9b552c9a18895413367ec2d5e2133eeeedf58692cf13990aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98d8883a392f68ad7eea23bd84c99f369e1432147ab9d0822f38de7d572c1694"
+    sha256 cellar: :any,                 x86_64_linux:  "4e1382de87d66c7d39a036f1ee0e71a00230169c41dadae8efeb6d3f04aa2018"
   end
 
   depends_on "go" => :build

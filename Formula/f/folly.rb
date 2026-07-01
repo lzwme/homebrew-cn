@@ -1,19 +1,19 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
   homepage "https://github.com/facebook/folly"
-  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2026.06.22.00.tar.gz"
-  sha256 "3bcfd5a4ba0065d24632f38e2286c73173f0b5a5bdfd1a21e278ef8e9ebe8363"
+  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2026.06.29.00.tar.gz"
+  sha256 "75520ee4a0e6aae4aa0c59ff61c908398ded8394ede95d038d20ce5994947567"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "61712993a1aba3af68bb595329f13e14034bba27ca15af161e2833875d4f889a"
-    sha256 cellar: :any, arm64_sequoia: "4a969acb9c39524c9b3e720d330d05a4c3e730767a17b11c090f9d0d50e2de8d"
-    sha256 cellar: :any, arm64_sonoma:  "de367cdd0517d1c36a4983ccd7ca9baac8c6c9f7dd545dab177fb55746991b91"
-    sha256 cellar: :any, sonoma:        "bb3f3efbd9708cb181725638627add08a91d4badb8c078511bdf609f4c15c30a"
-    sha256 cellar: :any, arm64_linux:   "d6f040ac8b69abbad4182f70a369312d3f8c6c53d26d2db8c1c8f80f669d67da"
-    sha256 cellar: :any, x86_64_linux:  "9c6321e3255c3505c1f3d67ea1139a091f4f6883cdba18f115bca096fd88b8da"
+    sha256 cellar: :any, arm64_tahoe:   "419848acd6b7406ad3566b5c4af061dea1e5c239ef5073190c3eeb7d9a9eba08"
+    sha256 cellar: :any, arm64_sequoia: "4df2d8d7937f4ae1e40f4809ffc4b46d1ad1f25bbc186062f973394a2eb76e16"
+    sha256 cellar: :any, arm64_sonoma:  "e5ea242fcbfc95a9b3d47d38af47e2bbe65404cc7f01742315dd21f757cddee5"
+    sha256 cellar: :any, sonoma:        "d71e99616af3639f95ec5863485745922848ad5ac72221818c19629a3711595a"
+    sha256 cellar: :any, arm64_linux:   "5e5b74699130d9eb81eb197d50dea8a5f5986cf840b2497c1f8f33800c1e1e4d"
+    sha256 cellar: :any, x86_64_linux:  "94bc3ae0e42d94870bca83dbb22c5b63bd77f6a4a4a366dbbc035ea9267b5dd1"
   end
 
   depends_on "cmake" => :build
@@ -39,11 +39,6 @@ class Folly < Formula
   end
 
   # Fix fmt 12.2 compat: https://github.com/facebook/folly/pull/2661
-  patch do
-    url "https://github.com/facebook/folly/commit/4091b8d53a07512d9f8ab2b42d2dd0fddef34e35.patch?full_index=1"
-    sha256 "52a2ed7475ba76e54cd902ae035cbc457af565ff0c2cc70453a58fc01b3bc7e9"
-  end
-
   patch do
     url "https://github.com/facebook/folly/commit/dd2a73e8a3b7a9e044918507d52a780cb181f63d.patch?full_index=1"
     sha256 "3b6138a50d31d785817058df5009343b35d52a8386d494e8e5f62202efcc419e"

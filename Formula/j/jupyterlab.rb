@@ -3,8 +3,8 @@ class Jupyterlab < Formula
 
   desc "Interactive environments for writing and running code"
   homepage "https://jupyter.org/"
-  url "https://files.pythonhosted.org/packages/f8/3c/1ebd737b860cdbe61eed71536d06aab4e1781fbdcf07ecd5a1afe05b8adf/jupyterlab-4.6.0.tar.gz"
-  sha256 "6a8b88f2aae7ed4d012c634fc957c1a27f3aa217c32f0ced0175fac9ee17f9e5"
+  url "https://files.pythonhosted.org/packages/bc/2a/d6af53bfd45a43a5bfe7e40ba47ee7a8921a807daf4bb708e3a295bbb54d/jupyterlab-4.6.1.tar.gz"
+  sha256 "75315982ed28427edaa62bb85eadb5105e4043a757643c910efd787fe6ed0837"
   license all_of: [
     "BSD-3-Clause",
     "MIT", # semver.py
@@ -12,12 +12,12 @@ class Jupyterlab < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2ebbcdb3b0e4140fc233656a93689f66b42408705da726477fc26317255b4bdd"
-    sha256 cellar: :any, arm64_sequoia: "273ce85e8f2d281d36060482d2954fc900c61e3a7adbb0f9596981f5d2edb489"
-    sha256 cellar: :any, arm64_sonoma:  "8a5b80a46f8de5eaa5ac2aab48719b142ffa0d5641ae394e5cfb49d840ac33be"
-    sha256 cellar: :any, sonoma:        "520bdbbeee5e4603ec4913131c25ddf38cf7ac4550381d0be69450e49d83f770"
-    sha256 cellar: :any, arm64_linux:   "daa113bc36792c954c087a573b99035ac8b2ee7e2a10d9adb4187657475e9767"
-    sha256 cellar: :any, x86_64_linux:  "af88a360529c57b334e47d25876ce38d09a2fce2d2fdf185a31052130d4a3b54"
+    sha256 cellar: :any, arm64_tahoe:   "5fc967fe114075cde8efdcb3bbaece3038fe972b9783e7fb38631536143342ab"
+    sha256 cellar: :any, arm64_sequoia: "8fcf2674186d0eca72881fe3866d93101e9031344738f9cb907a93f6b178ec6f"
+    sha256 cellar: :any, arm64_sonoma:  "cb258ff3c033348dd4b7d5f7fd2476dd4caf935c014ed26b1047aaa08d7c14b5"
+    sha256 cellar: :any, sonoma:        "629ce7894350f6ea32ec15d4ab78c532f5a8ece440a1cc62d932fff5bcd7f61b"
+    sha256 cellar: :any, arm64_linux:   "067be56c1b86b65c34bd25d3dd1ea72d07095625d676bca9caa07b107c417673"
+    sha256 cellar: :any, x86_64_linux:  "ddc94389a60e79e4e6b29cedf518b9656290e53bbc2cabcf4727a37976c68054"
   end
 
   depends_on "cmake" => :build # for ipykernel
@@ -37,8 +37,8 @@ class Jupyterlab < Formula
                 exclude_packages: %w[certifi cffi rpds-py]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
-    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
+    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
+    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
   end
 
   resource "appnope" do
@@ -172,8 +172,8 @@ class Jupyterlab < Formula
   end
 
   resource "ipython" do
-    url "https://files.pythonhosted.org/packages/e2/23/3a27530575643c8bb7bfc757a28e2e7ef80092afbf59a2bc5716320b6602/ipython-9.14.1.tar.gz"
-    sha256 "f913bf74df06d458e46ced84ca506c23797590d594b236fe60b14df213291e7b"
+    url "https://files.pythonhosted.org/packages/53/59/165d3b4d75cc34add3122c4417ecb229085140ac573103c223cd01dde96f/ipython-9.15.0.tar.gz"
+    sha256 "da2819ce2aa83135257df830660b1176d986c3d2876db24df01974fa955b2756"
   end
 
   resource "ipython-pygments-lexers" do
@@ -197,8 +197,8 @@ class Jupyterlab < Formula
   end
 
   resource "json5" do
-    url "https://files.pythonhosted.org/packages/9c/4b/6f8906aaf67d501e259b0adab4d312945bb7211e8b8d4dcc77c92320edaa/json5-0.14.0.tar.gz"
-    sha256 "b3f492fad9f6cdbced8b7d40b28b9b1c9701c5f561bef0d33b81c2ff433fefcb"
+    url "https://files.pythonhosted.org/packages/e4/7d/05c46a96a78147ae3bf99c2f4169ce144a70220b8d6fcd56f6ec368b8ce9/json5-0.15.0.tar.gz"
+    sha256 "7424d1f1eb1d56da6e3d70643f53619862b4ce81440bdb8ecfd6f875e5ba4a71"
   end
 
   resource "jsonpointer" do
@@ -282,8 +282,8 @@ class Jupyterlab < Formula
   end
 
   resource "mistune" do
-    url "https://files.pythonhosted.org/packages/ca/84/620cc3f7e3adf6f5067e10f4dbae71295d8f9e16d5d3f9ef97c40f2f592c/mistune-3.2.1.tar.gz"
-    sha256 "7c8e5501d38bac1582e067e46c8343f17d57ea1aaa735823f3aba1fd59c88a28"
+    url "https://files.pythonhosted.org/packages/04/5f/007786743f962224423753b78f7d7acb0f2ade46d1604f2e0fa2bedf9020/mistune-3.3.2.tar.gz"
+    sha256 "e12ee4f1e74336e91aa1141e35f913b337c40bdf7c0cc49f21fb853a27e8b62f"
   end
 
   resource "nbclient" do

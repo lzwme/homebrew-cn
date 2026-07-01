@@ -4,10 +4,10 @@ class Samba < Formula
   # option. The shared folder appears in the guest as "\\10.0.2.4\qemu".
   desc "SMB/CIFS file, print, and login server for UNIX"
   homepage "https://www.samba.org/"
-  url "https://download.samba.org/pub/samba/stable/samba-4.24.3.tar.gz"
-  sha256 "4a5e0ed1ea192b798c873d9957c50a5767c10c2767cccb00d56ecc427e94f8e9"
+  url "https://download.samba.org/pub/samba/stable/samba-4.24.4.tar.gz"
+  sha256 "df2c51ab4361ec626ab9988e5946efcca8465bc7afae834291d5558468265ff8"
   license "GPL-3.0-or-later"
-  compatibility_version 1
+  compatibility_version 2
 
   livecheck do
     url "https://www.samba.org/samba/download/"
@@ -15,12 +15,12 @@ class Samba < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e9bc393d2c9ac4d3a5fddc9e9a74c9becfb93dfa22a9a1e045315dbb2dd2a06a"
-    sha256 arm64_sequoia: "8029278180944f0a9c9b5bb657431002b254c4b3f8a5e23a087eec08ecc95f65"
-    sha256 arm64_sonoma:  "d314a7839f6c3c8475293fed884ac03e213a32234cace0733528cfe0f788560e"
-    sha256 sonoma:        "861cb0725349028a28a1e3bc4d4ff3e803102aa17108018e7acf4c0e13846963"
-    sha256 arm64_linux:   "62fe2e7677227829f5b97c376779fdb97c0b2a8518ced63920e37f524b4e9b47"
-    sha256 x86_64_linux:  "87ce6ed75cc1857f5df23e5226d4cfa35be6982cb189470d89cf7fead6deca4e"
+    sha256 arm64_tahoe:   "020aa14f10556645df8a245efe04d5b0cfbe500775ef44e917128e1e6ef01ecc"
+    sha256 arm64_sequoia: "aa5b0d49e67a434004c08cc4d8193d518a6d6e471ad3acfdac8d1bc0116f1617"
+    sha256 arm64_sonoma:  "7fc12352b4930c666a5d7aa7f1c093e7944f6f68583f8e024426e9881852c1c8"
+    sha256 sonoma:        "8c4d6e86481998d673e38a970f7e9bd172c60f0bd247f9a5ff639f7f28bfe011"
+    sha256 arm64_linux:   "d23f699d3852538106abfd5ccb5e829f265ea0a2f73e9b21e1993c6528b118dc"
+    sha256 x86_64_linux:  "f77689d5460341a5c86d20bd39a6eac65e93976b58c30bd654556cffe5390249"
   end
 
   depends_on "bison" => :build
@@ -117,6 +117,7 @@ class Samba < Formula
            "--with-shared-modules=!vfs_snapper",
            "--with-system-mitkrb5",
            "--prefix=#{prefix}",
+           "--libdir=#{lib}",
            "--sysconfdir=#{etc}",
            "--localstatedir=#{var}"
     system "make"

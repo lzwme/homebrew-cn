@@ -1,17 +1,17 @@
 class Tmuxai < Formula
   desc "AI-powered, non-intrusive terminal assistant"
   homepage "https://tmuxai.dev/"
-  url "https://ghfast.top/https://github.com/BoringDystopiaDevelopment/tmuxai/archive/refs/tags/v2.2.2.tar.gz"
-  sha256 "3d0a4fe8634831f4c6ede94cabfacca79f49171936469913a527f6c27bed6950"
+  url "https://ghfast.top/https://github.com/BoringDystopiaDevelopment/tmuxai/archive/refs/tags/v2.3.0.tar.gz"
+  sha256 "40e2027a162003f10b6f428449b33a09855c8181b989283f59b8645b7808f385"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1f0725f87321034eddbfb9ae4a3d25bdf640b690641b985fef1c97ba3a2c268"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1f0725f87321034eddbfb9ae4a3d25bdf640b690641b985fef1c97ba3a2c268"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1f0725f87321034eddbfb9ae4a3d25bdf640b690641b985fef1c97ba3a2c268"
-    sha256 cellar: :any_skip_relocation, sonoma:        "983f393b21594192de4fa414a9695866cd712f8afe032df25e306afad93f4535"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "28d556af70a1d4f9ce46eddddd56dd49d6f50824d705982d3a9da8a0f5fb1da2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfde1316ccbfb5a1217ca98355d4d405fea87aa2374bcdf6d54e6285902bcb32"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb9253da71b8ae6fdb9aba4e43248d24b8a979a68ef82c3021ed35b05e002948"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb9253da71b8ae6fdb9aba4e43248d24b8a979a68ef82c3021ed35b05e002948"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb9253da71b8ae6fdb9aba4e43248d24b8a979a68ef82c3021ed35b05e002948"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f22fb71c776cb6c6d9cc8e070e61794a1084bec4193b6a87a816524febc1be32"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "293a33de8e58f38a695edb8271f38f97e945cd9373d89dbdbe0ff9a0ec11f91b"
+    sha256 cellar: :any,                 x86_64_linux:  "38b5316876f61e36ab5aaa2c924724883ab2703e495389461f6bd4dada8a0650"
   end
 
   depends_on "go" => :build

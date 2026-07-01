@@ -2,18 +2,18 @@ class KeepSorted < Formula
   desc "Language-agnostic formatter that sorts selected lines"
   homepage "https://github.com/google/keep-sorted"
   url "https://github.com/google/keep-sorted.git",
-      tag:      "v0.9.0",
-      revision: "38613f5110f7fb5088d9ad68722e4018a11bc039"
+      tag:      "v0.9.1",
+      revision: "339d935575ef7d92f2c9b4df9ce4b724d73c9201"
   license "Apache-2.0"
   head "https://github.com/google/keep-sorted.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f74589767981a2f854a6232e6a06255809ba039b3a236328f2cbac6746ac9e75"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f74589767981a2f854a6232e6a06255809ba039b3a236328f2cbac6746ac9e75"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f74589767981a2f854a6232e6a06255809ba039b3a236328f2cbac6746ac9e75"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2dc049142b4f1919a7a9cb8b978ff8187dc0fc905f50fd737eccdb74da507581"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb31d33809850cb46ac166d05b852ac77b475b6ea3f7d3e42b2513681f0fdf20"
-    sha256 cellar: :any,                 x86_64_linux:  "d02f4540fa0b53feaa7f2508fca7718c3f0881cf3e48f8edde9b8dfbc746755d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a6cfff3839061e36c261be6510b7112928d521921b1aab39b0287623f6180c8c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6cfff3839061e36c261be6510b7112928d521921b1aab39b0287623f6180c8c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6cfff3839061e36c261be6510b7112928d521921b1aab39b0287623f6180c8c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "610d9d2727c3ccaef05188f4b0f59f75397c37571c2ae702fe33417c93a558a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db7219a97d5466898e988dcced21469a44821ae3df1da2442ae21ea74ff57594"
+    sha256 cellar: :any,                 x86_64_linux:  "ff08c99b116720b1ea0d0c74b471997fe872acfe148787f7afa35ea8abfc2d8f"
   end
 
   depends_on "go" => :build
