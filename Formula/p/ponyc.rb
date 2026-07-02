@@ -2,17 +2,17 @@ class Ponyc < Formula
   desc "Object-oriented, actor-model, capabilities-secure programming language"
   homepage "https://www.ponylang.io/"
   url "https://github.com/ponylang/ponyc.git",
-      tag:      "0.64.0",
-      revision: "f5fddde63d8af22d0b39c4b3d417f34d3f7594ef"
+      tag:      "0.66.0",
+      revision: "e7d0d0bcea543f8978ea7ad7987d63f03908de50"
   license "BSD-2-Clause"
 
   bottle do
-    sha256                               arm64_tahoe:   "a07bd9848e5eda6ac8f5a44b57540d1914abacc50346aff77e3884c4cfc6332e"
-    sha256                               arm64_sequoia: "87bc469dc9d5e6cc834dbbba64de11122a03f03a8d2c949dcdb4f6c5f1c121c6"
-    sha256                               arm64_sonoma:  "e42cd8973f41fd3d450a3e4c656a2f0b86285cfc5304a9cb61a347ace2bedf93"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e7da7ae711d31f36da329e5a561f60cd28f060bb55ceb09f19c04c7499ba83b0"
-    sha256 cellar: :any,                 arm64_linux:   "2a2e95c431742a0d6bcb715872c0abcad10cf32ff7204ed723ef41f2efc24582"
-    sha256 cellar: :any,                 x86_64_linux:  "4ba80ae5564f87a10712ea1216de2dffe575fcb74c36d900171fa0ba19eddc7a"
+    sha256                               arm64_tahoe:   "4f07eecf15dda3351087de24f0fec39bac44170580434ce071ee972da52fd77b"
+    sha256                               arm64_sequoia: "cfdc631a3af23a6a7aa52be789e842b638b42dd967ae1a60b10a9034ec5ef59a"
+    sha256                               arm64_sonoma:  "fdcd419f7bec05b26a020587819c7c79b371c5d3eb7b48e589f32c3d04bdf6e3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d8822d3890e10a103a77054b559ddcfc2464f4c37a9407a2cccd6a5bf284fe8e"
+    sha256 cellar: :any,                 arm64_linux:   "7c81499a7bb7765442fff906fb424bff65c927662e2905a4847030c96402aea8"
+    sha256 cellar: :any,                 x86_64_linux:  "e13867f9f713689827299ca378a6cb925dc73c49e309406bbe12a844d7682080"
   end
 
   depends_on "cmake" => :build
@@ -21,6 +21,12 @@ class Ponyc < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Backport to fix shadowing system headers
+  patch do
+    url "https://github.com/ponylang/ponyc/commit/bae6fbbf9e6e8c55ef7614999e4160f553359de6.patch?full_index=1"
+    sha256 "dbe4bc81eb02958da8d5a500a5c28c0bf9ec923186bc557a230fdeadc2139914"
   end
 
   def install

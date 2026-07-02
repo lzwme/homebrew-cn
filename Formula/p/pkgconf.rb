@@ -29,17 +29,22 @@ class Pkgconf < Formula
   head do
     url "https://github.com/pkgconf/pkgconf.git", branch: "master"
 
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
+    # Using a resource to avoiding dependency tree from brew `meson` or `muon`.
+    # The version should align to available HTTP mirror rather than latest.
+    resource "muon" do
+      url "https://muon.build/releases/v0.5.0/muon-v0.5.0.tar.gz"
+      mirror "https://deb.debian.org/debian/pool/main/m/muon-meson/muon-meson_0.5.0.orig.tar.gz"
+      mirror "http://deb.debian.org/debian/pool/main/m/muon-meson/muon-meson_0.5.0.orig.tar.gz"
+      sha256 "24aa4d29ed272893f6e6d355b1ec4ef20647438454e88161bdb9defd7c6faf77"
+
+      livecheck do
+        url "https://deb.debian.org/debian/pool/main/m/muon-meson/"
+        regex(/href=.*?muon-meson[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
+      end
+    end
   end
 
   def install
-    if build.head?
-      ENV["LIBTOOLIZE"] = "glibtoolize"
-      system "./autogen.sh"
-    end
-
     pc_path = %W[
       #{HOMEBREW_PREFIX}/lib/pkgconfig
       #{HOMEBREW_PREFIX}/share/pkgconfig
@@ -54,16 +59,38 @@ class Pkgconf < Formula
       ["#{HOMEBREW_LIBRARY}/Homebrew/os/linux/pkgconfig"]
     end
 
-    args = %W[
-      --disable-silent-rules
-      --with-pkg-config-dir=#{pc_path.uniq.join(File::PATH_SEPARATOR)}
-      --with-system-includedir=#{MacOS.sdk_path if OS.mac?}/usr/include
-      --with-system-libdir=/usr/lib
-    ]
+    if build.head?
+      # Autotools build is planned for removal in pkgconf 3.1
+      resource("muon").stage do
+        args = ["-Dauto_features=disabled"]
+        system "./bootstrap.sh", "build"
+        system "build/muon-bootstrap", "meson", "setup", "build", *args, *std_meson_args(prefix: buildpath/"muon")
+        system "build/muon-bootstrap", "-C", "build", "samu"
+        system "build/muon", "-C", "build", "install"
+        ENV.prepend_path "PATH", buildpath/"muon/bin"
+      end
 
-    system "./configure", *args, *std_configure_args
-    system "make"
-    system "make", "install"
+      args = %W[
+        -Dwith-pkg-config-dir=#{pc_path.uniq.join(File::PATH_SEPARATOR)}
+        -Dwith-system-includedir=#{MacOS.sdk_path if OS.mac?}/usr/include
+        -Dwith-system-libdir=/usr/lib
+      ]
+
+      system "muon", "meson", "setup", "build", *args, *std_meson_args
+      system "muon", "-C", "build", "samu"
+      system "muon", "-C", "build", "install"
+    else
+      args = %W[
+        --disable-silent-rules
+        --with-pkg-config-dir=#{pc_path.uniq.join(File::PATH_SEPARATOR)}
+        --with-system-includedir=#{MacOS.sdk_path if OS.mac?}/usr/include
+        --with-system-libdir=/usr/lib
+      ]
+
+      system "./configure", *args, *std_configure_args
+      system "make"
+      system "make", "install"
+    end
 
     # Make `pkgconf` a drop-in replacement for `pkg-config` by adding symlink[^1].
     # Similar to Debian[^2], Fedora, ArchLinux and MacPorts.

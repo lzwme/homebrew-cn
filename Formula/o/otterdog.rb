@@ -3,19 +3,18 @@ class Otterdog < Formula
 
   desc "Manage GitHub organizations at scale using an infrastructure as code approach"
   homepage "https://otterdog.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/2f/b7/719e98d5c7df7e260fa0914eda32c0f7b824a64b9e4a9f963844b02ddeb4/otterdog-1.3.3.tar.gz"
-  sha256 "23c76f484d12279ab824faa0bd6abd0ee53baeb6f64995a4697223e3efa5df8f"
+  url "https://files.pythonhosted.org/packages/d3/31/f62e55c75c0efe2d9d5127f2ad2efcc6876e2ca3a0003c13ddbabd4ac11e/otterdog-1.3.4.tar.gz"
+  sha256 "0fab4cb270d890f110190e87ad04781e969fff79b19fa93426915e9097255997"
   license "EPL-2.0"
-  revision 2
   head "https://github.com/eclipse-csi/otterdog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "163ba810f2dd770d1212cf2834c52d615fafb45cf47682fae2df64c735c2440d"
-    sha256 cellar: :any, arm64_sequoia: "cc25e7046a58f256ef3761ffa2546c85d09a46e84b5c0b1a75b9a427f57d8e91"
-    sha256 cellar: :any, arm64_sonoma:  "5e6a393199754cd4359885ebf449ddabd333381e93075f4f4743c5a8753f5f19"
-    sha256 cellar: :any, sonoma:        "0c522b699943408e35ee4d8d4b513dd6f042ed619ae6b2db497fdf86d4aa769a"
-    sha256 cellar: :any, arm64_linux:   "9c5be9ea0bf20430c06e6a0c56142f2914bf8a718caf82368a9ef4a2acb33eaa"
-    sha256 cellar: :any, x86_64_linux:  "f951d359828aba6f99e5b92bf9b6cf95cd77d9d1544f692b72f40e2ecf4520d6"
+    sha256 cellar: :any, arm64_tahoe:   "d268960e7eaadf335ba20bca1bb5ce1b05c2cf3e063f26ac2baaa32d5569875a"
+    sha256 cellar: :any, arm64_sequoia: "c886d30709a4960cdf4353ba9c13a9caaf6252ac21acac696a6be33a742ff9bb"
+    sha256 cellar: :any, arm64_sonoma:  "2799763d580f041f190029a759bf5e5eac23cd7e6d2fb830573aa8deeb5d06cb"
+    sha256 cellar: :any, sonoma:        "3b181033db5c33b358e32d0812074bb90bcd8cfba014dd399642515c132600bb"
+    sha256 cellar: :any, arm64_linux:   "03d2053ea73debe3f8b5a19bfc079e8b4df2201324a30fdba9e752dde90d92c4"
+    sha256 cellar: :any, x86_64_linux:  "30bdc6e5df50ed33a44e48d9cb2b03d3052db6743688ff470b3d4a978eefafea"
   end
 
   depends_on "rust" => :build # for rjsonnet
@@ -84,13 +83,13 @@ class Otterdog < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
+    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
   end
 
   resource "asyncer" do
-    url "https://files.pythonhosted.org/packages/d2/4c/62b6044679e08788322bbd0dee5b487a6f7f60bb4e2bd45617ff0d94d1e3/asyncer-0.0.17.tar.gz"
-    sha256 "8a41e185e7ec2ecd583c269d72907a0f9f832e744b6c7474aeb21e349c4becf4"
+    url "https://files.pythonhosted.org/packages/95/e3/a9de31596d386b8e76e17c609e20775c6a414cff95d025551aca3c63f282/asyncer-0.0.18.tar.gz"
+    sha256 "dc233a466f85f1bc17dafcdb861b06291b64777a8d9076f7884467cbb66f95ef"
   end
 
   resource "attrs" do
@@ -109,8 +108,8 @@ class Otterdog < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "frozenlist" do
@@ -129,8 +128,8 @@ class Otterdog < Formula
   end
 
   resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/6d/6e/802acd792aebb2256fbbee8cacf2727faaeb6f240ac11008f09eae4414bc/greenlet-3.5.1.tar.gz"
-    sha256 "5a56aeb7d5d9cc4b3a735efb5095bd4b4f6f0e4f93e5ca876d0e2315137b7829"
+    url "https://files.pythonhosted.org/packages/e2/f1/fbbfef6af0bad0548f09bc28948ea3c275b4edb19e17fc5ca9900a6a634d/greenlet-3.5.3.tar.gz"
+    sha256 "a61efc018fd3eb317eeca31aba90ee9e7f26f22884a79b6c6ec715bf71bb62f1"
   end
 
   resource "hvac" do
@@ -154,8 +153,8 @@ class Otterdog < Formula
   end
 
   resource "jsonata-python" do
-    url "https://files.pythonhosted.org/packages/f4/cc/16f20b1e9466a9904601df339a6b2b31d82eeba6ae97610076ffc9fec9a2/jsonata_python-0.6.2.tar.gz"
-    sha256 "6d553563f0d2cbfd64842d6b35fcec18615acbcf0859061be04bacce3a83b418"
+    url "https://files.pythonhosted.org/packages/ba/1b/5a889abcd92dedecba3f0a5657c77d473869e046d217d597f1bbaf21e433/jsonata_python-0.6.3.tar.gz"
+    sha256 "fb62ce909a25c6a73d012f19d031348f8b63b2240d751062d8e1ef2e095637a7"
   end
 
   resource "jsonbender" do

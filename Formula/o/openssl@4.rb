@@ -22,7 +22,7 @@ class OpensslAT4 < Formula
 
   keg_only :versioned_formula
 
-  depends_on "ca-certificates"
+  depends_on "ca-certificates" => :no_linkage
 
   on_linux do
     resource "Test::Harness" do
@@ -44,20 +44,6 @@ class OpensslAT4 < Formula
     end
   end
 
-  def configure_args
-    args = %W[
-      --prefix=#{prefix}
-      --openssldir=#{pkgetc}
-      --libdir=lib
-    ]
-    on_linux do
-      args += (ENV.cflags || "").split
-      args += (ENV.cppflags || "").split
-      args += (ENV.ldflags || "").split
-    end
-    args
-  end
-
   def install
     if OS.linux?
       ENV.prepend_create_path "PERL5LIB", buildpath/"lib/perl5"
@@ -77,6 +63,12 @@ class OpensslAT4 < Formula
     # Whilst our env points to opt_bin, by default OpenSSL resolves the symlink.
     ENV["PERL"] = formula_opt_bin("perl")/"perl" if which("perl") == formula_opt_bin("perl")/"perl"
 
+    configure_args = %W[
+      --prefix=#{prefix}
+      --openssldir=#{pkgetc}
+      --libdir=lib
+    ]
+
     arch_args = []
     if OS.mac?
       arch_args += %W[darwin64-#{Hardware::CPU.arch}-cc enable-ec_nistp_64_gcc_128]
@@ -90,9 +82,7 @@ class OpensslAT4 < Formula
     system "perl", "./Configure", *(configure_args + arch_args)
     system "make"
     system "make", "install", "MANDIR=#{man}", "MANSUFFIX=ssl"
-    # AF_ALG support isn't always enabled (e.g. some containers), which breaks the tests.
-    # AF_ALG is a kernel feature and failures are unlikely to be issues with the formula.
-    system "make", "HARNESS_JOBS=#{ENV.make_jobs}", "test", "TESTS=-test_afalg"
+    system "make", "HARNESS_JOBS=#{ENV.make_jobs}", "test"
 
     # Prevent `brew` from pruning the `certs` and `private` directories.
     touch %w[certs private].map { |subdir| pkgetc/subdir/".keepme" }

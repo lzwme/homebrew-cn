@@ -6,6 +6,8 @@ class Terramaid < Formula
   license "Apache-2.0"
   head "https://github.com/RoseSecurity/Terramaid.git", branch: "main"
 
+  no_autobump! because: :bumped_by_upstream
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5deb74301c7852a0a2f3f694bd59b45eef093d121936aa907cdedf0569be19b7"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5deb74301c7852a0a2f3f694bd59b45eef093d121936aa907cdedf0569be19b7"

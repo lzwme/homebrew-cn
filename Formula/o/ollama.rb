@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.30.11",
-      revision: "d26a58557d83aa8892bdfa79b3550f5ee969cd1c"
+      tag:      "v0.31.1",
+      revision: "710292ff4f191d8da9f6a4230804fbc693338d4a"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
@@ -16,12 +16,12 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7205730ec04896973bbdacbb73e1328bd2d17543f6c49886fb366fd1b0f037b7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5ef9d6424541eec031c299e84ae1bd3fc4eed8fde284d1e3c46d72b31b9a6e7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5980666f69c55fa1da2404de48fa6eccfdbde9887a0d3bd1a061e04720f535e0"
-    sha256 cellar: :any,                 sonoma:        "f0e0e341feb9978b19a8e27dd28a0f021c07a34502f2f138911c7ba4760246c8"
-    sha256 cellar: :any,                 arm64_linux:   "bf4a226a62d8731e132a41ee2a25d56376606e8d5805393bd1455273bbbd9ea1"
-    sha256 cellar: :any,                 x86_64_linux:  "6e342ab1729aa05ac8a7e0ba58d76615401ff7db4c68eed3b035738120eaa5eb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0742b0ce2790668e4f98bf9dcef93a2e2a99ee8b0a6f94d4861c664c7358e477"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6de4a6c210ac4d914956ef27862a9d582780289b056d637ed1975d8252fffa38"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "98b9306b0a3968c4c6875f4a980ce0d85ee174c9519ab0e5d5521253ae9f64ec"
+    sha256 cellar: :any,                 sonoma:        "1c22c82e63f3195ed168691a6fed7adb3236ad8bc2f5aec621268eafb01a1a0c"
+    sha256 cellar: :any,                 arm64_linux:   "e66bb090d71995b980117668c7e1ace9c3630449da9091e82738a5753044736c"
+    sha256 cellar: :any,                 x86_64_linux:  "dcf144b4b7e2a2dc500e34b07ceb230e7813c28d3b0b6eb493ba090b576bf686"
   end
 
   depends_on "cmake" => :build
@@ -47,8 +47,8 @@ class Ollama < Formula
   # Pinned dependency required by llama-server
   resource "llama.cpp" do
     url "https://github.com/ggml-org/llama.cpp.git",
-        tag:      "b9781",
-        revision: "51eae8cfcac4fb403bcf91d1fb524fec0974f510"
+        tag:      "b9840",
+        revision: "8c146a8366304c871efc26057cc90370ccf58dad"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/ollama/ollama/refs/tags/v#{LATEST_VERSION}/LLAMA_CPP_VERSION"
@@ -154,7 +154,7 @@ class Ollama < Formula
     r, _w, pid = PTY.spawn(libexec/"lib/ollama/llama-server")
     begin
       timeout = Time.now + 20
-      until output.include?("starting router server")
+      until output.include?("starting server in router mode")
         raise "timed out waiting for llama-server to start\n#{output}" if Time.now > timeout
 
         begin
@@ -166,7 +166,7 @@ class Ollama < Formula
         end
       end
 
-      assert_match "starting router server", output
+      assert_match "starting server in router mode", output
     ensure
       Process.kill "TERM", pid
       Process.wait pid

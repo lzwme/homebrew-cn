@@ -24,7 +24,6 @@ class Freeglut < Formula
 
   on_linux do
     depends_on "mesa-glu"
-    depends_on "xinput"
   end
 
   resource "init_error_func.c" do

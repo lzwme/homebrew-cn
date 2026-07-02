@@ -1,8 +1,8 @@
 class Citus < Formula
   desc "PostgreSQL-based distributed RDBMS"
   homepage "https://www.citusdata.com"
-  url "https://ghfast.top/https://github.com/citusdata/citus/archive/refs/tags/v14.0.0.tar.gz"
-  sha256 "7bb5c840f7990b96ad480462c2e25d1fb3b8129f7ceb3d514cc376a814bd0633"
+  url "https://ghfast.top/https://github.com/citusdata/citus/archive/refs/tags/v14.1.0.tar.gz"
+  sha256 "e174ed00efba74aaf5a9da87f770f6a7e11274066cce8449d804bc6b17df6ff8"
   license "AGPL-3.0-only"
   head "https://github.com/citusdata/citus.git", branch: "main"
 
@@ -15,13 +15,12 @@ class Citus < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "f8e163c1669fe07f49c9efb0bb176edf0b94811bf06c34b2c0ecd8e673983c35"
-    sha256 cellar: :any,                 arm64_sequoia: "f5b32245b518a637010b179d3841df8a3b753a81fad53566147f91272d5a8864"
-    sha256 cellar: :any,                 arm64_sonoma:  "41fbcc16dc152cbaca91c37ff3b1ccf6cb091933a23aba97477847cf143d61ff"
-    sha256 cellar: :any,                 sonoma:        "eb79e0942e177c7e27b30b58a0e0e1b76db9e1acff793ddc192920dd0e1f2e78"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ccad29edead2a14d8c95f04fd5f59c76b7d605631890618c059cc3fd7f94794"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53c1a2f45e6439acff9b72cccf9f5a745c5cf18c42feb6d8dd329d268703fb77"
+    sha256 cellar: :any, arm64_tahoe:   "30daec58da78aec89cd70d1e285a5c17697f86575dcf5c84bf721808b9d18421"
+    sha256 cellar: :any, arm64_sequoia: "9ba960367d986433f73ece1d1dfde884845f1e7febda81823df88f8ad7cac048"
+    sha256 cellar: :any, arm64_sonoma:  "81776b862398141a5002213ee2e4b33afa600a2dfea4badb78a1fe421d40ca84"
+    sha256 cellar: :any, sonoma:        "1b6403508a36224cc085dfccc84df12febe9c3a752eb0a3d6a6137ba7a5e4c94"
+    sha256 cellar: :any, arm64_linux:   "91fdb831d539b354ac72b0a983d9164e1fa76e55650cdb9b0db778d52b879a69"
+    sha256 cellar: :any, x86_64_linux:  "7cd6766dabcb900058e68476dd3e646c18798371962c0ff71b3ad5fff589f7b4"
   end
 
   depends_on "postgresql@17" => [:build, :test]

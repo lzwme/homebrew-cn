@@ -8,6 +8,11 @@ class DockerMachine < Formula
   compatibility_version 1
   head "https://gitlab.com/gitlab-org/ci-cd/docker-machine.git", branch: "main"
 
+  # Allow autobump to update formula until end-of-life
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "885e5b9d3c4a31fdbb97f2c84496a5eb16945ef9b2ac5b826cecba67f7a749ac"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "885e5b9d3c4a31fdbb97f2c84496a5eb16945ef9b2ac5b826cecba67f7a749ac"
@@ -16,6 +21,14 @@ class DockerMachine < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "93e7fbac8746a6b9bc211cd1da2178dd0762e225c09303c5590786a73891c78d"
     sha256 cellar: :any,                 x86_64_linux:  "3f01b0ef020ee62c2d6b0517e7868a3e32074cac944bdb60a3f9431bbba3a5c0"
   end
+
+  # After Docker ended support for original docker-machine[^1], we have used
+  # GitLab-maintained fork. However, the fork is now officially deprecated[^2]
+  # and scheduled for removal in GitLab 20.0 (May 2027)
+  #
+  # [^1]: https://docs.docker.com/retired/#docker-machine
+  # [^2]: https://docs.gitlab.com/runner/executors/docker_machine/
+  disable! date: "2027-06-30", because: :deprecated_upstream
 
   depends_on "go" => :build
 

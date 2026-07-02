@@ -3,18 +3,18 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https://github.com/mikf/gallery-dl"
-  url "https://files.pythonhosted.org/packages/0f/68/19f4f5996f22ef68b975bd34c2845829e692bdf25aacf9d654755e326056/gallery_dl-1.32.4.tar.gz"
-  sha256 "9804e0584efa3fe41a4ab4f8d34132b6d4fa0dd1c57be324730461b6eb39a81d"
+  url "https://files.pythonhosted.org/packages/b5/d3/1183e8994b48af8850c7eadc3881490d8671a7fb7d044bb839f9b6d028d7/gallery_dl-1.32.5.tar.gz"
+  sha256 "fd49fdefe9573dd04a2fd5bbe72a54325cdbd29f4a7cad760bdf2b9ff7e0e203"
   license "GPL-2.0-only"
   head "https://github.com/mikf/gallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ccef0b44d1a69148437c477cbda0f47f2525d7d73e4a14d8c8bcc8b8c4dd4962"
-    sha256 cellar: :any, arm64_sequoia: "446bc4fd76c4cea47ead4a9cfe0ceec750e111e30f45640d30330a330864f96c"
-    sha256 cellar: :any, arm64_sonoma:  "f2626d958a75217432226f6c5ec2a62f4f8811db7a75b915465d3004a42195c2"
-    sha256 cellar: :any, sonoma:        "5a518664f4bc30c303aef986bafe7d66f7c2d2ad21b46647d775e954054d5d44"
-    sha256 cellar: :any, arm64_linux:   "4440f128a1d80c00b4bb07d68f6b4d231e938257b434bda9dfee4a5b8bfbc67c"
-    sha256 cellar: :any, x86_64_linux:  "c0d9de32143e7ca1e82381a44cd95d47d56c68e4d9466da1809506bfd0a1d45f"
+    sha256 cellar: :any, arm64_tahoe:   "a2c11fa74eb9f87c452f4fd9af84f572de5836497a457ba3fa1cf1e32d5d5fc8"
+    sha256 cellar: :any, arm64_sequoia: "2878f4a5b43c382340d5bcfd7d45971c14c910bba6f67425db84c93f95dfe6ba"
+    sha256 cellar: :any, arm64_sonoma:  "052e73fce02692a1bcc833a554db1b0c6ec4797ae6bc28c4ddd3cab6fec30ce9"
+    sha256 cellar: :any, sonoma:        "df9e8b38ae71f5fc5082847fabe93a8efff6eb7dfe33900f5a6b9d4c9ba0249a"
+    sha256 cellar: :any, arm64_linux:   "351cb904a1f273916996c8271cf6c12abfdc0ec5066b87bd4fd02bf84778b219"
+    sha256 cellar: :any, x86_64_linux:  "63e4442dc94368aa1172ad81c3ca27b24f8c66bf5e53056cd82eb5a98cfdb793"
   end
 
   depends_on "certifi" => :no_linkage
@@ -58,8 +58,8 @@ class GalleryDl < Formula
   end
 
   resource "mutagen" do
-    url "https://files.pythonhosted.org/packages/81/e6/64bc71b74eef4b68e61eb921dcf72dabd9e4ec4af1e11891bbd312ccbb77/mutagen-1.47.0.tar.gz"
-    sha256 "719fadef0a978c31b4cf3c956261b3c58b6948b32023078a2117b1de09f0fc99"
+    url "https://files.pythonhosted.org/packages/df/70/1675da133ea92227da41bf5b24e1c66be597ff736a1533ade41da986852f/mutagen-1.48.1.tar.gz"
+    sha256 "8f95637ab9f6f305cec6bd1294e197debe207998e3e068596563c74f86b0a173"
   end
 
   resource "pycryptodomex" do

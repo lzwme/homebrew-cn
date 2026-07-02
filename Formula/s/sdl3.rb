@@ -1,8 +1,8 @@
 class Sdl3 < Formula
   desc "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   homepage "https://libsdl.org/"
-  url "https://ghfast.top/https://github.com/libsdl-org/SDL/releases/download/release-3.4.10/SDL3-3.4.10.tar.gz"
-  sha256 "12b34280415ec8418c864408b93d008a20a6530687ee613d60bfbd20411f2785"
+  url "https://ghfast.top/https://github.com/libsdl-org/SDL/releases/download/release-3.4.12/SDL3-3.4.12.tar.gz"
+  sha256 "f07b958a9ac5020fb7a44cadb957f658b2149c3c8abb4f63145fac9303249db7"
   license "Zlib"
   compatibility_version 1
   head "https://github.com/libsdl-org/SDL.git", branch: "main"
@@ -14,12 +14,12 @@ class Sdl3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1de14b4ae2d25ba8066d764affb3cc56a66812951f7fd0955831fa08de97e4e1"
-    sha256 cellar: :any, arm64_sequoia: "49d3720d5956085d374d3aa7b3c91da4495aa0dced2cdab4f6d93f53cd6da58b"
-    sha256 cellar: :any, arm64_sonoma:  "5ab2cc1a9662e920c7abbf64a9d5237f03c89b98a277d618615887edb4370374"
-    sha256 cellar: :any, sonoma:        "0faed51e59db730d1140ac1695c4ca81c95371656f0f671810c87f525f9e2bd4"
-    sha256 cellar: :any, arm64_linux:   "8f4665585e9c71309ad0ef9552914992ca58b7f2c024fccc39e7bb428164bb42"
-    sha256 cellar: :any, x86_64_linux:  "58c7c57efc23eccf894409dcbc06a00c9c47562250ff9df6008f3699bdf95103"
+    sha256 cellar: :any, arm64_tahoe:   "beaa74c6c0bde0c77a913c154f68d33d062a8d05e0d2fe5cb41a7840ad14746a"
+    sha256 cellar: :any, arm64_sequoia: "ac813140db6558f2477069f62e0dd6a6ba4bf0a0a141902afcf628e28935bbd8"
+    sha256 cellar: :any, arm64_sonoma:  "e856f41653b1bc0981455c8f48656dda374adabc132f7f6f1ddc223225f6d9e6"
+    sha256 cellar: :any, sonoma:        "c22e7cf7e5edf9743ed35405280c3cca1d8f686ac11bbe502967ea7f07557e93"
+    sha256 cellar: :any, arm64_linux:   "96825809d3a7e9c6f6239e31383dfe301a84ebb087897e7d7f2b6d30863e945b"
+    sha256 cellar: :any, x86_64_linux:  "417abcbef205879db83aa0e0507c58e65c84db6aa0e1a13fd37a937972c2e27e"
   end
 
   depends_on "cmake" => :build

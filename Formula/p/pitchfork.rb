@@ -1,18 +1,18 @@
 class Pitchfork < Formula
   desc "CLI for managing daemons with a focus on developer experience"
   homepage "https://pitchfork.jdx.dev"
-  url "https://ghfast.top/https://github.com/jdx/pitchfork/archive/refs/tags/v2.14.0.tar.gz"
-  sha256 "926307dab53a77052d5b23337d5ee3185ead450783e4f1dc06617704279b87f3"
+  url "https://ghfast.top/https://github.com/jdx/pitchfork/archive/refs/tags/v2.15.0.tar.gz"
+  sha256 "9502ee192f4dc9b524485a6373097e41db66edcfe88898346c1a80d7ea33824b"
   license "MIT"
   head "https://github.com/jdx/pitchfork.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a157a55bc0eaad0ff303943e04af52fc4c2cb33e82486bbf12516af7cd3b7a49"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dca9a13585db933b2cbfc6cb2d2f58222123b41d038826628d76bc524d8f7091"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d49f2981e0824318934e64bfef4fbeeb5e73ffca88712dd39c14c6f0307972de"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d3d9595bcd12efa9845ced5b71be65f8f63975cc58651ad9a59f62947e1101ea"
-    sha256 cellar: :any,                 arm64_linux:   "bf3b675b42cb22d059e4a80e79ea2f43f5612cdd503789bbd7b7aba1d0965e22"
-    sha256 cellar: :any,                 x86_64_linux:  "67b92cb101b20ccac68197fe4e30ce2bcefd130dcd6a2ec032ff8b667ad39422"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4dc8f484ac8395fdc7556f59ba76ac59c24f5fafe05c56bd18518d326edb97ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d04cc3501d74c1eecec42551b76c76bcf94e6324550516dccba782b553faba41"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "899b4520b7d820e92ccd70300a5267dc10b5489a322f0eee96b2812e55d36d95"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cb2954ee3f184eee7b14bae9fff33ff99205a4b66c5487c3d532d898d1b86bb0"
+    sha256 cellar: :any,                 arm64_linux:   "f157a0bcd6b9d9b9afad24cc28ba93c77130b0f93cbaabe1daf00e1b5af35db7"
+    sha256 cellar: :any,                 x86_64_linux:  "80a74d4b82f3612cb83483478c55732e724f957d776000cce667915f33f20706"
   end
 
   depends_on "rust" => :build

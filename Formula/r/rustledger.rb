@@ -1,8 +1,8 @@
 class Rustledger < Formula
   desc "Fast, pure Rust implementation of Beancount double-entry accounting"
   homepage "https://rustledger.github.io"
-  url "https://ghfast.top/https://github.com/rustledger/rustledger/archive/refs/tags/v0.17.3.tar.gz"
-  sha256 "0bcbed0027ea28b60a03ba1762ed29db9cc7a146333031a47f8a3a09f4eeb227"
+  url "https://ghfast.top/https://github.com/rustledger/rustledger/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "4de97fe7ba0242563a23335762be940a0fdac48ee588a63cd164c64cd2647491"
   license "GPL-3.0-only"
   head "https://github.com/rustledger/rustledger.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Rustledger < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "47e8c1093b044c6c3b41bcbd0dc034ab03176fe6dc5b35cd4ca00f9d2efa6540"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a7260caf5c1167c83b4fefd5781638d9558e4bfc8678af36a96466f5f32811f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e49ede7ae504439808c81eb5dca60db6050dd12e53beb077fa4e1075d4337c9d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2c8c6d82b4e2907f1d5a679f7586a21fecd13048a231dd0d7502856a6d71e285"
-    sha256 cellar: :any,                 arm64_linux:   "cd2c42f231f3ee43d0713952d8409df7118e37f36e80fbef450c55dfe594d6fb"
-    sha256 cellar: :any,                 x86_64_linux:  "418c4be55c0c45772dbf59e21bfe2b0602dadb7a96d4297e175499984137b305"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7b238a2df1b1661928dda750f6d3eb85a34f16b999afc41d2e16eb6f9240c1d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "368fb7612569982b49813b80b2103429140862d41574f9a6d240ec2774e1b80e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71cb62d539b3e758ec72f84f65393bbbaa502e910831b350f33fb71b67567299"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6e163867ce8dbe792840ef1044eaec89d2d2327d1a4d7ff7f3fb47707c647f35"
+    sha256 cellar: :any,                 arm64_linux:   "e0ebd4e563b9eee7c4b70278f8410f29239aea6e5f54f85a3b683b9f42c5613f"
+    sha256 cellar: :any,                 x86_64_linux:  "c491c7013aeed3a2c47e35b3fb2da6468b50c2b5b59f9b7aa9d2911d0c87befc"
   end
 
   depends_on "rust" => :build

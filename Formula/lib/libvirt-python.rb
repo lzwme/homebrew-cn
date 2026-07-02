@@ -1,8 +1,8 @@
 class LibvirtPython < Formula
   desc "Libvirt virtualization API python binding"
   homepage "https://www.libvirt.org/"
-  url "https://download.libvirt.org/python/libvirt_python-12.4.0.tar.gz"
-  sha256 "e24ade7e9b774b56ce3ea6c69ea06b99103391b09c8d9f77a308584b79c9a00d"
+  url "https://download.libvirt.org/python/libvirt_python-12.5.0.tar.gz"
+  sha256 "25ea2261e0d6cab9d004b700911d88b57911b14528ed04b3487a617ec2b4cda9"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class LibvirtPython < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "aec0b1b13098fa5ac588b10de6a75a46750aede6c03c38b85187dd4a15338837"
-    sha256 cellar: :any, arm64_sequoia: "99bd4d9d41925f2fdccbe585816df4c5d525c25403591e9a0643f2a9948cbbcb"
-    sha256 cellar: :any, arm64_sonoma:  "5697af77b379b8601f82561e26415d99aff131b6d18c5eda687f16490a15e1ca"
-    sha256 cellar: :any, sonoma:        "abaf140efb799675ab7df87aad42fbb1871434b2613ed5ae066e5f5da5e65974"
-    sha256 cellar: :any, arm64_linux:   "274d7047a216b1322f15e8bdf0ee018b09a3c5fde2f1f1ce19b462f8b66b8719"
-    sha256 cellar: :any, x86_64_linux:  "8bca1ee1f9c4d034a680faf2ea8735f2e3ebd41ed45d749bad3e5132819d3a72"
+    sha256 cellar: :any, arm64_tahoe:   "c8685eb4602e47cf1056e5f2ba579e77b03e1ea652456e63b3f6cd0e7e0e880d"
+    sha256 cellar: :any, arm64_sequoia: "8b4c0e029002d5b5feef826de33e7f4fee50c3dcf017fce4791dd598ea461b5f"
+    sha256 cellar: :any, arm64_sonoma:  "8a3c65eeca8155b1a1ad898ef93802ecdaaef1266b131c4148b91670c25548d6"
+    sha256 cellar: :any, sonoma:        "d7c3f9382912e42f5e8ec1658685c173ca041c2f85f50de35c5e1d74b54318c6"
+    sha256 cellar: :any, arm64_linux:   "06f709efa71f627b2d995a6e3a8f19fc4e4ae4013e065c8866a5d1c829905acc"
+    sha256 cellar: :any, x86_64_linux:  "d288d05a94177c19518f281c9a4e269e26a67eefc3974a2b774b1c66a414a99c"
   end
 
   depends_on "pkgconf" => :build

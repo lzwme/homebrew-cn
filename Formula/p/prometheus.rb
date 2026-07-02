@@ -1,8 +1,8 @@
 class Prometheus < Formula
   desc "Service monitoring system and time series database"
   homepage "https://prometheus.io/"
-  url "https://ghfast.top/https://github.com/prometheus/prometheus/archive/refs/tags/v3.12.0.tar.gz"
-  sha256 "ca7a8dd2c57048bb952a493a2957811c6f380089c2b158c2def484b874c3b6d7"
+  url "https://ghfast.top/https://github.com/prometheus/prometheus/archive/refs/tags/v3.13.0.tar.gz"
+  sha256 "fd0bfdc1390e71c3eeb05532293f9e2a1279e75d3546aa86dc4881627c9e143d"
   license "Apache-2.0"
 
   # There can be a notable gap between when a version is tagged and a
@@ -14,18 +14,18 @@ class Prometheus < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "211d5913eab5f2450ead841fc0ffdf6b13990b436a8644d8b9207a0d171f3b0d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f597c184145952fdcee826751a7eb061b67927fce91ebbeb379a5364d3e6827"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8cf852f62d5ec19dd0164e4771a54e035da91a75cd812b3ee21da734af39b44"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2c91dc3830404e2df1e552b4642731e4af7c49d1b7b8924447c0a1d8d7933903"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddfffca5185040aed81c65e0b11e010828333c35279dc3232170b4e448dca84f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "301750a324d259f5fd92266c581ccabdd6fde73236875aabb03408a79bb47e29"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8ae1d7c8ef9553082d667e1d1f8eab772cd3827dea277b1b8fcac06adb47446"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d78299d32e7f1b8756c8e2c69877ec1aab347ae5085584543eed671cae3ff220"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55d3cdd9a180533618e0ed8bd5801d127d0e11bb4e2c6b6ed3653a50250461b9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aeeb206ea1b1c97043b2255e69b361bad3dfdbaf6a13b6a7b70c2d993e1530b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5d81640b9987ec8145509a24fc322a4db9cd632205d87beefe27f4cce7afb14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "290c71bedeae5b968be45b302869fa2c20f96695ef4e3ab81e2bda92dd11b6b9"
   end
 
   depends_on "gnu-tar" => :build
   depends_on "go" => :build
   depends_on "node" => :build
-  depends_on "yarn" => :build
+  depends_on "pnpm" => :build
 
   def install
     ENV.deparallelize
@@ -38,10 +38,10 @@ class Prometheus < Formula
     system "make", "build"
     bin.install %w[promtool prometheus]
 
-    (bin/"prometheus_brew_services").write <<~EOS
+    (bin/"prometheus_brew_services").write <<~BASH
       #!/bin/bash
       exec #{bin}/prometheus $(<#{etc}/prometheus.args)
-    EOS
+    BASH
 
     (buildpath/"prometheus.args").write <<~EOS
       --config.file #{etc}/prometheus.yml

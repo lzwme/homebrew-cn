@@ -18,8 +18,8 @@ class VsPreview < Formula
   end
 
   # "This repository was archived by the owner on May 13, 2026"
-  deprecate! date: "2026-05-25", because: :repo_archived
-  disable! date: "2027-05-25", because: :repo_archived
+  deprecate! date: "2026-05-25", because: :repo_archived, replacement_formula: "vsview"
+  disable! date: "2027-05-25", because: :repo_archived, replacement_formula: "vsview"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

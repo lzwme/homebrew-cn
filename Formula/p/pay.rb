@@ -1,8 +1,8 @@
 class Pay < Formula
   desc "HTTP client that automatically handles 402 Payment Required"
   homepage "https://pay.sh"
-  url "https://ghfast.top/https://github.com/solana-foundation/pay/archive/refs/tags/pay-v0.20.0.tar.gz"
-  sha256 "e3b8f2b011039f2c96dfc065c3e8a513907336031838ba7204d317d848b7f501"
+  url "https://ghfast.top/https://github.com/solana-foundation/pay/archive/refs/tags/pay-v0.21.0.tar.gz"
+  sha256 "97b70d9e66a0e78cdb564624baeac0f0fd47dcc7c8261415f01dbfc42b097a36"
   license "MIT"
   head "https://github.com/solana-foundation/pay.git", branch: "main"
 
@@ -12,14 +12,15 @@ class Pay < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c33b7822020a4b447e958c26c492ca30883872e1d39758246298d2fd850ec686"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39516030e74214fff751df270df0b2564e2c2ad637a63a61b2fb2c74af4598c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca55f95ecec74e30fc58b4a9f8c0d341c13c3c98dfb903867c79c2359f63876f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "926563801a600ef679672187beaea9e8c702aa950c3166ad36d1723005bed5d6"
-    sha256 cellar: :any,                 arm64_linux:   "87223b2e0d84c1c6e922e3162c3029eccc734419cefebac14f133fdd03bf4c15"
-    sha256 cellar: :any,                 x86_64_linux:  "804f13f86c2653ac140118d1871282d4aefd9b9aa1d24b892d506d4e483bb948"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5bdb43badb9e73f782e4e230272b61c212b7030ecd483617e380354e7aafdf4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9eaf1dbc6eab35e60ea31b692f1fed36eb2e401f4ec7643c30fc9fe66d4ee62a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75e3409ac58232de10640e19eb1af891f1bef963ee242a17a083f75ac1596d7c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d0acac8cc8bacfe28ffee290d0c3b104b3101285453eff81c5518a713ddfed31"
+    sha256 cellar: :any,                 arm64_linux:   "fd2fd7632f95400d1dd21306ac38feea3a80f0a8d6849056309181a09eeadfc8"
+    sha256 cellar: :any,                 x86_64_linux:  "7d60f7bd03964488584e9aae66ebf63a923952ccbef6d3bfa6bb51fa7f5dfee8"
   end
 
+  depends_on "cmake" => :build
   depends_on "just" => :build
   depends_on "node" => :build
   depends_on "pkgconf" => :build

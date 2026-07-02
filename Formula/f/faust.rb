@@ -1,8 +1,8 @@
 class Faust < Formula
   desc "Functional programming language for real time signal processing"
   homepage "https://faust.grame.fr"
-  url "https://ghfast.top/https://github.com/grame-cncm/faust/releases/download/2.85.5/faust-2.85.5.tar.gz"
-  sha256 "fc18bc2b1b31044d0bd2c35ee92d80d4428c9008ac6a03acf4163109803941d7"
+  url "https://ghfast.top/https://github.com/grame-cncm/faust/releases/download/2.85.9/faust-2.85.9.tar.gz"
+  sha256 "0cd00968f81357b78df64c25aad12ec94bd4b75bd489ca0449fe7f7b1ad0efe1"
   license "GPL-2.0-or-later"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,12 +14,12 @@ class Faust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8b056c2bc65491e5201e807fc1068b20856aed0c1a2288222cd0628ca59f1561"
-    sha256 cellar: :any,                 arm64_sequoia: "1f222ea71a90754b65e294132396043de98c09c3462bbbf1ce739a8cc6bfe73b"
-    sha256 cellar: :any,                 arm64_sonoma:  "acef8556f507ae249fafbac1fb2efc0ff61df80babc7c661cf3320bb49af4bc4"
-    sha256                               sonoma:        "eed422c744529cc75081832c154a680a9d5936aa709c307c174b091207659a77"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b4fafd59d91c273d7fb8fdb58889e29db4074507731c1a531384d6f304c97fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf90179239a5644b25a1720b8adce225393e83b9957498bd398243dfb1bfc3ab"
+    sha256 cellar: :any, arm64_tahoe:   "f2584ee1bd5ffb05502293a98da9e1d35df5673cba433aea6d625bcb8497e6b8"
+    sha256 cellar: :any, arm64_sequoia: "eaa2092cbe61169c948fc01812f1dda2a66ba864c613828da7da5eeecc5f0e30"
+    sha256 cellar: :any, arm64_sonoma:  "4fd967f93f2174bf24fc769ab457fc803036e72904b92b6c2e689ff36d4886f1"
+    sha256               sonoma:        "e157f608ca0da112aee9ef1742b237fb1f49f8fe9ee69b0aff2886896607fc4c"
+    sha256 cellar: :any, arm64_linux:   "5811eb6959f3f54dff425d20fa5941b669acdeeb8dd32967dc557d9bf1d53346"
+    sha256 cellar: :any, x86_64_linux:  "cc4b02dbda3cd7b72ae1db97187c0f37bdaf6d91e77ab30e66ce6c423f4589cc"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class Greenmask < Formula
   desc "PostgreSQL dump and obfuscation tool"
   homepage "https://www.greenmask.io/"
-  url "https://ghfast.top/https://github.com/GreenmaskIO/greenmask/archive/refs/tags/v0.2.21.tar.gz"
-  sha256 "076538538f16a3e40586b0ac25e78e8b4de54d91a5dee4e757a38d8c1a0da7b1"
+  url "https://ghfast.top/https://github.com/GreenmaskIO/greenmask/archive/refs/tags/v0.2.22.tar.gz"
+  sha256 "56eab71fc727ab1c7e14e93cf3715038b23afc2454a939b1c24151091caeec1c"
   license "Apache-2.0"
   head "https://github.com/GreenmaskIO/greenmask.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Greenmask < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6f5183747155a6dfb828abae3934fd8ef9dcc6bcc4d75f902d63ce956430c174"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f5183747155a6dfb828abae3934fd8ef9dcc6bcc4d75f902d63ce956430c174"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f5183747155a6dfb828abae3934fd8ef9dcc6bcc4d75f902d63ce956430c174"
-    sha256 cellar: :any_skip_relocation, sonoma:        "646212290560c2c3a5c6c0f983e1c829c8b905cb6fd4d144e251b39cc024562a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6889156b0b408f1f922f442a7d8daddd4db49fc8913b5df47905056d0d6b6b8"
-    sha256 cellar: :any,                 x86_64_linux:  "0150333b7f1e926f86bd69dbb0e7bdda0b6ec0ca17bd1e5a56a593e05eace45f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd584a6068c6ce35cfd9c05dc9a815fe076c1ec7a8c7e6faed4c9521a388ab68"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd584a6068c6ce35cfd9c05dc9a815fe076c1ec7a8c7e6faed4c9521a388ab68"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd584a6068c6ce35cfd9c05dc9a815fe076c1ec7a8c7e6faed4c9521a388ab68"
+    sha256 cellar: :any_skip_relocation, sonoma:        "177a38a7599ce285340309917e80e9d3a45bc6b3ca75ef68a187b08a62cf88ca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d31705a5af21324f4cad2e4b99754e34c292013ac425ab7cd3784d1364bca8e2"
+    sha256 cellar: :any,                 x86_64_linux:  "db0bf0e760abf09489783fa55cbdfdbe5456501ef5320914ea5f9be50d946c5d"
   end
 
   depends_on "go" => :build

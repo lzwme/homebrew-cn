@@ -1,8 +1,8 @@
 class Zsync < Formula
   desc "File transfer program"
   homepage "https://zsync.moria.org.uk/"
-  url "https://zsync.moria.org.uk/download/zsync-0.7.1.tar.gz"
-  sha256 "f521437761d9d19b5ca351f7736f28543cfb8a37391bbdc5b49681403268ff89"
+  url "https://zsync.moria.org.uk/download/zsync-0.7.2.tar.gz"
+  sha256 "51a54a2bcf60311f108924b5f8795fb7a8eeeedd0b52f4f634842ea3470978a2"
   license "Artistic-2.0"
   head "https://github.com/cph6/zsync.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Zsync < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fb6952fc8a4fc3c5a17df80920b6994fc4576c5116ba8889afa42dd15a224d2e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb6952fc8a4fc3c5a17df80920b6994fc4576c5116ba8889afa42dd15a224d2e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb6952fc8a4fc3c5a17df80920b6994fc4576c5116ba8889afa42dd15a224d2e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e925f3f807f6b214d77f3fce1734a9feeda9ca86bb6ddd7eeaef9df3145bfbc7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "73084d34de13ab274066e65240c9459ebe0281fa33e2c5806cc7e13b8355e101"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2bd874f2efd2cccc4627cf9944a24899b6b04345f7616bb05b861ea0339bde4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d2cfa51dff3ded22fde01b7dfe046efad9929c3228dc3f05f7ea98f70b5babfc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2cfa51dff3ded22fde01b7dfe046efad9929c3228dc3f05f7ea98f70b5babfc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2cfa51dff3ded22fde01b7dfe046efad9929c3228dc3f05f7ea98f70b5babfc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "74a2e931d6afbe5f3fa26404ded4c315aaf0f3e43c005c2d7dd4568101729df7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63e76167039ecb67b01cb528fb44f11071ed79a159f329dfcf5ca17158228f16"
+    sha256 cellar: :any,                 x86_64_linux:  "4aede5f74cbfa704369228eae8d8a223485164569ad7ea07b235fb9a4cb1bad1"
   end
 
   depends_on "go" => :build

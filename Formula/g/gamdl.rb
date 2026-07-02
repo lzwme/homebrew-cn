@@ -3,17 +3,17 @@ class Gamdl < Formula
 
   desc "Python CLI app for downloading Apple Music songs, music videos and post videos"
   homepage "https://github.com/glomatico/gamdl"
-  url "https://files.pythonhosted.org/packages/7c/5b/0bed7471459e44fdb626cd4dbbf1f44d896b4d31c5d0383d0730bc61ec21/gamdl-3.7.4.tar.gz"
-  sha256 "5b8ac2463484f11d909498c8a091ffda20a87d190b771150ecf8c4cd346206d3"
+  url "https://files.pythonhosted.org/packages/5c/c4/2cfa82e1b3e3fd142eee579c8f22eae5ca1ebf109ac45c78d20a16049a55/gamdl-3.8.tar.gz"
+  sha256 "f6e82f18e32068a13f26e3b50a49642398d9882766aed4c05315495ae93b653d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b427c2263ac977dd3960de2e8ce4652ab77f96650ad250ce16d3ab3fd2cd3ce0"
-    sha256 cellar: :any, arm64_sequoia: "807055bf3fef57bf3d1577268f32c8e4f6e99f594e9a37516e8837cfb622171d"
-    sha256 cellar: :any, arm64_sonoma:  "ae6427d6a40086c16e58bb6682dda74c964d31af25de27ced5cdf860e1b2c680"
-    sha256 cellar: :any, sonoma:        "62d24dc14cae3d955abbc56e63d2d8e551e3159e339560add9ca80de02ee07dd"
-    sha256 cellar: :any, arm64_linux:   "99730ba6861c8a57a2c526091f992e4e058614ab5576ea6f7290f36965984238"
-    sha256 cellar: :any, x86_64_linux:  "6f94a644e23911303581986ab6f242d420b9bae80b38bbdab5d2e8ee6c7dd758"
+    sha256 cellar: :any, arm64_tahoe:   "042e73efd40a50bf85a4b022aa693d0d657ddd9cb40a94e7bc93188643aec972"
+    sha256 cellar: :any, arm64_sequoia: "f0e57c434a07c5cde90bcae4e1fd234830beb3b0e651b4ca5e30edc334e89de5"
+    sha256 cellar: :any, arm64_sonoma:  "83ff2289dc2ed9e709826b8f6e5b324675b7f21fae8eb46abd78c88a2333462f"
+    sha256 cellar: :any, sonoma:        "cca94dda84f8b8489d1f8a6160fb61f44848ce8d1cf0db6bd162c9d11f358a5e"
+    sha256 cellar: :any, arm64_linux:   "6893286145ab6cfc9fca9b7437565f036ab53a056e74be764ab0461c3ff76968"
+    sha256 cellar: :any, x86_64_linux:  "84f8a07931472e1eb745b080187ed37ce3b2c9441f10628b5e85e12a3000486d"
   end
 
   depends_on "certifi" => :no_linkage
@@ -24,8 +24,8 @@ class Gamdl < Formula
   pypi_packages exclude_packages: %w[certifi pillow]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
+    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
   end
 
   resource "async-lru" do
@@ -39,8 +39,8 @@ class Gamdl < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "colorama" do
@@ -94,8 +94,8 @@ class Gamdl < Formula
   end
 
   resource "mutagen" do
-    url "https://files.pythonhosted.org/packages/81/e6/64bc71b74eef4b68e61eb921dcf72dabd9e4ec4af1e11891bbd312ccbb77/mutagen-1.47.0.tar.gz"
-    sha256 "719fadef0a978c31b4cf3c956261b3c58b6948b32023078a2117b1de09f0fc99"
+    url "https://files.pythonhosted.org/packages/df/70/1675da133ea92227da41bf5b24e1c66be597ff736a1533ade41da986852f/mutagen-1.48.1.tar.gz"
+    sha256 "8f95637ab9f6f305cec6bd1294e197debe207998e3e068596563c74f86b0a173"
   end
 
   resource "pfzy" do
@@ -154,8 +154,8 @@ class Gamdl < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/49/b4/51fe890511f0f242d07cb1ebe6a5b6db417262b9d2568b460347c57d95cc/wcwidth-0.8.1.tar.gz"
-    sha256 "faf5b4a5366a72dc49cad48cdf21f52bdf63bdda995178e483ba247ff79089b9"
+    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
+    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
   end
 
   resource "yt-dlp" do

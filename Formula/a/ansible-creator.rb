@@ -3,17 +3,17 @@ class AnsibleCreator < Formula
 
   desc "CLI tool for scaffolding Ansible Content"
   homepage "https://ansible.readthedocs.io/projects/creator/"
-  url "https://files.pythonhosted.org/packages/81/72/466f53d93fd26a16c8020b5c53e1594757491ce75be58abffa48790a5266/ansible_creator-26.6.0.tar.gz"
-  sha256 "411cbadc595c18945e2c5e4f4bbdab82c6c2db524dbc816b22fb47157252622e"
+  url "https://files.pythonhosted.org/packages/9a/fa/0e0fd750cbb589abc4f1a89dd226e83a61e7d52c89b621c2894a0b8c2305/ansible_creator-26.6.1.tar.gz"
+  sha256 "f43103907e24302f0090fdb6fa6f8d39c299ad4fc248dab1326526fa72a7f42b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d733b6a1382b8a55dedb3f2b9199b0e538801f2e2aa191efe6f047f6c39ce834"
-    sha256 cellar: :any, arm64_sequoia: "c57a376800b5563d487d30ddbb1f29c0dc42f5b590aa1e2d90bd7176bdd744f6"
-    sha256 cellar: :any, arm64_sonoma:  "a2b1f5c47017d602d03c124e96751caef194e607c2ed985361d40c564b1121b6"
-    sha256 cellar: :any, sonoma:        "eb898f0f9903ab0e2919c00289614270cffccb1b775a98a161f92814e92dafab"
-    sha256 cellar: :any, arm64_linux:   "9a448b82e8123df8b96b051689c0d9d090f35865961bbcdf9487e241b1bc16cc"
-    sha256 cellar: :any, x86_64_linux:  "ad13f917f788abc7b02b0e17a079c5c02f661f37de489191a8548eb422e280c9"
+    sha256 cellar: :any, arm64_tahoe:   "c77da278c762252fc2a65357cfab1bd206a04bece9f56f772602c778d1ad08f5"
+    sha256 cellar: :any, arm64_sequoia: "ed93072241f63454dee4cf249c51b245b63a35d4172b77f3f1e2b95a3bae33e2"
+    sha256 cellar: :any, arm64_sonoma:  "ad62bb64f3edaf99a95993f562f398c5fd79bfb8c7157a1bc1db39084a357ddd"
+    sha256 cellar: :any, sonoma:        "487b9b218a2492117b0c02b88b20a533dac3d61d35b3218a96b851d8d7b8ef1d"
+    sha256 cellar: :any, arm64_linux:   "9ee4a54a6fe05922e6f8480ba05be7c0e59e992b043dd1cfa405dce9f2f36b2c"
+    sha256 cellar: :any, x86_64_linux:  "4a13114cddbc049eb3a6afc96502fb4472b431753c6d126303609525825ce08a"
   end
 
   depends_on "libyaml"
