@@ -1,18 +1,18 @@
 class BackplaneCli < Formula
   desc "CLI for interacting with the OpenShift Backplane API"
   homepage "https://github.com/openshift/backplane-cli"
-  url "https://ghfast.top/https://github.com/openshift/backplane-cli/archive/refs/tags/v0.10.2.tar.gz"
-  sha256 "4aedfb41d74a95d4b8648182ae1df9ad3d6f44767e0c14614ce251e59a9fba8a"
+  url "https://ghfast.top/https://github.com/openshift/backplane-cli/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "19add3cd361217cd2406e70e910116305fa83d6c6d1d173f0c8b72136a98dadd"
   license "Apache-2.0"
   head "https://github.com/openshift/backplane-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "72e479203ae842346c1f785e310a1478f8979fb079947baf16e1b47539c88927"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8dfc1fb648a628e8d12fb29fbada2f663a0680400935acc7b316585dba340c5d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "320854b0ded420535a682378630c8e4c00146c2be7ce23e73fc7839e3cdaeced"
-    sha256 cellar: :any_skip_relocation, sonoma:        "13fec9ce9b3a12b97f3d52d41a0adbac82d2c9fa965b258ef89cfb15f3dc57e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "df069701967fbcc97373fa59071de16a5c9eb78c0e7ad5d91451ddf07bbe7dca"
-    sha256 cellar: :any,                 x86_64_linux:  "4d1b6c16641b31b15024e8165968c32dd4269dda36c7de7561231f6bdbad5a5f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3f24a9ced1af4e506e6e36fbce237a3ed68de57690c2705267430c33a762733"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb957c5ac6af3b43b7861d0d77327da7f6bee9fc73db6ff5cc1ad4f5dd170554"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8b7aa9831459e6f827d54d999b4dbe4d5da83b3655b532b48f76e2b9453d2ed"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5e2aad7ba120f65dde7cb87e6ff9b48833504a5a5adff2ea948fa214adf73e11"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d751097ba5f2bcb36a7d297f6db6130f44873e666363a6195e38bcce984be360"
+    sha256 cellar: :any,                 x86_64_linux:  "ad8c6c5656d53bbe64b992cc25a24dd389e6a0085128ecf54caf3642b3f2003a"
   end
 
   depends_on "go" => :build

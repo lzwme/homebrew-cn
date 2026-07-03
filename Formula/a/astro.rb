@@ -1,8 +1,8 @@
 class Astro < Formula
   desc "To build and run Airflow DAGs locally and interact with the Astronomer API"
   homepage "https://www.astronomer.io/"
-  url "https://ghfast.top/https://github.com/astronomer/astro-cli/archive/refs/tags/v1.43.0.tar.gz"
-  sha256 "495cd23f5b704783247e79efb54ac0fcc5ee5cbedbd31e0a256a3f768b12b2bc"
+  url "https://ghfast.top/https://github.com/astronomer/astro-cli/archive/refs/tags/v1.43.1.tar.gz"
+  sha256 "e662b0470a382c8574b89a9237c4452bd383001fcf96bea1bda56e81c68f935a"
   license "Apache-2.0"
   head "https://github.com/astronomer/astro-cli.git", branch: "main"
 
@@ -12,12 +12,11 @@ class Astro < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a3a52ac9ff1e7185691e65aec26d1f6ef2bea88977f14b2c033b565281e6109d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d547dd2a701e3a2f74626d1eb5573aa1241d38ec8144b9fbd05df51a8c9cf82"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e31e28f41e886175109e252e441b273690b2d9141a16d2350d5e1277985116e2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "631193b9496441e62e8c67a18f50c5629c2df3014874f92a2528740e5fcabbb2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7eb8dc4f5f512ba8134d00ebaab722596140e5ba3a94602017ccb80c7424ac30"
-    sha256 cellar: :any,                 x86_64_linux:  "b532fb48c16a80a64be47b2471a5726e6816e35276836981e87833cd432c0a75"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0800cffa39a7f52de77302296d17bce397c08d61480839812ea65a79751533c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa0275c90258edf9e6f13e575db1a951e6d8d5ec049eb9999bb051be3f043eb9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "403641539c8eae0bc06fc7a7dec87c36070e703677220b5368d959b219b49a24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "043c0eb8d776a4e76a282bc56375cf412dc339e29dd36ff585c4a881655acef5"
+    sha256 cellar: :any,                 x86_64_linux:  "5b1c4141386e56b5bd9ecfbea60f0044426ca445280e0becec6590dd5db3f9f8"
   end
 
   depends_on "go" => :build

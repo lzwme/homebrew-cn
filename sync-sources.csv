@@ -80,6 +80,7 @@ Homebrew-homebrew-core/Formula/a/agg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aha.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ahcpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ahoy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/ai-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aiac.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aichat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aicommit.rb, Homebrew/homebrew-core, 1
@@ -1480,7 +1481,6 @@ Homebrew-homebrew-core/Formula/d/dbx-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dbxcli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dbxml.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dc3dd.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/d/dcadec.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dcd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dcfldd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dcled.rb, Homebrew/homebrew-core, 0
@@ -2281,7 +2281,6 @@ Homebrew-homebrew-core/Formula/f/frotz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/frozen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frpc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frps.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/frugal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fruit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frum.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fs-uae.rb, Homebrew/homebrew-core, 1
@@ -3648,6 +3647,7 @@ Homebrew-homebrew-core/Formula/k/kubeconform.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectl-ai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectl-cnpg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kubectl-explore.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kubectl-klock.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectl-rook-ceph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectl-tree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectx.rb, Homebrew/homebrew-core, 1
@@ -12860,6 +12860,7 @@ Homebrew-homebrew-cask/Casks/h/happymac.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/haptic-touch-bar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/haptickey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/haroopad.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/h/harper-desktop.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/harvest.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hashbackup.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hazel.rb, Homebrew/homebrew-cask, 0

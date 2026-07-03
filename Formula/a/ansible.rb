@@ -3,20 +3,19 @@ class Ansible < Formula
 
   desc "Automate deployment, configuration, and upgrading"
   homepage "https://www.ansible.com/"
-  url "https://files.pythonhosted.org/packages/0b/1a/b62aa6eff04f17fb377ad7b8db89bdce71635b55ba2ec14d6f812791ccea/ansible-14.0.0.tar.gz"
-  sha256 "03cdb9477b1ebe930c9212a12d0926c7cd46b1877c504709157b8cd7876fc083"
+  url "https://files.pythonhosted.org/packages/fe/97/3aeeb9d199fd0f931452adebcf5336c01c739b1de2d4bada0744ff5d18e1/ansible-14.1.0.tar.gz"
+  sha256 "1ae7918469ed897ff716857ed98d1f5d5fce1710f6a42f601f0715548b67bf00"
   license "GPL-3.0-or-later"
-  revision 2
   compatibility_version 3
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "22e4bf3435c902428948c9e74cc3a48ad9fae6fa57a7923b6afcbd71656bf62d"
-    sha256 cellar: :any, arm64_sequoia: "f828dd01613d5308a21f9f225d384a3ad64e9f31800ca35c623846d88106ac55"
-    sha256 cellar: :any, arm64_sonoma:  "e525ee5bd8897df538a8c61d6d0bd31b60e683ad565a98e80aaee788bb48d951"
-    sha256 cellar: :any, sonoma:        "6779b819d0cf7c7e43eb22a5861207374367d10f4d228f333aa0d5c71a39b6ca"
-    sha256 cellar: :any, arm64_linux:   "1b662e8f7725718717e68d7123eb252ecd20bb9597dada5c06b6710c7354f14a"
-    sha256 cellar: :any, x86_64_linux:  "e144ca1f6d9822e6f651ad6c48613fc6c4e64fe950fe09168498b4c281cc003a"
+    sha256 cellar: :any, arm64_tahoe:   "2ee6b702d837f8575cae85de8259519dcc66c71a31307bdd201dc2b263d23dea"
+    sha256 cellar: :any, arm64_sequoia: "97c3c78a175a263219cfa84e7495268ba814a80cbc227002834fdfb53c35cefe"
+    sha256 cellar: :any, arm64_sonoma:  "53fdc7d8c66996e9adcccc2c693f51d03a069aab7829c1513b18297f0346d3cb"
+    sha256 cellar: :any, sonoma:        "06011c52f80c8493590cc13aac319f24cfefdca59e411a7b59453a82b2bc4d98"
+    sha256 cellar: :any, arm64_linux:   "37c31448d9b351d3ec69cade8777f1370e0de6d6156577134e52c14672d32fc0"
+    sha256 cellar: :any, x86_64_linux:  "8c2d017b1ecc67d437c92909cedd3525fbf4f56f07a9ab505573f44315ec30d2"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -43,8 +42,8 @@ class Ansible < Formula
                                      shade zabbix-api]
 
   resource "aiohappyeyeballs" do
-    url "https://files.pythonhosted.org/packages/33/c6/61a2d7b7572279226bb2e7f61d7a19ca7c90da0329c93fa0d560cbf288d8/aiohappyeyeballs-2.6.2.tar.gz"
-    sha256 "e202810ee718bd01fc6ef49e8ea53d023d5cb6b581076d7925aa499fa55dbe64"
+    url "https://files.pythonhosted.org/packages/ce/f4/eec0465c2f67b2664688d0240b3212d5196fd89e741df67ddb81f8d35658/aiohappyeyeballs-2.7.1.tar.gz"
+    sha256 "065665c041c42a5938ed220bdcd7230f22527fbec085e1853d2402c8a3615d9d"
   end
 
   resource "aiohttp" do
@@ -88,13 +87,13 @@ class Ansible < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/10/9d/794d03504b8c72bf978a1ef93bc9e7d0867951bf5fbbe50881cd50fb26d5/boto3-1.43.33.tar.gz"
-    sha256 "da6e400b2d11eb041fbbb2743ef3ffe6540889676ffdff0e628628e9b4f04cde"
+    url "https://files.pythonhosted.org/packages/eb/ee/97798453d8e9dba0c60458870b07c78ac685fc21cdddd8eb3e20190249c6/boto3-1.43.38.tar.gz"
+    sha256 "a8d1e175a87a743e755237d884d7e5f4606e61e5602e9823469a1a630e379b3c"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/20/d5/8ec6df4e82bec2be4ac417f542736dc6cfe89152693337152421b336eb71/botocore-1.43.33.tar.gz"
-    sha256 "74b3d5626ebeb2677fac1ca12ac975faf328e54349ceb4dcda17f50674d5b9b4"
+    url "https://files.pythonhosted.org/packages/73/6c/815f49f0c582396b1a4c37df554ffab6bb420abd5a96d5329183a97022de/botocore-1.43.38.tar.gz"
+    sha256 "70fbd5c74f5742f5975ddcc61e6afb5174cb80577c2ccc17c6898ad3a49b51f3"
   end
 
   resource "charset-normalizer" do
@@ -188,8 +187,8 @@ class Ansible < Formula
   end
 
   resource "junos-eznc" do
-    url "https://files.pythonhosted.org/packages/0d/5e/d3992f7c754d99c9340efef40ddcfd1dd6e616190db66c499503d36bf0df/junos_eznc-2.8.1.tar.gz"
-    sha256 "253de81cfc7d1a64285890c1aad363cff3c5c3a6cba3b82e7a958db794daeb57"
+    url "https://files.pythonhosted.org/packages/34/66/aeab71e5844ff25b771c509b19f8c85e0e5d1c34851b52135de3e9609b9c/junos_eznc-2.8.2.tar.gz"
+    sha256 "bb0426e74bce4544405723a9047341ede91b29cd9b61f1be9e633a55c470fffc"
   end
 
   resource "jxmlease" do
@@ -268,8 +267,8 @@ class Ansible < Formula
   end
 
   resource "openstacksdk" do
-    url "https://files.pythonhosted.org/packages/b8/43/49b126e9ccfa19647d2f0aff26321caded607522d29c3d9495d44f4b9471/openstacksdk-4.16.0.tar.gz"
-    sha256 "466640c6d2b813b782d4ad58a4f2960633e8e58f147ec0baa2019454de190d30"
+    url "https://files.pythonhosted.org/packages/48/1d/0238c57f7eb64170be6ff1703c3f87afa44a648f0672c91de7f66a58a11e/openstacksdk-4.17.0.tar.gz"
+    sha256 "827e1ade488db6116f59af1da6c97dbdfeeb879d3fc96bca99b19351f15df8ba"
   end
 
   resource "os-client-config" do
@@ -355,8 +354,8 @@ class Ansible < Formula
   end
 
   resource "prettytable" do
-    url "https://files.pythonhosted.org/packages/79/45/b0847d88d6cfeb4413566738c8bbf1e1995fad3d42515327ff32cc1eb578/prettytable-3.17.0.tar.gz"
-    sha256 "59f2590776527f3c9e8cf9fe7b66dd215837cca96a9c39567414cbc632e8ddb0"
+    url "https://files.pythonhosted.org/packages/81/74/ba08d81e668ccfe8658d7520a307e63c19862c08eb4ccb26f356c5239a7a/prettytable-3.18.0.tar.gz"
+    sha256 "439217116152244369caf3d9f1caf2f9fe29b03bd79e88d2928c8e718c95d680"
   end
 
   resource "prompt-toolkit" do
@@ -570,8 +569,8 @@ class Ansible < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/49/b4/51fe890511f0f242d07cb1ebe6a5b6db417262b9d2568b460347c57d95cc/wcwidth-0.8.1.tar.gz"
-    sha256 "faf5b4a5366a72dc49cad48cdf21f52bdf63bdda995178e483ba247ff79089b9"
+    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
+    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
   end
 
   resource "websocket-client" do
@@ -580,8 +579,8 @@ class Ansible < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/2d/9f/06263fcd8ad6c405f05a3905fd7a84dd3176eb5ad46e44bccc0cd16348bb/wrapt-2.2.1.tar.gz"
-    sha256 "6744f504375775d7609c82c8d3d94af1c9a6f05586984536905908ba905277b9"
+    url "https://files.pythonhosted.org/packages/fe/a4/282c8e64300a59fc834518a54bf0afabb4ff9218b5fa76958b450459a844/wrapt-2.2.2.tar.gz"
+    sha256 "0788e321027c999bf221b667bd4a54aaefd1a36283749a860ac3eb77daed0302"
   end
 
   resource "xmltodict" do

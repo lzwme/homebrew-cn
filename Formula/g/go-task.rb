@@ -1,18 +1,18 @@
 class GoTask < Formula
   desc "Task is a task runner/build tool that aims to be simpler and easier to use"
   homepage "https://taskfile.dev/"
-  url "https://ghfast.top/https://github.com/go-task/task/archive/refs/tags/v3.51.1.tar.gz"
-  sha256 "ee12bd4bd445df59de17d9b4376f8afb6a623facce34169479af8b0569220034"
+  url "https://ghfast.top/https://github.com/go-task/task/archive/refs/tags/v3.52.0.tar.gz"
+  sha256 "54833f32465c45d222867cc89c6bc138d07c63d2b43f0512e2cdb4b2164ad87e"
   license "MIT"
   head "https://github.com/go-task/task.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b93976b25adf359bad5f5cd976790a502bdac7151565871ee60235d709b46b8c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b93976b25adf359bad5f5cd976790a502bdac7151565871ee60235d709b46b8c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b93976b25adf359bad5f5cd976790a502bdac7151565871ee60235d709b46b8c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "12aba0edc52fc4c24313886e794c9d07f540edb0aca69b977aacafbfabacfe82"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "665657e6f482dbad332bbc1d53a5ace1042d2a0a9b032c7704ab17953f0bad51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d51acfa8c17844026ac669f0048c1916735f7a6d586c0826f190eb63e1c0a681"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "daa6e267bc790b90c19eec4e7f5a72e7b4014d70489737907bccee95f98ba934"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "daa6e267bc790b90c19eec4e7f5a72e7b4014d70489737907bccee95f98ba934"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "daa6e267bc790b90c19eec4e7f5a72e7b4014d70489737907bccee95f98ba934"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1f8b55ef28bb2532c2207ae061c2ed1d74a0f930bc72076f9d70fb575c020be1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "43b45708c1045ae8ed54a18a0d6f3297a746ca0a73ff8ee367283f211b252ea4"
+    sha256 cellar: :any,                 x86_64_linux:  "2b572eb29dcd078f580c3bfa08a7a3c8d317bd3deffa3b1dbd5c0da5b324767b"
   end
 
   depends_on "go" => :build

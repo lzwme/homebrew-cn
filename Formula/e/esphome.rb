@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://esphome.io/"
-  url "https://files.pythonhosted.org/packages/44/3d/10a5e49d85c354e765653e1647fd68f37d1d34b5c4d32e70e6372d1a3a69/esphome-2026.6.3.tar.gz"
-  sha256 "c4e1cbfa55968093a1446cb22cd33dc86db310cc32eda1f70d6d12df3b2a6a63"
+  url "https://files.pythonhosted.org/packages/1d/e2/d10f9b8e68374ecb2cc9175e7e1f024aafd0e6a44b146f0af4e8f79dec4d/esphome-2026.6.4.tar.gz"
+  sha256 "c355e50c258d0db37037cf7c928746d67da03efc7856a83f021366cc7bc4fc6f"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -12,12 +12,12 @@ class Esphome < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "adbc3713b56e771ad13ed5045771da48c288a6ba997ba1624fcadc2d929f813c"
-    sha256 cellar: :any, arm64_sequoia: "916388176bca36af467e5520a860b9479312d07a6edb8c9ccbcf5acdd59e866d"
-    sha256 cellar: :any, arm64_sonoma:  "fbb7a010cd00fc427033955cd2f3ad0b47d08e79a8649cad25a0d42d5f3d9467"
-    sha256 cellar: :any, sonoma:        "9ab4de5910a5ce8e4c214f1d8e0f06f9afffa90a25cde58094f323069d58d8f5"
-    sha256 cellar: :any, arm64_linux:   "631a8cd65f4257e14721b6a3a072134da5b515c47753015cf693bb6143fe9dc0"
-    sha256 cellar: :any, x86_64_linux:  "19997fde1dea648a10e69d8c895a4213959618d33e8fe84ee67d2a47e988e2e0"
+    sha256 cellar: :any, arm64_tahoe:   "fabe4f1583eda4685eafa7fe28174c215255cf74b0af121ff3a74fb3f9ab5874"
+    sha256 cellar: :any, arm64_sequoia: "c0d1fc7071e3b88ee6e44ab8aebc2635f72f40b492c1f608baf36e511ff321d8"
+    sha256 cellar: :any, arm64_sonoma:  "790208990bfda193d309f91c2fc29007bdfb867d53608bd203269faf4529c65a"
+    sha256 cellar: :any, sonoma:        "bbd8b5468869e5826bbaa91dfe71b49c77d1060e4b150af1f0e89c7e7849582a"
+    sha256 cellar: :any, arm64_linux:   "5a131b9126427d9c71323c1e1e39e0c8253564116c1b0e94f330037dd19dfd3d"
+    sha256 cellar: :any, x86_64_linux:  "270ebe8cd75905a18a12a99f94325b26c31dcde6edd3a550720f9f99453177e3"
   end
 
   depends_on "rust" => :build
@@ -61,8 +61,8 @@ class Esphome < Formula
   end
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/38/61/0b9ae6399dd4a58d8c1b1dc5a27d6f2808023d0b5dd3104bb99f45a33ff6/argcomplete-3.6.3.tar.gz"
-    sha256 "62e8ed4fd6a45864acc8235409461b72c9a28ee785a2011cc5eb78318786c89c"
+    url "https://files.pythonhosted.org/packages/95/c0/c8e94135e66fabf89a120d9b4b123fe6993506beca6c1938a74c24cfa5fd/argcomplete-3.7.0.tar.gz"
+    sha256 "afde224f753f874807b1dc1414e883ab8fe0cda9c04807b6047dcb8e1ac23913"
   end
 
   resource "async-interrupt" do

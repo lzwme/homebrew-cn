@@ -1,8 +1,8 @@
 class Highs < Formula
   desc "Linear optimization software"
   homepage "https://www.maths.ed.ac.uk/hall/HiGHS/"
-  url "https://ghfast.top/https://github.com/ERGO-Code/HiGHS/archive/refs/tags/v1.15.0.tar.gz"
-  sha256 "c3fc3e9ee43e6d562361f8647b4c69f958c95356a1af8bc5a3647f5882230d44"
+  url "https://ghfast.top/https://github.com/ERGO-Code/HiGHS/archive/refs/tags/v1.15.1.tar.gz"
+  sha256 "a840d269dff2fafb371dd247df13ad5e026d7ce3b35ad3dc1eedd59bf0c2fb16"
   license "MIT"
   compatibility_version 4
 
@@ -15,12 +15,12 @@ class Highs < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d332e21116f09f12ea65f483a5a783485d662f8852458029868db658914d6657"
-    sha256 cellar: :any, arm64_sequoia: "6a4c1d879d4e03e5451efe8057c1a051e17c419d78ad1eb101be331872b1d3eb"
-    sha256 cellar: :any, arm64_sonoma:  "6e5125f35ec20445e93a81b3aa311610c68716a64e42de037e47c0fed61cc7c4"
-    sha256 cellar: :any, sonoma:        "eab9f3a7256919e960176b4b11cdc216d4c2298989cceb7c235a93902a365af6"
-    sha256 cellar: :any, arm64_linux:   "2f032590ea48bcbf9c6472cfdd9912b97fd7ddfbed48959a993b3236d96991b2"
-    sha256 cellar: :any, x86_64_linux:  "98591a802ca2c851507da186277bb9e34f841d82b441b4a94983e76a403d909e"
+    sha256 cellar: :any, arm64_tahoe:   "d7065ab57341a0f87fc871af14ae92ac4c065fccf93062d1a74683de8d7ae78f"
+    sha256 cellar: :any, arm64_sequoia: "270b098a9d4531bf7231c83229d2a6349b973af0fca85f43a2ad01a2bf3b5586"
+    sha256 cellar: :any, arm64_sonoma:  "0a850956801830bada13e9ddaef57f9e8e83e07b35d426821b1e60e875bb243d"
+    sha256 cellar: :any, sonoma:        "a862c48545dbe8806790523b519b7d4ec62bdd598974e0f0d3591f546856f1f5"
+    sha256 cellar: :any, arm64_linux:   "ec6c40f034ea5c11f80e32ea0a80c7ed95f7ab786933155bb1a67e160fcdf358"
+    sha256 cellar: :any, x86_64_linux:  "0fca654e3d99718bf0308bfe08f5845c9771865af9d0448bf8e730bcae0d2935"
   end
 
   depends_on "cmake" => :build

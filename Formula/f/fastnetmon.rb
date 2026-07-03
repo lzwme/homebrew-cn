@@ -4,15 +4,15 @@ class Fastnetmon < Formula
   url "https://ghfast.top/https://github.com/pavel-odintsov/fastnetmon/archive/refs/tags/v1.2.9.tar.gz"
   sha256 "5ecc10791af04fc1fd720a9a113060668426aa798d5b6c3921364213a31a5e9b"
   license "GPL-2.0-only"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1b1755aac67123486d6160d0eb18ee4834d6c045656a88b3291cfe4db4bb0d80"
-    sha256 cellar: :any, arm64_sequoia: "2a8843c49006f7a9b76b6fbbd1d765c4beee56fdcce8d9ccd63e01ab58cb9e26"
-    sha256 cellar: :any, arm64_sonoma:  "ac81dc75efb999af7e2385cdabbf7c3e2a596e78f980cf1faae4078aabf0fff8"
-    sha256 cellar: :any, sonoma:        "0e752ba82588e9f29ed971dc9208b31b7f0812083ac69e187e3c5b5f8a644c54"
-    sha256               arm64_linux:   "adf05cb46e7cbfed5474046664d5d57f97e362870117fc1526f980ab6a13ff4a"
-    sha256               x86_64_linux:  "1191c87212ff58971a13b87f51a7f4dd12db77c3dd41827ec77221655d932c92"
+    sha256 cellar: :any, arm64_tahoe:   "5e8319af246c2a7cc17ac0ed2e53fe919993f88b423f0c0c804d7807058ba167"
+    sha256 cellar: :any, arm64_sequoia: "20691a0280e3c77d24700fb770cf12c763760eebde8d7a3d697f568d0af630a5"
+    sha256 cellar: :any, arm64_sonoma:  "95381bde8a0e16e20fa05811e3d9caa68d4bbd951a02691b2831f15ca5fe99d2"
+    sha256 cellar: :any, sonoma:        "50f13e35b506bd61bfb8292e2c50cf5f0302ed62affd590355310b8e71fcc52d"
+    sha256               arm64_linux:   "d5223736b4fbb84aa97d22cb5f3778997e2bf88f7dccccc8f88abdd94b02e4e0"
+    sha256               x86_64_linux:  "a8cdd742368795b90f846de6601c8e02cbe323ebe574775a17bcea7c23180366"
   end
 
   depends_on "cmake" => :build

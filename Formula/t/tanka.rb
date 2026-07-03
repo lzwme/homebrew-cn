@@ -1,8 +1,8 @@
 class Tanka < Formula
   desc "Flexible, reusable and concise configuration for Kubernetes using Jsonnet"
   homepage "https://tanka.dev"
-  url "https://ghfast.top/https://github.com/grafana/tanka/archive/refs/tags/v0.37.4.tar.gz"
-  sha256 "979de90bac45cf0f87e6b03b2a9a588648524f712da41906e32faa27d6fcbbb4"
+  url "https://ghfast.top/https://github.com/grafana/tanka/archive/refs/tags/v0.37.5.tar.gz"
+  sha256 "79bdc6917e5e04a85905a707a51b376db6dcc7dd76b65c0b47355829d301c33a"
   license "Apache-2.0"
   head "https://github.com/grafana/tanka.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Tanka < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "502f40bf16b8a309154135d167e71d0f9d2f0baede0f28ea3ef23405c38336fa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "502f40bf16b8a309154135d167e71d0f9d2f0baede0f28ea3ef23405c38336fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "502f40bf16b8a309154135d167e71d0f9d2f0baede0f28ea3ef23405c38336fa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "80aa3ee960c9f11572b0b9419bb84d7fb3a23ff4d409735f6cc1722517d818a9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de0fc4f178177337c46b2af41519aface1f7531139784204afc52c03bdfaa1d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f449b32e6042615e42c7919c24cc22d7360b46de29f0a09ad9ec329e8231cf2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2554b47e45873cf64e574545a4916afeb79d725e433362e92e88724848952b46"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2554b47e45873cf64e574545a4916afeb79d725e433362e92e88724848952b46"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2554b47e45873cf64e574545a4916afeb79d725e433362e92e88724848952b46"
+    sha256 cellar: :any_skip_relocation, sonoma:        "969005e3633494965205a1ac8c71535d8235c13aad787665f780edcf81aff67f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2a326aef870b6b8dfde49bf149122a18d2085278a448b36854d0339399f3790"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b64600616c7048af7635939291c79d64f712a34b2d4bc1d9953830fb9a40b4c"
   end
 
   depends_on "go" => :build

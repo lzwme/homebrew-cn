@@ -3,8 +3,8 @@ class Dnsdist < Formula
 
   desc "Highly DNS-, DoS- and abuse-aware loadbalancer"
   homepage "https://www.dnsdist.org/"
-  url "https://downloads.powerdns.com/releases/dnsdist-2.0.7.tar.xz"
-  sha256 "58680f780517b787e64fee4cd4dcc57f439be607084f89ee4699789d7d626875"
+  url "https://downloads.powerdns.com/releases/dnsdist-2.1.0.tar.xz"
+  sha256 "8714b7ca065b2d7ae5da980bc81a94d2baaa725a9b3c2c23b3a0fadb7c6a8335"
   license "GPL-2.0-only" # with OpenSSL Exception (non-SPDX)
 
   livecheck do
@@ -13,12 +13,12 @@ class Dnsdist < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a25880dd7ce15b033735f0be9c6eceb87c8864d292b2d39797701b8e3395b28c"
-    sha256 arm64_sequoia: "e53c951bf4e14280a8a944ccfed78dc631b18b64fa21f945fae786e956a79ae9"
-    sha256 arm64_sonoma:  "e4e8ab3b06ab476e84c675b4e7df60c05d518c38089d275cdaa5f60884bf34bd"
-    sha256 sonoma:        "af29bb5fc01415db991be1b6300c7cf49f8749d0780c5753ae776fc57f07cdf2"
-    sha256 arm64_linux:   "d15cc16526a2f26d48edac048da694ad5c64bb2846aab6c15b3409c345c9ff49"
-    sha256 x86_64_linux:  "12c81e80d62b5c1a4fb7c2177d72c84abcf8e9f754962d99efec97b9ecd36cef"
+    sha256 arm64_tahoe:   "a2d9be871d32690d33509031253e3c15bbe0458d43b90696378f9d2b01af5376"
+    sha256 arm64_sequoia: "05327ad4c2f2a5339b15771a43169ecfee2874993707cb3493c08ae28195f892"
+    sha256 arm64_sonoma:  "b4b2da3500baf8acb9891c8755f7187f7b92eea4113defd37b7f01149dcc0818"
+    sha256 sonoma:        "b56236c572330b7aab32cf900f5d0b5135347ffac50233e13a5bb5bc7e0130a6"
+    sha256 arm64_linux:   "b59dfe49527a7b53f08b61d238d7af80c22d4fa9f0238a3724b3024b72316362"
+    sha256 x86_64_linux:  "b3a6fa9b257a0fd94ea8a7d7679a44865c47abd0f4215763ec35759467ecffad"
   end
 
   depends_on "boost" => :build
@@ -65,6 +65,6 @@ class Dnsdist < Formula
   test do
     (testpath/"dnsdist.conf").write "setLocal('127.0.0.1')"
     output = shell_output("#{bin}/dnsdist -C dnsdist.conf --check-config 2>&1")
-    assert_equal "Configuration 'dnsdist.conf' OK!", output.chomp
+    assert_match "Configuration OK", output
   end
 end

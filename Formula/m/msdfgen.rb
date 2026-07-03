@@ -4,6 +4,12 @@ class Msdfgen < Formula
   url "https://ghfast.top/https://github.com/Chlumsky/msdfgen/archive/refs/tags/v1.13.tar.gz"
   sha256 "93cd1ad8918c1a78c5c96e82d4f4c77f0eb86c2e7e8579a0967e54196c4b7167"
   license "MIT"
+  head "https://github.com/Chlumsky/msdfgen.git", branch: "master"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "d035596570fd1be46d3479bf5de7ce23384810298a0fe8124b695eec1d639d2e"

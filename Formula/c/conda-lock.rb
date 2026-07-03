@@ -3,18 +3,17 @@ class CondaLock < Formula
 
   desc "Lightweight lockfile for conda environments"
   homepage "https://conda.github.io/conda-lock/"
-  url "https://files.pythonhosted.org/packages/0c/24/a26b28fbff0eee3c10f8153bcfd9b9dfc234e7acf89c07e08852bd23d0f0/conda_lock-4.0.1.tar.gz"
-  sha256 "b0dea35c2d10ad9fe07bacfcb79c090e4817aa148aa493a9faff55415899bd30"
+  url "https://files.pythonhosted.org/packages/06/44/52deb5012f8ef85c224cb3b1638c09c3b3d70b2f9e101e893bb61b9ee9ba/conda_lock-4.0.2.tar.gz"
+  sha256 "c4ebc4404ea760b1dd0035d6403fa27e291050269a5fd1b629b89fcbc75ef32a"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "59fe04005e50dc91247ee17941ef02dfe1f434aedb0dac1fd792f6c4208e4166"
-    sha256 cellar: :any, arm64_sequoia: "7cb4dc1d90b01471dbd8f73b21d34c084f70dca057a4a6599341bde25600065c"
-    sha256 cellar: :any, arm64_sonoma:  "a3c92c8aa1cdaec3d339efab2d1a323568f685a20df7bc2df801eab5599cf5ef"
-    sha256 cellar: :any, sonoma:        "e01ea9a1a72ff3475fc2f92a8cd70b5d0b81b94121dedc2c6e5d5f05585a08af"
-    sha256 cellar: :any, arm64_linux:   "89dfd8ebc2f9ac27fda6476b5b2204fa018703fe88429dc0f30361d286d41d00"
-    sha256 cellar: :any, x86_64_linux:  "7d29926445dda246295e677ef368167f856a3be5b59f926221df994745d82222"
+    sha256 cellar: :any, arm64_tahoe:   "4b1ac8cef9ff94191d8526f78fde9c679d2010e566ee96f8017a0331b3a1d47f"
+    sha256 cellar: :any, arm64_sequoia: "30250892007be64a78824bbaae18de87b89e6d75bacbe965df6de9f4592a1530"
+    sha256 cellar: :any, arm64_sonoma:  "a4db5df2bccd07f457e9e621474109ee4cb3d3b24fbdc67dda217116335d4c90"
+    sha256 cellar: :any, sonoma:        "7b15d4d5c0a328a098c2249366d4676e332d5cfbc3782e24b82f04004e21348e"
+    sha256 cellar: :any, arm64_linux:   "5c82150faf7d16d65a356f08d345d4de02ee1861400eaca1ce2884c712d0ebf5"
+    sha256 cellar: :any, x86_64_linux:  "852fc31b6ecd4164fb5e6a525d3734ef1485175f0c269b89f98e45cdc4f0f11a"
   end
 
   depends_on "rust" => :build # for cachecontrol, uv-backend
@@ -58,8 +57,8 @@ class CondaLock < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "click-default-group" do

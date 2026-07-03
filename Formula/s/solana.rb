@@ -1,8 +1,8 @@
 class Solana < Formula
   desc "Web-Scale Blockchain for decentralized apps and marketplaces"
   homepage "https://www.anza.xyz/"
-  url "https://ghfast.top/https://github.com/anza-xyz/agave/archive/refs/tags/v4.1.0.tar.gz"
-  sha256 "0078be7b61bcd38956f4bdbae0ec16eba92ef0db99c5ae502cf2f2a3897938cc"
+  url "https://ghfast.top/https://github.com/anza-xyz/agave/archive/refs/tags/v4.1.1.tar.gz"
+  sha256 "79c2b54a71fc0e794afe9ecd43c5c506c07368743b2b0d073cea65a1b9eb072e"
   license "Apache-2.0"
   version_scheme 1
 
@@ -12,12 +12,12 @@ class Solana < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8b3d59c204e3f1544d7b7677510d585476e864aea7fd416f4f78ed938ccabf6f"
-    sha256 cellar: :any, arm64_sequoia: "7984f49d1af79ddb18d8e55be0d8ff84d4140deeb5ab0253ad325469c432704e"
-    sha256 cellar: :any, arm64_sonoma:  "f23255dc80fc5501f05f60cd87d7367cc1c79fd9e5cefb940efda7762733e278"
-    sha256 cellar: :any, sonoma:        "70a9b261e769b0ae76f95ae655e1e062a9ec94c142bbbf28ba62bcf190685d7e"
-    sha256 cellar: :any, arm64_linux:   "c052f07fe36ba79105572cecf8a7e957aef5d54f3ea0f4e1adcf38a8aab60d69"
-    sha256 cellar: :any, x86_64_linux:  "4192dbc322cc0004f4940c26d30666cb89868e23e87bf20aecf939385e4d0c7e"
+    sha256 cellar: :any, arm64_tahoe:   "b0f140bfba1ddc8a13ab819c41ad2b39d55b2fe0567f0417f4068413265842f5"
+    sha256 cellar: :any, arm64_sequoia: "74fc844ee6c0337f9065c0822ba739d20a801d7d48748fd12ef8459995897fe5"
+    sha256 cellar: :any, arm64_sonoma:  "30e177a298327267a393711dbb470e95cfc6b3d241548243317f47879c77bc54"
+    sha256 cellar: :any, sonoma:        "36fa7ba2a886907a85a2bca13a4785b028942b1ddbce29b393f8054eefdcee02"
+    sha256 cellar: :any, arm64_linux:   "b6ccd4da30d399899603fd3c2bb9c2e2f155b0bd5a4de9af2ab151e3870b88d7"
+    sha256 cellar: :any, x86_64_linux:  "be0985356336b544c5274df4c539cc680729d7eb78162f1ea36598208f2b5801"
   end
 
   depends_on "llvm" => :build # for libclang

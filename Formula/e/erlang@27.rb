@@ -3,8 +3,8 @@ class ErlangAT27 < Formula
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
   # Don't forget to update the documentation resource along with the url!
-  url "https://ghfast.top/https://github.com/erlang/otp/releases/download/OTP-27.3.4.13/otp_src_27.3.4.13.tar.gz"
-  sha256 "38308102d1f7e44339911ddc5e3a94a6b4bbb0ef8a5fc392e2e4b280daf0fc9e"
+  url "https://ghfast.top/https://github.com/erlang/otp/releases/download/OTP-27.3.4.14/otp_src_27.3.4.14.tar.gz"
+  sha256 "cda7508a1aef446824f5fff4d64f1b1ad6365e7ad9a5f9d7300f6b6b3aef7015"
   license "Apache-2.0"
 
   livecheck do
@@ -13,12 +13,12 @@ class ErlangAT27 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e29b983b0179f14c7b20f73829ef4025f3f11a617216c70877c3afac2af4773c"
-    sha256 cellar: :any, arm64_sequoia: "5b016903f905ea428a410e74bf5a97f40d01b95b1502e446e765f7c59c11efbb"
-    sha256 cellar: :any, arm64_sonoma:  "4b137d1ef2b6f7fedf3824b0facd59177ff1546b86e3c3932d206ee0c2f90a6b"
-    sha256 cellar: :any, sonoma:        "63dd2283a1247e2fee9a298d653e3ef3444460e88496b75b1eb652d9a645d1d3"
-    sha256 cellar: :any, arm64_linux:   "3359969600523fe6095b3e37f79c77c965434ea5594254d15d743b9928757011"
-    sha256 cellar: :any, x86_64_linux:  "17d250eabacad76da731f793df1138a1ee1de3387f6d9606215fcc249ca6cadb"
+    sha256 cellar: :any, arm64_tahoe:   "cc0c09dca184d74b1ff38dc3ac71d8274407d47a815f5d24096a693a27b43a20"
+    sha256 cellar: :any, arm64_sequoia: "e56f99a7de0f1a38b0f09017d8ad3f513cb999fdd6acea4c21b9ccaa8ea278a6"
+    sha256 cellar: :any, arm64_sonoma:  "1c9955f66da4c96ee7aef4af320cea60724b830b214fd33f9088baba988730fe"
+    sha256 cellar: :any, sonoma:        "9c7a901d9c349ef322c77951a1dc7b8e8ec0e6f93d3fb5b887c2851d05111d95"
+    sha256 cellar: :any, arm64_linux:   "c4739b92564ea12d69985f73f60ce49436fc3411b67983074de8cedb5c5faed1"
+    sha256 cellar: :any, x86_64_linux:  "bcda97f01b2e7351a76657e1b0ebba7749a3e14cf703c0322f8adf248405bd2f"
   end
 
   keg_only :versioned_formula
@@ -36,8 +36,8 @@ class ErlangAT27 < Formula
   end
 
   resource "html" do
-    url "https://ghfast.top/https://github.com/erlang/otp/releases/download/OTP-27.3.4.13/otp_doc_html_27.3.4.13.tar.gz"
-    sha256 "ad4e8db5bc086f5c73f9fc158ef6d76d955b74890b11456c73a68d11eafb1fe6"
+    url "https://ghfast.top/https://github.com/erlang/otp/releases/download/OTP-27.3.4.14/otp_doc_html_27.3.4.14.tar.gz"
+    sha256 "476066cd84139a7ca731d898f9802f6640dd1e1502952542a629062b8b5ce12d"
 
     livecheck do
       formula :parent

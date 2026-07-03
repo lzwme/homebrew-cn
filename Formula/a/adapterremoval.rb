@@ -1,17 +1,17 @@
 class Adapterremoval < Formula
   desc "Rapid adapter trimming, identification, and read merging"
   homepage "https://github.com/MikkelSchubert/adapterremoval"
-  url "https://ghfast.top/https://github.com/MikkelSchubert/adapterremoval/archive/refs/tags/v3.0.0.tar.gz"
-  sha256 "08145e38f27bfd94e9c95864365726bc63e9325a8b39b973b9ab6c87bd8c93aa"
+  url "https://ghfast.top/https://github.com/MikkelSchubert/adapterremoval/archive/refs/tags/v3.0.1.tar.gz"
+  sha256 "52bef5e9ad5de76a6bd0a1522ad621e95efec0cc23602900bd65a154f96a1f6e"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fe1f1b3ee47637eca94d1e08efdd98d452c373e338518202f78e7b5ecafc4ef0"
-    sha256 cellar: :any, arm64_sequoia: "d202010da68e584d3129e665b66cc10942b0319cb0a97826b4f526c9b68927c8"
-    sha256 cellar: :any, arm64_sonoma:  "db968108511cdf67f166eeb60823e76beba3d6b4c2a769705690c9b7cf09c78b"
-    sha256 cellar: :any, sonoma:        "52e49e70013942cb39655695d982f7790fc1e3ece0901e74328856dbc637d6eb"
-    sha256               arm64_linux:   "14ac480c9aa9681e7da56ef0a6d5a4621432a296563db875a39bc8c37eb26e30"
-    sha256               x86_64_linux:  "e00c540f071ee2aee4f4bd0d9bd8df53efcbeafc90b6602ab1ccce7308139368"
+    sha256 cellar: :any, arm64_tahoe:   "d356ce191bce3d4637afe7f018731f5790e4e0331c54c6cbe41198196ad3017a"
+    sha256 cellar: :any, arm64_sequoia: "4aa3febe3500b531e7ab1bbea48a9cf00a3c59168cca2b2dc63a440e76ce2b89"
+    sha256 cellar: :any, arm64_sonoma:  "e54735ba61b7158e27e0f4851e47e9040a7cf34817f476124510217ab3e8a152"
+    sha256 cellar: :any, sonoma:        "4dfcb73fde9c3aa038c879d8a223dfa88bc7f42b2eaf39af6480b5fe5d42bd1e"
+    sha256               arm64_linux:   "dac7c85e227d8a27aeaa348a7cfddf2ca8bdbe0ec9fc9589aba0f75f16655730"
+    sha256               x86_64_linux:  "2f209a14c5e416b0fde6637cb8fe53fd6104d0b689374d1f97399bcccb08a0aa"
   end
 
   depends_on "meson" => :build
@@ -30,6 +30,11 @@ class Adapterremoval < Formula
   deny_network_access!
 
   def install
+    # macOS SDK < 15 lacks quick_exit
+    if OS.mac? && DevelopmentTools.clang_build_version < 1700
+      inreplace "src/main.cpp", "std::quick_exit(1);", "std::_Exit(1);"
+    end
+
     args = %w[
       -Db_coverage=false
       -Db_lto=false

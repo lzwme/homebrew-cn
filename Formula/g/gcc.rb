@@ -25,15 +25,15 @@ class Gcc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "39faa08c413c043b9f44a6be5beb260d5acf7fd0bf035688c2579d3be48a8463"
-    sha256 arm64_sequoia: "083223989b47d242c7c42366abaf3e8509f7bdde84a370cb7381c9267a199847"
-    sha256 arm64_sonoma:  "9d4be966090f2585d27a717c96208077059e43c5ab5b510f1525b0efc2a21bb7"
-    sha256 tahoe:         "e60ded6de95e31669e493a2fa327bd308b205c272d696f61954ed860a7709bde"
-    sha256 sequoia:       "e47fbf21a46d5143dee9f944a6ae0059a40968460fd767c3693cc9cd8119c68f"
-    sha256 sonoma:        "b1d7ab5a739178d4b475438c128646256c1759205a4047cd83b7b53c87c8b9e4"
-    sha256 arm64_linux:   "235350076566b5b4db7e0bb1acf08c06f2ef4eff6a9a5879d0ceb3e2c48deafe"
-    sha256 x86_64_linux:  "c03913f7c701d33bb1faad0c8e576c8ee4e6af410eb4951bb89258b239d55be5"
+    rebuild 2
+    sha256               arm64_tahoe:   "62d968d6919eacff601b0282fefccb38b8382d6f7169ea26a0662712e7f29f43"
+    sha256               arm64_sequoia: "6839eac9682dee9c9ab28ab96c5f6308a3a2d96ed499fbb4c43e10d6cc3691a5"
+    sha256               arm64_sonoma:  "7a051bdd1684ab105b32c11e16fdb1666f4b00570a5937a5d043a211ca0a60fb"
+    sha256               tahoe:         "8f85390a62209522d9630c85c2747290f87538f5e859e1c9a41dfe306324acdc"
+    sha256               sequoia:       "74045addfa1423d6ae6c61b1262bf5dceab762da3139a8882d1c3efd4f67407e"
+    sha256               sonoma:        "e4d2195790a199de6d34c15a46967ad5d29f921af09658275e879090d19c0eb5"
+    sha256 cellar: :any, arm64_linux:   "d96f44d6c8f398d961ce53f7d1eac98f46ed0781866905fe6aa29c8a9d644c5b"
+    sha256 cellar: :any, x86_64_linux:  "6b8edf7db3aaa4c67a412a448fcf97ed5ad5e1d157cb9c0f99d68b8c30aca484"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -130,9 +130,6 @@ class Gcc < Formula
       inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64="
       inreplace "gcc/config/aarch64/t-aarch64-linux", "lp64=../lib64", "lp64="
 
-      # Use our own (recent) binutils for as
-      args << "--with-as=#{formula_opt_bin("binutils")}/as"
-
       ENV.append_path "CPATH", formula_opt_include("zlib-ng-compat")
       ENV.append_path "LIBRARY_PATH", formula_opt_lib("zlib-ng-compat")
     end
@@ -148,8 +145,8 @@ class Gcc < Formula
       # To make sure GCC does not record cellar paths, we configure it with
       # opt_prefix as the prefix. Then we use DESTDIR to install into a
       # temporary location, then move into the cellar path.
-      system "gmake", install_target, "DESTDIR=#{Pathname.pwd}/../instdir"
-      mv Dir[Pathname.pwd/"../instdir/#{opt_prefix}/*"], prefix
+      system "gmake", install_target, "DESTDIR=#{buildpath}/instdir"
+      prefix.install buildpath.glob("instdir/#{opt_prefix}/*")
     end
 
     bin.install_symlink bin/"gfortran-#{version_suffix}" => "gfortran"
@@ -168,10 +165,6 @@ class Gcc < Formula
     man7.glob("*.7") { |file| add_suffix file, version_suffix }
     # Even when we disable building info pages some are still installed.
     rm_r(info)
-
-    # Work around GCC install bug
-    # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105664
-    rm_r(bin.glob("*-gcc-tmp"))
   end
 
   def add_suffix(file, suffix)

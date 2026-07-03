@@ -6,6 +6,11 @@ class SbomUtility < Formula
   license "Apache-2.0"
   head "https://github.com/CycloneDX/sbom-utility.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f007f8c7f74412af69ca172963772a13d642e1781f8952374236cab1e7d727e0"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f007f8c7f74412af69ca172963772a13d642e1781f8952374236cab1e7d727e0"

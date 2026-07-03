@@ -3,17 +3,17 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://ocrmypdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/15/ac/30171791db306c7b1c705957a0b9bed9df443b9465533dfc1945a654805b/ocrmypdf-17.7.1.tar.gz"
-  sha256 "d61184b84e3001ebe7c5acb265041bd8591f924b8616bbefc746a5bdafab3eca"
+  url "https://files.pythonhosted.org/packages/4b/c4/c44db9ff5282e7c73856f437434777745d18bb9404f431df70e786a6bcc7/ocrmypdf-17.8.0.tar.gz"
+  sha256 "c36d9e53c93ef3c3fd41f283cffce20626ee39a7cc0ff4c2bf484a03634a114c"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "07b9b38bbf12a372b3245aca43e4889241fee5e7a58aa0052c9d65111034a4cb"
-    sha256 cellar: :any, arm64_sequoia: "c5ca2eba614dfa91097d115f6d9512642a3d2e40c9e2e75b2a7355a5c7ae8a7f"
-    sha256 cellar: :any, arm64_sonoma:  "dceb24b79b81b958638f2bc85f37a17b7e61d8bcf3b8a2a912e065ef765abc3e"
-    sha256 cellar: :any, sonoma:        "66e19e6a594d909006ea6c11ba3905ab1106f33d2d928a5fe0a7aa047e8e5670"
-    sha256 cellar: :any, arm64_linux:   "27cd2705b143a4f4e96d6f84945a1b58af3aa4f67a7726d57d7b8821165ad56a"
-    sha256 cellar: :any, x86_64_linux:  "2b019f987acfb3d9e9f84f335cd0011b4ac67908e81ddca79e042002a89e96ac"
+    sha256 cellar: :any, arm64_tahoe:   "75aed00c96bf5b823bd8cb2147419cb057c581d00dbd7293dfbff896a8f07c89"
+    sha256 cellar: :any, arm64_sequoia: "2f94f29ba2d201aba3ce5b821247a485fa279f715879402c537f54eeb73a176d"
+    sha256 cellar: :any, arm64_sonoma:  "c70b3564b90af33fa44f23415839ccfe0545a80a314a033d5061a9ac2f956348"
+    sha256 cellar: :any, sonoma:        "48ba72cf110c6cf69101ee17bfdca215dfa768d14499665db9dbbce042e8ce2e"
+    sha256 cellar: :any, arm64_linux:   "fedb56bc44c4ebb9ae549dd1b16da5c82b6f699d8ca17c876151038030be486b"
+    sha256 cellar: :any, x86_64_linux:  "3476c84bdfa2d080c0a6d214219abf9802b7d6bb9bbd6e5925b9083d8159e8bd"
   end
 
   depends_on "cmake" => :build # for pikepdf
@@ -116,8 +116,8 @@ class Ocrmypdf < Formula
   end
 
   resource "pypdfium2" do
-    url "https://files.pythonhosted.org/packages/1d/78/d9b45abb97a3686643f7c6472a5f7688f2013a373226121dc76b9debbacf/pypdfium2-5.10.1.tar.gz"
-    sha256 "f257d2011eb43c846b7e9f5a802e28646b29732763e4a35dd6ca76f9be580538"
+    url "https://files.pythonhosted.org/packages/a8/b9/a887db9950379fe619f6921ade84730346e6adf008b197951ddcc42dfd1a/pypdfium2-5.11.0.tar.gz"
+    sha256 "0733749ac253c615953a5e75d4322b9f1de8c0d90137ec8dbcef403f3e57b5d9"
   end
 
   resource "rich" do
