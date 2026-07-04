@@ -6,19 +6,20 @@ class PiCodingAgent < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "5b685ecd1f1997a967a420f2d2797568c6ce5ebc2c80723c905e88f4e24175e2"
-    sha256 cellar: :any,                 arm64_sequoia: "d31eb5b2b8cb6c915e44a9a06cc7942b91c5405bbf4ba0e309743f956bb432f4"
-    sha256 cellar: :any,                 arm64_sonoma:  "d31eb5b2b8cb6c915e44a9a06cc7942b91c5405bbf4ba0e309743f956bb432f4"
-    sha256 cellar: :any,                 sonoma:        "981b163deae4e6379bd185d396c86941463cee2e0c929066743c7bd04f720c9e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3de50852fdca2bd111d470cbc0c025e5ce1e9eaadd2cccc8a1824357a65936c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "752ca0b7260762dee8c7f2d92a2cea6aebf4908ca6b7d19507d034585f14a467"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "f3a63a9d39399d077bd8bd91698e5159b316a1150c3d10a53eb2286381217e29"
+    sha256 cellar: :any,                 arm64_sequoia: "984a352add5795c2d570b5a9ad38381a9242196c9007d75cd4def55318174877"
+    sha256 cellar: :any,                 arm64_sonoma:  "984a352add5795c2d570b5a9ad38381a9242196c9007d75cd4def55318174877"
+    sha256 cellar: :any,                 sonoma:        "a8c7464a42cbb7f976013be71d0acaa484f1f77ffc311aaf7086bc7d02536f82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb9586e4eb8adaa041b5dcb07a9cfae4339808aff96bc15892cc9902685e27d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "974fd566ab12fbb885aaf58962fc8964c7d5b948a1967dab59770c9d22054e0c"
   end
 
   depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*")
+    (bin/"pi").write_env_script libexec/"bin/pi", PI_SKIP_VERSION_CHECK: 1
 
     node_modules = libexec/"lib/node_modules/@earendil-works/pi-coding-agent/node_modules/"
     deuniversalize_machos node_modules/"@mariozechner/clipboard-darwin-universal/clipboard.darwin-universal.node"

@@ -1,18 +1,18 @@
 class Swiftdraw < Formula
   desc "Convert SVG into PDF, PNG, JPEG or SF Symbol"
   homepage "https://github.com/swhitty/SwiftDraw"
-  url "https://ghfast.top/https://github.com/swhitty/SwiftDraw/archive/refs/tags/0.27.0.tar.gz"
-  sha256 "f8cd76a17e9d630e60639ab4a1d2f5bf90e8404a7e3a1f15a79ce8919c76134d"
+  url "https://ghfast.top/https://github.com/swhitty/SwiftDraw/archive/refs/tags/0.28.0.tar.gz"
+  sha256 "ac660bc69f2c25154e67b9e65f8b54327860ad51b194ef59c74a7142fb6099f9"
   license "Zlib"
   head "https://github.com/swhitty/SwiftDraw.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9860713c999ea29ab81e6351c350ff12212b0336729e5f8b8a418ca0520522b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "525ecdd41cda12675fb3f02d4d75c17f984a0fafef3b21b7ac002a47d3cc7160"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc882035885a98546a93eb93d5a3b21edb6983fe9c3dd2a1f45ee2dfbcfe163d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5332f74973a30b2b62cbbed253d4f2912fbb13f8c9229c9753a15599ccdc7f40"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ca202714934f64462d5bf5c1616bbaed44eef28543adc71c83cd6001bcf66d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "596db70b9e5539d5c640134776bbf211fe5050ee4f6f9c8fa32108354fc89fda"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3099f01ead2ee0a83b3030b73dd5f061c386ebf2c95f721b90007081b30e1d29"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eed009e37accfa1b3720f83e6879f42b08bd2858af2a503448b650c4cb120a33"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72599bda1b9eac0bc22ac64a9ee82af14cf8faed6d107b8b5d76920e8f237ef0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "04298f49a77471cc4a00d69cff8670384b263040b8520e4c781fe6ee537ecdf4"
+    sha256 cellar: :any,                 arm64_linux:   "46dbf757ad2f29a12b4b9405f22810acb718904300c2ce2e029477ea0fa383d3"
+    sha256 cellar: :any,                 x86_64_linux:  "130bacfa737a0e1783cf5471dda07b4e299a4132a87d8e34b5b12a9368f21672"
   end
 
   depends_on xcode: ["16.0", :build]

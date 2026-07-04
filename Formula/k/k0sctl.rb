@@ -1,18 +1,18 @@
 class K0sctl < Formula
   desc "Bootstrapping and management tool for k0s clusters"
   homepage "https://github.com/k0sproject/k0sctl"
-  url "https://ghfast.top/https://github.com/k0sproject/k0sctl/archive/refs/tags/v0.31.1.tar.gz"
-  sha256 "a0faa9e2c97c213d427197e3c9ad1bc8a6b038d52ada53e8ba3b620d1b48ba2a"
+  url "https://ghfast.top/https://github.com/k0sproject/k0sctl/archive/refs/tags/v0.32.0.tar.gz"
+  sha256 "97d2112b5be95e55d9a88e65963e0cc61af1958b7c620a25281cfe06b58ed619"
   license "Apache-2.0"
   head "https://github.com/k0sproject/k0sctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "94d897d9ac56bd82b9de8f688dc4aa273ba816168f2ff0fb4df1fcd8f3c66235"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94d897d9ac56bd82b9de8f688dc4aa273ba816168f2ff0fb4df1fcd8f3c66235"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94d897d9ac56bd82b9de8f688dc4aa273ba816168f2ff0fb4df1fcd8f3c66235"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6a83cd599eca22445093f8c2a5bf5d6d3f1b299a13115457b68d28d7b366decc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c92e0970e80bb736d2cd5f1341268a87df56c4d1a8d830d975d01079c9e431cf"
-    sha256 cellar: :any,                 x86_64_linux:  "768cf8ceee5d722e2162d4a325d0c0adef06dfbb4648d78ae85b5b611af6026c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "35e7d8dac5ba5d15615d8b58edb096e4f26ec7bb6d6a5aa4536f41baa4b36893"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35e7d8dac5ba5d15615d8b58edb096e4f26ec7bb6d6a5aa4536f41baa4b36893"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35e7d8dac5ba5d15615d8b58edb096e4f26ec7bb6d6a5aa4536f41baa4b36893"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b940c0664b81d8fbde52225cec3efb2f0851581cef8ddd9dffdbe435e2f0dca9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "96b1309696eb5603e2bc59529479c58f88e696c312a6558e1c4c294a796cbfd0"
+    sha256 cellar: :any,                 x86_64_linux:  "5fd4ca0481c51a3a3a5df9094b012d10b7db4afa50cd9f8662c0b934e5c26899"
   end
 
   depends_on "go" => :build

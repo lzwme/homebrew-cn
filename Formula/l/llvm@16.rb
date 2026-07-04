@@ -31,9 +31,6 @@ class LlvmAT16 < Formula
 
   # https://llvm.org/docs/GettingStarted.html#requirement
   depends_on "cmake" => :build
-  # Fails to build with Xcode/CLT 26.4+. Also parts of test fail.
-  # sancov.cpp:521:42: error: chosen constructor is explicit in copy-initialization
-  depends_on maximum_macos: [:sequoia, :build]
   depends_on "ninja" => :build
   depends_on "swig" => :build
   depends_on "python@3.12"
@@ -43,6 +40,12 @@ class LlvmAT16 < Formula
   uses_from_macos "libedit"
   uses_from_macos "libffi"
   uses_from_macos "ncurses"
+
+  on_macos do
+    # Fails to build with Xcode/CLT 26.4+. Also parts of test fail.
+    # sancov.cpp:521:42: error: chosen constructor is explicit in copy-initialization
+    depends_on maximum_macos: [:sequoia, :build]
+  end
 
   on_sequoia do
     depends_on xcode: ["16.4", :build]

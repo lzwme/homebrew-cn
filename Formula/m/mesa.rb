@@ -24,12 +24,13 @@ class Mesa < Formula
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "78366daedbd03adbec81a96b9813e5dc628ea0051b146d0b6faf3a23777f99f3"
-    sha256 arm64_sequoia: "77d1e762a17554dcc76f10dda871875f55daa5c7bf30d68ee44576c3071e692f"
-    sha256 arm64_sonoma:  "4279361f62971b88d1b27673ad110944e26574ffb6e349142f2f197ecffac19d"
-    sha256 sonoma:        "7c1d4367c1303eee3e300801470c06c900b5c6c544bf3548221c65424ba1f0c9"
-    sha256 arm64_linux:   "ecb610923d9ff672be05af5106c76afdbe97e004824a7e8bc075527d57316fd1"
-    sha256 x86_64_linux:  "c234e781c5bf90b81c11ba4e06d1dbc7e5cf44f222df7ad84700075dcc5930a5"
+    rebuild 1
+    sha256 arm64_tahoe:   "28aec79ab255fe39cc7ce3b41494e8e8001e9d77c3ba8006f7710dd2502b2138"
+    sha256 arm64_sequoia: "40aff4fb98f29ec3418d1e020e5081bfd99a3f658ce2392a3695b605d46d6762"
+    sha256 arm64_sonoma:  "3eeecf1cb6f54e97764ddeacdcc23f071c8c4d7725c251388e9f118f84df58e2"
+    sha256 sonoma:        "2fe60081447cd1a913e9a07e25591fb41fc85032bdff2fb3db68ed8ac269028d"
+    sha256 arm64_linux:   "bc66b2c6050a83d0fbbfefd58310ccec3050782678d4f65e8435c928d362dd82"
+    sha256 x86_64_linux:  "7ac1e5d8cb9dbb02a736ed806898dded45203771c369c0d621f5510616024afe"
   end
 
   depends_on "bindgen" => :build
@@ -63,13 +64,6 @@ class Mesa < Formula
 
   on_macos do
     depends_on "molten-vk"
-
-    # Apply MacPorts patch to revert change causing avoid infinite loop on macOS
-    # Issue ref: https://gitlab.freedesktop.org/mesa/mesa/-/work_items/15528
-    patch :p0 do
-      url "https://ghfast.top/https://raw.githubusercontent.com/macports/macports-ports/1db035904139d7a3d0e0575f63ccd2371384956c/x11/mesa/files/patch-src-meson.diff"
-      sha256 "7390de495a94749eb3070d579aae5db79a75887d8aaa4d547b053559c1eb9aeb"
-    end
   end
 
   on_linux do
@@ -198,7 +192,7 @@ class Mesa < Formula
       s.change_make_var! "dridriverdir", HOMEBREW_PREFIX/"lib/dri"
     end
 
-    # https://gitlab.freedesktop.org/mesa/mesa/-/issues/13119
+    # https://gitlab.freedesktop.org/mesa/mesa/-/work_items/13119
     if OS.mac?
       inreplace %W[
         #{prefix}/etc/OpenCL/vendors/rusticl.icd

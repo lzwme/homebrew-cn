@@ -25,10 +25,13 @@ class Fdclone < Formula
   deprecate! date: "2026-01-05", because: :repo_removed
   disable! date: "2027-01-05", because: :repo_removed
 
-  depends_on maximum_macos: [:sonoma, :build]
   depends_on "nkf" => :build
 
   uses_from_macos "ncurses"
+
+  on_macos do
+    depends_on maximum_macos: [:sonoma, :build]
+  end
 
   conflicts_with "fd", because: "both install `fd` binaries"
 

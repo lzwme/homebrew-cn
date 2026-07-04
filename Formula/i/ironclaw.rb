@@ -6,6 +6,11 @@ class Ironclaw < Formula
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/nearai/ironclaw.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^ironclaw-v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55e037d9c4e175b52fb93ce7456c2ecabaae040bc536d2032740d0044ca37135"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "02e4f4ff3cbb3172a2dc267256bb401ff1c95540ce8e469eadbc27ab8abbab4d"

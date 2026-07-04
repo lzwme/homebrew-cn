@@ -5,8 +5,8 @@ class Pmix < Formula
   compatibility_version 1
 
   stable do
-    url "https://ghfast.top/https://github.com/openpmix/openpmix/releases/download/v5.0.11/pmix-5.0.11.tar.bz2"
-    sha256 "e10baa9821882140ebd134051702d65b1561fe91954d3978f7ea2c4e4cd36e7f"
+    url "https://ghfast.top/https://github.com/openpmix/openpmix/releases/download/v6.1.0/pmix-6.1.0.tar.bz2"
+    sha256 "bb9021c8e100a376f5070ecca727f83a29b5f652dfe381793b88daa79a3b98a2"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -16,17 +16,16 @@ class Pmix < Formula
 
   livecheck do
     url :stable
-    strategy :github_latest
+    strategy :github_releases
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "349e2cc29d337be93e5fd21302288b9109227c45af72aa001461ababee2a16c3"
-    sha256 arm64_sequoia: "4fd1aa9ff69f21c4cef249d9365ab83dd87fe996b8999ed82afe89950e00e9c1"
-    sha256 arm64_sonoma:  "ce93fd532c984178171e4a00d1c87f76d38c37f7d80c3ce1c7caad0be1896460"
-    sha256 sonoma:        "ae2d7f30805f85372aa20e244bf0632165bdbca13dd4706894b08488f1413d68"
-    sha256 arm64_linux:   "1ab54667fb9cea88b75918eb66b3a01efeab9391e17c269feb1a51fec7677010"
-    sha256 x86_64_linux:  "2e5e5e0b9239a916745eaa575ff76849f945efa7fe8d8870091b29dffb78c8ae"
+    sha256 arm64_tahoe:   "e92ef10e3a830c714f77e437c8c0bc95a74e4e271c11a227bec04751f9e39e1e"
+    sha256 arm64_sequoia: "84f5dc1c87771751b12ffc20d210ecdb0ffce10417adb4698046233d895a5cb9"
+    sha256 arm64_sonoma:  "4ebae743971057aedb4bcb9e0c3184dcdf928810a07ca6b9aaf8e392d1040b3b"
+    sha256 sonoma:        "ffea6a8f88516bae345bbb60d0de547a77b21188a84d4389f82df7a90eba7507"
+    sha256 arm64_linux:   "c4d370ae2ff7a7600464f51fee127331073d4aaf1c284705ec04ecb00ff2d109"
+    sha256 x86_64_linux:  "d27aea1dc4807880a160e08f03a2b0a4210e7d731d6be8e702d04501334b2b05"
   end
 
   head do
@@ -51,7 +50,7 @@ class Pmix < Formula
 
   def install
     # Avoid references to the Homebrew shims directory
-    inreplace "src/tools/pmix_info/support.c", "PMIX_CC_ABSOLUTE", "\"#{ENV.cc}\""
+    inreplace "src/runtime/pmix_info_support.c", "PMIX_CC_ABSOLUTE", "\"#{ENV.cc}\""
 
     args = %W[
       --disable-silent-rules
@@ -100,6 +99,6 @@ class Pmix < Formula
     system bin/"pmixcc", "test.c", "-o", "test"
     system "./test"
 
-    assert_match "PMIX: #{version}", shell_output("#{bin}/pmix_info --pretty-print")
+    assert_match version.to_s, shell_output("#{bin}/pmix_info --pretty-print")
   end
 end

@@ -1,10 +1,10 @@
 class Poppler < Formula
   desc "PDF rendering library (based on the xpdf-3.0 code base)"
   homepage "https://poppler.freedesktop.org/"
-  url "https://poppler.freedesktop.org/poppler-26.06.0.tar.xz"
-  sha256 "4cb4e5a3dc8cb5eec751c8a23c8ba19f61f96dedc0cd07d2aee6b0c8e2cf6ba4"
+  url "https://poppler.freedesktop.org/poppler-26.07.0.tar.xz"
+  sha256 "304832f48f8a47fdca90c6b6d1f684e68f37c10c9a0726f345f4ca9df4ca01e2"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"] # see README-XPDF
-  compatibility_version 4
+  compatibility_version 5
   head "https://gitlab.freedesktop.org/poppler/poppler.git", branch: "master"
 
   livecheck do
@@ -13,12 +13,12 @@ class Poppler < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "595f642965f19f62860b5c9b0267a4e78daa8ada47ae1f5dbaab76ac1f74b10d"
-    sha256 arm64_sequoia: "d7510cb2202c997dd75212d0a45ed17adc6ef67604a59da0f745322687eb1c23"
-    sha256 arm64_sonoma:  "a7f99ac7d30f36e9e00359552f07f87b6ee9eba369ca36a67359a74ce62dabab"
-    sha256 sonoma:        "e07dda384ec18f4644e2f3a6654cfe849dae68638a54dfd4c000073945cceb8b"
-    sha256 arm64_linux:   "71a442b763ece24e2e439ee1a4c287649f15848090cb00c5dcf0f27161027256"
-    sha256 x86_64_linux:  "3b4833a94144e71c2427224d774392f671426214b796c48059fde359f1542f5a"
+    sha256 arm64_tahoe:   "117d809d0c7a03d1bffb1b052be9e74d86cbd5bad191929c56c559b487ca49ec"
+    sha256 arm64_sequoia: "8ecf4929ab43f8d361fe0fa2d636584e283524b747306dc6ef54878b213d62fb"
+    sha256 arm64_sonoma:  "10791291f3c651d36aab5e8df8604ab3f0bb43fa18d290378c508e203d0014b1"
+    sha256 sonoma:        "1b170672900afc6c988fe9c22c8b866d78ee9fa2bf9e6df35bff270270cb67ca"
+    sha256 arm64_linux:   "a663e8733f44d37d6b7d4f9fd9f42fc17189777d3137b918af718f58e8bede5a"
+    sha256 x86_64_linux:  "88cb882ccba81632667d70d401702d4130dfb50714ab7d2ce8ac8316e17d5152"
   end
 
   depends_on "cmake" => :build
@@ -62,13 +62,6 @@ class Poppler < Formula
       url "https://poppler.freedesktop.org/"
       regex(/href=.*?poppler-data[._-]v?(\d+(?:\.\d+)+)\.t/i)
     end
-  end
-
-  # Fix mutex lock crash on macOS
-  # MR ref: https://gitlab.freedesktop.org/poppler/poppler/-/merge_requests/2262
-  patch do
-    url "https://gitlab.freedesktop.org/poppler/poppler/-/commit/e263f50b8ecac8aaad458a4c45d8ca9761dd8878.diff"
-    sha256 "b61ff6d4a474503f00bdd96a0bf60ee245adc9e23b77bba2096da47da182513a"
   end
 
   def install

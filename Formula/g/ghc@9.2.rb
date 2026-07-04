@@ -30,13 +30,16 @@ class GhcAT92 < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on maximum_macos: [:sonoma, :build]
   depends_on "python@3.12" => :build
   depends_on "sphinx-doc" => :build
 
   uses_from_macos "m4" => :build
   uses_from_macos "xz" => :build
   uses_from_macos "ncurses"
+
+  on_macos do
+    depends_on maximum_macos: [:sonoma, :build]
+  end
 
   on_linux do
     depends_on "gmp" => :build

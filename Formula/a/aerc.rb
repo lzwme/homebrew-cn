@@ -21,6 +21,8 @@ class Aerc < Formula
   depends_on "scdoc" => :build
   depends_on "notmuch"
 
+  deny_network_access! [:postinstall, :test]
+
   def install
     # Workaround to avoid patchelf corruption when cgo is required
     if OS.linux? && Hardware::CPU.arch == :arm64

@@ -1,18 +1,18 @@
 class Anyquery < Formula
   desc "Query anything with SQL"
   homepage "https://anyquery.dev"
-  url "https://ghfast.top/https://github.com/julien040/anyquery/archive/refs/tags/0.4.5.tar.gz"
-  sha256 "8387a2e9d7c69a0430b330c93c5e0076f882340b8e3f15d0f0e6b5db5d5766d4"
+  url "https://ghfast.top/https://github.com/julien040/anyquery/archive/refs/tags/0.4.6.tar.gz"
+  sha256 "791b4be32ae031ad6321116009e7ddc13464273f09a7afbea0501e0d33df58f6"
   license "AGPL-3.0-only"
   head "https://github.com/julien040/anyquery.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d8090ba59202a1f92ad22f684842b29495ccfb92fc47149e54a8fe27d506201"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb4edcd47b4dca8dae0ebdabe79342985d199975255fc7460b02f78fa1f6dd85"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7cbf404925ea69b93934ac3fdfacfcd076e578587fe7af4352ef53b13278aae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7e560ac288958b5e635c313d8099e2356da1b095e49dcb2445ddf3cbc706bb43"
-    sha256 cellar: :any,                 arm64_linux:   "5885762dc6c9a78aa0aa202813d38fa3bbaca984fc63906551c30fbca86e7e7b"
-    sha256 cellar: :any,                 x86_64_linux:  "00a2af01fb4fa1804c998689309855c6b6cf080d2304d787c56e3e9d0bde4162"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a648d9e0106b1e8776e8a44b462f3ffa06a11e3bf8100fc24b178dc34a05c03c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fe0aef738aeec5c88dbdcc54c36cbf86df7483e38ff6855c86df1d50b8cf109"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eaab7fd289b1b6872175dca16894ae19f305d019645c11e86ce7ede86c069f47"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f314427b14b68046d1e09e4946952176bf931b916f4d4f55713c1f5dff69c39a"
+    sha256 cellar: :any,                 arm64_linux:   "25ce3b87b297593cda9ca39c1bbaef43f1973f707f329ba85a768ca69082abd9"
+    sha256 cellar: :any,                 x86_64_linux:  "c2de4decfc85f9436dd5b64f82bc8e68edbb6050159d4ef970969a3b9acbbc87"
   end
 
   depends_on "go" => :build
@@ -20,14 +20,6 @@ class Anyquery < Formula
 
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
-
-    # TODO: remove when vitess has https://github.com/vitessio/vitess/pull/19367
-    # https://github.com/julien040/anyquery/issues/79
-    vitess_version = (buildpath/"go.mod").read.match(%r{vitess.io/vitess v(.*)})[1]
-    odie "Remove inreplace workaround!" if Version.new(vitess_version) > "0.23.2"
-    system "go", "mod", "vendor"
-    inreplace "vendor/vitess.io/vitess/go/hack/ensure_swiss_map.go", "!goexperiment.swissmap",
-                                                                     "!goexperiment.swissmap && !go1.26"
 
     tags = %w[
       vtable

@@ -64,6 +64,10 @@ class AdrViewer < Formula
     sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
+  # Although the virtualenv_install_with_resources uses the package resources listed above,
+  # pip still needs to fetch the project's chosen build system via the network.
+  deny_network_access! [:postinstall, :test]
+
   def install
     virtualenv_install_with_resources
 

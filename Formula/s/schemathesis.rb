@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/7e/af/1a0bf2b9c1ebb87989423e001484cb385e91f385880d45e96646c12007fc/schemathesis-4.22.2.tar.gz"
-  sha256 "98981a5d858d2a454393ccd85af1fa35c392e048ed91b0faaf9e63992f66693b"
+  url "https://files.pythonhosted.org/packages/c5/50/4ca419862719dde14130595a3654aa16780d225be9074e42d6b90fe3ec7b/schemathesis-4.22.3.tar.gz"
+  sha256 "10c0fb27ed1940030133cf61ba32d1e85f71b85d3570d7ee54d1768b14d64f77"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a7aec3df7970efa5e1019f3ba56564f6faeebad114f1c92761752c3a9e8ea181"
-    sha256 cellar: :any, arm64_sequoia: "f3ad97516a37b257f418f96664864457c51d8ad3a53e149136af59a0397a8e52"
-    sha256 cellar: :any, arm64_sonoma:  "249116f5dfad092d53fb5190b4953fa4a026cceed0f16ca08db1948dff5963a5"
-    sha256 cellar: :any, sonoma:        "eea226fc6570d762f182bfb841d5d315b6d895065a8c51a00c0f9c29a80432b9"
-    sha256 cellar: :any, arm64_linux:   "256a746a9489cb8e82ef3308f756c829b813abde16aeab078d017d30cde37bfd"
-    sha256 cellar: :any, x86_64_linux:  "74c6123114914673c75a85b4e9ae10c0de7a5178bab3e2c36e5d52a22c670b80"
+    sha256 cellar: :any, arm64_tahoe:   "3a2192b8394814ec6bc30405492c41795e890566946237f9e5e9ec3119356688"
+    sha256 cellar: :any, arm64_sequoia: "6919a728d982127960d8a73fdad567e02f18b3a4a2fe0ce983789366c0d784f1"
+    sha256 cellar: :any, arm64_sonoma:  "a3a51bf6164336a828789f673ecba7adf8c684a114fb07833dcb3ee3958a4609"
+    sha256 cellar: :any, sonoma:        "e8a6dc8d22c90cca6100fe67e7ad5599d08848a30b6af0e8f7da872f332883bf"
+    sha256 cellar: :any, arm64_linux:   "31ef9d79084a1e51903bdeb4ff3f1c775ea8baf282f43d3e61b3e1c053ed055a"
+    sha256 cellar: :any, x86_64_linux:  "842bc589e930b892798cc67bc63d3788955b3fe72076610294feac52c8d7f8b2"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
@@ -172,8 +172,8 @@ class Schemathesis < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   resource "urllib3" do

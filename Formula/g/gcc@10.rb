@@ -23,13 +23,13 @@ class GccAT10 < Formula
   # out of the box on Xcode-only systems due to an incorrect sysroot.
   pour_bottle? only_if: :clt_installed
 
-  depends_on maximum_macos: [:ventura, :build]
   depends_on "gmp"
   depends_on "isl"
   depends_on "libmpc"
   depends_on "mpfr"
 
   on_macos do
+    depends_on maximum_macos: [:ventura, :build]
     depends_on arch: :x86_64
     # Align dates to remove Intel macOS support with brew
     # https://docs.brew.sh/Support-Tiers#future-macos-support

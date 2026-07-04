@@ -1,8 +1,8 @@
 class KosliCli < Formula
   desc "CLI for managing Kosli"
   homepage "https://docs.kosli.com"
-  url "https://ghfast.top/https://github.com/kosli-dev/cli/archive/refs/tags/v2.30.0.tar.gz"
-  sha256 "f17b92701766e2d6b466ec1dc11221a7114994702a41b36214c1da5df7842793"
+  url "https://ghfast.top/https://github.com/kosli-dev/cli/archive/refs/tags/v2.30.1.tar.gz"
+  sha256 "42e986f3b0b4a410a5c66e11fc8cf4a25715516ad1b2aa374a900f7edd0de284"
   license "MIT"
   head "https://github.com/kosli-dev/cli.git", branch: "main"
 
@@ -12,12 +12,12 @@ class KosliCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a70aa48bf61a28ce33f01619cf01d8ca4d59ef9e7b1cc4813bd5fc4fdddf4df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4793f0c62d865f8114af2ba2891e726e5896206641bb41b0619d2aae58e4da2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23d8135f7e04399e8c5a276638379a4ea5ec139b4bacf5792153e29cb7b1c6d2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2a622d946c540f8a6507d15c54c938fe3608829f566a6385d0444d8922dfe812"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4281ce0bae0998c580c410da0a5af4e8c25c8ad80b868256ddc1cf53f60fc7c8"
-    sha256 cellar: :any,                 x86_64_linux:  "fa187e5e8d4360d1f1e42b9c9a24524835e6f02e8f5a6bf8b0d1a1048ec30122"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c1f5a9c86aa9aaf3e231e440da3e9e23c99e27a89b4026511bb8f3f701cf270"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc4ac1a8640ac5ccef472ceef96ea49621f0d1f9109baf012be40d42c4fd6849"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73a9a2227ee057875d3679879a2a5bd67b4bdc8057c8f6f415fa5d3e15a333c3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "44af7bc5baf64a3e0d65d2eba0a83892a7992abb432af7c8a6b8af5c1507063f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab422caa74f326258efc3612b560d9449eaa27dd5cc5d983c3f645e7f2affa72"
+    sha256 cellar: :any,                 x86_64_linux:  "f81e7faa7ebc2d5893ae0401e9c5983ec00aa35904f14ca49d54d80a0f660432"
   end
 
   depends_on "go" => :build

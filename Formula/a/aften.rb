@@ -40,6 +40,8 @@ class Aften < Formula
   # So fix the Apple Silicon compile issues.
   patch :DATA
 
+  deny_network_access!
+
   def install
     # Fix build with CMake 4.0+.
     inreplace "CMakeLists.txt",

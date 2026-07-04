@@ -27,12 +27,15 @@ class GccAT11 < Formula
   # out of the box on Xcode-only systems due to an incorrect sysroot.
   pour_bottle? only_if: :clt_installed
 
-  depends_on maximum_macos: [:ventura, :build] # Xcode < 16
   depends_on "gmp"
   depends_on "isl"
   depends_on "libmpc"
   depends_on "mpfr"
   depends_on "zstd"
+
+  on_macos do
+    depends_on maximum_macos: [:ventura, :build] # Xcode < 16
+  end
 
   on_linux do
     depends_on "binutils"

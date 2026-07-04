@@ -33,6 +33,8 @@ class Aflxx < Formula
   fails_with :clang
   fails_with :gcc
 
+  deny_network_access!
+
   def install
     ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin"
 

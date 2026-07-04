@@ -14,40 +14,47 @@ class Sdl3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "beaa74c6c0bde0c77a913c154f68d33d062a8d05e0d2fe5cb41a7840ad14746a"
-    sha256 cellar: :any, arm64_sequoia: "ac813140db6558f2477069f62e0dd6a6ba4bf0a0a141902afcf628e28935bbd8"
-    sha256 cellar: :any, arm64_sonoma:  "e856f41653b1bc0981455c8f48656dda374adabc132f7f6f1ddc223225f6d9e6"
-    sha256 cellar: :any, sonoma:        "c22e7cf7e5edf9743ed35405280c3cca1d8f686ac11bbe502967ea7f07557e93"
-    sha256 cellar: :any, arm64_linux:   "96825809d3a7e9c6f6239e31383dfe301a84ebb087897e7d7f2b6d30863e945b"
-    sha256 cellar: :any, x86_64_linux:  "417abcbef205879db83aa0e0507c58e65c84db6aa0e1a13fd37a937972c2e27e"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "7ed22ed554c2a9ddaaa2181dd09e76adac5f59d7cf7595b0ce5fbbfbfc9978ab"
+    sha256 cellar: :any, arm64_sequoia: "ce2e2e3388cbc7c452fa821c7d6559e9aae6af5536777b471b216f7a6c809fc2"
+    sha256 cellar: :any, arm64_sonoma:  "789cd4ec7b3c0fa10e54f1d6aabf78bfca8e6965ffd412e7e2b6a4495bac8b01"
+    sha256 cellar: :any, sonoma:        "dc7dc0ac1c9e24b0159ced0605c3cad4012eb702be5f9a1c2d0f81a125b41dd0"
+    sha256 cellar: :any, arm64_linux:   "a6b1f0cc840ceabab53d1b272e4b5d99cd5590d67a623fd2e4a32429b962f893"
+    sha256 cellar: :any, x86_64_linux:  "434c00e5ec91d014f17cf381e9bae9708a7ed3ac92abf9cf53db314295108ea2"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 
   on_linux do
-    depends_on "libice"
-    depends_on "libxcursor"
-    depends_on "libxscrnsaver"
-    depends_on "libxxf86vm"
-    depends_on "pulseaudio"
-    depends_on "xinput"
+    # Features are built into library if dependency is found at build-time.
+    # These are then enabled at runtime if library can be dynamically loaded,
+    # so we can provide extra features via build-only dependencies. This includes
+    # PipeWire and Wayland used on modern Linux which have large dependency trees.
+    depends_on "libxkbcommon" => :build
+    depends_on "mesa" => :build
+    depends_on "pipewire" => :build
+    depends_on "wayland" => :build
+
+    # Runtime dependencies are for older PulseAudio and X11. These are used if
+    # running a Linux container on macOS and should have higher compatibility
+    depends_on "libx11" => :no_linkage
+    depends_on "libxcursor" => :no_linkage
+    depends_on "libxext" => :no_linkage
+    depends_on "libxfixes" => :no_linkage
+    depends_on "libxi" => :no_linkage
+    depends_on "libxrandr" => :no_linkage
+    depends_on "libxscrnsaver" => :no_linkage
+    depends_on "pulseaudio" => :no_linkage
   end
 
   def install
     inreplace "cmake/sdl3.pc.in", "@SDL_PKGCONFIG_PREFIX@", HOMEBREW_PREFIX
 
     args = %w[
-      -DSDL_HIDAPI=ON
-      -DSDL_WAYLAND=OFF
+      -DSDL_TESTS=OFF
       -DSDL_X11_XTEST=OFF
     ]
-
-    args += if OS.mac?
-      ["-DSDL_X11=OFF"]
-    else
-      ["-DSDL_X11=ON", "-DSDL_PULSEAUDIO=ON"]
-    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

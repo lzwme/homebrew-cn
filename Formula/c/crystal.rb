@@ -5,8 +5,8 @@ class Crystal < Formula
   compatibility_version 1
 
   stable do
-    url "https://ghfast.top/https://github.com/crystal-lang/crystal/archive/refs/tags/1.20.2.tar.gz"
-    sha256 "68b69b844bf3bf9990cb7befb06520fc477bb6c3f42de833c6b6a80dd5d0b17c"
+    url "https://ghfast.top/https://github.com/crystal-lang/crystal/archive/refs/tags/1.20.3.tar.gz"
+    sha256 "b0b5ff4a9ec499ff648f724e9d6c6efd2b2f672bf83ae9ac3f251911254ba9fc"
 
     resource "shards" do
       url "https://ghfast.top/https://github.com/crystal-lang/shards/archive/refs/tags/v0.20.0.tar.gz"
@@ -20,12 +20,12 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8f89230146f8fd4ff20392a2ea44d825e05f080d5292d72a5b6ee9c0ec51150a"
-    sha256 cellar: :any,                 arm64_sequoia: "ffdd12fa768a2b28f896de52f76475c12c841df5244b013646bfc41fd646ecfa"
-    sha256 cellar: :any,                 arm64_sonoma:  "104f9f978fc9cc06a96225eaae4b4697d43045e06a14d71f5b5c3eafe0104ddf"
-    sha256 cellar: :any,                 sonoma:        "78ad9fc995abebd91be759661a3606a04eadebe9ad37a5b72a0b52de481d458c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b247cf6d9b60bfa9a6ddd6ff793207e20ff3995895862e6a420cf076029d8645"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22165537bc0e0e1a58a378a60ae0d0c3cf1546208a1c8a049d2ab047022b91cd"
+    sha256 cellar: :any, arm64_tahoe:   "6bfce04f3f665432dc7f520297f8011275224000fd53d08636d4b025662c1466"
+    sha256 cellar: :any, arm64_sequoia: "d67abf015b80dfba147aa33c6e128afb3d67343373b8e47b8c4d4bfe66f916ac"
+    sha256 cellar: :any, arm64_sonoma:  "1f1333520946876c76ec239706e3f378a9e44527797dd89c9796b5383a6c4472"
+    sha256 cellar: :any, sonoma:        "fa6e4af79dfb494a2d7a9365b44e68ab1c4bedd4cd8876818981c6bb4011cacd"
+    sha256 cellar: :any, arm64_linux:   "4329038a81d152626aaca28500b1f210053569c18a39551a81db9f7f86a70217"
+    sha256 cellar: :any, x86_64_linux:  "5a4d7643bc47fd0b95b49e3b672743f27ad200a94621f8f7a72c22199c76566b"
   end
 
   head do

@@ -41,8 +41,6 @@ class Ecl < Formula
 
   def install
     ENV.deparallelize
-    # avoid saving llvm_clang or gcc-X inside binaries as these may not be available
-    ENV["CC"] = DevelopmentTools.default_compiler.to_s if ENV.compiler != :clang
 
     libffi_prefix = if OS.mac?
       MacOS.sdk_path

@@ -3,7 +3,10 @@ class OpenMpi < Formula
   homepage "https://www.open-mpi.org/"
   url "https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.9.tar.bz2"
   sha256 "dfb72762531170847af3e4a0f21d77d7b23cf36f67ce7ce9033659273677d80b"
-  license "BSD-3-Clause"
+  license all_of: [
+    "BSD-3-Clause-Open-MPI",
+    "mpich2", # opal/datatype/opal_datatype_pack_unpack_predefined.h
+  ]
   compatibility_version 1
 
   livecheck do
@@ -12,13 +15,13 @@ class OpenMpi < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "cd28d2c171ababacf625797283aa0bf5e8320afb6153457a6f90388c4f1d4473"
-    sha256 arm64_sequoia: "eeed54525cd950a5a5d008b7511277e20c3a50eb762f45d160fd6c9de8c835d3"
-    sha256 arm64_sonoma:  "ddbff35130a0e77b5f8f5f4c503e929a510ce1c2949f6efa5a262f2fdb224526"
-    sha256 sonoma:        "77763194eeb86e1c20cc2fc7256bfe9c0b16eb8451c180b5957ddb7c2faee37c"
-    sha256 arm64_linux:   "fdde5d8440a00a052b04cd9925cbda0a3df436e9a15dad8e57e851656a3da32f"
-    sha256 x86_64_linux:  "05ac59d4efcfb8b0b77bdab7daf261c7639f62e9c48caa7c05d634457b3c9b99"
+    rebuild 2
+    sha256 arm64_tahoe:   "e0f21b4be8bee1c97e7f9f6e4ee1cfd57fed5bafa26715c87750f1dac351577e"
+    sha256 arm64_sequoia: "6389bdcd527f5e81d4ced441ba47b87df173e35ec68366d0f952d2d4f6e8dc4b"
+    sha256 arm64_sonoma:  "d6c225e34bf09107177a161d44b43e7db7e4c8caf48dfb2add8a7949a381d8c0"
+    sha256 sonoma:        "99c85c3753ca360b2584267085b34335d24c708dbc5f1dc6453eb0787f84b6d6"
+    sha256 arm64_linux:   "afcb084b7f8155f0ef6ddaa2d413e9847118afbaecfeab0fc9d6f3fc07081b02"
+    sha256 x86_64_linux:  "78a948af66d16c15e06cec5dca890dcc5fbd83cf6b72549227eedc3f9f11e5c3"
   end
 
   head do
@@ -27,12 +30,16 @@ class OpenMpi < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
+
+    uses_from_macos "flex" => :build
+    uses_from_macos "python" => :build
   end
 
   depends_on "gcc" # for gfortran
   depends_on "hwloc"
   depends_on "libevent"
   depends_on "pmix"
+  depends_on "prrte"
 
   conflicts_with "mpich", because: "both install MPI compiler wrappers"
 
@@ -43,7 +50,7 @@ class OpenMpi < Formula
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version if OS.mac?
 
     # Remove bundled copies of libraries that shouldn't be used
-    unbundled_packages = %w[hwloc libevent openpmix].join(",")
+    unbundled_packages = %w[hwloc libevent openpmix prrte].join(",")
     rm_r Dir["3rd-party/{#{unbundled_packages}}*"]
 
     # Avoid references to the Homebrew shims directory
@@ -51,11 +58,8 @@ class OpenMpi < Formula
       ompi/tools/ompi_info/param.c
       oshmem/tools/oshmem_info/param.c
     ]
-    cxx = OS.linux? ? "g++" : ENV.cxx
-    cc = OS.linux? ? "gcc" : ENV.cc
-    inreplace inreplace_files, "OMPI_CXX_ABSOLUTE", "\"#{cxx}\""
-    inreplace inreplace_files, "OPAL_CC_ABSOLUTE", "\"#{cc}\""
-    inreplace "3rd-party/prrte/src/tools/prte_info/param.c", "PRTE_CC_ABSOLUTE", "\"#{cc}\""
+    inreplace inreplace_files, "OMPI_CXX_ABSOLUTE", "\"#{ENV.cxx}\""
+    inreplace inreplace_files, "OPAL_CC_ABSOLUTE", "\"#{ENV.cc}\""
 
     args = %W[
       --disable-silent-rules
@@ -65,6 +69,7 @@ class OpenMpi < Formula
       --with-hwloc=#{formula_opt_prefix("hwloc")}
       --with-libevent=#{formula_opt_prefix("libevent")}
       --with-pmix=#{formula_opt_prefix("pmix")}
+      --with-prrte=#{formula_opt_prefix("prrte")}
       --with-sge
     ]
 
@@ -84,16 +89,6 @@ class OpenMpi < Formula
 
     # Avoid references to cellar paths.
     inreplace (lib/"pkgconfig").glob("*.pc"), prefix, opt_prefix, audit_result: false
-
-    # Avoid conflict with `putty` by renaming pterm to prte-term which matches
-    # upstream change[^1]. In future release, we may want to split out `prrte`
-    # to a separate formula and pass `--without-legacy-names`[^2].
-    #
-    # [^1]: https://github.com/openpmix/prrte/issues/1836#issuecomment-2564882033
-    # [^2]: https://github.com/openpmix/prrte/blob/master/config/prte_configure_options.m4#L390-L393
-    odie "Update configure for PRRTE or split to separate formula as prte-term exists" if (bin/"prte-term").exist?
-    bin.install bin/"pterm" => "prte-term"
-    man1.install man1/"pterm.1" => "prte-term.1"
   end
 
   test do

@@ -6,11 +6,11 @@ cask "yaak@beta" do
     arch arm: "aarch64", intel: "amd64"
   end
 
-  version "2026.5.0-beta.3"
-  sha256 arm:          "e132a77259b500eeb33ab37ea8a1a818a2139dece070438e7c677ac699c7b3f0",
-         intel:        "d237a062d3559cc4e48e0f1e5f04744e8133fcb7b50c2fb300ea4fea17ecdf84",
-         arm64_linux:  "be32cdbf4acae9af49d4845aea431e3b5c5dc5d75567c883174279269fb7f6c2",
-         x86_64_linux: "8f1c3a8b2b4f3f16fe355520c83342753c615b6212527ae90d011289fba07354"
+  version "2026.5.0-beta.5"
+  sha256 arm:          "fb222ff71b3fccfd635409e55eb075dd747fa7e06537c59e3133437b5a18bf3c",
+         intel:        "e863aa2b86cf9b3694ee9eb1a53be0a4f8a21955c3b9b07a75f22b93518800df",
+         arm64_linux:  "b17c188c4fcb58057ac83605d8475425a9ff8c301091658ce7a0d2feecb380c8",
+         x86_64_linux: "9f42935ef44e62c7189765758dd6f9b6a7ec29b68ab7f42d89e47c237bd600d4"
 
   artifact = on_system_conditional macos: "Yaak_#{version}_#{arch}.dmg",
                                    linux: "yaak_#{version}_#{arch}.AppImage"

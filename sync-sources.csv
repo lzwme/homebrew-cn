@@ -4738,7 +4738,7 @@ Homebrew-homebrew-core/Formula/m/mermaid-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/merman-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/merve.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mesa-glu.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mesa.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mesa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mesalib-glw.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mesheryctl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/meson.rb, Homebrew/homebrew-core, 1
@@ -6021,6 +6021,7 @@ Homebrew-homebrew-core/Formula/p/proxygen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proxytunnel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prqlc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prr.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/prrte.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/ps2eps.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/psalm.rb, Homebrew/homebrew-core, 1
@@ -15143,6 +15144,7 @@ Homebrew-homebrew-cask/Casks/s/sokim.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sol.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/solar2d.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/solvespace.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/sonarqube-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sonarr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sonarr@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/songkong.rb, Homebrew/homebrew-cask, 0

@@ -1,8 +1,8 @@
 class Govc < Formula
   desc "Command-line tool for VMware vSphere"
   homepage "https://github.com/vmware/govmomi/tree/main/govc"
-  url "https://ghfast.top/https://github.com/vmware/govmomi/archive/refs/tags/v0.55.0.tar.gz"
-  sha256 "29712008faa54cf481587bcc8f7b88c0e21520690d7aee7603b46198339139a1"
+  url "https://ghfast.top/https://github.com/vmware/govmomi/archive/refs/tags/v0.55.1.tar.gz"
+  sha256 "27432d6e0b3840b6e951885adc8316198ba80af26fe4bd2cc10a7a6bc680a5dc"
   license "Apache-2.0"
   head "https://github.com/vmware/govmomi.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Govc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b13c33e351da2689d4561ffd3b96c78906210bbbb1c1df12feee0f8b1cd2438"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b13c33e351da2689d4561ffd3b96c78906210bbbb1c1df12feee0f8b1cd2438"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b13c33e351da2689d4561ffd3b96c78906210bbbb1c1df12feee0f8b1cd2438"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a6a6a5cae936fc61111bd434609b999361fecb0d0a7d49204ff07e72fe05accf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2adcf754c850a91aa5fd8653f923b5f5770f3c0d9e84ced84b940652fc890cf"
-    sha256 cellar: :any,                 x86_64_linux:  "eda08aca7fa5f8161c6dfcc1a354871a11a47142fbaa302e56b658a23c5dcacc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42f910573f21798382a25b5813519ce3c29f38f17b7e85e692ad2d25347ac8d0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42f910573f21798382a25b5813519ce3c29f38f17b7e85e692ad2d25347ac8d0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42f910573f21798382a25b5813519ce3c29f38f17b7e85e692ad2d25347ac8d0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b12e10e2204dd9a066c50a27664f29fd64586e32ec853b75f2dbd01c33d58a7f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29be85cd157420a525f846ac5d74b6d26f8bc77edd70815c39914ec7c926173b"
+    sha256 cellar: :any,                 x86_64_linux:  "ba2db77355c7a1e0a9de1aff581199524cc69ec618ca899c85b639570cffc529"
   end
 
   depends_on "go" => :build
