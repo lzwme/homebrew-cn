@@ -1,20 +1,21 @@
 class PhpAT56DebugZts < Formula
   desc "General-purpose scripting language"
   homepage "https://secure.php.net/"
-  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/6cfe49e294414185452ec89bad39b1bd42cc72c9.tar.gz"
+  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/241845d24ddbbccddc9be4006c103d9ddaf3b724.tar.gz"
   version "5.6.40"
-  sha256 "c7aea2d4742a6daadfa333dce1e6707bd648b2ed54e36238674db026e27d43cf"
+  sha256 "836bc6985113313d2a9cfc14864f9506b0c752c24cc9bf0a66454e890921b9d5"
   license "PHP-3.01"
   revision 6
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_tahoe:   "6ec62a5fe09d62af4cfb7795fb5bf945e19834afd1036c2624a9e9c27e537433"
-    sha256 arm64_sequoia: "8874191721e88894b89b0882972be9716643ad33987c0210171a261a26383e97"
-    sha256 arm64_sonoma:  "a1f1dc959691aa8c49f7d72653df070830ac512308442a8d422854365672c218"
-    sha256 sonoma:        "b00d4777a83a37a7d13aee588a3c64cebc85ac9e3b5523f5a71b86502043e21b"
-    sha256 arm64_linux:   "9df8b7e13efc43773b90c591d5da8329bbba2cca0ea5a275f4780c91e0a26217"
-    sha256 x86_64_linux:  "6d8155d560a1162f87e2ba5ca6fbd2f2339c24ca051c0cf69f018d4333bf921f"
+    rebuild 1
+    sha256 arm64_tahoe:   "4a8a3bbcc848aa8713df146c802ac391c4b3921f398d677bb6144902f89f49c9"
+    sha256 arm64_sequoia: "e8f51c640c9059e5b3dd1e7a0ccb1bcfaf3d5ba4bb9db37a17b5c087cb950587"
+    sha256 arm64_sonoma:  "0457284dab996972f1d517b8d84a13adc9df49673e23bd590eaa2206f76258f7"
+    sha256 sonoma:        "5c75d0e977ae383e4664b65590e540ec660df912ebc66de66eaaccd0257f8991"
+    sha256 arm64_linux:   "9e84bc0014372606ccf0c26b5eae660e4a4af9ca46f3b20b52c784cbf5fbba1c"
+    sha256 x86_64_linux:  "dc0ee2a612b16603526abd012888f0436d51fddaaa9151a2d2d0b8bf0763013f"
   end
 
   keg_only :versioned_formula
@@ -81,6 +82,7 @@ class PhpAT56DebugZts < Formula
       ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
       ENV.append "CFLAGS", "-Wno-implicit-int"
       ENV.append "CFLAGS", "-Wno-int-conversion"
+      ENV.append "CFLAGS", "-std=gnu99"
     end
 
     # Workaround for https://bugs.php.net/80310
@@ -225,7 +227,7 @@ class PhpAT56DebugZts < Formula
       args << "--with-xsl#{headers_path}"
       args << "--with-zlib#{headers_path}"
     else
-      args << "--with-zlib=#{formula_opt_prefix("zlib")}"
+      args << "--with-zlib=#{formula_opt_prefix("zlib-ng-compat")}"
       args << "--with-bzip2=#{formula_opt_prefix("bzip2")}"
       args << "--with-libedit=#{formula_opt_prefix("libedit")}"
       args << "--with-libxml-dir=#{formula_opt_prefix("libxml2")}"

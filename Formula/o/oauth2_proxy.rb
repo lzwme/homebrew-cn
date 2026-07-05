@@ -7,18 +7,20 @@ class Oauth2Proxy < Formula
   head "https://github.com/oauth2-proxy/oauth2-proxy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4dee50cf5537e1d4b73df7a6244df85d0101cadc1ac1ebe8cd7f73d5a0dede70"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d8239aa520df5ce11719d7156f9bc2fb75b19d76865ca15103c96e82c1e9a65"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4daa5b9e2a95c8425bc096938e601668e885dff79fd8e9030d71c8996cb62f11"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e59d2bb5520dc6785d8751f9d92d59c2e270b38180f714c47b12f5cf3339f9e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "766e911a1c4128d093821ba121fc137a0f3e3a94514f672f6917054adecc343a"
-    sha256 cellar: :any,                 x86_64_linux:  "adceb3ed41724bbee87692cd0888eef3ebc861c285d2c131ce75fcadb6496c66"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a3e57724364d8abe176be071fd1db4ada95b7cb1ebfc5215a1aea01bf8403b74"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94fef41e66d2bae51e1036cd0ba7df2fae2f95edd1833657f5be17a955f77ee5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba0fdcf5eb565dd4b1003baa0ecb3a9bdb88dba2036a210c633af6875b55e7b8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6f153ac1a4e45cb51c6a05e84c22ac01bef150595d75c30ef042f9500f9623be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b68f6e99c7b580cf658c3f6f24911d338c17ecf5022fa4e228631e4b41ef7233"
+    sha256 cellar: :any,                 x86_64_linux:  "1156b7631214febe4f7f3f92e90cc1e1a5f5588db76d468f559fae21a50471bc"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.VERSION=#{version}", output: bin/"oauth2-proxy")
+    ldflags = "-s -w -X github.com/oauth2-proxy/oauth2-proxy/v7/pkg/version.VERSION=#{version}"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"oauth2-proxy")
     (etc/"oauth2-proxy").install "contrib/oauth2-proxy.cfg.example"
     bash_completion.install "contrib/oauth2-proxy_autocomplete.sh" => "oauth2-proxy"
   end
@@ -34,6 +36,8 @@ class Oauth2Proxy < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/oauth2-proxy --version")
+
     port = free_port
     pid = spawn "#{bin}/oauth2-proxy",
                 "--client-id=testing",

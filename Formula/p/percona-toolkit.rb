@@ -1,35 +1,30 @@
 class PerconaToolkit < Formula
   desc "Command-line tools for MySQL, MariaDB and system tasks"
   homepage "https://www.percona.com/software/percona-toolkit/"
+  url "https://downloads.percona.com/downloads/percona-toolkit/3.7.1-4/source/debian/percona-toolkit_3.7.1.orig.tar.gz"
+  version "3.7.1-4"
+  sha256 "c4a2502bba0118c0e4a72faa58a3174d793431e65d9aee6c260eae49216ead14"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
   head "https://github.com/percona/percona-toolkit.git", branch: "3.x"
 
-  stable do
-    url "https://downloads.percona.com/downloads/percona-toolkit/3.7.1/source/tarball/percona-toolkit-3.7.1.tar.gz"
-    sha256 "d5abd944905e75800e29176aff7fdeb7062da212511e82c265be50ac03b4c19b"
+  livecheck do
+    url "https://www.percona.com/wp-admin/admin-ajax.php", post_form: {
+      action:     "percona_downloads",
+      product_id: "percona-toolkit",
+    }
 
-    # Fix Makefile.PL to also install go tools
-    patch do
-      url "https://github.com/percona/percona-toolkit/commit/23be00fca557c7812ee0adfd3f9519429096d2ac.patch?full_index=1"
-      sha256 "1431e42904411c5011e174f94d7c0c063f9e4d6a2744ec76b7bf92f14ef01fda"
+    strategy :json do |json|
+      json["data"]["versions"][0]
     end
   end
 
-  livecheck do
-    url "https://www.percona.com/products-api.php", post_form: {
-      version: "percona-toolkit",
-    }
-    regex(/value=["']?[^"' >]*?v?(\d+(?:[.-]\d+)+)[|"' >]/i)
-  end
-
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05b3f3f28f2b13b7d4f7ba1b325d82a617a6d27447d6bc6262d5f00c735bae40"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80bef441d4e161079ff09264e1c60b8de590aa1ffea7780fd1bd0bf393b9b4e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d4361cdd519c35383e8670636c42ca57617136638f85f1e5dc75cfce9be3b89"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c3c89c731b466953de715f23f17798208ee16137d87fabd7d121f041ba445dc2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fac3d2a5ec59955b3a7296e6adc223e02fc63f23328686245f885695d9da979f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "989cfa41ec604acfb78a5625b686f0c0ab09b1d9b3a9f3d3db9855fa7c3c24f7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7275d4c15bac065f3166de29c8d6144cd81c8f7750e11a4c7a7dfaca75cf6352"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5e06870dd78edfa06d6752766d988570649f3d4ef64be4009eda917153ed767"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0cfec2e69b6ae5d6519be27970fbdbd2e1aab75cb0f583464329716b6f6f89c6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "42d8212dfa352a40972e2cba96041b638e81fc12c4e1ddcc7942627e975efabc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0aaa34073e5fd06fb6946363d183b4557399975ab3d5d5366d3241b33e8be511"
+    sha256 cellar: :any,                 x86_64_linux:  "2717ba75fe1b3ceef73c444a459d9e0855ae410b827ecd7def8631aeb59553a3"
   end
 
   depends_on "go" => :build

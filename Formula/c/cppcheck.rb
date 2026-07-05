@@ -1,10 +1,10 @@
 class Cppcheck < Formula
   desc "Static analysis of C and C++ code"
   homepage "https://sourceforge.net/projects/cppcheck/"
-  url "https://ghfast.top/https://github.com/danmar/cppcheck/archive/refs/tags/2.21.0.tar.gz"
+  url "https://ghfast.top/https://github.com/cppcheck-opensource/cppcheck/archive/refs/tags/2.21.0.tar.gz"
   sha256 "f028ff75ca5372738f3737c8b3e8611426a6526b6aea2ef01301ab0f5902f044"
   license "GPL-3.0-or-later"
-  head "https://github.com/danmar/cppcheck.git", branch: "main"
+  head "https://github.com/cppcheck-opensource/cppcheck.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead

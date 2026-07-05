@@ -1,10 +1,10 @@
 class Tsui < Formula
   desc "TUI for configuring and monitoring Tailscale"
   homepage "https://neuralink.com/tsui"
-  url "https://ghfast.top/https://github.com/neuralinkcorp/tsui/archive/refs/tags/v0.2.0.tar.gz"
+  url "https://ghfast.top/https://github.com/neuralink/tsui/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "1ae87ad281587efbf80ef0bf9cc0b519dd4f08465cb378e34e97230f2f3526f0"
   license "MIT"
-  head "https://github.com/neuralinkcorp/tsui.git", branch: "main"
+  head "https://github.com/neuralink/tsui.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c5aa985bc23f46808385ac73b79f5ebd81cb5e7281799bb8197e1c3bccd4f2d"

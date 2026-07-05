@@ -8,20 +8,21 @@ class Uwsgi < Formula
   head "https://github.com/unbit/uwsgi.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "127cb65efdc4c3f17cadd41df9671470e3e46fb53cadd74f187a2731d70a5a24"
-    sha256 arm64_sequoia: "7c31e1a3dfd42985bee1cd99e9007f04eca92688d937ad93b393cdc3f1eb42f8"
-    sha256 arm64_sonoma:  "3d420cb75e801cca0931cba8eff85c88fbe079ccb80a180e53f72d299d04bfe2"
-    sha256 sonoma:        "e4b665aac3350632869764e7893dc37b097cffc8ecc859c591c6638b0ab34382"
-    sha256 arm64_linux:   "7ec886511a95fdc64f92b33c9374a134a690b03f11681ac6f6761649eefa3127"
-    sha256 x86_64_linux:  "5668da0a96c26781423fe1d489f1a52c3afbaa76aebf156d092e3b5f37e11c78"
+    rebuild 1
+    sha256 arm64_tahoe:   "4ab17d58083bb0411e52c4611fcb9aab6dd6803be4392a47e4d640f935292edb"
+    sha256 arm64_sequoia: "bb2d659327d2856a28f89a04af2451de5521cad1e8125d1d1747bef509ebeb6c"
+    sha256 arm64_sonoma:  "f81ee8317fa3966427972ec82b7082cee921db42d48425ded4161ae4868bb710"
+    sha256 sonoma:        "737efa50d5cd8cf50911148ecbd25d755eae9f90704107fb3f27a433d75360e7"
+    sha256 arm64_linux:   "8ca4d508ab750c799edb6069db147600674dc7fcc86bca8141a0c5f03100471a"
+    sha256 x86_64_linux:  "8e3840b2f7cb4b22a490d02b7c3d668dc414809041a37f4aa22455bebc31eb0d"
   end
 
   depends_on "pkgconf" => :build
+  depends_on "jansson"
   depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "python@3.14"
   depends_on "sqlite"
-  depends_on "yajl"
 
   uses_from_macos "curl"
   uses_from_macos "libxcrypt"
@@ -45,7 +46,7 @@ class Uwsgi < Formula
     (buildpath/"buildconf/brew.ini").write <<~INI
       [uwsgi]
       ssl = true
-      json = yajl
+      json = jansson
       xml = libxml2
       yaml = embedded
       inherit = base

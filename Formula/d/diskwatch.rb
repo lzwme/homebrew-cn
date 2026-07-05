@@ -1,17 +1,17 @@
 class Diskwatch < Formula
   desc "Cross-platform disk diagnostics TUI"
   homepage "https://www.netwatchlabs.com/labs/diskwatch"
-  url "https://ghfast.top/https://github.com/matthart1983/diskwatch/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "f0060fe6b81d67937c68cadc1729f0cadb65c863a296759365dbf37fbf1e2d01"
+  url "https://ghfast.top/https://github.com/matthart1983/diskwatch/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "015d7b13f77c63735c96ddf7adf83434adfce2dd001c87277bbc4a35e6dc5689"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2de44c3085d8c4f27b98b66b60993be3277e29515cd2db4f52b6ee18e828ccc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72141f5d30813f5616b08c4ff7d03d293c015db51728bf9af97fa4fa2f0fc99b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "665b949379d0ebf35c471ec6b0bc9a136cecbcc2d35d04bcb1bd7f3aed2475ec"
-    sha256 cellar: :any_skip_relocation, sonoma:        "95c7c4c9512e752d296638076d065b2f95ceb05845ee8652a3f9b3eb2ab087c6"
-    sha256 cellar: :any,                 arm64_linux:   "ec4a9af3a4722ab3f3fb2198b4727ded867be539ed0991fab734b2493f903bf8"
-    sha256 cellar: :any,                 x86_64_linux:  "d152e67da03cde67ba0efd8392e3c8b94f3d55de8beae5384befe677f0620966"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12c595840864a7a48a4da63057b7dfd8dfe23e1b8b70a7ab5a0042fcb992bf4a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b5f273c23ef23887fbe0fea4306d19015d97eba225c052147156350a0eef8d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8af6b5edcb365312370e14c1794506072fe1712c416cf79a6afe2ea10f3032d5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0ba520b5a7ff2adf3ca9b312c4d09e755c3abb2750a046137e965175a5d5bd1b"
+    sha256 cellar: :any,                 arm64_linux:   "294063bdf4c04f2edac55e9a72c8c9382cf849b205968138320bf295f635956f"
+    sha256 cellar: :any,                 x86_64_linux:  "cc915e8f88ae228dc46ee76e864b26fe48ee61cf6aa7b9ce2fff5a1bb8bca4b2"
   end
 
   depends_on "rust" => :build

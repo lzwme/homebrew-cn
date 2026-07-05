@@ -1,7 +1,7 @@
 class Libxfont < Formula
   desc "X.Org: Core of the legacy X11 font system"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libXfont-1.5.4.tar.bz2"
+  url "https://xorg.freedesktop.org/archive/individual/lib/libXfont-1.5.4.tar.bz2"
   sha256 "1a7f7490774c87f2052d146d1e0e64518d32e6848184a18654e8d0bb57883242"
   license "MIT"
 

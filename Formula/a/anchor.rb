@@ -1,7 +1,7 @@
 class Anchor < Formula
   desc "Solana Program Framework"
   homepage "https://anchor-lang.com"
-  url "https://ghfast.top/https://github.com/solana-foundation/anchor/archive/refs/tags/v1.1.2.tar.gz"
+  url "https://ghfast.top/https://github.com/otter-sec/anchor/archive/refs/tags/v1.1.2.tar.gz"
   sha256 "7b10ee885486dc0b4fc9935c4d5bf861fd8662277ce89699207613582077881a"
   license "Apache-2.0"
 

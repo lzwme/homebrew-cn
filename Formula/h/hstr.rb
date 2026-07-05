@@ -1,7 +1,7 @@
 class Hstr < Formula
   desc "Bash and zsh history suggest box"
-  homepage "https://github.com/dvorka/hstr"
-  url "https://ghfast.top/https://github.com/dvorka/hstr/archive/refs/tags/v3.2.tar.gz"
+  homepage "https://github.com/dvorka-oss/hstr"
+  url "https://ghfast.top/https://github.com/dvorka-oss/hstr/archive/refs/tags/v3.2.tar.gz"
   sha256 "bceab1cb3c3b636d9ff4dfbaf8b035530e76a36d948767ed1735c4e79d7473eb"
   license "Apache-2.0"
 

@@ -1,7 +1,7 @@
 class Dhcpdump < Formula
   desc "Monitor DHCP traffic for debugging purposes"
-  homepage "https://github.com/bbonev/dhcpdump"
-  url "https://ghfast.top/https://github.com/bbonev/dhcpdump/releases/download/v1.10/dhcpdump-1.10.tar.xz"
+  homepage "https://github.com/dhcpdump-org/dhcpdump"
+  url "https://ghfast.top/https://github.com/dhcpdump-org/dhcpdump/releases/download/v1.10/dhcpdump-1.10.tar.xz"
   sha256 "939bbf429cf46425cdd912486d0c2e25041ca4e7b6bd5bcf0f839e61a43a8604"
   license "BSD-2-Clause"
 

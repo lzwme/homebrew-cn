@@ -1,10 +1,10 @@
 class Sqlboiler < Formula
   desc "Generate a Go ORM tailored to your database schema"
-  homepage "https://github.com/volatiletech/sqlboiler"
-  url "https://ghfast.top/https://github.com/volatiletech/sqlboiler/archive/refs/tags/v4.19.7.tar.gz"
+  homepage "https://github.com/aarondl/sqlboiler"
+  url "https://ghfast.top/https://github.com/aarondl/sqlboiler/archive/refs/tags/v4.19.7.tar.gz"
   sha256 "b6e3ca096750ef7f917a81045d779126985c5aa68e3179746e05e8d108e9244d"
   license "BSD-3-Clause"
-  head "https://github.com/volatiletech/sqlboiler.git", branch: "master"
+  head "https://github.com/aarondl/sqlboiler.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9da5bc117d6334b1e04bd17a1a5fcee72fb506aa0d7fd821b2ba79a3b579f9bc"

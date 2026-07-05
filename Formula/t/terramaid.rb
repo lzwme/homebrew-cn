@@ -17,6 +17,10 @@ class Terramaid < Formula
     sha256 cellar: :any,                 x86_64_linux:  "c1146e76edb44538f2252fbb80fd13ff11c6f700f6cc5e88337f27cb3a0d7bce"
   end
 
+  # https://github.com/RoseSecurity/Terramaid/issues/565
+  deprecate! date: "2026-07-04", because: :checksum_mismatch
+  disable! date: "2027-07-04", because: :deprecated_upstream
+
   depends_on "go" => [:build, :test]
   depends_on "opentofu" => :test
 

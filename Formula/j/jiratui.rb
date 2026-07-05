@@ -3,19 +3,18 @@ class Jiratui < Formula
 
   desc "Textual User Interface for interacting with Atlassian Jira from your shell"
   homepage "https://jiratui.sh/"
-  url "https://files.pythonhosted.org/packages/e5/5f/3da090f6c33df7170b9d2a4793f5d1c1b42e8400e9c937c0c0ce32faef56/jiratui-1.9.1.tar.gz"
-  sha256 "0fb0a303681dd8301ccf737beac974dde43f880035b8fb68eaf41d55c55857f3"
+  url "https://files.pythonhosted.org/packages/69/d8/e7f5afe6e0a5876ac54faa55ffe0cd1f6d3ca9d8cbecbdda02e4c5f96677/jiratui-1.10.1.tar.gz"
+  sha256 "1feca449c390ba8cb7f073bf24cd24f0b6e78717a5edf5b82756cba6caff101f"
   license "MIT"
-  revision 1
   head "https://github.com/whyisdifficult/jiratui.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f6ee57e0aa376957b749251451829232fb20084d53dbe5ef621e28f4ab9b16b4"
-    sha256 cellar: :any, arm64_sequoia: "5427033776e9a29866158adf06f5fc2fcf68d4033a0ac6a8c29be88482577676"
-    sha256 cellar: :any, arm64_sonoma:  "c52d685aa9f9f97b9714878032389ac77a9d5c992470336d305c72c1dfc2e27f"
-    sha256 cellar: :any, sonoma:        "ba0d3987bca991533a3812fed43a1bc379771f8a55c32f585440add6dc4695ec"
-    sha256 cellar: :any, arm64_linux:   "702ef7f6c4893f8daedec34c2e47a686e3e93f870d3f235642f937847a583735"
-    sha256 cellar: :any, x86_64_linux:  "78d24194e65171e178602b64ca650f22d15e16f63975f8405379c95572af32cd"
+    sha256 cellar: :any, arm64_tahoe:   "4f6359ce9e309ede93a14e88e147cb4fbea57769092dadda0ef68717997be432"
+    sha256 cellar: :any, arm64_sequoia: "478d329620ab751ea9e6991eabf68cd3b0c37b716d8fb81f35436c0022762f40"
+    sha256 cellar: :any, arm64_sonoma:  "c87db2a0529937e5e9e508515f56eb9964c7ebca7ecebdca7492cfc1d7ec5f04"
+    sha256 cellar: :any, sonoma:        "9407d7cc5c3ebd6bb85fabeaeb04381e854d0ea6e6f521b4c7ee1f29886f9687"
+    sha256 cellar: :any, arm64_linux:   "528f56de9ad8f58c36bb0c6fd0c4042fce796ac659e7ec781be19a15e9269ba7"
+    sha256 cellar: :any, x86_64_linux:  "cbca8eb34778046bbd4f6aad24f95ce86d80143d32aa675462914d5cbd47770c"
   end
 
   depends_on "rust" => :build
@@ -41,13 +40,13 @@ class Jiratui < Formula
   #    And tree-sitter-sql which is under the DerekStride org
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
-    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
+    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
+    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "gitdb" do
@@ -91,8 +90,8 @@ class Jiratui < Formula
   end
 
   resource "marklas" do
-    url "https://files.pythonhosted.org/packages/d3/82/4e08ee4f5db77c96dc53c892d254509bf8b62cd0b9f5aabc1a390b61b708/marklas-0.8.0.tar.gz"
-    sha256 "d2f75d1077be269156fe970795a77e8420b9738bc1bf24fd0e3c416057abc784"
+    url "https://files.pythonhosted.org/packages/8b/92/b2352fa3fe9810d59dd747a713b05a3841d64cc4a256ae6dc5f9cadde7ee/marklas-0.8.2.tar.gz"
+    sha256 "1d6baa8688ea1bb56d1c9e0eac19979a78d496d408814dffb1b90a318334eec2"
   end
 
   resource "mdit-py-plugins" do
@@ -106,8 +105,8 @@ class Jiratui < Formula
   end
 
   resource "mistune" do
-    url "https://files.pythonhosted.org/packages/ca/84/620cc3f7e3adf6f5067e10f4dbae71295d8f9e16d5d3f9ef97c40f2f592c/mistune-3.2.1.tar.gz"
-    sha256 "7c8e5501d38bac1582e067e46c8343f17d57ea1aaa735823f3aba1fd59c88a28"
+    url "https://files.pythonhosted.org/packages/04/5f/007786743f962224423753b78f7d7acb0f2ade46d1604f2e0fa2bedf9020/mistune-3.3.2.tar.gz"
+    sha256 "e12ee4f1e74336e91aa1141e35f913b337c40bdf7c0cc49f21fb853a27e8b62f"
   end
 
   resource "platformdirs" do
@@ -166,8 +165,8 @@ class Jiratui < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/9b/7a/c519db0aba5024f86e71e9631810bfdd6866ed2c8695bd7fa34b90e7ef59/textual-8.2.7.tar.gz"
-    sha256 "658f568ff81e30ed43890c3e07520390e5cf1b4763822006e060656b0a88f105"
+    url "https://files.pythonhosted.org/packages/00/21/39a76b01bd5eea82a04baaca7580e105d8c59450df03998345bb2cfb307b/textual-8.2.8.tar.gz"
+    sha256 "3f106a9fbc73e39dd266c9712432087de78a6d644084c7c241d6a25c3169115b"
   end
 
   resource "textual-autocomplete" do
@@ -181,8 +180,8 @@ class Jiratui < Formula
   end
 
   resource "tree-sitter" do
-    url "https://files.pythonhosted.org/packages/66/7c/0350cfc47faadc0d3cf7d8237a4e34032b3014ddf4a12ded9933e1648b55/tree-sitter-0.25.2.tar.gz"
-    sha256 "fe43c158555da46723b28b52e058ad444195afd1db3ca7720c59a254544e9c20"
+    url "https://files.pythonhosted.org/packages/f7/03/5600b84aff2e6c4fe80cfebb4063fe2f50299521befe5f6092ab8c082f4a/tree_sitter-0.26.0.tar.gz"
+    sha256 "b40c219edccc4564530c96f8f1556f6202b37cda964d1cbd7bd2b7e68b40a245"
   end
 
   resource "tree-sitter-bash" do

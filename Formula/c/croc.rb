@@ -1,18 +1,18 @@
 class Croc < Formula
   desc "Securely send things from one computer to another"
   homepage "https://github.com/schollz/croc"
-  url "https://ghfast.top/https://github.com/schollz/croc/archive/refs/tags/v10.4.5.tar.gz"
-  sha256 "e313d92ac881c8bcdb926ebb26e353a804e47cf0099a0670ab9bd31cef8fc680"
+  url "https://ghfast.top/https://github.com/schollz/croc/archive/refs/tags/v10.4.7.tar.gz"
+  sha256 "fda871fe2f0ed5fdf2248f1ab4d6d88aea08d3582a3a1d2e3e38e916662c7f22"
   license "MIT"
   head "https://github.com/schollz/croc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3969f58cb0f474c2ab615b5ef333749a3cbaefcb5f9a238efd942733267f21d7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3969f58cb0f474c2ab615b5ef333749a3cbaefcb5f9a238efd942733267f21d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3969f58cb0f474c2ab615b5ef333749a3cbaefcb5f9a238efd942733267f21d7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "81fcaaa8d2f9115f7ecdf69f641025101712d9120858f6e1fcaf4aac1ed1ef4a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6bd20edfe11f9b0aa18b69f301e53deebfa66aa4eebd2c29221dec9bc8a65eec"
-    sha256 cellar: :any,                 x86_64_linux:  "ddcc5ea017919f606c12e7579718245bf68306c3b753af77493462fb802945d0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b20d661da255e2c5419a6248dad41160be0f7d6858a898df17ed0d2d19e956cf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b20d661da255e2c5419a6248dad41160be0f7d6858a898df17ed0d2d19e956cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b20d661da255e2c5419a6248dad41160be0f7d6858a898df17ed0d2d19e956cf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1a9fe521ae369730754ba4293de0a6461c6128dfc75da1048f9df3d150584d9d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ca6ac2d55e27eb736a0d58aa26d9f131968bb7b9b8925de663d366f54b6a91f"
+    sha256 cellar: :any,                 x86_64_linux:  "9b7364af23d898ceb71e2af0a242471466cbcf9c2c54972116d8c9808ae5cd14"
   end
 
   depends_on "go" => :build
@@ -31,11 +31,11 @@ class Croc < Formula
     pid = PTY.spawn(bin/"croc", "relay", "--ports", ports.join(",")).last
     sleep 3
 
-    pid_send = PTY.spawn(bin/"croc", "--relay=localhost:#{ports.last}", "send", "--code=homebrew-test",
-                                     "--text=mytext", "--port=#{ports.last}", "--transfers=1").last
+    pid_send = PTY.spawn(bin/"croc", "--relay=localhost:#{ports.first}", "send",
+                                     "--no-local", "--text=mytext", "--transfers=1").last
     sleep 3
 
-    output = shell_output("#{bin}/croc --relay localhost:#{ports.last} --overwrite --yes homebrew-test")
+    output = shell_output("#{bin}/croc --relay localhost:#{ports.first} --overwrite --yes")
     assert_match "mytext", output
   ensure
     Process.kill("TERM", pid_send)

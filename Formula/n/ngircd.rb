@@ -1,7 +1,7 @@
 class Ngircd < Formula
   desc "Lightweight Internet Relay Chat server"
   homepage "https://ngircd.barton.de/"
-  url "https://ngircd.barton.de/pub/ngircd/ngircd-27.tar.xz"
+  url "https://arthur.barton.de/pub/ngircd/ngircd-27.tar.xz"
   mirror "https://ngircd.sourceforge.io/pub/ngircd/ngircd-27.tar.xz"
   sha256 "6897880319dd5e2e73c1c9019613509f88eb5b8daa5821a36fbca3d785c247b8"
   license "GPL-2.0-or-later"

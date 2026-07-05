@@ -1,18 +1,18 @@
 class AstGrep < Formula
   desc "Code searching, linting, rewriting"
   homepage "https://ast-grep.github.io/"
-  url "https://ghfast.top/https://github.com/ast-grep/ast-grep/archive/refs/tags/0.44.0.tar.gz"
-  sha256 "1cc8d5d6a759c6d99c676bcec09fbf1fc72e023804e54480146fd62b300fce95"
+  url "https://ghfast.top/https://github.com/ast-grep/ast-grep/archive/refs/tags/0.44.1.tar.gz"
+  sha256 "a5a1eea64346853f5c911982f332f3e1fb670f18483d805d33686086dcce510f"
   license "MIT"
   head "https://github.com/ast-grep/ast-grep.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b79a97683ce7c156afa52c976e0bd9db14a986bd2d8216a410a99b0fd5431b7f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fa45e19b83a95d3efdb5d578010064717633be73d8157bee074f71d7b38dc39"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07c4a0a4d0fddced94e4fca2e68310b499efb471a8775cc542f437d77fe8c5e5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e0f821486fab67b1377997280d4977bd35db278569b67e7d6579800773c691e3"
-    sha256 cellar: :any,                 arm64_linux:   "ae9a8b454b1b6aacd8fa0a8eb0ce987b37bae53006a4fbced0e7fc22cf080c3e"
-    sha256 cellar: :any,                 x86_64_linux:  "e7c60a3f0f4c220abab9d476089fb39d465c367f3a6ca5d7bdeb34e4a7fe1ff9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1fc99ed5854cfa90b9c45d375ba2ad232292674a9ab75e082bcbe7fc08718bdd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01fd8d4e63a10a498a9b703e95e0a7a432090fb0dc2b6882fe20ad7dff854efe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3b5bb272241584fe4f08b80ae35b1ba1848c5d37d75b89933bc1be4e90e6051"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3ff8f52764d27916ed18651f5340490bed6f47581e7a4f3ac3fea5de8ce66468"
+    sha256 cellar: :any,                 arm64_linux:   "029d017d0b517ca47aaab548f1ef4c75d7cd3ca953ff1d00329acf82b83fbefc"
+    sha256 cellar: :any,                 x86_64_linux:  "1c0d82842c173177ca37b6348c4ce711acc76110676fd6941dc9a2c8e64d4ceb"
   end
 
   depends_on "rust" => :build

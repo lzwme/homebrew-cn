@@ -1,8 +1,8 @@
 class Conduit < Formula
   desc "Streams data between data stores. Kafka Connect replacement. No JVM required"
   homepage "https://conduitio.github.io/"
-  url "https://ghfast.top/https://github.com/ConduitIO/conduit/archive/refs/tags/v0.14.0.tar.gz"
-  sha256 "4747b7a8b1cce5a32490ff3bb9c31e0d0cb4a97da75e2d4f9f97a33af9a8c4f1"
+  url "https://ghfast.top/https://github.com/ConduitIO/conduit/archive/refs/tags/v0.15.1.tar.gz"
+  sha256 "65cb956501c8fa2a45ea123d43b5b752f967e71271f55ad01958a323991c0024"
   license "Apache-2.0"
   head "https://github.com/ConduitIO/conduit.git", branch: "main"
 
@@ -12,14 +12,12 @@ class Conduit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "118277b357cfc6c3d7f2696c118bb887d70dfed444d7b582da092cdd2108b62b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c73e20dfa33416ce64040037ca7598f323225b06bf11ff7d9caf0992e7bb0910"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "badd297ac7b2138dbdfcfb4fbe66459a7e5dac5fbeeb6f7d81ddeb919978ad94"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "53d9b586efdc7a2e87004979dc51313c4858388b9d8a3aab4610843cd0a83b82"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c3ca928abb6ada159254a94275ab9e9b7c67f2e310be6278ac24e590b340a724"
-    sha256 cellar: :any_skip_relocation, ventura:       "cfed5653e00116ee2b17fab9b0678514fecef893e04e58de7b46bbbaf69d8338"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f3a72e785383509d2ea012a2a9502c3de4cebb273300693e38464d4a9dd259d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ce98054ac53225a6aa027d7b5929a116e13dce0bd82ea35887fb0b6c0913922"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "49f5e12e2a8f0d0e0fcd35a0f630f713af8eacc11fa4295e2619997389aa0d03"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80330aa1349e2cee3978098a2e3d2d5d7b17bf840d6c7b9b0bdd39fce70c1097"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae7127dd873dc5bdd262fa14df67411f8ea7918b3ae0682b16423ee6c5a117f8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0b81ceed3e24a9c34d022946ae65319da56512430c84f7238107f3dbf1d241ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fdd95336638c2600b047b22645f367a273fa66ee82a66a3559393ff0f8d2bedd"
+    sha256 cellar: :any,                 x86_64_linux:  "ddde4a1cdea456abee3d80962d189fabeecc72f1476967bf7ba1f4fdf47d4023"
   end
 
   depends_on "go" => :build

@@ -1,10 +1,10 @@
 class Sqlfmt < Formula
   desc "SQL formatter with width-aware output"
   homepage "https://sqlfum.pt/"
-  url "https://ghfast.top/https://github.com/maddyblue/sqlfmt/archive/refs/tags/v0.5.0.tar.gz"
+  url "https://ghfast.top/https://github.com/madelynnblue/sqlfmt/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "0776e9505048fd88220c0ee9b481ca258b6abe7e7bb27204a4873f11e1d7c95b"
   license "Apache-2.0"
-  head "https://github.com/maddyblue/sqlfmt.git", branch: "main"
+  head "https://github.com/madelynnblue/sqlfmt.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:    "c84039488c47b3d05d7453f65bbf8eded5b1229d9b06c398741dd99e1ee2b303"

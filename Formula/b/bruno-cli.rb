@@ -1,12 +1,12 @@
 class BrunoCli < Formula
   desc "CLI of the open-source IDE For exploring and testing APIs"
   homepage "https://www.usebruno.com/"
-  url "https://registry.npmjs.org/@usebruno/cli/-/cli-3.5.0.tgz"
-  sha256 "b2a635dc8f7039bd6ead25a2bfb1a0dd22927868a938d4e6b9f400e98b4ce349"
+  url "https://registry.npmjs.org/@usebruno/cli/-/cli-3.5.1.tgz"
+  sha256 "e0e5c585a39d12b9051ec2d359ab94e50098c2ad33131d4c293bcaa823c1f43d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bf6fd0d9d68c32691cbf20561c96d17ec9e57c1487aff06674f6a8b4ae00eff6"
+    sha256 cellar: :any_skip_relocation, all: "cb60ee6dd344d694e33c1297f1382472e3f18c9b4b17e3be714ed5a9c9e6d736"
   end
 
   depends_on "node"

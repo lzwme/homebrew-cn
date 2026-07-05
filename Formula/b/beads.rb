@@ -1,19 +1,19 @@
 class Beads < Formula
   desc "Memory upgrade for your coding agent"
-  homepage "https://github.com/steveyegge/beads"
-  url "https://ghfast.top/https://github.com/steveyegge/beads/archive/refs/tags/v1.0.5.tar.gz"
-  sha256 "06e52a953b2e46044c70bc41421554c5d006370b1a25905b752d02eb0b337f0d"
+  homepage "https://github.com/gastownhall/beads"
+  url "https://ghfast.top/https://github.com/gastownhall/beads/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "b38263c14125f5c05b6b70af06d1d3f152a7570e625518746ff8d783d11b4eac"
   license "MIT"
   compatibility_version 1
   head "https://github.com/gastownhall/beads.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f8fa08df32fb88a784f1487aeb7221e3cbebb9c4fcebfb37bdab4e6f0501b02a"
-    sha256 cellar: :any,                 arm64_sequoia: "6701bd6dd45af074ab1fd2fa679819daf717636d9c49542502b0f3e1a61595bd"
-    sha256 cellar: :any,                 arm64_sonoma:  "adc276608d86df0e2872a65588a91be2185e72ee54233ab314b3799258ec7398"
-    sha256 cellar: :any,                 sonoma:        "873801f3e80106f3a8533705ea4b818dc43c71fd56a0f808f02f0b668bd099c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e1ac41bcb03058ceac7373fb1e6a4b384164c8b99449ba3e98c13fe780a5f00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35357e5e576dbbb9144bb87a325d15c7ed01f067d22c8d77e0d22ae23653eccc"
+    sha256 cellar: :any, arm64_tahoe:   "b8eb8814f989e37363fbeefe3d1c1f4448affdeb2c2c4202e5dcacf1f9e1378b"
+    sha256 cellar: :any, arm64_sequoia: "6d1018b6c8a6ec8ef8fb23a77136b1b71662cedde48fff3cd3f10ca2fe8ca701"
+    sha256 cellar: :any, arm64_sonoma:  "76a9b284475307164aaa3ac6d10b15c1d2e87d7d54e39044d9ac2d4d415b3a57"
+    sha256 cellar: :any, sonoma:        "5ef5bc6fb50400a61fc331f56152c8d321ae0e3a9d5b48ee1c6a9c1f1ba38918"
+    sha256 cellar: :any, arm64_linux:   "3ad5fc222d6f07f783722a780f18329089027cf7dee1b82dd82d74277848ec69"
+    sha256 cellar: :any, x86_64_linux:  "2d6c00d0e20f2a6d852c2f14a80d08ae9ccf6d95902496e566397deafe1ce8a0"
   end
 
   depends_on "go" => :build

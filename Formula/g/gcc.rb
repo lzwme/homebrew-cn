@@ -178,14 +178,12 @@ class Gcc < Formula
     if OS.linux?
       gcc = bin/"gcc-#{version_suffix}"
       libgcc = Pathname.new(Utils.safe_popen_read(gcc, "-print-libgcc-file-name")).parent
-      raise "command failed: #{gcc} -print-libgcc-file-name" if $CHILD_STATUS.exitstatus.nonzero?
 
-      glibc = Formula["glibc"]
-      glibc_installed = glibc.any_version_installed?
+      glibc_installed = formula_any_version_installed?("glibc")
 
       # Symlink system crt1.o and friends where gcc can find it.
       crtdir = if glibc_installed
-        glibc.opt_lib
+        formula_opt_lib("glibc")
       else
         Pathname.new(Utils.safe_popen_read("/usr/bin/cc", "-print-file-name=crti.o")).parent
       end
@@ -204,19 +202,15 @@ class Gcc < Formula
 
       if glibc_installed
         # https://github.com/Linuxbrew/brew/issues/724
-        system_header_dirs << glibc.opt_include
+        system_header_dirs << formula_opt_include("glibc")
       else
         # Locate the native system header dirs if user uses system glibc
         target = Utils.safe_popen_read(gcc, "-print-multiarch").chomp
-        raise "command failed: #{gcc} -print-multiarch" if $CHILD_STATUS.exitstatus.nonzero?
-
         system_header_dirs += ["/usr/include/#{target}", "/usr/include"]
       end
 
       # Save a backup of the default specs file
       specs_string = Utils.safe_popen_read(gcc, "-dumpspecs")
-      raise "command failed: #{gcc} -dumpspecs" if $CHILD_STATUS.exitstatus.nonzero?
-
       specs_orig.write specs_string
 
       # Set the library search path
@@ -236,12 +230,13 @@ class Gcc < Formula
       #     brew libraries.
       # Note: *link will silently add #{libdir} first to the RPATH
       libdir = HOMEBREW_PREFIX/"lib/gcc/current"
+      link_libgcc = glibc_installed ? "-nostdlib -L#{libgcc} -L#{formula_opt_lib("glibc")}" : "+"
       specs.write specs_string + <<~EOS
         *cpp_unique_options:
         + -isysroot #{HOMEBREW_PREFIX}/nonexistent #{system_header_dirs.map { |p| "-idirafter #{p}" }.join(" ")}
 
         *link_libgcc:
-        #{glibc_installed ? "-nostdlib -L#{libgcc} -L#{glibc.opt_lib}" : "+"} -L#{libdir} -L#{HOMEBREW_PREFIX}/lib
+        #{link_libgcc} -L#{libdir} -L#{HOMEBREW_PREFIX}/lib
 
         *link:
         + --dynamic-linker #{HOMEBREW_PREFIX}/lib/ld.so -rpath #{libdir}

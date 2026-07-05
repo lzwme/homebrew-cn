@@ -23,8 +23,9 @@ class Dmd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, sonoma:       "a746a1c494721caba7ca9193a97d9c9c550599dcc3bfec608a937d1460f3963d"
-    sha256                               x86_64_linux: "c54dda66e096b2640e6c0432c73b984033c16daede0f0da46d78caee726d320b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma:       "b926ba97885e72681edb6bc774191523825493774476a4e986fc0e93999cd247"
+    sha256                               x86_64_linux: "e48261bac2d37d942c5e70281d13f76e6e4ecf0d9b0caab315e1272a1244bf86"
   end
 
   head do
@@ -85,27 +86,6 @@ class Dmd < Formula
       DFLAGS=-I#{opt_include}/dlang/dmd -L-L#{opt_lib}
     INI
     etc.install "dmd.conf"
-  end
-
-  # Previous versions of this formula may have left in place an incorrect
-  # dmd.conf.  If it differs from the newly generated one, move it out of place
-  # and warn the user.
-  def install_new_dmd_conf
-    conf = etc/"dmd.conf"
-
-    # If the new file differs from conf, etc.install drops it here:
-    new_conf = etc/"dmd.conf.default"
-    # Else, we're already using the latest version:
-    return unless new_conf.exist?
-
-    backup = etc/"dmd.conf.old"
-    opoo "An old dmd.conf was found and will be moved to #{backup}."
-    mv conf, backup
-    mv new_conf, conf
-  end
-
-  def post_install
-    install_new_dmd_conf
   end
 
   def caveats

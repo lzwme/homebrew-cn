@@ -1,10 +1,10 @@
 class Mprocs < Formula
   desc "Run multiple commands in parallel"
-  homepage "https://github.com/pvolok/mprocs"
-  url "https://ghfast.top/https://github.com/pvolok/mprocs/archive/refs/tags/v0.9.6.tar.gz"
+  homepage "https://github.com/pvolok/dekit"
+  url "https://ghfast.top/https://github.com/pvolok/dekit/archive/refs/tags/v0.9.6.tar.gz"
   sha256 "62488726fc5539772a41863428026f51b4c03d5ac27c56191775e5a721ae90c2"
   license "MIT"
-  head "https://github.com/pvolok/mprocs.git", branch: "master"
+  head "https://github.com/pvolok/dekit.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f394b0b592afda66436defbe72b0995a7471ad92bb8839d34158f1d2fa570854"

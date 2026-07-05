@@ -1,19 +1,19 @@
 class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
-  url "https://static.rust-lang.org/dist/rustc-1.96.0-src.tar.gz"
-  sha256 "e90a9eb153b2948afac840dbe9d77b64e376706f2864387ee7717f7450043b44"
+  url "https://static.rust-lang.org/dist/rustc-1.96.1-src.tar.gz"
+  sha256 "d0a9b5198c41868538ae12af28064163551d06dcceab11ef0b1bc9aa6e98b7a7"
   license any_of: ["Apache-2.0", "MIT"]
   compatibility_version 1
   head "https://github.com/rust-lang/rust.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "92dd1f7a34118bce4eef60bde537b18771b6ee930d1adc31c0bc4f26ed6291a1"
-    sha256 cellar: :any, arm64_sequoia: "38840eb562520652d1745bf06dba27edad100bf3de86fb755397dd18acefa917"
-    sha256 cellar: :any, arm64_sonoma:  "f7543c66283aa8c43eb34ecc4110a9f40e3987989381927e1fd1591a012c7ab4"
-    sha256 cellar: :any, sonoma:        "5a4fd24a0280747c348a4b556924a6bacdda0fc1e38c28afec6c210bcb10c8ae"
-    sha256 cellar: :any, arm64_linux:   "1805aef1f1c4a52ec68ac4a765372a35f68e45e84adfd749e5b1b556b196052a"
-    sha256 cellar: :any, x86_64_linux:  "1e0c924dae3d9336220dbaba4cb0ff39aa85cb5da5cf9cbefa5ad1fc252fe3b7"
+    sha256 cellar: :any, arm64_tahoe:   "d925479583e45556833b1b4f29d9a303593d65b67d04eb0802f0f480b32a6d5f"
+    sha256 cellar: :any, arm64_sequoia: "759effbbb6930ad939322c07cff6e9ba4823d60119a7620f556376839f5f3c1d"
+    sha256 cellar: :any, arm64_sonoma:  "a2fa64df46d3a50fac9b4416c729d82ea468a1516e3d605e1783c06b888067d0"
+    sha256 cellar: :any, sonoma:        "0ad6fa8e926cdeab08795b8dcca618f4eacb10865e94d99c281565023dee6a16"
+    sha256 cellar: :any, arm64_linux:   "958a5b3ca8a90d406a8b4b36190c05978405c0cbb4a83d18a4937df94bdd0ad3"
+    sha256 cellar: :any, x86_64_linux:  "4fad946179ee9daa02c95ac8a677f5d1295cbed03e1164a42802814f4a8c7cef"
   end
 
   depends_on "libgit2"

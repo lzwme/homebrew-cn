@@ -12,12 +12,13 @@ class R < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7c2f002ef9abd941c99cb46066bd68179a786ef065c17d852446f4d30d5e6c8b"
-    sha256 arm64_sequoia: "9dc0b94ec75c45037d7c406acb08d7456317cccba50c5b5af76a9251eaa7c65d"
-    sha256 arm64_sonoma:  "08966dc7cdcafc5a368beeba55293cb027c3fdda8dd30efcf20ba7759db15d09"
-    sha256 sonoma:        "2df5f09246b2e2ea7a05a91e95568ef8a62f017e28341d4cc88aa15be876d82b"
-    sha256 arm64_linux:   "4ae37db5187af164d6ed07a9463806793965ca9a231346dd82e29d6d83a7d013"
-    sha256 x86_64_linux:  "f9d6d63d8f29d787e3adcb65962407d815814de83ed7bc53b5fa377eeb7496ca"
+    rebuild 1
+    sha256 arm64_tahoe:   "9988668901294ee3eefd6325be843f96b63ef7f8918369b0024f86d877c6c769"
+    sha256 arm64_sequoia: "ab3224798fc03b929e513d99e9a208510679086eba8f6fb4939f069dd4246986"
+    sha256 arm64_sonoma:  "3724e1c5aae8d69fb6f86aa79a81f68fa06a0d7f03ce5d60f292deb4b2c1066f"
+    sha256 sonoma:        "0dbef0d950a3b0557ec31d1a6cf9f91f0d0733fcdf69d1eaec010a63fa12f065"
+    sha256 arm64_linux:   "b90626d421cbb10b992733a2dd312c14d080fd8ae152a2bab5c5f68e06b4c998"
+    sha256 x86_64_linux:  "995603a66a19ab87432f828ff40dbdfa8127cf878e659e718aa657473d067b4e"
   end
 
   depends_on "pkgconf" => :build
@@ -59,6 +60,7 @@ class R < Formula
 
   # needed to preserve executable permissions on files without shebangs
   skip_clean "lib/R/bin", "lib/R/doc"
+  skip_clean "lib/R/site-library"
 
   def install
     # `configure` doesn't like curl 8+, but convince it that everything is ok.
@@ -131,16 +133,14 @@ class R < Formula
     inreplace lib/"R/etc/Makeconf", Formula["gcc"].prefix.realpath,
                                     formula_opt_prefix("gcc"),
                                     audit_result: OS.mac?
-  end
 
-  def post_install
+    # `lib/R` is a :mkpath link directory
     short_version = Utils.safe_popen_read(bin/"Rscript", "-e", "cat(as.character(getRversion()[1,1:2]))")
-    site_library = HOMEBREW_PREFIX/"lib/R"/short_version/"site-library"
+    site_library = lib/"R"/short_version/"site-library"
     site_library.mkpath
     touch site_library/".keepme"
     site_library_cellar = lib/"R/site-library"
-    site_library_cellar.unlink if site_library_cellar.exist?
-    site_library_cellar.parent.install_symlink site_library
+    site_library_cellar.parent.install_symlink HOMEBREW_PREFIX/"lib/R"/short_version/"site-library"
   end
 
   test do

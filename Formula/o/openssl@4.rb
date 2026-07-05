@@ -12,12 +12,13 @@ class OpensslAT4 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "600b0e85eaf68c17c1cfd1cb714575d9b28c46442e01f4c276a13aa6f87048dc"
-    sha256 arm64_sequoia: "48127fccd6b0dd9274e34997d88e9a5b382ba78e65c62a38aa5a95a4bcbf8db2"
-    sha256 arm64_sonoma:  "f471c7871b69622f33216fe0572b9c2b18d2dcfd80067eca7edbc02ed03d2457"
-    sha256 sonoma:        "4ccf1cca7a19c4dd9f5d1cb58f4503fa38e85d0e60aa7adfc07f0f91cd183767"
-    sha256 arm64_linux:   "3990fdc30f834df7b28ab9084e8ae3d72022b52eb2de25b32b3be4c87f109195"
-    sha256 x86_64_linux:  "cefa553fc18a5680854feae91bbb0a0a4fcf74b570e0ebe58525bf4b91b99a4f"
+    rebuild 1
+    sha256 arm64_tahoe:   "df1f1b0af55395e4b3527b2c6d94cb2372cdca8f8414a8290e33f5b1c878e371"
+    sha256 arm64_sequoia: "500c12b28d754f34b36a193f3f1f8bf676e9bef0de18e641792df7a258fbad5a"
+    sha256 arm64_sonoma:  "fd66bb871b71a8904acdb4770aaefba1d4bf1089b643f0fcf70f7fe21efd3e03"
+    sha256 sonoma:        "e30016697c6b4686b2821c4e48c3b66e724da218424a7512ca09544eb76251b6"
+    sha256 arm64_linux:   "f0b8ea03f7e55eef4cbddd7f7449f325a3334a5a650e41c3fb5103c2687e1f13"
+    sha256 x86_64_linux:  "a014111c512510f60006435d7f8104e98cfbfffbfaf52e0e63252de522de7754"
   end
 
   keg_only :versioned_formula
@@ -42,6 +43,16 @@ class OpensslAT4 < Formula
       mirror "http://cpan.metacpan.org/authors/id/B/BI/BINGOS/ExtUtils-MakeMaker-7.78.tar.gz"
       sha256 "43b33c20f8d82dba7cc48f8cd702f8fc9811e9d07880886dfd31b7077bd4a3a6"
     end
+  end
+
+  # Backport commits to avoid test intermittent failures
+  patch do
+    url "https://github.com/openssl/openssl/commit/1e386aab890b52f46641ab18e1a56cabb1b8c47b.patch?full_index=1"
+    sha256 "636f11a33a39536c1cc69426c73863db2b57be636b5977a4076b0995c342ef30"
+  end
+  patch do
+    url "https://github.com/openssl/openssl/commit/d9f73e36c5fe720b3367e0fc6501683a3f91193a.patch?full_index=1"
+    sha256 "3508588c5e03ba6d3898512f0e8e3aa1f177e243c026884d6c31020359cae59e"
   end
 
   def install
@@ -79,7 +90,7 @@ class OpensslAT4 < Formula
     end
 
     pkgetc.mkpath
-    system "perl", "./Configure", *(configure_args + arch_args)
+    system "perl", "./Configure", *configure_args, *arch_args
     system "make"
     system "make", "install", "MANDIR=#{man}", "MANSUFFIX=ssl"
     system "make", "HARNESS_JOBS=#{ENV.make_jobs}", "test"
@@ -88,9 +99,11 @@ class OpensslAT4 < Formula
     touch %w[certs private].map { |subdir| pkgetc/subdir/".keepme" }
   end
 
-  def post_install
-    rm(pkgetc/"cert.pem") if (pkgetc/"cert.pem").exist?
-    pkgetc.install_symlink Formula["ca-certificates"].pkgetc/"cert.pem"
+  post_install_steps do
+    ln_sf "cert.pem", "cert.pem",
+          source_formula: "ca-certificates",
+          source_base:    :formula_pkgetc,
+          target_base:    :pkgetc
   end
 
   def caveats

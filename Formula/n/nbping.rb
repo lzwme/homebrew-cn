@@ -1,7 +1,7 @@
 class Nbping < Formula
   desc "Ping Tool in Rust with Real-Time Data and Visualizations"
-  homepage "https://github.com/hanshuaikang/Nping"
-  url "https://ghfast.top/https://github.com/hanshuaikang/Nping/archive/refs/tags/v0.7.1.tar.gz"
+  homepage "https://github.com/hanshuaikang/NBping"
+  url "https://ghfast.top/https://github.com/hanshuaikang/NBping/archive/refs/tags/v0.7.1.tar.gz"
   sha256 "1a73f125601cac5ddc456b15d58b5145b859c46da24ce2024288fe4343050e5d"
   license "MIT"
 

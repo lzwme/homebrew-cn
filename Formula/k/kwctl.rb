@@ -1,10 +1,10 @@
 class Kwctl < Formula
   desc "CLI tool for the Kubewarden policy engine for Kubernetes"
   homepage "https://www.kubewarden.io/"
-  url "https://ghfast.top/https://github.com/kubewarden/kubewarden-controller/archive/refs/tags/v1.36.0.tar.gz"
+  url "https://ghfast.top/https://github.com/kubewarden/adm-controller/archive/refs/tags/v1.36.0.tar.gz"
   sha256 "c2d3ad9d6100b7ce81c6e565b7e99e01916168909ac558757864a406604e7825"
   license "Apache-2.0"
-  head "https://github.com/kubewarden/kubewarden-controller.git", branch: "main"
+  head "https://github.com/kubewarden/adm-controller.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03390b472fbed4fe9b35f12ad64fde5a02654e57958c77ffb58dd6633428ff01"

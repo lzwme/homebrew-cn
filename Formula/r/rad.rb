@@ -1,18 +1,18 @@
 class Rad < Formula
   desc "Modern CLI scripts made easy"
   homepage "https://amterp.dev/rad/"
-  url "https://ghfast.top/https://github.com/amterp/rad/archive/refs/tags/v0.10.1.tar.gz"
-  sha256 "dd9e76d37f9f99f500c037ae1631c58b83d0ba60e96c587b90a7434de7dddb0c"
+  url "https://ghfast.top/https://github.com/amterp/rad/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "feb31c9b8bb767c868cd67cedf52fc0fe609e549e835978f5c565d1432fa8167"
   license "Apache-2.0"
   head "https://github.com/amterp/rad.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3203254b7a4b9c98880bf5ca8f938b8cc7890c13cfc6c23f6dd8ef42d3d7b9f5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8193e7675e167c3e5ffacbf20d569e446141aca9f00515d0495903f6ef40a41e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c715200a45485630e075743e079e93969b0cdd8e63e00790cd3a5bd1cec0df9a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d73213b7a0a76fa4391e4d4becfc37afc0efd8f4039897213dd0b4cb2709755d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b693bfd935fb3d5e7535e338e50c8c0cc2058f0ccc90da572f85b69e0b4e8bb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a387e44ae1a68ffa0386dc93fff20e0324dd3b0112e3b915e776a87b115182b8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cdab8393f40429d426089621f8eddacc20f1f184c1c40bdee34b558e2a134558"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5a2edfefc40db6aa63ac69f886bedad3ea579190012265ca759cfd42f71f1d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5305c08428da3fd4fcfcb0741e30287d064283e801e2b38616d0baee8101857"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9924c0c7f51572b1845268764b03cc8075974427b895a852ae09683f91e8da93"
+    sha256 cellar: :any,                 arm64_linux:   "88695d1cdda87fade5a4fa2b9d8520a9910f1deb7527749872335f833e1d922c"
+    sha256 cellar: :any,                 x86_64_linux:  "4b9659ba4c16449744e739f429d85737e5c48665fff5e56ea19a4f1f86b3cc17"
   end
 
   depends_on "go" => :build

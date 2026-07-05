@@ -8312,7 +8312,7 @@ Homebrew-homebrew-core/Formula/y/yapf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yara-x.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yara.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yarn-completion.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/y/yarn.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/y/yarn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yasm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yatas.rb, Homebrew/homebrew-core, 1
@@ -10416,6 +10416,7 @@ Homebrew-homebrew-cask/Casks/font/font-b/font-bungee.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/font/font-b/font-butcherman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-butterfly-kids.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-bytesized.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-c/font-caacupe-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-cabin-condensed.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-cabin-sketch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-cabin.rb, Homebrew/homebrew-cask, 0
@@ -12249,6 +12250,7 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-schoolbell.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask/Casks/font/font-s/font-science-gothic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-scientifica.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-scope-one.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-s/font-scoutie-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-seaweed-script.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-secular-one.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-sedan-sc.rb, Homebrew/homebrew-cask, 0

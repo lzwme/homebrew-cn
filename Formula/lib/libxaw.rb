@@ -1,7 +1,7 @@
 class Libxaw < Formula
   desc "X.Org: X Athena Widget Set"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libXaw-1.0.16.tar.xz"
+  url "https://xorg.freedesktop.org/archive/individual/lib/libXaw-1.0.16.tar.xz"
   sha256 "731d572b54c708f81e197a6afa8016918e2e06dfd3025e066ca642a5b8c39c8f"
   license all_of: [
     "MIT-open-group",    # "The Open Group"

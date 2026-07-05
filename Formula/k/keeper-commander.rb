@@ -3,20 +3,20 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/08/44/61fc071b4b86d5d560640957d902fd491e36898509757bfe4286e5609626/keepercommander-18.0.9.tar.gz"
-  sha256 "1f28fba28e81d2dc96e1006dea42fda487dbb493100f611cf13b310ac4212460"
+  url "https://files.pythonhosted.org/packages/97/37/d2279cdea65d5f4ffb4ce00720ec51fc7c6418d084def18557bff2808e9d/keepercommander-18.0.10.tar.gz"
+  sha256 "daf0b2d5ae670922e13384fd9fee4eaa8492b6d8eee41fa073030c29b6d22ea0"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "84cf585442683b1d5b068b3405b4d51a6caa0296caae8a39eb54b7793dbde5f9"
-    sha256 cellar: :any, arm64_sequoia: "0605cbd480660de021e6df69be88edabb973ba7ba717c8668a9fc42a68d22ae4"
-    sha256 cellar: :any, arm64_sonoma:  "dee1b116a3ee175038bd463092fff4f55aeb0218c0daa70c5eaa06caf4290eef"
-    sha256 cellar: :any, sonoma:        "4b8ae80208a5b5a12b6dc8122311e7f5fbdb325a1983180a717fc5a7329e6f20"
-    sha256 cellar: :any, arm64_linux:   "239d5157c315eeaf63c207e9cd20a9482aa28d9d25580fcccda3ef1a9ec23e60"
-    sha256 cellar: :any, x86_64_linux:  "b9bb1761942ebcd6244307fdc1c6e3ca121c8cea4bac258bb7294dcf9f0cd517"
+    sha256 cellar: :any, arm64_tahoe:   "78abc6f263bc65fd4c44b7cf62ae82aac1fc2f2386a14556991d39dce8e21a70"
+    sha256 cellar: :any, arm64_sequoia: "61582ca6ad9bb6b01aa81dee2b95e3ac306256b750896c53491f141f52ff3141"
+    sha256 cellar: :any, arm64_sonoma:  "95615ef28568ead768dcd2f9276837adbbe75268ff2cb11e7388613aac122539"
+    sha256 cellar: :any, sonoma:        "e46ceef5454bb2ebde5cff54d42c802087c50015022f18263d15de3f16ea58c5"
+    sha256 cellar: :any, arm64_linux:   "aeccfb7b9933cfae3629c1c2cd15068d152f71ae48308a9d62a130847c47ba33"
+    sha256 cellar: :any, x86_64_linux:  "ea49f01efb2dc2658067a8f22b39ed3d5282b15d4ab58457e8b96516920e1059"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -77,8 +77,8 @@ class KeeperCommander < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "colorama" do
@@ -97,8 +97,8 @@ class KeeperCommander < Formula
   end
 
   resource "fido2" do
-    url "https://files.pythonhosted.org/packages/09/34/4837e2f5640baf61d8abd6125ccb6cc60b4b2933088528356ad6e781496f/fido2-2.2.0.tar.gz"
-    sha256 "0d8122e690096ad82afde42ac9d6433a4eeffda64084f36341ea02546b181dd1"
+    url "https://files.pythonhosted.org/packages/ba/ea/6f08c354b7aeb8019249d46a86c2153f8218499cced4d21bf16b6d49fc16/fido2-2.2.1.tar.gz"
+    sha256 "85787428a94c3f8eaf72f0ff30afba983b559a1b1b795c93318c81b4ad4062c4"
   end
 
   resource "flask" do
@@ -307,13 +307,13 @@ class KeeperCommander < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/9b/7a/c519db0aba5024f86e71e9631810bfdd6866ed2c8695bd7fa34b90e7ef59/textual-8.2.7.tar.gz"
-    sha256 "658f568ff81e30ed43890c3e07520390e5cf1b4763822006e060656b0a88f105"
+    url "https://files.pythonhosted.org/packages/00/21/39a76b01bd5eea82a04baaca7580e105d8c59450df03998345bb2cfb307b/textual-8.2.8.tar.gz"
+    sha256 "3f106a9fbc73e39dd266c9712432087de78a6d644084c7c241d6a25c3169115b"
   end
 
   resource "tzlocal" do
-    url "https://files.pythonhosted.org/packages/48/55/15e2340963d2bfedcc6042da3911438fd336f8ae96b65bdbe3a29766da0c/tzlocal-5.4.3.tar.gz"
-    sha256 "3a8c9bc18cf47e1dcde252ea0e6a72a6cde320a400b6ac6db1f1f8cccd553c00"
+    url "https://files.pythonhosted.org/packages/81/5b/879b2f932adfa7a053c360d50bc896c977fa6426109185f7c12ebdd0cb9d/tzlocal-5.4.4.tar.gz"
+    sha256 "8dbb8660838688a7b6ba4fed31d18dedf842afb4d47ca050d6d891c2c15f3be4"
   end
 
   resource "uc-micro-py" do
@@ -327,8 +327,8 @@ class KeeperCommander < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/49/b4/51fe890511f0f242d07cb1ebe6a5b6db417262b9d2568b460347c57d95cc/wcwidth-0.8.1.tar.gz"
-    sha256 "faf5b4a5366a72dc49cad48cdf21f52bdf63bdda995178e483ba247ff79089b9"
+    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
+    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
   end
 
   resource "websockets" do
