@@ -40,7 +40,7 @@ class Corsixth < Formula
   end
 
   resource "luafilesystem" do
-    url "https://ghfast.top/https://github.com/keplerproject/luafilesystem/archive/refs/tags/v1_9_0.tar.gz"
+    url "https://ghfast.top/https://github.com/lunarmodules/luafilesystem/archive/refs/tags/v1_9_0.tar.gz"
     sha256 "1142c1876e999b3e28d1c236bf21ffd9b023018e336ac25120fb5373aade1450"
   end
 

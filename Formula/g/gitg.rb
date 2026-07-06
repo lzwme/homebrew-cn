@@ -11,12 +11,13 @@ class Gitg < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "1d6e346c60f21ef3a1e9cac8f6b902da286947fe51c17e8b4473fce5b3ad6fd4"
-    sha256 arm64_sequoia: "5018fa08d2fbd9051221130ad40c0dbb7e0340f8773de20574cb676ca7a5609d"
-    sha256 arm64_sonoma:  "4b9c661fb0f61f35336844ec9df8806038df76d427ac907debbe24793ca4c215"
-    sha256 sonoma:        "2a151de72249aa16326e58253ebb50ca8f9c90f372ab5ec0a4e7b0d21b5b7925"
-    sha256 arm64_linux:   "af16cd4ac7f5772d18cbaa220a0293104e278199ed007c3d5e4a50dee9cb4b15"
-    sha256 x86_64_linux:  "45ab392996afcd7e3d6d3a147182ea07b3421317ba6279c12f4166273638d46a"
+    rebuild 1
+    sha256 arm64_tahoe:   "758cebd9f9840d9442de01e5a2bc5e81578a8c64e138f58b239059e886554328"
+    sha256 arm64_sequoia: "08f44f87de55735b7c2fc3d1b746f5665424272c989ff4ee36daf7687a6d9d4d"
+    sha256 arm64_sonoma:  "a0ff5c6d15c3888ed58cb2e48e0596991ea7935174d89038c7b5dff4931654a3"
+    sha256 sonoma:        "225d5ac61e02754ebcac9aac3fd1791dcea6722a287fd0bb5a869249b6e43190"
+    sha256 arm64_linux:   "70ebb27ddc945b5bcdb1f016383363dc190deaf90f5445e9b0aa44ae5ba1e49a"
+    sha256 x86_64_linux:  "915657a8a8e1ce9b86adfd7b8397ccf41e915166c5180d6b28b794b3028173e9"
   end
 
   depends_on "gettext" => :build # for `msgfmt`
@@ -74,9 +75,9 @@ class Gitg < Formula
     system "meson", "install", "-C", "build"
   end
 
-  def post_install
-    system "#{formula_opt_bin("glib")}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
-    system "#{formula_opt_bin("gtk+3")}/gtk3-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
+  post_install_steps do
+    compile_gsettings_schemas
+    gtk_update_icon_cache
   end
 
   test do

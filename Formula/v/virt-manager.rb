@@ -33,8 +33,8 @@ class VirtManager < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "8d07cb463ff7898b94f6d6345907088f178ba21054c5e5b7e19fd416e605b7da"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "f5439f62537fb88802e3f818875c83e78ba51d24049b038b35c02a8a68eef9da"
   end
 
   depends_on "docutils" => :build
@@ -101,11 +101,9 @@ class VirtManager < Formula
     rewrite_shebang python_shebang_rewrite_info(venv.root/"bin/python"), *bin.children
   end
 
-  def post_install
-    # manual schema compile step
-    system formula_opt_bin("glib")/"glib-compile-schemas", HOMEBREW_PREFIX/"share/glib-2.0/schemas"
-    # manual icon cache update step
-    system formula_opt_bin("gtk+3")/"gtk3-update-icon-cache", HOMEBREW_PREFIX/"share/icons/hicolor"
+  post_install_steps do
+    compile_gsettings_schemas
+    gtk_update_icon_cache
   end
 
   test do

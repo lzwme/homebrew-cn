@@ -36,7 +36,7 @@ class Vip < Formula
   end
 
   resource "man" do
-    url "https://www.cs.duke.edu/~des/scripts/vip.man"
+    url "https://cs.duke.edu/~des/scripts/vip.man"
     sha256 "37b2753f7c7b39c81f97b10ea3f8e2dd5ea92ea8d130144fa99ed54306565f6f"
   end
 

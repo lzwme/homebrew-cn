@@ -12,19 +12,20 @@ class OpensslAT35 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "624ed5a904991f3263a6f3509be3efb1a3bac4f97a8342c5774fe168c68f4921"
-    sha256 arm64_sequoia: "0e6b59601b121345ad1e33b6e01f7a330c55b4d9f1a82bc1ac104903df356ea9"
-    sha256 arm64_sonoma:  "59885e2ae4205961b81c929560ec6cd1f041b56380efdbf9814d3c75dfdfdafe"
-    sha256 tahoe:         "f237ada244089c5d49f5cec01a056a0c2a16ed2c7c0fb06113efc4ae4b9db602"
-    sha256 sequoia:       "3ad5a09973bf0c2f26af7468c436ff76b058f7841357d2aeac1eecbf31645fd9"
-    sha256 sonoma:        "7827b9b45f3342d0039128a2d11b8fd23e69149d496c53213023e557c8f28bde"
-    sha256 arm64_linux:   "24ee56a63150533a1629300ddc7dbcda3803e40b8d59913a49a3ad883fa34e2b"
-    sha256 x86_64_linux:  "c004545456b35aa2d9d59503715686ca81313a79c4df34c9fa80d181be5c3d05"
+    rebuild 1
+    sha256 arm64_tahoe:   "f8273657dd4155be3f4758437fbd81442b43e1bb190a5f3674239b9a773beda0"
+    sha256 arm64_sequoia: "1a8b514403f1e28eeb017abea8bacc10d14045c86f91f936de6b09f4bc4ddf50"
+    sha256 arm64_sonoma:  "f15cf2e087411876bd85c5b50e9f5ba99c514ffc1a9c4c71f49719c83c84e2b9"
+    sha256 tahoe:         "671ddef2825f7ce133abd25ce851d831b566c1248a71fa456c08ee98d17c3e3a"
+    sha256 sequoia:       "cb090fc5bce77e39dc13f9edf8ceb624c2da273cbd647d8f267813e9a566c20c"
+    sha256 sonoma:        "c862626068d9bfd8d326df63d96174e212d9aca86a96cbaa40f8a43ab2871022"
+    sha256 arm64_linux:   "150eb0c6271e5975092191c0845a5272ddf783b4c0435a533f1bc8d7446fc412"
+    sha256 x86_64_linux:  "2a57d675d96eff269d61e0e701eb08dc2131f5cd130c6259befc37015cb26608"
   end
 
   keg_only :versioned_formula
 
-  depends_on "ca-certificates"
+  depends_on "ca-certificates" => :no_linkage
 
   on_linux do
     resource "Test::Harness" do
@@ -110,13 +111,13 @@ class OpensslAT35 < Formula
     touch %w[certs private].map { |subdir| openssldir/subdir/".keepme" }
   end
 
-  def openssldir
-    etc/"openssl@3.5"
-  end
+  def openssldir = pkgetc
 
-  def post_install
-    rm(openssldir/"cert.pem") if (openssldir/"cert.pem").exist?
-    openssldir.install_symlink Formula["ca-certificates"].pkgetc/"cert.pem"
+  post_install_steps do
+    ln_sf "cert.pem", "cert.pem",
+          source_formula: "ca-certificates",
+          source_base:    :formula_pkgetc,
+          target_base:    :pkgetc
   end
 
   def caveats

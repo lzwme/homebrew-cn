@@ -7,15 +7,13 @@ class GnomeRecipes < Formula
   revision 3
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "aa4f377580d2f261bf6997d22203eab2ab4a41dd25ac493c31c156712ffeebb8"
-    sha256 arm64_sequoia: "3bdeeed9601b21231a0681c228ad2c69aeec741c8a03e254927a6563691b8ec3"
-    sha256 arm64_sonoma:  "6747e4b6466b029d7752f666b49efd402420d1f849ba297d1826ead4c3afd357"
-    sha256 arm64_ventura: "f6034dd729fdcb7445b1e41d873d4bf19fad4e8ecd756bef137981ae3337e15c"
-    sha256 sonoma:        "2adb5d5d5318f31ec63b8b76e3d220a2762dcb7ee47e66e64f97099ec10509a0"
-    sha256 ventura:       "80caac371964f0b21498fdc59ffd60b82896b2e8bbb640acb049ec200fd01c39"
-    sha256 arm64_linux:   "baf6811bce172b08ab17bf70be6d20075df33db91cd8a0b3476529d590f120a9"
-    sha256 x86_64_linux:  "a1dae0cbe0ba46499542cd211ce00a349115b3493b918585813d648509300274"
+    rebuild 2
+    sha256 arm64_tahoe:   "c3d2fe01ea97827e715cb29583797418cb4d71b00e6ee97d9f8dfaeb96bcf4e2"
+    sha256 arm64_sequoia: "48061c558c7b2a4ac42a5a0fee09187c92323a1a3a261133edcbd765e07f16fe"
+    sha256 arm64_sonoma:  "e474b3f42f2ae09b5282d78c7a18e88661c5b0d15d4e275f8cd0ed5fd323236c"
+    sha256 sonoma:        "3aa31f8c5cd39076cd93675d43f487488832ed0a91036b01093a9f111c436ec2"
+    sha256 arm64_linux:   "44594058f4bcf5667642ff19ac9976d4dd5e065953e157325221368cf769525d"
+    sha256 x86_64_linux:  "dedbae7279b37281b9abf9707483ffde9f28ad37866541a883afe5207847b5fd"
   end
 
   depends_on "gettext" => :build
@@ -61,9 +59,9 @@ class GnomeRecipes < Formula
     system "meson", "install", "-C", "build"
   end
 
-  def post_install
-    system "#{formula_opt_bin("glib")}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
-    system "#{formula_opt_bin("gtk+3")}/gtk3-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
+  post_install_steps do
+    compile_gsettings_schemas
+    gtk_update_icon_cache
   end
 
   test do

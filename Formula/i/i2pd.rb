@@ -6,12 +6,13 @@ class I2pd < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "af49929dd0a31b33d3ccdfc6722a59fabfb7666977f89bc4bc23be534bcf4456"
-    sha256 cellar: :any,                 arm64_sequoia: "e7ea6e15cb9892cb341e4c91658fe044b2ff2d31e95daf5770beda71d14bb8f9"
-    sha256 cellar: :any,                 arm64_sonoma:  "a2ebfaf4c20175677a20fb8eb6fa004607a285d763bfe6980e89301cdaca40d5"
-    sha256 cellar: :any,                 sonoma:        "05b2888fe4c0e9160b2d1e662776d63df7c3829949dc156b0636e0b63b14edb3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "97cbe731063c25d8da13e9415a76364ffd934c663c76e4e27a15ea0d1fb8d29e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "583d1aba1ff58e57647122f95d74760ea6a1d5e332f475e10c2c718726093349"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "1c753de7fabacfb80a3bcf4a0daa2f3294c0236a46aeb471abd0d04660b19764"
+    sha256 cellar: :any, arm64_sequoia: "8c992bb3ffcb38f25eddd33e67cfd44f2a3e1a609760c421deb77f765ca8e7bd"
+    sha256 cellar: :any, arm64_sonoma:  "27f723665ada7b93325ecc9d040b4956b77e024bb454d73d64105402b65397a2"
+    sha256 cellar: :any, sonoma:        "00b696213cad837286229074610faba65519a08203102d36fcbad118664ba020"
+    sha256 cellar: :any, arm64_linux:   "362079b30cd2dda5ea9151afb162a15eb78709dcac3cbf9af6c20bdf0ab2b29c"
+    sha256 cellar: :any, x86_64_linux:  "e832fa2d871f36e71847d5aff3fd56a7ebe10f3e3b613c9ac9e7169dcc28e432"
   end
 
   depends_on "boost"
@@ -36,27 +37,19 @@ class I2pd < Formula
     system "make", "install", *args
 
     # preinstall to prevent overwriting changed by user configs
-    confdir = etc/"i2pd"
     rm_r(prefix/"etc")
-    confdir.install doc/"i2pd.conf", doc/"subscriptions.txt", doc/"tunnels.conf"
+    pkgetc.install doc/"i2pd.conf", doc/"subscriptions.txt", doc/"tunnels.conf"
+
+    (var/"lib/i2pd").mkpath
+    (var/"log/i2pd").mkpath
   end
 
-  def post_install
-    # i2pd uses datadir from variable below. If that path doesn't exist,
-    # create the directory and create symlinks to certificates and configs.
-    # Certificates can be updated between releases, so we must recreate symlinks
-    # to the latest version on upgrade.
-    datadir = var/"lib/i2pd"
-    if datadir.exist?
-      rm datadir/"certificates"
-      datadir.install_symlink pkgshare/"certificates"
-    else
-      datadir.dirname.mkpath
-      datadir.install_symlink pkgshare/"certificates", etc/"i2pd/i2pd.conf",
-                              etc/"i2pd/subscriptions.txt", etc/"i2pd/tunnels.conf"
-    end
-
-    (var/"log/i2pd").mkpath
+  post_install_steps do
+    # Create symlinks to certificates and configs
+    ln_sf "certificates", "lib/i2pd/certificates", source_base: :opt_pkgshare, target_base: :var
+    ln_sf "i2pd.conf", "lib/i2pd/i2pd.conf", source_base: :pkgetc, target_base: :var
+    ln_sf "subscriptions.txt", "lib/i2pd/subscriptions.txt", source_base: :pkgetc, target_base: :var
+    ln_sf "tunnels.conf", "lib/i2pd/tunnels.conf", source_base: :pkgetc, target_base: :var
   end
 
   service do

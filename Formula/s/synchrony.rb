@@ -19,7 +19,7 @@ class Synchrony < Formula
 
   test do
     resource "test-file" do
-      url "https://gist.github.com/relative/79e392bced4b9bed8fd076f834e06dee/raw/obfuscated.js"
+      url "https://ghfast.top/https://gist.githubusercontent.com/relative/79e392bced4b9bed8fd076f834e06dee/raw/obfuscated.js"
       sha256 "01058a548c9beb1df0586ddb30ca88256b15dba4bd5b95ddf90541dbaceef0b0"
     end
 

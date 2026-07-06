@@ -4,6 +4,7 @@ class Root < Formula
   url "https://root.cern/download/root_v6.40.02.source.tar.gz"
   sha256 "f631eebee3dbea128f1415f4b784f5e83637a2b431193bce75f10385f71efc56"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/root-project/root.git", branch: "master"
 
   livecheck do
@@ -15,13 +16,12 @@ class Root < Formula
   end
 
   bottle do
-    rebuild 5
-    sha256 arm64_tahoe:   "2806c9ba596172b7f7bf2343291a4ba74ccf744293e4a957cf302e341e167dc4"
-    sha256 arm64_sequoia: "56e252bd095b10e765cd63defce2bad0bec0459406095f5ff37afb9e18bff64f"
-    sha256 arm64_sonoma:  "99d1c73530171a61d0a253df9338b0c3711653f4ceba4faed4eb34142d9ef062"
-    sha256 sonoma:        "d6b055e16e8803f1eddf8481ce2fa5b33ca2f540a9c81c9e9931a377ee98a027"
-    sha256 arm64_linux:   "108760f6ae37eb344814d98ab8185fadb524abd8641e4cb844f4b6fdf403a619"
-    sha256 x86_64_linux:  "be9e2d2270d48bd458d1b181085374971f6d58a2cbe09493a28ad0644e08cb10"
+    sha256 arm64_tahoe:   "949607d7dbfe0eea5ae6f4ef8d5dbd89d21b521d50ac64820f7156897574f9fa"
+    sha256 arm64_sequoia: "076889d8ff040d340d85dc30f67449f315f5d09471409b40163aa8488a3541c1"
+    sha256 arm64_sonoma:  "8d6696072c4ebb91ccba82c9752af9c3ace44465fd8434b3d9bac7028df96a4d"
+    sha256 sonoma:        "bb5f54f40b7724399f91a8fbce447067038065905dfd7ff74e81c695ae2e420a"
+    sha256 arm64_linux:   "8bec594b3d9540c5aa21f2aa12fc9398c3cbc95bf905a14e56daa88db15a23f4"
+    sha256 x86_64_linux:  "29e5e205e38c1f3c90af9e987367a14f0c57ef7918d6e41a3b13cca295d1661d"
   end
 
   depends_on "cmake" => :build
@@ -144,6 +144,9 @@ class Root < Formula
       -Dxrootd=ON
       -GNinja
     ]
+
+    # SetUpMacOS.cmake runs `lipo` on the make program, which fails on Homebrew's ninja shim.
+    args << "-DCMAKE_MAKE_PROGRAM=#{formula_opt_bin("ninja")}/ninja"
 
     # Workaround the shim directory being embedded into the output
     inreplace "cmake/unix/compiledata.sh", "`type -path $CXX`", ENV.cxx

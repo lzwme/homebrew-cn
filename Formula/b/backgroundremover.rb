@@ -8,13 +8,13 @@ class Backgroundremover < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "c12c71758bfc3449a3b8e301b1e54391633eb4ca21be82cd75c76331bb40cbbf"
-    sha256 cellar: :any, arm64_sequoia: "d687555694ff22f454d9dcba7747e5b1d619b5445212f390a562b3457ab53b06"
-    sha256 cellar: :any, arm64_sonoma:  "5843f14ac8b3e4bb262e8a69b57301a529718a516b9013bd93ec136b1301ed86"
-    sha256 cellar: :any, sonoma:        "4299460afd307bdd0db7ac58199cf5e3843271711a140599136b47b606214fa4"
-    sha256 cellar: :any, arm64_linux:   "f6536a26206105c79c79288eb4912d46494387a741d286f28df89ad041a8016c"
-    sha256 cellar: :any, x86_64_linux:  "1769bac54914c175f04395961c6ca383ef5200e4077735a7a49be2289784de32"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "050b8da47fc20042e88047de0f78820e90d7c676117da12e84ad9c7bc5ddc279"
+    sha256 cellar: :any, arm64_sequoia: "2a258a9f45930a6ff8b8238df2cffb3092cd0e86ba322ded512c1e4f91167db0"
+    sha256 cellar: :any, arm64_sonoma:  "896210c7f4213b5f82f654c5a20942707cc020707d5409267a2a5a961f3ce9f1"
+    sha256 cellar: :any, sonoma:        "67f59206bcf2e60b7263d6994128be8d1d79aa84afd55502769dae9c316ea097"
+    sha256 cellar: :any, arm64_linux:   "4c55272007ba102c5f5586086b9ae843fafce0801c7c9827c08dae37ef554c35"
+    sha256 cellar: :any, x86_64_linux:  "12ab3810b8353ad52aa7441ed937c896c6ff9777cd3dfb4b3a4800c65594cd5a"
   end
 
   depends_on "cmake" => :build
@@ -22,7 +22,7 @@ class Backgroundremover < Formula
   depends_on "certifi" => :no_linkage
   depends_on "ffmpeg"
   depends_on "libheif"
-  depends_on "llvm@20"
+  depends_on "llvm"
   depends_on "numpy"
   depends_on "pillow" => :no_linkage
   depends_on "python@3.14"
@@ -49,8 +49,8 @@ class Backgroundremover < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "commandlines" do
@@ -109,8 +109,8 @@ class Backgroundremover < Formula
   end
 
   resource "llvmlite" do
-    url "https://files.pythonhosted.org/packages/01/88/a8952b6d5c21e74cbf158515b779666f692846502623e9e3c39d8e8ba25f/llvmlite-0.47.0.tar.gz"
-    sha256 "62031ce968ec74e95092184d4b0e857e444f8fdff0b8f9213707699570c33ccc"
+    url "https://files.pythonhosted.org/packages/dc/a0/acc8ffcd5bdc63df0097e22c719bfcd61b604358343089313a8aebbb24ab/llvmlite-0.48.0.tar.gz"
+    sha256 "543b19f9ef8f3c7c60d1468191e4ee1b1537bf9f8a3d56f64c0ddd98de92edd2"
   end
 
   resource "more-itertools" do
@@ -124,8 +124,8 @@ class Backgroundremover < Formula
   end
 
   resource "numba" do
-    url "https://files.pythonhosted.org/packages/f6/c5/db2ac3685833d626c0dcae6bd2330cd68433e1fd248d15f70998160d3ad7/numba-0.65.1.tar.gz"
-    sha256 "19357146c32fe9ed25059ab915e8465fb13951cf6b0aace3826b76886373ab23"
+    url "https://files.pythonhosted.org/packages/ae/a0/570e3dc53e5602b49108f62a13e529f1eec8bfc7ef37d49c825924dcf546/numba-0.66.0.tar.gz"
+    sha256 "b900e63a0e26c05ea9a6d5a3a5a0a177cb64c5011887bf43edb8c3ed2c38d363"
   end
 
   resource "pillow-heif" do
@@ -164,8 +164,8 @@ class Backgroundremover < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/85/05/0d5260f1f1ca784f4a4a0def9cbe6affe587f5b4025328d446c3d67765f4/tqdm-4.68.2.tar.gz"
-    sha256 "89c230e8dbc67c7615c142487111222f878c77427ea09549960f62389e258add"
+    url "https://files.pythonhosted.org/packages/87/d7/0535a28b1f5f24f6612fb3ff1e89fb1a8d160fee0f976e0aa6803862134b/tqdm-4.68.3.tar.gz"
+    sha256 "00dfa48452b6b6cfae3dd9885636c23d3422d1ec97c66d96818cbd5e0821d482"
   end
 
   resource "urllib3" do

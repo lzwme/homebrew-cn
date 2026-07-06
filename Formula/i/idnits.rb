@@ -25,7 +25,7 @@ class Idnits < Formula
 
   test do
     resource "homebrew-test" do
-      url "https://tools.ietf.org/id/draft-tian-frr-alt-shortest-path-01.txt"
+      url "https://datatracker.ietf.org/doc/id/draft-tian-frr-alt-shortest-path-01.txt"
       sha256 "dd20ac54e5e864cfd426c7fbbbd7a1c200eeff5b7b4538ba3a929d9895f01b76"
     end
 

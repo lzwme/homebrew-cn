@@ -1,8 +1,8 @@
 class Apko < Formula
   desc "Build OCI images from APK packages directly without Dockerfile"
   homepage "https://github.com/chainguard-dev/apko"
-  url "https://ghfast.top/https://github.com/chainguard-dev/apko/archive/refs/tags/v1.2.21.tar.gz"
-  sha256 "42a6b5c95bc9266fa40b8da7b20e2612a4e2403a71628c3be5da96c414408dad"
+  url "https://ghfast.top/https://github.com/chainguard-dev/apko/archive/refs/tags/v1.2.22.tar.gz"
+  sha256 "09fecc5cce13e32f34896290cf3d703aab34d76a66653363d31aaf2508b11af9"
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/apko.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Apko < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16405b1b987e1ae5c22011f27103839e68c2485b0900cf5e427a6d30d932fbf1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb9f48e911d5bde355e7d7c312adf31f75114933a3de120a43991a2e4dd659d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78ced13f3a2b398dde63c19bc65231dbcedc4a93f05b3ecc5b7fb48ee5cf2071"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8784308eda2024b6d06676d1c693035f61978ff1556efd937b53814fbec8e3c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e344da304dce3fc2b675d455926da4588482dea28b12baf2c9bb3a330a6965ce"
-    sha256 cellar: :any,                 x86_64_linux:  "c1f0a778573d6b31e008de86e284e004a7c51855e4a83eb80068fed7f6852dfb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "88c3109a778c3cb6f7373794cb139c1e8ebe41dc59527d55798cadbd2d89ae15"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90fa11b84efeb8604342184ea1604d8bb84e2f70fbd381f289f5a8f0aad31df4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "180825ff9e294c3cb4ad2e85742b4d94d7680bdb8427ee07d954d53097e8f3c3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8e09006fd7a7d3862a5580bc5398e0e1cd5cbe76a16b808a225d12d6c4ba317c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3cf0ff2a6382e1f2126efeecc8ae5acdbbc2b23f19e0fdf5e88eb404c7f2251e"
+    sha256 cellar: :any,                 x86_64_linux:  "18e86f8def6b25865a64a6c346881b68711e7ea46c0d8654b2ae1469649a72c4"
   end
 
   depends_on "go" => :build

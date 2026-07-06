@@ -11,13 +11,13 @@ class Aravis < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "537d17384fb948e540e80663bc89316b316edade6579b6ffd27758ec293fba89"
-    sha256 arm64_sequoia: "b7428e845c2195858209c6f48658ffbb17b4d3161bdb91b6a9f06eaaa8e05572"
-    sha256 arm64_sonoma:  "993ae728bf17b3262994fc0f9ddb7e67fb197a0f382bf5cdd55f8bb7bf33dd42"
-    sha256 sonoma:        "7610a97a7b2ee924dbf0d666862e8de7804103e49fa43002308dccbb13367a44"
-    sha256 arm64_linux:   "2b3a034e680823f74ee5da8b7557312fde768fc766a790a9c939da070951ad17"
-    sha256 x86_64_linux:  "bd939dce9925da3b28fe35dbd9853a239cf460957853fc6ea14bc78dfcf1750e"
+    rebuild 2
+    sha256 arm64_tahoe:   "e8d380d1205bfed309d38e061c3b16e3f37158a6b479655e7aa35554f65fb9da"
+    sha256 arm64_sequoia: "400d547af062c952574b486a527d3786426c2eb3b47565127c403ff34398835f"
+    sha256 arm64_sonoma:  "e78f7ca072dc2131c0907a606ff7ada754ebffddb3f6d4ea6ea5598857eb034d"
+    sha256 sonoma:        "2a070b911bdbc1533cfb68d00720a42244e64db5c2b41020766265b3077a55ca"
+    sha256 arm64_linux:   "567ebd2a64d8f9e4510cde9d566d90a3fbe5d2838763f8ae20c2acae4932291e"
+    sha256 x86_64_linux:  "75d4c78de8f32363d240b1d556b2da2c137173cf1ce02f9b99ead801dd352f7d"
   end
 
   depends_on "gettext" => :build
@@ -50,8 +50,8 @@ class Aravis < Formula
     system "meson", "install", "-C", "build"
   end
 
-  def post_install
-    system "#{formula_opt_bin("gtk+3")}/gtk3-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
+  post_install_steps do
+    gtk_update_icon_cache
   end
 
   def caveats

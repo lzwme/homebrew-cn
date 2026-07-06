@@ -33,7 +33,6 @@ class Muon < Formula
       -Dlibpkgconf=enabled
       -Dsamurai=disabled
       -Dtracy=disabled
-      --force-fallback-for=tinyjson
     ]
 
     system "meson", "setup", "build", *args, *std_meson_args

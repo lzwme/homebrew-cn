@@ -1,10 +1,9 @@
 class Rtabmap < Formula
   desc "Visual and LiDAR SLAM library and standalone application"
   homepage "https://introlab.github.io/rtabmap"
-  url "https://ghfast.top/https://github.com/introlab/rtabmap/archive/refs/tags/0.23.1.tar.gz"
-  sha256 "8f0463d0b46418921da0503d5f991c7d0b8308b4926a069d9fe4ec811113502f"
+  url "https://ghfast.top/https://github.com/introlab/rtabmap/archive/refs/tags/0.23.8.tar.gz"
+  sha256 "990029f1021e3c124c3accc7baf25b6c762c49537b9ae326965ff50b395afb11"
   license "BSD-3-Clause"
-  revision 7
   head "https://github.com/introlab/rtabmap.git", branch: "master"
 
   # Upstream doesn't create releases for all tagged versions, so we use the
@@ -15,12 +14,12 @@ class Rtabmap < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "7561126fc55e06f91326049d913b4dc822bec631ecdf73440d8a460bb573f646"
-    sha256                               arm64_sequoia: "e0a0b26ae8350b38b0c392a537f7adedd8836b6f6006fc8c57f0096fe4b3fc90"
-    sha256                               arm64_sonoma:  "59b734e2463ab2db4b6c205cc3f89303b040bea3236dcc636f3ffd209927031d"
-    sha256                               sonoma:        "e4fd14022f4cbcb2f8a7e6f6ea2a505bfb3b22afcfd11682eb6aa065da991185"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "235dd660e50427965af3e0e18d0d496aefc2ec6591c7115f0eb468d10eee5e06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "185b6a776010c2e14f956a14116a5e55bf61065b11bf959a42a59e41c995883e"
+    sha256               arm64_tahoe:   "6f55817cdf67680d3963833a056f69fd3982c68a8ec87abec71a314a7f11f745"
+    sha256               arm64_sequoia: "957f22eaeed47a3d4e968ba2d3122d735c4019892af26aa06d629af076e27112"
+    sha256               arm64_sonoma:  "428b457b41237a92f1ab180b27b6a628374ed86f52f3e6ff7e42c0405e727eda"
+    sha256               sonoma:        "3636636ea36e68b4390702d1e0a1c785f493d686a116f10e2e7a07b378d125a1"
+    sha256 cellar: :any, arm64_linux:   "6ad1adecef4dec9efe8bc063e21a6c0881499f97781eb669485f3a3999e231f2"
+    sha256 cellar: :any, x86_64_linux:  "a5a33aaf65ba8a0acc4ac538a8943ca0140030d4c5f5756aee44559303665af0"
   end
 
   depends_on "cmake" => [:build, :test]

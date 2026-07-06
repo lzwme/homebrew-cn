@@ -10,10 +10,15 @@ class Crun < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "014f76726ebdf60eea4df36ef9c40c49d615382b6333f92068524ed4c896f761"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
+  head do
+    url "https://github.com/containers/crun.git", branch: "main"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
   depends_on "go-md2man" => :build
-  depends_on "libtool" => :build
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
 
@@ -22,11 +27,10 @@ class Crun < Formula
   depends_on "libseccomp"
   depends_on :linux
   depends_on "systemd"
-  depends_on "yajl"
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}"
+    system "./autogen.sh" if build.head?
+    system "./configure", *std_configure_args
     system "make"
     system "make", "install"
   end

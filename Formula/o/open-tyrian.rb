@@ -27,7 +27,7 @@ class OpenTyrian < Formula
   depends_on "sdl2_net"
 
   resource "homebrew-test-data" do
-    url "https://camanis.net/tyrian/tyrian21.zip"
+    url "https://www.camanis.net/tyrian/tyrian21.zip"
     sha256 "7790d09a2a3addcd33c66ef063d5900eb81cc9c342f4807eb8356364dd1d9277"
   end
 

@@ -55,7 +55,7 @@ class Picotool < Formula
   test do
     # from https://github.com/raspberrypi/pico-examples?tab=readme-ov-file#first-examples
     resource "homebrew-blink_universal" do
-      url "https://rptl.io/pico-w-blink"
+      url "https://datasheets.raspberrypi.com/soft/blink_picow.uf2"
       sha256 "e8f8e578129ebded860ae019288b282b0a620f5ac2dfc49adedc565c73e6ad22"
     end
 

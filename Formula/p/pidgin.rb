@@ -50,12 +50,13 @@ class Pidgin < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ae1289bca94151de51149aab865e414377fcd3ce385b1b771c7aec98b87c0387"
-    sha256 arm64_sequoia: "e7d8f99958474cadfa8da24b6aca429e53d961af7cd5f3e89f914c833bca21db"
-    sha256 arm64_sonoma:  "aaefbd8740d505e3a6460a7ab075954cde0a9890cc5f52b2ca753a5841fa61fd"
-    sha256 sonoma:        "72919ceb55d3dbaa92f938e4a2850681a5265933fe27a306859d7f05eecee374"
-    sha256 arm64_linux:   "90da19fee3264f2d6a568d87449405fa785219fa39085be9b0e1189d803bf5a0"
-    sha256 x86_64_linux:  "fc8acd8bda4c38df7f4bc5b55e15087196689cb5c40ef000bbbd1eb105bfbe69"
+    rebuild 1
+    sha256 arm64_tahoe:   "9ed7da93124a22061fceae327f238a3d4677396b49d3e20d4379e23d579a638a"
+    sha256 arm64_sequoia: "de6c945a1bd187c9d45f9d2c93127fc5d0cb9c7554546038899e22381e8ff977"
+    sha256 arm64_sonoma:  "9b8e627a1fcb1d58f612eb653168f2b72bb7ee0d632f1ab0cdd8092b735ca0ec"
+    sha256 sonoma:        "a2f92630e840f3c0b8e18fe0ae5eec623c0235796cd27a42a40102c97b240221"
+    sha256 arm64_linux:   "fe62336bcf7fe5c58fab47b9a41b6823910e4fbc60e2c4eb181e0dec4c284ae6"
+    sha256 x86_64_linux:  "b0857a121e1d42739136195d00ba430ca1ecb7e3380b63aeba6e78fa05512101"
   end
 
   head do
@@ -151,8 +152,8 @@ class Pidgin < Formula
     end
   end
 
-  def post_install
-    system formula_opt_bin("glib")/"glib-compile-schemas", HOMEBREW_PREFIX/"share/glib-2.0/schemas" if build.head?
+  post_install_steps do
+    compile_gsettings_schemas
   end
 
   test do

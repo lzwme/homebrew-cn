@@ -25,7 +25,7 @@ class Libmng < Formula
   end
 
   resource "sample" do
-    url "https://telparia.com/fileFormatSamples/image/mng/abydos.mng"
+    url "https://sembiance.com/fileFormatSamples/image/mng/abydos.mng"
     sha256 "4819310da1bbee591957185f55983798a0f8631c32c72b6029213c67071caf8d"
   end
 

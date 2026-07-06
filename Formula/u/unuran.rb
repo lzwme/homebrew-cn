@@ -1,9 +1,10 @@
 class Unuran < Formula
   desc "UNU.RAN - Universal Non-Uniform RANdom number generator"
   homepage "https://statmath.wu.ac.at/unuran/"
-  url "https://ghfast.top/https://github.com/unuran/unuran/archive/refs/tags/unuran-1.11.0.tar.gz"
-  sha256 "e46c15eff050150966988ec56969526b60ce0b97120a7821aa96703d0f175623"
+  url "https://ghfast.top/https://github.com/unuran/unuran/archive/refs/tags/unuran-1.12.0.tar.gz"
+  sha256 "9c8f6c5229615dc4871af11bca92fab9083f45ab66871d98031e05578e0567f9"
   license "GPL-2.0-or-later"
+  compatibility_version 1
   head "https://github.com/unuran/unuran.git", branch: "main"
 
   livecheck do
@@ -12,12 +13,12 @@ class Unuran < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "cc688fd0bb04c726a41b12d0328533ff271128d42a1b8651950f89e8a1ea0406"
-    sha256 cellar: :any, arm64_sequoia: "9e411035f79de2f3dd58892bf08d2a25d28c20addbefd6a222668d0015ba5f29"
-    sha256 cellar: :any, arm64_sonoma:  "7b22444f06bce13d65e9ff6b7bad05dbe1d9b3d7c77191e5dfb4939c2fb53461"
-    sha256 cellar: :any, sonoma:        "ebfde1d5ba197b0d7bec27c917b72265ef6f59609daaf8a187d7a780c030e203"
-    sha256 cellar: :any, arm64_linux:   "369a27ae88f6f61a2dc0bee167f46b246a58b7df062e80783439bf2beff51b11"
-    sha256 cellar: :any, x86_64_linux:  "30722e8980d7a9bba0f24166944fb992aae982b08c3dba912b5f996d829890b7"
+    sha256 cellar: :any, arm64_tahoe:   "7b497736d70b7cede01b2808aeed41788d41dafc6e29267c71699cb5b0a90747"
+    sha256 cellar: :any, arm64_sequoia: "14873c242df0237baa5cff64d870d2793de3c2a76eb486680a364fed9aad7f9a"
+    sha256 cellar: :any, arm64_sonoma:  "7070e774e8176086fa46446f5bc3f475a02db0f1f6896abc1562ba49b270ccd3"
+    sha256 cellar: :any, sonoma:        "4f818a00766a4284a1fe32f51e036ab24b68f7424fc155843a247151ecc7ca37"
+    sha256 cellar: :any, arm64_linux:   "8791c122c24e7fc123629855b603aee933fe457d6f42cc500fe6d84a25fb7dc6"
+    sha256 cellar: :any, x86_64_linux:  "9460190a338d36e0b1467e7c7fc5fd26e21c9bb809f1a47638c2a1f37d07ee96"
   end
 
   depends_on "autoconf" => :build

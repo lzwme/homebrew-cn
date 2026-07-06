@@ -1,18 +1,16 @@
 cask "whichspace" do
-  version "0.18.3"
-  sha256 "d2a5551092135742756b50d89a5f5ab86b6c9eb08c612edef4e2cbc32cfefbdd"
+  version "1.0.2"
+  sha256 "b1723591a128b347e662a9e36b5c3300b75a196d7fe985dbc5bfbe571c20094d"
 
   url "https://ghfast.top/https://github.com/gechr/WhichSpace/releases/download/v#{version}/WhichSpace.zip"
   name "WhichSpace"
-  desc "Active space menu bar icon"
+  desc "Menu bar utility for viewing and switching Spaces"
   homepage "https://github.com/gechr/WhichSpace"
 
   livecheck do
     url "https://ghfast.top/https://raw.githubusercontent.com/gechr/WhichSpace/updates/appcast.xml"
     strategy :sparkle
   end
-
-  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   auto_updates true
   depends_on macos: :sonoma

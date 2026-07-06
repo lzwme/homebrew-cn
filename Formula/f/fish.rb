@@ -15,12 +15,13 @@ class Fish < Formula
   pour_bottle? only_if: :default_prefix
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "997643016a4e08dff753dd1e0e3ff309ddaa97cb275d6b0a3a58b6481fe81ae7"
-    sha256 cellar: :any, arm64_sequoia: "42eb74c806fcd8bc9063cc4062cb33d252332cd6e5b0e38cc9e4a5282700c8d1"
-    sha256 cellar: :any, arm64_sonoma:  "29df45ceb1e4661b944e4ac0cc4ee75e6e6fcf133abd06f9ce490cdd81b9390b"
-    sha256 cellar: :any, sonoma:        "86fd899be4526711c7390fa832728506da964bdaf00ce3399f46ff40a757e368"
-    sha256 cellar: :any, arm64_linux:   "220dd080c81fedb2bc9f96a41784c64be645035dcb6ea481c7849845eba931fa"
-    sha256 cellar: :any, x86_64_linux:  "9585d0abfcb0476a1620bc79b74894e4509435267b6d903c23265bff293cbb98"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "f7a1e3e1aade3b50016d0c9ab2b7217bad0b74e6710eb564eb8f99f42d89b540"
+    sha256 cellar: :any, arm64_sequoia: "f7b956b27431b856cdbbe093e6316d77702a7b807ee19518e6074b702e4ad950"
+    sha256 cellar: :any, arm64_sonoma:  "cf6cfae838dacdd0ae79e9b0d03f988c4ce7ed1d5a7c00d35f65e914c8958f38"
+    sha256 cellar: :any, sonoma:        "42a04063c4c04b49141a82eef31750238a5b6d40e833db00c88a9442441a6cca"
+    sha256 cellar: :any, arm64_linux:   "759ba573dd3a5687c1da187c939d13f036fb97380fab82cbde7ccaf3780114d1"
+    sha256 cellar: :any, x86_64_linux:  "8143f64d4019bc79b38d5ea089f7bbbd6ac6b7e657eb1b79ed20a19362ccde59"
   end
 
   depends_on "cmake" => :build
@@ -37,12 +38,6 @@ class Fish < Formula
                     "-Dextra_confdir=#{HOMEBREW_PREFIX}/share/fish/vendor_conf.d"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-  end
-
-  def post_install
-    (pkgshare/"vendor_functions.d").mkpath
-    (pkgshare/"vendor_completions.d").mkpath
-    (pkgshare/"vendor_conf.d").mkpath
   end
 
   test do

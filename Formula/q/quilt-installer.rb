@@ -1,8 +1,8 @@
 class QuiltInstaller < Formula
   desc "Installer for Quilt for the vanilla launcher"
   homepage "https://quiltmc.org/"
-  url "https://maven.quiltmc.org/repository/release/org/quiltmc/quilt-installer/0.14.1/quilt-installer-0.14.1.jar"
-  sha256 "4d016064beecd85e28b841ebaf7bfee45576dfe494a791de6ddc2aba1d10b8e5"
+  url "https://maven.quiltmc.org/repository/release/org/quiltmc/quilt-installer/0.15.0/quilt-installer-0.15.0.jar"
+  sha256 "f0c6e04e7f3b932d801b9e783ae17c960ff3cadc0f0109d6cc9be5240e99d455"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class QuiltInstaller < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6ce48f15024fcbb72e5bb64d7fe3064e8c1e25e801dafae2c867bc936c6e80e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6ce48f15024fcbb72e5bb64d7fe3064e8c1e25e801dafae2c867bc936c6e80e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c6ce48f15024fcbb72e5bb64d7fe3064e8c1e25e801dafae2c867bc936c6e80e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c6ce48f15024fcbb72e5bb64d7fe3064e8c1e25e801dafae2c867bc936c6e80e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9f5988ff049eb25c4042d38455d0e7b4a3eecc56227a24fa982521e6237f235"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e18e840f6bc009cd007cab530765509e42d73b4059d21eecd38bd4ced460061"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f6b4b9950077ac15e7f1084c8e3e80ac53d26dc5c0e0134e666981bf402a166"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a59d3b834c47c82878c4dee762a65e8ec4208651e8798e1709ad9baf02293f50"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0188f34f1e642ccf7463cf61872930d5961aee1247ae36df7c8f23f92518bc7c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "13ba4f5723ce4d88ce8453810c5371040d788f7228b308116d5953e9aa3d8098"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "589e9ac17b60db5d8a923be5f0ad09df5f032cf781f55a554f53efe55eb768d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd993c01aafc49648843c74142b5bbe926ea6eaf020cf59d42243453ff4b9ec4"
   end
 
   depends_on "openjdk"

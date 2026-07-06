@@ -1,8 +1,8 @@
 class Graalvm < Formula
   desc "JDK distribution with Graal compiler and Native Image"
   homepage "https://www.graalvm.org/"
-  url "https://ghfast.top/https://github.com/oracle/graal/archive/refs/tags/graal-25.0.2.tar.gz"
-  sha256 "c191206404d4cc706a9b1e2242f0f4b90df7c776a748bcfd8fa1da47d8314839"
+  url "https://ghfast.top/https://github.com/oracle/graal/archive/refs/tags/graal-25.1.3.tar.gz"
+  sha256 "59fcbb0cc886200bb7df6eb95b7fb1ec05d026db452efbfeeb37f278978265d2"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 
   livecheck do
@@ -11,12 +11,11 @@ class Graalvm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "68033cc0c5d778458170cfafd25f461778098b0c159d9429da4c1fa706e56330"
-    sha256 cellar: :any, arm64_sequoia: "6ff9d912cf54e737e465f0522b08420283620e18df6fb1a6e64c2af4d3caffdf"
-    sha256 cellar: :any, arm64_sonoma:  "1971cf58609536cab99baa93db286015730f50937cf01616af73a9b91f7e725a"
-    sha256               arm64_linux:   "3d265f2ed505cf997f0cdade8c7d43d28b0a631c7596ac20b0d864a6f5caa5ef"
-    sha256               x86_64_linux:  "9ea8345595c00a92b82e8d4ca53139522203073e2461fdce67caded0fe1cc185"
+    sha256 cellar: :any, arm64_tahoe:   "5117c87b3b2463e5bfb4c2238b244352d52592f03721ead39b84a77eaca99577"
+    sha256 cellar: :any, arm64_sequoia: "a2b83dec9fc1ca9e459518daa823b1f22ce3899abc4162f2f50d7b7ada61bb85"
+    sha256 cellar: :any, arm64_sonoma:  "959afb837bc05bea3c76105763694d51da8fdfb22218663e8ca58476aecbc953"
+    sha256               arm64_linux:   "d273379ec9bdd2a805f93af5104cd748a1a82b508b644a74b162abe3e664928f"
+    sha256               x86_64_linux:  "ea6e37ed12f3ea25256ffcad1dcff77c4fa3960475d0a05fb9cc8d23a3e60c74"
   end
 
   keg_only "installs a JDK which shadows openjdk"
@@ -56,13 +55,14 @@ class Graalvm < Formula
   end
 
   resource "labs-openjdk" do
-    url "https://ghfast.top/https://github.com/graalvm/labs-openjdk/archive/refs/tags/25.0.2+10-jvmci-b01.tar.gz"
-    version "25.0.2+10-jvmci-b01"
-    sha256 "94c47dfdb6e0e658426e0837678d1599aaa8dd919d8754d73ce4d8004e7c667f"
+    url "https://ghfast.top/https://github.com/graalvm/labs-openjdk/archive/refs/tags/jvmci-25.1-b19.tar.gz"
+    version "25.0.3+9-jvmci-25.1-b19"
+    sha256 "cacd7d625adf655a3bfa8b58788b1f67aac5caa312d5e6cf6d880105f2fe8fb6"
 
     livecheck do
+      # FIXME: This regex is not correct
+      # Issue ref: https://github.com/graalvm/labs-openjdk/issues/40
       regex(/(\d+(?:\.\d+)+\+\d+-jvmci-b\d+)/i)
-      strategy :github_releases
     end
   end
 
@@ -100,7 +100,7 @@ class Graalvm < Formula
     ]
 
     labsjdk_version = resource("labs-openjdk").version.to_s
-    match = labsjdk_version.match(/(?<java>\d+(?:\.\d+)+)\+(?<build>\d+)-(?<opt>jvmci-b\d+)/)
+    match = labsjdk_version.match(/(?<java>\d+(?:\.\d+)*)\+(?<build>\d+)-(?<opt>jvmci(?:-\d+(?:\.\d+)*)?-b\d+)/)
     odie "Failed to parse LabsJDK version: #{labsjdk_version}" if match.nil?
 
     args += [
