@@ -26,7 +26,7 @@ class Cdxgen < Formula
   end
 
   def install
-    # https://github.com/CycloneDX/cdxgen/blob/master/lib/managers/binary.js
+    # https://github.com/cdxgen/cdxgen/blob/master/lib/managers/binary.js
     # https://github.com/AppThreat/atom/blob/main/wrapper/nodejs/rbastgen.js
     cdxgen_env = {
       RUBY_CMD:         "${RUBY_CMD:-#{formula_opt_bin("ruby")}/ruby}",

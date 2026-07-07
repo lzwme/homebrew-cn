@@ -1,8 +1,8 @@
 class Patchelf < Formula
   desc "Modify dynamic ELF executables"
   homepage "https://github.com/NixOS/patchelf"
-  url "https://ghfast.top/https://github.com/NixOS/patchelf/releases/download/0.19.0/patchelf-0.19.0.tar.bz2"
-  sha256 "b189d3ec57730757895b9e7d3a1f136d3af96ec9228ae6ef0a07c20a213f28f5"
+  url "https://ghfast.top/https://github.com/NixOS/patchelf/releases/download/0.19.1/patchelf-0.19.1.tar.bz2"
+  sha256 "2cce01de93653829f6ab68a20c2ec275e1c00a946110704a27e928d2e6e88716"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Patchelf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7981e70859aaa000f427cb4df304efd2f040cf3b2cd30f44b516b067fde7fcae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a3c0beb3bd9c8569bd183c57240a27af1c5bcb26f7d1ddde8cbe39bd1a8937d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01e20a850281a893c3326b841b340ef6512212586dc9bca3c7613f394b452c72"
-    sha256 cellar: :any_skip_relocation, sonoma:        "631672f1d3473fa042d0a900132f15e522e962b01343abe25bb162efda0b2ba8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8386c48440b6c227579edab6e018e4073294b934ed731c11f642b5fe09851da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5bc076abb6bf1b50cfe0d30db36f39f14d1712fdf5099c01a6048a198379a65"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a41565145aaa4788879d5365668103f20b0a4d59d4dbd418cbca854d43e50cd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f53818518b304c220b5df5cbc15f40ee7ced3e9e5e4d926b0e48cc08d693467d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88cc917662318f3890f42ec3836920f0ab725d9fbd1655974299e6efbcec5473"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e549b8d24de2dc84f1c4dfd72bd747a3a2db611adcbfe5466dcd0f10908b9dbc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d687a86b519f90ba73aeef58582937596d8dd7f2eec1698df06d050fe0485998"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e881ea72d3338780974e10cac8b614c8f099c3ffd99713bd68fb1e7aeae50ce"
   end
 
   head do

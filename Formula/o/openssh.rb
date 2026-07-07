@@ -1,10 +1,10 @@
 class Openssh < Formula
   desc "OpenBSD freely-licensed SSH connectivity tools"
   homepage "https://www.openssh.com/"
-  url "https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.3p1.tar.gz"
-  mirror "https://cloudflare.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.3p1.tar.gz"
-  version "10.3p1"
-  sha256 "56682a36bb92dcf4b4f016fd8ec8e74059b79a8de25c15d670d731e7d18e45f4"
+  url "https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.4p1.tar.gz"
+  mirror "https://cloudflare.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.4p1.tar.gz"
+  version "10.4p1"
+  sha256 "ef6026dd2aea8d56059638d5d3262902c892ceba9f88395835e0d06d3fb63238"
   license "SSH-OpenSSH"
   compatibility_version 1
 
@@ -14,12 +14,12 @@ class Openssh < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "4a735b701fb0c8cb8f23a6e977f48b31fed26a6a7f4a86c686658b1cf768cb84"
-    sha256 arm64_sequoia: "d6230ee440c10fbf3b1dcc748c93384862c63b87ca529abda68f59248204c157"
-    sha256 arm64_sonoma:  "84e026e4820abcbfe4b6dab7ef5f1feb36d78014b1c63258db925d3cba3d1611"
-    sha256 sonoma:        "67b3199c24c5276962e7a9298e58fce3832a72026f1efc5966f8fa509606abbd"
-    sha256 arm64_linux:   "613ce577ca0e33d98c9ffd8d54a1c68b0c16c96aaac71645b646b29b44cfe695"
-    sha256 x86_64_linux:  "f3485a00c3f1d5343b3b7cf5d1ce5f4352fe34ddf7077d136c83df999d3a724f"
+    sha256 arm64_tahoe:   "81e2f8242e1e3edf5560aafb6098ad129803394a96fdf4833130ac1af50ef450"
+    sha256 arm64_sequoia: "eace489f554fa0c5c13547e1835ea7316f33f868bf3ffdc008c2009d25989648"
+    sha256 arm64_sonoma:  "0ca3cd3d2b032537696eea6870aae3ab96a4e8316dde8a2ed6d06fa87270ecec"
+    sha256 sonoma:        "0e3ca02fd9bbb424bcc5102f218753094ef9c49e9564a32b8049e204e8a0cb51"
+    sha256 arm64_linux:   "ed903e1ae78db680111e7b964a9627f5dab51a6167e01d79f21fe66b8ac56826"
+    sha256 x86_64_linux:  "d44c94f5cbb5a13cf1ce8f32be4db3733c178612e047aadac663d1a226ca48f0"
   end
 
   # Please don't resubmit the keychain patch option. It will never be accepted.

@@ -3,6 +3,7 @@ class OpensslAT3 < Formula
   homepage "https://openssl-library.org"
   url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-3.6.3/openssl-3.6.3.tar.gz"
   mirror "http://fresh-center.net/linux/misc/openssl-3.6.3.tar.gz"
+  mirror "http://deb.debian.org/debian/pool/main/o/openssl/openssl_3.6.3.orig.tar.gz"
   sha256 "243a86649cf6f23eeb6a2ff2456e09e5d77dd9018a54d3d96b0c6bdd6ba6c7f1"
   license "Apache-2.0"
   compatibility_version 1
@@ -13,14 +14,15 @@ class OpensslAT3 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "235c30e706c96896ce2be9a38032bf54f46b2aaa1e7193d3cdd73446124fc7be"
-    sha256 arm64_sequoia: "638cbf9a395d2a3e97465c99997705736e228cd4c98db254c108946236c1de29"
-    sha256 arm64_sonoma:  "3e4d9ff94169f479e221cce2a20249c3969a8ce4caec036f1c386d839b0cf5f4"
-    sha256 tahoe:         "993f3d2010d96601e842bcb2691cd02bea288993c7a48e785ff8649da8e00d07"
-    sha256 sequoia:       "b44eb2badf15edf527f584f31483993fdb9e006005d704ef6641f05aa43538b3"
-    sha256 sonoma:        "f81141067a5482b149b6c936fc4c901d19e784a1800810da2f4f7a4ddeaf839d"
-    sha256 arm64_linux:   "26d8dbc4880e3e4c95639d72c194b03eeb91b302b847680cdbb2f5c66e42e79a"
-    sha256 x86_64_linux:  "2f71820c8bec00c0e957dc5f20e3b0a651ec07b9c0540d08397b69df2478e3d5"
+    rebuild 1
+    sha256 arm64_tahoe:   "2d995a1bbbd8e6ee6a9042990dde87e7321d1ddd5716ffee53b140d23cb9f92f"
+    sha256 arm64_sequoia: "f8b0b5b2eda9321265b7483ce7ea167012c32afed73a127e8e18ebe9f1d9dffe"
+    sha256 arm64_sonoma:  "79774ba3c854f0a9f94d939c628414c9b3dd2ff5eeb1dc61743199c979dd3490"
+    sha256 tahoe:         "d17e12cebe59a324d5605b87dee03c5265d5ea32284e8a275294781ee6e9d990"
+    sha256 sequoia:       "5477285c4ebec45713873ae4002affece39e427c5f1b655c6a3df49c6b90f924"
+    sha256 sonoma:        "f641a0a3028a7ba2ab247767a6961226ba8c1777dac6e986e6fc62ec09e4a62a"
+    sha256 arm64_linux:   "a965701c8ed6f7e2bf971a7a5668381c5d4e11f4a680fcf19b79ecbdf097867c"
+    sha256 x86_64_linux:  "d9996e71b5caa202929fe512179516befeea35e205425beb8a35ed099eb8e47a"
   end
 
   depends_on "ca-certificates" => :no_linkage
@@ -103,9 +105,6 @@ class OpensslAT3 < Formula
       end
     end
 
-    # This could interfere with how we expect OpenSSL to build.
-    ENV.delete("OPENSSL_LOCAL_CONFIG_DIR")
-
     # This ensures where Homebrew's Perl is needed the Cellar path isn't
     # hardcoded into OpenSSL's scripts, causing them to break every Perl update.
     # Whilst our env points to opt_bin, by default OpenSSL resolves the symlink.
@@ -134,13 +133,13 @@ class OpensslAT3 < Formula
     touch %w[certs private].map { |subdir| openssldir/subdir/".keepme" }
   end
 
-  def openssldir
-    etc/"openssl@3"
-  end
+  def openssldir = pkgetc
 
-  def post_install
-    rm(openssldir/"cert.pem") if (openssldir/"cert.pem").exist?
-    openssldir.install_symlink Formula["ca-certificates"].pkgetc/"cert.pem"
+  post_install_steps do
+    ln_sf "cert.pem", "cert.pem",
+          source_formula: "ca-certificates",
+          source_base:    :formula_pkgetc,
+          target_base:    :pkgetc
   end
 
   def caveats

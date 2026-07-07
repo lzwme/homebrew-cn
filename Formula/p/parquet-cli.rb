@@ -4,7 +4,7 @@ class ParquetCli < Formula
   url "https://ghfast.top/https://github.com/apache/parquet-java/archive/refs/tags/apache-parquet-1.17.1.tar.gz"
   sha256 "bf68ed249a828213e4b18de8de3865e2f4edbb856cd19057b2f559a7c9e8f1e5"
   license "Apache-2.0"
-  head "https://github.com/apache/parquet-mr.git", branch: "master"
+  head "https://github.com/apache/parquet-java.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0ec4ebffdd2db0ca29909d274ec16053efaf7f9cb5b58bcff8a6c56888332c9"

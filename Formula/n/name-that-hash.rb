@@ -7,7 +7,7 @@ class NameThatHash < Formula
   sha256 "6978a2659ce6d38c330ab8057b78bccac00bc3e87138f2774bec3af2276b0303"
   license "GPL-3.0-or-later"
   revision 2
-  head "https://github.com/HashPals/Name-That-Hash.git", branch: "main"
+  head "https://github.com/bee-san/Name-That-Hash.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "1faeb200cbf30f8d864631b94005f26196d59323b34676c368b275ad846eda56"

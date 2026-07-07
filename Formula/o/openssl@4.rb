@@ -25,25 +25,7 @@ class OpensslAT4 < Formula
 
   depends_on "ca-certificates" => :no_linkage
 
-  on_linux do
-    resource "Test::Harness" do
-      url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.52.tar.gz"
-      mirror "http://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.52.tar.gz"
-      sha256 "8fe65cfc0261ed3c8a4395f0524286f5719669fe305f9b03b16cf3684d62cd70"
-    end
-
-    resource "Test::More" do
-      url "https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302220.tar.gz"
-      mirror "http://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302220.tar.gz"
-      sha256 "bbca30d9fb64a67a28ccd9086cdc08cdb6046423fa032d9101f978d7ccd46cf9"
-    end
-
-    resource "ExtUtils::MakeMaker" do
-      url "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/ExtUtils-MakeMaker-7.78.tar.gz"
-      mirror "http://cpan.metacpan.org/authors/id/B/BI/BINGOS/ExtUtils-MakeMaker-7.78.tar.gz"
-      sha256 "43b33c20f8d82dba7cc48f8cd702f8fc9811e9d07880886dfd31b7077bd4a3a6"
-    end
-  end
+  uses_from_macos "perl" => :build
 
   # Backport commits to avoid test intermittent failures
   patch do
@@ -56,24 +38,6 @@ class OpensslAT4 < Formula
   end
 
   def install
-    if OS.linux?
-      ENV.prepend_create_path "PERL5LIB", buildpath/"lib/perl5"
-      ENV.prepend_path "PATH", buildpath/"bin"
-
-      %w[ExtUtils::MakeMaker Test::Harness Test::More].each do |r|
-        resource(r).stage do
-          system "perl", "Makefile.PL", "INSTALL_BASE=#{buildpath}"
-          system "make", "PERL5LIB=#{ENV["PERL5LIB"]}", "CC=#{ENV.cc}"
-          system "make", "install"
-        end
-      end
-    end
-
-    # This ensures where Homebrew's Perl is needed the Cellar path isn't
-    # hardcoded into OpenSSL's scripts, causing them to break every Perl update.
-    # Whilst our env points to opt_bin, by default OpenSSL resolves the symlink.
-    ENV["PERL"] = formula_opt_bin("perl")/"perl" if which("perl") == formula_opt_bin("perl")/"perl"
-
     configure_args = %W[
       --prefix=#{prefix}
       --openssldir=#{pkgetc}

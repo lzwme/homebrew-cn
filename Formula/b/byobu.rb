@@ -1,8 +1,8 @@
 class Byobu < Formula
   desc "Text-based window manager and terminal multiplexer"
   homepage "https://byobu.org"
-  url "https://ghfast.top/https://github.com/dustinkirkland/byobu/archive/refs/tags/7.12.tar.gz"
-  sha256 "59d9aec160f13c7782821bab750fc8444f5fc87b3f0cbefcd4956cdaf2136be2"
+  url "https://ghfast.top/https://github.com/dustinkirkland/byobu/archive/refs/tags/7.14.tar.gz"
+  sha256 "5ce30084c2c2bb56946e8c4bf38d4add8692e8d2dbf20026e8e9d105b90420b1"
   license "GPL-3.0-only"
 
   livecheck do
@@ -11,7 +11,7 @@ class Byobu < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2c4a0b02fb417ee50cc45b1f2c1bbd0b71de0320af28a4f3fc5e3b83348f5032"
+    sha256 cellar: :any_skip_relocation, all: "045895062b7fc9ebed505948f8e68928bfe87fcc2f12276fe6ebdeeefc08ba64"
   end
 
   depends_on "autoconf" => :build
@@ -28,7 +28,6 @@ class Byobu < Formula
   conflicts_with "ctail", because: "both install `ctail` binaries"
 
   def install
-    cp "./debian/changelog", "./ChangeLog"
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *std_configure_args
     system "make"

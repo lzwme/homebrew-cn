@@ -1,8 +1,8 @@
 class Conduit < Formula
   desc "Streams data between data stores. Kafka Connect replacement. No JVM required"
   homepage "https://conduitio.github.io/"
-  url "https://ghfast.top/https://github.com/ConduitIO/conduit/archive/refs/tags/v0.15.1.tar.gz"
-  sha256 "65cb956501c8fa2a45ea123d43b5b752f967e71271f55ad01958a323991c0024"
+  url "https://ghfast.top/https://github.com/ConduitIO/conduit/archive/refs/tags/v0.16.1.tar.gz"
+  sha256 "35c60ebc0fb57b4551dccb67806579a5f7ec517804774fcb47ff2d7417a459b8"
   license "Apache-2.0"
   head "https://github.com/ConduitIO/conduit.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Conduit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "49f5e12e2a8f0d0e0fcd35a0f630f713af8eacc11fa4295e2619997389aa0d03"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80330aa1349e2cee3978098a2e3d2d5d7b17bf840d6c7b9b0bdd39fce70c1097"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae7127dd873dc5bdd262fa14df67411f8ea7918b3ae0682b16423ee6c5a117f8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0b81ceed3e24a9c34d022946ae65319da56512430c84f7238107f3dbf1d241ac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fdd95336638c2600b047b22645f367a273fa66ee82a66a3559393ff0f8d2bedd"
-    sha256 cellar: :any,                 x86_64_linux:  "ddde4a1cdea456abee3d80962d189fabeecc72f1476967bf7ba1f4fdf47d4023"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "497c57c26209a1f962067f55cacfa8712d4546acbd2f84de1bb530bd5ecd25c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "036be0c36f9adbcd5d527e653b46844cc945f795721f539470eb56c1b231bc55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37e1c06d28036031f0c265360f73823ef293208ffeeb53e1397a92a0bce19700"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2f93edffe863456e611b633350c6aefc5ec9f1f891c7879eedc7ecab0db77326"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2394f2e60cc7732189e2badc69190e7be31995b614de109310f572305121e3d5"
+    sha256 cellar: :any,                 x86_64_linux:  "371d14b18ddee04c0c1c85847cc1385554a185007205cd70ab1c79b5a5b437c8"
   end
 
   depends_on "go" => :build

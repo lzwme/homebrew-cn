@@ -1,17 +1,17 @@
 class Sonic < Formula
   desc "Fast, lightweight & schema-less search backend"
   homepage "https://github.com/valeriansaliou/sonic"
-  url "https://ghfast.top/https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.7.1.tar.gz"
-  sha256 "6ab7c9f9be75f286c7dcb09d796fbd1159406bc607c3afb810e466edf130c935"
+  url "https://ghfast.top/https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.7.2.tar.gz"
+  sha256 "9f97975db0e9c53cd96bb37c1d24ac9e8dc16f09a25d4042fc73ea3285391967"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec32535b0f2d7775460c3f9a2e2bbf8a613b274f35c36739b4a5c54d78466ab8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ae82549620618d3ddd15e16dcc7e9ccdecaa9562a4b69abcde0b9ba25d80d24"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd0125516a3dab6c121b795584c68fb3fdc003a457e190e9bce4529cf5d1d63e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "96a4986e15ed2ca4a43e133c563774512d9db7744d6228e2f7117bdaf1fa7f0c"
-    sha256 cellar: :any,                 arm64_linux:   "47cd79fa5d9bcfc6c2d4707e1211d011f362c54354cf316bb25b8b31af0763a6"
-    sha256 cellar: :any,                 x86_64_linux:  "d1a9f4b72006684cbcce60d218f58185284d872f136dfa5b2e70bdf3661cf186"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0acd2a6bcb7affecbee70ec2f46eb05608365b11243818cbac0a5873dd1f33a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7fadf044670f36c7eb8da3f9c323e4271baec0ea7557d4e97e70d3fc86c305e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "883a5d60861a698f9f00068ea3c5be29cb7fe4debaf7dbe9366b2b8caef0ed1d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "26a99068609128750788179b83bce402d43545dcb7b4287e0da1f8986e004683"
+    sha256 cellar: :any,                 arm64_linux:   "39385e25ef644c4913223bfce373dffdc00e660584c8946f1cb94db2100ae323"
+    sha256 cellar: :any,                 x86_64_linux:  "340dfb9318462ffcc15d498a1887d65594571570a6c00536e9ceec01afca0dfc"
   end
 
   depends_on "rust" => :build

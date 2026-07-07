@@ -1,18 +1,18 @@
 class Lanraragi < Formula
   desc "Web application for archival and reading of manga/doujinshi"
   homepage "https://lrr.tvc-16.science"
-  url "https://ghfast.top/https://github.com/Difegue/LANraragi/archive/refs/tags/v.0.9.80.tar.gz"
-  sha256 "25c36e844054cf750d13de7f67d0124b225da540b877b88becb657db0aeff287"
+  url "https://ghfast.top/https://github.com/Difegue/LANraragi/archive/refs/tags/v.0.9.81.tar.gz"
+  sha256 "d4ded2cde7d30b5d565da8a0f85014a245cefe9a8f969a45aa0eec57854beadc"
   license "MIT"
   head "https://github.com/Difegue/LANraragi.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "65a1f64ec2eba975b04de852ad35cbf1bceb1326be58ded3e7301527db579268"
-    sha256 cellar: :any, arm64_sequoia: "eae14d7d417b0aa5fbf0966641baa24050eea08b83fa8121664726d5b4c24a32"
-    sha256 cellar: :any, arm64_sonoma:  "1e4ed6bdfec2191d6c47abfc7e785d36acf39f721307dedd5ac080615eead8f7"
-    sha256 cellar: :any, sonoma:        "49460e84ca3cbc60a2ad8c3e798cc0ad8fe647c8fbfbd245df5753a90bbbb55e"
-    sha256 cellar: :any, arm64_linux:   "b578463c4f7dbba365bb0ae557a090b81248868e21813aa1b72b7a55dff6802b"
-    sha256 cellar: :any, x86_64_linux:  "4483a6be5355a16a71a7ba24554fe70bbc86ff0856bfb544ccd29713a3a43def"
+    sha256 cellar: :any, arm64_tahoe:   "551ab84fa54db44dfd2aafafa0e6ec4745548274681cc1f3c60f6d6022aabb2f"
+    sha256 cellar: :any, arm64_sequoia: "b06f4583be4309e19ee488abc102e4ce618b08fcb1fd191b5b7f39142cf2f3ee"
+    sha256 cellar: :any, arm64_sonoma:  "861a2807810738dab63a3065d0796e4b7bae3da79ee09c48853b58ba328babe9"
+    sha256 cellar: :any, sonoma:        "3632216976918163574ac54da3c850775b14a900f41ceebeef4bd9da98fe654d"
+    sha256 cellar: :any, arm64_linux:   "10b182c3bba1d8d762794930884e4006d798872654cb3ee0e67837c0b191bd8d"
+    sha256 cellar: :any, x86_64_linux:  "a59891228116507eec551d5b21ff31dcb323d439cccf26ba0b102e17c7c3d175"
   end
 
   depends_on "cpanminus" => :build

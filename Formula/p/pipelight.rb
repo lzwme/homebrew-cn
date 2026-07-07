@@ -1,6 +1,7 @@
 class Pipelight < Formula
   desc "Self-hosted, lightweight CI/CD pipelines for small projects via CLI"
-  homepage "https://pipelight.dev"
+  # Original domain `pipelight.dev` is expired
+  homepage "https://github.com/crocuda/pipelight"
   url "https://ghfast.top/https://github.com/crocuda/pipelight/archive/refs/tags/v0.10.0.tar.gz"
   sha256 "8d3862757e5e91c19c9a8528a6e98a2f86c824a4529d52c320ebc7eee0135d43"
   license "GPL-2.0-only"
@@ -20,7 +21,7 @@ class Pipelight < Formula
   depends_on "rust" => :build
 
   def install
-    # upstream pr ref, https://github.com/pipelight/pipelight/pull/33
+    # upstream pr ref, https://github.com/crocuda/pipelight/pull/33
     system "cargo", "update", "-p", "libc"
 
     inreplace "cli/Cargo.toml", "version = \"0.0.0\"", "version = \"#{version}\"" if build.stable?

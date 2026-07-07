@@ -7,7 +7,7 @@ class Rawdog < Formula
   sha256 "1fc37d0e3336e87568ae9ee5dde5e7c68c1af652efd0956ee0c62281ddf14b41"
   license "Apache-2.0"
   revision 23
-  head "https://github.com/AbanteAI/rawdog.git", branch: "main"
+  head "https://github.com/granawkins/rawdog.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "3b21835450bc73846b208e38d89039428047cd6f1bd9a50038580ddffebd876a"

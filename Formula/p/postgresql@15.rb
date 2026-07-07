@@ -115,14 +115,10 @@ class PostgresqlAT15 < Formula
               "LD = #{HOMEBREW_PREFIX}/bin/ld"
   end
 
-  def post_install
-    (var/"log").mkpath
-    postgresql_datadir.mkpath
-
+  post_install_steps do
+    mkdir_p "log"
     # Don't initialize database, it clashes when testing other PostgreSQL versions.
-    return if ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    system bin/"initdb", "--locale=en_US.UTF-8", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
+    init_data_dir "postgresql@15", using: :postgresql_initdb
   end
 
   def postgresql_datadir
@@ -131,10 +127,6 @@ class PostgresqlAT15 < Formula
 
   def postgresql_log_path
     var/"log/#{name}.log"
-  end
-
-  def pg_version_exists?
-    (postgresql_datadir/"PG_VERSION").exist?
   end
 
   def caveats

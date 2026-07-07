@@ -7,17 +7,18 @@ class Janet < Formula
   head "https://github.com/janet-lang/janet.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "95713b9d30546fdaab9f6f1f5f519f1cbc80089fe98afca9862639e7736ba51d"
-    sha256 cellar: :any,                 arm64_sequoia: "1e161621c9e8774fdaba026fcf56a1cd8ef71ab988182784aa06a486f11a2f2f"
-    sha256 cellar: :any,                 arm64_sonoma:  "7b9915ba7cdab2c07954cd308505e608c96cf88560e32998a138d54b78d6b1d4"
-    sha256 cellar: :any,                 sonoma:        "dbd1061f7b9eb25f476d1f8f1c1e0a3dee4b38bfe779c78a61af65d47c0beec1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b93f65debdf478e42ade08470c501b78f89c9c4bfa759d228eb91bf9a412426c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "355439f1ee0ff6b1c47e00fb2ab241bc3d584cc9409c28b8978981095d08dd36"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "d35645069c16160b7f8738de04de6ded144a4a783ab038c2a4dbea1e2976325c"
+    sha256 cellar: :any, arm64_sequoia: "d40c788c83a199892cb8c683fae13efca1410116a528ff9c883c79680a298f9e"
+    sha256 cellar: :any, arm64_sonoma:  "da331f1ea613e42ed71de86a065cdfbca2ece99b04bd184ddc02d001266f08e1"
+    sha256 cellar: :any, sonoma:        "a8157bd738eddb480ac18e751b25b0b8d42f270bad8797a8368ce209f0ac9c9c"
+    sha256 cellar: :any, arm64_linux:   "e946a22ea4bee7d8bbed43f760b5ce6a46634840006405f0e171788773cc8a64"
+    sha256 cellar: :any, x86_64_linux:  "8218a627e584ab4d72ac7f87f67d408079340ba4eb109ee1dc8ccae01bc9a372"
   end
 
   resource "jpm" do
-    url "https://ghfast.top/https://github.com/janet-lang/jpm/archive/refs/tags/v1.1.0.tar.gz"
-    sha256 "337c40d9b8c087b920202287b375c2962447218e8e127ce3a5a12e6e47ac6f16"
+    url "https://ghfast.top/https://github.com/janet-lang/jpm/archive/refs/tags/v1.2.0.tar.gz"
+    sha256 "4282b36b44a9b35367d128982f2cfaa67370e4e5a305b3999d86a64fadd308d2"
   end
 
   def syspath

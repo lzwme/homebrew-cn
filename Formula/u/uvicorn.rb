@@ -6,7 +6,7 @@ class Uvicorn < Formula
   url "https://files.pythonhosted.org/packages/2e/41/06cce5dbb9f77591512957710ac709e60b12e6216a2f2d0d607fd49706e8/uvicorn-0.50.0.tar.gz"
   sha256 "0c92e1bc2259cb7faa4fcef774a5966588f2e88542744550b66799fba10b76f1"
   license "BSD-3-Clause"
-  head "https://github.com/encode/uvicorn.git", branch: "main"
+  head "https://github.com/Kludex/uvicorn.git", branch: "main"
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "8535cb79cc23a4b340c0eec84edde37d02bc2f62031b88fecd83773306db0a0e"

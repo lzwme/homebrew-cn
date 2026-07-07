@@ -3,13 +3,12 @@ class Instaloader < Formula
 
   desc "Download media from Instagram"
   homepage "https://instaloader.github.io/"
-  url "https://files.pythonhosted.org/packages/b0/1f/c66c9d5c65bd59cf03632adf112a05aad720b0620f52848d1e5419ef130b/instaloader-4.15.1.tar.gz"
-  sha256 "323ee2015540e627df25535703f246dc39695b71f7f04dadfe67e239dadf3b55"
+  url "https://files.pythonhosted.org/packages/d3/14/6630c6564fbe3c0768bb2b15d79e2262f77a317067c1620f7b1c55f47cbc/instaloader-4.15.2.tar.gz"
+  sha256 "a4d3f1ef6674b96c471492614848fc3a21fcc87f038f274111a0bd8bfbadb3ca"
   license "MIT"
-  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5b446124ec757f1676e8ce989315f9735dd35604c0c902371f9b0824f1c9635c"
+    sha256 cellar: :any_skip_relocation, all: "36ee08e59ff638289b5ff1bd90046aee7ac824ba8afd0a4338bcd657da9b2fea"
   end
 
   depends_on "certifi" => :no_linkage
@@ -23,8 +22,8 @@ class Instaloader < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "requests" do

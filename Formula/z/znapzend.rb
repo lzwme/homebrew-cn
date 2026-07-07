@@ -1,8 +1,8 @@
 class Znapzend < Formula
   desc "ZFS backup with remote capabilities and mbuffer integration"
   homepage "https://www.znapzend.org/"
-  url "https://ghfast.top/https://github.com/oetiker/znapzend/releases/download/v0.23.4/znapzend-0.23.4.tar.gz"
-  sha256 "253a2719c119d59a7e6db3f4aa26bc9b3b4fd74c2e737b9c8726cdb670abc6fc"
+  url "https://ghfast.top/https://github.com/oetiker/znapzend/releases/download/v0.23.6/znapzend-0.23.6.tar.gz"
+  sha256 "2b8903544b4013e3f059afa4812d20bc9d889d7ffda5a8fc5b7728f36599767a"
   license "GPL-3.0-or-later"
   head "https://github.com/oetiker/znapzend.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Znapzend < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8378d692733374a38059e3071b55965c1adcf84c73b95d6739dcff697861d3c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0f8093937848fe55f65758124f64a9bc5171d38bb93fe7513f2125d239686d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09cd752296568e72d73432cbd72dfc6f8322dc3f2d85c428ed0fc5feb0d8b597"
-    sha256 cellar: :any_skip_relocation, sonoma:        "61567a0bebca841d728d86da73528130cb1a7557fb4b52f1df84a7dc528a52ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7add210a1fac6e733530c411c4b2cb7569b7181e6b170a8f921e28dd98556ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b0dce8bc457338ddf7dcd4d28e7b3b6125c99c8c0af3daeb67da85563a1ba6d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5aa6f0226f94f813871cb07c350b43070fe34670d1f1d140b9fe9089b6176de8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61c38517d722d3fa4d195c911a52dc3c27d27cc825d0201cfbd6835fce50903d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5031431002c158ea87df165949df1c2280b161fa663ffa38bdbc87265a0072a5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "68096ec47d33a9d0ccb180931aa1be8b8af900a331fc54ffb41b2b0c0178b52a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c976696b673908fe23be4d5f0c6046ac09a046c774d685ddba01d4a280593ab1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c96670acc3cbe2b425c0574b0d1918e72731d9ebdf6dc3b1888cacb90baccb8c"
   end
 
   uses_from_macos "perl", since: :big_sur

@@ -38,7 +38,7 @@ class Geph4 < Formula
   end
 
   test do
-    output = shell_output("#{bin}/geph4-client sync --credential-cache ~/test.db auth-password 2>&1", 1)
+    output = shell_output("#{bin}/geph4-client sync --credential-cache ~/test.db auth-password --username x 2>&1", 1)
     assert_match "incorrect credentials", output
 
     assert_match version.to_s, shell_output("#{bin}/geph4-client --version")

@@ -72,7 +72,7 @@ class Rustup < Formula
   def caveats
     <<~EOS
       To use rustup, ensure you have "$(brew --prefix rustup)/bin" in your $PATH:
-        #{Formatter.url("https://rust-lang.github.io/rustup/installation/already-installed-rust.html")}
+        https://rust-lang.github.io/rustup/installation/already-installed-rust.html
 
       This formula no longer provides `rustup-init`.
     EOS

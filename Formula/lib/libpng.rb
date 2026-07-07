@@ -21,7 +21,7 @@ class Libpng < Formula
   end
 
   head do
-    url "https://github.com/glennrp/libpng.git", branch: "libpng16"
+    url "https://github.com/pnggroup/libpng.git", branch: "libpng16"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build

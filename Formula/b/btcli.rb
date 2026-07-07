@@ -2,11 +2,11 @@ class Btcli < Formula
   include Language::Python::Virtualenv
 
   desc "Bittensor command-line tool"
-  homepage "https://docs.bittensor.com/btcli"
+  homepage "https://docs.learnbittensor.org/btcli"
   url "https://files.pythonhosted.org/packages/25/03/067a11e27faceef0f236a76e554fbeeee21d5d8fdc92523649c6684203d5/bittensor_cli-9.23.1.tar.gz"
   sha256 "3e2b51435695c05b0b7c0df144c1e5c5d426dcd1cc6f508d1749f90078e7812f"
   license "MIT"
-  head "https://github.com/opentensor/btcli.git", branch: "main"
+  head "https://github.com/RaoFoundation/btcli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "bdeda7675efa2734cf01a2c1581db53be91028428f82da06e6baf9cea8811665"

@@ -1,8 +1,8 @@
 class Roxctl < Formula
   desc "CLI for Stackrox"
   homepage "https://www.stackrox.io/"
-  url "https://ghfast.top/https://github.com/stackrox/stackrox/archive/refs/tags/4.11.0.tar.gz"
-  sha256 "23cd60a835019c66c5742771e2566a47dc47858a7a59841e7efdf12a664aeae5"
+  url "https://ghfast.top/https://github.com/stackrox/stackrox/archive/refs/tags/4.11.1.tar.gz"
+  sha256 "a15d25fb94570be08c6515283901cae4915aae26408e6af23f76fa794e98f684"
   license "Apache-2.0"
   head "https://github.com/stackrox/stackrox.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Roxctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13fa74d09ccf998bbbe7b7a19ae7fef6bf27ed23d0963ab84f59db4e495cc6af"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e6f56abcd06d7c6d8588ff0ad3351827c079cfacbb72876f642628662a71271"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0b612df6d326800b2b945571fc2a27491930ccdc68743e3d3fdebb6f0989675"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bd81a9a23846b4502b65920c1b72e5eac5674883126ed780d31ffa3690d517dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "41e1ce36d1856be61de2f8734699739e2cdbe59332a57c66adef46a42b9dafb8"
-    sha256 cellar: :any,                 x86_64_linux:  "20f47b837bcd9f48b0b9689248b7fa41db27b6d648187a90f682f8d207eb9ee3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7664cd40b83c9f0b548a94b225175bce8df99e2902574859e7f1ce759e504cc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "948210b01f3859d2ba50789d8ea84ff539fd2cca14063cf3a000bff03e02fd6e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abb301c588580539bb6a82a1fd783535e0384c77d4f183feb358fcc4cc06cc71"
+    sha256 cellar: :any_skip_relocation, sonoma:        "43cc140158e7d61ec2e1dbc2425cd90216bb1eb1dac77e72d3ae6f0de68cc85f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f0ff5f0f27784fd77b740b1c27d1169fc0d8591381759faeac93f552e02956f"
+    sha256 cellar: :any,                 x86_64_linux:  "14918412a86ee6cfe6148a09366590700166f907bc2ddcdda1f3e8ec9873b7bc"
   end
 
   depends_on "go" => :build

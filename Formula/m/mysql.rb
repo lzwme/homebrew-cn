@@ -14,12 +14,13 @@ class Mysql < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "d3b11f8cea4608f52a98588610197bd31bafd7b83b51d4efcb564098e3c5dd6b"
-    sha256 arm64_sequoia: "4607c6ab438f7f90c5ecd6a7fcfb5fce05385d91c3cab91edb56837f47983280"
-    sha256 arm64_sonoma:  "4a6f31ff90ee3d66eaf498b27875db5a247cea792c857599e93d9e0def543adc"
-    sha256 sonoma:        "661dbccdde78078c4f13d045ef1ac83418e8136b0160a922b48ba0c0489e9444"
-    sha256 arm64_linux:   "796d1ae183d4195a59f86eb8cec94bd79d869eb6c27901c5edd79afd785cf34b"
-    sha256 x86_64_linux:  "9e060ca44f6e08653ad4f21106631a21b56f7394b8e3de05341d4493aadba173"
+    rebuild 1
+    sha256 arm64_tahoe:   "80b52cf77d7a5aa810adef0e992a9640f92dbfcdec0c3e2071ca9b67a800b097"
+    sha256 arm64_sequoia: "2ff39057daf4ff52baacbd15f78cef15cc52cce624028f1c9c3bcdd251e89778"
+    sha256 arm64_sonoma:  "0d8133ec0fdfc411d03171e81af50af901f7f39d5812a3c759e9a715f97d0463"
+    sha256 sonoma:        "1831accf9e3eb1fcd649951c2688d3c93a8d522e49d917a11268919decfd59e3"
+    sha256 arm64_linux:   "e4a45a0cc2cc28716d28f4d0748cd88f6620e370699a7b45c3bdb8adc11f5740"
+    sha256 x86_64_linux:  "dabc37a05bf29118f8fa3ae42004f46271b0bc398aec5baf88cea6a0520f7c0a"
   end
 
   depends_on "bison" => :build
@@ -161,29 +162,17 @@ class Mysql < Formula
     etc.install "my.cnf"
   end
 
-  def post_install
+  post_install_steps do
     # Make sure the var/mysql directory exists
-    (var/"mysql").mkpath
-
-    if (my_cnf = ["/etc/my.cnf", "/etc/mysql/my.cnf"].find { |x| File.exist? x })
-      opoo <<~EOS
-        A "#{my_cnf}" from another install may interfere with a Homebrew-built
-        server starting up correctly.
-      EOS
-    end
-
     # Don't initialize database, it clashes when testing other MySQL-like implementations.
-    return if ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    unless (datadir/"mysql/general_log.CSM").exist?
-      ENV["TMPDIR"] = nil
-      system bin/"mysqld", "--initialize-insecure", "--user=#{ENV["USER"]}",
-                           "--basedir=#{prefix}", "--datadir=#{datadir}", "--tmpdir=/tmp"
-    end
+    init_data_dir "mysql", using: :mysql_initialize
   end
 
   def caveats
     <<~EOS
+      A "/etc/my.cnf" or "/etc/mysql/my.cnf" from another install may interfere
+      with a Homebrew-built server starting up correctly.
+
       Upgrading from MySQL <8.4 to MySQL >9.0 requires running MySQL 8.4 first:
        - brew services stop mysql
        - brew install mysql@8.4

@@ -4,7 +4,7 @@ class Autotrace < Formula
   url "https://ghfast.top/https://github.com/autotrace/autotrace/archive/refs/tags/0.31.10.tar.gz"
   sha256 "14627f93bb02fe14eeda0163434a7cb9b1f316c0f1727f0bdf6323a831ffe80d"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 1
+  revision 2
   head "https://github.com/autotrace/autotrace.git", branch: "master"
 
   livecheck do
@@ -13,12 +13,12 @@ class Autotrace < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "45e3c79261a2d2396b54c3b190c32125c89e3d9959111dd35d89cf1a44c504cb"
-    sha256 arm64_sequoia: "6213320bb304ff6333289b861b9f52a5268911df82335066bdddabf5992c290a"
-    sha256 arm64_sonoma:  "ee95b6e4026bce275bad5e9fa04838c8c572e12f57c02aafc0773783c89b15ee"
-    sha256 sonoma:        "1abd8cfd21e0fc4709b0360d742caf8497aabf57d1386e10dece107a33389810"
-    sha256 arm64_linux:   "0768105a4d211cd8ca546f8f78e64c5e77375d4fa5da1f3d54736f4feadfef14"
-    sha256 x86_64_linux:  "1128ec1cefbf6143258dcf9ed0b6ef805d1bc92e0bc5cc88ecdc9774199a5860"
+    sha256 arm64_tahoe:   "ab9f30deffcfe2b3eadbb7a1483f29f5ab1fff7bf4518d0ecf9062fa2839d39b"
+    sha256 arm64_sequoia: "b36ba642259814567ac88161df1330c8e1e1160d0022eb0ff8556992a9ff6c0c"
+    sha256 arm64_sonoma:  "b9725af1513a0da94e283765802022e0e9ae80b0d785a0d5c78da4981a16496e"
+    sha256 sonoma:        "e4d9f47afb4b508a32cbcb02bcb2266c70bc15103337a502c1a5b0b064a1ff8a"
+    sha256 arm64_linux:   "55965727c03a1092493b6e0affc35fcebd8a86e2a4d74b928c9b931ca03ede47"
+    sha256 x86_64_linux:  "b8b573bdd4ece3b522e921a559424bea53474d39b7d0b6484a0719a9c6653f53"
   end
 
   depends_on "autoconf" => :build

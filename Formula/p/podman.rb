@@ -55,7 +55,7 @@ class Podman < Formula
   end
 
   # Bump these resources versions to match those in the corresponding version-tagged Makefile
-  # at https://github.com/containers/podman/blob/#{version}/contrib/pkginstaller/Makefile
+  # at https://github.com/podman-container-tools/podman/blob/#{version}/contrib/pkginstaller/Makefile
   #
   # More context: https://github.com/Homebrew/homebrew-core/pull/205303
   resource "gvproxy" do

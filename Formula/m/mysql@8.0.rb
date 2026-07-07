@@ -132,24 +132,18 @@ class MysqlAT80 < Formula
     etc.install "my.cnf"
   end
 
-  def post_install
+  post_install_steps do
     # Make sure the var/mysql directory exists
-    (var/"mysql").mkpath
+    # Don't initialize database, it clashes when testing other MySQL-like implementations.
+    init_data_dir "mysql", using: :mysql_initialize
+  end
 
+  def post_install
     if (my_cnf = ["/etc/my.cnf", "/etc/mysql/my.cnf"].find { |x| File.exist? x })
       opoo <<~EOS
         A "#{my_cnf}" from another install may interfere with a Homebrew-built
         server starting up correctly.
       EOS
-    end
-
-    # Don't initialize database, it clashes when testing other MySQL-like implementations.
-    return if ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    unless (datadir/"mysql/general_log.CSM").exist?
-      ENV["TMPDIR"] = nil
-      system bin/"mysqld", "--initialize-insecure", "--user=#{ENV["USER"]}",
-                           "--basedir=#{prefix}", "--datadir=#{datadir}", "--tmpdir=/tmp"
     end
   end
 

@@ -4,7 +4,7 @@ class Devspace < Formula
   url "https://ghfast.top/https://github.com/devspace-sh/devspace/archive/refs/tags/v6.3.21.tar.gz"
   sha256 "c6e4f9d6587d77b5498d56391667c5d88b65ced06ca7e03a4ac74f600c19c8c4"
   license "Apache-2.0"
-  head "https://github.com/loft-sh/devspace.git", branch: "main"
+  head "https://github.com/devspace-sh/devspace.git", branch: "main"
 
   livecheck do
     url :stable

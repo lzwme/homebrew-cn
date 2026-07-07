@@ -6,17 +6,18 @@ class ProtonPassCli < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7660fdf2d176f58c0e9388076e75ceae9532890e1e8f65372d3200a113c3c79d"
-    sha256 cellar: :any, arm64_sequoia: "e76732a9c9e4ecef7d240f231f962b05bb32ec402497047d67eefed1ac0f84fa"
-    sha256 cellar: :any, arm64_sonoma:  "0444530ef94afda17f45d08368e8a77195e98b716c2602e3f64ace362c38331a"
-    sha256 cellar: :any, sonoma:        "8d3475e2bdbd93182aa59178b56849921d2e99ba69a23a96e8e7862bd4f32cb3"
-    sha256 cellar: :any, arm64_linux:   "9a1990879f3cf5ab3b22ed87b191553a6f2289a43ac422b28809271f8133fa27"
-    sha256 cellar: :any, x86_64_linux:  "7a1e451e8b1e3809ba702cf383156e7a22f586aecff68ddfc12a3dbf081ce552"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "dc887235730f2fb1abc317bc8e8654628427d27d420bbbe9f497f9a174ece075"
+    sha256 cellar: :any, arm64_sequoia: "ee9218aa29bcd0a582212bdb199febd89ca86230ed4e2cec99a7f2bc47f1db6b"
+    sha256 cellar: :any, arm64_sonoma:  "51791f02d36dd52fac564e5df39bcd315aa965b282549a2b60c7498c45793fa2"
+    sha256 cellar: :any, sonoma:        "6275ad7a60f454934413d608bd5865a5e838541cda618a9e0bd0f82bd7e8da13"
+    sha256 cellar: :any, arm64_linux:   "fb21baa9672b03b0d5c853fc0581965cf14ecfc1d82fcc1e76224ca9b4613444"
+    sha256 cellar: :any, x86_64_linux:  "715413c5cb897a481a584e7525aa020e8d6b3f0c5fb056666b3a87bb1515595a"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   def install
     system "cargo", "install", *std_cargo_args(path: "pass-cli")
@@ -28,6 +29,15 @@ class ProtonPassCli < Formula
     assert_match "Successful", shell_output("#{bin}/pass-cli logout --force")
 
     # Most operations require an authenticated session or keyring access.
-    assert_match "Error", shell_output("#{bin}/pass-cli login 2>&1", 1)
+    ENV["PROTON_PASS_KEY_PROVIDER"] = "fs"
+    output_log = testpath/"output.log"
+    pid = spawn bin/"pass-cli", "login", [:out, :err] => output_log.to_s
+    sleep 5
+    assert_match "Waiting for authentication to complete", output_log.read
+  ensure
+    if pid
+      Process.kill "TERM", pid
+      Process.wait pid
+    end
   end
 end

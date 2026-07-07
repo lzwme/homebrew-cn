@@ -1,20 +1,18 @@
 class Rustywind < Formula
   desc "CLI for organizing Tailwind CSS classes"
   homepage "https://github.com/avencera/rustywind"
-  url "https://ghfast.top/https://github.com/avencera/rustywind/archive/refs/tags/v0.24.3.tar.gz"
-  sha256 "50706558f411722631db2449f5f05463703ebeffdea41f6e5f28f383992d06cb"
+  url "https://ghfast.top/https://github.com/avencera/rustywind/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "32d3bff8de2b08a17fca485994e69e33619a78b1e397d4059dc445f62d19603b"
   license "Apache-2.0"
   head "https://github.com/avencera/rustywind.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f6e9a477a66a134a75d813ce06471c85f5bbc114d56bd8a554a9ac13fe11544"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc0916337b8700bf4b9d26f8e9f8ddc03f1de5cdcfa532f412886aed8cf64303"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78e164d7166d1f303792912c049a135b139e07a3a3559b603d0244c99eeaa1cf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "eb0bb9e45a527f1789dbc9181642955d60b2d2d48a930f318b7cf1e9bb1df47d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a7d1cce25f5053ab0f069c4cebf50f590eb4664be89545ffab5a9c72660240c6"
-    sha256 cellar: :any_skip_relocation, ventura:       "072bd55cac02cc31f978923b7d9c90a63b5a9d4ddd314dcbbaa495319825411c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7b5399f8ded336f4fa1756c9a0d17a26bb52ee8b5da16bc06fcabdcb2e8f838"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2421d6c93d562c17fd6f1704b3775b26e34e6b7f9aa98c21a20b138efdb63870"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1dd381e456306feea4c99931f12dc23cee98b4c9b4e446fa24fed883151790e4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c906fe8fb182279bbc3b57a48f7c6c6f4fbf8f2d143c30fe689214fc28e453d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8fe0983a68e522449535738c75cb4c8f9a0a27dac3450dc9f9fdef0f93950f2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f4d99079ad2acdf2b9f994676e4164c802688360cb6242f5b2200fc3fd86cb85"
+    sha256 cellar: :any,                 arm64_linux:   "e7cef15e84b14bdb206c9041f0656bcb6ff223d0e734ec2e9771e0ed6a8d65da"
+    sha256 cellar: :any,                 x86_64_linux:  "818a587251387abe5adbd256338efcf8c930892a4e064cc167c95530fd8b4f9f"
   end
 
   depends_on "rust" => :build
@@ -35,7 +33,7 @@ class Rustywind < Formula
     system bin/"rustywind", "--write", "test.html"
 
     expected_content = <<~HTML
-      <div class="p-4 text-center text-white bg-red-500">
+      <div class="bg-red-500 p-4 text-center text-white">
         <p class="text-lg font-bold">Hello, World!</p>
       </div>
     HTML

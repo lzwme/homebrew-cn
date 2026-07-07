@@ -1,8 +1,8 @@
 class CAres < Formula
   desc "Asynchronous DNS library"
   homepage "https://c-ares.org/"
-  url "https://ghfast.top/https://github.com/c-ares/c-ares/releases/download/v1.34.6/c-ares-1.34.6.tar.gz"
-  sha256 "912dd7cc3b3e8a79c52fd7fb9c0f4ecf0aaa73e45efda880266a2d6e26b84ef5"
+  url "https://ghfast.top/https://github.com/c-ares/c-ares/releases/download/v1.34.7/c-ares-1.34.7.tar.gz"
+  sha256 "556f781dd188ad932dc8263fee0ad3aaba675b4cd8e54d86908681b43ce3e327"
   license "MIT"
   compatibility_version 1
   head "https://github.com/c-ares/c-ares.git", branch: "main"
@@ -13,12 +13,12 @@ class CAres < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d161e49ada18225649329b60940692d87a4c9c34a3b4a32332457aaae8a176dc"
-    sha256 cellar: :any,                 arm64_sequoia: "bb20019b663c40dc3662a036f7f951a8f5152b381473417fcc9a9810b5a97ddb"
-    sha256 cellar: :any,                 arm64_sonoma:  "17f44048d8003b88231d69bac0408cf22be2f712ef8588d4933ff0811b92342c"
-    sha256 cellar: :any,                 sonoma:        "841fe91739703803abef71c641ba40486291de060811779e6f6c6bbc79b0e83c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ca10fb4f9f5160b28c1e2f8edce10eab5bda2ba18ba2ca083d915e65ad9c0ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acd24a61ed9ba623494903e02ebf144d4c87b05e7658013ba3590b8c1cbe234e"
+    sha256 cellar: :any, arm64_tahoe:   "9de9c5a3a303af0a89d4508b5c0eb07d30e8c084f003fcf89e777769c28c66db"
+    sha256 cellar: :any, arm64_sequoia: "4f9370924b6868bcb8f840133d22e476bd7098a6d80c1913b469fb0999dfd070"
+    sha256 cellar: :any, arm64_sonoma:  "c1525a2aea970f1f367a317fa412c2ba33d3c1634ccfea4901fcc7bb396982fc"
+    sha256 cellar: :any, sonoma:        "bf5170e7d181149e2ca5fec4dacb590a27750af163b701f8d3a184ce7423e052"
+    sha256 cellar: :any, arm64_linux:   "82f0cf8f8880f9d00b1988160eab469bebbe7d57826b9fc7d65946d1c8fde5eb"
+    sha256 cellar: :any, x86_64_linux:  "fd7cff6647754ab3ff999bd60927958f0fd02067193c82f4c26191e37130ca3f"
   end
 
   depends_on "cmake" => :build

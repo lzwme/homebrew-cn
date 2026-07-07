@@ -1,17 +1,17 @@
 class BeadsViewer < Formula
   desc "Terminal-based UI for the Beads issue tracker"
   homepage "https://github.com/Dicklesworthstone/beads_viewer"
-  url "https://ghfast.top/https://github.com/Dicklesworthstone/beads_viewer/archive/refs/tags/v0.17.1.tar.gz"
-  sha256 "67fe4faeb1ea7b366d80b49f28cf2541429bd6e29bd4a7023630fa309a70414a"
+  url "https://ghfast.top/https://github.com/Dicklesworthstone/beads_viewer/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "c40173354f84df8301121a936b6347c3958430227c53d0ea47718507a104f5da"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e37ed6c5bdb8df491aa840ca449526052329a431d08dbd3be1c3ef0ffb8052a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e37ed6c5bdb8df491aa840ca449526052329a431d08dbd3be1c3ef0ffb8052a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e37ed6c5bdb8df491aa840ca449526052329a431d08dbd3be1c3ef0ffb8052a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0d265bd40ea9d50ef82334cfe11c287be7ed854c32e4bc12ee85d44a906004b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7517b0477f0a76672484e16ac3c689ff93f76c8845ee5c0f8c2a52615e978fe"
-    sha256 cellar: :any,                 x86_64_linux:  "628e8c31182d31e78544edcb6e4fd8c7d1598b25c833253e1624e08307275b31"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16bcd7e356a60ff4b4e4e3e75c297c3610d39976a96e05c26d23347c85071cce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16bcd7e356a60ff4b4e4e3e75c297c3610d39976a96e05c26d23347c85071cce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16bcd7e356a60ff4b4e4e3e75c297c3610d39976a96e05c26d23347c85071cce"
+    sha256 cellar: :any_skip_relocation, sonoma:        "680bf8eb8af7e871f9c128726595d25ac04d5de7bf63b31edf86f5ba0ac53b31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2c218cc3e7a0f8b9cdfdc66f4fc75f2fc5e87928d8139179b4956512924be48"
+    sha256 cellar: :any,                 x86_64_linux:  "10a7c11ff370930052c623ed66d54c34dd0195da6935a81b43b6328f306c1d09"
   end
 
   depends_on "go" => :build
