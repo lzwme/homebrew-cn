@@ -3,18 +3,18 @@ class Sigstore < Formula
 
   desc "Codesigning tool for Python packages"
   homepage "https://github.com/sigstore/sigstore-python"
-  url "https://files.pythonhosted.org/packages/d6/63/1e44d9964d4f47617e641bdf6ce1b883b893d95b29ff07f97a8901df6b1c/sigstore-4.3.0.tar.gz"
-  sha256 "3c4b566bddfcc53e73d3adc06acf4311d72be0d907a167133abdc815a472a59b"
+  url "https://files.pythonhosted.org/packages/04/a9/7f7625225c6e7041ab4460bfc5b30a6ebc40bcf6487ee28d5864149124c4/sigstore-4.4.0.tar.gz"
+  sha256 "20ffe791c1fa33ce62148c0291b46280d29c1910964d9afac419e9b1a8afc56b"
   license "Apache-2.0"
   head "https://github.com/sigstore/sigstore-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2c0d8ef7fe6e8dfe60f8fd09e6ee6cd29d0a2e6e8673f2f8f313b5db6a07978f"
-    sha256 cellar: :any, arm64_sequoia: "91812308c0666b81be26be63ebbc47583c6f36bee290494fe52bcdfdd355ad42"
-    sha256 cellar: :any, arm64_sonoma:  "c46b81f8420051a512d26da531ab76d6d89016fe897dae777bc4908fa37d3384"
-    sha256 cellar: :any, sonoma:        "af5cc3e31483db531938869018a940eede925801e57c7fdaf8fb77f40cbdea41"
-    sha256 cellar: :any, arm64_linux:   "f2890d19baa1e3c4c726af2f3a80c43e7718a7dfa6efc0eedd1885b094efcc66"
-    sha256 cellar: :any, x86_64_linux:  "5992a2c69374f3409f0619d4f69db5b6241b198df656f581f4bdcac728633e75"
+    sha256 cellar: :any, arm64_tahoe:   "f8f713dbb6b6f11a3225552a2bb06fa49f526f5052cb4d482a0aeb8efe17b525"
+    sha256 cellar: :any, arm64_sequoia: "e7c8639b01596e13b95c4bb77221219f6cd9d59c7ff229cd25bf2aad18f9dd5c"
+    sha256 cellar: :any, arm64_sonoma:  "f86d8869edaaef04a1c84bab826f6a9848176485153e7fe2f8565ba0e79f58b7"
+    sha256 cellar: :any, sonoma:        "735afb215e97a441aab116b87944a2abd848a3b8867ad1f075bd1dddf74f6a38"
+    sha256 cellar: :any, arm64_linux:   "3f12fbe3ffe3d43d7cd505a6a5483778eb35d965240bbc125d7cf3dec8a6a0d1"
+    sha256 cellar: :any, x86_64_linux:  "20bc014eb31cc5a574e2a6bbcafb10951e3d05d5b403777c7f3d09b00e8b59c3"
   end
 
   depends_on "pkgconf" => :build # for rfc3161-client
@@ -83,8 +83,8 @@ class Sigstore < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/1a/51/27a5ad5f939d08f690a326ef9582cda7140555180db71695f6fb747d6a36/pyopenssl-26.2.0.tar.gz"
-    sha256 "8c6fcecd1183a7fc897548dfe388b0cdb7f37e018200d8409cf33959dbe35387"
+    url "https://files.pythonhosted.org/packages/74/b7/da07bae88f5a9506b4def6f2f4903cf4c3b8831e560dba8fa18ca08f758f/pyopenssl-26.3.0.tar.gz"
+    sha256 "589de7fae1c9ea670d18422ed00fc04da787bbde8e1454aea872aa57b49ad341"
   end
 
   resource "requests" do

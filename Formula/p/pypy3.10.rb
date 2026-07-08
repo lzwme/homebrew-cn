@@ -20,7 +20,7 @@ class Pypy310 < Formula
 
   # PyPy 3.10 was dropped in 7.3.20 and source tarballs have been removed
   deprecate! date: "2026-06-22", because: :does_not_build
-  disable! date: "2027-06-22", because: :does_not_build
+  disable! date: "2026-09-22", because: :does_not_build
 
   depends_on "pkgconf" => :build
   depends_on "pypy" => :build

@@ -1,17 +1,17 @@
 class VercelCli < Formula
   desc "Command-line interface for Vercel"
   homepage "https://vercel.com/home"
-  url "https://registry.npmjs.org/vercel/-/vercel-54.20.1.tgz"
-  sha256 "7095ab0b2fe3ca6deca05b3a971b4589bd518e4c40262945a89be24f7abb4b92"
+  url "https://registry.npmjs.org/vercel/-/vercel-54.21.0.tgz"
+  sha256 "b01e3b97a7e027cacafc3e3408430663db40564abaf62d47be655573d6e0e249"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "c414b61bf4696f74ceade1afc8df8470bf853c4a11bdc6beef8bc10b2d8961ee"
-    sha256 cellar: :any,                 arm64_sequoia: "d80d4f38ed4ff14dd0edd34acaed5fe7ff5f58e44eedef62f931d098ced036c7"
-    sha256 cellar: :any,                 arm64_sonoma:  "d80d4f38ed4ff14dd0edd34acaed5fe7ff5f58e44eedef62f931d098ced036c7"
-    sha256 cellar: :any,                 sonoma:        "545c8dd1e7fa826f005d7b2f5dcc3959d9d9e3e7d6973316431e093fda398cd1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b041e3588e1a31318bba77ce392253b4f13a386004bc9682343c5cace897b43a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "762b02f2b844e70a3e9f09ccb10ae9916f8609992233f9204c29b280d8bbe36b"
+    sha256 cellar: :any,                 arm64_tahoe:   "d6e801d2e4c9ae541b001598e1d06457739dca07031876992cf7afd26e9fe0a0"
+    sha256 cellar: :any,                 arm64_sequoia: "f06c84569dedecd621ca91fe509aaf273f60b0e351b9d57bdbc7acec6e82c9bb"
+    sha256 cellar: :any,                 arm64_sonoma:  "f06c84569dedecd621ca91fe509aaf273f60b0e351b9d57bdbc7acec6e82c9bb"
+    sha256 cellar: :any,                 sonoma:        "a2ec1bee736cb831b2e18a754d039f7860a99c6482a67c19e1d6afb459c2abb1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fec0963a31cd6862cdb53b80c72ea0808b37ed403026725167070e5fc134eed6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce344c87f7901c3450f952f598e4b1762719489fbb7097b3c33f39f3f785f09f"
   end
 
   depends_on "node"
@@ -22,8 +22,6 @@ class VercelCli < Formula
 
     system "npm", "install", *std_npm_args
     node_modules = libexec/"lib/node_modules/vercel/node_modules"
-
-    rm_r node_modules/"sandbox/dist/pty-server-linux-x86_64"
 
     deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
 

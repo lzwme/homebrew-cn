@@ -13,12 +13,13 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "bbac60159fbed617a409fc241113a7d4824e115c6193df2661c9be6b6ed3f59f"
-    sha256 arm64_sequoia: "99cef8119eebd10eeedd277f9abd5ef22e1dabb7ee497c99fa4409c201ac9f4d"
-    sha256 arm64_sonoma:  "c8797fda23595d84fa8a8e68cedd62c63c5ff50228ac8a9fa3f6528da83a9e65"
-    sha256 sonoma:        "49a0dba0e9620845c2fb4a4eaec604ac90d013773e4e02945eca9e167d7e3be9"
-    sha256 arm64_linux:   "3cf5b744223b997a37f12a87a5cdaf09308c0575ffe245af1b1ebb9cdfb80f28"
-    sha256 x86_64_linux:  "4553aa69ff2ed12259d799b995fce3922861cf181db9c7ab51a868fe3fcefcef"
+    rebuild 1
+    sha256 arm64_tahoe:   "2343b568993c76af25f49e1f41e60017dec641fca567983d80f38a5469203055"
+    sha256 arm64_sequoia: "1506cbc290e13886da8028d502673770ed2e011d055cf1d8f72d0a552c404476"
+    sha256 arm64_sonoma:  "f04911fa7702d76b83f3280102e99025d96509f6795ffa5368bd1f09ef637001"
+    sha256 sonoma:        "727f75f06f070b260b31b757c55e76f0cf6f9ec9850ffab25c7bd20b161f129a"
+    sha256 arm64_linux:   "0a2637699f4378643e9c3e09dd6887a116ad3f4529641d3304be84e5fc8d3420"
+    sha256 x86_64_linux:  "91c4484fc229a208e1704a2ed28f8df98505ce5c766ad24020c26609d94a731f"
   end
 
   depends_on "pkgconf" => :build
@@ -84,13 +85,6 @@ class Node < Formula
   deny_network_access! [:build, :postinstall]
 
   def install
-    # Backport fix for bundled LIEF's bundled spdlog's bundled fmt.
-    # Should be fixed when new LIEF version with following commit is released and used by node:
-    # https://github.com/lief-project/LIEF/commit/710637216b1f6f19569002d62e43fca201b9d91c
-    inreplace "deps/LIEF/third-party/spdlog/include/spdlog/fmt/bundled/format.h",
-              "#ifndef FMT_MODULE\n#  include <cmath>",
-              "#ifndef FMT_MODULE\n#  include <stdlib.h>\n#  include <cmath>"
-
     # make sure subprocesses spawned by make are using our Python 3
     ENV["PYTHON"] = which("python3.14")
 
@@ -99,12 +93,14 @@ class Node < Formula
 
     # Never install the bundled "npm", always prefer our
     # installation from tarball for better packaging control.
+    # Disable SEA as incompatible with --shared, https://github.com/nodejs/node/issues/63126
     args = %W[
       --prefix=#{prefix}
       --without-npm
       --with-intl=system-icu
       --shared
       --openssl-use-def-ca-store
+      --disable-single-executable-application
     ]
     args << "--tag=head" if build.head?
 
@@ -144,7 +140,7 @@ class Node < Formula
     # - `--shared-gtest` is only used for building the test suite, which we don't run here.
     # - `--shared-simdutf` seems to result in build failures.
     # - `--shared-temporal_capi` is only used when building with `--v8-enable-temporal-support`
-    # - `--shared-lief` is not available as dependency in Homebrew.
+    # - `--shared-lief` is only used for disabled SEA feature
     ignored_shared_flags = %w[
       gtest
       simdutf
@@ -230,6 +226,15 @@ class Node < Formula
     end
 
     (node_modules/"npm/npmrc").atomic_write("prefix = #{HOMEBREW_PREFIX}\n")
+  end
+
+  # Explain why some features enabled in upstream binaries are disabled in Homebrew.
+  # These require fixes upstream for Homebrew to consider enabling them. Do not open issues.
+  def caveats
+    <<~EOS
+      Single Executable Application is disabled as it doesn't work with shared libnode.
+      Temporal support is disabled as it doesn't work with shared ICU library.
+    EOS
   end
 
   test do

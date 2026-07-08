@@ -1,10 +1,9 @@
 class SequoiaSq < Formula
   desc "Sequoia-PGP command-line tool"
   homepage "https://sequoia-pgp.org"
-  url "https://gitlab.com/sequoia-pgp/sequoia-sq/-/archive/v1.3.1/sequoia-sq-v1.3.1.tar.gz"
-  sha256 "9f112096f413e195ec737c81abb5649604f16e1f6dbe64a8accc5bb3ad39e239"
+  url "https://gitlab.com/sequoia-pgp/sequoia-sq/-/archive/v1.4.0/sequoia-sq-v1.4.0.tar.gz"
+  sha256 "c856bfb0f0c94a1b8f4b72a04a6eff1e1d3d24c377cb0b1e495688e9aad8467a"
   license "LGPL-2.0-or-later"
-  revision 1
   head "https://gitlab.com/sequoia-pgp/sequoia-sq.git", branch: "main"
 
   livecheck do
@@ -13,12 +12,12 @@ class SequoiaSq < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6d9a5df779564beafbc4a1c440b6b2bd4ce852137fff10eec2c64e72108fc168"
-    sha256 cellar: :any, arm64_sequoia: "27bb98be25f600adbfad729fb85018f3f3501248ea06edfd9433d82f26c7954f"
-    sha256 cellar: :any, arm64_sonoma:  "cfb5d9fe4ff590cafdf58579dcb387e5adecf50aa734ef4a9c05650d48bf7f5b"
-    sha256 cellar: :any, sonoma:        "bc651ef16e1220dd8ae3fd31495324340d9d52a7f2a445ef59076f0e0923da75"
-    sha256 cellar: :any, arm64_linux:   "9d1e757c09f0a52f89b2cf38ef63e62eebf8c6788bd057333c145f3b306c1e82"
-    sha256 cellar: :any, x86_64_linux:  "1fcadb83b0670e6ff232b6673102f3c94eed3e552cf1b89bf28c9a31a6dc73fd"
+    sha256 cellar: :any, arm64_tahoe:   "e9e61d139b48df4a934d57d48e4cdb18d6e524204121ce04018a9aa7a2cb6fc5"
+    sha256 cellar: :any, arm64_sequoia: "04acde3c23daadeeea490a1a1165597720c25afab32ad5d167b04455800b8ac4"
+    sha256 cellar: :any, arm64_sonoma:  "13cbe320497f9f9540034e69d0afc7398a315f488b547f32aef83caf8e343f32"
+    sha256 cellar: :any, sonoma:        "190655e0e1e9f7367ebb1d9c066b559096355a84718d7676e3a61c1d4f8f1f0e"
+    sha256 cellar: :any, arm64_linux:   "94ba7de7db749cb3be45e591deff4ca4646a77099fd0f499770c35ea7e31b2cd"
+    sha256 cellar: :any, x86_64_linux:  "cecce68199801ece553c7ff977e6d676565b8509baed406af51922aa5de70260"
   end
 
   depends_on "capnp" => :build

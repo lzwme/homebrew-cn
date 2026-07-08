@@ -16,12 +16,13 @@ class Ejabberd < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "768cecef8932d6a641b1f9bc70b2c2c3e47f5df0b7642e944b809c6fcec0ceb2"
-    sha256 cellar: :any, arm64_sequoia: "d6fad7c7aa886ffabaafeaded51c5ae44f9b2bedc1dcbbc464233fe3e90ee83f"
-    sha256 cellar: :any, arm64_sonoma:  "5b082bfe01511e60f8aaf5d4471a355e1201f0a0a5c83308a4970f9e34745b5d"
-    sha256 cellar: :any, sonoma:        "4c40a08c47c5ccb191ae859804254567b640dbbd762f657f38eb0a7ac8e717a9"
-    sha256 cellar: :any, arm64_linux:   "1a74c02d1def590c1c1799729185dc78ff80218c5a86085fd8d950b7914d5f54"
-    sha256 cellar: :any, x86_64_linux:  "0ae14ba5940855494d64fc0155c782d443703f8032c78d1361e61893783cef2a"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "4b4c1db5bc4d0d7c7110b72bd91cfe4e6a40f388a1e49c0ab69562c558afa30a"
+    sha256 cellar: :any, arm64_sequoia: "c06d62e19479aab76b961db95ba00106136a15b5e5233d9db1fa3f6bdc4402cb"
+    sha256 cellar: :any, arm64_sonoma:  "605e47ff544be4f098067f3901ff774a0f74d91812b072076fd09ccd525ad6c0"
+    sha256 cellar: :any, sonoma:        "f97c2001c8b7577f4a524e12e3b80b90f7c27c1f5b342df2a744f71b6950a9d0"
+    sha256 cellar: :any, arm64_linux:   "0df15ac52e64ad4c126e313960c5f09eec5e133a5f5cb0bef2a51a53f2bdcd45"
+    sha256 cellar: :any, x86_64_linux:  "57bf3af4307dddc7329799844d5dc28d6d686ef42596d535206d5ef85e1cec26"
   end
 
   depends_on "autoconf" => :build
@@ -76,21 +77,8 @@ class Ejabberd < Formula
     system "make", "install"
 
     (etc/"ejabberd").mkpath
-  end
-
-  def post_install
     (var/"lib/ejabberd").mkpath
     (var/"spool/ejabberd").mkpath
-
-    # Create the vm.args file, if it does not exist. Put a random cookie in it to secure the instance.
-    vm_args_file = etc/"ejabberd/vm.args"
-    unless vm_args_file.exist?
-      require "securerandom"
-      cookie = SecureRandom.hex
-      vm_args_file.write <<~EOS
-        -setcookie #{cookie}
-      EOS
-    end
   end
 
   def caveats
@@ -102,7 +90,7 @@ class Ejabberd < Formula
   end
 
   service do
-    run [opt_sbin/"ejabberdctl", "start"]
+    run [opt_sbin/"ejabberdctl", "foreground"]
     environment_variables HOME: var/"lib/ejabberd"
     working_dir var/"lib/ejabberd"
   end

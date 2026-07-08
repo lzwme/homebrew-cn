@@ -12,22 +12,23 @@ class Fastfetch < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "3f5e29cdbcc9ad9fe7c6064dda2fde1fdc2beb55142c438ee33d1c1238af9d29"
-    sha256               arm64_sequoia: "b10f20aa6216027d69e6ff632f22f3016042a2ad7564ffda6abd9ac00373f525"
-    sha256               arm64_sonoma:  "63441676ad415d8ee15247867ca9bba7f7865c8fb7556653fab7acb0655a437e"
-    sha256 cellar: :any, sonoma:        "a51360c16ebe2e78e7910829fa12123af2168a0b333e786ebd5ef174b1dd0abd"
-    sha256               arm64_linux:   "e83a655f1c96c47ea392f37669be88ae643c806fb3d68acb2c977bfaf93b2b39"
-    sha256               x86_64_linux:  "b4fa7aafc8b548d46f4b881d03d03d6082eedb2eaec89003dc7fca669f40c57f"
+    rebuild 1
+    sha256               arm64_tahoe:   "84f5f6ad596c4033cd58c7a4be0274b1e758ca7081ad341ff77205860421c95e"
+    sha256               arm64_sequoia: "8f03324e699014a9cf302c529cd50d64a89f6fe2f4ec916a8cee6a8d8270c035"
+    sha256               arm64_sonoma:  "1cb155f2b3e972501a69b8cbd179456c7b856cd57233a1db4f65f1f6479b81e6"
+    sha256 cellar: :any, sonoma:        "1825ffa4479083494c5b220c860c70099419e0e7e3712ab5bc36ba248eead664"
+    sha256               arm64_linux:   "6aead54541f74fa6fc20b2f51146639cf8c7d907cc50997b61181ce64dce5290"
+    sha256               x86_64_linux:  "f244a469c29af8ddc53afe5c73afb62a62b049e041ad5901f1f353c47f0be84f"
   end
 
   depends_on "chafa" => :build
   depends_on "cmake" => :build
   depends_on "glib" => :build
   depends_on "imagemagick" => :build
+  depends_on "lua" => :build
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
   depends_on "vulkan-loader" => :build
-  depends_on "lua"
   depends_on "yyjson"
 
   uses_from_macos "sqlite" => :build

@@ -156,17 +156,6 @@ class RubyAT31 < Formula
     config_file.write rubygems_config
   end
 
-  def post_install
-    # Since Gem ships Bundle we want to provide that full/expected installation
-    # but to do so we need to handle the case where someone has previously
-    # installed bundle manually via `gem install`.
-    rm(%W[
-      #{rubygems_bindir}/bundle
-      #{rubygems_bindir}/bundler
-    ].select { |file| File.exist?(file) })
-    rm_r(Dir[HOMEBREW_PREFIX/"lib/ruby/gems/#{api_version}/gems/bundler-*"])
-  end
-
   def rubygems_config
     <<~RUBY
       module Gem

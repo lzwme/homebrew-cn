@@ -1,17 +1,17 @@
 class BehaviortreeCpp < Formula
   desc "Behavior Trees Library in C++"
   homepage "https://www.behaviortree.dev/"
-  url "https://ghfast.top/https://github.com/BehaviorTree/BehaviorTree.CPP/archive/refs/tags/4.9.0.tar.gz"
-  sha256 "74a22cf46d7cd423d7065616528cfd68bcd925b3fc2b819a99413cdd3334c02a"
+  url "https://ghfast.top/https://github.com/BehaviorTree/BehaviorTree.CPP/archive/refs/tags/4.9.1.tar.gz"
+  sha256 "509f508aa8ce38ec8c54b91e94f2049c4b00905474d38e503057f0c2a3054e31"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "114719f633b5ca2f9633a1e216818ce5e5be32adda4ff470dab3240a7ac5f4c4"
-    sha256 cellar: :any,                 arm64_sequoia: "03a0a0c273a511c2d7ef3ed76c3871c9ca2474354734e260d61af36c212efe61"
-    sha256 cellar: :any,                 arm64_sonoma:  "0996134f6c16aa796a48e444e757ac491d9e959cba7ce70ff91731af8af0dc26"
-    sha256 cellar: :any,                 sonoma:        "1928e8dd45bc8e90a760f7118929ac6875ffdf4625dc6407efbeabbe04a45c2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a23cbd22d0f61cc11c44630a9fc28487d75bb721750bd5ee721f33b9c1edc1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de5e85e34d2e581413dbfc25823c7c1579b58c2ffc1525ec0b0b8afa1da666b3"
+    sha256 cellar: :any, arm64_tahoe:   "14b5dba31c77ff588d8c63ebb50482aff916b398eae2492e50962f61ce9d538c"
+    sha256 cellar: :any, arm64_sequoia: "3f2892d1153412baae715de01066ba44bd491e526994713d6131dc551ccd1c21"
+    sha256 cellar: :any, arm64_sonoma:  "1be0656b86065fdd5398dcf0b7f1b8d758b5d3be60aba8ae8a96bc8d86177546"
+    sha256 cellar: :any, sonoma:        "e883cdd1380a2ecc29986d7128ac3dbeca9b162a0a5e0ce20d5ab6e1545afa54"
+    sha256 cellar: :any, arm64_linux:   "d67126041cff83c3903d54eefef185355a68f669ace95f2647fde204d149d56b"
+    sha256 cellar: :any, x86_64_linux:  "594ed6ff1c96ff75bbe9e0df495eefacefed0cba036f99309cf17910a42d92d1"
   end
 
   depends_on "cmake" => :build
@@ -19,6 +19,13 @@ class BehaviortreeCpp < Formula
   depends_on "zeromq"
 
   uses_from_macos "sqlite"
+
+  # Apple libc++ has no floating-point std::from_chars; fall back to std::stod.
+  # PR ref: https://github.com/BehaviorTree/BehaviorTree.CPP/pull/1160
+  patch do
+    url "https://github.com/BehaviorTree/BehaviorTree.CPP/commit/865e9a47eca0f8a1b10c636d90f4b00eebe360af.patch?full_index=1"
+    sha256 "4ab0e1d247a89a3d29c8eb3a6d1423d4eaedb5d07f26cf4f211d8258e6650d2c"
+  end
 
   def install
     args = %W[

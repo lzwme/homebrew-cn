@@ -1,19 +1,19 @@
 class Uv < Formula
   desc "Extremely fast Python package installer and resolver, written in Rust"
   homepage "https://docs.astral.sh/uv/"
-  url "https://ghfast.top/https://github.com/astral-sh/uv/archive/refs/tags/0.11.27.tar.gz"
-  sha256 "346a0892881aaf08e8f14db41d37c0949d52f1dcb970a301b0ace94c72cbff4a"
+  url "https://ghfast.top/https://github.com/astral-sh/uv/archive/refs/tags/0.11.28.tar.gz"
+  sha256 "556c6cb42a2101c690704b08d0d3c5d596ea94e69353a820664568f0fcd62fd4"
   license any_of: ["Apache-2.0", "MIT"]
   compatibility_version 1
   head "https://github.com/astral-sh/uv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7ec624ee803555d26747869fd256252f9c90c9f69cfe58da089cc203c39a96c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9263acfb5019c0bce7495edf7e60382b99d732b83c52682864add038e38fa1b9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad8b1b95a1b09c6efa9980c9c265fd9c7b0d26b50cb724c83ab6c41336cad524"
-    sha256 cellar: :any_skip_relocation, sonoma:        "70b0e6c4b223c67f28b23691593cfc1e2ba4b776eb01103b3c69017b00d743c5"
-    sha256 cellar: :any,                 arm64_linux:   "70ef4b38d08ca670f3b4fc10a6fb3fd7470652aa2dcbd9fecd37898a000693e9"
-    sha256 cellar: :any,                 x86_64_linux:  "d566daf5872a1c9966bb05307737a03f8d46d98df41ace72f68f2548ea43e316"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e27a3d17bafac01c00e9b83bb7f806f870963d4b5c2400343bcc7ed46fde13c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eac6d369883df5a5f1289e6345a767ca5d29ca6ef161b29d3ab06ddfd2167d2c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb7e35067d1e72e3656a07c627afac41bee67585b29cf340f15339d80a5199fc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7c44d90fe2ef70b1de2077a8195fa813aba960c5b2f9eb8c6c7557213aa38a3a"
+    sha256 cellar: :any,                 arm64_linux:   "68a885a34949b543c80cb8e3255208a32e8b47d3007901a6f25ff4f2ced6f964"
+    sha256 cellar: :any,                 x86_64_linux:  "e633f1278472871d8b6fa195574d3b2262cb2fe0bda543cd04ff4f957f888115"
   end
 
   depends_on "pkgconf" => :build

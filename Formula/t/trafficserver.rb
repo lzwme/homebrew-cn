@@ -17,12 +17,13 @@ class Trafficserver < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "182206020fb8c695477d8d9eac13639ef9c57c7a93f47b8d3375e7455afb7233"
-    sha256 arm64_sequoia: "be8cc8e7c923c76a39d93bba355e3cc79567a8086141322b01d8dbd8e1a47ec8"
-    sha256 arm64_sonoma:  "f4d6f283b58d779341d107cecb7ad108710b079305649c5c71cb6baac7e0f2dc"
-    sha256 sonoma:        "76799f443752a33873f1436f6d149b6c5370d3ebf9d9c5764631c8b723ea875c"
-    sha256 arm64_linux:   "5895ebc5784cebb124bd0720b846f8b88717c924801c2452c2a5d5ccff0efeb2"
-    sha256 x86_64_linux:  "776fec6d372542a73e29590c57546f5343145c0e63c47921fe8eb0ffb9fef61d"
+    rebuild 1
+    sha256 arm64_tahoe:   "e8757d56f1d52183edb9cd934c8d0fd7e464c5886eed412c077a0ad76f25592d"
+    sha256 arm64_sequoia: "7c05efe6f8059003d9e8aeac27332e9b2f819a7a357bb951996035e4cca1bf45"
+    sha256 arm64_sonoma:  "3805b89658a2421a7141f2737d7edc94f742f91326f8de7b30b93b9d2418e6a0"
+    sha256 sonoma:        "f8dfab5ef2e107fbe25d94e034ebf6d26277cbc74f3a3d8a62649448259451f6"
+    sha256 arm64_linux:   "f0cf09092473143f029615b799bfe7c3833c581b869df8b9f10daaec2714525e"
+    sha256 x86_64_linux:  "6155f727dfb4d90db7219fab5a4583231e6d0a12a4a02e674a53108887429d08"
   end
 
   head do
@@ -65,21 +66,21 @@ class Trafficserver < Formula
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_EXPERIMENTAL_PLUGINS=ON",
+                    "-DCMAKE_INSTALL_LOCALSTATEDIR=#{var}",
+                    "-DCMAKE_INSTALL_RUNSTATEDIR=#{var}/run/trafficserver",
                     "-DEXTERNAL_YAML_CPP=ON",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-  end
 
-  def post_install
+    # CMAKE_INSTALL_SYSCONFDIR doesn't work as install_configs.cmake prepends the prefix
+    configs = (prefix/"etc/trafficserver").children.select(&:file?)
+    pkgetc.install configs
+    (prefix/"etc/trafficserver").install_symlink configs.map { |config| pkgetc/config.basename }
+
     (var/"log/trafficserver").mkpath
+    (var/"run/trafficserver").mkpath
     (var/"trafficserver").mkpath
-
-    config = etc/"trafficserver/records.config"
-    return unless File.exist?(config)
-    return if File.read(config).include?("proxy.config.admin.user_id STRING #{ENV["USER"]}")
-
-    config.append_lines "CONFIG proxy.config.admin.user_id STRING #{ENV["USER"]}"
   end
 
   test do

@@ -11,12 +11,13 @@ class RubyAT34 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "21560c8b90c0385208126b3506b220e78c268c6d16905e8a8ef14f24a533f401"
-    sha256 arm64_sequoia: "fe4e389464cfff111efeb4a0453b2a8cc7714edd552cfcd7fa8201acfad9ba7b"
-    sha256 arm64_sonoma:  "1f088487dbb89117b80b9c64c5ab12919e306894ba01d34f2f088c8c5855a2e4"
-    sha256 sonoma:        "aa6fc6c9596463be65b116e0bf870e32592b9427a45b5c0d714c28cfff1ffe05"
-    sha256 arm64_linux:   "b12568a41fb681a77bf2978de4e6b0db799eefe2a12c7929d7d0d0c9ba637331"
-    sha256 x86_64_linux:  "fd5d5c10fc2ff8c580c1b1e9f20240af1a6a0fd135343aacf023fd38b412d171"
+    rebuild 1
+    sha256 arm64_tahoe:   "65bef4e095e90fe491394673e5ba08107e3719621f09a271cd791699ae62d70c"
+    sha256 arm64_sequoia: "b7e8376697932898b02f941e817807578b1a7390da11d4d0384adf2d1bed2fee"
+    sha256 arm64_sonoma:  "ffd35b48a286ec986c9a9f0a05205c438b6d4447556174089d47e641f6f9ce22"
+    sha256 sonoma:        "a2357c44241be30cd28a4c33833fcd1b6ae209c7a3b74a4adbe6bd97e664ff1e"
+    sha256 arm64_linux:   "4e820ed2b0c652229a52333be8557f422ce4898f38e66cff1e842a339ef64178"
+    sha256 x86_64_linux:  "aaceb4ae9d15d102bc8197e50008c260680ae97ccc394e59e90d3911bdada33d"
   end
 
   keg_only :versioned_formula
@@ -109,19 +110,6 @@ class RubyAT34 < Formula
     # A newer version of ruby-mode.el is shipped with Emacs
     elisp.install Dir["misc/*.el"].reject { |f| f == "misc/ruby-mode.el" }
 
-    if OS.linux?
-      arch = Utils.safe_popen_read(
-        bin/"ruby", "-rrbconfig", "-e", 'print RbConfig::CONFIG["arch"]'
-      ).chomp
-      # Don't restrict to a specific GCC compiler binary we used (e.g. gcc-5).
-      inreplace lib/"ruby/#{api_version}/#{arch}/rbconfig.rb" do |s|
-        s.gsub! ENV.cxx, "c++"
-        s.gsub! ENV.cc, "cc"
-        # Change e.g. `CONFIG["AR"] = "gcc-ar-11"` to `CONFIG["AR"] = "ar"`
-        s.gsub!(/(CONFIG\[".+"\] = )"(?:gcc|g\+\+)-(.*)-\d+"/, '\\1"\\2"')
-      end
-    end
-
     resource("rubygems").stage do
       ENV.prepend_path "PATH", bin
 
@@ -151,17 +139,6 @@ class RubyAT34 < Formula
     # instead of in the Cellar, making gems last across reinstalls
     config_file = lib/"ruby/#{api_version}/rubygems/defaults/operating_system.rb"
     config_file.write rubygems_config
-  end
-
-  def post_install
-    # Since Gem ships Bundle we want to provide that full/expected installation
-    # but to do so we need to handle the case where someone has previously
-    # installed bundle manually via `gem install`.
-    rm(%W[
-      #{rubygems_bindir}/bundle
-      #{rubygems_bindir}/bundler
-    ].select { |file| File.exist?(file) })
-    rm_r(Dir[HOMEBREW_PREFIX/"lib/ruby/gems/#{api_version}/gems/bundler-*"])
   end
 
   def rubygems_config

@@ -1,8 +1,8 @@
 class CAres < Formula
   desc "Asynchronous DNS library"
   homepage "https://c-ares.org/"
-  url "https://ghfast.top/https://github.com/c-ares/c-ares/releases/download/v1.34.7/c-ares-1.34.7.tar.gz"
-  sha256 "556f781dd188ad932dc8263fee0ad3aaba675b4cd8e54d86908681b43ce3e327"
+  url "https://ghfast.top/https://github.com/c-ares/c-ares/releases/download/v1.34.8/c-ares-1.34.8.tar.gz"
+  sha256 "c222b6d681096f9444d2c4863d2c1174019e27cacca0a4a5c114d36dd7d7bf78"
   license "MIT"
   compatibility_version 1
   head "https://github.com/c-ares/c-ares.git", branch: "main"
@@ -13,12 +13,12 @@ class CAres < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9de9c5a3a303af0a89d4508b5c0eb07d30e8c084f003fcf89e777769c28c66db"
-    sha256 cellar: :any, arm64_sequoia: "4f9370924b6868bcb8f840133d22e476bd7098a6d80c1913b469fb0999dfd070"
-    sha256 cellar: :any, arm64_sonoma:  "c1525a2aea970f1f367a317fa412c2ba33d3c1634ccfea4901fcc7bb396982fc"
-    sha256 cellar: :any, sonoma:        "bf5170e7d181149e2ca5fec4dacb590a27750af163b701f8d3a184ce7423e052"
-    sha256 cellar: :any, arm64_linux:   "82f0cf8f8880f9d00b1988160eab469bebbe7d57826b9fc7d65946d1c8fde5eb"
-    sha256 cellar: :any, x86_64_linux:  "fd7cff6647754ab3ff999bd60927958f0fd02067193c82f4c26191e37130ca3f"
+    sha256 cellar: :any, arm64_tahoe:   "44bcc2e67b97daa265e168281875129161ddbbc964ab16ec0db1846c289cc376"
+    sha256 cellar: :any, arm64_sequoia: "cf56a78a008c16b5b430f5183178b644904fad00a55e6e57a20a835ecc45d33a"
+    sha256 cellar: :any, arm64_sonoma:  "df0ce513f28c6a9b16077b89e8d5468603c9683b29bed4f1df7f76ad0af14930"
+    sha256 cellar: :any, sonoma:        "38a79d86a4eeab5d3f1fdc017a6d4a1fc19c01d09c34f795f3bde6811eb5c1a5"
+    sha256 cellar: :any, arm64_linux:   "475c140e774855ea0582294aef43ed073f1f09956d4919419dd2c01a8d2ed78d"
+    sha256 cellar: :any, x86_64_linux:  "9225a94f66cf37b91f224c3e456d60fc59adfcfc9d28dd3c86966d1be3633687"
   end
 
   depends_on "cmake" => :build

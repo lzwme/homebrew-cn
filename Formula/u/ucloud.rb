@@ -1,23 +1,24 @@
 class Ucloud < Formula
   desc "Official tool for managing UCloud services"
   homepage "https://www.ucloud.cn"
-  url "https://ghfast.top/https://github.com/ucloud/ucloud-cli/archive/refs/tags/v0.3.3.tar.gz"
-  sha256 "446d28bfca346d27509b9917c6de75db254e38119171432bb7ad15f105d19316"
+  url "https://ghfast.top/https://github.com/ucloud/ucloud-cli/archive/refs/tags/v0.3.5.tar.gz"
+  sha256 "06d1c76ae0523fbd94ad5b87ea1f20fbc16379e1716aa8dea837eaf571e72cf5"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f90c5f3537b7ebf48fcd326e7f55845f2e5417a49a96bfefde574d9cf6c8ea85"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f90c5f3537b7ebf48fcd326e7f55845f2e5417a49a96bfefde574d9cf6c8ea85"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f90c5f3537b7ebf48fcd326e7f55845f2e5417a49a96bfefde574d9cf6c8ea85"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dfbc344d2fb9de20f6420fc8ac4bfd7a293b1b23590f91704a1acea0200e761a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab5fc229a9e91de2489e3f3858131fe9b594e0de8e13fd500fb10f2f30237d5a"
-    sha256 cellar: :any,                 x86_64_linux:  "d4b20a8f54300dc723f7f6f77cb789fb1cc519a3d046522e490b687f6fd18299"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b513ea044a009f25bed91429bc73bfb657e0f4d818259534f2ae2b47312b385"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b513ea044a009f25bed91429bc73bfb657e0f4d818259534f2ae2b47312b385"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b513ea044a009f25bed91429bc73bfb657e0f4d818259534f2ae2b47312b385"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a5fb76107e1e412fd083095b5b5163a937a78073c5035e2b1fa593e81d3151bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "74e3e92c563dfe4915302990e95905df8e47f9831600216ffc12d052a8e053a0"
+    sha256 cellar: :any,                 x86_64_linux:  "e6f3137091843d9b2f0c2031e1b0ca30a97fd7ca1cd9af5fe5223d426032c1c2"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "-mod=vendor"
+    ldflags = "-s -w -X github.com/ucloud/ucloud-cli/base.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags:)
   end
 
   test do

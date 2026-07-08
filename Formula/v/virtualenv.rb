@@ -3,13 +3,13 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https://virtualenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/f1/a5/81f987504738e6defeed61ec1c47e2aefab3c35d8eeb87e1b3f38cf28254/virtualenv-21.5.1.tar.gz"
-  sha256 "dca3bf98275a59c652b69d68e73433e597d977c2da9198882479d1a7188009c8"
+  url "https://files.pythonhosted.org/packages/74/65/ec1d92091671e6407d3e7c1f5801413bb7b2b57630a50cae7750456ba0ed/virtualenv-21.6.0.tar.gz"
+  sha256 "e18a4d750f2b64dea73e72ffde3922f3c52365fabdc8157ebd3da20d031c4734"
   license "MIT"
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6f638ec010ba0c63b87d483d9a6942af3fd6c65233ec87d695282926b5d8ae42"
+    sha256 cellar: :any_skip_relocation, all: "90a5b58f3ce6ab838c7ec197946aef165a514c0c99f4677777858aef01937c5c"
   end
 
   depends_on "python@3.14"
@@ -20,8 +20,8 @@ class Virtualenv < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/e6/dc/be6cbe99670cd6e4ad387123647cb08e0c32975e223f82551e914c5568a6/filelock-3.29.4.tar.gz"
-    sha256 "10cdb3656fc44541cdf30652a93fb10ec6b05325620eb316bd26893e4201538a"
+    url "https://files.pythonhosted.org/packages/e0/c8/35bdf04fb30755e2ed758f877edf3eb4a243c2463d3a258cc28b18b7a6e2/filelock-3.29.6.tar.gz"
+    sha256 "895c532ef3f4ef04972b9446a8c4e2931a5c399ff3c4be4c9369f2639b80f793"
   end
 
   resource "platformdirs" do
@@ -30,8 +30,8 @@ class Virtualenv < Formula
   end
 
   resource "python-discovery" do
-    url "https://files.pythonhosted.org/packages/0b/1a/cbbaf13b730abb0a16b964d984e19f2fe520c21a4dc664051359a3f5a9e7/python_discovery-1.4.2.tar.gz"
-    sha256 "8f3746c4b4968d22afbb97d36e1a0e5b66e6c0f297290f2e95f05b9b8bf18690"
+    url "https://files.pythonhosted.org/packages/66/26/8b004cc36f430345136f6f00fa1aa9ed596c8ed1e8504625fa79522ff39c/python_discovery-1.4.3.tar.gz"
+    sha256 "ad57d7045a862460d4a235986c33f13ed707d3aeb9153fa47eb7dfd0d4673289"
   end
 
   def install

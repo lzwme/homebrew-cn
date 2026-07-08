@@ -8,13 +8,13 @@ class Backgroundremover < Formula
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "050b8da47fc20042e88047de0f78820e90d7c676117da12e84ad9c7bc5ddc279"
-    sha256 cellar: :any, arm64_sequoia: "2a258a9f45930a6ff8b8238df2cffb3092cd0e86ba322ded512c1e4f91167db0"
-    sha256 cellar: :any, arm64_sonoma:  "896210c7f4213b5f82f654c5a20942707cc020707d5409267a2a5a961f3ce9f1"
-    sha256 cellar: :any, sonoma:        "67f59206bcf2e60b7263d6994128be8d1d79aa84afd55502769dae9c316ea097"
-    sha256 cellar: :any, arm64_linux:   "4c55272007ba102c5f5586086b9ae843fafce0801c7c9827c08dae37ef554c35"
-    sha256 cellar: :any, x86_64_linux:  "12ab3810b8353ad52aa7441ed937c896c6ff9777cd3dfb4b3a4800c65594cd5a"
+    rebuild 3
+    sha256 cellar: :any, arm64_tahoe:   "8b9790cbbbb59726b23db90459d9cf8dd544fb46188895a8e1bb1252afeda3df"
+    sha256 cellar: :any, arm64_sequoia: "b87c86a4f941f9eae70e1b9668bf6742a8004776dc4b9c59a4f795c5e8e539e8"
+    sha256 cellar: :any, arm64_sonoma:  "0a96a8739ecd422f0465e0ec7198bff87c38d6a1aee00d3a02acc8f07bbf7951"
+    sha256 cellar: :any, sonoma:        "da2994ee9f1e15337b9b0f2c6be6880e2e91ae982274f777cfef1978aca66106"
+    sha256 cellar: :any, arm64_linux:   "cc7c20085fd48a6bb836ce0f7ca7b21f2187a1bf147bb61ff09ac106b2aa601f"
+    sha256 cellar: :any, x86_64_linux:  "5f8023aaa49dc413ce21e0c24982d4c33e7c1ea5937e10efd032d66d885963c2"
   end
 
   depends_on "cmake" => :build
@@ -23,7 +23,6 @@ class Backgroundremover < Formula
   depends_on "ffmpeg"
   depends_on "libheif"
   depends_on "llvm"
-  depends_on "numpy"
   depends_on "pillow" => :no_linkage
   depends_on "python@3.14"
   depends_on "scikit-image" => :no_linkage
@@ -36,7 +35,7 @@ class Backgroundremover < Formula
   end
 
   pypi_packages exclude_packages: %w[certifi torch torchvision pillow scipy scikit-image],
-                extra_packages:   %w[imageio]
+                extra_packages:   %w[imageio numpy] # numba needs numpy < 2.5, so vendor it as a resource
 
   resource "blinker" do
     url "https://files.pythonhosted.org/packages/21/28/9b3f50ce0e048515135495f198351908d99540d69bfdc8c1d15b73dc55ce/blinker-1.9.0.tar.gz"
@@ -128,6 +127,11 @@ class Backgroundremover < Formula
     sha256 "b900e63a0e26c05ea9a6d5a3a5a0a177cb64c5011887bf43edb8c3ed2c38d363"
   end
 
+  resource "numpy" do
+    url "https://files.pythonhosted.org/packages/d0/ad/fed0499ce6a338d2a03ebae59cd15093910c8875328855781952abf6c2fe/numpy-2.4.6.tar.gz"
+    sha256 "f3a3570c4a2a16746ac2c31a7c7c7b0c186b95ce902e33db6f28094ed7387dda"
+  end
+
   resource "pillow-heif" do
     url "https://files.pythonhosted.org/packages/e3/5f/4753689400e657ca5d984f5e897657dab12d91b62f1bb6a1e73487b59a97/pillow_heif-1.4.0.tar.gz"
     sha256 "55a7c0cb5321538d1ca74037be54b48d147017735a766eb29bcca4761253a1f1"
@@ -185,7 +189,7 @@ class Backgroundremover < Formula
 
   def install
     ENV["LLVMLITE_SHARED"] = "1"
-    venv = virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources without: "numba"
 
     # We depend on the formula below, but they are separate formula, so install a `.pth` file to link them.
     # NOTE: This is an exception to our usual policy as building them is complicated
@@ -195,6 +199,9 @@ class Backgroundremover < Formula
 
     skimage_pth_contents = "import site; site.addsitedir('#{formula_opt_libexec("scikit-image")/site_packages}')\n"
     (venv.site_packages/"homebrew-scikit-image.pth").write skimage_pth_contents
+
+    # We install `numba` separately without build isolation to avoid building another `numpy`
+    venv.pip_install(resource("numba"), build_isolation: false)
   end
 
   test do

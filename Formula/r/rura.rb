@@ -1,17 +1,17 @@
 class Rura < Formula
   desc "Interactive TUI scratchpad for building shell pipelines"
   homepage "https://github.com/tlipinski/rura"
-  url "https://ghfast.top/https://github.com/tlipinski/rura/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "349e6895c4390bfb8fbaa788f3954e44ae313493b81e28cd45a8b49030e6cffa"
+  url "https://ghfast.top/https://github.com/tlipinski/rura/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "6716b12debfb9970f82d098fb573ff011b9eab879e0c7b908527bcb4d83bad59"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2cf08dfc0312a7dc2e0f39037038f6890faf4dd5390ed1f04e22e340cbd3a393"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "127f87d1cb9c611108f8b10235fe355853f6ad342bc75da8654704c2037e8039"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79e89eb4a51b51302428cd60aafb7f9caa1a54c67dd9cae911c8b3e191bdf8bc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e88359673639fab8d3126703dac0480c5be78144575a2698957c2ed8fda51f18"
-    sha256 cellar: :any,                 arm64_linux:   "da48bc606bdfdd319f13dc99f7416e559d3ee7d26548dbcb747a92f1b597d405"
-    sha256 cellar: :any,                 x86_64_linux:  "b4715e70301ae3052e9832c5de93ccc8006e1e0ba1698e601a041d7bf3b3faab"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2cc8cb11ba1ac81892bcb71c600aed2df76bfaf8d2e525c44cf106cccab74ce6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de586e2c16806e5ac6625b842129774edcd9e5771aaa1afc4da115b784d8257e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85a80d967e2944f578283329214db2b46546a75841b406a9e01cd33f98d1a13a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "71940370f1eb42624e8d9cc9321ac1a3e555a32433d80d2a2e294598418f4c7d"
+    sha256 cellar: :any,                 arm64_linux:   "6b3b49fb43e5a55bbbb1fdab9c04e6de206e2f69dfd27bb58592c2a81882bb05"
+    sha256 cellar: :any,                 x86_64_linux:  "bc5fd9bc729ed6e407ceb194308cbc98eb3df5d33392fb802930b2be6197ec23"
   end
 
   depends_on "rust" => :build

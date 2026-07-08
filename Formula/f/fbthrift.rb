@@ -1,19 +1,19 @@
 class Fbthrift < Formula
   desc "Facebook's branch of Apache Thrift, including a new C++ server"
   homepage "https://github.com/facebook/fbthrift"
-  url "https://ghfast.top/https://github.com/facebook/fbthrift/archive/refs/tags/v2026.06.29.00.tar.gz"
-  sha256 "e6a1d865752c434acd35b7170bd478f4f8eb2a18239f409f7c102baecca05778"
+  url "https://ghfast.top/https://github.com/facebook/fbthrift/archive/refs/tags/v2026.07.06.00.tar.gz"
+  sha256 "7dc7918a036cc064b842fb3382c44b7a1041eed0042747f7c184311de11f7109"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/fbthrift.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "87d78b355e0770594ab10da7148a9d880c9e4c8ed97595d402a700998b14d86c"
-    sha256 cellar: :any, arm64_sequoia: "dd4639b80cce312e8ad670ff7ccacd7c4da66591dd73dd1af2b32f95424c8b80"
-    sha256 cellar: :any, arm64_sonoma:  "5f43c11c02b926f3a89c0e5fa821d110572e8c3eb9963c6403fa1cc8e9583758"
-    sha256 cellar: :any, sonoma:        "5aded98598115f8c986344a01db9d4b7a8f4f93b2fa9a15ff9b6105acde0a2c8"
-    sha256 cellar: :any, arm64_linux:   "120604fcde721c98ffa32bf7f9924867c378f54ba8cd5ba1d9cf4045ce2aaf05"
-    sha256 cellar: :any, x86_64_linux:  "f295639bbaf449160150748ce609bb04f6233d79701b704a0fc20431e750bfa0"
+    sha256 cellar: :any, arm64_tahoe:   "7b99c9290e39ce257ad92d68cff28c89468ce2e3b549c1a57bcb6d3168e980af"
+    sha256 cellar: :any, arm64_sequoia: "20c2373cef2d8c419c6dba30b0e767ab0037295eaec05938f73515df9bf1ecdc"
+    sha256 cellar: :any, arm64_sonoma:  "8ab50d8a816c6a31dc6fca674d1a447af066f811c664bfb46752946e3db0066d"
+    sha256 cellar: :any, sonoma:        "610dfc8713dd617b62ddb699f636ea7ebd23b3c768edbb38e773d1377b2ef276"
+    sha256 cellar: :any, arm64_linux:   "d74f2c13d202ef08c6c6d809de2dcf1196d1578c89be25ae79c7e388b6a3910f"
+    sha256 cellar: :any, x86_64_linux:  "9098217aa70cad71888bd350d91d84dde889bd6cadb5f2cf39919e32460d425d"
   end
 
   depends_on "bison" => :build # Needs Bison 3.1+
@@ -36,6 +36,13 @@ class Fbthrift < Formula
   on_linux do
     depends_on "boost"
     depends_on "zlib-ng-compat"
+  end
+
+  # Apple Clang on macOS 14 rejects class-type switch labels; switch on the underlying enum.
+  # PR ref: https://github.com/facebook/fbthrift/pull/705
+  patch do
+    url "https://github.com/facebook/fbthrift/commit/04bf7750b6dc85a443434f6f9c5826a98fa2a0a1.patch?full_index=1"
+    sha256 "2d43bd1a51839fb51ca3c51e61e5e8f0f519474f7432607041d666b3c0c758bb"
   end
 
   def install

@@ -3,17 +3,17 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/0b/69/9b2c95f02f8173331ae6221e47413197a91bfd06a13d668c22e085e7d593/flexget-3.19.26.tar.gz"
-  sha256 "2d277bf79db9dbe11739a6829f1542e2f5936f1240105d433b5e0a1160eda10f"
+  url "https://files.pythonhosted.org/packages/1e/5d/e97212aa96b6b040e000b6ef9a0252af4d828ddbac61f3e0ef39fb06a22e/flexget-3.19.27.tar.gz"
+  sha256 "f7f6ab6507b2e2718b87653d76f36b794b2f57a5b406b1ddf939a073f6024dab"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "12c4595dcc8b3da0031458efee856d7d4eb23c782cfc3425a57ddb37e67c5a4d"
-    sha256 cellar: :any, arm64_sequoia: "fb485ab71b4223caeaddce6cab6aed8dfec4e9d04504634d4bb9775ede87fb57"
-    sha256 cellar: :any, arm64_sonoma:  "cb0fcb9d35fb4803b615613038683114064bd118a79677d39b8842dbfd62f44d"
-    sha256 cellar: :any, sonoma:        "1006d09780b3af744a1b2fb6d10e86a7e20f70d9456762f3aea02e481a2fd49b"
-    sha256 cellar: :any, arm64_linux:   "b5006a90e80f49fcd1e412f5a660e48a62965b916fe4c09c49e1361e303a80da"
-    sha256 cellar: :any, x86_64_linux:  "81cc654b39866eb0a1dcfd84576665d18740a7180d453e99e3c74c0b4f7c7e3e"
+    sha256 cellar: :any, arm64_tahoe:   "b16a07bac1ef069bdea31832c2194594bad18440a6a8449f29b4f32cbd6fc26e"
+    sha256 cellar: :any, arm64_sequoia: "746f838a6b4f0126fd03486334e92ce6afdee843f3b7f0caf26b606cd165b11e"
+    sha256 cellar: :any, arm64_sonoma:  "5bf7df1bd0d82f805737a2aa805f1424f9ee46bf6dfd6320ba60fbe713c19de9"
+    sha256 cellar: :any, sonoma:        "56201cb84f1c665f465e1129e70d18a42fd5237c4106d7a9ab2692773c3575d1"
+    sha256 cellar: :any, arm64_linux:   "abceb2c0381816b49cd069c9298a5de0b72505492fb239051c86db6d2ecf7825"
+    sha256 cellar: :any, x86_64_linux:  "216870cb5822bedaf1330cbb47b6f2373a322fdd95d7379c763c63e66bfb9031"
   end
 
   depends_on "rust" => :build
@@ -300,8 +300,8 @@ class Flexget < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
-    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
   end
 
   resource "sgmllib3k" do

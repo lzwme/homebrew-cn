@@ -1,9 +1,9 @@
 cask "datadog-security-cli" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "0.0.6-1"
-  sha256 arm:   "264ea3d6203d9ab3bdb5df6ad4329b86a664172647d26b70de778ab14ad058b5",
-         intel: "f5e4ecb6bbd9c28c2931a5547e45e0ad78d5e275e348b2cbed2e2069e8ba70ea"
+  version "0.0.9-1"
+  sha256 arm:   "3a34b313534c5ec0033ef2b3f745735914a7250b8230e47b5ef020de264509ef",
+         intel: "1ae82211117289fb9aece896eeda76d0a2b0aadca0a0fa7d319b9eaf22f77c9c"
 
   url "https://dd-agent.s3.amazonaws.com/datadog-security-cli-#{version}.#{arch}.dmg",
       verified: "dd-agent.s3.amazonaws.com/"

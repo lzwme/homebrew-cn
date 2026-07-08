@@ -2,19 +2,19 @@ class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https://odin-lang.org/"
   url "https://github.com/odin-lang/Odin.git",
-      tag:      "dev-2026-06",
-      revision: "285f6d87bc86b17329fb23416fd512da4393885b"
-  version "2026-06"
+      tag:      "dev-2027-07",
+      revision: "301c287de90393608fb7c5b260210e1e67caf0fd"
+  version "2027-07"
   license "Zlib"
   head "https://github.com/odin-lang/Odin.git", branch: "master"
 
   bottle do
-    sha256               arm64_tahoe:   "525c550b357f0217eb92994b3601fb987515d29dbcfbed8bd80ae945bbf82685"
-    sha256               arm64_sequoia: "24c55850bd625d163c6f9987ac7005f6db967ec69d658cd2bf71907b691fb886"
-    sha256               arm64_sonoma:  "384639cfdea65e418965d91e2be35b73b5de2dc0fa1b4c67cfbab58072b38e3d"
-    sha256 cellar: :any, sonoma:        "9552a57935eab3ca4230907f1f83ff09cac970c963018627d96ed773570f242f"
-    sha256 cellar: :any, arm64_linux:   "262475f761d4f06c7b9e1d9ca686bdca1ea031f63ae80376ec9314d0a03e2cd5"
-    sha256 cellar: :any, x86_64_linux:  "288b049665dbdf70a81e260468e174c85bd2a5b4a85b03d9e83359d8fda4c444"
+    sha256               arm64_tahoe:   "c0d43b4061ff6cc6aa40ede804825300352c7d7d9d33270f6c4c50e3a316a1ca"
+    sha256               arm64_sequoia: "1fc87f2b60f4aac7f68ff57e04bd6e498771c5ac4c70e635467e92c6938d3c5c"
+    sha256               arm64_sonoma:  "6cd031c4b1bce7c18a85462d350bd24d4c82bcf9459889769efaf6a2e2638bd3"
+    sha256 cellar: :any, sonoma:        "49078e5dbf48d6b368e7098c1badecbbcac35abd0266bfb01dfb8bdff99cd504"
+    sha256 cellar: :any, arm64_linux:   "ff510c5e1a735051b8fdef9397f4f7d288871cdf3904094af858cbfa0a789f6b"
+    sha256 cellar: :any, x86_64_linux:  "98c4e7a8ce0762ba70d9f215013bb35d1cf6da6fc91cc7ba252d0395abfa0d36"
   end
 
   depends_on "glfw" => :no_linkage
@@ -51,58 +51,55 @@ class Odin < Formula
       system "make", "unix"
     end
 
-    raylib_installpath = if OS.linux?
-      "vendor/raylib/linux"
-    else
-      "vendor/raylib/macos"
-    end
-
-    raygui_installpath = if OS.linux?
-      "vendor/raylib/linux"
-    elsif Hardware::CPU.intel?
-      "vendor/raylib/macos"
-    else
-      "vendor/raylib/macos-arm64"
-    end
-
     glfw_installpath = if OS.linux?
       "vendor/glfw/lib"
     else
       "vendor/glfw/lib/darwin"
     end
-
     ln_s Formula["glfw"].lib/"libglfw3.a", buildpath/glfw_installpath/"libglfw3.a"
 
-    ln_s Formula["raylib"].lib/"libraylib.a", buildpath/raylib_installpath/"libraylib.a"
-    # In order to match the version 500 used in odin
-    ln_s Formula["raylib"].lib/shared_library("libraylib", "5.5.0"),
-      buildpath/raylib_installpath/shared_library("libraylib", "550")
+    raylib = Formula["raylib"]
+    vendor = buildpath/"vendor/raylib"
+
+    # Odin's `vendor:raylib` bindings link raylib from fixed per-OS/arch dirs
+    static_dir, shared_dir = if OS.mac?
+      ["macos", "macos"]
+    elsif Hardware::CPU.arm?
+      ["linux-arm", "linux-arm64"]
+    else
+      ["linux", "linux"]
+    end
+
+    (vendor/static_dir).mkpath # linux-arm is not shipped in the checkout
+    ln_s raylib.lib/"libraylib.a", vendor/static_dir/"libraylib.a"
+    ln_s raylib.lib/shared_library("libraylib", "6.0.0"),
+         vendor/shared_dir/shared_library("libraylib", "600")
+
+    raygui_dir = vendor/(OS.mac? ? "macos" : "linux")
+    raygui_name = (OS.mac? && Hardware::CPU.arm?) ? "libraygui-arm64" : "libraygui"
 
     resource("raygui").stage do
       cp "src/raygui.h", "src/raygui.c"
 
-      # build static library
       system ENV.cc, "-c", "-o", "raygui.o", "src/raygui.c",
-        "-fpic", "-DRAYGUI_IMPLEMENTATION", "-I#{Formula["raylib"].include}"
-      system "ar", "-rcs", "libraygui.a", "raygui.o"
-      cp "libraygui.a", buildpath/raygui_installpath
+        "-fpic", "-DRAYGUI_IMPLEMENTATION", "-I#{raylib.include}"
+      system "ar", "-rcs", "#{raygui_name}.a", "raygui.o"
+      cp "#{raygui_name}.a", raygui_dir
 
-      # build shared library
       args = [
-        "-o", shared_library("libraygui"),
+        "-o", shared_library(raygui_name),
         "src/raygui.c",
         "-shared",
         "-fpic",
         "-DRAYGUI_IMPLEMENTATION",
         "-lm", "-lpthread", "-ldl",
-        "-I#{Formula["raylib"].include}",
-        "-L#{Formula["raylib"].lib}",
+        "-I#{raylib.include}",
+        "-L#{raylib.lib}",
         "-lraylib"
       ]
-
       args += ["-framework", "OpenGL"] if OS.mac?
       system ENV.cc, *args
-      cp shared_library("libraygui"), buildpath/raygui_installpath
+      cp shared_library(raygui_name), raygui_dir
     end
 
     # By default the build runs an example program, we don't want to run it during install.
@@ -164,6 +161,8 @@ class Odin < Formula
         assert(42 <= num && num <= 1337)
       }
     ODIN
+    # raylib's bindings link libX11 on Linux; make it loadable at runtime.
+    ENV.prepend_path "LD_LIBRARY_PATH", Formula["libx11"].lib if OS.linux?
     system bin/"odin", "run", "raylib.odin", "-file"
 
     if OS.mac?

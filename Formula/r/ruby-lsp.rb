@@ -1,18 +1,18 @@
 class RubyLsp < Formula
   desc "Opinionated language server for Ruby"
   homepage "https://shopify.github.io/ruby-lsp"
-  url "https://ghfast.top/https://github.com/Shopify/ruby-lsp/archive/refs/tags/v0.26.9.tar.gz"
-  sha256 "dce37728a674194f27e5a6565adb298cb10ab7f7bd8bfbed60180fe57d0bc64b"
+  url "https://ghfast.top/https://github.com/Shopify/ruby-lsp/archive/refs/tags/v0.26.10.tar.gz"
+  sha256 "32225c7c1ede0862b4ccbb6fdfff0d79ef16e972d4d7b02e54e8aab6f94351dc"
   license "MIT"
   head "https://github.com/Shopify/ruby-lsp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "70e906ca86ab7d544c64e5c5c8ff5cb6c753330da919149c0da47f4a607efd3c"
-    sha256 cellar: :any,                 arm64_sequoia: "c892b43193f13f0ac62991a8f14a0226e688392f41d86426c5707f34e6e9dffa"
-    sha256 cellar: :any,                 arm64_sonoma:  "660ea01b712675baea507d0658d4f8fee09d6d72a4331f478c895afc3a2c41de"
-    sha256 cellar: :any,                 sonoma:        "eb7487772e9435ffd6ee57a12d01f8f94795aac8a329dafe05b2baff9f4dfb4b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e67d8ebb4b705aed8fcd747dd643076a22fc47b926e0d3ca98cc45319233039"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f249b8e92c21ff6e78972874d89a087b23741e78b94fbf526fd0922702ef3926"
+    sha256 cellar: :any, arm64_tahoe:   "0b762ef09326a2289410c0267aa8d1c03c8529ab98c4e23274e3d65c6398c75f"
+    sha256 cellar: :any, arm64_sequoia: "d9375ca3d3db4eca1350fc8cdc79446594451640fe3e3c020d7c60db64cd7f61"
+    sha256 cellar: :any, arm64_sonoma:  "5f99f0c5508d3da1546981ae1e0f1473b9411613a8e2ec6258d42343aeca0a3f"
+    sha256 cellar: :any, sonoma:        "56930988db8ced43ba98cceb2951fbfd16e8ec8a1a6739b845375a8e9be01f85"
+    sha256 cellar: :any, arm64_linux:   "09556fea1439ba96cde8a94307cee0a63b7957e17369be572f3ee1d59689ec08"
+    sha256 cellar: :any, x86_64_linux:  "f68acbdbf42fe2834e0d8289b85e4fb83ca9fd435989e2764292fa0b64cf6d4c"
   end
 
   depends_on "ruby"

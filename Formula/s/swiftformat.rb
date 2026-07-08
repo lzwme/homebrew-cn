@@ -1,18 +1,18 @@
 class Swiftformat < Formula
   desc "Formatting tool for reformatting Swift code"
   homepage "https://github.com/nicklockwood/SwiftFormat"
-  url "https://ghfast.top/https://github.com/nicklockwood/SwiftFormat/archive/refs/tags/0.62.0.tar.gz"
-  sha256 "7ccbb3a4e31592b34c5bcc04575af3af98da7863a234e2f8f5315295e14d30dd"
+  url "https://ghfast.top/https://github.com/nicklockwood/SwiftFormat/archive/refs/tags/0.62.1.tar.gz"
+  sha256 "cf078cc044b998aa4bafad731ae2d360242e820ba0acc4c6f2856b99e6052e12"
   license "MIT"
   head "https://github.com/nicklockwood/SwiftFormat.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8d39f5af0ef7862e7635168def6b068903dca83357de18484774247ec9b4970"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0598a8901ed0cd4189304a5bec7ac52888fc2325136741e9626aa25b6ba6f86a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a49ec498e12539f90d989351ab533caba9a84ed6c4104d77ca9d1c8befb51651"
-    sha256 cellar: :any_skip_relocation, sonoma:        "41746c0a91d8e9d3b02c3bc40d1543c67b7a9f160d5269fb2f4467da2c63a0ca"
-    sha256 cellar: :any,                 arm64_linux:   "91d2408c858b0438047b66e45366c1ed58dd6e31bde894854bbb8d990d4ebf92"
-    sha256 cellar: :any,                 x86_64_linux:  "9837cb39a290cab7a06be3e57c8bb4d77219cdea98cbfd6514414a0db53d25f5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d66ed3272bd0aa65945b60f5a8ed670d70e73e4451ff66a517057f390d924a48"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0970555d9ea51a4cf58034c54ae05da9ddb5ced370a0396c98a5c0acff327206"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ccba932fdaabba24326973ad119fa56cfb83524c53e661c59aa150096a7d00b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5b9e1cfdb402b73c3a2332aa035417b508ede21073ce934f4089a08509ea3e4c"
+    sha256 cellar: :any,                 arm64_linux:   "582e0e2085b3e8f0d21457f5dddb260d73afec07dc4fe4d6a98fe1cf47e471ba"
+    sha256 cellar: :any,                 x86_64_linux:  "10495777d080c3cde39c3af9d6971fd7bcacb9fa1d24b7641c31935be9e5302d"
   end
 
   uses_from_macos "swift" => :build

@@ -1,18 +1,18 @@
 class OsctrlCli < Formula
   desc "Fast and efficient osquery management"
   homepage "https://osctrl.net"
-  url "https://ghfast.top/https://github.com/jmpsec/osctrl/archive/refs/tags/v0.5.3.tar.gz"
-  sha256 "2c08afa0c33127809482136ff6d76d94960441b34f5b159258a945cbee09491a"
+  url "https://ghfast.top/https://github.com/jmpsec/osctrl/archive/refs/tags/v0.5.4.tar.gz"
+  sha256 "1047424879652f42bd8b444859db0a965e55caa5fbae223be1ebefe9b2eb653a"
   license "MIT"
   head "https://github.com/jmpsec/osctrl.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6116d92d02033c4b32e7e4b184fdc75f339e8dc6353075d6eb92be2637fe2d2e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c075dd8a17a80a7265fd77d796d1f8e9b06d058aea472808890be7131ad63fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b626087aa2748604df9db8d9e153a3a7b634aceeb8549393400d28dfd7d30496"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5037e28099f7f734c7201c902f630062621e8d0a9f37d1746272445bf9afb595"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "353b2e6ebe280e67a639a331b0a12290f62e43a7f63b048d78687372f5fcf4f8"
-    sha256 cellar: :any,                 x86_64_linux:  "bdd3430c44e221a7c3d07b60c5524f2893e82079c98b92e26b3d41b8997306b5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a7bcbbd4226ca25564926209b0ed1648dceef5475ae9bd2171c5dd71c540bb1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27ae069566e9626e7237836564aebdff28d70b8947593883de4d039882e7d7b5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ccec2c45f80eaac1094c08d781a0cb7602a5fd306a4be443fdcaf4baec561e3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d523dd5b9bba9e401a9172babaf1e99dd46b4a10a81b39d398c01f7485c52221"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a713be38b8d8db9621c28002bcf5293ac852591dac1c505763753cb97572a91"
+    sha256 cellar: :any,                 x86_64_linux:  "71897c4093ee2a93e9ba71630b505df8d454bfbe928e7cdc6c8de77d97bee8f4"
   end
 
   depends_on "go" => :build

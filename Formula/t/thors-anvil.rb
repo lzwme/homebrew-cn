@@ -2,17 +2,17 @@ class ThorsAnvil < Formula
   desc "Set of modern C++20 libraries for writing interactive Web-Services"
   homepage "https://github.com/Loki-Astari/ThorsAnvil"
   url "https://github.com/Loki-Astari/ThorsAnvil.git",
-      tag:      "11.0.5",
-      revision: "5468351d60b22875191b517c7b37b7ddbb859cf4"
+      tag:      "11.1.0",
+      revision: "679f2c1136293f0275a87f7a718c161aa085ee20"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3237331d2a53bed86fd350f88d01695e891db156496bf73135ddf5018b705af8"
-    sha256 cellar: :any, arm64_sequoia: "d1a02c2ee851463f04e75cd8347dac6703908fc48fc6b343b2026fda9e7af049"
-    sha256 cellar: :any, arm64_sonoma:  "31b0e2e3c22d10faedbd273c625fcb827cfb8e8ded63105083b45f85b4901369"
-    sha256 cellar: :any, sonoma:        "501e68035c990538d3322ed40ed8e43776380daa2dcf83df4c8852945ae2690e"
-    sha256 cellar: :any, arm64_linux:   "f964763633c8c9b53eb5fd77d19107e7e2a83dd3b04b86a65a898e8f30b7c510"
-    sha256 cellar: :any, x86_64_linux:  "236342ade5655d2b8736d39e4bad0ca22758e3eec5cd80e730723fa521816ce3"
+    sha256 cellar: :any, arm64_tahoe:   "98edd3be9c921b930dbe0f9913452147d79e22c3ce5f72f1e43e280fae68c199"
+    sha256 cellar: :any, arm64_sequoia: "09543e3761c37183441c582d82070da65eaa7963cc86d84d00900e48ad499ba6"
+    sha256 cellar: :any, arm64_sonoma:  "73dcf65e075b0d906879c31dd9ea088434707aefab295f3b8e81410b3b3bb929"
+    sha256 cellar: :any, sonoma:        "4ed7f7c8c5d885fd2fb63f31adb5829b87962096b120f24a8856a24ada66c476"
+    sha256 cellar: :any, arm64_linux:   "bb44e67ff8909c9cd1cd808064bdc855f98266ec1557dfa37243513ce83aaa6d"
+    sha256 cellar: :any, x86_64_linux:  "7c86616a1ff8ed2683b87e98e5577833ebb6551ffa400888f15f16283fb6b208"
   end
 
   depends_on "cmake" => :build
@@ -34,7 +34,6 @@ class ThorsAnvil < Formula
     # src/Serialize/./StringInput.h:104:27: error: call to deleted function 'from_chars'
     ENV.append_to_cflags "-DNO_STD_SUPPORT_FROM_CHAR_DOUBLE=1" if DevelopmentTools.clang_build_version == 1700
 
-    system "./brew/init"
     system "./configure", "--disable-vera",
                           "--disable-test-with-integration",
                           "--disable-test-with-mongo-query",

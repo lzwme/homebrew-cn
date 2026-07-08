@@ -24,10 +24,6 @@ class Qxmpp < Formula
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1400
   end
 
-  on_linux do
-    depends_on "llvm" => :build if DevelopmentTools.gcc_version < 14
-  end
-
   fails_with :clang do
     build 1400
     cause "Requires C++20"
@@ -39,8 +35,6 @@ class Qxmpp < Formula
   end
 
   def install
-    ENV.llvm_clang if OS.linux? && deps.map(&:name).any?("llvm")
-
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_DOCUMENTATION=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

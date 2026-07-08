@@ -1,11 +1,11 @@
 class Go < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.26.4.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.26.4.src.tar.gz"
-  sha256 "4f668a32fbfc1132e6a881fb968c2f1dada631492a339211735fbb255a42602d"
+  url "https://go.dev/dl/go1.26.5.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.26.5.src.tar.gz"
+  sha256 "495be4bc87176ac567392e5b4116abd98466d33d7b49d41e764ccc6976b2dc42"
   license "BSD-3-Clause"
-  compatibility_version 6
+  compatibility_version 7
   head "https://go.googlesource.com/go.git", branch: "master"
 
   livecheck do
@@ -22,12 +22,12 @@ class Go < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "acc3ac78fddb7c046c25acf3b5e59749c072735b50bda33ff20447e31202b3c2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acc3ac78fddb7c046c25acf3b5e59749c072735b50bda33ff20447e31202b3c2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "acc3ac78fddb7c046c25acf3b5e59749c072735b50bda33ff20447e31202b3c2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2ab0625e88e71950fa35bc2d5e63ab337d9e974008e6b0ae4755486ff7422692"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fde4633fc77d3e0b9416194f6dddcf376128b6bb3ea82678f8733e4189af2abb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad47f0340175cb9fb62d367a0e43ce59ab39d20496007586f947d6c43f08729b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf4b285f1598ebcf8b69c65580ab580bccbdad69d38c4e24cb632d66a13e8fdb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf4b285f1598ebcf8b69c65580ab580bccbdad69d38c4e24cb632d66a13e8fdb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf4b285f1598ebcf8b69c65580ab580bccbdad69d38c4e24cb632d66a13e8fdb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9c53f0b96ab0ae2c68d343da57890e1cd06c41d9417403023b20a9ca19a5e56a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "471eb20984ca669486f9e9d6315d35c914ce2ffca791a1cf55d68d5f76dd0efa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc18600270e1ebd8a26e93067a43fcf23863d479e1e26db0f19decbaeef4e58b"
   end
 
   on_macos do

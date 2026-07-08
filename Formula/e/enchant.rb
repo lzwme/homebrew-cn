@@ -1,18 +1,18 @@
 class Enchant < Formula
   desc "Spellchecker wrapping library"
   homepage "https://rrthomas.github.io/enchant/"
-  url "https://ghfast.top/https://github.com/rrthomas/enchant/releases/download/v2.8.18/enchant-2.8.18.tar.gz"
-  sha256 "883a16f0898c7b1af38046d8bce5c658156698498541e9344c60e317e8d48f2a"
+  url "https://ghfast.top/https://github.com/rrthomas/enchant/releases/download/v2.8.19/enchant-2.8.19.tar.gz"
+  sha256 "8e7f6cb0c3b79be3146eb3ab93650484adbc59dae5f2c1958fde557080ba678c"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "71e4cea24fe2fc824ffe00204570e8084891b6adaf379f629b7bac8b5b06919f"
-    sha256 arm64_sequoia: "80beea2102bb9b4a9121752078cd96557462d8c377e27c934d0e7c80ef29992f"
-    sha256 arm64_sonoma:  "4198951592187f0e1c30d7a62e3cef99bb64f4e1b8080b44cbe85f3f7ac2f2cc"
-    sha256 sonoma:        "87f73ef98a1bdc30206baacba57b3cd4058e0b0bac4612904ca61921c54789e8"
-    sha256 arm64_linux:   "a09003c67357eae55cdbc873cc50490c7ef01b63edc1c5fdfbcbea7b6afa2c63"
-    sha256 x86_64_linux:  "f2245beb637993a2f91fe79ccbe5361f14926b6615c2051651f34a4e7bc299e6"
+    sha256 arm64_tahoe:   "5ec902e43601663826459458de83b2163c4921d2fed40201fd0a0d01604801eb"
+    sha256 arm64_sequoia: "55be44a0b1487607c99ee9cf617932e001ad59ec12a7abce004a2636b6b47f58"
+    sha256 arm64_sonoma:  "96fef54beeb48e473300b8a480a373106d7723eb9abf786c8c698f7f78d97aa2"
+    sha256 sonoma:        "4cba9968d795a6b167db50d408bef8e3d0e5e0f82001d0ded07beef41631c557"
+    sha256 arm64_linux:   "e9836769f06b8a068c207e15a58ae776c302eefc51b00f0204e48d98cdac7ea2"
+    sha256 x86_64_linux:  "c386827efe68b7c4b4b3de3baf1aa6a9e014195160d9b4894bee371ce4557355"
   end
 
   depends_on "pkgconf" => :build

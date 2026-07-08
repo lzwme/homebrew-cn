@@ -1,17 +1,17 @@
 class AlevinFry < Formula
   desc "Efficient and flexible tool for processing single-cell sequencing data"
   homepage "https://github.com/COMBINE-lab/alevin-fry"
-  url "https://ghfast.top/https://github.com/COMBINE-lab/alevin-fry/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "62ba4c02b4b86dd56ccc8c8c0ec8728f0f159f1107cea37e27a02ee4b54de7bb"
+  url "https://ghfast.top/https://github.com/COMBINE-lab/alevin-fry/archive/refs/tags/v0.16.0.tar.gz"
+  sha256 "0186c76859abd164bfa9cd3f6b13d2b31d572aff83d11bfb7f536d74810089ef"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca901ca2a9ac15e8a47b88ea375a5f547bef5d844761984d502651cb0fb98a8d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25b176a2e9bed1a272f9443755ddd8508ec931e04397ced2ad1885afe86858a2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ba16f4db85a9be1591d0085fcd86d78f39546abaf5a4ff3c918722aa275a0f6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dd80d1031837879ecea24efe2b5f60d3d584d5b1d2649a7f6d51dc29a346f80c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b512e105675e0c8e0a73ac5c40e1841862c3d8bcd39e89deb15002c651542937"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ccda4728813e88fd2bf47c71434fc4aecc652e6413e026d97738d1f250de679"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a39a6491998bb7085bd72a55cb2e839f43a4eaa8c06a9682b9064a6014f0c4d7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7307ce2640ad5ad22fafb1baa6fe36d75beabf8a3c1cac6b64b1ac86af7d8392"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "97120c75459fd01ab2a295daa5babd0567ebacd2a64ef65e16eccc61fd5b4c74"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2f2f9e27459be8219007e27ea7b606bfbc87fb88f2e740e0182df186ccef7ac5"
+    sha256 cellar: :any,                 arm64_linux:   "d38462ba92b6552d8f0d0ac1ed24082ce2c7ba2a4a1c1265fe9326e4bdf24f7e"
+    sha256 cellar: :any,                 x86_64_linux:  "a2ae575b8cb987fc18c5bfe0bc0f43585b594841a868e52fcbe14f588404ffa6"
   end
 
   depends_on "cmake" => :build

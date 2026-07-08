@@ -11,12 +11,13 @@ class RubyAT33 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5a7ed215d0f36ef6eace83824aa82bc8338719efecff5d844477cb67a6983f83"
-    sha256 arm64_sequoia: "5ac78d6da4430380e2fbb13014d36ece144c5cda1f0a76f525dc45cbc07ff588"
-    sha256 arm64_sonoma:  "354ea0e876c66fc0a31486fd3780fe7dcd0865c776210b14ed09f9d9a1476482"
-    sha256 sonoma:        "077f5a0f18025a1010d556436aec97f37aad2eb669a0f88ff08bf2a9423743df"
-    sha256 arm64_linux:   "4bd9d79381ac0897e830ea3eeb07128e7d996f9ea3cdee55d8fc8e82dbf5a282"
-    sha256 x86_64_linux:  "ba673a5b6e384874269a80aab923a083b9d9da42b4119dd452f5b433a831abf0"
+    rebuild 1
+    sha256 arm64_tahoe:   "29fddd4ba44cfbfb98a6965c050a5bd3578488febd70c527bfd92550eecd5a9b"
+    sha256 arm64_sequoia: "e5e5dbabf1091f08407dc0e102c19f9c637df37a3edd3a20643d63c372e8eb3a"
+    sha256 arm64_sonoma:  "a2f1c35482f9caf6709679ebb73ac1fa7df34758c05c93e79d66caed08c10fba"
+    sha256 sonoma:        "a959421b817b06bf368694e8f0d76f6790f121f7d397c70c691673e8c8c031d9"
+    sha256 arm64_linux:   "dc709a92c5c72e53347ca83958f9d20c0abaa1cdf13821886247d4e21d271eb4"
+    sha256 x86_64_linux:  "c86eb244296bd19c8ad0fe84f3316ed87b7ad7b2f5b4fcf165728fcc9731ae17"
   end
 
   keg_only :versioned_formula
@@ -101,19 +102,6 @@ class RubyAT33 < Formula
     # A newer version of ruby-mode.el is shipped with Emacs
     elisp.install Dir["misc/*.el"].reject { |f| f == "misc/ruby-mode.el" }
 
-    if OS.linux?
-      arch = Utils.safe_popen_read(
-        bin/"ruby", "-rrbconfig", "-e", 'print RbConfig::CONFIG["arch"]'
-      ).chomp
-      # Don't restrict to a specific GCC compiler binary we used (e.g. gcc-5).
-      inreplace lib/"ruby/#{api_version}/#{arch}/rbconfig.rb" do |s|
-        s.gsub! ENV.cxx, "c++"
-        s.gsub! ENV.cc, "cc"
-        # Change e.g. `CONFIG["AR"] = "gcc-ar-11"` to `CONFIG["AR"] = "ar"`
-        s.gsub!(/(CONFIG\[".+"\] = )"(?:gcc|g\+\+)-(.*)-\d+"/, '\\1"\\2"')
-      end
-    end
-
     # This is easier than trying to keep both current & versioned Ruby
     # formulae repeatedly updated with Rubygem patches.
     resource("rubygems").stage do
@@ -145,17 +133,6 @@ class RubyAT33 < Formula
     # instead of in the Cellar, making gems last across reinstalls
     config_file = lib/"ruby/#{api_version}/rubygems/defaults/operating_system.rb"
     config_file.write rubygems_config
-  end
-
-  def post_install
-    # Since Gem ships Bundle we want to provide that full/expected installation
-    # but to do so we need to handle the case where someone has previously
-    # installed bundle manually via `gem install`.
-    rm(%W[
-      #{rubygems_bindir}/bundle
-      #{rubygems_bindir}/bundler
-    ].select { |file| File.exist?(file) })
-    rm_r(Dir[HOMEBREW_PREFIX/"lib/ruby/gems/#{api_version}/gems/bundler-*"])
   end
 
   def rubygems_config

@@ -1,23 +1,30 @@
 class Zsign < Formula
   desc "Cross-platform codesigning tool for iOS apps"
   homepage "https://github.com/zhlynn/zsign"
-  url "https://ghfast.top/https://github.com/zhlynn/zsign/archive/refs/tags/v1.0.4.tar.gz"
-  sha256 "177bc8ba1524a4970f89ad3cc14585bd322c1bc4ee7a2ac85e1be8f9f2dec2d1"
+  url "https://ghfast.top/https://github.com/zhlynn/zsign/archive/refs/tags/v1.0.5.tar.gz"
+  sha256 "84cc3458da2366f88cb87da87ddeed9c0a903c716d2a891aa09cc14e0a74b7ac"
   license "MIT"
   head "https://github.com/zhlynn/zsign.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e86b79de3dfc725d5b2b6fca6f0a62f6327a0c7a8aa46784da83dd4857e3d415"
-    sha256 cellar: :any,                 arm64_sequoia: "3960908b488c1c7fcd70d3020ec58fdd5760e60c622a16717b4f8f86b33bdbdd"
-    sha256 cellar: :any,                 arm64_sonoma:  "823a58f6acedd2fbadfb330f49cd97ea409e9b87147e56de00bf0cbd4db4b43d"
-    sha256 cellar: :any,                 sonoma:        "f606b907af409419b88900bfb0dded42524728b0303fb62c3258ffa0d05ca68a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9feb3d7680b5f31e02a4ff3dc5beee8857f54f1f9b16379545aa04ea68035f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b4a2691982f153fd33af6c96605d9a4a54574fcbfd01ea19c59c2c91b5f3561"
+    sha256 cellar: :any, arm64_tahoe:   "6eaf659241a2a0f56398f68db82ffd856897f1acb9bf7cf09171c51b45b9ec25"
+    sha256 cellar: :any, arm64_sequoia: "a4d296b7442a976a83e798a08611bdc3e8879dcbf02141c6583920ed1fa7a511"
+    sha256 cellar: :any, arm64_sonoma:  "4f5f564cdf08f2a6844da216ad5fc25a908f740e2c3f746b15edec41b63153c8"
+    sha256 cellar: :any, sonoma:        "849db49f21a50fe77f5a0173f7acde25c39b750a7639816a7e149b05bd98eb65"
+    sha256 cellar: :any, arm64_linux:   "dd14f2972b65c373632721fb07c3f28e1b1b69e5a0007b4f00025b3d6fc9f897"
+    sha256 cellar: :any, x86_64_linux:  "c1ba504d892b70bd48bf67b86f89b813361785e209e5fa4870fafd3367801e07"
   end
 
   depends_on "pkgconf" => :build
   depends_on "minizip-ng"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  # Build against OpenSSL 4's const-correct X509/ASN1 accessors.
+  # PR ref: https://github.com/zhlynn/zsign/pull/400
+  patch do
+    url "https://github.com/zhlynn/zsign/commit/c39607e4231bceffc0e4d7c1dc257ef67dd3c5b7.patch?full_index=1"
+    sha256 "dda8e0a6308cbeb8190f349ffb8009e887c9c1053b2a30d1bcb78ee3d6e57d8c"
+  end
 
   def install
     build_dir = OS.mac? ? "build/macos" : "build/linux"

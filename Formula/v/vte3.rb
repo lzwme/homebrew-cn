@@ -46,8 +46,6 @@ class Vte3 < Formula
   end
 
   on_linux do
-    # Ubuntu 24.04 has GCC 14 libstdc++ so we can build with brew GCC 14 without impacting GLIBCXX
-    depends_on "gcc@14" => :build if DevelopmentTools.gcc_version < 14
     depends_on "systemd"
   end
 
@@ -64,15 +62,6 @@ class Vte3 < Formula
   end
 
   def install
-    if OS.linux? && deps.map(&:name).any?("gcc@14")
-      # Since brew will prioritize newer GCC versions if installed, we force usage of gcc-14
-      ENV.method(:"gcc-14").call
-
-      # Avoid using the postinstalled specs file which automatically adds an RPATH to gcc@14 libraries
-      libgcc = Pathname.new(Utils.safe_popen_read(ENV.cc, "-print-libgcc-file-name")).parent
-      ENV.append "CXX", "-specs=#{libgcc}/specs.orig"
-    end
-
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
     system "meson", "setup", "build", "-Dgir=true",

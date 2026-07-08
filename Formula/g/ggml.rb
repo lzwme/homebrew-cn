@@ -31,12 +31,6 @@ class Ggml < Formula
   end
 
   on_arm do
-    on_linux do
-      # Ubuntu 24.04 has GCC 14 libstdc++ so we can build with brew GCC 14 without impacting GLIBCXX.
-      # We don't use LLVM Clang as it defaults to linking to libomp rather than libgomp
-      depends_on "gcc@14" => :build if DevelopmentTools.gcc_version < 14
-    end
-
     fails_with :gcc do
       version "13"
       cause "error: invalid feature modifier 'sme' in '-march=armv9.2-a+dotprod+i8mm+nosve+sme'"
@@ -59,10 +53,6 @@ class Ggml < Formula
   def install
     # CPU detection is needed to build multiple backends, particularly on ARM (e.g. `-march=armv8.x-a+...`)
     ENV.runtime_cpu_detection
-
-    # Workaround as brew will prioritize unversioned GCC versions which increases GLIBCXX
-    # TODO: Remove once CI defaults to GCC 14+
-    ENV.method(:"gcc-14").call if OS.linux? && deps.map(&:name).any?("gcc@14")
 
     args = %W[
       -DBUILD_SHARED_LIBS=ON

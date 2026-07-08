@@ -14,12 +14,13 @@ class MysqlAT80 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "2fd6ddc3763559590183b8a2db441b77efdb32d54924f0bd687fde765146578e"
-    sha256 arm64_sequoia: "3fb167fa1fbcfc788af6e4cc6dd183e457f17fc41385f234c9c524c85963da8d"
-    sha256 arm64_sonoma:  "89ec6e0d4a5cd1b60525ffac909123b535d4f6e46980faf803f9257ae0dcf464"
-    sha256 sonoma:        "df1cd09ca76a09efe149f6365c3a032239b9b47c4e8849423f202bdf9b5bf4ca"
-    sha256 arm64_linux:   "5ed5960b65e84317d15b01fde84195764d93750d2158b003112ad38476d5f652"
-    sha256 x86_64_linux:  "2134b60597c7e614dd6df7a05209f0f42fab0cbc9ad86e7f3af397bf05e2d010"
+    rebuild 1
+    sha256 arm64_tahoe:   "5bbb5d993ea86f1776c97ec20eedaecd2e20d07670fe2c064f9ce69e487f77a3"
+    sha256 arm64_sequoia: "6a07941c30e534329ec28945e9825a4abb2577e05d5a55832faf2bf71b9fda1e"
+    sha256 arm64_sonoma:  "89d35e56c40a95f0921ed60c9fd02b18266277c8eb74425a660acd094224a6b9"
+    sha256 sonoma:        "2b53a917f0e479bfec113aa2a4e771c24b818dd2951c43e0ea65cb890a4da7eb"
+    sha256 arm64_linux:   "4abe51ef18088d1812281643e87418ff4f053a2304a52abca57ffba45d282dd3"
+    sha256 x86_64_linux:  "7da76444e1f5d77c08980a790e62ea8dc7f2c45a21388b060c91ee15e9b83fa8"
   end
 
   keg_only :versioned_formula
@@ -138,17 +139,11 @@ class MysqlAT80 < Formula
     init_data_dir "mysql", using: :mysql_initialize
   end
 
-  def post_install
-    if (my_cnf = ["/etc/my.cnf", "/etc/mysql/my.cnf"].find { |x| File.exist? x })
-      opoo <<~EOS
-        A "#{my_cnf}" from another install may interfere with a Homebrew-built
-        server starting up correctly.
-      EOS
-    end
-  end
-
   def caveats
     <<~EOS
+      A "/etc/my.cnf" or "/etc/mysql/my.cnf" from another install may interfere
+      with a Homebrew-built server starting up correctly.
+
       We've installed your MySQL database without a root password. To secure it run:
           mysql_secure_installation
 

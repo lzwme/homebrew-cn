@@ -1,23 +1,21 @@
 class Lcov < Formula
   desc "Graphical front-end for GCC's coverage testing tool (gcov)"
   homepage "https://github.com/linux-test-project/lcov"
-  url "https://ghfast.top/https://github.com/linux-test-project/lcov/releases/download/v2.4/lcov-2.4.tar.gz"
-  sha256 "3457825c6b2fe4ef77c782b82a23875c84a3c955243823f05d8f2dec0d455820"
+  url "https://ghfast.top/https://github.com/linux-test-project/lcov/releases/download/v2.5/lcov-2.5.tar.gz"
+  sha256 "7e5e5a154bd5f3557659c328cab376764e7abd238bb403c424472c296b175126"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/linux-test-project/lcov.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31751d5ba63f010f5ba85d996f2a487d8f66210650a95c2bd125af69cb949fc3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2f081ff0b4cf0a8e8a41476760f10518a66790a623fb8dc627beff0758eca06"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d1de024109c448c5537e2c33d6a30a63b80a77ae195e2cbabc50f94f36152bf"
-    sha256 cellar: :any_skip_relocation, tahoe:         "bdcbbe5a978af3066860282aa095d8a2b983f965cb9a86600d29080ffdd18ea3"
-    sha256 cellar: :any_skip_relocation, sequoia:       "e502c2fdbc44d07e6873634afb31a5c76d499b7a1c39020906a82669ce2b2040"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0dc40bdeba6332fb11f88a4230ca213c9dba83f397fe0da67ca7aba08cf3f0ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d79b0f67be549e9cc3bcff583fc5502c4384f5b3bb071035049cbb328ad20e23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07128bf10fbe19a6fd27aab9739d6a5e55eccfaaa4c2d2c842961944fc70750f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e011a49bdaaa3f14a2196cb58f83862c3809b1451dc996568ed294e016f09d6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e4ea06ac77f732dfb36537d548c6c459f0cd6c3e03d9ee6f22aa9e894cdda32"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "324b7d488025074e74bcd90db782d1ab7402a9a7372bf98e71d832aa88005be4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4c424d1e056ab869bff7c9ccdf5c43f0594921a4499de26a2e464cd7274e7fcb"
+    sha256 cellar: :any,                 arm64_linux:   "eb39a13a9ac8c53b9f1e2bc1af7f24a9443645907bd1bec1de7bb939aec07222"
+    sha256 cellar: :any,                 x86_64_linux:  "54d4f1466283ba1e19f1993e983371efd850dcf683599891c4532c254f4b266c"
   end
+
+  depends_on "sphinx-doc" => :build
 
   uses_from_macos "perl"
 
@@ -50,8 +48,8 @@ class Lcov < Formula
     end
 
     resource "DateTime::TimeZone" do
-      url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-TimeZone-2.66.tar.gz"
-      sha256 "6fbd61b2d5d7563a8e738341c3790e0d4302dffd4a879b9c268812fe44b54dc1"
+      url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-TimeZone-2.68.tar.gz"
+      sha256 "1c1285d911027d276f235b32a888ee7425c9ab356ee62cd126c4b3ee3ea659b3"
     end
 
     resource "namespace::autoclean" do
@@ -125,8 +123,8 @@ class Lcov < Formula
     end
 
     resource "Role::Tiny" do
-      url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Role-Tiny-2.002004.tar.gz"
-      sha256 "d7bdee9e138a4f83aa52d0a981625644bda87ff16642dfa845dcb44d9a242b45"
+      url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Role-Tiny-2.002005.tar.gz"
+      sha256 "4618ec524618c104dc28a8cc86af129a00cad282aea7f4c75060ba05d4c8f4d7"
     end
 
     resource "Eval::Closure" do
@@ -165,8 +163,8 @@ class Lcov < Formula
     end
 
     resource "Clone" do
-      url "https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/Clone-0.47.tar.gz"
-      sha256 "4c2c0cb9a483efbf970cb1a75b2ca75b0e18cb84bcb5c09624f86e26b09c211d"
+      url "https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/Clone-0.50.tar.gz"
+      sha256 "f9732a4a857974db30905233589113003301b585b0cecda29a21cfba5bb014f9"
     end
 
     resource "Clone::PP" do
@@ -176,8 +174,8 @@ class Lcov < Formula
   end
 
   resource "JSON" do
-    url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-4.10.tar.gz"
-    sha256 "df8b5143d9a7de99c47b55f1a170bd1f69f711935c186a6dc0ab56dd05758e35"
+    url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-4.11.tar.gz"
+    sha256 "713bdbe724dbb915ed50265ffe47e079a511980cb2427aa19076788bb64c3182"
   end
 
   resource "PerlIO::gzip" do
@@ -202,7 +200,9 @@ class Lcov < Formula
       end
     end
 
-    system "make", "PREFIX=#{prefix}", "install"
+    # Build only the man pages; the HTML docs need the unpackaged sphinx_rtd_theme.
+    system "make", "RELEASE=#{version}", "-C", "docs", "man"
+    system "make", "PREFIX=#{prefix}", "--old-file=doc", "install"
     bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
   end
 

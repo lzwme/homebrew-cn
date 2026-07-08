@@ -1,18 +1,17 @@
 class Elm < Formula
   desc "Functional programming language for building browser-based GUIs"
   homepage "https://elm-lang.org"
-  url "https://ghfast.top/https://github.com/elm/compiler/archive/refs/tags/0.19.1.tar.gz"
-  sha256 "aa161caca775cef1bbb04bcdeb4471d3aabcf87b6d9d9d5b0d62d3052e8250b1"
+  url "https://ghfast.top/https://github.com/elm/compiler/archive/refs/tags/0.19.2.tar.gz"
+  sha256 "745b1edfea2f8e3b36cf6f77ae3b59fd86e8e397d427971f6d903f9fce6163a5"
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_tahoe:   "ec3ce79abe4bb3959d399450deb363f9b5923d9095f4004c242fc9cc82360fbc"
-    sha256 cellar: :any,                 arm64_sequoia: "f58530d4c64929c2966bab949d9ffdbebf8dfebf5e3226146715412f43490a4e"
-    sha256 cellar: :any,                 arm64_sonoma:  "a1e07dfaa0dd66ac5336102fd1dba224508993c8e84a7cb9699bc77a1106060b"
-    sha256 cellar: :any,                 sonoma:        "6c99fb8f3afbeaf136cda6f45534add032113307ec48aa15ca918b192b46eba4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc5513922a45366dc5f46202bed2e6870cc319a9b666f49b31485b08efdfb26c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5aedc01216943882eec74e6a2e303e1ecae098cd7270deebe10b4748eecea59b"
+    sha256 cellar: :any, arm64_tahoe:   "70f6f7f915c20c7b494a0c68ea5d4eafb7a6cfef22b02e229cd084d0bffe4bf3"
+    sha256 cellar: :any, arm64_sequoia: "9300c6c9314285996acbde5b1cf6dc9d8d24478aff12506b7a949dc8b35da2ea"
+    sha256 cellar: :any, arm64_sonoma:  "062b153f12bcefbac51e9768680fa72e71ed30d6e7967e9030623e1bf1ab29d7"
+    sha256 cellar: :any, sonoma:        "f099f4b3604eb1d29cf81f49c70aa66f9c5a1da262c9196ae7a5b2656c8e217e"
+    sha256 cellar: :any, arm64_linux:   "6761d2c3c643a821b2e7274475b0086ef590a495ad1436c070648e5faab58e26"
+    sha256 cellar: :any, x86_64_linux:  "52fc6c86c6e28b1b75275e0b613e06c388426dbb3ae3cc9a91ff648ab896775c"
   end
 
   depends_on "cabal-install" => :build
@@ -26,33 +25,17 @@ class Elm < Formula
     depends_on "zlib-ng-compat"
   end
 
-  patch do
-    # elm's tarball is not a proper cabal tarball, it contains multiple cabal files.
-    # Add `cabal.project` lets cabal-install treat this tarball as cabal project correctly.
-    # https://github.com/elm/compiler/pull/2159
-    url "https://github.com/elm/compiler/commit/eb566e901a419a6620e43c18faf89f57f0827124.patch?full_index=1"
-    sha256 "556ff15fb4d8e5ca6e853280e35389c8875fa31a543204b315b55ec2ac967624"
-  end
-
-  patch do
-    # These patches allow elm to build on ghc 9.4+.
-    url "https://github.com/elm/compiler/commit/0421dfbe48e53d880a401e201890eac0b3de5f06.patch?full_index=1"
-    sha256 "b498e39112ab7306b18b47821e799bf436d0c2151836187388c2a6b6f32bd437"
-  end
-
   def install
-    # Workaround to build with GHC 9.14. Related issues:
-    # https://github.com/well-typed/cborg/issues/373
-    # https://github.com/haskellari/these/issues/211
-    args = %w[
-      --allow-newer=cborg:base,cborg:containers,serialise:base,serialise:containers
-      --allow-newer=these:base
-      --allow-newer=snap-server:containers
-      --constraint=tls>=2
+    args = %W[
+      --jobs=#{ENV.make_jobs}
     ]
 
-    system "cabal", "v2-update"
-    system "cabal", "v2-install", *args, *std_cabal_v2_args
+    # Following the process from the Dockerfile for building elm binaries here:
+    #  https://github.com/elm/compiler/blob/main/installers/linux/Dockerfile
+    # This process does not use `cabal install`
+    system "cabal", "update"
+    system "cabal", "build", "elm", *args
+    bin.install Utils.safe_popen_read("cabal", "list-bin", "elm").chomp
   end
 
   test do
@@ -64,7 +47,7 @@ class Elm < Formula
         "source-directories": [
                   "."
         ],
-        "elm-version": "0.19.1",
+        "elm-version": "#{version}",
         "dependencies": {
                 "direct": {
                     "elm/browser": "1.0.0",
