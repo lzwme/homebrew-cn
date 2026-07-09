@@ -5,13 +5,13 @@ class Gstreamer < Formula
   compatibility_version 1
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.4/gstreamer-1.28.4.tar.bz2"
-    sha256 "20d636eba1225a02ab6c13424e2d66504ec4b7fd087804c89b229451defcf165"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.5/gstreamer-1.28.5.tar.bz2"
+    sha256 "c53f71b93aefda6864ea09bc845295d89c57afd4d9335f9f8c9a98c969b7693f"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.4/gst-plugins-rs-gstreamer-1.28.4.tar.bz2"
-      sha256 "f98d46d712ece665b2f86f72b0bf0283da4a455ba8dab3ef43a9029939647509"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.5/gst-plugins-rs-gstreamer-1.28.5.tar.bz2"
+      sha256 "58203137e5075bfcafcb79b514750795996fc765a299964cf9f88961dd8a5002"
 
       livecheck do
         formula :parent
@@ -25,12 +25,12 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c27ffedb0569b0e39fedb34dab90ed69644eef368dc87e62831a3dc8fbe8e785"
-    sha256 arm64_sequoia: "34fa87d1a6806e8606034d95ed3541e9e321cc08bb6f6b56836d72cd2edc421e"
-    sha256 arm64_sonoma:  "587823163b603403cff468b0fa300491a2555b02f3f3fd73fa4be585ac649c89"
-    sha256 sonoma:        "9bcf9c2b50e5f635dd46e1bd5dcad5d37dd65f36630eee14baab79c4ad970356"
-    sha256 arm64_linux:   "2783ea0e25243b265265e6bc90737aa07e12e33eaebe7e4fd8abbbb018b422b7"
-    sha256 x86_64_linux:  "9f2afb97f95029df24da4925dd89a1b32ebf7a54757213da71397fc93a6e34bb"
+    sha256 arm64_tahoe:   "f48490aa7efe5220a2c26745915802d436817df526ca6309e57d3e8d82457589"
+    sha256 arm64_sequoia: "9bd88092c7e35c9acb7bf9480fe9e35022d4852726168eb6fe97ebd5f7b2908d"
+    sha256 arm64_sonoma:  "b5807021db69b643af7273120749bb7105847301a31d4c678eada91c25c2e240"
+    sha256 sonoma:        "baf03c2e35e5f357d534cf1c5c482c5f33e0f39cf15313158d7672d23b34656a"
+    sha256 arm64_linux:   "54618d17db25b15454f1e2bd5a747da399cacdfb8b08670ba8a64155cb2f3ceb"
+    sha256 x86_64_linux:  "1ff3275a03572289591731fa0638299d1c75c7089d88dfda6963efa6d3ef25f6"
   end
 
   head do

@@ -3,13 +3,13 @@ class Mlx < Formula
 
   desc "Array framework for Apple silicon"
   homepage "https://ml-explore.github.io/mlx/build/html/index.html"
-  url "https://ghfast.top/https://github.com/ml-explore/mlx/archive/refs/tags/v0.31.2.tar.gz"
-  sha256 "bdb9b619f80962dd00c0bffb65e59c53f565c2b550f189a1467f8bc6089401ab"
+  url "https://ghfast.top/https://github.com/ml-explore/mlx/archive/refs/tags/v0.32.0.tar.gz"
+  sha256 "8e74a0eb613861ce50c09402dd99dbc42b65a762e7fdd291caa39f611db978ec"
   license all_of: [
     "MIT", # main license
     "Apache-2.0", # metal-cpp resource
   ]
-  compatibility_version 3
+  compatibility_version 4
   head "https://github.com/ml-explore/mlx.git", branch: "main"
 
   livecheck do
@@ -18,9 +18,9 @@ class Mlx < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "def8a7ae1e6a6506eed4dea45bf52b55be0f52f8364f8a928da6e65b1204a371"
-    sha256 cellar: :any, arm64_sequoia: "79e643d23e3f55a315461919d69d1ef7b3ba103405fe4ccc0645229c049a6b4e"
-    sha256 cellar: :any, arm64_sonoma:  "76e09c7c3393af4a4d171c4dee580efcd945c83b702e60f12c7ed9ebd647fc0b"
+    sha256 cellar: :any, arm64_tahoe:   "9a2d67e6de12deab51d676a827aa2c81e399e9e246395b8c826429cfb2392786"
+    sha256 cellar: :any, arm64_sequoia: "3a5895a698a5739f601f3cce2c6395603a242f378efe720728ba261e032619d4"
+    sha256 cellar: :any, arm64_sonoma:  "91006da2921496b692df9d671d4c8f820ba3432bb636ac70d0d39fabc8e78f9d"
   end
 
   depends_on "cmake" => :build

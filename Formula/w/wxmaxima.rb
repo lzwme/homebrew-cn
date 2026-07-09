@@ -4,6 +4,7 @@ class Wxmaxima < Formula
   url "https://ghfast.top/https://github.com/wxMaxima-developers/wxmaxima/archive/refs/tags/Version-26.07.0.tar.gz"
   sha256 "e5464465c82a60f23cae9dafe98f590c771feabfb8bab216f1d31835214ad6fa"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/wxMaxima-developers/wxmaxima.git", branch: "main"
 
   livecheck do
@@ -12,12 +13,12 @@ class Wxmaxima < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "015bd08e39da87b1a34dd22d2473577d35f4c7ad405832c8ebdc23c7b67341cd"
-    sha256 arm64_sequoia: "c174b30be05aca2eeee08cff241a35ce3199e361ddcdaa8c83b31008ae50417b"
-    sha256 arm64_sonoma:  "a47e1282d03fc8300316d2d50a9e0f2b507b69ffbbcd4b1fefe83c0bf7088bc8"
-    sha256 sonoma:        "92e5af2698e422de76b9eab59c39beaa3594ea858197d9c19d88d29195d10f32"
-    sha256 arm64_linux:   "140811e5ffafa705304e9772ef6b5cfec45cc48e7efd5c9207e2930cd35e4d57"
-    sha256 x86_64_linux:  "d4279a9d0756de9adb0397cacbe86c1c281251b90f03c4e33c4f456fd64687de"
+    sha256 arm64_tahoe:   "c047f4f0477a8cbf99d6ec1316bf3cdc592f282fb342b57b9ae9d1c75f768c71"
+    sha256 arm64_sequoia: "4729dfb93d6c25bb6fa8c1a8feb2ec8acd188cb9c17be9cdc01938082969b539"
+    sha256 arm64_sonoma:  "42f166171072d39c6723bffc4a8b7af8f38847863c14eefb572149bcd3e41675"
+    sha256 sonoma:        "b543f1a108dd808b33b8177a6ecbb7382334760e97d17086db9f498e5e7dd814"
+    sha256 arm64_linux:   "3dbe7e3498b9b902034d82f5f39c992d3cb43df2999c0cddf321456a29996535"
+    sha256 x86_64_linux:  "28c231f313accb517944e43c535736831fbbcc4f80a0f68567af3173d4589d48"
   end
 
   depends_on "cmake" => :build

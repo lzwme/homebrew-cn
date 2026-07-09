@@ -4,18 +4,18 @@ class MetaPackageManager < Formula
 
   desc "Wrapper around all package managers with a unifying CLI"
   homepage "https://kdeldycke.github.io/meta-package-manager/"
-  url "https://files.pythonhosted.org/packages/88/8c/3a64fc201514510d906e7a9a37fc8f2d935f62aa939e2f9caa324d820e4a/meta_package_manager-7.0.1.tar.gz"
-  sha256 "4de3ba0d4da7de0bd29cc3a824c2e328d3098440a2391e78b29ee9c605629510"
+  url "https://files.pythonhosted.org/packages/a8/3d/cbe2e540c555ea107752bc1c7ad0d9de24151d6aecb72bfbd5bacb7f9c5a/meta_package_manager-7.1.0.tar.gz"
+  sha256 "f1ea18056b81f0a7122c66d4d00d9dea616d6629423103f524b6f3050c190f27"
   license "GPL-2.0-or-later"
   head "https://github.com/kdeldycke/meta-package-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a88fd74d12adfa5b641e2fbc89a8872fc21ba252a6c341be3aab05602ef0ac26"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a88fd74d12adfa5b641e2fbc89a8872fc21ba252a6c341be3aab05602ef0ac26"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a88fd74d12adfa5b641e2fbc89a8872fc21ba252a6c341be3aab05602ef0ac26"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fa7f7076319c8a641194b1408b429270643e609008c13d17be3afdfe958dc239"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf237afe33750f6ce4d9a6bb7fd45e2a313a715552ca3fd3c3baa0cf8bbfa5c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf237afe33750f6ce4d9a6bb7fd45e2a313a715552ca3fd3c3baa0cf8bbfa5c9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "66dfc7258ab36e6a17b6fc671a9df900470d04d92997d95ca42989958b391f54"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66dfc7258ab36e6a17b6fc671a9df900470d04d92997d95ca42989958b391f54"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66dfc7258ab36e6a17b6fc671a9df900470d04d92997d95ca42989958b391f54"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7f4efc92c3fbd090b33ad2c4914d228850ac32fa09bd2f711f2f743a37179855"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bcb7cec479b7ccb003e07aeb2ae5e71925295e80ce5c3211513b361045613e5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcb7cec479b7ccb003e07aeb2ae5e71925295e80ce5c3211513b361045613e5c"
   end
 
   depends_on "rust" => :build
@@ -36,8 +36,8 @@ class MetaPackageManager < Formula
   end
 
   resource "bracex" do
-    url "https://files.pythonhosted.org/packages/63/9a/fec38644694abfaaeca2798b58e276a8e61de49e2e37494ace423395febc/bracex-2.6.tar.gz"
-    sha256 "98f1347cd77e22ee8d967a30ad4e310b233f7754dbf31ff3fceb76145ba47dc7"
+    url "https://files.pythonhosted.org/packages/d0/f5/4473ad9b48cd0420a2d762a3750fa0e078e23e060b1af72662e5987e5530/bracex-3.0.tar.gz"
+    sha256 "b73f718d6bd98d8419e45df02426c86e9967c179949f779340d6c3a8c83b9111"
   end
 
   resource "click" do
@@ -46,8 +46,8 @@ class MetaPackageManager < Formula
   end
 
   resource "click-extra" do
-    url "https://files.pythonhosted.org/packages/b0/96/bb6ab6d01a5e3ed728f627988e931dc2179c0ef76ac0eab06add0ce2f015/click_extra-8.1.4.tar.gz"
-    sha256 "342e8194749278e7ce78c5f28f0c2fcfa935534150dc8a4d8021229870768449"
+    url "https://files.pythonhosted.org/packages/61/ec/0c0ab4f74db0c1a92a640d67eee84e65354c4da56711b85c4ac9ae19099e/click_extra-8.2.0.tar.gz"
+    sha256 "ed9ba95a8d0f3af5079a8ab37c9696e2b9283c7f5df833a768666b6c63cd2e9b"
   end
 
   resource "cloup" do
@@ -81,13 +81,13 @@ class MetaPackageManager < Formula
   end
 
   resource "wcmatch" do
-    url "https://files.pythonhosted.org/packages/79/3e/c0bdc27cf06f4e47680bd5803a07cb3dfd17de84cde92dd217dcb9e05253/wcmatch-10.1.tar.gz"
-    sha256 "f11f94208c8c8484a16f4f48638a85d771d9513f4ab3f37595978801cb9465af"
+    url "https://files.pythonhosted.org/packages/11/15/dc61746d8c0852f6d711ad09c774b63cf7c8211aa49e30871ac3d342b7e2/wcmatch-10.2.1.tar.gz"
+    sha256 "ecac70a5c70e62ba854b78318d3a1408e8651f8f1c96e5837743b71aa6a4fb92"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/49/b4/51fe890511f0f242d07cb1ebe6a5b6db417262b9d2568b460347c57d95cc/wcwidth-0.8.1.tar.gz"
-    sha256 "faf5b4a5366a72dc49cad48cdf21f52bdf63bdda995178e483ba247ff79089b9"
+    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
+    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
   end
 
   resource "xmltodict" do

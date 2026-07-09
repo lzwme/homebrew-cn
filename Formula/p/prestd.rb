@@ -1,8 +1,8 @@
 class Prestd < Formula
   desc "Simplify and accelerate development on any Postgres application, existing or new"
   homepage "https://github.com/prest/prest"
-  url "https://ghfast.top/https://github.com/prest/prest/archive/refs/tags/v1.5.5.tar.gz"
-  sha256 "a9a94f4c00629044bf60de214b51d4defb17b30a41b369d404043adde955673f"
+  url "https://ghfast.top/https://github.com/prest/prest/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "2c8bb5f1e1905d7677c892092ba37c21fd728163fba91bf8177a2a20ceb56227"
   license "MIT"
   head "https://github.com/prest/prest.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Prestd < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "acc8c8862ea6867aa11b5a5e9431c978c6252bc9c267b455cb004be3c4589efa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49bb751ee32ae1ba13d0e1b87b801b4b3f80d74adfdabc44467068c0abcd1a12"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1d02886e9ac10386dc793878548d3429bd99405212f10a27d25d63519702192"
-    sha256 cellar: :any_skip_relocation, sonoma:        "adaa7ed259ca16397bdc67c323eb8969aa02b6541275b892f98efae4ae49bb36"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "067511ae084f7eeb570344d47d52ed78ff71b5a679c92bd8dfb63d411ccb7307"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ac75a592d6bd7599df97d1ee3cd17d52c5d6c3ab8e37834a03a45abac8f81b2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79c0aa3e0a670eeb8e64aff66e301e36e0e9a30d8242a1671e6987fe589360ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07c53e8a84b7d0921e10aa8cd9a34b4ce19cd23c4621549ae96259b898d0dda4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b4fb49ca862b5b2dc4f13ab1e50a429083facf740f58f076c4cd281287a2409"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a1df7f4a669e28002b2d680b43291ea401d9022fcfeff5d7f0a986d219f64a87"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a09220ed851c4d6699aacb8516de30217e074471a4c010030cb07270c2d6b498"
+    sha256 cellar: :any,                 x86_64_linux:  "f05ddb55528732f219e9d23f88484d6ad4edf7c8cabed9ca95f66947a76efa48"
   end
 
   depends_on "go" => :build
@@ -43,7 +42,7 @@ class Prestd < Formula
       database = "prest"
     TOML
 
-    output = shell_output("#{bin}/prestd migrate up --path .", 255)
+    output = shell_output("#{bin}/prestd migrate up --path .", 1)
     assert_match "connect: connection refused", output
 
     assert_match version.to_s, shell_output("#{bin}/prestd version")

@@ -4,6 +4,7 @@ class Gambit < Formula
   url "https://ghfast.top/https://github.com/gambitproject/gambit/archive/refs/tags/v16.6.0.tar.gz"
   sha256 "5d0ac6809841b02347b31accfb6ee31d6ae0593f33dcf58b71b9ca543b465fd9"
   license all_of: ["GPL-2.0-or-later", "Zlib"]
+  revision 1
 
   livecheck do
     url :stable
@@ -11,12 +12,12 @@ class Gambit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "1981b508d7ec1e7f9bd9abd0f9cc604e1f0953b1261b9ad5478ab74dc13aff3c"
-    sha256 cellar: :any,                 arm64_sequoia: "ca7a9c1c14a39a81072f117e3f4ccc89a41f1502d5be242c3aaea9574982eceb"
-    sha256 cellar: :any,                 arm64_sonoma:  "917c3966b4a0b41a0e4dc605430eb816da5d48bc5bd585c45b96925e1c9f88da"
-    sha256 cellar: :any,                 sonoma:        "04f5090eea9d0a69cf46f6e6c0f868394ab5470032b426b387accfb13d876b4b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bdcb2fd44695f5fe0ede13b74a9fb25bf400b5785de2c01eac50d9e6d98ecbe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e73a3408e96fa4501a02949808f405324017d2acb50415cc11c77c252a2cb33"
+    sha256 cellar: :any, arm64_tahoe:   "b18fff02fbf4346df57aaf20a158acf9c3c5ad7c88c15f467387faf95f312490"
+    sha256 cellar: :any, arm64_sequoia: "b9817518732cfb5121715625eee81ef4aa51b03b8ad2f9a68f036bb460692519"
+    sha256 cellar: :any, arm64_sonoma:  "822c07e3d9266d1227018452064d552e86c465639291c052d1bdc1431b706c70"
+    sha256 cellar: :any, sonoma:        "498d1f98945326f9718e40da295d5a7f2797219a29539cac0a9b0a450859479d"
+    sha256 cellar: :any, arm64_linux:   "e4429446170769d07bc4438ccd9a0d48041b68748cea76bee84338a8028e1b7d"
+    sha256 cellar: :any, x86_64_linux:  "7c176f5cf12f389fef4123e6fe3bcca3224bb83bfd9179178af3e4715df6ccea"
   end
 
   depends_on "autoconf" => :build

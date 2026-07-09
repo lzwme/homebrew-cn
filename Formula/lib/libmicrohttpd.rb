@@ -1,19 +1,19 @@
 class Libmicrohttpd < Formula
   desc "Light HTTP/1.1 server library"
   homepage "https://www.gnu.org/software/libmicrohttpd/"
-  url "https://ftpmirror.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.5.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.5.tar.gz"
-  sha256 "b46d00f58efa6f497b97d2e782c4ee66301d412ddd855dd3068518b3a2cd3ea2"
+  url "https://ftpmirror.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.6.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.6.tar.gz"
+  sha256 "bb5cfcadfc52dbd5eb512d6e2995e0361351c33e97a87aba426d3a4a7ba6cf70"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "cd84cc41c84e505be8a957788a3f2993c082d5c7c29e68ee951228bcd79374d9"
-    sha256 cellar: :any,                 arm64_sequoia: "291e7f43b1f252816c7daa42c69079ca3022ba778d1381768c42301b269e0286"
-    sha256 cellar: :any,                 arm64_sonoma:  "c1959ffe509c181f211be15b8cef3c5ffec9ab8985354cb56b6321c0760d9e12"
-    sha256 cellar: :any,                 sonoma:        "c889f12e20ce446ef65784e28f3135eedc3c358d69963dab068331a1345a7eef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c8ef804898c01fa619655d9b62e3754eaf74421322989dbf24dc6aac702ac5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9901822c18a24a632deacd02755e0e20936eb5a5a9134dadda3b844d8e203ed9"
+    sha256 cellar: :any, arm64_tahoe:   "84ea972b7b818f37bce5c03aff4bc0cca2c426c901c02a1ff98b1a2a300d283a"
+    sha256 cellar: :any, arm64_sequoia: "6d7d900cbb61be50f9f66d4e681b1c55e786e0e150c0a07cdba20ba9cc4bdc38"
+    sha256 cellar: :any, arm64_sonoma:  "860ab17f972ec4dc932c2398c549b289f8cdc5f22d0d4db4b9ba8deeabaa4fd5"
+    sha256 cellar: :any, sonoma:        "f30af826622d16c18d54d0c5ce8d4dffdf527cda704e1e0d2f297c7697f9e2a1"
+    sha256 cellar: :any, arm64_linux:   "57fa9496531b9039810da92650542319f90c26d1d3fe88604b16b9a01843966c"
+    sha256 cellar: :any, x86_64_linux:  "72e5470dac39a2e40803506e15714c9b6457b1c1cfb66244cf42c5fb40c25e91"
   end
 
   depends_on "pkgconf" => :build

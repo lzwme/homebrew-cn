@@ -1,18 +1,18 @@
 class Fastly < Formula
   desc "Build, deploy and configure Fastly services"
   homepage "https://www.fastly.com/documentation/reference/cli/"
-  url "https://ghfast.top/https://github.com/fastly/cli/archive/refs/tags/v15.3.1.tar.gz"
-  sha256 "6654c2078e903f25041364404b4d987a6777a8f902a4626ae4a891e371cb61b8"
+  url "https://ghfast.top/https://github.com/fastly/cli/archive/refs/tags/v15.4.0.tar.gz"
+  sha256 "a014951b2f1f12979a545b5b27b14c6254b16444aa5b59269e102773fd3669d9"
   license "Apache-2.0"
   head "https://github.com/fastly/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c114a8e8b8300b641509440fe11727d6f38d50a602ca8ea852bf3772724a7fc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c114a8e8b8300b641509440fe11727d6f38d50a602ca8ea852bf3772724a7fc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c114a8e8b8300b641509440fe11727d6f38d50a602ca8ea852bf3772724a7fc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "feba15779fd4da726d3ff142a7ead7aebd8440d575153c4da4a27cae9be9cde0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22071c53e58ed7a9f022b8f4c4447c4cf8fb67ce0a2cbcedf3898d7cfc49ce3a"
-    sha256 cellar: :any,                 x86_64_linux:  "09508c5739a232a5dc2f073a03663229cf77f096b4396690f78f6ae977b9a52b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "882e3cc1448fdd855756b804ae66716f446e49c733e25a68b873efe411ebe98a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "882e3cc1448fdd855756b804ae66716f446e49c733e25a68b873efe411ebe98a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "882e3cc1448fdd855756b804ae66716f446e49c733e25a68b873efe411ebe98a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5e72caf6e5c7df5568ea6e0e52972b8d20597902369cc0f1a85eb9225fe1e17f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "436055acba565f508b5a486767d62e7d393ba515fd6b2fb8922f75e24b223551"
+    sha256 cellar: :any,                 x86_64_linux:  "b24b7ce0aa922c596a80e1d1da792c2a11434d4a09f1d5cacedb7572c4036cae"
   end
 
   depends_on "go" => :build

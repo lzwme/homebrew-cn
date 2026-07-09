@@ -1,18 +1,18 @@
 class CargoGenerate < Formula
   desc "Use pre-existing git repositories as templates"
   homepage "https://github.com/cargo-generate/cargo-generate"
-  url "https://ghfast.top/https://github.com/cargo-generate/cargo-generate/archive/refs/tags/v0.23.12.tar.gz"
-  sha256 "de3aac69feb0085bda238344521c2289e757d2211c5950ab8af8ae826908ad0c"
+  url "https://ghfast.top/https://github.com/cargo-generate/cargo-generate/archive/refs/tags/v0.23.13.tar.gz"
+  sha256 "b92c0a9c755b245d519721327d9a476b4a916f752a7662977ea5353225e89df0"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/cargo-generate/cargo-generate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2d964462dbd0ad1a4e450d57f9ad12d6686242638b3c25bf42592f5a9cf5832c"
-    sha256 cellar: :any, arm64_sequoia: "49d60366d1322794c8094b5781fde746eb2c793a13a0b7e329cfd1526184d109"
-    sha256 cellar: :any, arm64_sonoma:  "0168c58898c3b26e540d37db5c1cecce2060993d4fa3490644e886c6e6fa40f4"
-    sha256 cellar: :any, sonoma:        "e4e0f2e4fbe99e5d85e4fadf092d328763da19879dba1c9699e945979d10b7ae"
-    sha256 cellar: :any, arm64_linux:   "74a74a320439234013b2591f1bdee76d45f3b4a8ef252f4fd5ac9e2809ab8e37"
-    sha256 cellar: :any, x86_64_linux:  "ef90d127b3bd3e36aef5ed09e93b33f12aa3d7bb0d090e4b3ed62c5bc33b96a0"
+    sha256 cellar: :any, arm64_tahoe:   "4b00ee236a5ee966b63ebd1a011b75a052ad244c583991f5ccb950e06f8f09c7"
+    sha256 cellar: :any, arm64_sequoia: "0c3be08974fb19b245ee06967fe3e777a97d59ae345a39d5f92c07285864d72a"
+    sha256 cellar: :any, arm64_sonoma:  "0959afe0b4746bf2f88c72cc4483cbdf4dae91cf0645119fa3dcde51ebb5b602"
+    sha256 cellar: :any, sonoma:        "600996bc4390ad71d37e129d0500b5289b303bdefadd9b1d727449151d420f22"
+    sha256 cellar: :any, arm64_linux:   "e4bfdac2001c37331d757941cbc1e54dbf9118f92fb0e3e33d5fcc816cd786e5"
+    sha256 cellar: :any, x86_64_linux:  "553fcf8c319f5edc5794acfdde5be9c34244b9ae33707f846fd3e3512f13617c"
   end
 
   depends_on "pkgconf" => :build

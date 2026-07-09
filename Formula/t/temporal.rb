@@ -1,8 +1,8 @@
 class Temporal < Formula
   desc "Command-line interface for running and interacting with Temporal Server and UI"
   homepage "https://temporal.io/"
-  url "https://ghfast.top/https://github.com/temporalio/cli/archive/refs/tags/v1.7.2.tar.gz"
-  sha256 "09045e1b257c008c543cdb998eb05431a9b2ec9b233c5f0c3c6705bfc89a128d"
+  url "https://ghfast.top/https://github.com/temporalio/cli/archive/refs/tags/v1.7.3.tar.gz"
+  sha256 "d28187545061eb41ef36041ef2045d8ea63fd55da9551b60a32bd9cb80f7ce52"
   license "MIT"
   head "https://github.com/temporalio/cli.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Temporal < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b25ffeb723acbae124ca045c21fa7cdff531ffe358a80b76d31364412849a0a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe8e72756ed599fde27bdc7968f8797335e66bc5e04ba936528f31fc86ac6cd3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14552b61380f72cf12ded5d7e01fdbab7ec2432455fbb213a4612138fcc70893"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f33bd6fb6ae88e1147c75a78e2d5f2630aecd87aaa1ce4ce080b337edbd6d2ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a51206a1001906b8afc0337b24d6d8bab484a98e01d3b839520a045419abfbb0"
-    sha256 cellar: :any,                 x86_64_linux:  "2767916dd0431945b0ff5c4e7dce570287ce1baea3b75370148bed1512a6d861"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "001a75531ade95e3675b925d569d31277f7dffc8c1971ba0a6ba832167d07676"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e873cb7e855fbceaecb5b9048c7525c24b92deb911c2bfebd58079be5cad7c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a78bc64ecd956108ce57b3fcc3f8c725532f8bfd17382d675a346f09e0728c9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b1229dc6855a32938fc61e8577bdae2f6e6dc13ee403597b9954cf2dde96646e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "170e2b37f6f91d88bac376c5d1f9e4996a925c311f72b41f77fa0d9a9fae3463"
+    sha256 cellar: :any,                 x86_64_linux:  "6da46628df4e4c1efbb70b31a07a5ef2a1481d931605750cd11a04fe9c47348f"
   end
 
   depends_on "go" => :build

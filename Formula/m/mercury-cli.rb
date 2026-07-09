@@ -1,17 +1,17 @@
 class MercuryCli < Formula
   desc "CLI interface for Mercury banking"
   homepage "https://github.com/MercuryTechnologies/mercury-cli"
-  url "https://ghfast.top/https://github.com/MercuryTechnologies/mercury-cli/archive/refs/tags/v0.10.2.tar.gz"
-  sha256 "681d15b889ef06821864926c33e1916cc603d4fb87f550f2324648e747e7e4cb"
+  url "https://ghfast.top/https://github.com/MercuryTechnologies/mercury-cli/archive/refs/tags/v0.10.3.tar.gz"
+  sha256 "64c4edad351c243d98962ae85adacfdcc40acbf0e124d62741b452efe1dfc658"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2fecee8988be5cd9ce6f4e4eb0e980cad189bb6641409a1dfd32c00866159d29"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2fecee8988be5cd9ce6f4e4eb0e980cad189bb6641409a1dfd32c00866159d29"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2fecee8988be5cd9ce6f4e4eb0e980cad189bb6641409a1dfd32c00866159d29"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82dcf717e84ae5e45bba60d1fdc4b3b4c891dc5a2b1813dcc98a3584982bb5a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d473bb1052ecc27cb75c5449d2241d42d8faa5ee4738c3768ad97b0e69cc5404"
-    sha256 cellar: :any,                 x86_64_linux:  "e8f04c55fc4db1a5579c93c796712091778916f46bd5278557dc67e82f9dc4b2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3706c5ec74595c059081c29e959bcab2c74b389ca87e9aaaa5b5a276bc4541f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3706c5ec74595c059081c29e959bcab2c74b389ca87e9aaaa5b5a276bc4541f1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3706c5ec74595c059081c29e959bcab2c74b389ca87e9aaaa5b5a276bc4541f1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d908f0abaa908748e5a364822863b5c11a5a0479f5cd40959cd84e4798060ca0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6d5e112347750bea04b39b84accfe5763fbbaaa338ff5a44e94fd249a2ec5ce"
+    sha256 cellar: :any,                 x86_64_linux:  "0502a94dfee7dd5c38600f7785c00fb5b3462868dedb7f8c36a3fcd43cc722c8"
   end
 
   depends_on "go" => :build

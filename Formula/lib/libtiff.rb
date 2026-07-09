@@ -13,15 +13,17 @@ class Libtiff < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "38f4a84e4a689a065991a7f2445563fa38306f9bdd6a27e2c60b33bf11a7d614"
-    sha256 cellar: :any, arm64_sequoia: "4763593f3946224d73a9540bd6abc3d798e61dacbbd74acfb4aa1986b3ec66ae"
-    sha256 cellar: :any, arm64_sonoma:  "07bf8c9c3339433121c5649182a31f000410ecb1d999ff9d1cda26401b964f9e"
-    sha256 cellar: :any, sonoma:        "1988a75c176e06617a0d1187adcef52167e4fff730454dd7e10fabf5add1a30a"
-    sha256 cellar: :any, arm64_linux:   "98bf7b3df615c9c72af6161c0afcaaad9f3e34b9ef3d56b7974592b88c10ab04"
-    sha256 cellar: :any, x86_64_linux:  "b51ddd5a70047be6391456ccede227826a111e9fffe8ee7541f5200ee969116e"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "5d1873ffd3458d6288110874c349921206349359cf6564443bf2ed92ef9e5d46"
+    sha256 cellar: :any, arm64_sequoia: "5f4a42e711c65a9b72c426ec773c4c9a1d1daf38184fdf1a1f908573cebbcdce"
+    sha256 cellar: :any, arm64_sonoma:  "3783a59d14d00405ee96a9cbf5bba49a9c764c62b67274e642e71a0f65c9fb6e"
+    sha256 cellar: :any, sonoma:        "003a1e40acdc28f5967b78e5aaa322e5f3b678e7c4f9bc46f481637637ba0aa5"
+    sha256 cellar: :any, arm64_linux:   "c2919dec1eca250774cbbe4a147e98ba15f860fce1ba9eecd85a26a0352af416"
+    sha256 cellar: :any, x86_64_linux:  "fd184f2cda1930f320423cee490c95aecc3522f4a5cfc4f92f75432e87c2b92a"
   end
 
   depends_on "jpeg-turbo"
+  depends_on "webp"
   depends_on "xz"
   depends_on "zstd"
 
@@ -32,7 +34,9 @@ class Libtiff < Formula
   def install
     args = %W[
       --disable-libdeflate
-      --disable-webp
+      --enable-webp
+      --with-webp-include-dir=#{formula_opt_include("webp")}
+      --with-webp-lib-dir=#{formula_opt_lib("webp")}
       --enable-zstd
       --enable-lzma
       --with-jpeg-include-dir=#{formula_opt_include("jpeg-turbo")}
@@ -61,5 +65,29 @@ class Libtiff < Formula
     system ENV.cc, "test.c", "-L#{lib}", "-ltiff", "-o", "test"
     system "./test", "test.tif"
     assert_match(/ImageWidth.*10/, shell_output("#{bin}/tiffdump test.tif"))
+    (testpath/"test_webp.c").write <<~C
+      #include <stdint.h>
+      #include <tiffio.h>
+
+      int main(int argc, char* argv[])
+      {
+        uint8_t rgb[16 * 16 * 3] = {0};
+        TIFF *out = TIFFOpen(argv[1], "w");
+        if (!out) return 1;
+        TIFFSetField(out, TIFFTAG_IMAGEWIDTH, 16);
+        TIFFSetField(out, TIFFTAG_IMAGELENGTH, 16);
+        TIFFSetField(out, TIFFTAG_SAMPLESPERPIXEL, 3);
+        TIFFSetField(out, TIFFTAG_BITSPERSAMPLE, 8);
+        TIFFSetField(out, TIFFTAG_PHOTOMETRIC, PHOTOMETRIC_RGB);
+        TIFFSetField(out, TIFFTAG_COMPRESSION, COMPRESSION_WEBP);
+        TIFFSetField(out, TIFFTAG_ROWSPERSTRIP, 16);
+        if (TIFFWriteEncodedStrip(out, 0, rgb, sizeof(rgb)) < 0) return 2;
+        TIFFClose(out);
+        return 0;
+      }
+    C
+    system ENV.cc, "test_webp.c", "-L#{lib}", "-ltiff", "-o", "test_webp"
+    system "./test_webp", "webp.tif"
+    assert_match "Compression Scheme: WEBP", shell_output("#{bin}/tiffinfo webp.tif")
   end
 end

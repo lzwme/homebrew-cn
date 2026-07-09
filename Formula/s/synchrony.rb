@@ -1,13 +1,12 @@
 class Synchrony < Formula
   desc "Simple deobfuscator for mangled or obfuscated JavaScript files"
   homepage "https://deobfuscate.relative.im/"
-  url "https://registry.npmjs.org/deobfuscator/-/deobfuscator-2.4.5.tgz"
-  sha256 "feca0c36e1efe029827f2cb44d206c9e32751f207dae25ca5a93a4e6fe21388d"
+  url "https://registry.npmjs.org/deobfuscator/-/deobfuscator-2.4.6.tgz"
+  sha256 "c7fe43892389a34dec7d84328a68e381820cad9a03d5a93ed2e6e055645be7b6"
   license "GPL-3.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "da3ca86b921e8277e72a226e53380a3baa661e6e09c9658231b4ab6a5b53569f"
+    sha256 cellar: :any_skip_relocation, all: "4e6ede52ee4b2c8e264de762f4eba484befa3a1204a4001f4e0f9e59959db6a5"
   end
 
   depends_on "node"

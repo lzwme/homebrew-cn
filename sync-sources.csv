@@ -2124,6 +2124,7 @@ Homebrew-homebrew-core/Formula/f/filebrowser.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fileicon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/filen-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fileql.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/filtlong.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/findent.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/findomain.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/findutils.rb, Homebrew/homebrew-core, 0
@@ -4336,6 +4337,7 @@ Homebrew-homebrew-core/Formula/lib/libre.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libreadline-java.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/librealsense.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libredwg.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/librefang.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libreplaygain.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libresample.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/librespot.rb, Homebrew/homebrew-core, 1
@@ -4780,7 +4782,7 @@ Homebrew-homebrew-core/Formula/m/mimalloc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mimic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mimirtool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mimo-code.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/min-lang.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/min-lang.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/minder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mingw-w64.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/miniaudio.rb, Homebrew/homebrew-core, 1
@@ -6616,6 +6618,7 @@ Homebrew-homebrew-core/Formula/s/sagittarius-scheme.rb, Homebrew/homebrew-core, 
 Homebrew-homebrew-core/Formula/s/sail.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/saldl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/salesforce-mcp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/salmon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/salt-lint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/samba.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sambamba.rb, Homebrew/homebrew-core, 1
@@ -6922,6 +6925,7 @@ Homebrew-homebrew-core/Formula/s/smartmontools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/smartypants.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/smenu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smimesign.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/smithery-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/smlfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smlnj.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/smlpkg.rb, Homebrew/homebrew-core, 1
@@ -15830,6 +15834,7 @@ Homebrew-homebrew-cask/Casks/v/vibemeter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vibeproxy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/viber.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vibetunnel.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/v/vicinae.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vidcutter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/videoduke.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/videofusion.rb, Homebrew/homebrew-cask, 0

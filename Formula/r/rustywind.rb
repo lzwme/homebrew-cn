@@ -1,18 +1,18 @@
 class Rustywind < Formula
   desc "CLI for organizing Tailwind CSS classes"
   homepage "https://github.com/avencera/rustywind"
-  url "https://ghfast.top/https://github.com/avencera/rustywind/archive/refs/tags/v0.25.0.tar.gz"
-  sha256 "32d3bff8de2b08a17fca485994e69e33619a78b1e397d4059dc445f62d19603b"
+  url "https://ghfast.top/https://github.com/avencera/rustywind/archive/refs/tags/v0.25.2.tar.gz"
+  sha256 "ba241018078f91c0760de084c5e54a3ac528bb2c5ec3241081ec7b130f68b645"
   license "Apache-2.0"
   head "https://github.com/avencera/rustywind.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1dd381e456306feea4c99931f12dc23cee98b4c9b4e446fa24fed883151790e4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c906fe8fb182279bbc3b57a48f7c6c6f4fbf8f2d143c30fe689214fc28e453d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8fe0983a68e522449535738c75cb4c8f9a0a27dac3450dc9f9fdef0f93950f2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f4d99079ad2acdf2b9f994676e4164c802688360cb6242f5b2200fc3fd86cb85"
-    sha256 cellar: :any,                 arm64_linux:   "e7cef15e84b14bdb206c9041f0656bcb6ff223d0e734ec2e9771e0ed6a8d65da"
-    sha256 cellar: :any,                 x86_64_linux:  "818a587251387abe5adbd256338efcf8c930892a4e064cc167c95530fd8b4f9f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b3271e59af74ffd3b3df89617dc744f49df17a3e2edd868de4bdfbd0bdd24546"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e59a9ca3865035579bcd71c8bb8de5cb034b01ad7a523f5bcd9cc73ca317f83"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b082434ef7cd6a03f1cf0a943a44d3a155e97bbef0644384cc6efa340b75967b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "be77f3518273d2ef15d1547c7d24a2e98f892afcc715572b0a4180d3c6660486"
+    sha256 cellar: :any,                 arm64_linux:   "3eb79528a33d214f99d763712096b061c2231455f2da9f418d2dcfc2bf53ec53"
+    sha256 cellar: :any,                 x86_64_linux:  "ace2a7dbdd8327744b3542d81dcf540545e2949d8de085c7e27d5b816b8849a3"
   end
 
   depends_on "rust" => :build

@@ -6,11 +6,11 @@ cask "dbx" do
     arch arm: "aarch64", intel: "amd64"
   end
 
-  version "0.5.49"
-  sha256 arm:          "8009a41ca3aba0f1f2e702b116d600c60ae11fc3bbd661e91a39ea0440c225d6",
-         intel:        "87914a28410c5585d25da3784317777d70fba9b350ea2bfe6cf2ec0919848a5a",
-         arm64_linux:  "54663d78585b349ed6b076d4f3151d62b2289c3bbfaccc2589ef83a84387d863",
-         x86_64_linux: "e523f9f19616ac72d02836ce22447541859e716dc8bc01f01ba1212338078345"
+  version "0.5.51"
+  sha256 arm:          "d871cb95d5b82ccd66d323d0cdf3981be101d3c5590362f01999a99884afaae8",
+         intel:        "79392f1a67932a0db30c2fbd407119e25fd3f3fcfc1b3d01f18e5cecbadeca45",
+         arm64_linux:  "692c684d9c269ef45726efc357f7378ec18dfc5dde001764d94a111b0db9162f",
+         x86_64_linux: "6a6b640223e196235f71d9f6e990de76892fe4f5c380bcd8f4b51f25f80925b0"
 
   url_end = on_system_conditional macos: ".dmg", linux: ".AppImage"
 

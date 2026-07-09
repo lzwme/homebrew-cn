@@ -1,8 +1,8 @@
 class Dwarfs < Formula
   desc "Fast high compression read-only file system for Linux, Windows, and macOS"
   homepage "https://github.com/mhx/dwarfs"
-  url "https://ghfast.top/https://github.com/mhx/dwarfs/releases/download/v0.15.3/dwarfs-0.15.3.tar.xz"
-  sha256 "2a9c6b7cb2841f3c7b75839da9326724a2817e4467b20e79e3e24c3eefc13eca"
+  url "https://ghfast.top/https://github.com/mhx/dwarfs/releases/download/v0.15.4/dwarfs-0.15.4.tar.xz"
+  sha256 "454f0e04a1cf6662d6842239ee816ddf3217bd4b8b9e1cc99b3ffb7f20854294"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,12 +12,12 @@ class Dwarfs < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "eb0df7e1ff55f49ac73430d2fba04f51783356ed5a4637150ace7ff4cfa39681"
-    sha256                               arm64_sequoia: "1fb61e84be8e29a982e9640037fe3d1918b8f2f3f98f414d50c79a8565477b2d"
-    sha256                               arm64_sonoma:  "7d02a75fd7989d7e563b6c7fa01be879c731ce8eeea9ca1fb2146b725f1d6409"
-    sha256 cellar: :any,                 sonoma:        "0621cdb883746e82f746782af5626cc72962b3a45c6addb2ec803d7a33cc444e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca1dc50195afd13e63856de31e0d25933703adbe012edecfd01f41a4e075d187"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "225a82a5cc48d2014732c1dbb2dabbbddeeeb3dfe74cf99feb44abe0f9ac82b3"
+    sha256               arm64_tahoe:   "e17404c1e8897ccefa9666c7634d47af3083fb293dc801aeb86fb628cc2059a7"
+    sha256               arm64_sequoia: "d3783029c85048de81255e4fde2486ffc3e283194c58c04b2b320005a607197c"
+    sha256               arm64_sonoma:  "02d9b98520f7d18bd22bba5ada7e92200c353295ad361a9e4c09acef54695fb6"
+    sha256 cellar: :any, sonoma:        "be9225b2b7d82957f50c8f31253038b9c0581f8fcd963a54fce6d9485cc6de43"
+    sha256 cellar: :any, arm64_linux:   "3fbfe200fa6afffa659d85d44bcfe3dfd532e4d4b56a5dd9df8499d6f4232623"
+    sha256 cellar: :any, x86_64_linux:  "7af5d21474eb03bfc18378b2157086053ef9d27c940df486402bc519692445c1"
   end
 
   depends_on "cmake" => :build

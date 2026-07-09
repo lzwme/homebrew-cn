@@ -3,18 +3,18 @@ class Scrapy < Formula
 
   desc "Web crawling & scraping framework"
   homepage "https://scrapy.org"
-  url "https://files.pythonhosted.org/packages/cd/a0/f710c21e87d64686f1b6d153eff7d1a2f7167bd94dd6c19aada07629fb38/scrapy-2.16.0.tar.gz"
-  sha256 "7287952a81fa302797ec0c3370a0096a8d81d4f9fe25a608a76df2a164511714"
+  url "https://files.pythonhosted.org/packages/35/9f/9800513193aacb44825f0b9a75e4e6d4a0c416e9ed23ca3aac7374d03d17/scrapy-2.17.0.tar.gz"
+  sha256 "b536d14166b05e2183b19ae105a7af849cd14d4c1f70d3009d9b1828c0ab3d92"
   license "BSD-3-Clause"
   head "https://github.com/scrapy/scrapy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01ec3578c45a43c5cd6f6ce5f350e6c00aef9d6e213e6b42e1cfb997f5b66a6c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ffb22782aa83a3d225996729f6a0a4574eca6f61000f2df396d591b983c4fa1e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2874374354715de801adeb2dc765a067ba3b684eac9d050744684eab3b95db84"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9f83eaca3811bd7ed8ebc37d3ba170e9ea98555fb977fc7a125a0534d7660023"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ffbcdc5bf6b618eed29fa6e2a15a416467b581070474fe18274a80193577f887"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb465809e4154b2551b7965736558ec8996730c8a42ad818d1a04f07e048b3c5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c25016e8102d7d7384308f8a6f033d54c8ac53f14f3e2e9d1674a2f75885f08"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88ad105ec9ea6abdcc2607bab1f4e2b5fcc10d341b46046d4b382e1b944d28e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f33a05cd3479b9377633159b41b18b8e98778a594fc8f93c0f821d69e104103"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0c99e490392428b673e00192dfd47cb83ad7eaae1000f07cfcb924dcb7560df2"
+    sha256 cellar: :any,                 arm64_linux:   "e819dab0b93340618a3da3b5863fcf1f511bb4591be1056760a9a4cb2dbc0019"
+    sha256 cellar: :any,                 x86_64_linux:  "816dbeef53e42d8bae5a8fa684d7a4ffa597feebd511a0a18c397b58a17f455f"
   end
 
   depends_on "certifi" => :no_linkage
@@ -57,8 +57,8 @@ class Scrapy < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/b5/fe/997687a931ab51049acce6fa1f23e8f01216374ea81374ddee763c493db5/filelock-3.29.0.tar.gz"
-    sha256 "69974355e960702e789734cb4871f884ea6fe50bd8404051a3530bc07809cf90"
+    url "https://files.pythonhosted.org/packages/e0/c8/35bdf04fb30755e2ed758f877edf3eb4a243c2463d3a258cc28b18b7a6e2/filelock-3.29.6.tar.gz"
+    sha256 "895c532ef3f4ef04972b9446a8c4e2931a5c399ff3c4be4c9369f2639b80f793"
   end
 
   resource "hyperlink" do
@@ -67,8 +67,8 @@ class Scrapy < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "incremental" do
@@ -107,18 +107,8 @@ class Scrapy < Formula
   end
 
   resource "protego" do
-    url "https://files.pythonhosted.org/packages/07/a7/955c422611d00a6e4a06d30b367ea9bb4fb09d48552e92aef1ba312493c7/protego-0.6.0.tar.gz"
-    sha256 "3466f41438421cf90008e98534d5fde47dc16a17482571d021143ac18b70ace9"
-  end
-
-  resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/5c/5f/6583902b6f79b399c9c40674ac384fd9cd77805f9e6205075f828ef11fb2/pyasn1-0.6.3.tar.gz"
-    sha256 "697a8ecd6d98891189184ca1fa05d1bb00e2f84b5977c481452050549c8a72cf"
-  end
-
-  resource "pyasn1-modules" do
-    url "https://files.pythonhosted.org/packages/e9/e6/78ebbb10a8c8e4b61a59249394a4a594c1a7af95593dc933a349c8d00964/pyasn1_modules-0.4.2.tar.gz"
-    sha256 "677091de870a80aae844b1ca6134f54652fa2c8c5a52aa396440ac3106e941e6"
+    url "https://files.pythonhosted.org/packages/7d/1b/6b0ee60bb1561843bfc62f5c7c3cb1ef6147b47e829a5fd6b7fcd2752471/protego-0.6.2.tar.gz"
+    sha256 "88ff004544ce44e61269cc6f8735f7837d12e09bb77619fc94fbb26b72e5d137"
   end
 
   resource "pydispatcher" do
@@ -127,8 +117,8 @@ class Scrapy < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/1a/51/27a5ad5f939d08f690a326ef9582cda7140555180db71695f6fb747d6a36/pyopenssl-26.2.0.tar.gz"
-    sha256 "8c6fcecd1183a7fc897548dfe388b0cdb7f37e018200d8409cf33959dbe35387"
+    url "https://files.pythonhosted.org/packages/74/b7/da07bae88f5a9506b4def6f2f4903cf4c3b8831e560dba8fa18ca08f758f/pyopenssl-26.3.0.tar.gz"
+    sha256 "589de7fae1c9ea670d18422ed00fc04da787bbde8e1454aea872aa57b49ad341"
   end
 
   resource "queuelib" do
@@ -147,8 +137,8 @@ class Scrapy < Formula
   end
 
   resource "service-identity" do
-    url "https://files.pythonhosted.org/packages/07/a5/dfc752b979067947261dbbf2543470c58efe735c3c1301dd870ef27830ee/service_identity-24.2.0.tar.gz"
-    sha256 "b8683ba13f0d39c6cd5d625d2c5f65421d6d707b013b375c355751557cbe8e09"
+    url "https://files.pythonhosted.org/packages/61/87/ad52e2c582c0f0e7f0a1b86950494c38d67422dc0f5ed9044a5fb9569a49/service_identity-26.1.0.tar.gz"
+    sha256 "6358c52882c96e66ac4a55eb3a72c7dd4a70763f8cc6fa4e70abde2656f4bf3b"
   end
 
   resource "tldextract" do
@@ -162,8 +152,8 @@ class Scrapy < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   resource "urllib3" do
@@ -177,8 +167,8 @@ class Scrapy < Formula
   end
 
   resource "zope-interface" do
-    url "https://files.pythonhosted.org/packages/9f/65/34a6e6e4dfa260c4c55ee02bb2fc53625e126ff0181485286cf0c9d453d6/zope_interface-8.4.tar.gz"
-    sha256 "9dbee7925a23aa6349738892c911019d4095a96cff487b743482073ecbc174a8"
+    url "https://files.pythonhosted.org/packages/08/dc/50550cfcbb2ea3cbca5f1d7ed05c8aa840f831a0f2d63aec0a953f7c590e/zope_interface-8.5.tar.gz"
+    sha256 "7a3ba1c5877f0f3e3906b02ddf793abed2becc2948116414ce0e1dd820b68d6d"
   end
 
   def install

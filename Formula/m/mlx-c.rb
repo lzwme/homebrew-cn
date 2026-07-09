@@ -4,13 +4,13 @@ class MlxC < Formula
   url "https://ghfast.top/https://github.com/ml-explore/mlx-c/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "6ec2eab86ed3ce661c0d9b834027870651546138b7b4470fa8ef5533498c79aa"
   license "MIT"
-  revision 2
+  revision 3
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b30c755158db3f9d9090b69a1a74f3e05ae8e7a3969695d9f0974f1bc1d3df1b"
-    sha256 cellar: :any, arm64_sequoia: "1c912954c1d7c888c99638fc58a541d364862c3acf3b279627e5221b9bd0afa7"
-    sha256 cellar: :any, arm64_sonoma:  "b09d19e06b33a10936b006a67202a091715bbedf9fe1620b1162eb140f8af0fd"
+    sha256 cellar: :any, arm64_tahoe:   "52a8f1aca73d431b5186e37a8b27ee72ef12f59955034fbaf77a4b7b1df85455"
+    sha256 cellar: :any, arm64_sequoia: "0c6d3cb05b3aec5e137193d3cba56aff68e42f9f522c89ee984c4e8061a367db"
+    sha256 cellar: :any, arm64_sonoma:  "c59d08f72fbf8a926ff3b4adcbad7098efbbdebfb0297db7682d3af2230a4c41"
   end
 
   depends_on "cmake" => :build

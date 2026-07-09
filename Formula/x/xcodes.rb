@@ -1,8 +1,8 @@
 class Xcodes < Formula
   desc "Command-line tool to install and switch between multiple versions of Xcode"
   homepage "https://github.com/XcodesOrg/xcodes"
-  url "https://ghfast.top/https://github.com/XcodesOrg/xcodes/archive/refs/tags/2.0.2.tar.gz"
-  sha256 "67db730edd1c768f39c197dc8e8054bd22d0859de2dd96e49b525148579be907"
+  url "https://ghfast.top/https://github.com/XcodesOrg/xcodes/archive/refs/tags/2.0.3.tar.gz"
+  sha256 "ecc37bc69a6eb343a3c58f5edab42169bb2c4d38266b6585dbf5738d3eb59eda"
   license "MIT"
 
   livecheck do
@@ -11,8 +11,8 @@ class Xcodes < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6467748dccf0c75cfaf3a1b98998c09e1b28728ae8830366f47215c13b5a901"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aceb8d50ffb6fe3982b8d6c5a86fca489a8cc91e58150f79f10a1de7378c7df9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b24c153e54448a55cfed1f1e2d547cc714abf15faefc187d72443306c4cfc054"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1adf300abc73b959d49ac48a92424fed029a4dc63d044dac05a589e97915b2b"
   end
 
   depends_on xcode: ["16.4", :build]
