@@ -1,18 +1,18 @@
 class Chainsaw < Formula
   desc "Rapidly Search and Hunt through Windows Forensic Artefacts"
   homepage "https://github.com/WithSecureLabs/chainsaw"
-  url "https://ghfast.top/https://github.com/WithSecureLabs/chainsaw/archive/refs/tags/v2.16.0.tar.gz"
-  sha256 "8621299c16be2545d5506448fd9748bc0524424ae46a6ddb3078dc33579e7f90"
+  url "https://ghfast.top/https://github.com/WithSecureLabs/chainsaw/archive/refs/tags/v2.16.2.tar.gz"
+  sha256 "b2ef92527c76829a0220c6c995ad97111cb44d1029f09d679f2246c73a5efc00"
   license "GPL-3.0-only"
   head "https://github.com/WithSecureLabs/chainsaw.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f34206032a5e317bfd1a87fd126e3ecdffada44ea2d3a32629e45d411aec756"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea55b34e5c67c6a54aa1857cdff9f5927ef61a8098ffca8200321855eaa01a4c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e95d00c963763e3bbb6012e6ff40a186f7a50f89d714d0afd706f3829e10e77f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9f9268170a071e4d0202c10b0825bdcf4db3bc353ca7134795944197753062f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "679ef4103a45e0046f6feca4b3d292cecebedf3972d33fb766687899db19c543"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d204d0e9059777bbf7318481d24a5b85b1391c58b0b9eec84bee0b697280787"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85065b131882ed82b02209c220f58327b81e59daf6f763899b05f1df2d385acf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4139ff066bf414e70c4af9d8d31b6cc0b9178dde959af2246ebe03e0cfea295a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6144d2e4b19a95d58125d33c90df6936233e51d82d9b27c0ccc9caedbcb53f57"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9595cfea7cba2a478987da53b9ffe1920facf978aaa0cfdaef930af813e0a747"
+    sha256 cellar: :any,                 arm64_linux:   "abcaabc2f04ed709dbceaaceb3b7c3137cc15045b44b5cc46924d1c6cd02ad83"
+    sha256 cellar: :any,                 x86_64_linux:  "90235c75e78f759dab867317782247ef1d277d98f62891959f71835c0c326612"
   end
 
   depends_on "rust" => :build

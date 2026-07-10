@@ -2,8 +2,8 @@ class Clusterawsadm < Formula
   desc "Home for bootstrapping, AMI, EKS, and other helpers in Cluster API Provider AWS"
   homepage "https://cluster-api-aws.sigs.k8s.io/clusterawsadm/clusterawsadm.html"
   url "https://github.com/kubernetes-sigs/cluster-api-provider-aws.git",
-      tag:      "v2.11.1",
-      revision: "eaa4c99b64d76179cb37e465808f6f00360d0bcc"
+      tag:      "v2.12.1",
+      revision: "13af0663710aa1f0c59575ec86e241afa4994f73"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cluster-api-provider-aws.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Clusterawsadm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81e21f418ab05d804dde862ea930e669cc62ed2cdf2f3206bfc28a9e8869c2d0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b9c88f0b060271cf84ae7bfa49defb9cea77c700fd857dc34a1beb3cf9c7098"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de08d585b9d981b2ecb810bfeb2a57839062899b40710654e08ae14d52cd5171"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4725477a8c2cfb66e7c2b0c6d4df9c6f5ebe27ddc0a778482fc88ff05ec16807"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0cb385b67b34408439403b5531333d320b0e09141988a43059066d74b616aa1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7daa7d46370aba8d3bd6917a80a912e60799380a86d612109583c01b7da7ed18"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b7d125ec04cfbd223d8311c8ea033dae26667d6305579add43fd7ebee992279"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4a6f682a623dcf4967cbff6d51cfcbbe707a5ba302ee417ce7de28458313d76"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4343cb76c360b70e72929ee5b1edf8f1352d2a4f7271669202f6069c3a6b8f08"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e60aa62810a83e064ca296986a921fb87bdd5a25bc218b81e3fef7143e381b5a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "169d606877d8c0bffcbf212a7f0b28170c1f39f94a56e2ce57ccc186d2d7df9b"
+    sha256 cellar: :any,                 x86_64_linux:  "401d9bedf745ffe7f6287e5823cbbc8e7590d39e6e3beeec6648dd7ea9bc24da"
   end
 
   depends_on "go" => :build

@@ -4,18 +4,21 @@ class SpicetifyCli < Formula
   url "https://ghfast.top/https://github.com/spicetify/cli/archive/refs/tags/v2.44.0/v2.44.0.tar.gz"
   sha256 "aafdfceeae5ff926ffe27bf3808cd4228e3a2725f7f3539531f4f5c0ac98962d"
   license "LGPL-2.1-only"
+  revision 1
   head "https://github.com/spicetify/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c531c87019010d9e7e7a6559678df85e00fe3ac8d874cab13cc5e23b1539ea9d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c531c87019010d9e7e7a6559678df85e00fe3ac8d874cab13cc5e23b1539ea9d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c531c87019010d9e7e7a6559678df85e00fe3ac8d874cab13cc5e23b1539ea9d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9a178d6b42c64aefd7f7bc03d4fe69ba1364a367282701c76a8824a213f5a844"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f42382bf40a044b5f729c242ea637235f4a23c77e9e40cf07d2b739a82c2a99a"
-    sha256 cellar: :any,                 x86_64_linux:  "5d99faf6a19e59ccf43e1deba8efb24f8dbf2a41fcc8a39201318ab29794c963"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5e3ac3dddee5a8cf47fbecc45ad7ba67e2dfb5870131c63b35a159b74087a34"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5e3ac3dddee5a8cf47fbecc45ad7ba67e2dfb5870131c63b35a159b74087a34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5e3ac3dddee5a8cf47fbecc45ad7ba67e2dfb5870131c63b35a159b74087a34"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d55eff227a058202b96d673c7814aae9386594db3de6da875ab51497b664987"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9496a44e7a97861a41e26121b3dddd03b11dfe7381bb78c8d3cf0aa8fd965df3"
+    sha256 cellar: :any,                 x86_64_linux:  "0709541332b4ed3092ba6562ca0b6991f5ce510b110c5a7ac8e7e317128da3d3"
   end
 
   depends_on "go" => :build
+  depends_on "node" => :build
+  depends_on "pnpm" => :build
 
   def install
     ldflags = %W[
@@ -23,17 +26,19 @@ class SpicetifyCli < Formula
       -X main.version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:, output: libexec/"spicetify")
-    cd buildpath do
-      libexec.install [
-        "css-map.json",
-        "CustomApps",
-        "Extensions",
-        "globals.d.ts",
-        "jsHelper",
-        "Themes",
-      ]
-      bin.install_symlink libexec/"spicetify"
-    end
+
+    system "pnpm", "install", "--frozen-lockfile"
+    system "pnpm", "run", "build:wrapper"
+
+    libexec.install [
+      "css-map.json",
+      "CustomApps",
+      "Extensions",
+      "globals.d.ts",
+      "jsHelper",
+      "Themes",
+    ]
+    bin.install_symlink libexec/"spicetify"
   end
 
   test do

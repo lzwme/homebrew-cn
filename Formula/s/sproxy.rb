@@ -21,6 +21,9 @@ class Sproxy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bf77197199267e3b521e88729b49abcc2341fc460cf017ce16d63473d6cbf63"
   end
 
+  deprecate! date: "2026-07-09", because: :repo_removed
+  disable! date: "2027-01-09", because: :repo_removed
+
   # Only needed due to the change to "Makefile.am"
   depends_on "autoconf" => :build
   depends_on "automake" => :build

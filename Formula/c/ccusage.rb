@@ -1,17 +1,17 @@
 class Ccusage < Formula
   desc "CLI tool for analyzing Claude Code usage from local JSONL files"
   homepage "https://github.com/ccusage/ccusage"
-  url "https://ghfast.top/https://github.com/ccusage/ccusage/archive/refs/tags/v20.0.14.tar.gz"
-  sha256 "7d740f0569b7e3e3c42b928b102b2235f57e83687bdd5bd331043e96486c65c4"
+  url "https://ghfast.top/https://github.com/ccusage/ccusage/archive/refs/tags/v20.0.16.tar.gz"
+  sha256 "92858e08217786630e235e15f5906a49ec6b260e9a02f4c7c8559e35bde4079f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1cb4d5934217d039eb233d4e3bf4799f25b9ba79bb37b14b26299a508b61a8c7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6055881d1e0689aa480545ea086650007986268c104245d09f215f44937594c2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "879988aec88eb2e29a65c6cf06ef3c64aff46b06c5317a96562fee25a037046c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "21667fcb1f6b730ab6d5cd822488005cc6678d23754b0bf28987cc024f600ed1"
-    sha256 cellar: :any,                 arm64_linux:   "645d6dd3a8c08aeeade768c2fda5b26d1d7708c1fc89bf87f653d5680fab1e95"
-    sha256 cellar: :any,                 x86_64_linux:  "988cf103e6b3c2d7fabfb1ea9fa33e32d9194782593d1ccdfd59c2c1ceb26a48"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b74a37cfd28feb1669a4a84e916d579e7d8bcb181dfcd47e4bdf52e381a942a3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f98aed44b53c9c450e0fd50db53532d5829bfcba12eaabc80e81c1c0719635b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0227d6dae586e87c4fba17f30444d35202f8be2a68efd8ca40a6c0b7cfd29fa5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "795a75d5dd578fbf4085b1fc4ce9b17594343994bd1f67adab348c834c754e60"
+    sha256 cellar: :any,                 arm64_linux:   "dc4db302567c50d9304ffdcd60ed7513bdc9d2b26f420fe84c03c77bd8d77733"
+    sha256 cellar: :any,                 x86_64_linux:  "41ca7f7d2746a77121ff5a9adf86e1e859cb17275a7cced7fdb30983b4235841"
   end
 
   depends_on "rust" => :build

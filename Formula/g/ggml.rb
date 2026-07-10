@@ -8,12 +8,13 @@ class Ggml < Formula
   head "https://github.com/ggml-org/ggml.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "cab1763edff638e1e54b4feaebca3eaa91ac0a7a36126fd34e252148e5e6f1a7"
-    sha256 arm64_sequoia: "c01f54ef3da57f052ab701059619797787acac3c23a44d00028f9c8c15a00fc8"
-    sha256 arm64_sonoma:  "321d65e19dd15df245af742a5473a8385510a7de1430b4a889d420e8a095db8c"
-    sha256 sonoma:        "36a532f7395f783bcdd1079c98c5d514c1177596c602425a5b13116c9ee21e11"
-    sha256 arm64_linux:   "cbeec5ac6fabcf63990c8c31ae057a116f252f4a20649b7912fa7babfbd6fea7"
-    sha256 x86_64_linux:  "a04410ff10a2469cc28007e837405577da8a3d559e9dea704529c4adeff7a4cf"
+    rebuild 1
+    sha256 arm64_tahoe:   "840cc6b1fdd3ea3a6fac88421d4d1c781ea8a7568ea6262518d7da2876e6d78b"
+    sha256 arm64_sequoia: "66ae3c6acb7801dd38d281a11c9e0911ba3d00f1af0389bd8335a5278a82b009"
+    sha256 arm64_sonoma:  "ae79a6f248f8d8f8ecb9aa46c3aab6c34b67c979927bdd11d5736db1cee70e94"
+    sha256 sonoma:        "aafb609ae85aa3830802abc4ff9e244eba78e9d00f68754600e92d215f85e406"
+    sha256 arm64_linux:   "3bc21b572e4f961bddf2edfd1bd9c8bfdaf05fcf08142428bf1f437ddce31fb0"
+    sha256 x86_64_linux:  "0c0eed63dade9c6b9a4eda29cab7295b568a7f2d5ae64542f7c31fd10642a6b2"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -53,6 +54,10 @@ class Ggml < Formula
   def install
     # CPU detection is needed to build multiple backends, particularly on ARM (e.g. `-march=armv8.x-a+...`)
     ENV.runtime_cpu_detection
+
+    # Build bottle with Ubuntu GCC 14 rather than indirect brew GCC as latter can impact C++ ABI used
+    # TODO: Remove once CI defaults to GCC 14+
+    ENV.method(:"gcc-14").call if OS.linux? && Hardware::CPU.arm? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     args = %W[
       -DBUILD_SHARED_LIBS=ON

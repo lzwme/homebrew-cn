@@ -9,12 +9,13 @@ class Btcli < Formula
   head "https://github.com/RaoFoundation/btcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bdeda7675efa2734cf01a2c1581db53be91028428f82da06e6baf9cea8811665"
-    sha256 cellar: :any, arm64_sequoia: "7893c2db91aa278c6b1846c45ed63cf0c7d640315bc8b8b2109e838ae4346d68"
-    sha256 cellar: :any, arm64_sonoma:  "10836bfb5db4fe18a06ab012e95691614286411e9a11f24546413b1c3c856e62"
-    sha256 cellar: :any, sonoma:        "0e05d5604601f14b1691c8ec9dd0b389e5bad9fc5e9dc55298d73e0d576f1e20"
-    sha256 cellar: :any, arm64_linux:   "f81f0e15c15d70b1a8177f3cebf7f22f526efecd4cba9b9dd6537acae1302ace"
-    sha256 cellar: :any, x86_64_linux:  "cbfc30dd93e3d5eba719ff04dce67622041171ce6b5b5825ccd1c149016ac7c5"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "4ef2920ba6d07037ad52bf2940b582dfa905358f05e8ee6b609b2edf85dfdbd4"
+    sha256 cellar: :any, arm64_sequoia: "6be41d910f090d80f4202b3067b8831d14149b1c4678361ffcec71da19ce7aa6"
+    sha256 cellar: :any, arm64_sonoma:  "fea018a037b1e4057b122477d02dd04372500c7195fc5e01898c244475ee879f"
+    sha256 cellar: :any, sonoma:        "da0bfee34d762b9c64ece46194ed5941b89e9c130ad34d10386b9a488b0e0a59"
+    sha256 cellar: :any, arm64_linux:   "c6188dee06c749eee755b094162de868ae6d793449f01b279291900981050c5a"
+    sha256 cellar: :any, x86_64_linux:  "1c1baf6112576f16bc54a6a0e4992f20fb612d3be4f9510cd0b598aea7d67423"
   end
 
   depends_on "rust" => :build # for bittensor-wallet, plotly
@@ -24,6 +25,7 @@ class Btcli < Formula
   depends_on "numpy"
   depends_on "openssl@3"
   depends_on "python@3.14"
+  depends_on "xxhash"
 
   conflicts_with "btpd", because: "both install `btcli` binaries"
 
@@ -202,6 +204,7 @@ class Btcli < Formula
   def install
     ENV.O0
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["XXHASH_LINK_SO"] = "1"
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin/"btcli", shell_parameter_format: :typer)

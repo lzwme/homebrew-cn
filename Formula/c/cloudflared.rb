@@ -1,18 +1,18 @@
 class Cloudflared < Formula
   desc "Cloudflare Tunnel client (formerly Argo Tunnel)"
   homepage "https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/"
-  url "https://ghfast.top/https://github.com/cloudflare/cloudflared/archive/refs/tags/2026.7.0.tar.gz"
-  sha256 "f986f5b2a7309bfe21db8d694bdf09ae2904b0674c67744aa645038e15608383"
+  url "https://ghfast.top/https://github.com/cloudflare/cloudflared/archive/refs/tags/2026.7.1.tar.gz"
+  sha256 "b47f3b4453a3a59317e6cc14e16e04a6f6d3cebe5447d3a245b09a78dba27a7a"
   license "Apache-2.0"
   head "https://github.com/cloudflare/cloudflared.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "96572f4c15cac8e8f449a8749b3950503ca8f2a7beb58a435ff39df7f4b2f4cd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1e239f6363e2d15f939565ef102209a3c126906f98af1c5fb0549c53de3cff2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b14e1d3133538b6d711f9e98a52163fa7c3525a8a28c59d5af8a2d58f6154c71"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e1269302e6e82922c754805b0fc8ddfb28113e708f158890655db9e4367fca0a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dcb42988d8a28a1a40a232671cd0406bd58a50b0db855ee2490804b6f4380cdb"
-    sha256 cellar: :any,                 x86_64_linux:  "d6fd0828b9de51fdf3fe6409ceb01201d935a91f4bd841bfde434add95ca04b2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "08ae1a9e7bea55956a7fc2f1fcd36156eca396c89023ff96dcb44df3acd2b123"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f497b55148f97acfb70c04694f826e1310ebcb8711de31c2b6f44622ef344fa3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1571a4ce7ac62dfa37a53d55858e743ca08d092d5af15f2e6bdc4bb415bf2fe5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0a31419526deebb6a749532ae55d7c44a540c38045c6a9318ffec7da4e7b8b6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "564e9eb75a51e62221be90d1dedb032aeb43532f507b0873bf7432c46de8b6f9"
+    sha256 cellar: :any,                 x86_64_linux:  "1faf710d3032c9e267c6ca95619234117d52c2eac76dceb866b5dd17a087942c"
   end
 
   depends_on "go" => :build

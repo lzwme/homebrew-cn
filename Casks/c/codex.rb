@@ -2,28 +2,29 @@ cask "codex" do
   arch arm: "aarch64", intel: "x86_64"
   os macos: "apple-darwin", linux: "unknown-linux-musl"
 
-  version "0.143.0"
-  sha256 arm:          "7df2384f037519dff7dbf4252e60913a5c1c7fdb66c1467c9125b2b2d3594a86",
-         intel:        "f776ef1d5e5f03151dd6e6af94cc7b13e9b08c3c52bd60327692009b01dbfb4a",
-         arm64_linux:  "daec4cb18f3ad3e541e8986763e73019b3ddb726d1f8692e50ea5fa988c09d78",
-         x86_64_linux: "d9dc731dc66e227b175b13c071be9ea126cc7672fcac8a87823da50b0d2b2ffe"
+  version "0.144.1"
+  sha256 arm:          "326198829dfb4b68da59723cf605478a2e9bec89ff47feb645814a4c5eaf5f6c",
+         intel:        "1c797880977549b281eeb4ecd9dbd145542c4ce262a2835ea2847f19922ed30c",
+         arm64_linux:  "218ab48bdda98dde3e10df184cc0c4eb92c4372d9ca924ef1aa5fc81b4f6a38e",
+         x86_64_linux: "3fd50cf96809b1eea294bbfba0a5c3a576871b4876a1f0e91226e520c1923be1"
 
-  url "https://ghfast.top/https://github.com/openai/codex/releases/download/rust-v#{version}/codex-#{arch}-#{os}.tar.gz"
+  url "https://ghfast.top/https://github.com/openai/codex/releases/download/rust-v#{version}/codex-package-#{arch}-#{os}.tar.gz"
   name "Codex"
   desc "OpenAI's coding agent that runs in your terminal"
   homepage "https://github.com/openai/codex"
 
   livecheck do
     url :url
-    regex(/^rust-v?(\d+(?:\.\d+)+)$/i)
+    regex(/^rust[._-]v?(\d+(?:\.\d+)+)$/i)
     strategy :github_latest
   end
 
   depends_on formula: "ripgrep"
 
-  binary "codex-#{arch}-#{os}", target: "codex"
+  binary "bin/codex"
+  binary "bin/codex-code-mode-host"
 
-  generate_completions_from_executable "codex-#{arch}-#{os}", "completion", base_name: "codex"
+  generate_completions_from_executable "bin/codex", "completion"
 
   zap rmdir: "~/.codex"
 end

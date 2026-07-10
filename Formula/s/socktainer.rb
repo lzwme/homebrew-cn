@@ -1,13 +1,13 @@
 class Socktainer < Formula
   desc "Docker-compatible REST API on top of Apple container"
   homepage "https://socktainer.github.io"
-  url "https://ghfast.top/https://github.com/socktainer/socktainer/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "96064d7e0f2edd45d9f68f36996352e296054b183ca7c186ebec0b7d5a4a035f"
+  url "https://ghfast.top/https://github.com/socktainer/socktainer/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "dc37f21b6f8ce055e25fe6d1a3c4308f7fb8853203eecff073fcea2948e5e344"
   license "Apache-2.0"
   head "https://github.com/socktainer/socktainer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "7f2274e48379eea57dfd75cfa99927b6f4806e78bb47334194c5f3a8639f22bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "14ea82bbc92729742caa3dcdf4525af2ed3afb2a52eb96acd69c46031c09fb60"
   end
 
   depends_on xcode: ["26.0", :build]

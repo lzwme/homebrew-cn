@@ -4,8 +4,8 @@ class Swift < Formula
   desc "High-performance system programming language"
   homepage "https://www.swift.org"
   # NOTE: Keep version in sync with resources below
-  url "https://ghfast.top/https://github.com/swiftlang/swift/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-  sha256 "2a4e7fd3b2e37bd061923d0f7e508e430aadf6b39c56ce2cc51e9caad501cf4d"
+  url "https://ghfast.top/https://github.com/swiftlang/swift/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+  sha256 "a96425b6626ede8518423810450763da541fb28501e27009badb6a6f6534c411"
   license "Apache-2.0"
   compatibility_version 1
 
@@ -18,12 +18,12 @@ class Swift < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "50c3d58be04835c4a4210d2c097c672ec4c85412d1d7212767a7914a05475201"
-    sha256 cellar: :any, arm64_sequoia: "07e32c66268a1f0a4330e8714dd38ed34491f819603fd7420ccce795c239e4b7"
-    sha256 cellar: :any, arm64_sonoma:  "1b695a0250226086b5955739b4257a12b4715d174a0db52a3f4e9406bf28dfc2"
-    sha256 cellar: :any, sonoma:        "d8a2d1f28f934a676a950d0cd5dcb64f1da01ca5dbda72626d07d4a7b3f90bd2"
-    sha256 cellar: :any, arm64_linux:   "7be61fe386bf969d9eab03f44d0241b794043ed289c721e4c1162e8cf139bb02"
-    sha256 cellar: :any, x86_64_linux:  "5a888ae94e976633de54d5bbd3cf1b3d9dc56a9c031efe8fb8366d45dae54877"
+    sha256 cellar: :any, arm64_tahoe:   "a2c5d83ddd008ce998d5f2e6589fc6bce3ed0af792436094604ce4574ded86f9"
+    sha256 cellar: :any, arm64_sequoia: "8afd2a1a21b36a4835ef6f0a1f2f3899822672cf8b91afd74db578ddd6734344"
+    sha256 cellar: :any, arm64_sonoma:  "dd586b2892e98b74b68b6607034f02e4f2d75cf4c02690ceed1bd101ec34f5f3"
+    sha256 cellar: :any, sonoma:        "0a80913a4662537ab778cf9a8f770ab608b71d56d58bf23cad2d5278292aa87f"
+    sha256 cellar: :any, arm64_linux:   "4275f2946d80138644aa4e74ee392768581f5070b3d574c7eaef4ecd77724246"
+    sha256 cellar: :any, x86_64_linux:  "3e0b0c6063d8b8bd909a2431924ae7b9870b630dc5a614182c30f49520277315"
   end
 
   keg_only :provided_by_macos
@@ -67,8 +67,8 @@ class Swift < Formula
     end
 
     resource "swift-corelibs-foundation" do
-      url "https://ghfast.top/https://github.com/swiftlang/swift-corelibs-foundation/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-      sha256 "0c5f6c3d58f80773667a1cf8a453aa28499990cace2cd1c5821c12af0e1487a9"
+      url "https://ghfast.top/https://github.com/swiftlang/swift-corelibs-foundation/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+      sha256 "cfba08125b15c3138f6d1e2b6cf5058ef2f294f3a08c54ef322d903a5002c20d"
 
       livecheck do
         formula :parent
@@ -76,8 +76,8 @@ class Swift < Formula
     end
 
     resource "swift-foundation" do
-      url "https://ghfast.top/https://github.com/swiftlang/swift-foundation/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-      sha256 "d87155bcd39b03e89ae84fd8d7d7d27c8e53f4b410ed2dc1ed167bb7b89a780a"
+      url "https://ghfast.top/https://github.com/swiftlang/swift-foundation/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+      sha256 "23972ee7ef5e103fa2a9df2704abce787b0f64073fec3df1846c2f2039bf0f3d"
 
       livecheck do
         formula :parent
@@ -85,8 +85,8 @@ class Swift < Formula
     end
 
     resource "swift-foundation-icu" do
-      url "https://ghfast.top/https://github.com/swiftlang/swift-foundation-icu/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-      sha256 "c466a0c63a551a3109a82004274c29d7b18ab212de30dca9e8ef09679d597177"
+      url "https://ghfast.top/https://github.com/swiftlang/swift-foundation-icu/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+      sha256 "3568e41730bce792bb90fbc592ad37df319a62352587ff134a8e554751063cf8"
 
       livecheck do
         formula :parent
@@ -94,8 +94,8 @@ class Swift < Formula
     end
 
     resource "swift-corelibs-libdispatch" do
-      url "https://ghfast.top/https://github.com/swiftlang/swift-corelibs-libdispatch/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-      sha256 "a8ea68644b16d78d814ad33c03219b6471b21df292a0c0e261a2139ff630c87e"
+      url "https://ghfast.top/https://github.com/swiftlang/swift-corelibs-libdispatch/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+      sha256 "c3a61c08387937622a291e08e64eb4ec0be07f1df252574552641129057951bb"
 
       livecheck do
         formula :parent
@@ -103,8 +103,8 @@ class Swift < Formula
     end
 
     resource "swift-corelibs-xctest" do
-      url "https://ghfast.top/https://github.com/swiftlang/swift-corelibs-xctest/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-      sha256 "63dd5cc1b487e4c9f91ddb51e4785e29f42a8f4d61710fd880517130adf1697e"
+      url "https://ghfast.top/https://github.com/swiftlang/swift-corelibs-xctest/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+      sha256 "0255806248b1bb21c09dd7f798b6db8068eb56d88a7e28bb3b667f70277efa66"
 
       livecheck do
         formula :parent
@@ -117,8 +117,8 @@ class Swift < Formula
   end
 
   resource "llvm-project" do
-    url "https://ghfast.top/https://github.com/swiftlang/llvm-project/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-    sha256 "9c25e21345cbb91d8ed3c695907b1cc7b0d511690060ffb9a23e3744b2198eee"
+    url "https://ghfast.top/https://github.com/swiftlang/llvm-project/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+    sha256 "4e0bfc8045a1036d3a49c65d411ffca1e4b6af117ac2bf5070871f375c097610"
 
     livecheck do
       formula :parent
@@ -126,8 +126,8 @@ class Swift < Formula
   end
 
   resource "cmark" do
-    url "https://ghfast.top/https://github.com/swiftlang/swift-cmark/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-    sha256 "99990e5cbdccd6b0a03e8c39050a8a69689bcdde67bddbf02635e691c19b6da3"
+    url "https://ghfast.top/https://github.com/swiftlang/swift-cmark/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+    sha256 "c9f981c268b4d2beca1d43878f5dd1d69dc629e62157bc400064d6c6111e2020"
 
     livecheck do
       formula :parent
@@ -135,8 +135,8 @@ class Swift < Formula
   end
 
   resource "llbuild" do
-    url "https://ghfast.top/https://github.com/swiftlang/swift-llbuild/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-    sha256 "0229f4e2d5ad2ce2715b023fd07a061f84953703131a170793242ab3ec621635"
+    url "https://ghfast.top/https://github.com/swiftlang/swift-llbuild/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+    sha256 "89d9267a1ae741c4d12a58fa3f81a3d07985b5947795eb2edbb41ead373f6a46"
 
     livecheck do
       formula :parent
@@ -156,8 +156,8 @@ class Swift < Formula
   end
 
   resource "swift-build" do
-    url "https://ghfast.top/https://github.com/swiftlang/swift-build/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-    sha256 "724bdee37a73b439b0ea41ec6c2e477e86111c2beda495336d4f8a0336b4c1c7"
+    url "https://ghfast.top/https://github.com/swiftlang/swift-build/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+    sha256 "8bb78bb89d03489f0e5a529b2a1dbb29e98de947b187b2bc282a6ae4f939d663"
 
     livecheck do
       formula :parent
@@ -165,8 +165,8 @@ class Swift < Formula
   end
 
   resource "swiftpm" do
-    url "https://ghfast.top/https://github.com/swiftlang/swift-package-manager/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-    sha256 "92396b6ddddf03895b865a08878967ad22253f1bf797fd0ac9a8d554e2f26b37"
+    url "https://ghfast.top/https://github.com/swiftlang/swift-package-manager/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+    sha256 "191a953608b99241cd53e9f02d0ddbdbccd32bb4cb5c6aaff3e47b78003dfa94"
 
     livecheck do
       formula :parent
@@ -179,8 +179,8 @@ class Swift < Formula
   end
 
   resource "indexstore-db" do
-    url "https://ghfast.top/https://github.com/swiftlang/indexstore-db/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-    sha256 "82efab77004d2c9edfcbdf6ff7ab5fb6552998642e6148be476c9d9373b20fe8"
+    url "https://ghfast.top/https://github.com/swiftlang/indexstore-db/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+    sha256 "c49a8c3481dfbdd37abd58800a6f6654b52cf051200ea9bcfc2fe2535d3f8841"
 
     livecheck do
       formula :parent
@@ -188,8 +188,8 @@ class Swift < Formula
   end
 
   resource "sourcekit-lsp" do
-    url "https://ghfast.top/https://github.com/swiftlang/sourcekit-lsp/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-    sha256 "ddfd230186a66f6ba3ab8a7304e2863985cfa01a5d0cc1ca4a36819905c8abe4"
+    url "https://ghfast.top/https://github.com/swiftlang/sourcekit-lsp/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+    sha256 "6f79fb228df8b5c50e8b47ec7ee588de0a8240aaf45a1d5ce7bbf2a733dcaf42"
 
     livecheck do
       formula :parent
@@ -197,8 +197,8 @@ class Swift < Formula
   end
 
   resource "swift-driver" do
-    url "https://ghfast.top/https://github.com/swiftlang/swift-driver/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-    sha256 "f7dcb5b6e185cd14eeadb36d8fc9c1b685a3536330800cfd8f462390171494fb"
+    url "https://ghfast.top/https://github.com/swiftlang/swift-driver/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+    sha256 "d4fcada9b5ad99ed9194b3fae35de234a56d80e833dc19016ac8e904dcc7cd76"
 
     livecheck do
       formula :parent
@@ -206,8 +206,8 @@ class Swift < Formula
   end
 
   resource "swift-tools-support-core" do
-    url "https://ghfast.top/https://github.com/swiftlang/swift-tools-support-core/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-    sha256 "39080e59081b562b2379f8ef324dcbe8131d6f168922cc33b0b1993e5066ef89"
+    url "https://ghfast.top/https://github.com/swiftlang/swift-tools-support-core/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+    sha256 "df4dc7e94360d3af711b78d28691df1082faf389d0db78c0ea702e2217a4036f"
 
     livecheck do
       formula :parent
@@ -222,8 +222,8 @@ class Swift < Formula
   end
 
   resource "swift-docc" do
-    url "https://ghfast.top/https://github.com/swiftlang/swift-docc/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-    sha256 "f177971837f0939ba5959ed822c5ebe3d96767e36c9a9da3855f36a3e504034b"
+    url "https://ghfast.top/https://github.com/swiftlang/swift-docc/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+    sha256 "c785529e3ddcf4ee982a26c9ee4e2ec30175fc9ec0727bf9b0cd26c638b14393"
 
     livecheck do
       formula :parent
@@ -231,8 +231,8 @@ class Swift < Formula
   end
 
   resource "swift-lmdb" do
-    url "https://ghfast.top/https://github.com/swiftlang/swift-lmdb/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-    sha256 "d17ddbc5e6ef09f8de23270f4f6184bbb74d45daf0bb682aeea94df29468286a"
+    url "https://ghfast.top/https://github.com/swiftlang/swift-lmdb/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+    sha256 "b8b14a954f737e2cc45458c52e17def09a474448346febf4d4f73deaba9905a5"
 
     livecheck do
       formula :parent
@@ -240,8 +240,8 @@ class Swift < Formula
   end
 
   resource "swift-docc-render-artifact" do
-    url "https://ghfast.top/https://github.com/swiftlang/swift-docc-render-artifact/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-    sha256 "d4c3531bd3a823cf21abe62d4e161b1b535a14c0ec807f2b2d29bc673261142d"
+    url "https://ghfast.top/https://github.com/swiftlang/swift-docc-render-artifact/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+    sha256 "a1deb9b3a1a17e10c1b9d88e6f321e099457d5c45bb2ed03374b2263e48dcf55"
 
     livecheck do
       formula :parent
@@ -249,8 +249,8 @@ class Swift < Formula
   end
 
   resource "swift-docc-symbolkit" do
-    url "https://ghfast.top/https://github.com/swiftlang/swift-docc-symbolkit/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-    sha256 "a536bbb0d89b4a53cd84aa29c0cd5b15bfb60cf15201a8097c56768153be4d66"
+    url "https://ghfast.top/https://github.com/swiftlang/swift-docc-symbolkit/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+    sha256 "02457ea2dc733f66d39a1db7b9a1bc75b39acaee228da09caaa1a15c5207543c"
 
     livecheck do
       formula :parent
@@ -258,8 +258,8 @@ class Swift < Formula
   end
 
   resource "swift-markdown" do
-    url "https://ghfast.top/https://github.com/swiftlang/swift-markdown/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-    sha256 "27e921436c891bb54846c9e185cbc1272c0429948ef27452f9bdc15d7715e127"
+    url "https://ghfast.top/https://github.com/swiftlang/swift-markdown/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+    sha256 "93684a45e81577a8640292e406c7e645adf9c9e143c59527e833cd49609c98cf"
 
     livecheck do
       formula :parent
@@ -267,8 +267,8 @@ class Swift < Formula
   end
 
   resource "swift-experimental-string-processing" do
-    url "https://ghfast.top/https://github.com/swiftlang/swift-experimental-string-processing/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-    sha256 "f10ff2b3777faabb196886aa59a49cf57c4b950d6d0285063006a2cbd4d65552"
+    url "https://ghfast.top/https://github.com/swiftlang/swift-experimental-string-processing/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+    sha256 "1ca338ea222031f5d67fa34922a55111ffb67524197f33a6be0540abaafe0b52"
 
     livecheck do
       formula :parent
@@ -276,8 +276,8 @@ class Swift < Formula
   end
 
   resource "swift-syntax" do
-    url "https://ghfast.top/https://github.com/swiftlang/swift-syntax/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-    sha256 "72538afeb73abef15010f45fdb563d463d638cd8fabae5f50a09b1f9022c05be"
+    url "https://ghfast.top/https://github.com/swiftlang/swift-syntax/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+    sha256 "94d58f82c8d3c1831283f85c64f3485a9caf1e9c0834d7142feac5bfcf6fc3d9"
 
     livecheck do
       formula :parent
@@ -285,8 +285,8 @@ class Swift < Formula
   end
 
   resource "swift-testing" do
-    url "https://ghfast.top/https://github.com/swiftlang/swift-testing/archive/refs/tags/swift-6.3.2-RELEASE.tar.gz"
-    sha256 "d13a8a4bbb636413fd9b657117db96820c9c466ade0aaeb44638058446f747a8"
+    url "https://ghfast.top/https://github.com/swiftlang/swift-testing/archive/refs/tags/swift-6.3.3-RELEASE.tar.gz"
+    sha256 "926c9bf7c1ad4eaedb7913f0bb79221734adc87c46bc664f40de6f8d78ce9d91"
 
     livecheck do
       formula :parent
@@ -552,6 +552,9 @@ class Swift < Formula
         # Bootstrap will be linked against system ncurses so point it to ours.
         # This unfortunately assumes that they are ABI compatible.
         ENV.prepend_path "LD_LIBRARY_PATH", HOMEBREW_PREFIX/"lib"
+
+        # The installed swiftc bypasses our shim, so expose `-lcurses` on its link path.
+        ENV.prepend_path "LIBRARY_PATH", HOMEBREW_PREFIX/"lib"
 
         # Use lld as Ubuntu 22.04 gold failed with "undefined symbol: _swift_registerConcurrencyRuntime".
         # We no longer include gold in `binutils` while bfd is less tested upstream and increases build time.

@@ -3,18 +3,18 @@ class Shub < Formula
 
   desc "Scrapinghub command-line client"
   homepage "https://shub.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/8b/f5/19dd9324e6da575a117634e4ee53900d5cb888f89ff4b560cd93c2585387/shub-2.18.0.tar.gz"
-  sha256 "4afb7b0afa7ce8d19946cfd2b5fdd32d6f01691f57d0a60d819d78917b6168c5"
+  url "https://files.pythonhosted.org/packages/41/c0/e4cd695b5335dab990dafe0e773382f509d6d8cf77124ca523a66e928439/shub-2.18.1.tar.gz"
+  sha256 "4ede0607380bad7df43160dcd0401b47eee309a37fdaf098d6a4621bbfe76a2b"
   license "BSD-3-Clause"
   head "https://github.com/scrapinghub/shub.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "da3053a3bf943b441b88a31c56ed2f6eb2416a93aa0ba72cbde26bd349c70ba5"
-    sha256 cellar: :any, arm64_sequoia: "6aa3ca21dda9d824fd90968acba67e22863770746574ccd8699b3baf9ddb0690"
-    sha256 cellar: :any, arm64_sonoma:  "b7c90f1132fbd3b58650f06ea963fb67b4cf8948ee5844e0646c01243a5c4999"
-    sha256 cellar: :any, sonoma:        "cbee83c9052945a23015bde90c78b8d408c8dc5ee1eebc9e3fb9ac66716888bc"
-    sha256 cellar: :any, arm64_linux:   "413a9ade416fba767aaeabd0172bd880e77ac592c38f9b795b226426bf8c70a5"
-    sha256 cellar: :any, x86_64_linux:  "549bc627ee9e21e8877fa2ef99ff141c2ab3a6670e3d27b064bb3041dab99cf0"
+    sha256 cellar: :any, arm64_tahoe:   "d0be5433f79d9b9649dc67a500454f3b3f0898a81fffa228a25234f978d33659"
+    sha256 cellar: :any, arm64_sequoia: "f7b168b1c0dbbd90f9b5c6ab91b97542884a9c9ca3118d86aa8e809d5dac0a8c"
+    sha256 cellar: :any, arm64_sonoma:  "15407913edc7f2fee6d3c4da9ae704aa1ad1dbf99b1607a0f3c3139650321af2"
+    sha256 cellar: :any, sonoma:        "220f8f0dd3115172559eca92e27362a16e5b2927cc875e355d0ff1d792e014fd"
+    sha256 cellar: :any, arm64_linux:   "7eeaacaf4c0b84ebdb6ec9207dd9b79796f4a1cbc37d2a3a802e176573eb1288"
+    sha256 cellar: :any, x86_64_linux:  "585852bfd9ea92701bb0802be806ad6d2a6b55937f3d5cbee28a1c9159b1cac9"
   end
 
   depends_on "certifi" => :no_linkage
@@ -24,13 +24,13 @@ class Shub < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "docker" do
@@ -74,8 +74,8 @@ class Shub < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
-    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
   end
 
   resource "six" do

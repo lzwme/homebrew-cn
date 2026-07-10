@@ -1,8 +1,8 @@
 class Solidity < Formula
   desc "Contract-oriented programming language"
   homepage "https://soliditylang.org"
-  url "https://ghfast.top/https://github.com/argotorg/solidity/releases/download/v0.8.35/solidity_0.8.35.tar.gz"
-  sha256 "76178a2d5ba92f08b6faa109fdd452a3fbe05ca610a43fa2f1a9426deda7e191"
+  url "https://ghfast.top/https://github.com/argotorg/solidity/releases/download/v0.8.36/solidity_0.8.36.tar.gz"
+  sha256 "458c525af3a7bc1b5599e1a125cce960631ab8b3e7110c7ed4c9bbf34157fb86"
   license all_of: ["GPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0", "CC0-1.0"]
 
   livecheck do
@@ -11,12 +11,12 @@ class Solidity < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "dd725bd70eea7bb4d916ba9e1f8ac41ed2047c93c6cefc4d3ab7f0bee12cfcce"
-    sha256 cellar: :any,                 arm64_sequoia: "e3037ae235e65c8c92c6de206b604bca8d0f780884402f4c2a8decc1a285d4f9"
-    sha256 cellar: :any,                 arm64_sonoma:  "a13a0989c50011dab49a1f5ada54d421046bcb4631e50d2e63f43eae9e8e7f54"
-    sha256 cellar: :any,                 sonoma:        "3d56154e7421ef86a0502a7151ac453d8a78904c2d5e50b4c68bffe23f470db2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "448c14dc142ede41a53bce5c447230ae3b6595ce376f2208196ccba6e1d82bfe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e6fa375d57473ac08f1274da84c8a75763011ea49821388bc4ced7364678306"
+    sha256 cellar: :any, arm64_tahoe:   "f8ffba8359791933c830ab98271cc38b045dd3051b8c424c88d6d64a4a3e7379"
+    sha256 cellar: :any, arm64_sequoia: "fe5610708be2b877fb6f3d6b48b7a095f716bcf832d5868e9be6c277990aef5a"
+    sha256 cellar: :any, arm64_sonoma:  "38ba75bae9aa03259f9d93b4959b8d719214bf2bbbd3d54c028c63d34f4b195a"
+    sha256 cellar: :any, sonoma:        "4d660bddee914001521ff230392aac13afa987cba25cff2f5c68991446119d90"
+    sha256 cellar: :any, arm64_linux:   "7b2090c679da018c31ecc9bd61420c0409a32ff0cbcec5b9cf7a6a538be44c3c"
+    sha256 cellar: :any, x86_64_linux:  "2b492046a911046789aec46ef53f0cf42a981000a59ff5824608616e3cf47127"
   end
 
   depends_on "cmake" => :build

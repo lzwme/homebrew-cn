@@ -1,19 +1,18 @@
 class Atuin < Formula
   desc "Improved shell history for zsh, bash, fish and nushell"
   homepage "https://atuin.sh/"
-  url "https://ghfast.top/https://github.com/atuinsh/atuin/releases/download/v18.16.1/source.tar.gz"
-  sha256 "aec5c91207f080becc4b13593d5b7edc46685e8d4dbfbaef33d31f8058191bc6"
+  url "https://ghfast.top/https://github.com/atuinsh/atuin/releases/download/v18.17.0/source.tar.gz"
+  sha256 "38f78bffd059fb1ce92d9387af2084ba724a4447865c864b89f39df19024fa8d"
   license "MIT"
   head "https://github.com/atuinsh/atuin.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c0a9028714c42a158eedafd0e3c616f1e6df335f5e2fe3d4796006d8996d5db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aabe5a89f5f07effa9b1d93087469c60e3630bbb1f1eef4b4f3e8e63b8c1790b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "409a9e05765cda4f7271eaaa7833afb7d5ad55b71badac5b6459aa78cb85ee0e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ebb8239444b8ce96d114812593e5781d141406097b8348bcf0d5b5ab11619fd0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5edbd418eb0f9d32dedfa1c737e8e66487dd2bc81f02d31d27a807070dc6c7af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51817c931148502c0ba47dbdb24359642c402c5d1697765a482489a5eb8955d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3462bc2b139468cbd55558b73eca438740e6bc132a53bfcf636b9c7b6eace3e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "057fff8309c6091bae822538677b90e630b3762ad95757b5f9c0692e0a8a7ce2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08d40ca1f0b23386104a97b781ddded1acd906f97df1ae9b6c18a9f4ed7f44ae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "532d3de2edce2dbd6ef434c457f365808b34c38d02debe978dcc27e435b5e3aa"
+    sha256 cellar: :any,                 arm64_linux:   "ecc484f6d342f51a74e57bab6c3e8562d663507a798217d90c152c16c691d211"
+    sha256 cellar: :any,                 x86_64_linux:  "7bd1e34725eee5248c1f31dba66307ae6051d1ccf7646fb4c357c2f7a9608fba"
   end
 
   depends_on "protobuf" => :build

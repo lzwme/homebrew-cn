@@ -1,8 +1,8 @@
 class Biosig < Formula
   desc "Tools for biomedical signal processing and data conversion"
   homepage "https://biosig.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-3.9.5.src.tar.xz"
-  sha256 "dfdb7aec5ac9681f25e3c186a5b356d5ec86cda87cdcb034d38e838f875cc3f1"
+  url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-3.9.6.src.tar.xz"
+  sha256 "916e1e7bfbb321ec11c6fb54d6d2582b35d07950a2c7ba15dad34ee722016e65"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Biosig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "8b266ef8a06ab3ad16f5bc5901a3150690e6f697c55e7d9e35d0d48624831210"
-    sha256 cellar: :any,                 arm64_sequoia: "1298247915c0d2ab387988cc0ce677e7ee53a041006791bbb45a15ec81325d22"
-    sha256 cellar: :any,                 arm64_sonoma:  "b9aecc456b99d4def2b35cf585dc5c80a8353c2d832bacf57a447ac98316ef8e"
-    sha256 cellar: :any,                 sonoma:        "d3daa115222ba7b52440d46c4f93aecdb0b2054b43fb1642863c758704533ec0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c91f66bc6ef8a0b955fd0d162d73df2a26fb65761970389aefb5a85900cd8e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df63c310a3deab0d6ba5f2027aab12fbd3370a001476c8980a0f8cbd46cce2b9"
+    sha256 cellar: :any, arm64_tahoe:   "0da6ed7cf6c04b092ed8f42cf1aba88540e1c899cf7db55c9b8e427cb524cbd2"
+    sha256 cellar: :any, arm64_sequoia: "25cc9192ac7232e38c7e13e57ea830046b01fe0918ef9d92be46e60e6981290d"
+    sha256 cellar: :any, arm64_sonoma:  "ce77d060f51fa45eba51b66b6b153673635d6b276284e47a652392d83f68daae"
+    sha256 cellar: :any, sonoma:        "8b054c1d7bf23da0407f035a200230c1c0ef656ec6da1117954e62dac5639955"
+    sha256 cellar: :any, arm64_linux:   "16c9cd8857096437b99700fea4158bc0f4dfb940d063f70ef30e597a30e04c5a"
+    sha256 cellar: :any, x86_64_linux:  "ce15382a752adc45965c78d8de99bdfd0796eb1232a60a289aa27af00110da03"
   end
 
   depends_on "gawk" => :build
@@ -32,6 +32,11 @@ class Biosig < Formula
 
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
+    # `string_isutf8.o` is missing from the libgdf link target
+    inreplace "biosig4c++/Makefile.in",
+              "gdf.o gdftime.o physicalunits.o getlogin.o",
+              "gdf.o gdftime.o physicalunits.o getlogin.o string_isutf8.o"
 
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"

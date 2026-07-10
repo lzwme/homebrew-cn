@@ -105,9 +105,11 @@ class Quictls < Formula
     etc/"quictls"
   end
 
-  def post_install
-    rm(quictlsdir/"cert.pem") if (quictlsdir/"cert.pem").exist?
-    quictlsdir.install_symlink Formula["ca-certificates"].pkgetc/"cert.pem"
+  post_install_steps do
+    ln_sf "cert.pem", "quictls/cert.pem",
+          source_formula: "ca-certificates",
+          source_base:    :formula_pkgetc,
+          target_base:    :etc
   end
 
   def caveats

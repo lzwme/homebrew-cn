@@ -9,12 +9,13 @@ class LanggraphCli < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ad4c9d8ec75db7230513c37797a6054aaa015e5edc3fab3a9c0b526cc0886c03"
-    sha256 cellar: :any, arm64_sequoia: "d343071ecd83e9879aa16638c0f9e4cdae952e96eee92b843970c4a74cb06ffc"
-    sha256 cellar: :any, arm64_sonoma:  "93eeda1d53584308a84c1861c9feb7a54695b95c22cc217f3dd351e9815c1906"
-    sha256 cellar: :any, sonoma:        "fdf51931a16519504ca876d5da1379271ecbf1321fe11b83eff68af684d0937b"
-    sha256 cellar: :any, arm64_linux:   "a6a7a7447e172b89fc4dd20af74ff3ae9e8949427b56bdce5cccd408ab85601a"
-    sha256 cellar: :any, x86_64_linux:  "06cb5e9124a2dcfa154cbde9d19e7ac8c363752ceba870615f0ba5674c63d04e"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "5eeca0f099e76d029dc9f517b2541164868260ffcfdffd8716f736328a76eae9"
+    sha256 cellar: :any, arm64_sequoia: "aced561644da533a6db750c134c8eb18746114c0444b9672596bc15e32e054ca"
+    sha256 cellar: :any, arm64_sonoma:  "99440ff8828a825dfa9a8f4c3e5f5bdbc0d66fb2f6eca5372315e73ff1bfc0f0"
+    sha256 cellar: :any, sonoma:        "f093b644e11efcb185f06e2246798df755788a6b3e7cd9fdb562ba7406fd9254"
+    sha256 cellar: :any, arm64_linux:   "7bfd7692258b9ca873cc7b29a419966f3b011d7726196ba26b629909482d1c39"
+    sha256 cellar: :any, x86_64_linux:  "0cde836fcf90b07442ff680e4ab418eabc52e1da4d831c211a980f0aab7113ad"
   end
 
   depends_on "rust" => :build # for orjson
@@ -22,6 +23,8 @@ class LanggraphCli < Formula
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
+  depends_on "xxhash"
+  depends_on "zstd"
 
   pypi_packages exclude_packages: %w[certifi pydantic]
 
@@ -156,7 +159,14 @@ class LanggraphCli < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    ENV["XXHASH_LINK_SO"] = "1"
+    venv = virtualenv_install_with_resources without: "zstandard"
+
+    resource("zstandard").stage do
+      args = std_pip_args(prefix: false, build_isolation: true)
+      args << "--config-settings=--build-option=--system-zstd"
+      system venv.root/"bin/python", "-m", "pip", "install", *args, "."
+    end
 
     generate_completions_from_executable(bin/"langgraph", shell_parameter_format: :click)
   end

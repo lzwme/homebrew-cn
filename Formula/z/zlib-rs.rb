@@ -1,18 +1,18 @@
 class ZlibRs < Formula
   desc "C API for zlib-rs"
   homepage "https://github.com/trifectatechfoundation/zlib-rs/tree/main/libz-rs-sys-cdylib#libz-rs-sys-cdylib"
-  url "https://ghfast.top/https://github.com/trifectatechfoundation/zlib-rs/archive/refs/tags/v0.6.5.tar.gz"
-  sha256 "ee4983e594610e185ded3b798fbbde60f04cceb73f92c4593d26b9add17e1b5d"
+  url "https://ghfast.top/https://github.com/trifectatechfoundation/zlib-rs/archive/refs/tags/v0.6.6.tar.gz"
+  sha256 "e909a4fe6a67362e5a0db67114b69496a4572c0b99c26e7542638ec003fc11b2"
   license "Zlib"
   head "https://github.com/trifectatechfoundation/zlib-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "071e9be36774b2e08cb45920451b2080d293a4f78efd653ca228f00a0f24d9a8"
-    sha256 cellar: :any, arm64_sequoia: "d2a9d270382a0c41ab564bdf3676dd71feeac26ca324875b9e522d02fd0fe5f0"
-    sha256 cellar: :any, arm64_sonoma:  "57eea592447a0ca8fb1f4f8524d5c868aa527f524b73e4432586d435d137a2a4"
-    sha256 cellar: :any, sonoma:        "b85def5c9a058ef3edf88deaace5144d1291fd516c8df03a12f5fc718a78f476"
-    sha256 cellar: :any, arm64_linux:   "9d969e4cfc2876b0bde8c7aa1f013265f84f5786f0ac3faeb760a71410b963c1"
-    sha256 cellar: :any, x86_64_linux:  "6b30ea4460d356d2708fda38e57720ac1a984ae1d6a5c8ec3233bd2c0d8bfc62"
+    sha256 cellar: :any, arm64_tahoe:   "0c2061235d10213b7315009e9a6bbce746ac30dca7470eab0bf509703f427ccd"
+    sha256 cellar: :any, arm64_sequoia: "c8dbda0aacd5a18f983870c02ed8baf4f1c073910ecb3223197374c8ffd24964"
+    sha256 cellar: :any, arm64_sonoma:  "4e280b52c556d00bfe8af8b098b39bbd7bf1e647ac302152726483135b8978c4"
+    sha256 cellar: :any, sonoma:        "94134bea1256be9ec8dfbe88b437c0c30693b5ac01c1fb089d9794d0450a5501"
+    sha256 cellar: :any, arm64_linux:   "48b5369f90d3cf70a4de57bdb032999ba638e48fd9ae7b14c490201f219aa9e6"
+    sha256 cellar: :any, x86_64_linux:  "88350ae0fbcae6dd6ab49fda2a369226f85abae570dd6755c33bc977343049cf"
   end
 
   depends_on "cargo-c" => :build

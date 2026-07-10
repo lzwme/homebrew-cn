@@ -13,12 +13,13 @@ class Libvirt < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7a2c0528571438683454c556f6f4dbc4a79d9fdb3a09eef1bc4bfc44d46f4042"
-    sha256 arm64_sequoia: "ce6220432211fa500ae75e63df2d2df06190cfb683f8cdc4ae53fe11268ff4b3"
-    sha256 arm64_sonoma:  "069b2e8c35e44cb25a1b27cf864133ab4592e50cfae2a14813e43e8a24a15a7e"
-    sha256 sonoma:        "480a5dd159dcec49e87be12be21e78e9145268a1490fb515f3db785a61da6803"
-    sha256 arm64_linux:   "2a81ae9e6934166b28e5f92e8cc9b0ca514508f4d47db0a4ef3914a7ae3d43ab"
-    sha256 x86_64_linux:  "229040f5e2d7ce84a17da58dae14870959b121458fbd5d0b6bdc04a654ea1a97"
+    rebuild 1
+    sha256 arm64_tahoe:   "af9080b779a3e2a67e9df68f2ca27821b8aa032cbca42c42d5afba3abf2b06cc"
+    sha256 arm64_sequoia: "e870f30262d09551ad4923e98c560afced562adb91e7dd0c34c0eac8ce0de8c1"
+    sha256 arm64_sonoma:  "f3c4c98d458b45251be59cd2ac4d0ec230b756b6d50f8f04109b1d03d65d8c0d"
+    sha256 sonoma:        "88c8abbef104ec268ccc61bbb83613c1a0566013613e31eda01b6a70d68f5db9"
+    sha256 arm64_linux:   "8b941005f3bd0fce7ce104a8539bc9aa21f4ce806e1ca7fcb4101196496483eb"
+    sha256 x86_64_linux:  "2da85a90dc64881f7530c339e37215b1bdb1e62509725020cecf07b06dd94e97"
   end
 
   depends_on "docutils" => :build
@@ -27,6 +28,7 @@ class Libvirt < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
 
+  depends_on "cyrus-sasl"
   depends_on "glib"
   depends_on "gnutls"
   depends_on "json-c"
@@ -45,7 +47,6 @@ class Libvirt < Formula
 
   on_linux do
     depends_on "acl"
-    depends_on "cyrus-sasl"
     depends_on "libnl"
     depends_on "libtirpc"
     depends_on "util-linux"
@@ -62,6 +63,7 @@ class Libvirt < Formula
       -Dinit_script=none
       -Dqemu_datadir=#{Formula["qemu"].opt_pkgshare}
       -Drunstatedir=#{var}/run
+      -Dsasl=enabled
     ]
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

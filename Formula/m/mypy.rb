@@ -3,31 +3,31 @@ class Mypy < Formula
 
   desc "Experimental optional static type checker for Python"
   homepage "https://www.mypy-lang.org/"
-  url "https://files.pythonhosted.org/packages/82/15/cca9d88503549ed6fedeaa1d448cdddd542ee8a490232d732e278036fbf2/mypy-2.1.0.tar.gz"
-  sha256 "81e76ad12c2d804512e9b13240d1588316531bfba07558286078bfbce9613633"
+  url "https://files.pythonhosted.org/packages/e9/7e/be536678c6ae49ef058aba4b483d8c7bc104f471479016066f345bc1f5f8/mypy-2.2.0.tar.gz"
+  sha256 "2cdd99d48590dce6f6b7f1961eda75386364398fcdaad86923bc0f0231bf9baf"
   license "MIT"
   head "https://github.com/python/mypy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "6b4e27bda5c117f5786d62f87042cb4cc09fa157c8ca1ba81bf671a4ee2fda6c"
-    sha256 cellar: :any,                 arm64_sequoia: "8b60529e79c0d2bf761bd24eed0b3ecddc0042785acdfe8c03ac0e87c2ed27d8"
-    sha256 cellar: :any,                 arm64_sonoma:  "11fb499db8ef1cfcf046719e0228513518158436f73e62fd666c9e646b3f0fdd"
-    sha256 cellar: :any,                 sonoma:        "da220ecc8469cf6e8df4c0bb0485831831d3e9ce17e51667700bc037641c10a9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "369b00cf01a17f271f59ff28cf14ffed9232477d8e19e52f1ac0dc8d3b5e67be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4ac61924167067c66692337a323729b0a275e63e01353a8f9a791a43e453c07"
+    sha256 cellar: :any, arm64_tahoe:   "024cf6da21c2fa01e5aad27aa75d7520bf4bfa275d5578f662e81bae97bdb096"
+    sha256 cellar: :any, arm64_sequoia: "18040ece0dfc0b536febe3bd6478301acdf7d3bd4caa8c18d546bfe179edf493"
+    sha256 cellar: :any, arm64_sonoma:  "686552a6b04dd8314105bc42ec808ee111c9d755ae4dcdb3287b41f18a2124e6"
+    sha256 cellar: :any, sonoma:        "dbc81439d6c7fc81095a419434ef5352448e9f9eae7c68d62efd24e004d77613"
+    sha256 cellar: :any, arm64_linux:   "d0db525ca0fb43dc2023630abbaa1a35906493214b5b8386f19045d62ddb5adb"
+    sha256 cellar: :any, x86_64_linux:  "574e0b88c639ce09e9f49bf69225a45261e6beab17c4c4e0df31bf7e747d0dc4"
   end
 
   depends_on "rust" => :build # `ast-serialize`
   depends_on "python@3.14"
 
   resource "ast-serialize" do
-    url "https://files.pythonhosted.org/packages/a9/9d/912fefab0e30aee6a3af8a62bbea4a81b29afa4ba2c973d31170620a26de/ast_serialize-0.3.0.tar.gz"
-    sha256 "1bc3ca09a63a021376527c4e938deedd11d11d675ce850e6f9c7487f5889992b"
+    url "https://files.pythonhosted.org/packages/58/ad/0d70a3a2d6e01968d985415259e8ec7ad3f777903f9b1c1f3c8c44642c60/ast_serialize-0.6.0.tar.gz"
+    sha256 "aadd3ffcf4858c9726bf3515f7b199c7eadbe504f96028e4a87172c0da65a8fe"
   end
 
   resource "librt" do
-    url "https://files.pythonhosted.org/packages/40/08/9e7f6b5d2b5bed6ad055cdd5925f192bb403a51280f86b56554d9d0699a2/librt-0.11.0.tar.gz"
-    sha256 "075dc3ef4458a278e0195cbf6ac9d38808d9b906c5a6c7f7f79c3888276a3fb1"
+    url "https://files.pythonhosted.org/packages/c6/e0/dbd0f2a68a1c1a1991eb7921ff6014465d56608cdc9a9fb468a616210a37/librt-0.12.0.tar.gz"
+    sha256 "cb26faedbd09c6130e9c1b64d8000efec5076ffd18d606c6cd1cf02730e6d8b0"
   end
 
   resource "mypy-extensions" do
@@ -41,8 +41,8 @@ class Mypy < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   def install

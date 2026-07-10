@@ -12,12 +12,13 @@ class Herdr < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f85448213ffdd266a1a930520de46298f397a85f5237112eb3e2b79e87299a4f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68840c585440c0641bee930e248fa1dba7696f1953a10aba05e807a094f10eeb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "214bcc9f53189fb5d023252f460ea7aa1a8d9576e4dc94563328ef807aa8b669"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c8fcb2168d54628a1f10fe29a32b9d923f24f799ee652f8e5c51cc854bb5011f"
-    sha256 cellar: :any,                 arm64_linux:   "ac35188b3b0c42db8f2b021bfee9113d466884e508a3c20a25c633681b70be04"
-    sha256 cellar: :any,                 x86_64_linux:  "e9d56e466c9175423c8e8ab64ca298cb8663bd61049e87093c5169bcb47ac0ea"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef132a8d1d9676971e61224b7a111c21303b0dc682f27ae702a82ed708e7e559"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "621c5316d34723c3f990079357c76192f998fc59df8a9a08e9977852ba513bf2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "290b942d16a2d5f3d5b8b8aa1f63085b518616c86495279095820492d19dd128"
+    sha256 cellar: :any_skip_relocation, sonoma:        "05048cea0dd1aa3d6417f4b5b1259b92e83629e1985826129934b8e02b1978c2"
+    sha256 cellar: :any,                 arm64_linux:   "9e49b23d28476e2f8209cd2ee6cec4384be332b0e4c46f2210f6d315560b2ca4"
+    sha256 cellar: :any,                 x86_64_linux:  "e8bf75cf7ccdd1aa73a242869836fb0bdcc06c4cba9bd322ae6bd42f0b2c3353"
   end
 
   depends_on "rust" => :build
@@ -27,6 +28,8 @@ class Herdr < Formula
     ENV.prepend_path "PATH", formula_opt_bin("zig@0.15")
 
     system "cargo", "install", *std_cargo_args
+
+    generate_completions_from_executable(bin/"herdr", "completion")
   end
 
   service do

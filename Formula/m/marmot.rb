@@ -6,6 +6,11 @@ class Marmot < Formula
   license "MIT"
   head "https://github.com/marmotdata/marmot.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "628266f879b557df20968ce15f85f960c9e691daada3915df233273ae9e3aa86"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "15f07003e2d6936dfe1f767b323116c26937728cb4610c857302ac547ce25af7"

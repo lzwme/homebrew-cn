@@ -1,17 +1,17 @@
 class Heroku < Formula
   desc "CLI for Heroku"
   homepage "https://www.npmjs.com/package/heroku/"
-  url "https://registry.npmjs.org/heroku/-/heroku-11.8.0.tgz"
-  sha256 "4ff3e8c16937f29c12ba150575854623b7e59050f7d0a0406839eeb6285eae55"
+  url "https://registry.npmjs.org/heroku/-/heroku-11.8.1.tgz"
+  sha256 "46cb1f258ca87941c91456e1bb98e3cbc5aa2658a5acacdbe69752bbe3fe0bfd"
   license "ISC"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5f69596b48f88dc146ac1110937503b68fdcaee9c8a593d27c986377583c33e2"
-    sha256 cellar: :any, arm64_sequoia: "e5a3259bbe60446067bf187acd139bd4991870c29955faba5fde9e3f69dbb582"
-    sha256 cellar: :any, arm64_sonoma:  "e5a3259bbe60446067bf187acd139bd4991870c29955faba5fde9e3f69dbb582"
-    sha256 cellar: :any, sonoma:        "f86570c4be6926ae35681969c3f62500156c44013553453723e8a2b469120fc1"
-    sha256 cellar: :any, arm64_linux:   "e639de815c6ffdced7e9d3be448cbca631e1511b7375d18365e57e774b073b92"
-    sha256 cellar: :any, x86_64_linux:  "1b3683763c04b3d691d001b7d5fff67a0a745e880ee59239f3f7e8c004b9ee3b"
+    sha256 cellar: :any, arm64_tahoe:   "1abcac0a43f866ced34c1739c2ce7e2b17152b8d2982589bfaf6fb9e8d8dc3b7"
+    sha256 cellar: :any, arm64_sequoia: "16a9547397511db3680748e1e243c04425326efebd728c59a5b5cb2327fc4307"
+    sha256 cellar: :any, arm64_sonoma:  "16a9547397511db3680748e1e243c04425326efebd728c59a5b5cb2327fc4307"
+    sha256 cellar: :any, sonoma:        "3e0b1883cb0302a6c5d8173f1a6394e9b1329522c3a6be2e7198fccd2612aa6c"
+    sha256 cellar: :any, arm64_linux:   "3be630b5c0d5074a678f33b6d7c821b2ddbc11a2d2ac43f317b5f07b79b8e030"
+    sha256 cellar: :any, x86_64_linux:  "8e6a998f15a26859c7d5d27a9c0b86330c22a6c137d6c18077bd7db2ef1b290e"
   end
 
   depends_on "node"
@@ -31,7 +31,7 @@ class Heroku < Formula
 
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
+    node_modules.glob("{bare-fs,bare-path,bare-os,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
 
     if OS.mac?

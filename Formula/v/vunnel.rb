@@ -9,12 +9,13 @@ class Vunnel < Formula
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3a3ae8b831664e731e86227dc529ca8d2153fe43c4f02972fc161a6480a7f283"
-    sha256 cellar: :any, arm64_sequoia: "aff06d9cf6e687333e8fb88daa8a832a11788e8b58631b9ee09efdefcec62464"
-    sha256 cellar: :any, arm64_sonoma:  "6f01f718b1e0e5e750b97947bb48a284bba586d559c181a8b742682537691a7f"
-    sha256 cellar: :any, sonoma:        "676eec8df9476c882ce239659a4f42fa075c8842ac2abec16b3941dfcb31b516"
-    sha256 cellar: :any, arm64_linux:   "57b38136a0fc2257f385af49b229b976b2afe480e7bb510076e3cb7f9a61b904"
-    sha256 cellar: :any, x86_64_linux:  "cddda5c1bc87c761eee14379daf95ae15cc7695abb1116f691396d53af2387ac"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "d26975e3622a0181416bfcc99e4e6c362cee24497b3bb0c4a05a3a140acca2ff"
+    sha256 cellar: :any, arm64_sequoia: "54ba3e808f8f9be3aae137fb99eab749d0264ca9ccdef9bbed5f37ea56f29c0d"
+    sha256 cellar: :any, arm64_sonoma:  "e34e2619df3d53e5e1e311de6cda998aad9fadc8d3e86ee227472d0359631c3b"
+    sha256 cellar: :any, sonoma:        "221fac886b0155f5374ad980d6d9abc91d4225c2620cbc52911371a57b1c170f"
+    sha256 cellar: :any, arm64_linux:   "3ed02d8797533ef97232e371c156a3e4bda018406a187250403e91fe57897335"
+    sha256 cellar: :any, x86_64_linux:  "0e7b3ce2700a3bf18b4ec6572d1cfcde219002065ef40c52ff4eb2668d3f77d6"
   end
 
   depends_on "rust" => :build
@@ -22,6 +23,8 @@ class Vunnel < Formula
   depends_on "libyaml"
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
+  depends_on "xxhash"
+  depends_on "zstd"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -234,7 +237,14 @@ class Vunnel < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    ENV["XXHASH_LINK_SO"] = "1"
+    venv = virtualenv_install_with_resources without: "zstandard"
+
+    resource("zstandard").stage do
+      args = std_pip_args(prefix: false, build_isolation: true)
+      args << "--config-settings=--build-option=--system-zstd"
+      system venv.root/"bin/python", "-m", "pip", "install", *args, "."
+    end
 
     generate_completions_from_executable(bin/"vunnel", shell_parameter_format: :click)
   end
