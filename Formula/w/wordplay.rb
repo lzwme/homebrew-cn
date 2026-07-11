@@ -44,6 +44,7 @@ class Wordplay < Formula
   # Point to words file in share.
   patch :p0 do
     file "Patches/wordplay/patch-wordplay.c"
+    type :unofficial
   end
 
   def install

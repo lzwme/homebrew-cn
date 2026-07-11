@@ -1,16 +1,16 @@
 cask "tldraw" do
-  version "1.4.0"
-  sha256 "94661c3f1664e965c19f50fb5ed0f2104c228fcd252ec64dd073cde3d23a2de8"
+  version "1.6.1"
+  sha256 "25342f4099fa950c0ae29cb8f22e0a49c252f62c8430a361fbc323252457cf5d"
 
-  url "https://ghfast.top/https://github.com/tldraw/tldraw-desktop/releases/download/v#{version}/tldraw-#{version}-universal.dmg"
-  name "tldraw desktop"
+  url "https://ghfast.top/https://github.com/tldraw/tldraw-offline/releases/download/v#{version}/tldraw-offline-mac-universal.dmg"
+  name "tldraw offline"
   desc "Editor for .tldr files"
-  homepage "https://github.com/tldraw/tldraw-desktop"
+  homepage "https://github.com/tldraw/tldraw-offline"
 
   auto_updates true
   depends_on macos: :monterey
 
-  app "tldraw.app"
+  app "tldraw offline.app"
 
   zap trash: [
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.tldraw.desktop.sfl*",

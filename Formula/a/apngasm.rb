@@ -36,6 +36,8 @@ class Apngasm < Formula
   patch do
     url "https://github.com/apngasm/apngasm/commit/7bf77bdefd348c629f650e2a5102a26ab6bee7b8.patch?full_index=1"
     sha256 "cbb9d679c5d46424bb00962481903f12b8b0e943dfdc98910ad05af7c7dacf5b"
+    type :unofficial
+    resolves "https://github.com/apngasm/apngasm/pull/111"
   end
 
   def install

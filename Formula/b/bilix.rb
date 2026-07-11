@@ -6,16 +6,16 @@ class Bilix < Formula
   url "https://files.pythonhosted.org/packages/5c/12/0f885cee77471123a3c82da85bd1934af00aed213910987bbe5b2296997d/bilix-0.18.9.tar.gz"
   sha256 "8ab1be9bcc661369cbeba95439c09716778b6b42b2505a3eaddb45175688e247"
   license "Apache-2.0"
-  revision 8
+  revision 9
   head "https://github.com/HFrost0/bilix.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04078ab474be61b7cd6b52a216a5cbdf9cd4d088e43ca4345569bb5edd2c7409"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84ddc4eb60af2ae5538a2fdb8120afc4768199b335dda39675c4763e27694bf9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f05d0fe6fe86863f91158d89d427c12d7f57a2db9624ba5f77bc9e427ae8cb59"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f7615fb2c38c24fbdf833f66f69a43386bcb11c5ca7f18e2bdba214e334920a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e29a01ae2a21f93274a2a847ca56f04a176599dc0b7817b4542976ddd4790d37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1dcd8683de3e01ca24a46eced45b9477412e76320c1e3486cd6fd150a80be034"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc9f74822e67461d1bec10198b579d401785ca0ed30daf42887a7212b0febff8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e07d81bdc1414f062e77d40fe859f241832b8cfefd8a82c11f4f888b1437113d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0621f544f14b6c71f86a3da99f097fe3098a85f33bf3b940605a328e3043988"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0b1db51e89c23a20432c15062b9dce8d4818d3a7e50b9072893842a6343020cb"
+    sha256 cellar: :any,                 arm64_linux:   "f938387468e19ac841027bf42c6e00faf3deb86c5b2aa523c8a6608e3ee7d52a"
+    sha256 cellar: :any,                 x86_64_linux:  "407741cab5092b2e2a1acde1539e657a64c2cd9a195dc707d5a9e73a3509a673"
   end
 
   depends_on "cmake" => :build # for danmakuc
@@ -32,13 +32,13 @@ class Bilix < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
+    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/c3/b0/1c6a16426d389813b48d95e26898aff79abbde42ad353958ad95cc8c9b21/beautifulsoup4-4.14.3.tar.gz"
-    sha256 "6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86"
+    url "https://files.pythonhosted.org/packages/43/65/318323f98dbee45d42dff61d8f047181bc6f2268a9068cfad035a46be5af/beautifulsoup4-4.15.0.tar.gz"
+    sha256 "288e3ca7d54b06f2ac191970bc275c1939cb46d450b255bf6718b04aa37ab4f7"
   end
 
   resource "browser-cookie3" do
@@ -52,8 +52,8 @@ class Bilix < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/23/e4/796662cd90cf80e3a363c99db2b88e0e394b988a575f60a17e16440cd011/click-8.4.0.tar.gz"
-    sha256 "638f1338fe1235c8f4e008e4a8a254fb5c5fbdcbb40ece3c9142ebb78e792973"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "construct" do
@@ -77,8 +77,8 @@ class Bilix < Formula
   end
 
   resource "hpack" do
-    url "https://files.pythonhosted.org/packages/2c/48/71de9ed269fdae9c8057e5a4c0aa7402e8bb16f2c6e90b3aa53327b113f8/hpack-4.1.0.tar.gz"
-    sha256 "ec5eca154f7056aa06f196a557655c5b009b382873ac8d1e66e79e87535f1dca"
+    url "https://files.pythonhosted.org/packages/26/5b/fcabf6028144a8723726318b07a32c2f3314acdff6265743cf08a344b18e/hpack-4.2.0.tar.gz"
+    sha256 "0895cfa3b5531fc65fe439c05eb65144f123bf7a394fcaa56aa423548d8e45c0"
   end
 
   resource "httpcore" do
@@ -97,13 +97,13 @@ class Bilix < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "json5" do
-    url "https://files.pythonhosted.org/packages/9c/4b/6f8906aaf67d501e259b0adab4d312945bb7211e8b8d4dcc77c92320edaa/json5-0.14.0.tar.gz"
-    sha256 "b3f492fad9f6cdbced8b7d40b28b9b1c9701c5f561bef0d33b81c2ff433fefcb"
+    url "https://files.pythonhosted.org/packages/e4/7d/05c46a96a78147ae3bf99c2f4169ce144a70220b8d6fcd56f6ec368b8ce9/json5-0.15.0.tar.gz"
+    sha256 "7424d1f1eb1d56da6e3d70643f53619862b4ce81440bdb8ecfd6f875e5ba4a71"
   end
 
   resource "lz4" do
@@ -127,8 +127,8 @@ class Bilix < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/6b/6b/a0e95cad1ad7cc3f2c6821fcab91671bd5b78bd42afb357bb4765f29bc41/protobuf-7.34.1.tar.gz"
-    sha256 "9ce42245e704cc5027be797c1db1eb93184d44d1cdd71811fb2d9b25ad541280"
+    url "https://files.pythonhosted.org/packages/da/01/9ef0afd7999eb9badb3a768b4aedd78c86d4c65cfaf1958ab276199e76b4/protobuf-7.35.1.tar.gz"
+    sha256 "ce115a26fe0c39a2c29973d914d327e516a6455464489fe3cd1e51a1b354f81a"
   end
 
   resource "pycryptodome" do
@@ -157,14 +157,16 @@ class Bilix < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/7b/ae/2d9c981590ed9999a0d91755b47fc74f74de286b0f5cee14c9269041e6c4/soupsieve-2.8.3.tar.gz"
-    sha256 "3267f1eeea4251fb42728b6dfb746edc9acaffc4a45b27e19450b676586e8349"
+    url "https://files.pythonhosted.org/packages/47/2c/0a5f6f8ee0d5589e48c7640213ed5175d52cf540a06725b628cc1a45d6ce/soupsieve-2.8.4.tar.gz"
+    sha256 "e121fd02e975c695e4e9e8774a5ee35d74714b59307868dcc5319ad2d9e3328e"
   end
 
   # update bilibili play_info api, upstream pr ref, https://github.com/HFrost0/bilix/pull/244
   patch do
     url "https://github.com/HFrost0/bilix/commit/72c259d88b2fffb6cd530fce01b8c3d35fb79335.patch?full_index=1"
     sha256 "6f241455c6f1940626ed660d97abbcf3eecd3931cca3b6db6acd1f961649b6cb"
+    type :unofficial
+    resolves "https://github.com/HFrost0/bilix/pull/244"
   end
 
   def install

@@ -1,8 +1,8 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https://manticoresearch.com"
-  url "https://ghfast.top/https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/27.1.5.tar.gz"
-  sha256 "ddfc210ada19b0551b7274411ac9a46cbf7049722955cbf42b545cacf5aa5238"
+  url "https://ghfast.top/https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/28.4.4.tar.gz"
+  sha256 "10368c731db378edf75b00f291e763ac8e2c7404e12e1256b00b2d1c1c88fbce"
   license all_of: [
     "GPL-3.0-or-later",
     "GPL-2.0-only", # wsrep
@@ -21,12 +21,12 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f474e41974ff478b117392cc63680a525bff5e5fc36f5de57d37c895b0758a19"
-    sha256 arm64_sequoia: "75fffa04365ad0bbb8999d15335820afc230e5c99db3f1f1e7239b1377089a23"
-    sha256 arm64_sonoma:  "a65459a446ebe231a604317cfa0ee84dd4cc1c83e274b14e43bae25f6be40cac"
-    sha256 sonoma:        "b1d7f4254125e44733a9ccd7c3d556cb1a62041c1b9ea7cc8a3dbd89faceca18"
-    sha256 arm64_linux:   "15dcc7fb608c63e725f374424882775dd9ae5a4e4bd7809e5ed64ed5f1ddf479"
-    sha256 x86_64_linux:  "7b46848ca148acafdfe73e498aa25a6b16dec6c0f1ae2d03f47675c29470b967"
+    sha256 arm64_tahoe:   "11fba865b125498d31a8e0adca9037979886a6474d81d649224b93e3cb01613b"
+    sha256 arm64_sequoia: "7d707e2db30d211668ad9a639edf022b85e6ef8ceefbb6578266fa5fbb89a483"
+    sha256 arm64_sonoma:  "fcc377a55eecc5181ee993764cb4198d824af9b9c18e16ab2d31ca3eb20d7682"
+    sha256 sonoma:        "e95e88bf9448a820beb1a48f91cd3f09054465513ce84c81ba27b62bf3938944"
+    sha256 arm64_linux:   "79c3a060250ae96e71b54d6bd1d53925ad53891ca8039d1225fce3fab5a3326f"
+    sha256 x86_64_linux:  "312e1245686bfb44096f0ff124467258bf797d622a0ea69eac57ee16e2dd2a6b"
   end
 
   depends_on "cmake" => :build
@@ -53,6 +53,19 @@ class Manticoresearch < Formula
     depends_on "zlib-ng-compat"
   end
 
+  resource "mcl" do
+    url "https://ghfast.top/https://github.com/manticoresoftware/columnar/archive/dd160f109e59c3566e0208fdd6ed8e9f654e2573.tar.gz"
+    version "dd160f109e59c3566e0208fdd6ed8e9f654e2573"
+    sha256 "a1b34be74f787e19d97d74b7171babba99b35784eb3e2975ff94e767e70e6268"
+
+    livecheck do
+      url "https://api.github.com/repos/manticoresoftware/manticoresearch/contents/mcl?ref=#{LATEST_VERSION}"
+      strategy :json do |json|
+        json["sha"]
+      end
+    end
+  end
+
   # Workarounds for building with Boost 1.89+ and GCC, until fixed upstream:
   # - galera: disable Boost (Boost.System stub removed in 1.89)
   #   Issue ref: https://github.com/manticoresoftware/manticoresearch/issues/3673
@@ -62,6 +75,8 @@ class Manticoresearch < Formula
   patch :DATA
 
   def install
+    resource("mcl").stage buildpath/"mcl"
+
     # Avoid statically linking to boost
     inreplace "src/CMakeLists.txt", "set ( Boost_USE_STATIC_LIBS ON )", "set ( Boost_USE_STATIC_LIBS OFF )"
 

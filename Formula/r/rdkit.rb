@@ -2,8 +2,8 @@ class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https://rdkit.org/"
   # NOTE: Make sure to update RPATHs if any "@rpath-referenced libraries" show up in `brew linkage`
-  url "https://ghfast.top/https://github.com/rdkit/rdkit/archive/refs/tags/Release_2026_03_3.tar.gz"
-  sha256 "21e22e5e6b3a313527256fbde41c757f22d834b19caf2908e3c2dd11061e1fea"
+  url "https://ghfast.top/https://github.com/rdkit/rdkit/archive/refs/tags/Release_2026_03_4.tar.gz"
+  sha256 "a8bff65bdf13dd47a01f707f7759dd59124a8742f8c50952c2ceae9523b4fd2b"
   license "BSD-3-Clause"
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
@@ -16,12 +16,12 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "5aabba619ade43b01f70db66387c5b93bf89a9bc5c4124e5ade6a7d64e0c1ac0"
-    sha256               arm64_sequoia: "b2b000b7aad1c6237e67809b6b70c3d1630b8d80290eba98a99275bfe73750a1"
-    sha256               arm64_sonoma:  "392f0456e50e67ad323cef5044ef3ea93474f9a2dd58e1a323bef5a087e0b90b"
-    sha256 cellar: :any, sonoma:        "cf7b72d3cb5dc2a1c5a8fb3d6e3473f9986ba894ba2ddad7a4576177625baa2b"
-    sha256 cellar: :any, arm64_linux:   "d37e17e1a2c2e8e5454887cb4885fd2d7fc50221b0462e0a2e333bcb3f1bc720"
-    sha256 cellar: :any, x86_64_linux:  "6480b255f3f442b60bac912744ba4e6f81b1abd7f02cc05063246fb3c8c216d7"
+    sha256               arm64_tahoe:   "f412efc8f30558042b6758e784ce3b5860af88c3d5c83681f353e75f98157c51"
+    sha256               arm64_sequoia: "8e064c49ff46c932368ad8230fe5f82ac8d2e64bc04db0326a6797db00e80a55"
+    sha256               arm64_sonoma:  "e3f1a1eb2982ec427802bd05804d3de6569fc87341fc81a80b1b2990e8d6cab2"
+    sha256 cellar: :any, sonoma:        "2533a10bb2866900bb19717f3f4e2a342582f355b9f8cd9dc6bd35e118145ca2"
+    sha256 cellar: :any, arm64_linux:   "2d43705bff562af8cd3050e542bc6e1579fb0e277ad080dbf757adfabef2dde0"
+    sha256 cellar: :any, x86_64_linux:  "b8b9606d336981b9a98e32c1c5015ebad815f3bd987ec5ec5df268a8f8925888"
   end
 
   depends_on "catch2" => :build
@@ -40,6 +40,15 @@ class Rdkit < Formula
   depends_on "numpy"
   depends_on "py3cairo" => :no_linkage
   depends_on "python@3.14"
+
+  uses_from_macos "expat", since: :sequoia # minimum macOS due to python
+
+  # Workaround for https://github.com/Homebrew/brew/issues/19315
+  on_sequoia :or_newer do
+    on_intel do
+      depends_on "expat"
+    end
+  end
 
   resource "better_enums" do
     url "https://ghfast.top/https://github.com/aantron/better-enums/archive/refs/tags/0.11.3.tar.gz"
@@ -113,8 +122,6 @@ class Rdkit < Formula
       system "cmake", "--build", "#{builddir}/Code/PgSQL/rdkit"
       system "cmake", "--install", builddir, "--component", "pgsql"
     end
-
-    rm lib/"libexpat.a" # conflicts with `expat` formula
   end
 
   def caveats

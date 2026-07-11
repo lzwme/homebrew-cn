@@ -22,6 +22,7 @@ class Yajl < Formula
   patch do
     url "https://deb.debian.org/debian/pool/main/y/yajl/yajl_2.1.0-6.debian.tar.xz"
     sha256 "462fb384bef46c7252001c609dabc126624a1b71e9597cc16827d25a0226453f"
+    type :unofficial
     apply "patches/dynamically-link-tools.patch",
           "patches/CVE-2017-16516.patch",
           "patches/CVE-2022-24795.patch",

@@ -34,10 +34,11 @@ class DmtxUtils < Formula
   end
 
   # Workaround buffer overflow
-  # Upstream PR ref: https://github.com/dmtx/dmtx-utils/pull/16
   patch do
     url "https://github.com/dmtx/dmtx-utils/commit/f7b97efc3bd6fc2e4403803f46514ae28318743b.patch?full_index=1"
     sha256 "e9a44b85bce58ed9c4af90f123c2317a9f4a4b9dade114a9014211e22bcc5c4d"
+    type :backport
+    resolves "https://github.com/dmtx/dmtx-utils/pull/16"
   end
 
   def install

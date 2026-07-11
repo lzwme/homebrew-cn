@@ -16,6 +16,7 @@ class Xsane < Formula
     patch do
       url "https://gitlab.com/sane-project/frontend/xsane/-/commit/c2b5b530347af80cb192b30a4bd6039e7714a4fb.diff"
       sha256 "9a94caf7fee69e047eca8d947c4f275473a2fa6d1ee2f0fb116bc2efdd9ea7e8"
+      type :backport
     end
   end
 

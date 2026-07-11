@@ -38,12 +38,15 @@ class Xplanet < Formula
   # https://sourceforge.net/p/xplanet/code/208/tree/trunk/src/libdisplay/DisplayOutput.cpp?diff=5056482efd48f8457fc7910a:207
   patch :p2 do
     file "Patches/xplanet/xplanet-1.3.1-ntimes.patch"
+    type :backport
   end
 
   # Fix compilation with giflib 5
-  # https://xplanet.sourceforge.net/FUDforum2/index.php?t=msg&th=592
+  # Commit ref: https://sourceforge.net/p/xplanet/code/214/
+  # Local patch created with `svn diff -c 214 --git`
   patch do
     file "Patches/xplanet/xplanet-1.3.1-giflib5.patch"
+    type :backport
   end
 
   # Fix build with C++11 using Arch Linux patch. Remove in the next release.
@@ -52,6 +55,7 @@ class Xplanet < Formula
   patch do
     url "https://ghfast.top/https://raw.githubusercontent.com/archlinux/svntogit-community/040965e32860345ca2d744239b6e257da33460a2/trunk/xplanet-c%2B%2B11.patch"
     sha256 "e651c7081c43ea48090186580b5a2a5d5039ab3ffbf34f7dd970037a16081454"
+    type :backport
   end
 
   # Backport https://sourceforge.net/p/xplanet/code/222/

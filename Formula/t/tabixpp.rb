@@ -22,6 +22,8 @@ class Tabixpp < Formula
   patch do
     url "https://github.com/vcflib/tabixpp/commit/4cebc981b35c67486e7454064c54cddf547fd58a.patch?full_index=1"
     sha256 "d08f2eb62fb7be5457adb4615c7fbda587993899e8d18a9b8ed0647144c8f3f9"
+    type :backport
+    resolves "https://github.com/vcflib/tabixpp/pull/26"
   end
 
   def install

@@ -29,10 +29,10 @@ class Aldo < Formula
 
   depends_on "libao"
 
-  # Reported upstream:
-  # https://savannah.nongnu.org/bugs/index.php?42127
   patch do
     file "Patches/aldo/0.7.7.patch"
+    type :unofficial
+    resolves "https://savannah.nongnu.org/bugs/index.php?42127"
   end
 
   def install

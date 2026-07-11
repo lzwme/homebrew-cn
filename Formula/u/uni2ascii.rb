@@ -30,6 +30,7 @@ class Uni2ascii < Formula
   # notified upstream about this patch
   patch do
     file "Patches/uni2ascii/uni2ascii-4.20.patch"
+    type :unofficial
   end
 
   def install

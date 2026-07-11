@@ -1,10 +1,9 @@
 class Iccdev < Formula
   desc "Developer tools for interacting with and manipulating ICC profiles"
   homepage "https://github.com/InternationalColorConsortium/iccDEV"
-  url "https://ghfast.top/https://github.com/InternationalColorConsortium/iccDEV/archive/refs/tags/v2.3.2.1.tar.gz"
-  sha256 "9e990e38881d34d0c31aa7f0035d62376c3f58a6d0d891723663b35776090da9"
+  url "https://ghfast.top/https://github.com/InternationalColorConsortium/iccDEV/archive/refs/tags/v2.3.2.2.tar.gz"
+  sha256 "fb6db7dbffade564334654ced2537b3ad4c4dffbea858f081818c7dade65d155"
   license "BSD-3-Clause"
-  revision 1
 
   # Skip `wasm-` tags
   livecheck do
@@ -13,12 +12,12 @@ class Iccdev < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "05d8a438907b41a25ea05594453d709dc30138bff710bdffa27476d6c791a28f"
-    sha256 cellar: :any, arm64_sequoia: "23321c818f6727afb1cecb11f53775452c3ed8199ada664aaef859461a55baa3"
-    sha256 cellar: :any, arm64_sonoma:  "7e8ba416a721d356fa1663c003ddf0d025cd87c843b83e4052aa655862909766"
-    sha256 cellar: :any, sonoma:        "97ca9c6e45a370015ff8588ddc15d235a820f1b45a6152a7f60971cb42fd67eb"
-    sha256 cellar: :any, arm64_linux:   "a6a64168d3b5be4802874030fcf9ec25886b1185ca4c94cdbccad5344bb38961"
-    sha256 cellar: :any, x86_64_linux:  "43819f16f430e0de04f438d2e8ae6f352485e7425e88a531373347b64629b6b2"
+    sha256 cellar: :any, arm64_tahoe:   "10b0fca7b39a209a1e01aa6fd2c10b15a611de2796929b8f2110a938bdba5f99"
+    sha256 cellar: :any, arm64_sequoia: "3f235ffec84904d51a82042a52015b9331d060f45df6023b9cad668c82dab44c"
+    sha256 cellar: :any, arm64_sonoma:  "c77cf3ecb06d59592f3a8f9852db148301b616bc3621aa5db48feeb5a347c2f6"
+    sha256 cellar: :any, sonoma:        "9ce942f8f5363a10491dc675c273f9673030fe488cfcc7266d14ecff88722acb"
+    sha256 cellar: :any, arm64_linux:   "eac0ca9305dcece50b9b342a89e46447c5849f597f1fc8bf764402f55d1d0472"
+    sha256 cellar: :any, x86_64_linux:  "52965ea9b8b645374bd20afc2c3bf5c509ff59c43986417becaa9d46d5653aaf"
   end
 
   depends_on "cmake" => :build
@@ -29,6 +28,10 @@ class Iccdev < Formula
   depends_on "wxwidgets"
 
   uses_from_macos "libxml2"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     args = %W[

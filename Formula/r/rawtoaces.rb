@@ -5,6 +5,11 @@ class Rawtoaces < Formula
   sha256 "69e846978935ee2fb9751f3604f71d212b8db4aed40d64660a9d68cd3c8e7ac1"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 arm64_tahoe:   "d7b38645cb3f73a2639b0795478e69de32c713503b5fd507f05e2373aa1c4e0f"
     sha256 arm64_sequoia: "e6954930c57d107f10e997e9bb3c83de9b717cffa31284d9f4791549b9f2b0b5"

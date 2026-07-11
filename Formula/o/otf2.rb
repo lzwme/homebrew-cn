@@ -27,10 +27,12 @@ class Otf2 < Formula
   patch do
     file "Patches/libtool/configure-big_sur.diff"
     directory "build-frontend"
+    type :unofficial
   end
   patch do
     file "Patches/libtool/configure-big_sur.diff"
     directory "build-backend"
+    type :unofficial
   end
 
   def python3

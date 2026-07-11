@@ -34,6 +34,10 @@ class Aalib < Formula
   # Fix implicit function declarations
   patch do
     file "Patches/aalib/1.4rc5.patch"
+    type :unofficial
+    resolves "https://sourceforge.net/p/aa-project/bugs/7/",
+             "https://sourceforge.net/p/aa-project/bugs/10/",
+             "https://sourceforge.net/p/aa-project/bugs/12/"
   end
 
   deny_network_access!

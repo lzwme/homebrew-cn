@@ -13,10 +13,11 @@ class Valijson < Formula
   depends_on "jsoncpp" => :test
 
   # Workaround for missing `std::from_chars` in macOS < 26 sdk, remove in next release
-  # PR ref: https://github.com/tristanpenman/valijson/pull/241
   patch do
     url "https://github.com/tristanpenman/valijson/commit/940843d4f954330265b2c961a675cee4ff72fadb.patch?full_index=1"
     sha256 "b1498cc4683091eb1a7bb6ae25eac47366027dbc3699f5aa0b16a97a455dfc4b"
+    type :backport
+    resolves "https://github.com/tristanpenman/valijson/pull/241"
   end
 
   def install

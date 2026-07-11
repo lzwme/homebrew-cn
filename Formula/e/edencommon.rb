@@ -33,6 +33,8 @@ class Edencommon < Formula
   patch do
     url "https://github.com/facebookexperimental/edencommon/commit/7dc082da238446cde535b03370be0b709701b7ac.patch?full_index=1"
     sha256 "1becb3b9bcba13f19cb697baa015bece72b0330e4beae6db5a459f4e6fbff5a5"
+    type :unofficial
+    resolves "https://github.com/facebookexperimental/edencommon/pull/32"
   end
 
   def install

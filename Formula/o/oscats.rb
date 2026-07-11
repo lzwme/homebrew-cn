@@ -30,6 +30,7 @@ class Oscats < Formula
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
     file "Patches/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    type :unofficial
   end
 
   # Fix issue with conflicting definitions of select on Linux.
@@ -37,6 +38,7 @@ class Oscats < Formula
   # https://groups.google.com/g/oscats/c/WZ7gRjkxmIk.
   patch do
     file "Patches/oscats/linux.patch"
+    type :unofficial
   end
 
   def install

@@ -58,6 +58,7 @@ class ArgyllCms < Formula
     #   `parse.c:102:20: error: call to undeclared function 'yylineno'`
     patch do
       file "Patches/jam/2.6.1.patch"
+      type :unofficial
     end
   end
 

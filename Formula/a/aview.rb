@@ -30,6 +30,7 @@ class Aview < Formula
 
   patch do
     file "Patches/aview/1.3.0rc1.patch"
+    type :unofficial
   end
 
   def install

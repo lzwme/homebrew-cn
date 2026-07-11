@@ -86,10 +86,11 @@ class Opencv < Formula
   end
 
   # Drop the Caffe protobuf leftovers so DNN builds against external protobuf.
-  # PR ref: https://github.com/opencv/opencv/pull/29425
   patch do
     url "https://github.com/opencv/opencv/commit/f7ad23157f1b99b59bc9a706e9c7e4c8394947ac.patch?full_index=1"
     sha256 "3813186a3e0c7f8c366b11c64f112d31a4f8c9709de333a2532e85142bea25bf"
+    type :backport
+    resolves "https://github.com/opencv/opencv/pull/29425"
   end
 
   def install

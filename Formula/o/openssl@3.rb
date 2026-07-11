@@ -56,18 +56,22 @@ class OpensslAT3 < Formula
   patch do
     url "https://github.com/openssl/openssl/commit/9061e9381306a053908177aca8509c262015cdf3.patch?full_index=1"
     sha256 "9f68feae9abfaabe65f79d2877f3dde7aa0428c669ed6af45dc193544268438e"
+    type :backport
   end
   patch do
     url "https://github.com/openssl/openssl/commit/2e2438b494e7f661be5212e4732f7fab86bf6303.patch?full_index=1"
     sha256 "543a5998951fe540444642123398ffaa6306938be573f95c0bc915f1e6af7a36"
+    type :backport
   end
   patch do
     url "https://github.com/openssl/openssl/commit/ea598f5dd23f1d64d8952e20fcf95d9f3a21d654.patch?full_index=1"
     sha256 "05bb323a3495d68961fa8cf7a989edfb0fa6e6dcc7ccdcc4e55a4e3f946d2762"
+    type :backport
   end
   patch do
     url "https://github.com/openssl/openssl/commit/cffb97915813aeeef58ee9a0d33c05d3d45e1fe6.patch?full_index=1"
     sha256 "fc34b4bf106c44a89ded746e35d587d73e8485393a93b52110ba95b06717dd69"
+    type :backport
   end
 
   # SSLv2 died with 1.1.0, so no-ssl2 no longer required.

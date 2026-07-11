@@ -14,6 +14,8 @@ class Doxygen < Formula
     patch do
       url "https://github.com/doxygen/doxygen/commit/a9eb9243717b93a44dbd046cccd52b96bd7520d2.patch?full_index=1"
       sha256 "fdf86872d157c764deec5061a229f697020bff1133b1d63ddca01c398e8fb9ea"
+      type :backport
+      resolves "https://github.com/doxygen/doxygen/issues/12118"
     end
   end
 

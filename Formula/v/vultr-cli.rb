@@ -12,6 +12,8 @@ class VultrCli < Formula
     patch do
       url "https://github.com/vultr/vultr-cli/commit/6959db75adc8250eb6426f18b1a816a6dc1fd019.patch?full_index=1"
       sha256 "fd94f9ad45d727b7ecf121f60261c3ba0a4dd0b2e4b4d78000a11d6b62e52ac6"
+      type :backport
+      resolves "https://github.com/vultr/vultr-cli/pull/595"
     end
   end
 

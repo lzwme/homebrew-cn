@@ -20,6 +20,8 @@ class AgePluginSe < Formula
   depends_on "age" => :test
   depends_on macos: :ventura
 
+  deny_network_access! [:postinstall, :test]
+
   def install
     system "make", "PREFIX=#{prefix}", "RELEASE=1", "all"
     system "make", "PREFIX=#{prefix}", "RELEASE=1", "install"

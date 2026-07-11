@@ -12,10 +12,13 @@ class Bench < Formula
     patch do
       url "https://github.com/Gabriella439/bench/commit/f7efa5225eda160ca1cf978dc0147db4e1902e3c.patch?full_index=1"
       sha256 "dc9895f4421274daa4e1aca04150b9e07eb48dbe5c11c1894aa9060081260342"
+      type :backport
     end
     patch do
       url "https://github.com/Gabriella439/bench/commit/1c4b112436c3eb3e4e9cccaf60525fa4c40fd38e.patch?full_index=1"
       sha256 "df9192a1137883120580c9d1f51a2a742e099c28ad6733eca025bb606a71fdc6"
+      type :backport
+      resolves "https://github.com/Gabriella439/bench/pull/53"
     end
   end
 

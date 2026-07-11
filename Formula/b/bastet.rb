@@ -20,8 +20,10 @@ class Bastet < Formula
 
   # Fix compilation with Boost >= 1.65, remove for next release
   patch do
-    url "https://github.com/fph/bastet/commit/0e03f8d4.patch?full_index=1"
+    url "https://github.com/fph/bastet/commit/0e03f8d4d6bc6949cf1c447e632ce0d1b98c4be1.patch?full_index=1"
     sha256 "9b937d070a4faf150f60f82ace790c7a1119cff0685b52edf579740d2c415d7b"
+    type :backport
+    resolves "https://github.com/fph/bastet/issues/6"
   end
 
   def install

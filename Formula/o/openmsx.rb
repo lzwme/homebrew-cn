@@ -13,6 +13,7 @@ class Openmsx < Formula
     patch do
       url "https://github.com/openMSX/openMSX/commit/bef559e0e2e1413ba8abbef882224a5919214c5a.patch?full_index=1"
       sha256 "3744a1693d43c86a678c416836f0e2fa900023f0b9176c63116080f009c5bbb9"
+      type :backport
     end
   end
 

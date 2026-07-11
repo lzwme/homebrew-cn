@@ -1,18 +1,18 @@
 class SemCli < Formula
   desc "Semantic version control CLI with entity-level diffs and blame"
   homepage "https://ataraxy-labs.github.io/sem/"
-  url "https://ghfast.top/https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.20.0.tar.gz"
-  sha256 "844f9bc0520b7c7d0ff0d69e73f9faebf4c90cd187708d1327af8a73f5eb5df8"
+  url "https://ghfast.top/https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.21.0.tar.gz"
+  sha256 "57844f8ec07b648bad0d58b16cf05ef4074e55bab1707797498acc69aa21c894"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/Ataraxy-Labs/sem.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7005053594b0e69ce78222c7bad879dea1f03607da826c364ca26d57b608aa1d"
-    sha256 cellar: :any, arm64_sequoia: "9abb65d3592dfaed8d0006a963f26190cfbb3ca16b9837a2c6343761f15a9023"
-    sha256 cellar: :any, arm64_sonoma:  "ef13229a73f292475aebd5f5dc19ce25d986427a0b1e8245498aa9fb7f897769"
-    sha256 cellar: :any, sonoma:        "ba1e5acd3b642b0357eda885274865b2581a2b1228ebe1eee90c20017a7f77c6"
-    sha256 cellar: :any, arm64_linux:   "68c852312286a3c24e33574d4460240633d7569955e089507a3ab23abee7fc59"
-    sha256 cellar: :any, x86_64_linux:  "e63aa25b93cf680ebaca5d0b2bab247773d8e37cf7b615cd328a6b5390de3f27"
+    sha256 cellar: :any, arm64_tahoe:   "68d935e7cd5399e4cc656d6be1e48df86b60ccd0550a341bcd6f714771c4a370"
+    sha256 cellar: :any, arm64_sequoia: "8e86418946656ac70dea118b133b335b75e2e3885cb02a285c16d792c9ea1e78"
+    sha256 cellar: :any, arm64_sonoma:  "57559d654b485a3c1b45b6bef41a8afe2b1ddf2efd36bae1a7bfcf0b9801622b"
+    sha256 cellar: :any, sonoma:        "5c60f3f1c7401fefba935196a7bf3a25f97f9854cafaca0a9c5c3a169fde605b"
+    sha256 cellar: :any, arm64_linux:   "dd65417729495820183d67c57970acb15070fc9c1eb0c4a7def6f9804109088b"
+    sha256 cellar: :any, x86_64_linux:  "d13a0f615aab7b3f1f316dae13569b9a5d98f2f74408b3414dff2c583084dc23"
   end
 
   depends_on "pkgconf" => :build

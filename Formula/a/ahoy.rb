@@ -24,6 +24,8 @@ class Ahoy < Formula
 
   depends_on "go" => :build
 
+  deny_network_access! [:postinstall, :test]
+
   def install
     cd "v2" do
       system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}-homebrew")

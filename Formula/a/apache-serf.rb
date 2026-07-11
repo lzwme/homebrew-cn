@@ -13,6 +13,7 @@ class ApacheSerf < Formula
     patch do
       url "https://github.com/apache/serf/commit/15ca053c4bfb00ad4d262686e1a30b5795b6ab81.patch?full_index=1"
       sha256 "d2ab43081a2fc60c6d00df1afc6946895921c91d09cac05a186f820282bea9c6"
+      type :backport
     end
   end
 

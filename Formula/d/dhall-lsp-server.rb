@@ -12,12 +12,14 @@ class DhallLspServer < Formula
     patch :p2 do
       url "https://github.com/dhall-lang/dhall-haskell/commit/a621e1438df5865d966597e2e1b0bb37e8311447.patch?full_index=1"
       sha256 "89b768b642c0a891e5d0a33ac43c84f07f509c538cf2a035fad967ce6af074ef"
+      type :backport
     end
 
     # Backport support for text 2.1.2 picked by GHC 9.10+
     patch :p2 do
       url "https://github.com/dhall-lang/dhall-haskell/commit/9f2d4d44be643229784bfc502ab49184ec82bc05.patch?full_index=1"
       sha256 "877ac62d2aa87d8aeb13e021b134298a299917f30b6a7a5962d5a06407c38067"
+      type :backport
     end
   end
 

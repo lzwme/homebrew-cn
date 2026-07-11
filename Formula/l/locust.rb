@@ -3,17 +3,17 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/15/58/a9642fa8604ae13d87b408c8c90cac99f3cfd59af59a085ac7435e825f68/locust-2.44.4.tar.gz"
-  sha256 "9115530e33ca9591c02d9f970d92991739d50b775785b954103d5794ce299c3f"
+  url "https://files.pythonhosted.org/packages/03/4e/62c3fee4af4720aceac2c102a6a1d69707b7b28e83fc44b82581e86155d7/locust-2.45.0.tar.gz"
+  sha256 "9fa840a4ef8c2624d7719f6e642bce3e19079aa4eea755c99c5282087903e13a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3b0f320f51e748db77c066c0503963b8bb12e2077c331d41f9a5056195f0be6c"
-    sha256 cellar: :any, arm64_sequoia: "f5b969e66af3437a9645200e4e3cfc9020f34c06b8ef9f7bbd971dfadc4be1b3"
-    sha256 cellar: :any, arm64_sonoma:  "1dc66c96c749e550e797da57328125886969753160dc06fd4c22b47bd8a4a884"
-    sha256 cellar: :any, sonoma:        "b0b458ae0ed0a4a0ce8d32bce228c3cd4f97b284f1ece698d1fa26eb23a672c4"
-    sha256 cellar: :any, arm64_linux:   "fa44be8b8d097b85bc4ebe2b77b5934a21d288bf8dcc76057bbabee963aeaee6"
-    sha256 cellar: :any, x86_64_linux:  "b213b8f2e90951ef831a674b55d07d663b966620a5a1d03877c447224ec20113"
+    sha256 cellar: :any, arm64_tahoe:   "fab006a54ea04b309f5b40bad67b64fe4c0c40c5f00910e9077b76f720f765b3"
+    sha256 cellar: :any, arm64_sequoia: "315ba861a6bdd9bf879c1a190a85bc2eb48880e1a54048f625d36ae7d3fc189a"
+    sha256 cellar: :any, arm64_sonoma:  "c3ec8e732295988082829bdb5fc64e38936f79fe8f41f4dc82cd31afed576659"
+    sha256 cellar: :any, sonoma:        "a18e9510666802e1244ef04a723ee44cc354d2c0edab60ba7be65b470632d8d9"
+    sha256 cellar: :any, arm64_linux:   "c18f1b4255bd114cd3f63da0de01538c004b61fa8b76d5100d1a016f0a059f59"
+    sha256 cellar: :any, x86_64_linux:  "daf3286ea5cd31ab9695c800504f866b7fe329ea95ce96df4ac4d2e2e53e3295"
   end
 
   depends_on "cmake" => :build # for pyzmq
@@ -40,13 +40,13 @@ class Locust < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "configargparse" do
@@ -80,8 +80,8 @@ class Locust < Formula
   end
 
   resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/dd/8b/befc3cb36965f397d87e86fb3b00e3ec0dc67c1ecb0986d7f54ee528f018/greenlet-3.5.2.tar.gz"
-    sha256 "c1b906220d83c140361cdd12eef970fb5881a168b98ee58a43786426173da14c"
+    url "https://files.pythonhosted.org/packages/e2/f1/fbbfef6af0bad0548f09bc28948ea3c275b4edb19e17fc5ca9900a6a634d/greenlet-3.5.3.tar.gz"
+    sha256 "a61efc018fd3eb317eeca31aba90ee9e7f26f22884a79b6c6ec715bf71bb62f1"
   end
 
   resource "h11" do
@@ -140,13 +140,13 @@ class Locust < Formula
   end
 
   resource "pytest" do
-    url "https://files.pythonhosted.org/packages/84/0e/b5858858d74958632c49b72cb25a3976ff9f632397626715be71c89d3971/pytest-9.1.0.tar.gz"
-    sha256 "41dd9148c08072446394cefd3d79701701335a9f4cae69ba92e39f6c7f5c061c"
+    url "https://files.pythonhosted.org/packages/e4/47/b9efed96c114afcfa3c9d3fe98a76a1d14c74a9e266d397cf6eb64be5e01/pytest-9.1.1.tar.gz"
+    sha256 "1088fbde8f2b49d95a549a195707afa7a76a3ce9bcadc26b6d71f0ffda5fe313"
   end
 
   resource "python-engineio" do
-    url "https://files.pythonhosted.org/packages/fa/6d/4384c2723adad93a3d6de4297e6d9c8b93be7f778a407f34f6ee0b2bea3e/python_engineio-4.13.2.tar.gz"
-    sha256 "a7732e99cfb7db6ed1aee31f18d7f73bbae086a92f31dee019bc646155d9684e"
+    url "https://files.pythonhosted.org/packages/fb/a0/f75491f942184d9960b15e763270f765fe9f239745ca5f9e16289011aed4/python_engineio-4.13.3.tar.gz"
+    sha256 "572b7783e341fed21edbc7cea297ccd378dad79265fdde96aa4664420a7c06c9"
   end
 
   resource "python-socketio" do

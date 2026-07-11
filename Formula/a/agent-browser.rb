@@ -17,6 +17,8 @@ class AgentBrowser < Formula
   depends_on "rust" => :build
   depends_on "node"
 
+  deny_network_access! [:postinstall, :test]
+
   def install
     system "npm", "run", "build:native"
     system "npm", "install", *std_npm_args

@@ -3,18 +3,18 @@ class Hf < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/77/ea/dc54b4dda5841cb3a7812a178695be776e7c15c597887c2ed892f17d015a/huggingface_hub-1.22.0.tar.gz"
-  sha256 "e2dfe5fe1ec3b87ba2709aa34555b23e3f3f6ad4d7255238e13ddb8348e6bbfa"
+  url "https://files.pythonhosted.org/packages/1a/8f/999e4dda11c6187c78f090eac00895a47e11a0049308f07579bcb7aa3aa2/huggingface_hub-1.23.0.tar.gz"
+  sha256 "c04997fb8bbdace1e57b7703d30ed7678af51f70d00d241819ff411b92ae9a88"
   license "Apache-2.0"
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1b904b7e4f45ebfc52bea6bd217983ad78db4297eef8f447ce3816493f9f1d01"
-    sha256 cellar: :any, arm64_sequoia: "eab29db6b0f040958be45f54cb1dbc82618c91adb29cc5bd2149c93d4d00f7df"
-    sha256 cellar: :any, arm64_sonoma:  "d6158ba40412df73ca10d01f7e3a5619b0d95106b857fda7bbb528f0301fe4d1"
-    sha256 cellar: :any, sonoma:        "e4bedf5d5d9d85ea7cd091b3fc9a6c83168cd4b675d1a3de6d6c640ffba0d543"
-    sha256 cellar: :any, arm64_linux:   "2332a97504441ee8ff902082e78d9f1a1a1bae90b2e8337f53df3661d168d4f7"
-    sha256 cellar: :any, x86_64_linux:  "d7c652091f943869711af882a02dffc86d7d8148fb9b6aa27241c2e09ab072e4"
+    sha256 cellar: :any, arm64_tahoe:   "0479ed1b9e82ce79ea854be73ba84c4b51b1de663b9f9ca2c824de47985e5b6a"
+    sha256 cellar: :any, arm64_sequoia: "a7784591629e23177b9d6b2ab766e72ccdafc979747245cb127f2df1d57b3d4a"
+    sha256 cellar: :any, arm64_sonoma:  "181431a718d082db1c0d6734995a68747b4d6f2ba4f97f4a629e0f35274595f0"
+    sha256 cellar: :any, sonoma:        "677aa6fea3c631d5cd54894ffbfa6ffe6e885811fef63dc579acb392b523dba9"
+    sha256 cellar: :any, arm64_linux:   "04ddd7c418e4b0b3d9bc8ca7b662df1111bc3ac678eabd1073579cfc90d483be"
+    sha256 cellar: :any, x86_64_linux:  "ef0424b27410d78f97405ba81d7645c0c7a659f5097c4420e276fc8c45462bb2"
   end
 
   depends_on "pkgconf" => :build
@@ -43,8 +43,8 @@ class Hf < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/e3/ee/29c668c50888588c432a702f7c2e8ee8a0c9e5286028d91f170308d6b2e9/filelock-3.29.5.tar.gz"
-    sha256 "6e6034c57a00a020e767f2614a5539863f056de7e7991d6d1473aef7ff73f156"
+    url "https://files.pythonhosted.org/packages/35/94/00f2059e4835eace3ae8fde680b932c496f8ec7bdc99168dfa53fb2e6b79/filelock-3.29.7.tar.gz"
+    sha256 "5b481979797ae69e72f0b389d89a80bdd585c260c5b3f1fb9c0a5ba9bb3f195d"
   end
 
   resource "fsspec" do
@@ -88,8 +88,8 @@ class Hf < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/87/d7/0535a28b1f5f24f6612fb3ff1e89fb1a8d160fee0f976e0aa6803862134b/tqdm-4.68.3.tar.gz"
-    sha256 "00dfa48452b6b6cfae3dd9885636c23d3422d1ec97c66d96818cbd5e0821d482"
+    url "https://files.pythonhosted.org/packages/ae/5f/57ff8b434839e70dab45601284ea413e947a63799891b7553e5960a793a8/tqdm-4.68.4.tar.gz"
+    sha256 "19829c9673638f2a0b8617da4cdcb927e831cd88bcfcb6e78d42a4d1af131520"
   end
 
   resource "typing-extensions" do

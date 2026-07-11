@@ -90,6 +90,8 @@ class Twtxt < Formula
   patch do
     url "https://github.com/buckket/twtxt/commit/12bdd3670bff339fd27a7cd71c8ec64086b4ae5b.patch?full_index=1"
     sha256 "e206e7d18040d2b6c0d93ef2d7e4770c3e24448621bc6b5e0f206e193c6298ad"
+    type :backport
+    resolves "https://github.com/buckket/twtxt/pull/178"
   end
 
   def install

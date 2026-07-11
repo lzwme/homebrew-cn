@@ -34,6 +34,8 @@ class Agda < Formula
       patch do
         url "https://github.com/agda/cubical/commit/294e7960eeb03a3a5f9041e49980b061e4a4a51b.patch?full_index=1"
         sha256 "d845f5e7cfc17a7324d883a20e701e69fe2a3036c6da9b3837c0c6558136e138"
+        type :backport
+        resolves "https://github.com/agda/cubical/pull/1241"
       end
     end
 

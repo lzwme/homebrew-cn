@@ -347,6 +347,8 @@ class AnsibleAT13 < Formula
     # See also https://github.com/ansible/ansible/issues/85919
     patch do
       file "Patches/ansible/passlib-1.7.4.patch"
+      type :unofficial
+      resolves "https://foss.heptapod.net/python-libs/passlib/-/issues/196"
     end
   end
 

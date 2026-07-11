@@ -31,10 +31,12 @@ class OpensslAT4 < Formula
   patch do
     url "https://github.com/openssl/openssl/commit/1e386aab890b52f46641ab18e1a56cabb1b8c47b.patch?full_index=1"
     sha256 "636f11a33a39536c1cc69426c73863db2b57be636b5977a4076b0995c342ef30"
+    type :backport
   end
   patch do
     url "https://github.com/openssl/openssl/commit/d9f73e36c5fe720b3367e0fc6501683a3f91193a.patch?full_index=1"
     sha256 "3508588c5e03ba6d3898512f0e8e3aa1f177e243c026884d6c31020359cae59e"
+    type :backport
   end
 
   def install

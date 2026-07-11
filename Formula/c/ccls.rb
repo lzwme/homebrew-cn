@@ -18,6 +18,7 @@ class Ccls < Formula
     patch do
       url "https://github.com/MaskRay/ccls/commit/d31cc9f07668a91c892d5f13367b9a1e773fbe2b.patch?full_index=1"
       sha256 "13c2503f682d7b2932a2a4544f1fc32ace8799be9e9234b2f1df0867536a20fc"
+      type :backport
     end
   end
 

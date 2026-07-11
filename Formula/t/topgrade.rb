@@ -1,8 +1,8 @@
 class Topgrade < Formula
   desc "Upgrade all the things"
   homepage "https://github.com/topgrade-rs/topgrade"
-  url "https://ghfast.top/https://github.com/topgrade-rs/topgrade/archive/refs/tags/v17.6.2.tar.gz"
-  sha256 "173204e8a1d051d982244899c18da35f55cd9574244c27582281bb74216bccbe"
+  url "https://ghfast.top/https://github.com/topgrade-rs/topgrade/archive/refs/tags/v17.7.0.tar.gz"
+  sha256 "9a914671f80a1a21f247125d044ff4b18324293110a9257770856c992c2e5ca4"
   license "GPL-3.0-or-later"
   head "https://github.com/topgrade-rs/topgrade.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Topgrade < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ff25ccad5c1501225e96d9844cb86f9c529bfa0b1a1a9c1af68fad6bf49f218"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2cb3b2a8d53069da5282f475b4ca3b6cf166f5f94ca9bd93e3a8d14b23445532"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b9bd0dc1629e1c75d168c61eb252674a4a8b83df55c065bf4b3d40028519adc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f6a6c5993d1dc6549e491aee70d89dc5ae6b72551ede5f2fba3b3a8377a121df"
-    sha256 cellar: :any,                 arm64_linux:   "20b2d47ce3bab55391e8346a55e82caac0d6cbc3657d8c96ab1ee27bd5f80ec3"
-    sha256 cellar: :any,                 x86_64_linux:  "a6bafbe062db9cdf749c08226daf7887e71cd6e9e555c0892cd2f0108c3e27b5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "46a62d06cad4c57bbdb9fb507a3634b241cc5584250de1c0f5fe0cfe1bec8dd9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f681fccdda7f4b713d3d1a1c428fd2561b4a95063b82ef05383d21132420495"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f2051fbe399f509ce06b45358f44ef9d2337769267f137218a84ae410862598"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bb29e9d90d24cdd5cd1b3d4a6b0c517258fd86819a130ec9d4d42cc9849fdb0c"
+    sha256 cellar: :any,                 arm64_linux:   "2a2fe538c1b601b301decf8032c013b0b9d8e2152907003758b612700169e74c"
+    sha256 cellar: :any,                 x86_64_linux:  "b7bb600f277a4ab22a93fe306e646c7e1fbfacf940742ade9850279dd1574824"
   end
 
   depends_on "rust" => :build

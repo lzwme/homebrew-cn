@@ -1,18 +1,18 @@
 class CargoUpdate < Formula
   desc "Cargo subcommand for checking and applying updates to installed executables"
   homepage "https://github.com/nabijaczleweli/cargo-update"
-  url "https://ghfast.top/https://github.com/nabijaczleweli/cargo-update/archive/refs/tags/v21.0.1.tar.gz"
-  sha256 "6c970612463ce4acf2f40a4ca4769facc4ccf22548c46b6fcbc0124c71a5e93e"
+  url "https://ghfast.top/https://github.com/nabijaczleweli/cargo-update/archive/refs/tags/v21.0.2.tar.gz"
+  sha256 "e67c56e727c85fbf2c51f0fda687ea153008ac4b9f9b501d2bee8c9e7f981c5e"
   license "MIT"
   head "https://github.com/nabijaczleweli/cargo-update.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "84be5f4174740ae9a9884ac8cbc14d12652e670a8c782241fc74b59988315f9d"
-    sha256 cellar: :any, arm64_sequoia: "b10be202afdc78d3dd2e6be489cbf92d74a8b0aeba54a9a0aa5481e320f6321a"
-    sha256 cellar: :any, arm64_sonoma:  "42c1f83bcd18d22e61dcdacc29288f81767a69864b757f25fa07690a42dfcc1b"
-    sha256 cellar: :any, sonoma:        "98aad54fa27846420a5f9dfab3b97c6eafbf82193fa2110bc909cf27a8c12ec0"
-    sha256 cellar: :any, arm64_linux:   "b29b78579572a5b00175e1e7e5e7ab8c58771da78464347fbef71d863fcce33f"
-    sha256 cellar: :any, x86_64_linux:  "b11718e43d2e66e0eb943cf41c742e41a03916ce525f36703f04bac0031a4146"
+    sha256 cellar: :any, arm64_tahoe:   "15877129278defbffab601caf5241755941581a90b4740f878224fbb71492f69"
+    sha256 cellar: :any, arm64_sequoia: "41f38a50162c344fca536c211a3993523ebd511a22a26a00b720241c3246c07f"
+    sha256 cellar: :any, arm64_sonoma:  "a4096cf3f2d1e25824e07593152f6b790a5b2d655c060d52a1d4dca057f4fe2d"
+    sha256 cellar: :any, sonoma:        "36d1338f2adee9872507ba03e6a14d4beb3dd870299cb0e34f66ff166228af36"
+    sha256 cellar: :any, arm64_linux:   "fd1b30b5c6d801959b15b822a77a428f8f4ec270d999eb6000e654b4065eb40f"
+    sha256 cellar: :any, x86_64_linux:  "90437779c53d7a14af22d8f8f010c62a425519f5e01e7dceae19015f0a367663"
   end
 
   depends_on "pkgconf" => :build

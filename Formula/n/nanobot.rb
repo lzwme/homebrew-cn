@@ -1,18 +1,18 @@
 class Nanobot < Formula
   desc "Build MCP Agents"
   homepage "https://www.nanobot.ai/"
-  url "https://ghfast.top/https://github.com/obot-platform/nanobot/archive/refs/tags/v0.0.88.tar.gz"
-  sha256 "db79ca726343f3b12568346610881f03fa22f253a57326ca7c196e334244ab89"
+  url "https://ghfast.top/https://github.com/obot-platform/nanobot/archive/refs/tags/v0.0.89.tar.gz"
+  sha256 "ae754171226af874e42468b902d1571ff1fc25eb2a6819781f85836ceff8000b"
   license "Apache-2.0"
   head "https://github.com/obot-platform/nanobot.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ce1714b819e33da9f821cb84f9a620feba9cebe0b41097985004cb724cc7c9a9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e08666bc42cc6fca3c7e9cce020c0d7829fc9fbdf59728123a362d8c20caaa72"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2110406f1726506f6f14905f77e38d5a4aead3cdf3187ddc2f9dd82ba5c7150"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d38ed2217571e1fd736a402076ef42e2a9ea6913cb13aa3b7014f4f201db1943"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ac80b48fc02cfce4eb2f4995c7fd94572ea73b1191e5ee9dbb07b7f07b68aa6"
-    sha256 cellar: :any,                 x86_64_linux:  "00455f830faa366c35492dd93d3fe57ef8cbb5880f2070738e9617098e14bbec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81a25e33eb0c3587c864eb64917244addffd585e80200c2da06938b51c3fee9c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef31dd30397b54f4ecc8341f374cd21f9e94176fed38b3275bd302bd90eef04e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e39986ae6bfd9958e282bdbf7be5a9cc761cdf36801e10adde44b7c0a976cf3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "936a34d7333af93e3dcc57f71bbd8f345f2cb8ed7f32dc70a53c537f1b3546ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "51140f76471a908bdaabc2886ef2d77069838e8b7471614d4bc033bcc3e7f57a"
+    sha256 cellar: :any,                 x86_64_linux:  "e68c522d70dcc55d7185e11a8036ea34a5c9bc2356191d6efb49240631fd5480"
   end
 
   depends_on "go" => :build

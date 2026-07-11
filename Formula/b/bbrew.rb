@@ -1,18 +1,18 @@
 class Bbrew < Formula
   desc "TUI for managing Homebrew, Flatpak, and Mac App Store packages"
   homepage "https://bold-brew.com"
-  url "https://ghfast.top/https://github.com/Valkyrie00/bold-brew/archive/refs/tags/v2.3.1.tar.gz"
-  sha256 "c07595b9915355e05aeb4453935ca28b2ba9705912f1dd045b93967001dafc90"
+  url "https://ghfast.top/https://github.com/Valkyrie00/bold-brew/archive/refs/tags/v2.3.2.tar.gz"
+  sha256 "2e22f351e9726128746a3f2f8591e9d1a2f525cbe1aca6b0af6a20f6f909faec"
   license "MIT"
   head "https://github.com/Valkyrie00/bold-brew.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0dd295f0ed0e7c47c08f041385a6f17511574f3edde1360473769ee75a30453"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0dd295f0ed0e7c47c08f041385a6f17511574f3edde1360473769ee75a30453"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0dd295f0ed0e7c47c08f041385a6f17511574f3edde1360473769ee75a30453"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f55195c051617763fcdc0532801890283fa160cfdec0c2480f28931058fe035c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1a9164d52e282c8f8de6ef7d55dced5dc3abe18505073629b92f4c313ddc249"
-    sha256 cellar: :any,                 x86_64_linux:  "135714c98c7c26226893660fe003f0a0229d55cff51f04f234cffc2cfd69fb7b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa4c3f513dc30dd1375dd3c65f6489143ced0a16a524fdd4eeaa976bcf3dce50"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa4c3f513dc30dd1375dd3c65f6489143ced0a16a524fdd4eeaa976bcf3dce50"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa4c3f513dc30dd1375dd3c65f6489143ced0a16a524fdd4eeaa976bcf3dce50"
+    sha256 cellar: :any_skip_relocation, sonoma:        "96abe299c275d4e5876a1d9b91c58dd5fabcd9f2fe9d77e5e832ad4fc5a25a31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2af56528689c162a158b7c403510a2565d632192a540e75da2c1887a6c847cc"
+    sha256 cellar: :any,                 x86_64_linux:  "65aa8bcd1bf0dc292311ff01e305599adfb137fd238e8a4629f5603056250bc4"
   end
 
   depends_on "go" => :build

@@ -1,17 +1,17 @@
 class Containerd < Formula
   desc "Open and reliable container runtime"
   homepage "https://containerd.io"
-  url "https://ghfast.top/https://github.com/containerd/containerd/archive/refs/tags/v2.3.2.tar.gz"
-  sha256 "1a215ae4acb184192668b21f8b8375ceb6e86f8832a97fe6f7ab53ad79bb2cee"
+  url "https://ghfast.top/https://github.com/containerd/containerd/archive/refs/tags/v2.3.3.tar.gz"
+  sha256 "fcff2096ef20f1bc1d939bc55a8b831ea3eface574463fd7dc770b33ffe317b2"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c9669f95bf6b9b618de2da1ef09fb53ffd47bfa769cd912ebc91d53ecdc7bc5f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18cfdb04239a96658058e62eab959c3ae006068b9dd409e90db972a4e007a082"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51129c0fd80e4baad595676cd8ec3039e072deb45cec6af58730b9a6174ccc60"
-    sha256 cellar: :any_skip_relocation, sonoma:        "728b7748e7d40116a5383ba3610f7ac91728fecb62a4e3a7b923ebbb550436f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67911af8ca8f6bfff3d52b17717a63bfe76f974ab5e369abcd555d522b9ae2f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2145a82d90ac9678b3f3e9a530de0748e574bc3c9512fa5f0c42a07af86a42b8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "436a6271553eeb8bb6ba8f904506807e9825d6ad5f7bf5c41fbe88ceca78ba95"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8e80b0bf084f4d2e7ee88417a439a619aab0d9d48ac16cb1fb70631a3d7b008"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f792e436f04b8fb0ff5de69f3de4211f6f08a041bfa5e7622662c09cc15c061f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b81ecacab44e3726ddff20bc17a666b61183862628a9c8b388afe8c47602f997"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02f8c96cf11eedd497fa5855b038d316debe0a951f0f5766f3b24d30bab94c1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f0e86b3957a9556ee0bd99e818796c0378f8497ff2894582f5ddd0223694cba"
   end
 
   depends_on "go" => :build

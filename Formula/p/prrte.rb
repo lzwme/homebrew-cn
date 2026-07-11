@@ -2,6 +2,7 @@ class Prrte < Formula
   desc "PMIx Reference RunTime Environment"
   homepage "https://pmix.org/"
   license "BSD-3-Clause-Open-MPI"
+  revision 1
 
   stable do
     url "https://ghfast.top/https://github.com/openpmix/prrte/releases/download/v4.1.0/prrte-4.1.0.tar.bz2"
@@ -9,18 +10,26 @@ class Prrte < Formula
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https://ghfast.top/https://raw.githubusercontent.com/Homebrew/homebrew-core/1cf441a0/Patches/libtool/configure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+      file "Patches/libtool/configure-big_sur.diff"
+      type :unofficial
+    end
+
+    # Fix segmentation fault for some Apple Silicon
+    patch do
+      url "https://github.com/openpmix/prrte/commit/378c61c1d8eff9858a7774c869fbd332c48711a8.patch?full_index=1"
+      sha256 "64faa1acb89eddea096307a2658b11ccdaf85dc8c870fed4b3f8670329706a4f"
+      type :backport
+      resolves "https://github.com/openpmix/prrte/issues/2416"
     end
   end
 
   bottle do
-    sha256 arm64_tahoe:   "ca006ceeac61685818b8f929d0548588823297986f4bc43fca65d880cbf2be7c"
-    sha256 arm64_sequoia: "63adf8949031851e179c61d1b697cb5e70640d1fd016000e4e12921f3baadf7f"
-    sha256 arm64_sonoma:  "adb1534b9e9c29ad7144d6d5703fd4b82808587e1619d07a30aa1306ebdf28d4"
-    sha256 sonoma:        "b11939075e44503c72f242023990b1134f688d76a3ada46107eb6b1d7eb4ecff"
-    sha256 arm64_linux:   "c6737baea29f0f48c4eb4b49078297aaaf4e8dd3aedfd88e3584d0725f2f4e8a"
-    sha256 x86_64_linux:  "877320cde71cca7d2fbf8b71cdb67746b3c90a0655b5d9dfc25f140ecede509e"
+    sha256 arm64_tahoe:   "e113e688a868463e07a94372a25df0b23193286c74ed58349896b45e4dd4b0c1"
+    sha256 arm64_sequoia: "83ad171eccc7a0fac0b76ce4d3b19da1126a43358fdbf9c46a5bfbd4c29d7f18"
+    sha256 arm64_sonoma:  "c6035fc5594ea0c5d26267bcd33af470b4b251a644099175dedfb9a21f57a5c4"
+    sha256 sonoma:        "9b40f42ccaa94b22978a490c057b296a0018364bd2c833acabbee32c130aad6f"
+    sha256 arm64_linux:   "e19030480fad25fbb5121640c98e813a614ac98fd4a8efc950a8a6b6d0a5ff57"
+    sha256 x86_64_linux:  "afe5f770308210f0b18965301e0dfe493b7af1e8363e51429d30af1984e3bdfd"
   end
 
   head do

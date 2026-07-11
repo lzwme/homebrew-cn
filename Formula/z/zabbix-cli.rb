@@ -102,6 +102,7 @@ class ZabbixCli < Formula
     patch do
       url "https://github.com/sethmlarson/socksio/commit/b326406915fd98a8185c1c160165c5b8963b30c1.patch?full_index=1"
       sha256 "7aefa906b62e2c9a8df255ea742ca97e155ac2e1238e49ce11e3e56e37ee1f8b"
+      type :backport
     end
   end
 
@@ -113,6 +114,8 @@ class ZabbixCli < Formula
     patch do
       url "https://github.com/irgeek/StrEnum/commit/896bef1b7e4a50c8b53d90c8d2fb5c0164f08ecd.patch?full_index=1"
       sha256 "1d74618b970b04d5548e9efa9134010812c20a941e26381d71bc21b06cfc667b"
+      type :unofficial
+      resolves "https://github.com/irgeek/StrEnum/pull/34"
     end
   end
 

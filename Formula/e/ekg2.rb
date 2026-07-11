@@ -13,12 +13,14 @@ class Ekg2 < Formula
     # bugs.ekg2.org/issues/152 [LOST LINK]
     patch do
       file "Patches/ekg2/0.3.1.patch"
+      type :unofficial
     end
 
     # Upstream commit, fix build against OpenSSL 1.1
     patch do
       url "https://github.com/ekg2/ekg2/commit/f05815.patch?full_index=1"
       sha256 "207639edc5e6576c8a67301c63f0b28814d9885f0d4fca5d9d9fc465f4427cd7"
+      type :backport
     end
   end
 

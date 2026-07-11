@@ -3,17 +3,17 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.github.com/spec-kit/"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.12.9.tar.gz"
-  sha256 "54aa0f99f06e261975ea61993770223d2a8f31bc536b433cea052b489a694bb4"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.12.11.tar.gz"
+  sha256 "3b155234f875e1e7645cb62ed92a8249484b20b0b851fdd6a45febeb00b45a34"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "26895b31aabb987dc7dde3cec2f9090af6097ad324b635faddbdc6c16d04b373"
-    sha256 cellar: :any, arm64_sequoia: "cea71213ba57ee58a851bbce3d22d3d59a9c5b0289f390f19e7bfa86cb419447"
-    sha256 cellar: :any, arm64_sonoma:  "01ac24dd08794c24bc627379e82f3295c7654f4be4a550b2c97ad98dabe48e17"
-    sha256 cellar: :any, sonoma:        "d168f847d8bb05f176154dfb5ce46fc317d6806fca9d8c799c66f07dad08d380"
-    sha256 cellar: :any, arm64_linux:   "bc5e97b6267ec0aeb2e1e0eca32051651cfcd8eca514b587a1a772348f1b62e9"
-    sha256 cellar: :any, x86_64_linux:  "d705fdb7014d4d23a64f1d049d2b165f7375fc8356be68944d42fd3c1eb885d1"
+    sha256 cellar: :any, arm64_tahoe:   "c6177d23b6b268c3ecaa7eea453332cef30c2fa9a8ecc7f318dbf0b0b6d7bfba"
+    sha256 cellar: :any, arm64_sequoia: "9e1f7615c01cefeea900fb6b7dcf8ab9ec18c499d7be84cd7e31a52306650cb7"
+    sha256 cellar: :any, arm64_sonoma:  "d465bbaffcc5142548b634b912575989fa4c8a9c29c64710e3b6334029e1b939"
+    sha256 cellar: :any, sonoma:        "9c36e7e3d08f2b59b213b1f39fffaf5d0460c75b331d57bc782adb63567b1774"
+    sha256 cellar: :any, arm64_linux:   "5c26e080bc9df1096f959bbc2f0a44466ab8880a90a2e9a3f7e65d860b075987"
+    sha256 cellar: :any, x86_64_linux:  "38f0d4b6665b0b7a42bb832363af2745247560f8b9e811adcc8d7ceaf52e36b7"
   end
 
   depends_on "certifi" => :no_linkage

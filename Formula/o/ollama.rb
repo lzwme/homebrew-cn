@@ -33,10 +33,11 @@ class Ollama < Formula
 
       if build.stable?
         # Fixes x/imagegen/mlx wrapper generation with system-installed mlx-c headers.
-        # upstream pr ref, https://github.com/ollama/ollama/pull/14201
         patch do
           url "https://github.com/ollama/ollama/commit/c051122297824c223454b82f4af3afe94379e6dd.patch?full_index=1"
           sha256 "a22665cd1acec84f6bb53c84dd9a40f7001f2b1cbe2253aed3967b4401cde6a0"
+          type :unofficial
+          resolves "https://github.com/ollama/ollama/pull/14201"
         end
       end
     end
@@ -59,6 +60,7 @@ class Ollama < Formula
     patch do
       url "https://github.com/ggml-org/llama.cpp/commit/1f92170dc9d4620b5aadb9bacba502c726e5b587.patch?full_index=1"
       sha256 "1e51afe4b8cfed5653289270064370d926258b5bbd662a93eac240d7a37f2735"
+      type :unofficial
     end
   end
 

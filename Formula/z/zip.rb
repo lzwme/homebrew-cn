@@ -31,6 +31,7 @@ class Zip < Formula
   patch do
     url "https://deb.debian.org/debian/pool/main/z/zip/zip_3.0-15.debian.tar.xz"
     sha256 "6dc1711c67640e8d1dee867ff53e84387ddb980c40885bd088ac98c330bffce9"
+    type :unofficial
     apply %w[
       patches/01-typo-it-is-transferring-not-transfering.patch
       patches/02-typo-it-is-privileges-not-priviliges.patch
@@ -54,6 +55,7 @@ class Zip < Formula
   # Otherwise configure thinks memset() and others are missing
   patch do
     file "Patches/zip/xcode15.diff"
+    type :unofficial
   end
 
   def install

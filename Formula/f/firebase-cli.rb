@@ -1,17 +1,17 @@
 class FirebaseCli < Formula
   desc "Firebase command-line tools"
   homepage "https://firebase.google.com/docs/cli/"
-  url "https://registry.npmjs.org/firebase-tools/-/firebase-tools-15.22.4.tgz"
-  sha256 "381e555185aa6fc8bbcf8ec6fa28dc4619cbf465c9b6406b00ae2dbc795d64db"
+  url "https://registry.npmjs.org/firebase-tools/-/firebase-tools-15.23.0.tgz"
+  sha256 "d9e63777eb6351161d8660805986eb07f98d2838b36f528a75a2ff01ab3b4ee7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ea4cbfba612746d26f7bb30c94a00802e3b1fe5615bbea229f3c825e8f404c42"
-    sha256 cellar: :any, arm64_sequoia: "7b374bbdb034ba08d4fc57581472b9f55b00511044e3189618a075e21d12fe54"
-    sha256 cellar: :any, arm64_sonoma:  "7b374bbdb034ba08d4fc57581472b9f55b00511044e3189618a075e21d12fe54"
-    sha256 cellar: :any, sonoma:        "94caf289542e3ff4c401d299c01faafb1dfc5050d001deae5153e87f797286f5"
-    sha256 cellar: :any, arm64_linux:   "72aabdf5801cd22f2c572de51f81a165562751c0c7105ac3c2aaa474afea84d3"
-    sha256 cellar: :any, x86_64_linux:  "ce6f946484bea80445d7ca562c28d0bcc16c08b6ade98700023cb6a17bec990b"
+    sha256 cellar: :any, arm64_tahoe:   "f16a7fa567eae254b531250e2a1c3a16d48da342679e3767ebc7bf71222f7bc7"
+    sha256 cellar: :any, arm64_sequoia: "2c69c047c1d6261b594a7e607816a56afb0bca3fe6d847b786ea47234446f7eb"
+    sha256 cellar: :any, arm64_sonoma:  "2c69c047c1d6261b594a7e607816a56afb0bca3fe6d847b786ea47234446f7eb"
+    sha256 cellar: :any, sonoma:        "e945b5dca99d7f99ad43e056dd2f5f242c3b93c544bdbf31b8cc56d3a3b795d5"
+    sha256 cellar: :any, arm64_linux:   "16b799e1ab9e65a06e0abd8eef48e924e4b8a99fa913e567967c546a754e4564"
+    sha256 cellar: :any, x86_64_linux:  "3a39d853147f18ada7f4d0aac1254c5246cac0bb373001875c96398069b340ac"
   end
 
   depends_on "node"
@@ -23,10 +23,10 @@ class FirebaseCli < Formula
     node_modules = libexec/"lib/node_modules/firebase-tools/node_modules"
     deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
 
-    # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-url` binaries
+    # Remove incompatible pre-built `bare-fs`/`bare-path`/`bare-os`/`bare-url` binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
+    node_modules.glob("{bare-fs,bare-path,bare-os,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
   end
 

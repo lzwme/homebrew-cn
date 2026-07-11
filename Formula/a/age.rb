@@ -18,6 +18,8 @@ class Age < Formula
 
   depends_on "go" => :build
 
+  deny_network_access! [:postinstall, :test]
+
   def install
     ldflags = "-s -w -X main.Version=v#{version}"
     (buildpath/"cmd").each_child(false) do |cmd|

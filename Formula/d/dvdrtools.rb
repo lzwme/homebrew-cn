@@ -31,14 +31,17 @@ class Dvdrtools < Formula
   # Below three patches via MacPorts.
   patch :p0 do
     file "Patches/dvdrtools/patch-cdda2wav-cdda2wav.c"
+    type :unofficial
   end
 
   patch :p0 do
     file "Patches/dvdrtools/patch-cdrecord-cdrecord.c"
+    type :unofficial
   end
 
   patch :p0 do
     file "Patches/dvdrtools/patch-scsi-mac-iokit.c"
+    type :unofficial
   end
 
   def install

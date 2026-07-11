@@ -30,6 +30,8 @@ class Wput < Formula
   # https://sourceforge.net/p/wput/patches/22/
   patch do
     file "Patches/wput/0.6.2.patch"
+    type :unofficial
+    resolves "https://sourceforge.net/p/wput/patches/22/"
   end
 
   def install

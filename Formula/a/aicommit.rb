@@ -19,6 +19,8 @@ class Aicommit < Formula
 
   depends_on "go" => :build
 
+  deny_network_access! [:postinstall, :test]
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=v#{version}"), "./cmd/aicommit"
   end

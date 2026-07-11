@@ -26,6 +26,7 @@ class Bedops < Formula
   # Apply Debian patch to allow using system/brew libraries
   patch do
     file "Patches/bedops/2.4.42-debian.patch"
+    type :unofficial
   end
 
   def install

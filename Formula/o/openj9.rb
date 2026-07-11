@@ -74,10 +74,11 @@ class Openj9 < Formula
 
     # llvm 21+ defines ARM ACLE builtins (e.g. `__yield`, https://github.com/llvm/llvm-project/pull/128222),
     # so guard against that in OMR which also defines them.
-    # PR ref: https://github.com/eclipse-openj9/openj9-omr/pull/275
     patch do
       url "https://github.com/eclipse-openj9/openj9-omr/commit/3150b6f2ce7b28276573d878fcac1350cada4ac3.patch?full_index=1"
       sha256 "b5dd5ebeaa916444c0c51bf9d24a0613f8e403628f7c88fea1418cee221f830d"
+      type :unofficial
+      resolves "https://github.com/eclipse-openj9/openj9-omr/pull/275"
     end
   end
 

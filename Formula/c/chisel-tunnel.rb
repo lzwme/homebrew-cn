@@ -1,18 +1,18 @@
 class ChiselTunnel < Formula
   desc "Fast TCP/UDP tunnel over HTTP"
   homepage "https://github.com/jpillora/chisel"
-  url "https://ghfast.top/https://github.com/jpillora/chisel/archive/refs/tags/v1.11.7.tar.gz"
-  sha256 "47271eedeebf5d2494e4422f9e7ab081d72f181eeac0d32a4ad50facf776d104"
+  url "https://ghfast.top/https://github.com/jpillora/chisel/archive/refs/tags/v1.11.8.tar.gz"
+  sha256 "219764707ae7356f900a3b8e4b87041779a6fe0967cf6ea1d67b89c2a0741743"
   license "MIT"
   head "https://github.com/jpillora/chisel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e8b6088f642fef47245e537c49c0ce979c0b919f3ea9318df7c243c91a0767b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e8b6088f642fef47245e537c49c0ce979c0b919f3ea9318df7c243c91a0767b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e8b6088f642fef47245e537c49c0ce979c0b919f3ea9318df7c243c91a0767b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "36f049c4492c24d1fda61972f957ef76ae99ac3bd2094cc080d3a249e3ab46e4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b942ca9b032e84248bf4b3b94ff1aef52e45900d16f287025ab09661ea4003f3"
-    sha256 cellar: :any,                 x86_64_linux:  "c4258c2603d0b1da22c9412b3c55733259e7c1da4a0dacd11992a0f25e7182dd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "493587cceebb65dd5690cd136d0743fd188acd8ea3dc24a341a1aa4fd3107831"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "493587cceebb65dd5690cd136d0743fd188acd8ea3dc24a341a1aa4fd3107831"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "493587cceebb65dd5690cd136d0743fd188acd8ea3dc24a341a1aa4fd3107831"
+    sha256 cellar: :any_skip_relocation, sonoma:        "57fb22e6af19a3e5ec3646ff47e74e706ca97fb402402fbb61c9d33c416c2ad1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "27b12464e4dc6acde91d5de201edd5fed14784cd90e0df1b6a7922cc5e5eb32a"
+    sha256 cellar: :any,                 x86_64_linux:  "7dc4654594b977b65691855b2cc1ddd475f6f1112d028fea02f5039cb4face45"
   end
 
   depends_on "go" => :build

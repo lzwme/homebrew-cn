@@ -25,9 +25,10 @@ class Dvdbackup < Formula
   depends_on "libdvdread"
 
   # Fix compatibility with libdvdread 6.1.0. See:
-  # https://bugs.launchpad.net/dvdbackup/+bug/1869226
   patch do
     file "Patches/dvdbackup/compat.patch"
+    type :unofficial
+    resolves "https://bugs.launchpad.net/dvdbackup/+bug/1869226"
   end
 
   def install

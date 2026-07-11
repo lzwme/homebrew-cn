@@ -33,6 +33,8 @@ class Yconalyzer < Formula
   # Patch reported to upstream - https://sourceforge.net/p/yconalyzer/bugs/3/
   patch :p0 do
     file "Patches/yconalyzer/1.0.4.patch"
+    type :unofficial
+    resolves "https://sourceforge.net/p/yconalyzer/bugs/3/"
   end
 
   def install

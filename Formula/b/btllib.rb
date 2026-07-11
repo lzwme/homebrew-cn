@@ -23,11 +23,13 @@ class Btllib < Formula
     depends_on "libomp"
   end
 
-  # Apply FreeBSD patch to fix build with newer Clang, https://github.com/simongog/sdsl-lite/issues/462
+  # Apply FreeBSD patch to fix build with newer Clang
   patch :p0 do
     url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/af74f60a871e4a5aa7aea787fc235a2cb760e764/devel/sdsl-lite/files/patch-include_sdsl_louds__tree.hpp"
     sha256 "84aef67058947044c40032ac39d9b6d1b8a285c581f660d565cd23aaa4beade7"
     directory "subprojects/sdsl-lite"
+    type :unofficial
+    resolves "https://github.com/simongog/sdsl-lite/issues/462"
   end
 
   def install

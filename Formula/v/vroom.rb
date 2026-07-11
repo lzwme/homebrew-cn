@@ -45,6 +45,8 @@ class Vroom < Formula
   patch do
     url "https://github.com/VROOM-Project/vroom/commit/3bd437aa5951040593d535336a3d7cf86b6ac405.patch?full_index=1"
     sha256 "f9681c0d96265435e3b15477ec9471116159716a2a868b33e4d46eb1009cd1dd"
+    type :backport
+    resolves "https://github.com/VROOM-Project/vroom/pull/1333"
   end
 
   def install

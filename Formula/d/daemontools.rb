@@ -30,11 +30,13 @@ class Daemontools < Formula
   # Patch submitted to author by email.
   patch do
     file "Patches/daemontools/errno.patch"
+    type :unofficial
   end
 
   # Fix build failure due to missing headers for POSIX-related functions.
   patch do
     file "Patches/daemontools/posix-headers.patch"
+    type :unofficial
   end
 
   def install

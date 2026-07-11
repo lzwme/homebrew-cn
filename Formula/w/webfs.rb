@@ -25,6 +25,7 @@ class Webfs < Formula
 
   patch :p0 do
     file "Patches/webfs/patch-ls.c"
+    type :unofficial
   end
 
   def install

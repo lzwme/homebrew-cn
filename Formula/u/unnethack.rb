@@ -11,12 +11,14 @@ class Unnethack < Formula
     patch do
       url "https://github.com/UnNetHack/UnNetHack/commit/04f0a3a850a94eb8837ddcef31303968240d1c31.patch?full_index=1"
       sha256 "5285dc2e57b378bc77c01879399e2af248ef967977ed50e0c13a80b1993a7081"
+      type :backport
     end
 
     # Fix implicit `ioctl` function declaration. Remove with the next release.
     patch do
       url "https://github.com/UnNetHack/UnNetHack/commit/33a3bb6539452875a88efbf6da0148a1cccc00c1.patch?full_index=1"
       sha256 "07e1bb472c4f20957dafc6cfc49fcfd3178a5e04fcebf93a4fc7922ec8c0a963"
+      type :backport
     end
   end
 

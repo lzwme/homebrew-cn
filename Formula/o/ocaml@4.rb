@@ -34,6 +34,7 @@ class OcamlAT4 < Formula
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
     file "Patches/libtool/configure-big_sur.diff"
+    type :unofficial
   end
 
   def install

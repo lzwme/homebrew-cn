@@ -1,8 +1,8 @@
 class Memcached < Formula
   desc "High performance, distributed memory object caching system"
   homepage "https://memcached.org/"
-  url "https://www.memcached.org/files/memcached-1.6.44.tar.gz"
-  sha256 "c41a9d2713dfc56b5f4fa0075b2751973ea840c1f1ab8d6bfed08a1848938368"
+  url "https://www.memcached.org/files/memcached-1.6.45.tar.gz"
+  sha256 "d362c64e6d8d5287153501eabf7c85b4a761432fbf53f5d7b085d0bb1653c1dd"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Memcached < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b4c49089eaa5e498baaed49f1cf24ca0337ee9db1d0e2da2a1b910ab2e876e98"
-    sha256 cellar: :any, arm64_sequoia: "8fb9e7e4533587a45e4bac0d3daf3dd67324239d1c6f22b3eb0473d32f3e98dd"
-    sha256 cellar: :any, arm64_sonoma:  "41e5e84e63863d561a57bbcba30453f8bcc27cb1566f1b13821600604000cd08"
-    sha256 cellar: :any, sonoma:        "d2f4b7df7e2b06a3985315f868d3cbdf4730c0312440c4280e19dcea4c4314c3"
-    sha256 cellar: :any, arm64_linux:   "f88952746b71452d13ad7dd5d69c559b287c63056e86045359807913be33cbab"
-    sha256 cellar: :any, x86_64_linux:  "510486081201c9e96e0f364df61f705e1485a770d74d2a400fd191115345f08f"
+    sha256 cellar: :any, arm64_tahoe:   "68e37be8e89af4d756d69cbcc46334f310bf4865d4d0f70bebf5db16a3a9c3db"
+    sha256 cellar: :any, arm64_sequoia: "63862e6cd5e5f3d7f146a8d7d05e29be08943ff2efee6364d759604c63024904"
+    sha256 cellar: :any, arm64_sonoma:  "60b574b8eee009f0332f3f9baddbd00ee050f19126c5d69a356fda88f40b8d72"
+    sha256 cellar: :any, sonoma:        "0addce6ba648a7e617ceb0efe5e7fae7309e20a6c2383905c44faed13e42d48f"
+    sha256 cellar: :any, arm64_linux:   "55341142efcfc8946468e3cf6765d29fe0e3c58e661a7e53bf04a745ab3cdea5"
+    sha256 cellar: :any, x86_64_linux:  "3b54b11a1b8f0edc671ab50c1a38a6b6c224e2b806ffce1e097047a9e3ce802b"
   end
 
   head do

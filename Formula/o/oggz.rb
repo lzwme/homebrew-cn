@@ -28,6 +28,7 @@ class Oggz < Formula
   # build patch to include `<inttypes.h>` to fix missing printf format macros
   patch do
     file "Patches/liboggz/1.1.2-inttypes.patch"
+    type :unofficial
   end
 
   def install

@@ -25,6 +25,8 @@ class Wasmedge < Formula
   patch do
     url "https://github.com/WasmEdge/WasmEdge/commit/41a01b6b4f40defbac0dd551663c542cdcf9ae76.patch?full_index=1"
     sha256 "55657c3a628a406b655ba224019f0121f2489140dca128c3f8c623c019de84b1"
+    type :backport
+    resolves "https://github.com/WasmEdge/WasmEdge/pull/4936"
   end
 
   def install

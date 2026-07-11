@@ -1,19 +1,19 @@
 class Gitversion < Formula
   desc "Easy semantic versioning for projects using Git"
   homepage "https://gitversion.net/docs/"
-  url "https://ghfast.top/https://github.com/GitTools/GitVersion/archive/refs/tags/6.8.1.tar.gz"
-  sha256 "62f8a0c075e0ddda911c2a130d24421f77bd94cf41026ff9fb19aa446aa19142"
+  url "https://ghfast.top/https://github.com/GitTools/GitVersion/archive/refs/tags/6.8.2.tar.gz"
+  sha256 "02b7efc0b9cfee26971c0f89b27724eb51d33c3230788963e77dc94070173c21"
   license "MIT"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9b61a891f7d99ef2903141e77515cea4931c28ca53a11903d6e828a57e9808d8"
-    sha256 cellar: :any, arm64_sequoia: "f8ae5b3f4e2511582f05c8d5c466b8d6dd7ac79b698f586428ee3938ffa2b9f8"
-    sha256 cellar: :any, arm64_sonoma:  "b142d61cdec8852cf25bbe7aa75fe3c32a1d199802806afdede866cfa4ab353b"
-    sha256 cellar: :any, sonoma:        "993063e8e941b82224716d99adc048ee2649d07af6d1409812889fcec7265101"
-    sha256 cellar: :any, arm64_linux:   "8dce6f939b0ce7018221e7a4a38cdc8e9427f6eaefc4611ad12b637a2837a1ce"
-    sha256 cellar: :any, x86_64_linux:  "aa251441673261dd5f5e3e440b0bf9489d9f794fa80fe6d531282c7c8488b784"
+    sha256 cellar: :any, arm64_tahoe:   "2125213b57952276cb8061484e008859ad0657a8bba56dd312ec6400c771b482"
+    sha256 cellar: :any, arm64_sequoia: "0bf4cd2cd05aba7af483e41ff29468133f2a94a98fb1a74d5750252cc61ec285"
+    sha256 cellar: :any, arm64_sonoma:  "e3508fdfa8135122614d0ac7cb5facc9adab96253ca742f60d31b25a1092d257"
+    sha256 cellar: :any, sonoma:        "595228141204dfb9ee0c78852290f8c8bae44fc776e308d7f6702a61b48769c0"
+    sha256 cellar: :any, arm64_linux:   "bf2329ef9f28eda35385d77f101d0c4ac475b6d7d8894a05f8685cc032bf9d48"
+    sha256 cellar: :any, x86_64_linux:  "caf15de5aeb5ed923dfff139899257411c0eb81fa5435ee28750ba1544130a96"
   end
 
   depends_on "dotnet"

@@ -1,19 +1,18 @@
 class AutoEditor < Formula
   desc "Effort free video editing!"
   homepage "https://auto-editor.com"
-  url "https://ghfast.top/https://github.com/WyattBlue/auto-editor/archive/refs/tags/31.1.2.tar.gz"
-  sha256 "155b594c15c4c0f6ccb822ae2c70089541fb7c516924610ef8fd9c8748416bd1"
+  url "https://ghfast.top/https://github.com/WyattBlue/auto-editor/archive/refs/tags/31.2.0.tar.gz"
+  sha256 "7e08462a82300256799b57f296cff1a0bb9ec4ebdf50de6e7a35b2fdac318ec5"
   license "Unlicense"
-  revision 1
   head "https://github.com/WyattBlue/auto-editor.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "958c8e14f0f72660553d9f49472b4ea3b7133b3b053c15071d87e1ab95798e70"
-    sha256 cellar: :any, arm64_sequoia: "507568c03b15a5d601f94205da6ab9c7e38fcf8001ec744b5f10a977ea3f57d5"
-    sha256 cellar: :any, arm64_sonoma:  "f2d22a3b077034be11c177db6293f6aef6d3d2340d9ee370afed19aea97b891b"
-    sha256 cellar: :any, sonoma:        "2c3ba1e2ef60151991601ab8ebb93217266d21e3f78f2a85058e8e7961852786"
-    sha256 cellar: :any, arm64_linux:   "63fe1559ebfcb6e5be359dce9dd7c440adfd7de38ad1e2d6bff7a095bfd52d53"
-    sha256 cellar: :any, x86_64_linux:  "1abee32c564e15b89a3295803e135579c76f319dea5b7b8df9d53bb3db24f2e3"
+    sha256 cellar: :any, arm64_tahoe:   "5b859570b3fd9ca27344fd817477a65496a6cb53ac5904a7d1f4f0407c1baa5f"
+    sha256 cellar: :any, arm64_sequoia: "3311a1a6e0df5765ea1e3a577fa712928bad4159f9f23702f22c63e635569552"
+    sha256 cellar: :any, arm64_sonoma:  "7ecb04beede5bef14153e3a7abd86309b089ff97cb17ad70423f8e13f48cec69"
+    sha256 cellar: :any, sonoma:        "7e3a35b4a928aebae5c6027444397468138fa9b7e6d5ddb457ba58802a4c5c3b"
+    sha256 cellar: :any, arm64_linux:   "24c8750c56a6ece8da10f22e21b19c4225c704cb09dd39cea7c4962545e0cbca"
+    sha256 cellar: :any, x86_64_linux:  "97a9ebb476383089530141c19ddfa04381e7f99459e65aa08d3c86dc9138ae83"
   end
 
   depends_on "nim" => :build

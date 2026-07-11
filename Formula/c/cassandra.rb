@@ -12,13 +12,13 @@ class Cassandra < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "cb4559cf042bd2687e7395e553b00173ab666e54edc9ae9ed69d36060c80641e"
-    sha256 cellar: :any, arm64_sequoia: "eb5a8f9e7f9e4c3b1e44c16750040387f698b5dc7617185a9fad5dfba9518117"
-    sha256 cellar: :any, arm64_sonoma:  "db4989989ecfd605b284c96fb7d94e0c47f3e355a43f07b50d93b930a5d1fefa"
-    sha256 cellar: :any, sonoma:        "cb0bd5a7df73e1c5fa667b72b399c93bef11c55338a5489455a1956cda629e3a"
-    sha256 cellar: :any, arm64_linux:   "a05bf40cd730f8ae05e8d03574a681e92be1770bff8b243f7d2f3848b0d6135e"
-    sha256 cellar: :any, x86_64_linux:  "297d639039fe125abf191f65c26a1d38815accc2023e8da2bf915b6c33f950d5"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "83a5027ddf87b741f76d096dcd55171a68353b6861e289bf9fbee4e99db3a3b2"
+    sha256 cellar: :any, arm64_sequoia: "07fbfeb2c533f22951b24a1e068b709b04e223d17694ce5cdf688ede1d81985c"
+    sha256 cellar: :any, arm64_sonoma:  "94eb469d230703e67db9b64be9a9736270b9639706e6fafa74eb68c140b59743"
+    sha256 cellar: :any, sonoma:        "5a647ed8e54d45b726c1cbfbac765c280fffcf455a923e8014ab2b16b721ad66"
+    sha256 cellar: :any, arm64_linux:   "915bf0f3f8097ac4f3e8dc746ff70a39a8e6a0cb1fda520eefee73221e69716b"
+    sha256 cellar: :any, x86_64_linux:  "9bff4de3b0e0a92d36f5427d028c2eae56fdca6c6d38606097143e03140b4f17"
   end
 
   depends_on "libev"
@@ -31,32 +31,18 @@ class Cassandra < Formula
                 extra_packages: ["cassandra-driver", "wcwidth"]
 
   resource "cassandra-driver" do
-    url "https://files.pythonhosted.org/packages/06/47/4e0fbdf02a7a418997f16f59feba26937d9973b979d3f23d79fbd8f6186f/cassandra_driver-3.29.3.tar.gz"
-    sha256 "ff6b82ee4533f6fd4474d833e693b44b984f58337173ee98ed76bce08721a636"
-
-    # Remove `ez_setup.py` to be compatible with setuptools 82+, remove in next release
-    patch do
-      url "https://github.com/apache/cassandra-python-driver/commit/7d8015e3c1cff543a5f64c70cff3e14216e58037.patch?full_index=1"
-      sha256 "66a5a714aed117306e6c0e78b51615b56ca655e12cb9ea5718b0c1ae384ceef6"
-    end
-    patch :DATA
-  end
-
-  resource "cassandra-driver" do
-    url "https://files.pythonhosted.org/packages/06/47/4e0fbdf02a7a418997f16f59feba26937d9973b979d3f23d79fbd8f6186f/cassandra_driver-3.29.3.tar.gz"
-    sha256 "ff6b82ee4533f6fd4474d833e693b44b984f58337173ee98ed76bce08721a636"
-
-    # Remove `ez_setup.py` to be compatible with setuptools 82+, remove in next release
-    patch do
-      url "https://github.com/apache/cassandra-python-driver/commit/7d8015e3c1cff543a5f64c70cff3e14216e58037.patch?full_index=1"
-      sha256 "66a5a714aed117306e6c0e78b51615b56ca655e12cb9ea5718b0c1ae384ceef6"
-    end
-    patch :DATA
+    url "https://files.pythonhosted.org/packages/bb/ed/4e16210e194660f107929ee494f1cf18557252655067d9b39029c241be2d/cassandra_driver-3.30.1.tar.gz"
+    sha256 "0c6a3e1428f7c6a9aa6c944b9c47a37cd2cdbeb5b5a82d42c33afdd56f14e398"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
-    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+  end
+
+  resource "deprecated" do
+    url "https://files.pythonhosted.org/packages/49/85/12f0a49a7c4ffb70572b6c2ef13c90c88fd190debda93b23f026b25f9634/deprecated-1.3.1.tar.gz"
+    sha256 "b1b50e0ff0c1fddaa5708a2c6b0a6588bb09b892825ab2b214ac9ea9d92a5223"
   end
 
   resource "geomet" do
@@ -65,8 +51,13 @@ class Cassandra < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz"
-    sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
+    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
+    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
+  end
+
+  resource "wrapt" do
+    url "https://files.pythonhosted.org/packages/fe/a4/282c8e64300a59fc834518a54bf0afabb4ff9218b5fa76958b450459a844/wrapt-2.2.2.tar.gz"
+    sha256 "0788e321027c999bf221b667bd4a54aaefd1a36283749a860ac3eb77daed0302"
   end
 
   def install
@@ -169,19 +160,3 @@ class Cassandra < Formula
     assert_match "Connection error", output
   end
 end
-
-__END__
-diff --git a/setup.py b/setup.py
-index ef735b7..891d192 100644
---- a/setup.py
-+++ b/setup.py
-@@ -16,9 +16,6 @@ import os
- import sys
- import warnings
- 
--import ez_setup
--ez_setup.use_setuptools()
--
- from setuptools import setup
- from distutils.command.build_ext import build_ext
- from distutils.core import Extension

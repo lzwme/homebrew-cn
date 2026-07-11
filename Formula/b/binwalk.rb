@@ -12,6 +12,8 @@ class Binwalk < Formula
     patch do
       url "https://github.com/ReFirmLabs/binwalk/commit/b83242ffbd54997d11c7f7e304c17bf9582e38fe.patch?full_index=1"
       sha256 "3a9e9f43ee552d6c3ab3d8069524a786b95f1256969f30400c679b1cc19e026c"
+      type :backport
+      resolves "https://github.com/ReFirmLabs/binwalk/pull/735"
     end
   end
 

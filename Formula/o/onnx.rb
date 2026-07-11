@@ -29,6 +29,8 @@ class Onnx < Formula
   patch do
     url "https://src.fedoraproject.org/rpms/onnx/raw/4de8a450afd87b1ba1931f50d841e9c50b63d8a0/f/0004-Add-fixes-for-use-with-onnxruntime.patch"
     sha256 "d9ddb735c065fd5dae11ab79371e62bdcca157a6d2a7705cc83ee612abeaaa98"
+    type :unofficial
+    resolves "https://github.com/microsoft/onnxruntime/issues/8556"
   end
 
   def install

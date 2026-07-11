@@ -10,16 +10,18 @@ class Ola < Formula
     sha256 "44073698c147fe641507398253c2e52ff8dc7eac8606cbf286c29f37939a4ebf"
 
     # fix liblo 0.32 header compatibility
-    # upstream pr ref, https://github.com/OpenLightingProject/ola/pull/1954
     patch do
       url "https://github.com/OpenLightingProject/ola/commit/e083653d2d18018fe6ef42f757bc06462de87f28.patch?full_index=1"
       sha256 "1276aded269497fab2e3fc95653b5b8203308a54c40fe2dcd2215a7f0d0369de"
+      type :backport
+      resolves "https://github.com/OpenLightingProject/ola/pull/1954"
     end
 
     # Backport fix for protoc version detection
     patch do
       url "https://github.com/OpenLightingProject/ola/commit/aed518a81340a80765e258d1523b75c22a780052.patch?full_index=1"
       sha256 "7e48c0027b79e129c1f25f29fae75568a418b99c5b789ba066a4253b7176b00a"
+      type :backport
     end
   end
 
@@ -60,14 +62,17 @@ class Ola < Formula
   end
 
   # Apply open PR to support Protobuf 22+ API
-  # PR ref: https://github.com/OpenLightingProject/ola/pull/1984
   patch do
     url "https://github.com/OpenLightingProject/ola/commit/e22e9da89ba2267e6c2039e5c09adce514a93b36.patch?full_index=1"
     sha256 "d2ac5729b898fc9bb35f6cc46ce5e8ffc666835371991cebe46fb96c46d686a5"
+    type :unofficial
+    resolves "https://github.com/OpenLightingProject/ola/pull/1984"
   end
   patch do
     url "https://github.com/OpenLightingProject/ola/commit/b8c8613ebf59d0c5db0b25e9f2649c85ddf4fdf5.patch?full_index=1"
     sha256 "28cfabd2dca822dc9198c8f81ebac71b57b2984bb5d0894301665e5f7150d31c"
+    type :unofficial
+    resolves "https://github.com/OpenLightingProject/ola/pull/1984"
   end
 
   def install

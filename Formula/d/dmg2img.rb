@@ -36,6 +36,7 @@ class Dmg2img < Formula
   # Patch for OpenSSL 3 compatibility
   patch :p0 do
     file "Patches/dmg2img/openssl-3.diff"
+    type :unofficial
   end
 
   def install

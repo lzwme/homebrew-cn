@@ -48,9 +48,6 @@ class AppstreamGlib < Formula
     depends_on "util-linux"
   end
 
-  # see https://github.com/hughsie/appstream-glib/issues/258
-  patch :DATA
-
   def install
     # Find our docbook catalog
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
@@ -78,17 +75,3 @@ class AppstreamGlib < Formula
     system bin/"appstream-util", "--help"
   end
 end
-
-__END__
-diff --git a/libappstream-glib/meson.build b/libappstream-glib/meson.build
-index 5f726b0..7d29ac8 100644
---- a/libappstream-glib/meson.build
-+++ b/libappstream-glib/meson.build
-@@ -136,7 +136,6 @@ asglib = shared_library(
-   dependencies : deps,
-   c_args : cargs,
-   include_directories : include_directories('..'),
--  link_args : vflag,
-   link_depends : mapfile,
-   install : true,
- )

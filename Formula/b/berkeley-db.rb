@@ -35,6 +35,7 @@ class BerkeleyDb < Formula
   patch do
     file "Patches/libtool/configure-pre-0.4.2.418-big_sur.diff"
     directory "dist"
+    type :unofficial
   end
 
   def install

@@ -47,6 +47,7 @@ class Dynare < Formula
     # [^3]: https://git.dynare.org/Dynare/dynare/-/issues/1977
     patch do
       file "Patches/dynare/clang.diff"
+      type :unofficial
     end
   end
 

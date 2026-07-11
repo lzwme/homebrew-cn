@@ -75,11 +75,21 @@ class Projectm < Formula
     CPP
     flags = shell_output("pkgconf libprojectM sdl2 --cflags --libs").split
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
-    if OS.linux? && ENV.exclude?("DISPLAY")
+    pid = nil
+    if OS.linux?
       # SDL3 (via sdl2-compat) fails if no video driver is available and "dummy" workaround doesn't work
-      system Formula["xorg-server"].bin/"xvfb-run", "./test"
-    else
-      system "./test"
+      IO.pipe do |read_io, write_io|
+        pid = spawn(Formula["xorg-server"].bin/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
+        write_io.close
+        ENV["DISPLAY"] = ":#{read_io.read.strip}"
+      end
+    end
+
+    system "./test"
+  ensure
+    if pid
+      Process.kill "TERM", pid
+      Process.wait pid
     end
   end
 end

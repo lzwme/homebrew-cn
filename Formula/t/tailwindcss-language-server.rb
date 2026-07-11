@@ -28,6 +28,7 @@ class TailwindcssLanguageServer < Formula
   patch do
     url "https://github.com/tailwindlabs/tailwindcss-intellisense/commit/6f19018d336ae1b72e124569dd3ee4f328df2fb6.patch?full_index=1"
     sha256 "ea45bfe06cd0f89c790d465510408dd1adf4ce8364ed24d56c977b81c22bc635"
+    type :backport
   end
 
   def install

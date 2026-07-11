@@ -100,6 +100,7 @@ class Openvino < Formula
   patch do
     url "https://github.com/openvinotoolkit/openvino/commit/dc4633aadac8e644dfab6d8aced84ebe33e09b6e.patch?full_index=1"
     sha256 "1d1c91de8ead006c3a6ce28124578ab5d52a3b6f1a8bb4a03076d18f2bede32a"
+    type :unofficial
   end
 
   def install

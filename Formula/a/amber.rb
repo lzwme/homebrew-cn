@@ -29,10 +29,11 @@ class Amber < Formula
   end
 
   # patch granite to fix db dependency resolution issue
-  # upstream patch https://github.com/amberframework/amber/pull/1339
   patch do
     url "https://github.com/amberframework/amber/commit/54b1de90cd3e395cd09326b1d43074e267c79695.patch?full_index=1"
     sha256 "be0e30f08b8f7fcb71604eb01136d82d48b7e34afac9a1c846c74a7a7d2f8bd6"
+    type :backport
+    resolves "https://github.com/amberframework/amber/pull/1339"
   end
 
   def install

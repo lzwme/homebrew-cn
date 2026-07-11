@@ -14,6 +14,8 @@ class Alive2 < Formula
     patch do
       url "https://github.com/AliveToolkit/alive2/commit/a86aaa0ea44c5671ce3e998ec6d422feaa95b236.patch?full_index=1"
       sha256 "6645b59d29e7a4bbe45e91f57391cf9d4e5dbc27ba99a93c89ad13b14d57a7c4"
+      type :backport
+      resolves "https://github.com/AliveToolkit/alive2/pull/1265"
     end
   end
 

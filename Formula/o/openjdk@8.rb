@@ -89,10 +89,12 @@ class OpenjdkAT8 < Formula
   patch :p0 do
     url "https://ghfast.top/https://raw.githubusercontent.com/macports/macports-ports/04ad4a17332e391cd359271965d4c6dac87a7eb2/java/openjdk8/files/0001-8181503-Can-t-compile-hotspot-with-c-11.patch"
     sha256 "a02e0ea7c70390796e46b8b6565f986fedc17a08aa039ee3306438a39a60538a"
+    type :unofficial
   end
   patch :p0 do
     url "https://ghfast.top/https://raw.githubusercontent.com/macports/macports-ports/04ad4a17332e391cd359271965d4c6dac87a7eb2/java/openjdk8/files/0006-Disable-C-11-warnings.patch"
     sha256 "127d9508b72005e849a6ada6adf04bd49a236731d769810e67793bdf2aa722fe"
+    type :unofficial
   end
   patch :p0, :DATA
 

@@ -11,14 +11,18 @@ class Augeas < Formula
     # Fixes `implicit-function-declaration` error
     # Remove when merged and released
     patch do
-      url "https://github.com/hercules-team/augeas/commit/26d297825000dd2cdc45d0fa6bf68dcc14b08d7d.patch?full_index=1"
-      sha256 "6bed3c3201eabb1849cbc729d42e33a3692069a06d298ce3f4a8bce7cdbf9f0e"
+      url "https://github.com/hercules-team/augeas/commit/f0a0586d5fa3cd302e6a073f6081c1626471f7dc.patch?full_index=1"
+      sha256 "1147178a78e3522a912b425b7fbe00f378d555043946a1a7351669f907b69556"
+      type :backport
+      resolves "https://github.com/hercules-team/augeas/pull/818"
     end
 
     # Backport fix for CVE-2025-2588
     patch do
       url "https://github.com/hercules-team/augeas/commit/af2aa88ab37fc48167d8c5e43b1770a4ba2ff403.patch?full_index=1"
       sha256 "74edfe9248644c88eb0ed78d4f7f677ff00284ed4cef563779238caf3a7aa139"
+      type :backport
+      resolves "CVE-2025-2588"
     end
   end
 

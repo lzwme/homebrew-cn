@@ -30,6 +30,7 @@ class Tinysvm < Formula
   # Use correct compilation flag, via MacPorts.
   patch :p0 do
     file "Patches/tinysvm/patch-configure.diff"
+    type :unofficial
   end
 
   def install

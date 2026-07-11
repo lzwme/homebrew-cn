@@ -17,18 +17,26 @@ class VirtManager < Formula
     patch do
       url "https://github.com/virt-manager/virt-manager/commit/d4988b02efb8bba91fd55614fbbff11b3a915d44.patch?full_index=1"
       sha256 "fc1daaf8440b01600b0297384f5bdd1cda654aaee958ce3fcd27d79c6b2d9ffb"
+      type :backport
+      resolves "https://github.com/virt-manager/virt-manager/issues/897"
     end
     patch do
       url "https://github.com/virt-manager/virt-manager/commit/ff9fa95e52f890ccd8dce18567aa7cc30582ca4f.patch?full_index=1"
       sha256 "5ae4ce21b65cf77fa9511bae70799bd3c1890ab15a31372491662a7dc186df4f"
+      type :backport
+      resolves "https://github.com/virt-manager/virt-manager/issues/897"
     end
     patch do
       url "https://github.com/virt-manager/virt-manager/commit/d0372e82c8b6fe6b5517d850a81847422c861446.patch?full_index=1"
       sha256 "5084650b38527f8bac3f2ea803b81f1a49ecf51cb461c3ad7088ec9f90845dae"
+      type :backport
+      resolves "https://github.com/virt-manager/virt-manager/issues/897"
     end
     patch do
       url "https://github.com/virt-manager/virt-manager/commit/766bf2ecdc5ac6853b41a36412d09c1950c700bf.patch?full_index=1"
       sha256 "24deb9287b86caaac7eaea7d5dff145c0686bbc32ccb6952a8a0d4b0c6d3adeb"
+      type :backport
+      resolves "https://github.com/virt-manager/virt-manager/issues/897"
     end
   end
 

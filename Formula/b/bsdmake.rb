@@ -31,18 +31,22 @@ class Bsdmake < Formula
   # Also a MacPorts patch to circumvent setrlimit error
   patch :p0 do
     file "Patches/bsdmake/patch-Makefile.diff"
+    type :unofficial
   end
 
   patch :p0 do
     file "Patches/bsdmake/patch-mk.diff"
+    type :unofficial
   end
 
   patch :p0 do
     file "Patches/bsdmake/patch-pathnames.diff"
+    type :unofficial
   end
 
   patch :p0 do
     file "Patches/bsdmake/patch-setrlimit.diff"
+    type :unofficial
   end
 
   def install

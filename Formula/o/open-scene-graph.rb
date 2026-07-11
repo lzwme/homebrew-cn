@@ -13,6 +13,7 @@ class OpenSceneGraph < Formula
     patch do
       url "https://github.com/openscenegraph/OpenSceneGraph/commit/21f5a0adfb57dc4c28b696e93beface45de28194.patch?full_index=1"
       sha256 "d1e4e33b50ab006420417c7998d7e0d43d0349e6f407b5eb92a3fc6636523fbf"
+      type :backport
     end
   end
 

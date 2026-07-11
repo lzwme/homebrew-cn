@@ -32,6 +32,7 @@ class Ogmtools < Formula
   # Borrow patch from MacPorts
   patch :p0 do
     file "Patches/ogmtools/common.h.diff"
+    type :unofficial
   end
 
   def install

@@ -30,6 +30,7 @@ class Dbxml < Formula
   # No public bug tracker or mailing list to submit this to, unfortunately.
   patch do
     file "Patches/dbxml/cxx11.patch"
+    type :unofficial
   end
 
   def install

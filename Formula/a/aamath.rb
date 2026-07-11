@@ -29,6 +29,7 @@ class Aamath < Formula
   # https://github.com/Homebrew/homebrew/issues/23872
   patch do
     file "Patches/aamath/0.3.patch"
+    type :unofficial
   end
 
   deny_network_access!

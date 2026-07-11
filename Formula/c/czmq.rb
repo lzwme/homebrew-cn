@@ -10,6 +10,7 @@ class Czmq < Formula
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
       file "Patches/libtool/configure-pre-0.4.2.418-big_sur.diff"
+      type :unofficial
     end
 
     # Fix `Abort trap: 6`
@@ -18,6 +19,8 @@ class Czmq < Formula
     patch do
       url "https://github.com/zeromq/czmq/commit/7f744f730941dc8ca68750cd977a38a655d1a646.patch?full_index=1"
       sha256 "efd3749181bedaab37348ca0fe2efa3db77c4b9d46a49f410476d8473cb20c01"
+      type :backport
+      resolves "https://github.com/zeromq/czmq/pull/2162"
     end
   end
 

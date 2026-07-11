@@ -19,6 +19,8 @@ class Aiac < Formula
 
   depends_on "go" => :build
 
+  deny_network_access! [:postinstall, :test]
+
   def install
     ldflags = %W[
       -s -w

@@ -34,10 +34,12 @@ class Ouch < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # Fix release version metadata, upstream PR ref, https://github.com/ouch-org/ouch/pull/1019
+  # Fix release version metadata
   patch do
     url "https://github.com/ouch-org/ouch/commit/f85299603f3b7ac36671e5468e247bd5a845792b.patch?full_index=1"
     sha256 "5b697d3737bea5f0522ed8ecbbc17e928c04e1cebf9783e0fd766c3519afffce"
+    type :unofficial
+    resolves "https://github.com/ouch-org/ouch/pull/1019"
   end
 
   def install
