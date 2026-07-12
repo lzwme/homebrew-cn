@@ -85,6 +85,8 @@ class Pypy < Formula
   #   When tcl-tk is not found, it uses unversioned `-ltcl -ltk`, which breaks build.
   patch do
     file "Patches/pypy/tcl-tk.diff"
+    type :unofficial
+    resolves "https://github.com/pypy/pypy/issues/3538"
   end
 
   # Where setuptools will install executable scripts

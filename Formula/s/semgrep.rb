@@ -5,8 +5,8 @@ class Semgrep < Formula
   homepage "https://semgrep.dev"
   # Pull from git tag to get submodules, https://github.com/semgrep/semgrep/issues/10877
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.168.0",
-      revision: "3167f9c4edb5ad588c558e311c5a1a03b7f593da"
+      tag:      "v1.169.0",
+      revision: "09c90f40de48bac000f6d49f978a65ee8a09a3f4"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -16,12 +16,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a04e6d2923b49e11b2d8f066d4a26835ef8963c5c850a64c5b5cf48ce5bad2c8"
-    sha256 cellar: :any, arm64_sequoia: "9304d53bcfaeef2a98a2af755e595678881ff9ba839fc93dccf8dd9beb6818de"
-    sha256 cellar: :any, arm64_sonoma:  "35328743d80e51a09b2a6c5ab765666d2fb45806d483834ce86cd045d4f1f890"
-    sha256 cellar: :any, sonoma:        "63744be44f4915c4981a85158a4db7adb9ab843eab7a96d7ecc06eade13510bc"
-    sha256               arm64_linux:   "fa6c114c477d853923862c814d60c6406937ee81d00f7b4ec9cdb7de013f9097"
-    sha256               x86_64_linux:  "1155583cf66d57fb40e08fcd83c1c917f6aa4e4b95e75722b12ee8334af152d7"
+    sha256 cellar: :any, arm64_tahoe:   "a559bc50ee882233511f4d5f6d98ac5373a598a60dc5a91c3c5129cfb0165b8f"
+    sha256 cellar: :any, arm64_sequoia: "b7ebfe04cffdcc0692c0908b9ab317504585515152c5d53f2e32e339afba2fad"
+    sha256 cellar: :any, arm64_sonoma:  "f106a1a8f54cd82fb400199cfcc19f132eb55e86d74bfc4d2a61aee09b4ed63d"
+    sha256 cellar: :any, sonoma:        "a1a924dbf148717ecdc192664ee19f8ea9e5f9e58f4f9dd11c3fd61c8b8137d7"
+    sha256               arm64_linux:   "3d930b05a6c691252ba6c13c06080b3df338d7a3d46689d0f60068a54e032003"
+    sha256               x86_64_linux:  "c3dc091c0896152d0bfe577360faff82e736daad91f73dfc182d468af7ad4df1"
   end
 
   depends_on "ocaml" => :build
@@ -67,13 +67,13 @@ class Semgrep < Formula
   end
 
   resource "bracex" do
-    url "https://files.pythonhosted.org/packages/63/9a/fec38644694abfaaeca2798b58e276a8e61de49e2e37494ace423395febc/bracex-2.6.tar.gz"
-    sha256 "98f1347cd77e22ee8d967a30ad4e310b233f7754dbf31ff3fceb76145ba47dc7"
+    url "https://files.pythonhosted.org/packages/d0/f5/4473ad9b48cd0420a2d762a3750fa0e078e23e060b1af72662e5987e5530/bracex-3.0.tar.gz"
+    sha256 "b73f718d6bd98d8419e45df02426c86e9967c179949f779340d6c3a8c83b9111"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "click" do
@@ -307,8 +307,8 @@ class Semgrep < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/c4/1f/fa18009dea8469069cca78a4e877a008ab78f08b064bfc9ab891579077ff/uvicorn-0.49.0.tar.gz"
-    sha256 "ebf4271aa580d9de97f93192d4595176df6e91f9aae919ca73e4fc07df1e66a3"
+    url "https://files.pythonhosted.org/packages/a2/65/b7c6c443ccc58678c91e1e973bbe2a878591538655d6e1d47f24ba1c51f3/uvicorn-0.51.0.tar.gz"
+    sha256 "f6f4b69b657c312f516dd2d268ab9ae6f254b11e4bac504f37b2ab58b24dd0b0"
   end
 
   resource "wcmatch" do

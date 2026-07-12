@@ -30,7 +30,19 @@ class GoBindata < Formula
   test do
     (testpath/"data").write "hello world"
     system bin/"go-bindata", "-o", "data.go", "data"
+    File.delete(testpath/"data")
     assert_path_exists testpath/"data.go"
-    assert_match '\xff\xff\x85\x11\x4a', (testpath/"data.go").read
+
+    (testpath/"testbindata.go").write <<~GO
+      package main
+
+      func main() {
+        println("data:", string(MustAsset("data")))
+      }
+    GO
+
+    assert_equal "data: hello world", shell_output("go run data.go testbindata.go 2>&1").chomp
+
+    assert_match version.to_s, shell_output("#{bin}/go-bindata --version")
   end
 end

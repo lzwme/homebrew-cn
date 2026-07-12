@@ -1,8 +1,8 @@
 class Lame < Formula
   desc "High quality MPEG Audio Layer III (MP3) encoder"
   homepage "https://lame.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/lame/lame/3.101/lame-3.101.tar.gz"
-  sha256 "7578af6eebd578b2bd64e468fac4ae1f03670a7e028166e67f855674b9b6aeac"
+  url "https://downloads.sourceforge.net/project/lame/lame/4.0/lame-4.0.tar.gz"
+  sha256 "3df5124d5ad3a98312ffd7ba6a9b36230e4f8a3e66d3ce0f425e336c32d216eb"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Lame < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b1b1d99080d3ba7a3a2a188df7f4497b94e1d9295b6864cebe69b3592bf53cca"
-    sha256 cellar: :any, arm64_sequoia: "f9bcb2827f360fb78ba0c322bae06fcfad258a17bb3ce15691896b79676c2cfe"
-    sha256 cellar: :any, arm64_sonoma:  "0162c94e4c71bf08eccacd4880c986cb238cf5c2bb1dd2e897afc64462733966"
-    sha256 cellar: :any, sonoma:        "d8f4d8c577cab80f8156c4be7010d88f0e6ebc61307d8e67f4d4a704b1136561"
-    sha256 cellar: :any, arm64_linux:   "5f8e0cf608568b4b6059205b85ad47aa7034bd249f0eec197641711712d669f0"
-    sha256 cellar: :any, x86_64_linux:  "8dd427008a1fafaad992f7648c14f890921a71fde621d3ca94149cd9d2866e97"
+    sha256 cellar: :any, arm64_tahoe:   "b0fe0cfb39c74a53b7635833fe3293a62c886b084bc5ccc8ed7cd177803182e4"
+    sha256 cellar: :any, arm64_sequoia: "552d24d56ff0d3255e9a3519a368d0ce45de86b5b2967b338209c1a22cd12969"
+    sha256 cellar: :any, arm64_sonoma:  "b0cfa1500aff96430c865fa5e3e8b5494bb9ff70dd4f4fe8f9e7684da626649a"
+    sha256 cellar: :any, sonoma:        "62e5e6acdb340cfdae39e4a4ad49e8b2efcd46bfe91897b670a2c0d5a0693c19"
+    sha256 cellar: :any, arm64_linux:   "bd3d4df9fd0722b758bea12328bd1345d2ca507842f4074b88fe5d10cae13b73"
+    sha256 cellar: :any, x86_64_linux:  "260e9309ef40e8ad7373bfae07f20d5357e036d32b14ea3ce6526fdf15181a37"
   end
 
   depends_on "pkgconf" => :build
@@ -25,7 +25,9 @@ class Lame < Formula
   uses_from_macos "ncurses"
 
   def install
-    # lame.h leaves id3tag ucs2 helpers parse.c calls undeclared, but they are still exported
+    # LAME still calls undeclared legacy ID3 APIs, which do not compile as C23.
+    # https://sourceforge.net/p/lame/bugs/517/
+    ENV["ac_cv_prog_cc_c23"] = "no"
     ENV.append_to_cflags "-Wno-implicit-function-declaration"
 
     system "./configure", "--disable-dependency-tracking",

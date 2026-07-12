@@ -31,6 +31,8 @@ class PscPackage < Formula
   patch do
     url "https://github.com/purescript/psc-package/commit/2817cfd7bbc29de790d2ab7bee582cd6167c16b5.patch?full_index=1"
     sha256 "e49585ff8127ccca0b35dc8a7caa04551de1638edfd9ac38e031d1148212091c"
+    type :backport
+    resolves "https://github.com/purescript/psc-package/pull/168"
   end
 
   # Another patch to fix build. See https://github.com/purescript/psc-package/pull/169.

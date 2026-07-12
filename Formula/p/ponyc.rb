@@ -27,6 +27,8 @@ class Ponyc < Formula
   patch do
     url "https://github.com/ponylang/ponyc/commit/bae6fbbf9e6e8c55ef7614999e4160f553359de6.patch?full_index=1"
     sha256 "dbe4bc81eb02958da8d5a500a5c28c0bf9ec923186bc557a230fdeadc2139914"
+    type :backport
+    resolves "https://github.com/ponylang/ponyc/issues/5613"
   end
 
   def install

@@ -2,7 +2,8 @@ class Rawdog < Formula
   include Language::Python::Virtualenv
 
   desc "CLI tool to generate and run code with llms"
-  homepage "https://mentat.ai"
+  # Original homepage `https://mentat.ai` is down
+  homepage "https://github.com/granawkins/rawdog"
   url "https://files.pythonhosted.org/packages/3c/ab/eaae3e0f2fac4a717d632990795fd6a560efaf9e54a1741e842234dec1cb/rawdog_ai-0.1.6.tar.gz"
   sha256 "1fc37d0e3336e87568ae9ee5dde5e7c68c1af652efd0956ee0c62281ddf14b41"
   license "Apache-2.0"

@@ -1,21 +1,21 @@
 class ApacheArrow < Formula
   desc "Columnar in-memory analytics layer designed to accelerate big data"
   homepage "https://arrow.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-24.0.0/apache-arrow-24.0.0.tar.gz"
-  mirror "https://archive.apache.org/dist/arrow/arrow-24.0.0/apache-arrow-24.0.0.tar.gz"
-  sha256 "9a8094d24fa33b90c672ab77fdda253f29300c8b0dd3f0b8e55a29dbd98b82c9"
+  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-25.0.0/apache-arrow-25.0.0.tar.gz"
+  mirror "https://archive.apache.org/dist/arrow/arrow-25.0.0/apache-arrow-25.0.0.tar.gz"
+  sha256 "12afc2dc8137bdd4a68876cec939f664c9d55cfc7b75f55b45163ebb4e344d81"
   license "Apache-2.0"
-  revision 6
-  compatibility_version 2
+  revision 1
+  compatibility_version 3
   head "https://github.com/apache/arrow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0c66f03cadbf421f678ad8b5f3323d0bf75ec60c6100f95f877d91b39ab075f5"
-    sha256 cellar: :any, arm64_sequoia: "ec82aae0dfba18ca53efece7be6313d9b4bbfb7fab6d61ce4a9a58f070ed42cd"
-    sha256 cellar: :any, arm64_sonoma:  "2ff66b6eb78282801063dde368206092a907b24dbac0e92531733619fbcef995"
-    sha256 cellar: :any, sonoma:        "72ad92bcd50656159ab205793822b2948cdc81d324d00c1a2285f840cb6312f9"
-    sha256               arm64_linux:   "a62b1aa84287934e585f04e03d228d4e98550ddaa98451590c4cc3bd8e3f0ef0"
-    sha256               x86_64_linux:  "aec84f2f9a21c9faeb35e000a4435e0581814c9d692e929d54fb131b2898b454"
+    sha256 cellar: :any, arm64_tahoe:   "366f15a9829c9b846884f286488a31cbdec6dd52571dc99419bc65d22e645385"
+    sha256 cellar: :any, arm64_sequoia: "6c92a94bb5cadc7c127aa4e500331f58700d0f448bbbbd54215b3b1f9e467f48"
+    sha256 cellar: :any, arm64_sonoma:  "929f4ecbd315fa736725a9411908994efbe649241d0c3d5cd5f4f481a4721af3"
+    sha256 cellar: :any, sonoma:        "e094edbbdb922cf62ccb1428ad3ce769bcc23234222503ce1c1f4a019c81e74e"
+    sha256               arm64_linux:   "a597388be417de5c620ab71499afcc98a93bd016cbc5e86596d5324b8acdd21c"
+    sha256               x86_64_linux:  "7770cfc6928d390e74fa1ed5647fcf59afbd9925d0f2f03b79bf11c8a18a7b96"
   end
 
   depends_on "boost" => :build
@@ -81,12 +81,8 @@ class ApacheArrow < Formula
     ]
     args << "-DARROW_MIMALLOC=ON" unless Hardware::CPU.arm?
     args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac? # Reduce overlinking
-    # ARROW_SIMD_LEVEL sets the minimum required SIMD. Since this defaults to
-    # SSE4.2 on x86_64, we need to reduce level to match oldest supported CPU.
-    # Ref: https://arrow.apache.org/docs/cpp/env_vars.html#envvar-ARROW_USER_SIMD_LEVEL
-    if build.bottle? && Hardware::CPU.intel? && (!OS.mac? || !MacOS.version.requires_sse42?)
-      args << "-DARROW_SIMD_LEVEL=NONE"
-    end
+    # SVE bpacking kernel fails a static_assert; disable SVE runtime dispatch
+    args << "-DARROW_RUNTIME_SIMD_LEVEL=NONE" if OS.linux? && Hardware::CPU.arm?
 
     system "cmake", "-S", "cpp", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

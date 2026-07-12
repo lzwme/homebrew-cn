@@ -1,5 +1,5 @@
 cask "mole-app" do
-  version "1.9.0"
+  version "1.10.0"
   sha256 :no_check
 
   url "https://mole.fit/Mole.dmg"
@@ -26,5 +26,6 @@ cask "mole-app" do
     "~/Library/HTTPStorages/com.tw93.MoleApp.binarycookies",
     "~/Library/Logs/mole",
     "~/Library/Preferences/com.tw93.MoleApp.plist",
+    "~/Library/WebKit/com.tw93.MoleApp",
   ]
 end

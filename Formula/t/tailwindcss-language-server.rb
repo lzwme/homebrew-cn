@@ -32,14 +32,9 @@ class TailwindcssLanguageServer < Formula
   end
 
   def install
-    # Prevent pnpm from downloading another copy due to `packageManager` feature
-    (buildpath/"pnpm-workspace.yaml").append_lines <<~YAML
-      managePackageManagerVersions: false
-    YAML
-
     cd "packages/tailwindcss-language-server" do
-      system "pnpm", "install", "--frozen-lockfile"
-      system "pnpm", "run", "build"
+      system "pnpm", "with", "current", "install", "--frozen-lockfile", "--ignore-scripts"
+      system "pnpm", "with", "current", "run", "build"
       bin.install "bin/tailwindcss-language-server"
     end
   end

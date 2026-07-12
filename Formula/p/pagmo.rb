@@ -25,10 +25,14 @@ class Pagmo < Formula
   patch do
     url "https://github.com/esa/pagmo2/commit/bdd8559d7663536c3a5f56b013f07da11a35c9b8.patch?full_index=1"
     sha256 "f8679d6ca0d4bd5d9b44382da35ddc6f80404d389813ce05f050d00f5ce3706c"
+    type :backport
+    resolves "https://github.com/esa/pagmo2/pull/583"
   end
   patch do
     url "https://github.com/esa/pagmo2/commit/d0e70403179769c326f2694673473e1d3ef0bec7.patch?full_index=1"
     sha256 "6dcf5ac2cbd8e9b0de20845a51ef5d8eeb0ffd0472f32bcc833ce3f314718f0b"
+    type :backport
+    resolves "https://github.com/esa/pagmo2/pull/608"
   end
 
   def install

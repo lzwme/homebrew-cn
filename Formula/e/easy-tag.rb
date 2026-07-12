@@ -7,13 +7,13 @@ class EasyTag < Formula
   revision 12
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "8251a64714fcb33ae2d6952b837cc4441424c68d85194fe85fa1ffb840d8f1af"
-    sha256 arm64_sequoia: "dd969dbf8e9fc12844800194aa455dff8a3196e556167b54b78125e82ff0dfd6"
-    sha256 arm64_sonoma:  "1bb2f7a658bb7ef3cd2d58436cec8bcf915848e13a56537c1085a6153fa02403"
-    sha256 sonoma:        "bb4e3ef00876303f85ddd0013fb353e26317f4ac7d52e3c204a9ff583c4b3be5"
-    sha256 arm64_linux:   "a0e221b36fad5782d5a9a63e55a636ffef07f8780f33263a63752ff9fa11935d"
-    sha256 x86_64_linux:  "9d32bfcd076b17f4e7f4fe1572e456d9a5539d6e7c95b2ecfd14fd960204e5f3"
+    rebuild 2
+    sha256 arm64_tahoe:   "fc83e82e1bf16cb52d433688b8c8b89374c2d09027a453745e57ca27ee5b3b4d"
+    sha256 arm64_sequoia: "f79b0ed3c4026cb1c8019b60bd0ecb5bf466b14e758a70cb4e35bb6642e45c98"
+    sha256 arm64_sonoma:  "86ea6ba733c44dd73aca5ca7e079f66abb42fe26d24371ecdbfdf033097a1867"
+    sha256 sonoma:        "7fd6763ed03295537a80d52a0615315a153deba9adc12c8941209e5bcb5f0f68"
+    sha256 arm64_linux:   "6c65815c229b68fce8e0868f31f09e8f787138b0764dd8b6df6ca04d6bfbdfbd"
+    sha256 x86_64_linux:  "81e667327978a857d545aae15b4e03ad2f4a0e06cc73e224b1cc8bf561bb5e10"
   end
 
   depends_on "appstream-glib" => :build
@@ -74,6 +74,9 @@ class EasyTag < Formula
     ENV["LIBTOOLIZE"] = "glibtoolize"
     system "autoreconf", "--force", "--install", "--verbose"
     ENV.append "LIBS", "-lz"
+    # id3lib's headers break under C23; taglib 2.x requires C++11
+    ENV.append "CFLAGS", "-std=gnu17"
+    ENV.append "CXXFLAGS", "-std=c++11"
     ENV["DESTDIR"] = "/"
 
     system "./configure", "--disable-schemas-compile", "--disable-silent-rules", *std_configure_args
@@ -87,7 +90,21 @@ class EasyTag < Formula
 
   test do
     cmd = "#{bin}/easytag --version"
-    cmd = "#{Formula["xorg-server"].bin}/xvfb-run #{cmd}" if OS.linux? && ENV.exclude?("DISPLAY")
+
+    pid = nil
+    if OS.linux?
+      IO.pipe do |read_io, write_io|
+        pid = spawn(Formula["xorg-server"].bin/"Xvfb", "-displayfd", write_io.fileno.to_s, write_io => write_io)
+        write_io.close
+        ENV["DISPLAY"] = ":#{read_io.read.strip}"
+      end
+    end
+
     assert_match version.to_s, shell_output(cmd)
+  ensure
+    if pid
+      Process.kill "TERM", pid
+      Process.wait pid
+    end
   end
 end

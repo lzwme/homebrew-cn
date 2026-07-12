@@ -4,7 +4,6 @@ class Gitea < Formula
   url "https://dl.gitea.com/gitea/1.26.4/gitea-src-1.26.4.tar.gz"
   sha256 "197d679d8c774e05915c67da67d1cbae9fb055c1dbb802f0c59603a44fcadd98"
   license "MIT"
-  head "https://github.com/go-gitea/gitea.git", branch: "main"
 
   livecheck do
     url "https://dl.gitea.com/gitea/version.json"
@@ -22,9 +21,14 @@ class Gitea < Formula
     sha256 cellar: :any,                 x86_64_linux:  "5b8e38b1b80bc501ffbb5d67ddbd4448eceede5381df431e3c7506d0cfb23638"
   end
 
+  head do
+    url "https://github.com/go-gitea/gitea.git", branch: "main"
+
+    depends_on "node" => :build
+    depends_on "pnpm" => :build
+  end
+
   depends_on "go" => :build
-  depends_on "node" => :build
-  depends_on "yarn" => :build
 
   uses_from_macos "sqlite"
 

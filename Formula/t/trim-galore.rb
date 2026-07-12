@@ -6,6 +6,11 @@ class TrimGalore < Formula
   license "GPL-3.0-only"
   head "https://github.com/FelixKrueger/TrimGalore.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21715e4c80f487a2e3e4ad673e12cdfa872bde5685597b6790e062be97a275ed"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4be9dd3a0cba6a7671eb0e3cbc426e30e621c3754831bcdbf25dfcafed47e9df"

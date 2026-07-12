@@ -21,7 +21,10 @@ class GithubMarkdownToc < Formula
   end
 
   test do
-    (testpath/"README.md").write("# Header")
+    (testpath/"README.md").write <<~MARKDOWN
+      # Header
+    MARKDOWN
+    assert_path_exists testpath/"README.md"
     assert_match version.to_s, shell_output("#{bin}/gh-md-toc --version 2>&1")
     assert_match "* [Header](#header)", shell_output("#{bin}/gh-md-toc ./README.md")
   end

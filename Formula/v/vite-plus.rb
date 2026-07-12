@@ -1,30 +1,30 @@
 class VitePlus < Formula
   desc "Unified toolchain and entry point for web development"
   homepage "https://viteplus.dev"
-  url "https://ghfast.top/https://github.com/voidzero-dev/vite-plus/archive/refs/tags/v0.1.22.tar.gz"
-  sha256 "b1e6951592ae7af2f7a6044e92fc1d1802288bf8c0c4039a982ba3d58a46e797"
+  url "https://ghfast.top/https://github.com/voidzero-dev/vite-plus/archive/refs/tags/v0.2.4.tar.gz"
+  sha256 "a7ecb52e83feb0f181f068df41196d48fd30fd363d2faf550d280ca4abfe5185"
   license "MIT"
   head "https://github.com/voidzero-dev/vite-plus.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8665d09f2c8d972a472448884820b9355e41d1aaf7f137586262841cb9552fee"
-    sha256 cellar: :any, arm64_sequoia: "b6614e403237661780af51b8672df57617afb04b408723f2854f91d703b9eb59"
-    sha256 cellar: :any, arm64_sonoma:  "d60043a4a7937aee0ef96bcbc8b47355b08751ef602467c5798914995af1da92"
-    sha256 cellar: :any, sonoma:        "ec02d73c4f1e12a78b8e425d8208d5ab47a12443bc491ec27460da21c7a494ab"
-    sha256               arm64_linux:   "f96f5d1ff290ece17662ea4f0ae4a7978326225ffc38409f0212409c54f5fb12"
-    sha256               x86_64_linux:  "a64d17555235833cce623249a229ed52885855892276d5c73416d3c0caf2861b"
+    sha256 cellar: :any, arm64_tahoe:   "fd53e30679dd750bf1636cfc4ac8c43d66e3f586c104cd27f8a12d0b9a03567d"
+    sha256 cellar: :any, arm64_sequoia: "137415c142dd99705b8528e28e7a57f103078ff5fd78d6e12a0640663ecbf41b"
+    sha256 cellar: :any, arm64_sonoma:  "d34b1e5894fd32ede8cebbf22381fdd941837f51bfba00e0a29ca6d3267c7841"
+    sha256 cellar: :any, sonoma:        "d65e14d4a1a6d036c6e11d420acbec0c6b95cf48e2098021510eb91a1cab3d7e"
+    sha256               arm64_linux:   "3fab748e0f0789eb85e5901a6d76f3b7c9a2b84b50658f556321b0b73380ce12"
+    sha256               x86_64_linux:  "8b4e7bb3bba7ef6ff268ea57281eff4b5daffa4f56019c3697b04c737c424a6f"
   end
 
   depends_on "cmake" => :build
   depends_on "just" => :build
   depends_on "pnpm" => :build
-  depends_on "rust" => :build
+  depends_on "rustup" => :build # TODO: try to restore stable rust: https://github.com/voidzero-dev/vite-task/commit/db99ba4d5d33323cc9e7b329f11bdea0610fbc7f
   depends_on "node"
 
   resource "rolldown" do
     url "https://github.com/rolldown/rolldown.git",
-        revision: "ac5c71025a639d394a0db9c3a921b7eda5d71a88"
-    version "ac5c71025a639d394a0db9c3a921b7eda5d71a88"
+        revision: "6cbd2330dc5ca973b90444973ee04c2dc7ee2f2d"
+    version "6cbd2330dc5ca973b90444973ee04c2dc7ee2f2d"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/voidzero-dev/vite-plus/refs/tags/v#{LATEST_VERSION}/packages/tools/.upstream-versions.json"
@@ -36,8 +36,8 @@ class VitePlus < Formula
 
   resource "vite" do
     url "https://github.com/vitejs/vite.git",
-        revision: "66f3194aa8e59924562575f0a98e7f4ae0acdd89"
-    version "66f3194aa8e59924562575f0a98e7f4ae0acdd89"
+        revision: "578ffb80d46940f3b99cd96ed609f8b3a0ac5ede"
+    version "578ffb80d46940f3b99cd96ed609f8b3a0ac5ede"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/voidzero-dev/vite-plus/refs/tags/v#{LATEST_VERSION}/packages/tools/.upstream-versions.json"
@@ -52,10 +52,6 @@ class VitePlus < Formula
     resource("vite").stage buildpath/"vite"
 
     ENV["NPM_CONFIG_MANAGE_PACKAGE_MANAGER_VERSIONS"] = "false"
-
-    # fspy requires nightly Cargo's `-Z bindeps`.
-    # Use a stable-Rust stub to keep the CLI buildable without nightly.
-    ENV["RUSTC_BOOTSTRAP"] = "1"
 
     system "just", "build"
     system "cargo", "install", *std_cargo_args(path: "crates/vite_global_cli")

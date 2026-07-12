@@ -31,9 +31,11 @@ class Plank < Formula
 
   uses_from_macos "swift" => :build
 
-  # fix build failures, upstream pr ref, https://github.com/pinterest/plank/pull/301
+  # fix build failures
   patch do
     file "Patches/plank/1.6.patch"
+    type :unofficial
+    resolves "https://github.com/pinterest/plank/pull/301"
   end
 
   def install

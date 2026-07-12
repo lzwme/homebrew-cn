@@ -19,14 +19,13 @@ class Gobackup < Formula
 
   depends_on "go" => :build
   depends_on "node" => :build
-  depends_on "yarn" => :build
 
   def install
     revision = build.head? ? version.commit : version
 
     chdir "web" do
-      system "yarn", "install"
-      system "yarn", "build"
+      system "npm", "install", *std_npm_args(prefix: false)
+      system "npm", "run", "build"
     end
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{revision}")
   end

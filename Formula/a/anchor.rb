@@ -16,7 +16,6 @@ class Anchor < Formula
 
   depends_on "pkgconf" => :build
   depends_on "node" => :test
-  depends_on "yarn" => :test
   depends_on "rust"
 
   on_linux do

@@ -9,7 +9,7 @@ class Metabase < Formula
   # latest OSS jar file. We check the "latest" GitHub release, as the release
   # body text contains a versioned link to the OSS jar file.
   livecheck do
-    url :head
+    url "https://github.com/metabase/metabase.git"
     strategy :github_latest
   end
 
@@ -17,24 +17,10 @@ class Metabase < Formula
     sha256 cellar: :any_skip_relocation, all: "69b8f85c481e4eb236b57badd807d4f462375433cca8890ee3f266724699d844"
   end
 
-  head do
-    url "https://github.com/metabase/metabase.git", branch: "master"
-
-    depends_on "leiningen" => :build
-    depends_on "node" => :build
-    depends_on "yarn" => :build
-  end
-
   depends_on "openjdk"
 
   def install
-    if build.head?
-      system "./bin/build"
-      libexec.install "target/uberjar/metabase.jar"
-    else
-      libexec.install "metabase.jar"
-    end
-
+    libexec.install "metabase.jar"
     bin.write_jar_script libexec/"metabase.jar", "metabase"
   end
 

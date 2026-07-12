@@ -6,18 +6,18 @@ class Harlequin < Formula
   url "https://files.pythonhosted.org/packages/93/ce/cae8ff256fc7f4c67a89cadcefb09c230600cdea92306d4ac9354f0a1a77/harlequin-2.5.2.tar.gz"
   sha256 "7e02cb25f893ab72f486de79bee109b866762a69f5be28d495581ce93d16f870"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "13bc58a1347fb37d93205568db849980f2de78fbde192353aaa56b70f8ce4ab6"
-    sha256 cellar: :any, arm64_sequoia: "9508a71d0b5be2a95a555251f0ba50da06576275965e2310e2505e30354ddbbe"
-    sha256 cellar: :any, arm64_sonoma:  "04cf6538d9954e4d0c9ae903bab8fbed16cd2916e1f74e73bcac009efdb2b34c"
-    sha256 cellar: :any, sonoma:        "18335052e94da8f31c826745e314598216718b7b43391a7c9531f2a0c6c303b3"
-    sha256               arm64_linux:   "f4f22522fab6277275d170c5b1814fc9f8defe27f785f64eaf29bfc47122b83c"
-    sha256               x86_64_linux:  "fba69f6d4315868a37217dad69647ac3210dc7978ac5eb9838742e4d53ee993d"
+    sha256 cellar: :any, arm64_tahoe:   "7e6e1c40d06220cb138064d527e26d65717f3a8c471c3f9575f4cea06171568c"
+    sha256 cellar: :any, arm64_sequoia: "fea98cdf363331efc591b99e192c42c13d7799a4c9a12fa253d27aaa10a25e87"
+    sha256 cellar: :any, arm64_sonoma:  "90413928d44c1dd04e639e53428bf2974b662753b8f5956df23518a507fcec29"
+    sha256 cellar: :any, sonoma:        "98fd1fd2aed86514d05bddde94bad1a4c45532d0b286f9149a31380bf8899fdb"
+    sha256               arm64_linux:   "70085f027b1b9bcb6cd4234a386d656edc1210361078abdbd6e68c8b37545c23"
+    sha256               x86_64_linux:  "0afa027a6a663082eb06a69fe02f23aacdc1ba0eb40e9f22fa6db04783c37c82"
   end
 
   depends_on "cmake" => :build

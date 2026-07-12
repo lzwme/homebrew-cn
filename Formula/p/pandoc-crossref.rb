@@ -29,10 +29,11 @@ class PandocCrossref < Formula
   end
 
   # Workaround for pandoc 3.10.
-  # PR ref: https://github.com/lierdakil/pandoc-crossref/pull/510
   patch do
     url "https://github.com/lierdakil/pandoc-crossref/commit/d786c849c54841c809f2f13bda841c038a865e03.patch?full_index=1"
     sha256 "df60d96e2e20f7d7d13582ebdbf690daff2cb1a05f130311cf6ef92459ca1691"
+    type :unofficial
+    resolves "https://github.com/lierdakil/pandoc-crossref/pull/510"
   end
 
   def install

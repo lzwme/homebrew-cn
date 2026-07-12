@@ -22,12 +22,18 @@ class GoSizeAnalyzer < Formula
 
   depends_on "go" => [:build, :test]
   depends_on "node" => :build
-  depends_on "pnpm" => :build
+  depends_on "pnpm@10" => :build # frozen build (default on CI) needs upstream changes for pnpm 11
 
   conflicts_with "gwenhywfar", because: "both install `gsa` binaries"
 
   def install
-    system "pnpm", "--dir", "ui", "install"
+    # Prevent pnpm from downloading another copy due to `packageManager` feature
+    odie "Switch to `pnpm with current`!" if deps.map(&:name).exclude?("pnpm@10")
+    (buildpath/"ui/pnpm-workspace.yaml").write <<~YAML
+      managePackageManagerVersions: false
+    YAML
+
+    system "pnpm", "--dir", "ui", "install", "--frozen-lockfile"
     system "pnpm", "--dir", "ui", "build:ui"
 
     mv "ui/dist/webui/index.html", "internal/webui/index.html"

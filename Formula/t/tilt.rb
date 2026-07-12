@@ -18,14 +18,15 @@ class Tilt < Formula
     sha256 cellar: :any,                 x86_64_linux:  "f3e5ba16c7e060fa5af2cd7479a46aeea5caa0594a5ec9cbefb1a3cadfb9be0e"
   end
 
+  depends_on "corepack" => :build # for newer yarn
   depends_on "go" => :build
   depends_on "node" => :build
-  depends_on "yarn" => :build
 
   def install
+    ENV["COREPACK_ENABLE_DOWNLOAD_PROMPT"] = "0"
+
     # bundling the frontend assets first will allow them to be embedded into
     # the final build
-    system "yarn", "config", "set", "ignore-engines", "true" # allow our newer node
     system "make", "build-js"
 
     ENV["CGO_ENABLED"] = "1"

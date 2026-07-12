@@ -5,6 +5,11 @@ class Dartsim < Formula
   sha256 "491d300f02b096a5babc6ff1bdb3e0e1da11c85c41b45523d22e8bf5b72ed072"
   license "BSD-2-Clause"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256               arm64_tahoe:   "bbe18fc6614a2f253552bcd5d503ef71fecced01e060d66bcc3d8d98c5c88943"
     sha256               arm64_sequoia: "66429bb0f8136e648effecf0ad04aee400fdc8f7fa6d18a295497a01cdaf01f2"

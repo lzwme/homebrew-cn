@@ -1,18 +1,17 @@
 class Oarfish < Formula
   desc "Long read RNA-seq quantification"
   homepage "https://github.com/COMBINE-lab/oarfish"
-  url "https://ghfast.top/https://github.com/COMBINE-lab/oarfish/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "f8715c6fc2a23c1041d30303fa1a9d7a6e463ed5cc8e543526c085a64d5abfe9"
+  url "https://ghfast.top/https://github.com/COMBINE-lab/oarfish/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "b7d3dc76c032ffddf073254fa200c0282476852514845d46e0109bcdb038a145"
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d5ce9664be4d5ae8fcf8e7d4c0b35cedbf3e8da5023b1b1005c50840d47b24f6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3adb87ebc03995dd9df4c731f4b36058ef08fd2b3e7eb51e25680bcb8a782b39"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fde6f151d919ee41b3bdf46fb2a1b610b763d264a9e028446a133a55be6b4dd7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a73f608ab6699602d615e4e70e5d1203548ec53a97876889307ee610944c7094"
-    sha256 cellar: :any,                 arm64_linux:   "f8941d5ae8df1e577b50d16f76d60478d3c1860fadae6937a8845d3b0b4ef948"
-    sha256 cellar: :any,                 x86_64_linux:  "d18673039270574205c4d5cccb044877c97b9e927c3ac8a3572f2c08b2b966a8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ca94f8cc93471e97fea3b558096001fcc102488886a15afe86e6df0438c93b6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59597286cac016a3f971ad9061b15d736d68dee5a2b47f549d5c88200ab8f47c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb1b5dbeccbf9e229eb9ab400350ddf159497e1027818195c2890acb5af7b3ca"
+    sha256 cellar: :any_skip_relocation, sonoma:        "64705ad161968c36c43a4f1d5310f6f01501999fb98e1edd42f0ed2f3f9b4c39"
+    sha256 cellar: :any,                 arm64_linux:   "a2c34235015aab826866e91842c5bd0dc99d852e89179bfd25580cc25891a788"
+    sha256 cellar: :any,                 x86_64_linux:  "e395a6aaa5968dd004af424138ccf8d1d969d2666906bdf64bc6aabd3098a372"
   end
 
   depends_on "rust" => :build

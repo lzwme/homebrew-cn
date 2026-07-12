@@ -7,8 +7,7 @@ class HappyCoder < Formula
   head "https://github.com/slopus/happy-cli.git", branch: "main"
 
   livecheck do
-    url :stable
-    strategy :github_latest
+    skip "Newer versions use non-FOSS @anthropic-ai/claude-agent-sdk"
   end
 
   bottle do
@@ -19,6 +18,11 @@ class HappyCoder < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "bb9de9d2959ccac07a1d8ec38ea92c54cb850cb98b5da6e038ebaf077a475d17"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb9de9d2959ccac07a1d8ec38ea92c54cb850cb98b5da6e038ebaf077a475d17"
   end
+
+  # As of 1.1.5, happy has a required dependency on non-FOSS @anthropic-ai/claude-agent-sdk
+  # Ref: https://github.com/slopus/happy/commit/aa0014e501fb7263ab4f80a2447e65a0d5079f5a
+  deprecate! date: "2026-07-11", because: "uses non-FOSS @anthropic-ai/claude-agent-sdk since 1.1.5"
+  disable! date: "2027-07-11", because: "uses non-FOSS @anthropic-ai/claude-agent-sdk since 1.1.5"
 
   depends_on "yarn" => :build
   depends_on "difftastic"

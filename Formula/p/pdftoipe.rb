@@ -19,10 +19,11 @@ class Pdftoipe < Formula
   depends_on "poppler"
 
   # Workaround for poppler 26.06.
-  # PR ref: https://github.com/otfried/ipe-tools/pull/82
   patch do
     url "https://github.com/otfried/ipe-tools/commit/3875da3ae31515dad4f2aa7ac5f59f2c2f70c32c.patch?full_index=1"
     sha256 "15369effacfa0df2559049a1dcc01f20036b0a158bb3059c6ce333287549de7a"
+    type :backport
+    resolves "https://github.com/otfried/ipe-tools/pull/82"
   end
 
   def install

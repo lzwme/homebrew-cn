@@ -12,6 +12,8 @@ class Pkgx < Formula
     patch do
       url "https://github.com/pkgxdev/pkgx/commit/ec8315d84a89b4130c83171e6405c6e8d6694ab9.patch?full_index=1"
       sha256 "aeb26601c94ac781e4d943d31e2dd8785afcd3d84ae203f791c1d0636c83d1c7"
+      type :backport
+      resolves "https://github.com/pkgxdev/pkgx/pull/1265"
     end
   end
 

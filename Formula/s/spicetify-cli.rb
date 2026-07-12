@@ -27,8 +27,8 @@ class SpicetifyCli < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: libexec/"spicetify")
 
-    system "pnpm", "install", "--frozen-lockfile"
-    system "pnpm", "run", "build:wrapper"
+    system "pnpm", "with", "current", "install", "--frozen-lockfile"
+    system "pnpm", "with", "current", "run", "build:wrapper"
 
     libexec.install [
       "css-map.json",

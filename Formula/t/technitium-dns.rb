@@ -1,17 +1,17 @@
 class TechnitiumDns < Formula
   desc "Self host a DNS server for privacy & security"
   homepage "https://technitium.com/dns/"
-  url "https://ghfast.top/https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v15.3.0.tar.gz"
-  sha256 "afc7d3684ebdb30bcfa37432a1d9378c75ed4e4164c60693449bfbb7de117b85"
+  url "https://ghfast.top/https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v15.4.0.tar.gz"
+  sha256 "07930c2f1d6ac40d18bd73ac897cc49c8bc1effdfe0819e56910e06a53dd41b1"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8f2969c7ed1ef2c35952b101fad882519d7de48ee35aaa8fc92138f1271661f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f6c441512f53265da5cf6a319b59a7733f7fd6c630811ffa21f2dbc62806096"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d76f7314fd3bc61efa350e2a7b4e9314731f98fd1dd3ffdb2763f60b3f06b71c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d1d01d8cab90d4b0724cbf8e06e0836dffb74dbd220a9ab036fa87f3ee4f5092"
-    sha256 cellar: :any,                 arm64_linux:   "aa22e484b35fdb6d95a326b8ecef7308df050fb6d2872ad104110d4a777ea150"
-    sha256 cellar: :any,                 x86_64_linux:  "09c5567358d47950ed16e930561752b48af99e9e16ef4df908202a29e737ed6c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1f9589bb845e20fe1656aa2f5497cfc6c38c7e8afac99e43e35e97a2e1e094d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ac6b266bc1b4049133a31fe2dc740c6c4fb78790c4c0c9c86177251b56fc342"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e6be35d3f857eefd16c05243ae0477cc563c1c7c4032807734f2bddc5259217"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dd1e87cc0bcf3e8d38de1973058325cb731ced1fad42abe97551a6c536f50191"
+    sha256 cellar: :any,                 arm64_linux:   "2d4c052c18c61fd0e4084d0c737a47639ae0f443d72a3ffe71a919eb8f38ab8c"
+    sha256 cellar: :any,                 x86_64_linux:  "9d865328dc5a00d9194c26dabbdb5c0fe610bb40e5c738688a5c09ee267c81f0"
   end
 
   depends_on "dotnet"

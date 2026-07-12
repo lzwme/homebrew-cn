@@ -22,10 +22,8 @@ class Ffmate < Formula
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
-    cd "ui" do
-      system "pnpm", "install"
-      system "pnpm", "run", "generate"
-    end
+    system "pnpm", "with", "current", "--dir", "ui", "install", "--ignore-scripts"
+    system "pnpm", "with", "current", "--dir", "ui", "run", "generate"
 
     ui_build_path = buildpath/"internal/controller/ui/ui-build"
     rm_r ui_build_path if ui_build_path.exist?

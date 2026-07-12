@@ -54,9 +54,10 @@ class Pypy39 < Formula
   # Build fixes:
   # - Disable Linux tcl-tk detection since the build script only searches system paths.
   #   When tcl-tk is not found, it uses unversioned `-ltcl -ltk`, which breaks build.
-  # Upstream issue ref: https://github.com/pypy/pypy/issues/3538
   patch do
     file "Patches/pypy/tcl-tk.diff"
+    type :unofficial
+    resolves "https://github.com/pypy/pypy/issues/3538"
   end
 
   def abi_version

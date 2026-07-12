@@ -76,6 +76,7 @@ class PerconaXtrabackupAT80 < Formula
     patch :p2 do
       url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/58a6f3f12a0ab2a65140f588216340d49245880e/databases/mysql80-server/files/patch-boost_boost__1__77__0_boost_mpl_aux___integral__wrapper.hpp"
       sha256 "203ada9cec70fe1feb2796cb7421757d7334452dfd5168120a3e7eb79aaf529d"
+      type :unofficial
     end
   end
 
@@ -83,52 +84,63 @@ class PerconaXtrabackupAT80 < Formula
   patch do
     url "https://github.com/mysql/mysql-server/commit/269abc0409b22bb87ec88bd4d53dfb7a1403eace.patch?full_index=1"
     sha256 "ffcee32804e7e1237907432adb3590fcbf30c625eea836df6760c05a312a84e1"
+    type :backport
+    resolves "https://bugs.mysql.com/bug.php?id=36678092"
   end
 
   # FreeBSD patches for fixing build failure with newer clang
   patch :p0 do
     url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-sql_binlog__ostream.cc"
     sha256 "16f86edd2daf5f6c87616781c9f51f76d4a695d55b354e44d639a823b1c3f681"
+    type :unofficial
   end
 
   patch :p0 do
     url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-sql_mdl__context__backup.cc"
     sha256 "501646e1cb6ac2ddc5eb42755d340443e4655741d6e76788f48751a2fb8f3775"
+    type :unofficial
   end
 
   patch :p0 do
     url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-sql_mdl__context__backup.h"
     sha256 "e515b565d1501648ce3de0add12b67c63aecb3ec4db3794de72c4eeb301ff343"
+    type :unofficial
   end
 
   patch :p0 do
     url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-sql_range__optimizer_index__range__scan__plan.cc"
     sha256 "44b5e76373fadd97560d66dae0dac14d98ae9a5c32d58d876bfe694016872bc7"
+    type :unofficial
   end
 
   patch :p0 do
     url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-sql_rpl__log__encryption.cc"
     sha256 "bdadcf4317295d1847283e20dd7fbfa2df2c4acebf45d5a13d0670bc7311f7ba"
+    type :unofficial
   end
 
   patch :p0 do
     url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-sql_stream__cipher.cc"
     sha256 "ac74c60f6051223993c88e7a11ddd9512c951ac1401d719a2c3377efe1bee3cf"
+    type :unofficial
   end
 
   patch :p0 do
     url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-sql_stream__cipher.h"
     sha256 "9a11d4658f60a63f3f10ff97a5170e865afde3ebee3e703d8272aba3cf6e32d0"
+    type :unofficial
   end
 
   patch :p0 do
     url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-unittest_gunit_binlogevents_transaction__compression-t.cc"
     sha256 "3bd0c22a2ee30a7b1e682e645dbdf473d4f0d6f8e5ffc447f088c5f1bf21efd7"
+    type :unofficial
   end
 
   patch :p0 do
     url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/1a02a961a2d53f21bf208f07903a97cc46f43e17/databases/mysql80-server/files/patch-unittest_gunit_stream__cipher-t.cc"
     sha256 "9e7629a2174e754487737ef0d73c79fc1ed47ba54a982a3a4803e19c72c5dc0f"
+    type :unofficial
   end
 
   # Patch out check for Homebrew `boost`.

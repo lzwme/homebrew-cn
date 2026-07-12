@@ -3,18 +3,17 @@ class Backgroundremover < Formula
 
   desc "Remove background from images and video using AI"
   homepage "https://backgroundremoverai.com"
-  url "https://files.pythonhosted.org/packages/b1/59/5713f3ddedb43b65c7bef017b5d46b586d2af2af9e31f6c0e2e618bcc35f/backgroundremover-0.4.4.tar.gz"
-  sha256 "b10da99c69cac0c4f5076d3ae5ca3ad28353fbb541e6924ace9bfe05b2756a5b"
+  url "https://files.pythonhosted.org/packages/01/23/b6db66a9a7ad24e34581bae7910e77e16fce103fd9658bd5b6aef4e5effd/backgroundremover-0.4.5.tar.gz"
+  sha256 "b9fe5ebaa234d43bfae02a2f28734e589ee895a861e55c02f6f1a41518587852"
   license "MIT"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any, arm64_tahoe:   "8b9790cbbbb59726b23db90459d9cf8dd544fb46188895a8e1bb1252afeda3df"
-    sha256 cellar: :any, arm64_sequoia: "b87c86a4f941f9eae70e1b9668bf6742a8004776dc4b9c59a4f795c5e8e539e8"
-    sha256 cellar: :any, arm64_sonoma:  "0a96a8739ecd422f0465e0ec7198bff87c38d6a1aee00d3a02acc8f07bbf7951"
-    sha256 cellar: :any, sonoma:        "da2994ee9f1e15337b9b0f2c6be6880e2e91ae982274f777cfef1978aca66106"
-    sha256 cellar: :any, arm64_linux:   "cc7c20085fd48a6bb836ce0f7ca7b21f2187a1bf147bb61ff09ac106b2aa601f"
-    sha256 cellar: :any, x86_64_linux:  "5f8023aaa49dc413ce21e0c24982d4c33e7c1ea5937e10efd032d66d885963c2"
+    sha256 cellar: :any, arm64_tahoe:   "f788cb8af67909853b78cc438ae5b45a9d89a792da080d60e11aef38345f4ad5"
+    sha256 cellar: :any, arm64_sequoia: "afe6f3dbc3a4d542e9e4befda0d3f26fab298f5cd7ea11431e2babf3e8c21d60"
+    sha256 cellar: :any, arm64_sonoma:  "868b261b399dc39d4890cc3faffe23bdc2dbd0718a648de69aece9e93c666d5a"
+    sha256 cellar: :any, sonoma:        "87201fae73ae29484a245906446beb61bf493b35b736b0f8b065eae0fc4aa44c"
+    sha256 cellar: :any, arm64_linux:   "80bc9e929e4e89efa125dd51b6959d7098b67864871fe5c00b49d6a0b2db2b58"
+    sha256 cellar: :any, x86_64_linux:  "7ed4ebae7b7490529b40c7b417712bf09842fbee59958838c0d1d14c71f07a84"
   end
 
   depends_on "cmake" => :build
@@ -43,8 +42,8 @@ class Backgroundremover < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "click" do
@@ -168,8 +167,8 @@ class Backgroundremover < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/87/d7/0535a28b1f5f24f6612fb3ff1e89fb1a8d160fee0f976e0aa6803862134b/tqdm-4.68.3.tar.gz"
-    sha256 "00dfa48452b6b6cfae3dd9885636c23d3422d1ec97c66d96818cbd5e0821d482"
+    url "https://files.pythonhosted.org/packages/ae/5f/57ff8b434839e70dab45601284ea413e947a63799891b7553e5960a793a8/tqdm-4.68.4.tar.gz"
+    sha256 "19829c9673638f2a0b8617da4cdcb927e831cd88bcfcb6e78d42a4d1af131520"
   end
 
   resource "urllib3" do

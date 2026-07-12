@@ -30,10 +30,11 @@ class ProtobufC < Formula
   depends_on "protobuf"
 
   # Apply commit from open PR to support Protobuf 34
-  # PR ref: https://github.com/protobuf-c/protobuf-c/pull/797
   patch do
     url "https://github.com/protobuf-c/protobuf-c/commit/d39f001b4578966600de0aaf7fc665eec6e057e5.patch?full_index=1"
     sha256 "10b5ea9c08f62be10ceb1df24a3211118a94cb0d09efcdf043ac3542368915fb"
+    type :unofficial
+    resolves "https://github.com/protobuf-c/protobuf-c/pull/797"
   end
 
   def install

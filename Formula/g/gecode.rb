@@ -1,6 +1,6 @@
 class Gecode < Formula
   desc "Toolkit for developing constraint-based systems and applications"
-  homepage "https://www.gecode.org/"
+  homepage "https://www.gecode.dev/"
   url "https://ghfast.top/https://github.com/Gecode/gecode/archive/refs/tags/release-6.2.0.tar.gz"
   sha256 "27d91721a690db1e96fa9bb97cec0d73a937e9dc8062c3327f8a4ccb08e951fd"
   license "MIT"

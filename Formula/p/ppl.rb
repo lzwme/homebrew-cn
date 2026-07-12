@@ -43,6 +43,7 @@ class Ppl < Formula
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
     file "Patches/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    type :unofficial
   end
 
   def install

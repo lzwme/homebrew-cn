@@ -22,6 +22,7 @@ class Proxytunnel < Formula
   patch do
     url "https://github.com/proxytunnel/proxytunnel/commit/69df6780b819a145ef11342a55d477a059333fe2.patch?full_index=1"
     sha256 "bf4b4fb8e68dde1a3c0124897de5a333b7f83cb321ecf04ea497867fb82d583e"
+    type :backport
   end
 
   def install

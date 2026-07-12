@@ -38,6 +38,7 @@ class Pachi < Formula
     # SetTotalBytesLimit for protobuf 3.6+, replace std::random_shuffle.
     patch do
       file "Patches/pachi/caffe-modern-toolchain.patch"
+      type :unofficial
     end
   end
 

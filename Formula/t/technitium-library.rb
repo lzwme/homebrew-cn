@@ -1,17 +1,17 @@
 class TechnitiumLibrary < Formula
   desc "Library for technitium .net based applications"
   homepage "https://technitium.com"
-  url "https://ghfast.top/https://github.com/TechnitiumSoftware/TechnitiumLibrary/archive/refs/tags/dns-server-v15.3.0.tar.gz"
-  sha256 "7f6cbe8a092cac11038a3c1dc66666571b9e02627e8cc0565fd660d113c5b8b0"
+  url "https://ghfast.top/https://github.com/TechnitiumSoftware/TechnitiumLibrary/archive/refs/tags/dns-server-v15.4.0.tar.gz"
+  sha256 "b5d1c40706a4a06e3a971b384600ec9485b42fac453d4d5b42dd037e2cfa6f6a"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "43e7962a36be96685d8550edbe38de1eda7b97f47105bcc64da7651667bd3a20"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb4353a6b6039242f753a42264c6bc85dbe30594d6e641574458764141d98a52"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5674eb32285cb6490f479cf48093baf5cc37384c3f3bccf10fbe444037f050be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a69748486c675864812e04582e50f719a853bccbcf6b417e94fe1d6774f015dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f47e4603cb304d434b7abb8b1436b98c3d017f176cb457534162f4c79a4017a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e4ad204110d8455b2eee244330c97bc52b145336abb27036a3fc44289ac1469"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb4624d79ae517428b9d5691f71587397f85be92d6944a67de1f3c23b0153cc5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52796e370ecd99c323c63bbfa9c23b15106acb04160b5d6db147e3dd8b1aada2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "708debc8c4d65126c6516407ad86f379da1a227b55b02f8e49417e9dec1bcef1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d7f1b9eb05e56645e9560f6a55d4a6b04f6a5085fd7e6170c33ee8b47e079348"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b24f156a801d6489a1e9b22405ab7b4aa32a2febf7aa3e3373fe0b695d1aa78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f59f2513210acb988939cfc9ccc1d4b6be9dd6c23d8a55747295eabc957b4d6"
   end
 
   depends_on "dotnet"

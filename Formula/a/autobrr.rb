@@ -20,8 +20,8 @@ class Autobrr < Formula
   depends_on "pnpm" => :build
 
   def install
-    system "pnpm", "install", "--dir", "web"
-    system "pnpm", "--dir", "web", "run", "build"
+    system "pnpm", "with", "current", "--dir", "web", "install"
+    system "pnpm", "with", "current", "--dir", "web", "run", "build"
 
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
 

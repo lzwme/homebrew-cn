@@ -40,12 +40,16 @@ class ProtobufAT29 < Formula
   patch do
     url "https://github.com/protocolbuffers/protobuf/commit/9dc5aaa1e99f16065e25be4b9aab0a19bfb65ea2.patch?full_index=1"
     sha256 "edc1befbc3d7f7eded6b7516b3b21e1aa339aee70e17c96ab337f22e60e154d7"
+    type :backport
+    resolves "https://github.com/protocolbuffers/protobuf/pull/19363"
   end
 
   # Backport patch for compatibility with new Abseil.
   patch do
     url "https://github.com/protocolbuffers/protobuf/commit/d801cbd86818b587e0ebba2de13614a3ee83d369.patch?full_index=1"
     sha256 "ebab85f5b2c817b4adcd0bc66a7377a0aa4b9ecf667f1893f918c318369d3ef0"
+    type :backport
+    resolves "https://github.com/protocolbuffers/protobuf/pull/20413"
   end
 
   # Backport of (for compatibility with new Abseil):

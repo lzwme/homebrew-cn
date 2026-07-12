@@ -43,6 +43,7 @@ class Proctools < Formula
   ].each do |name|
     patch :p0 do
       file "Patches/proctools/patch-#{name}.diff"
+      type :unofficial
     end
   end
 

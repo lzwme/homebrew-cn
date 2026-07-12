@@ -13,6 +13,8 @@ class Planck < Formula
     patch do
       url "https://github.com/planck-repl/planck/commit/0e336f722b52f18e130d3866d4c512b20bafcbd7.patch?full_index=1"
       sha256 "685fb05b666f5ed419d986be6a35bda6448f062eaeb6666a9910a2c4dd4fd16a"
+      type :backport
+      resolves "https://github.com/planck-repl/planck/pull/1107"
     end
   end
 

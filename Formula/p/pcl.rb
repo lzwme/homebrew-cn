@@ -13,13 +13,16 @@ class Pcl < Formula
     patch do
       url "https://github.com/PointCloudLibrary/pcl/commit/2d6929bdcd98beaa28fa8ee3a105beb566f16347.patch?full_index=1"
       sha256 "66e6b47a2373224f6a64a87124c94fbe79d3624b4cb0d71603c4805323343b62"
+      type :backport
+      resolves "https://github.com/PointCloudLibrary/pcl/pull/6354"
     end
 
     # Apply merged, unreleased PR to fix build with Boost 1.89
-    # PR ref: https://github.com/PointCloudLibrary/pcl/pull/6330
     patch do
       url "https://github.com/PointCloudLibrary/pcl/commit/8dfb0e10ebdf4a5086328b38f854294d2d6b1627.patch?full_index=1"
       sha256 "f31c11abb6bec8864b7a109472768ba80e87ddf90533890c303294d264f389e1"
+      type :backport
+      resolves "https://github.com/PointCloudLibrary/pcl/pull/6330"
     end
   end
 
@@ -60,10 +63,11 @@ class Pcl < Formula
   end
 
   # vtk 9.6+ is optional to x11, it doesn't link transitively and so here we need to add it as a dependency
-  # PR ref: https://github.com/PointCloudLibrary/pcl/pull/6435
   patch do
     url "https://github.com/PointCloudLibrary/pcl/commit/490996e66d36829394e01c19089385f23fdf3c9c.patch?full_index=1"
     sha256 "f71b64ce5e8e606a5f57b3c011d961b625ace6c0c8956a7a25db1d4db8446664"
+    type :backport
+    resolves "https://github.com/PointCloudLibrary/pcl/pull/6435"
   end
 
   def install

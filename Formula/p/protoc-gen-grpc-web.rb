@@ -28,9 +28,11 @@ class ProtocGenGrpcWeb < Formula
   depends_on "protobuf"
   depends_on "protoc-gen-js"
 
-  # Workaround to build with Protobuf 30+. Issue ref: https://github.com/grpc/grpc-web/issues/1522
+  # Workaround to build with Protobuf 30+.
   patch do
     file "Patches/protoc-gen-grpc-web/protobuf-30.diff"
+    type :unofficial
+    resolves "https://github.com/grpc/grpc-web/issues/1522"
   end
 
   def install

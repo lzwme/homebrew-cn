@@ -46,8 +46,8 @@ class Openlist < Formula
     resource("frontend").stage do
       cp_r Dir[buildpath/"i18n/*"], Pathname.pwd/"src/lang"
 
-      system "pnpm", "install"
-      system "pnpm", "build"
+      system "pnpm", "with", "current", "install"
+      system "pnpm", "with", "current", "build"
       cp_r Pathname.pwd/"dist", buildpath/"public"
     end
 

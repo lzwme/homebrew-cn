@@ -41,6 +41,7 @@ class Apophenia < Formula
   # Patches already accepted upstream, remove on next release
   patch do
     file "Patches/apophenia/posix-basename.diff"
+    type :backport
   end
 
   def install

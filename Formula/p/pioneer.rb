@@ -36,13 +36,17 @@ class Pioneer < Formula
     on_macos do
       url "https://github.com/pioneerspacesim/pioneer/commit/24023dfa75b1bd9de15b45692aeedab26da1b1b7.patch?full_index=1"
       sha256 "9279afa54507c971ea517f508c1796b0ce9dc435d976778d13bfea7813056908"
+      type :unofficial
+      resolves "https://github.com/pioneerspacesim/pioneer/pull/6286"
     end
   end
 
-  # patch to fix `pi_lua_generic_push` call, upstream pr ref, https://github.com/pioneerspacesim/pioneer/pull/6000
+  # patch to fix `pi_lua_generic_push` call
   patch do
     url "https://github.com/pioneerspacesim/pioneer/commit/9293a5f84584d7dd10699c64f28647a576ca059b.patch?full_index=1"
     sha256 "c93e0f8745d9e1dc7989a0051489be7825df452e0d1fa0cf654038f1486e2f9f"
+    type :unofficial
+    resolves "https://github.com/pioneerspacesim/pioneer/pull/6000"
   end
 
   def install

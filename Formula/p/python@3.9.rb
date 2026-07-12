@@ -72,6 +72,7 @@ class PythonAT39 < Formula
   patch do
     url "https://www.bytereef.org/contrib/decimal.diff"
     sha256 "b0716ba88a4061dcc8c9bdd1acc57f62884000d1f959075090bf2c05ffa28bf3"
+    type :unofficial
   end
 
   def lib_cellar

@@ -22,11 +22,11 @@ class Pkcs11Tools < Formula
   uses_from_macos "flex" => :build
 
   # Add `x` permissions to `with_pkcs11_common` script
-  # https://github.com/Mastercard/pkcs11-tools/issues/85
   patch do
     url "https://github.com/Mastercard/pkcs11-tools/commit/13154703de39827c791c8e11e1a43e23edec2894.patch?full_index=1"
     sha256 "4e5fd88dc06c6376c1ced8ddd60346368b2723a062920189d082ac61a4ce45ce"
     type :backport
+    resolves "https://github.com/Mastercard/pkcs11-tools/issues/85"
   end
 
   # Fix Linux build error using gnulib upstream commit.
@@ -36,6 +36,8 @@ class Pkcs11Tools < Formula
     on_linux do
       url "https://git.savannah.gnu.org/cgit/gnulib.git/patch/lib?id=cc91160a1ea5e18fcb2ccadb32e857d365581f53"
       directory "gl"
+      type :backport
+      resolves "https://github.com/Mastercard/pkcs11-tools/issues/37"
     end
   end
 

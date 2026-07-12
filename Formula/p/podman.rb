@@ -4,6 +4,7 @@ class Podman < Formula
   url "https://ghfast.top/https://github.com/podman-container-tools/podman/archive/refs/tags/v6.0.1.tar.gz"
   sha256 "4829d7c1423523a6a4d5537dea7968ae7f6c22ed7f1d5f416638fd81c83caa47"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
+  revision 1
   compatibility_version 1
   head "https://github.com/podman-container-tools/podman.git", branch: "main"
 
@@ -18,11 +19,11 @@ class Podman < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "69eb130ad2a542abd89792fab936f026ff8884cce70bb8559df5ee0c97a295c6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "402e4dbcdcd31fe17b5c8564ba7c09d7edfc91d33aef86ef364b75f4e3bcc891"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86297927eac85ab4f0439eda7c83fa510c62bdc7b39807dbe5c4a4fab137639f"
-    sha256                               arm64_linux:   "203de22b766887b1e4e0fa1f9a1185849d7e640e6ded5458dffbad15f3325da6"
-    sha256                               x86_64_linux:  "e47e2c781d2307976e4517709db48bb409324819a01dc5678d268e9026649c63"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "598ca0c63fe924058efc11cdb3574ec3ff33a9ba3835f2ec05352046e9fe3d0b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ddb0c05ed08c186ec9d27c3765a5ad7a04e5293edfb91ac2f01724a39c208014"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb4d0622599c00bc9d6151d6c0e962b422247d09ca0b8c5780bb9f14148875b5"
+    sha256                               arm64_linux:   "5b7854662b116a666d63185227962995d161aed3dce41ae0e9420c3c2e2b6f05"
+    sha256                               x86_64_linux:  "ce7ce8f97c5a5055c2e0e95000585589bb029d8a23e3b79d56422a6037458f64"
   end
 
   depends_on "go" => :build
@@ -90,6 +91,17 @@ class Podman < Formula
       url "https://ghfast.top/https://github.com/containers/aardvark-dns/archive/refs/tags/v2.0.0.tar.gz"
       sha256 "d3f5d6b3be3c2d80e8257fb9467e34ff104f299474427979454034dca6dc88cc"
     end
+  end
+
+  # Starting in podman 6.0.0, libkrun (via krunkit) is the default machine
+  # driver on macOS. krunkit is not yet available in homebrew-core, so continue
+  # using the previous default driver applehv.
+  #
+  # See https://github.com/Homebrew/homebrew-core/issues/291552
+  # Remove once krunkit is available in homebrew-core.
+  patch do
+    file "Patches/podman/revert-libkrun-default.patch"
+    type :unofficial
   end
 
   def install
@@ -210,6 +222,12 @@ class Podman < Formula
       # See https://github.com/Homebrew/homebrew-core/pull/166471
       out = shell_output("#{bin}/podman-remote machine init homebrew-testvm")
       assert_match "Machine init complete", out
+
+      # Remove once krunkit is available and we follow the upstream behavior of using it
+      # by default
+      cfg_output = shell_output("#{bin}/podman-remote machine inspect homebrew-testvm --format {{.ConfigDir.Path}}")
+      assert_equal (testpath/".config/containers/podman/machine/applehv").to_s, cfg_output.chomp
+
       system bin/"podman-remote", "machine", "rm", "-f", "homebrew-testvm"
     else
       assert_equal %w[podman podman-remote podmansh]

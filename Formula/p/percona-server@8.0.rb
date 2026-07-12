@@ -70,10 +70,11 @@ class PerconaServerAT80 < Formula
   end
 
   # Fix for system ssl add_library error
-  # Issue ref: https://perconadev.atlassian.net/jira/software/c/projects/PS/issues/PS-9641
   patch do
     url "https://github.com/percona/percona-server/commit/a693e5d67abf6f27f5284c86361604babec529c6.patch?full_index=1"
     sha256 "d4afcdfb0dd8dcb7c0f7e380a88605b515874628107295ab5b892e8f1e019604"
+    type :backport
+    resolves "https://perconadev.atlassian.net/jira/software/c/projects/PS/issues/PS-9641"
   end
 
   # Patch out check for Homebrew `boost`.

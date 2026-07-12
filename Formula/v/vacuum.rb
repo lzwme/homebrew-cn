@@ -17,12 +17,11 @@ class Vacuum < Formula
 
   depends_on "go" => :build
   depends_on "node" => :build
-  depends_on "yarn" => :build
 
   def install
     cd "html-report/ui" do
-      system "yarn", "install", "--frozen-lockfile"
-      system "yarn", "build"
+      system "npm", "install", *std_npm_args(prefix: false)
+      system "npm", "run", "build"
     end
 
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"

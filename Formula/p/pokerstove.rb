@@ -23,6 +23,7 @@ class Pokerstove < Formula
   patch do
     url "https://github.com/andrewprock/pokerstove/commit/8ca71960b3ee68bf7cbc419d5aee2065276054bb.patch?full_index=1"
     sha256 "379461a6e3258ebf9803ff4a52020d027a745e1676d7aee865f5dd035c51c6e9"
+    type :backport
   end
 
   def install

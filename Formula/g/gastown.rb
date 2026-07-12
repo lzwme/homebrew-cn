@@ -41,7 +41,7 @@ class Gastown < Formula
     system "dolt", "config", "--global", "--add", "user.name", "BrewTestBot"
     system "dolt", "config", "--global", "--add", "user.email", "BrewTestBot@test.com"
 
-    system bin/"gt", "install"
+    system bin/"gt", "install", "--dolt-port", free_port.to_s
     assert_path_exists testpath/"mayor"
   end
 end

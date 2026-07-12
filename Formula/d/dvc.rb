@@ -6,15 +6,15 @@ class Dvc < Formula
   url "https://files.pythonhosted.org/packages/13/1e/957a50eab8af18a5837bf47f148b90dac36650150faca840d5c020272098/dvc-3.67.1.tar.gz"
   sha256 "0a941016a10ac8c99b5342e5a964c9bff29c191f7b3539ff3e04910d828f82ab"
   license "Apache-2.0"
-  revision 8
+  revision 9
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5905fc2b98910f92ff839d5a38be0844286fb114fe5e223138ecc11ccb7ff05a"
-    sha256 cellar: :any, arm64_sequoia: "2ea3cf1fde77dedd6b7f8502f6fa9966bd65e46299e044da0af21814bc6afb1a"
-    sha256 cellar: :any, arm64_sonoma:  "7ebaa4a4bd750ba1899d6567848579afe77d52fc87461776b307eb22aa0d148e"
-    sha256 cellar: :any, sonoma:        "6478d559cf386d4774c4c81ff09c92d94f2cce4e033f9a25b047b51cb701cc9c"
-    sha256 cellar: :any, arm64_linux:   "331f9b7c6f51110682b1b41f5c9b3bcb9a43bed47daacaf02cfa087bd28b1232"
-    sha256 cellar: :any, x86_64_linux:  "05ee0f3b7c789cc434aa86dd3105cc00d1064939260ce8fe71b90b41f5cc7a1b"
+    sha256 cellar: :any, arm64_tahoe:   "9bb06deefb74f6992fa95bbd17f20495a0f36a6badee25bd96eb8fa1eddb11e7"
+    sha256 cellar: :any, arm64_sequoia: "6a9e9884de87056f762fea30ce6c658f475bb51d366714be60752c53b46de0b4"
+    sha256 cellar: :any, arm64_sonoma:  "4c6896830fc1027acdfbb4ab1b071f779ffbf15dc5f864d1e65d74631de3e347"
+    sha256 cellar: :any, sonoma:        "c59ff908aef17d62b76a3481676e1645eb19ff0d71b19236751f1d109121dc3b"
+    sha256 cellar: :any, arm64_linux:   "1b983c4cabcb39f86ea38cbdc3d3fd814c830ad288b9d65dc4f17737a5eeb943"
+    sha256 cellar: :any, x86_64_linux:  "2db84a5e41b919b25136762f9e8cbf831ca5111097efebc78e32ce2b02172051"
   end
 
   # `pkgconf` and `rust` are for bcrypt

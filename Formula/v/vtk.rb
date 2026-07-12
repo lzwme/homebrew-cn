@@ -55,11 +55,13 @@ class Vtk < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # Backport fix for HDF5 2.0.0
+  # Backport fix for HDF5 2.0.0 from CMake repo
   patch :p2 do
     url "https://github.com/Kitware/CMake/commit/27e558dfa5a5441954d8930f2b6d9ae700c95050.patch?full_index=1"
     sha256 "ba4ecd3f9abfaae2c60c9be6978c250622bdb9979b42ddec52116d51d034f911"
     directory "CMake/patches/99"
+    type :cherry_pick
+    resolves "https://gitlab.kitware.com/vtk/vtk/-/work_items/20014"
   end
 
   def install

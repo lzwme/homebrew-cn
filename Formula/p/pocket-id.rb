@@ -20,17 +20,9 @@ class PocketId < Formula
   depends_on "pnpm" => :build
 
   def install
-    # Prevent pnpm from downloading another copy due to `packageManager` feature
-    (buildpath/"pnpm-workspace.yaml").append_lines <<~YAML
-      managePackageManagerVersions: false
-    YAML
-
-    system "pnpm", "--dir", "frontend", "install", "--frozen-lockfile"
-    system "pnpm", "--dir", "frontend", "run", "build"
-
-    cd "backend/cmd" do
-      system "go", "build", *std_go_args(output: bin/"pocket-id", ldflags: "-s -w")
-    end
+    system "pnpm", "with", "current", "--dir", "frontend", "install", "--frozen-lockfile", "--ignore-scripts"
+    system "pnpm", "with", "current", "--dir", "frontend", "run", "build"
+    system "go", "build", "-C", "backend/cmd", *std_go_args(output: bin/"pocket-id", ldflags: "-s -w")
   end
 
   service do
