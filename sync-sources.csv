@@ -4530,6 +4530,7 @@ Homebrew-homebrew-core/Formula/lib/libxvmc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxxf86dga.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxxf86vm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libyaml.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libyojimbo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libyubikey.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libzdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libzen.rb, Homebrew/homebrew-core, 0
@@ -4845,6 +4846,7 @@ Homebrew-homebrew-core/Formula/m/mklittlefs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mkp224o.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mksh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mktorrent.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mktxp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mkvalidator.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mkvdts2ac3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mkvtomp4.rb, Homebrew/homebrew-core, 0
@@ -9146,6 +9148,7 @@ Homebrew-homebrew-cask/Casks/c/chatall.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chatbox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatglm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatgpt-atlas.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/chatgpt-classic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatgpt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatmate-for-whatsapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatterino.rb, Homebrew/homebrew-cask, 0
@@ -12856,7 +12859,6 @@ Homebrew-homebrew-cask/Casks/h/hazeover.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hbuilderx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hdfview.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hdhomerun.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/h/hdrmerge.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/headlamp.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/headset.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/heaven.rb, Homebrew/homebrew-cask, 0
@@ -12871,7 +12873,6 @@ Homebrew-homebrew-cask/Casks/h/helo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/helpwire-operator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/heptabase.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/herd.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/h/hermes.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hermit-crab.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/heroic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hex-fiend.rb, Homebrew/homebrew-cask, 1

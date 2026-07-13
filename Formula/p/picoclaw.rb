@@ -2,7 +2,7 @@ class Picoclaw < Formula
   desc "Ultra-efficient personal AI assistant in Go"
   homepage "https://picoclaw.io/"
   url "https://ghfast.top/https://github.com/sipeed/picoclaw/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "662c7796c932e34d0a9cc7470ae248397144afd99643368c5bf329f760932e3c"
+  sha256 "df66f2f9a6fecf6f1396311b4a7881afc34d5f4209e2bebd6d91fb2b142d78d0"
   license "MIT"
   head "https://github.com/sipeed/picoclaw.git", branch: "main"
 
@@ -12,12 +12,13 @@ class Picoclaw < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc11f3f25e973c0a75416202c2c166fc1aa2c1c8565f5a19031258aab1df96db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc11f3f25e973c0a75416202c2c166fc1aa2c1c8565f5a19031258aab1df96db"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc11f3f25e973c0a75416202c2c166fc1aa2c1c8565f5a19031258aab1df96db"
-    sha256 cellar: :any_skip_relocation, sonoma:        "407d62c69b21d70a13e06bdbd78f2aafb1ddcdcb83562c941f94a75a0d06a1d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac8d19c8fffd53c1366eabbb9dca7a045c7cd1fcd78eb8db46f7f198ae7ad7cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d436395eb6ead830f3b72c66b7de46072844a00373d79fc11835236cbd81dbb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8aa92ded18c2e78270f5bf67b7cc61f3fdf75300354804163d0dc34f735a5848"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8aa92ded18c2e78270f5bf67b7cc61f3fdf75300354804163d0dc34f735a5848"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8aa92ded18c2e78270f5bf67b7cc61f3fdf75300354804163d0dc34f735a5848"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e3f6afe484067720f13b13fff6c60c98d8fd6fd174e3f2b39969c1d809b3eb74"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7106accc8775ed6195f0506d7e6f1671fbf1589a57e02c9d0b932a994027bf88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c1d3d94b2ee196f16c73566f4686a2eac7650e46ca5f716e14d8cf3cda2273a"
   end
 
   depends_on "go" => :build

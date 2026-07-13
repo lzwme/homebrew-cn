@@ -40,6 +40,7 @@ class Renameutils < Formula
   # Remove patch #4 at version > 0.12.0.  The first three should persist.
   patch do
     file "Patches/renameutils/0.12.0.patch"
+    type :unofficial
   end
 
   def install

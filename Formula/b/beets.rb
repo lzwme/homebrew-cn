@@ -6,6 +6,7 @@ class Beets < Formula
   url "https://files.pythonhosted.org/packages/1c/40/056537114e0c6df4374371341301c74b8519b571f3e67ec64f5547479a16/beets-2.12.0.tar.gz"
   sha256 "c5e844c4785a8b2c53a791a2b7bcd5846b4d12b0e8209e8eabfee06cec57edf2"
   license "MIT"
+  head "https://github.com/beetbox/beets.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -25,7 +26,6 @@ class Beets < Formula
   depends_on "libyaml"
   depends_on "llvm"
   depends_on "numpy"
-  depends_on "python-packaging"
   depends_on "python@3.14"
   depends_on "scipy"
   depends_on "zstd"
@@ -134,17 +134,14 @@ class Beets < Formula
   def install
     ENV["LLVMLITE_SHARED"] = "1"
     ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup" if OS.mac?
-    python = "python3.14"
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages(python)
-    ENV.append_path "PYTHONPATH", formula_opt_prefix("python-setuptools")/Language::Python.site_packages(python)
+    python3 = "python3.14"
+    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages(python3)
 
     without = %w[lap numba]
     venv = virtualenv_install_with_resources(without:)
 
-    # Install `lap` without build isolation to use the numpy formula dependency.
-    venv.pip_install(resource("lap"), build_isolation: false)
-    # We install `numba` separately without build isolation to avoid building another `numpy`
-    venv.pip_install(resource("numba"), build_isolation: false)
+    # Install these without build isolation to avoid building another `numpy`
+    without.each { |r| venv.pip_install resource(r), build_isolation: false }
   end
 
   test do
@@ -158,12 +155,8 @@ class Beets < Formula
     YAML
 
     ENV["BEETSDIR"] = testpath.to_s
-    (testpath/"music").mkpath
-    cp test_fixtures("test.mp3"), testpath/"music/test.mp3"
 
-    system bin/"beet", "-c", testpath/"config.yaml", "import", "-A", "-q", testpath/"music/test.mp3"
-
-    stats_output = shell_output("#{bin}/beet -c #{testpath}/config.yaml stats")
-    assert_match "Tracks: 1", stats_output
+    system bin/"beet", "import", "-A", "-q", test_fixtures("test.mp3")
+    assert_match "Tracks: 1", shell_output("#{bin}/beet stats")
   end
 end

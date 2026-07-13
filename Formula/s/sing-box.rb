@@ -7,12 +7,13 @@ class SingBox < Formula
   head "https://github.com/SagerNet/sing-box.git", branch: "testing"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6c6dbfada88c518746da1ec7c963a294fb4897d676e1f86cacf66cdf6e66e69"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b914dd4f51b4e30a427f65ea5fae422791f9337d62166f209b83e884514c3212"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d86cea43b611313db0219ab90f9e1f28e93a5a5e3e131279bfed4d2b16c57bc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d5156cb7b7d5dc25e09370ce283594ca418a1934a349926bedb303c5ac46e9b0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "caeb2d17db7357280f1716865e7a775219fcbfeba3082cb0570ce6993fe5f135"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a918b70ec2a60911224620cc4c3525590acaecfe5e957a602da2fd43ea43325d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13292c83a67a469e9b37407bd266ac9c93c9e515eceb37a2dfd684d9779c78e4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e43d0267490bd27b7a14253d875755d1cc1c57d61d5734b7a55aed7076bca612"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57bcbf5e75a89667f472678d69284902e78764bb3f9e5b4195bd5c525b40fd8b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7aa2ca205da65fa0bd36b5a8ff2915f87252a688084f27e8d603dd073c12faac"
+    sha256 cellar: :any,                 arm64_linux:   "69c8527b3184670b4d28a4bc1f59e937d6fb9b35eb4f03c40785a845d2f37361"
+    sha256 cellar: :any,                 x86_64_linux:  "8f70133a02ac777bc707827cba72d7ef3b0dbaa362aaa215ecf0f3f31c467e5b"
   end
 
   depends_on "go" => :build
@@ -27,8 +28,7 @@ class SingBox < Formula
     ldflags_shared = File.read("release/LDFLAGS").strip
 
     if OS.linux?
-      ENV["CC"] = formula_opt_bin("llvm")/"clang"
-      ENV["CXX"] = formula_opt_bin("llvm")/"clang++"
+      ENV.llvm_clang
       ENV["CGO_ENABLED"] = "1"
       ENV["CGO_LDFLAGS"] = "-fuse-ld=#{formula_opt_bin("lld")}/ld.lld"
     end

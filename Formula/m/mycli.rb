@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/43/c9/fb993344e04c07f464acce494c79af95fbce81a244ce2372b532e52fd283/mycli-2.1.1.tar.gz"
-  sha256 "e26e0b67e05d8aca1e42c0f94bd4fc8522b48a8a1d6652da804f59ea62ed12f3"
+  url "https://files.pythonhosted.org/packages/ce/0e/4bc554c840bdd9480c8374b750c3d09438bd6083e990613937cdb1be5b18/mycli-2.2.0.tar.gz"
+  sha256 "076c96c0f2a4594fe6040a2ad82c8911ff19ec2a81bdb171e286abd226bae81f"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1b48eaf495c49931c0b3b66ed452bbc145c099d851d92a2372be508427b3b222"
-    sha256 cellar: :any, arm64_sequoia: "2ec4010918302432cffe901eb62c359e7d436455babc58037514f8fc6ea60ca5"
-    sha256 cellar: :any, arm64_sonoma:  "c494055819224cab754e44b1be6a97aeb5f6f59b8235bd81cb56a47e5435a2c2"
-    sha256 cellar: :any, sonoma:        "8664ec4612f390626c00f235056b4c0dfd5790f23bb7cdd9bee0bbea41a3c4ee"
-    sha256 cellar: :any, arm64_linux:   "267e5c6861610da25cb2611266f750bf35678e94478fbdbc214102c3359f4ffd"
-    sha256 cellar: :any, x86_64_linux:  "5928e7974cd3338af3372e741e2ff68161a2ce6a2eb7db2e9640784d48feb37a"
+    sha256 cellar: :any, arm64_tahoe:   "2083be0cb7b071e163ad5cdd776b885bd7cd6200df1ff7cdf3e53c74bbe39cbd"
+    sha256 cellar: :any, arm64_sequoia: "fba50210c85f955746a9aa182cfc4b84e123b16ef0fcc9fc0d479675fa43fc62"
+    sha256 cellar: :any, arm64_sonoma:  "d6aa87085bea572ee380984b66eb448a2ed0d51546f9fbb218ec5d2edfbc5f30"
+    sha256 cellar: :any, sonoma:        "442ce1adaeb1cfaeca0ffea9a905870a2386e740516e35177abbbaead3a6350d"
+    sha256 cellar: :any, arm64_linux:   "90e1eb319ebce90cbeb626fb3346f47ad312577072eb397e250f39395e9df1ba"
+    sha256 cellar: :any, x86_64_linux:  "a4824a2fc37497c3d8398cf9aea2d0cf087d2aa1f1059487504b7a2a9e493389"
   end
 
   depends_on "rust" => :build # for jiter, sqlglotrs
@@ -130,8 +130,8 @@ class Mycli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/49/f5/7c7cb955305cb41f7f3c5fd7e0e38bf6bbf2658468863d4b7b868a5cb8df/openai-2.44.0.tar.gz"
-    sha256 "68a5a5ffad82b8ff7d451c437529fb64f7c3b8123aaf0c021966a882d9e3947d"
+    url "https://files.pythonhosted.org/packages/78/60/d4219875289b11d2c2f7da93c36283da224a2e55865ed865ab64e0ce9217/openai-2.45.0.tar.gz"
+    sha256 "10d34ca9c5643bce775852fddbfc172505cb1d4de1ccd101696c3ecff358765d"
   end
 
   resource "pluggy" do

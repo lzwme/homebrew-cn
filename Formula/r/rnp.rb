@@ -30,10 +30,12 @@ class Rnp < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # Backport upstream fix for the missing standard header with Botan 3.11. upstream pr ref, https://github.com/rnpgp/rnp/pull/2382
+  # Backport upstream fix for the missing standard header with Botan 3.11
   patch do
     url "https://github.com/chenrui333/rnp/commit/29758631b5dde64b0059abe226c86c24ea08c3ce.patch?full_index=1"
     sha256 "f8903db07fd136c54932c088da92ef87e1c8091936c9301f416361d04c1d31e8"
+    type :backport
+    resolves "https://github.com/rnpgp/rnp/pull/2387"
   end
 
   def install

@@ -8,9 +8,11 @@ class R3 < Formula
     url "https://ghfast.top/https://github.com/c9s/r3/archive/refs/tags/1.3.4.tar.gz"
     sha256 "db1fb91e51646e523e78b458643c0250231a2640488d5781109f95bd77c5eb82"
 
-    # Backport of https://github.com/c9s/r3/commit/c105117b40d1a7b2b9ddf1672cd08b11bd565bd9
+    # Backport PCRE2 support (rebased subset of upstream commit c105117)
     patch do
       file "Patches/r3/1.3.4.patch"
+      type :backport
+      resolves "https://github.com/c9s/r3/pull/153"
     end
   end
 

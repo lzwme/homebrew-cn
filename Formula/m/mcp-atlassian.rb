@@ -3,18 +3,18 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/bf/90/bfddfaaa14308e633fa25b8f2f2adb26ba5903d51ce08ce7ac93511517a1/mcp_atlassian-0.22.0.tar.gz"
-  sha256 "645522501661c04728cf9075aa3c3391f2073aec9335ea6844afd8dc078f0e3c"
+  url "https://files.pythonhosted.org/packages/e7/37/0d5076e2be20efa1f9bdb592245fb560f22d96b1461852e0ad285624d120/mcp_atlassian-0.22.1.tar.gz"
+  sha256 "c0594f7cf5b09713b7c4fea5f3322c5f483ebc639c7b2d6b34992bf1757e8bad"
   license "MIT"
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "64e6f65a9a5aeb4fda78634f3d59acda8c5d0fac6a7b420fd7a5c42bdadb8122"
-    sha256 cellar: :any, arm64_sequoia: "10d27b0ba3312d7b820a28157f268d2ab880b39dc47598dc8281a7fc076439ad"
-    sha256 cellar: :any, arm64_sonoma:  "f2fe3dbebcc4f7ea747109c85d831ec05ac0b279588389be027607c731cac993"
-    sha256 cellar: :any, sonoma:        "295ef2d44b744aa7d6d396ab650eeb92956a9247c15962b9ac560147b6909ede"
-    sha256 cellar: :any, arm64_linux:   "05a11d575375826f7e4d12d606aa93d2db9c6769754d34741030d30062cd4bb5"
-    sha256 cellar: :any, x86_64_linux:  "1c088a1e47208b59f677e65bc40714224e76a2a01007dc1ba79d2d83eb4c6610"
+    sha256 cellar: :any, arm64_tahoe:   "7423e51e26c56e036f2e307c4036e391100927dd79a8694730cb23092563b692"
+    sha256 cellar: :any, arm64_sequoia: "1437e6dac3668499debc64a22ae97644a3e2b41faee7cc8273726a7b340d883b"
+    sha256 cellar: :any, arm64_sonoma:  "f4687f532f3c3b45f88006831bc508ca73941f56618e66093b0031f4ae8cf3bb"
+    sha256 cellar: :any, sonoma:        "8254a2119202ec0abbf1a079d0005ae037d45e43b91c19a2d9404ac8743f9f61"
+    sha256 cellar: :any, arm64_linux:   "8f9665f22aadc2a1659e69412e5c2f8b3acbb2f5e21e3ef8861e963daa895fe7"
+    sha256 cellar: :any, x86_64_linux:  "28cf27abedfda556fc7f0023fdde96da4de3c957791e5bcae0296552ae771b03"
   end
 
   depends_on "luajit" => :build # for lupa

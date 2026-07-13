@@ -25,9 +25,10 @@ class Shellinabox < Formula
   end
 
   # Upstream (Debian) patch for OpenSSL 1.1 compatibility
-  # Original patch cluster: https://github.com/shellinabox/shellinabox/pull/467
   patch do
     file "Patches/shellinabox/2.20.patch"
+    type :unofficial
+    resolves "https://github.com/shellinabox/shellinabox/pull/467"
   end
 
   def install

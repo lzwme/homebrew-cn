@@ -1,17 +1,17 @@
 class Minibwa < Formula
   desc "Successor of BWA-MEM for short-read alignment"
   homepage "https://github.com/lh3/minibwa"
-  url "https://ghfast.top/https://github.com/lh3/minibwa/archive/refs/tags/v0.3.tar.gz"
-  sha256 "85040b1b25caeee6304616c2bc081c313e0ff1a29006bb0295098b8ae51973de"
+  url "https://ghfast.top/https://github.com/lh3/minibwa/archive/refs/tags/v0.4.tar.gz"
+  sha256 "32b8e3b7e7bf313ef5f5dd0d6f4359a21575fd2b2fcb14652d9181c740fde9b1"
   license all_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c9cc62e073f1be14d57233456719015b4c773b03cc49a934a68bf73b79c9d1a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd87f3497534b7d7e9b69ea2367458788068ef43b1568941917c1e0bc4b1d27b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "56b32c6e1a27adbe646290325a5d285a2c9d2c0a1aee165f9a36fe8695338a65"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cb1c08a131fdce4d1dd8ef8bf2bb2a7529025a27768e495d0632df35323c1e18"
-    sha256 cellar: :any,                 arm64_linux:   "efb5d89f481c25308a8f5a509f11bbe108083b5319f03588edb9d7482916726a"
-    sha256 cellar: :any,                 x86_64_linux:  "3c0d1eaa6199e1ae4b527d3009cc57f8c43e14915450874428d59d928317d053"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "20d5d94a87dd0b42c32c6ddcfc4ba594fb8da5a565b2857478708a7086b6e20e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "456a37d8a26602f780e7d0445e7c96eec61d249e0da951a0f997ac9a65ff20db"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2993d9063d6b18f7cfd120801c1e449973f9cf4f195c59403627971913b9239f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "388d462bf9cb65f226ea967f8adf0f89f6b233622217d948168d74e3418deefa"
+    sha256 cellar: :any,                 arm64_linux:   "88275345cca707b86db12b48c9b8de510ec23ae6eb68d62bc62472b222decce5"
+    sha256 cellar: :any,                 x86_64_linux:  "7332547a1a76cb6e4f81f50a2228a27f8e6dc616a1922af5ad9e72d2007d997f"
   end
 
   on_linux do

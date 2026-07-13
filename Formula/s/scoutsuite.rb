@@ -649,10 +649,11 @@ class Scoutsuite < Formula
   end
 
   # Fix to support Python 3.14
-  # PR ref: https://github.com/nccgroup/ScoutSuite/pull/1718
   patch do
     url "https://github.com/nccgroup/ScoutSuite/commit/e1ae94ea0ccb5fafd27645baff5570fd0bac4030.patch?full_index=1"
     sha256 "8bae83f393c06c5927567504d5d4d9c361e48b6115154f583be187f022e65ed9"
+    type :unofficial
+    resolves "https://github.com/nccgroup/ScoutSuite/pull/1718"
   end
 
   def install

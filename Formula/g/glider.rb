@@ -43,7 +43,7 @@ class Glider < Formula
     begin
       sleep 3
       output = shell_output("curl --socks5 127.0.0.1:#{proxy_port} -L https://brew.sh")
-      assert_match "The Missing Package Manager for macOS (or Linux)", output
+      assert_match "The Package Manager for Everywhere", output
     ensure
       Process.kill 9, glider
       Process.wait glider

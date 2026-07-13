@@ -120,18 +120,20 @@ class Qtwebengine < Formula
     sha256 "b2e5b40261e20f354d198eae92afc10d750afb487ed5e50f9c4eaf07c184146f"
 
     # Apply Fedora's upstreamed patch to support Python 3.14+
-    # Ref: https://github.com/html5lib/html5lib-python/pull/583
     # Ref: https://src.fedoraproject.org/rpms/python-html5lib/blob/rawhide/f/583.patch
     patch do
       url "https://github.com/html5lib/html5lib-python/commit/379f9476c2a5ee370cd7ec856ee9092cace88499.patch?full_index=1"
       sha256 "97ae2474704eedf72dc5d5c46ad86e2144c10022ea950cb1c42a9ad894705014"
+      type :unofficial
+      resolves "https://github.com/html5lib/html5lib-python/pull/583"
     end
 
     # Python 3.14 with setuptools 81+ compatibility (`pkg_resources` removal)
-    # upstream pr ref, https://github.com/html5lib/html5lib-python/pull/592
     patch do
       url "https://github.com/html5lib/html5lib-python/commit/1dbc19cd6db72cb919885827bc4883423e0cb647.patch?full_index=1"
       sha256 "5951b823f353dd70806ad6e163ab8f46899496c1e8bb53970c99abe8d1df1a78"
+      type :unofficial
+      resolves "https://github.com/html5lib/html5lib-python/pull/592"
     end
   end
 

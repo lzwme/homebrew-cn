@@ -64,10 +64,11 @@ class Siril < Formula
   end
 
   # Build against opencv 5.
-  # MR ref: https://gitlab.com/free-astro/siril/-/merge_requests/1073
   patch do
-    url "https://gitlab.com/daeho-ro/siril/-/commit/743956900c65129ab12421951781c12b94c6e996.diff"
+    url "https://gitlab.com/free-astro/siril/-/commit/743956900c65129ab12421951781c12b94c6e996.diff"
     sha256 "c07b0e62efea0c9622808992bbee77a9e707fb5aaeebf4cd44d9c9a6e680a7c0"
+    type :backport
+    resolves "https://gitlab.com/free-astro/siril/-/merge_requests/1073"
   end
 
   deny_network_access!

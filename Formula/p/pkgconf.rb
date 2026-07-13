@@ -1,12 +1,12 @@
 class Pkgconf < Formula
   desc "Package compiler and linker metadata toolkit"
   homepage "https://github.com/pkgconf/pkgconf"
-  url "https://distfiles.ariadne.space/pkgconf/pkgconf-2.5.1.tar.xz"
-  mirror "https://fossies.org/linux/misc/pkgconf-2.5.1.tar.xz"
-  mirror "http://fresh-center.net/linux/misc/pkgconf-2.5.1.tar.xz"
-  sha256 "cd05c9589b9f86ecf044c10a2269822bc9eb001eced2582cfffd658b0a50c243"
+  url "https://distfiles.ariadne.space/pkgconf/pkgconf-3.0.1.tar.xz"
+  mirror "https://fossies.org/linux/misc/pkgconf-3.0.1.tar.xz"
+  mirror "http://fresh-center.net/linux/misc/pkgconf-3.0.1.tar.xz"
+  sha256 "640b0d03a6d9e385d8bdcdac071a5cdf5fbd3f45942d454b711ae46271489b30"
   license "ISC"
-  compatibility_version 1
+  compatibility_version 2
 
   livecheck do
     url "https://distfiles.ariadne.space/pkgconf/"
@@ -14,20 +14,18 @@ class Pkgconf < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "84f26aae5e27d846e00a9fb741dfe3b02a14cb2f81ca4a4246617379cda99fc0"
-    sha256 arm64_sequoia: "6fabdc3d0a656e2d505aec4e39b2f8e354601ee141469554fa71eabc3386e18f"
-    sha256 arm64_sonoma:  "bc7f9963756598248220da128a5f06ea0e6685aa7cd965a5ce357fcfaad2cdec"
-    sha256 arm64_ventura: "8d53ac0deb003f8866315c4c27a1aa4767467c9fa13c912f52cb29e37fbe7916"
-    sha256 tahoe:         "ab1a7c8edaffa3a27400174deb4845140bdd56942d9ab2a7bccdf30f7ef74d91"
-    sha256 sequoia:       "a074f871aa476dec1101c13b4fcfbb9354a8b35bcb6e056f8411463913632071"
-    sha256 sonoma:        "439e8e638986c4423f430719f28cd7c62e8d9a1b87ac658c069fd5da939784f8"
-    sha256 ventura:       "e38acbfd930c9588f4d1eabe061b956948aaff32cccb30c457430779c1e4f7f5"
-    sha256 arm64_linux:   "abdf9fbefab1d7b7219a619fb5bd44b58c00a71146a43cb24b71700c2ead369e"
-    sha256 x86_64_linux:  "9df0ce4d9ebae822b763a9c18565d1596a40b2a2e5849c743e768a99f554f24b"
+    sha256 arm64_tahoe:   "246aa69bcc0db7b8961dac4f74a6923afdf9f1ad2c7c0dc2d560baa4cc55ce2c"
+    sha256 arm64_sequoia: "7de336c797cb0f34271a1d618bc4142a49ccd58959899857cbe2d1cdd9351a35"
+    sha256 arm64_sonoma:  "84103a43a8d217b4c602f6557c4c342b8b44543bc61d3a7b70ebfb79632688ad"
+    sha256 tahoe:         "4807422a17279e810ddcd67a4e2ba4722d4650d37f92e29c7101b44fcdc4fa57"
+    sha256 sequoia:       "d68a1366437674482d62af4331e52a5539c16b48d031e5c777fee2209f998bba"
+    sha256 sonoma:        "992d06d76e2c25f3f71044f248d8a8aa03a00ca345ebf154a62bc8e210efe38d"
+    sha256 arm64_linux:   "0caeacc90f326f3257a139ffb95dde19ad1e093eb56096a3562257377a198340"
+    sha256 x86_64_linux:  "9b82434413217540aa036e6bc8465c639a68182772507aa310e6e99a957b4293"
   end
 
   head do
-    url "https://github.com/pkgconf/pkgconf.git", branch: "master"
+    url "https://github.com/pkgconf/pkgconf.git", branch: "main"
 
     # Using a resource to avoiding dependency tree from brew `meson` or `muon`.
     # The version should align to available HTTP mirror rather than latest.

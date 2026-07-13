@@ -46,6 +46,7 @@ class RxvtUnicode < Formula
   # Patch 3 fixes `make install` target on case-insensitive filesystems
   patch do
     file "Patches/rxvt-unicode/9.22.patch"
+    type :unofficial
   end
 
   def install

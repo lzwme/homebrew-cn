@@ -4,16 +4,16 @@ class Precice < Formula
   url "https://ghfast.top/https://github.com/precice/precice/archive/refs/tags/v3.4.1.tar.gz"
   sha256 "ef4713c938a1b2000d0b071175e1b45f9ec55c7aec4bbe7b65c3992edcc74ac7"
   license "LGPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/precice/precice.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "841f6e73e7352de0557d5782f3158e0e2f770943e62d5cdfeb12d5b84ad65e20"
-    sha256 cellar: :any,                 arm64_sequoia: "757dc3095d5c4eec539da00e46b18b8bbfee24a0ecaffb4958d008675941bb6c"
-    sha256 cellar: :any,                 arm64_sonoma:  "d5634c836d089b0e2570488dcfb02ee3211fa1c79a27d23a69f47d45c3c3e8fd"
-    sha256 cellar: :any,                 sonoma:        "4cfae1f50c4be5722fe5a2ee98cef3da748b1e422c9e30ba4b3c6f3c91835b64"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75c3638840987563f681eff6f907e7f55f0a42c968c8dd9c57bbde48c01627ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40ceb07952ea39e22be757eb52498f1768c862715228e4fda9fe4bb17e7fd80c"
+    sha256 cellar: :any, arm64_tahoe:   "8d91efd5606ff676b57654fd0eb6d29f034bb365dbe2a73c09192d482a33cb5c"
+    sha256 cellar: :any, arm64_sequoia: "f7895b55d96088f80003f66b0002a93fc15a8062f1866d35ed61fb82cb72f416"
+    sha256 cellar: :any, arm64_sonoma:  "454910e27028958ee40582ecd4b6523a724092bc70b067b6b3279f62a0774555"
+    sha256 cellar: :any, sonoma:        "939aeba137cc54b7e4a9ac89bbfc7f5ca241854e4f29a9aee97f2c9dbe4b8283"
+    sha256 cellar: :any, arm64_linux:   "2b1b9596f721f29a266b2e42441635e214fd16897b08b839035ec476cf58ee6b"
+    sha256 cellar: :any, x86_64_linux:  "398c52923858b6a5f2b6709943e798a3940c666390d392cccdb2b7093721ee29"
   end
 
   depends_on "cmake" => :build

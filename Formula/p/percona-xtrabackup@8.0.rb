@@ -1,32 +1,32 @@
 class PerconaXtrabackupAT80 < Formula
   desc "Open source hot backup tool for InnoDB and XtraDB databases"
   homepage "https://www.percona.com/software/mysql-database/percona-xtrabackup"
-  url "https://downloads.percona.com/downloads/Percona-XtraBackup-8.0/Percona-XtraBackup-8.0.35-35/source/tarball/percona-xtrabackup-8.0.35-35.tar.gz"
-  sha256 "012aa40e35d7186da1d0c4ccd20d703b2b56a69dc0d750056d969245226a3d67"
+  url "https://downloads.percona.com/downloads/Percona-XtraBackup-8.0/Percona-XtraBackup-8.0.35-36/source/tarball/percona-xtrabackup-8.0.35-36.tar.gz"
+  sha256 "a73a5e3e055075524968b116f9c2ca7c49eedcae88f7c5ef8227ba84ea3364b6"
   license "GPL-2.0-only"
-  revision 4
 
   livecheck do
-    url "https://www.percona.com/products-api.php", post_form: {
-      version: "Percona-XtraBackup-#{version.major_minor}",
+    url "https://www.percona.com/wp-admin/admin-ajax.php", post_form: {
+      action:     "percona_downloads",
+      product_id: "Percona-XtraBackup-#{version.major_minor}",
     }
-    regex(/value=["']?[^"' >]*?v?(8\.0(?:[.-]\d+)+)[|"' >]/i)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map do |match|
+    regex(/^Percona-XtraBackup-v?(\d+(?:[.-]\d+)+)$/i)
+    strategy :json do |json, regex|
+      json.dig("data", "versions")&.filter_map do |version|
         # Convert a version like 1.2.3-4.0 to 1.2.3-4 (but leave a version like
         # 1.2.3-4.5 as-is).
-        match[0].sub(/(-\d+)\.0$/, '\1')
+        version[regex, 1]&.sub(/(-\d+)\.0$/, '\1')
       end
     end
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c813097a6c0a0b0c264d5ffd4c13709cd4508cddf093a042883761f1df1956ac"
-    sha256 arm64_sequoia: "97f94258c1f825b315e5a2271fdd3fd5be02b4da89108acffc901cb9499ce5b2"
-    sha256 arm64_sonoma:  "93099ca664bdedd1fd794ae7b4bc3f7305d2cd47ba09a2169821830347b272fe"
-    sha256 sonoma:        "c0b874d9f4ef4fc66c74874fd1b5ceffbef01b67d577f26826c935e51fc06c2f"
-    sha256 arm64_linux:   "fcc7c19ad6e6e6c6d8528c470c006e20f5d7c439ad2e5190dc96664fd4345a63"
-    sha256 x86_64_linux:  "e8e4eb352a21d4a5d5dab1f3820c94b6d6ae1235dafc09b19044b6687c1fd528"
+    sha256 arm64_tahoe:   "0d8453095dd648b3c6d2e71b984d959ad8a3aa933099f9c33b34de24664e4658"
+    sha256 arm64_sequoia: "60f4e29f0faf6aec44fc2bc3b737c54e20d4a252112ceace4459171c98957446"
+    sha256 arm64_sonoma:  "29e37abf3e2b674c802a14728ec36812db73e59bd5204589dca6611fc47d38bb"
+    sha256 sonoma:        "fd4f6b832c36d3845ca43255928bb5305cbba619934c3b609682eb69b6c8e15b"
+    sha256 arm64_linux:   "dc4c5a0084075e2ddce294d86e3b4a408addb6b42aeb979a40c7f2628a359c67"
+    sha256 x86_64_linux:  "fcea77641b8d584bcb1c9b3585ca8c26297d5659f08bb25538f29efbf7f7f4d0"
   end
 
   keg_only :versioned_formula

@@ -27,7 +27,7 @@ class Fdroidcl < Formula
     assert_match "f-droid.org/repo", shell_output("#{bin}/fdroidcl update")
 
     categories = shell_output("#{bin}/fdroidcl list categories").split("\n")
-    %w[Browser Games News Weather].each do |category|
+    %w[Browser Graphics News Weather].each do |category|
       assert_includes categories, category
     end
 

@@ -66,10 +66,11 @@ class Samba < Formula
   # upstream bug report, https://bugzilla.samba.org/show_bug.cgi?id=10791
   # https://bugzilla.samba.org/show_bug.cgi?id=10626
   # https://bugzilla.samba.org/show_bug.cgi?id=9665
-  # upstream pr ref, https://gitlab.com/samba-team/samba/-/merge_requests/3902
   patch do
     url "https://gitlab.com/samba-team/samba/-/commit/a2736fe78a4e75e71b9bc53dc24c36d71b911d2a.diff"
     sha256 "7d1bf9eb26211e2ab9e3e67ae32308a3704ff9904ab2369e5d863e079ea8a03f"
+    type :unofficial
+    resolves "https://gitlab.com/samba-team/samba/-/merge_requests/3902"
   end
 
   def install

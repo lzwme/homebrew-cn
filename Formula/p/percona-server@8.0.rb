@@ -1,32 +1,32 @@
 class PerconaServerAT80 < Formula
   desc "Drop-in MySQL replacement"
   homepage "https://www.percona.com"
-  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.45-36/source/tarball/percona-server-8.0.45-36.tar.gz"
-  sha256 "137cdb24a1f5b8afbd1fef38457b98ead8d73e3cc73c22a3c6facc94ab3871de"
+  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.46-37/source/tarball/percona-server-8.0.46-37.tar.gz"
+  sha256 "cedff3c191ff160dfc0ce1c574440165f3f2bfe7a621699170adf4d1dc556617"
   license "BSD-3-Clause"
-  revision 4
 
   livecheck do
-    url "https://www.percona.com/products-api.php", post_form: {
-      version: "Percona-Server-#{version.major_minor}",
+    url "https://www.percona.com/wp-admin/admin-ajax.php", post_form: {
+      action:     "percona_downloads",
+      product_id: "Percona-Server-#{version.major_minor}",
     }
-    regex(/value=["']?[^"' >]*?v?(\d+(?:[.-]\d+)+)[|"' >]/i)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map do |match|
+    regex(/^Percona-Server-v?(\d+(?:[.-]\d+)+)$/i)
+    strategy :json do |json, regex|
+      json.dig("data", "versions")&.filter_map do |version|
         # Convert a version like 1.2.3-4.0 to 1.2.3-4 (but leave a version like
         # 1.2.3-4.5 as-is).
-        match[0].sub(/(-\d+)\.0$/, '\1')
+        version[regex, 1]&.sub(/(-\d+)\.0$/, '\1')
       end
     end
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0ec76bd0302962a6338ac42fd3abacc0de5bb02cf5da2a23c3566a3fcb6a16f9"
-    sha256 arm64_sequoia: "e97b5e831140951a484a9fb65b6d69a82734ad32c6079162dcfc1581541ab445"
-    sha256 arm64_sonoma:  "efb21c8e965f23b48e48746ae18b0d23307c995ae902c7fea91000c1ed614302"
-    sha256 sonoma:        "7fbf3acc0a8a17646743d054dbaee899f4e8789ab2a572e119b8e859e826d0a3"
-    sha256 arm64_linux:   "9801ea097b286fb2f0c30c61eb35754d475b88fbf58cacb0a50871a5d3f4f2ed"
-    sha256 x86_64_linux:  "15b6103738f30ba6f2726188a2c6f3698301210a44667aed16d86277cfacad94"
+    sha256 arm64_tahoe:   "638914883a6862dfcb53350afa56f084002ba68dcbfb3c03354e6099bc75e07f"
+    sha256 arm64_sequoia: "7fda6441e4130453ef55199e7875b61483696d8d108332d21329b2f71e7faf2e"
+    sha256 arm64_sonoma:  "8fc245c8fc1eee18ba0cd165db2024a8dfdb7318b963cd924d48ee956d11885c"
+    sha256 sonoma:        "ac22ae9b4f44c916e998116e244f0ed19702534a7a16ea1d3a16b8b9269b9000"
+    sha256 arm64_linux:   "715a511dbf7e344439645588b058a41d706cee5835023e5449613a8253c4192d"
+    sha256 x86_64_linux:  "06ea4b5b96a27d6cb452fd5d2670567198d4026a747308bd33eecac2aaebd50a"
   end
 
   keg_only :versioned_formula

@@ -40,17 +40,19 @@ class Redex < Formula
   end
 
   # Patch to allow redex.py to detect redex-binary
-  # PR: https://github.com/facebook/redex/pull/982
   patch do
     url "https://github.com/facebook/redex/commit/f1d9211256ac03d92a4176bea36fb97bee581f41.patch?full_index=1"
     sha256 "d3ce5c0b758ae7f61c30ca7ebea115d782abe43af61672454874be9810201ce1"
+    type :unofficial
+    resolves "https://github.com/facebook/redex/pull/982"
   end
 
   # Backport macOS SDK .tbd zlib detection, missing from the v2026.04.30 release
-  # PR: https://github.com/facebook/redex/pull/980
   patch do
     url "https://github.com/facebook/redex/commit/a885d52ce6121ed96b78c511d1920116de10ff86.patch?full_index=1"
     sha256 "ca1321b1fb500203110f5da701106eaab89f61ecbdc62182e94f8747b17cfc65"
+    type :backport
+    resolves "https://github.com/facebook/redex/pull/980"
   end
 
   def install

@@ -2,17 +2,18 @@ class GitPagesCli < Formula
   desc "Tool for publishing a site to a git-pages server"
   homepage "https://codeberg.org/git-pages/git-pages-cli"
   url "https://codeberg.org/git-pages/git-pages-cli/archive/v1.10.0.tar.gz"
-  sha256 "0ac04e1dd03a3d3325c6332e28f392c8e89911b297aca44bffc1439f1c60a478"
+  sha256 "ce6cc4b0e6d131d5df9b66a6b6ae59577b29d450e75d6876db78ab9d1425fa10"
   license "0BSD"
   head "https://codeberg.org/git-pages/git-pages-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a9b102ce734487642e1a72048e352049e1541891e0a9e1aa08fd0dabfe964b2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a9b102ce734487642e1a72048e352049e1541891e0a9e1aa08fd0dabfe964b2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a9b102ce734487642e1a72048e352049e1541891e0a9e1aa08fd0dabfe964b2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "962544724de126b4d8d69f2ca9e8d591fe2622a407aa67360f9f2df829ff9b3f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dce74feddd89d3cd2239dbfd6515c6be901d151666ace68f33ac3839fa0fc900"
-    sha256 cellar: :any,                 x86_64_linux:  "d165d0bec2a8082a5f1972a41ce15f7523f769d154a446005c826c7f61b13dc6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "027850d3d1a6d2d0fb2a9b658efaeb5577ad1fe93a56b9558ba910eae6d5f8a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "027850d3d1a6d2d0fb2a9b658efaeb5577ad1fe93a56b9558ba910eae6d5f8a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "027850d3d1a6d2d0fb2a9b658efaeb5577ad1fe93a56b9558ba910eae6d5f8a5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9a540558e0340a91c16949536dd6520cf92670ab6d55cd71fdbb2bc918956b91"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f47dd3b406b508137a3705575398af41aec20a0ce6137d4f7f77eb3a026d44c"
+    sha256 cellar: :any,                 x86_64_linux:  "38fccdc623ebc1c9fc0802983ec9664479fd9cbe6243a9bdf5ea6dca3956adc4"
   end
 
   depends_on "go" => :build

@@ -25,6 +25,8 @@ class SimpleAmqpClient < Formula
   patch do
     url "https://github.com/alanxz/SimpleAmqpClient/commit/3d3c669608b0dc3ae54e9caae6244bdcc38ca054.patch?full_index=1"
     sha256 "652aad326ace036498e2f990f6fecaa9d2472e04885f581d773fb1fbf3809e9c"
+    type :backport
+    resolves "https://github.com/alanxz/SimpleAmqpClient/pull/356"
   end
 
   def install

@@ -14,10 +14,11 @@ class Sol2 < Formula
   depends_on "pkgconf" => :build
 
   # Add Lua 5.5 support
-  # https://github.com/ThePhD/sol2/pull/1723
   patch do
     url "https://github.com/ThePhD/sol2/commit/16a9fabb7ae525d644d3343f15b1de39c8865ecd.patch?full_index=1"
     sha256 "dee0b86ef931000e93f9214e72a8d4803dcf7ffd43365ce07d40184586d10cea"
+    type :unofficial
+    resolves "https://github.com/ThePhD/sol2/pull/1723"
   end
 
   def install

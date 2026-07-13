@@ -31,6 +31,8 @@ class Solo2Cli < Formula
   patch do
     url "https://github.com/solokeys/solo2-cli/commit/c4b3f28062860c914f3922ad58604f0bc36ead93.patch?full_index=1"
     sha256 "1f3e08c4c6f17022e8762852ef8e2de94e1c0161d4409d60e5b04f23d72b632d"
+    type :unofficial
+    resolves "https://github.com/solokeys/solo2-cli/pull/122"
   end
 
   def install

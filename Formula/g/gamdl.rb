@@ -3,19 +3,20 @@ class Gamdl < Formula
 
   desc "Python CLI app for downloading Apple Music songs, music videos and post videos"
   homepage "https://github.com/glomatico/gamdl"
-  url "https://files.pythonhosted.org/packages/63/dc/00ee2132ba0356deb067d2550e927931a43d4070d0ecdd2d33ff8b6486ab/gamdl-3.8.1.tar.gz"
-  sha256 "bd069a580d1b7ff9dc709cf996fe65a0a0731ef83dbe5a0608a182948e91c237"
+  url "https://files.pythonhosted.org/packages/60/83/8d9979d75969a870cdbeae54bb9abfe0517de44810b666627e672b790d85/gamdl-3.8.2.tar.gz"
+  sha256 "6d70c292d9fee33bb36c62edcb559ac29a3a28413c257742fcfb9efc0d4d8b90"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9c468a5a0eeb633abf70901450f045dcf7fa4ac762fad5036a47307ce18fc78b"
-    sha256 cellar: :any, arm64_sequoia: "149c0e493037a9b8789deb6847cb0a4c94627790972352a65fff36e4583b397f"
-    sha256 cellar: :any, arm64_sonoma:  "cc79d592a0f21b489cc8477365bbe56d7bb04402e6a46ee20f25a2b314868fdb"
-    sha256 cellar: :any, sonoma:        "1fb2d974acc617e6b4e2e6350d12c09f1976b960ffaf168ebe94e2f4e2771f82"
-    sha256 cellar: :any, arm64_linux:   "548a3a3166ebdc575decf0fc569475b9e225d1cf5dd9881386c5a593d4ba97f8"
-    sha256 cellar: :any, x86_64_linux:  "dafbb88bbe4b8b86b5f9aa2cf41a78e69bd98e3d7c18ceec93c282d9515670eb"
+    sha256 cellar: :any, arm64_tahoe:   "2bd8e755877fde1997e3e09e289261a61df54e4d25a70b5fa9d6f3408d78f5b1"
+    sha256 cellar: :any, arm64_sequoia: "d3a724c147b1c524c0e3d1c7c97a951ea453c60ce4565e74134bf9ffdd021d88"
+    sha256 cellar: :any, arm64_sonoma:  "7da68b0222430560d41fac7e0bedcef7fc589bd8c649832a09a1fdcc50458ae1"
+    sha256 cellar: :any, sonoma:        "f2e35db7daeac53ca7e15ee7a34aec0c14e308c45f7302a098ef518644818148"
+    sha256 cellar: :any, arm64_linux:   "804902cd53de419264b6337e31e365dae074b0011fbc7e3fd245abe0218f3591"
+    sha256 cellar: :any, x86_64_linux:  "e88f84560e7042b6d337d8f01827d2439f17943eb83d8aa5d1b2731de7128efa"
   end
 
+  depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "pillow" => :no_linkage
@@ -34,8 +35,8 @@ class Gamdl < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "click" do
@@ -74,8 +75,8 @@ class Gamdl < Formula
   end
 
   resource "httpx-retries" do
-    url "https://files.pythonhosted.org/packages/fb/f5/046cac13877ce9b55aebdbb3999e0e45b19b989a95c5fd1040fa04bd1f92/httpx_retries-0.5.0.tar.gz"
-    sha256 "d8c8e1e0852d84be3837aba0bcf78aeb89a4b77db95e8cc988c8c058830b3044"
+    url "https://files.pythonhosted.org/packages/e9/d3/b7a8bb09543af40009717a08a2ceba90b6d4c6f0cdf171404217d8f4c37d/httpx_retries-0.6.0.tar.gz"
+    sha256 "3e0b404969a564829d368417964fd21e6b400a10d17c92d29b8bc247ce8186e3"
   end
 
   resource "idna" do
@@ -159,9 +160,12 @@ class Gamdl < Formula
   end
 
   resource "yt-dlp" do
-    url "https://files.pythonhosted.org/packages/88/a4/1b0979d28f87774bb67fbbc66bce44f9dd1aa0e547a99e22985fac945c33/yt_dlp-2026.6.9.tar.gz"
-    sha256 "d50fcb95f48d61bedde33e408c1881d4c279e51c31354a599ce09e96ba0f4b86"
+    url "https://files.pythonhosted.org/packages/47/c5/9972af4b472b0d55badf841ebafd2f98944cb0ae0f46e11d01f363ea5b91/yt_dlp-2026.7.4.tar.gz"
+    sha256 "b094813404f87a9dd2186f00815231df32e5fd8a5403be0f807b3bb2d21a4432"
   end
+
+  # Support Python 3.14. PR ref: https://github.com/glomatico/gamdl/pull/333
+  patch :DATA
 
   def install
     virtualenv_install_with_resources
@@ -177,3 +181,100 @@ class Gamdl < Formula
                  shell_output("#{bin}/gamdl fake_url 2>&1", 1)
   end
 end
+
+__END__
+--- a/pyproject.toml	2026-07-12 17:12:19
++++ b/pyproject.toml	2026-07-12 17:12:19
+@@ -39,6 +39,7 @@
+ ]
+ 
+ [tool.maturin]
++exclude = ["gamdl/downloader/ammuxer/target/**/*"]
+ manifest-path = "gamdl/downloader/ammuxer/Cargo.toml"
+ module-name = "gamdl._ammuxer"
+ python-source = "."
+--- a/gamdl/downloader/ammuxer/Cargo.toml	2026-07-12 17:12:19
++++ b/gamdl/downloader/ammuxer/Cargo.toml	2026-07-12 17:12:19
+@@ -15,5 +15,5 @@
+ cbc = { version = "0.1", features = ["block-padding"] }
+ ctr = "0.9"
+ cipher = "0.4"
+-pyo3 = { version = "0.23.5", features = ["extension-module"] }
++pyo3 = { version = "0.27", features = ["extension-module"] }
+ tempfile = "3"
+--- a/gamdl/downloader/ammuxer/Cargo.lock	2026-07-12 17:12:19
++++ b/gamdl/downloader/ammuxer/Cargo.lock	2026-07-12 17:12:21
+@@ -205,11 +205,10 @@
+ 
+ [[package]]
+ name = "pyo3"
+-version = "0.23.5"
++version = "0.27.2"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "7778bffd85cf38175ac1f545509665d0b9b92a198ca7941f131f85f7a4f9a872"
++checksum = "ab53c047fcd1a1d2a8820fe84f05d6be69e9526be40cb03b73f86b6b03e6d87d"
+ dependencies = [
+- "cfg-if",
+  "indoc",
+  "libc",
+  "memoffset",
+@@ -223,19 +222,18 @@
+ 
+ [[package]]
+ name = "pyo3-build-config"
+-version = "0.23.5"
++version = "0.27.2"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "94f6cbe86ef3bf18998d9df6e0f3fc1050a8c5efa409bf712e661a4366e010fb"
++checksum = "b455933107de8642b4487ed26d912c2d899dec6114884214a0b3bb3be9261ea6"
+ dependencies = [
+- "once_cell",
+  "target-lexicon",
+ ]
+ 
+ [[package]]
+ name = "pyo3-ffi"
+-version = "0.23.5"
++version = "0.27.2"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "e9f1b4c431c0bb1c8fb0a338709859eed0d030ff6daa34368d3b152a63dfdd8d"
++checksum = "1c85c9cbfaddf651b1221594209aed57e9e5cff63c4d11d1feead529b872a089"
+ dependencies = [
+  "libc",
+  "pyo3-build-config",
+@@ -243,9 +241,9 @@
+ 
+ [[package]]
+ name = "pyo3-macros"
+-version = "0.23.5"
++version = "0.27.2"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "fbc2201328f63c4710f68abdf653c89d8dbc2858b88c5d88b0ff38a75288a9da"
++checksum = "0a5b10c9bf9888125d917fb4d2ca2d25c8df94c7ab5a52e13313a07e050a3b02"
+ dependencies = [
+  "proc-macro2",
+  "pyo3-macros-backend",
+@@ -255,9 +253,9 @@
+ 
+ [[package]]
+ name = "pyo3-macros-backend"
+-version = "0.23.5"
++version = "0.27.2"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "fca6726ad0f3da9c9de093d6f116a93c1a38e417ed73bf138472cf4064f72028"
++checksum = "03b51720d314836e53327f5871d4c0cfb4fb37cc2c4a11cc71907a86342c40f9"
+ dependencies = [
+  "heck",
+  "proc-macro2",
+@@ -313,9 +311,9 @@
+ 
+ [[package]]
+ name = "target-lexicon"
+-version = "0.12.16"
++version = "0.13.5"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "61c41af27dd6d1e27b1b16b489db798443478cef1f06a660c96db617ba5de3b1"
++checksum = "adb6935a6f5c20170eeceb1a3835a49e12e19d792f6dd344ccc76a985ca5a6ca"
+ 
+ [[package]]
+ name = "tempfile"

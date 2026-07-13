@@ -3,17 +3,18 @@ class PythonYq < Formula
 
   desc "Command-line YAML and XML processor that wraps jq"
   homepage "https://kislyuk.github.io/yq/"
-  url "https://files.pythonhosted.org/packages/f1/9c/a0185c81994ff06e2e992f23a1378f0bbb0769496376b59af682b5f6fc8d/yq-4.1.1.tar.gz"
-  sha256 "ab3fc344dc4a39d833d328f080a6e794c1cb7243b05c0076ac1edce3d22caabd"
+  url "https://files.pythonhosted.org/packages/58/24/1e43bea1cb58532658a6d5b51a5f1d45d21df50eb1d14d977eb6d3064dbb/yq-4.1.2.tar.gz"
+  sha256 "a8f148930f8beb3170f451d67f29cbe0b3ac713cd2fc91ecf51d43b4879e6b4c"
   license "Apache-2.0"
+  head "https://github.com/kislyuk/yq.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c5fc7c7e5e15f94b2156422a806000bc3c49e08381c159fbce75571941abf382"
-    sha256 cellar: :any, arm64_sequoia: "0823dcb74fc919bd5e2092f9e3064e4922f051c01188a723e8113d0192add7f8"
-    sha256 cellar: :any, arm64_sonoma:  "4243a7b51affb306c86f4611853e502f257e475b72e9f223284ab519566cd7e3"
-    sha256 cellar: :any, sonoma:        "362031561532defd252510ce7bcf196fe836c5178c9abd3c7bce522c6fb24205"
-    sha256 cellar: :any, arm64_linux:   "97c0855f2666b722c3c9f980eff1f8a68401e28d39efb7afa4e27db2cb860fd3"
-    sha256 cellar: :any, x86_64_linux:  "4c509e0159150825967526df06a56778eb7d122cabda7a937cebf2adb289bf18"
+    sha256 cellar: :any, arm64_tahoe:   "e9016d2edb8a0d702385cdda32ed29643e7a076f6473eb74abe81cff2cafbd6f"
+    sha256 cellar: :any, arm64_sequoia: "7d68c10b735df0d92efb05581382386e7a2d9754fbcc0ba508846c55a0bb17a0"
+    sha256 cellar: :any, arm64_sonoma:  "6da269e23799b52e2faa751cecc8855abfac606a93b19714671b19909b0eeeaa"
+    sha256 cellar: :any, sonoma:        "502df9372e2f375a1a440bb50345440ba348cfa02b8e986dee4a91dcf9d9ad26"
+    sha256 cellar: :any, arm64_linux:   "816c7466bf03f39a0cc7c269c3b64ac3f10c72bcdc6533cb8fdb7350aedf1c27"
+    sha256 cellar: :any, x86_64_linux:  "cf2f01f310536e287a0b9dee791569b025a1b3fbe0bf839c1cac23ae2e56ea75"
   end
 
   depends_on "libyaml"

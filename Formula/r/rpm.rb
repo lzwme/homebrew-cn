@@ -19,6 +19,8 @@ class Rpm < Formula
     patch do
       url "https://github.com/rpm-software-management/rpm/commit/e1d7046ba6662eac9e5e7638e484eb792afa36cc.patch?full_index=1"
       sha256 "ae5358bb8d2b4f1d1a80463adf6b4fa3f28872efad3f9157e822f9318876ad9c"
+      type :backport
+      resolves "https://github.com/rpm-software-management/rpm/pull/3674"
     end
   end
 
@@ -78,11 +80,12 @@ class Rpm < Formula
   end
 
   # Apply nixpkgs patch to work around build failure on macOS
-  # Issue ref: https://github.com/rpm-software-management/rpm/issues/3688
   patch do
     on_macos do
       url "https://ghfast.top/https://raw.githubusercontent.com/NixOS/nixpkgs/3d52077f5a6331c12eeb7b6a0723b49bea10d6fe/pkgs/tools/package-management/rpm/sighandler_t-macos.patch"
       sha256 "701ffe03d546484aac57789f3489c86842945ad7fb6f2cd854b099c4efa0f4e5"
+      type :unofficial
+      resolves "https://github.com/rpm-software-management/rpm/issues/3688"
     end
   end
 

@@ -352,23 +352,15 @@ class KeeperCommander < Formula
   end
 
   def install
-    without = %w[keeper-pam-webrtc-rs]
-
     if OS.mac?
       # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
       ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
     else
       # `pyobjc-*` dependencies are only needed on macOS
-      without += resources.filter_map { |r| r.name if r.name.start_with?("pyobjc") }
+      without = resources.filter_map { |r| r.name if r.name.start_with?("pyobjc") }
     end
 
-    venv = virtualenv_install_with_resources(without:)
-
-    # Workaround for `Caused by: Failed to read readme specified in pyproject.toml`
-    resource("keeper-pam-webrtc-rs").stage do
-      inreplace "pyproject.toml", "readme = \"README.md\"", ""
-      venv.pip_install Pathname.pwd
-    end
+    virtualenv_install_with_resources(without:)
   end
 
   test do

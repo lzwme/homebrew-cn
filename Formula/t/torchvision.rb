@@ -6,6 +6,7 @@ class Torchvision < Formula
   url "https://ghfast.top/https://github.com/pytorch/vision/archive/refs/tags/v0.28.0.tar.gz"
   sha256 "ecc4451241c8eeadc0c88213bd65c7932c9622d1d0034254b938f25362283ee9"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,12 +14,12 @@ class Torchvision < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8e0841a07246f24bd430c86288189c3284495e94ce4376872bfa05de456d7532"
-    sha256 cellar: :any, arm64_sequoia: "9e1b10f17bbdc92b5b0d4be182718e2956bb7dabd7f3f3e1212ce57f350907e2"
-    sha256 cellar: :any, arm64_sonoma:  "223585ca17562c9a05aafb65d10348b2b94fd3d7864a633d9a3d9350e5f63dab"
-    sha256 cellar: :any, sonoma:        "e2fa074caa86cc678250c707f029455d42096f39ad6a3fdee0c37595df61c1d3"
-    sha256 cellar: :any, arm64_linux:   "89bf1846bb8b34d1b6edc8c6f7e1e39845961ac632d215d7826af2e67d8b93d8"
-    sha256 cellar: :any, x86_64_linux:  "509eee66b2ccacc7d736de4233032cd4fb0ae7828cfc69830b0daf1e47f49285"
+    sha256 cellar: :any, arm64_tahoe:   "b8790d64bebfa9e0eafd5e696263666c843484e1b0ac67e71d2bc8a178d26baf"
+    sha256 cellar: :any, arm64_sequoia: "e11aecc565c72e93041ae7be0cf689519e48051c69e7000e724134ec85d43795"
+    sha256 cellar: :any, arm64_sonoma:  "0278c55c6c9689b909f13831b8239ca2852b65f59153007420beac0fe7944960"
+    sha256 cellar: :any, sonoma:        "96df3ae8931c6857921e860b180ee07e37c3d6569541a0058a6f5de37eb7eeeb"
+    sha256 cellar: :any, arm64_linux:   "e64d59d190a1c223d43f42ba94014b56809c9866d5377276ddba4af1eb51766d"
+    sha256 cellar: :any, x86_64_linux:  "f3e336ad01f0d19511d70d360d812908c28b305e95b684a6175850bec05fd1a4"
   end
 
   depends_on "cmake" => :build

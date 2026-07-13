@@ -2,18 +2,18 @@ class Noti < Formula
   desc "Trigger notifications when a process completes"
   homepage "https://codeberg.org/roble/noti"
   url "https://codeberg.org/roble/noti/archive/3.8.0.tar.gz"
-  sha256 "40939b83ee80f84ea2516ff205a961ddc0c4ec66af4f29319cdc41fce87eb332"
+  sha256 "107b9169c63c623556f554d54d82118da72f871ad8eddda3a49a613ff7deaf30"
   license "MIT"
   head "https://codeberg.org/roble/noti.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9df5cb0595eeccab3df88d19535d8c4959ddb31edebd05ebdaab5f256698a528"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9ce62a753d38d76f7a0da4cd1ab463085f72ccd18a5322f285ed0fda14f31b3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c6d37577bbc6a96195d28e194a129490f2d87b9afc15639bc80418f60ff598e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9f755675d0005c92a27b5505e203225dfe64b9bf6715b49bb7840850454c5546"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d00980419a447dfbf768ee6cbe98155fe6359b77a860cbfd05977b9d07fb515e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57b3aa7759166c18af61e9a49704e7673f7b9f439eb562447d4bf12c3d6baaec"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "205fe66ef02286919f06b260301a75472820d41a914be5691af77a1cfb588301"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41ae7991b41308c734a42e36a7d436004224087da7897cc7f580a23ed5c8e5cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f076e36e31923537c7e15c47a468870a66ce4b80730040df5405d58a013df80"
+    sha256 cellar: :any_skip_relocation, sonoma:        "39562685ad53b0bbf54a75820d138536ef69d7c9a9f51f22ba5cf8e3f23cc496"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d386468c18c625ea2abc7b43e00e37bae36e037496879522c60e6066e8ae3cf6"
+    sha256 cellar: :any,                 x86_64_linux:  "abac47c0ec93ba018d66619164fafa2f6edb605681546fb04cc2e1d603fdf97c"
   end
 
   depends_on "go" => :build

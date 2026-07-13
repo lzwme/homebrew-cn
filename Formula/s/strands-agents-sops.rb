@@ -7,6 +7,7 @@ class StrandsAgentsSops < Formula
   sha256 "bfe0a906a0f5dd596abfe9ff4fda8958ad17f217a24aa6ae956023e6c06c8cbe"
   license "Apache-2.0"
   revision 5
+  head "https://github.com/strands-agents/agent-sop.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "e637ee62ab160bd83dbbb1fa91002e7ee3d2b8956409d3990c8286cc6c0ce69b"
@@ -116,11 +117,6 @@ class StrandsAgentsSops < Formula
   end
 
   def install
-    # Add `cursor.py` to build target
-    # PR ref: https://github.com/strands-agents/agent-sop/pull/34
-    inreplace "pyproject.toml", "\"strands_agents_sops/mcp.py\",",
-                                "\"strands_agents_sops/cursor.py\",\n    \\0"
-
     virtualenv_install_with_resources
   end
 

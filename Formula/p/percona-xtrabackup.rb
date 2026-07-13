@@ -1,32 +1,32 @@
 class PerconaXtrabackup < Formula
   desc "Open source hot backup tool for InnoDB and XtraDB databases"
   homepage "https://www.percona.com/software/mysql-database/percona-xtrabackup"
-  url "https://downloads.percona.com/downloads/Percona-XtraBackup-8.4/Percona-XtraBackup-8.4.0-5/source/tarball/percona-xtrabackup-8.4.0-5.tar.gz"
-  sha256 "fadcf27efd2a2596f689388659e2ff5c36debcc051a55974ac8bb4a83c015f57"
+  url "https://downloads.percona.com/downloads/Percona-XtraBackup-8.4/Percona-XtraBackup-8.4.0-6/source/tarball/percona-xtrabackup-8.4.0-6.tar.gz"
+  sha256 "e0e886b78d18b34122bd15b2d80f52fc5df2422260edaa3074820902beecd351"
   license "GPL-2.0-only"
-  revision 6
 
   livecheck do
-    url "https://www.percona.com/products-api.php", post_form: {
-      version: "Percona-XtraBackup-#{version.major_minor}",
+    url "https://www.percona.com/wp-admin/admin-ajax.php", post_form: {
+      action:     "percona_downloads",
+      product_id: "Percona-XtraBackup-#{version.major_minor}",
     }
-    regex(/value=["']?[^"' >]*?v?(\d+(?:[.-]\d+)+)[|"' >]/i)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map do |match|
+    regex(/^Percona-XtraBackup-v?(\d+(?:[.-]\d+)+)$/i)
+    strategy :json do |json, regex|
+      json.dig("data", "versions")&.filter_map do |version|
         # Convert a version like 1.2.3-4.0 to 1.2.3-4 (but leave a version like
         # 1.2.3-4.5 as-is).
-        match[0].sub(/(-\d+)\.0$/, '\1')
+        version[regex, 1]&.sub(/(-\d+)\.0$/, '\1')
       end
     end
   end
 
   bottle do
-    sha256 arm64_tahoe:   "517b607598f2db67f95d8a1b841251b32938574447de346dcc56d0b6ee934aa5"
-    sha256 arm64_sequoia: "16ad5d97fdac6e30c79b504f99821f465b9bff20f3b0bb9b4d4433a29bf81c09"
-    sha256 arm64_sonoma:  "13ba437375b31653f72f9498026fd70b055ac27f068c6aea3f8765f93674fe5a"
-    sha256 sonoma:        "7e0d9afd049721c300aae6604dd03e4521b00581d2f97d44a706151c6e68a89c"
-    sha256 arm64_linux:   "f34c280f3d11e399ddf2e697c4d280bb5f5a7d8c26e21a456480ce9175622898"
-    sha256 x86_64_linux:  "a74cd46d3493e260d953d9f7b1178d8d6172cbd878bb53dbf60940c0197bb560"
+    sha256 arm64_tahoe:   "8d1648808974f70924f16a95328468441bbdacd830b1554ffe6f33291a035bad"
+    sha256 arm64_sequoia: "01a75c71fdcc4db6043442076a887508f21bfa45a72e73c62019d31e1e5f032b"
+    sha256 arm64_sonoma:  "1ac86189566d6f85760bfe4d74d79e3b098fabb76b1e83daafb8053710064005"
+    sha256 sonoma:        "c6d16f65abd9651ac7c797a577f992b54d1a2d0f5c86ecd12f2a99a6158cbb8a"
+    sha256 arm64_linux:   "40689bd142a465a7d68f108732425b72780b59230c3ab624eb494987ffb280b7"
+    sha256 x86_64_linux:  "ba0e07f79a2294bb3b7b7538e91bca2f1208791b31481bb11f76749050abb2ad"
   end
 
   depends_on "bison" => :build # needs bison >= 3.0.4

@@ -22,6 +22,7 @@ class Qrupdate < Formula
   patch do
     url "https://gitlab.mpi-magdeburg.mpg.de/koehlerm/qrupdate-ng/-/commit/5ae0333225130c1ec377e9cf10a60ad7c86c058d.diff"
     sha256 "2396f89a55a12e65120358502a450a6752dfa6ca4fc3f00462a0510909eb33db"
+    type :backport
   end
 
   def install

@@ -1,8 +1,8 @@
 class TreeSitter < Formula
   desc "Incremental parsing library"
   homepage "https://tree-sitter.github.io/"
-  url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.26.10.tar.gz"
-  sha256 "450cb85fd1af34111eb162e931e0e9e4d4dbf23fc09b9cb56f6299a1a80483b6"
+  url "https://ghfast.top/https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.26.11.tar.gz"
+  sha256 "1bab01ed21464f3272665b9c60e39ee79f68da1333e80b23f2c9356569d06971"
   license "MIT"
   compatibility_version 1
   head "https://github.com/tree-sitter/tree-sitter.git", branch: "master"
@@ -13,12 +13,12 @@ class TreeSitter < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "12da281322989a74a019c6b9d091b5e96dfd624baf8c413fd58a392acae6359b"
-    sha256 cellar: :any, arm64_sequoia: "5d0949f138dcaefbfb1a53fa4ff792593afaafed90fdc43c08e626ddf4c8ee11"
-    sha256 cellar: :any, arm64_sonoma:  "de259b490a30662ad15596333d8993443b95a56a68a997cf4517abda6c07492a"
-    sha256 cellar: :any, sonoma:        "272f5482cbd015087b0188c2c9a87326bb81401c3de52f57e9a0ef664e2d9fc8"
-    sha256 cellar: :any, arm64_linux:   "86412764df701a4718506ad51eaccab1422cc72cca5b12a23ff6ab49cc565a66"
-    sha256 cellar: :any, x86_64_linux:  "5641cb09c3d737be20b7900b5901f89d8098754a8a8b502b8063f3164fa755a1"
+    sha256 cellar: :any, arm64_tahoe:   "137a01078d02208df01f6dd460ae2a1765b54a614e2b0103200225959a0a0659"
+    sha256 cellar: :any, arm64_sequoia: "ceb2da3c4a3fab204a477f19e6315d86d8aab6a39a264bb76ec4a02c82f542be"
+    sha256 cellar: :any, arm64_sonoma:  "5276154fbf0bfab19c9f9119a5fedf160a2609daa26eb9ea94aacfc634c7b91a"
+    sha256 cellar: :any, sonoma:        "76999dc6703c3ce0ef21bd049ce4d315ef4eea0de4eba0cda5c138d87a1a906b"
+    sha256 cellar: :any, arm64_linux:   "6bf6ad4f1b4ce6945bbef8f727c7fc6e0af3772dfd93538b3894a7f8042d6f90"
+    sha256 cellar: :any, x86_64_linux:  "1edf8e3292e58c62736a64d7bb2e9ab5ece996b7668e8584bc32528ec068ff21"
   end
 
   def install

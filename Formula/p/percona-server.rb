@@ -1,32 +1,32 @@
 class PerconaServer < Formula
   desc "Drop-in MySQL replacement"
   homepage "https://www.percona.com"
-  url "https://downloads.percona.com/downloads/Percona-Server-8.4/Percona-Server-8.4.8-8/source/tarball/percona-server-8.4.8-8.tar.gz"
-  sha256 "8ec19aa2fcb714d06ba6b0b6ed1edc3687c06664e3a922b6d54eb09fa4c48810"
+  url "https://downloads.percona.com/downloads/Percona-Server-8.4/Percona-Server-8.4.10-10/source/tarball/percona-server-8.4.10-10.tar.gz"
+  sha256 "2231de7e561cdc031dea13570c461e8179b5e308f2b7d857de0215b4e4336ae5"
   license "BSD-3-Clause"
-  revision 3
 
   livecheck do
-    url "https://www.percona.com/products-api.php", post_form: {
-      version: "Percona-Server-#{version.major_minor}",
+    url "https://www.percona.com/wp-admin/admin-ajax.php", post_form: {
+      action:     "percona_downloads",
+      product_id: "Percona-Server-#{version.major_minor}",
     }
-    regex(/value=["']?[^"' >]*?v?(\d+(?:[.-]\d+)+)[|"' >]/i)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map do |match|
+    regex(/^Percona-Server-v?(\d+(?:[.-]\d+)+)$/i)
+    strategy :json do |json, regex|
+      json.dig("data", "versions")&.filter_map do |version|
         # Convert a version like 1.2.3-4.0 to 1.2.3-4 (but leave a version like
         # 1.2.3-4.5 as-is).
-        match[0].sub(/(-\d+)\.0$/, '\1')
+        version[regex, 1]&.sub(/(-\d+)\.0$/, '\1')
       end
     end
   end
 
   bottle do
-    sha256 arm64_tahoe:   "6f5f6f55536479e60d81c147f107187bcd77741f4887f31218421552a7774ee5"
-    sha256 arm64_sequoia: "ab7b4c87783bd115651f282f5d1bcc5bc355c729eb8ceaeb74142bec5fc89c10"
-    sha256 arm64_sonoma:  "43be1b41ebab503faaf2c846ae9a2fc3651bdd26d0c4d7929f385c262ac3dd12"
-    sha256 sonoma:        "43143a9d4b57db76b9a3758123b8fd3e7c31b6545af9c980e397a34a9b232a64"
-    sha256 arm64_linux:   "2a59a9343931eb32ab3f5496ad1132c091fb2788a0810564f0b87e9f7dc13b19"
-    sha256 x86_64_linux:  "98d821b0843bde7185a7b4b9f2defee7ffd7cc6bdb3c261f2f1f7fd5dcd6abcc"
+    sha256 arm64_tahoe:   "14de214a9d4960059849009a1264dcc162be6624fc7d0cf21fbb9772979d769c"
+    sha256 arm64_sequoia: "e412f9d34295b15c8775f818e6328a76a94ee3d4a125ddeb9ec26348cdba4cc4"
+    sha256 arm64_sonoma:  "43624745af24e64d2ac4b6627a5dbc40e901ed6cd8750fab99afef371adf8695"
+    sha256 sonoma:        "2ec52c9188fb501b0658a6a3a488a64192a0fd604b98ff255d1d44dc60aa5d32"
+    sha256 arm64_linux:   "f962497096292fbc1daf58c9840fc7f09ce3534a57b8c9908828ff29605a9ffb"
+    sha256 x86_64_linux:  "31ede6c5e789e19db715c2cd9bf3c23a6e6e6cfd18965af174787116e064acfb"
   end
 
   depends_on "bison" => :build

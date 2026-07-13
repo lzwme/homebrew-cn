@@ -12,6 +12,7 @@ class Sapling < Formula
     patch do
       url "https://github.com/facebook/sapling/commit/3b640b74fe351c80d60954c8ea611d4b354187a4.patch?full_index=1"
       sha256 "4d85e880b1455ebde41d0419f952572e6a71ddb772f4ea594e9abaf80802b4e6"
+      type :backport
     end
   end
 

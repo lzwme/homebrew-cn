@@ -1,18 +1,18 @@
 class LeafMd < Formula
   desc "Terminal Markdown previewer with a GUI-like experience"
   homepage "https://leaf.rivolink.mg/"
-  url "https://ghfast.top/https://github.com/RivoLink/leaf/archive/refs/tags/1.26.0.tar.gz"
-  sha256 "0c81600f49ed1cf306afa52be5e6c95bd7906e0a8554e00959287fd7a183b421"
+  url "https://ghfast.top/https://github.com/RivoLink/leaf/archive/refs/tags/1.26.1.tar.gz"
+  sha256 "fcff13393d749efe738688d1a31064081957e5e8712a1a883d897d3c29959c63"
   license "MIT"
   head "https://github.com/RivoLink/leaf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70cc550d506372e6e3ead0bd729eabc6cd33a456d32675375e44c710e382fe8c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cafbd6cdfa236c18a04496376fea81e9bcb87b95db3401bd8e7fad52ed82bf0a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f496f4ace206db9a6959c185856900f625e0768aefa27346f8b5aea630ee060"
-    sha256 cellar: :any_skip_relocation, sonoma:        "14f14771e9097057fbddfacfaacac2f8568153540cd7807085b940aa45bb8949"
-    sha256 cellar: :any,                 arm64_linux:   "28d8fd16f8d25a7a5a02fca655cab3198f72ff9d57a2f794b425c0186e5359d2"
-    sha256 cellar: :any,                 x86_64_linux:  "26c3b15899dd41b04275728ade759af774fbae0fa27d1e296a876b9d38ba6374"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "87a14da4a17e9244cecb042be94350ce09fa8921d352fc10d2873e773cea9836"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b5cb56c443be0f40db3d092e28a45c80b14693d3ff7acd907dedb334eef8930"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28025e1c1a1f6c0f1ef2d3da833b8a31cf2f52f30cd9b7855fae845aa30f0605"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f8f61bdf15c94b0b2affdfdf4ff09f5d9bb45093664f752da935f68a8fbb2e23"
+    sha256 cellar: :any,                 arm64_linux:   "51407b5b594e2966f5e153155731d61cfb44f2a161bbfb206e749173a134fd18"
+    sha256 cellar: :any,                 x86_64_linux:  "5d1c73fcd81156c44bea9f897567b5320aa5fe3b5149d946a687b426d12ac49e"
   end
 
   depends_on "rust" => :build
