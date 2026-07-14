@@ -3,12 +3,13 @@ class SqliteUtils < Formula
 
   desc "CLI utility for manipulating SQLite databases"
   homepage "https://sqlite-utils.datasette.io/"
-  url "https://files.pythonhosted.org/packages/7d/8e/0e2fa87b197b3d0f8dd57856c07da77fa0c7130aaa894ee9d330c715f37c/sqlite_utils-4.0.tar.gz"
-  sha256 "cea711807c2bbc18829ed642ae19a23a80e853f4136c4d2a28078a6117ad9426"
+  url "https://files.pythonhosted.org/packages/83/c1/fa8563039ec30b5cc6a532271e8cf90da37e4c649a3ad80b49fb6a39023e/sqlite_utils-4.1.1.tar.gz"
+  sha256 "cf97e620b3940cd541cae9117cc24af961a6da426189fdb662f20f1950ba1f49"
   license "Apache-2.0"
+  head "https://github.com/simonw/sqlite-utils.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "eacfb869a601becd17c6f07e7e14a3f0ab5bace5bd57da192b2ed3ee4e7bc052"
+    sha256 cellar: :any_skip_relocation, all: "0588c46da4e3c57b3cf21f6a67f440d00eb5fb5d995f2b43e346c3919c057fdf"
   end
 
   depends_on "python@3.14"
@@ -49,13 +50,12 @@ class SqliteUtils < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources
 
     # Ensure uniform bottles: upstream hardcodes both /opt/homebrew (ARM)
     # and /usr/local (Intel) in SPATIALITE_PATHS; normalise to HOMEBREW_PREFIX
     # so all platforms produce identical output after relocation.
-    site_packages = libexec/Language::Python.site_packages("python3")
-    inreplace site_packages/"sqlite_utils/utils.py" do |s|
+    inreplace venv.site_packages/"sqlite_utils/utils.py" do |s|
       s.gsub!("/opt/homebrew", HOMEBREW_PREFIX)
       s.gsub!("/usr/local", HOMEBREW_PREFIX)
     end

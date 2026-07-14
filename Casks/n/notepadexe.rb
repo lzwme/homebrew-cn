@@ -1,6 +1,6 @@
 cask "notepadexe" do
-  version "1.5.0"
-  sha256 "36aa2b22d7a08338e480dfe4f84b2032ce5243458ae68046a060f1bcc0d1b837"
+  version "1.5.2"
+  sha256 "f28a306b89fa29c764d2f5e004d0333ca460cd07fe555146500d54ca9f99ed6c"
 
   url "https://ghfast.top/https://github.com/notepadhq/notepadexe-public/releases/download/#{version}/Notepad.zip",
       verified: "github.com/notepadhq/notepadexe-public/releases/download/"

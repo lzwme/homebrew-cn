@@ -5,6 +5,7 @@ class RocqElpi < Formula
   url "https://ghfast.top/https://github.com/LPCIC/coq-elpi/releases/download/v3.4.0/rocq-elpi-3.4.0.tar.gz"
   sha256 "fe81750ca2e5f5976f16e658979a133cfaa2011ae5591e552a1222ceaacaaf06"
   license "LGPL-2.1-or-later"
+  revision 1
   compatibility_version 2
 
   livecheck do
@@ -13,12 +14,12 @@ class RocqElpi < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "be46c35509fb00d34ac6281bb2f92b3b23976b245f6be9b0d6e52747ddb73fa0"
-    sha256 arm64_sequoia: "6fe13be6129aec70c23503d8c38c6239ca3ad10e21089f0a7e06c6a70f19fe0e"
-    sha256 arm64_sonoma:  "a0e51fbf32f3a31fa1dbf775b1d9624d1cb758bb967aa6e99b2db163a1115d71"
-    sha256 sonoma:        "c0bc1bd3ac36f0328e2cc0177912705c556590ef24feb63bc7b24c1855367317"
-    sha256 arm64_linux:   "689571286f302ffed321656f9873de1fe385a4c977e0bc1c0abc8cfd829300f7"
-    sha256 x86_64_linux:  "562101224fde20fa87e828d9fc0c848ab4864bfef3ef5042baf6c20c0ceef9de"
+    sha256 arm64_tahoe:   "e22b2c7d81a1ed30f614617ca71191b350601ab0021f3d606fc9954f097d98b6"
+    sha256 arm64_sequoia: "e65ad42499e74fdd7ac0403f74d6ee8091e5658d9e9df9598500030d2c3e54e9"
+    sha256 arm64_sonoma:  "a712db4a0dade91fb8b3ab75023039eea4494962a3e23c1fa1c3339f1884d1c4"
+    sha256 sonoma:        "050510bbd4de6dd6a4d40b83c36a12468b909dee2020afa201329b7ed64a7c3a"
+    sha256 arm64_linux:   "5fe352222f9b28770577fbe6050ed1ef77c89d4f3911ac39dfe8bd70fd5f56ba"
+    sha256 x86_64_linux:  "261f2351f4d99f767563d14a142317e7241519ed0292726e76201319796527c1"
   end
 
   depends_on "dune" => :build
@@ -57,6 +58,20 @@ class RocqElpi < Formula
     libexec.install_symlink libexec.glob("ocaml-system/*")
 
     ENV["OCAMLFIND_CONF"] = libexec/"lib/findlib.conf"
+
+    # dune 3.24 replaced the Coq build language with the Rocq build language.
+    dune_files = buildpath.glob("**/dune") << (buildpath/"dune-project")
+    {
+      "(lang dune 3.13)" => "(lang dune 3.24)",
+      "(using coq 0.8)"  => "(using rocq 0.11)",
+      "(coq (flags"      => "(rocq (flags",
+      "coq.theory"       => "rocq.theory",
+      "coq.pp"           => "rocq.pp",
+      "%{coq:"           => "%{rocq:",
+    }.each do |before, after|
+      inreplace dune_files.select { |f| f.read.include?(before) }, before, after
+    end
+
     system "dune", "build", "-p", name, "@install"
     system "dune", "install", name, "--prefix=#{prefix}",
                                     "--libdir=#{lib}/ocaml",

@@ -50,14 +50,13 @@ class Pipx < Formula
               "DEFAULT_PYTHON = _get_sys_executable()",
               "DEFAULT_PYTHON = '#{python3.opt_libexec/"bin/python"}'"
 
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources
 
     generate_completions_from_executable(libexec/"bin/register-python-argcomplete", "pipx",
                                          shell_parameter_format: :arg)
 
     # Build an `:all` bottle by replacing comments
-    site_packages = libexec/Language::Python.site_packages("python3")
-    file = site_packages/"argcomplete-#{resource("argcomplete").version}.dist-info/METADATA"
+    file = venv.site_packages.glob("argcomplete-*.dist-info/METADATA")
     inreplace file, "/opt/homebrew/bin/bash", "$HOMEBREW_PREFIX/bin/bash"
   end
 

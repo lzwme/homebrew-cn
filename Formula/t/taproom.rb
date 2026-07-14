@@ -1,18 +1,28 @@
 class Taproom < Formula
   desc "Interactive TUI for Homebrew"
   homepage "https://github.com/hzqtc/taproom"
-  url "https://ghfast.top/https://github.com/hzqtc/taproom/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "80609d839488c34c8bf870b70430955fa600266fda16298c79a6c48c529404f0"
   license "MIT"
   head "https://github.com/hzqtc/taproom.git", branch: "main"
 
+  stable do
+    url "https://ghfast.top/https://github.com/hzqtc/taproom/archive/refs/tags/v0.6.2.tar.gz"
+    sha256 "85ee7660bb76ed9277573d2c856bcfebd3181b919edf3862e7f9e15d32097088"
+
+    # Fix version number
+    patch do
+      url "https://github.com/hzqtc/taproom/commit/a26afac788a5122356bf9c07c3c3d04fabae76d3.patch?full_index=1"
+      sha256 "c9c5684f557ba7b3a5db9aee5b7c4a53bc41ac98f713aecd96afebd19ce1066f"
+      type :backport
+    end
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13a4c21017c8cd7898958b03078c993e5f4275b18148e7f182ed224c41f4885e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13a4c21017c8cd7898958b03078c993e5f4275b18148e7f182ed224c41f4885e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13a4c21017c8cd7898958b03078c993e5f4275b18148e7f182ed224c41f4885e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "57bdb6268f1817d02feceb42f9c32f4ff03513089f8219d1e1dc0f6de859c22f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b62900cb76de254441da1a112fcf62716aa017f45648b43c3f84ec3f465e5a68"
-    sha256 cellar: :any,                 x86_64_linux:  "cd176204ae635eb6c73943610ef17f5edc46baea70fb74107cc39f3d2697945b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78a73070fe3f2815fd0e32ac46190f259fd3820c6da4fdab7d39d757b7e47793"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78a73070fe3f2815fd0e32ac46190f259fd3820c6da4fdab7d39d757b7e47793"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78a73070fe3f2815fd0e32ac46190f259fd3820c6da4fdab7d39d757b7e47793"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aceb12e9b3656527606e8cef30da476be4770a96c6d9db135938fbd6657c0882"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9c5c7a64b894f51329af881309d1d4df87d01288350677c3a340e30b8cb9a41"
+    sha256 cellar: :any,                 x86_64_linux:  "d7a4da4465783d5db774eae5af6b74c6f8d7abb63a7d93f0f966df950f5351a6"
   end
 
   depends_on "go" => :build

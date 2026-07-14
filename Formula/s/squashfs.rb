@@ -35,10 +35,11 @@ class Squashfs < Formula
   end
 
   # Fix Darwin `struct stat` field selection (`st_atimespec` vs `st_atim`).
-  # Upstream PR ref: https://github.com/plougher/squashfs-tools/pull/356
   patch do
     url "https://github.com/plougher/squashfs-tools/commit/f88f4a659d6ab432a57e90fe2f6191149c6b343f.patch?full_index=1"
     sha256 "3f3f568514c57fd50f508fef67e0e293a9668067801f42d4471b429a79bd1575"
+    type :backport
+    resolves "https://github.com/plougher/squashfs-tools/pull/356"
   end
 
   def install

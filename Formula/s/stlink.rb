@@ -7,10 +7,11 @@ class Stlink < Formula
     url "https://ghfast.top/https://github.com/stlink-org/stlink/archive/refs/tags/v1.8.0.tar.gz"
     sha256 "cff760b5c212c2cc480f705b9ca7f3828d6b9c267950c6a547002cd0a1f5f6ac"
 
-    # upstream PR ref, https://github.com/stlink-org/stlink/pull/1373
     patch do
       url "https://github.com/stlink-org/stlink/commit/4eafbb29d106b32221c8d3b375b31d78f07de182.patch?full_index=1"
       sha256 "a745b3f10eb9c831838afc53e94038f61b29cdbe70970d3417d15f0db5301791"
+      type :unofficial
+      resolves "https://github.com/stlink-org/stlink/pull/1373"
     end
   end
 
@@ -31,6 +32,7 @@ class Stlink < Formula
     patch do
       url "https://github.com/stlink-org/stlink/commit/45f1c2ca0032afdbb6b71e1e93527310ae429b0e.patch?full_index=1"
       sha256 "810d99f9411837754d9ec9f76ba576e1404b65d94fa98f7a24b09e5f5a914907"
+      type :unofficial
     end
   end
 
@@ -41,6 +43,8 @@ class Stlink < Formula
   patch do
     url "https://github.com/stlink-org/stlink/commit/d742e752d896c0f8d4a61b282457401f7a681b16.patch?full_index=1"
     sha256 "1f86ccdcb6bbf2d8cf53d6c96e76c1f11aef83c9de0e8dbe9b8d5cafab02c28d"
+    type :unofficial
+    resolves "https://github.com/stlink-org/stlink/pull/1373"
   end
 
   def install

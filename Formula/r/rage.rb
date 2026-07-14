@@ -1,8 +1,8 @@
 class Rage < Formula
   desc "Simple, modern, secure file encryption"
   homepage "https://str4d.xyz/rage"
-  url "https://ghfast.top/https://github.com/str4d/rage/archive/refs/tags/v0.11.2.tar.gz"
-  sha256 "a8e5c57f131683f86957af7fddeccf61a3882383dd24e752bab3855f570c086c"
+  url "https://ghfast.top/https://github.com/str4d/rage/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "fb5255ff9faa944a15a128f812499cd5c08e6155790e284af34c914cbc3d0103"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/str4d/rage.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Rage < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68d6140c371a9fead1ea6af7c6fd6a9315340c3c551d2173d7b96d6f1fc1030c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d0f85836dee6caba6c9b6a0010b2f050b453b573d12f7857ccf662b12ec0bf8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4596d2bd7ad27850df253075e440406a798301e0ee3f385dc694e39eaa83e5f5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4c674f10a48f3453bff0a95a15f74dee1bb69a43f659b339d12948934dc528fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc6577de7682491deffd989040906da668282ef05a4cf9c01e3a6243390255c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38cbf2240f62ed2335aac458a1a8f41bcfa7edb408678688ee2dcf72711791de"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a541458898d1ec89d8b61cd6465a068e92c5aa459a818c68378b299533b19caa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d94f8da0e758d8e122e299f8993aeedfa0447321dc7d49be31b37028a2de101"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "479eb0f4a6e6539043fa091b5c84915ff8019cd8cead8c9710f60a245a1b8029"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c261acbf15d358266a29802d2dff36dd23a2f85327a5b1fd97138526680243b2"
+    sha256 cellar: :any,                 arm64_linux:   "4a8649a78795a902ce1d61991b4d19fce5f2fb5bb291c58f59b4c21d86d07622"
+    sha256 cellar: :any,                 x86_64_linux:  "65b5fa946039e2ce122c24e43df8e44f8b5c77d84082d803330d7a7dc40151b1"
   end
 
   depends_on "rust" => :build

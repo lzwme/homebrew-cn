@@ -16,12 +16,11 @@ class PortableZlib < PortableFormula
 
   # https://zlib.net/zlib_how.html
   resource "test_artifact" do
-    url "https://zlib.net/zpipe.c"
-    version "1.5"
+    url "https://ghfast.top/https://raw.githubusercontent.com/madler/zlib/refs/tags/v1.3.2/examples/zpipe.c"
     sha256 "e79717cefd20043fb78d730fd3b9d9cdf8f4642307fc001879dc82ddb468509f"
 
     livecheck do
-      regex(/Version\s+(\d+(?:\.\d+)+)\b/i)
+      formula :parent
     end
   end
 

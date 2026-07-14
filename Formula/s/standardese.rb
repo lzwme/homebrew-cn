@@ -13,23 +13,27 @@ class Standardese < Formula
         revision: "0b23537e235690e01ba7f8362a22d45125e7b675"
 
     # Fix build with new GCC.
-    # https://github.com/standardese/standardese/pull/233
     patch do
       url "https://github.com/standardese/standardese/commit/15e05be2301fe43d1e209b2f749c99a95c356e04.patch?full_index=1"
       sha256 "e5f03ea321572dd52b9241c2a01838dfe7e6df7e363a8d19bfeac5861baf5d3f"
+      type :backport
+      resolves "https://github.com/standardese/standardese/pull/233"
     end
 
     # Fix build with `boost` 1.85.0. Remove in the next release.
-    # PR ref: https://github.com/standardese/standardese/pull/247
     patch do
       url "https://github.com/standardese/standardese/commit/0593c8fbaee48ffac022e2ea95865d808cc149ce.patch?full_index=1"
       sha256 "4b204256b97a4058b88c7b2350941d2c59a6c38aeb91e4112e1d267fdd092d03"
+      type :backport
+      resolves "https://github.com/standardese/standardese/pull/247"
     end
 
     # Fix build with Boost 1.89.0, pr ref: https://github.com/standardese/standardese/pull/249
     patch do
       url "https://github.com/standardese/standardese/commit/d0c2073f9f13d26abd1be872b809e089ed20c9f6.patch?full_index=1"
       sha256 "506c3cd1d2654aee37e200c57b9095c9bbad09de1d7a27efc545ea7c092cd4f0"
+      type :backport
+      resolves "https://github.com/standardese/standardese/pull/249"
     end
   end
 
@@ -56,6 +60,7 @@ class Standardese < Formula
     patch do
       url "https://github.com/foonathan/type_safe/commit/cdf334cd8e5fcb5e21ab470decdfcbd190ef7347.patch?full_index=1"
       sha256 "f9ab60828058f133c726f77ce8358714c6aa994c9cce29b703cf7a5fbdb2ae00"
+      type :backport
     end
   end
 

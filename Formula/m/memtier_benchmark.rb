@@ -1,8 +1,8 @@
 class MemtierBenchmark < Formula
   desc "Redis and Memcache traffic generation and benchmarking tool"
   homepage "https://github.com/redis/memtier_benchmark"
-  url "https://ghfast.top/https://github.com/redis/memtier_benchmark/archive/refs/tags/2.4.4.tar.gz"
-  sha256 "d9bb75d4b7432ff0602e0e5d84078928a2305cba9e11c46a7d191cbbaccf963e"
+  url "https://ghfast.top/https://github.com/redis/memtier_benchmark/archive/refs/tags/2.5.0.tar.gz"
+  sha256 "1cdda9df157d27889fab283641f8c12e019663f2447c842fbed36f57ac3336a4"
   # https://github.com/redis/memtier_benchmark/blob/master/debian/copyright
   license all_of: [
     "GPL-2.0-or-later" => { with: "cryptsetup-OpenSSL-exception" },
@@ -10,12 +10,12 @@ class MemtierBenchmark < Formula
   ]
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e5ab9de8c823565c2734ddb6508bf6315349a269c6747eb0a70db59d7a0b40e4"
-    sha256 cellar: :any, arm64_sequoia: "f3f62b509f5f8d800613a2ff6535283b73f8f38a15ff151c357021cdf031c9e6"
-    sha256 cellar: :any, arm64_sonoma:  "a8d1593d04b33475d9dc82bdf2d6c2a0f8441ccb35afc53b4cfa42f30816947c"
-    sha256 cellar: :any, sonoma:        "7ee4980b4ce4361dcf4c6b964760e70878e2438d817023f5089cea291e294048"
-    sha256 cellar: :any, arm64_linux:   "9527655d83e43c64617c8e3a3201f90815868247d2c0f093626e009492573528"
-    sha256 cellar: :any, x86_64_linux:  "08f38885aff448827bd5670052b9fc2d659e969e0289e06702831e17b307df24"
+    sha256 cellar: :any, arm64_tahoe:   "5fb86a156519b27a05c6d0b5bb8080372f7cb74f1c9f106243140b57ded864fd"
+    sha256 cellar: :any, arm64_sequoia: "283e8390c1296a33473d60df1dcdc168b901922e02b2823bed32926998ca37ed"
+    sha256 cellar: :any, arm64_sonoma:  "8131029491bc388bfea31204f8d89bbdc97eaa8dfde206be05a52f0573211147"
+    sha256 cellar: :any, sonoma:        "58115dde32a761aabaef9f8503928463000c89e409415dd183efad8871ba28dc"
+    sha256 cellar: :any, arm64_linux:   "875bbd82f640aa52f8089fc166709218fa48abe01fb393db5799bdda2923b225"
+    sha256 cellar: :any, x86_64_linux:  "f32dff3c46fc1e7c0c33c36bdb37d137f796cc7658732553d72e148d1e4dd728"
   end
 
   depends_on "autoconf" => :build

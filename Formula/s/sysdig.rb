@@ -52,10 +52,11 @@ class Sysdig < Formula
   end
 
   # Fix inclusion of removed `zlib.cmake` module
-  # https://github.com/draios/sysdig/pull/2176
   patch do
     url "https://github.com/draios/sysdig/commit/1f4565219b74c8b8ff9084425e24c50b43ec3d7b.patch?full_index=1"
     sha256 "6002ab9759c08e79d6382b48e43f47e70cf07141981be5a1717bdc4ad503402a"
+    type :unofficial
+    resolves "https://github.com/draios/sysdig/pull/2176"
   end
 
   def install

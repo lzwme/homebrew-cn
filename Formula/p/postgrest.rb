@@ -1,8 +1,8 @@
 class Postgrest < Formula
   desc "Serves a fully RESTful API from any existing PostgreSQL database"
   homepage "https://github.com/PostgREST/postgrest"
-  url "https://ghfast.top/https://github.com/PostgREST/postgrest/archive/refs/tags/v14.14.tar.gz"
-  sha256 "76dc4291759cee9397fc2e88534d2e6cf6bbeda43819ea2eb38c771983c59054"
+  url "https://ghfast.top/https://github.com/PostgREST/postgrest/archive/refs/tags/v14.15.tar.gz"
+  sha256 "411af89ada07bc5ba84c5690d533eb13d276b12e7ed1b7e9717cab14fccef1bd"
   license "MIT"
   head "https://github.com/PostgREST/postgrest.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Postgrest < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d2f240df7bfcf13f0897e5899853c0a0ff0840004c1a269ea076198b6e77a8de"
-    sha256 cellar: :any, arm64_sequoia: "9d95d67bf5307be3db95b67910e35e234cba49f95d8f50993f7589d4100e0e1a"
-    sha256 cellar: :any, arm64_sonoma:  "5b88ae647c20cdd4423988a5f7f2dc1fbe99274bab5b336f2e6a8f17758fbd14"
-    sha256 cellar: :any, sonoma:        "292ac09a09485593842f6fcc2e34ea07cbf5197d7f1dd896080751420692a886"
-    sha256 cellar: :any, arm64_linux:   "48b3063810119444562a48fd3a31416dee20cb3c091f06e268527e8da2f73f79"
-    sha256 cellar: :any, x86_64_linux:  "446a3a9063450675a4e62738cc8009025304072f4810892cf4cccb3291f3215b"
+    sha256 cellar: :any, arm64_tahoe:   "5552d48fd0e0454fc5338263d1e42d43c8ae938af8d3a34cf16549304062590d"
+    sha256 cellar: :any, arm64_sequoia: "14807e11600ad1b6650f7d138005f482efa3dd2a536e1b44ce2e75d2ff188e1e"
+    sha256 cellar: :any, arm64_sonoma:  "5801155ceb66f7b125bcd2b6f28790d3f954158a3c68286e6ab2d077bb735750"
+    sha256 cellar: :any, sonoma:        "75d938c35ebaad4e797db82c281fb86c5d6174fd979172fd968366ef0a5c6135"
+    sha256 cellar: :any, arm64_linux:   "e5530f4b070ef023df14ec1ed6f3e4344c750f1f7f585581c838992ca945e424"
+    sha256 cellar: :any, x86_64_linux:  "400c837c06719a054073afa75240e289b903e852c0ec2de2135415c99600b4ad"
   end
 
   depends_on "cabal-install" => :build

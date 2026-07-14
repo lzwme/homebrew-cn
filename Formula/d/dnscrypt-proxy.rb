@@ -1,8 +1,8 @@
 class DnscryptProxy < Formula
   desc "Secure communications between a client and a DNS resolver"
   homepage "https://dnscrypt.info"
-  url "https://ghfast.top/https://github.com/DNSCrypt/dnscrypt-proxy/archive/refs/tags/2.1.16.tar.gz"
-  sha256 "7ba5aa76d3fdc6fbb667689ba13d8ac3e66be27655695a9d412e5ad4afe34f8d"
+  url "https://ghfast.top/https://github.com/DNSCrypt/dnscrypt-proxy/archive/refs/tags/2.1.17.tar.gz"
+  sha256 "06f59c64e2aa6cf7916c335cb57b369ce55e2d6e7fa01803e0da8f6728e3196e"
   license "ISC"
   head "https://github.com/DNSCrypt/dnscrypt-proxy.git", branch: "master"
 
@@ -12,12 +12,12 @@ class DnscryptProxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9778cd4bea93d6e136689a9cb0ade6a8941aa5ff4520a4831fface5938bc1902"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9778cd4bea93d6e136689a9cb0ade6a8941aa5ff4520a4831fface5938bc1902"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9778cd4bea93d6e136689a9cb0ade6a8941aa5ff4520a4831fface5938bc1902"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c9f6b978cf5a942fb1e3a432801e1dae15a3d07ab84b152eb3cdfe9d67b0e6ed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d4156c8c64dab12d46fc1dfc8ffc8ae66f20a77a84184f5c8d9079a856c70c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b01ab18cc5e830362e86696b912314f81f8957efc460804fc15e78eb8bf5f3d2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "178eda8fe9fe82a7b461a9f0a292ca05eebe2316097db215d1e8f4f9f7aaac24"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "178eda8fe9fe82a7b461a9f0a292ca05eebe2316097db215d1e8f4f9f7aaac24"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "178eda8fe9fe82a7b461a9f0a292ca05eebe2316097db215d1e8f4f9f7aaac24"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d05a90062a1627ad2d53d366e5c450d2433e4478926ff65f7cb22fc9920b5ecf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d97fdc1a45c69402870e39c283b0b43bab46328f72544348a088df87d7a7dd49"
+    sha256 cellar: :any,                 x86_64_linux:  "008827e45eb56c6108f6bef01abee02be6e5744fadc8c7a3ee20f8ac5a0bacec"
   end
 
   depends_on "go" => :build

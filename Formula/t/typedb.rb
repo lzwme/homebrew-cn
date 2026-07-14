@@ -1,17 +1,17 @@
 class Typedb < Formula
   desc "Strongly-typed database with a rich and logical type system"
   homepage "https://typedb.com/"
-  url "https://ghfast.top/https://github.com/typedb/typedb/archive/refs/tags/3.12.0.tar.gz"
-  sha256 "c414a4d5f79fdd176648f0a9ef458d93670a75da02fefe124df1fc1a7e85dbf9"
+  url "https://ghfast.top/https://github.com/typedb/typedb/archive/refs/tags/3.12.1.tar.gz"
+  sha256 "eb66c19acd43851f9ac8b07a8d06622967c8f4351baafe5d121c6041464a361f"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e81274debb1cbeac11716913de13ddb433ac4a9edeb1adfab0775cda99abf662"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74f40eb3fdffb103f39f429b753bb5c4733a892dcfa82f43629c9d38dab33e81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8571c462484e93e633bb2e40525a016ab0f51a21c28dcb0a3fd9630bc4b5258"
-    sha256 cellar: :any_skip_relocation, sonoma:        "603e6b8894252584ea9a02ac0764fae04ff50d72bbce1d0357b3b4656e8a3ceb"
-    sha256 cellar: :any,                 arm64_linux:   "5f59933d3e621c9cea15bbdfe07392671aa7462e78fd1b617ca132da19b9f9de"
-    sha256 cellar: :any,                 x86_64_linux:  "8e0cbf937a83052fbff1a915af2856898440dabbda949e1bc5df136e1a34ada4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0935d33c703291458e9439422e372dce46a20b8858ea333fed8e78b62f717f9a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6786f4ff2592f38bd5e256cb7ac0d4232e39e141be43265f1398b98897ab74a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb8f424c26fb1c4d038aa4317bcf53ea011632245e613867968ae55d5c935e99"
+    sha256 cellar: :any_skip_relocation, sonoma:        "63e71527daf0b08321796af6728d4e210f2e97e5dc0507e3beb74a4b95f49e52"
+    sha256 cellar: :any,                 arm64_linux:   "bc63a2519f74b1ebcad40bdfc1189dc0d2d2c4a63451899c05a45c1ea3ff41dd"
+    sha256 cellar: :any,                 x86_64_linux:  "b549ab6b042596e75752411caf78019dea68485f07fe2706c767834c95140dac"
   end
 
   depends_on "protobuf" => :build

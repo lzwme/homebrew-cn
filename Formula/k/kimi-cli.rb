@@ -822,12 +822,12 @@ class KimiCli < Formula
     else
       resources.filter_map { |r| r.name if r.name.start_with?("pyobjc") }
     end
-    virtualenv_install_with_resources(without:)
+    venv = virtualenv_install_with_resources(without:)
 
     generate_completions_from_executable(bin/"kimi", shell_parameter_format: :typer)
 
     # FIXME: try building app from source. Currently removing as it is pre-built app. Also lacks arm64 support
-    rm_r libexec/Language::Python.site_packages("python3.14")/"notifypy/os_notifiers/binaries" if OS.mac?
+    rm_r venv.site_packages/"notifypy/os_notifiers/binaries" if OS.mac?
   end
 
   test do

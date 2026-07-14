@@ -25,10 +25,11 @@ class Spek < Formula
   end
 
   # Apply commit from open PR for FFmpeg 8 support similar to FreeBSD and NixOS.
-  # PR ref: https://github.com/alexkay/spek/pull/338
   patch do
     url "https://github.com/alexkay/spek/commit/df8402575f1550d79c751051e9006fd3b7fa0fe0.patch?full_index=1"
     sha256 "1ec33c6a2c0dd6d445368e233a3c0855c4607af902e2ca5dd48b2472df7df797"
+    type :unofficial
+    resolves "https://github.com/alexkay/spek/pull/338"
   end
 
   def install

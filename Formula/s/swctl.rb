@@ -12,6 +12,8 @@ class Swctl < Formula
     patch do
       url "https://github.com/apache/skywalking-cli/commit/3f9cf0e74a97f16d8da48ccea49155fd45f2d160.patch?full_index=1"
       sha256 "dd17f332f86401ef4505ec7beb3f8863f13146718d8bdcf92d2cc2cdc712b0ec"
+      type :backport
+      resolves "https://github.com/apache/skywalking-cli/pull/207"
     end
   end
 

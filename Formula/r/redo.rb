@@ -50,7 +50,7 @@ class Redo < Formula
     venv.pip_install resources
 
     # Set PYTHONPATH rather than prepending PATH with venv as shebangs are set to detected python.
-    ENV.prepend_path "PYTHONPATH", buildpath/"venv"/Language::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", venv.site_packages
 
     ENV["DESTDIR"] = ""
     ENV["PREFIX"] = prefix

@@ -75,17 +75,23 @@ class SpiceGtk < Formula
   patch do
     url "https://gitlab.freedesktop.org/spice/spice-gtk/-/commit/1511f0ad5ea67b4657540c631e3a8c959bb8d578.diff"
     sha256 "67c2b1d9c689dbb8eb3ed7c92996cf8c9d083d51050883593ee488957ad2a083"
+    type :backport
+    resolves "https://gitlab.freedesktop.org/spice/spice-gtk/-/merge_requests/119"
   end
 
   # Backport six removal
   patch do
     url "https://gitlab.freedesktop.org/spice/spice-common/-/commit/91fc091358ac4906a05b68d70e9db94082c0749f.diff"
     sha256 "dd5ef8701bc1d97c0ff20af9ff95dffc660a5e1a3a8a0a92cd4d643d0a3553ed"
+    type :backport
+    resolves "https://gitlab.freedesktop.org/spice/spice-common/-/merge_requests/63"
     directory "subprojects/spice-common"
   end
   patch do
     url "https://gitlab.freedesktop.org/spice/spice-common/-/commit/29dacb5f53f5183fb089a3fb02d081dd08bde8a1.diff"
     sha256 "3c8a0adaf4b088986bef7541ffef399c7652969c5584c4a4c4055f4988ef0f7a"
+    type :backport
+    resolves "https://gitlab.freedesktop.org/spice/spice-common/-/merge_requests/63"
     directory "subprojects/spice-common"
   end
 

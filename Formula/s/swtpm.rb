@@ -41,6 +41,8 @@ class Swtpm < Formula
   patch do
     url "https://github.com/stefanberger/swtpm/commit/86c6046cbe0e913e884683d20acec3949a4a1220.patch?full_index=1"
     sha256 "8f0c469d178004128c97645f4bb849355473ad0181d6063c6dc5ba1565b716a0"
+    type :backport
+    resolves "https://github.com/stefanberger/swtpm/pull/1094"
   end
 
   def install

@@ -593,6 +593,7 @@ Homebrew-homebrew-core/Formula/b/biodiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/biome.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bioperl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/biosig.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/bismark.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bison.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bit-git.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bit.rb, Homebrew/homebrew-core, 0
@@ -686,6 +687,7 @@ Homebrew-homebrew-core/Formula/b/bpm-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bpmnlint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bpython.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bpytop.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bracken.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brag.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/braid.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brainfuck.rb, Homebrew/homebrew-core, 1
@@ -1413,6 +1415,7 @@ Homebrew-homebrew-core/Formula/c/cxxtest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cyan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cyclonedx-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cyclonedx-gomod.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/cyclonedx-npm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cyclonedx-python.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cycode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cyctl.rb, Homebrew/homebrew-core, 1
@@ -4920,6 +4923,7 @@ Homebrew-homebrew-core/Formula/m/moreutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/moribito.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/morpheus.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/morse.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mosdepth.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mosh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mosml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mosquitto.rb, Homebrew/homebrew-core, 0
@@ -5920,7 +5924,7 @@ Homebrew-homebrew-core/Formula/p/portable-libxcrypt.rb, Homebrew/homebrew-core, 
 Homebrew-homebrew-core/Formula/p/portable-libyaml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/portable-openssl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/portable-ruby.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/portable-zlib.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/portable-zlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/portablegl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/portal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/portaudio.rb, Homebrew/homebrew-core, 0
@@ -6495,6 +6499,7 @@ Homebrew-homebrew-core/Formula/r/robotfindskitten.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rockcraft.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rocksdb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rocq-elpi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rocq-micromega-plugin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rocq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rofi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rofs-filtered.rb, Homebrew/homebrew-core, 1

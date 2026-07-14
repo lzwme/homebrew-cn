@@ -3,7 +3,6 @@ class Pytorch < Formula
 
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
-  # TODO: Restore pybind11 dependency after https://github.com/pytorch/pytorch/pull/175115
   url "https://ghfast.top/https://github.com/pytorch/pytorch/releases/download/v2.13.0/pytorch-v2.13.0.tar.gz"
   sha256 "66614a19060f69cfd63cd0295f65a1241bd15df2fa65c60ae51066c11c2ce812"
   license "BSD-3-Clause"
@@ -15,12 +14,13 @@ class Pytorch < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c5c70cb3847b0ff2b96eebd980755e2bc172ddc8e58437647e50704b5263fd66"
-    sha256 cellar: :any, arm64_sequoia: "31c3d39eaf089fbbf0051c7ec217a33969d76618e3b3a763a7d4dfbac949c3cf"
-    sha256 cellar: :any, arm64_sonoma:  "bc33d775e4f6dd68b1007020174010198df27482b6a387cf5119586bfa259c08"
-    sha256 cellar: :any, sonoma:        "f9c3bb7f187c23350820ce7e3830d872f5a0e493f9b12ded352c0ab96180ebb7"
-    sha256 cellar: :any, arm64_linux:   "29cdb60e2677a838b7badc90533f17905f8e5f44985a3810a275984ba6b1c959"
-    sha256 cellar: :any, x86_64_linux:  "0cfb0702dd52e74b9f8442fb8889feb592e260cf65259d43061935dda091d218"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "25e7b9db2054ab856a611be7bc92c9dc9989017ea5308061c65ad32d7da85abe"
+    sha256 cellar: :any, arm64_sequoia: "fa10656b31fa89ac047d6915faf4912ee2c16c5ca601bf0ac67eb4bd54b4234a"
+    sha256 cellar: :any, arm64_sonoma:  "dc032af7de599487bc0bd896439703c2c5aaba2f9bb0960e53cbf11e2edcac74"
+    sha256 cellar: :any, sonoma:        "2a0edce86fb281c0e77d854b362a21bd17270c49c928b6789852a706bf3aff4b"
+    sha256 cellar: :any, arm64_linux:   "e8ba6a1ee321e2fe953407ec7e3a911e8d8c8f78f76ac37f418e4a0e7bfeb84e"
+    sha256 cellar: :any, x86_64_linux:  "67305c1a8f374fb8a8e4fbddecb0bd33f4270dc946ce9dda2c280030e63b2cb6"
   end
 
   depends_on "cmake" => :build
@@ -35,7 +35,7 @@ class Pytorch < Formula
   depends_on "onnx"
   depends_on "openblas"
   depends_on "protobuf"
-  # TODO: depends_on "pybind11"
+  depends_on "pybind11"
   depends_on "sleef"
 
   on_macos do
@@ -141,12 +141,12 @@ class Pytorch < Formula
     ENV["USE_OPENMP"] = "ON"
     ENV["USE_SYSTEM_EIGEN_INSTALL"] = "ON"
     ENV["USE_SYSTEM_ONNX"] = "ON"
-    ENV["USE_SYSTEM_PYBIND11"] = "OFF"
+    ENV["USE_SYSTEM_PYBIND11"] = "ON"
     ENV["USE_SYSTEM_SLEEF"] = "ON"
     ENV["USE_MPS"] = "ON" if OS.mac?
     ENV["USE_KLEIDIAI"] = "OFF"
     # Linuxbrew GCC 12 cannot compile PyTorch's SVE+BF16 path; needs GCC 14+
-    ENV["BUILD_IGNORE_SVE_UNAVAILABLE"] = "1" if OS.linux? && Hardware::CPU.arch == :arm64
+    ENV["BUILD_IGNORE_SVE_UNAVAILABLE"] = "1" if OS.linux? && Hardware::CPU.arm64?
 
     # Workaround for
     # error: a template argument list is expected after a name prefixed by the template keyword

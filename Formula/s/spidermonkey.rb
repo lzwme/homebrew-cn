@@ -55,12 +55,13 @@ class Spidermonkey < Formula
   # ERROR: *** The pkg-config script could not be found. Make sure it is
   # *** in your path, or set the PKG_CONFIG environment variable
   # *** to the full path to pkg-config.
-  # Ref: https://bugzilla.mozilla.org/show_bug.cgi?id=1783570
   # Ref: https://discourse.gnome.org/t/gnome-45-to-depend-on-spidermonkey-115/16653
   patch do
     on_macos do
       url "https://github.com/ptomato/mozjs/commit/c82346c4e19a73ed4c7f65a6b274fc2138815ae9.patch?full_index=1"
       sha256 "0f1cd5f80b4ae46e614efa74a409133e8a69fff38220314f881383ba0adb0f87"
+      type :unofficial
+      resolves "https://bugzilla.mozilla.org/show_bug.cgi?id=1783570"
     end
   end
 
@@ -68,12 +69,16 @@ class Spidermonkey < Formula
   patch do
     url "https://github.com/ptomato/mozjs/commit/9aa8b4b051dd539e0fbd5e08040870b3c712a846.patch?full_index=1"
     sha256 "5c2a8c804322ccacbc37f152a4a3d48a5fc2becffb1720a41e32c03899af0be6"
+    type :unofficial
+    resolves "https://bugzilla.mozilla.org/show_bug.cgi?id=1973994"
   end
 
   # Backport support for Python 3.14
   patch do
     url "https://github.com/mozilla-firefox/firefox/commit/d497aa4f770ca02f6083e93b94996a8fe32c2ff4.patch?full_index=1"
     sha256 "026f91a56cd60907a87c62dd4143eac8300d6fc7433b94888229c632a43c34bf"
+    type :backport
+    resolves "https://bugzilla.mozilla.org/show_bug.cgi?id=1969769"
   end
 
   def install

@@ -146,12 +146,14 @@ class Swift < Formula
     patch do
       url "https://github.com/Bo98/swift-llbuild/commit/61810b86c1c59283edbf1cf7a27f538e1d060537.patch?full_index=1"
       sha256 "e55fe1b2d1e1edd196e2a1a4183454739cfdb4a41cae67ac3cbce6ee15117323"
+      type :unofficial
     end
 
     # Workaround Homebrew sqlite3 not being found.
-    # https://github.com/swiftlang/swift-llbuild/issues/901
     patch do
       file "Patches/swift/llbuild-sqlite3.patch"
+      type :unofficial
+      resolves "https://github.com/swiftlang/swift-llbuild/issues/901"
     end
   end
 
@@ -175,6 +177,7 @@ class Swift < Formula
     # Fix for lld to find -lsqlite3 when auto-linking is done via CMake
     patch do
       file "Patches/swift/swiftpm-sqlite3.patch"
+      type :unofficial
     end
   end
 
@@ -214,10 +217,11 @@ class Swift < Formula
     end
 
     # Fix "close error" when compiling SwiftPM.
-    # https://github.com/swiftlang/swift-tools-support-core/pull/456
     patch do
       url "https://github.com/Bo98/swift-tools-support-core/commit/dca5ee70e302df065178cc8a75a2d6ea00886c40.patch?full_index=1"
       sha256 "e5e2e7cec7b7bd9ef0def5cfc9b1308fe1f25f6228973031c9821b2c4475c8a1"
+      type :unofficial
+      resolves "https://github.com/swiftlang/swift-tools-support-core/pull/456"
     end
   end
 
@@ -365,6 +369,7 @@ class Swift < Formula
   # This should only be removed if an alternative solution is implemented.
   patch do
     file "Patches/swift/homebrew-resource-dir.diff"
+    type :unofficial
   end
 
   # Fix linkage test failure on Linux for missing libswiftCore.so as RPATH was not updated for

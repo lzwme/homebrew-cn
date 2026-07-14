@@ -29,6 +29,8 @@ class Sqsmover < Formula
   patch do
     url "https://github.com/smaskalik/sqsmover/commit/2791c1912e4e262dca981dcf2219305b3d0e784a.patch?full_index=1"
     sha256 "effd7cc9422b64944abada78cbd163c8900b3dd1254427cbdee76e106e8e540b"
+    type :backport
+    resolves "https://github.com/smaskalik/sqsmover/pull/36"
   end
 
   def install

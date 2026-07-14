@@ -4,6 +4,7 @@ class Camlp5 < Formula
   url "https://ghfast.top/https://github.com/camlp5/camlp5/archive/refs/tags/8.05.02.tar.gz"
   sha256 "ceceb2377563f5483738090b614447536daa4cea119dc768a0659543727b4497"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/camlp5/camlp5.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class Camlp5 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "5afe5ae61c0f6733ce060368645d0a8e3155f408a7fc969c4ff43a6e836ae663"
-    sha256 arm64_sequoia: "6c35e0cd579615f42af75e470aedb8be26926c2b447d8b4a38046d6719e0607f"
-    sha256 arm64_sonoma:  "b080617a738ecd08fcaf0022cad58a73ba6bc625b897253e0aa075a72417bd20"
-    sha256 sonoma:        "9a3a1d605b10ce0c19b2fa3ae2be7c6ec7e595df5d33853e4ec12a62a36ef066"
-    sha256 arm64_linux:   "488071c24fce094fa32c5f272f4329024dc70947af8bfdf5c20d815de069cf76"
-    sha256 x86_64_linux:  "f557a2ee43d702574d642489d575f7edfdf83f2f5bc30f5cdfbfc18bb209fa75"
+    sha256 arm64_tahoe:   "9ac60f2db3fc615ee4fd7a2591cb6cd7bb3321d81da3139b0ec5f5f7ea625fe1"
+    sha256 arm64_sequoia: "ffb24d02bac2b1336041222944c6d1fd1c95caca4540c28967dc56d5ac81f6e7"
+    sha256 arm64_sonoma:  "1308d85b166e1f2f154dc33bcf4cf97d633d173b705df1ccb6aee46c0a7b8ef9"
+    sha256 sonoma:        "511cf316d1d30bb852548a95152c3496316a96782ae7b4cb8f684493c6702031"
+    sha256 arm64_linux:   "78026db22a64aa78e38b5cd40052b8410bab95bb2fe351f942b3dd25c3c79bc5"
+    sha256 x86_64_linux:  "04757edece0276a8f12e6e9488ff102386e611cc64a4da417357b0429602bfaf"
   end
 
   depends_on "ocaml-findlib" => :build
@@ -36,10 +37,14 @@ class Camlp5 < Formula
     system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
     system "opam", "install", ".", "--deps-only", "--yes", "--no-depexts"
 
-    system "./configure", "--prefix", prefix, "--mandir", man
+    # OCaml 5.5.0 no longer exposes opam's C stubs (e.g. dllpcre2_stubs.so) for linking.
+    # https://github.com/ocaml/opam-repository/issues/16406
+    ENV.prepend_path "CAML_LD_LIBRARY_PATH", opamroot/"ocaml-system/lib/stublibs"
+
+    system "./configure", "--prefix", prefix, "--libdir", lib/"ocaml", "--mandir", man
     system "opam", "exec", "--", "make", "world.opt"
     system "opam", "exec", "--", "make", "install"
-    (lib/"camlp5").install "etc/META"
+    (lib/"ocaml/camlp5").install "etc/META"
     libexec.install opamroot/"ocaml-system/lib/stublibs/dllpcre2_stubs.so"
     bin.env_script_all_files libexec, CAML_LD_LIBRARY_PATH: libexec
   end
@@ -52,9 +57,9 @@ class Camlp5 < Formula
       # ocaml files are in sync with the camlp5 files.  If camlp5 has been
       # compiled with an older version of the ocaml compiler, then an error
       # "interface mismatch" will occur.
-      shell_output("#{bin}/camlp5 #{lib}/camlp5/pa_o.cmo " \
-                   "#{lib}/camlp5/o_keywords.cmo " \
-                   "#{lib}/camlp5/pr_o.cmo " \
+      shell_output("#{bin}/camlp5 #{lib}/ocaml/camlp5/pa_o.cmo " \
+                   "#{lib}/ocaml/camlp5/o_keywords.cmo " \
+                   "#{lib}/ocaml/camlp5/pr_o.cmo " \
                    "#{ocaml.opt_lib}/ocaml/str/str.cma hi.ml")
   end
 end

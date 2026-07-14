@@ -1,18 +1,18 @@
 class Fuc < Formula
   desc "Modern, performance focused unix commands"
   homepage "https://github.com/supercilex/fuc"
-  url "https://ghfast.top/https://github.com/supercilex/fuc/archive/refs/tags/3.1.7.tar.gz"
-  sha256 "e3dda4699ff12a08336e93120c55c172b296f6be64de202350eb5b3217078c10"
+  url "https://ghfast.top/https://github.com/supercilex/fuc/archive/refs/tags/3.2.0.tar.gz"
+  sha256 "2f9f3572e7a956015593ec7e5f8225f704601404bac7d1e471e1d67632cbf074"
   license "Apache-2.0"
   head "https://github.com/supercilex/fuc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fef8533f3e0cd66482116904805c0b9e8dd9f636d01d7fb96a4a3f0e4eb90606"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5460750b8d7686aa16852ccb0ced8a02c92a3ba537c036fddd2fff253a26fd81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4cc4db0a9268a20a1b43b32fea5a78054ce305fae3c09aa81f7a97f36f52b898"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dd0df5e3214c5e1f87b7045a9a5abdd2422ba82b6ffdcf95839b537f1f58fc37"
-    sha256 cellar: :any,                 arm64_linux:   "76376d1e8319344dea83209c31ca70e24c9d4ce69bc74f66db74d8e892061a19"
-    sha256 cellar: :any,                 x86_64_linux:  "6b517fe89ff62086eb68d825989d1d6431a44b6d741f016d51f94c0284c7fd40"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "233689ca282c04d10b6110abb317240f458dfb7d52f55a3e479fefc7a950505e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec876dd9f75bd22e4195cf5a7814103c272217d1ce75ae567728bcbf6fda4bbb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5954bb9c04258d9115a63d1be7a7924428aec2f5177ce1219080b216599cdf80"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd510b9bf56bb0553a5295dc4966dcaf43dd0397d610b4195179052544aa513b"
+    sha256 cellar: :any,                 arm64_linux:   "78270c2365ffb15103240718c3ce4e36bb80c464f898d8e479668f98ef45f892"
+    sha256 cellar: :any,                 x86_64_linux:  "40ac06437dcda2e1b1ce57ad2ec77373435cefb895f013874254c8993a7e4919"
   end
 
   depends_on "rust" => :build

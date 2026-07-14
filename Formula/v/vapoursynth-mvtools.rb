@@ -6,6 +6,11 @@ class VapoursynthMvtools < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/dubhatervapoursynth/vapoursynth-mvtools.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)*)$/i)
+  end
+
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "6f51dd40f80a4b3de5a353b3536cf3b938aab0191a89661566a471e1f191b189"
     sha256 cellar: :any, arm64_sequoia: "f6dfd685bbce67d76cb7f6667b772bf7e08720595c455d14d2b51c7a60a597e6"

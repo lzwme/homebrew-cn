@@ -1,5 +1,5 @@
 class Algolia < Formula
-  desc "CLI for Algolia"
+  desc "Command-line tool to manage Algolia applications, accounts, and search resources"
   homepage "https://www.algolia.com/doc/tools/cli/get-started"
   url "https://ghfast.top/https://github.com/algolia/cli/archive/refs/tags/v1.13.0.tar.gz"
   sha256 "9e861fa2d60d09ca773409f86c45b0ecdfd7c040da01e498e6c8094d0d3aed3f"

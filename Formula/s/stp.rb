@@ -13,6 +13,8 @@ class Stp < Formula
     patch do
       url "https://github.com/stp/stp/commit/fb185479e760b6ff163512cb6c30ac9561aadc0e.patch?full_index=1"
       sha256 "7e50f26901e31de4f84ceddc1a1d389ab86066a8dcbc5d88e9ec1f0809fa0909"
+      type :backport
+      resolves "https://github.com/stp/stp/pull/450"
     end
   end
 
@@ -46,6 +48,9 @@ class Stp < Formula
   patch do
     url "https://github.com/stp/stp/commit/f81d16c4f15863dd742d220d31db646b5d1c824d.patch?full_index=1"
     sha256 "c0c38f39371cfc9959df522957f45677f423a6b2d861f4ad87097c9201e00ff4"
+    type :unofficial
+    resolves "https://github.com/stp/stp/pull/455"
+    resolves "https://github.com/stp/stp/issues/454"
   end
 
   def install

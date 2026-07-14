@@ -29,8 +29,6 @@ class Cyan < Formula
     bin.install_symlink libexec/"bin/cyan"
     bin.install_symlink libexec/"bin/cgen"
 
-    site_packages = libexec/Language::Python.site_packages("python3.14")
-
     # Keep only tool binaries for the current OS/architecture pair.
     tools_system = OS.mac? ? "Darwin" : "Linux"
     tools_arch = if OS.mac?
@@ -38,7 +36,7 @@ class Cyan < Formula
     else
       Hardware::CPU.arm? ? "aarch64" : "x86_64"
     end
-    tools_root = site_packages/"cyan/tools"
+    tools_root = venv.site_packages/"cyan/tools"
     tools_root.children.each do |system_dir|
       next unless system_dir.directory?
       next if system_dir.basename.to_s == tools_system

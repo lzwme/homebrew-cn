@@ -12,12 +12,13 @@ class Zbar < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "6f892b836c661d5946ab901d59995a422362d1cc262c461331585111d2807f92"
-    sha256 arm64_sequoia: "159d9b6c58c9345e93556037a91a1013c5a7e5715f490a2cb73c20102da60dc8"
-    sha256 arm64_sonoma:  "4282aa738dc1b13c39b37b4648e1bb7d5b563c37348b757b992201c4fcf1f476"
-    sha256 sonoma:        "30bf0f173b8cecaaadfc4b8cbbdfcb5e920124a9bfb7543b5a377818fbb1456e"
-    sha256 arm64_linux:   "3693e397645ab937b754f5d829107da689638043f5446c0ff35b91c880edd304"
-    sha256 x86_64_linux:  "c7df27b5cbd790ed7182c56fe4544a451a2afbd4df71eb764cdcdde5d0b7ed28"
+    rebuild 1
+    sha256 arm64_tahoe:   "b4deb14c35eead04e9aba7f9f8bf990e8adb3987efd2f721c8a600bcb8c91ba1"
+    sha256 arm64_sequoia: "1dc038ef320116fc0189292e46e6b1849df3caf33c45e53e2861a804c9a8986f"
+    sha256 arm64_sonoma:  "427a79a4f97bdf6e67de3feb529981a962e26b11003ddcc8ee7b4b0fd530d52b"
+    sha256 sonoma:        "69272a54a24e5899c18a2f1eb6d631528fcc12ffe29f0170d8d9b984aa7f6f81"
+    sha256 arm64_linux:   "0f702ac6c4a6c3fce3fc6cfaa596b7d80b7858dce5e67e7a39205c893f2bf09e"
+    sha256 x86_64_linux:  "9bd3a7733de4b5c4b15d7a1b8de0450a2176bcea9b995a0203f31cb8d5d3b722"
   end
 
   head do
@@ -50,6 +51,14 @@ class Zbar < Formula
     depends_on "dbus"
   end
 
+  # Fix pointer wrap-around UB that SIGSEGVs zbarimg on images taller than 1px with newer Clang.
+  patch do
+    url "https://github.com/mchehab/zbar/commit/3fa414aa82375648635281924904557cbe4d2d83.patch?full_index=1"
+    sha256 "580ba483ea402dfbd9c5ea5f7459e6f531f4b61a644eddb74196d31552e2926c"
+    type :unofficial
+    resolves "https://github.com/mchehab/zbar/pull/299"
+  end
+
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
@@ -67,9 +76,14 @@ class Zbar < Formula
                           "--without-x",
                           *std_configure_args
     system "make", "install"
+
+    pkgshare.install "examples/qr-code.png"
   end
 
   test do
-    system bin/"zbarimg", "-h"
+    assert_match version.to_s, shell_output("#{bin}/zbarimg --version")
+
+    output = shell_output("#{bin}/zbarimg -1 #{pkgshare}/qr-code.png 2>/dev/null")
+    assert_match "QR-Code:https://github.com/mchehab/zbar", output
   end
 end
