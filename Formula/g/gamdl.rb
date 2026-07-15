@@ -3,17 +3,17 @@ class Gamdl < Formula
 
   desc "Python CLI app for downloading Apple Music songs, music videos and post videos"
   homepage "https://github.com/glomatico/gamdl"
-  url "https://files.pythonhosted.org/packages/60/83/8d9979d75969a870cdbeae54bb9abfe0517de44810b666627e672b790d85/gamdl-3.8.2.tar.gz"
-  sha256 "6d70c292d9fee33bb36c62edcb559ac29a3a28413c257742fcfb9efc0d4d8b90"
+  url "https://files.pythonhosted.org/packages/0f/68/9f9fae0c0cd4ee4498d5e3e8141160d81fe8fca48119ab02050e67ace620/gamdl-3.8.3.tar.gz"
+  sha256 "620ca15c4edf7fa2f2f4dc051275c3aa0ffbec43455b315f54d15f99b48ee5ce"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2bd8e755877fde1997e3e09e289261a61df54e4d25a70b5fa9d6f3408d78f5b1"
-    sha256 cellar: :any, arm64_sequoia: "d3a724c147b1c524c0e3d1c7c97a951ea453c60ce4565e74134bf9ffdd021d88"
-    sha256 cellar: :any, arm64_sonoma:  "7da68b0222430560d41fac7e0bedcef7fc589bd8c649832a09a1fdcc50458ae1"
-    sha256 cellar: :any, sonoma:        "f2e35db7daeac53ca7e15ee7a34aec0c14e308c45f7302a098ef518644818148"
-    sha256 cellar: :any, arm64_linux:   "804902cd53de419264b6337e31e365dae074b0011fbc7e3fd245abe0218f3591"
-    sha256 cellar: :any, x86_64_linux:  "e88f84560e7042b6d337d8f01827d2439f17943eb83d8aa5d1b2731de7128efa"
+    sha256 cellar: :any, arm64_tahoe:   "2bd71971aa55c628aceccfe77e6010276531eb338bba0109e7c6533af3e7b488"
+    sha256 cellar: :any, arm64_sequoia: "3b5b788ffa2bccf366b1ec37622e67fe19ed938961ec47d01806a8889b735970"
+    sha256 cellar: :any, arm64_sonoma:  "1effea9d3b38f3b95f58c0c37122babd7151e6522dcdeebf13932e5880f4615a"
+    sha256 cellar: :any, sonoma:        "51f13d0b0de746dde9ccce35641aa89ff400ad7e2fa21dcabb846f0d2f0f481d"
+    sha256 cellar: :any, arm64_linux:   "60850d2af32bdde803bb5bc8ea4bfbde9ecb41c0f9c6270065367678153c7b09"
+    sha256 cellar: :any, x86_64_linux:  "9d01a5f79df4a4c7d38d9bd6a93c83d4f8254c87626b266659c7edbfd6c01e73"
   end
 
   depends_on "rust" => :build
@@ -25,8 +25,8 @@ class Gamdl < Formula
   pypi_packages exclude_packages: %w[certifi pillow]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
-    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
+    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
+    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
   end
 
   resource "async-lru" do
@@ -164,8 +164,13 @@ class Gamdl < Formula
     sha256 "b094813404f87a9dd2186f00815231df32e5fd8a5403be0f807b3bb2d21a4432"
   end
 
-  # Support Python 3.14. PR ref: https://github.com/glomatico/gamdl/pull/333
-  patch :DATA
+  # Building from the sdist (no .gitignore) makes maturin pack the crate's target/ into the wheel and fail.
+  patch do
+    url "https://github.com/glomatico/gamdl/commit/b16d16fcb39e199db1bf1a3ce04c136f604291e7.patch?full_index=1"
+    sha256 "fbc8cd7d6bdbd8be41c434f427165ddfad8ed951a7332ebe2a904f1105198363"
+    type :unofficial
+    resolves "https://github.com/glomatico/gamdl/pull/334"
+  end
 
   def install
     virtualenv_install_with_resources
@@ -181,100 +186,3 @@ class Gamdl < Formula
                  shell_output("#{bin}/gamdl fake_url 2>&1", 1)
   end
 end
-
-__END__
---- a/pyproject.toml	2026-07-12 17:12:19
-+++ b/pyproject.toml	2026-07-12 17:12:19
-@@ -39,6 +39,7 @@
- ]
- 
- [tool.maturin]
-+exclude = ["gamdl/downloader/ammuxer/target/**/*"]
- manifest-path = "gamdl/downloader/ammuxer/Cargo.toml"
- module-name = "gamdl._ammuxer"
- python-source = "."
---- a/gamdl/downloader/ammuxer/Cargo.toml	2026-07-12 17:12:19
-+++ b/gamdl/downloader/ammuxer/Cargo.toml	2026-07-12 17:12:19
-@@ -15,5 +15,5 @@
- cbc = { version = "0.1", features = ["block-padding"] }
- ctr = "0.9"
- cipher = "0.4"
--pyo3 = { version = "0.23.5", features = ["extension-module"] }
-+pyo3 = { version = "0.27", features = ["extension-module"] }
- tempfile = "3"
---- a/gamdl/downloader/ammuxer/Cargo.lock	2026-07-12 17:12:19
-+++ b/gamdl/downloader/ammuxer/Cargo.lock	2026-07-12 17:12:21
-@@ -205,11 +205,10 @@
- 
- [[package]]
- name = "pyo3"
--version = "0.23.5"
-+version = "0.27.2"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "7778bffd85cf38175ac1f545509665d0b9b92a198ca7941f131f85f7a4f9a872"
-+checksum = "ab53c047fcd1a1d2a8820fe84f05d6be69e9526be40cb03b73f86b6b03e6d87d"
- dependencies = [
-- "cfg-if",
-  "indoc",
-  "libc",
-  "memoffset",
-@@ -223,19 +222,18 @@
- 
- [[package]]
- name = "pyo3-build-config"
--version = "0.23.5"
-+version = "0.27.2"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "94f6cbe86ef3bf18998d9df6e0f3fc1050a8c5efa409bf712e661a4366e010fb"
-+checksum = "b455933107de8642b4487ed26d912c2d899dec6114884214a0b3bb3be9261ea6"
- dependencies = [
-- "once_cell",
-  "target-lexicon",
- ]
- 
- [[package]]
- name = "pyo3-ffi"
--version = "0.23.5"
-+version = "0.27.2"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "e9f1b4c431c0bb1c8fb0a338709859eed0d030ff6daa34368d3b152a63dfdd8d"
-+checksum = "1c85c9cbfaddf651b1221594209aed57e9e5cff63c4d11d1feead529b872a089"
- dependencies = [
-  "libc",
-  "pyo3-build-config",
-@@ -243,9 +241,9 @@
- 
- [[package]]
- name = "pyo3-macros"
--version = "0.23.5"
-+version = "0.27.2"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "fbc2201328f63c4710f68abdf653c89d8dbc2858b88c5d88b0ff38a75288a9da"
-+checksum = "0a5b10c9bf9888125d917fb4d2ca2d25c8df94c7ab5a52e13313a07e050a3b02"
- dependencies = [
-  "proc-macro2",
-  "pyo3-macros-backend",
-@@ -255,9 +253,9 @@
- 
- [[package]]
- name = "pyo3-macros-backend"
--version = "0.23.5"
-+version = "0.27.2"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "fca6726ad0f3da9c9de093d6f116a93c1a38e417ed73bf138472cf4064f72028"
-+checksum = "03b51720d314836e53327f5871d4c0cfb4fb37cc2c4a11cc71907a86342c40f9"
- dependencies = [
-  "heck",
-  "proc-macro2",
-@@ -313,9 +311,9 @@
- 
- [[package]]
- name = "target-lexicon"
--version = "0.12.16"
-+version = "0.13.5"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "61c41af27dd6d1e27b1b16b489db798443478cef1f06a660c96db617ba5de3b1"
-+checksum = "adb6935a6f5c20170eeceb1a3835a49e12e19d792f6dd344ccc76a985ca5a6ca"
- 
- [[package]]
- name = "tempfile"

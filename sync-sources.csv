@@ -5061,6 +5061,7 @@ Homebrew-homebrew-core/Formula/n/nanoflann.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nanomsg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nanomsgxx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nanopb.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/nanoq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nanorc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nasm.rb, Homebrew/homebrew-core, 0
@@ -6708,6 +6709,7 @@ Homebrew-homebrew-core/Formula/s/screenpipe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/screenresolution.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scriptisto.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scrub.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/scrutineer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scryer-prolog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scrypt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/scs.rb, Homebrew/homebrew-core, 1
@@ -10778,12 +10780,6 @@ Homebrew-homebrew-cask/Casks/font/font-f/font-funnel-display.rb, Homebrew/homebr
 Homebrew-homebrew-cask/Casks/font/font-f/font-funnel-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-f/font-fustat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-f/font-fuzzy-bubbles.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/font/font-f/font-fzfangsong-z02.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/font/font-f/font-fzhei-b01.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/font/font-f/font-fzkai-z03.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/font/font-f/font-fzshusong-z01.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/font/font-f/font-fzxiaobiaosong-b05.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/font/font-f/font-fzxiheii-z08.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-ga-maamli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-gabarito.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-gabriela.rb, Homebrew/homebrew-cask, 0
@@ -13579,6 +13575,7 @@ Homebrew-homebrew-cask/Casks/m/marathon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/marble.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/marginnote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mark-text.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/markdown-preview.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/markdown-service-tools.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/marked-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/markedit.rb, Homebrew/homebrew-cask, 1
@@ -14388,7 +14385,6 @@ Homebrew-homebrew-cask/Casks/p/pineapple.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pinegrow.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/ping-island.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pingid.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/pingmenu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pingnoo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pingplotter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pinta.rb, Homebrew/homebrew-cask, 1
@@ -15032,6 +15028,7 @@ Homebrew-homebrew-cask/Casks/s/silhouette-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/silicon-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/silicon-info.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/silicon-labs-vcp-driver.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/siliconscope.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/silkypix-developer-studio-se.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/silnite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/silo.rb, Homebrew/homebrew-cask, 0
@@ -15584,7 +15581,6 @@ Homebrew-homebrew-cask/Casks/t/tolaria.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tomatobar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tomighty.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/toneprint.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/t/tongbu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/toolhive-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/toolreleases.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/toontown-rewritten.rb, Homebrew/homebrew-cask, 0
@@ -15751,7 +15747,6 @@ Homebrew-homebrew-cask/Casks/u/unlox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unnaturalscrollwheels.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/unpkg.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unraid-usb-creator-next.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/u/unraid-usb-creator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unshaky.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/updatest.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/updf.rb, Homebrew/homebrew-cask, 0
@@ -15893,6 +15888,7 @@ Homebrew-homebrew-cask/Casks/v/volta-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/volume-control.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/voodoopad.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/voov-meeting.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/v/vorssaint.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vorta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vox-preferences-pane.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vox.rb, Homebrew/homebrew-cask, 0
@@ -15987,6 +15983,7 @@ Homebrew-homebrew-cask/Casks/w/wifi-explorer-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wifi-explorer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wifiman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wifispoof.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/willow-voice.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/winbox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/winclone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/windowkeys.rb, Homebrew/homebrew-cask, 0

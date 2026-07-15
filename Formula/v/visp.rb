@@ -53,17 +53,19 @@ class Visp < Formula
   end
 
   # Link OpenCV 5's relocated geometry/features modules.
-  # PR ref: https://github.com/lagadic/visp/pull/1975
   patch do
     url "https://github.com/lagadic/visp/commit/d57def89b50849ca191355a5d2f624e61f5d4e00.patch?full_index=1"
     sha256 "93b53b9d44f239bc92f448b212ff14d9301773ca6acfa78dee038c1398f8a207"
+    type :backport
+    resolves "https://github.com/lagadic/visp/pull/1975"
   end
 
   # Include OpenCV 5's relocated method headers.
-  # PR ref: https://github.com/lagadic/visp/pull/1962
   patch do
     url "https://github.com/lagadic/visp/commit/0c170eaeefcf5a49c631f8298997cddfd6f28fd7.patch?full_index=1"
     sha256 "ca0893a0af556127fd18d630847b606a348ee53d21d6173b2fe4621952eef6de"
+    type :backport
+    resolves "https://github.com/lagadic/visp/pull/1962"
   end
 
   def install

@@ -43,10 +43,11 @@ class Watchman < Formula
   end
 
   # fmt 12.2 dropped fmt::format from <fmt/core.h>; include <fmt/format.h> where used.
-  # PR ref: https://github.com/facebook/watchman/pull/1348
   patch do
     url "https://github.com/facebook/watchman/commit/7dbd77e849641ec756fee53a587da56d4502b4d1.patch?full_index=1"
     sha256 "5855728d86bca5c11d08195db93659da91a813ce7a5c0293366aafe08970364a"
+    type :unofficial
+    resolves "https://github.com/facebook/watchman/pull/1348"
   end
 
   def install

@@ -1,8 +1,8 @@
 class Vcpkg < Formula
   desc "C++ Library Manager"
   homepage "https://github.com/microsoft/vcpkg"
-  url "https://ghfast.top/https://github.com/microsoft/vcpkg-tool/archive/refs/tags/2026-05-27.tar.gz"
-  sha256 "9167b2348ae58bfb707cf5e18f055f51d9cdedc2cc251a475d5c2ca3d901e8ae"
+  url "https://ghfast.top/https://github.com/microsoft/vcpkg-tool/archive/refs/tags/2026-07-13.tar.gz"
+  sha256 "f17b6d1100469a594ea6414f4a16bb22c485e99125ca5db8235dee28a95635e5"
   license "MIT"
   head "https://github.com/microsoft/vcpkg-tool.git", branch: "main"
 
@@ -20,12 +20,12 @@ class Vcpkg < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d6e182c65815c2c079fe58f1c08f9960c6e260f80f7a531ecfcde417c0edf297"
-    sha256 cellar: :any, arm64_sequoia: "f5a9098a4a86a4a1699da552e7d6849ae4dd7ca3af0d091957e9616c6c064326"
-    sha256 cellar: :any, arm64_sonoma:  "f3e79a520916be65dbbd288a2f5e211ad473b104d0ae1c47881de5d3e38e92b0"
-    sha256 cellar: :any, sonoma:        "4fc76b4911c1ae5436621ecd5ab90ed1d51fb5e77d9006ac5b7a7140e3bee032"
-    sha256 cellar: :any, arm64_linux:   "14eb49f7116a08f8cdc8bbdad848a54e771493cfc90697f0946ebcf3b3290f7f"
-    sha256 cellar: :any, x86_64_linux:  "2cdf3a9557139f4e6cab0b5eee64f1091bf54de77b4e394afe01e4eebe76330c"
+    sha256 cellar: :any, arm64_tahoe:   "6e0a3bd57f8e9b70de789510d71f20762cc8c0b08ec1c6b9d343e72c3fa4acf4"
+    sha256 cellar: :any, arm64_sequoia: "2eaa81b3fb1565105fcbfd058229bced11c05595edfae4dcfbec9c17fb39f828"
+    sha256 cellar: :any, arm64_sonoma:  "660fe62b2f8b95cdb4fae4cb628f7aba6f7d0225b56a1175c5f0e67ef01d6b33"
+    sha256 cellar: :any, sonoma:        "cb6c93fa56f37b94aee84bb28cdcecfa8dd050b3bc579eda7eb7c51dc12d279a"
+    sha256 cellar: :any, arm64_linux:   "d5477e1762386c8494f1139fe83bcd6afcdbe6bffc826ca21eb4e70bb3716e6d"
+    sha256 cellar: :any, x86_64_linux:  "8996889ba566c6de86a4696e67acebcfa323d32308aca28591707b1263ca68e4"
   end
 
   depends_on "cmake" => :build

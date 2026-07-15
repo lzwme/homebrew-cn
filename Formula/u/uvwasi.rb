@@ -20,11 +20,12 @@ class Uvwasi < Formula
   depends_on "cmake" => :build
   depends_on "libuv"
 
-  # Apply open PR to remove find_dependency in CMake configuration file
-  # PR ref: https://github.com/nodejs/uvwasi/pull/313
+  # Remove find_dependency for a not-installed module in CMake config
   patch do
     url "https://github.com/nodejs/uvwasi/commit/fcc0be004867939389aba3cc715ea90b86ab869c.patch?full_index=1"
     sha256 "4a3a388e9831709089270b7c6bc779d86257857192dee247d32ec360cd7819cc"
+    type :unofficial
+    resolves "https://github.com/nodejs/uvwasi/pull/313"
   end
 
   def install

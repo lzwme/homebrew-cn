@@ -37,6 +37,7 @@ class Usbutils < Formula
 
   patch do
     file "Patches/usbutils/portable.patch"
+    type :unofficial
   end
 
   def install

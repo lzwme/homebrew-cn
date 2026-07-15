@@ -1,18 +1,18 @@
 class AwsCIo < Formula
   desc "Event driven framework for implementing application protocols"
   homepage "https://github.com/awslabs/aws-c-io"
-  url "https://ghfast.top/https://github.com/awslabs/aws-c-io/archive/refs/tags/v0.27.3.tar.gz"
-  sha256 "3ee8a4a6d648ff423551e220f1f24c488f4839bd702cbcf6a4db1ffc606969f9"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-io/archive/refs/tags/v0.27.4.tar.gz"
+  sha256 "0f2ce32de3685ca5ba3a8395d461c783253c1718cf70d31378eb6be890db1e3e"
   license "Apache-2.0"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ba775bb4fe1bd5c1f479ea83193ea529da713c0f6789bbbd98fcc44496f4088e"
-    sha256 cellar: :any, arm64_sequoia: "aafcf7aec2774d20856cc660794023729f9b61477463551eb0dea6ddf964618c"
-    sha256 cellar: :any, arm64_sonoma:  "d9a82faa5d9dc9315204479d56c7e7d15090ba1385c38b2d61f1d3c401189df5"
-    sha256 cellar: :any, sonoma:        "19c970ca621a52cd46030044cce25276c5df6e2ee5d152ad347777a7a4a8d398"
-    sha256 cellar: :any, arm64_linux:   "83c36c96bc9f09ca0487adb0f9df1165cae4cf4b6103dce4574432454e558b89"
-    sha256 cellar: :any, x86_64_linux:  "e708c172b7552495a0516974aba9b2b2ad5c285cea7f208924647d8940b34efa"
+    sha256 cellar: :any, arm64_tahoe:   "f248f4ba68758cc20219c3b89596dac9a76d0341625751bf19bb959aa764ceaa"
+    sha256 cellar: :any, arm64_sequoia: "3ee9ec74d8a5c6c920fcb1b8a69496b58e4d73befcd1696d52afdaac38355015"
+    sha256 cellar: :any, arm64_sonoma:  "33f82874c32b3c512dfba61f777c598678588e375d016a568724a33b41052aeb"
+    sha256 cellar: :any, sonoma:        "edf328eb70ce8e182063bd6e01fa37c840984c3a10b9252d24fb23946ec5cfcd"
+    sha256 cellar: :any, arm64_linux:   "0880136661d0a16fcb394de4d938f6592d79710ac94b1bdc4932384103caffca"
+    sha256 cellar: :any, x86_64_linux:  "eedd763c3633e6cb7acb6147360ff87e504c6def6d3de7cbfee1ebfc115352e0"
   end
 
   depends_on "cmake" => :build

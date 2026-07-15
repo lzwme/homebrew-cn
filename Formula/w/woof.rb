@@ -22,6 +22,8 @@ class Woof < Formula
   patch do
     url "https://github.com/simon-budig/woof/commit/f501798350f98338678832010a26d53f9c33e9d6.patch?full_index=1"
     sha256 "8f4b895081cb177ae9aa9b0acee0c42775d2072495eb31c1a2ae9bccd97cce47"
+    type :unofficial
+    resolves "https://github.com/simon-budig/woof/pull/21"
   end
 
   def install

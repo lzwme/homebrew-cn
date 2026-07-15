@@ -1,8 +1,8 @@
 class Ttyplot < Formula
   desc "Realtime plotting utility for terminal with data input from stdin"
   homepage "https://github.com/tenox7/ttyplot"
-  url "https://ghfast.top/https://github.com/tenox7/ttyplot/archive/refs/tags/1.7.5.tar.gz"
-  sha256 "c60c5fd0606f7413dbd2b9cfb1278568164a9f668cf668eac3c92fb77ecb383c"
+  url "https://ghfast.top/https://github.com/tenox7/ttyplot/archive/refs/tags/1.7.6.tar.gz"
+  sha256 "37347a11899c5bfdb5f15fd69766fc5bdfdcb434aa82ae3e9dd10095c3266675"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Ttyplot < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10d001c601d5a11bb2cdcfb9a58add05b3bf4d28df51ff9de842bf47ffe6e688"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61dfab4a962a67ffe5a7b7b33b1e9e8c2a47ed96f5eb724a1d133f62ddf476fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02e2259dfd7092c5a28f4750b36b72b9ea8327f851e0311a47ea14fd3317359b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c79d1f39e250984e5ca5545c8bacf9f17a51f41538c5b94ce430a607938f758f"
-    sha256 cellar: :any,                 arm64_linux:   "54d759ee50c89ed7b6510f54fe8aa5f82ddfcc4eeddb9969f9b8b00242d03161"
-    sha256 cellar: :any,                 x86_64_linux:  "7b8ae99d9f466da9e0a127a858c18e10cfcd18267c5a9a7991d45d609fe1e65b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f4026e1c0ff17eb7e87065fd24c5193802a2c81e0b30d4560ff97a60587814b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc346ee4e508deae88102e5cb7f81eb8cb340fe318e8ec9ec1b2a05b31d6286b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b01edc73231d71085dcacb8c8e43ac08c6392209282712badd8b176657dbc3a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "02d135f7f4097dde30662480d68814f38bfd24c89393197975142cac6aae1e36"
+    sha256 cellar: :any,                 arm64_linux:   "005d1c4e4f7b569cfc19c52a9beafc0277179bd6703b0bec34acca2f4ee1b4b3"
+    sha256 cellar: :any,                 x86_64_linux:  "e7c93424e6610b971474ebd386af9b5797db872a9e9ff110167a8d3e1c885bd4"
   end
 
   depends_on "pkgconf" => :build

@@ -3,18 +3,18 @@ class Mypy < Formula
 
   desc "Experimental optional static type checker for Python"
   homepage "https://www.mypy-lang.org/"
-  url "https://files.pythonhosted.org/packages/e9/7e/be536678c6ae49ef058aba4b483d8c7bc104f471479016066f345bc1f5f8/mypy-2.2.0.tar.gz"
-  sha256 "2cdd99d48590dce6f6b7f1961eda75386364398fcdaad86923bc0f0231bf9baf"
+  url "https://files.pythonhosted.org/packages/12/af/4e516a05d3ca2eb9283e9ec45b2c02225c1514dd6da49fd3c9eaa6639370/mypy-2.3.0.tar.gz"
+  sha256 "465965d41cd9a2726694e983e8ce7113259327bec798115d1e1dfa2a52fb666e"
   license "MIT"
   head "https://github.com/python/mypy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "024cf6da21c2fa01e5aad27aa75d7520bf4bfa275d5578f662e81bae97bdb096"
-    sha256 cellar: :any, arm64_sequoia: "18040ece0dfc0b536febe3bd6478301acdf7d3bd4caa8c18d546bfe179edf493"
-    sha256 cellar: :any, arm64_sonoma:  "686552a6b04dd8314105bc42ec808ee111c9d755ae4dcdb3287b41f18a2124e6"
-    sha256 cellar: :any, sonoma:        "dbc81439d6c7fc81095a419434ef5352448e9f9eae7c68d62efd24e004d77613"
-    sha256 cellar: :any, arm64_linux:   "d0db525ca0fb43dc2023630abbaa1a35906493214b5b8386f19045d62ddb5adb"
-    sha256 cellar: :any, x86_64_linux:  "574e0b88c639ce09e9f49bf69225a45261e6beab17c4c4e0df31bf7e747d0dc4"
+    sha256 cellar: :any, arm64_tahoe:   "8fb4bd2736ed9c4dd6d056b68bedb3b2c90477ca931cb4dbfd94effdede8cda8"
+    sha256 cellar: :any, arm64_sequoia: "ff66fc3e241c10739a348db466e40e0047f2eb0c8a7911265d990d80558accf5"
+    sha256 cellar: :any, arm64_sonoma:  "b96c9d43d1e71b959cd2a8cbbcbba16ce72395bb9e11c72dbeb2d31f5a414233"
+    sha256 cellar: :any, sonoma:        "5a23623476a29244fd816a73b664b39db600c13733b0bc32eb94e2591e8bd8f4"
+    sha256 cellar: :any, arm64_linux:   "c601a2a7ea82d5fd309b5c26dd7a8c126e84b2a850443f2c0f01041f5d766962"
+    sha256 cellar: :any, x86_64_linux:  "6d2c66e65f898d0dcc55e3160a251ee93069cc49aceb7b2956ed1e12b4d5dc20"
   end
 
   depends_on "rust" => :build # `ast-serialize`
@@ -26,8 +26,8 @@ class Mypy < Formula
   end
 
   resource "librt" do
-    url "https://files.pythonhosted.org/packages/c6/e0/dbd0f2a68a1c1a1991eb7921ff6014465d56608cdc9a9fb468a616210a37/librt-0.12.0.tar.gz"
-    sha256 "cb26faedbd09c6130e9c1b64d8000efec5076ffd18d606c6cd1cf02730e6d8b0"
+    url "https://files.pythonhosted.org/packages/dc/2f/3908645ddddab7120b46295e541ead308109fa48dbec7d67d7a778870d60/librt-0.13.0.tar.gz"
+    sha256 "1d2a610c14ac0d0750ee0a3ab8548e83155258387891caaca04def4bf7289781"
   end
 
   resource "mypy-extensions" do

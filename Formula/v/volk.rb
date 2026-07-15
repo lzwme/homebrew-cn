@@ -16,6 +16,8 @@ class Volk < Formula
     patch do
       url "https://github.com/gnuradio/volk/commit/5620097efb4a70620259000d27918dee1d03ee1e.patch?full_index=1"
       sha256 "18e6515ce4932f93bb3e8855c16a411a4de61a6006c7a12d1ac342d5174d08ba"
+      type :backport
+      resolves "https://github.com/gnuradio/volk/pull/869"
     end
   end
 

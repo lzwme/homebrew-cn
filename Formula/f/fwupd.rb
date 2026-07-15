@@ -9,12 +9,13 @@ class Fwupd < Formula
   head "https://github.com/fwupd/fwupd.git", branch: "main"
 
   bottle do
-    sha256 arm64_tahoe:   "91da20081a19bd1f2fa0ca19373d667d82a9fd409962695df591a67638252531"
-    sha256 arm64_sequoia: "e08de4b29ab2c9449b778bc3eb9d7991ea4a8e9686e8aa8045826c0b21f22468"
-    sha256 arm64_sonoma:  "f71cf7165dd4b9d3fb77dce77cb73e17daf8d3e83c428d1bd7e1cb52f9c43d0b"
-    sha256 sonoma:        "5a38be9f5f228486eba86a63986ba002823d8670bd75e28f2f524b7144dadc5f"
-    sha256 arm64_linux:   "bcdebb92e4cb502f975f8099c161cfedb3a0bc2d75784652a3d97ef2e1498c39"
-    sha256 x86_64_linux:  "dbb4f4be7f8c295c275870f630119f4c718e2d45eb1b2a00713da3d91730fab4"
+    rebuild 1
+    sha256 arm64_tahoe:   "d5a6746534d72ae3d8ebcc208919d58b8d9305af6123ec685889fb772434bf76"
+    sha256 arm64_sequoia: "52646752b67d4f1734476046bb7fef3aed3c0f31332fd8407a00f9021121b3f4"
+    sha256 arm64_sonoma:  "32b00cdf63b277f251134b7fd7a57ac4b72e85ef5fdc6127081b5e36dc02dd81"
+    sha256 sonoma:        "03430701ec6e26bd44a05fb92922499f89eb17c06d265df4bd41f6d588bc8708"
+    sha256 arm64_linux:   "01605b2d11c42e4f77299fcae4e7229b0f476458048e18f381cf44fe6226b430"
+    sha256 x86_64_linux:  "691ae5440d41afa3f3a5715bb799df98cf7c403fad74ddd7b98f7c1b0218abf5"
   end
 
   depends_on "gettext" => :build # for msgfmt
@@ -60,14 +61,11 @@ class Fwupd < Formula
     sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
-  def python3
-    "python3.14"
-  end
-
   def install
+    python3 = "python3.14"
     venv = virtualenv_create(buildpath/"venv", python3)
     venv.pip_install resources
-    ENV.prepend_path "PYTHONPATH", venv.root/Language::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", venv.site_packages
 
     args = [
       "-Dbuild=standalone", # this is used as PolicyKit is not available on macOS
@@ -79,6 +77,8 @@ class Fwupd < Formula
       "-Ddocs=disabled",
       "-Dvendor_ids_dir=#{Formula["usb.ids"].opt_share}/misc/usb.ids",
     ]
+    # avoid installing into systemd's read-only Cellar
+    args << "-Dsystemd=disabled" if OS.linux?
 
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

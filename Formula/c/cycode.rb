@@ -3,18 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq/cycode-cli"
-  url "https://files.pythonhosted.org/packages/1a/15/269856ece79f59699dbacb31363a1820a18460c84c4eac0ec6ad65771865/cycode-3.17.1.tar.gz"
-  sha256 "1cd44dbc490041a463dc34e93ace54ac6de4d69c16d57708d67e9c26aae0c2b1"
+  url "https://files.pythonhosted.org/packages/7b/d0/0b09542791f1983dbce697d28a11abebde6cb91131600e2ac919831e7935/cycode-3.17.2.tar.gz"
+  sha256 "e1c4c42f46a7db8a206344f9eb552c85a03feeb31f97f4d1efd226f656c7c8e5"
   license "MIT"
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9a82a7743bfd1b66194cc51e096bdd4b570d2826c6e7bcc5802206f2ebf867a7"
-    sha256 cellar: :any, arm64_sequoia: "4a33bf3fbcfa1ece0f7c8333acd374cc68e849707a17298ae543abf826dc0ed5"
-    sha256 cellar: :any, arm64_sonoma:  "13362a14be86304180364b0364c8d00ddfdae815b7d4c0ddac83f4be2ee00a44"
-    sha256 cellar: :any, sonoma:        "41e5a4170035d0c6d5733e14cb31b2fbc644b9cdb3df0f1701ebe56d16f76b3e"
-    sha256 cellar: :any, arm64_linux:   "03b642e1a03af8dc2ed0a22056a462483b73b1543c1972271479bd903fb5215b"
-    sha256 cellar: :any, x86_64_linux:  "3ac6c122a6575a4525e8c2f769b2f9758a3b3c30b9015d5a9e0df44a06a7f365"
+    sha256 cellar: :any, arm64_tahoe:   "28eca5ac0e1a3dd1bdcfb6c903cf55d3fb55bef673d300e0470be17cd9d36077"
+    sha256 cellar: :any, arm64_sequoia: "0b894f43f26a37976fcec91e999dbd04677f07c7e87b15c7594426ca37f4e88b"
+    sha256 cellar: :any, arm64_sonoma:  "f537d2a5aaa5a8bb3cffb7c9a999af904ffa9cc157168915788fd516c7c998d7"
+    sha256 cellar: :any, sonoma:        "3271ec11276bee0289e53791ee95ab135a7406a8fc88b1d9f7ba45404fa9fcf7"
+    sha256 cellar: :any, arm64_linux:   "501e72f28b958852cd575e3e8e20723ab90e92f7aec1c11c1bd1b2e1637cd266"
+    sha256 cellar: :any, x86_64_linux:  "6f4db0ac0b4b8cfe75a443c8fd9ff0101b5e2366332cd1c0c3f6abfd278844dd"
   end
 
   depends_on "certifi" => :no_linkage
@@ -62,8 +62,8 @@ class Cycode < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/33/f6/354ae6491228b5eb40e10d89c4d13c651fe1cf7556e35ebdded50cff57ce/gitpython-3.1.50.tar.gz"
-    sha256 "80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc"
+    url "https://files.pythonhosted.org/packages/59/30/a8a0c15f9480dc91b5b7f11ebd26105e5f80898d7ff02da197fef35d8395/gitpython-3.1.51.tar.gz"
+    sha256 "22c9c94bb6b0b9f3c7157c684fece45a414cea204586b600beae6cd4570dcd6d"
   end
 
   resource "h11" do
@@ -227,8 +227,8 @@ class Cycode < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/ba/19/1b9b0e29f30c6d35cb345486df41110984ea67ae69dddbc0e8a100999493/tzdata-2026.2.tar.gz"
-    sha256 "9173fde7d80d9018e02a662e168e5a2d04f87c41ea174b139fbef642eda62d10"
+    url "https://files.pythonhosted.org/packages/92/ff/5a28bdfd8c3ebec42564ac7d0e54ca3db65044a9314a97f9564fa7a1e926/tzdata-2026.3.tar.gz"
+    sha256 "4a1518b8993086a7982523e071643f3c0e5f213e75b21318e78bcabfff9d1415"
   end
 
   resource "urllib3" do

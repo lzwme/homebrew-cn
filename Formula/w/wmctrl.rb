@@ -42,6 +42,8 @@ class Wmctrl < Formula
   # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=362068
   patch do
     file "Patches/wmctrl/1.07.patch"
+    type :unofficial
+    resolves "https://bugs.debian.org/362068"
   end
 
   def install

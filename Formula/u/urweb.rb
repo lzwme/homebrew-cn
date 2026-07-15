@@ -27,11 +27,13 @@ class Urweb < Formula
   # Patch to fix build for icu4c 68.2
   patch do
     file "Patches/urweb/icu4c68-2.patch"
+    type :unofficial
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
     file "Patches/libtool/configure-big_sur.diff"
+    type :unofficial
   end
 
   def install

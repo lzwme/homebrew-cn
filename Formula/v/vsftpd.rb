@@ -34,6 +34,7 @@ class Vsftpd < Formula
   # remove incompatible LDFLAGS. (reported to developer via email)
   patch do
     file "Patches/vsftpd/3.0.3.patch"
+    type :unofficial
   end
 
   # Patch to disable all calls to setrlimit, as macOS, starting from
@@ -41,6 +42,8 @@ class Vsftpd < Formula
   # GitHub)
   patch do
     file "Patches/vsftpd/3.0.5.patch"
+    type :unofficial
+    resolves "https://github.com/djarosz/vsftpd/issues/3"
   end
 
   def install

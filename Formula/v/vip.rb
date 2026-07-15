@@ -43,6 +43,7 @@ class Vip < Formula
   # use awk and /var/tmp as temporary directory
   patch do
     file "Patches/vip/19971113.patch"
+    type :unofficial
   end
 
   def install

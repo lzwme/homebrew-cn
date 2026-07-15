@@ -1,8 +1,8 @@
 class StressNg < Formula
   desc "Stress test a computer system in various selectable ways"
   homepage "https://wiki.ubuntu.com/Kernel/Reference/stress-ng"
-  url "https://ghfast.top/https://github.com/ColinIanKing/stress-ng/archive/refs/tags/V0.21.03.tar.gz"
-  sha256 "6db7089ad9cc2c13d0aa1cf8755112adac92858f4582a46c765bb6b7e1c3e1af"
+  url "https://ghfast.top/https://github.com/ColinIanKing/stress-ng/archive/refs/tags/V0.21.04.tar.gz"
+  sha256 "a328ba050bd3014f07a3265fb6c1aab071ae942dfad75c7459cce45a987869e1"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class StressNg < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4be3bbc995cb5d93aaa7a8092e78ecd1391accc39e99c7f1fad4e8be57ac3b5a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78f0bfc6f295bd3f31ef3a68babef58a69bca6a64c8b4ac95ba951d7cf9b7423"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "adb4f5505c702bfc911796b6dd50dfc348de43a490f692b96539c9fd92dd2197"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f5c4b3f0965adf6a5e9564f83f200235d8a603a0ba7afda21de0e8780ab0f796"
-    sha256 cellar: :any,                 arm64_linux:   "a67ca32a55026224e230a3156b75bf5aae440e85695b5dae79bff66eee8c32c5"
-    sha256 cellar: :any,                 x86_64_linux:  "ce1e49878810f8c52f09c5434b2d00fd78548040fa90fdc68fdacfb8c8cc75a1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d0fe742cb593988c276eec23f74e35d0cf3ae528037267ab4168aa13d00edf1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c03deaf3713b169e01e17ed3cdbe7d98f2ade94a02b44a899ff5e4863cf8aa3f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "176d11bc4f7ef6594573120248a55ad0f9c8ad0d7a378377edbcf94ba5c71593"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3ffc596aba5e5b7a97445d59cb39495c4950c324c63582349ff52aac2acda0c7"
+    sha256 cellar: :any,                 arm64_linux:   "7e922e1732b2e9a974ba41941a8ce1cb793002e522edac6dcb34ff54af886182"
+    sha256 cellar: :any,                 x86_64_linux:  "b8554ed57ec2416c0c9b0f195f84e63493e8e4b66e3535e1294f358685b1be83"
   end
 
   uses_from_macos "libxcrypt"
@@ -27,6 +27,9 @@ class StressNg < Formula
   end
 
   def install
+    # disable target_clones so no non-baseline (AVX-512) code lands in the bottle
+    ENV.append_to_cflags "-DHAVE_BUILD_SMALL" if Hardware::CPU.intel?
+
     inreplace "Makefile" do |s|
       s.gsub! "/usr", prefix
       s.change_make_var! "BASHDIR", prefix/"etc/bash_completion.d"

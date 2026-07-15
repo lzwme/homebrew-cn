@@ -35,14 +35,17 @@ class Vlang < Formula
     on_big_sur :or_older do
       patch do
         file "Patches/vlang/vc.patch"
+        type :unofficial
       end
     end
   end
 
-  # upstream fix for clang20 + musl qsort signature, https://github.com/vlang/v/issues/24711
+  # Fix clang20 + musl qsort signature test failure
   patch do
     url "https://github.com/vlang/v/commit/4333e2ddcb5c5e0927c630bc5c17bdf915a71696.patch?full_index=1"
     sha256 "45fb47de9a17dc391728cc37db2c6409c7ec8915f753179bf9f40eb707451234"
+    type :backport
+    resolves "https://github.com/vlang/v/issues/24711"
   end
 
   # upstream discussion, https://github.com/vlang/v/issues/16776

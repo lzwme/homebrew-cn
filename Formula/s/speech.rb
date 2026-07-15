@@ -1,14 +1,14 @@
 class Speech < Formula
   desc "On-device speech toolkit for Apple Silicon: ASR, TTS, VAD, diarization"
   homepage "https://soniqo.audio"
-  url "https://ghfast.top/https://github.com/soniqo/speech-swift/archive/refs/tags/v0.0.21.tar.gz"
-  sha256 "c276f02ecc707c49f099c3ef4d2dd0239b90928ffc9e015be10b1a94f908ef97"
+  url "https://ghfast.top/https://github.com/soniqo/speech-swift/archive/refs/tags/v0.0.22.tar.gz"
+  sha256 "62bf1eccdf9c54254dc32c84e8260202c88c1440fd863b605b30299bfd9f9427"
   license "Apache-2.0"
   head "https://github.com/soniqo/speech-swift.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ecfef805c68d043ffde035569faf03e9e94a171b2a489613ea3a56e5e78448f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2562cad0d8108b4f5bd5756304bf8d1de827b234f79a6bfbc3ed417eecd6c4c9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dac49c1d69bf3b4ec6c53ea44f47a829d78fe7797629fe90d3dbf667f6c88a3e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59281ab82a4e907f80fe0e0cce84262106b003cf3eadf77014adc69e42c0d26f"
   end
 
   depends_on xcode: ["16.0", :build]

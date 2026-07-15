@@ -1,17 +1,17 @@
 class DuaCli < Formula
   desc "View disk space usage and delete unwanted data, fast"
   homepage "https://lib.rs/crates/dua-cli"
-  url "https://ghfast.top/https://github.com/Byron/dua-cli/archive/refs/tags/v2.37.1.tar.gz"
-  sha256 "309194f35a6cabe8a91046641680862cbe1e1379f55c88c94337b541ce987969"
+  url "https://ghfast.top/https://github.com/Byron/dua-cli/archive/refs/tags/v2.38.0.tar.gz"
+  sha256 "3972a34ffaaeb3c24d0693e13386a4578530333789b467c83f1686584f314291"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ea91a8bd51f8223c62e7e13ef7508d5bdf07d93af34fc02e229af5475a86599"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8cd8b001b820b8b938d00167116c352a469a246c19c11252ca5f310fd0ef1b31"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3def37ab85eb2bea054d74dc2e03d910cf93e88e1f21b93fcd99e48f7dffcb46"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1b47528fbfe3bc3d912cd6d1350b4b50a39e4fe1de9aca9f2f9c56ef7b9340bc"
-    sha256 cellar: :any,                 arm64_linux:   "d8c756d4fd5c558c29741cfe0e18f2e8b33d7623abd8b4a72c37c94021653476"
-    sha256 cellar: :any,                 x86_64_linux:  "b6a78e25d1cf8a8cdec80188f633365d20d984a422a624ab8a50134b9c181ae3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ea216cca97b55362380a1fa942f674ab95ec4ff07c8950fdabeec440cdd0570"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59c15410f8ffde00ac52c0d7973a0ad19f23acf2a9f457a5eb6bbbecb37db20d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13031fc80cd464bd34b0e928f7180422ae49398d9546d3aff9bed5f1ff7de386"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a7c7b7e8b5c2c3166ec49d1ce2e8d2da96932fc5e965ec6820fcf93e766557a2"
+    sha256 cellar: :any,                 arm64_linux:   "7da1e6cac59af17fef9c8be54541aba4af9aca8db988eac170a4ec7906df6cf4"
+    sha256 cellar: :any,                 x86_64_linux:  "38f5aca89d2cb145f3e399e067324d7744fed8109721cade4db2eb1ec22bc923"
   end
 
   depends_on "rust" => :build

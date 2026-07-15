@@ -1,18 +1,18 @@
 class SteamguardCli < Formula
   desc "CLI for steamguard"
   homepage "https://github.com/dyc3/steamguard-cli"
-  url "https://ghfast.top/https://github.com/dyc3/steamguard-cli/archive/refs/tags/v0.18.3.tar.gz"
-  sha256 "ed6f3ddce2cf7f377cbe1463ea051e2091bb185536c8849b346fd258137ac093"
+  url "https://ghfast.top/https://github.com/dyc3/steamguard-cli/archive/refs/tags/v0.18.4.tar.gz"
+  sha256 "a1beea2c0626ccda8a92abccd27fcb78b78a83d79f973095c972b913e088fdca"
   license "GPL-3.0-or-later"
   head "https://github.com/dyc3/steamguard-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c843e3bbd3379b3ea11594ecdd83901b13006aa6c8541fbd20f0ac31c176851a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0af453aa27b4122832cb2cf2132ebcfb56691d2dfab6ae5054bd90fecec6b40a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "934a35c092e88d3be14d128cb95e913ff55c483c0e50e9e55fbf62a88be54174"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0a57713b5f7eb04cea229a94c6b39a541923fab9ee0abb94b1b4815bf5bd9f47"
-    sha256 cellar: :any,                 arm64_linux:   "9da602e8519a0f48c5715b9f89882ef11286e8641cea637da705e1585d1d8dfa"
-    sha256 cellar: :any,                 x86_64_linux:  "d15bd2e2a3a9b3c87486ea478e9e78aafe7c76606dbaf9a4af304bbbd9e477d8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "866991f4513fbbcb4406b51cc4e0c489f593a145e929dd0b9ee1c04085e04a62"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc99a69485e57da5365215151023a8a0e09b6e14206852e9c3747688d54871cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d4f9238e4222a94a2eae7568f19a8c473d7a93715bfd6fc0d3379266dd74cf9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b821b26453627c31eafd253d91bca05fecf6c6dfc124c44a1992621fc7289b4b"
+    sha256 cellar: :any,                 arm64_linux:   "7390563e85f6a2adefea42b499da8cc0a4ef53831f284918a98ac5afe5c7bc77"
+    sha256 cellar: :any,                 x86_64_linux:  "1149454e1978b5544ec8dd3b52d7d258b0a4300651f87b00148efbee58418c86"
   end
 
   depends_on "rust" => :build

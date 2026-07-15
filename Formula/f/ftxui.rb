@@ -1,18 +1,18 @@
 class Ftxui < Formula
   desc "C++ Functional Terminal User Interface"
   homepage "https://arthursonzogni.github.io/FTXUI/"
-  url "https://ghfast.top/https://github.com/ArthurSonzogni/FTXUI/archive/refs/tags/v7.0.0.tar.gz"
-  sha256 "14bef1f8caff548c49af8eeadfca21910d66e93e68237f0c3d20236b60c01e7e"
+  url "https://ghfast.top/https://github.com/ArthurSonzogni/FTXUI/archive/refs/tags/v7.0.1.tar.gz"
+  sha256 "80f544bb47fab24d3e57bc561324da228c050b3f2e8683fe806883ca5cd561a2"
   license "MIT"
   head "https://github.com/ArthurSonzogni/FTXUI.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4af7d86552e7a549970fe0e49fc68249771356a8612f48d0e8914d8a0be526ba"
-    sha256 cellar: :any, arm64_sequoia: "f75973c6e9f3eda9f97478a5d2b49916a42b913dd728e34a8f4bb105cc90c3c7"
-    sha256 cellar: :any, arm64_sonoma:  "c8ec8a62a9c54c7a5077fe0b210b794286c632c2e5669a41bc595a1b6469b33d"
-    sha256 cellar: :any, sonoma:        "aa03722fb9703b014924a98505804e1cee1e928e2f0b2bd1d2deadfac24cff41"
-    sha256 cellar: :any, arm64_linux:   "e042cf6ebbb53936ec5d9e6155649c284532b7d066704f88a1575566b08437fd"
-    sha256 cellar: :any, x86_64_linux:  "3fcc617bd69dd3fcea9eb292dce5ac46b0cae40ea4ae042957d79c171b04afc8"
+    sha256 cellar: :any, arm64_tahoe:   "9ee4c5c88db892c380cac52185e2514460d3fc0616c1b6e2c281890797b06beb"
+    sha256 cellar: :any, arm64_sequoia: "5e31de9c335f8635a6e5d99355ca2ee99dbb4d0a4dcb650070846670d8fc486d"
+    sha256 cellar: :any, arm64_sonoma:  "924df0f74c37226dfdbc5c50254634d02ee41407728d39e99a1ba53a01599fc6"
+    sha256 cellar: :any, sonoma:        "f23600f9ba5990aba27cc64d9312badbd1ab86497e7f1cbba4e333166cd2784d"
+    sha256 cellar: :any, arm64_linux:   "767beaeb9c7e54b59b13e211add2ddf5f1e304b8618154145989cbba4f0250c8"
+    sha256 cellar: :any, x86_64_linux:  "2e3c7ba2002e0b0241bb4a4d04da0f5a1bd58fa961aa9c476863d296ecd89716"
   end
 
   depends_on "cmake" => :build

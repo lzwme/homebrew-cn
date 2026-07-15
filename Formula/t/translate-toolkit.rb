@@ -3,18 +3,18 @@ class TranslateToolkit < Formula
 
   desc "Toolkit for localization engineers"
   homepage "https://toolkit.translatehouse.org/"
-  url "https://files.pythonhosted.org/packages/a6/90/8d60a44eae3715809a93017efc71387b675efad61365b3a557808ded8235/translate_toolkit-3.19.13.tar.gz"
-  sha256 "56e57673c6a17d6cd75176fc31b207b1baf1a5008e09e17c810d940dbe6b41ed"
-  license "GPL-2.0-or-later"
+  url "https://files.pythonhosted.org/packages/d8/7a/249a4fe2ebbd857f86156a22e1ddfe9b6f26f46ed1f3f391912ee34eb96b/translate_toolkit-3.19.14.tar.gz"
+  sha256 "35874f96ff83188151ee36f01ba1aa24d188151944cd567b85606095171c10d2"
+  license "GPL-3.0-or-later"
   head "https://github.com/translate/translate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "cda93dd145d1603ccd36415694b1efe0e0717b9a481059d7f301adb9f0605d7f"
-    sha256 cellar: :any, arm64_sequoia: "353f15b488577f333e7edc06e1b5983ed874aadc221c87b1219f2dca6ccc6016"
-    sha256 cellar: :any, arm64_sonoma:  "4fc704cd53c74da93e474530bce67a096812685036fb22868fbe7ad139733fd0"
-    sha256 cellar: :any, sonoma:        "9b09324f926360abf4ba208953bb73461cb1ca2cd6990e1695d9695d9481bf2e"
-    sha256 cellar: :any, arm64_linux:   "33d95380fb0f2d862b4d34a690adb2128ce20ad8b550ca4d65b727129242c199"
-    sha256 cellar: :any, x86_64_linux:  "3890b816100f3f79db3ec7052929a05317ef192aa113bd2c661008353ee76ef0"
+    sha256 cellar: :any, arm64_tahoe:   "c09b98d98d38c72106b85dc93292a881f7ba14be404e4810615fec7c6ae2d7eb"
+    sha256 cellar: :any, arm64_sequoia: "f9323d7593a32e949464f70b4718e4c8fbbfe1679f935409ed2e3e8e4db905e7"
+    sha256 cellar: :any, arm64_sonoma:  "9698f1ac4ffdca39b72d6cb5ab845270e7fd4dfa37392ff422a56e788ca61fe2"
+    sha256 cellar: :any, sonoma:        "4acd96244d5f94273ffd8ee4cf1c0002d473adfd54053e509cc7c66c353a9385"
+    sha256 cellar: :any, arm64_linux:   "864a8a12ee549056142f9bc96370a9501f2d6458f695c408fea1b83b183b4ce8"
+    sha256 cellar: :any, x86_64_linux:  "d6e5b398abd61651c90de8a88da37171e2ebc82684497a1a3fdd008897a0d591"
   end
 
   depends_on "rust" => :build # for `unicode_segmentation_py`

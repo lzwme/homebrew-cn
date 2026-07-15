@@ -3,17 +3,17 @@ class Copier < Formula
 
   desc "Utility for rendering projects templates"
   homepage "https://copier.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/9c/c7/3cd18cd539ff41e8e7a95b0146dbace0ba332a4c97f468066b2c2daca2ed/copier-9.16.0.tar.gz"
-  sha256 "4db1a9861d0760f745cc6241f99be37b476f849b8ad700133e2f620b7df92eb2"
+  url "https://files.pythonhosted.org/packages/08/6a/73ccc2ce53c17a29d650246a625df6342f74cb9d4f15b78a77d311fc6007/copier-9.17.0.tar.gz"
+  sha256 "d966b043a15c74595f7904a6af89f3291135682f8313c4b71ef368811ed554f2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "13c1fd19d1c21b5f74da70e3ff2e96e88c857efa1ed988af9f323b3e5b512448"
-    sha256 cellar: :any, arm64_sequoia: "e7c73e021ac25978c1ccecdebf37cfc44ae8eab720f09501fddb8d090b64fc37"
-    sha256 cellar: :any, arm64_sonoma:  "ec0f79b3b8c9c43204c68f4901774574157e4ffa32af801b35be2f67e5dd6e15"
-    sha256 cellar: :any, sonoma:        "81595b1adaceb0f36f3d4bcab61cfc4fdf1912fa39c16405c588dfc188cf6ccf"
-    sha256 cellar: :any, arm64_linux:   "cd32ca3f3f04f1d0fb35572880fd973f2a641d9535ddab7bea6c89231dda9f01"
-    sha256 cellar: :any, x86_64_linux:  "f4a2e7a1b8aaf74db93b99a9e61baaaa76ea37e82422190717a84c22b66d7fef"
+    sha256 cellar: :any, arm64_tahoe:   "0e63476b6e200b012990ecb012c204f5b060016226d55204eb3396843e2dd187"
+    sha256 cellar: :any, arm64_sequoia: "e01f5d96e0f9fc4261324f2986808d7d210198b30017491d7e66cd7dc97eb093"
+    sha256 cellar: :any, arm64_sonoma:  "8e8cb4fdb1bb75395347697ad1b08bcca4298f27ff19f2b3c58e9a28f206ec96"
+    sha256 cellar: :any, sonoma:        "d47d68d5c9ddd49290c85c9cfb77488d79571b8a619bdcbd66c82096e18f7fc8"
+    sha256 cellar: :any, arm64_linux:   "435cadd6c37a5004f49eb0e1368f5e6f16c4bbe3572ce87bd63a8e17353df5cb"
+    sha256 cellar: :any, x86_64_linux:  "6a99c4cbf1beb47c07ca9b5c20f27df1b38f452edcf1de1d9f685c4d1046f341"
   end
 
   depends_on "libyaml"
@@ -93,8 +93,8 @@ class Copier < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/49/b4/51fe890511f0f242d07cb1ebe6a5b6db417262b9d2568b460347c57d95cc/wcwidth-0.8.1.tar.gz"
-    sha256 "faf5b4a5366a72dc49cad48cdf21f52bdf63bdda995178e483ba247ff79089b9"
+    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
+    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
   end
 
   def install
