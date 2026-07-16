@@ -2,17 +2,18 @@ class Ijq < Formula
   desc "Interactive jq"
   homepage "https://codeberg.org/gpanders/ijq"
   url "https://codeberg.org/gpanders/ijq/archive/v1.3.0.tar.gz"
-  sha256 "b65cf7f5285affe3ab9a1887d12e6c313f437b18a5cf2b52add6cfd7e76dd2c7"
+  sha256 "904391d8cf6c803fe7abbdacccac13a9e477c7b7768cc956ed1b61de9bc125f4"
   license "GPL-3.0-or-later"
   head "https://codeberg.org/gpanders/ijq.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f71e8a5e46903cb8f61ad5177ac882d6c652d427c2a11170772835216a4a025"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6934f0c8a0ae8352ab44ab1bf4d1ed2d5eb79d59d8709371152d3f64f9101805"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1eb043ea52bdb123f3e673f084152606d02e35bec68a65231c97c7bea9b4426e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bf74ff77d3d2af3f69e4d8f271bcbd39f4a42aed9802fc74e82eff9be044dd3e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a091da8484e89d2cf988973d8c44af367fd59de321382fe50f96c91473a3f89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "252b73640ebef012fae413591033b3a90a820a96a0f8e6195b874cc05e4425fc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb7cdcd12cc01a149299ecd804b843f352f6fe59820336ab975531a9dcb090c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b719b970e1e51d0575cd3b5d9a010cbf8ad5f34fcb1807a80a3b612d46f7b2d4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "857bb065a4587f93bdd317a4d43796ad40241fa6c31dfb8d07f9b62ea1b83345"
+    sha256 cellar: :any_skip_relocation, sonoma:        "65732ba712075ad3e235273c31aaabcca9289d43914681a7d5a4616e36d243bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e01250f8e87643513b823aa0ac5602c203f6a413c4cdd522aaa15b28e0aaae3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec141c344bbab2f81d9542b2e1fd49457a3625ab8d4ab85e3825e213f6b87a6e"
   end
 
   depends_on "go" => :build

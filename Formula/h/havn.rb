@@ -1,17 +1,17 @@
 class Havn < Formula
   desc "Fast configurable port scanner with reasonable defaults"
   homepage "https://github.com/mrjackwills/havn"
-  url "https://ghfast.top/https://github.com/mrjackwills/havn/archive/refs/tags/v0.3.7.tar.gz"
-  sha256 "a9633b2e509591bff8fb0ac36e0e04600a74ad98c0cdcb4a9c5bff48751fe51c"
+  url "https://ghfast.top/https://github.com/mrjackwills/havn/archive/refs/tags/v0.3.8.tar.gz"
+  sha256 "9490f81539664dd7e9749c63866fb2892a7d4a55cc83002f17fbdb07e08b2c36"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80effddbf9cd0ab82bc48db616c239b4ac183f3434ced0a661c144c31028745f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "695911f9beda78d855ac1b704e3913cdd3ab9e9adb531e9b85b3f649f6483d9d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f7b71c3a026e27cd55550e273a308f269e132920e7a087dc77281a037959ca0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "197791ac62027f052b0ba02a15be889290d52be47d6e75e7373873bed8c095fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "092c984b553e08ffa39211865d0ccde1ce86ed41bf5d2eda558fe661bd311abb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d71e486efa3ffee2132834356f5f9a4f1beaeab91e165bc9341bed86e7993858"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f27be3c71d3d3a8e041f53206fb2dc967e76cd49b5d7dd6bb88b03145c4340e4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc57b6844b9fcb55b6d1b2c64e49e2bbd1f39aa456e0aff5765e1c93b844d520"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7ed0f76a9e81e99e09b649a3783e9f4971809468ac2750ac53c0fbcf867a941"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d503e4afd2e44fa08715b5bcfd9d0016bffa4905cfa86d06a163c0f87e093ac8"
+    sha256 cellar: :any,                 arm64_linux:   "79198f1e440244bfa241bf52311406deb58d9fac80d2c8c8ab6ae0948cb3aa77"
+    sha256 cellar: :any,                 x86_64_linux:  "e544c01aeab0950ab4bf9ef26b3b7ae1e7c1e08782a47c6f9247f49cb5052b07"
   end
 
   depends_on "rust" => :build

@@ -22,10 +22,12 @@ class Libplctag < Formula
 
   depends_on "cmake" => :build
 
-  # Backport "ab_server: scope CIP_SRV_UNCONNECTED_SEND case body", upstream pr ref, https://github.com/libplctag/libplctag/pull/618
+  # Backport "ab_server: scope CIP_SRV_UNCONNECTED_SEND case body"
   patch do
-    url "https://github.com/chenrui333/libplctag/commit/b19081bc35bd93893b343091add7d638ee3fe532.patch?full_index=1"
+    url "https://github.com/libplctag/libplctag/commit/b19081bc35bd93893b343091add7d638ee3fe532.patch?full_index=1"
     sha256 "7b84abb42b4ba7b72b2b391f471acc56719481b590634cd1afd0576e7d1e1432"
+    type :backport
+    resolves "https://github.com/libplctag/libplctag/pull/618"
   end
 
   def install

@@ -1,8 +1,8 @@
 class Binaryen < Formula
   desc "Compiler infrastructure and toolchain library for WebAssembly"
   homepage "https://webassembly.org/"
-  url "https://ghfast.top/https://github.com/WebAssembly/binaryen/archive/refs/tags/version_130.tar.gz"
-  sha256 "20d727e7f3011cfe604b8ebdc873edbb4831c6b148209cb15bc2bedcded036ee"
+  url "https://ghfast.top/https://github.com/WebAssembly/binaryen/archive/refs/tags/version_131.tar.gz"
+  sha256 "3274719775038062b62d2bf2b37dcde69f3f79804aeb7420b78926722c0d0065"
   license "Apache-2.0"
   head "https://github.com/WebAssembly/binaryen.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Binaryen < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e52b96c270f249b401b93534ad4b4c9354decbad56fc6ae7e19c545bf3a5b826"
-    sha256 cellar: :any, arm64_sequoia: "9c12bb864df5a2b0171006973ec103226d442b8975c507e2e2babbe317c9cbd9"
-    sha256 cellar: :any, arm64_sonoma:  "986b318e8ea118863634f40be604fabbb343047561cf91f631bc01e788a39a09"
-    sha256 cellar: :any, sonoma:        "d6981b50229871db75eb5205ac50a79deacabce02b6b8f1ec0bf1d5141c60d9f"
-    sha256 cellar: :any, arm64_linux:   "661e78af99e8e0391843e90fb4a8a85737d7411b67a3f2e4eddee058f56bb81d"
-    sha256 cellar: :any, x86_64_linux:  "2dcdac798f8d62ef984630c0001e36ad258288fb07e0d870ed3d0fe1d25eb775"
+    sha256 cellar: :any, arm64_tahoe:   "0cfca31b9e2d19658aba138660dd48c469dc8b68de6bef662885c6f52b0e597c"
+    sha256 cellar: :any, arm64_sequoia: "6ed0bd96acb0f4230df8d8ca22cdb1edce69537facd514fdab0b3e2fc6d357cb"
+    sha256 cellar: :any, arm64_sonoma:  "71aebbbeba42e8499a4242a3b0910872f4e2f553e9e3d604ea65ffd78e5705f2"
+    sha256 cellar: :any, sonoma:        "e70c5d30ef337ba8601475c1323aee81fac0f80a8a10703cad87d4c2ecbc321d"
+    sha256 cellar: :any, arm64_linux:   "c44f726afa02b6b574779823d993cc94e038201a9e73530800eb7fab7e75a426"
+    sha256 cellar: :any, x86_64_linux:  "e20c66a9b1a826a00155e8e051f9970ca54e3a0e72e6107dc110e2515cd82881"
   end
 
   depends_on "cmake" => :build

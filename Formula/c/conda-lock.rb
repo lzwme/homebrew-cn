@@ -6,14 +6,15 @@ class CondaLock < Formula
   url "https://files.pythonhosted.org/packages/06/44/52deb5012f8ef85c224cb3b1638c09c3b3d70b2f9e101e893bb61b9ee9ba/conda_lock-4.0.2.tar.gz"
   sha256 "c4ebc4404ea760b1dd0035d6403fa27e291050269a5fd1b629b89fcbc75ef32a"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4b1ac8cef9ff94191d8526f78fde9c679d2010e566ee96f8017a0331b3a1d47f"
-    sha256 cellar: :any, arm64_sequoia: "30250892007be64a78824bbaae18de87b89e6d75bacbe965df6de9f4592a1530"
-    sha256 cellar: :any, arm64_sonoma:  "a4db5df2bccd07f457e9e621474109ee4cb3d3b24fbdc67dda217116335d4c90"
-    sha256 cellar: :any, sonoma:        "7b15d4d5c0a328a098c2249366d4676e332d5cfbc3782e24b82f04004e21348e"
-    sha256 cellar: :any, arm64_linux:   "5c82150faf7d16d65a356f08d345d4de02ee1861400eaca1ce2884c712d0ebf5"
-    sha256 cellar: :any, x86_64_linux:  "852fc31b6ecd4164fb5e6a525d3734ef1485175f0c269b89f98e45cdc4f0f11a"
+    sha256 cellar: :any, arm64_tahoe:   "e86a104a4ec857e9f3f6474ec921919376794b6ce748a058b13a6d8c3d1a8d28"
+    sha256 cellar: :any, arm64_sequoia: "fc723104d08a5e5e8b0999e305930ccbc784dab179c739961a0223b4a3a46ef0"
+    sha256 cellar: :any, arm64_sonoma:  "45e3a912f9a540fa079af4c7feffeb2b78f5f36f41187be46cfdb17c03ca5749"
+    sha256 cellar: :any, sonoma:        "9bc6c7d332612217b5328907fc04f0f7c978bea7fa0222d2885ae39b22ba685d"
+    sha256 cellar: :any, arm64_linux:   "147174633d875bdcfc4ec2ac9608b85bb0aceef9e10229f784977f33022b8244"
+    sha256 cellar: :any, x86_64_linux:  "00ef441e8244de9b6e746e3a5e37b9242253ec2b95d9819357aa8c8a2db596f5"
   end
 
   depends_on "rust" => :build # for cachecontrol, uv-backend
@@ -52,8 +53,8 @@ class CondaLock < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "click" do
@@ -97,8 +98,8 @@ class CondaLock < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/e6/dc/be6cbe99670cd6e4ad387123647cb08e0c32975e223f82551e914c5568a6/filelock-3.29.4.tar.gz"
-    sha256 "10cdb3656fc44541cdf30652a93fb10ec6b05325620eb316bd26893e4201538a"
+    url "https://files.pythonhosted.org/packages/35/94/00f2059e4835eace3ae8fde680b932c496f8ec7bdc99168dfa53fb2e6b79/filelock-3.29.7.tar.gz"
+    sha256 "5b481979797ae69e72f0b389d89a80bdd585c260c5b3f1fb9c0a5ba9bb3f195d"
   end
 
   resource "gitdb" do
@@ -107,8 +108,8 @@ class CondaLock < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/33/f6/354ae6491228b5eb40e10d89c4d13c651fe1cf7556e35ebdded50cff57ce/gitpython-3.1.50.tar.gz"
-    sha256 "80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc"
+    url "https://files.pythonhosted.org/packages/59/30/a8a0c15f9480dc91b5b7f11ebd26105e5f80898d7ff02da197fef35d8395/gitpython-3.1.51.tar.gz"
+    sha256 "22c9c94bb6b0b9f3c7157c684fece45a414cea204586b600beae6cd4570dcd6d"
   end
 
   resource "idna" do
@@ -132,8 +133,8 @@ class CondaLock < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/36/cf/ea4ef2920830dea3f5ab2ea4da6fb67724e6dca80ee2553788c3607243d0/jaraco_functools-4.5.0.tar.gz"
-    sha256 "3bb5665ea4a020cf78a7040e89154c77edadb3ca74f366479669c5999aa70b03"
+    url "https://files.pythonhosted.org/packages/6c/1f/c23395957d41ccf27c4e535c3d334c4051e5395b3752057ba4cbaec35c56/jaraco_functools-4.6.0.tar.gz"
+    sha256 "880c577ec9720b3a052d5bc611fb9f2269b3d87902ef42440df443b88e443280"
   end
 
   resource "jeepney" do
@@ -217,8 +218,8 @@ class CondaLock < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
-    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
   end
 
   resource "shellingham" do

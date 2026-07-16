@@ -4,9 +4,9 @@ class Trafficserver < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://www.apache.org/dyn/closer.lua?path=trafficserver/trafficserver-10.1.2.tar.bz2"
-    mirror "https://archive.apache.org/dist/trafficserver/trafficserver-10.1.2.tar.bz2"
-    sha256 "39d4882a00f9b0c31ce9e435a11812f10948fc06fa3c16126221e6cc937a4a2b"
+    url "https://www.apache.org/dyn/closer.lua?path=trafficserver/trafficserver-10.1.3.tar.bz2"
+    mirror "https://archive.apache.org/dist/trafficserver/trafficserver-10.1.3.tar.bz2"
+    sha256 "b92302005fbd79c3918b97c8546471b988ce0a11dc99a2d39ba092bec45d843a"
 
     depends_on "pcre" # PCRE2 issue: https://github.com/apache/trafficserver/issues/8780
   end
@@ -17,13 +17,12 @@ class Trafficserver < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "e8757d56f1d52183edb9cd934c8d0fd7e464c5886eed412c077a0ad76f25592d"
-    sha256 arm64_sequoia: "7c05efe6f8059003d9e8aeac27332e9b2f819a7a357bb951996035e4cca1bf45"
-    sha256 arm64_sonoma:  "3805b89658a2421a7141f2737d7edc94f742f91326f8de7b30b93b9d2418e6a0"
-    sha256 sonoma:        "f8dfab5ef2e107fbe25d94e034ebf6d26277cbc74f3a3d8a62649448259451f6"
-    sha256 arm64_linux:   "f0cf09092473143f029615b799bfe7c3833c581b869df8b9f10daaec2714525e"
-    sha256 x86_64_linux:  "6155f727dfb4d90db7219fab5a4583231e6d0a12a4a02e674a53108887429d08"
+    sha256 arm64_tahoe:   "6302e86719bcf7dddb280c8597ffd0f3c0914950ee594d58bb5307cf36362182"
+    sha256 arm64_sequoia: "36af3eecc4097491aee6956db810f8203bb919b175f1d19bec87c4cce0851881"
+    sha256 arm64_sonoma:  "3ee886b196d9215edbd82b461ded66deebd6bd20937f3dd93e72df32202d3ef5"
+    sha256 sonoma:        "0460a4dbabbdfaf22c312b099499cb01a8653d52586f502c214f134ccebfbe62"
+    sha256 arm64_linux:   "731b251177e266c41102b94d2d8928a8ff951604e8f6bced3c5955c360bcea42"
+    sha256 x86_64_linux:  "79ede126cfbb3e751654376a32402cd2eb104fcf8fd7fc396688979a25fa26c7"
   end
 
   head do

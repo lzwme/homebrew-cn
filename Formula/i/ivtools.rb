@@ -6,6 +6,11 @@ class Ivtools < Formula
   license "MIT"
   revision 5
 
+  livecheck do
+    url :stable
+    regex(/^ivtools-(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 arm64_tahoe:   "845518c5d1aee4a85f8037ef2de2c74dc4e18937782b9ee204aee7a681ee243f"
     sha256 arm64_sequoia: "2855848a765bb2ad5cca364493fc6c3b4a6faa9b820a4c407bdabc60a2efa04c"

@@ -2,17 +2,18 @@ class ForgejoCli < Formula
   desc "CLI tool for interacting with Forgejo"
   homepage "https://codeberg.org/forgejo-contrib/forgejo-cli"
   url "https://codeberg.org/forgejo-contrib/forgejo-cli/archive/v0.5.0.tar.gz"
-  sha256 "028ebcbd744301fbfd144cd9bc5ff0a27e02d99b02c8abafb20742299715c556"
+  sha256 "ec24a63964b01dadf8a29de4656110a976344aa44b0e9b5fee135b9115da2c89"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://codeberg.org/forgejo-contrib/forgejo-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "da03e5e9283bacfecb9085684ba35701932a95254486a5d25b841f898715bcc5"
-    sha256 cellar: :any,                 arm64_sequoia: "50ef4d22fdd29d0144769db602da1a46098c6649959f702c7193a6ce55a474af"
-    sha256 cellar: :any,                 arm64_sonoma:  "b1d585c8520c57d6cb8a2309e3ea1ca71cdc278e371b3ed35d58645b1ea6af54"
-    sha256 cellar: :any,                 sonoma:        "90fdf8e55f03114a11c912f20ea1eeb60c09f26a69628ce94c6e1a5d9066076b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dee5a25bc9af4873f25cadd9152a7b43a7fe9f281694cc617d9b7c5a181ee4e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bd9495f4637a8392608b9dfb0cb76c9b1e4a6fac326e5ef29008ee232d1f218"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "b84b88d5bfeb5c74828ad7494cd0b9d0b33b83483b766b9b0426c35c4af5a7cf"
+    sha256 cellar: :any, arm64_sequoia: "80194bad83b36924bd7df9607c94eaf9375a9d8b9e5375bf3f3e49351426726e"
+    sha256 cellar: :any, arm64_sonoma:  "bf4e80ec8bd0ad7bd9696dae16d9cf32bbcf711cda31cc94d9f940ae3154cb5d"
+    sha256 cellar: :any, sonoma:        "1c08ae706d41f94f766aba7b9bf7cb2de77bb8a6fb03cdb2a24f67ca71d0d340"
+    sha256 cellar: :any, arm64_linux:   "d7eeef78c02ed7eb2e9054bd7a52d9a3852127b10a43be567f201c8b5ebf1a5a"
+    sha256 cellar: :any, x86_64_linux:  "10fc2a22307fb058743c9afa18c5670b728e0d65e42cba645e293e0e7d7a6ad5"
   end
 
   depends_on "pkgconf" => :build

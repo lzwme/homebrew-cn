@@ -6,15 +6,16 @@ class Bazarr < Formula
   url "https://ghfast.top/https://github.com/morpheus65535/bazarr/releases/download/v1.6.0/bazarr.zip"
   sha256 "9c7523258bde58528d53acc91239774215e44e4f31d28cb2fb1c620ecdaef7b3"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/morpheus65535/bazarr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a94937c6c0978094a59b010a0af86f3a473fc90bc2be14c3775a383c14e36a9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78186dc1d95139e69b7f9038e4105d0170c85e2d33e8c08129c3b8991c4d558d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51c4d6d4928dcd9aa5bcc3da404ca5819c63e872bd79240919aa79c9ec9242a5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "492b1c471b71042c62185a4206a48ca622376ccf87c8ebefd709a27d3549a67b"
-    sha256 cellar: :any,                 arm64_linux:   "64c1f74a295795fae61f2fbf6b5501986377e418099a4f43b9fdee5dcedf17ce"
-    sha256 cellar: :any,                 x86_64_linux:  "1c61da0399322eb5c38f6d032e10c7a3f9255cedf3dbf2814c53440569112d92"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7fb73aad01bf88f7dd6cf654432b617e82db2cf403d6a508d36483b21d996d35"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "646bbecf893d730ebde4bebf09b1d711b128868a30c76fe09dc2dc49245986b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2d742f231b7122b2922f85fbef50fdc9ccd15dc01cbef80c53ed1d78f019af9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "252eb55fbc8c0d43c04489a7a6572a32cd5c9d9f5dcff17751c8e22b20b36c7e"
+    sha256 cellar: :any,                 arm64_linux:   "1b0dfc9b4b015f12e9501ef7c5b19379e69081a1231165571f019fd6f6821dbb"
+    sha256 cellar: :any,                 x86_64_linux:  "9b9f3abba5c4be54a143a39f4644cdf85b47645e0ed727a49a0a60eb03e9058c"
   end
 
   depends_on "node" => :build
@@ -40,8 +41,8 @@ class Bazarr < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
-    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
   end
 
   resource "webrtcvad-wheels" do

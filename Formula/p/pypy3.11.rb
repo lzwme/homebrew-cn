@@ -4,6 +4,7 @@ class Pypy311 < Formula
   url "https://downloads.python.org/pypy/pypy3.11-v7.3.23-src.tar.bz2"
   sha256 "f15c9c41e03f3f7ecc25228c6c67427b8918f21ef2d694215994b1fade20f69b"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://downloads.python.org/pypy/"
@@ -11,12 +12,12 @@ class Pypy311 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3416673f8bac4e45c9758fdb7cc04a1a5c5a7d390345be77afee5c923ffff4d0"
-    sha256 cellar: :any, arm64_sequoia: "934a2ce8d3faf8beac9012c4d1f69276f84002e2a690890aa5b4b7b72fb70947"
-    sha256 cellar: :any, arm64_sonoma:  "99297a105340130d43aa0908ee1e3c87922503261921d6741c3d4f5bf8c60fd7"
-    sha256 cellar: :any, sonoma:        "16ed1762849fb59e878b481c56d2ab696a34f10b2e2685b560f10055b1b0fad1"
-    sha256 cellar: :any, arm64_linux:   "b717a5f37e8a96f1011248b37755bcf9d0359a91d9c90cb847b2409c27b4a7b8"
-    sha256 cellar: :any, x86_64_linux:  "801ea69caec1b15b22dd8ea3835583b2255859156b5713045ba5821732af7460"
+    sha256 cellar: :any, arm64_tahoe:   "b514cd171f5fa038f30daaab338b4ebf1bba30e7505fd714fc4b18eeafe3eeb4"
+    sha256 cellar: :any, arm64_sequoia: "d47f809ecf524251e045bc253c1f2e3d7515f767f025270dae2b3651fa399930"
+    sha256 cellar: :any, arm64_sonoma:  "b8a3e6b99d1a681cc140a070a3392796dd74387db8f2fa70d7d0263fc4a74005"
+    sha256 cellar: :any, sonoma:        "cb9cce87748367b7b24ac46ef41c80eaaa331353f0553b1c1441041c306a66f9"
+    sha256 cellar: :any, arm64_linux:   "1f8ea65f8bb78e499efb93f5cd32f677275b7c6d3f0db8c5b2a56589f07739f6"
+    sha256 cellar: :any, x86_64_linux:  "1745920536668478e1ae5efcaf39dbf7df0762a15b2cb72c225b3bcfafeb8501"
   end
 
   depends_on "pkgconf" => :build
@@ -58,8 +59,8 @@ class Pypy311 < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
-    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
   end
 
   resource "wheel" do

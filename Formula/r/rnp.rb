@@ -32,7 +32,7 @@ class Rnp < Formula
 
   # Backport upstream fix for the missing standard header with Botan 3.11
   patch do
-    url "https://github.com/chenrui333/rnp/commit/29758631b5dde64b0059abe226c86c24ea08c3ce.patch?full_index=1"
+    url "https://github.com/rnpgp/rnp/commit/29758631b5dde64b0059abe226c86c24ea08c3ce.patch?full_index=1"
     sha256 "f8903db07fd136c54932c088da92ef87e1c8091936c9301f416361d04c1d31e8"
     type :backport
     resolves "https://github.com/rnpgp/rnp/pull/2387"

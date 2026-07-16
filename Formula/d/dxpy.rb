@@ -3,17 +3,17 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/d8/cb/c53cbfef4871d8bb5981935c09ef4f669937bfefd467fb5587689e10f38c/dxpy-0.409.0.tar.gz"
-  sha256 "90991f9e3a24333ca0599f3ac1373ce497ac9d8356f95e4c5a436826bdff9c7f"
+  url "https://files.pythonhosted.org/packages/12/77/893b9fbd2e4586d4992ed5cc051a271a0b1cba4b81fe704f84bcfd683f71/dxpy-0.410.0.tar.gz"
+  sha256 "cd09951bfe3aac996d831807383ea7072e4eedbd6ed9fb575e266599013c005a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7a613c6ec867cb69c7e19c85d02eef3a1302ba13775d5d30840890c6056098e3"
-    sha256 cellar: :any, arm64_sequoia: "eee93a424fcd340a988c8172e6f40047aeb56cff299d19e0e0810395f8483a93"
-    sha256 cellar: :any, arm64_sonoma:  "c0a74b3da3ba4fe794bbc7c0cb5498f4e98eb448eb42412c4965d35beab269c1"
-    sha256 cellar: :any, sonoma:        "7091b3404cefcbcc3ef877ec5962eda2ff55ae46f3a14092ad771d24d38384aa"
-    sha256 cellar: :any, arm64_linux:   "cabacec75a1195c0dd570b3b76755f2c497d037dac5cb5d8fecfe7d3555a39c8"
-    sha256 cellar: :any, x86_64_linux:  "09566a2b1eb1df9f2385ff8e6f022aaeac5ef47dd987d58625250ef8bf167c20"
+    sha256 cellar: :any, arm64_tahoe:   "af50874f64df072a1f70f9c8c4e4517cddf77ddc1bff2741d52f3768a8a7e60f"
+    sha256 cellar: :any, arm64_sequoia: "5b2632cac6f8ed685dc11778d9e740b9e8bb08cfd13fd9e4ba14a145f7fecfbe"
+    sha256 cellar: :any, arm64_sonoma:  "4c23807e97ba7f4edd2ff2db4d10f8059304f2e05d7b3a3cfbd6caaafa862ae6"
+    sha256 cellar: :any, sonoma:        "f2e117dda9c082ad1c644cfc8d4373b03fed6cd183a01f842969c672f190e798"
+    sha256 cellar: :any, arm64_linux:   "c344e71ff63cf2253f8a0e34e7fb603f219e95177a9e02c85172b51cca4ff001"
+    sha256 cellar: :any, x86_64_linux:  "990dcd4d160dc19f3d78a8144e577c880aca8d1710be1cf9206cc3ddde9e1ef7"
   end
 
   depends_on "aws-c-auth"
@@ -41,13 +41,13 @@ class Dxpy < Formula
   pypi_packages exclude_packages: %w[cryptography certifi websocket-client]
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/38/61/0b9ae6399dd4a58d8c1b1dc5a27d6f2808023d0b5dd3104bb99f45a33ff6/argcomplete-3.6.3.tar.gz"
-    sha256 "62e8ed4fd6a45864acc8235409461b72c9a28ee785a2011cc5eb78318786c89c"
+    url "https://files.pythonhosted.org/packages/95/c0/c8e94135e66fabf89a120d9b4b123fe6993506beca6c1938a74c24cfa5fd/argcomplete-3.7.0.tar.gz"
+    sha256 "afde224f753f874807b1dc1414e883ab8fe0cda9c04807b6047dcb8e1ac23913"
   end
 
   resource "awscrt" do
-    url "https://files.pythonhosted.org/packages/ce/33/ed6d3c91d7b136a91eeea3bea1023e818f5f99d4fcbd8956c645a2dc6006/awscrt-0.34.1.tar.gz"
-    sha256 "a3ae8e35c3a3eefdb2a15859887a05b926d0456d21ccba1b49861cfe46bcc8c2"
+    url "https://files.pythonhosted.org/packages/e8/8a/294c2f6cdda8f386057a5f6b349fec9f4838b9c25a98cb67dc503bb80514/awscrt-0.35.0.tar.gz"
+    sha256 "761ae0dda17fd9dfaff4bbb2a376e28e44dfd77dc6410b7bc408297a1fd5600e"
   end
 
   resource "crc32c" do

@@ -6,17 +6,18 @@ class Pyinstaller < Formula
   url "https://files.pythonhosted.org/packages/d5/4d/ec706c3fcf39e26888c35b39615ff4d5865d184069666c47492cff1fbe50/pyinstaller-6.21.0.tar.gz"
   sha256 "bb9fab705983e393a2d1cac77d6972513057ad800215fd861dc15ff5272e98fd"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/pyinstaller/pyinstaller.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da3c4081f26d74c3b3b9a1a6050324bbbecfa65ecd2ab080b2215c12e1ff65a1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ffcfcb1e60af40ff315f2ac4b23cc4da2b594cb2540032e851caa4e145c9a407"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e7bf1936ab5258363d844bf46302dd0c7f1b5d388043d4865d180cca55489be"
-    sha256 cellar: :any_skip_relocation, tahoe:         "a288f3b4cc40729d3af05ab5837f433b1bcd9cc428053b9655e619d432164cfa"
-    sha256 cellar: :any_skip_relocation, sequoia:       "e25d1a82b8ec496c0caeb336cb5e679a1aec4fef826991df0ba5662c626a55d0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9350e81f28858c475be8d502afa8212041137733ce657c3dfcf4ce280d84d439"
-    sha256 cellar: :any,                 arm64_linux:   "5c92eb4b73ecb4367a13e92e077fbcaa644d2be676d2569715da0d5500c59dd3"
-    sha256 cellar: :any,                 x86_64_linux:  "4359ea7c62a43c94f182de3bbe9e2d67dacd835c6038d5d632b2e44dc3f7280f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0c35c6f7706898a62b666a397e741cc157713deddc5c1e65516431770e8b212f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "721d7fdad59e9679d654d47798011cc3bd0bd5e272799bcd55f7b36da59e8136"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a311ed3472daa1a90a81fa8c53f8e36861ec5a4852bdcc6935eb3bb8e0b23957"
+    sha256 cellar: :any_skip_relocation, tahoe:         "55c26f1d7cb7792c5cbf0f57375d55e81161f139a875378805a7be5b751adf67"
+    sha256 cellar: :any_skip_relocation, sequoia:       "82476f66681226aad93ebcaf1fb18eec959f4ef19c47a82c24462ac342b81af6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "22111dd3d114ae6015fb3b2b87436db2b1a2169f1e9568a9508214acc0c1e33a"
+    sha256 cellar: :any,                 arm64_linux:   "ad6e28527b9aa50737c70e7ca6dc4cb105ed0bd0ec54315a08d064f188a5d79a"
+    sha256 cellar: :any,                 x86_64_linux:  "102de07f81d873d47e65b4fb5a7991a889b514d4533c50afd119d37e2c5a82e7"
   end
 
   depends_on "python@3.14"
@@ -48,8 +49,8 @@ class Pyinstaller < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
-    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
   end
 
   def install

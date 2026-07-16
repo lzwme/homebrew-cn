@@ -15,12 +15,13 @@ class Nginx < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "067c2846d8862ea87888a0775f6a06c08b1f3160bfc1cd71de858f852d3a4b3a"
-    sha256 arm64_sequoia: "1fb9246e0fae01f5757c98796a8386f1af998f442e723ee09ff969b6659c61a8"
-    sha256 arm64_sonoma:  "317105d5a6d66e3cde0f08c6a3a436127d9537cc0f2e51aa0a93e0f849502263"
-    sha256 sonoma:        "10390be6ea5662cb7517fab30c1f189e5ed7d6e08add1e033141b335ffd29d17"
-    sha256 arm64_linux:   "3b9f2f667c96cfa69ef524fd91ae9d5bb93da0f51249ab0d86e747290d2cf898"
-    sha256 x86_64_linux:  "fafeb43d57ef35fe44cd0e995a173512efbcc46c21b29e1701e12400e26056f6"
+    rebuild 1
+    sha256 arm64_tahoe:   "31ddb4a6cf9f28001faacdb879b6869a6c5a10a9a5440385dc2c65e429193f9a"
+    sha256 arm64_sequoia: "e588e32535ffdb09352ae0ea930371f0978a1a12f308dff2dc97f57ced2f9c1a"
+    sha256 arm64_sonoma:  "caaf190a828e84f12f14926e11b11a88e28924d658c9e11f9ea4fe5f56b24d54"
+    sha256 sonoma:        "00894f3b7d49b3982306475d7d1af1f5a5af413e9ea7c9ab62289fcd80b376b9"
+    sha256 arm64_linux:   "eca23d4559df62b6092dcd0a24b2ea300d4c69b475b81440d3d054e1392abce2"
+    sha256 x86_64_linux:  "60691ed53af905fede717c468ea86c8a310744484f0839cd02bba43a7a060478"
   end
 
   depends_on "openssl@3"
@@ -126,7 +127,7 @@ class Nginx < Formula
       dst.mkpath
     else
       dst.dirname.mkpath
-      html.rename(dst)
+      mv(html, dst)
     end
 
     prefix.install_symlink dst => "html"

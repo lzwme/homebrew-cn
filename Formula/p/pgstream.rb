@@ -1,17 +1,17 @@
 class Pgstream < Formula
   desc "PostgreSQL replication with DDL changes"
   homepage "https://github.com/xataio/pgstream"
-  url "https://ghfast.top/https://github.com/xataio/pgstream/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "6bfa9df8cd7ea25eb560042548082c01d08c1fb33d9588c21b77ccf8ff949895"
+  url "https://ghfast.top/https://github.com/xataio/pgstream/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "e7a61b1316ecd52ca132bc68480a629bf8c3665a605195815d2a1e0c60b7d0dc"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f869627dbc4ee2c4d58adb8415a1f581bdca552b5b05bc22d85a61de8792cb97"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "152a347352f62fd1d2224595bb79ec857432f8d778069113a2853664dbeb5d90"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08466f1db10ca67b83e1adeebb655551078ba940c6b4c596965173aaff7daa23"
-    sha256 cellar: :any_skip_relocation, sonoma:        "295ae129a2b5b57b62b863734018b34ca98e6cee374d3d8043b6cf8ecbd23dee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a83dda592871f6fc98fd2a367e73da40d7c45ba29a4acda10e034c9a48a6bdbf"
-    sha256 cellar: :any,                 x86_64_linux:  "d85ea65b4179a62c13e9556fcf34a0e91374410563d2da3aa281d5c6519bfb6e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60b5559b0ec2f0ca83463110119299a84e65d964f8a662c1e9e1cf48daf93b3b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60b5559b0ec2f0ca83463110119299a84e65d964f8a662c1e9e1cf48daf93b3b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60b5559b0ec2f0ca83463110119299a84e65d964f8a662c1e9e1cf48daf93b3b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9d4be9f2499b152732cabb042000b296ae12cf848f43411dbdcb79b209886f65"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2f38641c349aa00d5bbcc323ff02de62f99e79ed1b1d7e8cf259089c859d2fe"
+    sha256 cellar: :any,                 x86_64_linux:  "ad2a8cf9e1268dd52720724fb26a63b0487f1c05d85a3822c9f0b1043c5e673a"
   end
 
   depends_on "go" => :build

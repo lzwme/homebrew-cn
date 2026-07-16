@@ -6,14 +6,15 @@ class AwsElasticbeanstalk < Formula
   url "https://files.pythonhosted.org/packages/b8/b1/ee48b9e7a0e0c03254d27623f2b82a95f0ba95defe9bc6a6dc334d925501/awsebcli-3.27.3.tar.gz"
   sha256 "05a153843eb167581d888b878c8628f95f629e5a4615adcb9ff621c254a413c4"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "de5de283e554c0823fb767c6c33054e5779d9cc73dc8bf24c99736fec055b153"
-    sha256 cellar: :any, arm64_sequoia: "4078b8fc3f8b2e7754f197d6dfe6e5804fef71c4ae74391883380d6f0549ee9c"
-    sha256 cellar: :any, arm64_sonoma:  "4230d0fa5dc55bdd6e468aff14a55b5f16514f8e2eabdc1b3c7b8911244c5405"
-    sha256 cellar: :any, sonoma:        "e74d9e419a135d0ca5d94fb671661f2bdccc5dddd473b6fbdbad41b61b734ac5"
-    sha256 cellar: :any, arm64_linux:   "78f8ead67d17b88011eddb279c009dab26a7ffee3ae5f11cefcdcadfe9a1a521"
-    sha256 cellar: :any, x86_64_linux:  "0f4106f84b403e1e1479471452a05c7458e04a48bd9bb4814fcbaaaeeeb54cd9"
+    sha256 cellar: :any, arm64_tahoe:   "a19e93fcd528e21b38b560d825381015e985b459824e35e87a84fad1d806ff38"
+    sha256 cellar: :any, arm64_sequoia: "80aa72100d9d0ef72333230684242056827b6c804108c856dad657a402bec4c1"
+    sha256 cellar: :any, arm64_sonoma:  "421baedbe20fad7da23c0d11ba51f55043bb119b8d16a3080676482e09ef6b65"
+    sha256 cellar: :any, sonoma:        "384dc862f0956dd2fb7dc599d7604b7fd13323a48c9df3fbc9f9b9caf9c4af21"
+    sha256 cellar: :any, arm64_linux:   "92c7299bfe1b158bb694e4185605ebfcdeb2d627f3fd58e1f82f6dfaf0d32f5a"
+    sha256 cellar: :any, x86_64_linux:  "9c2baa8dfee3c6b960a75778380f05bfe8ab91ff74a0f361f8eead2ece983d52"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -40,8 +41,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/c4/a8/3409b5df7e6a562be82e409ba5a976e7ac3df8d5567552c23d44b367a40b/botocore-1.43.37.tar.gz"
-    sha256 "46a7982815579cfe8c7851036b1f51237e35e7937456341df55bc5c36a316145"
+    url "https://files.pythonhosted.org/packages/76/2c/279bf51f68e85a12323996aa4a7f2a163da84dad949ee751caa318928ce1/botocore-1.43.47.tar.gz"
+    sha256 "9e04d8da7f9cff8a911b14284829f78b74e1ce785444833199837decb5ecc17a"
   end
 
   resource "cement" do
@@ -50,8 +51,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "colorama" do
@@ -130,8 +131,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
-    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
   end
 
   resource "six" do

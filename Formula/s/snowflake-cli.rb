@@ -3,18 +3,18 @@ class SnowflakeCli < Formula
 
   desc "CLI for snowflake"
   homepage "https://docs.snowflake.com/developer-guide/snowflake-cli/index"
-  url "https://files.pythonhosted.org/packages/02/2f/db682a59f91c8165aa99030d002f87d88232cd51a73712109f377bac9dd7/snowflake_cli-3.22.0.tar.gz"
-  sha256 "1de28b10b361a34316d270daa1ef0ef975378dd552e1a89dd2d11ece922505d9"
+  url "https://files.pythonhosted.org/packages/bd/0a/cda7097d753b255bdfd6d0f6050d388b8f30c78fe585cabd48627f8fbde5/snowflake_cli-3.22.1.tar.gz"
+  sha256 "964862a1591b34e0a65b9eb1bdd6820373a614cdabd1c9bb92872c2d1162edea"
   license "Apache-2.0"
   head "https://github.com/snowflakedb/snowflake-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a13abc9702ef01342ef47bf736fc21c36592a75e207aef02cb02f6e50e6c3183"
-    sha256 cellar: :any, arm64_sequoia: "c93e2aa2492499e79602a11998e57fde0fae562b19a6b61b25047aa553421e63"
-    sha256 cellar: :any, arm64_sonoma:  "2f724ff5618c55141daef619f40bb53ab354bc076fafd5cbcbe8d1b2fb184a32"
-    sha256 cellar: :any, sonoma:        "947663a9191c5c52745bc2152eb580212da6cf4ae73559fbef0aa95f036af21b"
-    sha256 cellar: :any, arm64_linux:   "4b32294780c224bc16d09b103ffa82112c602db585a2d6249cd3e4be3e819380"
-    sha256 cellar: :any, x86_64_linux:  "ec4137d3cf28f9e45dad717c705ca4c80010783d6c9da64a78d2f5ec39276389"
+    sha256 cellar: :any, arm64_tahoe:   "3ea20c1c9a7f595fc8620ffcb6a4a43ef5cc4af24bca1b756e9c6edc1e74e4be"
+    sha256 cellar: :any, arm64_sequoia: "0605c4564634a86511abc914518a01a6f98a9c57c495409203390d7d295cd783"
+    sha256 cellar: :any, arm64_sonoma:  "ff19b9bb7d2ed093ff44126e6ad68c31334da770708fe6b809516197d81564f5"
+    sha256 cellar: :any, sonoma:        "d68e47ca73cd47eee44bea5c035f456cb1216d8eff1ad1afb8406bd9972b0a36"
+    sha256 cellar: :any, arm64_linux:   "16215a4f55f71a501795acbc1166ebe162ecd44503016d60a41a2e1faf60da91"
+    sha256 cellar: :any, x86_64_linux:  "04c650ed7cf6fee1dd63105b63dc7b87e38fdc09029b5e282d739f2a6d985f35"
   end
 
   depends_on "protobuf" => :build
@@ -35,13 +35,13 @@ class SnowflakeCli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/21/1e/4b6b2bd7ad9173e72fd5aef5ec1187847e06ff5497b66c2051b387827d56/boto3-1.43.42.tar.gz"
-    sha256 "f5a7fa503fd902dbd305d52a4571971149acb2c19f02508188f283e244e121e4"
+    url "https://files.pythonhosted.org/packages/eb/76/8c2b062b9a9f27db8d78c3183213efd2cb31493b9a81853025da5254652e/boto3-1.43.47.tar.gz"
+    sha256 "09a8ce4abab4391bf08315e2dcc449b4b33e97ce7654ee9398d9fe4ef73a33da"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/54/de/c264abcfb6b371d05c7c1ffbd10d666bf517b6a259390d3e49c921f2a1c5/botocore-1.43.42.tar.gz"
-    sha256 "d813d5d5707db5f1c73b5d65f6b172c49f38375b23b30c593966fef56f8b5e40"
+    url "https://files.pythonhosted.org/packages/76/2c/279bf51f68e85a12323996aa4a7f2a163da84dad949ee751caa318928ce1/botocore-1.43.47.tar.gz"
+    sha256 "9e04d8da7f9cff8a911b14284829f78b74e1ce785444833199837decb5ecc17a"
   end
 
   resource "charset-normalizer" do
@@ -95,8 +95,8 @@ class SnowflakeCli < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/36/cf/ea4ef2920830dea3f5ab2ea4da6fb67724e6dca80ee2553788c3607243d0/jaraco_functools-4.5.0.tar.gz"
-    sha256 "3bb5665ea4a020cf78a7040e89154c77edadb3ca74f366479669c5999aa70b03"
+    url "https://files.pythonhosted.org/packages/6c/1f/c23395957d41ccf27c4e535c3d334c4051e5395b3752057ba4cbaec35c56/jaraco_functools-4.6.0.tar.gz"
+    sha256 "880c577ec9720b3a052d5bc611fb9f2269b3d87902ef42440df443b88e443280"
   end
 
   resource "jeepney" do
@@ -215,8 +215,8 @@ class SnowflakeCli < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/f6/94/dcdaeb1713cab9c84def276cfac7388b17c7d9855bbcfe88d77e4dbafd44/s3transfer-0.19.0.tar.gz"
-    sha256 "ce436931687addc4c1712d52d40b32f53e88315723f107ffa20ba82b05a0f685"
+    url "https://files.pythonhosted.org/packages/65/da/4bef7ce7bb989b222aa4785a413896dbec53306dfc59c6ce7d16a7ffbd6a/s3transfer-0.19.1.tar.gz"
+    sha256 "d3d6371dc3f1e5c5427b2b457bcf13bcf87bec334c95aed18642eae61f6926f3"
   end
 
   resource "secretstorage" do

@@ -6,16 +6,16 @@ class Ggshield < Formula
   url "https://files.pythonhosted.org/packages/9d/f9/3f2b594156cda7ed2afba978daec90fc0fad5023a1896aacf120f259f9a1/ggshield-1.52.2.tar.gz"
   sha256 "bcb3f485e0ac12adbca44b4e7135bb522e29b2a774842eaf942ffca972f2219a"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0db0f46febb96e361fd03109b959b11a9572053cfc7cd3763f05e8c87e80feab"
-    sha256 cellar: :any, arm64_sequoia: "611edebeb568f0b6eb11ea866f6744a2594a6e159ea914b61ca40ad02de7cb3f"
-    sha256 cellar: :any, arm64_sonoma:  "a33ba90f9ea3a860b7e79fa24f7bce71e002a8bc388a7d7e102561aff4c3b971"
-    sha256 cellar: :any, sonoma:        "e99f192cbf1f139ffbeb0efe04e6c7a60858e3ae7272f940d8f3f60bb4c24761"
-    sha256 cellar: :any, arm64_linux:   "eecac4a526bd0067d05bc7573e6d7c6cc5c755bbbe120a08e946e3243ac2b4ea"
-    sha256 cellar: :any, x86_64_linux:  "7684139cb158aa60f4bb2bfccf030a8174fb82fd93df14afddc77c539983f1c5"
+    sha256 cellar: :any, arm64_tahoe:   "8b5594d38388bece6dff2eb3effbb347e6ac2ce0783e2cf4bd189defb400fb71"
+    sha256 cellar: :any, arm64_sequoia: "43415e6f0bd98506b8d2c8af4f59d3a1edaa74698609d01c4c1944b8162680fd"
+    sha256 cellar: :any, arm64_sonoma:  "9d2334d8dff0a41602491934743e7d3da4d0f599016b226638814823cbca5463"
+    sha256 cellar: :any, sonoma:        "0b90b11159dea4d6a9023f7686053f8b6b3134e8018d27567d0eebde2e469605"
+    sha256 cellar: :any, arm64_linux:   "9bfe9371ee51152dc0874b00c07f367b1f878eee509ba4e68147bcb90b15f3c9"
+    sha256 cellar: :any, x86_64_linux:  "ee117a75cc4ff75b4a267472ffc77f7a3a82d1dde83662975a113294229386ca"
   end
 
   depends_on "pkgconf" => :build # for `rfc3161_client`
@@ -56,8 +56,8 @@ class Ggshield < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/e6/dc/be6cbe99670cd6e4ad387123647cb08e0c32975e223f82551e914c5568a6/filelock-3.29.4.tar.gz"
-    sha256 "10cdb3656fc44541cdf30652a93fb10ec6b05325620eb316bd26893e4201538a"
+    url "https://files.pythonhosted.org/packages/35/94/00f2059e4835eace3ae8fde680b932c496f8ec7bdc99168dfa53fb2e6b79/filelock-3.29.7.tar.gz"
+    sha256 "5b481979797ae69e72f0b389d89a80bdd585c260c5b3f1fb9c0a5ba9bb3f195d"
   end
 
   resource "id" do
@@ -81,8 +81,8 @@ class Ggshield < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/36/cf/ea4ef2920830dea3f5ab2ea4da6fb67724e6dca80ee2553788c3607243d0/jaraco_functools-4.5.0.tar.gz"
-    sha256 "3bb5665ea4a020cf78a7040e89154c77edadb3ca74f366479669c5999aa70b03"
+    url "https://files.pythonhosted.org/packages/6c/1f/c23395957d41ccf27c4e535c3d334c4051e5395b3752057ba4cbaec35c56/jaraco_functools-4.6.0.tar.gz"
+    sha256 "880c577ec9720b3a052d5bc611fb9f2269b3d87902ef42440df443b88e443280"
   end
 
   resource "jeepney" do
@@ -151,8 +151,8 @@ class Ggshield < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/5c/5f/6583902b6f79b399c9c40674ac384fd9cd77805f9e6205075f828ef11fb2/pyasn1-0.6.3.tar.gz"
-    sha256 "697a8ecd6d98891189184ca1fa05d1bb00e2f84b5977c481452050549c8a72cf"
+    url "https://files.pythonhosted.org/packages/a4/9a/23310166d960def5897e91fe20e5b724601b02a22e84ba1f94232c0b7f67/pyasn1-0.6.4.tar.gz"
+    sha256 "9c447d8431c947fe4c8febc4ed9e760bc29011a5b01e5c74b67025bd9fb8ce81"
   end
 
   resource "pygitguardian" do
@@ -170,6 +170,7 @@ class Ggshield < Formula
     sha256 "69285c7e31fc44f68a1feb309e948e0df53259d579295e6cfe2b1792329f05fd"
   end
 
+  # Manually updated to be compatible with cryptography 49+
   resource "pyopenssl" do
     url "https://files.pythonhosted.org/packages/74/b7/da07bae88f5a9506b4def6f2f4903cf4c3b8831e560dba8fa18ca08f758f/pyopenssl-26.3.0.tar.gz"
     sha256 "589de7fae1c9ea670d18422ed00fc04da787bbde8e1454aea872aa57b49ad341"
@@ -191,8 +192,8 @@ class Ggshield < Formula
   end
 
   resource "rfc3161-client" do
-    url "https://files.pythonhosted.org/packages/66/a7/be3b086133a87d595e7b11564931d5e5283edeeabba05dfee636a34b4dab/rfc3161_client-1.0.6.tar.gz"
-    sha256 "9969262fe6c08ecce39f9fe3996cf412187793834a022a643803090db5aae6b4"
+    url "https://files.pythonhosted.org/packages/35/0d/b9e726d45557d756d2e162bd3ca23f641119c4fd0717b9e4b7519080be10/rfc3161_client-1.0.7.tar.gz"
+    sha256 "8c02330b8b09cbf88f2f5f1ecdb6e6b76c0c9bd7c4199a5068ab43b95d7ab8e5"
   end
 
   resource "rfc8785" do
@@ -216,17 +217,13 @@ class Ggshield < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
-    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
   end
 
   resource "sigstore" do
-    url "https://files.pythonhosted.org/packages/d6/63/1e44d9964d4f47617e641bdf6ce1b883b893d95b29ff07f97a8901df6b1c/sigstore-4.3.0.tar.gz"
-    sha256 "3c4b566bddfcc53e73d3adc06acf4311d72be0d907a167133abdc815a472a59b"
-
-    # Allow cryptography 49.x and as a result of this patch, `pyopenssl` is also manually bumped to 26.3.0
-    # PR ref: https://github.com/sigstore/sigstore-python/pull/1811
-    patch :DATA
+    url "https://files.pythonhosted.org/packages/04/a9/7f7625225c6e7041ab4460bfc5b30a6ebc40bcf6487ee28d5864149124c4/sigstore-4.4.0.tar.gz"
+    sha256 "20ffe791c1fa33ce62148c0291b46280d29c1910964d9afac419e9b1a8afc56b"
   end
 
   resource "sigstore-models" do
@@ -287,16 +284,3 @@ class Ggshield < Formula
     assert_match "unhealthy (Invalid API key.)", output
   end
 end
-
-__END__
---- a/pyproject.toml
-+++ b/pyproject.toml
-@@ -26,7 +26,7 @@ classifiers = [
-   "Topic :: Security :: Cryptography",
- ]
- dependencies = [
--  "cryptography >= 42, < 49",
-+  "cryptography >= 42, < 50",
-   "id >= 1.1.0",
-   "importlib_resources ~= 5.7; python_version < '3.11'",
-   "pyasn1 ~= 0.6",

@@ -1,8 +1,8 @@
 class Hunk < Formula
   desc "Review-first terminal diff viewer for agent-authored changesets"
   homepage "https://hunk.dev/"
-  url "https://ghfast.top/https://github.com/modem-dev/hunk/archive/refs/tags/v0.17.0.tar.gz"
-  sha256 "67b183a1664a1e85dcc42219f9ffe3422d74e123ec1e71be600ced94a0a1076f"
+  url "https://ghfast.top/https://github.com/modem-dev/hunk/archive/refs/tags/v0.17.1.tar.gz"
+  sha256 "f21998d94edc5f4919500c0e9a0331ef1dab9b43c42db634711155b13ec5a22a"
   license "MIT"
   head "https://github.com/modem-dev/hunk.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Hunk < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "2451674882ac0fe872c50d15ced4e0f9984023013caf23f7a668ef6e8ea45288"
-    sha256                               arm64_sequoia: "2451674882ac0fe872c50d15ced4e0f9984023013caf23f7a668ef6e8ea45288"
-    sha256                               arm64_sonoma:  "2451674882ac0fe872c50d15ced4e0f9984023013caf23f7a668ef6e8ea45288"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5d369ea4071d607366a1aa75e7c24508de0f050583628b927ff9783cde04414c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aac74914738a0db06567b04614980b6a6faabb79b8876b9aa96c14f9b593841e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b1455a9d4b9b8e1ad915352e56d2f1311089d610277f82c342e8efff2685418"
+    sha256                               arm64_tahoe:   "e79315a034bd596ccc6e8417617d88af4fd5190565a21f74045fc5555a228cef"
+    sha256                               arm64_sequoia: "e79315a034bd596ccc6e8417617d88af4fd5190565a21f74045fc5555a228cef"
+    sha256                               arm64_sonoma:  "e79315a034bd596ccc6e8417617d88af4fd5190565a21f74045fc5555a228cef"
+    sha256 cellar: :any_skip_relocation, sonoma:        "001e0109a2437f5d9824310ad33163040862b10d838904b0c1714f9bb92825e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ac20daa578040542f337e22143294d93f7f8fbec18f2e439dafd40d0b45e01b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "610ae1dc17b72a2a1a8876e74aff79ee8a83480f084ada525b2a5490259925b5"
   end
 
   depends_on "bun" => :build
