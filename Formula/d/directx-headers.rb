@@ -1,17 +1,17 @@
 class DirectxHeaders < Formula
   desc "Official DirectX headers available under an open source license"
   homepage "https://devblogs.microsoft.com/directx/"
-  url "https://ghfast.top/https://github.com/microsoft/DirectX-Headers/archive/refs/tags/v1.721.2.tar.gz"
-  sha256 "b736c311057f2b426eb465d4e7867da4eb4e76d69be27f45bfa359189f97c0b0"
+  url "https://ghfast.top/https://github.com/microsoft/DirectX-Headers/archive/refs/tags/v1.619.4.tar.gz"
+  sha256 "427c4c20bdeb06022d706ba24cb14838b62cca4456a6072e826d7ffa706a4b1a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3769c9555c5d1e815ece045baac0b8b802e3605bb071f26cd45ef4c4ab4e1102"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ccfbfc1eec8d6ca7634750882126eef71899dae3d04cae31a7c2d586d9781e8a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "811616de5c8b8a564ba9f1c29358053018f7a20f626601a4668f69c1bf4e1665"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2b9e3b1a7bfcf2d1a870c9e49427920d64f1816238c421c149c553dfe8d275c3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "719a259511f2717281c2f35fa65f727e7a60efe2c964e6d1db473d923c768996"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9fed14c646671f7734b52a06a7b304abc93782b4a9c3a77e67270ae674e908d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52f8a35aa4fa6fd15e70d4ceebbd7afb9980bf02f47e34ac9f4ce8a607edfc5f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa175c2c8ecbca09051579bf7a2b2471c078b59fc8284642ca813214512e9a17"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02f2f9bb07b014c34cc46120965fa6b371b99539cf4ca59a3d93249342fda8b9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "947ec0ff6120716b048dc7eb59c2ab27430782353c8a4489ee9d1b4d4b023271"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "df102ffbb0cd9bfbc1340b795ed557b8ef44248ad93318989272ff9495e78eef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "349b55c1f9e0e12331bb87412dacc6497c2db5a74e9a93cf1f3a3ff5a17998d6"
   end
 
   depends_on "meson" => :build
@@ -34,8 +34,6 @@ class DirectxHeaders < Formula
 
     ENV.remove_macosxsdk if OS.mac?
 
-    # State object database helper needs MSVC ATL and HRESULTs unavailable in mingw-w64
-    system Formula["mingw-w64"].bin/"x86_64-w64-mingw32-g++", "-I#{include}",
-           "-DD3DX12_NO_STATE_OBJECT_DATABASE_HELPERS", "-c", "test.cpp"
+    system Formula["mingw-w64"].bin/"x86_64-w64-mingw32-g++", "-I#{include}", "-c", "test.cpp"
   end
 end

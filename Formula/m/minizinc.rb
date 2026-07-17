@@ -4,15 +4,16 @@ class Minizinc < Formula
   url "https://ghfast.top/https://github.com/MiniZinc/libminizinc/archive/refs/tags/2.9.7.tar.gz"
   sha256 "bb04d783dda4bba58de4004afd51d65b1fa4e8d9714c88c129cac312e267152e"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/MiniZinc/libminizinc.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "21e719d9abeaee024e6d4a8fb61de4e78c85b561be4c75926b28ea5ebb35d9da"
-    sha256 arm64_sequoia: "823e80ca5e2e8b120bf3aef2ced45235e3fe4fcd7e745c04033702f7b34b4965"
-    sha256 arm64_sonoma:  "2207824ab90e235bc59c628929439045b174d48d7657c918a6d4ef970e9f04f9"
-    sha256 sonoma:        "255661302426073c6bf6fa13306bdaeec31064ace1e5f77e56653143e38444e0"
-    sha256 arm64_linux:   "76b1edbce4ea92e5160928cf9a10eb0365bf2282f9445f9b2ffda920dce7e9ad"
-    sha256 x86_64_linux:  "b09ec05d0208d12737ae739c438caf6c4f8a870ecfc3d0f54ce8fa76e2b0820f"
+    sha256 arm64_tahoe:   "ac4f53c6ae17c13b7ea6d36af7fd1ecc293720e7b71d849562866278a7657bc8"
+    sha256 arm64_sequoia: "801cc61bce332def44d2ad597b910f32e2f485ee1debc9d090d23ade27bbef77"
+    sha256 arm64_sonoma:  "582b2200fc4861295d1f7174b0471d9af47ecc876d17b24bffb7ea7cb7e9e4e4"
+    sha256 sonoma:        "59578421371731a4157f07ebd0cb7868b6492daed472da35b6e491cef138a013"
+    sha256 arm64_linux:   "f869468743e4d113873acc0b099ef41dccc543a27d812a44538a17e095acf5d0"
+    sha256 x86_64_linux:  "09e14a9e1da32d22fd7ac88c6649dcaaab367a5575a513670ac56ff77fa56676"
   end
 
   depends_on "cmake" => :build

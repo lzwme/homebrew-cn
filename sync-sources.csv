@@ -601,6 +601,7 @@ Homebrew-homebrew-core/Formula/b/bitchx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bitcoin.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bitlbee.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bitrise.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bittensor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bittwist.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bitwarden-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bitwise.rb, Homebrew/homebrew-core, 1
@@ -4191,6 +4192,7 @@ Homebrew-homebrew-core/Formula/lib/libiptcdata.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libirecovery.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libiscsi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libisofs.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libjaylink.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libjcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libjodycode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libjson-rpc-cpp.rb, Homebrew/homebrew-core, 1
@@ -7561,6 +7563,7 @@ Homebrew-homebrew-core/Formula/t/tmpmail.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmpreaper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tmpwatch.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tmt.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tmux-fingers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmux-mem-cpu-load.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmux-sessionizer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmux-xpanes.rb, Homebrew/homebrew-core, 1
@@ -13140,7 +13143,6 @@ Homebrew-homebrew-cask/Casks/j/jitsi-meet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jitsi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jlutil.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jmc.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/j/joinme.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jollysfastvnc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/joplin.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jordanbaird-ice.rb, Homebrew/homebrew-cask, 1
@@ -13159,6 +13161,7 @@ Homebrew-homebrew-cask/Casks/j/json-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jt-bridge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jubler.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/juice.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/j/juicy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jukebox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/julia-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/julia-app@lts.rb, Homebrew/homebrew-cask, 0

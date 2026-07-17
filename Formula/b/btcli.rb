@@ -26,7 +26,7 @@ class Btcli < Formula
   depends_on "python@3.14"
   depends_on "xxhash"
 
-  conflicts_with "btpd", because: "both install `btcli` binaries"
+  conflicts_with "bittensor", "btpd", because: "both install `btcli` binaries"
 
   pypi_packages exclude_packages: %w[certifi numpy]
 

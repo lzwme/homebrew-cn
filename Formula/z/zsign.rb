@@ -1,18 +1,18 @@
 class Zsign < Formula
   desc "Cross-platform codesigning tool for iOS apps"
   homepage "https://github.com/zhlynn/zsign"
-  url "https://ghfast.top/https://github.com/zhlynn/zsign/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "cf6763be9bbce3a64d34d6bce8a36232af6353b02640ef0ae12b7b8dfd6c54fa"
+  url "https://ghfast.top/https://github.com/zhlynn/zsign/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "5e1a24116ca6875d6786703a7fb129d6afde06822f6a859de47d44eff4ad7c05"
   license "MIT"
   head "https://github.com/zhlynn/zsign.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ea393ea61e676a97fea6b19e634adcacc631fbd29b50568b54270b8848d20157"
-    sha256 cellar: :any, arm64_sequoia: "6b5d637765e6655f2c2b46a99221b45a28942ecc2ffe23d88a3f60cee91df7a2"
-    sha256 cellar: :any, arm64_sonoma:  "ce0e8fedf3c01bed08d6f7167f2edf89b54975c00b68487ca33d8cdcd87bf637"
-    sha256 cellar: :any, sonoma:        "30d3df1673af0273d7cbc858aed363ea8e9abda11d138b7072931a8046023fd2"
-    sha256 cellar: :any, arm64_linux:   "75d5ba5d121c799b2b8adca4e45d13bb1c3d0e87fe1b7563197293d84ae10f10"
-    sha256 cellar: :any, x86_64_linux:  "be3e6a177207c914ea725c1a3bfd1191149084aab8821f4d1cde0b4550988ab4"
+    sha256 cellar: :any, arm64_tahoe:   "12b2d224e7818f1e9cec61c8589ceef5a94dff184e436d6df5c248fd454f701c"
+    sha256 cellar: :any, arm64_sequoia: "676dfd4f47dd0f5df002132ab6c198fd8e0bc9b4f7e62826281ecfee93e797f3"
+    sha256 cellar: :any, arm64_sonoma:  "e560920c28953b8458377db62405dd39da87eea3c23e940b2cb769180a5437c5"
+    sha256 cellar: :any, sonoma:        "cf3cd0251d44d70a6b77f30c29825c9a8c0668dd2cc684cb7095a6d8ef5a8751"
+    sha256 cellar: :any, arm64_linux:   "ee7716a954c9594a20073aa6ce62914fc903ff8b4c6a7f8755651579d4a74b10"
+    sha256 cellar: :any, x86_64_linux:  "85a3ba87eda0d4c1acc63665c0d726e9092a204b18c8b56aae08f9a19978c133"
   end
 
   depends_on "pkgconf" => :build
@@ -21,14 +21,6 @@ class Zsign < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # Link zlib: metadata.cpp uses it directly but the SYSTEM_MINIZIP path omits -lz.
-  patch do
-    url "https://github.com/zhlynn/zsign/commit/3372a54c813a50341d725425df55bef1880c566a.patch?full_index=1"
-    sha256 "ea76695035284633cfd6906f55669c501318b5b3bb973d1798324f32f90f204c"
-    type :unofficial
-    resolves "https://github.com/zhlynn/zsign/pull/405"
   end
 
   def install

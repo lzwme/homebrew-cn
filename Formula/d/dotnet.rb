@@ -3,17 +3,17 @@ class Dotnet < Formula
   homepage "https://dotnet.microsoft.com/"
   license "MIT"
   version_scheme 1
-  compatibility_version 4
+  compatibility_version 5
   head "https://github.com/dotnet/dotnet.git", branch: "main"
 
   stable do
     # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-    url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v10.0.301/release.json"
-    sha256 "76b3f53564ccc954a410cf39de6b3856033057ed7ed920391d937afec1987d5e"
+    url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v10.0.302/release.json"
+    sha256 "ed701d78d0f960dfa901cf5a3b3fdc2d8b9778b5c1e06f296475b6d687aeaa1b"
 
     resource "src" do
-      url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.301.tar.gz"
-      sha256 "3e11330f5e79fe58410c102f2651a9b6efd8b8859ca28bda070c3b60c1195681"
+      url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.302.tar.gz"
+      sha256 "45de9aff4e4f15da32f800f68ec65d1d849dd2daf1dd858515df6a780b6b7a32"
 
       livecheck do
         formula :parent
@@ -23,8 +23,8 @@ class Dotnet < Formula
     # NOTE: 1xx band resources are only used when on 2xx/3xx/4xx band.
     # Can leave in formula even when unused to simplify version bumps.
     resource "1xx" do
-      url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.109.tar.gz"
-      sha256 "65f8a8a89741ebe9f5b5d27af7003a6a8e11854e11d2d173a8c08747f4011c2b"
+      url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v10.0.110.tar.gz"
+      sha256 "9265f5899f5aeb0f787a4f438a0fc54a314a9449e40379c419f17e9a74c791d2"
 
       livecheck do
         url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v#{LATEST_VERSION}/release.json"
@@ -41,8 +41,8 @@ class Dotnet < Formula
     end
 
     resource "1xx-manifest" do
-      url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v10.0.109/release.json"
-      sha256 "dcc488d9b6017ba88c690add96402ae01a22e4ff59ba6eb57b0542d459a5d507"
+      url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v10.0.110/release.json"
+      sha256 "f80edbe9e0e7f5b0b963b737c0142debdec8e473f519b6ad823ecc9afef5bf32"
 
       livecheck do
         url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v#{LATEST_VERSION}/release.json"
@@ -68,12 +68,12 @@ class Dotnet < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "684713d370587393242371e21a1e7d307523f994052005366acb77988bda8dee"
-    sha256 cellar: :any, arm64_sequoia: "c75deda47274dd32be5dbd3e6dc01ea709bd20c7b1e965dd64b37d11f1008325"
-    sha256 cellar: :any, arm64_sonoma:  "a1f3bea80c98408015d4b275adea98cf9ea96a1f112974fdb5a5f54babfe51ed"
-    sha256 cellar: :any, sonoma:        "9612a3092c17135e6a33b8a96ff4638e2e36fcaebd13d8162481f4e07ddd4c3a"
-    sha256 cellar: :any, arm64_linux:   "5c6eb069b8d4ef36b5c6d3208c40b9e6b60fb18b6fa764f68504cf3057b78de1"
-    sha256               x86_64_linux:  "01c57e6e2fa7625762ff6ccdfdc03e4d0c0329fda3cd5b093ac2dd36b0cbd20c"
+    sha256 cellar: :any, arm64_tahoe:   "a420ba0e0a6f87c5b62327a4f40c6d2130bf589af985ec6ed02f7c00d9067cec"
+    sha256 cellar: :any, arm64_sequoia: "9d1a21a14daa903acf3605f83c4afa872b8df9637af9a967913332c3451801ad"
+    sha256 cellar: :any, arm64_sonoma:  "fa819358d2fa9961f6823877c05c588404500bd23ae265df7130007d9982cbcc"
+    sha256 cellar: :any, sonoma:        "ec23cb98f2fbf673d71876b8732836edbef42a5a2547bb06b8e77100a043f0d2"
+    sha256 cellar: :any, arm64_linux:   "8d38caf64c5b844c17af0c10bb78b289b0e578ab42e08c972b9469afef3294ac"
+    sha256               x86_64_linux:  "d62c183775a96377768db8275a4e7dd2e887118ffcaa5c64121ddf9040a94cf9"
   end
 
   depends_on "cmake" => :build

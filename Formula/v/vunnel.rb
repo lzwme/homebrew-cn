@@ -3,19 +3,18 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/db/92/1d0e2c0dfb8c484b5ebf08ffa36328e120e4329d711143c2791607c83298/vunnel-0.62.1.tar.gz"
-  sha256 "9b2ffd8977bac16498bb4fdf1a118e2fccc3442ed18c98a1462c84f35a77ed1e"
+  url "https://files.pythonhosted.org/packages/dd/02/edd0b1f9dff17c401aaf6333cab4c1970b6dcdc0e4c6475527adcb410648/vunnel-0.63.0.tar.gz"
+  sha256 "5630b5ff838058355511746b8f8b0d29eae3837adf9aa76e7077af2d55a504b4"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "d26975e3622a0181416bfcc99e4e6c362cee24497b3bb0c4a05a3a140acca2ff"
-    sha256 cellar: :any, arm64_sequoia: "54ba3e808f8f9be3aae137fb99eab749d0264ca9ccdef9bbed5f37ea56f29c0d"
-    sha256 cellar: :any, arm64_sonoma:  "e34e2619df3d53e5e1e311de6cda998aad9fadc8d3e86ee227472d0359631c3b"
-    sha256 cellar: :any, sonoma:        "221fac886b0155f5374ad980d6d9abc91d4225c2620cbc52911371a57b1c170f"
-    sha256 cellar: :any, arm64_linux:   "3ed02d8797533ef97232e371c156a3e4bda018406a187250403e91fe57897335"
-    sha256 cellar: :any, x86_64_linux:  "0e7b3ce2700a3bf18b4ec6572d1cfcde219002065ef40c52ff4eb2668d3f77d6"
+    sha256 cellar: :any, arm64_tahoe:   "49daeed76d9bfad34e05e5e0b2b0d16c68bf790d7328c86dc2fca434b885be34"
+    sha256 cellar: :any, arm64_sequoia: "36caa080d34660d25094a16929967942ce1264efe3bb972bfba80f54673bdc30"
+    sha256 cellar: :any, arm64_sonoma:  "1a3d21f66b02d4acc644a76497793177e51ff29053e6f11e21d137edc64f3c63"
+    sha256 cellar: :any, sonoma:        "5cc58557a9fdad09cf4c8303da65c7a5832b8647e2dff36cc073fb649484089a"
+    sha256 cellar: :any, arm64_linux:   "1920ad75273f789b03ae6777a238c42e89e9ce49050b9d18644e401dbf08dc7b"
+    sha256 cellar: :any, x86_64_linux:  "5fb63edd351e30c3be64c58e112cad453a20a8b69c21c5dd7f70c37f107d1ad2"
   end
 
   depends_on "rust" => :build
@@ -37,8 +36,8 @@ class Vunnel < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "click" do
@@ -187,8 +186,8 @@ class Vunnel < Formula
   end
 
   resource "ruff" do
-    url "https://files.pythonhosted.org/packages/43/dc/35b341fc554ba02f217fc10da57d1a75168cfbcf75b0ef2202176d4c4f2d/ruff-0.15.20.tar.gz"
-    sha256 "1416eb04349192646b54de98f146c4f59afe37d0decfc02c3cbbf396f3a28566"
+    url "https://files.pythonhosted.org/packages/0f/36/6f65aa9989acdec45d417192d8f4e7921931d8a6cf87ac74bce3eed98a8e/ruff-0.15.21.tar.gz"
+    sha256 "d0cfc841c572283c36548f82664a54ce6565567f1b0d5b4cf2caac693d8b7500"
   end
 
   resource "six" do

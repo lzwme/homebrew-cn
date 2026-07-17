@@ -1,18 +1,18 @@
 class Dbxcli < Formula
   desc "Command-line tool for Dropbox users and team admins"
   homepage "https://github.com/dropbox/dbxcli"
-  url "https://ghfast.top/https://github.com/dropbox/dbxcli/archive/refs/tags/v3.6.1.tar.gz"
-  sha256 "464f8bb13042edf1df92cca1f0f0c96e412c84f04093ed20ab9d4b49ee7ed9b5"
+  url "https://ghfast.top/https://github.com/dropbox/dbxcli/archive/refs/tags/v3.7.0.tar.gz"
+  sha256 "7957e5558d8c7ee57f3a3e77828d4fabd3952afb88e28ee1de24687ccace9128"
   license "Apache-2.0"
   head "https://github.com/dropbox/dbxcli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2cc3b7c67a15b438a3387065ae92ab00f47993f091344fd09a003835f977cb8a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32028d9cdd01778f58bd3e30db15062c0941f18f9b8c134f3fae17ddcf624346"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02f0aba4d03d121ccf06bb5d719cf18fd35aaa0d301c9716cc3ccb4e16196a4d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6a667f744eb373e58f2cc30b61fdd1782a1c09f924c458b8796d6e868cf74830"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "efdb631fe38ec0020707648e13b316d0eb31d54eda8a1b3c18aa8ca1e3fd2c10"
-    sha256 cellar: :any,                 x86_64_linux:  "e1ff45b9c8fff04ba8c14d14c85f2f2c775b744c7aab562088690937c2a28ccf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3be31264c39585fef789a8adc53046efe1b25a5a66c1f60b137f6df9d6940427"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3be31264c39585fef789a8adc53046efe1b25a5a66c1f60b137f6df9d6940427"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3be31264c39585fef789a8adc53046efe1b25a5a66c1f60b137f6df9d6940427"
+    sha256 cellar: :any_skip_relocation, sonoma:        "22debb13cf44207fe3678b17a2d0d21484af885dcbd29e7bf6c37da980a41f2b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d5ebabfa1c9d2847caf2ab5f90a58e60f09172457723d9e557f62f1734d2207"
+    sha256 cellar: :any,                 x86_64_linux:  "eca784c9d61c58d7a79d5cc870c936f8ca033cab5e17cecac7ba238932f52e1b"
   end
 
   depends_on "go" => :build

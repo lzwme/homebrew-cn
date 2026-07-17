@@ -4,15 +4,16 @@ class Passenger < Formula
   url "https://ghfast.top/https://github.com/phusion/passenger/releases/download/release-6.1.7/passenger-6.1.7.tar.gz"
   sha256 "90a75cc73cf73eef52e8f96564f2beecd9d42d745669c76b9009f1abc8bca0b6"
   license "MIT"
+  revision 1
   head "https://github.com/phusion/passenger.git", branch: "stable-6.1"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "73b983372bcdfdf94aa8a2758dfe30c0c281750508639a5017ed1b817dfbf50f"
-    sha256 cellar: :any, arm64_sequoia: "bc7e21744638f8840589fac0b435d82fe68b42adfaf2747abb08746f0d02bc03"
-    sha256 cellar: :any, arm64_sonoma:  "67604bc3cb15c0fa57032cf349631efdbb437b6b2bd59043d92b9d9ae78fc24e"
-    sha256 cellar: :any, sonoma:        "bec954974d956efa68e1fd27422bc552311960a19e1a5272b566eb1d28f13a9c"
-    sha256 cellar: :any, arm64_linux:   "4177b6ced4d3c0723ece1065074ce25299fc1f63f60f8a8740c50ae6d4f820a2"
-    sha256 cellar: :any, x86_64_linux:  "b59d59540de117005248e35da4a941d7e58921f8377c296d6f2c986e50f4e7cc"
+    sha256 cellar: :any, arm64_tahoe:   "b1ce4d2c5516152fbb8fd66e53c364e4a081508879bba16490c53af51ba8a137"
+    sha256 cellar: :any, arm64_sequoia: "82a0addc531efc6bceb0cbb6b4f6939cd897ce418022e2ccaaf0dc2d303e01c7"
+    sha256 cellar: :any, arm64_sonoma:  "734a71e791c28f67e24c33f395f617ab2ca13a8d1838610e1ea75f2cae6eddb6"
+    sha256 cellar: :any, sonoma:        "a7095a0b15ebf26887e87f57b27a778c7634e78fc8a78b0015031b2fe6a9a1ec"
+    sha256 cellar: :any, arm64_linux:   "40f9da25c946b9e9292f27765945bc5e035a2d62da7be364e7a3661bf57bdd14"
+    sha256 cellar: :any, x86_64_linux:  "580675c98824c43388ed29d76251bd3ca4f574fea87a594acbce5dae0bd99b8b"
   end
 
   depends_on "httpd" => :build # to build the apache2 module

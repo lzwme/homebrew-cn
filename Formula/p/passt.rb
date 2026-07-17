@@ -1,14 +1,15 @@
 class Passt < Formula
   desc "User-mode networking daemons for virtual machines and namespaces"
   homepage "https://passt.top/passt/about/"
-  url "https://passt.top/passt/snapshot/passt-2026_06_11.a9c61ff.tar.xz"
-  sha256 "b94b235cb96ce1b7aeab6552b7e0b4c9a780e5d700ced500c65e429b2d8b8450"
+  url "https://passt.top/passt/snapshot/passt-2026_07_16.090d739.tar.xz"
+  version "2026_07_16.090d739"
+  sha256 "e7ce7a7964826292ccc4d5cdd4402d54268f0eca352b9f06cb73a40e637af52e"
   license all_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
   head "git://passt.top/passt", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_linux:  "2866debf7ebd4a6869eb8f4e676bafab5b3310ead5c2a8277fe43585a69dec62"
-    sha256 cellar: :any, x86_64_linux: "3086a4a7337f4fee93fa9be4868d07ca69b378b57dbc2760974e315a3b61d7a9"
+    sha256 cellar: :any, arm64_linux:  "6de464011e3196ce6ef8b503200ab4ce9f850ad247e8855004cca354b9182ff7"
+    sha256 cellar: :any, x86_64_linux: "45d37d2406e8759bab4032c6fd8725525c823951f2c7ea75ca3e7d90ff2bf6c2"
   end
 
   depends_on :linux
@@ -30,7 +31,7 @@ class Passt < Formula
     begin
       # Just check failure as unable to use pasta or passt on unprivileged Docker
       output = shell_output("#{bin}/pasta --pid #{pidfile} 2>&1", 1)
-      assert_match "Couldn't create user namespace: Operation not permitted", output
+      assert_match "Failed to set up tap device in namespace", output
     ensure
       if pidfile.exist? && (pid = pidfile.read.to_i).positive?
         Process.kill("TERM", pid)

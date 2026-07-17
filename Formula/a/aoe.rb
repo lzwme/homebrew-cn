@@ -1,18 +1,18 @@
 class Aoe < Formula
   desc "Terminal session manager for AI coding agents"
   homepage "https://github.com/agent-of-empires/agent-of-empires"
-  url "https://ghfast.top/https://github.com/agent-of-empires/agent-of-empires/archive/refs/tags/v1.12.1.tar.gz"
-  sha256 "033ec2d249ef8b743b933a92120a0540f512810fd1b4c52948a2aee5b124409e"
+  url "https://ghfast.top/https://github.com/agent-of-empires/agent-of-empires/archive/refs/tags/v1.13.0.tar.gz"
+  sha256 "d10c246c76108a781f5b0592a6886e94345e078778e19206f5e6ea78639d149d"
   license "MIT"
   head "https://github.com/agent-of-empires/agent-of-empires.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d82e1f8c645d6ffa6b717ad05168bf97c98668f4867f5d593f15b7fea7782d4a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c913cb164194c2b7bb77a61fca0cc2440aa4102d176eb1938b53f0620945701"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "516c5ad50acd776ea86d02ab3245351c80895ed69ee5a31168cf2ab729214969"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9e9556340b979541a7b5f7e371c8a22e9e69c7734b901ba869851c13ac016155"
-    sha256 cellar: :any,                 arm64_linux:   "0ea75d1269770f098d8ed5027ee84cd9575045fba202442f2d8e37af6376b9f1"
-    sha256 cellar: :any,                 x86_64_linux:  "7df1be0badcc614904ba101a9ad23a0bfd352c6a7fd2fd1511744522ba893933"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f1c9bd95ef4e23bec61467321c8679c717b318aafb28260ce9cecb73c6f158d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "640e943b02e3dca4bf0e2645de83d99b119ee1ca6abaf559087d7119fee9bde9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "832a3e9086b2d77b1b0f03076d0f7ec822429d05a944e52c13bf8c4d15e9b419"
+    sha256 cellar: :any_skip_relocation, sonoma:        "60ad76ed8e3f134d2df94054b149c2b14242458270f2fd2a01c5651726e3f548"
+    sha256 cellar: :any,                 arm64_linux:   "79a18b6bf7b5c33d168503babaf2ad14bd19efdc0909ce78d529f0fb511c7ff5"
+    sha256 cellar: :any,                 x86_64_linux:  "162feb39f269e0d9061a6241b0155dd1bc0a2d9451ee712cda80f2a9eba90a81"
   end
 
   depends_on "node" => :build

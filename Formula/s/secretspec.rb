@@ -1,18 +1,18 @@
 class Secretspec < Formula
   desc "Declarative secrets management tool"
   homepage "https://secretspec.dev"
-  url "https://ghfast.top/https://github.com/cachix/secretspec/archive/refs/tags/v0.14.0.tar.gz"
-  sha256 "35dfc75325882b0641439f72982c46dc43ac9335093c1135f0078fa2bbf6647e"
+  url "https://ghfast.top/https://github.com/cachix/secretspec/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "e2d44e434be09c381a6f6ca56ac1d13c2c7a6ef349e077cc01236e8600bf89d7"
   license "Apache-2.0"
   head "https://github.com/cachix/secretspec.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "88c147edb7862b8aeb8cddb039dbfa2f4f27c2a13ad7c55f834651c13c3f230a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "125c4f30c44862e23ea0ab6b9ba15fd5b187c1141d9ce58483f27e15474fb134"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8455badb1e30df42c97a78ad5431ed38841de24435a28d65be4abfa49e11a0ab"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0b2aa17c0ebdce8ae19456c80a3c6635b0c1c1713b150830bc59591d2bf44a9b"
-    sha256 cellar: :any,                 arm64_linux:   "1b36c78a37dec6ec1ac97ffd4819f9014bd907eb4e44fd314eca7a18c8083ded"
-    sha256 cellar: :any,                 x86_64_linux:  "98c92ca9b4457dfc227e11e1ef49ba4e07b73079ff04c2c6e198ef90df506f60"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1bb7cbda39cb0a146eae6634de13803ba852fa9965fb58e22353c337a05a8bd3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76a16073e6bc3c2523a31f7384851a0a2b7d5b1150aea38169dbfabce8b0e39a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94f52d1bb660d54cc5627d06a508117c416812002f6ca006e367a5ea05ce71bf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a9cfb8c9d29fb693b08198a038e19bbfeb649fe49b2e2eb75da8ff5f6376b6ef"
+    sha256 cellar: :any,                 arm64_linux:   "80c4f955d019986774b2fe5db3c9c5288938111ed80b48742403cf9c4560d6ab"
+    sha256 cellar: :any,                 x86_64_linux:  "e7aae7f18037075b25960650597facba1036b87456fc6fd11a534a195850322d"
   end
 
   depends_on "pkgconf" => :build

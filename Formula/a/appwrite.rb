@@ -6,12 +6,13 @@ class Appwrite < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "49eedf77ecefc3e7fb18b983ec2110837ca024be8449dc039fbf8c37b5df880e"
-    sha256 cellar: :any,                 arm64_sequoia: "3c724a1f35b69ca6467f324f3e1d3f2dd5b546d9c779ea1534381a3cf0c65a32"
-    sha256 cellar: :any,                 arm64_sonoma:  "3c724a1f35b69ca6467f324f3e1d3f2dd5b546d9c779ea1534381a3cf0c65a32"
-    sha256 cellar: :any,                 sonoma:        "488ad9cb074908b8539dd23d867c8ce6d61d075143c6c9b0b9a8dc1a0c344b09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85cd5a63c5960975f30289637cc2eeab0995efb2ef465c58de4e086c7920d889"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22cc3ef88b28f4867628e66f7d54f718278262c792b947f20839d4eb68accce6"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "74456d69c33ffb64a962973b86fbe0d7ffd516fb14b50a0a839e25efd5b92baa"
+    sha256 cellar: :any,                 arm64_sequoia: "74456d69c33ffb64a962973b86fbe0d7ffd516fb14b50a0a839e25efd5b92baa"
+    sha256 cellar: :any,                 arm64_sonoma:  "74456d69c33ffb64a962973b86fbe0d7ffd516fb14b50a0a839e25efd5b92baa"
+    sha256 cellar: :any,                 sonoma:        "1cab4d272eaab609f4bd9ed30faf251914162ad21bc59875b1787490b554757c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b78ba6574f59ae981603e315b543cfbf293648900734abfa38eacbef6433729"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fd4da5e16e28943d6b6c91b968aedb8bab0b1cb499db57bf5c776b7ccf26532"
   end
 
   depends_on "node"
@@ -23,6 +24,8 @@ class Appwrite < Formula
     node_modules = libexec/"lib/node_modules/appwrite-cli/node_modules"
     machos = %w[fsevents/fsevents.node app-path/main]
     machos.each { |macho| deuniversalize_machos node_modules/macho } if OS.mac?
+
+    generate_completions_from_executable(bin/"appwrite", "completion")
   end
 
   test do
