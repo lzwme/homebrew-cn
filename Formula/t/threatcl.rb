@@ -1,18 +1,18 @@
 class Threatcl < Formula
   desc "Documenting your Threat Models with HCL"
   homepage "https://github.com/threatcl/threatcl"
-  url "https://ghfast.top/https://github.com/threatcl/threatcl/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "d59afe8cae1c8152203a79bb2749be6aaf8011f889f22d664374409cb30a7dfe"
+  url "https://ghfast.top/https://github.com/threatcl/threatcl/archive/refs/tags/v0.6.3.tar.gz"
+  sha256 "c921cfceec54d68bff0824cbe7e88ed1a791d4cdca26dcf83e326ff97a6e49b9"
   license "MIT"
   head "https://github.com/threatcl/threatcl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be6bf58b88e1c8b798781599b9526b16055fa19603f37032d26739d8a614b4eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be6bf58b88e1c8b798781599b9526b16055fa19603f37032d26739d8a614b4eb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be6bf58b88e1c8b798781599b9526b16055fa19603f37032d26739d8a614b4eb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2ab9d00cab9c9574c44fe32ec989e19d42f5f18582a9bec4bf68cf65d2ad033a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a55f6a1f09a756e1cd0d2a42e589d2581141b54be644fcaf53a5d26f0a33250"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db40006f0e55cc9084b35c2e0e291529608fd07e2212cb8c64c36e80e78c45d7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b65a59b57b3a7246209ff3c85f957a350cba711f9950f918d6e5627aa060173b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b65a59b57b3a7246209ff3c85f957a350cba711f9950f918d6e5627aa060173b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b65a59b57b3a7246209ff3c85f957a350cba711f9950f918d6e5627aa060173b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "17ea39f615fd15cd5196ecd7205511855f92eae05c200ab31e0c224a612f6397"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "00bc637eeb26c8cf75958423ba36168cd3f2d0520d3267126d172ee13f3fd144"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbe64c5c979f29476bee71ac37a6cab550f56fbb086516f448f8bfe28793ffcb"
   end
 
   depends_on "go" => :build

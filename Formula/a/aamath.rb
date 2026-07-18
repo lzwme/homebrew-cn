@@ -1,15 +1,10 @@
 class Aamath < Formula
   desc "Renders mathematical expressions as ASCII art"
-  homepage "http://fuse.superglue.se/aamath/"
+  homepage "https://web.archive.org/web/20260501180020/http://fuse.superglue.se/aamath/"
   url "https://cdn.netbsd.org/pub/pkgsrc/distfiles/aamath-0.3.tar.gz"
   mirror "http://fuse.superglue.se/aamath/aamath-0.3.tar.gz"
   sha256 "9843f4588695e2cd55ce5d8f58921d4f255e0e65ed9569e1dcddf3f68f77b631"
   license "GPL-2.0-only"
-
-  livecheck do
-    url :homepage
-    regex(/href=.*?aamath[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
 
   bottle do
     rebuild 1
@@ -20,6 +15,11 @@ class Aamath < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "912312e5d565a7255691d9cff437f1e66419054dc75365cda3af747ef5bf5c6f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "79b5ff4704b7f8393182ee3b68f5343a745e5e62ad4b2db90b3b4f28c186ae52"
   end
+
+  # Last release on 2005-06-22 and requires non-upstreamed patch to build.
+  # As of deprecation date, homepage is down and HTTP-only.
+  deprecate! date: "2026-07-17", because: :unmaintained
+  disable! date: "2027-01-05", because: :unmaintained
 
   uses_from_macos "bison" => :build # for yacc
   uses_from_macos "flex" => :build

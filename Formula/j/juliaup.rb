@@ -1,8 +1,8 @@
 class Juliaup < Formula
   desc "Julia installer and version multiplexer"
   homepage "https://github.com/JuliaLang/juliaup"
-  url "https://ghfast.top/https://github.com/JuliaLang/juliaup/archive/refs/tags/v1.20.7.tar.gz"
-  sha256 "4edc54426511c451d9e7a61112d93352d68f7bb9e1dd472dc5647322c3ef78e4"
+  url "https://ghfast.top/https://github.com/JuliaLang/juliaup/archive/refs/tags/v1.20.8.tar.gz"
+  sha256 "7d3a99fae193b717ddbbe2dc0e22c9ea582417b02fc02adfed84c8034102a179"
   license "MIT"
   head "https://github.com/JuliaLang/juliaup.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Juliaup < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16ff42b7748dfdabe0556a3bfc648a596227740036153d6e02416bf6b8c5c5dd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f187e6e8d52a02af724ce93186d7bf80345150786eb826157f578be69cbddb2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87bffedb799c6efdec1bc382b34ec564f63aa4abb28fcfb5f38df24072590997"
-    sha256 cellar: :any_skip_relocation, sonoma:        "363bd1595d6f8ec049c69ca44327d92631c06d40be8b04bfe3ae20dea41a8a2e"
-    sha256 cellar: :any,                 arm64_linux:   "820c1103f591573246d38ccfcb9ec9200306d70872550c0e9795210e0f89e5a2"
-    sha256 cellar: :any,                 x86_64_linux:  "2b0cffc0e0aa65a253da206e183988473a39388309e77cddc640ba7bf65a1032"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5713c2aed9abc3e052b96cd7941293048dea3b07dbb44ecacaf5299bb0b10aff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4130d5a940accee2d420a783a9674a7eb7e5cdf4138eac41893b091bb73e1fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5c84ba14209470848c27349c79ce56a7a3fbfe6cafb34f1b6436dc6bd4efe47"
+    sha256 cellar: :any_skip_relocation, sonoma:        "879561885e8ad5cf2172117edbc5ac567e5f6c79791c366b758d34767cb0bd95"
+    sha256 cellar: :any,                 arm64_linux:   "ce85d85bdc9625e38ff2f2b4e18ab8c943fb3c2bd111c26191451228582b10cb"
+    sha256 cellar: :any,                 x86_64_linux:  "63ca6d229280553b7c5e46926d3d3fc5b642196f028a86a99ebaf70040f040e4"
   end
 
   depends_on "rust" => :build

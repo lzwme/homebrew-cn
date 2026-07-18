@@ -18,8 +18,7 @@ class Tinysearch < Formula
   end
 
   depends_on "rust" => :build
-
-  depends_on "rustup"
+  depends_on "rustup" => :test
   depends_on "wasm-pack"
 
   def install

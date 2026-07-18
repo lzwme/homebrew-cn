@@ -3,18 +3,17 @@ class Nvchecker < Formula
 
   desc "New version checker for software releases"
   homepage "https://github.com/lilydjwg/nvchecker"
-  url "https://files.pythonhosted.org/packages/e6/ab/2950ee964979aa31efb3e0e960f2055d6b1efec5c6239483f88ca6713fc9/nvchecker-2.20.tar.gz"
-  sha256 "79cfc9eba3170405db5b1d74475f2e0b539d708c869a7212b40e803e033e0149"
+  url "https://files.pythonhosted.org/packages/21/80/76f05a152e7fe5bc6e9351ef5cdb8eee06029e18fabd95b178672512fa03/nvchecker-2.21.tar.gz"
+  sha256 "65eb04a74f261e25f62f1678a4b9dbef905c9e3b82777c69d894a1643fbec557"
   license "MIT"
-  revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d699f142cc374c0a895e4a893a04c3b56e3575892de58128d974dc093a2a8768"
-    sha256 cellar: :any, arm64_sequoia: "64ce4747002595ab0d3c45e69cbe7bc81ce87522222242bb08a8ddd7d6e6cdbe"
-    sha256 cellar: :any, arm64_sonoma:  "82d6b76fd3b7ffa3a20c59f300afc44a55994a2c73b724f3def44f5849897efd"
-    sha256 cellar: :any, sonoma:        "dcdb283a0815f9176dbdfedfe9de641ed72b17d6e221d97b92beb028a6bf06d6"
-    sha256 cellar: :any, arm64_linux:   "5b6699ec829df0ae7cfa109f2e5cb9d84087dc709e0dd73764a3b0c2e3e4f023"
-    sha256 cellar: :any, x86_64_linux:  "92d4851e954d99535e3e7f5cd986f55adf24985c36644b517950e15f1c58e0a7"
+    sha256 cellar: :any, arm64_tahoe:   "e9f2bbd7f6007a4a0e1f9ead21c8f7baf2d99ac68a11955623a525fc35788d09"
+    sha256 cellar: :any, arm64_sequoia: "bd85e5f1df6d3ec9168b69923e53edfaa30a05d6df30c590b8ead017d2a48f83"
+    sha256 cellar: :any, arm64_sonoma:  "74313823b1d7dfc5ffd08ef80f593d16bcc4bc6d2291a40f1e8d52795fa569c4"
+    sha256 cellar: :any, sonoma:        "4e217c739678ee33f7094e20ecf369db33c993787ae720db1b8fb11595a176be"
+    sha256 cellar: :any, arm64_linux:   "037647532ddd653434320835b649114dca55028acd755b2c2e00c7cfb0c0050b"
+    sha256 cellar: :any, x86_64_linux:  "9050cacb59750f426f30c834dc9f28befd4e5dce51b88c6ac606b8c1de1f744c"
   end
 
   depends_on "curl"
@@ -34,8 +33,8 @@ class Nvchecker < Formula
   end
 
   resource "pycurl" do
-    url "https://files.pythonhosted.org/packages/95/23/cc07b16591af8ca373494d29aafc8df13e547077579e6779bb865a3f5a7f/pycurl-7.46.0.tar.gz"
-    sha256 "422ed7005b98768fe60fe6b6cb8bb6a4e1fc18b5433402e8fbdaba91811c4604"
+    url "https://files.pythonhosted.org/packages/81/bc/705aa3bc36b99946a128d068e1afd4b6f3eebb36c6b97f551f3d2d740460/pycurl-7.47.0.tar.gz"
+    sha256 "5e3cf357939da8d4ceefe3c7f305afcf9b47cba66cfd95e7768ca43b38445e14"
   end
 
   resource "structlog" do

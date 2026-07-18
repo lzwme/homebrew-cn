@@ -1,20 +1,18 @@
 class Libxc < Formula
   desc "Library of exchange and correlation functionals for codes"
   homepage "https://libxc.gitlab.io/"
-  url "https://gitlab.com/libxc/libxc/-/archive/7.0.0/libxc-7.0.0.tar.bz2"
-  sha256 "e9ae69f8966d8de6b7585abd9fab588794ada1fab8f689337959a35abbf9527d"
+  url "https://gitlab.com/libxc/libxc/-/archive/7.1.0/libxc-7.1.0.tar.bz2"
+  sha256 "30f742fc4ec917d386ae199688ad1b02381d1494d03196dffcf1e03b3c026a68"
   license "MPL-2.0"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "d099fdc57a95d85727f5c4b605f64253144ba64ae545439947684f065553ae9e"
-    sha256 cellar: :any,                 arm64_sequoia: "aa85b3a74a71bfa20b5298f35fef63fe1738a0c85a978ab1fbf94b56c1bf168c"
-    sha256 cellar: :any,                 arm64_sonoma:  "ba31c84f6c649d6b133a62d0c69a0b6c92fdb9d9e6ef959abd527fca75b43652"
-    sha256 cellar: :any,                 arm64_ventura: "8a8f6c2dedb5446e4e0dfb6eef6c38acb7a134a2559e3828c2b7bca7c6cff747"
-    sha256 cellar: :any,                 sonoma:        "6bcdc1b4b2820d7124c5b4c0b39566ff52cac816054945a960ef1c3a43838308"
-    sha256 cellar: :any,                 ventura:       "1f2419e77039100f1a1adc062484e54a0866944235db1695fda292a0ea024894"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "89f20334a32a623644fa01b73d2c7fb1e8ba63bb94aff2e52154b2fb794a0b01"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfd3bd380e66af839073487bcdb4934684b437f48b8880334cdc2afed1e4782c"
+    sha256 cellar: :any, arm64_tahoe:   "bda72696a6eda5f242f54ee7c75d1e6830077c698ec823f90fe2c3c93a3c424a"
+    sha256 cellar: :any, arm64_sequoia: "70362836c1e7529240f1cce19b5d7a24956991f9e135236e3e7c0713f6936d27"
+    sha256 cellar: :any, arm64_sonoma:  "50e87883d16f5d71fd1f9ef152a19e364b82334fd2d590c4e798806c3c0cd17e"
+    sha256 cellar: :any, sonoma:        "8bb9921f7e1eba36f47ea2d29144866e2e83efb2ceaf426dbfe9a198b74df055"
+    sha256 cellar: :any, arm64_linux:   "ce28f78673e13bf0b4d394deb2e0446730910f6b1cf6bcb5bbde5bb82b9b80fb"
+    sha256 cellar: :any, x86_64_linux:  "45b0c8db283510fd66a12271a2efa017a7d3f02e9622d92cc20c9efa9cdc8020"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -3,11 +3,12 @@ class Woof < Formula
 
   desc "Ad-hoc single-file webserver"
   homepage "https://www.home.unix-ag.org/simon/woof.html"
+  # TODO: change to codeberg when tag is available
   url "https://ghfast.top/https://github.com/simon-budig/woof/archive/refs/tags/woof-20220202.tar.gz"
   sha256 "cf29214aca196a1778e2f5df1f5cc653da9bee8fc2b19f01439c750c41ae83c1"
   license "GPL-2.0-or-later"
   revision 1
-  head "https://github.com/simon-budig/woof.git", branch: "master"
+  head "https://codeberg.org/nomis/woof.git", branch: "main"
 
   bottle do
     rebuild 2

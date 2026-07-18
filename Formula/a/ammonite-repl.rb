@@ -19,6 +19,9 @@ class AmmoniteRepl < Formula
     sha256 cellar: :any_skip_relocation, all: "1ae1d432270e48a8f23305a392d6a84006d52b1bbd660fa2ff90f1f29ab5a27f"
   end
 
+  deprecate! date: "2026-07-17", because: :deprecated_upstream, replacement_formula: "scala-cli"
+  disable! date: "2027-01-17", because: :deprecated_upstream, replacement_formula: "scala-cli"
+
   depends_on "openjdk"
 
   def install

@@ -1,8 +1,8 @@
 class Biosig < Formula
   desc "Tools for biomedical signal processing and data conversion"
   homepage "https://biosig.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-3.9.6.src.tar.xz"
-  sha256 "916e1e7bfbb321ec11c6fb54d6d2582b35d07950a2c7ba15dad34ee722016e65"
+  url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-3.9.7.src.tar.xz"
+  sha256 "b71fa7b8a7cc4c7d2a0ea16d47042a4a66ba43698c744a3b71a69d6fcf1ccfa4"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Biosig < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0da6ed7cf6c04b092ed8f42cf1aba88540e1c899cf7db55c9b8e427cb524cbd2"
-    sha256 cellar: :any, arm64_sequoia: "25cc9192ac7232e38c7e13e57ea830046b01fe0918ef9d92be46e60e6981290d"
-    sha256 cellar: :any, arm64_sonoma:  "ce77d060f51fa45eba51b66b6b153673635d6b276284e47a652392d83f68daae"
-    sha256 cellar: :any, sonoma:        "8b054c1d7bf23da0407f035a200230c1c0ef656ec6da1117954e62dac5639955"
-    sha256 cellar: :any, arm64_linux:   "16c9cd8857096437b99700fea4158bc0f4dfb940d063f70ef30e597a30e04c5a"
-    sha256 cellar: :any, x86_64_linux:  "ce15382a752adc45965c78d8de99bdfd0796eb1232a60a289aa27af00110da03"
+    sha256 cellar: :any, arm64_tahoe:   "37f39bfd605f6da1d37563029c74f9d419b36d9586900b2f733e2f3da2576cfa"
+    sha256 cellar: :any, arm64_sequoia: "b0d9e8919b719485f19232cce52b76a7ba6b4759675729189d96eea8274a6e83"
+    sha256 cellar: :any, arm64_sonoma:  "c3aaef34ae805829beab07c1949a6fb6afb689e2238a1446fbf9feaf4896374f"
+    sha256 cellar: :any, sonoma:        "cdd3cddf257dd3bed2d121b0e34126b4f07a1d85cf812408b8a3d729cb6a7236"
+    sha256 cellar: :any, arm64_linux:   "da8a370d8051c53976ec55c998ae3ab439bd6410e020781b2cd65f2b82149850"
+    sha256 cellar: :any, x86_64_linux:  "5ae799c8168878bcacc3f5d541712382fa2d68645ef66618562c747e07becddb"
   end
 
   depends_on "gawk" => :build

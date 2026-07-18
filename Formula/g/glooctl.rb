@@ -24,6 +24,9 @@ class Glooctl < Formula
     sha256 cellar: :any,                 x86_64_linux:  "c984cc210f1070ccba0cffd121e43f63e91af724586b1a32db8e9c6b47205866"
   end
 
+  deprecate! date: "2026-12-31", because: :deprecated_upstream
+  disable! date: "2027-12-31", because: :deprecated_upstream
+
   depends_on "go" => :build
 
   def install

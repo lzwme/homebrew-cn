@@ -22,6 +22,9 @@ class Libart < Formula
     sha256 cellar: :any, x86_64_linux:  "348b3a8eafa51bc243132a60926c566d942e2fe9d67f8fe3d5028dbfd6abe536"
   end
 
+  deprecate! date: "2026-07-17", because: :repo_archived
+  disable! date: "2027-01-17", because: :repo_archived
+
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
     file "Patches/libtool/configure-pre-0.4.2.418-big_sur.diff"

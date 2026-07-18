@@ -1,6 +1,6 @@
 cask "keyclu" do
-  version "0.31"
-  sha256 "20b6aff3048a64037d51085c8a82704ec51cfaff9760e6d05e9d722d38d5fbd0"
+  version "0.32"
+  sha256 "0f28de586ae1335621ed6ecff19255b1c320e4fe2ebb0ef2e96fc07ac0104d96"
 
   url "https://ghfast.top/https://github.com/Anze/KeyCluCask/releases/download/v#{version}/KeyClu.zip",
       verified: "github.com/Anze/KeyCluCask/"
@@ -21,11 +21,13 @@ cask "keyclu" do
   uninstall quit: "com.0804Team.KeyClu"
 
   zap trash: [
+    "~/Library/Application Support/KeyClu",
     "~/Library/Caches/com.0804Team.KeyClu",
     "~/Library/Containers/com.0804Team.KeyClu",
     "~/Library/Group Containers/group.com.0804Team.KeyClu",
     "~/Library/HTTPStorages/com.0804Team.KeyClu",
     "~/Library/Preferences/com.0804Team.KeyClu.plist",
     "~/Library/Saved Application State/com.0804Team.KeyClu.savedState",
+    "~/Library/WebKit/com.0804Team.KeyClu",
   ]
 end

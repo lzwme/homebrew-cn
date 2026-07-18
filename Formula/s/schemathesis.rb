@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/b4/73/ea51c58748d2326a66957b11c116902a77114be25a6bd2cd86880cf9477c/schemathesis-4.22.4.tar.gz"
-  sha256 "1ddaf39e8062a6dc8fc9e14e6e48eac67b879655dc4f5aed725f484c36588437"
+  url "https://files.pythonhosted.org/packages/47/2c/f8b434c2ead66023c4372d70dc9ca7848f399426246a84431f276e873c8d/schemathesis-4.23.0.tar.gz"
+  sha256 "dcc81f7e3690da65ca77db27069b3f3ebc1632edef00063bf3b70eb172bcf2de"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "dc555c4c1ef85a668ac544dcc409ed792492c25f190f613f9005cde058635e60"
-    sha256 cellar: :any, arm64_sequoia: "f023cd3c7d6edcfc03c72b116d77da48e5c8e87806bf21bbd9e6e414c2858481"
-    sha256 cellar: :any, arm64_sonoma:  "73f57bbe8e991028d361387d1072d55f03e13f08e808f9bedeaf15d304933558"
-    sha256 cellar: :any, sonoma:        "292d6f489e705d4506fdfebb4429dbe381da5ca73afdd5062bb5d2c6b2f8ee32"
-    sha256 cellar: :any, arm64_linux:   "2da3f81ff72b75196cb165995297c885f7e8c90915c75014221394be4db333da"
-    sha256 cellar: :any, x86_64_linux:  "c4bb4c95cd8ff9cf1dd600c402605e19432cea4973891ba00627e96ecccba753"
+    sha256 cellar: :any, arm64_tahoe:   "d7d488af9b6e0eb890dac7d246b5aaa35c72edaa27816eff3bee597454da0c33"
+    sha256 cellar: :any, arm64_sequoia: "6a1a3ab217bc00bd8cb32cfe684ce07f4fe7ebffcacf4a2f7883c7ecbb3cbeb6"
+    sha256 cellar: :any, arm64_sonoma:  "00f9fecb78e365f29902c7d7e64e3dfd3b43796461e32eeb2a156339ac4e1c31"
+    sha256 cellar: :any, sonoma:        "a8c14fde63380b2f60501fccbe28506d275d1c4e78510ee5656e45011403b616"
+    sha256 cellar: :any, arm64_linux:   "c7c262114cd70fe863ec0c45804b05ed1569c527a6f5bd4dd55813bd8f74d7eb"
+    sha256 cellar: :any, x86_64_linux:  "6fa2e1b40e8d9146cc26e073394a764fad5193aeca1241e88bc78aa453ef594d"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
@@ -27,8 +27,8 @@ class Schemathesis < Formula
   pypi_packages exclude_packages: %w[certifi rpds-py]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
-    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
+    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
+    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
   end
 
   resource "attrs" do
@@ -57,13 +57,13 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/57/4b/d376c0382fc716878790177deb88cc8b73d3a0218ae74de6e14493f7dc74/hypothesis-6.156.3.tar.gz"
-    sha256 "0c68209d611a17d9092a74d4a7c945256b8c7288e4e2b8a8a3c3be716a284365"
+    url "https://files.pythonhosted.org/packages/20/83/8dbe89bdb8c6f25a7a52e7898af6d82fe35dfef08e5c702f6e33231ce6c6/hypothesis-6.156.6.tar.gz"
+    sha256 "96de02faefa3ce079873541da96f42595583bb001e8e4219294ed7d4501cc4cc"
   end
 
   resource "hypothesis-graphql" do
-    url "https://files.pythonhosted.org/packages/6b/8c/3f0ebc9b557073986234c42bd21ea9c7ea146e7e2616b7b0739f5e81cf2b/hypothesis_graphql-0.13.0.tar.gz"
-    sha256 "788d89be1bbb561f27616f3a7077290054e4f664f88315a0ad03edee93e5d681"
+    url "https://files.pythonhosted.org/packages/54/1d/b0b5167874abfbc41d3558efeffc74ec1b676ab2557c40a6640919f9647d/hypothesis_graphql-0.13.1.tar.gz"
+    sha256 "b0b34f0accb87af40140f5dd54a784ab899401db37ba52fac39a4b37c24b2f6c"
   end
 
   resource "hypothesis-jsonschema" do
@@ -87,8 +87,8 @@ class Schemathesis < Formula
   end
 
   resource "jsonschema-rs" do
-    url "https://files.pythonhosted.org/packages/c3/4a/eaf2d0710c2690c3382c2014465adb7e36e9dcb07c499285b4bf015235a2/jsonschema_rs-0.47.0.tar.gz"
-    sha256 "e18a569bc8249404ad32cadce8b3435b1c4d2909b7f8cda67b5725b16f660c9e"
+    url "https://files.pythonhosted.org/packages/9c/ac/1b20033fb39c1fa90fd89f44d61cb5c5836840b198a479c2b56e60b56918/jsonschema_rs-0.48.0.tar.gz"
+    sha256 "a2de900054e0d46a2ee32a1172261af4c27d6f9c1b6d09480dc1fc409af2a056"
   end
 
   resource "jsonschema-specifications" do

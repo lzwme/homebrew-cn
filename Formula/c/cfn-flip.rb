@@ -17,6 +17,9 @@ class CfnFlip < Formula
     sha256 cellar: :any, x86_64_linux:  "a790d632f4cc2eb04499499df83fe4b804b4a4187e7cfbc20df5e80e262ec69b"
   end
 
+  deprecate! date: "2026-07-17", because: :deprecated_upstream, replacement_formula: "rain"
+  disable! date: "2027-01-17", because: :deprecated_upstream, replacement_formula: "rain"
+
   depends_on "libyaml"
   depends_on "python@3.14"
 

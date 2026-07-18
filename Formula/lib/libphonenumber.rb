@@ -1,8 +1,8 @@
 class Libphonenumber < Formula
   desc "C++ Phone Number library by Google"
   homepage "https://github.com/google/libphonenumber"
-  url "https://ghfast.top/https://github.com/google/libphonenumber/archive/refs/tags/v9.0.34.tar.gz"
-  sha256 "5d2a61572110f0538fdb1afbc1f8381426fbfbbf544b45e8ae905297f2f5befa"
+  url "https://ghfast.top/https://github.com/google/libphonenumber/archive/refs/tags/v9.0.35.tar.gz"
+  sha256 "a3b01ad172764edc4385954ea4ab8fecc9a91ae05ccb8d494bfc5323c28312ee"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8a11a087893a29e403f25d23db72ea546b192148fd85154683f8db494378d52d"
-    sha256 cellar: :any, arm64_sequoia: "654dd8a3c990aa713632b2f15bae7cf3ee1e078047fae35ad901852f2d743d66"
-    sha256 cellar: :any, arm64_sonoma:  "d58c6984fedd6e56651e8afb05035d5d88e80750044d846868adf3d4c42ca778"
-    sha256 cellar: :any, sonoma:        "718dedd02f44dd0467ed85ea1ad8baa78c1d4f057bab67a8a9e58d153cc6b5c7"
-    sha256 cellar: :any, arm64_linux:   "0161215622e07a181944d12a4a0eb99bbb76c41c9384f95d222be218f015a292"
-    sha256 cellar: :any, x86_64_linux:  "dc98baa32d7c616681db14af068577ac09744fd97fe8276f6633b2463849d035"
+    sha256 cellar: :any, arm64_tahoe:   "f79fb13e31331896ec153a1759efd309e454a670db23f1c691443f66f8798be2"
+    sha256 cellar: :any, arm64_sequoia: "cba197781e724c4f374379096adeb414685885ca4493494e95fa89a815bd5359"
+    sha256 cellar: :any, arm64_sonoma:  "ac156bc6b86fd58afc07014ba022aa7b9b35cfada4962ba00f063955219286ba"
+    sha256 cellar: :any, sonoma:        "681704f0f3b3bb0c3c2cd83047f010d3fe720a9f7240a8519a0b1701a95b2793"
+    sha256 cellar: :any, arm64_linux:   "f6e7aafdc8291d5583b51742338c8a563f9d83e202d31debecb157502dce26c4"
+    sha256 cellar: :any, x86_64_linux:  "164f1ef56c6be4c8704a3374c6b86d32b0b1d79c308c0de8df4dd2765c4d6a17"
   end
 
   depends_on "cmake" => [:build, :test]

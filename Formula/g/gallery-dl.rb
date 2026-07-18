@@ -2,11 +2,11 @@ class GalleryDl < Formula
   include Language::Python::Virtualenv
 
   desc "Command-line downloader for image-hosting site galleries and collections"
-  homepage "https://github.com/mikf/gallery-dl"
+  homepage "https://codeberg.org/mikf/gallery-dl"
   url "https://files.pythonhosted.org/packages/3c/86/4f24dafc8b98c808e5d92feca49ebd8dc27428c429016883a9eb91fba791/gallery_dl-1.32.6.tar.gz"
   sha256 "33847e9e77082aa97a8cfcfc737f3eb338922adc6c89630a8aed30444f2287e5"
   license "GPL-2.0-only"
-  head "https://github.com/mikf/gallery-dl.git", branch: "master"
+  head "https://codeberg.org/mikf/gallery-dl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_tahoe:   "ca487863d65c5f5306ee912d8054f5ffdc37524b82b09b2e0abb4da630fa267b"

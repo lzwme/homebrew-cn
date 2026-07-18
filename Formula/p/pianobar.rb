@@ -5,7 +5,7 @@ class Pianobar < Formula
   sha256 "16f4dd2d64da38690946a9670e59bc72a789cf6a323f792e159bb3a39cf4a7f5"
   license "MIT"
   revision 1
-  head "https://github.com/PromyLOPh/pianobar.git", branch: "master"
+  head "https://codeberg.org/purplesym/pianobar.git", branch: "master"
 
   livecheck do
     url :homepage

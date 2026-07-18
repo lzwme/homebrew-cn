@@ -1,18 +1,18 @@
 class Buffa < Formula
   desc "Pure-Rust Protocol Buffers implementation with editions support"
   homepage "https://github.com/anthropics/buffa"
-  url "https://ghfast.top/https://github.com/anthropics/buffa/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "923f9c96a8bd8bbb62f53ca7893ac2a86403e5f40bc0593a36e2ffcc62706b82"
+  url "https://ghfast.top/https://github.com/anthropics/buffa/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "185771400b27c64ea7b93a7af204c771ce418cb720e540e79e8c5a21ede96f99"
   license "Apache-2.0"
   head "https://github.com/anthropics/buffa.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e5215bd8d7f62a427de968825e5eb7a7727445eb67a97b706ac8ce1f583d977b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb975468773c9e781dda45291a8613cff328043c75eb055c4b625c97dfb9055e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35459460a03f8003915caf6770af3a01926f790b7afd343bc3022c4a31bee8c5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9f5e206fae188a5960eb5d20e9c8d95678c5076aba736b997b52a7b711583a1f"
-    sha256 cellar: :any,                 arm64_linux:   "1cf98f474d2af42ab74e24785351eb30036773d97b37e3f06fbba9ec1ff61c77"
-    sha256 cellar: :any,                 x86_64_linux:  "bdbed5deb3bf85a597b13e4d3bfac4ed6d41a55837c3179b051698884830c86f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a362a60523a4044a4f95e7c112d0171408e3532529f472c032ad12a34755113"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ee165b917dd4dc6d74296fe80198582f6b57422ad208f1ee0478ce46672d2ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06a8fe37025c22d225de590c6bdb4eb48209f332210757bc57dbfaed3716bd36"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2ef103265f9fbe8a78af32e5f88f3c5a69e11a6c4bb4812618a7f76e3b1037c3"
+    sha256 cellar: :any,                 arm64_linux:   "e69f72e5c3fb97f15ecafb9562f7fe69bd10a230db80d274713b299ae1adc69a"
+    sha256 cellar: :any,                 x86_64_linux:  "90a8d463985133798fa3bebdee44b4345aff4c0d990a6db38cfab1f43c569c28"
   end
 
   depends_on "rust" => :build

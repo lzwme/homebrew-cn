@@ -3,17 +3,17 @@ class SnykAgentScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/snyk/agent-scan"
-  url "https://files.pythonhosted.org/packages/be/b5/ec307c81d2aa14dd0a1fd0f6947fd61e57d75c4e02c73d359ef30d68b8f7/snyk_agent_scan-0.5.14.tar.gz"
-  sha256 "b4dec1fc800c2a80c3d74528acb503c59012d642e26b22df8cff599aefc54b04"
+  url "https://files.pythonhosted.org/packages/a3/51/27ef1f809249107da45f6f3f4f190af7da51293257d3c84b2da1261edc9f/snyk_agent_scan-0.5.15.tar.gz"
+  sha256 "ac7ee5dcba81d2bf17e797b5042a8be3ccae6bd100008e35e0ed7de0be88bc8b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "aa7b2a4b0e799a9d58e91a3b0325c3ade7ec804ceb6fd0c951be183b42298278"
-    sha256 cellar: :any, arm64_sequoia: "3824f0e239b4d457e05177363acdcc6f6b649efa7b440e762eb86de7f0c37445"
-    sha256 cellar: :any, arm64_sonoma:  "2f00c21c624828e94090b6daeb705c9fc3f3a0e7617688074e81830f3607a273"
-    sha256 cellar: :any, sonoma:        "fe41c29e49e29d71695f71af6650a28cb98c94f881bee71cf580565019e41253"
-    sha256 cellar: :any, arm64_linux:   "19e1e2dd55f33992dd03339c19a2f6a0fb006b57fdd229c3d0acc94c95e40d70"
-    sha256 cellar: :any, x86_64_linux:  "dcbb5d5e6405545831e85e0457a79b185cfe5c23eafbbe634c3b195a6aa04707"
+    sha256 cellar: :any, arm64_tahoe:   "4d78eed6f7958e9093f2ab7b96648a642a307a137f47851e9214c98ae9b383fb"
+    sha256 cellar: :any, arm64_sequoia: "26a33570c194b80060ade95f8f3537e527117838bc0adac8894b1b81267b7b98"
+    sha256 cellar: :any, arm64_sonoma:  "710f3b7eb05ece96bb35a77ff63fc642b6a60794971363dc252a5039f277e47e"
+    sha256 cellar: :any, sonoma:        "d7b81249c78e61a0e58635d241247fc28cdb92c111a1509da4c8a68712567632"
+    sha256 cellar: :any, arm64_linux:   "a81244ab401a7dcd3479596a7575165efb9c7d677fcc8e314491f8565e137c01"
+    sha256 cellar: :any, x86_64_linux:  "0c585f171c52dc269927500e2b607b451b04cee0834e089a9f67ae8da315843a"
   end
 
   depends_on "certifi" => :no_linkage
@@ -226,8 +226,8 @@ class SnykAgentScan < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/7c/f7/68adc395201b20b872d68e975386832e8005ffeacedd43a1d837a32815be/typer-0.26.8.tar.gz"
-    sha256 "c244a6bd558886fe3f8780efb6bdd28bb9aff005a94eedebaa5cb32926fe2f7e"
+    url "https://files.pythonhosted.org/packages/37/78/fda3361b56efc27944f24225f6ecd13d96d6fcfe37bd0eb34e2f4c63f9fc/typer-0.27.0.tar.gz"
+    sha256 "629bd12ea5d13a17148125d9a264f949eb171fb3f120f9b04d85873cab054fa5"
   end
 
   resource "urllib3" do

@@ -15,6 +15,9 @@ class Jsonfmt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a344c9a3d2b01667b7d8c9627f5e74bbaf367db98725d96ab5e449464b539475"
   end
 
+  deprecate! date: "2026-07-17", because: :repo_archived
+  disable! date: "2027-01-17", because: :repo_archived
+
   depends_on "go" => :build
 
   def install

@@ -4,9 +4,7 @@ class PortableZlib < PortableFormula
   desc "General-purpose lossless data-compression library"
   homepage "https://zlib.net/"
   url "https://zlib.net/zlib-1.3.2.tar.gz"
-  mirror "https://downloads.sourceforge.net/project/libpng/zlib/1.3.2/zlib-1.3.2.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/zlib-1.3.2.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/legacy/zlib-1.3.2.tar.gz"
+  mirror "https://ghfast.top/https://github.com/madler/zlib/releases/download/v1.3.2/zlib-1.3.2.tar.gz"
   sha256 "bb329a0a2cd0274d05519d61c667c062e06990d72e125ee2dfa8de64f0119d16"
   license "Zlib"
 

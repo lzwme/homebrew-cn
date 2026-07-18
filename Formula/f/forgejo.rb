@@ -7,12 +7,13 @@ class Forgejo < Formula
   head "https://codeberg.org/forgejo/forgejo.git", branch: "forgejo"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0bce8db2f0b8956ad63181066c3848802512900c6a5a010df4aaf01ca5a58ab2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2cc7d8de43924bd3023fff3f5a347b736cd99e08505cf8d938149bf8ca4b57a1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c272e5722973181c2efeeead7a82e44d693a62c56f3a5a271f422e372598a19"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59903b0d64e816ab9f475be8b74412e5f693b20ee7d01accefe8f8c8699e7ff0"
-    sha256 cellar: :any,                 arm64_linux:   "6bc04d49040ce0a0998f316fa74aca81def2ff03232070bbad54c0179aa6315d"
-    sha256 cellar: :any,                 x86_64_linux:  "84008338ad73a6fd674f62a4ff4ca9b1d86fd3ab3ab996de7c70661a39afca3c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2f61cd886f5a11cd98673ee820bc4b1355761e346223f6c18fec44c12134d8db"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23588f35724a6827e610c40dc0186a23aa6755bb6eb761f5807248fb2f9c39f1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48cbff41d4a7f4cf682a0ffebbc15f2d2d8779fbf036d48f0803caefff84f270"
+    sha256 cellar: :any_skip_relocation, sonoma:        "988d5eb23b323f3eb6e65dbb9ec45c94e076540a9eafd7288aa3fde351052b27"
+    sha256 cellar: :any,                 arm64_linux:   "d1f0ad202c29c7546bdffd8ef60a49dca19cebcc06280f89ed85d3321064c508"
+    sha256 cellar: :any,                 x86_64_linux:  "9bf9d3e96442d9215937104462795e194f42af290733ff526b70d012460038d1"
   end
 
   depends_on "go" => :build
@@ -25,6 +26,12 @@ class Forgejo < Formula
     ENV["TAGS"] = "bindata sqlite sqlite_unlock_notify"
     system "make", "build"
     bin.install "gitea" => "forgejo"
+
+    generate_completions_from_executable(bin/"forgejo", "completion")
+    # powershell completion uses "pwsh" as the shell name
+    # instead of the usual "powershell" used by generate_completions_from_executable
+    (pwsh_completion/"forgejo").write Utils.safe_popen_read({ "SHELL" => "pwsh" }, bin/"forgejo",
+                                                            "completion", "pwsh")
   end
 
   service do

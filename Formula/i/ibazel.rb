@@ -1,18 +1,18 @@
 class Ibazel < Formula
   desc "Tools for building Bazel targets when source files change"
   homepage "https://github.com/bazelbuild/bazel-watcher"
-  url "https://ghfast.top/https://github.com/bazelbuild/bazel-watcher/archive/refs/tags/v0.30.0.tar.gz"
-  sha256 "e9e4ba8c2f097314e6c086e9e6482770d54db86f39488fa037af194a84c00591"
+  url "https://ghfast.top/https://github.com/bazelbuild/bazel-watcher/archive/refs/tags/v0.31.0.tar.gz"
+  sha256 "c23811859ba27ff7a938f026fb6a46b5b972039702108f3b87d074f92959dbd0"
   license "Apache-2.0"
   head "https://github.com/bazelbuild/bazel-watcher.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c81d7b6ccd3ddecd8d973c1ec3d94f18fb0ff02de346a0c03495833bf323d4b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c06b233961ff8931f0050765d92f3458a62ba7bfb99065238aa3054b55e9966"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa3a373711638fbc2ea0428c8904562d059683d77851eab2579b1b720e23345c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "11fc796158a79563f8fa8e64631b613fca2faf6c25408efd4664376030d629b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d9e3c94ccb249c6ae90a818c8e5b38cc8b0eeff00eca655a55f99660062ce9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02dcc1df219ca9bff5e86a55256fa5efb119a5422aec8b6fcdf433934a8ba770"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ffe965a53ee8a123243a3458d48e6039cc611080929e0d23e534d8875c43a2e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0178f7e0c8aed764a418db14d999f3f5a927867a13ce09622f663dd5c8f1f9f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35cef9ce51b710fc71bc16ca309b8b6a7a9f31c89b1275a178b135b269217b5c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4626494294fefe52d54777573c040e97f6ac0ad1e3a725cd252ebea746cffeca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9beb0f135d601b9f2cb53d787639e0387d1c93e96cff89d971b7130fd00996b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4d26c9c6c47c561d04ee0e024e12ffa34230bc7697ea603a8085add118c1ade"
   end
 
   depends_on "go" => [:build, :test]

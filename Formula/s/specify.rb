@@ -3,17 +3,17 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.github.com/spec-kit/"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.12.17.tar.gz"
-  sha256 "822096e2645f398ca3b969af4998d7f7a7c8a852292dd8098186785c176dd3b9"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "c428f87d3566edb5e8b1a9835a6e48b7321602f05d210b7f4165ace9318dde79"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "27c4e80627813d41e5f70a484a02829dd3ed3180d939e78d81163a094cac8847"
-    sha256 cellar: :any, arm64_sequoia: "224dadb60ac209613148f2b1904d1f4b8b85629206721874a7725fa1f06fe679"
-    sha256 cellar: :any, arm64_sonoma:  "a2bacc2f2e9344a865d9ac0fe06a0534baee24170ebd156dfd7fae0288768c3e"
-    sha256 cellar: :any, sonoma:        "5b4a5427adfb59e387b70e0805df22a310b241c75bf5a346363449fad5e93285"
-    sha256 cellar: :any, arm64_linux:   "f529ee222c75b71a8a5e15fec4ea91d831c6e8b2dc14731399ef00b9d184a8c0"
-    sha256 cellar: :any, x86_64_linux:  "9a7dac85c5f5497fa41e743e41aba57c6bc3544a75a2c805533d4ce2d4a5743c"
+    sha256 cellar: :any, arm64_tahoe:   "6403c032ed44d9c5fa713f1228ee292d58fb006bfaab6cf9952ec001648a98c2"
+    sha256 cellar: :any, arm64_sequoia: "f61944432e2589130749b6c61043b6e233281a23dc769ecb77f5fd982d5db3b3"
+    sha256 cellar: :any, arm64_sonoma:  "05cef213f2725a423c4fb0f2fb97a74a72aeed46ca83fb9b35d75407bcfa2d70"
+    sha256 cellar: :any, sonoma:        "7fe6bbe7aaa468318bd9e47754b070f4564fe9612113e90d0bd6cbdac4b27d4c"
+    sha256 cellar: :any, arm64_linux:   "658efb1e74387f44a00e447473c00cf207a1e17e5e6be63e32eb10db53a6efd8"
+    sha256 cellar: :any, x86_64_linux:  "58b7f0baa73030361cdcafa6390a58b9b5f076905d29488b6bd6cdec7fe09c1f"
   end
 
   depends_on "certifi" => :no_linkage
@@ -88,8 +88,8 @@ class Specify < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/7c/f7/68adc395201b20b872d68e975386832e8005ffeacedd43a1d837a32815be/typer-0.26.8.tar.gz"
-    sha256 "c244a6bd558886fe3f8780efb6bdd28bb9aff005a94eedebaa5cb32926fe2f7e"
+    url "https://files.pythonhosted.org/packages/37/78/fda3361b56efc27944f24225f6ecd13d96d6fcfe37bd0eb34e2f4c63f9fc/typer-0.27.0.tar.gz"
+    sha256 "629bd12ea5d13a17148125d9a264f949eb171fb3f120f9b04d85873cab054fa5"
   end
 
   def install

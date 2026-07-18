@@ -30,19 +30,16 @@ class OpensslAT30 < Formula
   on_linux do
     resource "Test::Harness" do
       url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.52.tar.gz"
-      mirror "http://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.52.tar.gz"
       sha256 "8fe65cfc0261ed3c8a4395f0524286f5719669fe305f9b03b16cf3684d62cd70"
     end
 
     resource "Test::More" do
       url "https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302220.tar.gz"
-      mirror "http://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302220.tar.gz"
       sha256 "bbca30d9fb64a67a28ccd9086cdc08cdb6046423fa032d9101f978d7ccd46cf9"
     end
 
     resource "ExtUtils::MakeMaker" do
       url "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/ExtUtils-MakeMaker-7.78.tar.gz"
-      mirror "http://cpan.metacpan.org/authors/id/B/BI/BINGOS/ExtUtils-MakeMaker-7.78.tar.gz"
       sha256 "43b33c20f8d82dba7cc48f8cd702f8fc9811e9d07880886dfd31b7077bd4a3a6"
     end
   end

@@ -1,8 +1,8 @@
 class Prestd < Formula
   desc "Simplify and accelerate development on any Postgres application, existing or new"
   homepage "https://github.com/prest/prest"
-  url "https://ghfast.top/https://github.com/prest/prest/archive/refs/tags/v2.1.0.tar.gz"
-  sha256 "4c6f2b283a3853888e6c19761723637d291d99bd4e157a51b01829ecd0867e61"
+  url "https://ghfast.top/https://github.com/prest/prest/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "452c3ad3694108a71a393d9b80d9adf2279b58d38aad1b79201cf243a672e873"
   license "MIT"
   head "https://github.com/prest/prest.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Prestd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86277debd04f8099e9874bb19ee8225e57f0792c62ea1193be110df56cb2bbd7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "829bebf12c7a8151f07ebe0b135bcfdec88a785a7c067cddc3b1b0ca91f8625c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f390cad201eb80ee6744d8663b7267bfd2d042141c83782935f62eb034fe5dd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "90c0dc1ab81be5ff53e88142567ea5c0f0fc30d8966db45f83ac14b93ef87d46"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "db137f66947890916561ca38cd61b6aa66d23817cc564cfbfccf3c782090f2be"
-    sha256 cellar: :any,                 x86_64_linux:  "0fa285972dd10bd5089b859257c48642146d1d19c824108c9b8fc165140ed5cb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d2cfefc41a52cf976c67736bc6aeb722983cfd38d27dfe80771f6f9cc95bdd0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5f5cf86216be92566d3a6c643396734b0ebe1ea45367ddfd6e905d95067e6a1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a3711e454fb380c74a2dfbcdc1a1a99bbab16c6f0f0d13579bdeed8c3893640"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cf54910447ca49a15e74f770b0dd6098fcc656a2e59c6192daf2898a7fef0e18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "992f1be6e4ebee24474c788ac72d5cb81a6ddf49af8ce95eb62017d008ec249d"
+    sha256 cellar: :any,                 x86_64_linux:  "b64e3b46bba163194fa0843cd11402ca963852e9b1355cfb229891f4fe83800a"
   end
 
   depends_on "go" => :build

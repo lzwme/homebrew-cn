@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/ce/0e/4bc554c840bdd9480c8374b750c3d09438bd6083e990613937cdb1be5b18/mycli-2.2.0.tar.gz"
-  sha256 "076c96c0f2a4594fe6040a2ad82c8911ff19ec2a81bdb171e286abd226bae81f"
+  url "https://files.pythonhosted.org/packages/94/d1/771a503cc9cc7bb2e3c4cefc5a3213ed913a97b16c17334aa5c1634ba94e/mycli-2.3.0.tar.gz"
+  sha256 "cee9df0781a75e86d4af160d0f86a0493848c29cd3a048b450126658958158be"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2083be0cb7b071e163ad5cdd776b885bd7cd6200df1ff7cdf3e53c74bbe39cbd"
-    sha256 cellar: :any, arm64_sequoia: "fba50210c85f955746a9aa182cfc4b84e123b16ef0fcc9fc0d479675fa43fc62"
-    sha256 cellar: :any, arm64_sonoma:  "d6aa87085bea572ee380984b66eb448a2ed0d51546f9fbb218ec5d2edfbc5f30"
-    sha256 cellar: :any, sonoma:        "442ce1adaeb1cfaeca0ffea9a905870a2386e740516e35177abbbaead3a6350d"
-    sha256 cellar: :any, arm64_linux:   "90e1eb319ebce90cbeb626fb3346f47ad312577072eb397e250f39395e9df1ba"
-    sha256 cellar: :any, x86_64_linux:  "a4824a2fc37497c3d8398cf9aea2d0cf087d2aa1f1059487504b7a2a9e493389"
+    sha256 cellar: :any, arm64_tahoe:   "45e53f0eefaaef352c7ef221ae115bc9bc8f6f742102e9f0f083465e80eaf5bd"
+    sha256 cellar: :any, arm64_sequoia: "a5712fa1e1e991da057f0a239d318665701e5955049adffc2b958f6a0ba8f4b4"
+    sha256 cellar: :any, arm64_sonoma:  "909677b30ce2ab0ae787cdd8831e00cfd178daff058639af3e04404394b07a5b"
+    sha256 cellar: :any, sonoma:        "690eed7dd3eb2c4b26282a747a662ad9b87116f35b01821ec0eed252bae8dedc"
+    sha256 cellar: :any, arm64_linux:   "d1db93fb035eee026e97e3d157eb1db8b3487fd409169f22bbba3bf73623be52"
+    sha256 cellar: :any, x86_64_linux:  "6f6fae20d1863b3602313851f564ce7ed7e74539b35e585cd7d2edc1792b7f7e"
   end
 
   depends_on "rust" => :build # for jiter, sqlglotrs
@@ -30,8 +30,8 @@ class Mycli < Formula
                 extra_packages:   %w[jeepney secretstorage]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
-    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
+    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
+    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
   end
 
   resource "cli-helpers" do
@@ -100,8 +100,8 @@ class Mycli < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/36/cf/ea4ef2920830dea3f5ab2ea4da6fb67724e6dca80ee2553788c3607243d0/jaraco_functools-4.5.0.tar.gz"
-    sha256 "3bb5665ea4a020cf78a7040e89154c77edadb3ca74f366479669c5999aa70b03"
+    url "https://files.pythonhosted.org/packages/6c/1f/c23395957d41ccf27c4e535c3d334c4051e5395b3752057ba4cbaec35c56/jaraco_functools-4.6.0.tar.gz"
+    sha256 "880c577ec9720b3a052d5bc611fb9f2269b3d87902ef42440df443b88e443280"
   end
 
   resource "jeepney" do
@@ -235,8 +235,8 @@ class Mycli < Formula
   end
 
   resource "sqlite-utils" do
-    url "https://files.pythonhosted.org/packages/7d/8e/0e2fa87b197b3d0f8dd57856c07da77fa0c7130aaa894ee9d330c715f37c/sqlite_utils-4.0.tar.gz"
-    sha256 "cea711807c2bbc18829ed642ae19a23a80e853f4136c4d2a28078a6117ad9426"
+    url "https://files.pythonhosted.org/packages/83/c1/fa8563039ec30b5cc6a532271e8cf90da37e4c649a3ad80b49fb6a39023e/sqlite_utils-4.1.1.tar.gz"
+    sha256 "cf97e620b3940cd541cae9117cc24af961a6da426189fdb662f20f1950ba1f49"
   end
 
   resource "sqlparse" do

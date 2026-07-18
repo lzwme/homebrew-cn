@@ -17,6 +17,9 @@ class GitlabReleaseCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "21aed32d1e61d02a7c6b3b5d111df239e576a3f5eeb82795ef150c5f3f8bc741"
   end
 
+  deprecate! date: "2026-07-17", because: :deprecated_upstream, replacement_formula: "glab"
+  disable! date: "2027-01-17", because: :deprecated_upstream, replacement_formula: "glab"
+
   depends_on "go" => :build
 
   def install

@@ -1,10 +1,11 @@
 class CargoFeaturesManager < Formula
   desc "TUI like cli tool to manage the features of your rust-project dependencies"
-  homepage "https://github.com/ToBinio/cargo-features-manager"
+  homepage "https://tangled.org/tobinio.dev/cargo-features-manager"
+  # TODO: change to tangled when tag tarball is available
   url "https://ghfast.top/https://github.com/ToBinio/cargo-features-manager/archive/refs/tags/v0.11.1.tar.gz"
   sha256 "f0a0894a4bc5de422b6ac1cae8a28ff605715fedae14ed3a44dea0eeb734f91d"
   license "MIT"
-  head "https://github.com/ToBinio/cargo-features-manager.git", branch: "master"
+  head "https://tangled.org/tobinio.dev/cargo-features-manager.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "94ce47b67a56b1faa492c358ac28983b61ddbadb4ad0d6dd43271ff2a47c2c66"

@@ -26,6 +26,9 @@ class MinioMc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f8ddb10d84cbd05663a495bb04c778a3d5e4915b2b1c506cc98a6a2a1750dbd"
   end
 
+  deprecate! date: "2026-07-17", because: :repo_archived
+  disable! date: "2027-07-17", because: :repo_archived
+
   depends_on "go" => :build
 
   conflicts_with "midnight-commander", because: "both install an `mc` binary"

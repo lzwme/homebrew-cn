@@ -12,6 +12,9 @@ class OscCli < Formula
     sha256 cellar: :any_skip_relocation, all: "0b5095bc6803da7dc7288c74f6b8f6bb885431f733f2129ac02f247a24b4d9bb"
   end
 
+  deprecate! date: "2026-07-17", because: :deprecated_upstream, replacement_formula: "octl"
+  disable! date: "2027-01-17", because: :deprecated_upstream, replacement_formula: "octl"
+
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 

@@ -1,17 +1,17 @@
 class KimiCode < Formula
   desc "AI coding agent for your terminal"
   homepage "https://moonshotai.github.io/kimi-code/"
-  url "https://registry.npmjs.org/@moonshot-ai/kimi-code/-/kimi-code-0.24.2.tgz"
-  sha256 "546e6cc010f86c8b7ed53805ade2ff7d643a3f68a33956a1a3606a0f1781bd51"
+  url "https://registry.npmjs.org/@moonshot-ai/kimi-code/-/kimi-code-0.26.0.tgz"
+  sha256 "306b82fb1c046d359847644a987c62a016ad464aac3046d3cad0eece9cdfdd61"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "80f24573ccc32a8e800ac92eee954dc4355e39ac0210811fa552ebdc334d256a"
-    sha256 cellar: :any,                 arm64_sequoia: "80f24573ccc32a8e800ac92eee954dc4355e39ac0210811fa552ebdc334d256a"
-    sha256 cellar: :any,                 arm64_sonoma:  "80f24573ccc32a8e800ac92eee954dc4355e39ac0210811fa552ebdc334d256a"
-    sha256 cellar: :any,                 sonoma:        "37f550334c812050380e5b20de850b99ca6c274997906e65465f2e5e7ff18934"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5331d766f6a13dc71063aa167f33c6e9e1ce4cf3543f11d190af0f13c3ea50bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d793d3d0dc98ddba98547b80cca862953432a422163104a61db817565a5dd65"
+    sha256 cellar: :any,                 arm64_tahoe:   "82b12598c3a5a50b1ebffbb0c8997705acedc67827f3a3448104fd945a3edabc"
+    sha256 cellar: :any,                 arm64_sequoia: "82b12598c3a5a50b1ebffbb0c8997705acedc67827f3a3448104fd945a3edabc"
+    sha256 cellar: :any,                 arm64_sonoma:  "82b12598c3a5a50b1ebffbb0c8997705acedc67827f3a3448104fd945a3edabc"
+    sha256 cellar: :any,                 sonoma:        "6c69ddd9e58d009a30e4dbbf788d7efa8c4eb04c43eb3c418e525c332a6f1e28"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e81d56869117f06ff9842da40573a6855ee0a34a1914b3e03175dc7ec26d8bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3718908c5166462b71458331f98f6fb4894c601d8373562a93c8f1e1ec0e391b"
   end
 
   depends_on "node"

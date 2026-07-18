@@ -1,23 +1,28 @@
 class Pomerium < Formula
   desc "Identity and context-aware access proxy"
   homepage "https://www.pomerium.com"
-  url "https://ghfast.top/https://github.com/pomerium/pomerium/archive/refs/tags/v0.32.9.tar.gz"
-  sha256 "ca69ae564e584be021dd2af85b8ccda0f791842dff9488f1e463cb26916f1d7c"
+  url "https://ghfast.top/https://github.com/pomerium/pomerium/archive/refs/tags/v0.33.0.tar.gz"
+  sha256 "71dedba9b1a06e55bab46cb0ab7ad6f81235a3ab6967f576e4429743ccf2e97a"
   license "Apache-2.0"
 
   head "https://github.com/pomerium/pomerium.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a36c0e70c802bf7e598d12c783338ef41c411ce71574458d73f915cc2a8ae4fb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30250e49bfe09c22294a8731496699dc669d6870c53a5d00f461a9786a6a58eb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ef778a9b3227b213406edd4143589e0ef0ea30040ede12a689b5b4aef8caac9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "39215da8c9c3db1b847155a29d16844a20444e8403e4a348e63f31893c9bc838"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4240ccd459019798d79772be5c02ebf3ff7d7c94df5033568b8592f2a2a63507"
-    sha256 cellar: :any,                 x86_64_linux:  "e468cd072e1fc71e1c5135b322647989c88fca1886b1d43463386db5e59ad304"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "49af7d6b1c508aff852ac42fb6fa83a3336234fd94ab5f4768b84a943725a688"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6434a4f6c5a5f3e23dc75d4d82f84f55b04a10072976a237dab0527fc79114f2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d0f7be64b8f2a33ebba7338dfe92140f0d2b3c5152d29ebe65de8d497044e76"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "574e0a131aa10790f88e5b1aa0a62aff817ff41a4d0591daf3b338e73f92c581"
+    sha256 cellar: :any,                 x86_64_linux:  "7fc7d6bafb46a66a81bb3f6017fe252e0df892bf9b5d2611ec12e9a357bfe6ef"
   end
 
   depends_on "go" => :build
   depends_on "node" => :build
+
+  # Upstream dropped darwin x86_64 support in 0.33.0
+  # https://github.com/pomerium/pomerium/pull/6141
+  on_macos do
+    depends_on arch: :arm64
+  end
 
   def install
     system "make", "get-envoy"

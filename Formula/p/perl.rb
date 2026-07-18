@@ -2,6 +2,7 @@ class Perl < Formula
   desc "Highly capable, feature-rich programming language"
   homepage "https://www.perl.org/"
   url "https://www.cpan.org/src/5.0/perl-5.42.2.tar.xz"
+  mirror "http://www.cpan.org/src/5.0/perl-5.42.2.tar.xz"
   sha256 "0a585eeb9e363c0f80482ddb3571625250c2c86aeb408853e8ea50805cfb14bb"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   compatibility_version 1

@@ -1,19 +1,19 @@
 class Ggml < Formula
   desc "Tensor library for machine learning"
   homepage "https://github.com/ggml-org/ggml"
-  url "https://ghfast.top/https://github.com/ggml-org/ggml/archive/refs/tags/v0.16.0.tar.gz"
-  sha256 "8e1741cd44c036468ee2b8531343bbe1205bc26bc63b866030679cc5f28ec0bf"
+  url "https://ghfast.top/https://github.com/ggml-org/ggml/archive/refs/tags/v0.17.0.tar.gz"
+  sha256 "49ed958226dd75ea13b3b493150181e3a3ca7dc28c20a3d1f00d23e94cbf7a47"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ggml-org/ggml.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "d4ec769f0a01f19e05726f23cdc206ff0e5afcebb7a5537cb98708291a16511b"
-    sha256 arm64_sequoia: "2d770317a8ed6f6df635eb53e1965f7298391a13ce55130e5cf5f7bce970546e"
-    sha256 arm64_sonoma:  "dd31c7eab850cf239bd33695db3c12c6186d1023484c54289f7278686d58a78a"
-    sha256 sonoma:        "6a38e4002165580013749ec4cb08e9f7afed74929bd5816727ffc34d3d87558f"
-    sha256 arm64_linux:   "77933555fe0f748455918d53aa87562c5b8d7cba7d3ceda179e5525349e78f74"
-    sha256 x86_64_linux:  "d7c55b0b5ed05edd3f2b8ee4fee9687e65d2d41f0a0b9c0ce8f75fa19e850514"
+    sha256 arm64_tahoe:   "8d9dc75c16c4a4c95bf400d581ab06ea7e817381b96e29b5033252763919d43e"
+    sha256 arm64_sequoia: "acd41aba0db8f03b33a1e60d29b3612b1f01c66288c5d7e226d62cd81db16340"
+    sha256 arm64_sonoma:  "8b8868edaa265f92cb5fcae576dc05cfdfbd2bcf9e2f12f734c1dbd8d1ee2758"
+    sha256 sonoma:        "2dec754add4ba6cdde5f840079e185c21e113b85a4f7e07a7311c96d24f8d0f7"
+    sha256 arm64_linux:   "3e7cf8413ccd6b64a7d41d11a7bf01ca3fd462225f7b96ba7e474a2530814b1d"
+    sha256 x86_64_linux:  "672b170099bc11f5c6b991b5c7b39f1958b186a503412167399d7b3819dc4f77"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -42,8 +42,8 @@ class Ggml < Formula
 
   # Lengthy test so not worth installing. Shorter examples/tests haven't been ported to new DL backend
   resource "test-backend-ops.cpp" do
-    url "https://ghfast.top/https://raw.githubusercontent.com/ggml-org/ggml/refs/tags/v0.16.0/tests/test-backend-ops.cpp"
-    sha256 "de0400add5f543202955c4f549bcc6209bb70fb836289fdd6c374536a7223088"
+    url "https://ghfast.top/https://raw.githubusercontent.com/ggml-org/ggml/refs/tags/v0.17.0/tests/test-backend-ops.cpp"
+    sha256 "3e93d257d000461fb3d6a23144e60acf3fff978dca17ccd11bb01be484633a34"
 
     livecheck do
       formula :parent

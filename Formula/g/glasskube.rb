@@ -16,6 +16,9 @@ class Glasskube < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f74d440bd5ff5936c0ee805fa757c79f0891b65d4ba3c232da4caa69901264c4"
   end
 
+  deprecate! date: "2026-07-17", because: :repo_archived
+  disable! date: "2027-01-17", because: :repo_archived
+
   depends_on "go" => :build
   depends_on "node" => :build
 
