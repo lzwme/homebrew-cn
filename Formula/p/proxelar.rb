@@ -1,17 +1,17 @@
 class Proxelar < Formula
   desc "Man-in-the-Middle proxy for HTTP/HTTPS traffic"
   homepage "https://proxelar.micheletti.io"
-  url "https://ghfast.top/https://github.com/emanuele-em/proxelar/archive/refs/tags/v0.4.7.tar.gz"
-  sha256 "592edd0211e594de5b4af0c456db7e72fcbd1290f6b552b84a2cc80e994acfb7"
+  url "https://ghfast.top/https://github.com/emanuele-em/proxelar/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "2675e32a3e9a21b7ad077687ac4e2282e8318fb756b29e0796eed2605418e0ac"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "871f620f3da82c0cadabc466b32dc450408a54743989ecdd03a8afda7a404a1a"
-    sha256 cellar: :any, arm64_sequoia: "9fa59540414a5f95e208151b59398877fed76149bb1318fa6d8cc57a6a766bba"
-    sha256 cellar: :any, arm64_sonoma:  "0881cc5d3dc83f113ecdbe0b521e6dd7a12892f5580db2e8803d6a0076b635a6"
-    sha256 cellar: :any, sonoma:        "f3251779f6a9ea211b888739efb78ee2c107ad465c531570bcdd5a2ca039d4f4"
-    sha256 cellar: :any, arm64_linux:   "621b612f5ac601c381efa573ee9d1ef95152d619b447978d934510d0f41c21e0"
-    sha256 cellar: :any, x86_64_linux:  "7c171dc9c5221fffacc3e1a9bc61ef7e67a792ef9051a449f39124ad69c03c68"
+    sha256 cellar: :any, arm64_tahoe:   "f409b92d33b3697f0c8cd6dbd3063682b6100507eafa968909dd09ca845c0061"
+    sha256 cellar: :any, arm64_sequoia: "1950635839ddb8568986fe6473dd2d1e01d53e08424e9115fe89f9d3631e345c"
+    sha256 cellar: :any, arm64_sonoma:  "6fec761794104a91210a0918b66f2388f15c01d5109c2034f7257f5ca402f463"
+    sha256 cellar: :any, sonoma:        "08b9ed96f3b91f5d33345a66cf6a0ef09223eb6255dbcde3bfdba778bf473f65"
+    sha256 cellar: :any, arm64_linux:   "30d0c8175b9b7af47d64d23c0009aea0a74f6bd83104da227e6067921d2dbc45"
+    sha256 cellar: :any, x86_64_linux:  "953828255d47e6e35fcb3518426fef8aa77c19eb0d12e20a9c6c2b5d36ec6840"
   end
 
   depends_on "pkgconf" => :build

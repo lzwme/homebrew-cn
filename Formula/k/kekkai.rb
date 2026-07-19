@@ -1,18 +1,18 @@
 class Kekkai < Formula
   desc "File integrity monitoring tool"
   homepage "https://github.com/catatsuy/kekkai"
-  url "https://ghfast.top/https://github.com/catatsuy/kekkai/archive/refs/tags/v0.2.9.tar.gz"
-  sha256 "850922716fa9d4efd270261ca5de050d85d775a28cdc3a289fb9e9e3f7f5e495"
+  url "https://ghfast.top/https://github.com/catatsuy/kekkai/archive/refs/tags/v0.2.10.tar.gz"
+  sha256 "ab244e24bb957954a0911f0e67eaebc4424179dd4addb79aa31519e6c75a74d8"
   license "MIT"
   head "https://github.com/catatsuy/kekkai.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a731da298229d21e640343d63dd7750fd2c11df50c5043d266c9718e913894c7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a731da298229d21e640343d63dd7750fd2c11df50c5043d266c9718e913894c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a731da298229d21e640343d63dd7750fd2c11df50c5043d266c9718e913894c7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "23acf6a941bc110a695ae53e37f80a93c7754ab6f80b98bffeae624ed755ab11"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4000b29d033c381090d0454c547fbff0a64f9193cf789de2de5a10f5126a17ba"
-    sha256 cellar: :any,                 x86_64_linux:  "34630246554e3422f9fd985d94641d1884f857f7e9e3e02c6d49cc3e5bacd837"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6da42591ea2227ccd41fac8c0e30110d76e384794b827c45cbfd175749f95ac9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6da42591ea2227ccd41fac8c0e30110d76e384794b827c45cbfd175749f95ac9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6da42591ea2227ccd41fac8c0e30110d76e384794b827c45cbfd175749f95ac9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0db1ece8166e533e72cc7a00b551d4c11bdc2e7e79b9bddc1b600a2a0bb081c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e910d64f127b33c5daaea5bbdf9c90081ff1219a2ba1d8ead6a5dd5104a0f691"
+    sha256 cellar: :any,                 x86_64_linux:  "a15dd7916120e50ab2ce46ae711fdd3c998463c7e996925c1da1eff508c585a8"
   end
 
   depends_on "go" => :build

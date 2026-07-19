@@ -13,14 +13,15 @@ class PythonAT311 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c77e291a53232b4fb948e374f7b7b069ad2de37a4ae4d42be734a9420279ce4a"
-    sha256 arm64_sequoia: "3559acf035f02e4149ac96aead12ff34f3f750d42d0f2005269cf8ea425dbf73"
-    sha256 arm64_sonoma:  "080e0613100f7917a5f7cfa137fbb24b1a3b2fc22d0cb16bfdab1711a49b0ab3"
-    sha256 tahoe:         "65a1f9f1ebc638c1bf31e180be612c5344aad5e316aad91b619d768f5082e222"
-    sha256 sequoia:       "a241cb9c6042ff6b30ee9f615d514253fd8342dae357f3e220d783329fff4ca9"
-    sha256 sonoma:        "0c18c903451ed1801b36642d21fecfe678cbde6a60f3ffca11619a5d95e53a1b"
-    sha256 arm64_linux:   "49f48a0eb833406b3238a704e02e2d456d8d7a75a770c381925606ee35fb1660"
-    sha256 x86_64_linux:  "d090cc3c5cb3ce2c30556b9a72f91346735e4021d2c7340f4aab87d2533b6595"
+    rebuild 1
+    sha256 arm64_tahoe:   "759345b256879a090e62e33ef2e5680372904ba5540911c2c41c164e64a9eddb"
+    sha256 arm64_sequoia: "65867c46485e40c31b38b7a64bfa05fe532263bf2082427bd26942eda349ecd9"
+    sha256 arm64_sonoma:  "25329ac1011900cb629b13589741eab39dd65b71636776b4588b645efb643134"
+    sha256 tahoe:         "856378493ef877a8a97026fb7b8810c5a0da62b430718d8944ac28974b077e9e"
+    sha256 sequoia:       "cf2791d35b9c1761b9798a19353942e640efe6b53974554908c6c6fbe7f947da"
+    sha256 sonoma:        "5938ba78ee82eaa511cc18810ca5006e67cadbcbd0d8a58644932ff333e74b95"
+    sha256 arm64_linux:   "653cfc03db4d67a9bd48af48c3922fd24180951cfa8f077d5f2ca4466ef02ac3"
+    sha256 x86_64_linux:  "62d7f77ab59b1f180c8cc013d3fc115b7ee338de4c46a68b8f5a01ebd1dffd7e"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -404,6 +405,11 @@ class PythonAT311 < Formula
     %W[wheel#{version.major_minor} pip#{version.major_minor}].each do |e|
       (HOMEBREW_PREFIX/"bin").install_symlink bin/e
     end
+
+    # Ensure the template venv activation scripts are writable
+    # to allow reinitializing an existing venv without throwing a permission error.
+    # See: https://github.com/python/cpython/issues/86079
+    chmod "u+w", lib_cellar.glob("venv/scripts/**/*").select(&:file?)
   end
 
   def sitecustomize

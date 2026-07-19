@@ -1,6 +1,6 @@
 class Lmdb < Formula
   desc "Lightning memory-mapped database: key-value data store"
-  homepage "https://www.symas.com/symas-embedded-database-lmdb"
+  homepage "https://www.symas.com/lmdb.php"
   url "https://git.openldap.org/openldap/openldap/-/archive/LMDB_0.9.35/openldap-LMDB_0.9.35.tar.bz2"
   sha256 "98e28ab0a5c23fb2eb8ad12c12d7ad5fc5e4c3563f41d0b91e9420a075974d6f"
   license "OLDAP-2.8"

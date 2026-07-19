@@ -13,15 +13,15 @@ class PythonAT312 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "4b2cf1174957cdfb7f95dacb9135ef47c57a7cc52f2ac590a9f7284cdfea0e63"
-    sha256 arm64_sequoia: "4f06f0e4e2b57b84574e69acb259a999cea8973aab52dff12efd7362edf8fa23"
-    sha256 arm64_sonoma:  "d9028cedd1255cff9178ce3d999a32da15d56c297367c9f7c51d5f913bdfce1d"
-    sha256 tahoe:         "3c17a3059af9efd973bfa165ab137a6918df1e03de0bde427ef8d192064d5277"
-    sha256 sequoia:       "afc9e76b23fb712f8cec447fdf2d6e470e064cb0470d82a4b3eac6f367b84666"
-    sha256 sonoma:        "552d3ad743dbce80ef456f042c7d58297fa05a5e46e4cd2fe0bd2f3ef305cfb0"
-    sha256 arm64_linux:   "2f6ffdbeb1c72207efa2644c2ac26ac11f1ab8b514165cba67c9a89c48ba54cb"
-    sha256 x86_64_linux:  "6d8adc5a6ad3c7d0085c87892a2ffb571e71739d5199b87413bb4db046eed266"
+    rebuild 2
+    sha256 arm64_tahoe:   "659fe17ffa45737acf153b6baaf3fa735b346b8ee191610517d81bdd0b84ea48"
+    sha256 arm64_sequoia: "6891247b265604f1017acddf0d36a0a18ba8d22f94d152f87673a5a9d460ab62"
+    sha256 arm64_sonoma:  "be7efe29ac1d26f89c241a0161aefc145358cf9025076ad8536b07e310295631"
+    sha256 tahoe:         "ce0a418a6634e2754d1b2619b17e01cdd99b5396f5c3338350081b6ee2e98163"
+    sha256 sequoia:       "40f4b28fe9d1fb1da601046eade86ccd3eb6f59561f76d67dc19ac8c39e15057"
+    sha256 sonoma:        "431d539f4b4a6b5d16d115235cfde7cf6755e40cd0e7ea326630582983d88828"
+    sha256 arm64_linux:   "c510379d54acc30e2092c31ed1ba2bcd46ee037c1be182b2bdf512b22f31c2db"
+    sha256 x86_64_linux:  "8ec7b34517ec4c1210f6178cdbfa40e3f1e5d5780d7f26567593a07e425045ff"
   end
 
   depends_on "pkgconf" => :build
@@ -384,6 +384,13 @@ class PythonAT312 < Formula
 
        Read more about this behavior here: <https://peps.python.org/pep-0668/>
     INI
+  end
+
+  def post_install
+    # Ensure the template venv activation scripts are writable
+    # to allow reinitializing an existing venv without throwing a permission error.
+    # See: https://github.com/python/cpython/issues/86079
+    chmod "u+w", lib_cellar.glob("venv/scripts/**/*").select(&:file?)
   end
 
   def sitecustomize

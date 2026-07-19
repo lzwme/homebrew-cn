@@ -2,9 +2,9 @@ cask "chatgpt" do
   arch arm: "arm64", intel: "x64"
   livecheck_arch = on_arch_conditional intel: "-x64"
 
-  version "26.715.31251"
-  sha256 arm:   "1beef9950173d662fddafeccdee52a12906ed184debf3a62dd7610c1fc0ce6ef",
-         intel: "0156bc730c243bb0af6d991af94191db5150918e2d4327646b1f0b10ae94a9a2"
+  version "26.715.31925"
+  sha256 arm:   "a0cded116975c71c723dc8601c07402533b5ff23881d15e52cfb6dc71413e45b",
+         intel: "f18972b893207ff5cbf047599369ce96768c2ace25128a09315058ef0a5cfdcb"
 
   url "https://persistent.oaistatic.com/codex-app-prod/ChatGPT-darwin-#{arch}-#{version}.zip",
       verified: "persistent.oaistatic.com/codex-app-prod/"
@@ -25,13 +25,23 @@ cask "chatgpt" do
   uninstall quit: "com.openai.codex"
 
   zap trash: [
+        "/Library/Application Support/CodexComputerUseAuthorizationPlugin",
         "~/Library/Application Support/Codex",
         "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.openai.codex.sfl*",
+        "~/Library/Application Support/com.openai.codex",
+        "~/Library/Application Support/OpenAI/Codex",
+        "~/Library/Caches/Codex",
         "~/Library/Caches/com.openai.codex",
+        "~/Library/Caches/com.openai.sky.CUAService",
+        "~/Library/Group Containers/*.com.openai.sky.CUAService",
         "~/Library/HTTPStorages/com.openai.codex",
         "~/Library/HTTPStorages/com.openai.codex.binarycookies",
+        "~/Library/HTTPStorages/com.openai.sky.CUAService",
+        "~/Library/HTTPStorages/com.openai.sky.CUAService.binarycookies",
         "~/Library/Logs/com.openai.codex",
         "~/Library/Preferences/com.openai.codex.plist",
+        "~/Library/Preferences/com.openai.sky.CUAService.cli.plist",
+        "~/Library/Preferences/com.openai.sky.CUAService.plist",
         "~/Library/Saved Application State/com.openai.codex.savedState",
       ],
       rmdir: "~/.codex"

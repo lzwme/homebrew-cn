@@ -1,8 +1,8 @@
 class Girara < Formula
   desc "Common components for zathura"
   homepage "https://pwmt.org/projects/girara/"
-  url "https://pwmt.org/projects/girara/download/girara-2026.07.07.tar.xz"
-  sha256 "475f154148647d45e0f1324762fe5452094147085fddf2ccef4e9725c335b0c1"
+  url "https://pwmt.org/projects/girara/download/girara-2026.07.18.tar.xz"
+  sha256 "d7255635776a45d42d1e555aa425ab96caf23755442474cf240cbac966d8502f"
   license "Zlib"
 
   livecheck do
@@ -11,12 +11,12 @@ class Girara < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d88052d72d39fe82019505ec872d7a9dc1f7e763e73cdee2f170ae5c9082b20b"
-    sha256 cellar: :any, arm64_sequoia: "bcd17e2fb207876abbf153f81e7f1c192bc770ec24bef1d5d203ceecff54fda2"
-    sha256 cellar: :any, arm64_sonoma:  "a8193cd6ef5c10c53514180b26726d11390294d476138ea6ab47dcec980575ce"
-    sha256 cellar: :any, sonoma:        "f861f4fd66b8a2aacf0b65d4e0387b1c0927d18cb3aa7f353e7654927bed5262"
-    sha256               arm64_linux:   "23ad93ec3d29bb5e101cceb18e06947378c3d3856ccc0b63f7db19e536a0e4b3"
-    sha256               x86_64_linux:  "42adab09cc87cdb8a766244bc59d8c58473862f24c0aa8228c2811ffa4449309"
+    sha256 cellar: :any, arm64_tahoe:   "0d9959fc9b718f52108608d374bed4231e99ebb539eca0ab531ef767c29c6b79"
+    sha256 cellar: :any, arm64_sequoia: "a96b96abc4486ba56ea0ef1d2a8d8be75af2c39b2775c2aa9d9cff14040cf252"
+    sha256 cellar: :any, arm64_sonoma:  "c14607b4d9ebdcb9a505b1223898b6eaf4ea064ed536c29b1ca32cea8ce0d88f"
+    sha256 cellar: :any, sonoma:        "732f6dd51d16e04e7405caf0debf639ff981ed0cd3ff76b385d92acb2bdc5a8e"
+    sha256               arm64_linux:   "fa4b25e6c5f26b9fef2662a7c48fb52f9bb36b03af7ed54c835e90ee5c6a96c6"
+    sha256               x86_64_linux:  "231cd63fbf4116e533b19652f8774e0206c7ead4fa767109eddb42c1dd559ea7"
   end
 
   depends_on "meson" => :build

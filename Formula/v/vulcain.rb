@@ -1,18 +1,18 @@
 class Vulcain < Formula
   desc "Fast and idiomatic client-driven REST APIs"
   homepage "https://vulcain.rocks/"
-  url "https://ghfast.top/https://github.com/dunglas/vulcain/archive/refs/tags/v1.4.1.tar.gz"
-  sha256 "fa93f5d9352528ab708ffa5ec472841715622775ed66566e6a4acffe37bda3a1"
+  url "https://ghfast.top/https://github.com/dunglas/vulcain/archive/refs/tags/v1.4.2.tar.gz"
+  sha256 "6d33bc7f3aa3d4d792d5a52745e245fbd033f566be28e4a726634ac438d9a999"
   license "AGPL-3.0-only"
   head "https://github.com/dunglas/vulcain.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34108eed78b90ecf9bfb226f00b5575c643b1e200481f26b38261e1e307f6667"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d66ada4cf084c070d807b00d8f50485ec0ea04b1054746e590f51f229dc3bc4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a001532c5aa5af0f63ed71fcef98f27a210d456c5026fc495447a8c9709a6c9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2c700bddffe1611b308f117e9dffc3c4f6e4c03222a1e35cc06ea9302f5eb371"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e762cba8245ecae0c6aafd13c4ada647ad0be0a1f7f1d42cd90fdeb90c849f4f"
-    sha256 cellar: :any,                 x86_64_linux:  "6ad2b99a1e45a559aaab10d02e6d908ece6850cfea431fe7ec775bd5bfcae206"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "503323e6c2405743989752d2584642a408a33ba164b8773d29bdfa0ee8cd31f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff955dc1738bbce313a12cd0db2085229eb84f23638474616e7203703a03b033"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5e30151103dc7c5c02ac72f1807b2f455d78196aaa18e18703397a62f4d92bb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e6f925676010699716b4246457e77c5c97d123d7aa448de805265ece5f2c4d77"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec6d54298bc0eb866985ee9642ac361422086773e2abf7be6439773f21015641"
+    sha256 cellar: :any,                 x86_64_linux:  "4c9f24a2d2c8c22bdf77b73e02470e03e967db83bfbe205b503372cb7228c5c1"
   end
 
   depends_on "go" => :build

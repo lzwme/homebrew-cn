@@ -10,15 +10,15 @@ class PythonFreethreading < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "395e3f7a26b17c8e60454e1fa37b956440baa739b99c96b068056f567809e570"
-    sha256 arm64_sequoia: "a80d70195c17a26a25e28341d45d1aafdd5cb51501995ac731847515a3795e2f"
-    sha256 arm64_sonoma:  "1eae19ff2aef7f78bab7de5c9dfd81b197aa3bc6a82fa2915de3a1c73956e1bc"
-    sha256 tahoe:         "d36d74870b3e3127223ebc42bf9ee04d7b14d3fbec97f802949a6323c1207401"
-    sha256 sequoia:       "1ec3ebe918c4655f77abbee5cbb685073f2cd9449503692ff0f18ed359a1edfd"
-    sha256 sonoma:        "c0af64a381e7ce5b074d375122810130d108c2b66eb7e791cceb7887a135e7f3"
-    sha256 arm64_linux:   "25d73840fff01bb22647600294855e8f7f3c00829b5d809a75bf4d09fb7456d9"
-    sha256 x86_64_linux:  "c5727ed710d50d6a5ddf8dd3446dc532410018d2f81dc4ed4a5e357dd7e7b9d6"
+    rebuild 2
+    sha256 arm64_tahoe:   "c924f6c8771130e9916297698de94ed1dd83770f548c025d20a4ba7db6960b0c"
+    sha256 arm64_sequoia: "6090349997de23e29ba40ea80dafc65d694339cb9b30aa1a75768e2dfb2eabb8"
+    sha256 arm64_sonoma:  "61c7fcd1b25b5c59719813823ae1cf6d06e7ac0d3f32b19b2f2a19ee2657d0e1"
+    sha256 tahoe:         "55e0f17a503091bbe5b83202c01e9a5828e931f38d851aa1648d23539da75b34"
+    sha256 sequoia:       "702db0bb1164eadaa6b5d0c4cfc14f7a54940681146d11f0879922336b706ab7"
+    sha256 sonoma:        "594371d102740c4cfa5db38f55fd39a13c450c670af1e94e48b96c2b958074bb"
+    sha256 arm64_linux:   "e15a845d5898f2c28bdcffc857754635d757ea4765709257ea5914eb01b20ec8"
+    sha256 x86_64_linux:  "a2dddfb16ae4a60208260f3b1f76d2f281006900ebc9c83c4a92b7bd26e5bb63"
   end
 
   depends_on "pkgconf" => :build
@@ -347,6 +347,13 @@ class PythonFreethreading < Formula
 
        Read more about this behavior here: <https://peps.python.org/pep-0668/>
     INI
+  end
+
+  def post_install
+    # Ensure the template venv activation scripts are writable
+    # to allow reinitializing an existing venv without throwing a permission error.
+    # See: https://github.com/python/cpython/issues/86079
+    chmod "u+w", lib_cellar.glob("venv/scripts/**/*").select(&:file?)
   end
 
   def sitecustomize

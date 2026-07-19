@@ -3,18 +3,18 @@ class Gptme < Formula
 
   desc "AI assistant in your terminal"
   homepage "https://gptme.org/docs/"
-  url "https://files.pythonhosted.org/packages/8e/06/770080a0c3c3c6726f41b9639ac497163bfad15630f947bf91d7766171f6/gptme-0.32.0.tar.gz"
-  sha256 "ccc109570c93de08a8d1727170da544345b1f0c1b98b3b8b77113dcd6736f441"
+  url "https://files.pythonhosted.org/packages/6b/09/f3f7d84b8e5e2a9b88a44a427fb4dbed3cec984c97543fddd5c1a836c8f7/gptme-0.32.1.tar.gz"
+  sha256 "b9ff6d3a0bc10caa58a6b28d801f3a54831ec91324a668e2a9f93c61478ed532"
   license "MIT"
   head "https://github.com/ErikBjare/gptme.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2d4bd0bbc0b3f8147638218804ae0af08acf29e78d00d4413f9c14ce9709f641"
-    sha256 cellar: :any, arm64_sequoia: "05e2f03c5fee3539ad1b457011b963816f790f3739aaad007ac04a1e2c2d401c"
-    sha256 cellar: :any, arm64_sonoma:  "85eadfcd9e4fc03bc04b1b85c49cd2c4a14d42334f6d0a2ac687e44664130910"
-    sha256 cellar: :any, sonoma:        "ebf9ff5c2f01abf3dbbd42b5fcfda267eb46137a65e03def627ab0da7706d1a0"
-    sha256 cellar: :any, arm64_linux:   "4e54fe4e293daf420339cda870d126c97324a1aee3bbf23d964db370c8e25158"
-    sha256 cellar: :any, x86_64_linux:  "721984b583a165da2745ebf555460644b2077157d4b049db2eaf13e58a68f1df"
+    sha256 cellar: :any, arm64_tahoe:   "a4ef5fbb8b382063cb10276d3e0a31634b7bd530b2b2c5b758475c5b3db0143c"
+    sha256 cellar: :any, arm64_sequoia: "6419fd5d56328ac9cf773bf46fb481b910561a38d8366712c26ac3f3ae94f062"
+    sha256 cellar: :any, arm64_sonoma:  "337757c02ec6e947281637954ac7dd91bfcb27dfe5ce4760ede87e9b536ba37d"
+    sha256 cellar: :any, sonoma:        "aeca6ce3adfccffe7b22fececa6e1fc3cb30ca3ce697b0c4368e7530862c8ae8"
+    sha256 cellar: :any, arm64_linux:   "7c1e9908ba3d0c4f598c27847d3b4e6f53df9302072a3b3c945239820beb7d30"
+    sha256 cellar: :any, x86_64_linux:  "f6e4c9b2b073856a34614f3615111d598e268185af7a9a45af9394b526676f38"
   end
 
   depends_on "rust" => :build # for jitter
@@ -37,13 +37,13 @@ class Gptme < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
-    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
+    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
+    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
   end
 
   resource "asttokens" do
-    url "https://files.pythonhosted.org/packages/be/a5/8e3f9b6771b0b408517c82d97aed8f2036509bc247d46114925e32fe33f0/asttokens-3.0.1.tar.gz"
-    sha256 "71a4ee5de0bde6a31d64f6b13f2293ac190344478f081c3d1bccfcf5eacb0cb7"
+    url "https://files.pythonhosted.org/packages/25/1e/faf0f247f6f881b98fc4d6d07e14085cb89d13665084e6d6ac1dc2c03d0b/asttokens-3.0.2.tar.gz"
+    sha256 "3ecdbd8f2cc195f53ccada3a613538bb5f9ef6f6869129f13e03c30a677b8fe2"
   end
 
   resource "attrs" do
@@ -132,8 +132,8 @@ class Gptme < Formula
   end
 
   resource "json-repair" do
-    url "https://files.pythonhosted.org/packages/ff/7c/6d7c931fb6348f957154f9af926a77777a03ef0f6108c51cc2d7c9876a22/json_repair-0.61.2.tar.gz"
-    sha256 "b63ae5ad44c8720158e24bdd7e33506f7036174c287831b187a51619a6f58a34"
+    url "https://files.pythonhosted.org/packages/b3/43/189737dfa70d1f455fb26770935437f36645725e8cd54f5fff3e9fa2014f/json_repair-0.61.5.tar.gz"
+    sha256 "965cc39a7cddc84aad0a1b00a4ce44906cf14893bd0e3890a386d28ca21dd0f0"
   end
 
   resource "jsonschema" do
@@ -177,8 +177,8 @@ class Gptme < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/78/60/d4219875289b11d2c2f7da93c36283da224a2e55865ed865ab64e0ce9217/openai-2.45.0.tar.gz"
-    sha256 "10d34ca9c5643bce775852fddbfc172505cb1d4de1ccd101696c3ecff358765d"
+    url "https://files.pythonhosted.org/packages/af/ac/f725c4efbda8657d02be684607e5a2e5ce362e4790fdbcbdfb7c15018647/openai-2.46.0.tar.gz"
+    sha256 "0421e0735ac41451cad894af4cddf0435bfbf8cbc538ac0e15b3c062f2ddc06a"
   end
 
   resource "parso" do
@@ -277,8 +277,8 @@ class Gptme < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/ab/3a/0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bc/rich-13.9.4.tar.gz"
-    sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
+    url "https://files.pythonhosted.org/packages/e9/67/cae617f1351490c25a4b8ac3b8b63a4dda609295d8222bad12242dfdc629/rich-14.3.4.tar.gz"
+    sha256 "817e02727f2b25b40ef56f5aa2217f400c8489f79ca8f46ea2b70dd5e14558a9"
   end
 
   resource "six" do
@@ -317,8 +317,8 @@ class Gptme < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/51/db/03eaf4331631ef6b27d6e3c9b68c54dc6f0d63d87201fed600cc409307fd/tomlkit-0.15.0.tar.gz"
-    sha256 "7d1a9ecba3086638211b13814ea79c90dd54dd11993564376f3aa92271f5c7a3"
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
   end
 
   resource "tqdm" do

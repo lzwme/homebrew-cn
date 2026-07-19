@@ -1,8 +1,8 @@
 class Libgit2AT18 < Formula
   desc "C library of Git core methods that is re-entrant and linkable"
   homepage "https://libgit2.org/"
-  url "https://ghfast.top/https://github.com/libgit2/libgit2/archive/refs/tags/v1.8.5.tar.gz"
-  sha256 "ec70049b8af823b21032447f91a2274fd8d91c435ef326a533dff3824e21b27f"
+  url "https://ghfast.top/https://github.com/libgit2/libgit2/archive/refs/tags/v1.8.6.tar.gz"
+  sha256 "c171e9c6fcc33455e3df46d422f4e1b3ea7c049a645051664c9cdbdc081208e7"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }
 
   livecheck do
@@ -11,15 +11,14 @@ class Libgit2AT18 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "906d5ccc5117c9e2c7273223571961fbc1942a61c652ed31f494f85423069af2"
-    sha256 cellar: :any,                 arm64_sequoia: "9a7f4f48320b87e7067589fb218d6edf9513f7ca9d522cbc2e119b002409ce8e"
-    sha256 cellar: :any,                 arm64_sonoma:  "b062e85c407f021ec8541b55c9f08787d665e61762f0834c29fee0fce2f2558d"
-    sha256 cellar: :any,                 tahoe:         "f13c93f8f111aa5b58366fae780223237438c3486be7481b4263bbad0a23dcee"
-    sha256 cellar: :any,                 sequoia:       "7e5064dbf31f18bf27010982d08f752bd478ebedd1377ed55fb262503f16a305"
-    sha256 cellar: :any,                 sonoma:        "b1175c63eaade8f8df89fbbe12a77f45d902c72566b3e6a14b977363b19a7b7c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1feecd76d9334b09f4a24b69eb19af77910d1e1d5b83508ea115e3c63bb50d98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a03d39fce85a0f92345248fcdfff263023ee9eaf6a1b0103191d4302f5bddde"
+    sha256 cellar: :any, arm64_tahoe:   "bf1197372b7ae8a5990723a977b2c2e8669d33438c09ab26954bc3e242679e88"
+    sha256 cellar: :any, arm64_sequoia: "9a8ebce334e74f0055efd118efb6ad6096178dbf2c8dd336a6fd90fd586036d6"
+    sha256 cellar: :any, arm64_sonoma:  "2e91aaa6138dff39f8d1de66f53371e8953633b6467417c607dbc52ad1339f53"
+    sha256 cellar: :any, tahoe:         "6787a6866c36231a3c386bd0934b963561d3b80a13ace643773c215380892897"
+    sha256 cellar: :any, sequoia:       "11e730b0e63cb66262151996f411b53ffe421bcec5c496f6714aa3e650d61cd2"
+    sha256 cellar: :any, sonoma:        "03e045f5d6f46096beed143339ff0f1ed7fd888f0e94c4127620c51af3ba00f6"
+    sha256 cellar: :any, arm64_linux:   "de20c3ba3b34bad59a73358c3c5eff0aeb627828331ababc238e575714a95c92"
+    sha256 cellar: :any, x86_64_linux:  "8127b9b960e721fbe764aaac8502b00fd0acffa547ea51d19585554fa77e6c1c"
   end
 
   keg_only :versioned_formula

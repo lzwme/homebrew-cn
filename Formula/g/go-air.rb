@@ -1,18 +1,18 @@
 class GoAir < Formula
   desc "Live reload for Go apps"
   homepage "https://github.com/air-verse/air"
-  url "https://ghfast.top/https://github.com/air-verse/air/archive/refs/tags/v1.65.3.tar.gz"
-  sha256 "35fde02b7cdc39cf3a53e97187e894c443dcdeb1475bc654250cbb5c22428a80"
+  url "https://ghfast.top/https://github.com/air-verse/air/archive/refs/tags/v1.66.0.tar.gz"
+  sha256 "897101ec5092e25cd1724af7832c69d0eae217e8520016504b669b7771682edb"
   license "GPL-3.0-or-later"
   head "https://github.com/air-verse/air.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "58c5e2c063efaba2528b8fdd2fd55e64f9ebe1d6d1bb33cda74bd52f4f858921"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58c5e2c063efaba2528b8fdd2fd55e64f9ebe1d6d1bb33cda74bd52f4f858921"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58c5e2c063efaba2528b8fdd2fd55e64f9ebe1d6d1bb33cda74bd52f4f858921"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4c4aeafe956558b6588147375a5950b95cfd7b60b0bee2144510a81a7192410c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7acbcdc059f3781519f626cb02ccfc296fac18c76956d098d80e289be77e70e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8021062a49ecc4953dc85f806af9618f84c9446db0c6310d9269e26534793ea"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c6ead80d95004c927f026e209d286bdeb439661c32a55bf22374b270fe20d6b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c6ead80d95004c927f026e209d286bdeb439661c32a55bf22374b270fe20d6b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c6ead80d95004c927f026e209d286bdeb439661c32a55bf22374b270fe20d6b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d2bde93871baab6661bdbe25e7510d3d62510342570d5036690792f15f4d89e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a726588e49a81eb71e24a56926d837375901fdee0c9d4ea36b4851c5bc6ec0f8"
+    sha256 cellar: :any,                 x86_64_linux:  "7776a0dd29f47789e74b732335b5ca4bbffe2c56a987cafb74779402e6ac9359"
   end
 
   depends_on "go"

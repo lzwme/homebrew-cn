@@ -1,18 +1,18 @@
 class Aliae < Formula
   desc "Cross shell and platform alias management"
   homepage "https://aliae.dev"
-  url "https://ghfast.top/https://github.com/jandedobbeleer/aliae/archive/refs/tags/v1.1.2.tar.gz"
-  sha256 "aab1ea50431610830c6b4152483a0dc212ae5924059a32521187640a9fc08cf2"
+  url "https://ghfast.top/https://github.com/jandedobbeleer/aliae/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "5a54762575abd7167ba52e7ca06c2dde42962defece63659d733ec918548f9fd"
   license "MIT"
   head "https://github.com/jandedobbeleer/aliae.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ddf88c359037240b87c4476e2e3c6137cf7be74d136557c600e06a978d00ef5c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "57add13577c9558980922c568e4142b54ada4fc7e092ed211d670fc9d5784042"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "745f19a785b90768c214438de60c6f44331fcd1dbd978436a962c4251edf7648"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f3c12568545390039dbbc406c4c036876310c6d7a70b7a29b16b35cdcfd5519c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd66ec0ea9090d273bb0dc95209605bafcdbe07ca4975da98f0a0f3080e87d89"
-    sha256 cellar: :any,                 x86_64_linux:  "e204a019563a0840f74946c3ecdafc6db8b4d263344a5675086c92dd3cad7078"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9cca18f04386ab1c61c2dd892967a1f7bdec8ea9a0b87f3e04be319be335ae9f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16a19a668e7c211026c8095395d163d1a37707b2ea1e672c084950a9623a3c0c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "152d91a94e6d0d8941b7f5fad81915290ab860a6e960d6fac286d0459a4333d7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ba4543e81b93b3e193ffb818c11de79f2ff3724c661c3dac011ec45db771338f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e068facfd6cfac0b3ef6db054658993b6f7f3ad3ddab7d98f47f998b668f46f"
+    sha256 cellar: :any,                 x86_64_linux:  "be42b0a5bce94d44efec96582712a8c5a8497d101381ca8c7c3cefd10e49208c"
   end
 
   depends_on "go" => :build

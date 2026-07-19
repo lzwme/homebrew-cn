@@ -5562,6 +5562,7 @@ Homebrew-homebrew-core/Formula/o/overdrive.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/overmind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/overtls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/overturemaps.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/ovh-ttyrec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ovsx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/owamp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/owfs.rb, Homebrew/homebrew-core, 1
@@ -7849,6 +7850,7 @@ Homebrew-homebrew-core/Formula/u/utftex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uthash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/util-linux.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/util-macros.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/u/utiluti.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/utimer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/uudeview.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/uutils-coreutils.rb, Homebrew/homebrew-core, 1
@@ -8751,6 +8753,7 @@ Homebrew-homebrew-cask/Casks/a/aquaskk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aquaskk@prerelease.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/araxis-merge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/arc.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/arcbox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/archaeology.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/archi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/archipelago.rb, Homebrew/homebrew-cask, 1
@@ -13353,7 +13356,6 @@ Homebrew-homebrew-cask/Casks/l/lidanglesensor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lidarr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lifesize.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lightburn.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/l/lightgallery.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lighting.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lightkey.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lightproxy.rb, Homebrew/homebrew-cask, 1
@@ -14328,6 +14330,7 @@ Homebrew-homebrew-cask/Casks/p/pennywise.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/perforce.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/perimeter81.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/permute.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/perplexity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/persepolis-download-manager.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pester.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/petrichor.rb, Homebrew/homebrew-cask, 1

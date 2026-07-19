@@ -1,10 +1,10 @@
 class OpencvAT4 < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
-  url "https://ghfast.top/https://github.com/opencv/opencv/archive/refs/tags/4.13.0.tar.gz"
-  sha256 "1d40ca017ea51c533cf9fd5cbde5b5fe7ae248291ddf2af99d4c17cf8e13017d"
+  url "https://ghfast.top/https://github.com/opencv/opencv/archive/refs/tags/4.14.0.tar.gz"
+  sha256 "ee8fb9b30eb60850431b4656447080e3737b56e45719c92b67f245950609f86e"
   license "Apache-2.0"
-  compatibility_version 1
+  compatibility_version 2
 
   livecheck do
     url :stable
@@ -12,12 +12,12 @@ class OpencvAT4 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "a38ce2db78983fbeb2da26880be9ebbf739e0fb075561a8f83e634e8e7af64c7"
-    sha256 arm64_sequoia: "4e732a182fddc6dc4da1162e5001fb8b44173f23ee63e4742cc77a9d6bf3c32e"
-    sha256 arm64_sonoma:  "5553cc377250dd4b25123d6681049ce40f3b95c44615376ea9b9aa6a2a6bcc21"
-    sha256 sonoma:        "60862aa65c198a3dfa99bcf7d1a0200defadfdf8463ffe60f6390dd516dbbf6d"
-    sha256 arm64_linux:   "2b34294999291054f21fbded6269137c1d7d66049e21770045d1759a3dd35920"
-    sha256 x86_64_linux:  "fae038dee1a39dfc1d8566e6499462c58d916735c090856b12d38278203aa6c2"
+    sha256 arm64_tahoe:   "49c92673fdda91e0bea4b0983e1620593170256516598b61e97437b4c83a4801"
+    sha256 arm64_sequoia: "3bd79a04047c2aa43b19b9e8d107dc1b5ddca543fa3bff283e7f404ef7a725d5"
+    sha256 arm64_sonoma:  "f26c09e9aecd39b5c714ade7743976575cdc48136cd97ef03689659a0ab7127c"
+    sha256 sonoma:        "d68272d17fddeb6d9aa3b42810a3c80676f520f504e6598f38255aa5c27762e0"
+    sha256 arm64_linux:   "5fea97e94ec7ce90b94eb1c5c95f2654d8d8600acdd095f6723d807afbf94aae"
+    sha256 x86_64_linux:  "8b640933abd7763e3627e2b3f6e6526cb758814b9017c779df77b736d8ab81d8"
   end
 
   keg_only :versioned_formula
@@ -67,8 +67,8 @@ class OpencvAT4 < Formula
   end
 
   resource "contrib" do
-    url "https://ghfast.top/https://github.com/opencv/opencv_contrib/archive/refs/tags/4.13.0.tar.gz"
-    sha256 "1e0077a4fd2960a7d2f4c9e49d6ba7bb891cac2d1be36d7e8e47aa97a9d1039b"
+    url "https://ghfast.top/https://github.com/opencv/opencv_contrib/archive/refs/tags/4.14.0.tar.gz"
+    sha256 "4f17abd1bc7f88e19c3380c8de7cbf2d863aced5b5ee8d8934cc7902b67d42c9"
 
     livecheck do
       formula :parent
@@ -88,11 +88,6 @@ class OpencvAT4 < Formula
     # Remove bundled libraries to make sure formula dependencies are used
     libdirs = %w[ffmpeg libjasper libjpeg libjpeg-turbo libpng libtiff libwebp openexr openjpeg protobuf tbb zlib]
     libdirs.each { |l| rm_r(buildpath/"3rdparty"/l) }
-
-    # Fix OpenVINO 2026 Tensor::data() constness mismatch, upstream bug report, https://github.com/opencv/opencv/issues/28586
-    inreplace "modules/dnn/src/op_inf_engine.cpp",
-              "return Mat(size, type, blob.data());",
-              "return Mat(size, type, const_cast<void*>(blob.data()));"
 
     # VTK 9.6 stopped transitively including <iostream>;
     # viz uses std::cout/endl directly.

@@ -6,7 +6,8 @@ class GitlabCiLocal < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5c99b10fdcef18182383f49b563acb6d285111411761510e5024f171bbe1ae41"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "1d6ebe9d65a2d4df807b06ffc746bea94d8425e13adc38470d661bf32a758163"
   end
 
   depends_on "node"
@@ -14,6 +15,9 @@ class GitlabCiLocal < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
+
+    generate_completions_from_executable(bin/"gitlab-ci-local", "--completion", shell_parameter_format: :none,
+                                                                                shells:                 [:bash, :zsh])
   end
 
   test do

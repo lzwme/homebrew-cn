@@ -1,17 +1,17 @@
 class FdkAacEncoder < Formula
   desc "Command-line encoder frontend for libfdk-aac"
   homepage "https://github.com/nu774/fdkaac"
-  url "https://ghfast.top/https://github.com/nu774/fdkaac/archive/refs/tags/v1.0.7.tar.gz"
-  sha256 "145d4684c9325a2bd650e46a04b03327abe780a7b59cce47e6de8af2064fb2c7"
+  url "https://ghfast.top/https://github.com/nu774/fdkaac/archive/refs/tags/v1.0.8.tar.gz"
+  sha256 "25baf7bd9ae697d1c2673bbf4b1348b337258ef487c2bd0572451539fb38ebbf"
   license "Zlib"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "e3d5a36246ed05cf712710c26bcba7d88570d9733386d834c26027b813cf460e"
-    sha256 cellar: :any,                 arm64_sequoia: "7e8347597d693ddc8bd3dfb7d2fad8e3f2a1a454e41a18eeba31ea79a2f9aa80"
-    sha256 cellar: :any,                 arm64_sonoma:  "0cccceea0402d98a415aa93a87420b8c9f4f71393ee1df58b7bcffca62961a24"
-    sha256 cellar: :any,                 sonoma:        "e83a70330bbecdc9ad66cddd891181153b0836edae4d78b52193c948aab787a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d0999a7c5a7ec6ecd3d42625860b83857cac894b7b333bc24bbbf4f5d2f2685"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c138775cc930815e191b15a0c09a3df618be38832db32eb234c58e0cb1b6085"
+    sha256 cellar: :any, arm64_tahoe:   "f952dcb8b1bc61bf37823f260ef34963eac94c1bbbf61379a7a030a38e514bfc"
+    sha256 cellar: :any, arm64_sequoia: "1c50e168412d30b559d0b7cff2d4518e338587325d5c8bb385c7697bd88c90d2"
+    sha256 cellar: :any, arm64_sonoma:  "4ee04bad740054d2561e3e34e1d7951be26b0001138a031848ee204cd676731f"
+    sha256 cellar: :any, sonoma:        "4bae4364679f2308ae95be36c8507849bc7257c08132aa41efc7d59617cb1c05"
+    sha256 cellar: :any, arm64_linux:   "fccd66297f7bc52329e067b0211ff1feebe6c0f43b2d787d4bc8150b18307be5"
+    sha256 cellar: :any, x86_64_linux:  "68e96ebd500150e702b69b0d741f6297320bec4766a4c9c4af6fc9e585dc4d27"
   end
 
   depends_on "autoconf" => :build

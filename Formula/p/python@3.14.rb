@@ -12,14 +12,15 @@ class PythonAT314 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "92810d5e3f7e47b9b49c1bca6fb4d9f3cefbb90c77669f4e6785d0babcc1c1b9"
-    sha256 arm64_sequoia: "76505a94aa16b62f002671c0a81c64b4704adcdf05411f3e0a386b3c8610c477"
-    sha256 arm64_sonoma:  "41f0fac6d489a149fd99687d96832a9b2b3948a1924140cec812a98752584109"
-    sha256 tahoe:         "82e86b7276eeaf4cf1f336d2732be2ab8915bb92b71ee63609b9cb3a022f9a93"
-    sha256 sequoia:       "7e04ab45b53a87720413627558e8c72ee44aa6991a300903b6b600a49b793c17"
-    sha256 sonoma:        "564b57b5759f74940b826353d37b9e0c0767ff0a663d321330a673e0138b136a"
-    sha256 arm64_linux:   "c7bc359fda22b9bd1083e2b23b2a0e5f235a7ee71aa02751d2d11287d423cd33"
-    sha256 x86_64_linux:  "4bdc2a2fda5f6c7c5307a3bb9d8d33d5fb79d5d1c72c79a7fb1b32a53e68bd1b"
+    rebuild 1
+    sha256 arm64_tahoe:   "c3246a28c51f4d6478ce24e908cf2c04c1460982f6a2b576b7173734fceb98eb"
+    sha256 arm64_sequoia: "40cd23ba68c55931f4acce01ccc78bf466fbe87ce34d7b0f15fcdad3782ea204"
+    sha256 arm64_sonoma:  "4b8fae8f32ecc41cf2432eda551e13f99f86aabe497bcda333a0848e0d00e782"
+    sha256 tahoe:         "f89646d22dce30d958bb6ce1deb107fab974b7b55d91fb23412766490dcd62b0"
+    sha256 sequoia:       "f019b78211cfbdbf5aa253934695f56859e751ab4d41299043ac3baef83d36ae"
+    sha256 sonoma:        "fd644cbb417a9475f8c1f4e9359d19361dc8c5df9ca960bb072b7f3825724c8e"
+    sha256 arm64_linux:   "0bea2cc8cca02a43fbdb830b5a40a7f764d89128de330c55072acf1dd146d5c3"
+    sha256 x86_64_linux:  "65459b177976d613314ccaa2ba4f16e9c119f901ed5cbd72172ffc1b6fef1745"
   end
 
   depends_on "pkgconf" => :build
@@ -387,6 +388,13 @@ class PythonAT314 < Formula
 
        Read more about this behavior here: <https://peps.python.org/pep-0668/>
     INI
+  end
+
+  def post_install
+    # Ensure the template venv activation scripts are writable
+    # to allow reinitializing an existing venv without throwing a permission error.
+    # See: https://github.com/python/cpython/issues/86079
+    chmod "u+w", lib_cellar.glob("venv/scripts/**/*").select(&:file?)
   end
 
   def sitecustomize

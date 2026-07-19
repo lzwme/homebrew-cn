@@ -1,8 +1,8 @@
 class Htop < Formula
   desc "Improved top (interactive process viewer)"
   homepage "https://htop.dev/"
-  url "https://ghfast.top/https://github.com/htop-dev/htop/archive/refs/tags/3.5.1.tar.gz"
-  sha256 "dfc4a09845e9bc86f466a722e62b8f87d59028ff39689077ff2257a6a605061d"
+  url "https://ghfast.top/https://github.com/htop-dev/htop/archive/refs/tags/3.5.2.tar.gz"
+  sha256 "a66a62bbd1eba59889c68f868b643e53320eea93da19f43ba13c822a826d82ba"
   license "GPL-2.0-or-later"
   head "https://github.com/htop-dev/htop.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Htop < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "db7f9d7446c4bdfbf056f8ec72eb6a0e980fc02fc1dfd8a2276fa2850b8e8e01"
-    sha256 cellar: :any,                 arm64_sequoia: "1b113c54d858a69b96802f5673f59e888fcb1ed16453658145090e8c4f99e4ea"
-    sha256 cellar: :any,                 arm64_sonoma:  "1d6d45bae52d39a2f19cecfa43b6e4cecc9c1a9895f30795c7e74c790348efd9"
-    sha256 cellar: :any,                 sonoma:        "6201b1181a3160778504ad76a3e641a8754027ce517924bc3c2a142046d0354d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "578b86f2ca817ee887c756f7d1a994b522240431900164cf9dbe1d7dbb1aaa93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c3b2a8655007ecc5cbdcc440d96294e6175ba8760bf28548fb7e5ec30b19edc"
+    sha256 cellar: :any, arm64_tahoe:   "fcd2302f01490680101ec96b7338230e8e74c2061cea9139d8b50731ab44c874"
+    sha256 cellar: :any, arm64_sequoia: "1571d6aa264fb71ec23282651d005d02ae2c58be25c77f54a177498ce4953814"
+    sha256 cellar: :any, arm64_sonoma:  "6ea6d70385c51d699068066f2652d12d4b6166541ce6c3accb680c3a0627d399"
+    sha256 cellar: :any, sonoma:        "8c6d5453410472b39b5ab5951e5fc3d0da789ba29f73aa785cd429626605fff9"
+    sha256 cellar: :any, arm64_linux:   "8e6cf12deb2ff22ac67dcea4bffb61fee5e2c310fd941f906e317e45ebd6454a"
+    sha256 cellar: :any, x86_64_linux:  "94b1fbc2ed2be30a24ff5c46e80cc0c8b164c176f0a38709b92443ddcf7549a4"
   end
 
   depends_on "autoconf" => :build
