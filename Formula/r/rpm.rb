@@ -1,28 +1,16 @@
 class Rpm < Formula
   desc "Standard unix software packaging tool"
   homepage "https://rpm.org/"
+  # Using GitHub tarball rather than ftp.osuosl.org to support autobump
+  url "https://ghfast.top/https://github.com/rpm-software-management/rpm/releases/download/rpm-6.0.2-release/rpm-6.0.2.tar.bz2"
+  sha256 "66a4998e020d7354a804fde83801a9d7157b20f5e08198f7fde69d3a0ab683fe"
   license all_of: [
     "GPL-2.0-or-later",
     "LGPL-2.0-or-later", # rpm-sequoia
   ]
-  revision 2
   version_scheme 1
   compatibility_version 1
   head "https://github.com/rpm-software-management/rpm.git", branch: "master"
-
-  stable do
-    # Using GitHub tarball rather than ftp.osuosl.org to support autobump
-    url "https://ghfast.top/https://github.com/rpm-software-management/rpm/releases/download/rpm-4.20.1-release/rpm-4.20.1.tar.bz2"
-    sha256 "52647e12638364533ab671cbc8e485c96f9f08889d93fe0ed104a6632661124f"
-
-    # Backport commit needed to fix handling of -fhardened
-    patch do
-      url "https://github.com/rpm-software-management/rpm/commit/e1d7046ba6662eac9e5e7638e484eb792afa36cc.patch?full_index=1"
-      sha256 "ae5358bb8d2b4f1d1a80463adf6b4fa3f28872efad3f9157e822f9318876ad9c"
-      type :backport
-      resolves "https://github.com/rpm-software-management/rpm/pull/3674"
-    end
-  end
 
   livecheck do
     url "https://rpm.org/releases/"
@@ -30,18 +18,19 @@ class Rpm < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c1462be8d84ff5e2619abf1ddf519aaf51117600fa0b34915160b8a5aa926dfb"
-    sha256 arm64_sequoia: "e4bf476b54a1224dc7c4b91901f395a8fc51e4c3b0f6c7b386138e1bc1ea455e"
-    sha256 arm64_sonoma:  "41375be050820e0d9b26786600bd888d8ad6e434e834787afa1cc182e6896736"
-    sha256 sonoma:        "a8d1495a1eaef556377e085bca4d6e27dac67bbaf618f34e5eefb16e13103fa1"
-    sha256 arm64_linux:   "9873698fe99788028cc539fc66818b1c5dade0780e2f02032a6a5ac95506975c"
-    sha256 x86_64_linux:  "7815f575b463b87f6eca89a4f0f5c4192d4fd2206ce00b91c998c916787916ee"
+    sha256 arm64_tahoe:   "85b28257b443c715ec1ee352a3a2044138d008a8c1d9925bba9988bfc66bb864"
+    sha256 arm64_sequoia: "fa56fd7e7b8c2a725abdaab889fa893c1f0741e3e3009178fd82b93ab3954bc5"
+    sha256 arm64_sonoma:  "c678282544199c2d323b3fabecc4d771e4aedb3d7954bda00232b79705f250c1"
+    sha256 sonoma:        "ee4352e0bd6d8895ef486d605d4f9f0ec87e4a163254ba3af9a6f6e5299e1ba7"
+    sha256 arm64_linux:   "b16ba06fda8e6867c7bd6b6b8e6b9f6d49c2074edfed551ac87a2b0d3b9f673d"
+    sha256 x86_64_linux:  "f4c414f88d69cda16b5996e7dfb1ce55f3fae917f763067f89b3cb5621455c9b"
   end
 
   depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "python@3.14" => [:build, :test]
   depends_on "rust" => :build # for rpm-sequoia
+  depends_on "scdoc" => :build
 
   depends_on "libarchive"
   depends_on "libmagic"
@@ -79,14 +68,12 @@ class Rpm < Formula
     end
   end
 
-  # Apply nixpkgs patch to work around build failure on macOS
+  # Construct rpmstrPool with new so its std::shared_mutex is initialized on macOS
   patch do
-    on_macos do
-      url "https://ghfast.top/https://raw.githubusercontent.com/NixOS/nixpkgs/3d52077f5a6331c12eeb7b6a0723b49bea10d6fe/pkgs/tools/package-management/rpm/sighandler_t-macos.patch"
-      sha256 "701ffe03d546484aac57789f3489c86842945ad7fb6f2cd854b099c4efa0f4e5"
-      type :unofficial
-      resolves "https://github.com/rpm-software-management/rpm/issues/3688"
-    end
+    url "https://github.com/rpm-software-management/rpm/commit/5f2726246de792aac980867833b3357376145818.patch?full_index=1"
+    sha256 "f25cf0f3e7cf26dd5c4d25684d37d6a190d4afa8b463a37ce0e0bf09f52ad4c0"
+    type :unofficial
+    resolves "https://github.com/rpm-software-management/rpm/pull/4291"
   end
 
   def python3
@@ -144,10 +131,10 @@ class Rpm < Formula
     system "cmake", "-S", ".", "-B", "_build", *args, *std_cmake_args
     system "cmake", "--build", "_build"
     system "cmake", "--install", "_build"
+    (var/"lib/rpm").mkpath
   end
 
   def post_install
-    (var/"lib/rpm").mkpath
     safe_system bin/"rpmdb", "--initdb" unless (var/"lib/rpm/rpmdb.sqlite").exist?
   end
 

@@ -1,17 +1,17 @@
 class Gurk < Formula
   desc "Signal Messenger client for terminal"
   homepage "https://github.com/boxdot/gurk-rs"
-  url "https://ghfast.top/https://github.com/boxdot/gurk-rs/archive/refs/tags/v0.9.3.tar.gz"
-  sha256 "1c8ee4466374375a3df2ccd94fcc86d76bfcdd868820f3f9d4a1f2cbed2be22b"
+  url "https://ghfast.top/https://github.com/boxdot/gurk-rs/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "8db5a45dfc1502be589d5ea633320cec94dcbbd4b38f489404b784d4b4aa702e"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d51e753ce3f279e3d9dfdfd60deced869c996e8fdc29ec7e6bb769d6e4680d30"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40b88b0600de65cf507801dd6ec8e4492c12f72bd2c2a90fe787be30672cb681"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b197dc77ec944a137ec15d2d23e156c83b5a2367ca08adf94a2054ce37dd33b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fa085cf56a4c1e466e3a17f3d51e788ffccaa7db738d98ebcaa59f689830f20c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b0aa9ba5d6820e76156328750d5e571d9c82f5af17886b4eabe4ab07eeda9e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2cd983ea34ac4c5d7f1ec14e75e12f95426bc1c1e0c4077d05a9226ead44789"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0a011fd07aab2f2e57a2c28a5e110b71666e719252f2be4b55b889804f9f198"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2cdc07a3d9f40eda618bd06b0f242cf6b90b110a44beb3d377636273d2ac1a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0bd80892945e69d9154db347e9652e4c48dab286a488b4c64a0e52f069f3021a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "291ccb4ce58e50cef75898269d9a1bdada0651251b57e42e52a86982bf309966"
+    sha256 cellar: :any,                 arm64_linux:   "38b7e6550d7966e8c8bcf29430aa371d8863ca9608e72ef43a8715d8341fa9a5"
+    sha256 cellar: :any,                 x86_64_linux:  "183d50f36541a982cc1cb7ebc0ed6d43936f6a1c8a04fe4a94bca7f611c382e7"
   end
 
   depends_on "pkgconf" => :build

@@ -1,18 +1,18 @@
 class Vscli < Formula
   desc "CLI/TUI that launches VSCode projects, with a focus on dev containers"
   homepage "https://github.com/michidk/vscli"
-  url "https://ghfast.top/https://github.com/michidk/vscli/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "af089ab9ccf80b24399575d1cea3014974d04ab73a4688259c53a2525da11d0d"
+  url "https://ghfast.top/https://github.com/michidk/vscli/archive/refs/tags/v1.3.2.tar.gz"
+  sha256 "c78fe7e92958cd76fbc3cd4a61112e96f770af64fe03060337a60f26609a6bc2"
   license "MIT"
   head "https://github.com/michidk/vscli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2273f8d6dc3e13c957790a6998f02a7d833b99db3b068923da6ded29d0b89817"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22b01724115be58e091a1944af0e8f8a3b4a663a29e5a3a7ca994cd90842ae4b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac9796e0c0ac9e59e1939e44138470380f150eb2def5b10d60f4625bbb74db86"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9d47361b0293b964768ac61816149744584184c6e441bc4229a187f6cb8e43df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e6e8f7c90afd4354a42e678dd887adb959a9e0eb6e756aa3a00da1b90b5218c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b42485a36a1a3586d9873cb8ef5fb3e0dfe6e00c1d04148d712d3064a56be218"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e9585fcf6d4dde321dfcc07c8329add292601c34fd9c33a223fc862860d7f3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44b6229f606c9974ef1eb7fd224ddce0f2d92fd94dac68c2afa0e754556117bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12aeac733cddc8e0b05ddf7341d224abc7fa625f82953d8dbbd571e7a97b7cf6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ae26b40677a6d1e3e2547afc5bbc8f21eed6e0153632571b3d963a371f4e2716"
+    sha256 cellar: :any,                 arm64_linux:   "29586583aef04bdb0e1a94f714389a25bde1e01d73cb59f2f1256b8643af6669"
+    sha256 cellar: :any,                 x86_64_linux:  "20a7a3fb39ea62b0c8547b7d9a1000e380e6129f32f4888bd7b6dd1f593ab726"
   end
 
   depends_on "rust" => :build

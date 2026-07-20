@@ -16,6 +16,8 @@ class OvhTtyrec < Formula
 
   depends_on "zstd"
 
+  conflicts_with "ttyrec", because: "both install the same binaries"
+
   def install
     ENV["NO_STATIC_ZSTD"] = "1"
     system "./configure", "--disable-silent-rules", *std_configure_args

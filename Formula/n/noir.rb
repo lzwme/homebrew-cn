@@ -1,20 +1,20 @@
 class Noir < Formula
   desc "Attack surface detector that identifies endpoints by static analysis"
   homepage "https://owasp.org/www-project-noir/"
-  url "https://ghfast.top/https://github.com/owasp-noir/noir/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "1ebd3e81cf9afc332bcc35eb871d5c8fb70704dd6bd4025aca14148a8bfbdf73"
+  url "https://ghfast.top/https://github.com/owasp-noir/noir/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "84178c9b50a20b6177198a0d8c7b97853212469e1561bae0d187b68f1e2587a9"
   license "MIT"
   head "https://github.com/owasp-noir/noir.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7012c56b552f1559fe9f1af5b254eb54eab996640c8fd046534c8ac962f9c283"
-    sha256 cellar: :any, arm64_sequoia: "e085cd689af4db4cc2c7a82c479b56fc7f0a2e92d617ad2c1f61f685c5a9835f"
-    sha256 cellar: :any, arm64_sonoma:  "c50d724736eb3f8c3971b433d16192d631942816c2f38b02a251915fda3052d8"
-    sha256 cellar: :any, sonoma:        "dfb47c5a42d67e7a8bc1e4605f06956edf74373bb16ef4c28a707c28b36d077b"
-    sha256 cellar: :any, arm64_linux:   "17c394b41b0196577f058ac38574563f3338d6a06eda1813e6a1eb0941721e2d"
-    sha256 cellar: :any, x86_64_linux:  "a8beb85f7e8f0a38f1cc2aaff57170f98a46831ce7a2aa05c760d786311e3201"
+    sha256 cellar: :any, arm64_tahoe:   "f6c04882495ffe197297d89dc89ecc0bbef94908c7e24631fda56ad71c136bfb"
+    sha256 cellar: :any, arm64_sequoia: "ff998bbd578c0b3de34ab93c90267247dd79529eaa02ba3f7a14546bc82ec6e9"
+    sha256 cellar: :any, arm64_sonoma:  "60cb361c9579e4e0173223e4f4ee71186358f0a15ddf7fde282cff91a20faff3"
+    sha256 cellar: :any, sonoma:        "9ebe4c158a6f19f93d947b2e3402d2e446f6e5ca1bfd0456e7d714f78f5f292a"
+    sha256 cellar: :any, arm64_linux:   "429a7500424497446abb5356b08cb5861a53bd44ff18afd893361636c4a6d624"
+    sha256 cellar: :any, x86_64_linux:  "5d67e5ff69d0bb5cabc782305a93a01b2324ac09ed3e3bb0cb41dcc806d59044"
   end
 
   depends_on "crystal" => :build

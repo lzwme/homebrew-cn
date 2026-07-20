@@ -2,7 +2,7 @@ class Pkgconf < Formula
   desc "Package compiler and linker metadata toolkit"
   homepage "https://github.com/pkgconf/pkgconf"
   url "https://distfiles.ariadne.space/pkgconf/pkgconf-3.0.3.tar.xz"
-  mirror "https://fossies.org/linux/misc/pkgconf-3.0.3.tar.xz"
+  mirror "https://ghfast.top/https://github.com/pkgconf/pkgconf/releases/download/pkgconf-3.0.3/pkgconf-3.0.3.tar.xz"
   mirror "http://fresh-center.net/linux/misc/pkgconf-3.0.3.tar.xz"
   sha256 "aa033abb2b777ba4e66635495a931e53c49d86e4e4e38af68c0f76d666cbd8cf"
   license "ISC"
@@ -29,15 +29,16 @@ class Pkgconf < Formula
 
     # Using a resource to avoiding dependency tree from brew `meson` or `muon`.
     # The version should align to available HTTP mirror rather than latest.
+    # TODO: check on mirrors in future if better alternatives are available.
     resource "muon" do
-      url "https://muon.build/releases/v0.5.0/muon-v0.5.0.tar.gz"
-      mirror "https://deb.debian.org/debian/pool/main/m/muon-meson/muon-meson_0.5.0.orig.tar.gz"
-      mirror "http://deb.debian.org/debian/pool/main/m/muon-meson/muon-meson_0.5.0.orig.tar.gz"
-      sha256 "24aa4d29ed272893f6e6d355b1ec4ef20647438454e88161bdb9defd7c6faf77"
+      url "https://muon.build/releases/v0.6.0/muon-v0.6.0.tar.gz"
+      mirror "https://pkg.freebsd.org/ports-distfiles/muon/0.6.0/muon-v0.6.0.tar.gz"
+      mirror "http://pkg.freebsd.org/ports-distfiles/muon/0.6.0/muon-v0.6.0.tar.gz"
+      sha256 "90a8428bc2178c59b9f7ddd1cb1cc6355f4df0c3ac023f7eefd159ae4f054024"
 
       livecheck do
-        url "https://deb.debian.org/debian/pool/main/m/muon-meson/"
-        regex(/href=.*?muon-meson[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
+        url "https://ghfast.top/https://raw.githubusercontent.com/freebsd/freebsd-ports/refs/heads/main/devel/muon/distinfo"
+        regex(/muon[._-]v?(\d+(?:\.\d+)+)\.t/i)
       end
     end
   end

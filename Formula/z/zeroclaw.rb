@@ -4,21 +4,23 @@ class Zeroclaw < Formula
   url "https://ghfast.top/https://github.com/zeroclaw-labs/zeroclaw/archive/refs/tags/v0.8.3.tar.gz"
   sha256 "9dd537164012bd122cdc4837b09a20146ea3311aa493cd642a870778871f0d27"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https://github.com/zeroclaw-labs/zeroclaw.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f1a9e0062d0021915442673e314d03374495a8adbc3765c6c7dc50c2af79dccd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df2c16ac74a9cf9d7b99159ffdd916e14fc39f8b4d0ee19c01159557027ee197"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93fd9e391202177d10c8ee71230e5dea61ffb5c1d47812b2dfa405d7abdd8ebd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "33439a23a16befddcfaddfa809134e764f5499f879147d2200d1ac20fbaa5446"
-    sha256 cellar: :any,                 arm64_linux:   "257670e85928a0ea46cf71dccc15f310b6dbe432cb159d31c1f7e25710d22489"
-    sha256 cellar: :any,                 x86_64_linux:  "7a6775fa1d105b09a35e5018ae629c9544a4594f294aad48cb5e1af4e859a1ef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1298729feddca109334ab079e38c11f5907d706c9d1060778da6bb49681f2eb8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2bb4b5a590f7a250207d15b97c4b33ceaad79097f41f3c3df7e2ba9391ea6631"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c066be1f46ef47c939de53e10070dcc7948e58e450c270fa30c727afaa976fee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "802fe3d43438e6efe6cb77c15891f4a85f2f1196acafada0d022727bc346b526"
+    sha256 cellar: :any,                 arm64_linux:   "c83652f517c3e832458157c9a2492ed10984029211e4b504e995564aff3395fa"
+    sha256 cellar: :any,                 x86_64_linux:  "93c426e4f56828ef4394d6f5f2004cb935c0935525ac9acec11cb47b09e1ec83"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "apps/zerocode")
   end
 
   service do
@@ -30,6 +32,7 @@ class Zeroclaw < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/zeroclaw --version")
+    assert_match version.to_s, shell_output("#{bin}/zerocode --version")
 
     ENV["ZEROCLAW_WORKSPACE"] = testpath.to_s
     assert_match "ZeroClaw Status", shell_output("#{bin}/zeroclaw status")

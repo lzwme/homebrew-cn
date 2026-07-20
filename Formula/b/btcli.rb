@@ -3,7 +3,6 @@ class Btcli < Formula
 
   desc "Bittensor command-line tool"
   homepage "https://docs.learnbittensor.org/btcli"
-  # TODO: move to bittensor when it release v11 and deprecate this
   url "https://files.pythonhosted.org/packages/58/5f/fd9ede99e419ec618d5b6e6136b62a94840bd45be3af8bb0ded5f45cfbb4/bittensor_cli-9.23.2.tar.gz"
   sha256 "0770e70cd756328093f32556561faa548a8ea357ddc5726918b9422068d2a25d"
   license "MIT"
@@ -16,6 +15,9 @@ class Btcli < Formula
     sha256 cellar: :any, arm64_linux:   "2103af4d0efd7fef4a1eabf429a2018a683d840eaa0db906516ef5dda07769e6"
     sha256 cellar: :any, x86_64_linux:  "ce5a5e1273092385254bbdd077740282045952647236287c01676028af77d6e8"
   end
+
+  deprecate! date: "2026-07-19", because: :repo_removed, replacement_formula: "bittensor"
+  disable! date: "2027-01-19", because: :repo_removed, replacement_formula: "bittensor"
 
   depends_on "rust" => :build # for bittensor-wallet, plotly
 

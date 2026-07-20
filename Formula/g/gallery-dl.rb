@@ -3,18 +3,18 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https://codeberg.org/mikf/gallery-dl"
-  url "https://files.pythonhosted.org/packages/3c/86/4f24dafc8b98c808e5d92feca49ebd8dc27428c429016883a9eb91fba791/gallery_dl-1.32.6.tar.gz"
-  sha256 "33847e9e77082aa97a8cfcfc737f3eb338922adc6c89630a8aed30444f2287e5"
+  url "https://files.pythonhosted.org/packages/22/dc/f44c424d3966cf040b7ef091c8e6818a94ddd7b88c844d62ba542b93b84f/gallery_dl-1.32.7.tar.gz"
+  sha256 "071635805a77ee2d3e70bd271ccd3e565ed64b200df3e03085cd899e8f893a02"
   license "GPL-2.0-only"
   head "https://codeberg.org/mikf/gallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ca487863d65c5f5306ee912d8054f5ffdc37524b82b09b2e0abb4da630fa267b"
-    sha256 cellar: :any, arm64_sequoia: "2ff160363f9b05ee0b20ddcbcb38a1c4ddaf43b8921e3da3a681a7e1df31f8fb"
-    sha256 cellar: :any, arm64_sonoma:  "d7c046f1ed1d161a5e2bd15c81258652d12d84b079999c26ae645482d921a796"
-    sha256 cellar: :any, sonoma:        "35b3648e244c33df958876b136fa164375eced0f23b87de3052b842f6dd6981e"
-    sha256 cellar: :any, arm64_linux:   "2299d5884a2d045f6144ff194851f615dfd5f4bec1782e0275d600e8f74c40e1"
-    sha256 cellar: :any, x86_64_linux:  "7f5f5ba42765a6989a16d6e9f1da73a0c48caef2c7d235c79b3e3074da6dd391"
+    sha256 cellar: :any, arm64_tahoe:   "7adcdd8f9b6f45458992ea6fe78fbd52467e55f79c3abc596b53bd2c03e72163"
+    sha256 cellar: :any, arm64_sequoia: "88375df33fcfa52bb5993a4c0786fc0b7ea2bfde6016df2c4a6ed50412876269"
+    sha256 cellar: :any, arm64_sonoma:  "3dc7e40cdd658fe72dc3da7c47c34a674693a2a7e50bd78fc37442c8cff5ae5f"
+    sha256 cellar: :any, sonoma:        "70a5fb1ceb4f2cb41ce8dac16e753c0bcb1a318fda6ac30c3b0bf16a97f302c1"
+    sha256 cellar: :any, arm64_linux:   "3bfbd502be2b85b96b9d03f8940a941eb85d2ae5a77945ff91c2cedf8492859f"
+    sha256 cellar: :any, x86_64_linux:  "2369abdecf9f4afda4e1fbd98df9fa277b18b65f654148d1f625ed63f18da8f6"
   end
 
   depends_on "certifi" => :no_linkage
@@ -98,8 +98,8 @@ class GalleryDl < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/8c/02/b9a097e1e16fee4e2fd1ec8c39f6a9c5d6257bae8fa12640caf869f54436/websockets-16.1.tar.gz"
-    sha256 "299468cbe42e2b9981134c7c51d99387d8a7bf562b00183b3eec53f882846dad"
+    url "https://files.pythonhosted.org/packages/21/f7/bc3a25c5ec26ce62ce487690becc2f3710bbc7b33338f005ad390db0b986/websockets-16.1.1.tar.gz"
+    sha256 "db234eda965dcce15df96bb9709f587cd87d4d52aaf0e80e2f34ec04c7670c57"
   end
 
   resource "yt-dlp-ejs" do

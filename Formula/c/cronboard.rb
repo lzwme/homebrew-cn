@@ -3,17 +3,17 @@ class Cronboard < Formula
 
   desc "Terminal-based dashboard for managing cron jobs locally and on servers"
   homepage "https://cronboard.dev/"
-  url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "fa5b4d907aead206124979681ea38b346c39f9ee6a5b3c7647d3e403455ad8a4"
+  url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v0.7.3.tar.gz"
+  sha256 "304de09999002159e9adb142c34b95959e682261beb39b4f0f0453054f7581f4"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "17f386a0c8e8c72cf349cc8797f66e2ddf9e2191aae7aeb54b29dcb2795ddb85"
-    sha256 cellar: :any, arm64_sequoia: "5555ad51f5a1c626b4917048b71fed834244e00e94a7986eba443a34034412a4"
-    sha256 cellar: :any, arm64_sonoma:  "7c8439190a06aaa0548d3a671b24f1c10679cb3fdba2d53490c773e0d755914d"
-    sha256 cellar: :any, sonoma:        "47be3ce279491ffceb334a3fad1619d73968c37610044b8c432af935742c3f9e"
-    sha256 cellar: :any, arm64_linux:   "596bcbddcebf6dfe640660e1d7c64a9e55b0e44a23cd174e96285cd2a4944978"
-    sha256 cellar: :any, x86_64_linux:  "0238673b3cfcce9303b45f134d67f0ff3f7fdf1d5fb540135d1c51d77affa75e"
+    sha256 cellar: :any, arm64_tahoe:   "fbee7f42352c3ba3567bef5de66523b87c373982a0363156533482b7e5440c58"
+    sha256 cellar: :any, arm64_sequoia: "90f711e4dfdfdadc6ca409068351c127960b205f7edc190118e005978b6439d8"
+    sha256 cellar: :any, arm64_sonoma:  "ab737aa0d09aca8349759fae512a349b114bf10729e10d09df5dae7761e1c518"
+    sha256 cellar: :any, sonoma:        "8946687ca63582d9bdb56ca42a1e9331b56ac9f7d5110548ce7d4465784b61bd"
+    sha256 cellar: :any, arm64_linux:   "44a63fd7c69a00a6ec788618d96655ca2e0ed0f4b998b391aa50f3b21cea9cf1"
+    sha256 cellar: :any, x86_64_linux:  "add8f3dd877c48ca51148d53238530514c30f0fbe4a3b8c0bf94c27ed7bea3da"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -36,8 +36,8 @@ class Cronboard < Formula
   end
 
   resource "croniter" do
-    url "https://files.pythonhosted.org/packages/df/de/5832661ed55107b8a09af3f0a2e71e0957226a59eb1dcf0a445cce6daf20/croniter-6.2.2.tar.gz"
-    sha256 "ba60832a5ec8e12e51b8691c3309a113d1cf6526bdf1a48150ce8ec7a532d0ab"
+    url "https://files.pythonhosted.org/packages/37/57/2e2a65aee2a70483cb28e2b7e15a072d00a523207593b44400d4717bb100/croniter-6.2.4.tar.gz"
+    sha256 "fc124f751b1b04805c2a04b061898b436b45ab2320b045e1e052ea895de65189"
   end
 
   resource "invoke" do
@@ -71,8 +71,8 @@ class Cronboard < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
-    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
+    url "https://files.pythonhosted.org/packages/52/cd/4f25b2f95b23f5d2c9c1fe43e49841bff5800562149b2666afc09309aa8f/platformdirs-4.10.1.tar.gz"
+    sha256 "ceab4084426fe6319ce18e86deada8ab1b7487c7aee7040c55e277c9ae793695"
   end
 
   resource "pygments" do
@@ -106,8 +106,8 @@ class Cronboard < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/9b/7a/c519db0aba5024f86e71e9631810bfdd6866ed2c8695bd7fa34b90e7ef59/textual-8.2.7.tar.gz"
-    sha256 "658f568ff81e30ed43890c3e07520390e5cf1b4763822006e060656b0a88f105"
+    url "https://files.pythonhosted.org/packages/00/21/39a76b01bd5eea82a04baaca7580e105d8c59450df03998345bb2cfb307b/textual-8.2.8.tar.gz"
+    sha256 "3f106a9fbc73e39dd266c9712432087de78a6d644084c7c241d6a25c3169115b"
   end
 
   resource "textual-autocomplete" do
@@ -116,13 +116,13 @@ class Cronboard < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/51/db/03eaf4331631ef6b27d6e3c9b68c54dc6f0d63d87201fed600cc409307fd/tomlkit-0.15.0.tar.gz"
-    sha256 "7d1a9ecba3086638211b13814ea79c90dd54dd11993564376f3aa92271f5c7a3"
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   resource "uc-micro-py" do

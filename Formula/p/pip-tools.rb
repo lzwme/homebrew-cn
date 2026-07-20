@@ -3,21 +3,20 @@ class PipTools < Formula
 
   desc "Locking and sync for Pip requirements files"
   homepage "https://pip-tools.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/4a/db/c6e2a02db5d98aa5f3250a305ce71e8bc3d1a022d1f47a54d14492ae23de/pip_tools-7.5.3.tar.gz"
-  sha256 "8fa364779ebc010cbfe17cb9de404457ac733e100840423f28f6955de7742d41"
+  url "https://files.pythonhosted.org/packages/ab/d6/d51564c5a3d7a91d20020fbc68a473e6f6e6f970337294cdfc764717d51e/pip_tools-7.6.0.tar.gz"
+  sha256 "c1c59f7844df4866fa9542d3f50d1f44be537ac0027cb50b2563d6a992853981"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/jazzband/pip-tools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "aa04b07eca6f4d6ab8171e9beab49331e665de9922406aa2240550cfde72c68b"
+    sha256 cellar: :any_skip_relocation, all: "f073ca5a1f01cb25e93fb75389781d78432dbe3dcdc132d182b68bd591fbba3c"
   end
 
   depends_on "python@3.14"
 
   resource "build" do
-    url "https://files.pythonhosted.org/packages/2d/21/6ec54248b4d0d51f12f3ca4aa77a128077d747a5db86cb5a2fcd9aedecbd/build-1.5.1.tar.gz"
-    sha256 "94e17f1db803ab22f46049376c44c8437c52090f0dfdf1adc43df56542d644fb"
+    url "https://files.pythonhosted.org/packages/78/e0/df5e171f685f82f37b12e1f208064e24244911079d7b767447d1af7e0d70/build-1.5.0.tar.gz"
+    sha256 "302c22c3ba2a0fd5f3911918651341ebb3896176cbdec15bd421f80b1afc7647"
   end
 
   resource "click" do

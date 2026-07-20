@@ -1,17 +1,17 @@
 class MarpCli < Formula
   desc "Easily convert Marp Markdown files into static HTML/CSS, PDF, PPT and images"
   homepage "https://github.com/marp-team/marp-cli"
-  url "https://registry.npmjs.org/@marp-team/marp-cli/-/marp-cli-4.4.1.tgz"
-  sha256 "7c471064870b4d591fc4e038210a415e873d534fc7ea16813c6b9f1ec61b7d1a"
+  url "https://registry.npmjs.org/@marp-team/marp-cli/-/marp-cli-4.5.0.tgz"
+  sha256 "36145f3400213afec408f8eff5dec2a3e5c5238201246d598019c5a5e4606d88"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "30efda718bde69f3eedaf1d3f04ea9ea00d17ab913ce135e0b983643bec35be8"
-    sha256 cellar: :any, arm64_sequoia: "b949dd1016c8552c2ba07eaa10ad9a9316f16fac8e435180433dc6a08136a7e5"
-    sha256 cellar: :any, arm64_sonoma:  "b949dd1016c8552c2ba07eaa10ad9a9316f16fac8e435180433dc6a08136a7e5"
-    sha256 cellar: :any, sonoma:        "b1723e21ff0549195afdcd499d2a8646ae5aa58e7901ee7cd20f00312928b97c"
-    sha256 cellar: :any, arm64_linux:   "d9ae09d583c502752bd316e2ae351da0117caaa6efdce6b616fc40c14cea16cf"
-    sha256 cellar: :any, x86_64_linux:  "7b93dd21f0171f5f648db39d7c46fe9e17ea9954b0a2a263b8b0f1fda70cfdb0"
+    sha256 cellar: :any, arm64_tahoe:   "769b08ab2ca0825435b668c4e98388c71b0e34528e16cada97aa57d511e94b2c"
+    sha256 cellar: :any, arm64_sequoia: "769b08ab2ca0825435b668c4e98388c71b0e34528e16cada97aa57d511e94b2c"
+    sha256 cellar: :any, arm64_sonoma:  "769b08ab2ca0825435b668c4e98388c71b0e34528e16cada97aa57d511e94b2c"
+    sha256 cellar: :any, sonoma:        "7f1aa3598ab5f1890cce23cfe6df91956b54df4edcd0c085819d279ae1b28c20"
+    sha256 cellar: :any, arm64_linux:   "df40d9c2c44c498261d52624cab2d033c1f60741991f0c2b21b38381625a4b92"
+    sha256 cellar: :any, x86_64_linux:  "805e71821bed529f1e5e645eb7f898da5ca18d84ce6f20fee9045aabefe32201"
   end
 
   depends_on "node"
@@ -24,7 +24,7 @@ class MarpCli < Formula
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     node_modules = libexec/"lib/node_modules/@marp-team/marp-cli/node_modules"
-    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
+    node_modules.glob("{bare-fs,bare-os,bare-path,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
   end
 

@@ -5,8 +5,8 @@ class Crystal < Formula
   compatibility_version 1
 
   stable do
-    url "https://ghfast.top/https://github.com/crystal-lang/crystal/archive/refs/tags/1.20.3.tar.gz"
-    sha256 "b0b5ff4a9ec499ff648f724e9d6c6efd2b2f672bf83ae9ac3f251911254ba9fc"
+    url "https://ghfast.top/https://github.com/crystal-lang/crystal/archive/refs/tags/1.21.0.tar.gz"
+    sha256 "5e2d69f565553aa7287e76570d4540a231bfdf1a37f3be179f497ef1df8a0d9a"
 
     resource "shards" do
       url "https://ghfast.top/https://github.com/crystal-lang/shards/archive/refs/tags/v0.20.0.tar.gz"
@@ -20,12 +20,12 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6bfce04f3f665432dc7f520297f8011275224000fd53d08636d4b025662c1466"
-    sha256 cellar: :any, arm64_sequoia: "d67abf015b80dfba147aa33c6e128afb3d67343373b8e47b8c4d4bfe66f916ac"
-    sha256 cellar: :any, arm64_sonoma:  "1f1333520946876c76ec239706e3f378a9e44527797dd89c9796b5383a6c4472"
-    sha256 cellar: :any, sonoma:        "fa6e4af79dfb494a2d7a9365b44e68ab1c4bedd4cd8876818981c6bb4011cacd"
-    sha256 cellar: :any, arm64_linux:   "4329038a81d152626aaca28500b1f210053569c18a39551a81db9f7f86a70217"
-    sha256 cellar: :any, x86_64_linux:  "5a4d7643bc47fd0b95b49e3b672743f27ad200a94621f8f7a72c22199c76566b"
+    sha256 cellar: :any, arm64_tahoe:   "076a2a7aecfc85840e0214a5f3c416f9a88a653aeedd9273045355edae12aa46"
+    sha256 cellar: :any, arm64_sequoia: "be23ac3707e6d1ad9ae6d23ae832da7e6b6d47c342337388b9f377261a4fbe5e"
+    sha256 cellar: :any, arm64_sonoma:  "7b184d99ca93af6bea62794fecb2e3c594165a0fc570bc5325c0a520c08ab081"
+    sha256 cellar: :any, sonoma:        "af9a307681ae730db62a12e1b1da698d9dc510f2a049f99e956f1dfa43bc9774"
+    sha256 cellar: :any, arm64_linux:   "fcbb131f3010547b1379eededc042fac32bd1f688002ed36c4400251bd1afe2e"
+    sha256 cellar: :any, x86_64_linux:  "89db1c797518979862370fdee66e2f7ad49583cbf179c5eb2f79c2f94dd22400"
   end
 
   head do
@@ -36,6 +36,7 @@ class Crystal < Formula
     end
   end
 
+  depends_on "asciidoctor" => :build
   depends_on "bdw-gc"
   depends_on "gmp" => :no_linkage # std uses it but it's not linked
   depends_on "libyaml"
@@ -126,6 +127,7 @@ class Crystal < Formula
     (buildpath/".build").mkpath
     system "make", "deps"
     system "make", "crystal", *crystal_build_opts
+    system "make", "man/crystal.1"
 
     # Build shards (with recently built crystal)
     resource("shards").stage do

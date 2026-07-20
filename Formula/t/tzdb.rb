@@ -33,11 +33,7 @@ class Tzdb < Formula
       USRDIR=#{prefix}
       TZDEFAULT=#{localtime}
     ]
-    if OS.mac?
-      gettext = Formula["gettext"]
-      make_args[0] += " -DHAVE_GETTEXT -I#{gettext.include} -L#{gettext.lib}"
-      make_args << "LDLIBS=-lintl"
-    end
+    make_args << "LDLIBS=-lintl" if OS.mac?
 
     system "make", *make_args, "install"
   end
