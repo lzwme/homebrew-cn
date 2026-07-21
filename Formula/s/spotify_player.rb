@@ -1,18 +1,18 @@
 class SpotifyPlayer < Formula
   desc "Command driven spotify player"
   homepage "https://github.com/aome510/spotify-player"
-  url "https://ghfast.top/https://github.com/aome510/spotify-player/archive/refs/tags/v0.24.0.tar.gz"
-  sha256 "aff7e5b8aa6efa00a51d82e9fe076aa3abc93e3b922682043b0ffe2909516f0f"
+  url "https://ghfast.top/https://github.com/aome510/spotify-player/archive/refs/tags/v0.24.1.tar.gz"
+  sha256 "211da7f76d412708315ccd36b77424bd53bc4ad19813ed69de44451779812f1f"
   license "MIT"
   head "https://github.com/aome510/spotify-player.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85d178bcbcd676bbde8887a4d706961c5adef0911b9afa01336b65734de971a9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee106a4a5e125fda0fd3b62b0e333baa25634142d978f10bbaf889019987df56"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61fdc74421e4d7183de83d772e07aa1919148036f210514110bf0b30ad69704e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d1cec79ce1b9905455f498a6e59b2330b5cacd8c4147c2c0c33e43d34ee837d3"
-    sha256 cellar: :any,                 arm64_linux:   "6251898d5e9d7cd0a41436714e609f62607e4f5ed41fb2a2f72ea757cbcfafc0"
-    sha256 cellar: :any,                 x86_64_linux:  "973c0a45cd518b3cc5ebe491940574bf0c5d387143c1fd7d153b6152538b3d12"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db22d6b4ba7fff47594a867c7ec81ab50489e16b45190a3209086c9b9fa365a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c9f3c68992746840ffdbca379fe4691c57fc43f425a42e8a976be333b4dba5a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab0b47ed58794f384550de3381493950a7354cd8afc8f5821f1e9de8190ac8e5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d9482fce68c1132819b380aea1795cb2e70f31e9fe9982d1dc407c05f4360694"
+    sha256 cellar: :any,                 arm64_linux:   "cc2e4c5b8bcb035b3d210149592e8d44f1195e38326136250590f25d675105d2"
+    sha256 cellar: :any,                 x86_64_linux:  "ce23435b21baba082dbaa40ab180333bfc3510fb5079d225babc40bef9ce803c"
   end
 
   depends_on "pkgconf" => :build

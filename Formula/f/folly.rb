@@ -1,19 +1,19 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
   homepage "https://github.com/facebook/folly"
-  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2026.07.13.00.tar.gz"
-  sha256 "4400e68827b28abfce920882706fa358903ab253fcc547426c39eb425a28e447"
+  url "https://ghfast.top/https://github.com/facebook/folly/archive/refs/tags/v2026.07.20.00.tar.gz"
+  sha256 "6eba77d703eb1d7250a3b5956e53e416d554f857e49ef64b060f6bc2c01f9588"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2fe3ef344914179bf633307a2a03b6c456e9148221f2e00c006924cae7917045"
-    sha256 cellar: :any, arm64_sequoia: "4e6eea7ad7910873e67162fa0aad5e4e80e163b1fea4ba56efbde5e585c755a1"
-    sha256 cellar: :any, arm64_sonoma:  "4f6a1a56cdf07b281621f8b6f06775a0deedd76b485e85e2a42d227b1c140adc"
-    sha256 cellar: :any, sonoma:        "c74a2cc8139198804c6e35df01ed4d2f69142d69bdc1b45295d31d65b272013a"
-    sha256 cellar: :any, arm64_linux:   "abecb4a081cf8e6fa7d2eed146548618a28523a3677c6e2d959037852ba46e2a"
-    sha256 cellar: :any, x86_64_linux:  "16419a3c13fb6c0c37fdafce5a754bc025bc7317ad4924441fdd7de725126358"
+    sha256 cellar: :any, arm64_tahoe:   "bcf0fcb5862b2cfa67223cf30da9bc12cd07151371ebf1557e43072de77ef655"
+    sha256 cellar: :any, arm64_sequoia: "ab4e578e01cebab27c655e546ccca5f485ade0425cfa88ab21afb9b93c76da19"
+    sha256 cellar: :any, arm64_sonoma:  "021b5363d6e7947471940a41a1759a41301c09041831b95e60be79247013b9ad"
+    sha256 cellar: :any, sonoma:        "f45f4a153f2a1236701d13c7bb2925be0fab0fcfe9b4faafcb4b7c9af3870519"
+    sha256 cellar: :any, arm64_linux:   "e2ba99767710032c50a232a401361571302c98bf04621eb316e19285ace1038d"
+    sha256 cellar: :any, x86_64_linux:  "d497ebf09fd8e6a8a1ba1fe46c46276562d1378cf8667584eea9e42e3d9341e8"
   end
 
   depends_on "cmake" => :build
@@ -36,12 +36,6 @@ class Folly < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # Fix fmt 12.2 compat: https://github.com/facebook/folly/pull/2661
-  patch do
-    url "https://github.com/facebook/folly/commit/dd2a73e8a3b7a9e044918507d52a780cb181f63d.patch?full_index=1"
-    sha256 "3b6138a50d31d785817058df5009343b35d52a8386d494e8e5f62202efcc419e"
   end
 
   # Workaround for arm64 Linux error "Missing variable is: CMAKE_ASM_CREATE_SHARED_LIBRARY"

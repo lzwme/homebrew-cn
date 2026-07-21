@@ -1,19 +1,17 @@
 class Tcpreplay < Formula
   desc "Replay saved tcpdump files at arbitrary speeds"
   homepage "https://tcpreplay.appneta.com/"
-  url "https://ghfast.top/https://github.com/appneta/tcpreplay/releases/download/v4.5.2/tcpreplay-4.5.2.tar.gz"
-  sha256 "ccff3bb29469a04ccc20ed0b518e3e43c4a7b5a876339d9435bfd9db7fe5d0f1"
+  url "https://ghfast.top/https://github.com/appneta/tcpreplay/releases/download/v4.5.3/tcpreplay-4.5.3.tar.gz"
+  sha256 "56c053da51d7be1b6d59fa465d111bd224de73ae8bf262bf2078af914ff2e023"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "BSD-4-Clause", "GPL-3.0-or-later", "ISC"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "b176ea94713287877a7ea7070827e6c878b02dc5b041fbb72d86959844067489"
-    sha256 cellar: :any,                 arm64_sequoia: "e1d0937d05aafd45c31f68cc66122d3bbd37d7fddca7772af45bd17f9d7ad16b"
-    sha256 cellar: :any,                 arm64_sonoma:  "151b9f95a3924504efbd0458e1136d24eee4555989cacd7f3289daaae63c1d8e"
-    sha256 cellar: :any,                 arm64_ventura: "bebe392ee113e4351695149aa69c3a5f49a23141e29d5a1d87653994add8266c"
-    sha256 cellar: :any,                 sonoma:        "02f52b95155aa75b197e8c1c726acb334c3f3c24bf76fcd1823bed6610afbc0e"
-    sha256 cellar: :any,                 ventura:       "8c7ab5e0ffd729cda025aa995fa9bb607c47170d44c41dc438f82f1032cd22f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7adebd39df6e58f28d5da9cb969966b411a6e6dcf844e0fc65956ce9fea96a29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1602f54ea30d09b224bf50cb03fd4c505aafc866a73a8eb58182bca38dae5dbd"
+    sha256 cellar: :any, arm64_tahoe:   "4390017f35baf1f8fbee1294e245f00ca13441687ac310bfd4e26e3f467e4ef0"
+    sha256 cellar: :any, arm64_sequoia: "7f4b0b25b1f54ee798f208376a3bf8fa6903733882d4e7fa5183e62ad20ac228"
+    sha256 cellar: :any, arm64_sonoma:  "bd2263a2d9f2d0d9cbe73b38b1abb419fb0634873b0ae72cc7e228be2eb68fb4"
+    sha256 cellar: :any, sonoma:        "0f3cfa6a764fb74021824e72f42316ed25350ddcded3d5a60f2e5f3851afb263"
+    sha256 cellar: :any, arm64_linux:   "004d9cdcff140788618b2543d59f79e30cda5063c5a36931ef2ad47fb09fc911"
+    sha256 cellar: :any, x86_64_linux:  "c14c92db90b8114c52c1fb52db8908fc91e82bb185de33f5ae045d9e3493fe15"
   end
 
   depends_on "autoconf" => :build
@@ -22,13 +20,6 @@ class Tcpreplay < Formula
   depends_on "libdnet"
 
   uses_from_macos "libpcap"
-
-  on_sonoma :or_older do
-    # Fix build failure due to signature mismatch for `TAILQ_FOREACH_REVERSE`
-    # between the bundled `queue.h` and system `queue.h`.
-    # https://github.com/appneta/tcpreplay/issues/981
-    patch :DATA
-  end
 
   def install
     args = %W[
@@ -57,18 +48,3 @@ class Tcpreplay < Formula
     system bin/"tcpreplay", "--version"
   end
 end
-
-__END__
-diff --git i/src/fragroute/mod.c w/src/fragroute/mod.c
-index e7effdc6..ed6feb7d 100644
---- i/src/fragroute/mod.c
-+++ w/src/fragroute/mod.c
-@@ -177,7 +177,7 @@ mod_close(void)
- {
-     struct rule *rule;
- 
--    TAILQ_FOREACH_REVERSE(rule, &rules, next, head)
-+    TAILQ_FOREACH_REVERSE(rule, &rules, head, next)
-     {
-         if (rule->mod->close != NULL)
-             rule->data = rule->mod->close(rule->data);

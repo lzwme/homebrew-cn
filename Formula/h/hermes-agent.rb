@@ -3,8 +3,8 @@ class HermesAgent < Formula
 
   desc "Self-improving AI agent that creates skills from experience"
   homepage "https://hermes-agent.nousresearch.com"
-  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.7.7.2.tar.gz"
-  sha256 "f5d1022eed3763a768cf7b0f0844831f0170a35f54eb8d18223f2e93f503025e"
+  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.7.20.tar.gz"
+  sha256 "285f3fc134ff466a90065e1517801a68993733b807158ee8f32aa01613786990"
   license "MIT"
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
@@ -14,12 +14,12 @@ class HermesAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "79e77fc69857fcb2d586b201a34a66c1c8fd19b30b946fc0ee351c5e61ff3f9e"
-    sha256 cellar: :any, arm64_sequoia: "ddc69f18fff72f9e97ecf09c7734b105c96b0537faad917c5f92fe6a5e069b1f"
-    sha256 cellar: :any, arm64_sonoma:  "21cba5221e429db5318000d193ccd6511253df3c9ba070db8326abd0a2cbd40b"
-    sha256 cellar: :any, sonoma:        "12db7046000ee373c9d73b09243f226e92b495d56223980b943b130dc4bdd1a1"
-    sha256 cellar: :any, arm64_linux:   "c2e0f1fcf987e0b4099efa3404bcf95567007b693f41afda28e5220d3c1f51be"
-    sha256 cellar: :any, x86_64_linux:  "a81f9bd92d80f2a0e7bf814f5d0b16a12b041b2c49a0edd6421fcf31d6010696"
+    sha256 cellar: :any, arm64_tahoe:   "cf52f68ec8f5cfe62335d06b8edc16d67903e417ebb1ec84a41ad93376c4e1ae"
+    sha256 cellar: :any, arm64_sequoia: "6241bf667d43190590818de2cc5a979ce44f73441cc8dcd3a3625aca1182cc92"
+    sha256 cellar: :any, arm64_sonoma:  "5efbc33adbe98809eac5985d0e1b3389acbb65074f4fa1521f9586cb38d6fcfc"
+    sha256 cellar: :any, sonoma:        "379b6a22027478829306b3b4286c5b3d668d5d8fb1e70c080cf9172e598b3add"
+    sha256 cellar: :any, arm64_linux:   "51296b514cebe87f26835f719cc4e1b24b2a5879ebb2779529e58eb9b3808ea4"
+    sha256 cellar: :any, x86_64_linux:  "873185902ea657e9585b68db72c879295424d85531b96a581836cf79651c54ae"
   end
 
   depends_on "pkgconf" => :build
@@ -39,13 +39,13 @@ class HermesAgent < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
-    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
+    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
+    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "click" do
@@ -64,8 +64,8 @@ class HermesAgent < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/0c/a9/9f8f7e00195c29836e9bf58bbbaf579e29878b8a67851efff93d9b6d4eb7/fastapi-0.138.2.tar.gz"
-    sha256 "6432359d067a432134620e7c5e4c6e5063e7f37815bbbbf20acef14b0d2e3fc8"
+    url "https://files.pythonhosted.org/packages/cd/95/d3f0ae10836324a2eab98a52b61210ac609f08200bf4bb0dc8132d32f78a/fastapi-0.139.2.tar.gz"
+    sha256 "333145a6891e9b5b3cfceb69baf817e8240cde4d4588ae5a10bf56ffacb6255e"
   end
 
   resource "fire" do
@@ -250,8 +250,8 @@ class HermesAgent < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/87/d7/0535a28b1f5f24f6612fb3ff1e89fb1a8d160fee0f976e0aa6803862134b/tqdm-4.68.3.tar.gz"
-    sha256 "00dfa48452b6b6cfae3dd9885636c23d3422d1ec97c66d96818cbd5e0821d482"
+    url "https://files.pythonhosted.org/packages/8c/69/40407dfc835517f058b603dbf37a6df094d8582b015a51eddc988febbcb7/tqdm-4.69.0.tar.gz"
+    sha256 "700c5e85dcd5f009dd6222588a29180a193a748247a5d855b4d67db93d79a53b"
   end
 
   resource "urllib3" do
@@ -260,8 +260,8 @@ class HermesAgent < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/c4/1f/fa18009dea8469069cca78a4e877a008ab78f08b064bfc9ab891579077ff/uvicorn-0.49.0.tar.gz"
-    sha256 "ebf4271aa580d9de97f93192d4595176df6e91f9aae919ca73e4fc07df1e66a3"
+    url "https://files.pythonhosted.org/packages/a2/65/b7c6c443ccc58678c91e1e973bbe2a878591538655d6e1d47f24ba1c51f3/uvicorn-0.51.0.tar.gz"
+    sha256 "f6f4b69b657c312f516dd2d268ab9ae6f254b11e4bac504f37b2ab58b24dd0b0"
   end
 
   resource "uvloop" do

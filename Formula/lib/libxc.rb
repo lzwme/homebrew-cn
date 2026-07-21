@@ -1,18 +1,18 @@
 class Libxc < Formula
   desc "Library of exchange and correlation functionals for codes"
   homepage "https://libxc.gitlab.io/"
-  url "https://gitlab.com/libxc/libxc/-/archive/7.1.0/libxc-7.1.0.tar.bz2"
-  sha256 "30f742fc4ec917d386ae199688ad1b02381d1494d03196dffcf1e03b3c026a68"
+  url "https://gitlab.com/libxc/libxc/-/archive/7.1.2/libxc-7.1.2.tar.bz2"
+  sha256 "3915fac94416e4c415534223ea492ad2663f928acf27e98662c861b094a6c306"
   license "MPL-2.0"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bda72696a6eda5f242f54ee7c75d1e6830077c698ec823f90fe2c3c93a3c424a"
-    sha256 cellar: :any, arm64_sequoia: "70362836c1e7529240f1cce19b5d7a24956991f9e135236e3e7c0713f6936d27"
-    sha256 cellar: :any, arm64_sonoma:  "50e87883d16f5d71fd1f9ef152a19e364b82334fd2d590c4e798806c3c0cd17e"
-    sha256 cellar: :any, sonoma:        "8bb9921f7e1eba36f47ea2d29144866e2e83efb2ceaf426dbfe9a198b74df055"
-    sha256 cellar: :any, arm64_linux:   "ce28f78673e13bf0b4d394deb2e0446730910f6b1cf6bcb5bbde5bb82b9b80fb"
-    sha256 cellar: :any, x86_64_linux:  "45b0c8db283510fd66a12271a2efa017a7d3f02e9622d92cc20c9efa9cdc8020"
+    sha256 cellar: :any, arm64_tahoe:   "36ceab6672413b88774dcd6c5302373c04f1939cdc63d33e5e246bd518e04fd3"
+    sha256 cellar: :any, arm64_sequoia: "81b347bd4601b6ac8d1ce2fbb7860d1c4dd6ceaa7187e4892e4b48d981dc6e14"
+    sha256 cellar: :any, arm64_sonoma:  "ad24be426a5360d6ee4c925a3f5c1018d190359599db5af778577564e4b7c465"
+    sha256 cellar: :any, sonoma:        "b2a272a41e3c89fa5c9add783a63870d40b04f87c48b576f824ca7ca17489c26"
+    sha256 cellar: :any, arm64_linux:   "668fd9c3e4a8ed139ba3a5cbc670b77dc506685b9dc418e4fce978b22b63dfe1"
+    sha256 cellar: :any, x86_64_linux:  "12d1783769b29a461f77b8123f808b981247666ba4f45e7af67343f4b7def838"
   end
 
   depends_on "cmake" => [:build, :test]

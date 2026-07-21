@@ -1,17 +1,17 @@
 class Ucloud < Formula
   desc "Official tool for managing UCloud services"
   homepage "https://www.ucloud.cn"
-  url "https://ghfast.top/https://github.com/ucloud/ucloud-cli/archive/refs/tags/v0.3.8.tar.gz"
-  sha256 "2f47fa612d340b9bc19e792e4e58078b42a2f8d2e1c67c1801735a82e9ce5429"
+  url "https://ghfast.top/https://github.com/ucloud/ucloud-cli/archive/refs/tags/v0.3.9.tar.gz"
+  sha256 "098e2d247bd1ec8dadf8957e8f7bc88b6ab6745f3d2500d4ce180d89ccae7f4c"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ded8e0eddfeddd4275f6d68a845e403dfe084d0ab2fb6de0ac0e43b5f7a8da4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ded8e0eddfeddd4275f6d68a845e403dfe084d0ab2fb6de0ac0e43b5f7a8da4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ded8e0eddfeddd4275f6d68a845e403dfe084d0ab2fb6de0ac0e43b5f7a8da4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c53b333295c75f60f830a6f05a8b2422f08fdf6cd47fe4bfb27798f8aa8564ac"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad70cb8cc8ed8fcd01b13e7ab89685f17fd4b1be25c3024fc8419e8069f20e82"
-    sha256 cellar: :any,                 x86_64_linux:  "cf42cc2feec289f0948fc2f8f5523f9b4e14d0ca96a5f7cda196d8d29e510beb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abd566ef53290e552b6f377b19a4c91729a192c27613a76cfd31c5816a91a841"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "abd566ef53290e552b6f377b19a4c91729a192c27613a76cfd31c5816a91a841"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abd566ef53290e552b6f377b19a4c91729a192c27613a76cfd31c5816a91a841"
+    sha256 cellar: :any_skip_relocation, sonoma:        "08edf86999a2ae27f7c1f7c486479bf927668dbfe1e57a2020d1ddb17b46883e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "43c36a6bc2667de7f0f18c139889f74777166b48188aee5657393218b935f989"
+    sha256 cellar: :any,                 x86_64_linux:  "56adab21c0b0a6c1057172457ec98a87b062983fbeaefb81df1d1db4e621cb5c"
   end
 
   depends_on "go" => :build

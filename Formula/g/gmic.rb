@@ -1,8 +1,8 @@
 class Gmic < Formula
   desc "Full-Featured Open-Source Framework for Image Processing"
   homepage "https://gmic.eu/"
-  url "https://gmic.eu/files/source/gmic_4.0.2.tar.gz"
-  sha256 "41a601616e81cd28ee67a8a6aaead8062c8b3530854ae3d96e032a6a8e223887"
+  url "https://gmic.eu/files/source/gmic_4.0.3.tar.gz"
+  sha256 "40384654ac667c8c5d86543a1b6bf6d239fb9788d76ad671325e63ac36a5f82b"
   license "CECILL-2.1"
   head "https://github.com/GreycLab/gmic.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Gmic < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7353ac728fd25507c77cd6917478633b9ce00413c635c3d2a7c701d1c8a5f973"
-    sha256 cellar: :any, arm64_sequoia: "1814b35385637acebbe9de733a37f5f74ea8f79f0a962d16d279322caf247abd"
-    sha256 cellar: :any, arm64_sonoma:  "4d783e4742214f59be4cab42b9d643d5f8c9f66e56b5fb8a3f55a38519fbd1d2"
-    sha256 cellar: :any, sonoma:        "1c4eaf6f63a8cfee8176f0dae32b0197e8686747ae585d8653f380494e3a248b"
-    sha256 cellar: :any, arm64_linux:   "88993a27e1fcb96551b8e43a25b7acedfd7388c646461fe6c8139de1d3716627"
-    sha256 cellar: :any, x86_64_linux:  "1d281b509de1ad5847a558bf5ee3935a9d8592febd7886dd7e3fde1c4c1ec96d"
+    sha256 cellar: :any, arm64_tahoe:   "e9143312e0af64e5d04bc7644c6ad16a6d2629f4a6de71e00ed209bc8242affb"
+    sha256 cellar: :any, arm64_sequoia: "a2c8f7325d1683a856eaddce29e375e00e2a248f226ee1bb0f38b760c9b11651"
+    sha256 cellar: :any, arm64_sonoma:  "20e1fe7db07a0efffe9f063a366100016bd4369de5a905633e04e89b9fe7b39b"
+    sha256 cellar: :any, sonoma:        "89c1d43390d28c9e5749c096053d8259456ff5f97df4375b41db8f94d38be3f1"
+    sha256 cellar: :any, arm64_linux:   "a38c678502276772caa5ac3021f1108c0db6735ad27e217f9ee232da34b2c98c"
+    sha256 cellar: :any, x86_64_linux:  "edd7f15e29f3f93f0e293bedac1a08dfe6970407849054eea48c030a26389418"
   end
 
   depends_on "cmake" => :build

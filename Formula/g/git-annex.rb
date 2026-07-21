@@ -1,8 +1,8 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
   homepage "https://git-annex.branchable.com/"
-  url "https://hackage.haskell.org/package/git-annex-10.20260624/git-annex-10.20260624.tar.gz"
-  sha256 "d55d42720e64a2c22734c6c7ba7aef1f26000124c647534d693d5531298e9b31"
+  url "https://hackage.haskell.org/package/git-annex-10.20260717/git-annex-10.20260717.tar.gz"
+  sha256 "e0802511e0c90852f52997520668b70cfa1e57fc268d996564c24a289ea6e406"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
   head "git://git-annex.branchable.com/", branch: "master"
@@ -13,12 +13,12 @@ class GitAnnex < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e765b847279f0920c18c2a899e609701481ca5e80ad5ae2f7ef5403c2609bd02"
-    sha256 cellar: :any, arm64_sequoia: "cb804831ac9a593a5303b21173ab67451ba9543356d5b5ef3c0989868b195170"
-    sha256 cellar: :any, arm64_sonoma:  "024936f9e51152bd682e780e3fa394f00ca8a9b5f465d04893bd8175f14ff5bc"
-    sha256 cellar: :any, sonoma:        "6e8a9cd6789cb0fb040763f15878b3161fc27177d377c3bb95b15ee867a651b5"
-    sha256 cellar: :any, arm64_linux:   "3e48083893a254d2ed5ef5df74e39d5bc7eb28ec93dfee81a69b3820f23b91e3"
-    sha256 cellar: :any, x86_64_linux:  "dae5c053ae9be4513127a5d3f7fc26cdd750b1bb8687e9f18fc27938fe0b398d"
+    sha256 cellar: :any, arm64_tahoe:   "1f4ec76a18ab06606b0803377c437c600979ea98553ed5f0ccd93212a2daf5a1"
+    sha256 cellar: :any, arm64_sequoia: "69317b5313be3cdea964dc07fa11c4ad7426a019b2ad2108609dcff71a2a4cd5"
+    sha256 cellar: :any, arm64_sonoma:  "1368b3f381039ca416634b6e5a41f7c3faf97b19aab396fa27b380668676e9e0"
+    sha256 cellar: :any, sonoma:        "2a421f59969f32e67e873734e8428196671b15ae437ec95d2c5259114d800c05"
+    sha256 cellar: :any, arm64_linux:   "5ec09611d821550ab9e8fc4c1ecea36bef83a5b6999b6c8c65230e8ae73bde7e"
+    sha256 cellar: :any, x86_64_linux:  "137b7104369f30a489d675ddff1eb4337a9202c17ce8481f1d57c204453ffa72"
   end
 
   depends_on "cabal-install" => :build

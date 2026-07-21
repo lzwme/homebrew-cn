@@ -18,12 +18,13 @@ class Mpv < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "649109b87d486e369e3ee9c8b6703c3cb17229476881b4b509ca91f0441a17f2"
-    sha256               arm64_sequoia: "484dec512afcfcc30f51aad01022b1bd97aac0fe7c85aafc3b341a25996dd49c"
-    sha256               arm64_sonoma:  "5dd9a950ca0a81ad4319a3f2a203b6e0bd7142b6dc597859ea4acf6dabfadbab"
-    sha256 cellar: :any, sonoma:        "6992a25c76e33dda932ddff26da1e75602e9b402bfe9717792ede3989c2c4ac5"
-    sha256               arm64_linux:   "4df7a2cc6a6a73ab89d69635eedddd00e89176423ace64351c7767813f45a579"
-    sha256               x86_64_linux:  "d795ebc793a8cb4c8548a3dc018fac38a33de14465390ec9d66e586e0fe6c7be"
+    rebuild 1
+    sha256               arm64_tahoe:   "0056b72213336a232c8d8a0f70dea46b43baac856f898ff891754660a3bbb5c1"
+    sha256               arm64_sequoia: "d594fd4964183fcf6313fccf3a2dac5ac3e28ab59848fe6ffbc446ce9ab20b1d"
+    sha256               arm64_sonoma:  "274495c2986f894e27b1fec9652b07b4326ef77a764217b02b99da7a15f0066f"
+    sha256 cellar: :any, sonoma:        "73f9cd88e549e1ceedb1f162c5ff0e62b827691b2f3b15d2ebbdb8ef64f6dd78"
+    sha256               arm64_linux:   "af0fcc75360279e3aa657ed51a7739f77f4461c26c88b7212a826a3efbf3e169"
+    sha256               x86_64_linux:  "a8a46da28614723b7fd14ce87bbce65092b5bda0821b82d0d702b70cbc30219f"
   end
 
   depends_on "docutils" => :build
@@ -64,6 +65,7 @@ class Mpv < Formula
     depends_on "libxscrnsaver"
     depends_on "libxv"
     depends_on "mesa"
+    depends_on "pipewire"
     depends_on "pulseaudio"
     depends_on "wayland"
     depends_on "wayland-protocols" => :no_linkage # needed by mpv.pc

@@ -1,6 +1,6 @@
 cask "boss" do
-  version "9.2.48"
-  sha256 "15afd9031fccd57b5fc836abdbe09ae105ead885458c15ff56115e0ea463693e"
+  version "9.2.52"
+  sha256 "49ff96cc6d568546750d2b23212f757df1cc0cf23d212a6262ec5c141ed67388"
 
   url "https://ghfast.top/https://github.com/risa-labs-inc/BOSS-Releases/releases/download/v#{version}/BOSS-#{version}-Universal.dmg",
       verified: "github.com/risa-labs-inc/BOSS-Releases/"
@@ -19,6 +19,7 @@ cask "boss" do
   app "BOSS.app"
 
   zap trash: [
+    "~/.boss",
     "~/Library/Application Support/BOSS",
     "~/Library/Caches/ai.rever.boss",
     "~/Library/Preferences/ai.rever.boss.plist",

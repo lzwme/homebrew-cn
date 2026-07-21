@@ -3,20 +3,20 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/e4/a4/d7c5cca6c57bba344dec036a8e618c389b35d1acb6f4cde9e18e32583d3d/keepercommander-18.0.12.tar.gz"
-  sha256 "60ea7d223c374e3b0e17ff15fb45bf30ea4d7c2fef1cd4a1f18d41aca294bbd4"
+  url "https://files.pythonhosted.org/packages/76/d0/1fc2245fcb035f814f77080edc5624a45c0e9a67dc716f0253b8549ce2e4/keepercommander-18.0.13.tar.gz"
+  sha256 "07b5b3756fa7a96991ff194a8b1fd62c7816bea3c132c4ede5f5343c197a83b7"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f68d6de6baa6232472921792136ad9aa27d2cb67994d167efc5e0da40cb94b02"
-    sha256 cellar: :any, arm64_sequoia: "a212729bc61422a43380af31e14069a88a1084a8886598d8c50db9b1ff46c4bb"
-    sha256 cellar: :any, arm64_sonoma:  "5c76cfef51312f360a073f50aa4b4c504707f1e2eefb1e959e7824bef324bdbf"
-    sha256 cellar: :any, sonoma:        "5a5bfcf9634dbc639d2dbc131a0350cf33d364f675323e26303619e9c26ec2dd"
-    sha256 cellar: :any, arm64_linux:   "91dcd1b0efb7a539f93408b4e26bd69ee8ee0673397d210951ca9baadc414ca2"
-    sha256 cellar: :any, x86_64_linux:  "f34955e7463c64f0e02f307ce8488f07c39c6873dd4842cd1498bd9db33aeb7a"
+    sha256 cellar: :any, arm64_tahoe:   "a4a4da92f9a292d16dd709205db429c491767983f038be9f4c354d044bfb7ac8"
+    sha256 cellar: :any, arm64_sequoia: "5534ecf6b0809ebf7e826851c844abbaa5d383a8d7438c1ad6cc3a239f4b07d1"
+    sha256 cellar: :any, arm64_sonoma:  "11fec2b92f83019c34bbc2a1796e8a5cdb005030827080b7af6fce6f3f596aa9"
+    sha256 cellar: :any, sonoma:        "294ee29ee3c3a1f5975ff6ead135cf6724ed9a1bce87b0f4be3f3abc7f9ceb2a"
+    sha256 cellar: :any, arm64_linux:   "45505ebebf1aba536ff8920bfec0a1262abba6c9a88207c3e0db9aa97fc64b55"
+    sha256 cellar: :any, x86_64_linux:  "e2f8631638ea9c0d1a0d410e49841ffd312d17d21a8cec8b03f4a3e3b3f73f88"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -222,8 +222,8 @@ class KeeperCommander < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
-    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
+    url "https://files.pythonhosted.org/packages/52/cd/4f25b2f95b23f5d2c9c1fe43e49841bff5800562149b2666afc09309aa8f/platformdirs-4.10.1.tar.gz"
+    sha256 "ceab4084426fe6319ce18e86deada8ab1b7487c7aee7040c55e277c9ae793695"
   end
 
   resource "prompt-toolkit" do
@@ -332,8 +332,8 @@ class KeeperCommander < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/8c/02/b9a097e1e16fee4e2fd1ec8c39f6a9c5d6257bae8fa12640caf869f54436/websockets-16.1.tar.gz"
-    sha256 "299468cbe42e2b9981134c7c51d99387d8a7bf562b00183b3eec53f882846dad"
+    url "https://files.pythonhosted.org/packages/21/f7/bc3a25c5ec26ce62ce487690becc2f3710bbc7b33338f005ad390db0b986/websockets-16.1.1.tar.gz"
+    sha256 "db234eda965dcce15df96bb9709f587cd87d4d52aaf0e80e2f34ec04c7670c57"
   end
 
   resource "werkzeug" do

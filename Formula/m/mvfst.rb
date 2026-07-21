@@ -1,19 +1,19 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https://github.com/facebook/mvfst"
-  url "https://ghfast.top/https://github.com/facebook/mvfst/archive/refs/tags/v2026.07.13.00.tar.gz"
-  sha256 "ee7273a219317f992551ef9f4b0f05ec826288720aa2fe08154f192e2ce32ed9"
+  url "https://ghfast.top/https://github.com/facebook/mvfst/archive/refs/tags/v2026.07.20.00.tar.gz"
+  sha256 "3536d2cc11588a2a2bf9c8cba09d83a769df50353087f5d50c7dd72fddc834d4"
   license "MIT"
   compatibility_version 1
   head "https://github.com/facebook/mvfst.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "756c890b18d7be5276c57129472e98225a8b08b603149369a0884ed55d06fc0d"
-    sha256 cellar: :any, arm64_sequoia: "db957abf879d76a87657f76f658f9469d00f3ed8ec539bb4f60f3e64adadb5f7"
-    sha256 cellar: :any, arm64_sonoma:  "f0a8fe3dbe32340f4551a88bd27fe3ef4bc7c9ce80571dc21e30a3e34d6f2f54"
-    sha256 cellar: :any, sonoma:        "8c1804d3754d4abf7eb33bd8ff177bb7f26e3bc12685b697d9621d9a8b230187"
-    sha256 cellar: :any, arm64_linux:   "e203745e074c5862eddde36b33287655d2126b9a2659e0a7c6bd99c7f8838950"
-    sha256 cellar: :any, x86_64_linux:  "b706359d1e89ed546c081529be05d17eb6ee7f1d894a3f1afa331ff58925e9be"
+    sha256 cellar: :any, arm64_tahoe:   "952208047a66c930740922b15dea4529dd4df46c8c25eb0e6a5532a52c977e5a"
+    sha256 cellar: :any, arm64_sequoia: "4c15fbe5c32bc96708bbc84cde5a3eebc36351de31019270970fac94edb8bbbe"
+    sha256 cellar: :any, arm64_sonoma:  "f9863a3e2a4ad1020e6aad8f558a8482eaf9a59c4af4a5c1102a89ce7cd25944"
+    sha256 cellar: :any, sonoma:        "b4832d0171d2be397b4e76b062dc8b8741ef87a737a4322dcdb02e6fd648550b"
+    sha256 cellar: :any, arm64_linux:   "124de61dcd90934a91ce1029c9600f2db9d78b3f3783c5a117c284231fe01df5"
+    sha256 cellar: :any, x86_64_linux:  "f7c5c320373ac93ab586eac1678184d3faecd0379d594721d41afc3ecb151a3d"
   end
 
   depends_on "cmake" => [:build, :test]

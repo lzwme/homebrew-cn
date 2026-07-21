@@ -1,17 +1,17 @@
 class PhpantomLsp < Formula
   desc "Fast PHP language server written in Rust"
   homepage "https://github.com/PHPantom-dev/phpantom_lsp"
-  url "https://ghfast.top/https://github.com/PHPantom-dev/phpantom_lsp/archive/refs/tags/0.8.0.tar.gz"
-  sha256 "a91e6c106a4c22476a61e251023debddbc084c91065485ad1926f47c6b775138"
+  url "https://ghfast.top/https://github.com/PHPantom-dev/phpantom_lsp/archive/refs/tags/0.9.0.tar.gz"
+  sha256 "8b25c0fac83720759261a3b44bb3c95c2d55fb8cdadc051ea4b62fd0f3509ca9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6a3dfcbf59e11ef11f0c156be9e48f0f0ca8ac96417ddee7a35bc2aa72fbfb8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5452e27af9eb12abef381120648b2e10788b00e4043bb1cf3d81b42021254192"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8993d849576697186291b433497e8428589a30925fde1b6ac2469a80c1b2f61a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dbd36f3d201028b6cbfc3d74441cf249630f05c3900635e1aff0027ffd982a87"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b993c4b8399070f0e65ff717294392aa537f028f671345c2454e1328c5321f1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cad2ac759d6b9b969c7b6f173c1ff80c79da62105f6f33ebbbfe15a9a82c4d2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85174bfb904c97afc703234db413d09a63a57de063d4b6e95d5b1c454706a05e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4233850eea2b53b812f72d59be4321ab29907421fc449072481e448c6a96dfd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91fbb93ebb3cb3a1e3629561c66c102567862ffa003050db77077f6da64031e2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cd8e590ac580a9b26fae8a5f3e96eb689f3757e2f01ee49065205e128335960e"
+    sha256 cellar: :any,                 arm64_linux:   "f202565de7d72d3004326c17d779c20bc8160a3ea0fafcc194050d79a96a2da1"
+    sha256 cellar: :any,                 x86_64_linux:  "7264097b7be36c91d9bd7d16759b06c7eff17770cc40e738b0bb2fb56aac97dd"
   end
 
   depends_on "rust" => :build

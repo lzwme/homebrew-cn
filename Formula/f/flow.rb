@@ -1,18 +1,18 @@
 class Flow < Formula
   desc "Static type checker for JavaScript"
   homepage "https://flow.org/"
-  url "https://ghfast.top/https://github.com/facebook/flow/archive/refs/tags/v0.322.0.tar.gz"
-  sha256 "798b5cf6d87f3775395d23daf6de58f9956a6ac48922ee41e79039e492186215"
+  url "https://ghfast.top/https://github.com/facebook/flow/archive/refs/tags/v0.323.0.tar.gz"
+  sha256 "77113be08fa0d1ed70a54cbbae47ad9228153eb1c66c8e7b675c65c76149f906"
   license "MIT"
   head "https://github.com/facebook/flow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d52f64888c13658ac63ce88f763f9f9e45fc41aa81558ad74ac461c07d9f2088"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2217712b6cdc1a6d1f1ea07bd0244864fc10dd02caba95043cb21f4cc8bc99e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21e64c1af5428a6fc3ecdb78e985ef36eedd4ac6f83f69a33641555f11ff5eef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9355bd1322a86a01d44f1568d3030ef46c4c946f2e39053fa9de1ccc647ff2cc"
-    sha256 cellar: :any,                 arm64_linux:   "d33d01ba724486a8ec57d263cfda611fab6ad3fdc81256487aa4e7f2f19e895a"
-    sha256 cellar: :any,                 x86_64_linux:  "56e3320049ca590a38d684c4e477af562ba70db1564898fa2beefb9eae2cb1c3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a81926d785a3375fd0e495573afe7c8dfbb7c56be6f2f7e76df216509b89802"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f007f59e783d2a2518741c44f095f624e8f2f7350cfb725ee4cfdfc82bdc5ed4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "56ee6cfc49a9dbfbecca29735b74481f827de9d1709f2e0e731e7e736ec00865"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8c93dd4032c3525a25ba21c4fdc8e86cb3f567b67f74361a6164b5e31dd3dde7"
+    sha256 cellar: :any,                 arm64_linux:   "b9551fd1828cf74df66a47c3668b279700d768e1d24ac1bab1a7878b2c5244b1"
+    sha256 cellar: :any,                 x86_64_linux:  "f9df237e721823552bde78c1fdc76c3856e362d5c4e38472bfc2a8840ce86b01"
   end
 
   depends_on "rust" => :build

@@ -54,6 +54,7 @@ Homebrew-homebrew-core/Formula/a/adplug.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adr-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adr-viewer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/adrs.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/advai-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/advancecomp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/advancescan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adwaita-icon-theme.rb, Homebrew/homebrew-core, 0
@@ -1000,6 +1001,7 @@ Homebrew-homebrew-core/Formula/c/checkdmarc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/checkmake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/checkov.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/checkpwn.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/checksec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/checkstyle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cheops.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cherrytree.rb, Homebrew/homebrew-core, 0
@@ -1479,7 +1481,7 @@ Homebrew-homebrew-core/Formula/d/dbmate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dbml-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dbus-glib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dbus.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/d/dbx-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dbx-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dbxcli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dbxml.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dc3dd.rb, Homebrew/homebrew-core, 0
@@ -13337,6 +13339,7 @@ Homebrew-homebrew-cask/Casks/l/lets.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/letter-opener.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lexicon-dj.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lg-onscreen-control.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/libation.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/libcblite-community.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/libcblite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/libifd-cyberjack.rb, Homebrew/homebrew-cask, 0
@@ -14500,6 +14503,7 @@ Homebrew-homebrew-cask/Casks/p/prince.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/principle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/printopia.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/prism.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/prisma-access-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/prisma-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/prismlauncher.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pritunl.rb, Homebrew/homebrew-cask, 1

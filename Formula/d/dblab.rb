@@ -1,18 +1,18 @@
 class Dblab < Formula
   desc "Database client every command-line junkie deserves"
   homepage "https://dblab.app/"
-  url "https://ghfast.top/https://github.com/danvergara/dblab/archive/refs/tags/v0.44.1.tar.gz"
-  sha256 "7e60027b9cfebdd1e0b5714df102c41b89867abc9b19d235759ac6d9e1abebab"
+  url "https://ghfast.top/https://github.com/danvergara/dblab/archive/refs/tags/v0.45.0.tar.gz"
+  sha256 "9ae4f90b5b6d157383022837cf91750e974cd7f4f52846b70d831ffff6cb9487"
   license "MIT"
   head "https://github.com/danvergara/dblab.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6803adc8128a69b48b6849b2a3c8a1de74978752e1871e194627bffa89835ccc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd55f899fb44382ed280191680c4c217afab54d71a744d4a022220449d7b4bd5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf0fb1f2ffbd235aa1656b7009aa868415d5d07c55dc92da88985460bb09a4be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8b0d5ed3601c4a4a920a9a7c21b498a97246d0ec42f293b4c74e6e6be4e51757"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6504499802f4558af9b1f67c0fc0be8e2c7a30c74506c28edc83afbcd0a715e1"
-    sha256 cellar: :any,                 x86_64_linux:  "b868806e77251645269155af785243a5a9376d2dc15ff3551b7204295461efd5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca4a7f868c41a21002f3c3530c4820dad2026fd4aa03987c1a4aa3b7cf6e42b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4e55862e848a1f4127ea80ec584a6c8fe285b6fa9085ab90eb603c257666f6a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "864376c17e51aba69fc275a2e3abb0935a98e80b32c4203a9348506e610bb07c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1dc73bbf8fdab9d1c6308442c8ed708f27c009ba604249a3548fb5d8508e73fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2342aefd83dda4907568b0101ffe4c8a9f19ff2192c043e4891685205665992"
+    sha256 cellar: :any,                 x86_64_linux:  "795bae3afad15872c6d8774d6b8d1ebb1a38bd12ce13b3e2bfd85454b016e20b"
   end
 
   depends_on "go" => :build

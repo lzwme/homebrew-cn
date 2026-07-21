@@ -1,18 +1,17 @@
 class Pgbackrest < Formula
   desc "Reliable PostgreSQL Backup & Restore"
   homepage "https://pgbackrest.org"
-  url "https://ghfast.top/https://github.com/pgbackrest/pgbackrest/archive/refs/tags/release/2.58.0.tar.gz"
-  sha256 "2517ec0a7f66be0f1bc77795c3a19cd41c4b106699321d3ac511bc539dd2bfca"
+  url "https://ghfast.top/https://github.com/pgbackrest/pgbackrest/releases/download/release/2.59.0/pgbackrest-2.59.0.tar.gz"
+  sha256 "faaf8faa14a6392279654ee216a493fcd07b0c513af4b55fe34faec062cb8875"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "ddf0b1c7f851c41a77323611559129b573d908defcf89c0ce441c43d742d02a1"
-    sha256 cellar: :any, arm64_sequoia: "1e88c3515ef3cef29cc6f5b54d36553ea31162934558f664540f87e208fd41d3"
-    sha256 cellar: :any, arm64_sonoma:  "444bfaf0fbdab8e7a838ac28df2b141d28e50d2edca914655f2ac1a79a210dd8"
-    sha256 cellar: :any, sonoma:        "ab091b268bf5912d2d75eac9110303543d9d3e1a21fa30632bd38da38d3b4869"
-    sha256               arm64_linux:   "f94aa5e2ba0c8a37044fc749817bd8bdfa64c37095aee594c758aca26197c681"
-    sha256               x86_64_linux:  "aa984f5a9161767d92ea237ce5a55b01342b93c879da811baaba149ab3e0cabb"
+    sha256 cellar: :any, arm64_tahoe:   "4ea6629d80029f29b04edcc904d464cec785a66ae2271f7a50c44bb99ff1050b"
+    sha256 cellar: :any, arm64_sequoia: "5b373f1453518944f54a6621e3bfed13b9bb9dbfdf21a85b7a14cf960ec35610"
+    sha256 cellar: :any, arm64_sonoma:  "cdb012fbe9ec5eaec66b2540f65be5df78e22b99dc46371d1edfc55ef0726c5c"
+    sha256 cellar: :any, sonoma:        "7ff1588401ffc1f4a13e8ba1fb23ce1de57f59722101af4a98943f0742747aba"
+    sha256               arm64_linux:   "bf7b5e0d6705615a408a9b3a9dd772c3df5da9c9996bce8fedd91206bbf8d56c"
+    sha256               x86_64_linux:  "109950aeb76edd47f3afbef9df6d90a631e16269195390eeb4ce90f1835f4acb"
   end
 
   depends_on "cmake" => :build
@@ -21,7 +20,6 @@ class Pgbackrest < Formula
   depends_on "pkgconf" => :build
   depends_on "libpq"
   depends_on "libssh2"
-  depends_on "libyaml"
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "zstd"

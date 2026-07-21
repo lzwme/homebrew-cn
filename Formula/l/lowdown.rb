@@ -1,8 +1,8 @@
 class Lowdown < Formula
   desc "Simple markdown translator"
   homepage "https://kristaps.bsd.lv/lowdown"
-  url "https://kristaps.bsd.lv/lowdown/snapshots/lowdown-3.1.0.tar.gz"
-  sha256 "1bf17678b8813fa12defa731e61c15145558b9f7f1296b0a6fdcfdda0caba468"
+  url "https://kristaps.bsd.lv/lowdown/snapshots/lowdown-3.1.1.tar.gz"
+  sha256 "59b2cf35bf32fe602c92f33ae917a71e0b2ea76a67bbe48fbae901a8efc6fef3"
   license "ISC"
   compatibility_version 2
   head "https://github.com/kristapsdz/lowdown.git", branch: "master"
@@ -13,22 +13,15 @@ class Lowdown < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a1d53dcd0c49e4cfb0cedb3321c7a1f916813dbf66e6f23c240a2e031db8f551"
-    sha256 cellar: :any, arm64_sequoia: "d01add37806a6c970d85d8896e9d5221c1215dca55d7bac01d2d015a88b5fd69"
-    sha256 cellar: :any, arm64_sonoma:  "540ec7dd7206228014a5dbac953c2c68afe454fab4d0d6b1241a69d12b34208d"
-    sha256 cellar: :any, sonoma:        "36bd290d3cb01e419aaf849c8eff3579dcb451c0babc95f0141e6dee4e350230"
-    sha256 cellar: :any, arm64_linux:   "b2d449d3eaecec3dd414b0d92edcfab8d7c3d10f00d9aca4d97d56642f834975"
-    sha256 cellar: :any, x86_64_linux:  "97d8cf1bc33a11ea3814069a870add8142a6038bf53af400abe2e278f4a25ebc"
+    sha256 cellar: :any, arm64_tahoe:   "6e979fc15e9673122684946b4236d49614080f043fdbc583dc6915d3d5b851ea"
+    sha256 cellar: :any, arm64_sequoia: "a89c3145a2149f876d90d5e523f50330c19c7ed623299cd0ce1963507eaa3d25"
+    sha256 cellar: :any, arm64_sonoma:  "e5b4df3fdda7a9c0db7f86d8c152e1d3c97706a9207327a3dc47d409ae169985"
+    sha256 cellar: :any, sonoma:        "4ae9db89997a6c1cc75bd75785c195c3d3e80db2594b801def65c07193ebce74"
+    sha256 cellar: :any, arm64_linux:   "c27253a5683ec9a531639a3e90a7864f8a0c15b712fde033a6ad0b48e52a44ad"
+    sha256 cellar: :any, x86_64_linux:  "3d4099aaece1ca24361ea3cbf3239e595ae8b784921887926885692498424e99"
   end
 
   depends_on "bmake" => :build
-
-  patch do
-    url "https://github.com/kristapsdz/lowdown/commit/5c44b2cf36e56a44bfdb3f974d11c3f96fc1b563.patch?full_index=1"
-    sha256 "e5dc1625fc7b8b5d9c9fa70b0f2589cfa4ee4786be874d40104a7b82e08d0857"
-    type :backport
-    resolves "https://github.com/kristapsdz/lowdown/issues/185"
-  end
 
   def install
     configure_args = %W[MANDIR=#{man} PREFIX=#{prefix}]

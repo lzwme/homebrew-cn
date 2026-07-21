@@ -1,18 +1,17 @@
 class I2pd < Formula
   desc "Full-featured C++ implementation of I2P client"
   homepage "https://i2pd.website/"
-  url "https://ghfast.top/https://github.com/PurpleI2P/i2pd/archive/refs/tags/2.60.0.tar.gz"
-  sha256 "ef32100c5ffdf4d23dfe78a2f6c08f65574fd79f992eb2ac8cfea0b6440deabd"
+  url "https://ghfast.top/https://github.com/PurpleI2P/i2pd/archive/refs/tags/2.61.0.tar.gz"
+  sha256 "409cd3c0257491286611ab6aaf690940c7248fb898377c13fadb65a836e2a0ab"
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "1c753de7fabacfb80a3bcf4a0daa2f3294c0236a46aeb471abd0d04660b19764"
-    sha256 cellar: :any, arm64_sequoia: "8c992bb3ffcb38f25eddd33e67cfd44f2a3e1a609760c421deb77f765ca8e7bd"
-    sha256 cellar: :any, arm64_sonoma:  "27f723665ada7b93325ecc9d040b4956b77e024bb454d73d64105402b65397a2"
-    sha256 cellar: :any, sonoma:        "00b696213cad837286229074610faba65519a08203102d36fcbad118664ba020"
-    sha256 cellar: :any, arm64_linux:   "362079b30cd2dda5ea9151afb162a15eb78709dcac3cbf9af6c20bdf0ab2b29c"
-    sha256 cellar: :any, x86_64_linux:  "e832fa2d871f36e71847d5aff3fd56a7ebe10f3e3b613c9ac9e7169dcc28e432"
+    sha256 cellar: :any, arm64_tahoe:   "eec5b9e08b05bd53f163f6d154ea442b8a889803a0efc46c9d23eefcaa591eda"
+    sha256 cellar: :any, arm64_sequoia: "3ff45ae6ce234ecf3fbca0669a0e046a4a1754dddd1d12f418c84e22e8e110bd"
+    sha256 cellar: :any, arm64_sonoma:  "344393cc55b6c849feb06841aa6a7ec6247d5c541b75ed20b33f883de8f28d4f"
+    sha256 cellar: :any, sonoma:        "8d5b49fb79508e0e11a6040d8c89026efbad82e6b4a13787ee896e0280c6f137"
+    sha256 cellar: :any, arm64_linux:   "03712d20f3bc3aa1603e5345f298e6c64bf031d459749136895c35d31a0c0f83"
+    sha256 cellar: :any, x86_64_linux:  "514b89d2e86b297b508fef9b56c3bf88a985dd0e386ef2fefde45162fcfffe49"
   end
 
   depends_on "boost"

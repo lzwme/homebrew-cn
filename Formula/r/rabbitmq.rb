@@ -1,8 +1,8 @@
 class Rabbitmq < Formula
   desc "Messaging and streaming broker"
   homepage "https://www.rabbitmq.com"
-  url "https://ghfast.top/https://github.com/rabbitmq/rabbitmq-server/releases/download/v4.3.2/rabbitmq-server-generic-unix-4.3.2.tar.xz"
-  sha256 "881cbdd22231c3879e45a58d79a83d69c6604d0e291ff6dec2d9e7ab649b119e"
+  url "https://ghfast.top/https://github.com/rabbitmq/rabbitmq-server/releases/download/v4.3.3/rabbitmq-server-generic-unix-4.3.3.tar.xz"
+  sha256 "5b52462e9c4ae8e7fc56672e4f702fb201751809f0ca546c16a953d1cb25664b"
   license "MPL-2.0"
 
   livecheck do
@@ -12,7 +12,12 @@ class Rabbitmq < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "03d3afa496b3a94907a59eb85f6894b3f8f78e57cb0eb84e929ad20a26bf59af"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8db80f5cec5e10da3dc59bc517e87fc3b3be6d2af662671ca48664bec1682e31"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8db80f5cec5e10da3dc59bc517e87fc3b3be6d2af662671ca48664bec1682e31"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8db80f5cec5e10da3dc59bc517e87fc3b3be6d2af662671ca48664bec1682e31"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8db80f5cec5e10da3dc59bc517e87fc3b3be6d2af662671ca48664bec1682e31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ce5b07cabdd8185063c038f78967505155abe8750ec2f486c8e3b8c58642da6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ce5b07cabdd8185063c038f78967505155abe8750ec2f486c8e3b8c58642da6"
   end
 
   depends_on "erlang@28"
