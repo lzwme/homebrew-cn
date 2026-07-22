@@ -8,12 +8,13 @@ class Binutils < Formula
   compatibility_version 1
 
   bottle do
-    sha256               arm64_tahoe:   "0fa7427cfdd1f13ed418e1c0b68a6ccd0bec6a42a332fdcbca082f86c2f41df0"
-    sha256               arm64_sequoia: "0718674cdd51382532b1380b172b52c0083faad78aad689192a85c3d63f66cd0"
-    sha256               arm64_sonoma:  "d59df6b8728e9b2b74f92e4613a3351e0bbb728cc76037c1a7ba1bea2c323a6e"
-    sha256               sonoma:        "fb1e98cfd6d046d05f13648231a8bc59576927120def25ba1315a49d6b9b972c"
-    sha256 cellar: :any, arm64_linux:   "668e2da50d0cabc4c3a5d09c31e19a2ae7e3aec3b33980254a6a54a943e32e58"
-    sha256 cellar: :any, x86_64_linux:  "3fa1925f8132d50e5602c543637c04b7dd7e50370b1ad7715da8458f2f99e71a"
+    rebuild 1
+    sha256               arm64_tahoe:   "4d34689d19f2632b8575ca61e866568b44be203b22fc360d9866ba832fcf277a"
+    sha256               arm64_sequoia: "b007ac9a89e3d86b0bdf067ab442ebfeb4057df6b570226bee36b9c53dc1ae1e"
+    sha256               arm64_sonoma:  "d5258ef24196dd9da0dbfe8180fe59f01f6f8caab2af0ba5a8118a072486ba73"
+    sha256               sonoma:        "87c99a3cfc8346de2c16bb0b54b2454b139ac27ba6364bdaf7d24697a3c14c94"
+    sha256 cellar: :any, arm64_linux:   "b30d07e9d4ad52380816baa8abb96187e625c5b207f16be1e52e8c393d7a7bb1"
+    sha256 cellar: :any, x86_64_linux:  "fbe5aefd73f5d4397166a067ab1ff7d6142f6c82c1ceb7c1fabdbe1b2fb9ef64"
   end
 
   keg_only :shadowed_by_macos, "Apple's CLT provides the same tools"
@@ -33,22 +34,31 @@ class Binutils < Formula
 
   def install
     args = %W[
+      --disable-default-execstack
+      --disable-nls
+      --disable-werror
+      --enable-64-bit-bfd
+      --enable-default-hash-style=gnu
       --enable-deterministic-archives
+      --enable-multilib
+      --enable-plugins
+      --enable-relro
+      --enable-shared
+      --enable-targets=all
       --infodir=#{info}
       --mandir=#{man}
-      --disable-werror
-      --enable-interwork
-      --enable-multilib
-      --enable-64-bit-bfd
-      --enable-plugins
-      --enable-targets=all
+      --with-bugurl=#{tap.issues_url}
       --with-system-zlib
       --with-zstd
-      --disable-nls
     ]
+
     system "./configure", *args, *std_configure_args
-    system "make"
-    system "make", "install"
+    system "make", "tooldir=#{prefix}"
+    system "make", "tooldir=#{prefix}", "install"
+
+    # libbfd and libopcodes shouldn't be dynamically linked by external binaries.
+    # This modification is similar to the decision made by Arch Linux and Fedora.
+    rm([lib/shared_library("libbfd"), lib/shared_library("libopcodes")])
 
     if OS.mac?
       bin.each_child do |f|

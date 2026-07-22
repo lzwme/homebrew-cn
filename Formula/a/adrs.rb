@@ -1,18 +1,18 @@
 class Adrs < Formula
   desc "Architectural Decision Record tool in Rust"
   homepage "https://joshrotenberg.com/adrs/"
-  url "https://ghfast.top/https://github.com/joshrotenberg/adrs/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "97d9d54ac99d7c6b902e1d73b3261c19624aa024939ca96bf51e1311f9cfafa1"
+  url "https://ghfast.top/https://github.com/joshrotenberg/adrs/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "f0346d44f941fda1083c316c59b5c95ab7c525548511dbf0486d19a6d9bbecce"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/joshrotenberg/adrs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0cb023010ac37667b4c95af7921db251e36ce93c0ba2764fec4d60522cc66a1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d297e391164afa8e634bfac3f072013722d486f4b749cb9c4f233e9ac719ea81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bad60211eaa8fd9c15a56f962fba32c24372b84cac2674b4a7ee5cd76dd3f19a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8442a1270d14db8617b854b123def254358e6d041f0ba5fff6712738d8917f74"
-    sha256 cellar: :any,                 arm64_linux:   "9af88443bc2bc076534f579025976e9ffc314fd85ff744ffe34a2202224e1b64"
-    sha256 cellar: :any,                 x86_64_linux:  "335b43d99ac511108dcd2244dca5ab538676e2a8c430900369e3a130ef47b7fb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d714b1becc16979e37fab60bfae79dbc08a3c364fc54c41268ee6c42db10691"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3be10e0fb5bd467e92973ef7cc0e37e339f56e41247ef40d31dcaecb5d53858"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1e16b66ed0657a49f4d99b82604b0d57e327b58449142a41b4854f0325f0666"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4ccdd6df13ca408ea603414270f2c9cf14ec94fe7daff079be650491e41dea87"
+    sha256 cellar: :any,                 arm64_linux:   "67728837d225a397604b16caf2ff9bf853bfd879ee86159cdc027408f7e92e65"
+    sha256 cellar: :any,                 x86_64_linux:  "8277de1f027f6dbc547f52f5b374d16d7de51d7c422b1aa8fd9493b914efb6c4"
   end
 
   depends_on "rust" => :build

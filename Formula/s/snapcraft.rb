@@ -5,10 +5,9 @@ class Snapcraft < Formula
   homepage "https://snapcraft.io/"
   # Use git checkout so setuptools-scm and update-python-resources works
   url "https://github.com/canonical/snapcraft.git",
-      tag:      "9.0.0",
-      revision: "df4418f67617fcddb551f28d00d9004728cd1ff6"
+      tag:      "9.0.1",
+      revision: "68c28110f50f9933b4d19f13bf7cb69ddf1e4391"
   license "GPL-3.0-only"
-  revision 2
   head "https://github.com/canonical/snapcraft.git", branch: "main"
 
   livecheck do
@@ -17,12 +16,12 @@ class Snapcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9e586b6816483904321c53d57daa8a073e340a8184b1444b7ae63acb08ad5b9a"
-    sha256 cellar: :any, arm64_sequoia: "33d1c23636c3c14c28cc0c8e5ab67585e91b7bbae87ac06aa57ac810405b277c"
-    sha256 cellar: :any, arm64_sonoma:  "6650a828630ba764ba132b6df020f10265a3debfe3b0038318126ad2d9c2ea32"
-    sha256 cellar: :any, sonoma:        "7f877206be962b674c343668414028e8dedefefe6358948334e143fcf03bc2ad"
-    sha256 cellar: :any, arm64_linux:   "0702711d65cdb1d80afb9862f732a8be2910e4fb6e49aeb278939914999c22c7"
-    sha256 cellar: :any, x86_64_linux:  "40f8926ccfeed0a069b60823ec8d9bf895201104949354825a7c8bdf4e081f1f"
+    sha256 cellar: :any, arm64_tahoe:   "6446ca9352e5243f611bfe339efb1f376d2bf8bce5fa31c2b57fb07e609c8a53"
+    sha256 cellar: :any, arm64_sequoia: "ed6639bc81c26503580b68974453bad8b7ea2be376bc9028258e206b2339fcd6"
+    sha256 cellar: :any, arm64_sonoma:  "193bec0cfa60a6bf825b7563f06036d7fa72f8dbabb65427085e1679a3abe710"
+    sha256 cellar: :any, sonoma:        "0e0d1bacaa0816eaafac9e754f3bcacd080324a47ea34749d9bedb69e951bfac"
+    sha256 cellar: :any, arm64_linux:   "61910dbcb83fb5c15769e6c68cadef63da80061aa6cac1d63229a119a813611b"
+    sha256 cellar: :any, x86_64_linux:  "7d03750bec4d732cdd335db86d9045f07b514a00698c70049b34aba3e7058e57"
   end
 
   depends_on "certifi" => :no_linkage
@@ -64,11 +63,6 @@ class Snapcraft < Formula
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
     sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
-  end
-
-  resource "attrs" do
-    url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
-    sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
   end
 
   resource "boolean-py" do
@@ -127,8 +121,8 @@ class Snapcraft < Formula
   end
 
   resource "craft-store" do
-    url "https://files.pythonhosted.org/packages/c4/64/af2af291aef5ea2b5fc56d9be151324eabb55c4ed89bc4f11343faa377b5/craft_store-3.3.0.tar.gz"
-    sha256 "02304296d7d5b896bb8d07660c3a29eaff461fc12d40fd2a21a39230f53c288b"
+    url "https://files.pythonhosted.org/packages/a4/fd/2013bd5b54a5b14c69ba63ce1c2210ac15d26603b7b5a912b793312f3f30/craft_store-3.4.0.tar.gz"
+    sha256 "c2552f3e0596e1d63b3076ac49e87664571fb87fa45065dffacde4c395f4b28e"
   end
 
   resource "distro" do
@@ -144,11 +138,6 @@ class Snapcraft < Formula
   resource "docutils" do
     url "https://files.pythonhosted.org/packages/39/a4/5180d9afc57e8fca05601dd652bdff19604c218814037fe90ffc7625a50a/docutils-0.23.tar.gz"
     sha256 "746f5060322511280a1e50eb76846ed6bf2342984b2ac04dc42caa1a8d78799e"
-  end
-
-  resource "gnupg" do
-    url "https://files.pythonhosted.org/packages/96/6c/21f99b450d2f0821ff35343b9a7843b71e98de35192454606435c72991a8/gnupg-2.3.1.tar.gz"
-    sha256 "8db5a05c369dbc231dab4c98515ce828f2dffdc14f1534441a6c59b71c6d2031"
   end
 
   resource "h11" do
@@ -251,11 +240,6 @@ class Snapcraft < Formula
     sha256 "48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d"
   end
 
-  resource "mypy-extensions" do
-    url "https://files.pythonhosted.org/packages/a2/6e/371856a3fb9d31ca8dac321cda606860fa4548858c0cc45d9d1d4ca2628b/mypy_extensions-1.1.0.tar.gz"
-    sha256 "52e68efc3284861e772bbcd66823fde5ae21fd2fdb51c62a211403730b916558"
-  end
-
   resource "oauthlib" do
     url "https://files.pythonhosted.org/packages/0b/5f/19930f824ffeb0ad4372da4812c50edbd1434f678c90c2733e1188edfc63/oauthlib-3.3.1.tar.gz"
     sha256 "0f0f8aa759826a193cf66c12ea1af1637f87b9b4622d46e866952bb022e538c9"
@@ -272,23 +256,13 @@ class Snapcraft < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
-    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
-  end
-
-  resource "progressbar" do
-    url "https://files.pythonhosted.org/packages/a3/a6/b8e451f6cff1c99b4747a2f7235aa904d2d49e8e1464e0b798272aa84358/progressbar-2.5.tar.gz"
-    sha256 "5d81cb529da2e223b53962afd6c8ca0f05c6670e40309a7219eacc36af9b6c63"
+    url "https://files.pythonhosted.org/packages/52/cd/4f25b2f95b23f5d2c9c1fe43e49841bff5800562149b2666afc09309aa8f/platformdirs-4.10.1.tar.gz"
+    sha256 "ceab4084426fe6319ce18e86deada8ab1b7487c7aee7040c55e277c9ae793695"
   end
 
   resource "protobuf" do
     url "https://files.pythonhosted.org/packages/da/01/9ef0afd7999eb9badb3a768b4aedd78c86d4c65cfaf1958ab276199e76b4/protobuf-7.35.1.tar.gz"
     sha256 "ce115a26fe0c39a2c29973d914d327e516a6455464489fe3cd1e51a1b354f81a"
-  end
-
-  resource "psutil" do
-    url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
-    sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
   end
 
   resource "pyelftools" do
@@ -351,11 +325,6 @@ class Snapcraft < Formula
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
-  resource "raven" do
-    url "https://files.pythonhosted.org/packages/79/57/b74a86d74f96b224a477316d418389af9738ba7a63c829477e7a86dd6f47/raven-6.10.0.tar.gz"
-    sha256 "3fa6de6efa2493a7c827472e984ce9b020797d0da16f1db67197bcc23c8fae54"
-  end
-
   resource "requests" do
     url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
     sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
@@ -386,11 +355,6 @@ class Snapcraft < Formula
     sha256 "49f7af965996f26d43c8ae34539c8d99c5042fbff34302ea151eaa9c207cd257"
   end
 
-  resource "simplejson" do
-    url "https://files.pythonhosted.org/packages/0e/2a/54837395a3487c725669428d513293612a48d82b95a0642c936932e5d898/simplejson-4.1.1.tar.gz"
-    sha256 "c08eb9f7a90f77ae470e19a07472e9a79ebc0d1c2315d86a72767665bd5ba79f"
-  end
-
   resource "six" do
     url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
@@ -409,16 +373,6 @@ class Snapcraft < Formula
   resource "tabulate" do
     url "https://files.pythonhosted.org/packages/46/58/8c37dea7bbf769b20d58e7ace7e5edfe65b849442b00ffcdd56be88697c6/tabulate-0.10.0.tar.gz"
     sha256 "e2cfde8f79420f6deeffdeda9aaec3b6bc5abce947655d17ac662b126e48a60d"
-  end
-
-  resource "tinydb" do
-    url "https://files.pythonhosted.org/packages/a0/79/4af51e2bb214b6ea58f857c51183d92beba85b23f7ba61c983ab3de56c33/tinydb-4.8.2.tar.gz"
-    sha256 "f7dfc39b8d7fda7a1ca62a8dbb449ffd340a117c1206b68c50b1a481fb95181d"
-  end
-
-  resource "toml" do
-    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
-    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
   end
 
   resource "urllib3" do
@@ -450,16 +404,8 @@ class Snapcraft < Formula
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
-    without = %w[gnupg]
-    without += %w[jeepney secretstorage] if OS.mac?
-    venv = virtualenv_install_with_resources(without:)
-
-    # Workaround for runtime SyntaxWarning: invalid escape sequence '\d'
-    resource("gnupg").stage do
-      inreplace "gnupg/_util.py", "re.compile('", "re.compile(r'"
-      inreplace "gnupg/_parsers.py", "re.findall('", "re.findall(r'"
-      venv.pip_install_and_link Pathname.pwd
-    end
+    without = %w[jeepney secretstorage] unless OS.linux?
+    virtualenv_install_with_resources(without:)
   end
 
   test do

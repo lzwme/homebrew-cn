@@ -1,17 +1,17 @@
 class C4core < Formula
   desc "C++ utilities"
   homepage "https://github.com/biojppm/c4core"
-  url "https://ghfast.top/https://github.com/biojppm/c4core/releases/download/v0.5.0/c4core-0.5.0-src.tgz"
-  sha256 "ef017202e7c00ebf6cd4d20c767706e3a32d1f41daf58955888e27230e9940ba"
+  url "https://ghfast.top/https://github.com/biojppm/c4core/releases/download/v0.6.0/c4core-0.6.0-src.tgz"
+  sha256 "fd0a3e2c39a5985c6699e306ead71e8a73a6ada2577c905734a2a6ba0a61c1b7"
   license all_of: ["MIT", "BSL-1.0"]
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "47e5f4b48e45c4f2e6d31d6687d73c98e18743ef27ba5487117a71b73438b406"
-    sha256 cellar: :any, arm64_sequoia: "560f72fc757eece10081db572b0c3ae0189ac33d36c5b3b2eda1d6b103407b54"
-    sha256 cellar: :any, arm64_sonoma:  "52d5dbed115ea83c554238c944c0fc3b81c627e477b852376588bc5dc8a7eafb"
-    sha256 cellar: :any, sonoma:        "8ce0b5fe575426a294d888509fcec0fa343aecf208008ca76c7cb16c9b429408"
-    sha256 cellar: :any, arm64_linux:   "5d2b47d614bf594dc5ca6a5c00fcd36ef1d521287d3d2768c09c3a9342225c87"
-    sha256 cellar: :any, x86_64_linux:  "038e548d96ae055ae98833872ca05d31522cac1fea601f155b62e3882012db9e"
+    sha256 cellar: :any, arm64_tahoe:   "214516874ec203bbc26aefa4a3d0619deebf919cb7914ef04a5655e8ad918769"
+    sha256 cellar: :any, arm64_sequoia: "7e1ca65706f1d8e07a95ea9b897c6a93592d84407fd0333e453a8d73f056b622"
+    sha256 cellar: :any, arm64_sonoma:  "86dda2e496dc32b641864e460cbc42ea3694edcc493e0c26a1ff61b9bcb86ac4"
+    sha256 cellar: :any, sonoma:        "b9b589a2523704c42236df1d0df97400cdbc067477247d2bb7522367ea19b8f7"
+    sha256 cellar: :any, arm64_linux:   "4987d9a3cc1551650b8a3ffc4d252f582386815d87f4da38064f1836e75cdd07"
+    sha256 cellar: :any, x86_64_linux:  "5a6877c90df1d27cb401617fca6adcfaa330bb5c6c99dc53e753c9ab12e803c9"
   end
 
   depends_on "cmake" => [:build, :test]

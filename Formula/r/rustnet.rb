@@ -1,19 +1,18 @@
 class Rustnet < Formula
   desc "Cross-platform network monitoring terminal UI with deep packet inspection"
   homepage "https://github.com/domcyrus/rustnet"
-  url "https://ghfast.top/https://github.com/domcyrus/rustnet/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "846f89a9c6cb5a2de6b9d42cf5a8a435e343906cbe9083776ddcc7fdbbb8857b"
+  url "https://ghfast.top/https://github.com/domcyrus/rustnet/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "f6425992dc5a8a700323c1231d1833a135cd93424d86cfaa788eed6cb700fe33"
   license "Apache-2.0"
   head "https://github.com/domcyrus/rustnet.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28ca4ad2fba70115eb1bec9838f723e6c8d8aec356809a8fbe20c61f1fefa28d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e78b87995797d057c7fa48bd47b5d59d27a70441088aae8a8ba2ca81db1236e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78918b44799c98314278a85e3fae4fb139925efea11e5a62b6be975c2ae7b952"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a74daab23db480e2de9aedf36cede91355e32aa1acd50ba29a72c7dd2dff8280"
-    sha256 cellar: :any,                 arm64_linux:   "c88dff5f29905a343ed524e08ce9e8f2b231559fd509792efbff59de3a92121c"
-    sha256 cellar: :any,                 x86_64_linux:  "8cb1d7cb93b04c8384dbfaaf487358ec4b79421ee114c268bae183fb9f67c137"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3578a83e470b58331c00842cecb14a9a8c2ecb0072b9006f12e4472ea311a249"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e13b19e92dec26182352255fa2cf59e48a07df105e755387e8eb91f510911c76"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "47ab9d884ce965aaf554d591f1ff067edf7bd667c4cac3fc6047ae832502d7f7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a3035e64abb9af9547919c2032e8180d104295e3db137982f8679118c206ec8b"
+    sha256 cellar: :any,                 arm64_linux:   "ec6bf2579e8df002e9afd245273d25d6398ccd475d13636be9c1f7641a2237ce"
+    sha256 cellar: :any,                 x86_64_linux:  "5f4410028edd95ca29287602ac599880bc97be152ef0d26c002179a0d3c07cf4"
   end
 
   depends_on "rust" => :build

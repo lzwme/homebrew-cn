@@ -3,17 +3,17 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/75/ce/46364f5e15fa77c8627abbb9e156ac8789524dc7917904cacd4bdccd23af/flexget-3.19.29.tar.gz"
-  sha256 "5c46e8a92cbb9549a73d9d8dade18cb2de2a78f8c80c58f6f87d7030df524271"
+  url "https://files.pythonhosted.org/packages/d0/7d/207764635235b9818628f03ecb5fa0aa34451cf12efd34cca169f2ab225e/flexget-3.19.30.tar.gz"
+  sha256 "de2c4d43d0818abb6d4eee287844c6b35fb25a21cf6a6ee3684d3e8110b3b074"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bce720b4568e801a117468f35dabd8e62d2b893e7be8939de92a978f49cad22d"
-    sha256 cellar: :any, arm64_sequoia: "b965241cfd548c634b9989be9ca93cc88bcc0a789a20d409b72fe537d066b804"
-    sha256 cellar: :any, arm64_sonoma:  "fe32c6affffa82fbedf0979a31b07dceea94d94e220fede0816abe46b6e186bb"
-    sha256 cellar: :any, sonoma:        "476c6a9344d7defee472c5a765780e0fa11501415be06fa68085ec3707574fdc"
-    sha256 cellar: :any, arm64_linux:   "b25a08797487f7dfd6124896312c59fbee92b4f33c3997a0c9e33e2c3d8484b7"
-    sha256 cellar: :any, x86_64_linux:  "8e685c337a3c413636773a918ba8b739a6e2c903d90f428758f9bb5f98029a2d"
+    sha256 cellar: :any, arm64_tahoe:   "bc8026c736dd37f297caa78a7d1119dc25ce5c6007670351fdb95054b7811533"
+    sha256 cellar: :any, arm64_sequoia: "dfb0d4c425dd5b973cf64e7187428b4d8399cd53abac8f60ec8098baa3996317"
+    sha256 cellar: :any, arm64_sonoma:  "6b5f975d5ee729efd21963e339a1ca6ebd7295e1188404f868c6a121099dd3f6"
+    sha256 cellar: :any, sonoma:        "928421b8fe8757aa57f5d77b8fd41223b01d19d3fcd391523be395ec667981d7"
+    sha256 cellar: :any, arm64_linux:   "59ec04a32154fc7697d296acc4240b57fb875932eb94891ea6e3671298c6b85f"
+    sha256 cellar: :any, x86_64_linux:  "78ef16793de7a5da2e2ae3a378f1ab48b2c9e1d7e786898fe791644440f49382"
   end
 
   depends_on "rust" => :build
@@ -320,8 +320,8 @@ class Flexget < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/47/2c/0a5f6f8ee0d5589e48c7640213ed5175d52cf540a06725b628cc1a45d6ce/soupsieve-2.8.4.tar.gz"
-    sha256 "e121fd02e975c695e4e9e8774a5ee35d74714b59307868dcc5319ad2d9e3328e"
+    url "https://files.pythonhosted.org/packages/80/f1/93422647dd7e461f23d254e6b2bfa687a85b53aeb4903fcdbb74474d4584/soupsieve-2.9.tar.gz"
+    sha256 "acee8417325c5653e1377dc31eccad59eb82cbc65942afe6174c53b3aaad63fc"
   end
 
   resource "sqlalchemy" do

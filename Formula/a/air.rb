@@ -1,17 +1,17 @@
 class Air < Formula
   desc "Fast and opinionated formatter for R code"
   homepage "https://posit-dev.github.io/air/"
-  url "https://ghfast.top/https://github.com/posit-dev/air/archive/refs/tags/0.10.0.tar.gz"
-  sha256 "4ef28a95df9c037aa6bdb9b36f94dcdcdbb64b469e49729268e2921d6d2e1968"
+  url "https://ghfast.top/https://github.com/posit-dev/air/archive/refs/tags/0.11.0.tar.gz"
+  sha256 "07ce82c3200296afca23efdbc9aae1943c4d0b6dfd5aa3fa47353dd709dff648"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "501f12023c37dfc553e311e833f84561351d331f4a34ea7dde000f5f228c27cf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2623234f9b3220ab05b9403ace827550664f390a039e9e1184fc146896bc206"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5121c64eb4250690007a0695ca599052e7fb051b18461fa3feeb5df685e8de1c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b2fea279afc4f5584949d94380f8e0f8650e4eb2627a2d86a75b1301fb5f5262"
-    sha256 cellar: :any,                 arm64_linux:   "688979f75d2951dd7826eb2c03f1a8ee1871d52b1848a484142d0bac43661cab"
-    sha256 cellar: :any,                 x86_64_linux:  "0ac9a0c7b733ae07052cf5d33506d73e49a134e254a738dab807fe40624dde57"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe24773c57236eb5e15a7866185f11961f17b1f63830c029a0f5e8a1a14b33fb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d06c1ec27ce2c8e58c555014b5518201f39e49fcbb7d60bfd5325f624afd74c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0fd2e24c4886fca0baa0faf78d7e1da9438f2498f084cdd89dabfad8d77d637"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5df4891be551c21c65a8bbc6579be7ce4acefa9c161f1f64c53853da5426a2fd"
+    sha256 cellar: :any,                 arm64_linux:   "5a521a49c5a2fef3999d8f9b3c3a281743ea5150bd3be98c0f4912947a258162"
+    sha256 cellar: :any,                 x86_64_linux:  "0de3fde42a0cd0d489dc3fd643a7e7924da954ca4c537a7479b390cf02f52f96"
   end
 
   depends_on "rust" => :build

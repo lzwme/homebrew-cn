@@ -1,8 +1,8 @@
 class OpenjdkAT11 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.org/"
-  url "https://ghfast.top/https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.31-ga.tar.gz"
-  sha256 "11c04910fb30a26a807b0847c9cccb8fc72e0b4d0e9db54e31957f27c7f03fd9"
+  url "https://ghfast.top/https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.32-ga.tar.gz"
+  sha256 "d0ff21a9964fe143a43a2bc011c8fecdd995f4cfa2eeda53b2fe95e4382ad464"
   license "GPL-2.0-only"
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class OpenjdkAT11 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f1d4cab805e34e540c02dc897e737c724b5e11b4f0f7234e7a2261d08362e77c"
-    sha256 cellar: :any,                 arm64_sequoia: "2f4ae77b7d610cb674a6ed3e50a845045c1b7ec183a3880b2b06330a1c80ab19"
-    sha256 cellar: :any,                 arm64_sonoma:  "f87d1fb5038ed73123d58a028989f66438d24d3d7f370bd58cf8ba1452f8a501"
-    sha256 cellar: :any,                 sonoma:        "fe8f555eab63fa7044b97806a11dc0304991062edb4801a1899bee5d779bb132"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e207943cd73c41ca85642d8a71ef275a3066f311ecfa421cfcddbc73a3eef79e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1481b8b3267eb790b9cc7e7b8a2b2813f07b4e0aff6735230b8c0d4d0ee65a72"
+    sha256 cellar: :any, arm64_tahoe:   "dea9d66cc45daf06d90a9b24c31d4d7995166fd76d7670e6445fe4bfa5a7080c"
+    sha256 cellar: :any, arm64_sequoia: "12160d78c69c98f5e2eb063961aa6b01b1fdc17262eb4ffb2bc978c10caeebca"
+    sha256 cellar: :any, arm64_sonoma:  "4882b6da99588bb04aad158d7ab9d515ca6df7c30f66dd0df4439c9b12655a15"
+    sha256 cellar: :any, sonoma:        "0c1422deb80ee2c3f39a6238eddab2373d8cc5f766ea41d6478a4a024c67d462"
+    sha256 cellar: :any, arm64_linux:   "dcbbe429caf325994f3c24f61ef6451c898925d98ba70594fd44548379c1a2dc"
+    sha256 cellar: :any, x86_64_linux:  "60daf5c0655401f5cc2d05dc14afcaccdaefc473b20d194b036290839acb59d6"
   end
 
   keg_only :versioned_formula

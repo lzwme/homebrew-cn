@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://esphome.io/"
-  url "https://files.pythonhosted.org/packages/d3/56/1749a8c7f65ee3585d9f35865992e1b27d7d05c19135bc5fb7f64d41e645/esphome-2026.7.0.tar.gz"
-  sha256 "ad25c329744fa5f9431a4a9d766441f7de3672c66490d8694eabf8c2049568fc"
+  url "https://files.pythonhosted.org/packages/9f/10/051280a9692499d4102741e02482eb8245012b6b7d285254ae4612a2d9c5/esphome-2026.7.1.tar.gz"
+  sha256 "7ebfa65022df03eb6c0138d36aa9d87a8ccc3c98fcdc3d78b1c060e9771b5959"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -12,12 +12,12 @@ class Esphome < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b07471bad9b2bb1d2bfa2dc95be35aba4e8a3c467633940a2bc3ed81bb0d5132"
-    sha256 cellar: :any, arm64_sequoia: "df3c1610df152b89ca56b5846b3153802c67e18fee44fa6593b7d5fe7b04b41a"
-    sha256 cellar: :any, arm64_sonoma:  "21eb0ba58e048165daef71283b3ccdb30b89425e312800a3a5598bd09eda0e9a"
-    sha256 cellar: :any, sonoma:        "a8e39bba2f80e92fd147c848c6ad2510ada04fb1e441b4fc7fbee73b04cd51e9"
-    sha256 cellar: :any, arm64_linux:   "917d1db41442b6e5afff894ab73340bec32fa50d9c81992fd9ef61967efaeb7d"
-    sha256 cellar: :any, x86_64_linux:  "9e38e004409719148814ae90aeb167b1e00156f4345267997e978beb03468e10"
+    sha256 cellar: :any, arm64_tahoe:   "bfc1c269f1ab0affc39640fc691684d6a9bc112503f223d4a29057d7540626e7"
+    sha256 cellar: :any, arm64_sequoia: "db4727c7cbfbae15b37c787a1c97165acfd39006073baf2c31ccad29d8b653ca"
+    sha256 cellar: :any, arm64_sonoma:  "555bb0c511f4835cbfcd37770e1568d340c5985608352214836f03bbda3f2961"
+    sha256 cellar: :any, sonoma:        "2840218df36bb21bb48268edceb2c4c6a849334332b5dbcf083050269c3ee3c5"
+    sha256 cellar: :any, arm64_linux:   "99df043d5bfae50411bcefe6db33a1faea79ed8636170a1efd2f872e802c0bcf"
+    sha256 cellar: :any, x86_64_linux:  "9b972192e6169d3549bbc00da64f1df2316dee8f29c78f8be3bd009bcdcb77a3"
   end
 
   depends_on "rust" => :build
@@ -41,8 +41,8 @@ class Esphome < Formula
                 extra_packages:   %w[chardet dbus-fast pyobjc-framework-corebluetooth pyobjc-framework-libdispatch]
 
   resource "aioesphomeapi" do
-    url "https://files.pythonhosted.org/packages/57/af/7f83d725c98d69e21eb0da98bea4f2bb40d110dacbf2ab931278fe2c593e/aioesphomeapi-45.6.0.tar.gz"
-    sha256 "a2db88693a69ac0b1504fd75cf951984ba2ab360c3c63f92fc72e820ef816a3b"
+    url "https://files.pythonhosted.org/packages/9a/a5/83619d21e0e9850251dafb8731b6c15b6fd4615d9a50fd3979d36f0e3932/aioesphomeapi-45.6.2.tar.gz"
+    sha256 "d09d89101d46cddb6ed07e4f038fc85d2e20038f041c098141c4f8f051c1567d"
   end
 
   resource "aiohappyeyeballs" do
@@ -71,8 +71,8 @@ class Esphome < Formula
   end
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/04/eb/e97abd6b7c2245e19be529f6fd70c7dda04c449f4a11b6ddb30079d71ea6/bitarray-3.9.0.tar.gz"
-    sha256 "af5f91e61d868c8f457f66cd726ef31d69264f71edbaccd70fdbb13548c1d652"
+    url "https://files.pythonhosted.org/packages/1e/01/59a0fbb89c2204ba07099a6e4b87768d25d6aa689df07547412218e03145/bitarray-3.9.1.tar.gz"
+    sha256 "796f2b4f0e4d84df50bd23ddfacb37d74eec2b2366813cb8f18bdae6b25e3d36"
   end
 
   resource "bitstring" do
@@ -143,6 +143,11 @@ class Esphome < Formula
   resource "esptool" do
     url "https://files.pythonhosted.org/packages/76/ac/d2016cf6b3709d0e0166f45f84bc6e2d717757b5f59020ccb34de08d1b9b/esptool-5.3.1.tar.gz"
     sha256 "125781f36e6a2d08c484524a45f340694675368b5eeead9d0cb21b2034a91d98"
+  end
+
+  resource "filelock" do
+    url "https://files.pythonhosted.org/packages/b5/fe/997687a931ab51049acce6fa1f23e8f01216374ea81374ddee763c493db5/filelock-3.29.0.tar.gz"
+    sha256 "69974355e960702e789734cb4871f884ea6fe50bd8404051a3530bc07809cf90"
   end
 
   resource "freetype-py" do
@@ -251,8 +256,8 @@ class Esphome < Formula
   end
 
   resource "pybcj" do
-    url "https://files.pythonhosted.org/packages/12/0c/2670b672655b18454841b8e88f024b9159d637a4c07f6ce6db85accf8467/pybcj-1.0.7.tar.gz"
-    sha256 "72d64574069ffb0a800020668376b7ebd7adea159adbf4d35f8effc62f0daa67"
+    url "https://files.pythonhosted.org/packages/14/c9/e2de4f98c21f2ff9e58047395b6a8e17701a0f2977f0e63f80948f61647f/pybcj-1.0.8.tar.gz"
+    sha256 "6818270692912d47e81ccd777b7d0ed2ad3a19ef7aaead3735b38048c80bf368"
   end
 
   resource "pycryptodomex" do

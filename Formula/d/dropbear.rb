@@ -1,8 +1,8 @@
 class Dropbear < Formula
   desc "Small SSH server/client for POSIX-based system"
   homepage "https://matt.ucc.asn.au/dropbear/dropbear.html"
-  url "https://matt.ucc.asn.au/dropbear/releases/dropbear-2026.92.tar.bz2"
-  sha256 "91dcb5234de8dea68dd82c55411c9fc986b457ab58372a780ee8a870419c2f7e"
+  url "https://matt.ucc.asn.au/dropbear/releases/dropbear-2026.93.tar.bz2"
+  sha256 "310a6087952897c182efbe16088fa0c4d07c467e850a22699472137278fabf09"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Dropbear < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed233d09f69c85d80b60fc056236404e10170afdf7c7d566f00b4a4bf98b67cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8727701e3582cfadf24726911f49e3a9a9cb62dc55af7598fac344f2133c2166"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "136be412e2a3af5587d799c1b7392866b464421accc0f221ac5a4b0e6e9a1f33"
-    sha256 cellar: :any_skip_relocation, sonoma:        "245e357211e25b609180096b6d7eece4dc7192db4b6f05ae24e303abac46d773"
-    sha256 cellar: :any,                 arm64_linux:   "b7377df0fb318599f7303628f55283ff0f2c9ee2af1df2f1ade1603bdaeb3e49"
-    sha256 cellar: :any,                 x86_64_linux:  "107b2e19b03b7df8b022f11ac320fe7ec521e27a3b10ead374314b2db7e6f1f0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b498ced8c41779dc2223bf2073b2a59521d13e9810eb8a9f722dcde1460ec8e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de46897521cf46f9c0e253856bfb14773715dcb937a13621a1baaae8c3d573b0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58d5b67dc05ca8990def13c1156b0529435223eaad916f701ae766c51de126b5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8ec78a0cb39cfb389e93df1aa78e1ad59f5aac41d9b7953bb74def70b0b0b2e2"
+    sha256 cellar: :any,                 arm64_linux:   "9fd1461e0843e69b2e1de26d4831152252d81395eae2b649d53e38252ce53278"
+    sha256 cellar: :any,                 x86_64_linux:  "028ce8bdc2ed5a8ae0a44a9089773365c4e70a7a7d8f414015d6ec6c616fe2a0"
   end
 
   head do

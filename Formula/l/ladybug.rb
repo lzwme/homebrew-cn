@@ -1,17 +1,17 @@
 class Ladybug < Formula
   desc "Embedded graph database built for query speed and scalability"
   homepage "https://ladybugdb.com/"
-  url "https://ghfast.top/https://github.com/LadybugDB/ladybug/archive/refs/tags/v0.18.2.tar.gz"
-  sha256 "5423aae21009fe76d2f8dad2d2453f02a2045bdbd0293e8bedd81c80ef0b6376"
+  url "https://ghfast.top/https://github.com/LadybugDB/ladybug/archive/refs/tags/v0.18.3.tar.gz"
+  sha256 "296af5505a35c0cdb488e05314ad1e2824907c10a239841042e42a1279c0f739"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e974cb2652ef10c55c4520cd8b021ac978a4c812f41d80e924ad1d95622cebdf"
-    sha256 cellar: :any, arm64_sequoia: "718f434b780866782128da993e3d8fb76d961e7f3282d91450c236cbfef5a606"
-    sha256 cellar: :any, arm64_sonoma:  "794073afbe2f2bacb76b970bcdd87489924c9aa414e7cc5d02abc831565211ac"
-    sha256 cellar: :any, sonoma:        "f75b3a373dbfb8ca5f72e79df91743263d86b877acc6d2de6333301774e37951"
-    sha256 cellar: :any, arm64_linux:   "ee097520ee72e7889208fa5bd0deaa861c755eb65e1a36901ce66c9c20dc53a1"
-    sha256 cellar: :any, x86_64_linux:  "fc1f829c7991b2e6a61105651297c9257b3180bc12aa9676f749cb897e7bdae7"
+    sha256 cellar: :any, arm64_tahoe:   "3e9aa4219b05b2247b5d1743a6e86dce4a6fe7d71d66f10b513cb93976d724e0"
+    sha256 cellar: :any, arm64_sequoia: "f56176e39159b5ab86744fe4bb106def02657c3e513f516cc4b62eed53e5348c"
+    sha256 cellar: :any, arm64_sonoma:  "02963df31c2743c9de290a8b9672af8f978ee9a78228c3a4b444e65e214a37a7"
+    sha256 cellar: :any, sonoma:        "07f17e1edaca830e7a920b4765d8f19e9d51e2498c80becfb054525d8bb925ff"
+    sha256 cellar: :any, arm64_linux:   "0316502273cc1a4322a770d8085648857bfb6c14f978c60b231177617d8b590f"
+    sha256 cellar: :any, x86_64_linux:  "141c90226752395444ba10b8d95258b3c19752bdfc8054a0b32cd31c8a08524c"
   end
 
   depends_on "cmake" => :build

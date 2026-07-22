@@ -1,9 +1,9 @@
 class Spidermonkey < Formula
   desc "JavaScript-C Engine"
   homepage "https://spidermonkey.dev"
-  url "https://archive.mozilla.org/pub/firefox/releases/140.12.0esr/source/firefox-140.12.0esr.source.tar.xz"
-  version "140.12.0"
-  sha256 "85dfb9f6021152b4302b8968ef485d958c8c471cb02415a19853daaad5acce62"
+  url "https://archive.mozilla.org/pub/firefox/releases/140.13.0esr/source/firefox-140.13.0esr.source.tar.xz"
+  version "140.13.0"
+  sha256 "f53b9dc6942abda1185aa7d79048f59fc075020da36b4dd6b31f668b88714d01"
   license "MPL-2.0"
   compatibility_version 1
   head "https://hg.mozilla.org/mozilla-central", using: :hg
@@ -16,12 +16,12 @@ class Spidermonkey < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5f69763014ce5e58580a048d14b083c88d86b702621bfc7c03f51c5fcb9d4d98"
-    sha256 cellar: :any, arm64_sequoia: "95c23ace47ac4d727671854e128b6f283cacad99837f3f1b28d1eeef6f857457"
-    sha256 cellar: :any, arm64_sonoma:  "1109529e3d9a7bc03b6d57354bdeeafe674e139ff951e2369821f31f635e5c3d"
-    sha256 cellar: :any, sonoma:        "bd9168ac56b9b436cc609ca86b8039f99f4311094576b1e1a7ef66203dda8dcd"
-    sha256               arm64_linux:   "adcc91dd0e89d8062045a6cecf948c455c563b198c0389c64bb97da5a414da65"
-    sha256               x86_64_linux:  "622ec399fb8c9b42ef57f26c83778fd6d2ec10d4976c57c4a1265dacf95833b2"
+    sha256 cellar: :any, arm64_tahoe:   "7027603c9ec114598998a2f72f4df743ee00ce910978d28b24cbd8378e3ad209"
+    sha256 cellar: :any, arm64_sequoia: "4b0128a46b0f5482950cf1b15b74c5cd88b2cc24aab16ac9abbceabda4e4e59c"
+    sha256 cellar: :any, arm64_sonoma:  "147ecb18fffd0e11f70b0a6e8a7593940a7992b73d1e624248a38341b5b68717"
+    sha256 cellar: :any, sonoma:        "7299b293de9556ae20ef83ff4a80672cd34b207b501d4c856f63dc68785e13e4"
+    sha256               arm64_linux:   "1e6c7aa0b1202e05c3c203ca5ebd6950fc52fb02b77499046150e2b80634ff77"
+    sha256               x86_64_linux:  "25b0032885046a3fe77926a1b37d21b01be823dae80dad482327b01e05cd2b40"
   end
 
   depends_on "cbindgen" => :build

@@ -12,12 +12,13 @@ class WasiRuntimes < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aff8ee412fa5867ba558b72984bcb9e2a577294f8f8608dfe7f94a311221a550"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b176efb481b685a62c4fbd75fa2a554d40726469294dbf926a5bf5547ec05e8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0ed955e3817f4971a5a5685151c889c17e5de267635d0a219842af69273f418"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a485c5deaf7d1064ff7212e49b860d10092ce0f7ed534a67d80ba43aeaa01674"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "318fc9547c1df31915dc6f2494c334c196edfa3cb103c35213ea5b25ebcc9ac6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b1debaa420c2d4636cfe228a32e22f0c5c04dacde3dbf8ce8bdd5946d8993e6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c2cd9eb8102c4a91286d21af5ddc935fc7f3ed21943e6059a545dab84936072"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "abf0eebacf4a2ccfaf6eccdd9a4eb5622f1bd14e43b1a94c15049e36701414c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "38c9096f0ab3199dc258ba2b6c4289f85390e787aae1e383ae125a7f94537d4e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3661c844d01caaeaa5e63a9fac964b8ad6d8dca4674f723394f7ee5159a5d201"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "27f87111b1e253b3cb75993b94f33f982a55acfdbe0a318dcd0580c60608b11e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45e7c3dec6673695879c3bf861f37018d23e498c21dd47fe7bd2caaa5d58e698"
   end
 
   depends_on "cmake" => :build
@@ -233,7 +234,7 @@ class WasiRuntimes < Formula
     wasi_sdk_targets.each do |target|
       system clang, "--target=#{target}", "-v", "test.c", "-o", "test-#{target}"
       wasmtime_flags = if target.end_with?("-threads")
-        "-W threads=y -W shared-memory=y -S threads=y"
+        "-W threads=y -W shared-memory=y"
       else
         ""
       end

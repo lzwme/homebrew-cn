@@ -9,7 +9,10 @@ class BerkeleyDb < Formula
 
   livecheck do
     url "https://www.oracle.com/database/technologies/related/berkeleydb-downloads.html"
-    regex(/Berkeley\s*DB[^(]*?\(\s*v?(\d+(?:\.\d+)+)\s*\)/i)
+    regex(%r{/berkeleydb/html/changelog[._-]v?(\d+(?:[._]\d+)+)\.html?}i)
+    strategy :page_match do |page, regex|
+      page.scan(regex).map { |match| match[0].tr("_", ".") }
+    end
   end
 
   bottle do

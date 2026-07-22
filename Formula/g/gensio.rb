@@ -1,17 +1,17 @@
 class Gensio < Formula
   desc "Stream I/O Library"
   homepage "https://github.com/cminyard/gensio"
-  url "https://ghfast.top/https://github.com/cminyard/gensio/releases/download/v3.0.2/gensio-3.0.2.tar.gz"
-  sha256 "f05e96d3497c4085c5493b36a3a6d5e25d8787a3de220135335f1ec93fca3637"
+  url "https://ghfast.top/https://github.com/cminyard/gensio/releases/download/v3.0.3/gensio-3.0.3.tar.gz"
+  sha256 "bea4d7015c92e427e3d745d4c6d9712af9cd5629c706c7e19cddf655aeea73c2"
   license all_of: ["LGPL-2.1-only", "GPL-2.0-only", "Apache-2.0"]
 
   bottle do
-    sha256 arm64_tahoe:   "0db89caf2ed24a6fe56baad6d75e2c330f3d844615476130ed40c96886ce1d8e"
-    sha256 arm64_sequoia: "68e9064b1dc71ee980b5249fe7c30dab5b48234b5be64bd6ef51c9e7cd097cbe"
-    sha256 arm64_sonoma:  "8f5754c49d927f54546913cba4c3187df1b60a2e18672541c1d51d3738adc92a"
-    sha256 sonoma:        "33301c2bd0538d62b33f72ab6ab7356b0de2d95416f2f85bad06467f3a87b072"
-    sha256 arm64_linux:   "d28a9500f998e1e699484373c0044827613b2dc4e4707b6814fec1603604272b"
-    sha256 x86_64_linux:  "0d72619224d245f776aa9866523a636f1546e1479fea40f928fde9e5af98961e"
+    sha256 arm64_tahoe:   "bdf033c0df0792ff0097941c8eaba8173ef55cafe8f6b174c5939df8a79141b3"
+    sha256 arm64_sequoia: "f872f4d14a18f37fa5e4fcd7104e7591db81d160e99ea16e9b81056d52e0fc7c"
+    sha256 arm64_sonoma:  "a3b9dc16c7739a7b292754703af61311efda7c0c80c1dec927578708fdb187fb"
+    sha256 sonoma:        "c91f5287120774eede4328bd5526f1b78dd1c11547d780acef696da9571cce72"
+    sha256 arm64_linux:   "b250df4b6ca99de1a4c2ab3e94ed6b1ae13b7133c84ee6ad248650f9e1815891"
+    sha256 x86_64_linux:  "79f7a08df1a319b5bb7ada1e2244ecd3b24957ac8f8d3259d6ce468ebb0964b1"
   end
 
   depends_on "go" => :build

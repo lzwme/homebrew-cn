@@ -7,7 +7,7 @@ class ApachePolaris < Formula
 
   livecheck do
     url "https://polaris.apache.org/downloads/"
-    regex(/href=.*?apache-polaris-(\d+(?:\.\d+)+)-incubating\.t/i)
+    regex(%r{href=.*?/releases/v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
   bottle do

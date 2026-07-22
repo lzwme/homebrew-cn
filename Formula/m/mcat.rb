@@ -1,18 +1,18 @@
 class Mcat < Formula
   desc "Terminal image, video, directory, and Markdown viewer"
   homepage "https://github.com/Skardyy/mcat"
-  url "https://ghfast.top/https://github.com/Skardyy/mcat/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "96702a7d3994f36918212fab6cb28f49b207a5f1fce49e8c998f42a424c10f89"
+  url "https://ghfast.top/https://github.com/Skardyy/mcat/archive/refs/tags/v0.6.3.tar.gz"
+  sha256 "505e84c3fe034921f81a224490206f3e329773d4264286a1ea0d53f95a6a248d"
   license "MIT"
   head "https://github.com/Skardyy/mcat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "71d3338753322ee15f4724e19fbe0e2731979c89cabb46eaeea28834d3bcca13"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e36c38a6dec82d65738927b21c5ab826d9ebb48bfa1f8d65d32f8ef5a1fd1dcc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5e901e40b154685fc3aa43435eab4af0f04b3c42a0ed14673dfb1cc8f7722d1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "22e0b83b82d27e7b1890325f4884db2d7d8b0a080f01dfeda61db8760bdec598"
-    sha256 cellar: :any,                 arm64_linux:   "698c6d24a77c679850c4637ea61e6a70b91523fa6fa28d7ded06f7059a52c54d"
-    sha256 cellar: :any,                 x86_64_linux:  "411f00d2a500f138846950d6fa82cd81acd7b7eda914850ff122425f1e9bca7e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bed50a35165364ef52195d033a8a6218ad14aa30850bae620260953e6d5802b3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae74f8f3a7636a8ec05f21c0c535e39497e282790c563d2939e0420466e8164f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d365d85d1066aa3fc1dc26bf564463dbc9ec76f98e4b434347124dff72a7232"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ed8b5e7a6e860f1bc7b577e006a6575d7fb1273f0b7e9bbe52da15a50a1f08d4"
+    sha256 cellar: :any,                 arm64_linux:   "4f5f7b243f2a5e3a698c527224092dd2ba44a705a16f79881ec6d39e6bf922db"
+    sha256 cellar: :any,                 x86_64_linux:  "39d04b97629ae70e02c94ca2e9f598e267a5f6b9926d5f059e6a2136d63ea3c6"
   end
 
   depends_on "rust" => :build

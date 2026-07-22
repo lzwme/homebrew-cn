@@ -1,21 +1,21 @@
 class Odiff < Formula
   desc "Very fast SIMD-first image comparison library (with nodejs API)"
   homepage "https://github.com/dmtrKovalenko/odiff"
-  url "https://ghfast.top/https://github.com/dmtrKovalenko/odiff/archive/refs/tags/v4.3.8.tar.gz"
-  sha256 "5a28709727303cd47c9562d530ca97e19de13a7d2260fa20af16685635881a9f"
+  url "https://ghfast.top/https://github.com/dmtrKovalenko/odiff/archive/refs/tags/v4.4.2.tar.gz"
+  sha256 "cfc84f612fecfbce12d25d561a40caa5b916e28406653e22cd15dd826a531f6b"
   license "MIT"
   head "https://github.com/dmtrKovalenko/odiff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ba57aa2f95b0600cdde6f8a1ce4436bec7d4ba65248afd3e58f9a870522ca27"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b75f5998d2e85a2696e30cd7f9092a7e0c5341d6108783013006294108d22f14"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a6cf9e64f73899f9869fbaf1451178f49725633d0b474c8d77d5eebd707c495"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df118da73d35e38d5ea7eaa27bf8eeb604cdf927ab5d9be6bb5e9cb97cfb8b89"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "80a184807590001738930f42eb3a8fe3b9edefe5f30292f05ea6ba1b7533f535"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7683d0832d5b0b06ed3300ca1d7c4200a7f8e0bd1054df9741d79771245cff9a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e8bb183a3fe5b20813cd7d11cdd20ebaf57ee03c30fa181672247d762f54168"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc69ea6c18fd87080fbf16c5a02ea90953a002b75b701d50bd401710d14e94b9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79d2e4fc08a75229cf6b2081885737faa85ca59c8c749dbe381c89f86b1c7065"
+    sha256 cellar: :any_skip_relocation, sonoma:        "56a33372c7be711d44c417ce35a4d27828944523d067aca4fb213e38c5524961"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3cae2494830e33310adbd7c692c9c922de26aed8b5e93c2faefe16f3070dbecf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e57d454ca811316a0dec6d444cd012741a2fe97075b56bad7b12d14201b54fd6"
   end
 
-  depends_on "zig@0.15" => :build
+  depends_on "zig" => :build
 
   on_intel do
     depends_on "nasm" => :build

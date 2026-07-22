@@ -1,18 +1,18 @@
 class QobineTui < Formula
   desc "Tui player for Qobuz"
   homepage "https://github.com/SofusA/qobine"
-  url "https://ghfast.top/https://github.com/sofusA/qobine/archive/refs/tags/v2026-07-15.tar.gz"
-  sha256 "1e2f5c0353dc51609f3a4ff0feb1fc02c9da17646b1f5357e5ea6c05fd39180f"
+  url "https://ghfast.top/https://github.com/sofusA/qobine/archive/refs/tags/v2026-07-21.tar.gz"
+  sha256 "8beda8cf9a78ef02f97f8ed2c3649cdc04bc551dc2d8db5552f9bba89c52fe7e"
   license "GPL-3.0-only"
   head "https://github.com/sofusa/qobine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c9a15984be417d3aa160cfff1739a10c6d9a8066500a683f09ff2f94ad57270"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e76b363aa82a95041fe278ee68bd356d3edea6b9a1e9cb3b1e8e7e2724a7806"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4c88cbfd45baed0ced93d07ce55b698e5c56737d17a632c5e3ec8b14805c9b3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "094746d95ebea811059ee512a37e6652bf9b18674d7ea90fac9e3b94d4719231"
-    sha256 cellar: :any,                 arm64_linux:   "3691065c645e59f96bfb5b7c7ee0cfea47ea86c6277bd5396718bf6a9198457a"
-    sha256 cellar: :any,                 x86_64_linux:  "dc0ffc01a9d2124ed86f2c8d49c3a035883d1d2e949e435f92ac4f5c7365f4fa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b6ec9727822271e8e20465414f7ec126419892e324af1ce08860d28d9273508c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50af8cfb8100351eebebd33032b536cd05229affdc06898bf795dc8f3ee2e6da"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "383560eacc68a20faeea1c0e8d240848454930d69ab0825984857f7716d10020"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b7580d7d0a516713162452836acf1db499ccf738ae41e668b2e53d2930901154"
+    sha256 cellar: :any,                 arm64_linux:   "8bd35d15b91af10e4a051d2703a82a6c69eab06776a58e3ed954a9214158089b"
+    sha256 cellar: :any,                 x86_64_linux:  "1452fe56715791f29eef5a8e91fc92f5cc0e98591a9cfa4137b1ee4732618cf0"
   end
 
   depends_on "pkgconf" => :build

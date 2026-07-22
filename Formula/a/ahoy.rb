@@ -7,7 +7,7 @@ class Ahoy < Formula
   head "https://github.com/ahoy-cli/ahoy.git", branch: "master"
 
   livecheck do
-    url :url
+    url :stable
     strategy :github_latest
   end
 

@@ -3,17 +3,17 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.github.com/spec-kit/"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "c428f87d3566edb5e8b1a9835a6e48b7321602f05d210b7f4165ace9318dde79"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.13.2.tar.gz"
+  sha256 "e92a5281dc9fdd305e7be19c87d349a79a0db5b311dd5c1775676ce4696b7717"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6403c032ed44d9c5fa713f1228ee292d58fb006bfaab6cf9952ec001648a98c2"
-    sha256 cellar: :any, arm64_sequoia: "f61944432e2589130749b6c61043b6e233281a23dc769ecb77f5fd982d5db3b3"
-    sha256 cellar: :any, arm64_sonoma:  "05cef213f2725a423c4fb0f2fb97a74a72aeed46ca83fb9b35d75407bcfa2d70"
-    sha256 cellar: :any, sonoma:        "7fe6bbe7aaa468318bd9e47754b070f4564fe9612113e90d0bd6cbdac4b27d4c"
-    sha256 cellar: :any, arm64_linux:   "658efb1e74387f44a00e447473c00cf207a1e17e5e6be63e32eb10db53a6efd8"
-    sha256 cellar: :any, x86_64_linux:  "58b7f0baa73030361cdcafa6390a58b9b5f076905d29488b6bd6cdec7fe09c1f"
+    sha256 cellar: :any, arm64_tahoe:   "7ddb3a3572a83b55bf75a5b9506d1598214b298e79c845af221c239604a96426"
+    sha256 cellar: :any, arm64_sequoia: "6a032775c207a69f6fbd91f3b51e6d4a4efe55cdaa19aaf9484ab3a92b86c828"
+    sha256 cellar: :any, arm64_sonoma:  "ee42ddc9a871e25edcd776092b0b8eeb0c20ea630c1559e8e0bd2e398ed39ca2"
+    sha256 cellar: :any, sonoma:        "2e89654128d30822d76031294ce6be04aeee309644504d1fb94174d9bb4c5c5c"
+    sha256 cellar: :any, arm64_linux:   "bac7e37ce79bcd24c09570046ee1e37893ad012e3b16fde24be3419f6d35ad35"
+    sha256 cellar: :any, x86_64_linux:  "77e90064876040d7af1e92f6848317d48256d6145ee0aff71b17776e421f88ad"
   end
 
   depends_on "certifi" => :no_linkage
@@ -58,8 +58,8 @@ class Specify < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
-    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
+    url "https://files.pythonhosted.org/packages/52/cd/4f25b2f95b23f5d2c9c1fe43e49841bff5800562149b2666afc09309aa8f/platformdirs-4.10.1.tar.gz"
+    sha256 "ceab4084426fe6319ce18e86deada8ab1b7487c7aee7040c55e277c9ae793695"
   end
 
   resource "pygments" do

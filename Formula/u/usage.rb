@@ -1,19 +1,19 @@
 class Usage < Formula
   desc "Tool for working with usage-spec CLIs"
   homepage "https://usage.jdx.dev/"
-  url "https://ghfast.top/https://github.com/jdx/usage/archive/refs/tags/v3.5.5.tar.gz"
-  sha256 "aa5e9b7eb904c31276112e808bb80f90d8218261ca0102379efc8793486073ed"
+  url "https://ghfast.top/https://github.com/jdx/usage/archive/refs/tags/v3.5.6.tar.gz"
+  sha256 "728bfe773b87e9556694a7e66c5479d10b25dde11ba176125445740969c4c73b"
   license "MIT"
   compatibility_version 1
   head "https://github.com/jdx/usage.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3b7800a0f70a0d8eb7673c3e764c81cd462927bdd2e0166f37f4973716a29e1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0ef5a1cf325ab112e7efba1e47b82072e8561195b6091b1419cfa2cd77249a0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4deb596cf99f7c86c3a93e65f63b5f8cfe1c62b9c0957527145be178b1a838ea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "323597000e26694c4e3582eb529200e64d96302849f854758b51af14eb229151"
-    sha256 cellar: :any,                 arm64_linux:   "6e08999c5156a5294d03153794d0ecba4f5e2dfa503f905b005b5c9f492452b9"
-    sha256 cellar: :any,                 x86_64_linux:  "64dee1591f7ff725df660a98e16aa056f62ca253150bae7cb8bcd0b18efe73fb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "08d2d3acb71e8545552c3695fac7854fe38c212326e65f938cff92b9afe8cacd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c93e8278680b318ce26c14788e0b9f8b66c011c5c98269df257e6172c9c30d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0eae10d26197ee97ddae14dc8cd93cf33149b7a14e91ee63cf6ea5bb6bac06c0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "60fd3b4c1564ef6d47cccac9743488cf7df575d89186607d59156db1b28fcb3e"
+    sha256 cellar: :any,                 arm64_linux:   "a89aa4ea3252d4af8d5bf183b993baed598dffc9af0ccad051b9f1e3b8c73021"
+    sha256 cellar: :any,                 x86_64_linux:  "6c1c7be68e1bdd969ddf596f190fb677f54785732b37922ecd0d3a5a42612ef0"
   end
 
   depends_on "rust" => :build

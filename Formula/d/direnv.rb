@@ -4,7 +4,6 @@ class Direnv < Formula
   url "https://ghfast.top/https://github.com/direnv/direnv/archive/refs/tags/v2.37.1.tar.gz"
   sha256 "4142fbb661f3218913fac08d327c415e87b3e66bd0953185294ff8f3228ead24"
   license "MIT"
-  head "https://github.com/direnv/direnv.git", branch: "master"
 
   bottle do
     sha256 arm64_tahoe:   "5496ce0c1abb38345db8f58db469d2971d477ce4e077930ce52165b91d4a0a7a"
@@ -15,6 +14,12 @@ class Direnv < Formula
     sha256 ventura:       "7754bbca76a16a6737177ea057d4db9c2ad1e55387b9f3ff5aafe05912807008"
     sha256 arm64_linux:   "56ea5661ae3fc5537e236f2cecde9117b7dc83e90cce9269c5edb0d2209caa89"
     sha256 x86_64_linux:  "5a3705773719544d8c366610498528d6607de6a2961b2ecb1cdedb5781b9d1c6"
+  end
+
+  head do
+    url "https://github.com/direnv/direnv.git", branch: "master"
+
+    depends_on "go-md2man" => :build
   end
 
   depends_on "go" => :build

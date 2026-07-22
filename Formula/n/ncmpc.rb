@@ -1,10 +1,9 @@
 class Ncmpc < Formula
   desc "Curses Music Player Daemon (MPD) client"
   homepage "https://www.musicpd.org/clients/ncmpc/"
-  url "https://www.musicpd.org/download/ncmpc/0/ncmpc-0.52.tar.xz"
-  sha256 "3af225496fe363a8534a9780fb46ae1bd17baefd80cf4ba7430a19cddd73eb1a"
+  url "https://www.musicpd.org/download/ncmpc/0/ncmpc-0.53.tar.xz"
+  sha256 "92c68bb9bf294d48209587b19df9005db7247e9c38d7e4fb74f8586e6f23c56f"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url "https://www.musicpd.org/download/ncmpc/0/"
@@ -12,12 +11,12 @@ class Ncmpc < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "79925b06f7a4619e7e1e062db3ce4cac42646b6e3152de52554cad995969cbe1"
-    sha256 arm64_sequoia: "0f280c690e83b4c4d4cb20aca9084c5bbcafb8046ac0c90b524f001ca4a45fcf"
-    sha256 arm64_sonoma:  "4047ec4992db95e0b22057f9164dfcbbf69104d765674f62d5acb502e56c61e2"
-    sha256 sonoma:        "57f3acdb57163d256a7470b702b6630cf79585c84822cfc6b1d10784c18a8fcc"
-    sha256 arm64_linux:   "40bc8c01c1dfcd01f160e9ee0286225a681ebcf2962a47d820137d54a5bc50c8"
-    sha256 x86_64_linux:  "8244e48ef47afc6f03c012409429e6fd1c2c8631a53a197d31b0df9ac88a7628"
+    sha256 arm64_tahoe:   "7c181f669486f1d0d91c10960d9205abf5facc063ba8d2f4dd4f9129a815207a"
+    sha256 arm64_sequoia: "af8197235579cf6bc71b5ccb33841adcea1f58a26e54ca502c332b79b163c242"
+    sha256 arm64_sonoma:  "92be643c8a15acdcfccfc80afb71b36ad6ff6c6d514129eb12ed4f7a5e5d3507"
+    sha256 sonoma:        "732a7f423bb35e20705c437f840a2152469be96389e0f9d26c8a01c4c235265a"
+    sha256 arm64_linux:   "ef607fd9ac877b7577a73e2bbd4ddce46347ae47125400da5e6d0c0a046c06b4"
+    sha256 x86_64_linux:  "de69ab5dfd2f9a9142854e6145e44c832bc953e26d52251e7aaa4376737ab5fb"
   end
 
   depends_on "boost" => :build
@@ -54,6 +53,9 @@ class Ncmpc < Formula
   end
 
   def install
+    # Apple Clang 16 rejects `constexpr` with `reinterpret_cast` (P2448 needs LLVM 17), e.g. GetSteadyPart()
+    ENV.append "CXXFLAGS", "-Wno-invalid-constexpr" if OS.mac? && DevelopmentTools.clang_build_version < 1700
+
     system "meson", "setup", "build", "-Dcolors=false", "-Dnls=enabled", "-Dregex=enabled", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"

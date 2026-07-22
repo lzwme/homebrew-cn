@@ -8,13 +8,13 @@ class Allureofthestars < Formula
   head "https://github.com/AllureOfTheStars/Allure.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "61cba6892d9547217707836e07fbd58bbedc09cd0c3de66ec702f964498d6967"
-    sha256 cellar: :any, arm64_sequoia: "056f80e8ac29218c32ef605f7f3b26382f3389727152346b6a349a843bfeb574"
-    sha256 cellar: :any, arm64_sonoma:  "73fe9005468d96afa4a855f1f2ff085adea986d23e6eab9a6361ebf289a6fa53"
-    sha256 cellar: :any, sonoma:        "1e8dfe00d23852d9bc37d5527a37156e45be96cd209fda6b18dc97e25c5c5911"
-    sha256 cellar: :any, arm64_linux:   "d67c6fae3b45680f2890399d1c0a47510d6127845b063d148a9b6ea0a896660b"
-    sha256 cellar: :any, x86_64_linux:  "1cec1322a97b3a49e02659a8d3a315441cc628911c247f68f21403fff73cc2bd"
+    rebuild 3
+    sha256 cellar: :any, arm64_tahoe:   "0cce7783d31164730863db9afeeae32c81412a5d70ce9f6d6287266191cdffc3"
+    sha256 cellar: :any, arm64_sequoia: "1473587658292222a91e20f436d7753e552294cc27d7883365fa9d1a32b31766"
+    sha256 cellar: :any, arm64_sonoma:  "b0870f99c72b0c4a6fabba57dd9812bcee98fa842abccac53596c4bfd87f8a1d"
+    sha256 cellar: :any, sonoma:        "9cd14d1633fa5dca71ca93c3a31160e42f6ad83288eed2180884890e79a69c1c"
+    sha256 cellar: :any, arm64_linux:   "8695e01b93d5c370de9d547cfe4ec8f66f75fe984b650f413ee1f49ff64fc143"
+    sha256 cellar: :any, x86_64_linux:  "2b9650506f70289e5bc2f9b2b0167a2f7cfc66365134e0c6ed088bdb9ee75d7a"
   end
 
   depends_on "cabal-install" => :build

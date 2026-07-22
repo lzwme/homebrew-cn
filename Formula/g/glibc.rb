@@ -53,9 +53,9 @@ class Glibc < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_linux:  "8a092cc0773c766c14ac4af34fec15b825028aedba3ecb61995939fcbd4e46d2"
-    sha256 x86_64_linux: "a7e87f5dc33814f0d5aaf6beb6bebfbdd4b268ece9c0e45b5bcc6549db4e197d"
+    rebuild 3
+    sha256 arm64_linux:  "bfa9cd9183c8a847587a2eaf95f7067b954839338cd7dc027e78efe944598a7f"
+    sha256 x86_64_linux: "7f3f8e5a994b15c20141e4884a41abaf093cabe1b172ed6de603781ba4088738"
   end
 
   keg_only "it can shadow system glibc if linked"
@@ -216,6 +216,11 @@ class Glibc < Formula
         "--with-headers=#{Formula["linux-headers@6.8"].include}",
         "--with-bugurl=#{tap.issues_url}",
         "--with-pkgversion=Homebrew glibc (#{pkg_version})",
+
+        # Security hardening options used by Arch Linux, Debian, Fedora and Gentoo
+        "--enable-bind-now",
+        "--enable-fortify-source",
+        "--enable-stack-protector=strong",
       ]
 
       cflags = "-O2 #{ENV["HOMEBREW_OPTFLAGS"]}"
@@ -249,11 +254,17 @@ class Glibc < Formula
 
         # Avoid Intel CI runner timeout on tst-malloc-too-large-malloc-hugetlb2
         ENV["TIMEOUTFACTOR"] = "4" if Hardware::CPU.intel?
+
+        # Workaround to skip test failures seen when running in bubblewrap
+        xfail_tests = [
+          "test-xfail-tst-nss-files-hosts-long=yes", # error: tst-nss-files-hosts-long.c:36: ahostsv4 failed
+          "test-xfail-tst-setuid3=yes",              # runs setuid(0) expecting EPERM
+        ]
       end
 
       system "../configure", *args, "CFLAGS=#{cflags}"
       system "make", "all"
-      system "make", "check" if build.bottle?
+      system "make", "check", *xfail_tests if build.bottle?
       system "make", "install", "localedir=#{share}/locale"
       prefix.install_symlink "lib" => "lib64"
     end
