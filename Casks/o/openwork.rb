@@ -8,11 +8,11 @@ cask "openwork" do
     arch arm: "arm64", intel: "x86_64"
   end
 
-  version "0.17.36"
-  sha256 arm:          "e026349bb536f20b6fd4b4ed172a2a0ec93a59192aaeb242c6c8e5406efe21ed",
-         intel:        "1e7f1a8afcd38a4567b37b0c93821467b22759074289c9bccf0ce69aab236944",
-         arm64_linux:  "368b2ea20b45bd32b26ebfb3b49196de1d0167007431db2852c689a24a2c1472",
-         x86_64_linux: "06bdd9bb14aaf5a6b962a379b612cd637d29996a90b8f293331b7a4a9d85cd05"
+  version "0.17.39"
+  sha256 arm:          "c2f08d578002ee31929b6c00a36d5f0ba6d002bcecf97563537532adc27e8581",
+         intel:        "c88195858e5ab37eeb2e357ce6f92bfd6ebc502b0623ebb75f0758ba31742667",
+         arm64_linux:  "9fddd3fd1adb4245ecb9c2bca6716642832788aa0b6611a1a2ee5998e233e0b1",
+         x86_64_linux: "088ce004d208b81f3fd853b81734a29667e165aa093ce685b286ef0d35cd8efe"
 
   url_end = on_system_conditional linux: ".AppImage", macos: ".dmg"
 
@@ -33,10 +33,15 @@ cask "openwork" do
 
     app "OpenWork.app"
 
+    uninstall quit: "com.differentai.openwork"
+
     zap trash: [
+      "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.differentai.openwork.sfl*",
+      "~/Library/Application Support/com.differentai.openwork",
       "~/Library/Application Support/OpenWork",
       "~/Library/Caches/OpenWork",
       "~/Library/Preferences/com.differentai.openwork.plist",
+      "~/Library/Preferences/com.differentai.openwork.ShipIt.plist",
     ]
   end
 

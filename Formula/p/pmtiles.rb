@@ -1,8 +1,8 @@
 class Pmtiles < Formula
   desc "Single-file executable tool for creating, reading and uploading PMTiles archives"
   homepage "https://protomaps.com/docs/pmtiles"
-  url "https://ghfast.top/https://github.com/protomaps/go-pmtiles/archive/refs/tags/v1.31.1.tar.gz"
-  sha256 "1890ca1c2f0aff60097c69efb65b51249fee3e19ff0811affc06da9abf7144bd"
+  url "https://ghfast.top/https://github.com/protomaps/go-pmtiles/archive/refs/tags/v1.31.2.tar.gz"
+  sha256 "022386795fae441dd35927e4061daaed8cda7e21ba0a2e2253c8fd0d85bc482f"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Pmtiles < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9cd82b68ab082ad94b3ade12f09a0c788262ec37495679e3ec6710ebf898a3fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d83b743a766c192980b361d3879d623fccc0cc38839363f8c9741a22bf2142f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9bf11904614beccef4cbaa235db25ccfbafd41e10c7f19f9a48299b27b5b9977"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e1a829b99fbffd13591006fbeb0013c4cc2a3de01b8739f793df734de280de99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4f0a00cb3762cacbd21ecef76dcff86807d4766885e0b3a5cca2e0c9586e37a"
-    sha256 cellar: :any,                 x86_64_linux:  "e92f3b3c42697348b26c6e6ff95514d167063fbe007cec808bda492f922f7835"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "97a0329f0e88fbbac341495b5615b1d4086dc1401f60d68c5ac1a4971de70e96"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e7ff0e7d2200f4cfa2a2c138130bf8d1d3d0199ae86d6912c6cd2a8062afdd9c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c6dba8b2647a829ceb427b1281384750b62ca25653806e1748c2a9fd811c5bcd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "19929d009b2743cbf54bef3ad1282320de25a735529b6416512792f933439ffd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "221f0bdaec0c85c400537c9241747fb3a8521fb37b5dd1b2df067a5571bebdea"
+    sha256 cellar: :any,                 x86_64_linux:  "2725fda54374c65baa157d8244076679fccf27a1d223a1ef2ffddba2d9b75c45"
   end
 
   depends_on "go" => :build

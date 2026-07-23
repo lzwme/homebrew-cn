@@ -3,17 +3,17 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/f1/8f/54b1dce68ba31c86e6d4b3e0e43580ea4729d2b2de80a76eeea8232fcce5/locust-2.46.0.tar.gz"
-  sha256 "59629035d26cc70a1d8a94085cf71f115bb80785a1577931b44ed9999305713f"
+  url "https://files.pythonhosted.org/packages/43/9a/477d75bb2f19e92b4996493519af3e36eaeb1248e1e94637817cf60b6201/locust-2.46.1.tar.gz"
+  sha256 "ed26148522522d13fb453c5e4e281a82650a3b2ec5ad5f00a738ff22a0944808"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "54d1e0c41a2757dba389267eed1d11a6864f09e37acf56b27474f65ecfb4cd90"
-    sha256 cellar: :any, arm64_sequoia: "0457636ee0fc18197fcfd04933db380f317d92c901abd7e7aae52b602f968cdd"
-    sha256 cellar: :any, arm64_sonoma:  "0271a53bed1c10aa1a84e08927f984783eb122e3615fad5caf13990cc0cd6c12"
-    sha256 cellar: :any, sonoma:        "d503229fc10080c0544418a9199bc838f1e566e1275ac1c2864cc347438d6daa"
-    sha256 cellar: :any, arm64_linux:   "8a3fe3cdad8a101dabe47efd73c6f4c1f71f56986cf94e45aecc5bc9632ac100"
-    sha256 cellar: :any, x86_64_linux:  "603450ef169af0c065fc3bde9fc8b3cea59fa878168dcafff8bb714e524e582b"
+    sha256 cellar: :any, arm64_tahoe:   "b519b61e91678abfe0f97779401e98064de7cf3b9b1ba8d29430455120197661"
+    sha256 cellar: :any, arm64_sequoia: "94e3f7e2b910c2ca319f0d5aa50a71ea77e75b8fd0313684a34d1c23c2d59011"
+    sha256 cellar: :any, arm64_sonoma:  "7fdee8836e572f9853a1213d3b22313a0acf88f67d54b6a8587823de36b0cb1a"
+    sha256 cellar: :any, sonoma:        "9e205e4dcc1e6418e9e0a1d4cdbf2c49f1505158e93b8bd8bf08f5f6dcc42460"
+    sha256 cellar: :any, arm64_linux:   "183568bb036764ae2bfbe0cfcd3d075a1b9736df8c01a853de47697ed70005d0"
+    sha256 cellar: :any, x86_64_linux:  "fff5ee2e5446577fb53f2d135ec627e37b3f9e9e7eaff45513e70d203b050206"
   end
 
   depends_on "cmake" => :build # for pyzmq
@@ -70,8 +70,8 @@ class Locust < Formula
   end
 
   resource "gevent" do
-    url "https://files.pythonhosted.org/packages/9e/48/b3ef2673ffb940f980966694e40d6d32560f3ffa284ecaeb5ea3a90a6d3f/gevent-25.9.1.tar.gz"
-    sha256 "adf9cd552de44a4e6754c51ff2e78d9193b7fa6eab123db9578a210e657235dd"
+    url "https://files.pythonhosted.org/packages/c4/cb/98aa3a299e2fc4a2372b5d124863e02965b64579ffc29fe54d0641e65b2f/gevent-26.5.0.tar.gz"
+    sha256 "1655eb04c1e20d71b2aa4a3c7528162dd58ff6cc46a037af1f01f534c80fefba"
   end
 
   resource "geventhttpclient" do

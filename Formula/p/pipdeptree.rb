@@ -3,15 +3,15 @@ class Pipdeptree < Formula
 
   desc "CLI to display dependency tree of the installed Python packages"
   homepage "https://github.com/tox-dev/pipdeptree"
-  url "https://files.pythonhosted.org/packages/c1/95/631bdc59b0f8f0ef8d6b66267fba6a5907278375a255064dbb11dece34ea/pipdeptree-4.0.0.tar.gz"
-  sha256 "2012876c6853ad6cccf4537dd5c07d19ac144c7fceb7ab1ef9e234fa6671c3b9"
+  url "https://files.pythonhosted.org/packages/06/68/8b0bca63d885a34bc7f8bcbc001bb9ffdc937fdada1d01d09f9af7785250/pipdeptree-4.1.0.tar.gz"
+  sha256 "6eb7e671ffa06ef597d683680d483a4882a86a2a00494971733bd88a3404c44f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e7abeb1b7c1a48a399ce93633515b4e309e78481d493c6b05698ff4af533038e"
-    sha256 cellar: :any, arm64_sequoia: "803273cc6cb7ae1dad1199a07675ab58226d2582620e74cf8e5247d4341973f7"
-    sha256 cellar: :any, arm64_sonoma:  "985928534a36a63785682a2cbcbf2351c4e7c758435a5ed3b40e655baf7abbbd"
-    sha256 cellar: :any, sonoma:        "93371b33976faaaccfcbecee30f4155212817fbd444b585c5fd6994c75bcf3cb"
+    sha256 cellar: :any, arm64_tahoe:   "dac05abc8d96db8db287eccab40b163d556be51f9d7a551f05573f6892984fa9"
+    sha256 cellar: :any, arm64_sequoia: "be8eb7a4309bba470426652afd5475a4477565aa14ceb47a9b2670bf60227fa5"
+    sha256 cellar: :any, arm64_sonoma:  "9fc8bad90d6d9d8c94d5aca460827019dff61493ba4df85561fce2886faf33d0"
+    sha256 cellar: :any, sonoma:        "bbf7a556f710d3f2bfa551e253c845739a400d7d85f7368c576b16781914fe44"
   end
 
   depends_on "cmake" => :build

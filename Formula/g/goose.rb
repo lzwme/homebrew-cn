@@ -1,18 +1,18 @@
 class Goose < Formula
   desc "Go Language's command-line interface for database migrations"
   homepage "https://pressly.github.io/goose/"
-  url "https://ghfast.top/https://github.com/pressly/goose/archive/refs/tags/v3.27.2.tar.gz"
-  sha256 "7a99030eea486afd72a846e3d02c7ea959ddc0913f391a15dc572c1b683d77fe"
+  url "https://ghfast.top/https://github.com/pressly/goose/archive/refs/tags/v3.27.3.tar.gz"
+  sha256 "89ffece26aae3f06700a4a0a1349d0e3abd81075e449dee79056622062ed8907"
   license "MIT"
   head "https://github.com/pressly/goose.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9507001e3ad22b04bc6589488d28790c117b70ed6557fdbc3fcd0fce0edc00c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "820445d49003b9816b8a1bb70addf3d57d3c35e5477dad2c3314a0c6530c9834"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3edaff13c1ef7ec977d5ba69fa2e79a26b892ab7bee54b5e8c3cd41ad629f19"
-    sha256 cellar: :any_skip_relocation, sonoma:        "165349c57d7071d0438df968084bd73ac889bf9046ae38659a2a735dba7b99a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b64eedfdecfbe981ae90b22b1defb04a276a06c769c121206c2df86596d08720"
-    sha256 cellar: :any,                 x86_64_linux:  "7cc1d5a9b0b458f6ba374bb4e4df7209958d0d192e98b32ba0b54c310bd10622"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ce2a476c7487de0b908c968ca44a7e81714e5bd9343603b3e0487b22db62dd9d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5290e5c68f1bf8768ddd6681e1ca344897a394f556cd8ecb47f0d4294e738a22"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07b26a62868f8897c529aa3449020bb0beb111c0ae170a301fb0a563da305c2c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "268808241333fbf2d11446544b229fb94a0c3820668733fe2a80eaf208f88100"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ede4a8e24a7abd45cfba46b7bb6f1ea5ab1ecfbbde0008db2ea5540852fb5e9"
+    sha256 cellar: :any,                 x86_64_linux:  "dc1cf3775aa712bc665d9a1d92b36ac49f4032bdcc9a86af612fb1e0950e8cef"
   end
 
   depends_on "go" => :build

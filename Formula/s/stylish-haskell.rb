@@ -7,15 +7,13 @@ class StylishHaskell < Formula
   head "https://github.com/haskell/stylish-haskell.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "636a0426df19f6ff5e1bf0ce1256bf57b69c9e8563653e984bce28d75a04c6c4"
-    sha256 cellar: :any,                 arm64_sequoia: "cd766c7c8c5cb06debbe9c331916280058dfa6245a8a22ff3b055859dc982909"
-    sha256 cellar: :any,                 arm64_sonoma:  "7a470983136a1c6ec36b477f9dfac734781afcf907a33d85d83d1faa17bb5501"
-    sha256 cellar: :any,                 arm64_ventura: "44d4be8b570687514592eef731c60ad2f34e6e48d6ee57141ae90eaa28d89a10"
-    sha256 cellar: :any,                 sonoma:        "adb984643626bd491580f169f3578f22639d4f1532a22a97c88f32a057996b33"
-    sha256 cellar: :any,                 ventura:       "4bbdbc8b5a5cc050f6a6cb47297c3f9f77ab3f90da7d56758e750a3ddc499fa8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3be00f8a82099f4031c5068c33f6be734a36b2a21c30941805a9238f84e12849"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "442f39eb248892c063cc1dc89aa2ed7b1acb33e99d8ce76fc1493b8f63d9886e"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "375b12aeb5ec9d70bc4cb78b291fc68a5d8afc3e057c93e9a7375c7d022b3931"
+    sha256 cellar: :any, arm64_sequoia: "d4c31632c556e1a0c92b7099396052efe0501f058675639fb4182e28573e61d3"
+    sha256 cellar: :any, arm64_sonoma:  "0cc9f3d577e76813d02f754020f30eefaa12d2f0356f2d01f8df36dfe560d17a"
+    sha256 cellar: :any, sonoma:        "a499060dd46b6b6fca715e861b1a8ce10b4c80f040db8e98007f4a719952682f"
+    sha256 cellar: :any, arm64_linux:   "9e7417fa6700b9304a1a9a3134e862bc4862cfc68882842588574a1e3ece0ef2"
+    sha256 cellar: :any, x86_64_linux:  "2b4f585f1b1ff99393bbb6734af0a3561e0dc5de1f33a1625bc78a09f85feb9f"
   end
 
   depends_on "cabal-install" => :build

@@ -6,15 +6,15 @@ class CondaLock < Formula
   url "https://files.pythonhosted.org/packages/06/44/52deb5012f8ef85c224cb3b1638c09c3b3d70b2f9e101e893bb61b9ee9ba/conda_lock-4.0.2.tar.gz"
   sha256 "c4ebc4404ea760b1dd0035d6403fa27e291050269a5fd1b629b89fcbc75ef32a"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e86a104a4ec857e9f3f6474ec921919376794b6ce748a058b13a6d8c3d1a8d28"
-    sha256 cellar: :any, arm64_sequoia: "fc723104d08a5e5e8b0999e305930ccbc784dab179c739961a0223b4a3a46ef0"
-    sha256 cellar: :any, arm64_sonoma:  "45e3a912f9a540fa079af4c7feffeb2b78f5f36f41187be46cfdb17c03ca5749"
-    sha256 cellar: :any, sonoma:        "9bc6c7d332612217b5328907fc04f0f7c978bea7fa0222d2885ae39b22ba685d"
-    sha256 cellar: :any, arm64_linux:   "147174633d875bdcfc4ec2ac9608b85bb0aceef9e10229f784977f33022b8244"
-    sha256 cellar: :any, x86_64_linux:  "00ef441e8244de9b6e746e3a5e37b9242253ec2b95d9819357aa8c8a2db596f5"
+    sha256 cellar: :any, arm64_tahoe:   "5b18be94550286946253d5edae48cd3ab367d0920466cf3657a02ab3e8f1671f"
+    sha256 cellar: :any, arm64_sequoia: "ae0137c26b694430d2f0da7a0e58e71732f4b105f7365ec4379ea25d0295fe3b"
+    sha256 cellar: :any, arm64_sonoma:  "59d5b1d5c6da5da39c206a4925bd62dcd67c180fb005a9fda81e57f0b82e2a9a"
+    sha256 cellar: :any, sonoma:        "628fd41305072d7814a5450811c24a4be104a4548b9f1752e054a40d791864f9"
+    sha256 cellar: :any, arm64_linux:   "06c28a3048e9445b31048ac84e36ff127095e549e82666bceead0a6051d69770"
+    sha256 cellar: :any, x86_64_linux:  "7e73ec6eadbf69d076e276f46504cae48f6cd2f9db3ae69dcf72919a1a2c7eae"
   end
 
   depends_on "rust" => :build # for cachecontrol, uv-backend
@@ -38,8 +38,8 @@ class CondaLock < Formula
   end
 
   resource "boltons" do
-    url "https://files.pythonhosted.org/packages/7a/1f/60df922ae497d838c58b48caa518251e2c8e228d7fe93792fee69a3858d6/boltons-26.0.0.tar.gz"
-    sha256 "5566d6cfd5a1e873d8e8476496287a9f92979964611ad9a9cecb6b0ef29b1edd"
+    url "https://files.pythonhosted.org/packages/47/99/12bace94ae2ba961bdc46d49277ff15d38dba074bc3987b0c0b4355a37a7/boltons-26.1.0.tar.gz"
+    sha256 "5764468aba493b15995ed17f46a16789023f123ca2a62d491a9ce825c1cbe26c"
   end
 
   resource "build" do
@@ -98,8 +98,8 @@ class CondaLock < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/35/94/00f2059e4835eace3ae8fde680b932c496f8ec7bdc99168dfa53fb2e6b79/filelock-3.29.7.tar.gz"
-    sha256 "5b481979797ae69e72f0b389d89a80bdd585c260c5b3f1fb9c0a5ba9bb3f195d"
+    url "https://files.pythonhosted.org/packages/99/2c/c603f8aedff281295f7afce455d5c05f33459c7bf684abb46228f844a1f0/filelock-3.31.2.tar.gz"
+    sha256 "e6d35965c709527915a184837a8421826d18bc3f9d7e9a5a0c8114a782475d66"
   end
 
   resource "gitdb" do
@@ -108,8 +108,8 @@ class CondaLock < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/59/30/a8a0c15f9480dc91b5b7f11ebd26105e5f80898d7ff02da197fef35d8395/gitpython-3.1.51.tar.gz"
-    sha256 "22c9c94bb6b0b9f3c7157c684fece45a414cea204586b600beae6cd4570dcd6d"
+    url "https://files.pythonhosted.org/packages/17/24/0e0c12cb6f7cb864779a9d2fefee9ca91838f6db402c8780c9d28a8d7ebe/gitpython-3.1.53.tar.gz"
+    sha256 "06ae8d9623b0ed0d67b8adeac5c7008d0a5a404b087a9e0d0c7163bdd3a6b497"
   end
 
   resource "idna" do
@@ -178,8 +178,8 @@ class CondaLock < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
-    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
+    url "https://files.pythonhosted.org/packages/52/cd/4f25b2f95b23f5d2c9c1fe43e49841bff5800562149b2666afc09309aa8f/platformdirs-4.10.1.tar.gz"
+    sha256 "ceab4084426fe6319ce18e86deada8ab1b7487c7aee7040c55e277c9ae793695"
   end
 
   resource "pyproject-hooks" do
@@ -233,8 +233,8 @@ class CondaLock < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/51/db/03eaf4331631ef6b27d6e3c9b68c54dc6f0d63d87201fed600cc409307fd/tomlkit-0.15.0.tar.gz"
-    sha256 "7d1a9ecba3086638211b13814ea79c90dd54dd11993564376f3aa92271f5c7a3"
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
   end
 
   resource "trove-classifiers" do

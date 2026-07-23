@@ -6,14 +6,13 @@ class GitMediate < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "42134552e6c948a352c7a2819178ca7fdd34254d5932ac9867635a31813dcebe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c8be0d8c2ccb6e709e05b0744a8ae7485692993d492d3dbcac2ff7312bfb56a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5fea46d5954c87f70437d452dc81625aacd6d8538649d7a5b535771d9822026"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b57ee5c16d7e4747d9f255bc02109fc0da671ba7cfda9d13798286bf80958e38"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f9b46bfa29542509a7fa1b33dadf15a415dbd154066ea58ec7683861a9ab3544"
-    sha256 cellar: :any_skip_relocation, ventura:       "45a20d5499cf2ed0a7c0037459b50222cbcf0d18643142c66a3958bc227b2d09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "58caff9b2789c99a435feb86be3fc3f7e6a9b05c4fffba13e8c87b23886eb11a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54dd625814a87c231bc8d8fc83ddb4b3366ca87f068a0a6f63e17ace1e842744"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "69a57ba7f69a6c867af27eb65efed17666280a53a30c762a7943ab5384205713"
+    sha256 cellar: :any, arm64_sequoia: "99ac6bb97c0dacdd5bf9067192fc031f738b5ace8fefae55e464bd5820639232"
+    sha256 cellar: :any, arm64_sonoma:  "e5f2cabad4b3400197969d8e34b759634a30676f161a37f29c400d1da0a4f397"
+    sha256 cellar: :any, sonoma:        "94b9dbf70889d3a4a70bcc0d7a8079db0c9797bd861fc44a4ddbdfe4486e3bd5"
+    sha256 cellar: :any, arm64_linux:   "570da92723300a3fcd66ea2fa46f6e5ce03059a07c12f0a8b2733e35a696ffc4"
+    sha256 cellar: :any, x86_64_linux:  "00f6e2e4642851eb2236a4a4aa316f199cd184213040492bbf1747a6aab7de1c"
   end
 
   depends_on "cabal-install" => :build

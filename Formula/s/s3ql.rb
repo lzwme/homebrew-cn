@@ -6,6 +6,7 @@ class S3ql < Formula
   url "https://ghfast.top/https://github.com/s3ql/s3ql/releases/download/s3ql-6.2.2/s3ql-6.2.2.tar.gz"
   sha256 "d8ee855f628baa0b175ed37c61851c8020e3e26fd8d494729817992edc23c08f"
   license "GPL-3.0-only"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,8 +14,8 @@ class S3ql < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_linux:  "c1c4a85e064e25f70489d95b47174adbe83040a1fbecf321cb797ef67d6049e0"
-    sha256 cellar: :any, x86_64_linux: "f8d00c493fc87537cf9a1dd120eb5399fcb61d9d356218dd84806a6e985d7c98"
+    sha256 cellar: :any, arm64_linux:  "d13822024f297eff653dc9a6a49d5daabb239bd5707b32b9d27cda41e20a34d4"
+    sha256 cellar: :any, x86_64_linux: "48822c72360b17e269dc4ba3c74858e8f01d4c673bde78cc570eb1dd2ed20047"
   end
 
   depends_on "pkgconf" => :build
@@ -29,13 +30,13 @@ class S3ql < Formula
   pypi_packages exclude_packages: %w[certifi cryptography]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
+    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
   end
 
   resource "apsw" do
-    url "https://files.pythonhosted.org/packages/df/8e/6db1f1b21e461bb77b455bc20ff8ab5fb9642ff8370338743dd812483f8d/apsw-3.53.2.0.tar.gz"
-    sha256 "5c59bde36e20a33c0a0399bfe4021f2cd6fc049ac1b15d58f0dc25b48ed1d87f"
+    url "https://files.pythonhosted.org/packages/9a/2a/ec1dfda955cda4b8d77b076553b87d428315bd3a17ea4286aa9dc40901fe/apsw-3.53.3.1.tar.gz"
+    sha256 "7684d24e77dc9e3b301ee5374a8a9501ad8a85b821ce85391260a2448dd02323"
   end
 
   resource "attrs" do
@@ -44,8 +45,8 @@ class S3ql < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "defusedxml" do
@@ -54,8 +55,8 @@ class S3ql < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/c6/ad/ff781329bbbdc0974a098d996e89c9e1f7024262f9e3eec442fbb9ad1ac6/google_auth-2.53.0.tar.gz"
-    sha256 "e7e6aa16f6bee7b2b264830fd04f08087a1d5a836df516251a5d15327b246c9c"
+    url "https://files.pythonhosted.org/packages/58/66/b4ba60005743e01933e22b4f62313e063f7460458b7d8a358427b4930013/google_auth-2.56.0.tar.gz"
+    sha256 "f90fa030b569a92654b9d690665a073841df33d57487be53db583a9a0867a553"
   end
 
   resource "google-auth-oauthlib" do
@@ -94,8 +95,8 @@ class S3ql < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/5c/5f/6583902b6f79b399c9c40674ac384fd9cd77805f9e6205075f828ef11fb2/pyasn1-0.6.3.tar.gz"
-    sha256 "697a8ecd6d98891189184ca1fa05d1bb00e2f84b5977c481452050549c8a72cf"
+    url "https://files.pythonhosted.org/packages/a4/9a/23310166d960def5897e91fe20e5b724601b02a22e84ba1f94232c0b7f67/pyasn1-0.6.4.tar.gz"
+    sha256 "9c447d8431c947fe4c8febc4ed9e760bc29011a5b01e5c74b67025bd9fb8ce81"
   end
 
   resource "pyasn1-modules" do
@@ -104,8 +105,8 @@ class S3ql < Formula
   end
 
   resource "pyfuse3" do
-    url "https://files.pythonhosted.org/packages/98/c8/8d4b00354b0aae1660310c6853cad7228af7efc344b3ff7d8cc4a894343d/pyfuse3-3.4.2.tar.gz"
-    sha256 "0a59031969c4ba51a5ec1b67f3c5c24f641a6a3f8119a86edad56debcb9084d9"
+    url "https://files.pythonhosted.org/packages/b9/a9/ce2c0513e9611ee2ffeeb482a33d23a210326801d48866df30a989562d43/pyfuse3-3.5.0.tar.gz"
+    sha256 "88399a9494b88603230bba300f4ba9ad63fece5ed514ca3633d555a0c6a42b24"
   end
 
   resource "requests" do

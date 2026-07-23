@@ -6,12 +6,13 @@ class Elm < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "70f6f7f915c20c7b494a0c68ea5d4eafb7a6cfef22b02e229cd084d0bffe4bf3"
-    sha256 cellar: :any, arm64_sequoia: "9300c6c9314285996acbde5b1cf6dc9d8d24478aff12506b7a949dc8b35da2ea"
-    sha256 cellar: :any, arm64_sonoma:  "062b153f12bcefbac51e9768680fa72e71ed30d6e7967e9030623e1bf1ab29d7"
-    sha256 cellar: :any, sonoma:        "f099f4b3604eb1d29cf81f49c70aa66f9c5a1da262c9196ae7a5b2656c8e217e"
-    sha256 cellar: :any, arm64_linux:   "6761d2c3c643a821b2e7274475b0086ef590a495ad1436c070648e5faab58e26"
-    sha256 cellar: :any, x86_64_linux:  "52fc6c86c6e28b1b75275e0b613e06c388426dbb3ae3cc9a91ff648ab896775c"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "bc5a95d3d5f3a03667fa07c79eb064a657b42953eb737a98014932ecef3230a8"
+    sha256 cellar: :any, arm64_sequoia: "2a8c28d024de7baeb84a85ca1039317f0973c04270ee4368fa38e5c181a17029"
+    sha256 cellar: :any, arm64_sonoma:  "8c368c94379d704f5c3cb0de16ff3e55623b3b2538bde8da581bb228f32b2d5c"
+    sha256 cellar: :any, sonoma:        "e6533b03db2f6918fb74b40948c2172206f491ba29450cf320f671ac379aeade"
+    sha256 cellar: :any, arm64_linux:   "35ec2376f0ec9a4aa933d58c6a10ee6efb36f2aebe733c09889ba2dc622ef514"
+    sha256 cellar: :any, x86_64_linux:  "f4cb28e29d93cbaa9aa31895bf3ca71dba4a93259425693bd7da91d0f24fcd90"
   end
 
   depends_on "cabal-install" => :build
@@ -26,15 +27,11 @@ class Elm < Formula
   end
 
   def install
-    args = %W[
-      --jobs=#{ENV.make_jobs}
-    ]
-
     # Following the process from the Dockerfile for building elm binaries here:
     #  https://github.com/elm/compiler/blob/main/installers/linux/Dockerfile
     # This process does not use `cabal install`
     system "cabal", "update"
-    system "cabal", "build", "elm", *args
+    system "cabal", "v2-build", "elm", *std_cabal_v2_args.reject { it["install"] }
     bin.install Utils.safe_popen_read("cabal", "list-bin", "elm").chomp
   end
 

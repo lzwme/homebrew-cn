@@ -23,12 +23,13 @@ class Unisonlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "50b548317e8ae9e4b68c46c38476e07c1dbdcd79b90b05632a2794f734371ae4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "101a75f0f7a0bfa4610de3d805d77ffc5ead27f8ed4ef28abc681adec545d30f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81d6f282fb3efd78061596c0720b2af8e15cfb5f3e9de3e335788c47d615453d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b801fe79e52ef7161d77e896fd68dcd42ee49ce04e32c9893cbf2b8124ef8757"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "86fafa0dd2cec4f0869ad0f0694214f399209e48b8b7d2de8cf50fc3aed9a690"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52e224fa610d3c36dbcc8d66145fb9b7e27b53d3918aca948667d76f228c6ebb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0c302234a571e854f87b61e1eb685fad5085477daa33a6f7a0e5ae33dae10c0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc86bc0378aaf9a9f97c24fb4efb03ab0cd159f963d34935ec97c48d6035a43c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1843ed7d7646cd8eed9c602b0e5e042d50cdc4f2dc0b33decac3adee5e658787"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0f7e75c91567d955e142ee14517bab99a2af38f66f316845df8a3425e48890d1"
+    sha256 cellar: :any,                 arm64_linux:   "546d69182075bbb4be348028e5b26155f7b3100275f1b863c18fb4c38e7a51b3"
+    sha256 cellar: :any,                 x86_64_linux:  "569b34b258ba310c2589f7728ca4fdfb3d7bac148647592e0805fee8ac1eb711"
   end
 
   head do
@@ -62,6 +63,9 @@ class Unisonlang < Formula
     resource("local-ui").stage do
       ENV["npm_config_ignore_scripts"] = "elm,elm-format"
 
+      # Loosen the elm-version range to compatible versions as we are not using npm installed copy.
+      inreplace "elm.json", /"elm-version": "[0-9.]+"/, "\"elm-version\": \"#{Formula["elm"].version}\""
+
       system "npm", "install", *std_npm_args(prefix: false)
       # Install missing peer dependencies
       system "npm", "install", *std_npm_args(prefix: false), "favicons"
@@ -83,12 +87,13 @@ class Unisonlang < Formula
 
     stack_args = %W[
       -v
-      --system-ghc
-      --no-install-ghc
-      --skip-ghc-check
       --copy-bins
       --local-bin-path=#{buildpath}
+      --no-install-ghc
+      --skip-ghc-check
+      --system-ghc
     ]
+    stack_args << "--ghc-options=-pie" if OS.linux? && Hardware::CPU.arm?
 
     system "stack", "-j#{jobs}", "build", *stack_args
 

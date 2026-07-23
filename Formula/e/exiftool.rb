@@ -14,7 +14,8 @@ class Exiftool < Formula
 
   livecheck do
     url "https://exiftool.sourceforge.net/history.html"
-    regex(/production release is.*?href=.*?Image[._-]ExifTool[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(/production\s+release\s+is.*?href=.*?Image[._-]ExifTool[._-]v?(\d+(?:\.\d+)+)\.t/im)
+    strategy :page_match
   end
 
   bottle do

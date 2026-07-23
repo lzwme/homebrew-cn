@@ -1,10 +1,9 @@
 class Podman < Formula
   desc "Tool for managing OCI containers and pods"
   homepage "https://podman.io/"
-  url "https://ghfast.top/https://github.com/podman-container-tools/podman/archive/refs/tags/v6.0.1.tar.gz"
-  sha256 "4829d7c1423523a6a4d5537dea7968ae7f6c22ed7f1d5f416638fd81c83caa47"
+  url "https://ghfast.top/https://github.com/podman-container-tools/podman/archive/refs/tags/v6.0.2.tar.gz"
+  sha256 "0895a541aeb7aa8e99133ed2b328c1bb40fd397b7c3b01e083396c90e8628756"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
-  revision 1
   compatibility_version 1
   head "https://github.com/podman-container-tools/podman.git", branch: "main"
 
@@ -19,11 +18,11 @@ class Podman < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "598ca0c63fe924058efc11cdb3574ec3ff33a9ba3835f2ec05352046e9fe3d0b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ddb0c05ed08c186ec9d27c3765a5ad7a04e5293edfb91ac2f01724a39c208014"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb4d0622599c00bc9d6151d6c0e962b422247d09ca0b8c5780bb9f14148875b5"
-    sha256                               arm64_linux:   "5b7854662b116a666d63185227962995d161aed3dce41ae0e9420c3c2e2b6f05"
-    sha256                               x86_64_linux:  "ce7ce8f97c5a5055c2e0e95000585589bb029d8a23e3b79d56422a6037458f64"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d860de1fa730e69b29ef6da4409cb73d5f31a2a5689c519e8ba623f0bc05f3d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73693a23a0164a1498f06234c515366adc76ba130795aad364921f21feaca6cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb6b67d0652c67067bb607a284b2eb312f0dc81ba4ec4a86a2de4b2d7ff16886"
+    sha256                               arm64_linux:   "4e208b8d8258ccf22a02a20d40a20b4d9982fd69edc13255ecda546ab57af7a6"
+    sha256                               x86_64_linux:  "3e497a17080f757d66472646ca3d5d8cd5e19ca7eaaaffb216b3336d510381f1"
   end
 
   depends_on "go" => :build
@@ -60,15 +59,15 @@ class Podman < Formula
   # More context: https://github.com/Homebrew/homebrew-core/pull/205303
   resource "gvproxy" do
     on_macos do
-      url "https://ghfast.top/https://github.com/containers/gvisor-tap-vsock/archive/refs/tags/v0.8.8.tar.gz"
-      sha256 "4f7c4885225d71b21f6b547b94d92fc6da4a4fef9d382fdd19c8ea67f67be839"
+      url "https://ghfast.top/https://github.com/containers/gvisor-tap-vsock/archive/refs/tags/v0.8.9.tar.gz"
+      sha256 "6cbcb7959a5d90b59253ea6d8bdf0285e2cfbc3b301398704b41e3069293f4fb"
     end
   end
 
   resource "vfkit" do
     on_macos do
-      url "https://ghfast.top/https://github.com/crc-org/vfkit/archive/refs/tags/v0.6.3.tar.gz"
-      sha256 "bb2a7f9d1bf41d2f823412ca20912bade606ae30b41afcd1366d32e3d100a09e"
+      url "https://ghfast.top/https://github.com/crc-org/vfkit/archive/refs/tags/v0.6.4.tar.gz"
+      sha256 "ff496bd6ee6772ed070f286c4282a8a2e2f5231d4f8e98b2255b883ba69af42d"
     end
   end
 

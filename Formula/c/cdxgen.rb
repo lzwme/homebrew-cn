@@ -6,12 +6,13 @@ class Cdxgen < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "678966b6f3f1ef662f2561d8a1dd916f0ae6c49cf1fea02edb394f736e34e69c"
-    sha256 cellar: :any, arm64_sequoia: "6015933844bc234800887cd5c4f7a66962dc712bdd7617f18e60f60493f50df4"
-    sha256 cellar: :any, arm64_sonoma:  "b13e5af0d29431793c16e8e4fba99a4900ade0ee90ef0c5af2793d49e9c0cbed"
-    sha256 cellar: :any, sonoma:        "cdcc6b5db12dd62753572a1cf464cb384c22c3c1670a5faacb41f9a2c431a6fd"
-    sha256 cellar: :any, arm64_linux:   "2cc16f54d09a799bf4f8ed141f461eda373131a76fc712065abcc27c2401b32c"
-    sha256 cellar: :any, x86_64_linux:  "8c61a0b35c0108e4b15df3740bde8cf981c5a992b836fdabde2e0b4edc895d17"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "4da0bb74cf9bc337de685c95ead68c7465370f60e27aae12228311fd5f40990a"
+    sha256 cellar: :any, arm64_sequoia: "cf7647bfe9cfab57635eea79b296085c1571ec4f6b1478860e496c01a5dd76ac"
+    sha256 cellar: :any, arm64_sonoma:  "67a9e7813db7ec1324b5ce5c237fe180a1fd0b432f7be9f582816e9318a7bcbf"
+    sha256 cellar: :any, sonoma:        "21bec96485f427579122c8472a42f0793ee34d80ba0e40b27b8c0c5c56132f09"
+    sha256 cellar: :any, arm64_linux:   "8a4dfb8f2e4e67d29c4ac8f615b5473d7c60804045d138566f079afb1793b09b"
+    sha256 cellar: :any, x86_64_linux:  "21e298ea80819d14f44b62e51d89b765902c4b52677e6d5a19edd923f115e194"
   end
 
   depends_on "dotnet" # for dosai
@@ -72,6 +73,10 @@ class Cdxgen < Formula
       rm_r("bundle")
       system "./setup.sh"
     end
+
+    chmod 0555, bin/"cdxgen"
+    generate_completions_from_executable(bin/"cdxgen", "completion", shell_parameter_format: :none,
+                                                                     shells:                 [:bash, :zsh])
   end
 
   test do

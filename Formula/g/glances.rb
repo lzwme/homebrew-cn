@@ -6,15 +6,16 @@ class Glances < Formula
   url "https://files.pythonhosted.org/packages/00/f4/700e0e8472783b91532c527d3821c05c7766c7610aec69bbcce47829d19e/glances-4.5.5.tar.gz"
   sha256 "2620a5b412611fadccde7517410aa878fede4e1297ab9c113280bc8f0a55985b"
   license "LGPL-3.0-or-later"
+  revision 1
   head "https://github.com/nicolargo/glances.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03a8d716143b676ff585edcad5d318d4e0c4d0aba763dad506b2e089acf1462f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10cd37acf215df6446468206bd02e0f83d22280b3338cb7b28ad92478f8b4352"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3279c9ae2036ea697a3d2321e8def6e90d5590bf4eb6f729c591026e46a904c1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ccd08ca8825add92294b80399706f6b1ae827cf651d6602f15fe110fbeae3e2d"
-    sha256 cellar: :any,                 arm64_linux:   "4bb14bb4db5db4a5d8c0469cb825821f0292f279495a2761d0674e49ed08f6bb"
-    sha256 cellar: :any,                 x86_64_linux:  "ff8d9eeffbcac89424c6402be740eb990283d4ac41eba3b6486b7572d9a62e0e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8226c386174a7aaf9997e5a003c5daa9ffded8a4698edba44ff07f1a661f4efb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b3edc2a2f762b1fe1f38fde86f44207c75083f459a9b87461ee4cca4bebaf2f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5499227ad30542ffe83906b758fbeee19e8047c56ca67ae84d9a41cbb1530207"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f8be541b08a9813eb357aeb0e42eabeaf19132bcb4a4d0c08a2828b3c7c6b0f3"
+    sha256 cellar: :any,                 arm64_linux:   "a4a4f75fb1a1cce698eb360c8386bca4b5ca7a3bc3dd430b968286401a2a552e"
+    sha256 cellar: :any,                 x86_64_linux:  "1e16a6b3cd989b52989d79d668fbf00019f4507b34a1f786a8e74397270eed3a"
   end
 
   depends_on "rust" => :build # for annotated-docs
@@ -33,18 +34,18 @@ class Glances < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
+    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "defusedxml" do
@@ -53,8 +54,8 @@ class Glances < Formula
   end
 
   resource "docker" do
-    url "https://files.pythonhosted.org/packages/91/9b/4a2ea29aeba62471211598dac5d96825bb49348fa07e906ea930394a83ce/docker-7.1.0.tar.gz"
-    sha256 "ad8c70e6e3f8926cb8a92619b832b4ea5299e2831c14284663184e200546fa6c"
+    url "https://files.pythonhosted.org/packages/88/7f/731ff914b0255d3d065f45fd4e626d4b8c95dbcbaada049f337a6ac16410/docker-7.2.0.tar.gz"
+    sha256 "cebb93773d334f778e023a7ee352a8d6e13ab1bd3b863a4d4a59dec897df43ac"
   end
 
   resource "ecdsa" do
@@ -63,8 +64,8 @@ class Glances < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/81/2d/ff8d91d7b564d464629a0fd50a4489c97fcb836ac230bf3a7269232a9b1f/fastapi-0.136.3.tar.gz"
-    sha256 "e487fae93ad408e6f47641ee4dfe389864fd7bec92e547ea8498fc13f43e83ab"
+    url "https://files.pythonhosted.org/packages/cd/95/d3f0ae10836324a2eab98a52b61210ac609f08200bf4bb0dc8132d32f78a/fastapi-0.139.2.tar.gz"
+    sha256 "333145a6891e9b5b3cfceb69baf817e8240cde4d4588ae5a10bf56ffacb6255e"
   end
 
   resource "h11" do
@@ -103,8 +104,8 @@ class Glances < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/5c/5f/6583902b6f79b399c9c40674ac384fd9cd77805f9e6205075f828ef11fb2/pyasn1-0.6.3.tar.gz"
-    sha256 "697a8ecd6d98891189184ca1fa05d1bb00e2f84b5977c481452050549c8a72cf"
+    url "https://files.pythonhosted.org/packages/a4/9a/23310166d960def5897e91fe20e5b724601b02a22e84ba1f94232c0b7f67/pyasn1-0.6.4.tar.gz"
+    sha256 "9c447d8431c947fe4c8febc4ed9e760bc29011a5b01e5c74b67025bd9fb8ce81"
   end
 
   resource "pyinstrument" do
@@ -143,8 +144,8 @@ class Glances < Formula
   end
 
   resource "shtab" do
-    url "https://files.pythonhosted.org/packages/b0/7a/7f131b6082d8b592c32e4312d0a6da3d0b28b8f0d305ddd93e49c9d89929/shtab-1.8.0.tar.gz"
-    sha256 "75f16d42178882b7f7126a0c2cb3c848daed2f4f5a276dd1ded75921cc4d073a"
+    url "https://files.pythonhosted.org/packages/56/b3/b7c99318ba2b0d7d7e71b78318c162690dd5639cd06e2d3bca9292737e4e/shtab-1.8.1.tar.gz"
+    sha256 "3edaf857ba164a0d7bb64e958eab8d6756d5aee3949c7f36a7e779bf1ce3b897"
   end
 
   resource "six" do
@@ -163,8 +164,8 @@ class Glances < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/c4/1f/fa18009dea8469069cca78a4e877a008ab78f08b064bfc9ab891579077ff/uvicorn-0.49.0.tar.gz"
-    sha256 "ebf4271aa580d9de97f93192d4595176df6e91f9aae919ca73e4fc07df1e66a3"
+    url "https://files.pythonhosted.org/packages/a2/65/b7c6c443ccc58678c91e1e973bbe2a878591538655d6e1d47f24ba1c51f3/uvicorn-0.51.0.tar.gz"
+    sha256 "f6f4b69b657c312f516dd2d268ab9ae6f254b11e4bac504f37b2ab58b24dd0b0"
   end
 
   resource "ws4py" do

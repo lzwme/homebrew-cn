@@ -7,12 +7,13 @@ class Ghcid < Formula
   head "https://github.com/ndmitchell/ghcid.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e3a2377db77d7a3b2c0a6d29395e0098610cac7775923e0492ef97da8f9db540"
-    sha256 cellar: :any, arm64_sequoia: "4375fa572a0578598a1042dcbad666e276fd977c9d62bddd2bfb341d07e7d05f"
-    sha256 cellar: :any, arm64_sonoma:  "7f26067c76ba687f968a0a6e490a92297233617d35fdccd618dcecc4960e6ef2"
-    sha256 cellar: :any, sonoma:        "2fcc824964d3eb194c18f54e2bace7c2014775f5a052e9bf87261b8269e2ebdc"
-    sha256 cellar: :any, arm64_linux:   "3453316aa7aa20b0a322463f195bc26a8cfede1f2d54080b59ecce962b1dc855"
-    sha256 cellar: :any, x86_64_linux:  "5a2009be9b09580db4d803195805136fc30aac1615fec93e778e1d4a387f7c49"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "a4da8526d57f1d72b83b49023807d92eb4e8e69fe6273a50c61df3731bc5eb1c"
+    sha256 cellar: :any, arm64_sequoia: "617e6358138be46ffa217159beb1ea303de2288619f7b1ae1465e6c8b5d0b8b3"
+    sha256 cellar: :any, arm64_sonoma:  "f27b570f92c6ec4797605438a3f2932ab614c6a8f9c0e333fe6322a2ac366fce"
+    sha256 cellar: :any, sonoma:        "e6438ef22dfb27ca1d10782f90da0f50652598a3efb04fb9091773e62e9be8be"
+    sha256 cellar: :any, arm64_linux:   "16cec1e74b65ab7aefc266234a80cbf1dc1507ce3cd711c803f99018af69075b"
+    sha256 cellar: :any, x86_64_linux:  "c34284605f6c77474156777f8bcd01190fcf34dfa32723f5b0e61096450f1cfd"
   end
 
   depends_on "cabal-install" => :build

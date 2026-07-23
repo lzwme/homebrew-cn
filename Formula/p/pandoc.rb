@@ -8,12 +8,13 @@ class Pandoc < Formula
   head "https://github.com/jgm/pandoc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5fb1bbd496bb7dabe3bdd89199759a17c6e6ad760d4cceb95a8b988308f19064"
-    sha256 cellar: :any, arm64_sequoia: "ff92446512f37d280f6f9ee81c3a112302e39b16807d5547eeabf662e72ad859"
-    sha256 cellar: :any, arm64_sonoma:  "d54dbe1affc75d52fd6d1e5f822ec08f5ec4a012dfe00f4575bb6e4bed0d337a"
-    sha256 cellar: :any, sonoma:        "213602b8c8032a28e1e12cc71c99882a2d598a8dd5ba50021d15c09e9b5f4a3e"
-    sha256 cellar: :any, arm64_linux:   "0d2710e2926fed8236965628cffaf6b0f361525bfb9a60441c3046a88118b75b"
-    sha256 cellar: :any, x86_64_linux:  "a9eb90312967775e88be6532e36894fdfbe482e46b9e4bbccd2394981abd1bf0"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "31cb9bed5f6711bb2da72a226ced9f78b887b7aa491316ee2c479fb9db9ccef2"
+    sha256 cellar: :any, arm64_sequoia: "fe650d99cf619285f5a4c0b013a8f484b87924b1d10e24f728b47e26443bd4cb"
+    sha256 cellar: :any, arm64_sonoma:  "60064bfb31ae7ae3e1aa6ad136c026dbb14ccd78e739a4aab5a4acf4fa90b1d4"
+    sha256 cellar: :any, sonoma:        "9d972f15c437022896f6f4b084d75e2086867c766c2df1efcbcab1d051cacd26"
+    sha256 cellar: :any, arm64_linux:   "3fd69ae7ac3904162e0b3c78700f1ea3559e07615efcac1c113e9e01adeb2137"
+    sha256 cellar: :any, x86_64_linux:  "26f9bbdbc8aec6f2d729043f290c8a972d4b7ec3f1245e146d7280c9a74e5d2a"
   end
 
   depends_on "cabal-install" => :build

@@ -1,18 +1,18 @@
 class Fortitude < Formula
   desc "Fortran linter"
   homepage "https://fortitude.readthedocs.io/en/stable/"
-  url "https://ghfast.top/https://github.com/PlasmaFAIR/fortitude/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "f7ae366a2befaaac22d9189a422dee494cd006a1c192c40d484a56dc806ff1fc"
+  url "https://ghfast.top/https://github.com/PlasmaFAIR/fortitude/archive/refs/tags/v0.9.2.tar.gz"
+  sha256 "90ea53522c423380079a58e5f8c813d01d487756f25aa3cc1b40a2ce2f55e7d6"
   license "MIT"
   head "https://github.com/PlasmaFAIR/fortitude.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5140201e083cdf88e748cc1f8d96add21c8b0b6bf59e8dd41b879255908201b3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bcba684354bb636d970a12a255ba2cfe05eb20990c9b3b5c03cda42ddcf15785"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "880fde075d0f3c3be223c64041c296adcebe5f1133c1c60596af6f8ebcd243c3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5afc605dc866c7c80e62b7b801389a9008bc6331c336d82f0c9e86659b14ad7c"
-    sha256 cellar: :any,                 arm64_linux:   "460269e447b9d225ec63972758d70b11efe1eb8ca9ffcc0eebbe1c418fda6076"
-    sha256 cellar: :any,                 x86_64_linux:  "d9d86c2a12cd14c3d304a4b9daaf3a47bf872d277792b013e0239e7ce3683460"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db7e886c979d9ba7478bd577ab59a72b7caff475384c6923a84b60ce33f75ba6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cc085a2bf4e106de34b4a1dd7707b623e9d765261f03c9b84c4da52671b3cd5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04ed4828a178e34842cfaff2c97a85f27865f6d88d1bdc41dc16134aac757a8a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "de4c8463acc9d1a22a7ee49c779252b87fa3b8d9aa8fbf2d7807643caeb62ea0"
+    sha256 cellar: :any,                 arm64_linux:   "f293c61552b068b8e96b84176b53459303a04dba4ddfb56830c88dd4c015cb42"
+    sha256 cellar: :any,                 x86_64_linux:  "6f4d21f8601f25ac226a1a649abe506047f1da590e767ccf5a59cea2c57b4c60"
   end
 
   depends_on "rust" => :build

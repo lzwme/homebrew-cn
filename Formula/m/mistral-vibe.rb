@@ -3,18 +3,18 @@ class MistralVibe < Formula
 
   desc "Minimal CLI coding agent"
   homepage "https://github.com/mistralai/mistral-vibe"
-  url "https://files.pythonhosted.org/packages/23/98/fccd0f7f770fec52f0ae1e951d14c6725bb43d336928e21a4ecab628deba/mistral_vibe-2.21.0.tar.gz"
-  sha256 "f30774eeaef7faf4f13512255e1cef3af3381ab9a58d6cb22b467abe77cf037a"
+  url "https://files.pythonhosted.org/packages/84/02/777f10ab4bdf9e19393c343ba7fa04af8e0859553df6e1f5d1bded84868e/mistral_vibe-2.22.0.tar.gz"
+  sha256 "81554fbb39ddc92120c7735aabe47dcd8691b6467b449d6331455b6461fa2e3d"
   license "Apache-2.0"
   head "https://github.com/mistralai/mistral-vibe.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9f4d2bf288246c74e1100d337b19ced5099441bca0113f48b075f19a0468028d"
-    sha256 cellar: :any, arm64_sequoia: "65fa835d55e12c58c2682b3244b7b2314853e6f683799f412a5e70d79177d997"
-    sha256 cellar: :any, arm64_sonoma:  "424bb70a2c09553f878486a0fbffde7aaf02cb424be1e9738bfeaf092a871455"
-    sha256 cellar: :any, sonoma:        "4aec53772486c0eda19fd6a90be4872ffe74d809871109a8a15c51c21edc3894"
-    sha256 cellar: :any, arm64_linux:   "15e248b263b7551ae9ab5ca48faa960f6075a29906f9c5a238955d0d0e503780"
-    sha256 cellar: :any, x86_64_linux:  "75b55d3fdb4078c0646db15b5c697c29234999decf4ca04326d8ae639a0db1f4"
+    sha256 cellar: :any, arm64_tahoe:   "d9b671816604ec978fcade7932fc7e4889f333c4fb5df80906a2971feb81d680"
+    sha256 cellar: :any, arm64_sequoia: "194d1689616fbf1755a44ce2cea53d2afde29a03d633231812fa2a9effeaddbe"
+    sha256 cellar: :any, arm64_sonoma:  "a4c390c545070a0dca0c0889386891781156d0e7ef36851f8a21bca9e00f0035"
+    sha256 cellar: :any, sonoma:        "2feae96cc9c55e959d8357aec9c6224fecd872cf71d985b2610c49e14c486e1d"
+    sha256 cellar: :any, arm64_linux:   "777c593af48fbe4d03b30d063748aedab3b24bf7b2b7327d356b000db7e08861"
+    sha256 cellar: :any, x86_64_linux:  "40fd86225af2e9c7e8b09c0e271fdf397b60a51746fa41af09c9a20b89e8ee95"
   end
 
   depends_on "rust" => :build
@@ -363,8 +363,8 @@ class MistralVibe < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/7b/ae/2d9c981590ed9999a0d91755b47fc74f74de286b0f5cee14c9269041e6c4/soupsieve-2.8.3.tar.gz"
-    sha256 "3267f1eeea4251fb42728b6dfb746edc9acaffc4a45b27e19450b676586e8349"
+    url "https://files.pythonhosted.org/packages/47/2c/0a5f6f8ee0d5589e48c7640213ed5175d52cf540a06725b628cc1a45d6ce/soupsieve-2.8.4.tar.gz"
+    sha256 "e121fd02e975c695e4e9e8774a5ee35d74714b59307868dcc5319ad2d9e3328e"
   end
 
   resource "sse-starlette" do

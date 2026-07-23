@@ -6,13 +6,13 @@ class Hadolint < Formula
   license "GPL-3.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "5fb72dd7116d76a9c78806853ed98d4da2f15f8ca46c9f5511ef66e3c9c36225"
-    sha256 cellar: :any,                 arm64_sequoia: "7af3406142276fb1dfe68ed7211fe9bca1e348114de6390c53f08dc5d11b5c3c"
-    sha256 cellar: :any,                 arm64_sonoma:  "29512bf0e04e72b3085f88b9240bb30c91665b622c1d8cc2d7c961d985280a47"
-    sha256 cellar: :any,                 sonoma:        "d3fb60d34da4c25bde58751038a8b9d794fe6c9863e5a945250bfa7877e5446b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6bbbbade4308b73a44f059afe1d9926e0d787ba9a48d1508789a74d7913d0ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5b8c9a91f19e10eced2063d35eb89e54c239e0270caed1a3ff72afd62292674"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "0c196a711ae987baf96f06e2b4dcbd14ce7896f3d2aa56bd59b1a0efcfdc6228"
+    sha256 cellar: :any, arm64_sequoia: "cf45bec3ec918058473526ae3f0dc97c13e9f4825578922551ace299027a6b24"
+    sha256 cellar: :any, arm64_sonoma:  "98c8d6f39392613e19a40d76fd7e8a6455e4d7de37f1ea8348fcd4f733517ec5"
+    sha256 cellar: :any, sonoma:        "22a73cf6466fb6c80f06efbc04a11ee3e7e8325d2f746ee79c01f67bdd4a620d"
+    sha256 cellar: :any, arm64_linux:   "718490cb4ecb41031cceb76bea15881ab05a2a4173076901f46dbdb3d5c13bac"
+    sha256 cellar: :any, x86_64_linux:  "5c8bd8d3e8a609234d445c5ae6e97e02fbe4b0bf51c401753fc65b0344e631da"
   end
 
   depends_on "cabal-install" => :build

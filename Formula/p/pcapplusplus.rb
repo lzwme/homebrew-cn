@@ -1,8 +1,8 @@
 class Pcapplusplus < Formula
   desc "C++ network sniffing, packet parsing and crafting framework"
   homepage "https://pcapplusplus.github.io"
-  url "https://ghfast.top/https://github.com/seladb/PcapPlusPlus/archive/refs/tags/v25.05.tar.gz"
-  sha256 "66c11d61f3c8019eaf74171ad10229dfaeab27eb86859c897fb0ba1298f80c94"
+  url "https://ghfast.top/https://github.com/seladb/PcapPlusPlus/archive/refs/tags/v26.07.tar.gz"
+  sha256 "58a6d7941f4e0b2484173d5429529c930e5998194e336537cf9d3a85295f8e53"
   license "Unlicense"
 
   livecheck do
@@ -11,14 +11,12 @@ class Pcapplusplus < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "badacc3ee645e30f563ebd4c127a993b0ecb64beb34d2663965e7e57daae345c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0fa7a89759395ca21657a2f4ad0cd1ce38956a9bdef1000feffa86dfd4f3a2b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e0d980ded05983801b97aa6f7737f7c4bf91252fb2e146ed552514d5b5b8547"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "eb59ce27fdc30a559228ff984d4a2f51a2ea86c693a575736537296175ec2244"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9019452d1e6616946480223d5725df1f1ea43c3bdb5652c0c387b10a8239d2c4"
-    sha256 cellar: :any_skip_relocation, ventura:       "f6a57b0410bd1a733ee3b342addf244cda48557be7f226b46c3dfb4d1ed2df7e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e09fd13802dd4b8149f58fb69cfaf46dab0faeff6b0db6381809ee03fb9188bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42c2a06a698bfd44bef147d045900a270af1418a3d2828d0ff406f1eeb0c02af"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca63a424da114c48509c281096c3d55332408522212e913dc04aff80cc0c78d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5e89217cebfc6753a970f3826f5e263965cca19317e1ac9be10b69f70ed37d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9a3d9c988178977030dd70e67406d186143353068a745cc0962a8bebd5ced6e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c9114d89c7d1c85f545ddbc156a93e4570892490300a322b030f19b823d9c4cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3568319906dcd096477aa77b784ebd9d79591dd79d8812d9da15acc3aea40e36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d517a01bc603f976353a91216c286fa3bdcc68bdcc6e7c85bb1cdd9a7f6e2ca6"
   end
 
   depends_on "cmake" => [:build, :test]

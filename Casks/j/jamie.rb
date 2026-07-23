@@ -1,6 +1,6 @@
 cask "jamie" do
-  version "5.7.8"
-  sha256 "ea33739a4f08b6966a75ddcbc3b294e7a68e5ec9323312e457f03dd9f4490935"
+  version "5.7.10"
+  sha256 "3c3932d17c58baa2153219b95fdc994135864ae646d02777a192254512f95103"
 
   url "https://ghfast.top/https://github.com/meetjamie/releases/releases/download/app-v#{version}/Jamie_universal.app.tar.gz",
       verified: "github.com/meetjamie/releases/"
@@ -18,5 +18,14 @@ cask "jamie" do
 
   app "Jamie.app"
 
-  zap trash: "~/Library/Application Support/jamie"
+  uninstall launchctl: "Jamie"
+
+  zap trash: [
+    "~/Library/Application Support/com.jamie.app",
+    "~/Library/Application Support/jamie",
+    "~/Library/Caches/com.jamie.app",
+    "~/Library/HTTPStorages/com.jamie.app.binarycookies",
+    "~/Library/LaunchAgents/Jamie.plist",
+    "~/Library/WebKit/com.jamie.app",
+  ]
 end

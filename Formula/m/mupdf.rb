@@ -56,8 +56,11 @@ class Mupdf < Formula
     url "https://mujs.com/downloads/mujs-1.3.8.tar.gz"
     sha256 "506d34882f2620a2fdeb6db63dbb7a8ffd98f417689d8f3c84f2feac275e39a9"
 
+    # Resource `livecheck` blocks don't support package references (yet), so we
+    # can't use `formula "mujs"` here.
     livecheck do
-      "mujs"
+      url "https://mujs.com/downloads/"
+      regex(/href=.*?mujs[._-]v?(\d+(?:\.\d+)+)\.t/i)
     end
   end
 

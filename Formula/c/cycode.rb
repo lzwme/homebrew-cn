@@ -6,15 +6,16 @@ class Cycode < Formula
   url "https://files.pythonhosted.org/packages/7b/d0/0b09542791f1983dbce697d28a11abebde6cb91131600e2ac919831e7935/cycode-3.17.2.tar.gz"
   sha256 "e1c4c42f46a7db8a206344f9eb552c85a03feeb31f97f4d1efd226f656c7c8e5"
   license "MIT"
+  revision 1
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "28eca5ac0e1a3dd1bdcfb6c903cf55d3fb55bef673d300e0470be17cd9d36077"
-    sha256 cellar: :any, arm64_sequoia: "0b894f43f26a37976fcec91e999dbd04677f07c7e87b15c7594426ca37f4e88b"
-    sha256 cellar: :any, arm64_sonoma:  "f537d2a5aaa5a8bb3cffb7c9a999af904ffa9cc157168915788fd516c7c998d7"
-    sha256 cellar: :any, sonoma:        "3271ec11276bee0289e53791ee95ab135a7406a8fc88b1d9f7ba45404fa9fcf7"
-    sha256 cellar: :any, arm64_linux:   "501e72f28b958852cd575e3e8e20723ab90e92f7aec1c11c1bd1b2e1637cd266"
-    sha256 cellar: :any, x86_64_linux:  "6f4db0ac0b4b8cfe75a443c8fd9ff0101b5e2366332cd1c0c3f6abfd278844dd"
+    sha256 cellar: :any, arm64_tahoe:   "e3690f994e5dd2d8c626015bd356193c027c2b47268f7595d3e859b159443aa3"
+    sha256 cellar: :any, arm64_sequoia: "7b8cdebd7135e79b76d0a0709303dd22941e551ba527e11212c0393886afe970"
+    sha256 cellar: :any, arm64_sonoma:  "a1808e4729e189b517ea88749705e3fb233ae1d029c2d177337589d8da582e65"
+    sha256 cellar: :any, sonoma:        "3d68c92725b8b3425ef4f75e9e47dfd153abbc7ed33b79e411e9d6cc66890bb5"
+    sha256 cellar: :any, arm64_linux:   "7aca927779e9d3912a3ed88e49947e2fbbe45d9e03b33e634438bb48c522020d"
+    sha256 cellar: :any, x86_64_linux:  "f9df5a1e06a1975bdbeae3e4a66e0ae2402b4beacd58c4c2a6791c8324809b16"
   end
 
   depends_on "certifi" => :no_linkage
@@ -62,8 +63,8 @@ class Cycode < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/59/30/a8a0c15f9480dc91b5b7f11ebd26105e5f80898d7ff02da197fef35d8395/gitpython-3.1.51.tar.gz"
-    sha256 "22c9c94bb6b0b9f3c7157c684fece45a414cea204586b600beae6cd4570dcd6d"
+    url "https://files.pythonhosted.org/packages/17/24/0e0c12cb6f7cb864779a9d2fefee9ca91838f6db402c8780c9d28a8d7ebe/gitpython-3.1.53.tar.gz"
+    sha256 "06ae8d9623b0ed0d67b8adeac5c7008d0a5a404b087a9e0d0c7163bdd3a6b497"
   end
 
   resource "h11" do
@@ -202,8 +203,8 @@ class Cycode < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/d2/1b/bc9e3e7a72dcdad7dc7888758f5d00f56f8909ed5cfdff822bd72bb4c520/sse_starlette-3.4.5.tar.gz"
-    sha256 "83072538bc211a2f68b7b0422226c4af3e9b62e106e07034664b832ca019842a"
+    url "https://files.pythonhosted.org/packages/6c/10/a34c656829ffc1c4b22ef36d70d9ebb6b99c020e2aeb17cee5485099f028/sse_starlette-3.4.6.tar.gz"
+    sha256 "725f8a1bd6d26ae1b2c9610c0ef5065dfdd496f3988d28adcf8c4b49dc25c627"
   end
 
   resource "starlette" do

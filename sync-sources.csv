@@ -204,6 +204,7 @@ Homebrew-homebrew-core/Formula/a/apkleaks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apko.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apktool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apm-bash-completion.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/apm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apng2gif.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apngasm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apophenia.rb, Homebrew/homebrew-core, 1
@@ -1740,6 +1741,7 @@ Homebrew-homebrew-core/Formula/d/dry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dscanner.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dsda-doom.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dsh.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dskditto.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dsocks.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dspdfviewer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dsq.rb, Homebrew/homebrew-core, 1
@@ -7961,6 +7963,7 @@ Homebrew-homebrew-core/Formula/v/vips.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vipsdisp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/virt-manager.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/virtctl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/virtiofsd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/virtualenv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/virtualenvwrapper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/virtualfish.rb, Homebrew/homebrew-core, 0
@@ -8140,6 +8143,7 @@ Homebrew-homebrew-core/Formula/w/wiiuse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wik.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wiki.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wikibase-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/wild.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wildfly-as.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wildmidi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/willgit.rb, Homebrew/homebrew-core, 1
@@ -9148,6 +9152,7 @@ Homebrew-homebrew-cask/Casks/c/cardpresso.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cashnotify.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/castr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/catch.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/cate.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/catlight.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cavalry.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cave-story.rb, Homebrew/homebrew-cask, 0
@@ -9240,6 +9245,7 @@ Homebrew-homebrew-cask/Casks/c/classroom-mode-for-minecraft.rb, Homebrew/homebre
 Homebrew-homebrew-cask/Casks/c/claude-code.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/claude-code@latest.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/claude-devtools.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/claude-status-bar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/claude.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/claudebar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cleanapp.rb, Homebrew/homebrew-cask, 0
@@ -14096,7 +14102,7 @@ Homebrew-homebrew-cask/Casks/o/onexrayse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/onionshare.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/onlook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/only-switch.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/o/onlyoffice.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/onlyoffice.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/ontime.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/onyx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/onyx@beta.rb, Homebrew/homebrew-cask, 0
@@ -14841,6 +14847,7 @@ Homebrew-homebrew-cask/Casks/r/roku-remote-tool.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rolisteam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/roon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/roonbridge.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/roslynpad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rotato.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rotki.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/routeconverter.rb, Homebrew/homebrew-cask, 0
@@ -14977,6 +14984,7 @@ Homebrew-homebrew-cask/Casks/s/servpane.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/session-manager-plugin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/session.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sessionrestore.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/sessionwatcher.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/setapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sf-symbols.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sfm.rb, Homebrew/homebrew-cask, 1

@@ -12,12 +12,13 @@ class Echidna < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "73ee5125c1c57859fd03769004a15aef0a1a15269ca2347c7ad83d0ecf91ee01"
-    sha256 cellar: :any,                 arm64_sequoia: "d03c58df980548b41ab1142cf07d1a1ef6ef65b35e687250634f3fd508aa9139"
-    sha256 cellar: :any,                 arm64_sonoma:  "7894e8b14c9288b42e4517c82b4a7e55b3b6a90797bb863c155aeec4cd619820"
-    sha256 cellar: :any,                 sonoma:        "a55c55db6a2ac10af2eb9b074e172aa8752307ce21b000ec7f98a8961e9313d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "772ac3f480f5cb1d4b6c075d856ae2954ca8f211487e438ef7e0a6b270ec251e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a13f6c68f9407099551800aed96a4ec194b7c931b57b1b2f083a4ad781e3f0dd"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "0939ffa6bff540a88601728d9c63f06f5f225011c3ff7df9c08f3b2fd11d6d9c"
+    sha256 cellar: :any, arm64_sequoia: "a92d211d4856084650e988fbaabc3e186c730e8a5197d6559c019865cbe16b05"
+    sha256 cellar: :any, arm64_sonoma:  "7f4ffd5c4e807333dd46c561ac8e2dc1bb91bcc4de8e3a8861f76fa84dd97cb2"
+    sha256 cellar: :any, sonoma:        "603340c16e48cb87673eea4dfeb194f352a96653a315dce5e36f4eac9394550c"
+    sha256 cellar: :any, arm64_linux:   "1555c7ad100819bac05dadc1ec63b6dee539a8b23c5aa3da7857aec471cf5c92"
+    sha256 cellar: :any, x86_64_linux:  "ca111981088cd3b985778a9992cef6eec51d28a8987d2769ec4d75aa44868cc7"
   end
 
   depends_on "ghc@9.10" => :build
@@ -44,17 +45,17 @@ class Echidna < Formula
     ENV.deparallelize
 
     ghc_args = [
-      "--system-ghc",
-      "--no-install-ghc",
-      "--skip-ghc-check",
       "--extra-include-dirs=#{Formula["libff"].include}",
       "--extra-lib-dirs=#{Formula["libff"].lib}",
       "--extra-include-dirs=#{Formula["secp256k1"].include}",
       "--extra-lib-dirs=#{Formula["secp256k1"].lib}",
       "--flag=echidna:-static",
+      "--no-install-ghc",
+      "--skip-ghc-check",
+      "--system-ghc",
     ]
+    ghc_args << "--ghc-options=-pie" if OS.linux? && Hardware::CPU.arm?
 
-    system "stack", "-j#{jobs}", "build", *ghc_args
     system "stack", "-j#{jobs}", "--local-bin-path=#{bin}", "install", *ghc_args
   end
 

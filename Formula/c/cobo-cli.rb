@@ -6,16 +6,16 @@ class CoboCli < Formula
   url "https://files.pythonhosted.org/packages/31/5a/b46f07b2cb2e0e7583e83873f65ca0f177e1b56d5f5a5f253ba83ab4c9f7/cobo_cli-0.1.8.tar.gz"
   sha256 "bee5155dd3b4f16aa72b3ad1e02d5505cfa66d374856db0067ef1812986b218a"
   license "MIT"
-  revision 3
+  revision 4
   head "https://github.com/CoboGlobal/cobo-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d0bda65b20226a9d92a4dadd424c8555a653ed3c53dfc3c23fc4bb0c30d2106d"
-    sha256 cellar: :any, arm64_sequoia: "3fcfcad52398d950609bdfc8cffd33f259245592c7ff18d6a1c4a15ff9d94ac5"
-    sha256 cellar: :any, arm64_sonoma:  "41de27889938a46092df0017e680a0937370b23973c80cd8a300ed842c034d98"
-    sha256 cellar: :any, sonoma:        "c935bf477af2046b0e69f3fe9431ba50fd56069a6c46a1814c34f50665f7cea2"
-    sha256 cellar: :any, arm64_linux:   "81c5d3e89ea2d49f7e7cd36d40a93e209ecec274556aef73245172b39a5b8a61"
-    sha256 cellar: :any, x86_64_linux:  "423a26cf2473bc379135228762a3d19e1d13480f630fdce7fca9186df4565b1c"
+    sha256 cellar: :any, arm64_tahoe:   "e88428fdf7886cc2c6def8e9b893f9a4ca78e6a142cc5f11538970a1344738d6"
+    sha256 cellar: :any, arm64_sequoia: "8f5b5c1f65ba09eab9c3d04fdd10acd069b598cc2fed87bd58032e3536cc549e"
+    sha256 cellar: :any, arm64_sonoma:  "a0a3362d27933d0426047478867d60c4d06264a7b3bcfdeeaa2d607a028e4b2a"
+    sha256 cellar: :any, sonoma:        "3b37da0c5a3da5ae0849f86ba8c2c4135f27c23e801b4e8f62209744a0b7730e"
+    sha256 cellar: :any, arm64_linux:   "6e937d8a972975c13cda28c87e669ec2688910a263f3139d3b4b6503144b92a3"
+    sha256 cellar: :any, x86_64_linux:  "8099bdd4053cde6438964015996663a27f1d52a1381e3bd9d1ef2060dea795ce"
   end
 
   depends_on "certifi" => :no_linkage
@@ -30,13 +30,13 @@ class CoboCli < Formula
   pypi_packages exclude_packages: %w[certifi cffi pydantic]
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "dataclasses-json" do
@@ -60,8 +60,8 @@ class CoboCli < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/33/f6/354ae6491228b5eb40e10d89c4d13c651fe1cf7556e35ebdded50cff57ce/gitpython-3.1.50.tar.gz"
-    sha256 "80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc"
+    url "https://files.pythonhosted.org/packages/17/24/0e0c12cb6f7cb864779a9d2fefee9ca91838f6db402c8780c9d28a8d7ebe/gitpython-3.1.53.tar.gz"
+    sha256 "06ae8d9623b0ed0d67b8adeac5c7008d0a5a404b087a9e0d0c7163bdd3a6b497"
   end
 
   resource "idna" do

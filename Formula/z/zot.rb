@@ -1,18 +1,18 @@
 class Zot < Formula
   desc "Lightweight coding agent harness written in Go"
   homepage "https://www.zot.sh/"
-  url "https://ghfast.top/https://github.com/patriceckhart/zot/archive/refs/tags/v0.2.99.tar.gz"
-  sha256 "f1e233e1061254fbe05d40edeb92c60aa0a885006187f1deac5f01861551d0fc"
+  url "https://ghfast.top/https://github.com/patriceckhart/zot/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "626cee4ff3ebe6dbd3076746ca5f5eba6e1739568f669ec9603ab39b8f16d873"
   license "MIT"
   head "https://github.com/patriceckhart/zot.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "856c75f6888eecf4e9d10cfca6defe39db3f8d36bc1c15798d9fc9603a64c079"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "856c75f6888eecf4e9d10cfca6defe39db3f8d36bc1c15798d9fc9603a64c079"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "856c75f6888eecf4e9d10cfca6defe39db3f8d36bc1c15798d9fc9603a64c079"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9a3ad674035cd71effd18fb321a49f0769038f42d15b8a8d21add0195f23c121"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0a1d0e97149caaa26049e406facc1b7e3ea918207f3949a605f70ad1d3e4ff3"
-    sha256 cellar: :any,                 x86_64_linux:  "2bc12c4905782d4ff3404ac0582b3f582731374445d8002d2531c2ecd13cb6c0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f31ea5606eebebde27952c95e95384b41b29840c69d9eb17f8edd3d7925d3c68"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f31ea5606eebebde27952c95e95384b41b29840c69d9eb17f8edd3d7925d3c68"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f31ea5606eebebde27952c95e95384b41b29840c69d9eb17f8edd3d7925d3c68"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ff977f47a0101312445e29d905db574c4c276177d47867648735acbfb71cec3b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eff36b93dae6c4ff675919d1d252b4323cf90ff2f6ab16e875a1ac934f5e8910"
+    sha256 cellar: :any,                 x86_64_linux:  "7ff209f3c638884ff6a1863acbc2f5abfe36c3a4ac884e5bce188d96bc4a5732"
   end
 
   depends_on "go" => :build
