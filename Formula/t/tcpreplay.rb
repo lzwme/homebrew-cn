@@ -1,17 +1,17 @@
 class Tcpreplay < Formula
   desc "Replay saved tcpdump files at arbitrary speeds"
   homepage "https://tcpreplay.appneta.com/"
-  url "https://ghfast.top/https://github.com/appneta/tcpreplay/releases/download/v4.5.3/tcpreplay-4.5.3.tar.gz"
-  sha256 "56c053da51d7be1b6d59fa465d111bd224de73ae8bf262bf2078af914ff2e023"
+  url "https://ghfast.top/https://github.com/appneta/tcpreplay/releases/download/v4.5.4/tcpreplay-4.5.4.tar.gz"
+  sha256 "934e0a9d4905110336a213598fcbcb4c657cc5066ee4de5a6727bd847b35afe7"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "BSD-4-Clause", "GPL-3.0-or-later", "ISC"]
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4390017f35baf1f8fbee1294e245f00ca13441687ac310bfd4e26e3f467e4ef0"
-    sha256 cellar: :any, arm64_sequoia: "7f4b0b25b1f54ee798f208376a3bf8fa6903733882d4e7fa5183e62ad20ac228"
-    sha256 cellar: :any, arm64_sonoma:  "bd2263a2d9f2d0d9cbe73b38b1abb419fb0634873b0ae72cc7e228be2eb68fb4"
-    sha256 cellar: :any, sonoma:        "0f3cfa6a764fb74021824e72f42316ed25350ddcded3d5a60f2e5f3851afb263"
-    sha256 cellar: :any, arm64_linux:   "004d9cdcff140788618b2543d59f79e30cda5063c5a36931ef2ad47fb09fc911"
-    sha256 cellar: :any, x86_64_linux:  "c14c92db90b8114c52c1fb52db8908fc91e82bb185de33f5ae045d9e3493fe15"
+    sha256 cellar: :any, arm64_tahoe:   "f816114b3aad61929cd61a1e146433b6b6d6488494aa5f1386de18ea859a0bd3"
+    sha256 cellar: :any, arm64_sequoia: "615e6a6063933773a97fa79238ca3dda79e678a56df5945f9bd99e4d52773498"
+    sha256 cellar: :any, arm64_sonoma:  "4f29108586861786ce8749ce1f779e2b96e47475978b0904dea4ddf7bba9089e"
+    sha256 cellar: :any, sonoma:        "ce1a456ccc96bff176fb14b95118ce74b2e169e15c262ae10aab198eee1f3b0c"
+    sha256 cellar: :any, arm64_linux:   "2788d6f32706a07bf00afd9065f1d8c9d5489429c72fc72c55cbb53633d7307b"
+    sha256 cellar: :any, x86_64_linux:  "0ca1f27f162cd1f05482c12d932cc8f285fc41ee916b86ed9316d39593eb2c46"
   end
 
   depends_on "autoconf" => :build

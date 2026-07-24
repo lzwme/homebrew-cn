@@ -1,18 +1,18 @@
 class Gauge < Formula
   desc "Test automation tool that supports executable documentation"
   homepage "https://gauge.org"
-  url "https://ghfast.top/https://github.com/getgauge/gauge/archive/refs/tags/v1.6.34.tar.gz"
-  sha256 "06ca39be180e1fe48c0fddd296ca4e2cc9e141411d6c2c206c10765d9157d9f6"
+  url "https://ghfast.top/https://github.com/getgauge/gauge/archive/refs/tags/v1.6.35.tar.gz"
+  sha256 "6ac85da21c34bfdc20abb7fa137f69d6a66ba5947377aadb90c778eaf173ae73"
   license "Apache-2.0"
   head "https://github.com/getgauge/gauge.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3127384715fa5c64a721930c0e7f8a3668b818a14545e77ae270a9e54a10fd61"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a98bcb5eb6d33ae21aed1b8fe6e1fc24582298a3df3cfc98db40fb5fe629e187"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3cdbedcdb1707ef4554e405b0a9aa7ab45ce26576764f8ecb233100cc2038659"
-    sha256 cellar: :any_skip_relocation, sonoma:        "44e49587475855e528e6a576a539f2648bfa2d82abba23ee26bce5f26922c732"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bac96c163f7308b3dd080eb27459470c9344166651929c6db71b2dfdb213d876"
-    sha256 cellar: :any,                 x86_64_linux:  "1c2319aaf96734b3f4de73828cabe12bd6cd144eb5740aef4a23a4d58e619a93"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1262c6eb9070e786d9dad4463909b92338010d4fcd6e074fd833361c55626ffd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c26ef4dbf5a0afd2385301b27e3b5ae24b2056dfae2682a59866b05328097a30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ff148c3dcabfaf29b4f5dab195766ad5212189f88f8fed5d0de8d2ff8740125"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d41d9e76ef633a30595b56f99453d80fbfcfbd6df03d03e7c97f01a498a30203"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecea08a41c354bf37a090df8d937c82dd1fe0c6a893d6916890541da77473daa"
+    sha256 cellar: :any,                 x86_64_linux:  "84a02cab82e255fa8ef4d3555f4ad0aa2e6a64045c8462c07df5b67409584f23"
   end
 
   depends_on "go" => :build

@@ -26,6 +26,7 @@ class Gotop < Formula
 
   def install
     ldflags = %W[
+      -s -w
       -X main.Version=#{version}
       -X main.BuildDate=#{time.strftime("%Y%m%dT%H%M%S")}
     ]

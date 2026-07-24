@@ -25,7 +25,7 @@ class GitSizer < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-X main.ReleaseVersion=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.ReleaseVersion=#{version}")
   end
 
   test do

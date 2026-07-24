@@ -38,21 +38,19 @@ class Echidna < Formula
   end
 
   def install
-    ENV.cxx11
-
     # Let `stack` handle its own parallelization
     jobs = ENV.make_jobs
     ENV.deparallelize
 
-    ghc_args = [
-      "--extra-include-dirs=#{Formula["libff"].include}",
-      "--extra-lib-dirs=#{Formula["libff"].lib}",
-      "--extra-include-dirs=#{Formula["secp256k1"].include}",
-      "--extra-lib-dirs=#{Formula["secp256k1"].lib}",
-      "--flag=echidna:-static",
-      "--no-install-ghc",
-      "--skip-ghc-check",
-      "--system-ghc",
+    ghc_args = %W[
+      --extra-include-dirs=#{formula_opt_include("libffi")}
+      --extra-lib-dirs=#{formula_opt_lib("libff")}
+      --extra-include-dirs=#{formula_opt_include("secp256k1")}
+      --extra-lib-dirs=#{formula_opt_lib("secp256k1")}
+      --flag=echidna:-static
+      --no-install-ghc
+      --skip-ghc-check
+      --system-ghc
     ]
     ghc_args << "--ghc-options=-pie" if OS.linux? && Hardware::CPU.arm?
 

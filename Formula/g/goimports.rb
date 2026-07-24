@@ -24,7 +24,7 @@ class Goimports < Formula
 
   def install
     chdir "cmd/goimports" do
-      system "go", "build", *std_go_args
+      system "go", "build", *std_go_args(ldflags: "-s -w")
     end
   end
 

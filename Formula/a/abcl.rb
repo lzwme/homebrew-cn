@@ -46,6 +46,18 @@ class Abcl < Formula
 
   test do
     (testpath/"test.lisp").write "(print \"Homebrew\")\n(quit)"
-    assert_match(/"Homebrew"$/, shell_output("#{bin}/abcl --load test.lisp").strip)
+
+    require "io/console"
+    require "pty"
+    # `abcl` wraps java with rlwrap, which needs a sized tty
+    PTY.spawn("#{bin}/abcl --load test.lisp > out") do |r, _w, pid|
+      r.winsize = [24, 80]
+      r.read
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
+    ensure
+      Process.wait(pid)
+    end
+    assert_match(/"Homebrew"$/, (testpath/"out").read.strip)
   end
 end

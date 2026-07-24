@@ -1,6 +1,6 @@
 cask "boss" do
-  version "9.2.54"
-  sha256 "00bbd27a07aaab0d40110d328db910aae19e0271c3609b8c2dc1800a034d8f7f"
+  version "9.2.57"
+  sha256 "573cbf10c58cfbde64cc6c9b1585d1d2a02d09528a17049a10abe3be8641774e"
 
   url "https://ghfast.top/https://github.com/risa-labs-inc/BOSS-Releases/releases/download/v#{version}/BOSS-#{version}-Universal.dmg",
       verified: "github.com/risa-labs-inc/BOSS-Releases/"

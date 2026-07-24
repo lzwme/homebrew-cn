@@ -29,8 +29,6 @@ class Asio < Formula
   depends_on "openssl@3"
 
   def install
-    ENV.cxx11
-
     if build.head?
       cd "asio"
       system "./autogen.sh"

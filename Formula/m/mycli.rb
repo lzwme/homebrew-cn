@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/5e/6a/7e6dafabdea25d6e70d8f927bd7f2e8952f5de69805092032214c3ea9485/mycli-2.4.0.tar.gz"
-  sha256 "0008c89c03a67748c6aa72ac1731453fb51e4719c71d7389170cd458fccd7290"
+  url "https://files.pythonhosted.org/packages/07/43/ef1286df07bf27e08f8312744372be5446977be58edfe7604680a7a7e567/mycli-2.5.1.tar.gz"
+  sha256 "9ffeed449a6121e79e0db9578fbbbd6a97f62e462963aff3c7f6a620fa152763"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "779d51735a08a39f52eafb86499f98fbe6938fc8cf8fc16c55eb922da747ef0c"
-    sha256 cellar: :any, arm64_sequoia: "b3f3427c65a797d4e47556231f0b65893386f0359e9905889574e1468effcdd3"
-    sha256 cellar: :any, arm64_sonoma:  "2d2a16ec767215813c92d5c657a45f21ff38138553748d946c978ec0f7d552d8"
-    sha256 cellar: :any, sonoma:        "4fc4a661dfbb67433503a1aeb5cfa39319eb3cb8c50df800ed2a3a661f0d1da6"
-    sha256 cellar: :any, arm64_linux:   "de8f7b0385ddf291d3f5a6fcaff52ce4262ef1aaa475e63fcb3762ccdd2bd2d3"
-    sha256 cellar: :any, x86_64_linux:  "1aa2fd4ab9aa58228c893676fd44cf8ce2c2919be60057d06db406a9c2abc881"
+    sha256 cellar: :any, arm64_tahoe:   "0564b270f108f7f059d551931d1a06c806ceb3a681568ed0aefd19a64a3a140b"
+    sha256 cellar: :any, arm64_sequoia: "481918db6fbdb1cf3a54193dabd980f43d566d22ec37614bdd4043a51f02b828"
+    sha256 cellar: :any, arm64_sonoma:  "7b94ff1f3b4e00cf167824f4f4d58201c8959ab9ba35d6b44d457c85223a07c8"
+    sha256 cellar: :any, sonoma:        "9c9b3eb544a16936075d965e8da54d5ff58e71b318280455729ab693b0f21d23"
+    sha256 cellar: :any, arm64_linux:   "e705e34f20c59a79edff712eabf4a286385295abd19fd963ed3edd8605f7b382"
+    sha256 cellar: :any, x86_64_linux:  "12d2b6fe6405fd67cfe729220db1a96e6621a16176e7610373f92adc94d53ec4"
   end
 
   depends_on "rust" => :build # for jiter, sqlglotrs
@@ -180,8 +180,8 @@ class Mycli < Formula
   end
 
   resource "python-ulid" do
-    url "https://files.pythonhosted.org/packages/c1/7e/b912a91fe0800585ec29ff695a6a5c4098a32c89732cba550c6fc9343380/python_ulid-3.2.0-py3-none-any.whl"
-    sha256 "7adfc206cbee3124e176b02b73e0fd19d1c9759e119fd8af7ba264d7d29c6fc0"
+    url "https://files.pythonhosted.org/packages/d6/41/65079023c81491a21799c0120bce5925366b6913596bf797806f19973290/python_ulid-4.0.1.tar.gz"
+    sha256 "bbeec02556190bb9dc3401faa7268696acbfbe7b6db9908c155dc3548629f20c"
   end
 
   resource "pyyaml" do

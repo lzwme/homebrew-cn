@@ -1,8 +1,8 @@
 class Nelm < Formula
   desc "Kubernetes deployment tool that manages and deploys Helm Charts"
   homepage "https://github.com/werf/nelm"
-  url "https://ghfast.top/https://github.com/werf/nelm/archive/refs/tags/v1.25.3.tar.gz"
-  sha256 "0355888725e84e526ab92aec616a8c08b4d68b809db70ccbccd468f6a87c114a"
+  url "https://ghfast.top/https://github.com/werf/nelm/archive/refs/tags/v1.27.0.tar.gz"
+  sha256 "deb3878cbfd4889bba803cfe89ee34871b90ec4e283984972178344a7f43f514"
   license "Apache-2.0"
   head "https://github.com/werf/nelm.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Nelm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "faa6dd442213a21b63198409ba2b94845a3ba5c8025d87520e8a991a7b4d5d93"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96f9233b74f5ea90d7e607cb8cf65048857de4b066d52d352da4190fe6c5b601"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "833786709a815d3269ee5c0f510650760da170fad9a9511d8282b7fcd762d89a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "48e5c8db852be4aba2d6047de68da7c5e3a3adad24caf0c1e77d49e7cd10a8fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f17d447e9b89c0d15a2f397f014656dab8ce1820c2d181f168a6f8decf602ee0"
-    sha256 cellar: :any,                 x86_64_linux:  "357799f89d55cf1cebba0ed6561c64f615d868be420ee5ca8489d58ea8cfe5e3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc4e6521bd167c20078201423b75229abc3f023dca7d0975ca1afe6bcff38241"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b35455b487bdabc4f9ff5c60bb3c239c3226d02e75d953ed5d8c054657f3393"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32d7ffd0a436067951f599298bd73bc20e0f8fc6f0d4d2d05ce626a0ba6b2517"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cc39f07dc47e0fe44fe148115f30598c791e92d4fb491b5b9b5e07366f2e4623"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47f4cca19316306b758c246ca3f757a00a6ec21899300f80ec50ea57ad92e0bb"
+    sha256 cellar: :any,                 x86_64_linux:  "235773c8dab017a267bf354125538b44df88cf27ff9624dec930530004414542"
   end
 
   depends_on "go" => :build

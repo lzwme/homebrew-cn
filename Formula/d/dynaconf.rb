@@ -3,12 +3,12 @@ class Dynaconf < Formula
 
   desc "Configuration Management for Python"
   homepage "https://www.dynaconf.com/"
-  url "https://files.pythonhosted.org/packages/2e/fa/351d165f6f9fe493a92a2e155f3097a4379dbe23e731b68543ce9988ee19/dynaconf-3.3.2.tar.gz"
-  sha256 "3b50232b774142702c3d4623633bcd76bb9951abf8567b7f1340d73a30a80899"
+  url "https://files.pythonhosted.org/packages/da/8e/79e2ab9718fa632b764ca08cf7321690819a01fad523e2b70cbd5591e99c/dynaconf-3.3.3.tar.gz"
+  sha256 "1740ca23ff9da042531f507f664cb5b79b0e5120b65f98b74e1387491b6d078a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "54132ad4e69f3d8633d6c9c03d92e3e2d1352fa192d122b1c366ca30c9409bd8"
+    sha256 cellar: :any_skip_relocation, all: "db6cc6c0610220e057deeb601ac04aac827ded285fc8b03975a777b54227ae7a"
   end
 
   depends_on "python@3.14"

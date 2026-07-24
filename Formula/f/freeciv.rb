@@ -63,7 +63,6 @@ class Freeciv < Formula
   end
 
   def install
-    ENV.cxx11
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}" if OS.mac?
 
     # Remove bundled lua

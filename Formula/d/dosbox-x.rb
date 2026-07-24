@@ -54,8 +54,6 @@ class DosboxX < Formula
   end
 
   def install
-    ENV.cxx11
-
     # Set `LDFLAGS` to link against the Metal and QuartzCore frameworks on macOS Ventura and later
     # during ./configure to detect the Metal framework
     ENV.append "LDFLAGS", "-framework Metal -framework QuartzCore" if OS.mac? && MacOS.version >= :ventura

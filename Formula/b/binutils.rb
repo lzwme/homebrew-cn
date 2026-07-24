@@ -8,13 +8,13 @@ class Binutils < Formula
   compatibility_version 1
 
   bottle do
-    rebuild 1
-    sha256               arm64_tahoe:   "4d34689d19f2632b8575ca61e866568b44be203b22fc360d9866ba832fcf277a"
-    sha256               arm64_sequoia: "b007ac9a89e3d86b0bdf067ab442ebfeb4057df6b570226bee36b9c53dc1ae1e"
-    sha256               arm64_sonoma:  "d5258ef24196dd9da0dbfe8180fe59f01f6f8caab2af0ba5a8118a072486ba73"
-    sha256               sonoma:        "87c99a3cfc8346de2c16bb0b54b2454b139ac27ba6364bdaf7d24697a3c14c94"
-    sha256 cellar: :any, arm64_linux:   "b30d07e9d4ad52380816baa8abb96187e625c5b207f16be1e52e8c393d7a7bb1"
-    sha256 cellar: :any, x86_64_linux:  "fbe5aefd73f5d4397166a067ab1ff7d6142f6c82c1ceb7c1fabdbe1b2fb9ef64"
+    rebuild 2
+    sha256               arm64_tahoe:   "82a2db1df36bfcf2c4646271f8dfb3fc2671a29b2f34d913b673eecdab69805b"
+    sha256               arm64_sequoia: "51e1a73949af5075e985a8dba9110d1beb7d82f04bec2cf9eaef597aad71bf5c"
+    sha256               arm64_sonoma:  "d63291ccd26bb008d107828313116c1d149f948e447788fdc09665682c8aa102"
+    sha256               sonoma:        "3abcf7fbdda68fd20dc4d5f29bfe327a785f5709f869196a6a1ee79203b340a9"
+    sha256 cellar: :any, arm64_linux:   "4520c8904d2025498b99f2e27e34f365f3de3facf3fec04f890bdf49dd0cffeb"
+    sha256 cellar: :any, x86_64_linux:  "bf08a932ea762aceaef98b8819a76624b73578727f5a98a978d97b0592dd2376"
   end
 
   keg_only :shadowed_by_macos, "Apple's CLT provides the same tools"
@@ -41,6 +41,7 @@ class Binutils < Formula
       --enable-default-hash-style=gnu
       --enable-deterministic-archives
       --enable-multilib
+      --enable-new-dtags
       --enable-plugins
       --enable-relro
       --enable-shared

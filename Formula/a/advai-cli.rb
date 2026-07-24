@@ -3,17 +3,17 @@ class AdvaiCli < Formula
 
   desc "CLI for managing skills and external CLIs"
   homepage "https://github.com/Advai-X/advai-cli"
-  url "https://files.pythonhosted.org/packages/32/24/f06412429212844c19320cc689e8859d744075a28db2732bf244d5e1a0d5/advai_cli-1.0.10.tar.gz"
-  sha256 "e91db8eba55f8e796c14f11a0482f6d073087ecf4bb332bccd5dd44727acc2ce"
+  url "https://files.pythonhosted.org/packages/ca/2c/4e7e64f2c6895555a5cf6cc4b7fd030d1b265f77969d1f417cfd84bd802e/advai_cli-1.0.12.tar.gz"
+  sha256 "d3e9921e3a878df3f604a85fc62901b9aebbcfbff36beafe2b50f18ea6a7617c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c476e0d353143e3a3f6d6b3a65d7c6bacf72f5ab7e52c331b92cf0ecfe76c4f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89b087e00e636718cce121a42ff4694504b7ae09f023a48deb9992b0d6b2ffc9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f97d6d9ca929b9869a8f5d48ea9521326a7c1228f47c13933aa13fbae6938fd7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3154a898e7fd76cba8a1afb6e9e846fecf93fedd84857e7eb139fd1528d76a0b"
-    sha256 cellar: :any,                 arm64_linux:   "e27ad395a7f0327778788cfcbd1e7dd81e566b9447e406c0feaba577607e6253"
-    sha256 cellar: :any,                 x86_64_linux:  "7040752e4410049d032bbf1052ecae815d5f6159666acbe95bd8a4cbb2a76701"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09bd214364abd8b78b5b5f6bfb32f210396743af575cc8538c3e6a3c25058d0c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d68d525c046269354896e580302f8d1e2e85cfb7d13230eeef890ec04f8f4d46"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a9bea682f0d46ea4f774c8fc7adc0e1770c00121be46dd02e16450fd831f3e8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "610251d6f89e6e3be4b1aabb9cd8f7063328cd328311b0f4db389c866a656ac6"
+    sha256 cellar: :any,                 arm64_linux:   "18089b30937572ff539f49e2d9bacd5ae1b1542dd3bf3827041c10af9a8a87a1"
+    sha256 cellar: :any,                 x86_64_linux:  "3afe599ee17e7ff8fef042f3c9d6b79fac54a0e591023eecf27e58dd06d7091d"
   end
 
   depends_on "python@3.14"
@@ -24,8 +24,8 @@ class AdvaiCli < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/82/78/8ea7308cac6934de8c74a14f3d5f65d1c89287426688be79538d0e5c013d/aiohttp-3.14.1.tar.gz"
-    sha256 "307f2cff90a764d329e77040603fa032db89c5c24fdad50c4c15334cba744035"
+    url "https://files.pythonhosted.org/packages/1d/cc/58f26f118d8099f84e009ce560b9148a3f803e63fa8473b57feb67241875/aiohttp-3.14.2.tar.gz"
+    sha256 "f96821eb2ae2f12b0dfa799eafbf221f5621a9220b457b4744a269a63a5f3a6c"
   end
 
   resource "aiosignal" do
@@ -64,8 +64,8 @@ class AdvaiCli < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/79/12/1e8f37460ea0f7eb59c221fdaf0ed75e7ac43e97f8093b9c6f411df50a78/yarl-1.24.2.tar.gz"
-    sha256 "9ac374123c6fd7abf64d1fec93962b0bd4ee2c19751755a762a72dd96c0378f8"
+    url "https://files.pythonhosted.org/packages/31/33/ebe9e3d1f86c7a0b51094c0a146392045ca1631d2664889539dec8088a33/yarl-1.24.5.tar.gz"
+    sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
   end
 
   def install

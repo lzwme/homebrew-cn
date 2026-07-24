@@ -1,10 +1,10 @@
 class OpenjdkAT8 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.org/"
-  url "https://ghfast.top/https://github.com/openjdk/jdk8u/archive/refs/tags/jdk8u492-ga.tar.gz"
-  version "1.8.0-492"
-  BUILD_NUMBER = "b09".freeze # Please update when a new GA release is available: https://wiki.openjdk.org/spaces/jdk8u/overview
-  sha256 "3744ed83399b4646c6b64cb7ec3539ed43917edae56378e9853a62ede670a9b7"
+  url "https://ghfast.top/https://github.com/openjdk/jdk8u/archive/refs/tags/jdk8u502-ga.tar.gz"
+  version "1.8.0-502"
+  BUILD_NUMBER = "b07".freeze # Please update when a new GA release is available: https://wiki.openjdk.org/spaces/jdk8u/overview
+  sha256 "c94a5d41b8c260c07672a4b4d9a7f0e27510d71a7d33d9e9625f5e8341832cbf"
   license "GPL-2.0-only"
 
   livecheck do
@@ -16,9 +16,9 @@ class OpenjdkAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 sonoma:       "b9c1ddd42f177e05dc609df78a31474055290ad2cc160864decb0cec956ac8d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "7d4f29f1df0916a69117f664f1c1f3231938807534f3acdb63166841fc8a7825"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7d1cc59954a6abfb13da30f8a899ce06e7ce83bf1c3ed68adc3c6b1bd43750b3"
+    sha256 cellar: :any, sonoma:       "f0884182b93b279edf0d6b24b3415defa7498b5e82f2af21f7bf25035c49fd1e"
+    sha256 cellar: :any, arm64_linux:  "7ad0d8f489df13903307bd4b03c148d87e1f3d9ba88980198cee2fcf47cd6663"
+    sha256 cellar: :any, x86_64_linux: "e8586df15197401ff8b884dc778feb6dd58c9c29c73622f058c69dd133b33a4e"
   end
 
   keg_only :versioned_formula

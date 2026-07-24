@@ -24,7 +24,7 @@ class Charm < Formula
   def install
     # Charm requires bzr (bazaar vcs) for fetching launchpad.net/lpad Go module.
     ENV["GOVCS"] = "launchpad.net:bzr"
-    system "go", "build", *std_go_args, "./cmd/charm"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/charm"
   end
 
   test do

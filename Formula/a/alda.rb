@@ -23,7 +23,7 @@ class Alda < Formula
     pkgshare.install "examples"
     cd "client" do
       system "go", "generate"
-      system "go", "build", *std_go_args
+      system "go", "build", *std_go_args(ldflags: "-s -w")
     end
     cd "player" do
       system "gradle", "build"

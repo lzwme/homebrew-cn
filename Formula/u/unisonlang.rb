@@ -23,13 +23,13 @@ class Unisonlang < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0c302234a571e854f87b61e1eb685fad5085477daa33a6f7a0e5ae33dae10c0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc86bc0378aaf9a9f97c24fb4efb03ab0cd159f963d34935ec97c48d6035a43c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1843ed7d7646cd8eed9c602b0e5e042d50cdc4f2dc0b33decac3adee5e658787"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0f7e75c91567d955e142ee14517bab99a2af38f66f316845df8a3425e48890d1"
-    sha256 cellar: :any,                 arm64_linux:   "546d69182075bbb4be348028e5b26155f7b3100275f1b863c18fb4c38e7a51b3"
-    sha256 cellar: :any,                 x86_64_linux:  "569b34b258ba310c2589f7728ca4fdfb3d7bac148647592e0805fee8ac1eb711"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "4de5a870d24353cf61446d20b66563aaff8d3b7cbbc5bdf6996fa3679a4c606b"
+    sha256 cellar: :any, arm64_sequoia: "cd704f4f317b10defdd31d3dd4a9b8e8cb33f4e027dd8ef8c8cff6df7eede96e"
+    sha256 cellar: :any, arm64_sonoma:  "baa9e8b7ff3893ecc28d0560b8ed257fae625fa49298e2b0239fe608e6435b57"
+    sha256 cellar: :any, sonoma:        "a86929f4a586fdec23b082bd83b6c8862a0dba013edd8be6be7b3ed7786a723d"
+    sha256 cellar: :any, arm64_linux:   "ab02cb2f9d303085c6682a1a667322932fb05559cb88f1f05f8bec28fe3dfea4"
+    sha256 cellar: :any, x86_64_linux:  "ea7a04ca72740e8f4ff79334ccd8ed651de5046ebba835c9462669b0b6861750"
   end
 
   head do
@@ -45,9 +45,12 @@ class Unisonlang < Formula
   depends_on "ghc@9.10" => :build
   depends_on "haskell-stack" => :build
   depends_on "node" => :build
+  depends_on "pkgconf" => :build
+  depends_on "libyaml"
 
   uses_from_macos "python" => :build
   uses_from_macos "xz" => :build
+  uses_from_macos "sqlite"
 
   on_linux do
     depends_on "zlib-ng-compat"
@@ -87,18 +90,28 @@ class Unisonlang < Formula
 
     stack_args = %W[
       -v
-      --copy-bins
-      --local-bin-path=#{buildpath}
+      --flag=direct-sqlite:systemlib
+      --flag=libyaml:system-libyaml
+      --flag=persistent-sqlite:systemlib
+      --flag=persistent-sqlite:use-pkgconfig
+      --jobs=#{jobs}
+      --local-bin-path=#{prefix}
       --no-install-ghc
       --skip-ghc-check
       --system-ghc
     ]
-    stack_args << "--ghc-options=-pie" if OS.linux? && Hardware::CPU.arm?
+    if OS.linux?
+      stack_args << "--ghc-options=-pie"
 
-    system "stack", "-j#{jobs}", "build", *stack_args
+      # Using global configuration to apply options to all dependencies
+      Pathname("#{Dir.home}/.stack/config.yaml").write <<~YAML
+        ghc-options:
+          "$everything": -split-sections -fPIC -fexternal-dynamic-refs
+      YAML
+    end
 
-    prefix.install "unison" => "ucm"
-    bin.install_symlink prefix/"ucm"
+    system "stack", "install", *stack_args
+    bin.install_symlink prefix/"unison" => "ucm"
   end
 
   test do

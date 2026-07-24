@@ -8674,7 +8674,6 @@ Homebrew-homebrew-cask/Casks/a/altserver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/amadeus-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/amadine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/amazon-chime.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/a/amazon-luna.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/amazon-music.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/amazon-photos.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/amazon-workspaces.rb, Homebrew/homebrew-cask, 0
@@ -14100,6 +14099,7 @@ Homebrew-homebrew-cask/Casks/o/onedrive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/onekey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/onexrayse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/onionshare.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/onit-sidekick.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/onlook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/only-switch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/onlyoffice.rb, Homebrew/homebrew-cask, 1
@@ -14178,6 +14178,7 @@ Homebrew-homebrew-cask/Casks/o/openvanilla.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openvisualtraceroute.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openvpn-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openwebstart.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/openwhispr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openwork.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openzfs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opera-air.rb, Homebrew/homebrew-cask, 0

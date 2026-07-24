@@ -3,14 +3,14 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/9b/82/1cd6f35ae4f63736fb9857dd5653898fdccdb457f5cbf1052413a9b8e18e/rapid_mlx-0.10.15.tar.gz"
-  sha256 "4e2822d15c716256bf3fd4b5f212f3a96a5fd5f8f66ae9ecdf2e02ae547442f3"
+  url "https://files.pythonhosted.org/packages/8f/91/ded709387465fc5b45d8ecd058af555421a97555a2da9e8fc8f31208f36b/rapid_mlx-0.10.17.tar.gz"
+  sha256 "ad10486414f245cb7eb69b94ffeb4b65b02f785e77d139f0e1cd35604fc24b14"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "64e37170a51d286f1321dc9443588ce41a65d416f2442831317d6b434b554190"
-    sha256 cellar: :any, arm64_sequoia: "daedb049e8121ecad6e4af9126e1f3936fcc629b868af446da3b4f3d877ed2db"
-    sha256 cellar: :any, arm64_sonoma:  "0dcc1035e58f55d2359ebefccee33313c1b5c70b5220a87295800a7704c01a98"
+    sha256 cellar: :any, arm64_tahoe:   "b57bc91ba2c58bc6fabf36c2693a7d35fe882ba4e52beff6984fb254d0b2afb1"
+    sha256 cellar: :any, arm64_sequoia: "6802ecbb61a96effaec81d3447fbbd943a6c4caea7a7e8438edd178636b99980"
+    sha256 cellar: :any, arm64_sonoma:  "0b576e2d3a133cc70e4eff96894228a8f31c07a611b0571b9f0dc939bef1a763"
   end
 
   depends_on "cmake" => :build

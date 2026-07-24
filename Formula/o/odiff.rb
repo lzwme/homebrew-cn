@@ -1,18 +1,18 @@
 class Odiff < Formula
   desc "Very fast SIMD-first image comparison library (with nodejs API)"
   homepage "https://github.com/dmtrKovalenko/odiff"
-  url "https://ghfast.top/https://github.com/dmtrKovalenko/odiff/archive/refs/tags/v4.4.4.tar.gz"
-  sha256 "9261e04f7a09c48bcad1c62f74389649f75eb6be4423e0f6516a48ab08b1e160"
+  url "https://ghfast.top/https://github.com/dmtrKovalenko/odiff/archive/refs/tags/v4.5.0.tar.gz"
+  sha256 "4b78712394c0f628331a21086615eadb6853d28a30d4dfa188b12d823d3ccec0"
   license "MIT"
   head "https://github.com/dmtrKovalenko/odiff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac10e07bfdca6a977200ba6e5c3afc96f8230a16adcd2c6d2a01dfd632cc3021"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6930624449a15e43710658a624e08c0b0c1172551b468e071dc82f49dcd71bc7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a2679109bd2f206fb900402582d2a2d21f437b64cff3a750256d1a739460131"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ac55a2e0fffe970dc84d275f89f45abd485f086662e7dc9c7618459cd648305f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9993e52f72f19111e98ff1712c78446377a95873a354d34033aebe13910520c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b249ce18a0a085d6a69b70145bfc5ae3ef0f4404038b07e985b12333eb59e71a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b3ce73c55f0cf7f612a7bb65d21ea20d5cac2312887a7fc228b7053113cacb37"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e188cd66caee072bd69b70963159d00b7bab0ca9b26dc1561a23269ec24d19a8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1467a78d8681c9ec7abbd009191d183309edaddd90092a5a00b832b9eba1452f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c56774c83765436fbd8e02dabbf848218cfbf37cb62f18ac9e77506f7096d5a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "803be1d4137c9a355c2b407992137b28236312df82da73f700a4215fd8e0b440"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f299ec05e2924d034d823ce94bad32c4563cd4531fd6743d961ab19084153d63"
   end
 
   depends_on "zig" => :build

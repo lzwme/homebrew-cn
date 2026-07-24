@@ -1,30 +1,21 @@
 class Sops < Formula
   desc "Editor of encrypted files"
   homepage "https://getsops.io/"
-  url "https://ghfast.top/https://github.com/getsops/sops/archive/refs/tags/v3.13.2.tar.gz"
-  sha256 "79560b53814e20031d094a293d6c169314eaaf97efd6e95a6d765e61e881db2c"
+  url "https://ghfast.top/https://github.com/getsops/sops/archive/refs/tags/v3.13.3.tar.gz"
+  sha256 "49811c5ed80f6b4d4e98cef98e3f7378406aa692fd773dfb72ad1b4dfb940448"
   license "MPL-2.0"
   head "https://github.com/getsops/sops.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc11451cfbe8f928775eab952a21b8c48d640ba561da47baf187ece72361e9c6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc11451cfbe8f928775eab952a21b8c48d640ba561da47baf187ece72361e9c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc11451cfbe8f928775eab952a21b8c48d640ba561da47baf187ece72361e9c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ed164601ec927a8e91ef5a3835349274dcc3d22f4a5dd3abf623135e05d4156e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9747900e05c658c2183dc8c7a8dd1ecc6a5e5a2c04a920cc81e121e8ce850fbd"
-    sha256 cellar: :any,                 x86_64_linux:  "f950c752bed97c47c6a27fa9e8edf84c60de040cfd7ce7b7bf791ea48b50b467"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "baeff34ec84e339c8b1e3d930e53243a417c897b73773c47f73d68db43c5448a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "baeff34ec84e339c8b1e3d930e53243a417c897b73773c47f73d68db43c5448a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "baeff34ec84e339c8b1e3d930e53243a417c897b73773c47f73d68db43c5448a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b0b6a117d057d0a8c69e126da14594df56dc8539c8a4ff1e45c306dca0483e92"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bba36aab53ddd2c9e404422eb921a018eb6945db8511ccd791208cb276f8ce0"
+    sha256 cellar: :any,                 x86_64_linux:  "f913f6bb7b4a05f36e8b7080c4f8279ae8cbd23a772f1324cf5b93e322449c85"
   end
 
   depends_on "go" => :build
-
-  # Fix completion script
-  patch do
-    url "https://github.com/getsops/sops/commit/fedcba3c01bbd6897a4700993dfd6475241ee10a.patch?full_index=1"
-    sha256 "ff086e2c17c7de93211c70fbea744dc67006625a2961b649bc504aa095c0c18e"
-    type :unofficial
-    resolves "https://github.com/getsops/sops/issues/2252"
-  end
 
   def install
     ldflags = "-s -w -X github.com/getsops/sops/v3/version.Version=#{version}"

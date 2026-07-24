@@ -1,8 +1,8 @@
 class RocqMicromegaPlugin < Formula
   desc "Micromega decision procedures plugin for the Rocq prover"
   homepage "https://github.com/rocq-community/micromega-plugin"
-  url "https://ghfast.top/https://github.com/rocq-community/micromega-plugin/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "4402d9bfce88661569f3acbfff3bf4afbc6b5c8c54282b365888bac8a959f652"
+  url "https://ghfast.top/https://github.com/rocq-community/micromega-plugin/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "5ed46c62dfb7c06ad1df2f744bca5a39282ac9787c57433478a87a706e6e4391"
   license "LGPL-2.1-only"
 
   livecheck do
@@ -11,12 +11,12 @@ class RocqMicromegaPlugin < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e2e32190357d65fbbf5d83be1e179d75c34aa91c0f8880a365010bf6ef36277e"
-    sha256 cellar: :any, arm64_sequoia: "0a19d604be6e148f6f9827e70c8859e19627523aab189a3dc8d5ae210fa39c6c"
-    sha256 cellar: :any, arm64_sonoma:  "ba553c7a91ec476f65e1b78da3ed178f23c5d16f2bd639780a030a1ac2fe6592"
-    sha256 cellar: :any, sonoma:        "b28cc65d8093ff84bc46ab295a26919433d73676c34b8003731ca25f3318180b"
-    sha256 cellar: :any, arm64_linux:   "7fe20718dbc38c2c958706d9c3ff0aeac8c5e790011c6faf08ad9479370c9fcf"
-    sha256 cellar: :any, x86_64_linux:  "44d1dcec1c04f4ead2b9f425c4e91d7673234c7339a9fe1debfce64889e4e80f"
+    sha256 cellar: :any, arm64_tahoe:   "c04708a0953af29c96453358190183f87ec8f0afd7470321e70b88cce61a4db8"
+    sha256 cellar: :any, arm64_sequoia: "c3d7c9df193f7f2839292b54a610791e0696736f3efdcd3d84c53de03c1c7053"
+    sha256 cellar: :any, arm64_sonoma:  "807b853049b18c8fcfc15bce78a84eb282742e8419cfdcc7a536ff7e4ab5241b"
+    sha256 cellar: :any, sonoma:        "ec6d0db7151013988fbd768c35d314d84681364534343afa13100468f12bbdb6"
+    sha256 cellar: :any, arm64_linux:   "530462f339caa852f7186e472449869685c4b509f572299e15cb4ab5e7e3411c"
+    sha256 cellar: :any, x86_64_linux:  "97621d7474e127377d099fbc804c0c77ea86d22acc7b20b8dabd9ec6998b9b7d"
   end
 
   depends_on "dune" => :build

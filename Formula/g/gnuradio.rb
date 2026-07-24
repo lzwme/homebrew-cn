@@ -154,7 +154,6 @@ class Gnuradio < Formula
   end
 
   def install
-    ENV.cxx11
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
     site_packages = Language::Python.site_packages(python3)
@@ -254,8 +253,7 @@ class Gnuradio < Formula
       }
     CPP
 
-    boost = Formula["boost"]
-    system ENV.cxx, testpath/"test.c++", "-std=c++17", "-I#{boost.opt_include}", "-L#{lib}",
+    system ENV.cxx, testpath/"test.c++", "-std=c++17", "-I#{formula_opt_include("boost")}", "-L#{lib}",
                     "-lgnuradio-blocks", "-lgnuradio-runtime", "-lgnuradio-pmt",
                     "-L#{formula_opt_lib("fmt")}", "-lfmt",
                     "-o", testpath/"test"

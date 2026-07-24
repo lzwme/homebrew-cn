@@ -35,12 +35,9 @@ class Flint < Formula
   uses_from_macos "m4" => :build
 
   def install
-    # to build against NTL
-    ENV.cxx11
-
     args = %W[
-      --with-gmp=#{Formula["gmp"].prefix}
-      --with-mpfr=#{Formula["mpfr"].prefix}
+      --with-gmp=#{formula_opt_prefix("gmp")}
+      --with-mpfr=#{formula_opt_prefix("mpfr")}
     ]
 
     if Hardware::CPU.intel?
@@ -117,7 +114,7 @@ class Flint < Formula
           return EXIT_SUCCESS;
       }
     C
-    system ENV.cc, "test.c", "-I#{include}/flint", "-L#{lib}", "-L#{Formula["gmp"].lib}",
+    system ENV.cc, "test.c", "-I#{include}/flint", "-L#{lib}", "-L#{formula_opt_lib("gmp")}",
            "-lflint", "-lgmp", "-o", "test"
     system "./test", "2"
   end

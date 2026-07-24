@@ -38,7 +38,6 @@ class Darkice < Formula
   end
 
   def install
-    ENV.cxx11
     # TODO: Remove when source is back to the release tarball
     cd "darkice/trunk" do
       system "autoreconf", "--install", "--force", "--verbose"

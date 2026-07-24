@@ -26,10 +26,6 @@ class Bullet < Formula
   end
 
   def install
-    # C++11 for nullptr usage in examples. Can remove when fixed upstream.
-    # Issue ref: https://github.com/bulletphysics/bullet3/pull/4243
-    ENV.cxx11 if OS.linux?
-
     common_args = %w[
       -DBT_USE_EGL=ON
       -DBUILD_UNIT_TESTS=OFF

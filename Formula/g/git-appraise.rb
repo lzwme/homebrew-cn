@@ -31,7 +31,7 @@ class GitAppraise < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, "./git-appraise"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./git-appraise"
   end
 
   test do

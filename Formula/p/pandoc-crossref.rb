@@ -5,16 +5,15 @@ class PandocCrossref < Formula
   version "0.3.24a"
   sha256 "5b478c94b67d5b972c7b3d867a345be982d3af12475e2261dd9b37fc17e225d1"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "2732ad9d55ecb69163f3725471c2f00339c1d24b5b74b180aff6151640c4c2ba"
-    sha256 cellar: :any, arm64_sequoia: "3c70229621f762b729760e4f5bca00a494f93d75407af8ac2b92a816066a512a"
-    sha256 cellar: :any, arm64_sonoma:  "d1ba65b191724164adbaf23951cac5533adff959a28c3b1ba91e6010253911bc"
-    sha256 cellar: :any, sonoma:        "6fdad65837c4809a0504f444c9217f74326565d4ed5069575fefa77f285bb9a4"
-    sha256 cellar: :any, arm64_linux:   "e72d242e0e446cc7347f4430bb6618de3a7d7da074826bee15e63a23967b7786"
-    sha256 cellar: :any, x86_64_linux:  "e66d3e9c9c24e8eb457567ac4d8d040275c531dafa961c0f83b371dc9442f561"
+    sha256 cellar: :any, arm64_tahoe:   "ad790a96e2e516323595c1ec40f98af37c25bc1e03869de142df4906cab08f38"
+    sha256 cellar: :any, arm64_sequoia: "04bc15079465d3e8ed69eb0d9ad5861e3478c1bf3a97e730be6989e77ccbfaea"
+    sha256 cellar: :any, arm64_sonoma:  "b06df185e160de796f91b733366b45dd671c28be108cbd60ffa17ab5a86fc3e8"
+    sha256 cellar: :any, sonoma:        "13546d12be2f5064fdeaf2d2a11fb5562b6b283690b196fc40b17344388d2bef"
+    sha256 cellar: :any, arm64_linux:   "e9b8950ef7e484211207357e582bc6842dd8872719ed4db079d1abdf2fdc0bb2"
+    sha256 cellar: :any, x86_64_linux:  "5537484b5e14e8c3369bbb52e8b43bccd56903b836a1efb7d33977a39992b0af"
   end
 
   depends_on "cabal-install" => :build

@@ -28,9 +28,19 @@ class Clojure < Formula
 
   test do
     ENV["TERM"] = "xterm"
-    system("#{bin}/clj", "-e", "nil")
-    %w[clojure clj].each do |clj|
-      assert_equal "2", shell_output("#{bin}/#{clj} -e \"(+ 1 1)\"").strip
+    assert_equal "2", shell_output("#{bin}/clojure -e \"(+ 1 1)\"").strip
+
+    require "io/console"
+    require "pty"
+    # `clj` wraps clojure with rlwrap, which needs a sized tty
+    PTY.spawn("#{bin}/clj -e '(* 6 7)' > out") do |r, _w, pid|
+      r.winsize = [24, 80]
+      r.read
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
+    ensure
+      Process.wait(pid)
     end
+    assert_match "42", (testpath/"out").read
   end
 end

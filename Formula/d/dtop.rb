@@ -1,18 +1,18 @@
 class Dtop < Formula
   desc "Terminal dashboard for Docker monitoring across multiple hosts"
   homepage "https://dtop.dev/"
-  url "https://ghfast.top/https://github.com/amir20/dtop/archive/refs/tags/v0.7.9.tar.gz"
-  sha256 "810b66717e94f944b7cdb9051b0952a027861d7f6d0bae7393295189cae55f8c"
+  url "https://ghfast.top/https://github.com/amir20/dtop/archive/refs/tags/v0.7.10.tar.gz"
+  sha256 "2365d73f398142b1297b75e031ad00f9ebcaa4bd4170b52827c6bc0e87f028ff"
   license "MIT"
   head "https://github.com/amir20/dtop.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3601468b29f531577afbafc1a4e2b2bec36df503ed618d1c34a07e9ac4d6c5ca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e964ea84b33234ebfea52fa0218902bc4ba56f3790f14ea3c8b45f901773870"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7553d09c50f9fa2ca32b0e2d713b2d0096ed534db4a0c5a0b5c44c6769757d0a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "80de6e988dbd0cdf3eb9950650d681425263f1f2c459f5da9563029ffd69cbc9"
-    sha256 cellar: :any,                 arm64_linux:   "ebd3dc42e9a5f1c6137785a9f04116e432394023d417cea218652d2d49e9e3f9"
-    sha256 cellar: :any,                 x86_64_linux:  "30d26d3203fb0571c61394ba3c55bd3be9f8a29e50fbfd2d0305142f8830350d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "487f402585b7bfc39c44380d862989296db57e1bafaab27e182bc5f6a3a89249"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "401069c9ab760cc6c2b743279aa90a728cd9a23656c63feff36fe10f38219519"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4f9f8979108d71da1571e73296aa048f149cdfaece97aa6bfe2a1e426a11bec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "94c182905cd4d5db6f8cbec5d77fbaddac6d9d578549c4727304185db073291e"
+    sha256 cellar: :any,                 arm64_linux:   "f3ca8fe781cab08a9651a36534ebadc6e790f77eaab3bb3bdb7da4f1e5068ff9"
+    sha256 cellar: :any,                 x86_64_linux:  "89ca8720a05c77f637c071e96728e100665ed42ac8717a0a8fbeadf035fe9062"
   end
 
   depends_on "rust" => :build

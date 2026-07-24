@@ -1,6 +1,6 @@
 cask "mac-sai" do
-  version "1.17.0"
-  sha256 "cb63fd37b61aae5d3754f7262f776ba9154f4ca7f5915c32b31af07838e31478"
+  version "1.18.0"
+  sha256 "4762c0742bd7dedac15c49c2898caa2579ca142e8d8398e54332d116df0b28f9"
 
   url "https://ghfast.top/https://github.com/iliyami/MacSai/releases/download/v#{version}/MacSai-#{version}.dmg"
   name "Mac Sai"
@@ -16,7 +16,8 @@ cask "mac-sai" do
 
   app "Mac Sai.app"
 
-  uninstall launchctl: "com.macclean.menu"
+  uninstall launchctl: "com.macclean.menu",
+            quit:      "com.macclean.app"
 
   zap trash: [
     "~/Library/Application Support/MacClean",
@@ -24,6 +25,7 @@ cask "mac-sai" do
     "~/Library/HTTPStorages/com.macclean.app",
     "~/Library/Logs/MacClean",
     "~/Library/Preferences/com.macclean.app.plist",
+    "~/Library/Preferences/com.macclean.shared.plist",
     "~/Library/Saved Application State/com.macclean.app.savedState",
   ]
 end

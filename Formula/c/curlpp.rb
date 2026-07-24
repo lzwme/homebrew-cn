@@ -29,7 +29,6 @@ class Curlpp < Formula
   end
 
   def install
-    ENV.cxx11
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -61,7 +60,7 @@ class Curlpp < Formula
         return 0;
       }
     CPP
-    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}",
+    system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", "-I#{include}",
                     "-L#{lib}", "-lcurlpp", "-lcurl"
     system "./test"
   end

@@ -43,7 +43,6 @@ class Apngasm < Formula
   def install
     inreplace "cli/CMakeLists.txt", "${CMAKE_INSTALL_PREFIX}/man/man1",
                                     "${CMAKE_INSTALL_PREFIX}/share/man/man1"
-    ENV.cxx11
     ENV.deparallelize # Build error: ld: library not found for -lapngasm
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
