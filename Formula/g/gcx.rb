@@ -1,18 +1,18 @@
 class Gcx < Formula
   desc "CLI for managing Grafana Cloud resources"
   homepage "https://github.com/grafana/gcx"
-  url "https://ghfast.top/https://github.com/grafana/gcx/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "689822b98e5bafb0392133397240892bfa0f4ce1cbe602a7ae471bf4c928d60e"
+  url "https://ghfast.top/https://github.com/grafana/gcx/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "52e4b90a3f02cb524cdfa042b000a5c5e3b28c9caa7b6e196d365c435aea3f1a"
   license "Apache-2.0"
   head "https://github.com/grafana/gcx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de6db3dd18b03c884e2bcfdb0f22193ac7b36da0010b701da307bf113c0b5921"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d126418e5059f014874729b8428e5d064c86124ec12a50aa039697932139302d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7a2f1f1f1c09b84e1b16c21a8e8ca5056793c674f87f53c9b37e6e278423489"
-    sha256 cellar: :any_skip_relocation, sonoma:        "378fdb56843e7aab59daf6a708e104af2671a5459d3a7360e53807fe817644be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e43058dd629d90bad2a092eb52a002dcb7cac6985d861786260a32c22f2dbf40"
-    sha256 cellar: :any,                 x86_64_linux:  "c51c36925c623ea4ff3ef4f85a59e86b3dbd1b10b9ffde0a35120bb03f0be7a8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf50c4962f03f3e9541535f87d068157b37b6b8abec33e64ca6dc96ffe7558e3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75d5845a0537ea33196159c267e06d80ee0c22d07d1ca358574035eb041dc8a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7ba4dc6edf1557f608ce3401262e8dbec13133293b48d49a6c4b85632e17281"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ca4fa92adc916a6787bf78808b58ce2aa0809ae755d2627973e27cd847856c82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7c55e78fbc3c821b3483c8c0512d8922f13e372a30503dbfb3bbf6302dd503f"
+    sha256 cellar: :any,                 x86_64_linux:  "e77d8acd097e36f14f3eb60e0cf8a05376aeaf727c5ac8ccb7f4c7eddcc4ff7a"
   end
 
   depends_on "go" => :build
@@ -32,7 +32,7 @@ class Gcx < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/gcx --version")
 
-    system bin/"gcx", "config", "set", "grafana.server", "https://grafana.example.net"
+    system bin/"gcx", "config", "set", "stacks.test.grafana.server", "https://grafana.example.net"
     assert_match "https://grafana.example.net", shell_output("#{bin}/gcx config view")
 
     assert_match "Unknown output format", shell_output("#{bin}/gcx commands --output bogus 2>&1", 1)

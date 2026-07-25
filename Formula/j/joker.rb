@@ -19,7 +19,7 @@ class Joker < Formula
 
   def install
     system "go", "generate", "./..."
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do

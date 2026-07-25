@@ -14,18 +14,19 @@ class Hk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9051841ec0973774012b3a5c0c9acedbe5901760c4209016557e565da9e65d1a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3791baf536af40335a4b1e28d04c14d2953e5a4104f3583e9a1575f8286de96"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ec9edcb625bedcc65eeafee993a9a8d17a9c6ae6787837a13b5244bf6c0bb40"
-    sha256 cellar: :any_skip_relocation, sonoma:        "76c048eb5ea5faf3e4fad795750c4773c449b1ac26db26900ac7d1a72c5753eb"
-    sha256 cellar: :any,                 arm64_linux:   "67ffb29b9cdf57f952510f16b57d99878f0425e7329c580ef7e9a07fa5065c25"
-    sha256 cellar: :any,                 x86_64_linux:  "1e1cc6685d397135a48c447ef1ad1ccca9d00cd18d13852ccad5fa493044f7ad"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c48a81f0286fceb117be383ec8327dd57d960bb127507f72906c1a29dcf1bde"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99094f5db8b3e10a9340ef66b5bf41e98fb5744a4d9896b6f12ffed03c89be53"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f2939d7a3cb78f04874c01881722431d28e7046e69e27994e0950fe2634f38d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a04f1349da1aaab6f180389c3726d99eced9cab1f0d1419f5e11d8f61f5d35bd"
+    sha256 cellar: :any,                 arm64_linux:   "d939c2a8e07249c1ecbdaf7faee998ff827583f30f53f7b134106b681c5b071c"
+    sha256 cellar: :any,                 x86_64_linux:  "81b84e8293f38f2e7f936852fa808ffea6429c1fd146015001887ca1c9f3bbe7"
   end
 
+  depends_on "pkl" => :build
   depends_on "rust" => [:build, :test]
 
   depends_on "openssl@3"
-  depends_on "pkl"
   depends_on "usage"
 
   uses_from_macos "python" => :build

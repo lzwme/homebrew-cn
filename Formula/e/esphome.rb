@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://esphome.io/"
-  url "https://files.pythonhosted.org/packages/9f/10/051280a9692499d4102741e02482eb8245012b6b7d285254ae4612a2d9c5/esphome-2026.7.1.tar.gz"
-  sha256 "7ebfa65022df03eb6c0138d36aa9d87a8ccc3c98fcdc3d78b1c060e9771b5959"
+  url "https://files.pythonhosted.org/packages/e2/0f/1440d1740383217bbed7d0a5c69887631d2cf25f26fcd835ffba65d63e71/esphome-2026.7.2.tar.gz"
+  sha256 "3f5082f5122f6d96d642ba773297876cadffdb626611a015f76a6a669ccf48e1"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -12,12 +12,12 @@ class Esphome < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bfc1c269f1ab0affc39640fc691684d6a9bc112503f223d4a29057d7540626e7"
-    sha256 cellar: :any, arm64_sequoia: "db4727c7cbfbae15b37c787a1c97165acfd39006073baf2c31ccad29d8b653ca"
-    sha256 cellar: :any, arm64_sonoma:  "555bb0c511f4835cbfcd37770e1568d340c5985608352214836f03bbda3f2961"
-    sha256 cellar: :any, sonoma:        "2840218df36bb21bb48268edceb2c4c6a849334332b5dbcf083050269c3ee3c5"
-    sha256 cellar: :any, arm64_linux:   "99df043d5bfae50411bcefe6db33a1faea79ed8636170a1efd2f872e802c0bcf"
-    sha256 cellar: :any, x86_64_linux:  "9b972192e6169d3549bbc00da64f1df2316dee8f29c78f8be3bd009bcdcb77a3"
+    sha256 cellar: :any, arm64_tahoe:   "3509fb89ac8d9d2d4266d3f8205dbcc08952c12dd33c6e67e639ddba3689e909"
+    sha256 cellar: :any, arm64_sequoia: "5511026251e31d2dfc9e51a2c42a3582aa9401ad71c7a6981996856336b94b6f"
+    sha256 cellar: :any, arm64_sonoma:  "82417f25f3123fb0a613981a8a26354cdcab611fa50544ccabf9d26a0650c850"
+    sha256 cellar: :any, sonoma:        "db897cbf70d71af6df7b604af1bb717ef7ba22448f31e09720e709b4da1ccd3f"
+    sha256 cellar: :any, arm64_linux:   "9cd0652af73070fe18d35aadf177633d07774204ed1e0316f984cce1f0129911"
+    sha256 cellar: :any, x86_64_linux:  "d6e700ba350690597369aa90c505ec143b9411ce1cf98594501e2506ac46f4f9"
   end
 
   depends_on "rust" => :build
@@ -41,8 +41,8 @@ class Esphome < Formula
                 extra_packages:   %w[chardet dbus-fast pyobjc-framework-corebluetooth pyobjc-framework-libdispatch]
 
   resource "aioesphomeapi" do
-    url "https://files.pythonhosted.org/packages/9a/a5/83619d21e0e9850251dafb8731b6c15b6fd4615d9a50fd3979d36f0e3932/aioesphomeapi-45.6.2.tar.gz"
-    sha256 "d09d89101d46cddb6ed07e4f038fc85d2e20038f041c098141c4f8f051c1567d"
+    url "https://files.pythonhosted.org/packages/2b/a7/f56796e0bb67be336eec23749a9ea0b848ffb805d38ebdd52563cc7088db/aioesphomeapi-45.7.0.tar.gz"
+    sha256 "66be75dc5962a9fec08a41f375039834b1bfd210bfd5b99efe3404da05002aa3"
   end
 
   resource "aiohappyeyeballs" do

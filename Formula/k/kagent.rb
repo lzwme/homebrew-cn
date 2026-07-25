@@ -21,6 +21,7 @@ class Kagent < Formula
   def install
     cd "go" do
       ldflags = %W[
+        -s -w
         -X github.com/kagent-dev/kagent/go/core/internal/version.Version=#{version}
         -X github.com/kagent-dev/kagent/go/core/internal/version.GitCommit=#{tap.user}
         -X github.com/kagent-dev/kagent/go/core/internal/version.BuildDate=#{time.strftime("%Y-%m-%d")}

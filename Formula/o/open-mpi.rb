@@ -7,6 +7,7 @@ class OpenMpi < Formula
     "BSD-3-Clause-Open-MPI",
     "mpich2", # opal/datatype/opal_datatype_pack_unpack_predefined.h
   ]
+  revision 1
   compatibility_version 1
 
   livecheck do
@@ -15,13 +16,12 @@ class OpenMpi < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 arm64_tahoe:   "f79369b834e92e53035c9e814b2a8c21109ea1677f6405723c894ecb57b7d5e8"
-    sha256 arm64_sequoia: "d339457dea6181fcd12f7a58106d04fceacbd18e7aaf5ea68b7a2ff26e908b28"
-    sha256 arm64_sonoma:  "b1dff202d13f81040be3909bfd8e322afb453a0e381c99d283fae8a6f255d484"
-    sha256 sonoma:        "ad5130e7c2b5f3fb6dca449f319ac39c7d072042ad8714c36be5457acc4d27b3"
-    sha256 arm64_linux:   "05af3e5e2f41d8617c901ed368b1e66ec68cf230751ed923e0bacc4605df2ab4"
-    sha256 x86_64_linux:  "acc6aa0f31b843e1df9c2ba07d593ef97469141093094cbd23adcdd619be4e1f"
+    sha256 arm64_tahoe:   "c179655f574ab1531ef996d9544096411e326bc068e2a3a3efea12bf1ad64fbd"
+    sha256 arm64_sequoia: "137b9def65b6d03f5b9c563e3657fc69bbb3ef51c1b707df8df34e73da094b33"
+    sha256 arm64_sonoma:  "278c5ea70d569f67f9e50c34a443053156d514ad06ea2bf2c51408474f26f5e5"
+    sha256 sonoma:        "a36d5906cfad7d9ec3a9578b055cf76cf8846331e1c3dc7c6baf502258edce49"
+    sha256 arm64_linux:   "19921a56d584ff336b7759630782cd28468ec1dc529c4e230ac74d3d7f02f1d4"
+    sha256 x86_64_linux:  "cf07363fa7e75f26c94cad6a7857b8b2b9f48420b73ab93d1fae23c7c83a29cc"
   end
 
   head do

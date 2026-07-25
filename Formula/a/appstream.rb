@@ -1,18 +1,18 @@
 class Appstream < Formula
   desc "Tools and libraries to work with AppStream metadata"
   homepage "https://www.freedesktop.org/wiki/Distributions/AppStream/"
-  url "https://ghfast.top/https://github.com/ximion/appstream/archive/refs/tags/v1.1.4.tar.gz"
-  sha256 "0cba35762201ab9e367d5b8da4d0a6c3bd456103ac78b852585995318d6f109a"
+  url "https://ghfast.top/https://github.com/ximion/appstream/archive/refs/tags/v1.1.5.tar.gz"
+  sha256 "2160a8d9205448214a9e3c9fe3bc205fa630542109c8bf869b26951989b9bb38"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "27e143078ac529602eece0bb3cfdee2dd9acb1ba2d5a11054997506c4b25f548"
-    sha256 arm64_sequoia: "213203dd8758b63ea84e0de16455a7b138afdfc6fbed9779a8f1d9d26b29b860"
-    sha256 arm64_sonoma:  "0bfd2514b3509827bd5fb146d560bbddf73262cbb7fce0501441c7733be407bd"
-    sha256 sonoma:        "99282e5bdbb9cb10d537c71fbaa7eeb9f1389bba22ef5c504539cc62065a43da"
-    sha256 arm64_linux:   "00c376ffe45d3b56f276d119985980ca6325269d954f49eccdf26f4fa56a3a23"
-    sha256 x86_64_linux:  "561908379575df50d92747db730b04b8c1dac1332aeaf1f9b28cb90cbc6f7d57"
+    sha256 arm64_tahoe:   "08f193fc41cb5622d73ebba0ca0608d490c8003d12f4db0bbbf3672854439eaa"
+    sha256 arm64_sequoia: "749741d9356a04b9a64bddb25ae321841c8623b6d11da2fdf673061dd3842d5a"
+    sha256 arm64_sonoma:  "02fc3d49c3c9e317533eaa2cab9f37d5744b4e72bfc5535c85f006febd527bfa"
+    sha256 sonoma:        "78ea766ecf853ea1a195cd9eb0c3c2e002b40697ea272c064047dcbf8d24ae84"
+    sha256 arm64_linux:   "d8ab6e547d8a1d006b3c30e420b7abdb63ddda35a616ab4f9ed5f4f802c6c454"
+    sha256 x86_64_linux:  "081fa01b2d6ddc06f09b8537239247613ca1f168cfab0001518c34d1b569a288"
   end
 
   depends_on "gobject-introspection" => :build
@@ -57,9 +57,10 @@ class Appstream < Formula
       -Dapidocs=false
       -Dinstall-docs=false
       -Dbash-completion=false
+      -Ddisplay-detection=auto
     ]
 
-    args += %w[-Dsystemd=false -Dwayland=false] if OS.mac?
+    args << "-Dsystemd=false" if OS.mac?
 
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

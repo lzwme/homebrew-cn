@@ -24,7 +24,7 @@ class Infracost < Formula
 
   def install
     ENV["CGO_ENABLED"] = "0"
-    ldflags = "-X github.com/infracost/cli/version.Version=v#{version}"
+    ldflags = "-s -w -X github.com/infracost/cli/version.Version=v#{version}"
     system "go", "build", *std_go_args(output: bin/"infracost", ldflags:), "main.go"
 
     generate_completions_from_executable(bin/"infracost", "completion")

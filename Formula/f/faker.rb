@@ -3,12 +3,12 @@ class Faker < Formula
 
   desc "Python-based fake data generator"
   homepage "https://faker.readthedocs.io"
-  url "https://ghfast.top/https://github.com/joke2k/faker/archive/refs/tags/v40.35.0.tar.gz"
-  sha256 "85089feaefe38d3600f8a80f491199b5ec861b6b6a77f61a8645e89e66a9a8e2"
+  url "https://ghfast.top/https://github.com/joke2k/faker/archive/refs/tags/v40.36.0.tar.gz"
+  sha256 "528514892b756bf0f28cfc83794fc29f13dc6293a5a2a4933cc89270b9831e78"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3eeda2d8da3606bb4bd329d8a33da2f772094ded333e4d9a6f8a096f05f32aa1"
+    sha256 cellar: :any_skip_relocation, all: "be113de7fcb716daaab705eff1e1099e198793d38af6f8ef0123e834661a477b"
   end
 
   depends_on "python@3.14"

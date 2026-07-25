@@ -1,17 +1,17 @@
 class Libcec < Formula
   desc "Control devices with TV remote control and HDMI cabling"
   homepage "https://libcec.pulse-eight.com/"
-  url "https://ghfast.top/https://github.com/Pulse-Eight/libcec/archive/refs/tags/libcec-8.0.0.tar.gz"
-  sha256 "fbbda7e659e5f0b0971fa42a0a42c95f893f602aaf5c0043077a91476bb90b7b"
+  url "https://ghfast.top/https://github.com/Pulse-Eight/libcec/archive/refs/tags/libcec-8.1.0.tar.gz"
+  sha256 "11fef68e5a77adf30519096c333d4cdb3f4cfd1d9e0a6d679636899c5807f585"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "abdca82c05430382ab347b613cd4198348806d60160a4daa8ed11df17216291b"
-    sha256 cellar: :any, arm64_sequoia: "38be569840da977359cdccc8ab17c307c3196e66f7849d2401288504face895a"
-    sha256 cellar: :any, arm64_sonoma:  "d81b238c23823b14d4f2e00f4a7abcd30f3c92596fbc8dfd54a634ecb8b9bb9b"
-    sha256 cellar: :any, sonoma:        "b32e450a6cea1c3efb5da63fa26ad4782e441fc2927d98d55edfe974d9f0837f"
-    sha256 cellar: :any, arm64_linux:   "b3db89a213578164329c38e0c0e73ed189abfacb66fe07e2be88fb2837b961f1"
-    sha256 cellar: :any, x86_64_linux:  "672e59c594b13a00a30ec097fd09fac22c015144ed49fa88b25659cab8c59af3"
+    sha256 cellar: :any, arm64_tahoe:   "8df50d2b4ae218661eb297d51dd67494dcbab5f0c79ff0c628ca27615bed2a35"
+    sha256 cellar: :any, arm64_sequoia: "0fe31286e1ee21ad365817c96f52abdfc8b10ab94d4725fc55d194f0205982fd"
+    sha256 cellar: :any, arm64_sonoma:  "38e3ff08f1cc8532e1b1d8d9118fcf67b8709cc09f666f7902842468a0436660"
+    sha256 cellar: :any, sonoma:        "49601b83a4e2b63eece3c49b643d0cf54c7f1b16ca95f45c7bba5ccce6994269"
+    sha256 cellar: :any, arm64_linux:   "e29af667948ce5aeaa077f3176a305df56996c64c87ac843abf2042665b35b33"
+    sha256 cellar: :any, x86_64_linux:  "c4df4c9c35a1a88627ed35be53fd3ba6dd3c813491d5205b744ae43c1438d909"
   end
 
   depends_on "cmake" => :build
@@ -19,8 +19,6 @@ class Libcec < Formula
   uses_from_macos "ncurses"
 
   def install
-    ENV.cxx11
-
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

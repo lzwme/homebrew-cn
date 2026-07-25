@@ -3,18 +3,18 @@ class Subliminal < Formula
 
   desc "Library to search and download subtitles"
   homepage "https://subliminal.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/33/9a/985fbb9e0ffad86843caa0e559794c400baee54928cbea55df409a3c8f97/subliminal-2.7.0.tar.gz"
-  sha256 "6ebe5e2e3ff0384e705f63ad6ba453492420dd6e2183b88971750649da51ed2f"
+  url "https://files.pythonhosted.org/packages/9f/08/f602bac8c35f04021e6dfcd0bebea917cd2b57116229a74a0b97e63c72ab/subliminal-2.7.1.tar.gz"
+  sha256 "f2649914d3067904effa2b4ce8d83aae994cd47008253311d5ae7949f467939f"
   license "MIT"
   head "https://github.com/Diaoul/subliminal.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "91ebc94d2bfc0f0c773f2ae14df91b7067c1345db9b13334a0aba20bce5ae48e"
-    sha256 cellar: :any, arm64_sequoia: "a4c6a5b86cb0b4fed1addb10b9c444e16028d2eb7dc4c1d10efdb8aee2bd639d"
-    sha256 cellar: :any, arm64_sonoma:  "730c2b485893ac4d317b2341a264666b3087904e8b3e9f01c8439d26886ec76b"
-    sha256 cellar: :any, sonoma:        "203a5f6c2aa36976f77bd1d425fc330ef4b68b1181003f3226eda048906978a2"
-    sha256 cellar: :any, arm64_linux:   "16a917f28e271d4cfa70885fd46f31605232edf4e93ada984baa3d9fdb552211"
-    sha256 cellar: :any, x86_64_linux:  "e038210e2be0501af397fe990021864b6542751c30a583567da5810c3fa8cb32"
+    sha256 cellar: :any, arm64_tahoe:   "dcb5ea681bc69c983c212b053859046c8b426fffc7ca1bf185e4754aa68a8293"
+    sha256 cellar: :any, arm64_sequoia: "749d9de3dbc1aed629c8aab391a6cd829dd51a116b9c38a2a6a6f993310b2ceb"
+    sha256 cellar: :any, arm64_sonoma:  "5659664975fb0f75b87ed7edf1487adb72d1be49c94184321419bb9e6ffeadf3"
+    sha256 cellar: :any, sonoma:        "7d82427050b590f3ff272adfbb92448927ce744ce3ae3bc1af0d1e1e7779b0d4"
+    sha256 cellar: :any, arm64_linux:   "b98270f95104e3707bc0521ba3e47ce5b4a2d377727c2664c96d3fd45fa11ae6"
+    sha256 cellar: :any, x86_64_linux:  "d367e89c85bb22bf1985f71bf568173cbd6c51298a1be2962daee6cafe6af0ac"
   end
 
   depends_on "certifi" => :no_linkage

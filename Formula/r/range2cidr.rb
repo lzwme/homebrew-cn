@@ -29,7 +29,7 @@ class Range2cidr < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, "./range2cidr"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./range2cidr"
   end
 
   test do

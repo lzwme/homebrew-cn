@@ -2,8 +2,8 @@ class Nexus < Formula
   desc "Repository manager for binary software components"
   homepage "https://www.sonatype.com/"
   url "https://github.com/sonatype/nexus-public.git",
-      tag:      "release-3.94.0-12",
-      revision: "f6db9af8631634d91699dee660fc7b3116e6e0ee"
+      tag:      "release-3.94.1-06",
+      revision: "a413cb21b6b1c7972de795c64bfae5ad8880a3c3"
   license "EPL-1.0"
 
   # As of writing, upstream is publishing both v2 and v3 releases. The "latest"
@@ -15,12 +15,12 @@ class Nexus < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ee6d663bd4f7a1c4ae8d91bf931be1b1cc4d17b8fbad3b1b61a0afcdfa8ca89"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f95d7876f47410f110ae28678eaa2cfaaa531e6449c73dfb74258cfed019ff0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1d52d5be11744e0d0ce8b6622ea4b2cca33831442c6d2b639296e24062df2b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "630888338fa54607f5d970da6e1a301e094bf639634950ec7864f031883b63a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fddce2147465ccf97c1f2633e99d1682d8e593e9f5b25abaf1247b79ee2e9575"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c820113f7000cf5c3c239f80228a311e6762c64617c2574e7e7c4ea3377f395"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec149afa52cc72be32c885551b197c6d920b28f156d7d712595cd708ba153135"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44333353c2f1e7a51cc5328ce3d6c436356ae4bd98dd3bd49502e3ea7213d76f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e0f426402534e36d21a78ba98568dd253e8c691ca5dc186a9b7f8755cb92ea9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e13fe5eaf1c895d343c486bec003fff45c84d4f7ce3006cb61d0deb11bf0e33b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f850e7efc0ef26eaf709cac9f58bf594caab54fc437760af13d69ee6f9a0d31b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "551babbc4c2c4c3d8eec7978c538464842779846f7db25e8a44fc57b1fa8e231"
   end
 
   depends_on "maven" => :build

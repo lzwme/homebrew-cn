@@ -40,7 +40,7 @@ class Poppler < Formula
   depends_on "openjpeg"
 
   uses_from_macos "gperf" => :build
-  uses_from_macos "curl", since: :monterey # 7.68.0 required by poppler as of https://gitlab.freedesktop.org/poppler/poppler/-/commit/8646a6aa2cb60644b56dc6e6e3b3af30ba920245
+  uses_from_macos "curl", since: :sonoma # needs curl >= 8.5
 
   on_macos do
     depends_on "gettext"

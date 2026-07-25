@@ -2,7 +2,7 @@ class Crfxx < Formula
   desc "Conditional random fields for segmenting/labeling sequential data"
   homepage "https://taku910.github.io/crfpp/"
   url "https://mirrors.sohu.com/gentoo/distfiles/f2/CRF%2B%2B-0.58.tar.gz"
-  mirror "https://drive.google.com/uc?id=0B4y35FiV1wh7QVR6VXJ5dWExSTQ&export=download"
+  mirror "https://drive.google.com/uc?id=1lEwSRLAXpPnlPMPv8fx48y13Xy5eHNU9&export=download"
   sha256 "9d1c0a994f25a5025cede5e1d3a687ec98cd4949bfb2aae13f2a873a13259cb2"
   license any_of: ["LGPL-2.1-only", "BSD-3-Clause"]
   head "https://github.com/taku910/crfpp.git", branch: "master"
