@@ -26,7 +26,6 @@ class WalG < Formula
 
     %w[etcd fdb gp mongo mysql pg redis sqlserver].each do |db|
       ldflags = %W[
-        -s -w
         -X github.com/wal-g/wal-g/cmd/#{db}.buildDate=#{time.iso8601}
         -X github.com/wal-g/wal-g/cmd/#{db}.gitRevision=#{tap.user}
         -X github.com/wal-g/wal-g/cmd/#{db}.walgVersion=#{version}

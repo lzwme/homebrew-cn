@@ -28,7 +28,7 @@ class Zk < Formula
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
-    ldflags = "-s -w -X main.Version=#{version} -X main.Build=#{tap.user}"
+    ldflags = "-X main.Version=#{version} -X main.Build=#{tap.user}"
     tags = %w[fts5 icu]
     system "go", "build", *std_go_args(ldflags:, tags:)
   end

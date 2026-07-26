@@ -17,7 +17,7 @@ class Witr < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.buildDate=#{time.iso8601}"), "./cmd/witr"
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version} -X main.commit=#{tap.user} -X main.buildDate=#{time.iso8601}"), "./cmd/witr"
     generate_completions_from_executable(bin/"witr", "completion")
     man1.install "docs/cli/witr.1"
   end

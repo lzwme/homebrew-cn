@@ -23,10 +23,7 @@ class Witness < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/in-toto/witness/cmd.Version=#{version}
-    ]
+    ldflags = %W[-X github.com/in-toto/witness/cmd.Version=#{version}]
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"witness", shell_parameter_format: :cobra)

@@ -3,17 +3,17 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/cd/95/d3f0ae10836324a2eab98a52b61210ac609f08200bf4bb0dc8132d32f78a/fastapi-0.139.2.tar.gz"
-  sha256 "333145a6891e9b5b3cfceb69baf817e8240cde4d4588ae5a10bf56ffacb6255e"
+  url "https://files.pythonhosted.org/packages/0d/fb/fd7671137d9fa3df1d93a2f5111eb982709201724b29f211e4beb2d58688/fastapi-0.140.0.tar.gz"
+  sha256 "f338951b82fd74ca8f843163aec43ea1a1ce84d515415a50fa98fa25572a5544"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c27ae42530c8b2f80a042118dd621aa88e330077d53ea39b4abe00d723a06715"
-    sha256 cellar: :any, arm64_sequoia: "7e1ad420dcf7b1d9ea74efdb2e3baa97173b30ef278aa0e8eb5de51f2831db57"
-    sha256 cellar: :any, arm64_sonoma:  "684e29d3900873361829f4aa818a78c8d06d39a3c8c88f4f4b97c07f9957e881"
-    sha256 cellar: :any, sonoma:        "e928897ba8b72f50c06a8095790ff1a234474eb05b170c29a84f3cd762a98a05"
-    sha256 cellar: :any, arm64_linux:   "ebfbc3f04728a77eb89fa5b0fe5218454ff8b84f190cb8bc3e642782a5439b4d"
-    sha256 cellar: :any, x86_64_linux:  "cfe13fd57639cb3e620d0d7c8762c336d9f897b5841d5f7ae26ea32ab82313e1"
+    sha256 cellar: :any, arm64_tahoe:   "d70060a2c56325a8cdbc1fbf05fcc2e694c1a6d07516da8c3634fb34681f9e66"
+    sha256 cellar: :any, arm64_sequoia: "a3813f6bb0e798b4a7d7f404142994878bb6c098bdc59d6ffed5aff7d00704cc"
+    sha256 cellar: :any, arm64_sonoma:  "706c3bb2df9f94b608cc8d8b6f1e38e3ad39e0423f44a10f9aa8731eb10557ed"
+    sha256 cellar: :any, sonoma:        "9f4f38c77e7a6e2672af04cb8093ae546ed49e1bc8a2245bc0e140cc1e7f446f"
+    sha256 cellar: :any, arm64_linux:   "861a7e135b0e7e3142d4b448935ea1289cab954c3e5793b59d14e3d04712bb20"
+    sha256 cellar: :any, x86_64_linux:  "68ece37ff87265470dcd48d90b4e25af54f16490382faa1e14e6e857a5dc34ee"
   end
 
   depends_on "rust" => :build # for annotated-doc
@@ -156,13 +156,13 @@ class Fastapi < Formula
   end
 
   resource "rignore" do
-    url "https://files.pythonhosted.org/packages/e5/f5/8bed2310abe4ae04b67a38374a4d311dd85220f5d8da56f47ae9361be0b0/rignore-0.7.6.tar.gz"
-    sha256 "00d3546cd793c30cb17921ce674d2c8f3a4b00501cb0e3dd0e82217dbeba2671"
+    url "https://files.pythonhosted.org/packages/c9/77/6ba90ab4a538d3ec244329c57c4d26a78c8313ea6fa72c8768d46f11c1c9/rignore-0.8.0.tar.gz"
+    sha256 "2e5ad6b19834f04a877d26fe863fd77ed851ed4019fdca097fb1b744311e3562"
   end
 
   resource "sentry-sdk" do
-    url "https://files.pythonhosted.org/packages/48/ff/670abe04c5072719b5060ed93851d0d69525d60f8f2c5810f8becd58f9c1/sentry_sdk-2.66.0.tar.gz"
-    sha256 "9727d35aa83c56cd53294676fe65b96296a334c9ce107fa2142bd70f47acb265"
+    url "https://files.pythonhosted.org/packages/7f/6f/d59cad0889d15fde85254cf58e701484de3f3f0406003b3197746910b19b/sentry_sdk-2.66.1.tar.gz"
+    sha256 "f882fb08710c5f8bfc603aafa3e901b384009a19cc3f76a572b863392ee81cdc"
   end
 
   resource "shellingham" do
@@ -201,8 +201,8 @@ class Fastapi < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/8c/02/b9a097e1e16fee4e2fd1ec8c39f6a9c5d6257bae8fa12640caf869f54436/websockets-16.1.tar.gz"
-    sha256 "299468cbe42e2b9981134c7c51d99387d8a7bf562b00183b3eec53f882846dad"
+    url "https://files.pythonhosted.org/packages/21/f7/bc3a25c5ec26ce62ce487690becc2f3710bbc7b33338f005ad390db0b986/websockets-16.1.1.tar.gz"
+    sha256 "db234eda965dcce15df96bb9709f587cd87d4d52aaf0e80e2f34ec04c7670c57"
   end
 
   def install

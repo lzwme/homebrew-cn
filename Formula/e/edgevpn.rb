@@ -18,10 +18,7 @@ class Edgevpn < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/mudler/edgevpn/internal.Version=#{version}
-    ]
+    ldflags = %W[-X github.com/mudler/edgevpn/internal.Version=#{version}]
 
     ENV["CGO_ENABLED"] = "0"
     system "go", "build", *std_go_args(ldflags:)

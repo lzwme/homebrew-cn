@@ -28,7 +28,7 @@ class Cadence < Formula
   conflicts_with "cadence-workflow", because: "both install a `cadence` executable"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/main"
+    system "go", "build", *std_go_args, "./cmd/main"
   end
 
   test do

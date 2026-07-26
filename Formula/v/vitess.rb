@@ -22,7 +22,6 @@ class Vitess < Formula
     ENV["CGO_ENABLED"] = "0"
     bin.mkpath
     ldflags = %W[
-      -s -w
       -X vitess.io/vitess/go/vt/servenv.buildUser=#{tap.user}
       -X "vitess.io/vitess/go/vt/servenv.buildTime=#{time.strftime("%a %b %e %H:%M:%S %Z %Y")}"
     ]

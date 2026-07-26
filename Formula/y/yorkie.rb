@@ -24,7 +24,6 @@ class Yorkie < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/yorkie-team/yorkie/internal/version.Version=#{version}
       -X github.com/yorkie-team/yorkie/internal/version.BuildDate=#{time.iso8601}
     ]

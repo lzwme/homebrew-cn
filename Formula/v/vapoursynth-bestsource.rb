@@ -1,8 +1,8 @@
 class VapoursynthBestsource < Formula
   desc "Audio/video source and FFmpeg wrapper"
   homepage "https://github.com/vapoursynth/bestsource"
-  url "https://ghfast.top/https://github.com/vapoursynth/bestsource/archive/refs/tags/R19.tar.gz"
-  sha256 "bbd391dd2725ae68994e0627f4a57b484d37b6e8d150276f07122e89fb6cda5d"
+  url "https://ghfast.top/https://github.com/vapoursynth/bestsource/archive/refs/tags/R20.tar.gz"
+  sha256 "e44d84ce80be44f5e65a8daf007fa082af00a2aa81a2f19448acfa6abb49048a"
   license "MIT"
   head "https://github.com/vapoursynth/bestsource.git", branch: "master"
 
@@ -12,12 +12,12 @@ class VapoursynthBestsource < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c0f9fad2ac580883b1205e32277755a43e470e6be01c40aaf5d6e44899687b83"
-    sha256 cellar: :any, arm64_sequoia: "711010a3f65dc8f2ced09a43ccf11a10f0343ece48b206c561f2d27d55d48db2"
-    sha256 cellar: :any, arm64_sonoma:  "f0ea20d2cdc59d70095725feedadd82f99a55c0675ae463f70796fdbb903c8b4"
-    sha256 cellar: :any, sonoma:        "7585bb8d20a1ee3c5d3bee5106d8c19f89a74021738a412ca1a2dd87a3c45309"
-    sha256               arm64_linux:   "ec199778d4513477bc7ba668d47008ad7df2c75f24cc8703800d29587370ed99"
-    sha256               x86_64_linux:  "a0e19fe34f7c112a3077526d2bde45fc26a144e5a7dd7cb26863e34cffb98342"
+    sha256 cellar: :any, arm64_tahoe:   "ff9f173e184757520863933ece6f30c76f5e824a8c43140ea07eaaf25c09db11"
+    sha256 cellar: :any, arm64_sequoia: "abf3087114f317a2bd33d7f1863bf06524c4a96953893dcddc76257b7a2f8091"
+    sha256 cellar: :any, arm64_sonoma:  "f3113a9abbe83aba967ce0f7172225c4d3d7518e892fd254a47bccf0cbee2a60"
+    sha256 cellar: :any, sonoma:        "457cc7ea98b70c2293b75547b348fa4cb4f1561ab0f948bc831d189ab69b2f35"
+    sha256               arm64_linux:   "a9f6826364b8d341a6254e4fafa96621549c1e314e66e56554abb0520b71ead5"
+    sha256               x86_64_linux:  "5588b715c3be40662f0f3a9630bb76638f6ce08a2ffa843a81a04cf7cb0e19d5"
   end
 
   depends_on "avisynthplus" => :build

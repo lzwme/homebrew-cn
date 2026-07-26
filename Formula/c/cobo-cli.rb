@@ -6,16 +6,16 @@ class CoboCli < Formula
   url "https://files.pythonhosted.org/packages/31/5a/b46f07b2cb2e0e7583e83873f65ca0f177e1b56d5f5a5f253ba83ab4c9f7/cobo_cli-0.1.8.tar.gz"
   sha256 "bee5155dd3b4f16aa72b3ad1e02d5505cfa66d374856db0067ef1812986b218a"
   license "MIT"
-  revision 4
+  revision 5
   head "https://github.com/CoboGlobal/cobo-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e88428fdf7886cc2c6def8e9b893f9a4ca78e6a142cc5f11538970a1344738d6"
-    sha256 cellar: :any, arm64_sequoia: "8f5b5c1f65ba09eab9c3d04fdd10acd069b598cc2fed87bd58032e3536cc549e"
-    sha256 cellar: :any, arm64_sonoma:  "a0a3362d27933d0426047478867d60c4d06264a7b3bcfdeeaa2d607a028e4b2a"
-    sha256 cellar: :any, sonoma:        "3b37da0c5a3da5ae0849f86ba8c2c4135f27c23e801b4e8f62209744a0b7730e"
-    sha256 cellar: :any, arm64_linux:   "6e937d8a972975c13cda28c87e669ec2688910a263f3139d3b4b6503144b92a3"
-    sha256 cellar: :any, x86_64_linux:  "8099bdd4053cde6438964015996663a27f1d52a1381e3bd9d1ef2060dea795ce"
+    sha256 cellar: :any, arm64_tahoe:   "39d3d7cce32a78000c835c6aee5bb10c922d6c66fbcae7f8b2359c88690c65ce"
+    sha256 cellar: :any, arm64_sequoia: "84be2cdae055dac023c474ffb66ad6959f276872c12fde4a7c3cb06bdbc43a97"
+    sha256 cellar: :any, arm64_sonoma:  "7e2284aef673696965332f589cbeae3ea2a1899cca0989d8099340a600369e16"
+    sha256 cellar: :any, sonoma:        "b5f6dc699e4b51cac240235bdbc6e9ec7b45a3b2a72ec6ebb25105b6d115e882"
+    sha256 cellar: :any, arm64_linux:   "dd5140ea8a63a4214ee8b1fd8b19188dc70e5200770a4cbc796cd41781905735"
+    sha256 cellar: :any, x86_64_linux:  "f1e7fa11908adb9891022945521788b91cb4a854706178907c4f0b62233f12a8"
   end
 
   depends_on "certifi" => :no_linkage
@@ -60,8 +60,8 @@ class CoboCli < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/17/24/0e0c12cb6f7cb864779a9d2fefee9ca91838f6db402c8780c9d28a8d7ebe/gitpython-3.1.53.tar.gz"
-    sha256 "06ae8d9623b0ed0d67b8adeac5c7008d0a5a404b087a9e0d0c7163bdd3a6b497"
+    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
+    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
   end
 
   resource "idna" do

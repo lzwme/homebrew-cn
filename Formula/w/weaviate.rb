@@ -23,7 +23,6 @@ class Weaviate < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/weaviate/weaviate/usecases/build.Version=#{version}
       -X github.com/weaviate/weaviate/usecases/build.BuildUser=#{tap.user}
       -X github.com/weaviate/weaviate/usecases/build.BuildDate=#{time.iso8601}

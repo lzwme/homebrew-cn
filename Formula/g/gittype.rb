@@ -1,18 +1,18 @@
 class Gittype < Formula
   desc "CLI code-typing game that turns your source code into typing challenges"
   homepage "https://github.com/unhappychoice/gittype"
-  url "https://ghfast.top/https://github.com/unhappychoice/gittype/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "aa5f5ff1240946352456d2c56f37373ad9f5f480f58f77cee09a7a56c9a8d44b"
+  url "https://ghfast.top/https://github.com/unhappychoice/gittype/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "94f701fd87824c2d1ecb2b9e76e7d9665eb26eab1c97795d23213d12027d6407"
   license "MIT"
   head "https://github.com/unhappychoice/gittype.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "55d74902bb683fcd995a02d4b32540b7b8a9f8c6b899f545fec5d0d786966f34"
-    sha256 cellar: :any,                 arm64_sequoia: "2def9f375411ffa25cbc2f78f6a5922540736a4207b79af270618089c1015b0d"
-    sha256 cellar: :any,                 arm64_sonoma:  "41507c0373c0b762f058069194a87ba55f4127c7459a563f61f88d5e3acd2fb5"
-    sha256 cellar: :any,                 sonoma:        "46756614b1d7788eb8125f6aaba0273dff6e2b8308450fa45e78f738f0ad1337"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "083b8074b0296a7509bffd8ddced72123af65c1064e4be431eb333b73d45c577"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bcdcbf4dc81785651d4919c7c4f33ebe732ecf8e07e0e699e04357f96bfa963"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e82879bd378c43432d67c4b77231acb056209d258270401f2788cc30b3d470bf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19fdb6c5434a8d7df53803a6026f49e79699d51e5f9628ae3a3e9ed5ce9f651f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5aab8c02febfc0243dd69e4f9c569b30f5933e701b3f3a445dec092b1000d68d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4c2a7e5c943142a78f9ad94b0cf0b9992cf9441ffc9b7be31dc3184f5c094519"
+    sha256 cellar: :any,                 arm64_linux:   "2aa00b27615fcc094e8997018f28f80384dd0756fc5476d10f55c2bb04fe20b7"
+    sha256 cellar: :any,                 x86_64_linux:  "bdeba194be01ae6b0e1f6f7a17785469ca23208ed773d45ae7916d3b5d0438e8"
   end
 
   depends_on "pkgconf" => :build

@@ -18,7 +18,7 @@ class FabricAi < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/fabric"
+    system "go", "build", *std_go_args, "./cmd/fabric"
     # Install completions
     bash_completion.install "completions/fabric.bash" => "fabric-ai"
     fish_completion.install "completions/fabric.fish" => "fabric-ai.fish"

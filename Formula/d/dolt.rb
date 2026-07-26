@@ -27,7 +27,7 @@ class Dolt < Formula
   def install
     ENV["CGO_ENABLED"] = "1"
 
-    system "go", "build", "-C", "go", *std_go_args(ldflags: "-s -w"), "./cmd/dolt"
+    system "go", "build", "-C", "go", *std_go_args, "./cmd/dolt"
 
     (etc/"dolt").mkpath
     touch etc/"dolt/config.yaml"

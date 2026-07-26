@@ -20,7 +20,7 @@ class DockerMachineDriverVultr < Formula
   depends_on "rancher-machine"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./machine"
+    system "go", "build", *std_go_args, "./machine"
   end
 
   test do

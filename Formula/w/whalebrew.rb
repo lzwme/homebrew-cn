@@ -29,10 +29,7 @@ class Whalebrew < Formula
 
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
-    ldflags = %W[
-      -s -w
-      -X github.com/whalebrew/whalebrew/version.Version=#{version}+homebrew
-    ]
+    ldflags = %W[-X github.com/whalebrew/whalebrew/version.Version=#{version}+homebrew]
     system "go", "build", *std_go_args(ldflags:)
     generate_completions_from_executable(bin/"whalebrew", shell_parameter_format: :cobra)
   end

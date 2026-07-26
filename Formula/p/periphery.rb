@@ -1,17 +1,16 @@
 class Periphery < Formula
   desc "Identify unused code in Swift projects"
   homepage "https://github.com/peripheryapp/periphery"
-  url "https://ghfast.top/https://github.com/peripheryapp/periphery/archive/refs/tags/3.7.4.tar.gz"
-  sha256 "6e3eb93904d4ea3ba346526b3e7dd90d0d258d4eff91977b859b91115f028711"
+  url "https://ghfast.top/https://github.com/peripheryapp/periphery/archive/refs/tags/3.8.0.tar.gz"
+  sha256 "0732e25b366ef019897b1fd9577579f6a472671701d08b0b83ad9413bc859004"
   license "MIT"
-  revision 2
   head "https://github.com/peripheryapp/periphery.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "987dee5c4d72d83900414d8dea4c24474199babb6caca71715d079d763503663"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fa3b76c9726403809452f07bd93664e012ce72cd703fbe4d0d53871e529b0a4"
-    sha256                               arm64_linux:   "28aa02d6bf2541e2825b3ec0a2145c3668705a92a41e893d1e3efd2c42ea1dde"
-    sha256                               x86_64_linux:  "f0e6dcc81835afb7a346c45a39efbe697424ea24847a839da7adff179d96502c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f15a284eb5136ad3f57886f3c58a175ee177eae01b0e4574e6c1d4ec9b8acf19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af70d2f0d974fd39d099b14382ccffcbe1742bd0a818888a4050a8c8655f8a49"
+    sha256                               arm64_linux:   "a8737879d7f4647e4f0e3de71f8552dbba0cfe7e55e357b9ff90f5d309a27a23"
+    sha256                               x86_64_linux:  "523743acbbe6a4b623831033f479acb3abd04050b3fd742d3bea3cc1abedbeda"
   end
 
   # We need the CLT installed for libIndexStore.dylib.

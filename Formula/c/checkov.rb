@@ -6,7 +6,7 @@ class Checkov < Formula
   url "https://files.pythonhosted.org/packages/9c/0a/03002542731935763af6bb5eb7473cc1e99818c818608d5fd54240c590e2/checkov-3.3.0.tar.gz"
   sha256 "1d241480d402bc1e4d5e0eaec5fef159f4c0cd4da73c4d8253cdb897cd0f2c7d"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://pypi.org/rss/project/checkov/releases.xml"
@@ -18,12 +18,12 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f8449aab1fd586c55a1e27936cf10b7ba3e0524e81193ef5be043d6a6f108f2e"
-    sha256 cellar: :any, arm64_sequoia: "3ab2b21ab8d4652b7476abb6cdfcc95c20142f034541015cc4b55cb401e196cb"
-    sha256 cellar: :any, arm64_sonoma:  "0b8d49c28bf210de7edca0e41974cde8b1d8287a9005e79435d4038eca59d972"
-    sha256 cellar: :any, sonoma:        "6e40235e99fe57a7680bd7c033d3645a2e4966e83858c981d10198a42700ce80"
-    sha256 cellar: :any, arm64_linux:   "f116432a91f975127fe77145739ff474c0c8745ff01e3bc4a9473ce2d024dfb7"
-    sha256 cellar: :any, x86_64_linux:  "7faecebd3d85498db791f0028108c9cb0cab910ff4caae8048327aa6df568746"
+    sha256 cellar: :any, arm64_tahoe:   "824031cbed0b88d475f1787418533f1e475898900637d506d11670a094de1f20"
+    sha256 cellar: :any, arm64_sequoia: "5d3c2be7e49446712faf8b752da260cf6caa81a930000e560ece7c0cff27137c"
+    sha256 cellar: :any, arm64_sonoma:  "cd38b5f9dbf8341247ef6c7a6f958fe12e0bfa4006319e4343b193d335e78e52"
+    sha256 cellar: :any, sonoma:        "83e102be43e68f0fd544674e77807a5c61f2d50825bc340db9f264d0316b2ddc"
+    sha256 cellar: :any, arm64_linux:   "7540ea8c3eddd4f514715f089fe7a055981ffba151d1f18871fb3aa92ca9d231"
+    sha256 cellar: :any, x86_64_linux:  "937a4e5ff414705a609c8878afba35ac3e46c83b84baa45e9d692cb6da752a77"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -211,8 +211,8 @@ class Checkov < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/17/24/0e0c12cb6f7cb864779a9d2fefee9ca91838f6db402c8780c9d28a8d7ebe/gitpython-3.1.53.tar.gz"
-    sha256 "06ae8d9623b0ed0d67b8adeac5c7008d0a5a404b087a9e0d0c7163bdd3a6b497"
+    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
+    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
   end
 
   resource "idna" do
@@ -296,8 +296,8 @@ class Checkov < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/52/cd/4f25b2f95b23f5d2c9c1fe43e49841bff5800562149b2666afc09309aa8f/platformdirs-4.10.1.tar.gz"
-    sha256 "ceab4084426fe6319ce18e86deada8ab1b7487c7aee7040c55e277c9ae793695"
+    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
+    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
   end
 
   resource "ply" do
@@ -406,8 +406,8 @@ class Checkov < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/80/f1/93422647dd7e461f23d254e6b2bfa687a85b53aeb4903fcdbb74474d4584/soupsieve-2.9.tar.gz"
-    sha256 "acee8417325c5653e1377dc31eccad59eb82cbc65942afe6174c53b3aaad63fc"
+    url "https://files.pythonhosted.org/packages/d9/38/e12680bbe6b4f8f3d17adcaf38d26850aa756c85cf4a80e79fc12a018fe8/soupsieve-2.9.1.tar.gz"
+    sha256 "c33e6605bbc71dd628b00c632d58ae607c22bade247e52553928f83bbb75b4ba"
   end
 
   resource "spdx-tools" do
@@ -436,8 +436,8 @@ class Checkov < Formula
   end
 
   resource "uritools" do
-    url "https://files.pythonhosted.org/packages/d7/75/b1f0e26e0c080c2febdd3a98a752c9fbcf078778f60fe90ea489dc8226ed/uritools-6.1.2.tar.gz"
-    sha256 "fa60028843a8be651699a1ee2b399066eeaef349224b32a177efa4aeba463f00"
+    url "https://files.pythonhosted.org/packages/a3/0d/20d02264b6682f07e92cbf7ee43e5e803670d101a03ef204ba18368c321f/uritools-6.1.3.tar.gz"
+    sha256 "3a498e7e85ef3249343d5710618d641a414da0fbae6d23053ada7976ee83ea5f"
   end
 
   resource "urllib3" do

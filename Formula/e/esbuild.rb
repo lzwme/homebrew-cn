@@ -20,7 +20,7 @@ class Esbuild < Formula
 
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/esbuild"
+    system "go", "build", *std_go_args, "./cmd/esbuild"
   end
 
   test do

@@ -20,7 +20,7 @@ class Yoke < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/yoke"
+    system "go", "build", *std_go_args, "./cmd/yoke"
   end
 
   test do

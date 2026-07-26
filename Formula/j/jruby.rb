@@ -105,6 +105,8 @@ class Jruby < Formula
   end
 
   test do
+    ENV["JRUBY_JSA"] = testpath/"jruby.jsa"
+
     assert_equal "hello\n", shell_output("#{bin}/jruby -e 'puts :hello'")
 
     ENV["GEM_HOME"] = testpath

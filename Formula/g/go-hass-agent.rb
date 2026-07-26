@@ -1,13 +1,13 @@
 class GoHassAgent < Formula
   desc "Native Home Assistant agent for desktop/laptop devices"
   homepage "https://github.com/joshuar/go-hass-agent"
-  url "https://ghfast.top/https://github.com/joshuar/go-hass-agent/archive/refs/tags/v14.14.1.tar.gz"
-  sha256 "5edf8e51ab5661c1f1a932d45463a4ad194e2182d699703d9d7a170d4ebdb916"
+  url "https://ghfast.top/https://github.com/joshuar/go-hass-agent/archive/refs/tags/v14.15.0.tar.gz"
+  sha256 "859410f71f03bee5fb0f4e1befd248151d93a51842cf27412c967145510c83c5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "05198bc95ac204ecdd3ed49882b45c5319792f0459c4644f8f02b466692c3398"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "322cba46737205a2c5daa4681da4f9a32fee103ed8f9a80b4f6ea7594b03c7d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "44f54c1094ab634f250dc95382f7ecbad46eb1584e28530c5ca30e1981c02f9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4e3c6bdb1841c27528564a3cb3b63230e755433389d492a7e58a12d04827774e"
   end
 
   depends_on "go" => :build

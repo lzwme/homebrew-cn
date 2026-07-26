@@ -22,18 +22,38 @@ class Anchor < Formula
     depends_on "systemd" # for `libudev`
   end
 
+  def anchor_workspace_toml
+    <<~TOML
+      [provider]
+      cluster = "localnet"
+      wallet = "~/.config/solana/id.json"
+
+      [programs.localnet]
+    TOML
+  end
+
   def install
     # FIXME: "Unknown attribute kind (102) (Producer: 'LLVM21.1.8' Reader: 'LLVM APPLE_1_1600.0.26.6_0')"
     inreplace "Cargo.toml", "lto = true", "lto = false"
 
     system "cargo", "install", "--no-default-features", *std_cargo_args(path: "cli")
 
+    # TEMPORARY: anchor searches parents for `Anchor.toml` and the Linux sandbox denies listing `/`
+    (buildpath/"Anchor.toml").write anchor_workspace_toml
     generate_completions_from_executable(bin/"anchor", "completions", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
     assert_match "anchor-cli #{version}", shell_output("#{bin}/anchor --version")
-    system bin/"anchor", "init", "test_project"
+
+    (testpath/"Anchor.toml").write anchor_workspace_toml
+    (testpath/"Cargo.toml").write <<~TOML
+      [workspace]
+      members = []
+      resolver = "2"
+    TOML
+
+    system bin/"anchor", "init", "--force", "test_project"
     assert_path_exists testpath/"test_project/Cargo.toml"
     assert_path_exists testpath/"test_project/Anchor.toml"
   end

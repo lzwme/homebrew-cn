@@ -22,7 +22,6 @@ class WhodbCli < Formula
 
     baml_version = File.read("core/go.mod")[%r{github\.com/boundaryml/baml\s+v?([\d.]+)}, 1]
     ldflags = %W[
-      -s -w
       -X github.com/clidey/whodb/cli/pkg/version.Version=#{version}
       -X github.com/clidey/whodb/cli/pkg/version.Commit=#{tap.user}
       -X github.com/clidey/whodb/cli/pkg/version.BuildDate=#{time.iso8601}

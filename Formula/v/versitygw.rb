@@ -18,7 +18,7 @@ class Versitygw < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.Version=#{version} -X main.BuildTime=#{time.iso8601} -X main.Build=#{tap.user}"
+    ldflags = "-X main.Version=#{version} -X main.BuildTime=#{time.iso8601} -X main.Build=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/versitygw"
   end
 

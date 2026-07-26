@@ -23,7 +23,7 @@ class Cdncheck < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cdncheck"
+    system "go", "build", *std_go_args, "./cmd/cdncheck"
   end
 
   test do

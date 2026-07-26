@@ -18,6 +18,10 @@ class PythonTkAT311 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd083f95a984b7d674e4399acbe1278ebfa44653de01af5789dd59f8f6e33801"
   end
 
+  # https://devguide.python.org/versions/#versions
+  deprecate! date: "2027-11-01", because: :deprecated_upstream
+  disable! date: "2028-11-01", because: :deprecated_upstream
+
   depends_on "python@3.11"
   depends_on "tcl-tk@8"
 

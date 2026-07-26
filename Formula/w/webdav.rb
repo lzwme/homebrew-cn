@@ -1,24 +1,24 @@
 class Webdav < Formula
   desc "Simple and standalone WebDAV server"
   homepage "https://github.com/hacdias/webdav"
-  url "https://ghfast.top/https://github.com/hacdias/webdav/archive/refs/tags/v5.14.0.tar.gz"
-  sha256 "7a72d1281fde08b10e9f5f83c694ba00e15480b6f36687a58f08c7964352f1a7"
+  url "https://ghfast.top/https://github.com/hacdias/webdav/archive/refs/tags/v5.14.1.tar.gz"
+  sha256 "eb0d10198f3a15cf917485f9542c8f576917e49cb07f372c5de94fce15cc1849"
   license "MIT"
   head "https://github.com/hacdias/webdav.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0c56dec23991b915c5e54eb1557a1476b6e947d74e1f35ee30ec683b2cc4e07f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c56dec23991b915c5e54eb1557a1476b6e947d74e1f35ee30ec683b2cc4e07f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c56dec23991b915c5e54eb1557a1476b6e947d74e1f35ee30ec683b2cc4e07f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4c0c1599b0d679c44113c187cc98cf514dd3b746e04ee9a33fe76f881d8c2aab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ba0588fc6a86b26c216256e037dd1ba5ce7a382d8e67d5dbd46e6e71363b645"
-    sha256 cellar: :any,                 x86_64_linux:  "2933c7755e219433405b79e60198274a092822f4464501ab7e958c7f0e24b353"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a2e35589f8924011ab3717ac8471ebc1e3dc256ca1118e7f43710b88144e1ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a2e35589f8924011ab3717ac8471ebc1e3dc256ca1118e7f43710b88144e1ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a2e35589f8924011ab3717ac8471ebc1e3dc256ca1118e7f43710b88144e1ee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a4d89d442f597031707225b2cec01f9151f4002a5ed05599c58fcdc8028f9f70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ec3f0326ab34db24002807476379ed968731304d21ecd1921e8014db36bb90e"
+    sha256 cellar: :any,                 x86_64_linux:  "94f75ffb5cbed23cebaa5ccde5a66f0d2869bc4f058636b65703fc702d03d503"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/hacdias/webdav/v5/cmd.version=#{version}"
+    ldflags = "-X github.com/hacdias/webdav/v5/cmd.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"webdav", shell_parameter_format: :cobra)

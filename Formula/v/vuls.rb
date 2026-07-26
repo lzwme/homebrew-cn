@@ -21,7 +21,6 @@ class Vuls < Formula
     ENV["GOEXPERIMENT"] = "jsonv2"
 
     ldflags = %W[
-      -s -w
       -X github.com/future-architect/vuls/config.Version=#{version}
       -X github.com/future-architect/vuls/config.Revision=#{tap.user}
     ]

@@ -3,19 +3,18 @@ class Cython < Formula
 
   desc "Compiler for writing C extensions for the Python language"
   homepage "https://cython.org/"
-  url "https://files.pythonhosted.org/packages/b6/6b/80101e02ebacaf9232ecf32bf6a788d36b27d820ee02434746252569ef98/cython-3.2.8.tar.gz"
-  sha256 "f4f23a56b25221a06f91817fe8f3114ab8b48a4fac73187dbb64bc2c4a87961f"
+  url "https://files.pythonhosted.org/packages/f6/de/db48b8870e766cfea809986cc50c1e986c663a9ab7bafd0ac1a2512c4a26/cython-3.2.9.tar.gz"
+  sha256 "d249c9022ab13286b17bd66f30609e800c5f95efeecb06168990c7a66cecde6c"
   license "Apache-2.0"
   head "https://github.com/cython/cython.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dee3caa30fd60b55f5e48e5980e34d504a819282445c13618c77a5ac12e4074f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4cecf57851f1a107f05be70108eaaae75d35e6975225a50ece15825f3d3afa90"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f96e8610eaf2b33349af4d0e6cd4b0e00b833f646fd0b64c3cc04152303526d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c4c903f7a5f57346add8b09bab97ceb1a4becc0e14bd30010cdabc0b4dc1839d"
-    sha256 cellar: :any,                 arm64_linux:   "162d1860c8f19d1b0f05b43988aaf9a4ee48cafab1a883d3c9d93c3dd9e1eedb"
-    sha256 cellar: :any,                 x86_64_linux:  "0a2bf44dfb82d24457b02eaafa2f8aa4e4bfaff818c0aae24f87342095cb0311"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "358494dd438b6caf95b5825447aa441fcdc200e4b008560ab52fa20c1376b232"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff7e747126e3ed1b3e734d98d9713e0ae0f88d164d2f06178a91dd7cc6aaa7ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e9f7ba23b698b4f593357836e2a2d2b04cf8b2943bbb838afad96ec5db0cf31"
+    sha256 cellar: :any_skip_relocation, sonoma:        "08d82f2422d40e30eb4a7e9891782a11c7b3a894b8a32136496fb858272d1605"
+    sha256 cellar: :any,                 arm64_linux:   "8a5a6e2b7834c29101c6bad445eebeeccd19ce4982d64aa3b52c80ce409323c7"
+    sha256 cellar: :any,                 x86_64_linux:  "61acb557900d8dc288d94fa0646cfff0ae83c78dd17b5e05c4218da71f593970"
   end
 
   depends_on "python@3.14"

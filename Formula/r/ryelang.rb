@@ -1,8 +1,8 @@
 class Ryelang < Formula
   desc "Rye is a homoiconic programming language focused on fluid expressions"
   homepage "https://ryelang.org/"
-  url "https://ghfast.top/https://github.com/refaktor/rye/archive/refs/tags/v0.2.55.tar.gz"
-  sha256 "f66d813ac67a1822a5060dcc99d31f63f3e7f58c5f9fbb7fb1ca43eaacc461c0"
+  url "https://ghfast.top/https://github.com/refaktor/rye/archive/refs/tags/v0.2.57.tar.gz"
+  sha256 "b39545e7eb1065d8a777e7f1f66bd177ff9bbe99b05b8865218fe32bc1e81fe0"
   license "BSD-3-Clause"
   head "https://github.com/refaktor/rye.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Ryelang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7e46baaa59abea32a4c0ad6cb9f31cfeee9f49af20be121cf36f0d13adc7eb9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90953e017d4cffa8fd8cfd148db5818594d6a41a488ba3856ae047adc94f50f0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "176eccb3cfc36200c24b34fd85d54cdfe0d4c132383bdb3f4ba7d4df6822ca7f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cfe651adfe4b0119caa9001f4f0737ca0d730185c59b8af525760d625095fab2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a40909c9aa76cdfe3f54649820d15ec91402497b789f3d7be0963059467dfaa6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "850ce1e50278e01322d164a0f7929744040ffc19299567c9ad598b04722cfa3e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d09daa311fb12e0ccfe1afe3d5c04362a310431e855bc2391a26206eea58868a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a645a2e28a6a950ca4329fa3ff535ecbeff7e7f81f51e675f4059ca67392dd47"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32be6b6e75da7ac26808d9f34c161d2a83f641277275186cfd7c040ff7db4e11"
+    sha256 cellar: :any_skip_relocation, sonoma:        "78a3360de2268ea887a3c6bd86201bb3dfd7245452d0754fb0e40b904827e0d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0defb3f48a25d6e5b908e547c5dc20804c85b128bb8bfb10a137485c6cf06c51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89a42ad80d6b5c1d21a5b54e026c66a196412ef1a920b2734583f36e77e0ec86"
   end
 
   depends_on "go" => :build

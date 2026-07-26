@@ -28,7 +28,7 @@ class Yq < Formula
 
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args
 
     # Install shell completions
     generate_completions_from_executable(bin/"yq", "shell-completion")

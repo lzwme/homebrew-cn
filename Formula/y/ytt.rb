@@ -18,7 +18,7 @@ class Ytt < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X carvel.dev/ytt/pkg/version.Version=#{version}"
+    ldflags = "-X carvel.dev/ytt/pkg/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/ytt"
 
     generate_completions_from_executable(bin/"ytt", shell_parameter_format: :cobra)

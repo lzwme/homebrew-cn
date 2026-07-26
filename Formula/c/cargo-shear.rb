@@ -1,18 +1,18 @@
 class CargoShear < Formula
   desc "Detect and remove unused dependencies from `Cargo.toml` in Rust projects"
   homepage "https://github.com/Boshen/cargo-shear"
-  url "https://ghfast.top/https://github.com/Boshen/cargo-shear/archive/refs/tags/v1.13.2.tar.gz"
-  sha256 "c0f88917dd694d0d29867585d7c57af4428a889a3385270e3e0767f09ce3c80f"
+  url "https://ghfast.top/https://github.com/Boshen/cargo-shear/archive/refs/tags/v1.13.3.tar.gz"
+  sha256 "394b2478118c3c55947059105207de03f19b3b3a81d62dae79f93c659281a2d4"
   license "MIT"
   head "https://github.com/Boshen/cargo-shear.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e643dbc6a8066e18d60d47748b07ae9ce40fe07347f71ff126da73680e426711"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "913d764959b46d5a3b3423996c4986e651729934c079d40b0301504eb959f102"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b91aa753b39f5c4575e1b017438af2294c1f95f7ab6c7435f9986fed73e617c4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4ce0ac3a2dfdeefec174198a9c4c505a8356d989c8f42f9d3d0597107e48412d"
-    sha256 cellar: :any,                 arm64_linux:   "aeec4c0f13e3cee955b3478ecb4373566260ace7460f6a0b27acce8f614f9028"
-    sha256 cellar: :any,                 x86_64_linux:  "3b62845e501d4f70d167e55dfaa379e23a5584fa32fcb594f99622c5115d1bb9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c4c32711de26e6534427ec43d9b0d3e0c7134d1ca25d0a96927b684e54088c64"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5db9d0a52a9be55b83371b0c7c5b85cc486c8aa5d808f6691cb37b7a6abbbc65"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "735b9143a281fe09cf0d6e1e9b70ecea1c1dc693393765463e2cb82f1232e502"
+    sha256 cellar: :any_skip_relocation, sonoma:        "98c9af4d1f227ae867269bf9bb54e1062c22c2899f35b321b37e96bb3c53380f"
+    sha256 cellar: :any,                 arm64_linux:   "3b2eb3feacfba10368602acbf43cadeb89f7ad76a45d60f2b70c22bd85a219ed"
+    sha256 cellar: :any,                 x86_64_linux:  "e73fd897f9f604422a7d5208dbb007031a10e05ab39a3ce2125eeb141d544b9f"
   end
 
   depends_on "rust" => :build

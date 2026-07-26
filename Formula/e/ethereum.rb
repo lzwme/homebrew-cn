@@ -29,7 +29,6 @@ class Ethereum < Formula
     ENV.O0 if OS.linux?
 
     ldflags = %W[
-      -s -w
       -X github.com/ethereum/go-ethereum/internal/build/env.GitCommitFlag=#{tap.user}
       -X github.com/ethereum/go-ethereum/internal/build/env.GitTagFlag=v#{version}
       -X github.com/ethereum/go-ethereum/internal/build/env.BuildnumFlag=#{tap.user}

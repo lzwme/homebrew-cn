@@ -28,8 +28,8 @@ class Squealer < Formula
   end
 
   test do
-    system "git", "clone", "https://github.com/owenrumney/woopsie.git"
-    output = shell_output("#{bin}/squealer woopsie", 1)
+    system "git", "clone", "https://github.com/owenrumney/squealer.git"
+    output = shell_output("#{bin}/squealer .", 1)
     assert_match "-----BEGIN OPENSSH PRIVATE KEY-----", output
   end
 end

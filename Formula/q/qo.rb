@@ -17,7 +17,7 @@ class Qo < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/qo"
+    system "go", "build", *std_go_args, "./cmd/qo"
   end
 
   test do

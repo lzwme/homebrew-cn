@@ -35,7 +35,7 @@ class Imgproxy < Formula
       ENV.append "GOFLAGS", "-buildmode=pie"
     end
 
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cli"
+    system "go", "build", *std_go_args, "./cli"
   end
 
   test do

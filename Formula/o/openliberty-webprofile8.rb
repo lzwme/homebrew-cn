@@ -33,15 +33,17 @@ class OpenlibertyWebprofile8 < Formula
 
   test do
     ENV["WLP_USER_DIR"] = testpath
+    output_log = testpath/"output.log"
 
+    pid = spawn bin/"openliberty-webprofile8", "run", [:out, :err] => output_log.to_s
     begin
-      system bin/"openliberty-webprofile8", "start"
-      assert_path_exists testpath/"servers/.pid/defaultServer.pid"
+      sleep 5 until output_log.exist? && output_log.read.include?("CWWKF0011I")
+      assert_match "<feature>webProfile-8.0</feature>", (testpath/"servers/defaultServer/server.xml").read
     ensure
       system bin/"openliberty-webprofile8", "stop"
     end
 
-    refute_path_exists testpath/"servers/.pid/defaultServer.pid"
-    assert_match "<feature>webProfile-8.0</feature>", (testpath/"servers/defaultServer/server.xml").read
+    Process.wait(pid)
+    assert_match "CWWKE0036I", output_log.read
   end
 end

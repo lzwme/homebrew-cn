@@ -24,7 +24,6 @@ class Jaguar < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X main.buildDate=#{time.iso8601}
       -X main.buildMode=release
     ]

@@ -1,18 +1,18 @@
 class Chsrc < Formula
   desc "Change Source for every software on every platform from the command-line"
   homepage "https://chsrc.run/"
-  url "https://ghfast.top/https://github.com/RubyMetric/chsrc/archive/refs/tags/v0.2.5.tar.gz"
-  sha256 "4fc7ccbdea9c18aaa06b1efc80cc8a1941e38060b8495c67c947a09d2a0dfeac"
+  url "https://ghfast.top/https://github.com/RubyMetric/chsrc/archive/refs/tags/v0.2.6.tar.gz"
+  sha256 "a3fb56035dc53f662f3b78ad951db17de0300d103cb412e1c334621c3b881b13"
   license "GPL-3.0-or-later"
   head "https://github.com/RubyMetric/chsrc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0319a43c6289df4d83667e517fe54dd39c58c4d6486f379a3092461a36550f3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3bf31b588fd5675b656b5c55c33124325508dd4412f4e6f161f3bb8c1a5776d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f7d072ffd55e02f99c26e5e24a340f6d5ad12ff8192be0d5a3c87486bc51b54"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83241be9635b64cf7217cbfb7d99185e7b0e58caa2a595ef5bf6200fcc2952bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ee3a48a02b5f98db6ef8b78f90cf5490fe6a5f07169b57d9df250eaf6a196fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "affc34ed5945c691524868219ef73d1a912fb20e65564efbaca58859fb81f727"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a7b8cb08752253481f1e49338fc928a66c498697c5ed244f819e8c0468cbfb5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a69cfe2318fc6b78b425e9ad7479f6fd20aeefeb3729ba1e102d615f3ded4c7d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea4c96f4f5d64c22974d70db7af45e9e7326311d44eab7fcdcd24f1d319510f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a858db8c54b9223087b0e13427fbef6c4e30dd8389b0a2c87cde38e4214c455f"
+    sha256 cellar: :any,                 arm64_linux:   "41497163995d010ffd5734692d48a7a1d85d1b23b64b7c374afe65ca41841bf6"
+    sha256 cellar: :any,                 x86_64_linux:  "32c61defae7463f66119e40c5ec35a89c56359b8791b81db6370c7d55f2e40e3"
   end
 
   def install

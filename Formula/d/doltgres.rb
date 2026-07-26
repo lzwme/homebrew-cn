@@ -31,7 +31,7 @@ class Doltgres < Formula
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
     system "./postgres/parser/build.sh"
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/doltgres"
+    system "go", "build", *std_go_args, "./cmd/doltgres"
   end
 
   test do

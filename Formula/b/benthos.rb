@@ -18,7 +18,7 @@ class Benthos < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/benthos"
+    system "go", "build", *std_go_args, "./cmd/benthos"
   end
 
   test do

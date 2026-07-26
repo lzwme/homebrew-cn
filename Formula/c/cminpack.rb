@@ -1,18 +1,18 @@
 class Cminpack < Formula
   desc "Solves nonlinear equations and nonlinear least squares problems"
   homepage "http://devernay.free.fr/hacks/cminpack/cminpack.html"
-  url "https://ghfast.top/https://github.com/devernay/cminpack/archive/refs/tags/v1.3.13.tar.gz"
-  sha256 "cf0d6cc654f8c63bb65979056ea5bcda1046768b1dfe83ceda504924d8331167"
+  url "https://ghfast.top/https://github.com/devernay/cminpack/archive/refs/tags/v1.3.14.tar.gz"
+  sha256 "b3eff51610cd9b721705fed483cb47a08e5c17503b9820539a12c26776ce42d4"
   license "Minpack"
   head "https://github.com/devernay/cminpack.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "eecfc8ac9b2291672cf63ecf8470ad6b4d5ff4396737836a96b65856d57fc31d"
-    sha256 cellar: :any, arm64_sequoia: "22c587f67849d49cd0aee8011004a0c7e18b0ca340f7543d4a35bb9852c965f1"
-    sha256 cellar: :any, arm64_sonoma:  "361be92f6d7519ab991a27bbb102080c896d9c79ff26d179def636645c088432"
-    sha256 cellar: :any, sonoma:        "19e912e98e74a6e655eb67a930c2b8196a4c7774b7368845a070e10998d37f52"
-    sha256 cellar: :any, arm64_linux:   "3f82e82188e615da3edd9fc73e590fbbfb53ba32866704f3106f5684b5fd4196"
-    sha256 cellar: :any, x86_64_linux:  "77295f1b54e711f1269b5f4ef9054b79a7f783cd7afe69a536a26ad11ad756b3"
+    sha256 cellar: :any, arm64_tahoe:   "71691ec2300dd0ce311ee79d8f35f7ad94534f8c7c745c37b49af58540fe0132"
+    sha256 cellar: :any, arm64_sequoia: "967e4f1735dd46357f40f0c2fd0bf65f2c94583ffd249bbe56cc416162da784a"
+    sha256 cellar: :any, arm64_sonoma:  "23475c4f73263530ed97e25b37fa83c18ccd23327926327f72508ff76703f2d7"
+    sha256 cellar: :any, sonoma:        "ce29cf331940f2aa412181ef2a806e4c9fd66d2712904602642a5aeea950e45b"
+    sha256 cellar: :any, arm64_linux:   "f36d5ba236496aab48432d6764ac89b75b298004d00e0828b722fa71683a9eda"
+    sha256 cellar: :any, x86_64_linux:  "e220e22bb3de55c9e3f5917ef1bcf3a4f4c8f3f81ecd2bd022448f2b104ad405"
   end
 
   depends_on "cmake" => :build

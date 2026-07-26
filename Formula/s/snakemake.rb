@@ -6,16 +6,16 @@ class Snakemake < Formula
   url "https://files.pythonhosted.org/packages/9e/c2/45aa858e55edbb7dbc243ed60859f4f3d92d63ecdd67a80632aa3659fe6b/snakemake-9.23.1.tar.gz"
   sha256 "ef8d698bfce66a6669cc29df7e344b0b367fd90956c725e5ae0a79a556e8e93f"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "f0c1b56e264f7a55f8b0158e70881c508faf7ab37153cdbe198877948b6937ff"
-    sha256 cellar: :any, arm64_sequoia: "b36711055d654bc548841ffb1c7605722d031185c92aaabf0c1c4f8a4faf82bf"
-    sha256 cellar: :any, arm64_sonoma:  "154f1ac46e5f6841712642d75b1676d6551b160ba7c56b5319eb232c8bd23cb7"
-    sha256 cellar: :any, sonoma:        "15deed150fdb8c31cdde70c458fea426a20181f5dd32117789241adedd3eb488"
-    sha256 cellar: :any, arm64_linux:   "b4c2778b813fed4a966c3c6991ceb65ee7a25156a5f422e16f658fb109cfa3da"
-    sha256 cellar: :any, x86_64_linux:  "861f1b81317ee5304fcace30b2ba2c2e2356b2d476017a39e5330c03590391c9"
+    sha256 cellar: :any, arm64_tahoe:   "bfa297f40ef3d8d00a184d5d0770238efccb8c58728d88325d4edd9b9e3c4eee"
+    sha256 cellar: :any, arm64_sequoia: "9fd964088ca6fad15b2730f6eb117f8e7b56c88e97533ca00d6d061d726d234e"
+    sha256 cellar: :any, arm64_sonoma:  "50aa30546563e80f8dcd74b4010af22b85a1d97bad0001a05243149999ae2dd9"
+    sha256 cellar: :any, sonoma:        "7fac86b470fafc67f1ad311e3da59b7be626380b3f3ca3d2c15d49a43db9b7b9"
+    sha256 cellar: :any, arm64_linux:   "f01c8b1e662ead131abd4debe14738c80e96adf750b803fc434e015fb78e7315"
+    sha256 cellar: :any, x86_64_linux:  "3473fd2e773932d311695bda2fddfe480552b5d4c0ef64f60382f280252fc82e"
   end
 
   depends_on "rust" => :build # for appdirs
@@ -79,8 +79,8 @@ class Snakemake < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/17/24/0e0c12cb6f7cb864779a9d2fefee9ca91838f6db402c8780c9d28a8d7ebe/gitpython-3.1.53.tar.gz"
-    sha256 "06ae8d9623b0ed0d67b8adeac5c7008d0a5a404b087a9e0d0c7163bdd3a6b497"
+    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
+    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
   end
 
   resource "humanfriendly" do
@@ -134,8 +134,8 @@ class Snakemake < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/52/cd/4f25b2f95b23f5d2c9c1fe43e49841bff5800562149b2666afc09309aa8f/platformdirs-4.10.1.tar.gz"
-    sha256 "ceab4084426fe6319ce18e86deada8ab1b7487c7aee7040c55e277c9ae793695"
+    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
+    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
   end
 
   resource "psutil" do

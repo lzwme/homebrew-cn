@@ -29,7 +29,7 @@ class Ffmate < Formula
     rm_r ui_build_path if ui_build_path.exist?
     cp_r "ui/.output/public", ui_build_path
 
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args
 
     generate_completions_from_executable(bin/"ffmate", shell_parameter_format: :cobra)
   end

@@ -18,7 +18,7 @@ class Deck < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/deck"
+    system "go", "build", *std_go_args, "./cmd/deck"
 
     generate_completions_from_executable(bin/"deck", shell_parameter_format: :cobra)
   end

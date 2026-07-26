@@ -20,6 +20,10 @@ class PythonGdbmAT312 < Formula
     sha256               x86_64_linux:  "800645a6b8b6fc2f2988706739aa142d89930bd7c0d9e662e6f2cbfc60d0547f"
   end
 
+  # https://devguide.python.org/versions/#versions
+  deprecate! date: "2028-11-01", because: :deprecated_upstream
+  disable! date: "2029-11-01", because: :deprecated_upstream
+
   depends_on "gdbm"
   depends_on "python@3.12"
 

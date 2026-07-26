@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/d0/14/31390cf72aab411c6c0902de8e9188262ddb858dafeff34b5c2c8a8696ba/prowler-5.35.0.tar.gz"
-  sha256 "15171200da64305ba928ffebf746e6b473616f52a401412699b6a50a9232feda"
+  url "https://files.pythonhosted.org/packages/ad/24/28887fe5c8c80219d946ac4492d4e2adea251a49e93f78c98887d4b9462b/prowler-5.36.0.tar.gz"
+  sha256 "393c4d3889fb18fe40bd9ded4f26fafde95722777c41607ddadf279d2e6288c4"
   license "Apache-2.0"
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ab7aa362a47062c309915e981eed5713980e096287e54b67f3571fa2f38b34fc"
-    sha256 cellar: :any, arm64_sequoia: "5c5c423b625dbe389332d2234dff2b3b963ba8c823bc64551230e790cf3bdd6a"
-    sha256 cellar: :any, arm64_sonoma:  "5b76135d70aea3427e0b6b388454087844af40d8aca694e08e2166e4c083fdd6"
-    sha256 cellar: :any, sonoma:        "8f8b323c63b213937a3a0e9a1f45cb51c6370b8477a3eaf36b156d192b1fc75f"
-    sha256 cellar: :any, arm64_linux:   "cfe32fda5ae6929f165ed2b66c4b1dc45e748b91f355667d541e081515bd424b"
-    sha256 cellar: :any, x86_64_linux:  "e367fd24d14b7fb6133fa0baad41867256d19528402071384fe74febff55970d"
+    sha256 cellar: :any, arm64_tahoe:   "a897e9f0b60e19bae3652520f399c9c65a49a2f73b0cf1e94af193c3bf22b2e1"
+    sha256 cellar: :any, arm64_sequoia: "9968eb2ad4b411bb7c3400a27fb578528252c050921ac6cdc041c0a705343d94"
+    sha256 cellar: :any, arm64_sonoma:  "09afbfccf7129d51da8348ecdbfd8f5688f319c5533a24da7dfe62dbae45b1fe"
+    sha256 cellar: :any, sonoma:        "5081678ca01c0b2d0ee634dd5a551f206f07b9218c18ef10cdfa3c88511906b5"
+    sha256 cellar: :any, arm64_linux:   "d8eac196807749338d22bb88c3f7ff73d4d05f085d1e385549c229a47914b7c4"
+    sha256 cellar: :any, x86_64_linux:  "9830dee178d4e10258027fd70fe6fda0a133580739fd9867937ed23d884af088"
   end
 
   depends_on "cmake" => :build
@@ -64,8 +64,8 @@ class Prowler < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/1d/cc/58f26f118d8099f84e009ce560b9148a3f803e63fa8473b57feb67241875/aiohttp-3.14.2.tar.gz"
-    sha256 "f96821eb2ae2f12b0dfa799eafbf221f5621a9220b457b4744a269a63a5f3a6c"
+    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
+    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
   end
 
   resource "aiosignal" do
@@ -524,8 +524,8 @@ class Prowler < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/03/33/00277be1305fd68355d08197f05e22db259c0cff49a10c8590a1869ade9b/google_api_core-2.32.0.tar.gz"
-    sha256 "2b33aad226b19272458c46abfe5c5a38d9531ece0c44502129a1463ce83674ac"
+    url "https://files.pythonhosted.org/packages/87/62/8fb1fb647d2788c950d69d6a769cd9d55c918ac1fc57be2f90b7e4029787/google_api_core-2.33.0.tar.gz"
+    sha256 "3a36bcc3e319783f4c97da41f6f45ea6ffcaa55848e341de16e09cb70243c2bb"
   end
 
   resource "google-api-python-client" do
@@ -589,8 +589,8 @@ class Prowler < Formula
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/4b/1e/085b22f79285c9be12b5db3b004d814e41c2df71862f88781e198af4e8be/iamdata-0.1.202607221.tar.gz"
-    sha256 "ebba583f147f3e2f411645be4768b3ceb4b6e230e714e3aace386d1365fa0b8c"
+    url "https://files.pythonhosted.org/packages/e6/95/c9c34796471a178f7c392ac4bb650ee3e9b7e58eb2523d8d9b237fc63ccd/iamdata-0.1.202607241.tar.gz"
+    sha256 "bfd3c6caf10eab5094fbe85cbe15641ff966db80d607d738f7dabe0863853cf7"
   end
 
   resource "idna" do
@@ -834,8 +834,8 @@ class Prowler < Formula
   end
 
   resource "proto-plus" do
-    url "https://files.pythonhosted.org/packages/87/44/767757fd2cdd4a60d7e4440d9f7b491d6131103d313638d2c03e06c268fb/proto_plus-1.28.1.tar.gz"
-    sha256 "832e68e7fe064cf90ab153b6e5eb935b27891bb89aaeb68b115e9b702f6cb168"
+    url "https://files.pythonhosted.org/packages/73/3e/29e0d6a2c5adde6ab5772253fd16ab346324026b89a66e354689c86d0584/proto_plus-1.28.2.tar.gz"
+    sha256 "26d843eb99c1e32fdf1d20ff0faae56607f7748fe774acf9ecd5cfe6c6472501"
   end
 
   resource "protobuf" do

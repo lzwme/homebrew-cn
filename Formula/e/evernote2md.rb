@@ -18,11 +18,11 @@ class Evernote2md < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")
   end
 
   test do
-    (testpath/"export.enex").write <<~EOF
+    (testpath/"export.enex").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <!DOCTYPE en-export SYSTEM "http://xml.evernote.com/pub/evernote-export3.dtd">
       <en-export>
@@ -34,7 +34,7 @@ class Evernote2md < Formula
           </content>
         </note>
       </en-export>
-    EOF
+    XML
     system bin/"evernote2md", "export.enex"
     assert_path_exists testpath/"notes/Test.md"
   end

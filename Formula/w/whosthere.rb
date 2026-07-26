@@ -23,7 +23,6 @@ class Whosthere < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X main.versionStr=#{version}
       -X main.dateStr=#{time.iso8601}
     ]

@@ -18,6 +18,10 @@ class PythonTkAT312 < Formula
     sha256               x86_64_linux:  "2f3196851e95abd9be0ba5fc29e236dd3c7b0f78e253fc767f7facd317c1ab8b"
   end
 
+  # https://devguide.python.org/versions/#versions
+  deprecate! date: "2028-11-01", because: :deprecated_upstream
+  disable! date: "2029-11-01", because: :deprecated_upstream
+
   depends_on "python@3.12"
   depends_on "tcl-tk"
 

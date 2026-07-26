@@ -6,15 +6,16 @@ class Apm < Formula
   url "https://files.pythonhosted.org/packages/b8/99/fded970fe9efc446a8a8751516ad00dcf0893895d5d5f8ff553e6f2f7f2f/apm_cli-0.26.0.tar.gz"
   sha256 "24e6e4d346fb1d2ecbed05bb4205c3d99b284619344daf4007913985af488afb"
   license "MIT"
+  revision 1
   head "https://github.com/microsoft/apm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "83b31e47ebbcc31796d2fee8f0ba1e5242ae38105ad048d61be72d724002efa4"
-    sha256 cellar: :any, arm64_sequoia: "448fa402c97a64448748d64d0603454739f88b3dc3949c41e685a5a68f0b2887"
-    sha256 cellar: :any, arm64_sonoma:  "3d0c391d788acc60cfeef984f3706e09f8f624e763e0095a6e1d1367d565940a"
-    sha256 cellar: :any, sonoma:        "6ee4b839404e0ab7344f9295b9a59af9fdaedea6fdd05b40fb4c52504006a189"
-    sha256 cellar: :any, arm64_linux:   "770092ec9a4bf668b43d040a5bd22223d69f14d99a66cc99bf572604a5ea3951"
-    sha256 cellar: :any, x86_64_linux:  "c80c3b2bcfdc250e777060369cd881250693d0307120c573a9a393b49010a6d1"
+    sha256 cellar: :any, arm64_tahoe:   "be192543b776e2f3c6a7d3056e45a860ad2b96eb8171b3fddd57d3c0bda645c2"
+    sha256 cellar: :any, arm64_sequoia: "cc9e9ea76fd785af55feb9bd092c28a6c53b0d852e59df4432acc14bc7d13a2d"
+    sha256 cellar: :any, arm64_sonoma:  "6abc1640310c04758936fc13bcf650bdf795675a60eb2eda1ceb235c88e84c08"
+    sha256 cellar: :any, sonoma:        "5eb5724c0b227491fd40140f71b5b828b5bf262f393e714e475b373ed11655ca"
+    sha256 cellar: :any, arm64_linux:   "687dafe10b67ceebd7b9f9144959c78072a71909b2327486963deb0fd916b9a8"
+    sha256 cellar: :any, x86_64_linux:  "eb2a72d4b2895eb13fed73dd4c31770247f34bee11dc664d1e797a63ee070bde"
   end
 
   depends_on "rust" => :build # for jiter
@@ -31,8 +32,8 @@ class Apm < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/1d/cc/58f26f118d8099f84e009ce560b9148a3f803e63fa8473b57feb67241875/aiohttp-3.14.2.tar.gz"
-    sha256 "f96821eb2ae2f12b0dfa799eafbf221f5621a9220b457b4744a269a63a5f3a6c"
+    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
+    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
   end
 
   resource "aiosignal" do
@@ -91,8 +92,8 @@ class Apm < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/99/2c/c603f8aedff281295f7afce455d5c05f33459c7bf684abb46228f844a1f0/filelock-3.31.2.tar.gz"
-    sha256 "e6d35965c709527915a184837a8421826d18bc3f9d7e9a5a0c8114a782475d66"
+    url "https://files.pythonhosted.org/packages/c0/80/8232b582c4b318b817cf1274ba74976b07b34d35ef439b3eb948f98645a1/filelock-3.32.0.tar.gz"
+    sha256 "7be2ad23a14607ccc71808e68fe30848aeace7058ace17852f68e2a68e310402"
   end
 
   resource "frozenlist" do
@@ -106,8 +107,8 @@ class Apm < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/17/24/0e0c12cb6f7cb864779a9d2fefee9ca91838f6db402c8780c9d28a8d7ebe/gitpython-3.1.53.tar.gz"
-    sha256 "06ae8d9623b0ed0d67b8adeac5c7008d0a5a404b087a9e0d0c7163bdd3a6b497"
+    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
+    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
   end
 
   resource "h11" do
@@ -166,8 +167,8 @@ class Apm < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/af/ac/f725c4efbda8657d02be684607e5a2e5ce362e4790fdbcbdfb7c15018647/openai-2.46.0.tar.gz"
-    sha256 "0421e0735ac41451cad894af4cddf0435bfbf8cbc538ac0e15b3c062f2ddc06a"
+    url "https://files.pythonhosted.org/packages/2a/ae/d4d1835488c0350424009dac5095b9a3e173bee12fd2e421ee27e2142c42/openai-2.48.0.tar.gz"
+    sha256 "231b1e7661dda14574986c2f71451e9d584b7fe69e0ee6480e12ed090b48fc16"
   end
 
   resource "pluggy" do

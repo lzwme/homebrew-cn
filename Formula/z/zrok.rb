@@ -35,7 +35,6 @@ class Zrok < Formula
     end
 
     ldflags = %W[
-      -s -w
       -X github.com/openziti/zrok/v2/build.Version=v#{version}
       -X github.com/openziti/zrok/v2/build.Hash=#{tap.user}
     ]

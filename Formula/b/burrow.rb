@@ -18,7 +18,7 @@ class Burrow < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args
 
     inreplace "docker-config/burrow.toml" do |s|
       s.gsub!(/(kafka|zookeeper):/, "localhost:")

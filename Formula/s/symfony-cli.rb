@@ -1,17 +1,17 @@
 class SymfonyCli < Formula
   desc "Build, run, and manage Symfony applications"
   homepage "https://symfony.com/download"
-  url "https://ghfast.top/https://github.com/symfony-cli/symfony-cli/archive/refs/tags/v5.18.1.tar.gz"
-  sha256 "64d4292cce1f1bc0564cc6a9307dc5e61c75c271f739bef1f15aee2850301a44"
+  url "https://ghfast.top/https://github.com/symfony-cli/symfony-cli/archive/refs/tags/v5.18.2.tar.gz"
+  sha256 "38023b1af5355f6a886e88d6f8616a1b8cb35ba88f781a07f816d1d8fa610ad0"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "59dbf4189f1644a8a10d1f52e034a4fc539601da5f0870565963adbd4d9ac859"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe4944edda2d5378d4465ce2ca1563488c9be43f5f2d36acbd935d9ff67ba450"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "802c502679572d89f826694e10f58624690ccc233009c743ce8078846442b8d8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7fd8675a4f21c3b9021d59a1d30c5dc8a2f3a31bf94bdb8825df1d8c6e80126e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2abaa9a8719b509701d97811305e3144b9fb7262ef279482eca27bcfba0bfb0e"
-    sha256 cellar: :any,                 x86_64_linux:  "14e4c17b232e201d44d9fb9a1ffd80d28db11b88e4dfe59199bf03e78dd12474"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37e2de50c3d3216716e81d5f030823547dc8926bd1aad8c9b9b7909268e12f61"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3dd79322673b37349b75750d06e2ce9eafac600531b143e330dc842ee5e3419"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75f98b0ea325af1427dc4d45d36e490f2e8a0e77c0de8bef22f55c8f52f5cf30"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a301a6af436dfbc3f51ce31cf43977ef7fd3a017f3f68e587463dc89b96c8ba3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aaf494c0631eeb8a2cd0dbf4ea9b7ecf392c99a4ebce9bdaf9912e228c4c48b3"
+    sha256 cellar: :any,                 x86_64_linux:  "b1a0a3acbf02dacd1a9eae09ccf4bf6b125e6e3448ece8bf68b8c5338088d692"
   end
 
   depends_on "go" => :build

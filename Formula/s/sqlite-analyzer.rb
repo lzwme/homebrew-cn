@@ -1,9 +1,9 @@
 class SqliteAnalyzer < Formula
   desc "Analyze how space is allocated inside an SQLite file"
   homepage "https://www.sqlite.org/"
-  url "https://www.sqlite.org/2026/sqlite-src-3530300.zip"
-  version "3.53.3"
-  sha256 "bb80bf8a3bffc19241ce8aba5a4bc74e9c3980013cb0b5f0f0976a99516942af"
+  url "https://www.sqlite.org/2026/sqlite-src-3530400.zip"
+  version "3.53.4"
+  sha256 "d18fa15aec74d8c17e1463f861095adc01b5ad190256acb4f91d22f0368d232b"
   license "blessing"
 
   livecheck do
@@ -13,12 +13,12 @@ class SqliteAnalyzer < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b56837f9676e748e8677b77f42218a1773036314028502b5fabdf8ec7239cb9b"
-    sha256 cellar: :any, arm64_sequoia: "bd97962e421bcdc825ac54eef602e412d658777812f63990b6167c06328ccee3"
-    sha256 cellar: :any, arm64_sonoma:  "5ba9647b9761e756838daba168d3205fd4de796e7b1b9c8eb606fcf8f3b67b8f"
-    sha256 cellar: :any, sonoma:        "7f74ff7a209850a7e143797d7bc7e335ba5ac1b84bf16657559ec9558f1e4d5c"
-    sha256 cellar: :any, arm64_linux:   "c1efe6fb313dab8682a7ca388f6c871e653911ad2f390c02073bc2d8e7354fca"
-    sha256 cellar: :any, x86_64_linux:  "06c9153835e3e206419c100bc25f7daec5e3165698e3826f7ed0847608808b80"
+    sha256 cellar: :any, arm64_tahoe:   "e0001cafaca5b5ab9d4e209d81e103ef7a872e4f66912d6d13a094a7737ac5d8"
+    sha256 cellar: :any, arm64_sequoia: "74f7f55896ccdcca311ff43ab4198131384e3d71bd2dca155fba2287663194f4"
+    sha256 cellar: :any, arm64_sonoma:  "87b92e63a163c3ce7840c01c0f6e73bc36eb4a5a606b5a9e418f7c716f6d0af6"
+    sha256 cellar: :any, sonoma:        "397866508a17acfe31147353629863b7ada1107d5e264f4d8a22b6b0c78b7690"
+    sha256 cellar: :any, arm64_linux:   "5bc48810c7bcdef96f13fdd79663191b192ae50deb9ce8659404c3638684904f"
+    sha256 cellar: :any, x86_64_linux:  "a145efe6aa3120502d1214e36ba98b4307d0ef49a28f37310d47529d02f0921c"
   end
 
   depends_on "tcl-tk"

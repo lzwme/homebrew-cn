@@ -18,7 +18,7 @@ class Httpx < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/httpx"
+    system "go", "build", *std_go_args, "./cmd/httpx"
   end
 
   test do

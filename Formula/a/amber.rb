@@ -37,7 +37,7 @@ class Amber < Formula
   end
 
   def install
-    system "shards", "install"
+    system "shards", "install", "--without-development"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
@@ -56,7 +56,8 @@ class Amber < Formula
     end
 
     cd "test_app" do
-      assert_match "Building", shell_output("#{Formula["crystal"].bin}/shards build test_app")
+      shards = Formula["crystal"].bin/"shards"
+      assert_match "Building", shell_output("#{shards} --without-development build test_app -Dwithout_mt")
     end
     assert_path_exists testpath/"test_app/bin/test_app"
   end

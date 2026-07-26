@@ -21,7 +21,7 @@ class Wails < Formula
     # The top-level go.work only lists v3, so disable workspace mode to build v2.
     ENV["GOWORK"] = "off"
     cd "v2" do
-      system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/wails"
+      system "go", "build", *std_go_args, "./cmd/wails"
     end
   end
 

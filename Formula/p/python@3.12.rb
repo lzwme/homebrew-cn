@@ -24,6 +24,10 @@ class PythonAT312 < Formula
     sha256 x86_64_linux:  "8ec7b34517ec4c1210f6178cdbfa40e3f1e5d5780d7f26567593a07e425045ff"
   end
 
+  # https://devguide.python.org/versions/#versions
+  deprecate! date: "2028-11-01", because: :deprecated_upstream
+  disable! date: "2029-11-01", because: :deprecated_upstream
+
   depends_on "pkgconf" => :build
   depends_on "mpdecimal"
   depends_on "openssl@3"

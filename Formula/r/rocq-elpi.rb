@@ -2,11 +2,10 @@ class RocqElpi < Formula
   desc "Elpi extension language for Rocq"
   homepage "https://github.com/LPCIC/coq-elpi"
   # Update resources based on https://github.com/LPCIC/coq-elpi/blob/v#{version}/rocq-elpi.opam#L18-L26
-  url "https://ghfast.top/https://github.com/LPCIC/coq-elpi/releases/download/v3.4.0/rocq-elpi-3.4.0.tar.gz"
-  sha256 "fe81750ca2e5f5976f16e658979a133cfaa2011ae5591e552a1222ceaacaaf06"
+  url "https://ghfast.top/https://github.com/LPCIC/coq-elpi/releases/download/v3.5.0/rocq-elpi-3.5.0.tar.gz"
+  sha256 "fd052f6389ba0b648b63388b7e60a99e7832564b09ce1551c82e2d69250d9068"
   license "LGPL-2.1-or-later"
-  revision 1
-  compatibility_version 2
+  compatibility_version 3
 
   livecheck do
     url :stable
@@ -14,12 +13,12 @@ class RocqElpi < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e22b2c7d81a1ed30f614617ca71191b350601ab0021f3d606fc9954f097d98b6"
-    sha256 arm64_sequoia: "e65ad42499e74fdd7ac0403f74d6ee8091e5658d9e9df9598500030d2c3e54e9"
-    sha256 arm64_sonoma:  "a712db4a0dade91fb8b3ab75023039eea4494962a3e23c1fa1c3339f1884d1c4"
-    sha256 sonoma:        "050510bbd4de6dd6a4d40b83c36a12468b909dee2020afa201329b7ed64a7c3a"
-    sha256 arm64_linux:   "5fe352222f9b28770577fbe6050ed1ef77c89d4f3911ac39dfe8bd70fd5f56ba"
-    sha256 x86_64_linux:  "261f2351f4d99f767563d14a142317e7241519ed0292726e76201319796527c1"
+    sha256 arm64_tahoe:   "6b7617f14a17974236f3f68451a3b51c4f919eb87f317eb777183862da6fa50d"
+    sha256 arm64_sequoia: "28cfe4b97fb467a224109001a67aff6cbe3580625aef3739660bc2884acf05a4"
+    sha256 arm64_sonoma:  "4b3fc837873fb0e51fae06dea3528dc2cb62c1bff0d9dfa8cc044537b6ec35ad"
+    sha256 sonoma:        "75df214f7de07282c8c2947c6bd023fc4f0b14bb3d66816e639d44709a11786a"
+    sha256 arm64_linux:   "778d2ab6b4dfe289c882ca650047c00a6cdf538133cb5f2f1e718cdc41f0aab9"
+    sha256 x86_64_linux:  "8079e6f8ee09f56a419f9337a43452209a55b208d7bef6d4a451157a675cb3dc"
   end
 
   depends_on "dune" => :build
@@ -33,7 +32,7 @@ class RocqElpi < Formula
   # The result is similar to using `--deps-only` in other formulae. We can't
   # run that here as it installs a duplicate copy of `rocq`.
   resource "elpi" do
-    url "https://ghfast.top/https://raw.githubusercontent.com/LPCIC/elpi/refs/tags/v3.7.1/elpi.opam"
+    url "https://ghfast.top/https://raw.githubusercontent.com/LPCIC/elpi/refs/tags/v3.7.2/elpi.opam"
     sha256 "24e253b1cd5afb678f0f1e0d7f340ac3c549cf974a5c029a402c2fab5d582635"
   end
 

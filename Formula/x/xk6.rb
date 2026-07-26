@@ -25,7 +25,7 @@ class Xk6 < Formula
   depends_on "govulncheck"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X go.k6.io/xk6/internal/cmd.version=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-X go.k6.io/xk6/internal/cmd.version=#{version}")
   end
 
   test do

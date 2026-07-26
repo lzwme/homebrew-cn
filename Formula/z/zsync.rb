@@ -24,7 +24,7 @@ class Zsync < Formula
 
   def install
     (buildpath/"cmd").each_child(false) do |cmd|
-      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/cmd), "./cmd/#{cmd}"
+      system "go", "build", *std_go_args(output: bin/cmd), "./cmd/#{cmd}"
       man1.install "man/#{cmd}.1"
     end
   end

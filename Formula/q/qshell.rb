@@ -18,10 +18,7 @@ class Qshell < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/qiniu/qshell/v2/iqshell/common/version.version=v#{version}
-    ]
+    ldflags = %W[-X github.com/qiniu/qshell/v2/iqshell/common/version.version=v#{version}]
     system "go", "build", *std_go_args(ldflags:), "./main"
     generate_completions_from_executable(bin/"qshell", shell_parameter_format: :cobra)
   end

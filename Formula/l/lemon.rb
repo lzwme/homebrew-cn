@@ -1,9 +1,9 @@
 class Lemon < Formula
   desc "LALR(1) parser generator like yacc or bison"
   homepage "https://www.hwaci.com/sw/lemon/"
-  url "https://www.sqlite.org/2026/sqlite-src-3530300.zip"
-  version "3.53.3"
-  sha256 "bb80bf8a3bffc19241ce8aba5a4bc74e9c3980013cb0b5f0f0976a99516942af"
+  url "https://www.sqlite.org/2026/sqlite-src-3530400.zip"
+  version "3.53.4"
+  sha256 "d18fa15aec74d8c17e1463f861095adc01b5ad190256acb4f91d22f0368d232b"
   license "blessing"
 
   livecheck do
@@ -13,14 +13,14 @@ class Lemon < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0c4f11b4b69667d76ff88e584d203cdbc06e0e76b55482a53814392b0625d3d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c78bdded10cf1773cd9cefb44ddacf73076c80c846551127af0b93d2feb51f53"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdaa378c710e60da081096346f7f805a204d40daa6458ef22b94cc5737a0d2ef"
-    sha256 cellar: :any_skip_relocation, tahoe:         "78abc50182a455103935b9856bf2cc59a617d9482a1aa86af913fdd7deaf1e70"
-    sha256 cellar: :any_skip_relocation, sequoia:       "033e6ca1f757a183b26b97f9f1e0759c313293a499f695d13b7e8bcac2cd1ba7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e1ed400d8f29b01b987f9df6b95d4020068794722591bb668cf5392b1df7fc3b"
-    sha256 cellar: :any,                 arm64_linux:   "6b85ff8469a8cc39e0077e2c05929cbea7b23087fe1e0a69080550a725cd6f1e"
-    sha256 cellar: :any,                 x86_64_linux:  "eb3b76ec92a5f0b4e11b7d2781d5e8bf54c7f096b64655723d24182cf5fc20ad"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3b362f10c4d35707009d136e57159a5321a189c26f6efe9b90a7d5e049b1590"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c71a685d8a98cd313cec9a0257ad0ae2b467e1ca5cba6aa5dea8dc24140e30de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a43947c5ef1e8b7998ed161f5e5a1cc7566022d6d89bd27ce59bcae3f6b6f5ad"
+    sha256 cellar: :any_skip_relocation, tahoe:         "6ebe196fb9a42e18f1d0b7aa9a71aa30e3382dcaadc927c25af05af5880369b0"
+    sha256 cellar: :any_skip_relocation, sequoia:       "fa1f795de49048902299fbd80e9fe7e8e673530eb8eea3ec2a298d324cbb68ac"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eddc5cc605cd97bace0cc4980013969793fdec6a848da53bb3f8628364ef3837"
+    sha256 cellar: :any,                 arm64_linux:   "8fce46228b69100ec76ac4ae01ad28172a48e4ec5ccb755e0c56d964f618d080"
+    sha256 cellar: :any,                 x86_64_linux:  "bc31dfb45d1575979e985b639e172413e3a0953906d5003b5aff76cc5a535d5b"
   end
 
   # Submitted the patch via email to the upstream

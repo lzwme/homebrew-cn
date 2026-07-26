@@ -29,14 +29,8 @@ class Flyscrape < Formula
   end
 
   test do
-    test_config = pkgshare/"examples/hackernews.js"
-    return_status = OS.mac? ? 1 : 0
-    output = shell_output("#{bin}/flyscrape run #{test_config} 2>&1", return_status)
-    expected = if OS.mac?
-      "failed to create database file"
-    else
-      "\"url\": \"https://news.ycombinator.com/\""
-    end
-    assert_match expected, output
+    cp pkgshare/"examples/hackernews.js", testpath
+    output = shell_output("#{bin}/flyscrape run hackernews.js 2>&1")
+    assert_match "\"url\": \"https://news.ycombinator.com/\"", output
   end
 end

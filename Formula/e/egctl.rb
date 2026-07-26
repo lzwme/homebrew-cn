@@ -25,7 +25,6 @@ class Egctl < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/envoyproxy/gateway/internal/cmd/version.envoyGatewayVersion=#{version}
       -X github.com/envoyproxy/gateway/internal/cmd/version.gitCommitID=#{tap.user}
     ]

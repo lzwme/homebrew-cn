@@ -26,7 +26,7 @@ class EnteCli < Formula
 
   def install
     cd "cli" do
-      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"ente"), "main.go"
+      system "go", "build", *std_go_args(output: bin/"ente"), "main.go"
     end
   end
 

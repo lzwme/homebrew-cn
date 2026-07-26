@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.32.3",
-      revision: "fce745fe5e4f0c7741ca46fc5484c9471c997d00"
+      tag:      "v0.32.4",
+      revision: "64ee2f9847ccaedd8f05a139c30f086e9e0abe73"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
@@ -16,12 +16,12 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e5e79fd67a25a3c314e721d6d8a9dd934a590ce521cdd0d8f70dacce0ce14f9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e1791a9964e51903947155023074222adc599e1ff5e438a0c54f881fc1cbb4a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ba3083771d497fd7abaf665aa829960bc4b4b35e155b4b916477afc08e9084b"
-    sha256 cellar: :any,                 sonoma:        "0709dfc42cf8219e4aa880701da6f02c579e85ccd416c0486e4989846652654d"
-    sha256 cellar: :any,                 arm64_linux:   "d72b818dac0fb7a455b422766f7fd8a75c0e29caada4205c7735e35d7fbcc736"
-    sha256 cellar: :any,                 x86_64_linux:  "dfc95cc7f8a30b115dd3a0158f9e483637a0f425587e550dfea251e76c0293bc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "174f255918ff901debbe04e4ddd6329ae7f6ad0dfd83f53c2b6f0d8ea03a2158"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d84e76e595aab18168e4066d3d5b5201c1e60af03ac7ccc83576507c107e6316"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c1435819e46c52941cd2d6db44b87e0e0c5ed97e0f1345638f2d2b9848a335d"
+    sha256 cellar: :any,                 sonoma:        "676e695739af3e4306c412ef4d66767ce8cd617b17e5aa8d27f5540f2a81ebe0"
+    sha256 cellar: :any,                 arm64_linux:   "58685f97d80fb691e43f4532f436a250ff57786edad1dc7e8051429da796c6ff"
+    sha256 cellar: :any,                 x86_64_linux:  "cdaa48cdd603dca5ee5c8f29df45fa467d2591d21a39d6d3700a8f1bd9d4db3c"
   end
 
   depends_on "ccache" => :build
@@ -92,7 +92,6 @@ class Ollama < Formula
     ENV["SDKROOT"] = MacOS.sdk_path if OS.mac?
 
     ldflags = %W[
-      -s -w
       -X github.com/ollama/ollama/version.Version=#{version}
       -X github.com/ollama/ollama/server.mode=release
     ]

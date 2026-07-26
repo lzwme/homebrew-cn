@@ -18,7 +18,7 @@ class WoodpeckerCli < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X go.woodpecker-ci.org/woodpecker/v#{version.major}/version.Version=#{version}"
+    ldflags = "-X go.woodpecker-ci.org/woodpecker/v#{version.major}/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/cli"
     generate_completions_from_executable(bin/"woodpecker-cli", "completion")
     # woodpecker-cli expects "pwsh", not "powershell" so we use the custom shell_parameter_format

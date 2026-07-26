@@ -1,8 +1,8 @@
 class Moarvm < Formula
   desc "VM with adaptive optimization and JIT compilation, built for Rakudo"
   homepage "https://moarvm.org"
-  url "https://ghfast.top/https://github.com/MoarVM/MoarVM/releases/download/2026.06/MoarVM-2026.06.tar.gz"
-  sha256 "4d0735e1ca1f4a34869599370eec6fc12dae8bdf2d719a9cbbc940c9fc3b75d9"
+  url "https://ghfast.top/https://github.com/MoarVM/MoarVM/releases/download/2026.07/MoarVM-2026.07.tar.gz"
+  sha256 "5a85c08a9eb0ff9686b799dc061cbb1a99384bcf2573b9822ca982643b6e613f"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Moarvm < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "0af4a134c6ea471dcdf229d8f21c1653629dd0df8727f3c542da23b970f284d8"
-    sha256 arm64_sequoia: "c03aefc328b20ec7778fcc959aacda45aa9544c0527f507d96b435d8189e9549"
-    sha256 arm64_sonoma:  "2132ea8308d307e58116b865123397ed58bc6f96d06105f856f840278976784f"
-    sha256 sonoma:        "24c21c69d940bdf4d618af94fa7c28947fbc740f27a87fed7b3c4bfd5abdafc1"
-    sha256 arm64_linux:   "97ef34c04b8f39a05bd6e389acb0a18c3d972ef717b3c0a7315d1d2e1dad2e52"
-    sha256 x86_64_linux:  "6ab1c0de242e76039f49f1b0366c72d4804196d28e9885a8688f43fff5a9f15f"
+    sha256 arm64_tahoe:   "f8592faaa3d6880871d10ced47d942224aaaa922f02f97c54d66ee78c0916c5d"
+    sha256 arm64_sequoia: "49960eb14ebcaa9f1b706ea79495a9dc1ebca3a377b9f1354a24210c5c53cc04"
+    sha256 arm64_sonoma:  "1d807b3655086f6bf7582be60407166e9d8bf7035e67450907e80fc401ab5b80"
+    sha256 sonoma:        "2e5a07d42990c5fdea2cfe08be08174b1b32a9cf7e18af273977a52f5f92dd71"
+    sha256 arm64_linux:   "9ad9320914c60232f14f74ef36e7fba730ea12d758223c01dfa7bd6190c4b72b"
+    sha256 x86_64_linux:  "b09ac1a6389f7705eb3e5227327cddb34766080b7479c91a4584a728184e6384"
   end
 
   depends_on "pkgconf" => :build
@@ -35,8 +35,8 @@ class Moarvm < Formula
   conflicts_with "rakudo-star", because: "rakudo-star currently ships with moarvm included"
 
   resource "nqp" do
-    url "https://ghfast.top/https://github.com/Raku/nqp/releases/download/2026.06/nqp-2026.06.tar.gz"
-    sha256 "51514df4be087d4bf767eb8eb594363a699962a5ad759a4a8a50d07b9b0af13e"
+    url "https://ghfast.top/https://github.com/Raku/nqp/releases/download/2026.07/nqp-2026.07.tar.gz"
+    sha256 "f1371190487873d55f0d1920dfed10d9623393c48b5b6ca34b96d6048ad22acc"
 
     livecheck do
       formula :parent

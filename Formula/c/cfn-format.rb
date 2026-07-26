@@ -22,7 +22,7 @@ class CfnFormat < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cfn-format"
+    system "go", "build", *std_go_args, "./cmd/cfn-format"
   end
 
   test do

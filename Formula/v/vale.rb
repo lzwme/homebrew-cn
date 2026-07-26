@@ -19,8 +19,7 @@ class Vale < Formula
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
-    ldflags = "-X main.version=#{version} -s -w"
-    system "go", "build", *std_go_args, "-ldflags=#{ldflags}", "./cmd/vale"
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}"), "./cmd/vale"
   end
 
   test do

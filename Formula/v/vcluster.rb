@@ -28,9 +28,8 @@ class Vcluster < Formula
   depends_on "kubernetes-cli"
 
   def install
-    ldflags = "-s -w -X main.version=#{version}"
     system "go", "generate", "./..."
-    system "go", "build", "-mod", "vendor", *std_go_args(ldflags:), "./cmd/vclusterctl"
+    system "go", "build", "-mod", "vendor", *std_go_args(ldflags: "-X main.version=#{version}"), "./cmd/vclusterctl"
 
     generate_completions_from_executable(bin/"vcluster", shell_parameter_format: :cobra)
   end

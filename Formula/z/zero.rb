@@ -18,10 +18,7 @@ class Zero < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/Gitlawb/zero/internal/cli.version=#{version}
-    ]
+    ldflags = %W[-X github.com/Gitlawb/zero/internal/cli.version=#{version}]
     system "go", "build", *std_go_args(ldflags:), "./cmd/zero"
   end
 

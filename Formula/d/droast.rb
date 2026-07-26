@@ -1,17 +1,17 @@
 class Droast < Formula
   desc "Opinionated Dockerfile linter"
   homepage "https://ewry.net/droast-dockerfile-linter/"
-  url "https://ghfast.top/https://github.com/immanuwell/dockerfile-roast/archive/refs/tags/1.4.10.tar.gz"
-  sha256 "db6fd85d9162ebf29a2d7d41b04a99247b2648e847b23967bad2e893c976b5aa"
+  url "https://ghfast.top/https://github.com/immanuwell/dockerfile-roast/archive/refs/tags/1.4.11.tar.gz"
+  sha256 "dd05d491c9556bdc3b5057b5a435d3fe004fab527a6dde3d645345d5678acc2f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b08faa5eaa760d73daf7db2ba0ee3a8382673c1ebf9ecad27ac9ae66757b77d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3daa71b53e89224d6937149f3c8a2d747ad62e051604bb06ac15a6fc4a8e09b8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6935012aa3d64cc200532f81538581cacd33506535312e6e9c3819a7d26679a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f2a9e966c755c4547dcf2bcce25c1f362c488645bcc3b8e9fca77ec29ac97bba"
-    sha256 cellar: :any,                 arm64_linux:   "9fcef27b4a08f35eca1138e471787ba1792284205cf8f27fd82fa2041d342a1a"
-    sha256 cellar: :any,                 x86_64_linux:  "3df0eb6abdb02fe09541a8c9a9270de0483231e576a0f73dcf7fb4c2b03636ce"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd7ddbf0a69309d8ce3182d370990e1168a41d3484809883e72726a549dc0773"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "108fff11ba163d828ca9631b7171bd434d0471b4126e9944277c5465db4caf33"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7afd9bd95ea2a0c7a13984765c76ccdc2daef2daccdb72fe782ae8f31ccfa5d3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "865766cd0bc65b8fb62611a7474cf82fe9044e4b716c0c07c3351fb91fd23026"
+    sha256 cellar: :any,                 arm64_linux:   "fa1cb24b9ef1c38344899a93720aad9b60754e0bc4495ad4a3f882fbb8e753d7"
+    sha256 cellar: :any,                 x86_64_linux:  "a9d8ee43b44160381a6539c4d41ed3803671dc58a3a713f1066dea93435ef701"
   end
 
   depends_on "rust" => :build

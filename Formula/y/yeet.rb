@@ -18,10 +18,7 @@ class Yeet < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/TecharoHQ/yeet.Version=#{version}
-    ]
+    ldflags = %W[-X github.com/TecharoHQ/yeet.Version=#{version}]
     system "go", "build", *std_go_args(ldflags:), "./cmd/yeet"
   end
 

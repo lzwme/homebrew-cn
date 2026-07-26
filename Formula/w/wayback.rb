@@ -25,7 +25,6 @@ class Wayback < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/wabarc/wayback/version.Version=#{version}
       -X github.com/wabarc/wayback/version.Commit=#{tap.user}
       -X github.com/wabarc/wayback/version.BuildDate=#{time.iso8601}

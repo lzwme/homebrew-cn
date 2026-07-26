@@ -6,16 +6,16 @@ class Mk < Formula
   url "https://files.pythonhosted.org/packages/75/9e/dcc7813d9f7133f8d384eca24a4d4bb0cb056abcc53f1f170b8353084feb/mk-3.0.0.tar.gz"
   sha256 "0a041a3620057165f155b8372469d8ab55ae94dd91d6e27723ab9a7de1aa2086"
   license "MIT"
-  revision 10
+  revision 11
   head "https://github.com/pycontribs/mk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "71b0e9cf0a2afe414eb57330ffd9e9d77f035e4cc5a563c6a2b164c98cfc327f"
-    sha256 cellar: :any, arm64_sequoia: "5abf69e39d6b27f36d8a73a8d00623d8cdde04a3161cce739738954ac4549292"
-    sha256 cellar: :any, arm64_sonoma:  "eb3d192be40004806f6dc4c153bdbba04b959149037a09aed622cc27d22f95ee"
-    sha256 cellar: :any, sonoma:        "2d84dbcd0645fcc451f42222716890a97653aae9ed7d8b2804f3d1a768be9ac8"
-    sha256 cellar: :any, arm64_linux:   "d9afeb58611154d99a7f843ea145c959f7c4d2fcba955949cc919ad27aa7a1bc"
-    sha256 cellar: :any, x86_64_linux:  "5d514cc2d1896903e38b253a6995d5f62455f1f868e12a1d56eb34eede425f27"
+    sha256 cellar: :any, arm64_tahoe:   "012876cda44d41da0e3042c5c0099a47ad6f8dd46bd9efd356f0b4bea869d17e"
+    sha256 cellar: :any, arm64_sequoia: "0f5c4d16bad3bd1d41f385ea4f04bf9855669be727c607829536281566f9ff53"
+    sha256 cellar: :any, arm64_sonoma:  "320bce5943deac9f04f5674d9851c5d24f4c0f2e74854e5b54e904563ba9af6c"
+    sha256 cellar: :any, sonoma:        "569a4ac2a19b91215cb55ca937eedc50c5522a648805625c7875e991b9e8579e"
+    sha256 cellar: :any, arm64_linux:   "9d1d0819d52897e4364931c4b17159fa106b455716df641fb9f84882dc306e81"
+    sha256 cellar: :any, x86_64_linux:  "7571f33d9a3422da6f72f4bff0b8dcdcd0e46f87e86baaaeab1f99913e3fbef7"
   end
 
   depends_on "rust" => :build
@@ -61,8 +61,8 @@ class Mk < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/17/24/0e0c12cb6f7cb864779a9d2fefee9ca91838f6db402c8780c9d28a8d7ebe/gitpython-3.1.53.tar.gz"
-    sha256 "06ae8d9623b0ed0d67b8adeac5c7008d0a5a404b087a9e0d0c7163bdd3a6b497"
+    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
+    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
   end
 
   resource "id" do

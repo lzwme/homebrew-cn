@@ -24,7 +24,7 @@ class Vacuum < Formula
       system "npm", "run", "build"
     end
 
-    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
+    ldflags = "-X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:, tags: "html_report_ui")
 
     generate_completions_from_executable(bin/"vacuum", shell_parameter_format: :cobra)

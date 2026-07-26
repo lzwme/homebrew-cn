@@ -32,7 +32,7 @@ class Werf < Formula
   def install
     ENV["CGO_ENABLED"] = "1"
 
-    ldflags = %W[-s -w -X github.com/werf/werf/v2/pkg/werf.Version=#{version}]
+    ldflags = %W[-X github.com/werf/werf/v2/pkg/werf.Version=#{version}]
     tags = %w[dfrunsecurity dfrunnetwork dfrunmount dfssh containers_image_openpgp]
     if OS.linux?
       ldflags += %w[-linkmode external -extldflags=-static]

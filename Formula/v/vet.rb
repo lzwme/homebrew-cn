@@ -18,7 +18,7 @@ class Vet < Formula
 
   def install
     ENV["CGO_ENABLED"] = "1"
-    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
+    ldflags = "-X main.version=#{version} -X main.commit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"vet", shell_parameter_format: :cobra)

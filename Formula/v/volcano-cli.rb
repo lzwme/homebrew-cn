@@ -19,7 +19,6 @@ class VolcanoCli < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X volcano.sh/volcano/pkg/version.GitSHA=#{tap.user}
       -X volcano.sh/volcano/pkg/version.Built=#{time.iso8601}
       -X volcano.sh/volcano/pkg/version.Version=#{version}
