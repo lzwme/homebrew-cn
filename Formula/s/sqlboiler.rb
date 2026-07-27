@@ -20,10 +20,10 @@ class Sqlboiler < Formula
   def install
     %w[mssql mysql psql sqlite3].each do |driver|
       f = "sqlboiler-#{driver}"
-      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/f), "./drivers/#{f}"
+      system "go", "build", *std_go_args(output: bin/f), "./drivers/#{f}"
     end
 
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args
   end
 
   test do

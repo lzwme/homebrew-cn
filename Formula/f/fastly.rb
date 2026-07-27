@@ -24,7 +24,6 @@ class Fastly < Formula
     arch = Utils.safe_popen_read("go", "env", "GOARCH").strip
 
     ldflags = %W[
-      -s -w
       -X github.com/fastly/cli/pkg/revision.AppVersion=v#{version}
       -X github.com/fastly/cli/pkg/revision.GitCommit=#{tap.user}
       -X github.com/fastly/cli/pkg/revision.GoHostOS=#{os}

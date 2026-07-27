@@ -32,7 +32,7 @@ class Anubis < Formula
 
   def install
     system "make", "assets"
-    ldflags = "-s -w -X github.com/TecharoHQ/anubis.Version=#{version}"
+    ldflags = "-X github.com/TecharoHQ/anubis.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/anubis"
   end
 

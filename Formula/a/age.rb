@@ -21,7 +21,7 @@ class Age < Formula
   deny_network_access! [:postinstall, :test]
 
   def install
-    ldflags = "-s -w -X main.Version=v#{version}"
+    ldflags = "-X main.Version=v#{version}"
     (buildpath/"cmd").each_child(false) do |cmd|
       system "go", "build", *std_go_args(ldflags:, output: bin/cmd), "./cmd/#{cmd}"
     end

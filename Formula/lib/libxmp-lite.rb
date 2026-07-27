@@ -1,17 +1,17 @@
 class LibxmpLite < Formula
   desc "Lite libxmp"
   homepage "https://xmp.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/xmp/libxmp/4.7.1/libxmp-lite-4.7.1.tar.gz"
-  sha256 "e5dcd937a931650047a01b7c6cebbb513f3c0e2182dd61f4801181771ccbcd97"
+  url "https://downloads.sourceforge.net/project/xmp/libxmp/4.7.2/libxmp-lite-4.7.2.tar.gz"
+  sha256 "bace7f53248a2cd5adcf77f9402a8858fc0fec05f4e6d6436e3d2a28d68f640e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a79650a4aace0af5d29b0b0959934dfd3055df39a87545817e8276d26722babd"
-    sha256 cellar: :any, arm64_sequoia: "23978535137abc912ec7261e3a12825ba29b3aaf0d036a05b3ef5cd5a55dffc4"
-    sha256 cellar: :any, arm64_sonoma:  "72379c6f45f9f5ac37fe6ed4c36bca2964773d5821d89b3debcb03cd51c04eed"
-    sha256 cellar: :any, sonoma:        "66954f96fe01d5ed65c5f1416889c02008fae82d45e552dc4aa975ae3641c98e"
-    sha256 cellar: :any, arm64_linux:   "6f4225d1989261d6dd238c0362e7a3414657f2317ae43089e08b13d28e318f12"
-    sha256 cellar: :any, x86_64_linux:  "901b45722006892a2e6ad15f7132c3fe4d28c2f1518f8829e9c119d8ce68f5d1"
+    sha256 cellar: :any, arm64_tahoe:   "69a587fda4a04a06dfed5e026f14f48bcb91275bdf5b4d18ff97514f30d6574e"
+    sha256 cellar: :any, arm64_sequoia: "5f3d1a92d9d63b5936ea5fd3b1138ef561f4ee586ff88ec5fd4541082f15dce3"
+    sha256 cellar: :any, arm64_sonoma:  "65ddf29ef96c71813f80fc94bcd3695e171598a4e67a71bc02eca5ece323699d"
+    sha256 cellar: :any, sonoma:        "792dfd93e728b4a401c52be678a2601dc7c3afdff668286e96204691997f14d6"
+    sha256 cellar: :any, arm64_linux:   "23d04f6793275f054d3b287ab161fbe50ee5099c95e3c8fa04300ba996a13ade"
+    sha256 cellar: :any, x86_64_linux:  "7dab9c9bd74dd37bfafba15146c3a9475fb7d53357e0f0e31d782a7942b5681c"
   end
 
   def install

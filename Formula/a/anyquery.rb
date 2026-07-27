@@ -27,7 +27,7 @@ class Anyquery < Formula
       sqlite_json
       sqlite_math_functions
     ]
-    system "go", "build", *std_go_args(ldflags: "-s -w", tags:)
+    system "go", "build", *std_go_args(tags:)
 
     generate_completions_from_executable(bin/"anyquery", shell_parameter_format: :cobra)
   end

@@ -25,7 +25,6 @@ class Sq < Formula
 
     pkg = "github.com/neilotoole/sq/cli/buildinfo"
     ldflags = %W[
-      -s -w
       -X #{pkg}.Version=v#{version}
       -X #{pkg}.Commit=RELEASE
       -X #{pkg}.Timestamp=#{time.iso8601}

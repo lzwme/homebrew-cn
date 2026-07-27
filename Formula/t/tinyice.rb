@@ -19,7 +19,6 @@ class Tinyice < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X main.Version=#{version}
       -X main.Commit=#{tap.user}
     ]

@@ -17,7 +17,7 @@ class Smug < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")
 
     bash_completion.install "completion/smug.bash" => "smug"
     fish_completion.install "completion/smug.fish"

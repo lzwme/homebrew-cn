@@ -51,7 +51,7 @@ class TrezorBridge < Formula
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
     (buildpath/"usb/lowlevel/hidapi/c").install resource("hidapi")
-    system "go", "build", *std_go_args(output: bin/"trezord-go", ldflags: "-s -w")
+    system "go", "build", *std_go_args(output: bin/"trezord-go")
   end
 
   service do

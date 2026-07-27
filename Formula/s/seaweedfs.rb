@@ -24,10 +24,7 @@ class Seaweedfs < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/seaweedfs/seaweedfs/weed/util.COMMIT=#{Utils.git_head}
-    ]
+    ldflags = %W[-X github.com/seaweedfs/seaweedfs/weed/util.COMMIT=#{Utils.git_head}]
     system "go", "build", *std_go_args(ldflags:, output: bin/"weed"), "./weed"
   end
 

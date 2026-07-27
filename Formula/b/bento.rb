@@ -17,7 +17,7 @@ class Bento < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w  -X github.com/warpstreamlabs/bento/internal/cli.Version=#{version} -X main.Version=#{version}"
+    ldflags = "-X github.com/warpstreamlabs/bento/internal/cli.Version=#{version} -X main.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/bento"
   end
 

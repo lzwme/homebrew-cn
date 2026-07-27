@@ -21,7 +21,6 @@ class TelegramDownloader < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/iyear/tdl/pkg/consts.Version=#{version}
       -X github.com/iyear/tdl/pkg/consts.Commit=#{tap.user}
       -X github.com/iyear/tdl/pkg/consts.CommitDate=#{time.iso8601}

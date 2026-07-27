@@ -19,7 +19,7 @@ class Treefmt < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/numtide/treefmt/v2/build.Version=#{version}"
+    ldflags = "-X github.com/numtide/treefmt/v2/build.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

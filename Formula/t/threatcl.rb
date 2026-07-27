@@ -20,7 +20,7 @@ class Threatcl < Formula
   def install
     ENV["CGO_ENABLED"] = "0"
 
-    ldflags = "-s -w -X github.com/threatcl/threatcl/version.Version=#{version}"
+    ldflags = "-X github.com/threatcl/threatcl/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/threatcl"
 
     pkgshare.install "examples"

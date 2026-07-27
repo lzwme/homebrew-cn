@@ -32,7 +32,7 @@ class LunchyGo < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"lunchy")
+    system "go", "build", *std_go_args(output: bin/"lunchy")
   end
 
   test do

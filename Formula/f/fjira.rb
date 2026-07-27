@@ -18,7 +18,7 @@ class Fjira < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/fjira-cli"
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}"), "./cmd/fjira-cli"
 
     generate_completions_from_executable(bin/"fjira", shell_parameter_format: :cobra)
   end

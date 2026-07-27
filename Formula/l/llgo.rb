@@ -43,7 +43,6 @@ class Llgo < Formula
   def install
     llvm = find_dep("llvm")
     ldflags = %W[
-      -s -w
       -X github.com/goplus/llgo/internal/env.buildVersion=v#{version}
       -X github.com/goplus/llgo/internal/env.buildTime=#{time.iso8601}
       -X github.com/goplus/llgo/xtool/env/llvm.ldLLVMConfigBin=#{llvm.opt_bin}/llvm-config

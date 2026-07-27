@@ -25,7 +25,6 @@ class SbomUtility < Formula
   def install
     ENV["CGO_ENABLED"] = "0"
     ldflags = %W[
-      -s -w
       -X main.Binary=sbom-utility
       -X main.Version=#{version}
     ]

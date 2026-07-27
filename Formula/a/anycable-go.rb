@@ -23,10 +23,7 @@ class AnycableGo < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %w[
-      -s -w
-    ]
-    ldflags << if build.head?
+    ldflags = if build.head?
       "-X github.com/anycable/anycable/utils.sha=#{version.commit}"
     else
       "-X github.com/anycable/anycable/utils.version=#{version}"

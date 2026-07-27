@@ -22,7 +22,7 @@ class Akamai < Formula
       noautoupgrade
       nofirstrun
     ]
-    system "go", "build", *std_go_args(ldflags: "-s -w", tags:), "./cli"
+    system "go", "build", *std_go_args(tags:), "./cli"
   end
 
   test do

@@ -18,7 +18,7 @@ class FakeGcsServer < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/fsouza/fake-gcs-server.Version=#{version}"
+    ldflags = "-X github.com/fsouza/fake-gcs-server.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

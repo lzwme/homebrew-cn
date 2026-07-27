@@ -31,7 +31,6 @@ class Flyctl < Formula
   def install
     ENV["CGO_ENABLED"] = "0"
     ldflags = %W[
-      -s -w
       -X github.com/superfly/flyctl/internal/buildinfo.buildDate=#{time.iso8601}
       -X github.com/superfly/flyctl/internal/buildinfo.buildVersion=#{version}
       -X github.com/superfly/flyctl/internal/buildinfo.commit=#{Utils.git_short_head}

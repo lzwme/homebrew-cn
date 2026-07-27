@@ -1,8 +1,8 @@
 class Atmos < Formula
   desc "Universal Tool for DevOps and Cloud Automation"
   homepage "https://atmos.tools"
-  url "https://ghfast.top/https://github.com/cloudposse/atmos/archive/refs/tags/v1.224.0.tar.gz"
-  sha256 "65edc55f15e06f93dd671892545019ffe218115c4a778cf4ca7813cf960958d8"
+  url "https://ghfast.top/https://github.com/cloudposse/atmos/archive/refs/tags/v1.224.1.tar.gz"
+  sha256 "eb67136d05374e94051af7bd4b3dca9a6cfd5b1e9f63c5028de04b3c1770bc09"
   license "Apache-2.0"
   head "https://github.com/cloudposse/atmos.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Atmos < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9bca9265d010e1d19fefd9c2a3ea362a7015236a0d1e9cf0022c6d19d22e6a65"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16a0a08322416d3d274b1502ca4c2487d2517b7cc372a54c83befdbd6627b88a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "903deb227412601c71e82c050acf61af022314cffdc3cd8bd209a3e71bb82716"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9a46e07653af900ec68ebb982cc3cb0c99946c6a53d6ad5150c64c7648ea4ba9"
-    sha256 cellar: :any,                 arm64_linux:   "e91733bd2e6d4a09ee0a28e0dc724022c957797d12346ccaf175d480b8daca38"
-    sha256 cellar: :any,                 x86_64_linux:  "455d12fbc57d53e8f1f2590d3c5456d77dd0a7c4ebf9b60f35d67d39f30888fb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "411ee776e975e89bf061864d40b133d3a197d2e8014c8d357f5ae224d14d90e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "504529f52284332a608fde251563bf89ef05fdee2e6f7454c81c771cfdb2959b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78d875de71fc198bdf65c7d723ceea3509900641e1e11142f1645b2ea628b502"
+    sha256 cellar: :any_skip_relocation, sonoma:        "38556fab5c1c282f26dcf4d62846fc1bb4ff262123775cee54c1771ab3ce1e32"
+    sha256 cellar: :any,                 arm64_linux:   "1762425a8523cd16af38a77e1a5622e34e78f1dc9f0772c8735af67553822365"
+    sha256 cellar: :any,                 x86_64_linux:  "c1ec2a643ac461dca3b968a79f0bfe74fff4887493f011d216a6af4088f09af4"
   end
 
   depends_on "go" => :build
@@ -34,7 +34,7 @@ class Atmos < Formula
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
-    system "go", "build", *std_go_args(ldflags: "-s -w -X 'github.com/cloudposse/atmos/pkg/version.Version=#{version}'")
+    system "go", "build", *std_go_args(ldflags: "-X 'github.com/cloudposse/atmos/pkg/version.Version=#{version}'")
 
     generate_completions_from_executable(bin/"atmos", shell_parameter_format: :cobra)
   end

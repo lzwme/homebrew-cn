@@ -1,20 +1,20 @@
 class Libngtcp2 < Formula
   desc "IETF QUIC protocol implementation"
   homepage "https://nghttp2.org/ngtcp2/"
-  url "https://ghfast.top/https://github.com/ngtcp2/ngtcp2/releases/download/v1.24.0/ngtcp2-1.24.0.tar.xz"
-  mirror "http://fresh-center.net/linux/www/ngtcp2-1.24.0.tar.xz"
-  sha256 "7fa5ec2be0f0cbed8bc4ec89c0787dfa9d8ce678f1ed9477c52f30eb1a591207"
+  url "https://ghfast.top/https://github.com/ngtcp2/ngtcp2/releases/download/v1.25.0/ngtcp2-1.25.0.tar.xz"
+  mirror "http://fresh-center.net/linux/www/ngtcp2-1.25.0.tar.xz"
+  sha256 "2a34d2484ba17847a5d11965704e9dd0fac4c6d8efc75ffe1ec7de66d8c6b6fb"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ngtcp2/ngtcp2.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fef0498ca38e3ed15d2c7bae07646db1a9bbe3fac71e672d8e0cb1e4e5b1c741"
-    sha256 cellar: :any, arm64_sequoia: "0d2acc6d4dae89f1fcc13afc6900f6eadf70208858e592f8f21c9f7a17c00a50"
-    sha256 cellar: :any, arm64_sonoma:  "770631ef7f60d0576b22bf2334159e058d85d9298c2ab91e608b2ba83fd8c35f"
-    sha256 cellar: :any, sonoma:        "ef4fa356f3c65ff50da314af7f2b2f925e7b008c04955b9bca45eb984112ead1"
-    sha256 cellar: :any, arm64_linux:   "d12d4b84d520f2da794e392a7438a112eb47e6bab827a84376a5a1dec75d50e7"
-    sha256 cellar: :any, x86_64_linux:  "49d430c967945b0285f8406f38856e5c2d4781e38c7d10f57fab496e6dcf61ce"
+    sha256 cellar: :any, arm64_tahoe:   "301e7664d107756e42c21a981628ef09fa9a9b86731286deba8e0ccbce89fb54"
+    sha256 cellar: :any, arm64_sequoia: "863fe84438291c89a972d647eee6d6099620b7c77039e6d84d704076e25de21c"
+    sha256 cellar: :any, arm64_sonoma:  "a5f12e89e3c5727186d96a097a8fd49669fe1e4536138ab42be25a6a0ecf2c30"
+    sha256 cellar: :any, sonoma:        "2b09d593d53fdd5cc33c964196a25cf335d0ad6dfe97d7786a2094f3606a3d31"
+    sha256 cellar: :any, arm64_linux:   "a9335ca272b9a50e7fc9ba789e120cd522885d9b3b9267446488a41623c30414"
+    sha256 cellar: :any, x86_64_linux:  "6c5b43b89a08020041b734e63d6c7048e151726a8f9072e58ae677fb21e615e3"
   end
 
   depends_on "pkgconf" => :build

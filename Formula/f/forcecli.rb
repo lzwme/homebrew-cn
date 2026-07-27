@@ -18,7 +18,7 @@ class Forcecli < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"force")
+    system "go", "build", *std_go_args(output: bin/"force")
 
     generate_completions_from_executable(bin/"force", shell_parameter_format: :cobra)
   end

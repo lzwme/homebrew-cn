@@ -23,7 +23,7 @@ class Autobrr < Formula
     system "pnpm", "with", "current", "--dir", "web", "install"
     system "pnpm", "with", "current", "--dir", "web", "run", "build"
 
-    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
+    ldflags = "-X main.version=#{version} -X main.commit=#{tap.user}"
 
     system "go", "build", *std_go_args(output: bin/"autobrr", ldflags:), "./cmd/autobrr"
     system "go", "build", *std_go_args(output: bin/"autobrrctl", ldflags:), "./cmd/autobrrctl"

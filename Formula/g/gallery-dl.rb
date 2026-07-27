@@ -3,18 +3,18 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https://codeberg.org/mikf/gallery-dl"
-  url "https://files.pythonhosted.org/packages/22/dc/f44c424d3966cf040b7ef091c8e6818a94ddd7b88c844d62ba542b93b84f/gallery_dl-1.32.7.tar.gz"
-  sha256 "071635805a77ee2d3e70bd271ccd3e565ed64b200df3e03085cd899e8f893a02"
+  url "https://files.pythonhosted.org/packages/7e/78/17e075f6faf06a36ed01030989005ad0f4a4a33902eda0be179719014495/gallery_dl-1.32.8.tar.gz"
+  sha256 "a1358f90a08f179aa531afe43c538c7cb1827bebe296741285d610ad22849884"
   license "GPL-2.0-only"
   head "https://codeberg.org/mikf/gallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "7adcdd8f9b6f45458992ea6fe78fbd52467e55f79c3abc596b53bd2c03e72163"
-    sha256 cellar: :any, arm64_sequoia: "88375df33fcfa52bb5993a4c0786fc0b7ea2bfde6016df2c4a6ed50412876269"
-    sha256 cellar: :any, arm64_sonoma:  "3dc7e40cdd658fe72dc3da7c47c34a674693a2a7e50bd78fc37442c8cff5ae5f"
-    sha256 cellar: :any, sonoma:        "70a5fb1ceb4f2cb41ce8dac16e753c0bcb1a318fda6ac30c3b0bf16a97f302c1"
-    sha256 cellar: :any, arm64_linux:   "3bfbd502be2b85b96b9d03f8940a941eb85d2ae5a77945ff91c2cedf8492859f"
-    sha256 cellar: :any, x86_64_linux:  "2369abdecf9f4afda4e1fbd98df9fa277b18b65f654148d1f625ed63f18da8f6"
+    sha256 cellar: :any, arm64_tahoe:   "ed2c1251261d8ab011edebf4ac0ed1bcefff33ba8929940b7cb15d1b1b216889"
+    sha256 cellar: :any, arm64_sequoia: "ebbf528a2576d2191eb935f0a79d31d029132e721c04e73865e58f246bd3ee3e"
+    sha256 cellar: :any, arm64_sonoma:  "a2db0c140450644a13aa1fb4f44549be7bcc903bd21e77c702729da9988d3f4a"
+    sha256 cellar: :any, sonoma:        "f8a0877e2abe08dca8a5b15053d03600d9904022ec0d6e2132a9fb08b03dcd48"
+    sha256 cellar: :any, arm64_linux:   "1ae9bcc0030905ba0d83846d053970ca5e450fd7d4eb531b9f211e2f07d6ff20"
+    sha256 cellar: :any, x86_64_linux:  "4ebf6ec9ec6251204be62f210ce4773a7e7ddb2b93ea4ac7d0b55fa323874a5b"
   end
 
   depends_on "certifi" => :no_linkage

@@ -20,8 +20,8 @@ class Terramate < Formula
   conflicts_with "tenv", because: "both install terramate binary"
 
   def install
-    system "go", "build", *std_go_args(output: bin/"terramate", ldflags: "-s -w"), "./cmd/terramate"
-    system "go", "build", *std_go_args(output: bin/"terramate-ls", ldflags: "-s -w"), "./cmd/terramate-ls"
+    system "go", "build", *std_go_args(output: bin/"terramate"), "./cmd/terramate"
+    system "go", "build", *std_go_args(output: bin/"terramate-ls"), "./cmd/terramate-ls"
   end
 
   test do

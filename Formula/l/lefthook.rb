@@ -20,7 +20,7 @@ class Lefthook < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", tags: "no_self_update")
+    system "go", "build", *std_go_args(tags: "no_self_update")
 
     generate_completions_from_executable(bin/"lefthook", "completion")
   end

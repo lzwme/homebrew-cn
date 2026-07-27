@@ -24,7 +24,6 @@ class FleetCli < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/rancher/fleet/pkg/version.Version=#{version}
       -X github.com/rancher/fleet/pkg/version.GitCommit=#{tap.user}
     ]

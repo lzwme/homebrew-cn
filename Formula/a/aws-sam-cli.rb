@@ -426,7 +426,7 @@ class AwsSamCli < Formula
         with_env(CGO_ENABLED: "0", GOOS: "linux", GOARCH: goarch) do
           output = rapid_dir/"aws-lambda-rie-#{arch}"
           rm(output)
-          system "go", "build", "-buildvcs=false", *std_go_args(ldflags: "-s -w", output:), "./cmd/aws-lambda-rie"
+          system "go", "build", "-buildvcs=false", *std_go_args(output:), "./cmd/aws-lambda-rie"
         end
       end
     end

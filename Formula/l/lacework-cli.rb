@@ -28,7 +28,6 @@ class LaceworkCli < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/lacework/go-sdk/v2/cli/cmd.Version=#{version}
       -X github.com/lacework/go-sdk/v2/cli/cmd.GitSHA=#{Utils.git_head}
       -X github.com/lacework/go-sdk/v2/cli/cmd.HoneyDataset=lacework-cli-prod

@@ -22,10 +22,7 @@ class Atlas < Formula
   conflicts_with "mongodb-atlas-cli", "nim", because: "both install `atlas` executable"
 
   def install
-    ldflags = %W[
-      -s -w
-      -X ariga.io/atlas/cmd/atlas/internal/cmdapi.version=v#{version}
-    ]
+    ldflags = %W[-X ariga.io/atlas/cmd/atlas/internal/cmdapi.version=v#{version}]
     cd "./cmd/atlas" do
       system "go", "build", *std_go_args(ldflags:)
     end

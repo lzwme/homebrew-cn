@@ -20,7 +20,7 @@ class Ibazel < Formula
 
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), "./cmd/ibazel"
+    system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}"), "./cmd/ibazel"
   end
 
   test do

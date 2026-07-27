@@ -23,7 +23,7 @@ class Flyscrape < Formula
 
   def install
     tags = "osusergo,netgo,sqlite_omit_load_extension"
-    system "go", "build", *std_go_args(ldflags: "-s -w", tags:), "./cmd/flyscrape"
+    system "go", "build", *std_go_args(tags:), "./cmd/flyscrape"
 
     pkgshare.install "examples"
   end

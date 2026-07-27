@@ -18,7 +18,7 @@ class Bbrew < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X bbrew/internal/services.AppVersion=#{version}"
+    ldflags = "-X bbrew/internal/services.AppVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/bbrew"
   end
 

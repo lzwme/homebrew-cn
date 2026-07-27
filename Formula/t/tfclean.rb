@@ -19,7 +19,6 @@ class Tfclean < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/takaishi/tfclean.Version=#{version}
       -X github.com/takaishi/tfclean.Revision=#{tap.user}
       -X github.com/takaishi/tfclean/cmd/tfclean.Version=#{version}

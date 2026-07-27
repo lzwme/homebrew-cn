@@ -3588,6 +3588,7 @@ Homebrew-homebrew-core/Formula/k/ki18n.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kibi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kickstart.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kics.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kiesel.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/killport.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/killswitch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kim-api.rb, Homebrew/homebrew-core, 0
@@ -3821,6 +3822,7 @@ Homebrew-homebrew-core/Formula/l/licensed.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/licensefinder.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/licenseplist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/licensor.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lief-patchelf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lief.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lifelines.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lightgbm.rb, Homebrew/homebrew-core, 0
@@ -9050,7 +9052,6 @@ Homebrew-homebrew-cask/Casks/b/bossa-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bot-framework-emulator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bowtie.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/box-drive.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/b/box-sync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/box-tools.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/boxcryptor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/boxy-suite.rb, Homebrew/homebrew-cask, 0

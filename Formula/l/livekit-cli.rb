@@ -21,8 +21,7 @@ class LivekitCli < Formula
 
   def install
     ENV["CGO_ENABLED"] = "1"
-    ldflags = "-s -w"
-    system "go", "build", *std_go_args(ldflags:, tags: "portaudio_system", output: bin/"lk"), "./cmd/lk"
+    system "go", "build", *std_go_args(tags: "portaudio_system", output: bin/"lk"), "./cmd/lk"
 
     bin.install_symlink "lk" => "livekit-cli"
 

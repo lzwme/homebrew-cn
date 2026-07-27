@@ -27,7 +27,6 @@ class Buildkitd < Formula
   def install
     revision = build.head? ? Utils.git_short_head : tap.user
     ldflags = %W[
-      -s -w
       -X github.com/moby/buildkit/version.Version=#{version}
       -X github.com/moby/buildkit/version.Revision=#{revision}
       -X github.com/moby/buildkit/version.Package=github.com/moby/buildkit

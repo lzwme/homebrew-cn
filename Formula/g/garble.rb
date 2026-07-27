@@ -1,25 +1,24 @@
 class Garble < Formula
   desc "Obfuscate Go builds"
   homepage "https://github.com/burrowers/garble"
-  url "https://ghfast.top/https://github.com/burrowers/garble/archive/refs/tags/v0.16.0.tar.gz"
-  sha256 "78b418d98b1d24549bf660a50054263206c3eeccf6820438f10e8568b81a1bfc"
+  url "https://ghfast.top/https://github.com/burrowers/garble/archive/refs/tags/v0.17.0.tar.gz"
+  sha256 "feab001d7e9ff4ce66011ebd70791de93eb1554d34d3ea44c33d102a25c1be0a"
   license "BSD-3-Clause"
-  revision 3
   head "https://github.com/burrowers/garble.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d27ffc32ff6127e7a9ebcf94f85912d53f69d2cbaab66b23e4e76f675ea6bc04"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d27ffc32ff6127e7a9ebcf94f85912d53f69d2cbaab66b23e4e76f675ea6bc04"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d27ffc32ff6127e7a9ebcf94f85912d53f69d2cbaab66b23e4e76f675ea6bc04"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c201388fc8a878406da584f7f327134941276d40c72c6776fb6351ad14f63b0d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9eff1a085596f5006253daa0bc9ec8bf9842e4b9801cc7755e8f24762b6984b1"
-    sha256 cellar: :any,                 x86_64_linux:  "17d08366d09feba42e0434a8e9099ae500134c7e64019044c26ba9639b46b189"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e1a7e4c1c62f5856e61b9d14cbc65a0470f2a1db63abc9daf769ad9de993c9e4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1a7e4c1c62f5856e61b9d14cbc65a0470f2a1db63abc9daf769ad9de993c9e4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1a7e4c1c62f5856e61b9d14cbc65a0470f2a1db63abc9daf769ad9de993c9e4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ec94f7e1177c6fc10fe16e9081e19d1fb66a8a7acc3d212daf49ff3dc4ad0834"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cbf574da6fd4fcdafd18da8f53355264d69bda288495fc5d2bbae1e66ed97eb"
+    sha256 cellar: :any,                 x86_64_linux:  "4ecf63a71b1484005ebbf108776759963c348ae107ce8bdf933c09b4fa151f7c"
   end
 
   depends_on "go" => [:build, :test]
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args
   end
 
   test do

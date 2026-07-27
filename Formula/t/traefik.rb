@@ -34,10 +34,7 @@ class Traefik < Formula
       system buildpath/"yarn", "build"
     end
 
-    ldflags = %W[
-      -s -w
-      -X github.com/traefik/traefik/v#{version.major}/pkg/version.Version=#{version}
-    ]
+    ldflags = %W[-X github.com/traefik/traefik/v#{version.major}/pkg/version.Version=#{version}]
     system "go", "generate"
     system "go", "build", *std_go_args(ldflags:), "./cmd/traefik"
   end

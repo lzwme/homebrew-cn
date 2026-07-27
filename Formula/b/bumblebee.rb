@@ -23,8 +23,7 @@ class Bumblebee < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.Version=v#{version}"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/bumblebee"
+    system "go", "build", *std_go_args(ldflags: "-X main.Version=v#{version}"), "./cmd/bumblebee"
     pkgshare.install "threat_intel"
   end
 

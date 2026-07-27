@@ -18,7 +18,7 @@ class Tmuxai < Formula
   depends_on "tmux"
 
   def install
-    ldflags = "-s -w -X github.com/alvinunreal/tmuxai/internal.Version=v#{version}"
+    ldflags = "-X github.com/alvinunreal/tmuxai/internal.Version=v#{version}"
 
     system "go", "build", *std_go_args(ldflags:)
   end

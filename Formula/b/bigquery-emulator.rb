@@ -30,7 +30,7 @@ class BigqueryEmulator < Formula
       ENV.append "GOFLAGS", "-buildmode=pie"
     end
 
-    ldflags = "-s -w -X main.version=#{version} -X main.revision=#{tap.user}"
+    ldflags = "-X main.version=#{version} -X main.revision=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/bigquery-emulator"
   end
 

@@ -18,7 +18,7 @@ class Frizbee < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/stacklok/frizbee/internal/cli.CLIVersion=#{version}"
+    ldflags = "-X github.com/stacklok/frizbee/internal/cli.CLIVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"frizbee", shell_parameter_format: :cobra)

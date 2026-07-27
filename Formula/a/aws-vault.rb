@@ -25,8 +25,7 @@ class AwsVault < Formula
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
-    ldflags = "-s -w -X main.Version=#{version}-#{tap.user}"
-    system "go", "build", *std_go_args(ldflags:), "."
+    system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}-#{tap.user}")
 
     zsh_completion.install "contrib/completions/zsh/aws-vault.zsh" => "_aws-vault"
     bash_completion.install "contrib/completions/bash/aws-vault.bash" => "aws-vault"

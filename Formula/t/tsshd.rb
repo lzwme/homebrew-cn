@@ -17,7 +17,7 @@ class Tsshd < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/tsshd"
+    system "go", "build", *std_go_args, "./cmd/tsshd"
   end
 
   test do

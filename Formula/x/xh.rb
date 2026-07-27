@@ -1,18 +1,18 @@
 class Xh < Formula
   desc "Friendly and fast tool for sending HTTP requests"
   homepage "https://github.com/ducaale/xh"
-  url "https://ghfast.top/https://github.com/ducaale/xh/archive/refs/tags/v0.26.1.tar.gz"
-  sha256 "6c4822374d3b9bacfc50719ffb5653a32fd84344e50fd88b499ed8fc9e52198b"
+  url "https://ghfast.top/https://github.com/ducaale/xh/archive/refs/tags/v0.26.2.tar.gz"
+  sha256 "61a88a5b3beac225b75a11d6ed32659af78db7ff29c825def0ab7f4a2906cbd7"
   license "MIT"
   head "https://github.com/ducaale/xh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "850a6a8e6b716c68f1fba6c73918a28a7632c0a534cfec1bc821c800ab07204a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1bd10fe24ca912845be90c4e8e7dce74399185d8115b4cdd16c4d43c3823817"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a956b0d3a7ac0480a1c24ecaac674e53e09f5283449515eecb072a0a23096c9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5722ac465644bbaf95d3bb204ed12b10b8495a689a7a1aeea9e7259711eddef2"
-    sha256 cellar: :any,                 arm64_linux:   "6fca489877c66b3b64d70fa2e9936869bed5c6c2d4220ffdb1cd837e5f02d733"
-    sha256 cellar: :any,                 x86_64_linux:  "35cad9daa014b7525e46c31f892f1e64039111d66cc119d47419662733d486a0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d0e8c1d0310e6b2a692628ece06131afcfd8ccb6bcef9bed2ca60044d073df6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4e4088d22998419a48bc55932cd4f838136c5cd96c90d21c1b5f98994d52c1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e0a28c5d06c4fe1d0413466063cca1b06a465d6ce56cf6a558c2a776b880e59"
+    sha256 cellar: :any_skip_relocation, sonoma:        "72e0506b810317c1da6775841545b22aef259860663bb25951d2789b019debdf"
+    sha256 cellar: :any,                 arm64_linux:   "06d4bb935ad0f0820e43f45a7bf91430d55a2c3633b8bec73f7ab463f40cf68b"
+    sha256 cellar: :any,                 x86_64_linux:  "c9f7ad71ebc63d83fa4efa47cae0d47838499c1f3765135f3bdca67ed14dacbf"
   end
 
   depends_on "rust" => :build

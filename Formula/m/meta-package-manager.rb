@@ -4,18 +4,18 @@ class MetaPackageManager < Formula
 
   desc "Wrapper around all package managers with a unifying CLI"
   homepage "https://kdeldycke.github.io/meta-package-manager/"
-  url "https://files.pythonhosted.org/packages/6d/c2/3978debb7dbca4c6f2a90732bffb4b7c62141a6d6b3d9c9ea54fab060a41/meta_package_manager-7.3.0.tar.gz"
-  sha256 "f540a4957ae2d3f702e97aa3217261b808e4b98233707c9f8c5f214c3dbfee91"
+  url "https://files.pythonhosted.org/packages/71/19/669a2b96118c56fff78abc6609a25b5c11176601545b831205101621dfca/meta_package_manager-7.4.0.tar.gz"
+  sha256 "2797e47bd4dba0a6b14995086361a45d5af04b1ac5716dbc8068b49fe72cdc2f"
   license "GPL-2.0-or-later"
   head "https://github.com/kdeldycke/meta-package-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d3140aca5b0fcbb2a4c0a8a542e647bfdf0360e8795d28dedf4fbfd768c8ce6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d3140aca5b0fcbb2a4c0a8a542e647bfdf0360e8795d28dedf4fbfd768c8ce6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d3140aca5b0fcbb2a4c0a8a542e647bfdf0360e8795d28dedf4fbfd768c8ce6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b371d3f7fc8edbc8147fa7c6c83ea27d75846a5ae2b9b040323cbe957f6630ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4df75c2fae811f87d60a8c7cc04d974e085b6b1a73d8fc22c1a8bcd8efdb1156"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4df75c2fae811f87d60a8c7cc04d974e085b6b1a73d8fc22c1a8bcd8efdb1156"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ab0377805b051624ba81c00220da0179d891f64bd70fbfa1174937aa5c0be06"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ab0377805b051624ba81c00220da0179d891f64bd70fbfa1174937aa5c0be06"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ab0377805b051624ba81c00220da0179d891f64bd70fbfa1174937aa5c0be06"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7bc4a8e8e5a361e9c2df4c51063f3b1cc02a027f5d4892c06aa452c2c036ca44"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "45d2358d87ad6f8a66daa7535784a72f8830b53c90af453277732108c96fc470"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45d2358d87ad6f8a66daa7535784a72f8830b53c90af453277732108c96fc470"
   end
 
   depends_on "rust" => :build
@@ -31,13 +31,13 @@ class MetaPackageManager < Formula
   pypi_packages exclude_packages: ["certifi", "rpds-py"]
 
   resource "boltons" do
-    url "https://files.pythonhosted.org/packages/7a/1f/60df922ae497d838c58b48caa518251e2c8e228d7fe93792fee69a3858d6/boltons-26.0.0.tar.gz"
-    sha256 "5566d6cfd5a1e873d8e8476496287a9f92979964611ad9a9cecb6b0ef29b1edd"
+    url "https://files.pythonhosted.org/packages/47/99/12bace94ae2ba961bdc46d49277ff15d38dba074bc3987b0c0b4355a37a7/boltons-26.1.0.tar.gz"
+    sha256 "5764468aba493b15995ed17f46a16789023f123ca2a62d491a9ce825c1cbe26c"
   end
 
   resource "bracex" do
-    url "https://files.pythonhosted.org/packages/d0/f5/4473ad9b48cd0420a2d762a3750fa0e078e23e060b1af72662e5987e5530/bracex-3.0.tar.gz"
-    sha256 "b73f718d6bd98d8419e45df02426c86e9967c179949f779340d6c3a8c83b9111"
+    url "https://files.pythonhosted.org/packages/ac/01/5f394b8bcd6e5b92f73130990960423bbb19711f906bd9fe9ea5557c667c/bracex-3.0.1.tar.gz"
+    sha256 "4e38e32392e4a4780fe15d644bfc7c8514057cfc3861e060b11814ce829c25e4"
   end
 
   resource "click" do
@@ -46,8 +46,8 @@ class MetaPackageManager < Formula
   end
 
   resource "click-extra" do
-    url "https://files.pythonhosted.org/packages/9a/78/ff052a35e7b83a1b164e1eda3a5bdeedceeb60e44d2eca1d872312447cee/click_extra-8.4.0.tar.gz"
-    sha256 "92e5441824126248c61b05471ecacb6403e45a0b0b743f6babf425abb4c217de"
+    url "https://files.pythonhosted.org/packages/60/2f/27d20ac136d08bc95a759fb7c503a2d4cb3391461b9fb33ff32f1ddd014a/click_extra-8.6.0.tar.gz"
+    sha256 "63f739447522a6aa2d64d656aeb0f967826f2dfba774fc76e117b84717853733"
   end
 
   resource "cloup" do

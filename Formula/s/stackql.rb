@@ -25,7 +25,6 @@ class Stackql < Formula
   def install
     ENV["CGO_ENABLED"] = "1"
     ldflags = %W[
-      -s -w
       -X github.com/stackql/stackql/internal/stackql/cmd.BuildMajorVersion=#{version.major}
       -X github.com/stackql/stackql/internal/stackql/cmd.BuildMinorVersion=#{version.minor}
       -X github.com/stackql/stackql/internal/stackql/cmd.BuildPatchVersion=#{version.patch}

@@ -19,7 +19,7 @@ class Ipatool < Formula
 
   def install
     ENV["CGO_ENABLED"] = "1"
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/majd/ipatool/v2/cmd.version=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-X github.com/majd/ipatool/v2/cmd.version=#{version}")
 
     generate_completions_from_executable(bin/"ipatool", shell_parameter_format: :cobra)
   end

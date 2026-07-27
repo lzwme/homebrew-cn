@@ -21,10 +21,7 @@ class Trivy < Formula
   def install
     ENV["GOEXPERIMENT"] = "jsonv2"
 
-    ldflags = %W[
-      -s -w
-      -X github.com/aquasecurity/trivy/pkg/version/app.ver=#{version}
-    ]
+    ldflags = %W[-X github.com/aquasecurity/trivy/pkg/version/app.ver=#{version}]
     system "go", "build", *std_go_args(ldflags:), "./cmd/trivy"
     (pkgshare/"templates").install Dir["contrib/*.tpl"]
 

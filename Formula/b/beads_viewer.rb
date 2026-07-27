@@ -17,10 +17,7 @@ class BeadsViewer < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/Dicklesworthstone/beads_viewer/pkg/version.Version=v#{version}
-    ]
+    ldflags = %W[-X github.com/Dicklesworthstone/beads_viewer/pkg/version.Version=v#{version}]
     system "go", "build", *std_go_args(ldflags:, output: bin/"bv"), "./cmd/bv"
   end
 

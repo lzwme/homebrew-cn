@@ -25,7 +25,7 @@ class Testkube < Formula
   depends_on "kubernetes-cli"
 
   def install
-    ldflags = "-s -w -X main.version=#{version} -X main.builtBy=#{tap.user}"
+    ldflags = "-X main.version=#{version} -X main.builtBy=#{tap.user}"
 
     system "go", "build", *std_go_args(ldflags:, output: bin/"kubectl-testkube"), "./cmd/kubectl-testkube"
     bin.install_symlink "kubectl-testkube" => "testkube"

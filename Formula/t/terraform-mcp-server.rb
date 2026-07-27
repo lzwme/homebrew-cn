@@ -19,7 +19,6 @@ class TerraformMcpServer < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/hashicorp/terraform-mcp-server/version.GitCommit=#{tap.user}
       -X github.com/hashicorp/terraform-mcp-server/version.BuildDate=#{time.iso8601}
       -X github.com/hashicorp/terraform-mcp-server/version.Version=#{version}

@@ -18,7 +18,7 @@ class Tpack < Formula
   depends_on "tmux"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/tpack"
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}"), "./cmd/tpack"
     generate_completions_from_executable(bin/"tpack", shell_parameter_format: :cobra)
   end
 

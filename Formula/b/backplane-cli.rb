@@ -18,10 +18,7 @@ class BackplaneCli < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/openshift/backplane-cli/pkg/info.Version=#{version}
-    ]
+    ldflags = %W[-X github.com/openshift/backplane-cli/pkg/info.Version=#{version}]
     system "go", "build", *std_go_args(ldflags:, output: bin/"ocm-backplane"), "./cmd/ocm-backplane"
     generate_completions_from_executable(bin/"ocm-backplane", shell_parameter_format: :cobra)
   end

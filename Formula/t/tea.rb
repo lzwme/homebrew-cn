@@ -22,7 +22,6 @@ class Tea < Formula
     sdk = Utils.safe_popen_read("go", "list", "-f", "{{.Version}}", "-m", "gitea.dev/sdk").to_s
 
     ldflags = %W[
-      -s -w
       -X gitea.dev/tea/modules/version.Version=#{version}
       -X gitea.dev/tea/modules/version.SDK=#{sdk}
     ]

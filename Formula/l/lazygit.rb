@@ -24,7 +24,7 @@ class Lazygit < Formula
 
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
-    ldflags = "-s -w -X main.version=#{version} -X main.buildSource=#{tap.user}"
+    ldflags = "-X main.version=#{version} -X main.buildSource=#{tap.user}"
     system "go", "build", "-mod=vendor", *std_go_args(ldflags:)
   end
 

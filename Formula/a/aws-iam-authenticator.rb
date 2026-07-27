@@ -28,7 +28,6 @@ class AwsIamAuthenticator < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X sigs.k8s.io/aws-iam-authenticator/pkg.Version=#{version}
       -X sigs.k8s.io/aws-iam-authenticator/pkg.CommitID=#{tap.user}
       -buildid=

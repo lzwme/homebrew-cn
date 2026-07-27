@@ -14,7 +14,7 @@ class Landrun < Formula
   depends_on :linux
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/landrun"
+    system "go", "build", *std_go_args, "./cmd/landrun"
   end
 
   test do

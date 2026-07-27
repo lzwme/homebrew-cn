@@ -17,8 +17,7 @@ class Sift < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.buildVersion=#{version}"
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags: "-X main.buildVersion=#{version}")
   end
 
   test do

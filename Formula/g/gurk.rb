@@ -1,17 +1,17 @@
 class Gurk < Formula
   desc "Signal Messenger client for terminal"
   homepage "https://github.com/boxdot/gurk-rs"
-  url "https://ghfast.top/https://github.com/boxdot/gurk-rs/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "8db5a45dfc1502be589d5ea633320cec94dcbbd4b38f489404b784d4b4aa702e"
+  url "https://ghfast.top/https://github.com/boxdot/gurk-rs/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "b2154a45b8ab89f48d71451f128f0888e1107745ede943e510885f9026241567"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0a011fd07aab2f2e57a2c28a5e110b71666e719252f2be4b55b889804f9f198"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2cdc07a3d9f40eda618bd06b0f242cf6b90b110a44beb3d377636273d2ac1a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0bd80892945e69d9154db347e9652e4c48dab286a488b4c64a0e52f069f3021a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "291ccb4ce58e50cef75898269d9a1bdada0651251b57e42e52a86982bf309966"
-    sha256 cellar: :any,                 arm64_linux:   "38b7e6550d7966e8c8bcf29430aa371d8863ca9608e72ef43a8715d8341fa9a5"
-    sha256 cellar: :any,                 x86_64_linux:  "183d50f36541a982cc1cb7ebc0ed6d43936f6a1c8a04fe4a94bca7f611c382e7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e5f5f027539468166a5c079299d8f0ee0d6d50940a26e4390e42971daa917bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "527c78cca6aba398f505342405998dcd719afd279527f9ed5d5cd887f731e583"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b885a44748dac6cc6fa48756c100d698bad56ce17249e488fd80b5702e4110f5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b9ab95a15eace178556bcd32e6bacc4d68da103f9abefe7b8c492300cbfd5c42"
+    sha256 cellar: :any,                 arm64_linux:   "a70aa8aaa85b4d093e5d375d297500b67aefbb6eff60c32c92ae77d17b0889e0"
+    sha256 cellar: :any,                 x86_64_linux:  "56d89a809d692162fb2ac428f17511140599e83adb3d80cca9df46c9bb8caafe"
   end
 
   depends_on "pkgconf" => :build

@@ -20,10 +20,7 @@ class Azqr < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/Azure/azqr/cmd/azqr/commands.version=#{version}
-    ]
+    ldflags = %W[-X github.com/Azure/azqr/cmd/azqr/commands.version=#{version}]
     system "go", "build", *std_go_args(ldflags:), "./cmd/azqr"
 
     generate_completions_from_executable(bin/"azqr", shell_parameter_format: :cobra)

@@ -1,25 +1,24 @@
 class Goimapnotify < Formula
   desc "Execute scripts on IMAP mailbox changes using IDLE"
   homepage "https://gitlab.com/shackra/goimapnotify"
-  url "https://gitlab.com/shackra/goimapnotify/-/archive/2.5.6/goimapnotify-2.5.6.tar.bz2"
-  sha256 "d0e9b80a0284ad19ad94103f4c5be7004a6921b0b7fc9981e07094eaf74ca16b"
+  url "https://gitlab.com/shackra/goimapnotify/-/archive/2.5.7/goimapnotify-2.5.7.tar.bz2"
+  sha256 "26475e54d7834ca6778737494d69477e7a13a0296195af7fb4f69472b8839bb6"
   license "GPL-3.0-or-later"
   head "https://gitlab.com/shackra/goimapnotify.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f95781ffbd87f18943ee5e89a71a16f54abf0369714bd772b7a1d82402d99dbb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f95781ffbd87f18943ee5e89a71a16f54abf0369714bd772b7a1d82402d99dbb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f95781ffbd87f18943ee5e89a71a16f54abf0369714bd772b7a1d82402d99dbb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a719ca0b44aae13f4f5565da2debd8bd0cad746c24414faed90d5b80331ac950"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de795319b932c7e4f5dbb7fb83ac04999120d7a9ab1465b7ac4c0675e85720b0"
-    sha256 cellar: :any,                 x86_64_linux:  "3b02ecd13d04763ebebacf077fad9e0fb3bee56d8f1c776a500429ae36ea1545"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "679141c81158f5612ec571d8ffcc69b2482afedadd5ba7ff4b74ec17070dd5d2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "679141c81158f5612ec571d8ffcc69b2482afedadd5ba7ff4b74ec17070dd5d2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "679141c81158f5612ec571d8ffcc69b2482afedadd5ba7ff4b74ec17070dd5d2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4ff3a898b6fd76c5fffc9b9c368936d8e15968fb34100e86c4ac602165b12262"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f1e8aba002953b3cf81b2ac5c816efe3ebf8e2f331929e6602b12164f814cdb"
+    sha256 cellar: :any,                 x86_64_linux:  "b73e1ade1cbce3ab294da429870fe48b14cfacce489492752eaf3b53a8366234"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.gittag=#{version}"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/goimapnotify"
+    system "go", "build", *std_go_args(ldflags: "-X main.gittag=#{version}"), "./cmd/goimapnotify"
   end
 
   service do

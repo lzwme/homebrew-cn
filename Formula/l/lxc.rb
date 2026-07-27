@@ -18,7 +18,7 @@ class Lxc < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./lxc"
+    system "go", "build", *std_go_args, "./lxc"
 
     generate_completions_from_executable(bin/"lxc", shell_parameter_format: :cobra)
   end

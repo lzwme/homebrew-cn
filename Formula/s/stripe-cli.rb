@@ -19,7 +19,7 @@ class StripeCli < Formula
   def install
     # See configuration in `.goreleaser` directory
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
-    ldflags = %W[-s -w -X github.com/stripe/stripe-cli/pkg/version.Version=#{version}]
+    ldflags = %W[-X github.com/stripe/stripe-cli/pkg/version.Version=#{version}]
     system "go", "build", *std_go_args(ldflags:, output: bin/"stripe"), "cmd/stripe/main.go"
 
     generate_completions_from_executable(bin/"stripe", "completion", "--write-to-stdout", "--shell")

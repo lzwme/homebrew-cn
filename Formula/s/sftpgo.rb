@@ -21,7 +21,6 @@ class Sftpgo < Formula
 
     git_sha = (buildpath/"VERSION.txt").read.lines.second.strip
     ldflags = %W[
-      -s -w
       -X github.com/drakkan/sftpgo/v2/internal/util.additionalSharedDataSearchPath=#{opt_pkgshare}
       -X github.com/drakkan/sftpgo/v2/internal/version.commit=#{git_sha}
       -X github.com/drakkan/sftpgo/v2/internal/version.date=#{time.iso8601}

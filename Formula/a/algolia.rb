@@ -18,7 +18,7 @@ class Algolia < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/algolia/cli/pkg/version.Version=#{version}"
+    ldflags = "-X github.com/algolia/cli/pkg/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/algolia"
 
     generate_completions_from_executable(bin/"algolia", shell_parameter_format: :cobra)

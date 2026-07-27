@@ -1,17 +1,17 @@
 class Libyojimbo < Formula
   desc "Secure client/server network protocol library for multiplayer games"
   homepage "https://github.com/mas-bandwidth/yojimbo"
-  url "https://ghfast.top/https://github.com/mas-bandwidth/yojimbo/archive/refs/tags/v1.8.0.tar.gz"
-  sha256 "e67e987948fc1513c4f83a60cb7e4c40fdfbc1eebcf6ae9a454f24dcada5dfef"
+  url "https://ghfast.top/https://github.com/mas-bandwidth/yojimbo/archive/refs/tags/v1.8.2.tar.gz"
+  sha256 "3d626a32d260e3600ce7fafca694edb04f39170df17e1e21ffe0d842daa82991"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "26046275ccac5ef45a25bdac2d53c6c36ddade637c4b3e7adde9eef0e767c21d"
-    sha256 cellar: :any, arm64_sequoia: "e0a00eb869d09b6920e75b84089a31eba3cc86e35d1885a2c6601acf00ce8c6c"
-    sha256 cellar: :any, arm64_sonoma:  "a91424c322eb73bdd9138fac2ef1c7a33546969d8f1488eb09389fe7eb1e9277"
-    sha256 cellar: :any, sonoma:        "203cb8cea8a413f4a88b6655c06018ee7ce4526377671d985ad9b76dc8234bd3"
-    sha256 cellar: :any, arm64_linux:   "e4f3059f40e5c3b2c2713a5635a37404fa9f5c6636d37ea0a0ef97064c2feaf8"
-    sha256 cellar: :any, x86_64_linux:  "bd9bac9e459346033b0004f78bd0b52fc63a2974b59b4fa2bc34d5145d5696b3"
+    sha256 cellar: :any, arm64_tahoe:   "10e70b03633291e16267ad8cc2b79c2bf1d840b20081e1ba739c4b06226a2961"
+    sha256 cellar: :any, arm64_sequoia: "2c53f875ccc3f6c26fbf5ce1503f5d6d1de709356bb649e81eb8a4619ee21a15"
+    sha256 cellar: :any, arm64_sonoma:  "93fe44052b0a0d4b7ea72bb7e0f4c00243e581fb055a464d638f34fb0537b3d0"
+    sha256 cellar: :any, sonoma:        "406369360ec0199265c7aef0820d5c08f2260f975e865a0889d45eaf55a2d0d8"
+    sha256 cellar: :any, arm64_linux:   "32a4c74a8fffbcde35e6f20064a30563245bfc1b4b47f1042760d6949cad5029"
+    sha256 cellar: :any, x86_64_linux:  "178675a61d529ae9a93a1d59981d25f49427ecd30ff2629e60850ae3d1e7413e"
   end
 
   depends_on "cmake" => :build

@@ -25,7 +25,6 @@ class Apigeecli < Formula
   def install
     ENV["CGO_ENABLED"] = "0"
     ldflags = %W[
-      -s -w
       -X main.version=#{version}
       -X main.commit=#{version}
       -X main.date=#{time.iso8601}

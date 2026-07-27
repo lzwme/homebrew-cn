@@ -18,10 +18,7 @@ class AwsNuke < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/ekristen/aws-nuke/v#{version.major}/pkg/common.SUMMARY=#{version}
-    ]
+    ldflags = %W[-X github.com/ekristen/aws-nuke/v#{version.major}/pkg/common.SUMMARY=#{version}]
     ENV["CGO_ENABLED"] = "0"
     system "go", "build", *std_go_args(ldflags:)
 

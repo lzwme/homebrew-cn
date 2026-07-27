@@ -22,7 +22,6 @@ class Tfproviderlint < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/bflad/tfproviderlint/version.Version=#{version}
       -X github.com/bflad/tfproviderlint/version.VersionPrerelease=#{"dev" if build.head?}
     ]

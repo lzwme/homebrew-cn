@@ -1,8 +1,8 @@
 class Dwarfs < Formula
   desc "Fast high compression read-only file system for Linux, Windows, and macOS"
   homepage "https://github.com/mhx/dwarfs"
-  url "https://ghfast.top/https://github.com/mhx/dwarfs/releases/download/v0.15.5/dwarfs-0.15.5.tar.xz"
-  sha256 "e6315f514c2e0db099b7e1627eeed1b968ba316c4a1cb2d96306132303816c00"
+  url "https://ghfast.top/https://github.com/mhx/dwarfs/releases/download/v0.15.6/dwarfs-0.15.6.tar.xz"
+  sha256 "087b77c1d6a1f253df896b054f95ef17469c63b00be51f4d081633cc8817481c"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,12 +12,12 @@ class Dwarfs < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "38784861c1022aaf6ae3a7ad1f493ec1e98c6a37383cd81cfbbd03d6962307e6"
-    sha256               arm64_sequoia: "ef98cb7b33bb5ac0f06842bb0cdb4981f08da208aaf814f9e31c5e109dbd442e"
-    sha256               arm64_sonoma:  "d6f9b863128eb15260606ab57ac57d5aac9855d8a464c6c5f7b6422726506555"
-    sha256 cellar: :any, sonoma:        "21f174e4412dd1ae9b7e5eb674c39558588797d0d3cc444bc72ec3e20b5e4f4a"
-    sha256 cellar: :any, arm64_linux:   "17dcd6411f64a43cc0cb402fda81135b425854220d05624bf397c0f1f8c4a5c4"
-    sha256 cellar: :any, x86_64_linux:  "3fac4378e93b4a2652495e556522590425700d39e51c8abcadf1e8517f660d92"
+    sha256               arm64_tahoe:   "38ff88183d70f551d39b833ca48f5c27d0ec785b0d46ccaf06cabf11e73382fa"
+    sha256               arm64_sequoia: "7b7dcf46c73ccd6ed5b0127e826d3623083630243fa0f93e31c036a57a4a1599"
+    sha256               arm64_sonoma:  "15341ad76adb01750f22280b4e308c7151d9c3c42bb0d64daf3e701473d41ba2"
+    sha256 cellar: :any, sonoma:        "a4d9962007494b030b916222c6e7af32a44d21d1a116f6609b1ce6e3824aacc8"
+    sha256 cellar: :any, arm64_linux:   "bb4a6fe1a28f5159c3331c9e2bac2266232a3cc87f5c9407f2f48e3a9ec3d6e2"
+    sha256 cellar: :any, x86_64_linux:  "8822600415f04ebdf83e76647188e864b6f51c23d2feffbfe57264ef821d6831"
   end
 
   depends_on "cmake" => :build

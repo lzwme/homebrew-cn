@@ -19,7 +19,6 @@ class Talosctl < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/siderolabs/talos/pkg/machinery/version.Tag=#{version}
       -X github.com/siderolabs/talos/pkg/machinery/version.Built=#{time.iso8601}
 

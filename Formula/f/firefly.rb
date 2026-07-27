@@ -25,7 +25,6 @@ class Firefly < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/hyperledger/firefly-cli/cmd.BuildDate=#{time.iso8601}
       -X github.com/hyperledger/firefly-cli/cmd.BuildCommit=#{tap.user}
       -X github.com/hyperledger/firefly-cli/cmd.BuildVersionOverride=v#{version}

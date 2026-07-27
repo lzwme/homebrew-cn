@@ -19,7 +19,7 @@ class Staticcheck < Formula
   depends_on "go"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/staticcheck"
+    system "go", "build", *std_go_args, "./cmd/staticcheck"
   end
 
   test do

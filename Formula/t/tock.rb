@@ -19,7 +19,6 @@ class Tock < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/kriuchkov/tock/internal/app/commands.version=#{version}
       -X github.com/kriuchkov/tock/internal/app/commands.commit=#{tap.user}
       -X github.com/kriuchkov/tock/internal/app/commands.date=#{Date.today}

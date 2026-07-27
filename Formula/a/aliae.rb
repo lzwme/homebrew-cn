@@ -19,8 +19,7 @@ class Aliae < Formula
 
   def install
     cd "src" do
-      ldflags = "-s -w -X main.Version=#{version}"
-      system "go", "build", *std_go_args(ldflags:)
+      system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}")
     end
 
     generate_completions_from_executable(bin/"aliae", shell_parameter_format: :cobra)

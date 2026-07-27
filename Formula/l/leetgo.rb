@@ -19,7 +19,6 @@ class Leetgo < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/j178/leetgo/constants.Version=#{version}
       -X github.com/j178/leetgo/constants.Commit=#{tap.user}
       -X github.com/j178/leetgo/constants.BuildDate=#{time.iso8601}

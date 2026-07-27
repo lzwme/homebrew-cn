@@ -19,7 +19,6 @@ class Berglas < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/GoogleCloudPlatform/berglas/v2/internal/version.name=berglas
       -X github.com/GoogleCloudPlatform/berglas/v2/internal/version.version=#{version}
     ]

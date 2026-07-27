@@ -21,7 +21,6 @@ class Serf < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/hashicorp/serf/version.Version=#{version}
       -X github.com/hashicorp/serf/version.VersionPrerelease=
     ]

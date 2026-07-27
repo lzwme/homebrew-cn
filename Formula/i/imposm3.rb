@@ -26,7 +26,7 @@ class Imposm3 < Formula
     ENV["CGO_LDFLAGS"] = "-L#{formula_opt_lib("geos")} -L#{formula_opt_lib("leveldb")}"
     ENV["CGO_CFLAGS"] = "-I#{formula_opt_include("geos")} -I#{formula_opt_include("leveldb")}"
 
-    ldflags = "-s -w -X github.com/omniscale/imposm3.Version=#{version}"
+    ldflags = "-X github.com/omniscale/imposm3.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"imposm"), "cmd/imposm/main.go"
   end
 

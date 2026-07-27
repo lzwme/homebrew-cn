@@ -19,13 +19,12 @@ class Bagel < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X main.Version=#{version}
       -X main.Commit=#{tap.user}
       -X main.Date=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/bagel"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/bagel"
 
     generate_completions_from_executable(bin/"bagel", "completion")
   end

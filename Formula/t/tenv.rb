@@ -31,7 +31,7 @@ class Tenv < Formula
 
   def install
     ENV["CGO_ENABLED"] = "0"
-    ldflags = "-s -w -X main.version=#{version}"
+    ldflags = "-X main.version=#{version}"
     %w[tenv terraform terragrunt terramate tf tofu atmos].each do |f|
       system "go", "build", *std_go_args(ldflags:, output: bin/f), "./cmd/#{f}"
     end

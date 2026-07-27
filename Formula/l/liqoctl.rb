@@ -20,10 +20,7 @@ class Liqoctl < Formula
   def install
     ENV["CGO_ENABLED"] = "0"
 
-    ldflags = %W[
-      -s -w
-      -X github.com/liqotech/liqo/pkg/liqoctl/version.LiqoctlVersion=v#{version}
-    ]
+    ldflags = %W[-X github.com/liqotech/liqo/pkg/liqoctl/version.LiqoctlVersion=v#{version}]
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/liqoctl"
 

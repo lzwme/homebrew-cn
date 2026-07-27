@@ -1,18 +1,17 @@
 class OsmPbf < Formula
   desc "Tools related to PBF (an alternative to XML format)"
   homepage "https://wiki.openstreetmap.org/wiki/PBF_Format"
-  url "https://ghfast.top/https://github.com/openstreetmap/OSM-binary/archive/refs/tags/v1.6.1.tar.gz"
-  sha256 "54e0f234ace310a4256dc7d4fc707837f532a509cc3ef2940dacbdc4ebd9ce15"
+  url "https://ghfast.top/https://github.com/openstreetmap/OSM-binary/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "ac7aadc57d218a5186076f55255202ec7d0949c7f334b8b0cec8bdd196cd75d7"
   license "LGPL-3.0-or-later"
-  revision 6
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ce2e8ac1f29ebcc269e5cd6dc8fa2e73858fa43925b8b22abf8fa28a58bf009c"
-    sha256 cellar: :any, arm64_sequoia: "6bcc011510f52c9ebcc16afa2e233ae7d3ebaf78159b55e11b941b9bc4182596"
-    sha256 cellar: :any, arm64_sonoma:  "560dd3d615cd29be53fc37b0dbd446beeb0cc813ebe50eee964ae5d5cda33fe9"
-    sha256 cellar: :any, sonoma:        "e0ac07bab26a508b448b559ad656275137ed5f16fb9af68e9443c3b7eb5da085"
-    sha256               arm64_linux:   "5867429fe78815751b02dc3f3129c05c901b7d57c23650c61d79df5d2dea31a8"
-    sha256               x86_64_linux:  "4e29934cc5957733dcb14c213c70ea030de494ceb2ed093a2439166a08382fe6"
+    sha256 cellar: :any, arm64_tahoe:   "a9e4e9c59bd0e2e72e88e81cc9af4b1c3837b63cc7b5c423f0b862ff5261133d"
+    sha256 cellar: :any, arm64_sequoia: "fdc2726dbd213efb1235e96795e674b0c8c3ef1921fed19c9bfc54e03f63eabd"
+    sha256 cellar: :any, arm64_sonoma:  "dfd0ea7de5d8ea4e777425cdedbe18f7f0cb40bafcaef9991fa8451746a190ce"
+    sha256 cellar: :any, sonoma:        "1fcbcb1e505ccefbb6bb046b424bc2138074e2a42f0003fe869ed33768690251"
+    sha256               arm64_linux:   "995d16ea53c6fae586db82ce9c22962f1b54f6594f2b2f6d2cb24afcbbadbba8"
+    sha256               x86_64_linux:  "345f01e0bcc784a7cf96143030b3cf2b3fb7c629ab6080a0d75c3409034de245"
   end
 
   depends_on "cmake" => :build
@@ -31,6 +30,32 @@ class OsmPbf < Formula
   end
 
   test do
-    assert_match "OSMHeader", shell_output("#{bin}/osmpbf-outline #{pkgshare}/sample.pbf")
+    (testpath/"test.cpp").write <<~CPP
+      #include <iostream>
+      #include <osmpbf/osmpbf.h>
+
+      int main() {
+        OSMPBF::BlobHeader header;
+        header.set_type("OSMHeader");
+        std::cout << header.type() << std::endl;
+        return 0;
+      }
+    CPP
+
+    system ENV.cxx, testpath/"test.cpp",
+           "-std=c++17",
+           "-I#{include}",
+           "-I#{formula_opt_include("protobuf")}",
+           "-I#{formula_opt_include("abseil")}",
+           "-L#{lib}",
+           "-L#{formula_opt_lib("protobuf")}",
+           "-L#{formula_opt_lib("abseil")}",
+           "-losmpbf",
+           "-lprotobuf",
+           "-labsl_log_internal_check_op",
+           "-labsl_log_internal_message",
+           "-o", testpath/"test"
+
+    assert_equal "OSMHeader", shell_output(testpath/"test").chomp
   end
 end

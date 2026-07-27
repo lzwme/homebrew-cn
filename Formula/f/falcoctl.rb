@@ -20,13 +20,12 @@ class Falcoctl < Formula
   def install
     pkg = "github.com/falcosecurity/falcoctl/cmd/version"
     ldflags = %W[
-      -s -w
       -X #{pkg}.buildDate=#{time.iso8601}
       -X #{pkg}.gitCommit=#{tap.user}
       -X #{pkg}.semVersion=#{version}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), "."
+    system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"falcoctl", shell_parameter_format: :cobra)
   end

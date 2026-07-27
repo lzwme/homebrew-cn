@@ -18,7 +18,7 @@ class Sops < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/getsops/sops/v3/version.Version=#{version}"
+    ldflags = "-X github.com/getsops/sops/v3/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/sops"
 
     pkgshare.install "example.yaml"

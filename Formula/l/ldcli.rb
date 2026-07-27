@@ -20,11 +20,7 @@ class Ldcli < Formula
   def install
     ENV["CGO_ENABLED"] = "1"
 
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-    ]
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")
 
     generate_completions_from_executable(bin/"ldcli", shell_parameter_format: :cobra)
   end

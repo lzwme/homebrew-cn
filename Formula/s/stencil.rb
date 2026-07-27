@@ -19,7 +19,6 @@ class Stencil < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X go.rgst.io/stencil/v2/internal/version.version=#{version}
       -X go.rgst.io/stencil/v2/internal/version.builtBy=#{tap.user}
     ]

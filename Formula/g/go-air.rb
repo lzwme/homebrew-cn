@@ -1,18 +1,18 @@
 class GoAir < Formula
   desc "Live reload for Go apps"
   homepage "https://github.com/air-verse/air"
-  url "https://ghfast.top/https://github.com/air-verse/air/archive/refs/tags/v1.67.2.tar.gz"
-  sha256 "7eac03bbfa2fcaaf9cf50a7a26432c8b1a63d7b86bdff93caad884ec7150ea68"
+  url "https://ghfast.top/https://github.com/air-verse/air/archive/refs/tags/v1.67.3.tar.gz"
+  sha256 "6353dea0cdef36eb5467e12ba7967ad3da94b68132a6a50a429d0dfb60b3a9b2"
   license "GPL-3.0-or-later"
   head "https://github.com/air-verse/air.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a16afc651b7c6b8c862e4af9217736ec05a5e9ad62675040a54ed3a2d4c11856"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a16afc651b7c6b8c862e4af9217736ec05a5e9ad62675040a54ed3a2d4c11856"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a16afc651b7c6b8c862e4af9217736ec05a5e9ad62675040a54ed3a2d4c11856"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fcfdb70775f327fccc2bfe6c3443a4828d2fea5aa0578392df06d680e9998bdb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "78e419b18aac20934ca9db40d8ab1346714b366c9b770d0977096d0ebd8de307"
-    sha256 cellar: :any,                 x86_64_linux:  "bccd2af1e2d9a39f255d2e7d492fd8c0f2ef1d294af3eb6ca585e72031c918f8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "403aeb44fa144945e8b8a5a1286620519df0c40c430e82eccfd0816ea360ce10"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "403aeb44fa144945e8b8a5a1286620519df0c40c430e82eccfd0816ea360ce10"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "403aeb44fa144945e8b8a5a1286620519df0c40c430e82eccfd0816ea360ce10"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5e68fbdaa1bf86e1537c35181729608f9bebfd55cd8e3307db80cdb4b81bb293"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70684d518c2aaa1d557fa83acc9efc4a430ec5f01717c43db0afcda31c2ae157"
+    sha256 cellar: :any,                 x86_64_linux:  "3c669d71ad499b146aa0c324ac86f1caef2c7adecf22fe5e69832459b44d6eac"
   end
 
   depends_on "go"
@@ -21,12 +21,11 @@ class GoAir < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X main.BuildTimestamp=#{time.iso8601}
       -X main.airVersion=v#{version}
       -X main.goVersion=#{Formula["go"].version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags.join(" "), output: bin/"air")
+    system "go", "build", *std_go_args(ldflags:, output: bin/"air")
   end
 
   test do

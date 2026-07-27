@@ -20,7 +20,6 @@ class Bomctl < Formula
   def install
     ENV["CGO_ENABLED"] = "0"
     ldflags = %W[
-      -s -w
       -X github.com/bomctl/bomctl/cmd.VersionMajor=#{version.major}
       -X github.com/bomctl/bomctl/cmd.VersionMinor=#{version.minor}
       -X github.com/bomctl/bomctl/cmd.VersionPatch=#{version.patch}

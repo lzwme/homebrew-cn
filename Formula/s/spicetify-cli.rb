@@ -21,11 +21,7 @@ class SpicetifyCli < Formula
   depends_on "pnpm" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-    ]
-    system "go", "build", *std_go_args(ldflags:, output: libexec/"spicetify")
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}", output: libexec/"spicetify")
 
     system "pnpm", "with", "current", "install", "--frozen-lockfile"
     system "pnpm", "with", "current", "run", "build:wrapper"

@@ -30,10 +30,7 @@ class AzureDev < Formula
     else
       "#{File.read("cli/version.txt").strip} (commit #{Utils.git_head})"
     end
-    ldflags = %W[
-      -s -w
-      -X "github.com/azure/azure-dev/cli/azd/internal.Version=#{azd_version}"
-    ]
+    ldflags = %W[-X "github.com/azure/azure-dev/cli/azd/internal.Version=#{azd_version}"]
     system "go", "build", "-C", "cli/azd", *std_go_args(ldflags:, output: bin/"azd")
 
     generate_completions_from_executable(bin/"azd", shell_parameter_format: :cobra)

@@ -22,7 +22,7 @@ class Aicommit < Formula
   deny_network_access! [:postinstall, :test]
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=v#{version}"), "./cmd/aicommit"
+    system "go", "build", *std_go_args(ldflags: "-X main.Version=v#{version}"), "./cmd/aicommit"
   end
 
   test do

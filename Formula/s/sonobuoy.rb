@@ -17,7 +17,7 @@ class Sonobuoy < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/vmware-tanzu/sonobuoy/pkg/buildinfo.Version=v#{version}"
+    ldflags = "-X github.com/vmware-tanzu/sonobuoy/pkg/buildinfo.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"sonobuoy", shell_parameter_format: :cobra)

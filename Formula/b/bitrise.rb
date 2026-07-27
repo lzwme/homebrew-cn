@@ -26,7 +26,6 @@ class Bitrise < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/bitrise-io/bitrise/v#{version.major}/version.VERSION=#{version}
       -X github.com/bitrise-io/bitrise/v#{version.major}/version.Commit=#{tap.user}
     ]

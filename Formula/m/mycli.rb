@@ -3,17 +3,17 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/86/23/e4d58d8a171ae140bfb17e4ab6c27df5992744c9f083ca3b32a9c73f2b69/mycli-2.6.1.tar.gz"
-  sha256 "d3cbaefb9b3cc9faf5f569174d889671dfd1a35739ee15e847e56682423c79fe"
+  url "https://files.pythonhosted.org/packages/61/46/ac8141299a5159c8cba698cbdc030779cdbfa30c39b70321b98714cbfbda/mycli-2.7.0.tar.gz"
+  sha256 "158eadf522208d471c82159c9ccd5dd90e76b660f7520e0ee91f99fa2f187b0f"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "06aae2bcee45bb711aa132b23627d5a5202498a837025c7a8d5cf88a67fd54a5"
-    sha256 cellar: :any, arm64_sequoia: "82ec86933bc9c7557750dfb115e67154749bda11a1c699611735f2ca20aa69fd"
-    sha256 cellar: :any, arm64_sonoma:  "06adefe4bc9cb5d48930ecdd79b7ea63b6c10e674791f4771763067f51bb78b9"
-    sha256 cellar: :any, sonoma:        "3c23c397836ba72d543e01a843b85b656abda04cc559887a900d94c942161059"
-    sha256 cellar: :any, arm64_linux:   "83c206054750c16e923b877e3f8715a16bf88d813ab7f4e319847ad799d76896"
-    sha256 cellar: :any, x86_64_linux:  "b0f611332e881e7c721811de2c575320dbf9c5908dab8ec0e538e4acaf95dee4"
+    sha256 cellar: :any, arm64_tahoe:   "44a3a0809c4d0a46b8c484d85c81565a4ca64f986b5661a4fc04e577d8937012"
+    sha256 cellar: :any, arm64_sequoia: "6da5aab8ff8443678609b902d7b9a71a748012418a55caddf6b2c8d9ae401a4a"
+    sha256 cellar: :any, arm64_sonoma:  "f135f1a127f602c9916ed1b8dbbced2cacfa04234f19a8b6301a24582ab20a68"
+    sha256 cellar: :any, sonoma:        "cd9b38491a865daee4cfa4168ad20c4f382a89f7f5da3ef710f926b5f02d0fe9"
+    sha256 cellar: :any, arm64_linux:   "4d36d3c80983e0add84ae5e2c4a4dcb98450ced58803ce1afa43cb913e4b1326"
+    sha256 cellar: :any, x86_64_linux:  "88ddfa164a0e96fce632164dc0bc6b293208299a807151e7bb8495bcf82bb656"
   end
 
   depends_on "rust" => :build # for jiter, sqlglotrs
@@ -35,13 +35,13 @@ class Mycli < Formula
   end
 
   resource "cli-helpers" do
-    url "https://files.pythonhosted.org/packages/5e/d1/f83191ae4a8f6584876bc63e5e1ae39360f4de7ed74cce76f266ef9d5d10/cli_helpers-2.15.0.tar.gz"
-    sha256 "c2c5a1a5fd6a8ad51b1b99e80685cd04c006b0e29cacf4c24b1ba8a440ea8d4d"
+    url "https://files.pythonhosted.org/packages/3f/de/278f4885fcd03661ab9b69dba9fc745c27d820858dbc06e427057899dcf5/cli_helpers-2.15.1.tar.gz"
+    sha256 "e9c0826dda2855745eb63b3fd8e33b6ac8881188f2ba91e51a516ed833fc0cb8"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "click-default-group" do
@@ -120,8 +120,8 @@ class Mycli < Formula
   end
 
   resource "llm" do
-    url "https://files.pythonhosted.org/packages/5c/eb/96e051501bc3ca624f402595601942d792f333bef14405eab61fa690861e/llm-0.30.tar.gz"
-    sha256 "77801e45bf00908c6e62c747e2ca251af1cf4d90f67ba629307022fad2ef89cc"
+    url "https://files.pythonhosted.org/packages/02/2a/ac37d94f6ac91d501475d80a0a1d8fb6bce392f9d7b483bf87257342e0b7/llm-0.31.1.tar.gz"
+    sha256 "f99955cfd92cdf7b8dc08a795f68c688cefdbc4f9a67245988ccc1adb5c49eeb"
   end
 
   resource "more-itertools" do
@@ -160,8 +160,8 @@ class Mycli < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pymysql" do
@@ -200,8 +200,8 @@ class Mycli < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
-    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
   end
 
   resource "six" do
@@ -215,13 +215,13 @@ class Mycli < Formula
   end
 
   resource "sqlglot" do
-    url "https://files.pythonhosted.org/packages/0f/64/89299aefc6ebdf4fc899f5dc14c7fcb7eb9da9290a2b4d615ae7ab884b17/sqlglot-30.8.0.tar.gz"
-    sha256 "1c5f93fb742dd9aaa75eee6bb33a637794a858b9a86375fac23a2dc0f7bc127e"
+    url "https://files.pythonhosted.org/packages/43/ed/a6c45aec29353b6392ea34548c40af3ac6ffd6bc5572cf23b2ce250876fc/sqlglot-30.12.0.tar.gz"
+    sha256 "6b8369704662d4f654bc934cea4dd31c916c2a571b389210cb9e951a275e5fd9"
   end
 
   resource "sqlglotc" do
-    url "https://files.pythonhosted.org/packages/b5/30/d6ed9c184eb2d9db727950abe9a1e2ff028584e4e728749dd45ebbd6e33c/sqlglotc-30.8.0.tar.gz"
-    sha256 "7068fcfd64ebcedc10bd174b69e0d8d312a89a18772f6312e51a8d3bb1757f1d"
+    url "https://files.pythonhosted.org/packages/36/05/bdb3c3433f19324ed3499bc51adb6db934f77d947ed1c624554523b22966/sqlglotc-30.12.0.tar.gz"
+    sha256 "7c4c9c7d76026b75f64a6682faf84cf5145e3304190c07807b86962d8d535f74"
   end
 
   resource "sqlite-fts4" do
@@ -260,8 +260,8 @@ class Mycli < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz"
-    sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
+    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
+    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
   end
 
   resource "yaspin" do

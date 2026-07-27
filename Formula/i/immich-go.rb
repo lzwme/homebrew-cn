@@ -23,7 +23,7 @@ class ImmichGo < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/simulot/immich-go/app.Version=#{version}"
+    ldflags = "-X github.com/simulot/immich-go/app.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"immich-go", shell_parameter_format: :cobra)

@@ -3,18 +3,18 @@ class Jiratui < Formula
 
   desc "Textual User Interface for interacting with Atlassian Jira from your shell"
   homepage "https://jiratui.sh/"
-  url "https://files.pythonhosted.org/packages/60/3a/ce15630faee7776f0eede83c838fd64fed6c45ae38a6ea92d534e2fd2cc4/jiratui-1.11.1.tar.gz"
-  sha256 "853cbeab5abe2a081fff5910d664e3b196bd3fe5f071f308b6f999b83ec71b03"
+  url "https://files.pythonhosted.org/packages/c2/27/490d922dc5a8c1501d4917371c59e667c35cf7f456ac4954a24cdf283fc6/jiratui-1.11.2.tar.gz"
+  sha256 "662e61f861f3f807a7012d56666ceae0ca98dca442f1e51989f458c77ac77f7d"
   license "MIT"
   head "https://github.com/whyisdifficult/jiratui.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a5f8de3280211302120f767ca5e5aa9b539213f66ed2189a1e51647329d0aa0b"
-    sha256 cellar: :any, arm64_sequoia: "9487e1335b52936e0a4fbe957bd75d38afa6a74fa27a9f73acaffac56f317ff0"
-    sha256 cellar: :any, arm64_sonoma:  "23ca08cad19414356b5a01bc3ee0abce017ae4066289eb7cf8f2fd229983b74c"
-    sha256 cellar: :any, sonoma:        "12630c59f0a16a49c7fad6bbe0423282de7a15a3ae428053226206803c3008bc"
-    sha256 cellar: :any, arm64_linux:   "00d6f9e670c7ec6cba5fca258ddec8d72f621e568cb0f52f65e8cd76dce643d4"
-    sha256 cellar: :any, x86_64_linux:  "5f725a6ba0b7e159f461c68e302fd827d02c6ac9bf1a28e8dcdb0d27942dbb88"
+    sha256 cellar: :any, arm64_tahoe:   "a2833ef374765db9d967405e1a1c78891b03462eab1aacb8a86cdedb1d3f86a5"
+    sha256 cellar: :any, arm64_sequoia: "cfd0248d254d44df8cf6a12b09c03363961c21c3f843ef2a386f508faf2a9ab7"
+    sha256 cellar: :any, arm64_sonoma:  "4b8afce995445c2608f1223cc86034d64946d90b5a524976cc35c50a53e1dbd5"
+    sha256 cellar: :any, sonoma:        "6ce6d025b571f08d601bffe7463d931a8d0d25e5da29881c37ef92fa67cc48c4"
+    sha256 cellar: :any, arm64_linux:   "93c71bad72c90d3e7947152eab005a5374279b1650ec24e45ede0535c87c90ad"
+    sha256 cellar: :any, x86_64_linux:  "b731d1c6608cd56bb93b7ec09ad6c3f648757f713fdc91871a6f981bd9afcb73"
   end
 
   depends_on "rust" => :build
@@ -55,8 +55,8 @@ class Jiratui < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
-    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
+    url "https://files.pythonhosted.org/packages/81/45/d45f94fa38b199862959cd7b5461a31f03746d75ef59363339fc0c394345/gitpython-3.1.56.tar.gz"
+    sha256 "127adf5c73f1a822e368301c4d5ffa5d305ce611eccab76f3336f9380a78ad0b"
   end
 
   resource "h11" do

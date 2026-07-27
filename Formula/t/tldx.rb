@@ -17,7 +17,7 @@ class Tldx < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/brandonyoungdev/tldx/cmd.Version=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-X github.com/brandonyoungdev/tldx/cmd.Version=#{version}")
     generate_completions_from_executable(bin/"tldx", shell_parameter_format: :cobra)
   end
 

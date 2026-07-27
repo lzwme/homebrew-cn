@@ -1,8 +1,8 @@
 class Algernon < Formula
   desc "Pure Go web server with Lua, Markdown, HTTP/2 and template support"
   homepage "https://algernon.roboticoverlords.org"
-  url "https://ghfast.top/https://github.com/xyproto/algernon/archive/refs/tags/v1.17.10.tar.gz"
-  sha256 "e93417a833c11885285820990826b406759b122b8d5003c6a5f124e2a2c4013a"
+  url "https://ghfast.top/https://github.com/xyproto/algernon/archive/refs/tags/v1.17.11.tar.gz"
+  sha256 "74df2a6983ff1e57be4f0fe4cca66f86b2d9156a399517215ffda69ecc57feac"
   license "BSD-3-Clause"
   version_scheme 1
   head "https://github.com/xyproto/algernon.git", branch: "main"
@@ -13,12 +13,12 @@ class Algernon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c621cd706b6e625233e3aed1cc86844d44d8e8a877c30c1dd121af228977e7c0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c621cd706b6e625233e3aed1cc86844d44d8e8a877c30c1dd121af228977e7c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c621cd706b6e625233e3aed1cc86844d44d8e8a877c30c1dd121af228977e7c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d2f046b292231b90c945d6d443a5d5aebf7684c514b69d3078c2a31ab929e788"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b56edd3136bda26f7f8bc9235d37c6e9895baecd34b46fcd7a49ac536d5d890"
-    sha256 cellar: :any,                 x86_64_linux:  "1bf07cf4d35fbb67c870b69ce143eec4bb515946135c1b4ae1c8bf4d769deff2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f8b6771094221f152c4c92fb0014cd0a07e2bc2f2ea056fbbe0dd8eea1769f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f8b6771094221f152c4c92fb0014cd0a07e2bc2f2ea056fbbe0dd8eea1769f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f8b6771094221f152c4c92fb0014cd0a07e2bc2f2ea056fbbe0dd8eea1769f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2dea6c1d74ce17efe284b90e76fc10529273f8e2300c28369d62ba7c4677abf2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "392ad1ed39cee16f8e9eb5645ce9fe1b532a57ce16ad4323b6587fc75189d837"
+    sha256 cellar: :any,                 x86_64_linux:  "ad30dcccb133c8c52fcfb22256f4cb3c87a0c2afa297c5bb0599c371bf825106"
   end
 
   depends_on "go" => :build

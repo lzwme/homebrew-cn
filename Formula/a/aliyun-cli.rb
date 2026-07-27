@@ -38,7 +38,7 @@ class AliyunCli < Formula
   def install
     (buildpath/"aliyun-openapi-meta").install resource("aliyun-openapi-meta")
 
-    ldflags = "-s -w -X github.com/aliyun/aliyun-cli/v#{version.major}/cli.Version=#{version}"
+    ldflags = "-X github.com/aliyun/aliyun-cli/v#{version.major}/cli.Version=#{version}"
     system "go", "build", *std_go_args(output: bin/"aliyun", ldflags:), "main/main.go"
   end
 

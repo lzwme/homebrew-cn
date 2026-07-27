@@ -1,17 +1,17 @@
 class Netwatch < Formula
   desc "Cross-platform realtime network diagnostics TUI"
   homepage "https://www.netwatchlabs.com/labs/netwatch"
-  url "https://ghfast.top/https://github.com/matthart1983/netwatch/archive/refs/tags/v0.26.1.tar.gz"
-  sha256 "3600dadbba659d56d2dede32a384923ebf3cdf91af96c13b1efdaaee23302ba9"
+  url "https://ghfast.top/https://github.com/matthart1983/netwatch/archive/refs/tags/v0.27.0.tar.gz"
+  sha256 "fd2f094a06e13aea0e79c28da1c5dd9386859a2988e13aa783e2fe4e7a32489f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb926fc8b0e131cd48dcc42cd29a059a4a663825a42abed96b2e0fbb379d8c61"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a732f18fc55f048768102012d7cc409798b5bd25cc643dee2d9b4d96760b8c11"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2357b2a774344a56be63b0e6bd968d1abddcade2b709e7ee3d5385277bfaee9c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eeac2c43f332d018bdabd85f71236ce14e69dbeef4ad64cefb8a79d29a9c449a"
-    sha256 cellar: :any,                 arm64_linux:   "38cf9bfdb71971bdf227dc3ed606323fe18871212d0b9a591b442b34a24b0f66"
-    sha256 cellar: :any,                 x86_64_linux:  "d1c6beede893b6af182901ee1822c7888db4626a6f9339e84f848f1e4634834f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "405630e51244f50d3d9dcc36a50d8416195b05f1f1c2d07b022ef81bce95805f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98eae466a064afd64f047df5133382cd9517824bc4bc850d6a986248b0bf6387"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41f806b630aff7d8f51df081d321b96c2af1a65aa40810b2ed466b898066779e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d89f2b3aa405364cbc1ef34b6d8c691d24f91227812eac29fac4a87e902312d9"
+    sha256 cellar: :any,                 arm64_linux:   "ca9dfcfd6bc081305d22ae879e0b23e96a424f01dedc642ef169c44eb60884bb"
+    sha256 cellar: :any,                 x86_64_linux:  "16674dfd439a163de7dae016b7fdb35772ed7b3ad00ec5b4f816b46261de6c51"
   end
 
   depends_on "rust" => :build

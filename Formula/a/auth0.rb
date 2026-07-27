@@ -21,7 +21,6 @@ class Auth0 < Formula
     ENV["CGO_ENABLED"] = "0"
 
     ldflags = %W[
-      -s -w
       -X github.com/auth0/auth0-cli/internal/buildinfo.Version=#{version}
       -X github.com/auth0/auth0-cli/internal/buildinfo.Revision=#{tap.user}
     ]

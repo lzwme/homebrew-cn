@@ -25,7 +25,6 @@ class Ioctl < Formula
   def install
     ENV["CGO_ENABLED"] = "1"
     ldflags = %W[
-      -s -w
       -X github.com/iotexproject/iotex-core/v2/pkg/version.PackageVersion=#{version}
       -X github.com/iotexproject/iotex-core/v2/pkg/version.PackageCommitID=#{tap.user}
       -X github.com/iotexproject/iotex-core/v2/pkg/version.GitStatus=clean

@@ -35,7 +35,7 @@ class ThePlatinumSearcher < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"pt"), "./cmd/pt"
+    system "go", "build", *std_go_args(output: bin/"pt"), "./cmd/pt"
   end
 
   test do

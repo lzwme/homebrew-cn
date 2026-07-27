@@ -46,7 +46,6 @@ class Flowpipe < Formula
     end
 
     ldflags = %W[
-      -s -w
       -X main.version=#{version}
       -X version.buildTime=#{time.iso8601}
       -X version.commit=#{tap.user}
