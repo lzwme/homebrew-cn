@@ -26,8 +26,7 @@ class Aqua < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/aqua"
+    system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/aqua"
 
     generate_completions_from_executable(bin/"aqua", "completion")
   end

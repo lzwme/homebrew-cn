@@ -24,7 +24,7 @@ class Goctl < Formula
 
   def install
     chdir "tools/goctl" do
-      system "go", "build", *std_go_args(ldflags: "-s -w"), "goctl.go"
+      system "go", "build", *std_go_args, "goctl.go"
     end
 
     generate_completions_from_executable(bin/"goctl", shell_parameter_format: :cobra)

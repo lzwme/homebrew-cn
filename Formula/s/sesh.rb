@@ -1,18 +1,18 @@
 class Sesh < Formula
   desc "Smart session manager for the terminal"
   homepage "https://github.com/joshmedeski/sesh"
-  url "https://ghfast.top/https://github.com/joshmedeski/sesh/archive/refs/tags/v2.27.0.tar.gz"
-  sha256 "c56154a3c31b23751a02d3301064ba75e112f39d36473fb467f4c50d89b3d548"
+  url "https://ghfast.top/https://github.com/joshmedeski/sesh/archive/refs/tags/v2.28.0.tar.gz"
+  sha256 "b2b679f0999d07fae148dad5247d4b4932f62a4f0e420eddb5dc5b9d0bc26a32"
   license "MIT"
   head "https://github.com/joshmedeski/sesh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ba28683a72f105cf01881e880a84e2eba88621b1b0d783ca09bbaa5e60cd282"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ba28683a72f105cf01881e880a84e2eba88621b1b0d783ca09bbaa5e60cd282"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ba28683a72f105cf01881e880a84e2eba88621b1b0d783ca09bbaa5e60cd282"
-    sha256 cellar: :any_skip_relocation, sonoma:        "58eec407bb1e20b050d713a28f078fea26dda41df7711b108ab56fa7531407d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "262b873001d7da9f951d69b5c9ce1211653501e22c87f8ddfc6b7972bfc64eb0"
-    sha256 cellar: :any,                 x86_64_linux:  "98224bc4b6211955d564fc749744c5fec445134e640ad86cf7bb9bdd9df80144"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b34b28e25d1ed39b37f7f601b3ed4e8242f7e6936a2ea84c993f7f55eb5af09"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b34b28e25d1ed39b37f7f601b3ed4e8242f7e6936a2ea84c993f7f55eb5af09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b34b28e25d1ed39b37f7f601b3ed4e8242f7e6936a2ea84c993f7f55eb5af09"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f79d7ce928ad0d0aa6cdc280fb4c9950fdbd2ba68bf0290371ecfbd93360a19d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4906ea4b48bee414a1a81c5a5e172919532cc2bfe01e0f6945cde1b9ea3eb1e5"
+    sha256 cellar: :any,                 x86_64_linux:  "a4dfb6feb3d8acb52bf22bccafbfd660e34810225771158e3c7635538a4c7b2b"
   end
 
   depends_on "go" => :build

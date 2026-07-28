@@ -3,10 +3,20 @@ class CoreLightning < Formula
 
   desc "Lightning Network implementation focusing on spec compliance and performance"
   homepage "https://github.com/ElementsProject/lightning"
-  url "https://ghfast.top/https://github.com/ElementsProject/lightning/releases/download/v26.06.6/clightning-v26.06.6.zip"
-  sha256 "71911fcc35e4ab246ebc7d4531cacf2bc3816069d96798dc8f7a73b403207ced"
   license "MIT"
   head "https://github.com/ElementsProject/lightning.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/ElementsProject/lightning/releases/download/v26.06.6/clightning-v26.06.6.zip"
+    sha256 "71911fcc35e4ab246ebc7d4531cacf2bc3816069d96798dc8f7a73b403207ced"
+
+    patch do
+      url "https://github.com/ElementsProject/lightning/commit/d384750883216e7e19e01779d06bc36295380296.patch?full_index=1"
+      sha256 "4f5c972865a57de11a420e319584710f821e68c908d861e40ed5b741b0bffa6e"
+      type :backport
+      resolves "https://github.com/ElementsProject/lightning/pull/9072"
+    end
+  end
 
   livecheck do
     url :stable
@@ -71,10 +81,6 @@ class CoreLightning < Formula
     venv.pip_install resources
     ENV.prepend_path "PATH", venv.root/"bin"
     ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin" if OS.mac?
-
-    # Fix `configure` to build on macOS
-    # PR ref: https://github.com/ElementsProject/lightning/pull/9072
-    inreplace "configure", "-Wl,--gc-sections -c $TMPCFILE", "-Wl,--gc-sections $TMPCFILE"
 
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"

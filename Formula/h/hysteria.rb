@@ -20,7 +20,6 @@ class Hysteria < Formula
   def install
     pkg = "github.com/apernet/hysteria/app/v2/cmd"
     ldflags = %W[
-      -s -w
       -X #{pkg}.appVersion=v#{version}
       -X #{pkg}.appDate=#{time.iso8601}
       -X #{pkg}.appType=release

@@ -27,7 +27,6 @@ class Hugo < Formula
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
     ldflags = %W[
-      -s -w
       -X github.com/gohugoio/hugo/common/hugo.commitHash=#{tap.user}
       -X github.com/gohugoio/hugo/common/hugo.buildDate=#{time.iso8601}
       -X github.com/gohugoio/hugo/common/hugo.vendorInfo=#{tap.user}

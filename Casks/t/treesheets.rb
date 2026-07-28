@@ -1,6 +1,6 @@
 cask "treesheets" do
-  version "3281"
-  sha256 "492ffb96d8e5827dfc697730f8b2e9a17e563b80469c4d0bb9d5f47aad455786"
+  version "3285"
+  sha256 "87ffdac3d8654448d12fa6ebe528145398aba3344a26bd6582fe63a82e8e9f1d"
 
   url "https://ghfast.top/https://github.com/aardappel/treesheets/releases/download/#{version.csv.second || version.csv.first}/TreeSheets-#{version.csv.first}-Darwin.dmg",
       verified: "github.com/aardappel/treesheets/"
@@ -30,6 +30,7 @@ cask "treesheets" do
   uninstall quit: "dot3labs.TreeSheets"
 
   zap trash: [
+    "~/Library/Preferences/com.strlen.TreeSheets.plist",
     "~/Library/Preferences/dot3labs.TreeSheets.plist",
     "~/Library/Preferences/TreeSheets Preferences",
     "~/Library/Saved Application State/dot3labs.TreeSheets.savedState",

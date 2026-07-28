@@ -161,7 +161,6 @@ Homebrew-homebrew-core/Formula/a/ansilove.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ansiweather.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ant-contrib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ant.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/a/ant@1.9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/antidote.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/antigen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/antlr.rb, Homebrew/homebrew-core, 0
@@ -621,7 +620,6 @@ Homebrew-homebrew-core/Formula/b/blast.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/blastem.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/blaze.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/blazeblogger.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/b/blazegraph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/blink.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/blink1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/blis.rb, Homebrew/homebrew-core, 1
@@ -1338,7 +1336,6 @@ Homebrew-homebrew-core/Formula/c/crip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crispy-doom.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/criterion.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/crm114.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/croaring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/croc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cromwell.rb, Homebrew/homebrew-core, 1
@@ -2033,6 +2030,7 @@ Homebrew-homebrew-core/Formula/f/falcoctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/falcosecurity-libs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fallow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fancy-cat.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fanficfare.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fann.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fantom.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fanyi.rb, Homebrew/homebrew-core, 0
@@ -3418,7 +3416,6 @@ Homebrew-homebrew-core/Formula/j/jless.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jlog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jmeter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jmxterm.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/j/jmxtrans.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jnethack.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jnettop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jnv.rb, Homebrew/homebrew-core, 1
@@ -3777,7 +3774,7 @@ Homebrew-homebrew-core/Formula/l/ldid.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/ldns.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/ldpl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/le.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/l/leaf-md.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/leaf-markdown-viewer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/leaf-proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/leaf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/leakcanary-shark.rb, Homebrew/homebrew-core, 1
@@ -4694,6 +4691,7 @@ Homebrew-homebrew-core/Formula/m/mcp-toolbox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcphost.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcpm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcpp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mcpsnoop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcptools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/md-tui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/md2pdf.rb, Homebrew/homebrew-core, 1
@@ -4960,7 +4958,6 @@ Homebrew-homebrew-core/Formula/m/mp3val.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mp3wrap.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mp4ff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mp4v2.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mpack.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mpage.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mpc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mpck.rb, Homebrew/homebrew-core, 0
@@ -8639,6 +8636,7 @@ Homebrew-homebrew-cask/Casks/a/airparrot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/airpass.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/airscroll.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/airserver.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/airsync.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/airtable.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/airtame.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/airtool.rb, Homebrew/homebrew-cask, 0
@@ -9432,7 +9430,6 @@ Homebrew-homebrew-cask/Casks/c/creality-print.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/creality-slicer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/creative.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/crescendo.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/c/criptext.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cro-mag-rally.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/crossover.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/crosspaste.rb, Homebrew/homebrew-cask, 1
@@ -13502,13 +13499,11 @@ Homebrew-homebrew-cask/Casks/m/mac-monitor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mac-mouse-fix.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mac-mouse-fix@2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mac-sai.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/mac2imgur.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macai.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macast.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macbreakz.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/maccleaner-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/maccy.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/macdependency.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macdive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macdown-3000.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macdown.rb, Homebrew/homebrew-cask, 1
@@ -13529,7 +13524,6 @@ Homebrew-homebrew-cask/Casks/m/macloggerdx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macloggerdx@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macmd-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macmediakeyforwarder.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/macmorpheus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macpacker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macpar-deluxe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macparakeet.rb, Homebrew/homebrew-cask, 1
@@ -13562,7 +13556,6 @@ Homebrew-homebrew-cask/Casks/m/maestral.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/maestri.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/maestro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/magicavoxel.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/magiccap.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/magicplot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/magicquit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mail-assistant.rb, Homebrew/homebrew-cask, 0
@@ -13586,7 +13579,6 @@ Homebrew-homebrew-cask/Casks/m/mamp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/manico.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/manictime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/manila.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/manta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/manus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/manuskript.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/manyverse.rb, Homebrew/homebrew-cask, 1
@@ -13622,7 +13614,6 @@ Homebrew-homebrew-cask/Casks/m/maxon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mbcord.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mbed-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mcbopomofo.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/mcedit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mcloud.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mcpbundler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mcreator.rb, Homebrew/homebrew-cask, 1
@@ -13652,11 +13643,9 @@ Homebrew-homebrew-cask/Casks/m/meituxiuxiu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meld-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meld.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mellel.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/mellow.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/melodics.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/melonds.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mem.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/memo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memory-cleaner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memory-map.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memory-meter-3.rb, Homebrew/homebrew-cask, 0
@@ -13664,8 +13653,6 @@ Homebrew-homebrew-cask/Casks/m/memory.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memoryanalyzer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mendeley-reference-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/menu-bar-splitter.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/menubar-colors.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/menubar-countdown.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/menubar-stats.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/menubarx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/menucalendarclock-ical.rb, Homebrew/homebrew-cask, 0
@@ -13765,7 +13752,6 @@ Homebrew-homebrew-cask/Casks/m/mints.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mipony.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mirai.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/miro.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/mirrordisplays.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mission-control-plus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/missive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mist.rb, Homebrew/homebrew-cask, 1
@@ -13781,7 +13767,6 @@ Homebrew-homebrew-cask/Casks/m/mixxx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mixxx@snapshot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mjml-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mjolnir.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/mkchromecast.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mks.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mkvtoolnix-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mkvtools.rb, Homebrew/homebrew-cask, 0
@@ -13789,7 +13774,6 @@ Homebrew-homebrew-cask/Casks/m/mmex.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mmhmm-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mmhmm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mobirise.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/mobster.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mochi-diffusion.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mochi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mockoon.rb, Homebrew/homebrew-cask, 1
@@ -13860,7 +13844,6 @@ Homebrew-homebrew-cask/Casks/m/mplab-xc16.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mplab-xc32.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mplab-xc8.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mplabx-ide.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/mplayerx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mpluginmanager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mps.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mqtt-explorer.rb, Homebrew/homebrew-cask, 1
@@ -13869,7 +13852,6 @@ Homebrew-homebrew-cask/Casks/m/mqttx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/msgfiler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/msty.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mstystudio.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/mtgaprotracker.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mtmr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mu-editor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mubu.rb, Homebrew/homebrew-cask, 0
@@ -13897,7 +13879,6 @@ Homebrew-homebrew-cask/Casks/m/munkiadmin.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mural.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/murus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/musaicfm.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/muse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/museeks.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/musescore.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/music-decoy.rb, Homebrew/homebrew-cask, 1
@@ -13913,7 +13894,6 @@ Homebrew-homebrew-cask/Casks/m/muteme.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/muzzle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mweb-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mx-power-gadget.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/my-budget.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/my-image-garden.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mycard.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mycloud.rb, Homebrew/homebrew-cask, 0
@@ -13940,7 +13920,6 @@ Homebrew-homebrew-cask/Casks/n/nao.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/naps2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nasas-eyes.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/native-access.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/n/nativedisplaybrightness.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/natron.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nault.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/naver-whale.rb, Homebrew/homebrew-cask, 0
@@ -14000,14 +13979,11 @@ Homebrew-homebrew-cask/Casks/n/nightshade.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nimbalyst.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nimble-commander.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nimblenote.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/n/nimbus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/ninja-download-manager-ndm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nisus-thesaurus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nitro-pdf-pro.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/n/nitroshare.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nkoda.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/no-ip-duc.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/n/nocturnal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nodebox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nodeclipse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/noisebuddy.rb, Homebrew/homebrew-cask, 1
@@ -14024,7 +14000,6 @@ Homebrew-homebrew-cask/Casks/n/nosql-workbench.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nosqlbooster-for-mongodb.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nostalgiapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nota.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/n/notable.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notchi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notchnook.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notebooks.rb, Homebrew/homebrew-cask, 0
@@ -14061,10 +14036,8 @@ Homebrew-homebrew-cask/Casks/n/nuclino.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nudge.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nugget.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nulloy.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/n/nullpomino.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/numi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nutstore.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/n/nvalt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvidia-geforce-now.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvidia-nsight-compute.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvidia-nsight-systems.rb, Homebrew/homebrew-cask, 0
@@ -14125,14 +14098,12 @@ Homebrew-homebrew-cask/Casks/o/onlyoffice.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/ontime.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/onyx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/onyx@beta.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/o/oolite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opal-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opal-composer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opcode.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-data-editor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-design.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-eid.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/o/open-in-code.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-island.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-video-downloader.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-webui.rb, Homebrew/homebrew-cask, 1
@@ -14233,7 +14204,6 @@ Homebrew-homebrew-cask/Casks/o/orka-desktop.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/orka-vm-tools.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/orka.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/orka3.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/o/oryoki.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/osaurus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/oscar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oscilloscope.rb, Homebrew/homebrew-cask, 1
@@ -14250,7 +14220,6 @@ Homebrew-homebrew-cask/Casks/o/osu@tachyon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/osxfuse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/otto-matic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/otty.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/o/otx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/outerbase-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/outfox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/outguess.rb, Homebrew/homebrew-cask, 0
@@ -14259,7 +14228,6 @@ Homebrew-homebrew-cask/Casks/o/outline.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/output-factory.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/outset.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/overflow.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/o/overkill.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/overlayed.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/oversight.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/overt.rb, Homebrew/homebrew-cask, 1
@@ -16172,7 +16140,6 @@ Homebrew-homebrew-cask/Casks/y/yt-music.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/ytmdesktop-youtube-music.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yuanbao.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yubico-authenticator.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/y/yubico-yubikey-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yubihsm2-sdk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yuque.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zalo.rb, Homebrew/homebrew-cask, 0

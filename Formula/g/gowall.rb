@@ -41,7 +41,7 @@ class Gowall < Formula
       ENV.append "GOFLAGS", "-buildmode=pie"
     end
 
-    system "go", "build", *std_go_args(ldflags: "-s -w", tags: "extlib")
+    system "go", "build", *std_go_args(tags: "extlib")
 
     generate_completions_from_executable(bin/"gowall", shell_parameter_format: :cobra)
   end

@@ -30,7 +30,6 @@ class Navidrome < Formula
     end
 
     ldflags = %W[
-      -s -w
       -X github.com/navidrome/navidrome/consts.gitTag=v#{version}
       -X github.com/navidrome/navidrome/consts.gitSha=source_archive
     ]

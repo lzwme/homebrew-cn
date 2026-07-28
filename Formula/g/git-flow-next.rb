@@ -22,7 +22,6 @@ class GitFlowNext < Formula
   def install
     commit = build.head? ? Utils.git_short_head : tap.user
     ldflags = %W[
-      -s -w
       -X github.com/gittower/git-flow-next/version.BuildTime=#{time.iso8601}
       -X github.com/gittower/git-flow-next/version.GitCommit=#{commit}
     ]

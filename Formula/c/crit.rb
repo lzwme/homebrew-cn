@@ -19,7 +19,6 @@ class Crit < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X main.version=#{version}
       -X main.commit=brew
       -X main.date=#{time.iso8601[0, 10]}

@@ -255,11 +255,12 @@ class Glibc < Formula
         # Avoid Intel CI runner timeout on tst-malloc-too-large-malloc-hugetlb2
         ENV["TIMEOUTFACTOR"] = "4" if Hardware::CPU.intel?
 
-        # Workaround to skip test failures seen when running in bubblewrap
-        xfail_tests = [
-          "test-xfail-tst-nss-files-hosts-long=yes", # error: tst-nss-files-hosts-long.c:36: ahostsv4 failed
-          "test-xfail-tst-setuid3=yes",              # runs setuid(0) expecting EPERM
-        ]
+        # Workaround to skip test failures seen when running in sandbox
+        xfail_tests = if ENV["HOMEBREW_SANDBOX_LINUX_LANDLOCK"] == "1"
+          ["test-xfail-tst-realpath-toolong=yes"]
+        else
+          ["test-xfail-tst-nss-files-hosts-long=yes", "test-xfail-tst-setuid3=yes"]
+        end
       end
 
       system "../configure", *args, "CFLAGS=#{cflags}"

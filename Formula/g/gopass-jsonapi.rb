@@ -23,8 +23,7 @@ class GopassJsonapi < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")
   end
 
   test do

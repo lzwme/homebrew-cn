@@ -1,25 +1,25 @@
 class Gabo < Formula
   desc "Generates GitHub Actions boilerplate"
   homepage "https://ashishb.net/tech/common-pitfalls-of-github-actions/"
-  url "https://ghfast.top/https://github.com/ashishb/gabo/archive/refs/tags/v1.16.0.tar.gz"
-  sha256 "d53be453b5897025dc1c2ceac0adbb58e4082772c9a3f0cd7fc7f6c038ec5add"
+  url "https://ghfast.top/https://github.com/ashishb/gabo/archive/refs/tags/v1.17.0.tar.gz"
+  sha256 "b19aa6ed7f0a1525fb8eca1c576d810ca39acfb5feac1acabd5d5af445ca4bb5"
   license "Apache-2.0"
   head "https://github.com/ashishb/gabo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a18f143f6c814e94c351519720e2a61c5ed57a39f9fad2e65053e4c09345c1c0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a18f143f6c814e94c351519720e2a61c5ed57a39f9fad2e65053e4c09345c1c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a18f143f6c814e94c351519720e2a61c5ed57a39f9fad2e65053e4c09345c1c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bd5ecbde67b69e3e21d7f0da43eb3154fe34eb746dcd135edc6f4af51c8e7db4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d01e017f5929d9b6ff8ba9ddee02c24064a711d5206374eaf3b17384b610352f"
-    sha256 cellar: :any,                 x86_64_linux:  "539f7487cfe8efd92e6569cdf4b01ec3e21bf8bd8d816bd921f8f1ce0e32f327"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "647d7df2b2cb8ea19e713a20da7192e5a980de9415920183a1f5a932e960385e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "647d7df2b2cb8ea19e713a20da7192e5a980de9415920183a1f5a932e960385e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "647d7df2b2cb8ea19e713a20da7192e5a980de9415920183a1f5a932e960385e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7e46c66aa5d2376edd607e8492b8f152587c952b2136fb6d83098cb881fec4a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf8ba8c763a08713cf58d545f2e4dda0c6a781171306e3b0c1bf9e437d4fe429"
+    sha256 cellar: :any,                 x86_64_linux:  "05af1bc4a1dd30b51ef68a4b6a9609d517dafef630ef511a87e2e15b363fe585"
   end
 
   depends_on "go" => :build
 
   def install
     cd "src/gabo" do
-      system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gabo"
+      system "go", "build", *std_go_args, "./cmd/gabo"
     end
   end
 

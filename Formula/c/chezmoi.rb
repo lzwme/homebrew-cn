@@ -25,14 +25,7 @@ class Chezmoi < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-      -X main.commit=#{File.read("COMMIT")}
-      -X main.date=#{time.iso8601}
-      -X main.builtBy=#{tap.user}
-    ]
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags: :goreleaser)
 
     bash_completion.install "completions/chezmoi-completion.bash" => "chezmoi"
     fish_completion.install "completions/chezmoi.fish"
@@ -41,9 +34,9 @@ class Chezmoi < Formula
 
   test do
     # test version to ensure that version number is embedded in binary
-    assert_match(/commit [0-9a-f]{40}/, shell_output("#{bin}/chezmoi --version"))
-    assert_match "version v#{version}", shell_output("#{bin}/chezmoi --version")
-    assert_match "built by #{tap.user}", shell_output("#{bin}/chezmoi --version")
+    output = shell_output("#{bin}/chezmoi --version")
+    assert_match "version v#{version}", output
+    assert_match "built by #{tap.user}", output
 
     system bin/"chezmoi", "init"
     assert_path_exists testpath/".local/share/chezmoi"

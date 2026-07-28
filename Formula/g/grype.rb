@@ -18,7 +18,7 @@ class Grype < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.version=#{version} -X main.gitCommit=#{tap.user} -X main.buildDate=#{time.iso8601}"
+    ldflags = "-X main.version=#{version} -X main.gitCommit=#{tap.user} -X main.buildDate=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/grype"
 
     generate_completions_from_executable(bin/"grype", "completion")

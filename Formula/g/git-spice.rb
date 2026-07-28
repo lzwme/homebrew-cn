@@ -25,7 +25,7 @@ class GitSpice < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main._version=#{version}"
+    ldflags = "-X main._version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"git-spice")
 
     generate_completions_from_executable(bin/"git-spice", "shell", "completion")

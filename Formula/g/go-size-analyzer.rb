@@ -42,7 +42,6 @@ class GoSizeAnalyzer < Formula
     ENV["GOEXPERIMENT"] = "jsonv2"
 
     ldflags = %W[
-      -s -w
       -X github.com/Zxilly/go-size-analyzer.version=#{version}
       -X github.com/Zxilly/go-size-analyzer.buildDate=#{time.iso8601}
       -X github.com/Zxilly/go-size-analyzer.dirtyBuild=false

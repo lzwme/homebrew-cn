@@ -1,8 +1,8 @@
 class Bottom < Formula
   desc "Yet another cross-platform graphical process/system monitor"
   homepage "https://clementtsang.github.io/bottom/"
-  url "https://ghfast.top/https://github.com/ClementTsang/bottom/archive/refs/tags/0.14.6.tar.gz"
-  sha256 "ec899586164423377ceaf0d15975b8cb4430e47f3c84db0394411048755c1412"
+  url "https://ghfast.top/https://github.com/ClementTsang/bottom/archive/refs/tags/0.14.7.tar.gz"
+  sha256 "249fca780922460278fffa2c3697a30c8a5483d06c14e66f093f51234d49c50c"
   license "MIT"
   head "https://github.com/ClementTsang/bottom.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Bottom < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0442b5757c8ea21b20e17a5b2d5b723456e57276594ddc70f758e92d7dfd4a7b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c502c52169c8f5e6bab05ab7b367adb1b4668493ae2720d7ccceef449acb43c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e33915c0cd828a315b716dce629f5969f9f461e70ea3633bdc22c5964bafd146"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b400c4f8409e31c637f322895ae0976b71c6df72dd08cc64691d70e2d8e84415"
-    sha256 cellar: :any,                 arm64_linux:   "063c32f43d2280c3acfdb755b359092bf72a684afb00be471adff83ee8b6fc20"
-    sha256 cellar: :any,                 x86_64_linux:  "d7757f739709e6c6531387de36ca0aa1dbd0e653970622c68b737ecfd77536be"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e5dbc9bef3c6b757e2c06230364c0979b4624452315171de252731ee767c938"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b5e454048cdff98c60a3f3abd7c76202e98d7ddbfb66f3c1ae7e2c5580d29f1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab93a48ef57752309262a6041042c88c93c2185ca9d3a945e4a378eaabd3d7a5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1184c3172c9160dff1265553f40db84e220b53485c99e40cb00261d0680dc3bb"
+    sha256 cellar: :any,                 arm64_linux:   "30210ee9871dd9cb4773f7e218bee2c31ce6c16274ea8afe86220afaf440cbce"
+    sha256 cellar: :any,                 x86_64_linux:  "b2edcb77c0a51067a0669c396400fad6db19d84cf694fa7cfe095ffdfb802299"
   end
 
   depends_on "rust" => :build

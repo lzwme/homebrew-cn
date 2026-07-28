@@ -27,7 +27,7 @@ class Gobackup < Formula
       system "npm", "install", *std_npm_args(prefix: false)
       system "npm", "run", "build"
     end
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{revision}")
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{revision}")
   end
 
   test do

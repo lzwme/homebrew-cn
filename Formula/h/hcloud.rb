@@ -19,7 +19,6 @@ class Hcloud < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/hetznercloud/cli/internal/version.version=v#{version}
       -X github.com/hetznercloud/cli/internal/version.versionPrerelease=
     ]

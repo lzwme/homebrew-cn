@@ -1,18 +1,18 @@
 class SSearch < Formula
   desc "Web search from the terminal"
   homepage "https://github.com/zquestz/s"
-  url "https://ghfast.top/https://github.com/zquestz/s/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "827cfec9a1f733354effe532130d4f241272bed4272e71ba91fec046960012c0"
+  url "https://ghfast.top/https://github.com/zquestz/s/archive/refs/tags/v0.8.1.tar.gz"
+  sha256 "9dd80e19b2287abf2689b8f9fd424fdfad9abdc51b69e3a550579db69d6c8f6f"
   license "MIT"
   head "https://github.com/zquestz/s.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8cf472a71c86dd579cf5c7b016da7d3ccf31bbb8016e7a77f2c4657b5887bbd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8cf472a71c86dd579cf5c7b016da7d3ccf31bbb8016e7a77f2c4657b5887bbd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8cf472a71c86dd579cf5c7b016da7d3ccf31bbb8016e7a77f2c4657b5887bbd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6510144d6bd31eab997e159b5dc101c6b80fc6b05e793b19afbf441322e3ff1e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "66628ab21bfe1f8ae64fc4bafc93d57b4f91aca1ab34f56ea02f53e1055d8053"
-    sha256 cellar: :any,                 x86_64_linux:  "039a740d7b79b72c0def0357765e927cbe2e7531e3965ecfcf699e55ed8f6cbb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21d524309004a7a9d7089d8c1aa37a1b61960e5a83f76238d3e8a3c1c5fc5583"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21d524309004a7a9d7089d8c1aa37a1b61960e5a83f76238d3e8a3c1c5fc5583"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21d524309004a7a9d7089d8c1aa37a1b61960e5a83f76238d3e8a3c1c5fc5583"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93be088867f990931ec0843f461bee7fc3869c837fb1da600be6e56d36bc2e69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "154883366e875db93c8101d19b19716b30cfd1930fc00e09c0900eabc799d420"
+    sha256 cellar: :any,                 x86_64_linux:  "7e64c6426a2309018eea5aafa4a62259271c66d971326a3fd02ed7eb1a640c7e"
   end
 
   depends_on "go" => :build

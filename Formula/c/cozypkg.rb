@@ -23,10 +23,7 @@ class Cozypkg < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/cozystack/cozystack/cmd/cozypkg/cmd.Version=#{version}
-    ]
+    ldflags = %W[-X github.com/cozystack/cozystack/cmd/cozypkg/cmd.Version=#{version}]
     system "go", "build", *std_go_args(ldflags:), "./cmd/cozypkg"
     generate_completions_from_executable(bin/"cozypkg", "completion")
   end

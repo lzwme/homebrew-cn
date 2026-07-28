@@ -18,7 +18,7 @@ class Nuclei < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/nuclei"
+    system "go", "build", *std_go_args, "./cmd/nuclei"
   end
 
   test do

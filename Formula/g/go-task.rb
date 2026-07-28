@@ -21,7 +21,6 @@ class GoTask < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/go-task/task/v3/internal/version.version=#{version}
       -X github.com/go-task/task/v3/internal/version.sum=#{tap.user}
     ]

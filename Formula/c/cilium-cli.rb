@@ -26,10 +26,7 @@ class CiliumCli < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/cilium/cilium/cilium-cli/defaults.CLIVersion=v#{version}
-    ]
+    ldflags = %W[-X github.com/cilium/cilium/cilium-cli/defaults.CLIVersion=v#{version}]
     system "go", "build", *std_go_args(ldflags:, output: bin/"cilium"), "./cmd/cilium"
 
     generate_completions_from_executable(bin/"cilium", shell_parameter_format: :cobra)

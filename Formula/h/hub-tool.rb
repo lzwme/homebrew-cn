@@ -24,7 +24,6 @@ class HubTool < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/docker/hub-tool/internal.Version=#{version}
       -X github.com/docker/hub-tool/internal.GitCommit=#{tap.user}
     ]

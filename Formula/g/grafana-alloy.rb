@@ -33,7 +33,6 @@ class GrafanaAlloy < Formula
     end
 
     ldflags = %W[
-      -s -w
       -X github.com/grafana/alloy/internal/build.Branch=HEAD
       -X github.com/grafana/alloy/internal/build.Version=v#{version}
       -X github.com/grafana/alloy/internal/build.BuildUser=#{tap.user}

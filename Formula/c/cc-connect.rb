@@ -18,19 +18,12 @@ class CcConnect < Formula
   depends_on "node" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-      -X main.commit=#{tap.user}
-      -X main.buildTime=#{time.iso8601}
-    ]
-
     cd "web" do
       system "npm", "install", *std_npm_args(prefix: false)
       system "npm", "run", "build"
     end
 
-    system "go", "build", *std_go_args(ldflags:), "./cmd/cc-connect"
+    system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/cc-connect"
 
     pkgetc.install "config.example.toml" => "config.toml"
   end

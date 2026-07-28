@@ -18,7 +18,7 @@ class ConfigFileValidator < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/Boeing/config-file-validator/v2.version=#{version}"
+    ldflags = "-X github.com/Boeing/config-file-validator/v2.version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"validator"), "./cmd/validator"
   end
 

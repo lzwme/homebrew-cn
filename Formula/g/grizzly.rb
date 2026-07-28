@@ -24,7 +24,7 @@ class Grizzly < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/grafana/grizzly/pkg/config.Version=#{version}"
+    ldflags = "-X github.com/grafana/grizzly/pkg/config.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"grr"), "./cmd/grr"
   end
 

@@ -2,7 +2,8 @@ class Gimmecert < Formula
   include Language::Python::Virtualenv
 
   desc "Quickly issue X.509 server and client certificates using locally-generated CA"
-  homepage "https://projects.majic.rs/gimmecert"
+  # Original homepage `https://projects.majic.rs/gimmecert` is down
+  homepage "https://github.com/azaghal/gimmecert"
   url "https://files.pythonhosted.org/packages/94/b3/f8d0d4fc8951d7ff02f1d3653ba446ad0edf14ab1a18cff4fbe1d1b62086/gimmecert-1.0.0.tar.gz"
   sha256 "eb00848fab5295903b4d5ef997c411fe063abc5b0f520a78ca2cd23f77e3fd99"
   license "GPL-3.0-or-later"
@@ -15,8 +16,8 @@ class Gimmecert < Formula
     sha256 cellar: :any_skip_relocation, all: "131301a3467e90afb96224fdccf103949029d5f963f612f3bf5f512f81adbed0"
   end
 
-  depends_on "certifi"
-  depends_on "cryptography"
+  depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "python@3.14"
 
   pypi_packages exclude_packages: %w[certifi cryptography]

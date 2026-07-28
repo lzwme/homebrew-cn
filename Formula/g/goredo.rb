@@ -27,7 +27,7 @@ class Goredo < Formula
 
   def install
     cd "src" do
-      system "go", "build", *std_go_args(ldflags: "-s -w"), "-mod=vendor"
+      system "go", "build", *std_go_args, "-mod=vendor"
     end
 
     ENV.prepend_path "PATH", bin

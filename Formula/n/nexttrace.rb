@@ -26,7 +26,6 @@ class Nexttrace < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/nxtrace/NTrace-core/config.Version=#{version}
       -X github.com/nxtrace/NTrace-core/config.CommitID=#{tap.user}
       -X github.com/nxtrace/NTrace-core/config.BuildDate=#{time.iso8601}

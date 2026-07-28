@@ -27,7 +27,6 @@ class Rqlite < Formula
 
     version_ldflag_prefix = "-X github.com/rqlite/rqlite/v#{version.major}"
     ldflags = %W[
-      -s -w
       #{version_ldflag_prefix}/cmd.Commit=unknown
       #{version_ldflag_prefix}/cmd.Branch=master
       #{version_ldflag_prefix}/cmd.Buildtime=#{time.iso8601}

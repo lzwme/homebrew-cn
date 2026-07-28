@@ -1,7 +1,7 @@
 class Lmfit < Formula
   desc "C library for Levenberg-Marquardt minimization and least-squares fitting"
-  homepage "https://jugit.fz-juelich.de/mlz/lmfit"
-  url "https://jugit.fz-juelich.de/mlz/lmfit/-/archive/v10.0/lmfit-v10.0.tar.bz2"
+  homepage "https://jugit.fz-juelich.de/mlz/lib/lmfit"
+  url "https://jugit.fz-juelich.de/mlz/lib/lmfit/-/archive/v10.0/lmfit-v10.0.tar.bz2"
   sha256 "232658736984365ad71ac76adf94d125ee0df1f570a6c69ce3a34f892be14150"
   license "BSD-2-Clause"
 

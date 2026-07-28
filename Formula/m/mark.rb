@@ -1,18 +1,18 @@
 class Mark < Formula
   desc "Sync your markdown files with Confluence pages"
   homepage "https://samizdat.dev"
-  url "https://ghfast.top/https://github.com/kovetskiy/mark/archive/refs/tags/v16.6.0.tar.gz"
-  sha256 "2107f8eb7f253e771644e15dcac7c132df5a7b500da69ed9321f1877ea850b4f"
+  url "https://ghfast.top/https://github.com/kovetskiy/mark/archive/refs/tags/v16.8.1.tar.gz"
+  sha256 "3f01e975bbfe8fa563c900411347477438dd068512023c0fed602acefe6c1442"
   license "Apache-2.0"
   head "https://github.com/kovetskiy/mark.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3fec2d0fc3d23b56c563153c6225a4351a01fa18da869fd2fa91202a58df6e2f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fec2d0fc3d23b56c563153c6225a4351a01fa18da869fd2fa91202a58df6e2f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3fec2d0fc3d23b56c563153c6225a4351a01fa18da869fd2fa91202a58df6e2f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7cbfda67640595e5cb165be8145183f4df71a68b723981dcca2910f48ebd5454"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "611d6070983941cf56ad874cbf7630e63be9dc4907b5baad9abd448d15dbf5b2"
-    sha256 cellar: :any,                 x86_64_linux:  "68ae45e1307402b241a245bb19a6d729276dac7fafc8fbeced2bdbd631e32603"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "923e6326de6b9f160c2bade7206bf598c9ea2b3eec2962cf8cb378d141d6f7ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "923e6326de6b9f160c2bade7206bf598c9ea2b3eec2962cf8cb378d141d6f7ec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "923e6326de6b9f160c2bade7206bf598c9ea2b3eec2962cf8cb378d141d6f7ec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b5f4401ebf02145f5d38fd2038b625d8012b6a720ae332b78ae54052c4bad2f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3438a02c563bc290d1e7fe0eebfb236c8f4147409bca1901b7a55cf7e0c140c"
+    sha256 cellar: :any,                 x86_64_linux:  "adbd5cfbdd57737975c9c70e631ae9189a9c97a4d01d11f0735308f83897d6fe"
   end
 
   depends_on "go" => :build

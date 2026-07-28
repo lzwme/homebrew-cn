@@ -22,7 +22,7 @@ class HeadscaleCli < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"headscale"), "./cmd/headscale"
+    system "go", "build", *std_go_args(output: bin/"headscale"), "./cmd/headscale"
 
     generate_completions_from_executable(bin/"headscale", shell_parameter_format: :cobra)
   end

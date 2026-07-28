@@ -2,7 +2,7 @@ class Csound < Formula
   desc "Sound and music computing system"
   homepage "https://csound.com"
   license "LGPL-2.1-or-later"
-  revision 14
+  revision 15
   head "https://github.com/csound/csound.git", branch: "develop"
 
   # Remove `stable` block when patches are no longer needed
@@ -37,13 +37,12 @@ class Csound < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "ab2e032068bcb6eb84a7d800801f07f692e71098c85f07c210f1099a5eb9a2c5"
-    sha256 arm64_sequoia: "a3edba10cdd780018153558ffe5dffbed7263e816893d9da6eb6bb3e89efb703"
-    sha256 arm64_sonoma:  "6671ef9e52fcfd4d56f91d69a59f8976bbda0e7e59747960215662d1e44b6d64"
-    sha256 sonoma:        "efe809093c9c64f6c6138fdb6a9d798f84ab50608375b98b19e1d023e69c3edc"
-    sha256 arm64_linux:   "842704687c6bac3621aa2982b5c12bb0f8f15196648f6e3d12c2d847fae8307d"
-    sha256 x86_64_linux:  "1b214b5db904191d97bed11533e7e1da53528a9ca8f2ac3fb9394da683315cf6"
+    sha256 arm64_tahoe:   "d44f2db6527e1af5da2549dfb92493ca2f7f9dcf31e6456c3181f76cdc3b99f4"
+    sha256 arm64_sequoia: "e23be31b0570c7957fca7ba4b59deab8a109d9d88d0ee7c8a6d4778eca76163d"
+    sha256 arm64_sonoma:  "56da23211bcb3e4c8fb043cae6cbd6873eba850f9b41db5feb2958123fa20467"
+    sha256 sonoma:        "c281aa61a78df24dc750fbd137cd8dda70d95593756bd52383ed5c2cb2a46dd3"
+    sha256 arm64_linux:   "79183578c13b4dc34a6f7764051d9bbf6c5528a9a191615d60f6b47aff1916a6"
+    sha256 x86_64_linux:  "67636d65fcd79d7562f6a06f1143603a5728b97895b9583c290be25bb30880d7"
   end
 
   depends_on "asio" => :build
@@ -78,6 +77,7 @@ class Csound < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "libx11"
+    depends_on "pulseaudio"
     depends_on "zlib-ng-compat"
   end
 

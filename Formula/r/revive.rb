@@ -20,7 +20,6 @@ class Revive < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/mgechev/revive/cli.commit=#{Utils.git_head}
       -X github.com/mgechev/revive/cli.date=#{time.iso8601}
       -X github.com/mgechev/revive/cli.builtBy=#{tap.user}

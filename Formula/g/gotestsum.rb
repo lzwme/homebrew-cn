@@ -25,7 +25,7 @@ class Gotestsum < Formula
   end
 
   def install
-    ldflags = "-s -w -X gotest.tools/gotestsum/cmd.version=#{version}"
+    ldflags = "-X gotest.tools/gotestsum/cmd.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

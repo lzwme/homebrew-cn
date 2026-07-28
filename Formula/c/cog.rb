@@ -28,7 +28,6 @@ class Cog < Formula
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
     ldflags = %W[
-      -s -w
       -X github.com/replicate/cog/pkg/global.Version=#{version}
       -X github.com/replicate/cog/pkg/global.Commit=#{tap.user}
       -X github.com/replicate/cog/pkg/global.BuildTime=#{time.iso8601}

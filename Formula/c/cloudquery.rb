@@ -24,7 +24,7 @@ class Cloudquery < Formula
 
   def install
     cd "cli" do
-      ldflags = "-s -w -X github.com/cloudquery/cloudquery/cli/v6/cmd.Version=#{version}"
+      ldflags = "-X github.com/cloudquery/cloudquery/cli/v6/cmd.Version=#{version}"
       system "go", "build", *std_go_args(ldflags:)
     end
     generate_completions_from_executable(bin/"cloudquery", shell_parameter_format: :cobra)

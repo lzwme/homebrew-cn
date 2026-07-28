@@ -24,7 +24,6 @@ class Regal < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/open-policy-agent/regal/pkg/version.Version=#{version}
       -X github.com/open-policy-agent/regal/pkg/version.Commit=#{tap.user}
       -X github.com/open-policy-agent/regal/pkg/version.Timestamp=#{time.iso8601}

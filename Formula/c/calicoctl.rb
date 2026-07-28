@@ -26,7 +26,6 @@ class Calicoctl < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/projectcalico/calico/pkg/buildinfo.Version=#{version}
       -X github.com/projectcalico/calico/pkg/buildinfo.GitRevision=#{Utils.git_short_head}
       -X github.com/projectcalico/calico/pkg/buildinfo.BuildDate=#{time.iso8601}

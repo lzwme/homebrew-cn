@@ -22,11 +22,7 @@ class Glider < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-    ]
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")
 
     etc.install buildpath/"config/glider.conf.example" => "glider.conf"
   end

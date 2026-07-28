@@ -18,7 +18,7 @@ class Gup < Formula
   depends_on "go"
 
   def install
-    ldflags = "-s -w -X github.com/nao1215/gup/internal/cmdinfo.Version=v#{version}"
+    ldflags = "-X github.com/nao1215/gup/internal/cmdinfo.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"gup", shell_parameter_format: :cobra)

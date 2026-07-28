@@ -1,17 +1,17 @@
 class Mp4ff < Formula
   desc "Tools for parsing and manipulating MP4/ISOBMFF files"
   homepage "https://github.com/Eyevinn/mp4ff"
-  url "https://ghfast.top/https://github.com/Eyevinn/mp4ff/archive/refs/tags/v0.54.0.tar.gz"
-  sha256 "5fa5394fdd24ae98b27ac1b999c10d0e0227f34936a53e12e7cc822fbe5bc796"
+  url "https://ghfast.top/https://github.com/Eyevinn/mp4ff/archive/refs/tags/v0.55.0.tar.gz"
+  sha256 "dc38edb7a28b091c4e9dc465e2a4356a50203cc01a92c09c1593c35c8c2b47e5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "132af5f0cbfeb91ada051477542239c1b31a890f460f1cfba1a1272890b695d4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "132af5f0cbfeb91ada051477542239c1b31a890f460f1cfba1a1272890b695d4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "132af5f0cbfeb91ada051477542239c1b31a890f460f1cfba1a1272890b695d4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "221c4b52604a5fbf3415e96db6cea1294bebc4e90c4db4e037d398386c8b1869"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d99f1e2d1eaeb80bc9f94cbce2b0d600e11cc2e3d5f9a8928bb53e427b0a243"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee001902643b5f7d7008c1119e39a682df5f28cf4fc7e2aa916798dedf88cf93"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "44283e886804f57d36406873dfbf67e2f6fd5b3123e7de1a21405a7d36dc71e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44283e886804f57d36406873dfbf67e2f6fd5b3123e7de1a21405a7d36dc71e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44283e886804f57d36406873dfbf67e2f6fd5b3123e7de1a21405a7d36dc71e8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f1c3fef8e00ca65db2521b0f7998d6a523c60b90cb5853b2b49284a14d6db670"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea310b6d470149e2a49c6a4d3e346b3232fa60523b06cb0099071fad59dc265d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad160ee53b33ac03076d1cd0bfca0cb5abfca80c3511bea779596ea574e00f58"
   end
 
   depends_on "go" => :build

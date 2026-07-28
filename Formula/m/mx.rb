@@ -25,7 +25,6 @@ class Mx < Formula
     # Run a simple `mx` command to create required directories inside libexec
     ENV["JAVA_HOME"] = Language::Java.java_home
     ENV.remove "PATH", Superenv.shims_path # avoid ninja shim
-    chmod 0555, bin/"mx"
     system bin/"mx", "version"
   end
 

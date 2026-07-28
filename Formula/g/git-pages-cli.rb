@@ -1,29 +1,24 @@
 class GitPagesCli < Formula
   desc "Tool for publishing a site to a git-pages server"
   homepage "https://codeberg.org/git-pages/git-pages-cli"
-  url "https://codeberg.org/git-pages/git-pages-cli/archive/v1.10.0.tar.gz"
-  sha256 "ce6cc4b0e6d131d5df9b66a6b6ae59577b29d450e75d6876db78ab9d1425fa10"
+  url "https://codeberg.org/git-pages/git-pages-cli/releases/download/v1.10.1/git-pages-cli-src.zip"
+  sha256 "a4b23a4ef54111b160e9dc749d288ba96645282f78f355bbf28d2b48a1c6a664"
   license "0BSD"
   head "https://codeberg.org/git-pages/git-pages-cli.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "027850d3d1a6d2d0fb2a9b658efaeb5577ad1fe93a56b9558ba910eae6d5f8a5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "027850d3d1a6d2d0fb2a9b658efaeb5577ad1fe93a56b9558ba910eae6d5f8a5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "027850d3d1a6d2d0fb2a9b658efaeb5577ad1fe93a56b9558ba910eae6d5f8a5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9a540558e0340a91c16949536dd6520cf92670ab6d55cd71fdbb2bc918956b91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f47dd3b406b508137a3705575398af41aec20a0ce6137d4f7f77eb3a026d44c"
-    sha256 cellar: :any,                 x86_64_linux:  "38fccdc623ebc1c9fc0802983ec9664479fd9cbe6243a9bdf5ea6dca3956adc4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a060f9d46ac1a31830744c5f7f6d645473dbf98eb224d638a34453328ec39113"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a060f9d46ac1a31830744c5f7f6d645473dbf98eb224d638a34453328ec39113"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a060f9d46ac1a31830744c5f7f6d645473dbf98eb224d638a34453328ec39113"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d1d8b280ee61b3ffba12eca3f7dc10cf8dd484614e8d1201b2518e3814cd9669"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b65d30ac2990144492140ae98f517484c19b1137890ff2d2dfd492f81ba8872"
+    sha256 cellar: :any,                 x86_64_linux:  "a87aa40c98fa6187d30474e631312cfaed35125dd4bf3c3615ce0a780ec555ad"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.versionOverride=#{version}
-    ]
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags: "-X main.versionOverride=#{version}")
   end
 
   test do

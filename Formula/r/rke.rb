@@ -30,8 +30,7 @@ class Rke < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.VERSION=v#{version}"
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags: "-X main.VERSION=v#{version}")
   end
 
   test do

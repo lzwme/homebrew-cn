@@ -18,10 +18,7 @@ class Gitsign < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/sigstore/gitsign/pkg/version.gitVersion=#{version}
-    ]
+    ldflags = %W[-X github.com/sigstore/gitsign/pkg/version.gitVersion=#{version}]
     system "go", "build", *std_go_args(ldflags:)
     system "go", "build", *std_go_args(ldflags:, output: bin/"gitsign-credential-cache"),
       "./cmd/gitsign-credential-cache"

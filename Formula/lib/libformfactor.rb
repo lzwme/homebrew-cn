@@ -1,19 +1,20 @@
 class Libformfactor < Formula
   desc "C++ library for the efficient computation of scattering form factors"
-  homepage "https://jugit.fz-juelich.de/mlz/libformfactor"
-  url "https://jugit.fz-juelich.de/mlz/libformfactor/-/archive/v0.4.0/libformfactor-v0.4.0.tar.bz2"
-  sha256 "9e5f0458c78751121e0efa572f9a03e5965fe8ee2d4ff34939b6cce9bfdc8c36"
+  homepage "https://jugit.fz-juelich.de/mlz/lib/formfactor"
+  url "https://jugit.fz-juelich.de/mlz/lib/formfactor/-/archive/v0.4.0/formfactor-v0.4.0.tar.bz2"
+  sha256 "bb3f6a59ae906e816e68facf9721584de663fc78f9cc5ffa8f735cf6f8140b56"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "9607729d3bafce681cb6678cf675738a1a98f87d613592317a9a96c29085a8d7"
-    sha256 cellar: :any,                 arm64_sequoia: "3ebfbb57a42e68ac20053ee98bb257a6b7670b4c8a1d4719bc2697477e4f8024"
-    sha256 cellar: :any,                 arm64_sonoma:  "e4e54cd941e921522620cd8029646213047f4ca9e10f2371361a2c40617f3c49"
-    sha256 cellar: :any,                 tahoe:         "cebe06822c0a0e5d597b3f076d805f8fd39b72ab73b1f017acabacf8d04e2897"
-    sha256 cellar: :any,                 sequoia:       "52bc4e72d0b86f5cd3b613e9887b0d98e3b4e7c0a050c2bd9b6666b976dcd18f"
-    sha256 cellar: :any,                 sonoma:        "f24757b59a0dd170f63c7726db7b9e8690a30a7331c1cca2a4db5846bbc672a5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "54bb006639bc9991f2f5ff88f066f4013e1ac4da21b0e482541c9fd526a42213"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8771a938b477f59832c5a62d5e142d20c3ffd3abc101887a38d414d88e173c03"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "520a0d3134c2f7a8bb3f9401219ed2acd786a1949235c84b14787bc229c5172b"
+    sha256 cellar: :any, arm64_sequoia: "67db57ee22845576024abde1f0a87abd86024bbbcfc4aa18d834cb65dd3a9115"
+    sha256 cellar: :any, arm64_sonoma:  "45d69a4aafc2276a5a8974f74f4c2177f6ed209aa1202ccbaa81a147e76c75de"
+    sha256 cellar: :any, tahoe:         "bd9245a4b05a106a2a8ad08ab2d1c5ffe320fb5c5c222c3b5abd1a2c4007eb8f"
+    sha256 cellar: :any, sequoia:       "392853e478a7d8a26c3c76b3bbcfbcf682e7831ec94c8207b878d097a6ec6eb1"
+    sha256 cellar: :any, sonoma:        "d14926520c1eaebb1dd8dbcbbb9a3b4ea05a06ff84b74e814456619c90039b98"
+    sha256 cellar: :any, arm64_linux:   "34a51dcbb41c7d30e60ca945878f6fda942ef83e7fb983f0e8064e989ecf95cd"
+    sha256 cellar: :any, x86_64_linux:  "bbecc4de9c805e827e13ec2ba0cd951cba7098fa18a1bf692cf03db74e8383a5"
   end
 
   depends_on "cmake" => :build

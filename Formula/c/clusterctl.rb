@@ -29,7 +29,6 @@ class Clusterctl < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X sigs.k8s.io/cluster-api/version.gitMajor=#{version.major}
       -X sigs.k8s.io/cluster-api/version.gitMinor=#{version.minor}
       -X sigs.k8s.io/cluster-api/version.gitVersion=v#{version}

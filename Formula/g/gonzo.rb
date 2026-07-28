@@ -23,7 +23,6 @@ class Gonzo < Formula
     system "make", "web-build"
 
     ldflags = %W[
-      -s -w
       -X main.version=#{version}
       -X main.commit=#{tap.user}
       -X main.buildTime=#{time.iso8601}

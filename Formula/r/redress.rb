@@ -27,7 +27,6 @@ class Redress < Formula
     gore_version = File.read(buildpath/"go.mod").scan(%r{goretk/gore v(\S+)}).flatten.first
 
     ldflags = %W[
-      -s -w
       -X main.redressVersion=#{version}
       -X main.goreVersion=#{gore_version}
       -X main.compilerVersion=#{Formula["go"].version}

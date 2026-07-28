@@ -24,7 +24,6 @@ class ChainloopCli < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/chainloop-dev/chainloop/app/cli/cmd.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"chainloop"), "./app/cli"

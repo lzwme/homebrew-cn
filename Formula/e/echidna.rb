@@ -1,8 +1,8 @@
 class Echidna < Formula
   desc "Ethereum smart contract fuzzer"
   homepage "https://secure-contracts.com/program-analysis/echidna/index.html"
-  url "https://ghfast.top/https://github.com/crytic/echidna/archive/refs/tags/v2.3.2.tar.gz"
-  sha256 "c35a6f65c8758743253e91d5ce25017d0d69864f3fad58c41269e9ef4089c1a1"
+  url "https://ghfast.top/https://github.com/crytic/echidna/archive/refs/tags/v2.3.3.tar.gz"
+  sha256 "fab7817640a613856365766031518a8bde5471a9fb14618dfb0b77e3820a7cba"
   license "AGPL-3.0-only"
   head "https://github.com/crytic/echidna.git", branch: "master"
 
@@ -12,13 +12,12 @@ class Echidna < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "374f8e5eae224f8f9bc5aface602f95aaea42a3d5d38cec42c18f56197eb12d3"
-    sha256 cellar: :any, arm64_sequoia: "e750db0db4f603c8e7a0960f08e4e6a864cdcafd5cf874fa0899205e347063af"
-    sha256 cellar: :any, arm64_sonoma:  "4e177b8785e8a843931a1dd24f72854ade77fec2769fc87f696c5aabb9ca026d"
-    sha256 cellar: :any, sonoma:        "7fcef376fbcbf09178bae237d26101867cd895b03515d423a7467053a99ebf1d"
-    sha256 cellar: :any, arm64_linux:   "6891e4886b21bd3fde94c41e164606e87cc5680affb825fa2d60ffc3c87c97a7"
-    sha256 cellar: :any, x86_64_linux:  "e4e08ce4344e7610cd437780353dba3b0e268ba999f8d22657de6016ae91340a"
+    sha256 cellar: :any, arm64_tahoe:   "0841be5b437982ee4fd47035bfc50943e1f666dd9e0d799d91ef0983c03adbf5"
+    sha256 cellar: :any, arm64_sequoia: "b13d342c4a8da088b965e49ff883e9cd1b031da78ff33e3d2ecfeb477cf4927d"
+    sha256 cellar: :any, arm64_sonoma:  "ff6e92e25818029501df92c3dac81dd997a804edae3986fa1e1dbdf69273c7fc"
+    sha256 cellar: :any, sonoma:        "559cc5820d60a42a081997c59e80432dc084a94b3e43200ffef46b35c1886400"
+    sha256 cellar: :any, arm64_linux:   "81a8f95b38b0beb4c70d2b25cfeb8d7af3996be71c7b31b5c89d43b1e6e03294"
+    sha256 cellar: :any, x86_64_linux:  "dd2432167909da5b642b29db01710396fcbd250befe602375342aa2ed20cf233"
   end
 
   depends_on "ghc@9.10" => :build
@@ -64,6 +63,9 @@ class Echidna < Formula
           "$everything": -split-sections -fPIC -fexternal-dynamic-refs
       YAML
     end
+
+    # Old version doesn't support base >=4.20 which comes with GHC 9.10+
+    inreplace "stack.yaml", "allow-newer-deps:", "allow-newer-deps:\n- aeson-optics"
 
     # Let `stack` handle its own parallelization
     ENV.deparallelize { system "stack", "install", *args }

@@ -28,10 +28,7 @@ class GoLibrespot < Formula
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
-    ldflags = %W[
-      -s -w
-      -X github.com/devgianlu/go-librespot.version=#{version}
-    ]
+    ldflags = %W[-X github.com/devgianlu/go-librespot.version=#{version}]
     ldflags << "-X github.com/devgianlu/go-librespot.commit=#{Utils.git_short_head(length: 8)}" if build.head?
 
     system "go", "build", *std_go_args(output: bin/"go-librespot", ldflags:), "./cmd/daemon"

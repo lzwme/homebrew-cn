@@ -18,7 +18,7 @@ class Hoverfly < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.hoverctlVersion=#{version}"
+    ldflags = "-X main.hoverctlVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./core/cmd/hoverfly"
   end
 

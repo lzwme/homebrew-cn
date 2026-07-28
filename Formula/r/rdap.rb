@@ -20,10 +20,7 @@ class Rdap < Formula
   conflicts_with "icann-rdap", because: "icann-rdap also ships a rdap binary"
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/openrdap/rdap.releaseVersion=#{version}
-    ]
+    ldflags = %W[-X github.com/openrdap/rdap.releaseVersion=#{version}]
     system "go", "build", *std_go_args(ldflags:), "./cmd/rdap"
   end
 

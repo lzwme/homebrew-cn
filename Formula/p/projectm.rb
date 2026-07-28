@@ -5,6 +5,24 @@ class Projectm < Formula
   sha256 "b6b99dde5c8f0822ae362606a0429628ee478f4ec943a156723841b742954707"
   license "LGPL-2.1-or-later"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:[.-]\d+)+)$/i)
+    strategy :github_releases do |json, regex|
+      json.map do |release|
+        next if release["draft"] || release["prerelease"]
+
+        # Skip `libprojectM` releases
+        next if release["name"]&.match?(/^libprojectM/i)
+
+        match = release["tag_name"]&.match(regex)
+        next if match.blank?
+
+        match[1]
+      end
+    end
+  end
+
   bottle do
     sha256 arm64_tahoe:    "7f0815b03bcecd38afe7c9a8750a0822d9a17646c7e92f420e0fedb096c2709c"
     sha256 arm64_sequoia:  "a579de759ddbc2ca8b39a3dfc1cd7d2b936369790efaeda1c59efdbd63db5b2f"

@@ -32,9 +32,8 @@ class Chronograf < Formula
     system "yarn", "--cwd=ui", "install"
     system "yarn", "--cwd=ui", "build", "--no-cache"
 
-    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/chronograf"
-    system "go", "build", *std_go_args(ldflags:, output: bin/"chronoctl"), "./cmd/chronoctl"
+    system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/chronograf"
+    system "go", "build", *std_go_args(ldflags: :goreleaser, output: bin/"chronoctl"), "./cmd/chronoctl"
   end
 
   service do

@@ -27,7 +27,6 @@ class Govc < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/vmware/govmomi/cli/flags.BuildVersion=#{version}
       -X github.com/vmware/govmomi/cli/flags.BuildCommit=#{tap.user}
       -X github.com/vmware/govmomi/cli/flags.BuildDate=#{time.iso8601}

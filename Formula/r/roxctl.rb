@@ -26,7 +26,7 @@ class Roxctl < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./roxctl"
+    system "go", "build", *std_go_args, "./roxctl"
 
     generate_completions_from_executable(bin/"roxctl", shell_parameter_format: :cobra)
   end

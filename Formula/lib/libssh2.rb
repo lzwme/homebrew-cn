@@ -6,7 +6,7 @@ class Libssh2 < Formula
   mirror "http://download.openpkg.org/components/cache/libssh2/libssh2-1.11.1.tar.gz"
   sha256 "d9ec76cbe34db98eec3539fe2c899d26b0c837cb3eb466a56b0f109cabf658f7"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
   compatibility_version 1
 
   livecheck do
@@ -15,14 +15,14 @@ class Libssh2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e10b1bc79f0720529e8983a138aa3353412b8e940bd56c8527170203a03b1aea"
-    sha256 cellar: :any, arm64_sequoia: "8beb89dc76b533c69c308ad71db7180aa8f40bd633bfeb6834fed150a8d0e715"
-    sha256 cellar: :any, arm64_sonoma:  "a701f61b8096ab73b96d82c3eaf33b64fda56a23611c8fa694dcd230b5a5f60a"
-    sha256 cellar: :any, tahoe:         "8b76b00ed029089cc9905bf11b55274824b0768f7f1fad43a7a1295c308d9910"
-    sha256 cellar: :any, sequoia:       "2af1a7d99abd147791f94075d30a4182db7a4442dd801738c05babf8a16be06d"
-    sha256 cellar: :any, sonoma:        "6942ef3edeb8d89c581ebf30a394d2812f822543628c9aa6a483a527df69d2a7"
-    sha256 cellar: :any, arm64_linux:   "1c23b077200cd8636807901c200e9fca7ed8cd98000097ae46858d8fddd2ba48"
-    sha256 cellar: :any, x86_64_linux:  "23700032540130dda5b9fed053a9544d628c2137e41fa05338968784970f4838"
+    sha256 cellar: :any, arm64_tahoe:   "2700fe402d514ccc6de4d21bf893fea1f346c97ff1668a448a1db1aa2e67c900"
+    sha256 cellar: :any, arm64_sequoia: "cb769ecbc0bbe4c71dd2c1dfd95b5b44433824065cce6e9a7ba639b835f54263"
+    sha256 cellar: :any, arm64_sonoma:  "09fc033c60259a35c9e485134ad1244b130eaee32881a42d0220c6dae70585ae"
+    sha256 cellar: :any, tahoe:         "d53208e08777656d275e00f505a50cf1ed2980e0613c5802036002db95c175e9"
+    sha256 cellar: :any, sequoia:       "77458987f6ef9dc1a0c888f0ae98705e6e8c2b1073dbf6b314042e814d18e68d"
+    sha256 cellar: :any, sonoma:        "75fe7a276a6749ac0b5d41e6887bb520f616c3fb68288913b92699de61844793"
+    sha256 cellar: :any, arm64_linux:   "a88a923e03603ee53c0486e6e17f43df283bb10faee8c42ca9c262fdfc12e6e6"
+    sha256 cellar: :any, x86_64_linux:  "97de8d2b3b5ba7320aa04d16f11f98e86b79b70906ac8009fe5e4249b2d3c0b0"
   end
 
   head do
@@ -89,6 +89,41 @@ class Libssh2 < Formula
     sha256 "46cc7c5184d333e93c80a9cac1c86469c17340e6fc0418aecb2d0d8f6eaa5f41"
     type :backport
     resolves "CVE-2026-58051"
+  end
+
+  # Backport of https://github.com/libssh2/libssh2/commit/5e4776146552d898b9c0e1b313cd093fa8dc92d0
+  # with a simple conflict fixed.
+  # Remove with the next release.
+  patch do
+    file "Patches/libssh2/CVE-2026-66032.patch"
+    type :backport
+    resolves "CVE-2026-66032"
+  end
+
+  # Remove with the next release.
+  patch do
+    url "https://github.com/libssh2/libssh2/commit/a2ed82d40964bbc0d64cd717aa0a5a892117d2e6.patch?full_index=1"
+    sha256 "378b5f95f1a410afb790c57ceb67f2d4bd15cc42fc1db58d19fe26fd6f8acbed"
+    type :backport
+    resolves "CVE-2026-66033"
+  end
+
+  # Backport of https://github.com/libssh2/libssh2/commit/a13bb6c773f0d55ad1628cede57e99803cd898d9
+  # with ssh2_err changed to the 1.11's _libssh2_error.
+  # Remove with the next release.
+  patch do
+    file "Patches/libssh2/CVE-2026-66034.patch"
+    type :backport
+    resolves "CVE-2026-66034"
+  end
+
+  # Backport of https://github.com/libssh2/libssh2/commit/42e33d81577ed4b95d4b4f6f845e5ee8efe5eeb4
+  # with simple conflicts fixed and SSH2_SAFEFREE changed to the 1.11's LIBSSH2_FREE + `ptr = NULL`.
+  # Remove with the next release.
+  patch do
+    file "Patches/libssh2/CVE-2026-66035.patch"
+    type :backport
+    resolves "CVE-2026-66035"
   end
 
   def install

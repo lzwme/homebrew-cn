@@ -1,18 +1,18 @@
 class Filebrowser < Formula
   desc "Web File Browser"
   homepage "https://filebrowser.org/"
-  url "https://ghfast.top/https://github.com/filebrowser/filebrowser/archive/refs/tags/v2.63.21.tar.gz"
-  sha256 "d936b7da78f0aaf987ff195a2dd4159a1f4ffaf85df83876d5243336e1790081"
+  url "https://ghfast.top/https://github.com/filebrowser/filebrowser/archive/refs/tags/v2.63.23.tar.gz"
+  sha256 "18020983f6a4e43d679738738c3f95c52a333a282144046ec152491f2341a152"
   license "Apache-2.0"
   head "https://github.com/filebrowser/filebrowser.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f2202ae96d0c449d5ec3cf0f9e43040fd0f963ff8311eb2f6999ef80b685e754"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c107a05c0120709fff48f3d558c2581e33248462648e394da2f909e3b0f16a0a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "906d74e428f0ad5fc3a16a006f14ca954a3c28e5f38d7a4d6e8a27a1fd5d1eef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0050425845d8ca2512645e936e7f4265682772afc6d969f1817f050e2b87289c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5dfa8ba4d0ea28b7429bb66916f6de37058d7fcf3d66ec2bde9d12fc99c5187"
-    sha256 cellar: :any,                 x86_64_linux:  "abde444f8b521e558002c1b586772ecb500379357e64ed5b928bb7e76cd8c593"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8789bd5961b8beb37f046a7adb9b17bd273d54f2207ad059cf30f660fc273028"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c055be1423a5a17e9877f6cb7d43f0a83adce33761f6e57b319c64020e04fba5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46a7e990c3ea079ca1c181b17dd3c810552a2c08d8a49b465b7899ad9b92541f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "19ab0bb605b587c78696d2a59d6d1b9300f65da1392c30b1ef6918458336e4a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "639a8f3c6ab1e304030542e019c80a5d15f7d38fb872af02b10fd96e897a823e"
+    sha256 cellar: :any,                 x86_64_linux:  "6977f455d22496075ddc355d6b8dc41cb4c16afcfd938c16953c60432379b138"
   end
 
   depends_on "go" => :build

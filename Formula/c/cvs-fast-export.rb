@@ -32,7 +32,7 @@ class CvsFastExport < Formula
 
   def install
     system "make", "man"
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")
     man1.install buildpath.glob("*.1")
     bin.install "cvsconvert", "cvssync"
     rewrite_shebang detected_python_shebang(use_python_from_path: true), *bin.children

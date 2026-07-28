@@ -1,8 +1,8 @@
 class Ratify < Formula
   desc "Artifact Ratification Framework"
   homepage "https://ratify.dev"
-  url "https://ghfast.top/https://github.com/notaryproject/ratify/archive/refs/tags/v1.4.3.tar.gz"
-  sha256 "86ff9fdc0c1922298738363d4e89c99969ecd27e5eab5988d3409ec6e8102db6"
+  url "https://ghfast.top/https://github.com/notaryproject/ratify/archive/refs/tags/v1.4.4.tar.gz"
+  sha256 "e5f2da2e9c43d575faf52e56dfc2d28d3ebb7e09f99e9b541c998b8fe7078f5c"
   license "Apache-2.0"
   head "https://github.com/notaryproject/ratify.git", branch: "main"
 
@@ -14,19 +14,18 @@ class Ratify < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cd75dbe9962fb28d54aecc2772d0e937b35b6d920d4869fe947c3442299e06e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1191698f56e069c13779e17630725c593386b7411e7ae474b003dadb8944cdd1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d21da889107c94e08faa91134f375bc3bd8e13d2251613e1d7835b7edc2f183"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f14cb9b7b319d12a70e20123bd9136744efdcce459c1d2c94251995ecce7c4eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "48bf389165d47ff6e618723d28242666c97c13d2ffd1ebc2ccaf49cf17b024dc"
-    sha256 cellar: :any,                 x86_64_linux:  "4bb660ec7c3f696500f87376f87f987ee3436151c075219d2b6b47363219364f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "600a8fb4cf442e5b299f5c602b856f1e7b9dde6949cedc737eeab470d5970326"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "efcafab70b13423cc9f2e9ed590f48496b51782958e72b1fe866f6f3e8724a2f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17cbc3480343af44511e4795f39b658c37da2c1779f6aa45942ad28f37ec35a6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f818cfce318d6eab9db5eef3b9d40f663173d6a55e078c35e47f8b9cacdcb59b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39ada5c96ade587d3e464328c7dec7b32270017a1c0d11bbd6ea29504522964f"
+    sha256 cellar: :any,                 x86_64_linux:  "c8d24e1b883f36f3ca8096d6dc07a2b9b745e04e789380faf99c729730769dc4"
   end
 
   depends_on "go" => :build
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/ratify-project/ratify/internal/version.GitTag=#{version}
       -X github.com/ratify-project/ratify/internal/version.GitCommitHash=#{tap.user}
     ]

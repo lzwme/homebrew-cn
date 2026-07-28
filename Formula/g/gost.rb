@@ -25,7 +25,7 @@ class Gost < Formula
   conflicts_with "vulsio-gost", because: "both install `gost` binaries"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gost"
+    system "go", "build", *std_go_args, "./cmd/gost"
     prefix.install "README_en.md"
   end
 

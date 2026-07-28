@@ -23,7 +23,6 @@ class RekorCli < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X sigs.k8s.io/release-utils/version.gitVersion=#{version}
       -X sigs.k8s.io/release-utils/version.gitCommit=#{tap.user}
       -X sigs.k8s.io/release-utils/version.gitTreeState=#{tap.user}

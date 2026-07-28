@@ -1,6 +1,6 @@
 cask "maestri" do
-  version "0.35.1"
-  sha256 "dd093cb9f32a0dbb5ee37f724c02910cce51848a8983d22261e86ad4f1d10b7f"
+  version "0.35.3"
+  sha256 "b3750b5a612b2504e7b1cb08677de1906d95ccd0bfc0d35aed47a4d188af1434"
 
   url "https://pub-84eb0b1f3fb3420bbe57a88de7443b71.r2.dev/downloads/Maestri-#{version}.zip",
       verified: "pub-84eb0b1f3fb3420bbe57a88de7443b71.r2.dev/downloads/"
@@ -20,8 +20,10 @@ cask "maestri" do
 
   zap trash: [
     "~/.maestri",
+    "~/Library/Application Support/CrashReporter/Maestri_*.plist",
     "~/Library/Caches/com.evercraftlabs.Maestro",
     "~/Library/HTTPStorages/com.evercraftlabs.Maestro",
+    "~/Library/Logs/DiagnosticReports/Maestri-*.ips",
     "~/Library/Preferences/com.evercraftlabs.Maestro.plist",
   ]
 end

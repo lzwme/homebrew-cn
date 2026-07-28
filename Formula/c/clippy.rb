@@ -17,7 +17,6 @@ class Clippy < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/neilberkman/clippy/cmd/internal/common.Version=#{version}
       -X github.com/neilberkman/clippy/cmd/internal/common.Commit=#{tap.user}
       -X github.com/neilberkman/clippy/cmd/internal/common.Date=#{time.iso8601}

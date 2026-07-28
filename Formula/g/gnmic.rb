@@ -19,7 +19,6 @@ class Gnmic < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/openconfig/gnmic/pkg/version.Version=#{version}
       -X github.com/openconfig/gnmic/pkg/version.Commit=#{tap.user}
       -X github.com/openconfig/gnmic/pkg/version.Date=#{time.iso8601}

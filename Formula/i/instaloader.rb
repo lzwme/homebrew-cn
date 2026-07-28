@@ -3,12 +3,12 @@ class Instaloader < Formula
 
   desc "Download media from Instagram"
   homepage "https://instaloader.github.io/"
-  url "https://files.pythonhosted.org/packages/d3/14/6630c6564fbe3c0768bb2b15d79e2262f77a317067c1620f7b1c55f47cbc/instaloader-4.15.2.tar.gz"
-  sha256 "a4d3f1ef6674b96c471492614848fc3a21fcc87f038f274111a0bd8bfbadb3ca"
+  url "https://files.pythonhosted.org/packages/ee/ea/bb89a72982bdb196f31291a361977c9ab718336e1980cb1c72d445036b6a/instaloader-4.15.3.tar.gz"
+  sha256 "6df0d03397a9606d85930e5c45fe11cb87c07a7c992101247c339fa51f19fa6d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "36ee08e59ff638289b5ff1bd90046aee7ac824ba8afd0a4338bcd657da9b2fea"
+    sha256 cellar: :any_skip_relocation, all: "0c5f762d41d97552fe3133be6dfab95310322c3671bd965bb9879d6697a65e20"
   end
 
   depends_on "certifi" => :no_linkage
@@ -17,8 +17,8 @@ class Instaloader < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "idna" do

@@ -24,7 +24,6 @@ class NodeExporter < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/prometheus/common/version.Version=#{version}
       -X github.com/prometheus/common/version.BuildUser=#{tap.user}
     ]

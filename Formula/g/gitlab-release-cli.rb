@@ -23,7 +23,7 @@ class GitlabReleaseCli < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.VERSION=#{version}"
+    ldflags = "-X main.VERSION=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"release-cli"), "./cmd/release-cli"
   end
 

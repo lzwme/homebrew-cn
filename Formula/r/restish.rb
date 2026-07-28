@@ -30,7 +30,7 @@ class Restish < Formula
       ENV.append "GOFLAGS", "-buildmode=pie"
     end
 
-    ldflags = "-s -w -X github.com/rest-sh/restish/v2/internal/cli.Version=#{version}"
+    ldflags = "-X github.com/rest-sh/restish/v2/internal/cli.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/restish"
 
     generate_completions_from_executable(bin/"restish", shell_parameter_format: :cobra)

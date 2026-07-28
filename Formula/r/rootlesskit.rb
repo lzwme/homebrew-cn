@@ -14,9 +14,8 @@ class Rootlesskit < Formula
   depends_on :linux
 
   def install
-    ldflags = "-s -w"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/rootlesskit"
-    system "go", "build", *std_go_args(ldflags:, output: bin/"rootlessctl"), "./cmd/rootlessctl"
+    system "go", "build", *std_go_args, "./cmd/rootlesskit"
+    system "go", "build", *std_go_args(output: bin/"rootlessctl"), "./cmd/rootlessctl"
     # cmd/rootlesskit-docker-proxy is not installed here, because it has been deprecated
     # since the feature was merged into Docker v28.
     doc.install Dir["docs/*"]

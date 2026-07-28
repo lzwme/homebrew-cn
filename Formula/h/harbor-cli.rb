@@ -19,7 +19,6 @@ class HarborCli < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/goharbor/harbor-cli/cmd/harbor/internal/version.Version=#{version}
       -X github.com/goharbor/harbor-cli/cmd/harbor/internal/version.GoVersion=#{Formula["go"].version}
       -X github.com/goharbor/harbor-cli/cmd/harbor/internal/version.GitCommit=#{tap.user}

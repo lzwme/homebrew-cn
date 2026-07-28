@@ -1,8 +1,8 @@
 class Anubis < Formula
   desc "Protect resources from scraper bots"
   homepage "https://anubis.techaro.lol"
-  url "https://ghfast.top/https://github.com/TecharoHQ/anubis/archive/refs/tags/v1.26.0.tar.gz"
-  sha256 "127f95cd2f52f0fa4d0bd4d4cf8a3328fed6b890bfab4716fd918187e0314a49"
+  url "https://ghfast.top/https://github.com/TecharoHQ/anubis/archive/refs/tags/v1.26.2.tar.gz"
+  sha256 "1a814ac0577f502a06664f49c6d659959a2428813c3e31bf33fc3038deeab700"
   license "MIT"
   head "https://github.com/TecharoHQ/anubis.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Anubis < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7aacd365093d8be1955150ed48eec50d3a7c217dc9ca6090287d6f2e4b015e04"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a919758701e86908142ca47f15c1120242018f80cb6640fb12a552728376be6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a173a2e0c27a1ee846dd0fa6fb35e4590114d04e3323a5bb05ff527ce049aeef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5f119e2f8da2390b2bf11116d818028da7deb37f553423b9249c542a9a138cff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "05dacd6802ba05e64c616b472fff7e7e1e535b798a536e3ad6473e627cf993e6"
-    sha256 cellar: :any,                 x86_64_linux:  "92d09073e9b5de183a5c20e59f32329b8b0259d759e4867c2ba5f05320aeaa31"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b9191fece8bbd62284d9ae22142317b845f98b4e37531b0b70bfe9b934ba5d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3219846fa609d7cc3d63eb2bad95e70b7a10192b5bc914fd0d83d4e0b48000b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2f87b47200eafc857c4914875ba350d8a28d24cd3d8026876af6b399e6e5ba3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f27b43b07d50b4becca5be24451214527068d04f39b33abf41927f7e2e4f30a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "454301a6160a8fba4d7db50e7b83e8f52c2192672a6a2f93c98bc819875b4c9f"
+    sha256 cellar: :any,                 x86_64_linux:  "2be8b332c084280eea9db58e8c383b526f6199273d581f75fd10f5391e67cc82"
   end
 
   depends_on "brotli" => :build

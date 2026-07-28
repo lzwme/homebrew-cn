@@ -26,7 +26,6 @@ class CloudfoundryCli < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X code.cloudfoundry.org/cli/v8/version.binaryVersion=#{version}
       -X code.cloudfoundry.org/cli/v8/version.binarySHA=#{tap.user}
       -X code.cloudfoundry.org/cli/v8/version.binaryBuildDate=#{time.iso8601}

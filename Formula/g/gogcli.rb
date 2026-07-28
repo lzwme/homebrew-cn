@@ -19,7 +19,6 @@ class Gogcli < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/steipete/gogcli/internal/cmd.version=#{version}
       -X github.com/steipete/gogcli/internal/cmd.commit=#{tap.user}
       -X github.com/steipete/gogcli/internal/cmd.date=#{time.iso8601}

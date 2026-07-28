@@ -19,7 +19,6 @@ class Nanobot < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/obot-platform/nanobot/pkg/version.Tag=v#{version}
       -X github.com/obot-platform/nanobot/pkg/version.BaseImage=ghcr.io/nanobot-ai/nanobot:v#{version}
     ]

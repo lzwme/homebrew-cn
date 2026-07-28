@@ -21,7 +21,7 @@ class ChiselTunnel < Formula
   conflicts_with "foundry", because: "both install `chisel` binaries"
 
   def install
-    ldflags = "-s -w -X github.com/jpillora/chisel/share.BuildVersion=v#{version}"
+    ldflags = "-X github.com/jpillora/chisel/share.BuildVersion=v#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"chisel")
   end
 

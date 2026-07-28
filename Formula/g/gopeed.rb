@@ -18,7 +18,7 @@ class Gopeed < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gopeed"
+    system "go", "build", *std_go_args, "./cmd/gopeed"
   end
 
   test do

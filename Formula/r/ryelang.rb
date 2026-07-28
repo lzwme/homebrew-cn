@@ -27,10 +27,7 @@ class Ryelang < Formula
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
 
-    ldflags = %W[
-      -s -w
-      -X github.com/refaktor/rye/runner.Version=#{version}
-    ]
+    ldflags = %W[-X github.com/refaktor/rye/runner.Version=#{version}]
 
     system "go", "build", *std_go_args(ldflags:, output: bin/"rye")
     bin.install_symlink "rye" => "ryelang" # for backward compatibility

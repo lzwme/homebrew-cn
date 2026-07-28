@@ -1,25 +1,24 @@
 class GitPkgs < Formula
   desc "Track package dependencies across git history"
   homepage "https://git-pkgs.dev"
-  url "https://ghfast.top/https://github.com/git-pkgs/git-pkgs/archive/refs/tags/v0.18.1.tar.gz"
-  sha256 "1bc7f875fc3f15481a565233d73dd63e3b1a5dad7d382545cba0552e393939cc"
+  url "https://ghfast.top/https://github.com/git-pkgs/git-pkgs/archive/refs/tags/v0.18.2.tar.gz"
+  sha256 "2180068ae055f8a670f09360e02d19e14120eeeeafc98a94e936dae7706ce2c1"
   license "MIT"
   head "https://github.com/git-pkgs/git-pkgs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8d1b1efa1d43f169986316d56be49d9d9d3ac922978a3df9a9e25407613d19f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8d1b1efa1d43f169986316d56be49d9d9d3ac922978a3df9a9e25407613d19f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8d1b1efa1d43f169986316d56be49d9d9d3ac922978a3df9a9e25407613d19f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a15ec40609121d2311faec0e47ac9d663b3c8b2a9c6c60915430282adb8ea53e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c591500955d3affb260aa93f4cb7be35e85d599354d290b3b25e67903f30139"
-    sha256 cellar: :any,                 x86_64_linux:  "2841da21b9bfa081a5e9993ca0e058ac9efc092ea6d777446d1baa4e3d86d9a0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d25c8c5a489f07f15f7365379f22eb6938e78c8976353ef89ff2eb27c0ebc2b3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d25c8c5a489f07f15f7365379f22eb6938e78c8976353ef89ff2eb27c0ebc2b3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d25c8c5a489f07f15f7365379f22eb6938e78c8976353ef89ff2eb27c0ebc2b3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9a9e1e306f90ff2155cb53437759ac30860c9c4e69d98f37e9ac6bbda48f3dd6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47a02425bfd0434b9b66781050aed6c2dd73261d3b374273953389f98a9f902d"
+    sha256 cellar: :any,                 x86_64_linux:  "820134c29e56b1ac741daccb0c314814b0c008d7bf4688ae17b4b6f423827df8"
   end
 
   depends_on "go" => :build
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/git-pkgs/git-pkgs/cmd.version=#{version}
       -X github.com/git-pkgs/git-pkgs/cmd.commit=HEAD
       -X github.com/git-pkgs/git-pkgs/cmd.date=#{time.iso8601}

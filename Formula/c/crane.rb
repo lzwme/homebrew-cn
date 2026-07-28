@@ -18,10 +18,7 @@ class Crane < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/google/go-containerregistry/cmd/crane/cmd.Version=#{version}
-    ]
+    ldflags = %W[-X github.com/google/go-containerregistry/cmd/crane/cmd.Version=#{version}]
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/crane"
 

@@ -15,7 +15,7 @@ class Nerdctl < Formula
   depends_on :linux
 
   def install
-    ldflags = "-s -w -X github.com/containerd/nerdctl/v#{version.major}/pkg/version.Version=#{version}"
+    ldflags = "-X github.com/containerd/nerdctl/v#{version.major}/pkg/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/nerdctl"
     bin.install Dir["extras/rootless/*"]
     doc.install Dir["docs/*"]

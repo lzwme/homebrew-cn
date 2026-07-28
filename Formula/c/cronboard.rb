@@ -3,17 +3,17 @@ class Cronboard < Formula
 
   desc "Terminal-based dashboard for managing cron jobs locally and on servers"
   homepage "https://cronboard.dev/"
-  url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v0.7.3.tar.gz"
-  sha256 "304de09999002159e9adb142c34b95959e682261beb39b4f0f0453054f7581f4"
+  url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "d80464aa29d6fba1093a0bbfa54eebb881a1b29be20011f5f74aa9e1aa0c3a78"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "fbee7f42352c3ba3567bef5de66523b87c373982a0363156533482b7e5440c58"
-    sha256 cellar: :any, arm64_sequoia: "90f711e4dfdfdadc6ca409068351c127960b205f7edc190118e005978b6439d8"
-    sha256 cellar: :any, arm64_sonoma:  "ab737aa0d09aca8349759fae512a349b114bf10729e10d09df5dae7761e1c518"
-    sha256 cellar: :any, sonoma:        "8946687ca63582d9bdb56ca42a1e9331b56ac9f7d5110548ce7d4465784b61bd"
-    sha256 cellar: :any, arm64_linux:   "44a63fd7c69a00a6ec788618d96655ca2e0ed0f4b998b391aa50f3b21cea9cf1"
-    sha256 cellar: :any, x86_64_linux:  "add8f3dd877c48ca51148d53238530514c30f0fbe4a3b8c0bf94c27ed7bea3da"
+    sha256 cellar: :any, arm64_tahoe:   "90764c3ad6e26dde32dc07b69bb10653f38770d4548c22b68a47050e1b68fdab"
+    sha256 cellar: :any, arm64_sequoia: "9c8aa323f5c019e18aed83e209584e2c6e770f9e9028ceea0c7626c85c7270c5"
+    sha256 cellar: :any, arm64_sonoma:  "4b7e7da904a414f14ba311fc6310957f0d1ffcdb35228d9b8184e1e8d2eaa1f0"
+    sha256 cellar: :any, sonoma:        "f4fb4a5fe85b328f3e3be92581c7796695206edd6329eebf16cc4950d73a18aa"
+    sha256 cellar: :any, arm64_linux:   "3cf7de2e8fec73fec200be5d771e696902ed57a9368fd1e1ce9a8bfcd917db77"
+    sha256 cellar: :any, x86_64_linux:  "bc71c9e41335d7c92d56a0c29768e3f56996c5d50c12a9fee8bcf8a1a818a137"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -71,8 +71,8 @@ class Cronboard < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/52/cd/4f25b2f95b23f5d2c9c1fe43e49841bff5800562149b2666afc09309aa8f/platformdirs-4.10.1.tar.gz"
-    sha256 "ceab4084426fe6319ce18e86deada8ab1b7487c7aee7040c55e277c9ae793695"
+    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
+    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
   end
 
   resource "pygments" do

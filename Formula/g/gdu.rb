@@ -22,7 +22,6 @@ class Gdu < Formula
     major = version.major
 
     ldflags = %W[
-      -s -w
       -X "github.com/dundee/gdu/v#{major}/build.Version=v#{version}"
       -X "github.com/dundee/gdu/v#{major}/build.Time=#{time}"
       -X "github.com/dundee/gdu/v#{major}/build.User=#{user}"

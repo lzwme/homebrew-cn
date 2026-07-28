@@ -19,7 +19,6 @@ class Copa < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/project-copacetic/copacetic/pkg/version.GitVersion=#{version}
       -X github.com/project-copacetic/copacetic/pkg/version.GitCommit=#{tap.user}
       -X github.com/project-copacetic/copacetic/pkg/version.BuildDate=#{time.iso8601}

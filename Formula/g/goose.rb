@@ -20,7 +20,7 @@ class Goose < Formula
   conflicts_with "block-goose-cli", because: "both install `goose` binaries"
 
   def install
-    ldflags = %W[-s -w -X main.version=v#{version}]
+    ldflags = %W[-X main.version=v#{version}]
     system "go", "build", *std_go_args(ldflags:), "./cmd/goose"
   end
 

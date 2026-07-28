@@ -89,7 +89,7 @@ class GlibcAT217 < Formula
   # Backport of:
   # https://sourceware.org/git/?p=glibc.git;a=commit;h=e9177fba13549a8e2a6232f46080e5c6d3e467b1
   patch do
-    url "https://git.centos.org/rpms/glibc/raw/ca483cc5b0e3e6a595a2c103755dee4d72f14f25/f/SOURCES/glibc-rh1500908.patch"
+    url "https://gitlab.com/CentOS/archives/git.centos.org/rpms/glibc/-/raw/fa3bfd60c9d49f3cfd3e29ac36a808ffc0d9cc75/SOURCES/glibc-rh1500908.patch"
     sha256 "48bfb15f5a26161bbef3d58e18d44876a170ddbfcc5922a39c77fd8da9fe68f6"
   end
 

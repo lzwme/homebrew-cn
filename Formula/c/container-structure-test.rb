@@ -20,7 +20,6 @@ class ContainerStructureTest < Formula
   def install
     project = "github.com/GoogleContainerTools/container-structure-test"
     ldflags = %W[
-      -s -w
       -X #{project}/pkg/version.version=#{version}
       -X #{project}/pkg/version.buildDate=#{time.iso8601}
     ]

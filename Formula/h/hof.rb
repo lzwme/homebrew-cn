@@ -36,7 +36,6 @@ class Hof < Formula
     os = OS.kernel_name.downcase
 
     ldflags = %W[
-      -s -w
       -X github.com/hofstadter-io/hof/cmd/hof/verinfo.Version=#{version}
       -X github.com/hofstadter-io/hof/cmd/hof/verinfo.Commit=#{tap.user}
       -X github.com/hofstadter-io/hof/cmd/hof/verinfo.BuildDate=#{time.iso8601}

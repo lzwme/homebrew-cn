@@ -20,10 +20,7 @@ class GoHassAgent < Formula
     system "npm", "run", "build:css"
     ENV["CGO_ENABLED"] = "0"
 
-    ldflags = %W[
-      -s -w
-      -X github.com/joshuar/go-hass-agent/config.AppVersion=#{version}
-    ]
+    ldflags = %W[-X github.com/joshuar/go-hass-agent/config.AppVersion=#{version}]
     system "go", "build", *std_go_args(ldflags:, output: bin/"go-hass-agent")
   end
 
