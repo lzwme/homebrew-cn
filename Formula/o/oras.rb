@@ -24,7 +24,6 @@ class Oras < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X oras.land/oras/internal/version.Version=#{version}
       -X oras.land/oras/internal/version.BuildMetadata=#{tap.user}
     ]

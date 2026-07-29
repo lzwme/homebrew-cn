@@ -1,6 +1,6 @@
 cask "gdevelop" do
-  version "5.6.274"
-  sha256 "7caf6448ba7e12c16de859f745a54044102836599aebc068c308c84ae60bbac8"
+  version "5.6.276"
+  sha256 "c8253683f5249f12528b4b19f736008c3b858e3d0af3c33b3bdfbf093850e19a"
 
   url "https://ghfast.top/https://github.com/4ian/GDevelop/releases/download/v#{version}/GDevelop-#{version.major}-#{version}-universal.dmg",
       verified: "github.com/4ian/GDevelop/"

@@ -20,6 +20,8 @@ class EpicsBase < Formula
   depends_on "perl"
   depends_on "readline"
 
+  conflicts_with "libffcall", because: "both install `callback.h` header"
+
   patch do
     url "https://github.com/epics-base/epics-base/commit/2c4d4714acbfd4ec6a26dcf0d7b9823475251d16.patch?full_index=1"
     sha256 "d71ff147064b3d305365b2e05a7810d3d4beed10692a343b955a76ba13d440eb"

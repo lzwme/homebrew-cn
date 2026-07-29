@@ -20,7 +20,7 @@ class Kubelogin < Formula
 
   def install
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
-    ldflags = "-s -w -X main.version=#{version}"
+    ldflags = "-X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"kubectl-oidc_login")
 
     generate_completions_from_executable(bin/"kubectl-oidc_login", shell_parameter_format: :cobra)

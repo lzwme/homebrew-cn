@@ -1,10 +1,9 @@
 class Htop < Formula
   desc "Improved top (interactive process viewer)"
   homepage "https://htop.dev/"
-  url "https://ghfast.top/https://github.com/htop-dev/htop/archive/refs/tags/3.5.2.tar.gz"
-  sha256 "a66a62bbd1eba59889c68f868b643e53320eea93da19f43ba13c822a826d82ba"
+  url "https://ghfast.top/https://github.com/htop-dev/htop/releases/download/3.5.2/htop-3.5.2.tar.xz"
+  sha256 "225128e697c4a8c8a878fd0078c965ff8bd5fb24913bfc8473b8edbd50f843f8"
   license "GPL-2.0-or-later"
-  head "https://github.com/htop-dev/htop.git", branch: "main"
 
   livecheck do
     url :stable
@@ -20,9 +19,14 @@ class Htop < Formula
     sha256 cellar: :any, x86_64_linux:  "94b1fbc2ed2be30a24ff5c46e80cc0c8b164c176f0a38709b92443ddcf7549a4"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  head do
+    url "https://github.com/htop-dev/htop.git", branch: "main"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
   depends_on "pkgconf" => :build
   depends_on "ncurses" # enables mouse scroll
 
@@ -31,7 +35,7 @@ class Htop < Formula
   end
 
   def install
-    system "./autogen.sh"
+    system "./autogen.sh" if build.head?
     args = ["--prefix=#{prefix}"]
     args << "--enable-sensors" if OS.linux?
     system "./configure", *args

@@ -1,17 +1,17 @@
 class Dicebear < Formula
   desc "CLI for DiceBear - An avatar library for designers and developers"
   homepage "https://www.dicebear.com"
-  url "https://registry.npmjs.org/dicebear/-/dicebear-10.3.0.tgz"
-  sha256 "f5429e21cf6580e2f8624cd20aae776f4c263f5e743f5f75b5f99006c6567837"
+  url "https://registry.npmjs.org/dicebear/-/dicebear-10.3.1.tgz"
+  sha256 "4184a899899ad27da2a77080d0c87003e24acbb99f5a1ca220e75127bee640ce"
   license "MIT"
 
   bottle do
-    sha256               arm64_tahoe:   "2674c4965f61e4a97a51c556239433b8ee96a7996ce0ae0df9d572c00872f75b"
-    sha256               arm64_sequoia: "816f1e45cecb8cf09b1f66976cbbe991b1b07ee43e608f7583d36fbfb0793b40"
-    sha256               arm64_sonoma:  "c21822aa6268db9925be60d0cc19a3266975e981f0a4b152c8ce979751fb73f4"
-    sha256               sonoma:        "26c82f8475e7fbe4a32b595bf94b0112d30cbada4776664886cff6f9500e15ea"
-    sha256 cellar: :any, arm64_linux:   "c3a63e0374669fd207c71f8707bfce3c342d73483203dc0d9bb584bddbc9a9e2"
-    sha256 cellar: :any, x86_64_linux:  "f1fa8dec1ea89119107243ee47c940cd55eae6c49c5d892b304a5618d348da15"
+    sha256               arm64_tahoe:   "627b1a6c5777d4c331933f5756bce8425ae1548902ab968a1a9b731f8a2b2189"
+    sha256               arm64_sequoia: "5473b677363486d91cc6c8fec4629f520066a80934dbd59d5dfa31060f248680"
+    sha256               arm64_sonoma:  "147160bea13d297d4765f3bce27dad7461781d7dccc865e758adf869bc28be2a"
+    sha256               sonoma:        "d7c6a643060401250d14880270ab5bb2c08c0f33f05b7d58cf9fa8fdc857ef5c"
+    sha256 cellar: :any, arm64_linux:   "194d9ffcf032a10d689ccb9b24a044f30dd5c6a3775e4870f8ee28cbfaa100a0"
+    sha256 cellar: :any, x86_64_linux:  "220cb07b4b6d65e058e4c340b84e68418e50b76a8d3abd84aa72f9a7f7ac22ee"
   end
 
   depends_on "pkgconf" => :build
@@ -26,13 +26,13 @@ class Dicebear < Formula
   # Resources needed to build sharp from source to avoid bundled vips
   # https://sharp.pixelplumbing.com/install/#building-from-source
   resource "node-addon-api" do
-    url "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.8.0.tgz"
-    sha256 "72528f1a8235a8bc19855e21cc5ae28252c276338afa73887dc7e54515bc76c5"
+    url "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.9.0.tgz"
+    sha256 "19b87e2ce3a77fec0121ac97d7db088aae28aacfff481adab50d5f61b70e68f4"
   end
 
   resource "node-gyp" do
-    url "https://registry.npmjs.org/node-gyp/-/node-gyp-12.3.0.tgz"
-    sha256 "d209963f2b21fd5f6fad1f6341897a98fc8fd53025da36b319b92ebd497f6379"
+    url "https://registry.npmjs.org/node-gyp/-/node-gyp-13.0.1.tgz"
+    sha256 "455327cde805c299d5a16603419e106853db5b9257dfb85e44eb7f4ec4d99de5"
   end
 
   def install
@@ -41,7 +41,9 @@ class Dicebear < Formula
     bin.install_symlink libexec.glob("bin/*")
 
     # Remove prebuilts which still get installed as optional dependencies
-    rm_r(libexec.glob("lib/node_modules/dicebear/node_modules/@img/sharp-*"))
+    node_modules = libexec/"lib/node_modules/dicebear/node_modules"
+    rm_r(node_modules.glob("@img/shar-*"))
+    cd(node_modules/"sharp") { system "npm", "run", "build" }
   end
 
   test do

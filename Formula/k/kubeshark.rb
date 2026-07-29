@@ -27,7 +27,6 @@ class Kubeshark < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X "github.com/kubeshark/kubeshark/misc.Platform=#{OS.kernel_name}_#{Hardware::CPU.arch}"
       -X "github.com/kubeshark/kubeshark/misc.BuildTimestamp=#{time}"
       -X "github.com/kubeshark/kubeshark/misc.Ver=v#{version}"

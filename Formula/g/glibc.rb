@@ -47,15 +47,15 @@ class Glibc < Formula
   mirror "https://ftp.gnu.org/gnu/glibc/glibc-2.39.tar.gz"
   sha256 "97f84f3b7588cd54093a6f6389b0c1a81e70d99708d74963a2e3eab7c7dc942d"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  revision 1
 
   livecheck do
     skip "glibc is pinned to the version present in Homebrew CI"
   end
 
   bottle do
-    rebuild 3
-    sha256 arm64_linux:  "bfa9cd9183c8a847587a2eaf95f7067b954839338cd7dc027e78efe944598a7f"
-    sha256 x86_64_linux: "7f3f8e5a994b15c20141e4884a41abaf093cabe1b172ed6de603781ba4088738"
+    sha256 arm64_linux:  "38603dc6fd8345dc57c4b6c6ca6b378a09fb9041ae85fd88b6d814e03927e0e8"
+    sha256 x86_64_linux: "f1db9e3af712f4867410d083810f0a5ae066705b7627d2babdda8b8c42d6cb98"
   end
 
   keg_only "it can shadow system glibc if linked"
@@ -144,10 +144,14 @@ class Glibc < Formula
 
   # Apply CVE patches from Ubuntu
   patch do
-    url "https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.39-0ubuntu8.7.debian.tar.xz"
-    mirror "https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/glibc/2.39-0ubuntu8.7/glibc_2.39-0ubuntu8.7.debian.tar.xz"
-    sha256 "9642284fbb90ca3b56af777e3e5d6989bf3f80ba5d0c37c4ec0c94fb37912b70"
+    url "https://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.39-0ubuntu8.8.debian.tar.xz"
+    mirror "https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/glibc/2.39-0ubuntu8.8/glibc_2.39-0ubuntu8.8.debian.tar.xz"
+    sha256 "ff1aa3bb3eba4f302a99c9b957cacff6d79f26e9b0e663e379bf70a4f39d4283"
     type :backport
+    resolves "CVE-2024-2961", "CVE-2024-33599", "CVE-2024-33600", "CVE-2024-33601", "CVE-2024-33602",
+             "CVE-2025-0395", "CVE-2025-5702", "CVE-2025-8058", "CVE-2025-15281",
+             "CVE-2026-0861", "CVE-2026-0915", "CVE-2026-4046", "CVE-2026-4437", "CVE-2026-4438",
+             "CVE-2026-5435", "CVE-2026-5450", "CVE-2026-5928", "CVE-2026-6238"
     apply "patches/any/CVE-2024-2961.patch",
           "patches/any/CVE-2024-33599.patch",
           "patches/any/CVE-2024-33600_1.patch",
@@ -158,7 +162,18 @@ class Glibc < Formula
           "patches/any/CVE-2025-8058.patch",
           "patches/CVE-2025-15281.patch",
           "patches/CVE-2026-0861.patch",
-          "patches/CVE-2026-0915.patch"
+          "patches/CVE-2026-0915.patch",
+          "patches/CVE-2026-4046.patch",
+          "patches/CVE-2026-5450.patch",
+          "patches/CVE-2026-5928.patch",
+          "patches/CVE-2026-6238-pre1.patch",
+          "patches/CVE-2026-6238-pre2.patch",
+          "patches/CVE-2026-6238-pre3.patch",
+          "patches/CVE-2026-6238-pre4.patch",
+          "patches/CVE-2026-5435.patch",
+          "patches/CVE-2026-6238-1.patch",
+          "patches/CVE-2026-6238-2.patch",
+          "patches/CVE-2026-443x.patch"
   end
 
   # Backport of various test suite fixes

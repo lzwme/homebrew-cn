@@ -18,7 +18,7 @@ class Kubefwd < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.Version=#{version}"
+    ldflags = "-X main.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/kubefwd"
 
     generate_completions_from_executable(bin/"kubefwd", shell_parameter_format: :cobra)

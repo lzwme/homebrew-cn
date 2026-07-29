@@ -18,7 +18,7 @@ class Okteto < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/okteto/okteto/pkg/config.VersionString=#{version}"
+    ldflags = "-X github.com/okteto/okteto/pkg/config.VersionString=#{version}"
     tags = "osusergo netgo static_build"
     system "go", "build", *std_go_args(ldflags:, tags:)
 

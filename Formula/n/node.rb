@@ -4,6 +4,7 @@ class Node < Formula
   url "https://registry.npmmirror.com/-/binary/node/v26.5.0/node-v26.5.0.tar.xz"
   sha256 "0e179470097e247a0c0769b77cc1359fc3e1baf0686df89bafe1fb48cb1887f4"
   license "MIT"
+  revision 1
   compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -13,12 +14,12 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "05357c510f3dd0330b4cdea26e7ae406cfb55d88834ef83ecd5e3b7418b6ff37"
-    sha256 arm64_sequoia: "1bfa4fb49336b52433ae3afab270991b5fd25b7132b82a164d1d1b91e0272316"
-    sha256 arm64_sonoma:  "c53c29ad81110180fb9f04d4e6e8dce1a240984fcc917e6895fd0d64a2f4c066"
-    sha256 sonoma:        "af22f043c5d834672095dc8871c88b71c1938c35c451f1fe69af1b068f32fc70"
-    sha256 arm64_linux:   "e6b70f0acccfb0aafc878d05948480feea9945a66c70572ac68069baafd7ff0a"
-    sha256 x86_64_linux:  "d8db2eb60f7f3fcaedc98377f779b1a0826362bf493f362ee1de1880b2c776df"
+    sha256 arm64_tahoe:   "99e8a4664e76587d2118cdb27c677130bc7ef83d125124e61e524570b0bdcb03"
+    sha256 arm64_sequoia: "4be61db9edfacd66474bb7c336550c814f13107f63bbed66f4d449bf7e5694a2"
+    sha256 arm64_sonoma:  "5c248c90e7d5af5944e2cf3bbfc4af209db80ec8caa42da83b6c29acb4df0e7b"
+    sha256 sonoma:        "904a9e90420212949d74d0b0afeef499f397672863d3e3ce131b9eb3712c8198"
+    sha256 arm64_linux:   "d1b30ee20dd655520c7ae78f2ce7ec8bc781f3d5f1de63656b61560669d7e8b4"
+    sha256 x86_64_linux:  "e516682759429bcfb6db3d1c8423da4bf53a1f1416c5949b98c83360fb5f3ff7"
   end
 
   depends_on "pkgconf" => :build

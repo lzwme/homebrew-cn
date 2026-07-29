@@ -19,7 +19,6 @@ class Karmadactl < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/karmada-io/karmada/pkg/version.gitVersion=#{version}
       -X github.com/karmada-io/karmada/pkg/version.gitCommit=
       -X github.com/karmada-io/karmada/pkg/version.gitTreeState=clean

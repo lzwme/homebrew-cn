@@ -24,7 +24,7 @@ class Oasdiff < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/oasdiff/oasdiff/build.Version=#{version}"
+    ldflags = "-X github.com/oasdiff/oasdiff/build.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"oasdiff", shell_parameter_format: :cobra)

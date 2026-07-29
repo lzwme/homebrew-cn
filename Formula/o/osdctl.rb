@@ -22,7 +22,6 @@ class Osdctl < Formula
     ENV["GOFLAGS"] = "-mod=readonly"
 
     ldflags = %W[
-      -s -w
       -X github.com/openshift/osdctl/pkg/utils.Version=#{version}
       -X github.com/openshift/osdctl/pkg/utils.InstallMethod=homebrew
     ]

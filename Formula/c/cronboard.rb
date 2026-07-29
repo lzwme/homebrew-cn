@@ -3,17 +3,17 @@ class Cronboard < Formula
 
   desc "Terminal-based dashboard for managing cron jobs locally and on servers"
   homepage "https://cronboard.dev/"
-  url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "d80464aa29d6fba1093a0bbfa54eebb881a1b29be20011f5f74aa9e1aa0c3a78"
+  url "https://ghfast.top/https://github.com/antoniorodr/cronboard/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "db467c4d36fa372470ff07035b2072d81863079c99e6947c9b93959703bc6e8a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "90764c3ad6e26dde32dc07b69bb10653f38770d4548c22b68a47050e1b68fdab"
-    sha256 cellar: :any, arm64_sequoia: "9c8aa323f5c019e18aed83e209584e2c6e770f9e9028ceea0c7626c85c7270c5"
-    sha256 cellar: :any, arm64_sonoma:  "4b7e7da904a414f14ba311fc6310957f0d1ffcdb35228d9b8184e1e8d2eaa1f0"
-    sha256 cellar: :any, sonoma:        "f4fb4a5fe85b328f3e3be92581c7796695206edd6329eebf16cc4950d73a18aa"
-    sha256 cellar: :any, arm64_linux:   "3cf7de2e8fec73fec200be5d771e696902ed57a9368fd1e1ce9a8bfcd917db77"
-    sha256 cellar: :any, x86_64_linux:  "bc71c9e41335d7c92d56a0c29768e3f56996c5d50c12a9fee8bcf8a1a818a137"
+    sha256 cellar: :any, arm64_tahoe:   "995c0c0f9556509f6d943e5dd9482fec2101319807258b6918b9ce5b8624a4fe"
+    sha256 cellar: :any, arm64_sequoia: "3cf0cc5d139fd00016b7979d30b24d79418fc5b73bdf773405329fb75d5e4f0c"
+    sha256 cellar: :any, arm64_sonoma:  "083bed9131a6b2e899fe6600ba10bd31b8d76ff9ceb98f47d27e1181a3550a42"
+    sha256 cellar: :any, sonoma:        "700f4b9341d2377e75e7d915e8306e6e50628d3bd52e6ac17639479c35ec1e1c"
+    sha256 cellar: :any, arm64_linux:   "1bf4835f9eb53423a936303c1687aea66052673df682b55f1bcd7477e358dee8"
+    sha256 cellar: :any, x86_64_linux:  "af37e0631fb5725a497635d8b0bd43bd7646fda817c1d94afaf1f9c88dc5a88b"
   end
 
   # `pkgconf` and `rust` are for bcrypt

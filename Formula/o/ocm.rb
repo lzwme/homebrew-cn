@@ -18,8 +18,7 @@ class Ocm < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/ocm"
+    system "go", "build", *std_go_args, "./cmd/ocm"
     generate_completions_from_executable(bin/"ocm", shell_parameter_format: :cobra)
   end
 

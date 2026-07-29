@@ -1,35 +1,12 @@
 cask "t3-code@nightly" do
-  arch arm: "arm64", intel: "x64"
+  arch arm: "arm64", intel: on_system_conditional(macos: "x64", linux: "x86_64")
+  os macos: "dmg", linux: "AppImage"
 
-  version "0.0.30-nightly.20260728.928"
-
-  artifact = on_system_conditional linux: "T3-Code-#{version}-x86_64.AppImage",
-                                   macos: "T3-Code-#{version}-#{arch}.dmg"
-
-  url "https://ghfast.top/https://github.com/pingdotgg/t3code/releases/download/v#{version}/#{artifact}",
-      verified: "github.com/pingdotgg/t3code/"
-  name "T3 Code Nightly"
-  desc "Minimal GUI for AI code agents"
-  homepage "https://t3.codes/"
-
-  livecheck do
-    url "https://github.com/pingdotgg/t3code/releases"
-    regex(/(\d+(?:\.\d+)+-nightly\.\d{8}\.\d+)$/i)
-    strategy :github_releases do |json, regex|
-      json.map do |release|
-        next unless release["prerelease"]
-
-        match = release["tag_name"]&.match(regex)
-        next if match.blank?
-
-        match[1]
-      end
-    end
-  end
+  version "0.0.30-nightly.20260729.938"
 
   on_macos do
-    sha256 arm:   "dcf85206b77baeb05935c6adaa8454409138356c5b1ec19df53bd407af193752",
-           intel: "9d4800c76c8c11c49b49520d16d08794f9cd12bd9a80424d64b8f5d4b1e93cde"
+    sha256 arm:   "969b733f2b2e578a3b8d5efb1150951b7cb51df6c401b14bb6f0bc6c390dfebe",
+           intel: "4f958adbd26e00f19287365d76d37a4ed5862522d88767c8bdfde5cbd3fe8d03"
 
     auto_updates true
     depends_on macos: :monterey
@@ -47,11 +24,31 @@ cask "t3-code@nightly" do
       "~/Library/Saved Application State/com.t3tools.t3code.savedState",
     ]
   end
-
   on_linux do
-    sha256 "5a3c4a551f3c9a9f7efd1c97a5c6a328f2ec1d4c7b0f598fbb1dca67a67373e7"
+    sha256 "6eecd43f35a7e5295ef63ab5b559c8612d46191a335a16bd8c017c587445878e"
 
     depends_on arch: :x86_64
-    app_image artifact, target: "T3 Code Nightly.AppImage"
+
+    app_image "T3-Code-#{version}-#{arch}.AppImage", target: "T3 Code Nightly.AppImage"
+  end
+
+  url "https://ghfast.top/https://github.com/pingdotgg/t3code/releases/download/v#{version}/T3-Code-#{version}-#{arch}.#{os}"
+  name "T3 Code Nightly"
+  desc "Minimal GUI for AI code agents"
+  homepage "https://t3.codes/"
+
+  livecheck do
+    url "https://github.com/pingdotgg/t3code/releases"
+    regex(/(\d+(?:\.\d+)+-nightly\.\d{8}\.\d+)$/i)
+    strategy :github_releases do |json, regex|
+      json.map do |release|
+        next unless release["prerelease"]
+
+        match = release["tag_name"]&.match(regex)
+        next if match.blank?
+
+        match[1]
+      end
+    end
   end
 end

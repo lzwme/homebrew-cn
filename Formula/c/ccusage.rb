@@ -1,23 +1,23 @@
 class Ccusage < Formula
   desc "CLI tool for analyzing Claude Code usage from local JSONL files"
   homepage "https://github.com/ccusage/ccusage"
-  url "https://ghfast.top/https://github.com/ccusage/ccusage/archive/refs/tags/v20.0.18.tar.gz"
-  sha256 "464b060118cfae0d4b96e0a6979d306389ebf9d84ceef5967deaf9b3b142f653"
+  url "https://ghfast.top/https://github.com/ccusage/ccusage/archive/refs/tags/v20.0.19.tar.gz"
+  sha256 "581d3e1d061b21b85ec3ca70eefb777b79b09af526ce1ac83b51a217042ebe5b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5eddaaa4bbe2fba5a4823e9b7bde697962c96f8fd94b6dd39bc6ee62173ff95d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31917d5c448d2f2e4c2c8ae7adeec0a88625d2eae1a9e7e07b87c7a54f0fec1c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd511aca4f6251a939874df124b8098365cd19a738c2a662287ad9de95ff6dd0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a1cf6c6bc0b56a5cd97530da3e1e742444947c8e08f1702e04e213f9c31c9963"
-    sha256 cellar: :any,                 arm64_linux:   "752463a7ba1ed30ed6832bf5aa9a0a4e12bd19a43bd41f844fe28d85cad70e1c"
-    sha256 cellar: :any,                 x86_64_linux:  "59fda055aeae4c8d59f93fd0dd825addf71522954f154cc22837346de03e0cb3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "adf9f9c917e7c17d2390d75f0b170e3de1a2be78ce63f794b8eb3fb495eff032"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c0359794a105ee2411eb71a8b82faf153add5f62367288fda8e7e22766eec62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0eb021cfe064bd69ec96a4b80ec04027029e23bc7373762ef17a6aca0fb551dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7d77e8f17e5909cd3147dd9bff9b39c3ca2b24e0bdac44620f624456df9ea509"
+    sha256 cellar: :any,                 arm64_linux:   "769bb07c8891a2c939d11a4965cf54939701c6b2a0234a8040e65a24940c4d3f"
+    sha256 cellar: :any,                 x86_64_linux:  "97f78c8bf9842fc0c7c46a4cd50b9f9ebdf1d9d7daa15615e130472dcc546c08"
   end
 
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "rust/crates/ccusage")
+    system "cargo", "install", *std_cargo_args(path: "rust/crates/ccusage", features: "fetch-litellm-pricing")
   end
 
   test do

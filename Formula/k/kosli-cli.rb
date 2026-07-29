@@ -1,8 +1,8 @@
 class KosliCli < Formula
   desc "CLI for managing Kosli"
   homepage "https://docs.kosli.com"
-  url "https://ghfast.top/https://github.com/kosli-dev/cli/archive/refs/tags/v2.34.0.tar.gz"
-  sha256 "67972cd6f6a2eb88f3b173372595fba4f01055b87e9971d1976190355a3d1450"
+  url "https://ghfast.top/https://github.com/kosli-dev/cli/archive/refs/tags/v2.36.0.tar.gz"
+  sha256 "a7fc752afb68a909fa8d42bfa527fc44455000a089eb7448dcf264c3950ab797"
   license "MIT"
   head "https://github.com/kosli-dev/cli.git", branch: "main"
 
@@ -12,19 +12,18 @@ class KosliCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "499600a60e5455833d5b8b82dfa0ee045b09b95a37ecea9f46623c1e8a100f84"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2d427747a7ec2f4694b68b28a060ad8b8d4897d5b6cf1a65c0855ce815b0c99"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57a390c79e451048f4e0786f04ae7b57fcfa1dce0910eab1a91cbd4367f83b14"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3502a3825628dc31b57de6108a039e058c4a272a4a8fad9ee2e0df14d2244557"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f40df188a268378ba94d41f6252d3380e463d09b02b772b49c558430ee2467e4"
-    sha256 cellar: :any,                 x86_64_linux:  "cff1cebe9219d941f7cb36d5fda20a8d025e52e938155ecd9f6195abe69d795c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73812021c09e2168656f2ac81c58b1480d6d99181347e1c810c6b81fd8c2e913"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1fac34fd450f47f046e9dbb07aced2dc6e88dbaa0a49acc33e4f1a24103fa88"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da169581cf19e52676acf38688b8b107e8f0398887367905b50eba459e676097"
+    sha256 cellar: :any_skip_relocation, sonoma:        "de71fee0beb2a100c7d47b1ef69d2fdbb50f867603ed3f09b1d2113cfd00d94e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc5f2f6c3ca830d2a1f866783beb3f6e953b97b5009a852b300ac42e217f43f0"
+    sha256 cellar: :any,                 x86_64_linux:  "13e3248d8e55e57ed4a2dacafe3e7f735b82cdcd480df33cc6c6fc72c9a1f519"
   end
 
   depends_on "go" => :build
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/kosli-dev/cli/internal/version.version=#{version}
       -X github.com/kosli-dev/cli/internal/version.gitCommit=#{tap.user}
       -X github.com/kosli-dev/cli/internal/version.gitTreeState=clean

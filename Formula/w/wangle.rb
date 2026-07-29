@@ -1,19 +1,19 @@
 class Wangle < Formula
   desc "Modular, composable client/server abstractions framework"
   homepage "https://github.com/facebook/wangle"
-  url "https://ghfast.top/https://github.com/facebook/wangle/archive/refs/tags/v2026.07.20.00.tar.gz"
-  sha256 "34b2875145341cf202e0d5e4596722f9061144eb623ce0f303fa8d964ef08514"
+  url "https://ghfast.top/https://github.com/facebook/wangle/archive/refs/tags/v2026.07.27.00.tar.gz"
+  sha256 "308f7205e7840eca987d953549336835a3bd7e29f6b5697e44eeaf50d56ca4ca"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/wangle.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d434ba81edae35450e5a0b3d575901c28d2b58d4e07c0f5e09b1ca07cdcc56ca"
-    sha256 cellar: :any, arm64_sequoia: "ffc443b0f2fe2c8a352d881b77cc6af3b9a61aec7d49292f59a01d84cdb51ed3"
-    sha256 cellar: :any, arm64_sonoma:  "0138a42a8e95db645e85448f293688de85f2eaeaec60c4254c219ba0dcba3fa3"
-    sha256 cellar: :any, sonoma:        "97323ec10940ffdd7b8240dae500a753abef5402f08f228e8d0a45aebfc307d0"
-    sha256 cellar: :any, arm64_linux:   "d437b811d2a2b6a4f9a29903198f2a50b22e2a2c544c98b09c36838548dc7f6b"
-    sha256 cellar: :any, x86_64_linux:  "b56ec4d83c36787ae483ce5f254eb0682c32d4c535bc76b40d36d35cbd06c737"
+    sha256 cellar: :any, arm64_tahoe:   "6986b7db7544f902675204e5c03d9771abf6fb2a422b2c2ae44b2ffe2ce3f014"
+    sha256 cellar: :any, arm64_sequoia: "9707ee79a12672f2ea69460a5ac8d51d9d2da9dd69ccfbda0604e82701676c88"
+    sha256 cellar: :any, arm64_sonoma:  "8fb5200b73a39e2f5aae9c8a28bfc0af94fb9ab0b27b179153413d62636cbcc3"
+    sha256 cellar: :any, sonoma:        "5b296934e1f83a7a338e0bee70de412d1f9e3950c343ad533c3678ea05a5ecdf"
+    sha256 cellar: :any, arm64_linux:   "3a9c0f847eb6c479111ce27fb0caed5304c2e67455439973bcbebd2e45d73758"
+    sha256 cellar: :any, x86_64_linux:  "9766e9dbe9afb23b931311813633e03b571ffae73fe55459ff5cb7e5850e8982"
   end
 
   depends_on "cmake" => [:build, :test]

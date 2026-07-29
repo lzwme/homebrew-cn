@@ -19,7 +19,6 @@ class Oasis < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/oasisprotocol/cli/version.Software=#{version}
       -X github.com/oasisprotocol/cli/cmd.DisableUpdateCmd=true
     ]

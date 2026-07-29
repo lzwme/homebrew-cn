@@ -20,7 +20,6 @@ class KubectlCnpg < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/cloudnative-pg/cloudnative-pg/pkg/versions.buildVersion=#{version}
       -X github.com/cloudnative-pg/cloudnative-pg/pkg/versions.buildCommit=#{Utils.git_head}
       -X github.com/cloudnative-pg/cloudnative-pg/pkg/versions.buildDate=#{time.iso8601}

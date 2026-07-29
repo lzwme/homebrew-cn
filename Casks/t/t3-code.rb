@@ -1,25 +1,12 @@
 cask "t3-code" do
-  arch arm: "arm64", intel: "x64"
+  arch arm: "arm64", intel: on_system_conditional(macos: "x64", linux: "x86_64")
+  os macos: "dmg", linux: "AppImage"
 
-  version "0.0.29"
-
-  artifact = on_system_conditional linux: "T3-Code-#{version}-x86_64.AppImage",
-                                   macos: "T3-Code-#{version}-#{arch}.dmg"
-
-  url "https://ghfast.top/https://github.com/pingdotgg/t3code/releases/download/v#{version}/#{artifact}",
-      verified: "github.com/pingdotgg/t3code/"
-  name "T3 Code"
-  desc "Minimal GUI for AI code agents"
-  homepage "https://t3.codes/"
-
-  livecheck do
-    url :url
-    strategy :github_latest
-  end
+  version "0.0.30"
 
   on_macos do
-    sha256 arm:   "f50f4f33dc1b70369a16c97309bfc9a534a9eaddabad7b8040b2e891538ddf32",
-           intel: "e1f89635435922c87150da41d2d69abe5d69b60fba6678be62c36fae24af7a05"
+    sha256 arm:   "1c481ac4d1175e387137ee40bfe6bdec329b3bec7933c561e9919e7cac8b1202",
+           intel: "ef7a42a12c45f8c94bad4aa42e8f4d1d893931e832dcc98de55e3d70a6c96e7c"
 
     auto_updates true
     depends_on macos: :monterey
@@ -28,6 +15,7 @@ cask "t3-code" do
 
     zap trash: [
       "~/.t3/userdata",
+      "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.t3tools.t3code.sfl*",
       "~/Library/Application Support/T3 Code (Alpha)",
       "~/Library/Caches/com.t3tools.t3code",
       "~/Library/HTTPStorages/com.t3tools.t3code",
@@ -35,11 +23,21 @@ cask "t3-code" do
       "~/Library/Saved Application State/com.t3tools.t3code.savedState",
     ]
   end
-
   on_linux do
-    sha256 "4274f6b6aa36ef1946d4a1c95e32653481007c00d09df727aa31aa6e9c9ffbc9"
+    sha256 "090349521e21476e330f17052c5d46c25a0f3f564a3f766237f57f2497bc0d8b"
 
     depends_on arch: :x86_64
-    app_image artifact, target: "T3 Code.AppImage"
+
+    app_image "T3-Code-#{version}-#{arch}.AppImage", target: "T3 Code.AppImage"
+  end
+
+  url "https://ghfast.top/https://github.com/pingdotgg/t3code/releases/download/v#{version}/T3-Code-#{version}-#{arch}.#{os}"
+  name "T3 Code"
+  desc "Minimal GUI for AI code agents"
+  homepage "https://t3.codes/"
+
+  livecheck do
+    url :url
+    strategy :github_latest
   end
 end

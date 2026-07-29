@@ -19,7 +19,6 @@ class Kubeone < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X k8c.io/kubeone/pkg/cmd.version=#{version}
       -X k8c.io/kubeone/pkg/cmd.date=#{time.iso8601}
     ]

@@ -19,6 +19,10 @@ class PythonGdbmAT314 < Formula
     sha256               x86_64_linux:  "6c6c6ec275c0044dc9c67fae7aec966d9d7c88fd140ff7d4e0065655a425e6d1"
   end
 
+  # https://devguide.python.org/versions/#versions
+  deprecate! date: "2030-11-01", because: :deprecated_upstream
+  disable! date: "2031-11-01", because: :deprecated_upstream
+
   depends_on "gdbm"
   depends_on "python@3.14"
 

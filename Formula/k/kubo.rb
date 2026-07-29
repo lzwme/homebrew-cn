@@ -26,7 +26,7 @@ class Kubo < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/ipfs/kubo.CurrentCommit=#{tap.user}"
+    ldflags = "-X github.com/ipfs/kubo.CurrentCommit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"ipfs"), "./cmd/ipfs"
 
     generate_completions_from_executable(bin/"ipfs", "commands", "completion")

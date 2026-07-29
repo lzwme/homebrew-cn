@@ -27,7 +27,6 @@ class Kyverno < Formula
   def install
     project = "github.com/kyverno/kyverno"
     ldflags = %W[
-      -s -w
       -X #{project}/pkg/version.BuildVersion=#{version}
       -X #{project}/pkg/version.BuildHash=
       -X #{project}/pkg/version.BuildTime=#{time.iso8601}

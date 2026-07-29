@@ -1,8 +1,8 @@
 class Librist < Formula
   desc "Reliable Internet Stream Transport (RIST)"
   homepage "https://code.videolan.org/rist/"
-  url "https://code.videolan.org/rist/librist/-/archive/v0.2.18/librist-v0.2.18.tar.gz"
-  sha256 "9a2d16dcdb9fb067b7ba4259a3976ff6f8df9a62dbec7f32f19a0b60ec0c114a"
+  url "https://code.videolan.org/rist/librist/-/archive/v0.2.19/librist-v0.2.19.tar.gz"
+  sha256 "ad084179295ea3a53ee62f18dda8752825300b40c41c91c215e0624907514246"
   license "BSD-2-Clause"
   compatibility_version 1
   head "https://code.videolan.org/rist/librist.git", branch: "master"
@@ -13,12 +13,12 @@ class Librist < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "be4a67893095c87d73628c4d9f3587c73bf793430f6aeb445e7c46b8040dd5e5"
-    sha256 cellar: :any, arm64_sequoia: "0befdedc19c37849ec129514c4dcbc26e839696895c665c88ffaa787caf46aeb"
-    sha256 cellar: :any, arm64_sonoma:  "848b4ce7b472952f3cb469e72e4b42988a3aef546878e26321160b5cfa5e7c1e"
-    sha256 cellar: :any, sonoma:        "f53d7747637e06716712cd427ca5530c5b57025b9bfd487559c45eb43f5471fe"
-    sha256               arm64_linux:   "10a21b4a0a9c5ca957196faed37c411f346fd613c9bb051dc3565d88100e9473"
-    sha256               x86_64_linux:  "556ab49bbde1dd93ae1e2842d2c101d3268aea2082a1dbbc85e5bb109ff6ce69"
+    sha256 cellar: :any, arm64_tahoe:   "5d7a94c664a149243fdb2dbc0f87c8aa68570c9307929c8baf5fcc89d7a37f55"
+    sha256 cellar: :any, arm64_sequoia: "eecd7e90448633ff9ab4082d42b49ebc50eae848cfc9db2dfc84d758fe73b35b"
+    sha256 cellar: :any, arm64_sonoma:  "d03fa7b031cf5ae0c30dbfd4cab4d4caf3ae1ee5c80ae58b6402e17b54957df2"
+    sha256 cellar: :any, sonoma:        "944dcd248fa72a0bff467826fd32acfe31ec533d3a32750fe51fedf564004e33"
+    sha256               arm64_linux:   "2b14928ea2b38464542f0ee02c9ef92804b8480266fde00f277faba9484b5836"
+    sha256               x86_64_linux:  "2986de8f579da1ac07e2359ed05d445264c8cfa704538643ac58c22993f5645e"
   end
 
   depends_on "meson" => :build

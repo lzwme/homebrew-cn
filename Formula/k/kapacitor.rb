@@ -57,14 +57,8 @@ class Kapacitor < Formula
     end
     ENV.prepend_path "PATH", buildpath/"bootstrap"
 
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-      -X main.commit=#{Utils.git_head}
-    ]
-
-    system "go", "build", *std_go_args(ldflags:), "./cmd/kapacitor"
-    system "go", "build", *std_go_args(ldflags:, output: bin/"kapacitord"), "./cmd/kapacitord"
+    system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/kapacitor"
+    system "go", "build", *std_go_args(ldflags: :goreleaser, output: bin/"kapacitord"), "./cmd/kapacitord"
 
     inreplace "etc/kapacitor/kapacitor.conf" do |s|
       s.gsub! "/var/lib/kapacitor", "#{var}/kapacitor"

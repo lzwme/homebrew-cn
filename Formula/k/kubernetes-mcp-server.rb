@@ -19,7 +19,6 @@ class KubernetesMcpServer < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/containers/kubernetes-mcp-server/pkg/version.CommitHash=#{tap.user}
       -X github.com/containers/kubernetes-mcp-server/pkg/version.BuildTime=#{time.iso8601}
       -X github.com/containers/kubernetes-mcp-server/pkg/version.Version=#{version}

@@ -18,6 +18,10 @@ class PythonTkAT314 < Formula
     sha256               x86_64_linux:  "af2eb8c451104069ebf7e6f4c919af096bf3a1c6c684e29ba1ebb65cbcbadedb"
   end
 
+  # https://devguide.python.org/versions/#versions
+  deprecate! date: "2030-11-01", because: :deprecated_upstream
+  disable! date: "2031-11-01", because: :deprecated_upstream
+
   depends_on "python@3.14"
   depends_on "tcl-tk"
 

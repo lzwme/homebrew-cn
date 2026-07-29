@@ -1,18 +1,18 @@
 class Scrutineer < Formula
   desc "Security through scrutiny"
   homepage "https://github.com/alpha-omega-security/scrutineer"
-  url "https://ghfast.top/https://github.com/alpha-omega-security/scrutineer/archive/refs/tags/v2026.07.14.1.tar.gz"
-  sha256 "aff18ba7b7a62696d9d0ca2124ac0efd2b62d05b5abebfe27a1270ce5a9fd3d6"
+  url "https://ghfast.top/https://github.com/alpha-omega-security/scrutineer/archive/refs/tags/v2026.07.28.1.tar.gz"
+  sha256 "407d3f5893d323bfa47898ef5edfa5c90f3b38bb49154f61fead9c5889f62b65"
   license "MIT"
   head "https://github.com/alpha-omega-security/scrutineer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8fea6e1fdf62bc39531af899157aae6df84013ddbf103059d947df171e7a7ee1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fea6e1fdf62bc39531af899157aae6df84013ddbf103059d947df171e7a7ee1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8fea6e1fdf62bc39531af899157aae6df84013ddbf103059d947df171e7a7ee1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "63dfd8781180e8bae55a148034e44acba83627999c193510d4ff585b85c4a01c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f855863c042117b3c019d31076dc8d662754303342b7cbc01e95724b0ea4ddb3"
-    sha256 cellar: :any,                 x86_64_linux:  "eddd3cd4c5b6c333cdc3fa4af3a97ba60b02171c82175f4da794eaf761fb1bd3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7c64c2a55385d0e163a26dcdde47f299caa07cc69a60ba0992e4367f7f6d4d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7c64c2a55385d0e163a26dcdde47f299caa07cc69a60ba0992e4367f7f6d4d4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7c64c2a55385d0e163a26dcdde47f299caa07cc69a60ba0992e4367f7f6d4d4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61a440fb8b67844f3c949c7317b7e6f39eb552bbf2229c27deba4d9a9b1cc482"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb29456e4961ed33bfa58881d3afcb63708ccdf0cae2c7dfd5941b7903220aaa"
+    sha256 cellar: :any,                 x86_64_linux:  "a0ff00d249d96d7a7c8b7b594628db041f5aac56112803e029b9b074345bdb9a"
   end
 
   depends_on "go" => :build

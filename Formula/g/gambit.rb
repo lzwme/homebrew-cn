@@ -1,8 +1,8 @@
 class Gambit < Formula
   desc "Software tools for game theory"
   homepage "https://www.gambit-project.org/"
-  url "https://ghfast.top/https://github.com/gambitproject/gambit/archive/refs/tags/v16.7.0.tar.gz"
-  sha256 "0d7c807b40cdc0d52c23e1585a4472da2c87ca63e306c4c00b55bf21841f9ce0"
+  url "https://ghfast.top/https://github.com/gambitproject/gambit/releases/download/v16.7.0/gambit-16.7.0.tar.gz"
+  sha256 "35a2d7df4f8181cb216ce9a2b10ca820724768d8c69787a608a4a2725a745278"
   license all_of: ["GPL-2.0-or-later", "Zlib"]
 
   livecheck do
@@ -19,15 +19,11 @@ class Gambit < Formula
     sha256 cellar: :any, x86_64_linux:  "695ba8a45f1c897a7c3c913e7c26cbad9e254c1ad88a76915c4d5db845dd19de"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
   depends_on "wxwidgets"
 
   def install
     wxwidgets = deps.find { |dep| dep.name.match?(/^wxwidgets(@\d+(\.\d+)*)?$/) }.to_formula
     wx_config = wxwidgets.opt_bin/"wx-config-#{wxwidgets.version.major_minor}"
-    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules",
                           "--with-wx-config=#{wx_config}",
                           *std_configure_args

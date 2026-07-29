@@ -27,7 +27,6 @@ class Kraftkit < Formula
     ENV["CGO_ENABLED"] = "1"
 
     ldflags = %W[
-      -s -w
       -X kraftkit.sh/internal/version.version=#{version}
       -X kraftkit.sh/internal/version.commit=#{tap.user}
       -X kraftkit.sh/internal/version.buildTime=#{time.iso8601}

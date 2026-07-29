@@ -23,7 +23,7 @@ class Kics < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/Checkmarx/kics/v#{version.major}/internal/constants.Version=#{version}"
+    ldflags = "-X github.com/Checkmarx/kics/v#{version.major}/internal/constants.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/console"
 
     pkgshare.install "assets"

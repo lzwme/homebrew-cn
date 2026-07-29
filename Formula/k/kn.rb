@@ -22,7 +22,6 @@ class Kn < Formula
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
 
     ldflags = %W[
-      -s -w
       -X knative.dev/client/pkg/commands/version.Version=v#{version}
       -X knative.dev/client/pkg/commands/version.GitRevision=#{Utils.git_head(length: 8)}
       -X knative.dev/client/pkg/commands/version.BuildDate=#{time.iso8601}

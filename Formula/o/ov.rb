@@ -23,7 +23,7 @@ class Ov < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.Version=#{version} -X main.Revision=#{tap.user}"
+    ldflags = "-X main.Version=#{version} -X main.Revision=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"ov", shell_parameter_format: :cobra)

@@ -29,7 +29,6 @@ class Kubekey < Formula
   def install
     project = "github.com/kubesphere/kubekey/v#{version.major}"
     ldflags = %W[
-      -s -w
       -X #{project}/version.gitMajor=#{version.major}
       -X #{project}/version.gitMinor=#{version.minor}
       -X #{project}/version.gitVersion=v#{version}

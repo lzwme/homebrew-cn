@@ -1,8 +1,8 @@
 class Libevent < Formula
   desc "Asynchronous event library"
   homepage "https://libevent.org/"
-  url "https://ghfast.top/https://github.com/libevent/libevent/archive/refs/tags/release-2.1.13-stable.tar.gz"
-  sha256 "1a0885e17dc78afbaeddf13cf849f9238bbc24acdc178464a0d1934d7c5ffbd5"
+  url "https://ghfast.top/https://github.com/libevent/libevent/releases/download/release-2.1.13-stable/libevent-2.1.13-stable.tar.gz"
+  sha256 "f7e9383b8c0baa81b687e5b5eecc01beefaf1b19b64151d95ed61647fe7a315c"
   license "BSD-3-Clause"
   compatibility_version 1
 
@@ -20,14 +20,10 @@ class Libevent < Formula
     sha256 cellar: :any, x86_64_linux:  "2d1db7d19f8ffe0791977488d3442d98cd334c9f38b91b11b0e19ab8d4170e01"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
   depends_on "pkgconf" => :build
   depends_on "openssl@3"
 
   def install
-    system "./autogen.sh"
     system "./configure", "--disable-debug-mode", *std_configure_args
     system "make"
     system "make", "install"

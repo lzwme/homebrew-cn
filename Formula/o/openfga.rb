@@ -19,7 +19,6 @@ class Openfga < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/openfga/openfga/internal/build.Version=#{version}
       -X github.com/openfga/openfga/internal/build.Commit=#{tap.user}
       -X github.com/openfga/openfga/internal/build.Date=#{time.iso8601}

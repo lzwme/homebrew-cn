@@ -1,13 +1,13 @@
 class Dockcheck < Formula
   desc "CLI tool to automate docker image updates"
   homepage "https://mag37.org"
-  url "https://ghfast.top/https://github.com/mag37/dockcheck/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "39fbe9eb56341571a29131989a62e037b0969a4bd91a4dc0d90cdae76da320e9"
+  url "https://ghfast.top/https://github.com/mag37/dockcheck/archive/refs/tags/v0.8.2.tar.gz"
+  sha256 "5968ebcef52e4d84b2b93daf6f0a0174e4f3c31d93d0d076aef0af532a4343a1"
   license "GPL-3.0-only"
   head "https://github.com/mag37/dockcheck.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2b490864ef7db4b142de27da5481d46a05d627a22d840a27f0141016867803c0"
+    sha256 cellar: :any_skip_relocation, all: "6545b1c3c5889a7fd21570bcae4deb5a2c7d97fcd8810ad527800cc83fef8dd8"
   end
 
   depends_on "regclient"

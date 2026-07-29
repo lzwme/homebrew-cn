@@ -19,7 +19,6 @@ class Kargo < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/akuity/kargo/pkg/x/version.version=#{version}
       -X github.com/akuity/kargo/pkg/x/version.buildDate=#{time.iso8601}
       -X github.com/akuity/kargo/pkg/x/version.gitCommit=#{tap.user}

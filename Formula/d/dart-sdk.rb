@@ -34,6 +34,13 @@ class DartSdk < Formula
     end
   end
 
+  patch do
+    url "https://github.com/dart-lang/sdk/commit/c53bdf2dab079903a56e7e3a8d352319985c6d89.patch?full_index=1"
+    sha256 "4b91454a8c9f301725cde78c1deb514996673853e63b9e68d013bcd7a261ac11"
+    type :backport
+    resolves "https://github.com/dart-lang/sdk/issues/63115"
+  end
+
   def install
     resource("depot-tools").stage(buildpath/"depot-tools")
 
@@ -42,14 +49,6 @@ class DartSdk < Formula
 
     system "gclient", "config", "--name", "sdk", "https://dart.googlesource.com/sdk.git@#{version}"
     system "gclient", "sync", "--no-history"
-
-    # Workaround for dependants audit failure: Libraries were compiled with a flat namespace.
-    # Issue ref: https://github.com/dart-lang/sdk/issues/63115
-    # PR ref: https://github.com/dart-lang/sdk/pull/63116
-    inreplace "sdk/runtime/platform/mach_o.h",
-              "MH_NO_REEXPORTED_DYLIBS = 0x100000;",
-              "\\0\nstatic constexpr uint32_t MH_TWOLEVEL = 0x80;"
-    inreplace "sdk/runtime/vm/mach_o.cc", "MH_NO_REEXPORTED_DYLIBS", "\\0 | mach_o::MH_TWOLEVEL"
 
     chdir "sdk" do
       arch = Hardware::CPU.arm? ? "arm64" : "x64"

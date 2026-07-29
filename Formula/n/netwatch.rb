@@ -1,17 +1,17 @@
 class Netwatch < Formula
   desc "Cross-platform realtime network diagnostics TUI"
   homepage "https://www.netwatchlabs.com/labs/netwatch"
-  url "https://ghfast.top/https://github.com/matthart1983/netwatch/archive/refs/tags/v0.27.0.tar.gz"
-  sha256 "fd2f094a06e13aea0e79c28da1c5dd9386859a2988e13aa783e2fe4e7a32489f"
+  url "https://ghfast.top/https://github.com/matthart1983/netwatch/archive/refs/tags/v0.28.1.tar.gz"
+  sha256 "db428f9a85b930a37da33e2bd3ff9dd13c867de3e222e70a20c29e2fd3d5378e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "405630e51244f50d3d9dcc36a50d8416195b05f1f1c2d07b022ef81bce95805f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98eae466a064afd64f047df5133382cd9517824bc4bc850d6a986248b0bf6387"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41f806b630aff7d8f51df081d321b96c2af1a65aa40810b2ed466b898066779e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d89f2b3aa405364cbc1ef34b6d8c691d24f91227812eac29fac4a87e902312d9"
-    sha256 cellar: :any,                 arm64_linux:   "ca9dfcfd6bc081305d22ae879e0b23e96a424f01dedc642ef169c44eb60884bb"
-    sha256 cellar: :any,                 x86_64_linux:  "16674dfd439a163de7dae016b7fdb35772ed7b3ad00ec5b4f816b46261de6c51"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0dd81626457cdb2ba7f45d42695f7df22b3d83dd702f550231da6ce0f4977de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0e5ac812a2dcdf733c48783dfcd4da6bbb80ddb0ff712b7f6ccb33605f0a038"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6bd43454e200b499c53261d18719c6233dc27c7c1322e1100f5e2ee8b013b9b3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f2aacc59e7d8b89fbb6995723a53fd78d855e1dfe8d9054f82b51e9cb4b928cf"
+    sha256 cellar: :any,                 arm64_linux:   "740c913d0ed5464d769c91c01a7ac0636d547b7e21e4c642e0f3d9aa99bd9533"
+    sha256 cellar: :any,                 x86_64_linux:  "524bbf75c5904def0c32e2b8d6023ac94f7adfa6d076ddbec60db4619d8da227"
   end
 
   depends_on "rust" => :build
@@ -30,6 +30,7 @@ class Netwatch < Formula
       # bring up help dialog
       input.puts "?"
       sleep 1
+      sleep 2 if OS.mac? && Hardware::CPU.intel?
       input.close
     ensure
       Process.kill("TERM", wait_thr.pid)

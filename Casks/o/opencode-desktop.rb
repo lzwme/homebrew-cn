@@ -1,9 +1,9 @@
 cask "opencode-desktop" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.18.7"
-  sha256 arm:   "0dc36936d3fa5e8713ceca4b8c71cb10532590af598561e7be80d0ba2e256a24",
-         intel: "0e501ca0a132a4023cd71de385085231542649a3093a1bae8ba85c8604d9e772"
+  version "1.18.9"
+  sha256 arm:   "af899cea85a04c2af9004559b1f2a48a5ebd9f8db45426d46dc803f5ab5ac04b",
+         intel: "d0bba99a6177c34b3dea3a94a7e8bbdcbe98349650a72bb62f030f77fba9a250"
 
   url "https://ghfast.top/https://github.com/anomalyco/opencode/releases/download/v#{version}/opencode-desktop-mac-#{arch}.dmg",
       verified: "github.com/anomalyco/opencode/"
@@ -25,6 +25,7 @@ cask "opencode-desktop" do
 
   zap trash: [
     "~/Library/Application Support/ai.opencode.desktop",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/ai.opencode.desktop.sfl*",
     "~/Library/Caches/ai.opencode.desktop",
     "~/Library/HTTPStorages/ai.opencode.desktop",
     "~/Library/Logs/ai.opencode.desktop",

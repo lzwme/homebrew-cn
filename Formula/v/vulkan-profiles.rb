@@ -1,8 +1,8 @@
 class VulkanProfiles < Formula
   desc "Tools for Vulkan profiles"
   homepage "https://github.com/KhronosGroup/Vulkan-Profiles"
-  url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-Profiles/archive/refs/tags/vulkan-sdk-1.4.350.1.tar.gz"
-  sha256 "6cab94e281a5a5596161147a96cb8d2e6efc94b7fe88b1b1a7c21c7166f46f5d"
+  url "https://ghfast.top/https://github.com/KhronosGroup/Vulkan-Profiles/archive/refs/tags/vulkan-sdk-1.4.357.0.tar.gz"
+  sha256 "08494e824457659d0399075263deff22226ef2c0c1067f551b7ec84a1b11df53"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-Profiles.git", branch: "main"
 
@@ -12,12 +12,12 @@ class VulkanProfiles < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3250ed5bde937a62b973001d9c3ee53cc6af35115e2b95fa45e0a0475016bfad"
-    sha256 cellar: :any, arm64_sequoia: "a87582a3ea570d6737a4f1189b3ccb1dd0b1d6a50c2c4ca0cc854d3788e314bb"
-    sha256 cellar: :any, arm64_sonoma:  "75b02b3f918ab9e7c4885055eb7a9695c7168ccb25296efb2814ec49a2cd7b8c"
-    sha256 cellar: :any, sonoma:        "242334ac664730434185ad6a907a86d191f3120745f1a7b625edb61c4cae3a4f"
-    sha256 cellar: :any, arm64_linux:   "0e3a7ff80e9c6f471412a89600c9bfe75cfa360ad2a3768b2681dc0b7415add8"
-    sha256 cellar: :any, x86_64_linux:  "c0f0ec43d930c47d7dec836d3d44550b4c6447241ce4a8d94f0d251c4aa19118"
+    sha256 cellar: :any, arm64_tahoe:   "ba8531a6ca81c6feed8694247f79b20c3449dce1f9da369dab1579e958d27069"
+    sha256 cellar: :any, arm64_sequoia: "e9378f588eff60b4033b53e57432657b02eae60ab87a33b6c53fbbd892faaeee"
+    sha256 cellar: :any, arm64_sonoma:  "b8293e8fa07a8e96129c8561c7b5c696d3bcc7977d181f818eca8348852703e3"
+    sha256 cellar: :any, sonoma:        "42bc6fbc0e2ecf0bb0bb8d7cd24f4aaf588a66db3a2fcb813bd81e73ea06d52a"
+    sha256 cellar: :any, arm64_linux:   "63eb783b015a564896c9d198a0564083b42e5a4973ce6c17b05709a6b2a6a098"
+    sha256 cellar: :any, x86_64_linux:  "93a0602a6878a0b633d70659007f0cbca08e65bc85deafcee1d49bd2d7f4d6a9"
   end
 
   depends_on "cmake" => :build

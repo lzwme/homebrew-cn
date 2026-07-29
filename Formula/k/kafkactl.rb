@@ -19,7 +19,6 @@ class Kafkactl < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/deviceinsight/kafkactl/v5/cmd.Version=v#{version}
       -X github.com/deviceinsight/kafkactl/v5/cmd.GitCommit=#{tap.user}
       -X github.com/deviceinsight/kafkactl/v5/cmd.BuildTime=#{time.iso8601}

@@ -17,11 +17,7 @@ class KubectlKlock < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-    ]
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")
     generate_completions_from_executable(bin/"kubectl-klock", shell_parameter_format: :cobra)
     bin.install "bin/kubectl_complete-klock"
   end

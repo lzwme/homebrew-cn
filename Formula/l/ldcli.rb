@@ -1,18 +1,18 @@
 class Ldcli < Formula
   desc "CLI for managing LaunchDarkly feature flags"
   homepage "https://launchdarkly.com/docs/home/getting-started/ldcli"
-  url "https://ghfast.top/https://github.com/launchdarkly/ldcli/archive/refs/tags/v3.3.0.tar.gz"
-  sha256 "cb4619bb8377d3b873a30681d01a3fec590c847dc359661b8ef9c3c98155be8e"
+  url "https://ghfast.top/https://github.com/launchdarkly/ldcli/archive/refs/tags/v3.6.0.tar.gz"
+  sha256 "f16b53912eb32d94164032d391a52ea3f847334df25985121d6a53162d4c6a0f"
   license "Apache-2.0"
   head "https://github.com/launchdarkly/ldcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0bf982e7a16097479a40e624c6d64404f9cd59132ca6b8c20e3c2152dc62bbe4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d289ee71d05cef9d20056dfcf95b0d13ed402e0a6e431263fe77c86397b7747"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee3b84269f265801388182d10426d5694f1949c2a87d5e6744837be1b1c0a52d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f1ba10ff698d7a8a5b909ed1fa40b8333563ffafb0e80184e3e615896f26bee8"
-    sha256 cellar: :any,                 arm64_linux:   "552b593faade9bd9ff1129eb1faf14c98e5d6fd67181120cae68371dede42fdc"
-    sha256 cellar: :any,                 x86_64_linux:  "9bcee62eb6d9ebc58e7672982fd90331a8e14d7aa2912bb57ccbc9c0126927e0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b89a30c12407f3aab39df301b3d5c26b5f061b17a4f6afc4c9979f82380a3cf5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cab6bccf3f5f72bf18e0fdf4c70b7bc1a7dbedf6cef813f32ee780ff6d595bd1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b4009ec6c050051c9b799010a46be5fb5850e0ea4a193ba4b4653634cf50619"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1138d89b77eaf43b2b3740257c9134ccc08784efd412918d3992014e562a1a38"
+    sha256 cellar: :any,                 arm64_linux:   "fbc2308a7e4fbc3400a729dce7ebd46127869770231ea08915294684f63ff5b4"
+    sha256 cellar: :any,                 x86_64_linux:  "0f9e0f0fa8afe43f18cb238ddf192b281345eabbad8a55321fa09ee310c4a2b9"
   end
 
   depends_on "go" => :build

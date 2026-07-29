@@ -38,7 +38,6 @@ class Openbao < Formula
     end
 
     ldflags = %W[
-      -s -w
       -X github.com/openbao/openbao/version.fullVersion=#{version}
       -X github.com/openbao/openbao/version.GitCommit=#{Utils.git_head}
       -X github.com/openbao/openbao/version.BuildDate=#{time.iso8601}

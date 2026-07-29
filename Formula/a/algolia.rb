@@ -1,18 +1,18 @@
 class Algolia < Formula
   desc "Command-line tool to manage Algolia applications, accounts, and search resources"
   homepage "https://www.algolia.com/doc/tools/cli/get-started"
-  url "https://ghfast.top/https://github.com/algolia/cli/archive/refs/tags/v1.14.0.tar.gz"
-  sha256 "be682931be671f209297c5ee9bcdeb90fb9dd16a051fb90d79d8c4ebe877ac08"
+  url "https://ghfast.top/https://github.com/algolia/cli/archive/refs/tags/v1.15.0.tar.gz"
+  sha256 "47439c44ca0fbf1ba3d0943d756a747b595f219aba2728ec40c4493143abe202"
   license "MIT"
   head "https://github.com/algolia/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "054ffd14690abb97ca044103d218d6a00c1b1d6aa933b16cf0b74ea6b6d725aa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "054ffd14690abb97ca044103d218d6a00c1b1d6aa933b16cf0b74ea6b6d725aa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "054ffd14690abb97ca044103d218d6a00c1b1d6aa933b16cf0b74ea6b6d725aa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1ba859c26cdb1cdd7057edf23d69b0c7f181fdefbe64e0d614f1fb768e1a43fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b7d06b33220a0271515f98e983595aaa298752ce725ca5a18f9ff6442c2dcb0"
-    sha256 cellar: :any,                 x86_64_linux:  "95540d906bc870c66a788c6024303027a4aa95eb2c2297005cd88438bc47b55c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d5fd8c70cfeffd73a75eb1547ac288fbe5125038426968237be13a03edb5deba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5fd8c70cfeffd73a75eb1547ac288fbe5125038426968237be13a03edb5deba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5fd8c70cfeffd73a75eb1547ac288fbe5125038426968237be13a03edb5deba"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a3b557646ec9f8d201a7b198f5f9d7fe0948002b1a5da2f93433d75e259bd820"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "233ae1aae6fd6060e41aaf3c61b36b454cf42c7fce40bdad25042af7b79fc235"
+    sha256 cellar: :any,                 x86_64_linux:  "1db52f2f95d8084c0f896ecda5ecdf593faa29cd94cd814382f806275e533d92"
   end
 
   depends_on "go" => :build

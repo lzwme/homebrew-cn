@@ -1,19 +1,13 @@
 cask "github-copilot-app" do
   arch arm: "arm64", intel: "x64"
   os macos: "darwin", linux: "linux"
-
-  version "1.1.1"
-  sha256 arm:          "97f819f6442ce0d20e94abb040b5f596516e2499716eae3b5acd6a552d388bfd",
-         intel:        "ec9983b20add8f16a124c42a318b6149f7f56988113fef025f9b0dbfdd28a6fd",
-         arm64_linux:  "70e92b48e2bfeb8601487c5c48c6fa43159e6fb39043b1fc7888a0799dcbb6d4",
-         x86_64_linux: "cb5d26f470095561c97a1cc8d7d35fdaf84fa3b20b04259f4176e1224f4bed8a"
-
   url_end = on_system_conditional macos: "dmg", linux: "AppImage"
 
-  url "https://ghfast.top/https://github.com/github/app/releases/download/v#{version}/GitHub-Copilot-#{os}-#{arch}.#{url_end}"
-  name "GitHub Copilot"
-  desc "Native client for GitHub Copilot"
-  homepage "https://github.com/github/app"
+  version "1.1.2"
+  sha256 arm:          "526c6933ff1ca8b8edbf8008f8ab13c27e303a93b5fe30bd93da378c67ff53f7",
+         intel:        "7ae2d5afffbb83020383d1f0c5f12fd354e749c87e893f7c46206a3110b36847",
+         arm64_linux:  "ea8426b4c72850bf2e84486fa1cd788a7f312984bb201e95f20b8367fbc60bc7",
+         x86_64_linux: "10a05b5e830629a5093c0d2cdfd5eec40b6b9750b38dcb435c76a87c35ec88ca"
 
   on_macos do
     auto_updates true
@@ -27,8 +21,12 @@ cask "github-copilot-app" do
       "~/Library/WebKit/com.github.githubapp",
     ]
   end
-
   on_linux do
     app_image "GitHub-Copilot-linux-#{arch}.AppImage", target: "GitHub Copilot.AppImage"
   end
+
+  url "https://ghfast.top/https://github.com/github/app/releases/download/v#{version}/GitHub-Copilot-#{os}-#{arch}.#{url_end}"
+  name "GitHub Copilot"
+  desc "Native client for GitHub Copilot"
+  homepage "https://github.com/github/app"
 end

@@ -1,24 +1,24 @@
 class Kekkai < Formula
   desc "File integrity monitoring tool"
   homepage "https://github.com/catatsuy/kekkai"
-  url "https://ghfast.top/https://github.com/catatsuy/kekkai/archive/refs/tags/v0.2.10.tar.gz"
-  sha256 "ab244e24bb957954a0911f0e67eaebc4424179dd4addb79aa31519e6c75a74d8"
+  url "https://ghfast.top/https://github.com/catatsuy/kekkai/archive/refs/tags/v0.2.11.tar.gz"
+  sha256 "7b5a4fb71131880cc0ba37b2c8d40e7250b7228771e78c6b8a4b15e3d09aa84c"
   license "MIT"
   head "https://github.com/catatsuy/kekkai.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6da42591ea2227ccd41fac8c0e30110d76e384794b827c45cbfd175749f95ac9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6da42591ea2227ccd41fac8c0e30110d76e384794b827c45cbfd175749f95ac9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6da42591ea2227ccd41fac8c0e30110d76e384794b827c45cbfd175749f95ac9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0db1ece8166e533e72cc7a00b551d4c11bdc2e7e79b9bddc1b600a2a0bb081c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e910d64f127b33c5daaea5bbdf9c90081ff1219a2ba1d8ead6a5dd5104a0f691"
-    sha256 cellar: :any,                 x86_64_linux:  "a15dd7916120e50ab2ce46ae711fdd3c998463c7e996925c1da1eff508c585a8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03dd49cc79a528ac481279deec0b8828d31fbc4dd8cacaccb55fa60f9c4b5939"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03dd49cc79a528ac481279deec0b8828d31fbc4dd8cacaccb55fa60f9c4b5939"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03dd49cc79a528ac481279deec0b8828d31fbc4dd8cacaccb55fa60f9c4b5939"
+    sha256 cellar: :any_skip_relocation, sonoma:        "64d26a71852fb4ffac1fbd019f8b4d133fd291024b08200321eb8effcf7c8b84"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3d0e339cd558b6330525812a2bb461a4886250bc8b6a30df33c668c8443290c"
+    sha256 cellar: :any,                 x86_64_linux:  "c0a0c03af14935d4c902482cac8b8c63562b3bf504d6f669d6d90317aeffdf0f"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/catatsuy/kekkai/internal/cli.Version=#{version}"
+    ldflags = "-X github.com/catatsuy/kekkai/internal/cli.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/kekkai"
   end
 

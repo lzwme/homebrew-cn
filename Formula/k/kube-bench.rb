@@ -18,7 +18,7 @@ class KubeBench < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/aquasecurity/kube-bench/cmd.KubeBenchVersion=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-X github.com/aquasecurity/kube-bench/cmd.KubeBenchVersion=#{version}")
 
     generate_completions_from_executable(bin/"kube-bench", shell_parameter_format: :cobra)
   end

@@ -28,10 +28,7 @@ class Katana < Formula
               'gologger.Info().Msgf("Run `brew upgrade katana` to update.")'
     end
 
-    ldflags = %W[
-      -s -w
-      -X github.com/projectdiscovery/katana/internal/runner.version=v#{version}
-    ]
+    ldflags = %W[-X github.com/projectdiscovery/katana/internal/runner.version=v#{version}]
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/katana"
   end
 

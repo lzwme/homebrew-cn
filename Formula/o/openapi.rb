@@ -18,13 +18,7 @@ class Openapi < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-      -X main.commit=#{tap.user}
-      -X main.date=#{time.iso8601}
-    ]
-    system "go", "build", *std_go_args(ldflags:), "./cmd/openapi"
+    system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/openapi"
 
     generate_completions_from_executable(bin/"openapi", shell_parameter_format: :cobra)
   end

@@ -1,19 +1,18 @@
 class LdFindCodeRefs < Formula
   desc "Build tool for sending feature flag code references to LaunchDarkly"
   homepage "https://launchdarkly.com"
-  url "https://ghfast.top/https://github.com/launchdarkly/ld-find-code-refs/archive/refs/tags/v2.14.0.tar.gz"
-  sha256 "c7e305001837e5d7b8c4e1f5dbbaea66e2e4567ff161c0039a5375fd2cf3b791"
+  url "https://ghfast.top/https://github.com/launchdarkly/ld-find-code-refs/archive/refs/tags/v2.16.0.tar.gz"
+  sha256 "99e916d4001017336e64ba1830375afac0b378d55388ba804372c48e53e92dca"
   license "Apache-2.0"
   head "https://github.com/launchdarkly/ld-find-code-refs.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cba2b554dc4f9c44c7d609e448a2eba5e58e89d3ddc7d8c565f64c85c7994b27"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cba2b554dc4f9c44c7d609e448a2eba5e58e89d3ddc7d8c565f64c85c7994b27"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cba2b554dc4f9c44c7d609e448a2eba5e58e89d3ddc7d8c565f64c85c7994b27"
-    sha256 cellar: :any_skip_relocation, sonoma:        "36ade1dc502172f4d5bc3674b7fc6fd23605ed565e634590ebac211565df09c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6e7c29473a261d8216897a81054df7677605b5fc2676c74066f2bca86b5d7fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e0e9e877e91c100312eb2643ca0ee6b3066afb089678168e2761a86925818aa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ca23342dafb61bceda367829395b386db5790d0a597c73a38815fa2d6367def"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ca23342dafb61bceda367829395b386db5790d0a597c73a38815fa2d6367def"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ca23342dafb61bceda367829395b386db5790d0a597c73a38815fa2d6367def"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d477de8097483aa35a5ffbb9677138cba077d5b6c12bc740bbb838620c18a801"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c76e698bd3eaefb0b2b7cda37c1d740f241ea45f67576c2800466dff464d3fc0"
+    sha256 cellar: :any,                 x86_64_linux:  "a75318997f866522285588bc1a730a900e92e7fee20559eb074f45b113e34d32"
   end
 
   depends_on "go" => :build

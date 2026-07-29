@@ -29,10 +29,6 @@ class S2geometry < Formula
       -DCMAKE_CXX_STANDARD=17
     ]
 
-    # Fix missing include of unaligned.h
-    # Issue ref: https://github.com/google/s2geometry/issues/481
-    inreplace "CMakeLists.txt", "src/s2/util/gtl/requires.h", "\\0 src/s2/util/gtl/unaligned.h"
-
     system "cmake", "-S", ".", "-B", "build/shared", *args, *std_cmake_args
     system "cmake", "--build", "build/shared"
     system "cmake", "--install", "build/shared"

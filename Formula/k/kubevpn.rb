@@ -22,7 +22,6 @@ class Kubevpn < Formula
     goarch = Utils.safe_popen_read("#{Formula["go"].bin}/go", "env", "GOARCH").chomp
     project = "github.com/wencaiwulue/kubevpn/v2"
     ldflags = %W[
-      -s -w
       -X #{project}/pkg/config.Image=ghcr.io/kubenetworks/kubevpn:v#{version}
       -X #{project}/pkg/config.Version=v#{version}
       -X #{project}/pkg/config.GitCommit=#{tap.user}

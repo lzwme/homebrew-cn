@@ -1,13 +1,13 @@
 class Container < Formula
   desc "Create and run Linux containers using lightweight virtual machines"
   homepage "https://apple.github.io/container/documentation/"
-  url "https://ghfast.top/https://github.com/apple/container/archive/refs/tags/1.1.0.tar.gz"
-  sha256 "beb7f2536d714de6863a056b677a2b51aa498bb7caec6011cfb01c0c95bcbe8c"
+  url "https://ghfast.top/https://github.com/apple/container/archive/refs/tags/1.2.0.tar.gz"
+  sha256 "40f2d98cb41a5f688e5b4b6dbe6d66eba7451c78ce6f3afe351da1550adf1591"
   license "Apache-2.0"
   head "https://github.com/apple/container.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "7a71637eff9cf71edc4f3c0de25995d1677040723da2487fa41f8ff433cfce61"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "b23278eac8d6b94316fafddc718d3949bd4a51e1029ad4a1ffa8e2dd53a58f96"
   end
 
   depends_on xcode: ["26.0", :build]

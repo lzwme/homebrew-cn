@@ -21,11 +21,14 @@ class Sol2 < Formula
     resolves "https://github.com/ThePhD/sol2/pull/1723"
   end
 
-  def install
-    # Fix `usertype_container` compilation for associative containers.
-    # https://github.com/ThePhD/sol2/pull/1676
-    inreplace "include/sol/usertype_container.hpp", "auto& end = i.end();", "auto& end = i.sen();"
+  patch do
+    url "https://github.com/ThePhD/sol2/commit/8f80cd79f60613b96c877cec2bba3efee2a78225.patch?full_index=1"
+    sha256 "1f6ca6d8ec416d9e78f48cb67616f4dc4c3af68cf0d266796f3e8e2abaf39bf0"
+    type :unofficial
+    resolves "https://github.com/ThePhD/sol2/pull/1676"
+  end
 
+  def install
     system "cmake", "-S", ".", "-B", "build", "-DSOL2_BUILD_LUA=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

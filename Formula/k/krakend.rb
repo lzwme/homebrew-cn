@@ -19,7 +19,6 @@ class Krakend < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/krakendio/krakend-ce/v2/pkg.Version=#{version}
       -X github.com/luraproject/lura/v2/core.KrakendVersion=#{version}
     ]

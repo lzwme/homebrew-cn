@@ -1,10 +1,9 @@
 class Breseq < Formula
   desc "Computational pipeline for finding mutations in short-read DNA resequencing data"
   homepage "https://barricklab.org/breseq"
-  url "https://ghfast.top/https://github.com/barricklab/breseq/archive/refs/tags/v0.40.1.tar.gz"
-  sha256 "69892a3b49e60ea8c50f70115ee983531744dbfa4434c55ee4df490051846b18"
+  url "https://ghfast.top/https://github.com/barricklab/breseq/releases/download/v0.40.1/breseq-0.40.1-Source.tar.gz"
+  sha256 "b3f98fb5b8b9c20170a38e0f234ef6c7ead58bbf2058b1383120137b076a53dc"
   license all_of: ["GPL-2.0-or-later", "MIT", "BSD-3-Clause"]
-  head "https://github.com/barricklab/breseq.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8dad7c2a01f9d0c772f9fc04e2ea480fea88ec69d219c4568d06a012a49118ce"
@@ -15,9 +14,14 @@ class Breseq < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8f11eabe07074878684abe6beaecf6468c1f7a5cdadbc0539ff1a9fe6cc6e90"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  head do
+    url "https://github.com/barricklab/breseq.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
   depends_on "bowtie2"
   depends_on "r"
 
@@ -32,7 +36,7 @@ class Breseq < Formula
   end
 
   def install
-    system "./bootstrap.sh"
+    system "./bootstrap.sh" if build.head?
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
