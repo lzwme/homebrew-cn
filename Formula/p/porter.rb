@@ -24,7 +24,6 @@ class Porter < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X get.porter.sh/porter/pkg.Version=#{version}
       -X get.porter.sh/porter/pkg.Commit=#{tap.user}
     ]

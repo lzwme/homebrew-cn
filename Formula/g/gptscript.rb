@@ -21,10 +21,7 @@ class Gptscript < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/gptscript-ai/gptscript/pkg/version.Tag=v#{version}
-    ]
+    ldflags = %W[-X github.com/gptscript-ai/gptscript/pkg/version.Tag=v#{version}]
     system "go", "build", *std_go_args(ldflags:)
 
     pkgshare.install "examples"

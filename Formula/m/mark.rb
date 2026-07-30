@@ -18,8 +18,7 @@ class Mark < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/mark"
+    system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/mark"
   end
 
   test do

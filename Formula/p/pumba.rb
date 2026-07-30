@@ -23,14 +23,7 @@ class Pumba < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-      -X main.commit=#{tap.user}
-      -X main.branch=master
-      -X main.buildTime=#{time.iso8601}
-    ]
-    system "go", "build", *std_go_args(ldflags:), "./cmd"
+    system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd"
   end
 
   test do

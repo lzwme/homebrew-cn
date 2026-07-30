@@ -18,7 +18,7 @@ class Dasel < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/tomwright/dasel/v#{version.major}/internal.Version=#{version}"
+    ldflags = "-X github.com/tomwright/dasel/v#{version.major}/internal.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/dasel"
 
     generate_completions_from_executable(bin/"dasel", "completion", shells: [:bash, :zsh, :fish, :pwsh])

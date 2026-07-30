@@ -21,7 +21,7 @@ class Mailpit < Formula
     system "npm", "install", *std_npm_args(prefix: false)
     system "npm", "run", "build"
 
-    ldflags = "-s -w -X github.com/axllent/mailpit/config.Version=v#{version}"
+    ldflags = "-X github.com/axllent/mailpit/config.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"mailpit", shell_parameter_format: :cobra)

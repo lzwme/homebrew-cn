@@ -20,8 +20,7 @@ class Ggc < Formula
   uses_from_macos "vim"
 
   def install
-    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags: :goreleaser)
   end
 
   test do

@@ -23,7 +23,6 @@ class Pdfcpu < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X main.version=#{version}
       -X github.com/pdfcpu/pdfcpu/pkg/pdfcpu.VersionStr=#{version}
       -X main.commit=#{tap.user}

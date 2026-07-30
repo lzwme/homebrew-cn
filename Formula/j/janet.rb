@@ -7,13 +7,13 @@ class Janet < Formula
   head "https://github.com/janet-lang/janet.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "d35645069c16160b7f8738de04de6ded144a4a783ab038c2a4dbea1e2976325c"
-    sha256 cellar: :any, arm64_sequoia: "d40c788c83a199892cb8c683fae13efca1410116a528ff9c883c79680a298f9e"
-    sha256 cellar: :any, arm64_sonoma:  "da331f1ea613e42ed71de86a065cdfbca2ece99b04bd184ddc02d001266f08e1"
-    sha256 cellar: :any, sonoma:        "a8157bd738eddb480ac18e751b25b0b8d42f270bad8797a8368ce209f0ac9c9c"
-    sha256 cellar: :any, arm64_linux:   "e946a22ea4bee7d8bbed43f760b5ce6a46634840006405f0e171788773cc8a64"
-    sha256 cellar: :any, x86_64_linux:  "8218a627e584ab4d72ac7f87f67d408079340ba4eb109ee1dc8ccae01bc9a372"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "a93d5b5ff09c0edcef0ca663382ccf0381211c65c3967c4470bc77dcfbf32934"
+    sha256 cellar: :any, arm64_sequoia: "23120fcd8728d8991a81874c8e06eec53fcc2e3040d52b0aa581b368fbc00199"
+    sha256 cellar: :any, arm64_sonoma:  "d5a8f324cd412dccbaed4804dbfa7e649af71220074d930d0241d580b917900b"
+    sha256 cellar: :any, sonoma:        "8f375d8552786209a679fddedbbb90fa6a71694d15360a3b2ab37823ee9af64b"
+    sha256 cellar: :any, arm64_linux:   "2876701042e054dfedfdeca3b0e6cead6435ef7ef9ab9567634015a02c75bd18"
+    sha256 cellar: :any, x86_64_linux:  "d6b990d082441847ad534e88f09c0b5e85a456e809b6370a44977f181ce4f681"
   end
 
   resource "jpm" do
@@ -36,20 +36,23 @@ class Janet < Formula
 
     system "make"
     system "make", "install"
-  end
-
-  def post_install
-    mkdir_p syspath unless syspath.exist?
 
     resource("jpm").stage do
-      ENV["PREFIX"] = prefix
-      ENV["JANET_BINPATH"] = HOMEBREW_PREFIX/"bin"
-      ENV["JANET_HEADERPATH"] = HOMEBREW_PREFIX/"include/janet"
-      ENV["JANET_LIBPATH"] = HOMEBREW_PREFIX/"lib"
-      ENV["JANET_MANPATH"] = HOMEBREW_PREFIX/"share/man/man1"
-      ENV["JANET_MODPATH"] = syspath
-      system bin/"janet", "bootstrap.janet"
+      (libexec/"jpm").install Dir["*"]
     end
+  end
+
+  post_install_steps do
+    mkdir_p "{{HOMEBREW_PREFIX}}/lib/janet"
+    run "janet", args: ["bootstrap.janet"], base: :bin, chdir: "{{libexec}}/jpm",
+         env: {
+           "PREFIX"           => "{{prefix}}",
+           "JANET_BINPATH"    => "{{HOMEBREW_PREFIX}}/bin",
+           "JANET_HEADERPATH" => "{{HOMEBREW_PREFIX}}/include/janet",
+           "JANET_LIBPATH"    => "{{HOMEBREW_PREFIX}}/lib",
+           "JANET_MANPATH"    => "{{HOMEBREW_PREFIX}}/share/man/man1",
+           "JANET_MODPATH"    => "{{HOMEBREW_PREFIX}}/lib/janet",
+         }
   end
 
   def caveats

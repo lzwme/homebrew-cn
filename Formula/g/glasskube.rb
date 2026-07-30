@@ -24,7 +24,6 @@ class Glasskube < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/glasskube/glasskube/internal/config.Version=#{version}
       -X github.com/glasskube/glasskube/internal/config.Commit=#{tap.user}
       -X github.com/glasskube/glasskube/internal/config.Date=#{time.iso8601}

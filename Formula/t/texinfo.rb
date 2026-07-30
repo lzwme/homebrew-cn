@@ -8,14 +8,15 @@ class Texinfo < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_tahoe:   "af864341784c9958f6ce991fa0e0bc3b5727dfc7c8f53a90cbf2339e080c2232"
-    sha256 arm64_sequoia: "e26c8c7d0d1f5b68bb7e78e59f701838d45fa73e3ce768ab6b68e1a051ff751c"
-    sha256 arm64_sonoma:  "6edceba78cb173242c77e481aa0adc88e6efbddf4e05239322d72f05b144b2bc"
-    sha256 tahoe:         "0e80a4ba0a2a3a48eebb8078f1c79fe563e374c3c2ed77642901941fc42e015c"
-    sha256 sequoia:       "93f14818e722ccc3152e9d2824095eb4ca79c58b37bc1ce58f0469a6e2735f21"
-    sha256 sonoma:        "cf213ea4a3f93a42c4ad178e602e1eda6cf17dcf3c9fbeb024c4758910dc4878"
-    sha256 arm64_linux:   "ae0c709a08d1e093bddc8c4c4f696592e38faed5c261d020f027dcf195425ddc"
-    sha256 x86_64_linux:  "0dd622bb0151013803cdf5977f76cf78622fcb92478062d6ce2612199f7a049f"
+    rebuild 1
+    sha256 arm64_tahoe:   "5fe5b4bf293e3358e7f2b176f64373414bec1cdbc64f73765111129d19a9ef52"
+    sha256 arm64_sequoia: "c92803efbc90d37ef09db1dd6fb8df4295fa69452097066b0f32e0e58895f739"
+    sha256 arm64_sonoma:  "d5b3098faede3e0b74d269dde3f0c571360a4acb04aa0d98ca8c53ccb3102dbd"
+    sha256 tahoe:         "9b0fadc6c61e02804f2e1bc8d84e7344fa582745eb4bd30ef5ce4986ffddcc3b"
+    sha256 sequoia:       "41529bcf8e41750bf1b14fc59a03d89b0a219db7c1f0c4e45f943c4182db5d87"
+    sha256 sonoma:        "906bf2b96c0c9b4ecf640c74fdb36ac171793644f5e47b96a1b9c7c6bc033aaa"
+    sha256 arm64_linux:   "8b64bc637ddb9054822f0890283a54d0c54e25606734ec59e3f8592d706f4972"
+    sha256 x86_64_linux:  "5f143c0103716ee72ddcee40d88784cf6d474ee6f0322ecfa7ad33880e35255a"
   end
 
   uses_from_macos "ncurses"
@@ -29,14 +30,21 @@ class Texinfo < Formula
     system "./configure", "--disable-install-warnings", *std_configure_args
     system "make", "install"
     doc.install Dir["doc/refcard/txirefcard*"]
+
+    (libexec/"post-install").write <<~SH
+      #!/bin/sh
+      info_dir="#{HOMEBREW_PREFIX}/share/info/dir"
+      rm -f "$info_dir"
+      for file in "#{HOMEBREW_PREFIX}/share/info/"*.info "#{HOMEBREW_PREFIX}/share/info/"*.info.gz; do
+        [ -e "$file" ] || continue
+        "#{opt_bin}/install-info" --quiet "$file" "$info_dir" || true
+      done
+    SH
+    chmod 0755, libexec/"post-install"
   end
 
-  def post_install
-    info_dir = HOMEBREW_PREFIX/"share/info/dir"
-    info_dir.delete if info_dir.exist?
-    info_dir.dirname.glob(["*.info", "*.info.gz"]) do |f|
-      quiet_system("#{bin}/install-info", "--quiet", f, info_dir)
-    end
+  post_install_steps do
+    run "post-install", base: :libexec
   end
 
   test do

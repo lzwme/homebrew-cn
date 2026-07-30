@@ -1,10 +1,10 @@
 class Herdr < Formula
   desc "Agent multiplexer that lives in your terminal"
   homepage "https://herdr.dev"
-  url "https://ghfast.top/https://github.com/ogulcancelik/herdr/archive/refs/tags/v0.7.5.tar.gz"
+  url "https://ghfast.top/https://github.com/herdrdev/herdr/archive/refs/tags/v0.7.5.tar.gz"
   sha256 "5ea0f1003af1801a6a85d201b6fa7e1de46686fccb7df1d3fa3a03c4ec2be68c"
   license "AGPL-3.0-or-later"
-  head "https://github.com/ogulcancelik/herdr.git", branch: "master"
+  head "https://github.com/herdrdev/herdr.git", branch: "master"
 
   livecheck do
     url :stable
@@ -21,7 +21,7 @@ class Herdr < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "zig@0.15" => :build # upstream issue, https://github.com/ogulcancelik/herdr/issues/285
+  depends_on "zig@0.15" => :build # upstream issue, https://github.com/herdrdev/herdr/issues/285
 
   def install
     ENV.prepend_path "PATH", formula_opt_bin("zig@0.15")

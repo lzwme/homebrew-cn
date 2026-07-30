@@ -3,17 +3,17 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/e1/33/e0dfa29ccce4eb8c9a073f9e557b0d6bacbb3aa32e7ad595f678de4d036a/fastapi-0.140.7.tar.gz"
-  sha256 "09a640af2d29006345e1f28e4f031fa60f89b1a75d29f26070f3afa677d66cce"
+  url "https://files.pythonhosted.org/packages/2f/cb/7a4d2c2eb5a5d8a91763c05b7383d72917862e32f780daa0e27ffbb34cc6/fastapi-0.140.13.tar.gz"
+  sha256 "500172a08cf1459901f90b05c37d93060dada3b573fec8f0862445db52ba6b4b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1c02d3f0c1af4024673c85bb312a00ba210af2a97ac4f87888fde0ef217e4aaf"
-    sha256 cellar: :any, arm64_sequoia: "77917acefd5f74812cb3767c54924d2e59b8b17bb826e6a3a84f3d575db71188"
-    sha256 cellar: :any, arm64_sonoma:  "a940d425f06a2b7a79e16afde0fa42a87ce61ba26cbe8fd1ef4153740285f60e"
-    sha256 cellar: :any, sonoma:        "28a1817f6737d9a81fb53239b4cd84777cdf49adbd633e70d961715c0e01eae9"
-    sha256 cellar: :any, arm64_linux:   "5b62d001eb849c33d16e330744f64b982fe7da629339f250b6a11745e7cb555e"
-    sha256 cellar: :any, x86_64_linux:  "7bd27ea183f102ebe97f643ef6bc507b68e45acb74cfa730d0385c3f718e403c"
+    sha256 cellar: :any, arm64_tahoe:   "ff968deb36c66a69196f1e4819ee522769661c4e4c79e829bc8e0d358e6bb780"
+    sha256 cellar: :any, arm64_sequoia: "532f9df80354353604d7a131740ae48d9ece2f5d5e5bd3b1af7ce4a4c95aecbe"
+    sha256 cellar: :any, arm64_sonoma:  "b26b42fbe70cbf84fc59f9614e1c5036c01e5d9391c0384703a2df7f0fe92609"
+    sha256 cellar: :any, sonoma:        "e8fcbc68e1b381115bbb46a939e211fec7e7213247feeda5aaa3abb1c8be6395"
+    sha256 cellar: :any, arm64_linux:   "7cc5b3887daa44266bc4bc12b45f180946c2202a750518b82d8aea73caa61b5d"
+    sha256 cellar: :any, x86_64_linux:  "eebe8a695c3ea838298eb64573e105cdc6707d12c20ca1b4fc550738e8a7291a"
   end
 
   depends_on "rust" => :build # for annotated-doc
@@ -26,8 +26,8 @@ class Fastapi < Formula
                 exclude_packages: ["certifi", "pydantic"]
 
   resource "annotated-doc" do
-    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
-    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+    url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
+    sha256 "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
   end
 
   resource "anyio" do
@@ -61,8 +61,8 @@ class Fastapi < Formula
   end
 
   resource "fastapi-cloud-cli" do
-    url "https://files.pythonhosted.org/packages/25/f2/36bfe990baa656de89a2b98a77a15dcd018474f7245c8e4a10cada0553c5/fastapi_cloud_cli-0.22.2.tar.gz"
-    sha256 "7ec78c1fed58f578af5eb1fb54ec4b456eba4dc1eaca1c3a93cf499a7cbc7ab3"
+    url "https://files.pythonhosted.org/packages/00/dc/63aaf9913f455e39a7027c27140edd887a87d47d65ac43532d77a51718e5/fastapi_cloud_cli-0.23.0.tar.gz"
+    sha256 "840895bb8d14309aeffc905e0dcd1334d18c6f5da54b735413a8f1cb385e581e"
   end
 
   resource "fastar" do

@@ -13,12 +13,13 @@ class Vips < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e4e9a8020a38c8c9db19dbd2828a6169b49c218a4a3a4b562a2d5868af74feb8"
-    sha256 arm64_sequoia: "328062fd4227341bdd7ff821565fa3af88b3bc1f437c137bcb114be13587f88f"
-    sha256 arm64_sonoma:  "6b6d1fabcdc16d073715fbce4e06b3df08f9629cc822a56b93e14e2ff63b633e"
-    sha256 sonoma:        "e5e003d17be4992f67dd2389503cb99dccb048d9f2d9b5ed25bf43ac12e57b3b"
-    sha256 arm64_linux:   "dc19a091c0d674930d18caf316a0f6c678952c61fec5c7c43121796b6dbb90f9"
-    sha256 x86_64_linux:  "e31d40d53f0db8bced26ca27981c28d428dcdb4b4f70ae44b6665980397c4751"
+    rebuild 1
+    sha256 arm64_tahoe:   "c9a111ec8dc239d4a43c4add80a6ec8a1982d5b4155ee65f01cc046aaa60de51"
+    sha256 arm64_sequoia: "75f28765db590265b4d522b3fd624b6ff76e5ce45bd2e3cb99813ac59d45f0e8"
+    sha256 arm64_sonoma:  "558ed7d4805791e59998946cc922ec9115b812a8cd66e9368f45b5481215108b"
+    sha256 sonoma:        "c734c2d72a98cdc195bc1de637cc7011aa45d17b5b6ae472bc485c98d3d2ec08"
+    sha256 arm64_linux:   "97dd8b0122e465f34aa72f1ad745f7315f2519a70fe3eb31fa956c61241a9bab"
+    sha256 x86_64_linux:  "b93a29e5de6247b3814db4b4d754970973d741d2116f8650f1512875a6ad1357"
   end
 
   depends_on "gettext" => :build

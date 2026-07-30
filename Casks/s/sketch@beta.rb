@@ -1,6 +1,6 @@
 cask "sketch@beta" do
-  version "2026.3,233849"
-  sha256 "69f98b71eb769577c6f488e1e68ccfa5367b0c79fb008b666a20854d8c8157db"
+  version "2026.3,233866"
+  sha256 "6487b7fadc48a44c98c905e9ef8fb2284cba85c431f1655df185e6c5509d756c"
 
   url "https://beta-download.sketch.com/sketch-#{version.csv.first}-#{version.csv.second}.zip"
   name "Sketch"
@@ -20,11 +20,15 @@ cask "sketch@beta" do
   uninstall quit: "com.bohemiancoding.sketch3.beta"
 
   zap trash: [
+    "~/Library/Application Support/bugsnag-shared-com.bohemiancoding.sketch3.beta",
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.bohemiancoding.sketch3.beta.sfl*",
     "~/Library/Application Support/com.bohemiancoding.sketch3.beta",
+    "~/Library/Application Support/Sketch Beta",
+    "~/Library/Caches/bugsnag-shared-com.bohemiancoding.sketch3.beta",
     "~/Library/Caches/com.bohemiancoding.sketch3.beta",
     "~/Library/Caches/com.plausiblelabs.crashreporter.data/com.bohemiancoding.sketch3.beta",
     "~/Library/Cookies/com.bohemiancoding.sketch3.beta.binarycookies",
+    "~/Library/HTTPStorages/com.bohemiancoding.sketch3.beta",
     "~/Library/Logs/com.bohemiancoding.sketch3.beta",
     "~/Library/Preferences/com.bohemiancoding.sketch3.beta.LSSharedFileList.plist",
     "~/Library/Preferences/com.bohemiancoding.sketch3.beta.plist",

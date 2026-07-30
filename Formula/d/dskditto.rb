@@ -17,7 +17,7 @@ class Dskditto < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/jdefrancesco/dskDitto/internal/buildinfo.Version=#{version}"
+    ldflags = "-X github.com/jdefrancesco/dskDitto/internal/buildinfo.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/dskDitto"
   end
 

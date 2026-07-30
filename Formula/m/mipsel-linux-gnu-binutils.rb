@@ -1,9 +1,9 @@
 class MipselLinuxGnuBinutils < Formula
   desc "GNU Binutils for mipsel-linux-gnu cross development"
   homepage "https://www.gnu.org/software/binutils/"
-  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.46.1.tar.bz2"
-  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.46.1.tar.bz2"
-  sha256 "324ed40ada2633a28eaa5d104ca5db165fd3cc3162cc1d48a7b7fa9c932da439"
+  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.47.tar.bz2"
+  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.47.tar.bz2"
+  sha256 "3068128c75cda9f898ccb4211d360246e8e195ffcc9dfb655b23ae23a54800e8"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class MipselLinuxGnuBinutils < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e52c96985840f427b635170bb3c976ac5169b8b28dc774fe2179935947a83667"
-    sha256 arm64_sequoia: "d8e6026c4c23c42d7afbc29ba338ad4042ea7002bada21443481f349d6d17eee"
-    sha256 arm64_sonoma:  "7579ca155484d41d5c0de51c202d9a860a1976533613e7e0318592f4f4fe2211"
-    sha256 sonoma:        "443cab5cd377cb271ae37312acad62d793e261252d134ecfd1f3ab75121c4491"
-    sha256 arm64_linux:   "02c12881114ec2f65f5313f02d3a3583c6adae66d313098abbd86cadb853e333"
-    sha256 x86_64_linux:  "1c91713474b21ffaa919d4edc42393d3ddbe7dafe2ac8d3924808b82c7c9efbd"
+    sha256 arm64_tahoe:   "18ab937674e4c11dbe03c4df8950082440a724fd88952f4d25bc3890d06884f5"
+    sha256 arm64_sequoia: "bea26e8c9806bcd5a1e477b767befb06b3618c080b849724ea617b959c2d0f13"
+    sha256 arm64_sonoma:  "04cdfa8c9f290b0c63bf304a2d0c361b9e1dadc73ef58f3356942aa8a8f80480"
+    sha256 sonoma:        "2b761cc78e9aa4ff08898c9bb2c292ea7ce0d676c4840d0bc927a5c0ecf9cc1f"
+    sha256 arm64_linux:   "32e135ff90d4b11b839178cbdc83a15c7ae76dbf03193340956666fd84fad9bb"
+    sha256 x86_64_linux:  "19d9cd2e7c008467ef3a090ca749804754046e665116b93ec5a201bb57a5ca04"
   end
 
   depends_on "pkgconf" => :build

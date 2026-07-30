@@ -27,7 +27,7 @@ class Mmctl < Formula
     rm_r("server/enterprise")
     rm Dir["server/cmd/mmctl/commands/compliance_export*"]
 
-    ldflags = "-s -w -X github.com/mattermost/mattermost/server/v8/cmd/mmctl/commands.buildDate=#{time.iso8601}"
+    ldflags = "-X github.com/mattermost/mattermost/server/v8/cmd/mmctl/commands.buildDate=#{time.iso8601}"
     system "make", "-C", "server", "setup-go-work"
     system "go", "build", "-C", "server", *std_go_args(ldflags:), "./cmd/mmctl"
 

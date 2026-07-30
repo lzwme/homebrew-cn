@@ -19,7 +19,7 @@ class Mihomo < Formula
 
   def install
     ldflags = %W[
-      -s -w -buildid=
+      -buildid=
       -X "github.com/metacubex/mihomo/constant.Version=#{version}"
       -X "github.com/metacubex/mihomo/constant.BuildTime=#{time.iso8601}"
     ]

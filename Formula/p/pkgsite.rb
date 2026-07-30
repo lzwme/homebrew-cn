@@ -23,7 +23,7 @@ class Pkgsite < Formula
   depends_on "go" => [:build, :test]
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/pkgsite"
+    system "go", "build", *std_go_args, "./cmd/pkgsite"
   end
 
   test do

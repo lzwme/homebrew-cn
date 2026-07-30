@@ -19,7 +19,6 @@ class Doctl < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/digitalocean/doctl.Major=#{version.major}
       -X github.com/digitalocean/doctl.Minor=#{version.minor}
       -X github.com/digitalocean/doctl.Patch=#{version.patch}

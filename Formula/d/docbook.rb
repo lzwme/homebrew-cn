@@ -14,7 +14,14 @@ class Docbook < Formula
   no_autobump! because: "new version should be added as a new resource"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c07919d078443c2253603da2689816bdbdefd8c27a3a0ea0eb0fc583d5435b01"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b7417a524db49b20339879a597e192a07be149a2a9249245da83718f488c7ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b7417a524db49b20339879a597e192a07be149a2a9249245da83718f488c7ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b7417a524db49b20339879a597e192a07be149a2a9249245da83718f488c7ff"
+    sha256 cellar: :any_skip_relocation, tahoe:         "ac4ff3d18c84371164a238200653bdc0356016701b58c6e1b6ed2da4cf01ee36"
+    sha256 cellar: :any_skip_relocation, sequoia:       "ac4ff3d18c84371164a238200653bdc0356016701b58c6e1b6ed2da4cf01ee36"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ac4ff3d18c84371164a238200653bdc0356016701b58c6e1b6ed2da4cf01ee36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b7417a524db49b20339879a597e192a07be149a2a9249245da83718f488c7ff"
   end
 
   uses_from_macos "libxml2"
@@ -96,25 +103,24 @@ class Docbook < Formula
     end
 
     (etc/"xml").mkpath
+    (libexec/"post-install").write <<~SH
+      #!/bin/sh
+      set -e
+      catalog="#{etc}/xml/catalog"
+      export XML_CATALOG_FILES="$catalog"
+      xmlcatalog="$(command -v xmlcatalog)"
+      [ -f "$catalog" ] || "$xmlcatalog" --noout --create "$catalog"
+      for version in #{resources.map(&:name).join(" ")}; do
+        entry="file://#{opt_prefix}/docbook/xml/$version/catalog.xml"
+        "$xmlcatalog" --noout --del "$entry" "$catalog"
+        "$xmlcatalog" --noout --add nextCatalog "" "$entry" "$catalog"
+      done
+    SH
+    chmod 0755, libexec/"post-install"
   end
 
-  def post_install
-    etc_catalog = etc/"xml/catalog"
-    ENV["XML_CATALOG_FILES"] = etc_catalog
-
-    # We use `/usr/bin/xmlcatalog` on macOS, but libxml2's `xmlcatalog` on Linux.
-    xmlcatalog = DevelopmentTools.locate("xmlcatalog")
-
-    # only create catalog file if it doesn't exist already to avoid content added
-    # by other formulae to be removed
-    system xmlcatalog, "--noout", "--create", etc_catalog unless etc_catalog.file?
-
-    resources.each do |version|
-      catalog = opt_prefix/"docbook/xml/#{version.name}/catalog.xml"
-
-      system xmlcatalog, "--noout", "--del", "file://#{catalog}", etc_catalog
-      system xmlcatalog, "--noout", "--add", "nextCatalog", "", "file://#{catalog}", etc_catalog
-    end
+  post_install_steps do
+    run "post-install", base: :libexec
   end
 
   def caveats

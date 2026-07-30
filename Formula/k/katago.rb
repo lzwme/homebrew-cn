@@ -3,8 +3,8 @@ class Katago < Formula
   homepage "https://katagotraining.org/"
   # Occasionally check upstream docs in case recommended model/network is changed.
   # Ref: https://github.com/lightvector/KataGo?tab=readme-ov-file#other-questions
-  url "https://ghfast.top/https://github.com/lightvector/KataGo/archive/refs/tags/v1.16.5.tar.gz"
-  sha256 "50d2aa0fb4d5e697dcfa47ddc111c17d3d193dce0604a5592f5fc02501cb49e1"
+  url "https://ghfast.top/https://github.com/lightvector/KataGo/archive/refs/tags/v1.17.0.tar.gz"
+  sha256 "a065bbbe483e9a9c4b330a058e7fd30237e64d7115b87005aa430258b26a601f"
   license all_of: [
     "MIT",
     "CC0-1.0", # g170 resources
@@ -16,12 +16,12 @@ class Katago < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2c404c87e5ec5f7ffa226c7ddb7c0bc8db0139efbceb203e80426b0c3a7ae51a"
-    sha256 cellar: :any, arm64_sequoia: "fad05a4cfc5bf4a1abdafc1d1b20158bcdf06669a0e8ca90c9d416b3337a9473"
-    sha256 cellar: :any, arm64_sonoma:  "742b07e912718a8ea0e81f9f6fe4b63550e192f52e85a01c2256f6b1519ac707"
-    sha256 cellar: :any, sonoma:        "ff770514b1e6b06e3b13c1126c6a0b53aceaa1b7e714ea6c8028058f7ac2518c"
-    sha256 cellar: :any, arm64_linux:   "1f0fc59a8dee57533e3643653978969ab5a1d10213a80487b87a172ed8e5db75"
-    sha256 cellar: :any, x86_64_linux:  "16ad539114d136690d8d25c453cee1e89175b19f50de2b460f866ca793c08907"
+    sha256 cellar: :any, arm64_tahoe:   "25e47759f13fa9af63818355e38baa93c187cefdb9a5292978a3cd7b33d9ddc2"
+    sha256 cellar: :any, arm64_sequoia: "c1fd6eee909015fc666b482456f31684307fbc9993529d5fd789e4d3c6387803"
+    sha256 cellar: :any, arm64_sonoma:  "26a6e5c44409a48e9b27a9590d77392ee970507fbf0c32acf65656e2d620361c"
+    sha256 cellar: :any, sonoma:        "0bc585b69115ae8ca2e2bf8e923cfd8a7409be398531d25bb5739df1eb0b4922"
+    sha256 cellar: :any, arm64_linux:   "382dea9edbea5996df5c67aebbad4ed83e4595ba2e2bcb8f55b9800f8cf216b9"
+    sha256 cellar: :any, x86_64_linux:  "812833a152a67f75b0746170dd6c981aaaacbe58a7fe8e4e931a232865b80fb1"
   end
 
   depends_on "cmake" => :build

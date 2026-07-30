@@ -1,9 +1,9 @@
 class PhpAT86DebugZts < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/php/php-src/archive/7ad79be6550fba20df3d7cea0a5d9da79861c1f9.tar.gz?commit=7ad79be6550fba20df3d7cea0a5d9da79861c1f9"
+  url "https://ghfast.top/https://github.com/php/php-src/archive/645966449554ac7c048125b01616358327277bd8.tar.gz?commit=645966449554ac7c048125b01616358327277bd8"
   version "8.6.0"
-  sha256 "29b84b915a6433438b9aad72678c99c16c3dbf43b0d98aaed02cbcbb143800e3"
+  sha256 "5e256ba4742d3a3732ca0eea1bf88afeba03cf0552caa57546d9c36936b12f90"
   license all_of: [
     "PHP-3.01",
 
@@ -32,13 +32,13 @@ class PhpAT86DebugZts < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 109
-    sha256 arm64_tahoe:   "df2a8d622ace77fe0c43ae565cb3a5cb2c0c9e085ab5c30536d8aa16d57eff6b"
-    sha256 arm64_sequoia: "b77b1e5b00f7246ce53b044aacfcb785038cf29e91db208c65c759d9575daa4d"
-    sha256 arm64_sonoma:  "61777f360eee58afe93cce8fe3c3c8d8d8cd41e6230449872547a9a9d62e0388"
-    sha256 sonoma:        "98702b12ad97082451255cb303d97205ce6d911ef6a49e2b027768d7a21530a7"
-    sha256 arm64_linux:   "ede3c5ece001a8711e81597984ed7a02fed25e348a2a0846f829e35ddedac81a"
-    sha256 x86_64_linux:  "9f281f31eda578eff0a8e10d098945b3525c5a335a87e291d1fa2f79b3474bc5"
+    rebuild 110
+    sha256 arm64_tahoe:   "ffd7d121bae1fd80a475dab65e5f736ba03533252ad50d0913253e63566b880f"
+    sha256 arm64_sequoia: "355a5794509413b11644cd02a44d88a646f50bbe9291ba83a8958c6a8aea1acc"
+    sha256 arm64_sonoma:  "6233f9766e6a3c4e7161ff9fb9bf3b9c14f6a6b9b7372e0177a8bf3ef0867148"
+    sha256 sonoma:        "d1cc432632c69d0d6133ccfd46aeeb173e088149f6a71db5fd46786ea0190a02"
+    sha256 arm64_linux:   "f8a2995d8a43081b4727f20efccd792cff7f51e608c641430a10a854407e7cfb"
+    sha256 x86_64_linux:  "b3e0271e99292b4fcaee861518cfca9b6bcba87cddaf82c6bcecd7a2d51e6126"
   end
 
   keg_only :versioned_formula
@@ -231,7 +231,7 @@ class PhpAT86DebugZts < Formula
     # because it's not possible to build Apache and embed at the same time
     args = shared_args.map(&:clone)
     args << "--disable-cgi"
-    args << "--disable-cli"
+    args << "--enable-cli"
     args << "--disable-phpdbg"
     args << "--enable-embed"
 

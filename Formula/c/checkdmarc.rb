@@ -3,13 +3,13 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https://domainaware.github.io/checkdmarc/"
-  url "https://files.pythonhosted.org/packages/5a/4f/9824295f8a7a812c393d6f9509c74da538ae243ab4edf8e5fac64a051e3a/checkdmarc-5.17.3.tar.gz"
-  sha256 "85eea3e91409942368fed134aa91de2d2d7e0a2e94e96c85f3f9648b874d33f6"
+  url "https://files.pythonhosted.org/packages/7d/1c/7038f6cb824e5ba49b9758febd6f7b59fca166f23fdd80461005cdf4415b/checkdmarc-5.17.4.tar.gz"
+  sha256 "ee0ec1925bc6c60956ad2af9792e37ff693453c4f7e07fa9768b837d82863a03"
   license "Apache-2.0"
   head "https://github.com/domainaware/checkdmarc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "28deea869d77ca1f824183f49bbc4edc895a2cfef718615c79794a922a22752f"
+    sha256 cellar: :any_skip_relocation, all: "3af129948a3d98f76b9313ff772c38caa27ac23fee610f9b1005dc3191f9e824"
   end
 
   depends_on "certifi" => :no_linkage
@@ -19,8 +19,8 @@ class Checkdmarc < Formula
   pypi_packages exclude_packages: ["certifi", "cryptography"]
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "dnspython" do
@@ -49,13 +49,13 @@ class Checkdmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https://files.pythonhosted.org/packages/e1/6c/de8185fcf1b12db5a04fb28560d108cae3f0f68659b9b41ddd40008caad5/publicsuffixlist-1.0.2.20260623.tar.gz"
-    sha256 "780df36b759117663e135bf0b69e9f242f0298db3f15d13cdeb3d40e0541cf0b"
+    url "https://files.pythonhosted.org/packages/b1/2c/ba07f8c6fde9954c050797a9de4b93b209f94ba93001bb236c1b2c4129da/publicsuffixlist-1.0.2.20260726.tar.gz"
+    sha256 "6abd9eace2fa7a8734fdae9c8b32403a8c6b22c5872dad59367f19bc83d990ea"
   end
 
   resource "pyleri" do
-    url "https://files.pythonhosted.org/packages/3a/0e/0e384ad4a9a603895f28da0fa32260402e372d26f3333a9ccd09de2bdf96/pyleri-1.5.0.tar.gz"
-    sha256 "0715a433e5b97e3d2fd8f74b4e57871e365eb3a1c7a09fb70d2f78700fd25e4c"
+    url "https://files.pythonhosted.org/packages/ff/f7/68edc8004ce2be6b60151a18528537d172991dd3737167285e1391771192/pyleri-1.5.1.tar.gz"
+    sha256 "998d5b0cc453940e1753fc1acf83912568786e6dc6fe45f3c25a6f4ea72a3826"
   end
 
   resource "pyopenssl" do

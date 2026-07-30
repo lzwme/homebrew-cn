@@ -17,8 +17,7 @@ class Pop < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}")
 
     generate_completions_from_executable(bin/"pop", shell_parameter_format: :cobra)
     (man1/"pop.1").write Utils.safe_popen_read(bin/"pop", "man")

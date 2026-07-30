@@ -1,8 +1,8 @@
 class Nanoarrow < Formula
   desc "Helpers for Arrow C Data & Arrow C Stream interfaces"
   homepage "https://arrow.apache.org/nanoarrow"
-  url "https://ghfast.top/https://github.com/apache/arrow-nanoarrow/archive/refs/tags/apache-arrow-nanoarrow-0.8.0.tar.gz"
-  sha256 "1c5136edf5c1e9cd8c47c4e31dfe07d0e09c25f27be20c8d6e78a0f4a4ed3fae"
+  url "https://ghfast.top/https://github.com/apache/arrow-nanoarrow/releases/download/apache-arrow-nanoarrow-0.8.0/apache-arrow-nanoarrow-0.8.0.tar.gz"
+  sha256 "6e61e2819c9138e9092ba32b568ed6f4594928b306171937251eaaafa7dc2b8c"
   license "Apache-2.0"
 
   bottle do

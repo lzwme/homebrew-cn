@@ -27,7 +27,6 @@ class Massdriver < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/massdriver-cloud/mass/internal/version.version=#{version}
       -X github.com/massdriver-cloud/mass/internal/version.gitSHA=#{tap.user}
     ]

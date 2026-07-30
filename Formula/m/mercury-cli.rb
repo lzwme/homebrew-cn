@@ -17,7 +17,7 @@ class MercuryCli < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"mercury"), "./cmd/mercury"
+    system "go", "build", *std_go_args(output: bin/"mercury"), "./cmd/mercury"
   end
 
   test do

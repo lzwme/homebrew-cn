@@ -18,10 +18,7 @@ class Minder < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/mindersec/minder/internal/constants.CLIVersion=#{version}
-    ]
+    ldflags = %W[-X github.com/mindersec/minder/internal/constants.CLIVersion=#{version}]
     system "go", "build", *std_go_args(ldflags:), "./cmd/cli"
 
     generate_completions_from_executable(bin/"minder", shell_parameter_format: :cobra)

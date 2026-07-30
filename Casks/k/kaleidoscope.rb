@@ -21,22 +21,26 @@ cask "kaleidoscope" do
 
   app "Kaleidoscope.app"
 
-  postflight do
-    contents = "#{appdir}/Kaleidoscope.app/Contents"
-    system_command "#{contents}/Resources/Integration/scripts/install_ksdiff",
-                   args: ["#{contents}/MacOS", "#{HOMEBREW_PREFIX}/bin"]
+  postflight_steps do
+    run "Kaleidoscope.app/Contents/Resources/Integration/scripts/install_ksdiff",
+        args: ["{{appdir}}/Kaleidoscope.app/Contents/MacOS", "{{HOMEBREW_PREFIX}}/bin"], base: :appdir
   end
 
   uninstall quit:    "app.kaleidoscope.v#{version.major}",
             pkgutil: "app.kaleidoscope.uninstall_ksdiff"
 
   zap trash: [
+    "~/Library/Application Scripts/app.kaleidoscope.v*.KaleidoscopePrism",
+    "~/Library/Application Scripts/app.kaleidoscope.v*.KSShareExtension",
     "~/Library/Application Support/app.kaleidoscope.v*",
     "~/Library/Application Support/com.blackpixel.kaleidoscope",
     "~/Library/Application Support/Kaleidoscope",
     "~/Library/Caches/app.kaleidoscope.v*",
     "~/Library/Caches/com.blackpixel.kaleidoscope",
     "~/Library/Caches/com.plausiblelabs.crashreporter.data/com.blackpixel.kaleidoscope",
+    "~/Library/Containers/app.kaleidoscope.v*.KaleidoscopePrism",
+    "~/Library/Containers/app.kaleidoscope.v*.KSShareExtension",
+    "~/Library/HTTPStorages/app.kaleidoscope.v*",
     "~/Library/Preferences/app.kaleidoscope.v*.plist",
     "~/Library/Preferences/com.blackpixel.kaleidoscope.plist",
     "~/Library/Saved Application State/app.kaleidoscope.v*.savedState",

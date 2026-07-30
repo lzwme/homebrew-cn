@@ -18,8 +18,7 @@ class DockerGen < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.buildVersion=#{version}"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/docker-gen"
+    system "go", "build", *std_go_args(ldflags: "-X main.buildVersion=#{version}"), "./cmd/docker-gen"
   end
 
   test do

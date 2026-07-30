@@ -18,11 +18,7 @@ class Minify < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.Version=#{version}
-    ]
-    system "go", "build", *std_go_args(ldflags:), "./cmd/minify"
+    system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}"), "./cmd/minify"
     bash_completion.install "cmd/minify/bash_completion"
   end
 

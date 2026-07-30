@@ -30,7 +30,7 @@ class Glooctl < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/solo-io/gloo/pkg/version.Version=#{version}"
+    ldflags = "--X github.com/solo-io/gloo/pkg/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./projects/gloo/cli/cmd"
 
     generate_completions_from_executable(bin/"glooctl", "completion", shells: [:bash, :zsh])

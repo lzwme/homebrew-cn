@@ -18,10 +18,7 @@ class Dependabot < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/dependabot/cli/cmd/dependabot/internal/cmd.version=#{version}
-    ]
+    ldflags = %W[-X github.com/dependabot/cli/cmd/dependabot/internal/cmd.version=#{version}]
     system "go", "build", *std_go_args(ldflags:), "./cmd/dependabot"
 
     generate_completions_from_executable(bin/"dependabot", shell_parameter_format: :cobra)

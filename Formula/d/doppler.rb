@@ -18,10 +18,7 @@ class Doppler < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/DopplerHQ/cli/pkg/version.ProgramVersion=dev-#{version}
-    ]
+    ldflags = %W[-X github.com/DopplerHQ/cli/pkg/version.ProgramVersion=dev-#{version}]
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"doppler", "completion")

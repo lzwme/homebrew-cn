@@ -27,7 +27,6 @@ class Mox < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/mjl-/mox/moxvar.Version=#{version}
       -X github.com/mjl-/mox/moxvar.VersionBare=#{version}
       -X main.changelogURL=none

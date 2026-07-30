@@ -1,9 +1,9 @@
 class MipsLinuxGnuBinutils < Formula
   desc "GNU Binutils for mips-linux-gnu cross development"
   homepage "https://www.gnu.org/software/binutils/"
-  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.46.1.tar.bz2"
-  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.46.1.tar.bz2"
-  sha256 "324ed40ada2633a28eaa5d104ca5db165fd3cc3162cc1d48a7b7fa9c932da439"
+  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.47.tar.bz2"
+  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.47.tar.bz2"
+  sha256 "3068128c75cda9f898ccb4211d360246e8e195ffcc9dfb655b23ae23a54800e8"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class MipsLinuxGnuBinutils < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "7a65b4a937d9ee9ee6d45ebb99cc14944991aeab9439a7b8e113c2c7be361226"
-    sha256 arm64_sequoia: "bb6a19f7cdb53158f722543d640154f7790e0e390197e7fe824bc4387b2835f6"
-    sha256 arm64_sonoma:  "d79c33763ebd7a87302cd3369363e9134b7649907f52c015befdac212ffa8c2d"
-    sha256 sonoma:        "810cd203ed457db043664104041a357895f768153e984de84ffcab0f87d5ecef"
-    sha256 arm64_linux:   "370a193c60ef4570baaf561af1c1985496759c74786eb36b76e0f534edc4049d"
-    sha256 x86_64_linux:  "0f286dbf7f079e445f5fd23b254aadb3043e1a85e2b0afc2099db83e25178051"
+    sha256 arm64_tahoe:   "1dc95e92059f444c2bbdf0a2f423773c761cecd87fbe557c88349515745a4bde"
+    sha256 arm64_sequoia: "f76ec09163bc47f161857ca701309c9cda6d739909799f6e9616428b479059ef"
+    sha256 arm64_sonoma:  "22a44edc099d4f6165b2d172cb31e2b54e4cc65fa23ab8be8f9a80543b4d5baa"
+    sha256 sonoma:        "601a50881c97f4c343dd351cbe2be60a680edf8f9c9715d8de2142ff100182b5"
+    sha256 arm64_linux:   "fc6fa3570e8fd594394a1c92ea52cff6258976c7743a50f43f3d60177d9be8ca"
+    sha256 x86_64_linux:  "dcf247249c8de84cddb3e3d3d3c68e7ff1e0fff8069251ff01245d8a5d9cd13e"
   end
 
   depends_on "pkgconf" => :build

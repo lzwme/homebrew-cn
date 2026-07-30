@@ -23,7 +23,7 @@ class GhOst < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.AppVersion=#{version} -X main.GitCommit=#{tap.user}"
+    ldflags = "-X main.AppVersion=#{version} -X main.GitCommit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:), "./go/cmd/gh-ost"
   end
 

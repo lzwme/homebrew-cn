@@ -3,18 +3,18 @@ class Azqr < Formula
   homepage "https://azure.github.io/azqr/"
   # pull from git tag to get submodules
   url "https://github.com/Azure/azqr.git",
-      tag:      "v.3.3.0",
-      revision: "d6df7d7798dafca175df9e01c3e677482ac789ca"
+      tag:      "v.4.0.0",
+      revision: "ed6b95888a221c576b53ec39aeb441242112ef4d"
   license "MIT"
   head "https://github.com/Azure/azqr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dadddfe688ca27ad57d3d141f00a3da21fc6362ebc706b0a8647710606bfd256"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dadddfe688ca27ad57d3d141f00a3da21fc6362ebc706b0a8647710606bfd256"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dadddfe688ca27ad57d3d141f00a3da21fc6362ebc706b0a8647710606bfd256"
-    sha256 cellar: :any_skip_relocation, sonoma:        "282620caad2ad34bac90ee0a04e498e78250857bbb117b458590e2847bb1d117"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3683da7c429d67b6dd1300f09992a47ec97d7faff472b312034bf6f757c1e698"
-    sha256 cellar: :any,                 x86_64_linux:  "e1a34ed95a5bddd3544130a921c595c617c124d3da37861d7984b8dd5514f294"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ba7bb2d9924980fdca0bd316e781bcb7dfef540f432a19746f064058e865624"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ba7bb2d9924980fdca0bd316e781bcb7dfef540f432a19746f064058e865624"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ba7bb2d9924980fdca0bd316e781bcb7dfef540f432a19746f064058e865624"
+    sha256 cellar: :any_skip_relocation, sonoma:        "42ff44dd1a24cb27ae71b79c01df268e88f6d77567b040f41825477385cbd2af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4d45e908ddfb5bf5fb715841939c3d55b63e126f14bb849c126dac09b427bb9"
+    sha256 cellar: :any,                 x86_64_linux:  "2596599e80e0954a97ff6cb57318f8ff75fc9e76c8215326b14c0eb1357af879"
   end
 
   depends_on "go" => :build

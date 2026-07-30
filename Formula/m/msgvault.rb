@@ -29,7 +29,7 @@ class Msgvault < Formula
     # SDK, while Linux needs Homebrew's sqlite headers.
     ENV.append "CGO_CFLAGS", "-I#{formula_opt_include("sqlite")}" if OS.linux?
 
-    ldflags = "-s -w -X go.kenn.io/msgvault/cmd/msgvault/cmd.Version=#{version}"
+    ldflags = "-X go.kenn.io/msgvault/cmd/msgvault/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:, tags: "fts5 sqlite_vec duckdb_use_lib"), "./cmd/msgvault"
   end
 

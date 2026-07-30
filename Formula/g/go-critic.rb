@@ -23,9 +23,7 @@ class GoCritic < Formula
   depends_on "go"
 
   def install
-    ldflags = "-s -w"
-    ldflags += " -X main.Version=v#{version}" if build.stable?
-    system "go", "build", *std_go_args(ldflags:), "./cmd/go-critic"
+    system "go", "build", *std_go_args(ldflags: "-X main.Version=v#{version}"), "./cmd/go-critic"
     bin.install_symlink bin/"go-critic" => "gocritic"
   end
 

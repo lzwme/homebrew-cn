@@ -22,7 +22,7 @@ class Mp4ff < Formula
 
   def install
     tools.each do |tool|
-      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/tool), "./cmd/#{tool}"
+      system "go", "build", *std_go_args(output: bin/tool), "./cmd/#{tool}"
     end
   end
 

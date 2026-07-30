@@ -19,7 +19,7 @@ class Pgstream < Formula
   depends_on "wal2json" => :test
 
   def install
-    ldflags = "-s -w -X github.com/xataio/pgstream/cmd.Version=#{version}"
+    ldflags = "-X github.com/xataio/pgstream/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"pgstream", shell_parameter_format: :cobra)

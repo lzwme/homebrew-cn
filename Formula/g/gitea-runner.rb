@@ -17,10 +17,7 @@ class GiteaRunner < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X gitea.com/gitea/runner/internal/pkg/ver.version=v#{version}
-    ]
+    ldflags = %W[-X gitea.com/gitea/runner/internal/pkg/ver.version=v#{version}]
     system "go", "build", *std_go_args(ldflags:)
     generate_completions_from_executable(bin/"gitea-runner", shell_parameter_format: :cobra)
 

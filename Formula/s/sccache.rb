@@ -1,8 +1,8 @@
 class Sccache < Formula
   desc "Used as a compiler wrapper and avoids compilation when possible"
   homepage "https://github.com/mozilla/sccache"
-  url "https://ghfast.top/https://github.com/mozilla/sccache/archive/refs/tags/v0.16.0.tar.gz"
-  sha256 "917fd4d7e584c23dd3cf9ca2f394c2ca03c57c73e2d6079770f07d9008176afe"
+  url "https://ghfast.top/https://github.com/mozilla/sccache/archive/refs/tags/v0.17.0.tar.gz"
+  sha256 "49949ad1cf175c49da126dbb0c2e6a56bd9d1f626e8cc0be17b9668b914145c6"
   license "Apache-2.0"
   head "https://github.com/mozilla/sccache.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Sccache < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf3e36da9812c2e7ca325b3c27650e0bb2e743ddb870410f62b1e47a75820ee0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe257916116c5a8389dec92e7b5a90f727e5f6188d70b4d7af52b3f44b65e8a1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c015f6b8748259ce4f0591ac5693db5e15864e39d43b34a25b9b644f2046867"
-    sha256 cellar: :any_skip_relocation, sonoma:        "26fe1ccf82a4a93e8b5f373d465eb1f18f8aab3c1140860258530e38ace84a7c"
-    sha256 cellar: :any,                 arm64_linux:   "8b87a202f3eef4f1b10cc312e3c9e3157f8fecde7a894cf888b623354cfe443a"
-    sha256 cellar: :any,                 x86_64_linux:  "172e661fbcd78508bbc41e25bbebf3cc244274ce0f6267ed130a8b84eb1480eb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7748b72b00ded7c5a67ec90f096e267efd3405f92d78c529366aaf08304d07a3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19686ad7ae3ff94088c8c2cec75a1a4bbcf817b5748d667e47162feef330024b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82bf259c4494b02de912b29598bb9c33679c8b229d383922e9e9723aff891e35"
+    sha256 cellar: :any_skip_relocation, sonoma:        "54578793f6d2da4ab0c4ad9609933ae8ecda45650cb688084a47f30eb291867c"
+    sha256 cellar: :any,                 arm64_linux:   "53b23e0182080c692ea2cd495a555fde4e5edff0dc9a49a9bdba02414e447f65"
+    sha256 cellar: :any,                 x86_64_linux:  "ed0e69f0d6427c6b5610e7a0e0c5dcb3f08b16cc379bfb5aa73a82a42bb0c12f"
   end
 
   depends_on "pkgconf" => :build

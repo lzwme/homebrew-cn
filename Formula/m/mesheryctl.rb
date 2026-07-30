@@ -24,7 +24,6 @@ class Mesheryctl < Formula
     ENV["CGO_ENABLED"] = "0" if OS.linux?
 
     ldflags = %W[
-      -s -w
       -X github.com/meshery/meshery/mesheryctl/internal/cli/root/constants.version=v#{version}
       -X github.com/meshery/meshery/mesheryctl/internal/cli/root/constants.commitsha=#{Utils.git_short_head}
       -X github.com/meshery/meshery/mesheryctl/internal/cli/root/constants.releasechannel=stable

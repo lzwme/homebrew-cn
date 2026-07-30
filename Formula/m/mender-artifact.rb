@@ -35,7 +35,7 @@ class MenderArtifact < Formula
       ENV.append "GOFLAGS", "-buildmode=pie"
     end
 
-    ldflags = "-s -w -X github.com/mendersoftware/mender-artifact/cli.Version=#{version}"
+    ldflags = "-X github.com/mendersoftware/mender-artifact/cli.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
     # mender-artifact doesn't support autocomplete generation so we have to

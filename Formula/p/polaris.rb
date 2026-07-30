@@ -18,7 +18,7 @@ class Polaris < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.Version=#{version} -X main.Commit=#{tap.user}"
+    ldflags = "-X main.Version=#{version} -X main.Commit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"polaris", shell_parameter_format: :cobra)

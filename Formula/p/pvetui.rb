@@ -19,7 +19,6 @@ class Pvetui < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/devnullvoid/pvetui/internal/version.version=#{version}
       -X github.com/devnullvoid/pvetui/internal/version.commit=#{tap.user}
       -X github.com/devnullvoid/pvetui/internal/version.buildDate=#{time.iso8601}

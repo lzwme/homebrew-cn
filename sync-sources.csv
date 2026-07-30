@@ -5475,6 +5475,7 @@ Homebrew-homebrew-core/Formula/o/openliberty-webprofile8.rb, Homebrew/homebrew-c
 Homebrew-homebrew-core/Formula/o/openliberty-webprofile9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openlibm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openlist.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/openlore.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openmama.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openmotif.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openmsx.rb, Homebrew/homebrew-core, 1
@@ -7728,6 +7729,7 @@ Homebrew-homebrew-core/Formula/t/ttyrec.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tubeup.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tuc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tuckr.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tuicr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tuios.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tuisky.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tun2proxy.rb, Homebrew/homebrew-core, 1
@@ -9709,7 +9711,6 @@ Homebrew-homebrew-cask/Casks/d/dyad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dyalog.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dymo-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dyn-updater.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/d/dynalist.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dynamodb-local.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dynobase.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/ea.rb, Homebrew/homebrew-cask, 0
@@ -11510,10 +11511,8 @@ Homebrew-homebrew-cask/Casks/font/font-m/font-moo-lah-lah.rb, Homebrew/homebrew-
 Homebrew-homebrew-cask/Casks/font/font-m/font-mooli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-moon-dance.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-moralerspace-hw-jpdoc.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-m/font-moralerspace-hw-nf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-moralerspace-hw.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-moralerspace-jpdoc.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-m/font-moralerspace-nf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-moralerspace.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-moul.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-moulpali.rb, Homebrew/homebrew-cask, 0
@@ -13471,6 +13470,8 @@ Homebrew-homebrew-cask/Casks/l/lulu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lumen.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lumide.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/luminance-hdr.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/luna-display.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/luna-secondary.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lunacy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lunar-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lunar.rb, Homebrew/homebrew-cask, 0
@@ -14172,7 +14173,6 @@ Homebrew-homebrew-cask/Casks/o/openwork.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openzfs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opera-air.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opera-gx.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/o/opera-neon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opera.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opera@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opera@developer.rb, Homebrew/homebrew-cask, 0

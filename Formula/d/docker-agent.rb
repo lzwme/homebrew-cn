@@ -21,7 +21,6 @@ class DockerAgent < Formula
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
     ldflags = %W[
-      -s -w
       -X github.com/docker/docker-agent/pkg/version.Version=v#{version}
       -X github.com/docker/docker-agent/pkg/version.Commit=#{tap.user}
     ]

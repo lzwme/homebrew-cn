@@ -18,8 +18,7 @@ class McpGrafana < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/mcp-grafana"
+    system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/mcp-grafana"
   end
 
   test do

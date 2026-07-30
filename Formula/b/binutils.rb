@@ -1,20 +1,19 @@
 class Binutils < Formula
   desc "GNU binary tools for native development"
   homepage "https://www.gnu.org/software/binutils/binutils.html"
-  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.46.1.tar.bz2"
-  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.46.1.tar.bz2"
-  sha256 "324ed40ada2633a28eaa5d104ca5db165fd3cc3162cc1d48a7b7fa9c932da439"
+  url "https://ftpmirror.gnu.org/gnu/binutils/binutils-2.47.tar.bz2"
+  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.47.tar.bz2"
+  sha256 "3068128c75cda9f898ccb4211d360246e8e195ffcc9dfb655b23ae23a54800e8"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later", "LGPL-2.0-or-later", "LGPL-3.0-only"]
   compatibility_version 1
 
   bottle do
-    rebuild 2
-    sha256               arm64_tahoe:   "82a2db1df36bfcf2c4646271f8dfb3fc2671a29b2f34d913b673eecdab69805b"
-    sha256               arm64_sequoia: "51e1a73949af5075e985a8dba9110d1beb7d82f04bec2cf9eaef597aad71bf5c"
-    sha256               arm64_sonoma:  "d63291ccd26bb008d107828313116c1d149f948e447788fdc09665682c8aa102"
-    sha256               sonoma:        "3abcf7fbdda68fd20dc4d5f29bfe327a785f5709f869196a6a1ee79203b340a9"
-    sha256 cellar: :any, arm64_linux:   "4520c8904d2025498b99f2e27e34f365f3de3facf3fec04f890bdf49dd0cffeb"
-    sha256 cellar: :any, x86_64_linux:  "bf08a932ea762aceaef98b8819a76624b73578727f5a98a978d97b0592dd2376"
+    sha256               arm64_tahoe:   "3453a1b0d79fcf2f8cdb994352a7a0c42f075027df3c5af9cd3b59e48d925217"
+    sha256               arm64_sequoia: "d5a0fc7a1ecde47af381298523ee64c9072041531634e405e2adac034d73095d"
+    sha256               arm64_sonoma:  "8ffc2a8bcba52c6a839432faeeab5fff00beb60bd7d9c4bf26cfa057e595ebaf"
+    sha256               sonoma:        "eb444e609e4d81b3f61af7fb251fda61c3a1980cc7c0461c6e9cee1c240af2c9"
+    sha256 cellar: :any, arm64_linux:   "09c7c1414fee9ff82848c4e7711fce85d2506555dd4a62a3d69e199736cb5113"
+    sha256 cellar: :any, x86_64_linux:  "69509d3a474bc6c043fdc1e50a447b973813d8646405bcbbb764a4935696b1b7"
   end
 
   keg_only :shadowed_by_macos, "Apple's CLT provides the same tools"

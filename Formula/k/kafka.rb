@@ -12,12 +12,13 @@ class Kafka < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b61e2302f5e1e2c8e57b613e81a3e5971d3d7eb3b99bbf72ec738bff7e677b8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b61e2302f5e1e2c8e57b613e81a3e5971d3d7eb3b99bbf72ec738bff7e677b8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b61e2302f5e1e2c8e57b613e81a3e5971d3d7eb3b99bbf72ec738bff7e677b8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "495dfb304e4757612a82651fec15224df2c6bced5ff3cbf905ad1899ef7c3060"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b61e2302f5e1e2c8e57b613e81a3e5971d3d7eb3b99bbf72ec738bff7e677b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b61e2302f5e1e2c8e57b613e81a3e5971d3d7eb3b99bbf72ec738bff7e677b8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ae6e70b0289c5b3428193e366dac966e91bbb52cce3d3b418899121a0094c6e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
   end
 
   depends_on "openjdk"
@@ -46,13 +47,22 @@ class Kafka < Formula
     mv "config", "kafka"
     etc.install "kafka"
     libexec.install_symlink etc/"kafka" => "config"
+
+    (libexec/"post-install").write <<~SH
+      #!/bin/sh
+      set -e
+      storage="#{opt_bin}/kafka-storage"
+      uuid="$($storage random-uuid)"
+      exec "$storage" format --standalone -t "$uuid" -c "#{etc}/kafka/server.properties"
+    SH
+    chmod 0755, libexec/"post-install"
   end
 
-  def post_install
-    # create directory for kafka stdout+stderr output logs when run by launchd
-    (var/"log/kafka").mkpath
-
-    generate_log_dir(etc/"kafka/server.properties") unless (var/"lib/kraft-combined-logs/meta.properties").exist?
+  post_install_steps do
+    mkdir_p "log/kafka"
+    unless_path_exists "lib/kraft-combined-logs/meta.properties" do
+      run "post-install", base: :libexec
+    end
   end
 
   def generate_log_dir(path)

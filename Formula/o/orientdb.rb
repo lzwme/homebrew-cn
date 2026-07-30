@@ -11,7 +11,8 @@ class Orientdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "af6e499bb0fd20f689e22386151c9193afbae03c97b6565516d4cd9b92780f29"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "b5f313f18136943c2f9d3aa3c322ac6e6ecc087c20e88d86439482806f86e412"
   end
 
   depends_on "maven" => :build
@@ -39,22 +40,30 @@ class Orientdb < Formula
     (bin/"orientdb").write_env_script "#{libexec}/bin/orientdb.sh", JAVA_HOME: formula_opt_prefix("openjdk")
     (bin/"orientdb-console").write_env_script "#{libexec}/bin/console.sh", JAVA_HOME: formula_opt_prefix("openjdk")
     (bin/"orientdb-gremlin").write_env_script "#{libexec}/bin/gremlin.sh", JAVA_HOME: formula_opt_prefix("openjdk")
+
+    (libexec/"post-install").write <<~SH
+      #!/bin/sh
+      set -e
+      orientdb="#{opt_bin}/orientdb"
+      cleanup() { ORIENTDB_ROOT_PASSWORD=orientdb "$orientdb" stop; }
+      trap cleanup EXIT
+      ORIENTDB_ROOT_PASSWORD=orientdb "$orientdb" stop
+      sleep 3
+      ORIENTDB_ROOT_PASSWORD=orientdb "$orientdb" start
+      sleep 3
+      trap - EXIT
+      cleanup
+    SH
+    chmod 0755, libexec/"post-install"
   end
 
-  def post_install
-    (var/"db/orientdb").mkpath
-    (var/"run/orientdb").mkpath
-    (var/"log/orientdb").mkpath
-    touch "#{var}/log/orientdb/orientdb.err"
-    touch "#{var}/log/orientdb/orientdb.log"
-
-    ENV["ORIENTDB_ROOT_PASSWORD"] = "orientdb"
-    system bin/"orientdb", "stop"
-    sleep 3
-    system bin/"orientdb", "start"
-    sleep 3
-  ensure
-    system bin/"orientdb", "stop"
+  post_install_steps do
+    mkdir_p "db/orientdb"
+    mkdir_p "run/orientdb"
+    mkdir_p "log/orientdb"
+    touch "log/orientdb/orientdb.err"
+    touch "log/orientdb/orientdb.log"
+    run "post-install", base: :libexec
   end
 
   def caveats

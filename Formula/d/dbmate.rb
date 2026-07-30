@@ -22,7 +22,7 @@ class Dbmate < Formula
     tags = %w[
       sqlite_omit_load_extension sqlite_json sqlite_fts5
     ]
-    system "go", "build", *std_go_args(ldflags: "-s -w", tags:)
+    system "go", "build", *std_go_args(tags:)
   end
 
   test do

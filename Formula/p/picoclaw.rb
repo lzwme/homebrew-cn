@@ -28,7 +28,7 @@ class Picoclaw < Formula
 
     system "go", "generate", "./cmd/picoclaw/internal/onboard"
 
-    ldflags = "-s -w -X github.com/sipeed/picoclaw/pkg/config.Version=#{version}"
+    ldflags = "-X github.com/sipeed/picoclaw/pkg/config.Version=#{version}"
     tags = "goolm,stdjson"
     system "go", "build", *std_go_args(ldflags:, tags:), "./cmd/picoclaw"
   end

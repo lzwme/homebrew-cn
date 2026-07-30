@@ -1,6 +1,6 @@
 cask "flutterflow" do
-  version "7.0.61"
-  sha256 "8a6fc09b6df35d984e20c6b185050a082a06f1491ccbe58ba68410519f2a25b3"
+  version "7.0.63"
+  sha256 "18de3fda63b3230d6741645827b284c3b320e71710adbd8b52c3137f49b82774"
 
   url "https://storage.googleapis.com/flutterflow-downloads/macos/flutterflow-#{version}-macos.zip",
       verified: "storage.googleapis.com/flutterflow-downloads/"
@@ -20,6 +20,7 @@ cask "flutterflow" do
   zap trash: [
     "~/Library/Application Support/io.flutterflow.prod.mac",
     "~/Library/Caches/io.flutterflow.prod.mac",
+    "~/Library/Containers/io.flutterflow.flutterflow",
     "~/Library/HTTPStorages/io.flutterflow.prod.mac",
     "~/Library/Preferences/io.flutterflow.prod.mac.plist",
     "~/Library/Saved Application State/io.flutterflow.prod.mac.savedState",

@@ -27,7 +27,7 @@ class Pixlet < Formula
       system "npm", "run", "build"
     end
 
-    ldflags = "-s -w -X github.com/tronbyt/pixlet/runtime.Version=v#{version}"
+    ldflags = "-X github.com/tronbyt/pixlet/runtime.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:, tags: "gzip_fonts")
 
     generate_completions_from_executable(bin/"pixlet", shell_parameter_format: :cobra)

@@ -1,13 +1,13 @@
 class Asimov < Formula
   desc "Automatically exclude development dependencies from Time Machine backups"
   homepage "https://github.com/AsimovMac/asimov"
-  url "https://ghfast.top/https://github.com/AsimovMac/asimov/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "9fb785e94af7dd93e240ce6659fd702bb99f4c3f5d2673754334455a867745cc"
+  url "https://ghfast.top/https://github.com/AsimovMac/asimov/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "9fa0b1551cd3e741288701f589c1b1f42d16cb655f60283dce3a1bc7c5b9af67"
   license "MIT"
   head "https://github.com/AsimovMac/asimov.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "47fc305de665d921a6199c86262b4dc6cfb561474a08b34ac5f60179b1b84b62"
+    sha256 cellar: :any_skip_relocation, all: "844e1015e05c3a47a7f7dcd1a9255369c0854c1c0416fdeef44eb99e0f507834"
   end
 
   def install

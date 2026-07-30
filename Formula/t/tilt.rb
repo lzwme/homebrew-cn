@@ -2,20 +2,20 @@ class Tilt < Formula
   desc "Define your dev environment as code. For microservice apps on Kubernetes"
   homepage "https://tilt.dev/"
   url "https://github.com/tilt-dev/tilt.git",
-      tag:      "v0.37.5",
-      revision: "08268a960e87e544768ec8ed4db7c9c21862cb63"
+      tag:      "v0.37.6",
+      revision: "76a6dd7d311178fe864baa22ce63a2f053764efc"
   license "Apache-2.0"
   head "https://github.com/tilt-dev/tilt.git", branch: "master"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f81c5eb56ad50b84098cf489b94f6f229118658d3d9656f1521c1ee505380a4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca7280c1b3f4175b2a1954dfcd00e3494a0f99fc537e731be8ea626f1f7c7902"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e6eef2dfeb7c410a0295cf4b57155389c60d0d3b67becdbd80cb4e7b4e92047"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c8f3c51eb4a837ec57d976e7f5765a527e9cfdd8d2e1af4740271fd516bdf752"
-    sha256 cellar: :any,                 arm64_linux:   "6d3decf8ef93f56579888141dd05a9ba9a56170b5f422fd0ca6c91d720906fec"
-    sha256 cellar: :any,                 x86_64_linux:  "f3e5ba16c7e060fa5af2cd7479a46aeea5caa0594a5ec9cbefb1a3cadfb9be0e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "301ed229ec361dc1fc7ed43918e604cab1e2c7e421ac6754298efb8f0d1af05a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21d45c781a1a26d5411324c33973565c01643007edee8d48075c8686deeac211"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11073fa1e3d0edf89cf285cd6c419bed0919ce528c68e432da83b68846269539"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bd8edfb0063439ccbc63939d8e5f3279ea447d1836d2fce433c32ac58c645d36"
+    sha256 cellar: :any,                 arm64_linux:   "7193936000739e8f1d65a153be04ceffb4dc857de15661be5f1019915a7c5d69"
+    sha256 cellar: :any,                 x86_64_linux:  "9061addcd9f6d2f7f22fd486b1f4de5674fcb2e39209bced66a6f31d32918bc8"
   end
 
   depends_on "corepack" => :build # for newer yarn

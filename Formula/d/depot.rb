@@ -1,8 +1,8 @@
 class Depot < Formula
   desc "Build your Docker images in the cloud"
   homepage "https://depot.dev/"
-  url "https://ghfast.top/https://github.com/depot/cli/archive/refs/tags/v2.101.75.tar.gz"
-  sha256 "29ebe8881722d4a8a6f20bc68b09ec9e8ae986c155679e4495a8afd8790ba969"
+  url "https://ghfast.top/https://github.com/depot/cli/archive/refs/tags/v2.101.76.tar.gz"
+  sha256 "aaa88514ecc449bbb5f6e3541d555d62f1ac5972ff2a9ba3e5d1ace865060edb"
   license "MIT"
   head "https://github.com/depot/cli.git", branch: "main"
 
@@ -14,19 +14,18 @@ class Depot < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f227f4ec9399601dbc8c3ee2258722f9e6541ccc0e2a6e7d771e8b8b95f4bb33"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f227f4ec9399601dbc8c3ee2258722f9e6541ccc0e2a6e7d771e8b8b95f4bb33"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f227f4ec9399601dbc8c3ee2258722f9e6541ccc0e2a6e7d771e8b8b95f4bb33"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a1daaca11ca6762ce87bdde99f01324e7cd826a47e114f41590a71c99f66b0c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fc84e0e64d5ddd3fdc6e49ac930291b7c05ca5220ab595c682736c82b859d5b"
-    sha256 cellar: :any,                 x86_64_linux:  "14a219c99da2cf07d4f3951ad5dfdf5b2275e0c24aa727e5955f57767fecc65c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4a585d76d542408344d1c9c4a47a0d6d1092570a0cd7cba4eff5c9edba98f64"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4a585d76d542408344d1c9c4a47a0d6d1092570a0cd7cba4eff5c9edba98f64"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e4a585d76d542408344d1c9c4a47a0d6d1092570a0cd7cba4eff5c9edba98f64"
+    sha256 cellar: :any_skip_relocation, sonoma:        "954581cc29fdd31d186138e398c7d5b74350972f8d40b131ef4b99e5ee175579"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "50dede9b1408d128086e3ec45c8ad277cc17fd4c19158a15192382acb0815b3b"
+    sha256 cellar: :any,                 x86_64_linux:  "3dc3cce76bb84f4a373048dac0617c2a72557551ac345715af0838165b263349"
   end
 
   depends_on "go" => :build
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/depot/cli/internal/build.Version=#{version}
       -X github.com/depot/cli/internal/build.Date=#{time.iso8601}
       -X github.com/depot/cli/internal/build.SentryEnvironment=release

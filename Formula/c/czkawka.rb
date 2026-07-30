@@ -1,18 +1,18 @@
 class Czkawka < Formula
   desc "Duplicate file utility"
   homepage "https://github.com/qarmin/czkawka"
-  url "https://ghfast.top/https://github.com/qarmin/czkawka/archive/refs/tags/12.0.0.tar.gz"
-  sha256 "cc5183c2ad251bc83d67dc6b12205a0d3d41a568ef89f16db27eb81f15c20e02"
+  url "https://ghfast.top/https://github.com/qarmin/czkawka/archive/refs/tags/12.0.1.tar.gz"
+  sha256 "0503f6969a2184fbe2b6b6d786a4ae1b50779f4ce62b57223d1407c70f500587"
   license all_of: ["MIT", "CC-BY-4.0"]
   head "https://github.com/qarmin/czkawka.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "dbd91aeaeea13d784aad024d1926755cb54e97ba3603c83557539e0b6b227033"
-    sha256 cellar: :any, arm64_sequoia: "41edeba6ec6a708e278776bb42ace0107f295c45bfcd830a2dcb80239bf0c71d"
-    sha256 cellar: :any, arm64_sonoma:  "0c20a7374fd6513086391621f8931334d4220c3f7ca462c3541e0ee77181d33d"
-    sha256 cellar: :any, sonoma:        "a822a840fcdb01d913d535f7818000c434b47dcc3d58b649c7ce938af32961d2"
-    sha256 cellar: :any, arm64_linux:   "aa50e74db6089a69aaa2887ddfadab779719b21bfd5e5438f1fc6e06f5f2bf8c"
-    sha256 cellar: :any, x86_64_linux:  "dd7419ea7d61ed1f2a488dbf2dc7500f24e74e38bea7a21b3270a5d8370f932e"
+    sha256 cellar: :any, arm64_tahoe:   "f2bba6875429744f6de089c7afc59916dfb4395de33b93113e687387468b9f99"
+    sha256 cellar: :any, arm64_sequoia: "b15b3fbaf4f818312e04c998004a3165e4e1acc4314824821f1f8c88c869c36a"
+    sha256 cellar: :any, arm64_sonoma:  "86191a915f94ae0c896081be6e2f98d4cd6163acf62f2eb78690975fd2bdf32b"
+    sha256 cellar: :any, sonoma:        "6d9f580dbc3384fdce6bdd42654a740287f35b745826e5135e3f11d65c79dd71"
+    sha256 cellar: :any, arm64_linux:   "bba6c7dbaf9f8a5e9474649fcf7655382eb6d7076cbdc1bde0407c6a7f4e8f65"
+    sha256 cellar: :any, x86_64_linux:  "f9fa7ec6ad8e318964e3bf80c4b5e5b400f5758760e2110610da3544a69e5e35"
   end
 
   depends_on "rust" => :build

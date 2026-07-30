@@ -35,14 +35,13 @@ class MinioMc < Formula
 
   def install
     if build.head?
-      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"mc")
+      system "go", "build", *std_go_args(output: bin/"mc")
     else
       minio_release = stable.specs[:tag]
       minio_version = version.to_s.gsub(/T(\d+)-(\d+)-(\d+)Z/, 'T\1:\2:\3Z')
       proj = "github.com/minio/mc"
 
       ldflags = %W[
-        -s -w
         -X #{proj}/cmd.Version=#{minio_version}
         -X #{proj}/cmd.ReleaseTag=#{minio_release}
         -X #{proj}/cmd.CommitID=#{Utils.git_head}

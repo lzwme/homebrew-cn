@@ -26,7 +26,6 @@ class GitlabRunner < Formula
   def install
     proj = "gitlab.com/gitlab-org/gitlab-runner"
     ldflags = %W[
-      -s -w
       -X #{proj}/common.NAME=gitlab-runner
       -X #{proj}/common.VERSION=#{version}
       -X #{proj}/common.REVISION=#{Utils.git_short_head(length: 8)}

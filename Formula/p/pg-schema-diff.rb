@@ -18,7 +18,7 @@ class PgSchemaDiff < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/pg-schema-diff"
+    system "go", "build", *std_go_args, "./cmd/pg-schema-diff"
 
     generate_completions_from_executable(bin/"pg-schema-diff", shell_parameter_format: :cobra)
   end

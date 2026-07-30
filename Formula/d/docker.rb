@@ -34,7 +34,6 @@ class Docker < Formula
     (buildpath/"src/github.com/docker").install_symlink buildpath => "cli"
 
     ldflags = %W[
-      -s -w
       -X github.com/docker/cli/cli/version.BuildTime=#{time.iso8601}
       -X github.com/docker/cli/cli/version.GitCommit=#{Utils.git_short_head}
       -X github.com/docker/cli/cli/version.Version=#{version}

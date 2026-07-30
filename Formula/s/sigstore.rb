@@ -3,19 +3,18 @@ class Sigstore < Formula
 
   desc "Codesigning tool for Python packages"
   homepage "https://github.com/sigstore/sigstore-python"
-  url "https://files.pythonhosted.org/packages/04/a9/7f7625225c6e7041ab4460bfc5b30a6ebc40bcf6487ee28d5864149124c4/sigstore-4.4.0.tar.gz"
-  sha256 "20ffe791c1fa33ce62148c0291b46280d29c1910964d9afac419e9b1a8afc56b"
+  url "https://files.pythonhosted.org/packages/18/e0/279419065e2d7102413605b3456122adbbccbc42e010b499c7b882fc01f8/sigstore-4.5.0.tar.gz"
+  sha256 "020d3e07f622b2916bf453e66ff6ff0711e1fdc5ab69e8bd8902f71d9fcb316f"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/sigstore/sigstore-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "40e5e2b3065c272a25df51325da4cb00a2a075c54a87c9e154103fff1a300dcd"
-    sha256 cellar: :any, arm64_sequoia: "9e88ca3a12e62a3d2398c0cb3579279b8d8602f9f1e6eea3d16a6502481be7fd"
-    sha256 cellar: :any, arm64_sonoma:  "9ce3af1b8a9076e643c6f946a0eb55d17db3fe1fde8653e4fc626c87821eb980"
-    sha256 cellar: :any, sonoma:        "b9ff1a8533e188e2344a553dbc622188dbdc5a254db4447813ca363068ebbd3f"
-    sha256 cellar: :any, arm64_linux:   "847e47dae4c29e6f7702d5bb8ab48a7574a08728a158a55ae703c1239fd4ac66"
-    sha256 cellar: :any, x86_64_linux:  "1ba19e5b74c7b3c8f6eda595d8c6bb6647ffed274caa9234ccc8b0126f038a2d"
+    sha256 cellar: :any, arm64_tahoe:   "fe8b31b761361828c3ea446e90e93b81b647a1417094295f0db63d592c13b9af"
+    sha256 cellar: :any, arm64_sequoia: "45ee9d7bfd302d16c5ec78360787d098b63a06c92b2192df04ef23f22d2743d6"
+    sha256 cellar: :any, arm64_sonoma:  "4b6de56e6dbbdf7deaf82501a739fd2a68f222d38af65d5f203b6e318096b316"
+    sha256 cellar: :any, sonoma:        "252769266d40b5654015f55b71bed54817d7b35b558fc41037d1369e706fa30b"
+    sha256 cellar: :any, arm64_linux:   "94ddd0e1a8e5da7e1f002f48b9549421000ebeffd5a5a90c14e775a6c339cea2"
+    sha256 cellar: :any, x86_64_linux:  "1214b3ca176fe978bf6b3985bc94e1754010cc0fa0453deb32b86ebe52978c14"
   end
 
   depends_on "pkgconf" => :build # for rfc3161-client
@@ -64,8 +63,8 @@ class Sigstore < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/52/cd/4f25b2f95b23f5d2c9c1fe43e49841bff5800562149b2666afc09309aa8f/platformdirs-4.10.1.tar.gz"
-    sha256 "ceab4084426fe6319ce18e86deada8ab1b7487c7aee7040c55e277c9ae793695"
+    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
+    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
   end
 
   resource "pyasn1" do

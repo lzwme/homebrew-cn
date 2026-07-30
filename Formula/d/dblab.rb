@@ -1,24 +1,24 @@
 class Dblab < Formula
   desc "Database client every command-line junkie deserves"
   homepage "https://dblab.app/"
-  url "https://ghfast.top/https://github.com/danvergara/dblab/archive/refs/tags/v0.47.0.tar.gz"
-  sha256 "8ba090a100939eaeac06fcb418d0ab72d305d8432e2e6f16bae0ac175a331f40"
+  url "https://ghfast.top/https://github.com/danvergara/dblab/archive/refs/tags/v0.47.2.tar.gz"
+  sha256 "0103b2a7dc2ece2cc580b995360cb9773f3c959026bb91c9c678ccc3a4d71bd8"
   license "MIT"
   head "https://github.com/danvergara/dblab.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27a33b1174ba855765f8b5b4deede64c63560993c859fcb1770abc62c7ba6f90"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce5718ecba4634d753c0a53e067938d2da3f3e0663e73886ba9cd209d8133aa5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa726b14284aea2dd15b1bc47286c892ec2599e7a19366feb2f7038c82ec0717"
-    sha256 cellar: :any_skip_relocation, sonoma:        "36ecf2697797af90fd7f9f00d85e00c60dbc6c54e80a563ef58bd585c83bb686"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f37348e5c631b3b73a1fa8081772ab2db16fdd3293f89ff43eb4d94b7b7ccc05"
-    sha256 cellar: :any,                 x86_64_linux:  "d17f9331e1c66e7c684390ac47e43ac51a99dc09e4bab0fd33901e17addeefb2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf9ab1d6fcbcff18c7a89a7cbb6e1e4c1f74c63169979e9a540217763e38d854"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b98c19051198c18d68042cfe6d0351b9e0cbb75616453b73e6d5e56bf2790166"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c5871cc2b7f0779133c5a82705674ecbd8e3eae855048256b5a8805df49280d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "df47ad92da057bcf55d5da5c21bf4624141256ac3ff706532b74d2d0aa1c724a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2bad158d989c3133216a9e8b938655f1298e0b8c00e99ca2052395567c900354"
+    sha256 cellar: :any,                 x86_64_linux:  "5699e3b8743236bf0d331275bd1f997d7649ce293fe48c5035e7c9451ed93061"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")
 
     generate_completions_from_executable(bin/"dblab", shell_parameter_format: :cobra)
   end

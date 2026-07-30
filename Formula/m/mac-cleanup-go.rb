@@ -17,8 +17,7 @@ class MacCleanupGo < Formula
   depends_on :macos
 
   def install
-    ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:, output: bin/"mac-cleanup")
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}", output: bin/"mac-cleanup")
   end
 
   test do

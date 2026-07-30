@@ -1,8 +1,8 @@
 class HeadscaleCli < Formula
   desc "CLI for headscale, an open-source implementation of the Tailscale control server"
   homepage "https://github.com/juanfont/headscale"
-  url "https://ghfast.top/https://github.com/juanfont/headscale/archive/refs/tags/v0.29.2.tar.gz"
-  sha256 "8d3c01ca82a07cb26cb5ab29c59e59f9880569702c586961f2e9e8331b65036b"
+  url "https://ghfast.top/https://github.com/juanfont/headscale/archive/refs/tags/v0.29.3.tar.gz"
+  sha256 "9c2b6020b51a1d53641fe8e282fd849b4d00eca8945fef93d63454655a90ba0d"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class HeadscaleCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e37c9f94b8f99709e75ddff346a49a9d6220f32a194d65b3092b2f4fe3acf864"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "606a406e3d29d008627117c0fa86db9d95fa3ea7c3720909a3649062d36e36e4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f850e4e60f0f72ee5a6ea7f205a1cf4800a47a0282c41967e579dac6fbdf0ae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d052d77910bf4bd98641b3d41fd3b329301bcb19412e642e4b4286bd991c092d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "52d9ea6b3be51386d4a34ed7815cb7bbf9e4480aedeeb4fb6c7f43eadd267ae4"
-    sha256 cellar: :any,                 x86_64_linux:  "5309138bc1c34fe93a28eb5d24d0dc84d75394e75767d308d70210668efe431c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6114ea7d64e423dd3d0c6e473b3eb7c9b2a56ad88285550ef68c368074362d12"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2636b371992ad4f49f4d3bd76d264a0be9fb24776d5fa20fb07c86cc000bbaf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "38d32dc36e758fac95495bac999cf6d2bcd00ca3ac2f4aa1e22722c88373ca58"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bba4570479819538375c813a51144011d37ec62d4b4b675692cf8b2b8cb8efc3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9956734bd49b726d9e6d451b93054b811b7aa8a0c6a645dd43dc4119c42aeb8f"
+    sha256 cellar: :any,                 x86_64_linux:  "c246afb358ee76fca8b6a7b115f71087fe42cc78b6ee32ce733e191d77e3cad2"
   end
 
   depends_on "go" => :build

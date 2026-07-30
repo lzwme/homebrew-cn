@@ -21,7 +21,6 @@ class Pyscn < Formula
     ENV["CGO_ENABLED"] = "1"
 
     ldflags = %W[
-      -s -w
       -X github.com/ludo-technologies/pyscn/internal/version.Version=#{version}
       -X github.com/ludo-technologies/pyscn/internal/version.Commit=#{tap.user}
       -X github.com/ludo-technologies/pyscn/internal/version.Date=#{time.iso8601}

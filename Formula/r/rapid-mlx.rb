@@ -3,14 +3,14 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/e2/35/e644db3f639190731781e9ded5106dabdd060c8af2f3703464b258cabeba/rapid_mlx-0.11.0.tar.gz"
-  sha256 "773ee9d459dbb02f3181fc7aebb89784207fa2ebd1dcaf4842afcf56ff60b479"
+  url "https://files.pythonhosted.org/packages/20/ae/05a803c839faeaa5c6b40b676eb63eaefd6aeac7781efe721a7878a6e32e/rapid_mlx-0.11.1.tar.gz"
+  sha256 "5c0b19f07655c56208534cd77a170763b7b5ae1437bdebd436c0d5d6b56751c2"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c244ed0772245a889e1e480f7e3067eb1108bd917b55e1293b53d81d9f39b56a"
-    sha256 cellar: :any, arm64_sequoia: "c427a1ebe6fe8de24007b56ca8dd828242e7c8935f1ca8ea92630e19f49bd2ae"
-    sha256 cellar: :any, arm64_sonoma:  "dd41e87bf8a06a9e3822a063852b7a1573356052a505ef040499f1c300b3d95f"
+    sha256 cellar: :any, arm64_tahoe:   "047bbb697f112d6e10d33b8b475a5e53c6ee162556e524aed3258f11949c3ae7"
+    sha256 cellar: :any, arm64_sequoia: "db86c6286fb42a1d457dccf5469fa1ab62d61de50df6be3bc334cfa9d0da4cfd"
+    sha256 cellar: :any, arm64_sonoma:  "6548202b821093245e86fc19329a57d7c4f1b17e1ea31ebf759ab01790fb1c0a"
   end
 
   depends_on "cmake" => :build
@@ -69,8 +69,8 @@ class RapidMlx < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/cd/95/d3f0ae10836324a2eab98a52b61210ac609f08200bf4bb0dc8132d32f78a/fastapi-0.139.2.tar.gz"
-    sha256 "333145a6891e9b5b3cfceb69baf817e8240cde4d4588ae5a10bf56ffacb6255e"
+    url "https://files.pythonhosted.org/packages/e1/33/e0dfa29ccce4eb8c9a073f9e557b0d6bacbb3aa32e7ad595f678de4d036a/fastapi-0.140.7.tar.gz"
+    sha256 "09a640af2d29006345e1f28e4f031fa60f89b1a75d29f26070f3afa677d66cce"
   end
 
   resource "filelock" do
@@ -109,8 +109,8 @@ class RapidMlx < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/df/9b/d3bb4e7d792835daf34dd7091bbc7d7b4e0437d9388f1ea7239cce49f478/huggingface_hub-1.24.0.tar.gz"
-    sha256 "18431ff4daae0749aa9ba102fc952e314c98e1d30ebdec5319d85ca0a83e1ae5"
+    url "https://files.pythonhosted.org/packages/4b/50/db3771a6e4fad4bd28fb055d4363b51cb0ae98c1aa504b79d41fdcab5483/huggingface_hub-1.25.1.tar.gz"
+    sha256 "21129595ca7a753be479b319913e22cc8808361ac118bd76cc413db831b28a99"
   end
 
   resource "idna" do
@@ -274,8 +274,8 @@ class RapidMlx < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/dd/84/da0e5038228fa34dfd77c5026b173ed035d2a3ba31f1077590c013de2bff/tqdm-4.69.1.tar.gz"
-    sha256 "2be21080a0ce17e902c2f1baeb6a74bf551b67bbdfa4bc0109fad471d0b4cb0d"
+    url "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz"
+    sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
   end
 
   resource "transformers" do

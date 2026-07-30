@@ -20,7 +20,7 @@ class Pdtm < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/pdtm"
+    system "go", "build", *std_go_args, "./cmd/pdtm"
   end
 
   test do

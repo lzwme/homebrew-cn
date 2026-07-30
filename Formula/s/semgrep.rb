@@ -5,8 +5,8 @@ class Semgrep < Formula
   homepage "https://semgrep.dev"
   # Pull from git tag to get submodules, https://github.com/semgrep/semgrep/issues/10877
   url "https://github.com/semgrep/semgrep.git",
-      tag:      "v1.171.0",
-      revision: "6e47ff626670a8bded8b527f61d709e2e332ec4b"
+      tag:      "v1.172.0",
+      revision: "651f37efa397bf066e1cf627414eeabe40b07e27"
   license "LGPL-2.1-only"
   head "https://github.com/semgrep/semgrep.git", branch: "develop"
 
@@ -16,12 +16,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "65486a6a046779e6fd1a4ba638e793c9983cdfc53a0d0a724cf7e486db644d75"
-    sha256 cellar: :any, arm64_sequoia: "9bdef5948dffc5667369367fa92b0fc8b3f76de515ed0b288f75e4e838ff6cc1"
-    sha256 cellar: :any, arm64_sonoma:  "f3a8504abcb75f45996ea10aed27956c922f87fbba20b5768c31d0df82039448"
-    sha256 cellar: :any, sonoma:        "567424244c01a3de54b74f9f9624b448e1430f880f5929a7b910dff2d5cc89b2"
-    sha256               arm64_linux:   "02f62eec9df351dcc3c2738dc5b6bac4766ff4315dc5826fef6b120ea4394587"
-    sha256               x86_64_linux:  "fe14c3e0eed2f46c27274560ddd435db67a84327f0040defc3386d52249d5a45"
+    sha256 cellar: :any, arm64_tahoe:   "7c5675182362324508ef174e96794fa4fbbdb4f13ea49b7c4a6843e9b12d0253"
+    sha256 cellar: :any, arm64_sequoia: "22300a2dc7bef9e24e544352209a81fe65d6861f10d360328364648aae0ee29a"
+    sha256 cellar: :any, arm64_sonoma:  "88ef7a7f6815311ecc22f041f7643555fbee4ab73a96ce2e8602d95360389133"
+    sha256 cellar: :any, sonoma:        "e1af168ad92103978bf4b21955d74dbe3580f3e1c80254e25005ab2490632e2a"
+    sha256               arm64_linux:   "09f3bde34c41a3a9739a24c8aca5a0fa2b5d14ac8a7a42ad1e9af69f9d66b366"
+    sha256               x86_64_linux:  "6e566851d103cff9b7c3e6566041ad7ce864b9c8dcb4c70d2352ea9ff96ce53f"
   end
 
   depends_on "ocaml" => :build

@@ -22,10 +22,7 @@ class GitSync < Formula
   conflicts_with "git-extras", because: "both install `git-sync` binaries"
 
   def install
-    ldflags = %W[
-      -s -w
-      -X k8s.io/git-sync/pkg/version.VERSION=v#{version}
-    ]
+    ldflags = %W[-X k8s.io/git-sync/pkg/version.VERSION=v#{version}]
     system "go", "build", *std_go_args(ldflags:)
   end
 

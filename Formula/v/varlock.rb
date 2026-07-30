@@ -1,17 +1,17 @@
 class Varlock < Formula
   desc "Add declarative schema to .env files using @env-spec decorator comments"
   homepage "https://varlock.dev"
-  url "https://registry.npmjs.org/varlock/-/varlock-1.13.0.tgz"
-  sha256 "776bde26f63b1ccfe8376ce2e16dfd47feec967f51fc580ae0fe6d4b7cb2f486"
+  url "https://registry.npmjs.org/varlock/-/varlock-1.14.0.tgz"
+  sha256 "34dc1af5521e21c76867d50aee7584675d764b6699722f61fac7dd0f5ae75e15"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22e2e3f5d9a23d36faa1e15820326ac8debc37d9499fa0d4373a063b12baa94e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22e2e3f5d9a23d36faa1e15820326ac8debc37d9499fa0d4373a063b12baa94e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22e2e3f5d9a23d36faa1e15820326ac8debc37d9499fa0d4373a063b12baa94e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6583739c121b97a61b9c8422f1daa9d0d2ceaad623f0f70384b92e5a0c45e17b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b91065a5766978fdc496fa15bac94dfa6628f763990bca3d1a08deb1af94d7c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "abde8e6af893d337898ec86075ec119b7a869a23bbe65a1f73292f33cdf2e128"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "121302633f78a309329ae34b1083925ad8c97debb0745d303e3fc2bebbfddec6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "121302633f78a309329ae34b1083925ad8c97debb0745d303e3fc2bebbfddec6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "121302633f78a309329ae34b1083925ad8c97debb0745d303e3fc2bebbfddec6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9dc80326115007373be50ed07e1621baf8b1bf815fa169ca1b71ce066f435355"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f027b8b219952bcc2e3f684593f91c92398629feedc26158ae78a6eaef0dd81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8759b8a659760027c9cf36aa5011403dc5b1d317a6ae9292f68b3a0f1ba40865"
   end
 
   depends_on "node"

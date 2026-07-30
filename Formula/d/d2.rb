@@ -20,7 +20,7 @@ class D2 < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X oss.terrastruct.com/d2/lib/version.Version=#{version}"
+    ldflags = "-X oss.terrastruct.com/d2/lib/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
     man1.install "ci/release/template/man/d2.1"
   end

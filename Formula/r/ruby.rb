@@ -29,12 +29,13 @@ class Ruby < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "404e29ff2ab7f24ec04022b16f3e9f552b66894e0e2306d4c7a37d302957b36a"
-    sha256 arm64_sequoia: "ac80c7731c4909d4a708ae22cf12467921235eacf09c51bc7e7ebea220468d45"
-    sha256 arm64_sonoma:  "270f1b4dad77644f8c8ba96b4e5b22347ed2977dbc85e66b4fe4c9aa57678184"
-    sha256 sonoma:        "0ab1011777867e0820e0f971930bcd7a1a4c18d1e8038a3c26c15ced9558b66f"
-    sha256 arm64_linux:   "710e48cf4cfce4a10403eaea4048f63a268c712dca02026e5d3be2946bec7932"
-    sha256 x86_64_linux:  "77a98c7e7518d309c5c54d6ee3aa25d94db38f5ce04d4d9a51161a0ce448ea77"
+    rebuild 1
+    sha256 arm64_tahoe:   "1625d71cf2838907bd7699b2a23c89f185126eb57feb8213774a190c4fbdb50d"
+    sha256 arm64_sequoia: "5ddf12abf64e530d6bed5777600c900e2b299aca13530c45f33ad48d60b39f66"
+    sha256 arm64_sonoma:  "4c939677e8c245aa59569374e15dcf8e00542c65ebfa7d4062dafd6544d259b8"
+    sha256 sonoma:        "0ee1553c04c9aacc90718e6f9cba7d903ba340dab6c3c5d63c976c00e2282ae7"
+    sha256 arm64_linux:   "34754fcbad70f2e5190a0563949713052e2e4b3c00ccb28a8341f3249a8058f9"
+    sha256 x86_64_linux:  "995907c4734f47bfc56336ddcd77927f6ee9a6e960291b06e4e97fdc00c5586b"
   end
 
   head do
@@ -155,38 +156,34 @@ class Ruby < Formula
     # instead of in the Cellar, making gems last across reinstalls
     config_file = lib/"ruby/#{api_version}/rubygems/defaults/operating_system.rb"
     config_file.write rubygems_config
+
+    (libexec/"post-install.rb").write <<~RUBY
+      require "fileutils"
+
+      FileUtils.rm_f ["#{rubygems_bindir}/bundle", "#{rubygems_bindir}/bundler"]
+      FileUtils.rm_rf Dir["#{HOMEBREW_PREFIX}/lib/ruby/gems/#{api_version}/gems/bundler-*"]
+      exit unless RUBY_PLATFORM.include?("darwin")
+
+      require "macho"
+
+      dylib = File.realpath("#{opt_lib}/libruby.dylib")
+      old_dylib_id = IO.popen(["/usr/bin/otool", "-D", dylib], &:read).lines[1].to_s.strip
+      new_dylib_id = old_dylib_id.sub("#{opt_prefix}/", "#{versioned_opt_prefix}/")
+      exit if old_dylib_id == new_dylib_id || !File.exist?(new_dylib_id)
+
+      dylib_mode = File.stat(dylib).mode
+      begin
+        File.chmod(0664, dylib)
+        MachO::Tools.change_dylib_id(dylib, new_dylib_id)
+        MachO.codesign!(dylib) if RbConfig::CONFIG["host_cpu"] == "arm64"
+      ensure
+        File.chmod(dylib_mode, dylib)
+      end
+    RUBY
   end
 
-  def post_install
-    # Since Gem ships Bundle we want to provide that full/expected installation
-    # but to do so we need to handle the case where someone has previously
-    # installed bundle manually via `gem install`.
-    # TODO: remove when enabling default_user_install
-    rm(%W[
-      #{rubygems_bindir}/bundle
-      #{rubygems_bindir}/bundler
-    ].select { |file| File.exist?(file) })
-    rm_r(Dir[HOMEBREW_PREFIX/"lib/ruby/gems/#{api_version}/gems/bundler-*"])
-
-    # Use versioned opt path so user-installed gems can work when user is switched to versioned Ruby.
-    # Needs to be done in postinstall since install names are modified by brew after install method.
-    # TODO: Consider adding a DSL for this to avoid performance cost of post install and binary patching
-    if OS.mac? && !versioned_formula?
-      dylib = (lib/"libruby.dylib").realpath
-      old_dylib_id = dylib.dylib_id
-      new_dylib_id = old_dylib_id.sub("#{opt_prefix}/", "#{versioned_opt_prefix}/")
-      return if old_dylib_id == new_dylib_id
-      return unless File.exist?(new_dylib_id)
-
-      dylib_mode = dylib.stat.mode
-      begin
-        chmod 0664, dylib
-        MachO::Tools.change_dylib_id(dylib, new_dylib_id)
-        MachO.codesign!(dylib) if Hardware::CPU.arm?
-      ensure
-        chmod dylib_mode, dylib
-      end
-    end
+  post_install_steps do
+    run "{{HOMEBREW_BREW_FILE}}", args: ["ruby", "--", "{{libexec}}/post-install.rb"]
   end
 
   def rubygems_config

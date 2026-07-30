@@ -1,18 +1,18 @@
 class PocketId < Formula
   desc "Open-source identity provider for secure user authentication"
   homepage "https://pocket-id.org"
-  url "https://ghfast.top/https://github.com/pocket-id/pocket-id/archive/refs/tags/v2.11.0.tar.gz"
-  sha256 "6fb65a65dd6ec19876e37a6e2b0134d54c7ac645e3137efbf429ab777566656a"
+  url "https://ghfast.top/https://github.com/pocket-id/pocket-id/archive/refs/tags/v2.12.0.tar.gz"
+  sha256 "7f8312ecb6545aa6e379af819db3f0800ce6fcf755dd2161ed3326fbb90a4166"
   license "BSD-2-Clause"
   head "https://github.com/pocket-id/pocket-id.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee6161762c697aaa382ff7d4753e0d73add6d6e0de51f20a701b6646f3fa2ad1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01be66d5ee399433d90553831eaa3a2f3c306ce799b33ca29e49d5b2f3177e92"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c107cec9d3a589b6939b6e2f0387761044f0f999f7c9a2ad7e7004919fc8168"
-    sha256 cellar: :any_skip_relocation, sonoma:        "13a6ad566c5b2e921b1c53bb310ae96b1d6ae1000980e122b6983c506a30cf96"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f39ad68188f6f6eefb5e7b0173804fad1d9f3f0b4d8ced88dc1835f4a5475cb"
-    sha256 cellar: :any,                 x86_64_linux:  "5629bf899cb9af89309833d11dff87474b176845ef42cac93e163b9caa041b2d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78e60ac5cfcf19cbbcfb419f0eba301557c831bdfc27711e7ef61087c245018f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5ad5a6590de243644552190e5ce0cabc44185e336c599c89ad85da4e15c9244"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e119c294a2a2ffd5dfaee015de5d6d21d64778d366b02bb9ccd926caeb8a5cb7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2d1e9fb2327034aceaefa017ff12bd198c21bec4769500e24376a7c7e23cafc6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b75dfc50c99283223b1da2ea4d910762a522e12f03e6283694c1e67c95557edc"
+    sha256 cellar: :any,                 x86_64_linux:  "0c6ca5b1555a865cc348901ea88984c5c2982e89ad16dd595e35a80c824b2055"
   end
 
   depends_on "go" => :build
@@ -22,7 +22,7 @@ class PocketId < Formula
   def install
     system "pnpm", "with", "current", "--dir", "frontend", "install", "--frozen-lockfile", "--ignore-scripts"
     system "pnpm", "with", "current", "--dir", "frontend", "run", "build"
-    system "go", "build", "-C", "backend/cmd", *std_go_args(output: bin/"pocket-id", ldflags: "-s -w")
+    system "go", "build", "-C", "backend/cmd", *std_go_args(output: bin/"pocket-id")
   end
 
   service do

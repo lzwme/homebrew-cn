@@ -18,13 +18,7 @@ class Gcx < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=v#{version}
-      -X main.commit=homebrew
-    ]
-
-    system "go", "build", *std_go_args(ldflags:), "./cmd/gcx"
+    system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/gcx"
 
     generate_completions_from_executable(bin/"gcx", shell_parameter_format: :cobra)
   end

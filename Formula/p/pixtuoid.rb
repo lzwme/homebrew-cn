@@ -1,21 +1,26 @@
 class Pixtuoid < Formula
   desc "Terminal pixel-art office for AI coding agents"
   homepage "https://github.com/IvanWng97/pixtuoid"
-  url "https://ghfast.top/https://github.com/IvanWng97/pixtuoid/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "0785360dfd4133b910df0e6dab4d2e35df9c6c975cd925ce2bd2bd414ed7505d"
+  url "https://ghfast.top/https://github.com/IvanWng97/pixtuoid/archive/refs/tags/v0.16.0.tar.gz"
+  sha256 "3ea09fca426234ec7a311bacb683320b74442474413ebab81a7c1134abd80ab5"
   license "MIT"
   head "https://github.com/IvanWng97/pixtuoid.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01e713be6a99b904d1d7260f024e457845697b913d05f6dcc532aa9ada1d0a85"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91fceebb6d07558e02d03cace254d46400cf04c785b5c8fbfc2415785c0ed9ad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e08a1a22a12af18657bdec7fa4709062974589f816a697542aa8180fade737bc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "559c1dfb45c8c290efebe2f7bb4ab5e6dcdf44933c98b858af1c894a475f4280"
-    sha256 cellar: :any,                 arm64_linux:   "af50c8ed57d23abf95689b483c8dbe76b41c73a604d4490d00741fd36c8d3fad"
-    sha256 cellar: :any,                 x86_64_linux:  "86bd764227ee420cb396a548992717c130c78ae3fa62dbd909e4a1a536ed2dc7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37d22ee48f1c9f14fce99897e578a682855744f7b8e284b6d8df96a2b9511c16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a390e933070cf08315f7ea2a2b03dec79d9214f6691a5fba163b707e4ddfd2c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d858b43eb6eddb7dd2216d9faee2908586dcaeb6862db64d5793ea1d3e0eabb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7f0f1112b37f5b7fdbe9121dc43842b06cbb9d5d590d0c02ef196667b0ad76f3"
+    sha256 cellar: :any,                 arm64_linux:   "5cc259128e9b92ca682e33793afd8d4947e5ab15843abf1109bd997366dad4de"
+    sha256 cellar: :any,                 x86_64_linux:  "138917a4c040626e93fb88f90b7c3f40a132a56192aaace5aea75eab42fc94e9"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  on_linux do
+    depends_on "alsa-lib"
+  end
 
   def install
     # Drop upstream's x86_64 Linux lld linker pin

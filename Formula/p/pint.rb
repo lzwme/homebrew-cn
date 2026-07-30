@@ -17,12 +17,7 @@ class Pint < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-      -X main.commit=#{tap.user}
-    ]
-    system "go", "build", *std_go_args(ldflags:), "./cmd/pint"
+    system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/pint"
 
     pkgshare.install "docs/examples"
   end

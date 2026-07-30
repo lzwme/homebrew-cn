@@ -19,7 +19,6 @@ class Miniflux < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X miniflux.app/v2/internal/version.Version=#{version}
       -X miniflux.app/v2/internal/version.Commit=#{tap.user}
       -X miniflux.app/v2/internal/version.BuildDate=#{time.iso8601}

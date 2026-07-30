@@ -31,7 +31,6 @@ class Pulsarctl < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/streamnative/pulsarctl/pkg/cmdutils.ReleaseVersion=v#{version}
       -X github.com/streamnative/pulsarctl/pkg/cmdutils.BuildTS=#{time.iso8601}
       -X github.com/streamnative/pulsarctl/pkg/cmdutils.GitHash=#{tap.user}

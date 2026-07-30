@@ -22,7 +22,7 @@ class PodmanTui < Formula
   def install
     ENV["CGO_ENABLED"] = "0"
     tags = "exclude_graphdriver_btrfs containers_image_openpgp remote"
-    system "go", "build", *std_go_args(ldflags: "-s -w", tags:)
+    system "go", "build", *std_go_args(tags:)
   end
 
   test do

@@ -6,6 +6,11 @@ class Vuls < Formula
   license "GPL-3.0-only"
   head "https://github.com/future-architect/vuls.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abbc69b663fe568e267887648b3ac4a2e869738f59c6b89f37adaf21537ebace"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "abbc69b663fe568e267887648b3ac4a2e869738f59c6b89f37adaf21537ebace"

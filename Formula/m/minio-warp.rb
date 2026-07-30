@@ -19,7 +19,6 @@ class MinioWarp < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/minio/warp/pkg.ReleaseTag=v#{version}
       -X github.com/minio/warp/pkg.CommitID=#{tap.user}
       -X github.com/minio/warp/pkg.Version=#{version}

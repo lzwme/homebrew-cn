@@ -18,7 +18,7 @@ class GoCamo < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.ServerVersion=#{version}"
+    ldflags = "-X main.ServerVersion=#{version}"
     tags = "netgo,production"
     system "go", "build", *std_go_args(ldflags:, tags:), "./cmd/go-camo"
     system "go", "build", *std_go_args(ldflags:, tags:, output: bin/"url-tool"), "./cmd/url-tool"

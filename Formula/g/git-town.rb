@@ -19,7 +19,6 @@ class GitTown < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/git-town/git-town/v#{version.major}/src/cmd.version=v#{version}
       -X github.com/git-town/git-town/v#{version.major}/src/cmd.buildDate=#{time.strftime("%Y/%m/%d")}
     ]

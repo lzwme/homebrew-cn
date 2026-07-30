@@ -27,10 +27,7 @@ class Dnscontrol < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/DNSControl/dnscontrol/v#{version.major}/pkg/version.version=#{version}
-    ]
+    ldflags = %W[-X github.com/DNSControl/dnscontrol/v#{version.major}/pkg/version.version=#{version}]
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"dnscontrol", "shell-completion", shells: [:bash, :zsh])

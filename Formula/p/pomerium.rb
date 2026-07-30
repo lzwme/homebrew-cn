@@ -29,7 +29,6 @@ class Pomerium < Formula
     system "make", "build-ui"
 
     ldflags = %W[
-      -s -w
       -X github.com/pomerium/pomerium/internal/version.Version=#{version}
       -X github.com/pomerium/pomerium/internal/version.GitCommit=v#{version}
       -X github.com/pomerium/pomerium/internal/version.ProjectName=pomerium

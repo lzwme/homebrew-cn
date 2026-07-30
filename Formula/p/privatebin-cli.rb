@@ -18,8 +18,7 @@ class PrivatebinCli < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:, output: bin/"privatebin"), "./cmd/privatebin"
+    system "go", "build", *std_go_args(ldflags: :goreleaser, output: bin/"privatebin"), "./cmd/privatebin"
 
     generate_completions_from_executable(bin/"privatebin", shell_parameter_format: :cobra)
   end

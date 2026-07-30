@@ -20,7 +20,7 @@ class ProtocGenDoc < Formula
   depends_on "protobuf"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/protoc-gen-doc"
+    system "go", "build", *std_go_args, "./cmd/protoc-gen-doc"
   end
 
   test do

@@ -27,11 +27,7 @@ class Gascity < Formula
   end
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-    ]
-    system "go", "build", *std_go_args(ldflags:, output: bin/"gc"), "./cmd/gc"
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}", output: bin/"gc"), "./cmd/gc"
   end
 
   test do

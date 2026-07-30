@@ -24,10 +24,7 @@ class PhraseCli < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/phrase/phrase-cli/cmd.PHRASE_CLIENT_VERSION=#{version}
-    ]
+    ldflags = %W[-X github.com/phrase/phrase-cli/cmd.PHRASE_CLIENT_VERSION=#{version}]
     system "go", "build", *std_go_args(ldflags:)
     bin.install_symlink "phrase-cli" => "phrase"
 

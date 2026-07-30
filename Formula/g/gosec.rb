@@ -18,7 +18,7 @@ class Gosec < Formula
   depends_on "go"
 
   def install
-    ldflags = "-s -w -X main.Version=#{version} -X main.GitTag= -X main.BuildDate=#{time.iso8601}"
+    ldflags = "-X main.Version=#{version} -X main.GitTag= -X main.BuildDate=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/gosec"
   end
 

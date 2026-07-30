@@ -28,7 +28,6 @@ class DockerEngine < Formula
 
   def install
     ldflags = %W[
-      -s -w
       -X github.com/moby/moby/v2/dockerversion.BuildTime=#{time.iso8601}
       -X github.com/moby/moby/v2/dockerversion.GitCommit=#{Utils.git_short_head}
       -X github.com/moby/moby/v2/dockerversion.Version=#{version}

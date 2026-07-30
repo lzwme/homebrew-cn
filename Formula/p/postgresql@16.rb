@@ -11,12 +11,13 @@ class PostgresqlAT16 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "75078938cce1444e511dbd556214f3a596e45f086f45cda98356d93083ee80ea"
-    sha256 arm64_sequoia: "78be07d7f44f23bb6ebd0b1171c8490651dab24db57bb3f5c382cab3606c0458"
-    sha256 arm64_sonoma:  "31f9c5cf829b85fa39850e3a3ce94b39ed65ad14eb5b68d562a02a2b5d29f01f"
-    sha256 sonoma:        "037911424d69c6296ef73e1c9bfe457c75b215f7910dc4b0892f7c86e53ea0c3"
-    sha256 arm64_linux:   "5cea02947bc06f6326ccaeb68b9ab8d3914256b2832566bc95fd7ffd3a85363b"
-    sha256 x86_64_linux:  "b24f7814ab05e9ceb134989df6f9ecbe150b30b589d33fcfbb49bd85bec98c91"
+    rebuild 1
+    sha256 arm64_tahoe:   "9b3629bdb5461697a7ee5d6960e7918e827127da5e957871a5c3ddd90d28c60e"
+    sha256 arm64_sequoia: "9cb334bfbd88552108d739084d4fae7ea4a50b91890397c43273d430f216ad75"
+    sha256 arm64_sonoma:  "43be596e3812a3ab6bc5904646a0187c1aa5e1106d9a363a50c5a31595030842"
+    sha256 sonoma:        "ef844af3ad172adf7dc453b16f92b9e05aa1d63720ecc8c2ccdbb59e2b247f10"
+    sha256 arm64_linux:   "16d66784d3f7fea7ece17df4a0cf7ea601d868acbe18f6361e53241734c618b6"
+    sha256 x86_64_linux:  "a05b05218e16155674612c9b6eb26df5a48119396362178512d0a492f78b28a2"
   end
 
   keg_only :versioned_formula
@@ -137,6 +138,7 @@ class PostgresqlAT16 < Formula
     keep_alive true
     log_path f.postgresql_log_path
     error_log_path f.postgresql_log_path
+    stop_timeout 120
     working_dir HOMEBREW_PREFIX
   end
 

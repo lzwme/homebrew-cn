@@ -24,10 +24,7 @@ class Marmot < Formula
 
   def install
     ENV["CGO_ENABLED"] = "0"
-    ldflags = %W[
-      -s -w
-      -X github.com/marmotdata/marmot/internal/cmd.Version=#{version}
-    ]
+    ldflags = %W[-X github.com/marmotdata/marmot/internal/cmd.Version=#{version}]
     system "go", "build", *std_go_args(ldflags:), "./cmd"
   end
 

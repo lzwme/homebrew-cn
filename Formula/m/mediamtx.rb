@@ -21,7 +21,7 @@ class Mediamtx < Formula
 
   def install
     system "go", "generate", "./..."
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args
 
     # Install default config
     pkgetc.install "mediamtx.yml"

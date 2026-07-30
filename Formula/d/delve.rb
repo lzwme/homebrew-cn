@@ -18,7 +18,7 @@ class Delve < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"dlv"), "./cmd/dlv"
+    system "go", "build", *std_go_args(output: bin/"dlv"), "./cmd/dlv"
 
     generate_completions_from_executable(bin/"dlv", shell_parameter_format: :cobra)
   end

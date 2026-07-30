@@ -33,8 +33,7 @@ class Parca < Formula
     system "pnpm", "with", "current", "--dir", "ui", "install", "--frozen-lockfile"
     system "pnpm", "with", "current", "--dir", "ui", "run", "build"
 
-    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/parca"
+    system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/parca"
   end
 
   test do

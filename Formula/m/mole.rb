@@ -27,7 +27,7 @@ class Mole < Formula
   def install
     # Remove prebuilt binaries
     buildpath.glob("bin/*-go").map(&:unlink)
-    ldflags = "-s -w -X main.Version=#{version} -X main.BuildTime=#{time.iso8601}"
+    ldflags = "-X main.Version=#{version} -X main.BuildTime=#{time.iso8601}"
     %w[analyze status].each do |cmd|
       system "go", "build", *std_go_args(ldflags:, output: buildpath/"bin/#{cmd}-go"), "./cmd/#{cmd}"
     end

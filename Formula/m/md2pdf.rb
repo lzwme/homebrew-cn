@@ -20,7 +20,7 @@ class Md2pdf < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/md2pdf"
+    system "go", "build", *std_go_args, "./cmd/md2pdf"
   end
 
   test do
