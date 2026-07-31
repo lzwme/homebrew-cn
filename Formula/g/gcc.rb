@@ -76,11 +76,9 @@ class Gcc < Formula
     #  - Cobol, not fully stable yet
     #  - Go, currently not supported on macOS
     #  - BRIG
+    #  - Modula-2 on macOS, https://github.com/Homebrew/homebrew-core/pull/221029
     languages = %w[c c++ objc obj-c++ fortran]
-
-    # Modula-2 has problems with macOS 15 for now
-    # https://github.com/Homebrew/homebrew-core/pull/221029
-    languages << "m2" if !OS.mac? || MacOS.version < :sequoia
+    languages << "m2" unless OS.mac?
 
     pkgversion = "Homebrew GCC #{pkg_version} #{build.used_options*" "}".strip
 
@@ -135,16 +133,14 @@ class Gcc < Formula
     end
 
     mkdir "build" do
-      system "../configure", *args
-      system "gmake", *make_args
-
-      # Do not strip the binaries on macOS, it makes them unsuitable
-      # for loading plugins
+      # Do not strip the binaries on macOS, it makes them unsuitable for loading plugins
       install_target = OS.mac? ? "install" : "install-strip"
 
       # To make sure GCC does not record cellar paths, we configure it with
       # opt_prefix as the prefix. Then we use DESTDIR to install into a
       # temporary location, then move into the cellar path.
+      system "../configure", *args
+      system "gmake", *make_args
       system "gmake", install_target, "DESTDIR=#{buildpath}/instdir"
       prefix.install buildpath.glob("instdir/#{opt_prefix}/*")
     end
@@ -159,9 +155,7 @@ class Gcc < Formula
     # Only the newest brewed gcc should install gfortan libs as we can only have one.
     lib.install_symlink lib.glob("gcc/current/libgfortran.*") if OS.linux?
 
-    # Handle conflicts between GCC formulae and avoid interfering
-    # with system compilers.
-    # Rename man7.
+    # Rename man7 to avoid conflicts between GCC formulae
     man7.glob("*.7") { |file| add_suffix file, version_suffix }
     # Even when we disable building info pages some are still installed.
     rm_r(info)
@@ -219,8 +213,8 @@ class Gcc < Formula
     system bin/"gfortran", "-o", "test", "test.f90"
     assert_equal "Done\n", shell_output("./test")
 
-    # Modula-2 is temporarily disabled on macOS 15
-    return if OS.mac? && MacOS.version >= :sequoia
+    # Modula-2 is temporarily disabled on macOS
+    return if OS.mac?
 
     (testpath/"hello.mod").write <<~MODULA2
       MODULE hello;

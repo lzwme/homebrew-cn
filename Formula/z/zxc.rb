@@ -1,18 +1,18 @@
 class Zxc < Formula
   desc "High-performance asymmetric lossless compression library"
   homepage "https://github.com/hellobertrand/zxc"
-  url "https://ghfast.top/https://github.com/hellobertrand/zxc/archive/refs/tags/v0.13.1.tar.gz"
-  sha256 "db8a1882bc1899a602d71b0b3f81995ef73162dbefe8c4b2a3f9f8b9f8b4b673"
+  url "https://ghfast.top/https://github.com/hellobertrand/zxc/archive/refs/tags/v0.13.2.tar.gz"
+  sha256 "957acf0e2c0f230b6acc0a4d48c3ee4734117b290a8c8ef1a9cf29686924a0ac"
   license "BSD-3-Clause"
   head "https://github.com/hellobertrand/zxc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e1d2a3a80b681dcef7b78efbf4a5a99321ebcd3148050eefa9e4bc2fb69edf63"
-    sha256 cellar: :any, arm64_sequoia: "1d5c2b8a17814e2929e9c28ef0f4ee1e750049403568199f76ae32bced25e5f8"
-    sha256 cellar: :any, arm64_sonoma:  "bc7a53811fe4a89ae79f8380041e8bcaa76d9f6211e836b37b7a3d78f1c8bd73"
-    sha256 cellar: :any, sonoma:        "28f3072a4bbb4af8164bce4e9060458e9b63d0b8008a2dc9c8ea9aa4e4e2b424"
-    sha256 cellar: :any, arm64_linux:   "085e0a59f9d6e964a6d0ba309d064cb067483eace44f07b2f4eef7a30776ca37"
-    sha256 cellar: :any, x86_64_linux:  "094314eefb5bbcf28fda5545166e23215378a90ba408ff8b8dcb2c6037fc5ec4"
+    sha256 cellar: :any, arm64_tahoe:   "d810ca9c17b55e017cd9e4c5ad3584743cd4c7c60a73212d661f1fcd95a23c1c"
+    sha256 cellar: :any, arm64_sequoia: "bf053e266c31c229d56a588948d59f45e83ea650e70a0f5521646b7b7f0500ba"
+    sha256 cellar: :any, arm64_sonoma:  "cc1e0f4d5c7f45ebd76a0a6ea2f8eae236780a0b94416cbc9bc4f982f35f916a"
+    sha256 cellar: :any, sonoma:        "e0a758b2bc9c5c2aef1103e08ff1fa55deb813b293733a8b606b8abfb9d12008"
+    sha256 cellar: :any, arm64_linux:   "3321eefd3885c418bcdb34ae16e77da5ae0f122fc5d1a2a5b995ee2a6cccc1d5"
+    sha256 cellar: :any, x86_64_linux:  "c9e8a98f372117f2ae02f74b739eebc35dff289cbe20e1dcdbd5259665f6ddac"
   end
 
   depends_on "cmake" => :build

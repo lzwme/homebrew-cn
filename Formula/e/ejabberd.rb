@@ -1,10 +1,9 @@
 class Ejabberd < Formula
   desc "XMPP application server"
   homepage "https://www.ejabberd.im"
-  url "https://ghfast.top/https://github.com/processone/ejabberd/archive/refs/tags/26.04.tar.gz"
-  sha256 "77deb1053978ae9790f909b7b573ac61c6b94d7c465a84c5b56568292d49e47d"
+  url "https://ghfast.top/https://github.com/processone/ejabberd/archive/refs/tags/26.07.tar.gz"
+  sha256 "7b2e4efe2d5c867d2ced9cb1391731c5e6b9accd6f166ec71e734a3ae97813d7"
   license "GPL-2.0-or-later"
-  revision 3
   head "https://github.com/processone/ejabberd.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
@@ -16,13 +15,12 @@ class Ejabberd < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "4b4c1db5bc4d0d7c7110b72bd91cfe4e6a40f388a1e49c0ab69562c558afa30a"
-    sha256 cellar: :any, arm64_sequoia: "c06d62e19479aab76b961db95ba00106136a15b5e5233d9db1fa3f6bdc4402cb"
-    sha256 cellar: :any, arm64_sonoma:  "605e47ff544be4f098067f3901ff774a0f74d91812b072076fd09ccd525ad6c0"
-    sha256 cellar: :any, sonoma:        "f97c2001c8b7577f4a524e12e3b80b90f7c27c1f5b342df2a744f71b6950a9d0"
-    sha256 cellar: :any, arm64_linux:   "0df15ac52e64ad4c126e313960c5f09eec5e133a5f5cb0bef2a51a53f2bdcd45"
-    sha256 cellar: :any, x86_64_linux:  "57bf3af4307dddc7329799844d5dc28d6d686ef42596d535206d5ef85e1cec26"
+    sha256 cellar: :any, arm64_tahoe:   "e769dbab88dd58f72284bccb7280cc1e166cc846454462c99314bf77ed399811"
+    sha256 cellar: :any, arm64_sequoia: "5df5e4dbac2dea0819f45f8eb0018fada9412b6fe6dcecec4f89b96c1a67f9d9"
+    sha256 cellar: :any, arm64_sonoma:  "f6b6c8b5a211a9cc5066bfb86fd111edff8d7b2f2b1621167b3b391ac661c123"
+    sha256 cellar: :any, sonoma:        "a8efc4ebbd54cd9bd21a9bd91eb95fe643805fbced8afd3fa868b6c6e0e912ac"
+    sha256 cellar: :any, arm64_linux:   "c1f78a1806c789cfc275c3768f77f66277569161213c5bb3864b331977deef81"
+    sha256 cellar: :any, x86_64_linux:  "1f306b0f5cfe56b8838e92a0e554842e0008a3bf2685623c030da0522487ae0b"
   end
 
   depends_on "autoconf" => :build

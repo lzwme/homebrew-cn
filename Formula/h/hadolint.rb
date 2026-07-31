@@ -1,18 +1,17 @@
 class Hadolint < Formula
   desc "Smarter Dockerfile linter to validate best practices"
   homepage "https://github.com/hadolint/hadolint"
-  url "https://ghfast.top/https://github.com/hadolint/hadolint/archive/refs/tags/v2.14.0.tar.gz"
-  sha256 "002a411ac608696327d65aaa6e77c8fafe2561429ce56cca0ccb67c2956f8dd5"
+  url "https://ghfast.top/https://github.com/hadolint/hadolint/archive/refs/tags/v2.15.0.tar.gz"
+  sha256 "8088f55cf6959770a9885ab8632ea306e26a02fd88981c37c32e9422cdc3ff9e"
   license "GPL-3.0-only"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "0c196a711ae987baf96f06e2b4dcbd14ce7896f3d2aa56bd59b1a0efcfdc6228"
-    sha256 cellar: :any, arm64_sequoia: "cf45bec3ec918058473526ae3f0dc97c13e9f4825578922551ace299027a6b24"
-    sha256 cellar: :any, arm64_sonoma:  "98c8d6f39392613e19a40d76fd7e8a6455e4d7de37f1ea8348fcd4f733517ec5"
-    sha256 cellar: :any, sonoma:        "22a73cf6466fb6c80f06efbc04a11ee3e7e8325d2f746ee79c01f67bdd4a620d"
-    sha256 cellar: :any, arm64_linux:   "718490cb4ecb41031cceb76bea15881ab05a2a4173076901f46dbdb3d5c13bac"
-    sha256 cellar: :any, x86_64_linux:  "5c8bd8d3e8a609234d445c5ae6e97e02fbe4b0bf51c401753fc65b0344e631da"
+    sha256 cellar: :any, arm64_tahoe:   "0c8d30ecc3433769a22668c7d0b803baa7324e4f8b140110af5947e4259e05b7"
+    sha256 cellar: :any, arm64_sequoia: "2b7d461364e021522b51eb11e493897120b7c6d9b5754811d0ef556165016899"
+    sha256 cellar: :any, arm64_sonoma:  "89d79f223de1042e6239c182a97cf92b23edeafba70a336c6cfaa6b16a3b2a40"
+    sha256 cellar: :any, sonoma:        "d89343cb696e92d6ef0a0adbf95d42d2745599d74a86267e55486f82a0faf337"
+    sha256 cellar: :any, arm64_linux:   "276ccf1dfee740cacbec21f67030a5d41aa95fe5d89c9addc2739b0802a9b1ec"
+    sha256 cellar: :any, x86_64_linux:  "8831467007996f632483a55ee3232b1b5e41f4d2a822998109c380426304aa89"
   end
 
   depends_on "cabal-install" => :build

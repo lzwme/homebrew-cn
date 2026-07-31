@@ -2543,6 +2543,9 @@ Homebrew-homebrew-core/Formula/g/git-octopus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-open.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-pages-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/git-pages.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/git-pkgs-brief.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/git-pkgs-forge.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/git-pkgs-proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-pkgs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-plus.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/git-quick-stats.rb, Homebrew/homebrew-core, 1
@@ -4680,7 +4683,7 @@ Homebrew-homebrew-core/Formula/m/mcp-atlassian.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-get.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-google-sheets.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-grafana.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mcp-inspector.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mcp-inspector.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcp-proxy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mcp-publisher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mcp-remote.rb, Homebrew/homebrew-core, 0
@@ -9311,6 +9314,7 @@ Homebrew-homebrew-cask/Casks/c/cmd-eikana.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cmd.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cmdtap.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cmpxat.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/cmtrace-open.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cmux.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cncjs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/coccinellida.rb, Homebrew/homebrew-cask, 0
@@ -14719,6 +14723,7 @@ Homebrew-homebrew-cask/Casks/r/redcine-x-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/redeclipse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/redis-insight.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/redis-pro.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/r/redot.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/redquits.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/redream.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/refine.rb, Homebrew/homebrew-cask, 0
@@ -15156,6 +15161,7 @@ Homebrew-homebrew-cask/Casks/s/space-capsule.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/space-saver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spacedrive.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spaceid.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/spacejump.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spacelauncher.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spaceman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spaceradar.rb, Homebrew/homebrew-cask, 1
@@ -15523,6 +15529,7 @@ Homebrew-homebrew-cask/Casks/t/tidgi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tiger-trade.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tigerjython.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tigervnc.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/tight-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tikz-editor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tikzit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tiled.rb, Homebrew/homebrew-cask, 1

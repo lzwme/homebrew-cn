@@ -1,8 +1,8 @@
 class Graalvm < Formula
   desc "JDK distribution with Graal compiler and Native Image"
   homepage "https://www.graalvm.org/"
-  url "https://ghfast.top/https://github.com/oracle/graal/archive/refs/tags/graal-25.1.3.tar.gz"
-  sha256 "59fcbb0cc886200bb7df6eb95b7fb1ec05d026db452efbfeeb37f278978265d2"
+  url "https://ghfast.top/https://github.com/oracle/graal/archive/refs/tags/graal-25.2.4.tar.gz"
+  sha256 "0b3232208ec4ef74654abb694c32895d3035b5c31340b826994ed71aa273e1b5"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 
   livecheck do
@@ -11,11 +11,11 @@ class Graalvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5117c87b3b2463e5bfb4c2238b244352d52592f03721ead39b84a77eaca99577"
-    sha256 cellar: :any, arm64_sequoia: "a2b83dec9fc1ca9e459518daa823b1f22ce3899abc4162f2f50d7b7ada61bb85"
-    sha256 cellar: :any, arm64_sonoma:  "959afb837bc05bea3c76105763694d51da8fdfb22218663e8ca58476aecbc953"
-    sha256               arm64_linux:   "d273379ec9bdd2a805f93af5104cd748a1a82b508b644a74b162abe3e664928f"
-    sha256               x86_64_linux:  "ea6e37ed12f3ea25256ffcad1dcff77c4fa3960475d0a05fb9cc8d23a3e60c74"
+    sha256 cellar: :any, arm64_tahoe:   "193e47b37b33acd242c32f24948c890433c7f8d9b381948f1e6fc2d1dbfd4276"
+    sha256 cellar: :any, arm64_sequoia: "c3ace732fa0d49421700825377a8d50ce1c4a7afe34bc4d01d71306cf332baa2"
+    sha256 cellar: :any, arm64_sonoma:  "0834113061c5dbac8bf9efeb8d95a5e4448e7e99c12e24037c0f39cd03a1fa21"
+    sha256               arm64_linux:   "17593b7c2e0ca71e150451602aa77324b49f6d49fb4d05491771b3697891a5a1"
+    sha256               x86_64_linux:  "16e1681de2940a2b3a15f3dfe4aa3c06d22b8129a679b526956914013f746e0d"
   end
 
   keg_only "installs a JDK which shadows openjdk"
@@ -55,9 +55,9 @@ class Graalvm < Formula
   end
 
   resource "labs-openjdk" do
-    url "https://ghfast.top/https://github.com/graalvm/labs-openjdk/archive/refs/tags/jvmci-25.1-b19.tar.gz"
-    version "25.0.3+9-jvmci-25.1-b19"
-    sha256 "cacd7d625adf655a3bfa8b58788b1f67aac5caa312d5e6cf6d880105f2fe8fb6"
+    url "https://ghfast.top/https://github.com/graalvm/labs-openjdk/archive/refs/tags/jvmci-25.2-b20.tar.gz"
+    version "25.0.4+7-jvmci-25.2-b20"
+    sha256 "629f342e7640501858fa24f24cf43600cbe13d3afce25b9e407afa14372d84cb"
 
     livecheck do
       # FIXME: This regex is not correct

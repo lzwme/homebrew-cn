@@ -12,12 +12,13 @@ class Visp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d14e3c2cfe1b97ac6c924bf3b1a2aeb0c0a6229fa0add2d76bae975f40446e4b"
-    sha256 cellar: :any, arm64_sequoia: "9b29a378e0d16bea050542e9caf976cfbf4f395e420d8b58686ad9cbbdd0b2ed"
-    sha256 cellar: :any, arm64_sonoma:  "6a772365e0bd673c611492dd214a4a4ba44274250f3c4c43d9c97a73da735c93"
-    sha256 cellar: :any, sonoma:        "92085abda898aa1b0b3db048bfeda4805d43fdd9ba36be7cf72f461f10e8c837"
-    sha256 cellar: :any, arm64_linux:   "b2b96d3d148b455b8b323a165c5289b07e5a4af4ff41a3e317045e91274bb60c"
-    sha256 cellar: :any, x86_64_linux:  "778251802d0f24337b4fc9669d146cce2f8715c921d004eef13268f3dcb5b778"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "e8e8ea061b05a89be8b5d50a6d4368f67ec42b8efda40973afab4d4ce11320ed"
+    sha256 cellar: :any, arm64_sequoia: "bed13f887ce2ed3896acb044eb797ac064c0a6e960ca74300e11633fcc407fb8"
+    sha256 cellar: :any, arm64_sonoma:  "38246606973293363ca81242981d3cf00245a5851edb2c4f3cca3dba0ab7e780"
+    sha256 cellar: :any, sonoma:        "097561c3a02b8910c0cf733f84c2747b4dbca6511268c656520154535f6e0712"
+    sha256 cellar: :any, arm64_linux:   "e6b1b7add447a37a7be39bc2f9e22042e546ebb0ee606ade548553150ac1badb"
+    sha256 cellar: :any, x86_64_linux:  "1860a2e1c9e8e17503316f967eae7e4129bd03358bf7db6df0f9e605792e6845"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -163,7 +164,7 @@ class Visp < Formula
                   "#{opt_lib}/cmake/visp/VISPModules.cmake" \
                   "#{opt_lib}/pkgconfig/visp.pc"; do
         sed -E -i.bak \
-          's|/(Applications/Xcode[^[:space:];]*/SDKs|Library/Developer/CommandLineTools/SDKs)/MacOSX[^[:space:];]*\\.sdk|'"$sdk_path"'|g' \
+          's#/(Applications/Xcode[^[:space:];]*/SDKs|Library/Developer/CommandLineTools/SDKs)/MacOSX[^[:space:];]*\\.sdk#'"$sdk_path"'#g' \
           "$file"
         rm -f "$file.bak"
       done

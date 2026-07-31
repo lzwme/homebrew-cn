@@ -3,18 +3,18 @@ class Beets < Formula
 
   desc "Music library manager and tagger"
   homepage "https://beets.io/"
-  url "https://files.pythonhosted.org/packages/9a/69/adb2f8d6e672f330a259d68a0602efe4a9d207d539b3e1362ad9c5548c18/beets-2.13.0.tar.gz"
-  sha256 "e9bca2bd2427345a83e0670ae4f09cf9b297861032963447c796823cee1b16e2"
+  url "https://files.pythonhosted.org/packages/9b/01/a8fe84c3df610e63569f51ee846d442ea7d89ef4dfc834378cebd46bfd5a/beets-2.13.1.tar.gz"
+  sha256 "ea11e0963299c1c0f728884b2896cc554747696c3ddd73d98a70cc6196ae845b"
   license "MIT"
   head "https://github.com/beetbox/beets.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ce56483605cd72f968c06c0cf0a8638be748f26f3c9d05bb9df7664c9d98ad7c"
-    sha256 cellar: :any, arm64_sequoia: "7ba4f99f305a780af7078a96dc29da8561074248978eae7cc84b52a37b092fb4"
-    sha256 cellar: :any, arm64_sonoma:  "022b5580da30fe44e423c8e31436027e65c10a6e3a186f194f425bb6bd657522"
-    sha256 cellar: :any, sonoma:        "037f9dcb71bf3fd491b15b9fac689e09b1eb8bad6c1f0ee1f96e3ebb3cbec962"
-    sha256 cellar: :any, arm64_linux:   "f6e66f38ea71ff895729cc14d932def92fd0540ef915d994b12ab0b70f4ddf46"
-    sha256 cellar: :any, x86_64_linux:  "bbc6b40e5c30af8446921d7979240b0d4ffbb5179cb84c696bb40b7dfc8abc82"
+    sha256 cellar: :any, arm64_tahoe:   "de7a359984e40ec99f8581feeaa6e67a85fe1a685308d943638e2a816a3e6476"
+    sha256 cellar: :any, arm64_sequoia: "dd2e427255918387c191bcb91815465bdee18468cea9cff079f674731c3bd045"
+    sha256 cellar: :any, arm64_sonoma:  "d627ccea780a4262fdfaa3bf05033df7c97aecd75905230ac3afdc8d4427b3b1"
+    sha256 cellar: :any, sonoma:        "b24fa996c419cf22c58bec0416c99aafdbc1c801d8338409342d11913dd951e1"
+    sha256 cellar: :any, arm64_linux:   "781b52a1deed3dad7a80726b97cc2081de0956f7f3e14382e9dd84befa759d19"
+    sha256 cellar: :any, x86_64_linux:  "7bfc26fb7c7c3f77596b6ec6899a5cf60acd631acc3a2500519ea074bcfd5f7a"
   end
 
   depends_on "cmake" => :build

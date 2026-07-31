@@ -130,8 +130,7 @@ class Ghc < Formula
     resource("cabal-install").stage { (binary/"bin").install "cabal" }
     system "cabal", "v2-update"
     if build.head?
-      cabal_args = std_cabal_v2_args.reject { |s| s["installdir"] }
-      system "cabal", "v2-install", "alex", "happy", *cabal_args, "--installdir=#{binary}/bin"
+      system "cabal", "v2-install", "alex", "happy", *std_cabal_v2_args(installdir: binary/"bin")
       system "./boot"
     end
 

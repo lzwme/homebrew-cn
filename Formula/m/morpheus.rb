@@ -11,12 +11,13 @@ class Morpheus < Formula
   end
 
   bottle do
-    sha256                               arm64_tahoe:   "acdddfe47739914dc33eef7ccf2899efc629866ab843871fa3ae2e9a7a2f80f3"
-    sha256                               arm64_sequoia: "dbd26be45c744ad834c06065c0f881bd5b8ac651842c86d58067f1cdfa0dd73d"
-    sha256                               arm64_sonoma:  "cac61da310cfd1f9e34f077f6f4d72ec60e845bb16ac67a02d5ee907e6140334"
-    sha256 cellar: :any,                 sonoma:        "9207975bbe3b5d22bf05a102a003de923e5035c295e44b2900956ec66a537064"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2355a73b9accb9f282f596e906e8a85f4ca0edeb8a1ead4c0f1069fa908a2c5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ca836cc870542012736187d1d5c2ca71a8f1a2856d29eaf116626a0d66b6af8"
+    rebuild 1
+    sha256               arm64_tahoe:   "f485887d696a9020b16e88c634b6b07338fae2e54f81a7f9efe0491e5561f9c6"
+    sha256               arm64_sequoia: "f8450f202416e4a3a5f8e58480a0e65003adf5f68a621cd90e128aea3eb6adca"
+    sha256               arm64_sonoma:  "cea5cbdfc33824ab1f6714055c2995840b8f3b684abbb93395cdb405d649445c"
+    sha256 cellar: :any, sonoma:        "2ec6cf82fadf399526e44bead6dc39fb6b462b82a0483aca36371bf5cbeb508d"
+    sha256 cellar: :any, arm64_linux:   "5f4ec47bed5ced6b7499e98108c8fc1ab0f8d631341f978f87a47087334cafb2"
+    sha256 cellar: :any, x86_64_linux:  "9c3870575860267c0423e1501d8083097bfb9110b145252f689ca9704773cae6"
   end
 
   # Can undeprecate if new release with Qt 6 support is available.

@@ -21,6 +21,7 @@ class DocbookXsl < Formula
     sha256 cellar: :any_skip_relocation, tahoe:         "51db3d441aca723d738e3524a4de0e892c0cc659b4ea3f14f3c921c0176e3769"
     sha256 cellar: :any_skip_relocation, sequoia:       "51db3d441aca723d738e3524a4de0e892c0cc659b4ea3f14f3c921c0176e3769"
     sha256 cellar: :any_skip_relocation, sonoma:        "51db3d441aca723d738e3524a4de0e892c0cc659b4ea3f14f3c921c0176e3769"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "97d7b10fee85c4ad08218efa4b9527b40a412d1e6b439612a76c5eb9c3fe22cd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "97d7b10fee85c4ad08218efa4b9527b40a412d1e6b439612a76c5eb9c3fe22cd"
   end
 

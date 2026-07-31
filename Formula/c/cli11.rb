@@ -1,13 +1,13 @@
 class Cli11 < Formula
   desc "Simple and intuitive command-line parser for C++11"
   homepage "https://cliutils.github.io/CLI11/book/"
-  url "https://ghfast.top/https://github.com/CLIUtils/CLI11/archive/refs/tags/v2.6.2.tar.gz"
-  sha256 "c6ea6b2e5608b3ea8617999bd5f47420c71b2ebdb8dc4767c1034d1da5785711"
+  url "https://ghfast.top/https://github.com/CLIUtils/CLI11/archive/refs/tags/v2.7.0.tar.gz"
+  sha256 "7828464fabc29d361e1ccb2d8721e6e00e73ff5c5fad5135408a8c236508398a"
   license "BSD-3-Clause"
   head "https://github.com/CLIUtils/CLI11.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f04181692a4d3389a7b03d14388607b5eaac5742d9761cc8c447a5df5416ab75"
+    sha256 cellar: :any_skip_relocation, all: "c6f164a5e8f2791e5a5c42c1ba9663a374143c9d8247d2d02527d5cd19e7c3be"
   end
 
   depends_on "cmake" => :build

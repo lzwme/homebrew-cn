@@ -12,119 +12,144 @@ class CaCertificates < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "58cc540c61d6f1b86944d79b7d47476bb29cb1276997a4aad866bfd7574d680a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "0f62fd67d5a0cc3109ce51568cd7e1603049fb627a0626a0ad5a15d357a2c834"
   end
 
   def install
     pkgshare.install "cacert-#{version}.pem" => "cacert.pem"
 
-    (libexec/"post-install.rb").write <<~'RUBY'
-      require "fileutils"
-      require "open3"
-      require "set"
-      require "tempfile"
+    post_install = libexec/"post-install"
+    post_install.write <<~'BASH'
+      #!/bin/bash
+      # Build a CA bundle from trusted system and Mozilla certificates.
+      set -euo pipefail
+      shopt -s nullglob
 
-      CERTIFICATE_PATTERN = /-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----/m
+      if [[ "$#" -ne 2 ]]; then
+        echo "usage: post-install SOURCE DESTINATION" >&2
+        exit 1
+      fi
 
-      def capture(*command, input: nil)
-        stdout, stderr, status = Open3.capture3(*command, stdin_data: input.to_s)
-        raise "#{command.first}: #{stderr}" unless status.success?
+      source_file="$1"
+      destination="$2"
+      destination_dir="${destination%/*}"
+      mkdir -p "$destination_dir"
 
-        stdout
-      end
+      # Build beside the destination so the final rename cannot expose a partial bundle.
+      work_dir="$(mktemp -d "${destination_dir}/.ca-certificates.XXXXXX")"
+      trap 'rm -rf "$work_dir"' EXIT
+      fingerprints_file="$work_dir/fingerprints"
+      bundle_file="$work_dir/cert.pem"
+      : >"$fingerprints_file"
+      : >"$bundle_file"
 
-      def certificates(path)
-        File.binread(path).force_encoding(Encoding::ASCII_8BIT).scan(CERTIFICATE_PATTERN)
-      end
+      # Split concatenated PEM bundles so each certificate can be validated independently.
+      split_certificates() {
+        local input_file="$1"
+        local output_dir="$2"
+        mkdir -p "$output_dir"
+        awk -v output_dir="$output_dir" '
+          /-----BEGIN CERTIFICATE-----/ {
+            certificate = ""
+            writing_certificate = 1
+          }
+          writing_certificate {
+            certificate = certificate $0 ORS
+          }
+          /-----END CERTIFICATE-----/ && writing_certificate {
+            output_file = output_dir "/" ++certificate_count ".pem"
+            printf "%s", certificate > output_file
+            close(output_file)
+            writing_certificate = 0
+          }
+        ' "$input_file"
+      }
 
-      def fingerprint(certificate, openssl)
-        capture(openssl, "x509", "-inform", "pem", "-fingerprint", "-sha256", "-noout", input: certificate)
-      end
+      # Track fingerprints while appending to discard malformed and duplicate certificates.
+      append_unique_certificate() {
+        local certificate_file="$1"
+        local openssl_command="$2"
+        local fingerprint
+        fingerprint="$("$openssl_command" x509 -inform pem -fingerprint -sha256 -noout \
+          <"$certificate_file" 2>/dev/null)" || return 0
+        grep -Fqx "$fingerprint" "$fingerprints_file" && return
 
-      def executable(name)
-        ENV.fetch("PATH", "").split(File::PATH_SEPARATOR).find do |directory|
-          File.executable?(File.join(directory, name))
-        end&.then { |directory| File.join(directory, name) }
-      end
+        printf '%s\n' "$fingerprint" >>"$fingerprints_file"
+        cat "$certificate_file" >>"$bundle_file"
+        printf '\n' >>"$bundle_file"
+      }
 
-      def write_bundle(path, trusted_certificates)
-        FileUtils.mkdir_p(File.dirname(path))
-        Tempfile.create(["cert", ".pem"], File.dirname(path)) do |file|
-          file.binmode
-          file.write(trusted_certificates.join("\n") << "\n")
-          file.close
-          FileUtils.mv(file.path, path)
-        end
-        File.chmod(0644, path)
-      end
+      # Append every valid, unique certificate from a PEM bundle.
+      append_bundle() {
+        local input_file="$1"
+        local output_dir="$2"
+        local openssl_command="$3"
+        local certificate_file
+        split_certificates "$input_file" "$output_dir"
+        for certificate_file in "$output_dir"/*.pem; do
+          append_unique_certificate "$certificate_file" "$openssl_command"
+        done
+      }
 
-      source, destination = ARGV
-      abort "usage: post-install.rb SOURCE DESTINATION" unless source && destination
+      # Include only unexpired keychain certificates trusted for server TLS.
+      append_keychain() {
+        local keychain="$1"
+        local purpose="$2"
+        local output_dir="$work_dir/keychain-$purpose"
+        local certificate_file
+        /usr/bin/security find-certificate -a -p "$keychain" >"$work_dir/keychain.pem"
+        split_certificates "$work_dir/keychain.pem" "$output_dir"
+        for certificate_file in "$output_dir"/*.pem; do
+          /usr/bin/openssl x509 -inform pem -checkend 0 -noout <"$certificate_file" &>/dev/null || continue
+          /usr/bin/openssl x509 -inform pem -purpose -noout <"$certificate_file" 2>/dev/null |
+            grep -Fq "SSL server CA : Yes" || continue
+          /usr/bin/security verify-cert -l -L -c "$certificate_file" -p "$purpose" -R offline &>/dev/null ||
+            continue
+          append_unique_certificate "$certificate_file" /usr/bin/openssl
+        done
+      }
 
-      if RUBY_PLATFORM.include?("darwin")
-        keychains = {
-          "/Library/Keychains/System.keychain"                        => "ssl",
-          "/System/Library/Keychains/SystemRootCertificates.keychain" => "basic",
-        }
-        trusted_certificates = keychains.flat_map do |keychain, purpose|
-          capture("/usr/bin/security", "find-certificate", "-a", "-p", keychain)
-            .scan(CERTIFICATE_PATTERN)
-            .select do |certificate|
-              begin
-                capture("/usr/bin/openssl", "x509", "-inform", "pem", "-checkend", "0", "-noout",
-                        input: certificate)
-                next false unless capture("/usr/bin/openssl", "x509", "-inform", "pem", "-purpose", "-noout",
-                                          input: certificate).include?("SSL server CA : Yes")
-
-                Tempfile.create do |file|
-                  file.binmode
-                  file.write(certificate)
-                  file.flush
-                  capture("/usr/bin/security", "verify-cert", "-l", "-L", "-c", file.path,
-                          "-p", purpose, "-R", "offline")
-                end
-                true
-              rescue RuntimeError
-                false
-              end
-            end
-        end
-        fingerprints = trusted_certificates.to_set do |certificate|
-          fingerprint(certificate, "/usr/bin/openssl")
-        end
-        trusted_certificates.concat certificates(source).select { |certificate|
-          fingerprints.add?(fingerprint(certificate, "/usr/bin/openssl"))
-        }
+      if [[ "$(uname -s)" == "Darwin" ]]; then
+        # Begin with system trust, then append Mozilla certificates not already present.
+        append_keychain "/Library/Keychains/System.keychain" ssl
+        append_keychain "/System/Library/Keychains/SystemRootCertificates.keychain" basic
+        append_bundle "$source_file" "$work_dir/mozilla" /usr/bin/openssl
       else
-        system_bundle = [
-          "/etc/ssl/certs/ca-certificates.crt",
-          "/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem",
-          "/etc/ssl/ca-bundle.pem",
-        ].find { |path| File.file?(path) && File.readable?(path) }
-        openssl = executable("openssl")
-        if system_bundle && openssl
-          fingerprints = Set.new
-          trusted_certificates = [system_bundle, source].flat_map do |path|
-            certificates(path).select do |certificate|
-              fingerprints.add?(fingerprint(certificate, openssl))
-            rescue RuntimeError
-              false
-            end
-          end
+        # Merge the first standard system CA bundle found with the Mozilla bundle.
+        system_bundle=""
+        for candidate in \
+          /etc/ssl/certs/ca-certificates.crt \
+          /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem \
+          /etc/ssl/ca-bundle.pem; do
+          if [[ -f "$candidate" && -r "$candidate" ]]; then
+            system_bundle="$candidate"
+            break
+          fi
+        done
+        openssl_command="$(command -v openssl || true)"
+        if [[ -n "$system_bundle" && -n "$openssl_command" ]]; then
+          append_bundle "$system_bundle" "$work_dir/system" "$openssl_command"
+          append_bundle "$source_file" "$work_dir/mozilla" "$openssl_command"
         else
-          warn "Cannot find a readable system CA bundle or OpenSSL; using Mozilla certificates only."
-          trusted_certificates = certificates(source)
-        end
-      end
+          echo "Cannot find a readable system CA bundle or OpenSSL; using Mozilla certificates only." >&2
+          output_dir="$work_dir/mozilla"
+          split_certificates "$source_file" "$output_dir"
+          for certificate_file in "$output_dir"/*.pem; do
+            cat "$certificate_file" >>"$bundle_file"
+            printf '\n' >>"$bundle_file"
+          done
+        fi
+      fi
 
-      write_bundle(destination, trusted_certificates)
-    RUBY
+      chmod 0644 "$bundle_file"
+      mv -f "$bundle_file" "$destination"
+    BASH
+    chmod 0755, post_install
   end
 
   post_install_steps do
-    run "{{HOMEBREW_BREW_FILE}}",
-        args: ["ruby", "--", "{{libexec}}/post-install.rb", "{{pkgshare}}/cacert.pem", "{{pkgetc}}/cert.pem"]
+    run "post-install", args: ["{{pkgshare}}/cacert.pem", "{{pkgetc}}/cert.pem"], base: :libexec
   end
 
   def caveats
@@ -150,5 +175,6 @@ class CaCertificates < Formula
   test do
     assert_path_exists pkgshare/"cacert.pem"
     assert_path_exists pkgetc/"cert.pem"
+    assert_match "-----BEGIN CERTIFICATE-----", (pkgetc/"cert.pem").read
   end
 end

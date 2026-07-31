@@ -13,12 +13,13 @@ class Gh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "369252b0146cc9faa946302de4bfae00b0645f50e36e569d0525408a0d4b0109"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4b1479c74f7be13c6cfcf8a3f1b77c6e8ca39024379f1ac24735e0a02fa6ced"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c943ce8103fd9dda9fa68506230e0d380af6d2b778d551c4d5c69e611a077bf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cba3459a1f8234f9dd3ebdb8cad006b2c596496c14235f35b41c489d450603a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4150ed93a34c763d4486228fec0702db013865e1b533e557c2c089e7af905a80"
-    sha256 cellar: :any,                 x86_64_linux:  "55203262171903398fa5d36f4626100928f58bd74a0c7932b5cc19e0c1bf3ef3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7abef44486b0c535f6fe84b4173e61bdfb9320203da51e2fa0a982ac537a1e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a42e9e65d263813f863054a1d2ae787a26e02257584a04e88c93de9c68731add"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48caebec1ed6433ffd802a2473f896db726afdf07e3f9ee88779a56a77c9fc48"
+    sha256 cellar: :any_skip_relocation, sonoma:        "43d7cb512c30ba3066587fc6dd52836a3a5dbd8c50b134a98bfcadda9efe7008"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2d40284e4e6ab847da085b27621baa5f9152fc00022bdc25103d4e35884caf5"
+    sha256 cellar: :any,                 x86_64_linux:  "7a25cdb2d10f2ba63c4e1a9c264c065f4a1ce4d9427985fa20ee68295aecc87b"
   end
 
   depends_on "go" => :build
@@ -33,12 +34,15 @@ class Gh < Formula
     end
 
     ldflags = %w[-s -w]
+    ENV.prepend_path "PATH", buildpath/"bin"
 
     with_env(
       "GH_VERSION"   => gh_version,
+      "GOBIN"        => buildpath/"bin",
       "GO_LDFLAGS"   => ldflags.join(" "),
       "GO_BUILDTAGS" => "updateable",
     ) do
+      system "make", "licenses"
       system "make", "bin/gh", "manpages"
     end
     bin.install "bin/gh"
@@ -50,5 +54,6 @@ class Gh < Formula
     assert_match "gh version #{version}", shell_output("#{bin}/gh --version")
     assert_match "Work with GitHub issues", shell_output("#{bin}/gh issue 2>&1")
     assert_match "Work with GitHub pull requests", shell_output("#{bin}/gh pr 2>&1")
+    assert_match "GitHub CLI third-party dependencies", shell_output("#{bin}/gh licenses")
   end
 end

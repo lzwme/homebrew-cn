@@ -4,7 +4,7 @@ class Acl2 < Formula
   url "https://ghfast.top/https://github.com/acl2/acl2/archive/refs/tags/8.7.tar.gz"
   sha256 "d6013c22e190cbd702870d296b5370a068c14625bf7f9d305d2d87292b594d52"
   license "BSD-3-Clause"
-  revision 4
+  revision 5
 
   livecheck do
     url :stable
@@ -12,14 +12,19 @@ class Acl2 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "bc941d832075ad279fa2f9d105e615e5367033668cae81649839402a35676267"
-    sha256 arm64_sequoia: "4040316ab5489c6e552ff1cc226a2e91384e40a397a817221f56616c9e29308d"
-    sha256 arm64_sonoma:  "263707baf376e9bc18579beeb42a77f672b0b034f6e37199122679ab8ffa2bf4"
-    sha256 sonoma:        "82c79e04631f6ef3fbcbffd69550e62b7ab627ec3c4a1b31138fe3bc25e675d5"
-    sha256 x86_64_linux:  "46572292f8e498e85bd07d7e95c1e9444a99cd60c30045cbfb4969bf71d55813"
+    sha256 arm64_tahoe:   "549486e442dd587ee33fca51e62c7219e0ec9c5a876b36ca1c698ad80f64832b"
+    sha256 arm64_sequoia: "0ebafac056daae79af58bec06b832bfdf9e67ae8228ecec07a1545d753b1d1f2"
+    sha256 arm64_sonoma:  "0666443724cc2c104730004c7353945585aa7837795c01623fef5188dbf924a7"
+    sha256 sonoma:        "5459b341f7aa01dc8621dda02b62dd23cc906a2f2f110049a92d8e9d02e67bc1"
+    sha256 x86_64_linux:  "78f5ebdbd00669a37371de5f08b89514529ad93c13703b1c602b7162a26b9362"
   end
 
   depends_on "sbcl"
+
+  on_linux do
+    # ACL2 rejects a Lisp that doesn't error on floating-point overflow
+    depends_on arch: :x86_64
+  end
 
   def install
     # Remove prebuilt binaries

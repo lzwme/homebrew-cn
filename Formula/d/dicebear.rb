@@ -1,17 +1,17 @@
 class Dicebear < Formula
   desc "CLI for DiceBear - An avatar library for designers and developers"
   homepage "https://www.dicebear.com"
-  url "https://registry.npmjs.org/dicebear/-/dicebear-10.3.1.tgz"
-  sha256 "4184a899899ad27da2a77080d0c87003e24acbb99f5a1ca220e75127bee640ce"
+  url "https://registry.npmjs.org/dicebear/-/dicebear-10.3.2.tgz"
+  sha256 "00530170b5031ef73fb3a43658d7121adb7c7616bdfa2666dc2b9fda73f27cdd"
   license "MIT"
 
   bottle do
-    sha256               arm64_tahoe:   "627b1a6c5777d4c331933f5756bce8425ae1548902ab968a1a9b731f8a2b2189"
-    sha256               arm64_sequoia: "5473b677363486d91cc6c8fec4629f520066a80934dbd59d5dfa31060f248680"
-    sha256               arm64_sonoma:  "147160bea13d297d4765f3bce27dad7461781d7dccc865e758adf869bc28be2a"
-    sha256               sonoma:        "d7c6a643060401250d14880270ab5bb2c08c0f33f05b7d58cf9fa8fdc857ef5c"
-    sha256 cellar: :any, arm64_linux:   "194d9ffcf032a10d689ccb9b24a044f30dd5c6a3775e4870f8ee28cbfaa100a0"
-    sha256 cellar: :any, x86_64_linux:  "220cb07b4b6d65e058e4c340b84e68418e50b76a8d3abd84aa72f9a7f7ac22ee"
+    sha256               arm64_tahoe:   "0f3d86452f8afbec1139133caf0c862ab1bfe12e94228dbe63609b4d749ee0ab"
+    sha256               arm64_sequoia: "298a0664ff53defe4d303ea56a7ab22e7f45a4a0041c0b09bd8106067a4b701a"
+    sha256               arm64_sonoma:  "7ff752f500ea00262f6714487632b34b6a3620b6c3e1ca98ed8dcec17b08e55f"
+    sha256               sonoma:        "cebfd6d32ca39ee1c2deace5cee9e694e8b231e44371ec8faad23485872f5c1d"
+    sha256 cellar: :any, arm64_linux:   "1c7cfe6036bb1dd3003784efb39cbb84a7e7f2e73e6f6090a69ca8aa2f296f4e"
+    sha256 cellar: :any, x86_64_linux:  "eb4c443183c9915004e9eb4ee9f3b11a8c2823c668617be765de30567d3b8875"
   end
 
   depends_on "pkgconf" => :build

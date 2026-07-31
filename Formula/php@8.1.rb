@@ -1,9 +1,9 @@
 class PhpAT81 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/371109cc3633b43f01baeaaa2243bdcdf9b58da0.tar.gz"
+  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/fd5f12b7da1df9165d8af7a9e5179aaa2cf58ab8.tar.gz"
   version "8.1.34"
-  sha256 "ae686b086c69317398a9b3c1a8ad51f71bd38a18afea62a430203b8ac468fc8e"
+  sha256 "6d453b4b8ac6ba66f16ed5ffaa067e2e4ed8bf49c056100e10fa55c1654331bc"
   license all_of: [
     "PHP-3.01",
 
@@ -30,19 +30,15 @@ class PhpAT81 < Formula
   revision 1
   compatibility_version 1
 
-  livecheck do
-    url "https://www.php.net/downloads?source=Y"
-    regex(/href=.*?php[._-]v?(#{Regexp.escape(version.major_minor)}(?:\.\d+)*)\.t/i)
-  end
-
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_tahoe:   "c9ed26bd1e7ce806c7d38ea1f9abb4a163bac0e0b059a4cdbea6a2383aa68e42"
-    sha256 arm64_sequoia: "1692b3df179897af5159c9b603edb690d446a593a485e7b6cac0a0bb9bd66db8"
-    sha256 arm64_sonoma:  "3b3e4cce3722ecb3be07c546c074b4983b405790893f5c9615edec594ba9cd8b"
-    sha256 sonoma:        "ceae2e9984ef71e4c5fdbfe904b73534fd3745c735b6c54185ec7d005e799712"
-    sha256 arm64_linux:   "525759eb4375a7efcec8cbdc0c92f240d9c04f951e99c48727ec4c4f2d966cf9"
-    sha256 x86_64_linux:  "1f7008af02aebf45e15313d3a8b84a67e6adcb203fdb9ee8b910a4a505f244c4"
+    rebuild 1
+    sha256 arm64_tahoe:   "61c7343d80373aab145f3b7c99a42c0423aaf51af3dfbefb85faf0663a9ad086"
+    sha256 arm64_sequoia: "9ac2b8d737884b889c607c4ba2a8be263953fce7908b1d17345ff2906279ea4a"
+    sha256 arm64_sonoma:  "9b3695147d60566791b691efc74dc0438bc75cd447aa28530c289dca787a10ae"
+    sha256 sonoma:        "ea3583a4719b28a45e5b000d6f26a801ccd18ba3279a408204d72a2692358f24"
+    sha256 arm64_linux:   "d086cc8b26cc3843e037c6a6e31829d0f0b29338c5ab0fe819cfa7d920f2180c"
+    sha256 x86_64_linux:  "3d14c4bc2f241cb7222901aad18013193b9257cdadc34581bd20d5fc5d719b66"
   end
 
   keg_only :versioned_formula

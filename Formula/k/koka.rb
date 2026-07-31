@@ -41,7 +41,7 @@ class Koka < Formula
     end
 
     system "cabal", "v2-update"
-    system "cabal", "v2-build", *std_cabal_v2_args.reject { |s| s["install"] }
+    system "cabal", "v2-build", *std_cabal_v2_args(installdir: false)
     system "cabal", "v2-run", "koka", "--",
            "-e", "util/bundle.kk", "--",
            "--prefix=#{prefix}", "--install", "--system-ghc"

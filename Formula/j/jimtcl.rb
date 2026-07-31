@@ -23,12 +23,6 @@ class Jimtcl < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # patch to include `stdio.h``
-  patch do
-    url "https://github.com/msteveb/jimtcl/commit/35e0e1f9b1f018666e5170a35366c5fc3b97309c.patch?full_index=1"
-    sha256 "50f66a70d130c578f57d9569b62cf7071f7a3a285ca15efefd3485fa385469ba"
-  end
-
   def install
     system "./configure", "--disable-silent-rules",
                           "--with-ext=readline,rlprompt,sqlite3",

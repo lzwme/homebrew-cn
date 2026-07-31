@@ -37,6 +37,10 @@ class Httpyac < Formula
   end
 
   test do
+    # Without both of these, httpyac searches for them up to "/", which is unreadable in the sandbox.
+    (testpath/".httpyac.json").write "{}"
+    (testpath/"package.json").write "{}"
+
     (testpath/"test_cases").write <<~EOS
       GET https://httpbin.org/anything HTTP/1.1
       Content-Type: text/html

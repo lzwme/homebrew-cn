@@ -1,8 +1,8 @@
 class AwsCMqtt < Formula
   desc "C99 implementation of the MQTT 3.1.1 specification"
   homepage "https://github.com/awslabs/aws-c-mqtt"
-  url "https://ghfast.top/https://github.com/awslabs/aws-c-mqtt/archive/refs/tags/v0.16.0.tar.gz"
-  sha256 "9bc044a9c2f0d80c384ae6a6907c8817e0b40f673f75c4615c83b20f83140374"
+  url "https://ghfast.top/https://github.com/awslabs/aws-c-mqtt/archive/refs/tags/v0.16.1.tar.gz"
+  sha256 "48fd84e6ff51fdce5cdc4250593d7b0f10db91f8592737c0fe69e0177ee48144"
   license "Apache-2.0"
   compatibility_version 1
 
@@ -12,12 +12,12 @@ class AwsCMqtt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a74167566a7bf2b20fe580263056776e6da26b09ecf15026bff6a9ba52e4bd35"
-    sha256 cellar: :any,                 arm64_sequoia: "135c03cd46a4bdcbf0a4933c83a122427af00eea1cfb35f8135f395c126467cb"
-    sha256 cellar: :any,                 arm64_sonoma:  "646ddca9d136d4d1f3ecc5b5da7a86ca6cea3fa72a64cd9990d15b7e8f3bfddf"
-    sha256 cellar: :any,                 sonoma:        "a62dabdc4176ad788ccf8b5a2d88025c58278c1646d2e1e436b750cc6e340768"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0caf142228a9426743089b42c7f2330a3057929d6ce48621a3c81c680ca65727"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45311e3f0f92312f19913aa4e2ef0d151f53cb14872605ef8eab6e01c882495f"
+    sha256 cellar: :any, arm64_tahoe:   "0296d404ae066aae8d830dacb806deea73afa2ef05b079f9bb3da47fae14baf4"
+    sha256 cellar: :any, arm64_sequoia: "1fdb3bf4ce80a0901a1355ee9d20caeffb62ebc84201a1c39dc90bdaba976449"
+    sha256 cellar: :any, arm64_sonoma:  "ee87fb7f9e2319a6f182658f076d1afe4aa16ddd5181a7b922481c80fc477f55"
+    sha256 cellar: :any, sonoma:        "ae2df057b4f0904a4239ddfb4766811fa660b10fcd8df56087e0130a2cb3d20c"
+    sha256 cellar: :any, arm64_linux:   "02c353208609357f8d007b4882ed280f75fb2d582bfbedf67b44b9c3ab213809"
+    sha256 cellar: :any, x86_64_linux:  "be3b3bd9df28b4434fcb8a55738602c7e6eea8623f46ccbf58bfb60d0ea00e9d"
   end
 
   depends_on "cmake" => :build

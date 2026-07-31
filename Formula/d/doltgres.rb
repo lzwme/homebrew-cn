@@ -1,8 +1,8 @@
 class Doltgres < Formula
   desc "Dolt for Postgres"
   homepage "https://github.com/dolthub/doltgresql"
-  url "https://ghfast.top/https://github.com/dolthub/doltgresql/archive/refs/tags/v0.57.1.tar.gz"
-  sha256 "b6079caa695a7c5e9784b7b98f3c775c8b622677d8302796914f110e9f1cd855"
+  url "https://ghfast.top/https://github.com/dolthub/doltgresql/archive/refs/tags/v0.57.2.tar.gz"
+  sha256 "04dc6373d83c368157fbe82b3d4ef8979d720fcc356caa77cbb1bf1516113d2c"
   license "Apache-2.0"
   head "https://github.com/dolthub/doltgresql.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Doltgres < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c861e6f51af7e9c95b0c3f58c5716d14ffdc1c1829b2c366d170eed19389be5c"
-    sha256 cellar: :any, arm64_sequoia: "86edf426a0307f435bea57406445345f2b59065af48d2cc3d2f24e71b73998bb"
-    sha256 cellar: :any, arm64_sonoma:  "245f7be9a05f5d7e43559ca82a3632861ca954f0b41e390e631978b5751ae8c8"
-    sha256 cellar: :any, sonoma:        "131abc56ec263b8828d34a2fa9317e154f48d5b9a1632f61951623f7110eebc8"
-    sha256 cellar: :any, arm64_linux:   "96ed1c338d66f7b90f716e4648b7bf58239f1e2c91c1e1fc33f31e75be0137f9"
-    sha256 cellar: :any, x86_64_linux:  "0bd391c99cf961d8fd91020661ee805c4201e7a422aa49307ebcc46ba5f477db"
+    sha256 cellar: :any, arm64_tahoe:   "209bd4aef7b5492c48d83cb2ca44762d5022a9f69e8a2f7062af10da94e93d06"
+    sha256 cellar: :any, arm64_sequoia: "5fe99de57dcbe38963d2c7bceb916d5814f5cfcbdb3a5e1514636ec51395313b"
+    sha256 cellar: :any, arm64_sonoma:  "483d202b158c47fe86da79590ab6041e2184b3d562bfd2c8d542ec5f6e7cbc20"
+    sha256 cellar: :any, sonoma:        "9c66e6bfa8f51eac665ea9045f8fdd24d89f446dfa45800e54ff1565ecc4d873"
+    sha256 cellar: :any, arm64_linux:   "4e8f27af311a9d14cf3f69105646ce5afcafbe7b4c22c0c07200384fba4acc17"
+    sha256 cellar: :any, x86_64_linux:  "ec21b47af246acb63ce90f1ff40a7851fcd296d23e75d65f7357758dcfe90e51"
   end
 
   depends_on "go" => :build

@@ -31,7 +31,7 @@ class Elm < Formula
     #  https://github.com/elm/compiler/blob/main/installers/linux/Dockerfile
     # This process does not use `cabal install`
     system "cabal", "update"
-    system "cabal", "v2-build", "elm", *std_cabal_v2_args.reject { it["install"] }
+    system "cabal", "v2-build", "elm", *std_cabal_v2_args(installdir: false)
     bin.install Utils.safe_popen_read("cabal", "list-bin", "elm").chomp
   end
 

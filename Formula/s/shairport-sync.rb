@@ -31,14 +31,6 @@ class ShairportSync < Formula
   depends_on "popt"
   depends_on "pulseaudio"
 
-  # Drop leftover call to `log_to_syslog`, whose definition was commented out upstream
-  patch do
-    url "https://github.com/mikebrady/shairport-sync/commit/7bfe78603e8f53f224bef825c7d5dd321ca3e781.patch?full_index=1"
-    sha256 "3299dc130e338b0c9cf35b242ac4269d3096fe7398c8a5e77bb671ca95a5e4cf"
-    type :backport
-    resolves "https://github.com/mikebrady/shairport-sync/pull/2243"
-  end
-
   def install
     system "autoreconf", "--force", "--install", "--verbose"
     args = %W[

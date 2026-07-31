@@ -23,14 +23,6 @@ class Sngrep < Formula
 
   uses_from_macos "libpcap"
 
-  # Backport fix for build
-  patch do
-    url "https://github.com/irontec/sngrep/commit/b84f0663e47de6f238d9f81eed67612a9ab616ef.patch?full_index=1"
-    sha256 "5212687f15f3e3e8f364634b18981e49ee022d612620079ed75c08d2a32a2f10"
-    type :backport
-    resolves "https://github.com/irontec/sngrep/pull/519"
-  end
-
   def install
     ENV.append_to_cflags "-I#{formula_opt_include("ncurses")}/ncursesw" if OS.linux?
 

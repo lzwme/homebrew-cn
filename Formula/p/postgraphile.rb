@@ -1,12 +1,12 @@
 class Postgraphile < Formula
   desc "GraphQL schema created by reflection over a PostgreSQL schema"
   homepage "https://www.graphile.org/postgraphile/"
-  url "https://registry.npmjs.org/postgraphile/-/postgraphile-5.1.1.tgz"
-  sha256 "1adf4f90323e07fe2c8fe86479b34e77deef7f28fd00d0db390c29b89ca2affa"
+  url "https://registry.npmjs.org/postgraphile/-/postgraphile-5.1.2.tgz"
+  sha256 "b304616e53a34e2a99aa8edd6f237b071bd3e35d21f95a2f9b4412da390e494c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "58449b060b0844c0d03a7f9d619f9c5fddab7e3d3ed51e0f539792474eebd832"
+    sha256 cellar: :any_skip_relocation, all: "bbe5d82ad7978bb853c220cd0551fb12fbd530a771590cef583a511833e70efc"
   end
 
   depends_on "postgresql@18" => :test

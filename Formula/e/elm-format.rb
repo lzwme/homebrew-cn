@@ -29,7 +29,7 @@ class ElmFormat < Formula
     (buildpath/"cabal.project.freeze").truncate(0)
     inreplace "cabal.project", /^with-compiler: .*$/, ""
 
-    args = std_cabal_v2_args.reject { |s| s["install"] }
+    args = std_cabal_v2_args(installdir: false)
     # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
     args << "--allow-newer=base,containers,template-haskell"
 

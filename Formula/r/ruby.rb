@@ -29,13 +29,13 @@ class Ruby < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "1625d71cf2838907bd7699b2a23c89f185126eb57feb8213774a190c4fbdb50d"
-    sha256 arm64_sequoia: "5ddf12abf64e530d6bed5777600c900e2b299aca13530c45f33ad48d60b39f66"
-    sha256 arm64_sonoma:  "4c939677e8c245aa59569374e15dcf8e00542c65ebfa7d4062dafd6544d259b8"
-    sha256 sonoma:        "0ee1553c04c9aacc90718e6f9cba7d903ba340dab6c3c5d63c976c00e2282ae7"
-    sha256 arm64_linux:   "34754fcbad70f2e5190a0563949713052e2e4b3c00ccb28a8341f3249a8058f9"
-    sha256 x86_64_linux:  "995907c4734f47bfc56336ddcd77927f6ee9a6e960291b06e4e97fdc00c5586b"
+    rebuild 2
+    sha256 arm64_tahoe:   "6e3a5e6c3cccb7211545faaa2f9db5004ab3fba83463a2dd4c80c91a91b38b9a"
+    sha256 arm64_sequoia: "c173fad470c2484db0891da210309bf2681ca7e5608c3b1397729ffc0cd6b32a"
+    sha256 arm64_sonoma:  "bdf61bae5f4f539815fa66574e9a6095ceae704743d9003cf79909b818b04ab3"
+    sha256 sonoma:        "e687d6c7d2f2d1b4885978c5543215ab561e19b74671d485649d29bf8c9ecc4d"
+    sha256 arm64_linux:   "e4451f17745bd75188fc752adb01cd4f6e60786eb931c2a415a36b22c803aaab"
+    sha256 x86_64_linux:  "bd1d4780456440fddc41d84202061f435751038599b7151189f273affbe4d43e"
   end
 
   head do
@@ -158,10 +158,7 @@ class Ruby < Formula
     config_file.write rubygems_config
 
     (libexec/"post-install.rb").write <<~RUBY
-      require "fileutils"
-
-      FileUtils.rm_f ["#{rubygems_bindir}/bundle", "#{rubygems_bindir}/bundler"]
-      FileUtils.rm_rf Dir["#{HOMEBREW_PREFIX}/lib/ruby/gems/#{api_version}/gems/bundler-*"]
+      # Repair Ruby's versioned opt dylib ID after Homebrew has fixed install names.
       exit unless RUBY_PLATFORM.include?("darwin")
 
       require "macho"
@@ -182,8 +179,17 @@ class Ruby < Formula
     RUBY
   end
 
+  # Since Gem ships Bundle we want to provide that full/expected installation
+  # but to do so we need to handle the case where someone has previously
+  # installed bundle manually via `gem install`.
+  # TODO: remove when enabling default_user_install
   post_install_steps do
-    run "{{HOMEBREW_BREW_FILE}}", args: ["ruby", "--", "{{libexec}}/post-install.rb"]
+    remove ["bin/bundle", "bin/bundler", "lib/ruby/gems/{{version.major_minor}}.0/gems/bundler-*"],
+           base: :homebrew_prefix, recursive: true
+    on_macos do
+      run "{{HOMEBREW_BREW_FILE}}", args: ["ruby", "--", "{{libexec}}/post-install.rb"],
+                                    env:  { "HOMEBREW_DEVELOPER" => "1" }
+    end
   end
 
   def rubygems_config

@@ -3,17 +3,17 @@ class Humanbound < Formula
 
   desc "Adversarial security testing engine, SDK, and CLI for AI agents"
   homepage "https://docs.humanbound.ai/"
-  url "https://files.pythonhosted.org/packages/02/61/bb9cb8753c0cde98c6e5ab7307324ba414ccd5bd874206192e570bd9fd7f/humanbound-2.7.0.tar.gz"
-  sha256 "7876689210a9772eca0be3519d79cf99c1109bbf255b4d13dd9a3e54192ddacc"
+  url "https://files.pythonhosted.org/packages/e2/b3/3abb213424f962e4c31cc50e11a8d235a56bcc1c4b39c6b7fbd448f032a7/humanbound-2.8.0.tar.gz"
+  sha256 "2e7ed1c2ecbceff77eec48b478e39ae40326df81d4409985c1518251dbb74f2d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d1fea0cc9e95534453684b35a7aeeccd802df24ac5d4669fadb0347c043ab774"
-    sha256 cellar: :any, arm64_sequoia: "dcb5b5a2488e0afec6e92577926ba04eed4a8f59df7e147a9d8a7e8c0a366c94"
-    sha256 cellar: :any, arm64_sonoma:  "05fe18751b6f9c05c1724d7c0b9abfa52b6f905afe13d95dc1180cc5f6c04e73"
-    sha256 cellar: :any, sonoma:        "b4c3016be0c92b665be9b790051b5b7bdb9d08c1ff4e0085adccec809dc3e164"
-    sha256 cellar: :any, arm64_linux:   "9d69dcc4a8c4d1d259eb2c2ac246bdcf5ecb276f624e7a317105ed2e8831d1fa"
-    sha256 cellar: :any, x86_64_linux:  "36fc1b0f72765e3f195111f069f2bdd44bd8154af0c8e121837d48eea6907e4f"
+    sha256 cellar: :any, arm64_tahoe:   "7dfac711033ea1dd99cc342a1d98f17f2a2df2b12e121047ef3893040034893e"
+    sha256 cellar: :any, arm64_sequoia: "86ef8225af04d66d581d0aeaccaca65f8f9695591cfef2ba05278268bbce9c70"
+    sha256 cellar: :any, arm64_sonoma:  "47748d13ed1a6187378893af8ba915ab93ac401d4c4ed3804836c68c1c02b4f4"
+    sha256 cellar: :any, sonoma:        "c31d4fe7701237814fdbe274a829ba6fe8fe422654d9cb084e3b9732352ce656"
+    sha256 cellar: :any, arm64_linux:   "4d5747d5d2f33783bec2aa03d6ab4e76a85bfecf7b6e59935b150fb0088438c2"
+    sha256 cellar: :any, x86_64_linux:  "b8b23588923e5cb6b90b1108bf6b5c317b4fbcc8ceefa42b31d330bc4ff2979b"
   end
 
   depends_on "certifi" => :no_linkage
@@ -79,8 +79,8 @@ class Humanbound < Formula
   end
 
   resource "posthog" do
-    url "https://files.pythonhosted.org/packages/36/f0/3af875ac3fd5863ed4874c9618d85eab3f7fd24b395827d99da0ef90aca6/posthog-7.28.0.tar.gz"
-    sha256 "9e048dee58f27373db622c0744be30c1a2b7f1df31049956d6341c9646fb3833"
+    url "https://files.pythonhosted.org/packages/4b/8e/d664a1f9d51871412853702e39ddb23806807b14cb21d7744b1b95f4e2af/posthog-7.33.0.tar.gz"
+    sha256 "963b18cee5315eae51830f7cb2a0bba217d1131ca636a19c45d7c34e69e9ae0e"
   end
 
   resource "pygments" do

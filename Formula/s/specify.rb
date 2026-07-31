@@ -3,17 +3,17 @@ class Specify < Formula
 
   desc "Toolkit to help you get started with Spec-Driven Development"
   homepage "https://github.github.com/spec-kit/"
-  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.14.4.tar.gz"
-  sha256 "d95fc7157cc0c5b7da4e6e5dff7db2c4c2db843372ecf458d32ac1d5bb1900ad"
+  url "https://ghfast.top/https://github.com/github/spec-kit/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "09eb2598cacb887a3855efbcebe7536ad90e36078c33980d29676010120cdb05"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "279650c20fd3194378804219d0f8252fb250c480bf7e2e855828f94624cf9a24"
-    sha256 cellar: :any, arm64_sequoia: "20ed070eefa9a9308593b6d82ca7cb27c289f5703110bf32393b03f203e343a6"
-    sha256 cellar: :any, arm64_sonoma:  "eeb03c94ee8b4eac707692067648afcfbb64fb0dee9bad72342b40b5ea3b0c92"
-    sha256 cellar: :any, sonoma:        "2181d07d8bc2b8638f34b5e6e8681fa6683f790aea9eac2b2cbdb07bb3669e10"
-    sha256 cellar: :any, arm64_linux:   "3cf03d6ba5f27a5951f9a75538c3e69e74f17d5bc387c6d089408b6e85bf759b"
-    sha256 cellar: :any, x86_64_linux:  "2e5d60058d685f68849ed6539bb0406b30b376a1ba50038bfc1282980baa9d5d"
+    sha256 cellar: :any, arm64_tahoe:   "9be04a86331ca15cbfeeba3615f5f4ea1adbd575ed11f47f442cfb62fc9e0bf4"
+    sha256 cellar: :any, arm64_sequoia: "9a0a438bb582ba498423128361a823a4d1dcbaf2469b251aaa18ea2eba3ac2f9"
+    sha256 cellar: :any, arm64_sonoma:  "ce2ab8b98a1637011628ce5fbcb80ccc0c0516cd03194970ad13d2e3ed8bc355"
+    sha256 cellar: :any, sonoma:        "f6b38f7538a2154a58859dd17b6c3681a00643a37fe1c21bbded604ccdb600b0"
+    sha256 cellar: :any, arm64_linux:   "8d4d290f6aeb88eea740bf43a84ad3dd4be3a908c2cd821420039a1ffd08694d"
+    sha256 cellar: :any, x86_64_linux:  "fb0bf6917905a4dcc0d46d600c9a198d31cf23e48bd2d6bde6533556bb3476be"
   end
 
   depends_on "certifi" => :no_linkage
@@ -23,8 +23,8 @@ class Specify < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "annotated-doc" do
-    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
-    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+    url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
+    sha256 "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
   end
 
   resource "click" do
