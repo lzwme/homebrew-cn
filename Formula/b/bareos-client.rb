@@ -77,7 +77,7 @@ class BareosClient < Formula
   end
 
   post_install_steps do
-    mkdir_p "lib/bareos"
+    mkdir_p "lib/bareos", base: :var
     unless_path_exists "{{etc}}/bareos/bareos-fd.d" do
       run "bareos/scripts/bareos-config", args: ["deploy_config", "bareos-fd"], base: :lib
       run "bareos/scripts/bareos-config", args: ["deploy_config", "bconsole"], base: :lib

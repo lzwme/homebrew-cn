@@ -62,16 +62,16 @@ class Opensearch < Formula
   end
 
   post_install_steps do
-    mkdir_p "lib/opensearch"
-    mkdir_p "log/opensearch"
+    mkdir_p "lib/opensearch", base: :var
+    mkdir_p "log/opensearch", base: :var
     unless_path_exists "{{libexec}}/config" do
       symlink "{{etc}}/opensearch", "config", target_base: :libexec
     end
-    mkdir_p "opensearch/plugins"
+    mkdir_p "opensearch/plugins", base: :var
     unless_path_exists "{{libexec}}/plugins" do
       symlink "{{var}}/opensearch/plugins", "plugins", target_base: :libexec
     end
-    mkdir_p "opensearch/extensions"
+    mkdir_p "opensearch/extensions", base: :var
     unless_path_exists "{{libexec}}/extensions" do
       symlink "{{var}}/opensearch/extensions", "extensions", target_base: :libexec
     end

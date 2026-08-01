@@ -52,8 +52,8 @@ class Cayley < Formula
   end
 
   post_install_steps do
-    unless_path_exists "cayley" do
-      mkdir_p "cayley"
+    unless_path_exists "cayley", base: :var do
+      mkdir_p "cayley", base: :var
       run "cayley", args: ["init", "--config={{etc}}/cayley.yml"], base: :bin
     end
   end

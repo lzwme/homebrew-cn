@@ -70,7 +70,7 @@ class Nagios < Formula
   end
 
   post_install_steps do
-    mkdir_p "lib/nagios/rw"
+    mkdir_p "lib/nagios/rw", base: :var
     if_path_exists "{{etc}}/nagios/nagios.cfg" do
       inreplace "nagios/nagios.cfg", /^nagios_user=.*/, "nagios_user={{user}}", base: :etc, audit_result: false
     end

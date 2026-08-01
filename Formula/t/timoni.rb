@@ -1,18 +1,18 @@
 class Timoni < Formula
   desc "Package manager for Kubernetes, powered by CUE and inspired by Helm"
   homepage "https://timoni.sh/"
-  url "https://ghfast.top/https://github.com/stefanprodan/timoni/archive/refs/tags/v0.27.1.tar.gz"
-  sha256 "cbe8cf25d65d03eaa994b3b39d8b1efdbc27db75e0482839109ebb43dbdc420f"
+  url "https://ghfast.top/https://github.com/stefanprodan/timoni/archive/refs/tags/v0.28.0.tar.gz"
+  sha256 "7952da3ef6b3d8df4ee596550e638afa9a5c41962a794eb9650f33c0f48e8244"
   license "Apache-2.0"
   head "https://github.com/stefanprodan/timoni.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7fb54246d51145191c82418d5bf51063442508e757eff3fbfa60f2abef4d62c5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "564d5bb9b098be4ffa6f24692a038971c04f81c45c71d072320eded2240d58e4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c1b315f8cb490b457780efe177b5c839fbd3645c33ad705dc20eb221695cd94"
-    sha256 cellar: :any_skip_relocation, sonoma:        "79f4e4e4f11c5b7d0437c01ab3c97c324dedf7c9a79fe2dc3d40a21e9de4f0c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ae835a72887d4b2b876472e696eef4b866991a9733dff730d7e99d7a81bcaf7"
-    sha256 cellar: :any,                 x86_64_linux:  "2feafadbe329ee6f725a8ba1e1a5fb8d13bee00dca321f633dd105de51b3adc1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d1f2511d7255a73ef91e1b3c9ce65e966d0f367700a75fedf3438c3a505af5b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0bb4a8858aa5f57afe1e95a164ee837eb5f5249be072614b5ff3742d010826d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "382bf210fea6d539da086edfb05006f1cd0a492615a3212c2e1c1be290c4b97a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3c6504cc3aee12da5ab9487c95afa3263b2e4fc093a5257d07ac050f297c03a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea966cb5038f6f36894c93aa102c98517238a091c5a59cac239a67d866461e94"
+    sha256 cellar: :any,                 x86_64_linux:  "47b6983bedd5b33eac017b2a1e256bacc1d11c035f115956a31762bd3556d93d"
   end
 
   depends_on "go" => :build

@@ -1,17 +1,17 @@
 class Hadolint < Formula
   desc "Smarter Dockerfile linter to validate best practices"
   homepage "https://github.com/hadolint/hadolint"
-  url "https://ghfast.top/https://github.com/hadolint/hadolint/archive/refs/tags/v2.15.0.tar.gz"
-  sha256 "8088f55cf6959770a9885ab8632ea306e26a02fd88981c37c32e9422cdc3ff9e"
+  url "https://hackage.haskell.org/package/hadolint-2.15.1/hadolint-2.15.1.tar.gz"
+  sha256 "53a210184be82bd273fb298c0887a84e7d6c1d08fcdfc376373235c0c786bb27"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0c8d30ecc3433769a22668c7d0b803baa7324e4f8b140110af5947e4259e05b7"
-    sha256 cellar: :any, arm64_sequoia: "2b7d461364e021522b51eb11e493897120b7c6d9b5754811d0ef556165016899"
-    sha256 cellar: :any, arm64_sonoma:  "89d79f223de1042e6239c182a97cf92b23edeafba70a336c6cfaa6b16a3b2a40"
-    sha256 cellar: :any, sonoma:        "d89343cb696e92d6ef0a0adbf95d42d2745599d74a86267e55486f82a0faf337"
-    sha256 cellar: :any, arm64_linux:   "276ccf1dfee740cacbec21f67030a5d41aa95fe5d89c9addc2739b0802a9b1ec"
-    sha256 cellar: :any, x86_64_linux:  "8831467007996f632483a55ee3232b1b5e41f4d2a822998109c380426304aa89"
+    sha256 cellar: :any, arm64_tahoe:   "3b56bd5bd4962f8a11044ebb2390b47461cc9765f7b5e92ad62b659f610775dd"
+    sha256 cellar: :any, arm64_sequoia: "2c0d588da3ac20ef9345530a5d7b2aa686eb70366003b63b711e63ea88386938"
+    sha256 cellar: :any, arm64_sonoma:  "2de6097337f7d48284171c12a894ae1d8d8e3da4c282dbf6af9951dd76c6fdd0"
+    sha256 cellar: :any, sonoma:        "5a5d793e42cbca60bda0ffa7fbcee10e343c57b676ba76665cc1ace7b5e093e7"
+    sha256 cellar: :any, arm64_linux:   "a6f89c0126308b57ec5938a283c19452e30fd45c3f55aaca10571acc9b7be61f"
+    sha256 cellar: :any, x86_64_linux:  "6a9e2ad0f9989876218cd38738b1350105fb1a35fc74495647521f5331fe82e5"
   end
 
   depends_on "cabal-install" => :build
@@ -27,7 +27,7 @@ class Hadolint < Formula
 
   def install
     # Workaround for GHC 9.14 until hadolint allows parallel >= 3.3
-    args = ["--allow-newer=base"]
+    args = ["--allow-newer=base,time"]
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *args, *std_cabal_v2_args

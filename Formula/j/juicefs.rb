@@ -1,8 +1,8 @@
 class Juicefs < Formula
   desc "Cloud-based, distributed POSIX file system built on top of Redis and S3"
   homepage "https://juicefs.com"
-  url "https://ghfast.top/https://github.com/juicedata/juicefs/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "3122b9f608bfdc6a477d73ec38b13c30ce6b07a09e046c61a37042153f35e0d3"
+  url "https://ghfast.top/https://github.com/juicedata/juicefs/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "c64ebb28212840d12e37baaa1046d8226a3074427946c697a5ed22f158055758"
   license "Apache-2.0"
   head "https://github.com/juicedata/juicefs.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Juicefs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e3166c9013b38309f39ceb6a6a1fc274612d8d2c8913d05ea6e376cb698b35f6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6654af21d8b0728dd136d95e5edd237405f6542366fc9ae30d1430e008ecb42"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d34046f671926a4b20118b4f897ebd92b0db4409b91363f49551187fc640d080"
-    sha256 cellar: :any_skip_relocation, sonoma:        "06e08a9570e57cdec98048c3774807c1d54be5c80e9721d3ca65c9e5e776c53e"
-    sha256 cellar: :any,                 arm64_linux:   "9315c19afe1baeeffac41e625c4550570cdbc34867e129525f911f834b448e27"
-    sha256 cellar: :any,                 x86_64_linux:  "d4c76484e4d79c84c012635245e5a6d318cfd388aed27a0c04d92e1f21fc12b9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd9c876eb2d8f942b9bb4dac5cb73709eb7b193a26614e9fa26a87128bb33ea7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89a18b5d80d805cc75ebb808f6c28e7d27b85fef72b2ef05e5a5eb636fcc2b9c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e0f93d8257da27e7aae0b4d1a43f801684fc20c0144ac4a89bc2a14a8e54817"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7d4a0daa16c664aa14086340897e944c6b2fc317706875e03e8a4a25b56d7637"
+    sha256 cellar: :any,                 arm64_linux:   "387423223ed27fd7ef07001eeb31604bfb54976a8d4c648ae3a1fb567baea068"
+    sha256 cellar: :any,                 x86_64_linux:  "a4f5ccc3afcda7ebe4f48f887f589792a81825ec80553855a2aa2c6c16e90195"
   end
 
   depends_on "go" => :build

@@ -6,6 +6,11 @@ class Lxc < Formula
   license "AGPL-3.0-only"
   head "https://github.com/canonical/lxd.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^lxd-(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4495ea86693be3b3ac67a0be849e3d58b8fcb296d70a7f761b422a4335fb0e0"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4495ea86693be3b3ac67a0be849e3d58b8fcb296d70a7f761b422a4335fb0e0"

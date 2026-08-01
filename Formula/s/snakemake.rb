@@ -3,19 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/9e/c2/45aa858e55edbb7dbc243ed60859f4f3d92d63ecdd67a80632aa3659fe6b/snakemake-9.23.1.tar.gz"
-  sha256 "ef8d698bfce66a6669cc29df7e344b0b367fd90956c725e5ae0a79a556e8e93f"
+  url "https://files.pythonhosted.org/packages/3c/4b/6ca3ef78b8b6b2f76079a2dc260cb48aa58e7b6eeeb1278e6d200128ba1b/snakemake-9.24.0.tar.gz"
+  sha256 "0561a41594c4955f705d1811ebed5e23020a5f26c4724e6cf102c5bd31804acd"
   license "MIT"
-  revision 2
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bfa297f40ef3d8d00a184d5d0770238efccb8c58728d88325d4edd9b9e3c4eee"
-    sha256 cellar: :any, arm64_sequoia: "9fd964088ca6fad15b2730f6eb117f8e7b56c88e97533ca00d6d061d726d234e"
-    sha256 cellar: :any, arm64_sonoma:  "50aa30546563e80f8dcd74b4010af22b85a1d97bad0001a05243149999ae2dd9"
-    sha256 cellar: :any, sonoma:        "7fac86b470fafc67f1ad311e3da59b7be626380b3f3ca3d2c15d49a43db9b7b9"
-    sha256 cellar: :any, arm64_linux:   "f01c8b1e662ead131abd4debe14738c80e96adf750b803fc434e015fb78e7315"
-    sha256 cellar: :any, x86_64_linux:  "3473fd2e773932d311695bda2fddfe480552b5d4c0ef64f60382f280252fc82e"
+    sha256 cellar: :any, arm64_tahoe:   "2d017547286e12b1472a9feefe3e0eabe002500423a44891dd20655227abb23d"
+    sha256 cellar: :any, arm64_sequoia: "9bcdda7577745503b64f9027ef5be376f45da1ab5d1cc00dda4843467eef1a8d"
+    sha256 cellar: :any, arm64_sonoma:  "30ede4403f691c01f329b4874967e8642711b6c673e86d8995d0a5892e159518"
+    sha256 cellar: :any, sonoma:        "674b973841f5f298e262a6b83430f04850d0395e7fc1eccc4ea50dfd5750a258"
+    sha256 cellar: :any, arm64_linux:   "142c52b7dd7dc78c6b147def717d18be2ca6e5c88ca8d1d282c10f5a21a2cc69"
+    sha256 cellar: :any, x86_64_linux:  "9d7a9ec007139dcdb8c9105a552665e261ad528ea252d77fb71b48ed7bf32ee1"
   end
 
   depends_on "rust" => :build # for appdirs
@@ -69,8 +68,8 @@ class Snakemake < Formula
   end
 
   resource "fastjsonschema" do
-    url "https://files.pythonhosted.org/packages/20/b5/23b216d9d985a956623b6bd12d4086b60f0059b27799f23016af04a74ea1/fastjsonschema-2.21.2.tar.gz"
-    sha256 "b1eb43748041c880796cd077f1a07c3d94e93ae84bba5ed36800a33554ae05de"
+    url "https://files.pythonhosted.org/packages/e4/98/474719c58eddaf77fa443b063693e76d49db32bbe851bcbaf58d2700119f/fastjsonschema-2.22.1.tar.gz"
+    sha256 "0b83d1ce8d7845b959dcb20e1a5c3c8883b6541d9c52ab02cce5166b75ec805f"
   end
 
   resource "gitdb" do
@@ -79,8 +78,13 @@ class Snakemake < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
-    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
+    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
+    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
+  end
+
+  resource "greenlet" do
+    url "https://files.pythonhosted.org/packages/a3/74/b13368064b09053253555d3f2839cc2684d22d5aed0d2ccffbf7a6736558/greenlet-3.5.4.tar.gz"
+    sha256 "0232ae1de90a8e07867bb127d7a6ba2301e859145489f25cda8a6096dabe1d20"
   end
 
   resource "humanfriendly" do
@@ -239,8 +243,8 @@ class Snakemake < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/fe/a4/282c8e64300a59fc834518a54bf0afabb4ff9218b5fa76958b450459a844/wrapt-2.2.2.tar.gz"
-    sha256 "0788e321027c999bf221b667bd4a54aaefd1a36283749a860ac3eb77daed0302"
+    url "https://files.pythonhosted.org/packages/2b/b0/c1f5a970721f06b85c0cd5142e0ff8fe067708abd779b0c4f4be7d61d09f/wrapt-2.3.0.tar.gz"
+    sha256 "681a2d0eefd721998f90642762b8e75c2159ec531b20ad5e437245ea7b06a107"
   end
 
   resource "yte" do

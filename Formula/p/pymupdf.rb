@@ -4,14 +4,15 @@ class Pymupdf < Formula
   url "https://files.pythonhosted.org/packages/8e/e9/6d6c5d6c0a3551bffd47681a6240caf941727f195b45593cf20ab36f018f/pymupdf-1.28.0.tar.gz"
   sha256 "e53f3567403a92da15caa9e7ae0164327fff48817e9f40175367fb9de524258d"
   license "AGPL-3.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ad979d2bb83f0a55ab4356cbc52c70524047c75593d061e5ef8f9494e68c0166"
-    sha256 cellar: :any, arm64_sequoia: "7a266bc5d4d9c2b8cd5b97d6cfb28289a105e0efcc9bfffaf4722b96cd127f87"
-    sha256 cellar: :any, arm64_sonoma:  "47d35996fc8dfc0a8d2d7da126d5cbc3dbb1850bc9293dd1b41c969e73c8965e"
-    sha256 cellar: :any, sonoma:        "9994bb6d47a08379083ae6e28ecb67e50dee67e95dd3b8bdb5f781fdf7c9aa12"
-    sha256 cellar: :any, arm64_linux:   "5f6749dd841f8b0ae015cecc854ad734775392f4f805c3e1fec370f9d38c4e3a"
-    sha256 cellar: :any, x86_64_linux:  "df2487a23ca46f87b75befe1cc8128dfc57f41aeac49cab1cfaeb115bc89ac08"
+    sha256 cellar: :any, arm64_tahoe:   "59343dc279d3a46b7a00567d44157389e315fcf2e6fa641270559a79429dc555"
+    sha256 cellar: :any, arm64_sequoia: "95d0a08ef4125d3a2633ce934c0d952132af4ed6b2a842f06d6e10f73ca20ba7"
+    sha256 cellar: :any, arm64_sonoma:  "20eaa0fbc1f35d70d26083808f273dab108f835b74405e223d91fc479a0bf9c2"
+    sha256 cellar: :any, sonoma:        "117a13f89e4c757d592e71e14dcf6f2eae52246aaa1c1b7d45ebd07d074596b5"
+    sha256 cellar: :any, arm64_linux:   "04f03c4302d06dc27d82c7a8b1fc898bc61254e9c1653f57a120404e214778b7"
+    sha256 cellar: :any, x86_64_linux:  "eedb88d7fb683068c13b5886419bb66f16d87c92bfe66a3a679e1a2109f7e35f"
   end
 
   depends_on "freetype" => :build
@@ -19,6 +20,22 @@ class Pymupdf < Formula
   depends_on "swig" => :build
   depends_on "mupdf"
   depends_on "python@3.14"
+
+  # Pass the options argument added to `fz_find_table_within_bounds` in mupdf 1.28.1
+  patch do
+    url "https://github.com/pymupdf/PyMuPDF/commit/b54b70f2410df7d11f9e68c58fe4e0dcb582756a.patch?full_index=1"
+    sha256 "7ce5d2b9f8b38fa9c54b78bdf8aabac758c79056bd4a389bf93fa25f5b110eaa"
+    type :backport
+    resolves "https://github.com/pymupdf/PyMuPDF/commit/b54b70f2410df7d11f9e68c58fe4e0dcb582756a"
+  end
+
+  # Skip the transform now that `pdf_clip_rect` takes fitz coords in mupdf 1.28.1
+  patch do
+    url "https://github.com/pymupdf/PyMuPDF/commit/87745b21b512440c7fc02e49037c3ad1c173d414.patch?full_index=1"
+    sha256 "db40ae037da6c3f427342478912b1baa2cc10c58d2f9211143e9d26fe14bd2ef"
+    type :backport
+    resolves "https://github.com/pymupdf/PyMuPDF/commit/87745b21b512440c7fc02e49037c3ad1c173d414"
+  end
 
   def python3
     "python3.14"

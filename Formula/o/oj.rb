@@ -1,18 +1,18 @@
 class Oj < Formula
   desc "JSON parser and visualization tool"
   homepage "https://github.com/ohler55/ojg"
-  url "https://ghfast.top/https://github.com/ohler55/ojg/archive/refs/tags/v1.28.2.tar.gz"
-  sha256 "62bb13e53da917d2a19ec6dfaf03df738942a41f1591c6f96bf01cbec7f3ee32"
+  url "https://ghfast.top/https://github.com/ohler55/ojg/archive/refs/tags/v1.28.3.tar.gz"
+  sha256 "6b0c0e9e37fce6a9a499842a0c886e8c2b67c32ffdceb0a491973c88b7db5d90"
   license "MIT"
   head "https://github.com/ohler55/ojg.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dbbb9d894e20d489ba5948f952b3925011a0ce794cb59036e3f3781f39f03e4b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8bd8befae482fd6c4a4dabf9638355cb6ae93b7057824d4815a3f84fb6f7814"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "626ab103ce6ee8e3a49ba91e164810fded698644f4f74b2db7e82e022d07c603"
-    sha256 cellar: :any_skip_relocation, sonoma:        "25f1f6e98c939eb157643a97591969592d48d79d993d37cc91932407bcab2cd3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "404f8c8855b870535e8a06b903de2b48bcc6bb2c6c82d414e7efece76afef50d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5041c61bbed869d5d9425c59b5ff16e5a9cc99e176eb84cd5374a5f2df3c6ec6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76554bbeff0aba4b6c5535a0ecd4b44d4bbaed3375dfd985c2b3cf0168caa0ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76554bbeff0aba4b6c5535a0ecd4b44d4bbaed3375dfd985c2b3cf0168caa0ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76554bbeff0aba4b6c5535a0ecd4b44d4bbaed3375dfd985c2b3cf0168caa0ff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "199013122d5c7daf94276a38e451c8028a5dd1338856d0ae8918ab43430371bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac7f4707b666198df7e19949ccbc6d0dc09ed666e146542126c44cb7c7cb7b2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59e079863919e0ba60d6eefafb9bad06bd3fb9f36d9de6cb073a7711e78bee57"
   end
 
   depends_on "go" => :build

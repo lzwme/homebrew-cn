@@ -1,18 +1,18 @@
 class QuickjsNg < Formula
   desc "QuickJS, the Next Generation: a mighty JavaScript engine"
   homepage "https://quickjs-ng.github.io/quickjs/"
-  url "https://ghfast.top/https://github.com/quickjs-ng/quickjs/archive/refs/tags/v0.15.1.tar.gz"
-  sha256 "c4e813951b7c46845096a948e978c620b11ab4cf5fd622ca09c727ec31f42623"
+  url "https://ghfast.top/https://github.com/quickjs-ng/quickjs/archive/refs/tags/v0.16.0.tar.gz"
+  sha256 "c759423f2ad8f37c8f6af7778dc5324779d5274c1a21f4855e9ad948bbdf0718"
   license "MIT"
   head "https://github.com/quickjs-ng/quickjs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "de8a6992790d4697c0c764ee2fa0167c72bd9c507f39469ce61af784791c323f"
-    sha256 cellar: :any, arm64_sequoia: "0ba4edf1667317e2e0740e3a8fc119dab2381d26a1b1e4c5126ce8280b2d3b77"
-    sha256 cellar: :any, arm64_sonoma:  "dd9305c1ba1d8be559ed4d9869dab0896ba4d6c003771f8fc3f32d8da1ec0aec"
-    sha256 cellar: :any, sonoma:        "18435d162177184756583b76fef2544bef06fd96721d6e25fde93b6d9da5e285"
-    sha256 cellar: :any, arm64_linux:   "bd8e4df7f64ab2f550697210547a2aac95b02bcd28e1df02803cef8a7c703bd7"
-    sha256 cellar: :any, x86_64_linux:  "a6f1dbc69589d405d1469dc0d19e734b942900411f3d5fa7a040cdbadecdde6b"
+    sha256 cellar: :any, arm64_tahoe:   "3515e43f9ea17791ad3d3a7ad83a323327db2a7fb7dec0640fd5f092d57def3d"
+    sha256 cellar: :any, arm64_sequoia: "d20cc16636b711bce9e896ab26558f9d0cce6162eb07c27c97062691a17d08ca"
+    sha256 cellar: :any, arm64_sonoma:  "8a30ce970a068a6629a56738b8cfe81e3ea506b4e4d72ff8e64243541ca6ac34"
+    sha256 cellar: :any, sonoma:        "799431fec124d3917926142b5980b8c5197382db822a69ffa199a8fd08a62d41"
+    sha256 cellar: :any, arm64_linux:   "3e3b4bc48f05852cc21f75512160b655931e3b1a209940f21a7d82046a4e96b9"
+    sha256 cellar: :any, x86_64_linux:  "52ab97239aba43f6181dc3b9b27a55b88394a1c204f17116a7d7f4aebe6cb1bb"
   end
 
   depends_on "cmake" => :build

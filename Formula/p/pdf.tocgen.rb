@@ -6,11 +6,11 @@ class PdfTocgen < Formula
   url "https://files.pythonhosted.org/packages/77/44/e6dafea2c491e84425ed725b69b689e58703609b1d70e7b7f49f28cf5df7/pdf_tocgen-1.3.4.tar.gz"
   sha256 "090758832614727eaf1fd0ba0075d5a10eb8f268d1d534fabd7131170a8ac79e"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/Krasjet/pdf.tocgen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "77401cde1dc1611e338ce7e1c86a1aeb8879e2f7753eb4916ac5630a22d71e76"
+    sha256 cellar: :any_skip_relocation, all: "b9fb09fc5314e9f2e9bc7fd66ad664a4afcc4aa26f0a38c4fecd728cca4abdc2"
   end
 
   depends_on "pymupdf"

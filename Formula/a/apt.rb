@@ -2,8 +2,8 @@ class Apt < Formula
   desc "Advanced Package Tool"
   homepage "https://wiki.debian.org/Apt"
   # Using git tarball as Debian does not retain old versions at deb.debian.org
-  url "https://salsa.debian.org/apt-team/apt/-/archive/3.3.1/apt-3.3.1.tar.bz2"
-  sha256 "0891dd9f0b89d87479993cb608df62b1e676d42c0846cc34cbca58d1e4135e63"
+  url "https://salsa.debian.org/apt-team/apt/-/archive/3.3.2/apt-3.3.2.tar.bz2"
+  sha256 "be791bc6c2048a4c3bdfd9e0fa8774b63e9b82bec5c1f7bcc1f0cfee469544be"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,8 +12,8 @@ class Apt < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "f1b606134a6570c7feaf07310e1a400e6b5f3a654b5b3f859922f15e57a3b5b3"
-    sha256 x86_64_linux: "4b09194baf22b7e22a50f7b6c3e60766ef4789cff940199ad0ddd359574af68b"
+    sha256 arm64_linux:  "ccb002c5c30f8126ef158e4e19526f9475a86387c699a9c88286e824bbe14688"
+    sha256 x86_64_linux: "473d07483dbba7b2b26f7224e184acf8ec452f3b1e75201b0c6793884b85f4bd"
   end
 
   keg_only "it conflicts with system apt"
@@ -57,13 +57,6 @@ class Apt < Formula
       url :url
       regex(/^v?(\d+(?:\.\d+)+)$/i)
     end
-  end
-
-  # Backport upstream fix: hashes.cc uses std::span without including <span>,
-  # which fails to build with newer libstdc++ that no longer pulls it in transitively
-  patch do
-    url "https://salsa.debian.org/apt-team/apt/-/commit/a13b5091addd4f065b426297686c861bffc7527a.patch"
-    sha256 "231f7aef8f3f559f7289370746b16c798851c9adb0f245305bd0d19a235ab33e"
   end
 
   def install

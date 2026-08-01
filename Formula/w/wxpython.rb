@@ -1,17 +1,17 @@
 class Wxpython < Formula
   desc "Python bindings for wxWidgets"
   homepage "https://www.wxpython.org/"
-  url "https://files.pythonhosted.org/packages/5f/59/8da2f898b3e1772ba501e5108d7d7824175485731c9b5f79381cb1e682d0/wxpython-4.3.0.tar.gz"
-  sha256 "33d17964ba7392a7d08d4cdfe6573ab331fe61b3ba2e281f202fd8b4e0ef7810"
+  url "https://files.pythonhosted.org/packages/3d/dd/026f6286f8beefcdd9551ad2e05b4e3edb45e638cdc067db211c53c950ce/wxpython-4.3.1.tar.gz"
+  sha256 "4e3a95b63175be8e10f0662de506a36d8cc6cb86ecc5b30ae880c8dafb34a0cd"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e383f480538a6d28df4cc3a3f3d1d7d20753f14cc0d59ba95e72817fb4bac9b5"
-    sha256 cellar: :any, arm64_sequoia: "bd79f38481aef45a07a1ab4464b693dacb5ef4a2380ae20088760010b38e7fca"
-    sha256 cellar: :any, arm64_sonoma:  "5bb509c4c1bfb570e5babe08efed64c7d532b47e3b9345f33de7ac92ef360283"
-    sha256 cellar: :any, sonoma:        "a3a402895a6a7adc64ed361b6dda8257f087432970d549a808fd87cbc9affb49"
-    sha256               arm64_linux:   "02bae02e9a492d540b56c06fef876617ea69f6929034c9d08d9972866de1e264"
-    sha256               x86_64_linux:  "75db43f2dca37ce35820e47ed1152bfc257bd99e6271e7ac6168c47dbef9d278"
+    sha256 cellar: :any, arm64_tahoe:   "5959abf9051bc6e3b58611bbbb2a9661180fd629b3208be9f7eb027dfbba7084"
+    sha256 cellar: :any, arm64_sequoia: "49736a27d51fe1746a6a48a23afcc0e5856f84a8eaeba51c255d471ba6214b4b"
+    sha256 cellar: :any, arm64_sonoma:  "d8ae9530fb20c86e77773dba1beb7887600f37603a5ae92be293d4b4916b42b3"
+    sha256 cellar: :any, sonoma:        "bfbb387d2f21f1cb4f5e589ca73e040914c04be752ca204870e015d3ea41e6fc"
+    sha256               arm64_linux:   "9a4c43dfef170d50b1e3f4679264d7a9f485ebee5f946ed5f463993bd8b7180a"
+    sha256               x86_64_linux:  "8ad63c8a655e368e6daeb8c26dceab15fe739b43e7042755b0d663485b5ccd84"
   end
 
   depends_on "cython" => :build

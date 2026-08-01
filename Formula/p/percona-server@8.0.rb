@@ -183,7 +183,7 @@ class PerconaServerAT80 < Formula
     if_path_exists "/etc/{my.cnf,mysql/my.cnf}" do
       warn "A system my.cnf may interfere with a Homebrew-built server starting correctly."
     end
-    init_data_dir "mysql", using: :mysql
+    init_data_dir "mysql", using: :mysql, base: :var
   end
 
   def caveats

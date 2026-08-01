@@ -3,18 +3,18 @@ class Hf < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/4b/50/db3771a6e4fad4bd28fb055d4363b51cb0ae98c1aa504b79d41fdcab5483/huggingface_hub-1.25.1.tar.gz"
-  sha256 "21129595ca7a753be479b319913e22cc8808361ac118bd76cc413db831b28a99"
+  url "https://files.pythonhosted.org/packages/82/db/3582597f8be0d34bd6881365a26d390854f12893eabdd62dd36de9df5a47/huggingface_hub-1.26.0.tar.gz"
+  sha256 "c8cd4e2df1ba9402f77fce9b509ec1d52debb502551789473f34016acc14e361"
   license "Apache-2.0"
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "97b9e1e9de5920288b4953e581ffa149b2084b19a1f8b4f117165a4f57fbb6e4"
-    sha256 cellar: :any, arm64_sequoia: "acc270b5da558f10dfdb98b4e320594d39a356149933668026d354e15fa74d70"
-    sha256 cellar: :any, arm64_sonoma:  "ee63e63ae7ee6391a8b2cdc2689d784bb549358f455828bb210a4e2459cac0b8"
-    sha256 cellar: :any, sonoma:        "941dee48eabc9b7223713ab95ba00b872516198555270540c5f111899124a0eb"
-    sha256 cellar: :any, arm64_linux:   "2a6c55448292dc0db6bcca850fc05355a708603be9b1108b3bb93d5d5bfaa61c"
-    sha256 cellar: :any, x86_64_linux:  "b0cbbd3d49407996123611ef64f3c35536119aaebef0b0e038d75c9ccdf700b5"
+    sha256 cellar: :any, arm64_tahoe:   "e35ea6838821fdcf67e3ec0ebf36976f2af9a369519c6dd2e20e1ccb3b2a8eab"
+    sha256 cellar: :any, arm64_sequoia: "f068168755948a4642e5f1ac30fabfe1a14463c4120512516676f88c6c8de309"
+    sha256 cellar: :any, arm64_sonoma:  "35ffaa5dda8e4056b9f46af306d4c931fa1ed316ae1dd6cf1b830ac003a50363"
+    sha256 cellar: :any, sonoma:        "1572985bdd04c54ffc8fae5c0400a78677ffaca2f295733eec0a386ad445a4df"
+    sha256 cellar: :any, arm64_linux:   "4a2dc093200312b7f9e8b01a9f720a0c4c729fc22bae134971ba17e58ad1d455"
+    sha256 cellar: :any, x86_64_linux:  "c8436fdb61a982a77a55a93a73a5e2023fabcceffb15922adf69092a3dd63f12"
   end
 
   depends_on "pkgconf" => :build
@@ -43,13 +43,13 @@ class Hf < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/c0/80/8232b582c4b318b817cf1274ba74976b07b34d35ef439b3eb948f98645a1/filelock-3.32.0.tar.gz"
-    sha256 "7be2ad23a14607ccc71808e68fe30848aeace7058ace17852f68e2a68e310402"
+    url "https://files.pythonhosted.org/packages/f6/57/3ba6e6cb097f85b855b00163d169f35365f44277df044dcf96d55b8f62a3/filelock-3.32.2.tar.gz"
+    sha256 "c33351e1f49cae33414acbc6d56784e6ecee82514ec90795da1161fc4836b5b8"
   end
 
   resource "fsspec" do
-    url "https://files.pythonhosted.org/packages/10/a1/ae4e3e5003468d6391d2c77b6fa1cd73bd5d13511d81c642d7b28ac90ed4/fsspec-2026.6.0.tar.gz"
-    sha256 "f5bac145310fe30e16e1471bd6840b2d990d609e872251d7e674241822abf01a"
+    url "https://files.pythonhosted.org/packages/00/78/f34251dadb8f3921264a1d9b8946f5e542014ee2614b285261b4e40e6775/fsspec-2026.7.0.tar.gz"
+    sha256 "c803c40f4cf860b49dea58ee3e1c33cb9c790520e233537e1340049f89b82a88"
   end
 
   resource "h11" do

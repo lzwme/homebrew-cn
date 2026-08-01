@@ -1,15 +1,15 @@
 class Macmon < Formula
   desc "Sudoless performance monitoring for Apple Silicon processors"
   homepage "https://github.com/vladkens/macmon"
-  url "https://ghfast.top/https://github.com/vladkens/macmon/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "e96d62f2a5c26591824a434d2a9495abed0b4a50c31da710fbecce2759e3b0af"
+  url "https://ghfast.top/https://github.com/vladkens/macmon/archive/refs/tags/v0.8.1.tar.gz"
+  sha256 "e86a403e253bfb84e91fdda98b6c785addac685314ecb8cf394ba53873de2c08"
   license "MIT"
   head "https://github.com/vladkens/macmon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0fdc3d4a070b99f1f2e3629a8c05a720a924026642bf0409fe24d871a77332c7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd191b285a1b426e49a46e4a6e91e3c1bac0f56a46d5f21261d67968871905e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab3ca88b7c75940b267bba60c8e0242a0f46a9ec3a22ce4f419aa939ba007dad"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "39960e0c8120a027386c632c80d7aadeaf7925bcdae8fd180c51a50249335efd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d46154f3aa2d77c15ab9eea7445d78ca338372ee13de80645b63c650ea23e681"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db618831d29924a1b63115e9afe6ebd7f04d077b1230f9136cfb637b4bef199f"
   end
 
   depends_on "rust" => :build

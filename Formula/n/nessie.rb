@@ -1,17 +1,17 @@
 class Nessie < Formula
   desc "Transactional Catalog for Data Lakes with Git-like semantics"
   homepage "https://projectnessie.org"
-  url "https://ghfast.top/https://github.com/projectnessie/nessie/archive/refs/tags/nessie-0.108.3.tar.gz"
-  sha256 "0d4c8391f34f5fab39817f1f676564b0381a229d840e34bc019bd36df19ea85e"
+  url "https://ghfast.top/https://github.com/projectnessie/nessie/archive/refs/tags/nessie-0.108.4.tar.gz"
+  sha256 "af1501a93443d57fbe0c01d6882eecf0a279fe9741b21f7500e2f49e1c2dc113"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5341f049e42020cb03b73ba9cb8f7fae91ae04ad800ee4953769d9f2fdef98b8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66d7f835c45314dc90662e1a50e12daa85514d9e1cc4b12cf9b70027a6fecdd2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3bc70f6f01fe5f283db66e55fe718223bc812467d693da0ea50e113e1b1a0abf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8f7c57e23f2e9075e69c6a3f1c49a1721185b096bb6857c5b3fb00e17e5ab6aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "993cccf2033de3baf2bee8a1e92beb0b3ce5612dd8ada38707f00dd91b2c32aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00c719e5ae29e1fe90a20f8cefcf755c2622df73ccfd2abe7e142ea77e0eacca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "388bf17cf8e473b9b656328b03d4251a2d2caec2fc7b50175038ece3ed6d856c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66c6b684cb8163762910058023adf25fcb841ba727c93382461316ada514bb69"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f15e7f1a8b100de15ad0f7f8518b822556d9981a99481e56247cb27ccffc559f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0388fd05a8223e3180648a1211b8d4eb234662d71715fc18e5c1e8a293735354"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0586623127425898462bff707a33baa9e9c886e4ecf98680d5ffbdb1548a4c22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41b064ad76a1471f99cfc7f261af9e74072c9cc809f7ec7fb4c391db283f6298"
   end
 
   depends_on "gradle" => :build

@@ -112,9 +112,9 @@ class PostgresqlAT16 < Formula
   end
 
   post_install_steps do
-    mkdir_p "log"
+    mkdir_p "log", base: :var
     # Don't initialize database, it clashes when testing other PostgreSQL versions.
-    init_data_dir "postgresql@16", using: :postgresql_initdb
+    init_data_dir "postgresql@16", using: :postgresql_initdb, base: :var
   end
 
   def postgresql_datadir

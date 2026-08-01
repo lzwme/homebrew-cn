@@ -59,8 +59,8 @@ class Kafka < Formula
   end
 
   post_install_steps do
-    mkdir_p "log/kafka"
-    unless_path_exists "lib/kraft-combined-logs/meta.properties" do
+    mkdir_p "log/kafka", base: :var
+    unless_path_exists "lib/kraft-combined-logs/meta.properties", base: :var do
       run "post-install", base: :libexec
     end
   end

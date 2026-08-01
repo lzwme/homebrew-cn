@@ -135,7 +135,7 @@ class Rpm < Formula
   end
 
   post_install_steps do
-    unless_path_exists "lib/rpm/rpmdb.sqlite" do
+    unless_path_exists "lib/rpm/rpmdb.sqlite", base: :var do
       run "rpmdb", args: ["--initdb"], base: :bin
     end
   end

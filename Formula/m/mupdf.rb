@@ -1,10 +1,10 @@
 class Mupdf < Formula
   desc "Lightweight PDF and XPS viewer"
   homepage "https://mupdf.com/"
-  url "https://mupdf.com/downloads/archive/mupdf-1.28.0-source.tar.gz"
-  sha256 "21c7f064903154f1c3a7458bee81f130fc36f9b5147ea13328f9980e02d2dea2"
+  url "https://mupdf.com/downloads/archive/mupdf-1.28.1-source.tar.gz"
+  sha256 "dc94c60b2537e2ac9a2d379dd3801545f84a3a302d15c9da358362a1270707c3"
   license "AGPL-3.0-or-later"
-  compatibility_version 3
+  compatibility_version 4
   head "git://git.ghostscript.com/mupdf.git", branch: "master"
 
   livecheck do
@@ -13,12 +13,12 @@ class Mupdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "beb3c2c570dda13c97eb2cae0f607603a09cdbd6e2a4d435a5f659ec48312873"
-    sha256 cellar: :any, arm64_sequoia: "40905bd109f3ea3cc2042ee87c703239a1fc015091197e8383da0c238fb7cf7d"
-    sha256 cellar: :any, arm64_sonoma:  "169f11e2da40638ff33da88d384251b32f3b53f216e9f932c90cde8a207c1457"
-    sha256 cellar: :any, sonoma:        "8f47eda61df041d2cad4fb5c5b2d8e4406119e2480d6b2adaf5ecc1365c1cc6a"
-    sha256 cellar: :any, arm64_linux:   "d2c5918a742578707158dd8c89c4715d2a7eb6238bf5cd2f777676e4736fbd1c"
-    sha256 cellar: :any, x86_64_linux:  "2df982259ea337c40da21f25dbc0d97085045939968074294286318611e197ef"
+    sha256 cellar: :any, arm64_tahoe:   "61ac4280615d1ae2e8487bfa710ea9bea906306305dcef4b2325711c1946cd66"
+    sha256 cellar: :any, arm64_sequoia: "b09f5616623ab98ca32d1f52d3f0e8669a5eceae8a48ec39895396a6464d0b82"
+    sha256 cellar: :any, arm64_sonoma:  "c20a1bb5e53888d461e5c67d378b16b5b2bb4058c7341e6fa3e4a121b57254bb"
+    sha256 cellar: :any, sonoma:        "f1c3371d31a01654b69776432a6324fe90c81464bb59d4d5828ac144b2fcf811"
+    sha256 cellar: :any, arm64_linux:   "9199f8233761b7f3e3210eb614a2b9b18eb240266bfd7cf27ebf4cefac2a5d3d"
+    sha256 cellar: :any, x86_64_linux:  "05b3972d9f36aa2da992adcdcebd26c4b90bddc325b09d7316743e1bd5759bf7"
   end
 
   depends_on "llvm@21" => :build
@@ -53,8 +53,8 @@ class Mupdf < Formula
   # Currently, some source of mujs is required for building mupdf, so can't use formula
   # Issue ref: https://bugs.ghostscript.com/show_bug.cgi?id=708968
   resource "mujs" do
-    url "https://mujs.com/downloads/mujs-1.3.8.tar.gz"
-    sha256 "506d34882f2620a2fdeb6db63dbb7a8ffd98f417689d8f3c84f2feac275e39a9"
+    url "https://mujs.com/downloads/mujs-1.3.9.tar.gz"
+    sha256 "956d5a20dd4efe5aa58673558787b9e2539255f9bf62585e90e1921fa040d89d"
 
     # Resource `livecheck` blocks don't support package references (yet), so we
     # can't use `formula "mujs"` here.
@@ -62,6 +62,13 @@ class Mupdf < Formula
       url "https://mujs.com/downloads/"
       regex(/href=.*?mujs[._-]v?(\d+(?:\.\d+)+)\.t/i)
     end
+  end
+
+  # Build scripts import `pipcl`, which upstream unbundled in 1.28.1
+  # Ref: https://github.com/ArtifexSoftware/mupdf/commit/ecef7b70bc5
+  resource "pipcl" do
+    url "https://files.pythonhosted.org/packages/64/1a/9ab2b272def9db9c80bf18fe8282119c2c4c074cc542030a28e4136dd13b/pipcl-12.tar.gz"
+    sha256 "c7545480cfa808500d8b606da73db7f89a872258bcdb293716126e2ccff1a5c6"
   end
 
   def install
@@ -76,6 +83,9 @@ class Mupdf < Formula
     # For python bindings needed by `pymupdf`: https://pymupdf.readthedocs.io/en/latest/packaging.html
     site_packages = Language::Python.site_packages("python3.14")
     ENV.prepend_path "PYTHONPATH", formula_opt_prefix("llvm@21")/site_packages
+
+    (buildpath/"pipcl").install resource("pipcl")
+    ENV.prepend_path "PYTHONPATH", buildpath/"pipcl/src"
 
     args = %W[
       build=release

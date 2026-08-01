@@ -60,9 +60,9 @@ class Cracklib < Formula
   end
 
   post_install_steps do
-    mkdir_p "cracklib"
+    mkdir_p "cracklib", base: :var
     copy "cracklib-words-*", "cracklib/cracklib-words", source_base: :share, target_base: :var, source_glob: true
-    run "cracklib-packer", base: :bin, stdin_path: "cracklib/cracklib-words"
+    run "cracklib-packer", base: :bin, stdin_path: "{{var}}/cracklib/cracklib-words"
   end
 
   test do

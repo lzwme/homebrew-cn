@@ -99,7 +99,7 @@ class Opentsdb < Formula
   end
 
   post_install_steps do
-    mkdir_p "cache/opentsdb"
+    mkdir_p "cache/opentsdb", base: :var
     run "post-install", base: :libexec
   end
 

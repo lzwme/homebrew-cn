@@ -1,10 +1,9 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v26.5.0/node-v26.5.0.tar.xz"
-  sha256 "0e179470097e247a0c0769b77cc1359fc3e1baf0686df89bafe1fb48cb1887f4"
+  url "https://registry.npmmirror.com/-/binary/node/v26.5.1/node-v26.5.1.tar.xz"
+  sha256 "df7770a9a99346f8b73ba6d31ad89bd6f868b51c7387c3627dcb44ca065f4948"
   license "MIT"
-  revision 1
   compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -14,12 +13,12 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "99e8a4664e76587d2118cdb27c677130bc7ef83d125124e61e524570b0bdcb03"
-    sha256 arm64_sequoia: "4be61db9edfacd66474bb7c336550c814f13107f63bbed66f4d449bf7e5694a2"
-    sha256 arm64_sonoma:  "5c248c90e7d5af5944e2cf3bbfc4af209db80ec8caa42da83b6c29acb4df0e7b"
-    sha256 sonoma:        "904a9e90420212949d74d0b0afeef499f397672863d3e3ce131b9eb3712c8198"
-    sha256 arm64_linux:   "d1b30ee20dd655520c7ae78f2ce7ec8bc781f3d5f1de63656b61560669d7e8b4"
-    sha256 x86_64_linux:  "e516682759429bcfb6db3d1c8423da4bf53a1f1416c5949b98c83360fb5f3ff7"
+    sha256 arm64_tahoe:   "8f199d8388841147f6f999933992ec24fc760566427f82f3f04a2c6b7dba29c1"
+    sha256 arm64_sequoia: "28f843772004715ed513bfeeb1cd10c0935028dda22f98fa3fd3e9a12f3b7e60"
+    sha256 arm64_sonoma:  "f4361bd34e7f6b942f2f453828563507aa1a004adbde511575f9f926880b8242"
+    sha256 sonoma:        "31ff329d68852868cf07fd9c45688be750a360198657fbc9d280c42d955e0147"
+    sha256 arm64_linux:   "9be9a3f9f3acbb52ec88dfc8c57ac66696c2b6b9a0d775f637fbd3a1de428c7e"
+    sha256 x86_64_linux:  "854767c2501bdd859553a710b6cbdd34efa52d611cc65dd798942681514cd55e"
   end
 
   depends_on "pkgconf" => :build

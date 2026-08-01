@@ -35,19 +35,19 @@ class Arcadedb < Formula
   end
 
   post_install_steps do
-    unless_path_exists "arcadedb/config/arcadedb-log.properties" do
+    unless_path_exists "arcadedb/config/arcadedb-log.properties", base: :var do
       copy "config/arcadedb-log.properties", "arcadedb/config/arcadedb-log.properties",
            source_base: :libexec, target_base: :var
     end
-    unless_path_exists "arcadedb/config/server-groups.json" do
+    unless_path_exists "arcadedb/config/server-groups.json", base: :var do
       copy "config/server-groups.json", "arcadedb/config/server-groups.json",
            source_base: :libexec, target_base: :var
     end
-    unless_path_exists "arcadedb/config/gremlin-server.yaml" do
+    unless_path_exists "arcadedb/config/gremlin-server.yaml", base: :var do
       copy "config/gremlin-server.yaml", "arcadedb/config/gremlin-server.yaml",
            source_base: :libexec, target_base: :var
     end
-    unless_path_exists "arcadedb/config/gremlin-server.groovy" do
+    unless_path_exists "arcadedb/config/gremlin-server.groovy", base: :var do
       copy "config/gremlin-server.groovy", "arcadedb/config/gremlin-server.groovy",
            source_base: :libexec, target_base: :var
     end

@@ -49,7 +49,7 @@ class Minio < Formula
   end
 
   post_install_steps do
-    mkdir_p "minio"
+    mkdir_p "minio", base: :var
     mkdir_p "minio", base: :etc
   end
 

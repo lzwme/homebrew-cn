@@ -1,18 +1,18 @@
 class VitePlus < Formula
   desc "Unified toolchain and entry point for web development"
   homepage "https://viteplus.dev"
-  url "https://ghfast.top/https://github.com/voidzero-dev/vite-plus/archive/refs/tags/v0.2.6.tar.gz"
-  sha256 "a4d9708adf1356bd1aca433969cb80a14d4bb0ddbaaad604dee1819ac8cb2169"
+  url "https://ghfast.top/https://github.com/voidzero-dev/vite-plus/archive/refs/tags/v0.2.7.tar.gz"
+  sha256 "15da370f49780414299547f9098c721479dae43fc08fd22ac306e8120a90711c"
   license "MIT"
   head "https://github.com/voidzero-dev/vite-plus.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e258b16e477392da666edc3fe318483d83e1fff8b9eddd9ddacd9ef3f77a33d2"
-    sha256 cellar: :any, arm64_sequoia: "c6b7fe7b280b8ff628bdc1da4ea171ab89f36ad4d24a1a138487d073fc50d110"
-    sha256 cellar: :any, arm64_sonoma:  "2840a9e66279fa4ce1f17a988361d9da287c1efaf76672e9dbd1c5d4bfb5249f"
-    sha256 cellar: :any, sonoma:        "449a1f007153571d07643a281132534a7d8b5bd05731afbded80ccbd66bc0548"
-    sha256               arm64_linux:   "93c5c0b8663ab1cccd27cd7d3e2a193e67313cfcadeb18d531df4c5d82e622ad"
-    sha256               x86_64_linux:  "fe5f36eaa0cce9fe4dc593db014a89d657ab0e4ef354bd0f612844ab01e08547"
+    sha256 cellar: :any, arm64_tahoe:   "34ed8554325aaee298a0bdce5f009365452e2fc573c8e72d25ecc64c38b9e50d"
+    sha256 cellar: :any, arm64_sequoia: "622738406c802c6404b2e4f3f6ada1cda1d6c27cb0f6704e9a648756f5ed166a"
+    sha256 cellar: :any, arm64_sonoma:  "801f510aff1d30bb6e304378a681476970c2916ab7abe339dde701ec72159a93"
+    sha256 cellar: :any, sonoma:        "0d3fa0e5851d2c0e47741206ef2b3c198b13c8a04bc7e539c937dbaf45cac6e0"
+    sha256               arm64_linux:   "47fd5307b27302972345090b0ba4243b822f4fb2459232af6f4dd2a99cdda446"
+    sha256               x86_64_linux:  "8fa4c40d4979d137ff38103b5927d979d8a094b55249c7204efeaf08f947dcda"
   end
 
   depends_on "cmake" => :build

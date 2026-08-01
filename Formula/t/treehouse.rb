@@ -1,17 +1,17 @@
 class Treehouse < Formula
   desc "Manage worktrees without managing worktrees"
   homepage "https://github.com/kunchenguid/treehouse"
-  url "https://ghfast.top/https://github.com/kunchenguid/treehouse/archive/refs/tags/v2.1.0.tar.gz"
-  sha256 "d68626da446824a88437ee7bc0f7fdd10eb507a8a0317bb210bc106ed85f480e"
+  url "https://ghfast.top/https://github.com/kunchenguid/treehouse/archive/refs/tags/v2.1.1.tar.gz"
+  sha256 "3072d5263da14e3034c40812cee65b0e74e94aa195c714132f89ba5777e0d8ad"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "17587b11a56729717ddab23d932502d628effd2632efc92a56037a554284bc95"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb0c6caab22784a70c19951718077b44728cbc8643635238bdf7ffe6a8677cb9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd24dd008c6a67b991bdeacae0aef704594012977478fe51fb9b6a133d42e96a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "36f03e30e6f0e916bce3afa8e57567480e29cbe487ec64fa49eb04b07d8d93ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "077a4e5db5cb2e5421dd31e6ea46db5483075b074885c7e06fb055aa6ef82e7c"
-    sha256 cellar: :any,                 x86_64_linux:  "d2f6af6b64cba4034d4b5cd52d6fe7f2a668dcaf1dc59faafa1a4f00cdefc78b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2211056155d2851a0fd33ac9efb61b441339d1467c5e5af067e53e1d2bd7bce7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6bfc2c34ecd722980b0b67e51b90913856c08629bc906b340c16af4f4dc8d546"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95018a04d55269281f859d093dc1b1fdc35eace238838dec3c5d8b799a0e43d9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b59e9a25d56d53f85ede1e3c1b0aa3c992fc9295d610c419ada24017bd5b477d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be5a4fa7cb28f1e2a7ac279ef601524eb020b7789436740d63e266caaf3b5785"
+    sha256 cellar: :any,                 x86_64_linux:  "bfa1b02c5039b7dfbb43d202e4f854bfc0b46cccf604d6b63e53c32a37bf2c66"
   end
 
   depends_on "go" => :build

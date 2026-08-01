@@ -1,20 +1,18 @@
 class Md2pdf < Formula
   desc "CLI utility that generates PDF from Markdown"
   homepage "https://github.com/solworktech/md2pdf"
-  url "https://ghfast.top/https://github.com/solworktech/md2pdf/archive/refs/tags/v2.2.18.tar.gz"
-  sha256 "c231d18742d9b0618bd1feaf1f3ab8864173a838b1847d9dcba6018fe5888f10"
+  url "https://ghfast.top/https://github.com/solworktech/md2pdf/archive/refs/tags/v2.2.19.tar.gz"
+  sha256 "5e1c8edfd48a88679880817b243f0d2068a695143dbf31bdbb85dfbf2e6febee"
   license "MIT"
   head "https://github.com/solworktech/md2pdf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ba1a4bd35ea147d4af6dfd4e77c9c432f89d323a869e69946e81b065980d260"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3f31a7fd7fc59f484e62023b815331c624d0caac12e8573e3dce5a72a53d9f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a3f31a7fd7fc59f484e62023b815331c624d0caac12e8573e3dce5a72a53d9f7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a3f31a7fd7fc59f484e62023b815331c624d0caac12e8573e3dce5a72a53d9f7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1067ffc7b46773d8b98334e7ce11bc5e654f06ec4d891e545856191d5d0ca597"
-    sha256 cellar: :any_skip_relocation, ventura:       "1067ffc7b46773d8b98334e7ce11bc5e654f06ec4d891e545856191d5d0ca597"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cc40647488a0594fb91fb6f0db586a5134a8c42f178ce4e22b0829f0aa68dd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "210dde51799b9cd2fa6037e4f1be39042346be5ea96a1a4cceef8bfb8df00180"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2da752b31bd705f20e3bac7119450945cca69888cdb7d69a381474680fa832a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2da752b31bd705f20e3bac7119450945cca69888cdb7d69a381474680fa832a0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2da752b31bd705f20e3bac7119450945cca69888cdb7d69a381474680fa832a0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "41decd85836a3599972ddb903fbbe2ce684aa27193c924e6abbf3fcdbd2d4265"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ef0f14a22be7663a5a3db503f5270747a754493d0c72c0bb260ab3c3b897ea7"
+    sha256 cellar: :any,                 x86_64_linux:  "9407646fb7454ba0d92ed60be10aafcc38dc52619c3ca2239f7ba6beb7bd2dae"
   end
 
   depends_on "go" => :build

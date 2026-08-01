@@ -7,15 +7,15 @@ class Klee < Formula
   url "https://ghfast.top/https://github.com/klee/klee/archive/refs/tags/v3.2.tar.gz"
   sha256 "83d9b9ce0ba187e48c0e55623bf1a68b5eb61376da7ce82551c9d885715a21dd"
   license "NCSA"
-  revision 3
+  revision 4
   head "https://github.com/klee/klee.git", branch: "master"
 
   bottle do
-    sha256 arm64_tahoe:   "9f070c721c8e8c4e075259bf6384bda01bec9697843d3276f5c3bb516f13fb77"
-    sha256 arm64_sequoia: "b3781d0486741928c3c86ad082da7ac45c23b937672470686cba022375f9da0f"
-    sha256 arm64_sonoma:  "9a47aacbf1d5400f215e7789d7f271cbc8ddbd7ba63175cdfb4bf0c7765e9213"
-    sha256 sonoma:        "838b310fc517c17a9cce3801f4cec11d93eaad941db365641c9b460a50d1be0f"
-    sha256 x86_64_linux:  "a59fa6de22b279e1c4be53603e0c19cc3e84c857c8f519960a30f3f92bb623de"
+    sha256 arm64_tahoe:   "b183270701fa8dfadaa3fd4cc2bf3544c28627c0a2a1e991f47186628e76c30b"
+    sha256 arm64_sequoia: "58e3053c688cb865c8343017e4306860783db9a3774ad52a7dca88ff893035cb"
+    sha256 arm64_sonoma:  "66a7539afe96b446281576753628359dfd5f85bdf3700c396aaf4f1b8ecfa9dc"
+    sha256 sonoma:        "562d6b3eab534db3213f75598829c903a10c8b41c2527636b7262529e8976fc5"
+    sha256 x86_64_linux:  "061ff90c401d5b1d36f01f9f83230865bf03600fa7d2733d7217a0b83b646a82"
   end
 
   depends_on "cmake" => :build

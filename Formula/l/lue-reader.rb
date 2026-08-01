@@ -6,14 +6,15 @@ class LueReader < Formula
   url "https://files.pythonhosted.org/packages/48/83/2db11fb63a920e5b90ae5b9412122ef7dbbe8a93db7abe426678f0d9a085/lue_reader-0.5.0.tar.gz"
   sha256 "8e1ce6a5719e5e1cb69a231cb4074ffc842f533a2389fe78e2d419cd22b9f6a1"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "277f2d6088da23345bbc43e29a7e638ab0df094290ef4344837fe70e89073150"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab7adc1fab416f527480b9a461ee5a53e82adc19146e450524285b996112e518"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01c75c3b921b498582d5e6da0de81e457ee4c08c80963d0eb2ce29051cc09e33"
-    sha256 cellar: :any_skip_relocation, sonoma:        "35554fd2bdad853202c11183da1cda8c92428b2197354c5a5a45298127acc35e"
-    sha256 cellar: :any,                 arm64_linux:   "3d15f5e00f2a9135a1940a9c4a9a41458b807c5e92132b0585b4cfbbd00baeb0"
-    sha256 cellar: :any,                 x86_64_linux:  "6283b4da4757a2c967ceeeec65765fca8c8d908a0400d68ff4dc0eb9dac091ed"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb7b737225525375efb2ccd57a064a351ba235c4896a2716b260a3c4254e8fd2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d1296a22735181630ddb4c2601094c714ececb33bcc5ffaabe6858abde3bef5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a84f3789cb4df93b1f5f82378b6fb96365ea6c0154d193bcd6c65d138464c137"
+    sha256 cellar: :any_skip_relocation, sonoma:        "86e04d728b772b3f2bf1f51649d240908debc6170dcec5f7007b0f8bb6864ec5"
+    sha256 cellar: :any,                 arm64_linux:   "3a4714466aa15152e89188db3a82e9e6f814d30ff00714f1560af39655ad93d7"
+    sha256 cellar: :any,                 x86_64_linux:  "8c692d5c01924f32df376810a83f5eb88db896b9bde8a629e6916924ac249f90"
   end
 
   depends_on "certifi" => :no_linkage

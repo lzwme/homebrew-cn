@@ -1,8 +1,8 @@
 class CmakeDocs < Formula
   desc "Documentation for CMake"
   homepage "https://www.cmake.org/"
-  url "https://ghfast.top/https://github.com/Kitware/CMake/releases/download/v4.4.1/cmake-4.4.1.tar.gz"
-  sha256 "95d4721f3625fb0d9d6ca480dd59a46c84b4c157f7fadd2e9b179ef9c871174d"
+  url "https://ghfast.top/https://github.com/Kitware/CMake/releases/download/v4.4.2/cmake-4.4.2.tar.gz"
+  sha256 "1db9e61e60b6e0874c86386340b910382f3c5e75b9fbfb44d122063129a2789d"
   license "BSD-3-Clause"
   head "https://gitlab.kitware.com/cmake/cmake.git", branch: "master"
 
@@ -11,12 +11,12 @@ class CmakeDocs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed739b7a6a0a2cae978e41b9779e039ee991751d8520b8f6e738e93927cec5ee"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed739b7a6a0a2cae978e41b9779e039ee991751d8520b8f6e738e93927cec5ee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed739b7a6a0a2cae978e41b9779e039ee991751d8520b8f6e738e93927cec5ee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ed739b7a6a0a2cae978e41b9779e039ee991751d8520b8f6e738e93927cec5ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f729881fab98b97239c7937c6b1a7298631b53934b4519281f5e5e86a6f173d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f729881fab98b97239c7937c6b1a7298631b53934b4519281f5e5e86a6f173d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79937ad95c5bcfe73795e8b86f91369da76a12c7b8ac24a0935edd864fd30226"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79937ad95c5bcfe73795e8b86f91369da76a12c7b8ac24a0935edd864fd30226"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79937ad95c5bcfe73795e8b86f91369da76a12c7b8ac24a0935edd864fd30226"
+    sha256 cellar: :any_skip_relocation, sonoma:        "79937ad95c5bcfe73795e8b86f91369da76a12c7b8ac24a0935edd864fd30226"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ccfe0385655651d7252f008b356ba61e5acb260eb671fc2396cf947b2a48d84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ccfe0385655651d7252f008b356ba61e5acb260eb671fc2396cf947b2a48d84"
   end
 
   depends_on "cmake" => :build

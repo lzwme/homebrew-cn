@@ -1,18 +1,18 @@
 class Subnetcalc < Formula
   desc "IPv4/IPv6 subnet calculator"
   homepage "https://www.nntb.no/~dreibh/subnetcalc/index.html"
-  url "https://ghfast.top/https://github.com/dreibh/subnetcalc/archive/refs/tags/subnetcalc-2.7.4.tar.gz"
-  sha256 "05450353236b3a9cbbd24c1aa2fd866d770a7244874c978b764bf574600b433d"
+  url "https://ghfast.top/https://github.com/dreibh/subnetcalc/archive/refs/tags/subnetcalc-2.7.5.tar.gz"
+  sha256 "919bd9c9a9500d6b91f1e75c1658efbe41bfa77294be8568910c44b33c045b4a"
   license "GPL-3.0-or-later"
   head "https://github.com/dreibh/subnetcalc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "eab7676292c5e1b9952d2c8d9424f93324be9c4fbd7da9a56e5b7377e54a8586"
-    sha256 cellar: :any, arm64_sequoia: "f3f908facb153710f15143d210316a9b041fce82d50bff5328c7528787c7d54c"
-    sha256 cellar: :any, arm64_sonoma:  "2f93bc9d82f8aa65b6f12e9e21396406045ee27cc65b6f2183a213324b84827c"
-    sha256 cellar: :any, sonoma:        "bf6ec1fa2eca2db9d4e969f8daae6282439d71f8d06986818e8d895ce122987f"
-    sha256 cellar: :any, arm64_linux:   "8e5804083196d938b856fcbcd174d1720500331b1dede92608377b86b8f8d2a8"
-    sha256 cellar: :any, x86_64_linux:  "047951d059344c65edd14431d502458cd17160d8d889de1e36a4df1e89da774a"
+    sha256 arm64_tahoe:   "44b211854c68eb2c293c76f9922f29cda1a55e6ced28886720cdd085d0beef2a"
+    sha256 arm64_sequoia: "28642bf9777cf3e5fc8003a0f7ab0985a2b3b1e6d5dceb03acd7f124fa41eb98"
+    sha256 arm64_sonoma:  "df7060c385045016ccea7cfa954b1da7c9077e5872cd9c17a7b7dc2eee4cd9a9"
+    sha256 sonoma:        "08a312aa78bd7c3bd91664bbb76da019e1f1bf4bf525bfdb5dca8b88ae559cf0"
+    sha256 arm64_linux:   "bfa4113c39a1fa5aade55e7db252eb1df8c2c6b6cf03994233bedecaa075d2e8"
+    sha256 x86_64_linux:  "ebc9882cf1a8116f1d1a53039cc4f791a008791fb3c68933746ab96cc2ddedd1"
   end
 
   depends_on "cmake" => :build

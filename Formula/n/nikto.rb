@@ -1,8 +1,8 @@
 class Nikto < Formula
   desc "Web server scanner"
   homepage "https://cirt.net/nikto/"
-  url "https://ghfast.top/https://github.com/sullo/nikto/archive/refs/tags/2.6.0.tar.gz"
-  sha256 "656554f9aeba8c462689582b59d141369dbcadac11141cd02752887f363430ec"
+  url "https://ghfast.top/https://github.com/sullo/nikto/archive/refs/tags/2.6.1.tar.gz"
+  sha256 "d1ca1acb05d81a5a6f374c0afdd76b33afa0089278631a20673c0210a71d992f"
   license "GPL-3.0-only"
 
   livecheck do
@@ -11,12 +11,12 @@ class Nikto < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b25b9835dc21faf79f47275f8cb32fe189d8c93c8be6d19177831d8d095ff19"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b25b9835dc21faf79f47275f8cb32fe189d8c93c8be6d19177831d8d095ff19"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b25b9835dc21faf79f47275f8cb32fe189d8c93c8be6d19177831d8d095ff19"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0b25b9835dc21faf79f47275f8cb32fe189d8c93c8be6d19177831d8d095ff19"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81f0196a9ccf7113d62c1cb722dab0f4744a78eb88c605c36762921a49449af4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ecd1d17136bddbf40f16c1e19c92c8d5cadff0195d6710ecd1752a4883b71911"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed05be1a7cda80dade2c231fc2c14e90ef3ae55320e74547d5e9a63ce28d00c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed05be1a7cda80dade2c231fc2c14e90ef3ae55320e74547d5e9a63ce28d00c5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed05be1a7cda80dade2c231fc2c14e90ef3ae55320e74547d5e9a63ce28d00c5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ed05be1a7cda80dade2c231fc2c14e90ef3ae55320e74547d5e9a63ce28d00c5"
+    sha256 cellar: :any,                 arm64_linux:   "975cec7d7abe3472c96d51a1d2898337b00525bc4ee7c4826ac0dc97eee65b1d"
+    sha256 cellar: :any,                 x86_64_linux:  "5332300fd6fb6117111ff8aa1c7227cb26e8689dc8fd75f9c957eb3e9412881f"
   end
 
   uses_from_macos "perl"
@@ -27,8 +27,8 @@ class Nikto < Formula
 
     # Modules loaded in program/nikto.pl and Net::SSLeay for program/plugins/LW2.pm
     resource "JSON" do
-      url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-4.10.tar.gz"
-      sha256 "df8b5143d9a7de99c47b55f1a170bd1f69f711935c186a6dc0ab56dd05758e35"
+      url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-4.11.tar.gz"
+      sha256 "713bdbe724dbb915ed50265ffe47e079a511980cb2427aa19076788bb64c3182"
     end
 
     resource "List::Util" do
@@ -37,8 +37,8 @@ class Nikto < Formula
     end
 
     resource "Socket" do
-      url "https://cpan.metacpan.org/authors/id/P/PE/PEVANS/Socket-2.040.tar.gz"
-      sha256 "be0102fdcea8d43f1b02ef2ef94345ac4bbc7b6c66ece2ddd1a3593d8371ba1b"
+      url "https://cpan.metacpan.org/authors/id/P/PE/PEVANS/Socket-2.041.tar.gz"
+      sha256 "91f57ca9e5fcc5c7ce08e52e73841afafc56a688514d9d8b815cabe14a95b556"
     end
 
     resource "Time::Piece" do
@@ -52,8 +52,8 @@ class Nikto < Formula
     end
 
     resource "Net::SSLeay" do
-      url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.94.tar.gz"
-      sha256 "9d7be8a56d1bedda05c425306cc504ba134307e0c09bda4a788c98744ebcd95d"
+      url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.96.tar.gz"
+      sha256 "ab213691685fb2a576c669cbc8d9266f8165a31563ad15b7c4030b94adfc0753"
     end
   end
 

@@ -1,8 +1,8 @@
 class Massdriver < Formula
   desc "Manage applications and infrastructure on Massdriver Cloud"
   homepage "https://www.massdriver.cloud/"
-  url "https://ghfast.top/https://github.com/massdriver-cloud/mass/archive/refs/tags/2.2.0.tar.gz"
-  sha256 "04fc9768ecde6353f118f2295eb5ca05ba4a01f4464ac4cc1200f9b0b1eaffb0"
+  url "https://ghfast.top/https://github.com/massdriver-cloud/mass/archive/refs/tags/2.2.1.tar.gz"
+  sha256 "06882bd8906ed41c1616a6a2d2705ab14e61b430caf8e064f04d5a3c8c9f9ae1"
   license "Apache-2.0"
   head "https://github.com/massdriver-cloud/mass.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Massdriver < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "822225fa8e048c3d7aa1d94cc4e0935ab70557a7a1f9cf3e39b8af117676db2b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "822225fa8e048c3d7aa1d94cc4e0935ab70557a7a1f9cf3e39b8af117676db2b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "822225fa8e048c3d7aa1d94cc4e0935ab70557a7a1f9cf3e39b8af117676db2b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ab4af0e667711075c145bd04bf0b7dae94954de902ccd5a13eb82d8a4217ef66"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9332010f4b60b7f0f6b50e600c700dbb0e28695f35fc006b966b203ddaaae73c"
-    sha256 cellar: :any,                 x86_64_linux:  "cf4f74bc01f9ac62daaf2579760781c10cde1b259593f39a73ce93fa95f5a9c7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf30a6626b032f62cc41a836fdd069b6c349841a4d9b9d1821b6b963c986023d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf30a6626b032f62cc41a836fdd069b6c349841a4d9b9d1821b6b963c986023d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf30a6626b032f62cc41a836fdd069b6c349841a4d9b9d1821b6b963c986023d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "06a72561ae742b406eed0b1631883731843a6acb4336f95aeaf9f87abddd8a53"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26e745088e81704c552f51b24341bcf600f1cbda9d274f2e1355920763f3c965"
+    sha256 cellar: :any,                 x86_64_linux:  "b6b51ad745042bf9d7c3b4b227f5be9cdae20b0e9dbf43cb2a6481ceec9b0905"
   end
 
   depends_on "go" => :build

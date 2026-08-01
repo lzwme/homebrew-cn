@@ -49,9 +49,9 @@ class Icecast < Formula
   end
 
   post_install_steps do
-    mkdir_p "log/icecast"
-    touch "log/icecast/access.log"
-    touch "log/icecast/error.log"
+    mkdir_p "log/icecast", base: :var
+    touch "log/icecast/access.log", base: :var
+    touch "log/icecast/error.log", base: :var
   end
 
   test do

@@ -82,7 +82,7 @@ class Gnupg < Formula
   end
 
   post_install_steps do
-    mkdir_p "run"
+    mkdir_p "run", base: :var
     terminate_process "gpg-agent", must_succeed: false
   end
 

@@ -1,22 +1,11 @@
 class Stp < Formula
   desc "Simple Theorem Prover, an efficient SMT solver for bitvectors"
   homepage "https://stp.github.io/"
+  url "https://ghfast.top/https://github.com/stp/stp/archive/refs/tags/2.4.0.tar.gz"
+  sha256 "1816d2aec1596aa7e9f5a75f00b6b1a4e8e364efbf2893e0ae78e66bcf2ebabf"
   license "MIT"
-  revision 9
+  compatibility_version 1
   head "https://github.com/stp/stp.git", branch: "master"
-
-  stable do
-    url "https://ghfast.top/https://github.com/stp/stp/archive/refs/tags/2.3.4.tar.gz"
-    sha256 "dc197e337c058dc048451b712169a610f7040b31d0078b6602b831fbdcbec990"
-
-    # Replace distutils for python 3.12+
-    patch do
-      url "https://github.com/stp/stp/commit/fb185479e760b6ff163512cb6c30ac9561aadc0e.patch?full_index=1"
-      sha256 "7e50f26901e31de4f84ceddc1a1d389ab86066a8dcbc5d88e9ec1f0809fa0909"
-      type :backport
-      resolves "https://github.com/stp/stp/pull/450"
-    end
-  end
 
   livecheck do
     url :stable
@@ -24,12 +13,12 @@ class Stp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "a116d5592fa317bbda40cb6b5b8704b95adea1f89322d6183a20ec695a3a609e"
-    sha256 cellar: :any,                 arm64_sequoia: "5b49ea62bc28988aee733b93243f04fe061dd9ce89275caf430391f6262f95fc"
-    sha256 cellar: :any,                 arm64_sonoma:  "b677368cd71d24a6477f011838407cb2814e3efd66e35749e27824017ebac958"
-    sha256 cellar: :any,                 sonoma:        "22ab44a28ba6d44ff38f6850eaa040b58ff5139ee5e7519061bb8eb6212807f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "39f08ceaa72d2762cc56c642af6bd9f943bd3b8ca6ac82a57a1a53883d640d26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a8f6222a9dcb368f00e9abfd4025b772354644b99ae3e34209690c9ac09bd86"
+    sha256 cellar: :any, arm64_tahoe:   "f16a48d92b271804263b99d7e946176d14b49cba48239a86270de67702ee0494"
+    sha256 cellar: :any, arm64_sequoia: "cd1b294c020713cceedbcacde57b9d8a25d93b05027562ddc4449edd7ac1f6ff"
+    sha256 cellar: :any, arm64_sonoma:  "f54ac8228ab51496c4540c081a4456b22864e102bb5a8697b69d93fcd139920e"
+    sha256 cellar: :any, sonoma:        "8a60a2152b341546bc1d393fc658e7d2e114e60ae514a569006bccdf921aa725"
+    sha256 cellar: :any, arm64_linux:   "c4879797e4ee0865cf0d06fc2c73ba7e308b91c65975d47772759a14f0fa49ae"
+    sha256 cellar: :any, x86_64_linux:  "71ae74f7d0484f244c55aa4b441965dedeef91f3a4331aafe1cce7421d3f9d30"
   end
 
   # stp refuses to build with system bison and flex
@@ -44,25 +33,35 @@ class Stp < Formula
 
   uses_from_macos "perl"
 
-  # Use relative import for library_path
-  patch do
-    url "https://github.com/stp/stp/commit/f81d16c4f15863dd742d220d31db646b5d1c824d.patch?full_index=1"
-    sha256 "c0c38f39371cfc9959df522957f45677f423a6b2d861f4ad87097c9201e00ff4"
-    type :unofficial
-    resolves "https://github.com/stp/stp/pull/455"
-    resolves "https://github.com/stp/stp/issues/454"
+  # Must match the `lib/extlib-abc` submodule as stp builds only the ABC sources that revision needs
+  resource "extlib-abc" do
+    url "https://github.com/berkeley-abc/abc.git",
+      revision: "95393064368b7c05da4d6f0264fc3419c175c7cb"
+    version "95393064368b7c05da4d6f0264fc3419c175c7cb"
+
+    livecheck do
+      url "https://api.github.com/repos/stp/stp/contents/lib/extlib-abc?ref=#{LATEST_VERSION}"
+      strategy :json do |json|
+        json["sha"]
+      end
+    end
   end
 
   def install
+    resource("extlib-abc").stage buildpath/"lib/extlib-abc"
+
     python = "python3.14"
     site_packages = prefix/Language::Python.site_packages(python)
     site_packages.mkpath
     inreplace "lib/Util/GitSHA1.cpp.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
 
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DPYTHON_EXECUTABLE=#{which(python)}",
-                    "-DPYTHON_LIB_INSTALL_DIR=#{site_packages}",
-                    *std_cmake_args
+    args = %W[
+      -DPYTHON_EXECUTABLE=#{which(python)}
+      -DPYTHON_LIB_INSTALL_DIR=#{site_packages}
+      -DSTP_ALLOCATOR=system
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

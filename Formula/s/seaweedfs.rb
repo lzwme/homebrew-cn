@@ -29,7 +29,7 @@ class Seaweedfs < Formula
   end
 
   post_install_steps do
-    mkdir_p "seaweedfs"
+    mkdir_p "seaweedfs", base: :var
   end
 
   service do

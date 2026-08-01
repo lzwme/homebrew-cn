@@ -58,11 +58,11 @@ class Orientdb < Formula
   end
 
   post_install_steps do
-    mkdir_p "db/orientdb"
-    mkdir_p "run/orientdb"
-    mkdir_p "log/orientdb"
-    touch "log/orientdb/orientdb.err"
-    touch "log/orientdb/orientdb.log"
+    mkdir_p "db/orientdb", base: :var
+    mkdir_p "run/orientdb", base: :var
+    mkdir_p "log/orientdb", base: :var
+    touch "log/orientdb/orientdb.err", base: :var
+    touch "log/orientdb/orientdb.log", base: :var
     run "post-install", base: :libexec
   end
 

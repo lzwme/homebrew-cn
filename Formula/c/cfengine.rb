@@ -66,9 +66,9 @@ class Cfengine < Formula
 
   post_install_steps do
     set_permissions %w[cfengine/inputs cfengine/outputs cfengine/ppkeys cfengine/plugins], "0700",
-                    recursive: false
-    set_permissions "cfengine/state", "0750", recursive: false
-    set_permissions "cfengine/modules", "0755", recursive: false
+                    recursive: false, base: :var
+    set_permissions "cfengine/state", "0750", recursive: false, base: :var
+    set_permissions "cfengine/modules", "0755", recursive: false, base: :var
   end
 
   test do

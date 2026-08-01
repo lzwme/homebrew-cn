@@ -2182,6 +2182,7 @@ Homebrew-homebrew-core/Formula/f/flint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flintrock.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/flip-link.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flit.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/flite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flock.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/floresta.rb, Homebrew/homebrew-core, 1
@@ -2972,7 +2973,7 @@ Homebrew-homebrew-core/Formula/h/h2spec.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/h3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hack-browser-data.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hackrf.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/h/hadolint.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/hadolint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hadoop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/haiti.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/halibut.rb, Homebrew/homebrew-core, 0
@@ -6793,6 +6794,7 @@ Homebrew-homebrew-core/Formula/s/sequin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sequoia-chameleon-gnupg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sequoia-sq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sequoia-sqv.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/seqwish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/ser2net.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/serd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/serf.rb, Homebrew/homebrew-core, 1
@@ -8948,6 +8950,7 @@ Homebrew-homebrew-cask/Casks/b/better-window-manager.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/b/betterandbetter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bettercapture.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bettercmdtab.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/b/bettercmdtab@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/betterdiscord-installer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/betterdisplay.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bettermouse.rb, Homebrew/homebrew-cask, 0
@@ -9546,6 +9549,7 @@ Homebrew-homebrew-cask/Casks/d/defguard-client.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/defold.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/defold@alpha.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/defold@beta.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/d/degr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dehelper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deltachat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deltawalker.rb, Homebrew/homebrew-cask, 0
@@ -11318,6 +11322,7 @@ Homebrew-homebrew-cask/Casks/font/font-l/font-love-light.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask/Casks/font/font-l/font-love-ya-like-a-sister.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-l/font-loved-by-the-king.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-l/font-lovers-quarrel.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-l/font-luciole.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-l/font-luckiest-guy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-l/font-luculent.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-l/font-lugrasimo.rb, Homebrew/homebrew-cask, 0
@@ -13416,6 +13421,7 @@ Homebrew-homebrew-cask/Casks/l/livetail.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/liviable.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/llama-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/llamachat.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/l/lm-studio-bionic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lm-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lmms.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lo-rain.rb, Homebrew/homebrew-cask, 0
@@ -14194,6 +14200,7 @@ Homebrew-homebrew-cask/Casks/o/oracle-jdk@21.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oracle-jdk@25.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/orange.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/orangedrangon-android-messages.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/orbit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/orbstack.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/orca.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/orcasheets.rb, Homebrew/homebrew-cask, 1
@@ -14349,6 +14356,7 @@ Homebrew-homebrew-cask/Casks/p/phocus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/phoenix-code.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/phoenix-slides.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/phoenix.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/p/phosphene.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/photoninja.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/photosrevive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/photostickies.rb, Homebrew/homebrew-cask, 0
@@ -15731,6 +15739,7 @@ Homebrew-homebrew-cask/Casks/u/unite-phone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unity-android-support-for-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unity-hub.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/u/unity-hub@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unity-ios-support-for-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unity-webgl-support-for-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unity-windows-support-for-editor.rb, Homebrew/homebrew-cask, 0

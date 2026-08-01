@@ -1,17 +1,17 @@
 class DirectxHeaders < Formula
   desc "Official DirectX headers available under an open source license"
   homepage "https://devblogs.microsoft.com/directx/"
-  url "https://ghfast.top/https://github.com/microsoft/DirectX-Headers/archive/refs/tags/v1.619.4.tar.gz"
-  sha256 "427c4c20bdeb06022d706ba24cb14838b62cca4456a6072e826d7ffa706a4b1a"
+  url "https://ghfast.top/https://github.com/microsoft/DirectX-Headers/archive/refs/tags/v1.619.5.tar.gz"
+  sha256 "24a0b7d8079a2dbbc90753c0d8bc812040d052acce2302e69a97c5d873b313b8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52f8a35aa4fa6fd15e70d4ceebbd7afb9980bf02f47e34ac9f4ce8a607edfc5f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa175c2c8ecbca09051579bf7a2b2471c078b59fc8284642ca813214512e9a17"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02f2f9bb07b014c34cc46120965fa6b371b99539cf4ca59a3d93249342fda8b9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "947ec0ff6120716b048dc7eb59c2ab27430782353c8a4489ee9d1b4d4b023271"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "df102ffbb0cd9bfbc1340b795ed557b8ef44248ad93318989272ff9495e78eef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "349b55c1f9e0e12331bb87412dacc6497c2db5a74e9a93cf1f3a3ff5a17998d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd5e7e8ebf3d3bf84450a894a95b3ca913758f95b2c1796e8c76deb1175d3244"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2888a9116bc867c66ad9d94c0d149b7ec21b164b45bf38f80282eed478dc3a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19703e065ce0876e7125e87b01d48f5c18879e1fd6f603861320b05a5b0a3835"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b4b8cdf65fb30e94650cf13b10db7a09296b32bf11e7d56487177a3a1adae875"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "028b2b9cca85001727eaf6540f39f1ebb7a11a1b4dc4f2ff5056551ad5a51fe8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8024298a47d80c9902f458d2d26e38fad7ed4f1132d0317e9f9c850f417c796"
   end
 
   depends_on "meson" => :build
