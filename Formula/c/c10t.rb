@@ -27,10 +27,11 @@ class C10t < Formula
 
   # Needed to compile against newer boost
   # Can be removed for the next version of c10t after 1.7
-  # See: https://github.com/udoprog/c10t/pull/153
   patch do
     url "https://github.com/udoprog/c10t/commit/4a392b9f06d08c70290f4c7591e84ecdbc73d902.patch?full_index=1"
     sha256 "7197435e9384bf93f580fab01097be549c8c8f2c54a96ba4e2ae49a5d260e297"
+    type :backport
+    resolves "https://github.com/udoprog/c10t/pull/153"
   end
 
   # Fix freetype detection; adapted from this upstream commit:
@@ -38,12 +39,16 @@ class C10t < Formula
   patch do
     url "https://ghfast.top/https://gist.githubusercontent.com/mistydemeo/f7ab02089c43dd557ef4/raw/a0ae7974e635b8ebfd02e314cfca9aa8dc95029d/c10t-freetype.diff"
     sha256 "9fbb7ccc643589ac1d648e105369e63c9220c26d22f7078a1f40b27080d05db4"
+    type :backport
+    resolves "https://github.com/udoprog/c10t/pull/293"
   end
 
   # Ensure zlib header is included for libpng; fixed upstream
   patch do
     url "https://github.com/udoprog/c10t/commit/800977bb23e6b4f9da3ac850ac15dd216ece0cda.patch?full_index=1"
     sha256 "c7a37f866b42ff352bb58720ad6c672cde940e1b8ab79de4b6fa0be968b97b66"
+    type :backport
+    resolves "https://github.com/udoprog/c10t/pull/196"
   end
 
   # Fix build with Boost 1.85.0, issue ref: https://github.com/udoprog/c10t/issues/313

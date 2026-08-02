@@ -16,6 +16,8 @@ class Kytea < Formula
     patch do
       url "https://github.com/neubig/kytea/commit/eab98ce9c45ccc4a0226a87fa6c40b6d0c5ba82b.patch?full_index=1"
       sha256 "aabb381b38592432d97f789520c81e6df46808c611ff541aae093357c06921c6"
+      type :backport
+      resolves "https://github.com/neubig/kytea/pull/29"
     end
   end
 

@@ -2,17 +2,17 @@ class Ponyc < Formula
   desc "Object-oriented, actor-model, capabilities-secure programming language"
   homepage "https://www.ponylang.io/"
   url "https://github.com/ponylang/ponyc.git",
-      tag:      "0.67.0",
-      revision: "f849700abc56859745b10be897244d0200fdf4dc"
+      tag:      "0.68.0",
+      revision: "1d66f613d8a13de2f3b12ff45abfaa263ff185c3"
   license "BSD-2-Clause"
 
   bottle do
-    sha256                               arm64_tahoe:   "86b89eda5dacdf25edb7d26bca0569b12d747f249f5d5885c0d7500e8870b52b"
-    sha256                               arm64_sequoia: "11f2e5cf3753cd3663fe7a97f3f42691cbc9e4f46b7183f2335fe2423723a5e9"
-    sha256                               arm64_sonoma:  "2964d95ddf9e22ec7efde128faee9a4202ebee9b49f21a602df4724cf3ce6f5d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8996eb9f811ae9185bd960f7066f2a6cd11d9eb81981c309e78384ea3a904c05"
-    sha256 cellar: :any,                 arm64_linux:   "23bdbdbd2b618811cfc7c266b38172eb874b2801ac7faf766f4afc00b1babba3"
-    sha256 cellar: :any,                 x86_64_linux:  "6d606efd9cc2969c70cf35bbb85f0be8beaf35e265cbf8241c08833baa777721"
+    sha256                               arm64_tahoe:   "40af1640e48d89c5914cdaba1fca86c22ffc3bfed9d723a0c2cd87fa7232ee72"
+    sha256                               arm64_sequoia: "cfab4ceedc7053bad46362d17497b34b0ef7702a8330c9a1f8e3275fb272bbc6"
+    sha256                               arm64_sonoma:  "59db53446fe5c4075bfc622849f09da4ae4ba14e1817de98a5713ba4b0c2dd2c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5e1a86c4cb139ad70d0019542b35de78bcfbccc5ddb098ef8ae4a1e94367f53a"
+    sha256 cellar: :any,                 arm64_linux:   "7b3e2980a4b74bd2eca0dc1832e2c3b0ec3bb71133d0947af4c9815763e0e87a"
+    sha256 cellar: :any,                 x86_64_linux:  "68f14cc3495e0de8a56be0e0ea7eb7cd943f1691c5b6bbae80545375a3259564"
   end
 
   depends_on "cmake" => :build
@@ -21,14 +21,6 @@ class Ponyc < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
-  end
-
-  # Fix install of self-hosted tools on case-sensitive filesystems
-  patch do
-    url "https://github.com/ponylang/ponyc/commit/fd1db495cfb333754434fe141fedc32c975577a7.patch?full_index=1"
-    sha256 "accd264a743c220c681439118c1df88d8da427a3931329e237f21cb5c3549f7e"
-    type :backport
-    resolves "https://github.com/ponylang/ponyc/pull/5752"
   end
 
   def install

@@ -15,17 +15,20 @@ class Csound < Formula
     patch do
       url "https://github.com/csound/csound/commit/596667daba1ed99eda048e491ff8f36200f09429.patch?full_index=1"
       sha256 "ab6d09d1a2cede584e151b514fc4cff56b88f79008e725c3a76df64b59caf866"
+      type :backport
     end
 
     patch do
       url "https://github.com/csound/csound/commit/2a071ae8ca89bc21b5c80037f8c95a01bb670ac9.patch?full_index=1"
       sha256 "c7026330b5c89ab399e74aff17019067705011b7e35b9c75f9ed1a5878f53b4b"
+      type :backport
     end
 
     # Fix build failure due to incorrect member name on macOS 15+
     patch do
       url "https://github.com/csound/csound/commit/bb9bafcfa17a87d3733eda1e25a812fd0be08ac6.patch?full_index=1"
       sha256 "b1492e344a7cc067989ef600a08319d388bebb344fee616d83dce969f3afe8cb"
+      type :unofficial
     end
   end
 
@@ -96,12 +99,15 @@ class Csound < Formula
     patch do
       url "https://github.com/csound/plugins/commit/13800c4dd58e3c214e5d7207180ad7115b4e2f27.patch?full_index=1"
       sha256 "e088cc300845408f3956f070fa34a900b700c7860678bc6d37f7506d615787a6"
+      type :backport
+      resolves "https://github.com/csound/plugins/pull/14"
     end
 
     # Apply Arch Linux patch to fix build with HDF5 2.0.0
     patch do
       url "https://gitlab.archlinux.org/archlinux/packaging/packages/csound-plugins/-/raw/e0a3b3162a4f61445ea993e7e8abba091458a0ba/hdf5-2.0.patch"
       sha256 "ea1bddc8fe921a7deed49756d91b8e0e7b4dd822617877520a36d0c42730ef27"
+      type :unofficial
     end
 
     # Fix Eigen detection to work with Homebrew's Eigen formula

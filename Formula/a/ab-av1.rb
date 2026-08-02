@@ -1,18 +1,18 @@
 class AbAv1 < Formula
   desc "AV1 re-encoding using ffmpeg, svt-av1 & vmaf"
   homepage "https://github.com/alexheretic/ab-av1"
-  url "https://ghfast.top/https://github.com/alexheretic/ab-av1/archive/refs/tags/v0.11.4.tar.gz"
-  sha256 "a495fca2aace428d385944b25e49c56b5db4b328a1543becb4c181f138293d7b"
+  url "https://ghfast.top/https://github.com/alexheretic/ab-av1/archive/refs/tags/v0.11.5.tar.gz"
+  sha256 "12c835097c48216668f57f0517ed9b082553c05884cab4d1218bafc6e71cf003"
   license "MIT"
   head "https://github.com/alexheretic/ab-av1.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cab3bfe9b990b45cb8befd5c233ac2dc2058c67ebc1b838683a111ca45d8127d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7f4c09aae97315c3fb8d06cd6e302d978cb1705d95f25025925e95192b6fee1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d7f25d3682e41b900b953d79ba95d8d99853124fcdb5b3fa266dcef0e4aea03"
-    sha256 cellar: :any_skip_relocation, sonoma:        "045d04883b0822442a82ac21bba73ac5aad80d6d9d6d8c330d36370dc15b4306"
-    sha256 cellar: :any,                 arm64_linux:   "cf8cc16604e2186333d399f2ac4e9b6be208709ae31376ebd71bc5a532218a29"
-    sha256 cellar: :any,                 x86_64_linux:  "512d433d5714c9928b13f0e9ecc41ea8283f99c84aa28177cf91fa5ecdb2a992"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3fd06388570c001b60998543e35f79750281a55896304dc8bde49540b51ec37b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad1cc0a1bc3aea80ea20a0d5a3454b557be337417de8cc0ae0c44dbd2078892d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f13858df7e7065a8583e67fce84c3f626ecc3eb8fe77d9ccdaf0e6b0179567b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3e3e8dbec76340cea17b799b15a826d7e76c20833734410e76d61dee862aa3bc"
+    sha256 cellar: :any,                 arm64_linux:   "14572da30eaf1976cce7ad6b2000f5fd6bda24724c950fd213e4c85a1201add9"
+    sha256 cellar: :any,                 x86_64_linux:  "c5565b8e6ad9f2e0f58f3258562a3f774a115d73c2c3afd3f1fc5ae72e189377"
   end
 
   depends_on "rust" => :build

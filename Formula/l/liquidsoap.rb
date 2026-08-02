@@ -1,10 +1,21 @@
 class Liquidsoap < Formula
   desc "Audio and video streaming language"
   homepage "https://www.liquidsoap.info"
-  url "https://ghfast.top/https://github.com/savonet/liquidsoap/archive/refs/tags/v2.4.5.tar.gz"
-  sha256 "dc6dee2ef550dbae8f177ae6b0adb88cf789622ad0490176715606aee5b39622"
   license "GPL-2.0-or-later"
   head "https://github.com/savonet/liquidsoap.git", branch: "main"
+
+  stable do
+    url "https://ghfast.top/https://github.com/savonet/liquidsoap/archive/refs/tags/v2.4.5.tar.gz"
+    sha256 "dc6dee2ef550dbae8f177ae6b0adb88cf789622ad0490176715606aee5b39622"
+
+    # Remove bytes compat library reference (part of stdlib since OCaml 4.07)
+    patch do
+      url "https://github.com/savonet/liquidsoap/commit/2811ecc5848e02419c7d5c56fe7eb6d89af5b955.patch?full_index=1"
+      sha256 "7dc9d38926c3ad35ec5d5b69a1ddae54e82cd1b264eb379228176896f0b48453"
+      type :backport
+      resolves "https://github.com/savonet/liquidsoap/pull/5239"
+    end
+  end
 
   livecheck do
     url :stable
@@ -28,13 +39,6 @@ class Liquidsoap < Formula
   uses_from_macos "curl"
 
   def install
-    # Remove bytes compat library reference (part of stdlib since OCaml 4.07).
-    # Fixed upstream in https://github.com/savonet/liquidsoap/pull/5239;
-    # remove this inreplace once that PR is merged and released.
-    inreplace "src/modules/cry/dune",
-              "(libraries bytes unix stdlib_utils)",
-              "(libraries unix stdlib_utils)"
-
     # opam install prompts "Proceed? [Y/n]"; Homebrew's build has no tty to
     # answer it, so without this the build hangs forever.
     ENV["OPAMYES"] = "1"

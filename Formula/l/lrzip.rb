@@ -37,14 +37,19 @@ class Lrzip < Formula
 
   conflicts_with "lrzsz", because: "both install `lrz` binaries"
 
+  # Set nasm output format correctly on macOS
+  patch do
+    url "https://github.com/ckolivas/lrzip/commit/2ee94bc1614b3ccf3d6848a8eb3026d5c0d8ffde.patch?full_index=1"
+    sha256 "725d71acbde68c88895554a888141ffe8da5c66aad2566bb29ab46714ba678a4"
+    type :unofficial
+    resolves "https://github.com/ckolivas/lrzip/pull/211"
+  end
+
   def install
     # Attempting to build the ASM/x86 folder as a compilation unit fails (even on Intel). Removing this compilation
     # unit doesn't disable ASM usage though, since ASM is still included in the C build process.
     # See https://github.com/ckolivas/lrzip/issues/193
     inreplace "lzma/Makefile.am", "SUBDIRS = C ASM/x86", "SUBDIRS = C"
-
-    # Set nasm format correctly on macOS. See https://github.com/ckolivas/lrzip/pull/211
-    inreplace "configure.ac", "-f elf64", "-f macho64" if OS.mac?
 
     system "autoreconf", "--force", "--install", "--verbose"
 

@@ -1,13 +1,17 @@
 class GitlabCiLocal < Formula
   desc "Run gitlab pipelines locally as shell executor or docker executor"
   homepage "https://github.com/firecow/gitlab-ci-local"
-  url "https://registry.npmjs.org/gitlab-ci-local/-/gitlab-ci-local-4.73.0.tgz"
-  sha256 "35caf7bb233a6d0fa97554a45a4c27cfe43c9a4be540badfaf222181643c7a77"
+  url "https://registry.npmjs.org/gitlab-ci-local/-/gitlab-ci-local-4.74.0.tgz"
+  sha256 "3ba6f49dda54b68d73762eb6950f6ab5ec84c77dfa114e6e509b769db54abd82"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "1d6ebe9d65a2d4df807b06ffc746bea94d8425e13adc38470d661bf32a758163"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a4d1969a3a76abee1896e82b2c49e3c2b87328fbfac98cb241d8582f4df1e28"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a4d1969a3a76abee1896e82b2c49e3c2b87328fbfac98cb241d8582f4df1e28"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a4d1969a3a76abee1896e82b2c49e3c2b87328fbfac98cb241d8582f4df1e28"
+    sha256 cellar: :any_skip_relocation, sonoma:        "92e12df571b8f772e90c14cfe60354bc87bfe2291913513db5fe29f06b3e7d12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92e12df571b8f772e90c14cfe60354bc87bfe2291913513db5fe29f06b3e7d12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92e12df571b8f772e90c14cfe60354bc87bfe2291913513db5fe29f06b3e7d12"
   end
 
   depends_on "node"

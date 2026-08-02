@@ -29,9 +29,13 @@ class Prjtrellis < Formula
     end
   end
 
-  # Workaround to build with Boost 1.89.0 until fixed upstream
-  # Issue ref: https://github.com/YosysHQ/prjtrellis/issues/251
-  patch :DATA
+  # Fix build with Boost 1.89.0
+  patch do
+    url "https://github.com/YosysHQ/prjtrellis/commit/e821bcbecdc997d71766836a200e16b27535a835.patch?full_index=1"
+    sha256 "22a47fb89f4ed1b501823be12b5ea18bf03cae5f8749cd63fbe6972d8e69d764"
+    type :backport
+    resolves "https://github.com/YosysHQ/prjtrellis/issues/251"
+  end
 
   def install
     (buildpath/"database").install resource("prjtrellis-db")
@@ -63,18 +67,3 @@ class Prjtrellis < Formula
     assert_path_exists testpath/"ram.hex"
   end
 end
-
-__END__
-diff --git a/libtrellis/CMakeLists.txt b/libtrellis/CMakeLists.txt
-index b4f02c7..02242d2 100644
---- a/libtrellis/CMakeLists.txt
-+++ b/libtrellis/CMakeLists.txt
-@@ -46,7 +46,7 @@ if (WASI)
-     endif()
- endif()
- 
--set(boost_libs filesystem program_options system)
-+set(boost_libs filesystem program_options)
- if (Threads_FOUND)
-     list(APPEND boost_libs thread)
- else()

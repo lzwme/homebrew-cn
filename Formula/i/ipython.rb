@@ -3,30 +3,25 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https://ipython.org/"
-  url "https://files.pythonhosted.org/packages/53/59/165d3b4d75cc34add3122c4417ecb229085140ac573103c223cd01dde96f/ipython-9.15.0.tar.gz"
-  sha256 "da2819ce2aa83135257df830660b1176d986c3d2876db24df01974fa955b2756"
+  url "https://files.pythonhosted.org/packages/52/49/04360f83b4d110195751b4171b75dc1cd7b97ba122b18da34b5828172d59/ipython-9.16.0.tar.gz"
+  sha256 "d2f92587b1ef51d84f934dffe05fabb9255f0038ed0a21426f2ea761e39ad09a"
   license "BSD-3-Clause"
   head "https://github.com/ipython/ipython.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ecf262b34ddf6a4587dfbad083089a594dbf037ffd77559f33a2223d31e5a6cd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6128982dbe75e74e95053b94fa66f07ec547dfc14e4544587a25647422e5516f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2477987e13adaeed2835546fe40d7db72b2fe43a3acee82d81545694f94205a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "07d1b1cb2f96d87a05ee433cbe175242b0d4d840673ecd3830389874b4678100"
-    sha256 cellar: :any,                 arm64_linux:   "e5d6f2fe67ef737abe711cdbd31ffc8ee660ba832785498abfbd73e497665eee"
-    sha256 cellar: :any,                 x86_64_linux:  "09e1645156d51700866fe70d9638e4c311442ab14c3a9cda8dec08bf107c34cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da16d0e46982b18be0a215537fb73000c709c3a222fb347f5ddf80280696bdbf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50d008dd99de85276112359ab6270150d76ddea5bf31b038b34948c0dd212d1a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "380395ee80dea10c56963bac7517a6aed876837a36bb397702ff393986622bcb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d80ba92c42b25e86b37491f59a0cd32543a1bd1149cec60942ac67c88256c429"
+    sha256 cellar: :any,                 arm64_linux:   "99a5c3ea027eebb3d8cc554a33d6b9fc725a26273764108e4fedfbd33cec80b0"
+    sha256 cellar: :any,                 x86_64_linux:  "4038059e96d026513d1596982d57786d254bf8b94748163503da9a8b135330a5"
   end
 
   depends_on "python@3.14"
 
   resource "asttokens" do
-    url "https://files.pythonhosted.org/packages/be/a5/8e3f9b6771b0b408517c82d97aed8f2036509bc247d46114925e32fe33f0/asttokens-3.0.1.tar.gz"
-    sha256 "71a4ee5de0bde6a31d64f6b13f2293ac190344478f081c3d1bccfcf5eacb0cb7"
-  end
-
-  resource "decorator" do
-    url "https://files.pythonhosted.org/packages/60/8b/32f9823da46cde7df2087faa08cd98d01b908f8dcab982cdba9c84e85355/decorator-5.3.1.tar.gz"
-    sha256 "4cbcdd55a6efadb9dbea26b858f4fb3264567b52d69ca0d25b721b553f60ea82"
+    url "https://files.pythonhosted.org/packages/25/1e/faf0f247f6f881b98fc4d6d07e14085cb89d13665084e6d6ac1dc2c03d0b/asttokens-3.0.2.tar.gz"
+    sha256 "3ecdbd8f2cc195f53ccada3a613538bb5f9ef6f6869129f13e03c30a677b8fe2"
   end
 
   resource "executing" do
@@ -60,8 +55,8 @@ class Ipython < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/a1/96/06e01a7b38dce6fe1db213e061a4602dd6032a8a97ef6c1a862537732421/prompt_toolkit-3.0.52.tar.gz"
-    sha256 "28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"
+    url "https://files.pythonhosted.org/packages/7d/ea/39b988c938f75cb75d7045b5c69f8bfed47ee2152c8837fb403de29d6fb8/prompt_toolkit-3.0.53.tar.gz"
+    sha256 "9ec8a0ad96d5c56148b3f914aa79c1564c3fde5d2e6b876e7bc327e353cf8fa6"
   end
 
   resource "psutil" do
@@ -95,8 +90,8 @@ class Ipython < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/49/b4/51fe890511f0f242d07cb1ebe6a5b6db417262b9d2568b460347c57d95cc/wcwidth-0.8.1.tar.gz"
-    sha256 "faf5b4a5366a72dc49cad48cdf21f52bdf63bdda995178e483ba247ff79089b9"
+    url "https://files.pythonhosted.org/packages/34/74/c6428f875774288bec1396f5bfcbc2d925700a4dad61727fd5f2b12f249d/wcwidth-0.8.2.tar.gz"
+    sha256 "91fbef97204b96a3d4d421609b80340b760cf33e26da123ff243d76b1fda8dda"
   end
 
   def install

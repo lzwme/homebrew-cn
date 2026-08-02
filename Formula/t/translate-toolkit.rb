@@ -3,18 +3,18 @@ class TranslateToolkit < Formula
 
   desc "Toolkit for localization engineers"
   homepage "https://toolkit.translatehouse.org/"
-  url "https://files.pythonhosted.org/packages/82/86/4135086b9c268a2ba0bc2f1d40bb5723361441f02cb9dcff262b44817e43/translate_toolkit-3.19.16.tar.gz"
-  sha256 "93182ec4e922e2f0e51e9a788d0d164faf4c8d10f1e47fa98c22226bd92b529e"
+  url "https://files.pythonhosted.org/packages/f8/e0/c8f825a4066aafee220036e0d32a378f0588a0128b147c167c62931de491/translate_toolkit-3.19.17.tar.gz"
+  sha256 "1381542791a0759a7c7f2ff7157f354f0c4bfab66a6d97834d3f631c6f659a04"
   license "GPL-3.0-or-later"
   head "https://github.com/translate/translate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1aa415efe73af79cc0e053a3a96c25e6f7b43d86da404b299935f0365dec5e5b"
-    sha256 cellar: :any, arm64_sequoia: "c5b35247bb770f34306fff953d8522190e425337a97aef52900b1bbdbf225a0a"
-    sha256 cellar: :any, arm64_sonoma:  "84a71ceca307917725d6be8ca1b6f4bd9c7de6100cd8891595686f82f6b7d02f"
-    sha256 cellar: :any, sonoma:        "728a028e057577a9779034b03e0c6ea9c883965bc0cf2791751fe97ade0e0a89"
-    sha256 cellar: :any, arm64_linux:   "caf32b6b7f589b630429dfcb6861931a3d6775ab351e7f64e7a009c52d4f6d41"
-    sha256 cellar: :any, x86_64_linux:  "053ae0367afdb0bee2fee61fb5a3969a287480713d275515f78d3c9e96bf9d1b"
+    sha256 cellar: :any, arm64_tahoe:   "d772e602ee1d2d2df7e369fcc63a05056836bd60a3c2dce06021ff1542df83b3"
+    sha256 cellar: :any, arm64_sequoia: "e877f784955b1924d6eb077fc79e26963ba659ae91acb2955b015d34b73a6e3e"
+    sha256 cellar: :any, arm64_sonoma:  "a9e099b02f0675e94ec9d59bd4e061569c0659eaf93fae8671dc5f92a6b246d0"
+    sha256 cellar: :any, sonoma:        "9743d7f8af960bb0ce807e0312328f899dd3ca7ae9d0a3a410cca3c93ee53293"
+    sha256 cellar: :any, arm64_linux:   "f576442f40d65e552de2403ffb1c02826c779e4f74dfc717862bb5ba3ce5c274"
+    sha256 cellar: :any, x86_64_linux:  "ad98e7303e6cc8b03110d39331f3aa06c96ebbe3ac333bd5ab77ccc859289e32"
   end
 
   depends_on "rust" => :build # for `unicode_segmentation_py`

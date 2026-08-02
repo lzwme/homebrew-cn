@@ -54,6 +54,7 @@ class Condure < Formula
   patch do
     url "https://salsa.debian.org/rust-team/debcargo-conf/-/raw/de3f91dfb0ed10587e653ee1f96dca16d710eb5c/src/condure/debian/patches/fix-build-unsigned-char.diff"
     sha256 "00ce6b20a13086fca07756d0aaa19c3280a411c29abb221cd8233f006bf0496e"
+    type :unofficial
   end
 
   def install

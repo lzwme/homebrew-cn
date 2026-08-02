@@ -28,10 +28,11 @@ class Brpc < Formula
   end
 
   # Guard the Linux-only SO_BINDTODEVICE socket option, which is missing from the macOS 14 SDK
-  # PR ref: https://github.com/apache/brpc/pull/3320
   patch do
     url "https://github.com/apache/brpc/commit/d7fb5e33bc3b39a349eef619d7d6cacd623abf4c.patch?full_index=1"
     sha256 "0d7d064dd77360995c643cc7e10b9bc42b04f5cccf33992160288e654e588098"
+    type :backport
+    resolves "https://github.com/apache/brpc/pull/3320"
   end
 
   def install

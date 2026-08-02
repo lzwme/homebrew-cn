@@ -89,9 +89,13 @@ class Openj9 < Formula
     end
   end
 
-  # Fix build on Clang 17+. Backport of:
-  # https://github.com/itf/libffi/commit/3065c530d3aa50c2b5ee9c01f88a9c0b61732805
-  patch :DATA
+  # Fix build on Clang 17+
+  patch do
+    url "https://github.com/eclipse-openj9/openj9/commit/7936ac3ce51ff78e2853b35dce94cb3d4371596b.patch?full_index=1"
+    sha256 "998999131d989b1cf15c6e73650ba66505206e9635f925434182dc709c5d501a"
+    type :backport
+    resolves "https://github.com/eclipse-openj9/openj9/pull/24278"
+  end
 
   def install
     # Make sure JDK resource is on latest supported LTS and using correct tag
@@ -213,39 +217,3 @@ class Openj9 < Formula
     assert_match "Hello, world!", shell_output("#{bin}/java HelloWorld")
   end
 end
-
-__END__
-diff --git a/runtime/libffi/aarch64/sysv.S b/runtime/libffi/aarch64/sysv.S
-index eeaf3f8514..329889cfb3 100644
---- a/runtime/libffi/aarch64/sysv.S
-+++ b/runtime/libffi/aarch64/sysv.S
-@@ -76,8 +76,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
-    x5 closure
- */
-
--	cfi_startproc
- CNAME(ffi_call_SYSV):
-+	cfi_startproc
- 	/* Sign the lr with x1 since that is where it will be stored */
- 	SIGN_LR_WITH_REG(x1)
-
-@@ -268,8 +268,8 @@ CNAME(ffi_closure_SYSV_V):
- #endif
-
- 	.align	4
--	cfi_startproc
- CNAME(ffi_closure_SYSV):
-+	cfi_startproc
- 	SIGN_LR
- 	stp     x29, x30, [sp, #-ffi_closure_SYSV_FS]!
- 	cfi_adjust_cfa_offset (ffi_closure_SYSV_FS)
-@@ -500,8 +500,8 @@ CNAME(ffi_go_closure_SYSV_V):
- #endif
-
- 	.align	4
--	cfi_startproc
- CNAME(ffi_go_closure_SYSV):
-+	cfi_startproc
- 	stp     x29, x30, [sp, #-ffi_closure_SYSV_FS]!
- 	cfi_adjust_cfa_offset (ffi_closure_SYSV_FS)
- 	cfi_rel_offset (x29, 0)

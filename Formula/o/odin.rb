@@ -6,15 +6,16 @@ class Odin < Formula
       revision: "819fdc7a80667498b8b365999f1475a66c358640"
   version "2026-07a"
   license "Zlib"
+  revision 1
   head "https://github.com/odin-lang/Odin.git", branch: "master"
 
   bottle do
-    sha256               arm64_tahoe:   "c14902cc3dd405960693309cd66c6ae5a7a3ddb8640dff749480c4415e7a31a8"
-    sha256               arm64_sequoia: "19a997314e7655473261692c55bf0945d6566a822c7d57d72353b4cef588898c"
-    sha256               arm64_sonoma:  "34002a83122256eeacb463d97510e185f19023c15dbb3a115cf056ab834754b9"
-    sha256 cellar: :any, sonoma:        "237f11767b5eb342a706bfbae4af65907127f8772e60b6ebfd445a66c9fac379"
-    sha256 cellar: :any, arm64_linux:   "36aa8677f6e3ab894994dc294a1dccb5cc75809f04decc67a612a960e0d9e11c"
-    sha256 cellar: :any, x86_64_linux:  "0c9fdda9162d127580683bd998ee8fdf4098ad0c2c3dad66ab60b4abde2b7b94"
+    sha256               arm64_tahoe:   "a1a0603e35977cca316e09152080c2a5e02a37be76652ed0b93d9ea2a54a5193"
+    sha256               arm64_sequoia: "74ed86b54d38ac46c65ec1a272137408204611091b0d394c593b797888272ac3"
+    sha256               arm64_sonoma:  "061e23e29a9e94470bf8b6d5847f1e1ad64fd4f9789a0363c8645172c9a0c631"
+    sha256 cellar: :any, sonoma:        "d93e507101b7052c10de27ee035ddb81e3120ec99ecb76941a59876f5cb80636"
+    sha256 cellar: :any, arm64_linux:   "d1b67e284501b0fce321c3b41723b8c7922bddf6002bff137c9a2a64e0bd4880"
+    sha256 cellar: :any, x86_64_linux:  "1b01318280242daf1815d22a6311835f1a82675916f7a9b4dcfef12cef276af8"
   end
 
   depends_on "glfw" => :no_linkage
@@ -57,6 +58,12 @@ class Odin < Formula
       "vendor/glfw/lib/darwin"
     end
     ln_s Formula["glfw"].lib/"libglfw3.a", buildpath/glfw_installpath/"libglfw3.a"
+
+    # glfw 3.5 references `CAMetalLayer` directly, so static links need QuartzCore
+    if OS.mac?
+      inreplace "vendor/glfw/bindings/bindings.odin", "\"../lib/darwin/libglfw3.a\",",
+                "\\0\n\t\t\t\"system:QuartzCore.framework\","
+    end
 
     raylib = Formula["raylib"]
     vendor = buildpath/"vendor/raylib"

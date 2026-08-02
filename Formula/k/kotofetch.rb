@@ -1,17 +1,17 @@
 class Kotofetch < Formula
   desc "Small, configurable CLI that displays Japanese quotes in the terminal"
   homepage "https://github.com/hxpe-dev/kotofetch"
-  url "https://ghfast.top/https://github.com/hxpe-dev/kotofetch/archive/refs/tags/v0.2.22.tar.gz"
-  sha256 "0e04bedde86fcdd05b41e15211aa8459d24d347b3e45cf030383f5b650c01bf4"
+  url "https://ghfast.top/https://github.com/hxpe-dev/kotofetch/archive/refs/tags/v0.2.23.tar.gz"
+  sha256 "19afeff83d166bb31410b2fd7c69b12468f918534f22a435ce2e6e3b620d5594"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "386d70b8f47ca75f06ee44f76e0b022035e4b1a80794665006eac0774a184d5c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "38f2700d0d9ef1e00b0f4d63c7407b5dfc3e148a45c0bcfa85f8418a4a743ae9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "97fc864c70aa5201ce2b368e4293dc42911e73722c75f7030a53271b1bd34b68"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7534b23904397208fd5aa931fb7398a67e986fea9a30c53deab835e8be452da5"
-    sha256 cellar: :any,                 arm64_linux:   "266dc5f694c4eabb7fe9f80fa15b5e8235cd23f06444ed404c55c4dd4577d564"
-    sha256 cellar: :any,                 x86_64_linux:  "a7a8bd3790f2d950df6dc30745b0346e46d4afeb32c5afe484210a22a84fbebf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a3e775684bdb03fdc6e2c477a3c8251e5290e1e9898a3dbdc57442f4d0a38184"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b93523c0e12a58145cf9df0ee72317a3c6f072f6cd752334f97fd07adc104b30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "56ccc28c6f4f1ada390f26a3200a549eb0d61c055708d8b488b6493aa4f23593"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3fcdd0abc7e37f3ec7d5e0475a0faead4fd1ccfc649face1ccbfee2182192d28"
+    sha256 cellar: :any,                 arm64_linux:   "9046777473b6df0d00f6be6c3725d2e3b46f2c9a7bc3c5b6c442c5cccf9329e4"
+    sha256 cellar: :any,                 x86_64_linux:  "50acd9b88e6b4ffc87a94a976a4db0e934a507c76e38ef6b8a828768c61ec7df"
   end
 
   depends_on "rust" => :build

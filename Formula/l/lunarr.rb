@@ -1,18 +1,18 @@
 class Lunarr < Formula
   desc "Self-hosted media streaming server and Plex alternative for movies and TV"
   homepage "https://github.com/lunarr-app/lunarr-go"
-  url "https://ghfast.top/https://github.com/lunarr-app/lunarr-go/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "e1b265fd02c88725e22e5b49eaaddae3e1e4d28f12f40b99ab5231c70f13d1c9"
+  url "https://ghfast.top/https://github.com/lunarr-app/lunarr-go/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "44bd0642bc69fa3f7899f57472a3a139a6f43ade9487057b598d0243a6b746c2"
   license "Apache-2.0"
   head "https://github.com/lunarr-app/lunarr-go.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "13021bccba7405bc903e47876acfe114d4954966a7844f3694a7e8a7e8dead24"
-    sha256 cellar: :any,                 arm64_sequoia: "6ad159cd8d6b460d774f1abd74e89659bcbe552a78f6de40050d351d4515fe03"
-    sha256 cellar: :any,                 arm64_sonoma:  "63a75f9a39ddc9162b018ececc8c8c5e62ba49d96461f728993b8f79cb733ae1"
-    sha256 cellar: :any,                 sonoma:        "9239d0f337872320e8a6bf32e1742cc1463702c4687b918e50517d440c654f50"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "86179b943ac8c3f831f951f6fe0ff3f1fc3bd6120564d8038ef72cb3a54fd2c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "275f3f96a1e7dfafc9a5a851f12049e35325af7c80d95dffa9dc2d41d50cba05"
+    sha256 cellar: :any,                 arm64_tahoe:   "d0a5fb8854913128e9d856a75f1d9da732bf524bc1c1cdf13c3e961a42f4283b"
+    sha256 cellar: :any,                 arm64_sequoia: "28b39545813899ae0ffe2f4acbb74372f0c2ffc57bbd24f7d15e7e60bc40dc91"
+    sha256 cellar: :any,                 arm64_sonoma:  "b5ce20419b1e40e6c5e3c451b4192cac7b1d989d705fd4c48c87ee60f464642a"
+    sha256 cellar: :any,                 sonoma:        "30b53055df963ab0fa1f8de5ea69c5cb7fc18a2e4b1715f570a40d4badd7925a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a6514fd5d48f6ddfd2b899e3dc912f74b3e048560438733b6e77fe947cac83c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69ce6b4bee4ea707eadde7af50faf9f1eb8a5d96df5423ab34e1d0c3cfbba582"
   end
 
   depends_on "ffmpeg"

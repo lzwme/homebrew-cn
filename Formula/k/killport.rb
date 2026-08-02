@@ -1,17 +1,17 @@
 class Killport < Formula
   desc "Command-line tool to kill processes listening on a specific port"
   homepage "https://github.com/jkfran/killport"
-  url "https://ghfast.top/https://github.com/jkfran/killport/archive/refs/tags/v2.0.1.tar.gz"
-  sha256 "a662571935cc9d425bbce8beb7725ff87e215ac0e47371b1b8b8443b63465dee"
+  url "https://ghfast.top/https://github.com/jkfran/killport/archive/refs/tags/v2.0.2.tar.gz"
+  sha256 "01c30e5a213582daf829332aa8bf96f41404f6871e58d85f5a5af53f454d8127"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d42ef556aa0886e9829d5c5bc19bb2ecc88a4c0d9e5ebdefd759d798e85e869"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4da9b5481b71ae544b3cab546f4b1190becb991e57ca7ee4d484a1f290a8da7c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "efb54c3a184068d201a603c26a1c13428122adc35c120f89dac32a8a4bcebe72"
-    sha256 cellar: :any_skip_relocation, sonoma:        "89b087c1a7693c2ffeb8f4c626b5eda8460ada59e3869024f601c55e6e89fd4b"
-    sha256 cellar: :any,                 arm64_linux:   "3dfbad03de5d4d8c38086bce5164c11eed6e418e26e77bdbd4b012e997d192be"
-    sha256 cellar: :any,                 x86_64_linux:  "cefe219ddc5532548787d550cae3af272802b36b59c8c34d49084bc3b10ba169"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "807f206c9b4afbc6ff9330ec419784cc4ba5d650ef44972f8231febb1e952327"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f29375dd1edb5e503d0bc301c04420771d98045206ec95c875dcc7270474fb1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abe2333cf794807d6b75d8f08bf0e7f9dc6e7145a45ed12d37a23567cc38f420"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1cfc9dde00d56793d4a70e268117a6845a8c8433a147d5d5800c207b1d9b4031"
+    sha256 cellar: :any,                 arm64_linux:   "8741318089474d3c29d3caffea827c5e17c21c4fc4750238daec4805a6e5acc6"
+    sha256 cellar: :any,                 x86_64_linux:  "e64559d2c9dca3621b670c9856a56ab632a5507a6aef9784962d133a0faaf09b"
   end
 
   depends_on "rust" => :build

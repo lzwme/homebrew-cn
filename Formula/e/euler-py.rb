@@ -3,11 +3,22 @@ class EulerPy < Formula
 
   desc "Project Euler command-line tool written in Python"
   homepage "https://github.com/iKevinY/EulerPy"
-  url "https://files.pythonhosted.org/packages/a6/41/f074081bc036fbe2f066746e44020947ecf06ac53b6319a826023b8b5333/EulerPy-1.4.0.tar.gz"
-  sha256 "83b2175ee1d875e0f52b0d7bae1fb8500f5098ac6de5364a94bc540fb9408d23"
   license "MIT"
   revision 4
   head "https://github.com/iKevinY/EulerPy.git", branch: "master"
+
+  stable do
+    url "https://files.pythonhosted.org/packages/a6/41/f074081bc036fbe2f066746e44020947ecf06ac53b6319a826023b8b5333/EulerPy-1.4.0.tar.gz"
+    sha256 "83b2175ee1d875e0f52b0d7bae1fb8500f5098ac6de5364a94bc540fb9408d23"
+
+    # Unpin old click version
+    patch do
+      url "https://github.com/iKevinY/EulerPy/commit/9923d2ee026608e33026909bb95c444724b08ba2.patch?full_index=1"
+      sha256 "43e0474e6efabe576443499c37b280f3b8332321494423c59b1f121306b0759f"
+      type :backport
+      resolves "https://github.com/iKevinY/EulerPy/commit/9923d2ee026608e33026909bb95c444724b08ba2"
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "1f0b353fae5f2356901a0d33ae8c994f35194bc1a23acd06397b6458e892231c"
@@ -22,8 +33,6 @@ class EulerPy < Formula
   end
 
   def install
-    # Unpin old click version: https://github.com/iKevinY/EulerPy/commit/9923d2ee026608e33026909bb95c444724b08ba2
-    inreplace "requirements.txt", "click==4.0", "click"
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin/"euler", shell_parameter_format: :click)

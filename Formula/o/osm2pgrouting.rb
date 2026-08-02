@@ -25,6 +25,14 @@ class Osm2pgrouting < Formula
 
   uses_from_macos "expat"
 
+  # Support newer libpqxx
+  patch do
+    url "https://github.com/pgRouting/osm2pgrouting/commit/7622f12b7e6d9e290315609503d090534c2c7df8.patch?full_index=1"
+    sha256 "1ce55a33162d7784443d3fb14f8f2238a8080c1dd5af25a6af7d75a2a4770708"
+    type :unofficial
+    resolves "https://github.com/pgRouting/osm2pgrouting/pull/328"
+  end
+
   # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.
   # Brew `expat` usage in Python has low impact as it isn't loaded unless pyexpat is used.
   # TODO: Consider adding a DSL for this or change how we handle Python's `expat` dependency
@@ -36,10 +44,6 @@ class Osm2pgrouting < Formula
 
   def install
     remove_brew_expat if OS.mac? && MacOS.version < :sequoia
-
-    # Workaround until upstream fix for newer libpqxx
-    # PR ref: https://github.com/pgRouting/osm2pgrouting/pull/328
-    inreplace "CMakeLists.txt", "set(CMAKE_CXX_STANDARD 17)", "set(CMAKE_CXX_STANDARD 20)"
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

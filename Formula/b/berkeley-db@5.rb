@@ -38,6 +38,7 @@ class BerkeleyDbAT5 < Formula
   patch :p0 do
     url "https://ghfast.top/https://raw.githubusercontent.com/NetBSD/pkgsrc/6034096dc85159a02116524692545cf5752c8f33/databases/db5/patches/patch-src_dbinc_db.in"
     sha256 "302b78f3e1f131cfbf91b24e53a5c79e1d9234c143443ab936b9e5ad08dea5b6"
+    type :unofficial
   end
 
   # Fix -flat_namespace being used on Big Sur and later.

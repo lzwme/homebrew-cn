@@ -35,11 +35,13 @@ class Boost < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # Fix for `ncmpcpp`, pr ref: https://github.com/boostorg/range/pull/157
+  # Fix for `ncmpcpp`
   patch :p3 do
     url "https://github.com/boostorg/range/commit/9ac89e9936b826c13e90611cb9a81a7aa0508d20.patch?full_index=1"
     sha256 "914464ffa1d53b3bf56ee0ff1a78c25799170c99c9a1cda075e6298f730236ad"
     directory "boost"
+    type :backport
+    resolves "https://github.com/boostorg/range/pull/157"
   end
 
   def install

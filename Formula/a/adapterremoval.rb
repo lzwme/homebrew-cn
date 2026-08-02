@@ -27,14 +27,17 @@ class Adapterremoval < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # Use `_Exit` as macOS SDK < 15 lacks `quick_exit`
+  patch do
+    url "https://github.com/MikkelSchubert/adapterremoval/commit/165e5a9c9d5469de7920db52f15038520e9d0714.patch?full_index=1"
+    sha256 "b9f27857f0420579e254364b5d2629966da2a241adaccbe5c7130fcf12c9c157"
+    type :backport
+    resolves "https://github.com/MikkelSchubert/adapterremoval/pull/371"
+  end
+
   deny_network_access!
 
   def install
-    # macOS SDK < 15 lacks quick_exit
-    if OS.mac? && DevelopmentTools.clang_build_version < 1700
-      inreplace "src/main.cpp", "std::quick_exit(1);", "std::_Exit(1);"
-    end
-
     args = %w[
       -Db_coverage=false
       -Db_lto=false

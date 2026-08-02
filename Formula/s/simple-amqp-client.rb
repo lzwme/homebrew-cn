@@ -1,11 +1,22 @@
 class SimpleAmqpClient < Formula
   desc "C++ interface to rabbitmq-c"
   homepage "https://github.com/alanxz/SimpleAmqpClient"
-  url "https://ghfast.top/https://github.com/alanxz/SimpleAmqpClient/archive/refs/tags/v2.5.1.tar.gz"
-  sha256 "057c56b29390ec7659de1527f9ccbadb602e3e73048de79594521b3141ab586d"
   license "MIT"
   revision 13
   head "https://github.com/alanxz/SimpleAmqpClient.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/alanxz/SimpleAmqpClient/archive/refs/tags/v2.5.1.tar.gz"
+    sha256 "057c56b29390ec7659de1527f9ccbadb602e3e73048de79594521b3141ab586d"
+
+    # Allow overriding hard-coded CMAKE_CXX_STANDARD
+    patch do
+      url "https://github.com/alanxz/SimpleAmqpClient/commit/d271adb8a795e6aa98c09507b3401fc4d8ab21c1.patch?full_index=1"
+      sha256 "a5d7a26765023728b13fd98e57bf02d4bb9b0fbeb395dd27469c31bcdfb37d14"
+      type :backport
+      resolves "https://github.com/alanxz/SimpleAmqpClient/commit/d271adb8a795e6aa98c09507b3401fc4d8ab21c1"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:   "d412b6de7b7131e3940c3cb6c6de590851da8475fc52214d7e5a7bc4e23630b7"
@@ -30,10 +41,6 @@ class SimpleAmqpClient < Formula
   end
 
   def install
-    # Remove hard-coded CMAKE_CXX_STANDARD
-    # Else setting DCMAKE_CXX_STANDARD does not work
-    inreplace "CMakeLists.txt", "set(CMAKE_CXX_STANDARD 98)", ""
-
     system "cmake", "-S", ".", "-B", "build",
            "-DCMAKE_INSTALL_LIBDIR=lib",
            "-DCMAKE_CXX_STANDARD=14",

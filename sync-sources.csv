@@ -5368,6 +5368,7 @@ Homebrew-homebrew-core/Formula/o/oggz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/ogmtools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/oh-my-agent.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/oh-my-posh.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/oh-my-reddit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oha.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ohcount.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ohdear-cli.rb, Homebrew/homebrew-core, 1
@@ -8191,6 +8192,7 @@ Homebrew-homebrew-core/Formula/w/wordle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wordnet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wordplay.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/worktrunk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/worm-scraper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wormhole-william.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/woxi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wp-cli-completion.rb, Homebrew/homebrew-core, 1
@@ -13661,6 +13663,7 @@ Homebrew-homebrew-cask/Casks/m/memory-map.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memory-meter-3.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memory.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memoryanalyzer.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/mend.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mendeley-reference-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/menu-bar-splitter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/menubar-stats.rb, Homebrew/homebrew-cask, 0
@@ -14760,7 +14763,7 @@ Homebrew-homebrew-cask/Casks/r/repetier-host.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/replacicon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/replaywebpage.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/replicator.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/r/replit.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/r/replit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/repo-prompt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/repobar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/repoz.rb, Homebrew/homebrew-cask, 1

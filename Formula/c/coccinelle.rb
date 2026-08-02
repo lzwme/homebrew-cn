@@ -28,11 +28,12 @@ class Coccinelle < Formula
 
   # Apply Fedora patch to allow stdcompat to build with ocaml 5.4.0.
   # When removing patch, also remove autoreconf and make autoconf/automake HEAD-only.
-  # Issue ref: https://github.com/ocamllibs/stdcompat/issues/62
   patch do
     url "https://src.fedoraproject.org/rpms/ocaml-stdcompat/raw/2f4345ccea8eda0cd2a4cc33c337a9d92d66eb3c/f/ocaml-stdcompat-ocaml5.4.patch"
     sha256 "f30c8c3d75f9486020c47cf7d1701917e18497c92956b3c11cea79adbbeb7689"
     directory "bundles/stdcompat/stdcompat-current"
+    type :unofficial
+    resolves "https://github.com/ocamllibs/stdcompat/issues/62"
   end
 
   def install

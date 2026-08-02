@@ -12,6 +12,8 @@ class CabalInstall < Formula
     patch :p2 do
       url "https://github.com/haskell/cabal/commit/b49da958030b20554fedfacd612144e836ab3d52.patch?full_index=1"
       sha256 "877b60af7dac4f5a0b5fd96bbdb8bab9407db3f5850264c336b193a42ee092a5"
+      type :cherry_pick
+      resolves "https://github.com/haskell/cabal/pull/11347"
     end
 
     # Backport https://github.com/haskell/cabal/commit/3a6a26f826f3a67d9f452418c8cd0daa0ca12d7c

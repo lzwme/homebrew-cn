@@ -1,18 +1,18 @@
 class GitFlowNext < Formula
   desc "Modern implementation of the Git-flow branching model"
   homepage "https://git-flow.sh/"
-  url "https://ghfast.top/https://github.com/gittower/git-flow-next/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "cb91dcf6b5901d9c65800a971fbacb556a9a90971d5b4883b968770e2383130f"
+  url "https://ghfast.top/https://github.com/gittower/git-flow-next/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "ff6cfd247cf9cba51c695ea95a061522b537cd3b3ba10219e85e07a567273420"
   license "BSD-2-Clause"
   head "https://github.com/gittower/git-flow-next.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14c7ba0d3cd9aceeb6f7f27c116290e4a8344114645b4e0ff042fdde202687ae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14c7ba0d3cd9aceeb6f7f27c116290e4a8344114645b4e0ff042fdde202687ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14c7ba0d3cd9aceeb6f7f27c116290e4a8344114645b4e0ff042fdde202687ae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fd4f295c2ba07487bdd4ee938bb0cf63e97a70b90ece4f4f3cbafe265c5952f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "96515070a214836708d8a45e589d2fc8ce129f24c0bfe88064b5793bc487628b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46758e4929c4cd2b9c6bfbd366acd5bca141d938b797439f053427f9b55299df"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "890812fb397a264cfafd940f7c03ef62a4c84409213cfdeb596b8af49be501ea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "890812fb397a264cfafd940f7c03ef62a4c84409213cfdeb596b8af49be501ea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "890812fb397a264cfafd940f7c03ef62a4c84409213cfdeb596b8af49be501ea"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a0e487da5229eae7fe2e4afd22c615ab97a51ec0ccfd460c7e4fe4894f965166"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed883110679862a36420641634f2d6740a89dcff3336be7824e74d8dda7b5ebf"
+    sha256 cellar: :any,                 x86_64_linux:  "c3b4c135d13898bdcac841f22511836cf2a44a957d22ecbdf153a3631795863d"
   end
 
   depends_on "go" => :build
@@ -30,6 +30,8 @@ class GitFlowNext < Formula
 
   test do
     system "git", "init"
+    system "git", "config", "user.name", "BrewTestBot"
+    system "git", "config", "user.email", "BrewTestBot@test.com"
     system "git", "flow", "init", "--defaults"
     system "git", "flow", "config"
     assert_equal "develop", shell_output("git symbolic-ref --short HEAD").chomp

@@ -3,14 +3,14 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/13/5f/abc19346692e39731915c44fec2dc57a06ef3e4be5cb87b5ceb5ae3abd3b/rapid_mlx-0.11.3.tar.gz"
-  sha256 "44c34404e359c6b75ec8f8b3e6ee3cbbc90d0302a34206b5064c31fa272417b4"
+  url "https://files.pythonhosted.org/packages/b2/e8/4a39bd46ffe9a9d32037c8f5157724d59becf3f1b985db00015576a88d73/rapid_mlx-0.11.4.tar.gz"
+  sha256 "5de6fa4dd4561050d806835af17398e4b2723072eaf69eeff0b53002f9ce56d8"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3033e3a2f9c9451ca0fe21bc1a6a9eb0499c7f3a9cbf416b288f0be2366f88d0"
-    sha256 cellar: :any, arm64_sequoia: "62bc157c1d5dba127bc4cb5ec00cc78e244b77b65bdd55698a4dfef38bb7bb71"
-    sha256 cellar: :any, arm64_sonoma:  "7a223165f9eac19885258c2541dcbc77d8e1cda42fb066637c25f11de30a6c1c"
+    sha256 cellar: :any, arm64_tahoe:   "6de019e25e572be41dd63b8f916df651b88abdbfa8535f1e828b617ba21b7973"
+    sha256 cellar: :any, arm64_sequoia: "3a0c7e5abd11ecfd26348f65f7b4e74da65abbeac23b00c7f33d46e2ef5f14a7"
+    sha256 cellar: :any, arm64_sonoma:  "665d5d384df983125f1df5ec5aeb07e44813fc8b24e57185ab4bb372abe0d093"
   end
 
   depends_on "cmake" => :build
@@ -64,8 +64,8 @@ class RapidMlx < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/1f/99/d1c90d6041656cc6ee229dc99cd67fd0cd5aec3c5f7d72fffc27cc750054/cryptography-49.0.0.tar.gz"
-    sha256 "f89660a348f4f78a92366240a61404e337586ef7f5909a2fef59ca88ef505493"
+    url "https://files.pythonhosted.org/packages/de/41/6cbdcf9142d00fe82836fbb51e503e58088575cf7a0fe1dbff6695bf0840/cryptography-50.0.0.tar.gz"
+    sha256 "eeac2acb5a20ed25e0ad6d1df9891a520b78b404266b6d11778f25d5d691a6c9"
   end
 
   resource "fastapi" do
@@ -309,8 +309,8 @@ class RapidMlx < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/da/ea/c0f7924f7ccf005d6ad1f829971762ae751727497d6db1977ba5a635314f/websockets-17.0.tar.gz"
-    sha256 "6bbe83c4ef52a7533d2d8c6a3512b93722fd0db6bc6bc638d45edd49ef201444"
+    url "https://files.pythonhosted.org/packages/f7/96/e01084f83a64bcb3a27994bd0cb0db68ff29d9c6707fae37ec19b18ba990/websockets-17.0.1.tar.gz"
+    sha256 "5baa9bc0dfbae8c507e51c8cf1b6d4628086f7a87bbd3a9952bd5f035451f1cc"
   end
 
   def install

@@ -42,6 +42,8 @@ class Jack < Formula
   patch do
     url "https://github.com/jackaudio/jack2/commit/250420381b1a6974798939ad7104ab1a4b9a9994.patch?full_index=1"
     sha256 "919f94a5eb4a00854f90b6618a35be4ba9ab3d8cc56f09a1fba2277030363b20"
+    type :backport
+    resolves "https://github.com/jackaudio/jack2/pull/953"
   end
 
   def install

@@ -1,8 +1,8 @@
 class Mpop < Formula
   desc "POP3 client"
   homepage "https://marlam.de/mpop/"
-  url "https://marlam.de/mpop/releases/mpop-1.4.22.tar.xz"
-  sha256 "2cd64a9c29a5ade3429230c70610ca4b6ea305fbc264f6961b5d85a7a8cecd4b"
+  url "https://marlam.de/mpop/releases/mpop-1.4.23.tar.xz"
+  sha256 "02fc2ff44f62b8fbf427ed6d8b16e0d374751198254fb1e6ad36eb6d9a938017"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Mpop < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "53077e036b6576977a9c436f7dc0a343d8be4c36c9c9c24c54f2862b663e7cfd"
-    sha256 cellar: :any, arm64_sequoia: "99d5d3dfbdf22b80e681c776f59bee6b67a5b278b94a56e63a78a1069c71722e"
-    sha256 cellar: :any, arm64_sonoma:  "eff5394314ed0e2bbc35f930ef329aaf8ebb18e6483ff4409a20cbf7931adab7"
-    sha256 cellar: :any, sonoma:        "162a9fb57ad8901c636c5a6c355c2defb42e759d988e8183e61bf35ca2539f1f"
-    sha256               arm64_linux:   "5acc22bcfe9c1230a2e0c735b1152433245d6e8416a9f3006392cc565942a7cb"
-    sha256               x86_64_linux:  "b41b1549f6b8f4be5a2fa1012ef43c06ed002fe873b01684be3d7c3c4c95ac7a"
+    sha256 cellar: :any, arm64_tahoe:   "e6c27bfca49caf2fd741cec067bed4f15b3fcc5974b0a84ea608d89a3b7f32bb"
+    sha256 cellar: :any, arm64_sequoia: "7e068e36b842bd8fb000b54bf191d1b407fe66749a07bf9f92b8a7aa7cc3a7dd"
+    sha256 cellar: :any, arm64_sonoma:  "7440c5d35141cae1d92e437bf8bf9a60f05fbd9b9361eb92d5d8c7679a952b0b"
+    sha256 cellar: :any, sonoma:        "5e79be4e95de101a56ca22a345bfa86abfa60bc2f2e04d6dbf01d45b6bd6f4c2"
+    sha256               arm64_linux:   "43f048d0e7db1270d90445c58e8965da8f25dfff487678bc631709f619e55a13"
+    sha256               x86_64_linux:  "d4eb464313aaa8621da76138c97d8fcba126045be9fcf35929d608f85ad81113"
   end
 
   depends_on "pkgconf" => :build
