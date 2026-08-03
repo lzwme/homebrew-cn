@@ -99,10 +99,11 @@ class GhcAT94 < Formula
 
   # Backport fix for building docs with sphinx-doc 7.
   # TODO: Remove patch if fix is backported to 9.4.
-  # Ref: https://gitlab.haskell.org/ghc/ghc/-/merge_requests/10520
   patch do
     url "https://gitlab.haskell.org/ghc/ghc/-/commit/70526f5bd8886126f49833ef20604a2c6477780a.diff"
     sha256 "54cdde1ca5d1b6fe3bbad8d0eac2b8c112ca1f346c4086d1e7361fa9510f1f44"
+    type :backport
+    resolves "https://gitlab.haskell.org/ghc/ghc/-/merge_requests/10520"
   end
 
   def install

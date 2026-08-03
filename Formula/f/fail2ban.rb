@@ -25,10 +25,12 @@ class Fail2ban < Formula
   depends_on "sphinx-doc" => :build
   depends_on "python@3.14"
 
-  # Drop distutils: https://github.com/fail2ban/fail2ban/pull/3728
+  # Drop distutils
   patch do
     url "https://github.com/fail2ban/fail2ban/commit/a763fbbdfd6486e372965b4009eb3fe5db346718.patch?full_index=1"
     sha256 "631ca7e59e21d4a9bbe6adf02d0b1ecc0fa33688d145eb5e736d961e0e55e4cd"
+    type :backport
+    resolves "https://github.com/fail2ban/fail2ban/pull/3728"
   end
 
   def python3

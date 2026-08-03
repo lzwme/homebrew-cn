@@ -1,8 +1,8 @@
 class Rgbds < Formula
   desc "Rednex GameBoy Development System"
   homepage "https://rgbds.gbdev.io"
-  url "https://ghfast.top/https://github.com/gbdev/rgbds/archive/refs/tags/v1.0.2+hotfix.tar.gz"
-  sha256 "e58d5b74a371f7c2aee9dbe621b44c5fa5f49cda85a44fd974efd8ee059a057b"
+  url "https://ghfast.top/https://github.com/gbdev/rgbds/archive/refs/tags/v1.0.3.tar.gz"
+  sha256 "e79e51bdc0e53d8b52b5b9b58a5cbe15d6a380092da67dd625aeca29f6679660"
   license "MIT"
   head "https://github.com/gbdev/rgbds.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Rgbds < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4b26edc3fc5cec97f4f3e9de54fbfdfdd62e3feca14fcf7d000a13adecedc2a7"
-    sha256 cellar: :any, arm64_sequoia: "15998e957064bcdf3532424ebc5adb09ee0d354fb75d369c7eb55a6ed74b8e82"
-    sha256 cellar: :any, arm64_sonoma:  "d7ae5850aec1f249b29b6c48bc94e7de84590f41e3d8d8a3f2bb8c8f25120bc4"
-    sha256 cellar: :any, sonoma:        "1fa5e9a8d3b3c7c3eb744f1a850edb0f7a2ee7a04e754af189c65391a46a931e"
-    sha256 cellar: :any, arm64_linux:   "bc2512ae4cc608969f2f44704a62cea7cdf6db5db431da1ed17a5a9c58553e0d"
-    sha256 cellar: :any, x86_64_linux:  "6daa7a1e652c9a2e61f6fd61caf018e10df5ac768f370c763c1849955a66c235"
+    sha256 cellar: :any, arm64_tahoe:   "93f31d34c69552e6d490335e18de854608534d0c0eb63e267a33f35eb3017015"
+    sha256 cellar: :any, arm64_sequoia: "006fb511cf3db6207326617600434daafcf0b090bba5d38b77696135c8991b33"
+    sha256 cellar: :any, arm64_sonoma:  "1db73630c13c6f99ac6ddeadecec65a95ec05b30a4d98694ff7723819ff0f62e"
+    sha256 cellar: :any, sonoma:        "8b4ea62968b4e34822e2bacbf6043b9bcbb23fcf6a3739e5868b913ab2e7c34b"
+    sha256 cellar: :any, arm64_linux:   "5a2e8a0bd0ea76f9766a079103f10d9b36f47766750a14b64690df67883f4f11"
+    sha256 cellar: :any, x86_64_linux:  "5487484080210eb64058c40f4747bc9a3e0b09034e8a4dd04b48062e45e5c0b8"
   end
 
   depends_on "bison" => :build

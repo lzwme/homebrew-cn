@@ -59,6 +59,8 @@ class Gnutls < Formula
   patch do
     url "https://gitlab.com/gnutls/gnutls/-/commit/29c2027c963cf559817d0da37c1fc2efd0c1bd6a.diff"
     sha256 "c0bfc0164ff131c9d2e1c4d0367430f8b767b64c9c21e0f408bd634d21fb0302"
+    type :backport
+    resolves "https://gitlab.com/gnutls/gnutls/-/merge_requests/2106"
   end
 
   def install

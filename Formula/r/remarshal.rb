@@ -3,18 +3,18 @@ class Remarshal < Formula
 
   desc "Convert between TOML, YAML and JSON"
   homepage "https://github.com/remarshal-project/remarshal"
-  url "https://files.pythonhosted.org/packages/61/91/31dc16d4e47135b870835a60d342977d50f315440f4109521bc6ef28a42b/remarshal-2.1.3.tar.gz"
-  sha256 "0f569eeebf7b4ec8a821385cb82dd3120607c4ef75766762f4771cf2720b8c8d"
+  url "https://files.pythonhosted.org/packages/26/6b/9817fbf9cabb8914313c546b5d55653148a7dbe612a8dbaa992d05a6dff7/remarshal-2.1.4.tar.gz"
+  sha256 "510caa7f2aa48437e8fa6a316782bbec5235f3fad09f20ae246e4e372a53902d"
   license "MIT"
   head "https://github.com/remarshal-project/remarshal.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f403683ce638ad7949b0f44a1d3fa78856ff6eb6cd6176d23122a3e67cb3323"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf6d0f3f7820299a8fb6e99912ee865038cace452e9a3f2c7db394070b7c91cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f352ffd872e8483add252d9fa042a84ce0017f77a373c7a0e46be41edd12b69"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ac33501cc071769472b91bad73d2b123f472656d068ed4ca6f91b456758f796d"
-    sha256 cellar: :any,                 arm64_linux:   "8921cfb65a62d382d3086c9298c79197eba1e076a0576629a63107b85f046435"
-    sha256 cellar: :any,                 x86_64_linux:  "b257d06ad54e9e6d4191af0f3020ecd281ef850836c84d5eb5930a7950657289"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7c84287f2315b534728121437eee283e2af1a04e49e2fb959320bb920d395de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c0ba21996cb4d714193dca86c9f73316f5c39451f4aca90ca877830d0704364"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78a6b00c4ed321b4238560371fc574ebc1915f27b7c8b168d044255d6ac723d1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ed395fa36d5f5ea3ed7bd4193b6b7ac8aee25063eb58170e5f717e0a10302811"
+    sha256 cellar: :any,                 arm64_linux:   "cb238cae65a309c17c65d24a20bd86fef8a1d74b1d8825004e212efa51d4db4a"
+    sha256 cellar: :any,                 x86_64_linux:  "e2ec990791f0aecc0b6f0774b64fc91f5d1f669fa10425feba271ccb441ef9c6"
   end
 
   depends_on "python@3.14"
@@ -54,8 +54,8 @@ class Remarshal < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/51/db/03eaf4331631ef6b27d6e3c9b68c54dc6f0d63d87201fed600cc409307fd/tomlkit-0.15.0.tar.gz"
-    sha256 "7d1a9ecba3086638211b13814ea79c90dd54dd11993564376f3aa92271f5c7a3"
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
   end
 
   resource "u-msgpack-python" do

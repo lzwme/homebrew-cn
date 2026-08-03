@@ -34,26 +34,36 @@ class EtcdCppApiv3 < Formula
   patch do
     url "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/commit/ece56adf4d01658a5f0668a3618c97153665581c.patch?full_index=1"
     sha256 "f3686647436045a9a53b05f81fae02d5a5a2025d5ce78a66aca0ade85c1a99c6"
+    type :backport
+    resolves "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/pull/281"
   end
 
   # Backport cluster manager api needed for newer `vineyard`
   patch do
     url "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/commit/17d7b60194e5b6d9005bb10947905a393f432624.patch?full_index=1"
     sha256 "b0d1bce10cf2f03124af744f2a184162b6b555b09d162b8633ed8ab9b613f8f8"
+    type :backport
+    resolves "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/pull/270"
   end
   patch do
     url "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/commit/3ad17314d6e8c26beb88501f8e74e506ccaf26b8.patch?full_index=1"
     sha256 "52dd6132b03c4c1210bb1c0b8a32ff952f84b198d612903c10a53b7a4f5ce2b9"
+    type :backport
+    resolves "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/pull/276"
   end
   patch do
     url "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/commit/ea56cee80f441973a0149b57604e7a7874c61b65.patch?full_index=1"
     sha256 "bce8ef02bc56f2ac430d580191217ff78210cc6e261d29c7031a22e65cd05693"
+    type :backport
+    resolves "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/pull/277"
   end
 
   # Backport GCC 13 build fix
   patch do
     url "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/commit/7c6e714f188f9576e25e0350cac4181139eec23e.patch?full_index=1"
     sha256 "96c9e4cbadb46c9ebfc6f4f386125161b68df4c12f7c85feffda39dff41a7277"
+    type :backport
+    resolves "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/pull/299"
   end
 
   def install

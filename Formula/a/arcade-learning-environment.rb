@@ -61,11 +61,9 @@ class ArcadeLearningEnvironment < Formula
 
     # Install ROMs
     resource("roms").stage do
-      require "base64"
-
       pwd = Pathname.pwd
       encoded = (pwd/"Roms.tar.gz.b64").read
-      (pwd/"Roms.tar.gz").write Base64.decode64(encoded)
+      (pwd/"Roms.tar.gz").write encoded.unpack1("m")
 
       system "tar", "-xzf", "Roms.tar.gz"
       (buildpath/"src/python/roms").install pwd.glob("ROM/*/*.bin")

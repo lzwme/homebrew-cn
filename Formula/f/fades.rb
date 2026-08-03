@@ -1,6 +1,8 @@
 class Fades < Formula
   desc "Automatically handle virtualenvs for python scripts"
   homepage "https://fades.readthedocs.io/"
+  # TODO: Check if possible to migrate to `virtualenv_install_with_resources`
+  # https://github.com/PyAr/fades/issues/425
   url "https://files.pythonhosted.org/packages/8b/e8/87a44f1c33c41d1ad6ee6c0b87e957bf47150eb12e9f62cc90fdb6bf8669/fades-9.0.2.tar.gz"
   sha256 "4a2212f48c4c377bbe4da376c4459fe2d79aea2e813f0cb60d9b9fdf43d205cc"
   license "GPL-3.0-only"

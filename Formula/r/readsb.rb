@@ -35,8 +35,6 @@ class Readsb < Formula
   end
 
   test do
-    require "base64"
-
     enc = <<~EOS
       goB/en99g4B9gH6Eg35/fICVhJl/gXx9f4F+f36Af4B/f3+AgH9+f39/gH+Af4CBf4F/f3
       9/f3+AgIGAgH9/f4F/gX9/gH+Bf4B/f3+Af4F+f359gX5/f36BgYB9fIeGm46Ig3p+mIGYfX19f
@@ -58,7 +56,7 @@ class Readsb < Formula
       J/k4CRfpVyj3mNdplbj2aAd4Njgm19hnlwdWdxd21zbnRufWw=
     EOS
 
-    (testpath/"input.bin").write Base64.decode64(enc)
+    (testpath/"input.bin").write enc.unpack1("m")
     assert_match "ICAO Address:", shell_output("#{bin}/readsb --device-type ifile --ifile input.bin 2>/dev/null", 1)
   end
 end

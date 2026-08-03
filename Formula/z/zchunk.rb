@@ -1,19 +1,18 @@
 class Zchunk < Formula
   desc "Compressed file format for efficient deltas"
   homepage "https://github.com/zchunk/zchunk"
-  url "https://ghfast.top/https://github.com/zchunk/zchunk/archive/refs/tags/1.5.3.tar.gz"
-  sha256 "832381dafe192109742c141ab90a6bc0a9d7e9926a4bafbdf98f596680da2a95"
+  url "https://ghfast.top/https://github.com/zchunk/zchunk/archive/refs/tags/1.5.4.tar.gz"
+  sha256 "7e4515412a331b31ebfaef91978c01e937fc907149fd1ab21a4661f4e3799cee"
   license "BSD-2-Clause"
   head "https://github.com/zchunk/zchunk.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "7feea8c537bef441a0f60256f5d3b2aeb6a638f457046193a9a4516cae340591"
-    sha256 cellar: :any, arm64_sequoia: "46d65e395c918847f94dcf2c15e2d70ae11bac1c958ef1327ef4938b0e6da602"
-    sha256 cellar: :any, arm64_sonoma:  "d29d020334ff33c8baf0e51e01abb8c10ebd015130113c1f7739e6c08985fb94"
-    sha256 cellar: :any, sonoma:        "4405ca51d11f44a125c9f8f01ba44f75a03291bde66614b0e2cf661f259b72ee"
-    sha256               arm64_linux:   "7b24464b573af8a39c03bc310a9b4459fb09b735859352f56522d78cb30dec1b"
-    sha256               x86_64_linux:  "2149273e6d030878b48169a874ad91eeec79bc53fb3ccdd13a9cdd6c4bb473a6"
+    sha256 cellar: :any, arm64_tahoe:   "001e71f0d8acc6bf0269090ff5c8cf767d5e882d6c14e816b0e0a3929e173690"
+    sha256 cellar: :any, arm64_sequoia: "f6d47a3e639835edd983cbebd77e2699885224a1c71db966d0b3407040c04b2c"
+    sha256 cellar: :any, arm64_sonoma:  "437e49c0af3f551c9b8a782c113837e8d90470785f0536d58c8fcd98e992345d"
+    sha256 cellar: :any, sonoma:        "9dd5de16c658c7a29f33017286dc686d72b6e5ac3dd6446d4bc7abad05d9053a"
+    sha256               arm64_linux:   "0e2d464108b65668267a5a9e7226a12823f1314c2cd2fc4e9a1b2177dfeceb91"
+    sha256               x86_64_linux:  "815a1909e17eb500e49de8e89ffd0667c3464fd625b50ec71f92aa4db0704afc"
   end
 
   depends_on "meson" => :build

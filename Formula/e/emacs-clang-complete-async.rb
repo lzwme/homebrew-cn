@@ -37,10 +37,11 @@ class EmacsClangCompleteAsync < Formula
 
   depends_on "llvm"
 
-  # https://github.com/Golevka/emacs-clang-complete-async/pull/59
   patch do
     url "https://github.com/yocchi/emacs-clang-complete-async/commit/5ce197b15d7b8c9abfc862596bf8d902116c9efe.patch?full_index=1"
     sha256 "f5057f683a9732c36fea206111507e0e373e76ee58483e6e09a0302c335090d0"
+    type :unofficial
+    resolves "https://github.com/Golevka/emacs-clang-complete-async/pull/59"
   end
 
   def install

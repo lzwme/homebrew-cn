@@ -1,8 +1,8 @@
 class LibtorrentRakshasa < Formula
   desc "BitTorrent library with a focus on high performance"
   homepage "https://github.com/rakshasa/libtorrent"
-  url "https://ghfast.top/https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.16.18.tar.gz"
-  sha256 "c4023f1bf59e14ee01aa912bc2d69092cd70a479bbca693ec0d5b47e9445dade"
+  url "https://ghfast.top/https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.16.19.tar.gz"
+  sha256 "dfab08fa7e5ec2865b36c5868c6136ffe125c868d2763d7097bb85b20652e345"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class LibtorrentRakshasa < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d96ff8bd06dad573f31ff0e37d56de37c3c3ed9bd0da84b289ef2f41fc6da715"
-    sha256 cellar: :any, arm64_sequoia: "81b32eaa8c94f39f35b889f6784c6fcaaab57f1e38baae715c098305f2953a72"
-    sha256 cellar: :any, arm64_sonoma:  "c6a076b635b603efdd788058753d36bf7edffcb2db76414b148f208b6ffae11a"
-    sha256 cellar: :any, sonoma:        "8efb5ed8908e401cc4af58ce224f15871e7bcca6ba29d6110963c6cc0672ac90"
-    sha256 cellar: :any, arm64_linux:   "6f8256221c59ff343334425e540984b74442ec7e495b3564690da6dc8d79f6ea"
-    sha256 cellar: :any, x86_64_linux:  "9928402c3476bc2d92dceb6c108f3878e4c8e6b04464543ec2e3ae58055dff96"
+    sha256 cellar: :any, arm64_tahoe:   "582d34b1613fc2ce7eff13229175d6abf963edbbe61c43e963ddbc90dafa3b5c"
+    sha256 cellar: :any, arm64_sequoia: "0eebf38026e13123060a931dfa218ca68e52e9db9c0ed884003acb67755d4268"
+    sha256 cellar: :any, arm64_sonoma:  "d7d0fc68de4133414e1cf5091a0e25aa3bffa7f666125684e1da15ad0474b03b"
+    sha256 cellar: :any, sonoma:        "ba4ec9b4f41d4cc8d2cfd1c50045a73e9bb10260764fc4ceb7f942f5524c6f82"
+    sha256 cellar: :any, arm64_linux:   "22557502a74dc74b0f9c81fab6e9451f7a20ba72750c17ecc737ad71480a3a99"
+    sha256 cellar: :any, x86_64_linux:  "60eff16891bfb93ee1246e157cfb4b3e8dbfd3464a3703a6c6e522c0f0b64ab0"
   end
 
   depends_on "autoconf" => :build

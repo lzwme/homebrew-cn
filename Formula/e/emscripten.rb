@@ -64,7 +64,7 @@ class Emscripten < Formula
         next if release_hash.blank?
 
         release_url = "https://chromium.googlesource.com/emscripten-releases/+/#{release_hash}/DEPS?format=TEXT"
-        match = Base64.decode64(Homebrew::Livecheck::Strategy.page_content(release_url)[:content]).match(regex)
+        match = Homebrew::Livecheck::Strategy.page_content(release_url)[:content].unpack1("m").match(regex)
         next if match.blank?
 
         match[1]
@@ -90,7 +90,7 @@ class Emscripten < Formula
         next if release_hash.blank?
 
         release_url = "https://chromium.googlesource.com/emscripten-releases/+/#{release_hash}/DEPS?format=TEXT"
-        match = Base64.decode64(Homebrew::Livecheck::Strategy.page_content(release_url)[:content]).match(regex)
+        match = Homebrew::Livecheck::Strategy.page_content(release_url)[:content].unpack1("m").match(regex)
         next if match.blank?
 
         match[1]

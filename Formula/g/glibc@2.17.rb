@@ -91,6 +91,8 @@ class GlibcAT217 < Formula
   patch do
     url "https://gitlab.com/CentOS/archives/git.centos.org/rpms/glibc/-/raw/fa3bfd60c9d49f3cfd3e29ac36a808ffc0d9cc75/SOURCES/glibc-rh1500908.patch"
     sha256 "48bfb15f5a26161bbef3d58e18d44876a170ddbfcc5922a39c77fd8da9fe68f6"
+    type :backport
+    resolves "https://bugzilla.redhat.com/show_bug.cgi?id=1500908"
   end
 
   # Backport of:

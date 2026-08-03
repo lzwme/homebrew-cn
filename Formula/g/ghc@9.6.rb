@@ -100,6 +100,7 @@ class GhcAT96 < Formula
   patch do
     url "https://gitlab.haskell.org/ghc/ghc/-/commit/c9731d6d3cad01fccb88c99c4f26070a44680389.diff"
     sha256 "f7e921f7096c97bd4e63ac488186a132eb0cc508d04f0c5a99e9ded51bf16b25"
+    type :backport
   end
 
   def install

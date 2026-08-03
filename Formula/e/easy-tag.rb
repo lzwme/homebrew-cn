@@ -60,11 +60,15 @@ class EasyTag < Formula
   patch do
     url "https://sources.debian.org/data/main/e/easytag/2.4.3-9/debian/patches/03_port-to-taglib-2.patch"
     sha256 "8b096f58ce08a059a992428fb239f8ab3a5887434bf8db33302a8635d0965aa4"
+    type :unofficial
+    resolves "https://gitlab.gnome.org/GNOME/easytag/-/merge_requests/16",
+             "https://bugs.debian.org/1092704"
   end
 
   patch do
     url "https://sources.debian.org/data/main/e/easytag/2.4.3-9/debian/patches/04_taglib-2-further-fix.patch"
     sha256 "3a5a7880e56a011a291b4b2c2c9ba1d378acc505c7eebd0a306735afc58c7b9f"
+    type :unofficial
   end
 
   def install

@@ -56,10 +56,11 @@ class Gsan < Formula
 
   # Extract certificate SANs via `cryptography` instead of pyOpenSSL's `X509.get_extension`,
   # which was removed in pyOpenSSL 26 but we require this for cryptography compatibility.
-  # PR ref: https://github.com/franccesco/getaltname/pull/37
   patch do
     url "https://github.com/franccesco/getaltname/commit/e68f61d418a3ce4e55797fe4ae175e65d73c8cb5.patch?full_index=1"
     sha256 "64691b483f9e12050052218c6f8db07787eea18e9141973de5b47fc9282557bc"
+    type :unofficial
+    resolves "https://github.com/franccesco/getaltname/pull/37"
   end
 
   def install

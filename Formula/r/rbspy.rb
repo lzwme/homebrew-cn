@@ -30,7 +30,7 @@ class Rbspy < Formula
       0lVreuqrlmTC/yPitZXK1rSlrbNV0U/ACePNHUiAwAA
     EOS
 
-    (testpath/"recording.gz").write Base64.decode64(recording.delete("\n"))
+    (testpath/"recording.gz").write recording.delete("\n").unpack1("m")
     system bin/"rbspy", "report", "-f", "summary", "-i", "recording.gz",
                         "-o", "result"
 

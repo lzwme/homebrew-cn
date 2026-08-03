@@ -1,6 +1,6 @@
 cask "stats" do
-  version "3.0.9"
-  sha256 "cdbb45ab9dae5911a4ee2a7687ebcbc1431d771612ca0f54db933974ab75a66b"
+  version "3.0.10"
+  sha256 "efe1061573655f17fddc23b96699cc9383299de2cba91589d71403ac1467f442"
 
   url "https://ghfast.top/https://github.com/exelban/stats/releases/download/v#{version}/Stats.dmg"
   name "Stats"
@@ -22,12 +22,14 @@ cask "stats" do
       trash:  [
         "~/Library/Application Scripts/eu.exelban.Stats.LaunchAtLogin",
         "~/Library/Application Scripts/eu.exelban.Stats.Widgets",
+        "~/Library/Application Scripts/RP2S87B72W.eu.exelban.Stats.widgets",
         "~/Library/Application Support/Stats",
         "~/Library/Caches/eu.exelban.Stats",
         "~/Library/Containers/eu.exelban.Stats.LaunchAtLogin",
         "~/Library/Containers/eu.exelban.Stats.Widgets",
         "~/Library/Cookies/eu.exelban.Stats.binarycookies",
         "~/Library/Group Containers/eu.exelban.Stats.widgets",
+        "~/Library/Group Containers/RP2S87B72W.eu.exelban.Stats.widgets",
         "~/Library/HTTPStorages/eu.exelban.Stats",
         "~/Library/Preferences/eu.exelban.Stats.plist",
       ]

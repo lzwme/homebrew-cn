@@ -65,7 +65,7 @@ class Libgccjit < Formula
     ENV["CC"] = formula_opt_bin("gcc")/"gcc-#{gcc_version}"
     ENV["CXX"] = formula_opt_bin("gcc")/"g++-#{gcc_version}"
 
-    pkgversion = "Homebrew GCC #{pkg_version} #{build.used_options*" "}".strip
+    pkgversion = "Homebrew GCC #{pkg_version}"
 
     # Use `lib/gcc/current` to align with the GCC formula.
     args = %W[
@@ -88,7 +88,6 @@ class Libgccjit < Formula
       cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
       args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
 
-      # System headers may not be in /usr/include
       sdk = MacOS.sdk_path
       args << "--with-sysroot=#{sdk}" if sdk
 
@@ -104,7 +103,6 @@ class Libgccjit < Formula
 
       make_args = %W[BOOT_LDFLAGS=#{ldflags.join(" ")}]
     else
-      # Fix Linux error: gnu/stubs-32.h: No such file or directory.
       args << "--disable-multilib"
 
       # Change the default directory name for 64-bit libraries to `lib`
@@ -117,7 +115,7 @@ class Libgccjit < Formula
     end
 
     # Building jit needs --enable-host-shared, which slows down the compiler.
-    mkdir "build-jit" do
+    mkdir "build" do
       install_target = OS.mac? ? "install" : "install-strip"
 
       system "../configure", *args, "--enable-languages=jit", "--enable-host-shared", "--disable-bootstrap"

@@ -143,10 +143,12 @@ class Gnuradio < Formula
     sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
-  # Fix build with Boost 1.89.0, pr ref: https://github.com/gnuradio/gnuradio/pull/7904
+  # Fix build with Boost 1.89.0
   patch do
     url "https://github.com/gnuradio/gnuradio/commit/02aa698a05935fe350fb1772226e29605abd335e.patch?full_index=1"
     sha256 "246d540bdd2025b3ad2ffc84adea84b378ea0d640e73809e3f0e48f9bb6d3881"
+    type :backport
+    resolves "https://github.com/gnuradio/gnuradio/pull/7904"
   end
 
   def python3

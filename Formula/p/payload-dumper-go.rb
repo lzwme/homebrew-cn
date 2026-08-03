@@ -27,9 +27,7 @@ class PayloadDumperGo < Formula
   end
 
   test do
-    require "base64"
-
-    (testpath/"payload.bin").write ::Base64.decode64 <<~EOS
+    (testpath/"payload.bin").write <<~EOS.unpack1("m")
       Q3JBVQAAAAAAAAACAAAAAAAAAQEAAAAAGIAgYABqlgEKBmtlcm5lbDonCICAgAISIMUdnt6vEEPv
       5BJXyuvBM2rCHkEau27UGDMkvm6EHESMQjAIARAAGL4KMgUIABCABEIg4dp6wOpVauyGK1xdrKTF
       UvIDzO1u9nPhCGdU58+dK05CMQgBEL4KGE8yBgiABBCABEIgknB+/7eKIOYXKq8Be1HG6J582bBO

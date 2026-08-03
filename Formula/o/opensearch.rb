@@ -7,12 +7,13 @@ class Opensearch < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "418e7068af25b035d8c73cde5ec31c562e2d94d726ff1bd2eda7011f0cb2916c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d155153c11c823656d1bc6d5691be5b9615a9564312513c06605ae53420ac91"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6389deceddb31f08816e4de2f82e518c1bd56af87c30b5be3d552133d1944f81"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b02d817c8de1d16abc9196971c33327a068975d6dd60f74ce5e0a802b91ad91f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "084a293e4e80e8e45f2f81bd699e05a1d2a7c03223d9936d0851899514e96d60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77efff352a3ad0637f535711d3e9aac2d7c957aaea9e245fd3c7e5903d9f3275"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b5eeb560c500ed4a00adeb0d207e225b1f831dca51ae3a3088f27118574947b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10aea76eb24a3fd118146355c5ce784f781770daaabb8069fcc03d7e681ef949"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f7b202991dd11c7be6313e150e69863e75a2ec44f2b170538c2ad6fd0521190"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b08a2a2446487d6a1b0e882e90acc0d78422e3eb922ac3a93eea37f1d5f0a04e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8da08e8e212dc8460418cda3ae51177c1d7088b1884f2cd2ecddf53ecd5e270c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b68d8404995cd792441fae37cd6b62b04587a14c1a45d6306e7bfaaa03d9e39c"
   end
 
   # TODO: Use the vendored Gradle wrapper until its minor version matches Homebrew's `gradle`.
@@ -47,7 +48,7 @@ class Opensearch < Formula
       touch "config/jvm.options.d/.keepme"
 
       # Move config files into etc
-      (etc/"opensearch").install Dir["config/*"]
+      pkgetc.install Dir["config/*"]
     end
 
     inreplace libexec/"bin/opensearch-env",
@@ -59,22 +60,17 @@ class Opensearch < Formula
                 libexec/"bin/opensearch-plugin",
                 libexec/"bin/opensearch-shard"
     bin.env_script_all_files(libexec/"bin", JAVA_HOME: formula_opt_prefix("openjdk@25"))
+
+    (var/"lib/opensearch").mkpath
+    (var/"log/opensearch").mkpath
+    (var/"opensearch/plugins").mkpath
+    (var/"opensearch/extensions").mkpath
+    libexec.install_symlink pkgetc => "config"
+    libexec.install_symlink var/"opensearch/plugins"
+    libexec.install_symlink var/"opensearch/extensions"
   end
 
   post_install_steps do
-    mkdir_p "lib/opensearch", base: :var
-    mkdir_p "log/opensearch", base: :var
-    unless_path_exists "{{libexec}}/config" do
-      symlink "{{etc}}/opensearch", "config", target_base: :libexec
-    end
-    mkdir_p "opensearch/plugins", base: :var
-    unless_path_exists "{{libexec}}/plugins" do
-      symlink "{{var}}/opensearch/plugins", "plugins", target_base: :libexec
-    end
-    mkdir_p "opensearch/extensions", base: :var
-    unless_path_exists "{{libexec}}/extensions" do
-      symlink "{{var}}/opensearch/extensions", "extensions", target_base: :libexec
-    end
     unless_path_exists "{{etc}}/opensearch/opensearch.keystore" do
       run "opensearch-keystore", args: ["create"], base: :bin
     end

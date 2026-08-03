@@ -185,11 +185,10 @@ class Onnxruntime < Formula
       }
     CPP
 
-    require "base64"
     mul_1_onnx = "CAMSBmNoZW50YTpwChUKAVgKAVcSAVkaBW11bF8xIgNNdWwSCG11bCB0ZXN" \
                  "0KiMIAwgCEAEiGAAAgD8AAABAAABAQAAAgEAAAKBAAADAQEIBV1oTCgFYEg" \
                  "4KDAgBEggKAggDCgIIAmITCgFZEg4KDAgBEggKAggDCgIIAkIECgAQBw=="
-    (testpath/"mul_1.onnx").write Base64.decode64(mul_1_onnx)
+    (testpath/"mul_1.onnx").write mul_1_onnx.unpack1("m")
 
     system ENV.cxx, "-std=c++17", "-I#{include}", "test.cc", "-L#{lib}", "-lonnxruntime", "-o", "test"
     output_lines = shell_output("./test 2>&1").lines

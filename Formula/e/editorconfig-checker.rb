@@ -6,6 +6,11 @@ class EditorconfigChecker < Formula
   license "MIT"
   head "https://github.com/editorconfig-checker/editorconfig-checker.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df5cb764b30f5b7c95a69fbd9d061a8c0b6af4869cb09163a49dce1587f576bc"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "df5cb764b30f5b7c95a69fbd9d061a8c0b6af4869cb09163a49dce1587f576bc"

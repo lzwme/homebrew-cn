@@ -37,7 +37,7 @@ class Witness < Formula
     system bin/"witness", "run", "-s", "build", "-a", "environment", "-k", "buildkey.pem", "-o",
            "build-attestation.json"
 
-    output = Base64.decode64(JSON.parse((testpath/"build-attestation.json").read)["payload"])
+    output = JSON.parse((testpath/"build-attestation.json").read)["payload"].unpack1("m")
     assert_match "\"type\":\"https://witness.dev/attestations/product/v0.1\",", output
   end
 end

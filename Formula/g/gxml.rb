@@ -29,10 +29,12 @@ class Gxml < Formula
     depends_on "gettext"
   end
 
-  # fix version comparison in gxml.pc.in, upstream pr ref, https://gitlab.gnome.org/GNOME/gxml/-/merge_requests/28
+  # fix version comparison in gxml.pc.in
   patch do
     url "https://gitlab.gnome.org/GNOME/gxml/-/commit/6551103abd5143e51814ec1dce9b36bb9a46e09f.diff"
     sha256 "b87f585ab782b2ff4f024c45c9a90791c2023e3703756f2eb799591e7978e640"
+    type :unofficial
+    resolves "https://gitlab.gnome.org/GNOME/gxml/-/merge_requests/28"
   end
 
   def install

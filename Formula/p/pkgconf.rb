@@ -1,10 +1,10 @@
 class Pkgconf < Formula
   desc "Package compiler and linker metadata toolkit"
   homepage "https://github.com/pkgconf/pkgconf"
-  url "https://distfiles.ariadne.space/pkgconf/pkgconf-3.0.4.tar.xz"
-  mirror "https://ghfast.top/https://github.com/pkgconf/pkgconf/releases/download/pkgconf-3.0.4/pkgconf-3.0.4.tar.xz"
-  mirror "http://fresh-center.net/linux/misc/pkgconf-3.0.4.tar.xz"
-  sha256 "91ce346b47f46b87d680c6928e6c43240b9cdc7a31afbea19f2298de4dbe266d"
+  url "https://distfiles.ariadne.space/pkgconf/pkgconf-3.0.5.tar.xz"
+  mirror "https://ghfast.top/https://github.com/pkgconf/pkgconf/releases/download/pkgconf-3.0.5/pkgconf-3.0.5.tar.xz"
+  mirror "http://fresh-center.net/linux/misc/pkgconf-3.0.5.tar.xz"
+  sha256 "3acd3a8a3cce65a8d620321855d92fb602e026cbe8e13ee36bdec58483b59ace"
   license "ISC"
   compatibility_version 2
 
@@ -14,14 +14,14 @@ class Pkgconf < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "69175754cf1e6693ff88e5c9d3cb76e0df869482370c61ee477ac82c6607f758"
-    sha256 arm64_sequoia: "9690271dab0ec12bf4bc851e00e52f478adf0abeecd1b0e69a990dfd8109b48b"
-    sha256 arm64_sonoma:  "1f44499a9102cc4d453313ca09d73af3df983a71a360fb4af3f9c7b3ef5dc436"
-    sha256 tahoe:         "f60e946ca966ed3c749861126ef4444ea7c71e091ae0fd01006b971692efed33"
-    sha256 sequoia:       "eab6232c957adc518688dbebea3546af91853abe7c394e0d48eacfa4c6f4dbc3"
-    sha256 sonoma:        "12b35ac07469252509d15c2513f1ebd210456cb9b64f188710283d72b00453f8"
-    sha256 arm64_linux:   "adb44b442ee05dd8bb42aa0f0ce9b44e2e9235a363afc0159511548ecf6d0372"
-    sha256 x86_64_linux:  "333e8073cfc25ce6fbba732c6a2ebb6aa6e71473120f85d2319c6653e7cc54fd"
+    sha256 arm64_tahoe:   "8ab132419a4c8202f811f791857576916a5a64d6d9e55123f4efd03115cc49b2"
+    sha256 arm64_sequoia: "92e19ddd59b3a47e31534559eff0e876fbbf80766e447fc5afd5237e2b2e5e45"
+    sha256 arm64_sonoma:  "b4c338ad77cb9a5dbeaefa4987af594fde4654c46b04a313ebfda745588e88e0"
+    sha256 tahoe:         "875ecae8496325ec12f7803a0b754264c1158d1debaa3d03c9c1d683b175a8fc"
+    sha256 sequoia:       "33ddcb403a56549dcdf1b1df42d4be71141067a702ed91dd4299052727b27495"
+    sha256 sonoma:        "e68fe5c55ad274fee1bb63787e0aded17fea1ddf49f437874376b76ae0cc9227"
+    sha256 arm64_linux:   "6c39acaa8c9dc2a960f11b2d1f84620d72564a618aa2ce7f320005d550884a68"
+    sha256 x86_64_linux:  "501bbf411ae3f204c110fff60bae26dc3d1ac089549e3ea333dd0677a402ef2c"
   end
 
   head do

@@ -43,6 +43,8 @@ class Gd < Formula
   patch do
     url "https://github.com/libgd/libgd/commit/f4bc1f5c26925548662946ed7cfa473c190a104a.patch?full_index=1"
     sha256 "1015f6e125f139a1e922ac4bc2a18abbc498b0142193fa692846bf0f344a3691"
+    type :cherry_pick
+    resolves "https://github.com/libgd/libgd/pull/766"
   end
 
   def install

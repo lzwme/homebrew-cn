@@ -61,10 +61,12 @@ class Dovecot < Formula
     end
   end
 
-  # `uoff_t` and `plugins/var-expand-crypt` patches, upstream pr ref, https://github.com/dovecot/core/pull/232
+  # `uoff_t` and `plugins/var-expand-crypt` patches
   patch do
     url "https://github.com/dovecot/core/commit/bbfab4976afdf38a7fa966752de33481f9d2c2e5.patch?full_index=1"
     sha256 "f5a77eeaf5978b75a6c7d1d9d4b7623679aec047c3dae63516105774ae6c04de"
+    type :unofficial
+    resolves "https://github.com/dovecot/core/pull/232"
   end
   # `plugins/var-expand-crypt` and `lib-storage-lua` missing `lib-var-expand` in LIBADD
   patch :DATA

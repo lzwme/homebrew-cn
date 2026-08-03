@@ -53,10 +53,11 @@ class Gitg < Formula
   end
 
   # Fix build with newer GCC rejecting an invalid ESC universal character name
-  # PR ref: https://gitlab.gnome.org/GNOME/gitg/-/merge_requests/410
   patch do
     url "https://gitlab.gnome.org/GNOME/gitg/-/commit/22db29e9069042b4e5c07ee496c62c8c63e9b7d5.diff"
     sha256 "570f15ebcf61ff7779ad638120a6542b0f045272c77a5b185a27d2c50f2d3a18"
+    type :backport
+    resolves "https://gitlab.gnome.org/GNOME/gitg/-/merge_requests/410"
   end
 
   def install

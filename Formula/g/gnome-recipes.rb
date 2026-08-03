@@ -41,10 +41,11 @@ class GnomeRecipes < Formula
   end
 
   # Apply Debian patch to support newer libsoup and librest
-  # PR ref: https://gitlab.gnome.org/GNOME/recipes/-/merge_requests/47
   patch do
     url "https://salsa.debian.org/gnome-team/gnome-recipes/-/raw/76a3e12b3a77e76bf0c2bf894481d6b0284dd5af/debian/patches/Port-to-libsoup-3.0-and-librest-1.0.patch"
     sha256 "15a06b277d3961d4a00e71eb37b12f4f63f42c99bc1c1a6c9d9f4ead879d4c32"
+    type :unofficial
+    resolves "https://gitlab.gnome.org/GNOME/recipes/-/merge_requests/47"
   end
 
   def install

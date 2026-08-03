@@ -75,10 +75,6 @@ class Sysdig < Formula
         -DFALCOSECURITY_LIBS_VERSION=#{resource("falcosecurity-libs").version}
         -DUSE_BUNDLED_DEPS=OFF
       ]
-      # TODO: remove on next release which has dropped option
-      # https://github.com/falcosecurity/libs/commit/d45d53a1e0e397658d23b216c3c1716a68481554
-      args << "-DMINIMAL_BUILD=ON" if OS.mac?
-
       system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args(install_prefix: falco_prefix)
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"

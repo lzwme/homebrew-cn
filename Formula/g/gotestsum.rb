@@ -18,10 +18,11 @@ class Gotestsum < Formula
   depends_on "go" => [:build, :test]
 
   # Workaround to inject version as ldflags
-  # PR ref: https://github.com/gotestyourself/gotestsum/pull/528
   patch do
     url "https://github.com/gotestyourself/gotestsum/commit/47842dbc0c69364e0bacb61cc1ac4fce5ed2b6c5.patch?full_index=1"
     sha256 "ed666978dac6b6757b1e71978d8f2bf9726aee5939ebca0d3837efd3073f718c"
+    type :backport
+    resolves "https://github.com/gotestyourself/gotestsum/pull/528"
   end
 
   def install

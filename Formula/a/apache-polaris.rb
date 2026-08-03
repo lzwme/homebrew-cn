@@ -1,8 +1,8 @@
 class ApachePolaris < Formula
   desc "Interoperable, open source catalog for Apache Iceberg"
   homepage "https://polaris.apache.org/"
-  url "https://ghfast.top/https://github.com/apache/polaris/archive/refs/tags/apache-polaris-1.6.0.tar.gz"
-  sha256 "9c265e559eb9a82bee2c684f11cf3be8cc1e907f6a2955a280401c4876020840"
+  url "https://ghfast.top/https://github.com/apache/polaris/archive/refs/tags/apache-polaris-1.7.0.tar.gz"
+  sha256 "cd56c1fd62d07a76154ca3805104b7a6fa947a6b6e38b90b7f14164c32f81659"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class ApachePolaris < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "453f69cb7b207705a0a3ca91c3eff5a890c363425db257eeb656532fcbe42227"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "632ca6a198eb14c8005225a0b1c608929620270ba47caaaf0f52deb27c07a613"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae69a2bc1e5b2153a1305114f2181c3eb1ab86a521c8291f066f6f4f28cead95"
-    sha256 cellar: :any_skip_relocation, sonoma:        "48cae1036eb5f28e462cd93fc913ba4b31ea9caeabc73f2f2a8125f9c6b5a693"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "59c792c1151679f93626b353b362bc2cde30ccf02aae2f192aa36e8892466a8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f166ea2062936471fe427e8ff073e775a5838d3e13c4109052158e06ee530434"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b41354d7b5fc5fda3755221cc93235bed8334dcb77f684096215aa9265eab37b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fbeb6817dd7a3ca6f9da1b3bafa5fb17f6be3e26997aad5d9374cec3a8f4d06"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac3905955df79d3a47de408d83bc2087f74f5949062698aa2ba4a57cdcb5791f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "279fec0e998bb1a3249194ab00a185f983f89bfa429c1aba5dea15f61a7ef6c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bec49597ed014ddc8ab9c25b604c10de95cde452091f4c02e245cb4baa5b8f93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d2ce0bcb01e2b9d0b43181ca510c86919b864c1e6824349dc62a0a111311095"
   end
 
   depends_on "gradle" => :build

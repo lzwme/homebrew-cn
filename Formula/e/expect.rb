@@ -45,6 +45,7 @@ class Expect < Formula
   patch do
     url "https://github.com/iains/darwin-expect/commit/2a98bd855e9bf2732ba6ddbd490b748d5668eeb0.patch?full_index=1"
     sha256 "deb83cfa2475b532c4e63b0d67e640a4deac473300dd986daf650eba63c4b4c0"
+    type :unofficial
   end
 
   def install

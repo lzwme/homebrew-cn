@@ -13,6 +13,8 @@ class Grok < Formula
     patch do
       url "https://github.com/jordansissel/grok/commit/f440e9b4ce29a8e803f09d39e37a5725724aba95.patch?full_index=1"
       sha256 "2f92f3b5956224c6d5674940d1d604c1aafa1c3387bda68a266e853c90d0fa86"
+      type :backport
+      resolves "https://github.com/jordansissel/grok/pull/14"
     end
   end
 

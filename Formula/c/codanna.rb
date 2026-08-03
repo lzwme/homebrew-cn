@@ -1,17 +1,17 @@
 class Codanna < Formula
   desc "Code intelligence system with semantic search"
   homepage "https://docs.codanna.sh/"
-  url "https://ghfast.top/https://github.com/bartolli/codanna/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "81f8dbc9742c9f5e4821aa3a43281fbb60d235616b554e748273cca85aa321a4"
+  url "https://ghfast.top/https://github.com/bartolli/codanna/archive/refs/tags/v0.13.1.tar.gz"
+  sha256 "210db22441d86d3f10a13cd4d5dc5c581db92eb7c4a09576f04eaeff5bd84a7a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "577b3566ea44062b4ba4cbaa9688fde73a86874156c7dece4f0bf8e3155f47a9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18064f6e4c167610e0750edda2b6f05dce29b9f115048fe71a8909e2fb14962d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "facd8951835a92c58444f4ee8134a4e7f16f040019a5cdef836c5ceb9964840f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a696dfb91bc3d1d98479e22d50a9eefae19acf054373b5a46d072254822b9c11"
-    sha256 cellar: :any,                 arm64_linux:   "828010c8e9c738b4ad6056212d11a6bd42f221898d6e3c0858c05be391e388f6"
-    sha256 cellar: :any,                 x86_64_linux:  "7e8a693ece04430e7e490a564f8aa0c5bc1a172d3027b499f506517cbb4eb5d0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee61e6b2c71375ed651641d6970119b93888b9ca630f7470287fabf3cf740ab5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01a6454c9042bc72e37a121dacd9357037c0197f788611f456d069df82c7eb5b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "886e3b19602ce7bfa8fdccbd9334e5c6f7301a382d30bc094b4e0da85cb4c4c2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a77d2aaacf8c007b889756f649bfc6b373a38371f73e1beb6f9f8824c4ca129d"
+    sha256 cellar: :any,                 arm64_linux:   "02d993568699fd9bfb0ef0f03081f4fcf0f5c4952d050043a634401d4f00f019"
+    sha256 cellar: :any,                 x86_64_linux:  "38e170beed4aa138a7ceb3b2de2cf3bc3895546430edbd22421707871c4a3f4b"
   end
 
   depends_on "pkgconf" => :build

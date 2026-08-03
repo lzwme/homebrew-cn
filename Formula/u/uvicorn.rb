@@ -3,18 +3,18 @@ class Uvicorn < Formula
 
   desc "ASGI web server"
   homepage "https://uvicorn.dev/"
-  url "https://files.pythonhosted.org/packages/05/c8/2d307868453a4bca6e64fa3581d122ae0748a0869c53f159339def179c7c/uvicorn-0.52.0.tar.gz"
-  sha256 "ca8876ad6c1983f394157c168b39d52f6dd56dabf5602fa0982751cffc2293ae"
+  url "https://files.pythonhosted.org/packages/03/18/ccce41535dee1be77735592bd19965f3972c82e07ee703d324709496b716/uvicorn-0.52.1.tar.gz"
+  sha256 "112ec661814189acbccd3f7b86460147cc065fc92c0821afa78918780e4354dd"
   license "BSD-3-Clause"
   head "https://github.com/Kludex/uvicorn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0c8bc4c47dc658ec95e416c6d65f32398833089b3d0ef0c05308db996f87b9ca"
-    sha256 cellar: :any, arm64_sequoia: "7f835ad48aae8b5517b1f84468aaeef196576e778345e02dee96cb88226eb934"
-    sha256 cellar: :any, arm64_sonoma:  "8b47cb616ad0f94e33ff8b1f8283eea2270ecf9c0174d50a878ce5ab92c203d5"
-    sha256 cellar: :any, sonoma:        "95b81a9da6da3cc638c6e35b46c155e6827a08a799cc3616b4ce1feec1bfbd8e"
-    sha256 cellar: :any, arm64_linux:   "9421d459d419382265202c82a07924151873bf5b895faef5c21666cbd0391727"
-    sha256 cellar: :any, x86_64_linux:  "bef57d869c6b46b0fb118508a47691e71026011ecdfdb56822da4e68e8153180"
+    sha256 cellar: :any, arm64_tahoe:   "a922061cce95812b7a917fad63cdb6861db011de1ae387530d9de7a0e024ab2c"
+    sha256 cellar: :any, arm64_sequoia: "929d5ba0d4ad19cf5e08e8905700140e76f36c4b789b8972caf49d9c69ae17cb"
+    sha256 cellar: :any, arm64_sonoma:  "fb4e2807f88c43056b4da96f7282483eb2f3ba2e7c4a5da08e777cedbf03b8a7"
+    sha256 cellar: :any, sonoma:        "009ca31f996674dd6f8fea2f6020e224bf65dcaaeb67e26987996478e6405e05"
+    sha256 cellar: :any, arm64_linux:   "d412b8ad46cc0d73af7c54fc5c7bc14369c420dfad66be754ef9fdac17c84b1f"
+    sha256 cellar: :any, x86_64_linux:  "7394b506405233221c98d11ce8962af3c40093b19dd4511164a53d1e20680c69"
   end
 
   depends_on "rust" => :build
@@ -69,8 +69,8 @@ class Uvicorn < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/21/f7/bc3a25c5ec26ce62ce487690becc2f3710bbc7b33338f005ad390db0b986/websockets-16.1.1.tar.gz"
-    sha256 "db234eda965dcce15df96bb9709f587cd87d4d52aaf0e80e2f34ec04c7670c57"
+    url "https://files.pythonhosted.org/packages/f7/96/e01084f83a64bcb3a27994bd0cb0db68ff29d9c6707fae37ec19b18ba990/websockets-17.0.1.tar.gz"
+    sha256 "5baa9bc0dfbae8c507e51c8cf1b6d4628086f7a87bbd3a9952bd5f035451f1cc"
   end
 
   def install

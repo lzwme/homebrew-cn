@@ -10,11 +10,12 @@ class Cmus < Formula
     sha256 "44b96cd5f84b0d84c33097c48454232d5e6a19cd33b9b6503ba9c13b6686bfc7"
 
     # Backport FFmpeg 8 support using Debian patches as recommended by upstream
-    # https://github.com/cmus/cmus/issues/1459#issuecomment-3733435414
     # The same patches are used by Arch Linux.
     patch do
-      url "https://deb.debian.org/debian/pool/main/c/cmus/cmus_2.12.0-2.debian.tar.xz"
-      sha256 "e7b29301e3edd7446fa7bc4c4e89ea5a4580a13e183cc57a59974ca385ec9818"
+      url "https://deb.debian.org/debian/pool/main/c/cmus/cmus_2.12.0-3.debian.tar.xz"
+      sha256 "dcdbda04f42785079be734c3282e8a114a1ee55da01505ac92da56778bd035a4"
+      type :backport
+      resolves "https://github.com/cmus/cmus/issues/1459"
       apply "patches/0003-ip-ffmpeg-more-precise-seeking.patch",
             "patches/0004-ip-ffmpeg-skip-samples-only-when-needed.patch",
             "patches/0005-ip-ffmpeg-remove-excessive-version-checks.patch",

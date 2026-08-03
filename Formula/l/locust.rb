@@ -3,17 +3,17 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/00/0b/98a381e4bbc766433af5c98ca9d56ae14949d20e2059eb4f3cc0d76c288d/locust-2.46.2.tar.gz"
-  sha256 "8792329639c5b4491c1d29458280daf80eee68e0acd5847b60f529bf092e8f08"
+  url "https://files.pythonhosted.org/packages/bc/f7/dfdbc33ad48daaeb3046688df0a461749db730282cc6b3558b7495ac36d6/locust-2.46.3.tar.gz"
+  sha256 "b1d313db9df0a4036d4d905b1dc8585d020a7299239a1bb2e2885b71389253c0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c50af78ce31472c1fcc019c8775cb9e9a2d6f43908231bd5a823733157cc8f00"
-    sha256 cellar: :any, arm64_sequoia: "9e818c71a44646025a807658cd1155b3548e38eb09e78e3856f02219767a9301"
-    sha256 cellar: :any, arm64_sonoma:  "06eed5f59a76bfb6334d456c52cfa610b4dad811e7c1cc1b6fff1da7c6493dea"
-    sha256 cellar: :any, sonoma:        "8855fd137b0d9cd5811a71fb12b592e5076b5b936cc183880e9951f014293e2b"
-    sha256 cellar: :any, arm64_linux:   "acc952fc9b60068a32ac8bbbb6a6542602fbb19f88e21fb2cec81c80432343ee"
-    sha256 cellar: :any, x86_64_linux:  "0c553c85d289e61a073cca2a4b16b45721efac1ecc4d555f4aa075cce1abfbdf"
+    sha256 cellar: :any, arm64_tahoe:   "df27c277a52ab376cdfa457c6aff2421e5b4159c927b4ca75b97ed4687456daa"
+    sha256 cellar: :any, arm64_sequoia: "f56fef6cc7b0b090da372c96737044c6268231d8c910adb9ab3cdc54cb3b142b"
+    sha256 cellar: :any, arm64_sonoma:  "23fd37698ee0394424b6ac4f02db6e7439d76c643d90252d6122a450299ee296"
+    sha256 cellar: :any, sonoma:        "e928161fab02b44fa56a4b416515b32f06be8e005e90b6c5f92ae4fb921af8d4"
+    sha256 cellar: :any, arm64_linux:   "bf31182ef6829de7e3f77a1b8f91935280cc62ff3e2efa5c0dc4cba7f3cf8129"
+    sha256 cellar: :any, x86_64_linux:  "01a0bd3d75fbe820a98f1763602cd8277e5d339f38e2c5b078b9d56e7acddaf8"
   end
 
   depends_on "cmake" => :build # for pyzmq
@@ -145,8 +145,8 @@ class Locust < Formula
   end
 
   resource "python-engineio" do
-    url "https://files.pythonhosted.org/packages/fb/a0/f75491f942184d9960b15e763270f765fe9f239745ca5f9e16289011aed4/python_engineio-4.13.3.tar.gz"
-    sha256 "572b7783e341fed21edbc7cea297ccd378dad79265fdde96aa4664420a7c06c9"
+    url "https://files.pythonhosted.org/packages/cf/56/10a529f5396df653181f747997f970dba31f8f2eac3b9a88c1f9d7bb25c3/python_engineio-4.13.4.tar.gz"
+    sha256 "413cb98d56c62f0f5ef29931592a360d437b82b3fa7ab415da3f6c7d3ebc0cb7"
   end
 
   resource "python-socketio" do

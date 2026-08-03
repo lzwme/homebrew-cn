@@ -98,6 +98,8 @@ class Gtkglext < Formula
   patch :p0 do
     url "https://trac.macports.org/raw-attachment/ticket/56260/patch-index-gdkglshapes-osx.diff"
     sha256 "699ddd676b12a6c087e3b0a7064cc9ef391eac3d84c531b661948bf1699ebcc5"
+    type :unofficial
+    resolves "https://trac.macports.org/ticket/56260"
   end
 
   def install

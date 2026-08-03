@@ -48,10 +48,11 @@ class Gammaray < Formula
   end
 
   # Make rootPath follow symlink to support linked keg.
-  # Submitted upstream: https://github.com/KDAB/GammaRay/pull/1126
   patch do
     url "https://github.com/KDAB/GammaRay/commit/23e98b93e4e430806a43f6cfa5b1dd0ee1ee1c80.patch?full_index=1"
     sha256 "aed9d33a97b4c2dbe11eaff0d06554aa4f80fc2ca10e0f34f1a55526da79423a"
+    type :backport
+    resolves "https://github.com/KDAB/GammaRay/pull/1126"
   end
 
   def install

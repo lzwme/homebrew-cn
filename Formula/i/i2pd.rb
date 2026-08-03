@@ -45,10 +45,10 @@ class I2pd < Formula
 
   post_install_steps do
     # Create symlinks to certificates and configs
-    ln_sf "certificates", "lib/i2pd/certificates", source_base: :opt_pkgshare, target_base: :var
-    ln_sf "i2pd.conf", "lib/i2pd/i2pd.conf", source_base: :pkgetc, target_base: :var
-    ln_sf "subscriptions.txt", "lib/i2pd/subscriptions.txt", source_base: :pkgetc, target_base: :var
-    ln_sf "tunnels.conf", "lib/i2pd/tunnels.conf", source_base: :pkgetc, target_base: :var
+    symlink "{{pkgshare}}/certificates",    "{{var}}/lib/i2pd/certificates",      force: true
+    symlink "{{pkgetc}}/i2pd.conf",         "{{var}}/lib/i2pd/i2pd.conf",         force: true
+    symlink "{{pkgetc}}/subscriptions.txt", "{{var}}/lib/i2pd/subscriptions.txt", force: true
+    symlink "{{pkgetc}}/tunnels.conf",      "{{var}}/lib/i2pd/tunnels.conf",      force: true
   end
 
   service do

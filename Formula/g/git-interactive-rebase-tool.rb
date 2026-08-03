@@ -29,10 +29,12 @@ class GitInteractiveRebaseTool < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # support libgit2 1.9, upstream pr ref, https://github.com/MitMaro/git-interactive-rebase-tool/pull/948
+  # support libgit2 1.9
   patch do
     url "https://github.com/MitMaro/git-interactive-rebase-tool/commit/f3193b3faae665605d6bac4c1bafa798d3d241ae.patch?full_index=1"
     sha256 "32c6cc976407c0d2f41e434e35274f86d64b8b396ed18927c833af656551ebd3"
+    type :backport
+    resolves "https://github.com/MitMaro/git-interactive-rebase-tool/pull/948"
   end
 
   def install

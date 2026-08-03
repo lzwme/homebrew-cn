@@ -40,7 +40,7 @@ cask "deeper" do
     end
   end
   on_tahoe :or_newer do
-    version "3.3.0"
+    version "3.3.1"
 
     url "https://www.titanium-software.fr/download/26/Deeper.dmg"
 
@@ -70,6 +70,8 @@ cask "deeper" do
 
   zap trash: [
     "~/Library/Caches/com.apple.helpd/Generated/Deeper Help*",
+    "~/Library/Caches/com.titanium.Deeper",
+    "~/Library/HTTPStorages/com.titanium.Deeper",
     "~/Library/Logs/Deeper.log",
     "~/Library/Preferences/com.titanium.Deeper.plist",
     "~/Library/Saved Application State/com.titanium.Deeper.savedState",

@@ -28,6 +28,8 @@ class GoAT124 < Formula
   patch do
     url "https://github.com/golang/go/commit/28fbdf7acb4146b5bc3d88128e407d1344691839.patch?full_index=1"
     sha256 "2e05f7e16f2320685547a7ebb240163a8b7f1c7bf9d2f6dc4872ff8b27707a35"
+    type :backport
+    resolves "https://github.com/golang/go/issues/77387"
   end
 
   def install

@@ -21,14 +21,16 @@ class GitRemoteHg < Formula
   conflicts_with "git-cinnabar", because: "both install `git-remote-hg` binaries"
 
   # Workaround for Mercurial 7.2+
-  # PR ref: https://github.com/felipec/git-remote-hg/pull/100
   patch do
     url "https://github.com/felipec/git-remote-hg/commit/bad0a3e5e5dd8352b3ea67d6efa8584ebde5311e.patch?full_index=1"
     sha256 "9a9e1f052571b48747d1c14bd5f09dcf4778b64bb2673ecc9987f46d03537105"
+    type :backport
   end
   patch do
     url "https://github.com/felipec/git-remote-hg/commit/e7ac1caffaf7518d17e158d41f35fe1e0ba057b8.patch?full_index=1"
     sha256 "6177d0e7800e8553ba4976c7746772f3179617a674b229905114228f1ce0c94b"
+    type :unofficial
+    resolves "https://github.com/felipec/git-remote-hg/pull/100"
   end
 
   def install

@@ -80,7 +80,7 @@ class Gcc < Formula
     languages = %w[c c++ objc obj-c++ fortran]
     languages << "m2" unless OS.mac?
 
-    pkgversion = "Homebrew GCC #{pkg_version} #{build.used_options*" "}".strip
+    pkgversion = "Homebrew GCC #{pkg_version}"
 
     # Use `lib/gcc/current` to provide a path that doesn't change with GCC's version.
     args = %W[
@@ -105,7 +105,6 @@ class Gcc < Formula
       cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
       args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
 
-      # System headers may not be in /usr/include
       sdk = MacOS.sdk_path
       args << "--with-sysroot=#{sdk}" if sdk
 
@@ -117,7 +116,6 @@ class Gcc < Formula
         LDFLAGS_FOR_TARGET=-Wl,-headerpad_max_install_names
       ]
     else
-      # Fix Linux error: gnu/stubs-32.h: No such file or directory.
       args << "--disable-multilib"
 
       # Enable to PIE by default to match what the host GCC uses

@@ -36,8 +36,8 @@ class Etcd < Formula
     etcd_pid = spawn bin/"etcd", "--force-new-cluster", "--logger=zap", "--data-dir=#{testpath}"
     sleep 10
 
-    key_base64 = Base64.strict_encode64("brew_test")
-    value_base64 = Base64.strict_encode64(test_string)
+    key_base64 = ["brew_test"].pack("m0")
+    value_base64 = [test_string].pack("m0")
 
     # PUT the key using the v3 API
     put_payload = { key: key_base64, value: value_base64 }.to_json
@@ -49,7 +49,7 @@ class Etcd < Formula
     response_hash = JSON.parse(curl_output)
 
     retrieved_value_base64 = response_hash.dig("kvs", 0, "value")
-    retrieved_value = Base64.decode64(retrieved_value_base64)
+    retrieved_value = retrieved_value_base64.unpack1("m")
 
     assert_equal test_string, retrieved_value
 

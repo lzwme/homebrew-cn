@@ -28,11 +28,14 @@ class Dirac < Formula
   patch do
     url "https://ghfast.top/https://gist.githubusercontent.com/mistydemeo/da8a53abcf057c58b498/raw/bde69c5f07d871542dcb24792110e29e6418d2a3/unititialized-memory.patch"
     sha256 "d5fcbb1b5c9f2f83935d71ebd312e98294121e579edbd7818e3865606da36e10"
+    type :backport
   end
 
   patch do
     url "https://ghfast.top/https://gist.githubusercontent.com/mistydemeo/e729c459525d0d6e9e2d/raw/d9ff69c944b8bde006eef27650c0af36f51479f5/dirac-gcc-fixes.patch"
     sha256 "52c40f2c8aec9174eba2345e6ba9689ced1b8f865c7ced23e7f7ee5fdd6502c3"
+    type :backport
+    resolves "https://sourceforge.net/p/dirac/bugs/2984304/"
   end
 
   # HACK: the configure script, which assumes any compiler that

@@ -93,17 +93,19 @@ class GhcAT92 < Formula
   end
 
   # Backport fix for building docs with sphinx-doc 6.
-  # Ref: https://gitlab.haskell.org/ghc/ghc/-/merge_requests/9625
   patch do
     url "https://gitlab.haskell.org/ghc/ghc/-/commit/00dc51060881df81258ba3b3bdf447294618a4de.diff"
     sha256 "354baeb8727fbbfb6da2e88f9748acaab23bcccb5806f8f59787997753231dbb"
+    type :backport
+    resolves "https://gitlab.haskell.org/ghc/ghc/-/merge_requests/9625"
   end
 
   # Backport fix for building docs with sphinx-doc 7.
-  # Ref: https://gitlab.haskell.org/ghc/ghc/-/merge_requests/10520
   patch do
     url "https://gitlab.haskell.org/ghc/ghc/-/commit/70526f5bd8886126f49833ef20604a2c6477780a.diff"
     sha256 "54cdde1ca5d1b6fe3bbad8d0eac2b8c112ca1f346c4086d1e7361fa9510f1f44"
+    type :backport
+    resolves "https://gitlab.haskell.org/ghc/ghc/-/merge_requests/10520"
   end
 
   def install

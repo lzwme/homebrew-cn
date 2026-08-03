@@ -32,9 +32,7 @@ class Deark < Formula
   end
 
   test do
-    require "base64"
-
-    (testpath/"test.gz").write ::Base64.decode64 <<~EOS
+    (testpath/"test.gz").write <<~EOS.unpack1("m")
       H4sICKU51VoAA3Rlc3QudHh0APNIzcnJ11HwyM9NTSpKLVfkAgBuKJNJEQAAAA==
     EOS
     system bin/"deark", "test.gz"

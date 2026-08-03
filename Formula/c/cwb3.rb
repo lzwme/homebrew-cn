@@ -62,15 +62,17 @@ class Cwb3 < Formula
     system "make", "install", *args
 
     # Avoid rebuilds when dependencies are bumped.
+    glib_prefix = formula_opt_prefix("glib")
+    pcre2_prefix = formula_opt_prefix("pcre2")
     inreplace bin/"cwb-config" do |s|
-      s.gsub! Formula["glib"].prefix.realpath, formula_opt_prefix("glib")
-      s.gsub! Formula["pcre2"].prefix.realpath, formula_opt_prefix("pcre2")
+      s.gsub! glib_prefix.realpath, glib_prefix
+      s.gsub! pcre2_prefix.realpath, pcre2_prefix
     end
   end
 
   post_install_steps do
     # make sure default registry exists
-    mkdir_p "share/cwb/registry", base: :homebrew_prefix
+    mkdir_p "{{HOMEBREW_PREFIX}}/share/cwb/registry"
   end
 
   def caveats

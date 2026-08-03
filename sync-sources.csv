@@ -5914,6 +5914,7 @@ Homebrew-homebrew-core/Formula/p/poco.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pocsuite3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pod2man.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/podcast-archiver.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/podcast-dl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/podiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/podlet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/podman-compose.rb, Homebrew/homebrew-core, 0
@@ -7775,6 +7776,7 @@ Homebrew-homebrew-core/Formula/t/typos-lsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typst.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typstyle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typtea.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tytanic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tzdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tzdiff.rb, Homebrew/homebrew-core, 1
@@ -10219,6 +10221,7 @@ Homebrew-homebrew-cask/Casks/font/font-a/font-anka-coder.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask/Casks/font/font-a/font-annapurna-sil.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-annie-use-your-telescope.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-annotation-mono.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-a/font-annotationmono-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-anonymice-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-anonymice-powerline.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-anonymous-pro.rb, Homebrew/homebrew-cask, 0
@@ -10898,6 +10901,7 @@ Homebrew-homebrew-cask/Casks/font/font-g/font-goldman.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-g/font-golos-text.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-golos-ui.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-google-sans-code.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-g/font-googlesanscode-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-goorm-sans-code.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-goorm-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-gorditas.rb, Homebrew/homebrew-cask, 0
@@ -13363,6 +13367,7 @@ Homebrew-homebrew-cask/Casks/l/leela.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/legcord.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lego-mindstorms-ev3.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lehreroffice.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/lemonade-server.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lemonlime.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lens.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/leocad.rb, Homebrew/homebrew-cask, 1
