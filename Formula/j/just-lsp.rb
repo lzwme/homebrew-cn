@@ -1,18 +1,18 @@
 class JustLsp < Formula
   desc "Language server for just"
   homepage "https://github.com/terror/just-lsp"
-  url "https://ghfast.top/https://github.com/terror/just-lsp/archive/refs/tags/0.6.0.tar.gz"
-  sha256 "2561ee156e133e377a262d2cf7ef5cf867aeb1eb46a4c6f95a92c174f8fc7f07"
+  url "https://ghfast.top/https://github.com/terror/just-lsp/archive/refs/tags/0.6.1.tar.gz"
+  sha256 "70fc2fd7c1a9c7dce750a7afcd03fd0c830dc922722cb0caa4b71e895b2c7df4"
   license "CC0-1.0"
   head "https://github.com/terror/just-lsp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a9f62fb78891c42b8e3d0141c22431644012aa1923035756de81692b0ff3108"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f99ed1ba486002facf1e0d26cfbea5f5ffc93e6bd8b7849f7f1a98dc9de5e1c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ae13f54806cb839c03792b3fee82fdec397d331e7eac482375e73b6d03ea929"
-    sha256 cellar: :any_skip_relocation, sonoma:        "56a611e5a03a9ccc330c25fba09940d449c2cac98075f00573a0d4fb8d12c58f"
-    sha256 cellar: :any,                 arm64_linux:   "c30cadf2896bf4d3ef27c42ce4843fdc910eb5513fe1b071c09811f62f7ead72"
-    sha256 cellar: :any,                 x86_64_linux:  "18387e6f33f55989e5e752f1f59c0132bce84c7c7e3bccb320d30449f3080cd2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ba7303d82a299c159b214632ed1ad3074e405c78939c5c586e352f94124503f8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "63f8c6ef73d1b90a7fbf58fc5e69b7769f35e43886af316004d3c3f64605ce56"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "052b12bbf261707c1198d167054f08300796cb134845e74bb5985d0ccb40211d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "894755c19c1a032f43e6c6083a0cfa8e172e136a2c92166797ded6010d611824"
+    sha256 cellar: :any,                 arm64_linux:   "b936293d61457e219bb7f98a214a54ed089593d16414d49e71ead59918bb5c41"
+    sha256 cellar: :any,                 x86_64_linux:  "3223715123d41e85f31096a4c80e792c1e868ddec12601845c258940a7ed457d"
   end
 
   depends_on "rust" => :build

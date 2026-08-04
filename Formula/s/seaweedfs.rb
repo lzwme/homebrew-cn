@@ -13,12 +13,13 @@ class Seaweedfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9798d9187392bddcbb5c06b7bf9bde5efc0681b8a44480e2fa78b889080475e9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4766a24b88cd66bc2b04800bf12f59805a663c747d9694f3b8e5a3391601c304"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4fe7761f8b4d3717c82a7c10002825be16a974f5d3b2d67b9ec825dd30900a63"
-    sha256 cellar: :any_skip_relocation, sonoma:        "192b1b1e598f580588a8a55fc277219cd2bf3148ae92cf2acf0bc18ec939f3d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "06c8629580bde6e40985554a72bae8540086b55b2b997db52b5857a0fbaa7f3a"
-    sha256 cellar: :any,                 x86_64_linux:  "3339114415a3a5d6db38306eed26aa2a27f2a45f93bc4a2cdba25e592ca455a5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a3b733d6951c9a805caf9d03d781840396800b109dc99aaa0624895cd35d8e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33933f7d66abb880b17a9cd22c997f00fbe7160a23e4520939f4baf31595774a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09f6c090c0f87177557d47d746a6a35d05fe4b3f2278922d50b3423c7f63a844"
+    sha256 cellar: :any_skip_relocation, sonoma:        "15aea986c20ff1b8dac4de10e6e3145dd618cebe6acc806d3ff372c8a6019ea5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c4ed5d6839d40c6b9f9c82d9f96791ae334ed0302ddb239ac77f21914b04388"
+    sha256 cellar: :any,                 x86_64_linux:  "b1876fedb89f377653c996bf0271da111303a5557a608b24feccbb2a262879c7"
   end
 
   depends_on "go" => :build
@@ -26,10 +27,7 @@ class Seaweedfs < Formula
   def install
     ldflags = %W[-X github.com/seaweedfs/seaweedfs/weed/util.COMMIT=#{Utils.git_head}]
     system "go", "build", *std_go_args(ldflags:, output: bin/"weed"), "./weed"
-  end
-
-  post_install_steps do
-    mkdir_p "seaweedfs", base: :var
+    (var/"seaweedfs").mkpath
   end
 
   service do

@@ -1,8 +1,8 @@
 class Glslang < Formula
   desc "OpenGL and OpenGL ES reference compiler for shading languages"
   homepage "https://www.khronos.org/opengles/sdk/Reference-Compiler/"
-  url "https://ghfast.top/https://github.com/KhronosGroup/glslang/archive/refs/tags/16.4.0.tar.gz"
-  sha256 "c634d6237eb0cc04d5ddf5dc9955daa175d82b0f8797acab45b49965e9f6df13"
+  url "https://ghfast.top/https://github.com/KhronosGroup/glslang/archive/refs/tags/16.5.0.tar.gz"
+  sha256 "01af17195fbeb59e39e31e9506de35bb39dfd35807ea0c9a1a99d7d1183ddd45"
   license all_of: ["BSD-3-Clause", "GPL-3.0-or-later", "MIT", "Apache-2.0"]
   compatibility_version 1
   head "https://github.com/KhronosGroup/glslang.git", branch: "main"
@@ -13,12 +13,12 @@ class Glslang < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "9138b48c425083e48d57265bd1698c5d5838a189979b2e4ea3f46a9ccf7bd057"
-    sha256 cellar: :any, arm64_sequoia: "e66b6b2248d9c421ca4569af2544aeb78956189db6e0c09a71a414b5a5c9de41"
-    sha256 cellar: :any, arm64_sonoma:  "aa725e2d32f33b1175a5b35d2ba81931702dc727aa8bef009824550e0f720bce"
-    sha256 cellar: :any, sonoma:        "ffcd14e9f1511451a05a2cedb3e970e2b47e2fe1b42b2228de40c3c80e91c6b7"
-    sha256 cellar: :any, arm64_linux:   "21f55f74a1f17588534b1a066a51d435c8f23c491efba32bfacba8461660bc38"
-    sha256 cellar: :any, x86_64_linux:  "f3b6877876ef2651cc4560c5b24d7ded7bdbdd46cc701faaa3a885973e9ac1d2"
+    sha256 cellar: :any, arm64_tahoe:   "b14c788c5c9c3fd1b115a1ace94e0c88394830906b303415f4099ed6ee34dec4"
+    sha256 cellar: :any, arm64_sequoia: "878541e1f3d9aac590992db34e7f7738a3d596d80b00074c17a786c74a99776e"
+    sha256 cellar: :any, arm64_sonoma:  "03fb2c015a54b7674d6ed5c6feb57ea75df30b79a9249361e3ac25f91c04466d"
+    sha256 cellar: :any, sonoma:        "42735380880b59539e319bb51d6c3444520adf310c933f5624cc61a73e36400e"
+    sha256 cellar: :any, arm64_linux:   "35aa345c2298c4de03542b1a3007c8fef93014e57ce7bb4b6cb8e75b6b0754aa"
+    sha256 cellar: :any, x86_64_linux:  "465e795f4b6e62d9d342107c7e86bfa6337012405a982d1e3181d79c012956be"
   end
 
   depends_on "cmake" => :build

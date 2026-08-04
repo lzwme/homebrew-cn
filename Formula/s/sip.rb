@@ -3,14 +3,13 @@ class Sip < Formula
 
   desc "Tool to create Python bindings for C and C++ libraries"
   homepage "https://python-sip.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/02/b1/79bff1c49a9e19ffe0211cb8905cc514c3f6b8f3f7ae55a40403d346c076/sip-6.15.3.tar.gz"
-  sha256 "bb2516983f9f716d321e5157c00d0de0c12422eba73b8f43a44610a0f6622438"
+  url "https://files.pythonhosted.org/packages/35/cb/4b1c18c22e291bb08dfc028bd1577dc7e8818e83a0338557a4de1f203d65/sip-6.16.0.tar.gz"
+  sha256 "22dcb9d02347a3af22a2cba41730c9467f1f781362e97c5eea4ec75c4b7e4ffe"
   license "BSD-2-Clause"
-  revision 1
   head "https://github.com/Python-SIP/sip.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a935e30a8bef0ff09bf921d35113002bb924414f7f45b9a8a60d9f6116b46499"
+    sha256 cellar: :any_skip_relocation, all: "60f2641e58b7f0b7307963dd442d181d1eff41af062da6d8969ca1270e7b621d"
   end
 
   depends_on "python@3.14"

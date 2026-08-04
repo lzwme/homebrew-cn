@@ -3,14 +3,14 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/d8/2c/c7aa242bd954c0370e95053fe6d746b456d9296ac9dd5372642a9b51aa82/rapid_mlx-0.11.5.tar.gz"
-  sha256 "ab27d92d8b090f9227ca058558c72ba22ec539c926d51ecaf57664ce56b8f56b"
+  url "https://files.pythonhosted.org/packages/de/76/95d0b994d857404b51301c4d01f39a866faff34c587e82fdad4c4f409412/rapid_mlx-0.11.9.tar.gz"
+  sha256 "36e758a427333df1858ec6ce8943e4c13c77531732f9c21bcec545bf7f75b4b0"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0791b12f1ee0a9a5838a33f6027ec9a26f360e363f2dc89623bfc7e9c0d6cef0"
-    sha256 cellar: :any, arm64_sequoia: "b8715ec876509ffa051bbc981d080a08f0e181041f6d127cbd49904c5bc0523e"
-    sha256 cellar: :any, arm64_sonoma:  "8b3dc07946d0fbd939a1fd8f829ebaf18c12699f05d1ba04889d12424ce3b09e"
+    sha256 cellar: :any, arm64_tahoe:   "02c808de7361556745e76d1f426053fb60250f1e586c7e42056d5762609bd6b9"
+    sha256 cellar: :any, arm64_sequoia: "2c58ab76c5b0209c427aaa9612abee2faf12a68002bbe695097cd224df042c8e"
+    sha256 cellar: :any, arm64_sonoma:  "73b28be0ec5acd7d2dc7bb4958a91d509210b034f979be6cf768e48b2fa03ff0"
   end
 
   depends_on "cmake" => :build
@@ -304,8 +304,8 @@ class RapidMlx < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/05/c8/2d307868453a4bca6e64fa3581d122ae0748a0869c53f159339def179c7c/uvicorn-0.52.0.tar.gz"
-    sha256 "ca8876ad6c1983f394157c168b39d52f6dd56dabf5602fa0982751cffc2293ae"
+    url "https://files.pythonhosted.org/packages/03/18/ccce41535dee1be77735592bd19965f3972c82e07ee703d324709496b716/uvicorn-0.52.1.tar.gz"
+    sha256 "112ec661814189acbccd3f7b86460147cc065fc92c0821afa78918780e4354dd"
   end
 
   resource "websockets" do

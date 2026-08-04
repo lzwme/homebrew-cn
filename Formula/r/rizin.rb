@@ -70,7 +70,7 @@ class Rizin < Formula
   end
 
   post_install_steps do
-    mkdir_p "lib/rizin/plugins", base: :homebrew_prefix
+    mkdir_p "{{HOMEBREW_PREFIX}}/lib/rizin/plugins"
   end
 
   def caveats

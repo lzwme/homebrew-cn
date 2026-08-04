@@ -1,8 +1,8 @@
 class Sdl3 < Formula
   desc "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   homepage "https://libsdl.org/"
-  url "https://ghfast.top/https://github.com/libsdl-org/SDL/releases/download/release-3.4.12/SDL3-3.4.12.tar.gz"
-  sha256 "f07b958a9ac5020fb7a44cadb957f658b2149c3c8abb4f63145fac9303249db7"
+  url "https://ghfast.top/https://github.com/libsdl-org/SDL/releases/download/release-3.4.14/SDL3-3.4.14.tar.gz"
+  sha256 "30d4aa2b3037718142b32dffd4e72f917ebb6cc5227150e7bb9c45efb2153aeb"
   license "Zlib"
   compatibility_version 1
   head "https://github.com/libsdl-org/SDL.git", branch: "main"
@@ -14,13 +14,12 @@ class Sdl3 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "7ed22ed554c2a9ddaaa2181dd09e76adac5f59d7cf7595b0ce5fbbfbfc9978ab"
-    sha256 cellar: :any, arm64_sequoia: "ce2e2e3388cbc7c452fa821c7d6559e9aae6af5536777b471b216f7a6c809fc2"
-    sha256 cellar: :any, arm64_sonoma:  "789cd4ec7b3c0fa10e54f1d6aabf78bfca8e6965ffd412e7e2b6a4495bac8b01"
-    sha256 cellar: :any, sonoma:        "dc7dc0ac1c9e24b0159ced0605c3cad4012eb702be5f9a1c2d0f81a125b41dd0"
-    sha256 cellar: :any, arm64_linux:   "a6b1f0cc840ceabab53d1b272e4b5d99cd5590d67a623fd2e4a32429b962f893"
-    sha256 cellar: :any, x86_64_linux:  "434c00e5ec91d014f17cf381e9bae9708a7ed3ac92abf9cf53db314295108ea2"
+    sha256 cellar: :any, arm64_tahoe:   "259aa68688ef848e5c44755eb021b6024b3f6e68e3449a5d74d8bdad7df3b0d6"
+    sha256 cellar: :any, arm64_sequoia: "012d5bb068548cb42df1fd6ab231a8ef76e706a82822d84ed71a10be7f155263"
+    sha256 cellar: :any, arm64_sonoma:  "7fb79c750712a4cbd9e8263cce54ae43c789cf1016c70684ebe04fad87d70768"
+    sha256 cellar: :any, sonoma:        "59bac3409af506f51839fc260b951d16a4f264561c6d9d0715f98f4098300ad5"
+    sha256 cellar: :any, arm64_linux:   "fbf7af7fa55a3e8daf045e3c1e1b7e36c1b3743d5f2f5550611f7647029af7be"
+    sha256 cellar: :any, x86_64_linux:  "3d24a575e814b1f349e4df8aa0b2657acfcf2fef7ab2cbf34b44d485e981b6d9"
   end
 
   depends_on "cmake" => :build

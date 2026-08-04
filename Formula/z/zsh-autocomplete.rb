@@ -1,13 +1,13 @@
 class ZshAutocomplete < Formula
   desc "Real-time type-ahead completion for Zsh"
   homepage "https://github.com/marlonrichert/zsh-autocomplete"
-  url "https://ghfast.top/https://github.com/marlonrichert/zsh-autocomplete/archive/refs/tags/25.03.19.tar.gz"
-  sha256 "866451178e35b50f7f86a6b50d8cdb28494bb3a7be02b1c7adf909390a9774fb"
+  url "https://ghfast.top/https://github.com/marlonrichert/zsh-autocomplete/archive/refs/tags/26.08.03.tar.gz"
+  sha256 "c550d1b195bc343e9fe32bfb4a6d0ccbfec24ebb9efd8efe95be35755bd3bbdb"
   license "MIT"
   head "https://github.com/marlonrichert/zsh-autocomplete.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c2293efac410eae4220f21942481793ad9b13376b83f0f3225f90e0d5d8e305b"
+    sha256 cellar: :any_skip_relocation, all: "c625537a82993e6adc6cb7cd264b5a9426711dfa690214929e393ae571c3bb9b"
   end
 
   depends_on "clitest" => :test

@@ -1,8 +1,8 @@
 class Vcluster < Formula
   desc "Creates fully functional virtual k8s cluster inside host k8s cluster's namespace"
   homepage "https://www.vcluster.com"
-  url "https://ghfast.top/https://github.com/loft-sh/vcluster/archive/refs/tags/v0.36.0.tar.gz"
-  sha256 "c8034401f02978f567b2e51fa2ae3af7adb5cd1328c56826bf45ac5a136e9514"
+  url "https://ghfast.top/https://github.com/loft-sh/vcluster/archive/refs/tags/v0.36.1.tar.gz"
+  sha256 "9c290955988cb609f16e0a8b72a0ff454e13a9521414641738731f6493b83c0a"
   license "Apache-2.0"
   head "https://github.com/loft-sh/vcluster.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Vcluster < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d58695064aa4b9b30582073e74637afceb59a63cfb5ffd0982d431f74ee9daf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d908e0c9bcb2e9e56a9b4686c4735e64bb352fbec6e915770a2533cadc644598"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dcc9fdd470c96f52404c1be440b66ed5b33d4ecc9a970bfc54922b5ed5889241"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9e99c0b7d26ef5ae8a528f6eea3b9cf8b4906b257dd269f26b54e2c376d6ee9b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75a6dcab83411f8a8ce763ba3491b0efccad4064ff895c6ccb7e0019bbc3a90a"
-    sha256 cellar: :any,                 x86_64_linux:  "18c51512fd36753b17d35f37917992c85294fe3c2af6a470c3c837aa50c9f4a1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f7cbbae380abb2789619a34ba51d4f570ff0ded069034ef9fa502f69d814692"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5db413cddf2519a1d6a3df66863677276200b4415a0790246f8fdfaa3c99c95c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c16e3f987bfc01db3abf545a89fb7998c9a695b994d22e3ac34dbdf17379287"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7b70a01d35b559424944d5ed8215e54d9a7907276198dafdb9262918b09cbbae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2cb391979f3119507d8a100f0a9b44a7d885047b143119d72035151b18e0ada"
+    sha256 cellar: :any,                 x86_64_linux:  "10944349f1ffafe5556c3f13fae18529227251480600a2c5627b8045b1385c5f"
   end
 
   depends_on "go" => :build

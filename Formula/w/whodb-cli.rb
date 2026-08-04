@@ -1,18 +1,18 @@
 class WhodbCli < Formula
   desc "Database management CLI with TUI interface, MCP server support, AI, and more"
   homepage "https://whodb.com/"
-  url "https://ghfast.top/https://github.com/clidey/whodb/archive/refs/tags/0.122.0.tar.gz"
-  sha256 "f7395155ceb9ab991a00cb32c5dcbc99854067d0c96f6fb80feb7f2fc4ca52fd"
+  url "https://ghfast.top/https://github.com/clidey/whodb/archive/refs/tags/0.123.0.tar.gz"
+  sha256 "9786e6cdfa67d903bf3a739a5d265a31d5205caa8dfad48b9e2d0c6f914c8350"
   license "Apache-2.0"
   head "https://github.com/clidey/whodb.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d82e12c4fe8811434098b4a02d826a920dafea33103778e897d03f0b3c74a51"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "862a0a5719945facb536712b402c2a043cefc8c9b2a83fb8f877ec4bde25623c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac549d09d1557c32a82c411ef5fab43115d41a74f7168754ad7907dbdafd97fe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "385f411ee99013ab9fc71fa32dc9f69231295d55c5b6f2eb5e2d97cd428e7c3e"
-    sha256 cellar: :any,                 arm64_linux:   "81957c7c21bc5f51abe5b1b7f850bb8f6df79e3b987e9839d0e41e1edbceab63"
-    sha256 cellar: :any,                 x86_64_linux:  "cd79faae0bf1b0aaf9e662a017fd8359cc2f4ae412939347c5aa4c828c2e6af9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90b4ef7d25086b00dd000a7c0274065244e6b38d319aef10c41016409a79ff2c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19e9379a9f9ab40f520b0cd95131b2b09d80973f5762c0142bb53d595bcd72ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e00ffee82c261ff076527fd5ffe016ff7a1eb5a80aa5ffb1e025d56e6852009b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "70293360196686ed9142c495b8cde94b204b9905181ae472b0cc3b5ce4ad621e"
+    sha256 cellar: :any,                 arm64_linux:   "ee6f8f9bbc5968a8db2c136899d4ecf62d5ca5669c511f80ed97afa6af29cd72"
+    sha256 cellar: :any,                 x86_64_linux:  "dc4731bd8b2f8f141a680b2e012ed7380fd02a376583dcbcf606f7cdf08dab81"
   end
 
   depends_on "go" => :build

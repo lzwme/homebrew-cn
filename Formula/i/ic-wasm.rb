@@ -1,17 +1,17 @@
 class IcWasm < Formula
   desc "CLI tool for performing Wasm transformations specific to ICP canisters"
   homepage "https://github.com/dfinity/ic-wasm"
-  url "https://ghfast.top/https://github.com/dfinity/ic-wasm/archive/refs/tags/0.11.0.tar.gz"
-  sha256 "5abe32285ff6b652942ac363802350b69fdca47757b245e05e44e810fd7017eb"
+  url "https://ghfast.top/https://github.com/dfinity/ic-wasm/archive/refs/tags/0.11.1.tar.gz"
+  sha256 "0ad9b97cc85a66d862f0b855860c4c2fbaa247c62fcc7b6092c18ba4ac4c5199"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f7b31f0459e8eb15aa68456e13b5f9eef9aca3d344b5cf2acb2ce9cab9e7784"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec2ff204ac70dd01f2942ad42a51237710aac02111406b4aca3a5d2a2af3841f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "037b8cafb1bd0ee0232d6e9735e014b6495ebc322883f1b000125ffaca1eca13"
-    sha256 cellar: :any_skip_relocation, sonoma:        "273a4d56acc9fc63641bfcbb7e986edbcff8388b507e1b0f6878b26581b9c6c6"
-    sha256 cellar: :any,                 arm64_linux:   "cbbf9685297c1c9d06f9d6f20a60d8ce1ef0e944333e9eb6955b7ae8574843af"
-    sha256 cellar: :any,                 x86_64_linux:  "fcf5456f9490f238f5257d08f1e30d7d6a9f3213b2eee47b3c442bd7e65ffe68"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00c5bd941b3aaba552b0fdf5b484f3a2b6bbfc370c327aee7e3206a9191fdfd8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db165fc477d53fd00b9dbea404845ed74d01a01193c294795290c233b887a8e6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e861bf507eef93bb35114164df4a18ccaa060376e46c360e1cabd70ea613f2a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9f8eaae57653b8efb76e89ece8b5beb8da7fc0dc598c09372b88e7c0be11647d"
+    sha256 cellar: :any,                 arm64_linux:   "7b5ac667397692b364e3d564b130b5ef9735f5322d5cf25361a737b042b795e3"
+    sha256 cellar: :any,                 x86_64_linux:  "b2eadc7b51e72fdccf409b0647ba811d98290a9f77e4e95ac24423ef355ae4b1"
   end
 
   depends_on "rust" => :build

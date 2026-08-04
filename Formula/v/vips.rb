@@ -1,10 +1,9 @@
 class Vips < Formula
   desc "Image processing library"
   homepage "https://github.com/libvips/libvips"
-  url "https://ghfast.top/https://github.com/libvips/libvips/releases/download/v8.18.4/vips-8.18.4.tar.xz"
-  sha256 "2677bad6c422617fd1172d359c16af34e736965d042c214203a87187d26ff037"
+  url "https://ghfast.top/https://github.com/libvips/libvips/releases/download/v8.18.5/vips-8.18.5.tar.xz"
+  sha256 "8c4e6332d818249ed05ce98e36e6ed8a08e3249ac70f69680842ab2e5fee8510"
   license "LGPL-2.1-or-later"
-  revision 1
   compatibility_version 1
 
   livecheck do
@@ -13,13 +12,12 @@ class Vips < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "c9a111ec8dc239d4a43c4add80a6ec8a1982d5b4155ee65f01cc046aaa60de51"
-    sha256 arm64_sequoia: "75f28765db590265b4d522b3fd624b6ff76e5ce45bd2e3cb99813ac59d45f0e8"
-    sha256 arm64_sonoma:  "558ed7d4805791e59998946cc922ec9115b812a8cd66e9368f45b5481215108b"
-    sha256 sonoma:        "c734c2d72a98cdc195bc1de637cc7011aa45d17b5b6ae472bc485c98d3d2ec08"
-    sha256 arm64_linux:   "97dd8b0122e465f34aa72f1ad745f7315f2519a70fe3eb31fa956c61241a9bab"
-    sha256 x86_64_linux:  "b93a29e5de6247b3814db4b4d754970973d741d2116f8650f1512875a6ad1357"
+    sha256 arm64_tahoe:   "b23332485f8fef91aede9e019ac4b92564094a9b8ffb74986673bdfe7f7774e6"
+    sha256 arm64_sequoia: "384fcca2a189fba25f7c1924311acb602ef9eb85b91acf321c20b9dd3dcc5ffa"
+    sha256 arm64_sonoma:  "747db707a728d6809dbc84db397d17294c7103d81f422c3fc7c3b53b4dca0402"
+    sha256 sonoma:        "885d237e87150813529dc9a5d3eb8c9ca59ff92d0f518c0aec5a1119dd5935f0"
+    sha256 arm64_linux:   "b2cf10f5e36c4281034a1b151c60fef9727c611ce7f910508da621888c7232ef"
+    sha256 x86_64_linux:  "883e32bc588a5e36a596ba3ebd2b4f5f53ff6cfe445dbfc38414c1dbb8951094"
   end
 
   depends_on "gettext" => :build

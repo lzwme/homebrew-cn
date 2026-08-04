@@ -1,18 +1,18 @@
 class Dune < Formula
   desc "Composable build system for OCaml"
   homepage "https://dune.build/"
-  url "https://ghfast.top/https://github.com/ocaml/dune/releases/download/3.24.1/dune-3.24.1.tbz"
-  sha256 "0a8eaa62dfcb945802bcaf9a6f2026ca5228333ee391a1bdedd3e70a3f26ea2c"
+  url "https://ghfast.top/https://github.com/ocaml/dune/releases/download/3.24.2/dune-3.24.2.tbz"
+  sha256 "472798691b0216daf538709f0f4703b3617ef24ad0866c9096068baaba4d762a"
   license "MIT"
   head "https://github.com/ocaml/dune.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5842870884f8e61cd822df1d80985fe209a164747b48f169c149b9aac826501"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ded89f615f2cbb1f4fc782b9be481d38b197a67236506f3699925b49f9acaba3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07d8d46a57a5ab04348c8d6fbafb0d4ecec6f3c42bda2d9cc03b5bff5820ea5a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0fe2ddddc847873d4caf45bbd536f1bc077c795ddcae0799ea7a7c931f213924"
-    sha256 cellar: :any,                 arm64_linux:   "28d4c17ab5d8648dcea7551b89e4a6d071a8de843d1c72e73b42215cfc3c7fea"
-    sha256 cellar: :any,                 x86_64_linux:  "4fe6e6e8623cc9ba8ba4c69db9e8902a417dc67859eeaa61cb1be4072a0dca2f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12c3d86b9fec629cc684bf27fc7f582458aab195a96c7f587c3d9caee0069156"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b56014ff9caa801b199d477f623fcfeafc55ddb28ea388273c67201b602a169"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bbaf5f880c670ccc6fc55582db2e9fb51ba4a8f831e3fdaa316f77c000396852"
+    sha256 cellar: :any_skip_relocation, sonoma:        "939f77f1b7b6a4cc98f0822ab57f66d286704c63c9524f7404d902f4264a5c26"
+    sha256 cellar: :any,                 arm64_linux:   "1bfc1c74b22b5bf74a0cfe4a6bb6fa93d5673b4d8cc56c38640ddc6c9bfe7b8b"
+    sha256 cellar: :any,                 x86_64_linux:  "7e77141e7a101059d149997ef6c88b403c78094b30076f0000ec7ddb20266178"
   end
 
   depends_on "ocaml" => [:build, :test]

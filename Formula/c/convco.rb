@@ -1,18 +1,18 @@
 class Convco < Formula
   desc "Conventional commits, changelog, versioning, validation"
   homepage "https://convco.github.io"
-  url "https://ghfast.top/https://github.com/convco/convco/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "3a9b33e41561f80eaa9252673a1ee1b4857743e2ff7b33079d0b616c772fa981"
+  url "https://ghfast.top/https://github.com/convco/convco/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "62cdc7f5797d33ed42c0919789ed49d00816985fff414d1490dcc705d8a7fead"
   license "MIT"
   head "https://github.com/convco/convco.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42bc610b05790d515b8a43e2c3f27ac9b31aa101f33dcf87b5f424970c692ecf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "359cd15d689c6de88766baf7a390b5fe47c13d605bb9d0e3cf2c76fa84b41492"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26e6dbda7b0cf1dd22ca0968088c6319c498f991a78a55ad0eeea5960309e716"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8567191973fe7ccf6f1a05a981580708e5b7f0cbac2c234c54c04eb57a437ff8"
-    sha256 cellar: :any,                 arm64_linux:   "f8ceba225df3a02e271eb6e9745144c899973d979dad5fbc325fdcfbe0617cb0"
-    sha256 cellar: :any,                 x86_64_linux:  "d824e0b16080c900acb3836f6ea3a7c15d8f8a67a4e90811a4071386dd3cc937"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b6be5139acd00e53d48f6726a1a2833cb20245c8c01ba69d7c43dd200e74189"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14102f29a1cd4947fdca93c7aee0d7b1f94b9d68de3330df781ad3831e2e4b08"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "caa5bae4a721642dde0a18873c1ac48ded962b98dc2ce671d13bf7cc32371caa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e40edd2c02487839f1536677b79cf7eff90479c91c4a1e77d49a2328c56beef7"
+    sha256 cellar: :any,                 arm64_linux:   "4f7ec508e0ad4428fb15107b242243d25c8ed0b0bfe35e97e750f2c605a5ba9c"
+    sha256 cellar: :any,                 x86_64_linux:  "5df5f3c83e853fd91f283d203aeaf5eaf1606ddf6849b5415882b8334163a05b"
   end
 
   depends_on "rust" => :build

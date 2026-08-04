@@ -75,9 +75,9 @@ class Guile < Formula
   end
 
   post_install_steps do
-    mkdir_p "lib/guile/3.0/site-ccache", base: :homebrew_prefix
-    mkdir_p "lib/guile/3.0/extensions", base: :homebrew_prefix
-    mkdir_p "share/guile/site/3.0", base: :homebrew_prefix
+    mkdir_p "{{HOMEBREW_PREFIX}}/lib/guile/3.0/site-ccache"
+    mkdir_p "{{HOMEBREW_PREFIX}}/lib/guile/3.0/extensions"
+    mkdir_p "{{HOMEBREW_PREFIX}}/share/guile/site/3.0"
   end
 
   def caveats

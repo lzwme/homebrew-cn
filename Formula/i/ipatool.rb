@@ -1,18 +1,18 @@
 class Ipatool < Formula
   desc "CLI tool for searching and downloading app packages from the iOS App Store"
   homepage "https://github.com/majd/ipatool"
-  url "https://ghfast.top/https://github.com/majd/ipatool/archive/refs/tags/v2.3.1.tar.gz"
-  sha256 "2fe03975acd6eb184c3cc6e0bb5d49f973c39aa518d36279685f442c23e87956"
+  url "https://ghfast.top/https://github.com/majd/ipatool/archive/refs/tags/v2.3.2.tar.gz"
+  sha256 "669630b7bd181d90ce4a2aa45d5a10548e7a31894bc0eedcef2d709c14bfecd1"
   license "MIT"
   head "https://github.com/majd/ipatool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dfb2caea11dbc2ea5574126e34ef8c4519bdf0f89e9f3e70b08fd616299c74d7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9d6173e33f7d076b8bc3c4f49fb876fa9bcfe5d9bde2cd9c2b1c182174d968d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "286bc78f6b3ae9db1b6b4695ba9e430d9b465a2130bb6248335fac1eede0f42a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9954dd39e7bac548e40b4df57f5d2f16afb2e41e6b148143eea81fda9f40f467"
-    sha256 cellar: :any,                 arm64_linux:   "e2024617f5c29f465aa2b2809dabbf7f7ada2bf608a3640e07435c0c38fc91a1"
-    sha256 cellar: :any,                 x86_64_linux:  "e1e4cbede7a49a7256be6dd329a654a7d94e50604cd82601a642e33b0bb6b043"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "535357deb150616f76de23f7ac760a4351c6632693e812bedaddfdf2db47837e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e8771042c5076a895e6f200235e9f96ef75a6f8270cd936fd22da70cb7259d9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1673aa30a9d1a3e9dd7a6f20b956fdf17d66d96ed7d8971fca18be588b0da5a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0383f256bd5a51644773085af1173fd11c97884f827d4dc7351ba7d8a8ce99be"
+    sha256 cellar: :any,                 arm64_linux:   "656466f4e4c2fd188d1fea77ca3303b6ebd1ba41b85b4532ff71793f83f8ce6d"
+    sha256 cellar: :any,                 x86_64_linux:  "ce2ba60dacd1f16688d2b96153a4f538809dd26cd6c3d5e383522f4508582996"
   end
 
   depends_on "go" => :build

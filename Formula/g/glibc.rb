@@ -54,8 +54,9 @@ class Glibc < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "38603dc6fd8345dc57c4b6c6ca6b378a09fb9041ae85fd88b6d814e03927e0e8"
-    sha256 x86_64_linux: "f1db9e3af712f4867410d083810f0a5ae066705b7627d2babdda8b8c42d6cb98"
+    rebuild 2
+    sha256 arm64_linux:  "01a46dbd217ab6379da50f9285da81ebaf0928c3457fbb04542b745bc80cb27f"
+    sha256 x86_64_linux: "2fe24afa0fd4034a66340b61fbe952ec7628d5eb30358191730c9ba2b6a1d421"
   end
 
   keg_only "it can shadow system glibc if linked"
@@ -67,78 +68,78 @@ class Glibc < Formula
 
   resource "bootstrap-binutils" do
     on_arm do
-      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.1.1/bootstrap-aarch64-binutils-2.43.1.tar.gz"
-      sha256 "4eb48a302fd501a57be0c842c1657080abe96c1314473244f814df2ae676d951"
+      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.3.1/bootstrap-aarch64-binutils-2.47.tar.gz"
+      sha256 "f50e67aefcb31334e4152ced007f944264bbe665313321cae75a252aac16fcb3"
     end
     on_intel do
-      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.1.1/bootstrap-x86_64-binutils-2.43.1.tar.gz"
-      sha256 "56e5fdc9aa18d3b609969a60f03f103e99dde3a32bfc7139c66d83e185f4dfec"
+      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.3.1/bootstrap-x86_64-binutils-2.47.tar.gz"
+      sha256 "3d26286c7ae0d6a6eeedbd2a1d00b599a6b5f24be0806b174e46d9012f99c1db"
     end
   end
 
   resource "bootstrap-bison" do
     on_arm do
-      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.1.1/bootstrap-aarch64-bison-3.8.2.tar.gz"
-      sha256 "59f5bacacc32fda6aa16427a3a894d5a1d0bc30cfc8b5e22f8b25580473e571e"
+      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.3.1/bootstrap-aarch64-bison-3.8.2.tar.gz"
+      sha256 "c80d45bc799b136d871fc553391925f948a066196434b56a41f84af75b383373"
     end
     on_intel do
-      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.1.1/bootstrap-x86_64-bison-3.8.2.tar.gz"
-      sha256 "29c9763dbcb94e0816fc43ccc38835f2a6f17574eb23559e2f497bcef9d3e6ae"
+      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.3.1/bootstrap-x86_64-bison-3.8.2.tar.gz"
+      sha256 "c582adee9bb0fa7612993c5e89b3c7eda09512c22bd99ce6e28e77b3edb986e5"
     end
   end
 
   resource "bootstrap-gawk" do
     on_arm do
-      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.1.1/bootstrap-aarch64-gawk-5.3.1.tar.gz"
-      sha256 "8e966760d81396b118ad84f228e2c26dc72264aad20edbd34428f743c3a202e3"
+      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.3.1/bootstrap-aarch64-gawk-5.4.1.tar.gz"
+      sha256 "f6172dad95e904216dc82b273ded3f7b882a1a8e34106bcee13c659c61532e68"
     end
     on_intel do
-      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.1.1/bootstrap-x86_64-gawk-5.3.1.tar.gz"
-      sha256 "f209cf49bcb141a7f4b3e16a01492f23a2da59351e85f0ccc1757fae91ff63cd"
+      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.3.1/bootstrap-x86_64-gawk-5.4.1.tar.gz"
+      sha256 "86eecfc46cbbb7c0c31f39f91088ca4e255bc54319fff063e4e11ee0e1849de2"
     end
   end
 
   resource "bootstrap-gcc" do
     on_arm do
-      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.2.0/bootstrap-aarch64-gcc-10.5.0.tar.gz"
-      sha256 "5fd88bb507f91930d04230094a8ac0611519cbc49b19084c0577eb92722862d4"
+      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.3.1/bootstrap-aarch64-gcc-12.5.0.tar.gz"
+      sha256 "c489c9c5e6246c984a4d5472e3fac951dfc8c71b6bd3a607ef64196b03ddc853"
     end
     on_intel do
-      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.1.1/bootstrap-x86_64-gcc-9.5.0.tar.gz"
-      sha256 "f7f0c7293bb60644b2463351a4ba748b0b108ccda49d4a098aa13e331d26b8c3"
+      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.3.1/bootstrap-x86_64-gcc-12.5.0.tar.gz"
+      sha256 "20da2f82374ee0b5b93ef5a44ec7de8c92e2b60e450fcf74b4af29036f10a4fb"
     end
   end
 
   resource "bootstrap-make" do
     on_arm do
-      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.1.1/bootstrap-aarch64-make-4.4.1.tar.gz"
-      sha256 "a0bf6d77a11763581f1236947fa1c7a89a4d6e4b5d0afbb019f7e2e48928580a"
+      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.3.1/bootstrap-aarch64-make-4.4.1.tar.gz"
+      sha256 "b6b3c1c689a4a2e86bbdae6fe7e1aeb4b23698a698833691746f05b6f4eb8435"
     end
     on_intel do
-      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.1.1/bootstrap-x86_64-make-4.4.1.tar.gz"
-      sha256 "54a22f00ba061b6018cc14f4c1472eba5adf7045418d1993aebd35cd446851f7"
+      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.3.1/bootstrap-x86_64-make-4.4.1.tar.gz"
+      sha256 "8b49e5306d984fce9e8849d77ebfceee97f36c6c1e3f11649f5de73cc0aebee4"
     end
   end
 
   resource "bootstrap-python3" do
     on_arm do
-      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.1.1/bootstrap-aarch64-python3-3.11.10.tar.gz"
-      sha256 "b8c30cfe774238c01e22a57718fbb7049c66d1d0236ac7e10079556633d0c1fe"
+      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.3.1/bootstrap-aarch64-python3-3.11.15.tar.gz"
+      sha256 "ebb3cc61affb7c2c04e5b33901c0ca9490d81189dc44946ac431537caa90db7b"
     end
     on_intel do
-      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.1.1/bootstrap-x86_64-python3-3.11.10.tar.gz"
-      sha256 "2de6cdd4e8a239fb18d70c140abf17708e32e34cf1a29c5754474201a206b1d8"
+      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.3.1/bootstrap-x86_64-python3-3.11.15.tar.gz"
+      sha256 "07a77afa777268cf5f9ea72f9a566044da0dc770a8e3af87e6d2b0381cbe0718"
     end
   end
 
   resource "bootstrap-sed" do
     on_arm do
-      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.1.1/bootstrap-aarch64-sed-4.9.tar.gz"
-      sha256 "90558ff86eb9c4fa8046bed69ee9fb764905ed4022c99e21d6cb502f960fc6c2"
+      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.3.1/bootstrap-aarch64-sed-4.10.tar.gz"
+      sha256 "e2982336e09efdfd03f58df3537984835fc57cd1b7dab79a8616cac6c0e6717e"
     end
     on_intel do
-      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.1.1/bootstrap-x86_64-sed-4.9.tar.gz"
-      sha256 "ba9d8b41362c9f7cf85bc36a7b685be8206d4cb32b364b6ca323621b976e89bb"
+      url "https://ghfast.top/https://github.com/Homebrew/glibc-bootstrap/releases/download/1.3.1/bootstrap-x86_64-sed-4.10.tar.gz"
+      sha256 "4881e4b81c1ca21ee540e90fcdebcc947ab26c879bfabb1cd1885525f47b3498"
     end
   end
 
@@ -237,8 +238,13 @@ class Glibc < Formula
         "--enable-fortify-source",
         "--enable-stack-protector=strong",
       ]
+      # Ubuntu glibc has CET enabled and Ubuntu GCC injects -fcf-protection.
+      # Using permissive as non-default prefix setups that mix relocatable
+      # bottles with source installs could trigger CET error if toolchain
+      # used does not inject -fcf-protection[=full].
+      args << "--enable-cet=permissive" if Hardware::CPU.intel?
 
-      cflags = "-O2 #{ENV["HOMEBREW_OPTFLAGS"]}"
+      cflags = "-O2 #{ENV["HOMEBREW_OPTFLAGS"]} -fstack-clash-protection"
       cflags += " -mbranch-protection=standard" if Hardware::CPU.arm64?
 
       if build.bottle?
@@ -285,8 +291,9 @@ class Glibc < Formula
       prefix.install_symlink "lib" => "lib64"
     end
 
-    # Add ld.so.conf (will be written to HOMEBREW_PREFIX/etc/ld.so.conf)
-    atomic_write_with_mode etc/"ld.so.conf", <<~EOS
+    # Add ld.so.conf (will be linked to HOMEBREW_PREFIX/etc/ld.so.conf rather than
+    # written there so the file can be removed on uninstall and work with binutils)
+    (prefix/"etc/ld.so.conf").write <<~EOS
       # This file is generated by Homebrew. Do not modify.
       #{opt_lib}  # ensure Homebrew Glibc always comes first
       include #{ld_so_conf_d}/*.conf
@@ -331,6 +338,7 @@ class Glibc < Formula
   end
 
   post_install_steps do
+    symlink "{{prefix}}/etc/ld.so.conf", "{{etc}}/ld.so.conf", force: true
     remove "ld.so.cache", base: :etc
     run "ldconfig", base: :sbin
     configure_glibc_runtime

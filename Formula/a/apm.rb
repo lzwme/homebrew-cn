@@ -3,19 +3,18 @@ class Apm < Formula
 
   desc "Dependency manager for AI agent configuration"
   homepage "https://microsoft.github.io/apm/"
-  url "https://files.pythonhosted.org/packages/b8/99/fded970fe9efc446a8a8751516ad00dcf0893895d5d5f8ff553e6f2f7f2f/apm_cli-0.26.0.tar.gz"
-  sha256 "24e6e4d346fb1d2ecbed05bb4205c3d99b284619344daf4007913985af488afb"
+  url "https://files.pythonhosted.org/packages/f4/63/d5e026a1fc09742ef91c192d2eb891e64fea25df35a7f649e840cdc1d0f1/apm_cli-0.27.0.tar.gz"
+  sha256 "84c8046d8c590134f84ed587212fe4a07b308fdef8c48b3c79e0b9531c0224ab"
   license "MIT"
-  revision 1
   head "https://github.com/microsoft/apm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "be192543b776e2f3c6a7d3056e45a860ad2b96eb8171b3fddd57d3c0bda645c2"
-    sha256 cellar: :any, arm64_sequoia: "cc9e9ea76fd785af55feb9bd092c28a6c53b0d852e59df4432acc14bc7d13a2d"
-    sha256 cellar: :any, arm64_sonoma:  "6abc1640310c04758936fc13bcf650bdf795675a60eb2eda1ceb235c88e84c08"
-    sha256 cellar: :any, sonoma:        "5eb5724c0b227491fd40140f71b5b828b5bf262f393e714e475b373ed11655ca"
-    sha256 cellar: :any, arm64_linux:   "687dafe10b67ceebd7b9f9144959c78072a71909b2327486963deb0fd916b9a8"
-    sha256 cellar: :any, x86_64_linux:  "eb2a72d4b2895eb13fed73dd4c31770247f34bee11dc664d1e797a63ee070bde"
+    sha256 cellar: :any, arm64_tahoe:   "e2e88ed7ca3f76bde3e28ca22458e6bb0da7d03af2e996e9e14e4b386643f67a"
+    sha256 cellar: :any, arm64_sequoia: "4b3e6bd1cb8892c0265d7570ec45f3647841ee1f630fb83731b2bd79411ebf8f"
+    sha256 cellar: :any, arm64_sonoma:  "3e09930678ea15bc9ce017fa455958b8679805f9c072d6786d82ec8601f0799e"
+    sha256 cellar: :any, sonoma:        "8315427ccfc20d9f782bd556994faacb7a2436fb2ebf1e051cb6f11ddf2a63e4"
+    sha256 cellar: :any, arm64_linux:   "951c36e4fc477da5d1ca685245786e780e6f8b6be8a2114fa2ea094e880269ee"
+    sha256 cellar: :any, x86_64_linux:  "6e8b569036cd5bd581e76b8b0e256dd1614cb691a98fa4e49f73bb0c909f8018"
   end
 
   depends_on "rust" => :build # for jiter
@@ -92,8 +91,8 @@ class Apm < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/c0/80/8232b582c4b318b817cf1274ba74976b07b34d35ef439b3eb948f98645a1/filelock-3.32.0.tar.gz"
-    sha256 "7be2ad23a14607ccc71808e68fe30848aeace7058ace17852f68e2a68e310402"
+    url "https://files.pythonhosted.org/packages/f6/57/3ba6e6cb097f85b855b00163d169f35365f44277df044dcf96d55b8f62a3/filelock-3.32.2.tar.gz"
+    sha256 "c33351e1f49cae33414acbc6d56784e6ecee82514ec90795da1161fc4836b5b8"
   end
 
   resource "frozenlist" do
@@ -107,8 +106,8 @@ class Apm < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
-    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
+    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
+    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
   end
 
   resource "h11" do
@@ -167,8 +166,8 @@ class Apm < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/2a/ae/d4d1835488c0350424009dac5095b9a3e173bee12fd2e421ee27e2142c42/openai-2.48.0.tar.gz"
-    sha256 "231b1e7661dda14574986c2f71451e9d584b7fe69e0ee6480e12ed090b48fc16"
+    url "https://files.pythonhosted.org/packages/bb/5a/c45fa035cd72c70ebe67c6e079e3adf871492382634f69e3dff62c43597d/openai-2.52.0.tar.gz"
+    sha256 "7c736d592f81471ce1f734838390983c4d8c8aecff23dcd36e600a58e5032d9c"
   end
 
   resource "pluggy" do
@@ -282,8 +281,8 @@ class Apm < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/8c/69/40407dfc835517f058b603dbf37a6df094d8582b015a51eddc988febbcb7/tqdm-4.69.0.tar.gz"
-    sha256 "700c5e85dcd5f009dd6222588a29180a193a748247a5d855b4d67db93d79a53b"
+    url "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz"
+    sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
   end
 
   resource "truststore" do

@@ -1,18 +1,18 @@
 class UutilsFindutils < Formula
   desc "Cross-platform Rust rewrite of the GNU findutils"
   homepage "https://uutils.github.io/findutils/"
-  url "https://ghfast.top/https://github.com/uutils/findutils/archive/refs/tags/0.9.1.tar.gz"
-  sha256 "ac60fa34c09110a386c3782e94f5ca3f9294f64edf82855637c630c36de65ed3"
+  url "https://ghfast.top/https://github.com/uutils/findutils/archive/refs/tags/0.10.0.tar.gz"
+  sha256 "e36ae3937f889bc59cfbd65820a642baa695c58d7fa1e387e41857e710f40419"
   license "MIT"
   head "https://github.com/uutils/findutils.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3ad05549b7514c55b367f56b3f6bc6d34b29f854d604989fe8fc5159fb554ec9"
-    sha256 cellar: :any, arm64_sequoia: "48234236e97ec3b23a125571f8e97f4b47b19fb79fa5bdf1e3b5c29c7aed200c"
-    sha256 cellar: :any, arm64_sonoma:  "a6b024849ec54e2d910f7890d8d9826cb1ab6e47f059e3e5828e8179a7082a7c"
-    sha256 cellar: :any, sonoma:        "9a88974f86159b84dd5620ea0f101405e196edcd9bbbe5d17568f662f5c17f2a"
-    sha256 cellar: :any, arm64_linux:   "ba6c49a8944492a4fb4004014db33229d5b1c1e6e261939e04be128b52e7e7f0"
-    sha256 cellar: :any, x86_64_linux:  "98829d94828c779fe9e466de878002b00df91493acb92aa2121a592da8ad1d6d"
+    sha256 cellar: :any, arm64_tahoe:   "f0b963f1e968acadb40faf068299ff3d95d1141bb6a92b4014183cc001957333"
+    sha256 cellar: :any, arm64_sequoia: "0ff84ee54e9adce4fac0eb5ec3c013eb6ce4e5f625a3b6d20cdb476e55ab38bf"
+    sha256 cellar: :any, arm64_sonoma:  "8f7b577688da476a71ee7f1e3e87457e73871cf38ae07aefe223ac3ed190ad47"
+    sha256 cellar: :any, sonoma:        "09f853a5fc9dae2cf13dc059d1e77126744b764a45ec94279709185442f1d47d"
+    sha256 cellar: :any, arm64_linux:   "f529b71887accd0166c7267a85bfbe978dcd420df91071026e9d2b26a1984919"
+    sha256 cellar: :any, x86_64_linux:  "ba0a289490eae870ea1ef1390d0c842cf87992e009d2616af029db57f877f717"
   end
 
   depends_on "pkgconf" => :build

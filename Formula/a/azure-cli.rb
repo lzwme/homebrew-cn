@@ -3,8 +3,8 @@ class AzureCli < Formula
 
   desc "Microsoft Azure CLI 2.0"
   homepage "https://docs.microsoft.com/cli/azure/overview"
-  url "https://ghfast.top/https://github.com/Azure/azure-cli/archive/refs/tags/azure-cli-2.88.0.tar.gz"
-  sha256 "4c3dfe03aecbe988f76ceebbbd993b6fa4c3140ef92d2eb9fd0659e8d714db69"
+  url "https://ghfast.top/https://github.com/Azure/azure-cli/archive/refs/tags/azure-cli-2.89.0.tar.gz"
+  sha256 "9486b17fb65c6c93412f2f34a60e9bb9a779dababac008d22fb6ddf97115678f"
   license "MIT"
   head "https://github.com/Azure/azure-cli.git", branch: "dev"
 
@@ -17,12 +17,12 @@ class AzureCli < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "19d4073705c3e39b058d9b734cbccdd0bac3ea8e4c1fb045f1d6561927dfb759"
-    sha256 cellar: :any, arm64_sequoia: "8ca98c8915ed7b7212200b8271d6917f339c25e10b4ae747e0b38f5e48b04fde"
-    sha256 cellar: :any, arm64_sonoma:  "c1f29b9969e8c3d8ec26c4b582a647376da5db4910984439070cd0c2546ea8e7"
-    sha256 cellar: :any, sonoma:        "fdaf16e1773b5426208287d0463749739c7a627479f2290c41140abc1ef61b95"
-    sha256 cellar: :any, arm64_linux:   "e56057d6b612a22098cec7a1e3c03fe755f08c79002cf892c97a93555b54fe7d"
-    sha256 cellar: :any, x86_64_linux:  "eefa2b68ca9bec8bd7818a5a308194e992c028c1b79935f4ac0acbc61b8cf84c"
+    sha256 cellar: :any, arm64_tahoe:   "894cf7338d7200e1842c9ee20328702255b264b866c676ac691ea869d8e9424d"
+    sha256 cellar: :any, arm64_sequoia: "a92b5e59b3d3fb1e399029904c71415b48c02edaa1d4681ffad62fce6ba77c30"
+    sha256 cellar: :any, arm64_sonoma:  "c714e64cc055b64fa46389ab67ca6b72968ffaaac6b2209d6cb5b8757519bd4e"
+    sha256 cellar: :any, sonoma:        "99e90e50b940169fe440297ccf02488125bf3516f1d78fbbf9f0398372c7e099"
+    sha256 cellar: :any, arm64_linux:   "9bcae15919b945cb42fdbade6bdb0b0146c0a1de049c06a388c3aa8da9dfe204"
+    sha256 cellar: :any, x86_64_linux:  "c4c3a16c5e89faf3c81c83763c32339b37ce24ce0a80fc235605ca947e532578"
   end
 
   # `pkgconf`, `rust`, and `openssl@3` are for bcrypt and cryptography.
@@ -76,8 +76,8 @@ class AzureCli < Formula
   end
 
   resource "azure-appconfiguration" do
-    url "https://files.pythonhosted.org/packages/d3/9f/f2a9ab639df9f9db2112ded1c6286d1a685f6dadc8b56fc1f1d5faed8c57/azure_appconfiguration-1.7.2.tar.gz"
-    sha256 "cefd75b298b898a8ed9f73048f3f39f4e81059a58cd832d0523787fc1d912a06"
+    url "https://files.pythonhosted.org/packages/0f/de/d75d8f35bc1dbf77ddf005f1b0d61ae43361fa2f654cbe98e0947684b9b2/azure_appconfiguration-1.8.0.tar.gz"
+    sha256 "168e7b01b350f5d806a2d935a8ec3694c59c6394d5a1c409eb05fef0b56b1aa0"
   end
 
   resource "azure-batch" do
@@ -111,8 +111,8 @@ class AzureCli < Formula
   end
 
   resource "azure-keyvault-administration" do
-    url "https://files.pythonhosted.org/packages/a4/52/5de1a1874b47edec599f57b165ee18ac811c3abd7696c70fec8f7935c80a/azure_keyvault_administration-4.8.0b1.tar.gz"
-    sha256 "01f0a52e2ef1c71f14223cd08f266741a61a880ac8cf04624c7aaaaee3b70759"
+    url "https://files.pythonhosted.org/packages/28/1c/5f09ff62f5129eab7a010fd76094f596ef6f0b0b4f253cbbe192d34caacb/azure_keyvault_administration-4.8.0b2.tar.gz"
+    sha256 "be947e9bea7c12707c9b95e3d17d8acbf86727b6e8e4f77ce698fffea8466758"
   end
 
   resource "azure-keyvault-certificates" do
@@ -191,8 +191,8 @@ class AzureCli < Formula
   end
 
   resource "azure-mgmt-cognitiveservices" do
-    url "https://files.pythonhosted.org/packages/02/34/a447b13b4ca2109e577ae0606124063506582209a6530f4ff2e002f5da43/azure_mgmt_cognitiveservices-15.0.0b2.tar.gz"
-    sha256 "b8a9db8862a0cd920b2f14a87a99de77d749b8e4881b152448f22e2dec391651"
+    url "https://files.pythonhosted.org/packages/77/cd/d3ace710a33be5e9dbcf7c976220147c01cacb7ee45f92f0f78015b920dc/azure_mgmt_cognitiveservices-15.0.0b4.tar.gz"
+    sha256 "a5595a96e8499a44b7999973ce44757f9fb45be206a2414969991a8dbce9c209"
   end
 
   resource "azure-mgmt-compute" do
@@ -206,8 +206,8 @@ class AzureCli < Formula
   end
 
   resource "azure-mgmt-containerregistry" do
-    url "https://files.pythonhosted.org/packages/a5/e6/4c867d4b2297b4672ab73430cecae22b453a36d33121d0f79c56bd41da2b/azure_mgmt_containerregistry-15.1.0b1.tar.gz"
-    sha256 "87bb0de32b99e1a493aa52d4cf4f373ef0da1681dd8e69a11f8761be934090b1"
+    url "https://files.pythonhosted.org/packages/96/4c/91fc1568a9687147aec1ab4f10535e567af260768c0acc069f8ce2a421bc/azure_mgmt_containerregistry-15.1.0b2.tar.gz"
+    sha256 "51dcd829939c3a4959debe03fc12dca6c28c77fa391e788d7f4085846fbb53cc"
   end
 
   resource "azure-mgmt-containerregistrytasks" do
@@ -216,8 +216,8 @@ class AzureCli < Formula
   end
 
   resource "azure-mgmt-containerservice" do
-    url "https://files.pythonhosted.org/packages/00/0d/8021bbb2735869e7b4f868f96eda6de5fa3e097bdec59cf270460cec37d6/azure_mgmt_containerservice-41.3.0.tar.gz"
-    sha256 "6414756e2802fb31a62bda900a6a9f99bb5e275b1b3181ca708be5db1977ce54"
+    url "https://files.pythonhosted.org/packages/4c/16/dac12c687d8b7ddacfbcaa05224746640f056b08c47fe0894d5eb05278f6/azure_mgmt_containerservice-41.5.0.tar.gz"
+    sha256 "6c1a1bf63ee0b20ed61438d63a8131de487bc7fbff0d4c9e074b33c2f8623f03"
   end
 
   resource "azure-mgmt-core" do
@@ -326,8 +326,8 @@ class AzureCli < Formula
   end
 
   resource "azure-mgmt-mysqlflexibleservers" do
-    url "https://files.pythonhosted.org/packages/8d/1b/efc38b21daf01b66648d020fd6f3d65b15ea205055323bae3dae3f139bac/azure_mgmt_mysqlflexibleservers-1.1.0b2.tar.gz"
-    sha256 "c86a44167f5538fd6e4afa54095fe0616e7aff91ee96c095c7dc1cfe458ef91a"
+    url "https://files.pythonhosted.org/packages/70/f1/e6977da44c987715ed2fc1c06bdbacaf18a2d402a583503d926d0cfe37d2/azure_mgmt_mysqlflexibleservers-1.1.0b3.tar.gz"
+    sha256 "d79b8dbfa30ab87c6e5f17906166e9996415866926cc262378691221a9865803"
   end
 
   resource "azure-mgmt-netapp" do
@@ -356,8 +356,8 @@ class AzureCli < Formula
   end
 
   resource "azure-mgmt-recoveryservices" do
-    url "https://files.pythonhosted.org/packages/86/0d/eb3e3928a38e365d2301b9dc08700e0af5474c44542d36c8adf3d5c193c8/azure_mgmt_recoveryservices-4.0.0.tar.gz"
-    sha256 "a1429cfd283a9c9950ac153482fa9c9741646fd20da8aa9c3c81e725c78c5c9f"
+    url "https://files.pythonhosted.org/packages/a9/98/6afefe6acb5abf8146d705c8cf024d4eaea3c144b8fb13ae6a90b016c518/azure_mgmt_recoveryservices-4.1.0.tar.gz"
+    sha256 "63cd596e6ff1b801e06283d153ce0c7f1d44f7edf052d321c132746c3c8c871e"
   end
 
   resource "azure-mgmt-recoveryservicesbackup" do
@@ -536,8 +536,8 @@ class AzureCli < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "colorama" do
@@ -726,8 +726,8 @@ class AzureCli < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
-    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
   end
 
   resource "six" do
@@ -746,8 +746,8 @@ class AzureCli < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   resource "urllib3" do
@@ -761,8 +761,8 @@ class AzureCli < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/fe/a4/282c8e64300a59fc834518a54bf0afabb4ff9218b5fa76958b450459a844/wrapt-2.2.2.tar.gz"
-    sha256 "0788e321027c999bf221b667bd4a54aaefd1a36283749a860ac3eb77daed0302"
+    url "https://files.pythonhosted.org/packages/2b/b0/c1f5a970721f06b85c0cd5142e0ff8fe067708abd779b0c4f4be7d61d09f/wrapt-2.3.0.tar.gz"
+    sha256 "681a2d0eefd721998f90642762b8e75c2159ec531b20ad5e437245ea7b06a107"
   end
 
   resource "xmltodict" do

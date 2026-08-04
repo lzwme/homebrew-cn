@@ -46,7 +46,7 @@ class GuileGnutls < Formula
   post_install_steps do
     # Touch gnutls.go to avoid Guile recompilation.
     # See https://github.com/Homebrew/homebrew-core/pull/60307#discussion_r478917491
-    touch "guile/3.0/site-ccache/gnutls.go", base: :lib
+    touch "{{lib}}/guile/3.0/site-ccache/gnutls.go"
   end
 
   def caveats

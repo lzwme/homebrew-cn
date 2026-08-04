@@ -1,18 +1,18 @@
 class Panache < Formula
   desc "Language server, formatter, and linter for Markdown, Quarto, and R Markdown"
   homepage "https://panache.bz"
-  url "https://ghfast.top/https://github.com/jolars/panache/archive/refs/tags/v3.0.2.tar.gz"
-  sha256 "876958e4e89292a1456932c86ce9ec3e90831149d33c28ec6f13eda4f9409083"
+  url "https://ghfast.top/https://github.com/jolars/panache/archive/refs/tags/v3.1.0.tar.gz"
+  sha256 "e518a5c60ebe025baae423e15b488461ad19ccf001f0b363eb8abaaa126ad390"
   license "MIT"
   head "https://github.com/jolars/panache.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ea42573486a9c15f76461ffafafb09ca3d0ca2f717965f9b45562c81d45180a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e79373848c58f77e1a1f29ef2533125f627566b77953a4a96815c5004a5e0b34"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e33772067afdf9852aff7fba49056cb15f22e2c16b9f3904e769d3aa718e6ca"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c8b96d680ba40385816bdb57a5d5bb21172ee66e692b273e988b5f6e1299ee20"
-    sha256 cellar: :any,                 arm64_linux:   "a4bd25527d6701a3af3a7a36f4b4c378115fe1eaf449bf7f0238ea3bb0128569"
-    sha256 cellar: :any,                 x86_64_linux:  "a5ce10b7ccdcbad42bde25d4ad2dfb4aa0bed49f9ddc2a698ddf03696e50c573"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cdf4e5047370648d4d15ee65ff5a9fd6bf4eb99cdcff33b29947891839697007"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ddb9c79bc867a55b06bbd18dcf5499d82384e0a13a13db3ec7be7bf92ad225a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32e9ae3324e73cdb123e75bc738483bda4daff32801a7994285817e465e462d9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a071001b97f9a2ecc05a30fec4a635e8f3c8a1e4f22447b6acd9e1ce54afdc5c"
+    sha256 cellar: :any,                 arm64_linux:   "bccef1aa5dcfb5affa37681b3e9eb60dcd657ef4c8632fc506114257f40577b0"
+    sha256 cellar: :any,                 x86_64_linux:  "3afa1bd175409e90f5fa9a3f4c0d8b43ba1cb0997b5f5d5eb20cc50de593618c"
   end
 
   depends_on "rust" => :build

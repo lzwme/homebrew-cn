@@ -1,18 +1,18 @@
 class Mdcat < Formula
   desc "Show markdown documents on text terminals"
   homepage "https://github.com/BIRSAx2/mdcat"
-  url "https://ghfast.top/https://github.com/BIRSAx2/mdcat/archive/refs/tags/mdcat-2.14.0.tar.gz"
-  sha256 "0a45f1302ae3a0a9ae3d67c00f80f5dbae02391bacdceb2056d2be4b6b288dac"
+  url "https://ghfast.top/https://github.com/BIRSAx2/mdcat/archive/refs/tags/mdcat-2.15.0.tar.gz"
+  sha256 "a70e81e1dfbef05d2a46fa21a0d035ac6881766eaaa425016c27ff27e52357c7"
   license "MPL-2.0"
   head "https://github.com/BIRSAx2/mdcat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5d62571c67332c6f59dac57edce923e40faa8c05449bacb4cf94ac6cc974db5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6188faffd148bb6db134ef99323a96f340b376477a6d130790fa006bcf72ef65"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a96d76e7f45976b64006697799a74a3553016726639147acc218504962efb2d9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "335635a6238afee9773566a4288cb57ee30f7c543bbaf757e1869f4bcf903d06"
-    sha256 cellar: :any,                 arm64_linux:   "78dae04768f664ce0c92de4bd744f9fbb6945d37d7921be0cef5785d69a9c0f3"
-    sha256 cellar: :any,                 x86_64_linux:  "84d9d5df4fe31577d0d716df93376c32f72d5b716b288a4017af6ff73eb64fb5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f4d70bc88ff4fadcaad4a5300901f6104190c5444f4fea280a932cc4046b5576"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7cf044d81a3f951483cdef7d08d1690ff78226c39c8a09d85970f32833803c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f1f7e3e0a08a40fa5ec90eda0f000d6762083813a8638269362265ad22a6d8b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b41b6e6f0fdf5d49a52a4dce0c407025dcc5206d2b44efedfd0d7f61655f241a"
+    sha256 cellar: :any,                 arm64_linux:   "dd168301d67278404a3ab9f26c397345016307178d037295131cb796f5e7bc46"
+    sha256 cellar: :any,                 x86_64_linux:  "704d1f58dabfecf105b894e4b06d9a0dcf40337490b3ee8cfc55da8052ad9a8d"
   end
 
   depends_on "asciidoctor" => :build
