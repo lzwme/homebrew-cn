@@ -6,6 +6,7 @@ class KnotResolver < Formula
   url "https://knot-resolver.nic.cz/release/knot-resolver-6.4.1.tar.xz"
   sha256 "1aa4c29721c09bce9a99f3d5657223110363d66b35cad4989b95b2afda9379a8"
   license all_of: ["CC0-1.0", "GPL-3.0-or-later", "LGPL-2.1-or-later", "MIT"]
+  revision 1
   head "https://gitlab.labs.nic.cz/knot/knot-resolver.git", branch: "master"
 
   livecheck do
@@ -14,12 +15,12 @@ class KnotResolver < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "3f43670f702b4679d1fd8d6b35f4fef06068f6ead62ae850341ae34f470b2a13"
-    sha256 arm64_sequoia: "d81261bdc3ca0ab86c8e1844aa94c179391f66d5332de3be92d4e4361f0bda05"
-    sha256 arm64_sonoma:  "f326ad906ecbae7de4ea00794c5eabbb13fb849ff08cd959b75f5359aa7821e5"
-    sha256 sonoma:        "6952855bfb7cc88fdef7f0d824a1de0e89a9d65c4ecd5f21684a45db95afd015"
-    sha256 arm64_linux:   "cbfa6ca95d31d53787318f4beeea17cacabebfe4d5856b69cda4696dae978dc9"
-    sha256 x86_64_linux:  "4f36b8c2b31cb7e08e4cac812ea091f2241c79c8421f45c16fd7576bd7ada85b"
+    sha256 arm64_tahoe:   "e6c1b356b00fa693dc5ba01bb300e8ac8f5724023a93d11ff8aec9a0a50945ce"
+    sha256 arm64_sequoia: "64fbdbc753e8d962fa2b524e23f4eb027e7177966de84e02c7c36092d003ccb9"
+    sha256 arm64_sonoma:  "855c2728ef3d69a35b03987a6926d161fd42ce8e59aa7389b9cb83222b7b9141"
+    sha256 sonoma:        "40341c8ffba85f292721bcb9cc2ea80acc413f443af8042ec78846b973a8fabc"
+    sha256 arm64_linux:   "3d6103395f7db30aeea55c52fe80822021e213de3db8f6b95ecb97cbb89d0a85"
+    sha256 x86_64_linux:  "70a376d3d7cb83eaafa78d07f46a3bac72c955ea43ace577979d9352cb59b6b1"
   end
 
   depends_on "meson" => :build
@@ -53,8 +54,8 @@ class KnotResolver < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/1d/cc/58f26f118d8099f84e009ce560b9148a3f803e63fa8473b57feb67241875/aiohttp-3.14.2.tar.gz"
-    sha256 "f96821eb2ae2f12b0dfa799eafbf221f5621a9220b457b4744a269a63a5f3a6c"
+    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
+    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
   end
 
   resource "aiosignal" do
@@ -93,8 +94,8 @@ class KnotResolver < Formula
   end
 
   resource "prometheus-client" do
-    url "https://files.pythonhosted.org/packages/1b/fb/d9aa83ffe43ce1f19e557c0971d04b90561b0cfd50762aafb01968285553/prometheus_client-0.25.0.tar.gz"
-    sha256 "5e373b75c31afb3c86f1a52fa1ad470c9aace18082d39ec0d2f918d11cc9ba28"
+    url "https://files.pythonhosted.org/packages/52/73/f1334c29c2af4cd9dba6c7817e61b611bd0215e2eb5565c6064a4de18802/prometheus_client-0.26.0.tar.gz"
+    sha256 "04a91bcf94e2cf74a44a1a874d651a2e853ed354b6e822f3b7487751465d5c2b"
   end
 
   resource "propcache" do

@@ -3,17 +3,17 @@ class Bittensor < Formula
 
   desc "SDK and command-line tool for the Bittensor network"
   homepage "https://subtensor.vercel.app/"
-  url "https://files.pythonhosted.org/packages/b7/97/56d2f9f2a50f4a55d342707e56b281d5f2cc4634c8f18f9b147198e41d16/bittensor-11.0.1.tar.gz"
-  sha256 "810164fb5fe2c3530ffdf67c0d188e5a61883841cf9874d9cb41b9aa1ecfe69b"
+  url "https://files.pythonhosted.org/packages/3d/9b/28146b1d34bc4fcae886e8e9c448e58a6ca5060393e40a279c4c1be25bf4/bittensor-11.0.2.tar.gz"
+  sha256 "90d790d50cb51d12bba65cd18892fb5d6e7addf56fb5706675ec3bcb5bce9e61"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "671d9e52b30312106b4665518a79d4b96583ee3358781c3f993dd7f03c359025"
-    sha256 cellar: :any, arm64_sequoia: "546212fee611dcc67ba1f94894e53bd8c7f8ceb0c0f33346fd7bf8b02f9186e9"
-    sha256 cellar: :any, arm64_sonoma:  "269d21962f6f1a29a753de3dcd20a9b9a24bb198d0840fc51d69ca47639c16ee"
-    sha256 cellar: :any, sonoma:        "2370364193ad92bd931ce777c88431f2a45258a26b8dc43f7587195eef07ebad"
-    sha256 cellar: :any, arm64_linux:   "2e44b7c873fa671100076296b3ad4d0e8b03115770231f9c1d2b9929c9014b40"
-    sha256 cellar: :any, x86_64_linux:  "778f2f64a439a35f6e12c969d0c259ea085556b635489d1f8d3c4f76e70e7977"
+    sha256 cellar: :any, arm64_tahoe:   "5d871f4016dae1a0afd6f3cbaff3447a8379d2fff5097df89dc197b060ff72e6"
+    sha256 cellar: :any, arm64_sequoia: "fdf859c243ede4882c0770963297e45d141176c07255b15222fb6d3f22763833"
+    sha256 cellar: :any, arm64_sonoma:  "b1fa59ecacd2470da0bab2239c8d0de5da628dc90fef603455b3285ab7c90343"
+    sha256 cellar: :any, sonoma:        "3c8545ef751d9b7f66bf15cb4c3caa7e582c09b808fecf3fcf9769107817c094"
+    sha256 cellar: :any, arm64_linux:   "62c908855715b8ff1115e3291488a4f877a1ce2f79e9c26e3cfae299de2da5e3"
+    sha256 cellar: :any, x86_64_linux:  "b87a13bc7c93a0061e9f1a7bb4fa728bcb5857f8c592159db0960c9e408f9c22"
   end
 
   depends_on "rust" => :build # for bittensor-core
@@ -28,18 +28,18 @@ class Bittensor < Formula
                 extra_packages:   %w[eth-abi<6] # FIXME: eth-abi 6.0.0b1 is a pre-release
 
   resource "annotated-doc" do
-    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
-    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+    url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
+    sha256 "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
   end
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/1e/01/59a0fbb89c2204ba07099a6e4b87768d25d6aa689df07547412218e03145/bitarray-3.9.1.tar.gz"
-    sha256 "796f2b4f0e4d84df50bd23ddfacb37d74eec2b2366813cb8f18bdae6b25e3d36"
+    url "https://files.pythonhosted.org/packages/5f/c9/df9a5450b54e6dcbb6e8f3fd95631ab849ba1ed8e7899844c0d71bab576c/bitarray-3.10.0.tar.gz"
+    sha256 "d8f8dbcda062ea59b3a6d5233b5a9b67f6bf58c1418ad8f418c5138361f9f068"
   end
 
   resource "bittensor-core" do
-    url "https://files.pythonhosted.org/packages/1a/99/d37584bd0e88f7d166d58881c099fdb5c322ac1ec0fbb08da32c558466d1/bittensor_core-0.1.1.tar.gz"
-    sha256 "c40c34b99863734ba887fe9bcc5169e08beac95eef73a70f9eb8e430b22f8cb5"
+    url "https://files.pythonhosted.org/packages/e8/23/cf3400688f7cd49fb6b8df7f16eef2f420a038c3fb7a351f1d980b88fd19/bittensor_core-0.1.2.tar.gz"
+    sha256 "3ec9cd001ebd8a8bb82e098fb6c2f076b088d268f281ce061fcab2b26d48ec34"
   end
 
   resource "ckzg" do
@@ -153,8 +153,8 @@ class Bittensor < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/37/78/fda3361b56efc27944f24225f6ecd13d96d6fcfe37bd0eb34e2f4c63f9fc/typer-0.27.0.tar.gz"
-    sha256 "629bd12ea5d13a17148125d9a264f949eb171fb3f120f9b04d85873cab054fa5"
+    url "https://files.pythonhosted.org/packages/ae/40/4a3db7990d1f62a53182aa96eaef57aeb2886a27f90a195bc66713565d31/typer-0.27.1.tar.gz"
+    sha256 "a79bef8469a79c45498e7b814ecf8d603cc7644e9acbd9e19cac0334240b18df"
   end
 
   resource "websockets" do

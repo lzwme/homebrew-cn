@@ -13,7 +13,7 @@ cask "squirrelsql" do
 
   preflight_steps do
     # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
-    write "install-options.xml", <<~EOS
+    write_file "install-options.xml", <<~EOS
       <?xml version="1.0" encoding="UTF-8" standalone="no"?>
       <AutomatedInstallation langpack="eng">
       <com.izforge.izpack.panels.hello.HelloPanel id="HelloPanel_0"/>
@@ -71,7 +71,7 @@ cask "squirrelsql" do
 
   postflight_steps do
     run "/usr/bin/java",
-        args: ["-jar", "{{staged_path}}/squirrel-sql-#{version}-MACOSX-install.jar",
+        args: ["-jar", "{{staged_path}}/squirrel-sql-{{version}}-MACOSX-install.jar",
                "{{staged_path}}/install-options.xml"]
   end
 

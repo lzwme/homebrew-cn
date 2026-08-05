@@ -58,13 +58,13 @@ class Rustup < Formula
   end
 
   post_install_steps do
-    symlink "{{bin}}/rustup", "{{HOMEBREW_PREFIX}}/bin/rustup", force: true
-    symlink "{{bash_completion}}/rustup", "{{HOMEBREW_PREFIX}}/etc/bash_completion.d/rustup", force: true
-    symlink "{{zsh_completion}}/_rustup", "{{HOMEBREW_PREFIX}}/share/zsh/site-functions/_rustup", force: true
+    symlink "{{bin}}/rustup", "{{HOMEBREW_PREFIX}}/bin/rustup", overwrite: true
+    symlink "{{bash_completion}}/rustup", "{{HOMEBREW_PREFIX}}/etc/bash_completion.d/rustup", overwrite: true
+    symlink "{{zsh_completion}}/_rustup", "{{HOMEBREW_PREFIX}}/share/zsh/site-functions/_rustup", overwrite: true
     symlink "{{fish_completion}}/rustup.fish", "{{HOMEBREW_PREFIX}}/share/fish/vendor_completions.d/rustup.fish",
-            force: true
+            overwrite: true
     symlink "{{pwsh_completion}}/_rustup.ps1", "{{HOMEBREW_PREFIX}}/share/pwsh/completions/_rustup.ps1",
-            force: true
+            overwrite: true
     remove "{{HOMEBREW_PREFIX}}/bin/rustup-init", symlink_target_contains: "Cellar/rustup/"
     remove "{{HOMEBREW_PREFIX}}/bin/rustup-init", symlink_target_contains: "opt/rustup/"
   end

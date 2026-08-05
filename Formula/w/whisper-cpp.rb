@@ -1,8 +1,8 @@
 class WhisperCpp < Formula
   desc "Port of OpenAI's Whisper model in C/C++"
   homepage "https://github.com/ggml-org/whisper.cpp"
-  url "https://ghfast.top/https://github.com/ggml-org/whisper.cpp/archive/refs/tags/v1.9.1.tar.gz"
-  sha256 "147267177eef7b22ec3d2476dd514d1b12e160e176230b740e3d1bd600118447"
+  url "https://ghfast.top/https://github.com/ggml-org/whisper.cpp/archive/refs/tags/v1.9.2.tar.gz"
+  sha256 "a6abd064fcca8b85e794d205abf328c522e9451db43a3eadc178b883b7d0e9cd"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ggml-org/whisper.cpp.git", branch: "master"
@@ -13,12 +13,12 @@ class WhisperCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "dbd25e83752d866ac9d64a46c2a50645e036c06d5b353aea3c83038882b1b930"
-    sha256 cellar: :any, arm64_sequoia: "b2493bd1d16cf35939665fbc5505a02b28c0ba5281bbdf42c3b663549a18c327"
-    sha256 cellar: :any, arm64_sonoma:  "046321f0a5cd3efd9d341a20c054bb4f9843afb3cb6ff2112a6d009b0217f256"
-    sha256 cellar: :any, sonoma:        "883b32e649643d9940104a4621db35c0bf6747e7aa8832183e7c29204bb33c28"
-    sha256 cellar: :any, arm64_linux:   "9a95d049b337403458c0234ca60881f1e6006f73e95e354662a3436b50473e35"
-    sha256 cellar: :any, x86_64_linux:  "eba5b407fc4398b7f394e1922136d2247991bb3c3292dcc2cb96396711a98fe4"
+    sha256 cellar: :any, arm64_tahoe:   "c96d59cc9322a25f3b488b5f01d2a91aa6e2298ba2f39239108e1c85cb549460"
+    sha256 cellar: :any, arm64_sequoia: "02156714e65c742f708af0843f6b3bcfc40495ef22b2475819dd6bccdd52eefb"
+    sha256 cellar: :any, arm64_sonoma:  "e5954e14cd822aeb32d2e6752310bf2f349f9c0ea26d6f8e2f8ab72094b083ab"
+    sha256 cellar: :any, sonoma:        "0898a0a1a1c8fefdde20b675538b28a73ca3aa762859af63a4ee172e9386821b"
+    sha256 cellar: :any, arm64_linux:   "b74a47aa041d7c4226e90bf969222ac44af48bf4d93211a7dc7e7b02e145425b"
+    sha256 cellar: :any, x86_64_linux:  "6b353d39c1dbdd25671ddb54228446c4c0d16342c8b4c18dabaf7d3f913ae7ad"
   end
 
   depends_on "cmake" => :build

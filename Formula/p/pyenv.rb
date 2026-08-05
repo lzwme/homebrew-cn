@@ -1,8 +1,8 @@
 class Pyenv < Formula
   desc "Python version management"
   homepage "https://github.com/pyenv/pyenv"
-  url "https://ghfast.top/https://github.com/pyenv/pyenv/archive/refs/tags/v2.8.1.tar.gz"
-  sha256 "7f81ae97116f1d00ae7558c3bba479ed19b114642ffd04c11612aa1b9ee74fb2"
+  url "https://ghfast.top/https://github.com/pyenv/pyenv/archive/refs/tags/v2.8.2.tar.gz"
+  sha256 "e78fc39538e416a85b23bef5003aefd9d9a786b4e62cdb7911f221aa2b769276"
   license "MIT"
   version_scheme 1
   compatibility_version 1
@@ -14,14 +14,14 @@ class Pyenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "02540d5f5e3e1ccf0ad0c8805d5cae5a7c42b6ab11af3198fad83e0fd1713ee9"
-    sha256 cellar: :any, arm64_sequoia: "85a2537b565d3a802007b0adff67fd02b8ef4a4c6bd651a36d27d7597220a5d0"
-    sha256 cellar: :any, arm64_sonoma:  "d4c501fd9c3d178d4155891af26402bdf2ce7d6be4d16608a7804566c6049863"
-    sha256 cellar: :any, tahoe:         "788725dc57426c3feb3bbd07c26444c230d51215423d5591defa5f5b99f80ba8"
-    sha256 cellar: :any, sequoia:       "1ba7a54a16a0c585253fe580566e72edb430fda64017d6ee4cad1fa1604d17df"
-    sha256 cellar: :any, sonoma:        "9e2581ea968c88c8240a0aa9ba384aabba29b8ca12c05275e6916a322b5611df"
-    sha256 cellar: :any, arm64_linux:   "54310945326d0963a639d63b10d91520fd7523f17804ae61c07bf9c1f27f3d3c"
-    sha256 cellar: :any, x86_64_linux:  "1d7ef7cbc3eb76a31d180c501b1bfbf5e4705f0fe773bc7c26f3279aa4281a1e"
+    sha256 cellar: :any, arm64_tahoe:   "85f1a1c6d3bae58d92cc9b93936d92b82bc5d3a3d4927978b0d09fc60ab45efe"
+    sha256 cellar: :any, arm64_sequoia: "baff346b6be7ebebc1f6d728440712619aae13d002c942ee814c796fc71cb106"
+    sha256 cellar: :any, arm64_sonoma:  "72e4805cc47b12284915b01081ac0e091ad7eea9515a8a5680c1bd72d3e31cec"
+    sha256 cellar: :any, tahoe:         "5097ccdcd76e01adcd461666875728de6262e4b208a27ffba3c7fd814d068a7c"
+    sha256 cellar: :any, sequoia:       "1960f0e794b9c365fca6169772a1b04ba3610d95acfa28bea8abb8c4bb06d63a"
+    sha256 cellar: :any, sonoma:        "c49f5d963c07b7a31fc4622eb82ba84272682d7f809236486a6eb425ea8dc167"
+    sha256 cellar: :any, arm64_linux:   "c0118c09dba91b289854a029fb2b4c498790bcc5b7af23b09c3cdd58965971b0"
+    sha256 cellar: :any, x86_64_linux:  "c0f1f2acfbe0106c5ada0c77ab475259f66840c0c7bc99e2de36aa7dcc41f715"
   end
 
   depends_on "autoconf"

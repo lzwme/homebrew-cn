@@ -1,8 +1,8 @@
 class Biome < Formula
   desc "Toolchain of the web"
   homepage "https://biomejs.dev/"
-  url "https://ghfast.top/https://github.com/biomejs/biome/archive/refs/tags/@biomejs/biome@2.5.6.tar.gz"
-  sha256 "fed6432c5e5f4854996b91d2d7cd3495505ac48c5f7c15b294082c5ab9f1d2ec"
+  url "https://ghfast.top/https://github.com/biomejs/biome/archive/refs/tags/@biomejs/biome@2.5.7.tar.gz"
+  sha256 "ffc27932058a51f3e357721990e5a348f4a6bcff5293862a24227568f91cce44"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/biomejs/biome.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Biome < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93cc57e8fc4f1b7f47c312b19178c80f7428c16eb05877f3faa075800f6a9a17"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6b8f6a1f03ba41f6a10f0db276537ef6642ff2c2a0ecfc43c20f9816a106a8d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "256b00caf61cd8442d77282f36753b4ce2034a337a9bc82a118e4cc853533235"
-    sha256 cellar: :any_skip_relocation, sonoma:        "49147c18dd41c3d16e2c6d033eb6b6e4456d913ac4f098b1d8816c230e4c4088"
-    sha256 cellar: :any,                 arm64_linux:   "007ee7c7ceb59bdfe431efe6ae434312d415a72b46125de86f62a505d10c727e"
-    sha256 cellar: :any,                 x86_64_linux:  "87ced3537ca2c83538a66167fca1d2b7f8fb419dc126b4605e6aa7982fd5454d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d24bbbba9591864cbfdccd3cd609a50a1cb13364d715f18585aadf30553d289c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d266604d090ae2b576b1869b484c213a6f3fd2eba1e08044d580527f446f8ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f4bc836c8c4fedaecbfa6bf35e6879d88428b87ffec717da6b2acc73609c0f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6ddbeee8468e5c88d534ac217a64e908dc86a3ab63ad95f21dd62fd04c069b3e"
+    sha256 cellar: :any,                 arm64_linux:   "a7854b3616dba02b4cd84cc132d63bd189d0f77ad3abf35bfedbbedc02396cc5"
+    sha256 cellar: :any,                 x86_64_linux:  "d13ff58b9c7f615a5d55f462158bb547153f84007a461a061d8c70d61defeaf9"
   end
 
   depends_on "rust" => :build

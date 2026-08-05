@@ -1,8 +1,8 @@
 class ErofsUtils < Formula
   desc "Utilities for Enhanced Read-Only File System"
   homepage "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git"
-  url "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/snapshot/erofs-utils-1.9.2.tar.gz"
-  sha256 "d915b45646a928174917c44a2c84ba005b161e84ab732cd5d2560371560b8d13"
+  url "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/snapshot/erofs-utils-1.9.3.tar.gz"
+  sha256 "17bfa54f4d370838c61081fce44022815a0366e282d777389589184414d5adc5"
   license "GPL-2.0-or-later"
   head "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git", branch: "master"
 
@@ -12,12 +12,12 @@ class ErofsUtils < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "72a421267db5322331f0a4e6c3541d70fbd3ad97f448f7905580da3ec35f7674"
-    sha256 cellar: :any, arm64_sequoia: "1fc5b2e8230027c84d339f92cdeb1f659247029f9ec6d1a1833c51596a143970"
-    sha256 cellar: :any, arm64_sonoma:  "1024a3c5aecb88b93f0bc40e026c0ea7fbf8c8d30f2f8e3ad7f0821c1ac4c99b"
-    sha256 cellar: :any, sonoma:        "583632d340a816d6ccb1f5bb78db48d67359eeccd2f1ad8bab430d1941d7f314"
-    sha256 cellar: :any, arm64_linux:   "378156a8ffa6266c2d75903de28363644d04f633a1b5d84bdc9a251307124061"
-    sha256 cellar: :any, x86_64_linux:  "486012c6685f045e7b0698c105078317c7b04611c517ed8bd64f0346fa87d219"
+    sha256 cellar: :any, arm64_tahoe:   "85ddf93332ab17afbcd5bb97987100d12491bb64a72f937b3fe27e46b8d6c440"
+    sha256 cellar: :any, arm64_sequoia: "b20df61c8934c9ea8437494180ddd371727f2a845b50a009e0ae30d3bc487c3f"
+    sha256 cellar: :any, arm64_sonoma:  "3a2cee1fbe5f1fd6798938e3c526648fa0fe6986e92603840b8df5f723c762e0"
+    sha256 cellar: :any, sonoma:        "5f61bb68f0c97280529ac777ffbfdb7749c3f6a83edfd285d04751f07c763cf4"
+    sha256 cellar: :any, arm64_linux:   "a54720f25c91e85ed5ad6c013c985c00dee4926386dc6ae4e35bf509034bd485"
+    sha256 cellar: :any, x86_64_linux:  "27d3ba6cbfec33e60d3c79b73c883d6ec77c1a7e22f4d98aa3e6eb5f856de032"
   end
 
   depends_on "autoconf" => :build

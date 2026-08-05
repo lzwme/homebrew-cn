@@ -11,8 +11,8 @@ class Orientdb < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "b5f313f18136943c2f9d3aa3c322ac6e6ecc087c20e88d86439482806f86e412"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "ab2ca757924b9ddddd8766ef5a69e2f621b5798bec9bf08f591a695b1b8432ed"
   end
 
   depends_on "maven" => :build
@@ -55,14 +55,15 @@ class Orientdb < Formula
       cleanup
     SH
     chmod 0755, libexec/"post-install"
+
+    (var/"db/orientdb").mkpath
+    (var/"run/orientdb").mkpath
+    (var/"log/orientdb").mkpath
   end
 
   post_install_steps do
-    mkdir_p "db/orientdb", base: :var
-    mkdir_p "run/orientdb", base: :var
-    mkdir_p "log/orientdb", base: :var
-    touch "log/orientdb/orientdb.err", base: :var
-    touch "log/orientdb/orientdb.log", base: :var
+    touch "{{var}}/log/orientdb/orientdb.err"
+    touch "{{var}}/log/orientdb/orientdb.log"
     run "post-install", base: :libexec
   end
 

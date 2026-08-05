@@ -66,7 +66,7 @@ class OpensslAT4 < Formula
   end
 
   post_install_steps do
-    symlink "{{etc}}/ca-certificates/cert.pem", "{{pkgetc}}/cert.pem", force: true
+    symlink "{{etc}}/ca-certificates/cert.pem", "{{pkgetc}}/cert.pem", overwrite: true
   end
 
   def caveats

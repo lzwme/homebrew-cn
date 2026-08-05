@@ -1,18 +1,18 @@
 class SoftServe < Formula
   desc "Mighty, self-hostable Git server for the command-line"
   homepage "https://github.com/charmbracelet/soft-serve"
-  url "https://ghfast.top/https://github.com/charmbracelet/soft-serve/releases/download/v0.12.0/soft-serve-0.12.0.tar.gz"
-  sha256 "761baadd66320c3fe5a8f80473a860c24299819c2b438ae56a4a77a7643a6252"
+  url "https://ghfast.top/https://github.com/charmbracelet/soft-serve/releases/download/v0.12.1/soft-serve-0.12.1.tar.gz"
+  sha256 "e5b2bfc6e57856cf93bbef8973ff366609b3f9a82a346238ab372fcde760050b"
   license "MIT"
   head "https://github.com/charmbracelet/soft-serve.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7a48adb545607ee612df7b31c0c00a5d1a67e422af59c644e00932a8b64b8eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "872d07800230e401bd958ba419fcf8baa769d6794038be4cd6dca8b166ff193b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e770c770da5e2f4812ccd89e0a6c260f494ee6b5439d3e2a6fb0b67b71929a25"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d6835df68edd4e41aa1146ebed435e775ea56bb055c10aa09ca09a9b47a61ee5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "98eb273fe5f70fa1f1ac3c591d11a15c1069c7059f125086da4dc555cf27199b"
-    sha256 cellar: :any,                 x86_64_linux:  "7d61c3825871d6cbccfb4d069476f789900f20eec7613b003b4b3a1f06b232a2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "838b42b01cec716d45afc063a09e69d69a8c2c82f6217e03a60afefcca890374"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83f3c544f0efb5ed8d42cca027cefc37592ac8677f4e6437cd256bff9ce40e71"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf37f091b8da889faecb55d820cf8f23dde3c76a8ec9a2d10de2c9d7b2ed6efc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9beee9892cd63ef151d476945c438615831f19dbc551480c4b18e94e8d37fa25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "160c200bdc90f14d457194366abd53bb290cf0aa695e0cb18dc7389a9e70e836"
+    sha256 cellar: :any,                 x86_64_linux:  "109d900c148d3436792d4d24b42637a46530258a10506a8b263700e9a82002dc"
   end
 
   depends_on "go" => :build

@@ -141,7 +141,7 @@ class MysqlAT84 < Formula
   post_install_steps do
     # Make sure the var/mysql directory exists
     # Don't initialize database, it clashes when testing other MySQL-like implementations.
-    init_data_dir "mysql", using: :mysql_initialize, base: :var
+    init_data_dir "mysql", using: :mysql, base: :var
   end
 
   def caveats

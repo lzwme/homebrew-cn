@@ -3,13 +3,13 @@ class Osc < Formula
 
   desc "Command-line interface to work with an Open Build Service"
   homepage "https://openbuildservice.org"
-  url "https://files.pythonhosted.org/packages/cd/33/14c536856b1f4b05716818e6210901798f403b76cd2592ab6214fb29c413/osc-1.27.2.tar.gz"
-  sha256 "857732ff333c6dc8b96e13ac470f11edc4f44d5e8292d0808ec5530113082cfd"
+  url "https://files.pythonhosted.org/packages/30/4b/f30fedc9142a8445f12c92203fbbf6cecb3afc2d14c2e84d4311ef9f1f15/osc-1.27.3.tar.gz"
+  sha256 "c2cf934fe52509cd61887b6daebe2d1d4fb3ac5e80e190eeefa7440e1d6f38fc"
   license "GPL-2.0-or-later"
   head "https://github.com/openSUSE/osc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "30a3eb2efa43f5f5caadc1c3a564d6fedab86235113fb7680d674093c50cbfd4"
+    sha256 cellar: :any_skip_relocation, all: "c8e7d59efa00e7f369bd5a4e65ab1a2c5af1c49737c8c0fbef78571ca8025f9c"
   end
 
   depends_on "cryptography" => :no_linkage
@@ -52,7 +52,7 @@ class Osc < Formula
     INI
 
     output = shell_output("#{bin}/osc status 2>&1", 1).chomp
-    assert_match "Directory '.' is not a Git SCM working copy", output
+    assert_match "Directory '.' is not a working copy", output
     assert_match "Please specify a command", shell_output("#{bin}/osc 2>&1", 2)
   end
 end

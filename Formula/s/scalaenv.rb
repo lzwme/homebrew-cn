@@ -30,7 +30,7 @@ class Scalaenv < Formula
   end
 
   post_install_steps do
-    symlink "{{prefix}}/default-plugins/scala-install", "{{var}}/lib/scalaenv/plugins/scala-install", force: true
+    symlink "{{prefix}}/default-plugins/scala-install", "{{var}}/lib/scalaenv/plugins/scala-install", overwrite: true
   end
 
   test do

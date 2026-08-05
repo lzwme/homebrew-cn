@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/ad/24/28887fe5c8c80219d946ac4492d4e2adea251a49e93f78c98887d4b9462b/prowler-5.36.0.tar.gz"
-  sha256 "393c4d3889fb18fe40bd9ded4f26fafde95722777c41607ddadf279d2e6288c4"
+  url "https://files.pythonhosted.org/packages/f5/64/b517e2f21bb35168a3e1dc348ff4dccd7a007f3a495975fd371c0e7a5ca7/prowler-5.37.0.tar.gz"
+  sha256 "8f11e4e7cf9d5b19d27a3e674be23123fe06e2d130adddf86e8e793a263e1c3d"
   license "Apache-2.0"
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a897e9f0b60e19bae3652520f399c9c65a49a2f73b0cf1e94af193c3bf22b2e1"
-    sha256 cellar: :any, arm64_sequoia: "9968eb2ad4b411bb7c3400a27fb578528252c050921ac6cdc041c0a705343d94"
-    sha256 cellar: :any, arm64_sonoma:  "09afbfccf7129d51da8348ecdbfd8f5688f319c5533a24da7dfe62dbae45b1fe"
-    sha256 cellar: :any, sonoma:        "5081678ca01c0b2d0ee634dd5a551f206f07b9218c18ef10cdfa3c88511906b5"
-    sha256 cellar: :any, arm64_linux:   "d8eac196807749338d22bb88c3f7ff73d4d05f085d1e385549c229a47914b7c4"
-    sha256 cellar: :any, x86_64_linux:  "9830dee178d4e10258027fd70fe6fda0a133580739fd9867937ed23d884af088"
+    sha256 cellar: :any, arm64_tahoe:   "1123f96810be8b00ef9e2d1e5c35d29c5e6a0fb01477d7e0d597a16989d1c397"
+    sha256 cellar: :any, arm64_sequoia: "0b59de918a52b291ef4f66484da5c54612e5bb5f15ec215f99fce2d4de40f2f5"
+    sha256 cellar: :any, arm64_sonoma:  "bcef72820a57c9b68b765ee7f511c66a48a722801c125acc7879fc9670e983f3"
+    sha256 cellar: :any, sonoma:        "c0aab040ca43ca474f5b749e51479faa8e917f9acb9db50cef2de22cd347d891"
+    sha256 cellar: :any, arm64_linux:   "1578659d293d2f37ad55dda061550e4e5809ca0deac68a339515028ec2a2b3de"
+    sha256 cellar: :any, x86_64_linux:  "33dcaa8f9be00ab6c3f3b40d2d010ed78b5acef34b6e154b0e8bf30b855265f9"
   end
 
   depends_on "cmake" => :build
@@ -509,8 +509,8 @@ class Prowler < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/c0/80/8232b582c4b318b817cf1274ba74976b07b34d35ef439b3eb948f98645a1/filelock-3.32.0.tar.gz"
-    sha256 "7be2ad23a14607ccc71808e68fe30848aeace7058ace17852f68e2a68e310402"
+    url "https://files.pythonhosted.org/packages/f6/57/3ba6e6cb097f85b855b00163d169f35365f44277df044dcf96d55b8f62a3/filelock-3.32.2.tar.gz"
+    sha256 "c33351e1f49cae33414acbc6d56784e6ecee82514ec90795da1161fc4836b5b8"
   end
 
   resource "flask" do
@@ -583,14 +583,69 @@ class Prowler < Formula
     sha256 "75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc"
   end
 
+  resource "huaweicloudsdkcore" do
+    url "https://files.pythonhosted.org/packages/e4/f5/65e90764ea3bbfef50fb68cd5e12340acf1f51e9276b11745fbf5feb7e0e/huaweicloudsdkcore-3.1.204-py3-none-any.whl"
+    sha256 "9ae17744795ebdc8ce9291373a3a27bf72e90aa98677cfce0ea9394376875a95"
+  end
+
+  resource "huaweicloudsdkcts" do
+    url "https://files.pythonhosted.org/packages/58/32/d06328e35375d4aa606719a27856cdf57b1f7fb0c49d4dfd22a9609dba19/huaweicloudsdkcts-3.1.204-py3-none-any.whl"
+    sha256 "9def561aa784a6ee13b46bfc96888cd1df5bfc42f8a89e60b42c91c608bf6d60"
+  end
+
+  resource "huaweicloudsdkecs" do
+    url "https://files.pythonhosted.org/packages/88/66/f8e4a3b9ca70d3ea79c4d200f928ed9ffdf4910ac01be4864967408c8f18/huaweicloudsdkecs-3.1.204-py3-none-any.whl"
+    sha256 "dc5715d782c0260b901c793d009d5e632257acb04257b6f2c6631e415c589343"
+  end
+
+  resource "huaweicloudsdkelb" do
+    url "https://files.pythonhosted.org/packages/34/4b/9bdc7e2066419d967e9b812cfacfb9c4996a8e977dc39853309a3c1ac9e2/huaweicloudsdkelb-3.1.204-py3-none-any.whl"
+    sha256 "620247c2b2a7f20e7da8b18fe9c64e29972055f015bc35270fb5b43243dc4830"
+  end
+
+  resource "huaweicloudsdkevs" do
+    url "https://files.pythonhosted.org/packages/f7/cf/531dc55fd9d0f3bbd3eef24c7e4d78c6a1ba8eb80fa506e3574d72bcc98a/huaweicloudsdkevs-3.1.204-py3-none-any.whl"
+    sha256 "9118ac4c576e54aa7eaa926949e2b6824c5f038a2274b51d9a304d37fc0d7e2f"
+  end
+
+  resource "huaweicloudsdkiam" do
+    url "https://files.pythonhosted.org/packages/f7/9a/7da0fbe9b83bc7a7f6d586366b81e829ed355a57419d2184b7dd51f8c2a3/huaweicloudsdkiam-3.1.204-py3-none-any.whl"
+    sha256 "0021e204f81ceef2640017e517adb72ba56c9ced03f071a0265b10bc9759badf"
+  end
+
+  resource "huaweicloudsdkkms" do
+    url "https://files.pythonhosted.org/packages/28/3a/7392617d585cb2005f7d9ade0b0e0e493a7a88daf56e8dc39e4e219cc5d0/huaweicloudsdkkms-3.1.204-py3-none-any.whl"
+    sha256 "378986f33113ce99f445ef318d1c7dda89e361d16c008e5ef9793981d8385376"
+  end
+
+  resource "huaweicloudsdkobs" do
+    url "https://files.pythonhosted.org/packages/af/49/28a09e1e33d1c039be22ee4171efaa739351653c7aa88d3a2f7a78d90217/huaweicloudsdkobs-3.1.204-py3-none-any.whl"
+    sha256 "8c5830fa30293185964d98e524887fc510c8e17ca2fadb4563dad10910f37b13"
+  end
+
+  resource "huaweicloudsdkrds" do
+    url "https://files.pythonhosted.org/packages/18/7d/721f162c46e3de604a73674223bf6c6bc6cf7ade25b3751a71288f4dd122/huaweicloudsdkrds-3.1.204-py3-none-any.whl"
+    sha256 "a790b5b3c457a608e5679c101f463b4d037dd9a8a66f6e46144a9e5a4b37780f"
+  end
+
+  resource "huaweicloudsdkvpc" do
+    url "https://files.pythonhosted.org/packages/de/b5/4baa27c3a275ea92806068e35e06f249a30add8dd57c777bb45841f63406/huaweicloudsdkvpc-3.1.204-py3-none-any.whl"
+    sha256 "c57d6b6d2f70deca91e86f7956b33fc9ac4991b431f0d608c3632231119f8970"
+  end
+
+  resource "huaweicloudsdkwaf" do
+    url "https://files.pythonhosted.org/packages/9e/21/01590dce200be487756451f5e9efb99da7810688062d177e4b58d6062465/huaweicloudsdkwaf-3.1.204-py3-none-any.whl"
+    sha256 "b2355276e0029808f45e2d1bd3eb14b37d2da9417e61e642ffe0e2b748ca8283"
+  end
+
   resource "hyperframe" do
     url "https://files.pythonhosted.org/packages/02/e7/94f8232d4a74cc99514c13a9f995811485a6903d48e5d952771ef6322e30/hyperframe-6.1.0.tar.gz"
     sha256 "f630908a00854a7adeabd6382b43923a4c4cd4b821fcb527e6ab9e15382a3b08"
   end
 
   resource "iamdata" do
-    url "https://files.pythonhosted.org/packages/e6/95/c9c34796471a178f7c392ac4bb650ee3e9b7e58eb2523d8d9b237fc63ccd/iamdata-0.1.202607241.tar.gz"
-    sha256 "bfd3c6caf10eab5094fbe85cbe15641ff966db80d607d738f7dabe0863853cf7"
+    url "https://files.pythonhosted.org/packages/67/69/777d6dfc5719ab66229dd03b55387c1a8be81f296f4c2275587a889d9057/iamdata-0.1.202608031.tar.gz"
+    sha256 "ba3d81ff1f75a6922761d5cb5afd29fc83b8c993fec31dccdf9e8aac744472a0"
   end
 
   resource "idna" do
@@ -888,6 +943,11 @@ class Prowler < Formula
     sha256 "41571c89ca91598c79e8ef18a2d07367d4810fbbd6f637794879baf1b7703423"
   end
 
+  resource "pymongo" do
+    url "https://files.pythonhosted.org/packages/22/f5/c0c6732fbd358b75a07e17d7e588fd23d481b9812ca96ceeff90bbf879fc/pymongo-4.15.1.tar.gz"
+    sha256 "b9f379a4333dc3779a6bf7adfd077d4387404ed1561472743486a9c58286f705"
+  end
+
   resource "pynacl" do
     url "https://files.pythonhosted.org/packages/d9/9a/4019b524b03a13438637b11538c82781a5eda427394380381af8f04f467a/pynacl-1.6.2.tar.gz"
     sha256 "018494d6d696ae03c7e656e5e74cdfd8ea1326962cc401bcf018f1ed8436811c"
@@ -938,6 +998,11 @@ class Prowler < Formula
     sha256 "b3dffaebd884d8cd778494369603a9e7b58d29111bf6b41bdc2dcd87203af4e9"
   end
 
+  resource "requests-toolbelt" do
+    url "https://files.pythonhosted.org/packages/f3/61/d7545dafb7ac2230c70d38d31cbfe4cc64f7144dc41f6e4e4b78ecd9f5bb/requests-toolbelt-1.0.0.tar.gz"
+    sha256 "7681a0a3d047012b5bdc0ee37d7f8f07ebe76ab08caeccfc3921ce23c88d5bc6"
+  end
+
   resource "requestsexceptions" do
     url "https://files.pythonhosted.org/packages/82/ed/61b9652d3256503c99b0b8f145d9c8aa24c514caff6efc229989505937c1/requestsexceptions-1.4.0.tar.gz"
     sha256 "b095cbc77618f066d459a02b137b020c37da9f46d9b057704019c9f77dba3065"
@@ -976,6 +1041,11 @@ class Prowler < Formula
   resource "shodan" do
     url "https://files.pythonhosted.org/packages/c5/06/c6dcc975a1e7d89bc764fd271da8138b318e18080b48e7f1acd2ab63df28/shodan-1.31.0.tar.gz"
     sha256 "c73275386ea02390e196c35c660706a28dd4d537c5a21eb387ab6236fac251f6"
+  end
+
+  resource "simplejson" do
+    url "https://files.pythonhosted.org/packages/0e/2a/54837395a3487c725669428d513293612a48d82b95a0642c936932e5d898/simplejson-4.1.1.tar.gz"
+    sha256 "c08eb9f7a90f77ae470e19a07472e9a79ebc0d1c2315d86a72767665bd5ba79f"
   end
 
   resource "six" do
@@ -1069,8 +1139,8 @@ class Prowler < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/fe/a4/282c8e64300a59fc834518a54bf0afabb4ff9218b5fa76958b450459a844/wrapt-2.2.2.tar.gz"
-    sha256 "0788e321027c999bf221b667bd4a54aaefd1a36283749a860ac3eb77daed0302"
+    url "https://files.pythonhosted.org/packages/2b/b0/c1f5a970721f06b85c0cd5142e0ff8fe067708abd779b0c4f4be7d61d09f/wrapt-2.3.0.tar.gz"
+    sha256 "681a2d0eefd721998f90642762b8e75c2159ec531b20ad5e437245ea7b06a107"
   end
 
   resource "xlsxwriter" do

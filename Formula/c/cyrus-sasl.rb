@@ -22,6 +22,14 @@ class CyrusSasl < Formula
     sha256 x86_64_linux:   "f1bc6d528c1c0e53c2eecb599e5127070654a7bdfb9acb0232cfd08bfaf38efd"
   end
 
+  head do
+    url "https://github.com/cyrusimap/cyrus-sasl.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
   keg_only :provided_by_macos
 
   depends_on "krb5"
@@ -30,6 +38,7 @@ class CyrusSasl < Formula
   uses_from_macos "libxcrypt"
 
   def install
+    with_env(NOCONFIGURE: 1) { system "./autogen.sh" } if build.head?
     system "./configure",
       "--disable-macos-framework",
       "--disable-dependency-tracking",

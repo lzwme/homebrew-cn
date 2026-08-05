@@ -6,14 +6,15 @@ class AdvaiCli < Formula
   url "https://files.pythonhosted.org/packages/ca/2c/4e7e64f2c6895555a5cf6cc4b7fd030d1b265f77969d1f417cfd84bd802e/advai_cli-1.0.12.tar.gz"
   sha256 "d3e9921e3a878df3f604a85fc62901b9aebbcfbff36beafe2b50f18ea6a7617c"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09bd214364abd8b78b5b5f6bfb32f210396743af575cc8538c3e6a3c25058d0c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d68d525c046269354896e580302f8d1e2e85cfb7d13230eeef890ec04f8f4d46"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a9bea682f0d46ea4f774c8fc7adc0e1770c00121be46dd02e16450fd831f3e8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "610251d6f89e6e3be4b1aabb9cd8f7063328cd328311b0f4db389c866a656ac6"
-    sha256 cellar: :any,                 arm64_linux:   "18089b30937572ff539f49e2d9bacd5ae1b1542dd3bf3827041c10af9a8a87a1"
-    sha256 cellar: :any,                 x86_64_linux:  "3afe599ee17e7ff8fef042f3c9d6b79fac54a0e591023eecf27e58dd06d7091d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13bf58bf3c0490d68de02c44eed920bd4f6c2817d3297a574a738b91eb484c04"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1f524dfb281f5fa803e2e5ac2040be482ce98caa7c6d61960d31ee0e939aada"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e50110f2ed9868a0382c3acefcb5df3c98d7617c4fc6190c8f053774c592725"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5d6774e12c41f9dc043defb01c75c1bcb210485bd5a97de6ecfad40fd26d8cf5"
+    sha256 cellar: :any,                 arm64_linux:   "7cb3facf0b8e4d7d82bad0f1d6e388b48b78825825854e19e6d4926989692645"
+    sha256 cellar: :any,                 x86_64_linux:  "d18208306262f53e443a21617d55daef7ab75b10231189bb327e5b12ffc5f38f"
   end
 
   depends_on "python@3.14"
@@ -24,8 +25,8 @@ class AdvaiCli < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/1d/cc/58f26f118d8099f84e009ce560b9148a3f803e63fa8473b57feb67241875/aiohttp-3.14.2.tar.gz"
-    sha256 "f96821eb2ae2f12b0dfa799eafbf221f5621a9220b457b4744a269a63a5f3a6c"
+    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
+    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
   end
 
   resource "aiosignal" do

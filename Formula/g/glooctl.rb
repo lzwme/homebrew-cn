@@ -1,8 +1,8 @@
 class Glooctl < Formula
   desc "Envoy-Powered API Gateway"
   homepage "https://docs.solo.io/gloo-edge/main/reference/cli/glooctl/"
-  url "https://ghfast.top/https://github.com/solo-io/gloo/archive/refs/tags/v1.21.12.tar.gz"
-  sha256 "94ce6f7d015c421ff8b923a46d6c5224547206fdc7d8a1190edb13268fd15515"
+  url "https://ghfast.top/https://github.com/solo-io/gloo/archive/refs/tags/v1.22.1.tar.gz"
+  sha256 "6ccce7a32746e2ed19f197526107e3096bf20b1b8589cef26435461d30afb739"
   license "Apache-2.0"
   head "https://github.com/solo-io/gloo.git", branch: "main"
 
@@ -16,12 +16,12 @@ class Glooctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e2822aecff0cd2c38f791c9f005d1a434067839e772e9a2deebeab94f2a741e2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12ff6ea5db4ca3193ef0c68f793d38c569633e53375715a70e43fd809edf37e4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2a1221bf9b9fd537fb88bf86d9137d496ecb8f4647972a90ce2ad3908d4a8a6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d33045867755ca22693747d24b92e5e230b8a368828c6fda35362f3a34d04bfa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c762db33b7e1d4603a7573ef2180c4150fe8222745fc37f8fbfbd0bd180783c4"
-    sha256 cellar: :any,                 x86_64_linux:  "c984cc210f1070ccba0cffd121e43f63e91af724586b1a32db8e9c6b47205866"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bdb22a1391da3cf6acdd69b5b0d0e3a19312ac2764641e15c5dd86f70d725cd4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eebfbaf1a68915c9838b13188905d62b91bb2ba93f53a5e21b63f6fe312c7f78"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18e3be2185fa497aa829d140eced7a376fbe3fe103ab76fb91bf46bef1d52184"
+    sha256 cellar: :any_skip_relocation, sonoma:        "68eb4f1fdad3f2af577c98448772f4f0aed7f0454086e04a29b3eb22997a4ac8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c23f833305e24867ef3ee961077e69a303099de19860cb3ed4d5242bad78f03f"
+    sha256 cellar: :any,                 x86_64_linux:  "c2b9489e7f45a58316995a1cf515f26584eee8e0d208a49a10a752b9d267d799"
   end
 
   deprecate! date: "2026-12-31", because: :deprecated_upstream

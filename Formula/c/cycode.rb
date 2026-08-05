@@ -6,15 +6,16 @@ class Cycode < Formula
   url "https://files.pythonhosted.org/packages/c7/47/d7889309127cf201998cb2d1bb85b4d78fb5fdc973b17191608be599507e/cycode-3.18.0.tar.gz"
   sha256 "8c56c04674bc0816534e062004f224e3e4688c2fd837bf77bbc17dc287c87769"
   license "MIT"
+  revision 1
   head "https://github.com/cycodehq/cycode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "233ccb2aec68b0d7822505ff77874c10274cb3051d5f4615ca07e97a5c477f81"
-    sha256 cellar: :any, arm64_sequoia: "7bcb20bd497e9e337df47e01a1748d26f8d733eaa5ebd3245f4a9efcf4b55d3c"
-    sha256 cellar: :any, arm64_sonoma:  "58672620c3d9158c57b2498d08094db1618ab185a59aa0fe4cd07fa13881d394"
-    sha256 cellar: :any, sonoma:        "333670bece7a745ac0c450b5c34e67b70266a5cb7242a83b1e6e20e048e9a84f"
-    sha256 cellar: :any, arm64_linux:   "c197ef745bf18bf5ee4f0a46e27c448c3f7da5f27a581ad5702e3a291c0489db"
-    sha256 cellar: :any, x86_64_linux:  "400402a7c2277f44807c62e6a3e451e1454a9fa9f93b7df11a8c412c126c72ed"
+    sha256 cellar: :any, arm64_tahoe:   "3ccd22011d0e4246c9085033feddde692223eb21f3c1e3000d750132f014c020"
+    sha256 cellar: :any, arm64_sequoia: "7bc4ea8ab488eced47751e52f41d7d89e94fc7f6837ba37ed923863ea9bfb364"
+    sha256 cellar: :any, arm64_sonoma:  "77e9dfac5cfbb99a09cf5cced9cc79e5fe3161ef43ecb1614c71c5b3493dc15f"
+    sha256 cellar: :any, sonoma:        "bc9a3a348b607b10ac718f63a726cae78eb1da9e3b3a4b348e9a638cd4e71a4e"
+    sha256 cellar: :any, arm64_linux:   "4aee95307605b9372740879bff3ac982ce653adb787903c0f7970fb72c670a8c"
+    sha256 cellar: :any, x86_64_linux:  "e5461a4c0c8d23e93579db8954c7aba321cf81ef2872e11ba1677b9c3729a129"
   end
 
   depends_on "certifi" => :no_linkage
@@ -62,8 +63,8 @@ class Cycode < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
-    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
+    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
+    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
   end
 
   resource "h11" do
@@ -112,8 +113,8 @@ class Cycode < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/6e/77/9450b8f251a13affb6281997d0523c4615f8a8b35d0b21ff30db3a5aac9d/mcp-1.28.1.tar.gz"
-    sha256 "d51e36a5f5644faea4f85ea649bfffa6bc6c26770d42798ad6a3de3d2ba69683"
+    url "https://files.pythonhosted.org/packages/30/d3/f9acc21dfc886e4f78e2add1a47db46ce16884346afde53f8a064c02c891/mcp-1.29.0.tar.gz"
+    sha256 "52d01f334de1868cc3bb2d6604931126a67631f99a6c5d3b82ba47290315ec36"
   end
 
   resource "mdurl" do
@@ -237,8 +238,8 @@ class Cycode < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/a2/65/b7c6c443ccc58678c91e1e973bbe2a878591538655d6e1d47f24ba1c51f3/uvicorn-0.51.0.tar.gz"
-    sha256 "f6f4b69b657c312f516dd2d268ab9ae6f254b11e4bac504f37b2ab58b24dd0b0"
+    url "https://files.pythonhosted.org/packages/03/18/ccce41535dee1be77735592bd19965f3972c82e07ee703d324709496b716/uvicorn-0.52.1.tar.gz"
+    sha256 "112ec661814189acbccd3f7b86460147cc065fc92c0821afa78918780e4354dd"
   end
 
   def install

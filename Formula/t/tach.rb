@@ -6,16 +6,16 @@ class Tach < Formula
   url "https://files.pythonhosted.org/packages/81/54/8bae607899ba9fd7abd9895215f2e5dc789a73529f8afeb0a10d2ee71500/tach-0.35.0.tar.gz"
   sha256 "db8594820685f8ce316ef45d4dfa1a8ed39ce97dd873aa5006800d2668c3b3bb"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/tach-org/tach.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "62cc9f471b01460a6edbe748397c478b5e3615f4ed6876aa5d1428eae60f591e"
-    sha256 cellar: :any, arm64_sequoia: "9cf576267648cf303c5da735163c4ced8139c0d1de13d3b746d5a42b457c6e82"
-    sha256 cellar: :any, arm64_sonoma:  "9f49e14fdcd8388e6ef087ee31d1d5f03de7a1f9d262508e9efe0412d35a37a3"
-    sha256 cellar: :any, sonoma:        "029d693bf52ebd3b6fc6ad4eaabf2da7e770a7c34d51a4f8e71caf64fabc8733"
-    sha256 cellar: :any, arm64_linux:   "3334c10a69163c6950fad686e871d91391c0acc485b3c96190a80b5bf97edb78"
-    sha256 cellar: :any, x86_64_linux:  "a5a3502ddb02dc804959ccf00151e18f5e3b86e035218ceadb3ef4eeeeedc77c"
+    sha256 cellar: :any, arm64_tahoe:   "6b23752251846d1dd81a3f585aec7d70ae08296533278e5de9e7cfaf369dfcd9"
+    sha256 cellar: :any, arm64_sequoia: "d61b7471608b4a122feaafa0972297c8f61c316c796cf7ae4cf973d33a07e0b4"
+    sha256 cellar: :any, arm64_sonoma:  "447994e24d05c9ac4234fd75477366f25a1873d63cb2c4dbbf640d7573eba43b"
+    sha256 cellar: :any, sonoma:        "312adc181bc740935359acac344ea84db2acb278eb7b628675e0a64fc8eb418d"
+    sha256 cellar: :any, arm64_linux:   "517115e690bca896fd44481cb4acb2a8113c0f4b8f84e7ab543d829de8f5d36d"
+    sha256 cellar: :any, x86_64_linux:  "373d92b32be7cd3a788f8c787bd18aa4ab86e1c44a496e62a5793fd2d1b21bc5"
   end
 
   depends_on "rust" => :build
@@ -28,8 +28,8 @@ class Tach < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
-    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
+    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
+    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
   end
 
   resource "markdown-it-py" do
@@ -48,8 +48,8 @@ class Tach < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/a1/96/06e01a7b38dce6fe1db213e061a4602dd6032a8a97ef6c1a862537732421/prompt_toolkit-3.0.52.tar.gz"
-    sha256 "28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"
+    url "https://files.pythonhosted.org/packages/7d/ea/39b988c938f75cb75d7045b5c69f8bfed47ee2152c8837fb403de29d6fb8/prompt_toolkit-3.0.53.tar.gz"
+    sha256 "9ec8a0ad96d5c56148b3f914aa79c1564c3fde5d2e6b876e7bc327e353cf8fa6"
   end
 
   resource "pydot" do

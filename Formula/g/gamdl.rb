@@ -3,17 +3,17 @@ class Gamdl < Formula
 
   desc "Python CLI app for downloading Apple Music songs, music videos and post videos"
   homepage "https://github.com/glomatico/gamdl"
-  url "https://files.pythonhosted.org/packages/ab/83/005bdeb037dc68bf7b0a79c2b4e6c16958ba66b52f51d8dd6fb81e3d82e5/gamdl-3.8.4.tar.gz"
-  sha256 "c0fd711aa6bae8f0ff3ff413c14af92812b5a7bbcd67a2fd0f9600d24994c091"
+  url "https://files.pythonhosted.org/packages/fe/a5/11a6af5a4b2a850c5864e0f51a7d438b0dc5852684c4823eae3d7888be46/gamdl-3.8.5.tar.gz"
+  sha256 "d683139518b61603f7a2da62a2f79b09bfbf5a12948b3f43ad52824dd85f7a73"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "0c953da91ef00534ad0a64286530dcb2bf97feace5dea3903acfa97ab0df7bba"
-    sha256 cellar: :any, arm64_sequoia: "38bd48a79cb2b9c4f608d0bc33e5e63d8ad0cea47247a2a35c39c01b4b74da64"
-    sha256 cellar: :any, arm64_sonoma:  "cf6dc9d5284f56987b645369c39d266d1da8da831cf388d676c926a26f0ace8f"
-    sha256 cellar: :any, sonoma:        "e6cfcea3104754e0a613982aacf7985ba8c9039a4720d105b63d6799b4f09407"
-    sha256 cellar: :any, arm64_linux:   "e2c10cf1e395903bafd383739a73dbf47ac40f6e2ee7165b6940562c547c3dfb"
-    sha256 cellar: :any, x86_64_linux:  "f886b1ba5ff491575bdbe61b572c8d86ff48072d208bb4d7b0d542f210f6a1fb"
+    sha256 cellar: :any, arm64_tahoe:   "7b30b4e8bf3d95f1e43621a5e43634f506d82dca22e974fb930c3e11fc671d9f"
+    sha256 cellar: :any, arm64_sequoia: "32375a03ee284369cdf64fd13770b1dc06f67ce2ca2613fb505d2029c5a14ad1"
+    sha256 cellar: :any, arm64_sonoma:  "7daffc7f8f119427269b01e86ddbbd8e1d2286ac0f6fa30bf4ae06e48142958a"
+    sha256 cellar: :any, sonoma:        "719871b5936f4e9886180d945b53856e45bde0df81f97ecfcf6b89730915e941"
+    sha256 cellar: :any, arm64_linux:   "428df2850af81f4af35dd66f523521a0625f8bcf9d3fb2f435e7be89c6b5b335"
+    sha256 cellar: :any, x86_64_linux:  "964f728ef7353813e34e384dacfe8d26ddf28ec84ceef6d2db34a79b1bceeac4"
   end
 
   depends_on "rust" => :build
@@ -105,8 +105,8 @@ class Gamdl < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/a1/96/06e01a7b38dce6fe1db213e061a4602dd6032a8a97ef6c1a862537732421/prompt_toolkit-3.0.52.tar.gz"
-    sha256 "28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"
+    url "https://files.pythonhosted.org/packages/7d/ea/39b988c938f75cb75d7045b5c69f8bfed47ee2152c8837fb403de29d6fb8/prompt_toolkit-3.0.53.tar.gz"
+    sha256 "9ec8a0ad96d5c56148b3f914aa79c1564c3fde5d2e6b876e7bc327e353cf8fa6"
   end
 
   resource "protobuf" do

@@ -28,7 +28,7 @@ class Sbtenv < Formula
 
   # Var symlinks must be done in post install as bottling converts symlinks to real files
   post_install_steps do
-    symlink "{{prefix}}/default-plugins/sbt-install", "{{var}}/lib/sbtenv/plugins/sbt-install", force: true
+    symlink "{{prefix}}/default-plugins/sbt-install", "{{var}}/lib/sbtenv/plugins/sbt-install", overwrite: true
   end
 
   test do

@@ -54,6 +54,11 @@ class Moc < Formula
     depends_on "popt"
   end
 
+  # Last release on 2016-11-16 and needs patches to build.
+  # Also removed from Alpine 3.23+ and Arch Linux.
+  deprecate! date: "2026-08-03", because: :unmaintained
+  disable! date: "2027-02-03", because: :unmaintained
+
   # Remove autoconf, automake and gettext for > 2.5.2
   depends_on "autoconf" => :build
   depends_on "automake" => :build

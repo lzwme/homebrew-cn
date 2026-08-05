@@ -1,18 +1,18 @@
 class Malcontent < Formula
   desc "Supply Chain Attack Detection, via context differential analysis and YARA"
   homepage "https://github.com/chainguard-dev/malcontent"
-  url "https://ghfast.top/https://github.com/chainguard-dev/malcontent/archive/refs/tags/v1.25.7.tar.gz"
-  sha256 "2e0befd462afe04a7e1e4e54d656506594aedac9dd97e94b8f8a0643b7fc8e1d"
+  url "https://ghfast.top/https://github.com/chainguard-dev/malcontent/archive/refs/tags/v1.25.8.tar.gz"
+  sha256 "7dda58163b1b1e9561f70b5060c61b14c185c83fa81b4a6b94b6e45a55daaee9"
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/malcontent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b586353cad6946e15816f81a34135df4abaf9667da8341d2af5e5b63448c318c"
-    sha256 cellar: :any, arm64_sequoia: "52577ca158a8fc3ed162b4e6f76f05222103cdc0f74090b46cc0823c17b94b61"
-    sha256 cellar: :any, arm64_sonoma:  "1f4530137e932de1cb93f0b9a9a9c7c50fab75891d234aadaa58ae629788be6b"
-    sha256 cellar: :any, sonoma:        "b03ffe85545749d6c7c50c9d152fc4995fcb9fd52f307f1750a8b7a823dabb65"
-    sha256 cellar: :any, arm64_linux:   "d32278e37f6a3273406ab2c598cc9f399f251ab15974706ac4cb49127ed51656"
-    sha256 cellar: :any, x86_64_linux:  "a0afd084b34a747d6041960e45bbf28323a65a9a53dabb952a7abdcb374028aa"
+    sha256 cellar: :any, arm64_tahoe:   "c1341d0ebd55057d8383a213ce56a458b20d948c9d8825c57e7d985ded59b7ee"
+    sha256 cellar: :any, arm64_sequoia: "4400f01da2801640ec1231bace00b021d333a02318874091e916644270bf70a6"
+    sha256 cellar: :any, arm64_sonoma:  "7a15b95fec801519545c7be8d3631d650ec3d3411751577791d2d0b83384ca63"
+    sha256 cellar: :any, sonoma:        "5116e116b568e99f4f07f871ab7f701813489d6bc954a948aee15a7762eb7af4"
+    sha256 cellar: :any, arm64_linux:   "947c5fe6e003b8d478e9c1abdd39b4e214f8f0c00043cef41389f63bb12f69ca"
+    sha256 cellar: :any, x86_64_linux:  "402144d66c0896e2a4cbc0bab767268e52e8dfad25ba86ca1c771759a102fe7f"
   end
 
   depends_on "go" => :build

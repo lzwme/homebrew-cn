@@ -3,17 +3,17 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/76/8e/7294e7843baaf67e153fb47f11435c3857c3b5d95d8daf8321043f8dc462/flexget-3.19.31.tar.gz"
-  sha256 "7c9b7ffd3b8efd95f3bf1f1a8b1fd809cd98a31dedcedeb20b682c8c0a6bf2ff"
+  url "https://files.pythonhosted.org/packages/7a/f2/40b5424129a22a4ba0424722f111702883c67e5a517e9457665cffba0933/flexget-3.19.32.tar.gz"
+  sha256 "e14952c40fa7972a87b0cf527eed95ba8c0573ceaaa90244527063a30442982b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "98685b6b19b4bd1971ba2eb70da3542036235a26572da27fcf0f4d210e605b58"
-    sha256 cellar: :any, arm64_sequoia: "4004e3ddf68b183c14b070e1d147570e26948482322042f1a220817ebebf48d6"
-    sha256 cellar: :any, arm64_sonoma:  "b36cc636611feb3dd20c669b7bde3feea07f774bd958af75c0a2710b897a3e74"
-    sha256 cellar: :any, sonoma:        "ebbaa82020359de9837ae11092ba9def06aae2bf4c2258d49dccfa287c7beabd"
-    sha256 cellar: :any, arm64_linux:   "42c0f92818c380e310a38954ce9908bfbb8e95a98b875e4758f8124fc3723787"
-    sha256 cellar: :any, x86_64_linux:  "02b9f705154c4acddb280cd636fb8ccc82a55f930291f80609272b428dd36980"
+    sha256 cellar: :any, arm64_tahoe:   "bfc06dd7a3d8639d74b8a7b5a38ee941fff96a202a230f970f5cca47b09adffc"
+    sha256 cellar: :any, arm64_sequoia: "0e6926715d24b8d962e47c9c499b0637f7885c4105949c9ffa23f948a180beae"
+    sha256 cellar: :any, arm64_sonoma:  "9d2a95c816c30b54afdff940c3039e6ec15367466d59848e8ca57067f6fccc32"
+    sha256 cellar: :any, sonoma:        "4e52336695727ecbf7aab4eb7dd1ec2346ba70c0ff8da04324f2ae10f27deac3"
+    sha256 cellar: :any, arm64_linux:   "9d7524c3a2c7e8458b228554785e430e584eea8c11f0e414e80cebfa3c7d0079"
+    sha256 cellar: :any, x86_64_linux:  "2021e79ea99d5d3553b827ee5019936a1a79048d1cec5b3199e2b9f4508e2514"
   end
 
   depends_on "rust" => :build
@@ -31,8 +31,8 @@ class Flexget < Formula
   end
 
   resource "annotated-doc" do
-    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
-    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+    url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
+    sha256 "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
   end
 
   resource "apscheduler" do
@@ -86,8 +86,13 @@ class Flexget < Formula
   end
 
   resource "feedparser" do
-    url "https://files.pythonhosted.org/packages/dc/79/db7edb5e77d6dfbc54d7d9df72828be4318275b2e580549ff45a962f6461/feedparser-6.0.12.tar.gz"
-    sha256 "64f76ce90ae3e8ef5d1ede0f8d3b50ce26bcce71dd8ae5e82b1cd2d4a5f94228"
+    url "https://files.pythonhosted.org/packages/37/8a/a53da4a77352045d277978a2df322d5379369f9deb1707178899ff7e1121/feedparser-6.0.14.tar.gz"
+    sha256 "088679b0c4b543ee211a820dd544698c76a402122eae7473c04a43425f283d06"
+  end
+
+  resource "feedparser-sgmllib" do
+    url "https://files.pythonhosted.org/packages/da/df/38596299216e5c22d60ed7f97902bb2bc72cfb95f732400f4fa976fd2e62/feedparser_sgmllib-2.1.0.tar.gz"
+    sha256 "61facf2918c4389b5b00714f76c5e03431ffcd94cd1f51d657edd6cd7c396579"
   end
 
   resource "flask" do
@@ -306,11 +311,6 @@ class Flexget < Formula
     sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
   end
 
-  resource "sgmllib3k" do
-    url "https://files.pythonhosted.org/packages/9e/bd/3704a8c3e0942d711c1299ebf7b9091930adae6675d7c8f476a7ce48653c/sgmllib3k-1.0.0.tar.gz"
-    sha256 "7868fb1c8bfa764c1ac563d3cf369c381d1325d36124933a726f29fcdaa812e9"
-  end
-
   resource "shellingham" do
     url "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz"
     sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
@@ -342,8 +342,8 @@ class Flexget < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/37/78/fda3361b56efc27944f24225f6ecd13d96d6fcfe37bd0eb34e2f4c63f9fc/typer-0.27.0.tar.gz"
-    sha256 "629bd12ea5d13a17148125d9a264f949eb171fb3f120f9b04d85873cab054fa5"
+    url "https://files.pythonhosted.org/packages/ae/40/4a3db7990d1f62a53182aa96eaef57aeb2886a27f90a195bc66713565d31/typer-0.27.1.tar.gz"
+    sha256 "a79bef8469a79c45498e7b814ecf8d603cc7644e9acbd9e19cac0334240b18df"
   end
 
   resource "typer-slim" do

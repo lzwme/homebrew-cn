@@ -3,17 +3,17 @@ class Copyparty < Formula
 
   desc "Portable file server"
   homepage "https://github.com/9001/copyparty"
-  url "https://files.pythonhosted.org/packages/54/45/660084bf6d0b624bf935d55661e2a1da9a1f6a5f511b0105abfd273226b4/copyparty-1.20.19.tar.gz"
-  sha256 "c0ee4d08126a739c357aa9f8cc2318d7ca726b25a80f6bd17bc77710e2b1c6b4"
+  url "https://files.pythonhosted.org/packages/c5/3b/b58eb9b0324528897992cd47b38b66973d26d6a8187a39a4fdb03c45f2c0/copyparty-1.20.20.tar.gz"
+  sha256 "d1d195b58eb3993ec9977eedc10214175543e4e9ed76302896406912eff501be"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5e39f1ed65e0156a56568ca6cd433b89b224d7d26d36fa96bed5ca3af04c644a"
-    sha256 cellar: :any, arm64_sequoia: "eda09afcf35ecae6a903d3620ab5356b678bb5c5f5b122b7b4c6c9e0cf909740"
-    sha256 cellar: :any, arm64_sonoma:  "8c3f07d37f0918482784c8889466c7a70164aac7e3856820dd923da39552bb04"
-    sha256 cellar: :any, sonoma:        "62002552f1757ac2f60f8a5cadbe5fefce4a297ea2ffdb449febdedd14675b83"
-    sha256 cellar: :any, arm64_linux:   "f0b22307439ef9dc6144c66404a3af825a4f4224372f4d3afc3a30089664f920"
-    sha256 cellar: :any, x86_64_linux:  "832cbeb793c43b8d9f2c3ece97aaf7755727eebc59a046479f441a5c5654b424"
+    sha256 cellar: :any, arm64_tahoe:   "9aaaaab6f71aeed73276ea9409c6a91185f3422c005b0b559f541db2dff9439a"
+    sha256 cellar: :any, arm64_sequoia: "55faf8a47d854152c2429424b99a27f08e40a2186c512f50b42ca14c9a4f8cc6"
+    sha256 cellar: :any, arm64_sonoma:  "6d68186ac96547c04c15b65d2883a8f89eb476ec011442d936e67c0b34d3df7b"
+    sha256 cellar: :any, sonoma:        "c07b02bbf41fa462733dd9631fa2884d9253e70ddc06aaed0c6d0a0f283cb90e"
+    sha256 cellar: :any, arm64_linux:   "993e251ccb259f349c3ca7eddd7a11d019ee0e1e7fa22d29688124c8f2f1d748"
+    sha256 cellar: :any, x86_64_linux:  "377769c2077b19f345498aff376047144f51da2ac82fd3ef51dfe7df43814a27"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -97,8 +97,8 @@ class Copyparty < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/74/b7/da07bae88f5a9506b4def6f2f4903cf4c3b8831e560dba8fa18ca08f758f/pyopenssl-26.3.0.tar.gz"
-    sha256 "589de7fae1c9ea670d18422ed00fc04da787bbde8e1454aea872aa57b49ad341"
+    url "https://files.pythonhosted.org/packages/3f/e8/7325d258199b159eb2c03fe32107533e2832e70e63f4fb88a6aa00023201/pyopenssl-26.4.0.tar.gz"
+    sha256 "28dfcce0162b9211413e26dfbfdf1d24317fbeba18fc93c12400a1856b2a0bc7"
   end
 
   resource "pyzmq" do

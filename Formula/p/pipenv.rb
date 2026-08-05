@@ -3,14 +3,13 @@ class Pipenv < Formula
 
   desc "Python dependency management tool"
   homepage "https://github.com/pypa/pipenv"
-  url "https://files.pythonhosted.org/packages/26/4e/24ece5e63a4a81034453970e2289896f977999550abee4dcf81f1e0e963e/pipenv-2026.6.2.tar.gz"
-  sha256 "fe513e97f3fc7027df22647aaf2b9de892f345f7e56dc0422e70b1213d641400"
+  url "https://files.pythonhosted.org/packages/61/a2/ee6cb5e9d693125c684ab2ea0b5446b4dcc4fd2e7432e78a9e0681b9ec8f/pipenv-2026.7.0.tar.gz"
+  sha256 "82d99ec575afce9df62238992c644bd59c46797848ddebce9b246d3c2b612055"
   license "MIT"
-  revision 1
   head "https://github.com/pypa/pipenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fe8e1e72d3ebb34e339923f6b3f8e1b14dd6b4c4dd8e3dd9d23e83b38ae67830"
+    sha256 cellar: :any_skip_relocation, all: "6328a6fa3ba6c0f6e2c29e697e2eae9ec145bb8d0f72043916d7cee4be0142d2"
   end
 
   depends_on "certifi" => :no_linkage
@@ -34,8 +33,8 @@ class Pipenv < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/35/94/00f2059e4835eace3ae8fde680b932c496f8ec7bdc99168dfa53fb2e6b79/filelock-3.29.7.tar.gz"
-    sha256 "5b481979797ae69e72f0b389d89a80bdd585c260c5b3f1fb9c0a5ba9bb3f195d"
+    url "https://files.pythonhosted.org/packages/f6/57/3ba6e6cb097f85b855b00163d169f35365f44277df044dcf96d55b8f62a3/filelock-3.32.2.tar.gz"
+    sha256 "c33351e1f49cae33414acbc6d56784e6ecee82514ec90795da1161fc4836b5b8"
   end
 
   resource "packaging" do
@@ -44,13 +43,13 @@ class Pipenv < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
-    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
+    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
+    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
   end
 
   resource "python-discovery" do
-    url "https://files.pythonhosted.org/packages/4c/81/58c70036dffeccb7fe7d79d6260c69f7a28272bbd3909c29a01ea9422744/python_discovery-1.4.4.tar.gz"
-    sha256 "5cad33982d412c1f3ffb8f9ca4ea292c9680bca3942451d30b69c37fce53a4a3"
+    url "https://files.pythonhosted.org/packages/04/b7/1581a8103855c43567776aa34135e5ec3c597346c23bfd10c7eb5e0b10a4/python_discovery-1.5.1.tar.gz"
+    sha256 "e2ea8b884cd1701f386eda8cf327b87743f1dc21b7f784470799537d95635384"
   end
 
   resource "setuptools" do
@@ -59,8 +58,8 @@ class Pipenv < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/34/d9/b477fddb68840b570af8b22afe9b035cbc277b5fb7b33dea390617a8b10f/virtualenv-21.6.1.tar.gz"
-    sha256 "15f978b7cd329f24855ff4a0c4b4899cc7678589f49adbdcbbb4d3232e641128"
+    url "https://files.pythonhosted.org/packages/ea/fa/18004e5cb15541ad2a68ff219c755233b012b12d4ec8663d06a258082bec/virtualenv-21.7.1.tar.gz"
+    sha256 "d0dbfaa5483487baea28d7210ef8d24c9d1bd0f10f449eeb215568825a9b334e"
   end
 
   def install

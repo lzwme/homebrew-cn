@@ -6,10 +6,10 @@ class Nbdime < Formula
   url "https://files.pythonhosted.org/packages/0c/22/d1ae77115b96b2ff8df6bbc54f8651eeb02d5716cea9079cdf94eaf6bb8b/nbdime-4.0.4.tar.gz"
   sha256 "8cd25ecfeeb5105d563237d7f64eb4748058fba9bba9ab3892a1ff61e177ce16"
   license "BSD-3-Clause"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b9cac153a99d54e79c6a310746024cabf68d24cc86f8acd0ee28007dd4bab858"
+    sha256 cellar: :any_skip_relocation, all: "ca6d38d36b6c941f21f7dc8a188fd46917d498e37792677ffc60a27743717b3f"
   end
 
   depends_on "certifi"
@@ -34,8 +34,8 @@ class Nbdime < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
-    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
+    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
+    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
   end
 
   resource "requests" do

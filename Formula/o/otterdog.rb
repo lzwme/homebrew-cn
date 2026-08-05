@@ -6,15 +6,16 @@ class Otterdog < Formula
   url "https://files.pythonhosted.org/packages/19/88/fffe8ad66be0149d1f34ec12bdd8abb3dde467b4780746cede544d83b26c/otterdog-1.4.0.tar.gz"
   sha256 "ea3f07622c212526869e1755b124531585343bd0646ee3e72f0ba1c57c3fc87c"
   license "EPL-2.0"
+  revision 1
   head "https://github.com/eclipse-csi/otterdog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4f96432dceca57f10d4940788b83a794ffc0a983962e43a8b61d53c508d504f9"
-    sha256 cellar: :any, arm64_sequoia: "d04dc55cac3e61c288d1f8884f1bfd51140aca921ffbac8d0fd5213d4ea63071"
-    sha256 cellar: :any, arm64_sonoma:  "5b693113d90310554c86dc0009db6fb1b54e2269093bd41bcf19a79a467fe0c9"
-    sha256 cellar: :any, sonoma:        "1e87ba157d38c142631ed7d9b9937126ddbf3eea2c846d350e03421b5cf68edb"
-    sha256 cellar: :any, arm64_linux:   "c63fcc9c2533e56242c82f57b38d1cb4f5012fbe88b1f10cfaaabbd2e8c7fb0a"
-    sha256 cellar: :any, x86_64_linux:  "98fdfe9c1d71b39e2575e0f12257439cb7788fc244220cd5fa1e2f50d0505ee3"
+    sha256 cellar: :any, arm64_tahoe:   "5a1ab48d495822630b462c8a4fc57757ca1091c3f9227d97d70a4d225076b4b6"
+    sha256 cellar: :any, arm64_sequoia: "253a172d8d811839af2c224eebdf279a0a5e1026c5c3d330a384e24c9484e1c0"
+    sha256 cellar: :any, arm64_sonoma:  "6344079a44c33941ced111321a425004a55cf7bec69718d90ee73fa80bf7d73c"
+    sha256 cellar: :any, sonoma:        "6c681dbe649d4369e0f48691f1b97803ef6fd4850ae5bb4a1fd067cbe3df2c91"
+    sha256 cellar: :any, arm64_linux:   "ef1086718eb188b9c61002e857cab18802af305d019cf6c07a2c7c2ba87d8b3e"
+    sha256 cellar: :any, x86_64_linux:  "5e384b7131dedb7992645502e740ad5b88f7fa54706366d74f23a62288e6a4b1"
   end
 
   depends_on "rust" => :build # for rjsonnet
@@ -123,8 +124,8 @@ class Otterdog < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
-    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
+    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
+    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
   end
 
   resource "greenlet" do

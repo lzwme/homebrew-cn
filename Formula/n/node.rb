@@ -13,12 +13,13 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "c8834e25713ac3a0d5e9aa7fe1b7d0b235f02ffb062340a0ef3baa193265635f"
-    sha256 arm64_sequoia: "4ea101efe51c179215a1f92b7727444dbc99c7d0b39ad24640be642e2590c5f5"
-    sha256 arm64_sonoma:  "243a55cefef2a603d36d9e28a40bce58b3da5a32607e754120fe67075f5c6f34"
-    sha256 sonoma:        "3aef4c02597127acfbd17c8c15b15576147575b6e277fab90157d9cac8789ee3"
-    sha256 arm64_linux:   "d14507b90b072805c28dedad7f3fab80d120a1ee4d0179f3d875cc3f91f33a04"
-    sha256 x86_64_linux:  "b99debab1c2363cbc5e868c42e48e130604672e2af6c1ec14d862cfeb5703530"
+    rebuild 1
+    sha256 arm64_tahoe:   "79b9df65550180ccb238f02799f28be4f5f56373b7b9e42dffcf51925f2a017a"
+    sha256 arm64_sequoia: "15ce44a7a5cfb4499ddd52f87a33164dfa984995c78316b76bc56784272a8f10"
+    sha256 arm64_sonoma:  "f8acd305c49bcb930341ddf5430efe63b92da6e0c068814d19ee02ee0f9a09cc"
+    sha256 sonoma:        "9b1a447e74d2ae72b786424cb9197bb0142d7edede751b941c4a0e15c64f3cd3"
+    sha256 arm64_linux:   "f3222b187a4ed55def5d3c0afddccdfc1c7ea84672f3a9963e2e0e0624e16f46"
+    sha256 x86_64_linux:  "a0a6068330ab80b80ddd09615e22e23402f8a5d8a4c3182a22e5a7c5e8ee2bd0"
   end
 
   depends_on "pkgconf" => :build
@@ -191,40 +192,35 @@ class Node < Formula
     rm_r libexec/"share" if (libexec/"share").exist?
 
     # Create temporary npm and npx symlinks until post_install is done.
-    ln_s libexec/"lib/node_modules/npm/bin/npm-cli.js", bin/"npm"
-    ln_s libexec/"lib/node_modules/npm/bin/npx-cli.js", bin/"npx"
+    bin.install_symlink libexec/"lib/node_modules/npm/bin/npm-cli.js" => "npm"
+    bin.install_symlink libexec/"lib/node_modules/npm/bin/npx-cli.js" => "npx"
 
     # Use the _npm completion included in Zsh rather than generating broken completion
     generate_completions_from_executable(bin/"npm", "completion", shells: [:bash], shell_parameter_format: :none)
+
+    (libexec/"lib/node_modules/npm/npmrc").atomic_write("prefix = #{HOMEBREW_PREFIX}\n")
   end
 
-  def post_install
-    node_modules = HOMEBREW_PREFIX/"lib/node_modules"
-    node_modules.mkpath
-    # Remove npm but preserve all other modules across node updates/upgrades.
-    rm_r node_modules/"npm" if (node_modules/"npm").exist?
-
-    cp_r libexec/"lib/node_modules/npm", node_modules
-    # This symlink doesn't hop into homebrew_prefix/bin automatically so
-    # we make our own. This is a small consequence of our
-    # bottle-npm-and-retain-a-private-copy-in-libexec setup
-    # All other installs **do** symlink to homebrew_prefix/bin correctly.
-    # We ln rather than cp this because doing so mimics npm's normal install.
-    ln_sf node_modules/"npm/bin/npm-cli.js", bin/"npm"
-    ln_sf node_modules/"npm/bin/npx-cli.js", bin/"npx"
-    ln_sf bin/"npm", HOMEBREW_PREFIX/"bin/npm"
-    ln_sf bin/"npx", HOMEBREW_PREFIX/"bin/npx"
-
-    # Create manpage symlinks (or overwrite the old ones)
-    %w[man1 man5 man7].each do |man|
-      # Dirs must exist first: https://github.com/Homebrew/legacy-homebrew/issues/35969
-      mkdir_p HOMEBREW_PREFIX/"share/man/#{man}"
-      # still needed to migrate from copied file manpages to symlink manpages
-      rm(Dir[HOMEBREW_PREFIX/"share/man/#{man}/{npm.,npm-,npmrc.,package.json.,npx.}*"])
-      ln_sf Dir[node_modules/"npm/man/#{man}/{npm,package-,shrinkwrap-,npx}*"], HOMEBREW_PREFIX/"share/man/#{man}"
+  # Replace npm but preserve all other modules across node updates/upgrades.
+  # The bin symlink is to overwrite the temporary npm and npx symlinks to use
+  # global path. Also create manpage symlinks (or overwrite the old ones).
+  post_install_steps do
+    mkdir_p "{{HOMEBREW_PREFIX}}/lib/node_modules"
+    mkdir_p "{{HOMEBREW_PREFIX}}/share/man/man1"
+    mkdir_p "{{HOMEBREW_PREFIX}}/share/man/man5"
+    mkdir_p "{{HOMEBREW_PREFIX}}/share/man/man7"
+    if_path_exists "{{HOMEBREW_PREFIX}}/lib/node_modules/npm" do
+      remove "{{HOMEBREW_PREFIX}}/lib/node_modules/npm", recursive: true
     end
-
-    (node_modules/"npm/npmrc").atomic_write("prefix = #{HOMEBREW_PREFIX}\n")
+    copy "{{libexec}}/lib/node_modules/npm", "{{HOMEBREW_PREFIX}}/lib/node_modules", recursive: true
+    symlink "{{HOMEBREW_PREFIX}}/lib/node_modules/npm/bin/npm-cli.js", "{{bin}}/npm", overwrite: true
+    symlink "{{HOMEBREW_PREFIX}}/lib/node_modules/npm/bin/npx-cli.js", "{{bin}}/npx", overwrite: true
+    symlink "{{HOMEBREW_PREFIX}}/lib/node_modules/npm/man/man1/{npm,npx,package-}*",
+            "{{HOMEBREW_PREFIX}}/share/man/man1", overwrite: true, source_glob: true
+    symlink "{{HOMEBREW_PREFIX}}/lib/node_modules/npm/man/man5/{npm,npx,package-}*",
+            "{{HOMEBREW_PREFIX}}/share/man/man5", overwrite: true, source_glob: true
+    symlink "{{HOMEBREW_PREFIX}}/lib/node_modules/npm/man/man7/{npm,npx,package-}*",
+            "{{HOMEBREW_PREFIX}}/share/man/man7", overwrite: true, source_glob: true
   end
 
   # Explain why some features enabled in upstream binaries are disabled in Homebrew.

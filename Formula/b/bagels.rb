@@ -6,15 +6,15 @@ class Bagels < Formula
   url "https://files.pythonhosted.org/packages/6e/04/e19a99e357221cb41e1e2f0352172e282ac8195fa2418b776345497fb260/bagels-0.3.12.tar.gz"
   sha256 "c3ebd4a727ddd62450528676a1ce3e475f92bd36edfed5f9c0b110bb24592608"
   license "GPL-3.0-or-later"
-  revision 13
+  revision 14
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "db8ef6faf610c3cbf10bb961a279b96685c7d5f6b30973d3860c1af045342785"
-    sha256 cellar: :any, arm64_sequoia: "276687b573a97ff95cb45176486d1673bce8ef93e653804e1c9cb812380832dc"
-    sha256 cellar: :any, arm64_sonoma:  "ff7d6f61683213a9f55bd64ff5468f519b5236526575828384d116219c8e7e7a"
-    sha256 cellar: :any, sonoma:        "d93a0b79f7c4cff4cd678cb81e5024bcfb5b1666ad7659f5b4f2a807b4e4e346"
-    sha256 cellar: :any, arm64_linux:   "e5a27fd0dba44bb4dc6fc213d48f76d17ed46908740579bfc4e411a8bb15844a"
-    sha256 cellar: :any, x86_64_linux:  "9c2276139fd32096fa913cfbb82618fda7010adace59a4ce08222837c0bc2302"
+    sha256 cellar: :any, arm64_tahoe:   "91863b8e6d9808d7b880c75a4597c122133ff18344b0a5a522d5106ec23d1688"
+    sha256 cellar: :any, arm64_sequoia: "a9726fedc03741c42ee5a3f7e0b69b05e58a782f199044fe9ee090dea9c0aad6"
+    sha256 cellar: :any, arm64_sonoma:  "74a7006bd086dbe9d4828c203f70edaf8f7c4909876874839c162a6266334cf1"
+    sha256 cellar: :any, sonoma:        "581bc7a42e16e3374d1292cb4491f87ca447cf85b11cace55149f87c270e50df"
+    sha256 cellar: :any, arm64_linux:   "c20820bd69b260590d96656fae6ed197cab7ada84705a1c7aa94a3f159e17aeb"
+    sha256 cellar: :any, x86_64_linux:  "046fd43812956b34bdac76db54a57d701297071109d7608b953362f73833bb68"
   end
 
   depends_on "certifi" => :no_linkage
@@ -26,13 +26,13 @@ class Bagels < Formula
   pypi_packages exclude_packages: %w[certifi numpy pydantic]
 
   resource "aiohappyeyeballs" do
-    url "https://files.pythonhosted.org/packages/33/c6/61a2d7b7572279226bb2e7f61d7a19ca7c90da0329c93fa0d560cbf288d8/aiohappyeyeballs-2.6.2.tar.gz"
-    sha256 "e202810ee718bd01fc6ef49e8ea53d023d5cb6b581076d7925aa499fa55dbe64"
+    url "https://files.pythonhosted.org/packages/ce/f4/eec0465c2f67b2664688d0240b3212d5196fd89e741df67ddb81f8d35658/aiohappyeyeballs-2.7.1.tar.gz"
+    sha256 "065665c041c42a5938ed220bdcd7230f22527fbec085e1853d2402c8a3615d9d"
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/82/78/8ea7308cac6934de8c74a14f3d5f65d1c89287426688be79538d0e5c013d/aiohttp-3.14.1.tar.gz"
-    sha256 "307f2cff90a764d329e77040603fa032db89c5c24fdad50c4c15334cba744035"
+    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
+    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
   end
 
   resource "aiohttp-jinja2" do
@@ -56,13 +56,13 @@ class Bagels < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "click-default-group" do
@@ -131,8 +131,8 @@ class Bagels < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
-    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
+    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
+    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
   end
 
   resource "plotext" do
@@ -211,8 +211,8 @@ class Bagels < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/79/12/1e8f37460ea0f7eb59c221fdaf0ed75e7ac43e97f8093b9c6f411df50a78/yarl-1.24.2.tar.gz"
-    sha256 "9ac374123c6fd7abf64d1fec93962b0bd4ee2c19751755a762a72dd96c0378f8"
+    url "https://files.pythonhosted.org/packages/31/33/ebe9e3d1f86c7a0b51094c0a146392045ca1631d2664889539dec8088a33/yarl-1.24.5.tar.gz"
+    sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
   end
 
   def install

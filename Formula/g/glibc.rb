@@ -277,11 +277,7 @@ class Glibc < Formula
         ENV["TIMEOUTFACTOR"] = "4" if Hardware::CPU.intel?
 
         # Workaround to skip test failures seen when running in sandbox
-        xfail_tests = if ENV["HOMEBREW_SANDBOX_LINUX_LANDLOCK"] == "1"
-          ["test-xfail-tst-realpath-toolong=yes"]
-        else
-          ["test-xfail-tst-nss-files-hosts-long=yes", "test-xfail-tst-setuid3=yes"]
-        end
+        xfail_tests = ["test-xfail-tst-realpath-toolong=yes"]
       end
 
       system "../configure", *args, "CFLAGS=#{cflags}"
@@ -338,8 +334,8 @@ class Glibc < Formula
   end
 
   post_install_steps do
-    symlink "{{prefix}}/etc/ld.so.conf", "{{etc}}/ld.so.conf", force: true
-    remove "ld.so.cache", base: :etc
+    symlink "{{prefix}}/etc/ld.so.conf", "{{etc}}/ld.so.conf", overwrite: true
+    remove "{{etc}}/ld.so.cache"
     run "ldconfig", base: :sbin
     configure_glibc_runtime
   end

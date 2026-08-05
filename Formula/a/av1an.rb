@@ -48,7 +48,8 @@ class Av1an < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/av1an --version")
 
-    system bin/"av1an", "-i", test_fixtures("test.mp4"), "-o", testpath/"test.av1.mkv"
+    cp test_fixtures("test.mp4"), testpath
+    system bin/"av1an", "-i", testpath/"test.mp4", "-o", testpath/"test.av1.mkv"
     assert_path_exists testpath/"test.av1.mkv"
   end
 end

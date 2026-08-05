@@ -351,11 +351,12 @@ class PythonFreethreading < Formula
 
   post_install_steps do
     on_macos do
-      set_permissions "PythonT.framework/Versions/#{version.major_minor}/lib/python#{version.major_minor}t/venv/scripts/**/*",
+      set_permissions "PythonT.framework/Versions/{{version.major_minor}}/" \
+                      "lib/python{{version.major_minor}}t/venv/scripts/**/*",
                       "u+w", base: :frameworks, recursive: false
     end
     on_linux do
-      set_permissions "python#{version.major_minor}t/venv/scripts/**/*", "u+w", base: :lib, recursive: false
+      set_permissions "python{{version.major_minor}}t/venv/scripts/**/*", "u+w", base: :lib, recursive: false
     end
   end
 

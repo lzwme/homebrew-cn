@@ -6,16 +6,16 @@ class Cf2tf < Formula
   url "https://files.pythonhosted.org/packages/7f/c3/a6dfdc4848cfd4fb50e15e9449c439791a009638c2bd06b6fe6982d9afc1/cf2tf-0.9.2.tar.gz"
   sha256 "3fcae8f42f2d1aeb14deb7ef70215cc76c1f1f5cac9b465081e87729498e3ac9"
   license "GPL-3.0-only"
-  revision 6
+  revision 7
   head "https://github.com/DontShaveTheYak/cf2tf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "4403cea010d85792874a46ac0d145f5f7bd3189a2eb90b12ddb3ce4ae9e35bda"
-    sha256 cellar: :any, arm64_sequoia: "7097b53f8cc92455ff3d23c1f7e88699793d6e5a7b217456c94c0eedecb69c15"
-    sha256 cellar: :any, arm64_sonoma:  "926ebca1c65516cb594146c2c4b93e1d64d10a89678ad3d967ebbe23500fd94e"
-    sha256 cellar: :any, sonoma:        "36941f2e8ff790e5c320b64863c99c41bf31ec92125a12389ecc5ccee7fd26f3"
-    sha256 cellar: :any, arm64_linux:   "a0093d45dc91dab54fd3d8943db951580c101afa8d8a3a4c1424e534552131db"
-    sha256 cellar: :any, x86_64_linux:  "fb0355c3c4ecfbf953765be49f98a8e4ded811145a73fa91502667ae5c03cdd2"
+    sha256 cellar: :any, arm64_tahoe:   "c749199791d2a761b1050e6f66499d1dedcedf6efcd8df605e94915172248033"
+    sha256 cellar: :any, arm64_sequoia: "4697fb2fe571e8cecd42c19f8c4a43963a71dd1f585f7f3f1d9b6a7d5b77cd94"
+    sha256 cellar: :any, arm64_sonoma:  "a9429a8c065a2819803ac9b5d30b69ca696417a07b215b35094c5834e0b9aa61"
+    sha256 cellar: :any, sonoma:        "b25485e50284e32c63b23ddf51cf5c970f9a6e853190e79c4df1f2525a6f4eab"
+    sha256 cellar: :any, arm64_linux:   "9986108a4ac27e3e9454e56be694d15f5c1192f9a824c18d77ce6adeb82cf2cf"
+    sha256 cellar: :any, x86_64_linux:  "fe6735f27c31467537f5b5b102621ac514e4bffbe9469b71d1b2ceb0e2fab496"
   end
 
   depends_on "cmake" => :build
@@ -51,8 +51,8 @@ class Cf2tf < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
-    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
+    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
+    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
   end
 
   resource "idna" do

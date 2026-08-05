@@ -1,17 +1,17 @@
 class Flyline < Formula
   desc "Supercharged Bash plugin replacement for readline"
   homepage "https://github.com/HalFrgrd/flyline"
-  url "https://ghfast.top/https://github.com/HalFrgrd/flyline/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "42893aed49f5172cc61a6c7d1dbdca11eacbe8c1a9a783a993ae841b45d78e42"
+  url "https://ghfast.top/https://github.com/HalFrgrd/flyline/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "f0e2dbd1d094f946b91a0015bbf3c9f6a05edf8161df8c35317e35cba47f1c12"
   license any_of: ["GPL-3.0-only", "MIT"]
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ef4fc20590ccea3c8a5045e2a858620192e443046282bbc92322d6a056335e0a"
-    sha256 cellar: :any, arm64_sequoia: "e310f91b5d998e0e35ffbfb5ea970798faea8300321f920d04caceed8d621617"
-    sha256 cellar: :any, arm64_sonoma:  "7564aac8df207814f740a46fab6cfce80b07ba3d1e8ad539457a2c1341cbe90a"
-    sha256 cellar: :any, sonoma:        "c082f9f0797355f198a72bd6eb4b9f5596bc89dc60258e3469b753f18fe2479e"
-    sha256 cellar: :any, arm64_linux:   "f00a6c12ab2d4e7b88bd060ddd9798d81f2cb347f6b86cddc5cb2a9e64a910f3"
-    sha256 cellar: :any, x86_64_linux:  "eba125c5fb0fc6dd51a50979df8f865c69d28451d7a00b19deccb03b02197ea1"
+    sha256 cellar: :any, arm64_tahoe:   "3959d693b6f27bfdc2065b788659f1d3f95e84c79d85a48f0c6d4c56d1015beb"
+    sha256 cellar: :any, arm64_sequoia: "0966bcb19ffb9db757d8385a05f44103c2da0aec02825ff4dc1ebf9ff5a2658b"
+    sha256 cellar: :any, arm64_sonoma:  "f397150fa90249cf0e673e1d7c51fbb447914ca16d31907175580336ca33ad5d"
+    sha256 cellar: :any, sonoma:        "92606b74a04f83ef43798861a729eda37353db6261ca93dcf0bea3db478d7380"
+    sha256 cellar: :any, arm64_linux:   "31d11db6d4cbb2eab7dee07e45ec243fb7319857a4e2143f288661d46e263a38"
+    sha256 cellar: :any, x86_64_linux:  "e040ecb623b226c51ea78e6eb041fbc31cdd6ced25d4b434fd0607ac1e909c94"
   end
 
   depends_on "rust" => :build
@@ -30,6 +30,8 @@ class Flyline < Formula
       input.puts "stty rows 80 cols 130"
       input.puts "export LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 TERM=xterm"
       input.puts "enable flyline"
+      # The terminal backend blocks on a cursor position report for each capability it probes
+      input.write "\e[1;1R" * 10
       sleep 2
       input.puts "flyline changelog | grep -F 1.3.0"
       sleep 2

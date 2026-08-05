@@ -6,16 +6,16 @@ class Mk < Formula
   url "https://files.pythonhosted.org/packages/75/9e/dcc7813d9f7133f8d384eca24a4d4bb0cb056abcc53f1f170b8353084feb/mk-3.0.0.tar.gz"
   sha256 "0a041a3620057165f155b8372469d8ab55ae94dd91d6e27723ab9a7de1aa2086"
   license "MIT"
-  revision 11
+  revision 12
   head "https://github.com/pycontribs/mk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "012876cda44d41da0e3042c5c0099a47ad6f8dd46bd9efd356f0b4bea869d17e"
-    sha256 cellar: :any, arm64_sequoia: "0f5c4d16bad3bd1d41f385ea4f04bf9855669be727c607829536281566f9ff53"
-    sha256 cellar: :any, arm64_sonoma:  "320bce5943deac9f04f5674d9851c5d24f4c0f2e74854e5b54e904563ba9af6c"
-    sha256 cellar: :any, sonoma:        "569a4ac2a19b91215cb55ca937eedc50c5522a648805625c7875e991b9e8579e"
-    sha256 cellar: :any, arm64_linux:   "9d1d0819d52897e4364931c4b17159fa106b455716df641fb9f84882dc306e81"
-    sha256 cellar: :any, x86_64_linux:  "7571f33d9a3422da6f72f4bff0b8dcdcd0e46f87e86baaaeab1f99913e3fbef7"
+    sha256 cellar: :any, arm64_tahoe:   "25e9916cfb4309238481292f7d78494caf66af10ebb8e8c9d84ffc633f55974b"
+    sha256 cellar: :any, arm64_sequoia: "9c888f23c53c763c04db5716d95f7b2a599807bdc3309dd6ecd509bfe5af2b5e"
+    sha256 cellar: :any, arm64_sonoma:  "c77d6356b108e49f727e6736c08ffe4ac4c15a9daf35effdf9d7127d0ded0590"
+    sha256 cellar: :any, sonoma:        "62a722eaa6a92ee8cc0be95a603245464aa1ba1824f5232b2d5d22578a032f8f"
+    sha256 cellar: :any, arm64_linux:   "b769fa18f0fbddeb3a05d2e71229f447d844f914cd3d5e920c9cc901c6201ec7"
+    sha256 cellar: :any, x86_64_linux:  "7289b79692c85db525c4fb184ea9afc8a885808aeb615936ad0b339ed06f26cb"
   end
 
   depends_on "rust" => :build
@@ -31,8 +31,8 @@ class Mk < Formula
                 extra_packages:   %w[jeepney secretstorage]
 
   resource "annotated-doc" do
-    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
-    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+    url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
+    sha256 "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
   end
 
   resource "build" do
@@ -61,8 +61,8 @@ class Mk < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
-    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
+    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
+    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
   end
 
   resource "id" do
@@ -196,8 +196,8 @@ class Mk < Formula
   end
 
   resource "twine" do
-    url "https://files.pythonhosted.org/packages/e0/a8/949edebe3a82774c1ec34f637f5dd82d1cf22c25e963b7d63771083bbee5/twine-6.2.0.tar.gz"
-    sha256 "e5ed0d2fd70c9959770dce51c8f39c8945c574e18173a7b81802dab51b4b75cf"
+    url "https://files.pythonhosted.org/packages/92/3c/58f808a359700f39a967dffede33efeac809262c03303fa3eec6afff8f49/twine-7.0.0.tar.gz"
+    sha256 "85cdb29c518efef867360ae4acd4b0dfd61c8654a22fca08e6f8539f05022177"
   end
 
   resource "typer" do

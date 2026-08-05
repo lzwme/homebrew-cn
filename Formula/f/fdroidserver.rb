@@ -6,15 +6,15 @@ class Fdroidserver < Formula
   url "https://files.pythonhosted.org/packages/f4/d8/7beac4add64c4b3d03dac01a073dc7c6beb69a7adbd4215bc8def3075d46/fdroidserver-2.4.5.tar.gz"
   sha256 "f9b52646264c732678e32e37e23a995db20cc61d45622dda5830ce23255547f4"
   license "AGPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "ece00095b401da02a14b0c914fbbb5af3c568ec4d27b28633e0f8323b74a75d2"
-    sha256 cellar: :any, arm64_sequoia: "3f94dd8c212431073a74640e453fad181f75662eaea507e37eaf908c0ceb1d53"
-    sha256 cellar: :any, arm64_sonoma:  "3162af46b61531a62b08abb8863f77e8702365d58867859e55a066b9a5186f08"
-    sha256 cellar: :any, sonoma:        "df9bf86126b3376ddf52c42f8def22b7515739e3774ce3d9e3c92ec14b2fbea5"
-    sha256 cellar: :any, arm64_linux:   "9b9b370ecb4031b651f29fa56fe290dc5a1f1f5092164bab2feec277df7f8e8b"
-    sha256 cellar: :any, x86_64_linux:  "bfc0fd15e55139a7545eb07b0c6ac115b867b51b8c0653e9b1fbdd42cc756997"
+    sha256 cellar: :any, arm64_tahoe:   "8c814b90b27b4a1466a411a357be0f34da2c3209873cb01547cfb11cf187b5dd"
+    sha256 cellar: :any, arm64_sequoia: "e73ba730da3b091fc1e9705683ba4f4b5fa236c894b2e0e3b290a5ee4cbc8f82"
+    sha256 cellar: :any, arm64_sonoma:  "4003847d2112bd8a761bc93d7350d48be4ac64e8e9f919868d00c51aed62d148"
+    sha256 cellar: :any, sonoma:        "088758a04b9438d4a51d09067c56a40461829471d02e284c5b4e49fe46197573"
+    sha256 cellar: :any, arm64_linux:   "4115e6598adfdb8b438b361488e6c6165e2ce49702940d5cef75515d47e662ec"
+    sha256 cellar: :any, x86_64_linux:  "c2facb269d9f7b09ca33c20c629a5c7320f501cb4bafeb226c8dc87e95f9ea88"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -123,11 +123,6 @@ class Fdroidserver < Formula
     sha256 "0e13d309dfbaafb3e67b991605ce6767867262908864455505c415442c0bba45"
   end
 
-  resource "decorator" do
-    url "https://files.pythonhosted.org/packages/60/8b/32f9823da46cde7df2087faa08cd98d01b908f8dcab982cdba9c84e85355/decorator-5.3.1.tar.gz"
-    sha256 "4cbcdd55a6efadb9dbea26b858f4fb3264567b52d69ca0d25b721b553f60ea82"
-  end
-
   resource "defusedxml" do
     url "https://files.pythonhosted.org/packages/0f/d5/c66da9b79e5bdb124974bfe172b4daf3c984ebd9c2a06e2b8a4dc7331c72/defusedxml-0.7.1.tar.gz"
     sha256 "1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69"
@@ -144,8 +139,8 @@ class Fdroidserver < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
-    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
+    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
+    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
   end
 
   resource "greenlet" do
@@ -164,8 +159,8 @@ class Fdroidserver < Formula
   end
 
   resource "ipython" do
-    url "https://files.pythonhosted.org/packages/53/59/165d3b4d75cc34add3122c4417ecb229085140ac573103c223cd01dde96f/ipython-9.15.0.tar.gz"
-    sha256 "da2819ce2aa83135257df830660b1176d986c3d2876db24df01974fa955b2756"
+    url "https://files.pythonhosted.org/packages/06/96/b150fe7e25a5a29ae9ac1374e71488639605d39a1ea4abb74c9ce33af235/ipython-9.16.1.tar.gz"
+    sha256 "5a3d1f9a47ff216d6cf9cf863124f6a2c1a198d1354c546a4d24a370a283b64c"
   end
 
   resource "ipython-pygments-lexers" do
@@ -249,8 +244,8 @@ class Fdroidserver < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/a1/96/06e01a7b38dce6fe1db213e061a4602dd6032a8a97ef6c1a862537732421/prompt_toolkit-3.0.52.tar.gz"
-    sha256 "28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"
+    url "https://files.pythonhosted.org/packages/7d/ea/39b988c938f75cb75d7045b5c69f8bfed47ee2152c8837fb403de29d6fb8/prompt_toolkit-3.0.53.tar.gz"
+    sha256 "9ec8a0ad96d5c56148b3f914aa79c1564c3fde5d2e6b876e7bc327e353cf8fa6"
   end
 
   resource "psutil" do
@@ -334,8 +329,8 @@ class Fdroidserver < Formula
   end
 
   resource "traitlets" do
-    url "https://files.pythonhosted.org/packages/57/a9/a2584b8313b89f94869ddb3c4074617a691de1812a614d2d50e32ca5a7a6/traitlets-5.15.1.tar.gz"
-    sha256 "7b1c07854fe25acb39e009bae49f11b79ff6cbb2f27999104e9110e7a6b53722"
+    url "https://files.pythonhosted.org/packages/2c/2e/a7fbfe268c8a3b32546930c0297c101d65a4a14c304ad5790a9f478f0e4e/traitlets-5.16.1.tar.gz"
+    sha256 "ed900c2b631aa3a112811139fa97b8d2c3bad5e989656bba4b7e52c7852c18c1"
   end
 
   resource "typing-extensions" do

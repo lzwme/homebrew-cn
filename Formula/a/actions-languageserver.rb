@@ -1,17 +1,17 @@
 class ActionsLanguageserver < Formula
   desc "Language server for GitHub Actions YAML files"
   homepage "https://github.com/actions/languageservices/tree/main/languageserver"
-  url "https://ghfast.top/https://github.com/actions/languageservices/archive/refs/tags/release-v0.3.60.tar.gz"
-  sha256 "1fa7f2383c5370a541e86b444e4e82a9a5a8e237d5c59b05bb6be48a1f501259"
+  url "https://ghfast.top/https://github.com/actions/languageservices/archive/refs/tags/release-v0.3.61.tar.gz"
+  sha256 "90f142dbcb032afcae9b6530646ac168c4917a48170c824761b969e155cedc00"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68081cbdd1c49a4cbeea4004bc99dffc1274b59b55165bded937b8c2950f1ed0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68081cbdd1c49a4cbeea4004bc99dffc1274b59b55165bded937b8c2950f1ed0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68081cbdd1c49a4cbeea4004bc99dffc1274b59b55165bded937b8c2950f1ed0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "68081cbdd1c49a4cbeea4004bc99dffc1274b59b55165bded937b8c2950f1ed0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fba3acc9cb98f379d6e63cadde4cf3611406f33aefc7cc6658f1ffefe1d4cb70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fba3acc9cb98f379d6e63cadde4cf3611406f33aefc7cc6658f1ffefe1d4cb70"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "88e572d3013c3b5671d3489f3bacb47ee54b8a78f1a693b4f72b4efca8de77ce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88e572d3013c3b5671d3489f3bacb47ee54b8a78f1a693b4f72b4efca8de77ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88e572d3013c3b5671d3489f3bacb47ee54b8a78f1a693b4f72b4efca8de77ce"
+    sha256 cellar: :any_skip_relocation, sonoma:        "88e572d3013c3b5671d3489f3bacb47ee54b8a78f1a693b4f72b4efca8de77ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4a5fb6a1160ebf752fef750cd4caa7c8bfa19174758969d6afd2d84b5125266"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4a5fb6a1160ebf752fef750cd4caa7c8bfa19174758969d6afd2d84b5125266"
   end
 
   depends_on "node"

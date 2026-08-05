@@ -6,12 +6,13 @@ class Libgr < Formula
   license "MIT"
 
   bottle do
-    sha256 arm64_tahoe:   "07b476006d6586ec2ed7894d8164a51c5e825bd637437cf9bf47ee38a727e445"
-    sha256 arm64_sequoia: "f61b6cfb59fa3b3a8b6d4d867eaf4a097264276434412d1ced44b17330f97f1b"
-    sha256 arm64_sonoma:  "30425591dc9e79ad6b2c392e72aed74940f7f6f9de99fea86654e75a67f7d860"
-    sha256 sonoma:        "6931ebb56ae025f69a26769b2c97396e8f4d655bd3cf15c240f0f652cb117a71"
-    sha256 arm64_linux:   "d2a0cec1fb6405ebafd88d26cf93b63dc855a33e1c6500d97d9e1f3dcd511bbe"
-    sha256 x86_64_linux:  "afd5fc8b8e06a4407cf167ae23ac5901d899aa132ddf55bc3029ea15cd3861ec"
+    rebuild 1
+    sha256 arm64_tahoe:   "a0a40ac3003f214395ec8f74665c39f0b11255423741841dd1a03e29e63c770a"
+    sha256 arm64_sequoia: "e98facddb85efc8b70b920c33f60a6434cff95157d955c383b69b7874535a488"
+    sha256 arm64_sonoma:  "5f25340467060f37087bd15fc476a2bd6bec82b630337c6fcd8a2ffe176a901f"
+    sha256 sonoma:        "6abaaf907ae7b63402fe855738a31c26281a4828475e0eecd9fed57df1b8a4b7"
+    sha256 arm64_linux:   "50cb0dc26f7f409922ade13d5dd36093f05bfb19b6cf7c9f9b60f82cde8e2667"
+    sha256 x86_64_linux:  "a60298a5a1f4c1040a88655ffd33a1b258c68d2eba984759a93a5cd1f32baa8a"
   end
 
   depends_on "cmake" => :build
@@ -35,7 +36,9 @@ class Libgr < Formula
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DGR_PREFER_XCODEBUILD=OFF", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DGR_PREFER_XCODEBUILD=OFF",
+                                              "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                                              *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

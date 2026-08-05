@@ -6,7 +6,7 @@ class Checkov < Formula
   url "https://files.pythonhosted.org/packages/9c/0a/03002542731935763af6bb5eb7473cc1e99818c818608d5fd54240c590e2/checkov-3.3.0.tar.gz"
   sha256 "1d241480d402bc1e4d5e0eaec5fef159f4c0cd4da73c4d8253cdb897cd0f2c7d"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   livecheck do
     url "https://pypi.org/rss/project/checkov/releases.xml"
@@ -18,12 +18,12 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "824031cbed0b88d475f1787418533f1e475898900637d506d11670a094de1f20"
-    sha256 cellar: :any, arm64_sequoia: "5d3c2be7e49446712faf8b752da260cf6caa81a930000e560ece7c0cff27137c"
-    sha256 cellar: :any, arm64_sonoma:  "cd38b5f9dbf8341247ef6c7a6f958fe12e0bfa4006319e4343b193d335e78e52"
-    sha256 cellar: :any, sonoma:        "83e102be43e68f0fd544674e77807a5c61f2d50825bc340db9f264d0316b2ddc"
-    sha256 cellar: :any, arm64_linux:   "7540ea8c3eddd4f514715f089fe7a055981ffba151d1f18871fb3aa92ca9d231"
-    sha256 cellar: :any, x86_64_linux:  "937a4e5ff414705a609c8878afba35ac3e46c83b84baa45e9d692cb6da752a77"
+    sha256 cellar: :any, arm64_tahoe:   "0ea775d45a4a7037de4e2b552fec396737443875f0a15d0ced134150b47f748a"
+    sha256 cellar: :any, arm64_sequoia: "a2b94688b5c4916ad32b79530d2c8785ac75bc6b01ceb9e048283a0b369ad6e4"
+    sha256 cellar: :any, arm64_sonoma:  "533eb246debdcbe3e806be5eaa95071d40fd93f0df55b4a795392cd8ed50fd4c"
+    sha256 cellar: :any, sonoma:        "5419865f2bd553c3fa46654cdd3bba196c3807c17a11c3e5295bc603eacfdab7"
+    sha256 cellar: :any, arm64_linux:   "386ffe3c929702e45836d8fb9ea03e1b824464dff61dcf204caf0c9bfd777661"
+    sha256 cellar: :any, x86_64_linux:  "5773ceeb0b18cef5f7b033a9ab42c80930d83150ad79fa0d451f7cf5149b85c5"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -211,8 +211,8 @@ class Checkov < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/b2/ab/ba0d29f2fa2277ed6256b2ac09003494045355f3a10bf32f351761287870/gitpython-3.1.55.tar.gz"
-    sha256 "781e3b1624dad81b24e9524bf0297b69786a0706db2cbceec1e2b05c38e5152f"
+    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
+    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
   end
 
   resource "idna" do
@@ -261,8 +261,8 @@ class Checkov < Formula
   end
 
   resource "markdown" do
-    url "https://files.pythonhosted.org/packages/2b/f4/69fa6ed85ae003c2378ffa8f6d2e3234662abd02c10d216c0ba96081a238/markdown-3.10.2.tar.gz"
-    sha256 "994d51325d25ad8aa7ce4ebaec003febcce822c3f8c911e3b17c52f7f589f950"
+    url "https://files.pythonhosted.org/packages/29/6f/da4c6aea59b3001f2e8c0ec7497475aadaf3b021c10cab5b2858f0f32b26/markdown-3.10.3.tar.gz"
+    sha256 "3589362618f743188b4d955b874402bc814f4f83f544dc207719f4baa7d9c45f"
   end
 
   resource "markupsafe" do
@@ -371,8 +371,8 @@ class Checkov < Formula
   end
 
   resource "rustworkx" do
-    url "https://files.pythonhosted.org/packages/ff/1a/545aa3a3e251e9da00e4acf0e5472b7fbbb15360f56d9d5342c1f93b8b93/rustworkx-0.18.0.tar.gz"
-    sha256 "5ca9cf8dbee50f8def012119ebb64771ae86916993417415aba9e845831cb436"
+    url "https://files.pythonhosted.org/packages/86/0d/5b6b48005bbc19622ea7f295f2d5f1339474cb7893e57fd30e6553b2b534/rustworkx-0.18.1.tar.gz"
+    sha256 "30affe6ee52a6257a01152418f9c1686ca114e7ab4a3bf87bb87fe35b7350f3e"
   end
 
   resource "s3transfer" do
@@ -426,13 +426,13 @@ class Checkov < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/8c/69/40407dfc835517f058b603dbf37a6df094d8582b015a51eddc988febbcb7/tqdm-4.69.0.tar.gz"
-    sha256 "700c5e85dcd5f009dd6222588a29180a193a748247a5d855b4d67db93d79a53b"
+    url "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz"
+    sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
   end
 
   resource "unidiff" do
-    url "https://files.pythonhosted.org/packages/a3/48/81be0ac96e423a877754153699731ef439fd7b80b4c8b5425c94ed079ebd/unidiff-0.7.5.tar.gz"
-    sha256 "2e5f0162052248946b9f0970a40e9e124236bf86c82b70821143a6fc1dea2574"
+    url "https://files.pythonhosted.org/packages/98/48/6ebfbda867e1a07bab3bbffe820e980bff8262c97ff77d1496a4fa15e711/unidiff-1.0.0.tar.gz"
+    sha256 "5e5d5cfab2dc98be819b74747ab7d9f5af8695369ec8710b93f9ab0f0ae6a449"
   end
 
   resource "uritools" do
