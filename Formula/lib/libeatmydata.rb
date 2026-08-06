@@ -13,6 +13,8 @@ class Libeatmydata < Formula
     patch do
       url "https://github.com/stewartsmith/libeatmydata/commit/ae89d0916c0ddd06f4ce7f2b37eaccf8dd543591.patch?full_index=1"
       sha256 "8bf4249f3df141fa321c8c64af4f4442bc23bdfb108e2cf73c22e68a3a71ae15"
+      type :backport
+      resolves "https://github.com/stewartsmith/libeatmydata/pull/33"
     end
   end
 

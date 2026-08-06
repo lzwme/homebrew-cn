@@ -3,17 +3,17 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/7a/f2/40b5424129a22a4ba0424722f111702883c67e5a517e9457665cffba0933/flexget-3.19.32.tar.gz"
-  sha256 "e14952c40fa7972a87b0cf527eed95ba8c0573ceaaa90244527063a30442982b"
+  url "https://files.pythonhosted.org/packages/0e/f9/e7b44358d5dbf1a2f43027ee11fe8630075487fb60ba853086806b111f94/flexget-3.20.0.tar.gz"
+  sha256 "e6a95c2ab0bcd84d750b02a7174c86297f33d1b913d3bb29b31dedae6030eb61"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "bfc06dd7a3d8639d74b8a7b5a38ee941fff96a202a230f970f5cca47b09adffc"
-    sha256 cellar: :any, arm64_sequoia: "0e6926715d24b8d962e47c9c499b0637f7885c4105949c9ffa23f948a180beae"
-    sha256 cellar: :any, arm64_sonoma:  "9d2a95c816c30b54afdff940c3039e6ec15367466d59848e8ca57067f6fccc32"
-    sha256 cellar: :any, sonoma:        "4e52336695727ecbf7aab4eb7dd1ec2346ba70c0ff8da04324f2ae10f27deac3"
-    sha256 cellar: :any, arm64_linux:   "9d7524c3a2c7e8458b228554785e430e584eea8c11f0e414e80cebfa3c7d0079"
-    sha256 cellar: :any, x86_64_linux:  "2021e79ea99d5d3553b827ee5019936a1a79048d1cec5b3199e2b9f4508e2514"
+    sha256 cellar: :any, arm64_tahoe:   "f43c2ee48ac633a9002f32dbe18794b89a97d62e8b99f9bf0c710d85adf79f08"
+    sha256 cellar: :any, arm64_sequoia: "8d39f6f8a03f044f55b12fad420452e8e8d2afe6ac885108f32666f0a40edefd"
+    sha256 cellar: :any, arm64_sonoma:  "ff5251afa032cb0fc29f194f4c48facf38c1904f542d78a6ea12e3c5572c026e"
+    sha256 cellar: :any, sonoma:        "6c97a0933fe9d1302adb843373b3dffff29b8fe2135ce8779969dac648f40380"
+    sha256 cellar: :any, arm64_linux:   "e34e373d78a1dea60cd66343f0febdd68010df8098ad0f499aef84c5f4aff4d9"
+    sha256 cellar: :any, x86_64_linux:  "a0d49aaad6c4ca4dab314f42d139d852ce09f745380b19d6e20e8bf106d1bb93"
   end
 
   depends_on "rust" => :build

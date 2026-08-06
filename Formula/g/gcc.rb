@@ -25,15 +25,15 @@ class Gcc < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256               arm64_tahoe:   "62d968d6919eacff601b0282fefccb38b8382d6f7169ea26a0662712e7f29f43"
-    sha256               arm64_sequoia: "6839eac9682dee9c9ab28ab96c5f6308a3a2d96ed499fbb4c43e10d6cc3691a5"
-    sha256               arm64_sonoma:  "7a051bdd1684ab105b32c11e16fdb1666f4b00570a5937a5d043a211ca0a60fb"
-    sha256               tahoe:         "8f85390a62209522d9630c85c2747290f87538f5e859e1c9a41dfe306324acdc"
-    sha256               sequoia:       "74045addfa1423d6ae6c61b1262bf5dceab762da3139a8882d1c3efd4f67407e"
-    sha256               sonoma:        "e4d2195790a199de6d34c15a46967ad5d29f921af09658275e879090d19c0eb5"
-    sha256 cellar: :any, arm64_linux:   "d96f44d6c8f398d961ce53f7d1eac98f46ed0781866905fe6aa29c8a9d644c5b"
-    sha256 cellar: :any, x86_64_linux:  "6b8edf7db3aaa4c67a412a448fcf97ed5ad5e1d157cb9c0f99d68b8c30aca484"
+    rebuild 3
+    sha256               arm64_tahoe:   "c2baec865938218940ee914d4cad1d8be1a92d6f0b6c758515e1e02b6ca2d84d"
+    sha256               arm64_sequoia: "3335d0d7ce2f4196aa04cbc327b9c1d9de02f7b0260319345787f8faf172169c"
+    sha256               arm64_sonoma:  "202e038d7755cfa3d34e90ca4292be607d1a22c97994a35e1b696d7e205f2931"
+    sha256               tahoe:         "dd7be82c88674e8075f4cd089bbf3e5485cd6e64d61984f195dd4c8cad52642f"
+    sha256               sequoia:       "59e29adc7a91e0afee8710f5552ef9c0ffc9e124d2cdbb7ac2baa1cb04674deb"
+    sha256               sonoma:        "21154aff4df82d0a00c6fabe9efc2cf5c50ddd4402b8f450d154ae070c90d08a"
+    sha256 cellar: :any, arm64_linux:   "d17041cb30c6eae581830d0313ec8e5a186d3090c08a3ea6693fb34bc0d6d196"
+    sha256 cellar: :any, x86_64_linux:  "f65155dcf09049ae420ffbc246d96b84ecd1391ac16bc545da600770f05e43ee"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -117,6 +117,7 @@ class Gcc < Formula
       ]
     else
       args << "--disable-multilib"
+      args << "--with-linker-hash-style=gnu"
 
       # Enable to PIE by default to match what the host GCC uses
       args << "--enable-default-pie"

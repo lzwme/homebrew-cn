@@ -1,8 +1,8 @@
 class DbxCli < Formula
   desc "Command-line interface for DBX database connections, schema, and safe queries"
   homepage "https://dbxio.com"
-  url "https://ghfast.top/https://github.com/t8y2/dbx/archive/refs/tags/packages-v0.4.54.tar.gz"
-  sha256 "4aa0b42a5836fdc6cbf4ee05e438f1476ab43e63c98aee765ecccf59f4461a72"
+  url "https://ghfast.top/https://github.com/t8y2/dbx/archive/refs/tags/packages-v0.4.55.tar.gz"
+  sha256 "7a1728136b9168ad3ac99f211219dea18dc5818f51b9c18eaf07ab638506727f"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class DbxCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9425fe108d93c67eeaae3a4188b7a0ef47746c0f10bc0f780fbabf03e88d187b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67218b41e5bd3464fece08473601ff0107cd95acef21fabf0b118e5646094907"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a943292dfc4a52b0c4ea649322eff8f5767c0abe294bc95d5f9098b170635065"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4ff5db4dea404b2906590a0a9efa585c95322730e3889945e5fcad35ceb518f1"
-    sha256 cellar: :any,                 arm64_linux:   "0b315cc54985ff5165db301e650628177cb932eb97f3d28fc05abee92cd1ddbb"
-    sha256 cellar: :any,                 x86_64_linux:  "285a3ef7e43023d246e2c5a2160f9ed2e1a7cfab72245d8e49ce240ff0a7b52f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4bcc20ae81792b6c5622496bc5c16c8c7d2e0a12104d24438fd01796f3f33731"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54280e4112d21899758d41d0c2c341e8685bfca81bfbe1bc0a4bbc4a2af687e4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad254127f8c119bea46f6584f3a62e3e123184f52cbdb563ab18cc0279da0f77"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9809603a378f02201c08e2fa55058e30b15aa14f7b0cd6c4138328e271aeada3"
+    sha256 cellar: :any,                 arm64_linux:   "f908929e5e35375c281341ef39418b4d78942b3f246b5659c34ca2c88e36ec68"
+    sha256 cellar: :any,                 x86_64_linux:  "ce8d4eeeac410a6cf0e363419527751ba0eef933fe40ecb537bc1e36180d6ac0"
   end
 
   depends_on "pkgconf" => :build

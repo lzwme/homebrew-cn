@@ -21,25 +21,31 @@ class Hevi < Formula
   patch do
     url "https://github.com/Arnau478/hevi/commit/07847bf8c2f05d02756aea1ffce7dd60ad563daf.patch?full_index=1"
     sha256 "71e992a3183a7fbfa94ac98b12e02fee2f36f4e66b7a60ae78bb699f461edc90"
+    type :backport
   end
   patch :DATA # https://github.com/Arnau478/hevi/commit/3ef411b8664c8ac7d8296680b2d494f7193a521d
   patch do
     url "https://github.com/Arnau478/hevi/commit/830ce7fff48429027c6a527b9c9a53935a212e81.patch?full_index=1"
     sha256 "9a78d4e64126c0ddc4c2fa84c0f6a163b8dacd41558df564ca4918c4c3454ea8"
+    type :backport
+    resolves "https://github.com/Arnau478/hevi/pull/62"
   end
 
   # Backport support for Zig 0.15
   patch do
     url "https://codeberg.org/arnauc/hevi/commit/810fdf763ccb7069103b8350fab699bb9d3b7b15.diff"
     sha256 "6dff03ca70c27d9f514d541045eeaa1a9fc8e3ac7405329ce58f144b1f8dce88"
+    type :backport
   end
   patch do
     url "https://codeberg.org/arnauc/hevi/commit/1e0d70fd6f61b4515f2dbc02ddc214388cf9b5d6.diff"
     sha256 "3c467402c7ac5547081d8cf69eb3a37bcdb9da37441d504b280617749c5e2c4b"
+    type :backport
   end
   patch do
     url "https://codeberg.org/arnauc/hevi/commit/6f46f9e6fbcfb7bd331dadbde7f6da48a6679b5c.diff"
     sha256 "8649801251f87c51db9735cafb4eaf14f6c9255c45f0e9dea2a70b7f0f578bf9"
+    type :backport
   end
 
   def install

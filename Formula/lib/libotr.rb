@@ -43,6 +43,8 @@ class Libotr < Formula
   patch do
     url "https://sources.debian.org/data/main/libo/libotr/4.1.1-5/debian/patches/0006-include-socket.h.patch"
     sha256 "cfda75f8c5bba2e735d2b4f1bb90f60b45fa1d554a97fff75cac467f7873ebde"
+    type :unofficial
+    resolves "https://bugs.debian.org/1009420"
   end
 
   def install

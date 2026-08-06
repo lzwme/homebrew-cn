@@ -3,17 +3,17 @@ class Plutoprint < Formula
 
   desc "Generate PDFs and Images from HTML"
   homepage "https://github.com/plutoprint/plutoprint"
-  url "https://files.pythonhosted.org/packages/16/e0/930e488122538d514698b65dcaf443f88ce9e66af0727d5ae6a1c7bb7223/plutoprint-0.21.0.tar.gz"
-  sha256 "699c90f4d452b3e151184ca0ac707ddd04c29f29a8bb6f38a163559199e642bf"
+  url "https://files.pythonhosted.org/packages/83/d7/c15fb7d9d017f09777ee8b70c04091a490e56c3b289c6a23706d62942a8b/plutoprint-0.22.0.tar.gz"
+  sha256 "3660300fe57880782f2488fddbdab19bf3e7fde6d6713a696c0c2869006dca10"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c020e8b05346eafc2d2905b664ff38d75a585165af0ce1308974ebd47755ea5c"
-    sha256 cellar: :any, arm64_sequoia: "e8fe8280ec3e2f494540a437e6eadbc34b9e6e91872fc1ace0a33c49b94d032e"
-    sha256 cellar: :any, arm64_sonoma:  "3ac065893c6d23a14a362e50a57957612eb4a26e31ea4e88ac7b50af56379493"
-    sha256 cellar: :any, sonoma:        "7b82e4e950fce42ee1ddeaf574ff6855a49ddfb946d38f2cf8177b5411eaa38c"
-    sha256 cellar: :any, arm64_linux:   "6e504a6172ad753a21e7fc414aa877c67c25e45f5c0f5932d59fbd44fce7259d"
-    sha256 cellar: :any, x86_64_linux:  "0ed0d03c6871fff2a4e4c9a12232a0435e92229a7d833beea4415a7871c78632"
+    sha256 cellar: :any, arm64_tahoe:   "e2ecb09853cca5871a3155f1aaf4e671056406cb2c8e82b7bb1f5e8e955e2edd"
+    sha256 cellar: :any, arm64_sequoia: "c0861aaff3314e4f582c9c9f1d336192687f9940a8f585aed805f8e3235e5f29"
+    sha256 cellar: :any, arm64_sonoma:  "23bc222b6d595141275b06daaaa9316ad4286fbb51b8a3e87b79de1c83ba83b0"
+    sha256 cellar: :any, sonoma:        "354961b86c149d14067adb33f66d2dfb82b193ffc9f6aae121550cd254479bfd"
+    sha256 cellar: :any, arm64_linux:   "bc6c8cc94ed6eba3643710acbcf706d5f86e4892d58fe8bfbc6ce9653bc42c9d"
+    sha256 cellar: :any, x86_64_linux:  "8c9c418561440854f2f8d1c6690884041b310ed5244a704f57c177297486af85"
   end
 
   depends_on "meson" => :build

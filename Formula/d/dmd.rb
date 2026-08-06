@@ -4,12 +4,12 @@ class Dmd < Formula
   license "BSL-1.0"
 
   stable do
-    url "https://ghfast.top/https://github.com/dlang/dmd/archive/refs/tags/v2.112.0.tar.gz"
-    sha256 "33592dc18855bd113914ca065d9e88018745afaa5fbf85b971fbc1a6663c9ec5"
+    url "https://ghfast.top/https://github.com/dlang/dmd/archive/refs/tags/v2.112.1.tar.gz"
+    sha256 "07806b674d387e188020622f3e76529c3f05e9836136258fef294ed2f928f775"
 
     resource "phobos" do
-      url "https://ghfast.top/https://github.com/dlang/phobos/archive/refs/tags/v2.112.0.tar.gz"
-      sha256 "99e046c1107bc3f365910f5cb52937483c9a5528f2d4ef543b8690ad66723f16"
+      url "https://ghfast.top/https://github.com/dlang/phobos/archive/refs/tags/v2.112.1.tar.gz"
+      sha256 "635524dbceb39cdb4b0ece0b7f654fbc51a53525114851908a8ae841ed5e4b63"
 
       livecheck do
         formula :parent
@@ -23,9 +23,8 @@ class Dmd < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma:       "b926ba97885e72681edb6bc774191523825493774476a4e986fc0e93999cd247"
-    sha256                               x86_64_linux: "e48261bac2d37d942c5e70281d13f76e6e4ecf0d9b0caab315e1272a1244bf86"
+    sha256 cellar: :any_skip_relocation, sonoma:       "1d5ecc5d4585bcacef2c7b5710112f50415b45df3d1637a92228fe1b32121011"
+    sha256                               x86_64_linux: "45be21c3069c43340116c9b6b0dbfb03d8f1b2d5ac6882b8a1b6829432646238"
   end
 
   head do

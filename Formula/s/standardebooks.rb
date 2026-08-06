@@ -3,18 +3,18 @@ class Standardebooks < Formula
 
   desc "Tools for producing ebook files"
   homepage "https://github.com/standardebooks/tools"
-  url "https://files.pythonhosted.org/packages/51/13/6d474d36412375a067ce84c19855d799cbb90f9f94ecb8be5471356354a9/standardebooks-4.0.2.tar.gz"
-  sha256 "f7840ab42c6643485b3b75c22f9e41942bfd644b950de59aebf33b3f7962a799"
+  url "https://files.pythonhosted.org/packages/7c/ca/eae22e8de1890edd7f05ffa6141452530b68c9666be6306f0bef5e743833/standardebooks-4.0.3.tar.gz"
+  sha256 "e1e5a35b6281106406cb12ff31317a2034e3d44c3a5b53064bd83ec2fac7353b"
   license "GPL-3.0-or-later"
   head "https://github.com/standardebooks/tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a7bab92b3004b2c111baccd4da4f2b667a2f1198dfefdaf16b97f94ec2cd69ad"
-    sha256 cellar: :any, arm64_sequoia: "e4ed99718b9b4ef4f82a45bf921268b6c2f2c984f35302fcee1753980c240211"
-    sha256 cellar: :any, arm64_sonoma:  "92c3770df81d90ac0d8ad9257318de800bf30c0de50e7f7e409a0358d4902ef7"
-    sha256 cellar: :any, sonoma:        "35208ca891d91edc07ac0f3f8db413cd1379c152caedbd1c7d763acdf015a491"
-    sha256 cellar: :any, arm64_linux:   "40e82859d6581c39b809038242574844a74d56eb9c9e2524c38b02c226b8cc85"
-    sha256 cellar: :any, x86_64_linux:  "982b0899faf9d5c965cbdb691636ec9175dc5d30d413f080ad5fd6642ada71ae"
+    sha256 cellar: :any, arm64_tahoe:   "c7094b763d868d2ad47b58b9dac3e5839da190eaa09dadf3f3cd66ff1e91a971"
+    sha256 cellar: :any, arm64_sequoia: "6fccfc3d64492779596d11bc6637c5ac7a7500cce66ba68c1d6fe5c38f1e594e"
+    sha256 cellar: :any, arm64_sonoma:  "74b5bee83561e701f530e1b2f010707930d2e1432c86f396883d78f050ab3855"
+    sha256 cellar: :any, sonoma:        "8d8a95330451af7ad697581dc811eee035188174ebf383b17b01bbe15a7868cd"
+    sha256 cellar: :any, arm64_linux:   "bafe3d2dd3e9cdfef028dd11d83560544c7bffec0e19096c8523efd2a56225a1"
+    sha256 cellar: :any, x86_64_linux:  "87724d9f5568ae034d2ff654a91db2fb41457050c55afe9e55be99b717c0be6f"
   end
 
   depends_on "rust" => :build # for selenium

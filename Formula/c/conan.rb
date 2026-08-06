@@ -3,18 +3,18 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://files.pythonhosted.org/packages/2b/07/71544561c3466f18752da2334ec6453af473b17c1162e399b9d478b1a50e/conan-2.31.1.tar.gz"
-  sha256 "2dc04ec9c0cdc9d0e025b1aa356c4990cee73ac5b00210aedb2d6ec6f57066ec"
+  url "https://files.pythonhosted.org/packages/f0/2f/f88c73d7042b87924e482cf2081645dfdc4ee4c20071f3d3b4aa08ca2f5e/conan-2.31.2.tar.gz"
+  sha256 "d820e9f5ac44eca1567874f6a7c83586c16a3df5ebca006d9c0c6933fbb375b1"
   license "MIT"
   head "https://github.com/conan-io/conan.git", branch: "develop2"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1190db8e7d5bc873b1c63a3fddddafb90578e090ce94649b06ae39c92575c99e"
-    sha256 cellar: :any, arm64_sequoia: "dd1abf9b6180dec8cebeb5826e8e599326551ab021b90a68f84f5ae63f23b820"
-    sha256 cellar: :any, arm64_sonoma:  "53f6afba7a34d19a354ae5e87d50b5e7e4aef9988d4679690f36ca31b1b3c8f7"
-    sha256 cellar: :any, sonoma:        "f39aa60bde5654b6ae6790ccdc11a8b1f7a813c85c29232baafcab54de9d2eea"
-    sha256 cellar: :any, arm64_linux:   "d022c85207940495a5d80a517bcd35ebe91401a008572223957086dc74c3cde5"
-    sha256 cellar: :any, x86_64_linux:  "014588d24ec87745a143eecd1310bf9fdcac705f8eaef4dfe04ce3ce740b4a71"
+    sha256 cellar: :any, arm64_tahoe:   "1c472a422807d34bb027626e4cc17e94452dd12956e9b405552f41301a067a50"
+    sha256 cellar: :any, arm64_sequoia: "ff95446f4b646b2abfe32f0a0b64e59ac7620d103439616b6e69fbba3fb2f8c2"
+    sha256 cellar: :any, arm64_sonoma:  "787d950c2375ae54caa569db92413c68c457e0bf41159dfde8809025b9d06fb8"
+    sha256 cellar: :any, sonoma:        "6cea70528a741e5282ea216487e83e6131b7db8ac1bd328180719f54dd72d4ec"
+    sha256 cellar: :any, arm64_linux:   "9b3fbd1f72351b6fc8f18b2b8ea87d04917265e70a6cc33df5cd580cc6cacf97"
+    sha256 cellar: :any, x86_64_linux:  "f01d3988065086768750b731a5a93524ec07826bfc8bc9f5fe13e1a73689cf52"
   end
 
   depends_on "pkgconf" => :build

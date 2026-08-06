@@ -1,18 +1,18 @@
 class Gravity < Formula
   desc "Embeddable programming language"
   homepage "https://www.gravity-lang.org/"
-  url "https://ghfast.top/https://github.com/marcobambini/gravity/archive/refs/tags/0.9.7.tar.gz"
-  sha256 "6f75b995402fa0140e6d9b594c632ef145c1ff7ba80b4e5b65106117fc41984c"
+  url "https://ghfast.top/https://github.com/marcobambini/gravity/archive/refs/tags/0.9.8.tar.gz"
+  sha256 "7340092fb4b66a9ebda721cae39324422612d1b969ba70fee8eb7664951cdd80"
   license "MIT"
   head "https://github.com/marcobambini/gravity.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec3b9d10debd6c9f7b62da13d8124b02ab09b1f58e35b782d60f7e4a333fc015"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a924f86ec2a85e9ba98bac33cbcb2d3f95c0d25d88115201e2991687a8f2ae88"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6be75446aee6c6e9cd38d53167ec2840d58e769fbf393cb83bd052e35dc67672"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7ef792c2081eb85678cb13a6ba65cf79ffacc1f692b879ee21007b5ec9be97f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dfe83f37ff00cba154e21b4fd3f732d370d29521e31251b7cae233f9dd21594"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20472b64ad64254ef6719332320a93571814d1bc5b757da4ed94bda57da0bedc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "40e6195395a39194489bb924a06e71b1e4aa82c27899acac3d89a649369be587"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec721baa0abcf011583415394ba15e9fb745df30702b358c5e835bc51bc18796"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0fe303f1bbcfb030835a83673042ea2d137dd5fae65ee89bff2fd8b9e1e8e44c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c43a4dc57ae4046a8c38dacdb28017db9aed7d4951915e60ca658161a5a3f972"
+    sha256 cellar: :any,                 arm64_linux:   "e9328e3f108e8701508f6cbf00740007d2810943a15b1d38faaea718c52912f9"
+    sha256 cellar: :any,                 x86_64_linux:  "9f4f73c711cd472694e4bcc9353bff95f05670c1011d799ce2d38971b1c66aea"
   end
 
   def install

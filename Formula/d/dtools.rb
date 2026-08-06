@@ -1,18 +1,18 @@
 class Dtools < Formula
   desc "D programming language tools"
   homepage "https://dlang.org/"
-  url "https://ghfast.top/https://github.com/dlang/tools/archive/refs/tags/v2.112.0.tar.gz"
-  sha256 "4d3b8d683770f16f1cb2e44a246f17b199a8aabde7b6ce7d7566aebc36a12d32"
+  url "https://ghfast.top/https://github.com/dlang/tools/archive/refs/tags/v2.112.1.tar.gz"
+  sha256 "fe887bd938ce8add519b27e4a84311ed20db74e6c22bd402a99693753df73d9d"
   license "BSL-1.0"
   head "https://github.com/dlang/tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "566757d9c7fabf5dcc81d5139589bf8e601370424fb8f8170ff8ea542c9f0f74"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fdc39e94c686ee350bf6a92dc7f331182d9fa9e14e89ee6630c7b66d0e9e1b7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36c4848897bc99843bba6f6306e157c2c22b95ee4b66056573123e366ec04fcd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3e83e31e492dded0024a77bef1fa4916b5c4ba5b91ca12934dda63c18bc5ee35"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6ab7ef6c758eb003bfcec11dcdadc10c69d6d833b90dc103d1ccb7493caa953"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd470b2b653bfabec84bc5a4798f90260ec2c875c0466ec608cf63c6162209c3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "903e7b80fc375d8c2712aa402213d64e5a2e0ef2a10f2dd68d90ee47266bad51"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aec9a3d1142666ab608f8d5afd64b7f1279d2c362bd7b3e402ab85be657be9e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f332ba205c3dd84c366c9123e4a8fc6f6183aba5a7acc430713561b6a8edadfc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dfa5f8ad8df8f6146b5b0ac6765a8bdb0f1b9e068ceb8a4533f4dc0037cbbd6a"
+    sha256 cellar: :any,                 arm64_linux:   "c7404baed6540d42b1bcda1e4924f531d593d7be12460150bf2c2ff230e09b27"
+    sha256 cellar: :any,                 x86_64_linux:  "c3f51aef205998c21563cfafa5dd88767610bad22678737468898aee4d9a87d3"
   end
 
   depends_on "dub" => :build

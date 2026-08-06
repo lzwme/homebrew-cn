@@ -15,23 +15,25 @@ class Feluda < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "3e7391165c39228f7924168250881732799ffd854dd5eaebb5890544b588fe8e"
-    sha256 cellar: :any, arm64_sequoia: "721aa2727317c578e5c13d97e711335eac7c98e619b6b3978bacdd0f31b5ae7d"
-    sha256 cellar: :any, arm64_sonoma:  "4e3cd068b9feb8a51c939b1b4f9ba348857c5b20a7d329adbc30b01914f54f44"
-    sha256 cellar: :any, sonoma:        "c56371784efa3e8da193ed536a150888f6f559fcdac7dceca23910617c934dc4"
-    sha256 cellar: :any, arm64_linux:   "57b69386cf94964621de8884120a695c2f522d8ebc975675f305b782fa13a931"
-    sha256 cellar: :any, x86_64_linux:  "0a2046a95b2f1273a5f5abbabe8a160fd8768abe2bd3c3bc8aedc880834c9c75"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "4090a87b9793719c2643a2783999be75ec8a0025813e558499e0d226d3c71a7b"
+    sha256 cellar: :any, arm64_sequoia: "02cec830a5e66e61ed22f22a295e72c35194883c52c1cf9a1fdbbd2cf47a7071"
+    sha256 cellar: :any, arm64_sonoma:  "17aa25eee057bb063f530fe144ee0cb56e081a4084bac295b76b17b520b3f68d"
+    sha256 cellar: :any, sonoma:        "767a362b5662cf2f89f7cdc7f6dde9e3c37d3d5ada43e036fca33d42d4e05ed8"
+    sha256 cellar: :any, arm64_linux:   "8787425402dfe7b1fdf5c8ac7479b8a40779378e95454bad0a24e2b0ca69d963"
+    sha256 cellar: :any, x86_64_linux:  "882050067883192d6bc9b97b655ac3f66406f64c5ec68cf91686e26000801324"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
   end
 
   def install
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
     system "cargo", "install", *std_cargo_args
   end
 

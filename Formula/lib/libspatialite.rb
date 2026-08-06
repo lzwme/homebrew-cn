@@ -53,10 +53,11 @@ class Libspatialite < Formula
 
   # Apply Debian patch to allow disabling the usage of removed libxml2 HTTP API.
   # Ref: https://groups.google.com/g/spatialite-users/c/nyT4iAJbttY
-  # Ref: https://www.gaia-gis.it/fossil/libspatialite/tktview/ac85f0fca35de00b9aaadb5078061791fc799d9c
   patch do
     url "https://salsa.debian.org/debian-gis-team/spatialite/-/raw/38481157178415322d78a3a45dab18f0c1d45daa/debian/patches/libxml2-nanohttp.patch"
     sha256 "477188c95b635e0abb97bc659ce9ba8883814f9c7d2466352491eabbe7f6a3f9"
+    type :unofficial
+    resolves "https://www.gaia-gis.it/fossil/libspatialite/tktview/ac85f0fca35de00b9aaadb5078061791fc799d9c"
   end
 
   def install

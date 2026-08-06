@@ -3,10 +3,9 @@ class KnotResolver < Formula
 
   desc "Minimalistic, caching, DNSSEC-validating DNS resolver"
   homepage "https://www.knot-resolver.cz"
-  url "https://knot-resolver.nic.cz/release/knot-resolver-6.4.1.tar.xz"
-  sha256 "1aa4c29721c09bce9a99f3d5657223110363d66b35cad4989b95b2afda9379a8"
+  url "https://knot-resolver.nic.cz/release/knot-resolver-6.4.2.tar.xz"
+  sha256 "854ad23367bab66392f7d74f142f2219e3090ae81126b635430fce7b1916f1a3"
   license all_of: ["CC0-1.0", "GPL-3.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 1
   head "https://gitlab.labs.nic.cz/knot/knot-resolver.git", branch: "master"
 
   livecheck do
@@ -15,12 +14,12 @@ class KnotResolver < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "e6c1b356b00fa693dc5ba01bb300e8ac8f5724023a93d11ff8aec9a0a50945ce"
-    sha256 arm64_sequoia: "64fbdbc753e8d962fa2b524e23f4eb027e7177966de84e02c7c36092d003ccb9"
-    sha256 arm64_sonoma:  "855c2728ef3d69a35b03987a6926d161fd42ce8e59aa7389b9cb83222b7b9141"
-    sha256 sonoma:        "40341c8ffba85f292721bcb9cc2ea80acc413f443af8042ec78846b973a8fabc"
-    sha256 arm64_linux:   "3d6103395f7db30aeea55c52fe80822021e213de3db8f6b95ecb97cbb89d0a85"
-    sha256 x86_64_linux:  "70a376d3d7cb83eaafa78d07f46a3bac72c955ea43ace577979d9352cb59b6b1"
+    sha256 arm64_tahoe:   "eb4258758c39ab9a9dd80b3de456d40fcaab69ab0c35efdb3797765456500f01"
+    sha256 arm64_sequoia: "2bb9f8af9fba2d6edf96b9eb47d34939605c55267ca4d8cb88262e0e616ff714"
+    sha256 arm64_sonoma:  "edf07f516753a0ceec3cd7de8e0ac9485dd478bad75acbeaf44d898952c7b9d8"
+    sha256 sonoma:        "396e3fd42c9ee46c5a7e879940fc0848bd44b591195b659a189243d73fa333a6"
+    sha256 arm64_linux:   "93258de643ad10094590545393533bec986d1b0f10a9b6a0ca1b5b31651c8b6a"
+    sha256 x86_64_linux:  "db6e2a1b36f0cb6db722883bfc258f679f5f8e34c4c8bf1f1e1e011cf4f0880e"
   end
 
   depends_on "meson" => :build

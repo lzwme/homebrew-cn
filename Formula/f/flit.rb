@@ -3,14 +3,18 @@ class Flit < Formula
 
   desc "Simplified packaging of Python modules"
   homepage "https://github.com/pypa/flit"
-  url "https://files.pythonhosted.org/packages/50/9c/0608c91a5b6c013c63548515ae31cff6399cd9ce891bd9daee8c103da09b/flit-3.12.0.tar.gz"
-  sha256 "1c80f34dd96992e7758b40423d2809f48f640ca285d0b7821825e50745ec3740"
+  url "https://files.pythonhosted.org/packages/c6/dc/1d5141ccc27a98b9972e24fea9803ce7f29b5d59574fad2f22ff921be089/flit-4.0.1.tar.gz"
+  sha256 "dd52c4fd04d70db77fd59a82404808f4a89b3088d701391e004088e8f1c5b953"
   license "BSD-3-Clause"
-  revision 7
   head "https://github.com/pypa/flit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3b23fdbe95f085054997c0b8fe0f7478649303d8accd227676db4ba35038f882"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "833b7bef70b837c2f73b7c322b5df7d21fd411f4d0fa859e217fe3a26e87d039"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "833b7bef70b837c2f73b7c322b5df7d21fd411f4d0fa859e217fe3a26e87d039"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "833b7bef70b837c2f73b7c322b5df7d21fd411f4d0fa859e217fe3a26e87d039"
+    sha256 cellar: :any_skip_relocation, sonoma:        "716ecfbcfc933ff28ba33ebbfd04e6af25ad9fcf1c99d73f14d6d5f79d720830"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "833b7bef70b837c2f73b7c322b5df7d21fd411f4d0fa859e217fe3a26e87d039"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "833b7bef70b837c2f73b7c322b5df7d21fd411f4d0fa859e217fe3a26e87d039"
   end
 
   depends_on "certifi"
@@ -19,23 +23,23 @@ class Flit < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "docutils" do
-    url "https://files.pythonhosted.org/packages/ae/b6/03bb70946330e88ffec97aefd3ea75ba575cb2e762061e0e62a213befee8/docutils-0.22.4.tar.gz"
-    sha256 "4db53b1fde9abecbb74d91230d32ab626d94f6badfc575d6db9194a49df29968"
+    url "https://files.pythonhosted.org/packages/39/a4/5180d9afc57e8fca05601dd652bdff19604c218814037fe90ffc7625a50a/docutils-0.23.tar.gz"
+    sha256 "746f5060322511280a1e50eb76846ed6bf2342984b2ac04dc42caa1a8d78799e"
   end
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
-    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+    url "https://files.pythonhosted.org/packages/4e/e9/e936060bb42ddb708af53714019d943956e1a8ba6ea10f7e417e5f82bb0b/flit_core-4.0.1.tar.gz"
+    sha256 "323e4f9ea1c2b1075d14326bd3150be360ad159634688441f3691c98cfd24447"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "requests" do
@@ -67,9 +71,10 @@ class Flit < Formula
       requires = ["flit_core"]
       build-backend = "flit_core.buildapi"
 
-      [tool.flit.metadata]
-      module = "sample"
-      author = "Sample Author"
+      [project]
+      name = "sample"
+      authors = [{name = "Sample Author", email = "sample@example.com"}]
+      dynamic = ["version", "description"]
     TOML
     system bin/"flit", "build"
     assert_path_exists testpath/"dist/sample-0.1-py2.py3-none-any.whl"

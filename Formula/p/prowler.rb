@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/f5/64/b517e2f21bb35168a3e1dc348ff4dccd7a007f3a495975fd371c0e7a5ca7/prowler-5.37.0.tar.gz"
-  sha256 "8f11e4e7cf9d5b19d27a3e674be23123fe06e2d130adddf86e8e793a263e1c3d"
+  url "https://files.pythonhosted.org/packages/a8/3f/ad9efdcef9b7cfe146d0e20065347b18da203ad8a24a299fd225b823bf7a/prowler-5.37.1.tar.gz"
+  sha256 "774faf15a89461504a6b0c673cd5feb75cfb4400059721e0be32ec93455407e0"
   license "Apache-2.0"
   head "https://github.com/prowler-cloud/prowler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1123f96810be8b00ef9e2d1e5c35d29c5e6a0fb01477d7e0d597a16989d1c397"
-    sha256 cellar: :any, arm64_sequoia: "0b59de918a52b291ef4f66484da5c54612e5bb5f15ec215f99fce2d4de40f2f5"
-    sha256 cellar: :any, arm64_sonoma:  "bcef72820a57c9b68b765ee7f511c66a48a722801c125acc7879fc9670e983f3"
-    sha256 cellar: :any, sonoma:        "c0aab040ca43ca474f5b749e51479faa8e917f9acb9db50cef2de22cd347d891"
-    sha256 cellar: :any, arm64_linux:   "1578659d293d2f37ad55dda061550e4e5809ca0deac68a339515028ec2a2b3de"
-    sha256 cellar: :any, x86_64_linux:  "33dcaa8f9be00ab6c3f3b40d2d010ed78b5acef34b6e154b0e8bf30b855265f9"
+    sha256 cellar: :any, arm64_tahoe:   "de4e5b23c588396bbc5080f2596dd7c651f1776e822ae6b217d069d2e305e6fc"
+    sha256 cellar: :any, arm64_sequoia: "9cc90ab2bf29f7a17debba93b135f1b5280017b103b43362707dd9b54ec6cdf0"
+    sha256 cellar: :any, arm64_sonoma:  "050faa5c147fc1745b7efba052264bea3694a968bd8e258356bcd54a0e5b0f98"
+    sha256 cellar: :any, sonoma:        "12795af377198f65f32654f4c0f0478eb4ea3785c0da3986a099be7b49c59eaa"
+    sha256 cellar: :any, arm64_linux:   "4ae57c6f54dd79fa49e5a7671b74027c027ae2bbb48a91b2266de50886f27a6d"
+    sha256 cellar: :any, x86_64_linux:  "544da268a22d4749986878ff715a1faf1c37ff7ad0b9f448064961d9aeba336a"
   end
 
   depends_on "cmake" => :build
@@ -204,8 +204,8 @@ class Prowler < Formula
   end
 
   resource "alibabacloud-tea-openapi" do
-    url "https://files.pythonhosted.org/packages/30/93/138bcdc8fc596add73e37cf2073798f285284d1240bda9ee02f9384fc6be/alibabacloud_tea_openapi-0.4.4.tar.gz"
-    sha256 "1b0917bc03cd49417da64945e92731716d53e2eb8707b235f54e45b7473221ce"
+    url "https://files.pythonhosted.org/packages/3b/73/fb0c4d44759791ecdf269fc715c1e810fa1aba3981bfaaf8a01f61899296/alibabacloud_tea_openapi-0.4.5.tar.gz"
+    sha256 "75fa1f4360a46e41f5bf5f8d4917e52efb6f64885839bc1328c35590670c97b9"
   end
 
   resource "alibabacloud-tea-util" do
@@ -446,6 +446,11 @@ class Prowler < Formula
   resource "contextlib2" do
     url "https://files.pythonhosted.org/packages/c7/13/37ea7805ae3057992e96ecb1cffa2fa35c2ef4498543b846f90dd2348d8f/contextlib2-21.6.0.tar.gz"
     sha256 "ab1e2bfe1d01d968e1b7e8d9023bc51ef3509bba217bb730cee3827e1ee82869"
+  end
+
+  resource "crc32c" do
+    url "https://files.pythonhosted.org/packages/e3/66/7e97aa77af7cf6afbff26e3651b564fe41932599bc2d3dce0b2f73d4829a/crc32c-2.8.tar.gz"
+    sha256 "578728964e59c47c356aeeedee6220e021e124b9d3e8631d95d9a5e5f06e261c"
   end
 
   resource "darabonba-core" do
@@ -739,38 +744,38 @@ class Prowler < Formula
   end
 
   resource "microsoft-kiota-abstractions" do
-    url "https://files.pythonhosted.org/packages/8f/94/37315b82a1bcc08145e5bc2af7396a4be8160ac138ec269611c3b9589b7a/microsoft_kiota_abstractions-1.9.9.tar.gz"
-    sha256 "5df9a8e0517a4568726c2cac6d9789284cc6ffa66043b68eba42ae55749fb861"
+    url "https://files.pythonhosted.org/packages/45/e1/39de28380fc0eddf12f66099469fb7561bc38f577ea06e3a074751ebbcd9/microsoft_kiota_abstractions-1.9.10.tar.gz"
+    sha256 "8eb62d64c35ad0eeb4e8bcdbb143c0b308dc4a494e757f8e44cb959d34f44ecf"
   end
 
   resource "microsoft-kiota-authentication-azure" do
-    url "https://files.pythonhosted.org/packages/ca/ce/5ae8b37ee4a50f0ed5e092c2d0105d60b592e6102a190959f76658a0994c/microsoft_kiota_authentication_azure-1.9.9.tar.gz"
-    sha256 "aca5e7dc8a0a28224f9025a479349ac2f9aaf166bfd6bc707f232658b45eec28"
+    url "https://files.pythonhosted.org/packages/d5/53/7760f979c141ec590f0c1cfcb92b3e410eb2909cc19feb42f3fce78db171/microsoft_kiota_authentication_azure-1.9.10.tar.gz"
+    sha256 "b9f10a9fa86e36114abfee448d2dab91a502d6a55d349a306e2e41a1218fe1ad"
   end
 
   resource "microsoft-kiota-http" do
-    url "https://files.pythonhosted.org/packages/5d/3f/fc18eb0d1d845daf6355fd54fd990af7f7e10043ef6a6da39b9e5981cbaf/microsoft_kiota_http-1.9.9.tar.gz"
-    sha256 "ae672b145df71b644f8da0951767a12a4ce47a40576d86eba19b7c22d9e160f9"
+    url "https://files.pythonhosted.org/packages/a7/e5/20972b620bd8cca086c284e97b285d437c108a23fee122ad7b92bd246c1a/microsoft_kiota_http-1.9.10.tar.gz"
+    sha256 "af1838d091f76426c974897357093ed977ce66f1d808cb161c190de873bb5833"
   end
 
   resource "microsoft-kiota-serialization-form" do
-    url "https://files.pythonhosted.org/packages/ee/b4/18e9fce60a30c8b6ea0a6278fb81cf352127340d48df2d7c52ff1b579488/microsoft_kiota_serialization_form-1.9.9.tar.gz"
-    sha256 "3cdc8b172baec5b5282af72f2ce02715edcd23252ce0b5af96075256edd75114"
+    url "https://files.pythonhosted.org/packages/56/90/7e1a090a2099acae1a1baa9a0762214b73b63d9268369b510994f75f54e4/microsoft_kiota_serialization_form-1.9.10.tar.gz"
+    sha256 "4c6655d8cd479d1ada63fdfe6a272e50d87d7c8369dbc8e13833ba4787fc798b"
   end
 
   resource "microsoft-kiota-serialization-json" do
-    url "https://files.pythonhosted.org/packages/b8/2f/d36eba916c00136da122d1701acb862c5b1f2e22b6dc6fa4e0f4abda2786/microsoft_kiota_serialization_json-1.9.9.tar.gz"
-    sha256 "9b27479427f49bbac15ead8e8ff0176e47fcdf81153611acc408f5f399342079"
+    url "https://files.pythonhosted.org/packages/67/0e/55afd533a764ba77da988b7ca4242c84867a3a25f2ff0bf4c2b24b5e8fca/microsoft_kiota_serialization_json-1.9.10.tar.gz"
+    sha256 "6063028f30dd67afa2db20a72d9bde5e5d26d468f8bdedadd1445cf7c7630e17"
   end
 
   resource "microsoft-kiota-serialization-multipart" do
-    url "https://files.pythonhosted.org/packages/5f/44/24087f0fac7c5682c13c7fb61468a0c5a5185b9f243de3a99309aa6fcaa7/microsoft_kiota_serialization_multipart-1.9.9.tar.gz"
-    sha256 "f8730be6da5f6c63a6bf4ea310a9723b9998a47a04745887dc156d08f119a829"
+    url "https://files.pythonhosted.org/packages/24/34/eadc15c2a3131e2a76126f3112c32b73502cb5a335e2e40cac2877e5d843/microsoft_kiota_serialization_multipart-1.9.10.tar.gz"
+    sha256 "8f2da4f93e79b09f9738b6889685e47acfafcca870db94ab1d4cd233d69e4268"
   end
 
   resource "microsoft-kiota-serialization-text" do
-    url "https://files.pythonhosted.org/packages/a3/3c/d244ad08e03003134871698aa54de8243bcc61c0faf3ab114293bb76d6ad/microsoft_kiota_serialization_text-1.9.9.tar.gz"
-    sha256 "18bc0764dda4078a4c953300253344e05d0cdb9c17136f1a2f695d438cedb402"
+    url "https://files.pythonhosted.org/packages/74/a6/28a4a8d5c01f08e363135fc9585cab3c02d1b1a69c3c16032e6abb35dfed/microsoft_kiota_serialization_text-1.9.10.tar.gz"
+    sha256 "cfc433c2a95ea3c3ec43c8b09002fbf65c998c5c0571205df161fe0e9d5d8de7"
   end
 
   resource "msal" do
@@ -819,8 +824,8 @@ class Prowler < Formula
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/11/f4/3c2eddccc75dd06a692dbb3290f20f4bc733d99dc60de21f22d65efdeae4/oci-2.169.0.tar.gz"
-    sha256 "f3c5fff00b01783b5325ea7b13bf140053ec1e9f41da20bfb9c8a349ee7662fa"
+    url "https://files.pythonhosted.org/packages/1e/2a/77bd6cbf1c69b2f368fe3d6462d84369b0cba15e37ce713cdc08d459b95a/oci-2.183.0.tar.gz"
+    sha256 "ff572ef5f2030a788796bb509d257e6a41c6510ef9b4b6a75a079efd06e533ce"
   end
 
   resource "okta" do
@@ -909,8 +914,8 @@ class Prowler < Formula
   end
 
   resource "py-ocsf-models" do
-    url "https://files.pythonhosted.org/packages/f5/70/61e2f9ce3d7e83aa5339ed6ae17e473c15c7a36f161c6dbea0e939e3af0c/py_ocsf_models-0.8.1.tar.gz"
-    sha256 "c9045237857f951e073c9f9d1f57954c90d86875b469260725292d47f7a7d73c"
+    url "https://files.pythonhosted.org/packages/70/d6/f0787cbe953e3cf6ef4430f3cc7d66cbbaabe4b20cb82cc27cc2d21e622a/py_ocsf_models-0.10.0.tar.gz"
+    sha256 "29abaa5a3d4ebba0e2a21757508a4848fa5e1d57da233af57e580f97f0223c59"
   end
 
   resource "pyasn1" do

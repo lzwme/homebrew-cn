@@ -22,6 +22,8 @@ class Libfyaml < Formula
   patch do
     url "https://github.com/pantoniou/libfyaml/commit/1026d76850909dc9b1c5f95b8cd94e865a313fd5.patch?full_index=1"
     sha256 "05e07134edfae8c4d6b81fd25b013c471a3790736f61d6888035409d570ce636"
+    type :backport
+    resolves "https://github.com/pantoniou/libfyaml/pull/267"
   end
 
   def install

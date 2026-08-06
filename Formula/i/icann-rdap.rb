@@ -1,17 +1,17 @@
 class IcannRdap < Formula
   desc "Full-rich client for the Registry Data Access Protocol (RDAP) sponsored by ICANN"
   homepage "https://github.com/icann/icann-rdap/wiki"
-  url "https://ghfast.top/https://github.com/icann/icann-rdap/archive/refs/tags/v0.0.30.tar.gz"
-  sha256 "7dcdd36e6f36ebb8c11b6576c7ba10e314de8594adddde242c8f801ed1a3f4f4"
+  url "https://ghfast.top/https://github.com/icann/icann-rdap/archive/refs/tags/v0.0.31.tar.gz"
+  sha256 "b40724c334b789dd80d5b12331753c940f244d677f903e4667c10d8038527c49"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe7938bd1ceabe0e479069d51e5956c05a2bfe9b99af967a37cd4d24caa9ffee"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "761791638f2593feb4aee4b9faf35177ee53d30863eaf66720bd025e9b86adba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "422c38bccd9c582fc1955d8d49c007870377df7c87c78d900864c2b2e636b786"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cbd74ac9ffb1178cab3de813825a8f1a13b5c32ededaa3d4f0ad59926b2ff789"
-    sha256 cellar: :any,                 arm64_linux:   "954b670c2ba1e0f9634cf65385d28df8d3d010c4ffe100c40335c8405473c177"
-    sha256 cellar: :any,                 x86_64_linux:  "aa581b2c93543577f03c1b432b35bc7b3812e83fe85df6de2d98ba6e9c64779d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14e840077257a08bc5fe4de220c1072a0e159a0ad5f645506a892b0c46062ae4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6deb4027ee33a57426ce8b53b9eb32cde35d6f219ba003742a993b97ab0ff923"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ac58555aebad0729ba9ed60e5c334a7404c4b1cb7b7d679e5da5a5ebad5d385"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9898be7db80ec5e57c18942432c7761516721982a72412c532302156793d62f0"
+    sha256 cellar: :any,                 arm64_linux:   "eaad9cc0f9e97b22af0b5bebdda7ef291a6159fdbc9d5057d8246d289146fed2"
+    sha256 cellar: :any,                 x86_64_linux:  "d1f4b50cd7ff5dde56133fc034ef0a50714104be3220766b41f53d850c2b7dbd"
   end
 
   depends_on "pkgconf" => :build

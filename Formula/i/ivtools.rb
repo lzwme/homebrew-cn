@@ -31,10 +31,11 @@ class Ivtools < Formula
   end
 
   # Fix to error: unknown type name '_LIBCPP_INLINE_VISIBILITY' and '_VSTD'
-  # PR ref: https://github.com/vectaport/ivtools/pull/25
   patch do
     url "https://github.com/vectaport/ivtools/commit/6c4f2afb11d76fc34fb918c2ba53c4c4c5db55ae.patch?full_index=1"
     sha256 "5aaa198d2c2721d30b1f31ea9817ca7fbf1a518dde782d6441cf5946a7b83ee2"
+    type :backport
+    resolves "https://github.com/vectaport/ivtools/pull/25"
   end
 
   def install

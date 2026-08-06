@@ -56,6 +56,9 @@ class Ruby < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # TODO: remove when enabling default_user_install
+  link_overwrite "bin/bundle", "bin/bundler"
+
   def determine_api_version
     Utils.safe_popen_read(bin/"ruby", "-e", "print Gem.ruby_api_version")
   end
@@ -161,10 +164,9 @@ class Ruby < Formula
   # Since Gem ships Bundle we want to provide that full/expected installation
   # but to do so we need to handle the case where someone has previously
   # installed bundle manually via `gem install`.
-  # TODO: remove when enabling default_user_install
+  # TODO: remove the `remove` step when enabling default_user_install
   post_install_steps do
-    remove ["bin/bundle", "bin/bundler", "lib/ruby/gems/{{version.major_minor}}.0/gems/bundler-*"],
-           base: :homebrew_prefix, recursive: true
+    remove "{{HOMEBREW_PREFIX}}/lib/ruby/gems/{{version.major_minor}}.0/gems/bundler-*", recursive: true
     on_macos do
       if_path_exists "opt/ruby@{{version.major_minor}}/lib/libruby.{{version.major_minor}}.dylib",
                      base: :homebrew_prefix do

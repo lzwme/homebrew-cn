@@ -49,6 +49,7 @@ class Libadwaita < Formula
   patch do
     url "https://gitlab.gnome.org/GNOME/libadwaita/-/commit/ad0214cd1f6fb79d743b252d35f2657f875480e8.diff"
     sha256 "b7d8c4920805bf62253738e4d2a7e56bd8c9f4468f082b7c7f8819132a333ea5"
+    type :unofficial
   end
 
   def install

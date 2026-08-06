@@ -38,6 +38,7 @@ class HopenpgpTools < Formula
     patch do
       url "https://gitlab.archlinux.org/archlinux/packaging/packages/haskell-nettle/-/raw/aeed8e35267fb46cb17b137ecb12d2d34caefdb2/nettle-4.patch"
       sha256 "7de52534a84bff5f6893ac9267d268990ab2532d73016fa8dc31ef9169cc2c08"
+      type :unofficial
     end
   end
 

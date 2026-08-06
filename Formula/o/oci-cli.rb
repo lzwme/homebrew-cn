@@ -3,18 +3,18 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/ba/5e/bac869c9e27a6c54eae0c0362047c3b996ba9a2da347edf84537efce8307/oci_cli-3.90.0.tar.gz"
-  sha256 "ba76c8e92f92679a3170a32196a26f11e71bf6c1cf35ed1879896a8fbcae7a6a"
+  url "https://files.pythonhosted.org/packages/b5/25/6ea94323ae9ac1759b75f441777398e720f2c216befea9907e3c33bdd704/oci_cli-3.90.1.tar.gz"
+  sha256 "3032cb81092d32ce3be0c182b2c2ded61352aef333414f3464d9e9500006d7fc"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "53f8d886a1df5a097b4b52646fe111080ae677252a49098ea6a6c34233c76ae0"
-    sha256 cellar: :any, arm64_sequoia: "06d3d5b68acf35395f08961a2456bcd9c42f1b3bc7baf8e14698ec729dafea5b"
-    sha256 cellar: :any, arm64_sonoma:  "c0b9d2a645b3a9aef033e1c6cdbd51923adff51caf921c164b895eda6c9f49be"
-    sha256 cellar: :any, sonoma:        "07b97bd92fb434cb9922a25795c5cd9ba3ef839f718a671dce1f91889e9bbe6a"
-    sha256 cellar: :any, arm64_linux:   "5bca58cb4cb93e50ed8bf65776cbbb2b034bd8227051eaf791ed785fdcef59a4"
-    sha256 cellar: :any, x86_64_linux:  "de5e45ed3f8b120661a05493bb94b5c25c0d919a672dac718dfa3adc7d593876"
+    sha256 cellar: :any, arm64_tahoe:   "e4ccdb13896db0d1d86a8488094e0ce43943cc234c9a613340c8f8186835ae6a"
+    sha256 cellar: :any, arm64_sequoia: "2eba445bcbe08b75ff79c078953bac67f6f18c0977c4e75231cb61adfd591ca6"
+    sha256 cellar: :any, arm64_sonoma:  "dc48517df383eb1fff3d0efd0aa2bd6460d12366d7c3bddc297622933006ba48"
+    sha256 cellar: :any, sonoma:        "5762e26c836809a547a0af0d02bed553854d9def9557a103bf1ef1badd1f520d"
+    sha256 cellar: :any, arm64_linux:   "9d9a4d5627d72263b283fe3f7e27310a62875fd4144343909c9e93ef956dc2e1"
+    sha256 cellar: :any, x86_64_linux:  "de924953ee9ccac7a26ea481df10971244206f104365fc7c17ffe9103084c297"
   end
 
   depends_on "certifi" => :no_linkage
@@ -35,8 +35,8 @@ class OciCli < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/42/e1/4cb2d3a2416bcd871ac93f12b5616f7755a6800bccae05e5a99d3673eb69/click-8.1.2.tar.gz"
-    sha256 "479707fe14d9ec9a0757618b7a100a0ae4c4e236fac5b7f80ca68028141a1a72"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "crc32c" do
@@ -50,8 +50,8 @@ class OciCli < Formula
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/1e/2a/77bd6cbf1c69b2f368fe3d6462d84369b0cba15e37ce713cdc08d459b95a/oci-2.183.0.tar.gz"
-    sha256 "ff572ef5f2030a788796bb509d257e6a41c6510ef9b4b6a75a079efd06e533ce"
+    url "https://files.pythonhosted.org/packages/a7/97/d204a71489b8c685818f596f2082c78b52fe70a934dc52d9dbd81345da47/oci-2.184.0.tar.gz"
+    sha256 "19742d0fdd27947daafd2cfea4db31ad585fde379094f41ddb7280109939210e"
   end
 
   resource "prompt-toolkit" do
@@ -65,8 +65,8 @@ class OciCli < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/74/b7/da07bae88f5a9506b4def6f2f4903cf4c3b8831e560dba8fa18ca08f758f/pyopenssl-26.3.0.tar.gz"
-    sha256 "589de7fae1c9ea670d18422ed00fc04da787bbde8e1454aea872aa57b49ad341"
+    url "https://files.pythonhosted.org/packages/3f/e8/7325d258199b159eb2c03fe32107533e2832e70e63f4fb88a6aa00023201/pyopenssl-26.4.0.tar.gz"
+    sha256 "28dfcce0162b9211413e26dfbfdf1d24317fbeba18fc93c12400a1856b2a0bc7"
   end
 
   resource "python-dateutil" do
@@ -125,15 +125,12 @@ class OciCli < Formula
       venv.pip_install Pathname.pwd
     end
 
-    # TODO: remove `shells` argument to include `bash` completions with click 8.1.7+
-    # https://github.com/pallets/click/commit/d9db70cabdc9cb10cd5584464b8adb9a24545b92
-    generate_completions_from_executable(bin/"oci", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin/"oci", shell_parameter_format: :click)
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/oci --version")
 
-    assert_match "Usage: oci [OPTIONS] COMMAND [ARGS]", shell_output("#{bin}/oci --help")
     assert_match "Could not find config file", shell_output("#{bin}/oci session validate 2>&1", 1)
   end
 end

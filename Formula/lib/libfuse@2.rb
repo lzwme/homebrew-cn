@@ -30,12 +30,15 @@ class LibfuseAT2 < Formula
   patch do
     url "https://github.com/libfuse/libfuse/commit/5a43d0f724c56f8836f3f92411e0de1b5f82db32.patch?full_index=1"
     sha256 "94d5c6d9785471147506851b023cb111ef2081d1c0e695728037bbf4f64ce30a"
+    type :cherry_pick
+    resolves "https://github.com/libfuse/libfuse/pull/619"
   end
 
   # Backport fix for build failure on arm64. Debian applies same patch (0006-arm64.patch)
   patch do
     url "https://github.com/libfuse/libfuse/commit/914871b20a901e3e1e981c92bc42b1c93b7ab81b.patch?full_index=1"
     sha256 "97360b7353903f3968aa10c9fd95ee42372049fea748d2be78f1c054e750bed0"
+    type :backport
   end
 
   def install

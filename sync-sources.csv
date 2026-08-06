@@ -1514,6 +1514,7 @@ Homebrew-homebrew-core/Formula/d/defuddle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/deheader.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dehydrated.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/deja-gnu.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/delly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/delve.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/demumble.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/deno.rb, Homebrew/homebrew-core, 1
@@ -5404,6 +5405,7 @@ Homebrew-homebrew-core/Formula/o/opal.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opam.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/open-adventure.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/open-babel.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/open-code-review.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/open-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/open-image-denoise.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/open-jtalk.rb, Homebrew/homebrew-core, 0
@@ -5704,6 +5706,7 @@ Homebrew-homebrew-core/Formula/p/pdns.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pdnsrec.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pdsh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pdtm.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pear.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/peco.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pedump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/peg-markdown.rb, Homebrew/homebrew-core, 1
@@ -9215,7 +9218,6 @@ Homebrew-homebrew-cask/Casks/c/chime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chime@alpha.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chipmunk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chiri.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/c/chirp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chitubox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/choice-financial-terminal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/choosy.rb, Homebrew/homebrew-cask, 0
@@ -9618,6 +9620,7 @@ Homebrew-homebrew-cask/Casks/d/displaylink.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/displays.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/distroav.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/ditto.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/diversion-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/diversion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/divvy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dixa.rb, Homebrew/homebrew-cask, 1
@@ -11581,6 +11584,7 @@ Homebrew-homebrew-cask/Casks/font/font-n/font-new-tegomin.rb, Homebrew/homebrew-
 Homebrew-homebrew-cask/Casks/font/font-n/font-new-york.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-news-cycle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-newsreader.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-n/font-nexon-lv1-gothic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nico-moji.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-niconne.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nikukyu.rb, Homebrew/homebrew-cask, 0
@@ -13278,6 +13282,7 @@ Homebrew-homebrew-cask/Casks/k/kindle-create.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kindle-previewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kiro-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kiro.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/k/kirocrew.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kitlangton-hex.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kitty.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kitty@nightly.rb, Homebrew/homebrew-cask, 1
@@ -16051,7 +16056,6 @@ Homebrew-homebrew-cask/Casks/w/workspace-one-intelligent-hub.rb, Homebrew/homebr
 Homebrew-homebrew-cask/Casks/w/workspaces.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/worldpainter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wormhole.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/w/wowmatrix.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wowup-cf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wowup.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wox.rb, Homebrew/homebrew-cask, 1

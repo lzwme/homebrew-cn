@@ -1,8 +1,8 @@
 class TektoncdCli < Formula
   desc "CLI for interacting with TektonCD"
   homepage "https://github.com/tektoncd/cli"
-  url "https://ghfast.top/https://github.com/tektoncd/cli/archive/refs/tags/v0.45.1.tar.gz"
-  sha256 "ad234826a0663fbcd8840bfd7ce4aded21b20eab31d054b666d748f948938957"
+  url "https://ghfast.top/https://github.com/tektoncd/cli/archive/refs/tags/v0.46.0.tar.gz"
+  sha256 "26ac3109a265de8917a023e9111e34b59e5f2a0d9d7e6b5b0c543b771b9bcbc4"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class TektoncdCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a959bc31d3201343576dbe0122e948bfd55920194d2daf7ddf1dc3545c07974"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8571312ecaf37437ef5284b7c4b1a221731f76356b501a429e5e88d9f6d0b6b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b95e0ade800e641a64f2c976939a5951d83de5e5d12d1d6163fc7f84d742df97"
-    sha256 cellar: :any_skip_relocation, sonoma:        "284b85d5cec74f56d20f220e9b35498ec9c1f5bcab128c71d73d79ad7e5e416b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "844417d27c2f9960c66c108d5f1fc7c81bd4fc1356627f9cf23d661a99c86135"
-    sha256 cellar: :any,                 x86_64_linux:  "4e166e095f5338c9acf905e83ffc6ad84236272373eb9a3a42e75770fa4dd964"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "857e9b96087e13801e43ebcef0baa5c1e6b2d64fc9bb52922266224fcace80d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab319a753322d43b6ff97d7769b1d01eedd649b4e3297b2767dfc328bccb7455"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1e7046369dcb8a46f2fffb92590b4813eb8de74534770c4950301561196c9c3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "278b56a3e17ee75fa8017b6080510917411ec9e034792c44744610cbc159fc2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1c0516b27108b1712301b1d78b503c8821458d6642e57ae8b4e2c50524e861c"
+    sha256 cellar: :any,                 x86_64_linux:  "7f6ece1c7a1c0c954ff957fe2f9ddcfc2825e7e6281a6453ae403bafd15a3b7b"
   end
 
   depends_on "go" => :build

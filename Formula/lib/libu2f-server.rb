@@ -38,6 +38,8 @@ class Libu2fServer < Formula
   patch do
     url "https://github.com/Yubico/libu2f-server/commit/f7c4983b31909299c47bf9b2627c84b6bfe225de.patch?full_index=1"
     sha256 "012d1d759604ea80f6075b74dc9c7d8a864e4e5889fb82a222db93a6bd72cd1b"
+    type :backport
+    resolves "https://github.com/Yubico/libu2f-server/pull/42"
   end
 
   def install

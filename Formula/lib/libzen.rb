@@ -14,6 +14,8 @@ class Libzen < Formula
     patch do
       url "https://github.com/MediaArea/ZenLib/commit/2350bc442963ba9e4ddcf4e67ba1ff2c95d44635.patch?full_index=1"
       sha256 "fea2e76c5017ab98f2501dfdc24bedf4682b7336544529a08d9e1827c4de6bae"
+      type :backport
+      resolves "https://github.com/MediaArea/ZenLib/pull/174"
     end
   end
 

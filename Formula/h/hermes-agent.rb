@@ -3,8 +3,8 @@ class HermesAgent < Formula
 
   desc "Self-improving AI agent that creates skills from experience"
   homepage "https://hermes-agent.nousresearch.com"
-  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.7.20.tar.gz"
-  sha256 "285f3fc134ff466a90065e1517801a68993733b807158ee8f32aa01613786990"
+  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.8.3.tar.gz"
+  sha256 "370542c7219faba6300905c3b419e14e6508a31ac698a1a5174e0386990834be"
   license "MIT"
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
@@ -14,12 +14,12 @@ class HermesAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "cf52f68ec8f5cfe62335d06b8edc16d67903e417ebb1ec84a41ad93376c4e1ae"
-    sha256 cellar: :any, arm64_sequoia: "6241bf667d43190590818de2cc5a979ce44f73441cc8dcd3a3625aca1182cc92"
-    sha256 cellar: :any, arm64_sonoma:  "5efbc33adbe98809eac5985d0e1b3389acbb65074f4fa1521f9586cb38d6fcfc"
-    sha256 cellar: :any, sonoma:        "379b6a22027478829306b3b4286c5b3d668d5d8fb1e70c080cf9172e598b3add"
-    sha256 cellar: :any, arm64_linux:   "51296b514cebe87f26835f719cc4e1b24b2a5879ebb2779529e58eb9b3808ea4"
-    sha256 cellar: :any, x86_64_linux:  "873185902ea657e9585b68db72c879295424d85531b96a581836cf79651c54ae"
+    sha256 cellar: :any, arm64_tahoe:   "2969a37ff38c3e4964d7579f777296eeba4a8fccb5ee7830b3c8da009b440e93"
+    sha256 cellar: :any, arm64_sequoia: "60aa32478b9ec9a297a7c9ae116c2e4b2dc41f82f527af76edcf54a4979fa1f3"
+    sha256 cellar: :any, arm64_sonoma:  "defc3c9852f1e57392da07b3ae7f5ed6091bb04eb5130a770b7be6d224fb2d59"
+    sha256 cellar: :any, sonoma:        "3b1e3788de6de77ca4ab24eabc1ce61d44c61799bc85649eaf15e60b0925efa2"
+    sha256 cellar: :any, arm64_linux:   "5208bbffb2c9c342c734d0a445e309c86cf82955ca533c3bd55a8d1b9376e3b6"
+    sha256 cellar: :any, x86_64_linux:  "62dad23f60f0a785378ef2ea188255a724633e437cd5305ff667643a10a036f2"
   end
 
   # Support for brew was removed in https://github.com/NousResearch/hermes-agent/pull/68217
@@ -236,6 +236,8 @@ class HermesAgent < Formula
     patch do
       url "https://github.com/sethmlarson/socksio/commit/b326406915fd98a8185c1c160165c5b8963b30c1.patch?full_index=1"
       sha256 "7aefa906b62e2c9a8df255ea742ca97e155ac2e1238e49ce11e3e56e37ee1f8b"
+      type :backport
+      resolves "https://github.com/sethmlarson/socksio/pull/61"
     end
   end
 
@@ -290,6 +292,7 @@ class HermesAgent < Formula
   end
 
   def install
+    ENV["HERMES_NIX_BUILD"] = "1"
     # Allow to build with Python 3.14
     inreplace "pyproject.toml", "requires-python = \">=3.11,<3.14\"", "requires-python = \">=3.11,<3.15\""
 

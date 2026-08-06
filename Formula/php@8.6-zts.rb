@@ -1,9 +1,9 @@
 class PhpAT86Zts < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/php/php-src/archive/395b29846e4bab536be017e98a523f9e94d5a204.tar.gz?commit=395b29846e4bab536be017e98a523f9e94d5a204"
+  url "https://ghfast.top/https://github.com/php/php-src/archive/c6e74fc13189afbc7c2a02a2af42f9ccf4dabc33.tar.gz?commit=c6e74fc13189afbc7c2a02a2af42f9ccf4dabc33"
   version "8.6.0"
-  sha256 "f8fe53c4c7f3f4f2ee982e85b5f05d3c3073fc7d297ae5da5aefcf6c64a85d60"
+  sha256 "2b8ce32d5b6aaeecdcd3cc17f7b6ffb2ef8e7bf68e2975511f5ae5d6ede6d528"
   license all_of: [
     "PHP-3.01",
 
@@ -32,13 +32,13 @@ class PhpAT86Zts < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 113
-    sha256 arm64_tahoe:   "c370d27daf36d6733f5d85dc4f2f2907d4f18de771db2ce0a19e3e7b3e0246be"
-    sha256 arm64_sequoia: "e759ab28de4f3ceeb6a5650eee980c877aa108ae77184a05dbd6a9ee9e2fce9f"
-    sha256 arm64_sonoma:  "9330d29c96e1a87459dce20755b0c2c12a767cc3b84f16c0b6884d52ac1a66f5"
-    sha256 sonoma:        "a35b23d16839ef5312f8eba5279cc7196ebb5f2b8a46ab068d826b7d57f664dc"
-    sha256 arm64_linux:   "7e37b6cc63bba9e7791d34419037e4794547c27f58f418928d302b9a6474912f"
-    sha256 x86_64_linux:  "e50b11ae428834bb30a56b07a757c4e12d22625b412b5c9f216738a0b9eaf3a5"
+    rebuild 114
+    sha256 arm64_tahoe:   "3ff7e74976cd7c1a7e1e85d0cb755a4c424404ade23d27349632c933bd6dfdc3"
+    sha256 arm64_sequoia: "7ecdf3c6386a7bfb1ff6802d453669caedb95ae837cbf5b127da006d512c01f2"
+    sha256 arm64_sonoma:  "0795d823dc02aa250b3b42643a38a2cc05239aae2054027f0a2bc1d13e10e734"
+    sha256 sonoma:        "ee2fc129c06720385df3b3752f3d8b6461cb65cdd05894c97d41f8f2f791d5c1"
+    sha256 arm64_linux:   "2e6145b7ca3ce1eaa6fca5d252311ca1992ffd3b42cdc2e31e08bc3b15f586e0"
+    sha256 x86_64_linux:  "6c95b8538229a13c918d7b5670b2494ded954899a48e062a3a1884089d56ad12"
   end
 
   keg_only :versioned_formula
@@ -380,6 +380,7 @@ class PhpAT86Zts < Formula
       ErrorLog "#{testpath}/httpd-error.log"
       ServerRoot "#{formula_opt_prefix("httpd")}"
       PidFile "#{testpath}/httpd.pid"
+      Mutex file:#{testpath} default
       LoadModule authz_core_module lib/httpd/modules/mod_authz_core.so
       LoadModule unixd_module lib/httpd/modules/mod_unixd.so
       LoadModule dir_module lib/httpd/modules/mod_dir.so

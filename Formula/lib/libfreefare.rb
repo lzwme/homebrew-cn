@@ -29,11 +29,13 @@ class Libfreefare < Formula
     depends_on "libusb-compat"
   end
 
-  # Upstream commit for endianness-related functions, fixes
-  # https://github.com/nfc-tools/libfreefare/issues/55
+  # Upstream commit for endianness-related functions
   patch do
     url "https://github.com/nfc-tools/libfreefare/commit/358df775.patch?full_index=1"
     sha256 "20d592c11e559d0a5f02f7ed56da370e39439feebd971be11b064d58ea85777f"
+    type :backport
+    resolves "https://github.com/nfc-tools/libfreefare/pull/56",
+             "https://github.com/nfc-tools/libfreefare/issues/55"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.

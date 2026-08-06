@@ -34,6 +34,7 @@ class Libsvg < Formula
   patch do
     url "https://ghfast.top/https://raw.githubusercontent.com/buildroot/buildroot/45c3b0ec49fac67cc81651f0bed063722a48dc29/package/libsvg/0002-Fix-undefined-symbol-png_set_gray_1_2_4_to_8.patch"
     sha256 "a0ca1e25ea6bd5cb9aac57ac541c90ebe3b12c1340dbc5762d487d827064e0b9"
+    type :unofficial
   end
 
   # Allow building on M1 Macs. This patch is adapted from

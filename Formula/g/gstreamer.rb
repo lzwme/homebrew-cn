@@ -17,6 +17,12 @@ class Gstreamer < Formula
         formula :parent
       end
     end
+
+    # Backport FFmpeg 9 compatibility.
+    patch do
+      url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/commit/be9bdb67f4fc868977f1f74e95b6ebe19ef792ec.diff"
+      sha256 "129e712f2f25fb68b309ad2a015e3a6b25e4a34659baa67f53d3d26ef0474fba"
+    end
   end
 
   livecheck do
@@ -25,12 +31,13 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "f48490aa7efe5220a2c26745915802d436817df526ca6309e57d3e8d82457589"
-    sha256 arm64_sequoia: "9bd88092c7e35c9acb7bf9480fe9e35022d4852726168eb6fe97ebd5f7b2908d"
-    sha256 arm64_sonoma:  "b5807021db69b643af7273120749bb7105847301a31d4c678eada91c25c2e240"
-    sha256 sonoma:        "baf03c2e35e5f357d534cf1c5c482c5f33e0f39cf15313158d7672d23b34656a"
-    sha256 arm64_linux:   "54618d17db25b15454f1e2bd5a747da399cacdfb8b08670ba8a64155cb2f3ceb"
-    sha256 x86_64_linux:  "1ff3275a03572289591731fa0638299d1c75c7089d88dfda6963efa6d3ef25f6"
+    rebuild 1
+    sha256 arm64_tahoe:   "cd35ea545d3d451eb929847d6dfc7ec14fe34ee636f2e971f0e9707df86dffd4"
+    sha256 arm64_sequoia: "2d270d3ef5ab2dc202eb0137b2d7a5505d508104263899b39bd039ead3ab50ec"
+    sha256 arm64_sonoma:  "b950a109d2f34eb50b57ab68e9274febd7c308ee363eee64fcdcfa5353cf3c11"
+    sha256 sonoma:        "586c8e1a3287bf133b849ea1e4d1f33cd2ff70a60dff73a7f39314651c93b09b"
+    sha256 arm64_linux:   "9b06aa92ce57911dacc5b6edc93d27adf4e68e36b06f122ec6dffa73d808d808"
+    sha256 x86_64_linux:  "d83a43787efd910ca4fbc6a849ca87871825191f7863e17c1696226e1c5dceb2"
   end
 
   head do

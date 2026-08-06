@@ -3,20 +3,21 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/71/4e/668be0e0209d4b02486702084edc2c828ad77dd416e463bebd82db63ffbd/rapid_mlx-0.12.1.tar.gz"
-  sha256 "80badde5e17de051dee4cff31a83c4ac4cb8f2d31a1bed398d2b08571dc754df"
+  url "https://files.pythonhosted.org/packages/92/90/d37121c632642d9601d80ae80794cf50de4df9aa684f6fecf2544ee4683e/rapid_mlx-0.12.3.tar.gz"
+  sha256 "221eaa0bbdfcf04596cfd42eb34a02eb4503d5284753c00797ca952ebaa64ec1"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "530992851ab30f918632e30a3edce467f92f2061f6c29ed4e0703c897a8fb73b"
-    sha256 cellar: :any, arm64_sequoia: "be4f9ef20a43c4a08680d70e90fae04cb4f149d105ed7b249c51ef3b68bc6bcc"
-    sha256 cellar: :any, arm64_sonoma:  "a5cd842e38f068cb8901397817a16e274c7ab727bef386a9d79e454b45e03f00"
+    sha256 cellar: :any, arm64_tahoe:   "7323555b77d51e4152c9b8541e2e41b063eb7cfe3d7139ffdd71ca2291afcad1"
+    sha256 cellar: :any, arm64_sequoia: "318de2f9e1758c774eb7831958822d8d164b26bd98590a7409a417db60373e9b"
+    sha256 cellar: :any, arm64_sonoma:  "6a5cbb53dd78417c76353349210f78670bc896456d18fc83a4c40ba4423b0e06"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on macos: :sonoma
   depends_on "mlx"
@@ -26,7 +27,7 @@ class RapidMlx < Formula
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
-  pypi_packages exclude_packages: %w[certifi mlx numpy pydantic rpds-py]
+  pypi_packages exclude_packages: %w[certifi cryptography mlx numpy pydantic rpds-py]
 
   resource "annotated-doc" do
     url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
@@ -48,11 +49,6 @@ class RapidMlx < Formula
     sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
   end
 
-  resource "cffi" do
-    url "https://files.pythonhosted.org/packages/57/5f/ff100cae70ebe9d8df1c01a00e510e45d9adb5c1fdda84791b199141de97/cffi-2.1.0.tar.gz"
-    sha256 "efc1cdd798b1aaf39b4610bba7aad28c9bea9b910f25c784ccf9ec1fa719d1f9"
-  end
-
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
     sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
@@ -61,11 +57,6 @@ class RapidMlx < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
     sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/de/41/6cbdcf9142d00fe82836fbb51e503e58088575cf7a0fe1dbff6695bf0840/cryptography-50.0.0.tar.gz"
-    sha256 "eeac2acb5a20ed25e0ad6d1df9891a520b78b404266b6d11778f25d5d691a6c9"
   end
 
   resource "fastapi" do
@@ -89,8 +80,8 @@ class RapidMlx < Formula
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/63/39/67be8d71f900d9a55761b6022821d6679fb56c64f1b6063d5af2c2606727/hf_xet-1.5.2.tar.gz"
-    sha256 "73044bd31bae33c984af832d19c752a0dffb67518fee9ddbd91d616e1101cf47"
+    url "https://files.pythonhosted.org/packages/1b/ab/522a2ab67f27971a9d48ca666d4fca85ef7d5282d142e31fd087e27b1bbe/hf_xet-1.6.0.tar.gz"
+    sha256 "2e58454a340b3556dfa4972d5451aff4fba8dd42a236600ba1a1d2b1514f0fef"
   end
 
   resource "httpcore" do
@@ -196,11 +187,6 @@ class RapidMlx < Formula
   resource "psutil" do
     url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
     sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
-  end
-
-  resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/1b/7d/92392ff7815c21062bea51aa7b87d45576f649f16458d78b7cf94b9ab2e6/pycparser-3.0.tar.gz"
-    sha256 "600f49d217304a5902ac3c37e1281c9fe94e4d0489de643a9504c5cdfdfc6b29"
   end
 
   resource "pygments" do
@@ -314,6 +300,8 @@ class RapidMlx < Formula
   end
 
   def install
+    # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG
+    ENV["AWS_LC_SYS_NO_JITTER_ENTROPY"] = "1"
     # `tokenizers`, `hf-xet` and `openai-harmony` build PyO3 extensions through maturin.
     ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup"
 

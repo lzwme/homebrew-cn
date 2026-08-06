@@ -1,10 +1,10 @@
 class Mupdf < Formula
   desc "Lightweight PDF and XPS viewer"
   homepage "https://mupdf.com/"
-  url "https://mupdf.com/downloads/archive/mupdf-1.28.1-source.tar.gz"
-  sha256 "dc94c60b2537e2ac9a2d379dd3801545f84a3a302d15c9da358362a1270707c3"
+  url "https://mupdf.com/downloads/archive/mupdf-1.28.2-source.tar.gz"
+  sha256 "44075a84e329db55b9bef5f342a70fd26d69e48ad1d33cb89d9664581c641156"
   license "AGPL-3.0-or-later"
-  compatibility_version 4
+  compatibility_version 5
   head "git://git.ghostscript.com/mupdf.git", branch: "master"
 
   livecheck do
@@ -13,12 +13,12 @@ class Mupdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "61ac4280615d1ae2e8487bfa710ea9bea906306305dcef4b2325711c1946cd66"
-    sha256 cellar: :any, arm64_sequoia: "b09f5616623ab98ca32d1f52d3f0e8669a5eceae8a48ec39895396a6464d0b82"
-    sha256 cellar: :any, arm64_sonoma:  "c20a1bb5e53888d461e5c67d378b16b5b2bb4058c7341e6fa3e4a121b57254bb"
-    sha256 cellar: :any, sonoma:        "f1c3371d31a01654b69776432a6324fe90c81464bb59d4d5828ac144b2fcf811"
-    sha256 cellar: :any, arm64_linux:   "9199f8233761b7f3e3210eb614a2b9b18eb240266bfd7cf27ebf4cefac2a5d3d"
-    sha256 cellar: :any, x86_64_linux:  "05b3972d9f36aa2da992adcdcebd26c4b90bddc325b09d7316743e1bd5759bf7"
+    sha256 cellar: :any, arm64_tahoe:   "edf0e9bf480d3ae6e10002cbf801629197ef129f38a792bae8137208f3d69c61"
+    sha256 cellar: :any, arm64_sequoia: "6a77f232a7fbab233f65670d0abe56d138a480817ee4925c7a95c547cf26b439"
+    sha256 cellar: :any, arm64_sonoma:  "849b8605b50d8953b9112f76c9eee95fa4248fdc78f1c0ed3de241cfbf2feea4"
+    sha256 cellar: :any, sonoma:        "a832ae95a381a4db2541920e32e95e0ead6ab3bf754cf1459a6d006b48bb042f"
+    sha256 cellar: :any, arm64_linux:   "27eacf691343e6a76da4d568a18a9bd8c42bf59b538ea9071bc21bb66b29d17f"
+    sha256 cellar: :any, x86_64_linux:  "edf4cb7492a277011e8ce858965f9014c2226f09275a4c6aa3c2f5ee7c581f80"
   end
 
   depends_on "llvm@21" => :build

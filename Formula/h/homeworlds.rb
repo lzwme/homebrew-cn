@@ -19,10 +19,11 @@ class Homeworlds < Formula
   depends_on "wxwidgets"
 
   # Fix missing `#include`.
-  # https://github.com/Quuxplusone/Homeworlds/pull/6
   patch do
     url "https://github.com/Quuxplusone/Homeworlds/commit/bb1a5d2395df4e097122b311c0009801107f4d3a.patch?full_index=1"
     sha256 "a133fb4bdeb4a5d2759a7257989089402e0ad84edbaed86780c26d47e58b8d55"
+    type :unofficial
+    resolves "https://github.com/Quuxplusone/Homeworlds/pull/6"
   end
 
   def install
