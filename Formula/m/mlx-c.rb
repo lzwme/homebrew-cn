@@ -31,24 +31,32 @@ class MlxC < Formula
   patch do
     url "https://github.com/ml-explore/mlx-c/commit/1e3c24ffebfdfbeecca054c51637fc4381d98aab.patch?full_index=1"
     sha256 "24831d5bc44b72a0fd027572a4e4eaf754ed9805ffed86185bb8dbdfb6284818"
+    type :backport
+    resolves "https://github.com/ml-explore/mlx-c/pull/110"
   end
 
   # support for gguf (#111)
   patch do
     url "https://github.com/ml-explore/mlx-c/commit/89d3454ac3f46ff68668dd9f7817c6d47650e47c.patch?full_index=1"
     sha256 "411749fd1908fdee783c3b378471603606852ce3a0ee0011ca5b66f47187b9d3"
+    type :backport
+    resolves "https://github.com/ml-explore/mlx-c/pull/111"
   end
 
   # support for graph export (#112)
   patch do
     url "https://github.com/ml-explore/mlx-c/commit/782d4712862b247a094086419ce130fd82cf3c53.patch?full_index=1"
     sha256 "4469b3ec2836efeadce98a192ae26f423cdbbd182edcd2126f4a6ef36891ce58"
+    type :backport
+    resolves "https://github.com/ml-explore/mlx-c/pull/112"
   end
 
   # regenerate bindings for MLX 0.31.2 (#114)
   patch do
     url "https://github.com/ml-explore/mlx-c/commit/fba4470b89073180056c9ea46c443051375f7399.patch?full_index=1"
     sha256 "5102eafc68ea94cbe8cabb4acaa9905e17d1c92cb6a1b8c7f0f73dc863c09609"
+    type :backport
+    resolves "https://github.com/ml-explore/mlx-c/pull/114"
   end
 
   def install

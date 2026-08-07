@@ -52,10 +52,12 @@ class Musepack < Formula
   patch do
     url "https://ghfast.top/https://raw.githubusercontent.com/gentoo/gentoo/f5d4d4995d45baf77c176224b62e424dca037aef/media-sound/musepack-tools/files/musepack-tools-495-fixup-link-depends.patch"
     sha256 "6dbada5a1e90c8fd1fe60084c04e2193cd027c6959ecaf6a37151a674ddb6a77"
+    type :unofficial
   end
   patch do
     url "https://ghfast.top/https://raw.githubusercontent.com/gentoo/gentoo/f5d4d4995d45baf77c176224b62e424dca037aef/media-sound/musepack-tools/files/musepack-tools-495-incompatible-pointers.patch"
     sha256 "25b43fa3ad4ae6eef1e483e3b675b521049901809a024e22aa0aee2237501654"
+    type :unofficial
   end
 
   def install

@@ -39,24 +39,27 @@ class LlvmAT19 < Formula
   end
 
   # Backport relative `CLANG_CONFIG_FILE_SYSTEM_DIR` patch.
-  # https://github.com/llvm/llvm-project/pull/110962
   patch do
     url "https://github.com/llvm/llvm-project/commit/1682c99a8877364f1d847395cef501e813804caa.patch?full_index=1"
     sha256 "2d0a185e27ff2bc46531fc2c18c61ffab521ae8ece2db5b5bed498a15f3f3758"
+    type :backport
+    resolves "https://github.com/llvm/llvm-project/pull/110962"
   end
 
   # Support simplified triples in version config files.
-  # https://github.com/llvm/llvm-project/pull/111387
   patch do
     url "https://github.com/llvm/llvm-project/commit/88dd0d33147a7f46a3c9df4aed28ad4e47ef597c.patch?full_index=1"
     sha256 "0acaa80042055ad194306abb9843a94da24f53ee2bb819583d624391a6329b90"
+    type :backport
+    resolves "https://github.com/llvm/llvm-project/pull/111387"
   end
 
   # Fix triple config loading for clang-cl
-  # https://github.com/llvm/llvm-project/pull/111397
   patch do
     url "https://github.com/llvm/llvm-project/commit/a3e8b860788934d7cc1489f850f00dcfd9d8b595.patch?full_index=1"
     sha256 "6d8403fec7be55004e94de90b074c2c166811903ad4921fd76274498c5a60a23"
+    type :unofficial
+    resolves "https://github.com/llvm/llvm-project/pull/111397"
   end
 
   def python3

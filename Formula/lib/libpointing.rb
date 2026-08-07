@@ -5,6 +5,11 @@ class Libpointing < Formula
   sha256 "697581d27101c9816f1b19715e7ace85a5345857d65e4eaa82840cf2051435d6"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_tahoe:    "77cf45ea25e9ccec41d9be73e28da4d1c2568d9ab42000ba543e1d904853f6ed"
     sha256 cellar: :any,                 arm64_sequoia:  "fc963b2d475b92c4a7fd7a525d0ae301cedad7c825d50bd47f1e174be955ab51"

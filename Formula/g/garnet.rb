@@ -1,8 +1,8 @@
 class Garnet < Formula
   desc "High-performance cache-store"
   homepage "https://microsoft.github.io/garnet/"
-  url "https://ghfast.top/https://github.com/microsoft/garnet/archive/refs/tags/v2.1.1.tar.gz"
-  sha256 "ed79090f3b4754f869159f8ef709e99b0de43bf8b0893b6e0d3b74b84568fc31"
+  url "https://ghfast.top/https://github.com/microsoft/garnet/archive/refs/tags/v2.1.2.tar.gz"
+  sha256 "c9fd5a00bdc36c0494189677c1220ef13f8db478a789609281725cca33ae7b70"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Garnet < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2309183116540bf81009b88d93114cd4e117dc7b70e2c332188ef5ec3ed43c62"
-    sha256 cellar: :any, arm64_sequoia: "f58f6b201d17ec9ab01a7bbe4b322f21fd4217d5c60885f8b0177cee2d5ff18a"
-    sha256 cellar: :any, arm64_sonoma:  "3a7913a3cfd27b398c5787122393eb432220a12330472bb119d279eb49917d63"
-    sha256 cellar: :any, sonoma:        "766be0249379e79608953108d5dade1f10e17ab307e0ed994e497d80e72b585b"
-    sha256 cellar: :any, arm64_linux:   "724403b2872405fca1b0c557e1b51c76ff136ad4cfe4c72f21a3ce8b732c64ea"
-    sha256 cellar: :any, x86_64_linux:  "ddbfa2fe0502a9fb82cc2c8360afa8b2ace3052c7507d085d45b7c0e4e2f5da9"
+    sha256 cellar: :any, arm64_tahoe:   "c6c76cab271195e74aed7c12a78f8036fb45dabb3313ff59a5b5d214048e111c"
+    sha256 cellar: :any, arm64_sequoia: "dd62e69da5e9584aaf021bdd60eecdb023442f5c679e64a7398e8d27bf208e7c"
+    sha256 cellar: :any, arm64_sonoma:  "386911e4978beb6707e9adb930ed906a1ad873b6a055d3fc1b3b4160e58a7eb5"
+    sha256 cellar: :any, sonoma:        "4c690e36849ca288d76576faddcea432de1ec162bc3c257a0c8ef836f86d3ff2"
+    sha256 cellar: :any, arm64_linux:   "5e1ab4b107fdbb209b2bd846ed212f7539bbd90e27fae79bfbfa77166a6d2157"
+    sha256 cellar: :any, x86_64_linux:  "05cbdfd4bf55e6ba8cdf029bf49531bb9210177dd6a4f99a9771ea53c63a45f3"
   end
 
   depends_on "rust" => :build
@@ -36,6 +36,11 @@ class Garnet < Formula
     # Drop the prebuilt BfTree binaries; msbuild rebuilds the library with cargo and prefers its copy
     rm_r Dir["libs/native/bftree-garnet/runtimes/*"]
 
+    # The device csproj ships every prebuilt runtime it finds, so drop the ones we can't use
+    native_rid = ("linux-#{Hardware::CPU.arm? ? "arm64" : "x64"}" if OS.linux?)
+    device_runtimes = buildpath/"libs/storage/Tsavorite/cs/src/core/Device/runtimes"
+    device_runtimes.each_child { |rid| rm_r(rid) if rid.basename.to_s != native_rid }
+
     if OS.linux?
       cd "libs/storage/Tsavorite/cc" do
         args = %w[
@@ -43,9 +48,9 @@ class Garnet < Formula
         ]
         system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
         system "cmake", "--build", "build"
-        rm "../cs/src/core/Device/runtimes/linux-x64/native/libnative_device.so"
-        cp "build/libnative_device.so", "../cs/src/core/Device/runtimes/linux-x64/native/libnative_device.so"
-        cp "build/libnative_device.so", "../cs/src/core/Device/runtimes/linux-x64/native/libnative_device_libaio.so"
+        native_dir = device_runtimes/native_rid/"native"
+        cp "build/libnative_device.so", native_dir/"libnative_device.so"
+        cp "build/libnative_device.so", native_dir/"libnative_device_libaio.so"
       end
     end
 

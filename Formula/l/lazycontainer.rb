@@ -17,10 +17,11 @@ class Lazycontainer < Formula
   depends_on arch: :arm64
   depends_on macos: :tahoe
 
-  # ref https://github.com/andreybleme/lazycontainer/pull/11
   patch do
     url "https://github.com/andreybleme/lazycontainer/commit/cc9ad42bce4a28d662726c41b55dc28d2cb6eaae.patch?full_index=1"
     sha256 "7b1703ab7e11a1b655845ad98647fb01feb815db5caa1c42498169ec83f99ddd"
+    type :backport
+    resolves "https://github.com/andreybleme/lazycontainer/pull/11"
   end
 
   def install

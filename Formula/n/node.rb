@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v26.6.0/node-v26.6.0.tar.xz"
-  sha256 "ecb6eec812505c9292529087a2436ec6c891ffe0e3a897833416e5d7436d659f"
+  url "https://registry.npmmirror.com/-/binary/node/v26.7.0/node-v26.7.0.tar.xz"
+  sha256 "e6b182cbeeab032d1082ca4ac4fe15e3a57de691d3bde78ecf8a761fd56ee356"
   license "MIT"
   compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
@@ -13,13 +13,12 @@ class Node < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "79b9df65550180ccb238f02799f28be4f5f56373b7b9e42dffcf51925f2a017a"
-    sha256 arm64_sequoia: "15ce44a7a5cfb4499ddd52f87a33164dfa984995c78316b76bc56784272a8f10"
-    sha256 arm64_sonoma:  "f8acd305c49bcb930341ddf5430efe63b92da6e0c068814d19ee02ee0f9a09cc"
-    sha256 sonoma:        "9b1a447e74d2ae72b786424cb9197bb0142d7edede751b941c4a0e15c64f3cd3"
-    sha256 arm64_linux:   "f3222b187a4ed55def5d3c0afddccdfc1c7ea84672f3a9963e2e0e0624e16f46"
-    sha256 x86_64_linux:  "a0a6068330ab80b80ddd09615e22e23402f8a5d8a4c3182a22e5a7c5e8ee2bd0"
+    sha256 arm64_tahoe:   "a33a3deba0d6f80ee138d7ffe30afecadd71eb176a881af1e4114303e1678f7d"
+    sha256 arm64_sequoia: "80f02089263fbc62215805a483fea446717e94e782c5e13b3c96261ae3c151a3"
+    sha256 arm64_sonoma:  "50f4b66d98828d14c081cefab39cc007aef223a1731a697d6e1e9050adb6db02"
+    sha256 sonoma:        "c516e962e0667e7ef9cfe6a3665285ac3bed381015e048bf96efb3f3a8fa8630"
+    sha256 arm64_linux:   "b135a5dea295371af3000acab43d7774fe398fb3b63dcd7e0b12e1b7be6a6f37"
+    sha256 x86_64_linux:  "96316cfb7630362c6c0e1371154475b6585371f9bea13d40fe49e21a3137930b"
   end
 
   depends_on "pkgconf" => :build
@@ -71,8 +70,8 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-11.18.0.tgz"
-    sha256 "73f6155215ebabf4ed96dca1f567c2372cc713c33af2e5b9b62fde4e92373e2e"
+    url "https://registry.npmjs.org/npm/-/npm-11.19.0.tgz"
+    sha256 "31e9770f7dc71119a58509353b27917557aaf0ac9b5ef1a0465ee7d8ec67ae75"
 
     livecheck do
       url "https://raw.githubusercontent.com/nodejs/node/refs/tags/v#{LATEST_VERSION}/deps/npm/package.json"
@@ -131,8 +130,8 @@ class Node < Formula
       rm_r(buildpath/"deps"/subdir)
       args << "--shared-#{flag}"
       if formula
-        args << "--shared-#{flag}-includes=#{Formula[formula].include}"
-        args << "--shared-#{flag}-libpath=#{Formula[formula].lib}"
+        args << "--shared-#{flag}-includes=#{formula_opt_include(formula)}"
+        args << "--shared-#{flag}-libpath=#{formula_opt_lib(formula)}"
       end
     end
 
@@ -163,12 +162,11 @@ class Node < Formula
       end
     end
 
-    # Enabling LTO errors on Linux with:
-    # terminate called after throwing an instance of 'std::out_of_range'
+    # Enabling LTO causes brew to error on Linux with a vague message:
+    # Error: Process completed with exit code 123.
     # macOS also can't build with LTO when using LLVM Clang
     # LTO is unpleasant if you have to build from source.
-    # FIXME: re-enable me, currently crashes sequoia runner after 6 hours
-    # args << "--enable-lto" if OS.mac? && DevelopmentTools.clang_build_version > 1699 && build.bottle?
+    args << "--enable-lto" if OS.mac? && ENV.compiler == :clang && build.bottle?
 
     system "./configure", *args
     system "make", "install"
@@ -179,14 +177,14 @@ class Node < Formula
     bootstrap = buildpath/"npm_bootstrap"
     bootstrap.install resource("npm")
     # These dirs must exists before npm install.
-    mkdir_p libexec/"lib"
-    system "node", bootstrap/"bin/npm-cli.js", "install", "-ddd", "--global",
+    (libexec/"lib").mkpath
+    system "node", bootstrap/"bin/npm-cli.js", "install", "--loglevel=silly", "--global",
             "--prefix=#{libexec}", resource("npm").cached_download
 
     # The `package.json` stores integrity information about the above passed
     # in `cached_download` npm resource, which breaks `npm -g outdated npm`.
     # This copies back over the vanilla `package.json` to fix this issue.
-    cp bootstrap/"package.json", libexec/"lib/node_modules/npm"
+    (libexec/"lib/node_modules/npm").install bootstrap/"package.json"
 
     # These symlinks are never used & they've caused issues in the past.
     rm_r libexec/"share" if (libexec/"share").exist?
@@ -198,7 +196,7 @@ class Node < Formula
     # Use the _npm completion included in Zsh rather than generating broken completion
     generate_completions_from_executable(bin/"npm", "completion", shells: [:bash], shell_parameter_format: :none)
 
-    (libexec/"lib/node_modules/npm/npmrc").atomic_write("prefix = #{HOMEBREW_PREFIX}\n")
+    (libexec/"lib/node_modules/npm/npmrc").write("prefix = #{HOMEBREW_PREFIX}\n")
   end
 
   # Replace npm but preserve all other modules across node updates/upgrades.

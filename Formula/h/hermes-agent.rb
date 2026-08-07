@@ -14,18 +14,14 @@ class HermesAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2969a37ff38c3e4964d7579f777296eeba4a8fccb5ee7830b3c8da009b440e93"
-    sha256 cellar: :any, arm64_sequoia: "60aa32478b9ec9a297a7c9ae116c2e4b2dc41f82f527af76edcf54a4979fa1f3"
-    sha256 cellar: :any, arm64_sonoma:  "defc3c9852f1e57392da07b3ae7f5ed6091bb04eb5130a770b7be6d224fb2d59"
-    sha256 cellar: :any, sonoma:        "3b1e3788de6de77ca4ab24eabc1ce61d44c61799bc85649eaf15e60b0925efa2"
-    sha256 cellar: :any, arm64_linux:   "5208bbffb2c9c342c734d0a445e309c86cf82955ca533c3bd55a8d1b9376e3b6"
-    sha256 cellar: :any, x86_64_linux:  "62dad23f60f0a785378ef2ea188255a724633e437cd5305ff667643a10a036f2"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "1bc6279e603665a0acfa30e3ff91d3f6865cac52b0f2c6aa3bc68a0aab726b5c"
+    sha256 cellar: :any, arm64_sequoia: "0934c99e0c73fac31d7f6108648a556e701efd2f9a5dcb943fd456e571e03cf5"
+    sha256 cellar: :any, arm64_sonoma:  "683d5a776b5b0b86040a9b129e3b3914493b33d319f20d75769d4a027e5b5185"
+    sha256 cellar: :any, sonoma:        "6ee92f5c1d30139af7dd6664c65b9a9b1b6738c8eaecb985c16c5b4a2a11cbfa"
+    sha256 cellar: :any, arm64_linux:   "8abedc52d0aebc371f4515bb85cb77891d0cb91dff46b39739d554efce16c114"
+    sha256 cellar: :any, x86_64_linux:  "a2ec5b0ffadaf401540ca16ee1c096da45d9b7d1a8ed5f800866be4de30782fd"
   end
-
-  # Support for brew was removed in https://github.com/NousResearch/hermes-agent/pull/68217
-  # Formula can not be updated
-  deprecate! date: "2026-08-03", because: "Upstream does not suppoort brew anymore"
-  disable! date: "2027-02-03", because: :unmaintained
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
@@ -296,7 +292,13 @@ class HermesAgent < Formula
     # Allow to build with Python 3.14
     inreplace "pyproject.toml", "requires-python = \">=3.11,<3.14\"", "requires-python = \">=3.11,<3.15\""
 
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources(without: "socksio")
+    resource("socksio").stage do
+      # Cap flit-core below 4 as socksio's legacy `[tool.flit.metadata]`
+      # pyproject table is no longer supported since flit-core 4
+      inreplace "pyproject.toml", "flit_core >=2", "flit_core >=2,<4"
+      venv.pip_install Pathname.pwd
+    end
   end
 
   test do

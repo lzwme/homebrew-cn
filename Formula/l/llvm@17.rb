@@ -54,6 +54,8 @@ class LlvmAT17 < Formula
     on_tahoe :or_newer do
       url "https://github.com/llvm/llvm-project/commit/a8016e296e6ec161897e7421c5efbc25a6aa3a9f.patch?full_index=1"
       sha256 "17ef118c305a3fbe9b7143134f998351e92f6c7f24b62447abacbc0731c8b9b1"
+      type :backport
+      resolves "https://github.com/llvm/llvm-project/pull/194836"
     end
   end
 

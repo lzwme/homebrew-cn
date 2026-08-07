@@ -39,6 +39,8 @@ class Ncmpc < Formula
     patch do
       url "https://github.com/MusicPlayerDaemon/ncmpc/commit/af478b5ba2447592c640c5b7f86c47d9a412c639.patch?full_index=1"
       sha256 "193f6c3192ba39974a2f1ef4935c623d58e0614f9978b2e6545c6231fd5ffdb5"
+      type :unofficial
+      resolves "https://github.com/MusicPlayerDaemon/ncmpc/pull/160"
     end
   end
 

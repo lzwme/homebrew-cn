@@ -6,6 +6,11 @@ class QobineWeb < Formula
   license "GPL-3.0-only"
   head "https://github.com/sofusa/qobine.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1512fa5e84b9fd39cb8d8da7a5da0faa489ce0565a9614ca5e8082ef6abcfa3c"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "57bdb2a3c3e980237f3ee32eb6dd244caf0f4eeb29f7191b18ded6068a90a4fd"

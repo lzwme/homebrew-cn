@@ -1,18 +1,18 @@
 class PgSchemaDiff < Formula
   desc "Diff Postgres schemas and generating SQL migrations"
   homepage "https://github.com/stripe/pg-schema-diff"
-  url "https://ghfast.top/https://github.com/stripe/pg-schema-diff/archive/refs/tags/v1.0.8.tar.gz"
-  sha256 "dabee566dd0f2ce2836d0dca6ad3a303261ec3a6e0064e599ed9a7c191ded95f"
+  url "https://ghfast.top/https://github.com/stripe/pg-schema-diff/archive/refs/tags/v1.0.9.tar.gz"
+  sha256 "70b978ee7256fb8693cbc205f749691e4f403f1ed760d619d623f76bfbb138a6"
   license "MIT"
   head "https://github.com/stripe/pg-schema-diff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7b70c37d5bfb98a6ee0694926a0c3226f29da9ed1af67ff0cd8562332ae3ad2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e7b70c37d5bfb98a6ee0694926a0c3226f29da9ed1af67ff0cd8562332ae3ad2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7b70c37d5bfb98a6ee0694926a0c3226f29da9ed1af67ff0cd8562332ae3ad2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "330424c4cd4a1646abf9465d58cc751916328ba7cb9490f011828190721bcdc1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d6cfaa9e3ff26c89ab72bf5a04152c8b93f4c22a7430b949420dabde6d3b0ab"
-    sha256 cellar: :any,                 x86_64_linux:  "d246fc586e6e3018c4a670489775dc62575966967a436a2e59c671068f1de9e2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b19fb80ab55dba821ac2bb1e298b124a5606f91eb5648feebfc2c6d1738c3314"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b19fb80ab55dba821ac2bb1e298b124a5606f91eb5648feebfc2c6d1738c3314"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b19fb80ab55dba821ac2bb1e298b124a5606f91eb5648feebfc2c6d1738c3314"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ee0ceb6ccc7c40ab1e9a66f6673e8a2407b461577996daa85244366b2b6381df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ac834d57afeaf10601960c32e9f9030dc042d31126c601ad68de372aa73299e"
+    sha256 cellar: :any,                 x86_64_linux:  "e9b30f5a5aa37d6a88e6b868e266a16c1486db33e24041a645c914af8ed42ef6"
   end
 
   depends_on "go" => :build

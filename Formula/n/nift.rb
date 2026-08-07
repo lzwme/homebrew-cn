@@ -22,17 +22,19 @@ class Nift < Formula
 
   # Fix build on Apple Silicon by removing -pagezero_size/-image_base flags.
   # TODO: Remove if upstream PR is merged and included in release.
-  # PR ref: https://github.com/nifty-site-manager/nsm/pull/33
   patch do
     url "https://github.com/nifty-site-manager/nsm/commit/00b3ef1ea5ffe2dedc501f0603d16a9a4d57d395.patch?full_index=1"
     sha256 "c05f0381feef577c493d3b160fc964cee6aeb3a444bc6bde70fda4abc96be8bf"
+    type :unofficial
+    resolves "https://github.com/nifty-site-manager/nsm/pull/33"
   end
 
   # Fix to error: a template argument list is expected after a name prefixed by the template keyword
-  # PR ref: https://github.com/nifty-site-manager/nsm/pull/38
   patch do
     url "https://github.com/nifty-site-manager/nsm/commit/d8a54c08a218d6f6823a4e76472708bdc94d1128.patch?full_index=1"
     sha256 "534871043624b409c60d17e08a5e9917ad55ef245df6286d6ea00cc706b3e09f"
+    type :unofficial
+    resolves "https://github.com/nifty-site-manager/nsm/pull/38"
   end
 
   def install

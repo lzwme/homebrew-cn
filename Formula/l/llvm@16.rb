@@ -58,16 +58,18 @@ class LlvmAT16 < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # Fixes https://github.com/mesonbuild/meson/issues/11642
   patch do
     url "https://github.com/llvm/llvm-project/commit/ab8d4f5a122fde5740f8c084c8165f51a26c93c7.patch?full_index=1"
     sha256 "9b01de9708e4eb5cef10c18f25dd42e126306ed8cbd9d9a26bb5fbb91ac7d7a3"
+    type :backport
+    resolves "https://github.com/mesonbuild/meson/issues/11642"
   end
 
   # Fix build failure on Sonoma.
   patch do
     url "https://github.com/llvm/llvm-project/commit/73e15b5edb4fa4a77e68c299a6e3b21e610d351f.patch?full_index=1"
     sha256 "b540ef6e3728d7881d95775a163314fac6e2f9207f5d5e8b79c8c73c73ba4dc3"
+    type :backport
   end
 
   def python3

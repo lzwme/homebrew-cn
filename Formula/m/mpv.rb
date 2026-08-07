@@ -14,6 +14,8 @@ class Mpv < Formula
     patch do
       url "https://github.com/mpv-player/mpv/commit/75b2ccfeb1ce4ed5a40ac9860fa74f3d1265e13f.patch?full_index=1"
       sha256 "3906b98b02071a0d5747a400406494ca69cef7afd8d3eee4a99fdbe40dc90c1f"
+      type :backport
+      resolves "https://github.com/mpv-player/mpv/pull/17731"
     end
   end
 

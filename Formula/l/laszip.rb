@@ -21,6 +21,8 @@ class Laszip < Formula
   patch do
     url "https://github.com/LASzip/LASzip/commit/0bcd1a507be50c845ea62f75d602663b2b3f3b73.patch?full_index=1"
     sha256 "743450909335a7f8170cd40756733b3eae57671b093a5613a42ec26c0d2c99f7"
+    type :backport
+    resolves "https://github.com/LASzip/LASzip/pull/129"
   end
 
   def install

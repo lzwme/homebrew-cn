@@ -14,16 +14,19 @@ class Nethack < Formula
 
     # Fixes --showpaths command when used noninteractively,
     # required by Homebrew's tests
-    # https://github.com/NetHack/NetHack/issues/1512
     patch do
       url "https://github.com/NetHack/NetHack/commit/60d59f4d5574c00cbb391cd58da3ed959de1ba2b.patch?full_index=1"
       sha256 "3ac9c71f360404c30845b67b8e96d06504c3039abe1ae43b76c856b20ee11f98"
+      type :backport
+      resolves "https://github.com/NetHack/NetHack/issues/1512"
     end
 
     # Second half of the above fix
     patch do
       url "https://github.com/NetHack/NetHack/commit/b7735632bfdac6a502f8f2954fbe6d5bbac53e2b.patch?full_index=1"
       sha256 "ea9a05446b9d840030c799d610bec394337040c2d63f8d3694f38221776e6d02"
+      type :backport
+      resolves "https://github.com/NetHack/NetHack/issues/1512"
     end
   end
 

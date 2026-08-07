@@ -58,6 +58,7 @@ class Nvi < Formula
   patch :p0 do
     url "https://ghfast.top/https://raw.githubusercontent.com/macports/macports-ports/a0cae35e9fce0f3d591af204ff72aa0a98606d05/editors/nvi/files/patch-common_key.h.diff"
     sha256 "3f923f33b98c90a5f96b7e8853d753871abcf93acd75052964ade2d9574502c5"
+    type :unofficial
   end
 
   # Upstream have been pretty inactive for a while, so we may want to kill this

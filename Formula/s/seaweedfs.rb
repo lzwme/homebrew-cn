@@ -2,8 +2,8 @@ class Seaweedfs < Formula
   desc "Fast distributed storage system"
   homepage "https://seaweedfs.com"
   url "https://github.com/seaweedfs/seaweedfs.git",
-      tag:      "4.40",
-      revision: "875cd1f67ea25e8965a4f5ba1e6aaf501ba6b6fa"
+      tag:      "4.41",
+      revision: "de34a1a87c02893507f961cda9574172ee5064e9"
   license "Apache-2.0"
   head "https://github.com/seaweedfs/seaweedfs.git", branch: "master"
 
@@ -13,13 +13,12 @@ class Seaweedfs < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a3b733d6951c9a805caf9d03d781840396800b109dc99aaa0624895cd35d8e2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33933f7d66abb880b17a9cd22c997f00fbe7160a23e4520939f4baf31595774a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09f6c090c0f87177557d47d746a6a35d05fe4b3f2278922d50b3423c7f63a844"
-    sha256 cellar: :any_skip_relocation, sonoma:        "15aea986c20ff1b8dac4de10e6e3145dd618cebe6acc806d3ff372c8a6019ea5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c4ed5d6839d40c6b9f9c82d9f96791ae334ed0302ddb239ac77f21914b04388"
-    sha256 cellar: :any,                 x86_64_linux:  "b1876fedb89f377653c996bf0271da111303a5557a608b24feccbb2a262879c7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93a743d5f14f80c9caead0da0bcbec14e19a42bc5ced5c4e64615ee7e0bd4134"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a22306bb88f5bd679a9a18c344a67ddbdfcb9dfc5af33eed674be579ae948147"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c6c0eaf381d7a0fffe1644a3004c6d3a027cf74b411ff34810603630812ca335"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e77e64da14832c229b981165b96539096c789d13bb205a10eea76cf2e5e8efa8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "66d687623f6d4920a07fbac91caeecee26632701c3049f3fc0817dbe0ba310f0"
+    sha256 cellar: :any,                 x86_64_linux:  "43c224b5f476957bf966bf5312c4c036f1f6b9a3b09b78352b43b381165b26b4"
   end
 
   depends_on "go" => :build

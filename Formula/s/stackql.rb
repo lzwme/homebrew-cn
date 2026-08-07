@@ -1,8 +1,8 @@
 class Stackql < Formula
   desc "SQL interface for arbitrary resources with full CRUD support"
   homepage "https://stackql.io/"
-  url "https://ghfast.top/https://github.com/stackql/stackql/archive/refs/tags/v0.10.582.tar.gz"
-  sha256 "0941cbb0ad99d6130efaa1ee6f1bcec996b12c15d4f8c6a8e941336c7256614b"
+  url "https://ghfast.top/https://github.com/stackql/stackql/archive/refs/tags/v0.10.591.tar.gz"
+  sha256 "36becf02c2c7f5d0fac8aaa3a96f0cf2ab5d6e492c7ca660c1fc929692082087"
   license "MIT"
   head "https://github.com/stackql/stackql.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Stackql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cff493a75fde39e7bde7d94c1c5b913904a781952efb3f808701000c5358c69c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e35c6ac0e2e7350a9230ed6a59c1697df8d72bbe69d0ad936357feaa75a1389d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "293a80648ead66dac19c71f5e7fd1e27eb8f40d1755f0826be7ea9740d780203"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bbfcae5a3f571a42814b144bc6a34b7497971c466ce3b234991ade970c4428f5"
-    sha256 cellar: :any,                 arm64_linux:   "83d8951b5037312a49276a636bbadabb2d28885a25710ba0170701be60595309"
-    sha256 cellar: :any,                 x86_64_linux:  "dc93a7378c8bd0d26414710c8ce04c799aebbc681f06afa24acd870733ca8c9d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bddebfe8e6edbfec85980d48e8cddfb2560ae103337f34ef47db67e654bea963"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d725dea8ff613ea5dfd6dc594b0c859e6a8e8d87d17f148a4e1b17e621e7fb4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f86742dac43ad476d9ddf0cab26d3221a4ad4c20c1b82b4f211d3c108b6549dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e43297e3b2f3e05cf63584881fc6c9bf75dea65887dd9fc10a901534c564427e"
+    sha256 cellar: :any,                 arm64_linux:   "53a7a0acaf25ab718b41abdd3e3e5d69303a13a0903809306d4569c6b6e69859"
+    sha256 cellar: :any,                 x86_64_linux:  "46d84af6e87360ee88f2f015be56e2678f2cef695b5361d7de7789c21953554a"
   end
 
   depends_on "go" => :build

@@ -21,17 +21,19 @@ class Mapcrafter < Formula
   depends_on "libpng"
 
   # Fix build with `boost` 1.85.0 using open PR.
-  # PR ref: https://github.com/mapcrafter/mapcrafter/pull/394
   patch do
     url "https://github.com/mapcrafter/mapcrafter/commit/28dbc86803650eb487782e937cbb4513dbd0a650.patch?full_index=1"
     sha256 "55edc91aee2fbe0727282d8b3e967ac654455e7fb4ca424c490caf7556eca179"
+    type :unofficial
+    resolves "https://github.com/mapcrafter/mapcrafter/pull/394"
   end
 
   # Fix build with `boost` 1.89.0 using open PR.
-  # PR ref: https://github.com/mapcrafter/mapcrafter/pull/395
   patch do
     url "https://github.com/mapcrafter/mapcrafter/commit/f804a574cbf5b098439698f6f92e1a39244371f1.patch?full_index=1"
     sha256 "d9e9da9cbdb4bb961edd371265304c3999e5322d110f6d72e8580820b2ac2edc"
+    type :unofficial
+    resolves "https://github.com/mapcrafter/mapcrafter/pull/395"
   end
 
   def install

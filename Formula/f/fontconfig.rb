@@ -1,8 +1,8 @@
 class Fontconfig < Formula
   desc "XML-based font configuration API for X Windows"
   homepage "https://wiki.freedesktop.org/www/Software/fontconfig/"
-  url "https://gitlab.freedesktop.org/fontconfig/fontconfig/-/archive/2.18.2/fontconfig-2.18.2.tar.gz"
-  sha256 "a84d41b57cfb015783d7973b398c26d8763a64b803f97f31fa126fd2aa5eaaca"
+  url "https://gitlab.freedesktop.org/fontconfig/fontconfig/-/archive/2.18.3/fontconfig-2.18.3.tar.gz"
+  sha256 "9ae01e1d53acdef56010c5451cd34aa41d325b2faccd8606448d8fa01b2496b3"
   license all_of: [
     "HPND-sell-variant",
     "Unicode-3.0",        # fc-case/CaseFolding.txt
@@ -19,12 +19,12 @@ class Fontconfig < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "75e19bf0d345662b39fc75781a71f3eb3c923a313a4f906c2f93a1a769846a3d"
-    sha256 arm64_sequoia: "9b40acd35a7ad23bf19a9f900a6a24ae81b6c13d3c71a6be72358e76421a2abd"
-    sha256 arm64_sonoma:  "127737264b09996c7aaac0a42ec0992f6403c123a2470a646d8cb7f1ba7bf28f"
-    sha256 sonoma:        "4a0960e023e5e85274a1514ba4d46b102e7284df2838266dfbb8a80a44b2d81e"
-    sha256 arm64_linux:   "fa8d891fc7239268e499c53791f621b54441e3761ca5bc746e4ca0133b7bdb02"
-    sha256 x86_64_linux:  "c795ecd6a4a052cd20755ebb00b84c4745850b9d52f4aac01cd0b30acc97d74d"
+    sha256 arm64_tahoe:   "ad1c5a3054313853e9eefa9a07c32a3ff7b11c4fbcff9e73affc2a50233dbafe"
+    sha256 arm64_sequoia: "a5f5df5f8d02e8a5b2587cac464c7bd45128447da06b7ab39938a9645982ef49"
+    sha256 arm64_sonoma:  "24bd9a2d42f9bc46d4cd51aa51299cbe2c59b2c848656a7657875b0aaedc223b"
+    sha256 sonoma:        "dbc9016619292284590e7e16e6492d911e0926b976ebe6d502f6e86fe01fd64c"
+    sha256 arm64_linux:   "8e7ed20aac7298e92bfb46c5fbb34fd8784f111507e256fde4f2fb354f1c48eb"
+    sha256 x86_64_linux:  "56c35f5cc20e978189ba6693eef8ed1167de1d04ef9e5289e9a9dff8b5077049"
   end
 
   depends_on "gettext" => :build

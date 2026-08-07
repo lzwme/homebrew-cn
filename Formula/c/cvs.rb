@@ -46,6 +46,7 @@ class Cvs < Formula
   patch :p0 do
     url "https://ghfast.top/https://github.com/apple-oss-distributions/cvs/archive/refs/tags/cvs-47.tar.gz"
     sha256 "57652695bbfbc33eacb8f1ecb3ca5e2df0f773e4abb307b840bf948e3840f3d3"
+    type :unofficial
     patches = ["patches/PR5178707.diff",
                "patches/ea.diff",
                "patches/endian.diff",
@@ -71,6 +72,8 @@ class Cvs < Formula
     on_linux do
       url "https://gitweb.gentoo.org/repo/gentoo.git/plain/dev-vcs/cvs/files/cvs-1.12.13.1-fix-gnulib-SEGV-vasnprintf.patch?id=6c49fbac47ddb2c42ee285130afea56f349a2d40"
       sha256 "4f4b820ca39405348895d43e0d0f75bab1def93fb7a43519f6c10229a7c64952"
+      type :backport
+      resolves "https://savannah.nongnu.org/bugs/?35432"
     end
   end
 

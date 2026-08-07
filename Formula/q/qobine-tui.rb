@@ -6,6 +6,11 @@ class QobineTui < Formula
   license "GPL-3.0-only"
   head "https://github.com/sofusa/qobine.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad9d8cb86366e09dfa83e0797640a805c03697873cc39b41e69c635c29340f36"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f410d308d7071e835b585e0b7da56e3661bc80aee8b768dc3b515a21e2aeea4f"

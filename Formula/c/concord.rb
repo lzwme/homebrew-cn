@@ -1,17 +1,17 @@
 class Concord < Formula
   desc "Terminal user interface client for Discord"
   homepage "https://github.com/chojs23/concord"
-  url "https://ghfast.top/https://github.com/chojs23/concord/archive/refs/tags/v2.5.3.tar.gz"
-  sha256 "1e5df2950a1af9fdf88e29f8159b885ba36e51a63a2a8b3685f284b777824838"
+  url "https://ghfast.top/https://github.com/chojs23/concord/archive/refs/tags/v2.5.5.tar.gz"
+  sha256 "2cffd325eb934c07fa186f78544c2ffab312f0f15fdaa0586fb8eae9a88388b1"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c26ad3eb32943e44e591dcfd49875ba48ea1420fdac4e9184c464fcb7cf5dcde"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee7470f4d4f4f7f87f8c39d637f620ece6d76d5be59257fc57b9bfdf316484c9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86efa01ccd107c748fde7a0292c4b061e5f9ca35da82ff53fa6c612fe342b25c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ff05114649a925b8716dea878b012157fa708569294709ee364ff9dab3d3f63a"
-    sha256 cellar: :any,                 arm64_linux:   "81664491b9249ad9f69539fa93955bb92c6c3e20acc310c506ab05bfa73fbafa"
-    sha256 cellar: :any,                 x86_64_linux:  "948e8b3b6fd7988e9721e440069043613aa7fcd793f2637fb6296d20b4554a36"
+    sha256 cellar: :any, arm64_tahoe:   "69f0fbd773bf61176a9d9b9b15ca631a653464d1554d9e4c3a087144ed94e3d4"
+    sha256 cellar: :any, arm64_sequoia: "5c272330adf0145a9a6f676361a6e37a9c0f9e700f9623beda093400313afdf6"
+    sha256 cellar: :any, arm64_sonoma:  "581d0d4b5b1ef3d69d058531816f77c97348eac1387e83ba34b51fab73e1597a"
+    sha256 cellar: :any, sonoma:        "94999a3d079b71518740e7f8316f1273433a5866dcfacbdd33357bb2a5d1d7d6"
+    sha256 cellar: :any, arm64_linux:   "a95dabbf6f6c86dfa42dde0947f9dc9478d53ced7c8f957bd17c1249e6e5a746"
+    sha256 cellar: :any, x86_64_linux:  "99e58c7210788414b9a232d2caf16c7235926b7ba3105f8a4380654308687f0d"
   end
 
   depends_on "pkgconf" => :build
@@ -22,10 +22,14 @@ class Concord < Formula
 
   on_linux do
     depends_on "alsa-lib"
+    depends_on "libva"
     depends_on "pipewire"
   end
 
   def install
+    # opusic-c bundles libopus and builds it with CMake by default
+    inreplace "Cargo.toml", 'package = "opusic-c" }', 'package = "opusic-c", default-features = false }'
+
     system "cargo", "install", *std_cargo_args
   end
 

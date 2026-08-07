@@ -1,8 +1,8 @@
 class DockerCompletion < Formula
   desc "Bash, Zsh and Fish completion for Docker"
   homepage "https://www.docker.com/"
-  url "https://ghfast.top/https://github.com/docker/cli/archive/refs/tags/v29.7.1.tar.gz"
-  sha256 "09c72c14870f9c34029942f4c5cf3169b69dc48ea78e7380b5ebaa316356ba1d"
+  url "https://ghfast.top/https://github.com/docker/cli/archive/refs/tags/v29.7.2.tar.gz"
+  sha256 "225b7ab2a15f5230b482df8461069cd4bce38891266fb9898d4188d0a3cbf54a"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/docker/cli.git", branch: "master"
@@ -12,7 +12,7 @@ class DockerCompletion < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "44080ceb666d40c11688eb562c086ca1e861e0bb187f1ab90bebc0657587f136"
+    sha256 cellar: :any_skip_relocation, all: "597671eb1ed05f54ee5b05e6be14fff4bd8463fd44550fd5ad8b691fcab4c3ab"
   end
 
   deprecate! date: "2026-05-31", because: :deprecated_upstream, replacement_formula: "docker"

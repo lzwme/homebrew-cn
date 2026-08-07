@@ -38,11 +38,12 @@ class Minidlna < Formula
     depends_on "gettext"
   end
 
-  # Apply Fedora's patch to support newer FFmpeg. This has an open merge request:
-  # https://sourceforge.net/p/minidlna/git/merge-requests/58/
+  # Apply Fedora's patch to support newer FFmpeg; the upstream merge request is still open
   patch do
     url "https://src.fedoraproject.org/rpms/minidlna/raw/5de0e84859aa974c489b999ba75c83b5697eecb9/f/0001-Add-compatibility-with-FFMPEG-7.0.patch"
     sha256 "871833e6ae0dbf629b1ff3adc9a2e1c76f7e3ac9a07d0db29ad389847ce9fab4"
+    type :unofficial
+    resolves "https://sourceforge.net/p/minidlna/git/merge-requests/58/"
   end
 
   # Add missing include: https://sourceforge.net/p/minidlna/bugs/351/

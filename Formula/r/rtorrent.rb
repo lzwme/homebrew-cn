@@ -1,17 +1,17 @@
 class Rtorrent < Formula
   desc "Ncurses BitTorrent client based on libtorrent-rakshasa"
   homepage "https://github.com/rakshasa/rtorrent"
-  url "https://ghfast.top/https://github.com/rakshasa/rtorrent/releases/download/v0.16.19/rtorrent-0.16.19.tar.gz"
-  sha256 "e082e625fffd62aa746352e268b1aa06bac732af23a0f8b7cff2b88306b6de8c"
+  url "https://ghfast.top/https://github.com/rakshasa/rtorrent/releases/download/v0.16.20/rtorrent-0.16.20.tar.gz"
+  sha256 "8ed301997f1759c5ecfff205616ba36127cba47ab2b5b5aced4db48a11fa6a74"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a27645a8301ef45ab5ed28efd05c34ea1edeb3a0ada43335074d43a9e63f933f"
-    sha256 cellar: :any, arm64_sequoia: "fd5a35a42a186c379ca8009f4cf979c72c59cface717ecfdfea48812b0f4988c"
-    sha256 cellar: :any, arm64_sonoma:  "bd3437303da03f4c49632193d309412bf1e62d3158e3fb210515181bbea5a08f"
-    sha256 cellar: :any, sonoma:        "16fb2712afc4052b80b8de784db3c14d0762fc696d521e48511ab55e9e79bde4"
-    sha256 cellar: :any, arm64_linux:   "258b7be4df79d86b5d92329e09719c12e96a96c33e038ebed0aea412113b00b1"
-    sha256 cellar: :any, x86_64_linux:  "9999bbf99b19c59fd2d1f992675eceb1f342621bac4912e821ceaae730210768"
+    sha256 cellar: :any, arm64_tahoe:   "a9e7150c9b0c8ff6c8a8e0630343498f1138ddf0e170d2639a39b79f62a3011b"
+    sha256 cellar: :any, arm64_sequoia: "99ea1ff23831d839f81d8c72d5c6e5cef0b5f976b1db7928bac87f949d4f9522"
+    sha256 cellar: :any, arm64_sonoma:  "b1204d8c9f33c5dd7942cca8e44c53d6e74146a0a33a2e46805fb3de13f0a6d4"
+    sha256 cellar: :any, sonoma:        "6b908bc3c031f03f9d9bf74a917813d719dfa10d5f4d6d7bb43a96f6702e716d"
+    sha256 cellar: :any, arm64_linux:   "b8a5dd7ff92ba3fd06355bfb4061225cd241e9bd47293acb0b64470a5f9b47c1"
+    sha256 cellar: :any, x86_64_linux:  "ddd276a21b43530f6a6e17276e39372efce925140f75c1efea3c1c348f042215"
   end
 
   depends_on "autoconf" => :build

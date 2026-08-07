@@ -3,18 +3,18 @@ class Djlint < Formula
 
   desc "Lint & Format HTML Templates"
   homepage "https://djlint.com"
-  url "https://files.pythonhosted.org/packages/62/33/7efcde4581d1295c1e64a75b6d1ac444b4c2557b668e73032070ff5fc081/djlint-1.43.2.tar.gz"
-  sha256 "5a783d9b419b0833be1a13f213c0ea5e4a86aa505bd5d159884a2a349d06f7e8"
+  url "https://files.pythonhosted.org/packages/5d/24/8589327d057b67ebef2c775f9ddd2d44f8c7599f0a335bcdb0fc4b7bf3e1/djlint-1.44.0.tar.gz"
+  sha256 "9a52a3bafeff0eb6fb9a68798c9ea25c6522b40fba5c139ffef0dbc961ce0b59"
   license "GPL-3.0-or-later"
   head "https://github.com/djlint/djLint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5d5003eaf5e09db07c366195302e3e226185e1599511838373aa50b082da0bbf"
-    sha256 cellar: :any, arm64_sequoia: "1d76e224a8528b7c840a1da113da2ea997ae24eb9f2f633fef3401031bd9e930"
-    sha256 cellar: :any, arm64_sonoma:  "7b3ae9d3d37c1087906e3d244681550f68c70fe407add4535b93b071f0f3b9b9"
-    sha256 cellar: :any, sonoma:        "9e794f43c1a0c52368493d1bb48d97618840ee9cb857334d4ba97c89fe70ea77"
-    sha256 cellar: :any, arm64_linux:   "3697e93de84868f34720f0f548bf361fea76ebee3dab8a3228b7c991f3361721"
-    sha256 cellar: :any, x86_64_linux:  "a18a62f897796be9355f71362f5991d1fe54f0273739b390a0290e7d9915b01a"
+    sha256 cellar: :any, arm64_tahoe:   "650c0be6a956182d7635c24dbc5ea536aca7fe3467e6c13d2b59c444352da225"
+    sha256 cellar: :any, arm64_sequoia: "9535d41cf3d9562146af0a40e5ce2f1039686fb065ce5e5938f7f2bec39b8135"
+    sha256 cellar: :any, arm64_sonoma:  "9f68046f2f74e4773fa49639b3d0629de4b45b38c1c212f8a54bbf024873a150"
+    sha256 cellar: :any, sonoma:        "20b4493e076a6432ccde7f65d2f52600b34e8f423bc9950d6c73d22953008c7a"
+    sha256 cellar: :any, arm64_linux:   "182f2091f6fa59080e518cc547a96292121933357b5509615548ad493de19f29"
+    sha256 cellar: :any, x86_64_linux:  "d57b613652be3ed6cb6d9a146b647c871d3f89fe51411d1fb2f68384afc55afa"
   end
 
   depends_on "libyaml"

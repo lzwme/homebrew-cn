@@ -1,17 +1,17 @@
 class Lfk < Formula
   desc "Terminal user interface for navigating and managing Kubernetes clusters"
   homepage "https://github.com/janosmiko/lfk"
-  url "https://ghfast.top/https://github.com/janosmiko/lfk/archive/refs/tags/v0.15.16.tar.gz"
-  sha256 "16345459778efad67dd2e9ec8b60b88ecf99d5b7077b89835a9b484729cf7943"
+  url "https://ghfast.top/https://github.com/janosmiko/lfk/archive/refs/tags/v0.16.1.tar.gz"
+  sha256 "e174f8a7dc31cf9b02ad6f021a78b548434a288e215d8e8f965f1c9cfbd8a7d9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "872dad8badea3105b5793624b49af6f1e3a87bc63e682181156ad169976a2bdd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0f212b84582d76e51b8e021c7948ba3fda99bd90038b662e5b0f0786f22a912"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "47ea52aa3dc01b2d567956923dd403f7ebef2d2315ad8685fbe6e11ca371b62e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f62d5dc140959f1060df4400a740507d5d70889d1ad644d4d9c515d15705a080"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "beda6a7c37d4bf8cce4357f98049a35e1f60712a69e4d4f8847c77179db1ecaf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ab8ad4312060cf55d6b6f2531d781d4ea527199b5ae1ada515128f60ffac68f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c277b3df42db86a8346d963bda50b1ca47134a55e2fc7be76d6f3653ca9aecb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "931c6c5c531f9208e96d326aa6af275b01dc73c7bad09897325e688493af85cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "931c6c5c531f9208e96d326aa6af275b01dc73c7bad09897325e688493af85cb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4c26f86120cc60535cd9ea4f2b6d1f57c293c02ed4ee64ef34d35fb81a43e2ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4c757a70d5ebb1cc36bf909998eadb8536dde4f7d41ea76c291ac639ad92d09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82860cacc1a5aade453f73bad9b8374620c711f749752593ffa946919dfc51e6"
   end
 
   depends_on "go" => :build

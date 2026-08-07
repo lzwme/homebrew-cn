@@ -1,8 +1,8 @@
 class Sprocket < Formula
   desc "Bioinformatics workflow engine built on the Workflow Description Language (WDL)"
   homepage "https://sprocket.bio"
-  url "https://ghfast.top/https://github.com/stjude-rust-labs/sprocket/archive/refs/tags/v0.28.0.tar.gz"
-  sha256 "481b721683dafca2214f0663e4a614d6fb5171c65bf10bff42c8a06fb4f5cf21"
+  url "https://ghfast.top/https://github.com/stjude-rust-labs/sprocket/archive/refs/tags/v0.29.0.tar.gz"
+  sha256 "e3fc518640fff8b59ee59ebaeef514f1f8d1ff6c6004f54910b5b5541178a94f"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/stjude-rust-labs/sprocket.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Sprocket < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2c70b9f6e99df56b43af01332c80ee8996eeaf9cc0bf38784eee5f88f7a834f4"
-    sha256 cellar: :any, arm64_sequoia: "aeba978ec90911584d4a5f270c938f42a979492085a455d282cecf5d67f014ac"
-    sha256 cellar: :any, arm64_sonoma:  "105164d9db1f9f26407c2a8893a5eca762c534731114fc446efc4e08aff8cc52"
-    sha256 cellar: :any, sonoma:        "1a6ca7aadc1840f02ab24182af8526c1f86ab19b130b17a6dfc9c607804c8e20"
-    sha256 cellar: :any, arm64_linux:   "27470556319d533a2aa57a94b069dee9b969902ad487e1b9289d351e39627967"
-    sha256 cellar: :any, x86_64_linux:  "48ffb4e6e54ac913ce386da424cae8fac20dda06b99ad202a31c066a367dff50"
+    sha256 cellar: :any, arm64_tahoe:   "96ab9d866115ab7f86cfa2215e3a7720f38abe339558540947750d5f164cbd41"
+    sha256 cellar: :any, arm64_sequoia: "815965cb4d9a2762a2d3d09a7629a2ea5ea22f6b790860678780e10f895ba2aa"
+    sha256 cellar: :any, arm64_sonoma:  "545366acf60f76df36e32bb45884f92efc939dc629b4505a6aeccb321ca345f5"
+    sha256 cellar: :any, sonoma:        "b455e6d63dea94fd3bf694e05d430eeb7a01324ebc02cf5a060266faaf9cd570"
+    sha256 cellar: :any, arm64_linux:   "1dc36a47f71cee98483b9aa53d040c27b4174119a040e2610e7de9ee9b912036"
+    sha256 cellar: :any, x86_64_linux:  "7e884be1a1a9fee1868e87e33b18fbb7af39d5e5c2d5d98e9e977fa66548ba96"
   end
 
   depends_on "pkgconf" => :build

@@ -3,19 +3,19 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://ghfast.top/https://github.com/aws/aws-cli/archive/refs/tags/2.36.16.tar.gz"
-  sha256 "8faa878990a30963b9f0e156fb6022418b8e4d4420c245a685bd7ae5c0cdc31d"
+  url "https://ghfast.top/https://github.com/aws/aws-cli/archive/refs/tags/2.36.17.tar.gz"
+  sha256 "26eecda089e04b1f07177ece029d9ac7aa9ce978ec14e793e0b39587913d323f"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "96cdf9c2b2ae0baf8d52ad11cb1e9da633c3daa79f1d3e8a09f15e8ab3400942"
-    sha256 cellar: :any, arm64_sequoia: "1f09c4128ba7b0c1c9ecfd1e6a6c96ddc949a8c5b4fd5d944e00a3368d08dc64"
-    sha256 cellar: :any, arm64_sonoma:  "c4fa911149f72ba02bc953916d4103f899740e4de4b7cc130e501e6a856218b4"
-    sha256 cellar: :any, sonoma:        "2eebdc4c78b63ded1382273290bfc84363840eee7b7bda19caaf8694bc6bc788"
-    sha256 cellar: :any, arm64_linux:   "8a60427463421b2aeb619bd02f12982d7d26054a90c1b62c1a922e6ecd95c4f6"
-    sha256 cellar: :any, x86_64_linux:  "0424e891f944f05dee09f01c83a15f44dde2e0ce62d03c0f39575bc9ad1ecc13"
+    sha256 cellar: :any, arm64_tahoe:   "27f0caed59c048c30db515c863971b723d2801aa5392e0455cab8eeb5c58b09e"
+    sha256 cellar: :any, arm64_sequoia: "68bafdf116392afce879e369d74d5e8d6e326e40fd045a0f91c9e177cadc68e2"
+    sha256 cellar: :any, arm64_sonoma:  "52e3e23790d7bddc21f2070bf7858f0e2590add17b6ee81279d458768867e5cd"
+    sha256 cellar: :any, sonoma:        "4cf3d0dda34a274a7171c659480fd6d660e6ecb2c950effbbdad5605e7f9dfff"
+    sha256 cellar: :any, arm64_linux:   "aa0d1991037f5c8e8af993e171cf45124e4026224f3d82ff37adb0a59bd53db6"
+    sha256 cellar: :any, x86_64_linux:  "f092651ae627d8b3c90108021a4f14609f6ce505e77e6b0878c019df1a6d5043"
   end
 
   depends_on "cmake" => :build
@@ -48,8 +48,8 @@ class Awscli < Formula
   end
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
-    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+    url "https://files.pythonhosted.org/packages/46/ef/34533186e76c526d9ec17a1ad9a10c7354cbfb20f51583cc36dfe4bdccd0/flit_core-4.0.2.tar.gz"
+    sha256 "b6929defd93884b584d7c87829e0e7b5c26ed6be17b0b873979019314aa841c8"
   end
 
   resource "jmespath" do

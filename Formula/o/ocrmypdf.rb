@@ -3,17 +3,17 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://ocrmypdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/f7/2e/7d429156859602ffc9929ffb014eb11da931e653a21c64d5cabfc30c3ccd/ocrmypdf-17.8.1.tar.gz"
-  sha256 "6f72e4da5fd7805e5d677c0fc55ad380c70e1c7ad33dd9ce2402575194803e08"
+  url "https://files.pythonhosted.org/packages/20/2e/96c9912ad50fe3e186f0d3580d06d27ac2300fcc178d7457794f4bcaf3b8/ocrmypdf-17.10.0.tar.gz"
+  sha256 "3e80a22e7ca9a746034e990414c9f18791f168800f3ede92101504f45be6129c"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8d9e750579b197d641d316e7d287147ecfde5ca2c25bf35326c6d8e056b1c92a"
-    sha256 cellar: :any, arm64_sequoia: "a1b614fd6b7bcc396c5026a2922fbe495b3109efefe52bd0614c2e3767c35348"
-    sha256 cellar: :any, arm64_sonoma:  "32f0bd736a51d11f1e127271619168cf7f54416bd13d9dc9d4afdcb5eebeeeef"
-    sha256 cellar: :any, sonoma:        "9baa1b6b5383912a19866471ba2a29bbfad96dd7f4c495630cbba2aa43347ccd"
-    sha256 cellar: :any, arm64_linux:   "dcdd2d14badfabd2c1b7390745158ea677cdb0b746a84b8450496885484fba2f"
-    sha256 cellar: :any, x86_64_linux:  "68eed4482f39f766292169c87d1654102c7f3da43c71d4970fa5aea5bfab9432"
+    sha256 cellar: :any, arm64_tahoe:   "54e6bdcf0163b655e68d6a3e57a93cc3bd5cf45232c252a45453f0497e7088ea"
+    sha256 cellar: :any, arm64_sequoia: "90ccc0842e4b046f112d8fcdf397559f8e357fa511dc6ff9033e63e7c9c51dc5"
+    sha256 cellar: :any, arm64_sonoma:  "63dbb7a8906c4c6ae90e92e4e79e83dc8dc98b60f5d065f73f002c859c5040ee"
+    sha256 cellar: :any, sonoma:        "62fec32a73410a8b25ffdb88adadd402de2489e37bc1ce57983aab4a6fa5292f"
+    sha256 cellar: :any, arm64_linux:   "d1f237af3f5806bc26d52228336bfc752555b1abfcf8d8a141f0ad41919dc4cf"
+    sha256 cellar: :any, x86_64_linux:  "4342536030bb650b05f68a6d550cb2332b81baf67b4c2e9da08bd957224c81ef"
   end
 
   depends_on "cmake" => :build # for pikepdf
@@ -81,8 +81,8 @@ class Ocrmypdf < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "pdfminer-six" do
@@ -96,8 +96,8 @@ class Ocrmypdf < Formula
   end
 
   resource "pikepdf" do
-    url "https://files.pythonhosted.org/packages/95/e7/45265a52196e7b1e4d1fdee57159d25670275784f5eeb3651327cf68e137/pikepdf-10.10.0.tar.gz"
-    sha256 "9f134806b2fe608ccb21379a664ddcefeac3f6944100d343b350299d3c69754e"
+    url "https://files.pythonhosted.org/packages/81/f4/786a14218d80727e357d935ed94830090a8bc28eb4a7732ed1b4352f0b43/pikepdf-10.11.0.tar.gz"
+    sha256 "4bebc59ac74411064e7c97a4036174023e22ccbecd22b78750ab76551eb38988"
   end
 
   resource "pluggy" do
@@ -111,8 +111,8 @@ class Ocrmypdf < Formula
   end
 
   resource "pypdfium2" do
-    url "https://files.pythonhosted.org/packages/a8/b9/a887db9950379fe619f6921ade84730346e6adf008b197951ddcc42dfd1a/pypdfium2-5.11.0.tar.gz"
-    sha256 "0733749ac253c615953a5e75d4322b9f1de8c0d90137ec8dbcef403f3e57b5d9"
+    url "https://files.pythonhosted.org/packages/db/42/0b51bdf50ccf13f3deb3209ca996179a49761dc191748469cf0de55b0055/pypdfium2-5.12.1.tar.gz"
+    sha256 "d0e0648fb2e28f50efcd1ec0a5a18ced9f4d66b2c227fae9b603f0a883b2d13f"
   end
 
   resource "rich" do
@@ -121,8 +121,8 @@ class Ocrmypdf < Formula
   end
 
   resource "uharfbuzz" do
-    url "https://files.pythonhosted.org/packages/0c/2d/25769d2262cafcea748aac7bfb2b9eeb0a9fe2a759b4154133a6d9f39870/uharfbuzz-0.55.0.tar.gz"
-    sha256 "a29bda4c147c35240a71051315423b1933b46eac558a72f55d9ffdc1f2bbb69f"
+    url "https://files.pythonhosted.org/packages/58/85/c7545959fdf6b9377b926c826f6d80bddf034ac361b09306d430a0f556a5/uharfbuzz-0.56.0.tar.gz"
+    sha256 "77f4ad1c9f32f44cc6f0c0c4f98fab54587719c96c810a043d01669f704d3e0c"
   end
 
   def install

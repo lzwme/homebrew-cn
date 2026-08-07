@@ -13,6 +13,8 @@ class Luacheck < Formula
     patch do
       url "https://github.com/lunarmodules/luacheck/commit/eea104d82fa66f27df2a7d900b3c271a6ca122ac.patch?full_index=1"
       sha256 "94428b33a30a6695b6fed1aee7d065c7a5219165ea645a68d106e3dd375274af"
+      type :backport
+      resolves "https://github.com/lunarmodules/luacheck/pull/136"
     end
   end
 

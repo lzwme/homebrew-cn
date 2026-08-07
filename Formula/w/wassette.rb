@@ -6,6 +6,11 @@ class Wassette < Formula
   license "MIT"
   head "https://github.com/microsoft/wassette.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :gtihub_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b31065340f948e3dbb160e8b14fc2d787f7411c761a5796c0835bf3cc184e54"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e7c01e5c302d044ab93ba95f39edf19e431b10778826fd9cc93f81dff644cf3"

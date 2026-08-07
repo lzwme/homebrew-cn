@@ -23,6 +23,7 @@ class Mox < Formula
   patch do
     url "https://ghfast.top/https://raw.githubusercontent.com/NixOS/nixpkgs/1ac75001649e3822e9caffaad85d7f1db76e9482/pkgs/by-name/mo/mox/version.patch"
     sha256 "5c35e348e27a235fad80f6a8f68c89fb37d95c9152360619795f2fdd5dc7403f"
+    type :unofficial
   end
 
   def install

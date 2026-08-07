@@ -5,23 +5,17 @@ class Gstreamer < Formula
   compatibility_version 1
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.5/gstreamer-1.28.5.tar.bz2"
-    sha256 "c53f71b93aefda6864ea09bc845295d89c57afd4d9335f9f8c9a98c969b7693f"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.28.6/gstreamer-1.28.6.tar.bz2"
+    sha256 "fd51f0e32fded3f78ed31eab94a7e41b1cd56763abc853f6fd03d740d8bc4b90"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.5/gst-plugins-rs-gstreamer-1.28.5.tar.bz2"
-      sha256 "58203137e5075bfcafcb79b514750795996fc765a299964cf9f88961dd8a5002"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.28.6/gst-plugins-rs-gstreamer-1.28.6.tar.bz2"
+      sha256 "2e565b9add015d054cc2d1b9e553f75f366f8e13127a74e9366b7d577491492e"
 
       livecheck do
         formula :parent
       end
-    end
-
-    # Backport FFmpeg 9 compatibility.
-    patch do
-      url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/commit/be9bdb67f4fc868977f1f74e95b6ebe19ef792ec.diff"
-      sha256 "129e712f2f25fb68b309ad2a015e3a6b25e4a34659baa67f53d3d26ef0474fba"
     end
   end
 
@@ -31,13 +25,12 @@ class Gstreamer < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "cd35ea545d3d451eb929847d6dfc7ec14fe34ee636f2e971f0e9707df86dffd4"
-    sha256 arm64_sequoia: "2d270d3ef5ab2dc202eb0137b2d7a5505d508104263899b39bd039ead3ab50ec"
-    sha256 arm64_sonoma:  "b950a109d2f34eb50b57ab68e9274febd7c308ee363eee64fcdcfa5353cf3c11"
-    sha256 sonoma:        "586c8e1a3287bf133b849ea1e4d1f33cd2ff70a60dff73a7f39314651c93b09b"
-    sha256 arm64_linux:   "9b06aa92ce57911dacc5b6edc93d27adf4e68e36b06f122ec6dffa73d808d808"
-    sha256 x86_64_linux:  "d83a43787efd910ca4fbc6a849ca87871825191f7863e17c1696226e1c5dceb2"
+    sha256 arm64_tahoe:   "bc9a8f3d3f14c88619ded855eb87129c0296e3640920125b299d3d4c2fc76e03"
+    sha256 arm64_sequoia: "b02a18076f97a1f38b1b0f2bf0735345e5d3d35af064f160b6af062377ee35ac"
+    sha256 arm64_sonoma:  "39e49263c8a909378284a37a0433c9c0a091cb22fdca874667673d12a643f189"
+    sha256 sonoma:        "f75f5011b23f7ab0b3ece9485c35f480aad8a91ffe78c59eda8a7b881ed1296d"
+    sha256 arm64_linux:   "1cd017e9d4ddf25006e9f2de113dadbfa61e75f7fe75ca69ebbef79cc9f5f2c8"
+    sha256 x86_64_linux:  "929b035c797817e896288ef5da980fa152f36f4a9960f092f60da8704f3d6bd4"
   end
 
   head do

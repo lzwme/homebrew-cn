@@ -31,12 +31,13 @@ class Ncmpcpp < Formula
 
   uses_from_macos "curl"
 
-  # Apply open PR to fix build with Boost 1.89.0.
-  # PR ref: https://github.com/ncmpcpp/ncmpcpp/pull/636
-  # Issue ref: https://github.com/ncmpcpp/ncmpcpp/issues/633
+  # Backport fix for build with Boost 1.89.0
   patch do
     url "https://github.com/ncmpcpp/ncmpcpp/commit/f67d350aa9beb2abdd12c429e97ae919e5b3102c.patch?full_index=1"
     sha256 "7fa67adf722fec69793f9aa53398195294402bb09519e7bd99b388b7f99a5e59"
+    type :backport
+    resolves "https://github.com/ncmpcpp/ncmpcpp/pull/636",
+             "https://github.com/ncmpcpp/ncmpcpp/issues/633"
   end
 
   def install

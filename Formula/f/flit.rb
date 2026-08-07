@@ -3,18 +3,13 @@ class Flit < Formula
 
   desc "Simplified packaging of Python modules"
   homepage "https://github.com/pypa/flit"
-  url "https://files.pythonhosted.org/packages/c6/dc/1d5141ccc27a98b9972e24fea9803ce7f29b5d59574fad2f22ff921be089/flit-4.0.1.tar.gz"
-  sha256 "dd52c4fd04d70db77fd59a82404808f4a89b3088d701391e004088e8f1c5b953"
+  url "https://files.pythonhosted.org/packages/e2/ad/752f9df74127268a587da848d6d561ff56c1508f38ab052caa48bbc130ac/flit-4.0.2.tar.gz"
+  sha256 "232bc4317279e8952eca9fb3f5e000d8395d693b39c105b99f619ce461e1da85"
   license "BSD-3-Clause"
   head "https://github.com/pypa/flit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "833b7bef70b837c2f73b7c322b5df7d21fd411f4d0fa859e217fe3a26e87d039"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "833b7bef70b837c2f73b7c322b5df7d21fd411f4d0fa859e217fe3a26e87d039"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "833b7bef70b837c2f73b7c322b5df7d21fd411f4d0fa859e217fe3a26e87d039"
-    sha256 cellar: :any_skip_relocation, sonoma:        "716ecfbcfc933ff28ba33ebbfd04e6af25ad9fcf1c99d73f14d6d5f79d720830"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "833b7bef70b837c2f73b7c322b5df7d21fd411f4d0fa859e217fe3a26e87d039"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "833b7bef70b837c2f73b7c322b5df7d21fd411f4d0fa859e217fe3a26e87d039"
+    sha256 cellar: :any_skip_relocation, all: "717ea21d882415dcc767ef1e084c1a29f96f1820bcba3eb1f24e947434fdf009"
   end
 
   depends_on "certifi"
@@ -33,8 +28,8 @@ class Flit < Formula
   end
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/4e/e9/e936060bb42ddb708af53714019d943956e1a8ba6ea10f7e417e5f82bb0b/flit_core-4.0.1.tar.gz"
-    sha256 "323e4f9ea1c2b1075d14326bd3150be360ad159634688441f3691c98cfd24447"
+    url "https://files.pythonhosted.org/packages/46/ef/34533186e76c526d9ec17a1ad9a10c7354cbfb20f51583cc36dfe4bdccd0/flit_core-4.0.2.tar.gz"
+    sha256 "b6929defd93884b584d7c87829e0e7b5c26ed6be17b0b873979019314aa841c8"
   end
 
   resource "idna" do

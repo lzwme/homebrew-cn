@@ -3096,6 +3096,7 @@ Homebrew-homebrew-core/Formula/h/homebank.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/homeshick.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/homeworlds.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/honcho.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/h/honker.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hookdeck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hopenpgp-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hopscotch-map.rb, Homebrew/homebrew-core, 1
@@ -9773,7 +9774,7 @@ Homebrew-homebrew-cask/Casks/e/electronmail.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/electrum-grs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/electrum-ltc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/electrum.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/e/electrumsv.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/e/electrumsv.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/elegoo-slicer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/elektron-overbridge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elektron-transfer.rb, Homebrew/homebrew-cask, 0
@@ -11585,6 +11586,7 @@ Homebrew-homebrew-cask/Casks/font/font-n/font-new-york.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask/Casks/font/font-n/font-news-cycle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-newsreader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nexon-lv1-gothic.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-n/font-nexon-lv2-gothic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nico-moji.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-niconne.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nikukyu.rb, Homebrew/homebrew-cask, 0
@@ -14219,7 +14221,6 @@ Homebrew-homebrew-cask/Casks/o/orcaslicer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/orcaslicer@nightly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/orchard.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/origami-studio.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/o/origin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/orion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/orka-desktop.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/orka-vm-tools.rb, Homebrew/homebrew-cask, 0
