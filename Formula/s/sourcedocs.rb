@@ -17,8 +17,11 @@ class Sourcedocs < Formula
     sha256                               x86_64_linux:  "2c97cd8daa81d7c7e546e71cdfdf17db555dee5260d434287266f20edb3a25a6"
   end
 
-  depends_on xcode: ["12.0", :build, :test]
   uses_from_macos "swift"
+
+  on_macos do
+    depends_on xcode: ["12.0", :build, :test]
+  end
 
   # Workaround until SourceKitten dependency is updated
   # Ref: https://github.com/SourceDocs/SourceDocs/pull/83

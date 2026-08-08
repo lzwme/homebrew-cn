@@ -23,10 +23,13 @@ class Duck < Formula
   depends_on "ant" => :build
   depends_on "maven" => :build
   depends_on "pkgconf" => :build
-  depends_on xcode: ["13.1", :build]
   depends_on "openjdk"
 
   uses_from_macos "libffi", since: :monterey # Uses `FFI_BAD_ARGTYPE`.
+
+  on_macos do
+    depends_on xcode: ["13.1", :build]
+  end
 
   on_linux do
     depends_on "alsa-lib"

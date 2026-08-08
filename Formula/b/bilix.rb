@@ -6,16 +6,16 @@ class Bilix < Formula
   url "https://files.pythonhosted.org/packages/5c/12/0f885cee77471123a3c82da85bd1934af00aed213910987bbe5b2296997d/bilix-0.18.9.tar.gz"
   sha256 "8ab1be9bcc661369cbeba95439c09716778b6b42b2505a3eaddb45175688e247"
   license "Apache-2.0"
-  revision 9
+  revision 10
   head "https://github.com/HFrost0/bilix.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc9f74822e67461d1bec10198b579d401785ca0ed30daf42887a7212b0febff8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e07d81bdc1414f062e77d40fe859f241832b8cfefd8a82c11f4f888b1437113d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0621f544f14b6c71f86a3da99f097fe3098a85f33bf3b940605a328e3043988"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0b1db51e89c23a20432c15062b9dce8d4818d3a7e50b9072893842a6343020cb"
-    sha256 cellar: :any,                 arm64_linux:   "f938387468e19ac841027bf42c6e00faf3deb86c5b2aa523c8a6608e3ee7d52a"
-    sha256 cellar: :any,                 x86_64_linux:  "407741cab5092b2e2a1acde1539e657a64c2cd9a195dc707d5a9e73a3509a673"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13dfb17e3990f3c5e841370ec47aaf74be23446f66bd5eb21b565f226eab7618"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c151f910425fc08cc320b349d41d846f319d6c47029134817f9a3a47cab4a146"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7d2d0a4d3cb7bf76f50beab040ca7b00a5152c851bb94091225be9c457307e0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6337f668d29f1c7c9f0d18af9d278a88c47f866fbbf63f78c99d088883a8f50e"
+    sha256 cellar: :any,                 arm64_linux:   "14dcf87de61b17290742e146456b15d135825a90a49ee3257750014a6589f75b"
+    sha256 cellar: :any,                 x86_64_linux:  "346e2b6e3cc9a1833131f93c7d8d5bcac6e1646fe25a6bd8e3bbda5389755a66"
   end
 
   depends_on "cmake" => :build # for danmakuc
@@ -32,8 +32,8 @@ class Bilix < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
-    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
+    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
+    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
   end
 
   resource "beautifulsoup4" do
@@ -72,8 +72,8 @@ class Bilix < Formula
   end
 
   resource "h2" do
-    url "https://files.pythonhosted.org/packages/1d/17/afa56379f94ad0fe8defd37d6eb3f89a25404ffc71d4d848893d270325fc/h2-4.3.0.tar.gz"
-    sha256 "6c59efe4323fa18b47a632221a1888bd7fde6249819beda254aeca909f221bf1"
+    url "https://files.pythonhosted.org/packages/e7/85/7c366e69d84c17bb778fe41419e1fbcce3033d5b7ce29bbffff0a98b859f/h2-4.4.1.tar.gz"
+    sha256 "4e866ffb1a869ae14dd9b5e6beb5c24a13da0495ad72b65925ded182521c1516"
   end
 
   resource "hpack" do
@@ -157,8 +157,8 @@ class Bilix < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/47/2c/0a5f6f8ee0d5589e48c7640213ed5175d52cf540a06725b628cc1a45d6ce/soupsieve-2.8.4.tar.gz"
-    sha256 "e121fd02e975c695e4e9e8774a5ee35d74714b59307868dcc5319ad2d9e3328e"
+    url "https://files.pythonhosted.org/packages/d9/38/e12680bbe6b4f8f3d17adcaf38d26850aa756c85cf4a80e79fc12a018fe8/soupsieve-2.9.1.tar.gz"
+    sha256 "c33e6605bbc71dd628b00c632d58ae607c22bade247e52553928f83bbb75b4ba"
   end
 
   # update bilibili play_info api, upstream pr ref, https://github.com/HFrost0/bilix/pull/244

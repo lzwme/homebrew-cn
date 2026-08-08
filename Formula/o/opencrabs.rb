@@ -1,18 +1,18 @@
 class Opencrabs < Formula
   desc "Autonomous, self-improving AI agent in a single Rust binary"
   homepage "https://opencrabs.com"
-  url "https://ghfast.top/https://github.com/adolfousier/opencrabs/archive/refs/tags/v0.3.78.tar.gz"
-  sha256 "1ced91fe756beb7b09764bd3c8864014f07bd04b5471e0f2aa82c29996744570"
+  url "https://ghfast.top/https://github.com/adolfousier/opencrabs/archive/refs/tags/v0.3.79.tar.gz"
+  sha256 "5d76428b4894f44d07c5f11a66261be3d374d00e6ee37245d128cfd7bf845c41"
   license "MIT"
   head "https://github.com/adolfousier/opencrabs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f098cfc65e1ff41ceb67e7261ff1d481b31cfd55a07b8527633f0310c89bc35"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "970679649163faf419982d23d1d82556343e38f4a351ae64caa047f5487f139e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f1b44017a6b340df6b8eb3f73e3ed096b498ab549ef898b5401b4671f81a72c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "840450f77b056f042792bf821b74475e02672f8b314aa1eba84eba2121957f77"
-    sha256 cellar: :any,                 arm64_linux:   "65bdc5432d87a0ed8d32d7a4f0c0786051cda1ca3cb49691d7fc4b0bdd419ad0"
-    sha256 cellar: :any,                 x86_64_linux:  "9d6887627934e9a805e2832c06ab9eee7d2966804459e7bb5baf210fc6ba021f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed77506142e394ec8dac378f58c056aaaf7cee526564af10c065094ab576d2e3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "050fc794e1f5d28a22c1ab9e9ef5a7b877e0197aaf3d853fc05ed2182f8d94cc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "750e48b742dd766d1a4e571252ef19ce791d63ee621baa240a86119618be4f1e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8e7ce9fd4c1ff519083e8b59309bb7edc0ef8d325ffb245b8a3831deb7ace1c5"
+    sha256 cellar: :any,                 arm64_linux:   "0592687483e525df04833894a9bec2bb1addaf7d7603b80b6527b31317bea5b4"
+    sha256 cellar: :any,                 x86_64_linux:  "7a9fe34d2fc768537cbbb1ffd9950f63cc9705c40f1cedc275c8773c30f64bd3"
   end
 
   depends_on "cmake" => :build
@@ -28,6 +28,7 @@ class Opencrabs < Formula
 
   def install
     ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm").to_s
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s if OS.mac?
 
     system "cargo", "install", *std_cargo_args
   end

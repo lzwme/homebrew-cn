@@ -24,12 +24,14 @@ class Irrlicht < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b320467b91ab4658abdd8a6f7a356f2babd5e66be6d4eee2de4a34fe2caf1eea"
   end
 
-  depends_on xcode: :build
-
   depends_on "jpeg-turbo"
   depends_on "libpng"
 
   uses_from_macos "bzip2"
+
+  on_macos do
+    depends_on xcode: :build
+  end
 
   on_linux do
     depends_on "libx11"

@@ -1,18 +1,18 @@
 class Hookdeck < Formula
   desc "Forward webhook events from Hookdeck to a local server"
   homepage "https://hookdeck.com"
-  url "https://ghfast.top/https://github.com/hookdeck/hookdeck-cli/archive/refs/tags/v2.3.2.tar.gz"
-  sha256 "7604e97fbe4c9f3ec16ca9d17611deac93d8d0b10998c2386b042ff65a60feee"
+  url "https://ghfast.top/https://github.com/hookdeck/hookdeck-cli/archive/refs/tags/v2.4.0.tar.gz"
+  sha256 "70a2356b906f2a5560360b1dc3eb3729041c016f1b046994ebb7c3fedfea512b"
   license "Apache-2.0"
   head "https://github.com/hookdeck/hookdeck-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d96f2d973a195c272a54acccf0384463b3027ae436a6c117299510472231faf2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d96f2d973a195c272a54acccf0384463b3027ae436a6c117299510472231faf2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d96f2d973a195c272a54acccf0384463b3027ae436a6c117299510472231faf2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "54fffdf2c90f518189e9a30f45780c45ac1397fadcbe8fcb069b0869227dbd8a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "312db78d7397ebb0f60eacc6660666aa84c8f83f1aaac05f65f7e22303731cd0"
-    sha256 cellar: :any,                 x86_64_linux:  "9c578471ed56263580dcd517c25b72058a73924af296ae9118827761cdecf057"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8814ab773e4d43b165d33fa5799bc48a14eb0e98f5584f6d90cdc1383e65bf2a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8814ab773e4d43b165d33fa5799bc48a14eb0e98f5584f6d90cdc1383e65bf2a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8814ab773e4d43b165d33fa5799bc48a14eb0e98f5584f6d90cdc1383e65bf2a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "77bc35d58861786594e1e4f9534b3ed6443cb34d197cf8e898b4dc1522cd8f4b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ffdb37ea56f21e10651021a7341482cffa914fc0205bdf28e3d09861b8c0fbb"
+    sha256 cellar: :any,                 x86_64_linux:  "aa432b598e58cc0c04046b5b0126f57cb39ea1508f50bcd96da74747d839303e"
   end
 
   depends_on "go" => :build

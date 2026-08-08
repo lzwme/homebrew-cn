@@ -6,14 +6,15 @@ class Modal < Formula
   url "https://files.pythonhosted.org/packages/09/13/c54908743129b75f9761ebcc767f8de5e5b16e2a0303e171f7ae38d90d4d/modal-1.5.3.tar.gz"
   sha256 "0551c6fa2386ce78619f1a058eb4dd3ca527a54048952ea870e26704557c76c4"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "33ae71591efb2a6d620b65d5eea1cd9963e4a5b4ea76f6cbf2b160a580d5a748"
-    sha256 cellar: :any, arm64_sequoia: "62ff8a8b401c5692300d783cfaf25afd65e1f0ec1c2ceb969669e930d3e5917d"
-    sha256 cellar: :any, arm64_sonoma:  "1e1af094ccfab4e781a3ba3b7e0323b26af7930baa0ffff5b6c28126456f72dc"
-    sha256 cellar: :any, sonoma:        "59330e86571b6a1597337a42f8ce7ebb245730ed5220374a540f119ad04f98b9"
-    sha256 cellar: :any, arm64_linux:   "017b9ffea2b25a55847b8dd59d901a44afa97f8a0ad28122b048e0a8d246e1d3"
-    sha256 cellar: :any, x86_64_linux:  "99524f8d4992c30281a5f83563d595f68acfd56709a97418aadeb9383a326d07"
+    sha256 cellar: :any, arm64_tahoe:   "74d2930636c902c8de66a12e14a48a8655df5b96ba27d65e51b97f24d9e64a88"
+    sha256 cellar: :any, arm64_sequoia: "9f9b3625c526a627673c1057eeb18394821239732fa7d6d898d5c61fbcd9230d"
+    sha256 cellar: :any, arm64_sonoma:  "2a7f72d08d149b32e4ca34be2adcec4867f385852a5c6024904031067232e264"
+    sha256 cellar: :any, sonoma:        "255eb53bb1b7d934114571b91dfd0eefa4332f5c8b46c4f0ec32c2045b482db0"
+    sha256 cellar: :any, arm64_linux:   "fb9c3fb4e19e23b577dcf44d49603076c4df123be8205ab147b3491e54eed26c"
+    sha256 cellar: :any, x86_64_linux:  "6670b2265df217dec6615c64d6ba5c223ef6fd0cbaa1bf51b5382c9077dd767d"
   end
 
   depends_on "rust" => :build # for `cbor2`
@@ -68,8 +69,8 @@ class Modal < Formula
   end
 
   resource "h2" do
-    url "https://files.pythonhosted.org/packages/30/d4/a7d6fb3f58be99d65cbf2d3f766896217a2921d0f3ab10711c45dc1519ee/h2-4.4.0.tar.gz"
-    sha256 "46b551bdcdc7e83cf5c04d0bf93badb8a939bd2287d9fee1abb23a445b9e0580"
+    url "https://files.pythonhosted.org/packages/e7/85/7c366e69d84c17bb778fe41419e1fbcce3033d5b7ce29bbffff0a98b859f/h2-4.4.1.tar.gz"
+    sha256 "4e866ffb1a869ae14dd9b5e6beb5c24a13da0495ad72b65925ded182521c1516"
   end
 
   resource "hpack" do

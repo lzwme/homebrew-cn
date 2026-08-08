@@ -19,9 +19,11 @@ class CreateApi < Formula
     sha256                               x86_64_linux:  "958733d65c7aff3b75b64ac6f5a547961d6bc0fa0242e078dddc5686e4a05ded"
   end
 
-  depends_on xcode: "13.0"
-
   uses_from_macos "swift"
+
+  on_macos do
+    depends_on xcode: "13.0"
+  end
 
   def install
     args = if OS.mac?

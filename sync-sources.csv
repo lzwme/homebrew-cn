@@ -1487,7 +1487,7 @@ Homebrew-homebrew-core/Formula/d/dcd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dcfldd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dcled.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dcm2niix.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/dcmtk.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dcmtk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dcp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dcraw.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/ddate.rb, Homebrew/homebrew-core, 1
@@ -2084,7 +2084,7 @@ Homebrew-homebrew-core/Formula/f/fdk-aac.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fdroidcl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fdroidserver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fdupes.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/fedify.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fedify.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/feedgnuplot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/feh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/feishu2md.rb, Homebrew/homebrew-core, 1
@@ -4546,6 +4546,7 @@ Homebrew-homebrew-core/Formula/lib/libxvmc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxxf86dga.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxxf86vm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libyaml.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libyang.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libyojimbo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libyubikey.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libzdb.rb, Homebrew/homebrew-core, 0
@@ -5340,7 +5341,7 @@ Homebrew-homebrew-core/Formula/o/ocl-icd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oclgrind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ocm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ocmtoc.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/o/ocp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/ocp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ocproxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ocrad.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/ocrmypdf.rb, Homebrew/homebrew-core, 0
@@ -7866,6 +7867,7 @@ Homebrew-homebrew-core/Formula/u/urx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/usage.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/usb.ids.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/usbredir.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/u/usbtree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/usbutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/userspace-rcu.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/utf8cpp.rb, Homebrew/homebrew-core, 1
@@ -11587,6 +11589,7 @@ Homebrew-homebrew-cask/Casks/font/font-n/font-news-cycle.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask/Casks/font/font-n/font-newsreader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nexon-lv1-gothic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nexon-lv2-gothic.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-n/font-nexon-maplestory.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nico-moji.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-niconne.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nikukyu.rb, Homebrew/homebrew-cask, 0

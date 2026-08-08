@@ -6,15 +6,16 @@ class Parsedmarc < Formula
   url "https://files.pythonhosted.org/packages/c2/36/d61b20760f702b777df885e821fbaf63aa39cefcea66d56a850352979d58/parsedmarc-10.4.1.tar.gz"
   sha256 "08d3d50a3dabec2b5a9d26b76ad179b839d9c7a7914302086c6985cc623a5b77"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/domainaware/parsedmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "d02499921e6bbe41e702985a788669ffd8c4cb02cf56bb5f538e1f628a6b601c"
-    sha256 cellar: :any, arm64_sequoia: "827ecb9dc0fae2ae7b0a6df626ddad2cd6e02c042d707683bd2593b8bdab5a8b"
-    sha256 cellar: :any, arm64_sonoma:  "624056ef29c656b8d506dae3b2cf1035a25729c169833e76b3d408bd77af0b59"
-    sha256 cellar: :any, sonoma:        "bb56ddbc7ef2c5ead8bf86033b41d250461faa894393c458cfd7a628fa184509"
-    sha256 cellar: :any, arm64_linux:   "325b389fe83075d0559b04f2e29892f9d82fcec0b58da79e1a54ad9d1b18a654"
-    sha256 cellar: :any, x86_64_linux:  "c46af76c70368a7ab76d8840f074ef2c856f4e445217899f5532b54559a581bc"
+    sha256 cellar: :any, arm64_tahoe:   "2df8353625732404b3532073bafccda9982f09c11c1ab2b94b2c1ed2dec2f815"
+    sha256 cellar: :any, arm64_sequoia: "cd50fe5fb09ea7690f1de5023cca69be8706b61a5f13fbccdc42f4ea273c7b7f"
+    sha256 cellar: :any, arm64_sonoma:  "bd02d3a2b7ab0b8d7812fcf7c192548e527df78dec10b6c7de2ea2e47158d4a0"
+    sha256 cellar: :any, sonoma:        "bd0dcb32dc470505cdee9c6c98f5695bca657da55e5c48d5f00d81ba616278f2"
+    sha256 cellar: :any, arm64_linux:   "d47804be8f06e303436fc00425f54a2c45f496d6f7f8d6c66895262d2ac9cfec"
+    sha256 cellar: :any, x86_64_linux:  "6978a345f833991e7de2487d06eb306c10bcaa3f9c2081aae117705e211973ec"
   end
 
   depends_on "rust" => :build
@@ -74,13 +75,13 @@ class Parsedmarc < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/c7/30/324319a914752e4021358ccf8252c04364eb8358f9d41d9c3f021959b363/boto3-1.43.57.tar.gz"
-    sha256 "549c95e45f9b04cf0c69727632dbdda23b84dcd3d0ed7981c6aaff72ef9cb5af"
+    url "https://files.pythonhosted.org/packages/51/87/d61a5a76088240012800f303d3b910c259f6c630e395a013fa1a1216fdae/boto3-1.43.65.tar.gz"
+    sha256 "f2331154aee1ae97ece48077d77f41d3bd5ea39eb4e3037030448b58695a3a79"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/0b/92/1f8a454cf90bcb0c0e32a25817441cb7f3702fdd76710d7018abad12a2fc/botocore-1.43.57.tar.gz"
-    sha256 "001a5653bebc03b862bde2da63bad4adb0b30072a3f247aba4daae5aa097b546"
+    url "https://files.pythonhosted.org/packages/fa/86/65c298732919b84a3ecf331caeb47b8efcc1ce0537e8fdecad2cfee39174/botocore-1.43.65.tar.gz"
+    sha256 "eea5440cf4b850d0f4de4f7eda418c325c87de6d8980873f8b636bb482b31d0f"
   end
 
   resource "charset-normalizer" do
@@ -89,8 +90,8 @@ class Parsedmarc < Formula
   end
 
   resource "dateparser" do
-    url "https://files.pythonhosted.org/packages/d3/f4/561c49bca97af561d34eed27e3e831135eb5cb88e754c1150be41820f5c6/dateparser-1.4.1.tar.gz"
-    sha256 "f265df13c0380e2e07543ba74b67c0681aaa1096981ffcd35227e1aa0cb81c7c"
+    url "https://files.pythonhosted.org/packages/59/6a/9f06999c4f27e9192c5eb38bfffadc2e6752df8178e97e88b10b9eb4c682/dateparser-1.4.2.tar.gz"
+    sha256 "bed2a3fd9bad8f2fb2d72b57748bada260b3a9349a264c22ffc23c3249d7049a"
   end
 
   resource "dkimpy" do
@@ -129,8 +130,8 @@ class Parsedmarc < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/87/62/8fb1fb647d2788c950d69d6a769cd9d55c918ac1fc57be2f90b7e4029787/google_api_core-2.33.0.tar.gz"
-    sha256 "3a36bcc3e319783f4c97da41f6f45ea6ffcaa55848e341de16e09cb70243c2bb"
+    url "https://files.pythonhosted.org/packages/7b/7c/9be3903e3d45415e8ca493c75f8990a0f6f579d168015d44c379350d0ab0/google_api_core-2.34.0.tar.gz"
+    sha256 "98a779fe72de956eb1c9c2f47ff4c4432a668ece1a002ec38bed07ec2698ae59"
   end
 
   resource "google-api-python-client" do
@@ -139,13 +140,13 @@ class Parsedmarc < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/c7/33/dbc946a407401b975f0719658f18e664ece2109f79ffd1ff3bf226c205f4/google_auth-2.56.2.tar.gz"
-    sha256 "e28f103ca8091fb7012b99c44243d7366c29863713b8e34a220c3322b7a07051"
+    url "https://files.pythonhosted.org/packages/db/4c/fa42116a48bab3f7a143cf5042ecff7df9c8b73f8a376203cd534d1dc966/google_auth-2.56.3.tar.gz"
+    sha256 "40e229fc901f0a305b553050e5fce562d509bee0435be053abfa91582b51b90c"
   end
 
   resource "google-auth-httplib2" do
-    url "https://files.pythonhosted.org/packages/1c/b3/f192c8bc7e41e0ebdbd95afcae4783417a34b6a6af62d22daf22c3fd38fc/google_auth_httplib2-0.4.0.tar.gz"
-    sha256 "d5b030a204b7a4b4d553ba9ca701b62481ee2b74419325580be70f7d85ffed35"
+    url "https://files.pythonhosted.org/packages/11/46/79983cb738f0eb14e6ab4f43457aa9652f8d46bc4376b178f676b68c5c37/google_auth_httplib2-0.4.1.tar.gz"
+    sha256 "125b1bb4fcfdd2d97f19b673c1f46f831603d0acaffe415c8a35dadb312552a1"
   end
 
   resource "google-auth-oauthlib" do
@@ -154,8 +155,8 @@ class Parsedmarc < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/b5/c8/f439cffde755cffa462bfbb156278fa6f9d09119719af9814b858fd4f81f/googleapis_common_protos-1.75.0.tar.gz"
-    sha256 "53a062ff3c32552fbd62c11fe23768b78e4ddf0494d5e5fd97d3f4689c75fbbd"
+    url "https://files.pythonhosted.org/packages/72/73/74bcab964c9a7a61f2bb71e8179b0f13e6fa98f7ce00fd168aab291e4a2e/googleapis_common_protos-1.75.1.tar.gz"
+    sha256 "d3042c6c5a2d4e67113104d6b6818b59b6bd92a197f2a91508e801fe815cf071"
   end
 
   resource "grpcio" do
@@ -169,8 +170,8 @@ class Parsedmarc < Formula
   end
 
   resource "h2" do
-    url "https://files.pythonhosted.org/packages/30/d4/a7d6fb3f58be99d65cbf2d3f766896217a2921d0f3ab10711c45dc1519ee/h2-4.4.0.tar.gz"
-    sha256 "46b551bdcdc7e83cf5c04d0bf93badb8a939bd2287d9fee1abb23a445b9e0580"
+    url "https://files.pythonhosted.org/packages/e7/85/7c366e69d84c17bb778fe41419e1fbcce3033d5b7ce29bbffff0a98b859f/h2-4.4.1.tar.gz"
+    sha256 "4e866ffb1a869ae14dd9b5e6beb5c24a13da0495ad72b65925ded182521c1516"
   end
 
   resource "hpack" do
@@ -224,8 +225,8 @@ class Parsedmarc < Formula
   end
 
   resource "kafka-python" do
-    url "https://files.pythonhosted.org/packages/99/ae/2a6a54192fa336d10306a10f67a2db7ebb70bbe1600127b29fd45f18af50/kafka_python-3.0.9.tar.gz"
-    sha256 "703c00a59d9853494a9821f8665d99e9443951dabe657a0b2a24e9e50a70703d"
+    url "https://files.pythonhosted.org/packages/2b/1a/828be30211d0c78d02a7b3bd6dd36d6cc39539693600960315d41192bd5e/kafka_python-3.0.10.tar.gz"
+    sha256 "06950fed5e705ec5207458ca6ae43b6c0ae1de4146ddbf7877f42a893830100c"
   end
 
   resource "lxml" do
@@ -234,8 +235,8 @@ class Parsedmarc < Formula
   end
 
   resource "mail-parser" do
-    url "https://files.pythonhosted.org/packages/9c/6e/2cee08e0d6fbce02a301d5ab72ef5ffe8f47dd59ac3d8ce61324d8a9143a/mail_parser-4.4.0.tar.gz"
-    sha256 "82d2c0fa98a138620feaa87a378af2a2643b2941b2e125d7abfc65dd21094b33"
+    url "https://files.pythonhosted.org/packages/4e/4d/5fe2ab8505a0f1fe2160e4fdd42500dac32a7ea41a55709aeb2025ba4dbd/mail_parser-4.5.0.tar.gz"
+    sha256 "9ce06b44332115d43b82ee6d21a77a4e2a25cc42e219efe43730534b70c77a7e"
   end
 
   resource "mailsuite" do
@@ -299,8 +300,8 @@ class Parsedmarc < Formula
   end
 
   resource "msgraph-sdk" do
-    url "https://files.pythonhosted.org/packages/00/16/e1b4cfd4dc030985f1335c04842d60786a6e9d7eb1ff432d63c38621fc59/msgraph_sdk-1.60.0.tar.gz"
-    sha256 "620335e73219afb42243239f082ca92661459a1fe2436e9f468907044049ce82"
+    url "https://files.pythonhosted.org/packages/59/31/121dd2fef52c544fe767f1e2d0e2badec507528ed03496e71965f2249889/msgraph_sdk-1.61.0.tar.gz"
+    sha256 "fe3b2e21715d9523e3b15082421011a0067873f3b48c431208be988f17b34ed9"
   end
 
   resource "multidict" do
@@ -344,8 +345,8 @@ class Parsedmarc < Formula
   end
 
   resource "proto-plus" do
-    url "https://files.pythonhosted.org/packages/73/3e/29e0d6a2c5adde6ab5772253fd16ab346324026b89a66e354689c86d0584/proto_plus-1.28.2.tar.gz"
-    sha256 "26d843eb99c1e32fdf1d20ff0faae56607f7748fe774acf9ecd5cfe6c6472501"
+    url "https://files.pythonhosted.org/packages/26/6a/056256feb4bd000869aba5c16cf2aa911572ca2a2feb185f86e457b5171e/proto_plus-1.28.3.tar.gz"
+    sha256 "5f91b30dafa6bb38d432c5557a6ee1d35ffd40b4b1e0e3ca27260448560b91d9"
   end
 
   resource "protobuf" do

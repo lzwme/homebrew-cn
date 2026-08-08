@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://esphome.io/"
-  url "https://files.pythonhosted.org/packages/da/52/8e10dd5e4a95dd500d8579379e739a430e31c17ec92a97d32716c941b35a/esphome-2026.7.3.tar.gz"
-  sha256 "5eb3345326654b4abf7a28cc8b9f5d05f5d9ee22991731e53725573ac140d149"
+  url "https://files.pythonhosted.org/packages/96/a4/710af184652771fea9e9aab0de334e2ec52dc51c8037c24be6112367b74d/esphome-2026.7.4.tar.gz"
+  sha256 "c2b7d9e82b9bcb59e0bdbb1e67edd6fe79e2e96b2a09c25b1e0553b5255c538d"
   license "MIT"
   head "https://github.com/esphome/esphome.git", branch: "dev"
 
@@ -12,12 +12,12 @@ class Esphome < Formula
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "92ea5038048f76f61028f72aed24c357f04ecae9174e0cdda95969766aef3729"
-    sha256 cellar: :any, arm64_sequoia: "6000cfe547974fbfc79f993228803fc857deaed1ba32f5eff98148f980b61848"
-    sha256 cellar: :any, arm64_sonoma:  "212bdf8d61de64d9ac0aae8d047f535f7409047b120495c2788a943e4bb457d6"
-    sha256 cellar: :any, sonoma:        "8f440da7bdf5e8d73e121c43a5ca8396db52a56631e2e07c800617f821687697"
-    sha256 cellar: :any, arm64_linux:   "55fc265f179d13cbbbc4d34e3b4e81d72b4eab4324c87d21d0bfc35a6f336312"
-    sha256 cellar: :any, x86_64_linux:  "8303a4595a00d43aa72e3060feb3f063146b474c18a85b6d7ac83daa3a05b8d2"
+    sha256 cellar: :any, arm64_tahoe:   "6a257d82fea7a389c1f973a9f6d9311567b037490101cb69829e0cb54cbadb91"
+    sha256 cellar: :any, arm64_sequoia: "2a5a97dddd1b57e5dc4245affa9ecdf390aa8fa4c530ae9b512e7d406fdd8eeb"
+    sha256 cellar: :any, arm64_sonoma:  "13c1e01debb12ae329f0e075dd8a4d5d5a05842a27714df903af3ac7b76f0c5a"
+    sha256 cellar: :any, sonoma:        "0f11168ee3c3dd27428962a2cd56c8b89296bca7832ca6867bf61f90f06cbd36"
+    sha256 cellar: :any, arm64_linux:   "703c7c677c36e298da8f8f283e837724aaf95bc44e0a2599475663a6bbe5c9f7"
+    sha256 cellar: :any, x86_64_linux:  "8897bd4a469dea42435d7436154bffbd42f1255119617b7eb5dea7566ca83fa3"
   end
 
   depends_on "rust" => :build
@@ -71,8 +71,8 @@ class Esphome < Formula
   end
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/53/71/dd598d2d546d11d7aca6cd25f05875e2dad194df0a663f1892690d4fb90d/bitarray-3.9.2.tar.gz"
-    sha256 "37342f81c8f8e10ee5d1e23d5eda2e8dbd9d8d3a9d90e8285181fad57f21cdc1"
+    url "https://files.pythonhosted.org/packages/5f/c9/df9a5450b54e6dcbb6e8f3fd95631ab849ba1ed8e7899844c0d71bab576c/bitarray-3.10.0.tar.gz"
+    sha256 "d8f8dbcda062ea59b3a6d5233b5a9b67f6bf58c1418ad8f418c5138361f9f068"
   end
 
   resource "bitstring" do
@@ -146,8 +146,8 @@ class Esphome < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/b5/fe/997687a931ab51049acce6fa1f23e8f01216374ea81374ddee763c493db5/filelock-3.29.0.tar.gz"
-    sha256 "69974355e960702e789734cb4871f884ea6fe50bd8404051a3530bc07809cf90"
+    url "https://files.pythonhosted.org/packages/c0/80/8232b582c4b318b817cf1274ba74976b07b34d35ef439b3eb948f98645a1/filelock-3.32.0.tar.gz"
+    sha256 "7be2ad23a14607ccc71808e68fe30848aeace7058ace17852f68e2a68e310402"
   end
 
   resource "freetype-py" do
@@ -216,8 +216,8 @@ class Esphome < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "paho-mqtt" do
@@ -226,8 +226,8 @@ class Esphome < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
-    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
+    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
+    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
   end
 
   resource "platformio" do

@@ -1,17 +1,17 @@
 class McpInspector < Formula
   desc "Visual testing tool for MCP servers"
   homepage "https://modelcontextprotocol.io/docs/tools/inspector"
-  url "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-2.0.0.tgz"
-  sha256 "10583f3dd01cfe4e050b2581e50902adae33fe6bec32074182cb47287799d9d3"
+  url "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-2.1.0.tgz"
+  sha256 "a2b62c9c28a90702d54a2e0ed0778d9633beec8f15e38aad41a4bf2ec8c42a96"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "0d419743cb0b1b43c5832dcf1279593ae107a659199c4d37f959a421e12d0439"
-    sha256 cellar: :any,                 arm64_sequoia: "75b8851d406f18f2758f0837a4bb27a5114b87b799ef2deaab1549d3a8d13523"
-    sha256 cellar: :any,                 arm64_sonoma:  "7734b11f1df9c124955467e7a014781cf52eaaa165fd4157985babc980f7f2e1"
-    sha256 cellar: :any,                 sonoma:        "27215a321031a4914fb13748284e2d6445ee64f2df572c0b4ae4a5b05582a4f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b97140e3084eb27e963ca4cb70200286a7e4369eb458eadd10400ff9fbae2575"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3963392d6292193cfd90c2cc5ce0b214549d90446e5619d530fd008ea907455"
+    sha256 cellar: :any,                 arm64_tahoe:   "f435dd7c95244c4af02f269945befe4975d16ec9c370b42d254d66f573b4883f"
+    sha256 cellar: :any,                 arm64_sequoia: "1617e9cc91c5cfc0c78c2cf05590503dbccc1c8aaff5d75743fd8180350fc21e"
+    sha256 cellar: :any,                 arm64_sonoma:  "9efe5bdd4d2c79be9407837003810ec439e4647f46d29dc0cde41835d71462e3"
+    sha256 cellar: :any,                 sonoma:        "23b9f572c810f10e81e03cdcb7fcb06d20c8e60e8a34ef78aef34beb1a549149"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3cc36a118e9dd8cb2ef5cf2b2be098cfea02e5c6059c9049916dbb1ce4852881"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "387d685ba3a973ec53adcb7f300e88d5b6ebb69bf5984aca21b8a812e6a8a4c2"
   end
 
   depends_on "node"
@@ -22,8 +22,8 @@ class McpInspector < Formula
   end
 
   resource "rolldown" do
-    url "https://ghfast.top/https://github.com/rolldown/rolldown/archive/refs/tags/v1.1.5.tar.gz"
-    sha256 "2042204fda63956408dc102dd5cf5577368077ed70f9bce68474ed983c779879"
+    url "https://ghfast.top/https://github.com/rolldown/rolldown/archive/refs/tags/v1.2.1.tar.gz"
+    sha256 "05615e3dd0991fe24070626ed80e18bb95a253faa865d45e5b86e65057672d73"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/modelcontextprotocol/inspector/#{LATEST_VERSION}/package-lock.json"

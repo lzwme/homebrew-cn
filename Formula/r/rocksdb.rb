@@ -1,19 +1,19 @@
 class Rocksdb < Formula
   desc "Embeddable, persistent key-value store for fast storage"
   homepage "https://rocksdb.org/"
-  url "https://ghfast.top/https://github.com/facebook/rocksdb/archive/refs/tags/v11.8.0.tar.gz"
-  sha256 "86434e099fc27a24bf0ebd98114a8dcac55dba60a0ba291faf700f3bd84f47aa"
+  url "https://ghfast.top/https://github.com/facebook/rocksdb/archive/refs/tags/v11.8.1.tar.gz"
+  sha256 "618d9726a7cb1cf4ce034f4cdca49de98aa64867dda06b91371a791ae8921aff"
   license any_of: ["GPL-2.0-only", "Apache-2.0"]
   compatibility_version 1
   head "https://github.com/facebook/rocksdb.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8c92e1d0d0351fedf576e50d36202c6ac692eaf271124e3ca0b21324e6063578"
-    sha256 cellar: :any, arm64_sequoia: "aebd6cfea6e44c1965cbc3f9293f13b4a72b6679ba29f9bea40ce8cf5f76f8f5"
-    sha256 cellar: :any, arm64_sonoma:  "f67ba5b86ed7556731a892ee482384a501da840ed81ef54e2274c7a5be76c657"
-    sha256 cellar: :any, sonoma:        "2d7302173a649952da474cf27d63657ca3aa4abee5b8815bfd40d849012c5580"
-    sha256 cellar: :any, arm64_linux:   "f3f8ae641c3879f1e73fa0ee318d644c45973bfeffc48881b21e2d4c70d6b48a"
-    sha256 cellar: :any, x86_64_linux:  "45736da01319a42ba02e51587bb63820f05f48c8ae79b12ac7bc2ba5580c6f83"
+    sha256 cellar: :any, arm64_tahoe:   "ef95ef8a35623e1dd9a8302ef767c12f3638d56e6ec56b099ab70692fe7bdbca"
+    sha256 cellar: :any, arm64_sequoia: "81b4c62f79456703f3423e727fa976e6afba4e8c61197e0d913018889797d4d4"
+    sha256 cellar: :any, arm64_sonoma:  "6a17af0698d1a6ad5dd62149a3e23288b8bc9ca6e56acfea9499497d7ef9ba56"
+    sha256 cellar: :any, sonoma:        "26d5039784b879267ab9cba1db8fa37c17cacc24a6858e7f20ad35b193bf0243"
+    sha256 cellar: :any, arm64_linux:   "98cd69a6a34b5af035c73f1c9edbc1d751e68d049a7200b3caac49ef9f2c6833"
+    sha256 cellar: :any, x86_64_linux:  "8f1e3f1fcaa4c0350f3a643e74107e83742a7de8a7dabaa7bc646ad2a38fce5c"
   end
 
   depends_on "cmake" => :build

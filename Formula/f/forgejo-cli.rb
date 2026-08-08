@@ -1,18 +1,29 @@
 class ForgejoCli < Formula
   desc "CLI tool for interacting with Forgejo"
   homepage "https://codeberg.org/forgejo-contrib/forgejo-cli"
-  url "https://codeberg.org/forgejo-contrib/forgejo-cli/archive/v0.6.0.tar.gz"
-  sha256 "8b91194cb1886f253261a4567ee6f83aa34b05a9637644793f88b40b7110322a"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://codeberg.org/forgejo-contrib/forgejo-cli.git", branch: "main"
 
+  stable do
+    url "https://codeberg.org/forgejo-contrib/forgejo-cli/archive/v0.6.0.tar.gz"
+    sha256 "8b91194cb1886f253261a4567ee6f83aa34b05a9637644793f88b40b7110322a"
+
+    # Fix issue with shell completions.
+    # Remove with `stable` block with next release.
+    patch do
+      url "https://codeberg.org/forgejo-contrib/forgejo-cli/commit/42136622787b3a289b80565d2756263394dda855.patch"
+      sha256 "f1ac36eb47411b1c11b1200de1750040a94f456b26655eeab1971c3767b28bec"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a84eb3c5d729c3b05135dc82be9be146419e0eee4ccca4d321f32f7d5d276ef9"
-    sha256 cellar: :any, arm64_sequoia: "f1037fad0a40d0b6b7202e0ea69955cbc592edcfa85a81bd961ccd6ab311a4eb"
-    sha256 cellar: :any, arm64_sonoma:  "7859e5b74231f24a974c76d073a08454b5c43231b5e93bf039c1e3f772732a49"
-    sha256 cellar: :any, sonoma:        "759fc9b5ed677fe82a0c0ca2ad71a0c12403adb4da139918306cd554c38d3e8f"
-    sha256 cellar: :any, arm64_linux:   "39307b9cffd67788556f7c31c2e704e29e8e0deff61f4c7c394874cdfdcbba1d"
-    sha256 cellar: :any, x86_64_linux:  "3d03a6071ce54f9f5ac7385fb75dda911f550abe567e679e27f1c2e61ceb3bbe"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "90f243937e4a0101b73ad9d50c413f416aef02374aeb2c9344ff8a9151944fc3"
+    sha256 cellar: :any, arm64_sequoia: "b476de6d721cbbdbe3d3787af230cad5763445dfdebe235a6163d74b640e9ae6"
+    sha256 cellar: :any, arm64_sonoma:  "aa0820a87a9905e33308c795156e56f7fc4ffa7801332c79aff99c41b2024727"
+    sha256 cellar: :any, sonoma:        "7b0178a4c92fd7b556843adbc2633b11294da014f2b4d38d8a0c0d709e741413"
+    sha256 cellar: :any, arm64_linux:   "5b66b0f4d1ba7b3b45c341292fbc15ea2009271f665ae3ac567e68602b5cea69"
+    sha256 cellar: :any, x86_64_linux:  "f5b403159bbead7abdc9db660d024559b4eed17799b9e5f32e5ba034c8a22ef8"
   end
 
   depends_on "pkgconf" => :build

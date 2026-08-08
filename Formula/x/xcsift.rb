@@ -15,8 +15,11 @@ class Xcsift < Formula
     sha256 cellar: :any,                 x86_64_linux:  "5be4785031071d0b9821a9f010f33e6121fb01c25e634f6584a951b06abb8c82"
   end
 
-  depends_on xcode: ["16.0", :build]
   uses_from_macos "swift" => :build, since: :sonoma
+
+  on_macos do
+    depends_on xcode: ["16.0", :build]
+  end
 
   def install
     inreplace "Sources/xcsift/main.swift", "VERSION_PLACEHOLDER", version.to_s

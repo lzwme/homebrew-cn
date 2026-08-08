@@ -6,9 +6,10 @@ class Httptap < Formula
   url "https://files.pythonhosted.org/packages/fe/b3/f339ce30071f20acd9e94894d52219723e781d603c4ff015aef462d8a51b/httptap-0.5.3.tar.gz"
   sha256 "b1fd0f6b16b2d96207f357b9c050eaa774da47d83da5bb5645873b44a80061b6"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3431188dce56dc3e3494da42978cef39e410d899072b9314e8b3ccc3f9f8d42b"
+    sha256 cellar: :any_skip_relocation, all: "c5510c25e960be4ecee3a77098908727aaedbd3fdb41aaf2a51ecc48066165da"
   end
 
   depends_on "rust" => :build
@@ -24,8 +25,8 @@ class Httptap < Formula
   end
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/95/c0/c8e94135e66fabf89a120d9b4b123fe6993506beca6c1938a74c24cfa5fd/argcomplete-3.7.0.tar.gz"
-    sha256 "afde224f753f874807b1dc1414e883ab8fe0cda9c04807b6047dcb8e1ac23913"
+    url "https://files.pythonhosted.org/packages/87/6f/5a73f04007ca950701765949209f068da628bd11f9c2da287278ce91e0ee/argcomplete-3.7.2.tar.gz"
+    sha256 "aad8b69a0b9969edb62db0d1752354c0d50717b10e0cbb00e2a958381b9fc6b9"
   end
 
   resource "dnspython" do
@@ -39,8 +40,8 @@ class Httptap < Formula
   end
 
   resource "h2" do
-    url "https://files.pythonhosted.org/packages/1d/17/afa56379f94ad0fe8defd37d6eb3f89a25404ffc71d4d848893d270325fc/h2-4.3.0.tar.gz"
-    sha256 "6c59efe4323fa18b47a632221a1888bd7fde6249819beda254aeca909f221bf1"
+    url "https://files.pythonhosted.org/packages/e7/85/7c366e69d84c17bb778fe41419e1fbcce3033d5b7ce29bbffff0a98b859f/h2-4.4.1.tar.gz"
+    sha256 "4e866ffb1a869ae14dd9b5e6beb5c24a13da0495ad72b65925ded182521c1516"
   end
 
   resource "hpack" do
@@ -102,7 +103,14 @@ class Httptap < Formula
   end
 
   def install
-    venv = virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources(without: "socksio")
+
+    resource("socksio").stage do
+      # Cap flit-core below 4 as socksio's legacy `[tool.flit.metadata]`
+      # pyproject table is no longer supported since flit-core 4
+      inreplace "pyproject.toml", "flit_core >=2", "flit_core >=2,<4"
+      venv.pip_install Pathname.pwd
+    end
 
     generate_completions_from_executable(
       libexec/"bin/register-python-argcomplete", "httptap",

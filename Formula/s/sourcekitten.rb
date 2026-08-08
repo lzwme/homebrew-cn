@@ -17,10 +17,12 @@ class Sourcekitten < Formula
     sha256                               x86_64_linux:  "c3cd592a6d2596a5f3ce0ed67ccd63498bcfd66f5ea4dace5fc163aef6a201b1"
   end
 
-  depends_on xcode: ["14.0", :build]
-  depends_on xcode: "6.0"
-
   uses_from_macos "swift"
+
+  on_macos do
+    depends_on xcode: ["14.0", :build]
+    depends_on xcode: "6.0"
+  end
 
   def install
     system "make", "prefix_install", "PREFIX=#{prefix}", "TEMPORARY_FOLDER=#{buildpath}/SourceKitten.dst"

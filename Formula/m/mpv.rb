@@ -32,7 +32,6 @@ class Mpv < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
-  depends_on xcode: :build
   depends_on "ffmpeg"
   depends_on "jpeg-turbo"
   depends_on "libarchive"
@@ -50,6 +49,7 @@ class Mpv < Formula
   depends_on "zimg"
 
   on_macos do
+    depends_on xcode: :build
     depends_on "molten-vk"
   end
 

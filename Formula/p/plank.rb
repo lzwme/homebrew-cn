@@ -27,9 +27,11 @@ class Plank < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea941cd9c41a8ac9cb53678eaf17d5f0eeb04930758bcac1be793d17d60fe861"
   end
 
-  depends_on xcode: ["11.3", :build]
-
   uses_from_macos "swift" => :build
+
+  on_macos do
+    depends_on xcode: ["11.3", :build]
+  end
 
   # fix build failures
   patch do

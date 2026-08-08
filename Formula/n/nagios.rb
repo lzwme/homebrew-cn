@@ -15,7 +15,6 @@ class Nagios < Formula
     sha256 x86_64_linux:  "024222f9b5f370620b8064b39b6a936865e2f27071d1f1f728b245918993cdc0"
   end
 
-  depends_on xcode: :build
   depends_on "gd"
   depends_on "libpng"
   depends_on "openssl@4"
@@ -23,6 +22,7 @@ class Nagios < Formula
   uses_from_macos "unzip" => :build
 
   on_macos do
+    depends_on xcode: :build
     depends_on "jpeg-turbo"
   end
 

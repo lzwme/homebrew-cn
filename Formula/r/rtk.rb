@@ -1,18 +1,18 @@
 class Rtk < Formula
   desc "CLI proxy to minimize LLM token consumption"
   homepage "https://www.rtk-ai.app/"
-  url "https://ghfast.top/https://github.com/rtk-ai/rtk/archive/refs/tags/v0.44.2.tar.gz"
-  sha256 "39061f634a607c9642af0430cda1b20e55cd61bf53f08cfc9b3f27862ec719f2"
+  url "https://ghfast.top/https://github.com/rtk-ai/rtk/archive/refs/tags/v0.45.0.tar.gz"
+  sha256 "0459f63cb79f610751974ba20732e273d45ddbb4cd0c0795768b62b868891ad9"
   license "Apache-2.0"
   head "https://github.com/rtk-ai/rtk.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "632d3d85f72c4be58eab513e81d20c2bc2fd767753d961ae4672479a340adc9a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e08aa1bdf648eda48353d13223db39dd680a1daebd5a2b26f1c050e7475f006d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c955a65feed62abb853270ed43bb0138ecd7f4e58651a65c758f1853a23d793"
-    sha256 cellar: :any_skip_relocation, sonoma:        "062b42dee49a4621777abed607a2a1b30c90937a2b2330d4470bf963446d407a"
-    sha256 cellar: :any,                 arm64_linux:   "53bce4f2a15a7a6c983e3a5cd69fea6ed020849c92b7837cc5e75b20ff17ea7e"
-    sha256 cellar: :any,                 x86_64_linux:  "bb929bdfd69d19d9915d196c488f4b9e6750b9d2dbcd64d4b4049baabcaaf803"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c848713b56fd2a857b0533929d016f8bfe0ce229eb38951281a8024485651acf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd950e90f220f464ab38ec8e42be52701dddb1b0cf72b4d3e7c8b5c2d277d212"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f8f1ba6e28e8c09a6df733e4583b9748eadfa617758a3ba3cce2e33d9761ce9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cd0ac1fd871818d315c7c57140cbf23ef323b902e5808bd5e3f1b7c47413dce1"
+    sha256 cellar: :any,                 arm64_linux:   "6982738e332b45a7b1fffa49839cb5e39b1dc8bdd66a603c078909eb7c04b593"
+    sha256 cellar: :any,                 x86_64_linux:  "a59215da169371e19cf5f15a467dc4c922e44479e41a28188e9ef8b1fddffadc"
   end
 
   depends_on "rust" => :build

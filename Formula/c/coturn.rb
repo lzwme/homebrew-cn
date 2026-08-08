@@ -1,8 +1,8 @@
 class Coturn < Formula
   desc "Free open source implementation of TURN and STUN Server"
   homepage "https://github.com/coturn/coturn"
-  url "https://ghfast.top/https://github.com/coturn/coturn/archive/refs/tags/4.17.0.tar.gz"
-  sha256 "61d2baf4631c7953c6b10a5fb7f4ee98a67f0326b7a53f11f15eda75be9c925a"
+  url "https://ghfast.top/https://github.com/coturn/coturn/archive/refs/tags/4.17.1.tar.gz"
+  sha256 "4e1a995c04ae3f34ce520559495198e07154dff0964e8e7034ff09d414c0e7cb"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Coturn < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "3518067d4126add2b8f07b5e1a26f753207318da35d46f757fcd6586600eef4c"
-    sha256               arm64_sequoia: "1d29e55dfa93bb2e21f43210e98ac612d6d55b691072cb92fd389d7a4ee94e1b"
-    sha256               arm64_sonoma:  "2029f4e5508c48fc3693411393dd775cda03d1fb33cea708be945fbd3b726322"
-    sha256 cellar: :any, sonoma:        "76b66f029683ffe2e81896a708db11f96e3b215d864831691f18a1ad83656c35"
-    sha256               arm64_linux:   "486b61a1c3838360c7acd382801e829c17b5c8292c929ead504a9ad353946780"
-    sha256               x86_64_linux:  "0a4df0b5eb7ced23abf99cec95b4e72a4996eb1f714a9e95b001ef2049fafe8a"
+    sha256               arm64_tahoe:   "c6893363badda5642cd0a6ea8bbf7fc9d1dfe5b07fd5daec77d9aa00e80035f2"
+    sha256               arm64_sequoia: "1ef71de7661f3d00f6a2f4abc2b958758873fe8027482636cb52add54a93302b"
+    sha256               arm64_sonoma:  "4e9b6084eb7533dc08146163e14d49d9d47b504464be674f14f5a4d323ed1c2d"
+    sha256 cellar: :any, sonoma:        "caf05c0c3c9f0bdcd71e6f32d85cd67cf542efc050e2c526d4813ee097660fad"
+    sha256               arm64_linux:   "cac915cdb429248a8adae734bab32699723c9a5d8bfe8c866818f92dc07894ef"
+    sha256               x86_64_linux:  "d69d9235d81d7c9a9abafd762fac1c3e45307915d0e1ac4267b1de6fc4e3544f"
   end
 
   depends_on "pkgconf" => :build

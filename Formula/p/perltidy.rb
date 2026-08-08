@@ -1,8 +1,8 @@
 class Perltidy < Formula
   desc "Indents and reformats Perl scripts to make them easier to read"
   homepage "https://perltidy.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/perltidy/20260705/Perl-Tidy-20260705.tar.gz"
-  sha256 "f766fa146041912aff48945d35e23bac39baf8051ec28e430ec25d532ca4e372"
+  url "https://downloads.sourceforge.net/project/perltidy/20260808/Perl-Tidy-20260808.tar.gz"
+  sha256 "038277b43eddd2cb702e8058ca3ff685b3d64e6662361e7ad2158ccfd07291be"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Perltidy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b1a5865d26a46dd51d9bfbf84597f5431c224f4e4d8e781b47cb95146c8366ca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1a5865d26a46dd51d9bfbf84597f5431c224f4e4d8e781b47cb95146c8366ca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b1a5865d26a46dd51d9bfbf84597f5431c224f4e4d8e781b47cb95146c8366ca"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ee9e089c8da1b4102d2e9592920c09264b4c3d8a4da4a46b0e798406150e1531"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0b3c1431b4365a99e6423111beaaa74cf91452fd94ef16d61bcbd57f3d98dc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e724114a344c0e256f8bcdec8bb2e078fe2648a01f49eef49144ea656441778"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "15a69f989f6d316abb6efd6e2aff7661b8689651ccfa32a5a175dfc4d589da80"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15a69f989f6d316abb6efd6e2aff7661b8689651ccfa32a5a175dfc4d589da80"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15a69f989f6d316abb6efd6e2aff7661b8689651ccfa32a5a175dfc4d589da80"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7ce4242877009763e7922a9619ecd5e0dfcc5e1beea3e3d5773447b35bfbe406"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "091f7edd17a5f90b0215fc283454a389d2d10e517697b89a7e3deb9d177b1939"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b61c89f7cd8d112e74c3d4be2ad03e448fce71ee1f67e44001fcf7c2f569145a"
   end
 
   uses_from_macos "perl"

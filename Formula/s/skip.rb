@@ -15,7 +15,6 @@ class Skip < Formula
     sha256                               x86_64_linux:  "a214c209cc255477acdd1ed4424cf37155fef210b2c22915395eadd1b2b61774"
   end
 
-  depends_on xcode: :build
   depends_on "gradle"
   depends_on "openjdk"
   depends_on "swiftly"
@@ -23,6 +22,10 @@ class Skip < Formula
   uses_from_macos "swift" => [:build, :test]
   uses_from_macos "curl"
   uses_from_macos "libxml2"
+
+  on_macos do
+    depends_on xcode: :build
+  end
 
   on_linux do
     depends_on "libarchive"

@@ -3,19 +3,18 @@ class Datasette < Formula
 
   desc "Open source multi-tool for exploring and publishing data"
   homepage "https://docs.datasette.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/80/26/80b5480921d71891b8ff880fed6d44150b9164903d683efe2eb7405b61d8/datasette-0.65.2.tar.gz"
-  sha256 "be956fb2633b8380d7f818b5ddab40d5c7346d5e9d4d24e81c43b1fb60267432"
+  url "https://files.pythonhosted.org/packages/6b/02/d9cbfc8750f490450c0b493fd3790c633dc44587f8b049163913748b1031/datasette-0.65.3.tar.gz"
+  sha256 "ad283ea3c7f80423cb8ea5741fb9072878b40aedae3e3b63ab9856d92191582d"
   license "Apache-2.0"
-  revision 6
   head "https://github.com/simonw/datasette.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "b5f3b47291c142289d1c3a952e8406d7e3e939f5b35e64af57f71197b309ae99"
-    sha256 cellar: :any, arm64_sequoia: "fb190c9c03dcd27facbf25531aaf6a89577ed878ce498e17eafded96de5ff70e"
-    sha256 cellar: :any, arm64_sonoma:  "d097426635d23bb29176c5aedf3af8bddfdddc7de8ad94bb25c9ba608bab9a57"
-    sha256 cellar: :any, sonoma:        "414b80e17d6c3338696bc3422bdc057de65d65746f75f7573c2d956f30c52f3f"
-    sha256 cellar: :any, arm64_linux:   "2a4a147aad103564cd804bf26431b64fa14fcf50d795d71886fc4d665076087a"
-    sha256 cellar: :any, x86_64_linux:  "c580abbe7d99157fb89488a48c383f91f9f6eb48981bd869d92dde9033def88f"
+    sha256 cellar: :any, arm64_tahoe:   "8e2a84c940584a6674c8451058891ef1b435fe64d7b75b816e1ddb4fd36c84c4"
+    sha256 cellar: :any, arm64_sequoia: "61ff656f176e86fcecef6692066904ac8d3a0cef777d1d14b9258b4f2b9bb713"
+    sha256 cellar: :any, arm64_sonoma:  "6eee107a6095d63a6910d0f570e254a6929aa4f724626dd5e2cb6746e933a21d"
+    sha256 cellar: :any, sonoma:        "e952bd26c2bd63f09ff2b8420f1db6b8b4052835545a8c634b96658fe0ff943e"
+    sha256 cellar: :any, arm64_linux:   "c2e524683512e2022ee7e8688beaeeba13ea189565113aa1a28969c76f673fda"
+    sha256 cellar: :any, x86_64_linux:  "a9c024feda6de6c72f792d7dac6b914a5807ce85e16c6084b53bf43a4189124e"
   end
 
   depends_on "certifi" => :no_linkage
@@ -40,8 +39,8 @@ class Datasette < Formula
   end
 
   resource "asgiref" do
-    url "https://files.pythonhosted.org/packages/73/9b/e1cda73c1b8050ec258f94b426f769f7f1b0835bd9644cb6d561e2e320ca/asgiref-3.12.0.tar.gz"
-    sha256 "37ef86a30c3549f1a469c78c4521a63b8c31c17ee42cf792a2b054af81e23c79"
+    url "https://files.pythonhosted.org/packages/e6/26/3b59f2bdae5f640389becb1f673cded775287f5fc4f816309d9ca9a3f93d/asgiref-3.12.1.tar.gz"
+    sha256 "59dcb51c272ad209d59bed5708a64a333083e86017d7fcdd67498eeab7784340"
   end
 
   resource "click" do
@@ -115,8 +114,8 @@ class Datasette < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
-    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
+    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
+    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
   end
 
   resource "pluggy" do
@@ -145,8 +144,8 @@ class Datasette < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/a2/65/b7c6c443ccc58678c91e1e973bbe2a878591538655d6e1d47f24ba1c51f3/uvicorn-0.51.0.tar.gz"
-    sha256 "f6f4b69b657c312f516dd2d268ab9ae6f254b11e4bac504f37b2ab58b24dd0b0"
+    url "https://files.pythonhosted.org/packages/03/18/ccce41535dee1be77735592bd19965f3972c82e07ee703d324709496b716/uvicorn-0.52.1.tar.gz"
+    sha256 "112ec661814189acbccd3f7b86460147cc065fc92c0821afa78918780e4354dd"
   end
 
   def install

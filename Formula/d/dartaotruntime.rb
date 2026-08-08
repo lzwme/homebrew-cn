@@ -21,12 +21,15 @@ class Dartaotruntime < Formula
   end
 
   depends_on "ninja" => :build
-  depends_on xcode: :build # for xcodebuild
   depends_on "dart-sdk" => :test
 
   uses_from_macos "curl" => :build
   uses_from_macos "python" => :build
   uses_from_macos "xz" => :build
+
+  on_macos do
+    depends_on xcode: :build # for xcodebuild
+  end
 
   # always pull the latest commit from https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main
   resource "depot-tools" do

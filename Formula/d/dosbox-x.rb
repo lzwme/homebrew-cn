@@ -31,7 +31,6 @@ class DosboxX < Formula
   depends_on "automake" => :build
   depends_on "pkgconf" => :build
 
-  depends_on xcode: :build # For metal
   depends_on "fluid-synth"
   depends_on "freetype"
   depends_on "libpng"
@@ -42,6 +41,7 @@ class DosboxX < Formula
   uses_from_macos "ncurses"
 
   on_macos do
+    depends_on xcode: :build # For metal
     depends_on "gettext"
     depends_on "glib"
   end

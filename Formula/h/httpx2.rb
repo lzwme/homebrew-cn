@@ -6,9 +6,10 @@ class Httpx2 < Formula
   url "https://files.pythonhosted.org/packages/21/14/38128fbafd7e0ed41d874df6c9a653d47c2d111cfe59e2b4ac95161b4abd/httpx2-2.9.1.tar.gz"
   sha256 "1932a768737e3666291582833da748cc4e563c337cf96706fccc04fa6e58764a"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ca682f9c75e3e91101d620c9da4287e2b0feec0c58790e716159c66add87a17d"
+    sha256 cellar: :any_skip_relocation, all: "3a2f8dfa253e9bc5226dd15f392185b5037c5eab1078f8b6c722c6d60fe912c5"
   end
 
   depends_on "python@3.14"
@@ -31,8 +32,8 @@ class Httpx2 < Formula
   end
 
   resource "h2" do
-    url "https://files.pythonhosted.org/packages/30/d4/a7d6fb3f58be99d65cbf2d3f766896217a2921d0f3ab10711c45dc1519ee/h2-4.4.0.tar.gz"
-    sha256 "46b551bdcdc7e83cf5c04d0bf93badb8a939bd2287d9fee1abb23a445b9e0580"
+    url "https://files.pythonhosted.org/packages/e7/85/7c366e69d84c17bb778fe41419e1fbcce3033d5b7ce29bbffff0a98b859f/h2-4.4.1.tar.gz"
+    sha256 "4e866ffb1a869ae14dd9b5e6beb5c24a13da0495ad72b65925ded182521c1516"
   end
 
   resource "hpack" do

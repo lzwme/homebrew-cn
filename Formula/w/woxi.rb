@@ -1,26 +1,23 @@
 class Woxi < Formula
   desc "Interpreter for a subset of the Wolfram Language"
   homepage "https://github.com/ad-si/Woxi"
-  url "https://ghfast.top/https://github.com/ad-si/Woxi/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "49d24f0a497211494271ed5d442cb191cbac1d661105f0de510e31ccf41cff21"
+  url "https://ghfast.top/https://github.com/ad-si/Woxi/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "227a3712067071454658802d724ace2bee92572d9a371d456f51c480df9e93b6"
   license "AGPL-3.0-or-later"
   head "https://github.com/ad-si/Woxi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8e1b93e89a2a15720db227cd939deff6106ad127ea55359037c906dfb9120f2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da0621074d6955736702e6a96edd2dd18f5417a2313e47caf96477ddffc0487e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e62efd45631889eea0db1c61bcfc704184a94df9ecd7bc4549035084ed55cace"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5016f5e48a52c4c2c20eeee78cbb1e96272cc1b365aa1ddb74f8d34440b8ab08"
-    sha256 cellar: :any,                 arm64_linux:   "55ba14485d34524aa3ed6949c84279a1796319be6f03130ef7c3d21afd9d486d"
-    sha256 cellar: :any,                 x86_64_linux:  "e72a84101a97599bd136016d26d749dde38e85d398c76e57fe2374f02a78ac93"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "573efbee30cf59899d9c52ee0a27a4f2f5c0407a643228ca07803a49c39e2a10"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8bd65ccdf116b4becf2f524ea4ce61f72b3a9b5ba8164595330704ec12f03d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8090b35d77f00ccac550db8e2b0fc0671ab2c0e43d89be5c020e79ee19123e3b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "184d0f148115fa5ec0943b56b296355cd857b1cd8600965dfd8946adff560856"
+    sha256 cellar: :any,                 arm64_linux:   "072ac24bedd0444706576ed9c68fedf95f041aef3d2723afdf01c3b20a8d78a1"
+    sha256 cellar: :any,                 x86_64_linux:  "c9b35676a133464230a2e4d9162cd95413eab709b9da4446738719992547aab3"
   end
 
   depends_on "rust" => :build
 
   def install
-    # Linker config for the upstream nix dev shell; lld is not available.
-    rm ".cargo/config.toml"
-
     system "cargo", "install", "--bin", "woxi", *std_cargo_args
   end
 

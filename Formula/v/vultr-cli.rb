@@ -1,29 +1,18 @@
 class VultrCli < Formula
   desc "Command-line tool for Vultr services"
   homepage "https://github.com/vultr/vultr-cli"
+  url "https://ghfast.top/https://github.com/vultr/vultr-cli/archive/refs/tags/v3.11.0.tar.gz"
+  sha256 "e29be650393530c424ea301b6d39092d2daceaa8059a4096bcfa3bbd54828fe2"
   license "Apache-2.0"
   head "https://github.com/vultr/vultr-cli.git", branch: "master"
 
-  stable do
-    url "https://ghfast.top/https://github.com/vultr/vultr-cli/archive/refs/tags/v3.10.0.tar.gz"
-    sha256 "cc5caa50168e2dd94600e7cbb7449d1435fa6a656a641be98da483b3de871958"
-
-    # Backport better handling when config file is missing
-    patch do
-      url "https://github.com/vultr/vultr-cli/commit/6959db75adc8250eb6426f18b1a816a6dc1fd019.patch?full_index=1"
-      sha256 "fd94f9ad45d727b7ecf121f60261c3ba0a4dd0b2e4b4d78000a11d6b62e52ac6"
-      type :backport
-      resolves "https://github.com/vultr/vultr-cli/pull/595"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05de5162411d2b6962f55e3b874cf31758bbf4ccf932163b0c8a09c308a0db1b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05de5162411d2b6962f55e3b874cf31758bbf4ccf932163b0c8a09c308a0db1b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05de5162411d2b6962f55e3b874cf31758bbf4ccf932163b0c8a09c308a0db1b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bfbceb9b146d864cae633b2fa16bf019e23d3210f972e25585937374e6ea7cfb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d228108ed539a91757a8e0eca8841adf15b1a09e47c3c278439c4e06c44e9a9d"
-    sha256 cellar: :any,                 x86_64_linux:  "2eedb95f977caa54cc72a1c0b558cce2e97af544bd870b9e6993a82417f63116"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b3ca4acd19f2d797ec6a2133a3465c8fb214d2fc15e2510171affb6463c23916"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3ca4acd19f2d797ec6a2133a3465c8fb214d2fc15e2510171affb6463c23916"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3ca4acd19f2d797ec6a2133a3465c8fb214d2fc15e2510171affb6463c23916"
+    sha256 cellar: :any_skip_relocation, sonoma:        "efddbb66525c893ec92f14b7d7d4d450838bc1b552cb0cd3b162575c56831b6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f427f82cf22daa0545849080fb82955b3a893911cba9bae8d965982d20aa5d48"
+    sha256 cellar: :any,                 x86_64_linux:  "31435d83d3d4d71f45fa29b00d4cabfb213718a2e2471597836dde275e3b6677"
   end
 
   depends_on "go" => :build

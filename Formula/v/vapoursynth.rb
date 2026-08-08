@@ -3,8 +3,8 @@ class Vapoursynth < Formula
 
   desc "Video processing framework with simplicity in mind"
   homepage "https://www.vapoursynth.com"
-  url "https://ghfast.top/https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R77.tar.gz"
-  sha256 "f71653355983fc245ef811a64d2b8f5b0ba131c0bb330b3346d435e1926187e2"
+  url "https://ghfast.top/https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R79.tar.gz"
+  sha256 "cb7ea3c75431176f8ce1f466e1c1fff7ffdacdd2d397be8fabc2d467194ab5a6"
   license "LGPL-2.1-or-later"
   compatibility_version 2
   head "https://github.com/vapoursynth/vapoursynth.git", branch: "master"
@@ -15,12 +15,12 @@ class Vapoursynth < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5b81e80111c8a1f9db2bb554bbdcad5b9c959f763299890c164d837bdb0570ec"
-    sha256 cellar: :any, arm64_sequoia: "49643008017052b21d32126fd2e6f7726bf7d2a793780d14f0b3a9df979d8ebc"
-    sha256 cellar: :any, arm64_sonoma:  "7dad3b4db3d271d81010899df86455ee3b2f06093862e2ae0c555c49b70c4531"
-    sha256 cellar: :any, sonoma:        "6f97e77cc99a99e96c29dd95662da134b5026a32893ff43ab9246c59e5625294"
-    sha256 cellar: :any, arm64_linux:   "a354a21e2ce64835e1ff6198e992476392894b8238e0bbd13237b9f3bfd0c477"
-    sha256 cellar: :any, x86_64_linux:  "7a2a6713edee201c9edab54ad74f0201d347b8416ee6212332d62866086dbdda"
+    sha256 cellar: :any, arm64_tahoe:   "4a74df828d1dbfbb036170789853847e815808084ed80b3c641776894aea9b30"
+    sha256 cellar: :any, arm64_sequoia: "37c338abbc05491cc546072ad6fed9e543279cc7fcf479313d7b8741d608e778"
+    sha256 cellar: :any, arm64_sonoma:  "6f3eb841d54fb3687600cbe09173c53b0f2f4edaebed857dd47e52e4bb165a09"
+    sha256 cellar: :any, sonoma:        "b4dab5eb844e81205b9cc2e9b396df60b1dd9a8daade3bb8a763c618346d359a"
+    sha256 cellar: :any, arm64_linux:   "7b2672f17cf2e55edcf0cc0d6b838e3da77335d4f2b843f0f93a38bd2604c841"
+    sha256 cellar: :any, x86_64_linux:  "4740fe802611934836a14859785d0ce2a9934f441aff58cf6acdf02d5f1a139e"
   end
 
   depends_on "ninja" => :build

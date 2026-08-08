@@ -1,8 +1,8 @@
 class Infracost < Formula
   desc "Cost estimates for Terraform, Terragrunt, and CloudFormation"
   homepage "https://www.infracost.io/docs/"
-  url "https://ghfast.top/https://github.com/infracost/cli/archive/refs/tags/v2.15.0.tar.gz"
-  sha256 "272c68167e67728dca07dd7e14bc5c06824f3bd47caed854138a0a72fe7fca32"
+  url "https://ghfast.top/https://github.com/infracost/cli/archive/refs/tags/v2.16.1.tar.gz"
+  sha256 "fdedd023a976805497fa10082dfb6c902e8ec8a10980a376eb048008b38aa250"
   license "Apache-2.0"
   head "https://github.com/infracost/cli.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Infracost < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7769dc79e0efc44a7f49477d71143bf4027b210d99761b0c057e3276d29f7eb9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7769dc79e0efc44a7f49477d71143bf4027b210d99761b0c057e3276d29f7eb9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7769dc79e0efc44a7f49477d71143bf4027b210d99761b0c057e3276d29f7eb9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e7be295793d590d9995ad310a50e3c7ef8e31a91473d98f2ccd61e98a4e981d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "024cbb0064364d6f25d392e011d4cc94078cfce6e067fce3dfa1d15c03fd0a9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42d5158193bbbe1c8d6b804cebb7fb682cf001027324d0e00aa2a72f3724559f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8c731d154126a3a288c41259740efab8b523900b7ff3715adab2fbc7f3c61be5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c731d154126a3a288c41259740efab8b523900b7ff3715adab2fbc7f3c61be5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c731d154126a3a288c41259740efab8b523900b7ff3715adab2fbc7f3c61be5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "333f43c1bb1863468960528cc67322d4b6559aae25bd2c965763fe07bbfdc817"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5fcf08a89dc80dd5f3638ad3c98cdcf28978faf297c25e2f7b8d29609dd672a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84015ea6665badf5e46c55d6b05cc17666009a2c7f577904306f2c1fb7b05df0"
   end
 
   depends_on "go" => :build

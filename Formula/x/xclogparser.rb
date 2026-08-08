@@ -14,9 +14,11 @@ class Xclogparser < Formula
     sha256                               x86_64_linux:  "0670849f06a3fbdcc3ac6bcadd760ee43e9319e1d71aa9e15a102d83cb3ffba7"
   end
 
-  depends_on xcode: "13.0"
-
   uses_from_macos "swift"
+
+  on_macos do
+    depends_on xcode: "13.0"
+  end
 
   on_linux do
     depends_on "zlib-ng-compat"

@@ -1,17 +1,17 @@
 class PlaywrightCli < Formula
   desc "CLI for Playwright: record/generate code, inspect selectors, take screenshots"
   homepage "https://playwright.dev"
-  url "https://registry.npmjs.org/@playwright/cli/-/cli-0.1.17.tgz"
-  sha256 "1e00bf493d491231f7e106863b762d25c05cb30d9738059e68ad3252d28422a0"
+  url "https://registry.npmjs.org/@playwright/cli/-/cli-0.1.18.tgz"
+  sha256 "d847190000e3a3328a17ab71a52ccac8062fb2525c0f0c78b789aff1cc9ab37c"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e48239472a9c99e44b2f21053a3ef534e62b6562da300e4070540e383ee02a10"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0e928c6950230b4672b0fcf1ca0a1d3d3ebe9d059cda6e861ab252b4caf1f44"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0e928c6950230b4672b0fcf1ca0a1d3d3ebe9d059cda6e861ab252b4caf1f44"
-    sha256 cellar: :any_skip_relocation, sonoma:        "793db36f27c8d62f949da478dcf4da0d36892aa8308e47e212d575d7126b4128"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf62662ed4774f4196ba1da34ab192ec8e742ac928b05076f981b1b86b8b5e3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf62662ed4774f4196ba1da34ab192ec8e742ac928b05076f981b1b86b8b5e3f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "99f69f0be29a043f05338b6e5da2b1fb94c49b83f12781a7af0f44e1a6db8ca8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99f69f0be29a043f05338b6e5da2b1fb94c49b83f12781a7af0f44e1a6db8ca8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99f69f0be29a043f05338b6e5da2b1fb94c49b83f12781a7af0f44e1a6db8ca8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "461c2fc73bd39557b263ef73e03ddce76639295656eaa19ead957124daf4b0bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b17758e4add247ab7b9796d0796d5fa03429dfe11bf3d59144f77646ddce18d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b17758e4add247ab7b9796d0796d5fa03429dfe11bf3d59144f77646ddce18d"
   end
 
   depends_on "node"

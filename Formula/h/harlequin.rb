@@ -3,20 +3,20 @@ class Harlequin < Formula
 
   desc "Easy, fast, and beautiful database client for the terminal"
   homepage "https://harlequin.sh"
-  url "https://files.pythonhosted.org/packages/e2/ba/9528b03b851ee60e9291ee88c31e11fda033f62a8db8a1c8c8d0220ff089/harlequin-2.6.0.tar.gz"
-  sha256 "4123ea346b93b62587997d431f016b871d32056011544d439aa2add2e903f563"
+  url "https://files.pythonhosted.org/packages/3d/65/9fd3c136a149f8d16f7d63a3d946ddd51ac6d1126903d7e1b808132bf221/harlequin-2.8.0.tar.gz"
+  sha256 "6283cdf2394fe063ebcd663a4de6400e83807029d17720be9fbf08831cc0dd97"
   license "MIT"
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a896a9f2b23102eb27a9e998646b3379ebeb8c92028412a337ec0d9b4d2e014f"
-    sha256 cellar: :any, arm64_sequoia: "8fdfc1219c1732ed44530375fff0fe043d5b4c34e7c7bff22d192eca5d9f95d4"
-    sha256 cellar: :any, arm64_sonoma:  "8366866f5342fa349c035f1f45abc8e0b630478973824def37dfa77a72716aa4"
-    sha256 cellar: :any, sonoma:        "77481a664b4ace9f6b92d6744d218ec97b15216ae28aaa07c3132fc17cfe75f0"
-    sha256               arm64_linux:   "f8d620921aee091d3339e7c492216a8777568b282a340c3a4e630e573bdc11a0"
-    sha256               x86_64_linux:  "c65bce5bf20f5897cd7c896c9406a0674268a5fe2e8212512d64e87d4b6df363"
+    sha256 cellar: :any, arm64_tahoe:   "25ea84e11106f51a439676441ce6c2e285ebb6406ef910933fdac09019374155"
+    sha256 cellar: :any, arm64_sequoia: "b7d94b5030d0159f27dfcccdf0fef97a364e6451ac73e6ac31fab19fe5a31385"
+    sha256 cellar: :any, arm64_sonoma:  "4edcfcdf24020209c6a88e684c7d8e6f94b79e7beaffa2849fc5044fba2f5b66"
+    sha256 cellar: :any, sonoma:        "bd8ee906308faf7f77d38ff26a7f7b033af23bfef14f4564bd9cdae24d5a1a06"
+    sha256               arm64_linux:   "67c177fce5dfe6d26f184b1521e04ea993d87dedb0fd06d90f1d6a4588c00a4e"
+    sha256               x86_64_linux:  "53d9e860407680c694427a77160e1098a22de4f5947d23cb0c29e79743ecacff"
   end
 
   depends_on "cmake" => :build
@@ -38,8 +38,8 @@ class Harlequin < Formula
                 extra_packages:   "psycopg-c"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
+    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
   end
 
   resource "duckdb" do
@@ -48,8 +48,8 @@ class Harlequin < Formula
   end
 
   resource "harlequin-mysql" do
-    url "https://files.pythonhosted.org/packages/5a/66/15e9df6a4c99bbb887869e5b01d02ee5a8d5811239573c975a267fbd2fd3/harlequin_mysql-1.3.0.tar.gz"
-    sha256 "98840b0e03be1c16ea62c5bbae2e8b87cd16b25a7913c7239aee3a1c06143131"
+    url "https://files.pythonhosted.org/packages/6c/5c/5cd7920799ebd0af14ffd2d85c016ffdc492786bb9b242c8e0b2a71bd60d/harlequin_mysql-1.3.1.tar.gz"
+    sha256 "ec06c030888bb6e420448a96c83d9a8f7f7c1714c197ed2b9656fd1355e76dd0"
   end
 
   resource "harlequin-odbc" do
@@ -98,16 +98,8 @@ class Harlequin < Formula
   end
 
   resource "pandas" do
-    url "https://files.pythonhosted.org/packages/33/01/d40b85317f86cf08d853a4f495195c73815fdf205eef3993821720274518/pandas-2.3.3.tar.gz"
-    sha256 "e05e1af93b977f7eafa636d043f9f94c7ee3ac81af99c13508215942e64c993b"
-
-    # Workaround for meson 1.11+, deps type error
-    patch do
-      url "https://github.com/pandas-dev/pandas/commit/0e978b68ba68e0f3b1f8b9f6b5a38072948638f0.patch?full_index=1"
-      sha256 "6d182353395464070bf683048dd3b7e79e11f66b4f38e053d2c49d1d060cbb99"
-      type :backport
-      resolves "https://github.com/pandas-dev/pandas/pull/63406"
-    end
+    url "https://files.pythonhosted.org/packages/be/4f/5f3422a2afec5ffc46308b79e53291365a93748b498ac2e58bead0197916/pandas-3.0.5.tar.gz"
+    sha256 "dca3734d6ab7c906e6730f0788b0a1dbb9f2467731f9711f77995c8e9d62d712"
   end
 
   resource "platformdirs" do
@@ -160,11 +152,6 @@ class Harlequin < Formula
     sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
   end
 
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/fb/48/fb042503b6ca6cd271261dc559fd6432f7d8c713153e9ec5c591af4dfc1c/pytz-2026.3.post1.tar.gz"
-    sha256 "2211d3fcf9a797d3405cac96ac7f61d80e6a644f72a3309607282fe8a2010c5d"
-  end
-
   resource "questionary" do
     url "https://files.pythonhosted.org/packages/84/d0/d73525aeba800df7030ac187d09c59dc40df1c878b4fab8669bdc805535d/questionary-2.0.1.tar.gz"
     sha256 "bcce898bf3dbb446ff62830c86c5c6fb9a22a54146f0f5597d3da43b10d8fc8b"
@@ -176,8 +163,8 @@ class Harlequin < Formula
   end
 
   resource "rich-click" do
-    url "https://files.pythonhosted.org/packages/9a/31/103501e85e885e3e202c087fa612cfe450693210372766552ce1ab5b57b9/rich_click-1.8.5.tar.gz"
-    sha256 "a3eebe81da1c9da3c32f3810017c79bd687ff1b3fa35bfc9d8a3338797f1d1a1"
+    url "https://files.pythonhosted.org/packages/f7/ea/21e4867ea0ef881ffd4c0550fc21a061435e50d6324bcd034396633cbc18/rich_click-1.9.8.tar.gz"
+    sha256 "4008f921da88b5d91646c134ec881c1500e5a6b3f093e90e8f29400e09608371"
   end
 
   resource "shandy-sqlfmt" do
@@ -191,18 +178,18 @@ class Harlequin < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/23/6c/565521dc6dd00fa857845483ae0c070575fda1f9a56d92d732554fecfea4/textual-6.4.0.tar.gz"
-    sha256 "f40df9165a001c10249698d532f2f5a71708b70f0e4ef3fce081a9dd93ffeaaa"
+    url "https://files.pythonhosted.org/packages/00/21/39a76b01bd5eea82a04baaca7580e105d8c59450df03998345bb2cfb307b/textual-8.2.8.tar.gz"
+    sha256 "3f106a9fbc73e39dd266c9712432087de78a6d644084c7c241d6a25c3169115b"
   end
 
   resource "textual-fastdatatable" do
-    url "https://files.pythonhosted.org/packages/1e/ec/8cc2204560200dcc80abc432a61eb6f99672049aecfd0860472cfc3f82fe/textual_fastdatatable-0.14.0.tar.gz"
-    sha256 "cb99e208fb96c7eb5cfb7f225a280da950bd8cfb29d685a49071787c80218901"
+    url "https://files.pythonhosted.org/packages/c4/78/f03f3a2ef4f47b1e2d1143b5ab04964bb08619854bc1fab793db8623aa71/textual_fastdatatable-0.16.0.tar.gz"
+    sha256 "9d91f6d257bde25e244379d03b3fbcc92edafcfae983d8270ad34b0f344f1d97"
   end
 
   resource "textual-textarea" do
-    url "https://files.pythonhosted.org/packages/d1/9e/1aa70bab939cac85442cbfe3ef94383329b6cbe2535223940f6846252582/textual_textarea-0.17.2.tar.gz"
-    sha256 "84bb2bfe545db70071914802e808dc411c16c21e7744adbcfc381f1390dd2c6b"
+    url "https://files.pythonhosted.org/packages/5b/e4/aa225ac619c07149b18864a240fd8cc6a710e8ffc01028bafa0059ace893/textual_textarea-0.18.1.tar.gz"
+    sha256 "9db53da7659883cd905e66eabae11943c5b2e3a7530873ff85ee35d4bc3d928d"
   end
 
   resource "tomlkit" do
@@ -300,11 +287,6 @@ class Harlequin < Formula
     sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
-  resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/92/ff/5a28bdfd8c3ebec42564ac7d0e54ca3db65044a9314a97f9564fa7a1e926/tzdata-2026.3.tar.gz"
-    sha256 "4a1518b8993086a7982523e071643f3c0e5f213e75b21318e78bcabfff9d1415"
-  end
-
   resource "uc-micro-py" do
     url "https://files.pythonhosted.org/packages/78/67/9a363818028526e2d4579334460df777115bdec1bb77c08f9db88f6389f2/uc_micro_py-2.0.0.tar.gz"
     sha256 "c53691e495c8db60e16ffc4861a35469b0ba0821fe409a8a7a0a71864d33a811"
@@ -321,7 +303,7 @@ class Harlequin < Formula
   end
 
   test do
-    output = shell_output("#{bin}/harlequin --profile none", 2)
+    output = shell_output("#{bin}/harlequin --profile none 2>&1", 2)
     assert_match "Harlequin couldn't load your profile", output
 
     assert_match version.to_s, shell_output("#{bin}/harlequin --version")

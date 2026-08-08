@@ -1,8 +1,8 @@
 class Ocp < Formula
   desc "UNIX port of the Open Cubic Player"
   homepage "https://stian.cubic.org/project-ocp.php"
-  url "https://stian.cubic.org/ocp/ocp-3.3.1.tar.xz"
-  sha256 "924c07f53d45e2bda3e9a4c404ff520dfa49ffed7718ebe6f1d352479bca9ad3"
+  url "https://stian.cubic.org/ocp/ocp-3.4.1.tar.xz"
+  sha256 "dfa4f63eb67536373c7eb1e8cd8b71d78b871d9d41a96e6bb1e4c131144c23f7"
   license "GPL-2.0-or-later"
   head "https://github.com/mywave82/opencubicplayer.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Ocp < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "425581f0286925a8dd284435cf64a6f58de1cc70d68925634dfdf26007d74c3b"
-    sha256 arm64_sequoia: "174a49cea9b579bb1e5f84590fadeb644b9c1d188158d244b603a9dd97fd18c5"
-    sha256 arm64_sonoma:  "7efda933b50036b71ada2ef5dcbbac1fe3d8f71d2af070b2fbeec8611bb9f695"
-    sha256 sonoma:        "25ac3da1aa03447608c1b6daa75bd30f9870cb90cf3a81a517495090a8ddacc9"
-    sha256 arm64_linux:   "45abf429ba52975346f5956a6d575b70594c98ad02c2a6c34ed97309e8d18695"
-    sha256 x86_64_linux:  "b2b5b971a9489b9c584a8996a442754a81159cf772d3c7f683f5060d303df9a9"
+    sha256 arm64_tahoe:   "366b1fbb57f6941fbd5d5ada922489c02cbec5e7547162dc04963f587718014b"
+    sha256 arm64_sequoia: "b7798be42d1077853a828d60828a10c1b51f1463b0ff592cf9aef2419dd9a76e"
+    sha256 arm64_sonoma:  "1676c20721c3721d21ee3da31e8c2d5c80de5ef2983e5173e1e7017ba5a9f959"
+    sha256 sonoma:        "a14d290f7b7db175310f61f07551d32e212da9f8e3b7b7941a20727c8308ba99"
+    sha256 arm64_linux:   "13f6f092d454efddd68813da1d4876366d788441130985507b11e7ec04548f1d"
+    sha256 x86_64_linux:  "fbf4a6e4d780a134cc66647e87d205622a1b0333dee7c427082c08cf346d6e83"
   end
 
   depends_on "pkgconf" => :build
@@ -48,10 +48,14 @@ class Ocp < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # https://github.com/mywave82/opencubicplayer/blob/master/mingw/versionsconf.sh#L20
   resource "unifont" do
-    url "https://ftpmirror.gnu.org/gnu/unifont/unifont-17.0.04/unifont-17.0.04.tar.gz"
-    sha256 "5c52c5d56ef98089ddbca62e68560ceccc57ea88940b9d38cc3c888fe3b59a34"
+    url "https://ftpmirror.gnu.org/gnu/unifont/unifont-17.0.05/unifont-17.0.05.tar.gz"
+    sha256 "f287cffb26e22723aa36e6684869b0f3ff3bfb822c4b01008bd847911ec1b631"
+
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/mywave82/opencubicplayer/refs/heads/master/mingw/versionsconf.sh"
+      regex(/^UNIFONT_VERSION="(\d+(?:\.\d+)+)"$/i)
+    end
   end
 
   def install

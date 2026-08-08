@@ -1,8 +1,8 @@
 class JfrogCli < Formula
   desc "Command-line interface for JFrog products"
   homepage "https://docs.jfrog.com/integrations/docs/jfrog-cli"
-  url "https://ghfast.top/https://github.com/jfrog/jfrog-cli/archive/refs/tags/v2.118.0.tar.gz"
-  sha256 "c29dd05a4714c10a36e9e6ea394235ebcad774c2eab4bb39565ff10716ecd0e9"
+  url "https://ghfast.top/https://github.com/jfrog/jfrog-cli/archive/refs/tags/v2.119.0.tar.gz"
+  sha256 "1344710d74c4b699dd1336714e859e7c130574f27a7f1c483ddb7afeb46abe54"
   license "Apache-2.0"
   head "https://github.com/jfrog/jfrog-cli.git", branch: "master"
 
@@ -15,12 +15,12 @@ class JfrogCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18bbf02c949a0fccef1f83216dc68c6818c5808340ec5846a3c421f98d012296"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18bbf02c949a0fccef1f83216dc68c6818c5808340ec5846a3c421f98d012296"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18bbf02c949a0fccef1f83216dc68c6818c5808340ec5846a3c421f98d012296"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d7ff2033f2e45ba697e33ac42e96fc66c278e119c004ce6cda9def5d61d896af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "189a825c18d0662280c552d9b5387265c9891277c03dd18705069cb6b15d1665"
-    sha256 cellar: :any,                 x86_64_linux:  "d0b3cebc650e87373900d71be975b1bbee07264d352ebd3a702d755bd4898918"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3471077f2d265bc8c5ecacce48cc6bfcaf441badc5cf3c6ed9eb6f90dd48bc3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3471077f2d265bc8c5ecacce48cc6bfcaf441badc5cf3c6ed9eb6f90dd48bc3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3471077f2d265bc8c5ecacce48cc6bfcaf441badc5cf3c6ed9eb6f90dd48bc3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "830381db32e820f3410d7d7504ba4878fdb18e2a0093bbfd8e506b5821d07c1b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "580db952886c3ea7224972688b2bfdbf082ffd86f5dce5e67ab75a053a3fb378"
+    sha256 cellar: :any,                 x86_64_linux:  "082566167718591a898d345a894e81d93ebf4f2151a37adf0e1bf9217751144c"
   end
 
   depends_on "go" => :build

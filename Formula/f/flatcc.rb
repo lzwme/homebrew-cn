@@ -7,12 +7,13 @@ class Flatcc < Formula
   head "https://github.com/dvidelabs/flatcc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ca4b282b361e7e83dfc88b5ee171ad03108e6e56bd29ca56609790bce3d1b64"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eaa7ad0bef136311b272ae6905a750553359e699941cc7e3a7b87b992161b7bf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0544b7c9c23d84c61e03b999f20f54d09706b0a9a8bbf53a504b1ae28398e03"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8039d11f24f3e5afa9033e69970fa0e79d6a9752a586a0fc9cb2c1635410daf3"
-    sha256 cellar: :any,                 arm64_linux:   "765763665c7b8dfc11e858300026d66560aa503bd8b52989ed838c73d67c5637"
-    sha256 cellar: :any,                 x86_64_linux:  "cfa63cbb106d0c0d0498414dd1470a4d375cfaacf09f5021d94ba662572240ed"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "04812aec2e32f6231fe8ab2d364fd6d5ba278f589f75fd81dba66d28f05ae012"
+    sha256 cellar: :any, arm64_sequoia: "9f012f3973ad5b0c9ea006dd16e36346073b8a2fdc9129100806533f706e10d3"
+    sha256 cellar: :any, arm64_sonoma:  "6ae664eb8de821447bb69f380d0614fc67d13fd90f6ab852280900bac0df1ebd"
+    sha256 cellar: :any, sonoma:        "dd197eb907f67c941f6651adeffd333bba7185b72f6efe257463c746436840c2"
+    sha256 cellar: :any, arm64_linux:   "09c8f2c18b012718bf8df6fa2137405aadc7c8d325eb55b6ac073f3276cdfdf2"
+    sha256 cellar: :any, x86_64_linux:  "a07bc9305668ce062ae98478c41b3ec31cb4e2558ec118fe2ef34c228e545c3b"
   end
 
   depends_on "cmake" => :build
@@ -21,6 +22,8 @@ class Flatcc < Formula
     args = %W[
       -DFLATCC_INSTALL=ON
       -DFLATCC_INSTALL_LIB=#{lib}
+      -DBUILD_SHARED_LIBS=ON
+      -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
     # Workaround to build with CMake 4
     args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"

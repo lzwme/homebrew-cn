@@ -16,11 +16,13 @@ class Periphery < Formula
   # We need the CLT installed for libIndexStore.dylib.
   pour_bottle? only_if: :clt_installed
 
-  depends_on xcode: ["16.4", :build]
-
   uses_from_macos "curl"
   uses_from_macos "libxml2"
   uses_from_macos "swift"
+
+  on_macos do
+    depends_on xcode: ["16.4", :build]
+  end
 
   def clt_lib_directory
     on_macos do
