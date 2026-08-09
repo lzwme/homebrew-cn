@@ -24,10 +24,13 @@ class SwiftProtobuf < Formula
     sha256 cellar: :any,                 x86_64_linux:  "a17c7080d57615cc7ec58cf2c327b21978600e666f2bd5e46b7d730f171140d8"
   end
 
-  depends_on xcode: ["15.3", :build]
   depends_on "protobuf"
 
   uses_from_macos "swift" => :build, since: :tahoe # swift 6.2+
+
+  on_macos do
+    depends_on xcode: ["15.3", :build]
+  end
 
   def install
     args = if OS.mac?

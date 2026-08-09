@@ -34,7 +34,6 @@ class Qtbase < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "vulkan-headers" => [:build, :test]
-  depends_on xcode: :build
 
   depends_on "brotli"
   depends_on "dbus"
@@ -57,6 +56,7 @@ class Qtbase < Formula
 
   on_macos do
     depends_on "molten-vk" => :build
+    depends_on xcode: :build
   end
 
   on_linux do

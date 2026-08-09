@@ -15,10 +15,12 @@ class Swiftdraw < Formula
     sha256 cellar: :any,                 x86_64_linux:  "d164245b4a6fd50222425868be2d7943ecec4e0ffbb8794b6cda3f1dc1aca9b0"
   end
 
-  depends_on xcode: ["16.0", :build]
-
   uses_from_macos "swift" => :build
   uses_from_macos "libxml2"
+
+  on_macos do
+    depends_on xcode: ["16.0", :build]
+  end
 
   def install
     args = if OS.mac?

@@ -1,19 +1,19 @@
 class Libmicrohttpd < Formula
   desc "Light HTTP/1.1 server library"
   homepage "https://www.gnu.org/software/libmicrohttpd/"
-  url "https://ftpmirror.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.9.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.9.tar.gz"
-  sha256 "6e9adc446b08083ec03d40317fb66ca6f2e03e4f6170aef33a6e59bb08db2012"
+  url "https://ftpmirror.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.10.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.10.tar.gz"
+  sha256 "04bfe8ef75db7d629a33de767599765cecadc56274a39822d5d081030d577685"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "daba465c179c4b389905fc3acf1eaea165e6067c4fb2a46a8616cbb82eb6658e"
-    sha256 cellar: :any, arm64_sequoia: "01880f8e245bc13341be25d7640bbd7d535421891008d20c3a887023b1f14cf1"
-    sha256 cellar: :any, arm64_sonoma:  "1b3ab38b486ee8ded2bc484a0bbee8dfc8d680885db7c825979e9e60399df356"
-    sha256 cellar: :any, sonoma:        "681d4febe75be4b699816583f78e212fd1e9e9ee0ba6f08e3dff89e101dd4719"
-    sha256 cellar: :any, arm64_linux:   "73ce1081963902650f614b1b753a27e6014b94c11076107ebfdae0565b316281"
-    sha256 cellar: :any, x86_64_linux:  "80c1e3d6e01e1954f6a70750ea5a44e382f4ed433b6f1429bc4ed2d24e61deda"
+    sha256 cellar: :any, arm64_tahoe:   "4092f5f284ac8a4dfa7c39997599a51b69a195ad54f778dad979f21cd3ac8564"
+    sha256 cellar: :any, arm64_sequoia: "6a0394a2fc518aeb47f03be4db534c0413958334cc2602358e67d14266a2ea5f"
+    sha256 cellar: :any, arm64_sonoma:  "0786434799f38b2bf7464adc50a53841f988feefbbe7858dfea52acacc5d2aa2"
+    sha256 cellar: :any, sonoma:        "cc9f4f8b05f6988ac8e4579ca49ce166be06ac745be24ba96bceb69855f62451"
+    sha256 cellar: :any, arm64_linux:   "ac1381dd54534827a3aebeafebbab0c956a73ada7c63c8f289aa96835951a874"
+    sha256 cellar: :any, x86_64_linux:  "bf92971a8cb2ed708df379f5c35d7c4ea5fb8fd137cbcdf24c475ca816bd2db2"
   end
 
   depends_on "pkgconf" => :build

@@ -6,15 +6,16 @@ class Jiratui < Formula
   url "https://files.pythonhosted.org/packages/79/eb/288a867b43b1f1ce167601fc3c231bd20978b6426b00f72f4377c2cf91f9/jiratui-1.12.0.tar.gz"
   sha256 "9c5ea350be556f97bc1b31c2f66a21df7e7f19937c44013c9c534ab259c49ebb"
   license "MIT"
+  revision 1
   head "https://github.com/whyisdifficult/jiratui.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "16da10374b8786f9d3dd40bb65178f88085b3234bde9b1160f688fdfbee3a044"
-    sha256 cellar: :any, arm64_sequoia: "32f9732b8c3dbbbf405fdcfce63980b0a21981c3df52623a91fc47ca2f7b3ecf"
-    sha256 cellar: :any, arm64_sonoma:  "c515cac464197a7cf7a704c41f6b4e76c2a6ee1656c6ec9f2516ef03850a2d68"
-    sha256 cellar: :any, sonoma:        "8c2f828e5177a203cec7865c5af44e60244004e60cfc2cff7712723511b9aa66"
-    sha256 cellar: :any, arm64_linux:   "3aab2efdf7f375741ea745c0a9440ddb29e72dac98453d8b8bd23b4832651652"
-    sha256 cellar: :any, x86_64_linux:  "0fd9fd23fecca1bdff97717869790d71ffc83ec1f8fee95b07af0b0def94b4de"
+    sha256 cellar: :any, arm64_tahoe:   "73c6f03686aa61dbd860b368c841f728b18616c3b2064ea3d526444e362e3f28"
+    sha256 cellar: :any, arm64_sequoia: "e3abefd74edfe96b2a5c40b5880af65d4d67354040e688a06d296d6cd7966b08"
+    sha256 cellar: :any, arm64_sonoma:  "db71e1caeca0cec6603f58f300bc86415eb685f563b0928c881391adb931dd1d"
+    sha256 cellar: :any, sonoma:        "a3b31474be5404ecf96be86972a0bb5ead69df6b5abca216682a5e28dc7ccb21"
+    sha256 cellar: :any, arm64_linux:   "7b0947fb9635d62b464bf0f2172d7f797645bdc083637291a8d74a00bbf1053e"
+    sha256 cellar: :any, x86_64_linux:  "a8ebabc63389ad6ddb196d790f30133ad400e5140381b4c69d31662a7804b0a8"
   end
 
   depends_on "rust" => :build
@@ -55,8 +56,8 @@ class Jiratui < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
-    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
+    url "https://files.pythonhosted.org/packages/26/d6/5f358ff283325580c2003a6d953aea18cfe10ae87b46f5ebc80fa3a386dc/gitpython-3.1.58.tar.gz"
+    sha256 "621416df10ef3fd0e19fabf9172ddeed0fa704d353d04f194eec56a625a95b22"
   end
 
   resource "h11" do

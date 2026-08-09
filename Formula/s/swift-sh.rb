@@ -18,9 +18,11 @@ class SwiftSh < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "71745bc8b439b6b0f689f0f00a2973060c1962e7591f8bc65ccd82b61de8fd76"
   end
 
-  depends_on xcode: ["11.0", :build]
-
   uses_from_macos "swift" => :build
+
+  on_macos do
+    depends_on xcode: ["11.0", :build]
+  end
 
   def install
     args = if OS.mac?

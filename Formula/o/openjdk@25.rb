@@ -27,7 +27,6 @@ class OpenjdkAT25 < Formula
 
   depends_on "autoconf" => :build
   depends_on "pkgconf" => :build
-  depends_on xcode: :build # for metal
   depends_on "freetype"
   depends_on "giflib"
   depends_on "harfbuzz"
@@ -38,6 +37,10 @@ class OpenjdkAT25 < Formula
   uses_from_macos "unzip" => :build
   uses_from_macos "zip" => :build
   uses_from_macos "cups" => :no_linkage
+
+  on_macos do
+    depends_on xcode: :build # for metal
+  end
 
   on_linux do
     depends_on "libxt" => :build

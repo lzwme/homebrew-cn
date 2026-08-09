@@ -6,16 +6,16 @@ class Tach < Formula
   url "https://files.pythonhosted.org/packages/81/54/8bae607899ba9fd7abd9895215f2e5dc789a73529f8afeb0a10d2ee71500/tach-0.35.0.tar.gz"
   sha256 "db8594820685f8ce316ef45d4dfa1a8ed39ce97dd873aa5006800d2668c3b3bb"
   license "MIT"
-  revision 3
+  revision 4
   head "https://github.com/tach-org/tach.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "6b23752251846d1dd81a3f585aec7d70ae08296533278e5de9e7cfaf369dfcd9"
-    sha256 cellar: :any, arm64_sequoia: "d61b7471608b4a122feaafa0972297c8f61c316c796cf7ae4cf973d33a07e0b4"
-    sha256 cellar: :any, arm64_sonoma:  "447994e24d05c9ac4234fd75477366f25a1873d63cb2c4dbbf640d7573eba43b"
-    sha256 cellar: :any, sonoma:        "312adc181bc740935359acac344ea84db2acb278eb7b628675e0a64fc8eb418d"
-    sha256 cellar: :any, arm64_linux:   "517115e690bca896fd44481cb4acb2a8113c0f4b8f84e7ab543d829de8f5d36d"
-    sha256 cellar: :any, x86_64_linux:  "373d92b32be7cd3a788f8c787bd18aa4ab86e1c44a496e62a5793fd2d1b21bc5"
+    sha256 cellar: :any, arm64_tahoe:   "6937faee8f944ca9a711fd52848e697c3b160035868d061946f55d0377301612"
+    sha256 cellar: :any, arm64_sequoia: "a0b10b28ca0ccccf8187932b2937d8f852823dbbfe3940196bd5fc3b28bffa0c"
+    sha256 cellar: :any, arm64_sonoma:  "cd3bcbb4b7c129ee000526b417c857bc47611cf8ef7c641c48839e9efae238db"
+    sha256 cellar: :any, sonoma:        "a741d1035dc14d426b944e2fd903974a8ca4e974ea55c291b81fa9f3e314cbf5"
+    sha256 cellar: :any, arm64_linux:   "07177b1b4d842fcd684a1a57934226fe225ac368bdc17cefa9c998dcbc997d0a"
+    sha256 cellar: :any, x86_64_linux:  "3ee05f0139c414228f91ea9920e025c5d3bbd6b335d447c18a5906f6559d3e88"
   end
 
   depends_on "rust" => :build
@@ -28,8 +28,8 @@ class Tach < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
-    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
+    url "https://files.pythonhosted.org/packages/26/d6/5f358ff283325580c2003a6d953aea18cfe10ae87b46f5ebc80fa3a386dc/gitpython-3.1.58.tar.gz"
+    sha256 "621416df10ef3fd0e19fabf9172ddeed0fa704d353d04f194eec56a625a95b22"
   end
 
   resource "markdown-it-py" do

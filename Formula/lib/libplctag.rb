@@ -1,8 +1,8 @@
 class Libplctag < Formula
   desc "Portable and simple API for accessing AB PLC data over Ethernet"
   homepage "https://github.com/libplctag/libplctag"
-  url "https://ghfast.top/https://github.com/libplctag/libplctag/archive/refs/tags/v2.7.0.tar.gz"
-  sha256 "0d38e9313c312010f2f84a3aa14b155d8bd16fe923b42ae72a8f81f231cd4c78"
+  url "https://ghfast.top/https://github.com/libplctag/libplctag/archive/refs/tags/v2.7.1.tar.gz"
+  sha256 "963dba33c6957586a30d40360f00e650b1842361c7838e16e5e8dc29feeb2cb7"
   license any_of: ["LGPL-2.0-or-later", "MPL-2.0"]
 
   livecheck do
@@ -11,13 +11,12 @@ class Libplctag < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "59707115e62dc20b5b5c7e9ed398140f46439304a4fed549337b6e0acfad734a"
-    sha256 cellar: :any, arm64_sequoia: "fde4499769c2636a96763d4c0216154de3fb023348147710c591dd9b088de2ea"
-    sha256 cellar: :any, arm64_sonoma:  "fc9445b096d9979793ec8ae29e4caa21bc3ff8c904cfe23641d20c9eac96410f"
-    sha256 cellar: :any, sonoma:        "ceb43c6648bb85990a89d01effc37c2a93d5e9ec40769dec4df3eff205d34c7a"
-    sha256 cellar: :any, arm64_linux:   "ea9d3483a3c761cbdb3a40c32c9a03c113152e97e8f8a2ec647b50ea5d874e51"
-    sha256 cellar: :any, x86_64_linux:  "fb02dbe49fd69a9adf4e73693287299d642a6684ab1f0f7c86d279ed2afa3e91"
+    sha256 cellar: :any, arm64_tahoe:   "d174dbf6521bc23498a48867152738d6373a8d2baf406943cdd6686ff7756f1b"
+    sha256 cellar: :any, arm64_sequoia: "975abf14fcb6a8e7b9668e59f1302631c7f4cb03389bb7db5b918469ebe3af38"
+    sha256 cellar: :any, arm64_sonoma:  "fc7825d5ba355580955a9939496bb3d16c6624f272fb325652cd64f85315e99d"
+    sha256 cellar: :any, sonoma:        "407fee90255c3e6d14b126b110419ce7b927df83fc3fc216dbafe65e359ecc5c"
+    sha256 cellar: :any, arm64_linux:   "2227ce505d784c3d92890f682c5d1ec395b7500a16c90759e972f9b17244e9a1"
+    sha256 cellar: :any, x86_64_linux:  "bd209d252b0cb5b07b363c1ebf2a5aab7d96905cc12aa886eb522b95f1748f23"
   end
 
   depends_on "cmake" => :build

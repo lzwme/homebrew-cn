@@ -4,15 +4,16 @@ class Mpd < Formula
   url "https://ghfast.top/https://github.com/MusicPlayerDaemon/MPD/archive/refs/tags/v0.24.13.tar.gz"
   sha256 "8c66c2bae2d9ed87a06b95724e974a5510d3347556c099b9b7b5706a7e6d3cf4"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/MusicPlayerDaemon/MPD.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "e3b4c062d2082cb87ad0110f55fd98be1970a1cb837aa50aa2729e4f826d9fa0"
-    sha256 cellar: :any, arm64_sequoia: "c1ba8b949976087e8c49bc8f30e7e7698a59ba75f89eaf1a431ba72c65207ecf"
-    sha256 cellar: :any, arm64_sonoma:  "37ef0a0e86f654fd2b5852c422ff7fc80f25e10ac82dcc4a4714b0ba27df7abc"
-    sha256 cellar: :any, sonoma:        "0bc31d00954a0df848b1133af50daa1b4994cf76b994c4ed183abe99e749a2b9"
-    sha256               arm64_linux:   "928748df89aa1afc96e94cf07671477a0e406556c66cd0f91b96ad82a1d46f6e"
-    sha256               x86_64_linux:  "f1a2c90f01aaa80ac44238f6c1e95148677c61806788b975aa2cd3c8c1236ff7"
+    sha256 cellar: :any, arm64_tahoe:   "4639478b67470fad59455353b7d2de894103e6c8651a0cef1a8b3b5c81ef1816"
+    sha256 cellar: :any, arm64_sequoia: "9eb2068a1f38b1086b1b0f941deaeb5eeca315d6c23e7af201cb429f08a46f8d"
+    sha256 cellar: :any, arm64_sonoma:  "dfa3d852dc601d69c1254a298942fe02b404d1d2472b17bdce5e206e5af5ddee"
+    sha256 cellar: :any, sonoma:        "7026f950c0990d7535da562d225537bd54ace4678aa0403c8701e4e0b89c3d8f"
+    sha256               arm64_linux:   "cf3c1fe49d053d386ca908ff6bf0711b300712a9a788f657e75d8218f9d484de"
+    sha256               x86_64_linux:  "79dceff65697793b723b1bf42f326e502ae0b67393d02c7184d9fa1ba02d6de3"
   end
 
   depends_on "meson" => :build

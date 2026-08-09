@@ -19,6 +19,9 @@ class CfnFormat < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "38974e3efdb8278453debe03d7b12937024bb972a583ba205d81aeb2526ac959"
   end
 
+  deprecate! date: "2026-08-08", because: :repo_archived
+  disable! date: "2027-02-08", because: :repo_archived
+
   depends_on "go" => :build
 
   def install

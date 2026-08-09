@@ -1,8 +1,8 @@
 class WasmBindgen < Formula
   desc "Facilitating high-level interactions between Wasm modules and JavaScript"
   homepage "https://wasm-bindgen.github.io/wasm-bindgen/"
-  url "https://ghfast.top/https://github.com/wasm-bindgen/wasm-bindgen/archive/refs/tags/0.2.126.tar.gz"
-  sha256 "e833a30612948a00ca3d4e58247cefa00460f33dcd25d0fc1e303f9c0eeed802"
+  url "https://ghfast.top/https://github.com/wasm-bindgen/wasm-bindgen/archive/refs/tags/0.2.127.tar.gz"
+  sha256 "b4751fe541a8458ce5858b8e80dee0f39ae43b266192a2062b6038a99cbd1ee3"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
@@ -11,12 +11,12 @@ class WasmBindgen < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f2f823737543f7dd7d3853220009ae2940cd1539e573633807c3346b07a397ed"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd92a484397a0e1ff9cc5fe01b6a912a15578ea318c284dcbc9fa30ae1df9db4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14d44bd2df00864974bf8d840ed0d2d59001e17418166ef07081e77d73067af4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "04967a5fb52a89c463d957e6ebeb788131a57226b6cee8cdb88f2e8bb03b2cc8"
-    sha256 cellar: :any,                 arm64_linux:   "f6e47e17120d9932a2df4c50d9c032d8fa20d1a070a846af110badc2b6316c40"
-    sha256 cellar: :any,                 x86_64_linux:  "6417e3a6253948488c759ec04801ff8540acdaaa28b3cd9fd7216f561c4bcea4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4db6e9e9fbbbef0908850a8f3372f8fd24b9d7912d7ff73e55e708e11af9ecf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30ad9b3fe7a5876515ebd56859fc30a215cd8f5610a1e31c1f828b5eda08cc49"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8860ec738a1e298160f196362ee6f0bae62312651550ec08430bf39c7175424"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1a48b98207bb00d05b1d9eacee56069f087c91c70849de5666b6992e4c8492a3"
+    sha256 cellar: :any,                 arm64_linux:   "e9590bee9cf73cebb130fd2d81e7968b36171050605cc19ee41667facdc284d7"
+    sha256 cellar: :any,                 x86_64_linux:  "254220e8de2fde7dc286701044666d89ba4fd66a9df1ddb777bcbf5a904431aa"
   end
 
   depends_on "rust" => :build

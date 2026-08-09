@@ -22,12 +22,12 @@ class VulkanTools < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on xcode: :build # for ibtool
   depends_on "glslang"
   depends_on "vulkan-headers"
   depends_on "vulkan-loader"
 
   on_macos do
+    depends_on xcode: :build # for ibtool
     depends_on "molten-vk"
   end
 

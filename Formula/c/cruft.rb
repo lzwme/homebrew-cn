@@ -6,16 +6,16 @@ class Cruft < Formula
   url "https://files.pythonhosted.org/packages/d1/7e/0e20012f2aa156e5d6a70483a8d90accb7ed4966dddb0c58987d9f6eba12/cruft-2.16.0.tar.gz"
   sha256 "184662853fbc1c16c0137fe0e9444e0cbe95e40362f5ebb2d9fae33d9223e73f"
   license "MIT"
-  revision 13
+  revision 14
   head "https://github.com/cruft/cruft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "46f411017832195b139748d3f496da3cecfa841a3810cdc697f8e5a7adedffb2"
-    sha256 cellar: :any, arm64_sequoia: "b8c6cbeed3ff3c19b144a126a0dda4faed8dff318a71033a0bfc99da8759e69e"
-    sha256 cellar: :any, arm64_sonoma:  "0c60163ab678209754cb71bafb62fafd3500c1ff2687f54d8de1670770549abb"
-    sha256 cellar: :any, sonoma:        "0b0d7283bc2405c67975ce7b4432cdd36b68cc359b86fdf18d4b2dac489f435e"
-    sha256 cellar: :any, arm64_linux:   "cbc8fbaf95a26a9d45cdc39ca82f15b56f4d6ca20a6e8c736d80634ef9021cd3"
-    sha256 cellar: :any, x86_64_linux:  "8ea1cae7bfcec02ac8545eba9503d3ab42e4eed3a5eb801982fb5f9f0008333a"
+    sha256 cellar: :any, arm64_tahoe:   "4e48b7dc77054d71b1df593586d1fec9070ddb5096f62a5b58c21a179fdea5c7"
+    sha256 cellar: :any, arm64_sequoia: "0684f443309a5b35965ff59377369cd978564513afa76765b4c441a586356710"
+    sha256 cellar: :any, arm64_sonoma:  "e6ac319a9ed929c61c6f01c99d7e63edbceee52ce2978128220dec35f41c2fa2"
+    sha256 cellar: :any, sonoma:        "a8e43f4ab264e8e6fa50ea3dd0cd0f82b3a6a759c7aa7785d0a4b7e70cd80e8b"
+    sha256 cellar: :any, arm64_linux:   "c3bfef950f153a98969a9d8521ee023cdd9714917d8b4af18b27be970b684fe0"
+    sha256 cellar: :any, x86_64_linux:  "cb7f5062b8d8c94f991e9f6d40e18e55107f58f62149a1b91301f710666ba83c"
   end
 
   depends_on "certifi" => :no_linkage
@@ -60,8 +60,8 @@ class Cruft < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
-    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
+    url "https://files.pythonhosted.org/packages/26/d6/5f358ff283325580c2003a6d953aea18cfe10ae87b46f5ebc80fa3a386dc/gitpython-3.1.58.tar.gz"
+    sha256 "621416df10ef3fd0e19fabf9172ddeed0fa704d353d04f194eec56a625a95b22"
   end
 
   resource "idna" do
@@ -140,8 +140,8 @@ class Cruft < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/37/78/fda3361b56efc27944f24225f6ecd13d96d6fcfe37bd0eb34e2f4c63f9fc/typer-0.27.0.tar.gz"
-    sha256 "629bd12ea5d13a17148125d9a264f949eb171fb3f120f9b04d85873cab054fa5"
+    url "https://files.pythonhosted.org/packages/ae/40/4a3db7990d1f62a53182aa96eaef57aeb2886a27f90a195bc66713565d31/typer-0.27.1.tar.gz"
+    sha256 "a79bef8469a79c45498e7b814ecf8d603cc7644e9acbd9e19cac0334240b18df"
   end
 
   resource "tzdata" do

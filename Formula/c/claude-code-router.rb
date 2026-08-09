@@ -1,17 +1,17 @@
 class ClaudeCodeRouter < Formula
   desc "Tool to route Claude Code requests to different models and customize any request"
   homepage "https://musistudio.github.io/claude-code-router/"
-  url "https://registry.npmjs.org/@musistudio/claude-code-router/-/claude-code-router-3.0.19.tgz"
-  sha256 "cdfd285febc01784b5888d00a612c5a69ec0666e9973e40b8e789f719bc4a186"
+  url "https://registry.npmjs.org/@musistudio/claude-code-router/-/claude-code-router-3.0.20.tgz"
+  sha256 "00174e76c94c4386a752c9839dad0e217644d8497e32289cc32af0f2a4dd4ee4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7ddffe9345b4c521e8c67eba9c8e3b00d8f48acd3574fc3ccbbb8fb105bea3f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4edf99dbf22866f90c2cc376c72067fedf714b8c6a83f9a31a40681cda92e7cf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74edc291677f7697c9a109774716be6cc2b491953cf4496049ec8917a6ed0a37"
-    sha256 cellar: :any_skip_relocation, sonoma:        "65e4259bb7198abaac0ce4c90d860477eba2517c59314cf883f247fe80cd21a8"
-    sha256 cellar: :any,                 arm64_linux:   "5f424daa9441c99ebbd9ead728d13058abd09bad62cdbcf29213a9db3b6ae6c6"
-    sha256 cellar: :any,                 x86_64_linux:  "2daa9e36622ccfdc96dd1bc2573fc4b44911871edc496f79e2270d2fcec07e5c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f60ff98fd12bdc8791c281b6419f471da4a7428523e43cd01e4dbff266ce9052"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c55f1ce30097609f0f988def291c84b62ef102f9f3b879871463ab47ca8d8b0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "550c62e6374af06cced5d6f957a1e088a547b255d11b7e851903d5876b1644b1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "03d2fb8d12ecd02658d4130b7b0e7913a34d929a48dfdf3901272f96e98234de"
+    sha256 cellar: :any,                 arm64_linux:   "72a98687b41e0c29f70475fede9e120132c552c5d657f7b1b11904cafe9ff6e4"
+    sha256 cellar: :any,                 x86_64_linux:  "064f2ca3131a737a4bb431d60a2b7bb89a279f1d8723cb6d12c5e815791022fa"
   end
 
   depends_on "node"

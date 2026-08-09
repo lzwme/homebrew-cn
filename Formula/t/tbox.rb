@@ -1,8 +1,8 @@
 class Tbox < Formula
   desc "Glib-like multi-platform C library"
   homepage "https://tboox.top"
-  url "https://ghfast.top/https://github.com/tboox/tbox/archive/refs/tags/v1.8.1.tar.gz"
-  sha256 "48284c1f1f6e4e74ce1b4d2447c3141fdfdd3a20ef1cb30fc2f1021149227fdb"
+  url "https://ghfast.top/https://github.com/tboox/tbox/archive/refs/tags/v1.8.2.tar.gz"
+  sha256 "8601bd1443ad3e3eb998406a71c3896f8563ed1aeb94a9ccf8c17543742d508e"
   license "Apache-2.0"
   head "https://github.com/tboox/tbox.git", branch: "dev"
 
@@ -12,18 +12,19 @@ class Tbox < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76d061f73e5c0e6d8fbe401d26d4bf576ca6aeae93e6e2b97f370e2d2e407dab"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25557d6963b7ff839c52d0f250a92614395b250f181709230d423db9c579e6b4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3433e15f37b902c73b339fb643fbd1ac46090cc6fd73f2000006a4806d9b8256"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b95716c0b5bb31a47698a8b699e4ff9da08771c69ed7f69d2b29d544cf69f777"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "247826dab771f81df3f8549d614dc06c045bea8cd452135cbdfa8dae44e74042"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0899a7ca95527b78519904ff6e7804a07ef91471f3a70530235609de1db2b851"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b6c95551a1db5b83f9d6536cee1c12f530f32779c905a5685fd0d17d797c46a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64851334ab38636d05e48384bcf87a8dc0dae0b9314dbab02ef7dced5978d4ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "567efe598f87c57a5841c03a62ea850efedac799a0b2ba398fda9bb00ee4d13a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cd9a4b2fbf4a4aaebcaeae4bff515f4967377d5bd1251d9c8552f095430f3ea7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "229340c927f6392b6bcbc029c3b84b48c0a37f65ef1c602b292ec0bb7f987c49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae1057799d9c46b2a8bb5074ce94453f02a41e61aac512e9cf81ebfa3f1a1aa3"
   end
 
   depends_on "xmake" => :build
 
   def install
-    system "xmake", "config", "--charset=y", "--demo=n", "--small=y", "--xml=y"
+    system "xmake", "config", "--charset=y", "--demo=n", "--small=y", "--xml=y",
+           "--cflags=-Wno-error=misleading-indentation"
     system "xmake"
     system "xmake", "install", "-o", prefix
   end

@@ -1,18 +1,18 @@
 class Libultrahdr < Formula
   desc "Reference codec for the Ultra HDR format"
   homepage "https://developer.android.com/media/platform/hdr-image-format"
-  url "https://ghfast.top/https://github.com/google/libultrahdr/archive/refs/tags/v1.5.1.tar.gz"
-  sha256 "54d3f36c1d2b56ef9b8e63fd3f5fcac56c2c4540f8a56e0cc952f5010d790191"
+  url "https://ghfast.top/https://github.com/google/libultrahdr/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "5e422540271b64473d069623136e207d0516999aac2f819fb6176a01a3f9f915"
   license "Apache-2.0"
-  compatibility_version 1
+  compatibility_version 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "1fd63bc9d43bfa89aa24499fcf72c9c00c081a137e08567ac27da01d0b78acec"
-    sha256 cellar: :any, arm64_sequoia: "643c7e30a4fa790b78756e84beb78660c38ed3e8a2c4f5b00c156a788647e7dd"
-    sha256 cellar: :any, arm64_sonoma:  "da9af01fafaf97b3526b55b1399fe142e2fd971a4d137096d12cc2bf1157a401"
-    sha256 cellar: :any, sonoma:        "6333837b8b5d1445d807331bd9314c291b105ed9f1c661d22ddcec641bcc0e85"
-    sha256 cellar: :any, arm64_linux:   "9b999d8bfa8a98ed2ad1396efb9352cebc379da030f100a4aff3347ec1658dad"
-    sha256 cellar: :any, x86_64_linux:  "923b3365d3965055c3d6ffa5f7b6b5108cfb6e9b46242b44c6a6d0720ae184c0"
+    sha256 cellar: :any, arm64_tahoe:   "bbfda15ba439949f899fbda932315d020bb8b302a35626d3653d280f610968ab"
+    sha256 cellar: :any, arm64_sequoia: "d66af7dedb5f7ab99726fdd28fd987e59927e919c32575411a518e97e16e7013"
+    sha256 cellar: :any, arm64_sonoma:  "53d1457c1cf34497c131f20bb38ae704f830ea15f4cfcbdc22d0a079a00589f2"
+    sha256 cellar: :any, sonoma:        "0b6771e28316662180a0a242d44fe63ca985a60bf19eb271c172604d8411275b"
+    sha256 cellar: :any, arm64_linux:   "f0826e58949cba2fb4588bcc7016573023445a8d65aa519216eaf50b72b2c4be"
+    sha256 cellar: :any, x86_64_linux:  "267677d00d922dc6212cbd8d4567123703db93ea494723996aab36ae39785480"
   end
 
   depends_on "cmake" => :build

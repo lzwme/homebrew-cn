@@ -28,13 +28,6 @@ class Acl2 < Formula
 
   def install
     # Remove prebuilt binaries
-    rm([
-      "books/kestrel/axe/x86/examples/popcount/popcount-macho-64.executable",
-      "books/kestrel/axe/x86/examples/factorial/factorial.macho64",
-      "books/kestrel/axe/x86/examples/tea/tea.macho64",
-      "books/kestrel/axe/x86/examples/tea/tea.elf64",
-      "books/kestrel/axe/x86/examples/add/add.elf64",
-    ])
     rm_r buildpath.glob("books/kestrel/axe/*/{examples,tests}")
 
     # Move files and then build to avoid saving build directory in files

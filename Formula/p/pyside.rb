@@ -34,7 +34,6 @@ class Pyside < Formula
   depends_on "ninja" => :build
   depends_on "python-setuptools" => :build
   depends_on "qtshadertools" => :build
-  depends_on xcode: :build
   depends_on "pkgconf" => :test
 
   depends_on "llvm"
@@ -68,6 +67,7 @@ class Pyside < Formula
   uses_from_macos "libxslt"
 
   on_macos do
+    depends_on xcode: :build
     depends_on "qtshadertools"
   end
 

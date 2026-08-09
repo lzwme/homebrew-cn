@@ -3862,6 +3862,7 @@ Homebrew-homebrew-core/Formula/l/literate-git.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/litmusctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/litra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/little-cms2.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/livebook-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/livekit-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/livekit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/livereload.rb, Homebrew/homebrew-core, 0
@@ -5163,6 +5164,7 @@ Homebrew-homebrew-core/Formula/n/nettle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nettle@3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nettoe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/netwatch.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/network-doctor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/networkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/never.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/neverest.rb, Homebrew/homebrew-core, 1
@@ -6139,7 +6141,7 @@ Homebrew-homebrew-core/Formula/p/pyoxidizer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyperformance.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pypy.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/pypy3.10.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pypy3.10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pypy3.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pypy3.9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyqt-builder.rb, Homebrew/homebrew-core, 0
@@ -8635,7 +8637,7 @@ Homebrew-homebrew-cask/Casks/a/aide-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aifun.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aigcpanel.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aimersoft-video-converter-ultimate.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/a/aionui.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/aionui.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/air-video-server-hd.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/airbuddy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aircall.rb, Homebrew/homebrew-cask, 0
@@ -15368,7 +15370,7 @@ Homebrew-homebrew-cask/Casks/s/switch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/switchhosts.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/switchkey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/switchresx.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/switchy.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/switchy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/symboliclinker.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/synalyze-it-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sync-my-l2p.rb, Homebrew/homebrew-cask, 1
@@ -15768,7 +15770,7 @@ Homebrew-homebrew-cask/Casks/u/universal-media-server.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/u/unlox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unnaturalscrollwheels.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/unpkg.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/u/unraid-usb-creator-next.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/u/unraid-usb-creator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/unshaky.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/updatest.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/updf.rb, Homebrew/homebrew-cask, 0

@@ -3,18 +3,18 @@ class Hf < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
-  url "https://files.pythonhosted.org/packages/89/64/bfe23dab749cb2342e1e13b61c9e684ce46b4d189c7d433cd26f76f52baf/huggingface_hub-1.26.1.tar.gz"
-  sha256 "7c28860777594ac679233f571552d0e46df34ed4e4239e844190fad3ca05e4cd"
+  url "https://files.pythonhosted.org/packages/3e/9b/ddf3d02a8681f1b9ce52fda03d755dad6b74c4f8172304c4c8d2975450f9/huggingface_hub-1.27.0.tar.gz"
+  sha256 "c1fed40ea82a6b41b477f5243546549b792ae0a93abcea608cff66089bf8f8df"
   license "Apache-2.0"
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "71d8d214c0592f528f40878cf0add2f457a6915d0897eebb317e605b4046dfaf"
-    sha256 cellar: :any, arm64_sequoia: "4c3bac3929b4ea223a84df15424db7ef8d987e57989df5682180fd15b7e616f8"
-    sha256 cellar: :any, arm64_sonoma:  "dd37d3f25eb2b4a203d98f0d0e177828a235d39d9bd370f46ce690313123209e"
-    sha256 cellar: :any, sonoma:        "6e5d66d4166e04f678da6437284bca1ad451b5059b44082b75c157edc7df8e70"
-    sha256 cellar: :any, arm64_linux:   "54995a3f95d2d3119e6ad23c0231f97b87a3d2af768a468bee6dac7f5da34e44"
-    sha256 cellar: :any, x86_64_linux:  "231d644f4aa1e8f33b3dd1317eba3f382cf076fa607874bdd21e286595cafe07"
+    sha256 cellar: :any, arm64_tahoe:   "e9476b1c0916bf8a8a86f538085b191322c1ebf3cf09d5cdae0a6dfda0f5a5db"
+    sha256 cellar: :any, arm64_sequoia: "562667adfb8012316f5923db182f22c457287506f189a61d79ffc35a55d91b71"
+    sha256 cellar: :any, arm64_sonoma:  "8fe628b8d76be60856eee76be306dda0ccc452fabf2865b5f831161f2a10d667"
+    sha256 cellar: :any, sonoma:        "9d796880e3273b2ad53e88c1551bda095ec5a2cf1a839fcaf9a185227fb352f2"
+    sha256 cellar: :any, arm64_linux:   "f506f3d9549582de6208a884867a0cd1fcc3f0108924de5e98bd3ac67eef9d45"
+    sha256 cellar: :any, x86_64_linux:  "e4a967a6d35672d5881c38e78d85d3de02343881cf39ec4da5cfea08c5b49d03"
   end
 
   depends_on "pkgconf" => :build

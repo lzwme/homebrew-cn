@@ -6,16 +6,16 @@ class Mk < Formula
   url "https://files.pythonhosted.org/packages/75/9e/dcc7813d9f7133f8d384eca24a4d4bb0cb056abcc53f1f170b8353084feb/mk-3.0.0.tar.gz"
   sha256 "0a041a3620057165f155b8372469d8ab55ae94dd91d6e27723ab9a7de1aa2086"
   license "MIT"
-  revision 12
+  revision 13
   head "https://github.com/pycontribs/mk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "25e9916cfb4309238481292f7d78494caf66af10ebb8e8c9d84ffc633f55974b"
-    sha256 cellar: :any, arm64_sequoia: "9c888f23c53c763c04db5716d95f7b2a599807bdc3309dd6ecd509bfe5af2b5e"
-    sha256 cellar: :any, arm64_sonoma:  "c77d6356b108e49f727e6736c08ffe4ac4c15a9daf35effdf9d7127d0ded0590"
-    sha256 cellar: :any, sonoma:        "62a722eaa6a92ee8cc0be95a603245464aa1ba1824f5232b2d5d22578a032f8f"
-    sha256 cellar: :any, arm64_linux:   "b769fa18f0fbddeb3a05d2e71229f447d844f914cd3d5e920c9cc901c6201ec7"
-    sha256 cellar: :any, x86_64_linux:  "7289b79692c85db525c4fb184ea9afc8a885808aeb615936ad0b339ed06f26cb"
+    sha256 cellar: :any, arm64_tahoe:   "7464ad9801fc750f991de32ab4a4c867e67247646a1e322af6cef2c2f102d3c1"
+    sha256 cellar: :any, arm64_sequoia: "cc25715248a86941efeeaf9acc280a1cbf7b14e3967d3fbe3478d84844016462"
+    sha256 cellar: :any, arm64_sonoma:  "7cf5f9dd08ee76ed9c50a112b66b7eaed061d832e34ba4bda97003f7ea977b85"
+    sha256 cellar: :any, sonoma:        "12f37f5e3d7376b3111a33bc055ae9593d4183d8d18a53540772f6e37dae539c"
+    sha256 cellar: :any, arm64_linux:   "0836b5aee5752284201d6750ee9d23b38363cf30da9cafe76bdb24019b42aa9c"
+    sha256 cellar: :any, x86_64_linux:  "ca633646fb7255b429de25b49516f0c268ec6fbdb3c15c5d89f22fd6d9084497"
   end
 
   depends_on "rust" => :build
@@ -61,8 +61,8 @@ class Mk < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
-    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
+    url "https://files.pythonhosted.org/packages/26/d6/5f358ff283325580c2003a6d953aea18cfe10ae87b46f5ebc80fa3a386dc/gitpython-3.1.58.tar.gz"
+    sha256 "621416df10ef3fd0e19fabf9172ddeed0fa704d353d04f194eec56a625a95b22"
   end
 
   resource "id" do
@@ -121,8 +121,8 @@ class Mk < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "pluggy" do
@@ -201,8 +201,8 @@ class Mk < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/37/78/fda3361b56efc27944f24225f6ecd13d96d6fcfe37bd0eb34e2f4c63f9fc/typer-0.27.0.tar.gz"
-    sha256 "629bd12ea5d13a17148125d9a264f949eb171fb3f120f9b04d85873cab054fa5"
+    url "https://files.pythonhosted.org/packages/ae/40/4a3db7990d1f62a53182aa96eaef57aeb2886a27f90a195bc66713565d31/typer-0.27.1.tar.gz"
+    sha256 "a79bef8469a79c45498e7b814ecf8d603cc7644e9acbd9e19cac0334240b18df"
   end
 
   resource "typer-config" do

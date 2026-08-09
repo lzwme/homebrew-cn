@@ -3,14 +3,14 @@ class RapidMlx < Formula
 
   desc "Fast local AI engine for Apple Silicon with an OpenAI-compatible API"
   homepage "https://github.com/raullenchai/Rapid-MLX"
-  url "https://files.pythonhosted.org/packages/ae/fa/d6f122ae9876627195b2c7b0d0a370dff35be4ae2bf2118364f9b511a239/rapid_mlx-0.12.4.tar.gz"
-  sha256 "d630e73814ce586ad9a80cf132db32491c61a9ace5fe5cbe4b83081dd35daafa"
+  url "https://files.pythonhosted.org/packages/06/8b/b67c4f8f204d51ceb0ff826abeb6e73ff0d568b3904f50d7620effa08f76/rapid_mlx-0.12.7.tar.gz"
+  sha256 "fc26d978fbba3193e181c2d653c4944b327e46a4d7e5166c46adb45ba5fa5058"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "8519aa7a342e4a17b97beb8ba93018da7e05591a674b79c72e546a793506101e"
-    sha256 cellar: :any, arm64_sequoia: "1ba4ea011e5c7c69477410c3f13d310f04c68247d038c3aff67e7e7ee104dcae"
-    sha256 cellar: :any, arm64_sonoma:  "01deeed1d78f4ac29aee3360c71bc52d192bd7fa7133cce7175343efd4e8e246"
+    sha256 cellar: :any, arm64_tahoe:   "25c15b27e8ec5d9c16249647b225c327d0413013b288516523f4747173e70aae"
+    sha256 cellar: :any, arm64_sequoia: "17e1df665aa6bc7630251f1990a786799dbee428a426a75fe699f3bf562254f3"
+    sha256 cellar: :any, arm64_sonoma:  "d82150117b12e29de0d43af78e98452dd7b1a7c9f3f54b8d39c91e11cc15eb94"
   end
 
   depends_on "cmake" => :build
@@ -40,8 +40,8 @@ class RapidMlx < Formula
   end
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/d1/40/8a867253c9b8afa296ac22e426a157eebbe41dcac66f7f50bbbef931afed/argcomplete-3.7.1.tar.gz"
-    sha256 "6926a3a70ae70dce1f3dfb5cf1fc984278cd163e78ec18ad2ed7fa4fabd8f281"
+    url "https://files.pythonhosted.org/packages/87/6f/5a73f04007ca950701765949209f068da628bd11f9c2da287278ce91e0ee/argcomplete-3.7.2.tar.gz"
+    sha256 "aad8b69a0b9969edb62db0d1752354c0d50717b10e0cbb00e2a958381b9fc6b9"
   end
 
   resource "attrs" do
@@ -105,8 +105,8 @@ class RapidMlx < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/82/db/3582597f8be0d34bd6881365a26d390854f12893eabdd62dd36de9df5a47/huggingface_hub-1.26.0.tar.gz"
-    sha256 "c8cd4e2df1ba9402f77fce9b509ec1d52debb502551789473f34016acc14e361"
+    url "https://files.pythonhosted.org/packages/3e/9b/ddf3d02a8681f1b9ce52fda03d755dad6b74c4f8172304c4c8d2975450f9/huggingface_hub-1.27.0.tar.gz"
+    sha256 "c1fed40ea82a6b41b477f5243546549b792ae0a93abcea608cff66089bf8f8df"
   end
 
   resource "idna" do
@@ -245,13 +245,13 @@ class RapidMlx < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/6c/10/a34c656829ffc1c4b22ef36d70d9ebb6b99c020e2aeb17cee5485099f028/sse_starlette-3.4.6.tar.gz"
-    sha256 "725f8a1bd6d26ae1b2c9610c0ef5065dfdd496f3988d28adcf8c4b49dc25c627"
+    url "https://files.pythonhosted.org/packages/f8/00/b42a44342a054d58cb1115d7c8aa9cb4290dd9442f9c1b91a4b8173dba22/sse_starlette-3.4.8.tar.gz"
+    sha256 "ed89ffbb75cbf78a5fe2f2109cd584792ee7f9dfac96f791db546df8f15f3f9c"
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/eb/e3/7c1dc7381d9f8ab7d854328ebfa884e62cb3f3d8549ddfd37c7814f42afa/starlette-1.3.1.tar.gz"
-    sha256 "05d0213193f2fbaae60e2ecb593b4add4262ad4e46536b54abe36f11a71724e0"
+    url "https://files.pythonhosted.org/packages/0f/3c/76d2fd1f1357ed0f0108d8a5aa233dcf16e2946a8559c84912fe08e01ac7/starlette-1.4.1.tar.gz"
+    sha256 "b7332de6e9375593a29ba9eee1e6ecfeb3eb2043e2e19a13b4b71da73ff35540"
   end
 
   resource "tabulate" do
@@ -262,6 +262,11 @@ class RapidMlx < Formula
   resource "tokenizers" do
     url "https://files.pythonhosted.org/packages/73/6f/f80cfef4a312e1fb34baf7d85c72d4411afde10978d4657f8cdd811d3ccc/tokenizers-0.22.2.tar.gz"
     sha256 "473b83b915e547aa366d1eee11806deaf419e17be16310ac0a14077f1e28f917"
+  end
+
+  resource "tomli-w" do
+    url "https://files.pythonhosted.org/packages/19/75/241269d1da26b624c0d5e110e8149093c759b7a286138f4efd61a60e75fe/tomli_w-1.2.0.tar.gz"
+    sha256 "2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021"
   end
 
   resource "tqdm" do

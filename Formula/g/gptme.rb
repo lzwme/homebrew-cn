@@ -6,15 +6,16 @@ class Gptme < Formula
   url "https://files.pythonhosted.org/packages/6b/09/f3f7d84b8e5e2a9b88a44a427fb4dbed3cec984c97543fddd5c1a836c8f7/gptme-0.32.1.tar.gz"
   sha256 "b9ff6d3a0bc10caa58a6b28d801f3a54831ec91324a668e2a9f93c61478ed532"
   license "MIT"
+  revision 1
   head "https://github.com/ErikBjare/gptme.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a4ef5fbb8b382063cb10276d3e0a31634b7bd530b2b2c5b758475c5b3db0143c"
-    sha256 cellar: :any, arm64_sequoia: "6419fd5d56328ac9cf773bf46fb481b910561a38d8366712c26ac3f3ae94f062"
-    sha256 cellar: :any, arm64_sonoma:  "337757c02ec6e947281637954ac7dd91bfcb27dfe5ce4760ede87e9b536ba37d"
-    sha256 cellar: :any, sonoma:        "aeca6ce3adfccffe7b22fececa6e1fc3cb30ca3ce697b0c4368e7530862c8ae8"
-    sha256 cellar: :any, arm64_linux:   "7c1e9908ba3d0c4f598c27847d3b4e6f53df9302072a3b3c945239820beb7d30"
-    sha256 cellar: :any, x86_64_linux:  "f6e4c9b2b073856a34614f3615111d598e268185af7a9a45af9394b526676f38"
+    sha256 cellar: :any, arm64_tahoe:   "3ec09fbc69830188490c0fc4a2016a03c511bb94122f889c005e8eab7904b239"
+    sha256 cellar: :any, arm64_sequoia: "1c8796ec735ff96b3fdd1f89f105429b56fc18baeb344eae2463944a886c493a"
+    sha256 cellar: :any, arm64_sonoma:  "bd30271ef6c9760844ffa854fbbd13f8634e184783865aa983768dc6622ba954"
+    sha256 cellar: :any, sonoma:        "d7a5f1ea04c4521c3bf825ee6aee36e9002893c94ba51386313ecf2edb2e9259"
+    sha256 cellar: :any, arm64_linux:   "036a62a6562c0158fca9bc976eafbe0fbb2afe2632acc0aecdf6784dbb034352"
+    sha256 cellar: :any, x86_64_linux:  "23cc8017df852e44dcadf71a86d7912d004202e6c9b72f9cea483a773c05755f"
   end
 
   depends_on "rust" => :build # for jitter
@@ -132,8 +133,8 @@ class Gptme < Formula
   end
 
   resource "json-repair" do
-    url "https://files.pythonhosted.org/packages/b3/43/189737dfa70d1f455fb26770935437f36645725e8cd54f5fff3e9fa2014f/json_repair-0.61.5.tar.gz"
-    sha256 "965cc39a7cddc84aad0a1b00a4ce44906cf14893bd0e3890a386d28ca21dd0f0"
+    url "https://files.pythonhosted.org/packages/f0/a3/6001c2448ee54a80f35a2501b848f4bbd87987bd41ead8cc17367a2bfd56/json_repair-0.61.7.tar.gz"
+    sha256 "a3754543f050093efcda6c9ab00b20a236b5d082c8c622bc65b88fa74ff8d51f"
   end
 
   resource "jsonschema" do
@@ -162,8 +163,8 @@ class Gptme < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/6e/77/9450b8f251a13affb6281997d0523c4615f8a8b35d0b21ff30db3a5aac9d/mcp-1.28.1.tar.gz"
-    sha256 "d51e36a5f5644faea4f85ea649bfffa6bc6c26770d42798ad6a3de3d2ba69683"
+    url "https://files.pythonhosted.org/packages/30/d3/f9acc21dfc886e4f78e2add1a47db46ce16884346afde53f8a064c02c891/mcp-1.29.0.tar.gz"
+    sha256 "52d01f334de1868cc3bb2d6604931126a67631f99a6c5d3b82ba47290315ec36"
   end
 
   resource "mdurl" do
@@ -177,8 +178,8 @@ class Gptme < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/af/ac/f725c4efbda8657d02be684607e5a2e5ce362e4790fdbcbdfb7c15018647/openai-2.46.0.tar.gz"
-    sha256 "0421e0735ac41451cad894af4cddf0435bfbf8cbc538ac0e15b3c062f2ddc06a"
+    url "https://files.pythonhosted.org/packages/ef/cf/36e3e7235fdf6d125c052acc0970924611b17a20a4fe580596faf4566a65/openai-2.53.0.tar.gz"
+    sha256 "baf5802ad08980e1d9d561e1b996e800c8bcd14af5847c6d0e7a5cc59e4d4116"
   end
 
   resource "parso" do
@@ -197,13 +198,13 @@ class Gptme < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
-    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
+    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
+    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/a1/96/06e01a7b38dce6fe1db213e061a4602dd6032a8a97ef6c1a862537732421/prompt_toolkit-3.0.52.tar.gz"
-    sha256 "28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"
+    url "https://files.pythonhosted.org/packages/7d/ea/39b988c938f75cb75d7045b5c69f8bfed47ee2152c8837fb403de29d6fb8/prompt_toolkit-3.0.53.tar.gz"
+    sha256 "9ec8a0ad96d5c56148b3f914aa79c1564c3fde5d2e6b876e7bc327e353cf8fa6"
   end
 
   resource "ptyprocess" do
@@ -232,8 +233,8 @@ class Gptme < Formula
   end
 
   resource "pypdf" do
-    url "https://files.pythonhosted.org/packages/03/72/7dfd5ff1c9c37de97a731701f51af091325f123d9d4270361c9c69e4431f/pypdf-6.14.2.tar.gz"
-    sha256 "7873f502fe4385e79539b21d872392dc0c4e3714327c15881cbc7fbfd1f95b25"
+    url "https://files.pythonhosted.org/packages/17/17/ee75a92718ec7212de831e71454d702225aa5e474a805cce169806044453/pypdf-6.15.0.tar.gz"
+    sha256 "d39c4d955a76409284a905e2d65b40076d77ab76129e0faaeeb6612403ecfc79"
   end
 
   resource "python-dateutil" do
@@ -267,8 +268,8 @@ class Gptme < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/7b/37/451aaddbf50922f34d744ad5ca919ae1fcfac112123885d9728f52a484b3/regex-2026.7.10.tar.gz"
-    sha256 "1050fedf0a8a92e843971120c2f57c3a99bea86c0dfa1d63a9fac053fe54b135"
+    url "https://files.pythonhosted.org/packages/20/98/04b13f1ddfb63158025291c02e03eb42fbb7acb51d091d541050eb4e35e8/regex-2026.7.19.tar.gz"
+    sha256 "7e77b324909c1617cbb4c668677e2c6ae13f44d7c1de0d4f15f2e3c10f3315b5"
   end
 
   resource "requests" do
@@ -292,8 +293,8 @@ class Gptme < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/d2/1b/bc9e3e7a72dcdad7dc7888758f5d00f56f8909ed5cfdff822bd72bb4c520/sse_starlette-3.4.5.tar.gz"
-    sha256 "83072538bc211a2f68b7b0422226c4af3e9b62e106e07034664b832ca019842a"
+    url "https://files.pythonhosted.org/packages/f8/00/b42a44342a054d58cb1115d7c8aa9cb4290dd9442f9c1b91a4b8173dba22/sse_starlette-3.4.8.tar.gz"
+    sha256 "ed89ffbb75cbf78a5fe2f2109cd584792ee7f9dfac96f791db546df8f15f3f9c"
   end
 
   resource "stack-data" do
@@ -302,8 +303,8 @@ class Gptme < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/eb/e3/7c1dc7381d9f8ab7d854328ebfa884e62cb3f3d8549ddfd37c7814f42afa/starlette-1.3.1.tar.gz"
-    sha256 "05d0213193f2fbaae60e2ecb593b4add4262ad4e46536b54abe36f11a71724e0"
+    url "https://files.pythonhosted.org/packages/0f/3c/76d2fd1f1357ed0f0108d8a5aa233dcf16e2946a8559c84912fe08e01ac7/starlette-1.4.1.tar.gz"
+    sha256 "b7332de6e9375593a29ba9eee1e6ecfeb3eb2043e2e19a13b4b71da73ff35540"
   end
 
   resource "tabulate" do
@@ -322,13 +323,13 @@ class Gptme < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/ae/5f/57ff8b434839e70dab45601284ea413e947a63799891b7553e5960a793a8/tqdm-4.68.4.tar.gz"
-    sha256 "19829c9673638f2a0b8617da4cdcb927e831cd88bcfcb6e78d42a4d1af131520"
+    url "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz"
+    sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
   end
 
   resource "traitlets" do
-    url "https://files.pythonhosted.org/packages/57/a9/a2584b8313b89f94869ddb3c4074617a691de1812a614d2d50e32ca5a7a6/traitlets-5.15.1.tar.gz"
-    sha256 "7b1c07854fe25acb39e009bae49f11b79ff6cbb2f27999104e9110e7a6b53722"
+    url "https://files.pythonhosted.org/packages/2c/2e/a7fbfe268c8a3b32546930c0297c101d65a4a14c304ad5790a9f478f0e4e/traitlets-5.16.1.tar.gz"
+    sha256 "ed900c2b631aa3a112811139fa97b8d2c3bad5e989656bba4b7e52c7852c18c1"
   end
 
   resource "urllib3" do
@@ -337,8 +338,8 @@ class Gptme < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/a2/65/b7c6c443ccc58678c91e1e973bbe2a878591538655d6e1d47f24ba1c51f3/uvicorn-0.51.0.tar.gz"
-    sha256 "f6f4b69b657c312f516dd2d268ab9ae6f254b11e4bac504f37b2ab58b24dd0b0"
+    url "https://files.pythonhosted.org/packages/03/18/ccce41535dee1be77735592bd19965f3972c82e07ee703d324709496b716/uvicorn-0.52.1.tar.gz"
+    sha256 "112ec661814189acbccd3f7b86460147cc065fc92c0821afa78918780e4354dd"
   end
 
   resource "wcwidth" do
