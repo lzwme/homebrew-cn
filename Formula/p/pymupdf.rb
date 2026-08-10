@@ -1,18 +1,17 @@
 class Pymupdf < Formula
   desc "Python bindings for the PDF toolkit and renderer MuPDF"
   homepage "https://pymupdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/8e/e9/6d6c5d6c0a3551bffd47681a6240caf941727f195b45593cf20ab36f018f/pymupdf-1.28.0.tar.gz"
-  sha256 "e53f3567403a92da15caa9e7ae0164327fff48817e9f40175367fb9de524258d"
+  url "https://files.pythonhosted.org/packages/a3/fb/b6761fa2d5266f2cdb24c3b91f4023070ab7848381417678e7a289a1d52a/pymupdf-1.28.2.tar.gz"
+  sha256 "5e0be7908a715aa20333caddd73f1d6f01e4cd0c26e869fa2dd0b7f344da2249"
   license "AGPL-3.0-only"
-  revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c5f80f28631c0589cce3aae53adba8cf3dc3bb65459f88c24fbe4b18ca27b55c"
-    sha256 cellar: :any, arm64_sequoia: "455cc15477005eef6d986b89451358f18a9360c1ca99c75aecc5811769f90031"
-    sha256 cellar: :any, arm64_sonoma:  "cc0576d0f9c23d73d27c56a6bfa16acdc57c7969de4e4a5afac2a6d0f6dd6bb6"
-    sha256 cellar: :any, sonoma:        "76902340a1e998767ea5bd1476cc431d6a650e5d7a0eb7660517f61f827550c9"
-    sha256 cellar: :any, arm64_linux:   "e6a80aa90176e81e8bf36557b6b3b00361df795e78931d3879e3db396c46024d"
-    sha256 cellar: :any, x86_64_linux:  "8d97700c166e0f144aa6b1a5befea646e549ecc9a80109d71728dc90aff25e54"
+    sha256 cellar: :any, arm64_tahoe:   "154490dbb55de7c26e94d21fbe0e60a22f4b0525dc4e8d9f2ba8d6a17d4cfb92"
+    sha256 cellar: :any, arm64_sequoia: "bd559bbae380fc41fbe08f96965df17e77b0f5483e718c9bd13ae458ec3eb795"
+    sha256 cellar: :any, arm64_sonoma:  "3eba2c2243ee73d24838d8a71019528cdedb1ce21ebd2ecc0517d4b217b97128"
+    sha256 cellar: :any, sonoma:        "d2c0508dfbb19984988ad938d28aebb9f0813c970f01262765b9917ccd128b12"
+    sha256 cellar: :any, arm64_linux:   "06cde4d44304eeb5026759e0a8df26e7a5709cc6db8c7c03dfa20cf35a85b9aa"
+    sha256 cellar: :any, x86_64_linux:  "16e0cc7d890397b15ae6b57abd5e0476a7b535cf00889549641b00f846489bc9"
   end
 
   depends_on "freetype" => :build
@@ -21,20 +20,12 @@ class Pymupdf < Formula
   depends_on "mupdf"
   depends_on "python@3.14"
 
-  # Pass the options argument added to `fz_find_table_within_bounds` in mupdf 1.28.1
+  # Stop using the Python 2 C API macros that swig 4.5 no longer defines
   patch do
-    url "https://github.com/pymupdf/PyMuPDF/commit/b54b70f2410df7d11f9e68c58fe4e0dcb582756a.patch?full_index=1"
-    sha256 "7ce5d2b9f8b38fa9c54b78bdf8aabac758c79056bd4a389bf93fa25f5b110eaa"
-    type :backport
-    resolves "https://github.com/pymupdf/PyMuPDF/commit/b54b70f2410df7d11f9e68c58fe4e0dcb582756a"
-  end
-
-  # Skip the transform now that `pdf_clip_rect` takes fitz coords in mupdf 1.28.1
-  patch do
-    url "https://github.com/pymupdf/PyMuPDF/commit/87745b21b512440c7fc02e49037c3ad1c173d414.patch?full_index=1"
-    sha256 "db40ae037da6c3f427342478912b1baa2cc10c58d2f9211143e9d26fe14bd2ef"
-    type :backport
-    resolves "https://github.com/pymupdf/PyMuPDF/commit/87745b21b512440c7fc02e49037c3ad1c173d414"
+    url "https://github.com/pymupdf/PyMuPDF/commit/7f419a5bed7b257416f6837580dc4325e240e625.patch?full_index=1"
+    sha256 "5b809a94ea89bedd215f4424c501c2e0b7800b460a8d1641ac910d88f57ae4bf"
+    type :unofficial
+    resolves "https://github.com/pymupdf/PyMuPDF/pull/5072"
   end
 
   def python3

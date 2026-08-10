@@ -11,8 +11,9 @@ class FxUpscale < Formula
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "915c54fd5c3260a3b7f213b54de693275572e1589bea652e4032e771ccc872d0"
   end
 
-  depends_on xcode: ["15.0", :build]
-  depends_on :macos
+  depends_on macos: :ventura
+
+  uses_from_macos "swift" => :build # swift 5.9+
 
   def install
     system "swift", "build", "--disable-sandbox", "--configuration", "release"

@@ -7,13 +7,13 @@ class StylishHaskell < Formula
   head "https://github.com/haskell/stylish-haskell.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "375b12aeb5ec9d70bc4cb78b291fc68a5d8afc3e057c93e9a7375c7d022b3931"
-    sha256 cellar: :any, arm64_sequoia: "d4c31632c556e1a0c92b7099396052efe0501f058675639fb4182e28573e61d3"
-    sha256 cellar: :any, arm64_sonoma:  "0cc9f3d577e76813d02f754020f30eefaa12d2f0356f2d01f8df36dfe560d17a"
-    sha256 cellar: :any, sonoma:        "a499060dd46b6b6fca715e861b1a8ce10b4c80f040db8e98007f4a719952682f"
-    sha256 cellar: :any, arm64_linux:   "9e7417fa6700b9304a1a9a3134e862bc4862cfc68882842588574a1e3ece0ef2"
-    sha256 cellar: :any, x86_64_linux:  "2b4f585f1b1ff99393bbb6734af0a3561e0dc5de1f33a1625bc78a09f85feb9f"
+    rebuild 3
+    sha256 cellar: :any, arm64_tahoe:   "9409346c277a94ec8eeaccf8b6a87ba26ebf340c7ab4d094d63bf5c587910739"
+    sha256 cellar: :any, arm64_sequoia: "95834b9abae9b296d5a69e0503da11827aced2d9c3b27f3fff9b3097aa2de4b2"
+    sha256 cellar: :any, arm64_sonoma:  "99ec18fd4bc31f757f99c507616d651655213ae17e916019fd5f74703e60bdc2"
+    sha256 cellar: :any, sonoma:        "f23166e343e57e6b0fd940e29d0baeab2df8e69e44a0db777115268d6c5b1404"
+    sha256 cellar: :any, arm64_linux:   "449d0fd363eee6f2c1b2627f8a6e386bf158b4b3dcdbaf061c381f04edd02c14"
+    sha256 cellar: :any, x86_64_linux:  "02a90e71c972ef6c47e696490469a84b892d10eb7c849b8ad060f84658563fb8"
   end
 
   depends_on "cabal-install" => :build
@@ -58,6 +58,9 @@ class StylishHaskell < Formula
       import           Data.Map            (Map, keys, (!))
       import qualified Data.Map            as M
     HASKELL
-    assert_equal expected, shell_output("#{bin}/stylish-haskell test.hs")
+    # Pass the config explicitly; searching for one walks up to `/`, which the sandbox denies
+    (testpath/"config.yaml").write shell_output("#{bin}/stylish-haskell --defaults")
+
+    assert_equal expected, shell_output("#{bin}/stylish-haskell --config config.yaml test.hs")
   end
 end

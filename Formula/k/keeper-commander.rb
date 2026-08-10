@@ -3,20 +3,20 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https://docs.keeper.io/en/privileged-access-manager/commander-cli/overview"
-  url "https://files.pythonhosted.org/packages/29/26/2e6dfa90265ee10924a093e43a897bbd8cb4736f50b5a6ad5e464ba72ef4/keepercommander-18.0.15.tar.gz"
-  sha256 "9bd012e2ec82f96411a878e38ece432903f765134b2a76cec6d093f52b8fd924"
+  url "https://files.pythonhosted.org/packages/52/ab/b1e3e56a8b70313888c91c53322daf426d92ca4d9c047ad7e1b41a1ceb2f/keepercommander-18.1.0.tar.gz"
+  sha256 "f5dc178265f2b4a28aa53cb06d9828f302c647cb09526519c1607780cbff0209"
   license "MIT"
   head "https://github.com/Keeper-Security/Commander.git", branch: "master"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "91ca9289b254c6bb7e8748bcca13340382b115869473d576ddebccea7e16ef7f"
-    sha256 cellar: :any, arm64_sequoia: "0746c90e11f6d9917b895961eac63b0aa4b45bba0e6f5b8011eb6a6b0121bc12"
-    sha256 cellar: :any, arm64_sonoma:  "15969ec930965f3fb0d3809ca3c605e7e121d1848e4ac011d184fa06c9522f7c"
-    sha256 cellar: :any, sonoma:        "84e58efbdb3a127e13728ce69c060e8907e0d2cebaeb02e282e591a9242b73a4"
-    sha256 cellar: :any, arm64_linux:   "d1d4711a7479e41fe3e1844e1b3fb0cdd31aff636b0a510b930cae440c950269"
-    sha256 cellar: :any, x86_64_linux:  "afde3824f3a0f4b4d1ee876ab83ec165f281626fe4e999b6db582429901f18d8"
+    sha256 cellar: :any, arm64_tahoe:   "250b9774814808b7bc95f2a812550d5d17b543f131655a87271b637a997299cd"
+    sha256 cellar: :any, arm64_sequoia: "da390e6b3ede915769fc4672591719a3d91ce6826f8409b3cf94916ae8357640"
+    sha256 cellar: :any, arm64_sonoma:  "708c28898872a22150f298832eb0631614b99e5d069383bc30b4695a1fa0bcfa"
+    sha256 cellar: :any, sonoma:        "778fcb16ee77c587c74b2baee9bead51a15664b8f30da4d0e650052bfdbc1999"
+    sha256 cellar: :any, arm64_linux:   "1c0dbde6ea63b61b5ff89a1fc120a56d4801dd510adfb476aa8748500bd840cd"
+    sha256 cellar: :any, x86_64_linux:  "dbee9dc15547305dfb07f5f09f07947f98c0edad7fcf0206fddc07e3cace24de"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -217,13 +217,13 @@ class KeeperCommander < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
-    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
-    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
+    url "https://files.pythonhosted.org/packages/36/0a/062135c9a98dac804265073cc3afdbec5ae1aa37980bb354f461bafe81b4/platformdirs-4.11.1.tar.gz"
+    sha256 "bb1af68078f25e2f3e111e2d43b8d536df41b73c8a684b40bb018223b66fae27"
   end
 
   resource "prompt-toolkit" do

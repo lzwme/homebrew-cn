@@ -33,6 +33,9 @@ class PdfTocgen < Formula
   end
 
   test do
+    # Keep pymupdf's `fitz` deprecation warning out of the recipe file
+    ENV["PYMUPDF_MESSAGE"] = "fd:2"
+
     resource "pdf" do
       url "https://ghfast.top/https://raw.githubusercontent.com/Krasjet/pdf.tocgen/refs/heads/master/spec/files/level2.pdf"
       sha256 "021e4d025341d31babee19e6b75afb26f167923db42d1d038610edb328b82da2"

@@ -24,11 +24,14 @@ class Openldap < Formula
 
   keg_only :provided_by_macos
 
-  depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1600
   depends_on "openssl@3"
 
   uses_from_macos "mandoc" => :build
   uses_from_macos "cyrus-sasl"
+
+  on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1600
+  end
 
   on_linux do
     depends_on "util-linux"

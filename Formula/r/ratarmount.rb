@@ -117,6 +117,7 @@ class Ratarmount < Formula
   test do
     assert_match "ratarmount #{version}", shell_output("#{bin}/ratarmount --version 2>&1")
     tarball = test_fixtures("tarballs/testball2-0.1.tbz")
-    assert_match "FUSE mountpoint could not be created", shell_output("#{bin}/ratarmount #{tarball} 2>&1", 1)
+    assert_match "FUSE mountpoint could not be created",
+                 shell_output("#{bin}/ratarmount #{tarball} #{testpath}/mount 2>&1", 1)
   end
 end

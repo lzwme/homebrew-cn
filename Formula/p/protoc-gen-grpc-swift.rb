@@ -19,13 +19,13 @@ class ProtocGenGrpcSwift < Formula
     sha256 cellar: :any,                 x86_64_linux:  "832640c9a2330cd61e4c385ae2a1eaa29646d71dee3d97c22f526ec4bc0fb919"
   end
 
-  depends_on xcode: ["15.0", :build]
   depends_on "protobuf"
   depends_on "swift-protobuf"
 
   uses_from_macos "swift" => :build
 
   on_macos do
+    depends_on xcode: ["15.0", :build]
     # https://swiftpackageindex.com/grpc/grpc-swift/documentation/grpccore/compatibility#Platforms
     depends_on macos: :sequoia
   end

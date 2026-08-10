@@ -40,7 +40,6 @@ class QtAT5 < Formula
   disable! date: "2027-05-19", because: :unsupported
 
   depends_on "pkgconf" => :build
-  depends_on xcode: :build
   depends_on "freetype"
   depends_on "glib"
   depends_on "jpeg-turbo"
@@ -56,6 +55,7 @@ class QtAT5 < Formula
   uses_from_macos "krb5"
 
   on_macos do
+    depends_on xcode: :build
     depends_on "gettext"
   end
 

@@ -22,7 +22,7 @@ class Envoy < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "bazelisk" => :build
+  depends_on "bazel@8" => :build
   depends_on "cmake" => :build
   depends_on "go" => :build
   depends_on "libtool" => :build
@@ -31,7 +31,6 @@ class Envoy < Formula
   depends_on "pkgconf" => :build
   depends_on "wget" => :build
   depends_on xcode: :build
-  depends_on "yq" => :build
 
   uses_from_macos "ncurses" => :build
   uses_from_macos "python" => :build
@@ -46,28 +45,25 @@ class Envoy < Formula
     depends_on "lld" => :build
   end
 
-  def bazelisk
-    formula_opt_bin("bazelisk")/"bazelisk"
-  end
-
   def llvm_formula
     Formula["llvm@18"]
   end
 
   def install
-    ENV.remove "PATH", "#{Superenv.shims_path}:"
-
-    # rules_foreign_cc CMake try-compile can pick GNU ld from PATH and fail to link
-    # against Envoy's configured sysroot/toolchain. Keep clang/llvm tools but drop binutils.
-    ENV.remove "PATH", ":#{formula_opt_bin("binutils")}" if OS.linux?
-    env_path = ENV["PATH"]
-
     # Drop hickory DNS: its rust SDK pulls in mockall (incompatible with macOS)
     # and references `@llvm_toolchain_llvm` labels that aren't registered when
     # LLVM is injected via `BAZEL_LLVM_PATH`.
     inreplace "source/extensions/extensions_build_config.bzl",
               /^\s*"envoy\.network\.dns_resolver\.hickory":.*\n/, ""
 
+    # Build with brew Bazel rather than Bazelisk downloading it
+    rm ".bazelversion"
+
+    # Bazel cannot run in superenv. Also drop binutils as rules_foreign_cc CMake try-compile
+    # can pick GNU ld from PATH and fail to link against Envoy's configured sysroot/toolchain
+    env_path = (ENV["PATH"].split(":") - [Superenv.shims_path.to_s, formula_opt_bin("binutils").to_s]).join(":")
+
+    bazel_args = %W[--output_user_root=#{buildpath}/user_root]
     args = %W[
       --noenable_bzlmod
       --@envoy//bazel/foreign_cc:parallel_builds
@@ -81,19 +77,11 @@ class Envoy < Formula
       --repository_cache=#{HOMEBREW_CACHE}/envoy-repository-cache
       --jobs=#{ENV.make_jobs}
     ]
-    bazel_args = %W[
-      --output_user_root=#{buildpath}/user_root
-    ]
 
     if OS.linux?
       args.push(
         "--config=clang-local",
         "--repo_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1",
-        "--copt=-Wno-deprecated-literal-operator",
-        "--copt=-Wno-unknown-warning-option",
-        "--copt=-Wno-nontrivial-memcall",
-        "--copt=-Wno-nontrivial-memaccess",
-        "--copt=-Wno-nonportable-include-path",
         "--strategy=BootstrapGNUMake=standalone",
         "--strategy=BootstrapPkgConfig=standalone",
       )
@@ -133,23 +121,11 @@ class Envoy < Formula
       args << "--host_linkopt=-L#{llvm_path}/lib"
     end
 
-    output_base = Utils.safe_popen_read(
-      bazelisk, *bazel_args, "info", "output_base"
-    ).chomp
-    odie "Failed to determine bazel output_base" if output_base.empty?
-    yq_bin = formula_opt_bin("yq")/"yq"
-    platform_suffix = "yq_#{OS.kernel_name.downcase}_#{Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch}"
-    ["yq", platform_suffix].each do |suffix|
-      dir = Pathname(output_base)/"external"/suffix
-      dir.mkpath
-      ln_sf yq_bin, dir/"yq"
-    end
-
     # Write the current version SOURCE_VERSION.
     system "python3", "tools/github/write_current_source_version.py", "--skip_error_in_git",
            "--github_api_token_env_name=HOMEBREW_GITHUB_API_TOKEN"
 
-    system bazelisk, *bazel_args, "build", *args, "//source/exe:envoy-static.stripped"
+    system "bazel", *bazel_args, "build", *args, "//source/exe:envoy-static.stripped"
     bin.install "bazel-bin/source/exe/envoy-static.stripped" => "envoy"
     # Copy the configs directory to the pkgshare directory.
     pkgshare.install "configs"

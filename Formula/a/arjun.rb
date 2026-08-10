@@ -74,7 +74,7 @@ class Arjun < Formula
     PYTHON
 
     server_pid = spawn python3, testpath/"server.py"
-    sleep 5
+    sleep 10
 
     begin
       dbfile = libexec/Language::Python.site_packages(python3)/"arjun/db/small.txt"

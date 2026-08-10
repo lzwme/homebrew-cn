@@ -62,7 +62,7 @@ class GccAT10 < Formula
     #  - BRIG
     languages = %w[c c++ objc obj-c++ fortran]
 
-    pkgversion = "Homebrew GCC #{pkg_version} #{build.used_options*" "}".strip
+    pkgversion = "Homebrew GCC #{pkg_version}"
 
     args = %W[
       --prefix=#{prefix}

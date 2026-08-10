@@ -21,13 +21,13 @@ class Pyside < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_tahoe:   "40ff0f1512616c63d6ff801cfc05e44f27363758b43c81f7cb01a20479ef7eb8"
-    sha256                               arm64_sequoia: "b7831da4844f001e7319dfe0851214cc0b72a4c12c996731062d0800953c2383"
-    sha256                               arm64_sonoma:  "bc985bbb691bde5fce6bcd8187acf16ce5039dbf04922cd58204d92c1c78499f"
-    sha256 cellar: :any,                 sonoma:        "f17ce084ece6ce84e3f0fc0cf3ba1a2ae98f23bbffaee3e8c9faa8d0e5606e79"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a116c536daafc08fdb8aa97083a9899d589a469d9d15bb40a9a2c0f04e91374f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6ed1e8f3b82c4cf92ecbdba2efd968c546d0f1f93144224cba37a8622ab217f"
+    rebuild 2
+    sha256               arm64_tahoe:   "b9dd646d3e5215c539866487dcbec9a8d50e981d84616c7b9754a19c045a80cc"
+    sha256               arm64_sequoia: "853dab96180bb44b90e2a58da4b230dae3f9db30cd1e5c94697c7b8a1cf9d060"
+    sha256               arm64_sonoma:  "4bd97f01f07a58d62bdd70c6ae08b348117ea9b69af08a002ff2eb6dd5e2de6c"
+    sha256 cellar: :any, sonoma:        "efbc4f2cb59a95b99109c2d1e44ab6b6b0089eb2ab53e357f4775649beb3e2c1"
+    sha256 cellar: :any, arm64_linux:   "3ee8af258583e56ad90ebfff8ab1dabdb8cec00acb1c7572d74f5c6ff9c635e2"
+    sha256 cellar: :any, x86_64_linux:  "269955b354a662740c927e4235b9aa50c13775aec0a4a1a4eb24c45bc4f6998d"
   end
 
   depends_on "cmake" => :build
@@ -71,19 +71,13 @@ class Pyside < Formula
     depends_on "qtshadertools"
   end
 
-  on_sonoma :or_newer do
+  on_system :linux, macos: :sonoma_or_newer do
     depends_on "qtwebengine"
     depends_on "qtwebview"
   end
 
   on_linux do
     depends_on "mesa"
-
-    # TODO: Add dependencies on all Linux when `qtwebengine` is bottled on arm64 Linux
-    on_intel do
-      depends_on "qtwebengine"
-      depends_on "qtwebview"
-    end
   end
 
   def python3
@@ -134,7 +128,7 @@ class Pyside < Formula
       Widgets
       Xml
     ]
-    modules << "WebEngineCore" if (OS.linux? && Hardware::CPU.intel?) || (OS.mac? && MacOS.version >= :sonoma)
+    modules << "WebEngineCore" if !OS.mac? || MacOS.version >= :sonoma
     modules.each { |mod| system python3, "-c", "import PySide6.Qt#{mod}" }
 
     pyincludes = shell_output("#{python3}-config --includes").chomp.split

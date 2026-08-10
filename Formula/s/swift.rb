@@ -31,12 +31,6 @@ class Swift < Formula
   depends_on "cmake" => :build
   depends_on "ninja" => :build
 
-  # As a starting point, check `minimum_version` in `validate_xcode_compatibility`:
-  # https://github.com/swiftlang/swift/tree/swift-#{version}-RELEASE/utils/build-script
-  # This is community-sourced so may not be accurate. If the version in this formula
-  # is higher then that is likely why.
-  depends_on xcode: ["14.3", :build]
-
   depends_on "python@3.14"
   depends_on "zstd"
 
@@ -47,6 +41,14 @@ class Swift < Formula
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
   uses_from_macos "sqlite"
+
+  on_macos do
+    # As a starting point, check `minimum_version` in `validate_xcode_compatibility`:
+    # https://github.com/swiftlang/swift/tree/swift-#{version}-RELEASE/utils/build-script
+    # This is community-sourced so may not be accurate. If the version in this formula
+    # is higher then that is likely why.
+    depends_on xcode: ["14.3", :build]
+  end
 
   on_linux do
     depends_on "lld" => :build

@@ -1,18 +1,18 @@
 class Tgpt < Formula
   desc "AI Chatbots in terminal without needing API keys"
   homepage "https://github.com/aandrew-me/tgpt"
-  url "https://ghfast.top/https://github.com/aandrew-me/tgpt/archive/refs/tags/v2.12.0.tar.gz"
-  sha256 "9c6d2e0a7540d24a1f94b9e9ee8b55db4971b5723aec4cfe79a77b46885b4ac5"
+  url "https://ghfast.top/https://github.com/aandrew-me/tgpt/archive/refs/tags/v2.13.0.tar.gz"
+  sha256 "950af3b39f5870d0659c88ae195b46553580e5d96c31f2230b7eb159d774e7b4"
   license "GPL-3.0-only"
   head "https://github.com/aandrew-me/tgpt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1eaf487288c878aa1b126169cb2f10add781315b4311194c9c3f6aaf11ecb5dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f7165480b81d108e82e69572aaf4688a4edde411df8d5809b93471164806a34"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c682fae20ac0a27e7265a6251a1cb129dd9741eda94bfa1d155fa0a7527d6064"
-    sha256 cellar: :any_skip_relocation, sonoma:        "14bf589f8c9275c4170083d214b0814f00406be50f4141535b0131dfb5f4c958"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d6e32bc6fdab6c81728f05874bad0e003360b57d356fb445657b234e4489ed5"
-    sha256 cellar: :any,                 x86_64_linux:  "af06b4ad4ea945084f1277d8e32d02befcc0bdb179b9ef6ebae4dfc4bc7334ff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "553f2c71a98e4e59cc7674292b74362e8c4680c0acddb4925fce1c12d0f9368e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27f4ff1b575f88b526f25c6e65f81397513363709cf803461724aeaf19d30c37"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3d68c0fc636d6b6dac9a58a7ca624d1331a5dc66c7fde3d4d126a0f2b677a7a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "df19daad2778c312116ebfafca859a15190f4093679d77f19ee0b460ae5a59d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "632b288df6bd65e70c075bbe8d70f51ca04571196ea90db32bc9160405bd705f"
+    sha256 cellar: :any,                 x86_64_linux:  "a5065b17823b8a80ccdea3147e3e699e12daf1855495bd05d173e3cd4d9a6a60"
   end
 
   depends_on "go" => :build

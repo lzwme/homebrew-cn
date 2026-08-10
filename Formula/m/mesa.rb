@@ -3,8 +3,8 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://archive.mesa3d.org/mesa-26.1.4.tar.xz"
-  sha256 "072705caa9adf4740f1489194b13e278ad959166863b5271fe423a86353c9ab6"
+  url "https://archive.mesa3d.org/mesa-26.2.0.tar.xz"
+  sha256 "efd4bb08cdb7c365a812cd4e6c9202ab55b2f22cdcd13c7d6c4f9647b799a4ef"
   license all_of: [
     "MIT",
     "Apache-2.0", # include/{EGL,GLES*,vk_video,vulkan}, src/egl/generate/egl.xml, src/mapi/glapi/registry/gl.xml
@@ -24,13 +24,12 @@ class Mesa < Formula
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "28aec79ab255fe39cc7ce3b41494e8e8001e9d77c3ba8006f7710dd2502b2138"
-    sha256 arm64_sequoia: "40aff4fb98f29ec3418d1e020e5081bfd99a3f658ce2392a3695b605d46d6762"
-    sha256 arm64_sonoma:  "3eeecf1cb6f54e97764ddeacdcc23f071c8c4d7725c251388e9f118f84df58e2"
-    sha256 sonoma:        "2fe60081447cd1a913e9a07e25591fb41fc85032bdff2fb3db68ed8ac269028d"
-    sha256 arm64_linux:   "bc66b2c6050a83d0fbbfefd58310ccec3050782678d4f65e8435c928d362dd82"
-    sha256 x86_64_linux:  "7ac1e5d8cb9dbb02a736ed806898dded45203771c369c0d621f5510616024afe"
+    sha256 arm64_tahoe:   "ae368f5f5176163dca0e9dee37aa41279f4602ff5a9fcd2989a213bf7e29b686"
+    sha256 arm64_sequoia: "19730cfeb6b0ec7ae98aeb4c3731049d923547868d4292e427c2236a2332912d"
+    sha256 arm64_sonoma:  "9ad472549958fbcd0f2525af595e71f67b756202f927706559de0bd431e12a71"
+    sha256 sonoma:        "97d7216b54b357c14d095a9638ae5e380d71e4734815a4fef7dc44d12d268110"
+    sha256 arm64_linux:   "8b1ef159d893319b1a5cfb4b806054b0f02fc88fb4519532944afce3a048fed0"
+    sha256 x86_64_linux:  "12f08e162e90bf2c897b184a55ff684f41a65a753f6e967c75a8bd71e278bdbc"
   end
 
   depends_on "bindgen" => :build
@@ -148,7 +147,8 @@ class Mesa < Formula
       # Work around .../rusticl_system_bindings.h:1:10: fatal error: 'stdio.h' file not found
       ENV["SDKROOT"] = MacOS.sdk_for_formula(self).path
 
-      vulkan_drivers = (MacOS.version >= :sequoia) ? "kosmickrisp,swrast" : "swrast"
+      # KosmicKrisp requires Metal 4 / macOS 26, see https://docs.mesa3d.org/drivers/kosmickrisp.html
+      vulkan_drivers = (MacOS.version >= :tahoe) ? "kosmickrisp,swrast" : "swrast"
 
       %W[
         -Dgallium-drivers=llvmpipe,zink
@@ -156,6 +156,7 @@ class Mesa < Formula
         -Dtools=etnaviv,glsl,nir,nouveau,dlclose-skip
         -Dvulkan-drivers=#{vulkan_drivers}
         -Dvulkan-layers=intel-nullhw,overlay,screenshot,vram-report-limit
+        --force-fallback-for=syn
       ]
     else
       # Not all supported drivers are being auto-enabled on x86 Linux.

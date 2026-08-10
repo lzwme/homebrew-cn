@@ -1187,7 +1187,7 @@ Homebrew-homebrew-core/Formula/c/coder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codesnap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codespell.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/codevis.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/codex-acp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/codex-acp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/coffeescript.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cogapp.rb, Homebrew/homebrew-core, 0
@@ -5473,6 +5473,7 @@ Homebrew-homebrew-core/Formula/o/openjdk@25.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openjdk@8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openjpeg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openjph.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/openkermit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openkim-models.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openldap.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openliberty-jakartaee8.rb, Homebrew/homebrew-core, 0
@@ -5590,6 +5591,7 @@ Homebrew-homebrew-core/Formula/o/oxfmt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/oxipng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oxker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oxlint.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/oxvg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/p0f.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/p11-kit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/p7zip.rb, Homebrew/homebrew-core, 1
@@ -9148,6 +9150,7 @@ Homebrew-homebrew-cask/Casks/c/cameracontroller.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/camo-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/camtasia.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/camunda-modeler.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/canario.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/candy-crisis.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/candybar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/canon-eos-utility.rb, Homebrew/homebrew-cask, 0
@@ -9173,6 +9176,7 @@ Homebrew-homebrew-cask/Casks/c/cardinal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cardo-update.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cardpresso.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cashnotify.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/caskhub.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/castr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/catch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cate.rb, Homebrew/homebrew-cask, 1
@@ -11589,6 +11593,7 @@ Homebrew-homebrew-cask/Casks/font/font-n/font-new-tegomin.rb, Homebrew/homebrew-
 Homebrew-homebrew-cask/Casks/font/font-n/font-new-york.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-news-cycle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-newsreader.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-n/font-nexon-bazzi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nexon-lv1-gothic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nexon-lv2-gothic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nexon-maplestory.rb, Homebrew/homebrew-cask, 0

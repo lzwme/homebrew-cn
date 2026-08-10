@@ -110,13 +110,13 @@ class Pyspelling < Formula
           wordlists:
           - #{testpath}/en-custom.txt
         sources:
-        - #{testpath}/text.txt
+        - text.txt
     YAML
 
     output = shell_output(bin/"pyspelling", 1)
     assert_match <<~EOS, output
       Misspelled words:
-      <text> #{testpath}/text.txt
+      <text> text.txt
       --------------------------------------------------------------------------------
       favourite
       --------------------------------------------------------------------------------

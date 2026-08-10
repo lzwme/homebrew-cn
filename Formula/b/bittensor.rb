@@ -8,19 +8,20 @@ class Bittensor < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "5d871f4016dae1a0afd6f3cbaff3447a8379d2fff5097df89dc197b060ff72e6"
-    sha256 cellar: :any, arm64_sequoia: "fdf859c243ede4882c0770963297e45d141176c07255b15222fb6d3f22763833"
-    sha256 cellar: :any, arm64_sonoma:  "b1fa59ecacd2470da0bab2239c8d0de5da628dc90fef603455b3285ab7c90343"
-    sha256 cellar: :any, sonoma:        "3c8545ef751d9b7f66bf15cb4c3caa7e582c09b808fecf3fcf9769107817c094"
-    sha256 cellar: :any, arm64_linux:   "62c908855715b8ff1115e3291488a4f877a1ce2f79e9c26e3cfae299de2da5e3"
-    sha256 cellar: :any, x86_64_linux:  "b87a13bc7c93a0061e9f1a7bb4fa728bcb5857f8c592159db0960c9e408f9c22"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "effad1bb467a0519b27e6765145f868ab892ab1fd1f271ba6dbe7208d373b48f"
+    sha256 cellar: :any, arm64_sequoia: "7b94246444eb6cacb14756c4ef951dfc7f70421c33db2fcc966339d240a83232"
+    sha256 cellar: :any, arm64_sonoma:  "9823be18037b8f33a5dbc70cea1defc5c7abb12324a6af4da616b0fc2ca82669"
+    sha256 cellar: :any, sonoma:        "0702c55b5d7af9d3aff2e036df2fe2d5bf2b2ea31ed5d258aa5fb45025fd5013"
+    sha256 cellar: :any, arm64_linux:   "e11469ee4512942ff16b7001d85418cc171376959ca4b78b88b167fbe9dff73c"
+    sha256 cellar: :any, x86_64_linux:  "faa40ee5c16fb7c2d3b210f61de133479d3d47c005ef57cb634a0332f3d65d14"
   end
 
   depends_on "rust" => :build # for bittensor-core
 
   depends_on "openssl@3"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13" # upstream requires-python is `>=3.10,<3.14`, issue ref: https://github.com/RaoFoundation/subtensor/issues/2950
+  depends_on "python@3.14"
 
   conflicts_with "btcli", "btpd", because: "both install `btcli` binaries"
 

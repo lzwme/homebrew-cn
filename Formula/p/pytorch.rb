@@ -26,7 +26,6 @@ class Pytorch < Formula
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "python@3.14" => [:build, :test]
-  depends_on xcode: :build
   depends_on "abseil"
   depends_on "eigen"
   depends_on "libuv"
@@ -39,6 +38,7 @@ class Pytorch < Formula
   depends_on "sleef"
 
   on_macos do
+    depends_on xcode: :build
     depends_on "libomp"
     depends_on macos: :monterey # MPS backend only supports 12.3 and above
   end

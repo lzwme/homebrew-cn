@@ -25,7 +25,6 @@ class Graalvm < Formula
   depends_on "ninja" => :build
   depends_on "openjdk@25" => :build
   depends_on "pkgconf" => :build
-  depends_on xcode: :build
   depends_on "freetype"
   depends_on "giflib"
   depends_on "harfbuzz"
@@ -38,6 +37,7 @@ class Graalvm < Formula
   uses_from_macos "cups" => :no_linkage
 
   on_macos do
+    depends_on xcode: :build
     depends_on arch: :arm64
   end
 
@@ -56,13 +56,15 @@ class Graalvm < Formula
 
   resource "labs-openjdk" do
     url "https://ghfast.top/https://github.com/graalvm/labs-openjdk/archive/refs/tags/jvmci-25.2-b20.tar.gz"
-    version "25.0.4+7-jvmci-25.2-b20"
+    version "25.2-b20"
     sha256 "629f342e7640501858fa24f24cf43600cbe13d3afce25b9e407afa14372d84cb"
 
     livecheck do
-      # FIXME: This regex is not correct
-      # Issue ref: https://github.com/graalvm/labs-openjdk/issues/40
-      regex(/(\d+(?:\.\d+)+\+\d+-jvmci-b\d+)/i)
+      url "https://ghfast.top/https://raw.githubusercontent.com/oracle/graal/refs/tags/graal-#{LATEST_VERSION}/common.json"
+      regex(/jvmci[._-]v?(\d+(?:\.\d+)+-b\d+)$/i)
+      strategy :json do |json, regex|
+        json.dig("jdks", "labsjdk-ce-latest", "version")&.[](regex, 1)
+      end
     end
   end
 
@@ -99,7 +101,7 @@ class Graalvm < Formula
       -Wl,-rpath,#{loader_path.gsub("$", "\\$$")}/server
     ]
 
-    labsjdk_version = resource("labs-openjdk").version.to_s
+    labsjdk_version = JSON.parse(File.read("common.json")).dig("jdks", "labsjdk-ce-latest", "version")
     match = labsjdk_version.match(/(?<java>\d+(?:\.\d+)*)\+(?<build>\d+)-(?<opt>jvmci(?:-\d+(?:\.\d+)*)?-b\d+)/)
     odie "Failed to parse LabsJDK version: #{labsjdk_version}" if match.nil?
 

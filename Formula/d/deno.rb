@@ -22,12 +22,15 @@ class Deno < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on xcode: ["15.0", :build] # v8 12.9+ uses linker flags introduced in xcode 15
   depends_on "little-cms2"
   depends_on "sqlite" # needs `sqlite3_unlock_notify`
 
   uses_from_macos "python" => :build
   uses_from_macos "libffi"
+
+  on_macos do
+    depends_on xcode: ["15.0", :build] # v8 12.9+ uses linker flags introduced in xcode 15
+  end
 
   on_linux do
     depends_on "glib" => :build

@@ -1,8 +1,8 @@
 class Rttr < Formula
   desc "C++ Reflection Library"
   homepage "https://www.rttr.org"
-  url "https://ghfast.top/https://github.com/rttrorg/rttr/archive/refs/tags/v0.9.6.tar.gz"
-  sha256 "058554f8644450185fd881a6598f9dee7ef85785cbc2bb5a5526a43225aa313f"
+  url "https://ghfast.top/https://github.com/rttrorg/rttr/releases/download/v0.9.6/rttr-0.9.6-src.zip"
+  sha256 "d6853be1bfc38da6fb4512ae4c0a116662f86fa81a6b2aab1c4dada2c16f375f"
   license "MIT"
   head "https://github.com/rttrorg/rttr.git", branch: "master"
 

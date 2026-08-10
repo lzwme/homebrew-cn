@@ -1,9 +1,10 @@
 class ProtocGenGrpcWeb < Formula
   desc "Protoc plugin that generates code for gRPC-Web clients"
   homepage "https://grpc.io"
-  url "https://ghfast.top/https://github.com/grpc/grpc-web/archive/refs/tags/2.1.0.tar.gz"
-  sha256 "7dfe1a7fe858b2f43a4504f9378739b02371a30f5ec2823df529713a73ad681c"
+  url "https://ghfast.top/https://github.com/grpc/grpc-web/archive/refs/tags/2.0.2.tar.gz"
+  sha256 "0f0c8c0c1104306d67dad678be7c14efe52a698795a58b2b72ab67a8bb100c15"
   license "Apache-2.0"
+  revision 6
 
   livecheck do
     url :stable
@@ -11,12 +12,12 @@ class ProtocGenGrpcWeb < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "2293a338b58fc39e2c45002137945f9887a3900df97900b20abb14f581fbbbbb"
-    sha256 cellar: :any, arm64_sequoia: "6e4bd25ba6d97dda3235312b5b0b0f9344107f6f55e1b927c483d3670321a4f4"
-    sha256 cellar: :any, arm64_sonoma:  "d1020c5c09636ee61ea1016c9621c58cbe5a572931d6e1e175cc2e569592aff5"
-    sha256 cellar: :any, sonoma:        "d19881ac94c0c0fea6e367b41a9de8ec1834f8ac8a5a2fc3228545e607a7f2eb"
-    sha256 cellar: :any, arm64_linux:   "d5c347a96aa29e769bf4556751490bbef9c6856f5f2ba483a4c601558c624d67"
-    sha256 cellar: :any, x86_64_linux:  "edb08d1ad9f1dca283d816e9b9fa237979a6dc48d4ea3db5adc91db3c88aac4b"
+    sha256 cellar: :any, arm64_tahoe:   "9c631d0ad25f903f8cb8e91a37edd017cf195fe4c2726f05067d6578198543d6"
+    sha256 cellar: :any, arm64_sequoia: "e330c3e95cffbecd62f20b302e418c815329f33bafe6b1ddc8591c87e7c036cc"
+    sha256 cellar: :any, arm64_sonoma:  "3fe9bb2b2d8b8421fdebfbb1d2b297189ba99c658ada569554859fe2651d11ac"
+    sha256 cellar: :any, sonoma:        "4aa6d2b9dd9dcc5f5ea1962e2ce7d1d18729639702e1d3890ff4e333f3d7826b"
+    sha256 cellar: :any, arm64_linux:   "f75da1d59baf3fdb3354b13606544ab4b5f93454dce242fb0904449264a06d1d"
+    sha256 cellar: :any, x86_64_linux:  "589e1d374217322d70be03f32c8fb102e1a072a0de98a4679836186fe965a3f7"
   end
 
   depends_on "cmake" => :build

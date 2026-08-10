@@ -59,7 +59,7 @@ class GccAT11 < Formula
     languages = %w[c c++ objc obj-c++ fortran]
     languages << "d" if Hardware::CPU.intel?
 
-    pkgversion = "Homebrew GCC #{pkg_version} #{build.used_options*" "}".strip
+    pkgversion = "Homebrew GCC #{pkg_version}"
 
     args = %W[
       --prefix=#{opt_prefix}

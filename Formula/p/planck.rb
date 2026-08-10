@@ -33,13 +33,16 @@ class Planck < Formula
   depends_on "clojure" => :build
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on xcode: :build
   depends_on "icu4c@78"
   depends_on "libzip"
 
   uses_from_macos "vim" => :build # for xxd
   uses_from_macos "curl"
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on xcode: :build
+  end
 
   on_linux do
     depends_on "webkitgtk"

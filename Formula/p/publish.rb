@@ -18,12 +18,11 @@ class Publish < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbf8d184068be460c2c8fb09aa1faad7180b1341bd50f670d7ca97a6d93e8672"
   end
 
-  # https://github.com/JohnSundell/Publish#system-requirements
-  depends_on xcode: ["13.0", :build]
-
   uses_from_macos "swift" => :build
 
   on_macos do
+    # https://github.com/JohnSundell/Publish#system-requirements
+    depends_on xcode: ["13.0", :build]
     # missing `libswift_Concurrency.dylib` on big_sur`
     depends_on macos: :monterey
   end

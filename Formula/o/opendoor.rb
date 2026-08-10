@@ -54,7 +54,7 @@ class Opendoor < Formula
                        "--bind", "127.0.0.1",
                        "--directory", testpath.to_s
 
-    sleep 2
+    sleep 4
 
     output = shell_output(
       "#{bin}/opendoor --host 127.0.0.1 --port #{port} --scheme http:// " \

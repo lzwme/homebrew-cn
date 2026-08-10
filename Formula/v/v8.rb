@@ -34,9 +34,12 @@ class V8 < Formula
 
   depends_on "llvm" => :build
   depends_on "ninja" => :build
-  depends_on xcode: ["10.0", :build] # for xcodebuild, min version required by v8
 
   uses_from_macos "python" => :build
+
+  on_macos do
+    depends_on xcode: ["10.0", :build] # for xcodebuild, min version required by v8
+  end
 
   on_linux do
     depends_on "lld" => :build

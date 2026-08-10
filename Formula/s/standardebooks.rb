@@ -9,12 +9,13 @@ class Standardebooks < Formula
   head "https://github.com/standardebooks/tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c7094b763d868d2ad47b58b9dac3e5839da190eaa09dadf3f3cd66ff1e91a971"
-    sha256 cellar: :any, arm64_sequoia: "6fccfc3d64492779596d11bc6637c5ac7a7500cce66ba68c1d6fe5c38f1e594e"
-    sha256 cellar: :any, arm64_sonoma:  "74b5bee83561e701f530e1b2f010707930d2e1432c86f396883d78f050ab3855"
-    sha256 cellar: :any, sonoma:        "8d8a95330451af7ad697581dc811eee035188174ebf383b17b01bbe15a7868cd"
-    sha256 cellar: :any, arm64_linux:   "bafe3d2dd3e9cdfef028dd11d83560544c7bffec0e19096c8523efd2a56225a1"
-    sha256 cellar: :any, x86_64_linux:  "87724d9f5568ae034d2ff654a91db2fb41457050c55afe9e55be99b717c0be6f"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "948ec2483d7fe40e771295eaecc695aa009ee0c9ee10632342ac14ce30814c60"
+    sha256 cellar: :any, arm64_sequoia: "8f3fd768a7c3aaaf7d3759fbaa0ccaba1cd57235883b896a187d7b50d118f806"
+    sha256 cellar: :any, arm64_sonoma:  "a2a1a0f5b868516ffa61c4c8d62e073d881fe2d6f72df5d9f146e764cc91dc0e"
+    sha256 cellar: :any, sonoma:        "ba8127558aa15ac18731c3b7ccae14243903ccbe6b4f1cfc85e6e23bdbb00a96"
+    sha256 cellar: :any, arm64_linux:   "19ee70ca46f0d0b3ad853d6eb4fe41f7c55650141e583b6732c5c4387859cad9"
+    sha256 cellar: :any, x86_64_linux:  "e1875b05d017273beff48250bdf1f485695cae3e5b7d6e6e4f8fb300d0d0e5f9"
   end
 
   depends_on "rust" => :build # for selenium
@@ -22,7 +23,6 @@ class Standardebooks < Formula
   depends_on "cffi" => :no_linkage
   depends_on "openjdk"
   depends_on "pillow" => :no_linkage
-  depends_on "py3cairo" => :no_linkage
   depends_on "pycparser" => :no_linkage
   depends_on "python@3.14"
 
@@ -33,7 +33,8 @@ class Standardebooks < Formula
     depends_on "zlib-ng-compat"
   end
 
-  pypi_packages exclude_packages: %w[certifi cffi pillow pycairo]
+  pypi_packages exclude_packages: %w[certifi cffi pillow],
+                extra_packages:   "pyxdg" # Linux only
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
@@ -289,7 +290,8 @@ class Standardebooks < Formula
     # Remove vendored prebuilt binary
     rm "se/vendor/calibre_azw3/upstream/html5_parser/html_parser.cpython-312-x86_64-linux-gnu.so"
 
-    virtualenv_install_with_resources
+    without = "pyxdg" unless OS.linux?
+    virtualenv_install_with_resources(without:)
 
     bash_completion.install "se/completions/bash/se"
     fish_completion.install "se/completions/fish/se.fish"
