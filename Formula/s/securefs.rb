@@ -4,7 +4,7 @@ class Securefs < Formula
   url "https://ghfast.top/https://github.com/netheril96/securefs/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "d7fac7adc70c09473173aeadee5b7041d7e63fbf392ef40bdd77888590bb12a2"
   license "MIT"
-  revision 9
+  revision 10
   head "https://github.com/netheril96/securefs.git", branch: "master"
 
   livecheck do
@@ -13,8 +13,8 @@ class Securefs < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "10514ac1534ee88acdfd2a191b94501190dd20677a7f3ee88ebde12759ae47d1"
-    sha256 x86_64_linux: "551719741b79f0cbe3f7fcdaf60daa87f8b23fb1561162d00b8d360eb9457c8c"
+    sha256 arm64_linux:  "ac781da28529765274fa01145c1bc62f7292447965a3d165fd789827a2d9bf9a"
+    sha256 x86_64_linux: "05cbfa9a144d2f822ca227322d762799612e55f355238d4776d8f482dda995e9"
   end
 
   deprecate! date: "2026-06-21", because: "needs unmaintained `libfuse@2`"

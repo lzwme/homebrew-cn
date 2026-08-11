@@ -7,6 +7,7 @@ class Mysql < Formula
   mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_9.7.1.orig.tar.gz"
   sha256 "dabff263022be6a09151c21812322873437e0d77aec8c4cc7381882c3ea1aeae"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
+  revision 1
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
@@ -14,13 +15,12 @@ class Mysql < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "80b52cf77d7a5aa810adef0e992a9640f92dbfcdec0c3e2071ca9b67a800b097"
-    sha256 arm64_sequoia: "2ff39057daf4ff52baacbd15f78cef15cc52cce624028f1c9c3bcdd251e89778"
-    sha256 arm64_sonoma:  "0d8133ec0fdfc411d03171e81af50af901f7f39d5812a3c759e9a715f97d0463"
-    sha256 sonoma:        "1831accf9e3eb1fcd649951c2688d3c93a8d522e49d917a11268919decfd59e3"
-    sha256 arm64_linux:   "e4a45a0cc2cc28716d28f4d0748cd88f6620e370699a7b45c3bdb8adc11f5740"
-    sha256 x86_64_linux:  "dabc37a05bf29118f8fa3ae42004f46271b0bc398aec5baf88cea6a0520f7c0a"
+    sha256 arm64_tahoe:   "798e669b5dc5ee9d5319498c5f7c6aec531484cf19ce154ffb96d582d22387f0"
+    sha256 arm64_sequoia: "8adbe5b8590ec0863ab49bb468e8f3a8e396cb90f244eb94ebec4610ba0cdc40"
+    sha256 arm64_sonoma:  "1d33d2fc3db35638088c9d467857cf0a1fd9e27b6cd3d4fdf9c9e4be82038833"
+    sha256 sonoma:        "ca2f5eeb9a9ced679101372965712d44200fb80ccfc05e27fdb6ce47a5062e5f"
+    sha256 arm64_linux:   "59366320af90abc9bb95f0fedcab2c10e93a83171b01b1dd9bb4930e90e5019e"
+    sha256 x86_64_linux:  "a3470e4f0fbd1c7cfd12583fadb8bd7fce4808ec11c9202629789c53fcab1dba"
   end
 
   depends_on "bison" => :build
@@ -134,6 +134,10 @@ class Mysql < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    # mysqld logs this under the cgroup memory limits of Homebrew CI, failing the check below
+    inreplace prefix/"mysql-test/include/mtr_warnings.sql", '("THE_LAST_SUPPRESSION");',
+              "(\"Server ignores the discovered container restrictions\"),\n (\"THE_LAST_SUPPRESSION\");"
 
     cd prefix/"mysql-test" do
       system "./mysql-test-run.pl", "check", "--vardir=#{buildpath}/mysql-test-vardir"

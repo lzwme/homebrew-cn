@@ -3,13 +3,12 @@ class Httpx2 < Formula
 
   desc "HTTP client library for Python"
   homepage "https://httpx2.pydantic.dev"
-  url "https://files.pythonhosted.org/packages/21/14/38128fbafd7e0ed41d874df6c9a653d47c2d111cfe59e2b4ac95161b4abd/httpx2-2.9.1.tar.gz"
-  sha256 "1932a768737e3666291582833da748cc4e563c337cf96706fccc04fa6e58764a"
+  url "https://files.pythonhosted.org/packages/bd/3d/f9a8c07a3884f3e5b26205e8436a18b3af61c5d53192c3bea235574dbbec/httpx2-2.10.0.tar.gz"
+  sha256 "8741d7329fe2c7885fc9ceb61c8217acfb87a85f75723714b89ebf7ad7196338"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3a2f8dfa253e9bc5226dd15f392185b5037c5eab1078f8b6c722c6d60fe912c5"
+    sha256 cellar: :any_skip_relocation, all: "c85edddc9c28fe6abf6a967db23f61e3d882a001507a8743469129eb726763c5"
   end
 
   depends_on "python@3.14"
@@ -42,8 +41,8 @@ class Httpx2 < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/39/a8/20ed1ed79cbc2ecdf5301c0968ab7c85547212e2a7bd126ddd2d986e206e/httpcore2-2.9.1.tar.gz"
-    sha256 "4d8acbf8b306f48c9d6046591fd5ba4037d1b1b1000d140fc2c3eab1e9a0c0e2"
+    url "https://files.pythonhosted.org/packages/a9/83/a896fc59940fc5a6e2aff3a4be1d92fa890112936803b331cae75a993c34/httpcore2-2.10.0.tar.gz"
+    sha256 "13c0cc3d1919d4f28457f60cd2c2abe04113a8af184ccf1142811beba936f9dc"
   end
 
   resource "hyperframe" do

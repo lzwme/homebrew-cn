@@ -16,7 +16,7 @@ class DrawThingsCli < Formula
   uses_from_macos "swift" => :build
 
   def install
-    system "swift", "build", "--disable-sandbox", "-c", "release", "--product", "draw-things-cli"
+    system "swift", "build", "--product", "draw-things-cli", *std_swift_args
     bin.install ".build/release/draw-things-cli"
 
     generate_completions_from_executable(bin/"draw-things-cli", "completion")

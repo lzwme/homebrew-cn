@@ -11,24 +11,26 @@ class Oclgrind < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "aae02edae15b83a6def6ea7eeb6f3704fb0a00d4c41f584f76a77dcdbd65ce65"
-    sha256 cellar: :any,                 arm64_sequoia: "f6c1c97a416c86005e139526b71ee15c4a69f1034c0a866e005a8a6456b4f162"
-    sha256 cellar: :any,                 arm64_sonoma:  "a09b5cd362971cd593b09073addab6934e8a722a5560f126c97f410749ae6cf3"
-    sha256 cellar: :any,                 sonoma:        "c031c0023646178f4f0cf6c5e24bf82a399832d942c00e227f1dab0adcb657dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "20b53a0ed9e7a6fbc94bbf1e5d5daf0b7d80df2bbb3e83411f5deba007f0dd1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ddc0208b7338e109df4c48e5a97980d87ff0e47dc0e84f089f35dc7002b6be2"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "31ae206f1e532e12e6c91ea8a04d2bb45eac04840037d166b4be646bb0807a83"
+    sha256 cellar: :any, arm64_sequoia: "93b1e1b3a1e98e44373d6f86796bf330ff2fb6925d6bfa2419c502f535c77032"
+    sha256 cellar: :any, arm64_sonoma:  "eea3648c693fac210cfc3b36edacd2a81ab6c4330aecffa775a8fbe8bb85c651"
+    sha256 cellar: :any, sonoma:        "6f9a1a027083d754f8add426deda21eb2b461d7c7d607ef1031c25924fbe3f47"
+    sha256 cellar: :any, arm64_linux:   "92a93c6980a57cf9e4331597dd012e111dacd85e55f2213ce7f3843afd75a37c"
+    sha256 cellar: :any, x86_64_linux:  "b55aa809bcaaaff3bed3f385ee9d0bb5b77a852607d78a9e34f08e5ba5a8e408"
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm@19" # FIXME: LLVM 20+ segfaults. Also seen upstream where CI using Homebrew LLVM was disabled
   depends_on "readline"
 
   on_macos do
+    depends_on "llvm@19" # FIXME: LLVM 20+ segfaults. Also seen upstream where CI using Homebrew LLVM was disabled
     depends_on "zstd"
   end
 
   on_linux do
     depends_on "opencl-headers" => :test
+    depends_on "llvm"
   end
 
   def install

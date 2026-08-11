@@ -19,7 +19,7 @@ class Socktainer < Formula
 
   def install
     with_env(BUILD_VERSION: version) do
-      system "swift", "build", "--disable-sandbox", "--configuration", "release"
+      system "swift", "build", *std_swift_args
     end
     bin.install ".build/release/socktainer"
     (var/"run/socktainer").mkpath

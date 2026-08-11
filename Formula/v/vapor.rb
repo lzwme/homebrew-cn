@@ -22,12 +22,7 @@ class Vapor < Formula
   end
 
   def install
-    args = if OS.mac?
-      ["--disable-sandbox"]
-    else
-      ["--static-swift-stdlib"]
-    end
-    system "swift", "build", *args, "-c", "release", "-Xswiftc", "-cross-module-optimization"
+    system "swift", "build", "-Xswiftc", "-cross-module-optimization", *std_swift_args
     bin.install ".build/release/vapor"
   end
 

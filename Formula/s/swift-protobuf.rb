@@ -33,12 +33,7 @@ class SwiftProtobuf < Formula
   end
 
   def install
-    args = if OS.mac?
-      ["--disable-sandbox"]
-    else
-      ["--static-swift-stdlib"]
-    end
-    system "swift", "build", *args, "-c", "release", "--product", "protoc-gen-swift"
+    system "swift", "build", "--product", "protoc-gen-swift", *std_swift_args
     bin.install ".build/release/protoc-gen-swift"
     doc.install "Documentation/PLUGIN.md"
   end

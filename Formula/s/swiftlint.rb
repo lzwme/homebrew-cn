@@ -29,18 +29,7 @@ class Swiftlint < Formula
   end
 
   def install
-    if OS.mac?
-      args = ["--disable-sandbox"]
-    else
-      libxml2_lib = formula_opt_lib("libxml2")
-      args = [
-        "--static-swift-stdlib",
-        "-Xlinker", "-L#{formula_opt_lib("curl")}",
-        "-Xlinker", "-L#{libxml2_lib}"
-      ]
-      ENV.prepend_path "LD_LIBRARY_PATH", libxml2_lib
-    end
-    system "swift", "build", *args, "--configuration", "release", "--product", "swiftlint"
+    system "swift", "build", "--product", "swiftlint", *std_swift_args
     bin.install ".build/release/swiftlint"
     generate_completions_from_executable(bin/"swiftlint", "--generate-completion-script")
   end

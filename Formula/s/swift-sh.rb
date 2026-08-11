@@ -25,12 +25,7 @@ class SwiftSh < Formula
   end
 
   def install
-    args = if OS.mac?
-      ["--disable-sandbox"]
-    else
-      ["--static-swift-stdlib"]
-    end
-    system "swift", "build", *args, "-c", "release"
+    system "swift", "build", *std_swift_args
     bin.install ".build/release/swift-sh"
     bin.install ".build/release/swift-sh-edit" if OS.mac?
   end

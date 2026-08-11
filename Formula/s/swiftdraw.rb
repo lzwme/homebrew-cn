@@ -23,12 +23,7 @@ class Swiftdraw < Formula
   end
 
   def install
-    args = if OS.mac?
-      ["--disable-sandbox"]
-    else
-      ["--static-swift-stdlib", "-Xswiftc", "-use-ld=ld"]
-    end
-    system "swift", "build", *args, "--configuration", "release"
+    system "swift", "build", *std_swift_args
     bin.install ".build/release/swiftdrawcli" => "swiftdraw"
   end
 

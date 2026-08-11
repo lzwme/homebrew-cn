@@ -44,12 +44,7 @@ class Skip < Formula
   def install
     resource("skipsubmodule").stage buildpath/"skip"
 
-    args = if OS.mac?
-      ["--disable-sandbox"]
-    else
-      ["--static-swift-stdlib", "-Xswiftc", "-use-ld=ld"]
-    end
-    system "swift", "build", *args, "--configuration", "release", "--product", "SkipRunner"
+    system "swift", "build", "--product", "SkipRunner", *std_swift_args
     bin.install ".build/release/SkipRunner" => "skip"
     generate_completions_from_executable(bin/"skip", "--generate-completion-script")
   end

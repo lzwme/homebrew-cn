@@ -21,12 +21,7 @@ class SwiftOutdated < Formula
   def install
     inreplace "Sources/SwiftOutdated/SwiftOutdated.swift", "dev", version.to_s
 
-    args = if OS.mac?
-      ["--disable-sandbox"]
-    else
-      ["--static-swift-stdlib", "-Xlinker", "-L#{formula_opt_lib("curl")}"]
-    end
-    system "swift", "build", *args, "-c", "release"
+    system "swift", "build", *std_swift_args
     bin.install ".build/release/swift-outdated"
     generate_completions_from_executable(bin/"swift-outdated", "--generate-completion-script")
   end

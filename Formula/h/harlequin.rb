@@ -3,20 +3,20 @@ class Harlequin < Formula
 
   desc "Easy, fast, and beautiful database client for the terminal"
   homepage "https://harlequin.sh"
-  url "https://files.pythonhosted.org/packages/3d/65/9fd3c136a149f8d16f7d63a3d946ddd51ac6d1126903d7e1b808132bf221/harlequin-2.8.0.tar.gz"
-  sha256 "6283cdf2394fe063ebcd663a4de6400e83807029d17720be9fbf08831cc0dd97"
+  url "https://files.pythonhosted.org/packages/1b/f4/57f891b274f67ce48ce433646bf21beb5a0feee181fc2cf8f4a687cffee0/harlequin-2.8.1.tar.gz"
+  sha256 "acc71b0588df2ecc4fd7de82d05c50b92d7725d50afb3253e1bc18132fe6bd76"
   license "MIT"
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
   no_autobump! because: "has non-PyPI resources"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "25ea84e11106f51a439676441ce6c2e285ebb6406ef910933fdac09019374155"
-    sha256 cellar: :any, arm64_sequoia: "b7d94b5030d0159f27dfcccdf0fef97a364e6451ac73e6ac31fab19fe5a31385"
-    sha256 cellar: :any, arm64_sonoma:  "4edcfcdf24020209c6a88e684c7d8e6f94b79e7beaffa2849fc5044fba2f5b66"
-    sha256 cellar: :any, sonoma:        "bd8ee906308faf7f77d38ff26a7f7b033af23bfef14f4564bd9cdae24d5a1a06"
-    sha256               arm64_linux:   "67c177fce5dfe6d26f184b1521e04ea993d87dedb0fd06d90f1d6a4588c00a4e"
-    sha256               x86_64_linux:  "53d9e860407680c694427a77160e1098a22de4f5947d23cb0c29e79743ecacff"
+    sha256 cellar: :any, arm64_tahoe:   "a11d31c7d10226d35f1882148aab9f2b6d7d1a9ae75849259a49beb050b89a9a"
+    sha256 cellar: :any, arm64_sequoia: "74a46c30890e221d15b9d817395c49b413214c64bd3a6234f3afe08901a96814"
+    sha256 cellar: :any, arm64_sonoma:  "21d908657e647138f5fc6127d39432ebc8e86a38c0c71667bed72d0a17daff60"
+    sha256 cellar: :any, sonoma:        "fae49a395e4a6c93a53284a02a0d008ee00a08115c45d31f32b0a657d7312851"
+    sha256               arm64_linux:   "1459225b7bc85f465578f5d45a49a2914a09e23d81e80d5c178f17a842c76c95"
+    sha256               x86_64_linux:  "b85644043947fcc30ec4dd1ee203a8456c6c5e81607bac63d029f7419558e11b"
   end
 
   depends_on "cmake" => :build
@@ -103,8 +103,8 @@ class Harlequin < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
-    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
+    url "https://files.pythonhosted.org/packages/36/0a/062135c9a98dac804265073cc3afdbec5ae1aa37980bb354f461bafe81b4/platformdirs-4.11.1.tar.gz"
+    sha256 "bb1af68078f25e2f3e111e2d43b8d536df41b73c8a684b40bb018223b66fae27"
   end
 
   resource "prompt-toolkit" do
@@ -183,8 +183,8 @@ class Harlequin < Formula
   end
 
   resource "textual-fastdatatable" do
-    url "https://files.pythonhosted.org/packages/c4/78/f03f3a2ef4f47b1e2d1143b5ab04964bb08619854bc1fab793db8623aa71/textual_fastdatatable-0.16.0.tar.gz"
-    sha256 "9d91f6d257bde25e244379d03b3fbcc92edafcfae983d8270ad34b0f344f1d97"
+    url "https://files.pythonhosted.org/packages/82/2a/f5844539d1ab139a220ee29ca81552cdd3e794048456a4b23a714f868e11/textual_fastdatatable-0.17.0.tar.gz"
+    sha256 "3b1ea1f78aa7aa7ab41df9fb2b3b926fb274bbe8cb2e4f622b16a500eeb2157c"
   end
 
   resource "textual-textarea" do

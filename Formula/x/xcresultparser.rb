@@ -17,7 +17,7 @@ class Xcresultparser < Formula
   depends_on :macos
 
   def install
-    system "swift", "build", "--disable-sandbox", "--configuration", "release"
+    system "swift", "build", *std_swift_args
     bin.install ".build/release/xcresultparser"
     pkgshare.install "Tests/XcresultparserTests/TestAssets/test.xcresult"
     generate_completions_from_executable(bin/"xcresultparser", "--generate-completion-script")

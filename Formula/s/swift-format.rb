@@ -33,12 +33,7 @@ class SwiftFormat < Formula
   end
 
   def install
-    args = if OS.mac?
-      ["--disable-sandbox"]
-    else
-      ["--static-swift-stdlib"]
-    end
-    system "swift", "build", *args, "-c", "release", "--product", "swift-format"
+    system "swift", "build", "--product", "swift-format", *std_swift_args
     bin.install ".build/release/swift-format"
     doc.install "Documentation/Configuration.md"
     generate_completions_from_executable(bin/"swift-format", "--generate-completion-script")

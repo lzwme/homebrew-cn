@@ -6,6 +6,7 @@ class HermesAgent < Formula
   url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v2026.8.3.tar.gz"
   sha256 "370542c7219faba6300905c3b419e14e6508a31ac698a1a5174e0386990834be"
   license "MIT"
+  revision 1
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
 
   livecheck do
@@ -14,13 +15,12 @@ class HermesAgent < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "1bc6279e603665a0acfa30e3ff91d3f6865cac52b0f2c6aa3bc68a0aab726b5c"
-    sha256 cellar: :any, arm64_sequoia: "0934c99e0c73fac31d7f6108648a556e701efd2f9a5dcb943fd456e571e03cf5"
-    sha256 cellar: :any, arm64_sonoma:  "683d5a776b5b0b86040a9b129e3b3914493b33d319f20d75769d4a027e5b5185"
-    sha256 cellar: :any, sonoma:        "6ee92f5c1d30139af7dd6664c65b9a9b1b6738c8eaecb985c16c5b4a2a11cbfa"
-    sha256 cellar: :any, arm64_linux:   "8abedc52d0aebc371f4515bb85cb77891d0cb91dff46b39739d554efce16c114"
-    sha256 cellar: :any, x86_64_linux:  "a2ec5b0ffadaf401540ca16ee1c096da45d9b7d1a8ed5f800866be4de30782fd"
+    sha256 cellar: :any, arm64_tahoe:   "05c8df3bb76ce79f2ee77177ebbef624a8acd6e6275bf1c2c515ec861525e30c"
+    sha256 cellar: :any, arm64_sequoia: "821cbe4c1085d490f2759e63d90f61af4cca2bfa74b3b5bd925e5bb7d9a3c04d"
+    sha256 cellar: :any, arm64_sonoma:  "967f06f0e47c765ace830c068afe96e5fed88aa72fd6707fcf0b0a3c21a19501"
+    sha256 cellar: :any, sonoma:        "ed2b8b192f36e2e28d9941d8e9c59bbbf474fa0c04b5fef6801da897e4d445ca"
+    sha256 cellar: :any, arm64_linux:   "9988cb040a781f03be60a3dad392fb36aefe853dd7b562f9558d21e4d2cb54e7"
+    sha256 cellar: :any, x86_64_linux:  "16d649decfc27ff2f0851ff66d2a25af122a67f26e466967aa915e6a5b6863f7"
   end
 
   depends_on "pkgconf" => :build
@@ -28,9 +28,12 @@ class HermesAgent < Formula
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
+  depends_on "node"
   depends_on "pillow" => :no_linkage
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
+  depends_on "ripgrep"
+  depends_on "tirith"
 
   pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic]
 
@@ -296,9 +299,50 @@ class HermesAgent < Formula
     resource("socksio").stage do
       # Cap flit-core below 4 as socksio's legacy `[tool.flit.metadata]`
       # pyproject table is no longer supported since flit-core 4
+      # Ref: https://github.com/sethmlarson/socksio/pull/66
       inreplace "pyproject.toml", "flit_core >=2", "flit_core >=2,<4"
       venv.pip_install Pathname.pwd
     end
+
+    # Build the dashboard and TUI bundles the same way upstream's Nix
+    # packaging does (nix/web.nix, nix/tui.nix)
+    system "npm", "install", *std_npm_args(prefix: false)
+    cd "web" do
+      system "npm", "run", "build"
+    end
+    pkgshare.install "hermes_cli/web_dist"
+    system "node", "ui-tui/scripts/build.mjs"
+    (pkgshare/"ui-tui").install "ui-tui/dist", "ui-tui/package.json"
+
+    # Ship the runtime data the wheel deliberately excludes. The env vars
+    # below mirror upstream's nix/hermes-agent.nix wrapper, the supported
+    # interface for packaged installs.
+    rm_r buildpath.glob("{skills,optional-skills}/index-cache")
+    rm_r buildpath.glob("{skills,optional-skills,plugins,locales,optional-mcps}/**/__pycache__")
+    pkgshare.install %w[skills optional-skills plugins locales optional-mcps]
+
+    %w[hermes hermes-agent hermes-acp].each do |cmd|
+      rm bin/cmd
+      (bin/cmd).write_env_script libexec/"bin/#{cmd}", {
+        HERMES_BUNDLED_SKILLS:  pkgshare/"skills",
+        HERMES_OPTIONAL_SKILLS: pkgshare/"optional-skills",
+        HERMES_BUNDLED_PLUGINS: pkgshare/"plugins",
+        HERMES_BUNDLED_LOCALES: pkgshare/"locales",
+        HERMES_OPTIONAL_MCPS:   pkgshare/"optional-mcps",
+        HERMES_WEB_DIST:        pkgshare/"web_dist",
+        HERMES_TUI_DIR:         pkgshare/"ui-tui",
+        HERMES_PYTHON:          libexec/"bin/python3",
+        HERMES_NODE:            formula_opt_bin("node")/"node",
+        HERMES_REVISION:        "v#{version}",
+      }
+    end
+  end
+
+  def caveats
+    <<~EOS
+      Voice and TTS audio format conversion optionally uses ffmpeg:
+        brew install ffmpeg
+    EOS
   end
 
   test do
@@ -307,5 +351,12 @@ class HermesAgent < Formula
     assert_match "No sessions found", shell_output("#{bin}/hermes sessions list")
     system bin/"hermes", "status"
     system bin/"hermes", "doctor"
+
+    plugins_list = shell_output("#{bin}/hermes plugins list")
+    assert_match "bundled", plugins_list
+    assert_match "telegram-platform", plugins_list
+    assert_path_exists pkgshare/"plugins/platforms/telegram/plugin.yaml"
+    assert_path_exists pkgshare/"web_dist/index.html"
+    assert_path_exists pkgshare/"ui-tui/dist/entry.js"
   end
 end

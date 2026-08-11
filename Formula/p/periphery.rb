@@ -31,15 +31,10 @@ class Periphery < Formula
   end
 
   def install
-    args = if OS.mac?
-      ["--disable-sandbox", "-Xlinker", "-rpath", "-Xlinker", clt_lib_directory]
-    else
-      swift_cellar_libexec_lib = Formula["swift"].libexec/"lib"
+    libindexstore_dir = OS.mac? ? clt_lib_directory : "#{formula_opt_libexec("swift")}/lib"
+    args = ["-Xlinker", "-rpath", "-Xlinker", libindexstore_dir]
 
-      ["--static-swift-stdlib", "-Xswiftc", "-use-ld=ld", "-Xlinker", "-L#{swift_cellar_libexec_lib}", "-Xlinker",
-       "-rpath", "-Xlinker", swift_cellar_libexec_lib.to_s]
-    end
-    system "swift", "build", *args, "--configuration", "release", "--product", "periphery"
+    system "swift", "build", "--product", "periphery", *args, *std_swift_args
     bin.install ".build/release/periphery"
 
     generate_completions_from_executable(bin/"periphery", "--generate-completion-script")

@@ -26,7 +26,6 @@ class RancherMachine < Formula
   def install
     commit = build.head? ? Utils.git_short_head : tap.user
     ldflags = %W[
-      -w -s
       -X github.com/rancher/machine/version.Version=#{version}
       -X github.com/rancher/machine/version.GitCommit=#{commit}
     ]

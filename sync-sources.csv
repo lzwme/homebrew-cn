@@ -3749,6 +3749,7 @@ Homebrew-homebrew-core/Formula/l/launch_socket_server.rb, Homebrew/homebrew-core
 Homebrew-homebrew-core/Formula/l/launchctl-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lavat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lavinmq.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lazy-tmux.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazycontainer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazycut.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazydocker.rb, Homebrew/homebrew-core, 1
@@ -12919,6 +12920,7 @@ Homebrew-homebrew-cask/Casks/h/hbuilderx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hdfview.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hdhomerun.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/headlamp.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/h/headroom.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/headset.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/heaven.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hedgewars.rb, Homebrew/homebrew-cask, 0
@@ -15188,6 +15190,7 @@ Homebrew-homebrew-cask/Casks/s/sourcenote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sourcetree.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sourcetree@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/space-capsule.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/space-rabbit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/space-saver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spacedrive.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spaceid.rb, Homebrew/homebrew-cask, 1
@@ -15504,6 +15507,7 @@ Homebrew-homebrew-cask/Casks/t/textbuddy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/textexpander.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/textgrabber2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/textmate.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/textream.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/texts.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/textsniper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/textual.rb, Homebrew/homebrew-cask, 0

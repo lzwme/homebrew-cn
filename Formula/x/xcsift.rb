@@ -24,13 +24,7 @@ class Xcsift < Formula
   def install
     inreplace "Sources/xcsift/main.swift", "VERSION_PLACEHOLDER", version.to_s
 
-    args = if OS.mac?
-      ["--disable-sandbox"]
-    else
-      ["--static-swift-stdlib"]
-    end
-
-    system "swift", "build", *args, "-c", "release"
+    system "swift", "build", *std_swift_args
     bin.install ".build/release/xcsift"
   end
 

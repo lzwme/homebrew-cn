@@ -4,6 +4,7 @@ class OpencvAT4 < Formula
   url "https://ghfast.top/https://github.com/opencv/opencv/archive/refs/tags/4.14.0.tar.gz"
   sha256 "ee8fb9b30eb60850431b4656447080e3737b56e45719c92b67f245950609f86e"
   license "Apache-2.0"
+  revision 1
   compatibility_version 2
 
   livecheck do
@@ -12,12 +13,12 @@ class OpencvAT4 < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "49c92673fdda91e0bea4b0983e1620593170256516598b61e97437b4c83a4801"
-    sha256 arm64_sequoia: "3bd79a04047c2aa43b19b9e8d107dc1b5ddca543fa3bff283e7f404ef7a725d5"
-    sha256 arm64_sonoma:  "f26c09e9aecd39b5c714ade7743976575cdc48136cd97ef03689659a0ab7127c"
-    sha256 sonoma:        "d68272d17fddeb6d9aa3b42810a3c80676f520f504e6598f38255aa5c27762e0"
-    sha256 arm64_linux:   "5fea97e94ec7ce90b94eb1c5c95f2654d8d8600acdd095f6723d807afbf94aae"
-    sha256 x86_64_linux:  "8b640933abd7763e3627e2b3f6e6526cb758814b9017c779df77b736d8ab81d8"
+    sha256 arm64_tahoe:   "b30c38fc4cf8c5df8826b4ce9b1858fbc2f446af1a6c2c6379e41a44532913c2"
+    sha256 arm64_sequoia: "0bc64fb6f6d714ae450cd6c136017dcc9a4155447d748cc2acf65152afd96c47"
+    sha256 arm64_sonoma:  "c5ab555ea7fd9b1f2c562b3b6677338082ef794134cd3d02acc4b2e2d5fbac2f"
+    sha256 sonoma:        "6d6eb879d893c1bca708f64ad477b24fc785e8eba055757b0069bdd0b9f3e603"
+    sha256 arm64_linux:   "7883e621f028f448d174ae9b1f4bd58425359687d8eb2f2b62f1172dbacd2487"
+    sha256 x86_64_linux:  "9107e6c4ddd538e8a9fca99100df75444359b4356c13b688130c4f251530be41"
   end
 
   keg_only :versioned_formula

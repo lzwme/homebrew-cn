@@ -4,6 +4,7 @@ class S2geometry < Formula
   url "https://ghfast.top/https://github.com/google/s2geometry/archive/refs/tags/v0.14.0.tar.gz"
   sha256 "8c1f0a4b98472ed9df9807f5ec10ee57928cca388e16c13f430b652790d3ad8b"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :homepage
@@ -11,16 +12,24 @@ class S2geometry < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_tahoe:   "f1e66537c44677c6acc41f697b8209a89573008505724870efdb10a8101fd863"
-    sha256 cellar: :any,                 arm64_sequoia: "2dbce9de0564529e134fc86b1565712feb394280b1963f787b6dcd43b82c6617"
-    sha256 cellar: :any,                 arm64_sonoma:  "c791357599b318746fe242dba401fd149a5b046367fe7e28581886edf7dcbd0c"
-    sha256 cellar: :any,                 sonoma:        "04ac6f0a4272a6d7a425a8c1bde01c4ace478495dc75f41e724648737d50bbd1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8ccfdca48aec18b4bf6e5ced582b67942f052fc72f83df492575b0dc500f067"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d2994885b05afddfd60030c799d240573de7a010588bca9c4f98201b2665fc9"
+    sha256 cellar: :any, arm64_tahoe:   "fa880452aefe1999c798e2847d20161f9eb76d366194406f00369e0c0971ef79"
+    sha256 cellar: :any, arm64_sequoia: "55118e09389f1d9204e65813e6b9c61332c034f94ee8193f0753919a8e82bd3f"
+    sha256 cellar: :any, arm64_sonoma:  "fce87c6c9e14fc3c05815a7a5851a276bcca7a71003dfa3ca253dd885b911954"
+    sha256 cellar: :any, sonoma:        "58d63ab77037433eaf0e7b84f15b166fe086c0e8a4b2d0143874196a1fe73f93"
+    sha256 cellar: :any, arm64_linux:   "fb3ebc23fda8389578e84be561c04b81db93bdf9b1cb02eaba70887fc4d90f91"
+    sha256 cellar: :any, x86_64_linux:  "48d4f6cf7c0b4e5238d97c9676319cfa1d69ed71907bf3334623c31b5b2d8155"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "abseil"
+
+  # Backport abseil 20260526.0 build fix (throw_delegate moved to a public header).
+  patch do
+    url "https://github.com/google/s2geometry/commit/424bc82d412cb939412e0952c1b3da22b5e19d66.patch?full_index=1"
+    sha256 "adebc643e21044eb440bf07dbf7dc22ac1aae8eb448249592200fcdecc00c05b"
+    type :backport
+    resolves "https://github.com/google/s2geometry/pull/653"
+  end
 
   def install
     # Keep C++ standard in sync with `abseil.rb`.

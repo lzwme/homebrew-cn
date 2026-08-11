@@ -49,7 +49,7 @@ class Baguette < Formula
            "VirtualCamera/Sources/SimCamSharedFrameReader.m",
            "VirtualCamera/Sources/SimCamVirtualCamera.m"
 
-    system "swift", "build", "--disable-sandbox", "-c", "release"
+    system "swift", "build", *std_swift_args
 
     # Binary and its SPM resource bundle must sit side-by-side at runtime —
     # WebRoot resolves the bundle via dladdr from the executable's directory.

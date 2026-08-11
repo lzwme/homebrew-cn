@@ -6,12 +6,13 @@ class Dicebear < Formula
   license "MIT"
 
   bottle do
-    sha256               arm64_tahoe:   "c90c0b0557b9a7fbe5f5a9fddf6058e2063a0f49afd16acf8d8c276e8790b146"
-    sha256               arm64_sequoia: "233cb52b673c10b8ce0a9ed3d1a1a2de6cf084aa5a84949e9a84a936e1d49a7a"
-    sha256               arm64_sonoma:  "3b520f6eaf63275871af023dae98a89f2b82d2596b3be2a75b29e177d87d2f10"
-    sha256               sonoma:        "dc8bee50e9851a41d4da0590565c6b21d24e6e41173d9a175b61a05e4a3b6e7a"
-    sha256 cellar: :any, arm64_linux:   "3e93bbb6d4f757fcb1a99c4d1be14ace30003fb3e3c9a838a72f14493fd0477a"
-    sha256 cellar: :any, x86_64_linux:  "ca00593fa581df1f46ae6e25856951375647358a539a8ce2191f35ddbba15aa3"
+    rebuild 1
+    sha256               arm64_tahoe:   "fe69e9995df64d504188b23ec779a61f4db662b7e86e75de760ef6480d9a82ae"
+    sha256               arm64_sequoia: "1796bfc36c23c2118ccffc29af67bb56422774c12e005235e5b3c1dd13af9c35"
+    sha256               arm64_sonoma:  "a63ebe71c05fbda63c8043994e12bf15e466a244fdece04efbb981197024b299"
+    sha256               sonoma:        "816fb5051645ef10eef6acfe83fa758b949a00818de436fd7205f05a5cb892b3"
+    sha256 cellar: :any, arm64_linux:   "85d7a8253287117fe473ef61a9d5e7ba332aab83ee060e97fc69acb6879fce57"
+    sha256 cellar: :any, x86_64_linux:  "d07f4d77b9764b40c5c9229d5a635a794422183e32b3653ef534548653de35c6"
   end
 
   depends_on "pkgconf" => :build
@@ -42,7 +43,7 @@ class Dicebear < Formula
 
     # Remove prebuilts which still get installed as optional dependencies
     node_modules = libexec/"lib/node_modules/dicebear/node_modules"
-    rm_r(node_modules.glob("@img/shar-*"))
+    rm_r(node_modules.glob("@img/sharp-*"))
     cd(node_modules/"sharp") { system "npm", "run", "build" }
   end
 

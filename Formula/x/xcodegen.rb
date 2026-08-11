@@ -20,7 +20,7 @@ class Xcodegen < Formula
   uses_from_macos "swift"
 
   def install
-    system "swift", "build", "--disable-sandbox", "-c", "release"
+    system "swift", "build", *std_swift_args
     bin.install ".build/release/#{name}"
     pkgshare.install "SettingPresets"
   end

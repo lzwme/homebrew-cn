@@ -15,7 +15,7 @@ class Apfel < Formula
   depends_on macos: :tahoe
 
   def install
-    system "swift", "build", "--disable-sandbox", "--configuration", "release"
+    system "swift", "build", *std_swift_args
     bin.install ".build/release/apfel"
   end
 

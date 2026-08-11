@@ -1,18 +1,18 @@
 class WasmComponentLd < Formula
   desc "Linker for creating WebAssembly components"
   homepage "https://wasi.dev"
-  url "https://ghfast.top/https://github.com/bytecodealliance/wasm-component-ld/archive/refs/tags/v0.5.28.tar.gz"
-  sha256 "f855eddb814607ff862d08fcd30e06297b8a937920510414d3f5c655d69447e7"
+  url "https://ghfast.top/https://github.com/bytecodealliance/wasm-component-ld/archive/refs/tags/v0.5.29.tar.gz"
+  sha256 "77cd7755210d22768aa8ee504b24aefdabce1b4a0da37bf449347f8b936f1f38"
   license "Apache-2.0"
   head "https://github.com/bytecodealliance/wasm-component-ld.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bef3a0c7cfb5a20a831f22c2cddd9ca54a4a0d4ba5e90cbe48413f2f5516df7d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1200b8b256d2bd126e782e4f552c6e702eb54ff7bcb288ad612857ea3d20d33d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6034c955d0b6a0eef4c42dbbb09726cc5bc19d766ecf667e3fd81f1d4eafef22"
-    sha256 cellar: :any_skip_relocation, sonoma:        "28da9ef787d0cc67a988bea656a309694d9375f1e63815258ee99fa86f15e4fe"
-    sha256 cellar: :any,                 arm64_linux:   "874b2716fe66e3b0c9f45d11b412a2003978a76bbb824d8832e5961eeb72e24b"
-    sha256 cellar: :any,                 x86_64_linux:  "656c68e5b4addc368e8d075fcd790084534e6866f9ccf5ef32add90371bc6c4f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "628e1b976bef327a01982f55b0d553dc001f16979ff0052001827100d1632bf8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf16c594626e58cc00224152633c4aa0f80485e5866d665aac08b1fc1b99ff9f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f3eea1fd84417fb013173e4273045c5dc38bb8a7813c808d84f14431058ce70"
+    sha256 cellar: :any_skip_relocation, sonoma:        "42aef38ce3d327a50a2453e469611e6b3daa91497d472d0da34bd0da01cdd3f8"
+    sha256 cellar: :any,                 arm64_linux:   "cfa96ee11af13208a4fe1371de541d3cb19df87276f9e88bcabac554d8b545f9"
+    sha256 cellar: :any,                 x86_64_linux:  "c8ac9fa62899e9c97d2ef7f2f798fb2d7d841e9e19e0d1661a9115635233f7d7"
   end
 
   depends_on "rust" => :build

@@ -1,19 +1,18 @@
 class Pitchfork < Formula
   desc "CLI for managing daemons with a focus on developer experience"
   homepage "https://pitchfork.jdx.dev"
-  url "https://ghfast.top/https://github.com/jdx/pitchfork/archive/refs/tags/v2.20.0.tar.gz"
-  sha256 "f6a36097a7f288d428988fdd3664154e1ad847b7a4fdb60065e44587f1b2179e"
+  url "https://ghfast.top/https://github.com/jdx/pitchfork/archive/refs/tags/v2.21.0.tar.gz"
+  sha256 "025eff41b584922d3668c0b7f01b988d5e561abd19aa3effdc621ad64bac5d3d"
   license "MIT"
   head "https://github.com/jdx/pitchfork.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3d8e3f2d3369d38452997008376b23342244ac1a387d0ffc05c7453e0452e994"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31b89994e55e8bd6955f36523bd7b85cb4b828b612013295cf2e456e77834c57"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db796c6d18484443da5fc112115d0618a0e023ac7555a49428104caa351aa474"
-    sha256 cellar: :any_skip_relocation, sonoma:        "71ed98c737059e0c1e85c5992d3210b404fe20f306a93858ef764152ad2968cf"
-    sha256 cellar: :any,                 arm64_linux:   "29069c11f5bebdeed3507cf6efc16887c68ee658f97bb51b1529b6d1cec686d5"
-    sha256 cellar: :any,                 x86_64_linux:  "ecfa00309e931df08cbd7d46ae6a989a40c53e5087052eb70b4d8326c5673890"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "895709bf464c2529f25207b40e5c65ccbb50950553c43342460ca4c0b23622a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7bae50ffc3e194664551c4a40b7c5d0411ec6a9b24e85b6f5ccceadb371ebf8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e03542029f0ee257763bd955b0c20cb78e9332b4ad0248110aceea4b8aa02187"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5c9723f0cc1f79147dc63dfbbcd1a6a81fd4fd9af5d0fdc48d955ffff7fd3c69"
+    sha256 cellar: :any,                 arm64_linux:   "257733e98da9b579e72f649448c55b32169ee034eb9c9ad2883e25a07c36644e"
+    sha256 cellar: :any,                 x86_64_linux:  "fd9e0c62c2cbf027a316af9190f6ca6cc0aaf30cd3c4ff8071bb7d65191a72b2"
   end
 
   depends_on "node" => :build

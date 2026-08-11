@@ -31,12 +31,7 @@ class ProtocGenGrpcSwift < Formula
   end
 
   def install
-    args = if OS.mac?
-      ["--disable-sandbox"]
-    else
-      ["--static-swift-stdlib"]
-    end
-    system "swift", "build", *args, "-c", "release", "--product", "protoc-gen-grpc-swift-2"
+    system "swift", "build", "--product", "protoc-gen-grpc-swift-2", *std_swift_args
     bin.install ".build/release/protoc-gen-grpc-swift-2"
   end
 

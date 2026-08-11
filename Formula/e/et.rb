@@ -4,14 +4,15 @@ class Et < Formula
   url "https://ghfast.top/https://github.com/MisterTea/EternalTerminal/archive/refs/tags/et-v7.0.0.tar.gz"
   sha256 "3580962861589c0b69efd6b385ff92ad8fdf688c91d1a0edc1a83278205e28e8"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "a94790a5c5e507fce2268997d7f13cbfd814ad88eff95b1956be3a453a841251"
-    sha256 cellar: :any, arm64_sequoia: "95645c2060eb7b56547f7d3faeae108734e8660e457612ce260320bd63a4e929"
-    sha256 cellar: :any, arm64_sonoma:  "3d67d563ff7bc069f2fdf0306c792781ff35740945669efae9c0d6d6c8716ef5"
-    sha256 cellar: :any, sonoma:        "c582a6ae12e2fbe97d6c65308e7cc4c8a9e488531c04a353cb38da1d5dfcc2df"
-    sha256 cellar: :any, arm64_linux:   "77f97ff040c539a7e6ed3121d70c44facc32b0bfe6dcd5a1866fe37335a90493"
-    sha256 cellar: :any, x86_64_linux:  "4b29f1994351c4b3fee25a646fa7d6bae9f68f8ad32648af65e3c53891a1f1d7"
+    sha256 cellar: :any, arm64_tahoe:   "835f85d5c189736a2d11dbbac0dafdc6e828bd8c989a599ece624f39878c8f97"
+    sha256 cellar: :any, arm64_sequoia: "02a68549b1d65f6fb5ce8d972c1c23f7a87701e2409a9c4f5d7a8b99ac7c4827"
+    sha256 cellar: :any, arm64_sonoma:  "ce450553ad34774e92bd2405f4619671767bc9c405c861a1eb4b3746f571b15a"
+    sha256 cellar: :any, sonoma:        "258df9fecaf867741cbc0571695b774d4e2f44b4be5608451f5667993f9531b1"
+    sha256 cellar: :any, arm64_linux:   "547ceb9038ff36fdbebb311b754884f56db721ad7dfa9b2655cb0581d9752925"
+    sha256 cellar: :any, x86_64_linux:  "a7941a75d022528ca41246341b2ec0604bfecdc681b1463025d84f643108af77"
   end
 
   depends_on "cmake" => :build

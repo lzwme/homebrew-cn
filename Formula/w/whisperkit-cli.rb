@@ -29,7 +29,7 @@ class WhisperkitCli < Formula
 
   def install
     ENV["BUILD_ALL"] = "1"
-    system "swift", "build", "-c", "release", "--product", "whisperkit-cli", "--disable-sandbox"
+    system "swift", "build", "--product", "whisperkit-cli", *std_swift_args
     bin.install ".build/release/whisperkit-cli"
     generate_completions_from_executable(bin/"whisperkit-cli", "--generate-completion-script")
   end

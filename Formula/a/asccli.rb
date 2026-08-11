@@ -17,7 +17,7 @@ class Asccli < Formula
 
   def install
     inreplace "Sources/ASCCommand/Version.swift", 'let ascVersion = "0.1.3"', %Q(let ascVersion = "#{version}")
-    system "swift", "build", "--disable-sandbox", "-c", "release"
+    system "swift", "build", *std_swift_args
     bin.install ".build/release/asc" => "asccli"
   end
 

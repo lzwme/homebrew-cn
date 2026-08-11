@@ -1,17 +1,17 @@
 class ProtonPassCli < Formula
   desc "Command-line interface for Proton Pass"
   homepage "https://protonpass.github.io/pass-cli/"
-  url "https://ghfast.top/https://github.com/protonpass/pass-cli/archive/refs/tags/2.2.5.tar.gz"
-  sha256 "45217cb726c9aa3ae0fa5b9fa21ca386ec2cd148884a0a9327b88877f8ac8bc4"
+  url "https://ghfast.top/https://github.com/protonpass/pass-cli/archive/refs/tags/2.2.6.tar.gz"
+  sha256 "a55c25967535dced42bbfe84f92594bcc541613f2e9a4442cfc80549aa18d0b4"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "c4ed6b29681d74be66e93698ae78ad987b2ae39a4e90f12a084c500995c42e4d"
-    sha256 cellar: :any, arm64_sequoia: "59f94cdbfb75c2cf231ac5b16895b36be75f98a49b55e006ae576f021268fd80"
-    sha256 cellar: :any, arm64_sonoma:  "4e8725c775716a8a719731df28e474608f04555566e5de3c5222c7e6bad576e5"
-    sha256 cellar: :any, sonoma:        "39955b8ac04e5bc92d25d10cb6f957bdfa631645a3884d0ba0b7f39114547206"
-    sha256 cellar: :any, arm64_linux:   "96b34a00414f83889980927527a0f14fd46810f28afdd62948dc4e6b86540387"
-    sha256 cellar: :any, x86_64_linux:  "f851351ffd9cd7e367bc83b173937957b6e705bf75f170f97cb787d15c0de307"
+    sha256 cellar: :any, arm64_tahoe:   "0b0c9743fbd990ca8f76f78491c1f9ae803de952c3f0f37520605e369c65c8b5"
+    sha256 cellar: :any, arm64_sequoia: "48ef361ff88cbb58ee3292be3926bf1dfbd3c21be5943be4f8287fef23d679d0"
+    sha256 cellar: :any, arm64_sonoma:  "2d812a23f5cd9c30dd465fca87e2ab45f1bf09edef999b240a2e22e63d716d9f"
+    sha256 cellar: :any, sonoma:        "3802862c6298e78c4a54eb2d23f3003f94bd5a684f1c427a02ec03a7a3cce30e"
+    sha256 cellar: :any, arm64_linux:   "11d59404188edb6f7fd5f5c1d4db6dd0a19e14beaa305b0a22b5db78cae008c2"
+    sha256 cellar: :any, x86_64_linux:  "76625f65c85f352ad0ff172e51315b43e17af36132b400b9b518bd36609f3060"
   end
 
   depends_on "pkgconf" => :build

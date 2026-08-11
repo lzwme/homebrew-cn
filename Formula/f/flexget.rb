@@ -3,27 +3,29 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/8b/73/327a669cbfe7bba507e64ceb4b47926c42057f47fd05b6e3d6f762f1cb90/flexget-3.20.2.tar.gz"
-  sha256 "1507ad456f988349aeb6d2f79d965c7a2201e5b26462db10f801632193450841"
+  url "https://files.pythonhosted.org/packages/48/78/88ee7cc6079959bcb9cc72ada63819b855de1c513ca3960c337b6c55b9a8/flexget-3.20.3.tar.gz"
+  sha256 "ed621389c41c8dccc07ab461ac1c8d3757f38c66fe071b7c84e9d26ab95b62f4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "831be6a6ff5361cabc8a4ff0aae733c880cd7b9f10cb9aee526754d9579849f5"
-    sha256 cellar: :any, arm64_sequoia: "7ddbae445347cbd0737a777d03533813dd1379710ee7cb4f3c06e6f33f30ad40"
-    sha256 cellar: :any, arm64_sonoma:  "2f38ac4403eaf4a31babbf38ff274b9e03d31604902211757affb822fe4a5e00"
-    sha256 cellar: :any, sonoma:        "3741b53c9d1f92a78b4e92652d6b58e4a02980d1fe94a16f85c8f5cf3077a2a9"
-    sha256 cellar: :any, arm64_linux:   "a6afa497740fdb0d0bb2ccdff711d00a9f09a60a6bbc9efb858f86a85d661f84"
-    sha256 cellar: :any, x86_64_linux:  "c609d61c98a06201a991130f4efdbfbd914a8ac9a441dd76b47e848f4d5036c3"
+    sha256 cellar: :any, arm64_tahoe:   "90a8b746e8fdafc9bfd9b16de2fefa24c38eb4e85f44d45764705b0cab9f1681"
+    sha256 cellar: :any, arm64_sequoia: "417d91e5e7e569a215b5ccd19107983257f7bb4b681970bb2b3f1bdd4daa2716"
+    sha256 cellar: :any, arm64_sonoma:  "7d710f327dcfb81c2436b7833b0a84dd71543a7022716e7ea948340bfa97addc"
+    sha256 cellar: :any, sonoma:        "594241ca60d69a734e0c2dea5d58c118ad35c9304d28c4de52498cc55502c16a"
+    sha256 cellar: :any, arm64_linux:   "8fa2d2bb295328bb759c132298b327cd2e90f3b97702778752061f6accd7b7cc"
+    sha256 cellar: :any, x86_64_linux:  "98f13c2d0bc7b55b7332cf1870757e0e8d5c2062ef46cbd2289d1bb780ad1c3e"
   end
 
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages package_name:     "flexget[transmission]",
-                exclude_packages: %w[certifi rpds-py]
+                exclude_packages: %w[certifi cryptography rpds-py],
+                extra_packages:   "greenlet"
 
   resource "aniso8601" do
     url "https://files.pythonhosted.org/packages/8b/8d/52179c4e3f1978d3d9a285f98c706642522750ef343e9738286130423730/aniso8601-10.0.1.tar.gz"
@@ -83,6 +85,11 @@ class Flexget < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
     sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+  end
+
+  resource "curl-cffi" do
+    url "https://files.pythonhosted.org/packages/b4/23/d32e113b16dbfb458bea408871ed98dd12f306a366a04215e84537e0af7e/curl_cffi-0.16.0.tar.gz"
+    sha256 "b00b423da8028eb6221e3b63bcd63d681150c07cee8b16000d1f7ea292731895"
   end
 
   resource "feedparser" do
@@ -271,6 +278,11 @@ class Flexget < Formula
     sha256 "7960aed7e998d2482bf58716c316509786f596426f879b05f8d84e98b82c6ee7"
   end
 
+  resource "pyscrypt" do
+    url "https://files.pythonhosted.org/packages/c6/56/51603b5714d221b784e4cbc2790b1215b3fb108e4d308a0bd52e4c3ce532/pyscrypt-1.6.2.tar.gz"
+    sha256 "bafdd195f10f7c7395f0133bad09746a68e0e6b66da202c9bdb6b1eb4abba5e9"
+  end
+
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
     sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
@@ -307,8 +319,8 @@ class Flexget < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
-    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
+    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
+    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
   end
 
   resource "shellingham" do

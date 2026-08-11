@@ -16,7 +16,7 @@ class Speech < Formula
   depends_on macos: :sequoia
 
   def install
-    system "swift", "build", "-c", "release", "--disable-sandbox"
+    system "swift", "build", *std_swift_args
     system "./scripts/build_mlx_metallib.sh", "release"
 
     %w[speech speech-server].each do |name|

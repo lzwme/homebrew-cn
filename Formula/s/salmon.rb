@@ -1,18 +1,18 @@
 class Salmon < Formula
   desc "Transcript-level quantification from RNA-seq reads"
   homepage "https://github.com/COMBINE-lab/salmon"
-  url "https://ghfast.top/https://github.com/COMBINE-lab/salmon/archive/refs/tags/v2.4.1.tar.gz"
-  sha256 "20347cb85517acc020be7852320d40432e1c4d7a9ea9a5c2b42d2389843f3625"
+  url "https://ghfast.top/https://github.com/COMBINE-lab/salmon/archive/refs/tags/v2.5.0.tar.gz"
+  sha256 "34ab4d275efc61bbc5018308f0c258ae9102334c2564b8351e19598810a01f4e"
   license "BSD-3-Clause"
   head "https://github.com/COMBINE-lab/salmon.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a7ee22fb685e90b45dba0f9ce57b7fbe55f6bd46e10b84a7c0c03b30345b7a5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "057b11fdc451bc3f4a749d67d412310da1843c8eadaaff55e0d093a0444cc872"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "617e20899079c1f6976aebe80688abe2e4a970a3db9a865d4d66ca680d07510c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3047480287cc052c390844c400faea2658db5a857c56c0e6006f4408e3fdb9aa"
-    sha256 cellar: :any,                 arm64_linux:   "b1143fee7d08e5d6612d582572af6534170ee5680c1e28915015932a83678326"
-    sha256 cellar: :any,                 x86_64_linux:  "eec8552845a2d88382bd2557a6006d0a7dcc76615e2ec0ad1bc772d871f13837"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed6eadb02692a512855b42b96c3cc3106e16311c5e04dd6ee91967c97a60c7d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "867f74f6d052ae122db76f54da904457f078e712c85baa880fc46e2d36d49676"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0076709d29ac87b4adf99720908179babce0350d966d15c07a9baa7829657ba"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8a109781037d4b0695e64904467d4e627acff09d5f2ab71291605c8854b369e9"
+    sha256 cellar: :any,                 arm64_linux:   "5177d70e8f0d7c8a0a1755768d274bd8ca7eb4eff2adf5f699ed68863ea8b9b8"
+    sha256 cellar: :any,                 x86_64_linux:  "b2551d6a1d2a65b2296121d79b284e067ea02d80d566b36595646847a8189981"
   end
 
   depends_on "rust" => :build

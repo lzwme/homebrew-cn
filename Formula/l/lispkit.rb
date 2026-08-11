@@ -16,7 +16,7 @@ class Lispkit < Formula
   depends_on :macos
 
   def install
-    system "swift", "build", "--disable-sandbox", "-c", "release"
+    system "swift", "build", *std_swift_args
     libexec.install ".build/release/LispKitRepl"
     pkgshare.install Dir["Sources/LispKit/Resources/*"]
     (bin/"lispkit").write <<~BASH

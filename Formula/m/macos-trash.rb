@@ -24,7 +24,7 @@ class MacosTrash < Formula
   conflicts_with "trash", because: "both install a `trash` binary"
 
   def install
-    system "swift", "build", "--disable-sandbox", "-c", "release"
+    system "swift", "build", *std_swift_args
     bin.install ".build/release/trash"
   end
 

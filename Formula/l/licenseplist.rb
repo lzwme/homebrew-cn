@@ -17,7 +17,7 @@ class Licenseplist < Formula
   uses_from_macos "swift" => :build, since: :sonoma # swift 6.0+
 
   def install
-    system "swift", "build", "--disable-sandbox", "--configuration", "release"
+    system "swift", "build", *std_swift_args
     bin.install ".build/release/license-plist"
     generate_completions_from_executable(bin/"license-plist", "--generate-completion-script")
   end

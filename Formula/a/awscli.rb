@@ -3,26 +3,32 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://ghfast.top/https://github.com/aws/aws-cli/archive/refs/tags/2.36.19.tar.gz"
-  sha256 "aaa1180ca1e6f9a36b64e2201410e6c11c0371d56bcd19ea49690281deddeca9"
+  url "https://ghfast.top/https://github.com/aws/aws-cli/archive/refs/tags/2.36.20.tar.gz"
+  sha256 "c123e0d7bcf0b19c69608b0d8e684b70fb4f1919dc66fc37f4562b339bed6044"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any, arm64_tahoe:   "55208a9073ada54958f7d2ef8d9338883e57461d8e55c122b81a91c0826dbf5f"
-    sha256 cellar: :any, arm64_sequoia: "b513807853e106e6ae193a1168287fd6addc5363e650b48cdc931de1c73275f6"
-    sha256 cellar: :any, arm64_sonoma:  "19f088c63eee37744aa7a9aaf00b3e5d87ae9a3eafb88fba65a89440c6caa9c7"
-    sha256 cellar: :any, sonoma:        "a91b64776c2b77964536b6e4b727a58a42104073b854d86a4d5b21ced3955f9f"
-    sha256 cellar: :any, arm64_linux:   "930bfcf92e0c13393150650495f1cf1b2741a43b07bff1fdaeea65291db749c9"
-    sha256 cellar: :any, x86_64_linux:  "43082cfc8ccc458cdd9594d342bf21a5195147ed4f1c51573cc8f4ee71a4342b"
+    sha256 cellar: :any, arm64_tahoe:   "8c9a5cfb98ca25bb5850f31e1cab587ffd7c3e6b0dc3601f019686a18fa96e3b"
+    sha256 cellar: :any, arm64_sequoia: "f13f80a79388ca04ae82e39d69abc91d4a020ba235e3494b133f7f127b0b89dc"
+    sha256 cellar: :any, arm64_sonoma:  "f209fb0c73ba1c8e5d7044216b061939fdb923db48c8752272f8100fe242c424"
+    sha256 cellar: :any, sonoma:        "68a2567aed3849b80917c20a204c0a5a2f1266ac17735ecdf009c9f220220844"
+    sha256 cellar: :any, arm64_linux:   "285a020bae909dee275c9bfdbbf0db3600488f7005e4d7c64cb768b62a1db3ac"
+    sha256 cellar: :any, x86_64_linux:  "dc769e34a74c5a4571817bea66f381ade613b4661a7cc8e6d1486181f8bea1b1"
   end
 
-  depends_on "cmake" => :build
-  depends_on "openssl@3"
+  depends_on "aws-c-auth"
+  depends_on "aws-c-cal"
+  depends_on "aws-c-common"
+  depends_on "aws-c-event-stream"
+  depends_on "aws-c-http"
+  depends_on "aws-c-io"
+  depends_on "aws-c-mqtt"
+  depends_on "aws-c-s3"
+  depends_on "aws-checksums"
   depends_on "python@3.14"
 
-  uses_from_macos "libffi"
   uses_from_macos "mandoc"
 
   pypi_packages extra_packages: "flit-core"
@@ -98,16 +104,12 @@ class Awscli < Formula
 
   def install
     ENV["AWS_CRT_BUILD_USE_SYSTEM_LIBCRYPTO"] = "1"
-
-    # Work around ruamel.yaml.clib not building on Xcode 15.3, remove after a new release
-    # has resolved: https://sourceforge.net/p/ruamel-yaml-clib/tickets/32/
-    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+    ENV["AWS_CRT_BUILD_USE_SYSTEM_LIBS"] = "1"
+    # Avoid overlinking to aws-c-* indirect dependencies
+    ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac?
 
     venv = virtualenv_create(libexec, python3, system_site_packages: false)
-    venv.pip_install resources.reject { |r| r.name == "awscrt" }
-    # CPU detection is available in AWS C libraries
-    ENV.runtime_cpu_detection
-    venv.pip_install resource("awscrt")
+    venv.pip_install resources
     venv.pip_install_and_link buildpath, build_isolation: false
 
     pkgshare.install "awscli/examples"

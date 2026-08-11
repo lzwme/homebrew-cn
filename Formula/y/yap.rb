@@ -10,12 +10,11 @@ class Yap < Formula
     sha256 cellar: :any_skip_relocation, arm64_tahoe: "b8d6f115bdf9d2b8dbec1319cc03fd4b173408bd3014fb36be16f0ccd7194e29"
   end
 
-  depends_on xcode: ["26.0", :build]
   depends_on macos: :tahoe
-  uses_from_macos "swift" => [:test]
+  uses_from_macos "swift" => [:build, :test]
 
   def install
-    system "swift", "build", "--disable-sandbox", "-c", "release", "--product", "yap"
+    system "swift", "build", "--product", "yap", *std_swift_args
     bin.install ".build/release/yap"
   end
 

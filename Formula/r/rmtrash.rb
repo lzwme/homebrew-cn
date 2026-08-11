@@ -17,7 +17,7 @@ class Rmtrash < Formula
   depends_on :macos
 
   def install
-    system "swift", "build", "--disable-sandbox", "-c", "release"
+    system "swift", "build", *std_swift_args
     bin.install ".build/release/rmtrash"
     man1.install "Manual/rmtrash.1"
   end

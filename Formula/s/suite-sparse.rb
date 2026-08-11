@@ -1,8 +1,8 @@
 class SuiteSparse < Formula
   desc "Suite of Sparse Matrix Software"
   homepage "https://people.engr.tamu.edu/davis/suitesparse.html"
-  url "https://ghfast.top/https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v7.12.3.tar.gz"
-  sha256 "158ee4ed2ce3fdcbf52c4e47e94b0d1a8ae13344b4a835991d78a3ad20f08086"
+  url "https://ghfast.top/https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v7.13.0.tar.gz"
+  sha256 "561c0e2559f9e11d889d9b5fa7340e62aa8a183703292a524d138c36b80d4b50"
   license all_of: [
     "BSD-3-Clause",
     "LGPL-2.1-or-later",
@@ -19,12 +19,12 @@ class SuiteSparse < Formula
   end
 
   bottle do
-    sha256               arm64_tahoe:   "69dc395f19e4db47f3be66ba726630d7385a2a66030116e9927b294ded4cecb4"
-    sha256               arm64_sequoia: "81ba313929e68de00691d0c875928dfcf2403c82ab2ebc1fc01ab7023adee31e"
-    sha256               arm64_sonoma:  "9f0d3f2c4b94b1073dfa433222a418e518f2ce6621eddbbb5e113663d7d73b54"
-    sha256               sonoma:        "06e102584631fca22763afd6f04789ff1da4dbfb6f14cf56936cc8872ca8499e"
-    sha256 cellar: :any, arm64_linux:   "ea474615e8351403ca76fa6d62a0fcc9903e5c50326aec9c643d0ed79412c17d"
-    sha256 cellar: :any, x86_64_linux:  "bfd5badae98bde5cc7e3294fcc447e16af29491f6336ad47e394162ca82adc0f"
+    sha256               arm64_tahoe:   "679c1209d7f1b2b6e64160cd20bce8af68f4b5d9aa982248649239543534cfa6"
+    sha256               arm64_sequoia: "fb05a1a8fa9c2fccf996b300f11063774c8b06f798c235f79210f392b00432fe"
+    sha256               arm64_sonoma:  "8cbef849f37c1577d691d6d413d4ae8a581ff2c5a47d0e8319f2314edc737fc4"
+    sha256               sonoma:        "47d67a932e9c979e7252a9c833e041c4113e69ef767fede74da8a39e7e138968"
+    sha256 cellar: :any, arm64_linux:   "c2d44c7852402376a9e780fa85deac801ba0f3185240221cc0570c0647d5d08b"
+    sha256 cellar: :any, x86_64_linux:  "794e9426b1eeb5c26a0bf66e52fdc112fa47c3f093d21979bea4fa18cdaa1dbf"
   end
 
   depends_on "cmake" => :build

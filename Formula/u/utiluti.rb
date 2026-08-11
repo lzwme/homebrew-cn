@@ -17,7 +17,7 @@ class Utiluti < Formula
   uses_from_macos "swift" => :build, since: :tahoe # Swift 6.2
 
   def install
-    system "swift", "build", "--disable-sandbox", "--configuration", "release"
+    system "swift", "build", *std_swift_args
     system "swift", "package", "--disable-sandbox", "plugin", "generate-manual"
     bin.install ".build/release/utiluti"
     man1.install ".build/plugins/GenerateManual/outputs/utiluti/utiluti.1"

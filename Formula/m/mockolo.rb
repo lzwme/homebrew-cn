@@ -23,12 +23,7 @@ class Mockolo < Formula
 
   def install
     inreplace "Sources/Mockolo/Version.swift", "development", version.to_s
-    args = if OS.mac?
-      ["--disable-sandbox"]
-    else
-      ["--static-swift-stdlib"]
-    end
-    system "swift", "build", *args, "-c", "release", "--product", "mockolo"
+    system "swift", "build", "--product", "mockolo", *std_swift_args
     bin.install ".build/release/mockolo"
     generate_completions_from_executable(bin/"mockolo", "--generate-completion-script")
   end

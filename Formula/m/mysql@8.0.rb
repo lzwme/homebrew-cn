@@ -6,7 +6,7 @@ class MysqlAT80 < Formula
   url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.46.tar.gz"
   sha256 "dff4332ee7f8f37fc0516c66763600a22a81c8192c743c477b6484206e314f2f"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 2
+  revision 3
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/8.0.html?tpl=files&os=src&version=8.0"
@@ -14,13 +14,12 @@ class MysqlAT80 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_tahoe:   "5bbb5d993ea86f1776c97ec20eedaecd2e20d07670fe2c064f9ce69e487f77a3"
-    sha256 arm64_sequoia: "6a07941c30e534329ec28945e9825a4abb2577e05d5a55832faf2bf71b9fda1e"
-    sha256 arm64_sonoma:  "89d35e56c40a95f0921ed60c9fd02b18266277c8eb74425a660acd094224a6b9"
-    sha256 sonoma:        "2b53a917f0e479bfec113aa2a4e771c24b818dd2951c43e0ea65cb890a4da7eb"
-    sha256 arm64_linux:   "4abe51ef18088d1812281643e87418ff4f053a2304a52abca57ffba45d282dd3"
-    sha256 x86_64_linux:  "7da76444e1f5d77c08980a790e62ea8dc7f2c45a21388b060c91ee15e9b83fa8"
+    sha256 arm64_tahoe:   "e2820c85fc96c9b2e0babcde101053fb5ff95b08134a6cc3743c23d6e80ef8fa"
+    sha256 arm64_sequoia: "4d047b94e175d1584d4cd096c1d8c3f562b1174b597d5f69c0adb87605b3029e"
+    sha256 arm64_sonoma:  "0015992c5775c0518bf7f9487a4dd35d21b0656e4b47579be67a4df95124bcc5"
+    sha256 sonoma:        "7c5fd331551e620ff1c72366c83e58cc13d20f13bbd405c149cf18e3a0213822"
+    sha256 arm64_linux:   "dc5aed36e44e8705c03ab51abe1b2f8855283117c36558b04a1b76cdb34f88c1"
+    sha256 x86_64_linux:  "3523ee16e5811b8a04a52294bb67aadf0d45e953890a306e10c2ab380e706071"
   end
 
   keg_only :versioned_formula

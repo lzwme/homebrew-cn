@@ -18,7 +18,7 @@ class Xctesthtmlreport < Formula
   uses_from_macos "swift"
 
   def install
-    system "swift", "build", "--disable-sandbox", "-c", "release"
+    system "swift", "build", *std_swift_args
     bin.install ".build/release/xchtmlreport"
     generate_completions_from_executable(bin/"xchtmlreport", "--generate-completion-script")
   end
